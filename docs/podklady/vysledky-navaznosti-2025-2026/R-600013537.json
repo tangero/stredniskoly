@@ -1,90 +1,189 @@
 {
-  "task_id": "R-600013537",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu Gymnázium Globe, s.r.o. (REDIZO 600013537, IZO 060522321) ve všech čtyřech snímcích, jediné místo výuky Bzenecká 4226/23, Brno-Židenice. Všechny tři registrované obory (79-41-K/41 4leté, 79-41-K/61 6leté, 79-41-K/81 8leté Gymnázium, forma dvojjazyčný/jiný) jsou ve všech snímcích shodné. Rejstřík neeviduje vnitřní zaměření (živé jazyky) jako samostatný kód, proto případný přesun tohoto zaměření mezi 6letým a 8letým studiem rejstříkem nelze ani potvrdit, ani vyvrátit."
-  },
-  "findings": [
+ "task_id": "R-600013537",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu Gymnázium Globe, s.r.o. (REDIZO 600013537, IZO 060522321) ve všech čtyřech snímcích, jediné místo výuky Bzenecká 4226/23, Brno-Židenice. Všechny tři registrované obory (79-41-K/41 4leté, 79-41-K/61 6leté, 79-41-K/81 8leté Gymnázium, forma dvojjazyčný/jiný) jsou ve všech snímcích shodné. Rejstřík neeviduje vnitřní zaměření (živé jazyky) jako samostatný kód, proto případný přesun tohoto zaměření mezi 6letým a 8letým studiem rejstříkem nelze ani potvrdit, ani vyvrátit."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0075"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela šestileté gymnázium 79-41-K/61 se zaměřením „Živé jazyky“; v 1. kole JPZ 2026 tuto variantu nenabízí, místo toho nově nabízí osmileté gymnázium 79-41-K/81 se zaměřením „živé jazyky“. Čtyřleté gymnázium 79-41-K/41 se zaměřením Živé jazyky pokračuje beze změny v obou letech.",
+    "Rejstřík MŠMT eviduje u IZO 060522321 všechny tři obory (4leté, 6leté i 8leté gymnázium) nepřetržitě ve všech čtyřech snímcích – registrace žádného z nich nezanikla ani nevznikla nově.",
+    "Infoabsolvent.cz (přehled akreditovaných ŠVP školy) uvádí u školy jen dva obory: šestileté gymnázium se ŠVP „ŠVP Globe“ a osmileté gymnázium se ŠVP „ŠVP Globe, živé jazyky“ – značka „živé jazyky“ je zde vázána výhradně na osmileté studium, což je v souladu s posunem pozorovaným v datech CERMAT.",
+    "Starší popis školy (Seznam Zprávy – Kampus) uvádí u aktuální nabídky jen čtyřleté (30 míst) a šestileté (28 míst) studium, osmileté studium v tabulce nabídky vůbec neuvádí; datum publikace článku se nepodařilo zjistit, může jít o dřívější stav odpovídající roku 2025.",
+    "Několik agregátorů (AtlasŠkolství, StředníŠkoly.com) shodně popisuje školu jako nabízející čtyřleté a šestileté studium s tím, že do osmiletého studia škola přijímá jednotlivce jen do vyšších ročníků (kvarta až oktáva) – tento popis je v rozporu s daty CERMAT 2026, kde je osmileté studium nabízeno v řádném 1. kole JPZ (typicky pro přijetí do primy).",
+    "Spor je rozhodnut podle zadání běhu: číselníky mají přednost před nedatovaným katalogem třetí strany. Rejstřík MŠMT dokládá, že obor po právu existuje; data CERMAT dokládají, co bylo v daném roce skutečně vypsáno v 1. kole. Katalogový záznam bez data popisuje portfolio školy, nikoli nabídku konkrétního ročníku, a nabídku CERMAT proto nevyvrací.",
+    "Nabídka šestiletého gymnázia se zaměřením Živé jazyky je v roce 2026 ukončena; obor 79-41-K/61 ale zůstává v rejstříku MŠMT zapsán, takže nezanikl."
+   ],
+   "conclusion": "Šestileté gymnázium se zaměřením Živé jazyky škola pro rok 2026/2027 v 1. kole nevypsala. Obor 79-41-K/61 zůstává registrován, jde tedy o ukončení nabídky, ne o zánik oboru. Zaměření Živé jazyky škola nadále vede u osmiletého studia (otázka Q0297).",
+   "alternative_explanations": [
+    "Agregátory popisují školu jako nabízející čtyřleté a šestileté studium a osmileté jen do vyšších ročníků. Tyto záznamy nejsou datované k přijímacímu řízení 2026 a nabídku doloženou daty CERMAT nevyvracejí."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "79-41-K/61 Gymnázium, zaměření Živé jazyky (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0075", "Q0297"],
-      "status": "rozpor_zdrojů",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela šestileté gymnázium 79-41-K/61 se zaměřením „Živé jazyky“; v 1. kole JPZ 2026 tuto variantu nenabízí, místo toho nově nabízí osmileté gymnázium 79-41-K/81 se zaměřením „živé jazyky“. Čtyřleté gymnázium 79-41-K/41 se zaměřením Živé jazyky pokračuje beze změny v obou letech.",
-        "Rejstřík MŠMT eviduje u IZO 060522321 všechny tři obory (4leté, 6leté i 8leté gymnázium) nepřetržitě ve všech čtyřech snímcích – registrace žádného z nich nezanikla ani nevznikla nově.",
-        "Infoabsolvent.cz (přehled akreditovaných ŠVP školy) uvádí u školy jen dva obory: šestileté gymnázium se ŠVP „ŠVP Globe“ a osmileté gymnázium se ŠVP „ŠVP Globe, živé jazyky“ – značka „živé jazyky“ je zde vázána výhradně na osmileté studium, což je v souladu s posunem pozorovaným v datech CERMAT.",
-        "Starší popis školy (Seznam Zprávy – Kampus) uvádí u aktuální nabídky jen čtyřleté (30 míst) a šestileté (28 míst) studium, osmileté studium v tabulce nabídky vůbec neuvádí; datum publikace článku se nepodařilo zjistit, může jít o dřívější stav odpovídající roku 2025.",
-        "Několik agregátorů (AtlasŠkolství, StředníŠkoly.com) shodně popisuje školu jako nabízející čtyřleté a šestileté studium s tím, že do osmiletého studia škola přijímá jednotlivce jen do vyšších ročníků (kvarta až oktáva) – tento popis je v rozporu s daty CERMAT 2026, kde je osmileté studium nabízeno v řádném 1. kole JPZ (typicky pro přijetí do primy)."
-      ],
-      "conclusion": null,
-      "alternative_explanations": [
-        "Škola mohla v roce 2026 souběžně přestat nabírat do šestiletého a začít nabírat do osmiletého studia bez vzájemné vazby na konkrétní zaměření – šlo by o dvě samostatné, na sobě nezávislé organizační události.",
-        "Rozpor mezi staršími agregátory (šestileté jako standardní vstup, osmileté jen individuálně do vyšších ročníků) a daty CERMAT 2026 (osmileté v 1. kole JPZ) může znamenat, že popisy na sekundárních webech jsou neaktuální a nezachycují změnu pro školní rok 2026/27."
-      ],
-      "relationship": {
-        "type": "unknown",
-        "from": ["79-41-K/61 živé jazyky (2025)"],
-        "to": ["79-41-K/81 živé jazyky (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Bzenecká 4226/23, 628 00 Židenice, Brno",
-          "role": "sídlo",
-          "izo": "600013537",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Bzenecká 4226/23, 628 00 Židenice, Brno",
-          "role": "místo výuky",
-          "izo": "060522321",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.infoabsolvent.cz/Skoly/Skola/600013537",
-          "title": "Gymnázium Globe, s.r.o. – Infoabsolvent.cz",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola má akreditované ŠVP pro 6leté (bez tagu „živé jazyky“) a 8leté studium (s tagem „živé jazyky“).",
-          "applicable_period": "stav webu k 12. 9. 2026"
-        },
-        {
-          "url": "https://www.seznamzpravy.cz/kampus/clanek/stredni-skoly-gymnazium-globe-157625",
-          "title": "Gymnázium Globe - Kampus (Seznam Zprávy)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Popis nabídky školy uvádí jen čtyřleté a šestileté studium, bez osmiletého – patrně starší/needatovaný stav.",
-          "applicable_period": "needatovaný popis, pravděpodobně před rokem 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obory 79-41-K/41, 79-41-K/61 i 79-41-K/81 zůstávají u IZO 060522321 registrovány beze změny.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600013537",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 79-41-K/61 živé jazyky přítomna jen v roce 2025; nabídka 79-41-K/81 živé jazyky přítomna jen v roce 2026.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "unknown",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Nebylo dohledáno přímé oznámení školy o ukončení šestiletého a zahájení osmiletého přijímání se zaměřením živé jazyky.",
-        "Není jasné, zda osmileté studium pro rok 2026/27 přijímá standardně do primy, nebo jen individuálně do vyšších ročníků, jak popisují sekundární zdroje."
-      ]
+     "text": "Bzenecká 4226/23, 628 00 Židenice, Brno",
+     "role": "sídlo",
+     "izo": "600013537",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Bzenecká 4226/23, 628 00 Židenice, Brno",
+     "role": "místo výuky",
+     "izo": "060522321",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.infoabsolvent.cz/Skoly/Skola/600013537",
+     "title": "Gymnázium Globe, s.r.o. – Infoabsolvent.cz",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola má akreditované ŠVP pro 6leté (bez tagu „živé jazyky“) a 8leté studium (s tagem „živé jazyky“).",
+     "applicable_period": "stav webu k 12. 9. 2026"
+    },
+    {
+     "url": "https://www.seznamzpravy.cz/kampus/clanek/stredni-skoly-gymnazium-globe-157625",
+     "title": "Gymnázium Globe - Kampus (Seznam Zprávy)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Popis nabídky školy uvádí jen čtyřleté a šestileté studium, bez osmiletého – patrně starší/needatovaný stav.",
+     "applicable_period": "needatovaný popis, pravděpodobně před rokem 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obory 79-41-K/41, 79-41-K/61 i 79-41-K/81 zůstávají u IZO 060522321 registrovány beze změny.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600013537",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 79-41-K/61 živé jazyky přítomna jen v roce 2025; nabídka 79-41-K/81 živé jazyky přítomna jen v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Nebylo dohledáno přímé oznámení školy o ukončení šestiletého a zahájení osmiletého přijímání se zaměřením živé jazyky.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    }
+   ]
+  },
+  {
+   "issue_ids": [
+    "Q0297"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela šestileté gymnázium 79-41-K/61 se zaměřením „Živé jazyky“; v 1. kole JPZ 2026 tuto variantu nenabízí, místo toho nově nabízí osmileté gymnázium 79-41-K/81 se zaměřením „živé jazyky“. Čtyřleté gymnázium 79-41-K/41 se zaměřením Živé jazyky pokračuje beze změny v obou letech.",
+    "Rejstřík MŠMT eviduje u IZO 060522321 všechny tři obory (4leté, 6leté i 8leté gymnázium) nepřetržitě ve všech čtyřech snímcích – registrace žádného z nich nezanikla ani nevznikla nově.",
+    "Infoabsolvent.cz (přehled akreditovaných ŠVP školy) uvádí u školy jen dva obory: šestileté gymnázium se ŠVP „ŠVP Globe“ a osmileté gymnázium se ŠVP „ŠVP Globe, živé jazyky“ – značka „živé jazyky“ je zde vázána výhradně na osmileté studium, což je v souladu s posunem pozorovaným v datech CERMAT.",
+    "Starší popis školy (Seznam Zprávy – Kampus) uvádí u aktuální nabídky jen čtyřleté (30 míst) a šestileté (28 míst) studium, osmileté studium v tabulce nabídky vůbec neuvádí; datum publikace článku se nepodařilo zjistit, může jít o dřívější stav odpovídající roku 2025.",
+    "Několik agregátorů (AtlasŠkolství, StředníŠkoly.com) shodně popisuje školu jako nabízející čtyřleté a šestileté studium s tím, že do osmiletého studia škola přijímá jednotlivce jen do vyšších ročníků (kvarta až oktáva) – tento popis je v rozporu s daty CERMAT 2026, kde je osmileté studium nabízeno v řádném 1. kole JPZ (typicky pro přijetí do primy).",
+    "Spor je rozhodnut podle zadání běhu: číselníky mají přednost před nedatovaným katalogem třetí strany. Rejstřík MŠMT dokládá, že obor po právu existuje; data CERMAT dokládají, co bylo v daném roce skutečně vypsáno v 1. kole. Katalogový záznam bez data popisuje portfolio školy, nikoli nabídku konkrétního ročníku, a nabídku CERMAT proto nevyvrací.",
+    "Osmileté gymnázium se zaměřením živé jazyky je v 1. kole 2026 vypsáno poprvé; obor 79-41-K/81 byl přitom v rejstříku zapsán už dříve, nejde tedy o nově vzniklý obor, ale o nově vypsanou nabídku. Infoabsolvent váže školní vzdělávací program „živé jazyky“ právě na osmileté studium."
+   ],
+   "conclusion": "Osmileté gymnázium se zaměřením živé jazyky je nová nabídka pro rok 2026/2027. Obor byl registrován už dříve, takže jde o vypsání přijímacího řízení do dosud nenabízeného oboru, ne o vznik oboru. Historické výsledky šestiletého studia na něj přenést nelze: liší se kód i délka studia.",
+   "alternative_explanations": [
+    "Nelze vyloučit, že škola zaměření přesunula ze šestiletého na osmileté studium jako celek; zdroje to výslovně neuvádějí a pro přenos statistik je to bez vlivu, protože obory mají jinou délku."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "79-41-K/81 Gymnázium, zaměření živé jazyky (2026)"
+    ]
+   },
+   "addresses": [
+    {
+     "text": "Bzenecká 4226/23, 628 00 Židenice, Brno",
+     "role": "sídlo",
+     "izo": "600013537",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Bzenecká 4226/23, 628 00 Židenice, Brno",
+     "role": "místo výuky",
+     "izo": "060522321",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "https://www.infoabsolvent.cz/Skoly/Skola/600013537",
+     "title": "Gymnázium Globe, s.r.o. – Infoabsolvent.cz",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola má akreditované ŠVP pro 6leté (bez tagu „živé jazyky“) a 8leté studium (s tagem „živé jazyky“).",
+     "applicable_period": "stav webu k 12. 9. 2026"
+    },
+    {
+     "url": "https://www.seznamzpravy.cz/kampus/clanek/stredni-skoly-gymnazium-globe-157625",
+     "title": "Gymnázium Globe - Kampus (Seznam Zprávy)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Popis nabídky školy uvádí jen čtyřleté a šestileté studium, bez osmiletého – patrně starší/needatovaný stav.",
+     "applicable_period": "needatovaný popis, pravděpodobně před rokem 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obory 79-41-K/41, 79-41-K/61 i 79-41-K/81 zůstávají u IZO 060522321 registrovány beze změny.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600013537",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 79-41-K/61 živé jazyky přítomna jen v roce 2025; nabídka 79-41-K/81 živé jazyky přítomna jen v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Nebylo dohledáno přímé oznámení školy o ukončení šestiletého a zahájení osmiletého přijímání se zaměřením živé jazyky.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    }
+   ]
+  }
+ ]
 }

@@ -145,15 +145,19 @@
    "history_comparability": "partially",
    "recommended_action": "manual_review",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Je nabídka LPG (Q0290) skutečně přímým pokračovatelem nabídky z roku 2025 (Q0103), nebo jsou obě zaměření z pohledu obsahu ŠVP rovnocenně nová?",
-    "Souvisí rozdělení na LPG/JAHU s přejmenováním sesterské školy REDIZO 600017591 (bývalé „Jazykové a humanitní GYMNÁZIUM PRIGO“) na „PRIGO, gymnázium 6leté a 4leté“ – došlo k přesunu kapacity/značky mezi oběma právnickými osobami?"
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Od jakého přesného data/školního roku škola formálně zavedla rozdělení čtyřletého studia na dvě profilace?",
      "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    },
+    {
+     "otazka": "Souvisí rozdělení na LPG/JAHU s přejmenováním sesterské školy REDIZO 600017591 (bývalé „Jazykové a humanitní GYMNÁZIUM PRIGO“) na „PRIGO, gymnázium 6leté a 4leté“ – došlo k přesunu kapacity/značky mezi oběma právnickými osobami?",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 1: příčina samotné změny se nezkoumá. Pro návaznost nabídky není důvod rozhodnutí školy potřebný."
     }
+   ],
+   "decisions_required": [
+    "Je nabídka LPG (Q0290) skutečně přímým pokračovatelem nabídky z roku 2025 (Q0103), nebo jsou obě zaměření z pohledu obsahu ŠVP rovnocenně nová?"
    ]
   }
  ]

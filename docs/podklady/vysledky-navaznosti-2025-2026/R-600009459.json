@@ -1,168 +1,184 @@
 {
-  "task_id": "R-600009459",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík MŠMT ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) beze změny eviduje Sportovní gymnázium Plzeň, REDIZO 600009459, IČ 49778137, IZO 049778137 (střední škola), sídlo i jediné místo výuky Vejprnická 663/56, Skvrňany, Plzeň (RÚIAN 24562106). Rejstřík tedy potvrdil plnou kontinuitu subjektu, IZO i adresy mezi přijímacími řízeními 2025 a 2026; žádné sloučení, rozdělení ani změna sídla neproběhly. Obory rejstřík eviduje jen na úrovni KKOV bez zaměření, takže k sportovním zaměřením (volejbal, střelba) sám nevypovídá."
-  },
-  "findings": [
+ "task_id": "R-600009459",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík MŠMT ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) beze změny eviduje Sportovní gymnázium Plzeň, REDIZO 600009459, IČ 49778137, IZO 049778137 (střední škola), sídlo i jediné místo výuky Vejprnická 663/56, Skvrňany, Plzeň (RÚIAN 24562106). Rejstřík tedy potvrdil plnou kontinuitu subjektu, IZO i adresy mezi přijímacími řízeními 2025 a 2026; žádné sloučení, rozdělení ani změna sídla neproběhly. Obory rejstřík eviduje jen na úrovni KKOV bez zaměření, takže k sportovním zaměřením (volejbal, střelba) sám nevypovídá."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0050",
+    "Q0287"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V datech CERMAT 1. kola JPZ je v roce 2025 u oboru 79-42-K/41 Gymnázium se sportovní přípravou nabídka se zaměřením „volejbal (jen dívky)“ (ID_SOF 82ec6f0a-…), v roce 2026 u stejné školy, stejného IZO, stejné adresy a stejného kódu KKOV nabídka „Volejbal - dívky“ (ID_SOF d666d5dd-…). Liší se pouze textový zápis zaměření.",
+    "Web školy dlouhodobě uvádí zaměření jako „volejbal – dívky“; stránka školy k oboru 79-42-K/41 pro přijímací řízení 2026/2027 výslovně uvádí „VOLEJBAL - DÍVKY“ a kontakt na trenéra volejbalu žen.",
+    "Agregátor Stredniskoly.com (zdroj dat CERMAT) vede „Volejbal - dívky“ jako jeden obor s roky 2024 a 2026 a „volejbal jen dívky“ roku 2025 jako samostatnou položku – právě kvůli odlišnému textovému zápisu. Kapacita i charakter nabídky (jen dívky, 4leté denní studium) jsou shodné.",
+    "Rejstřík MŠMT potvrdil, že škola, REDIZO, IZO i adresa jsou v obou letech totožné."
+   ],
+   "conclusion": "Nabídka „Gymnázium se sportovní přípravou – volejbal (jen dívky)“ z roku 2025 a nabídka „Gymnázium se sportovní přípravou – Volejbal - dívky“ z roku 2026 jsou jedno a totéž zaměření téhož oboru téže školy; došlo pouze ke změně textového zápisu v datech CERMAT. Návaznost je potvrzená a historické výsledky jsou plně srovnatelné.",
+   "alternative_explanations": [],
+   "relationship": {
+    "type": "continuation",
+    "from": [
+     "2025: 79-42-K/41 Gymnázium se sportovní přípravou – volejbal (jen dívky), ID_SOF 82ec6f0a-5db3-4242-b3de-1b2389d20990"
+    ],
+    "to": [
+     "2026: 79-42-K/41 Gymnázium se sportovní přípravou – Volejbal - dívky, ID_SOF d666d5dd-efc5-453d-9984-e8d0856a1121"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0050", "Q0287"],
-      "status": "potvrzeno",
-      "observations": [
-        "V datech CERMAT 1. kola JPZ je v roce 2025 u oboru 79-42-K/41 Gymnázium se sportovní přípravou nabídka se zaměřením „volejbal (jen dívky)“ (ID_SOF 82ec6f0a-…), v roce 2026 u stejné školy, stejného IZO, stejné adresy a stejného kódu KKOV nabídka „Volejbal - dívky“ (ID_SOF d666d5dd-…). Liší se pouze textový zápis zaměření.",
-        "Web školy dlouhodobě uvádí zaměření jako „volejbal – dívky“; stránka školy k oboru 79-42-K/41 pro přijímací řízení 2026/2027 výslovně uvádí „VOLEJBAL - DÍVKY“ a kontakt na trenéra volejbalu žen.",
-        "Agregátor Stredniskoly.com (zdroj dat CERMAT) vede „Volejbal - dívky“ jako jeden obor s roky 2024 a 2026 a „volejbal jen dívky“ roku 2025 jako samostatnou položku – právě kvůli odlišnému textovému zápisu. Kapacita i charakter nabídky (jen dívky, 4leté denní studium) jsou shodné.",
-        "Rejstřík MŠMT potvrdil, že škola, REDIZO, IZO i adresa jsou v obou letech totožné."
-      ],
-      "conclusion": "Nabídka „Gymnázium se sportovní přípravou – volejbal (jen dívky)“ z roku 2025 a nabídka „Gymnázium se sportovní přípravou – Volejbal - dívky“ z roku 2026 jsou jedno a totéž zaměření téhož oboru téže školy; došlo pouze ke změně textového zápisu v datech CERMAT. Návaznost je potvrzená a historické výsledky jsou plně srovnatelné.",
-      "alternative_explanations": [],
-      "relationship": {
-        "type": "continuation",
-        "from": ["2025: 79-42-K/41 Gymnázium se sportovní přípravou – volejbal (jen dívky), ID_SOF 82ec6f0a-5db3-4242-b3de-1b2389d20990"],
-        "to": ["2026: 79-42-K/41 Gymnázium se sportovní přípravou – Volejbal - dívky, ID_SOF d666d5dd-efc5-453d-9984-e8d0856a1121"]
-      },
-      "addresses": [
-        {
-          "text": "Vejprnická 663/56, Skvrňany, 318 00 Plzeň",
-          "role": "sídlo",
-          "izo": "049778137",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Vejprnická 663/56, Skvrňany, Plzeň (RÚIAN 24562106)",
-          "role": "místo výuky",
-          "izo": "049778137",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600009459",
-          "title": "Přiložená data fronty – context_offers 2025 a 2026 pro REDIZO 600009459",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Totožnost školy, IZO, adresy, kódu KKOV i délky studia u volejbalového zaměření v obou letech; jediný rozdíl je text zápisu zaměření.",
-          "applicable_period": "1. kolo JPZ 2025 a 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení – celá ČR, snímek 31. 3. 2025 (MŠMT)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Kontinuita subjektu Sportovní gymnázium Plzeň (REDIZO 600009459, IZO 049778137) a adresy v období 1. kola JPZ 2025.",
-          "applicable_period": "2025-03-31"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení – celá ČR, snímek 31. 3. 2026 (MŠMT)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Kontinuita subjektu a adresy v období 1. kola JPZ 2026.",
-          "applicable_period": "2026-03-31"
-        },
-        {
-          "url": "https://www.sgpilsen.cz/79-42-k41-gymnazium-se-sportovni-pripravou",
-          "title": "79-42-K/41 Gymnázium se sportovní přípravou – Sportovní gymnázium Plzeň",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola uvádí zaměření oboru včetně „VOLEJBAL - DÍVKY“; potvrzuje, že volejbalové zaměření pouze pro dívky škola nadále nabízí pod zápisem použitým v datech 2026.",
-          "applicable_period": "přijímací řízení 2026/2027 (aktuální stránka)"
-        },
-        {
-          "url": "https://www.stredniskoly.com/stredni-skoly-1/sportovni-gymnazium-plzen-1",
-          "title": "Sportovní gymnázium Plzeň – úspěšnost u přijímaček (zdroj dat CERMAT)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "„Volejbal - dívky“ (7942K41) s daty 2024 a 2026 a „volejbal jen dívky“ (7942K41) s daty 2025 – tentýž obor a zaměření vedené pod dvěma textovými zápisy; kapacita 6–7 míst, pouze dívky.",
-          "applicable_period": "2024–2026"
-        }
-      ],
-      "history_comparability": "comparable",
-      "recommended_action": "approve_mapping",
-      "related_task_ids": [],
-      "unanswered_questions": []
+     "text": "Vejprnická 663/56, Skvrňany, 318 00 Plzeň",
+     "role": "sídlo",
+     "izo": "049778137",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     },
     {
-      "issue_ids": ["Q0286"],
-      "status": "potvrzeno",
-      "observations": [
-        "V roce 2026 se v datech CERMAT 1. kola JPZ objevuje nová nabídka „Gymnázium se sportovní přípravou – Sportovní střelba“ (79-42-K/41, ID_SOF 679f96a4-…), která v přiložených nabídkách roku 2025 u téže školy chybí.",
-        "Nejde však o zcela nové zaměření školy: agregátor Stredniskoly.com (zdroj dat CERMAT) eviduje „Sportovní střelba (7942K41)“ i pro rok 2024 (kapacita 3 místa, 0 přihlášek, 0 přijatých) a archivní kopie webu školy z roku 2020 uvádí v oboru 79-42-K/41 zaměření „ATLETIKA, JUDO, SPORTOVNÍ STŘELBA, PLAVÁNÍ, TENIS, VOLEJBAL-DÍVKY“.",
-        "Aktuální web školy pro přijímací řízení 2026/2027 uvádí zaměření „SPORTOVNÍ STŘELBA - PUŠKOVÉ DISCIPLÍNY“ a jmenuje trenéra sportovní střelby; katalog Stredniskoly.cz datovaný 25. 11. 2025 nabídku pro rok 2026 rovněž popisuje včetně „střelba - puškové disciplíny“.",
-        "Závěr o přesné podobě nabídky v roce 2025 (zda škola střelbu vypsala a CERMAT ji neevidoval samostatně, či zda ji v 2025 skutečně nevypsala) nelze z dostupných zdrojů úplně rozhodnout; absence v datech CERMAT 2025 sama o sobě zánik zaměření nedokazuje."
-      ],
-      "conclusion": "„Sportovní střelba“ je v roce 2026 obnovenou nabídkou zaměření, které škola v rámci oboru 79-42-K/41 nabízela již dříve (doloženo 2024 v datech CERMAT a 2020 na webu školy) a které v datech CERMAT 1. kola JPZ 2025 samostatně nevystupuje. Proti roku 2025 tedy jde formálně o novou nabídku, věcně však o obnovení po jednoroční přestávce, nikoli o nově zavedený obor či novou školu.",
-      "alternative_explanations": [
-        "Škola mohla střelbu v roce 2025 skutečně nevypsat (malá kapacita 2–3 místa, v 2024 nulový zájem) a pro 2026 ji obnovit.",
-        "Nelze vyloučit, že v roce 2025 byla střelba vypsána, ale v datech CERMAT 1. kola JPZ se neobjevila jako samostatná nabídka (např. administrativně sloučena pod jiné zaměření); to však přiložená data ani web nepodporují."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["2026: 79-42-K/41 Gymnázium se sportovní přípravou – Sportovní střelba, ID_SOF 679f96a4-a45c-4272-8da8-da00c9270b00"]
-      },
-      "addresses": [
-        {
-          "text": "Vejprnická 663/56, Skvrňany, 318 00 Plzeň",
-          "role": "sídlo",
-          "izo": "049778137",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600009459",
-          "title": "Přiložená data fronty – context_offers 2025 a 2026 pro REDIZO 600009459",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "V context_offers 2025 se střelba nevyskytuje (atletika, judo, plavání, tenis, volejbal), v context_offers 2026 je přítomna jako samostatná nabídka se stejným IZO a kódem KKOV.",
-          "applicable_period": "1. kolo JPZ 2025 a 2026"
-        },
-        {
-          "url": "https://www.stredniskoly.com/stredni-skoly-1/sportovni-gymnazium-plzen-1",
-          "title": "Sportovní gymnázium Plzeň – úspěšnost u přijímaček (zdroj dat CERMAT)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "„Gymnázium se sportovní přípravou Sportovní střelba (7942K41)“ evidováno pro rok 2026 (kapacita 2, přihlášeni 2) i pro rok 2024 (kapacita 3, 0 přihlášek); rok 2025 u této položky chybí – dokládá obnovení nabídky po jednoroční přestávce.",
-          "applicable_period": "2024–2026"
-        },
-        {
-          "url": "https://www.sgpilsen.cz/79-42-k41-gymnazium-se-sportovni-pripravou",
-          "title": "79-42-K/41 Gymnázium se sportovní přípravou – Sportovní gymnázium Plzeň",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola pro přijímací řízení 2026/2027 uvádí zaměření „SPORTOVNÍ STŘELBA - PUŠKOVÉ DISCIPLÍNY“ včetně kontaktu na trenéra – nabídka je reálná a školou vypsaná.",
-          "applicable_period": "přijímací řízení 2026/2027 (aktuální stránka)"
-        },
-        {
-          "url": "https://www.stredniskoly.cz/skola/600009459.html",
-          "title": "Sportovní gymnázium Plzeň – Stredniskoly.cz",
-          "published_at": "2025-11-25",
-          "checked_at": "2026-09-12",
-          "supports": "Datovaný přehled přijímacího řízení 2026 uvádí obor 79-42-K/41 se zaměřeními „atletika, judo, plavání, střelba - puškové disciplíny, tenis, volejbal - dívky“.",
-          "applicable_period": "přijímací řízení 2026/2027"
-        },
-        {
-          "url": "https://matematickaberuska.cz/vysledky/2020/Plze%C5%88sk%C3%BD%20kraj/Plze%C5%88/www.sgpilsen.cz/79-42-K_41%20Gymn%C3%A1zium%20se%20sportovn%C3%AD%20p%C5%99%C3%ADpravou,%20t%C5%99%C3%ADda%20A%20_%20Sportovn%C3%AD%20gymn%C3%A1zium%20Plze%C5%88.html",
-          "title": "Archivní kopie webu školy (2020): 79-42-K/41 Gymnázium se sportovní přípravou, třída A",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Již v roce 2020 škola v oboru 79-42-K/41 uváděla zaměření „ATLETIKA, JUDO, SPORTOVNÍ STŘELBA, PLAVÁNÍ, TENIS, VOLEJBAL-DÍVKY“ – střelba je dlouhodobou součástí oboru, nikoli novinkou roku 2026.",
-          "applicable_period": "2020"
-        }
-      ],
-      "history_comparability": "partially",
-      "recommended_action": "approve_mapping",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda škola v 1. kole JPZ 2025 zaměření sportovní střelba skutečně nevypsala, nebo zda jen nebylo v datech CERMAT vedeno samostatně – Wayback Machine byl v době rešerše dočasně nedostupný, takže stav webu školy z jara 2025 nebylo možné ověřit."
-      ]
+     "text": "Vejprnická 663/56, Skvrňany, Plzeň (RÚIAN 24562106)",
+     "role": "místo výuky",
+     "izo": "049778137",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600009459",
+     "title": "Přiložená data fronty – context_offers 2025 a 2026 pro REDIZO 600009459",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Totožnost školy, IZO, adresy, kódu KKOV i délky studia u volejbalového zaměření v obou letech; jediný rozdíl je text zápisu zaměření.",
+     "applicable_period": "1. kolo JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení – celá ČR, snímek 31. 3. 2025 (MŠMT)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Kontinuita subjektu Sportovní gymnázium Plzeň (REDIZO 600009459, IZO 049778137) a adresy v období 1. kola JPZ 2025.",
+     "applicable_period": "2025-03-31"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení – celá ČR, snímek 31. 3. 2026 (MŠMT)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Kontinuita subjektu a adresy v období 1. kola JPZ 2026.",
+     "applicable_period": "2026-03-31"
+    },
+    {
+     "url": "https://www.sgpilsen.cz/79-42-k41-gymnazium-se-sportovni-pripravou",
+     "title": "79-42-K/41 Gymnázium se sportovní přípravou – Sportovní gymnázium Plzeň",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola uvádí zaměření oboru včetně „VOLEJBAL - DÍVKY“; potvrzuje, že volejbalové zaměření pouze pro dívky škola nadále nabízí pod zápisem použitým v datech 2026.",
+     "applicable_period": "přijímací řízení 2026/2027 (aktuální stránka)"
+    },
+    {
+     "url": "https://www.stredniskoly.com/stredni-skoly-1/sportovni-gymnazium-plzen-1",
+     "title": "Sportovní gymnázium Plzeň – úspěšnost u přijímaček (zdroj dat CERMAT)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "„Volejbal - dívky“ (7942K41) s daty 2024 a 2026 a „volejbal jen dívky“ (7942K41) s daty 2025 – tentýž obor a zaměření vedené pod dvěma textovými zápisy; kapacita 6–7 míst, pouze dívky.",
+     "applicable_period": "2024–2026"
+    }
+   ],
+   "history_comparability": "comparable",
+   "recommended_action": "approve_mapping",
+   "related_task_ids": [],
+   "unanswered_questions": []
+  },
+  {
+   "issue_ids": [
+    "Q0286"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V roce 2026 se v datech CERMAT 1. kola JPZ objevuje nová nabídka „Gymnázium se sportovní přípravou – Sportovní střelba“ (79-42-K/41, ID_SOF 679f96a4-…), která v přiložených nabídkách roku 2025 u téže školy chybí.",
+    "Nejde však o zcela nové zaměření školy: agregátor Stredniskoly.com (zdroj dat CERMAT) eviduje „Sportovní střelba (7942K41)“ i pro rok 2024 (kapacita 3 místa, 0 přihlášek, 0 přijatých) a archivní kopie webu školy z roku 2020 uvádí v oboru 79-42-K/41 zaměření „ATLETIKA, JUDO, SPORTOVNÍ STŘELBA, PLAVÁNÍ, TENIS, VOLEJBAL-DÍVKY“.",
+    "Aktuální web školy pro přijímací řízení 2026/2027 uvádí zaměření „SPORTOVNÍ STŘELBA - PUŠKOVÉ DISCIPLÍNY“ a jmenuje trenéra sportovní střelby; katalog Stredniskoly.cz datovaný 25. 11. 2025 nabídku pro rok 2026 rovněž popisuje včetně „střelba - puškové disciplíny“.",
+    "Závěr o přesné podobě nabídky v roce 2025 (zda škola střelbu vypsala a CERMAT ji neevidoval samostatně, či zda ji v 2025 skutečně nevypsala) nelze z dostupných zdrojů úplně rozhodnout; absence v datech CERMAT 2025 sama o sobě zánik zaměření nedokazuje."
+   ],
+   "conclusion": "„Sportovní střelba“ je v roce 2026 obnovenou nabídkou zaměření, které škola v rámci oboru 79-42-K/41 nabízela již dříve (doloženo 2024 v datech CERMAT a 2020 na webu školy) a které v datech CERMAT 1. kola JPZ 2025 samostatně nevystupuje. Proti roku 2025 tedy jde formálně o novou nabídku, věcně však o obnovení po jednoroční přestávce, nikoli o nově zavedený obor či novou školu.",
+   "alternative_explanations": [
+    "Škola mohla střelbu v roce 2025 skutečně nevypsat (malá kapacita 2–3 místa, v 2024 nulový zájem) a pro 2026 ji obnovit.",
+    "Nelze vyloučit, že v roce 2025 byla střelba vypsána, ale v datech CERMAT 1. kola JPZ se neobjevila jako samostatná nabídka (např. administrativně sloučena pod jiné zaměření); to však přiložená data ani web nepodporují."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "2026: 79-42-K/41 Gymnázium se sportovní přípravou – Sportovní střelba, ID_SOF 679f96a4-a45c-4272-8da8-da00c9270b00"
+    ]
+   },
+   "addresses": [
+    {
+     "text": "Vejprnická 663/56, Skvrňany, 318 00 Plzeň",
+     "role": "sídlo",
+     "izo": "049778137",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600009459",
+     "title": "Přiložená data fronty – context_offers 2025 a 2026 pro REDIZO 600009459",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "V context_offers 2025 se střelba nevyskytuje (atletika, judo, plavání, tenis, volejbal), v context_offers 2026 je přítomna jako samostatná nabídka se stejným IZO a kódem KKOV.",
+     "applicable_period": "1. kolo JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://www.stredniskoly.com/stredni-skoly-1/sportovni-gymnazium-plzen-1",
+     "title": "Sportovní gymnázium Plzeň – úspěšnost u přijímaček (zdroj dat CERMAT)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "„Gymnázium se sportovní přípravou Sportovní střelba (7942K41)“ evidováno pro rok 2026 (kapacita 2, přihlášeni 2) i pro rok 2024 (kapacita 3, 0 přihlášek); rok 2025 u této položky chybí – dokládá obnovení nabídky po jednoroční přestávce.",
+     "applicable_period": "2024–2026"
+    },
+    {
+     "url": "https://www.sgpilsen.cz/79-42-k41-gymnazium-se-sportovni-pripravou",
+     "title": "79-42-K/41 Gymnázium se sportovní přípravou – Sportovní gymnázium Plzeň",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola pro přijímací řízení 2026/2027 uvádí zaměření „SPORTOVNÍ STŘELBA - PUŠKOVÉ DISCIPLÍNY“ včetně kontaktu na trenéra – nabídka je reálná a školou vypsaná.",
+     "applicable_period": "přijímací řízení 2026/2027 (aktuální stránka)"
+    },
+    {
+     "url": "https://www.stredniskoly.cz/skola/600009459.html",
+     "title": "Sportovní gymnázium Plzeň – Stredniskoly.cz",
+     "published_at": "2025-11-25",
+     "checked_at": "2026-09-12",
+     "supports": "Datovaný přehled přijímacího řízení 2026 uvádí obor 79-42-K/41 se zaměřeními „atletika, judo, plavání, střelba - puškové disciplíny, tenis, volejbal - dívky“.",
+     "applicable_period": "přijímací řízení 2026/2027"
+    },
+    {
+     "url": "https://matematickaberuska.cz/vysledky/2020/Plze%C5%88sk%C3%BD%20kraj/Plze%C5%88/www.sgpilsen.cz/79-42-K_41%20Gymn%C3%A1zium%20se%20sportovn%C3%AD%20p%C5%99%C3%ADpravou,%20t%C5%99%C3%ADda%20A%20_%20Sportovn%C3%AD%20gymn%C3%A1zium%20Plze%C5%88.html",
+     "title": "Archivní kopie webu školy (2020): 79-42-K/41 Gymnázium se sportovní přípravou, třída A",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Již v roce 2020 škola v oboru 79-42-K/41 uváděla zaměření „ATLETIKA, JUDO, SPORTOVNÍ STŘELBA, PLAVÁNÍ, TENIS, VOLEJBAL-DÍVKY“ – střelba je dlouhodobou součástí oboru, nikoli novinkou roku 2026.",
+     "applicable_period": "2020"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "approve_mapping",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Zda škola v 1. kole JPZ 2025 zaměření sportovní střelba skutečně nevypsala, nebo zda jen nebylo v datech CERMAT vedeno samostatně – Wayback Machine byl v době rešerše dočasně nedostupný, takže stav webu školy z jara 2025 nebylo možné ověřit."
+   ]
+  }
+ ]
 }

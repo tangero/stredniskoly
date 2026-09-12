@@ -90,8 +90,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Proč obor Kosmetické služby chyběl v nabídce 1. kola JPZ 2025, když je po celé období registrován."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Proč obor Kosmetické služby chyběl v nabídce 1. kola JPZ 2025, když je po celé období registrován.",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 1: příčina rozhodnutí školy se nezkoumá, pro návaznost nabídky není potřebná."
+    }
    ]
   },
   {

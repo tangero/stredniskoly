@@ -1,78 +1,88 @@
 {
-  "task_id": "R-600015572",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík potvrzuje kontinuitu subjektu: Soukromé gymnázium, střední odborná škola a jazyková škola s právem státní jazykové zkoušky, s.r.o. (REDIZO 600015572), sídlo Osvobození 699, 686 04 Kunovice, IZO 060370009 (Střední škola) figuruje beze změny ve všech čtyřech snímcích, se dvěma místy výuky (Osvobození 861; Osvobození 699, obojí Kunovice). Obor 63-41-M/01 Ekonomika a podnikání je registrován ve všech snímcích ve třech formách (denní, distanční, dobíhající kombinovaná); rejstřík na úrovni ŠVP/zaměření jednotlivé programy nerozlišuje."
-  },
-  "findings": [
+ "task_id": "R-600015572",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrzuje kontinuitu subjektu: Soukromé gymnázium, střední odborná škola a jazyková škola s právem státní jazykové zkoušky, s.r.o. (REDIZO 600015572), sídlo Osvobození 699, 686 04 Kunovice, IZO 060370009 (Střední škola) figuruje beze změny ve všech čtyřech snímcích, se dvěma místy výuky (Osvobození 861; Osvobození 699, obojí Kunovice). Obor 63-41-M/01 Ekonomika a podnikání je registrován ve všech snímcích ve třech formách (denní, distanční, dobíhající kombinovaná); rejstřík na úrovni ŠVP/zaměření jednotlivé programy nerozlišuje."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0292"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2026 škola nově nabízí v rámci oboru 63-41-M/01 Ekonomika a podnikání zaměření „Podnikání v kynologii“; v roce 2025 tato nabídka neexistovala, ostatní zaměření (Komerční právo, Ekonomika a bezpečnost podniku) i obory 18-20-M/01 a 79-41-K/41 pokračují beze změny.",
+    "Škola k tomuto zaměření provozuje samostatnou projektovou stránku (stredni.cz/projekt/kynologie), která uvádí „Začátek studia: září 2026“ a popisuje program jako kombinaci ekonomicko-administrativního vzdělání s kynologií.",
+    "Rejstřík MŠMT eviduje obor 63-41-M/01 Ekonomika a podnikání u IZO 060370009 nepřetržitě ve všech čtyřech snímcích, ale na úrovni ŠVP/zaměření jednotlivé programy nerozlišuje – zápis kódu RVP tedy novost konkrétního zaměření ani nepotvrzuje, ani nevyvrací."
+   ],
+   "conclusion": "Podnikání v kynologii je nové zaměření oboru 63-41-M/01 se zahájením výuky od září 2026, doložené samostatnou stránkou školy věnovanou tomuto programu a chybějící nabídkou v datech CERMAT za rok 2025.",
+   "alternative_explanations": [
+    "Stránka projektu explicitně neoznačuje program slovem „nový“; teoreticky mohlo jít o zaměření nabízené již dříve mimo JPZ nabídku, to však žádný dohledaný zdroj nenaznačuje."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "63-41-M/01 zaměření Podnikání v kynologii (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0292"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2026 škola nově nabízí v rámci oboru 63-41-M/01 Ekonomika a podnikání zaměření „Podnikání v kynologii“; v roce 2025 tato nabídka neexistovala, ostatní zaměření (Komerční právo, Ekonomika a bezpečnost podniku) i obory 18-20-M/01 a 79-41-K/41 pokračují beze změny.",
-        "Škola k tomuto zaměření provozuje samostatnou projektovou stránku (stredni.cz/projekt/kynologie), která uvádí „Začátek studia: září 2026“ a popisuje program jako kombinaci ekonomicko-administrativního vzdělání s kynologií.",
-        "Rejstřík MŠMT eviduje obor 63-41-M/01 Ekonomika a podnikání u IZO 060370009 nepřetržitě ve všech čtyřech snímcích, ale na úrovni ŠVP/zaměření jednotlivé programy nerozlišuje – zápis kódu RVP tedy novost konkrétního zaměření ani nepotvrzuje, ani nevyvrací."
-      ],
-      "conclusion": "Podnikání v kynologii je nové zaměření oboru 63-41-M/01 se zahájením výuky od září 2026, doložené samostatnou stránkou školy věnovanou tomuto programu a chybějící nabídkou v datech CERMAT za rok 2025.",
-      "alternative_explanations": [
-        "Stránka projektu explicitně neoznačuje program slovem „nový“; teoreticky mohlo jít o zaměření nabízené již dříve mimo JPZ nabídku, to však žádný dohledaný zdroj nenaznačuje."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["63-41-M/01 zaměření Podnikání v kynologii (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Osvobození 699, 686 04 Kunovice",
-          "role": "sídlo",
-          "izo": "600015572",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Osvobození 861; Osvobození 699, obojí 686 04 Kunovice",
-          "role": "nezjištěná",
-          "izo": "060370009",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://stredni.cz/projekt/kynologie/",
-          "title": "Podnikání v kynologii - SGaSOŠ, s.r.o.",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Samostatná stránka programu Podnikání v kynologii uvádí zahájení studia v září 2026 a popis oboru jako kombinace ekonomiky/podnikání s kynologií.",
-          "applicable_period": "od září 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 63-41-M/01 Ekonomika a podnikání registrován u IZO 060370009 nepřetržitě ve všech čtyřech snímcích; jednotlivá zaměření/ŠVP rejstřík neeviduje.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600015572",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Zaměření Podnikání v kynologii přítomno pouze v nabídce 2026, v roce 2025 chybí.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Nebylo dohledáno přesné datum schválení ŠVP zaměření ani zda proběhlo jednotné přijímací řízení s ostatními zaměřeními oboru."
-      ]
+     "text": "Osvobození 699, 686 04 Kunovice",
+     "role": "sídlo",
+     "izo": "600015572",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Osvobození 861; Osvobození 699, obojí 686 04 Kunovice",
+     "role": "nezjištěná",
+     "izo": "060370009",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://stredni.cz/projekt/kynologie/",
+     "title": "Podnikání v kynologii - SGaSOŠ, s.r.o.",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Samostatná stránka programu Podnikání v kynologii uvádí zahájení studia v září 2026 a popis oboru jako kombinace ekonomiky/podnikání s kynologií.",
+     "applicable_period": "od září 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 63-41-M/01 Ekonomika a podnikání registrován u IZO 060370009 nepřetržitě ve všech čtyřech snímcích; jednotlivá zaměření/ŠVP rejstřík neeviduje.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600015572",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Zaměření Podnikání v kynologii přítomno pouze v nabídce 2026, v roce 2025 chybí.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "decisions_required": [
+    "Nebylo dohledáno přesné datum schválení ŠVP zaměření ani zda proběhlo jednotné přijímací řízení s ostatními zaměřeními oboru."
+   ]
+  }
+ ]
 }

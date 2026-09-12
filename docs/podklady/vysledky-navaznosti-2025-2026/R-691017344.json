@@ -132,10 +132,20 @@
    "related_task_ids": [
     "R-600005950"
    ],
-   "unanswered_questions": [
-    "Doporučujeme přehodnotit nález úkolu R-600005950 u otázek Q0325 a Q0326 - jejich tehdejší závěr 'žádná z těchto nabídek nemá v datech 2025 obdobu' je touto rešerší vyvrácen nálezem obdoby v REDIZO 691017344.",
-    "Zda přeznačení zaměření pro budoucí psychology z 'Meda' (CERMAT 2026) na 'Alma' (aktuální web) proběhlo až po podání přihlášek, a zda jde o totéž zaměření nebo o jeho rozdělení.",
-    "Sbírku listin se odsud nepodařilo strojově otevřít: or.justice.cz vrací na dotaz podle IČO jen vyhledávací formulář, nový portál verejnerejstriky.msp.gov.cz je javascriptová aplikace a otevřená data dataor.justice.cz rovněž. Mechanismus a datum zániku proto zůstávají nedoložené; ARES dokládá jen to, že subjekt už ve veřejném rejstříku zapsán není."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Doporučujeme přehodnotit nález úkolu R-600005950 u otázek Q0325 a Q0326 - jejich tehdejší závěr 'žádná z těchto nabídek nemá v datech 2025 obdobu' je touto rešerší vyvrácen nálezem obdoby v REDIZO 691017344.",
+     "uzavreno": "Vyřízeno: nález úkolu R-600005950 u otázek Q0325 a Q0326 byl přepsán na sloučení se statusem pravděpodobné a odkazuje na tento úkol."
+    },
+    {
+     "otazka": "Sbírku listin se odsud nepodařilo strojově otevřít: or.justice.cz vrací na dotaz podle IČO jen vyhledávací formulář, nový portál verejnerejstriky.msp.gov.cz je javascriptová aplikace a otevřená data dataor.justice.cz rovněž. Mechanismus a datum zániku proto zůstávají nedoložené; ARES dokládá jen to, že subjekt už ve veřejném rejstříku zapsán není.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    },
+    {
+     "otazka": "Zda přeznačení zaměření pro budoucí psychology z 'Meda' (CERMAT 2026) na 'Alma' (aktuální web) proběhlo až po podání přihlášek, a zda jde o totéž zaměření nebo o jeho rozdělení.",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 1: příčina rozhodnutí školy se nezkoumá, pro návaznost nabídky není potřebná."
+    }
    ]
   }
  ]

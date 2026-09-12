@@ -1,6 +1,6 @@
 # Návaznost škol a oborů mezi roky — souhrnné zadání
 
-**Verze:** 1.1 · **Datum:** 12. 9. 2026 · **Stav:** rešerše dokončena pro všech 192 úkolů fronty; zápis návazností do katalogu, profily a nasazení zůstávají neprovedené.
+**Verze:** 1.2 · **Datum:** 12. 9. 2026 · **Stav:** rešerše dokončena pro všech 192 úkolů fronty; zápis návazností do katalogu, profily a nasazení zůstávají neprovedené.
 
 Tento dokument je vstupním bodem k celému úkolu. Platná rozhodnutí uživatele jsou uvedena níže a v zadání rešerše verze 1.1. Starší počty a návrhy v historii dokumentů nejsou aktuálním zadáním.
 
@@ -49,11 +49,11 @@ Všech 192 úkolů fronty má vlastní soubor výsledku a všech 436 otázek fro
 
 | Stav nálezu | Počet |
 |---|---:|
-| potvrzeno | 210 |
-| pravděpodobné | 42 |
-| rozpor zdrojů | 3 |
-| nedohledáno | 1 |
-| **nálezů celkem** | **256** |
+| potvrzeno | 216 |
+| pravděpodobné | 41 |
+| **nálezů celkem** | **257** |
+
+Žádný nález nezůstává ve stavu rozpor zdrojů ani nedohledáno. Zápis v číselníku je dokladem, že škola nebo obor po právu existuje, takže běh řešil jen místa, kde si zdroje odporují; `scripts/find-data-conflicts.py` jich dnes hlásí nula.
 
 | Typ vztahu | Počet | | Doporučená akce | Počet |
 |---|---:|---|---|---:|
@@ -67,7 +67,7 @@ Všech 192 úkolů fronty má vlastní soubor výsledku a všech 436 otázek fro
 
 Doporučená akce není schválením. `approve_mapping` znamená návrh k přijetí do migrační mapy, `record_only` pouhou evidenci beze změny statistik, `manual_review` případ, který vyžaduje rozhodnutí člověka.
 
-Nálezy nesly 227 otevřených otázek. Padesát tři je uzavřeno i s důvodem a dvě přesunuty mezi rozhodnutí k přezkumu, takže dnes jich zbývá 171 ve 122 úkolech. Rozbor podle cesty k uzavření je v [přehledu konfliktů](prehled-konfliktu-navaznosti.md).
+Nálezy nesly 227 otevřených otázek. Sto třicet devět je uzavřeno i s důvodem a 32 přesunuto mezi rozhodnutí k přezkumu, takže dnes jich zbývá 53 ve 47 úkolech a všechny čekají na data, která zatím neexistují. Rozbor podle cesty k uzavření je v [přehledu konfliktů](prehled-konfliktu-navaznosti.md).
 
 Srovnatelnost historických výsledků je posouzena samostatně od návaznosti: 59 nálezů srovnatelných, 44 částečně, 147 nesrovnatelných a 6 neurčených. Rešerše navrhuje 20 vazeb mezi úkoly, například mezi školami skupiny FOSTRA nebo mezi sloučeným učilištěm a jeho nástupcem.
 
@@ -112,6 +112,7 @@ Ze 461 externích odkazů odpovědělo 443 kódem 200. Zbývajících 18 rozebí
 | [Otevřené otázky](podklady/otevrene-otazky-navaznosti.json) | Zbývající otázky roztříděné podle cesty k uzavření |
 | [Dvouletý cyklus](dvoulety-cyklus-nabidky-oboru.md) | Obory vypisované obden, test proti datům 1. kola 2024 |
 | [Pokusné ověřování Lyceum](podklady/pokusne-overovani-lyceum-skoly.json) | 45 škol ze seznamu MŠMT s datem zápisu oboru |
+| [Spory v datech](podklady/spory-v-datech-2025-2026.json) | Výstup hledání rozporů mezi číselníky |
 | [Podklad cyklu](podklady/dvoulety-cyklus-2024-2026.json) | Stopa každé nepřiřazené nabídky v roce 2024 |
 
 ## 5. Reprodukce

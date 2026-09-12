@@ -112,9 +112,16 @@
     "R-691017280",
     "R-691017344"
    ],
-   "unanswered_questions": [
-    "Zda žáci případně přijatí pod REDIZO 691017328 v roce 2025 pokračují ve studiu v rámci skupiny FOSTRA.",
-    "Sbírku listin se odsud nepodařilo strojově otevřít: or.justice.cz vrací na dotaz podle IČO jen vyhledávací formulář, nový portál verejnerejstriky.msp.gov.cz je javascriptová aplikace a otevřená data dataor.justice.cz rovněž. Mechanismus a datum zániku proto zůstávají nedoložené; ARES dokládá jen to, že subjekt už ve veřejném rejstříku zapsán není."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda žáci případně přijatí pod REDIZO 691017328 v roce 2025 pokračují ve studiu v rámci skupiny FOSTRA.",
+     "uzavreno": "Mimo rozsah: úkol sleduje návaznost nabídek a organizací, nikoli osudy jednotlivých žáků. Pro mapování nabídek není odpověď potřebná."
+    },
+    {
+     "otazka": "Sbírku listin se odsud nepodařilo strojově otevřít: or.justice.cz vrací na dotaz podle IČO jen vyhledávací formulář, nový portál verejnerejstriky.msp.gov.cz je javascriptová aplikace a otevřená data dataor.justice.cz rovněž. Mechanismus a datum zániku proto zůstávají nedoložené; ARES dokládá jen to, že subjekt už ve veřejném rejstříku zapsán není.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    }
    ]
   }
  ]

@@ -124,13 +124,15 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Nebyl dohledán žádný regionální novinový článek (Českobudějovický/Jihočeský deník) ani prohlášení Jihočeského kraje, které by explicitně spojovalo vznik zaměření Technik jaderných zařízení s personální poptávkou JE Temelín."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Není zjištěno přesné datum rozhodnutí o zavedení zaměření Technik jaderných zařízení (pouze rámcově dovoditelné ze zápisu oboru do rejstříku k 31. 12. 2025 a z data zveřejnění související aktuality o ČEZ podpoře k 27. 11. 2025).",
      "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    },
+    {
+     "otazka": "Nebyl dohledán žádný regionální novinový článek (Českobudějovický/Jihočeský deník) ani prohlášení Jihočeského kraje, které by explicitně spojovalo vznik zaměření Technik jaderných zařízení s personální poptávkou JE Temelín.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v číselníku je dokladem, že existuje po právu. Běh řeší jen spory mezi zdroji, ne doplňující potvrzení."
     }
    ],
    "decisions_required": [

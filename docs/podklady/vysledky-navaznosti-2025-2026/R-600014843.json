@@ -1,89 +1,93 @@
 {
-  "task_id": "R-600014843",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": [
-      "2025-03-31",
-      "2025-12-31",
-      "2026-03-31",
-      "2026-06-30"
+ "task_id": "R-600014843",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "REDIZO 600014843 „Střední průmyslová škola Jihlava“ (sídlo třída Legionářů 1572/3, Jihlava) je ve všech čtyřech snímcích beze změny (třetí strany, např. infoabsolvent.cz, uvádějí školu i pod novým názvem „Střední škola průmyslová, technická a automobilní Jihlava“ – samotnou změnu názvu podklady nezkoumají). IZO 108047792 „Střední škola“ eviduje ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) shodně obor 78-42-M/01 Technické lyceum spolu s cca dvaceti dalšími strojírenskými, elektro a autoopravárenskými obory. Místa výuky (třída Legionářů, Jana Masaryka, Školní, Polenská) jsou ve všech snímcích shodná, jen pořadí adres v datovém výřezu k 31. 3. 2025 je jiné."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0089"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela obor 78-42-M/01 Technické lyceum; v 1. kole JPZ 2026 tato nabídka mezi devíti obory chybí, ostatní obory (Informační technologie, Strojírenství, Provozní technika, Mechanik seřizovač, Mechanik elektrotechnik, Provozní elektrotechnika, Elektrotechnika, Autotronik ve dvou formách) pokračují beze změny.",
+    "Rejstřík MŠMT eviduje obor 78-42-M/01 u IZO 108047792 beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) – obor formálně nebyl vyřazen.",
+    "Databáze infoabsolvent.cz (přebírající data o oborech od škol/MŠMT) u REDIZO 600014843 obor Technické lyceum mezi obory nabízenými pro přijímací řízení 2026/2027 neuvádí.",
+    "Přímý web školy (prumyslovkajihlava.cz) nebyl z tohoto pracovního prostředí dostupný (opakované selhání síťového spojení), přímé oznámení školy o (ne)otevření oboru pro 2026/27 se tak nepodařilo ověřit z primárního zdroje."
+   ],
+   "conclusion": "Obor 78-42-M/01 Technické lyceum škola pro školní rok 2026/27 pravděpodobně jen dočasně nepřijímá nové žáky – nabídka v CERMAT datech pro rok 2026 chybí a nezávislá databáze infoabsolvent.cz obor mezi aktuálně nabízenými neuvádí, obor ale zůstává registrován v rejstříku MŠMT i k 30. 6. 2026. Přímé oznámení školy se nepodařilo ověřit kvůli nedostupnosti webu školy, proto status „pravděpodobné“, nikoli „potvrzeno“.",
+   "alternative_explanations": [
+    "Obor mohl v CERMAT datech chybět jen technickou chybou přenosu nabídky, to registr ani infoabsolvent.cz nevylučují zcela jistě.",
+    "Obor může být v budoucnu opět nabízen – registrace trvá."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "78-42-M/01 (2025)"
     ],
-    "summary": "REDIZO 600014843 „Střední průmyslová škola Jihlava“ (sídlo třída Legionářů 1572/3, Jihlava) je ve všech čtyřech snímcích beze změny (třetí strany, např. infoabsolvent.cz, uvádějí školu i pod novým názvem „Střední škola průmyslová, technická a automobilní Jihlava“ – samotnou změnu názvu podklady nezkoumají). IZO 108047792 „Střední škola“ eviduje ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) shodně obor 78-42-M/01 Technické lyceum spolu s cca dvaceti dalšími strojírenskými, elektro a autoopravárenskými obory. Místa výuky (třída Legionářů, Jana Masaryka, Školní, Polenská) jsou ve všech snímcích shodná, jen pořadí adres v datovém výřezu k 31. 3. 2025 je jiné."
-  },
-  "findings": [
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": [
-        "Q0089"
-      ],
-      "status": "pravděpodobné",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela obor 78-42-M/01 Technické lyceum; v 1. kole JPZ 2026 tato nabídka mezi devíti obory chybí, ostatní obory (Informační technologie, Strojírenství, Provozní technika, Mechanik seřizovač, Mechanik elektrotechnik, Provozní elektrotechnika, Elektrotechnika, Autotronik ve dvou formách) pokračují beze změny.",
-        "Rejstřík MŠMT eviduje obor 78-42-M/01 u IZO 108047792 beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) – obor formálně nebyl vyřazen.",
-        "Databáze infoabsolvent.cz (přebírající data o oborech od škol/MŠMT) u REDIZO 600014843 obor Technické lyceum mezi obory nabízenými pro přijímací řízení 2026/2027 neuvádí.",
-        "Přímý web školy (prumyslovkajihlava.cz) nebyl z tohoto pracovního prostředí dostupný (opakované selhání síťového spojení), přímé oznámení školy o (ne)otevření oboru pro 2026/27 se tak nepodařilo ověřit z primárního zdroje."
-      ],
-      "conclusion": "Obor 78-42-M/01 Technické lyceum škola pro školní rok 2026/27 pravděpodobně jen dočasně nepřijímá nové žáky – nabídka v CERMAT datech pro rok 2026 chybí a nezávislá databáze infoabsolvent.cz obor mezi aktuálně nabízenými neuvádí, obor ale zůstává registrován v rejstříku MŠMT i k 30. 6. 2026. Přímé oznámení školy se nepodařilo ověřit kvůli nedostupnosti webu školy, proto status „pravděpodobné“, nikoli „potvrzeno“.",
-      "alternative_explanations": [
-        "Obor mohl v CERMAT datech chybět jen technickou chybou přenosu nabídky, to registr ani infoabsolvent.cz nevylučují zcela jistě.",
-        "Obor může být v budoucnu opět nabízen – registrace trvá."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": [
-          "78-42-M/01 (2025)"
-        ],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "třída Legionářů 1572/3, 586 01 Jihlava",
-          "role": "sídlo",
-          "izo": "600014843",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "třída Legionářů 1572/3, 586 01 Jihlava",
-          "role": "místo výuky",
-          "izo": "108047792",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 78-42-M/01 Technické lyceum zůstává u IZO 108047792 registrován.",
-          "applicable_period": "stav rejstříku k 2026-06-30"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600014843",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 78-42-M/01 Technické lyceum přítomna v roce 2025 a chybějící v roce 2026.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        },
-        {
-          "url": "https://infoabsolvent.cz/Skoly/Skola/600014843/Stredni-skola-prumyslova-technicka-automobilni-/SOS?kodOboru=1820M01",
-          "title": "Střední škola průmyslová, technická a automobilní Jihlava (infoabsolvent.cz)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor Technické lyceum (78-42-M/01) není v aktuálním seznamu oborů školy pro 2026/2027 uveden.",
-          "applicable_period": "aktuální nabídka oborů (2026)"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Přímé oznámení školy prumyslovkajihlava.cz o (ne)otevření oboru pro 2026/27 nebylo možné ověřit – web nebyl z tohoto prostředí síťově dostupný."
-      ]
+     "text": "třída Legionářů 1572/3, 586 01 Jihlava",
+     "role": "sídlo",
+     "izo": "600014843",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "třída Legionářů 1572/3, 586 01 Jihlava",
+     "role": "místo výuky",
+     "izo": "108047792",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/01 Technické lyceum zůstává u IZO 108047792 registrován.",
+     "applicable_period": "stav rejstříku k 2026-06-30"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600014843",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 78-42-M/01 Technické lyceum přítomna v roce 2025 a chybějící v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://infoabsolvent.cz/Skoly/Skola/600014843/Stredni-skola-prumyslova-technicka-automobilni-/SOS?kodOboru=1820M01",
+     "title": "Střední škola průmyslová, technická a automobilní Jihlava (infoabsolvent.cz)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor Technické lyceum (78-42-M/01) není v aktuálním seznamu oborů školy pro 2026/2027 uveden.",
+     "applicable_period": "aktuální nabídka oborů (2026)"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přímé oznámení školy prumyslovkajihlava.cz o (ne)otevření oboru pro 2026/27 nebylo možné ověřit – web nebyl z tohoto prostředí síťově dostupný.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    }
+   ]
+  }
+ ]
 }

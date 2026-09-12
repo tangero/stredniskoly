@@ -141,13 +141,15 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Není doloženo, ve kterém z pracovišť školy (sady Na Polabí 411/72, K Učilišti 2566, K Učilišti 2183) se obor 78-42-M/08 fakticky vyučuje."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Přesné číslo jednací a plné znění vyhlášení pokusného ověřování MŠMT (a jeho dodatků) se nepodařilo dohledat na aktuálním webu msmt.gov.cz – staré odkazy na soubory vedou na chybovou stránku.",
      "uzavreno": "Doloženo seznamem škol MŠMT k pokusnému ověřování oboru Lyceum (archiv.msmt.gov.cz, platný k 15. 12. 2025) a čísly jednacími vyhlášení."
+    },
+    {
+     "otazka": "Není doloženo, ve kterém z pracovišť školy (sady Na Polabí 411/72, K Učilišti 2566, K Učilišti 2183) se obor 78-42-M/08 fakticky vyučuje.",
+     "uzavreno": "Mimo rozsah tohoto běhu: otázka patří k úkolu doložení míst výuky pro dojezdovost, případně k formám studia mimo denní nezkrácené studium."
     }
    ]
   }

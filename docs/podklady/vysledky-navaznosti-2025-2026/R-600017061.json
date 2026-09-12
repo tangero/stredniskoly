@@ -106,8 +106,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda obor Gastronomie (samostatně, bez kombinace s Kuchařem-číšníkem) byl školou v minulosti v denní JPZ formě vůbec nabízen, případně kdy naposledy."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda obor Gastronomie (samostatně, bez kombinace s Kuchařem-číšníkem) byl školou v minulosti v denní JPZ formě vůbec nabízen, případně kdy naposledy.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v číselníku je dokladem, že existuje po právu. Běh řeší jen spory mezi zdroji, ne doplňující potvrzení."
+    }
    ]
   }
  ]

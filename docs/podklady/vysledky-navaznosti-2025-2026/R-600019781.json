@@ -142,13 +142,15 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Přesný důvod přerušení přijímacího řízení do Sociální činnosti ve školních letech 2023/2024 a 2024/2025 (zájem uchazečů, kapacita, personální důvody) se nepodařilo dohledat a nebyl dle zadání dále zkoumán."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Nebylo ověřeno, zda škola obor Sociální činnost nabízela v dalších kolech přijímacího řízení mimo 1. kolo JPZ v letech, kdy chybí v datech CERMAT.",
      "uzavreno": "Odpovězeno z dat CERMAT dostupných v repozitáři: data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2024_kolo2_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx, data/PZ2026_kolo1_skolobory_kapacity.xlsx"
+    },
+    {
+     "otazka": "Přesný důvod přerušení přijímacího řízení do Sociální činnosti ve školních letech 2023/2024 a 2024/2025 (zájem uchazečů, kapacita, personální důvody) se nepodařilo dohledat a nebyl dle zadání dále zkoumán.",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 1: příčina samotné změny se nezkoumá. Pro návaznost nabídky není důvod rozhodnutí školy potřebný."
     }
    ]
   }

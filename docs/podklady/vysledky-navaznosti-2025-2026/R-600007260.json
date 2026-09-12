@@ -1,97 +1,110 @@
 {
-  "task_id": "R-600007260",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) potvrzuje beze změny subjekt Střední odborná škola a Střední odborné učiliště dopravní Čáslav, příspěvková organizace (REDIZO 600007260, IČ 14801973) se sídlem Aug. Sedláčka 1145/2, Čáslav-Nové Město, a IZO 107820668 (Střední škola) s jediným místem výuky na téže adrese. Škola tedy mezi ročníky pokračuje beze změny identity i adresy. Naproti tomu obor 23-45-M/01 Dopravní prostředky není pod IZO 107820668 registrován v žádném ze čtyř snímků (ani k 30. 6. 2026) — rejstřík eviduje pouze obory Autotronik, Požární ochrana, Mechanik opravář motorových vozidel, Karosář a Autoelektrikář. Zápis nového oboru se tak do snímků rejstříku zřejmě ještě nepromítl."
-  },
-  "findings": [
+ "task_id": "R-600007260",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) potvrzuje beze změny subjekt Střední odborná škola a Střední odborné učiliště dopravní Čáslav, příspěvková organizace (REDIZO 600007260, IČ 14801973) se sídlem Aug. Sedláčka 1145/2, Čáslav-Nové Město, a IZO 107820668 (Střední škola) s jediným místem výuky na téže adrese. Škola tedy mezi ročníky pokračuje beze změny identity i adresy. Naproti tomu obor 23-45-M/01 Dopravní prostředky není pod IZO 107820668 registrován v žádném ze čtyř snímků (ani k 30. 6. 2026) — rejstřík eviduje pouze obory Autotronik, Požární ochrana, Mechanik opravář motorových vozidel, Karosář a Autoelektrikář. Zápis nového oboru se tak do snímků rejstříku zřejmě ještě nepromítl."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0315"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V datech CERMAT z 1. kola JPZ má škola (REDIZO 600007260, IZO 107820668, SOŠ a SOU dopravní, Aug. Sedláčka 1145, Čáslav) v roce 2025 dvě nabídky denního studia — Požární ochrana (39-08-M/01) a Autotronik (39-41-L/01) — a v roce 2026 tytéž dva obory plus navíc Dopravní prostředky (23-45-M/01), čtyřletý maturitní obor. Název školy, IZO i adresa jsou v obou letech totožné.",
+    "Rejstřík MŠMT ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) potvrzuje kontinuitu subjektu i IZO 107820668 na stejné adrese; žádné sloučení, rozdělení ani změna sídla se nekonala.",
+    "Web školy (dscaslav.cz) v aktualitě „Od 1. 9. 2026 otevíráme perspektivní maturitní obor Dopravní prostředky“ přímo uvádí, že jde o nově otevíraný obor; samostatná stránka oboru popisuje Dopravní prostředky (23-45-M/01) jako čtyřletý studijní obor s maturitou s kapacitou 24 uchazečů, zaměřený na diagnostiku a servis silničních vozidel.",
+    "Obor 23-45-M/01 není v rejstříku pod IZO 107820668 registrován v žádném dostupném snímku (naposledy k 30. 6. 2026). To nevyvrací novost oboru — škola nabídku v přijímacím řízení 2026 skutečně vypsala a na webu otevření od 1. 9. 2026 oznámila — ale zápis do rejstříku se zřejmě uskutečnil až po datu posledního snímku, případně se do otevřených dat ještě nepropsal.",
+    "Obsahově je obor blízký automobilním oborům školy (Autotronik, Mechanik opravář motorových vozidel), nicméně Autotronik v nabídce 2026 pokračuje vedle něj, takže nejde o přejmenování ani náhradu existující nabídky."
+   ],
+   "conclusion": "Nabídka Dopravní prostředky (23-45-M/01) je nově otevřený maturitní obor školy SOŠ a SOU dopravní Čáslav (IZO 107820668), poprvé vypsaný v přijímacím řízení pro školní rok 2026/2027 (zahájení výuky od 1. 9. 2026). Nepokračuje v žádném oboru z roku 2025 — škola sama jej na svém webu označuje za nově otevíraný a všechny obory z roku 2025 v nabídce 2026 pokračují beze změny. Obor proto nemá historického předchůdce a nemá se k němu přiřazovat žádná statistika z dřívějších let.",
+   "alternative_explanations": [
+    "Teoreticky mohl být obor registrován dříve pod jiným IZO či subjektem a škola jej převzala; žádný zdroj (rejstřík ani web) však takové převzetí nenaznačuje a škola obor prezentuje jako vlastní novinku.",
+    "Absence zápisu 23-45-M/01 ve snímcích rejstříku do 30. 6. 2026 může znamenat pouze prodlevu evidence; nelze z ní vyvozovat, že obor nebyl k přijímacímu řízení 2026 řádně připraven."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "izo_107820668|23-45-M/01|Dopravní prostředky"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0315"],
-      "status": "potvrzeno",
-      "observations": [
-        "V datech CERMAT z 1. kola JPZ má škola (REDIZO 600007260, IZO 107820668, SOŠ a SOU dopravní, Aug. Sedláčka 1145, Čáslav) v roce 2025 dvě nabídky denního studia — Požární ochrana (39-08-M/01) a Autotronik (39-41-L/01) — a v roce 2026 tytéž dva obory plus navíc Dopravní prostředky (23-45-M/01), čtyřletý maturitní obor. Název školy, IZO i adresa jsou v obou letech totožné.",
-        "Rejstřík MŠMT ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) potvrzuje kontinuitu subjektu i IZO 107820668 na stejné adrese; žádné sloučení, rozdělení ani změna sídla se nekonala.",
-        "Web školy (dscaslav.cz) v aktualitě „Od 1. 9. 2026 otevíráme perspektivní maturitní obor Dopravní prostředky“ přímo uvádí, že jde o nově otevíraný obor; samostatná stránka oboru popisuje Dopravní prostředky (23-45-M/01) jako čtyřletý studijní obor s maturitou s kapacitou 24 uchazečů, zaměřený na diagnostiku a servis silničních vozidel.",
-        "Obor 23-45-M/01 není v rejstříku pod IZO 107820668 registrován v žádném dostupném snímku (naposledy k 30. 6. 2026). To nevyvrací novost oboru — škola nabídku v přijímacím řízení 2026 skutečně vypsala a na webu otevření od 1. 9. 2026 oznámila — ale zápis do rejstříku se zřejmě uskutečnil až po datu posledního snímku, případně se do otevřených dat ještě nepropsal.",
-        "Obsahově je obor blízký automobilním oborům školy (Autotronik, Mechanik opravář motorových vozidel), nicméně Autotronik v nabídce 2026 pokračuje vedle něj, takže nejde o přejmenování ani náhradu existující nabídky."
-      ],
-      "conclusion": "Nabídka Dopravní prostředky (23-45-M/01) je nově otevřený maturitní obor školy SOŠ a SOU dopravní Čáslav (IZO 107820668), poprvé vypsaný v přijímacím řízení pro školní rok 2026/2027 (zahájení výuky od 1. 9. 2026). Nepokračuje v žádném oboru z roku 2025 — škola sama jej na svém webu označuje za nově otevíraný a všechny obory z roku 2025 v nabídce 2026 pokračují beze změny. Obor proto nemá historického předchůdce a nemá se k němu přiřazovat žádná statistika z dřívějších let.",
-      "alternative_explanations": [
-        "Teoreticky mohl být obor registrován dříve pod jiným IZO či subjektem a škola jej převzala; žádný zdroj (rejstřík ani web) však takové převzetí nenaznačuje a škola obor prezentuje jako vlastní novinku.",
-        "Absence zápisu 23-45-M/01 ve snímcích rejstříku do 30. 6. 2026 může znamenat pouze prodlevu evidence; nelze z ní vyvozovat, že obor nebyl k přijímacímu řízení 2026 řádně připraven."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["izo_107820668|23-45-M/01|Dopravní prostředky"]
-      },
-      "addresses": [
-        {
-          "text": "Aug. Sedláčka 1145/2, Čáslav-Nové Město, 286 01 (RÚIAN 11631805)",
-          "role": "sídlo",
-          "izo": "107820668",
-          "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Aug. Sedláčka 1145/2, Čáslav-Nové Město (RÚIAN 11631805)",
-          "role": "místo výuky",
-          "izo": "107820668",
-          "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600007260",
-          "title": "Data CERMAT z 1. kola JPZ 2025 a 2026 přiložená k úkolu",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídky školy v obou letech: 2025 Požární ochrana a Autotronik, 2026 navíc Dopravní prostředky (23-45-M/01); totožné IZO, název i adresa.",
-          "applicable_period": "přijímací řízení 2025 a 2026"
-        },
-        {
-          "url": "https://dscaslav.cz/aktuality/-/novy-obor-dopravni-prostredky-23-45-m01",
-          "title": "Od 1. 9. 2026 otevíráme perspektivní maturitní obor Dopravní prostředky",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola sama oznamuje nově otevíraný obor Dopravní prostředky s výukou od 1. 9. 2026; titulek aktuality přímo dokládá novost oboru.",
-          "applicable_period": "školní rok 2026/2027"
-        },
-        {
-          "url": "https://dscaslav.cz/uchazeci/obory-studia/dopravni-prostredky",
-          "title": "Maturitní – Dopravní prostředky – SOŠ a SOU dopravní Čáslav",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Prezentace oboru Dopravní prostředky (23-45-M/01) jako čtyřletého maturitního oboru s kapacitou 24 uchazečů na webu školy.",
-          "applicable_period": "aktuální web (ověřeno 12. 9. 2026)"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2025",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Kontinuita subjektu a IZO 107820668 na adrese Aug. Sedláčka 1145/2; registrované obory bez 23-45-M/01.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení – snímek k 30. 6. 2026",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Subjekt i IZO 107820668 beze změny; obor 23-45-M/01 dosud neevidován (registrované obory: Autotronik, Požární ochrana, Mechanik opravář MV, Karosář, Autoelektrikář).",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Kdy přesně byl obor 23-45-M/01 zapsán do rejstříku MŠMT (poslední dostupný snímek k 30. 6. 2026 jej ještě neeviduje)?"
-      ]
+     "text": "Aug. Sedláčka 1145/2, Čáslav-Nové Město, 286 01 (RÚIAN 11631805)",
+     "role": "sídlo",
+     "izo": "107820668",
+     "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Aug. Sedláčka 1145/2, Čáslav-Nové Město (RÚIAN 11631805)",
+     "role": "místo výuky",
+     "izo": "107820668",
+     "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600007260",
+     "title": "Data CERMAT z 1. kola JPZ 2025 a 2026 přiložená k úkolu",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídky školy v obou letech: 2025 Požární ochrana a Autotronik, 2026 navíc Dopravní prostředky (23-45-M/01); totožné IZO, název i adresa.",
+     "applicable_period": "přijímací řízení 2025 a 2026"
+    },
+    {
+     "url": "https://dscaslav.cz/aktuality/-/novy-obor-dopravni-prostredky-23-45-m01",
+     "title": "Od 1. 9. 2026 otevíráme perspektivní maturitní obor Dopravní prostředky",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola sama oznamuje nově otevíraný obor Dopravní prostředky s výukou od 1. 9. 2026; titulek aktuality přímo dokládá novost oboru.",
+     "applicable_period": "školní rok 2026/2027"
+    },
+    {
+     "url": "https://dscaslav.cz/uchazeci/obory-studia/dopravni-prostredky",
+     "title": "Maturitní – Dopravní prostředky – SOŠ a SOU dopravní Čáslav",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Prezentace oboru Dopravní prostředky (23-45-M/01) jako čtyřletého maturitního oboru s kapacitou 24 uchazečů na webu školy.",
+     "applicable_period": "aktuální web (ověřeno 12. 9. 2026)"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2025",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Kontinuita subjektu a IZO 107820668 na adrese Aug. Sedláčka 1145/2; registrované obory bez 23-45-M/01.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení – snímek k 30. 6. 2026",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Subjekt i IZO 107820668 beze změny; obor 23-45-M/01 dosud neevidován (registrované obory: Autotronik, Požární ochrana, Mechanik opravář MV, Karosář, Autoelektrikář).",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Kdy přesně byl obor 23-45-M/01 zapsán do rejstříku MŠMT (poslední dostupný snímek k 30. 6. 2026 jej ještě neeviduje)?",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    }
+   ]
+  }
+ ]
 }

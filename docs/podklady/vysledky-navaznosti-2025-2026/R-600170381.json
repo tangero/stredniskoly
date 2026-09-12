@@ -1,99 +1,103 @@
 {
-  "task_id": "R-600170381",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": [
-      "2025-03-31",
-      "2025-12-31",
-      "2026-03-31",
-      "2026-06-30"
+ "task_id": "R-600170381",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrdil plnou kontinuitu subjektu: Střední odborná škola a Střední odborné učiliště, Milevsko, Čs. armády 777 (REDIZO 600170381) figuruje beze změny ve všech čtyřech snímcích, včetně IZO 130002372 (Střední škola, místa výuky Čs. armády 777 Milevsko a Veselíčko 91). Seznam registrovaných oborů je ve všech čtyřech snímcích identický (23 položek včetně dobíhajících variant), obor 23-44-L/01 Mechanik strojů a zařízení je zapsán nepřetržitě po celé sledované období."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0382"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "V 1. kole JPZ 2025 škola v datech úkolu nabízela jen jeden maturitní obor (75-41-M/01 Sociální činnost); v 1. kole JPZ 2026 přibyl druhý maturitní obor 23-44-L/01 Mechanik strojů a zařízení.",
+    "Obor 23-44-L/01 Mechanik strojů a zařízení je evidován v rejstříku MŠMT u IZO 130002372 nepřetržitě ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) - zápis oboru se v datech nemění.",
+    "Web školy (issou-milevsko.cz) k datu rešerše prezentuje obor Mechanik strojů a zařízení jako standardní součást aktuální nabídky maturitních oborů (vlastní stránka oboru i zařazení mezi maturitní obory na stránce pro uchazeče), bez zmínky o novém zahájení či obnovení přijímacího řízení.",
+    "Přímé oznámení školy nebo zřizovatele o (ne)vyhlášení přijímacího řízení do tohoto oboru pro rok 2025 se nepodařilo dohledat."
+   ],
+   "conclusion": "Obor 23-44-L/01 není nový obor - v rejstříku MŠMT existuje po celé sledované období. Chybějící nabídka v CERMAT datech pro rok 2025 a její objevení v roce 2026 odpovídá spíše obnovení/zahájení přijímacího řízení do již registrovaného oboru než vzniku nového oboru; přímý zdroj popisující rozhodnutí o (ne)otevření pro rok 2025 se však nepodařilo dohledat, proto závěr zůstává na úrovni pravděpodobnosti.",
+   "alternative_explanations": [
+    "Nelze s jistotou vyloučit, že škola obor v roce 2025 nabízela, ale záznam z CERMAT datové sady z jiného důvodu chybí.",
+    "Škola mohla obor v roce 2025 nevypsat kvůli nízkému zájmu uchazečů a v roce 2026 přijímací řízení obnovit bez zvláštního veřejného oznámení."
+   ],
+   "relationship": {
+    "type": "continuation",
+    "from": [
+     "23-44-L/01 Mechanik strojů a zařízení (registrace, 2025)"
     ],
-    "summary": "Rejstřík potvrdil plnou kontinuitu subjektu: Střední odborná škola a Střední odborné učiliště, Milevsko, Čs. armády 777 (REDIZO 600170381) figuruje beze změny ve všech čtyřech snímcích, včetně IZO 130002372 (Střední škola, místa výuky Čs. armády 777 Milevsko a Veselíčko 91). Seznam registrovaných oborů je ve všech čtyřech snímcích identický (23 položek včetně dobíhajících variant), obor 23-44-L/01 Mechanik strojů a zařízení je zapsán nepřetržitě po celé sledované období."
-  },
-  "findings": [
+    "to": [
+     "23-44-L/01 Mechanik strojů a zařízení (nabídka 2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": [
-        "Q0382"
-      ],
-      "status": "pravděpodobné",
-      "observations": [
-        "V 1. kole JPZ 2025 škola v datech úkolu nabízela jen jeden maturitní obor (75-41-M/01 Sociální činnost); v 1. kole JPZ 2026 přibyl druhý maturitní obor 23-44-L/01 Mechanik strojů a zařízení.",
-        "Obor 23-44-L/01 Mechanik strojů a zařízení je evidován v rejstříku MŠMT u IZO 130002372 nepřetržitě ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) - zápis oboru se v datech nemění.",
-        "Web školy (issou-milevsko.cz) k datu rešerše prezentuje obor Mechanik strojů a zařízení jako standardní součást aktuální nabídky maturitních oborů (vlastní stránka oboru i zařazení mezi maturitní obory na stránce pro uchazeče), bez zmínky o novém zahájení či obnovení přijímacího řízení.",
-        "Přímé oznámení školy nebo zřizovatele o (ne)vyhlášení přijímacího řízení do tohoto oboru pro rok 2025 se nepodařilo dohledat."
-      ],
-      "conclusion": "Obor 23-44-L/01 není nový obor - v rejstříku MŠMT existuje po celé sledované období. Chybějící nabídka v CERMAT datech pro rok 2025 a její objevení v roce 2026 odpovídá spíše obnovení/zahájení přijímacího řízení do již registrovaného oboru než vzniku nového oboru; přímý zdroj popisující rozhodnutí o (ne)otevření pro rok 2025 se však nepodařilo dohledat, proto závěr zůstává na úrovni pravděpodobnosti.",
-      "alternative_explanations": [
-        "Nelze s jistotou vyloučit, že škola obor v roce 2025 nabízela, ale záznam z CERMAT datové sady z jiného důvodu chybí.",
-        "Škola mohla obor v roce 2025 nevypsat kvůli nízkému zájmu uchazečů a v roce 2026 přijímací řízení obnovit bez zvláštního veřejného oznámení."
-      ],
-      "relationship": {
-        "type": "continuation",
-        "from": [
-          "23-44-L/01 Mechanik strojů a zařízení (registrace, 2025)"
-        ],
-        "to": [
-          "23-44-L/01 Mechanik strojů a zařízení (nabídka 2026)"
-        ]
-      },
-      "addresses": [
-        {
-          "text": "Čs. armády 777, 399 01 Milevsko",
-          "role": "sídlo",
-          "izo": "600170381",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Čs. armády 777, 399 01 Milevsko",
-          "role": "místo výuky",
-          "izo": "130002372",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://issou-milevsko.cz/mechanik-stroju-a-zarizeni/",
-          "title": "Mechanik strojů a zařízení – SOŠ a SOU Milevsko",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor je aktuálně prezentován jako čtyřletý maturitní obor součástí nabídky školy, bez zmínky o novém zahájení.",
-          "applicable_period": "stav webu k datu rešerše, září 2026"
-        },
-        {
-          "url": "https://issou-milevsko.cz/uchazeci-o-studium-2/",
-          "title": "Uchazeči o studium – SOŠ a SOU Milevsko",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor Mechanik strojů a zařízení je uveden mezi standardními maturitními obory nabízenými pro přijímací řízení, bez rozlišení nového/obnoveného stavu.",
-          "applicable_period": "stav webu k datu rešerše, září 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 23-44-L/01 zůstává u IZO 130002372 registrován ve všech čtyřech snímcích beze změny.",
-          "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600170381",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 23-44-L/01 chybí v 1. kole JPZ 2025 a objevuje se v 1. kole JPZ 2026.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda a z jakého důvodu škola v roce 2025 do oboru 23-44-L/01 nevyhlásila přijímací řízení."
-      ]
+     "text": "Čs. armády 777, 399 01 Milevsko",
+     "role": "sídlo",
+     "izo": "600170381",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Čs. armády 777, 399 01 Milevsko",
+     "role": "místo výuky",
+     "izo": "130002372",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://issou-milevsko.cz/mechanik-stroju-a-zarizeni/",
+     "title": "Mechanik strojů a zařízení – SOŠ a SOU Milevsko",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor je aktuálně prezentován jako čtyřletý maturitní obor součástí nabídky školy, bez zmínky o novém zahájení.",
+     "applicable_period": "stav webu k datu rešerše, září 2026"
+    },
+    {
+     "url": "https://issou-milevsko.cz/uchazeci-o-studium-2/",
+     "title": "Uchazeči o studium – SOŠ a SOU Milevsko",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor Mechanik strojů a zařízení je uveden mezi standardními maturitními obory nabízenými pro přijímací řízení, bez rozlišení nového/obnoveného stavu.",
+     "applicable_period": "stav webu k datu rešerše, září 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 23-44-L/01 zůstává u IZO 130002372 registrován ve všech čtyřech snímcích beze změny.",
+     "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600170381",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 23-44-L/01 chybí v 1. kole JPZ 2025 a objevuje se v 1. kole JPZ 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda a z jakého důvodu škola v roce 2025 do oboru 23-44-L/01 nevyhlásila přijímací řízení.",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 1: příčina rozhodnutí školy se nezkoumá, pro návaznost nabídky není potřebná."
+    }
+   ]
+  }
+ ]
 }

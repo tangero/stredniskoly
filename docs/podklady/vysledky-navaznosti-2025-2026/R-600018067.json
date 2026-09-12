@@ -1,90 +1,102 @@
 {
-  "task_id": "R-600018067",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu: Střední škola sociální péče a služeb, Zábřeh, nám. 8. května 2 (REDIZO 600018067, IČ 00409014), sídlo náměstí 8. května 253/2, beze změny ve všech čtyřech snímcích. IZO 108014193 „Střední škola\" má shodná místa výuky ve všech snímcích (Žádlovice/Loštice, Dvorská 270/17, náměstí 8. května 253/2, Bezručova 476/2, Dvorská 2374/19 – vše Zábřeh). Obor 75-41-M/01 Sociální činnost je evidován beze změny (denní i dálková forma) po celé období. Rejstřík zaměření uvnitř oboru neeviduje – ta jsou vnitřní záležitostí ŠVP."
-  },
-  "findings": [
+ "task_id": "R-600018067",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu: Střední škola sociální péče a služeb, Zábřeh, nám. 8. května 2 (REDIZO 600018067, IČ 00409014), sídlo náměstí 8. května 253/2, beze změny ve všech čtyřech snímcích. IZO 108014193 „Střední škola\" má shodná místa výuky ve všech snímcích (Žádlovice/Loštice, Dvorská 270/17, náměstí 8. května 253/2, Bezručova 476/2, Dvorská 2374/19 – vše Zábřeh). Obor 75-41-M/01 Sociální činnost je evidován beze změny (denní i dálková forma) po celé období. Rejstřík zaměření uvnitř oboru neeviduje – ta jsou vnitřní záležitostí ŠVP."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0126",
+    "Q0127",
+    "Q0334"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela obor 75-41-M/01 Sociální činnost ve dvou nabídkách se zaměřeními „sociálně správní činnost\" a „sociálně výchovná činnost\".",
+    "V 1. kole JPZ 2026 stejný kód 75-41-M/01 Sociální činnost figuruje jako jediná nabídka bez uvedeného zaměření.",
+    "Aktuální stránka oboru na webu školy (ssspzabreh.cz/obory/socialni-cinnost) popisuje Sociální činnost jako jeden ucelený čtyřletý maturitní program s jedním profilem absolventa a jedním seznamem odborných předmětů; text neobsahuje žádnou zmínku o zaměřeních „sociálně správní\" ani „sociálně výchovná činnost\".",
+    "Ostatní obory školy (učební obory Kuchař-číšník, Zahradník, Zemědělec-farmář, Pekař, nástavbové a dálkové studium) zůstávají podle webu i registru beze změny."
+   ],
+   "conclusion": "Obor 75-41-M/01 Sociální činnost pokračuje beze změny kódu, ale škola pro přijímací řízení nejpozději od školního roku 2026/27 opustila dřívější dělení na dvě zaměření (sociálně správní činnost / sociálně výchovná činnost) a nabízí jednotný, nerozčleněný program – to odpovídá jak CERMAT nabídce 2026 (jedna nabídka bez zaměření), tak současné podobě webové prezentace oboru, která žádná zaměření neuvádí.",
+   "alternative_explanations": [
+    "Zaměření mohla zůstat zachována jen jako interní volitelné bloky/semináře v rámci jednotného ŠVP, aniž by se promítla do marketingové prezentace oboru na webu; k tomu ale nebyl nalezen žádný podpůrný zdroj."
+   ],
+   "relationship": {
+    "type": "continuation",
+    "from": [
+     "75-41-M/01 Sociální činnost - sociálně správní činnost (2025)",
+     "75-41-M/01 Sociální činnost - sociálně výchovná činnost (2025)"
+    ],
+    "to": [
+     "75-41-M/01 Sociální činnost, bez zaměření (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0126", "Q0127", "Q0334"],
-      "status": "pravděpodobné",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela obor 75-41-M/01 Sociální činnost ve dvou nabídkách se zaměřeními „sociálně správní činnost\" a „sociálně výchovná činnost\".",
-        "V 1. kole JPZ 2026 stejný kód 75-41-M/01 Sociální činnost figuruje jako jediná nabídka bez uvedeného zaměření.",
-        "Aktuální stránka oboru na webu školy (ssspzabreh.cz/obory/socialni-cinnost) popisuje Sociální činnost jako jeden ucelený čtyřletý maturitní program s jedním profilem absolventa a jedním seznamem odborných předmětů; text neobsahuje žádnou zmínku o zaměřeních „sociálně správní\" ani „sociálně výchovná činnost\".",
-        "Ostatní obory školy (učební obory Kuchař-číšník, Zahradník, Zemědělec-farmář, Pekař, nástavbové a dálkové studium) zůstávají podle webu i registru beze změny."
-      ],
-      "conclusion": "Obor 75-41-M/01 Sociální činnost pokračuje beze změny kódu, ale škola pro přijímací řízení nejpozději od školního roku 2026/27 opustila dřívější dělení na dvě zaměření (sociálně správní činnost / sociálně výchovná činnost) a nabízí jednotný, nerozčleněný program – to odpovídá jak CERMAT nabídce 2026 (jedna nabídka bez zaměření), tak současné podobě webové prezentace oboru, která žádná zaměření neuvádí.",
-      "alternative_explanations": [
-        "Zaměření mohla zůstat zachována jen jako interní volitelné bloky/semináře v rámci jednotného ŠVP, aniž by se promítla do marketingové prezentace oboru na webu; k tomu ale nebyl nalezen žádný podpůrný zdroj."
-      ],
-      "relationship": {
-        "type": "continuation",
-        "from": [
-          "75-41-M/01 Sociální činnost - sociálně správní činnost (2025)",
-          "75-41-M/01 Sociální činnost - sociálně výchovná činnost (2025)"
-        ],
-        "to": ["75-41-M/01 Sociální činnost, bez zaměření (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "náměstí 8. května 253/2, 789 01 Zábřeh",
-          "role": "sídlo",
-          "izo": "600018067",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "náměstí 8. května 253/2, 789 01 Zábřeh (jedno z více míst výuky IZO 108014193, škola má i pracoviště Dvorská 270/17, Dvorská 2374/19, Bezručova 476/2 a Žádlovice/Loštice)",
-          "role": "místo výuky",
-          "izo": "108014193",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.ssspzabreh.cz/obory/socialni-cinnost",
-          "title": "Sociální činnost – Střední škola sociální péče a služeb, Zábřeh",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Aktuální popis oboru 75-41-M/01 Sociální činnost jako jednoho ucelého programu bez zmínky o zaměřeních sociálně správní / sociálně výchovná činnost.",
-          "applicable_period": "aktuální nabídka, zjištěno 2026-09-12"
-        },
-        {
-          "url": "https://www.ssspzabreh.cz/pro-uchazece",
-          "title": "Pro uchazeče – Střední škola sociální péče a služeb, Zábřeh",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Přehled oborů pro přijímací řízení uvádí Sociální činnost jako jeden studijní obor denního studia bez rozlišení zaměření.",
-          "applicable_period": "aktuální nabídka"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 75-41-M/01 Sociální činnost je u IZO 108014193 evidován beze změny ve všech čtyřech snímcích; rejstřík zaměření uvnitř oboru neeviduje.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600018067",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "V roce 2025 dvě nabídky 75-41-M/01 se zaměřeními sociálně správní a sociálně výchovná činnost, v roce 2026 jediná nabídka téhož kódu bez zaměření.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "partially",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Od kterého přesně školního roku škola sloučila zaměření do jednotného programu – přímý dokument (ŠVP, výroční zpráva) nebyl dohledán, jen aktuální stav webu."
-      ]
+     "text": "náměstí 8. května 253/2, 789 01 Zábřeh",
+     "role": "sídlo",
+     "izo": "600018067",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "náměstí 8. května 253/2, 789 01 Zábřeh (jedno z více míst výuky IZO 108014193, škola má i pracoviště Dvorská 270/17, Dvorská 2374/19, Bezručova 476/2 a Žádlovice/Loštice)",
+     "role": "místo výuky",
+     "izo": "108014193",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.ssspzabreh.cz/obory/socialni-cinnost",
+     "title": "Sociální činnost – Střední škola sociální péče a služeb, Zábřeh",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Aktuální popis oboru 75-41-M/01 Sociální činnost jako jednoho ucelého programu bez zmínky o zaměřeních sociálně správní / sociálně výchovná činnost.",
+     "applicable_period": "aktuální nabídka, zjištěno 2026-09-12"
+    },
+    {
+     "url": "https://www.ssspzabreh.cz/pro-uchazece",
+     "title": "Pro uchazeče – Střední škola sociální péče a služeb, Zábřeh",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Přehled oborů pro přijímací řízení uvádí Sociální činnost jako jeden studijní obor denního studia bez rozlišení zaměření.",
+     "applicable_period": "aktuální nabídka"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 75-41-M/01 Sociální činnost je u IZO 108014193 evidován beze změny ve všech čtyřech snímcích; rejstřík zaměření uvnitř oboru neeviduje.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600018067",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "V roce 2025 dvě nabídky 75-41-M/01 se zaměřeními sociálně správní a sociálně výchovná činnost, v roce 2026 jediná nabídka téhož kódu bez zaměření.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "decisions_required": [
+    "Od kterého přesně školního roku škola sloučila zaměření do jednotného programu – přímý dokument (ŠVP, výroční zpráva) nebyl dohledán, jen aktuální stav webu."
+   ]
+  }
+ ]
 }

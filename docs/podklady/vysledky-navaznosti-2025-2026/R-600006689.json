@@ -1,104 +1,118 @@
 {
-  "task_id": "R-600006689",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík potvrdil nepřetržitou existenci právnického subjektu REDIZO 600006689 (Vyšší odborná škola a Střední zemědělská škola, Benešov, Mendelova 131; IČ 61664651) ve všech čtyřech snímcích od 31. 3. 2025 do 30. 6. 2026. Střední škola IZO 061664651 je vedena po celou dobu se sídlem i místem výuky Mendelova 131, Benešov (druhé místo výuky Pomněnice se k nabízenému oboru nevztahuje). Nedošlo ke sloučení, rozdělení ani změně sídla; název v datech CERMAT („Vyšší odborná škola a Střední zem. škola“) je jen zkrácený zápis úplného rejstříkového názvu. Rejstřík obory na úrovni zaměření neeviduje, k rozdílu v zápisu nabídek 78-42-M/08 se nevyjadřuje."
-  },
-  "findings": [
+ "task_id": "R-600006689",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrdil nepřetržitou existenci právnického subjektu REDIZO 600006689 (Vyšší odborná škola a Střední zemědělská škola, Benešov, Mendelova 131; IČ 61664651) ve všech čtyřech snímcích od 31. 3. 2025 do 30. 6. 2026. Střední škola IZO 061664651 je vedena po celou dobu se sídlem i místem výuky Mendelova 131, Benešov (druhé místo výuky Pomněnice se k nabízenému oboru nevztahuje). Nedošlo ke sloučení, rozdělení ani změně sídla; název v datech CERMAT („Vyšší odborná škola a Střední zem. škola“) je jen zkrácený zápis úplného rejstříkového názvu. Rejstřík obory na úrovni zaměření neeviduje, k rozdílu v zápisu nabídek 78-42-M/08 se nevyjadřuje."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0031",
+    "Q0032",
+    "Q0308"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela obor Lyceum (režim pokusného ověřování), KKOV 78-42-M/08, ve dvou samostatných nabídkách podle zaměření: „Humánní a veterinární medicína“ a „AI v zemědělství“, každá s vlastním ID_SOF.",
+    "V 1. kole JPZ 2026 je týž obor (stejný KKOV, stejné IZO, stejná adresa) nabízen jako jediná společná nabídka se zaměřením zapsaným společně: „Humánní a veterinární medicína, AI v zemědělství“.",
+    "Kritéria přijímacího řízení pro školní rok 2026/2027 (datována 27. 1. 2026) výslovně uvádějí: „Studijní zaměření (k výběru odborného zaměření dochází až na konci 1. ročníku!): Humánní a veterinární medicína; AI v zemědělství“ a škola přijímá do oboru Lyceum celkem 20 žáků na obě zaměření dohromady – tedy jedna společná nabídka se společnou kvótou.",
+    "Web školy k oboru Lyceum potvrzuje koncepci programu: žák se přihlašuje bez výběru zaměření, zaměření (Veterinární a humánní medicína, Využití AI v zemědělství) si volí až po 1. ročníku; obor byl poprvé otevřen ve školním roce 2025/2026.",
+    "Rejstřík MŠMT potvrzuje kontinuitu subjektu i střední školy (IZO 061664651) mezi oběma ročníky; sídlo i místo výuky Mendelova 131, Benešov, se nezměnily."
+   ],
+   "conclusion": "Jde o jeden a týž obor Lyceum (78-42-M/08) na téže škole. Mezi ročníky 2025 a 2026 se změnil způsob zápisu nabídky v přijímacím řízení: v roce 2025 byla nabídka rozdělena na dva samostatné záznamy podle zaměření, v roce 2026 škola přijímá do jediné společné nabídky, v níž uchazeč zaměření vybírá až na konci 1. ročníku. Obě nabídky z roku 2025 proto navazují na jedinou společnou nabídku z roku 2026 (vztah 2:1). Žádné zaměření nezaniklo ani nepřibylo – obsahově jde o stejné dvě specializace.",
+   "alternative_explanations": [
+    "Formálně nelze z dostupných zdrojů vyloučit, že již v roce 2025 škola koncipovala výběr zaměření až po 1. ročníku a rozdělení do dvou nabídek bylo jen administrativní (kvůli evidenci zájmu o zaměření); kritéria přijímacího řízení 2025/2026 pro Lyceum se nepodařilo dohledat (Wayback Machine byla v době rešerše dočasně nedostupná). Na závěr o návaznosti to ale nemá vliv."
+   ],
+   "relationship": {
+    "type": "merge",
+    "from": [
+     "72dd1344-1a20-48d9-a232-2a45df4846b7",
+     "f5b6f6f8-bb65-4ab5-a0a8-d667e0db3c4d"
+    ],
+    "to": [
+     "00bf9f78-3ff7-4cf8-b083-2729439296ae"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0031", "Q0032", "Q0308"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela obor Lyceum (režim pokusného ověřování), KKOV 78-42-M/08, ve dvou samostatných nabídkách podle zaměření: „Humánní a veterinární medicína“ a „AI v zemědělství“, každá s vlastním ID_SOF.",
-        "V 1. kole JPZ 2026 je týž obor (stejný KKOV, stejné IZO, stejná adresa) nabízen jako jediná společná nabídka se zaměřením zapsaným společně: „Humánní a veterinární medicína, AI v zemědělství“.",
-        "Kritéria přijímacího řízení pro školní rok 2026/2027 (datována 27. 1. 2026) výslovně uvádějí: „Studijní zaměření (k výběru odborného zaměření dochází až na konci 1. ročníku!): Humánní a veterinární medicína; AI v zemědělství“ a škola přijímá do oboru Lyceum celkem 20 žáků na obě zaměření dohromady – tedy jedna společná nabídka se společnou kvótou.",
-        "Web školy k oboru Lyceum potvrzuje koncepci programu: žák se přihlašuje bez výběru zaměření, zaměření (Veterinární a humánní medicína, Využití AI v zemědělství) si volí až po 1. ročníku; obor byl poprvé otevřen ve školním roce 2025/2026.",
-        "Rejstřík MŠMT potvrzuje kontinuitu subjektu i střední školy (IZO 061664651) mezi oběma ročníky; sídlo i místo výuky Mendelova 131, Benešov, se nezměnily."
-      ],
-      "conclusion": "Jde o jeden a týž obor Lyceum (78-42-M/08) na téže škole. Mezi ročníky 2025 a 2026 se změnil způsob zápisu nabídky v přijímacím řízení: v roce 2025 byla nabídka rozdělena na dva samostatné záznamy podle zaměření, v roce 2026 škola přijímá do jediné společné nabídky, v níž uchazeč zaměření vybírá až na konci 1. ročníku. Obě nabídky z roku 2025 proto navazují na jedinou společnou nabídku z roku 2026 (vztah 2:1). Žádné zaměření nezaniklo ani nepřibylo – obsahově jde o stejné dvě specializace.",
-      "alternative_explanations": [
-        "Formálně nelze z dostupných zdrojů vyloučit, že již v roce 2025 škola koncipovala výběr zaměření až po 1. ročníku a rozdělení do dvou nabídek bylo jen administrativní (kvůli evidenci zájmu o zaměření); kritéria přijímacího řízení 2025/2026 pro Lyceum se nepodařilo dohledat (Wayback Machine byla v době rešerše dočasně nedostupná). Na závěr o návaznosti to ale nemá vliv."
-      ],
-      "relationship": {
-        "type": "merge",
-        "from": ["72dd1344-1a20-48d9-a232-2a45df4846b7", "f5b6f6f8-bb65-4ab5-a0a8-d667e0db3c4d"],
-        "to": ["00bf9f78-3ff7-4cf8-b083-2729439296ae"]
-      },
-      "addresses": [
-        {
-          "text": "Mendelova 131, 256 01 Benešov",
-          "role": "sídlo",
-          "izo": "061664651",
-          "valid_period": "2025-03-31 až 2026-06-30 (dle snímků rejstříku)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Mendelova 131, Benešov (RÚIAN 2936470)",
-          "role": "místo výuky",
-          "izo": "061664651",
-          "valid_period": "2025-03-31 až 2026-06-30 (dle snímků rejstříku)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600006689",
-          "title": "Přiložená data fronty – nabídky CERMAT 1. kola JPZ 2025 a 2026",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "V roce 2025 dvě samostatné nabídky oboru 78-42-M/08 (zaměření Humánní a veterinární medicína; AI v zemědělství), v roce 2026 jedna společná nabídka s oběma zaměřeními; shodné REDIZO, IZO, KKOV i adresa.",
-          "applicable_period": "přijímací řízení 2025 a 2026"
-        },
-        {
-          "url": "https://www.zemsbn.cz/file.php?nid=14997&oid=13078815",
-          "title": "LYCEUM – Kritéria pro přijímací řízení do 1. ročníku střední školy pro školní rok 2026/2027 (VOŠ a SZeŠ Benešov)",
-          "published_at": "2026-01-27",
-          "checked_at": "2026-09-12",
-          "supports": "Škola přijímá do oboru Lyceum v roce 2026 jednu společnou nabídku: zaměření Humánní a veterinární medicína a AI v zemědělství jsou uvedena společně, výběr zaměření nastává až na konci 1. ročníku, celková kvóta 20 žáků pro obě zaměření dohromady.",
-          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
-        },
-        {
-          "url": "https://www.zemsbn.cz/poznej-nase-obory/produkt/lyceum",
-          "title": "Lyceum | VOŠ a SZeŠ Benešov",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Koncepce oboru 78-42-M/08 Lyceum: přihláška bez výběru zaměření, zaměření (Veterinární a humánní medicína; Využití AI v zemědělství) se volí po 1. ročníku; obor poprvé otevřen ve školním roce 2025/2026.",
-          "applicable_period": "aktuální stav webu (koncepce platná od otevření oboru 2025/2026)"
-        },
-        {
-          "url": "https://www.zemsbn.cz/prijimaci-rizeni",
-          "title": "Přijímací řízení | VOŠ a SZeŠ Benešov",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Ve výsledcích 2. kola PŘ 2026 je Lyceum vedeno jako jediná položka „Lyceum (volba zaměření od 2. ročníku – Humánní a veterinární medicína, AI v zemědělství)“ – odpovídá jedné společné nabídce v datech CERMAT 2026.",
-          "applicable_period": "přijímací řízení 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2025",
-          "published_at": "2025-03-31",
-          "checked_at": "2026-09-12",
-          "supports": "Subjekt REDIZO 600006689 a střední škola IZO 061664651 existují, sídlo a místo výuky Mendelova 131, Benešov.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2026",
-          "published_at": "2026-03-31",
-          "checked_at": "2026-09-12",
-          "supports": "Subjekt i IZO 061664651 pokračují beze změny názvu, sídla i míst výuky oproti roku 2025.",
-          "applicable_period": "stav rejstříku k 31. 3. 2026"
-        }
-      ],
-      "history_comparability": "partially",
-      "recommended_action": "approve_mapping",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda již v přijímacím řízení 2025 byl výběr zaměření koncipován až po 1. ročníku (jako v roce 2026), nebo zda se uchazeči hlásili přímo na zaměření – kritéria PŘ 2025/2026 pro Lyceum nebyla dohledatelná (Wayback Machine dočasně nedostupná)."
-      ]
+     "text": "Mendelova 131, 256 01 Benešov",
+     "role": "sídlo",
+     "izo": "061664651",
+     "valid_period": "2025-03-31 až 2026-06-30 (dle snímků rejstříku)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Mendelova 131, Benešov (RÚIAN 2936470)",
+     "role": "místo výuky",
+     "izo": "061664651",
+     "valid_period": "2025-03-31 až 2026-06-30 (dle snímků rejstříku)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600006689",
+     "title": "Přiložená data fronty – nabídky CERMAT 1. kola JPZ 2025 a 2026",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "V roce 2025 dvě samostatné nabídky oboru 78-42-M/08 (zaměření Humánní a veterinární medicína; AI v zemědělství), v roce 2026 jedna společná nabídka s oběma zaměřeními; shodné REDIZO, IZO, KKOV i adresa.",
+     "applicable_period": "přijímací řízení 2025 a 2026"
+    },
+    {
+     "url": "https://www.zemsbn.cz/file.php?nid=14997&oid=13078815",
+     "title": "LYCEUM – Kritéria pro přijímací řízení do 1. ročníku střední školy pro školní rok 2026/2027 (VOŠ a SZeŠ Benešov)",
+     "published_at": "2026-01-27",
+     "checked_at": "2026-09-12",
+     "supports": "Škola přijímá do oboru Lyceum v roce 2026 jednu společnou nabídku: zaměření Humánní a veterinární medicína a AI v zemědělství jsou uvedena společně, výběr zaměření nastává až na konci 1. ročníku, celková kvóta 20 žáků pro obě zaměření dohromady.",
+     "applicable_period": "přijímací řízení pro školní rok 2026/2027"
+    },
+    {
+     "url": "https://www.zemsbn.cz/poznej-nase-obory/produkt/lyceum",
+     "title": "Lyceum | VOŠ a SZeŠ Benešov",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Koncepce oboru 78-42-M/08 Lyceum: přihláška bez výběru zaměření, zaměření (Veterinární a humánní medicína; Využití AI v zemědělství) se volí po 1. ročníku; obor poprvé otevřen ve školním roce 2025/2026.",
+     "applicable_period": "aktuální stav webu (koncepce platná od otevření oboru 2025/2026)"
+    },
+    {
+     "url": "https://www.zemsbn.cz/prijimaci-rizeni",
+     "title": "Přijímací řízení | VOŠ a SZeŠ Benešov",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Ve výsledcích 2. kola PŘ 2026 je Lyceum vedeno jako jediná položka „Lyceum (volba zaměření od 2. ročníku – Humánní a veterinární medicína, AI v zemědělství)“ – odpovídá jedné společné nabídce v datech CERMAT 2026.",
+     "applicable_period": "přijímací řízení 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2025",
+     "published_at": "2025-03-31",
+     "checked_at": "2026-09-12",
+     "supports": "Subjekt REDIZO 600006689 a střední škola IZO 061664651 existují, sídlo a místo výuky Mendelova 131, Benešov.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2026",
+     "published_at": "2026-03-31",
+     "checked_at": "2026-09-12",
+     "supports": "Subjekt i IZO 061664651 pokračují beze změny názvu, sídla i míst výuky oproti roku 2025.",
+     "applicable_period": "stav rejstříku k 31. 3. 2026"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "approve_mapping",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Zda již v přijímacím řízení 2025 byl výběr zaměření koncipován až po 1. ročníku (jako v roce 2026), nebo zda se uchazeči hlásili přímo na zaměření – kritéria PŘ 2025/2026 pro Lyceum nebyla dohledatelná (Wayback Machine dočasně nedostupná)."
+   ]
+  }
+ ]
 }

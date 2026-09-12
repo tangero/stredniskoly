@@ -1,99 +1,112 @@
 {
-  "task_id": "R-600007294",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík potvrdil kontinuitu subjektu: Střední odborná škola a Střední odborné učiliště řemesel, Kutná Hora, Čáslavská 202 (REDIZO 600007294) figuruje beze změny názvu a sídla ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026), včetně IZO 110036778 „Střední škola“ se čtyřmi místy výuky (Husova 123/45, Seifertovy sady 20, Potoční 211, Čáslavská 202 – vše Kutná Hora). Obor 26-41-L/01 Mechanik elektrotechnik (4leté, denní) zůstává u tohoto IZO zapsán ve VŠECH čtyřech snímcích včetně 30. 6. 2026 – registrace oboru trvá i po jeho vymizení z nabídky CERMAT 2026. Webová prezentace školy (soskh.cz) obor pod svým marketingovým názvem „Mechanik elektronik“ pro přijímací řízení 2025/2026 nabízela (12 míst), pro přijímací řízení 2026/2027 jej v seznamu oborů neuvádí a samostatná stránka oboru na webu školy byla odstraněna (HTTP 404)."
-  },
-  "findings": [
+ "task_id": "R-600007294",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrdil kontinuitu subjektu: Střední odborná škola a Střední odborné učiliště řemesel, Kutná Hora, Čáslavská 202 (REDIZO 600007294) figuruje beze změny názvu a sídla ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026), včetně IZO 110036778 „Střední škola“ se čtyřmi místy výuky (Husova 123/45, Seifertovy sady 20, Potoční 211, Čáslavská 202 – vše Kutná Hora). Obor 26-41-L/01 Mechanik elektrotechnik (4leté, denní) zůstává u tohoto IZO zapsán ve VŠECH čtyřech snímcích včetně 30. 6. 2026 – registrace oboru trvá i po jeho vymizení z nabídky CERMAT 2026. Webová prezentace školy (soskh.cz) obor pod svým marketingovým názvem „Mechanik elektronik“ pro přijímací řízení 2025/2026 nabízela (12 míst), pro přijímací řízení 2026/2027 jej v seznamu oborů neuvádí a samostatná stránka oboru na webu školy byla odstraněna (HTTP 404)."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0042"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela obor 26-41-L/01 Mechanik elektrotechnik (4leté, denní, český jazyk); v 1. kole JPZ 2026 tato nabídka mezi 5 zbylými nabídkami školy chybí (Podnikání, Bezpečnostně právní činnost, Veřejnosprávní činnost, Kosmetické služby, Sociální činnost pokračují beze změny).",
+    "Skutečná doména školy je soskh.cz (nikoli sosaisukh.cz) – „SOŠ a SOU řemesel Kutná Hora“.",
+    "Web školy na stránce https://soskh.cz/prijimaci-rizeni-2025/ pro přijímací řízení do školního roku 2025/2026 výslovně uvádí obor „26-41-L/01 – Mechanik elektronik“ (12 volných míst) – jde o školou používaný marketingový název pro obor s kódem 26-41-L/01 Mechanik elektrotechnik.",
+    "Aktuální stránka https://soskh.cz/prijimaci-rizeni-2026/ pro přijímací řízení do školního roku 2026/2027 uvádí kompletní seznam nabízených oborů (5 maturitních: Bezpečnostně právní činnost, Kosmetické služby, Sociální činnost, Veřejnosprávní činnost, Podnikání; 8 učebních: Elektrikář, Kadeřník, Kuchař-číšník, Mechanik elektronických zařízení, Ošetřovatel, Strojní mechanik, Truhlář, Zedník) – obor 26-41-L/01 Mechanik elektronik/elektrotechnik v seznamu chybí.",
+    "Samostatná stránka oboru https://soskh.cz/obory/mechanik-elektronik/ (dříve popisující čtyřletý maturitní obor Mechanik elektronik s možností získat výuční list i maturitu zároveň) vrací HTTP 404 – stránka byla z webu odstraněna, což odpovídá tomu, že škola obor v aktuálním přijímacím řízení nenabízí.",
+    "Rejstřík MŠMT eviduje obor 26-41-L/01 Mechanik elektrotechnik u IZO 110036778 ve všech čtyřech snímcích (2025-03-31, 2025-12-31, 2026-03-31, 2026-06-30) – registrace oboru trvá.",
+    "Nebyla dohledána žádná tisková zpráva, zápis zřizovatele (Středočeský kraj) ani vyjádření školy s explicitně uvedeným důvodem (např. nízká naplněnost) pro nevyhlášení přijímacího řízení do tohoto oboru pro 2026/27; dohledány byly pouze primární stránky školy dokládající samotný fakt vynechání oboru."
+   ],
+   "conclusion": "Obor 26-41-L/01 Mechanik elektrotechnik (na webu školy pod názvem „Mechanik elektronik“) škola pro školní rok 2026/27 nenabízí a nevyhlásila do něj přijímací řízení – potvrzuje to jak chybějící nabídka v CERMAT datech 2026, tak přímé srovnání vlastních stránek školy (obor uveden v přijímacím řízení 2025/26, chybí v přijímacím řízení 2026/27) a odstranění samostatné stránky oboru z webu. Obor přitom zůstává zapsán v rejstříku MŠMT i k 30. 6. 2026 u téhož IZO. Jde tedy o doložené přerušení/nevyhlášení přijímacího řízení do oboru, nikoli o doložený zánik akreditace oboru nebo o zánik školy.",
+   "alternative_explanations": [
+    "Přerušení mohlo být způsobeno nízkým zájmem uchazečů nebo personálně-kapacitním rozhodnutím školy/zřizovatele, ale konkrétní důvod nebyl v dostupných zdrojích výslovně uveden.",
+    "Přijímací řízení do oboru může být v budoucích letech opět vyhlášeno, protože registrace v rejstříku trvá; k datu zpracování o tom ale žádný zdroj nehovoří."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "26-41-L/01 (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0042"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela obor 26-41-L/01 Mechanik elektrotechnik (4leté, denní, český jazyk); v 1. kole JPZ 2026 tato nabídka mezi 5 zbylými nabídkami školy chybí (Podnikání, Bezpečnostně právní činnost, Veřejnosprávní činnost, Kosmetické služby, Sociální činnost pokračují beze změny).",
-        "Skutečná doména školy je soskh.cz (nikoli sosaisukh.cz) – „SOŠ a SOU řemesel Kutná Hora“.",
-        "Web školy na stránce https://soskh.cz/prijimaci-rizeni-2025/ pro přijímací řízení do školního roku 2025/2026 výslovně uvádí obor „26-41-L/01 – Mechanik elektronik“ (12 volných míst) – jde o školou používaný marketingový název pro obor s kódem 26-41-L/01 Mechanik elektrotechnik.",
-        "Aktuální stránka https://soskh.cz/prijimaci-rizeni-2026/ pro přijímací řízení do školního roku 2026/2027 uvádí kompletní seznam nabízených oborů (5 maturitních: Bezpečnostně právní činnost, Kosmetické služby, Sociální činnost, Veřejnosprávní činnost, Podnikání; 8 učebních: Elektrikář, Kadeřník, Kuchař-číšník, Mechanik elektronických zařízení, Ošetřovatel, Strojní mechanik, Truhlář, Zedník) – obor 26-41-L/01 Mechanik elektronik/elektrotechnik v seznamu chybí.",
-        "Samostatná stránka oboru https://soskh.cz/obory/mechanik-elektronik/ (dříve popisující čtyřletý maturitní obor Mechanik elektronik s možností získat výuční list i maturitu zároveň) vrací HTTP 404 – stránka byla z webu odstraněna, což odpovídá tomu, že škola obor v aktuálním přijímacím řízení nenabízí.",
-        "Rejstřík MŠMT eviduje obor 26-41-L/01 Mechanik elektrotechnik u IZO 110036778 ve všech čtyřech snímcích (2025-03-31, 2025-12-31, 2026-03-31, 2026-06-30) – registrace oboru trvá.",
-        "Nebyla dohledána žádná tisková zpráva, zápis zřizovatele (Středočeský kraj) ani vyjádření školy s explicitně uvedeným důvodem (např. nízká naplněnost) pro nevyhlášení přijímacího řízení do tohoto oboru pro 2026/27; dohledány byly pouze primární stránky školy dokládající samotný fakt vynechání oboru."
-      ],
-      "conclusion": "Obor 26-41-L/01 Mechanik elektrotechnik (na webu školy pod názvem „Mechanik elektronik“) škola pro školní rok 2026/27 nenabízí a nevyhlásila do něj přijímací řízení – potvrzuje to jak chybějící nabídka v CERMAT datech 2026, tak přímé srovnání vlastních stránek školy (obor uveden v přijímacím řízení 2025/26, chybí v přijímacím řízení 2026/27) a odstranění samostatné stránky oboru z webu. Obor přitom zůstává zapsán v rejstříku MŠMT i k 30. 6. 2026 u téhož IZO. Jde tedy o doložené přerušení/nevyhlášení přijímacího řízení do oboru, nikoli o doložený zánik akreditace oboru nebo o zánik školy.",
-      "alternative_explanations": [
-        "Přerušení mohlo být způsobeno nízkým zájmem uchazečů nebo personálně-kapacitním rozhodnutím školy/zřizovatele, ale konkrétní důvod nebyl v dostupných zdrojích výslovně uveden.",
-        "Přijímací řízení do oboru může být v budoucích letech opět vyhlášeno, protože registrace v rejstříku trvá; k datu zpracování o tom ale žádný zdroj nehovoří."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["26-41-L/01 (2025)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Čáslavská 202, 284 01 Karlov, Kutná Hora",
-          "role": "sídlo",
-          "izo": "600007294",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Čáslavská 202, 284 01 Karlov, Kutná Hora",
-          "role": "místo výuky",
-          "izo": "110036778",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky, spolu s Husova 123/45, Seifertovy sady 20 a Potoční 211, Kutná Hora)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://soskh.cz/prijimaci-rizeni-2026/",
-          "title": "Přijímací řízení pro školní rok 2026-27 – SOŠ a SOU řemesel Kutná Hora",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Úplný seznam oborů otevíraných pro školní rok 2026/27 neobsahuje obor 26-41-L/01 Mechanik elektronik/elektrotechnik; ostatní obory z nabídky CERMAT 2026 (Bezpečnostně právní činnost, Kosmetické služby, Sociální činnost, Veřejnosprávní činnost, Podnikání) jsou uvedeny.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://soskh.cz/prijimaci-rizeni-2025/",
-          "title": "Přijímací řízení 2025 – SOŠ a SOU řemesel Kutná Hora",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola pro přijímací řízení 2025/26 výslovně nabízela obor „26-41-L/01 Mechanik elektronik“ (12 míst), tedy pod stejným kódem, jaký je uveden v nabídce CERMAT 2025.",
-          "applicable_period": "přijímací řízení 2025/26"
-        },
-        {
-          "url": "https://soskh.cz/obory/mechanik-elektronik/",
-          "title": "Mechanik elektronik – SOŠ a SOU řemesel Kutná Hora (stránka oboru)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Stránka konkrétního oboru vrací HTTP 404 – byla z webu odstraněna, což je v souladu s tím, že škola obor v aktuálním cyklu nenabízí.",
-          "applicable_period": "stav webu k 12. 9. 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 26-41-L/01 Mechanik elektrotechnik zůstává u IZO 110036778 registrován i k 30. 6. 2026; subjekt i IZO jsou beze změn.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600007294",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 26-41-L/01 Mechanik elektrotechnik přítomna v 1. kole JPZ 2025 a chybějící v 1. kole JPZ 2026; ostatních 5 oborů školy pokračuje beze změny.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Konkrétní důvod nevyhlášení přijímacího řízení do oboru 26-41-L/01 pro 2026/27 (nízká naplněnost, personální/kapacitní rozhodnutí apod.) nebyl žádným dohledaným zdrojem výslovně uveden."
-      ]
+     "text": "Čáslavská 202, 284 01 Karlov, Kutná Hora",
+     "role": "sídlo",
+     "izo": "600007294",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Čáslavská 202, 284 01 Karlov, Kutná Hora",
+     "role": "místo výuky",
+     "izo": "110036778",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky, spolu s Husova 123/45, Seifertovy sady 20 a Potoční 211, Kutná Hora)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://soskh.cz/prijimaci-rizeni-2026/",
+     "title": "Přijímací řízení pro školní rok 2026-27 – SOŠ a SOU řemesel Kutná Hora",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Úplný seznam oborů otevíraných pro školní rok 2026/27 neobsahuje obor 26-41-L/01 Mechanik elektronik/elektrotechnik; ostatní obory z nabídky CERMAT 2026 (Bezpečnostně právní činnost, Kosmetické služby, Sociální činnost, Veřejnosprávní činnost, Podnikání) jsou uvedeny.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://soskh.cz/prijimaci-rizeni-2025/",
+     "title": "Přijímací řízení 2025 – SOŠ a SOU řemesel Kutná Hora",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola pro přijímací řízení 2025/26 výslovně nabízela obor „26-41-L/01 Mechanik elektronik“ (12 míst), tedy pod stejným kódem, jaký je uveden v nabídce CERMAT 2025.",
+     "applicable_period": "přijímací řízení 2025/26"
+    },
+    {
+     "url": "https://soskh.cz/obory/mechanik-elektronik/",
+     "title": "Mechanik elektronik – SOŠ a SOU řemesel Kutná Hora (stránka oboru)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Stránka konkrétního oboru vrací HTTP 404 – byla z webu odstraněna, což je v souladu s tím, že škola obor v aktuálním cyklu nenabízí.",
+     "applicable_period": "stav webu k 12. 9. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 26-41-L/01 Mechanik elektrotechnik zůstává u IZO 110036778 registrován i k 30. 6. 2026; subjekt i IZO jsou beze změn.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600007294",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 26-41-L/01 Mechanik elektrotechnik přítomna v 1. kole JPZ 2025 a chybějící v 1. kole JPZ 2026; ostatních 5 oborů školy pokračuje beze změny.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Konkrétní důvod nevyhlášení přijímacího řízení do oboru 26-41-L/01 pro 2026/27 (nízká naplněnost, personální/kapacitní rozhodnutí apod.) nebyl žádným dohledaným zdrojem výslovně uveden.",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 1: příčina samotné změny se nezkoumá. Pro návaznost nabídky není důvod rozhodnutí školy potřebný."
+    }
+   ]
+  }
+ ]
 }

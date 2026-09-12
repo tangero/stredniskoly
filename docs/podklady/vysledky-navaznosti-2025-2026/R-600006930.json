@@ -90,13 +90,15 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Formální usnesení/rozhodnutí zřizovatele (s.r.o.) o založení oboru Gymnázium nebylo dohledáno mimo vlastní oznámení školy."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Přesné datum plánovaného zápisu oboru 79-41-K/41 do rejstříku MŠMT není známo (chybí i ve snímku k 30. 6. 2026).",
      "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    },
+    {
+     "otazka": "Formální usnesení/rozhodnutí zřizovatele (s.r.o.) o založení oboru Gymnázium nebylo dohledáno mimo vlastní oznámení školy.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
     }
    ]
   }

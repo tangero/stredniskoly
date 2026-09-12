@@ -103,9 +103,16 @@
    "recommended_action": "manual_review",
    "related_task_ids": [],
    "unanswered_questions": [
-    "Zda škola formálně zrušila akreditaci obou oborů, nebo jen dočasně nevyhlásila přijímací řízení.",
-    "Zda dálková tříletá varianta obou oborů (evidovaná v rejstříku) reálně běží pro stávající studenty.",
+    "Zda škola formálně zrušila akreditaci obou oborů, nebo jen dočasně nevyhlásila přijímací řízení."
+   ],
+   "decisions_required": [
     "Zda se výrok o „zkráceném studiu“ na webu vztahuje i na tyto dva nástavbové obory, nebo jde o zcela jinou (H/E) kategorii programů."
+   ],
+   "resolved_questions": [
+    {
+     "otazka": "Zda dálková tříletá varianta obou oborů (evidovaná v rejstříku) reálně běží pro stávající studenty.",
+     "uzavreno": "Mimo rozsah tohoto běhu: otázka patří k úkolu doložení míst výuky pro dojezdovost, případně k formám studia mimo denní nezkrácené studium."
+    }
    ]
   },
   {
@@ -196,7 +203,7 @@
    "recommended_action": "manual_review",
    "related_task_ids": [],
    "unanswered_questions": [
-    "Zda šlo v roce 2025 o skutečné nevyhlášení přijímacího řízení do oboru Podnikání, nebo jen o chybějící záznam v datech CERMAT.",
+    "Zda šlo v roce 2025 o skutečné nevyhlášení přijímacího řízení do oboru Podnikání, nebo jen o chybějící záznam v datech CERMAT. Odpověď by dala data 2. kola přijímacího řízení 2026, která zveřejněna nejsou. Dostupné zdroje otázku neuzavírají.",
     "Zda souvisí obnovení nabídky Podnikání s omezením nabídky Provozní techniky a Provozní elektrotechniky (Q0144, Q0145) v témže roce."
    ],
    "resolved_questions": [

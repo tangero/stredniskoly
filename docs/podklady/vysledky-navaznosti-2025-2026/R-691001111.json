@@ -1,162 +1,183 @@
 {
-  "task_id": "R-691001111",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík potvrdil plnou kontinuitu subjektu i IZO: Anglo - německá obchodní akademie a.s. (REDIZO 691001111), sídlo Prusíkova 2577/16, 155 00 Stodůlky, Praha, figuruje beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026), včetně IZO 040652441 „Střední škola“ na téže adrese. Zapsán je ve všech snímcích jediný obor 63-41-M/01 Ekonomika a podnikání (4leté, denní, český jazyk) – rejstřík eviduje obor, nikoli jednotlivá zaměření/ŠVP, proto z něj samotného nelze rozlišit specializace sportovní a jazyková a odborná."
-  },
-  "findings": [
+ "task_id": "R-691001111",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrdil plnou kontinuitu subjektu i IZO: Anglo - německá obchodní akademie a.s. (REDIZO 691001111), sídlo Prusíkova 2577/16, 155 00 Stodůlky, Praha, figuruje beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026), včetně IZO 040652441 „Střední škola“ na téže adrese. Zapsán je ve všech snímcích jediný obor 63-41-M/01 Ekonomika a podnikání (4leté, denní, český jazyk) – rejstřík eviduje obor, nikoli jednotlivá zaměření/ŠVP, proto z něj samotného nelze rozlišit specializace sportovní a jazyková a odborná."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0165",
+    "Q0268"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "CERMAT 1. kolo JPZ 2025 uvádí u REDIZO 691001111 nabídku 63-41-M/01 Ekonomika a podnikání se zaměřením „Ekonom - specializace sportovní“; CERMAT 1. kolo JPZ 2026 uvádí u téhož REDIZO/IZO nabídku 63-41-M/01 se zaměřením „specializace sportovní“ (beze slova „Ekonom“).",
+    "Rejstřík MŠMT eviduje obor 63-41-M/01 Ekonomika a podnikání u IZO 040652441 beze změny ve všech čtyřech snímcích 2025-03-31 až 2026-06-30; subjekt, IZO i adresa jsou stabilní.",
+    "Web školy (anoa.cz) v sekci Učební plán oboru uvádí, že ŠVP oboru 63-41-M/01 Ekonomika a podnikání se nazývá „Ekonom“ a v jeho rámci existuje specializace navázaná na program SPARTA EDUCATION (předměty Sportovní management, Angličtina pro sportovce, specializace tělesná výchova) – tedy táž sportovní specializace, jaká je v CERMAT datech označena jako „specializace sportovní“.",
+    "Web školy v sekci Přijímací řízení pro školní rok 2026/2027 potvrzuje otevření „1 třídy prvního ročníku denního studia specializace sportovní (S)“ s podmínkou zařazení do programu Sparta Education od AC Sparta Praha fotbal a.s. – stejný obsah, jaký CERMAT eviduje jako nabídku pro rok 2026 (Q0268)."
+   ],
+   "conclusion": "Jde o tutéž nabídku (obor 63-41-M/01 Ekonomika a podnikání, sportovní specializace v rámci ŠVP „Ekonom“ navázaná na program Sparta Education), pouze se mezi lety 2025 a 2026 změnil formát zápisu textu zaměření v datech CERMAT – odstranil se prefix „Ekonom - “, protože jde o název ŠVP, nikoli o odlišnou nabídku. Q0165 (2025) párově navazuje na Q0268 (2026); příčinu samotné změny zápisu textu není třeba dále zkoumat.",
+   "alternative_explanations": [
+    "Nelze zcela vyloučit dílčí úpravu obsahu ŠVP mezi ročníky (běžná drobná revize učebního plánu), tu ale zdroje nezmiňují a nejde o změnu kódu ani délky studia."
+   ],
+   "relationship": {
+    "type": "continuation",
+    "from": [
+     "63-41-M/01 Ekonom - specializace sportovní (2025, Q0165)"
+    ],
+    "to": [
+     "63-41-M/01 specializace sportovní (2026, Q0268)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0165", "Q0268"],
-      "status": "potvrzeno",
-      "observations": [
-        "CERMAT 1. kolo JPZ 2025 uvádí u REDIZO 691001111 nabídku 63-41-M/01 Ekonomika a podnikání se zaměřením „Ekonom - specializace sportovní“; CERMAT 1. kolo JPZ 2026 uvádí u téhož REDIZO/IZO nabídku 63-41-M/01 se zaměřením „specializace sportovní“ (beze slova „Ekonom“).",
-        "Rejstřík MŠMT eviduje obor 63-41-M/01 Ekonomika a podnikání u IZO 040652441 beze změny ve všech čtyřech snímcích 2025-03-31 až 2026-06-30; subjekt, IZO i adresa jsou stabilní.",
-        "Web školy (anoa.cz) v sekci Učební plán oboru uvádí, že ŠVP oboru 63-41-M/01 Ekonomika a podnikání se nazývá „Ekonom“ a v jeho rámci existuje specializace navázaná na program SPARTA EDUCATION (předměty Sportovní management, Angličtina pro sportovce, specializace tělesná výchova) – tedy táž sportovní specializace, jaká je v CERMAT datech označena jako „specializace sportovní“.",
-        "Web školy v sekci Přijímací řízení pro školní rok 2026/2027 potvrzuje otevření „1 třídy prvního ročníku denního studia specializace sportovní (S)“ s podmínkou zařazení do programu Sparta Education od AC Sparta Praha fotbal a.s. – stejný obsah, jaký CERMAT eviduje jako nabídku pro rok 2026 (Q0268)."
-      ],
-      "conclusion": "Jde o tutéž nabídku (obor 63-41-M/01 Ekonomika a podnikání, sportovní specializace v rámci ŠVP „Ekonom“ navázaná na program Sparta Education), pouze se mezi lety 2025 a 2026 změnil formát zápisu textu zaměření v datech CERMAT – odstranil se prefix „Ekonom - “, protože jde o název ŠVP, nikoli o odlišnou nabídku. Q0165 (2025) párově navazuje na Q0268 (2026); příčinu samotné změny zápisu textu není třeba dále zkoumat.",
-      "alternative_explanations": [
-        "Nelze zcela vyloučit dílčí úpravu obsahu ŠVP mezi ročníky (běžná drobná revize učebního plánu), tu ale zdroje nezmiňují a nejde o změnu kódu ani délky studia."
-      ],
-      "relationship": {
-        "type": "continuation",
-        "from": ["63-41-M/01 Ekonom - specializace sportovní (2025, Q0165)"],
-        "to": ["63-41-M/01 specializace sportovní (2026, Q0268)"]
-      },
-      "addresses": [
-        {
-          "text": "Prusíkova 2577/16, 155 00 Stodůlky, Praha",
-          "role": "sídlo",
-          "izo": "691001111",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Prusíkova 2577/16, 155 00 Stodůlky, Praha",
-          "role": "místo výuky",
-          "izo": "040652441",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-691001111",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ 2025 a 2026)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 63-41-M/01 se zaměřením „Ekonom - specializace sportovní“ (2025, ID_SOF b9545af6-c10e-47b8-ad8c-fd21246fbad2) a „specializace sportovní“ (2026, ID_SOF 22883376-24db-4d65-8e1c-375b4ac42a55) u téhož REDIZO/IZO.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        },
-        {
-          "url": "https://www.anoa.cz/uchazec/ucebni-plan-oboru",
-          "title": "Učební plán oboru – ANOA (Anglo - německá obchodní akademie)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 63-41-M/01 Ekonomika a podnikání má ŠVP název „Ekonom“ a v jeho rámci sportovní specializaci navázanou na program Sparta Education (Sportovní management, Angličtina pro sportovce, specializace tělesná výchova).",
-          "applicable_period": "aktuální stav webu, školní rok 2026/2027"
-        },
-        {
-          "url": "https://www.anoa.cz/uchazec/prijimaci-rizeni",
-          "title": "Přijímací řízení – ANOA (Anglo - německá obchodní akademie)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola pro školní rok 2026/2027 otevírá 1 třídu specializace sportovní (S) s podmínkou zařazení do programu Sparta Education od AC Sparta Praha fotbal a.s.",
-          "applicable_period": "přijímací řízení 2026/2027"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 63-41-M/01 Ekonomika a podnikání zůstává registrován u IZO 040652441; rejstřík nerozlišuje zaměření/ŠVP, takže sportovní specializaci samostatně nepotvrzuje ani nevyvrací.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        }
-      ],
-      "history_comparability": "comparable",
-      "recommended_action": "approve_mapping",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Web školy necituje doslovný text „Ekonom - specializace sportovní“ z roku 2025 (archiv webu nebyl dostupný) – kontinuita je doložena shodou oboru, ŠVP a obsahu specializace, nikoli přímým dobovým snímkem webu z roku 2025."
-      ]
+     "text": "Prusíkova 2577/16, 155 00 Stodůlky, Praha",
+     "role": "sídlo",
+     "izo": "691001111",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     },
     {
-      "issue_ids": ["Q0166", "Q0269"],
-      "status": "potvrzeno",
-      "observations": [
-        "CERMAT 1. kolo JPZ 2025 uvádí u REDIZO 691001111 nabídku 63-41-M/01 Ekonomika a podnikání se zaměřením „Ekonom - specializace jazyková a odborná“; CERMAT 1. kolo JPZ 2026 uvádí u téhož REDIZO/IZO nabídku 63-41-M/01 se zaměřením „specializace jazyková a odborná“ (beze slova „Ekonom“).",
-        "Rejstřík MŠMT eviduje obor 63-41-M/01 Ekonomika a podnikání u IZO 040652441 beze změny ve všech čtyřech snímcích 2025-03-31 až 2026-06-30; subjekt, IZO i adresa jsou stabilní.",
-        "Web školy (anoa.cz) v sekci Učební plán oboru potvrzuje, že ŠVP oboru 63-41-M/01 se nazývá „Ekonom“ a nabízí volitelné zaměření mimo sportovní program (např. Leadership, Logistika a mezinárodní obchodní spolupráce, Daně a účetnictví) v duchu jazykové a odborné přípravy.",
-        "Web školy v sekci Přijímací řízení pro školní rok 2026/2027 potvrzuje otevření „2 tříd prvního ročníku denního studia specializace jazykové a odborné (JO)“ bez podmínky sportovního programu – stejný obsah, jaký CERMAT eviduje jako nabídku pro rok 2026 (Q0269)."
-      ],
-      "conclusion": "Jde o tutéž nabídku (obor 63-41-M/01 Ekonomika a podnikání, specializace jazyková a odborná v rámci ŠVP „Ekonom“), pouze se mezi lety 2025 a 2026 změnil formát zápisu textu zaměření v datech CERMAT – odstranil se prefix „Ekonom - “. Q0166 (2025) párově navazuje na Q0269 (2026); příčinu samotné změny zápisu textu není třeba dále zkoumat.",
-      "alternative_explanations": [
-        "Nelze zcela vyloučit dílčí úpravu obsahu ŠVP mezi ročníky (běžná drobná revize učebního plánu, např. nabídky volitelných předmětů), tu ale zdroje nezmiňují a nejde o změnu kódu ani délky studia."
-      ],
-      "relationship": {
-        "type": "continuation",
-        "from": ["63-41-M/01 Ekonom - specializace jazyková a odborná (2025, Q0166)"],
-        "to": ["63-41-M/01 specializace jazyková a odborná (2026, Q0269)"]
-      },
-      "addresses": [
-        {
-          "text": "Prusíkova 2577/16, 155 00 Stodůlky, Praha",
-          "role": "sídlo",
-          "izo": "691001111",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Prusíkova 2577/16, 155 00 Stodůlky, Praha",
-          "role": "místo výuky",
-          "izo": "040652441",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-691001111",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ 2025 a 2026)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 63-41-M/01 se zaměřením „Ekonom - specializace jazyková a odborná“ (2025, ID_SOF 541389a4-6eb8-45ac-a28f-0c53211e257d) a „specializace jazyková a odborná“ (2026, ID_SOF 67465d2e-cb22-42ba-84d8-08c6a6362d50) u téhož REDIZO/IZO.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        },
-        {
-          "url": "https://www.anoa.cz/uchazec/ucebni-plan-oboru",
-          "title": "Učební plán oboru – ANOA (Anglo - německá obchodní akademie)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 63-41-M/01 Ekonomika a podnikání má ŠVP název „Ekonom“ s volitelnými předměty (Leadership, Logistika a mezinárodní obchodní spolupráce, Daně a účetnictví) mimo sportovní program.",
-          "applicable_period": "aktuální stav webu, školní rok 2026/2027"
-        },
-        {
-          "url": "https://www.anoa.cz/uchazec/prijimaci-rizeni",
-          "title": "Přijímací řízení – ANOA (Anglo - německá obchodní akademie)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola pro školní rok 2026/2027 otevírá 2 třídy specializace jazykové a odborné (JO), bez podmínky sportovního programu.",
-          "applicable_period": "přijímací řízení 2026/2027"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 63-41-M/01 Ekonomika a podnikání zůstává registrován u IZO 040652441; rejstřík nerozlišuje zaměření/ŠVP, takže specializaci jazykovou a odbornou samostatně nepotvrzuje ani nevyvrací.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        }
-      ],
-      "history_comparability": "comparable",
-      "recommended_action": "approve_mapping",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Web školy necituje doslovný text „Ekonom - specializace jazyková a odborná“ z roku 2025 (archiv webu nebyl dostupný) – kontinuita je doložena shodou oboru, ŠVP a obsahu specializace, nikoli přímým dobovým snímkem webu z roku 2025."
-      ]
+     "text": "Prusíkova 2577/16, 155 00 Stodůlky, Praha",
+     "role": "místo výuky",
+     "izo": "040652441",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-691001111",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ 2025 a 2026)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 63-41-M/01 se zaměřením „Ekonom - specializace sportovní“ (2025, ID_SOF b9545af6-c10e-47b8-ad8c-fd21246fbad2) a „specializace sportovní“ (2026, ID_SOF 22883376-24db-4d65-8e1c-375b4ac42a55) u téhož REDIZO/IZO.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://www.anoa.cz/uchazec/ucebni-plan-oboru",
+     "title": "Učební plán oboru – ANOA (Anglo - německá obchodní akademie)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 63-41-M/01 Ekonomika a podnikání má ŠVP název „Ekonom“ a v jeho rámci sportovní specializaci navázanou na program Sparta Education (Sportovní management, Angličtina pro sportovce, specializace tělesná výchova).",
+     "applicable_period": "aktuální stav webu, školní rok 2026/2027"
+    },
+    {
+     "url": "https://www.anoa.cz/uchazec/prijimaci-rizeni",
+     "title": "Přijímací řízení – ANOA (Anglo - německá obchodní akademie)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola pro školní rok 2026/2027 otevírá 1 třídu specializace sportovní (S) s podmínkou zařazení do programu Sparta Education od AC Sparta Praha fotbal a.s.",
+     "applicable_period": "přijímací řízení 2026/2027"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 63-41-M/01 Ekonomika a podnikání zůstává registrován u IZO 040652441; rejstřík nerozlišuje zaměření/ŠVP, takže sportovní specializaci samostatně nepotvrzuje ani nevyvrací.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    }
+   ],
+   "history_comparability": "comparable",
+   "recommended_action": "approve_mapping",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "decisions_required": [
+    "Web školy necituje doslovný text „Ekonom - specializace sportovní“ z roku 2025 (archiv webu nebyl dostupný) – kontinuita je doložena shodou oboru, ŠVP a obsahu specializace, nikoli přímým dobovým snímkem webu z roku 2025."
+   ]
+  },
+  {
+   "issue_ids": [
+    "Q0166",
+    "Q0269"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "CERMAT 1. kolo JPZ 2025 uvádí u REDIZO 691001111 nabídku 63-41-M/01 Ekonomika a podnikání se zaměřením „Ekonom - specializace jazyková a odborná“; CERMAT 1. kolo JPZ 2026 uvádí u téhož REDIZO/IZO nabídku 63-41-M/01 se zaměřením „specializace jazyková a odborná“ (beze slova „Ekonom“).",
+    "Rejstřík MŠMT eviduje obor 63-41-M/01 Ekonomika a podnikání u IZO 040652441 beze změny ve všech čtyřech snímcích 2025-03-31 až 2026-06-30; subjekt, IZO i adresa jsou stabilní.",
+    "Web školy (anoa.cz) v sekci Učební plán oboru potvrzuje, že ŠVP oboru 63-41-M/01 se nazývá „Ekonom“ a nabízí volitelné zaměření mimo sportovní program (např. Leadership, Logistika a mezinárodní obchodní spolupráce, Daně a účetnictví) v duchu jazykové a odborné přípravy.",
+    "Web školy v sekci Přijímací řízení pro školní rok 2026/2027 potvrzuje otevření „2 tříd prvního ročníku denního studia specializace jazykové a odborné (JO)“ bez podmínky sportovního programu – stejný obsah, jaký CERMAT eviduje jako nabídku pro rok 2026 (Q0269)."
+   ],
+   "conclusion": "Jde o tutéž nabídku (obor 63-41-M/01 Ekonomika a podnikání, specializace jazyková a odborná v rámci ŠVP „Ekonom“), pouze se mezi lety 2025 a 2026 změnil formát zápisu textu zaměření v datech CERMAT – odstranil se prefix „Ekonom - “. Q0166 (2025) párově navazuje na Q0269 (2026); příčinu samotné změny zápisu textu není třeba dále zkoumat.",
+   "alternative_explanations": [
+    "Nelze zcela vyloučit dílčí úpravu obsahu ŠVP mezi ročníky (běžná drobná revize učebního plánu, např. nabídky volitelných předmětů), tu ale zdroje nezmiňují a nejde o změnu kódu ani délky studia."
+   ],
+   "relationship": {
+    "type": "continuation",
+    "from": [
+     "63-41-M/01 Ekonom - specializace jazyková a odborná (2025, Q0166)"
+    ],
+    "to": [
+     "63-41-M/01 specializace jazyková a odborná (2026, Q0269)"
+    ]
+   },
+   "addresses": [
+    {
+     "text": "Prusíkova 2577/16, 155 00 Stodůlky, Praha",
+     "role": "sídlo",
+     "izo": "691001111",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Prusíkova 2577/16, 155 00 Stodůlky, Praha",
+     "role": "místo výuky",
+     "izo": "040652441",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-691001111",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ 2025 a 2026)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 63-41-M/01 se zaměřením „Ekonom - specializace jazyková a odborná“ (2025, ID_SOF 541389a4-6eb8-45ac-a28f-0c53211e257d) a „specializace jazyková a odborná“ (2026, ID_SOF 67465d2e-cb22-42ba-84d8-08c6a6362d50) u téhož REDIZO/IZO.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://www.anoa.cz/uchazec/ucebni-plan-oboru",
+     "title": "Učební plán oboru – ANOA (Anglo - německá obchodní akademie)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 63-41-M/01 Ekonomika a podnikání má ŠVP název „Ekonom“ s volitelnými předměty (Leadership, Logistika a mezinárodní obchodní spolupráce, Daně a účetnictví) mimo sportovní program.",
+     "applicable_period": "aktuální stav webu, školní rok 2026/2027"
+    },
+    {
+     "url": "https://www.anoa.cz/uchazec/prijimaci-rizeni",
+     "title": "Přijímací řízení – ANOA (Anglo - německá obchodní akademie)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola pro školní rok 2026/2027 otevírá 2 třídy specializace jazykové a odborné (JO), bez podmínky sportovního programu.",
+     "applicable_period": "přijímací řízení 2026/2027"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 63-41-M/01 Ekonomika a podnikání zůstává registrován u IZO 040652441; rejstřík nerozlišuje zaměření/ŠVP, takže specializaci jazykovou a odbornou samostatně nepotvrzuje ani nevyvrací.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    }
+   ],
+   "history_comparability": "comparable",
+   "recommended_action": "approve_mapping",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "decisions_required": [
+    "Web školy necituje doslovný text „Ekonom - specializace jazyková a odborná“ z roku 2025 (archiv webu nebyl dostupný) – kontinuita je doložena shodou oboru, ŠVP a obsahu specializace, nikoli přímým dobovým snímkem webu z roku 2025."
+   ]
+  }
+ ]
 }

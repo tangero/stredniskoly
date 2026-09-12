@@ -1,163 +1,183 @@
 {
-  "task_id": "R-600012891",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Subjekt REDIZO 600012891 (Krkonošské gymnázium a Střední odborná škola, sídlo Komenského 586, Vrchlabí) je ve všech čtyřech snímcích beze změny. IZO 060153245 „Střední škola\" má ve všech snímcích dvě shodná místa výuky: Komenského 586, Vrchlabí a Horská 309, Hostinné. Obor 79-41-K/81 Gymnázium (8leté) je zapsán ve všech čtyřech snímcích beze změny u tohoto jediného IZO; rejstřík neeviduje rozlišení na zaměření ani na pracoviště Vrchlabí/Hostinné. Škola vznikla v roce 2018 sloučením Gymnázia Vrchlabí a Gymnázia a Střední odborné školy Hostinné a dodnes provozuje obě pracoviště."
-  },
-  "findings": [
+ "task_id": "R-600012891",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt REDIZO 600012891 (Krkonošské gymnázium a Střední odborná škola, sídlo Komenského 586, Vrchlabí) je ve všech čtyřech snímcích beze změny. IZO 060153245 „Střední škola\" má ve všech snímcích dvě shodná místa výuky: Komenského 586, Vrchlabí a Horská 309, Hostinné. Obor 79-41-K/81 Gymnázium (8leté) je zapsán ve všech čtyřech snímcích beze změny u tohoto jediného IZO; rejstřík neeviduje rozlišení na zaměření ani na pracoviště Vrchlabí/Hostinné. Škola vznikla v roce 2018 sloučením Gymnázia Vrchlabí a Gymnázia a Střední odborné školy Hostinné a dodnes provozuje obě pracoviště."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0070"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "CERMAT 1. kolo JPZ 2025 nabízelo obor 79-41-K/81 Gymnázium se zaměřením „ŠVP Hostinné\"; v roce 2026 tato nabídka chybí.",
+    "Krkonošský deník (27. 10. 2025) a Jičínský deník (27. 10. 2025) potvrzují rozhodnutí Rady Královéhradeckého kraje neotevírat od školního roku 2026/2027 nové první ročníky osmiletého gymnázia v Hostinném (spolu s Novou Pakou a Hořicemi) kvůli dlouhodobě nízké naplněnosti tříd; stávající studenti v Hostinném obor dostudují, na jeho místo má do čtyř let vzniknout čtyřletý obor.",
+    "Web školy (krgym.cz, sekce O škole) potvrzuje, že pracoviště Hostinné má osmileté gymnázium označené jako „dobíhající obor\" (15 tříd), zatímco Vrchlabí nabízí osmileté i čtyřleté gymnázium (12 tříd) bez tohoto označení.",
+    "Rejstřík MŠMT eviduje jediný obor 79-41-K/81 Gymnázium u IZO 060153245 (bez rozlišení pracoviště) ve všech čtyřech snímcích beze změny – registrace oboru trvá, změna se týká jen vyhlášení přijímacího řízení pro nové uchazeče na pracovišti Hostinné."
+   ],
+   "conclusion": "Zaměření „ŠVP Hostinné\" osmiletého gymnázia 79-41-K/81 zaniklo pro nové uchazeče od školního roku 2026/2027 na základě doloženého rozhodnutí Rady Královéhradeckého kraje z října 2025. Jde o ukončení nového přijímání na pracovišti Hostinné (obor tam dobíhá se stávajícími studenty), nikoli o výmaz oboru z rejstříku ani o zánik celé školy.",
+   "alternative_explanations": [
+    "Kraj avizoval, že místo osmiletého gymnázia má v Hostinném do čtyř let vzniknout čtyřletý obor – k datu zpracování v CERMAT datech 2026 ani v rejstříku takový nový obor pro Hostinné doložen není."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "79-41-K/81 ŠVP Hostinné (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0070"],
-      "status": "potvrzeno",
-      "observations": [
-        "CERMAT 1. kolo JPZ 2025 nabízelo obor 79-41-K/81 Gymnázium se zaměřením „ŠVP Hostinné\"; v roce 2026 tato nabídka chybí.",
-        "Krkonošský deník (27. 10. 2025) a Jičínský deník (27. 10. 2025) potvrzují rozhodnutí Rady Královéhradeckého kraje neotevírat od školního roku 2026/2027 nové první ročníky osmiletého gymnázia v Hostinném (spolu s Novou Pakou a Hořicemi) kvůli dlouhodobě nízké naplněnosti tříd; stávající studenti v Hostinném obor dostudují, na jeho místo má do čtyř let vzniknout čtyřletý obor.",
-        "Web školy (krgym.cz, sekce O škole) potvrzuje, že pracoviště Hostinné má osmileté gymnázium označené jako „dobíhající obor\" (15 tříd), zatímco Vrchlabí nabízí osmileté i čtyřleté gymnázium (12 tříd) bez tohoto označení.",
-        "Rejstřík MŠMT eviduje jediný obor 79-41-K/81 Gymnázium u IZO 060153245 (bez rozlišení pracoviště) ve všech čtyřech snímcích beze změny – registrace oboru trvá, změna se týká jen vyhlášení přijímacího řízení pro nové uchazeče na pracovišti Hostinné."
-      ],
-      "conclusion": "Zaměření „ŠVP Hostinné\" osmiletého gymnázia 79-41-K/81 zaniklo pro nové uchazeče od školního roku 2026/2027 na základě doloženého rozhodnutí Rady Královéhradeckého kraje z října 2025. Jde o ukončení nového přijímání na pracovišti Hostinné (obor tam dobíhá se stávajícími studenty), nikoli o výmaz oboru z rejstříku ani o zánik celé školy.",
-      "alternative_explanations": [
-        "Kraj avizoval, že místo osmiletého gymnázia má v Hostinném do čtyř let vzniknout čtyřletý obor – k datu zpracování v CERMAT datech 2026 ani v rejstříku takový nový obor pro Hostinné doložen není."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["79-41-K/81 ŠVP Hostinné (2025)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Komenského 586, 543 01 Vrchlabí",
-          "role": "sídlo",
-          "izo": "600012891",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Horská 309, 543 71 Hostinné",
-          "role": "místo výuky",
-          "izo": "060153245",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://krkonossky.denik.cz/zpravy_region/v-hostinnem-skonci-vicelete-gymnazium-kraj-chce-podporit-ctyrleta-studia-2025102.html",
-          "title": "V Hostinném skončí víceleté gymnázium, kraj chce podpořit čtyřletá studia – Krkonošský deník",
-          "published_at": "2025-10-27",
-          "checked_at": "2026-09-12",
-          "supports": "Kraj rozhodl, že v Hostinném se od školního roku 2026/2027 neotevře nový první ročník osmiletého gymnázia; stávající studenti obor dostudují, rozhodnutí se netýká Vrchlabí.",
-          "applicable_period": "rozhodnutí říjen 2025, účinnost od školního roku 2026/27"
-        },
-        {
-          "url": "https://www.krgym.cz/o-skole/",
-          "title": "O škole – Krkonošské gymnázium a Střední odborná škola",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Pracoviště Hostinné má osmileté gymnázium označené jako dobíhající obor; Vrchlabí nabízí osmileté i čtyřleté gymnázium bez tohoto označení.",
-          "applicable_period": "aktuální stav webu k 2026-09-12"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 79-41-K/81 zůstává u IZO 060153245 registrován beze změny, rejstřík nerozlišuje pracoviště.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600012891",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Zaměření ŠVP Hostinné u 79-41-K/81 přítomno v roce 2025 a chybějící v roce 2026.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Kdy přesně a v jaké podobě (kód oboru, forma) vznikne v Hostinném avizovaný náhradní čtyřletý obor."
-      ]
+     "text": "Komenského 586, 543 01 Vrchlabí",
+     "role": "sídlo",
+     "izo": "600012891",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     },
     {
-      "issue_ids": ["Q0069", "Q0291"],
-      "status": "pravděpodobné",
-      "observations": [
-        "CERMAT 1. kolo JPZ 2025 nabízelo obor 79-41-K/81 Gymnázium se zaměřením „ŠVP Vrchlabí\"; v roce 2026 je nabízen jediný záznam 79-41-K/81 Gymnázium bez zaměření (prázdný text).",
-        "Web školy (krgym.cz, sekce O škole) potvrzuje, že Vrchlabí nadále nabízí osmileté i čtyřleté gymnázium bez označení „dobíhající\", na rozdíl od Hostinného, kde je osmileté gymnázium dobíhající (viz nález ke Q0070 v tomto souboru).",
-        "Poté, co pracoviště Hostinné přestalo od roku 2026 nově přijímat do osmiletého gymnázia (rozhodnutí Rady Královéhradeckého kraje z 27. 10. 2025), zůstává jedinou aktivně přijímající variantou oboru 79-41-K/81 právě pracoviště Vrchlabí – rozlišující zaměření podle pracoviště tak pro CERMAT nabídku přestalo být potřebné.",
-        "Rejstřík MŠMT eviduje jediný obor 79-41-K/81 Gymnázium u IZO 060153245 ve všech čtyřech snímcích beze změny – nerozlišuje pracoviště ani zaměření, takže samotný zápis tuto interpretaci ani nepotvrzuje, ani nevyvrací."
-      ],
-      "conclusion": "Nabídka 79-41-K/81 bez zaměření v roce 2026 (Q0291) pravděpodobně představuje pokračování varianty „ŠVP Vrchlabí\" z roku 2025 (Q0069) – jde o týž obor na týž pracoviště, u kterého odpadla potřeba rozlišujícího textu zaměření poté, co paralelní varianta v Hostinném přestala nabírat nové žáky. Přímé potvrzení této interpretace (na rozdíl od alternativy, že jde o čistě textovou úpravu bez vazby na situaci v Hostinném) se nepodařilo dohledat, proto je závěr klasifikován jako pravděpodobný.",
-      "alternative_explanations": [
-        "Odstranění textu zaměření mohlo být čistě administrativní úpravou nesouvisející s událostmi v Hostinném.",
-        "Škola mohla zaměření sjednotit již dříve a shoda s časováním hostinského rozhodnutí je náhodná."
-      ],
-      "relationship": {
-        "type": "continuation",
-        "from": ["79-41-K/81 ŠVP Vrchlabí (2025)"],
-        "to": ["79-41-K/81 (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Komenského 586, 543 01 Vrchlabí",
-          "role": "sídlo",
-          "izo": "600012891",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Komenského 586, 543 01 Vrchlabí",
-          "role": "místo výuky",
-          "izo": "060153245",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.krgym.cz/o-skole/",
-          "title": "O škole – Krkonošské gymnázium a Střední odborná škola",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Vrchlabí nabízí osmileté i čtyřleté gymnázium bez označení dobíhající, na rozdíl od Hostinného.",
-          "applicable_period": "aktuální stav webu k 2026-09-12"
-        },
-        {
-          "url": "https://krkonossky.denik.cz/zpravy_region/v-hostinnem-skonci-vicelete-gymnazium-kraj-chce-podporit-ctyrleta-studia-2025102.html",
-          "title": "V Hostinném skončí víceleté gymnázium, kraj chce podpořit čtyřletá studia – Krkonošský deník",
-          "published_at": "2025-10-27",
-          "checked_at": "2026-09-12",
-          "supports": "Rozhodnutí kraje se týká pouze Hostinného, nikoli Vrchlabí, kde přijímání pokračuje.",
-          "applicable_period": "rozhodnutí říjen 2025, účinnost od školního roku 2026/27"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 79-41-K/81 zůstává u IZO 060153245 registrován beze změny; rejstřík nerozlišuje pracoviště ani zaměření.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600012891",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Zaměření ŠVP Vrchlabí u 79-41-K/81 v roce 2025 a nabídka bez zaměření u téhož oboru v roce 2026.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "partially",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda škola explicitně potvrdila, že nabídka 79-41-K/81 bez zaměření v roce 2026 odpovídá pracovišti Vrchlabí."
-      ]
+     "text": "Horská 309, 543 71 Hostinné",
+     "role": "místo výuky",
+     "izo": "060153245",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://krkonossky.denik.cz/zpravy_region/v-hostinnem-skonci-vicelete-gymnazium-kraj-chce-podporit-ctyrleta-studia-2025102.html",
+     "title": "V Hostinném skončí víceleté gymnázium, kraj chce podpořit čtyřletá studia – Krkonošský deník",
+     "published_at": "2025-10-27",
+     "checked_at": "2026-09-12",
+     "supports": "Kraj rozhodl, že v Hostinném se od školního roku 2026/2027 neotevře nový první ročník osmiletého gymnázia; stávající studenti obor dostudují, rozhodnutí se netýká Vrchlabí.",
+     "applicable_period": "rozhodnutí říjen 2025, účinnost od školního roku 2026/27"
+    },
+    {
+     "url": "https://www.krgym.cz/o-skole/",
+     "title": "O škole – Krkonošské gymnázium a Střední odborná škola",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Pracoviště Hostinné má osmileté gymnázium označené jako dobíhající obor; Vrchlabí nabízí osmileté i čtyřleté gymnázium bez tohoto označení.",
+     "applicable_period": "aktuální stav webu k 2026-09-12"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 79-41-K/81 zůstává u IZO 060153245 registrován beze změny, rejstřík nerozlišuje pracoviště.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600012891",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Zaměření ŠVP Hostinné u 79-41-K/81 přítomno v roce 2025 a chybějící v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Kdy přesně a v jaké podobě (kód oboru, forma) vznikne v Hostinném avizovaný náhradní čtyřletý obor."
+   ]
+  },
+  {
+   "issue_ids": [
+    "Q0069",
+    "Q0291"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "CERMAT 1. kolo JPZ 2025 nabízelo obor 79-41-K/81 Gymnázium se zaměřením „ŠVP Vrchlabí\"; v roce 2026 je nabízen jediný záznam 79-41-K/81 Gymnázium bez zaměření (prázdný text).",
+    "Web školy (krgym.cz, sekce O škole) potvrzuje, že Vrchlabí nadále nabízí osmileté i čtyřleté gymnázium bez označení „dobíhající\", na rozdíl od Hostinného, kde je osmileté gymnázium dobíhající (viz nález ke Q0070 v tomto souboru).",
+    "Poté, co pracoviště Hostinné přestalo od roku 2026 nově přijímat do osmiletého gymnázia (rozhodnutí Rady Královéhradeckého kraje z 27. 10. 2025), zůstává jedinou aktivně přijímající variantou oboru 79-41-K/81 právě pracoviště Vrchlabí – rozlišující zaměření podle pracoviště tak pro CERMAT nabídku přestalo být potřebné.",
+    "Rejstřík MŠMT eviduje jediný obor 79-41-K/81 Gymnázium u IZO 060153245 ve všech čtyřech snímcích beze změny – nerozlišuje pracoviště ani zaměření, takže samotný zápis tuto interpretaci ani nepotvrzuje, ani nevyvrací."
+   ],
+   "conclusion": "Nabídka 79-41-K/81 bez zaměření v roce 2026 (Q0291) pravděpodobně představuje pokračování varianty „ŠVP Vrchlabí\" z roku 2025 (Q0069) – jde o týž obor na týž pracoviště, u kterého odpadla potřeba rozlišujícího textu zaměření poté, co paralelní varianta v Hostinném přestala nabírat nové žáky. Přímé potvrzení této interpretace (na rozdíl od alternativy, že jde o čistě textovou úpravu bez vazby na situaci v Hostinném) se nepodařilo dohledat, proto je závěr klasifikován jako pravděpodobný.",
+   "alternative_explanations": [
+    "Odstranění textu zaměření mohlo být čistě administrativní úpravou nesouvisející s událostmi v Hostinném.",
+    "Škola mohla zaměření sjednotit již dříve a shoda s časováním hostinského rozhodnutí je náhodná."
+   ],
+   "relationship": {
+    "type": "continuation",
+    "from": [
+     "79-41-K/81 ŠVP Vrchlabí (2025)"
+    ],
+    "to": [
+     "79-41-K/81 (2026)"
+    ]
+   },
+   "addresses": [
+    {
+     "text": "Komenského 586, 543 01 Vrchlabí",
+     "role": "sídlo",
+     "izo": "600012891",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Komenského 586, 543 01 Vrchlabí",
+     "role": "místo výuky",
+     "izo": "060153245",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "https://www.krgym.cz/o-skole/",
+     "title": "O škole – Krkonošské gymnázium a Střední odborná škola",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Vrchlabí nabízí osmileté i čtyřleté gymnázium bez označení dobíhající, na rozdíl od Hostinného.",
+     "applicable_period": "aktuální stav webu k 2026-09-12"
+    },
+    {
+     "url": "https://krkonossky.denik.cz/zpravy_region/v-hostinnem-skonci-vicelete-gymnazium-kraj-chce-podporit-ctyrleta-studia-2025102.html",
+     "title": "V Hostinném skončí víceleté gymnázium, kraj chce podpořit čtyřletá studia – Krkonošský deník",
+     "published_at": "2025-10-27",
+     "checked_at": "2026-09-12",
+     "supports": "Rozhodnutí kraje se týká pouze Hostinného, nikoli Vrchlabí, kde přijímání pokračuje.",
+     "applicable_period": "rozhodnutí říjen 2025, účinnost od školního roku 2026/27"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 79-41-K/81 zůstává u IZO 060153245 registrován beze změny; rejstřík nerozlišuje pracoviště ani zaměření.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600012891",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Zaměření ŠVP Vrchlabí u 79-41-K/81 v roce 2025 a nabídka bez zaměření u téhož oboru v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda škola explicitně potvrdila, že nabídka 79-41-K/81 bez zaměření v roce 2026 odpovídá pracovišti Vrchlabí.",
+     "uzavreno": "Mimo rozsah tohoto běhu: otázka nepatří k návaznosti nabídek, ale k samostatnému úkolu doložení míst výuky pro dojezdovost."
+    }
+   ]
+  }
+ ]
 }

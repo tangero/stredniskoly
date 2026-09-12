@@ -1,87 +1,98 @@
 {
-  "task_id": "R-600019527",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Subjekt Střední zdravotnická škola a Vyšší odborná škola zdravotnická, Kolín, Karoliny Světlé 135 (REDIZO 600019527, IČ 00068713, zřizovatel Středočeský kraj) je ve všech čtyřech snímcích beze změny, včetně jediného IZO střední školy 110009819 (místo výuky Karoliny Světlé 135, Kolín). Obor 53-43-M/01 Laboratorní asistent je u tohoto IZO zapsán ve všech čtyřech snímcích (2025-03-31 až 2026-06-30) shodně s obory 53-41-M/03 Praktická sestra a 78-42-M/04 Zdravotnické lyceum – registrace oboru tedy předchází nabídce CERMAT 2026 a nejde o nově zapsaný obor."
-  },
-  "findings": [
+ "task_id": "R-600019527",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt Střední zdravotnická škola a Vyšší odborná škola zdravotnická, Kolín, Karoliny Světlé 135 (REDIZO 600019527, IČ 00068713, zřizovatel Středočeský kraj) je ve všech čtyřech snímcích beze změny, včetně jediného IZO střední školy 110009819 (místo výuky Karoliny Světlé 135, Kolín). Obor 53-43-M/01 Laboratorní asistent je u tohoto IZO zapsán ve všech čtyřech snímcích (2025-03-31 až 2026-06-30) shodně s obory 53-41-M/03 Praktická sestra a 78-42-M/04 Zdravotnické lyceum – registrace oboru tedy předchází nabídce CERMAT 2026 a nejde o nově zapsaný obor."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0344"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela jen obory 53-41-M/03 Praktická sestra a 78-42-M/04 Zdravotnické lyceum; obor 53-43-M/01 Laboratorní asistent v nabídce chyběl.",
+    "V 1. kole JPZ 2026 přibyla k týmž dvěma oborům nabídka 53-43-M/01 Laboratorní asistent.",
+    "Rejstřík MŠMT eviduje obor 53-43-M/01 u IZO 110009819 ve všech čtyřech snímcích včetně 2025-03-31 – obor tedy nebyl v roce 2025 nově zapsán, byl zapsán už předtím, jen se pro daný ročník nepřijímalo.",
+    "Web školy (zdravotka.cz) v sekci přijímacího řízení pro školní rok 2026/2027 uvádí tři otevírané obory: Praktickou sestru, Laboratorního asistenta a Zdravotnické lyceum – nabídka CERMAT 2026 je tedy skutečná a odpovídá aktuálnímu stavu, ne datové chybě."
+   ],
+   "conclusion": "Obor 53-43-M/01 Laboratorní asistent na této škole není nový – byl v rejstříku zapsán už před rokem 2025, v přijímacím řízení 2025 se do něj ale nepřijímalo a pro školní rok 2026/2027 bylo přijímací řízení obnoveno, což potvrzuje i aktuální stránka školy s přijímacím řízením. Jde o obnovení nabídky již existujícího oboru, nikoli o založení nového oboru.",
+   "alternative_explanations": [
+    "Zdroje nevylučují, že šlo o záměrné dvouleté (či jinak periodické) střídání nabízených oborů kvůli kapacitě – podobný mechanismus je doložen u jiných středočeských/jihočeských zdravotnických škol (např. České Budějovice) – u Kolína to ale přímo doloženo nebylo, konkrétní periodicita zůstává nezjištěná."
+   ],
+   "relationship": {
+    "type": "continuation",
+    "from": [
+     "53-43-M/01 Laboratorní asistent (registrován, bez nabídky 2025)"
+    ],
+    "to": [
+     "53-43-M/01 Laboratorní asistent (nabídka 2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0344"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela jen obory 53-41-M/03 Praktická sestra a 78-42-M/04 Zdravotnické lyceum; obor 53-43-M/01 Laboratorní asistent v nabídce chyběl.",
-        "V 1. kole JPZ 2026 přibyla k týmž dvěma oborům nabídka 53-43-M/01 Laboratorní asistent.",
-        "Rejstřík MŠMT eviduje obor 53-43-M/01 u IZO 110009819 ve všech čtyřech snímcích včetně 2025-03-31 – obor tedy nebyl v roce 2025 nově zapsán, byl zapsán už předtím, jen se pro daný ročník nepřijímalo.",
-        "Web školy (zdravotka.cz) v sekci přijímacího řízení pro školní rok 2026/2027 uvádí tři otevírané obory: Praktickou sestru, Laboratorního asistenta a Zdravotnické lyceum – nabídka CERMAT 2026 je tedy skutečná a odpovídá aktuálnímu stavu, ne datové chybě."
-      ],
-      "conclusion": "Obor 53-43-M/01 Laboratorní asistent na této škole není nový – byl v rejstříku zapsán už před rokem 2025, v přijímacím řízení 2025 se do něj ale nepřijímalo a pro školní rok 2026/2027 bylo přijímací řízení obnoveno, což potvrzuje i aktuální stránka školy s přijímacím řízením. Jde o obnovení nabídky již existujícího oboru, nikoli o založení nového oboru.",
-      "alternative_explanations": [
-        "Zdroje nevylučují, že šlo o záměrné dvouleté (či jinak periodické) střídání nabízených oborů kvůli kapacitě – podobný mechanismus je doložen u jiných středočeských/jihočeských zdravotnických škol (např. České Budějovice) – u Kolína to ale přímo doloženo nebylo, konkrétní periodicita zůstává nezjištěná."
-      ],
-      "relationship": {
-        "type": "continuation",
-        "from": ["53-43-M/01 Laboratorní asistent (registrován, bez nabídky 2025)"],
-        "to": ["53-43-M/01 Laboratorní asistent (nabídka 2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Karoliny Světlé 135, 280 02 Kolín I, Kolín",
-          "role": "sídlo",
-          "izo": "600019527",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Karoliny Světlé 135, 280 02 Kolín I, Kolín",
-          "role": "místo výuky",
-          "izo": "110009819",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.zdravotka.cz/uchazeci/prijimaci-rizeni/",
-          "title": "Přijímací řízení – Střední zdravotnická škola a VOŠ zdravotnická Kolín",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola pro školní rok 2026/2027 otevírá obory Praktická sestra, Laboratorní asistent a Zdravotnické lyceum – potvrzuje reálnou nabídku oboru Laboratorní asistent v roce 2026.",
-          "applicable_period": "přijímací řízení 2026/2027"
-        },
-        {
-          "url": "https://www.zdravotka.cz/szs/laboratorni-asistent/",
-          "title": "Laboratorní asistent – Střední zdravotnická škola a VOŠ zdravotnická Kolín",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obecný popis oboru na webu školy; nepotvrzuje ani nevyvrací periodicitu otevírání, obor je veden jako součást aktuální nabídky školy.",
-          "applicable_period": "aktuální stav webu, bez uvedeného data"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 53-43-M/01 Laboratorní asistent je u IZO 110009819 registrován ve všech čtyřech snímcích, včetně 2025-03-31 (před rokem, kdy chyběla nabídka CERMAT).",
-          "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600019527",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 53-43-M/01 Laboratorní asistent chybí v 1. kole JPZ 2025 a je přítomna v 1. kole JPZ 2026.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "partially",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda šlo o jednorázové obnovení, nebo o pravidelné (např. dvouleté) střídání nabízených oborů, jako je doloženo u jiných zdravotnických škol – u Kolína konkrétní pravidlo nedohledáno."
-      ]
+     "text": "Karoliny Světlé 135, 280 02 Kolín I, Kolín",
+     "role": "sídlo",
+     "izo": "600019527",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Karoliny Světlé 135, 280 02 Kolín I, Kolín",
+     "role": "místo výuky",
+     "izo": "110009819",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.zdravotka.cz/uchazeci/prijimaci-rizeni/",
+     "title": "Přijímací řízení – Střední zdravotnická škola a VOŠ zdravotnická Kolín",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola pro školní rok 2026/2027 otevírá obory Praktická sestra, Laboratorní asistent a Zdravotnické lyceum – potvrzuje reálnou nabídku oboru Laboratorní asistent v roce 2026.",
+     "applicable_period": "přijímací řízení 2026/2027"
+    },
+    {
+     "url": "https://www.zdravotka.cz/szs/laboratorni-asistent/",
+     "title": "Laboratorní asistent – Střední zdravotnická škola a VOŠ zdravotnická Kolín",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obecný popis oboru na webu školy; nepotvrzuje ani nevyvrací periodicitu otevírání, obor je veden jako součást aktuální nabídky školy.",
+     "applicable_period": "aktuální stav webu, bez uvedeného data"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 53-43-M/01 Laboratorní asistent je u IZO 110009819 registrován ve všech čtyřech snímcích, včetně 2025-03-31 (před rokem, kdy chyběla nabídka CERMAT).",
+     "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600019527",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 53-43-M/01 Laboratorní asistent chybí v 1. kole JPZ 2025 a je přítomna v 1. kole JPZ 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Zda šlo o jednorázové obnovení, nebo o pravidelné (např. dvouleté) střídání nabízených oborů, jako je doloženo u jiných zdravotnických škol – u Kolína konkrétní pravidlo nedohledáno."
+   ]
+  }
+ ]
 }

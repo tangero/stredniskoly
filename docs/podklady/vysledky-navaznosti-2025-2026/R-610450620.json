@@ -1,145 +1,162 @@
 {
-  "task_id": "R-610450620",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu: Střední odborná škola a Střední odborné učiliště, Neratovice, Školní 664 (REDIZO 610450620), sídlo Školní 664, 277 11 Neratovice, IZO 110450639 „Střední škola“ s více místy výuky (Neratovice, Mělník, Nymburk, Libiš, Mladá Boleslav; od 2025-12-31 přibylo místo výuky Kojetická 1023, Neratovice). Obor 68-43-M/01 Veřejnosprávní činnost (4leté) zůstává registrován ve všech čtyřech snímcích včetně 30. 6. 2026 – registrace trvá. Obor 78-42-M/02 Ekonomické lyceum není evidován v žádném ze čtyř snímků – jde o novou nabídku, jejíž zápis do rejstříku k datu posledního snímku ještě neproběhl."
-  },
-  "findings": [
+ "task_id": "R-610450620",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu: Střední odborná škola a Střední odborné učiliště, Neratovice, Školní 664 (REDIZO 610450620), sídlo Školní 664, 277 11 Neratovice, IZO 110450639 „Střední škola“ s více místy výuky (Neratovice, Mělník, Nymburk, Libiš, Mladá Boleslav; od 2025-12-31 přibylo místo výuky Kojetická 1023, Neratovice). Obor 68-43-M/01 Veřejnosprávní činnost (4leté) zůstává registrován ve všech čtyřech snímcích včetně 30. 6. 2026 – registrace trvá. Obor 78-42-M/02 Ekonomické lyceum není evidován v žádném ze čtyř snímků – jde o novou nabídku, jejíž zápis do rejstříku k datu posledního snímku ještě neproběhl."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0156"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela obor 68-43-M/01 Veřejnosprávní činnost; v 1. kole JPZ 2026 tato nabídka chybí, zatímco 18-20-M/01 Informační technologie, 28-42-L/01 Chemik operátor, 29-42-M/01 Analýza potravin a 65-42-M/01 Hotelnictví pokračují v obou letech.",
+    "Rejstřík MŠMT eviduje obor 68-43-M/01 Veřejnosprávní činnost u IZO 110450639 ve všech čtyřech snímcích včetně 30. 6. 2026 – registrace oboru trvá.",
+    "Web školy (stránka přijímacího řízení pro školní rok 2026/2027, sosasou.cz) uvádí vyhlášené obory pro 2026/27: Informační technologie, Chemik operátor, Analýza potravin, Hotelnictví, Ekonomické lyceum a řadu učebních oborů. Veřejnosprávní činnost v tomto vyhlášeném seznamu chybí, aniž by stránka výslovně uvedla, že obor „letos neotevírá“."
+   ],
+   "conclusion": "Obor 68-43-M/01 Veřejnosprávní činnost škola pro školní rok 2026/27 pravděpodobně nevyhlásila k přijetí nových žáků – chybí v aktuálním seznamu vyhlášených oborů na webu školy, přitom zůstává registrován v rejstříku MŠMT. Chybí ale explicitní vyjádření školy k důvodu absence, proto jde jen o pravděpodobný, nikoli jistý závěr o přerušení přijímacího řízení.",
+   "alternative_explanations": [
+    "Nabídka mohla být opomenuta při aktualizaci webové stránky, nebo bude vyhlášena dodatečně/v dalším kole přijímacího řízení.",
+    "Obor mohl být fakticky utlumen bez formálního výmazu z rejstříku, což by rejstřík k 30. 6. 2026 ještě nemusel zachytit."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "68-43-M/01 (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0156"],
-      "status": "pravděpodobné",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela obor 68-43-M/01 Veřejnosprávní činnost; v 1. kole JPZ 2026 tato nabídka chybí, zatímco 18-20-M/01 Informační technologie, 28-42-L/01 Chemik operátor, 29-42-M/01 Analýza potravin a 65-42-M/01 Hotelnictví pokračují v obou letech.",
-        "Rejstřík MŠMT eviduje obor 68-43-M/01 Veřejnosprávní činnost u IZO 110450639 ve všech čtyřech snímcích včetně 30. 6. 2026 – registrace oboru trvá.",
-        "Web školy (stránka přijímacího řízení pro školní rok 2026/2027, sosasou.cz) uvádí vyhlášené obory pro 2026/27: Informační technologie, Chemik operátor, Analýza potravin, Hotelnictví, Ekonomické lyceum a řadu učebních oborů. Veřejnosprávní činnost v tomto vyhlášeném seznamu chybí, aniž by stránka výslovně uvedla, že obor „letos neotevírá“."
-      ],
-      "conclusion": "Obor 68-43-M/01 Veřejnosprávní činnost škola pro školní rok 2026/27 pravděpodobně nevyhlásila k přijetí nových žáků – chybí v aktuálním seznamu vyhlášených oborů na webu školy, přitom zůstává registrován v rejstříku MŠMT. Chybí ale explicitní vyjádření školy k důvodu absence, proto jde jen o pravděpodobný, nikoli jistý závěr o přerušení přijímacího řízení.",
-      "alternative_explanations": [
-        "Nabídka mohla být opomenuta při aktualizaci webové stránky, nebo bude vyhlášena dodatečně/v dalším kole přijímacího řízení.",
-        "Obor mohl být fakticky utlumen bez formálního výmazu z rejstříku, což by rejstřík k 30. 6. 2026 ještě nemusel zachytit."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["68-43-M/01 (2025)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Školní 664, 277 11 Neratovice",
-          "role": "sídlo",
-          "izo": "610450620",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Školní 664, 277 11 Neratovice; Kojetická 1023, Neratovice; Nad Pivovarem 3011, Mělník; Mládežnická 2086, Nymburk; Spojovací 632, Libiš; Jičínská 1038, Mladá Boleslav",
-          "role": "místo výuky",
-          "izo": "110450639",
-          "valid_period": "2025-03-31 až 2026-06-30 (Kojetická 1023 přibyla od 2025-12-31)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.sosasou.cz/index.php/uchazeci-cs/uchazeci-prijimaci-rizeni",
-          "title": "Přijímací řízení – SOŠ a SOU Neratovice",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Seznam oborů vyhlášených pro přijímací řízení 2026/2027 neobsahuje 68-43-M/01 Veřejnosprávní činnost, obsahuje ostatní čtyři pokračující obory a nově Ekonomické lyceum.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 68-43-M/01 Veřejnosprávní činnost zůstává u IZO 110450639 registrován i k 30. 6. 2026.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-610450620",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 68-43-M/01 Veřejnosprávní činnost přítomna v roce 2025 a chybějící v roce 2026; ostatní obory pokračují.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Uvedla škola oficiálně důvod nezařazení Veřejnosprávní činnosti do nabídky 2026/27 (např. v zápisu ze zasedání zřizovatele nebo tiskové zprávě)?"
-      ]
+     "text": "Školní 664, 277 11 Neratovice",
+     "role": "sídlo",
+     "izo": "610450620",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     },
     {
-      "issue_ids": ["Q0377"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/02 Ekonomické lyceum (4leté, denní), který v roce 2025 v nabídce nebyl.",
-        "Web školy má samostatnou podstránku k oboru, kde je uvedeno: „Nový obor od školního roku 2026/2027“ a „Žáci s nástupem do 1. ročníku od šk. roku 2026/2027 a dále“, obor je popsán jako čtyřletý studijní obor zakončený maturitní zkouškou.",
-        "Obor 78-42-M/02 Ekonomické lyceum je zároveň uveden v seznamu vyhlášených oborů pro přijímací řízení 2026/2027 na webu školy.",
-        "Obor 78-42-M/02 není evidován v žádném ze čtyř snímků rejstříku MŠMT u IZO 110450639 (ani k 30. 6. 2026) – jde o odstup zápisu do rejstříku, nikoli o rozpor s doloženou nabídkou."
-      ],
-      "conclusion": "Ekonomické lyceum 78-42-M/02 je nový obor, který škola sama na svém webu označuje jako „nový obor od školního roku 2026/2027“ s prvním nástupem žáků v září 2026. Nemá žádného předchůdce v nabídce školy z roku 2025.",
-      "alternative_explanations": [
-        "Formální zápis oboru do rejstříku MŠMT může proběhnout až po 30. 6. 2026; to otevření oboru od září 2026 neovlivňuje."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["78-42-M/02 (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Školní 664, 277 11 Neratovice",
-          "role": "místo výuky",
-          "izo": "110450639",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.sosasou.cz/index.php/ekonomicke-lyceum",
-          "title": "Ekonomické lyceum – SOŠ a SOU Neratovice",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola potvrzuje: „Nový obor od školního roku 2026/2027“, čtyřletý studijní obor zakončený maturitní zkouškou, nástup žáků od 2026/27.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://www.sosasou.cz/index.php/uchazeci-cs/uchazeci-prijimaci-rizeni",
-          "title": "Přijímací řízení – SOŠ a SOU Neratovice",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Ekonomické lyceum 78-42-M/02 je uvedeno v seznamu vyhlášených oborů pro 2026/27.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 78-42-M/02 není u IZO 110450639 evidován ani k 30. 6. 2026 (odstup zápisu do rejstříku).",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-610450620",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 78-42-M/02 Ekonomické lyceum přítomna v roce 2026 a chybějící v roce 2025.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": []
+     "text": "Školní 664, 277 11 Neratovice; Kojetická 1023, Neratovice; Nad Pivovarem 3011, Mělník; Mládežnická 2086, Nymburk; Spojovací 632, Libiš; Jičínská 1038, Mladá Boleslav",
+     "role": "místo výuky",
+     "izo": "110450639",
+     "valid_period": "2025-03-31 až 2026-06-30 (Kojetická 1023 přibyla od 2025-12-31)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.sosasou.cz/index.php/uchazeci-cs/uchazeci-prijimaci-rizeni",
+     "title": "Přijímací řízení – SOŠ a SOU Neratovice",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Seznam oborů vyhlášených pro přijímací řízení 2026/2027 neobsahuje 68-43-M/01 Veřejnosprávní činnost, obsahuje ostatní čtyři pokračující obory a nově Ekonomické lyceum.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 68-43-M/01 Veřejnosprávní činnost zůstává u IZO 110450639 registrován i k 30. 6. 2026.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-610450620",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 68-43-M/01 Veřejnosprávní činnost přítomna v roce 2025 a chybějící v roce 2026; ostatní obory pokračují.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Uvedla škola oficiálně důvod nezařazení Veřejnosprávní činnosti do nabídky 2026/27 (např. v zápisu ze zasedání zřizovatele nebo tiskové zprávě)?",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 1: příčina rozhodnutí školy se nezkoumá, pro návaznost nabídky není potřebná."
+    }
+   ]
+  },
+  {
+   "issue_ids": [
+    "Q0377"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/02 Ekonomické lyceum (4leté, denní), který v roce 2025 v nabídce nebyl.",
+    "Web školy má samostatnou podstránku k oboru, kde je uvedeno: „Nový obor od školního roku 2026/2027“ a „Žáci s nástupem do 1. ročníku od šk. roku 2026/2027 a dále“, obor je popsán jako čtyřletý studijní obor zakončený maturitní zkouškou.",
+    "Obor 78-42-M/02 Ekonomické lyceum je zároveň uveden v seznamu vyhlášených oborů pro přijímací řízení 2026/2027 na webu školy.",
+    "Obor 78-42-M/02 není evidován v žádném ze čtyř snímků rejstříku MŠMT u IZO 110450639 (ani k 30. 6. 2026) – jde o odstup zápisu do rejstříku, nikoli o rozpor s doloženou nabídkou."
+   ],
+   "conclusion": "Ekonomické lyceum 78-42-M/02 je nový obor, který škola sama na svém webu označuje jako „nový obor od školního roku 2026/2027“ s prvním nástupem žáků v září 2026. Nemá žádného předchůdce v nabídce školy z roku 2025.",
+   "alternative_explanations": [
+    "Formální zápis oboru do rejstříku MŠMT může proběhnout až po 30. 6. 2026; to otevření oboru od září 2026 neovlivňuje."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "78-42-M/02 (2026)"
+    ]
+   },
+   "addresses": [
+    {
+     "text": "Školní 664, 277 11 Neratovice",
+     "role": "místo výuky",
+     "izo": "110450639",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "https://www.sosasou.cz/index.php/ekonomicke-lyceum",
+     "title": "Ekonomické lyceum – SOŠ a SOU Neratovice",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola potvrzuje: „Nový obor od školního roku 2026/2027“, čtyřletý studijní obor zakončený maturitní zkouškou, nástup žáků od 2026/27.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://www.sosasou.cz/index.php/uchazeci-cs/uchazeci-prijimaci-rizeni",
+     "title": "Přijímací řízení – SOŠ a SOU Neratovice",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Ekonomické lyceum 78-42-M/02 je uvedeno v seznamu vyhlášených oborů pro 2026/27.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/02 není u IZO 110450639 evidován ani k 30. 6. 2026 (odstup zápisu do rejstříku).",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-610450620",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 78-42-M/02 Ekonomické lyceum přítomna v roce 2026 a chybějící v roce 2025.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": []
+  }
+ ]
 }

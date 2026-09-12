@@ -1,97 +1,112 @@
 {
-  "task_id": "R-600016218",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Subjekt Střední odborná škola a Základní škola, Město Albrechtice, příspěvková organizace (REDIZO 600016218, sídlo Nemocniční 117/11, 793 95 Město Albrechtice) je ve všech čtyřech snímcích beze změny, včetně IZO 107880610 „Střední škola\" na téže adrese a druhého místa výuky Zámecká 82/3. Škola nabízí širokou paletu učňovských oborů kategorie H a E (Kuchař-číšník, Zahradník, Strojní mechanik, Zemědělec-farmář, Prodavač, Zahradnické práce, Opravářské práce, Potravinářská výroba) a nástavbové studium 64-41-L/51 Podnikání v denní (2leté) i dálkové (3leté) formě – všechny obory jsou zapsány beze změny ve všech čtyřech snímcích. Jediným oborem této školy, který v datech CERMAT figuruje v 1. kole JPZ, je nástavbové denní studium Podnikání; ostatní obory (H, E, dálkové nástavby) do sledovaného rozsahu „denní nezkrácené studium s povinnou JPZ\" nespadají."
-  },
-  "findings": [
+ "task_id": "R-600016218",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt Střední odborná škola a Základní škola, Město Albrechtice, příspěvková organizace (REDIZO 600016218, sídlo Nemocniční 117/11, 793 95 Město Albrechtice) je ve všech čtyřech snímcích beze změny, včetně IZO 107880610 „Střední škola\" na téže adrese a druhého místa výuky Zámecká 82/3. Škola nabízí širokou paletu učňovských oborů kategorie H a E (Kuchař-číšník, Zahradník, Strojní mechanik, Zemědělec-farmář, Prodavač, Zahradnické práce, Opravářské práce, Potravinářská výroba) a nástavbové studium 64-41-L/51 Podnikání v denní (2leté) i dálkové (3leté) formě – všechny obory jsou zapsány beze změny ve všech čtyřech snímcích. Jediným oborem této školy, který v datech CERMAT figuruje v 1. kole JPZ, je nástavbové denní studium Podnikání; ostatní obory (H, E, dálkové nástavby) do sledovaného rozsahu „denní nezkrácené studium s povinnou JPZ\" nespadají."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0096",
+    "Q0192"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela dvouleté denní nástavbové studium 64-41-L/51 Podnikání; v 1. kole JPZ 2026 nemá REDIZO 600016218 žádnou nabídku (0 záznamů) – proto se školní jednotka z roku 2025 nepodařilo spárovat se žádnou jednotkou v roce 2026 (Q0192) a nabídka Podnikání zůstala nepřiřazená (Q0096).",
+    "Rejstřík MŠMT eviduje obor 64-41-L/51 Podnikání (denní 2leté i dálkové 3leté) u IZO 107880610 beze změny ve všech čtyřech snímcích od 31. 3. 2025 do 30. 6. 2026 – obor ani škola nezanikly.",
+    "Ostatní obory školy (učňovské obory kategorie H a E, dálkové Podnikání) jsou mimo rozsah datové sady „denní nezkrácené studium s povinnou JPZ, 1. kolo\", a proto by se v porovnání 2025 vs. 2026 neobjevily, ani kdyby byly beze změny nabízeny – to samo o sobě vysvětluje, proč z REDIZO 600016218 v roce 2026 nezůstala v datové sadě žádná nabídka.",
+    "Web školy (souzma.cz) k obecným informacím o přijímacím řízení pro rok 2026 uvádí, že „přijímací zkoušky konají pouze uchazeči o nástavbové studium\" a že nástavbové studium Podnikání lze absolvovat denní (2leté) nebo dálkovou (3letou) formou – stránky ale neuvádějí konkrétní potvrzení, zda byla denní forma pro školní rok 2026/27 fakticky otevřena, ani počty přihlášených.",
+    "Stránka přijímacího řízení školy pro rok 2026 zveřejňuje kritéria pouze pro 3. kolo oborů skupiny H a E; kritéria pro nástavbové studium Podnikání na veřejně dostupné stránce chybí, což nelze jednoznačně vyložit jako důkaz zrušení oboru pro rok 2026."
+   ],
+   "conclusion": "Škola i obor 64-41-L/51 Podnikání (denní i dálková forma) zůstávají v rejstříku MŠMT nepřerušeně registrovány po celé sledované období. Zmizení REDIZO 600016218 z datové sady CERMAT 2026 je vysvětlitelné tím, že jediným oborem této školy spadajícím do sledovaného rozsahu (denní studium s JPZ) je právě nástavbové Podnikání – pokud škola pro rok 2026 nevypsala denní nástavbu v 1. kole JPZ (ať už kvůli nedostatečnému zájmu, nebo z jiného provozního důvodu), zmizí z datové sady celá organizace, aniž by šlo o zánik školy nebo oboru.",
+   "alternative_explanations": [
+    "Denní nástavba mohla být v roce 2026 vypsána až v pozdějším kole přijímacího řízení mimo sledované 1. kolo JPZ, což by v datech chybělo, aniž by šlo o zrušení oboru.",
+    "Škola mohla denní formu dočasně neotevřít kvůli nedostatku přihlášek, přičemž dálková forma pokračuje beze změny."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "64-41-L/51 Podnikání, denní 2leté (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0096", "Q0192"],
-      "status": "pravděpodobné",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela dvouleté denní nástavbové studium 64-41-L/51 Podnikání; v 1. kole JPZ 2026 nemá REDIZO 600016218 žádnou nabídku (0 záznamů) – proto se školní jednotka z roku 2025 nepodařilo spárovat se žádnou jednotkou v roce 2026 (Q0192) a nabídka Podnikání zůstala nepřiřazená (Q0096).",
-        "Rejstřík MŠMT eviduje obor 64-41-L/51 Podnikání (denní 2leté i dálkové 3leté) u IZO 107880610 beze změny ve všech čtyřech snímcích od 31. 3. 2025 do 30. 6. 2026 – obor ani škola nezanikly.",
-        "Ostatní obory školy (učňovské obory kategorie H a E, dálkové Podnikání) jsou mimo rozsah datové sady „denní nezkrácené studium s povinnou JPZ, 1. kolo\", a proto by se v porovnání 2025 vs. 2026 neobjevily, ani kdyby byly beze změny nabízeny – to samo o sobě vysvětluje, proč z REDIZO 600016218 v roce 2026 nezůstala v datové sadě žádná nabídka.",
-        "Web školy (souzma.cz) k obecným informacím o přijímacím řízení pro rok 2026 uvádí, že „přijímací zkoušky konají pouze uchazeči o nástavbové studium\" a že nástavbové studium Podnikání lze absolvovat denní (2leté) nebo dálkovou (3letou) formou – stránky ale neuvádějí konkrétní potvrzení, zda byla denní forma pro školní rok 2026/27 fakticky otevřena, ani počty přihlášených.",
-        "Stránka přijímacího řízení školy pro rok 2026 zveřejňuje kritéria pouze pro 3. kolo oborů skupiny H a E; kritéria pro nástavbové studium Podnikání na veřejně dostupné stránce chybí, což nelze jednoznačně vyložit jako důkaz zrušení oboru pro rok 2026."
-      ],
-      "conclusion": "Škola i obor 64-41-L/51 Podnikání (denní i dálková forma) zůstávají v rejstříku MŠMT nepřerušeně registrovány po celé sledované období. Zmizení REDIZO 600016218 z datové sady CERMAT 2026 je vysvětlitelné tím, že jediným oborem této školy spadajícím do sledovaného rozsahu (denní studium s JPZ) je právě nástavbové Podnikání – pokud škola pro rok 2026 nevypsala denní nástavbu v 1. kole JPZ (ať už kvůli nedostatečnému zájmu, nebo z jiného provozního důvodu), zmizí z datové sady celá organizace, aniž by šlo o zánik školy nebo oboru.",
-      "alternative_explanations": [
-        "Denní nástavba mohla být v roce 2026 vypsána až v pozdějším kole přijímacího řízení mimo sledované 1. kolo JPZ, což by v datech chybělo, aniž by šlo o zrušení oboru.",
-        "Škola mohla denní formu dočasně neotevřít kvůli nedostatku přihlášek, přičemž dálková forma pokračuje beze změny."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["64-41-L/51 Podnikání, denní 2leté (2025)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Nemocniční 117/11, 793 95 Město Albrechtice",
-          "role": "sídlo",
-          "izo": "600016218",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Nemocniční 117/11, 793 95 Město Albrechtice",
-          "role": "místo výuky",
-          "izo": "107880610",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Zámecká 82/3, 793 95 Město Albrechtice",
-          "role": "nezjištěná",
-          "izo": "107880610",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.souzma.cz/prijimaci-rizeni",
-          "title": "Přijímací řízení | Střední odborná škola a Základní škola, Město Albrechtice, příspěvková organizace",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Uvádí, že škola má obecně nástavbové studium v přijímacím řízení s JPZ; zveřejněná kritéria pro rok 2026 se však na webu omezují na 3. kolo oborů skupiny H a E, konkrétní potvrzení otevření denní nástavby Podnikání pro 2026/27 nebylo dohledáno.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://www.souzma.cz/podnikani",
-          "title": "Podnikání | Střední odborná škola a Základní škola, Město Albrechtice, příspěvková organizace",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Popisuje obor Podnikání jako trvale nabízený ve dvou formách (denní 2leté, dálkové 3leté), bez uvedení konkrétního stavu pro školní rok 2026/27.",
-          "applicable_period": "obecný popis oboru"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 64-41-L/51 Podnikání (denní i dálková forma) zůstává u IZO 107880610 registrován ve všech čtyřech snímcích; subjekt i IZO jsou beze změn.",
-          "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600016218",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "V roce 2025 jedna nabídka denní nástavby Podnikání; v roce 2026 nulová nabídka pro celé REDIZO, což vysvětluje i nepřiřazenou školní jednotku z roku 2025 (Q0192).",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda škola pro školní rok 2026/27 denní dvouletou nástavbu Podnikání skutečně neotevřela, nebo ji jen nevypsala v 1. kole JPZ.",
-        "Důvod chybějících kritérií pro nástavbové studium na webu školy pro 3. kolo 2026."
-      ]
+     "text": "Nemocniční 117/11, 793 95 Město Albrechtice",
+     "role": "sídlo",
+     "izo": "600016218",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Nemocniční 117/11, 793 95 Město Albrechtice",
+     "role": "místo výuky",
+     "izo": "107880610",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Zámecká 82/3, 793 95 Město Albrechtice",
+     "role": "nezjištěná",
+     "izo": "107880610",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.souzma.cz/prijimaci-rizeni",
+     "title": "Přijímací řízení | Střední odborná škola a Základní škola, Město Albrechtice, příspěvková organizace",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Uvádí, že škola má obecně nástavbové studium v přijímacím řízení s JPZ; zveřejněná kritéria pro rok 2026 se však na webu omezují na 3. kolo oborů skupiny H a E, konkrétní potvrzení otevření denní nástavby Podnikání pro 2026/27 nebylo dohledáno.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://www.souzma.cz/podnikani",
+     "title": "Podnikání | Střední odborná škola a Základní škola, Město Albrechtice, příspěvková organizace",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Popisuje obor Podnikání jako trvale nabízený ve dvou formách (denní 2leté, dálkové 3leté), bez uvedení konkrétního stavu pro školní rok 2026/27.",
+     "applicable_period": "obecný popis oboru"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 64-41-L/51 Podnikání (denní i dálková forma) zůstává u IZO 107880610 registrován ve všech čtyřech snímcích; subjekt i IZO jsou beze změn.",
+     "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600016218",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "V roce 2025 jedna nabídka denní nástavby Podnikání; v roce 2026 nulová nabídka pro celé REDIZO, což vysvětluje i nepřiřazenou školní jednotku z roku 2025 (Q0192).",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Zda škola pro školní rok 2026/27 denní dvouletou nástavbu Podnikání skutečně neotevřela, nebo ji jen nevypsala v 1. kole JPZ. Odpověď by dala data 2. kola přijímacího řízení 2026, která zveřejněna nejsou. Dostupné zdroje otázku neuzavírají."
+   ],
+   "resolved_questions": [
+    {
+     "otazka": "Důvod chybějících kritérií pro nástavbové studium na webu školy pro 3. kolo 2026.",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 1: příčina rozhodnutí školy se nezkoumá, pro návaznost nabídky není potřebná."
+    }
+   ]
+  }
+ ]
 }

@@ -1,78 +1,87 @@
 {
-  "task_id": "R-650069021",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "VÍTKOVICKÁ STŘEDNÍ PRŮMYSLOVÁ ŠKOLA (REDIZO 650069021) je ve všech čtyřech snímcích vedena beze změny identity, sídlo Hasičská 1003/49, Ostrava-Hrabůvka. IZO 150069031 „Střední škola\" má sedm stálých míst výuky ve stejné podobě ve všech snímcích. Obor 23-43-L/51 Provozní technika je registrován ve dvou variantách – 2leté denní nástavbové studium a 3leté dálkové nástavbové studium (plus dobíhající 23-43-L/506) – a všechny varianty zůstávají zapsané ve všech čtyřech snímcích včetně 30. 6. 2026. Chybějící nabídka v 1. kole JPZ 2026 tedy není doložena jako zánik registrace oboru."
-  },
-  "findings": [
+ "task_id": "R-650069021",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "VÍTKOVICKÁ STŘEDNÍ PRŮMYSLOVÁ ŠKOLA (REDIZO 650069021) je ve všech čtyřech snímcích vedena beze změny identity, sídlo Hasičská 1003/49, Ostrava-Hrabůvka. IZO 150069031 „Střední škola\" má sedm stálých míst výuky ve stejné podobě ve všech snímcích. Obor 23-43-L/51 Provozní technika je registrován ve dvou variantách – 2leté denní nástavbové studium a 3leté dálkové nástavbové studium (plus dobíhající 23-43-L/506) – a všechny varianty zůstávají zapsané ve všech čtyřech snímcích včetně 30. 6. 2026. Chybějící nabídka v 1. kole JPZ 2026 tedy není doložena jako zánik registrace oboru."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0157"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela mj. dvouleté denní nástavbové studium 23-43-L/51 Provozní technika; v 1. kole JPZ 2026 tato nabídka mezi pěti obory chybí, zatímco 18-20-M/01 Informační technologie, 23-45-L/01 Mechanik seřizovač, 23-45-L/02 Letecký mechanik, 26-41-L/01 Mechanik elektrotechnik a 63-41-M/01 Ekonomika a podnikání pokračují.",
+    "Rejstřík MŠMT eviduje obor 23-43-L/51 Provozní technika (2leté denní i 3leté dálkové nástavbové studium) u IZO 150069031 shodně ve všech čtyřech snímcích, tedy i k 30. 6. 2026 – registrace oboru trvá.",
+    "Oficiální web školy (vitkovickastredni.cz) uvádí Provozní techniku (2–3leté nástavbové studium) mezi aktuálně popsanými obory bez jakékoli zmínky o zrušení nebo neotevření; web ale neuvádí explicitně, zda je obor vyhlášen pro přijímací řízení 2026/27 v denní formě."
+   ],
+   "conclusion": "Přímý doklad o důvodu chybějící nabídky 2026 nebyl nalezen. Obor zůstává registrován v rejstříku i na webu školy jako součást portfolia, což spíše ukazuje na nevyhlášené (nebo v jiné formě vyhlášené) přijímací řízení pro školní rok 2026/27 než na zánik oboru.",
+   "alternative_explanations": [
+    "Škola mohla nástavbové studium Provozní technika pro rok 2026/27 vyhlásit mimo 1. kolo JPZ (např. jako dálkovou formu) nebo jej dočasně neotevřít kvůli nedostatku přihlášek; ani jedna varianta nebyla přímo dohledána."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "23-43-L/51 (2025, denní)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0157"],
-      "status": "pravděpodobné",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela mj. dvouleté denní nástavbové studium 23-43-L/51 Provozní technika; v 1. kole JPZ 2026 tato nabídka mezi pěti obory chybí, zatímco 18-20-M/01 Informační technologie, 23-45-L/01 Mechanik seřizovač, 23-45-L/02 Letecký mechanik, 26-41-L/01 Mechanik elektrotechnik a 63-41-M/01 Ekonomika a podnikání pokračují.",
-        "Rejstřík MŠMT eviduje obor 23-43-L/51 Provozní technika (2leté denní i 3leté dálkové nástavbové studium) u IZO 150069031 shodně ve všech čtyřech snímcích, tedy i k 30. 6. 2026 – registrace oboru trvá.",
-        "Oficiální web školy (vitkovickastredni.cz) uvádí Provozní techniku (2–3leté nástavbové studium) mezi aktuálně popsanými obory bez jakékoli zmínky o zrušení nebo neotevření; web ale neuvádí explicitně, zda je obor vyhlášen pro přijímací řízení 2026/27 v denní formě."
-      ],
-      "conclusion": "Přímý doklad o důvodu chybějící nabídky 2026 nebyl nalezen. Obor zůstává registrován v rejstříku i na webu školy jako součást portfolia, což spíše ukazuje na nevyhlášené (nebo v jiné formě vyhlášené) přijímací řízení pro školní rok 2026/27 než na zánik oboru.",
-      "alternative_explanations": [
-        "Škola mohla nástavbové studium Provozní technika pro rok 2026/27 vyhlásit mimo 1. kolo JPZ (např. jako dálkovou formu) nebo jej dočasně neotevřít kvůli nedostatku přihlášek; ani jedna varianta nebyla přímo dohledána."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["23-43-L/51 (2025, denní)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Hasičská 1003/49, 700 30 Hrabůvka, Ostrava",
-          "role": "sídlo",
-          "izo": "650069021",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Hasičská 1003/49, 700 30 Hrabůvka, Ostrava",
-          "role": "místo výuky",
-          "izo": "150069031",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 23-43-L/51 Provozní technika (2leté denní i 3leté dálkové) zůstává u IZO 150069031 registrován.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "https://www.vitkovickastredni.cz",
-          "title": "Vítkovická střední průmyslová škola – oficiální web",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Provozní technika (2–3leté nástavbové studium) je uvedena mezi aktuálně nabízenými obory bez zmínky o zrušení.",
-          "applicable_period": "aktuální nabídka školy 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-650069021",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 23-43-L/51 Provozní technika (2leté denní) přítomna v roce 2025, chybí v roce 2026; ostatní pět oborů pokračuje.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "unknown",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Bylo přijímací řízení do denního nástavbového studia Provozní technika pro 2026/27 vyhlášeno mimo 1. kolo JPZ, nebo nebylo vyhlášeno vůbec?"
-      ]
+     "text": "Hasičská 1003/49, 700 30 Hrabůvka, Ostrava",
+     "role": "sídlo",
+     "izo": "650069021",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Hasičská 1003/49, 700 30 Hrabůvka, Ostrava",
+     "role": "místo výuky",
+     "izo": "150069031",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 23-43-L/51 Provozní technika (2leté denní i 3leté dálkové) zůstává u IZO 150069031 registrován.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "https://www.vitkovickastredni.cz",
+     "title": "Vítkovická střední průmyslová škola – oficiální web",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Provozní technika (2–3leté nástavbové studium) je uvedena mezi aktuálně nabízenými obory bez zmínky o zrušení.",
+     "applicable_period": "aktuální nabídka školy 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-650069021",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 23-43-L/51 Provozní technika (2leté denní) přítomna v roce 2025, chybí v roce 2026; ostatní pět oborů pokračuje.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "unknown",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Bylo přijímací řízení do denního nástavbového studia Provozní technika pro 2026/27 vyhlášeno mimo 1. kolo JPZ, nebo nebylo vyhlášeno vůbec? Odpověď by dala data 2. kola přijímacího řízení 2026, která zveřejněna nejsou. Dostupné zdroje otázku neuzavírají."
+   ]
+  }
+ ]
 }

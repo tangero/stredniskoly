@@ -1,191 +1,207 @@
 {
-  "task_id": "R-600005500",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík MŠMT ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) potvrzuje identitu školy: REDIZO 600005500, IZO 061384992, beze změny úplného názvu „Gymnázium Oty Pavla, Praha 5, Loučanská 520“ i sídla Loučanská 520/1, Radotín – kontinuita subjektu mezi roky 2025 a 2026 je tak potvrzena. Absence rejstříku v původním nálezu nezpůsobila chybu v hlavních závěrech, pouze jednu dílčí nepřesnost: škola má dle rejstříku dvě místa výuky (Loučanská 520/1 a náměstí Osvoboditelů 1740/17, Radotín), nikoli jedinou budovu. Otázku trvalosti ukončení programu PROUD rejstřík nevyřešil, protože zaměření v rámci oboru neeviduje."
-  },
-  "findings": [
+ "task_id": "R-600005500",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík MŠMT ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) potvrzuje identitu školy: REDIZO 600005500, IZO 061384992, beze změny úplného názvu „Gymnázium Oty Pavla, Praha 5, Loučanská 520“ i sídla Loučanská 520/1, Radotín – kontinuita subjektu mezi roky 2025 a 2026 je tak potvrzena. Absence rejstříku v původním nálezu nezpůsobila chybu v hlavních závěrech, pouze jednu dílčí nepřesnost: škola má dle rejstříku dvě místa výuky (Loučanská 520/1 a náměstí Osvoboditelů 1740/17, Radotín), nikoli jedinou budovu. Otázku trvalosti ukončení programu PROUD rejstřík nevyřešil, protože zaměření v rámci oboru neeviduje."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0010",
+    "Q0300"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V datech CERMAT za 1. kolo přijímacího řízení 2025 mělo Gymnázium Oty Pavla (REDIZO 600005500, IZO 061384992, Loučanská 520, Praha 5 – Radotín) dvě čtyřleté nabídky oboru 79-41-K/41 Gymnázium: „ŠVP GOP“ a „ŠVP PROUD“. V roce 2026 je v datech jen jedna čtyřletá nabídka, „ŠVP GOP všeobecné“.",
+    "Kritéria přijímacího řízení zveřejněná školou 30. 1. 2025 pro školní rok 2025/2026 potvrzují dvě oddělené čtyřleté přijímací proudy: obor 79-41-K/41 „ŠVP GOP“ s kapacitou 30 žáků (hodnocení prospěchu, soutěží a jednotné přijímací zkoušky, celkem max. 141 bodů) a obor 79-41-K/41 „ŠVP GOP PROUD“ s kapacitou 17 žáků (navíc školní zkouška – ústní pohovor a portfolio).",
+    "Kritéria zveřejněná školou 30. 1. 2026 pro školní rok 2026/2027 obsahují pro čtyřleté studium jediný proud: obor 79-41-K/41 „Gymnázium čtyřleté, ŠVP GOP“ s kapacitou 30 žáků a se stejnou strukturou hodnocení jako „ŠVP GOP“ v roce 2025 (prospěch max. 30 bodů, soutěže, jednotné zkoušky, celkem max. 141 bodů, bez portfolia a pohovoru). Samostatná kritéria pro PROUD pro rok 2026/2027 na webu školy neexistují.",
+    "Škola v kritériích pro rok 2026/2027 nadále označuje program jako „ŠVP GOP“; označení „ŠVP GOP všeobecné“ pochází z dat CERMAT. Školní vzdělávací program školy (dokument z roku 2018 dostupný na webu školy) uvádí čtyřleté studium jako všeobecné.",
+    "Název školy, IZO 061384992, REDIZO 600005500, adresa Loučanská 520, Praha 5 – Radotín a ředitelka RNDr. Jana Hrkalová jsou v obou letech shodné (dle dat fronty, kritérií z let 2025 i 2026 a ŠVP školy). Šestiletý obor 79-41-K/61 s rozšířenou výukou angličtiny pokračuje v obou letech a není předmětem otázek.",
+    "Rejstřík MŠMT vede subjekt pod REDIZO 600005500 (IČ 61384992) ve všech čtyřech dostupných snímcích – k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026 – pod stejným úplným názvem „Gymnázium Oty Pavla, Praha 5, Loučanská 520“ a sídlem Loučanská 520/1, Radotín; identita školy se mezi přijímacími řízeními 2025 a 2026 nezměnila a škola nezanikla ani se nesloučila.",
+    "Rejstřík MŠMT uvádí pro IZO 061384992 ve všech čtyřech snímcích dvě místa výuky: Loučanská 520/1, Radotín (RÚIAN 22049967, shodné se sídlem) a náměstí Osvoboditelů 1740/17, Radotín (RÚIAN 82217343). Dřívější poznámka v tomto nálezu, že škola má jedinou budovu, tak rejstřík nepotvrzuje; které místo výuky hostilo který přijímací proud, rejstřík nerozlišuje."
+   ],
+   "conclusion": "Čtyřletá nabídka „ŠVP GOP všeobecné“ z roku 2026 je přímým pokračováním čtyřleté nabídky „ŠVP GOP“ z roku 2025: jde o tentýž obor 79-41-K/41 téže školy, se stejnou kapacitou 30 žáků a totožným typem kritérií. Změna „GOP“ → „GOP všeobecné“ je pouze změna zápisu zaměření v datech CERMAT, nikoli nový obor – škola program v kritériích pro oba roky označuje „ŠVP GOP“.",
+   "alternative_explanations": [
+    "Formálně nelze vyloučit, že do jediné čtyřleté nabídky 2026 byly sloučeny oba proudy z roku 2025 (GOP i PROUD); tomu ale odporuje shodná kapacita 30 žáků a totožná kritéria jako u proudu GOP v roce 2025, zatímco proud PROUD měl odlišná kritéria i kapacitu 17 žáků. Sloučení nabídek proto data nepodporují.",
+    "Druhé místo výuky evidované rejstříkem (náměstí Osvoboditelů 1740/17, Radotín) může sloužit jiné části výuky (např. tělesné výchově či šestiletému oboru); rejstřík konkrétní využití neuvádí. Na závěr o kontinuitě oboru 79-41-K/41 to nemá vliv, protože nabídky CERMAT v obou letech uvádějí adresu Loučanská 520."
+   ],
+   "relationship": {
+    "type": "continuation",
+    "from": [
+     "2025: 79-41-K/41 Gymnázium, ŠVP GOP (4leté, denní), ID_SOF 74e2a736-c18f-4cfc-b7d8-1bfe712f1dd9"
+    ],
+    "to": [
+     "2026: 79-41-K/41 Gymnázium, ŠVP GOP všeobecné (4leté, denní), ID_SOF 362a8d64-fe23-4466-bf74-64484a934aa0"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0010", "Q0300"],
-      "status": "potvrzeno",
-      "observations": [
-        "V datech CERMAT za 1. kolo přijímacího řízení 2025 mělo Gymnázium Oty Pavla (REDIZO 600005500, IZO 061384992, Loučanská 520, Praha 5 – Radotín) dvě čtyřleté nabídky oboru 79-41-K/41 Gymnázium: „ŠVP GOP“ a „ŠVP PROUD“. V roce 2026 je v datech jen jedna čtyřletá nabídka, „ŠVP GOP všeobecné“.",
-        "Kritéria přijímacího řízení zveřejněná školou 30. 1. 2025 pro školní rok 2025/2026 potvrzují dvě oddělené čtyřleté přijímací proudy: obor 79-41-K/41 „ŠVP GOP“ s kapacitou 30 žáků (hodnocení prospěchu, soutěží a jednotné přijímací zkoušky, celkem max. 141 bodů) a obor 79-41-K/41 „ŠVP GOP PROUD“ s kapacitou 17 žáků (navíc školní zkouška – ústní pohovor a portfolio).",
-        "Kritéria zveřejněná školou 30. 1. 2026 pro školní rok 2026/2027 obsahují pro čtyřleté studium jediný proud: obor 79-41-K/41 „Gymnázium čtyřleté, ŠVP GOP“ s kapacitou 30 žáků a se stejnou strukturou hodnocení jako „ŠVP GOP“ v roce 2025 (prospěch max. 30 bodů, soutěže, jednotné zkoušky, celkem max. 141 bodů, bez portfolia a pohovoru). Samostatná kritéria pro PROUD pro rok 2026/2027 na webu školy neexistují.",
-        "Škola v kritériích pro rok 2026/2027 nadále označuje program jako „ŠVP GOP“; označení „ŠVP GOP všeobecné“ pochází z dat CERMAT. Školní vzdělávací program školy (dokument z roku 2018 dostupný na webu školy) uvádí čtyřleté studium jako všeobecné.",
-        "Název školy, IZO 061384992, REDIZO 600005500, adresa Loučanská 520, Praha 5 – Radotín a ředitelka RNDr. Jana Hrkalová jsou v obou letech shodné (dle dat fronty, kritérií z let 2025 i 2026 a ŠVP školy). Šestiletý obor 79-41-K/61 s rozšířenou výukou angličtiny pokračuje v obou letech a není předmětem otázek.",
-        "Rejstřík MŠMT vede subjekt pod REDIZO 600005500 (IČ 61384992) ve všech čtyřech dostupných snímcích – k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026 – pod stejným úplným názvem „Gymnázium Oty Pavla, Praha 5, Loučanská 520“ a sídlem Loučanská 520/1, Radotín; identita školy se mezi přijímacími řízeními 2025 a 2026 nezměnila a škola nezanikla ani se nesloučila.",
-        "Rejstřík MŠMT uvádí pro IZO 061384992 ve všech čtyřech snímcích dvě místa výuky: Loučanská 520/1, Radotín (RÚIAN 22049967, shodné se sídlem) a náměstí Osvoboditelů 1740/17, Radotín (RÚIAN 82217343). Dřívější poznámka v tomto nálezu, že škola má jedinou budovu, tak rejstřík nepotvrzuje; které místo výuky hostilo který přijímací proud, rejstřík nerozlišuje."
-      ],
-      "conclusion": "Čtyřletá nabídka „ŠVP GOP všeobecné“ z roku 2026 je přímým pokračováním čtyřleté nabídky „ŠVP GOP“ z roku 2025: jde o tentýž obor 79-41-K/41 téže školy, se stejnou kapacitou 30 žáků a totožným typem kritérií. Změna „GOP“ → „GOP všeobecné“ je pouze změna zápisu zaměření v datech CERMAT, nikoli nový obor – škola program v kritériích pro oba roky označuje „ŠVP GOP“.",
-      "alternative_explanations": [
-        "Formálně nelze vyloučit, že do jediné čtyřleté nabídky 2026 byly sloučeny oba proudy z roku 2025 (GOP i PROUD); tomu ale odporuje shodná kapacita 30 žáků a totožná kritéria jako u proudu GOP v roce 2025, zatímco proud PROUD měl odlišná kritéria i kapacitu 17 žáků. Sloučení nabídek proto data nepodporují.",
-        "Druhé místo výuky evidované rejstříkem (náměstí Osvoboditelů 1740/17, Radotín) může sloužit jiné části výuky (např. tělesné výchově či šestiletému oboru); rejstřík konkrétní využití neuvádí. Na závěr o kontinuitě oboru 79-41-K/41 to nemá vliv, protože nabídky CERMAT v obou letech uvádějí adresu Loučanská 520."
-      ],
-      "relationship": {
-        "type": "continuation",
-        "from": ["2025: 79-41-K/41 Gymnázium, ŠVP GOP (4leté, denní), ID_SOF 74e2a736-c18f-4cfc-b7d8-1bfe712f1dd9"],
-        "to": ["2026: 79-41-K/41 Gymnázium, ŠVP GOP všeobecné (4leté, denní), ID_SOF 362a8d64-fe23-4466-bf74-64484a934aa0"]
-      },
-      "addresses": [
-        {
-          "text": "Loučanská 520/1, Praha 5 – Radotín, 153 00 (RÚIAN 22049967)",
-          "role": "sídlo",
-          "izo": "izo_061384992",
-          "valid_period": "2025 i 2026 (beze změny; dle rejstříku MŠMT i snímků k 31. 3. 2025 a 31. 3. 2026)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
-        },
-        {
-          "text": "Loučanská 520/1, Praha 5 – Radotín, 153 00 (RÚIAN 22049967)",
-          "role": "místo výuky",
-          "izo": "izo_061384992",
-          "valid_period": "2025 i 2026 (dle rejstříku MŠMT ve všech čtyřech snímcích)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
-        },
-        {
-          "text": "náměstí Osvoboditelů 1740/17, Praha 5 – Radotín, 153 00 (RÚIAN 82217343)",
-          "role": "místo výuky",
-          "izo": "izo_061384992",
-          "valid_period": "2025 i 2026 (dle rejstříku MŠMT ve všech čtyřech snímcích)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600005500",
-          "title": "Data CERMAT 1. kola JPZ 2025 a 2026 (přiložené context_offers)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Seznam nabídek školy v obou letech: 2025 dvě čtyřleté nabídky (ŠVP GOP, ŠVP PROUD), 2026 jedna čtyřletá nabídka (ŠVP GOP všeobecné); shodné IZO, REDIZO, adresa a kód KKOV.",
-          "applicable_period": "přijímací řízení 2025 a 2026 (školní roky 2025/2026 a 2026/2027)"
-        },
-        {
-          "url": "https://gop.cz/wp-content/uploads/2025/01/Kriteria-ctyrlete-25.docx.pdf",
-          "title": "Kritéria přijímacího řízení pro školní rok 2025/2026, obor 79-41-K/41 Gymnázium čtyřleté, ŠVP GOP",
-          "published_at": "2025-01-30",
-          "checked_at": "2026-09-12",
-          "supports": "Existence samostatného čtyřletého proudu „ŠVP GOP“ v roce 2025, kapacita 30 žáků, kritéria bez školní zkoušky.",
-          "applicable_period": "přijímací řízení pro školní rok 2025/2026"
-        },
-        {
-          "url": "https://gop.cz/wp-content/uploads/2026/01/Kriteria-ctyrlete-26.pdf",
-          "title": "Kritéria přijímacího řízení pro školní rok 2026/2027, obor 79-41-K/41 Gymnázium čtyřleté, ŠVP GOP",
-          "published_at": "2026-01-30",
-          "checked_at": "2026-09-12",
-          "supports": "Pro rok 2026/2027 škola vyhlásila jediný čtyřletý proud „ŠVP GOP“ s kapacitou 30 žáků a kritérii shodného typu jako GOP 2025; škola program nadále nazývá „ŠVP GOP“.",
-          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
-        },
-        {
-          "url": "https://gop.cz/wp-content/uploads/2020/08/svp_4g_2018.pdf",
-          "title": "Školní vzdělávací program Gymnázia Oty Pavla – čtyřletý (2018)",
-          "published_at": "2018-09-03",
-          "checked_at": "2026-09-12",
-          "supports": "Identita školy (IČ 61384992, resortní identifikátor 600005500, IZO 061384992, zřizovatel Hlavní město Praha) a charakter čtyřletého studia jako všeobecného.",
-          "applicable_period": "od 3. 9. 2018"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2025)",
-          "published_at": "2025-03-31",
-          "checked_at": "2026-09-12",
-          "supports": "Subjekt REDIZO 600005500 (Gymnázium Oty Pavla, Praha 5, Loučanská 520, IČ 61384992) a IZO 061384992 (střední škola) jsou vedeny v rejstříku v době 1. kola JPZ 2025; sídlo Loučanská 520/1, Radotín, místa výuky Loučanská 520/1 a náměstí Osvoboditelů 1740/17, Radotín.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
-          "published_at": "2026-03-31",
-          "checked_at": "2026-09-12",
-          "supports": "Tentýž subjekt i IZO 061384992 jsou v době 1. kola JPZ 2026 vedeny beze změny úplného názvu, sídla i míst výuky oproti snímku k 31. 3. 2025; dokládá kontinuitu školy mezi roky 2025 a 2026.",
-          "applicable_period": "stav rejstříku k 31. 3. 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 30. 6. 2026)",
-          "published_at": "2026-06-30",
-          "checked_at": "2026-09-12",
-          "supports": "Subjekt REDIZO 600005500 i IZO 061384992 jsou vedeny beze změny i na konci školního roku 2025/2026; škola nezanikla ani se nesloučila.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        }
-      ],
-      "history_comparability": "comparable",
-      "recommended_action": "approve_mapping",
-      "related_task_ids": [],
-      "unanswered_questions": []
+     "text": "Loučanská 520/1, Praha 5 – Radotín, 153 00 (RÚIAN 22049967)",
+     "role": "sídlo",
+     "izo": "izo_061384992",
+     "valid_period": "2025 i 2026 (beze změny; dle rejstříku MŠMT i snímků k 31. 3. 2025 a 31. 3. 2026)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
     },
     {
-      "issue_ids": ["Q0011"],
-      "status": "potvrzeno",
-      "observations": [
-        "Nabídka „ŠVP PROUD“ (79-41-K/41 Gymnázium, 4leté denní studium) se v datech CERMAT objevuje pouze v roce 2025; v roce 2026 žádná nabídka se zaměřením PROUD u této školy není.",
-        "Kritéria školy pro rok 2025/2026 ukazují, že PROUD byl skutečně oddělený přijímací proud: kapacita 17 žáků, kromě jednotných zkoušek CERMAT školní zkouška v podobě ústního pohovoru a hodnocení portfolia (úspěchy, zájmy, dobrovolnictví).",
-        "V kritériích pro rok 2026/2027 (zveřejněna 30. 1. 2026) žádný proud PROUD ani jiná druhá čtyřletá nabídka nefiguruje; čtyřleté studium je vypsáno pouze jako „ŠVP GOP“ s kapacitou 30 žáků.",
-        "Kapacita jediné čtyřleté nabídky zůstala v roce 2026 na 30 žácích, tj. shodná s proudem GOP 2025; původní součet kapacit obou proudů (30 + 17 = 47) se do jedné nabídky nesloučil. To podporuje výklad, že samostatné přijímání do PROUD bylo pro rok 2026/2027 ukončeno, nikoli sloučeno s proudem GOP.",
-        "Žáci přijatí do PROUD v roce 2025 ve škole zjevně pokračují ve vyšších ročnících; absence nového přijímání sama neříká nic o dobudování jejich studia.",
-        "Rejstřík MŠMT dokládá, že škola jako právní subjekt mezi roky 2025 a 2026 nezanikla ani se nesloučila – REDIZO 600005500 a IZO 061384992 jsou vedeny beze změny názvu a sídla ve snímcích k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026. Zmizení nabídky PROUD tedy není důsledkem zániku školy, ale změnou na úrovni programu. Zaměření v rámci oboru 79-41-K/41 rejstřík neeviduje, takže trvalost ukončení PROUD nepotvrzuje ani nevyvrací."
-      ],
-      "conclusion": "Samostatný čtyřletý přijímací proud „ŠVP GOP PROUD“ (79-41-K/41) škola pro školní rok 2026/2027 nevyhlásila – v 1. kole přijímacího řízení 2026 nemá nástupce. Nepodařilo se však doložit, zda jde o trvalé ukončení programu, nebo jen o přerušení přijímání nových žáků na jeden rok.",
-      "alternative_explanations": [
-        "Program PROUD může být pouze přerušen (např. pro nízký zájem nebo organizační důvody) a škola ho může v pozdějších letech obnovit.",
-        "Teoreticky může být obsah programu PROUD začleněn do jediné čtyřleté třídy po nástupu (vnitřní diferenciace uvnitř oboru), aniž by šlo o samostatnou přijímací nabídku; to z dostupných zdrojů nelze potvrdit ani vyvrátit."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["2025: 79-41-K/41 Gymnázium, ŠVP PROUD (4leté, denní), ID_SOF bbe80461-f962-408d-9d97-1594441d5714"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Loučanská 520, Praha 5 – Radotín, 153 00",
-          "role": "místo výuky",
-          "izo": "izo_061384992",
-          "valid_period": "2025",
-          "source_url": "https://gop.cz/wp-content/uploads/2025/01/Kriteria-ctyrlete-PROUD-25.docx.pdf"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600005500",
-          "title": "Data CERMAT 1. kola JPZ 2025 a 2026 (přiložené context_offers)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka ŠVP PROUD existuje jen v roce 2025; v nabídkách 2026 chybí.",
-          "applicable_period": "přijímací řízení 2025 a 2026"
-        },
-        {
-          "url": "https://gop.cz/wp-content/uploads/2025/01/Kriteria-ctyrlete-PROUD-25.docx.pdf",
-          "title": "Kritéria přijímacího řízení pro školní rok 2025/2026, obor 79-41-K/41 Gymnázium – čtyřleté, ŠVP GOP PROUD",
-          "published_at": "2025-01-30",
-          "checked_at": "2026-09-12",
-          "supports": "PROUD byl v roce 2025 samostatný přijímací proud s kapacitou 17 žáků a vlastní školní zkouškou (pohovor + portfolio).",
-          "applicable_period": "přijímací řízení pro školní rok 2025/2026"
-        },
-        {
-          "url": "https://gop.cz/wp-content/uploads/2026/01/Kriteria-ctyrlete-26.pdf",
-          "title": "Kritéria přijímacího řízení pro školní rok 2026/2027, obor 79-41-K/41 Gymnázium čtyřleté, ŠVP GOP",
-          "published_at": "2026-01-30",
-          "checked_at": "2026-09-12",
-          "supports": "Pro rok 2026/2027 je vypsán pouze jediný čtyřletý proud (ŠVP GOP, 30 žáků); kritéria pro PROUD neexistují.",
-          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
-          "published_at": "2026-03-31",
-          "checked_at": "2026-09-12",
-          "supports": "Škola (REDIZO 600005500, IZO 061384992) je v době 1. kola JPZ 2026 vedena beze změny oproti roku 2025; zánik nabídky PROUD je změnou na úrovni programu, nikoli zánikem subjektu. Zaměření oborů rejstřík neeviduje.",
-          "applicable_period": "stav rejstříku k 31. 3. 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Je ukončení přijímání do programu PROUD trvalé, nebo jde o jednoroční přerušení? K tomu by pomohla výroční zpráva školy za 2025/2026 nebo vyjádření školy."
-      ]
+     "text": "Loučanská 520/1, Praha 5 – Radotín, 153 00 (RÚIAN 22049967)",
+     "role": "místo výuky",
+     "izo": "izo_061384992",
+     "valid_period": "2025 i 2026 (dle rejstříku MŠMT ve všech čtyřech snímcích)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
+    },
+    {
+     "text": "náměstí Osvoboditelů 1740/17, Praha 5 – Radotín, 153 00 (RÚIAN 82217343)",
+     "role": "místo výuky",
+     "izo": "izo_061384992",
+     "valid_period": "2025 i 2026 (dle rejstříku MŠMT ve všech čtyřech snímcích)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600005500",
+     "title": "Data CERMAT 1. kola JPZ 2025 a 2026 (přiložené context_offers)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Seznam nabídek školy v obou letech: 2025 dvě čtyřleté nabídky (ŠVP GOP, ŠVP PROUD), 2026 jedna čtyřletá nabídka (ŠVP GOP všeobecné); shodné IZO, REDIZO, adresa a kód KKOV.",
+     "applicable_period": "přijímací řízení 2025 a 2026 (školní roky 2025/2026 a 2026/2027)"
+    },
+    {
+     "url": "https://gop.cz/wp-content/uploads/2025/01/Kriteria-ctyrlete-25.docx.pdf",
+     "title": "Kritéria přijímacího řízení pro školní rok 2025/2026, obor 79-41-K/41 Gymnázium čtyřleté, ŠVP GOP",
+     "published_at": "2025-01-30",
+     "checked_at": "2026-09-12",
+     "supports": "Existence samostatného čtyřletého proudu „ŠVP GOP“ v roce 2025, kapacita 30 žáků, kritéria bez školní zkoušky.",
+     "applicable_period": "přijímací řízení pro školní rok 2025/2026"
+    },
+    {
+     "url": "https://gop.cz/wp-content/uploads/2026/01/Kriteria-ctyrlete-26.pdf",
+     "title": "Kritéria přijímacího řízení pro školní rok 2026/2027, obor 79-41-K/41 Gymnázium čtyřleté, ŠVP GOP",
+     "published_at": "2026-01-30",
+     "checked_at": "2026-09-12",
+     "supports": "Pro rok 2026/2027 škola vyhlásila jediný čtyřletý proud „ŠVP GOP“ s kapacitou 30 žáků a kritérii shodného typu jako GOP 2025; škola program nadále nazývá „ŠVP GOP“.",
+     "applicable_period": "přijímací řízení pro školní rok 2026/2027"
+    },
+    {
+     "url": "https://gop.cz/wp-content/uploads/2020/08/svp_4g_2018.pdf",
+     "title": "Školní vzdělávací program Gymnázia Oty Pavla – čtyřletý (2018)",
+     "published_at": "2018-09-03",
+     "checked_at": "2026-09-12",
+     "supports": "Identita školy (IČ 61384992, resortní identifikátor 600005500, IZO 061384992, zřizovatel Hlavní město Praha) a charakter čtyřletého studia jako všeobecného.",
+     "applicable_period": "od 3. 9. 2018"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2025)",
+     "published_at": "2025-03-31",
+     "checked_at": "2026-09-12",
+     "supports": "Subjekt REDIZO 600005500 (Gymnázium Oty Pavla, Praha 5, Loučanská 520, IČ 61384992) a IZO 061384992 (střední škola) jsou vedeny v rejstříku v době 1. kola JPZ 2025; sídlo Loučanská 520/1, Radotín, místa výuky Loučanská 520/1 a náměstí Osvoboditelů 1740/17, Radotín.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+     "published_at": "2026-03-31",
+     "checked_at": "2026-09-12",
+     "supports": "Tentýž subjekt i IZO 061384992 jsou v době 1. kola JPZ 2026 vedeny beze změny úplného názvu, sídla i míst výuky oproti snímku k 31. 3. 2025; dokládá kontinuitu školy mezi roky 2025 a 2026.",
+     "applicable_period": "stav rejstříku k 31. 3. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 30. 6. 2026)",
+     "published_at": "2026-06-30",
+     "checked_at": "2026-09-12",
+     "supports": "Subjekt REDIZO 600005500 i IZO 061384992 jsou vedeny beze změny i na konci školního roku 2025/2026; škola nezanikla ani se nesloučila.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    }
+   ],
+   "history_comparability": "comparable",
+   "recommended_action": "approve_mapping",
+   "related_task_ids": [],
+   "unanswered_questions": []
+  },
+  {
+   "issue_ids": [
+    "Q0011"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "Nabídka „ŠVP PROUD“ (79-41-K/41 Gymnázium, 4leté denní studium) se v datech CERMAT objevuje pouze v roce 2025; v roce 2026 žádná nabídka se zaměřením PROUD u této školy není.",
+    "Kritéria školy pro rok 2025/2026 ukazují, že PROUD byl skutečně oddělený přijímací proud: kapacita 17 žáků, kromě jednotných zkoušek CERMAT školní zkouška v podobě ústního pohovoru a hodnocení portfolia (úspěchy, zájmy, dobrovolnictví).",
+    "V kritériích pro rok 2026/2027 (zveřejněna 30. 1. 2026) žádný proud PROUD ani jiná druhá čtyřletá nabídka nefiguruje; čtyřleté studium je vypsáno pouze jako „ŠVP GOP“ s kapacitou 30 žáků.",
+    "Kapacita jediné čtyřleté nabídky zůstala v roce 2026 na 30 žácích, tj. shodná s proudem GOP 2025; původní součet kapacit obou proudů (30 + 17 = 47) se do jedné nabídky nesloučil. To podporuje výklad, že samostatné přijímání do PROUD bylo pro rok 2026/2027 ukončeno, nikoli sloučeno s proudem GOP.",
+    "Žáci přijatí do PROUD v roce 2025 ve škole zjevně pokračují ve vyšších ročnících; absence nového přijímání sama neříká nic o dobudování jejich studia.",
+    "Rejstřík MŠMT dokládá, že škola jako právní subjekt mezi roky 2025 a 2026 nezanikla ani se nesloučila – REDIZO 600005500 a IZO 061384992 jsou vedeny beze změny názvu a sídla ve snímcích k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026. Zmizení nabídky PROUD tedy není důsledkem zániku školy, ale změnou na úrovni programu. Zaměření v rámci oboru 79-41-K/41 rejstřík neeviduje, takže trvalost ukončení PROUD nepotvrzuje ani nevyvrací."
+   ],
+   "conclusion": "Samostatný čtyřletý přijímací proud „ŠVP GOP PROUD“ (79-41-K/41) škola pro školní rok 2026/2027 nevyhlásila – v 1. kole přijímacího řízení 2026 nemá nástupce. Nepodařilo se však doložit, zda jde o trvalé ukončení programu, nebo jen o přerušení přijímání nových žáků na jeden rok.",
+   "alternative_explanations": [
+    "Program PROUD může být pouze přerušen (např. pro nízký zájem nebo organizační důvody) a škola ho může v pozdějších letech obnovit.",
+    "Teoreticky může být obsah programu PROUD začleněn do jediné čtyřleté třídy po nástupu (vnitřní diferenciace uvnitř oboru), aniž by šlo o samostatnou přijímací nabídku; to z dostupných zdrojů nelze potvrdit ani vyvrátit."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "2025: 79-41-K/41 Gymnázium, ŠVP PROUD (4leté, denní), ID_SOF bbe80461-f962-408d-9d97-1594441d5714"
+    ],
+    "to": []
+   },
+   "addresses": [
+    {
+     "text": "Loučanská 520, Praha 5 – Radotín, 153 00",
+     "role": "místo výuky",
+     "izo": "izo_061384992",
+     "valid_period": "2025",
+     "source_url": "https://gop.cz/wp-content/uploads/2025/01/Kriteria-ctyrlete-PROUD-25.docx.pdf"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600005500",
+     "title": "Data CERMAT 1. kola JPZ 2025 a 2026 (přiložené context_offers)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka ŠVP PROUD existuje jen v roce 2025; v nabídkách 2026 chybí.",
+     "applicable_period": "přijímací řízení 2025 a 2026"
+    },
+    {
+     "url": "https://gop.cz/wp-content/uploads/2025/01/Kriteria-ctyrlete-PROUD-25.docx.pdf",
+     "title": "Kritéria přijímacího řízení pro školní rok 2025/2026, obor 79-41-K/41 Gymnázium – čtyřleté, ŠVP GOP PROUD",
+     "published_at": "2025-01-30",
+     "checked_at": "2026-09-12",
+     "supports": "PROUD byl v roce 2025 samostatný přijímací proud s kapacitou 17 žáků a vlastní školní zkouškou (pohovor + portfolio).",
+     "applicable_period": "přijímací řízení pro školní rok 2025/2026"
+    },
+    {
+     "url": "https://gop.cz/wp-content/uploads/2026/01/Kriteria-ctyrlete-26.pdf",
+     "title": "Kritéria přijímacího řízení pro školní rok 2026/2027, obor 79-41-K/41 Gymnázium čtyřleté, ŠVP GOP",
+     "published_at": "2026-01-30",
+     "checked_at": "2026-09-12",
+     "supports": "Pro rok 2026/2027 je vypsán pouze jediný čtyřletý proud (ŠVP GOP, 30 žáků); kritéria pro PROUD neexistují.",
+     "applicable_period": "přijímací řízení pro školní rok 2026/2027"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+     "published_at": "2026-03-31",
+     "checked_at": "2026-09-12",
+     "supports": "Škola (REDIZO 600005500, IZO 061384992) je v době 1. kola JPZ 2026 vedena beze změny oproti roku 2025; zánik nabídky PROUD je změnou na úrovni programu, nikoli zánikem subjektu. Zaměření oborů rejstřík neeviduje.",
+     "applicable_period": "stav rejstříku k 31. 3. 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Je ukončení přijímání do programu PROUD trvalé, nebo jde o jednoroční přerušení? K tomu by pomohla výroční zpráva školy za 2025/2026 nebo vyjádření školy."
+   ]
+  }
+ ]
 }

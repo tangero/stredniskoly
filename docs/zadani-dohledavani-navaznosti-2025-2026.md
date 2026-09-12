@@ -1,6 +1,6 @@
 # Dohledávání návaznosti škol a oborů 2025–2026
 
-Verze 1.3 · 12. 9. 2026. Fronta k výzkumu, nikoli schválená migrační mapa. Rešerše je provedena pro všech 192 úkolů; výsledky jsou podklad k přezkoumání, ne schválené mapování.
+Verze 1.4 · 12. 9. 2026. Fronta k výzkumu, nikoli schválená migrační mapa. Rešerše je provedena pro všech 192 úkolů; výsledky jsou podklad k přezkoumání, ne schválené mapování.
 
 Souhrn celého úkolu, stav realizace a přejímací podmínky: [Návaznost škol a oborů](ukol-navaznost-skol-a-oboru-2027.md).
 
@@ -51,6 +51,14 @@ Pro každou doloženou adresu evidovat samostatně:
 - zdroj a datum ověření.
 
 Nenahrazovat jediným polem více současných pracovišť. Pro dojezdovost používat doložené místo výuky příslušného oboru; při nejistotě ji přiznat. Oprava role adresy má přednost před závěrem „přestěhování“.
+
+## Zápis v číselníku je doklad existence
+
+Zápis školy nebo oboru v datech CERMAT, v rejstříku MŠMT nebo v ARES je dostatečným dokladem, že daná věc po právu existuje. Rešerše proto nedohledává další potvrzení téhož a řeší jen místa, kde si zdroje odporují.
+
+Role zdrojů se liší. Rejstřík MŠMT říká, co existuje. Data CERMAT říkají, co bylo v daném roce skutečně vypsáno v 1. kole. Nedatovaný katalog třetí strany neříká ani jedno, protože popisuje portfolio školy bez vazby na ročník, a nabídku doloženou číselníkem proto nevyvrací. Odstup zápisu do rejstříku není spor: obor doložený daty CERMAT existuje, i když jej rejstřík ještě nevede.
+
+Spory hledá `python3 scripts/find-data-conflicts.py` ve čtyřech podobách: nabídka u školy chybějící v rejstříku, IZO vedené pod jiným zřizovatelem, obor s jinou délkou studia, a nález se stavem rozpor zdrojů nebo nerozhodnutým vztahem.
 
 ## Zadání pro výzkumného agenta
 
@@ -121,6 +129,7 @@ Fronta nemění produkci ani lokálně uložená rozhodnutí prohlížeče. Reš
 ## Historie
 
 - **1.0:** 526 úkolů; do rešerše byly zahrnuty i prosté změny údajů a neúplné adresy.
+- **1.4:** Doplněna zásada, že zápis v číselníku je dokladem existence a běh řeší jen spory. Přidán `scripts/find-data-conflicts.py`.
 - **1.3:** Doplněna pole `resolved_questions` a `decisions_required`, aby se uzavřené otázky a rozhodnutí nemíchaly s otevřenými. Přidán `scripts/offer-history.py` nad soubory CERMAT 2024–2026.
 - **1.2:** Rešerše provedena pro všech 192 úkolů. Přibyly datované snímky rejstříku MŠMT jako důkazní zdroj, jejich dávkové propojení s frontou, prohlížeč výsledků a dvě kontroly. Upřesněn uzavřený číselník vztahů.
 - **1.1:** Po upřesnění zadání ponecháno 192 úkolů. 624 pozorování se pouze eviduje v `record_only`, 16 datových mezer v `data_gaps`. ID původních otázek jsou zachována. Tachov 600170535: žádná doložená změna, ulice chybí v obou letech; odstraněn z tabulky konkrétních změn. Původní počty 526/336 už nejsou aktuální frontou.

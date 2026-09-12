@@ -259,8 +259,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Nebylo ověřeno, zda obor běžel i v letech 2021/22 nebo 2022/23 (mimo dostupné archivní stránky webu); pro závěr o kontinuitě to není nutné."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Nebylo ověřeno, zda obor běžel i v letech 2021/22 nebo 2022/23 (mimo dostupné archivní stránky webu); pro závěr o kontinuitě to není nutné.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v číselníku je dokladem, že existuje po právu. Běh řeší jen spory mezi zdroji, ne doplňující potvrzení."
+    }
    ]
   }
  ]

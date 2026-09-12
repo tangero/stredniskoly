@@ -109,8 +109,12 @@
    "history_comparability": "partially",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda se pobočka Praha 5 fyzicky přestěhovala z Troji na Smíchov, nebo šlo jen o upřesnění zápisu místa výuky."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda se pobočka Praha 5 fyzicky přestěhovala z Troji na Smíchov, nebo šlo jen o upřesnění zápisu místa výuky.",
+     "uzavreno": "Mimo rozsah tohoto běhu: otázka nepatří k návaznosti nabídek, ale k samostatnému úkolu doložení míst výuky pro dojezdovost."
+    }
    ]
   },
   {
@@ -201,9 +205,16 @@
    "related_task_ids": [
     "R-691017280"
    ],
-   "unanswered_questions": [
-    "Zda šlo o sloučení s právním nástupnictvím, nebo o zánik bez něj, se nepodařilo doložit. ARES potvrzuje, že IČO zaniklých škol už ve veřejném rejstříku vedena nejsou, zatímco IČO 49244884 nástupnické školy ano. Sbírku listin se odsud nepodařilo strojově otevřít: or.justice.cz vrací na dotaz podle IČO jen vyhledávací formulář, nový portál verejnerejstriky.msp.gov.cz je javascriptová aplikace a otevřená data dataor.justice.cz rovněž. Mechanismus a datum zániku proto zůstávají nedoložené; ARES dokládá jen to, že subjekt už ve veřejném rejstříku zapsán není.",
-    "Zda žáci případně přijatí pod REDIZO 691017280 v roce 2025 pokračují ve studiu pod REDIZO 600005950."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda šlo o sloučení s právním nástupnictvím, nebo o zánik bez něj, se nepodařilo doložit. ARES potvrzuje, že IČO zaniklých škol už ve veřejném rejstříku vedena nejsou, zatímco IČO 49244884 nástupnické školy ano. Sbírku listin se odsud nepodařilo strojově otevřít: or.justice.cz vrací na dotaz podle IČO jen vyhledávací formulář, nový portál verejnerejstriky.msp.gov.cz je javascriptová aplikace a otevřená data dataor.justice.cz rovněž. Mechanismus a datum zániku proto zůstávají nedoložené; ARES dokládá jen to, že subjekt už ve veřejném rejstříku zapsán není.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    },
+    {
+     "otazka": "Zda žáci případně přijatí pod REDIZO 691017280 v roce 2025 pokračují ve studiu pod REDIZO 600005950.",
+     "uzavreno": "Mimo rozsah: úkol sleduje návaznost nabídek a organizací, nikoli osudy jednotlivých žáků. Pro mapování nabídek není odpověď potřebná."
+    }
    ]
   },
   {
@@ -283,8 +294,12 @@
     "R-691017344",
     "R-691017280"
    ],
-   "unanswered_questions": [
-    "Zda šlo o sloučení s právním nástupnictvím, nebo o zánik bez něj, se nepodařilo doložit. ARES potvrzuje, že IČO zaniklých škol už ve veřejném rejstříku vedena nejsou, zatímco IČO 49244884 nástupnické školy ano. Sbírku listin se odsud nepodařilo strojově otevřít: or.justice.cz vrací na dotaz podle IČO jen vyhledávací formulář, nový portál verejnerejstriky.msp.gov.cz je javascriptová aplikace a otevřená data dataor.justice.cz rovněž. Mechanismus a datum zániku proto zůstávají nedoložené; ARES dokládá jen to, že subjekt už ve veřejném rejstříku zapsán není."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda šlo o sloučení s právním nástupnictvím, nebo o zánik bez něj, se nepodařilo doložit. ARES potvrzuje, že IČO zaniklých škol už ve veřejném rejstříku vedena nejsou, zatímco IČO 49244884 nástupnické školy ano. Sbírku listin se odsud nepodařilo strojově otevřít: or.justice.cz vrací na dotaz podle IČO jen vyhledávací formulář, nový portál verejnerejstriky.msp.gov.cz je javascriptová aplikace a otevřená data dataor.justice.cz rovněž. Mechanismus a datum zániku proto zůstávají nedoložené; ARES dokládá jen to, že subjekt už ve veřejném rejstříku zapsán není.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    }
    ]
   }
  ]

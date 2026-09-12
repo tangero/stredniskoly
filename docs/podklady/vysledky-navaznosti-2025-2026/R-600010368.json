@@ -1,96 +1,114 @@
 {
-  "task_id": "R-600010368",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Subjekt Střední škola technická, gastronomická a automobilní, Chomutov, příspěvková organizace (REDIZO 600010368, IZO 107850079) je ve všech čtyřech snímcích beze změny, sídlo Pražská 702/10, 430 01 Chomutov. Registrovaná nabídka oborů IZO 107850079 je ve všech snímcích shodná a obsahuje mimo jiné právě jeden záznam nástavbového oboru 64-41-L/51 Podnikání v denní formě v délce 2 roky (a samostatně i dálkovou tříletou variantu). Rejstřík nerozlišuje nástavbu podle konkrétního střediska (adresy) – u IZO je evidován jeden společný seznam míst výuky zahrnující již od 31. 3. 2025 mimo jiné adresy Pražská 702/10, Cihlářská 4132 a Cihlářská 5478, vše 430 0x Chomutov."
-  },
-  "findings": [
+ "task_id": "R-600010368",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt Střední škola technická, gastronomická a automobilní, Chomutov, příspěvková organizace (REDIZO 600010368, IZO 107850079) je ve všech čtyřech snímcích beze změny, sídlo Pražská 702/10, 430 01 Chomutov. Registrovaná nabídka oborů IZO 107850079 je ve všech snímcích shodná a obsahuje mimo jiné právě jeden záznam nástavbového oboru 64-41-L/51 Podnikání v denní formě v délce 2 roky (a samostatně i dálkovou tříletou variantu). Rejstřík nerozlišuje nástavbu podle konkrétního střediska (adresy) – u IZO je evidován jeden společný seznam míst výuky zahrnující již od 31. 3. 2025 mimo jiné adresy Pražská 702/10, Cihlářská 4132 a Cihlářská 5478, vše 430 0x Chomutov."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0058",
+    "Q0059",
+    "Q0319"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 CERMAT eviduje nástavbový obor 64-41-L/51 Podnikání (2 roky, denní) dvakrát jako dva samostatné řádky, odlišené pouze textem zaměření: „výuka ve středisku v Chomutově, ul. Pražská“ (Q0058) a „výuka ve středisku v Chomutově, ul. Cihlářská“ (Q0059).",
+    "V 1. kole JPZ 2026 CERMAT eviduje týž obor 64-41-L/51 Podnikání (2 roky, denní) jen jednou, bez textu zaměření (Q0319).",
+    "Rejstřík MŠMT eviduje u IZO 107850079 ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) pouze jeden registrovaný záznam oboru 64-41-L/51 v denní formě (2 roky) – nikoli dva paralelní zápisy podle střediska. Rejstřík zápis obou adres (Pražská 702/10 i Cihlářská 4132/5478) mezi místy výuky IZO uvádí po celé sledované období beze změny.",
+    "Přehled oborů školy (tgacv.cz) potvrzuje, že nástavbové studium Podnikání se vyučuje na dvou střediscích – Pražská (Pražská 702/10, Chomutov) a Cihlářská – a obě střediska existují i v aktuální nabídce školy.",
+    "Škola nemá pro toto středisko/obor samostatné IZO; jde o jednu právnickou osobu a jedno IZO se dvěma místy výuky nástavby v témže oboru a délce studia."
+   ],
+   "conclusion": "Rozpor je vysvětlitelný obsahem přiložených dat: v roce 2025 CERMAT zaznamenal nástavbový obor 64-41-L/51 Podnikání jako dvě paralelní nabídky podle střediska výuky (Pražská, Cihlářská), zatímco v roce 2026 je tentýž obor uveden jako jedna souhrnná nabídka bez rozlišení střediska. Rejstřík MŠMT po celé období eviduje jen jeden zápis oboru u jednoho IZO s oběma adresami mezi místy výuky, což ukazuje, že jde o tentýž registrovaný obor, nikoli o zánik jedné a vznik jiné nabídky. Nejde o doložený zánik ani vznik oboru, ale o změnu způsobu záznamu (sloučení dvou řádků do jednoho) mezi ročníky CERMAT dat.",
+   "alternative_explanations": [
+    "Nelze vyloučit, že škola v roce 2026 fakticky přijímá už jen na jedno středisko a druhé přestala pro nástavbu využívat; dostupné zdroje (přehled oborů, kontaktní stránky obou středisek) to ale nepotvrzují ani nevyvracejí, protože neuvádějí kapacity ani rozdělení pro konkrétní přijímací rok.",
+    "Rejstřík neumožňuje ověřit, zda jsou obě střediska aktivně využívána pro nástavbu v obou letech současně, protože eviduje pouze souhrnný seznam míst výuky IZO, ne přiřazení oboru ke konkrétnímu středisku."
+   ],
+   "relationship": {
+    "type": "merge",
+    "from": [
+     "64-41-L/51 (2025, středisko Pražská)",
+     "64-41-L/51 (2025, středisko Cihlářská)"
+    ],
+    "to": [
+     "64-41-L/51 (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0058", "Q0059", "Q0319"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 CERMAT eviduje nástavbový obor 64-41-L/51 Podnikání (2 roky, denní) dvakrát jako dva samostatné řádky, odlišené pouze textem zaměření: „výuka ve středisku v Chomutově, ul. Pražská“ (Q0058) a „výuka ve středisku v Chomutově, ul. Cihlářská“ (Q0059).",
-        "V 1. kole JPZ 2026 CERMAT eviduje týž obor 64-41-L/51 Podnikání (2 roky, denní) jen jednou, bez textu zaměření (Q0319).",
-        "Rejstřík MŠMT eviduje u IZO 107850079 ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) pouze jeden registrovaný záznam oboru 64-41-L/51 v denní formě (2 roky) – nikoli dva paralelní zápisy podle střediska. Rejstřík zápis obou adres (Pražská 702/10 i Cihlářská 4132/5478) mezi místy výuky IZO uvádí po celé sledované období beze změny.",
-        "Přehled oborů školy (tgacv.cz) potvrzuje, že nástavbové studium Podnikání se vyučuje na dvou střediscích – Pražská (Pražská 702/10, Chomutov) a Cihlářská – a obě střediska existují i v aktuální nabídce školy.",
-        "Škola nemá pro toto středisko/obor samostatné IZO; jde o jednu právnickou osobu a jedno IZO se dvěma místy výuky nástavby v témže oboru a délce studia."
-      ],
-      "conclusion": "Rozpor je vysvětlitelný obsahem přiložených dat: v roce 2025 CERMAT zaznamenal nástavbový obor 64-41-L/51 Podnikání jako dvě paralelní nabídky podle střediska výuky (Pražská, Cihlářská), zatímco v roce 2026 je tentýž obor uveden jako jedna souhrnná nabídka bez rozlišení střediska. Rejstřík MŠMT po celé období eviduje jen jeden zápis oboru u jednoho IZO s oběma adresami mezi místy výuky, což ukazuje, že jde o tentýž registrovaný obor, nikoli o zánik jedné a vznik jiné nabídky. Nejde o doložený zánik ani vznik oboru, ale o změnu způsobu záznamu (sloučení dvou řádků do jednoho) mezi ročníky CERMAT dat.",
-      "alternative_explanations": [
-        "Nelze vyloučit, že škola v roce 2026 fakticky přijímá už jen na jedno středisko a druhé přestala pro nástavbu využívat; dostupné zdroje (přehled oborů, kontaktní stránky obou středisek) to ale nepotvrzují ani nevyvracejí, protože neuvádějí kapacity ani rozdělení pro konkrétní přijímací rok.",
-        "Rejstřík neumožňuje ověřit, zda jsou obě střediska aktivně využívána pro nástavbu v obou letech současně, protože eviduje pouze souhrnný seznam míst výuky IZO, ne přiřazení oboru ke konkrétnímu středisku."
-      ],
-      "relationship": {
-        "type": "merge",
-        "from": ["64-41-L/51 (2025, středisko Pražská)", "64-41-L/51 (2025, středisko Cihlářská)"],
-        "to": ["64-41-L/51 (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Pražská 702/10, 430 01 Chomutov",
-          "role": "sídlo",
-          "izo": "600010368",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Pražská 702/10, 430 01 Chomutov",
-          "role": "místo výuky",
-          "izo": "107850079",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Cihlářská 4132, 430 03 Chomutov; Cihlářská 5478, 430 03 Chomutov",
-          "role": "místo výuky",
-          "izo": "107850079",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600010368",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ 2025 a 2026)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "V roce 2025 dva řádky oboru 64-41-L/51 odlišené jen zaměřením (adresou střediska), v roce 2026 jeden souhrnný řádek bez zaměření.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "U IZO 107850079 je registrován jen jeden záznam oboru 64-41-L/51 (2l, denní); mezi místy výuky IZO jsou uvedeny adresy Pražská 702/10 i obě adresy Cihlářská.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026 (shodně i k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026)"
-        },
-        {
-          "url": "https://www.tgacv.cz/prehled-oboru/",
-          "title": "Přehled oborů – TGACV",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nástavbové studium Podnikání se vyučuje na dvou střediscích – Pražská a Cihlářská.",
-          "applicable_period": "aktuální stav webu školy, září 2026"
-        },
-        {
-          "url": "https://www.tgacv.cz/prazska/",
-          "title": "Středisko Pražská – TGACV",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Potvrzuje existenci střediska Pražská jako jednoho z pracovišť školy (adresa Pražská 702/10).",
-          "applicable_period": "aktuální stav webu školy, září 2026"
-        }
-      ],
-      "history_comparability": "partially",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda se nástavba Podnikání v roce 2026 fakticky vyučuje na obou střediscích (Pražská i Cihlářská) současně, nebo jen na jednom z nich – rejstřík ani web školy to jednoznačně nerozlišují."
-      ]
+     "text": "Pražská 702/10, 430 01 Chomutov",
+     "role": "sídlo",
+     "izo": "600010368",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Pražská 702/10, 430 01 Chomutov",
+     "role": "místo výuky",
+     "izo": "107850079",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Cihlářská 4132, 430 03 Chomutov; Cihlářská 5478, 430 03 Chomutov",
+     "role": "místo výuky",
+     "izo": "107850079",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600010368",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ 2025 a 2026)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "V roce 2025 dva řádky oboru 64-41-L/51 odlišené jen zaměřením (adresou střediska), v roce 2026 jeden souhrnný řádek bez zaměření.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "U IZO 107850079 je registrován jen jeden záznam oboru 64-41-L/51 (2l, denní); mezi místy výuky IZO jsou uvedeny adresy Pražská 702/10 i obě adresy Cihlářská.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026 (shodně i k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026)"
+    },
+    {
+     "url": "https://www.tgacv.cz/prehled-oboru/",
+     "title": "Přehled oborů – TGACV",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nástavbové studium Podnikání se vyučuje na dvou střediscích – Pražská a Cihlářská.",
+     "applicable_period": "aktuální stav webu školy, září 2026"
+    },
+    {
+     "url": "https://www.tgacv.cz/prazska/",
+     "title": "Středisko Pražská – TGACV",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Potvrzuje existenci střediska Pražská jako jednoho z pracovišť školy (adresa Pražská 702/10).",
+     "applicable_period": "aktuální stav webu školy, září 2026"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda se nástavba Podnikání v roce 2026 fakticky vyučuje na obou střediscích (Pražská i Cihlářská) současně, nebo jen na jednom z nich – rejstřík ani web školy to jednoznačně nerozlišují.",
+     "uzavreno": "Mimo rozsah tohoto běhu: otázka nepatří k návaznosti nabídek, ale k samostatnému úkolu doložení míst výuky pro dojezdovost."
+    }
+   ]
+  }
+ ]
 }

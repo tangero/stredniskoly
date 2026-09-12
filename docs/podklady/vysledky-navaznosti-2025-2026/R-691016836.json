@@ -1,89 +1,99 @@
 {
-  "task_id": "R-691016836",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík potvrzuje kontinuitu subjektu Gymnázium KUDYKAMPUS s.r.o. (REDIZO 691016836), sídlo Husinecká 903/10, Žižkov, Praha, beze změny ve všech čtyřech snímcích. IZO 181136953 „Střední škola“ eviduje ve všech snímcích jediné místo výuky (Hartigova 2747/99, Žižkov, Praha) a jediný obor 79-41-K/41 Gymnázium (4letý, denní). Obor i škola zůstávají zapsány beze změny i k 30. 6. 2026, přestože nabídka CERMAT 2026 u tohoto REDIZO chybí."
-  },
-  "findings": [
+ "task_id": "R-691016836",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrzuje kontinuitu subjektu Gymnázium KUDYKAMPUS s.r.o. (REDIZO 691016836), sídlo Husinecká 903/10, Žižkov, Praha, beze změny ve všech čtyřech snímcích. IZO 181136953 „Střední škola“ eviduje ve všech snímcích jediné místo výuky (Hartigova 2747/99, Žižkov, Praha) a jediný obor 79-41-K/41 Gymnázium (4letý, denní). Obor i škola zůstávají zapsány beze změny i k 30. 6. 2026, přestože nabídka CERMAT 2026 u tohoto REDIZO chybí."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0173",
+    "Q0195"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela čtyřleté gymnázium 79-41-K/41; v 1. kole JPZ 2026 nemá REDIZO 691016836 žádnou nabídku.",
+    "Oficiální školní profil (infoabsolvent.cz, IZO 181136953) u školy pro rok 2026/2027 uvádí poznámku „neotevírá 1. ročník“ a k dotazu na vzdělávací nabídku hlásí „Pro Vaši volbu není vzdělávací nabídka k dispozici.“",
+    "Web školy (gymnaziumkudykampus.cz, sekce Přijímačky, kontrolováno 12. 9. 2026) potvrzuje aktivní provoz a zveřejněné 2. kolo přijímacího řízení s kritérii JPZ (min. 18 bodů z M, 20 bodů z ČJ, plus školní test z angličtiny na A2), ale výslovně jde o „přestupy do prvního nebo druhého ročníku“ - nikoli o řádné přijímání uchazečů z 9. tříd ZŠ v 1. kole.",
+    "Rejstřík MŠMT eviduje obor 79-41-K/41 u IZO 181136953 beze změny ve všech čtyřech snímcích (do 30. 6. 2026); REDIZO, IZO i název školy zůstávají shodné - škola dál existuje jako stejná organizace.",
+    "Nepřiřazená školní jednotka Q0195 (data schools, 2025, název „gymnazium kudykampus s r o“) odpovídá témuž REDIZO 691016836/IZO 181136953, které je ve všech snímcích rejstříku kontinuálně vedeno - nejde o jinou organizaci, jde o artefakt párování dat mezi frontou a rejstříkem."
+   ],
+   "conclusion": "Gymnázium KUDYKAMPUS pro školní rok 2026/27 neotevírá 1. ročník (nepřijímá nové žáky z 9. tříd ZŠ v 1. kole JPZ), což potvrzuje i oficiální školský profil InfoAbsolvent; škola i obor 79-41-K/41 přitom nadále existují, zůstávají zapsány v rejstříku a provoz pokračuje formou přestupů do vyšších ročníků a případně dalších kol přijímacího řízení. Nejde o zánik školy ani oboru. Nepřiřazená školní jednotka Q0195 je jen záznam téže, kontinuálně existující organizace.",
+   "alternative_explanations": [
+    "Škola může 1. ročník znovu otevřít v některém dalším roce - žádný dohledaný zdroj definitivní ukončení náboru nepotvrzuje.",
+    "Jde o soukromou školu, nepřijímání může být provozní rozhodnutí majitele (kapacitní/personální důvody) bez vazby na rozhodnutí zřizovatele nebo kraje."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "79-41-K/41 (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0173", "Q0195"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela čtyřleté gymnázium 79-41-K/41; v 1. kole JPZ 2026 nemá REDIZO 691016836 žádnou nabídku.",
-        "Oficiální školní profil (infoabsolvent.cz, IZO 181136953) u školy pro rok 2026/2027 uvádí poznámku „neotevírá 1. ročník“ a k dotazu na vzdělávací nabídku hlásí „Pro Vaši volbu není vzdělávací nabídka k dispozici.“",
-        "Web školy (gymnaziumkudykampus.cz, sekce Přijímačky, kontrolováno 12. 9. 2026) potvrzuje aktivní provoz a zveřejněné 2. kolo přijímacího řízení s kritérii JPZ (min. 18 bodů z M, 20 bodů z ČJ, plus školní test z angličtiny na A2), ale výslovně jde o „přestupy do prvního nebo druhého ročníku“ - nikoli o řádné přijímání uchazečů z 9. tříd ZŠ v 1. kole.",
-        "Rejstřík MŠMT eviduje obor 79-41-K/41 u IZO 181136953 beze změny ve všech čtyřech snímcích (do 30. 6. 2026); REDIZO, IZO i název školy zůstávají shodné - škola dál existuje jako stejná organizace.",
-        "Nepřiřazená školní jednotka Q0195 (data schools, 2025, název „gymnazium kudykampus s r o“) odpovídá témuž REDIZO 691016836/IZO 181136953, které je ve všech snímcích rejstříku kontinuálně vedeno - nejde o jinou organizaci, jde o artefakt párování dat mezi frontou a rejstříkem."
-      ],
-      "conclusion": "Gymnázium KUDYKAMPUS pro školní rok 2026/27 neotevírá 1. ročník (nepřijímá nové žáky z 9. tříd ZŠ v 1. kole JPZ), což potvrzuje i oficiální školský profil InfoAbsolvent; škola i obor 79-41-K/41 přitom nadále existují, zůstávají zapsány v rejstříku a provoz pokračuje formou přestupů do vyšších ročníků a případně dalších kol přijímacího řízení. Nejde o zánik školy ani oboru. Nepřiřazená školní jednotka Q0195 je jen záznam téže, kontinuálně existující organizace.",
-      "alternative_explanations": [
-        "Škola může 1. ročník znovu otevřít v některém dalším roce - žádný dohledaný zdroj definitivní ukončení náboru nepotvrzuje.",
-        "Jde o soukromou školu, nepřijímání může být provozní rozhodnutí majitele (kapacitní/personální důvody) bez vazby na rozhodnutí zřizovatele nebo kraje."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["79-41-K/41 (2025)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Husinecká 903/10, 130 00 Žižkov, Praha",
-          "role": "sídlo",
-          "izo": "691016836",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Hartigova 2747/99, 130 00 Žižkov, Praha",
-          "role": "místo výuky",
-          "izo": "181136953",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://infoabsolvent.cz/Skoly/Skola/691016836",
-          "title": "Gymnázium KUDYKAMPUS s.r.o. | InfoAbsolvent",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola pro 2026/27 uvedena s poznámkou „neotevírá 1. ročník“; vzdělávací nabídka pro volbu žáka není k dispozici.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://www.gymnaziumkudykampus.cz/prijimacky",
-          "title": "Přijímačky - Gymnázium KUDYKAMPUS",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola zveřejňuje 2. kolo přijímacího řízení a kritéria JPZ výslovně pro přestupy do 1. nebo 2. ročníku, ne pro řádný nábor z 9. tříd ZŠ v 1. kole.",
-          "applicable_period": "školní rok 2026/27"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 79-41-K/41 zůstává u IZO 181136953 registrován beze změny k 30. 6. 2026.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-691016836",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ, a data schools)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 79-41-K/41 přítomna v roce 2025 a chybějící v roce 2026; školní jednotka „gymnazium kudykampus s r o“ uvedena v datech schools 2025 pod REDIZO 691016836.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Bude škola znovu přijímat nové žáky do 1. ročníku v některém z příštích let?"
-      ]
+     "text": "Husinecká 903/10, 130 00 Žižkov, Praha",
+     "role": "sídlo",
+     "izo": "691016836",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Hartigova 2747/99, 130 00 Žižkov, Praha",
+     "role": "místo výuky",
+     "izo": "181136953",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://infoabsolvent.cz/Skoly/Skola/691016836",
+     "title": "Gymnázium KUDYKAMPUS s.r.o. | InfoAbsolvent",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola pro 2026/27 uvedena s poznámkou „neotevírá 1. ročník“; vzdělávací nabídka pro volbu žáka není k dispozici.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://www.gymnaziumkudykampus.cz/prijimacky",
+     "title": "Přijímačky - Gymnázium KUDYKAMPUS",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola zveřejňuje 2. kolo přijímacího řízení a kritéria JPZ výslovně pro přestupy do 1. nebo 2. ročníku, ne pro řádný nábor z 9. tříd ZŠ v 1. kole.",
+     "applicable_period": "školní rok 2026/27"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 79-41-K/41 zůstává u IZO 181136953 registrován beze změny k 30. 6. 2026.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-691016836",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ, a data schools)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 79-41-K/41 přítomna v roce 2025 a chybějící v roce 2026; školní jednotka „gymnazium kudykampus s r o“ uvedena v datech schools 2025 pod REDIZO 691016836.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Bude škola znovu přijímat nové žáky do 1. ročníku v některém z příštích let?"
+   ]
+  }
+ ]
 }

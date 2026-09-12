@@ -89,13 +89,15 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zápis oboru 75-41-M/01 do rejstříku MŠMT dosud neproběhl (k 30. 6. 2026); datum plánovaného zápisu není známo."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Přesné datum účinnosti přejmenování školy (mezi 31. 12. 2025 a 31. 3. 2026) nebylo zjištěno.",
      "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    },
+    {
+     "otazka": "Zápis oboru 75-41-M/01 do rejstříku MŠMT dosud neproběhl (k 30. 6. 2026); datum plánovaného zápisu není známo.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v číselníku je dokladem, že existuje po právu. Běh řeší jen spory mezi zdroji, ne doplňující potvrzení."
     }
    ]
   }

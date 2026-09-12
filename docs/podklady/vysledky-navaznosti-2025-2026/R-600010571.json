@@ -1,97 +1,106 @@
 {
-  "task_id": "R-600010571",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Subjekt Obchodní akademie a Jazyková škola s právem státní jazykové zkoušky, Liberec, Šamánkova 500/8, příspěvková organizace (REDIZO 600010571, IZO 000082252) je ve všech čtyřech snímcích beze změny, sídlo i jediné místo výuky Šamánkova 500/8, 460 01 Liberec I-Staré Město. Registrovaná nabídka oborů IZO je ve všech snímcích shodná a obsahuje mimo jiné obor 68-43-M/01 Veřejnosprávní činnost (4l, denní, český) beze změny – registrace oboru trvá i k 30. 6. 2026."
-  },
-  "findings": [
+ "task_id": "R-600010571",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt Obchodní akademie a Jazyková škola s právem státní jazykové zkoušky, Liberec, Šamánkova 500/8, příspěvková organizace (REDIZO 600010571, IZO 000082252) je ve všech čtyřech snímcích beze změny, sídlo i jediné místo výuky Šamánkova 500/8, 460 01 Liberec I-Staré Město. Registrovaná nabídka oborů IZO je ve všech snímcích shodná a obsahuje mimo jiné obor 68-43-M/01 Veřejnosprávní činnost (4l, denní, český) beze změny – registrace oboru trvá i k 30. 6. 2026."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0060"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela obor 68-43-M/01 Veřejnosprávní činnost; v 1. kole JPZ 2026 tato nabídka chybí, zatímco Obchodní akademie 63-41-M/02 a Ekonomické lyceum 78-42-M/02 pokračují v obou letech.",
+    "Aktuální přijímací stránka školy (oalib.cz/prijimaci-rizeni/) pro školní rok 2026/2027 uvádí jen dva maturitní obory – Obchodní akademii a Ekonomické lyceum; Veřejnosprávní činnost mezi nimi není.",
+    "Samostatná stránka oboru na webu školy (oalib.cz/studijni-obory/verejnospravni-cinnost/) obsahuje přímo u kódu oboru 68-43-M/01 větu „Na tento obor se již nelze přihlásit“, což potvrzuje, že obor pro aktuální přijímací cyklus není otevřen.",
+    "Obecná stránka o škole (oalib.cz/o-skole/) naproti tomu popisuje portfolio školy větou „Dnes nabízí Obchodní akademie Liberec tři čtyřleté maturitní obory“ a jmenuje i Veřejnosprávní činnost – jde patrně o obecný popis vzdělávací nabídky/registrace, nikoli o stav aktuálního přijímacího řízení.",
+    "Rejstřík MŠMT obor 68-43-M/01 u IZO 000082252 eviduje nepřetržitě ve všech čtyřech snímcích – registrace oboru trvá, změna se týká pouze vyhlášení přijímacího řízení pro školní rok 2026/2027."
+   ],
+   "conclusion": "Obor 68-43-M/01 Veřejnosprávní činnost škola pro školní rok 2026/27 nepřijímá nové žáky – přímo to potvrzuje vlastní stránka oboru („Na tento obor se již nelze přihlásit“) i přijímací stránka školy, která obor mezi aktuálně otevíranými neuvádí. Obor přitom zůstává registrován v rejstříku MŠMT i k 30. 6. 2026. Nejde tedy o doložený zánik oboru, ale o přerušení přijímacího řízení.",
+   "alternative_explanations": [
+    "Obecná stránka o škole popisuje obor jako součást vzdělávací nabídky i nadále, což nevylučuje, že jde jen o neaktualizovaný/obecný text o portfoliu školy, nikoli o aktivní příjem uchazečů v tomto cyklu.",
+    "Nelze vyloučit budoucí obnovení přijímacího řízení do tohoto oboru – zdroje to ani nepotvrzují, ani nevylučují."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "68-43-M/01 (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0060"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela obor 68-43-M/01 Veřejnosprávní činnost; v 1. kole JPZ 2026 tato nabídka chybí, zatímco Obchodní akademie 63-41-M/02 a Ekonomické lyceum 78-42-M/02 pokračují v obou letech.",
-        "Aktuální přijímací stránka školy (oalib.cz/prijimaci-rizeni/) pro školní rok 2026/2027 uvádí jen dva maturitní obory – Obchodní akademii a Ekonomické lyceum; Veřejnosprávní činnost mezi nimi není.",
-        "Samostatná stránka oboru na webu školy (oalib.cz/studijni-obory/verejnospravni-cinnost/) obsahuje přímo u kódu oboru 68-43-M/01 větu „Na tento obor se již nelze přihlásit“, což potvrzuje, že obor pro aktuální přijímací cyklus není otevřen.",
-        "Obecná stránka o škole (oalib.cz/o-skole/) naproti tomu popisuje portfolio školy větou „Dnes nabízí Obchodní akademie Liberec tři čtyřleté maturitní obory“ a jmenuje i Veřejnosprávní činnost – jde patrně o obecný popis vzdělávací nabídky/registrace, nikoli o stav aktuálního přijímacího řízení.",
-        "Rejstřík MŠMT obor 68-43-M/01 u IZO 000082252 eviduje nepřetržitě ve všech čtyřech snímcích – registrace oboru trvá, změna se týká pouze vyhlášení přijímacího řízení pro školní rok 2026/2027."
-      ],
-      "conclusion": "Obor 68-43-M/01 Veřejnosprávní činnost škola pro školní rok 2026/27 nepřijímá nové žáky – přímo to potvrzuje vlastní stránka oboru („Na tento obor se již nelze přihlásit“) i přijímací stránka školy, která obor mezi aktuálně otevíranými neuvádí. Obor přitom zůstává registrován v rejstříku MŠMT i k 30. 6. 2026. Nejde tedy o doložený zánik oboru, ale o přerušení přijímacího řízení.",
-      "alternative_explanations": [
-        "Obecná stránka o škole popisuje obor jako součást vzdělávací nabídky i nadále, což nevylučuje, že jde jen o neaktualizovaný/obecný text o portfoliu školy, nikoli o aktivní příjem uchazečů v tomto cyklu.",
-        "Nelze vyloučit budoucí obnovení přijímacího řízení do tohoto oboru – zdroje to ani nepotvrzují, ani nevylučují."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["68-43-M/01 (2025)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Šamánkova 500/8, 460 01 Liberec I-Staré Město, Liberec",
-          "role": "sídlo",
-          "izo": "600010571",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Šamánkova 500/8, 460 01 Liberec I-Staré Město, Liberec",
-          "role": "místo výuky",
-          "izo": "000082252",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.oalib.cz/studijni-obory/verejnospravni-cinnost/",
-          "title": "Veřejnosprávní činnost – OALIB",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Stránka oboru 68-43-M/01 přímo uvádí: „Na tento obor se již nelze přihlásit.“",
-          "applicable_period": "aktuální stav webu školy, září 2026 / přijímací řízení pro 2026/27"
-        },
-        {
-          "url": "https://www.oalib.cz/prijimaci-rizeni/",
-          "title": "Přijímací řízení – OALIB",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Pro školní rok 2026/2027 jsou uvedeny jen dva otevírané obory (Obchodní akademie, Ekonomické lyceum); Veřejnosprávní činnost chybí.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://www.oalib.cz/o-skole/",
-          "title": "O škole – OALIB",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obecný popis školy zmiňuje Veřejnosprávní činnost jako jeden ze tří maturitních oborů portfolia školy.",
-          "applicable_period": "obecný, nedatovaný popis portfolia školy"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 68-43-M/01 zůstává u IZO 000082252 registrován; subjekt i IZO jsou beze změn.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600010571",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 68-43-M/01 přítomna v roce 2025 a chybějící v roce 2026; ostatní obory pokračují.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda a kdy může být přijímací řízení do oboru Veřejnosprávní činnost znovu vyhlášeno."
-      ]
+     "text": "Šamánkova 500/8, 460 01 Liberec I-Staré Město, Liberec",
+     "role": "sídlo",
+     "izo": "600010571",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Šamánkova 500/8, 460 01 Liberec I-Staré Město, Liberec",
+     "role": "místo výuky",
+     "izo": "000082252",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.oalib.cz/studijni-obory/verejnospravni-cinnost/",
+     "title": "Veřejnosprávní činnost – OALIB",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Stránka oboru 68-43-M/01 přímo uvádí: „Na tento obor se již nelze přihlásit.“",
+     "applicable_period": "aktuální stav webu školy, září 2026 / přijímací řízení pro 2026/27"
+    },
+    {
+     "url": "https://www.oalib.cz/prijimaci-rizeni/",
+     "title": "Přijímací řízení – OALIB",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Pro školní rok 2026/2027 jsou uvedeny jen dva otevírané obory (Obchodní akademie, Ekonomické lyceum); Veřejnosprávní činnost chybí.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://www.oalib.cz/o-skole/",
+     "title": "O škole – OALIB",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obecný popis školy zmiňuje Veřejnosprávní činnost jako jeden ze tří maturitních oborů portfolia školy.",
+     "applicable_period": "obecný, nedatovaný popis portfolia školy"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 68-43-M/01 zůstává u IZO 000082252 registrován; subjekt i IZO jsou beze změn.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600010571",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 68-43-M/01 přítomna v roce 2025 a chybějící v roce 2026; ostatní obory pokračují.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Zda a kdy může být přijímací řízení do oboru Veřejnosprávní činnost znovu vyhlášeno."
+   ]
+  }
+ ]
 }

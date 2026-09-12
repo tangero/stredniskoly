@@ -1,96 +1,105 @@
 {
-  "task_id": "R-600017168",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík MŠMT potvrzuje plnou kontinuitu subjektu: Střední škola grafiky a médií Olomouc, Střední novosadská 87/53 (REDIZO 600017168) figuruje beze změny ve všech čtyřech snímcích. IZO 150076363 (Střední škola) má ve všech snímcích stejné místo výuky Střední novosadská 87/53. Obor 34-41-M/01 Polygrafie zůstává registrován ve všech snímcích včetně 30. 6. 2026 (registrace se dosud neaktualizovala). Obor 82-41-M/03 Scénická a výstavní tvorba je v rejstříku zapsán rovněž ve všech snímcích už od 2025-03-31 – nejde tedy o nově vzniklý kód oboru, ale o dříve zapsaný obor, který škola fakticky začala v 1. kole otvírat až od přijímacího řízení 2026/2027 (talentovou zkouškou, mimo JPZ)."
-  },
-  "findings": [
+ "task_id": "R-600017168",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík MŠMT potvrzuje plnou kontinuitu subjektu: Střední škola grafiky a médií Olomouc, Střední novosadská 87/53 (REDIZO 600017168) figuruje beze změny ve všech čtyřech snímcích. IZO 150076363 (Střední škola) má ve všech snímcích stejné místo výuky Střední novosadská 87/53. Obor 34-41-M/01 Polygrafie zůstává registrován ve všech snímcích včetně 30. 6. 2026 (registrace se dosud neaktualizovala). Obor 82-41-M/03 Scénická a výstavní tvorba je v rejstříku zapsán rovněž ve všech snímcích už od 2025-03-31 – nejde tedy o nově vzniklý kód oboru, ale o dříve zapsaný obor, který škola fakticky začala v 1. kole otvírat až od přijímacího řízení 2026/2027 (talentovou zkouškou, mimo JPZ)."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0116"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela obor 34-41-M/01 Polygrafie (bez zaznamenaného zaměření); v 1. kole JPZ 2026 tato nabídka chybí, zatímco Obalová technika, Tiskař na polygrafických strojích a Reprodukční grafik pro média pokračují v obou letech.",
+    "Oficiální přehled infoabsolvent.cz (agregující data škol pro přijímací řízení 2026/2027) uvádí u této školy čtyři obory pro rok 2026/2027: Obalová technika (34-42-M/01), Tiskař na polygrafických strojích (34-52-L/01), Reprodukční grafik pro média (34-53-L/01) a nově Scénická a výstavní tvorba se zaměřením Jevištní technologie (82-41-M/03, přijímací řízení talentovou zkouškou v termínu 15. 3. – 23. 4. 2026); obor Polygrafie (34-41-M/01) v seznamu pro 2026/2027 není.",
+    "Vlastní stránka školy s výsledky přijímacího řízení (sgmo.cz/vysledky-prijimaciho-rizeni) uvádí pro 1. i 2. kolo 2026 výsledky za obory Reprodukční grafik pro média, Designér obalů, Tiskař na polygrafických strojích a Jevištní Technologie – Polygrafie mezi nimi chybí.",
+    "Stránka sgmo.cz/obory/ zmiňuje Polygrafii jen v tabulce s údaji „přihlášky: 51, plánováno žáků: 15, přijato žáků: 12“, což odpovídá dřívějšímu (2025), nikoli aktuálnímu přijímacímu řízení.",
+    "Rejstřík MŠMT eviduje obor 34-41-M/01 u IZO 150076363 ve všech snímcích včetně 30. 6. 2026 – registrace oboru trvá, i když škola jej fakticky přestala v 1. kole nabízet."
+   ],
+   "conclusion": "Obor Polygrafie (34-41-M/01) škola pro školní rok 2026/27 v 1. kole přijímacího řízení nenabízí; jeho místo v nabídce fakticky zaujal dříve zapsaný, ale nově otvíraný obor 82-41-M/03 Scénická a výstavní tvorba (Jevištní technologie), který ovšem používá talentovou zkoušku a jiný admisní proces mimo JPZ, takže není přímým 1:1 nástupcem v datech CERMAT JPZ. Registrace oboru Polygrafie v rejstříku k 30. 6. 2026 stále trvá, jde tedy o zastavení přijímání nových žáků, nikoli o doložený formální výmaz oboru.",
+   "alternative_explanations": [
+    "Obor mohl být pro rok 2026/27 vynechán jen dočasně (např. z kapacitních důvodů) a v dalších letech se může znovu objevit; k trvalému zrušení kódu v rejstříku k datu zpracování nedošlo."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "34-41-M/01 Polygrafie (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0116"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela obor 34-41-M/01 Polygrafie (bez zaznamenaného zaměření); v 1. kole JPZ 2026 tato nabídka chybí, zatímco Obalová technika, Tiskař na polygrafických strojích a Reprodukční grafik pro média pokračují v obou letech.",
-        "Oficiální přehled infoabsolvent.cz (agregující data škol pro přijímací řízení 2026/2027) uvádí u této školy čtyři obory pro rok 2026/2027: Obalová technika (34-42-M/01), Tiskař na polygrafických strojích (34-52-L/01), Reprodukční grafik pro média (34-53-L/01) a nově Scénická a výstavní tvorba se zaměřením Jevištní technologie (82-41-M/03, přijímací řízení talentovou zkouškou v termínu 15. 3. – 23. 4. 2026); obor Polygrafie (34-41-M/01) v seznamu pro 2026/2027 není.",
-        "Vlastní stránka školy s výsledky přijímacího řízení (sgmo.cz/vysledky-prijimaciho-rizeni) uvádí pro 1. i 2. kolo 2026 výsledky za obory Reprodukční grafik pro média, Designér obalů, Tiskař na polygrafických strojích a Jevištní Technologie – Polygrafie mezi nimi chybí.",
-        "Stránka sgmo.cz/obory/ zmiňuje Polygrafii jen v tabulce s údaji „přihlášky: 51, plánováno žáků: 15, přijato žáků: 12“, což odpovídá dřívějšímu (2025), nikoli aktuálnímu přijímacímu řízení.",
-        "Rejstřík MŠMT eviduje obor 34-41-M/01 u IZO 150076363 ve všech snímcích včetně 30. 6. 2026 – registrace oboru trvá, i když škola jej fakticky přestala v 1. kole nabízet."
-      ],
-      "conclusion": "Obor Polygrafie (34-41-M/01) škola pro školní rok 2026/27 v 1. kole přijímacího řízení nenabízí; jeho místo v nabídce fakticky zaujal dříve zapsaný, ale nově otvíraný obor 82-41-M/03 Scénická a výstavní tvorba (Jevištní technologie), který ovšem používá talentovou zkoušku a jiný admisní proces mimo JPZ, takže není přímým 1:1 nástupcem v datech CERMAT JPZ. Registrace oboru Polygrafie v rejstříku k 30. 6. 2026 stále trvá, jde tedy o zastavení přijímání nových žáků, nikoli o doložený formální výmaz oboru.",
-      "alternative_explanations": [
-        "Obor mohl být pro rok 2026/27 vynechán jen dočasně (např. z kapacitních důvodů) a v dalších letech se může znovu objevit; k trvalému zrušení kódu v rejstříku k datu zpracování nedošlo."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["34-41-M/01 Polygrafie (2025)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Střední novosadská 87/53, 779 00 Nové Sady, Olomouc",
-          "role": "sídlo",
-          "izo": "600017168",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Střední novosadská 87/53, 779 00 Nové Sady, Olomouc",
-          "role": "místo výuky",
-          "izo": "150076363",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.infoabsolvent.cz/Skoly/Skola/600017168",
-          "title": "Střední škola grafiky a médií Olomouc, Střední novosadská 87/53 – InfoAbsolvent",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Seznam oborů pro přijímací řízení 2026/2027 neobsahuje Polygrafii (34-41-M/01), obsahuje nově obor Scénická a výstavní tvorba (82-41-M/03) s talentovou zkouškou.",
-          "applicable_period": "přijímací řízení 2026/2027"
-        },
-        {
-          "url": "https://sgmo.cz/vysledky-prijimaciho-rizeni/",
-          "title": "Výsledky přijímacího řízení – Střední škola grafiky a médií Olomouc",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Výsledky 1. a 2. kola 2026 uvádějí obory Reprodukční grafik pro média, Designér obalů, Tiskař na polygrafických strojích a Jevištní Technologie; Polygrafie mezi nimi není.",
-          "applicable_period": "výsledky přijímacího řízení 2026"
-        },
-        {
-          "url": "https://sgmo.cz/obory/",
-          "title": "Studijní obory – Střední škola grafiky a médií Olomouc",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Polygrafie je na stránce zmíněna jen s údaji o dřívějším přijímacím řízení (51 přihlášek, 15 plánováno, 12 přijato), bez aktuální nabídky pro 2026/2027.",
-          "applicable_period": "nejasné, patrně přijímací řízení 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 34-41-M/01 Polygrafie zůstává u IZO 150076363 registrován i k 30. 6. 2026; obor 82-41-M/03 je zapsán už od 2025-03-31.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026 (shodně i dřívější snímky)"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600017168",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 34-41-M/01 Polygrafie přítomna v roce 2025 (4 nabídky celkem) a chybějící v roce 2026 (3 nabídky); ostatní tři obory pokračují beze změny.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda MŠMT/kraj formálně schválili ukončení oboru Polygrafie, nebo jde jen o dočasné nevypsání 1. kola pro rok 2026/27."
-      ]
+     "text": "Střední novosadská 87/53, 779 00 Nové Sady, Olomouc",
+     "role": "sídlo",
+     "izo": "600017168",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Střední novosadská 87/53, 779 00 Nové Sady, Olomouc",
+     "role": "místo výuky",
+     "izo": "150076363",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.infoabsolvent.cz/Skoly/Skola/600017168",
+     "title": "Střední škola grafiky a médií Olomouc, Střední novosadská 87/53 – InfoAbsolvent",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Seznam oborů pro přijímací řízení 2026/2027 neobsahuje Polygrafii (34-41-M/01), obsahuje nově obor Scénická a výstavní tvorba (82-41-M/03) s talentovou zkouškou.",
+     "applicable_period": "přijímací řízení 2026/2027"
+    },
+    {
+     "url": "https://sgmo.cz/vysledky-prijimaciho-rizeni/",
+     "title": "Výsledky přijímacího řízení – Střední škola grafiky a médií Olomouc",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Výsledky 1. a 2. kola 2026 uvádějí obory Reprodukční grafik pro média, Designér obalů, Tiskař na polygrafických strojích a Jevištní Technologie; Polygrafie mezi nimi není.",
+     "applicable_period": "výsledky přijímacího řízení 2026"
+    },
+    {
+     "url": "https://sgmo.cz/obory/",
+     "title": "Studijní obory – Střední škola grafiky a médií Olomouc",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Polygrafie je na stránce zmíněna jen s údaji o dřívějším přijímacím řízení (51 přihlášek, 15 plánováno, 12 přijato), bez aktuální nabídky pro 2026/2027.",
+     "applicable_period": "nejasné, patrně přijímací řízení 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 34-41-M/01 Polygrafie zůstává u IZO 150076363 registrován i k 30. 6. 2026; obor 82-41-M/03 je zapsán už od 2025-03-31.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026 (shodně i dřívější snímky)"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600017168",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 34-41-M/01 Polygrafie přítomna v roce 2025 (4 nabídky celkem) a chybějící v roce 2026 (3 nabídky); ostatní tři obory pokračují beze změny.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Zda MŠMT/kraj formálně schválili ukončení oboru Polygrafie, nebo jde jen o dočasné nevypsání 1. kola pro rok 2026/27."
+   ]
+  }
+ ]
 }

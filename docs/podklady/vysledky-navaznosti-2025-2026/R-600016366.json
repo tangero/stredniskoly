@@ -93,14 +93,15 @@
    "history_comparability": "partially",
    "recommended_action": "manual_review",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda program „Gymnázium\" (2026) skutečně obsahově navazuje na dřívější zaměření „S rozšířenou výukou jazyků a IT\", nebo je jazykový akcent jedinou zachovanou složkou."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Přesné datum spuštění programu Business & Management (škola jej pouze označuje za nový, bez data).",
      "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
     }
+   ],
+   "decisions_required": [
+    "Zda program „Gymnázium\" (2026) skutečně obsahově navazuje na dřívější zaměření „S rozšířenou výukou jazyků a IT\", nebo je jazykový akcent jedinou zachovanou složkou."
    ]
   }
  ]

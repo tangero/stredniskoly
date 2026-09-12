@@ -1,88 +1,97 @@
 {
-  "task_id": "R-600012514",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Subjekt REDIZO 600012514 (Labská střední odborná škola a Střední odborné učiliště Pardubice, s. r. o., sídlo U Josefa 118, 530 09 Cihelna, Pardubice) je ve všech čtyřech snímcích beze změny. IZO 062029754 „Střední škola\" má jediné místo výuky shodné se sídlem. Obor 64-41-L/51 Podnikání je zapsán ve třech variantách (2leté denní, 3leté distanční, 3leté dálková dobíhající) ve všech čtyřech snímcích beze změny, stejně jako Hotelnictví, Veřejnosprávní činnost, Kuchař-číšník a Cukrář."
-  },
-  "findings": [
+ "task_id": "R-600012514",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt REDIZO 600012514 (Labská střední odborná škola a Střední odborné učiliště Pardubice, s. r. o., sídlo U Josefa 118, 530 09 Cihelna, Pardubice) je ve všech čtyřech snímcích beze změny. IZO 062029754 „Střední škola\" má jediné místo výuky shodné se sídlem. Obor 64-41-L/51 Podnikání je zapsán ve třech variantách (2leté denní, 3leté distanční, 3leté dálková dobíhající) ve všech čtyřech snímcích beze změny, stejně jako Hotelnictví, Veřejnosprávní činnost, Kuchař-číšník a Cukrář."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0066"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "CERMAT 1. kolo JPZ 2025 obsahovalo za REDIZO 600012514 tři nabídky: 64-41-L/51 Podnikání (2leté denní), 65-42-M/01 Hotelnictví a event management a 68-43-M/01 Veřejnosprávní činnost; v roce 2026 zůstávají jen poslední dva obory, Podnikání chybí.",
+    "Web školy (labskaskola.cz, sekce Přijímací řízení pro uchazeče) vyhlašuje pro školní rok 2026/2027 pouze čtyři obory: Hotelnictví a event management, Veřejnosprávní činnost, Kuchař-číšník a Cukrář; obor Podnikání mezi vyhlášenými obory s kritérii a počtem míst chybí, ačkoli je v obecné navigaci webu stále uveden.",
+    "Výroční zpráva školy za rok 2024/2025 (labskaskola.cz) zmiňuje, že u příbuzné kombinované formy Podnikání ředitelka v předchozím roce přijímací řízení nevyhlásila a první ročník se neotvíral – doklad o dřívějším omezování nabídky tohoto oboru, byť přímo o denní formě pro rok 2026 nehovoří.",
+    "Rejstřík MŠMT eviduje obor 64-41-L/51 Podnikání ve všech třech variantách délky/formy ve všech čtyřech snímcích beze změny – registrace trvá i po 30. 6. 2026."
+   ],
+   "conclusion": "Denní forma oboru Podnikání (64-41-L/51) nebyla pro školní rok 2026/2027 mezi vyhlášenými obory školy nalezena, ačkoli obor zůstává v rejstříku registrován. Přímé oznámení školy s výslovným zdůvodněním (na rozdíl od jiných úkolů v této frontě) se nepodařilo dohledat, proto je závěr klasifikován jako pravděpodobný, nikoli potvrzený.",
+   "alternative_explanations": [
+    "Chybějící záznam v sekci přijímacího řízení může být dočasným opomenutím aktualizace webu, nikoli skutečným neotevřením oboru.",
+    "Obor mohl být nabízen jen s pozdějším zveřejněním kritérií, které v době kontroly ještě nebylo publikováno."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "64-41-L/51 (2leté denní, 2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0066"],
-      "status": "pravděpodobné",
-      "observations": [
-        "CERMAT 1. kolo JPZ 2025 obsahovalo za REDIZO 600012514 tři nabídky: 64-41-L/51 Podnikání (2leté denní), 65-42-M/01 Hotelnictví a event management a 68-43-M/01 Veřejnosprávní činnost; v roce 2026 zůstávají jen poslední dva obory, Podnikání chybí.",
-        "Web školy (labskaskola.cz, sekce Přijímací řízení pro uchazeče) vyhlašuje pro školní rok 2026/2027 pouze čtyři obory: Hotelnictví a event management, Veřejnosprávní činnost, Kuchař-číšník a Cukrář; obor Podnikání mezi vyhlášenými obory s kritérii a počtem míst chybí, ačkoli je v obecné navigaci webu stále uveden.",
-        "Výroční zpráva školy za rok 2024/2025 (labskaskola.cz) zmiňuje, že u příbuzné kombinované formy Podnikání ředitelka v předchozím roce přijímací řízení nevyhlásila a první ročník se neotvíral – doklad o dřívějším omezování nabídky tohoto oboru, byť přímo o denní formě pro rok 2026 nehovoří.",
-        "Rejstřík MŠMT eviduje obor 64-41-L/51 Podnikání ve všech třech variantách délky/formy ve všech čtyřech snímcích beze změny – registrace trvá i po 30. 6. 2026."
-      ],
-      "conclusion": "Denní forma oboru Podnikání (64-41-L/51) nebyla pro školní rok 2026/2027 mezi vyhlášenými obory školy nalezena, ačkoli obor zůstává v rejstříku registrován. Přímé oznámení školy s výslovným zdůvodněním (na rozdíl od jiných úkolů v této frontě) se nepodařilo dohledat, proto je závěr klasifikován jako pravděpodobný, nikoli potvrzený.",
-      "alternative_explanations": [
-        "Chybějící záznam v sekci přijímacího řízení může být dočasným opomenutím aktualizace webu, nikoli skutečným neotevřením oboru.",
-        "Obor mohl být nabízen jen s pozdějším zveřejněním kritérií, které v době kontroly ještě nebylo publikováno."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["64-41-L/51 (2leté denní, 2025)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "U Josefa 118, 530 09 Cihelna, Pardubice",
-          "role": "sídlo",
-          "izo": "600012514",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "U Josefa 118, 530 09 Cihelna, Pardubice",
-          "role": "místo výuky",
-          "izo": "062029754",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://labskaskola.cz/pro-uchazece/prijimaci-rizeni/",
-          "title": "Přijímací řízení – Labská SOŠ a SOU Pardubice",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Pro školní rok 2026/2027 jsou vyhlášeny jen čtyři obory (Hotelnictví a event management, Veřejnosprávní činnost, Kuchař-číšník, Cukrář); Podnikání mezi nimi chybí.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://labskaskola.cz/wp-content/uploads/2025/10/Vyrocni-zprava-o-cinnosti-skoly-2024_2025-s-podpisem-a-cas.-razitkem.pdf",
-          "title": "Výroční zpráva o činnosti školy 2024/2025 – Labská SOŠ a SOU Pardubice",
-          "published_at": "2025-10",
-          "checked_at": "2026-09-12",
-          "supports": "U příbuzné kombinované formy Podnikání ředitelka dříve nevyhlásila přijímací řízení a první ročník se neotvíral.",
-          "applicable_period": "školní rok 2024/2025 a předchozí přijímací řízení"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 64-41-L/51 Podnikání zůstává u IZO 062029754 registrován ve všech třech variantách.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600012514",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka Podnikání (2leté denní) přítomna v roce 2025 a chybějící v roce 2026.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda škola plánuje denní Podnikání znovu vyhlásit, případně proč mezi 2025 a 2026 vypadlo z vyhlášené nabídky."
-      ]
+     "text": "U Josefa 118, 530 09 Cihelna, Pardubice",
+     "role": "sídlo",
+     "izo": "600012514",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "U Josefa 118, 530 09 Cihelna, Pardubice",
+     "role": "místo výuky",
+     "izo": "062029754",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://labskaskola.cz/pro-uchazece/prijimaci-rizeni/",
+     "title": "Přijímací řízení – Labská SOŠ a SOU Pardubice",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Pro školní rok 2026/2027 jsou vyhlášeny jen čtyři obory (Hotelnictví a event management, Veřejnosprávní činnost, Kuchař-číšník, Cukrář); Podnikání mezi nimi chybí.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://labskaskola.cz/wp-content/uploads/2025/10/Vyrocni-zprava-o-cinnosti-skoly-2024_2025-s-podpisem-a-cas.-razitkem.pdf",
+     "title": "Výroční zpráva o činnosti školy 2024/2025 – Labská SOŠ a SOU Pardubice",
+     "published_at": "2025-10",
+     "checked_at": "2026-09-12",
+     "supports": "U příbuzné kombinované formy Podnikání ředitelka dříve nevyhlásila přijímací řízení a první ročník se neotvíral.",
+     "applicable_period": "školní rok 2024/2025 a předchozí přijímací řízení"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 64-41-L/51 Podnikání zůstává u IZO 062029754 registrován ve všech třech variantách.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600012514",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka Podnikání (2leté denní) přítomna v roce 2025 a chybějící v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Zda škola plánuje denní Podnikání znovu vyhlásit, případně proč mezi 2025 a 2026 vypadlo z vyhlášené nabídky."
+   ]
+  }
+ ]
 }

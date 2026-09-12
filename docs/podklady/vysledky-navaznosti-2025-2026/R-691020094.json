@@ -91,13 +91,15 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Přesné datum zápisu školy do rejstříku MŠMT nebylo dohledáno; ve všech čtyřech snímcích chybí."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Přesné datum zápisu školy do rejstříku MŠMT nebylo dohledáno; IČO 17590426 se nepodařilo ověřit v obchodním/veřejném rejstříku (or.justice.cz) samostatným dotazem – údaj pochází z webu školy.",
      "uzavreno": "Ověřeno v otevřených datech ARES (scripts/lookup_ares.py); IČO existuje a odpovídá škole."
+    },
+    {
+     "otazka": "Přesné datum zápisu školy do rejstříku MŠMT nebylo dohledáno; ve všech čtyřech snímcích chybí.",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 8: událost mezi dvěma snímky se datuje do intervalu, přesné datum se nedohledává."
     }
    ]
   }

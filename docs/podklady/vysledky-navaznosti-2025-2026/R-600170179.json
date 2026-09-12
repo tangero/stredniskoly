@@ -113,8 +113,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Přesné datum a formu rozhodnutí zřizovatele (Středočeský kraj) o nahrazení oboru Informační služby oborem Lyceum se nepodařilo dohledat samostatným zdrojem zřizovatele; doloženo je jen vlastní oznámení školy."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přesné datum a formu rozhodnutí zřizovatele (Středočeský kraj) o nahrazení oboru Informační služby oborem Lyceum se nepodařilo dohledat samostatným zdrojem zřizovatele; doloženo je jen vlastní oznámení školy.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    }
    ]
   },
   {
@@ -247,13 +251,15 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Datum očekávaného doplnění zápisu oboru 78-42-M/08 do rejstříku škol není známo."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Přesné znění a datum vyhlášení celostátního pokusného ověřování oboru 78-42-M/08 MŠMT nebylo dohledáno přímým zdrojem MŠMT, pouze nepřímo doloženo označením „režim pokusného ověřování“ v datech CERMAT.",
      "uzavreno": "Doloženo seznamem škol MŠMT k pokusnému ověřování oboru Lyceum (archiv.msmt.gov.cz, platný k 15. 12. 2025) a čísly jednacími vyhlášení."
+    },
+    {
+     "otazka": "Datum očekávaného doplnění zápisu oboru 78-42-M/08 do rejstříku škol není známo.",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 8: událost mezi dvěma snímky se datuje do intervalu, přesné datum se nedohledává."
     }
    ]
   }

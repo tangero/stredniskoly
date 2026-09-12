@@ -1,88 +1,101 @@
 {
-  "task_id": "R-600016358",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Subjekt PrimMat - Soukromá střední škola podnikatelská, s.r.o. (REDIZO 600016358, sídlo Československé armády 482, 738 01 Místek, Frýdek-Místek) je ve všech čtyřech snímcích beze změny, včetně IZO 045235686 „Střední škola\" na téže adrese. Obor 63-41-M/01 Ekonomika a podnikání (4leté, denní, český) je zapsán beze změny ve všech čtyřech snímcích; rejstřík zaměření uvnitř kódu nesleduje, takže přejmenování zaměření z něj nelze ověřit ani vyvrátit."
-  },
-  "findings": [
+ "task_id": "R-600016358",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt PrimMat - Soukromá střední škola podnikatelská, s.r.o. (REDIZO 600016358, sídlo Československé armády 482, 738 01 Místek, Frýdek-Místek) je ve všech čtyřech snímcích beze změny, včetně IZO 045235686 „Střední škola\" na téže adrese. Obor 63-41-M/01 Ekonomika a podnikání (4leté, denní, český) je zapsán beze změny ve všech čtyřech snímcích; rejstřík zaměření uvnitř kódu nesleduje, takže přejmenování zaměření z něj nelze ověřit ani vyvrátit."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0097",
+    "Q0098",
+    "Q0099",
+    "Q0273",
+    "Q0274",
+    "Q0275"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela tři zaměření oboru 63-41-M/01 Ekonomika a podnikání: „Podnikání v euroregionu a pozemní stavitelství\", „Podnikání v euroregionu a internetové služby a aplikace\" a „Podnikání v euroregionu a služby v cestovním ruchu\".",
+    "V 1. kole JPZ 2026 stejný kód obsahuje tři zaměření se zkrácenými názvy: „Pozemní stavitelství\", „Internetové služby a aplikace\" a „Cestovní ruch\" – pořadí i obsahová náplň (stavitelství / IT služby / cestovní ruch) odpovídají třem zaměřením z roku 2025 v témže pořadí.",
+    "Aktuální webová stránka školy (primmat.cz/o-skole/studijni-obor-a-zamereni) uvádí pro obor Ekonomika a podnikání tři zaměření pod zkrácenými názvy shodnými s daty CERMAT 2026: „Služby v cestovním ruchu\", „Pozemní stavitelství\" a „Internetové služby a aplikace\".",
+    "Vyhledávací výsledky odkazující na starší popis školy uvádějí dřívější plné názvy zaměření ve tvaru „01 – podnikání v euroregionu + služby v cestovním ruchu\", „02 – podnikání v euroregionu + pozemní stavitelství\", „03 – podnikání v euroregionu + internetové služby a aplikace\" – tedy shodnou trojici oblastí jako v datech CERMAT 2025, jen v odlišném pořadí číslování.",
+    "Rejstřík MŠMT eviduje kód 63-41-M/01 beze změny u téhož IZO 045235686 ve všech čtyřech snímcích; zaměření rejstřík nesleduje, změnu textu proto nelze institucionálně potvrdit ani vyvrátit."
+   ],
+   "conclusion": "Jde o zkrácení marketingových názvů tří dlouhodobě nabízených zaměření oboru 63-41-M/01 Ekonomika a podnikání, nikoli o zánik a vznik nových zaměření: Q0097 (pozemní stavitelství) odpovídá Q0273, Q0098 (internetové služby a aplikace) odpovídá Q0275 a Q0099 (služby v cestovním ruchu) odpovídá Q0274. Škola stále nabízí tutéž trojici oblastí zaměření, pouze bez předpony „Podnikání v euroregionu a…\".",
+   "alternative_explanations": [
+    "Samotná změna textu zaměření není důkazem, že se nezměnil obsah školního vzdělávacího programu (např. rozsah výuky podnikatelské složky); to by vyžadovalo srovnání ŠVP, které nebylo k dispozici."
+   ],
+   "relationship": {
+    "type": "rename_only",
+    "from": [
+     "63-41-M/01 – Podnikání v euroregionu a pozemní stavitelství (2025)",
+     "63-41-M/01 – Podnikání v euroregionu a internetové služby a aplikace (2025)",
+     "63-41-M/01 – Podnikání v euroregionu a služby v cestovním ruchu (2025)"
+    ],
+    "to": [
+     "63-41-M/01 – Pozemní stavitelství (2026)",
+     "63-41-M/01 – Internetové služby a aplikace (2026)",
+     "63-41-M/01 – Cestovní ruch (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0097", "Q0098", "Q0099", "Q0273", "Q0274", "Q0275"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela tři zaměření oboru 63-41-M/01 Ekonomika a podnikání: „Podnikání v euroregionu a pozemní stavitelství\", „Podnikání v euroregionu a internetové služby a aplikace\" a „Podnikání v euroregionu a služby v cestovním ruchu\".",
-        "V 1. kole JPZ 2026 stejný kód obsahuje tři zaměření se zkrácenými názvy: „Pozemní stavitelství\", „Internetové služby a aplikace\" a „Cestovní ruch\" – pořadí i obsahová náplň (stavitelství / IT služby / cestovní ruch) odpovídají třem zaměřením z roku 2025 v témže pořadí.",
-        "Aktuální webová stránka školy (primmat.cz/o-skole/studijni-obor-a-zamereni) uvádí pro obor Ekonomika a podnikání tři zaměření pod zkrácenými názvy shodnými s daty CERMAT 2026: „Služby v cestovním ruchu\", „Pozemní stavitelství\" a „Internetové služby a aplikace\".",
-        "Vyhledávací výsledky odkazující na starší popis školy uvádějí dřívější plné názvy zaměření ve tvaru „01 – podnikání v euroregionu + služby v cestovním ruchu\", „02 – podnikání v euroregionu + pozemní stavitelství\", „03 – podnikání v euroregionu + internetové služby a aplikace\" – tedy shodnou trojici oblastí jako v datech CERMAT 2025, jen v odlišném pořadí číslování.",
-        "Rejstřík MŠMT eviduje kód 63-41-M/01 beze změny u téhož IZO 045235686 ve všech čtyřech snímcích; zaměření rejstřík nesleduje, změnu textu proto nelze institucionálně potvrdit ani vyvrátit."
-      ],
-      "conclusion": "Jde o zkrácení marketingových názvů tří dlouhodobě nabízených zaměření oboru 63-41-M/01 Ekonomika a podnikání, nikoli o zánik a vznik nových zaměření: Q0097 (pozemní stavitelství) odpovídá Q0273, Q0098 (internetové služby a aplikace) odpovídá Q0275 a Q0099 (služby v cestovním ruchu) odpovídá Q0274. Škola stále nabízí tutéž trojici oblastí zaměření, pouze bez předpony „Podnikání v euroregionu a…\".",
-      "alternative_explanations": [
-        "Samotná změna textu zaměření není důkazem, že se nezměnil obsah školního vzdělávacího programu (např. rozsah výuky podnikatelské složky); to by vyžadovalo srovnání ŠVP, které nebylo k dispozici."
-      ],
-      "relationship": {
-        "type": "rename_only",
-        "from": [
-          "63-41-M/01 – Podnikání v euroregionu a pozemní stavitelství (2025)",
-          "63-41-M/01 – Podnikání v euroregionu a internetové služby a aplikace (2025)",
-          "63-41-M/01 – Podnikání v euroregionu a služby v cestovním ruchu (2025)"
-        ],
-        "to": [
-          "63-41-M/01 – Pozemní stavitelství (2026)",
-          "63-41-M/01 – Internetové služby a aplikace (2026)",
-          "63-41-M/01 – Cestovní ruch (2026)"
-        ]
-      },
-      "addresses": [
-        {
-          "text": "Československé armády 482, 738 01 Místek, Frýdek-Místek",
-          "role": "sídlo",
-          "izo": "600016358",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Československé armády 482, 738 01 Místek, Frýdek-Místek",
-          "role": "místo výuky",
-          "izo": "045235686",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.primmat.cz/o-skole/studijni-obor-a-zamereni",
-          "title": "Studijní obor a zaměření | PrimMat - Soukromá střední škola podnikatelská, s.r.o.",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Uvádí tři aktuální zaměření: Služby v cestovním ruchu, Pozemní stavitelství, Internetové služby a aplikace – shodná s krátkými názvy v datech CERMAT 2026.",
-          "applicable_period": "aktuální nabídka (2026)"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Kód 63-41-M/01 zůstává u IZO 045235686 zapsán beze změny; rejstřík zaměření nesleduje.",
-          "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600016358",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "V roce 2025 tři zaměření s předponou „Podnikání v euroregionu a…\", v roce 2026 tatáž trojice témat pod zkrácenými názvy.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "partially",
-      "recommended_action": "approve_mapping",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda zkrácení názvu doprovázela i změna obsahu ŠVP jednotlivých zaměření."
-      ]
+     "text": "Československé armády 482, 738 01 Místek, Frýdek-Místek",
+     "role": "sídlo",
+     "izo": "600016358",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Československé armády 482, 738 01 Místek, Frýdek-Místek",
+     "role": "místo výuky",
+     "izo": "045235686",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.primmat.cz/o-skole/studijni-obor-a-zamereni",
+     "title": "Studijní obor a zaměření | PrimMat - Soukromá střední škola podnikatelská, s.r.o.",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Uvádí tři aktuální zaměření: Služby v cestovním ruchu, Pozemní stavitelství, Internetové služby a aplikace – shodná s krátkými názvy v datech CERMAT 2026.",
+     "applicable_period": "aktuální nabídka (2026)"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Kód 63-41-M/01 zůstává u IZO 045235686 zapsán beze změny; rejstřík zaměření nesleduje.",
+     "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600016358",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "V roce 2025 tři zaměření s předponou „Podnikání v euroregionu a…\", v roce 2026 tatáž trojice témat pod zkrácenými názvy.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "approve_mapping",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "decisions_required": [
+    "Zda zkrácení názvu doprovázela i změna obsahu ŠVP jednotlivých zaměření."
+   ]
+  }
+ ]
 }

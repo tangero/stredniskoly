@@ -1,78 +1,87 @@
 {
-  "task_id": "R-651012988",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Střední škola živnostenská Sokolov, příspěvková organizace (REDIZO 651012988) je ve všech čtyřech snímcích vedena beze změny identity, sídlo Žákovská 716, Sokolov. IZO 151012997 „Střední škola\" má deset stálých míst výuky shodně ve všech snímcích. Obor 69-41-L/52 Vlasová kosmetika (2leté denní nástavbové studium) zůstává v rejstříku zapsán ve všech čtyřech snímcích včetně 30. 6. 2026 – chybějící nabídka v 1. kole JPZ 2026 tedy není doložena jako zánik registrace oboru."
-  },
-  "findings": [
+ "task_id": "R-651012988",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Střední škola živnostenská Sokolov, příspěvková organizace (REDIZO 651012988) je ve všech čtyřech snímcích vedena beze změny identity, sídlo Žákovská 716, Sokolov. IZO 151012997 „Střední škola\" má deset stálých míst výuky shodně ve všech snímcích. Obor 69-41-L/52 Vlasová kosmetika (2leté denní nástavbové studium) zůstává v rejstříku zapsán ve všech čtyřech snímcích včetně 30. 6. 2026 – chybějící nabídka v 1. kole JPZ 2026 tedy není doložena jako zánik registrace oboru."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0158"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela mj. dvouleté denní nástavbové studium 69-41-L/52 Vlasová kosmetika; v 1. kole JPZ 2026 zůstávají jen tři ze čtyř oborů z roku 2025 (Podnikání, Kosmetické služby, Informační služby), Vlasová kosmetika chybí.",
+    "Rejstřík MŠMT eviduje obor 69-41-L/52 Vlasová kosmetika u IZO 151012997 shodně ve všech čtyřech snímcích, tedy i k 30. 6. 2026 – registrace oboru trvá.",
+    "Oficiální web školy (zivnostenska-sokolov.cz), sekce Obory, uvádí Vlasovou kosmetiku (69-41-L/52) mezi dvěma obory nástavbového studia s dostupným profilem absolventa, učebním plánem a ŠVP, bez jakékoli zmínky o zrušení či neotevření oboru. Web ale výslovně nepotvrzuje, zda je obor vyhlášen pro přijímací řízení 2026/27."
+   ],
+   "conclusion": "Přímý doklad o důvodu chybějící nabídky 2026 nebyl nalezen. Obor zůstává registrován v rejstříku i na webu školy jako součást portfolia, což spíše ukazuje na nevyhlášené přijímací řízení pro školní rok 2026/27 než na zánik oboru.",
+   "alternative_explanations": [
+    "Škola mohla nástavbové studium Vlasová kosmetika pro 2026/27 dočasně neotevřít pro nedostatek přihlášek nebo malý zájem, aniž by obor formálně rušila; tato hypotéza nebyla přímo dohledána."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "69-41-L/52 (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0158"],
-      "status": "pravděpodobné",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela mj. dvouleté denní nástavbové studium 69-41-L/52 Vlasová kosmetika; v 1. kole JPZ 2026 zůstávají jen tři ze čtyř oborů z roku 2025 (Podnikání, Kosmetické služby, Informační služby), Vlasová kosmetika chybí.",
-        "Rejstřík MŠMT eviduje obor 69-41-L/52 Vlasová kosmetika u IZO 151012997 shodně ve všech čtyřech snímcích, tedy i k 30. 6. 2026 – registrace oboru trvá.",
-        "Oficiální web školy (zivnostenska-sokolov.cz), sekce Obory, uvádí Vlasovou kosmetiku (69-41-L/52) mezi dvěma obory nástavbového studia s dostupným profilem absolventa, učebním plánem a ŠVP, bez jakékoli zmínky o zrušení či neotevření oboru. Web ale výslovně nepotvrzuje, zda je obor vyhlášen pro přijímací řízení 2026/27."
-      ],
-      "conclusion": "Přímý doklad o důvodu chybějící nabídky 2026 nebyl nalezen. Obor zůstává registrován v rejstříku i na webu školy jako součást portfolia, což spíše ukazuje na nevyhlášené přijímací řízení pro školní rok 2026/27 než na zánik oboru.",
-      "alternative_explanations": [
-        "Škola mohla nástavbové studium Vlasová kosmetika pro 2026/27 dočasně neotevřít pro nedostatek přihlášek nebo malý zájem, aniž by obor formálně rušila; tato hypotéza nebyla přímo dohledána."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["69-41-L/52 (2025)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Žákovská 716, 356 01 Sokolov",
-          "role": "sídlo",
-          "izo": "651012988",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Žákovská 716, 356 01 Sokolov",
-          "role": "místo výuky",
-          "izo": "151012997",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 69-41-L/52 Vlasová kosmetika zůstává u IZO 151012997 registrován.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "https://www.zivnostenska-sokolov.cz/obory",
-          "title": "Obory – Střední škola živnostenská Sokolov",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Vlasová kosmetika (69-41-L/52) je uvedena mezi dvěma obory nástavbového studia bez zmínky o zrušení či neotevření.",
-          "applicable_period": "aktuální nabídka školy 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-651012988",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 69-41-L/52 Vlasová kosmetika přítomna v roce 2025, chybí v roce 2026; ostatní tři obory pokračují.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "unknown",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Bylo přijímací řízení do oboru Vlasová kosmetika pro 2026/27 vyhlášeno mimo 1. kolo JPZ, nebo nebylo vyhlášeno vůbec?"
-      ]
+     "text": "Žákovská 716, 356 01 Sokolov",
+     "role": "sídlo",
+     "izo": "651012988",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Žákovská 716, 356 01 Sokolov",
+     "role": "místo výuky",
+     "izo": "151012997",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 69-41-L/52 Vlasová kosmetika zůstává u IZO 151012997 registrován.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "https://www.zivnostenska-sokolov.cz/obory",
+     "title": "Obory – Střední škola živnostenská Sokolov",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Vlasová kosmetika (69-41-L/52) je uvedena mezi dvěma obory nástavbového studia bez zmínky o zrušení či neotevření.",
+     "applicable_period": "aktuální nabídka školy 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-651012988",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 69-41-L/52 Vlasová kosmetika přítomna v roce 2025, chybí v roce 2026; ostatní tři obory pokračují.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "unknown",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Bylo přijímací řízení do oboru Vlasová kosmetika pro 2026/27 vyhlášeno mimo 1. kolo JPZ, nebo nebylo vyhlášeno vůbec? Odpověď by dala data 2. kola přijímacího řízení 2026, která zveřejněna nejsou. Dostupné zdroje otázku neuzavírají."
+   ]
+  }
+ ]
 }

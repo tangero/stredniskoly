@@ -1,110 +1,122 @@
 {
-  "task_id": "R-600011747",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Subjekt REDIZO 600011747 (Střední uměleckoprůmyslová škola hudebních nástrojů a nábytku, Hradec Králové, 17. listopadu 1202, IČ shodné, IZO 110100867 „Střední škola\") je ve všech čtyřech snímcích beze změny včetně názvu a sídla. Obory 33-42-L/51 Nábytkářská a dřevařská výroba (2leté nástavbové) a 33-42-M/01 Nábytkářská a dřevařská výroba (4leté, zaměření Design a konstrukce nábytku) zůstávají zapsány ve všech snímcích 2025-03-31 až 2026-06-30 spolu s dalšími šesti talentovými obory (Truhlář, Průmyslový design, Uměleckořemeslná stavba hudebních nástrojů, Design interiéru, Umělecký truhlář a řezbář, Uměleckořemeslné zpracování dřeva). Místa výuky (Brněnská 207/27 Nový Hradec Králové; 17. listopadu 1202/1; Hradecká 1205/7, vše Hradec Králové) jsou ve všech snímcích shodná."
-  },
-  "findings": [
+ "task_id": "R-600011747",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt REDIZO 600011747 (Střední uměleckoprůmyslová škola hudebních nástrojů a nábytku, Hradec Králové, 17. listopadu 1202, IČ shodné, IZO 110100867 „Střední škola\") je ve všech čtyřech snímcích beze změny včetně názvu a sídla. Obory 33-42-L/51 Nábytkářská a dřevařská výroba (2leté nástavbové) a 33-42-M/01 Nábytkářská a dřevařská výroba (4leté, zaměření Design a konstrukce nábytku) zůstávají zapsány ve všech snímcích 2025-03-31 až 2026-06-30 spolu s dalšími šesti talentovými obory (Truhlář, Průmyslový design, Uměleckořemeslná stavba hudebních nástrojů, Design interiéru, Umělecký truhlář a řezbář, Uměleckořemeslné zpracování dřeva). Místa výuky (Brněnská 207/27 Nový Hradec Králové; 17. listopadu 1202/1; Hradecká 1205/7, vše Hradec Králové) jsou ve všech snímcích shodná."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0062",
+    "Q0063",
+    "Q0191"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "CERMAT 1. kolo JPZ 2025 obsahovalo za REDIZO 600011747 dvě nabídky: 33-42-L/51 Nábytkářská a dřevařská výroba (2leté denní) a 33-42-M/01 Nábytkářská a dřevařská výroba / zaměření „Design a konstrukce nábytku\" (4leté denní). V roce 2026 nemá tato organizace v datasetu žádnou nabídku (0 záznamů), což zároveň vysvětluje i nepřiřazenou školní jednotku Q0191 – matchovací algoritmus nenašel pro rok 2026 žádný protějšek celé organizace, protože ta v 1. kole JPZ 2026 vůbec nefigurovala.",
+    "Web školy (hnn.cz) u nástavbového oboru 33-42-L/51 výslovně uvádí periodicitu otevírání: „Tento obor se otevírá každý lichý rok: 2013, 2015, 2017, 2019, 2021, 2023, 2025...\". Shodnou formulaci má i stránka čtyřletého oboru 33-42-M/01 „Design a konstrukce nábytku\": „otevírá se každý lichý rok: 2015, 2017, 2019, 2021, 2023, 2025...\". Rok 2026 je sudý, tedy obor podle vlastního harmonogramu školy neotvírá.",
+    "Aktuální nabídka oborů pro školní rok 2026/2027 na webu školy (Design interiéru, Průmyslový design, Um. zpracování dřeva, Um. stavba hud. nástrojů, Truhlář) neobsahuje ani jednu z obou variant Nábytkářské a dřevařské výroby – v souladu s uvedenou bienální periodicitou.",
+    "Rejstřík MŠMT eviduje oba obory (33-42-L/51 i 33-42-M/01) beze změny ve všech čtyřech snímcích včetně 30. 6. 2026 – registrace trvá, nejde o výmaz oboru."
+   ],
+   "conclusion": "Chybějící nabídka obou variant Nábytkářské a dřevařské výroby v 1. kole JPZ 2026 (Q0062, Q0063) je vysvětlena zdokumentovaným dvouletým (bienálním) cyklem otevírání těchto oborů školou – v sudých letech se neotvírají. Nejde o zrušení oboru ani o zánik či reorganizaci školy; REDIZO, IZO i registrace obou oborů zůstávají v rejstříku beze změny. Nepřiřazená školní jednotka (Q0191) má stejnou příčinu: protože REDIZO 600011747 nemělo v 1. kole JPZ 2026 žádnou nabídku (jeho aktuální obory jsou talentové, mimo rozsah datové fronty), algoritmus pro rok 2026 nenašel odpovídající organizační záznam.",
+   "alternative_explanations": [
+    "Škola mohla od roku 2027 cyklus změnit nebo některý z obou oborů zcela ukončit – k datu zpracování o tom není doklad.",
+    "Nízký zájem uchazečů mohl bienální schéma podpořit, ale zdroj to jako důvod neuvádí."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "33-42-L/51 (2025)",
+     "33-42-M/01 (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0062", "Q0063", "Q0191"],
-      "status": "potvrzeno",
-      "observations": [
-        "CERMAT 1. kolo JPZ 2025 obsahovalo za REDIZO 600011747 dvě nabídky: 33-42-L/51 Nábytkářská a dřevařská výroba (2leté denní) a 33-42-M/01 Nábytkářská a dřevařská výroba / zaměření „Design a konstrukce nábytku\" (4leté denní). V roce 2026 nemá tato organizace v datasetu žádnou nabídku (0 záznamů), což zároveň vysvětluje i nepřiřazenou školní jednotku Q0191 – matchovací algoritmus nenašel pro rok 2026 žádný protějšek celé organizace, protože ta v 1. kole JPZ 2026 vůbec nefigurovala.",
-        "Web školy (hnn.cz) u nástavbového oboru 33-42-L/51 výslovně uvádí periodicitu otevírání: „Tento obor se otevírá každý lichý rok: 2013, 2015, 2017, 2019, 2021, 2023, 2025...\". Shodnou formulaci má i stránka čtyřletého oboru 33-42-M/01 „Design a konstrukce nábytku\": „otevírá se každý lichý rok: 2015, 2017, 2019, 2021, 2023, 2025...\". Rok 2026 je sudý, tedy obor podle vlastního harmonogramu školy neotvírá.",
-        "Aktuální nabídka oborů pro školní rok 2026/2027 na webu školy (Design interiéru, Průmyslový design, Um. zpracování dřeva, Um. stavba hud. nástrojů, Truhlář) neobsahuje ani jednu z obou variant Nábytkářské a dřevařské výroby – v souladu s uvedenou bienální periodicitou.",
-        "Rejstřík MŠMT eviduje oba obory (33-42-L/51 i 33-42-M/01) beze změny ve všech čtyřech snímcích včetně 30. 6. 2026 – registrace trvá, nejde o výmaz oboru."
-      ],
-      "conclusion": "Chybějící nabídka obou variant Nábytkářské a dřevařské výroby v 1. kole JPZ 2026 (Q0062, Q0063) je vysvětlena zdokumentovaným dvouletým (bienálním) cyklem otevírání těchto oborů školou – v sudých letech se neotvírají. Nejde o zrušení oboru ani o zánik či reorganizaci školy; REDIZO, IZO i registrace obou oborů zůstávají v rejstříku beze změny. Nepřiřazená školní jednotka (Q0191) má stejnou příčinu: protože REDIZO 600011747 nemělo v 1. kole JPZ 2026 žádnou nabídku (jeho aktuální obory jsou talentové, mimo rozsah datové fronty), algoritmus pro rok 2026 nenašel odpovídající organizační záznam.",
-      "alternative_explanations": [
-        "Škola mohla od roku 2027 cyklus změnit nebo některý z obou oborů zcela ukončit – k datu zpracování o tom není doklad.",
-        "Nízký zájem uchazečů mohl bienální schéma podpořit, ale zdroj to jako důvod neuvádí."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["33-42-L/51 (2025)", "33-42-M/01 (2025)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "17. listopadu 1202/1, 500 03 Hradec Králové",
-          "role": "sídlo",
-          "izo": "600011747",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "17. listopadu 1202/1, 500 03 Hradec Králové",
-          "role": "místo výuky",
-          "izo": "110100867",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Brněnská 207/27, 500 06 Nový Hradec Králové, Hradec Králové",
-          "role": "místo výuky",
-          "izo": "110100867",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Hradecká 1205/7, 500 03 Hradec Králové",
-          "role": "místo výuky",
-          "izo": "110100867",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.hnn.cz/studijni-obor-drevarska-a-nabytkarska-vyroba-nastavba/",
-          "title": "Nábytkářská a dřevařská výroba (dvouletá nástavba) – SUPŠ HNN",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 33-42-L/51 se otevírá pouze v lichých letech (2013–2025); rok 2026 je sudý, proto se neotvírá.",
-          "applicable_period": "aktuální stav webu k 2026-09-12"
-        },
-        {
-          "url": "https://www.hnn.cz/studijni-obor-navrhovani-a-konstrukce-nabytku/",
-          "title": "Nábytkářská a dřevařská výroba – Design a konstrukce nábytku – SUPŠ HNN",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 33-42-M/01 (Design a konstrukce nábytku) se otevírá pouze v lichých letech (2015–2025); pro rok 2026 otevřen nebude.",
-          "applicable_period": "aktuální stav webu k 2026-09-12"
-        },
-        {
-          "url": "https://www.hnn.cz/informace-pro-uchazece-o-studium-na-sups-hnn/",
-          "title": "Informace pro uchazeče o studium na SUPŠ HNN",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Aktuální nabídka oborů 2026/2027 (5 talentových oborů) neobsahuje žádnou variantu Nábytkářské a dřevařské výroby.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Oba obory 33-42-L/51 a 33-42-M/01 zůstávají u IZO 110100867 registrovány beze změny.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600011747",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka obou oborů v roce 2025 a nulová nabídka celé organizace v roce 2026.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "partially",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Potvrzení, zda škola plánuje znovu otevřít oba obory v roce 2027 podle deklarovaného lichého cyklu."
-      ]
+     "text": "17. listopadu 1202/1, 500 03 Hradec Králové",
+     "role": "sídlo",
+     "izo": "600011747",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "17. listopadu 1202/1, 500 03 Hradec Králové",
+     "role": "místo výuky",
+     "izo": "110100867",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Brněnská 207/27, 500 06 Nový Hradec Králové, Hradec Králové",
+     "role": "místo výuky",
+     "izo": "110100867",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Hradecká 1205/7, 500 03 Hradec Králové",
+     "role": "místo výuky",
+     "izo": "110100867",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.hnn.cz/studijni-obor-drevarska-a-nabytkarska-vyroba-nastavba/",
+     "title": "Nábytkářská a dřevařská výroba (dvouletá nástavba) – SUPŠ HNN",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 33-42-L/51 se otevírá pouze v lichých letech (2013–2025); rok 2026 je sudý, proto se neotvírá.",
+     "applicable_period": "aktuální stav webu k 2026-09-12"
+    },
+    {
+     "url": "https://www.hnn.cz/studijni-obor-navrhovani-a-konstrukce-nabytku/",
+     "title": "Nábytkářská a dřevařská výroba – Design a konstrukce nábytku – SUPŠ HNN",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 33-42-M/01 (Design a konstrukce nábytku) se otevírá pouze v lichých letech (2015–2025); pro rok 2026 otevřen nebude.",
+     "applicable_period": "aktuální stav webu k 2026-09-12"
+    },
+    {
+     "url": "https://www.hnn.cz/informace-pro-uchazece-o-studium-na-sups-hnn/",
+     "title": "Informace pro uchazeče o studium na SUPŠ HNN",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Aktuální nabídka oborů 2026/2027 (5 talentových oborů) neobsahuje žádnou variantu Nábytkářské a dřevařské výroby.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Oba obory 33-42-L/51 a 33-42-M/01 zůstávají u IZO 110100867 registrovány beze změny.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600011747",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka obou oborů v roce 2025 a nulová nabídka celé organizace v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Potvrzení, zda škola plánuje znovu otevřít oba obory v roce 2027 podle deklarovaného lichého cyklu."
+   ]
+  }
+ ]
 }

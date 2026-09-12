@@ -1,105 +1,109 @@
 {
-  "task_id": "R-691019088",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": [
-      "2025-03-31",
-      "2025-12-31",
-      "2026-03-31",
-      "2026-06-30"
-    ],
-    "summary": "REDIZO 691019088 (Gymnázium KUDYKAMPUS International s.r.o., IČ 19754051) chybí ve snímku k 31. 3. 2025. Od 31. 12. 2025 do 30. 6. 2026 je beze změny veden IZO 250005263 se sídlem Husinecká 903/10 (Žižkov) a místem výuky Hartigova 2747/99 (Žižkov), s jediným registrovaným oborem 79-41-K/41 Gymnázium (4leté, denní, český)."
-  },
-  "findings": [
+ "task_id": "R-691019088",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "REDIZO 691019088 (Gymnázium KUDYKAMPUS International s.r.o., IČ 19754051) chybí ve snímku k 31. 3. 2025. Od 31. 12. 2025 do 30. 6. 2026 je beze změny veden IZO 250005263 se sídlem Husinecká 903/10 (Žižkov) a místem výuky Hartigova 2747/99 (Žižkov), s jediným registrovaným oborem 79-41-K/41 Gymnázium (4leté, denní, český)."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0412",
+    "Q0427"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "Právnická osoba IČ 19754051 vznikla 22. 9. 2023, ale svůj současný název „Gymnázium KUDYKAMPUS International s.r.o.“ a sídlo v Praze získala až v prosinci 2024, respektive listopadu 2024 (dříve sídlila v Kladně pod jiným názvem).",
+    "Jediným společníkem a jednatelem je Ing. Martin Přibil – shodná osoba jako u staršího subjektu „Gymnázium KUDYKAMPUS s.r.o.“ (IČ 11894610, založen 30. 9. 2021, sídlo rovněž Husinecká 903/10). Jde tedy o druhou, sesterskou právnickou osobu téhož zřizovatele/majitele, provozující výuku na jiném místě (Hartigova) než starší KUDYKAMPUS.",
+    "V 1. kole JPZ 2025 nemá REDIZO 691019088 žádnou nabídku, v roce 2026 nabízí jediný obor 79-41-K/41 Gymnázium bez uvedeného zaměření – jde o první účast tohoto REDIZO v JPZ.",
+    "Web gymnaziumkudykampus.cz (na který se přesměrovává i doména kudykampus.cz) uvádí kontaktní adresu Hartigova 99, Praha 3 a IČ 19754051, tedy odpovídá právě entitě „International“; neobsahuje ale explicitní informaci o roce založení ani o vztahu k původnímu KUDYKAMPUS."
+   ],
+   "conclusion": "Gymnázium KUDYKAMPUS International je právně samostatný, ale personálně a majetkově propojený subjekt se starším Gymnáziem KUDYKAMPUS (týž zakladatel Martin Přibil); jako škola v rejstříku MŠMT a účastník JPZ figuruje poprvé pro školní rok 2026/27. Nabídka 79-41-K/41 z roku 2026 tedy nemá srovnatelnou historickou nabídku z roku 2025.",
+   "alternative_explanations": [
+    "Nelze vyloučit, že jde o plánované přesunutí/rozšíření kapacity původního Gymnázia KUDYKAMPUS pod novou právnickou osobou; dostupné zdroje explicitně nepopisují důvod založení druhé entity."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "79-41-K/41 (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": [
-        "Q0412",
-        "Q0427"
-      ],
-      "status": "potvrzeno",
-      "observations": [
-        "Právnická osoba IČ 19754051 vznikla 22. 9. 2023, ale svůj současný název „Gymnázium KUDYKAMPUS International s.r.o.“ a sídlo v Praze získala až v prosinci 2024, respektive listopadu 2024 (dříve sídlila v Kladně pod jiným názvem).",
-        "Jediným společníkem a jednatelem je Ing. Martin Přibil – shodná osoba jako u staršího subjektu „Gymnázium KUDYKAMPUS s.r.o.“ (IČ 11894610, založen 30. 9. 2021, sídlo rovněž Husinecká 903/10). Jde tedy o druhou, sesterskou právnickou osobu téhož zřizovatele/majitele, provozující výuku na jiném místě (Hartigova) než starší KUDYKAMPUS.",
-        "V 1. kole JPZ 2025 nemá REDIZO 691019088 žádnou nabídku, v roce 2026 nabízí jediný obor 79-41-K/41 Gymnázium bez uvedeného zaměření – jde o první účast tohoto REDIZO v JPZ.",
-        "Web gymnaziumkudykampus.cz (na který se přesměrovává i doména kudykampus.cz) uvádí kontaktní adresu Hartigova 99, Praha 3 a IČ 19754051, tedy odpovídá právě entitě „International“; neobsahuje ale explicitní informaci o roce založení ani o vztahu k původnímu KUDYKAMPUS."
-      ],
-      "conclusion": "Gymnázium KUDYKAMPUS International je právně samostatný, ale personálně a majetkově propojený subjekt se starším Gymnáziem KUDYKAMPUS (týž zakladatel Martin Přibil); jako škola v rejstříku MŠMT a účastník JPZ figuruje poprvé pro školní rok 2026/27. Nabídka 79-41-K/41 z roku 2026 tedy nemá srovnatelnou historickou nabídku z roku 2025.",
-      "alternative_explanations": [
-        "Nelze vyloučit, že jde o plánované přesunutí/rozšíření kapacity původního Gymnázia KUDYKAMPUS pod novou právnickou osobou; dostupné zdroje explicitně nepopisují důvod založení druhé entity."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": [
-          "79-41-K/41 (2026)"
-        ]
-      },
-      "addresses": [
-        {
-          "text": "Husinecká 903/10, 130 00 Žižkov, Praha",
-          "role": "sídlo",
-          "izo": "691019088",
-          "valid_period": "2025-12-31 až 2026-06-30 (ve snímku 2025-03-31 subjekt chybí)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Hartigova 2747/99, 130 00 Žižkov, Praha",
-          "role": "místo výuky",
-          "izo": "250005263",
-          "valid_period": "2025-12-31 až 2026-06-30",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://rejstrik-firem.kurzy.cz/19754051/",
-          "title": "Veřejný rejstřík – Gymnázium KUDYKAMPUS International s.r.o.",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Vznik subjektu 22. 9. 2023, jediný společník a jednatel Ing. Martin Přibil, přejmenování a přesun sídla z Kladna do Prahy koncem 2024.",
-          "applicable_period": "2023–2024"
-        },
-        {
-          "url": "https://rejstrik-firem.kurzy.cz/11894610/",
-          "title": "Veřejný rejstřík – Gymnázium KUDYKAMPUS s.r.o. (starší sesterský subjekt)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Shodný zakladatel Ing. Martin Přibil, založeno 30. 9. 2021, sídlo Husinecká 903/10 – potvrzuje personální propojení s entitou International.",
-          "applicable_period": "od 2021"
-        },
-        {
-          "url": "https://www.gymnaziumkudykampus.cz/",
-          "title": "Gymnázium KUDYKAMPUS International – oficiální web",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Kontaktní adresa Hartigova 99, Praha 3, IČ 19754051 odpovídající entitě International.",
-          "applicable_period": "stav k datu kontroly"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "IZO 250005263, obor 79-41-K/41, sídlo Husinecká 903/10, místo výuky Hartigova 2747/99, subjekt veden od 31. 12. 2025.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-691019088",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "0 nabídek v roce 2025, 1 nabídka (79-41-K/41) v roce 2026.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Přesný důvod založení druhé právnické osoby vedle staršího Gymnázia KUDYKAMPUS (kapacitní rozšíření vs. jiný záměr) nebyl dohledán."
-      ]
+     "text": "Husinecká 903/10, 130 00 Žižkov, Praha",
+     "role": "sídlo",
+     "izo": "691019088",
+     "valid_period": "2025-12-31 až 2026-06-30 (ve snímku 2025-03-31 subjekt chybí)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Hartigova 2747/99, 130 00 Žižkov, Praha",
+     "role": "místo výuky",
+     "izo": "250005263",
+     "valid_period": "2025-12-31 až 2026-06-30",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://rejstrik-firem.kurzy.cz/19754051/",
+     "title": "Veřejný rejstřík – Gymnázium KUDYKAMPUS International s.r.o.",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Vznik subjektu 22. 9. 2023, jediný společník a jednatel Ing. Martin Přibil, přejmenování a přesun sídla z Kladna do Prahy koncem 2024.",
+     "applicable_period": "2023–2024"
+    },
+    {
+     "url": "https://rejstrik-firem.kurzy.cz/11894610/",
+     "title": "Veřejný rejstřík – Gymnázium KUDYKAMPUS s.r.o. (starší sesterský subjekt)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Shodný zakladatel Ing. Martin Přibil, založeno 30. 9. 2021, sídlo Husinecká 903/10 – potvrzuje personální propojení s entitou International.",
+     "applicable_period": "od 2021"
+    },
+    {
+     "url": "https://www.gymnaziumkudykampus.cz/",
+     "title": "Gymnázium KUDYKAMPUS International – oficiální web",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Kontaktní adresa Hartigova 99, Praha 3, IČ 19754051 odpovídající entitě International.",
+     "applicable_period": "stav k datu kontroly"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "IZO 250005263, obor 79-41-K/41, sídlo Husinecká 903/10, místo výuky Hartigova 2747/99, subjekt veden od 31. 12. 2025.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-691019088",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "0 nabídek v roce 2025, 1 nabídka (79-41-K/41) v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přesný důvod založení druhé právnické osoby vedle staršího Gymnázia KUDYKAMPUS (kapacitní rozšíření vs. jiný záměr) nebyl dohledán.",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 1: příčina samotné změny se nezkoumá. Pro návaznost nabídky není důvod rozhodnutí školy potřebný."
+    }
+   ]
+  }
+ ]
 }

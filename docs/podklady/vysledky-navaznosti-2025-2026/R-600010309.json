@@ -1,104 +1,113 @@
 {
-  "task_id": "R-600010309",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík MŠMT ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) vede pod REDIZO 600010309 tentýž subjekt: Střední průmyslová škola stavební a Obchodní akademie, Kadaň, příspěvková organizace, IČ 61342637, IZO 000082104, sídlo i jediné místo výuky Komenského 562, Kadaň (RÚIAN 18467831). Žádné sloučení, zánik ani změna sídla. Úplný rejstříkový název byl již k 31. 3. 2025 '…stavební a Obchodní akademie…', takže záznam CERMAT 2025 ('SPŠ a OA Kadaň') byl jen zkrácený a záznam 2026 ('SPŠ stavební a OA Kadaň') odpovídá rejstříkovému názvu – nešlo o skutečné přejmenování školy. Rejstřík eviduje obory jen na úrovni KKOV, případné zániky registrace oborů tedy snímky samy o sobě nedoloží; absence oboru 63-41-M/01 v nabídce 2026 je ale potvrzena webem školy."
-  },
-  "findings": [
+ "task_id": "R-600010309",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík MŠMT ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) vede pod REDIZO 600010309 tentýž subjekt: Střední průmyslová škola stavební a Obchodní akademie, Kadaň, příspěvková organizace, IČ 61342637, IZO 000082104, sídlo i jediné místo výuky Komenského 562, Kadaň (RÚIAN 18467831). Žádné sloučení, zánik ani změna sídla. Úplný rejstříkový název byl již k 31. 3. 2025 '…stavební a Obchodní akademie…', takže záznam CERMAT 2025 ('SPŠ a OA Kadaň') byl jen zkrácený a záznam 2026 ('SPŠ stavební a OA Kadaň') odpovídá rejstříkovému názvu – nešlo o skutečné přejmenování školy. Rejstřík eviduje obory jen na úrovni KKOV, případné zániky registrace oborů tedy snímky samy o sobě nedoloží; absence oboru 63-41-M/01 v nabídce 2026 je ale potvrzena webem školy."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0057"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "Data fronty: v 1. kole JPZ 2025 škola (REDIZO 600010309, IZO 000082104) nabízela čtyři denní maturitní obory – 36-45-M/01 Technická zařízení budov, 36-47-M/01 Stavebnictví, 63-41-M/01 Ekonomika a podnikání (zaměření Management ve stavebnictví) a 63-41-M/02 Obchodní akademie. V 1. kole JPZ 2026 nabízí jen tři z nich; obor 63-41-M/01 v nabídce chybí.",
+    "Web školy (sps-kadan.cz, stránka Přijímací řízení, načteno 12. 9. 2026) uvádí pro přijímací řízení do 1. ročníku pro školní rok 2026 (1. i 2. kolo) pouze obory 36-47-M/01 Stavebnictví, 36-45-M/01 Technická zařízení budov a 63-41-M/02 Obchodní akademie – Ekonomika a podnikání mezi nimi není. Ve vyhlášení 1. kola pro školní rok 2025 na téže stránce je naopak 'Ekonomika a podnikání' mezi otevíranými obory uvedena.",
+    "Škola v datech CERMAT změnila zápis názvu z 'SPŠ a OA Kadaň' (2025) na 'SPŠ stavební a OA Kadaň' (2026); rejstřík MŠMT ale vede plný název 'Střední průmyslová škola stavební a Obchodní akademie, Kadaň' beze změny již od snímku 31. 3. 2025, takže jde jen o úplnější zápis, nikoli o přejmenování.",
+    "Stránka 'Obory vzdělání' webu školy (nedatovaná) stále uvádí 63-41-M/01 Ekonomika a podnikání, zaměření Management ve stavebnictví, mezi studijními obory školy – obor tedy zřejmě zůstává registrován a probíhá v jeho vyšších ročnících, jen nebyl otevřen pro nové příjemce do 1. ročníku 2026/2027."
+   ],
+   "conclusion": "Škola i místo výuky pokračují beze změny (REDIZO 600010309, IZO 000082104, Komenského 562, Kadaň). Nepřiřazená nabídka Q0057 je vysvětlena tím, že obor 63-41-M/01 Ekonomika a podnikání (Management ve stavebnictví) škola pro školní rok 2026/2027 neotevřela – potvrzeno vlastním vyhlášením přijímacího řízení 2026 na webu školy, kde jsou uvedeny jen Stavebnictví, Technická zařízení budov a Obchodní akademie. Obory 36-45-M/01, 36-47-M/01 a 63-41-M/02 mezi roky 2025 a 2026 přímo navazují.",
+   "alternative_explanations": [
+    "Zdroje nevylučují, že jde jen o dočasné přerušení nabídky (obor je na nedatované stránce školy stále uváděn a může být v rejstříku nadále registrován); absence v 1. kole JPZ 2026 sama nedokazuje trvalý zánik oboru. Stránka školy ale neuvádí EaP ani ve 2. kole 2026.",
+    "Nelze z přiložených dat vyloučit ani jednoletou pauzu s obnovením nabídky v roce 2027 – to je ale mimo rozsah tohoto úkolu."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "63-41-M/01 Ekonomika a podnikání (Management ve stavebnictví), denní, REDIZO 600010309, 1. kolo JPZ 2025, ID_SOF 7177d593-c31e-4c19-8f87-490b3e6d16f3"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0057"],
-      "status": "potvrzeno",
-      "observations": [
-        "Data fronty: v 1. kole JPZ 2025 škola (REDIZO 600010309, IZO 000082104) nabízela čtyři denní maturitní obory – 36-45-M/01 Technická zařízení budov, 36-47-M/01 Stavebnictví, 63-41-M/01 Ekonomika a podnikání (zaměření Management ve stavebnictví) a 63-41-M/02 Obchodní akademie. V 1. kole JPZ 2026 nabízí jen tři z nich; obor 63-41-M/01 v nabídce chybí.",
-        "Web školy (sps-kadan.cz, stránka Přijímací řízení, načteno 12. 9. 2026) uvádí pro přijímací řízení do 1. ročníku pro školní rok 2026 (1. i 2. kolo) pouze obory 36-47-M/01 Stavebnictví, 36-45-M/01 Technická zařízení budov a 63-41-M/02 Obchodní akademie – Ekonomika a podnikání mezi nimi není. Ve vyhlášení 1. kola pro školní rok 2025 na téže stránce je naopak 'Ekonomika a podnikání' mezi otevíranými obory uvedena.",
-        "Škola v datech CERMAT změnila zápis názvu z 'SPŠ a OA Kadaň' (2025) na 'SPŠ stavební a OA Kadaň' (2026); rejstřík MŠMT ale vede plný název 'Střední průmyslová škola stavební a Obchodní akademie, Kadaň' beze změny již od snímku 31. 3. 2025, takže jde jen o úplnější zápis, nikoli o přejmenování.",
-        "Stránka 'Obory vzdělání' webu školy (nedatovaná) stále uvádí 63-41-M/01 Ekonomika a podnikání, zaměření Management ve stavebnictví, mezi studijními obory školy – obor tedy zřejmě zůstává registrován a probíhá v jeho vyšších ročnících, jen nebyl otevřen pro nové příjemce do 1. ročníku 2026/2027."
-      ],
-      "conclusion": "Škola i místo výuky pokračují beze změny (REDIZO 600010309, IZO 000082104, Komenského 562, Kadaň). Nepřiřazená nabídka Q0057 je vysvětlena tím, že obor 63-41-M/01 Ekonomika a podnikání (Management ve stavebnictví) škola pro školní rok 2026/2027 neotevřela – potvrzeno vlastním vyhlášením přijímacího řízení 2026 na webu školy, kde jsou uvedeny jen Stavebnictví, Technická zařízení budov a Obchodní akademie. Obory 36-45-M/01, 36-47-M/01 a 63-41-M/02 mezi roky 2025 a 2026 přímo navazují.",
-      "alternative_explanations": [
-        "Zdroje nevylučují, že jde jen o dočasné přerušení nabídky (obor je na nedatované stránce školy stále uváděn a může být v rejstříku nadále registrován); absence v 1. kole JPZ 2026 sama nedokazuje trvalý zánik oboru. Stránka školy ale neuvádí EaP ani ve 2. kole 2026.",
-        "Nelze z přiložených dat vyloučit ani jednoletou pauzu s obnovením nabídky v roce 2027 – to je ale mimo rozsah tohoto úkolu."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["63-41-M/01 Ekonomika a podnikání (Management ve stavebnictví), denní, REDIZO 600010309, 1. kolo JPZ 2025, ID_SOF 7177d593-c31e-4c19-8f87-490b3e6d16f3"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Komenského 562, 432 01 Kadaň",
-          "role": "sídlo",
-          "izo": "000082104",
-          "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky rejstříku)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Komenského 562, 432 01 Kadaň",
-          "role": "místo výuky",
-          "izo": "000082104",
-          "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky rejstříku; jediné místo výuky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.sps-kadan.cz/?page_id=134",
-          "title": "Přijímací řízení – SPŠS a OA Kadaň",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Vyhlášení 1. i 2. kola přijímacího řízení pro školní rok 2026 uvádí pouze obory 36-47-M/01, 36-45-M/01 a 63-41-M/02 (bez Ekonomiky a podnikání); vyhlášení 1. kola pro školní rok 2025 na téže stránce uvádí Ekonomiku a podnikání mezi otevíranými obory.",
-          "applicable_period": "přijímací řízení pro školní roky 2025/2026 a 2026/2027 (stav stránky k 12. 9. 2026)"
-        },
-        {
-          "url": "https://www.sps-kadan.cz/?page_id=60",
-          "title": "Obory vzdělání – SPŠS a OA Kadaň",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nedatovaný přehled studijních oborů školy, ve kterém je 63-41-M/01 Ekonomika a podnikání, zaměření Management ve stavebnictví, stále uveden – dokládá, že obor jako takový na škole existuje (registrace/běžící ročníky), i když nebyl otevřen v přijímačkách 2026.",
-          "applicable_period": "nedatováno (stav k 12. 9. 2026)"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení – celá ČR, snímek 31. 3. 2025",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "K 31. 3. 2025 (období 1. kola JPZ 2025) je pod REDIZO 600010309 vedena 'Střední průmyslová škola stavební a Obchodní akademie, Kadaň, Komenského 562, příspěvková organizace' (IČ 61342637, IZO 000082104) se sídlem i místem výuky Komenského 562 – tedy plný název existoval již v roce 2025 a záznam CERMAT 2025 byl zkrácený.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení – celá ČR, snímek 31. 3. 2026",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "K 31. 3. 2026 (období 1. kola JPZ 2026) je subjekt veden beze změny (stejný název, IČ, IZO, sídlo i místo výuky) – kontinuita školy mezi ročníky přijímaček.",
-          "applicable_period": "stav rejstříku k 31. 3. 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení – celá ČR, snímek 30. 6. 2026",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "K 30. 6. 2026 je subjekt nadále veden beze změny – žádný zánik ani sloučení po skončení přijímacího řízení 2026.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600010309",
-          "title": "Přiložená data CERMAT (1. kolo JPZ 2025 a 2026, denní studium)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Přímý výpis nabídek: 2025 čtyři obory včetně 63-41-M/01 Ekonomika a podnikání (Management ve stavebnictví), 2026 jen tři obory bez něj; ostatní tři obory se shodují.",
-          "applicable_period": "1. kolo JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda jde o trvalé ukončení nabídky oboru 63-41-M/01, nebo jen o přerušení na školní rok 2026/2027 (obor je na webu školy stále prezentován a registrace v rejstříku nebyla ze snímků vyvrácena) – rozhodne až nabídka pro rok 2027."
-      ]
+     "text": "Komenského 562, 432 01 Kadaň",
+     "role": "sídlo",
+     "izo": "000082104",
+     "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky rejstříku)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Komenského 562, 432 01 Kadaň",
+     "role": "místo výuky",
+     "izo": "000082104",
+     "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky rejstříku; jediné místo výuky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.sps-kadan.cz/?page_id=134",
+     "title": "Přijímací řízení – SPŠS a OA Kadaň",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Vyhlášení 1. i 2. kola přijímacího řízení pro školní rok 2026 uvádí pouze obory 36-47-M/01, 36-45-M/01 a 63-41-M/02 (bez Ekonomiky a podnikání); vyhlášení 1. kola pro školní rok 2025 na téže stránce uvádí Ekonomiku a podnikání mezi otevíranými obory.",
+     "applicable_period": "přijímací řízení pro školní roky 2025/2026 a 2026/2027 (stav stránky k 12. 9. 2026)"
+    },
+    {
+     "url": "https://www.sps-kadan.cz/?page_id=60",
+     "title": "Obory vzdělání – SPŠS a OA Kadaň",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nedatovaný přehled studijních oborů školy, ve kterém je 63-41-M/01 Ekonomika a podnikání, zaměření Management ve stavebnictví, stále uveden – dokládá, že obor jako takový na škole existuje (registrace/běžící ročníky), i když nebyl otevřen v přijímačkách 2026.",
+     "applicable_period": "nedatováno (stav k 12. 9. 2026)"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení – celá ČR, snímek 31. 3. 2025",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "K 31. 3. 2025 (období 1. kola JPZ 2025) je pod REDIZO 600010309 vedena 'Střední průmyslová škola stavební a Obchodní akademie, Kadaň, Komenského 562, příspěvková organizace' (IČ 61342637, IZO 000082104) se sídlem i místem výuky Komenského 562 – tedy plný název existoval již v roce 2025 a záznam CERMAT 2025 byl zkrácený.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení – celá ČR, snímek 31. 3. 2026",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "K 31. 3. 2026 (období 1. kola JPZ 2026) je subjekt veden beze změny (stejný název, IČ, IZO, sídlo i místo výuky) – kontinuita školy mezi ročníky přijímaček.",
+     "applicable_period": "stav rejstříku k 31. 3. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení – celá ČR, snímek 30. 6. 2026",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "K 30. 6. 2026 je subjekt nadále veden beze změny – žádný zánik ani sloučení po skončení přijímacího řízení 2026.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600010309",
+     "title": "Přiložená data CERMAT (1. kolo JPZ 2025 a 2026, denní studium)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Přímý výpis nabídek: 2025 čtyři obory včetně 63-41-M/01 Ekonomika a podnikání (Management ve stavebnictví), 2026 jen tři obory bez něj; ostatní tři obory se shodují.",
+     "applicable_period": "1. kolo JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Zda jde o trvalé ukončení nabídky oboru 63-41-M/01, nebo jen o přerušení na školní rok 2026/2027 (obor je na webu školy stále prezentován a registrace v rejstříku nebyla ze snímků vyvrácena) – rozhodne až nabídka pro rok 2027."
+   ]
+  }
+ ]
 }

@@ -1,89 +1,108 @@
 {
-  "task_id": "R-691012458",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík potvrzuje kontinuitu subjektu Zemědělská akademie a Gymnázium Hořice - střední škola a vyšší odborná škola, příspěvková organizace (REDIZO 691012458), sídlo Riegrova 1403, Hořice, beze změny ve všech čtyřech snímcích. IZO 110200039 „Střední škola“ eviduje ve všech snímcích osmileté gymnázium 79-41-K/81 spolu s dalšími obory (Agropodnikání, Sociální činnost, Zemědělec-farmář, Opravář zemědělských strojů, Ošetřovatel). Čtyřleté gymnázium 79-41-K/41 není zapsáno v žádném ze čtyř snímků - jde o odstup evidence nového kódu oproti nabídce CERMAT 2026 a vyhlášení školy."
-  },
-  "findings": [
+ "task_id": "R-691012458",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrzuje kontinuitu subjektu Zemědělská akademie a Gymnázium Hořice - střední škola a vyšší odborná škola, příspěvková organizace (REDIZO 691012458), sídlo Riegrova 1403, Hořice, beze změny ve všech čtyřech snímcích. IZO 110200039 „Střední škola“ eviduje ve všech snímcích osmileté gymnázium 79-41-K/81 spolu s dalšími obory (Agropodnikání, Sociální činnost, Zemědělec-farmář, Opravář zemědělských strojů, Ošetřovatel). Čtyřleté gymnázium 79-41-K/41 není zapsáno v žádném ze čtyř snímků - jde o odstup evidence nového kódu oproti nabídce CERMAT 2026 a vyhlášení školy."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0171",
+    "Q0372"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela osmileté gymnázium 79-41-K/81; v 1. kole JPZ 2026 tato nabídka chybí a místo ní se u téhož REDIZO objevuje nová nabídka čtyřletého gymnázia 79-41-K/41.",
+    "Jičínský deník (27. 10. 2025, autoři ČTK a Tomáš Cerman) k rozhodnutí Královéhradeckého kraje o síti víceletých gymnázií cituje: „V Hořicích se podle rozhodnutí kraje postupně sníží kapacita osmiletého gymnázia a naopak se navýší kapacita čtyřletého studia.“ Škola je v článku jmenována jako jedna ze tří dotčených (spolu s Novou Pakou a Hostinným), přičemž u Hořic jde o postupnou (nikoli okamžitou úplnou) změnu kapacit, na rozdíl od Hostinného, kde se nové ročníky osmiletého gymnázia otevírat přestávají zcela.",
+    "Web školy (zaghorice.cz, vyhlášení přijímacího řízení) uvádí pro školní rok 2026/27 (3. kolo) obory 79-41-K/41 Gymnázium (4 roky) a 41-41-M/01 Agropodnikání; osmileté gymnázium 79-41-K/81 mezi vyhlášenými obory pro 2026/27 uvedeno není.",
+    "Rejstřík MŠMT eviduje u IZO 110200039 ve všech čtyřech snímcích (do 30. 6. 2026) jen kód 79-41-K/81; čtyřletý kód 79-41-K/41 zatím zapsán není, což odpovídá běžnému odstupu zápisu nového kódu oproti reálné nabídce."
+   ],
+   "conclusion": "Škola pro školní rok 2026/27 nepřijímá nové žáky do osmiletého gymnázia 79-41-K/81 a nově otevírá čtyřleté gymnázium 79-41-K/41; jde o řízenou přeměnu kapacity víceletých gymnázií v rámci téže školy na základě rozhodnutí zřizovatele (Královéhradecký kraj, říjen 2025), ne o zánik osmiletého oboru (ten zůstává v rejstříku zapsán) ani o vznik nové organizace.",
+   "alternative_explanations": [
+    "Kraj hovoří o „postupném“ snižování kapacity osmiletého gymnázia, obor tedy může být v některém budoucím roce znovu částečně otevřen.",
+    "Kód 79-41-K/41 může být do rejstříku zapsán až po 30. 6. 2026, což záměr školy nevyvrací."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [
+     "79-41-K/81 (2025)"
+    ],
+    "to": [
+     "79-41-K/41 (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0171", "Q0372"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela osmileté gymnázium 79-41-K/81; v 1. kole JPZ 2026 tato nabídka chybí a místo ní se u téhož REDIZO objevuje nová nabídka čtyřletého gymnázia 79-41-K/41.",
-        "Jičínský deník (27. 10. 2025, autoři ČTK a Tomáš Cerman) k rozhodnutí Královéhradeckého kraje o síti víceletých gymnázií cituje: „V Hořicích se podle rozhodnutí kraje postupně sníží kapacita osmiletého gymnázia a naopak se navýší kapacita čtyřletého studia.“ Škola je v článku jmenována jako jedna ze tří dotčených (spolu s Novou Pakou a Hostinným), přičemž u Hořic jde o postupnou (nikoli okamžitou úplnou) změnu kapacit, na rozdíl od Hostinného, kde se nové ročníky osmiletého gymnázia otevírat přestávají zcela.",
-        "Web školy (zaghorice.cz, vyhlášení přijímacího řízení) uvádí pro školní rok 2026/27 (3. kolo) obory 79-41-K/41 Gymnázium (4 roky) a 41-41-M/01 Agropodnikání; osmileté gymnázium 79-41-K/81 mezi vyhlášenými obory pro 2026/27 uvedeno není.",
-        "Rejstřík MŠMT eviduje u IZO 110200039 ve všech čtyřech snímcích (do 30. 6. 2026) jen kód 79-41-K/81; čtyřletý kód 79-41-K/41 zatím zapsán není, což odpovídá běžnému odstupu zápisu nového kódu oproti reálné nabídce."
-      ],
-      "conclusion": "Škola pro školní rok 2026/27 nepřijímá nové žáky do osmiletého gymnázia 79-41-K/81 a nově otevírá čtyřleté gymnázium 79-41-K/41; jde o řízenou přeměnu kapacity víceletých gymnázií v rámci téže školy na základě rozhodnutí zřizovatele (Královéhradecký kraj, říjen 2025), ne o zánik osmiletého oboru (ten zůstává v rejstříku zapsán) ani o vznik nové organizace.",
-      "alternative_explanations": [
-        "Kraj hovoří o „postupném“ snižování kapacity osmiletého gymnázia, obor tedy může být v některém budoucím roce znovu částečně otevřen.",
-        "Kód 79-41-K/41 může být do rejstříku zapsán až po 30. 6. 2026, což záměr školy nevyvrací."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": ["79-41-K/81 (2025)"],
-        "to": ["79-41-K/41 (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Riegrova 1403, 508 01 Hořice",
-          "role": "sídlo",
-          "izo": "691012458",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Riegrova 900, 508 01 Hořice; Šalounova 2164, 508 01 Hořice; Šalounova 919, 508 01 Hořice; Kotykova alej 128, 507 81 Lázně Bělohrad (více pracovišť IZO 110200039)",
-          "role": "nezjištěná",
-          "izo": "110200039",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://jicinsky.denik.cz/zpravy-region/kraj-meni-sit-gymnazii-viceleta-v-nove-pace-horicich-a-hostinnem-skonci/",
-          "title": "Kraj mění síť gymnázií. Víceletá v Nové Pace, Hořicích a Hostinném skončí",
-          "published_at": "2025-10-27",
-          "checked_at": "2026-09-12",
-          "supports": "Krajské rozhodnutí: v Hořicích se postupně sníží kapacita osmiletého gymnázia a naopak navýší kapacita čtyřletého studia.",
-          "applicable_period": "rozhodnutí říjen 2025, účinnost od školního roku 2026/27"
-        },
-        {
-          "url": "https://www.zaghorice.cz/uchazec/prijimaci-rizeni/vyhlaseni-prijimaciho-rizeni/",
-          "title": "Vyhlášení přijímacího řízení - Zemědělská akademie a Gymnázium Hořice",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Pro 2026/27 (3. kolo) je vyhlášeno čtyřleté gymnázium 79-41-K/41 a obor Agropodnikání; osmileté gymnázium mezi vyhlášenými obory není.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 79-41-K/81 zůstává u IZO 110200039 registrován k 30. 6. 2026; obor 79-41-K/41 v rejstříku zatím zapsán není.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-691012458",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 79-41-K/81 přítomna v roce 2025 a chybějící v roce 2026; nabídka 79-41-K/41 přítomna v roce 2026 a chybějící v roce 2025.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Ve které budově (pracovišti) bude nově čtyřleté gymnázium 79-41-K/41 vyučováno?",
-        "Kdy bude 79-41-K/41 zapsán do rejstříku MŠMT?"
-      ]
+     "text": "Riegrova 1403, 508 01 Hořice",
+     "role": "sídlo",
+     "izo": "691012458",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Riegrova 900, 508 01 Hořice; Šalounova 2164, 508 01 Hořice; Šalounova 919, 508 01 Hořice; Kotykova alej 128, 507 81 Lázně Bělohrad (více pracovišť IZO 110200039)",
+     "role": "nezjištěná",
+     "izo": "110200039",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://jicinsky.denik.cz/zpravy-region/kraj-meni-sit-gymnazii-viceleta-v-nove-pace-horicich-a-hostinnem-skonci/",
+     "title": "Kraj mění síť gymnázií. Víceletá v Nové Pace, Hořicích a Hostinném skončí",
+     "published_at": "2025-10-27",
+     "checked_at": "2026-09-12",
+     "supports": "Krajské rozhodnutí: v Hořicích se postupně sníží kapacita osmiletého gymnázia a naopak navýší kapacita čtyřletého studia.",
+     "applicable_period": "rozhodnutí říjen 2025, účinnost od školního roku 2026/27"
+    },
+    {
+     "url": "https://www.zaghorice.cz/uchazec/prijimaci-rizeni/vyhlaseni-prijimaciho-rizeni/",
+     "title": "Vyhlášení přijímacího řízení - Zemědělská akademie a Gymnázium Hořice",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Pro 2026/27 (3. kolo) je vyhlášeno čtyřleté gymnázium 79-41-K/41 a obor Agropodnikání; osmileté gymnázium mezi vyhlášenými obory není.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 79-41-K/81 zůstává u IZO 110200039 registrován k 30. 6. 2026; obor 79-41-K/41 v rejstříku zatím zapsán není.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-691012458",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 79-41-K/81 přítomna v roce 2025 a chybějící v roce 2026; nabídka 79-41-K/41 přítomna v roce 2026 a chybějící v roce 2025.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Ve které budově (pracovišti) bude nově čtyřleté gymnázium 79-41-K/41 vyučováno?",
+     "uzavreno": "Mimo rozsah tohoto běhu: otázka nepatří k návaznosti nabídek, ale k samostatnému úkolu doložení míst výuky pro dojezdovost."
+    },
+    {
+     "otazka": "Kdy bude 79-41-K/41 zapsán do rejstříku MŠMT?",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    }
+   ]
+  }
+ ]
 }

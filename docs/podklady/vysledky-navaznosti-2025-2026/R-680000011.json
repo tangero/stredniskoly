@@ -1,160 +1,190 @@
 {
-  "task_id": "R-680000011",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Vyšší policejní škola a Střední policejní škola Ministerstva vnitra v Praze (REDIZO 680000011) je ve všech čtyřech snímcích vedena beze změny identity, sídlo Pod Táborem 102/5, Praha-Hrdlořezy. IZO 200001027 „Střední škola\" má dvě stálá místa výuky (Pod Táborem 102/5, Praha a Komenského 759, Sokolov) ve všech snímcích. Obor 68-42-M/01 Bezpečnostně právní činnost zůstává registrován ve všech čtyřech snímcích včetně 30. 6. 2026. Obor 68-42-L/01 Vnitřní pořádek a bezpečnost (režim pokusného ověřování) není evidován v žádném ze čtyř snímků – zápis do rejstříku dosud neproběhl nebo je opožděný."
-  },
-  "findings": [
+ "task_id": "R-680000011",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Vyšší policejní škola a Střední policejní škola Ministerstva vnitra v Praze (REDIZO 680000011) je ve všech čtyřech snímcích vedena beze změny identity, sídlo Pod Táborem 102/5, Praha-Hrdlořezy. IZO 200001027 „Střední škola\" má dvě stálá místa výuky (Pod Táborem 102/5, Praha a Komenského 759, Sokolov) ve všech snímcích. Obor 68-42-M/01 Bezpečnostně právní činnost zůstává registrován ve všech čtyřech snímcích včetně 30. 6. 2026. Obor 68-42-L/01 Vnitřní pořádek a bezpečnost (režim pokusného ověřování) není evidován v žádném ze čtyř snímků – zápis do rejstříku dosud neproběhl nebo je opožděný."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0162",
+    "Q0163"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela obor 68-42-M/01 Bezpečnostně právní činnost ve dvou samostatných řádcích podle místa vzdělávání – Praha a Sokolov; v 1. kole JPZ 2026 tento obor v žádné z obou variant v nabídce chybí.",
+    "Rejstřík MŠMT eviduje obor 68-42-M/01 u IZO 200001027 beze změny ve všech čtyřech snímcích, tedy i k 30. 6. 2026 – formální registrace oboru trvá.",
+    "Oficiální web školy (skolamv.cz), sekce „Vyberte si studium\", uvádí mezi středoškolskými obory nově „Vnitřní pořádek a bezpečnost (4letý obor)\"; „Bezpečnostně právní činnost\" je na téže stránce zmíněna v části vyšší odborné vzdělávání, nikoli jako aktuální středoškolský maturitní obor."
+   ],
+   "conclusion": "Přímý doklad o formálním zrušení oboru 68-42-M/01 nebyl nalezen, ale škola jej na svém webu už neuvádí jako aktuálně nabízený středoškolský obor pro nové uchazeče – jeho místo v aktuální nabídce zaujal nový pilotní obor 68-42-L/01 (viz navazující nález). Chybějící nabídka v CERMAT 2026 je pravděpodobně důsledek přechodu na nový obor, nikoli formálního zániku registrace.",
+   "alternative_explanations": [
+    "Bezpečnostně právní činnost 68-42-M/01 může dobíhat pro již přijaté ročníky, aniž by byla oficiálně zrušena z rejstříku; to by vysvětlovalo, proč obor v rejstříku k 30. 6. 2026 stále figuruje."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "68-42-M/01 Praha (2025)",
+     "68-42-M/01 Sokolov (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0162", "Q0163"],
-      "status": "pravděpodobné",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela obor 68-42-M/01 Bezpečnostně právní činnost ve dvou samostatných řádcích podle místa vzdělávání – Praha a Sokolov; v 1. kole JPZ 2026 tento obor v žádné z obou variant v nabídce chybí.",
-        "Rejstřík MŠMT eviduje obor 68-42-M/01 u IZO 200001027 beze změny ve všech čtyřech snímcích, tedy i k 30. 6. 2026 – formální registrace oboru trvá.",
-        "Oficiální web školy (skolamv.cz), sekce „Vyberte si studium\", uvádí mezi středoškolskými obory nově „Vnitřní pořádek a bezpečnost (4letý obor)\"; „Bezpečnostně právní činnost\" je na téže stránce zmíněna v části vyšší odborné vzdělávání, nikoli jako aktuální středoškolský maturitní obor."
-      ],
-      "conclusion": "Přímý doklad o formálním zrušení oboru 68-42-M/01 nebyl nalezen, ale škola jej na svém webu už neuvádí jako aktuálně nabízený středoškolský obor pro nové uchazeče – jeho místo v aktuální nabídce zaujal nový pilotní obor 68-42-L/01 (viz navazující nález). Chybějící nabídka v CERMAT 2026 je pravděpodobně důsledek přechodu na nový obor, nikoli formálního zániku registrace.",
-      "alternative_explanations": [
-        "Bezpečnostně právní činnost 68-42-M/01 může dobíhat pro již přijaté ročníky, aniž by byla oficiálně zrušena z rejstříku; to by vysvětlovalo, proč obor v rejstříku k 30. 6. 2026 stále figuruje."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["68-42-M/01 Praha (2025)", "68-42-M/01 Sokolov (2025)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Pod Táborem 102/5, 190 00 Hrdlořezy, Praha",
-          "role": "sídlo",
-          "izo": "680000011",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Pod Táborem 102/5, 190 00 Hrdlořezy, Praha",
-          "role": "místo výuky",
-          "izo": "200001027",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Komenského 759, 356 01 Sokolov",
-          "role": "místo výuky",
-          "izo": "200001027",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 68-42-M/01 Bezpečnostně právní činnost zůstává u IZO 200001027 registrován.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "https://www.skolamv.cz/uchazeci/vyberte-si-studium.html",
-          "title": "Vyberte si studium – Vyšší policejní škola a Střední policejní škola MV v Praze",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Aktuální nabídka středoškolského studia uvádí „Vnitřní pořádek a bezpečnost (4letý obor)\"; Bezpečnostně právní činnost je zmíněna v části vyšší odborné vzdělávání.",
-          "applicable_period": "aktuální nabídka školy 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-680000011",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 68-42-M/01 Bezpečnostně právní činnost (Praha, Sokolov) přítomna v roce 2025, chybí v roce 2026.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": ["Byl obor 68-42-M/01 formálně vyřazen z rejstříku, nebo jen dobíhá pro dříve přijaté žáky?"]
+     "text": "Pod Táborem 102/5, 190 00 Hrdlořezy, Praha",
+     "role": "sídlo",
+     "izo": "680000011",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     },
     {
-      "issue_ids": ["Q0395", "Q0396"],
-      "status": "pravděpodobné",
-      "observations": [
-        "V 1. kole JPZ 2026 škola poprvé nabízí obor 68-42-L/01 Vnitřní pořádek a bezpečnost (režim pokusného ověřování) ve dvou variantách podle místa vzdělávání: „Bezpečnostní pracovník, Praha\" a „Bezpečnostní pracovník, Sokolov\" – tatáž dvě místa, která obor 68-42-M/01 měl v roce 2025.",
-        "Rejstřík MŠMT obor 68-42-L/01 neeviduje v žádném ze čtyř snímků (poslední 30. 6. 2026) – jde buď o dosud nezapsaný pilotní obor, nebo o obor mimo běžný zápisní režim pokusného ověřování.",
-        "Podle veřejně dostupné informace (online-studium.cz, s odkazem na materiál MŠMT čj. MSMT-28578/2025-1) MŠMT dne 11. 10. 2025 vyhlásilo pokusné ověřování podle rámcových vzdělávacích programů oborů 68-42-H/01 Bezpečnostní pracovník a 68-42-L/01 Vnitřní pořádek a bezpečnost, jehož cílem je umožnit žákům vstup do služebního poměru u Policie ČR už po 3. ročníku studia.",
-        "Oficiální web školy (skolamv.cz) uvádí mezi středoškolskými obory „Vnitřní pořádek a bezpečnost (4letý obor)\" jako svou aktuální nabídku, což odpovídá názvu celostátně vyhlášeného pilotního oboru; přímé potvrzení, že právě tato škola (REDIZO 680000011) je jedním z pilotních účastníků, se z dostupných zdrojů nepodařilo dohledat (seznam zúčastněných škol v příslušném materiálu MŠMT nebyl dostupný)."
-      ],
-      "conclusion": "Obor 68-42-L/01 je nová celostátně vyhlášená pilotní nabídka (pokusné ověřování MŠMT z října 2025), nikoli přejmenování ani formální pokračování oboru 68-42-M/01. Shoda místa vzdělávání (Praha/Sokolov) a skutečnost, že jde o policejní vzdělávací instituci přímo podřízenou MV, silně naznačují, že škola nahradila příjem do 68-42-M/01 tímto pilotním oborem od školního roku 2026/27, ale přímý doklad participace této konkrétní školy v pilotu nebyl nalezen.",
-      "alternative_explanations": [
-        "Škola mohla zavést obor 68-42-L/01 nezávisle na pokračování/zániku 68-42-M/01 – oba obory mohly být zamýšleny jako souběžné, nikoli jako náhrada jeden druhého.",
-        "Zápis do rejstříku mohl jen zaostávat za fakticky již běžícím pilotním programem, podobně jako u jiných nově vyhlašovaných oborů v této frontě (např. 78-42-M/08 Lyceum)."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["68-42-L/01 Praha (2026)", "68-42-L/01 Sokolov (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Pod Táborem 102/5, 190 00 Hrdlořezy, Praha",
-          "role": "místo výuky",
-          "izo": "200001027",
-          "valid_period": "uvedeno v nabídce CERMAT 2026; v rejstříku obor 68-42-L/01 k 30. 6. 2026 nezapsán",
-          "source_url": "https://www.skolamv.cz/uchazeci/vyberte-si-studium.html"
-        },
-        {
-          "text": "Komenského 759, 356 01 Sokolov",
-          "role": "místo výuky",
-          "izo": "200001027",
-          "valid_period": "uvedeno v nabídce CERMAT 2026; v rejstříku obor 68-42-L/01 k 30. 6. 2026 nezapsán",
-          "source_url": "https://www.skolamv.cz/uchazeci/vyberte-si-studium.html"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://online-studium.cz/vyhlaseni-pokusneho-overovani-pro-obory-l0-a-h",
-          "title": "Vyhlášení pokusného ověřování pro obory L0 a H – online-studium.cz",
-          "published_at": "2025-10-11",
-          "checked_at": "2026-09-12",
-          "supports": "MŠMT vyhlásilo 11. 10. 2025 pokusné ověřování oborů 68-42-H/01 Bezpečnostní pracovník a 68-42-L/01 Vnitřní pořádek a bezpečnost s cílem umožnit vstup do služebního poměru Policie ČR po 3. ročníku.",
-          "applicable_period": "vyhlášení říjen 2025, účinnost od školního roku 2026/27"
-        },
-        {
-          "url": "https://www.skolamv.cz/uchazeci/vyberte-si-studium.html",
-          "title": "Vyberte si studium – Vyšší policejní škola a Střední policejní škola MV v Praze",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola uvádí obor „Vnitřní pořádek a bezpečnost (4letý obor)\" mezi svými aktuálními středoškolskými obory, s výukou v Praze i Sokolově.",
-          "applicable_period": "aktuální nabídka školy 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 68-42-L/01 není u IZO 200001027 evidován k 30. 6. 2026.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-680000011",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 68-42-L/01 Vnitřní pořádek a bezpečnost (Praha, Sokolov) přítomna pouze v roce 2026.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Je Vyšší policejní škola a Střední policejní škola MV v Praze oficiálně uvedena v seznamu škol zapojených do pokusného ověřování oboru 68-42-L/01?",
-        "Kdy bude obor 68-42-L/01 zapsán do rejstříku MŠMT?"
-      ]
+     "text": "Pod Táborem 102/5, 190 00 Hrdlořezy, Praha",
+     "role": "místo výuky",
+     "izo": "200001027",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Komenského 759, 356 01 Sokolov",
+     "role": "místo výuky",
+     "izo": "200001027",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 68-42-M/01 Bezpečnostně právní činnost zůstává u IZO 200001027 registrován.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "https://www.skolamv.cz/uchazeci/vyberte-si-studium.html",
+     "title": "Vyberte si studium – Vyšší policejní škola a Střední policejní škola MV v Praze",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Aktuální nabídka středoškolského studia uvádí „Vnitřní pořádek a bezpečnost (4letý obor)\"; Bezpečnostně právní činnost je zmíněna v části vyšší odborné vzdělávání.",
+     "applicable_period": "aktuální nabídka školy 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-680000011",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 68-42-M/01 Bezpečnostně právní činnost (Praha, Sokolov) přítomna v roce 2025, chybí v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Byl obor 68-42-M/01 formálně vyřazen z rejstříku, nebo jen dobíhá pro dříve přijaté žáky?",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    }
+   ]
+  },
+  {
+   "issue_ids": [
+    "Q0395",
+    "Q0396"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "V 1. kole JPZ 2026 škola poprvé nabízí obor 68-42-L/01 Vnitřní pořádek a bezpečnost (režim pokusného ověřování) ve dvou variantách podle místa vzdělávání: „Bezpečnostní pracovník, Praha\" a „Bezpečnostní pracovník, Sokolov\" – tatáž dvě místa, která obor 68-42-M/01 měl v roce 2025.",
+    "Rejstřík MŠMT obor 68-42-L/01 neeviduje v žádném ze čtyř snímků (poslední 30. 6. 2026) – jde buď o dosud nezapsaný pilotní obor, nebo o obor mimo běžný zápisní režim pokusného ověřování.",
+    "Podle veřejně dostupné informace (online-studium.cz, s odkazem na materiál MŠMT čj. MSMT-28578/2025-1) MŠMT dne 11. 10. 2025 vyhlásilo pokusné ověřování podle rámcových vzdělávacích programů oborů 68-42-H/01 Bezpečnostní pracovník a 68-42-L/01 Vnitřní pořádek a bezpečnost, jehož cílem je umožnit žákům vstup do služebního poměru u Policie ČR už po 3. ročníku studia.",
+    "Oficiální web školy (skolamv.cz) uvádí mezi středoškolskými obory „Vnitřní pořádek a bezpečnost (4letý obor)\" jako svou aktuální nabídku, což odpovídá názvu celostátně vyhlášeného pilotního oboru; přímé potvrzení, že právě tato škola (REDIZO 680000011) je jedním z pilotních účastníků, se z dostupných zdrojů nepodařilo dohledat (seznam zúčastněných škol v příslušném materiálu MŠMT nebyl dostupný)."
+   ],
+   "conclusion": "Obor 68-42-L/01 je nová celostátně vyhlášená pilotní nabídka (pokusné ověřování MŠMT z října 2025), nikoli přejmenování ani formální pokračování oboru 68-42-M/01. Shoda místa vzdělávání (Praha/Sokolov) a skutečnost, že jde o policejní vzdělávací instituci přímo podřízenou MV, silně naznačují, že škola nahradila příjem do 68-42-M/01 tímto pilotním oborem od školního roku 2026/27, ale přímý doklad participace této konkrétní školy v pilotu nebyl nalezen.",
+   "alternative_explanations": [
+    "Škola mohla zavést obor 68-42-L/01 nezávisle na pokračování/zániku 68-42-M/01 – oba obory mohly být zamýšleny jako souběžné, nikoli jako náhrada jeden druhého.",
+    "Zápis do rejstříku mohl jen zaostávat za fakticky již běžícím pilotním programem, podobně jako u jiných nově vyhlašovaných oborů v této frontě (např. 78-42-M/08 Lyceum)."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "68-42-L/01 Praha (2026)",
+     "68-42-L/01 Sokolov (2026)"
+    ]
+   },
+   "addresses": [
+    {
+     "text": "Pod Táborem 102/5, 190 00 Hrdlořezy, Praha",
+     "role": "místo výuky",
+     "izo": "200001027",
+     "valid_period": "uvedeno v nabídce CERMAT 2026; v rejstříku obor 68-42-L/01 k 30. 6. 2026 nezapsán",
+     "source_url": "https://www.skolamv.cz/uchazeci/vyberte-si-studium.html"
+    },
+    {
+     "text": "Komenského 759, 356 01 Sokolov",
+     "role": "místo výuky",
+     "izo": "200001027",
+     "valid_period": "uvedeno v nabídce CERMAT 2026; v rejstříku obor 68-42-L/01 k 30. 6. 2026 nezapsán",
+     "source_url": "https://www.skolamv.cz/uchazeci/vyberte-si-studium.html"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "https://online-studium.cz/vyhlaseni-pokusneho-overovani-pro-obory-l0-a-h",
+     "title": "Vyhlášení pokusného ověřování pro obory L0 a H – online-studium.cz",
+     "published_at": "2025-10-11",
+     "checked_at": "2026-09-12",
+     "supports": "MŠMT vyhlásilo 11. 10. 2025 pokusné ověřování oborů 68-42-H/01 Bezpečnostní pracovník a 68-42-L/01 Vnitřní pořádek a bezpečnost s cílem umožnit vstup do služebního poměru Policie ČR po 3. ročníku.",
+     "applicable_period": "vyhlášení říjen 2025, účinnost od školního roku 2026/27"
+    },
+    {
+     "url": "https://www.skolamv.cz/uchazeci/vyberte-si-studium.html",
+     "title": "Vyberte si studium – Vyšší policejní škola a Střední policejní škola MV v Praze",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola uvádí obor „Vnitřní pořádek a bezpečnost (4letý obor)\" mezi svými aktuálními středoškolskými obory, s výukou v Praze i Sokolově.",
+     "applicable_period": "aktuální nabídka školy 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 68-42-L/01 není u IZO 200001027 evidován k 30. 6. 2026.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-680000011",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 68-42-L/01 Vnitřní pořádek a bezpečnost (Praha, Sokolov) přítomna pouze v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Je Vyšší policejní škola a Střední policejní škola MV v Praze oficiálně uvedena v seznamu škol zapojených do pokusného ověřování oboru 68-42-L/01?",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    },
+    {
+     "otazka": "Kdy bude obor 68-42-L/01 zapsán do rejstříku MŠMT?",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    }
+   ]
+  }
+ ]
 }

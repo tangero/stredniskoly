@@ -1,102 +1,106 @@
 {
-  "task_id": "R-600013936",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": [
-      "2025-03-31",
-      "2025-12-31",
-      "2026-03-31",
-      "2026-06-30"
-    ],
-    "summary": "REDIZO 600013936 „Střední průmyslová škola a Vyšší odborná škola Brno, Sokolská, příspěvková organizace“ (sídlo Sokolská 366/1, Veveří, Brno) je ve všech čtyřech snímcích beze změny. IZO 000559415 „Střední škola“ eviduje ve snímku k 31. 3. 2025 čtyři obory (63-41-M/01, 82-41-M/06, 23-41-M/01, 78-42-M/01) bez oboru 78-42-M/02 Ekonomické lyceum. Od snímku k 31. 12. 2025 (a i v 2026-03-31 a 2026-06-30) přibývá obor 78-42-M/02 Ekonomické lyceum. Místa výuky Kounicova 685/20 a Sokolská 366/1 jsou ve všech snímcích shodná."
-  },
-  "findings": [
+ "task_id": "R-600013936",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "REDIZO 600013936 „Střední průmyslová škola a Vyšší odborná škola Brno, Sokolská, příspěvková organizace“ (sídlo Sokolská 366/1, Veveří, Brno) je ve všech čtyřech snímcích beze změny. IZO 000559415 „Střední škola“ eviduje ve snímku k 31. 3. 2025 čtyři obory (63-41-M/01, 82-41-M/06, 23-41-M/01, 78-42-M/01) bez oboru 78-42-M/02 Ekonomické lyceum. Od snímku k 31. 12. 2025 (a i v 2026-03-31 a 2026-06-30) přibývá obor 78-42-M/02 Ekonomické lyceum. Místa výuky Kounicova 685/20 a Sokolská 366/1 jsou ve všech snímcích shodná."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0233"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "Obor 78-42-M/02 Ekonomické lyceum se v nabídce 1. kola JPZ objevuje poprvé v roce 2026; v roce 2025 škola nabízela jen Strojírenství, Ekonomiku a podnikání a Technické lyceum.",
+    "Rejstřík MŠMT obor 78-42-M/02 u IZO 000559415 neeviduje ve snímku k 31. 3. 2025, ale eviduje jej ve všech třech následujících snímcích (31. 12. 2025, 31. 3. 2026, 30. 6. 2026).",
+    "Aktuální web školy (sokolska.cz) uvádí Ekonomické lyceum jako jeden z pěti hlavních maturitních oborů školy vedle Strojírenství, Technického lycea, Ekonomiky a podnikání a Výtvarného zpracování kovů a drahých kamenů, avšak bez uvedení data zahájení výuky tohoto oboru."
+   ],
+   "conclusion": "Obor 78-42-M/02 Ekonomické lyceum je pro tuto školu nový, s první nabídkou v přijímacím řízení 2026/27 – dokládá to shoda mezi absencí oboru v rejstříku k 31. 3. 2025, jeho zápisem od 31. 12. 2025 a shodně první nabídkou v CERMAT datech až pro rok 2026. Nemá předchůdce v nabídce školy z roku 2025.",
+   "alternative_explanations": [
+    "Přesný důvod a datum rozhodnutí o zavedení oboru se z dostupných zdrojů dohledat nepodařilo; web školy datum zahájení neuvádí, pouze obor zařazuje mezi aktuální nabídku."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "78-42-M/02 (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": [
-        "Q0233"
-      ],
-      "status": "potvrzeno",
-      "observations": [
-        "Obor 78-42-M/02 Ekonomické lyceum se v nabídce 1. kola JPZ objevuje poprvé v roce 2026; v roce 2025 škola nabízela jen Strojírenství, Ekonomiku a podnikání a Technické lyceum.",
-        "Rejstřík MŠMT obor 78-42-M/02 u IZO 000559415 neeviduje ve snímku k 31. 3. 2025, ale eviduje jej ve všech třech následujících snímcích (31. 12. 2025, 31. 3. 2026, 30. 6. 2026).",
-        "Aktuální web školy (sokolska.cz) uvádí Ekonomické lyceum jako jeden z pěti hlavních maturitních oborů školy vedle Strojírenství, Technického lycea, Ekonomiky a podnikání a Výtvarného zpracování kovů a drahých kamenů, avšak bez uvedení data zahájení výuky tohoto oboru."
-      ],
-      "conclusion": "Obor 78-42-M/02 Ekonomické lyceum je pro tuto školu nový, s první nabídkou v přijímacím řízení 2026/27 – dokládá to shoda mezi absencí oboru v rejstříku k 31. 3. 2025, jeho zápisem od 31. 12. 2025 a shodně první nabídkou v CERMAT datech až pro rok 2026. Nemá předchůdce v nabídce školy z roku 2025.",
-      "alternative_explanations": [
-        "Přesný důvod a datum rozhodnutí o zavedení oboru se z dostupných zdrojů dohledat nepodařilo; web školy datum zahájení neuvádí, pouze obor zařazuje mezi aktuální nabídku."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": [
-          "78-42-M/02 (2026)"
-        ]
-      },
-      "addresses": [
-        {
-          "text": "Sokolská 366/1, 602 00 Veveří, Brno",
-          "role": "sídlo",
-          "izo": "600013936",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Sokolská 366/1, 602 00 Veveří, Brno",
-          "role": "místo výuky",
-          "izo": "000559415",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Kounicova 685/20, 602 00 Veveří, Brno",
-          "role": "místo výuky",
-          "izo": "000559415",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 78-42-M/02 Ekonomické lyceum není u IZO 000559415 evidován.",
-          "applicable_period": "stav rejstříku k 2025-03-31"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 78-42-M/02 Ekonomické lyceum se poprvé objevuje u IZO 000559415.",
-          "applicable_period": "stav rejstříku k 2025-12-31"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600013936",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 78-42-M/02 Ekonomické lyceum přítomna jen v roce 2026, v roce 2025 chybí.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        },
-        {
-          "url": "https://www.sokolska.cz/pro-zajemce/studijni-obory-sps",
-          "title": "Studijní obory SPŠ | SPŠ a VOŠ Sokolská Brno",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Ekonomické lyceum je uvedeno mezi aktuálně nabízenými maturitními obory školy.",
-          "applicable_period": "aktuální nabídka oborů (2026)"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Konkrétní oznámení školy/zřizovatele o zavedení oboru Ekonomické lyceum (datum, důvod) se na webu školy nepodařilo dohledat."
-      ]
+     "text": "Sokolská 366/1, 602 00 Veveří, Brno",
+     "role": "sídlo",
+     "izo": "600013936",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Sokolská 366/1, 602 00 Veveří, Brno",
+     "role": "místo výuky",
+     "izo": "000559415",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Kounicova 685/20, 602 00 Veveří, Brno",
+     "role": "místo výuky",
+     "izo": "000559415",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/02 Ekonomické lyceum není u IZO 000559415 evidován.",
+     "applicable_period": "stav rejstříku k 2025-03-31"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/02 Ekonomické lyceum se poprvé objevuje u IZO 000559415.",
+     "applicable_period": "stav rejstříku k 2025-12-31"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600013936",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 78-42-M/02 Ekonomické lyceum přítomna jen v roce 2026, v roce 2025 chybí.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://www.sokolska.cz/pro-zajemce/studijni-obory-sps",
+     "title": "Studijní obory SPŠ | SPŠ a VOŠ Sokolská Brno",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Ekonomické lyceum je uvedeno mezi aktuálně nabízenými maturitními obory školy.",
+     "applicable_period": "aktuální nabídka oborů (2026)"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Konkrétní oznámení školy/zřizovatele o zavedení oboru Ekonomické lyceum (datum, důvod) se na webu školy nepodařilo dohledat.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    }
+   ]
+  }
+ ]
 }

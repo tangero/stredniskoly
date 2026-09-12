@@ -1,0 +1,32 @@
+{
+ "note": "Zápis v číselníku je dokladem existence; odstup zápisu do rejstříku sporem není. Seznam obsahuje jen místa, kde si zdroje odporují.",
+ "counts": {},
+ "registry_lag_not_conflict": [
+  {
+   "task_id": "R-691018707",
+   "redizo": "691018707",
+   "rok": 2025
+  },
+  {
+   "task_id": "R-691018871",
+   "redizo": "691018871",
+   "rok": 2026
+  },
+  {
+   "task_id": "R-691020035",
+   "redizo": "691020035",
+   "rok": 2026
+  },
+  {
+   "task_id": "R-691020060",
+   "redizo": "691020060",
+   "rok": 2026
+  },
+  {
+   "task_id": "R-691020094",
+   "redizo": "691020094",
+   "rok": 2026
+  }
+ ],
+ "conflicts": []
+}

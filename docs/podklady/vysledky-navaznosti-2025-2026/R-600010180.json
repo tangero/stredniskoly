@@ -1,88 +1,97 @@
 {
-  "task_id": "R-600010180",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík MŠMT potvrzuje plnou kontinuitu subjektu: Střední odborná škola mediální grafiky a polygrafie, Rumburk, příspěvková organizace (REDIZO 600010180, IZO 000497029) je ve všech čtyřech snímcích vedena beze změny, se dvěma místy výuky (Jiříkovská 838/2 a Jiříkovská 840/4, Rumburk). Obor 34-41-M/01 Polygrafie zůstává zapsán u IZO 000497029 ve všech čtyřech snímcích beze změny, vedle oborů 34-52-H/01 a 34-52-L/01 Tiskař na polygrafických strojích, 34-53-H/01 Reprodukční grafik, 34-53-L/01 Reprodukční grafik pro média a 34-57-H/01 Knihař."
-  },
-  "findings": [
+ "task_id": "R-600010180",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík MŠMT potvrzuje plnou kontinuitu subjektu: Střední odborná škola mediální grafiky a polygrafie, Rumburk, příspěvková organizace (REDIZO 600010180, IZO 000497029) je ve všech čtyřech snímcích vedena beze změny, se dvěma místy výuky (Jiříkovská 838/2 a Jiříkovská 840/4, Rumburk). Obor 34-41-M/01 Polygrafie zůstává zapsán u IZO 000497029 ve všech čtyřech snímcích beze změny, vedle oborů 34-52-H/01 a 34-52-L/01 Tiskař na polygrafických strojích, 34-53-H/01 Reprodukční grafik, 34-53-L/01 Reprodukční grafik pro média a 34-57-H/01 Knihař."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0054"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela obor 34-41-M/01 Polygrafie (4 roky, denní); v 1. kole JPZ 2026 tato nabídka chybí, zatímco obory Tiskař na polygrafických strojích a Reprodukční grafik pro média pokračují v obou letech.",
+    "Obor 34-41-M/01 Polygrafie zůstává v rejstříku MŠMT zapsán u IZO 000497029 ve všech čtyřech snímcích včetně 30. 6. 2026 – registrace oboru trvá.",
+    "Portál infoabsolvent.cz uvádí pro přijímací řízení do školního roku 2026/2027 u této školy pouze pět oborů (Tiskař na polygrafických strojích ve 3leté i 4leté podobě, Reprodukční grafik, Reprodukční grafik pro média, Knihař) s konkrétními plány přijmout; obor Polygrafie se v tomto seznamu vůbec neobjevuje.",
+    "Web školy (sosmgp.cz) v přehledu aktuálního přijímacího řízení pro 2026/2027 rovněž uvádí jen týchž pět oborů bez Polygrafie; obecná prezentace obor Polygrafie zmiňuje, ale bez informace o jeho aktuálním statusu pro letošní nábor.",
+    "Žádný dohledaný zdroj neuvádí formální zrušení oboru Polygrafie ani důvod vynechání z nabídky pro rok 2026/2027 (typicky bývá důvodem nedostatečný zájem uchazečů)."
+   ],
+   "conclusion": "Obor 34-41-M/01 Polygrafie zůstává v rejstříku MŠMT registrován i po roce 2026. Shodně web školy i infoabsolvent.cz potvrzují, že pro přijímací řízení do školního roku 2026/2027 škola do tohoto oboru nábor nevyhlásila. Jde tedy pravděpodobně o dočasné přerušení přijímacího řízení, nikoli o zánik oboru – přesný důvod (nezájem uchazečů, organizační rozhodnutí) nebyl dohledán a nebyl předmětem zkoumání.",
+   "alternative_explanations": [
+    "Nelze vyloučit, že škola do budoucna obor formálně zruší, pokud nábor zůstane dlouhodobě nevyhlášen; k datu zpracování k tomu ale nedošlo (registrace v rejstříku trvá)."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "34-41-M/01 Polygrafie (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0054"],
-      "status": "pravděpodobné",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela obor 34-41-M/01 Polygrafie (4 roky, denní); v 1. kole JPZ 2026 tato nabídka chybí, zatímco obory Tiskař na polygrafických strojích a Reprodukční grafik pro média pokračují v obou letech.",
-        "Obor 34-41-M/01 Polygrafie zůstává v rejstříku MŠMT zapsán u IZO 000497029 ve všech čtyřech snímcích včetně 30. 6. 2026 – registrace oboru trvá.",
-        "Portál infoabsolvent.cz uvádí pro přijímací řízení do školního roku 2026/2027 u této školy pouze pět oborů (Tiskař na polygrafických strojích ve 3leté i 4leté podobě, Reprodukční grafik, Reprodukční grafik pro média, Knihař) s konkrétními plány přijmout; obor Polygrafie se v tomto seznamu vůbec neobjevuje.",
-        "Web školy (sosmgp.cz) v přehledu aktuálního přijímacího řízení pro 2026/2027 rovněž uvádí jen týchž pět oborů bez Polygrafie; obecná prezentace obor Polygrafie zmiňuje, ale bez informace o jeho aktuálním statusu pro letošní nábor.",
-        "Žádný dohledaný zdroj neuvádí formální zrušení oboru Polygrafie ani důvod vynechání z nabídky pro rok 2026/2027 (typicky bývá důvodem nedostatečný zájem uchazečů)."
-      ],
-      "conclusion": "Obor 34-41-M/01 Polygrafie zůstává v rejstříku MŠMT registrován i po roce 2026. Shodně web školy i infoabsolvent.cz potvrzují, že pro přijímací řízení do školního roku 2026/2027 škola do tohoto oboru nábor nevyhlásila. Jde tedy pravděpodobně o dočasné přerušení přijímacího řízení, nikoli o zánik oboru – přesný důvod (nezájem uchazečů, organizační rozhodnutí) nebyl dohledán a nebyl předmětem zkoumání.",
-      "alternative_explanations": [
-        "Nelze vyloučit, že škola do budoucna obor formálně zruší, pokud nábor zůstane dlouhodobě nevyhlášen; k datu zpracování k tomu ale nedošlo (registrace v rejstříku trvá)."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["34-41-M/01 Polygrafie (2025)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Jiříkovská 840/4, 408 01 Rumburk 1, Rumburk",
-          "role": "sídlo",
-          "izo": "600010180",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Jiříkovská 838/2, 408 01 Rumburk 1, Rumburk; Jiříkovská 840/4, 408 01 Rumburk 1, Rumburk",
-          "role": "místo výuky",
-          "izo": "000497029",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.infoabsolvent.cz/Skoly/Skola/600010180",
-          "title": "Střední odborná škola mediální grafiky a polygrafie, Rumburk - InfoAbsolvent",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Pro přijímací řízení 2026/2027 uvádí pouze pět oborů (Tiskař na polygrafických strojích, Reprodukční grafik, Reprodukční grafik pro média, Knihař) s konkrétními plány přijmout; obor Polygrafie v nabídce chybí.",
-          "applicable_period": "přijímací řízení 2026/2027"
-        },
-        {
-          "url": "http://www.sosmgp.cz",
-          "title": "SOŠ mediální grafiky a polygrafie, Rumburk - oficiální web",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Aktuální přijímací řízení pro 2026/2027 uvádí čtyři obory, obor Polygrafie mezi nimi není; obecná nabídka oborů jej zmiňuje bez upřesnění statusu pro letošní nábor.",
-          "applicable_period": "aktuální stav (2026)"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 34-41-M/01 Polygrafie zůstává u IZO 000497029 registrován ve všech čtyřech snímcích 2025-03-31 až 2026-06-30.",
-          "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600010180",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 34-41-M/01 Polygrafie přítomna v 1. kole JPZ 2025 a chybějící v 1. kole JPZ 2026; ostatní obory (Tiskař na polygrafických strojích, Reprodukční grafik pro média) pokračují v obou letech.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Přesný důvod, proč škola pro školní rok 2026/2027 nábor do oboru Polygrafie nevyhlásila, nebyl dohledán."
-      ]
+     "text": "Jiříkovská 840/4, 408 01 Rumburk 1, Rumburk",
+     "role": "sídlo",
+     "izo": "600010180",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Jiříkovská 838/2, 408 01 Rumburk 1, Rumburk; Jiříkovská 840/4, 408 01 Rumburk 1, Rumburk",
+     "role": "místo výuky",
+     "izo": "000497029",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.infoabsolvent.cz/Skoly/Skola/600010180",
+     "title": "Střední odborná škola mediální grafiky a polygrafie, Rumburk - InfoAbsolvent",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Pro přijímací řízení 2026/2027 uvádí pouze pět oborů (Tiskař na polygrafických strojích, Reprodukční grafik, Reprodukční grafik pro média, Knihař) s konkrétními plány přijmout; obor Polygrafie v nabídce chybí.",
+     "applicable_period": "přijímací řízení 2026/2027"
+    },
+    {
+     "url": "http://www.sosmgp.cz",
+     "title": "SOŠ mediální grafiky a polygrafie, Rumburk - oficiální web",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Aktuální přijímací řízení pro 2026/2027 uvádí čtyři obory, obor Polygrafie mezi nimi není; obecná nabídka oborů jej zmiňuje bez upřesnění statusu pro letošní nábor.",
+     "applicable_period": "aktuální stav (2026)"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 34-41-M/01 Polygrafie zůstává u IZO 000497029 registrován ve všech čtyřech snímcích 2025-03-31 až 2026-06-30.",
+     "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600010180",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 34-41-M/01 Polygrafie přítomna v 1. kole JPZ 2025 a chybějící v 1. kole JPZ 2026; ostatní obory (Tiskař na polygrafických strojích, Reprodukční grafik pro média) pokračují v obou letech.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Přesný důvod, proč škola pro školní rok 2026/2027 nábor do oboru Polygrafie nevyhlásila, nebyl dohledán."
+   ]
+  }
+ ]
 }

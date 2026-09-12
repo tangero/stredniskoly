@@ -1,106 +1,126 @@
 {
-  "task_id": "R-600016676",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "REDIZO 600016676 (Střední průmyslová škola, Karviná, příspěvková organizace, Žižkova 1818/1) je ve všech čtyřech snímcích beze změny názvu, sídla i IZO 000601497. Registrované obory jsou konstantní: 18-20-M/01 Informační technologie, 26-41-M/01 Elektrotechnika, 78-42-M/01 Technické lyceum a 23-41-M/01 Strojírenství. U oboru 23-41-M/01 rejstřík ve všech čtyřech snímcích souběžně eviduje DVĚ jazykové varianty téhož kódu: 23-41-M/01 Strojírenství (denní, český) a 23-41-M/01 Strojírenství (denní, jiný jazyk) – tato dualita se v čase nemění, obě varianty jsou zapsané po celé sledované období bez přerušení."
-  },
-  "findings": [
+ "task_id": "R-600016676",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "REDIZO 600016676 (Střední průmyslová škola, Karviná, příspěvková organizace, Žižkova 1818/1) je ve všech čtyřech snímcích beze změny názvu, sídla i IZO 000601497. Registrované obory jsou konstantní: 18-20-M/01 Informační technologie, 26-41-M/01 Elektrotechnika, 78-42-M/01 Technické lyceum a 23-41-M/01 Strojírenství. U oboru 23-41-M/01 rejstřík ve všech čtyřech snímcích souběžně eviduje DVĚ jazykové varianty téhož kódu: 23-41-M/01 Strojírenství (denní, český) a 23-41-M/01 Strojírenství (denní, jiný jazyk) – tato dualita se v čase nemění, obě varianty jsou zapsané po celé sledované období bez přerušení."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0609"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "CERMAT 1. kolo JPZ 2025 uvádí u REDIZO 600016676 obor 23-41-M/01 Strojírenství s formou „den“ a jazykem výuky „Polský“; CERMAT 1. kolo JPZ 2026 uvádí týž obor s formou „den2“ a jazykem „Český“.",
+    "Rejstřík MŠMT eviduje pro tento obor po celé období (31. 3. 2025 až 30. 6. 2026) souběžně dvě jazykové varianty – „český“ a „jiný“ – beze změny; nedošlo tedy k výmazu ani přidání jazykové varianty v rejstříku mezi lety 2025 a 2026.",
+    "Oficiální web školy (sps-karvina.cz) ani InfoAbsolvent u oboru Strojírenství pro přijímací řízení 2026/2027 nezmiňují polský jazyk výuky ani označení „den2“ – uvádějí jen standardní denní studium se zkouškami z českého jazyka a matematiky.",
+    "Region Karviná má historicky polskou národnostní menšinu a školy v Zaolží běžně provozují třídy s polským vyučovacím jazykem, což je věrohodné vysvětlení záznamu „Polský“ z roku 2025; současný web ale žádnou takovou třídu explicitně nezmiňuje, což může znamenat jak ukončení náboru do této varianty, tak jen neaktuálnost webové prezentace.",
+    "Označení formy „den2“ u záznamu 2026 se na webu školy ani v rejstříku nevyskytuje jako samostatná kategorie – je pravděpodobně interním kódem CERMAT pro rozlišení druhého souběžného denního záznamu téhož oboru, nikoli oficiálním pojmem používaným školou.",
+    "Rejstřík MŠMT vede u tohoto IZO jazykové varianty oboru souběžně po celé sledované období, takže obě po právu existují. Data CERMAT jazyk u nabídky mění, což je podle pravidla 3 změna údaje, nikoli doložená změna nabídky. Zda konkrétní třída byla naplněna, zdroje o přihláškách neuvádějí, protože jazyk výuky nezaznamenávají.",
+    "Kód „den2“ neodpovídá žádné kategorii formy vzdělávání v rejstříku MŠMT, který vede jen denní, dálkovou, večerní, kombinovanou a distanční formu. V datech CERMAT pro 1. kolo 2026 se vyskytuje čtyřikrát proti 5 914 záznamům s hodnotou „den“; jde tedy o zvláštnost zdrojového souboru, ne o samostatnou formu studia."
+   ],
+   "conclusion": "Registrační kontinuita (souběžná existence české i „jiné“ jazykové varianty oboru 23-41-M/01 po celé sledované období) podporuje závěr, že jde o pokračování téhož oboru Strojírenství, u kterého se mezi lety 2025 a 2026 změnil způsob, jakým CERMAT zaznamenal jazyk výuky a formu (z „Polský/den“ na „Český/den2“). Přímý zdroj, který by potvrdil skutečnou změnu jazyka výuky (např. ukončení polskojazyčné třídy), se dohledat nepodařilo – závěr je proto jen pravděpodobný, nikoli potvrzený.",
+   "alternative_explanations": [
+    "Mohlo jít o skutečné zrušení polskojazyčné třídy Strojírenství a její nahrazení čistě českojazyčnou třídou od školního roku 2026/27, i když registrovaná „jiná“ varianta v rejstříku zůstává formálně zapsána.",
+    "Označení „den2“ mohlo naopak znamenat vznik druhé paralelní české třídy vedle stávající, aniž by polskojazyčná varianta zanikla – v tom případě by šlo o navýšení kapacity, ne o změnu jazyka jedné třídy."
+   ],
+   "relationship": {
+    "type": "continuation",
+    "from": [
+     "23-41-M/01 Strojírenství, den, jazyk Polský (2025)"
+    ],
+    "to": [
+     "23-41-M/01 Strojírenství, den2, jazyk Český (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0609"],
-      "status": "pravděpodobné",
-      "observations": [
-        "CERMAT 1. kolo JPZ 2025 uvádí u REDIZO 600016676 obor 23-41-M/01 Strojírenství s formou „den“ a jazykem výuky „Polský“; CERMAT 1. kolo JPZ 2026 uvádí týž obor s formou „den2“ a jazykem „Český“.",
-        "Rejstřík MŠMT eviduje pro tento obor po celé období (31. 3. 2025 až 30. 6. 2026) souběžně dvě jazykové varianty – „český“ a „jiný“ – beze změny; nedošlo tedy k výmazu ani přidání jazykové varianty v rejstříku mezi lety 2025 a 2026.",
-        "Oficiální web školy (sps-karvina.cz) ani InfoAbsolvent u oboru Strojírenství pro přijímací řízení 2026/2027 nezmiňují polský jazyk výuky ani označení „den2“ – uvádějí jen standardní denní studium se zkouškami z českého jazyka a matematiky.",
-        "Region Karviná má historicky polskou národnostní menšinu a školy v Zaolží běžně provozují třídy s polským vyučovacím jazykem, což je věrohodné vysvětlení záznamu „Polský“ z roku 2025; současný web ale žádnou takovou třídu explicitně nezmiňuje, což může znamenat jak ukončení náboru do této varianty, tak jen neaktuálnost webové prezentace.",
-        "Označení formy „den2“ u záznamu 2026 se na webu školy ani v rejstříku nevyskytuje jako samostatná kategorie – je pravděpodobně interním kódem CERMAT pro rozlišení druhého souběžného denního záznamu téhož oboru, nikoli oficiálním pojmem používaným školou."
-      ],
-      "conclusion": "Registrační kontinuita (souběžná existence české i „jiné“ jazykové varianty oboru 23-41-M/01 po celé sledované období) podporuje závěr, že jde o pokračování téhož oboru Strojírenství, u kterého se mezi lety 2025 a 2026 změnil způsob, jakým CERMAT zaznamenal jazyk výuky a formu (z „Polský/den“ na „Český/den2“). Přímý zdroj, který by potvrdil skutečnou změnu jazyka výuky (např. ukončení polskojazyčné třídy), se dohledat nepodařilo – závěr je proto jen pravděpodobný, nikoli potvrzený.",
-      "alternative_explanations": [
-        "Mohlo jít o skutečné zrušení polskojazyčné třídy Strojírenství a její nahrazení čistě českojazyčnou třídou od školního roku 2026/27, i když registrovaná „jiná“ varianta v rejstříku zůstává formálně zapsána.",
-        "Označení „den2“ mohlo naopak znamenat vznik druhé paralelní české třídy vedle stávající, aniž by polskojazyčná varianta zanikla – v tom případě by šlo o navýšení kapacity, ne o změnu jazyka jedné třídy."
-      ],
-      "relationship": {
-        "type": "continuation",
-        "from": ["23-41-M/01 Strojírenství, den, jazyk Polský (2025)"],
-        "to": ["23-41-M/01 Strojírenství, den2, jazyk Český (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Žižkova 1818/1, 733 01 Hranice, Karviná",
-          "role": "sídlo",
-          "izo": "600016676",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Žižkova 1818/1, 733 01 Hranice, Karviná",
-          "role": "místo výuky",
-          "izo": "000601497",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.infoabsolvent.cz/Skoly/Skola/600016676",
-          "title": "Střední průmyslová škola, Karviná – InfoAbsolvent",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Uvádí oficiální web sps-karvina.cz; pro obor Strojírenství 2026/2027 zmiňuje pouze denní formu a angličtinu jako cizí jazyk, žádnou polskojazyčnou variantu ani „den2“.",
-          "applicable_period": "přijímací řízení 2026/2027"
-        },
-        {
-          "url": "http://www.sps-karvina.cz",
-          "title": "Střední průmyslová škola, Karviná – hlavní stránka",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Popisuje obor Strojírenství obecně (3D modelování, CNC, 3D tisk), bez zmínky o jazykových variantách či „den2“.",
-          "applicable_period": "stav webu k datu kontroly 2026-09-12"
-        },
-        {
-          "url": "https://www.sps-karvina.cz/prijimaci-rizeni/",
-          "title": "Přijímací řízení – Střední průmyslová škola, Karviná",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Uvádí denní formu, standardní JPZ z českého jazyka a matematiky, bez zmínky o polském jazyce výuky nebo dvou paralelních třídách.",
-          "applicable_period": "přijímací řízení 2026/2027"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "K 31. 3. 2025 eviduje IZO 000601497 obor 23-41-M/01 Strojírenství v obou jazykových variantách (český i jiný) současně.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "K 30. 6. 2026 je duální zápis obou jazykových variant oboru 23-41-M/01 stále beze změny.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600016676",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Dokládá změnu zápisu formy a jazyka u téhož oboru mezi lety 2025 (den, Polský) a 2026 (den2, Český).",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "partially",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Byla v roce 2025 skutečně otevřena třída Strojírenství s polským jazykem výuky, a pokud ano, byla pro rok 2026 zrušena, nebo jen přejmenována/přeznačena jako „den2“?",
-        "Odpovídá kód „den2“ v CERMAT datech nějaké oficiální kategorii MŠMT, nebo jde o interní technický artefakt zdrojového souboru?"
-      ]
+     "text": "Žižkova 1818/1, 733 01 Hranice, Karviná",
+     "role": "sídlo",
+     "izo": "600016676",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Žižkova 1818/1, 733 01 Hranice, Karviná",
+     "role": "místo výuky",
+     "izo": "000601497",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.infoabsolvent.cz/Skoly/Skola/600016676",
+     "title": "Střední průmyslová škola, Karviná – InfoAbsolvent",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Uvádí oficiální web sps-karvina.cz; pro obor Strojírenství 2026/2027 zmiňuje pouze denní formu a angličtinu jako cizí jazyk, žádnou polskojazyčnou variantu ani „den2“.",
+     "applicable_period": "přijímací řízení 2026/2027"
+    },
+    {
+     "url": "http://www.sps-karvina.cz",
+     "title": "Střední průmyslová škola, Karviná – hlavní stránka",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Popisuje obor Strojírenství obecně (3D modelování, CNC, 3D tisk), bez zmínky o jazykových variantách či „den2“.",
+     "applicable_period": "stav webu k datu kontroly 2026-09-12"
+    },
+    {
+     "url": "https://www.sps-karvina.cz/prijimaci-rizeni/",
+     "title": "Přijímací řízení – Střední průmyslová škola, Karviná",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Uvádí denní formu, standardní JPZ z českého jazyka a matematiky, bez zmínky o polském jazyce výuky nebo dvou paralelních třídách.",
+     "applicable_period": "přijímací řízení 2026/2027"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "K 31. 3. 2025 eviduje IZO 000601497 obor 23-41-M/01 Strojírenství v obou jazykových variantách (český i jiný) současně.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "K 30. 6. 2026 je duální zápis obou jazykových variant oboru 23-41-M/01 stále beze změny.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600016676",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Dokládá změnu zápisu formy a jazyka u téhož oboru mezi lety 2025 (den, Polský) a 2026 (den2, Český).",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Byla v roce 2025 skutečně otevřena třída Strojírenství s polským jazykem výuky, a pokud ano, byla pro rok 2026 zrušena, nebo jen přejmenována/přeznačena jako „den2“?",
+     "uzavreno": "Zodpovězeno z dat CERMAT a rejstříku MŠMT v repozitáři."
+    },
+    {
+     "otazka": "Odpovídá kód „den2“ v CERMAT datech nějaké oficiální kategorii MŠMT, nebo jde o interní technický artefakt zdrojového souboru?",
+     "uzavreno": "Zodpovězeno z dat CERMAT a rejstříku MŠMT v repozitáři."
+    }
+   ]
+  }
+ ]
 }

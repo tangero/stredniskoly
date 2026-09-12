@@ -134,13 +134,15 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Nebylo ověřeno, zda výuka v oboru 78-42-M/08 od 1. 9. 2026 skutečně reálně začala (např. potvrzením v následné výroční zprávě), pouze že byla inzerována a nabízena v přijímacím řízení."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Nebyl dohledán samostatný dokument MŠMT (rozhodnutí/dodatek k pokusnému ověřování) potvrzující zařazení REDIZO 600170349 do celostátního pokusného ověřování oboru 78-42-M/08 – doloženo pouze nepřímo přes web školy a data CERMAT.",
      "uzavreno": "Doloženo seznamem škol MŠMT k pokusnému ověřování oboru Lyceum (archiv.msmt.gov.cz, platný k 15. 12. 2025) a čísly jednacími vyhlášení."
+    },
+    {
+     "otazka": "Nebylo ověřeno, zda výuka v oboru 78-42-M/08 od 1. 9. 2026 skutečně reálně začala (např. potvrzením v následné výroční zprávě), pouze že byla inzerována a nabízena v přijímacím řízení.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
     }
    ]
   }

@@ -1,80 +1,94 @@
 {
-  "task_id": "R-691016551",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík eviduje subjekt pod názvem Akademie systémové gastronomie - střední škola s.r.o. (REDIZO 691016551), sídlo Poděbradská 206/57, Hloubětín, Praha, beze změny ve všech čtyřech snímcích. IZO 181134098 „Střední škola“ eviduje ve všech snímcích jediné místo výuky (Poděbradská 206/57) a jediný obor 65-51-H/01 Kuchař - číšník (3letý, denní). Dvouletý obor 65-41-L/51 Gastronomie není v žádném ze čtyř snímků zapsán."
-  },
-  "findings": [
+ "task_id": "R-691016551",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík eviduje subjekt pod názvem Akademie systémové gastronomie - střední škola s.r.o. (REDIZO 691016551), sídlo Poděbradská 206/57, Hloubětín, Praha, beze změny ve všech čtyřech snímcích. IZO 181134098 „Střední škola“ eviduje ve všech snímcích jediné místo výuky (Poděbradská 206/57) a jediný obor 65-51-H/01 Kuchař - číšník (3letý, denní). Dvouletý obor 65-41-L/51 Gastronomie není v žádném ze čtyř snímků zapsán."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0391",
+    "Q0420"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2026 se u REDIZO 691016551 nově objevuje nabídka 65-41-L/51 Gastronomie (2 roky, denní, zaměření „Gastronomie-Cesta k profesionalitě“); v roce 2025 pod tímto REDIZO v 1. kole žádná nabídka nebyla.",
+    "Oficiální školní profil (infoabsolvent.cz, IZO 181134098) explicitně uvádí: „Plánujeme: 6541L51 Gastronomie, Nástavbové studium - pro obor 65-41-L/51 - od školního roku 26/27“ - škola sama potvrzuje záměr otevřít dvouleté nástavbové studium navazující na obor Kuchař - číšník od 2026/27, což odpovídá dvouleté délce nabídky v datech CERMAT.",
+    "Rejstřík MŠMT eviduje u IZO 181134098 ve všech čtyřech snímcích (do 30. 6. 2026) pouze tříletý obor 65-51-H/01 Kuchař - číšník; dvouletý 65-41-L/51 Gastronomie v rejstříku zatím zapsán není.",
+    "V datech fronty (schools, Q0420) se REDIZO 691016551 objevuje pod zkráceným/neformálním názvem „SŠ systémové gastronomie s r o“; oficiální název v rejstříku MŠMT zůstává ve všech snímcích „Akademie systémové gastronomie - střední škola s.r.o.“ - jde jen o jiný zápis téhož názvu, IZO i REDIZO jsou shodné."
+   ],
+   "conclusion": "Dvouleté nástavbové studium 65-41-L/51 Gastronomie je nový obor, který škola sama oznamuje jako plánovaný pro rok 2026/27 navazující na obor Kuchař - číšník; jde o novou nabídku bez přímého předchůdce v roce 2025. Nepřiřazená školní jednotka Q0420 je jen odlišný zápis názvu téže školy (shodné REDIZO 691016551 i IZO 181134098), nikoli nová organizace.",
+   "alternative_explanations": [
+    "Zápis oboru do rejstříku MŠMT může proběhnout až po 30. 6. 2026, což plán školy nevyvrací."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "65-41-L/51 Gastronomie (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0391", "Q0420"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2026 se u REDIZO 691016551 nově objevuje nabídka 65-41-L/51 Gastronomie (2 roky, denní, zaměření „Gastronomie-Cesta k profesionalitě“); v roce 2025 pod tímto REDIZO v 1. kole žádná nabídka nebyla.",
-        "Oficiální školní profil (infoabsolvent.cz, IZO 181134098) explicitně uvádí: „Plánujeme: 6541L51 Gastronomie, Nástavbové studium - pro obor 65-41-L/51 - od školního roku 26/27“ - škola sama potvrzuje záměr otevřít dvouleté nástavbové studium navazující na obor Kuchař - číšník od 2026/27, což odpovídá dvouleté délce nabídky v datech CERMAT.",
-        "Rejstřík MŠMT eviduje u IZO 181134098 ve všech čtyřech snímcích (do 30. 6. 2026) pouze tříletý obor 65-51-H/01 Kuchař - číšník; dvouletý 65-41-L/51 Gastronomie v rejstříku zatím zapsán není.",
-        "V datech fronty (schools, Q0420) se REDIZO 691016551 objevuje pod zkráceným/neformálním názvem „SŠ systémové gastronomie s r o“; oficiální název v rejstříku MŠMT zůstává ve všech snímcích „Akademie systémové gastronomie - střední škola s.r.o.“ - jde jen o jiný zápis téhož názvu, IZO i REDIZO jsou shodné."
-      ],
-      "conclusion": "Dvouleté nástavbové studium 65-41-L/51 Gastronomie je nový obor, který škola sama oznamuje jako plánovaný pro rok 2026/27 navazující na obor Kuchař - číšník; jde o novou nabídku bez přímého předchůdce v roce 2025. Nepřiřazená školní jednotka Q0420 je jen odlišný zápis názvu téže školy (shodné REDIZO 691016551 i IZO 181134098), nikoli nová organizace.",
-      "alternative_explanations": [
-        "Zápis oboru do rejstříku MŠMT může proběhnout až po 30. 6. 2026, což plán školy nevyvrací."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["65-41-L/51 Gastronomie (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Poděbradská 206/57, 198 00 Hloubětín, Praha",
-          "role": "místo výuky",
-          "izo": "181134098",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://infoabsolvent.cz/Skoly/Skola/691016551",
-          "title": "Akademie systémové gastronomie - střední škola s.r.o. | InfoAbsolvent",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola uvádí plánovaný nový obor 65-41-L/51 Gastronomie (nástavbové studium) od školního roku 2026/27, vedle stávajícího oboru Kuchař - číšník.",
-          "applicable_period": "plán pro školní rok 2026/27"
-        },
-        {
-          "url": "https://www.firmy.cz/detail/13688450-akademie-systemove-gastronomie-stredni-skola-praha-hloubetin.html",
-          "title": "Akademie systémové gastronomie - střední škola, s.r.o. | Firmy.cz",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Potvrzuje oficiální název, adresu a IČO subjektu, shodné s rejstříkem MŠMT.",
-          "applicable_period": "stav k 12. 9. 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "U IZO 181134098 je k 30. 6. 2026 evidován jen obor 65-51-H/01 Kuchař - číšník; 65-41-L/51 Gastronomie zatím zapsán není.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-691016551",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ, a data schools)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 65-41-L/51 Gastronomie přítomna jen v roce 2026; školní jednotka pod názvem „SŠ systémové gastronomie s r o“ uvedena v datech schools 2026 pod REDIZO 691016551.",
-          "applicable_period": "1. kolo JPZ 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Bude nástavbové studium 65-41-L/51 Gastronomie zapsáno do rejstříku MŠMT do zahájení výuky v září 2026?"
-      ]
+     "text": "Poděbradská 206/57, 198 00 Hloubětín, Praha",
+     "role": "místo výuky",
+     "izo": "181134098",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://infoabsolvent.cz/Skoly/Skola/691016551",
+     "title": "Akademie systémové gastronomie - střední škola s.r.o. | InfoAbsolvent",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola uvádí plánovaný nový obor 65-41-L/51 Gastronomie (nástavbové studium) od školního roku 2026/27, vedle stávajícího oboru Kuchař - číšník.",
+     "applicable_period": "plán pro školní rok 2026/27"
+    },
+    {
+     "url": "https://www.firmy.cz/detail/13688450-akademie-systemove-gastronomie-stredni-skola-praha-hloubetin.html",
+     "title": "Akademie systémové gastronomie - střední škola, s.r.o. | Firmy.cz",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Potvrzuje oficiální název, adresu a IČO subjektu, shodné s rejstříkem MŠMT.",
+     "applicable_period": "stav k 12. 9. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "U IZO 181134098 je k 30. 6. 2026 evidován jen obor 65-51-H/01 Kuchař - číšník; 65-41-L/51 Gastronomie zatím zapsán není.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-691016551",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ, a data schools)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 65-41-L/51 Gastronomie přítomna jen v roce 2026; školní jednotka pod názvem „SŠ systémové gastronomie s r o“ uvedena v datech schools 2026 pod REDIZO 691016551.",
+     "applicable_period": "1. kolo JPZ 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Bude nástavbové studium 65-41-L/51 Gastronomie zapsáno do rejstříku MŠMT do zahájení výuky v září 2026?",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    }
+   ]
+  }
+ ]
 }

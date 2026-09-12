@@ -1,115 +1,124 @@
 {
-  "task_id": "R-600020797",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík potvrdil plnou kontinuitu subjektu: Gymnázium, Střední odborná škola, Základní škola a Mateřská škola pro sluchově postižené, Praha 2, Ječná 27 (REDIZO 600020797) figuruje beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026), včetně IZO 000638226 „Střední škola“ (místo výuky Ječná 530/27, 120 00 Nové Město, Praha). Registrované obory střední školy jsou ve všech čtyřech snímcích shodné: 79-41-K/41 Gymnázium (4leté) a 72-41-M/01 Informační služby (4leté). Obor Informační služby tedy zůstává registrován i k 30. 6. 2026, přestože v 1. kole JPZ 2026 chybí v nabídce CERMAT (v roce 2025 nabízen byl, jako zaměření „Informační služby Ječná“)."
-  },
-  "findings": [
+ "task_id": "R-600020797",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrdil plnou kontinuitu subjektu: Gymnázium, Střední odborná škola, Základní škola a Mateřská škola pro sluchově postižené, Praha 2, Ječná 27 (REDIZO 600020797) figuruje beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026), včetně IZO 000638226 „Střední škola“ (místo výuky Ječná 530/27, 120 00 Nové Město, Praha). Registrované obory střední školy jsou ve všech čtyřech snímcích shodné: 79-41-K/41 Gymnázium (4leté) a 72-41-M/01 Informační služby (4leté). Obor Informační služby tedy zůstává registrován i k 30. 6. 2026, přestože v 1. kole JPZ 2026 chybí v nabídce CERMAT (v roce 2025 nabízen byl, jako zaměření „Informační služby Ječná“)."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0138"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela obor 72-41-M/01 Informační služby (zaměření „Informační služby Ječná“) i obor 79-41-K/41 Gymnázium; v 1. kole JPZ 2026 v nabídce CERMAT zůstává pouze Gymnázium, Informační služby chybí.",
+    "Rejstřík MŠMT eviduje obor 72-41-M/01 Informační služby u IZO 000638226 beze změny ve všech čtyřech snímcích včetně 30. 6. 2026 – registrace oboru tedy formálně trvá.",
+    "Web školy (jecna27.cz) v sekci Základní informace i na stránce Střední škola pro sluchově postižené obor Informační služby nadále popisuje jako součást vzdělávací nabídky (čtyřleté denní studium s maturitou), bez zmínky o jeho zrušení.",
+    "Na stránce střední školy (jecna27.cz/stredni-skola) jsou pro školní rok 2026/2027 zveřejněny pouze dokumenty „Kritéria pro přijímací řízení pro školní rok 2026/2027“ a „Výsledky 1. kola přijímacího řízení 2026“ – oba výhradně pro obor Gymnázium; žádný odpovídající dokument pro Informační služby pro rok 2026/2027 zveřejněn není.",
+    "Naposledy zveřejněný dokument ke kritériím přijímacího řízení pro Informační služby je označen jako „Kritéria pro přijímací řízení - IS 2025-2026“, tedy pro přijímací řízení do ročníku nastupujícího v září 2025, nikoli 2026.",
+    "V aktualitách školy (jecna27.cz/aktuality) je uvedena položka „Přijímačky nanečisto“ výslovně jen pro gymnázium (14. 1. 2026); žádná aktualita se netýká přijímacího řízení do Informačních služeb pro rok 2026/27.",
+    "Explicitní věta typu „obor Informační služby v tomto roce neotevíráme“ nebyla na webu školy ani zřizovatele (hl. m. Praha / MHMP) dohledána."
+   ],
+   "conclusion": "Škola pro školní rok 2026/27 s vysokou mírou pravděpodobnosti nevyhlásila přijímací řízení do oboru 72-41-M/01 Informační služby – nepřítomnost v nabídce CERMAT 2026 potvrzuje i to, že web školy pro daný rok zveřejňuje přijímací dokumenty (kritéria, výsledky 1. kola) jen pro Gymnázium a poslední dostupná kritéria pro Informační služby se vztahují k přijímacímu řízení 2025/26. Obor samotný ale nezanikl: zůstává zapsán v rejstříku MŠMT u IZO 000638226 ve všech snímcích včetně 30. 6. 2026 a web jej stále vede jako součást nabídky školy.",
+   "alternative_explanations": [
+    "Škola mohla přijímací řízení do Informačních služeb vyhlásit mimo standardní 1. kolo JPZ nebo dodatečně (např. další kolo), což by v datech CERMAT pro 1. kolo nebylo zachyceno – na webu školy pro to ale nebyl nalezen žádný doklad.",
+    "Nepřítomnost dokumentů k Informačním službám na webu může být jen opomenutí aktualizace webu, nikoli záměrné neotevření oboru; k jednoznačnému potvrzení chybí přímé oficiální oznámení školy nebo zřizovatele."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "72-41-M/01 (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0138"],
-      "status": "pravděpodobné",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela obor 72-41-M/01 Informační služby (zaměření „Informační služby Ječná“) i obor 79-41-K/41 Gymnázium; v 1. kole JPZ 2026 v nabídce CERMAT zůstává pouze Gymnázium, Informační služby chybí.",
-        "Rejstřík MŠMT eviduje obor 72-41-M/01 Informační služby u IZO 000638226 beze změny ve všech čtyřech snímcích včetně 30. 6. 2026 – registrace oboru tedy formálně trvá.",
-        "Web školy (jecna27.cz) v sekci Základní informace i na stránce Střední škola pro sluchově postižené obor Informační služby nadále popisuje jako součást vzdělávací nabídky (čtyřleté denní studium s maturitou), bez zmínky o jeho zrušení.",
-        "Na stránce střední školy (jecna27.cz/stredni-skola) jsou pro školní rok 2026/2027 zveřejněny pouze dokumenty „Kritéria pro přijímací řízení pro školní rok 2026/2027“ a „Výsledky 1. kola přijímacího řízení 2026“ – oba výhradně pro obor Gymnázium; žádný odpovídající dokument pro Informační služby pro rok 2026/2027 zveřejněn není.",
-        "Naposledy zveřejněný dokument ke kritériím přijímacího řízení pro Informační služby je označen jako „Kritéria pro přijímací řízení - IS 2025-2026“, tedy pro přijímací řízení do ročníku nastupujícího v září 2025, nikoli 2026.",
-        "V aktualitách školy (jecna27.cz/aktuality) je uvedena položka „Přijímačky nanečisto“ výslovně jen pro gymnázium (14. 1. 2026); žádná aktualita se netýká přijímacího řízení do Informačních služeb pro rok 2026/27.",
-        "Explicitní věta typu „obor Informační služby v tomto roce neotevíráme“ nebyla na webu školy ani zřizovatele (hl. m. Praha / MHMP) dohledána."
-      ],
-      "conclusion": "Škola pro školní rok 2026/27 s vysokou mírou pravděpodobnosti nevyhlásila přijímací řízení do oboru 72-41-M/01 Informační služby – nepřítomnost v nabídce CERMAT 2026 potvrzuje i to, že web školy pro daný rok zveřejňuje přijímací dokumenty (kritéria, výsledky 1. kola) jen pro Gymnázium a poslední dostupná kritéria pro Informační služby se vztahují k přijímacímu řízení 2025/26. Obor samotný ale nezanikl: zůstává zapsán v rejstříku MŠMT u IZO 000638226 ve všech snímcích včetně 30. 6. 2026 a web jej stále vede jako součást nabídky školy.",
-      "alternative_explanations": [
-        "Škola mohla přijímací řízení do Informačních služeb vyhlásit mimo standardní 1. kolo JPZ nebo dodatečně (např. další kolo), což by v datech CERMAT pro 1. kolo nebylo zachyceno – na webu školy pro to ale nebyl nalezen žádný doklad.",
-        "Nepřítomnost dokumentů k Informačním službám na webu může být jen opomenutí aktualizace webu, nikoli záměrné neotevření oboru; k jednoznačnému potvrzení chybí přímé oficiální oznámení školy nebo zřizovatele."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["72-41-M/01 (2025)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Ječná 530/27, 120 00 Nové Město, Praha",
-          "role": "sídlo",
-          "izo": "600020797",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Ječná 530/27, 120 00 Nové Město, Praha",
-          "role": "místo výuky",
-          "izo": "000638226",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 72-41-M/01 Informační služby zůstává u IZO 000638226 registrován i k 30. 6. 2026; subjekt i IZO jsou beze změn.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 72-41-M/01 Informační služby byl u IZO 000638226 registrován i k 31. 3. 2025, souběžně s 79-41-K/41 Gymnázium.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025"
-        },
-        {
-          "url": "https://www.jecna27.cz/zakladni-informace",
-          "title": "Základní informace | Gymnázium, SOŠ, Základní škola a Mateřská škola pro sluchově postižené, Praha 2, Ječná 27",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Web školy popisuje obor Informační služby 72-41-M/01 (maturitní zkouška) jako součást aktuální nabídky vzdělávání, bez zmínky o zrušení.",
-          "applicable_period": "aktuální stav webu, přístup 2026-09-12"
-        },
-        {
-          "url": "https://www.jecna27.cz/stredni-skola-pro-sluchove-postizene",
-          "title": "Střední škola pro sluchově postižené | Gymnázium, SOŠ, ZŠ a MŠ pro sluchově postižené, Praha 2, Ječná 27",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Stránka popisuje obor Informační služby (72-41-M/01) jako čtyřleté denní studium s maturitou v nabídce školy; neuvádí informaci o otevření/neotevření pro rok 2026/27.",
-          "applicable_period": "aktuální stav webu, přístup 2026-09-12"
-        },
-        {
-          "url": "https://www.jecna27.cz/stredni-skola",
-          "title": "Přijímací řízení – Střední škola | Gymnázium, SOŠ, ZŠ a MŠ pro sluchově postižené, Praha 2, Ječná 27",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Pro školní rok 2026/2027 jsou zveřejněny pouze dokumenty „Kritéria pro přijímací řízení pro školní rok 2026/2027“ a „Výsledky 1. kola přijímacího řízení 2026“, oba pro obor Gymnázium; dokument ke kritériím pro Informační služby je dostupný jen ve verzi označené 2025-2026, žádný pro 2026-2027.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://www.jecna27.cz/aktuality",
-          "title": "Aktuality | Gymnázium, SOŠ, Základní škola a Mateřská škola pro sluchově postižené, Praha 2, Ječná 27",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Aktualita „Přijímačky nanečisto“ (14. 1. 2026) je určena výslovně jen pro gymnázium; žádná aktualita se netýká přijímacího řízení do Informačních služeb pro rok 2026/27.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600020797",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 72-41-M/01 Informační služby (zaměření „Informační služby Ječná“) přítomna v roce 2025 a chybějící v roce 2026; nabídka 79-41-K/41 Gymnázium pokračuje v obou letech.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Nebylo dohledáno oficiální vyjádření školy nebo zřizovatele (hl. m. Praha / MHMP) s explicitním důvodem neotevření oboru Informační služby pro 2026/27 – zda jde o dočasné přerušení (např. kvůli nízkému zájmu) nebo o plánovaný trvalý útlum oboru."
-      ]
+     "text": "Ječná 530/27, 120 00 Nové Město, Praha",
+     "role": "sídlo",
+     "izo": "600020797",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Ječná 530/27, 120 00 Nové Město, Praha",
+     "role": "místo výuky",
+     "izo": "000638226",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 72-41-M/01 Informační služby zůstává u IZO 000638226 registrován i k 30. 6. 2026; subjekt i IZO jsou beze změn.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 72-41-M/01 Informační služby byl u IZO 000638226 registrován i k 31. 3. 2025, souběžně s 79-41-K/41 Gymnázium.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://www.jecna27.cz/zakladni-informace",
+     "title": "Základní informace | Gymnázium, SOŠ, Základní škola a Mateřská škola pro sluchově postižené, Praha 2, Ječná 27",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Web školy popisuje obor Informační služby 72-41-M/01 (maturitní zkouška) jako součást aktuální nabídky vzdělávání, bez zmínky o zrušení.",
+     "applicable_period": "aktuální stav webu, přístup 2026-09-12"
+    },
+    {
+     "url": "https://www.jecna27.cz/stredni-skola-pro-sluchove-postizene",
+     "title": "Střední škola pro sluchově postižené | Gymnázium, SOŠ, ZŠ a MŠ pro sluchově postižené, Praha 2, Ječná 27",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Stránka popisuje obor Informační služby (72-41-M/01) jako čtyřleté denní studium s maturitou v nabídce školy; neuvádí informaci o otevření/neotevření pro rok 2026/27.",
+     "applicable_period": "aktuální stav webu, přístup 2026-09-12"
+    },
+    {
+     "url": "https://www.jecna27.cz/stredni-skola",
+     "title": "Přijímací řízení – Střední škola | Gymnázium, SOŠ, ZŠ a MŠ pro sluchově postižené, Praha 2, Ječná 27",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Pro školní rok 2026/2027 jsou zveřejněny pouze dokumenty „Kritéria pro přijímací řízení pro školní rok 2026/2027“ a „Výsledky 1. kola přijímacího řízení 2026“, oba pro obor Gymnázium; dokument ke kritériím pro Informační služby je dostupný jen ve verzi označené 2025-2026, žádný pro 2026-2027.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://www.jecna27.cz/aktuality",
+     "title": "Aktuality | Gymnázium, SOŠ, Základní škola a Mateřská škola pro sluchově postižené, Praha 2, Ječná 27",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Aktualita „Přijímačky nanečisto“ (14. 1. 2026) je určena výslovně jen pro gymnázium; žádná aktualita se netýká přijímacího řízení do Informačních služeb pro rok 2026/27.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600020797",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 72-41-M/01 Informační služby (zaměření „Informační služby Ječná“) přítomna v roce 2025 a chybějící v roce 2026; nabídka 79-41-K/41 Gymnázium pokračuje v obou letech.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Nebylo dohledáno oficiální vyjádření školy nebo zřizovatele (hl. m. Praha / MHMP) s explicitním důvodem neotevření oboru Informační služby pro 2026/27 – zda jde o dočasné přerušení (např. kvůli nízkému zájmu) nebo o plánovaný trvalý útlum oboru."
+   ]
+  }
+ ]
 }

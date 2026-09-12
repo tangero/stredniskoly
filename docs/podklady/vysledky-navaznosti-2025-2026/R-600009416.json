@@ -1,108 +1,123 @@
 {
-  "task_id": "R-600009416",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) potvrzuje beze změn subjekt REDIZO 600009416 „Střední odborná škola a Střední odborné učiliště, Sušice, U Kapličky 761“ (IČ 00077615) se sídlem U Kapličky 761, Sušice II (RÚIAN 7013027) a školské zařízení IZO 107840308 (Střední škola) s místy výuky U Kapličky 761, Poštovní 9, Na Burince 350 a Na Hrázi 1413. Žádné sloučení, rozdělení ani zánik rejstřík nedokládá. Výjimkou je obor Autotronik 39-41-L/01: ten je v CERMAT datech 1. kola JPZ 2026 nabízen, ale v seznamu oborů IZO 107840308 není zapsán v žádném ze snímků, ani k 30. 6. 2026 – škola přitom na webu uvádí, že má všechna potřebná povolení. Jde pravděpodobně o odstup zápisu oboru v rejstříku; registrace oboru přitom sama o sobě není podmínkou nabídky v přijímacím řízení."
-  },
-  "findings": [
+ "task_id": "R-600009416",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) potvrzuje beze změn subjekt REDIZO 600009416 „Střední odborná škola a Střední odborné učiliště, Sušice, U Kapličky 761“ (IČ 00077615) se sídlem U Kapličky 761, Sušice II (RÚIAN 7013027) a školské zařízení IZO 107840308 (Střední škola) s místy výuky U Kapličky 761, Poštovní 9, Na Burince 350 a Na Hrázi 1413. Žádné sloučení, rozdělení ani zánik rejstřík nedokládá. Výjimkou je obor Autotronik 39-41-L/01: ten je v CERMAT datech 1. kola JPZ 2026 nabízen, ale v seznamu oborů IZO 107840308 není zapsán v žádném ze snímků, ani k 30. 6. 2026 – škola přitom na webu uvádí, že má všechna potřebná povolení. Jde pravděpodobně o odstup zápisu oboru v rejstříku; registrace oboru přitom sama o sobě není podmínkou nabídky v přijímacím řízení."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0318"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "Data fronty (CERMAT, 1. kolo JPZ, denní studium): v roce 2025 škola pod REDIZO 600009416 / IZO 107840308 nabízela čtyři obory – Elektrotechnika 26-41-M/01, Podnikání 64-41-L/51, Cestovní ruch 65-42-M/02 a Sociální činnost 75-41-M/01. V roce 2026 nabízí tytéž čtyři obory a navíc Autotronik 39-41-L/01 (4letý, denní).",
+    "Autotronik tedy v roce 2026 vzniká vedle pokračujících oborů, ne místo některého z nich – Elektrotechnika i ostatní obory z roku 2025 v nabídce 2026 pokračují beze změny kódu, názvu i délky studia.",
+    "Škola na svém webu v aktualitě „Schválení nového oboru Autotronik“ přímo uvádí: „Od nového školního roku 2026/2027 otevíráme nový čtyřletý obor Autotronik… Studijní obor Autotronik otevírá naše škola od září 2026 poprvé“ a „Přihlášky se podávají v prvním kole od 1. do 20. února 2026.“",
+    "Prezentační stránka oboru na webu školy popisuje Autotronik jako studium ve struktuře 3+1 rok: tři roky učební části „velmi blízké oboru autoelektrikář“ zakončené výučním listem a čtvrtý rok s profilací Autotronik zakončený maturitou. Škola tak obsahově navazuje na svůj dosavadní učební obor Autoelektrikář 26-57-H/01, který je v rejstříku veden (a dál veden během celého sledovaného období), jde však o samostatný nový čtyřletý maturitní obor s jiným kódem KKOV.",
+    "Rejstřík MŠMT potvrzuje kontinuitu školy: REDIZO 600009416, IZO 107840308, sídlo i místa výuky jsou ve snímcích 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 a 30. 6. 2026 shodné. Adresa U Kapličky 761 uvedená v datech CERMAT je sídlem školy a zároveň jedním z míst výuky.",
+    "Obor 39-41-L/01 není v rejstříkových snímcích u IZO 107840308 zapsán ani ke 30. 6. 2026, přestože škola uvádí, že má všechna potřebná povolení, a CERMAT nabídku v 1. kole JPZ 2026 eviduje. Zápis oboru do rejstříku se zřejmě projeví s odstupem (podobně se v datech rejstříku může opožďovat i zánik subjektů)."
+   ],
+   "conclusion": "Autotronik 39-41-L/01 je nově otevřený čtyřletý maturitní obor, který SOŠ a SOU Sušice (REDIZO 600009416, IZO 107840308) poprvé nabídla v přijímacím řízení pro školní rok 2026/2027 – škola to potvrzuje vlastní aktualitou o schválení oboru. Nejde o přejmenování ani překódování žádného z oborů nabízených v roce 2025; všechny čtyři nabídky z roku 2025 v roce 2026 pokračují beze změny. Škola sama (subjekt, IZO, sídlo i místa výuky) mezi roky 2025 a 2026 zůstává beze změn. Obor je tedy „nepřiřazený“ oprávněně – nemá v roce 2025 žádného předchůdce, na kterého by šel navázat.",
+   "alternative_explanations": [
+    "Rejstřík obor 39-41-L/01 u této školy ani k 30. 6. 2026 neeviduje; nelze vyloučit, že šlo jen o chybu v čerpání otevřených dat nebo že zápis proběhl až po datu posledního snímku. Nabídku v JPZ 2026 ale nezávisle potvrzují data CERMAT i web školy, takže absenci v rejstříku lze vysvětlit odstupem zápisu.",
+    "Teoreticky mohl být obor Autotronik nabízen již dříve v jiné formě nebo kole přijímacího řízení, která přiložená data nezachycují; to ale odporuje vyjádření školy, že obor otevírá „od září 2026 poprvé“.",
+    "Obsahově obor navazuje na učební obor Autoelektrikář 26-57-H/01 (škola sama uvádí, že první tři ročníky jsou mu „velmi blízké“); formálně jde ale o nový obor s jiným kódem KKOV, jinou délkou i jiným ukončením studia."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "39-41-L/01 Autotronik (REDIZO 600009416, IZO 107840308, nabídka 1. kola JPZ 2026, denní studium)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0318"],
-      "status": "potvrzeno",
-      "observations": [
-        "Data fronty (CERMAT, 1. kolo JPZ, denní studium): v roce 2025 škola pod REDIZO 600009416 / IZO 107840308 nabízela čtyři obory – Elektrotechnika 26-41-M/01, Podnikání 64-41-L/51, Cestovní ruch 65-42-M/02 a Sociální činnost 75-41-M/01. V roce 2026 nabízí tytéž čtyři obory a navíc Autotronik 39-41-L/01 (4letý, denní).",
-        "Autotronik tedy v roce 2026 vzniká vedle pokračujících oborů, ne místo některého z nich – Elektrotechnika i ostatní obory z roku 2025 v nabídce 2026 pokračují beze změny kódu, názvu i délky studia.",
-        "Škola na svém webu v aktualitě „Schválení nového oboru Autotronik“ přímo uvádí: „Od nového školního roku 2026/2027 otevíráme nový čtyřletý obor Autotronik… Studijní obor Autotronik otevírá naše škola od září 2026 poprvé“ a „Přihlášky se podávají v prvním kole od 1. do 20. února 2026.“",
-        "Prezentační stránka oboru na webu školy popisuje Autotronik jako studium ve struktuře 3+1 rok: tři roky učební části „velmi blízké oboru autoelektrikář“ zakončené výučním listem a čtvrtý rok s profilací Autotronik zakončený maturitou. Škola tak obsahově navazuje na svůj dosavadní učební obor Autoelektrikář 26-57-H/01, který je v rejstříku veden (a dál veden během celého sledovaného období), jde však o samostatný nový čtyřletý maturitní obor s jiným kódem KKOV.",
-        "Rejstřík MŠMT potvrzuje kontinuitu školy: REDIZO 600009416, IZO 107840308, sídlo i místa výuky jsou ve snímcích 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 a 30. 6. 2026 shodné. Adresa U Kapličky 761 uvedená v datech CERMAT je sídlem školy a zároveň jedním z míst výuky.",
-        "Obor 39-41-L/01 není v rejstříkových snímcích u IZO 107840308 zapsán ani ke 30. 6. 2026, přestože škola uvádí, že má všechna potřebná povolení, a CERMAT nabídku v 1. kole JPZ 2026 eviduje. Zápis oboru do rejstříku se zřejmě projeví s odstupem (podobně se v datech rejstříku může opožďovat i zánik subjektů)."
-      ],
-      "conclusion": "Autotronik 39-41-L/01 je nově otevřený čtyřletý maturitní obor, který SOŠ a SOU Sušice (REDIZO 600009416, IZO 107840308) poprvé nabídla v přijímacím řízení pro školní rok 2026/2027 – škola to potvrzuje vlastní aktualitou o schválení oboru. Nejde o přejmenování ani překódování žádného z oborů nabízených v roce 2025; všechny čtyři nabídky z roku 2025 v roce 2026 pokračují beze změny. Škola sama (subjekt, IZO, sídlo i místa výuky) mezi roky 2025 a 2026 zůstává beze změn. Obor je tedy „nepřiřazený“ oprávněně – nemá v roce 2025 žádného předchůdce, na kterého by šel navázat.",
-      "alternative_explanations": [
-        "Rejstřík obor 39-41-L/01 u této školy ani k 30. 6. 2026 neeviduje; nelze vyloučit, že šlo jen o chybu v čerpání otevřených dat nebo že zápis proběhl až po datu posledního snímku. Nabídku v JPZ 2026 ale nezávisle potvrzují data CERMAT i web školy, takže absenci v rejstříku lze vysvětlit odstupem zápisu.",
-        "Teoreticky mohl být obor Autotronik nabízen již dříve v jiné formě nebo kole přijímacího řízení, která přiložená data nezachycují; to ale odporuje vyjádření školy, že obor otevírá „od září 2026 poprvé“.",
-        "Obsahově obor navazuje na učební obor Autoelektrikář 26-57-H/01 (škola sama uvádí, že první tři ročníky jsou mu „velmi blízké“); formálně jde ale o nový obor s jiným kódem KKOV, jinou délkou i jiným ukončením studia."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["39-41-L/01 Autotronik (REDIZO 600009416, IZO 107840308, nabídka 1. kola JPZ 2026, denní studium)"]
-      },
-      "addresses": [
-        {
-          "text": "U Kapličky 761, Sušice II, PSČ 342 01 (RÚIAN 7013027)",
-          "role": "sídlo",
-          "izo": "107840308",
-          "valid_period": "31. 3. 2025 – 30. 6. 2026 (dle snímků rejstříku)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "U Kapličky 761, Sušice II (RÚIAN 7013027)",
-          "role": "místo výuky",
-          "izo": "107840308",
-          "valid_period": "31. 3. 2025 – 30. 6. 2026 (dle snímků rejstříku)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.sossusice.cz/aktuality/clanek-432.html",
-          "title": "Schválení nového oboru Autotronik – Aktuality | SOŠ a SOU Sušice",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola přímo oznamuje otevření nového čtyřletého oboru Autotronik od školního roku 2026/2027 („od září 2026 poprvé“) s přihláškami v 1. kole 1.–20. 2. 2026; dokládá, že jde o novou nabídku, nikoli přejmenování stávajícího oboru.",
-          "applicable_period": "přijímací řízení 2026 / školní rok 2026/2027"
-        },
-        {
-          "url": "https://www.sossusice.cz/uchazec-o-studium/ucebni-obory/autotronik.html",
-          "title": "Autotronik | SOŠ a SOU Sušice",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Prezentace oboru Autotronik 39-41-L/01 na webu školy: struktura 3+1 rok (výuční list + maturita), učební část blízká oboru autoelektrikář; dokládá obsahovou návaznost na autoopravárenské obory školy, ale samostatné postavení nového oboru.",
-          "applicable_period": "školní rok 2026/2027"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2025 (MŠMT, otevřená data)",
-          "published_at": "2025-03-31",
-          "checked_at": "2026-09-12",
-          "supports": "Stav rejstříku v období 1. kola JPZ 2025: REDIZO 600009416 (IČ 00077615), sídlo U Kapličky 761, IZO 107840308 s místy výuky včetně U Kapličky 761; mezi obory IZO 107840308 není 39-41-L/01, veden je mimo jiné Autoelektrikář 26-57-H/01.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2026 (MŠMT, otevřená data)",
-          "published_at": "2026-03-31",
-          "checked_at": "2026-09-12",
-          "supports": "Stav rejstříku v období 1. kola JPZ 2026: subjekt, IZO, sídlo i místa výuky beze změn oproti 2025; obor 39-41-L/01 u IZO 107840308 dosud není zapsán, což dokládá odstup zápisu oboru v rejstříku oproti skutečné nabídce v přijímacím řízení.",
-          "applicable_period": "stav rejstříku k 31. 3. 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení – snímek k 30. 6. 2026 (MŠMT, otevřená data)",
-          "published_at": "2026-06-30",
-          "checked_at": "2026-09-12",
-          "supports": "I ke konci školního roku 2025/2026 je subjekt beze změn (žádné sloučení/rozdělení/zánik); 39-41-L/01 u IZO 107840308 stále není zapsán.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600009416",
-          "title": "Přiložená data fronty – context_offers 2025 a 2026 (CERMAT, 1. kolo JPZ, denní studium)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Srovnání nabídek: všechny čtyři obory z roku 2025 (Elektrotechnika, Podnikání, Cestovní ruch, Sociální činnost) pokračují v roce 2026 beze změny kódu i názvu a Autotronik 39-41-L/01 přibývá jako pátá nabídka – nový obor vedle pokračujících.",
-          "applicable_period": "1. kolo JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Kdy přesně byl obor 39-41-L/01 zapsán do rejstříku MŠMT (v dostupných snímcích do 30. 6. 2026 zapsán není)? Lze ověřit až na pozdějším snímku rejstříku.",
-        "Zda škola současně s otevřením Autotroniku omezila nabídku souvisejícího učebního oboru Autoelektrikář 26-57-H/01 v přijímacím řízení 2026 – přiložená data fronty učební obory této školy neobsahují, takže to z nich nelze posoudit."
-      ]
+     "text": "U Kapličky 761, Sušice II, PSČ 342 01 (RÚIAN 7013027)",
+     "role": "sídlo",
+     "izo": "107840308",
+     "valid_period": "31. 3. 2025 – 30. 6. 2026 (dle snímků rejstříku)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "U Kapličky 761, Sušice II (RÚIAN 7013027)",
+     "role": "místo výuky",
+     "izo": "107840308",
+     "valid_period": "31. 3. 2025 – 30. 6. 2026 (dle snímků rejstříku)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.sossusice.cz/aktuality/clanek-432.html",
+     "title": "Schválení nového oboru Autotronik – Aktuality | SOŠ a SOU Sušice",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola přímo oznamuje otevření nového čtyřletého oboru Autotronik od školního roku 2026/2027 („od září 2026 poprvé“) s přihláškami v 1. kole 1.–20. 2. 2026; dokládá, že jde o novou nabídku, nikoli přejmenování stávajícího oboru.",
+     "applicable_period": "přijímací řízení 2026 / školní rok 2026/2027"
+    },
+    {
+     "url": "https://www.sossusice.cz/uchazec-o-studium/ucebni-obory/autotronik.html",
+     "title": "Autotronik | SOŠ a SOU Sušice",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Prezentace oboru Autotronik 39-41-L/01 na webu školy: struktura 3+1 rok (výuční list + maturita), učební část blízká oboru autoelektrikář; dokládá obsahovou návaznost na autoopravárenské obory školy, ale samostatné postavení nového oboru.",
+     "applicable_period": "školní rok 2026/2027"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2025 (MŠMT, otevřená data)",
+     "published_at": "2025-03-31",
+     "checked_at": "2026-09-12",
+     "supports": "Stav rejstříku v období 1. kola JPZ 2025: REDIZO 600009416 (IČ 00077615), sídlo U Kapličky 761, IZO 107840308 s místy výuky včetně U Kapličky 761; mezi obory IZO 107840308 není 39-41-L/01, veden je mimo jiné Autoelektrikář 26-57-H/01.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2026 (MŠMT, otevřená data)",
+     "published_at": "2026-03-31",
+     "checked_at": "2026-09-12",
+     "supports": "Stav rejstříku v období 1. kola JPZ 2026: subjekt, IZO, sídlo i místa výuky beze změn oproti 2025; obor 39-41-L/01 u IZO 107840308 dosud není zapsán, což dokládá odstup zápisu oboru v rejstříku oproti skutečné nabídce v přijímacím řízení.",
+     "applicable_period": "stav rejstříku k 31. 3. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení – snímek k 30. 6. 2026 (MŠMT, otevřená data)",
+     "published_at": "2026-06-30",
+     "checked_at": "2026-09-12",
+     "supports": "I ke konci školního roku 2025/2026 je subjekt beze změn (žádné sloučení/rozdělení/zánik); 39-41-L/01 u IZO 107840308 stále není zapsán.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600009416",
+     "title": "Přiložená data fronty – context_offers 2025 a 2026 (CERMAT, 1. kolo JPZ, denní studium)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Srovnání nabídek: všechny čtyři obory z roku 2025 (Elektrotechnika, Podnikání, Cestovní ruch, Sociální činnost) pokračují v roce 2026 beze změny kódu i názvu a Autotronik 39-41-L/01 přibývá jako pátá nabídka – nový obor vedle pokračujících.",
+     "applicable_period": "1. kolo JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Kdy přesně byl obor 39-41-L/01 zapsán do rejstříku MŠMT (v dostupných snímcích do 30. 6. 2026 zapsán není)? Lze ověřit až na pozdějším snímku rejstříku.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    }
+   ],
+   "decisions_required": [
+    "Zda škola současně s otevřením Autotroniku omezila nabídku souvisejícího učebního oboru Autoelektrikář 26-57-H/01 v přijímacím řízení 2026 – přiložená data fronty učební obory této školy neobsahují, takže to z nich nelze posoudit."
+   ]
+  }
+ ]
 }

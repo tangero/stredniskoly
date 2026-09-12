@@ -98,8 +98,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Není doloženo přesné datum ani orgán rozhodnutí o neotevření samostatného oboru Cestovní ruch (zda šlo o rozhodnutí zřizovatele – Středočeského kraje – nebo jen o interní rozhodnutí školy)."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Není doloženo přesné datum ani orgán rozhodnutí o neotevření samostatného oboru Cestovní ruch (zda šlo o rozhodnutí zřizovatele – Středočeského kraje – nebo jen o interní rozhodnutí školy).",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    }
    ]
   },
   {

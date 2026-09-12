@@ -169,8 +169,12 @@
    "history_comparability": "partially",
    "recommended_action": "approve_mapping",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Rejstřík potvrzuje Radlickou 591/115 (a Na Vidouli 496/9) jako oficiální místa výuky nástupnické školy; rozdělení jednotlivých převzatých oborů mezi místa výuky (Radlická / Na Vidouli / Preslova) však rejstřík neeviduje."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Rejstřík potvrzuje Radlickou 591/115 (a Na Vidouli 496/9) jako oficiální místa výuky nástupnické školy; rozdělení jednotlivých převzatých oborů mezi místa výuky (Radlická / Na Vidouli / Preslova) však rejstřík neeviduje.",
+     "uzavreno": "Mimo rozsah tohoto běhu: otázka nepatří k návaznosti nabídek, ale k samostatnému úkolu doložení míst výuky pro dojezdovost."
+    }
    ]
   },
   {
@@ -328,8 +332,12 @@
    "history_comparability": "comparable",
    "recommended_action": "approve_mapping",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Seznam škol MŠMT platný k 15. 12. 2025 vede pod pořadovým číslem 6 Hotelovou školu a Gymnázium Radlická (REDIZO 600005631) se zapojením od 1. 9. 2025, nástupnickou Smíchovskou SPŠ v něm uvedenou nemá. Dokument je ale starší než sloučení k 1. 1. 2026, takže otázku, zda MŠMT režim převedlo na nástupnickou školu, neuzavírá; odpoví až novější seznam."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Seznam škol MŠMT platný k 15. 12. 2025 vede pod pořadovým číslem 6 Hotelovou školu a Gymnázium Radlická (REDIZO 600005631) se zapojením od 1. 9. 2025, nástupnickou Smíchovskou SPŠ v něm uvedenou nemá. Dokument je ale starší než sloučení k 1. 1. 2026, takže otázku, zda MŠMT režim převedlo na nástupnickou školu, neuzavírá; odpoví až novější seznam.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v číselníku je dokladem, že existuje po právu. Běh řeší jen spory mezi zdroji, ne doplňující potvrzení."
+    }
    ]
   },
   {
@@ -404,8 +412,12 @@
    "history_comparability": "partially",
    "recommended_action": "manual_review",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda jsou po sloučení výsledky přijímacího řízení gymnázia vedeny odděleně za pracoviště Radlická a Preslova, nebo pouze souhrnně za REDIZO 600005542."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda jsou po sloučení výsledky přijímacího řízení gymnázia vedeny odděleně za pracoviště Radlická a Preslova, nebo pouze souhrnně za REDIZO 600005542.",
+     "uzavreno": "Mimo rozsah tohoto běhu: otázka nepatří k návaznosti nabídek, ale k samostatnému úkolu doložení míst výuky pro dojezdovost."
+    }
    ]
   }
  ],

@@ -1,96 +1,110 @@
 {
-  "task_id": "R-600012875",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Subjekt REDIZO 600012875 (Gymnázium, Trutnov, Jiráskovo náměstí 325) je ve všech čtyřech snímcích beze změny. IZO 060153237 „Střední škola\" má ve všech snímcích dvě shodná místa výuky (Jiráskovo náměstí 325 a Školní 13, Trutnov). Obor 79-41-K/81 Gymnázium (8leté) je zapsán ve všech snímcích od 2025-03-31; obor 79-42-K/41 Gymnázium se sportovní přípravou přibyl v rejstříku mezi 2025-03-31 a 2025-12-31 a od té doby je zapsán beze změny. Obor 79-41-K/41 Gymnázium (4leté) je zapsán ve všech snímcích – rejstřík neeviduje zaměření v rámci oboru, takže rozlišení „všeobecné\" vs. „s rozšířením TV\" z registru není patrné."
-  },
-  "findings": [
+ "task_id": "R-600012875",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt REDIZO 600012875 (Gymnázium, Trutnov, Jiráskovo náměstí 325) je ve všech čtyřech snímcích beze změny. IZO 060153237 „Střední škola\" má ve všech snímcích dvě shodná místa výuky (Jiráskovo náměstí 325 a Školní 13, Trutnov). Obor 79-41-K/81 Gymnázium (8leté) je zapsán ve všech snímcích od 2025-03-31; obor 79-42-K/41 Gymnázium se sportovní přípravou přibyl v rejstříku mezi 2025-03-31 a 2025-12-31 a od té doby je zapsán beze změny. Obor 79-41-K/41 Gymnázium (4leté) je zapsán ve všech snímcích – rejstřík neeviduje zaměření v rámci oboru, takže rozlišení „všeobecné\" vs. „s rozšířením TV\" z registru není patrné."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0068"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "CERMAT 1. kolo JPZ 2025 nabízelo u oboru 79-41-K/41 Gymnázium dvě zaměření: „všeobecné\" a „s rozšířením TV\", vedle samostatného oboru 79-42-K/41 Gymnázium se sportovní přípravou a osmiletého 79-41-K/81; v roce 2026 zůstává u 79-41-K/41 jen zaměření „všeobecné\", zaměření „s rozšířením TV\" chybí, zatímco 79-42-K/41 a 79-41-K/81 pokračují beze změny.",
+    "Škola na svém webu (článek z 29. 1. 2025) oznámila, že MŠMT schválilo zápis nového oboru „Gymnázium se sportovní přípravou\" (79-42-K/41) a že škola se tak stává „prvním sportovním gymnáziem v Královéhradeckém kraji\"; současně uvedla, že v přijímacím řízení 2025 nabídne „vedle třídy nově zapsaného oboru znovu i variantu čtyřletého oboru s rozšířenou výukou tělesné výchovy\" jako souběžnou přechodovou možnost pro rozjezd nového oboru (teoretická výuka společná, sportovní příprava zajištěna v každém oboru zvlášť).",
+    "Aktuální web školy (stránka předmětu Tělesná výchova) odkazuje na samostatnou sekci „SPORTOVNÍ GYMNÁZIUM\" a nezmiňuje již souběžné zaměření „rozšíření TV\" v rámci všeobecného čtyřletého oboru.",
+    "Přímé oznámení školy pro rok 2026 s výslovným zrušením zaměření „s rozšířením TV\" se nepodařilo dohledat – k dispozici jsou jen nepřímé důkazy (chybění v datech CERMAT 2026 a v aktuální navigaci webu)."
+   ],
+   "conclusion": "Zaměření „s rozšířením TV\" v rámci čtyřletého všeobecného gymnázia (79-41-K/41) bylo pravděpodobně jednorázovou přechodovou nabídkou pro školní rok 2025/2026, souběžnou se zaváděným samostatným oborem Gymnázium se sportovní přípravou (79-42-K/41). Pro školní rok 2026/2027 se toto zaměření již nenabízí a zájemci o rozšířenou sportovní přípravu jsou pravděpodobně nasměrováni do samostatného oboru 79-42-K/41, který pokračuje. Explicitní potvrzující oznámení školy pro rok 2026 se však nepodařilo dohledat, proto je závěr klasifikován jako pravděpodobný.",
+   "alternative_explanations": [
+    "Zaměření mohlo zaniknout z jiného důvodu (nezájem, personální kapacita) nezávisle na rozjezdu sportovního gymnázia.",
+    "Zaměření se může v některém z příštích let vrátit do nabídky."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "79-41-K/41 s rozšířením TV (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0068"],
-      "status": "pravděpodobné",
-      "observations": [
-        "CERMAT 1. kolo JPZ 2025 nabízelo u oboru 79-41-K/41 Gymnázium dvě zaměření: „všeobecné\" a „s rozšířením TV\", vedle samostatného oboru 79-42-K/41 Gymnázium se sportovní přípravou a osmiletého 79-41-K/81; v roce 2026 zůstává u 79-41-K/41 jen zaměření „všeobecné\", zaměření „s rozšířením TV\" chybí, zatímco 79-42-K/41 a 79-41-K/81 pokračují beze změny.",
-        "Škola na svém webu (článek z 29. 1. 2025) oznámila, že MŠMT schválilo zápis nového oboru „Gymnázium se sportovní přípravou\" (79-42-K/41) a že škola se tak stává „prvním sportovním gymnáziem v Královéhradeckém kraji\"; současně uvedla, že v přijímacím řízení 2025 nabídne „vedle třídy nově zapsaného oboru znovu i variantu čtyřletého oboru s rozšířenou výukou tělesné výchovy\" jako souběžnou přechodovou možnost pro rozjezd nového oboru (teoretická výuka společná, sportovní příprava zajištěna v každém oboru zvlášť).",
-        "Aktuální web školy (stránka předmětu Tělesná výchova) odkazuje na samostatnou sekci „SPORTOVNÍ GYMNÁZIUM\" a nezmiňuje již souběžné zaměření „rozšíření TV\" v rámci všeobecného čtyřletého oboru.",
-        "Přímé oznámení školy pro rok 2026 s výslovným zrušením zaměření „s rozšířením TV\" se nepodařilo dohledat – k dispozici jsou jen nepřímé důkazy (chybění v datech CERMAT 2026 a v aktuální navigaci webu)."
-      ],
-      "conclusion": "Zaměření „s rozšířením TV\" v rámci čtyřletého všeobecného gymnázia (79-41-K/41) bylo pravděpodobně jednorázovou přechodovou nabídkou pro školní rok 2025/2026, souběžnou se zaváděným samostatným oborem Gymnázium se sportovní přípravou (79-42-K/41). Pro školní rok 2026/2027 se toto zaměření již nenabízí a zájemci o rozšířenou sportovní přípravu jsou pravděpodobně nasměrováni do samostatného oboru 79-42-K/41, který pokračuje. Explicitní potvrzující oznámení školy pro rok 2026 se však nepodařilo dohledat, proto je závěr klasifikován jako pravděpodobný.",
-      "alternative_explanations": [
-        "Zaměření mohlo zaniknout z jiného důvodu (nezájem, personální kapacita) nezávisle na rozjezdu sportovního gymnázia.",
-        "Zaměření se může v některém z příštích let vrátit do nabídky."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["79-41-K/41 s rozšířením TV (2025)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Jiráskovo náměstí 325, 541 01 Střední Předměstí, Trutnov",
-          "role": "sídlo",
-          "izo": "600012875",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Jiráskovo náměstí 325, 541 01 Střední Předměstí, Trutnov",
-          "role": "místo výuky",
-          "izo": "060153237",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Školní 13, 541 01 Střední Předměstí, Trutnov",
-          "role": "místo výuky",
-          "izo": "060153237",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.gymnaziumtu.cz/novinky/1772-na-trutnovskem-gymnaziu-poprve-otevreme-tridu-sportovniho-gymnazia",
-          "title": "Na trutnovském gymnáziu poprvé otevřeme třídu sportovního gymnázia – Gymnázium Trutnov",
-          "published_at": "2025-01-29",
-          "checked_at": "2026-09-12",
-          "supports": "Škola v roce 2025 zavádí nový obor Gymnázium se sportovní přípravou a souběžně ještě jednou nabízí variantu čtyřletého oboru s rozšířenou výukou tělesné výchovy jako přechodové řešení.",
-          "applicable_period": "přijímací řízení 2025/26"
-        },
-        {
-          "url": "https://www.gymnaziumtu.cz/predmet/telesna-vychova",
-          "title": "Tělesná výchova – Gymnázium Trutnov",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Aktuální web odkazuje na samostatné sportovní gymnázium, nezmiňuje souběžné zaměření rozšíření TV v rámci všeobecného oboru.",
-          "applicable_period": "aktuální stav webu k 2026-09-12"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obory 79-41-K/41, 79-41-K/81 a 79-42-K/41 zůstávají u IZO 060153237 registrovány beze změny; rejstřík neeviduje zaměření.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600012875",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Zaměření „s rozšířením TV\" u 79-41-K/41 přítomno v roce 2025 a chybějící v roce 2026; zaměření „všeobecné\" i obor 79-42-K/41 pokračují.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda škola explicitně potvrdila ukončení zaměření „s rozšířením TV\" a nasměrování zájemců do samostatného sportovního gymnázia.",
-        "Zda se zaměření může v budoucnu vrátit souběžně se sportovním gymnáziem."
-      ]
+     "text": "Jiráskovo náměstí 325, 541 01 Střední Předměstí, Trutnov",
+     "role": "sídlo",
+     "izo": "600012875",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Jiráskovo náměstí 325, 541 01 Střední Předměstí, Trutnov",
+     "role": "místo výuky",
+     "izo": "060153237",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Školní 13, 541 01 Střední Předměstí, Trutnov",
+     "role": "místo výuky",
+     "izo": "060153237",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.gymnaziumtu.cz/novinky/1772-na-trutnovskem-gymnaziu-poprve-otevreme-tridu-sportovniho-gymnazia",
+     "title": "Na trutnovském gymnáziu poprvé otevřeme třídu sportovního gymnázia – Gymnázium Trutnov",
+     "published_at": "2025-01-29",
+     "checked_at": "2026-09-12",
+     "supports": "Škola v roce 2025 zavádí nový obor Gymnázium se sportovní přípravou a souběžně ještě jednou nabízí variantu čtyřletého oboru s rozšířenou výukou tělesné výchovy jako přechodové řešení.",
+     "applicable_period": "přijímací řízení 2025/26"
+    },
+    {
+     "url": "https://www.gymnaziumtu.cz/predmet/telesna-vychova",
+     "title": "Tělesná výchova – Gymnázium Trutnov",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Aktuální web odkazuje na samostatné sportovní gymnázium, nezmiňuje souběžné zaměření rozšíření TV v rámci všeobecného oboru.",
+     "applicable_period": "aktuální stav webu k 2026-09-12"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obory 79-41-K/41, 79-41-K/81 a 79-42-K/41 zůstávají u IZO 060153237 registrovány beze změny; rejstřík neeviduje zaměření.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600012875",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Zaměření „s rozšířením TV\" u 79-41-K/41 přítomno v roce 2025 a chybějící v roce 2026; zaměření „všeobecné\" i obor 79-42-K/41 pokračují.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Zda se zaměření může v budoucnu vrátit souběžně se sportovním gymnáziem."
+   ],
+   "resolved_questions": [
+    {
+     "otazka": "Zda škola explicitně potvrdila ukončení zaměření „s rozšířením TV\" a nasměrování zájemců do samostatného sportovního gymnázia.",
+     "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v číselníku je dokladem, že existuje po právu. Běh řeší jen spory mezi zdroji, ne doplňující potvrzení."
+    }
+   ]
+  }
+ ]
 }
