@@ -1,6 +1,8 @@
 # Návrh prezentace dat na stránce školy a oboru
 
-Verze 1.0 · 12. 9. 2026 · Stav: návrh k rozhodnutí, nic z toho není implementované.
+Verze 1.1 · 12. 9. 2026 · Stav: návrh k rozhodnutí, nic z toho není implementované.
+
+Názvy a definice všech ukazatelů drží [slovník ukazatelů](slovnik-ukazatelu.md). Nový ukazatel se nezavádí bez zápisu do něj.
 
 Podklad: [audit obtížnosti přijetí](audit-obtiznost-prijeti-2027.md), [audit dat karet](audit-dat-karet-2027.md), [rešerše návazností](ukol-navaznost-skol-a-oboru-2027.md). Posuzované stránky: [Gymnázium Nad Štolou](https://www.prijimackynaskolu.cz/skola/600171701-gymnazium-nad-stolou) a [jeho čtyřletý obor](https://www.prijimackynaskolu.cz/skola/600171701-gymnazium-nad-stolou-gymnazium-4lete-vseobecne-studium).
 
@@ -26,8 +28,21 @@ První otázka je o oboru, druhá zčásti o oboru a zčásti o škole, třetí 
 | `csi_inspections.json` | Termíny a odkazy na inspekční zprávy | 9 564 subjektů |
 | `data/inspection_extractions.json` | Silné stránky, rizika a popisy z inspekčních zpráv | 849 škol |
 | `navaznost_notes.json` | Co se s nabídkou stalo mezi roky | 216 poznámek |
+| Maturitní výsledky CERMAT | Úspěšnost, průměrný skór, percentil, trend 2015–2026 | **zatím neimportováno** |
 
 Klíčový údaj, který **nemáme**: hranici přijetí, tedy kolik bodů měl poslední přijatý. CERMAT ji nezveřejňuje. Nesmí se odvozovat z průměru.
+
+### Maturitní výsledky jsou největší chybějící díl
+
+Na otázku „utáhnu to tam“ a „je to dobrá škola“ dnes odpovídáme jen inspekčními zprávami. Maturitní výsledky by na ni odpověděly mnohem přesněji a [schválený analytický návrh](maturitni-vysledky-a-kvalita-skoly-2027.md) je popisuje do detailu: zdroje, kontrakt, meze zveřejnění i zákaz jednoduchého žebříčku. Import ale zatím nezačal.
+
+Pro tento návrh jsou podstatná tři omezení, která z něj plynou:
+
+- **Maturita je za školu, ne za obor.** CERMAT ji zveřejňuje za právnickou osobu a za školu ve skupině oborů `SMO16`, což není kód oboru. Na stránce oboru se proto smí objevit jen jako „výsledek školy ve skupině oborů“.
+- **Vysoký výsledek nemusí být zásluha školy.** Může plynout z toho, kdo do ní nastoupil. Bez vstupního kontextu se nečte jako přidaná hodnota. Ukazatel „odchylka od očekávaného výsledku“ je zatím výzkumný a nepublikuje se.
+- **Malé skupiny se chrání.** Pod deset maturantů jen počty, do 29 s upozorněním.
+
+Maturita tedy patří především na stránku školy jako samostatný oddíl s rokem, obdobím a velikostí vzorku, ne do souhrnného hodnocení.
 
 ## 3. Co je dnes na stránkách špatně
 
@@ -96,7 +111,9 @@ Sekce „O škole“ s jazyky, vybavením, dostupností a inspekčními zjiště
 
 ## 4. Návrh rozdělení rolí
 
-**Stránka školy odpovídá na „je to dobrá škola“.** Patří sem identita a kontakt, přehled oborů s jedním srovnatelným ukazatelem u každého, kvalitativní profil z inspekčních zpráv, dostupnost a inspekce. Souhrnná čísla za školu jen tam, kde dávají smysl: celková kapacita, počet oborů, rozsah poptávky mezi obory.
+**Stránka školy odpovídá na „je to dobrá škola“.** Patří sem identita a kontakt, přehled oborů s jedním srovnatelným ukazatelem u každého, kvalitativní profil z inspekčních zpráv, dostupnost, inspekce a po importu i maturitní výsledky. Souhrnná čísla za školu jen tam, kde dávají smysl: celková kapacita, počet oborů, rozsah poptávky mezi obory.
+
+Maturitní oddíl má vlastní hlavičku s rokem, obdobím, skupinou oborů a zdrojem. Jarní výsledek a stav po podzimu se nesčítají ani nepřekrývají v jednom grafu.
 
 **Stránka oboru odpovídá na „dostanu se tam“ a „utáhnu to“.** Patří sem poptávka a body s měřítkem, priority, srovnání ročníků, kohorty přijatých a poznámka o návaznosti nabídky. Ze školy sem převzít zkrácený profil se třemi nejsilnějšími zjištěními inspekce a odkazem na celou školu.
 
@@ -112,6 +129,8 @@ Pravidlo: **každý údaj má vedle sebe větu, co znamená.** Ne barevný odzna
 | První priority | Kolik uchazečů obor chtělo nejvíc; blízkost kapacitě napovídá o naplněnosti |
 | Kohorty přijatých | Jaké typy uchazečů uspěly, ne jaká je vaše šance |
 | Srovnání ročníků | Zda zájem roste, nebo klesá |
+| Úspěšnost maturity | Kolik z konajících uspělo a z kolika lidí je podíl spočítaný |
+| Průměrný skór maturity | Kam patří mezi školami téže skupiny oborů, s velikostí vzorku |
 
 Doprovodná věta má být krátká a konkrétní. „Víc než u tří čtvrtin čtyřletých gymnázií“ řekne víc než „vysoká poptávka“.
 
@@ -131,8 +150,9 @@ Doprovodná věta má být krátká a konkrétní. „Víc než u tří čtvrtin
 2. Rozlišit obě stránky nadpisem a vzájemnými odkazy.
 3. Doplnit referenční rozdělení a věty s významem. Rozdělení počítat skriptem z ročníku, ne ručně.
 4. Sjednotit obsah: zkrácený profil školy na obor, ukazatel poptávky ke každému oboru na škole.
+5. Importovat maturitní výsledky podle [schváleného návrhu](maturitni-vysledky-a-kvalita-skoly-2027.md) a doplnit je na stránku školy.
 
-První dva body jsou opravy chyb, druhé dva rozšíření.
+První dva body jsou opravy chyb, třetí a čtvrtý rozšíření stávajících dat, pátý nový datový zdroj s vlastní přejímkou.
 
 ## 8. Co je potřeba rozhodnout
 
@@ -140,3 +160,4 @@ První dva body jsou opravy chyb, druhé dva rozšíření.
 - Zda referenční rozdělení počítat i pro rok 2025, aby šlo ukázat posun v čase.
 - Zda kohorty přijatých zobrazovat na stránce oboru, nebo je nechat v simulátoru.
 - U 148 oborů, které se v roce 2026 nevypsaly, ukazujeme čísla z roku 2025. Zda je zahrnout do referenčního rozdělení, nebo z něj vynechat.
+- Zda maturitní import zahájit hned, nebo až po opravách z bodů 1 a 2. Je to samostatný zdroj s deseti přejímacími podmínkami, takže si zaslouží vlastní dávku.
