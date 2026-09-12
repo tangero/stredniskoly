@@ -1914,7 +1914,7 @@
    "nalez": {
     "task_id": "R-600007022",
     "status": "potvrzeno",
-    "relationship": "new_offer",
+    "relationship": "continuation",
     "recommended_action": "approve_mapping"
    }
   },
@@ -2418,7 +2418,7 @@
    "nalez": {
     "task_id": "R-600009106",
     "status": "potvrzeno",
-    "relationship": "new_offer",
+    "relationship": "continuation",
     "recommended_action": "record_only"
    }
   },
@@ -3341,9 +3341,9 @@
    "vzorec": "lichý cyklus (2024 ne, 2025 ano, 2026 ne)",
    "nalez": {
     "task_id": "R-600013197",
-    "status": "nedohledáno",
-    "relationship": "unknown",
-    "recommended_action": "manual_review"
+    "status": "potvrzeno",
+    "relationship": "closed",
+    "recommended_action": "record_only"
    }
   },
   {
@@ -3426,7 +3426,7 @@
    "nalez": {
     "task_id": "R-600013383",
     "status": "pravděpodobné",
-    "relationship": "new_offer",
+    "relationship": "continuation",
     "recommended_action": "record_only"
    }
   },
@@ -3488,9 +3488,9 @@
    "vzorec": "lichý cyklus (2024 ne, 2025 ano, 2026 ne)",
    "nalez": {
     "task_id": "R-600013537",
-    "status": "rozpor_zdrojů",
-    "relationship": "unknown",
-    "recommended_action": "manual_review"
+    "status": "potvrzeno",
+    "relationship": "closed",
+    "recommended_action": "record_only"
    }
   },
   {
@@ -3509,8 +3509,8 @@
    "vzorec": "sudý cyklus (2024 ano, 2025 ne, 2026 ano)",
    "nalez": {
     "task_id": "R-600013537",
-    "status": "rozpor_zdrojů",
-    "relationship": "unknown",
+    "status": "potvrzeno",
+    "relationship": "new_offer",
     "recommended_action": "manual_review"
    }
   },
@@ -4349,8 +4349,8 @@
    "vzorec": "sudý cyklus (2024 ano, 2025 ne, 2026 ano)",
    "nalez": {
     "task_id": "R-600015815",
-    "status": "pravděpodobné",
-    "relationship": "new_offer",
+    "status": "potvrzeno",
+    "relationship": "continuation",
     "recommended_action": "record_only"
    }
   },
@@ -5211,7 +5211,7 @@
    "nalez": {
     "task_id": "R-600017061",
     "status": "potvrzeno",
-    "relationship": "new_offer",
+    "relationship": "continuation",
     "recommended_action": "record_only"
    }
   },
@@ -5798,9 +5798,9 @@
    "vzorec": "lichý cyklus (2024 ne, 2025 ano, 2026 ne)",
    "nalez": {
     "task_id": "R-600018318",
-    "status": "rozpor_zdrojů",
-    "relationship": "unknown",
-    "recommended_action": "manual_review"
+    "status": "potvrzeno",
+    "relationship": "closed",
+    "recommended_action": "record_only"
    }
   },
   {
@@ -7877,9 +7877,9 @@
    "vzorec": "sudý cyklus (2024 ano, 2025 ne, 2026 ano)",
    "nalez": {
     "task_id": "R-691016640",
-    "status": "rozpor_zdrojů",
-    "relationship": "unknown",
-    "recommended_action": "manual_review"
+    "status": "potvrzeno",
+    "relationship": "new_offer",
+    "recommended_action": "record_only"
    }
   },
   {

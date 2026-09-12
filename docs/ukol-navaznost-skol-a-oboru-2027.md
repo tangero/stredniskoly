@@ -57,19 +57,18 @@ Všech 192 úkolů fronty má vlastní soubor výsledku a všech 436 otázek fro
 
 | Typ vztahu | Počet | | Doporučená akce | Počet |
 |---|---:|---|---|---:|
-| nová nabídka | 77 | | schválit mapování | 82 |
-| pokračování | 66 | | jen zaevidovat | 126 |
-| ukončená nabídka | 60 | | ruční přezkum | 48 |
+| nově vypsaná nabídka | 74 | | schválit mapování | 82 |
+| pokračování | 71 | | jen zaevidovat | 130 |
+| v daném roce nevypsáno | 63 | | ruční přezkum | 45 |
 | přejmenování | 26 | | | |
 | sloučení | 16 | | | |
 | rozdělení | 7 | | | |
-| nejasné | 4 | | | |
 
 Doporučená akce není schválením. `approve_mapping` znamená návrh k přijetí do migrační mapy, `record_only` pouhou evidenci beze změny statistik, `manual_review` případ, který vyžaduje rozhodnutí člověka.
 
 Nálezy nesly 227 otevřených otázek. Dnes jich je nula: 190 je uzavřeno i s důvodem a 34 přesunuto mezi rozhodnutí k přezkumu. Poslední skupinu uzavřelo pravidlo, že se nedohledává důvod ani trvalost toho, že škola obor v daném roce nevypsala. Rozbor podle cesty k uzavření je v [přehledu konfliktů](prehled-konfliktu-navaznosti.md).
 
-Srovnatelnost historických výsledků je posouzena samostatně od návaznosti: 59 nálezů srovnatelných, 44 částečně, 147 nesrovnatelných a 6 neurčených. Rešerše navrhuje 20 vazeb mezi úkoly, například mezi školami skupiny FOSTRA nebo mezi sloučeným učilištěm a jeho nástupcem.
+Srovnatelnost historických výsledků je posouzena samostatně od návaznosti: 59 nálezů srovnatelných, 45 částečně, 151 nesrovnatelných a 2 neurčené. Rešerše navrhuje 20 vazeb mezi úkoly, například mezi školami skupiny FOSTRA nebo mezi sloučeným učilištěm a jeho nástupcem.
 
 Nejčastější průřezová vysvětlení: celostátní pokusné ověřování oboru 78-42-M/08 Lyceum vyhlášené MŠMT v listopadu 2024, úpravy krajské sítě víceletých gymnázií z podzimu 2025 a obory otevírané ve víceletém cyklu, typicky jednou za dva roky u zdravotnických škol.
 
@@ -160,7 +159,7 @@ Tato dokumentační dodávka sama neprovádí žádný z těchto kroků v produk
 
 **Hotovo:** adresní rozbor; matice a reprodukovatelné skripty; zúžená fronta; zadání rešerše a formát výsledku; pravidla pro historické poznámky; oprava nesprávného zařazení Tachova. Ověřeny součty, jedinečnost a úplnost rozdělení ročníků, zachování 1 076 původních otázek mezi rešerší, prostou evidencí a mezerami v datech. Nově: stažené datované snímky rejstříku MŠMT a jejich dávkové propojení s frontou; rešerše všech 192 úkolů s uloženými nálezy; prohlížeč výsledků; strojová kontrola nálezů i dostupnosti citovaných zdrojů.
 
-**Nehotovo:** schválená migrační mapa (rešerše je podklad k přezkoumání, ne schválení), začlenění nové fronty do původního prohlížeče rozboru 1 004 případů, implementace poznámek na profilech, doplnění skutečných míst výuky pro dojezdovost, nasazení těchto změn. Otevřené zůstává 48 nálezů s doporučením ruční přezkum a 4 případy bez doloženého závěru (3 rozpory zdrojů, 1 nedohledáno). Tato dokumentace netvrdí, že data 2027 jsou úplná.
+**Nehotovo:** schválená migrační mapa (rešerše je podklad k přezkoumání, ne schválení), začlenění nové fronty do původního prohlížeče rozboru 1 004 případů, implementace poznámek na profilech, doplnění skutečných míst výuky pro dojezdovost, nasazení těchto změn. Otevřené zůstává 45 nálezů s doporučením ruční přezkum a 34 položek k rozhodnutí při přezkumu; žádný nález není bez doloženého závěru. Tato dokumentace netvrdí, že data 2027 jsou úplná.
 
 **Historie rozhodnutí:**
 

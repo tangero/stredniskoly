@@ -42,15 +42,15 @@ Testovatelných nabídek je 174.
 
 | Nabídka jen v roce 2026 (v 2025 chybí) | Počet | Jak je klasifikovala rešerše |
 |---|---:|---|
-| v roce 2024 přihlášky byly | 20 | pokračování 15, nová nabídka 5 |
-| v roce 2024 přihlášky nebyly | 81 | nová nabídka 67, ostatní 14 |
+| v roce 2024 přihlášky byly | 20 | pokračování 20 |
+| v roce 2024 přihlášky nebyly | 81 | nově vypsáno 69, ostatní 12 |
 
 | Nabídka jen v roce 2025 (v 2026 chybí) | Počet | Jak je klasifikovala rešerše |
 |---|---:|---|
-| v roce 2024 přihlášky byly | 47 | ukončená nabídka 36, ostatní 11 |
-| v roce 2024 přihlášky nebyly | 26 | ukončená nabídka 19, ostatní 7 |
+| v roce 2024 přihlášky byly | 47 | nevypsáno 37, ostatní 10 |
+| v roce 2024 přihlášky nebyly | 26 | nevypsáno 20, ostatní 6 |
 
-Čtení je toto. U 81 nabídek roku 2026 bez stopy v roce 2024 rešerše mluvila o nové nabídce a data ji podpírají. U 47 nabídek roku 2025, které běžely i v roce 2024, jde o obor vypisovaný dva roky po sobě a pak vynechaný; dvouletý cyklus je nevysvětluje.
+Čtení je toto. U 81 nabídek roku 2026 bez stopy v roce 2024 rešerše mluvila o nově vypsané nabídce a data ji podpírají. Všech 20 nabídek roku 2026, které v roce 2024 přihlášky měly, je po opravě vedeno jako pokračování. U 47 nabídek roku 2025, které běžely i v roce 2024, jde o obor vypsaný dva roky po sobě a pak vynechaný; dvouletý cyklus je nevysvětluje.
 
 Dvouletý cyklus tedy vysvětluje omezenou, ne většinovou část fronty. Přesto dal pět konkrétních oprav.
 
@@ -70,6 +70,6 @@ U všech pěti je vztah přepsán na pokračování a doplněn doklad z dat 2024
 
 ## Co z toho plyne pro web
 
-Chybějící nabídka v jednom roce se nesmí uživateli zobrazit jako zrušený obor. Devatenáct nabídek roku 2025 vedených jako ukončené nemá v roce 2024 žádnou stopu, takže jsou slučitelné s lichým cyklem a mohou se v roce 2027 vrátit. Část z nich má ovšem jiné vysvětlení: školy skupiny FOSTRA se slučovaly, obor 78-42-M/08 Lyceum vznikl až v roce 2025 a některé školy v roce 2024 ještě nefungovaly. Před zveřejněním je proto potřeba u konkrétní školy rozhodnout, zda jde o cyklus, nebo o skutečný konec.
+Chybějící nabídka v jednom roce se nesmí uživateli zobrazit jako zrušený obor. Dvacet nabídek roku 2025 vedených jako nevypsané nemá v roce 2024 žádnou stopu, takže jsou slučitelné s lichým cyklem a mohou se v roce 2027 vrátit. Část z nich má ovšem jiné vysvětlení: školy skupiny FOSTRA se slučovaly, obor 78-42-M/08 Lyceum vznikl až v roce 2025 a některé školy v roce 2024 ještě nefungovaly. Před zveřejněním je proto potřeba u konkrétní školy rozhodnout, zda jde o cyklus, nebo o skutečný konec.
 
 Doporučená formulace na profilu: uvést, ve kterých letech byl obor v nabídce, a nepsat, že byl zrušen, dokud to škola sama neuvádí.

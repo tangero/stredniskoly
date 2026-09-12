@@ -40,7 +40,7 @@ Výsledek podle stavu nálezu:
 
 | Stav | Nálezů | Co to znamená |
 |---|---:|---|
-| potvrzeno | 211 | Doložený zdroj pro konkrétní závěr a období |
+| potvrzeno | 216 | Doložený zdroj pro konkrétní závěr a období |
 | pravděpodobné | 41 | Nepřímé důkazy, chybí přímé vyjádření školy |
 | rozpor zdrojů | 3 | Zdroje si odporují a nelze je srovnat |
 | nedohledáno | 1 | Bez podkladu |
@@ -49,10 +49,10 @@ Výsledek podle stavu nálezu:
 
 | Typ konfliktu | Nálezů | Jak byl vyřešen | Zbývá |
 |---|---:|---|---|
-| Změna textu zaměření u téhož oboru | 26 | Porovnání textů a potvrzení na webu školy | U 3 není jisté, zda se změnil i obsah výuky |
-| Nová nabídka bez předchůdce | 72 | Nepřítomnost v rejstříku 2025 a v datech 2024 plus oznámení školy | Hotovo, u části chybí datum zápisu do rejstříku |
-| Ukončená nabídka | 60 | Obor zůstává zapsán, nabídka pro daný rok nevyhlášena | U 29 není jisté, zda je ukončení trvalé |
-| Pokračování oboru | 71 | Shodné identifikátory a potvrzení školy | U 7 není jisté, zda se změnil i obsah výuky |
+| Změna textu zaměření u téhož oboru | 26 | Porovnání textů po normalizaci a potvrzení na webu školy | Hotovo |
+| Nově vypsaná nabídka | 74 | Nepřítomnost v rejstříku 2025 a v datech 2024 plus oznámení školy | Hotovo |
+| V daném roce nevypsáno | 63 | Obor zůstává zapsán, nabídka pro daný rok nevyhlášena | Hotovo; trvalost se nedohledává |
+| Pokračování oboru | 71 | Shodné identifikátory a potvrzení školy | Hotovo |
 | Sloučení organizací | 16 | Přesun identifikátorů mezi snímky rejstříku plus ARES | U 8 chybí primární dokument o mechanismu |
 | Rozdělení nabídky | 7 | Web školy s novými zaměřeními | Otevřenou otázku nese všech sedm, u dvou jde o rozdělení historických výsledků |
 | Nejasné | 4 | Nerozhodnuto | Vyžaduje ruční přezkum |
@@ -111,7 +111,7 @@ Běh je uzavřen: žádný spor mezi číselníky nezůstává. Otevřených ot�
 
 1. **S nabídkou 2027** se vrátit k 47 otázkám, zda je ukončení nabídky trvalé.
 2. **S daty 2. kola 2026**, až vyjdou, uzavřít 6 otázek na nábor mimo 1. kolo.
-3. **Při přezkumu migrační mapy** projít 32 položek v `decisions_required` a 45 nálezů s doporučením ruční přezkum.
+3. **Při přezkumu migrační mapy** projít 34 položek v `decisions_required` a 45 nálezů s doporučením ruční přezkum.
 4. **Na webu** neuvádět obor jako zrušený, dokud to škola sama neoznámí; chybějící nabídka v jednom roce to nedokazuje.
 
-Nezávisle na tom zůstává 48 nálezů s doporučením ruční přezkum. Ty čekají na rozhodnutí člověka, ne na další zdroje.
+Nezávisle na tom zůstává 45 nálezů s doporučením ruční přezkum. Ty čekají na rozhodnutí člověka, ne na další zdroje.
