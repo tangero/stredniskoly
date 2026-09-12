@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.0 · 12. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.1 · 12. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -28,6 +28,25 @@ Přihlášky s prioritou 1, tedy kolik uchazečů si obor zapsalo jako nejžáda
 **Počítá se výhradně za jednu nabídku, nikdy za školu.** Součet přihlášek za školu sčítá konkurzy pro různé ročníky základní školy a tentýž uchazeč se v něm počítá vícekrát. U Gymnázia Nad Štolou vychází za školu 9,4×, zatímco jednotlivé obory mají 2,5×, 8,9× a 24,0×. Školní číslo neodpovídá ničemu, k čemu se lze přihlásit.
 
 Samotná hodnota nic neříká, dokud se neporovná se srovnatelnou skupinou; viz oddíl 4.
+
+Přihlášky na místo navíc přeceňují skutečnou konkurenci. U 54 % nabídek roku 2026 by první volby nenaplnily ani kapacitu, přestože medián poptávky je 2,62 přihlášky na místo. Zbytek jsou pojistky uchazečů, kteří nastoupí jinam.
+
+### Tlak prvních voleb
+`přihlášky s prioritou 1 ÷ kapacita míst`.
+
+Hodnota 1,0 znamená, že obor chtělo jako první volbu přesně tolik uchazečů, kolik má míst. Pod 1,0 se obor z prvních voleb nenaplní a bere i uchazeče, pro které byl druhou nebo třetí volbou.
+
+**Toto je nejspolehlivější ukazatel toho, jak těžké je se na obor dostat**, a je ověřený. Spočítán z roku 2025 předpovídá, zda v roce 2026 zůstal někdo nepřijatý kvůli nedostatku míst, s AUC 0,870 na 1 580 spárovaných nabídkách. Celková poptávka dosáhne 0,801, průměr bodů 0,756. Ověření reprodukuje `python3 scripts/validate-indicators.py`, výstup je v [podkladu](podklady/overeni-ukazatelu-2025-2026.json).
+
+Rozdělení ročníku 2026: dolní čtvrtina 0,50, medián 0,92, horní čtvrtina 1,40.
+
+Neříká, jestli se dostane konkrétní uchazeč. Popisuje, jak silná byla poptávka těch, kdo obor chtěli nejvíc.
+
+### Naplněnost
+`přijatí ÷ kapacita míst`. Medián 2026 je 0,97, dolní čtvrtina 0,67.
+
+### Přetlak
+`nepřijatí kvůli kapacitě ÷ kapacita míst`. Kolik dalších míst by bylo potřeba, aby se vešli všichni, kdo splnili podmínky. Medián 2026 je 0,13.
 
 ## 2. Výsledek přijímacího řízení
 
@@ -113,6 +132,10 @@ Hodnota 0–100 v `public/school_analysis.json` u 2 901 oborů.
 
 **Definice ani vzorec nejsou dohledané.** [Audit z 11. 9. 2026](audit-obtiznost-prijeti-2027.md) prohledal zdroje, dokumentaci i historii repozitáře a generátor nenašel. Hodnota se nezměnila ani po přidání dat 2026, takže nepopisuje aktuální ročník. Komentář v `src/lib/priorities/calculations.ts` ji označuje za percentil, což doložené není.
 
+**Pokus o zpětné odvození z dat (12. 9. 2026) vzorec neobnovil.** Hodnota roste s průměrem bodů (korelace 0,83), s minimem bodů (0,80) a s poptávkou (0,68). Nejlepší nalezené proložení kombinuje percentil poptávky s průměrem bodů a vysvětluje 90 % rozptylu, ale přesně sedí jen u 23 z 2 515 hodnot. Aproximaci nelze zapsat jako definici.
+
+Vyšlo přitom najevo, že **všech 386 nulových hodnot vzniklo z chybějících dat**: u každé z nich chybí jak minimum, tak průměr bodů. Chybějící údaj se tedy tvářil jako nejsnazší obor.
+
 Z profilu oboru byla odstraněna. **Nadále ji ale používají tři místa:**
 
 | Kde | Jak |
@@ -121,7 +144,9 @@ Z profilu oboru byla odstraněna. **Nadále ji ale používají tři místa:**
 | `src/app/api/dostupnost/route.ts` | Sčítá se a průměruje za REDIZO |
 | `src/lib/priorities/calculations.ts` | Pracuje se s ní jako s percentilem |
 
-Dokud nemá doložený výpočet, nemá se používat k řazení ani k průměrování. Buď se dohledá nebo znovu odvodí a zapíše sem definice, nebo se z těchto tří míst odstraní. Hodnota v datech může zůstat kvůli dohledatelnosti.
+Dokud nemá doložený výpočet, nemá se používat k řazení ani k průměrování. Doporučení je **nahradit ji tlakem prvních voleb** z oddílu 1: má definici, je ověřený na nepoužitém ročníku a rozlišuje lépe. Hodnota `obtiznost` může v datech zůstat kvůli dohledatelnosti.
+
+**Složený index se nevyplatí.** Kombinace tlaku prvních voleb s průměrem bodů dosáhne AUC 0,872 proti 0,870 samotného tlaku, přidání celkové poptávky ji dokonce zhorší na 0,865. Vážený součet by tedy jen zhoršil srozumitelnost, aniž by něco přidal.
 
 ### Kategorie oboru (`category_code`, `category_name`)
 Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí totéž co výše.
@@ -137,4 +162,5 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.1 | Doplněn tlak prvních voleb, naplněnost a přetlak. Zaznamenán neúspěšný pokus o zpětné odvození indexu obtížnosti a zjištění, že složený index nepřidává rozlišovací schopnost. |
 | 1.0 | První soupis. Podkladem je audit obtížnosti, audit dat karet, [návrh prezentace dat](navrh-prezentace-dat-skoly-2027.md) a [maturitní výsledky](maturitni-vysledky-a-kvalita-skoly-2027.md). |

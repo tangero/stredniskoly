@@ -1,0 +1,12 @@
+{
+ "note": "Ukazatele počítané z roku 2025, ověřené proti výsledku roku 2026. Cílová veličina: u nabídky byl alespoň jeden uchazeč nepřijatý kvůli nedostatku míst.",
+ "generator": "scripts/validate-indicators.py",
+ "pairs": 1580,
+ "positive_share": 0.6196,
+ "auc": {
+  "tlak_prvnich_voleb": 0.8696,
+  "poptavka": 0.8006,
+  "prumer_bodu": 0.7559,
+  "slozeny_tlak_a_prumer": 0.8725
+ }
+}
