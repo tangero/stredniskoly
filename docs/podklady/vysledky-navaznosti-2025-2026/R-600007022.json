@@ -1,103 +1,121 @@
 {
-  "task_id": "R-600007022",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík potvrdil plnou organizační kontinuitu: REDIZO 600007022 (Střední škola služeb a řemesel, Stochov, J. Šípka 187, IČ 00873306, zřizovatel Středočeský kraj) je ve všech čtyřech snímcích vedeno beze změn – stejné sídlo, stejná IZO (střední škola 107820102, domov mládeže 110020065, jídelna 110020081, knihovna 110450922) i stejná tři místa výuky (Stochov J. Šípka 187, Kladno-Kročehlavy Americká 2402, Kladno Mlýnská 2809). Obory jsou evidovány na úrovni KKOV: nástavbový obor 64-41-L/51 Podnikání (denní forma, 2 roky, kapacita 100) je u IZO 107820102 registrován již ve snímku k 31. 3. 2025 i ve snímku k 31. 3. 2026, tedy jeho registrace v roce 2026 nevznikla. Rejstřík tedy žádný zánik, sloučení ani přemístění nedokládá."
-  },
-  "findings": [
+ "task_id": "R-600007022",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrdil plnou organizační kontinuitu: REDIZO 600007022 (Střední škola služeb a řemesel, Stochov, J. Šípka 187, IČ 00873306, zřizovatel Středočeský kraj) je ve všech čtyřech snímcích vedeno beze změn – stejné sídlo, stejná IZO (střední škola 107820102, domov mládeže 110020065, jídelna 110020081, knihovna 110450922) i stejná tři místa výuky (Stochov J. Šípka 187, Kladno-Kročehlavy Americká 2402, Kladno Mlýnská 2809). Obory jsou evidovány na úrovni KKOV: nástavbový obor 64-41-L/51 Podnikání (denní forma, 2 roky, kapacita 100) je u IZO 107820102 registrován již ve snímku k 31. 3. 2025 i ve snímku k 31. 3. 2026, tedy jeho registrace v roce 2026 nevznikla. Rejstřík tedy žádný zánik, sloučení ani přemístění nedokládá."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0313"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "Škola (REDIZO 600007022, IZO 107820102) nabízí v 1. kole JPZ 2025 tři čtyřleté maturitní obory: 37-42-M/01 Logistické a finanční služby, 65-42-M/01 Hotelnictví a 69-41-L/01 Kosmetické služby. V roce 2026 nabízí tentýž trojici a navíc obor 64-41-L/51 Podnikání, dvouletý, denní forma (data fronty).",
+    "Nově přibylá nabídka je nástavbové studium: kód 64-41-L/51 Podnikání s dvouletou denní formou odpovídá nástavbě pro absolventy tříletých učebních oborů, kterých škola provozuje hned několik (Kuchař-číšník, Klempíř, Instalatér, Operátor skladování, Kadeřník dle Atlasu školství). Učební obory se v datech CERMAT 1. kola JPZ neobjevují, protože se na ně nekoná jednotná přijímací zkouška.",
+    "Rejstřík MŠMT eviduje obor 64-41-L/51 Podnikání u IZO 107820102 již ve snímku k 31. 3. 2025 (kapacita 100, denní forma, délka 2 roky) i k 31. 3. 2026 – registrace oboru tedy předcházela nabídce v přijímačkách 2026.",
+    "AtlasŠkolství.cz uvádí u školy nástavbu Podnikání 64-41-L/51 s plánem přijetí 30 žáků pro rok 2026/27 a zároveň sloupec přihlášeni/přijati 2025/26 s hodnotou 0/0, což je konzistentní s tím, že v kole 2025 škola nástavbu v 1. kole JPZ nenabízela.",
+    "Název školy, adresa sídla (Jaroslava Šípka 187, Stochov, PSČ 273 03) i IZO jsou v obou letech i ve všech snímcích rejstříku shodné; nešlo o žádnou organizační změnu.",
+    "Data 1. kola přijímacího řízení 2024 (úroveň uchazečů) evidují u téhož IZO obor 64-41-L/51 s 59 přihláškami a 30 přijatými uchazeči. Obor se tedy v roce 2024 nabízel, v roce 2025 v 1. kole chyběl a v roce 2026 je vypsán znovu. Nejde o novou nabídku, ale o návrat po vynechaném ročníku; vztah proto veden jako pokračování."
+   ],
+   "conclusion": "Nabídka 64-41-L/51 Podnikání není novou nabídkou školy. Data 1. kola 2024 ukazují u téhož IZO 59 přihlášek a 30 přijatých uchazečů, obor tedy v roce 2024 běžel. V roce 2025 nebyl v 1. kole vypsán a pro rok 2026 se vypisuje znovu – jde o obnovení nabídky po vynechaném ročníku.",
+   "alternative_explanations": [
+    "Zdroje nevylučují, že nástavba byla v roce 2025 nabízena mimo 1. kolo JPZ (např. ve 2. kole nebo mimo CERMAT data); přihl./přij. 0/0 v roce 2025/26 u Atlase školství nelze jednoznačně rozlišit mezi 'nenabízeno' a 'nabízeno bez zájemců'.",
+    "Nevylučujeme ani dřívější provozování nástavby v letech před 2025 – snímky rejstříku ani data fronty starší roky nepokrývají."
+   ],
+   "relationship": {
+    "type": "continuation",
+    "from": [],
+    "to": [
+     "64-41-L/51 Podnikání (nástavba, 2 roky, denní)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0313"],
-      "status": "potvrzeno",
-      "observations": [
-        "Škola (REDIZO 600007022, IZO 107820102) nabízí v 1. kole JPZ 2025 tři čtyřleté maturitní obory: 37-42-M/01 Logistické a finanční služby, 65-42-M/01 Hotelnictví a 69-41-L/01 Kosmetické služby. V roce 2026 nabízí tentýž trojici a navíc obor 64-41-L/51 Podnikání, dvouletý, denní forma (data fronty).",
-        "Nově přibylá nabídka je nástavbové studium: kód 64-41-L/51 Podnikání s dvouletou denní formou odpovídá nástavbě pro absolventy tříletých učebních oborů, kterých škola provozuje hned několik (Kuchař-číšník, Klempíř, Instalatér, Operátor skladování, Kadeřník dle Atlasu školství). Učební obory se v datech CERMAT 1. kola JPZ neobjevují, protože se na ně nekoná jednotná přijímací zkouška.",
-        "Rejstřík MŠMT eviduje obor 64-41-L/51 Podnikání u IZO 107820102 již ve snímku k 31. 3. 2025 (kapacita 100, denní forma, délka 2 roky) i k 31. 3. 2026 – registrace oboru tedy předcházela nabídce v přijímačkách 2026.",
-        "AtlasŠkolství.cz uvádí u školy nástavbu Podnikání 64-41-L/51 s plánem přijetí 30 žáků pro rok 2026/27 a zároveň sloupec přihlášeni/přijati 2025/26 s hodnotou 0/0, což je konzistentní s tím, že v kole 2025 škola nástavbu v 1. kole JPZ nenabízela.",
-        "Název školy, adresa sídla (Jaroslava Šípka 187, Stochov, PSČ 273 03) i IZO jsou v obou letech i ve všech snímcích rejstříku shodné; nešlo o žádnou organizační změnu."
-      ],
-      "conclusion": "Jde o novou nabídku v přijímacím řízení 2026: škola poprvé v rámci 1. kola JPZ (v porovnávaných letech) vypsala dvouleté denní nástavbové studium 64-41-L/51 Podnikání. Obor byl v rejstříku registrován už v roce 2025, takže se nejedná o nově založený obor ani o důsledek sloučení či převodu – škola jen rozšířila nabídku o nástavbu pro absolventy svých učebních oborů. Kontinuita školy samotné (REDIZO, IZO, název, sídlo) je plná.",
-      "alternative_explanations": [
-        "Zdroje nevylučují, že nástavba byla v roce 2025 nabízena mimo 1. kolo JPZ (např. ve 2. kole nebo mimo CERMAT data); přihl./přij. 0/0 v roce 2025/26 u Atlase školství nelze jednoznačně rozlišit mezi 'nenabízeno' a 'nabízeno bez zájemců'.",
-        "Nevylučujeme ani dřívější provozování nástavby v letech před 2025 – snímky rejstříku ani data fronty starší roky nepokrývají."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["64-41-L/51 Podnikání (nástavba, 2 roky, denní)"]
-      },
-      "addresses": [
-        {
-          "text": "Jaroslava Šípka 187, Stochov, PSČ 273 03",
-          "role": "sídlo",
-          "izo": "600007022",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
-        },
-        {
-          "text": "Jaroslava Šípka 187, Stochov (RÚIAN 11354194)",
-          "role": "místo výuky",
-          "izo": "107820102",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
-        },
-        {
-          "text": "Americká 2402, Kladno-Kročehlavy (RÚIAN 1437810)",
-          "role": "místo výuky",
-          "izo": "107820102",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
-        },
-        {
-          "text": "Mlýnská 2809, Kladno (RÚIAN 1409417)",
-          "role": "místo výuky",
-          "izo": "107820102",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600007022",
-          "title": "Data fronty – nabídky CERMAT 1. kola JPZ 2025 a 2026 pro REDIZO 600007022",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Dokládá, že obor 64-41-L/51 Podnikání (2 roky, denní) je v datech 1. kola JPZ přítomen pouze v roce 2026; tři čtyřleté obory jsou v obou letech shodné.",
-          "applicable_period": "1. kolo JPZ 2025 a 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2025 (MŠMT, otevřená data)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Dokládá existenci subjektu, IZO 107820102, sídlo a místa výuky v roce 2025 a zároveň registraci oboru 64-41-L/51 Podnikání (denní, 2 roky, kapacita 100) již ve snímku k 31. 3. 2025.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2026 (MŠMT, otevřená data)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Dokládá bezezměnný stav subjektu i registraci oboru 64-41-L/51 v období 1. kola JPZ 2026; mezi snímky 2025 a 2026 nedošlo k organizační změně.",
-          "applicable_period": "stav rejstříku k 31. 3. 2026"
-        },
-        {
-          "url": "https://www.atlasskolstvi.cz/ss971-stredni-skola-sluzeb-a-remesel-stochov-j-sipka-187",
-          "title": "Střední škola služeb a řemesel, Stochov, J. Šípka 187 | AtlasŠkolství.cz",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nezávisle potvrzuje nabídku nástavby Podnikání 64-41-L/51 pro rok 2026/27 (plán 30 míst) a hodnotu přihlášeni/přijati 0/0 v roce 2025/26; uvádí také učební obory školy, pro které je nástavba určena.",
-          "applicable_period": "školní roky 2025/26 a 2026/27"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "approve_mapping",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda byla nástavba Podnikání nabízena i v přijímacím řízení 2025 mimo 1. kolo JPZ (2. kolo apod.), z dostupných zdrojů nelze rozhodnout."
-      ]
+     "text": "Jaroslava Šípka 187, Stochov, PSČ 273 03",
+     "role": "sídlo",
+     "izo": "600007022",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+    },
+    {
+     "text": "Jaroslava Šípka 187, Stochov (RÚIAN 11354194)",
+     "role": "místo výuky",
+     "izo": "107820102",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+    },
+    {
+     "text": "Americká 2402, Kladno-Kročehlavy (RÚIAN 1437810)",
+     "role": "místo výuky",
+     "izo": "107820102",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+    },
+    {
+     "text": "Mlýnská 2809, Kladno (RÚIAN 1409417)",
+     "role": "místo výuky",
+     "izo": "107820102",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600007022",
+     "title": "Data fronty – nabídky CERMAT 1. kola JPZ 2025 a 2026 pro REDIZO 600007022",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Dokládá, že obor 64-41-L/51 Podnikání (2 roky, denní) je v datech 1. kola JPZ přítomen pouze v roce 2026; tři čtyřleté obory jsou v obou letech shodné.",
+     "applicable_period": "1. kolo JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2025 (MŠMT, otevřená data)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Dokládá existenci subjektu, IZO 107820102, sídlo a místa výuky v roce 2025 a zároveň registraci oboru 64-41-L/51 Podnikání (denní, 2 roky, kapacita 100) již ve snímku k 31. 3. 2025.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2026 (MŠMT, otevřená data)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Dokládá bezezměnný stav subjektu i registraci oboru 64-41-L/51 v období 1. kola JPZ 2026; mezi snímky 2025 a 2026 nedošlo k organizační změně.",
+     "applicable_period": "stav rejstříku k 31. 3. 2026"
+    },
+    {
+     "url": "https://www.atlasskolstvi.cz/ss971-stredni-skola-sluzeb-a-remesel-stochov-j-sipka-187",
+     "title": "Střední škola služeb a řemesel, Stochov, J. Šípka 187 | AtlasŠkolství.cz",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nezávisle potvrzuje nabídku nástavby Podnikání 64-41-L/51 pro rok 2026/27 (plán 30 míst) a hodnotu přihlášeni/přijati 0/0 v roce 2025/26; uvádí také učební obory školy, pro které je nástavba určena.",
+     "applicable_period": "školní roky 2025/26 a 2026/27"
+    },
+    {
+     "url": "data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx (CERMAT, 1. kolo 2024, úroveň uchazečů)",
+     "title": "CERMAT – uchazeči, přihlášky a výsledky 1. kola 2024",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 64-41-L/51 měl u tohoto IZO v 1. kole 2024 59 přihlášek a 30 přijatých uchazečů – obor byl v roce 2024 nabízen.",
+     "applicable_period": "1. kolo přijímacího řízení 2024"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "approve_mapping",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Zda byla nástavba Podnikání nabízena i v přijímacím řízení 2025 mimo 1. kolo JPZ (2. kolo apod.), z dostupných zdrojů nelze rozhodnout."
+   ]
+  }
+ ]
 }

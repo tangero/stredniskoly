@@ -71,6 +71,8 @@ Srovnatelnost historických výsledků je posouzena samostatně od návaznosti: 
 
 Nejčastější průřezová vysvětlení: celostátní pokusné ověřování oboru 78-42-M/08 Lyceum vyhlášené MŠMT v listopadu 2024, úpravy krajské sítě víceletých gymnázií z podzimu 2025 a obory otevírané ve víceletém cyklu, typicky jednou za dva roky u zdravotnických škol.
 
+Poslední jmenovaný jev má vlastní rozbor: [obory vypisované jednou za dva roky](dvoulety-cyklus-nabidky-oboru.md). Data 1. kola z roku 2024 dávají třetí bod v čase a odlišují vynechaný ročník od zániku či vzniku oboru. Test opravil pět nálezů, které označovaly za nový obor nabídku, do níž se v roce 2024 hlásily desítky uchazečů.
+
 ### Kontrola kvality
 
 Dvě kontroly jsou reprodukovatelné z kořene repozitáře:
@@ -103,6 +105,8 @@ Ze 461 externích odkazů odpovědělo 443 kódem 200. Zbývajících 18 rozebí
 | [Rejstřík k frontě](podklady/rejstrik-k-fronte-2025-2026.json) | Strojový přehled ze čtyř snímků rejstříku MŠMT ke každému úkolu |
 | [Snímky rejstříku](../data/msmt_rejstrik/README.md) | Zdroj, rozsah a použití datovaných snímků MŠMT |
 | [Kontrola zdrojů](podklady/kontrola-zdroju-navaznosti-2025-2026.md) | Výsledek ověření dostupnosti citovaných odkazů |
+| [Dvouletý cyklus](dvoulety-cyklus-nabidky-oboru.md) | Obory vypisované obden, test proti datům 1. kola 2024 |
+| [Podklad cyklu](podklady/dvoulety-cyklus-2024-2026.json) | Stopa každé nepřiřazené nabídky v roce 2024 |
 
 ## 5. Reprodukce
 
@@ -158,3 +162,4 @@ Tato dokumentační dodávka sama neprovádí žádný z těchto kroků v produk
 - Webová aplikace rejstříku MŠMT agentům nevrací obsah, proto se jako důkaz používají datované čtvrtletní snímky otevřených dat. Dokládají stav ke konkrétnímu dni, ale zápis se do nich promítá s odstupem; samotný zápis oboru navíc nedokazuje vyhlášení přijímacího řízení.
 - Číselník `relationship.type` zůstává uzavřený. Obnovená nabídka se vede jako pokračování, nahrazení oboru jiným jako ukončená nabídka s nástupcem popsaným slovně; kontrola této konvence je součástí ověřovacího skriptu.
 - Rešerše opravila vlastní dřívější nález: nabídky „Meda“ pod REDIZO 600005950 nejsou novou nabídkou, ale pokračováním nabídek zaniklého REDIZO 691017344.
+- Část nepřiřazených nabídek vzniká tím, že škola obor vypisuje jednou za dva roky. Ze dvou ročníků to nelze odlišit od zániku či vzniku; jako třetí bod v čase proto slouží data 1. kola 2024. Jsou na úrovni uchazečů, takže přítomnost oboru je silný důkaz, ale jeho nepřítomnost slabý.
