@@ -1,0 +1,98 @@
+{
+  "task_id": "R-600001661",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "findings": [
+    {
+      "issue_ids": ["Q0392"],
+      "status": "potvrzeno",
+      "observations": [
+        "Přiložená data CERMAT ukazují, že škola s REDIZO 600001661 (Academic School, Uherské Hradiště) a IZO střední školy izo_181134799 pokračuje v roce 2026 beze změny identifikátorů. Obor Informační technologie (18-20-M/01, zaměření Vývoj cloudových aplikací a správa firemních systémů) je nabízen v obou letech a je mezi nimi spárován.",
+        "Nepřiřazená nabídka roku 2026 je čtyřleté Gymnázium (KKOV 79-41-K/41), které v nabídce roku 2025 neexistuje. Název školy se mezi roky změnil z „Academic School, MŠ, ZŠ a SŠ, s.r.o.“ na „Academic School, Gymnázium, SOŠ, ZŠ a MŠ, s.r.o.“ – přibylo „Gymnázium“, což odpovídá nově otevřenému oboru.",
+        "Web školy (academicschool.cz/gymnazium, stránka evidovaná od prosince 2025) uvádí „Gymnázium Academic School: Otevíráme v září 2026“ a popisuje čtyřleté studium s dvoujazyčnou výukou.",
+        "Slovácký deník 13. 2. 2026 píše, že uherskohradišťská Academic School otevře od září 2026 čtyřleté gymnázium s jednou třídou o kapacitě 20 míst; dosud škola na středním stupni nabízela pouze obor informačních technologií (střední škola vznikla v roce 2022).",
+        "Adresa se mezi ročníky dat změnila: záznam 2025 uvádí Studentské náměstí 1531, záznamy 2026 uvádějí Města Mayen 1536. Studentské náměstí 1531 je sídlo právnické osoby a adresa základní školy (dle webu školy a obchodního rejstříku, IČO 25349520), zatímco Města Mayen 1536 škola uvádí jako adresu střední školy a gymnázia. Škola má pod jedním REDIZO více IZO (střední škola 181134799, základní škola 110009312, mateřská škola 110009321 aj.)."
+      ],
+      "conclusion": "Nepřiřazená nabídka Gymnázium (79-41-K/41) z roku 2026 je nově otevřený obor, který soukromá škola Academic School, s.r.o. (REDIZO 600001661, IZO střední školy 181134799) zahajuje od školního roku 2026/2027. Jde o novou nabídku bez předchůdce v roce 2025; obor Informační technologie přitom pokračuje beze změny. Změna názvu školy i rozdílná adresa v datech souvisejí s tímto rozšířením (název nově obsahuje „Gymnázium“, adresa Města Mayen 1536 je místo výuky střední školy, zatímco Studentské náměstí 1531 je sídlo právnické osoby) a neznamenají vznik nové školy ani zánik původní.",
+      "alternative_explanations": [
+        "Zdroje nevylučují, že zápis gymnázia do rejstříku škol proběhl formálně již dříve (např. během roku 2025) a k přijímání prvních žáků došlo až pro školní rok 2026/2027; pro datovou návaznost nabídek přijímacího řízení je to však bez vlivu – v nabídce 2025 gymnázium nefiguruje.",
+        "Rozdíl adres mezi ročníky může být pouze rozdílem v tom, kterou adresu škola do dat CERMAT nahlásila (sídlo vs. místo výuky); případné fyzické stěhování střední školy zdroje ani nepotvrzují, ani nevylučují, obě adresy jsou ve stejné lokalitě Mařatice."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["2026: KKOV 79-41-K/41 Gymnázium (ID_SOF 11e80752-2eeb-4256-a1fa-a4b70a0463d5), REDIZO 600001661, IZO izo_181134799"]
+      },
+      "addresses": [
+        {
+          "text": "Studentské náměstí 1531, Mařatice, 686 01 Uherské Hradiště",
+          "role": "sídlo",
+          "izo": "izo_181134799 (střední škola); sídlo právnické osoby IČO 25349520",
+          "valid_period": "soukromá škola sídlí na této adrese dlouhodobě; v datech CERMAT 2025 uvedena u nabídky SŠ",
+          "source_url": "https://academicschool.cz/ochrana-osobnich-udaju/"
+        },
+        {
+          "text": "Města Mayen 1536, Mařatice, 686 01 Uherské Hradiště",
+          "role": "místo výuky",
+          "izo": "izo_181134799 (střední škola)",
+          "valid_period": "dle webu školy adresa střední školy a gymnázia; v datech CERMAT 2026 u všech nabídek SŠ",
+          "source_url": "https://academicschool.cz/gymnazium/"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600001661",
+          "title": "Přiložená data fronty – nabídky CERMAT 1. kola JPZ 2025 a 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Kontinuita REDIZO 600001661 a IZO izo_181134799; pokračování oboru Informační technologie v obou letech; nová nabídka Gymnázium pouze v roce 2026; změna názvu školy a adresy mezi roky",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://academicschool.cz/gymnazium/",
+          "title": "Gymnázium Academic School: Otevíráme v září 2026",
+          "published_at": "2025-12-10",
+          "checked_at": "2026-09-12",
+          "supports": "Škola sama oznamuje otevření gymnázia od září 2026; uvádí adresu gymnázia Města Mayen 1536",
+          "applicable_period": "školní rok 2026/2027"
+        },
+        {
+          "url": "https://slovacky.denik.cz/zpravy-region/uherskohradistska-academic-school-otevre-ctyrlete-gymnazium/",
+          "title": "Uherskohradišťská Academic School otevře čtyřleté gymnázium",
+          "published_at": "2026-02-13",
+          "checked_at": "2026-09-12",
+          "supports": "Nezávislý datovaný zdroj: od září 2026 škola otevírá jednu třídu gymnázia (kapacita 20 míst); dosud nabízela pouze obor informačních technologií; střední škola vznikla 2022",
+          "applicable_period": "školní rok 2026/2027"
+        },
+        {
+          "url": "https://academicschool.cz/stredni-skola/",
+          "title": "Střední škola – Academic School",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Střední škola otevřena od září 2022 s oborem informačních technologií; adresa střední školy Města Mayen 1536",
+          "applicable_period": "aktuální web, otevření SŠ od 2022/2023"
+        },
+        {
+          "url": "https://academicschool.cz/oslavy-dne-soukromych-skol/",
+          "title": "Oslavy Dne soukromých škol – Academic School",
+          "published_at": "2024-11-13",
+          "checked_at": "2026-09-12",
+          "supports": "Identifikace školy: REDIZO 600 001 661, IZO střední školy 181134799, sídlo Studentské náměstí 1531; potvrzuje, že jde o stejnou právnickou osobu v obou letech",
+          "applicable_period": "2024 (dokládá stav před rokem 2025)"
+        },
+        {
+          "url": "https://academicschool.cz/ochrana-osobnich-udaju/",
+          "title": "Ochrana osobních údajů – Academic School",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Sídlo právnické osoby (IČO 25349520) Studentské náměstí 1531, Mařatice, Uherské Hradiště",
+          "applicable_period": "aktuální web"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

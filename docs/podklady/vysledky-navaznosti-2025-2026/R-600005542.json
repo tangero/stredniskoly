@@ -1,0 +1,100 @@
+{
+  "task_id": "R-600005542",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "findings": [
+    {
+      "issue_ids": ["Q0303", "Q0304", "Q0305"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech CERMAT za rok 2025 (1. kolo JPZ, denní studium) vystupovala organizace REDIZO 600005542 pod názvem „Smíchovská SPŠ a gymnázium“ (IZO 061386855, Preslova 72, Praha 5) a nabízela pouze obory Informační technologie (dvě zaměření) a Gymnázium 79-41-K/41. V roce 2026 nese stejné REDIZO název „Smíchovská SPŠ, gymnázium a hotelová škola“ a vedle pokračujících oborů IT a Gymnázium nově nabízí Hotelnictví 65-42-M/01 (Q0303), Cestovní ruch 65-42-M/02 (Q0304) a Lyceum v režimu pokusného ověřování 78-42-M/08 (Q0305).",
+        "Ve frontě existuje zrcadlový úkol R-600005631: škola „Hotelová škola a Gymnázium Radlická“ (REDIZO 600005631, IZO 110011295, Radlická 591, Praha 5) v roce 2025 nabízela právě Hotelnictví 65-42-M/01, Cestovní ruch 65-42-M/02, Lyceum 78-42-M/08 se zaměřením „sportovní management“ a Gymnázium 79-41-K/41, a v roce 2026 pod tímto REDIZO žádnou nabídku nemá. Tři „nepřiřazené“ nabídky roku 2026 u Smíchovské tak přesně odpovídají oborům zanikající Radlické školy.",
+        "Podle Wikipedie (odkazující na usnesení Zastupitelstva hl. m. Prahy č. 28/39 ze dne 20. 11. 2025) došlo 1. 1. 2026 ke sloučení: původní právní subjekt Hotelové školy a Gymnázia Radlická zanikl a majetek i činnost přešly na Smíchovskou SPŠ a gymnázium, která se přejmenovala na „Smíchovská střední průmyslová škola, gymnázium a hotelová škola Radlická, příspěvková organizace“. Text usnesení se nepodařilo přímo načíst, ale sloučení nezávisle potvrzují další zdroje níže.",
+        "Ústřední věstník ČR, částka 8/2026, str. 26, obsahuje oznámení Hlavního města Prahy, že ke dni 1. 9. 2026 se organizace IČ 61386855 se sídlem Preslova 72/25 přejmenovává z „Smíchovská střední průmyslová škola, gymnázium a hotelová škola Radlická, příspěvková organizace“ na „Smíchovská střední škola, příspěvková organizace“. Tím je doloženo, že v době přijímacího řízení pro rok 2026/2027 (které probíhalo na jaře 2026) již sloučená organizace pod jedním IČ/REDIZO existovala a nesla v názvu „hotelová škola Radlická“.",
+        "Oficiální kritéria přijímacího řízení školy pro rok 2026/2027 (stránka ssps.cz, načtená z archivu, protože živý web byl 12. 9. 2026 nedostupný) nabízejí všech šest oborů: Gymnázium (4 třídy), IT–Informační technologie (3 třídy), IT–Kybernetická bezpečnost (1 třída), Hotelnictví (2 třídy), Cestovní ruch (1 třída) a Všeobecné lyceum se zaměřením na sportovní management (1 třída, kód 78-42-M/08). Škola výslovně uvádí, že výuka oborů Hotelnictví a Cestovní ruch bude probíhat převážně v areálu Radlice (adresa Radlická 591, tj. bývalá budova zaniklé školy), obory IT v areálu Smíchov (Preslova 72/25) a Gymnázium a Lyceum se mezi areály střídají.",
+        "Pozorovaná drobná odchylka v zápisu: u Lycea má nabídka 2025 (Radlická) vyplněné zaměření „sportovní management“, zatímco nabídka 2026 (Smíchovská) má pole zaměření prázdné; škola ale obor v kritériích 2026/2027 prezentuje jako „Všeobecné lyceum se zaměřením na sportovní management“, jde tedy o tentýž obor 78-42-M/08 s pokračujícím profilem.",
+        "Sídlo organizace (Preslova 72/25) se sloučením nezměnilo; adresa Radlická 591 se stala dalším místem výuky, nikoli sídlem. Rozdíl v adrese nabídek tedy není adresní změnou školy, ale důsledkem sloučení dvou subjektů na dvou areálech."
+      ],
+      "conclusion": "Tři nepřiřazené nabídky roku 2026 (Hotelnictví 65-42-M/01, Cestovní ruch 65-42-M/02, Lyceum 78-42-M/08) nejsou nově otevřené obory Smíchovské SPŠ, ale pokračování oborů Hotelové školy a Gymnázia Radlická (REDIZO 600005631) po jejím sloučení do Smíchovské školy k 1. 1. 2026. Správná návaznost je proto na úrovni oborů: 2026/600005542 ← 2025/600005631 pro tytéž kódy KKOV; gymnaziální nabídka 2026 pod REDIZO 600005542 zároveň slučuje gymnázia obou původních škol. Změna názvu školy v datech (z „Smíchovská SPŠ a gymnázium“ na „Smíchovská SPŠ, gymnázium a hotelová škola“) je pouhým konstatováním sloučení a souvisejících přejmenování, nikoli vznik nové školy – REDIZO 600005542, IZO 061386855 a IČ 61386855 pokračují beze změny.",
+      "alternative_explanations": [
+        "Teoreticky by škola mohla Hotelnictví, Cestovní ruch a Lyceum otevřít jako zcela nové obory a obory Radlické školy zrušit; tomu odporuje umístění výuky do areálu Radlice (Radlická 591) v oficiálních kritériích 2026/2027, shoda kódů KKOV i zaměření Lycea a doložené právní sloučení subjektů.",
+        "U Lycea 78-42-M/08 nelze z dat CERMAT samých poznat, zda prázdné pole zaměření v roce 2026 znamená záměrné zrušení zaměření, nebo jen jiný způsob zápisu; škola však zaměření „sportovní management“ pro rok 2026/2027 nadále uvádí, takže jde spíše o změnu zápisu."
+      ],
+      "relationship": {
+        "type": "merge",
+        "from": [
+          "REDIZO 600005631 (Hotelová škola a Gymnázium Radlická, Radlická 591, Praha 5) – obory 2025: 65-42-M/01 Hotelnictví, 65-42-M/02 Cestovní ruch, 78-42-M/08 Lyceum (sportovní management), 79-41-K/41 Gymnázium",
+          "REDIZO 600005542 (Smíchovská SPŠ a gymnázium, Preslova 72, Praha 5) – obory 2025: 18-20-M/01 IT (2 zaměření), 79-41-K/41 Gymnázium"
+        ],
+        "to": [
+          "REDIZO 600005542 (Smíchovská SPŠ, gymnázium a hotelová škola, Preslova 72, Praha 5) – obory 2026: 18-20-M/01 IT (2 zaměření), 79-41-K/41 Gymnázium, 65-42-M/01 Hotelnictví, 65-42-M/02 Cestovní ruch, 78-42-M/08 Lyceum"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "Preslova 72/25, Smíchov, 150 00 Praha 5",
+          "role": "sídlo",
+          "izo": "izo_061386855",
+          "valid_period": "2025 i 2026 (beze změny); po 1. 9. 2026 pod názvem Smíchovská střední škola, p.o.",
+          "source_url": "https://msp.gov.cz/documents/d/msp/uv-cr_8-2026-pdf"
+        },
+        {
+          "text": "Preslova 72/25, Praha 5 – areál Smíchov",
+          "role": "místo výuky",
+          "izo": "izo_061386855",
+          "valid_period": "2025 i 2026; v 2026/2027 převážně obory IT, střídavě Gymnázium a Lyceum",
+          "source_url": "https://web.archive.org/web/2026/https://ssps.cz/skola/pro-uchazece/prijimaci-rizeni/"
+        },
+        {
+          "text": "Radlická 591, 158 00 Praha 5 – areál Radlice",
+          "role": "místo výuky",
+          "izo": "izo_110011295 (2025, zanikající subjekt); od 1. 1. 2026 pracoviště REDIZO 600005542",
+          "valid_period": "do 31. 12. 2025 sídlo Hotelové školy a Gymnázia Radlická; od 2026/2027 místo výuky oborů Hotelnictví a Cestovní ruch sloučené školy",
+          "source_url": "https://web.archive.org/web/2026/https://ssps.cz/skola/pro-uchazece/prijimaci-rizeni/"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600005542",
+          "title": "Rešeršní fronta – kontextové nabídky REDIZO 600005542 a 600005631, roky 2025/2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V roce 2025 nabízela REDIZO 600005542 jen IT a Gymnázium; tři nové nabídky 2026 (Hotelnictví, Cestovní ruch, Lyceum) přesně odpovídají nabídkám REDIZO 600005631 z roku 2025, které v roce 2026 žádné nabídky nemá.",
+          "applicable_period": "přijímací řízení 2025 a 2026 (1. kolo JPZ, denní studium)"
+        },
+        {
+          "url": "https://web.archive.org/web/2026/https://ssps.cz/skola/pro-uchazece/prijimaci-rizeni/",
+          "title": "Přijímací řízení – Smíchovská střední (ssps.cz, archivovaná kopie; živý web ssps.cz byl 12. 9. 2026 nedostupný – connection refused)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Kritéria přijímacího řízení 2026/2027 sloučené školy: všech šest oborů včetně Hotelnictví (2 třídy), Cestovního ruchu (1 třída) a Všeobecného lycea se zaměřením na sportovní management (78-42-M/08); výuka Hotelnictví a Cestovního ruchu převážně v areálu Radlice (Radlická 591), IT v areálu Smíchov (Preslova 72/25).",
+          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
+        },
+        {
+          "url": "https://msp.gov.cz/documents/d/msp/uv-cr_8-2026-pdf",
+          "title": "Ústřední věstník ČR, částka 8/2026, str. 26 – Oznámení Hlavního města Prahy o změně u příspěvkové organizace",
+          "published_at": "2026-07-01",
+          "checked_at": "2026-09-12",
+          "supports": "Ke dni 1. 9. 2026 se organizace IČ 61386855, sídlo Preslova 72/25, přejmenovává z „Smíchovská střední průmyslová škola, gymnázium a hotelová škola Radlická, p.o.“ na „Smíchovská střední škola, p.o.“ – dokládá, že sloučená organizace existovala pod jedním IČ již v průběhu roku 2026.",
+          "applicable_period": "stav k 1. 9. 2026 (název platný v přijímacím řízení 2026/2027)"
+        },
+        {
+          "url": "https://cs.wikipedia.org/wiki/Sm%C3%ADchovsk%C3%A1_st%C5%99edn%C3%AD_%C5%A1kola",
+          "title": "Smíchovská střední škola – Wikipedie (sekce Spojení s Hotelovou školou Radlická)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Sekundární zdroj: 1. 1. 2026 sloučení s Hotelovou školou a gymnáziem Radlická (původní subjekt zanikl, majetek a činnost přešly na SSPŠ) na základě usnesení Zastupitelstva HMP č. 28/39 ze dne 20. 11. 2025; přejmenování na „…hotelová škola Radlická“ a od 1. 9. 2026 na „Smíchovská střední škola, p.o.“ Text usnesení se nepodařilo přímo načíst (praha.eu vrací 404), datum sloučení proto stojí na tomto sekundárním zdroji.",
+          "applicable_period": "2025–2026"
+        }
+      ],
+      "history_comparability": "partially",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": ["R-600005631"],
+      "unanswered_questions": [
+        "Přesné datum právního sloučení (1. 1. 2026) je doloženo jen sekundárním zdrojem (Wikipedie citující usnesení Zastupitelstva HMP č. 28/39 ze 20. 11. 2025); text usnesení ani příslušné oznámení v Ústředním věstníku se nepodařilo přímo načíst.",
+        "Záznam v rejstříku škol MŠMT (rejskol.msmt.cz) nebyl ověřen – stránka vyžaduje JavaScript; historii IZO pracovišť Radlická 591 po sloučení lze případně doověřit tam.",
+        "Historické statistiky přijímacího řízení 2025 pro Hotelnictví, Cestovní ruch a Lyceum se vztahují k samostatné Radlické škole s vlastními kritérii; po sloučení platí pro rok 2026/2027 nová kritéria sloučené školy (u Lycea školní testy a pohovor s cut-off 40 bodů, u Hotelnictví a Cestovního ruchu pouze JPZ s minimem 15 bodů), takže srovnatelnost výsledků je jen částečná a měla by být prezentována s poznámkou o změně organizace i kritérií."
+      ]
+    }
+  ]
+}

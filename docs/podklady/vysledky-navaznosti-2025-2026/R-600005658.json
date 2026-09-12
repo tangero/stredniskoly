@@ -1,0 +1,182 @@
+{
+  "task_id": "R-600005658",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "findings": [
+    {
+      "issue_ids": ["Q0018", "Q0019"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech CERMAT z 1. kola přijímacího řízení 2025 (denní studium) škola Střední průmyslová škola dopravní, a.s. (REDIZO 600005658, IZO 110001885, Plzeňská 298, Praha) nabízela mimo jiné dvouleté nástavbové obory 23-43-L/51 Provozní technika a 66-42-L/51 Propagace (určený pouze pro absolventy oboru Aranžér). V datech 1. kola 2026 tyto dvě nabídky chybí; nástavbový obor Podnikání (64-41-L/51) pokračuje v obou letech.",
+        "Archivovaný přehled oborů na webu školy z 15. 11. 2025 ještě uvádí mezi nástavbovými obory Podnikání, Provozní techniku i Propagaci (stav pro přijímací řízení na školní rok 2026/2027 ještě nebyl zveřejněn).",
+        "Archivovaný přehled oborů z 23. 1. 2026 – tedy v době přijímacího řízení pro školní rok 2026/2027 – už mezi nástavbovými obory uvádí pouze Podnikání (denní a dálková forma); Provozní technika a Propagace z nabídky pro nové uchazeče zmizely. Totéž potvrzuje snímek webu z 7. 3. 2026.",
+        "Zánik nabídky neznamená zánik výuky: PDF školy z října 2025 s okruhy k praktické maturitní zkoušce pro školní rok 2025/2026 dokládá, že žáci oboru Provozní technika ve škole dále studují (obor dobíhá s ročníky přijatými dříve).",
+        "Výroční zpráva školy za školní rok 2024/2025 označuje učební obor 66-52-H/01 Aranžér jako „dobíhající obor“. Protože nástavba Propagace je určena výhradně absolventům Aranžéra, ztráta nabídky Propagace v roce 2026 s dobíháním Aranžéra logicky souvisí (zdroje však tuto souvislost přímo neuvádějí).",
+        "Samotná škola (REDIZO 600005658, IZO 110001885) mezi roky pokračuje beze změny názvu, adresy sídla i zřizovatele; ve výroční zprávě 2024/2025 jsou jako místa výuky zapsány Plzeňská 298/217a (Praha 5 – Motol, teoretická výuka), Plzeňská 1315/137 (Praha 5 – Košíře, odborný výcvik) a Moravská 965/3 (Praha 2 – Vinohrady, kde se vyučuje i nástavba Propagace)."
+      ],
+      "conclusion": "Škola pro školní rok 2026/2027 ukončila přijímání nových žáků do nástavbových oborů 23-43-L/51 Provozní technika a 66-42-L/51 Propagace (v přehledu oborů pro přijímací řízení 2026/2027 zůstává z nástavbových oborů pouze Podnikání). Obor Provozní technika přitom ve škole dobíhá s dříve přijatými ročníky – nejde o okamžitý zánik výuky, ale o ukončení nabídky pro nové uchazeče. Škola sama (REDIZO/IZO, název, sídlo) mezi roky 2025 a 2026 pokračuje beze změny.",
+      "alternative_explanations": [
+        "Nelze vyloučit, že škola přijímání do těchto nástavbových oborů jen přerušila (např. pro nízký zájem) a obnoví je v pozdějším roce; webové snímky popisují pouze nabídku pro rok 2026/2027.",
+        "Data fronty pokrývají pouze 1. kolo JPZ a denní studium; zdroje nevylučují, že byly tyto obory nabídnuty ve 2. kole 2026 nebo v jiné formě studia."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["23-43-L/51 Provozní technika (2025)", "66-42-L/51 Propagace (2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Plzeňská 298/217a, Praha 5 – Motol",
+          "role": "sídlo",
+          "izo": "izo_110001885",
+          "valid_period": "2024/2025–2026 (dle výroční zprávy a webu školy)",
+          "source_url": "https://www.sps-dopravni.cz/wp-content/uploads/2025/10/VZ_SPSD_24_25_final.pdf"
+        },
+        {
+          "text": "Plzeňská 1315/137, Praha 5 – Košíře",
+          "role": "místo výuky",
+          "izo": "",
+          "valid_period": "školní rok 2024/2025 (odborný výcvik; ve výroční zprávě 2023/2024 uvedena i výuka oboru Provozní technika)",
+          "source_url": "https://www.sps-dopravni.cz/wp-content/uploads/2025/10/VZ_SPSD_24_25_final.pdf"
+        },
+        {
+          "text": "Moravská 965/3, Praha 2 – Vinohrady",
+          "role": "místo výuky",
+          "izo": "",
+          "valid_period": "školní rok 2024/2025 (denní forma nástavby Propagace, obory Aranžér, Podnikání aj.)",
+          "source_url": "https://www.sps-dopravni.cz/wp-content/uploads/2025/10/VZ_SPSD_24_25_final.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600005658",
+          "title": "Data CERMAT 1. kolo JPZ 2025 a 2026, denní studium (context_offers a issues Q0018, Q0019)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka oborů Provozní technika a Propagace v roce 2025 a jejich absence v roce 2026; shoda REDIZO/IZO, názvu a adresy školy v obou letech.",
+          "applicable_period": "přijímací řízení 2025 a 2026, 1. kolo, denní studium"
+        },
+        {
+          "url": "https://web.archive.org/web/20251115122533/https://www.sps-dopravni.cz/pro-uchazece/seznam-oboru/",
+          "title": "Přehled oborů – web školy, archivní snímek z 15. 11. 2025",
+          "published_at": "2025-11-15",
+          "checked_at": "2026-09-12",
+          "supports": "Mezi nástavbovými obory jsou uvedeny Podnikání, Provozní technika i Propagace; Technické lyceum v nabídce není.",
+          "applicable_period": "podzim 2025 (před zveřejněním nabídky pro 2026/2027)"
+        },
+        {
+          "url": "https://web.archive.org/web/20260123120119/https://www.sps-dopravni.cz/pro-uchazece/seznam-oboru/",
+          "title": "Přehled oborů – web školy, archivní snímek z 23. 1. 2026",
+          "published_at": "2026-01-23",
+          "checked_at": "2026-09-12",
+          "supports": "V sekci nástavbových oborů je uvedeno pouze Podnikání (denní a dálková forma); Provozní technika a Propagace již v nabídce pro nové uchazeče nejsou.",
+          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
+        },
+        {
+          "url": "https://web.archive.org/web/20260307210225/https://www.sps-dopravni.cz/pro-uchazece/seznam-oboru/78-42-m-01-technicke-lyceum/",
+          "title": "78-42-M/01 Technické lyceum – web školy, archivní snímek z 7. 3. 2026",
+          "published_at": "2026-03-07",
+          "checked_at": "2026-09-12",
+          "supports": "Menu přehledu oborů potvrzuje, že mezi nástavbovými obory je pouze Podnikání (a mezi čtyřletými maturitními nově Technické lyceum).",
+          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
+        },
+        {
+          "url": "https://www.sps-dopravni.cz/wp-content/uploads/2025/10/VZ_SPSD_24_25_final.pdf",
+          "title": "Výroční zpráva o činnosti školy SPŠ dopravní, a.s. za školní rok 2024/2025",
+          "published_at": "2025-10",
+          "checked_at": "2026-09-12",
+          "supports": "Učební obor Aranžér je označen jako dobíhající; nástavba Propagace se vyučuje v denní formě na Moravské 965/3; oba nástavbové obory (Provozní technika, Propagace) jsou v 24/25 vyučovány; místa výuky zapsaná v rejstříku.",
+          "applicable_period": "školní rok 2024/2025"
+        },
+        {
+          "url": "https://www.sps-dopravni.cz/wp-content/uploads/2025/10/25_26_MZ_MOR-Provozni-technika-okruhy-temat-k-prakticke-MZ.pdf",
+          "title": "Praktická maturitní zkouška Provozní technika – okruhy témat, školní rok 2025/2026",
+          "published_at": "2025-10",
+          "checked_at": "2026-09-12",
+          "supports": "Žáci oboru 23-43-L/51 Provozní technika ve škole i ve školním roce 2025/2026 studují a připravují se na maturitní zkoušku – obor dobíhá, nezanikl okamžitě.",
+          "applicable_period": "školní rok 2025/2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda škola přijímání do oborů Provozní technika a Propagace ukončila trvale, nebo jen pro rok 2026/2027, z dostupných datovaných zdrojů nevyplývá."
+      ]
+    },
+    {
+      "issue_ids": ["Q0338"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech CERMAT z 1. kola 2026 se u školy Střední průmyslová škola dopravní, a.s. (REDIZO 600005658) objevuje nová nabídka čtyřletého maturitního oboru 78-42-M/01 Technické lyceum, která v datech 1. kola 2025 nebyla. Všechny ostatní čtyřleté obory školy (Informační technologie, Provoz a ekonomika dopravy, Mechanik elektrotechnik, Autotronik) v roce 2026 pokračují vedle ní – nejde o přejmenování ani náhradu jiného oboru.",
+        "Archivovaný přehled oborů na webu školy z 15. 11. 2025 Technické lyceum ještě neobsahuje (čtyřleté maturitní obory jsou jen Informační technologie a Provoz a ekonomika dopravy plus kombinované L+H obory).",
+        "Stránka oboru Technické lyceum je na webu školy doložena poprvé archivním snímkem ze 7. 3. 2026 a profil absolventa oboru (PDF) škola zveřejnila v únoru 2026 – tedy v době přijímacího řízení pro školní rok 2026/2027.",
+        "Výroční zpráva školy za školní rok 2024/2025 obor Technické lyceum nezmiňuje a za rok 2024/2025 uvádí ve skladbě oborů „beze změn“."
+      ],
+      "conclusion": "Obor 78-42-M/01 Technické lyceum je nově otevřený čtyřletý maturitní obor, který škola zařadila do nabídky poprvé pro přijímací řízení na školní rok 2026/2027 (materiály k oboru zveřejnila v únoru–březnu 2026). Nemá proto žádného předchůdce v roce 2025 a historické statistiky na něj nelze přenášet z žádného jiného oboru školy.",
+      "alternative_explanations": [
+        "Zdroje nevylučují, že škola obor připravovala dříve a v roce 2025 ho nenabídla např. pro nedokončenou registraci; pro rok 2025 však žádná nabídka ani výuka doložena není."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["78-42-M/01 Technické lyceum (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Plzeňská 298/217a, Praha 5 – Motol",
+          "role": "sídlo",
+          "izo": "izo_110001885",
+          "valid_period": "2025–2026",
+          "source_url": "https://web.archive.org/web/20260307210225/https://www.sps-dopravni.cz/pro-uchazece/seznam-oboru/78-42-m-01-technicke-lyceum/"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600005658",
+          "title": "Data CERMAT 1. kolo JPZ 2025 a 2026, denní studium (context_offers a issue Q0338)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka oboru Technické lyceum pouze v roce 2026; pokračování všech ostatních čtyřletých oborů školy v obou letech.",
+          "applicable_period": "přijímací řízení 2025 a 2026, 1. kolo, denní studium"
+        },
+        {
+          "url": "https://web.archive.org/web/20251115122533/https://www.sps-dopravni.cz/pro-uchazece/seznam-oboru/",
+          "title": "Přehled oborů – web školy, archivní snímek z 15. 11. 2025",
+          "published_at": "2025-11-15",
+          "checked_at": "2026-09-12",
+          "supports": "Technické lyceum v přehledu oborů školy dosud není uvedeno.",
+          "applicable_period": "podzim 2025"
+        },
+        {
+          "url": "https://web.archive.org/web/20260307210225/https://www.sps-dopravni.cz/pro-uchazece/seznam-oboru/78-42-m-01-technicke-lyceum/",
+          "title": "78-42-M/01 Technické lyceum – web školy, archivní snímek z 7. 3. 2026",
+          "published_at": "2026-03-07",
+          "checked_at": "2026-09-12",
+          "supports": "Obor Technické lyceum je zařazen mezi čtyřleté obory s maturitou (stránka obsahuje odkazy na místo výuky, učební plán a kritéria přijetí).",
+          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
+        },
+        {
+          "url": "https://web.archive.org/web/20260418162623/https://www.sps-dopravni.cz/wp-content/uploads/2026/02/Technicke-lyceum_profil-absolventa.pdf",
+          "title": "Technické lyceum – profil absolventa (PDF, nahráno na web školy v únoru 2026)",
+          "published_at": "2026-02",
+          "checked_at": "2026-09-12",
+          "supports": "Škola připravila prezentační materiály k oboru Technické lyceum v únoru 2026, tedy těsně před 1. kolem přijímacího řízení 2026.",
+          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
+        },
+        {
+          "url": "https://www.sps-dopravni.cz/wp-content/uploads/2025/10/VZ_SPSD_24_25_final.pdf",
+          "title": "Výroční zpráva o činnosti školy SPŠ dopravní, a.s. za školní rok 2024/2025",
+          "published_at": "2025-10",
+          "checked_at": "2026-09-12",
+          "supports": "Za školní rok 2024/2025 škola uvádí ve skladbě oborů beze změn a Technické lyceum nezmiňuje – obor v té době ještě neexistoval v nabídce.",
+          "applicable_period": "školní rok 2024/2025"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

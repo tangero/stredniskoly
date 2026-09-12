@@ -1,0 +1,93 @@
+{
+  "task_id": "R-600004929",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "findings": [
+    {
+      "issue_ids": ["Q0339"],
+      "status": "potvrzeno",
+      "observations": [
+        "V přiložených datech fronty (CERMAT, 1. kolo jednotné přijímací zkoušky, denní studium) nabízela Obchodní akademie, Praha 3, Kubelíkova 1221 (REDIZO 600004929, IZO izo_110002008) v roce 2025 tři nabídky: Obchodní akademie 63-41-M/02 (zaměření Sportovní management a Obchodní akademie) a Ekonomické lyceum 78-42-M/02 (Sportovněmanažerské lyceum). V roce 2026 všechny tři nabídky pokračují beze změny kódu i zaměření a nově přibyla čtvrtá nabídka: Lyceum (režim pokusného ověřování) 78-42-M/08 se zaměřením 'Lyceum OA Kubelíkova'.",
+        "Katalog Stredniskoly.cz (čerpá z rejstříku škol MŠMT) uvádí u školy pro školní rok 2026–27 obor Lyceum 78-42-M/08 s kapacitou 30 žáků a ve sloupci 'Přihlášeno/přijato min. rok' hodnotu 0/0, tedy že obor v předchozím roce (2025/26) nebyl v přijímacím řízení nabízen. Ostatní tři obory mají minuloroční statistiky vyplněné (111/30, 144/30, 366/60).",
+        "Server prijimacky-onlinekurzy.cz (KOMPLET, zpracování dat CERMAT) uvádí pro obor 'Lyceum (režim pokusného ověřování) (Lyceum OA Kubelíkova)', kód 78-42-M/08, statistiky pouze pro rok 2026 (kapacita 30, přihlášeno 114, přijato 30); pro roky 2025 a 2024 jsou hodnoty prázdné ('—').",
+        "Školský profil školy na iDNES.cz uvádí doslovné sdělení školy 'Plánujeme: budeme otevírat obor 78-42-M/08 Lyceum (režim pokusného ověřování)' – tedy že jde o nově otevíraný obor. Obsah stránky se nepodařilo načíst kvůli souhlasové stěně, údaj pochází z vyhledávacího úryvku a je proto brán jako vodítko, nikoli hlavní důkaz.",
+        "Obor 78-42-M/08 Lyceum v režimu pokusného ověřování se v datech přijímacího řízení 2026 objevil nově u více pražských škol současně (např. Smíchovská SPŠ, OA Heroldovy sady – ta na webu píše 'Ve školním roce 2026/2027 otevíráme ... Lyceum (režim pokusného ověřování) – kód oboru 78-42-M/08'). Jde tedy o celostátní novinku MŠMT, kterou si řada škol otevřela právě od školního roku 2026/2027.",
+        "Adresa Kubelíkova 1221/37, Praha 3 – Žižkov je sídlem i místem výuky školy a je v obou letech shodná; žádná změna adresy ani entity (REDIZO/IZO) se nekonala."
+      ],
+      "conclusion": "Nabídka 'Lyceum (režim pokusného ověřování) 78-42-M/08, zaměření Lyceum OA Kubelíkova' je nový obor, který Obchodní akademie Kubelíkova otevřela poprvé pro přijímací řízení na školní rok 2026/2027. Nejde o přejmenování ani přepis žádného z existujících oborů – Obchodní akademie 63-41-M/02 (obě zaměření) i Ekonomické lyceum 78-42-M/02 pokračují v roce 2026 vedle něj beze změny. Nepřiřazenost nabídky 2026 je tedy správný stav: k oboru neexistuje historie z roku 2025 a nemá být mapován na žádný obor z roku 2025.",
+      "alternative_explanations": [
+        "Teoreticky by obor mohl navazovat na některý dřívější školní vzdělávací program školy (podobně jako OA Heroldovy sady uvádějí návaznost na svůj program EVA), ale v dostupných zdrojích pro OA Kubelíkova žádná taková návaznost doložena není; na závěru o novosti oboru v přijímacím řízení to nic nemění."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["600004929|78-42-M/08|Lyceum (režim pokusného ověřování)|Lyceum OA Kubelíkova"]
+      },
+      "addresses": [
+        {
+          "text": "Kubelíkova 1221/37, Žižkov, 130 00 Praha 3",
+          "role": "sídlo",
+          "izo": "izo_110002008",
+          "valid_period": "2025–2026 (beze změny)",
+          "source_url": "https://www.edulist.cz/skola/600004929/"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600004929",
+          "title": "Kontextové nabídky CERMAT JPZ 1. kolo, denní studium, roky 2025 a 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Srovnání nabídek 2025 vs. 2026: tři obory pokračují beze změny, Lyceum 78-42-M/08 je v datech pouze v roce 2026.",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://www.stredniskoly.cz/skola/600004929.html",
+          "title": "Obchodní akademie, Praha 3, Kubelíkova 37 – Stredniskoly.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Pro školní rok 2026–27 škola nabízí Lyceum 78-42-M/08 (kapacita 30) se sloupcem 'Přihl./přij. min. rok' 0/0 – obor loni v přijímacím řízení nebyl; ostatní obory mají minuloroční statistiky vyplněné.",
+          "applicable_period": "přijímací řízení na školní rok 2026/2027 (dny otevřených dveří 9. 12. 2025 a 14. 1. 2026)"
+        },
+        {
+          "url": "https://prijimacky-onlinekurzy.cz/skola/600004929/obchodni-akademie-praha-3-kubelikova-37",
+          "title": "Přijímačky: Obchodní akademie, Kubelíkova, Praha – KOMPLET (data CERMAT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Statistiky oboru Lyceum OA Kubelíkova 78-42-M/08 existují jen pro rok 2026 (kapacita 30, přihlášeno 114, přijato 30); pro 2025 a 2024 jsou prázdné.",
+          "applicable_period": "přijímací řízení 2024–2026"
+        },
+        {
+          "url": "https://www.atlasskolstvi.cz/ss49-obchodni-akademie-praha-3-kubelikova-37",
+          "title": "Obchodní akademie, Praha 3, Kubelíkova 37 – AtlasŠkolství.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Školou poskytnutý profil pro přijímací řízení 2026/2027 (dny otevřených dveří 12/2025 a 1/2026) popisuje dlouhodobě tři stávající obory; v tabulkové části profilu je doplňkově uveden obor 78-42-M/08 s kapacitou 30.",
+          "applicable_period": "přijímací řízení na školní rok 2026/2027"
+        },
+        {
+          "url": "https://www.idnes.cz/stredni-skoly/obchodni-akademie-praha-3-kubelikova-37.id600004929",
+          "title": "Obchodní akademie, Praha 3, Kubelíkova 37 – iDNES.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Sdělení školy v profilu: 'Plánujeme: budeme otevírat obor 78-42-M/08 Lyceum (režim pokusného ověřování).' Stránku se nepodařilo načíst (souhlasová stěna), údaj je z vyhledávacího úryvku a slouží jen jako doplňkové vodítko.",
+          "applicable_period": "období před otevřením oboru (2025/2026)"
+        },
+        {
+          "url": "https://heroldovysady.cz/prijimaci-rizeni-2026",
+          "title": "Přijímací řízení 2026 – OA Heroldovy sady",
+          "published_at": "2025-12-05",
+          "checked_at": "2026-09-12",
+          "supports": "Kontext: obor Lyceum (režim pokusného ověřování) 78-42-M/08 otevírá od školního roku 2026/2027 více pražských škol současně; jde o celostátní novinku MŠMT, nikoli o přejmenování existujícího oboru.",
+          "applicable_period": "školní rok 2026/2027"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda nový obor 78-42-M/08 obsahově navazuje na některý dřívější školní vzdělávací program školy (případné datumované vyjádření na oa-kubelikova.cz se nepodařilo dohledat; aktuální web školy stránku k přijímacímu řízení zpřístupňuje jen částečně)."
+      ]
+    }
+  ]
+}

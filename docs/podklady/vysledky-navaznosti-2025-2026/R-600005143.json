@@ -1,0 +1,168 @@
+{
+  "task_id": "R-600005143",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "findings": [
+    {
+      "issue_ids": ["Q0005", "Q0219"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech CERMAT za rok 2025 je u Gymnázia, Praha 4, Na Vítězné pláni 1160 (REDIZO 600005143, IZO 000335487) vedena šestiletá nabídka „Gymnázium – s výukou francouzského jazyka“ (KKOV 79-41-K/61, denní studium). V roce 2026 figuruje nabídka „Gymnázium – s výukou francouzštiny“ se stejným kódem oboru 79-41-K/61, stejnou délkou studia (6 let), stejnou školou, IZO i adresou.",
+        "Web školy (stránka s výsledky přijímacího řízení v minulých letech) uvádí, že škola v roce 2025 i v roce 2026 přijímala do šestiletého studia třídu 1.B „šestileté studium s výukou francouzského jazyka“ po 30 studentech – škola tedy pro oba ročníky používá dlouhé znění názvu zaměření.",
+        "Odlišný zápis v datech 2026 („s výukou francouzštiny“ místo „s výukou francouzského jazyka“) je tedy pouze jiná formulace téhož zaměření, nikoli nový obor. Kód KKOV, délka studia, kapacita (30 míst) i označení třídy (1.B) zůstávají shodné."
+      ],
+      "conclusion": "Šestiletá nabídka s výukou francouzštiny z roku 2026 je pokračováním šestileté nabídky s výukou francouzského jazyka z roku 2025 na téže škole; jde o změnu pouze v zápisu názvu zaměření (vlastní nabídka školy se nezměnila).",
+      "alternative_explanations": [],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["2025/offers/75 (ID_SOF 07620cbb-812e-4eb8-8d28-c7f6fa1c7f5f)"],
+        "to": ["2026/offers/333 (ID_SOF 686e3929-3a87-4c9d-a81e-d0a40d69e361)"]
+      },
+      "addresses": [
+        {
+          "text": "Na Vítězné pláni 1160, 140 00 Praha 4",
+          "role": "sídlo",
+          "izo": "000335487",
+          "valid_period": "2025–2026 (obě roky dle dat fronty; dle ŠVP školy dlouhodobě)",
+          "source_url": "https://www.gvp.cz/studium/svp/sestilete2020dsd_.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600005143",
+          "title": "Přiložená data úkolu (nabídky CERMAT 1. kola JPZ 2025 a 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Shoda školy, IZO, adresy, kódu KKOV 79-41-K/61 a délky studia; odlišný pouze text zaměření (francouzského jazyka → francouzštiny).",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://www.gvp.cz/uchazeci/drivejsi_vysledky",
+          "title": "GVP – Přijímací řízení v minulých letech (konečné výsledky 2025 a 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola sama dokumentuje, že v roce 2025 i 2026 přijímala třídu 1.B šestiletého studia „s výukou francouzského jazyka“ (30 studentů); potvrzuje kontinuitu nabídky a fakt, že rozdíl je jen v zápisu v datech CERMAT.",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0006", "Q0220"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech CERMAT za rok 2025 je u téže školy vedena šestiletá nabídka „Gymnázium – s posílenou výukou německého jazyka“ (KKOV 79-41-K/61). V roce 2026 figuruje „Gymnázium – s posílenou výukou němčiny“, opět s kódem 79-41-K/61, šestiletou délkou, stejným IZO i adresou.",
+        "Web školy uvádí, že v roce 2025 i v roce 2026 přijímala třídu 1.A „šestileté studium s posílenou výukou německého jazyka“ po 30 studentech; škola tedy pro oba roky používá dlouhé znění.",
+        "Školní vzdělávací program školy dokumentuje, že program „Všeobecné gymnázium č.j. 230/09 s posílenou výukou německého jazyka“ na škole existuje dlouhodobě (registrován od roku 2009) pod IZO 000335487 a REDIZO 600005143.",
+        "Odlišný zápis v datech 2026 („s posílenou výukou němčiny“) je pouze jiná formulace téhož zaměření, nikoli nový obor."
+      ],
+      "conclusion": "Šestiletá nabídka s posílenou výukou němčiny z roku 2026 je pokračováním šestileté nabídky s posílenou výukou německého jazyka z roku 2025 na téže škole; jde o změnu pouze v zápisu názvu zaměření.",
+      "alternative_explanations": [],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["2025/offers/76 (ID_SOF 755d6a06-4278-4e6c-a146-4be953ed0445)"],
+        "to": ["2026/offers/334 (ID_SOF 8e9e6915-2d9f-4425-8e2c-00182d492fc1)"]
+      },
+      "addresses": [
+        {
+          "text": "Na Vítězné pláni 1160, 140 00 Praha 4",
+          "role": "sídlo",
+          "izo": "000335487",
+          "valid_period": "2025–2026 (obě roky dle dat fronty; dle ŠVP školy dlouhodobě)",
+          "source_url": "https://www.gvp.cz/studium/svp/sestilete2020dsd_.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600005143",
+          "title": "Přiložená data úkolu (nabídky CERMAT 1. kola JPZ 2025 a 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Shoda školy, IZO, adresy, kódu KKOV 79-41-K/61 a délky studia; odlišný pouze text zaměření (německého jazyka → němčiny).",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://www.gvp.cz/uchazeci/drivejsi_vysledky",
+          "title": "GVP – Přijímací řízení v minulých letech (konečné výsledky 2025 a 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola dokumentuje přijímání třídy 1.A šestiletého studia „s posílenou výukou německého jazyka“ (30 studentů) v roce 2025 i 2026.",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://www.gvp.cz/studium/svp/sestilete2020dsd_.pdf",
+          "title": "ŠVP Gymnázia Na Vítězné pláni – šestiletý program s posílenou výukou německého jazyka",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Dokládá totožnost právnické osoby (IČO 00335487, IZO 000335487, IZO ředitelství 600005143) a dlouhodobou existenci programu s posílenou výukou německého jazyka (č.j. 230/09).",
+          "applicable_period": "dokument z roku cca 2020; program registrován od 2009"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0007"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech CERMAT za rok 2025 škola nabízela třetí šestiletou nabídku „Gymnázium – s výukou španělského jazyka“ (KKOV 79-41-K/61). V datech za rok 2026 žádná nabídka se španělštinou u tohoto REDIZO není – šestileté studium je zastoupeno jen zaměřeními na němčinu a francouzštinu.",
+        "Web školy tuto absenci přímo potvrzuje: ve výsledcích přijímacího řízení 2026 uvádí pro šestileté studium pouze třídu 1.A (posílená němčina) a 1.B (francouzština), zatímco v roce 2025 ještě uvádí třetí třídu 1.C „šestileté studium s výukou španělského jazyka“ (30 studentů, 622 přihlášek).",
+        "Na aktuální stránce pro uchazeče (přijímací řízení 2027) škola opět otevírá tři třídy šestiletého studia včetně třídy 1.C se španělštinou. Španělské zaměření tedy bylo pro ročník 2026 pouze přerušeno a pro rok 2027 je obnoveno – nejde o trvalý zánik oboru.",
+        "Sama absence v datech CERMAT by zánik nedokazovala; rozhodující je vlastní dokumentace školy o přijímacích řízeních 2025 a 2026."
+      ],
+      "conclusion": "Šestiletá nabídka s výukou španělského jazyka byla v přijímacím řízení 2026 na této škole neotevřena (přerušení na jeden ročník); pro rok 2027 ji škola znovu otevírá. Nemá tedy v roce 2026 žádnou návaznost a nelze ji mapovat na žádnou jinou nabídku.",
+      "alternative_explanations": [
+        "Data fronty pokrývají pouze 1. kolo jednotné přijímací zkoušky; teoreticky by škola mohla španělskou nabídku vypisovat v 2. kole 2026 – to zdroje nevylučují, ale vlastní výsledková dokumentace školy za rok 2026 španělskou třídu šestiletého studia neuvádí."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["2025/offers/77 (ID_SOF 20336212-a8d0-4914-b542-7cc0ce10894b)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Na Vítězné pláni 1160, 140 00 Praha 4",
+          "role": "sídlo",
+          "izo": "000335487",
+          "valid_period": "2025–2026 (obě roky dle dat fronty; dle ŠVP školy dlouhodobě)",
+          "source_url": "https://www.gvp.cz/studium/svp/sestilete2020dsd_.pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600005143",
+          "title": "Přiložená data úkolu (nabídky CERMAT 1. kola JPZ 2025 a 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka s výukou španělského jazyka existuje v roce 2025 a chybí v roce 2026 (1. kolo JPZ).",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://www.gvp.cz/uchazeci/drivejsi_vysledky",
+          "title": "GVP – Přijímací řízení v minulých letech (konečné výsledky 2025 a 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Dokládá, že v roce 2025 škola přijímala třídu 1.C šestiletého studia s výukou španělského jazyka a v roce 2026 přijímala pouze třídy 1.A (němčina) a 1.B (francouzština) – španělské zaměření tedy v 2026 neotevřela.",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://www.gvp.cz/uchazeci/prijimane_tridy",
+          "title": "GVP – Přijímané třídy (přijímací řízení 2027)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Pro rok 2027 škola opět otevírá tři třídy šestiletého studia včetně třídy 1.C angličtina–španělština; španělské zaměření tedy bylo v roce 2026 pouze přerušeno.",
+          "applicable_period": "přijímací řízení 2027"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

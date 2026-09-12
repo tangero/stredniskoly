@@ -1,0 +1,197 @@
+{
+  "task_id": "R-600004961",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "findings": [
+    {
+      "issue_ids": ["Q0002", "Q0218"],
+      "status": "potvrzeno",
+      "observations": [
+        "V přiložených datech CERMAT (1. kolo přijímacího řízení, denní studium) mělo Gymnázium Na Pražačce (REDIZO 600004961, IZO 000335398, Nad Ohradou 2825, Praha) v roce 2025 nabídku oboru 79-41-K/61 Gymnázium (šestileté) se zaměřením zapsaným jako „estetickovýchovné předměty - zaměření na VV“; v roce 2026 má stejná škola nabídku téhož oboru se zaměřením „Výtvarná výchova“. Kód oboru (KKOV), délka studia (6 let), forma (denní) i jazyk studia jsou v obou letech shodné.",
+        "Podle Wikipedie nabízí Gymnázium Na Pražačce studium právě ve třech zaměřeních šestiletého gymnázia: všeobecné (třídy A), výtvarné (třídy C) a německé (třídy D). Výtvarné zaměření je tedy dlouhodobou součástí nabídky školy.",
+        "Samostatný agregátor prijimackynaskolu.cz uvádí u školy tři obory/zaměření s celkovou kapacitou 90 míst (tj. tři třídy po 30 žácích) v roce 2026 a zároveň vypisuje názvy zaměření z roku 2025 („estetickovýchovné předměty…“), což potvrzuje, že jde o tři paralelní třídní zaměření téže školy v obou letech."
+      ],
+      "conclusion": "Jde o tentýž obor a totéž výtvarné zaměření šestiletého gymnázia; mezi rokem 2025 a 2026 se změnilo pouze pojmenování zaměření v datech přijímacího řízení („estetickovýchovné předměty - zaměření na VV“ → „Výtvarná výchova“). Návaznost je přímá, 1:1.",
+      "alternative_explanations": [
+        "Teoreticky by mohlo jít o uzavření starého a otevření nového zaměření se shodným obsahem; žádný zdroj to ale nenaznačuje a struktura nabídky (3 třídy, 90 míst, shodné KKOV) zůstala nezměněná."
+      ],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["2025: 79-41-K/61 Gymnázium, zaměření „estetickovýchovné předměty - zaměření na VV“ (ID_SOF 0e303eb9-6241-44f8-9261-028be39545df)"],
+        "to": ["2026: 79-41-K/61 Gymnázium, zaměření „Výtvarná výchova“ (ID_SOF b368243d-680e-4208-b57c-714e3e1797c7)"]
+      },
+      "addresses": [
+        {
+          "text": "Nad Ohradou 2825/23, 130 00 Praha 3",
+          "role": "sídlo",
+          "izo": "izo_000335398",
+          "valid_period": "2025–2026",
+          "source_url": "https://cs.wikipedia.org/wiki/Gymn%C3%A1zium_Na_Pra%C5%BEa%C4%8Dce"
+        },
+        {
+          "text": "Nad Ohradou 2825, Praha, 13000",
+          "role": "místo výuky",
+          "izo": "izo_000335398",
+          "valid_period": "2025–2026",
+          "source_url": "fronta-dohledavani-2025-2026.json, úkol R-600004961"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600004961",
+          "title": "Fronta dohledávání 2025–2026, přiložená data CERMAT",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Shodné REDIZO/IZO, název, adresa, KKOV, délka i forma studia; změnil se jen text zaměření mezi roky 2025 a 2026.",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://cs.wikipedia.org/wiki/Gymn%C3%A1zium_Na_Pra%C5%BEa%C4%8Dce",
+          "title": "Gymnázium Na Pražačce – Wikipedie",
+          "published_at": "2025-11-27",
+          "checked_at": "2026-09-12",
+          "supports": "Škola (REDIZO 600004961) nabízí šestileté gymnázium ve třech zaměřeních: všeobecné, výtvarné a německé.",
+          "applicable_period": "aktuální stav, editováno 27. 11. 2025"
+        },
+        {
+          "url": "https://www.prijimackynaskolu.cz/skola/600004961-gymnazium-na-prazacce-nad-ohradou",
+          "title": "Gymnázium Na Pražačce, Nad Ohradou – přehled oborů (Přijímačky na střední školy)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Tři obory/zaměření, kapacita 90 míst v roce 2026; vypisuje názvy zaměření z roku 2025 a upozorňuje na chybějící shodu s importem 2026 – jde o změnu pojmenování, nikoli zánik.",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0003", "Q0217"],
+      "status": "potvrzeno",
+      "observations": [
+        "V přiložených datech CERMAT mělo Gymnázium Na Pražačce v roce 2025 nabídku oboru 79-41-K/61 Gymnázium (šestileté) se zaměřením „vybrané předměty v cizím jazyce - zaměření na NJ“; v roce 2026 má stejná škola nabídku téhož oboru se zaměřením „Německý jazyk“. KKOV, délka studia, forma i jazyk studia („Český s výukou vybraných předmětů v cizím jazyce“) jsou v obou letech shodné.",
+        "Podle Wikipedie nabízí škola tři zaměření šestiletého gymnázia – všeobecné, výtvarné a německé (třídy D). Článek dále popisuje rozšířenou spolupráci s německými institucemi (DAAD, ZfA, Goethe-Institut), zkoušky DSD1/DSD2 a působení německých pedagogů, což odpovídá tomu, že se vybrané předměty vyučují v němčině.",
+        "Web školy dokumentuje v roce 2026 aktivitu tříd s německým zaměřením (výměnný pobyt se Schwäbisch Gmünd, účast v soutěži Jugend debattiert Europa v němčině), tedy pokračující provoz německého zaměření."
+      ],
+      "conclusion": "Jde o tentýž obor a totéž jazykové zaměření šestiletého gymnázia; mezi rokem 2025 a 2026 se změnilo pouze pojmenování zaměření („vybrané předměty v cizím jazyce - zaměření na NJ“ → „Německý jazyk“). Návaznost je přímá, 1:1.",
+      "alternative_explanations": [
+        "Název zaměření v roce 2025 („vybrané předměty v cizím jazyce“) může působit jako jiný typ programu než „Německý jazyk“; obsahově se ale oba popisy kryjí (CLIL výuka v němčině) a žádný zdroj nedokládá otevření jiného jazykového zaměření."
+      ],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["2025: 79-41-K/61 Gymnázium, zaměření „vybrané předměty v cizím jazyce - zaměření na NJ“ (ID_SOF fe287807-94df-4aaf-921f-6764b57d1dc6)"],
+        "to": ["2026: 79-41-K/61 Gymnázium, zaměření „Německý jazyk“ (ID_SOF 69393dde-405e-4263-9a8f-33830e5fa850)"]
+      },
+      "addresses": [
+        {
+          "text": "Nad Ohradou 2825/23, 130 00 Praha 3",
+          "role": "sídlo",
+          "izo": "izo_000335398",
+          "valid_period": "2025–2026",
+          "source_url": "https://cs.wikipedia.org/wiki/Gymn%C3%A1zium_Na_Pra%C5%BEa%C4%8Dce"
+        },
+        {
+          "text": "Nad Ohradou 2825, Praha, 13000",
+          "role": "místo výuky",
+          "izo": "izo_000335398",
+          "valid_period": "2025–2026",
+          "source_url": "fronta-dohledavani-2025-2026.json, úkol R-600004961"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600004961",
+          "title": "Fronta dohledávání 2025–2026, přiložená data CERMAT",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Shodné REDIZO/IZO, název, adresa, KKOV, délka i forma studia; změnil se jen text zaměření mezi roky 2025 a 2026.",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://cs.wikipedia.org/wiki/Gymn%C3%A1zium_Na_Pra%C5%BEa%C4%8Dce",
+          "title": "Gymnázium Na Pražačce – Wikipedie",
+          "published_at": "2025-11-27",
+          "checked_at": "2026-09-12",
+          "supports": "Škola má dlouhodobě německé zaměření šestiletého gymnázia (třídy D) s rozšířenou výukou němčiny a spoluprací s německými institucemi.",
+          "applicable_period": "aktuální stav, editováno 27. 11. 2025"
+        },
+        {
+          "url": "https://www.gymnazium-prazacka.cz/",
+          "title": "Úvod | Gymnázium Na Pražačce",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Aktuality z roku 2026 dokládají provoz tříd s německým zaměřením (výměna Schwäbisch Gmünd březen 2026, soutěž Jugend debattiert Europa duben 2026).",
+          "applicable_period": "školní rok 2025/2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0004", "Q0216"],
+      "status": "potvrzeno",
+      "observations": [
+        "V přiložených datech CERMAT mělo Gymnázium Na Pražačce v roce 2025 nabídku oboru 79-41-K/61 Gymnázium (šestileté) se zaměřením zapsaným jako „všeobecné studim“ (zjevný překlep v podkladu); v roce 2026 má stejná škola nabídku téhož oboru se zaměřením „Všeobecné“. KKOV, délka studia, forma i jazyk studia jsou v obou letech shodné.",
+        "Podle Wikipedie je všeobecné zaměření (třídy A) jedním ze tří dlouhodobých zaměření šestiletého gymnázia Na Pražačce.",
+        "Agregátor prijimackynaskolu.cz uvádí u školy v roce 2026 tři obory s celkovou kapacitou 90 míst a zároveň vypisuje zaměření roku 2025 včetně zápisu „všeobecné studim“, což potvrzuje, že jde o tatáž tři zaměření v obou letech."
+      ],
+      "conclusion": "Jde o tentýž obor a totéž všeobecné zaměření šestiletého gymnázia; mezi rokem 2025 a 2026 se změnil pouze zápis názvu zaměření („všeobecné studim“ → „Všeobecné“). Návaznost je přímá, 1:1.",
+      "alternative_explanations": [],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["2025: 79-41-K/61 Gymnázium, zaměření „všeobecné studim“ (ID_SOF 9e9f7470-5f24-4111-9946-7a0d2446f41a)"],
+        "to": ["2026: 79-41-K/61 Gymnázium, zaměření „Všeobecné“ (ID_SOF 4065b01a-ba63-40dd-a209-2ada87cee853)"]
+      },
+      "addresses": [
+        {
+          "text": "Nad Ohradou 2825/23, 130 00 Praha 3",
+          "role": "sídlo",
+          "izo": "izo_000335398",
+          "valid_period": "2025–2026",
+          "source_url": "https://cs.wikipedia.org/wiki/Gymn%C3%A1zium_Na_Pra%C5%BEa%C4%8Dce"
+        },
+        {
+          "text": "Nad Ohradou 2825, Praha, 13000",
+          "role": "místo výuky",
+          "izo": "izo_000335398",
+          "valid_period": "2025–2026",
+          "source_url": "fronta-dohledavani-2025-2026.json, úkol R-600004961"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600004961",
+          "title": "Fronta dohledávání 2025–2026, přiložená data CERMAT",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Shodné REDIZO/IZO, název, adresa, KKOV, délka i forma studia; změnil se jen text zaměření mezi roky 2025 a 2026.",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://cs.wikipedia.org/wiki/Gymn%C3%A1zium_Na_Pra%C5%BEa%C4%8Dce",
+          "title": "Gymnázium Na Pražačce – Wikipedie",
+          "published_at": "2025-11-27",
+          "checked_at": "2026-09-12",
+          "supports": "Všeobecné zaměření (třídy A) je dlouhodobou součástí nabídky šestiletého gymnázia této školy.",
+          "applicable_period": "aktuální stav, editováno 27. 11. 2025"
+        },
+        {
+          "url": "https://www.prijimackynaskolu.cz/skola/600004961-gymnazium-na-prazacce-nad-ohradou",
+          "title": "Gymnázium Na Pražačce, Nad Ohradou – přehled oborů (Přijímačky na střední školy)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola má v roce 2026 tři zaměření s kapacitou 90 míst; zápis „všeobecné studim“ z roku 2025 odpovídá všeobecnému zaměření.",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

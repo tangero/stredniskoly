@@ -1,0 +1,117 @@
+{
+  "task_id": "R-600005518",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "findings": [
+    {
+      "issue_ids": ["Q0012", "Q0302"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech CERMAT za rok 2025 se nabídka osmiletého gymnázia Gymnázia Christiana Dopplera (REDIZO 600005518, IZO izo_061385701, Zborovská 621, Praha) jmenovala „Myslím, tedy jsem (zaměření na matematiku s rozšířenou výukou informatiky a fyziky)“ s kódem oboru 79-41-K/81. V roce 2026 je u stejné školy, na stejné adrese a pod stejným kódem oboru 79-41-K/81 nabídka „Myslím, tedy jsem“ – bez vysvětlující závorky.",
+        "Web školy pro přijímací řízení na školní rok 2026/2027 (kritéria datována 28. 1. 2026) uvádí obor jako 79-41-K/81 „Myslím, tedy jsem“, osmileté studium se zaměřením na matematiku s rozšířenou výukou informatiky a fyziky. Popisné zaměření z roku 2025 tedy přesně odpovídá obsahu oboru v roce 2026; změnil se jen způsob zápisu názvu v datech CERMAT (popis zaměření se přesunul z názvu do samostatného textu).",
+        "KamDoSkoly.cz (agregátor z rejstříku škol MŠMT a otevřených dat CERMAT) potvrzuje kontinuitu školy pod REDIZO 600005518 na adrese Zborovská 621/45 a uvádí tutéž nabídku pod delším názvem i pro rok 2024 („osmileté studium se zaměřením na matematiku s rozšířenou výukou informatiky a fyziky“), s konstantní kapacitou 30 míst napříč lety 2024–2026."
+      ],
+      "conclusion": "Jde o tentýž obor: osmileté gymnázium 79-41-K/81 se zaměřením na matematiku s rozšířenou výukou informatiky a fyziky na Gymnáziu Christiana Dopplera. Mezi roky 2025 a 2026 došlo pouze ke změně zápisu názvu nabídky (zkrácení o popis zaměření v závorce), nikoli ke změně oboru, kódu KKOV, délky studia ani kapacity. Nabídku Q0012 z roku 2025 lze spárovat s nabídkou Q0302 z roku 2026.",
+      "alternative_explanations": [],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["offers_2025 index 128 (Q0012): 79-41-K/81 „Myslím, tedy jsem (zaměření na matematiku s rozšířenou výukou informatiky a fyziky)“"],
+        "to": ["offers_2026 index 1508 (Q0302): 79-41-K/81 „Myslím, tedy jsem“"]
+      },
+      "addresses": [
+        {
+          "text": "Zborovská 621/45, Malá Strana, 150 00 Praha 5",
+          "role": "sídlo",
+          "izo": "izo_061385701",
+          "valid_period": "2024–2026 (beze změny dle rejstříku a dat CERMAT)",
+          "source_url": "https://www.kamdoskoly.cz/skola/gymnazium-gymnazium-christiana-dopplera-600005518.html"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600005518",
+          "title": "Data fronty – nabídky CERMAT 2025 a 2026 pro REDIZO 600005518",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stejné REDIZO, IZO, adresa, kód KKOV 79-41-K/81, délka studia 8 let a forma v obou letech; liší se pouze text zaměření (2025 s popisnou závorkou, 2026 bez ní).",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://www.gchd.cz/pro-uchazece/prijimaci-rizeni/",
+          "title": "Přijímací řízení – Gymnázium Christiana Dopplera (kritéria pro 2026/2027, datováno 28. 1. 2026)",
+          "published_at": "2026-01-28",
+          "checked_at": "2026-09-12",
+          "supports": "Škola sama označuje obor jako 79-41-K/81 „Myslím, tedy jsem“, osmileté studium se zaměřením na matematiku s rozšířenou výukou informatiky a fyziky – tedy krátký název z dat 2026 a popis zaměření z dat 2025 se týkají jednoho oboru.",
+          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
+        },
+        {
+          "url": "https://www.kamdoskoly.cz/skola/gymnazium-gymnazium-christiana-dopplera-600005518.html",
+          "title": "Gymnázium Christiana Dopplera | kamdoskoly.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Kontinuita školy pod REDIZO 600005518 na adrese Zborovská 621/45; nabídka oboru s týmž zaměřením (matematika s rozšířenou výukou informatiky a fyziky, 30 míst) doložena průběžně pro roky 2024 i 2025 z otevřených dat CERMAT.",
+          "applicable_period": "2024–2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0013", "Q0301"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech CERMAT za rok 2025 se druhá nabídka osmiletého gymnázia Gymnázia Christiana Dopplera (REDIZO 600005518, IZO izo_061385701, Zborovská 621, Praha) jmenovala „Cizí jazyky – brána do světa (zaměření na živé jazyky)“ s kódem oboru 79-41-K/81. V roce 2026 je u stejné školy, na stejné adrese a pod stejným kódem oboru 79-41-K/81 nabídka „Cizí jazyky – brána do světa“ – bez vysvětlující závorky.",
+        "Web školy pro přijímací řízení na školní rok 2026/2027 (kritéria datována 28. 1. 2026) uvádí obor jako 79-41-K/81 „Cizí jazyky – brána do světa“, osmileté studium se zaměřením na živé jazyky. Zaměření na živé jazyky uvedené v závorce v roce 2025 tedy přesně odpovídá obsahu oboru v roce 2026; změnil se jen způsob zápisu názvu v datech CERMAT.",
+        "KamDoSkoly.cz dokládá kontinuitu školy pod REDIZO 600005518 a uvádí jazykový osmiletý obor (kapacita 30 míst) i pro rok 2024 pod názvem „osmileté studium se zaměřením na živé jazyky“ – obor tedy funguje dlouhodobě a marketingový název se měnil jen v zápisu."
+      ],
+      "conclusion": "Jde o tentýž obor: osmileté gymnázium 79-41-K/81 se zaměřením na živé jazyky na Gymnáziu Christiana Dopplera. Mezi roky 2025 a 2026 došlo pouze ke změně zápisu názvu nabídky (vypuštění popisu zaměření v závorce), nikoli ke změně oboru, kódu KKOV, délky studia ani kapacity. Nabídku Q0013 z roku 2025 lze spárovat s nabídkou Q0301 z roku 2026.",
+      "alternative_explanations": [],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["offers_2025 index 129 (Q0013): 79-41-K/81 „Cizí jazyky – brána do světa (zaměření na živé jazyky)“"],
+        "to": ["offers_2026 index 1507 (Q0301): 79-41-K/81 „Cizí jazyky – brána do světa“"]
+      },
+      "addresses": [
+        {
+          "text": "Zborovská 621/45, Malá Strana, 150 00 Praha 5",
+          "role": "sídlo",
+          "izo": "izo_061385701",
+          "valid_period": "2024–2026 (beze změny dle rejstříku a dat CERMAT)",
+          "source_url": "https://www.kamdoskoly.cz/skola/gymnazium-gymnazium-christiana-dopplera-600005518.html"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600005518",
+          "title": "Data fronty – nabídky CERMAT 2025 a 2026 pro REDIZO 600005518",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stejné REDIZO, IZO, adresa, kód KKOV 79-41-K/81, délka studia 8 let a forma v obou letech; liší se pouze text zaměření (2025 s popisnou závorkou, 2026 bez ní).",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://www.gchd.cz/pro-uchazece/prijimaci-rizeni/",
+          "title": "Přijímací řízení – Gymnázium Christiana Dopplera (kritéria pro 2026/2027, datováno 28. 1. 2026)",
+          "published_at": "2026-01-28",
+          "checked_at": "2026-09-12",
+          "supports": "Škola sama označuje obor jako 79-41-K/81 „Cizí jazyky – brána do světa“, osmileté studium se zaměřením na živé jazyky – krátký název z dat 2026 a popis zaměření z dat 2025 se týkají jednoho oboru.",
+          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
+        },
+        {
+          "url": "https://www.kamdoskoly.cz/skola/gymnazium-gymnazium-christiana-dopplera-600005518.html",
+          "title": "Gymnázium Christiana Dopplera | kamdoskoly.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Kontinuita školy pod REDIZO 600005518 na adrese Zborovská 621/45; jazykový osmiletý obor (zaměření na živé jazyky, 30 míst) doložen průběžně pro roky 2024 i 2025 z otevřených dat CERMAT.",
+          "applicable_period": "2024–2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

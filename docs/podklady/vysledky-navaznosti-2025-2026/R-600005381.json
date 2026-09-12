@@ -1,0 +1,139 @@
+{
+  "task_id": "R-600005381",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "findings": [
+    {
+      "issue_ids": ["Q0008", "Q0256"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech CERMAT za rok 2025 je u školy Akademie řemesel Praha - SŠ technická (REDIZO 600005381, Zelený pruh 1294, Praha) nepřiřazená nabídka oboru Autotronik (kód KKOV 39-41-L/01, čtyřleté denní studium) se zaměřením zapsaným jako „23-68-H/01 Mechanik opravář motorových vozidel“.",
+        "V datech za rok 2026 je u stejné školy nepřiřazená nabídka téhož oboru Autotronik (39-41-L/01) se zaměřením zapsaným obráceně: „Mechanik opravář motorových vozidel 23-68-H/01“.",
+        "Oba záznamy se shodují ve všech podstatných údajích – REDIZO, IZO (izo_007810041), název školy, adresa, kód a název oboru, kód a název zaměření, délka studia (4 roky), denní forma, český jazyk. Jediný rozdíl je pořadí kódu a názvu zaměření v textovém poli „ZAMĚŘENÍ OBORU“ (rok 2025: kód před názvem; rok 2026: kód za názvem). Stejná změna formátu zápisu je vidět i u ostatních oborů této školy, které byly přiřazeny (např. Mechanik seřizovač, Mechanik instalatérských a elektrotechnických zařízení), takže jde o celoplošnou změnu formátu exportu, nikoli o změnu nabídky školy.",
+        "Autotronik je čtyřletý maturitní obor, ve kterém žáci mohou získat i výuční list; „zaměření“ v datech odpovídá příslušnému učebnímu oboru (zde Mechanik opravář motorových vozidel 23-68-H/01). Nezávislé katalogy (Atlas Školství, Stredniskoly.cz) uvádějí obor Autotronik 39-41-L/01 u této školy i pro školní rok 2026/27, a to právě se zaměřeními Mechanik opravář motorových vozidel a Autoelektrikář; stránka školy na zelenypruh.cz má pro obor Autotronik samostatnou stránku a potvrzuje totožnost školy (IČ 148 915 22, IZO 600005381, Zelený pruh 1294/52, Praha 4)."
+      ],
+      "conclusion": "Nepřiřazená nabídka 2025 (Autotronik, zaměření Mechanik opravář motorových vozidel 23-68-H/01) a nepřiřazená nabídka 2026 jsou jedna a táž nabídka téhož oboru na téže škole. Rozpor vznikl pouze změnou formátu textového zápisu zaměření mezi ročníky dat CERMAT (prohození pořadí kódu a názvu), nikoli skutečnou změnou nabídky. Návaznost 2025→2026 lze schválit.",
+      "alternative_explanations": [
+        "Teoreticky by škola mohla mezi roky obor zrušit a znovu otevřít se stejnými kódy; tomu ale odporuje souvislá evidence oboru v nezávislých katalogech pro rok 2026/27 i shoda všech ostatních údajů."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["2025/ID_SOF fb75a4df-3490-4788-bb44-820d0c3c1920 (Autotronik 39-41-L/01, zaměření Mechanik opravář motorových vozidel 23-68-H/01)"],
+        "to": ["2026/ID_SOF d7613ae5-c160-4daf-bf21-bb7259ef138b (Autotronik 39-41-L/01, zaměření Mechanik opravář motorových vozidel 23-68-H/01)"]
+      },
+      "addresses": [
+        {
+          "text": "Zelený pruh 1294/52, 147 00 Praha 4",
+          "role": "sídlo",
+          "izo": "izo_007810041",
+          "valid_period": "2025–2026 (i aktuálně dle webu školy)",
+          "source_url": "https://www.zelenypruh.cz/obory/autotronik/"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600005381",
+          "title": "Přiložená data fronty – nabídky CERMAT 2025 a 2026 pro REDIZO 600005381",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Záznamy Q0008 (2025) a Q0256 (2026) se shodují ve všech údajích včetně kódů KKOV 39-41-L/01 a 23-68-H/01; liší se jen pořadím kódu a názvu v poli ZAMĚŘENÍ OBORU. Shodnou změnu formátu vykazují i přiřazené obory téže školy.",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://www.atlasskolstvi.cz/ss68-akademie-remesel-praha--stredni-skola-technicka",
+          "title": "Akademie řemesel Praha – Střední škola technická | AtlasŠkolství.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Katalog uvádí obor Autotronik 39-41-L/01 (4 roky, maturita + výuční list) se zaměřeními 23-68-H/01 Mechanik opravář motorových vozidel a 26-57-H/01 Autoelektrikář u této školy, s kapacitou pro 2026/27 a statistikou přihlášek/přijatých za 2025/26. Pozn.: přímé načtení stránky vrátilo pouze cookie lištu; obsah ověřen z indexovaného znění stránky a oborových detailů.",
+          "applicable_period": "školní rok 2025/26 a 2026/27"
+        },
+        {
+          "url": "https://www.zelenypruh.cz/obory/autotronik/",
+          "title": "Autotronik – Akademie řemesel Praha",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Web školy má samostatnou stránku oboru Autotronik a potvrzuje totožnost školy: Akademie řemesel Praha - Střední škola technická, Zelený pruh 1294/52, Praha 4, IČ 148 915 22, IZO 600005381.",
+          "applicable_period": "aktuální nabídka školy (2026)"
+        },
+        {
+          "url": "https://www.prijimackynaskolu.cz/skola/600005381-akademie-remesel-praha-ss-technicka-zeleny-pruh-autotronik-23-68-h01-mechanik-opravar-motorovych",
+          "title": "Akademie řemesel Praha - SŠ technická, Zelený pruh – Autotronik - 23-68-H/01 Mechanik opravář motorových vozidel | Přijímačky na střední školy",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stránka dokládá, že v přijímacím řízení 2025 existovala nabídka Autotronik se zaměřením 23-68-H/01 Mechanik opravář motorových vozidel (čtyřleté studium, 67 přihlášek, kapacita 14 míst).",
+          "applicable_period": "přijímací řízení 2025"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0009", "Q0257"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech CERMAT za rok 2025 je u školy Akademie řemesel Praha - SŠ technická (REDIZO 600005381, Zelený pruh 1294, Praha) nepřiřazená nabídka oboru Autotronik (kód KKOV 39-41-L/01, čtyřleté denní studium) se zaměřením zapsaným jako „26-57-H/01 Autoelektrikář“.",
+        "V datech za rok 2026 je u stejné školy nepřiřazená nabídka téhož oboru Autotronik (39-41-L/01) se zaměřením zapsaným obráceně: „Autoelektrikář 26-57-H/01“.",
+        "Oba záznamy se shodují ve všech podstatných údajích – REDIZO, IZO (izo_007810041), název školy, adresa, kód a název oboru, kód a název zaměření, délka studia (4 roky), denní forma, český jazyk. Jediný rozdíl je pořadí kódu a názvu zaměření v textovém poli „ZAMĚŘENÍ OBORU“, tedy tatáž formátová změna exportu jako u ostatních oborů školy.",
+        "„Zaměření“ Autoelektrikář 26-57-H/01 označuje variantu, v níž žák oboru Autotronik získává výuční list autoelektrikáře. Nezávislé katalogy (Atlas Školství, Stredniskoly.cz) uvádějí obor Autotronik 39-41-L/01 u této školy i pro školní rok 2026/27 právě se zaměřeními Mechanik opravář motorových vozidel a Autoelektrikář."
+      ],
+      "conclusion": "Nepřiřazená nabídka 2025 (Autotronik, zaměření Autoelektrikář 26-57-H/01) a nepřiřazená nabídka 2026 jsou jedna a táž nabídka téhož oboru na téže škole. Rozpor vznikl pouze změnou formátu textového zápisu zaměření mezi ročníky dat CERMAT, nikoli skutečnou změnou nabídky. Návaznost 2025→2026 lze schválit.",
+      "alternative_explanations": [
+        "Teoreticky by škola mohla mezi roky obor zrušit a znovu otevřít se stejnými kódy; tomu ale odporuje souvislá evidence oboru v nezávislých katalogech pro rok 2026/27 i shoda všech ostatních údajů."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["2025/ID_SOF cfd05523-59cf-449f-96df-a23416a0dcb7 (Autotronik 39-41-L/01, zaměření Autoelektrikář 26-57-H/01)"],
+        "to": ["2026/ID_SOF f5c2f295-eb6c-409c-bde2-e7a4761e67aa (Autotronik 39-41-L/01, zaměření Autoelektrikář 26-57-H/01)"]
+      },
+      "addresses": [
+        {
+          "text": "Zelený pruh 1294/52, 147 00 Praha 4",
+          "role": "sídlo",
+          "izo": "izo_007810041",
+          "valid_period": "2025–2026 (i aktuálně dle webu školy)",
+          "source_url": "https://www.zelenypruh.cz/obory/autotronik/"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600005381",
+          "title": "Přiložená data fronty – nabídky CERMAT 2025 a 2026 pro REDIZO 600005381",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Záznamy Q0009 (2025) a Q0257 (2026) se shodují ve všech údajích včetně kódů KKOV 39-41-L/01 a 26-57-H/01; liší se jen pořadím kódu a názvu v poli ZAMĚŘENÍ OBORU.",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://www.atlasskolstvi.cz/ss68-akademie-remesel-praha--stredni-skola-technicka",
+          "title": "Akademie řemesel Praha – Střední škola technická | AtlasŠkolství.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Katalog uvádí obor Autotronik 39-41-L/01 (4 roky, maturita + výuční list) se zaměřeními 23-68-H/01 Mechanik opravář motorových vozidel a 26-57-H/01 Autoelektrikář u této školy pro 2026/27. Pozn.: přímé načtení stránky vrátilo pouze cookie lištu; obsah ověřen z indexovaného znění stránky a oborových detailů.",
+          "applicable_period": "školní rok 2025/26 a 2026/27"
+        },
+        {
+          "url": "https://www.zelenypruh.cz/obory/autotronik/",
+          "title": "Autotronik – Akademie řemesel Praha",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Web školy má samostatnou stránku oboru Autotronik a potvrzuje totožnost školy: Akademie řemesel Praha - Střední škola technická, Zelený pruh 1294/52, Praha 4, IČ 148 915 22, IZO 600005381.",
+          "applicable_period": "aktuální nabídka školy (2026)"
+        },
+        {
+          "url": "https://www.stredniskoly.cz/skola/600005381.html",
+          "title": "Akademie řemesel Praha - Střední škola technická – Stredniskoly.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Katalog pro REDIZO 600005381 uvádí pro školní rok 2026/27 mimo jiné obor Autotronik 39-41-L/01 (denní, 4 roky, kapacita 30) a samostatné učební obory Autoelektrikář 26-57-H/01 a Mechanik opravář motorových vozidel 23-68-H/01 – tedy kontinuitu autooborů školy.",
+          "applicable_period": "školní rok 2026/27"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

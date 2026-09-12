@@ -1,0 +1,112 @@
+{
+  "task_id": "R-600005666",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "findings": [
+    {
+      "issue_ids": ["Q0340"],
+      "status": "potvrzeno",
+      "observations": [
+        "Jde o soukromou školu Gymnázium, střední odborná škola a Pražská taneční konzervatoř, s.r.o., REDIZO 600005666, se sídlem Laudova 1024/10, Praha 6 – Řepy. Identitu potvrzuje stránka školy 'Kdo jsme', která uvádí shodné REDIZO i IZO 110007701.",
+        "V datech CERMAT z 1. kola JPZ za rok 2025 škola nabízela tři denní obory: Obchodní akademii (63-41-M/02, bez uvedeného zaměření), Hotelnictví (65-42-M/01) a Kosmetické služby (69-41-L/01).",
+        "V roce 2026 jsou v datech čtyři nabídky: Obchodní akademie se zaměřením 'obchodní akademie', Obchodní akademie se zaměřením 'sportovní management' (obě pod týmž kódem KKOV 63-41-M/02, každá s vlastním ID nabídky), Hotelnictví a Kosmetické služby. Nepřiřazená nabídka z otázky Q0340 je právě Obchodní akademie – sportovní management.",
+        "Archivní snímek webu školy z 16. 5. 2025 (Wayback Machine) ukazuje, že pro školní rok 2025/2026 škola zveřejnila kritéria přijímacího řízení jen pro Obchodní akademii, Hotelnictví a Kosmetické služby; obor Sportovní management tehdy v nabídce ani v menu studijních oborů neexistoval.",
+        "Archivní snímek z 14. 12. 2025 již obsahuje Sportovní management v menu studijních oborů (příprava nabídky pro rok 2026/2027), zatímco obsah stránky přijímacího řízení ještě popisuje kolo 2025/2026.",
+        "Aktuální stránka přijímacího řízení školy uvádí pro školní rok 2026/2027 samostatná kritéria pro čtyři obory včetně 'Sportovní management 2026/2027'. Stránka oboru Sportovní management uvádí kód KKOV 63-41-M/02 a čtyřleté denní studium zakončené maturitou, tedy shodné parametry s nabídkou v datech 2026.",
+        "Na agregátoru SeznamŠkol.eu je u oboru Obchodní akademie této školy citováno vyjádření školy: 'V roce 2026/27 spouštíme nový projekt, Obchodní akademii se zaměřením na Sportovní management.'",
+        "Stránka oboru Sportovní management nemá ve Wayback Machine žádný archivní snímek (CDX dotaz vrátil prázdný výsledek), což je konzistentní s tím, že stránka vznikla až v souvislosti s novou nabídkou pro rok 2026/2027."
+      ],
+      "conclusion": "Nabídka Obchodní akademie – sportovní management (KKOV 63-41-M/02) je nové zaměření oboru, které škola otevřela pro školní rok 2026/2027 vedle pokračující obecné Obchodní akademie. Nejde o přejmenování ani o rozdělení stávající nabídky: obecná Obchodní akademie pokračuje v roce 2026 dál jako samostatná nabídka a škola samotná nové zaměření označuje za 'nový projekt' spouštěný v roce 2026/27. Návaznost: Obchodní akademie 2025 → Obchodní akademie (zaměření obchodní akademie) 2026 jako pokračování; Obchodní akademie – sportovní management 2026 je nová nabídka bez předchůdce v roce 2025.",
+      "alternative_explanations": [
+        "Teoreticky by zaměření sportovní management mohlo být jen nově odlišeným zápisem dosavadní interní specializace Obchodní akademie; tomu ale odporuje absence jakékoli zmínky o sportovním managementu na webu školy v květnu 2025 i výslovné označení 'nový projekt' pro rok 2026/27.",
+        "Nedohledali jsme datovaný dokument MŠMT o rozšíření zápisu oboru v rejstříku škol, takže přesné datum zápisu zaměření do rejstříku zůstává nezjištěné; pro otázku návaznosti nabídek to ale není rozhodující."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["2026/63-41-M/02 Obchodní akademie – sportovní management (ID_SOF e0d54f45-d212-46e8-87b1-caa75079c3e0)"]
+      },
+      "addresses": [
+        {
+          "text": "Laudova 1024/10, 163 00 Praha 6 – Řepy",
+          "role": "sídlo",
+          "izo": "izo_110007701",
+          "valid_period": "2025–2026 (beze změny)",
+          "source_url": "https://sos.ptksos.cz/o-nas/kdo-jsme"
+        },
+        {
+          "text": "Laudova 1024/10, 163 00 Praha 6 – Řepy",
+          "role": "místo výuky",
+          "izo": "izo_110007701",
+          "valid_period": "2025–2026",
+          "source_url": "fronta-dohledavani-2025-2026.json, úkol R-600005666"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600005666",
+          "title": "Přiložená data fronty (context_offers 2025 a 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Skladba nabídek školy v obou letech: v roce 2025 tři obory bez sportovního managementu, v roce 2026 čtyři nabídky včetně OA – sportovní management vedle pokračující obecné OA.",
+          "applicable_period": "přijímací řízení 2025 a 2026 (1. kolo JPZ, denní studium)"
+        },
+        {
+          "url": "https://web.archive.org/web/20250516133902/https://sos.ptksos.cz/uchazecum/prijimaci-rizeni_1",
+          "title": "Přijímací řízení – archivní snímek webu školy z 16. 5. 2025",
+          "published_at": "2025-05-16",
+          "checked_at": "2026-09-12",
+          "supports": "Pro školní rok 2025/2026 škola zveřejnila kritéria jen pro Obchodní akademii, Hotelnictví a Kosmetické služby; Sportovní management v nabídce oborů nebyl.",
+          "applicable_period": "přijímací řízení pro školní rok 2025/2026"
+        },
+        {
+          "url": "https://web.archive.org/web/20251214005925/https://sos.ptksos.cz/uchazecum/prijimaci-rizeni_1",
+          "title": "Přijímací řízení – archivní snímek webu školy ze 14. 12. 2025",
+          "published_at": "2025-12-14",
+          "checked_at": "2026-09-12",
+          "supports": "Sportovní management se objevil v menu studijních oborů mezi květnem a prosincem 2025, tedy v přípravě nabídky pro rok 2026/2027.",
+          "applicable_period": "příprava přijímacího řízení pro školní rok 2026/2027"
+        },
+        {
+          "url": "https://sos.ptksos.cz/uchazecum/prijimaci-rizeni_1",
+          "title": "Přijímací řízení – aktuální stránka školy",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Pro školní rok 2026/2027 existují samostatná kritéria přijímacího řízení pro Obchodní akademii i Sportovní management (vedle Hotelnictví a Kosmetických služeb).",
+          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
+        },
+        {
+          "url": "https://sos.ptksos.cz/studijni-obory/sportovni-management",
+          "title": "Sportovní management – stránka oboru na webu školy",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor Sportovní management má kód KKOV 63-41-M/02, čtyřleté denní studium zakončené maturitou – shoda s parametry nabídky v datech 2026.",
+          "applicable_period": "školní rok 2026/2027"
+        },
+        {
+          "url": "https://www.seznamskol.eu/obor-detail/9860-obchodni-akademie/",
+          "title": "Obor Obchodní akademie – SeznamŠkol.eu",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Vyjádření školy citované u oboru: 'V roce 2026/27 spouštíme nový projekt, Obchodní akademii se zaměřením na Sportovní management.'",
+          "applicable_period": "spuštění zaměření v školním roce 2026/2027"
+        },
+        {
+          "url": "https://sos.ptksos.cz/o-nas/kdo-jsme",
+          "title": "Kdo jsme? – identifikační údaje školy",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Shoda REDIZO 600005666, IZO 110007701 a sídla Laudova 1024/10, Praha 6 – Řepy s údaji v datech fronty; potvrzuje kontinuitu právnické osoby.",
+          "applicable_period": "aktuální stav, konzistentní s lety 2025–2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přesné datum zápisu zaměření sportovní management do rejstříku škol MŠMT nebylo dohledáno (rejstřík neumožnil strojové ověření); pro návaznost nabídek to není podstatné.",
+        "Zda má zaměření sportovní management samostatný plánovaný počet přijímaných žáků oddělený od obecné Obchodní akademie, lze dořešit z PDF kritérií 2026/2027 na webu školy."
+      ]
+    }
+  ]
+}
