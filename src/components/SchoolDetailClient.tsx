@@ -651,109 +651,98 @@ const delkaLabels: Record<number, { label: string; sublabel: string; color: stri
 };
 
 export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
+  // Jediný obor přepínač nepotřebuje – jeho data jsou rovnou na stránce.
   if (programs.length <= 1) return null;
 
-  const hasZamereni = programs.some(p => p.hasZamereni);
-
-  // Seskupit podle délky studia
+  // Uvnitř délky studia řadíme podle názvu, skupiny od nejkratší.
   const groups = new Map<number, typeof programs>();
   for (const p of programs) {
     if (!groups.has(p.delka_studia)) groups.set(p.delka_studia, []);
     groups.get(p.delka_studia)!.push(p);
   }
-  // Seřadit skupiny (kratší první), uvnitř skupiny podle min. bodů desc
-  const sortedGroups = [...groups.entries()]
+  const sortedPrograms = [...groups.entries()]
     .sort(([a], [b]) => a - b)
-    .map(([delka, progs]) => ({
-      delka,
-      programs: [...progs].sort((a, b) => a.obor.localeCompare(b.obor, 'cs')),
-    }));
+    .flatMap(([, progs]) => [...progs].sort((a, b) => a.obor.localeCompare(b.obor, 'cs')));
 
-  const hasMixedLengths = sortedGroups.length > 1;
+  const delky = [...groups.keys()].sort((a, b) => a - b);
+  const hasMixedLengths = delky.length > 1;
   const totalKapacita = programs.reduce((sum, p) => sum + (p.kapacita || 0), 0);
 
   return (
     <div className="bg-slate-50 border-b border-slate-200">
-      <div className="max-w-6xl mx-auto px-4 py-4">
-        {/* Hlavička */}
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="text-sm font-semibold text-slate-900 flex items-center">
-            {hasZamereni ? 'Zaměření' : 'Obory'} školy
-            <span className="ml-1.5 text-slate-400 font-normal">
-              {programs.length} {programs.length === 1 ? 'obor' : programs.length < 5 ? 'obory' : 'oborů'}
-              {totalKapacita > 0 && ` · ${totalKapacita} míst celkem`}
-            </span>
+      <div className="max-w-6xl mx-auto px-4 py-5">
+        <h2 className="text-xl font-bold text-slate-900">Studijní obory školy</h2>
+        <p className="mt-0.5 text-sm text-slate-500">
+          {programs.length === 1 ? '1 obor' : `${programs.length} obory`}
+          {totalKapacita > 0 && ` · ${totalKapacita} míst celkem`}
+          {' · vyberte obor a uvidíte jeho data'}
+        </p>
 
-          </h2>
-        </div>
+        {/* Vysvětlivka délek studia místo nadpisů nad každou skupinou */}
+        {hasMixedLengths && (
+          <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-500">
+            {delky.map(d => {
+              const info = delkaLabels[d] || { label: `${d}leté`, sublabel: '', color: 'bg-slate-500' };
+              return (
+                <span key={d} className="inline-flex items-center gap-1.5">
+                  <span className={`inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold text-white ${info.color}`}>
+                    {info.label}
+                  </span>
+                  {info.sublabel}
+                </span>
+              );
+            })}
+          </p>
+        )}
 
-        {/* Skupiny podle délky studia */}
-        <div className="space-y-3">
-          {sortedGroups.map(({ delka, programs: groupPrograms }) => {
-            const info = delkaLabels[delka] || { label: `${delka}leté`, sublabel: '', color: 'bg-slate-500' };
+        {/* Záložky oborů */}
+        <nav aria-label="Studijní obory školy" className="mt-3 flex flex-wrap gap-2">
+          {sortedPrograms.map(program => {
+            const info = delkaLabels[program.delka_studia]
+              || { label: `${program.delka_studia}leté`, sublabel: '', color: 'bg-slate-500' };
+            const isActive = program.id === currentProgramId;
             return (
-              <div key={delka}>
-                {/* Hlavička skupiny - jen pokud jsou smíšené délky */}
-                {hasMixedLengths && (
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <span className={`inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold text-white ${info.color}`}>
-                      {info.label}
-                    </span>
-                    <span className="text-xs text-slate-400">{info.sublabel}</span>
-                  </div>
+              <Link
+                key={program.id}
+                href={`/skola/${program.slug}`}
+                aria-current={isActive ? 'page' : undefined}
+                className={`
+                  group inline-flex max-w-full items-center gap-2 rounded-lg border px-3 py-2
+                  text-sm transition-colors focus-visible:outline-none focus-visible:ring-2
+                  focus-visible:ring-blue-500 focus-visible:ring-offset-1
+                  ${isActive
+                    ? 'border-blue-600 bg-blue-600 text-white shadow-sm'
+                    : 'border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:bg-blue-50'
+                  }
+                `}
+              >
+                <span className={`inline-flex flex-shrink-0 items-center rounded px-1.5 py-0.5 text-[10px] font-bold ${
+                  isActive ? 'bg-white/20 text-white' : `${info.color} text-white`
+                }`}>
+                  {info.label}
+                </span>
+                <span className="min-w-0 truncate font-medium">{program.obor}</span>
+                {program.is_new_2026 && (
+                  <span className={`flex-shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold ${
+                    isActive ? 'bg-white/20 text-white' : 'bg-amber-100 text-amber-700'
+                  }`}>
+                    nově 2026
+                  </span>
                 )}
-
-                {/* Řádky oborů */}
-                <div className="space-y-1">
-                  {groupPrograms.map(program => {
-                    const isActive = program.id === currentProgramId;
-                    return (
-                      <Link
-                        key={program.id}
-                        href={`/skola/${program.slug}`}
-                        className={`
-                          group flex items-center gap-3 px-3 py-2 rounded-lg transition-all
-                          ${isActive
-                            ? 'bg-blue-600 text-white shadow-sm'
-                            : 'bg-white border border-slate-200 text-slate-700 hover:border-blue-300 hover:bg-blue-50'
-                          }
-                        `}
-                      >
-                        {/* Název + délka studia */}
-                        <span className={`flex-1 min-w-0 text-sm font-medium truncate ${isActive ? 'text-white' : ''}`}>
-                          {program.obor}
-                          <span className={`ml-1.5 inline-flex px-1.5 py-0 rounded text-[10px] font-semibold ${
-                            isActive ? 'bg-white/20 text-white' : `${info.color} text-white`
-                          }`}>
-                            {program.delka_studia}leté
-                          </span>
-                          {program.is_new_2026 && (
-                            <span className={`ml-1 inline-flex px-1.5 py-0 rounded text-[10px] font-semibold ${
-                              isActive ? 'bg-white/20 text-white' : 'bg-amber-100 text-amber-700'
-                            }`}>
-                              V importu 2026
-                            </span>
-                          )}
-                          {program.prev_zamereni_name && (
-                            <span className={`ml-1.5 text-xs font-normal ${isActive ? 'text-blue-200' : 'text-slate-400'}`}>
-                              (dříve {program.prev_zamereni_name})
-                            </span>
-                          )}
-                        </span>
-
-                        {/* Metriky */}
-                        <span className={`flex-shrink-0 text-xs tabular-nums ${isActive ? 'text-blue-100' : 'text-slate-500'}`}>
-                          {program.kapacita ? `${program.kapacita} míst` : ''}
-                        </span>
-
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
+                {program.prev_zamereni_name && (
+                  <span className={`flex-shrink-0 text-xs font-normal ${isActive ? 'text-blue-200' : 'text-slate-400'}`}>
+                    dříve {program.prev_zamereni_name}
+                  </span>
+                )}
+                {program.kapacita ? (
+                  <span className={`flex-shrink-0 text-xs tabular-nums ${isActive ? 'text-blue-100' : 'text-slate-500'}`}>
+                    {program.kapacita} míst
+                  </span>
+                ) : null}
+              </Link>
             );
           })}
-        </div>
+        </nav>
       </div>
     </div>
   );
