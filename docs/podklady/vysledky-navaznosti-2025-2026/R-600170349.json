@@ -1,125 +1,148 @@
 {
-  "task_id": "R-600170349",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Subjekt Střední odborná škola strojní a elektrotechnická, Velešín, U Hřiště 527 (REDIZO 600170349, IČ 00583855, IZO 000583855) figuruje ve všech čtyřech snímcích beze změny sídla (U Hřiště 527, 382 32 Velešín) i beze změny zřizovatele (Jihočeský kraj). Obor 78-42-M/01 Technické lyceum je registrován ve všech čtyřech snímcích. Obor 78-42-M/08 Lyceum (režim pokusného ověřování, zaměření Ekonomika a marketing) NENÍ evidován v žádném ze čtyř snímků (2025-03-31 až 2026-06-30) – jde o odstup v zápisu do rejstříku, konzistentní s tím, že škola obor podle vlastního webu otevírá až od 1. 9. 2026 a jako celostátní pokusné ověřování MŠMT se do registrů promítá s prodlevou."
-  },
-  "findings": [
+ "task_id": "R-600170349",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt Střední odborná škola strojní a elektrotechnická, Velešín, U Hřiště 527 (REDIZO 600170349, IČ 00583855, IZO 000583855) figuruje ve všech čtyřech snímcích beze změny sídla (U Hřiště 527, 382 32 Velešín) i beze změny zřizovatele (Jihočeský kraj). Obor 78-42-M/01 Technické lyceum je registrován ve všech čtyřech snímcích. Obor 78-42-M/08 Lyceum (režim pokusného ověřování, zaměření Ekonomika a marketing) NENÍ evidován v žádném ze čtyř snímků (2025-03-31 až 2026-06-30) – jde o odstup v zápisu do rejstříku, konzistentní s tím, že škola obor podle vlastního webu otevírá až od 1. 9. 2026 a jako celostátní pokusné ověřování MŠMT se do registrů promítá s prodlevou."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0239"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/08 Lyceum (režim pokusného ověřování), zaměření „Ekonomika a marketing“, 4 roky, denní; v roce 2025 tato nabídka neexistovala.",
+    "Škola v roce 2025 i 2026 souběžně nabízí i obor 78-42-M/01 Technické lyceum se zaměřením „Kyberbezpečnost a 3D technologie“ – jde o samostatný, dlouhodobě vyučovaný obor s vlastním kódem, evidovaný v rejstříku MŠMT ve všech čtyřech snímcích; nejde o přejmenování ani rozšíření tohoto oboru.",
+    "Oficiální web školy (sosvel.cz) uvádí obor „Lyceum – Ekonomika a marketing“ (kód 78-42-M/08, interní zkratka „EL“) jako samostatnou položku v maturitních oborech, odlišnou od „Technické lyceum – Kyberbezpečnost a 3D technologie“ (78-42-M/01).",
+    "Stránka https://www.sosvel.cz/maturitni-obory/lyceum/ uvádí doslovně: „Obor otevíráme od 1.9.2026“, čtyřleté denní studium zakončené maturitou, vlastní školní vzdělávací program „SVP_EL_2026.pdf“ nazvaný Ekonomika a marketing.",
+    "Stránka přijímacího řízení https://www.sosvel.cz/prijimaci-rizeni/ uvádí pro školní rok 2026/2027 tabulku maturitních oborů, kde jsou 78-42-M/01 Technické lyceum – Kyberbezpečnost a 3D technologie a 78-42-M/08 Lyceum – Ekonomika a marketing vedeny jako dvě oddělené řádky, každý s kapacitou 30 žáků, bez požadavku lékařského potvrzení a s podmínkou min. 20 bodů z JPZ.",
+    "Na webu školy není u tohoto oboru výslovně uvedeno slovní spojení „pokusné ověřování“ ani odkaz na konkrétní rozhodnutí/dodatek MŠMT; označení režimu pochází ze zadání úkolu a z toho, že jde o celostátní pokusné ověřování vyhlášené MŠMT v listopadu 2024, do něhož se školy zapojují postupně dodatky k rozhodnutí o zápisu do rejstříku.",
+    "V aktualitách školy (https://www.sosvel.cz/aktuality/) nebyl dohledán samostatný článek oznamující zavedení tohoto oboru; informace je doložena pouze samostatnou obornou stránkou a tabulkou přijímacího řízení.",
+    "Regionální zpravodajství (Českobudějovický/Českokrumlovský deník) k tomuto konkrétnímu oboru a školnímu roku 2026/27 nebylo dohledáno; nalezený článek téhož deníku z 11. 9. 2023 se týká jiného tématu (nabídka IT oboru) a nevztahuje se k oboru Lyceum – Ekonomika a marketing.",
+    "Pokusné ověřování oboru 78-42-M/08 Lyceum vyhlásilo MŠMT dne 18. 10. 2024 pod čj. MSMT-16031/2024-3; dodatek č. 1 má čj. MSMT-25860/2025-1 ze 4. 11. 2025 a dodatek č. 2 čj. MSMT-2941/2026-2 z 27. 2. 2026. Aktualizovaný seznam zapojených škol platný k 15. 12. 2025 uvádí tuto školu (REDIZO 600170349) s účinností zápisu oboru do školského rejstříku od 1.9.2026. Zapojení školy do pokusného ověřování je tím doloženo přímo dokumentem MŠMT."
+   ],
+   "conclusion": "Obor 78-42-M/08 Lyceum (zaměření Ekonomika a marketing) je nový, samostatný obor, který škola podle vlastního webu otevírá od 1. 9. 2026 (přijímací řízení do 1. ročníku pro školní rok 2026/2027). Nemá žádného předchůdce v nabídce školy z roku 2025 a nesouvisí s dlouhodobě nabízeným oborem 78-42-M/01 Technické lyceum (zaměření Kyberbezpečnost a 3D technologie), který běží nezávisle a nepřerušeně dál. Nepřítomnost oboru 78-42-M/08 ve všech čtyřech snímcích rejstříku MŠMT je vysvětlitelná odstupem zápisu u celostátního pokusného ověřování, nikoli rozporem s existencí nabídky – škola sama obor prezentuje jako reálně otevíraný a CERMAT jej eviduje v 1. kole JPZ 2026.",
+   "alternative_explanations": [
+    "Formální zápis oboru 78-42-M/08 do rejstříku MŠMT se u REDIZO 600170349 mohl teoreticky ještě nepromítnout ani po 30. 6. 2026 z důvodu administrativní prodlevy dodatku k rozhodnutí o zařazení do pokusného ověřování; to však otevření oboru od září 2026 podle webu školy nevyvrací.",
+    "Nelze zcela vyloučit, že obor byl nakonec pro 2026/27 fakticky neotevřen (např. pro nedostatek přihlášek) přesto, že byl inzerován a nabízen v CERMAT datech i na webu školy – přímý doklad o skutečném zahájení výuky od září 2026 (např. potvrzení z výroční zprávy) nebyl dohledán."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "78-42-M/08 (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0239"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/08 Lyceum (režim pokusného ověřování), zaměření „Ekonomika a marketing“, 4 roky, denní; v roce 2025 tato nabídka neexistovala.",
-        "Škola v roce 2025 i 2026 souběžně nabízí i obor 78-42-M/01 Technické lyceum se zaměřením „Kyberbezpečnost a 3D technologie“ – jde o samostatný, dlouhodobě vyučovaný obor s vlastním kódem, evidovaný v rejstříku MŠMT ve všech čtyřech snímcích; nejde o přejmenování ani rozšíření tohoto oboru.",
-        "Oficiální web školy (sosvel.cz) uvádí obor „Lyceum – Ekonomika a marketing“ (kód 78-42-M/08, interní zkratka „EL“) jako samostatnou položku v maturitních oborech, odlišnou od „Technické lyceum – Kyberbezpečnost a 3D technologie“ (78-42-M/01).",
-        "Stránka https://www.sosvel.cz/maturitni-obory/lyceum/ uvádí doslovně: „Obor otevíráme od 1.9.2026“, čtyřleté denní studium zakončené maturitou, vlastní školní vzdělávací program „SVP_EL_2026.pdf“ nazvaný Ekonomika a marketing.",
-        "Stránka přijímacího řízení https://www.sosvel.cz/prijimaci-rizeni/ uvádí pro školní rok 2026/2027 tabulku maturitních oborů, kde jsou 78-42-M/01 Technické lyceum – Kyberbezpečnost a 3D technologie a 78-42-M/08 Lyceum – Ekonomika a marketing vedeny jako dvě oddělené řádky, každý s kapacitou 30 žáků, bez požadavku lékařského potvrzení a s podmínkou min. 20 bodů z JPZ.",
-        "Na webu školy není u tohoto oboru výslovně uvedeno slovní spojení „pokusné ověřování“ ani odkaz na konkrétní rozhodnutí/dodatek MŠMT; označení režimu pochází ze zadání úkolu a z toho, že jde o celostátní pokusné ověřování vyhlášené MŠMT v listopadu 2024, do něhož se školy zapojují postupně dodatky k rozhodnutí o zápisu do rejstříku.",
-        "V aktualitách školy (https://www.sosvel.cz/aktuality/) nebyl dohledán samostatný článek oznamující zavedení tohoto oboru; informace je doložena pouze samostatnou obornou stránkou a tabulkou přijímacího řízení.",
-        "Regionální zpravodajství (Českobudějovický/Českokrumlovský deník) k tomuto konkrétnímu oboru a školnímu roku 2026/27 nebylo dohledáno; nalezený článek téhož deníku z 11. 9. 2023 se týká jiného tématu (nabídka IT oboru) a nevztahuje se k oboru Lyceum – Ekonomika a marketing."
-      ],
-      "conclusion": "Obor 78-42-M/08 Lyceum (zaměření Ekonomika a marketing) je nový, samostatný obor, který škola podle vlastního webu otevírá od 1. 9. 2026 (přijímací řízení do 1. ročníku pro školní rok 2026/2027). Nemá žádného předchůdce v nabídce školy z roku 2025 a nesouvisí s dlouhodobě nabízeným oborem 78-42-M/01 Technické lyceum (zaměření Kyberbezpečnost a 3D technologie), který běží nezávisle a nepřerušeně dál. Nepřítomnost oboru 78-42-M/08 ve všech čtyřech snímcích rejstříku MŠMT je vysvětlitelná odstupem zápisu u celostátního pokusného ověřování, nikoli rozporem s existencí nabídky – škola sama obor prezentuje jako reálně otevíraný a CERMAT jej eviduje v 1. kole JPZ 2026.",
-      "alternative_explanations": [
-        "Formální zápis oboru 78-42-M/08 do rejstříku MŠMT se u REDIZO 600170349 mohl teoreticky ještě nepromítnout ani po 30. 6. 2026 z důvodu administrativní prodlevy dodatku k rozhodnutí o zařazení do pokusného ověřování; to však otevření oboru od září 2026 podle webu školy nevyvrací.",
-        "Nelze zcela vyloučit, že obor byl nakonec pro 2026/27 fakticky neotevřen (např. pro nedostatek přihlášek) přesto, že byl inzerován a nabízen v CERMAT datech i na webu školy – přímý doklad o skutečném zahájení výuky od září 2026 (např. potvrzení z výroční zprávy) nebyl dohledán."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["78-42-M/08 (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "U Hřiště 527, 382 32 Velešín",
-          "role": "sídlo",
-          "izo": "600170349",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "U Hřiště 527, 382 32 Velešín",
-          "role": "místo výuky",
-          "izo": "000583855",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.sosvel.cz/",
-          "title": "SOŠ Strojní a Elektrotechnická Velešín – úvodní stránka",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola uvádí mezi maturitními obory jak „Lyceum – Ekonomika a marketing (78-42-M/08)“, tak samostatně „Technické lyceum – Kyberbezpečnost a 3D technologie“.",
-          "applicable_period": "aktuální nabídka oborů, zjištěno 2026-09-12"
-        },
-        {
-          "url": "https://www.sosvel.cz/maturitni-obory/lyceum/",
-          "title": "Obor Lyceum – Ekonomika a marketing – SOŠ SE Velešín",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Doslovný text „Obor otevíráme od 1.9.2026“; kód 78-42-M/08, zkratka EL, čtyřleté denní studium s maturitou, vlastní ŠVP SVP_EL_2026.pdf; bez zmínky o vztahu k Technickému lyceu.",
-          "applicable_period": "otevření oboru od školního roku 2026/2027"
-        },
-        {
-          "url": "https://www.sosvel.cz/prijimaci-rizeni/",
-          "title": "Přijímací řízení 2026/2027 – SOŠ SE Velešín",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Tabulka maturitních oborů pro 2026/2027 vede 78-42-M/01 Technické lyceum a 78-42-M/08 Lyceum – Ekonomika a marketing jako dvě oddělené položky, každou s kapacitou 30 žáků.",
-          "applicable_period": "přijímací řízení 2026/2027"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 30. 6. 2026",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 78-42-M/08 není u IZO 000583855 evidován; obor 78-42-M/01 Technické lyceum evidován je.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 31. 3. 2026",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 78-42-M/08 není u IZO 000583855 evidován ani v tomto snímku.",
-          "applicable_period": "stav rejstříku k 31. 3. 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 31. 12. 2025",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 78-42-M/08 není u IZO 000583855 evidován ani v tomto snímku.",
-          "applicable_period": "stav rejstříku k 31. 12. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 31. 3. 2025",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 78-42-M/08 není u IZO 000583855 evidován; v roce 2025 škola tento obor ani nenabízela v 1. kole JPZ.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600170349",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 78-42-M/08 Lyceum (Ekonomika a marketing) přítomna pouze v 1. kole JPZ 2026 (6 nabídek), v roce 2025 chyběla (5 nabídek); obor 78-42-M/01 Technické lyceum je přítomen v obou letech beze změny.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Nebyl dohledán samostatný dokument MŠMT (rozhodnutí/dodatek k pokusnému ověřování) potvrzující zařazení REDIZO 600170349 do celostátního pokusného ověřování oboru 78-42-M/08 – doloženo pouze nepřímo přes web školy a data CERMAT.",
-        "Nebylo ověřeno, zda výuka v oboru 78-42-M/08 od 1. 9. 2026 skutečně reálně začala (např. potvrzením v následné výroční zprávě), pouze že byla inzerována a nabízena v přijímacím řízení."
-      ]
+     "text": "U Hřiště 527, 382 32 Velešín",
+     "role": "sídlo",
+     "izo": "600170349",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "U Hřiště 527, 382 32 Velešín",
+     "role": "místo výuky",
+     "izo": "000583855",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.sosvel.cz/",
+     "title": "SOŠ Strojní a Elektrotechnická Velešín – úvodní stránka",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola uvádí mezi maturitními obory jak „Lyceum – Ekonomika a marketing (78-42-M/08)“, tak samostatně „Technické lyceum – Kyberbezpečnost a 3D technologie“.",
+     "applicable_period": "aktuální nabídka oborů, zjištěno 2026-09-12"
+    },
+    {
+     "url": "https://www.sosvel.cz/maturitni-obory/lyceum/",
+     "title": "Obor Lyceum – Ekonomika a marketing – SOŠ SE Velešín",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Doslovný text „Obor otevíráme od 1.9.2026“; kód 78-42-M/08, zkratka EL, čtyřleté denní studium s maturitou, vlastní ŠVP SVP_EL_2026.pdf; bez zmínky o vztahu k Technickému lyceu.",
+     "applicable_period": "otevření oboru od školního roku 2026/2027"
+    },
+    {
+     "url": "https://www.sosvel.cz/prijimaci-rizeni/",
+     "title": "Přijímací řízení 2026/2027 – SOŠ SE Velešín",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Tabulka maturitních oborů pro 2026/2027 vede 78-42-M/01 Technické lyceum a 78-42-M/08 Lyceum – Ekonomika a marketing jako dvě oddělené položky, každou s kapacitou 30 žáků.",
+     "applicable_period": "přijímací řízení 2026/2027"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 30. 6. 2026",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/08 není u IZO 000583855 evidován; obor 78-42-M/01 Technické lyceum evidován je.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 31. 3. 2026",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/08 není u IZO 000583855 evidován ani v tomto snímku.",
+     "applicable_period": "stav rejstříku k 31. 3. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 31. 12. 2025",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/08 není u IZO 000583855 evidován ani v tomto snímku.",
+     "applicable_period": "stav rejstříku k 31. 12. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 31. 3. 2025",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/08 není u IZO 000583855 evidován; v roce 2025 škola tento obor ani nenabízela v 1. kole JPZ.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600170349",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 78-42-M/08 Lyceum (Ekonomika a marketing) přítomna pouze v 1. kole JPZ 2026 (6 nabídek), v roce 2025 chyběla (5 nabídek); obor 78-42-M/01 Technické lyceum je přítomen v obou letech beze změny.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://archiv.msmt.gov.cz/file/65737_1_1/",
+     "title": "Aktualizovaný seznam škol zapojených do pokusného ověřování oboru vzdělání 78-42-M/08 Lyceum ve školním roce 2025/2026 (platný k 2025-12-15)",
+     "published_at": "2025-12-15",
+     "checked_at": "2026-09-12",
+     "supports": "Škola s REDIZO 600170349 je v seznamu MŠMT uvedena mezi školami zapojenými do pokusného ověřování oboru 78-42-M/08 Lyceum s účinností zápisu oboru do školského rejstříku od 1.9.2026.",
+     "applicable_period": "stav k 2025-12-15"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Nebylo ověřeno, zda výuka v oboru 78-42-M/08 od 1. 9. 2026 skutečně reálně začala (např. potvrzením v následné výroční zprávě), pouze že byla inzerována a nabízena v přijímacím řízení."
+   ],
+   "resolved_questions": [
+    {
+     "otazka": "Nebyl dohledán samostatný dokument MŠMT (rozhodnutí/dodatek k pokusnému ověřování) potvrzující zařazení REDIZO 600170349 do celostátního pokusného ověřování oboru 78-42-M/08 – doloženo pouze nepřímo přes web školy a data CERMAT.",
+     "uzavreno": "Doloženo seznamem škol MŠMT k pokusnému ověřování oboru Lyceum (archiv.msmt.gov.cz, platný k 15. 12. 2025) a čísly jednacími vyhlášení."
+    }
+   ]
+  }
+ ]
 }

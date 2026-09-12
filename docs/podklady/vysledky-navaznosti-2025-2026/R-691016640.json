@@ -1,91 +1,105 @@
 {
-  "task_id": "R-691016640",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík potvrzuje kontinuitu subjektu Digital Academy - Obchodní akademie, s.r.o. (REDIZO 691016640), sídlo Pod Školou 167, Malín, Kutná Hora, beze změny ve všech čtyřech snímcích. IZO 181134802 „Střední škola“ eviduje ve všech snímcích jediné místo výuky (Pod Školou 167) a jediný obor 63-41-M/02 Obchodní akademie (4letý, denní, dvojjazyčný/jiný). Obor 78-42-M/08 Lyceum (režim pokusného ověřování) není v žádném ze čtyř snímků zapsán."
-  },
-  "findings": [
+ "task_id": "R-691016640",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrzuje kontinuitu subjektu Digital Academy - Obchodní akademie, s.r.o. (REDIZO 691016640), sídlo Pod Školou 167, Malín, Kutná Hora, beze změny ve všech čtyřech snímcích. IZO 181134802 „Střední škola“ eviduje ve všech snímcích jediné místo výuky (Pod Školou 167) a jediný obor 63-41-M/02 Obchodní akademie (4letý, denní, dvojjazyčný/jiný). Obor 78-42-M/08 Lyceum (režim pokusného ověřování) není v žádném ze čtyř snímků zapsán."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0393"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2026 se u REDIZO 691016640 objevuje nabídka 78-42-M/08 Lyceum (režim pokusného ověřování), 4 roky, denní; v roce 2025 pod tímto REDIZO tato nabídka nebyla.",
+    "Rejstřík MŠMT neeviduje obor 78-42-M/08 u IZO 181134802 v žádném ze čtyř snímků (do 30. 6. 2026).",
+    "Aktuální oficiální stránky školy (dahora.cz, sekce Studijní obory a Organizace přijímacího řízení, kontrolováno 12. 9. 2026) uvádějí pro školní rok 2026/27 pouze dva obory - 63-41-M/02 Obchodní akademie (česky/dvojjazyčně) a bilingvní program „Business“ s mezinárodní anglickou maturitou; obor Lyceum v žádné podobě uveden není.",
+    "Archiv novinek školy (dahora.cz/novinky) neobsahuje žádnou zmínku o oboru Lyceum, pokusném ověřování ani o novém oboru pro 2026/27 z podzimu 2025, kdy byl celostátní pilotní program Lycea (78-42-M/08) vyhlašován MŠMT.",
+    "Celostátní pokusné ověřování oboru 78-42-M/08 Lyceum (vyhlášené MŠMT v listopadu 2024) se v datech fronty opakovaně objevuje jako nepřiřazená nabídka na řadě jinak nesouvisejících škol; podle zjištění z webu školy zdejší výskyt neodpovídá žádné doložitelné aktivitě Digital Academy Kutná Hora.",
+    "Rozpor je vyřešen dokumentem MŠMT. Aktualizovaný seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 Lyceum, platný k 15. 12. 2025, uvádí pod pořadovým číslem 41 Digital Academy – Obchodní akademie, s.r.o., Pod Školou 167, Malín, Kutná Hora, REDIZO 691016640, s účinností zápisu oboru do školského rejstříku od 1. 9. 2026. Nabídka v datech CERMAT 2026 tedy není chybným záznamem; mlčení webu školy k tomuto oboru je jen mezerou v její prezentaci."
+   ],
+   "conclusion": "Obor 78-42-M/08 Lyceum je u Digital Academy Kutná Hora skutečnou novou nabídkou pro školní rok 2026/2027. Škola je jmenovitě uvedena v seznamu MŠMT k pokusnému ověřování s účinností zápisu oboru od 1. 9. 2026. Nemá předchůdce v nabídce roku 2025 a historické výsledky na ni přenést nelze.",
+   "alternative_explanations": [
+    "Seznam MŠMT je platný k 15. 12. 2025; případné pozdější vystoupení školy z pokusného ověřování by v něm zachyceno nebylo. Nabídku v 1. kole 2026 to však nezpochybňuje."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "78-42-M/08 Lyceum (2026), REDIZO 691016640"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0393"],
-      "status": "rozpor_zdrojů",
-      "observations": [
-        "V 1. kole JPZ 2026 se u REDIZO 691016640 objevuje nabídka 78-42-M/08 Lyceum (režim pokusného ověřování), 4 roky, denní; v roce 2025 pod tímto REDIZO tato nabídka nebyla.",
-        "Rejstřík MŠMT neeviduje obor 78-42-M/08 u IZO 181134802 v žádném ze čtyř snímků (do 30. 6. 2026).",
-        "Aktuální oficiální stránky školy (dahora.cz, sekce Studijní obory a Organizace přijímacího řízení, kontrolováno 12. 9. 2026) uvádějí pro školní rok 2026/27 pouze dva obory - 63-41-M/02 Obchodní akademie (česky/dvojjazyčně) a bilingvní program „Business“ s mezinárodní anglickou maturitou; obor Lyceum v žádné podobě uveden není.",
-        "Archiv novinek školy (dahora.cz/novinky) neobsahuje žádnou zmínku o oboru Lyceum, pokusném ověřování ani o novém oboru pro 2026/27 z podzimu 2025, kdy byl celostátní pilotní program Lycea (78-42-M/08) vyhlašován MŠMT.",
-        "Celostátní pokusné ověřování oboru 78-42-M/08 Lyceum (vyhlášené MŠMT v listopadu 2024) se v datech fronty opakovaně objevuje jako nepřiřazená nabídka na řadě jinak nesouvisejících škol; podle zjištění z webu školy zdejší výskyt neodpovídá žádné doložitelné aktivitě Digital Academy Kutná Hora."
-      ],
-      "conclusion": null,
-      "alternative_explanations": [
-        "Škola mohla obor v systému CERMAT zaregistrovat, ale přijímací řízení do něj nakonec nevyhlásit nebo je před 1. kolem zrušit.",
-        "Může jít o systémový artefakt při párování celostátního pokusného ověřování Lycea s konkrétní školou, ne o skutečný záměr Digital Academy.",
-        "Údaj o oboru mohl být z webu školy po skončení přijímacího řízení 2026 odstraněn, i když reálně proběhlo - to však žádný dohledaný zdroj nepotvrzuje."
-      ],
-      "relationship": {
-        "type": "unknown",
-        "from": [],
-        "to": ["78-42-M/08 (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Pod Školou 167, 284 01 Malín, Kutná Hora",
-          "role": "místo výuky",
-          "izo": "181134802",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.dahora.cz/studijni-obory/",
-          "title": "Studijní obory - Digital Academy Kutná Hora",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Pro 2026/27 jsou nabízeny jen obory Obchodní akademie a Business; Lyceum se v žádné variantě neobjevuje.",
-          "applicable_period": "stav k 12. 9. 2026"
-        },
-        {
-          "url": "https://www.dahora.cz/organizace-prijimaciho-rizeni/",
-          "title": "Organizace přijímacího řízení - Digital Academy Kutná Hora",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Vyhlášené přijímací řízení 2026/27 zahrnuje pouze Obchodní akademii a Business; Lyceum neuvedeno.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://www.dahora.cz/novinky/",
-          "title": "Novinky - Digital Academy Kutná Hora",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Archiv novinek neobsahuje žádnou zmínku o oboru Lyceum ani pokusném ověřování z podzimu 2025 nebo později.",
-          "applicable_period": "od podzimu 2025 do 12. 9. 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 78-42-M/08 není u IZO 181134802 evidován ani k 30. 6. 2026.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-691016640",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 78-42-M/08 Lyceum (režim pokusného ověřování) přítomna v datech CERMAT pro rok 2026, chybí v roce 2025.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "unknown",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Proběhlo skutečně přijímací řízení do oboru 78-42-M/08 na Digital Academy Kutná Hora v roce 2026, nebo jde o chybný/nedokončený záznam v datech CERMAT?"
-      ]
+     "text": "Pod Školou 167, 284 01 Malín, Kutná Hora",
+     "role": "místo výuky",
+     "izo": "181134802",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.dahora.cz/studijni-obory/",
+     "title": "Studijní obory - Digital Academy Kutná Hora",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Pro 2026/27 jsou nabízeny jen obory Obchodní akademie a Business; Lyceum se v žádné variantě neobjevuje.",
+     "applicable_period": "stav k 12. 9. 2026"
+    },
+    {
+     "url": "https://www.dahora.cz/organizace-prijimaciho-rizeni/",
+     "title": "Organizace přijímacího řízení - Digital Academy Kutná Hora",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Vyhlášené přijímací řízení 2026/27 zahrnuje pouze Obchodní akademii a Business; Lyceum neuvedeno.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://www.dahora.cz/novinky/",
+     "title": "Novinky - Digital Academy Kutná Hora",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Archiv novinek neobsahuje žádnou zmínku o oboru Lyceum ani pokusném ověřování z podzimu 2025 nebo později.",
+     "applicable_period": "od podzimu 2025 do 12. 9. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/08 není u IZO 181134802 evidován ani k 30. 6. 2026.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-691016640",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 78-42-M/08 Lyceum (režim pokusného ověřování) přítomna v datech CERMAT pro rok 2026, chybí v roce 2025.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://archiv.msmt.gov.cz/file/65737_1_1/",
+     "title": "Aktualizovaný seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 Lyceum (platný k 15. 12. 2025)",
+     "published_at": "2025-12-15",
+     "checked_at": "2026-09-12",
+     "supports": "Digital Academy – Obchodní akademie, s.r.o. (REDIZO 691016640) je v seznamu uvedena s účinností zápisu oboru Lyceum do školského rejstříku od 1. 9. 2026.",
+     "applicable_period": "stav k 15. 12. 2025"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": []
+  }
+ ]
 }

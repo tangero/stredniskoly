@@ -1,113 +1,135 @@
 {
-  "task_id": "R-600007383",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík MŠMT ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) vede subjekt REDIZO 600007383 beze změny: Česká zahradnická akademie Mělník - střední škola a vyšší odborná škola, příspěvková organizace, IČ 00069221, sídlo sady Na Polabí 411/72, Mělník. Střední škola (IZO 000069221) má po celou dobu jediné místo výuky na sídle školy. Rejstřík tedy potvrzuje plnou kontinuitu školy i pracoviště mezi přijímacími řízeními 2025 a 2026; obory samotné snímky neevidují (jen úroveň KKOV bez zaměření a jen u některých typů), takže novost oboru Lyceum rejstřík ani nepotvrzuje, ani nevyvrací."
-  },
-  "findings": [
+ "task_id": "R-600007383",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík MŠMT ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) vede subjekt REDIZO 600007383 beze změny: Česká zahradnická akademie Mělník - střední škola a vyšší odborná škola, příspěvková organizace, IČ 00069221, sídlo sady Na Polabí 411/72, Mělník. Střední škola (IZO 000069221) má po celou dobu jediné místo výuky na sídle školy. Rejstřík tedy potvrzuje plnou kontinuitu školy i pracoviště mezi přijímacími řízeními 2025 a 2026; obory samotné snímky neevidují (jen úroveň KKOV bez zaměření a jen u některých typů), takže novost oboru Lyceum rejstřík ani nepotvrzuje, ani nevyvrací."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0207"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V datech fronty škola (REDIZO 600007383, IZO 000069221, sady Na Polabí 411, Mělník) nabízí v 1. kole JPZ 2025 pouze obor Zahradnictví (41-44-M/01); v roce 2026 nabízí Zahradnictví nadále a vedle něj nově Lyceum (režim pokusného ověřování), 78-42-M/08, denní čtyřleté studium.",
+    "Rejstřík MŠMT potvrzuje, že škola i její středisko (IZO 000069221) existují beze změny od snímku k 31. 3. 2025 do snímku k 30. 6. 2026 – nejde o novou školu ani o přesun.",
+    "Svaz květinářů a floristů ČR v datovaném článku uvádí, že Česká zahradnická akademie Mělník otevírá od 1. září 2026 nové čtyřleté denní maturitní studium oboru Lyceum pro absolventy základních škol, s kapacitou 30 žáků a dvěma oborovými specializacemi (Životní prostředí a pěstování rostlin; Kultura krajiny a estetika prostředí).",
+    "Obor 78-42-M/08 Lyceum v režimu pokusného ověřování představilo MŠMT na podzim 2024 jako celostátní pilot; od školního roku 2026/27 ho otevírají desítky krajských škol včetně ČZA Mělník – nabídka tedy není specifickou změnou této školy, ale součástí celostátního rozvoje programu.",
+    "Nezávislá databáze StředníŠkoly.com (zdroj dat CERMAT) k přijímacímu řízení 2026 u školy eviduje Lyceum (7842M08) s kapacitou 30, 59 přihlášenými a 18 přijatými po dvou kolech – odpovídá záznamu v datech fronty.",
+    "Web školy www.zas-me.cz se z prostředí rešerše nepodařilo načíst (DNS/připojení neodpovídá), primární stránka školy tedy nebyla ověřena; závěr je doložen daty CERMAT a článkem oborového svazu.",
+    "Pokusné ověřování oboru 78-42-M/08 Lyceum vyhlásilo MŠMT dne 18. 10. 2024 pod čj. MSMT-16031/2024-3; dodatek č. 1 má čj. MSMT-25860/2025-1 ze 4. 11. 2025 a dodatek č. 2 čj. MSMT-2941/2026-2 z 27. 2. 2026. Aktualizovaný seznam zapojených škol platný k 15. 12. 2025 uvádí tuto školu (REDIZO 600007383) s účinností zápisu oboru do školského rejstříku od 1.9.2026. Zapojení školy do pokusného ověřování je tím doloženo přímo dokumentem MŠMT."
+   ],
+   "conclusion": "Nabídka Lyceum (režim pokusného ověřování), 78-42-M/08, je nový obor, který Česká zahradnická akademie Mělník otevřela k přijímacímu řízení 2026 (studium od 1. 9. 2026). Škola samotná pokračuje beze změny (stejné REDIZO, IZO i místo výuky) a obor Zahradnictví 41-44-M/01 nabízí v obou letech. Lyceum nemá v roce 2025 žádného předchůdce a nepřebírá statistiky jiného oboru.",
+   "alternative_explanations": [
+    "Zdroje nevylučují, že Lyceum tematicky navazuje na dosavadní zahradnický profil školy (specializace pěstování rostlin a kultura krajiny), ale jde o jiný kód KKOV a jiný vzdělávací program – návaznost na konkrétní stávající obor (např. Zahradnictví) doložitelná není."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "78-42-M/08 Lyceum (režim pokusného ověřování), denní studium, ČZA Mělník, IZO 000069221, přijímací řízení 2026"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0207"],
-      "status": "potvrzeno",
-      "observations": [
-        "V datech fronty škola (REDIZO 600007383, IZO 000069221, sady Na Polabí 411, Mělník) nabízí v 1. kole JPZ 2025 pouze obor Zahradnictví (41-44-M/01); v roce 2026 nabízí Zahradnictví nadále a vedle něj nově Lyceum (režim pokusného ověřování), 78-42-M/08, denní čtyřleté studium.",
-        "Rejstřík MŠMT potvrzuje, že škola i její středisko (IZO 000069221) existují beze změny od snímku k 31. 3. 2025 do snímku k 30. 6. 2026 – nejde o novou školu ani o přesun.",
-        "Svaz květinářů a floristů ČR v datovaném článku uvádí, že Česká zahradnická akademie Mělník otevírá od 1. září 2026 nové čtyřleté denní maturitní studium oboru Lyceum pro absolventy základních škol, s kapacitou 30 žáků a dvěma oborovými specializacemi (Životní prostředí a pěstování rostlin; Kultura krajiny a estetika prostředí).",
-        "Obor 78-42-M/08 Lyceum v režimu pokusného ověřování představilo MŠMT na podzim 2024 jako celostátní pilot; od školního roku 2026/27 ho otevírají desítky krajských škol včetně ČZA Mělník – nabídka tedy není specifickou změnou této školy, ale součástí celostátního rozvoje programu.",
-        "Nezávislá databáze StředníŠkoly.com (zdroj dat CERMAT) k přijímacímu řízení 2026 u školy eviduje Lyceum (7842M08) s kapacitou 30, 59 přihlášenými a 18 přijatými po dvou kolech – odpovídá záznamu v datech fronty.",
-        "Web školy www.zas-me.cz se z prostředí rešerše nepodařilo načíst (DNS/připojení neodpovídá), primární stránka školy tedy nebyla ověřena; závěr je doložen daty CERMAT a článkem oborového svazu."
-      ],
-      "conclusion": "Nabídka Lyceum (režim pokusného ověřování), 78-42-M/08, je nový obor, který Česká zahradnická akademie Mělník otevřela k přijímacímu řízení 2026 (studium od 1. 9. 2026). Škola samotná pokračuje beze změny (stejné REDIZO, IZO i místo výuky) a obor Zahradnictví 41-44-M/01 nabízí v obou letech. Lyceum nemá v roce 2025 žádného předchůdce a nepřebírá statistiky jiného oboru.",
-      "alternative_explanations": [
-        "Zdroje nevylučují, že Lyceum tematicky navazuje na dosavadní zahradnický profil školy (specializace pěstování rostlin a kultura krajiny), ale jde o jiný kód KKOV a jiný vzdělávací program – návaznost na konkrétní stávající obor (např. Zahradnictví) doložitelná není."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["78-42-M/08 Lyceum (režim pokusného ověřování), denní studium, ČZA Mělník, IZO 000069221, přijímací řízení 2026"]
-      },
-      "addresses": [
-        {
-          "text": "sady Na Polabí 411/72, Mělník, PSČ 276 01 (RÚIAN 11662760)",
-          "role": "sídlo",
-          "izo": "600007383",
-          "valid_period": "2025-03-31 až 2026-06-30 (dle snímků rejstříku)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "sady Na Polabí 411/72, Mělník (RÚIAN 11662760)",
-          "role": "místo výuky",
-          "izo": "000069221",
-          "valid_period": "2025-03-31 až 2026-06-30 (dle snímků rejstříku)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600007383",
-          "title": "Data CERMAT z 1. kola JPZ 2025 a 2026 přiložená k úkolu",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "V roce 2025 škola nabízí jen Zahradnictví (41-44-M/01), v roce 2026 Zahradnictví pokračuje a nově přibývá Lyceum (78-42-M/08); název, IZO i adresa jsou v obou letech shodné.",
-          "applicable_period": "1. kolo JPZ 2025 a 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2025",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Existence subjektu REDIZO 600007383 a střední školy IZO 000069221 se sídlem i místem výuky sady Na Polabí 411/72, Mělník v období 1. kola JPZ 2025.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2026",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Subjekt, IZO, sídlo i místo výuky jsou v období 1. kola JPZ 2026 shodné s rokem 2025 – kontinuita školy potvrzena.",
-          "applicable_period": "stav rejstříku k 31. 3. 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 30. 6. 2026",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "I po skončení školního roku 2025/2026 škola pokračuje beze změny; žádný zánik ani sloučení.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "https://www.svazkvetinaruafloristu.cz/cza-melnik-otevira-od-zari-2026-maturitni-studium-na-lyceu",
-          "title": "ČZA Mělník otevírá od září 2026 maturitní studium na lyceu (Svaz květinářů a floristů ČR)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola otevírá od 1. 9. 2026 nový čtyřletý denní maturitní obor Lyceum, kapacita 30 žáků, dvě oborové specializace (životní prostředí a pěstování rostlin; kultura krajiny a estetika prostředí).",
-          "applicable_period": "školní rok 2026/2027"
-        },
-        {
-          "url": "https://www.stredniskoly.com/stredni-skoly-1/ceska-zahradnicka-akademie-melnik-stredni-skola",
-          "title": "Česká zahradnická akademie Mělník – profil školy na StředníŠkoly.com (zdroj dat CERMAT)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Přijímací řízení 2026: Lyceum (7842M08) kapacita 30, přihlášeno 59, přijato 18; Zahradnictví (4144M01) pokračuje s kapacitou 60. Potvrzuje novost nabídky v roce 2026.",
-          "applicable_period": "přijímací řízení 2026"
-        },
-        {
-          "url": "https://www.starostove.cz/prectete-si/vseobecne-lyceum-chce-otevrit-dalsich-deset-krajskych-skol",
-          "title": "Všeobecné lyceum chce otevřít dalších deset krajských škol (Starostové a nezávislí, 7. 8. 2025)",
-          "published_at": "2025-08-07",
-          "checked_at": "2026-09-12",
-          "supports": "Kontext: obor Lyceum představilo MŠMT na podzim 2024 a od školního roku 2026/27 ho otevírají další krajské střední školy – jde o celostátní pilot, ne o změnu identity konkrétní školy.",
-          "applicable_period": "srpen 2025, výhled na školní rok 2026/2027"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "approve_mapping",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Přesné datum registrace oboru 78-42-M/08 v rejstříku a konkrétní dokument MŠMT o zařazení ČZA Mělník do pokusného ověřování nebyly dohledány (web školy ani rejstřík na úrovni oborů nejsou strojově dostupné); pro závěr o novosti nabídky to však není potřebné."
-      ]
+     "text": "sady Na Polabí 411/72, Mělník, PSČ 276 01 (RÚIAN 11662760)",
+     "role": "sídlo",
+     "izo": "600007383",
+     "valid_period": "2025-03-31 až 2026-06-30 (dle snímků rejstříku)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "sady Na Polabí 411/72, Mělník (RÚIAN 11662760)",
+     "role": "místo výuky",
+     "izo": "000069221",
+     "valid_period": "2025-03-31 až 2026-06-30 (dle snímků rejstříku)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600007383",
+     "title": "Data CERMAT z 1. kola JPZ 2025 a 2026 přiložená k úkolu",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "V roce 2025 škola nabízí jen Zahradnictví (41-44-M/01), v roce 2026 Zahradnictví pokračuje a nově přibývá Lyceum (78-42-M/08); název, IZO i adresa jsou v obou letech shodné.",
+     "applicable_period": "1. kolo JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2025",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Existence subjektu REDIZO 600007383 a střední školy IZO 000069221 se sídlem i místem výuky sady Na Polabí 411/72, Mělník v období 1. kola JPZ 2025.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2026",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Subjekt, IZO, sídlo i místo výuky jsou v období 1. kola JPZ 2026 shodné s rokem 2025 – kontinuita školy potvrzena.",
+     "applicable_period": "stav rejstříku k 31. 3. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 30. 6. 2026",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "I po skončení školního roku 2025/2026 škola pokračuje beze změny; žádný zánik ani sloučení.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "https://www.svazkvetinaruafloristu.cz/cza-melnik-otevira-od-zari-2026-maturitni-studium-na-lyceu",
+     "title": "ČZA Mělník otevírá od září 2026 maturitní studium na lyceu (Svaz květinářů a floristů ČR)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola otevírá od 1. 9. 2026 nový čtyřletý denní maturitní obor Lyceum, kapacita 30 žáků, dvě oborové specializace (životní prostředí a pěstování rostlin; kultura krajiny a estetika prostředí).",
+     "applicable_period": "školní rok 2026/2027"
+    },
+    {
+     "url": "https://www.stredniskoly.com/stredni-skoly-1/ceska-zahradnicka-akademie-melnik-stredni-skola",
+     "title": "Česká zahradnická akademie Mělník – profil školy na StředníŠkoly.com (zdroj dat CERMAT)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Přijímací řízení 2026: Lyceum (7842M08) kapacita 30, přihlášeno 59, přijato 18; Zahradnictví (4144M01) pokračuje s kapacitou 60. Potvrzuje novost nabídky v roce 2026.",
+     "applicable_period": "přijímací řízení 2026"
+    },
+    {
+     "url": "https://www.starostove.cz/prectete-si/vseobecne-lyceum-chce-otevrit-dalsich-deset-krajskych-skol",
+     "title": "Všeobecné lyceum chce otevřít dalších deset krajských škol (Starostové a nezávislí, 7. 8. 2025)",
+     "published_at": "2025-08-07",
+     "checked_at": "2026-09-12",
+     "supports": "Kontext: obor Lyceum představilo MŠMT na podzim 2024 a od školního roku 2026/27 ho otevírají další krajské střední školy – jde o celostátní pilot, ne o změnu identity konkrétní školy.",
+     "applicable_period": "srpen 2025, výhled na školní rok 2026/2027"
+    },
+    {
+     "url": "https://archiv.msmt.gov.cz/file/65737_1_1/",
+     "title": "Aktualizovaný seznam škol zapojených do pokusného ověřování oboru vzdělání 78-42-M/08 Lyceum ve školním roce 2025/2026 (platný k 2025-12-15)",
+     "published_at": "2025-12-15",
+     "checked_at": "2026-09-12",
+     "supports": "Škola s REDIZO 600007383 je v seznamu MŠMT uvedena mezi školami zapojenými do pokusného ověřování oboru 78-42-M/08 Lyceum s účinností zápisu oboru do školského rejstříku od 1.9.2026.",
+     "applicable_period": "stav k 2025-12-15"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "approve_mapping",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přesné datum registrace oboru 78-42-M/08 v rejstříku a konkrétní dokument MŠMT o zařazení ČZA Mělník do pokusného ověřování nebyly dohledány (web školy ani rejstřík na úrovni oborů nejsou strojově dostupné); pro závěr o novosti nabídky to však není potřebné.",
+     "uzavreno": "Doloženo seznamem škol MŠMT k pokusnému ověřování oboru Lyceum (archiv.msmt.gov.cz, platný k 15. 12. 2025) a čísly jednacími vyhlášení."
+    }
+   ]
+  }
+ ]
 }

@@ -1,132 +1,155 @@
 {
-  "task_id": "R-600170161",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Integrovaná střední škola technická Mělník, příspěvková organizace (REDIZO 600170161, IČ 00640930, sídlo K Učilišti 2566, 276 01 Mělník, zřizovatel Středočeský kraj) figuruje ve všech čtyřech snímcích rejstříku beze změny názvu, sídla ani IZO. Jediné IZO střední školy (000640930 „Střední škola\") má ve všech snímcích stejná tři místa výuky (sady Na Polabí 411/72, K Učilišti 2566, K Učilišti 2183) a stejnou jedenáctičlennou sadu registrovaných oborů (63-41-M/01, 23-44-L/01, 23-43-L/51, 64-41-L/51, 23-56-H/01, 26-41-L/01, 26-52-H/01, 26-51-H/02, 23-51-H/01, 26-51-H/01, 26-41-L/52). Obor 78-42-M/08 Lyceum není zapsán ani k 30. 6. 2026 – zápis se zpožďuje za nabídkou CERMAT 2026. V žádném snímku není u této školy evidován ani obor 78-42-M/01 nebo 78-42-M/02 (klasické lyceum), takže nejde o přeznačení stávajícího oboru."
-  },
-  "findings": [
+ "task_id": "R-600170161",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Integrovaná střední škola technická Mělník, příspěvková organizace (REDIZO 600170161, IČ 00640930, sídlo K Učilišti 2566, 276 01 Mělník, zřizovatel Středočeský kraj) figuruje ve všech čtyřech snímcích rejstříku beze změny názvu, sídla ani IZO. Jediné IZO střední školy (000640930 „Střední škola\") má ve všech snímcích stejná tři místa výuky (sady Na Polabí 411/72, K Učilišti 2566, K Učilišti 2183) a stejnou jedenáctičlennou sadu registrovaných oborů (63-41-M/01, 23-44-L/01, 23-43-L/51, 64-41-L/51, 23-56-H/01, 26-41-L/01, 26-52-H/01, 26-51-H/02, 23-51-H/01, 26-51-H/01, 26-41-L/52). Obor 78-42-M/08 Lyceum není zapsán ani k 30. 6. 2026 – zápis se zpožďuje za nabídkou CERMAT 2026. V žádném snímku není u této školy evidován ani obor 78-42-M/01 nebo 78-42-M/02 (klasické lyceum), takže nejde o přeznačení stávajícího oboru."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0245"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/08 Lyceum (režim pokusného ověřování), zaměření „Management bezpečnosti a sportu\", 4 roky, denní, český; v roce 2025 tato nabídka u školy neexistovala.",
+    "Oficiální web školy (isstechn.cz) uvádí obor „78-42-M/08 Lyceum (režim pokusného ověřování)\" jako jeden z aktuálně nabízených maturitních oborů pro přijímací řízení 2026/2027, se samostatnou podstránkou a vlastním ŠVP/učebním plánem.",
+    "Podstránka oboru na webu školy popisuje jej jako studium v „režimu pokusného ověřování\" se zaměřením na „Management bezpečnosti a sportu\": všeobecně vzdělávací základ (osobnostní rozvoj, jazyky ČJ/AJ B1 + NJ/ŠJ A2, přírodovědně-technický a společenskovědní blok) doplněný od 3. ročníku odbornými bloky zaměřenými na bezpečnost, sport a podnikavost.",
+    "Škola nabízí souběžně i jiný, textově podobný, ale odlišný obor „Ekonomika a podnikání – management sportu 63-41-M/01\" (4leté) – jde o odlišný kód KKOV i obsah, nezaměnitelný s 78-42-M/08 Management bezpečnosti a sportu; CERMAT eviduje oba obory jako dvě samostatné nabídky 2026.",
+    "Rejstřík MŠMT obor 78-42-M/08 u IZO 000640930 neeviduje v žádném ze čtyř snímků (31. 3. 2025 – 30. 6. 2026); registrovaná sada oborů této školy se mezi snímky vůbec nemění, takže jde o odstup zápisu, nikoli o rozpor s existencí oboru.",
+    "V žádném snímku rejstříku ani v nabídce CERMAT 2025 se u této školy nevyskytuje obor 78-42-M/01 ani 78-42-M/02 (řádné lyceum) – nejde tedy o přeznačení/přejmenování existujícího lycea, ale o zcela nový obor.",
+    "Obor 78-42-M/08 Lyceum je celostátní pokusné ověřování MŠMT podle rámcového vzdělávacího programu, vyhlášené v souladu s § 171 odst. 1 zákona č. 561/2004 Sb.; dohledaný sekundární zdroj (pedagogický blog přebírající oznámení MŠMT) datuje vyhlášení k 18. 10. 2024, nikoli k listopadu 2024 jak naznačovalo vodítko zadání – přesné číslo jednací a plné znění vyhlášení se z dostupných zdrojů nepodařilo přímo otevřít (odkazy na msmt.gov.cz/file/... vedou na aktuálním webu MŠMT na stránku „Stránka nenalezena\", web byl zjevně od vydání vyhlášení redesignován a staré odkazy na soubory nefungují).",
+    "Pokusné ověřování oboru 78-42-M/08 Lyceum vyhlásilo MŠMT dne 18. 10. 2024 pod čj. MSMT-16031/2024-3; dodatek č. 1 má čj. MSMT-25860/2025-1 ze 4. 11. 2025 a dodatek č. 2 čj. MSMT-2941/2026-2 z 27. 2. 2026. Aktualizovaný seznam zapojených škol platný k 15. 12. 2025 uvádí tuto školu (REDIZO 600170161) s účinností zápisu oboru do školského rejstříku od 1.9.2026. Zapojení školy do pokusného ověřování je tím doloženo přímo dokumentem MŠMT."
+   ],
+   "conclusion": "Nabídka 78-42-M/08 Lyceum (režim pokusného ověřování), zaměření Management bezpečnosti a sportu, je v roce 2026 skutečně nový obor u Integrované střední školy technické Mělník – nemá žádného přímého předchůdce v nabídce školy z roku 2025 ani v rejstříku MŠMT. Škola se zapojila do celostátního pokusného ověřování oboru Lyceum vyhlášeného MŠMT (podle dohledaného zdroje k 18. 10. 2024, přesné čj. se nepodařilo ověřit z primárního dokumentu), což dokládá i vlastní podstránka oboru na webu školy s odpovídajícím zaměřením a popisem ŠVP. Absence oboru v rejstříku MŠMT ve všech čtyřech snímcích je vysvětlitelná běžným zpožděním zápisu nových pokusných oborů, nikoli sporem s existencí nabídky.",
+   "alternative_explanations": [
+    "Teoreticky by mohlo jít o interní přeznačení jiného stávajícího oboru školy, ale žádný z jedenácti registrovaných oborů (technické a ekonomické obory H/L/M) tomu svým obsahem ani kódem neodpovídá a žádný z nich mezi snímky nezmizel – tato alternativa není podepřena daty.",
+    "Formální zápis oboru 78-42-M/08 do rejstříku MŠMT mohl proběhnout až po 30. 6. 2026 (mimo sledované snímky); to otevření oboru od září 2026 podle CERMAT nabídky a webu školy neovlivňuje."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "78-42-M/08 (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0245"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/08 Lyceum (režim pokusného ověřování), zaměření „Management bezpečnosti a sportu\", 4 roky, denní, český; v roce 2025 tato nabídka u školy neexistovala.",
-        "Oficiální web školy (isstechn.cz) uvádí obor „78-42-M/08 Lyceum (režim pokusného ověřování)\" jako jeden z aktuálně nabízených maturitních oborů pro přijímací řízení 2026/2027, se samostatnou podstránkou a vlastním ŠVP/učebním plánem.",
-        "Podstránka oboru na webu školy popisuje jej jako studium v „režimu pokusného ověřování\" se zaměřením na „Management bezpečnosti a sportu\": všeobecně vzdělávací základ (osobnostní rozvoj, jazyky ČJ/AJ B1 + NJ/ŠJ A2, přírodovědně-technický a společenskovědní blok) doplněný od 3. ročníku odbornými bloky zaměřenými na bezpečnost, sport a podnikavost.",
-        "Škola nabízí souběžně i jiný, textově podobný, ale odlišný obor „Ekonomika a podnikání – management sportu 63-41-M/01\" (4leté) – jde o odlišný kód KKOV i obsah, nezaměnitelný s 78-42-M/08 Management bezpečnosti a sportu; CERMAT eviduje oba obory jako dvě samostatné nabídky 2026.",
-        "Rejstřík MŠMT obor 78-42-M/08 u IZO 000640930 neeviduje v žádném ze čtyř snímků (31. 3. 2025 – 30. 6. 2026); registrovaná sada oborů této školy se mezi snímky vůbec nemění, takže jde o odstup zápisu, nikoli o rozpor s existencí oboru.",
-        "V žádném snímku rejstříku ani v nabídce CERMAT 2025 se u této školy nevyskytuje obor 78-42-M/01 ani 78-42-M/02 (řádné lyceum) – nejde tedy o přeznačení/přejmenování existujícího lycea, ale o zcela nový obor.",
-        "Obor 78-42-M/08 Lyceum je celostátní pokusné ověřování MŠMT podle rámcového vzdělávacího programu, vyhlášené v souladu s § 171 odst. 1 zákona č. 561/2004 Sb.; dohledaný sekundární zdroj (pedagogický blog přebírající oznámení MŠMT) datuje vyhlášení k 18. 10. 2024, nikoli k listopadu 2024 jak naznačovalo vodítko zadání – přesné číslo jednací a plné znění vyhlášení se z dostupných zdrojů nepodařilo přímo otevřít (odkazy na msmt.gov.cz/file/... vedou na aktuálním webu MŠMT na stránku „Stránka nenalezena\", web byl zjevně od vydání vyhlášení redesignován a staré odkazy na soubory nefungují)."
-      ],
-      "conclusion": "Nabídka 78-42-M/08 Lyceum (režim pokusného ověřování), zaměření Management bezpečnosti a sportu, je v roce 2026 skutečně nový obor u Integrované střední školy technické Mělník – nemá žádného přímého předchůdce v nabídce školy z roku 2025 ani v rejstříku MŠMT. Škola se zapojila do celostátního pokusného ověřování oboru Lyceum vyhlášeného MŠMT (podle dohledaného zdroje k 18. 10. 2024, přesné čj. se nepodařilo ověřit z primárního dokumentu), což dokládá i vlastní podstránka oboru na webu školy s odpovídajícím zaměřením a popisem ŠVP. Absence oboru v rejstříku MŠMT ve všech čtyřech snímcích je vysvětlitelná běžným zpožděním zápisu nových pokusných oborů, nikoli sporem s existencí nabídky.",
-      "alternative_explanations": [
-        "Teoreticky by mohlo jít o interní přeznačení jiného stávajícího oboru školy, ale žádný z jedenácti registrovaných oborů (technické a ekonomické obory H/L/M) tomu svým obsahem ani kódem neodpovídá a žádný z nich mezi snímky nezmizel – tato alternativa není podepřena daty.",
-        "Formální zápis oboru 78-42-M/08 do rejstříku MŠMT mohl proběhnout až po 30. 6. 2026 (mimo sledované snímky); to otevření oboru od září 2026 podle CERMAT nabídky a webu školy neovlivňuje."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["78-42-M/08 (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "K Učilišti 2566, 276 01 Mělník",
-          "role": "sídlo",
-          "izo": "600170161",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "sady Na Polabí 411/72, 276 01 Mělník; K Učilišti 2566, 276 01 Mělník; K Učilišti 2183, 276 01 Mělník",
-          "role": "místo výuky (nezjištěno, které konkrétně pro obor 78-42-M/08)",
-          "izo": "000640930",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky, beze změny)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.isstechn.cz/",
-          "title": "Integrovaná střední škola technická Mělník – úvodní stránka",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Web školy uvádí mezi obory přijímacího řízení 2026/2027 „78-42-M/08 Lyceum (režim pokusného ověřování)\" i samostatně „Ekonomika a podnikání – management sportu 63-41-M/01\".",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://www.isstechn.cz/prijimaci-rizeni/",
-          "title": "Přijímací řízení – Integrovaná střední škola technická Mělník",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Stránka přijímacího řízení odkazuje na podstránku oboru „78-42-M/08 Lyceum (režim pokusného ověřování)\" v sekci oborů s maturitou, odděleně od „Ekonomika a podnikání – management sportu 63-41-M/01\".",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://www.isstechn.cz/78-42-m-08-lyceum-rezim-pokusneho-overovani/",
-          "title": "78-42-M/08 Lyceum (režim pokusného ověřování) – Integrovaná střední škola technická Mělník",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Vlastní podstránka oboru popisuje jej jako studium v režimu pokusného ověřování se zaměřením „Management bezpečnosti a sportu\", uvádí strukturu všeobecně vzdělávacího základu a odborné bloky od 3. ročníku (bezpečnost, sport, podnikavost) a odkazuje na ŠVP a učební plán.",
-          "applicable_period": "školní rok 2026/27 a dále"
-        },
-        {
-          "url": "http://www.pedagogicke.info/2024/10/msmt-vyhlaseni-pokusneho-overovani.html",
-          "title": "MŠMT: Vyhlášení pokusného ověřování vzdělávání podle rámcového vzdělávacího programu oboru vzdělání Lyceum",
-          "published_at": "2024-10-18",
-          "checked_at": "2026-09-12",
-          "supports": "Dokládá, že MŠMT vyhlásilo pokusné ověřování oboru Lyceum (nový RVP, více zaměření) podle § 171 odst. 1 zákona č. 561/2004 Sb.; jde o celostátní iniciativu, nikoli o krok specifický pro tuto školu. Datum vyhlášení (řijen 2024) koriguje vodítko ze zadání, které uvádělo listopad 2024 – přesné čj. vyhlášení a seznam zapojených škol se z dostupných primárních zdrojů msmt.gov.cz nepodařilo ověřit (odkazy na soubory MŠMT vedou na aktuálním webu na chybovou stránku „Stránka nenalezena\").",
-          "applicable_period": "vyhlášení říjen 2024, dodatky do listopadu 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 78-42-M/08 není u IZO 000640930 evidován; registrovaná sada oborů školy neobsahuje žádný kód 78-42-M.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 78-42-M/08 není u IZO 000640930 evidován; stav oborů beze změny oproti 31. 3. 2025.",
-          "applicable_period": "stav rejstříku k 31. 12. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 78-42-M/08 není u IZO 000640930 evidován; stav oborů beze změny.",
-          "applicable_period": "stav rejstříku k 31. 3. 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 78-42-M/08 není u IZO 000640930 evidován ani k poslednímu dostupnému snímku; subjekt, sídlo a ostatní obory beze změny.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600170161",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 78-42-M/08 Lyceum, zaměření Management bezpečnosti a sportu, přítomna pouze v roce 2026 (6 nabídek celkem); v roce 2025 měla škola 5 nabídek bez tohoto oboru, ostatní obory (63-41-M/01, 23-44-L/01, 23-43-L/51, 26-41-L/01, 26-41-L/52) pokračují v obou letech.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Přesné číslo jednací a plné znění vyhlášení pokusného ověřování MŠMT (a jeho dodatků) se nepodařilo dohledat na aktuálním webu msmt.gov.cz – staré odkazy na soubory vedou na chybovou stránku.",
-        "Není doloženo, ve kterém z pracovišť školy (sady Na Polabí 411/72, K Učilišti 2566, K Učilišti 2183) se obor 78-42-M/08 fakticky vyučuje."
-      ]
+     "text": "K Učilišti 2566, 276 01 Mělník",
+     "role": "sídlo",
+     "izo": "600170161",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "sady Na Polabí 411/72, 276 01 Mělník; K Učilišti 2566, 276 01 Mělník; K Učilišti 2183, 276 01 Mělník",
+     "role": "místo výuky (nezjištěno, které konkrétně pro obor 78-42-M/08)",
+     "izo": "000640930",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky, beze změny)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.isstechn.cz/",
+     "title": "Integrovaná střední škola technická Mělník – úvodní stránka",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Web školy uvádí mezi obory přijímacího řízení 2026/2027 „78-42-M/08 Lyceum (režim pokusného ověřování)\" i samostatně „Ekonomika a podnikání – management sportu 63-41-M/01\".",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://www.isstechn.cz/prijimaci-rizeni/",
+     "title": "Přijímací řízení – Integrovaná střední škola technická Mělník",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Stránka přijímacího řízení odkazuje na podstránku oboru „78-42-M/08 Lyceum (režim pokusného ověřování)\" v sekci oborů s maturitou, odděleně od „Ekonomika a podnikání – management sportu 63-41-M/01\".",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://www.isstechn.cz/78-42-m-08-lyceum-rezim-pokusneho-overovani/",
+     "title": "78-42-M/08 Lyceum (režim pokusného ověřování) – Integrovaná střední škola technická Mělník",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Vlastní podstránka oboru popisuje jej jako studium v režimu pokusného ověřování se zaměřením „Management bezpečnosti a sportu\", uvádí strukturu všeobecně vzdělávacího základu a odborné bloky od 3. ročníku (bezpečnost, sport, podnikavost) a odkazuje na ŠVP a učební plán.",
+     "applicable_period": "školní rok 2026/27 a dále"
+    },
+    {
+     "url": "http://www.pedagogicke.info/2024/10/msmt-vyhlaseni-pokusneho-overovani.html",
+     "title": "MŠMT: Vyhlášení pokusného ověřování vzdělávání podle rámcového vzdělávacího programu oboru vzdělání Lyceum",
+     "published_at": "2024-10-18",
+     "checked_at": "2026-09-12",
+     "supports": "Dokládá, že MŠMT vyhlásilo pokusné ověřování oboru Lyceum (nový RVP, více zaměření) podle § 171 odst. 1 zákona č. 561/2004 Sb.; jde o celostátní iniciativu, nikoli o krok specifický pro tuto školu. Datum vyhlášení (řijen 2024) koriguje vodítko ze zadání, které uvádělo listopad 2024 – přesné čj. vyhlášení a seznam zapojených škol se z dostupných primárních zdrojů msmt.gov.cz nepodařilo ověřit (odkazy na soubory MŠMT vedou na aktuálním webu na chybovou stránku „Stránka nenalezena\").",
+     "applicable_period": "vyhlášení říjen 2024, dodatky do listopadu 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/08 není u IZO 000640930 evidován; registrovaná sada oborů školy neobsahuje žádný kód 78-42-M.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/08 není u IZO 000640930 evidován; stav oborů beze změny oproti 31. 3. 2025.",
+     "applicable_period": "stav rejstříku k 31. 12. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/08 není u IZO 000640930 evidován; stav oborů beze změny.",
+     "applicable_period": "stav rejstříku k 31. 3. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/08 není u IZO 000640930 evidován ani k poslednímu dostupnému snímku; subjekt, sídlo a ostatní obory beze změny.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600170161",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 78-42-M/08 Lyceum, zaměření Management bezpečnosti a sportu, přítomna pouze v roce 2026 (6 nabídek celkem); v roce 2025 měla škola 5 nabídek bez tohoto oboru, ostatní obory (63-41-M/01, 23-44-L/01, 23-43-L/51, 26-41-L/01, 26-41-L/52) pokračují v obou letech.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://archiv.msmt.gov.cz/file/65737_1_1/",
+     "title": "Aktualizovaný seznam škol zapojených do pokusného ověřování oboru vzdělání 78-42-M/08 Lyceum ve školním roce 2025/2026 (platný k 2025-12-15)",
+     "published_at": "2025-12-15",
+     "checked_at": "2026-09-12",
+     "supports": "Škola s REDIZO 600170161 je v seznamu MŠMT uvedena mezi školami zapojenými do pokusného ověřování oboru 78-42-M/08 Lyceum s účinností zápisu oboru do školského rejstříku od 1.9.2026.",
+     "applicable_period": "stav k 2025-12-15"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Není doloženo, ve kterém z pracovišť školy (sady Na Polabí 411/72, K Učilišti 2566, K Učilišti 2183) se obor 78-42-M/08 fakticky vyučuje."
+   ],
+   "resolved_questions": [
+    {
+     "otazka": "Přesné číslo jednací a plné znění vyhlášení pokusného ověřování MŠMT (a jeho dodatků) se nepodařilo dohledat na aktuálním webu msmt.gov.cz – staré odkazy na soubory vedou na chybovou stránku.",
+     "uzavreno": "Doloženo seznamem škol MŠMT k pokusnému ověřování oboru Lyceum (archiv.msmt.gov.cz, platný k 15. 12. 2025) a čísly jednacími vyhlášení."
+    }
+   ]
+  }
+ ]
 }

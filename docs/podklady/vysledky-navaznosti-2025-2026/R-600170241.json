@@ -113,7 +113,8 @@
     "Web školy (spsrakovnik.cz/122-lyceum) uvádí: „V roce 2026 poprvé otevíráme zcela nový obor – Lyceum“, jde o čtyřletý maturitní obor kombinující všeobecné vzdělání s profilací od 3. ročníku (Mediální studia nebo Cestovní ruch); stránka odkazuje na MŠMT jako zdroj rámcového vzdělávacího programu s poznámkou „Informace k pilotnímu oboru“.",
     "Odkaz na konkrétní stránku MŠMT o vyhlášení pokusného ověřování, uvedený na webu školy (msmt.gov.cz/vzdelavani/stredni-vzdelavani/vyhlaseni-pokusneho-overovani-vzdelavani-podle-ramcoveho), byl k datu kontroly nedostupný (chyba 404) – celostátní vyhlášení pokusného ověřování z listopadu 2024 tak nebylo nezávisle ověřeno přímo na webu MŠMT, pouze odkazem na školním webu.",
     "Novinkový článek školy z 26. 6. 2026 potvrzuje zveřejnění školního vzdělávacího programu nového oboru Lyceum pro školní rok 2026/2027 se strukturou: obecný základ v 1.–2. ročníku, od 3. ročníku volba orientace Mediální studia nebo Cestovní ruch.",
-    "Aktuální přehled studijních oborů školy pro 2026/27 řadí Lyceum 78-42-M/08 mezi čtyřleté maturitní obory."
+    "Aktuální přehled studijních oborů školy pro 2026/27 řadí Lyceum 78-42-M/08 mezi čtyřleté maturitní obory.",
+    "Pokusné ověřování oboru 78-42-M/08 Lyceum vyhlásilo MŠMT dne 18. 10. 2024 pod čj. MSMT-16031/2024-3; dodatek č. 1 má čj. MSMT-25860/2025-1 ze 4. 11. 2025 a dodatek č. 2 čj. MSMT-2941/2026-2 z 27. 2. 2026. Aktualizovaný seznam zapojených škol platný k 15. 12. 2025 uvádí tuto školu (REDIZO 600170241) s účinností zápisu oboru do školského rejstříku od 1.9.2026. Zapojení školy do pokusného ověřování je tím doloženo přímo dokumentem MŠMT."
    ],
    "conclusion": "Obor 78-42-M/08 Lyceum je skutečně nový obor, otevřený školou od školního roku 2026/27 (podle vlastního vyjádření školy poprvé v její historii), nikoli přejmenování dřívějšího lycea 78-42-M/01 či 78-42-M/02. Škola jej prezentuje jako obor v režimu pokusného ověřování MŠMT a uvádí, že jeho zavedení přímo souviselo s ukončením přijímání do dosud samostatného oboru Cestovní ruch (viz nález Q0146) – Cestovní ruch je nyní jednou ze dvou oborových orientací lycea od 3. ročníku. Absence oboru v rejstříku MŠMT ve všech čtyřech snímcích odpovídá administrativnímu odstupu zápisu nově zaváděného pokusného ověřování, nikoli neexistenci oboru; nabídku v JPZ 2026 i zveřejněný ŠVP dokládá přímo web školy.",
    "alternative_explanations": [
@@ -176,18 +177,28 @@
      "checked_at": "2026-09-12",
      "supports": "Potvrzuje zveřejnění ŠVP nového oboru Lyceum pro 2026/27, poprvé otevíraného na této škole.",
      "applicable_period": "školní rok 2026/27"
+    },
+    {
+     "url": "https://archiv.msmt.gov.cz/file/65737_1_1/",
+     "title": "Aktualizovaný seznam škol zapojených do pokusného ověřování oboru vzdělání 78-42-M/08 Lyceum ve školním roce 2025/2026 (platný k 2025-12-15)",
+     "published_at": "2025-12-15",
+     "checked_at": "2026-09-12",
+     "supports": "Škola s REDIZO 600170241 je v seznamu MŠMT uvedena mezi školami zapojenými do pokusného ověřování oboru 78-42-M/08 Lyceum s účinností zápisu oboru do školského rejstříku od 1.9.2026.",
+     "applicable_period": "stav k 2025-12-15"
     }
    ],
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Přímý zdroj MŠMT k celostátnímu vyhlášení pokusného ověřování oboru 78-42-M/08 Lyceum z listopadu 2024 nebyl při rešerši dostupný (odkaz na webu školy vedl na chybu 404) – doloženo pouze vyjádřením školy, ne přímo textem vyhlášení MŠMT."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Přesné datum případného zápisu oboru 78-42-M/08 do rejstříku MŠMT (po 30. 6. 2026) není doloženo.",
      "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    },
+    {
+     "otazka": "Přímý zdroj MŠMT k celostátnímu vyhlášení pokusného ověřování oboru 78-42-M/08 Lyceum z listopadu 2024 nebyl při rešerši dostupný (odkaz na webu školy vedl na chybu 404) – doloženo pouze vyjádřením školy, ne přímo textem vyhlášení MŠMT.",
+     "uzavreno": "Doloženo seznamem škol MŠMT k pokusnému ověřování oboru Lyceum (archiv.msmt.gov.cz, platný k 15. 12. 2025) a čísly jednacími vyhlášení."
     }
    ]
   }

@@ -1,81 +1,103 @@
 {
-  "task_id": "R-600013651",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Gymnázium P. Křížkovského s uměleckou profilací, s.r.o. (REDIZO 600013651) je beze změny názvu a sídla (Kristenova 58/27, Brno) ve všech čtyřech snímcích. IZO 062157884 „Střední škola“ mělo k 31. 3. 2025 registrovány jen obory 79-41-K/41 a 79-41-K/81 Gymnázium; od 31. 12. 2025 do 30. 6. 2026 přibyl navíc obor 78-42-M/08 Lyceum (režim pokusného ověřování), který zůstává registrován i k 30. 6. 2026. Místa výuky (čtyři adresy v Komíně) jsou ve všech snímcích shodná."
-  },
-  "findings": [
+ "task_id": "R-600013651",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Gymnázium P. Křížkovského s uměleckou profilací, s.r.o. (REDIZO 600013651) je beze změny názvu a sídla (Kristenova 58/27, Brno) ve všech čtyřech snímcích. IZO 062157884 „Střední škola“ mělo k 31. 3. 2025 registrovány jen obory 79-41-K/41 a 79-41-K/81 Gymnázium; od 31. 12. 2025 do 30. 6. 2026 přibyl navíc obor 78-42-M/08 Lyceum (režim pokusného ověřování), který zůstává registrován i k 30. 6. 2026. Místa výuky (čtyři adresy v Komíně) jsou ve všech snímcích shodná."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0078"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela obor 78-42-M/08 Lyceum (režim pokusného ověřování) se zaměřením „Právo a management v kultuře. Žurnalistika a média“; v 1. kole JPZ 2026 tento obor v nabídce chybí (nabízeny jsou jen oba Gymnázium – 79-41-K/41 a 79-41-K/81).",
+    "K 31. 3. 2025 obor 78-42-M/08 ještě nebyl v rejstříku MŠMT zapsán; zapsán je až od snímku 31. 12. 2025 a zůstává i k 30. 6. 2026 – zápis tedy dohnal již proběhlé přijímací řízení 2025.",
+    "Web školy (gymum.cz) uvádí: „Od roku 2025 otevíráme nové Lyceum se zaměřením na právo a management v kultuře a žurnalistiku a média“ – jde o inovativní program v režimu pokusného ověřování MŠMT.",
+    "Web školy k datu kontroly nespecifikuje, zda a kdy bude Lyceum znovu otevřeno pro další přijímací řízení; aktuální nabídka oborů na webu tento program pro rok 2026/2027 neuvádí.",
+    "Pokusné ověřování oboru 78-42-M/08 Lyceum vyhlásilo MŠMT dne 18. 10. 2024 pod čj. MSMT-16031/2024-3; dodatek č. 1 má čj. MSMT-25860/2025-1 ze 4. 11. 2025 a dodatek č. 2 čj. MSMT-2941/2026-2 z 27. 2. 2026. Aktualizovaný seznam zapojených škol platný k 15. 12. 2025 uvádí tuto školu (REDIZO 600013651) s účinností zápisu oboru do školského rejstříku od 1.9.2025. Zapojení školy do pokusného ověřování je tím doloženo přímo dokumentem MŠMT."
+   ],
+   "conclusion": "Obor 78-42-M/08 Lyceum (režim pokusného ověřování) byl školou nově otevřen pro školní rok 2025/2026 (první a zatím jediný ročník přijímání dle dostupných dat) a pro školní rok 2026/2027 přijímací řízení do něj vyhlášeno nebylo. Obor zůstává zapsán v rejstříku, takže nejde o doložené zrušení, ale o přerušení náboru po pilotním ročníku.",
+   "alternative_explanations": [
+    "Škola může obor znovu otevřít v některém z dalších let, protože zůstává registrován v rejstříku.",
+    "Jde o jednorázový pilotní běh v režimu pokusného ověřování, který nemusí pokračovat pravidelně – dostupné zdroje to ani nepotvrzují, ani nevyvracejí."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "78-42-M/08 (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0078"],
-      "status": "pravděpodobné",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela obor 78-42-M/08 Lyceum (režim pokusného ověřování) se zaměřením „Právo a management v kultuře. Žurnalistika a média“; v 1. kole JPZ 2026 tento obor v nabídce chybí (nabízeny jsou jen oba Gymnázium – 79-41-K/41 a 79-41-K/81).",
-        "K 31. 3. 2025 obor 78-42-M/08 ještě nebyl v rejstříku MŠMT zapsán; zapsán je až od snímku 31. 12. 2025 a zůstává i k 30. 6. 2026 – zápis tedy dohnal již proběhlé přijímací řízení 2025.",
-        "Web školy (gymum.cz) uvádí: „Od roku 2025 otevíráme nové Lyceum se zaměřením na právo a management v kultuře a žurnalistiku a média“ – jde o inovativní program v režimu pokusného ověřování MŠMT.",
-        "Web školy k datu kontroly nespecifikuje, zda a kdy bude Lyceum znovu otevřeno pro další přijímací řízení; aktuální nabídka oborů na webu tento program pro rok 2026/2027 neuvádí."
-      ],
-      "conclusion": "Obor 78-42-M/08 Lyceum (režim pokusného ověřování) byl školou nově otevřen pro školní rok 2025/2026 (první a zatím jediný ročník přijímání dle dostupných dat) a pro školní rok 2026/2027 přijímací řízení do něj vyhlášeno nebylo. Obor zůstává zapsán v rejstříku, takže nejde o doložené zrušení, ale o přerušení náboru po pilotním ročníku.",
-      "alternative_explanations": [
-        "Škola může obor znovu otevřít v některém z dalších let, protože zůstává registrován v rejstříku.",
-        "Jde o jednorázový pilotní běh v režimu pokusného ověřování, který nemusí pokračovat pravidelně – dostupné zdroje to ani nepotvrzují, ani nevyvracejí."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["78-42-M/08 (2025)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Kristenova 58/27, 624 00 Komín, Brno",
-          "role": "sídlo",
-          "izo": "600013651",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600013651",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ 2025 a 2026)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 78-42-M/08 přítomna jen v roce 2025, v roce 2026 chybí; ostatní dva obory pokračují.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "K 31. 3. 2025 obor 78-42-M/08 u IZO 062157884 ještě není zapsán.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "K 30. 6. 2026 obor 78-42-M/08 zůstává u IZO 062157884 registrován.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "https://www.gymum.cz/o-skole",
-          "title": "O škole | Gymum",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola potvrzuje otevření nového oboru Lyceum (pokusné ověřování) od roku 2025 se zaměřeními Právo a management v kultuře a Žurnalistika a média.",
-          "applicable_period": "od školního roku 2025/2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda škola plánuje znovu otevřít Lyceum (pokusné ověřování) v některém z dalších přijímacích řízení."
-      ]
+     "text": "Kristenova 58/27, 624 00 Komín, Brno",
+     "role": "sídlo",
+     "izo": "600013651",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600013651",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ 2025 a 2026)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 78-42-M/08 přítomna jen v roce 2025, v roce 2026 chybí; ostatní dva obory pokračují.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "K 31. 3. 2025 obor 78-42-M/08 u IZO 062157884 ještě není zapsán.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "K 30. 6. 2026 obor 78-42-M/08 zůstává u IZO 062157884 registrován.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "https://www.gymum.cz/o-skole",
+     "title": "O škole | Gymum",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola potvrzuje otevření nového oboru Lyceum (pokusné ověřování) od roku 2025 se zaměřeními Právo a management v kultuře a Žurnalistika a média.",
+     "applicable_period": "od školního roku 2025/2026"
+    },
+    {
+     "url": "https://archiv.msmt.gov.cz/file/65737_1_1/",
+     "title": "Aktualizovaný seznam škol zapojených do pokusného ověřování oboru vzdělání 78-42-M/08 Lyceum ve školním roce 2025/2026 (platný k 2025-12-15)",
+     "published_at": "2025-12-15",
+     "checked_at": "2026-09-12",
+     "supports": "Škola s REDIZO 600013651 je v seznamu MŠMT uvedena mezi školami zapojenými do pokusného ověřování oboru 78-42-M/08 Lyceum s účinností zápisu oboru do školského rejstříku od 1.9.2025.",
+     "applicable_period": "stav k 2025-12-15"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda škola plánuje znovu otevřít Lyceum (pokusné ověřování) v některém z dalších přijímacích řízení.",
+     "uzavreno": "Doloženo seznamem škol MŠMT k pokusnému ověřování oboru Lyceum (archiv.msmt.gov.cz, platný k 15. 12. 2025) a čísly jednacími vyhlášení."
+    }
+   ]
+  }
+ ]
 }

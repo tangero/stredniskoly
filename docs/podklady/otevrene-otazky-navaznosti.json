@@ -6,17 +6,18 @@
   "obsah_vs_zapis": 21,
   "dokument_zrizovatele": 9,
   "misto_vyuky": 11,
-  "seznam_pokusneho_overovani": 10,
-  "prenos_statistik": 3,
-  "pravni_doklad_subjektu": 8,
   "neurceno": 47,
+  "prenos_statistik": 3,
+  "pravni_doklad_subjektu": 7,
   "rejstrik_zapis": 10,
   "vazba_na_jiny_ukol": 1,
   "kapacita_pocty": 4,
   "jina_kola_prijimaciho_rizeni": 2,
   "zdroj_nedostupny": 3,
   "chybi_oznameni_skoly": 5,
-  "duvod_zmeny": 1
+  "duvod_zmeny": 1,
+  "seznam_pokusneho_overovani": 1,
+  "datum_udalosti": 1
  },
  "questions": [
   {
@@ -96,9 +97,9 @@
    ],
    "status": "potvrzeno",
    "recommended_action": "approve_mapping",
-   "kategorie": "seznam_pokusneho_overovani",
-   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
-   "otazka": "Zda MŠMT po sloučení prodloužilo režim pokusného ověřování oboru 78-42-M/08 u nástupnické školy."
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Seznam škol MŠMT platný k 15. 12. 2025 vede pod pořadovým číslem 6 Hotelovou školu a Gymnázium Radlická (REDIZO 600005631) se zapojením od 1. 9. 2025, nástupnickou Smíchovskou SPŠ v něm uvedenou nemá. Dokument je ale starší než sloučení k 1. 1. 2026, takže otázku, zda MŠMT režim převedlo na nástupnickou školu, neuzavírá; odpoví až novější seznam."
   },
   {
    "task_id": "R-600005631",
@@ -181,7 +182,7 @@
    "recommended_action": "manual_review",
    "kategorie": "pravni_doklad_subjektu",
    "cesta_k_uzavreni": "Otevřená data ARES nebo sbírka listin; webové rozhraní justice agentům nevrací obsah.",
-   "otazka": "Zda REDIZO 691017280 bylo formálně sloučeno do REDIZO 600005950, nebo jen zrušeno bez organizačního nástupnictví; obchodně-rejstříkové potvrzení (ARES) se nepodařilo dohledat."
+   "otazka": "Zda šlo o sloučení s právním nástupnictvím, nebo o zánik bez něj, se nepodařilo doložit. ARES potvrzuje, že IČO zaniklých škol už ve veřejném rejstříku vedena nejsou, zatímco IČO 49244884 nástupnické školy ano. Sbírku listin se odsud nepodařilo strojově otevřít: or.justice.cz vrací na dotaz podle IČO jen vyhledávací formulář, nový portál verejnerejstriky.msp.gov.cz je javascriptová aplikace a otevřená data dataor.justice.cz rovněž. Mechanismus a datum zániku proto zůstávají nedoložené; ARES dokládá jen to, že subjekt už ve veřejném rejstříku zapsán není."
   },
   {
    "task_id": "R-600005950",
@@ -204,7 +205,7 @@
    "recommended_action": "manual_review",
    "kategorie": "pravni_doklad_subjektu",
    "cesta_k_uzavreni": "Otevřená data ARES nebo sbírka listin; webové rozhraní justice agentům nevrací obsah.",
-   "otazka": "Formální doklad o sloučení nebo zániku společnosti Gymnázium FOSTRA Meda s.r.o. z obchodního rejstříku; or.justice.cz ani ARES nešly načíst přímým stažením stránky."
+   "otazka": "Zda šlo o sloučení s právním nástupnictvím, nebo o zánik bez něj, se nepodařilo doložit. ARES potvrzuje, že IČO zaniklých škol už ve veřejném rejstříku vedena nejsou, zatímco IČO 49244884 nástupnické školy ano. Sbírku listin se odsud nepodařilo strojově otevřít: or.justice.cz vrací na dotaz podle IČO jen vyhledávací formulář, nový portál verejnerejstriky.msp.gov.cz je javascriptová aplikace a otevřená data dataor.justice.cz rovněž. Mechanismus a datum zániku proto zůstávají nedoložené; ARES dokládá jen to, že subjekt už ve veřejném rejstříku zapsán není."
   },
   {
    "task_id": "R-600006026",
@@ -277,18 +278,6 @@
    "kategorie": "dokument_zrizovatele",
    "cesta_k_uzavreni": "Usnesení rady nebo zastupitelstva kraje; lze hledat v úředních deskách krajů.",
    "otazka": "Přesný právní mechanismus sloučení (rozhodnutí zřizovatele Středočeského kraje) nebyl dohledán v primárním dokumentu; datum 1. 9. 2025 je doloženo sekundárním zdrojem (AtlasŠkolství.cz) a je konzistentní se snímky rejstříku."
-  },
-  {
-   "task_id": "R-600007251",
-   "issue_ids": [
-    "Q0041",
-    "Q0309"
-   ],
-   "status": "potvrzeno",
-   "recommended_action": "record_only",
-   "kategorie": "seznam_pokusneho_overovani",
-   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
-   "otazka": "Nepodařilo se přímo ověřit zápis VOŠ, SPŠ a OA Čáslav v oficiálním seznamu MŠMT škol zapojených do pokusného ověřování oboru 78-42-M/08 Lyceum – stránky msmt.gov.cz s vyhlášením a se seznamem zapojených škol (např. https://msmt.gov.cz/vzdelavani/stredni-vzdelavani/vyhlaseni-pokusneho-overovani-vzdelavani-podle-ramcoveho a https://msmt.gov.cz/vzdelavani/stredni-vzdelavani/seznam-skol-zarazenych-do-pokusneho-overovani-vzdelavani) vrátily při automatizovaném načtení chybu „Stránka nenalezena“. Závěr je přesto podložen přímo webem školy a shodou s daty CERMAT."
   },
   {
    "task_id": "R-600007251",
@@ -380,17 +369,6 @@
    "kategorie": "obsah_vs_zapis",
    "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
    "otazka": "Zda zaměření ŠVP 0007/2024 a 0008/2024 existují ve škole interně i pro ročník přijatý v roce 2026 (např. výběr zaměření až po přijetí), nebo zda škola zaměření čtyřletého studia skutečně zrušila – z dostupných zdrojů nelze rozhodnout."
-  },
-  {
-   "task_id": "R-600007383",
-   "issue_ids": [
-    "Q0207"
-   ],
-   "status": "potvrzeno",
-   "recommended_action": "approve_mapping",
-   "kategorie": "seznam_pokusneho_overovani",
-   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
-   "otazka": "Přesné datum registrace oboru 78-42-M/08 v rejstříku a konkrétní dokument MŠMT o zařazení ČZA Mělník do pokusného ověřování nebyly dohledány (web školy ani rejstřík na úrovni oborů nejsou strojově dostupné); pro závěr o novosti nabídky to však není potřebné."
   },
   {
    "task_id": "R-600007651",
@@ -824,17 +802,6 @@
    "otazka": "Není jasné, zda osmileté studium pro rok 2026/27 přijímá standardně do primy, nebo jen individuálně do vyšších ročníků, jak popisují sekundární zdroje."
   },
   {
-   "task_id": "R-600013651",
-   "issue_ids": [
-    "Q0078"
-   ],
-   "status": "pravděpodobné",
-   "recommended_action": "record_only",
-   "kategorie": "seznam_pokusneho_overovani",
-   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
-   "otazka": "Zda škola plánuje znovu otevřít Lyceum (pokusné ověřování) v některém z dalších přijímacích řízení."
-  },
-  {
    "task_id": "R-600013839",
    "issue_ids": [
     "Q0081",
@@ -961,17 +928,6 @@
    "kategorie": "neurceno",
    "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
    "otazka": "Proč obor Kosmetické služby chyběl v nabídce 1. kola JPZ 2025, když je po celé období registrován."
-  },
-  {
-   "task_id": "R-600015815",
-   "issue_ids": [
-    "Q0350"
-   ],
-   "status": "potvrzeno",
-   "recommended_action": "record_only",
-   "kategorie": "seznam_pokusneho_overovani",
-   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
-   "otazka": "Kdy a jakým aktem MŠMT schválilo pokusné ověřování oboru 78-42-M/08 a proč se dosud neobjevuje v rejstříku."
   },
   {
    "task_id": "R-600016218",
@@ -1461,17 +1417,6 @@
    ],
    "status": "potvrzeno",
    "recommended_action": "record_only",
-   "kategorie": "seznam_pokusneho_overovani",
-   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
-   "otazka": "Přesné číslo jednací a plné znění vyhlášení pokusného ověřování MŠMT (a jeho dodatků) se nepodařilo dohledat na aktuálním webu msmt.gov.cz – staré odkazy na soubory vedou na chybovou stránku."
-  },
-  {
-   "task_id": "R-600170161",
-   "issue_ids": [
-    "Q0245"
-   ],
-   "status": "potvrzeno",
-   "recommended_action": "record_only",
    "kategorie": "neurceno",
    "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
    "otazka": "Není doloženo, ve kterém z pracovišť školy (sady Na Polabí 411/72, K Učilišti 2566, K Učilišti 2183) se obor 78-42-M/08 fakticky vyučuje."
@@ -1486,17 +1431,6 @@
    "kategorie": "dokument_zrizovatele",
    "cesta_k_uzavreni": "Usnesení rady nebo zastupitelstva kraje; lze hledat v úředních deskách krajů.",
    "otazka": "Přesné datum a formu rozhodnutí zřizovatele (Středočeský kraj) o nahrazení oboru Informační služby oborem Lyceum se nepodařilo dohledat samostatným zdrojem zřizovatele; doloženo je jen vlastní oznámení školy."
-  },
-  {
-   "task_id": "R-600170179",
-   "issue_ids": [
-    "Q0314"
-   ],
-   "status": "potvrzeno",
-   "recommended_action": "record_only",
-   "kategorie": "seznam_pokusneho_overovani",
-   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
-   "otazka": "Přesné znění a datum vyhlášení celostátního pokusného ověřování oboru 78-42-M/08 MŠMT nebylo dohledáno přímým zdrojem MŠMT, pouze nepřímo doloženo označením „režim pokusného ověřování“ v datech CERMAT."
   },
   {
    "task_id": "R-600170179",
@@ -1579,17 +1513,6 @@
    "otazka": "Není doloženo přesné datum ani orgán rozhodnutí o neotevření samostatného oboru Cestovní ruch (zda šlo o rozhodnutí zřizovatele – Středočeského kraje – nebo jen o interní rozhodnutí školy)."
   },
   {
-   "task_id": "R-600170241",
-   "issue_ids": [
-    "Q0258"
-   ],
-   "status": "potvrzeno",
-   "recommended_action": "record_only",
-   "kategorie": "seznam_pokusneho_overovani",
-   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
-   "otazka": "Přímý zdroj MŠMT k celostátnímu vyhlášení pokusného ověřování oboru 78-42-M/08 Lyceum z listopadu 2024 nebyl při rešerši dostupný (odkaz na webu školy vedl na chybu 404) – doloženo pouze vyjádřením školy, ne přímo textem vyhlášení MŠMT."
-  },
-  {
    "task_id": "R-600170284",
    "issue_ids": [
     "Q0208"
@@ -1599,17 +1522,6 @@
    "kategorie": "neurceno",
    "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
    "otazka": "Nebyl dohledán žádný regionální novinový článek (Českobudějovický/Jihočeský deník) ani prohlášení Jihočeského kraje, které by explicitně spojovalo vznik zaměření Technik jaderných zařízení s personální poptávkou JE Temelín."
-  },
-  {
-   "task_id": "R-600170349",
-   "issue_ids": [
-    "Q0239"
-   ],
-   "status": "potvrzeno",
-   "recommended_action": "record_only",
-   "kategorie": "seznam_pokusneho_overovani",
-   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
-   "otazka": "Nebyl dohledán samostatný dokument MŠMT (rozhodnutí/dodatek k pokusnému ověřování) potvrzující zařazení REDIZO 600170349 do celostátního pokusného ověřování oboru 78-42-M/08 – doloženo pouze nepřímo přes web školy a data CERMAT."
   },
   {
    "task_id": "R-600170349",
@@ -1890,17 +1802,6 @@
    "otazka": "Bude nástavbové studium 65-41-L/51 Gastronomie zapsáno do rejstříku MŠMT do zahájení výuky v září 2026?"
   },
   {
-   "task_id": "R-691016640",
-   "issue_ids": [
-    "Q0393"
-   ],
-   "status": "rozpor_zdrojů",
-   "recommended_action": "manual_review",
-   "kategorie": "neurceno",
-   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
-   "otazka": "Proběhlo skutečně přijímací řízení do oboru 78-42-M/08 na Digital Academy Kutná Hora v roce 2026, nebo jde o chybný/nedokončený záznam v datech CERMAT?"
-  },
-  {
    "task_id": "R-691016836",
    "issue_ids": [
     "Q0173",
@@ -1934,7 +1835,7 @@
    "recommended_action": "manual_review",
    "kategorie": "pravni_doklad_subjektu",
    "cesta_k_uzavreni": "Otevřená data ARES nebo sbírka listin; webové rozhraní justice agentům nevrací obsah.",
-   "otazka": "Mechanismus a datum zániku subjektu (sloučení, nebo prostý výmaz) je nutné doložit sbírkou listin; ARES potvrzuje jen to, že subjekt už zapsán není."
+   "otazka": "Sbírku listin se odsud nepodařilo strojově otevřít: or.justice.cz vrací na dotaz podle IČO jen vyhledávací formulář, nový portál verejnerejstriky.msp.gov.cz je javascriptová aplikace a otevřená data dataor.justice.cz rovněž. Mechanismus a datum zániku proto zůstávají nedoložené; ARES dokládá jen to, že subjekt už ve veřejném rejstříku zapsán není."
   },
   {
    "task_id": "R-691017301",
@@ -1958,7 +1859,7 @@
    "recommended_action": "record_only",
    "kategorie": "pravni_doklad_subjektu",
    "cesta_k_uzavreni": "Otevřená data ARES nebo sbírka listin; webové rozhraní justice agentům nevrací obsah.",
-   "otazka": "Mechanismus a datum zániku subjektu (sloučení, nebo prostý výmaz) je nutné doložit sbírkou listin; ARES potvrzuje jen to, že subjekt už zapsán není."
+   "otazka": "Sbírku listin se odsud nepodařilo strojově otevřít: or.justice.cz vrací na dotaz podle IČO jen vyhledávací formulář, nový portál verejnerejstriky.msp.gov.cz je javascriptová aplikace a otevřená data dataor.justice.cz rovněž. Mechanismus a datum zániku proto zůstávají nedoložené; ARES dokládá jen to, že subjekt už ve veřejném rejstříku zapsán není."
   },
   {
    "task_id": "R-691017310",
@@ -1982,7 +1883,7 @@
    "recommended_action": "record_only",
    "kategorie": "pravni_doklad_subjektu",
    "cesta_k_uzavreni": "Otevřená data ARES nebo sbírka listin; webové rozhraní justice agentům nevrací obsah.",
-   "otazka": "Mechanismus a datum zániku subjektu (sloučení, nebo prostý výmaz) je nutné doložit sbírkou listin; ARES potvrzuje jen to, že subjekt už zapsán není."
+   "otazka": "Sbírku listin se odsud nepodařilo strojově otevřít: or.justice.cz vrací na dotaz podle IČO jen vyhledávací formulář, nový portál verejnerejstriky.msp.gov.cz je javascriptová aplikace a otevřená data dataor.justice.cz rovněž. Mechanismus a datum zániku proto zůstávají nedoložené; ARES dokládá jen to, že subjekt už ve veřejném rejstříku zapsán není."
   },
   {
    "task_id": "R-691017328",
@@ -2006,7 +1907,7 @@
    "recommended_action": "record_only",
    "kategorie": "pravni_doklad_subjektu",
    "cesta_k_uzavreni": "Otevřená data ARES nebo sbírka listin; webové rozhraní justice agentům nevrací obsah.",
-   "otazka": "Mechanismus a datum zániku subjektu (sloučení, nebo prostý výmaz) je nutné doložit sbírkou listin; ARES potvrzuje jen to, že subjekt už zapsán není."
+   "otazka": "Sbírku listin se odsud nepodařilo strojově otevřít: or.justice.cz vrací na dotaz podle IČO jen vyhledávací formulář, nový portál verejnerejstriky.msp.gov.cz je javascriptová aplikace a otevřená data dataor.justice.cz rovněž. Mechanismus a datum zániku proto zůstávají nedoložené; ARES dokládá jen to, že subjekt už ve veřejném rejstříku zapsán není."
   },
   {
    "task_id": "R-691017344",
@@ -2045,7 +1946,7 @@
    "recommended_action": "manual_review",
    "kategorie": "pravni_doklad_subjektu",
    "cesta_k_uzavreni": "Otevřená data ARES nebo sbírka listin; webové rozhraní justice agentům nevrací obsah.",
-   "otazka": "Mechanismus a datum zániku subjektu (sloučení, nebo prostý výmaz) je nutné doložit sbírkou listin; ARES potvrzuje jen to, že subjekt už zapsán není."
+   "otazka": "Sbírku listin se odsud nepodařilo strojově otevřít: or.justice.cz vrací na dotaz podle IČO jen vyhledávací formulář, nový portál verejnerejstriky.msp.gov.cz je javascriptová aplikace a otevřená data dataor.justice.cz rovněž. Mechanismus a datum zániku proto zůstávají nedoložené; ARES dokládá jen to, že subjekt už ve veřejném rejstříku zapsán není."
   },
   {
    "task_id": "R-691017981",
@@ -2114,9 +2015,9 @@
    ],
    "status": "potvrzeno",
    "recommended_action": "record_only",
-   "kategorie": "pravni_doklad_subjektu",
-   "cesta_k_uzavreni": "Otevřená data ARES nebo sbírka listin; webové rozhraní justice agentům nevrací obsah.",
-   "otazka": "Přesné datum zápisu školy do rejstříku MŠMT nebylo dohledáno; IČO 17590426 se nepodařilo ověřit v obchodním/veřejném rejstříku (or.justice.cz) samostatným dotazem – údaj pochází z webu školy."
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum zápisu školy do rejstříku MŠMT nebylo dohledáno; ve všech čtyřech snímcích chybí."
   }
  ]
 }

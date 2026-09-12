@@ -1,6 +1,6 @@
 # Přehled konfliktů návazností: co je vyřešeno a co zbývá
 
-Verze 1.1 · 12. 9. 2026. Skupiny A a B jsou dotažené, čísla níže platí po nich. Návazné na [souhrnné zadání](ukol-navaznost-skol-a-oboru-2027.md).
+Verze 1.2 · 12. 9. 2026. Skupiny A a B jsou dotažené, ze skupiny C je vyřešen seznam MŠMT. Návazné na [souhrnné zadání](ukol-navaznost-skol-a-oboru-2027.md).
 
 Konfliktem se zde rozumí nabídka nebo školní jednotka, kterou konzervativní párování dvou ročníků nespojilo. Fronta jich obsahovala 436 otázek ve 192 úkolech. Tento dokument říká, čím byly vyřešeny a co na nich zůstává otevřené.
 
@@ -39,7 +39,7 @@ Výsledek podle stavu nálezu:
 
 ## Část 3: co zbývá otevřené
 
-Původně nesly nálezy 227 otevřených otázek ve 149 úkolech. Skupiny A a B jsou vyřešené, takže jich dnes zbývá **180 ve 125 úkolech**. Čtyřicet čtyři otázek je uzavřeno v poli `resolved_questions` i s důvodem, dvě přesunuty do `decisions_required` jako věci k rozhodnutí, ne k dohledání. Třídění vytváří `scripts/classify-open-questions.py`.
+Původně nesly nálezy 227 otevřených otázek ve 149 úkolech. Dnes jich zbývá **171 ve 122 úkolech**. Padesát tři otázek je uzavřeno v poli `resolved_questions` i s důvodem, dvě přesunuty do `decisions_required` jako věci k rozhodnutí, ne k dohledání. Třídění vytváří `scripts/classify-open-questions.py`.
 
 ### A. Uzavře je rozhodnutí, ne rešerše — **hotovo**
 
@@ -67,15 +67,21 @@ Vznikl `scripts/offer-history.py`, který k jedné nabídce vypíše její stopu
 
 Nejcennější nález skupiny: u technického gymnázia při VŠTE nebylo jasné, proč první ročník otevřený v září 2025 chybí v datech 1. kola. Odpověď je ve 2. kole 2025, kde má obor devatenáct přihlášek a čtrnáct přijatých.
 
-### C. Uzavře je jeden sdílený dokument — **zbývá**
+### C. Uzavře je jeden sdílený dokument — **částečně hotovo**
 
-| Kategorie | Otázek | Úkolů | Čím |
-|---|---:|---:|---|
-| Seznam škol v pokusném ověřování oboru Lyceum | 10 | 10 | Jediný seznam MŠMT k oboru 78-42-M/08 |
-| Dokument zřizovatele | 9 | 9 | Usnesení rady nebo zastupitelstva kraje |
-| Právní doklad o zániku subjektu | 8 | 7 | ARES již použit, zbývá sbírka listin pro datum a mechanismus |
+**Seznam MŠMT je nalezen a použit.** Vyhlášení pokusného ověřování oboru 78-42-M/08 Lyceum má čj. MSMT-16031/2024-3 z 18. 10. 2024, dodatek č. 1 čj. MSMT-25860/2025-1 ze 4. 11. 2025 a dodatek č. 2 čj. MSMT-2941/2026-2 z 27. 2. 2026. Seznam zapojených škol platný k 15. 12. 2025 uvádí 45 škol s jejich REDIZO a s datem, odkdy mají obor zapsán ve školském rejstříku. Uložen je jako [strojová data](podklady/pokusne-overovani-lyceum-skoly.json).
 
-Tato skupina má nejlepší poměr práce k výsledku: tři dokumenty uzavřou 27 otázek.
+Frontu se podařilo proti němu porovnat celou: z 22 úkolů s nabídkou tohoto oboru je 21 v seznamu jmenovitě uvedeno. Dvacátý druhý je Smíchovská SPŠ, která obor převzala sloučením s Radlickou až po datu platnosti seznamu.
+
+| Kategorie | Otázek | Stav |
+|---|---:|---|
+| Seznam škol v pokusném ověřování | 10 → 1 | Devět uzavřeno seznamem MŠMT; zbývá jen policejní škola, jde o jiný obor 68-42-L/01 |
+| Dokument zřizovatele | 9 | Nevyřešeno, usnesení krajů se odsud nepodařilo dohledat |
+| Právní doklad o zániku subjektu | 8 → 7 | Jedno IČO ověřeno v ARES; sbírka listin zůstává nedostupná |
+
+Navíc se tím uzavřel jeden ze tří rozporů zdrojů: u Digital Academy Kutná Hora chyběla nabídka oboru Lyceum na webu školy, ale seznam MŠMT ji uvádí s účinností od 1. 9. 2026. Nález je přepsán na potvrzenou novou nabídku.
+
+**Proč zbytek skupiny C nevyšel.** Usnesení rad a zastupitelstev krajů leží za vyhledávacími formuláři jednotlivých krajů a bez funkčního vyhledávače se k nim nedostaneme. Sbírka listin je dnes ve všech třech přístupových cestách javascriptová aplikace: `or.justice.cz` vrací na dotaz podle IČO jen formulář, nový portál `verejnerejstriky.msp.gov.cz` i otevřená data `dataor.justice.cz` běží jako JavaScript bez dostupného rozhraní. U dotčených nálezů je to zaznamenáno včetně toho, co bylo zkoušeno.
 
 ### D. Vyžadují další rešerši — **zbývá**
 
@@ -100,9 +106,9 @@ Otázka „změnil se s názvem i obsah výuky" se netýká jen přejmenovaných
 
 ## Stav a další postup
 
-Skupiny A a B jsou hotové, ubraly 47 otázek. Zbývá:
+Skupiny A a B jsou hotové a ze skupiny C je vyřešen seznam MŠMT. Dohromady ubylo 56 otázek. Zbývá:
 
-1. **Získat tři dokumenty skupiny C.** Seznam MŠMT k pokusnému ověřování je nejcennější, uzavře deset úkolů naráz.
+1. **Usnesení krajů a sbírka listin.** Obojí potřebuje buď funkční vyhledávač, nebo prohlížeč, který zvládne javascriptovou aplikaci. Devět a sedm otázek.
 2. **Skupinu D nechat na cílenou rešerši** u těch škol, kde na odpovědi závisí přenos historických výsledků.
 3. **Skupinu E označit v datech jako otevřenou** a vrátit se k ní s daty 2027. Na webu do té doby nepsat, že obor byl zrušen.
 

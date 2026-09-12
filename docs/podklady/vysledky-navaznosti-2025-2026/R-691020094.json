@@ -1,80 +1,105 @@
 {
-  "task_id": "R-691020094",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Subjekt REDIZO 691020094 ani IZO 250013754 nejsou zapsány v žádném ze čtyř snímků rejstříku MŠMT (2025-03-31 až 2026-06-30). Škola byla dohledána mimo rejstřík: je to Střední škola Baltimore z. ú., IČO 17590426, sídlo V Zahradách 1867, Beroun, místo výuky Švýcarská 2124, Beroun, součást vzdělávací skupiny Baltimore Education Group; založena v roce 2026."
-  },
-  "findings": [
+ "task_id": "R-691020094",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt REDIZO 691020094 ani IZO 250013754 nejsou zapsány v žádném ze čtyř snímků rejstříku MŠMT (2025-03-31 až 2026-06-30). Škola byla dohledána mimo rejstřík: je to Střední škola Baltimore z. ú., IČO 17590426, sídlo V Zahradách 1867, Beroun, místo výuky Švýcarská 2124, Beroun, součást vzdělávací skupiny Baltimore Education Group; založena v roce 2026."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0417",
+    "Q0431"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2026 REDIZO 691020094 nabízí obor 78-42-M/06 Kombinované lyceum (4leté, denní, český) bez upřesněného zaměření; v roce 2025 REDIZO nemá žádnou nabídku.",
+    "Subjekt ani IZO 250013754 nejsou zapsány v žádném ze čtyř sledovaných snímků rejstříku MŠMT.",
+    "Oficiální web školy (ssbaltimore.cz) potvrzuje shodné REDIZO 691020094, IČO 17590426, sídlo V Zahradách 1867, Beroun, místo výuky Švýcarská 2124, Beroun, a obor Kombinované lyceum 78-42-M/06 jako dvojjazyčné česko-anglické vzdělávání s programem American HighSchool.",
+    "Škola byla založena v roce 2026 pod vedením Mgr. Zuzany Kačerovské Gürtlerové jako součást vzdělávací skupiny Baltimore Education Group, kterou v roce 2021 založili manželé Sam a Annie Klika (nejprve jako Základní škola Baltimore v Berouně); od roku 2023 se k vedení skupiny připojili i Bára a Radko Gudasovi.",
+    "Web školy uvádí probíhající přijímací řízení pro školní rok 2026/2027.",
+    "Obchodní rejstřík přes otevřené rozhraní ARES potvrzuje IČO 17590426: Střední škola Baltimore z. ú., zapsána 3. 10. 2022, sídlo V Zahradách 1867, Beroun-Město, 266 01 Beroun. Údaj z webu školy je tím ověřen nezávisle. Adresa v datech CERMAT (Švýcarská 2124, Beroun) se od sídla liší, jde tedy o místo výuky vedené odděleně od sídla, ne o rozpor."
+   ],
+   "conclusion": "Jde o zcela novou střední školu (obor Kombinované lyceum 78-42-M/06), založenou v roce 2026 jako součást vzdělávací skupiny Baltimore Education Group navazující na Základní školu Baltimore (2021). Nabídka nemá žádného předchůdce v datech 2025. Škola k poslednímu dostupnému snímku (30. 6. 2026) není zapsána v rejstříku MŠMT, přestože zřizovatel a vznik jsou dobře doloženy na oficiálním webu školy.",
+   "alternative_explanations": [
+    "Zápis do rejstříku MŠMT mohl proběhnout po 30. 6. 2026 v novějším snímku, který není mezi sledovanými čtyřmi; to však závěr o vzniku nové školy nemění."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "78-42-M/06 (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0417", "Q0431"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2026 REDIZO 691020094 nabízí obor 78-42-M/06 Kombinované lyceum (4leté, denní, český) bez upřesněného zaměření; v roce 2025 REDIZO nemá žádnou nabídku.",
-        "Subjekt ani IZO 250013754 nejsou zapsány v žádném ze čtyř sledovaných snímků rejstříku MŠMT.",
-        "Oficiální web školy (ssbaltimore.cz) potvrzuje shodné REDIZO 691020094, IČO 17590426, sídlo V Zahradách 1867, Beroun, místo výuky Švýcarská 2124, Beroun, a obor Kombinované lyceum 78-42-M/06 jako dvojjazyčné česko-anglické vzdělávání s programem American HighSchool.",
-        "Škola byla založena v roce 2026 pod vedením Mgr. Zuzany Kačerovské Gürtlerové jako součást vzdělávací skupiny Baltimore Education Group, kterou v roce 2021 založili manželé Sam a Annie Klika (nejprve jako Základní škola Baltimore v Berouně); od roku 2023 se k vedení skupiny připojili i Bára a Radko Gudasovi.",
-        "Web školy uvádí probíhající přijímací řízení pro školní rok 2026/2027."
-      ],
-      "conclusion": "Jde o zcela novou střední školu (obor Kombinované lyceum 78-42-M/06), založenou v roce 2026 jako součást vzdělávací skupiny Baltimore Education Group navazující na Základní školu Baltimore (2021). Nabídka nemá žádného předchůdce v datech 2025. Škola k poslednímu dostupnému snímku (30. 6. 2026) není zapsána v rejstříku MŠMT, přestože zřizovatel a vznik jsou dobře doloženy na oficiálním webu školy.",
-      "alternative_explanations": [
-        "Zápis do rejstříku MŠMT mohl proběhnout po 30. 6. 2026 v novějším snímku, který není mezi sledovanými čtyřmi; to však závěr o vzniku nové školy nemění."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["78-42-M/06 (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "V Zahradách 1867, 266 01 Beroun",
-          "role": "sídlo",
-          "izo": "691020094",
-          "valid_period": "od 2026 (mimo sledované snímky rejstříku MŠMT)",
-          "source_url": "https://www.ssbaltimore.cz"
-        },
-        {
-          "text": "Švýcarská 2124, 266 01 Beroun",
-          "role": "místo výuky",
-          "izo": "250013754",
-          "valid_period": "od 2026 (mimo sledované snímky rejstříku MŠMT)",
-          "source_url": "https://www.ssbaltimore.cz"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "REDIZO 691020094 ani IZO 250013754 nejsou evidovány k 30. 6. 2026 (shodně chybí i ve snímcích 2025-03-31, 2025-12-31, 2026-03-31).",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "https://www.ssbaltimore.cz",
-          "title": "Střední škola Baltimore – oficiální web",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Potvrzuje REDIZO 691020094, IČO 17590426, sídlo V Zahradách 1867 Beroun, místo výuky Švýcarská 2124 Beroun, obor Kombinované lyceum 78-42-M/06, založení školy 2026 jako součást Baltimore Education Group (ZŠ Baltimore založena 2021).",
-          "applicable_period": "stav webu k září 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-691020094",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "REDIZO 691020094 bez nabídky v roce 2025, jedna nabídka 78-42-M/06 Kombinované lyceum v roce 2026.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Přesné datum zápisu školy do rejstříku MŠMT nebylo dohledáno; IČO 17590426 se nepodařilo ověřit v obchodním/veřejném rejstříku (or.justice.cz) samostatným dotazem – údaj pochází z webu školy."
-      ]
+     "text": "V Zahradách 1867, 266 01 Beroun",
+     "role": "sídlo",
+     "izo": "691020094",
+     "valid_period": "od 2026 (mimo sledované snímky rejstříku MŠMT)",
+     "source_url": "https://www.ssbaltimore.cz"
+    },
+    {
+     "text": "Švýcarská 2124, 266 01 Beroun",
+     "role": "místo výuky",
+     "izo": "250013754",
+     "valid_period": "od 2026 (mimo sledované snímky rejstříku MŠMT)",
+     "source_url": "https://www.ssbaltimore.cz"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "REDIZO 691020094 ani IZO 250013754 nejsou evidovány k 30. 6. 2026 (shodně chybí i ve snímcích 2025-03-31, 2025-12-31, 2026-03-31).",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "https://www.ssbaltimore.cz",
+     "title": "Střední škola Baltimore – oficiální web",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Potvrzuje REDIZO 691020094, IČO 17590426, sídlo V Zahradách 1867 Beroun, místo výuky Švýcarská 2124 Beroun, obor Kombinované lyceum 78-42-M/06, založení školy 2026 jako součást Baltimore Education Group (ZŠ Baltimore založena 2021).",
+     "applicable_period": "stav webu k září 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-691020094",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "REDIZO 691020094 bez nabídky v roce 2025, jedna nabídka 78-42-M/06 Kombinované lyceum v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/17590426",
+     "title": "ARES – Střední škola Baltimore z. ú.",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "IČO 17590426 je ve veřejném rejstříku vedeno od 3. 10. 2022 se sídlem V Zahradách 1867, Beroun.",
+     "applicable_period": "stav k 12. 9. 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Přesné datum zápisu školy do rejstříku MŠMT nebylo dohledáno; ve všech čtyřech snímcích chybí."
+   ],
+   "resolved_questions": [
+    {
+     "otazka": "Přesné datum zápisu školy do rejstříku MŠMT nebylo dohledáno; IČO 17590426 se nepodařilo ověřit v obchodním/veřejném rejstříku (or.justice.cz) samostatným dotazem – údaj pochází z webu školy.",
+     "uzavreno": "Ověřeno v otevřených datech ARES (scripts/lookup_ares.py); IČO existuje a odpovídá škole."
+    }
+   ]
+  }
+ ]
 }

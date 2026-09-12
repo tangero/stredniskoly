@@ -102,7 +102,8 @@
    "observations": [
     "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/08 Lyceum (v datech CERMAT označený jako „režim pokusného ověřování\"), který v nabídce 2025 nebyl.",
     "Škola na svém webu (sousoszn.cz, článek publikovaný 2. 3. 2026) oznamuje: „otevíráme od 1. září 2026 nový čtyřletý maturitní obor 78-42-M/08 Lyceum\", se zaměřením od 3. ročníku na humanitní oblast nebo výživu a zdravý životní styl, s důrazem na cizí jazyky, STEM předměty a práci s informacemi.",
-    "Obor 78-42-M/08 není evidován v žádném ze čtyř snímků rejstříku MŠMT (ani k 30. 6. 2026) – shoduje se s tím, že jde o obor v režimu pokusného ověřování, jehož administrativní schválení a zápis může probíhat mimo standardní běh zápisu do rejstříku, případně s odstupem."
+    "Obor 78-42-M/08 není evidován v žádném ze čtyř snímků rejstříku MŠMT (ani k 30. 6. 2026) – shoduje se s tím, že jde o obor v režimu pokusného ověřování, jehož administrativní schválení a zápis může probíhat mimo standardní běh zápisu do rejstříku, případně s odstupem.",
+    "Pokusné ověřování oboru 78-42-M/08 Lyceum vyhlásilo MŠMT dne 18. 10. 2024 pod čj. MSMT-16031/2024-3; dodatek č. 1 má čj. MSMT-25860/2025-1 ze 4. 11. 2025 a dodatek č. 2 čj. MSMT-2941/2026-2 z 27. 2. 2026. Aktualizovaný seznam zapojených škol platný k 15. 12. 2025 uvádí tuto školu (REDIZO 600015815) s účinností zápisu oboru do školského rejstříku od 1.9.2026. Zapojení školy do pokusného ověřování je tím doloženo přímo dokumentem MŠMT."
    ],
    "conclusion": "Lyceum 78-42-M/08 je nově zaváděný obor, otevíraný školou od školního roku 2026/27, bez předchůdce v nabídce 2025. Škola jej sama označuje jako nový obor v režimu pokusného ověřování; k datu zpracování není evidován v žádném snímku rejstříku MŠMT, což je v souladu s jeho zvláštním administrativním režimem, nikoli rozporem s tvrzením o novosti.",
    "alternative_explanations": [
@@ -148,13 +149,25 @@
      "checked_at": "2026-09-12",
      "supports": "Nabídka 78-42-M/08 Lyceum přítomna pouze v roce 2026, chybí v roce 2025.",
      "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://archiv.msmt.gov.cz/file/65737_1_1/",
+     "title": "Aktualizovaný seznam škol zapojených do pokusného ověřování oboru vzdělání 78-42-M/08 Lyceum ve školním roce 2025/2026 (platný k 2025-12-15)",
+     "published_at": "2025-12-15",
+     "checked_at": "2026-09-12",
+     "supports": "Škola s REDIZO 600015815 je v seznamu MŠMT uvedena mezi školami zapojenými do pokusného ověřování oboru 78-42-M/08 Lyceum s účinností zápisu oboru do školského rejstříku od 1.9.2026.",
+     "applicable_period": "stav k 2025-12-15"
     }
    ],
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Kdy a jakým aktem MŠMT schválilo pokusné ověřování oboru 78-42-M/08 a proč se dosud neobjevuje v rejstříku."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Kdy a jakým aktem MŠMT schválilo pokusné ověřování oboru 78-42-M/08 a proč se dosud neobjevuje v rejstříku.",
+     "uzavreno": "Doloženo seznamem škol MŠMT k pokusnému ověřování oboru Lyceum (archiv.msmt.gov.cz, platný k 15. 12. 2025) a čísly jednacími vyhlášení."
+    }
    ]
   }
  ]

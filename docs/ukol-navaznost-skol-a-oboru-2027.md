@@ -67,7 +67,7 @@ Všech 192 úkolů fronty má vlastní soubor výsledku a všech 436 otázek fro
 
 Doporučená akce není schválením. `approve_mapping` znamená návrh k přijetí do migrační mapy, `record_only` pouhou evidenci beze změny statistik, `manual_review` případ, který vyžaduje rozhodnutí člověka.
 
-Nálezy nesly 227 otevřených otázek. Čtyřicet čtyři je uzavřeno i s důvodem a dvě přesunuty mezi rozhodnutí k přezkumu, takže dnes jich zbývá 180 ve 125 úkolech. Rozbor podle cesty k uzavření je v [přehledu konfliktů](prehled-konfliktu-navaznosti.md).
+Nálezy nesly 227 otevřených otázek. Padesát tři je uzavřeno i s důvodem a dvě přesunuty mezi rozhodnutí k přezkumu, takže dnes jich zbývá 171 ve 122 úkolech. Rozbor podle cesty k uzavření je v [přehledu konfliktů](prehled-konfliktu-navaznosti.md).
 
 Srovnatelnost historických výsledků je posouzena samostatně od návaznosti: 59 nálezů srovnatelných, 44 částečně, 147 nesrovnatelných a 6 neurčených. Rešerše navrhuje 20 vazeb mezi úkoly, například mezi školami skupiny FOSTRA nebo mezi sloučeným učilištěm a jeho nástupcem.
 
@@ -111,6 +111,7 @@ Ze 461 externích odkazů odpovědělo 443 kódem 200. Zbývajících 18 rozebí
 | [Přehled konfliktů](prehled-konfliktu-navaznosti.md) | Co konflikty vyřešilo a jaké kategorie zbývají otevřené |
 | [Otevřené otázky](podklady/otevrene-otazky-navaznosti.json) | Zbývající otázky roztříděné podle cesty k uzavření |
 | [Dvouletý cyklus](dvoulety-cyklus-nabidky-oboru.md) | Obory vypisované obden, test proti datům 1. kola 2024 |
+| [Pokusné ověřování Lyceum](podklady/pokusne-overovani-lyceum-skoly.json) | 45 škol ze seznamu MŠMT s datem zápisu oboru |
 | [Podklad cyklu](podklady/dvoulety-cyklus-2024-2026.json) | Stopa každé nepřiřazené nabídky v roce 2024 |
 
 ## 5. Reprodukce
