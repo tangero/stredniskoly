@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "scope": "1. kolo; denní nezkrácené studium s povinnou JPZ; nikoli celý rejstřík škol",
+  "sources": [
+    {
+      "year": 2025,
+      "file": "PZ2025_kolo1_skolobory_vysledky.xlsx",
+      "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2025_kolo1_skolobory_vysledky.xlsx",
+      "sha256": "b4016252e34db63aeac538f9983bada503fb79770ac565c63f4a5a230b96bdaf"
+    },
+    {
+      "year": 2026,
+      "file": "PZ2026_kolo1_skolobory_vysledky.xlsx",
+      "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2026_kolo1_skolobory_vysledky.xlsx",
+      "sha256": "a003441f4beed6fb9c181aa00f9d1a59a9c206ff10f113ad807740e68d5511d5"
+    }
+  ]
+}
