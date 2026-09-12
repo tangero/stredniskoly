@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { analyzeSchool, analyzeCombination } from '../src/lib/chances.ts';
 import { subjectScore, unavailableAdmissionScores } from '../src/lib/historical-scores.ts';
-import { readScore, readSelection, readSchoolIds, sharedSimulatorParams } from '../src/lib/simulator-state.ts';
+import { MAX_SELECTION, readScore, readSelection, readSchoolIds, sharedSimulatorParams } from '../src/lib/simulator-state.ts';
 
 const school = {
   id: '600001431_79-41-K/41', kapacita_2026: 30, prihlasky_2026: 150,
@@ -60,6 +60,8 @@ test('staré odkazy a nový formát zachovají pořadí i čárku uvnitř identi
   assert.equal(sharedSimulatorParams(new URLSearchParams('cj=invalid&ma=55')).size, 0);
   assert.deepEqual(readSchoolIds('[broken'), []);
   assert.deepEqual(readSchoolIds('[1,null,"a","a"]'), ['a']);
-  assert.equal(readSelection(JSON.stringify(Array.from({ length: 50 }, (_, i) => String(i)))).length, 30);
+  // Uložený výběr unese desítky kandidátů; ořezání je pojistka proti poškozenému vstupu.
+  assert.equal(readSelection(JSON.stringify(Array.from({ length: 50 }, (_, i) => String(i)))).length, 50);
+  assert.equal(readSelection(JSON.stringify(Array.from({ length: MAX_SELECTION + 10 }, (_, i) => String(i)))).length, MAX_SELECTION);
   assert.deepEqual(readSelection(null), []);
 });

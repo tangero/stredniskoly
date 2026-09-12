@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { krajNames } from '@/types/school';
 
 interface SearchResult {
+  href?: string;
   id: string;
   nazev: string;
   nazev_display?: string;
@@ -361,7 +362,7 @@ export function Header() {
                     return (
                       <Link
                         key={school.id}
-                        href={`/skola/${school.slug}`}
+                        href={school.href ?? `/skola/${school.slug}`}
                         className="block px-4 py-3 hover:bg-blue-50 no-underline"
                         onClick={() => {
                           setIsSearchOpen(false);
