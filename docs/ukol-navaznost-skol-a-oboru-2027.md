@@ -80,6 +80,7 @@ Dvě kontroly jsou reprodukovatelné z kořene repozitáře:
 ```sh
 python3 scripts/check-continuity-results.py   # pokrytí otázek, povinná pole, číselníky, konvence
 python3 scripts/check-continuity-sources.py   # dostupnost každého citovaného odkazu
+python3 scripts/classify-open-questions.py    # co zbývá otevřené a čím to lze uzavřít
 ```
 
 Ze 461 externích odkazů odpovědělo 443 kódem 200. Zbývajících 18 rozebírá [kontrola zdrojů](podklady/kontrola-zdroju-navaznosti-2025-2026.md); vymyšlený zdroj mezi nimi není. Jeden odkaz je doložitelně neexistující a je určen k opravě.
@@ -105,6 +106,8 @@ Ze 461 externích odkazů odpovědělo 443 kódem 200. Zbývajících 18 rozebí
 | [Rejstřík k frontě](podklady/rejstrik-k-fronte-2025-2026.json) | Strojový přehled ze čtyř snímků rejstříku MŠMT ke každému úkolu |
 | [Snímky rejstříku](../data/msmt_rejstrik/README.md) | Zdroj, rozsah a použití datovaných snímků MŠMT |
 | [Kontrola zdrojů](podklady/kontrola-zdroju-navaznosti-2025-2026.md) | Výsledek ověření dostupnosti citovaných odkazů |
+| [Přehled konfliktů](prehled-konfliktu-navaznosti.md) | Co konflikty vyřešilo a jaké kategorie zbývají otevřené |
+| [Otevřené otázky](podklady/otevrene-otazky-navaznosti.json) | Všech 227 otázek roztříděných podle cesty k uzavření |
 | [Dvouletý cyklus](dvoulety-cyklus-nabidky-oboru.md) | Obory vypisované obden, test proti datům 1. kola 2024 |
 | [Podklad cyklu](podklady/dvoulety-cyklus-2024-2026.json) | Stopa každé nepřiřazené nabídky v roce 2024 |
 

@@ -1,51 +1,121 @@
 {
-  "task_id": "R-691017301",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Gymnázium FOSTRA Digita s.r.o. (REDIZO 691017301, IČ 19667507, IZO 181142040, sídlo Eliášova 827/22, Bubeneč, Praha) je evidováno pouze ve snímku k 31. 3. 2025 s oborem 79-41-K/41 Gymnázium a místem výuky Havlíčkovo náměstí 300/10, Žižkov, Praha. Ve všech dalších snímcích (31. 12. 2025, 31. 3. 2026, 30. 6. 2026) subjekt i IZO 181142040 z rejstříku zcela zmizely a nejsou vedeny pod žádným jiným REDIZO. Na rozdíl od sesterských REDIZO 691017280 (Aspira) a 691017344 (Meda) se nabídka 'Rozvíjíme digitální dovednosti' ani žádný podobný text neobjevuje v nabídkách žádné jiné školy CERMAT 2026 v celé rešeršní frontě, a program 'Digita' není zmíněn ani na aktuálním webu skupiny fostra.cz."
-  },
-  "findings": [
+ "task_id": "R-691017301",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Gymnázium FOSTRA Digita s.r.o. (REDIZO 691017301, IČ 19667507, IZO 181142040, sídlo Eliášova 827/22, Bubeneč, Praha) je evidováno pouze ve snímku k 31. 3. 2025 s oborem 79-41-K/41 Gymnázium a místem výuky Havlíčkovo náměstí 300/10, Žižkov, Praha. Ve všech dalších snímcích (31. 12. 2025, 31. 3. 2026, 30. 6. 2026) subjekt i IZO 181142040 z rejstříku zcela zmizely a nejsou vedeny pod žádným jiným REDIZO. Na rozdíl od sesterských REDIZO 691017280 (Aspira) a 691017344 (Meda) se nabídka 'Rozvíjíme digitální dovednosti' ani žádný podobný text neobjevuje v nabídkách žádné jiné školy CERMAT 2026 v celé rešeršní frontě, a program 'Digita' není zmíněn ani na aktuálním webu skupiny fostra.cz."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0175",
+    "Q0197"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "V 1. kole JPZ 2025 nabízel REDIZO 691017301 (Gymnázium FOSTRA Digita s.r.o., IZO 181142040, sídlo Eliášova 827/22, místo výuky Havlíčkovo náměstí 300/10) obor 79-41-K/41 Gymnázium se zaměřením 'Rozvíjíme digitální dovednosti'. V roce 2026 nemá REDIZO 691017301 žádnou nabídku.",
+    "Rejstřík MŠMT eviduje REDIZO 691017301 a jeho IZO 181142040 pouze k 31. 3. 2025; ve snímcích k 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026 subjekt i IZO chybí zcela - stejný vzorec zániku jako u sesterských REDIZO 691017280 (Aspira), 691017310 (Pontia), 691017328 (Europea) a 691017344 (Meda), všechny se sídlem/adresou v rámci skupiny FOSTRA.",
+    "Prohledání celé rešeršní fronty (192 úkolů, docs/podklady/fronta-dohledavani-2025-2026.json) neobsahuje frázi 'digitální dovednosti' u žádné jiné nepřiřazené nabídky roku 2026 - na rozdíl od sesterských REDIZO 691017280 a 691017344, kde se textová shoda se zaměřením REDIZO 600005950 v roce 2026 podařila najít, u REDIZO 691017301 žádná odpovídající nabídka v celém CERMAT datasetu 2026 (podle nabídek REDIZO 600005950 zjištěných úkolem R-600005950, který má v roce 2026 jen 5 nabídek: Aspira, dvakrát Meda, dvakrát International) neexistuje.",
+    "Web fostra.cz (ověřeno 12. 9. 2026, stránky /gymnazia a hlavní stránka) uvádí pro školní rok 2026/27 pouze čtyři programy - Inspira, Aspira, Meda, Alma - všechny na adrese Havlíčkovo náměstí 300/10, výhradně pod jedinou právnickou osobou Gymnázium FOSTRA International s.r.o. Program 'Digita' ani žádná zmínka o 'digitálních dovednostech' se na webu nevyskytuje.",
+    "Vyhledávání (WebFetch přes Bing) fráze 'Gymnázium FOSTRA Digita s.r.o.' nevrátilo žádný relevantní výsledek k dohledání osudu společnosti; přímé ověření stavu společnosti IČ 19667507 v obchodním rejstříku (or.justice.cz) i v ARES selhalo technicky - obě služby jsou postavené na JavaScriptové aplikaci nečitelné jako statická stránka. Rozpočet webového vyhledávání (WebSearch) byl v této relaci již vyčerpán, použito jen přímé načítání stránek (WebFetch), což je omezení této rešerše.",
+    "Obchodní rejstřík přes otevřené rozhraní ARES: IČO 19667507 (Gymnázium FOSTRA Digita s.r.o.) není k 12. 9. 2026 ve veřejném rejstříku vedeno, zatímco IČO 49244884 (Gymnázium FOSTRA International s.r.o., vznik 25. 5. 1993) vedeno je. Vyhledání podle jména „FOSTRA“ vrací dvanáct činných subjektů skupiny a žádný z pěti zaniklých mezi nimi není. Doklad potvrzuje zánik subjektu, neříká však, zda šlo o sloučení, ani k jakému datu."
+   ],
+   "conclusion": "REDIZO 691017301 (Gymnázium FOSTRA Digita s.r.o.) zmizelo z rejstříku MŠMT po 31. 3. 2025 a jeho nabídka 'Rozvíjíme digitální dovednosti' nemá - na rozdíl od sesterských programů Aspira a Meda - žádnou dohledatelnou textovou obdobu v nabídkách CERMAT 2026 ani na aktuálním webu skupiny FOSTRA. Nejpravděpodobnějším vysvětlením je ukončení provozu této konkrétní sesterské školy/programu bez zjistitelného organizačního nástupnictví v datech CERMAT, na rozdíl od Aspiry a Medy, kde nástupnictví doložit šlo. Přímé prohlášení školy k důvodu a datu zániku nebylo dohledáno.",
+   "alternative_explanations": [
+    "Program mohl být sloučen do REDIZO 600005950 i bez zachování charakteristického textu zaměření (např. plně přejmenován na jinou existující značku, třeba Inspira, kterou nelze textově párovat) - to by rešerše v datech CERMAT nezachytila.",
+    "Škola mohla ukončit činnost zcela bez návaznosti (žáci přestoupili mimo skupinu FOSTRA)."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "691017301 Gymnázium FOSTRA Digita s.r.o. - Rozvíjíme digitální dovednosti (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0175", "Q0197"],
-      "status": "pravděpodobné",
-      "observations": [
-        "V 1. kole JPZ 2025 nabízel REDIZO 691017301 (Gymnázium FOSTRA Digita s.r.o., IZO 181142040, sídlo Eliášova 827/22, místo výuky Havlíčkovo náměstí 300/10) obor 79-41-K/41 Gymnázium se zaměřením 'Rozvíjíme digitální dovednosti'. V roce 2026 nemá REDIZO 691017301 žádnou nabídku.",
-        "Rejstřík MŠMT eviduje REDIZO 691017301 a jeho IZO 181142040 pouze k 31. 3. 2025; ve snímcích k 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026 subjekt i IZO chybí zcela - stejný vzorec zániku jako u sesterských REDIZO 691017280 (Aspira), 691017310 (Pontia), 691017328 (Europea) a 691017344 (Meda), všechny se sídlem/adresou v rámci skupiny FOSTRA.",
-        "Prohledání celé rešeršní fronty (192 úkolů, docs/podklady/fronta-dohledavani-2025-2026.json) neobsahuje frázi 'digitální dovednosti' u žádné jiné nepřiřazené nabídky roku 2026 - na rozdíl od sesterských REDIZO 691017280 a 691017344, kde se textová shoda se zaměřením REDIZO 600005950 v roce 2026 podařila najít, u REDIZO 691017301 žádná odpovídající nabídka v celém CERMAT datasetu 2026 (podle nabídek REDIZO 600005950 zjištěných úkolem R-600005950, který má v roce 2026 jen 5 nabídek: Aspira, dvakrát Meda, dvakrát International) neexistuje.",
-        "Web fostra.cz (ověřeno 12. 9. 2026, stránky /gymnazia a hlavní stránka) uvádí pro školní rok 2026/27 pouze čtyři programy - Inspira, Aspira, Meda, Alma - všechny na adrese Havlíčkovo náměstí 300/10, výhradně pod jedinou právnickou osobou Gymnázium FOSTRA International s.r.o. Program 'Digita' ani žádná zmínka o 'digitálních dovednostech' se na webu nevyskytuje.",
-        "Vyhledávání (WebFetch přes Bing) fráze 'Gymnázium FOSTRA Digita s.r.o.' nevrátilo žádný relevantní výsledek k dohledání osudu společnosti; přímé ověření stavu společnosti IČ 19667507 v obchodním rejstříku (or.justice.cz) i v ARES selhalo technicky - obě služby jsou postavené na JavaScriptové aplikaci nečitelné jako statická stránka. Rozpočet webového vyhledávání (WebSearch) byl v této relaci již vyčerpán, použito jen přímé načítání stránek (WebFetch), což je omezení této rešerše."
-      ],
-      "conclusion": "REDIZO 691017301 (Gymnázium FOSTRA Digita s.r.o.) zmizelo z rejstříku MŠMT po 31. 3. 2025 a jeho nabídka 'Rozvíjíme digitální dovednosti' nemá - na rozdíl od sesterských programů Aspira a Meda - žádnou dohledatelnou textovou obdobu v nabídkách CERMAT 2026 ani na aktuálním webu skupiny FOSTRA. Nejpravděpodobnějším vysvětlením je ukončení provozu této konkrétní sesterské školy/programu bez zjistitelného organizačního nástupnictví v datech CERMAT, na rozdíl od Aspiry a Medy, kde nástupnictví doložit šlo. Přímé prohlášení školy k důvodu a datu zániku nebylo dohledáno.",
-      "alternative_explanations": [
-        "Program mohl být sloučen do REDIZO 600005950 i bez zachování charakteristického textu zaměření (např. plně přejmenován na jinou existující značku, třeba Inspira, kterou nelze textově párovat) - to by rešerše v datech CERMAT nezachytila.",
-        "Škola mohla ukončit činnost zcela bez návaznosti (žáci přestoupili mimo skupinu FOSTRA)."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["691017301 Gymnázium FOSTRA Digita s.r.o. - Rozvíjíme digitální dovednosti (2025)"],
-        "to": []
-      },
-      "addresses": [
-        {"text": "Eliášova 827/22, 160 00 Bubeneč, Praha", "role": "sídlo", "izo": "691017301", "valid_period": "pouze 2025-03-31 (subjekt dále nedohledán)", "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"},
-        {"text": "Havlíčkovo náměstí 300/10, 130 00 Žižkov, Praha", "role": "místo výuky", "izo": "181142040", "valid_period": "pouze 2025-03-31", "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"}
-      ],
-      "evidence": [
-        {"url": "fronta-dohledavani-2025-2026.json, úkol R-691017301", "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)", "published_at": null, "checked_at": "2026-09-12", "supports": "Nabídka 79-41-K/41 'Rozvíjíme digitální dovednosti' pod REDIZO 691017301 v roce 2025, žádná nabídka v roce 2026.", "applicable_period": "1. kola JPZ 2025 a 2026"},
-        {"url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld", "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2025", "published_at": null, "checked_at": "2026-09-12", "supports": "REDIZO 691017301 s IZO 181142040 evidován k 31. 3. 2025, místo výuky Havlíčkovo náměstí 300/10.", "applicable_period": "stav rejstříku k 31. 3. 2025"},
-        {"url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld", "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 12. 2025", "published_at": null, "checked_at": "2026-09-12", "supports": "REDIZO 691017301 i jeho IZO 181142040 ve snímku k 31. 12. 2025 zcela chybí.", "applicable_period": "stav rejstříku k 31. 12. 2025"},
-        {"url": "https://www.fostra.cz/gymnazia", "title": "Gymnázia | Gymnázium Fostra", "published_at": null, "checked_at": "2026-09-12", "supports": "Aktuální nabídka skupiny FOSTRA pro 2026/27 obsahuje jen programy Inspira, Aspira, Meda, Alma - žádnou zmínku o programu Digita.", "applicable_period": "školní rok 2026/27"},
-        {"url": "https://www.fostra.cz", "title": "Fostra – hlavní stránka", "published_at": null, "checked_at": "2026-09-12", "supports": "V patičce webu je uvedena jediná právnická osoba Gymnázium FOSTRA International s.r.o.; žádná zmínka o entitě Digita s.r.o.", "applicable_period": "stav webu 2026-09-12"}
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": ["R-600005950", "R-691017280", "R-691017344"],
-      "unanswered_questions": [
-        "Zda REDIZO 691017301 formálně zaniklo (výmaz společnosti) nebo bylo tiše sloučeno do REDIZO 600005950 bez zachování textu zaměření - obchodně-rejstříkové potvrzení (or.justice.cz, ARES) se technicky nepodařilo dohledat.",
-        "Zda žáci případně přijatí pod REDIZO 691017301 v roce 2025 pokračují ve studiu v rámci skupiny FOSTRA."
-      ]
+     "text": "Eliášova 827/22, 160 00 Bubeneč, Praha",
+     "role": "sídlo",
+     "izo": "691017301",
+     "valid_period": "pouze 2025-03-31 (subjekt dále nedohledán)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+    },
+    {
+     "text": "Havlíčkovo náměstí 300/10, 130 00 Žižkov, Praha",
+     "role": "místo výuky",
+     "izo": "181142040",
+     "valid_period": "pouze 2025-03-31",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-691017301",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 79-41-K/41 'Rozvíjíme digitální dovednosti' pod REDIZO 691017301 v roce 2025, žádná nabídka v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2025",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "REDIZO 691017301 s IZO 181142040 evidován k 31. 3. 2025, místo výuky Havlíčkovo náměstí 300/10.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 12. 2025",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "REDIZO 691017301 i jeho IZO 181142040 ve snímku k 31. 12. 2025 zcela chybí.",
+     "applicable_period": "stav rejstříku k 31. 12. 2025"
+    },
+    {
+     "url": "https://www.fostra.cz/gymnazia",
+     "title": "Gymnázia | Gymnázium Fostra",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Aktuální nabídka skupiny FOSTRA pro 2026/27 obsahuje jen programy Inspira, Aspira, Meda, Alma - žádnou zmínku o programu Digita.",
+     "applicable_period": "školní rok 2026/27"
+    },
+    {
+     "url": "https://www.fostra.cz",
+     "title": "Fostra – hlavní stránka",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "V patičce webu je uvedena jediná právnická osoba Gymnázium FOSTRA International s.r.o.; žádná zmínka o entitě Digita s.r.o.",
+     "applicable_period": "stav webu 2026-09-12"
+    },
+    {
+     "url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/19667507",
+     "title": "ARES – ekonomický subjekt ve veřejném rejstříku (REST)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "IČO 19667507 není ve veřejném rejstříku vedeno (odpověď NENALEZENO), na rozdíl od IČO 49244884 nástupnické školy.",
+     "applicable_period": "stav k 12. 9. 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [
+    "R-600005950",
+    "R-691017280",
+    "R-691017344"
+   ],
+   "unanswered_questions": [
+    "Zda žáci případně přijatí pod REDIZO 691017301 v roce 2025 pokračují ve studiu v rámci skupiny FOSTRA.",
+    "Mechanismus a datum zániku subjektu (sloučení, nebo prostý výmaz) je nutné doložit sbírkou listin; ARES potvrzuje jen to, že subjekt už zapsán není."
+   ]
+  }
+ ]
 }

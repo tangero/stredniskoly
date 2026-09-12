@@ -1,0 +1,2667 @@
+{
+ "generated_from": "docs/podklady/vysledky-navaznosti-2025-2026",
+ "note": "Kategorie říká, čím lze otázku uzavřít, ne jak je důležitá. Část otázek je podle schválených pravidel mimo rozsah rešerše.",
+ "counts": {
+  "trvalost_ukonceni": 39,
+  "prenos_statistik": 7,
+  "obsah_vs_zapis": 21,
+  "dokument_zrizovatele": 9,
+  "misto_vyuky": 11,
+  "seznam_pokusneho_overovani": 10,
+  "datum_udalosti": 30,
+  "pravni_doklad_subjektu": 8,
+  "neurceno": 50,
+  "perioda_cyklu": 2,
+  "duvod_zmeny": 3,
+  "historie_pred_2025": 5,
+  "jina_kola_prijimaciho_rizeni": 7,
+  "rejstrik_zapis": 11,
+  "vazba_na_jiny_ukol": 1,
+  "kapacita_pocty": 5,
+  "zdroj_nedostupny": 3,
+  "chybi_oznameni_skoly": 5
+ },
+ "questions": [
+  {
+   "task_id": "R-600004554",
+   "issue_ids": [
+    "Q0001"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Přímé datované oznámení školy o ukončení přijímání do zaměření Globální síťové technologie (případně o formálním sloučení s Audiovizuální technikou) se dohledat nepodařilo; závěr vychází z označení „dobíhající obor“ na webu školy, výroční zprávy 2024/25 a absence nabídky v přijímacích řízeních 2026 i 2027."
+  },
+  {
+   "task_id": "R-600004554",
+   "issue_ids": [
+    "Q0001"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "prenos_statistik",
+   "cesta_k_uzavreni": "Rozhodnutí člověka o srovnatelnosti, ne další rešerše.",
+   "otazka": "Statistiky zaměření Globální síťové technologie z roku 2025 (121 přihlášek, 11 přijatých) nelze přenášet na Audiovizuální techniku 2026 – i kdyby k sloučení obsahu došlo, jde o jinou uchazečskou skupinu; výsledky Audiovizuální techniky 2026 mohou být ovlivněny přílivem bývalých uchazečů o GST, což je třeba při prezentaci historických dat zohlednit."
+  },
+  {
+   "task_id": "R-600004929",
+   "issue_ids": [
+    "Q0339"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Zda nový obor 78-42-M/08 obsahově navazuje na některý dřívější školní vzdělávací program školy (případné datumované vyjádření na oa-kubelikova.cz se nepodařilo dohledat; aktuální web školy stránku k přijímacímu řízení zpřístupňuje jen částečně)."
+  },
+  {
+   "task_id": "R-600005500",
+   "issue_ids": [
+    "Q0011"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Je ukončení přijímání do programu PROUD trvalé, nebo jde o jednoroční přerušení? K tomu by pomohla výroční zpráva školy za 2025/2026 nebo vyjádření školy."
+  },
+  {
+   "task_id": "R-600005542",
+   "issue_ids": [
+    "Q0303",
+    "Q0304",
+    "Q0305"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "dokument_zrizovatele",
+   "cesta_k_uzavreni": "Usnesení rady nebo zastupitelstva kraje; lze hledat v úředních deskách krajů.",
+   "otazka": "Přesné datum právního sloučení (1. 1. 2026) je doloženo jen sekundárním zdrojem (Wikipedie citující usnesení Zastupitelstva HMP č. 28/39 ze 20. 11. 2025); text usnesení se nepodařilo přímo načíst. Rejstřík MŠMT sloučení nezávisle potvrzuje (mezi snímky k 31. 12. 2025 a 31. 3. 2026 došlo k přejmenování subjektu a převzetí pracovišť Radlice), ale přesné datum účinnosti z něj neplyne."
+  },
+  {
+   "task_id": "R-600005542",
+   "issue_ids": [
+    "Q0303",
+    "Q0304",
+    "Q0305"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Historické statistiky přijímacího řízení 2025 pro Hotelnictví, Cestovní ruch a Lyceum se vztahují k samostatné Radlické škole s vlastními kritérii; po sloučení platí pro rok 2026/2027 nová kritéria sloučené školy (u Lycea školní testy a pohovor s cut-off 40 bodů, u Hotelnictví a Cestovního ruchu pouze JPZ s minimem 15 bodů), takže srovnatelnost výsledků je jen částečná a měla by být prezentována s poznámkou o změně organizace i kritérií."
+  },
+  {
+   "task_id": "R-600005631",
+   "issue_ids": [
+    "Q0187"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "misto_vyuky",
+   "cesta_k_uzavreni": "Úkol dojezdovosti: místa výuky z rejstříku plus potvrzení školy.",
+   "otazka": "Rejstřík potvrzuje Radlickou 591/115 (a Na Vidouli 496/9) jako oficiální místa výuky nástupnické školy; rozdělení jednotlivých převzatých oborů mezi místa výuky (Radlická / Na Vidouli / Preslova) však rejstřík neeviduje."
+  },
+  {
+   "task_id": "R-600005631",
+   "issue_ids": [
+    "Q0016"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "seznam_pokusneho_overovani",
+   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
+   "otazka": "Zda MŠMT po sloučení prodloužilo režim pokusného ověřování oboru 78-42-M/08 u nástupnické školy."
+  },
+  {
+   "task_id": "R-600005631",
+   "issue_ids": [
+    "Q0017"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "manual_review",
+   "kategorie": "misto_vyuky",
+   "cesta_k_uzavreni": "Úkol dojezdovosti: místa výuky z rejstříku plus potvrzení školy.",
+   "otazka": "Zda jsou po sloučení výsledky přijímacího řízení gymnázia vedeny odděleně za pracoviště Radlická a Preslova, nebo pouze souhrnně za REDIZO 600005542."
+  },
+  {
+   "task_id": "R-600005658",
+   "issue_ids": [
+    "Q0018",
+    "Q0019"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda škola přijímání do oborů Provozní technika a Propagace ukončila trvale, nebo jen pro rok 2026/2027, z dostupných datovaných zdrojů nevyplývá."
+  },
+  {
+   "task_id": "R-600005666",
+   "issue_ids": [
+    "Q0340"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum zápisu zaměření sportovní management do rejstříku škol nelze z otevřených dat MŠMT určit – snímky vedou obory jen na úrovni kódu KKOV bez zaměření (obor 63-41-M/02 je zapsán nepřetržitě od 31. 3. 2025); vyžadovalo by to plnou evidenci rejstříku včetně zápisů o zaměřeních."
+  },
+  {
+   "task_id": "R-600005666",
+   "issue_ids": [
+    "Q0340"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda má zaměření sportovní management samostatný plánovaný počet přijímaných žáků oddělený od obecné Obchodní akademie, lze dořešit z PDF kritérií 2026/2027 na webu školy."
+  },
+  {
+   "task_id": "R-600005836",
+   "issue_ids": [
+    "Q0020",
+    "Q0294"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "prenos_statistik",
+   "cesta_k_uzavreni": "Rozhodnutí člověka o srovnatelnosti, ne další rešerše.",
+   "otazka": "Zda zaměření „Business\" na pobočce Satalice znamená změnu obsahu studia oproti roku 2025, nebo pouze nové označení téhož programu – z dostupných zdrojů nejednoznačné; pro přenos statistik mezi 2025 (bez zaměření) a 2026 (Business - Satalice) doporučeno počítat s pobočkovou shodou."
+  },
+  {
+   "task_id": "R-600005836",
+   "issue_ids": [
+    "Q0021",
+    "Q0296"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "prenos_statistik",
+   "cesta_k_uzavreni": "Rozhodnutí člověka o srovnatelnosti, ne další rešerše.",
+   "otazka": "Zda je změna jazyka studia z „Český\" (2025) na „Český s výukou vybraných předmětů v cizím jazyce\" (2026) reálnou změnou programu, nebo jen změnou zápisu – vliv na srovnatelnost statistik nelze z dosud doložených zdrojů vyloučit."
+  },
+  {
+   "task_id": "R-600005950",
+   "issue_ids": [
+    "Q0022",
+    "Q0023",
+    "Q0327",
+    "Q0328"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "misto_vyuky",
+   "cesta_k_uzavreni": "Úkol dojezdovosti: místa výuky z rejstříku plus potvrzení školy.",
+   "otazka": "Zda se pobočka Praha 5 fyzicky přestěhovala z Troji na Smíchov, nebo šlo jen o upřesnění zápisu místa výuky."
+  },
+  {
+   "task_id": "R-600005950",
+   "issue_ids": [
+    "Q0324"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "pravni_doklad_subjektu",
+   "cesta_k_uzavreni": "Otevřená data ARES nebo sbírka listin; webové rozhraní justice agentům nevrací obsah.",
+   "otazka": "Zda REDIZO 691017280 bylo formálně sloučeno do REDIZO 600005950, nebo jen zrušeno bez organizačního nástupnictví; obchodně-rejstříkové potvrzení (ARES) se nepodařilo dohledat."
+  },
+  {
+   "task_id": "R-600005950",
+   "issue_ids": [
+    "Q0324"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda žáci případně přijatí pod REDIZO 691017280 v roce 2025 pokračují ve studiu pod REDIZO 600005950."
+  },
+  {
+   "task_id": "R-600005950",
+   "issue_ids": [
+    "Q0325",
+    "Q0326"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "pravni_doklad_subjektu",
+   "cesta_k_uzavreni": "Otevřená data ARES nebo sbírka listin; webové rozhraní justice agentům nevrací obsah.",
+   "otazka": "Formální doklad o sloučení nebo zániku společnosti Gymnázium FOSTRA Meda s.r.o. z obchodního rejstříku; or.justice.cz ani ARES nešly načíst přímým stažením stránky."
+  },
+  {
+   "task_id": "R-600005984",
+   "issue_ids": [
+    "Q0024",
+    "Q0188"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "perioda_cyklu",
+   "cesta_k_uzavreni": "Test dvouletého cyklu proti datům 2024; u delších period je potřeba starší ročník.",
+   "otazka": "Přesný důvod a pravidelnost víceletého cyklu přijímání do primy (dvouletý interval?) nebyl na webu explicitně vysvětlen."
+  },
+  {
+   "task_id": "R-600006018-600013898",
+   "issue_ids": [
+    "Q0441"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum formálního výmazu REDIZO 600013898 z rejstříku MŠMT (k 30. 6. 2026 ještě evidováno)."
+  },
+  {
+   "task_id": "R-600006018-600013898",
+   "issue_ids": [
+    "Q0595"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "duvod_zmeny",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 1 se příčina samotné změny nezkoumá.",
+   "otazka": "Přesný důvod a datum změny jazykového profilu výuky u zaměření 4leté Nový PORG Praha 4."
+  },
+  {
+   "task_id": "R-600006026",
+   "issue_ids": [
+    "Q0267"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Zda se obsah nového proudu Business Academy liší od dosavadní výuky oboru jen jazykově, nebo i tematicky, nelze z dostupných zdrojů plně posoudit; pomohl by ŠVP Business Academy, který škola na webu zatím nezveřejnila."
+  },
+  {
+   "task_id": "R-600006077",
+   "issue_ids": [
+    "Q0376",
+    "Q0419"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum zahájení výuky oboru Sociální činnost na této škole (webová stránka datum neuvádí)."
+  },
+  {
+   "task_id": "R-600006131",
+   "issue_ids": [
+    "Q0026",
+    "Q0329",
+    "Q0330"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda zaměření KOTVA přímo navazuje na dosavadní jazykovou třídu z roku 2025 a KOMPAS je nově otevřená druhá třída, web školy výslovně neuvádí; pro srovnávání historických výsledků je proto vhodné obě nové zaměření vázat na společnou předchozí nabídku, nikoli 1:1."
+  },
+  {
+   "task_id": "R-600006310",
+   "issue_ids": [
+    "Q0341"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum zahájení výuky oboru Gymnázium a případné konkrétní zaměření (web ho neuvádí)."
+  },
+  {
+   "task_id": "R-600006328",
+   "issue_ids": [
+    "Q0027",
+    "Q0028"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda škola tyto obory pro školní rok 2026/2027 fakticky otevřela v pozdějším kole přijímacího řízení, nebo je zcela vynechala."
+  },
+  {
+   "task_id": "R-600006328",
+   "issue_ids": [
+    "Q0342"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "historie_pred_2025",
+   "cesta_k_uzavreni": "Data 1. kola 2024, případně starší ročníky CERMAT.",
+   "otazka": "Zda obor Obchodní akademie reálně běžel i před rokem 2026, jen bez centralizovaného přijímání v 1. kole JPZ."
+  },
+  {
+   "task_id": "R-600006689",
+   "issue_ids": [
+    "Q0031",
+    "Q0032",
+    "Q0308"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda již v přijímacím řízení 2025 byl výběr zaměření koncipován až po 1. ročníku (jako v roce 2026), nebo zda se uchazeči hlásili přímo na zaměření – kritéria PŘ 2025/2026 pro Lyceum nebyla dohledatelná (Wayback Machine dočasně nedostupná)."
+  },
+  {
+   "task_id": "R-600006697",
+   "issue_ids": [
+    "Q0033",
+    "Q0034",
+    "Q0306"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "manual_review",
+   "kategorie": "prenos_statistik",
+   "cesta_k_uzavreni": "Rozhodnutí člověka o srovnatelnosti, ne další rešerše.",
+   "otazka": "Jak správně rozdělit statistiku přijímacího řízení 2026 (jeden souhrnný záznam) zpět na dvě zaměření pro srovnání s rokem 2025."
+  },
+  {
+   "task_id": "R-600006930",
+   "issue_ids": [
+    "Q0270"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "dokument_zrizovatele",
+   "cesta_k_uzavreni": "Usnesení rady nebo zastupitelstva kraje; lze hledat v úředních deskách krajů.",
+   "otazka": "Formální usnesení/rozhodnutí zřizovatele (s.r.o.) o založení oboru Gymnázium nebylo dohledáno mimo vlastní oznámení školy."
+  },
+  {
+   "task_id": "R-600006930",
+   "issue_ids": [
+    "Q0270"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum plánovaného zápisu oboru 79-41-K/41 do rejstříku MŠMT není známo (chybí i ve snímku k 30. 6. 2026)."
+  },
+  {
+   "task_id": "R-600007022",
+   "issue_ids": [
+    "Q0313"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "jina_kola_prijimaciho_rizeni",
+   "cesta_k_uzavreni": "Data 2. kola 2024 a 2025, která už v repozitáři jsou.",
+   "otazka": "Zda byla nástavba Podnikání nabízena i v přijímacím řízení 2025 mimo 1. kolo JPZ (2. kolo apod.), z dostupných zdrojů nelze rozhodnout."
+  },
+  {
+   "task_id": "R-600007201",
+   "issue_ids": [
+    "Q0040",
+    "Q0189"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "dokument_zrizovatele",
+   "cesta_k_uzavreni": "Usnesení rady nebo zastupitelstva kraje; lze hledat v úředních deskách krajů.",
+   "otazka": "Přesný právní mechanismus sloučení (rozhodnutí zřizovatele Středočeského kraje) nebyl dohledán v primárním dokumentu; datum 1. 9. 2025 je doloženo sekundárním zdrojem (AtlasŠkolství.cz) a je konzistentní se snímky rejstříku."
+  },
+  {
+   "task_id": "R-600007251",
+   "issue_ids": [
+    "Q0041",
+    "Q0309"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "seznam_pokusneho_overovani",
+   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
+   "otazka": "Nepodařilo se přímo ověřit zápis VOŠ, SPŠ a OA Čáslav v oficiálním seznamu MŠMT škol zapojených do pokusného ověřování oboru 78-42-M/08 Lyceum – stránky msmt.gov.cz s vyhlášením a se seznamem zapojených škol (např. https://msmt.gov.cz/vzdelavani/stredni-vzdelavani/vyhlaseni-pokusneho-overovani-vzdelavani-podle-ramcoveho a https://msmt.gov.cz/vzdelavani/stredni-vzdelavani/seznam-skol-zarazenych-do-pokusneho-overovani-vzdelavani) vrátily při automatizovaném načtení chybu „Stránka nenalezena“. Závěr je přesto podložen přímo webem školy a shodou s daty CERMAT."
+  },
+  {
+   "task_id": "R-600007251",
+   "issue_ids": [
+    "Q0041",
+    "Q0309"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Není ověřeno, zda a kdy bude obor 78-42-M/02 formálně vyřazen z rejstříku MŠMT, ani zda škola plánuje jeho budoucí obnovení souběžně s pokusně ověřovaným Lyceem."
+  },
+  {
+   "task_id": "R-600007260",
+   "issue_ids": [
+    "Q0315"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "rejstrik_zapis",
+   "cesta_k_uzavreni": "Novější snímek rejstříku MŠMT, až vyjde.",
+   "otazka": "Kdy přesně byl obor 23-45-M/01 zapsán do rejstříku MŠMT (poslední dostupný snímek k 30. 6. 2026 jej ještě neeviduje)?"
+  },
+  {
+   "task_id": "R-600007278",
+   "issue_ids": [
+    "Q0288"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "manual_review",
+   "kategorie": "dokument_zrizovatele",
+   "cesta_k_uzavreni": "Usnesení rady nebo zastupitelstva kraje; lze hledat v úředních deskách krajů.",
+   "otazka": "Nebyl dohledán primární dokument zřizovatele (usnesení Zastupitelstva Středočeského kraje / zřizovací listina) s právní formou a přesným datem sloučení – opíráme se o rejstříkové snímky a agregátor AtlasŠkolství.cz."
+  },
+  {
+   "task_id": "R-600007278",
+   "issue_ids": [
+    "Q0288"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "manual_review",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Web soucaslav.cz (dřívější web SOU Čáslav) vracel při ověřování chybu 503, obsah se nepodařilo přečíst a nebyl proto použit jako zdroj."
+  },
+  {
+   "task_id": "R-600007278",
+   "issue_ids": [
+    "Q0288"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "manual_review",
+   "kategorie": "vazba_na_jiny_ukol",
+   "cesta_k_uzavreni": "Spojení dvou úkolů při přezkumu, ne nová rešerše.",
+   "otazka": "Úkol R-600007201 (otázky Q0040 a Q0189) řeší stejnou dvojici škol ze strany zaniklého subjektu – doporučeno zpracovat společně/odkazem na tento nález, aby otázka Q0040 nebyla vyhodnocena nezávisle jako zrušení oboru."
+  },
+  {
+   "task_id": "R-600007286",
+   "issue_ids": [
+    "Q0310"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "dokument_zrizovatele",
+   "cesta_k_uzavreni": "Usnesení rady nebo zastupitelstva kraje; lze hledat v úředních deskách krajů.",
+   "otazka": "Přesné datum formálního založení oboru v roce 2025 (rozhodnutí zřizovatele, zápis do školského rejstříku) nebylo dohledáno - dostupné zdroje potvrzují jen rok 2025 a první nástup žáků v září 2026."
+  },
+  {
+   "task_id": "R-600007294",
+   "issue_ids": [
+    "Q0042"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "kapacita_pocty",
+   "cesta_k_uzavreni": "Data kapacit 1. kola 2026, která už v repozitáři jsou.",
+   "otazka": "Konkrétní důvod nevyhlášení přijímacího řízení do oboru 26-41-L/01 pro 2026/27 (nízká naplněnost, personální/kapacitní rozhodnutí apod.) nebyl žádným dohledaným zdrojem výslovně uveden."
+  },
+  {
+   "task_id": "R-600007332",
+   "issue_ids": [
+    "Q0043",
+    "Q0044",
+    "Q0201"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Zda zaměření ŠVP 0007/2024 a 0008/2024 existují ve škole interně i pro ročník přijatý v roce 2026 (např. výběr zaměření až po přijetí), nebo zda škola zaměření čtyřletého studia skutečně zrušila – z dostupných zdrojů nelze rozhodnout."
+  },
+  {
+   "task_id": "R-600007383",
+   "issue_ids": [
+    "Q0207"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "seznam_pokusneho_overovani",
+   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
+   "otazka": "Přesné datum registrace oboru 78-42-M/08 v rejstříku a konkrétní dokument MŠMT o zařazení ČZA Mělník do pokusného ověřování nebyly dohledány (web školy ani rejstřík na úrovni oborů nejsou strojově dostupné); pro závěr o novosti nabídky to však není potřebné."
+  },
+  {
+   "task_id": "R-600007464",
+   "issue_ids": [
+    "Q0335"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "jina_kola_prijimaciho_rizeni",
+   "cesta_k_uzavreni": "Data 2. kola 2024 a 2025, která už v repozitáři jsou.",
+   "otazka": "Byl obor Kosmetické služby v roce 2025 nabízen v 2. kole JPZ, nebo jen s neobsazenou kapacitou mimo soubor 1. kola? (Na přiřazení nabídky nemá vliv, hodilo by se pro přesný popis historie náboru.)"
+  },
+  {
+   "task_id": "R-600007561",
+   "issue_ids": [
+    "Q0206"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "historie_pred_2025",
+   "cesta_k_uzavreni": "Data 1. kola 2024, případně starší ročníky CERMAT.",
+   "otazka": "Zda škola některý lyceální obor nabízela či registrovala již před rokem 2025, se v rámci úkolu nezjišťovalo; pro dvouleté srovnání 2025/2026 to ale nemá vliv – v roce 2025 obor v přijímacím řízení nabízen nebyl."
+  },
+  {
+   "task_id": "R-600007561",
+   "issue_ids": [
+    "Q0206"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "prenos_statistik",
+   "cesta_k_uzavreni": "Rozhodnutí člověka o srovnatelnosti, ne další rešerše.",
+   "otazka": "Statistiky přijímacího řízení oboru Hotelnictví 65-42-M/01 jsou mezi roky 2025 a 2026 plně srovnatelné (tentýž obor, škola i adresa); nové Lyceum nemá v roce 2025 žádný protějšek, takže žádnou historii přebírat nemůže – srovnatelnost se týká jen pokračujícího oboru."
+  },
+  {
+   "task_id": "R-600007651",
+   "issue_ids": [
+    "Q1039"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Jde u obou zaznamenaných forem (CERMAT) a hodnoty „dvojjazyčný/jiný\" (rejstřík) o skutečné zavedení výuky vybraných předmětů v cizím jazyce v obsahu ŠVP oboru Ekonomika a podnikání, nebo o administrativní/evidenční přeznačení pole „forma vzdělávání\" v rejstříku, které se promítlo do všech čtyř oborů školy současně?"
+  },
+  {
+   "task_id": "R-600007651",
+   "issue_ids": [
+    "Q1039"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Pokud jde o skutečnou pedagogickou změnu, kdy a jakým rozhodnutím (školy, zřizovatele Středočeský kraj) byla zavedena a v jakém rozsahu (které předměty, u kterých oborů)?"
+  },
+  {
+   "task_id": "R-600007707",
+   "issue_ids": [
+    "Q0333"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "prenos_statistik",
+   "cesta_k_uzavreni": "Rozhodnutí člověka o srovnatelnosti, ne další rešerše.",
+   "otazka": "Nebylo nezávisle ověřeno (mimo infoabsolvent.cz), zda škola pro rok 2025/2026 obor formálně vůbec vyhlásila s nulovou kapacitou, nebo řízení nevyhlásila vůbec – rozdíl nemá dopad na závěr o kontinuitě oboru, ale je relevantní pro případné srovnání statistik přijímacího řízení."
+  },
+  {
+   "task_id": "R-600008193",
+   "issue_ids": [
+    "Q0047"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Bude obor 78-42-M/08 Všeobecné lyceum znovu vypsán v přijímacím řízení 2027 nebo později?"
+  },
+  {
+   "task_id": "R-600008193",
+   "issue_ids": [
+    "Q0047"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Z jakého důvodu škola obor pro rok 2026/2027 nevypsala (příčina nebyla předmětem rešerše)?"
+  },
+  {
+   "task_id": "R-600009033",
+   "issue_ids": [
+    "Q0048"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "jina_kola_prijimaciho_rizeni",
+   "cesta_k_uzavreni": "Data 2. kola 2024 a 2025, která už v repozitáři jsou.",
+   "otazka": "Zda škola obor Gastronomie vyhlásila v některém z dalších kol přijímacího řízení 2026 (2. kolo apod.) – přiložená data ani zjištěné zdroje se týkají pouze 1. kola."
+  },
+  {
+   "task_id": "R-600009033",
+   "issue_ids": [
+    "Q0048"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda škola plánuje obor Gastronomie opět vyhlásit pro školní rok 2027/2028."
+  },
+  {
+   "task_id": "R-600009106",
+   "issue_ids": [
+    "Q0228"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "historie_pred_2025",
+   "cesta_k_uzavreni": "Data 1. kola 2024, případně starší ročníky CERMAT.",
+   "otazka": "Nebylo dohledáno, zda denní forma nástavbového studia 65-41-L/51 Gastronomie běžela u této školy někdy před rokem 2025 (mimo sledované období fronty); pokud ano, šlo by spíše o obnovení dříve přerušené nabídky než o zcela nový program."
+  },
+  {
+   "task_id": "R-600009408",
+   "issue_ids": [
+    "Q0316",
+    "Q0317"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum formálního zápisu obou oborů do rejstříku MŠMT nebylo dohledáno (k 30. 6. 2026 ještě chyběl)."
+  },
+  {
+   "task_id": "R-600009416",
+   "issue_ids": [
+    "Q0318"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "rejstrik_zapis",
+   "cesta_k_uzavreni": "Novější snímek rejstříku MŠMT, až vyjde.",
+   "otazka": "Kdy přesně byl obor 39-41-L/01 zapsán do rejstříku MŠMT (v dostupných snímcích do 30. 6. 2026 zapsán není)? Lze ověřit až na pozdějším snímku rejstříku."
+  },
+  {
+   "task_id": "R-600009416",
+   "issue_ids": [
+    "Q0318"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Zda škola současně s otevřením Autotroniku omezila nabídku souvisejícího učebního oboru Autoelektrikář 26-57-H/01 v přijímacím řízení 2026 – přiložená data fronty učební obory této školy neobsahují, takže to z nich nelze posoudit."
+  },
+  {
+   "task_id": "R-600009424",
+   "issue_ids": [
+    "Q0049"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda a od kdy případně škola nábor do oboru Ekologie a životní prostředí znovu otevře, nebylo dohledáno."
+  },
+  {
+   "task_id": "R-600009424",
+   "issue_ids": [
+    "Q0209"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "duvod_zmeny",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 1 se příčina samotné změny nezkoumá.",
+   "otazka": "Přesný důvod, proč škola v roce 2025 do oboru Veřejnosprávní činnost nepřijímala, nebyl dohledán (a dle zadání nebyl předmětem rešerše)."
+  },
+  {
+   "task_id": "R-600009459",
+   "issue_ids": [
+    "Q0286"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda škola v 1. kole JPZ 2025 zaměření sportovní střelba skutečně nevypsala, nebo zda jen nebylo v datech CERMAT vedeno samostatně – Wayback Machine byl v době rešerše dočasně nedostupný, takže stav webu školy z jara 2025 nebylo možné ověřit."
+  },
+  {
+   "task_id": "R-600009467",
+   "issue_ids": [
+    "Q0051",
+    "Q0236"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "zdroj_nedostupny",
+   "cesta_k_uzavreni": "Opakovaný pokus jinou cestou, nebo archiv stránky.",
+   "otazka": "Internet Archive (web.archive.org) byl v době kontroly (12. 9. 2026) nedostupný („Temporarily Offline“), takže se nepodařilo přímo nahlédnout do archivované verze webu z roku 2025 – závěr se opírá o dochovaný PDF dokument kritérií z ledna 2025 na webu školy, nikoli o Wayback Machine."
+  },
+  {
+   "task_id": "R-600009467",
+   "issue_ids": [
+    "Q0051",
+    "Q0236"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Nebylo ověřeno, zda se spolu s přejmenováním změnil i obsah ŠVP (hodinové dotace, předměty) – dostupné zdroje potvrzují jen shodu krátkého popisu zaměření."
+  },
+  {
+   "task_id": "R-600009467",
+   "issue_ids": [
+    "Q0052",
+    "Q0237"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "zdroj_nedostupny",
+   "cesta_k_uzavreni": "Opakovaný pokus jinou cestou, nebo archiv stránky.",
+   "otazka": "Internet Archive (web.archive.org) byl v době kontroly (12. 9. 2026) nedostupný („Temporarily Offline“), takže se nepodařilo přímo nahlédnout do archivované verze webu z roku 2025 – závěr se opírá o dochovaný PDF dokument kritérií z ledna 2025 na webu školy, nikoli o Wayback Machine."
+  },
+  {
+   "task_id": "R-600009467",
+   "issue_ids": [
+    "Q0052",
+    "Q0237"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Nebylo ověřeno, zda se spolu s přejmenováním změnil i obsah ŠVP (hodinové dotace, předměty) – dostupné zdroje potvrzují jen shodu popisu čtyř specializací."
+  },
+  {
+   "task_id": "R-600009602",
+   "issue_ids": [
+    "Q0053"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda jde o trvalé ukončení výuky zaměření, nebo jen o nepřijímání nových žáků pro 2026/2027 (škola důvod na webu neuvádí; docházející ročníky zřejmě dokončí studium)."
+  },
+  {
+   "task_id": "R-600009602",
+   "issue_ids": [
+    "Q0053"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "jina_kola_prijimaciho_rizeni",
+   "cesta_k_uzavreni": "Data 2. kola 2024 a 2025, která už v repozitáři jsou.",
+   "otazka": "Zda škola vnitřní obchod případně otevřela v dodatečných kolech PŘ 2026 mimo data CERMAT z 1. kola (nevypovídá pro to nic, ale z dostupných zdrojů to vyloučit nelze)."
+  },
+  {
+   "task_id": "R-600010180",
+   "issue_ids": [
+    "Q0054"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Přesný důvod, proč škola pro školní rok 2026/2027 nábor do oboru Polygrafie nevyhlásila, nebyl dohledán."
+  },
+  {
+   "task_id": "R-600010309",
+   "issue_ids": [
+    "Q0057"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda jde o trvalé ukončení nabídky oboru 63-41-M/01, nebo jen o přerušení na školní rok 2026/2027 (obor je na webu školy stále prezentován a registrace v rejstříku nebyla ze snímků vyvrácena) – rozhodne až nabídka pro rok 2027."
+  },
+  {
+   "task_id": "R-600010368",
+   "issue_ids": [
+    "Q0058",
+    "Q0059",
+    "Q0319"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "misto_vyuky",
+   "cesta_k_uzavreni": "Úkol dojezdovosti: místa výuky z rejstříku plus potvrzení školy.",
+   "otazka": "Zda se nástavba Podnikání v roce 2026 fakticky vyučuje na obou střediscích (Pražská i Cihlářská) současně, nebo jen na jednom z nich – rejstřík ani web školy to jednoznačně nerozlišují."
+  },
+  {
+   "task_id": "R-600010571",
+   "issue_ids": [
+    "Q0060"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda a kdy může být přijímací řízení do oboru Veřejnosprávní činnost znovu vyhlášeno."
+  },
+  {
+   "task_id": "R-600010589",
+   "issue_ids": [
+    "Q0061"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Přesná periodicita otevírání oboru Pedagogické lyceum (jeden ze zdrojů zmiňuje rok 2027, druhý 2028)."
+  },
+  {
+   "task_id": "R-600010601",
+   "issue_ids": [
+    "Q0355",
+    "Q0356"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "perioda_cyklu",
+   "cesta_k_uzavreni": "Test dvouletého cyklu proti datům 2024; u delších period je potřeba starší ročník.",
+   "otazka": "Přesná perioda/pravidlo, podle kterého škola otevírá tyto nástavbové obory (dvouletý cyklus vs. podle počtu absolventů)."
+  },
+  {
+   "task_id": "R-600011348",
+   "issue_ids": [
+    "Q0210"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "rejstrik_zapis",
+   "cesta_k_uzavreni": "Novější snímek rejstříku MŠMT, až vyjde.",
+   "otazka": "Kdy bude obor formálně zapsán do rejstříku MŠMT – k 30. 6. 2026 zápis ještě neproběhl."
+  },
+  {
+   "task_id": "R-600011747",
+   "issue_ids": [
+    "Q0062",
+    "Q0063",
+    "Q0191"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Potvrzení, zda škola plánuje znovu otevřít oba obory v roce 2027 podle deklarovaného lichého cyklu."
+  },
+  {
+   "task_id": "R-600011828",
+   "issue_ids": [
+    "Q0064"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda a kdy škola plánuje denní Provozní techniku znovu otevřít."
+  },
+  {
+   "task_id": "R-600011941",
+   "issue_ids": [
+    "Q0265"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Bylo druhé oznámené zaměření lycea (Právo a státní správa) skutečně otevřeno od 2026/2027, a proč se neobjevilo v nabídce 1. kola JPZ 2026 v datech CERMAT?"
+  },
+  {
+   "task_id": "R-600012514",
+   "issue_ids": [
+    "Q0066"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda škola plánuje denní Podnikání znovu vyhlásit, případně proč mezi 2025 a 2026 vypadlo z vyhlášené nabídky."
+  },
+  {
+   "task_id": "R-600012808",
+   "issue_ids": [
+    "Q0067"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda škola plánuje zaměření Finance a daně v budoucnu znovu otevřít."
+  },
+  {
+   "task_id": "R-600012875",
+   "issue_ids": [
+    "Q0068"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda škola explicitně potvrdila ukončení zaměření „s rozšířením TV\" a nasměrování zájemců do samostatného sportovního gymnázia."
+  },
+  {
+   "task_id": "R-600012875",
+   "issue_ids": [
+    "Q0068"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda se zaměření může v budoucnu vrátit souběžně se sportovním gymnáziem."
+  },
+  {
+   "task_id": "R-600012891",
+   "issue_ids": [
+    "Q0070"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Kdy přesně a v jaké podobě (kód oboru, forma) vznikne v Hostinném avizovaný náhradní čtyřletý obor."
+  },
+  {
+   "task_id": "R-600012891",
+   "issue_ids": [
+    "Q0069",
+    "Q0291"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "misto_vyuky",
+   "cesta_k_uzavreni": "Úkol dojezdovosti: místa výuky z rejstříku plus potvrzení školy.",
+   "otazka": "Zda škola explicitně potvrdila, že nabídka 79-41-K/81 bez zaměření v roce 2026 odpovídá pracovišti Vrchlabí."
+  },
+  {
+   "task_id": "R-600013090",
+   "issue_ids": [
+    "Q0212"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum účinnosti přejmenování školy (mezi 31. 12. 2025 a 31. 3. 2026) nebylo zjištěno."
+  },
+  {
+   "task_id": "R-600013090",
+   "issue_ids": [
+    "Q0212"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zápis oboru 75-41-M/01 do rejstříku MŠMT dosud neproběhl (k 30. 6. 2026); datum plánovaného zápisu není známo."
+  },
+  {
+   "task_id": "R-600013197",
+   "issue_ids": [
+    "Q0073",
+    "Q0229"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Přesný text kritérií přijímacího řízení 2025 a 2026 nebyl dohledán pro jednoznačné potvrzení párování zaměření."
+  },
+  {
+   "task_id": "R-600013197",
+   "issue_ids": [
+    "Q0071",
+    "Q0230"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Přesný text kritérií přijímacího řízení 2025 a 2026 nebyl dohledán pro jednoznačné potvrzení párování zaměření."
+  },
+  {
+   "task_id": "R-600013197",
+   "issue_ids": [
+    "Q0072"
+   ],
+   "status": "nedohledáno",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Nebylo dohledáno, zda škola pro rok 2026/27 nadále nabízí samostatnou (nekombinovanou) variantu Autotronik bez vazby na výuční obor."
+  },
+  {
+   "task_id": "R-600013383",
+   "issue_ids": [
+    "Q0337"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum vyhlášení přijímacího řízení pro Gastronomický management 2026/27 nebylo na webu školy dohledáno."
+  },
+  {
+   "task_id": "R-600013383",
+   "issue_ids": [
+    "Q0337"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "record_only",
+   "kategorie": "historie_pred_2025",
+   "cesta_k_uzavreni": "Data 1. kola 2024, případně starší ročníky CERMAT.",
+   "otazka": "Není jasné, zda obor byl v minulosti (před rokem 2025) fakticky vyučován, nebo zůstával v rejstříku jen formálně neaktivní."
+  },
+  {
+   "task_id": "R-600013391",
+   "issue_ids": [
+    "Q0359"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum vyhlášení přijímacího řízení pro Technické lyceum 2026/27 nebylo dohledáno."
+  },
+  {
+   "task_id": "R-600013537",
+   "issue_ids": [
+    "Q0075",
+    "Q0297"
+   ],
+   "status": "rozpor_zdrojů",
+   "recommended_action": "manual_review",
+   "kategorie": "chybi_oznameni_skoly",
+   "cesta_k_uzavreni": "Výroční zpráva školy, nebo přiznat, že datovaný zdroj neexistuje.",
+   "otazka": "Nebylo dohledáno přímé oznámení školy o ukončení šestiletého a zahájení osmiletého přijímání se zaměřením živé jazyky."
+  },
+  {
+   "task_id": "R-600013537",
+   "issue_ids": [
+    "Q0075",
+    "Q0297"
+   ],
+   "status": "rozpor_zdrojů",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Není jasné, zda osmileté studium pro rok 2026/27 přijímá standardně do primy, nebo jen individuálně do vyšších ročníků, jak popisují sekundární zdroje."
+  },
+  {
+   "task_id": "R-600013651",
+   "issue_ids": [
+    "Q0078"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "record_only",
+   "kategorie": "seznam_pokusneho_overovani",
+   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
+   "otazka": "Zda škola plánuje znovu otevřít Lyceum (pokusné ověřování) v některém z dalších přijímacích řízení."
+  },
+  {
+   "task_id": "R-600013731",
+   "issue_ids": [
+    "Q0351"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum rozhodnutí o zavedení oboru (v aktualitách školy nedohledáno)."
+  },
+  {
+   "task_id": "R-600013839",
+   "issue_ids": [
+    "Q0081",
+    "Q0271",
+    "Q0272"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda byla třída Management sportu otevírána i v letech před 2025/2026, a tedy zda jde o obnovení, nebo o skutečně první samostatné otevření vedle obecné Obchodní akademie."
+  },
+  {
+   "task_id": "R-600013910",
+   "issue_ids": [
+    "Q0215"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum zápisu oboru do rejstříku MŠMT (mezi 31. 3. a 31. 12. 2025) nebylo dohledáno."
+  },
+  {
+   "task_id": "R-600013936",
+   "issue_ids": [
+    "Q0233"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "chybi_oznameni_skoly",
+   "cesta_k_uzavreni": "Výroční zpráva školy, nebo přiznat, že datovaný zdroj neexistuje.",
+   "otazka": "Konkrétní oznámení školy/zřizovatele o zavedení oboru Ekonomické lyceum (datum, důvod) se na webu školy nepodařilo dohledat."
+  },
+  {
+   "task_id": "R-600014665",
+   "issue_ids": [
+    "Q0088"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda a kdy bude přijímací řízení do oboru Ekonomika a podnikání znovu vyhlášeno, zdroje neuvádějí."
+  },
+  {
+   "task_id": "R-600014771",
+   "issue_ids": [
+    "Q0352"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda a kdy bude obor 78-42-M/03 formálně zapsán do rejstříku MŠMT u IZO 110012542, zdroje nedokládají."
+  },
+  {
+   "task_id": "R-600014843",
+   "issue_ids": [
+    "Q0089"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "chybi_oznameni_skoly",
+   "cesta_k_uzavreni": "Výroční zpráva školy, nebo přiznat, že datovaný zdroj neexistuje.",
+   "otazka": "Přímé oznámení školy prumyslovkajihlava.cz o (ne)otevření oboru pro 2026/27 nebylo možné ověřit – web nebyl z tohoto prostředí síťově dostupný."
+  },
+  {
+   "task_id": "R-600014860",
+   "issue_ids": [
+    "Q0336"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Přesné datum vzniku ŠVP a formálního schválení oboru zřizovatelem (soukromá s.r.o.) nebylo dohledáno."
+  },
+  {
+   "task_id": "R-600015092",
+   "issue_ids": [
+    "Q0090",
+    "Q0091",
+    "Q0320",
+    "Q0321"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Nebylo zjištěno, ve kterém ze čtyř pracovišť školy se obor Hotelnictví konkrétně vyučuje."
+  },
+  {
+   "task_id": "R-600015297",
+   "issue_ids": [
+    "Q0093"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "manual_review",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Nebylo dohledáno, zda a kdy bylo zaměření formálně zrušeno v ŠVP, ani zda jeho obsah převzalo jiné zaměření."
+  },
+  {
+   "task_id": "R-600015572",
+   "issue_ids": [
+    "Q0292"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Nebylo dohledáno přesné datum schválení ŠVP zaměření ani zda proběhlo jednotné přijímací řízení s ostatními zaměřeními oboru."
+  },
+  {
+   "task_id": "R-600015726",
+   "issue_ids": [
+    "Q0095",
+    "Q0311",
+    "Q0312"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Jak se historické výsledky přijímacího řízení oboru 79-41-K/41 (2025) mají promítnout do dvou nových zaměření – proporcionálně, nebo jen k jednomu z nich (Všeobecné zaměření jako přímý nástupce)?"
+  },
+  {
+   "task_id": "R-600015726",
+   "issue_ids": [
+    "Q0095",
+    "Q0311",
+    "Q0312"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "manual_review",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum rozhodnutí školy/zřizovatele o zavedení zaměření aplikovaná informatika."
+  },
+  {
+   "task_id": "R-600015815",
+   "issue_ids": [
+    "Q0349"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Proč obor Kosmetické služby chyběl v nabídce 1. kola JPZ 2025, když je po celé období registrován."
+  },
+  {
+   "task_id": "R-600015815",
+   "issue_ids": [
+    "Q0350"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "seznam_pokusneho_overovani",
+   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
+   "otazka": "Kdy a jakým aktem MŠMT schválilo pokusné ověřování oboru 78-42-M/08 a proč se dosud neobjevuje v rejstříku."
+  },
+  {
+   "task_id": "R-600016218",
+   "issue_ids": [
+    "Q0096",
+    "Q0192"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda škola pro školní rok 2026/27 denní dvouletou nástavbu Podnikání skutečně neotevřela, nebo ji jen nevypsala v 1. kole JPZ."
+  },
+  {
+   "task_id": "R-600016218",
+   "issue_ids": [
+    "Q0096",
+    "Q0192"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Důvod chybějících kritérií pro nástavbové studium na webu školy pro 3. kolo 2026."
+  },
+  {
+   "task_id": "R-600016358",
+   "issue_ids": [
+    "Q0097",
+    "Q0098",
+    "Q0099",
+    "Q0273",
+    "Q0274",
+    "Q0275"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Zda zkrácení názvu doprovázela i změna obsahu ŠVP jednotlivých zaměření."
+  },
+  {
+   "task_id": "R-600016366",
+   "issue_ids": [
+    "Q0100",
+    "Q0284",
+    "Q0285"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Zda program „Gymnázium\" (2026) skutečně obsahově navazuje na dřívější zaměření „S rozšířenou výukou jazyků a IT\", nebo je jazykový akcent jedinou zachovanou složkou."
+  },
+  {
+   "task_id": "R-600016366",
+   "issue_ids": [
+    "Q0100",
+    "Q0284",
+    "Q0285"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum spuštění programu Business & Management (škola jej pouze označuje za nový, bez data)."
+  },
+  {
+   "task_id": "R-600016447",
+   "issue_ids": [
+    "Q0103",
+    "Q0289",
+    "Q0290"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Je nabídka LPG (Q0290) skutečně přímým pokračovatelem nabídky z roku 2025 (Q0103), nebo jsou obě zaměření z pohledu obsahu ŠVP rovnocenně nová?"
+  },
+  {
+   "task_id": "R-600016447",
+   "issue_ids": [
+    "Q0103",
+    "Q0289",
+    "Q0290"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "kapacita_pocty",
+   "cesta_k_uzavreni": "Data kapacit 1. kola 2026, která už v repozitáři jsou.",
+   "otazka": "Souvisí rozdělení na LPG/JAHU s přejmenováním sesterské školy REDIZO 600017591 (bývalé „Jazykové a humanitní GYMNÁZIUM PRIGO“) na „PRIGO, gymnázium 6leté a 4leté“ – došlo k přesunu kapacity/značky mezi oběma právnickými osobami?"
+  },
+  {
+   "task_id": "R-600016447",
+   "issue_ids": [
+    "Q0103",
+    "Q0289",
+    "Q0290"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Od jakého přesného data/školního roku škola formálně zavedla rozdělení čtyřletého studia na dvě profilace?"
+  },
+  {
+   "task_id": "R-600016510",
+   "issue_ids": [
+    "Q0104",
+    "Q0322",
+    "Q0323"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Šlo v roce 2025 skutečně o jednu společnou třídu, nebo jen o formátovací spojení dvou tříd v jednom řádku XLSX?"
+  },
+  {
+   "task_id": "R-600016617",
+   "issue_ids": [
+    "Q0105",
+    "Q0106",
+    "Q0107",
+    "Q0276",
+    "Q0277",
+    "Q0278"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "misto_vyuky",
+   "cesta_k_uzavreni": "Úkol dojezdovosti: místa výuky z rejstříku plus potvrzení školy.",
+   "otazka": "Došlo společně s doplněním prefixu města i k fyzickému přesunu výuky některého zaměření mezi budovami?"
+  },
+  {
+   "task_id": "R-600016676",
+   "issue_ids": [
+    "Q0609"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Byla v roce 2025 skutečně otevřena třída Strojírenství s polským jazykem výuky, a pokud ano, byla pro rok 2026 zrušena, nebo jen přejmenována/přeznačena jako „den2“?"
+  },
+  {
+   "task_id": "R-600016676",
+   "issue_ids": [
+    "Q0609"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Odpovídá kód „den2“ v CERMAT datech nějaké oficiální kategorii MŠMT, nebo jde o interní technický artefakt zdrojového souboru?"
+  },
+  {
+   "task_id": "R-600016901",
+   "issue_ids": [
+    "Q0108",
+    "Q0109",
+    "Q0357",
+    "Q0358"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Do jaké míry se změnil školní vzdělávací program (ŠVP) při přejmenování z Počítačové grafiky na Multimédia a z Automatizace a robotiky na Robotiku – jde jen o marketingovou úpravu, nebo o věcnou změnu obsahu výuky?"
+  },
+  {
+   "task_id": "R-600016935",
+   "issue_ids": [
+    "Q0110"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Je vypuštění všeobecné třídy trvalé rozhodnutí školy, nebo jen výpadek pro jeden ročník přijímacího řízení?"
+  },
+  {
+   "task_id": "R-600017061",
+   "issue_ids": [
+    "Q0238"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda obor Gastronomie (samostatně, bez kombinace s Kuchařem-číšníkem) byl školou v minulosti v denní JPZ formě vůbec nabízen, případně kdy naposledy."
+  },
+  {
+   "task_id": "R-600017168",
+   "issue_ids": [
+    "Q0116"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda MŠMT/kraj formálně schválili ukončení oboru Polygrafie, nebo jde jen o dočasné nevypsání 1. kola pro rok 2026/27."
+  },
+  {
+   "task_id": "R-600017699",
+   "issue_ids": [
+    "Q0123",
+    "Q0242",
+    "Q0243",
+    "Q0244"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "manual_review",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Od kdy přesně (který školní rok) škola formálně rozdělila přijímací řízení do tří zaměření – primární zdroj (ŠVP, výroční zpráva) nebyl dohledán, jen aktuální stav webu."
+  },
+  {
+   "task_id": "R-600017869",
+   "issue_ids": [
+    "Q0124",
+    "Q0125",
+    "Q0250"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Byla pro školní rok 2026/27 (cyklus, ke kterému se vztahují data CERMAT 2026) nabídka skutečně jednotná, nebo šlo jen o způsob zápisu do CERMAT XLSX a zaměření se volilo stejně jako v roce 2025? Přímý dokument (kritéria přijímacího řízení 2026) nebyl na webu dohledán."
+  },
+  {
+   "task_id": "R-600017869",
+   "issue_ids": [
+    "Q0124",
+    "Q0125",
+    "Q0250"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Je zaměření „Dopravní a vodohospodářské stavby\" formálně totožné s dřívějším „Inženýrské stavby\", nebo jde o obsahově novou variantu zavedenou ŠVP od 1. 9. 2025?"
+  },
+  {
+   "task_id": "R-600018067",
+   "issue_ids": [
+    "Q0126",
+    "Q0127",
+    "Q0334"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Od kterého přesně školního roku škola sloučila zaměření do jednotného programu – přímý dokument (ŠVP, výroční zpráva) nebyl dohledán, jen aktuální stav webu."
+  },
+  {
+   "task_id": "R-600018318",
+   "issue_ids": [
+    "Q0128"
+   ],
+   "status": "rozpor_zdrojů",
+   "recommended_action": "manual_review",
+   "kategorie": "zdroj_nedostupny",
+   "cesta_k_uzavreni": "Opakovaný pokus jinou cestou, nebo archiv stránky.",
+   "otazka": "Oficiální web školy (sosjesenik.cz) byl po celou dobu rešerše nedostupný (odmítnuté/timeoutované spojení na HTTPS z více nástrojů) – je potřeba jej ověřit později nebo kontaktovat školu přímo, zda obor Mechanizace a služby byl pro 1. kolo přijímacího řízení 2026/27 skutečně vyhlášen."
+  },
+  {
+   "task_id": "R-600019462",
+   "issue_ids": [
+    "Q0129",
+    "Q0367"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Jde o celostátní reformu oborové soustavy (nahrazení 69-41-L/02 kódem 53-41-M/04 plošně), nebo o rozhodnutí jednotlivé školy? Nebylo ověřeno u MŠMT/NPI."
+  },
+  {
+   "task_id": "R-600019527",
+   "issue_ids": [
+    "Q0344"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda šlo o jednorázové obnovení, nebo o pravidelné (např. dvouleté) střídání nabízených oborů, jako je doloženo u jiných zdravotnických škol – u Kolína konkrétní pravidlo nedohledáno."
+  },
+  {
+   "task_id": "R-600019560",
+   "issue_ids": [
+    "Q0130"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Přesný důvod výpadku přijímacího řízení pro rok 2026/2027 (nedostatek přihlášek vs. záměrné plánování) nebyl dohledán."
+  },
+  {
+   "task_id": "R-600019616",
+   "issue_ids": [
+    "Q0132"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Přesný důvod výpadku přijímacího řízení pro rok 2026/2027 nebyl dohledán; stránka kritérií přijímacího řízení pro tento ročník byla v době kontroly technicky nedostupná (chyba serveru)."
+  },
+  {
+   "task_id": "R-600019624",
+   "issue_ids": [
+    "Q0346"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "rejstrik_zapis",
+   "cesta_k_uzavreni": "Novější snímek rejstříku MŠMT, až vyjde.",
+   "otazka": "Kdo formálně o zavedení oboru rozhodl (zřizovatel/kraj) a kdy proběhne zápis do rejstříku MŠMT – nedohledáno."
+  },
+  {
+   "task_id": "R-600019641",
+   "issue_ids": [
+    "Q0133",
+    "Q0134"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda jde o pravidelné (např. dvouleté) střídání oborů, nebo o jednorázové rozhodnutí pro rok 2026/2027 – nedohledáno."
+  },
+  {
+   "task_id": "R-600019675",
+   "issue_ids": [
+    "Q0364"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum zápisu oboru do rejstříku mezi 31. 3. 2025 a 31. 12. 2025 nebylo dohledáno (chybí snímek s jemnějším rozlišením)."
+  },
+  {
+   "task_id": "R-600019675",
+   "issue_ids": [
+    "Q0365"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Nebylo ověřeno, zda obor běžel i v letech 2021/22 nebo 2022/23 (mimo dostupné archivní stránky webu); pro závěr o kontinuitě to není nutné."
+  },
+  {
+   "task_id": "R-600019772",
+   "issue_ids": [
+    "Q0135",
+    "Q0361"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda schéma lichý/sudý rok platí i pro roky před 2025 a jak dlouho je zavedeno – web to nedatuje."
+  },
+  {
+   "task_id": "R-600019772",
+   "issue_ids": [
+    "Q0135",
+    "Q0361"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum, od kdy web uvádí toto schéma (nelze vyloučit, že bylo zveřejněno až po vyhlášení přijímacího řízení 2026/27)."
+  },
+  {
+   "task_id": "R-600019781",
+   "issue_ids": [
+    "Q0343"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "kapacita_pocty",
+   "cesta_k_uzavreni": "Data kapacit 1. kola 2026, která už v repozitáři jsou.",
+   "otazka": "Přesný důvod přerušení přijímacího řízení do Sociální činnosti ve školních letech 2023/2024 a 2024/2025 (zájem uchazečů, kapacita, personální důvody) se nepodařilo dohledat a nebyl dle zadání dále zkoumán."
+  },
+  {
+   "task_id": "R-600019781",
+   "issue_ids": [
+    "Q0343"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "jina_kola_prijimaciho_rizeni",
+   "cesta_k_uzavreni": "Data 2. kola 2024 a 2025, která už v repozitáři jsou.",
+   "otazka": "Nebylo ověřeno, zda škola obor Sociální činnost nabízela v dalších kolech přijímacího řízení mimo 1. kolo JPZ v letech, kdy chybí v datech CERMAT."
+  },
+  {
+   "task_id": "R-600019942",
+   "issue_ids": [
+    "Q0345"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Přesná příčina, proč obor Sociální činnost nebyl součástí nabídky 1. kola JPZ 2025 (dočasné pozastavení náboru, nedostatečný zájem uchazečů, kapacitní/personální důvody, nebo jiný důvod) – ve veřejně dostupných zdrojích školy nedoloženo."
+  },
+  {
+   "task_id": "R-600019942",
+   "issue_ids": [
+    "Q0345"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "jina_kola_prijimaciho_rizeni",
+   "cesta_k_uzavreni": "Data 2. kola 2024 a 2025, která už v repozitáři jsou.",
+   "otazka": "Zda byl obor nabízen ve 2. kole přijímacího řízení 2025 nebo v letech před 2025 – mimo rozsah dostupných dat (rozsah úkolu je jen 1. kolo JPZ 2025 a 2026)."
+  },
+  {
+   "task_id": "R-600020053",
+   "issue_ids": [
+    "Q0136"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "historie_pred_2025",
+   "cesta_k_uzavreni": "Data 1. kola 2024, případně starší ročníky CERMAT.",
+   "otazka": "Zda byl dvouletý cyklus otevírání oboru zaveden už před rokem 2025, nebo šlo o novinku platnou poprvé pro 1. kolo JPZ 2026 – web školy uvádí jen aktuální stav, ne historii cyklu."
+  },
+  {
+   "task_id": "R-600020070",
+   "issue_ids": [
+    "Q0137",
+    "Q0363"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "misto_vyuky",
+   "cesta_k_uzavreni": "Úkol dojezdovosti: místa výuky z rejstříku plus potvrzení školy.",
+   "otazka": "Které z obou pracovišť (Jeremenkova vs. 1. máje) je místem výuky konkrétně pro Laboratorního asistenta a pro Maséra ve zdravotnictví – zdroje to nerozlišují."
+  },
+  {
+   "task_id": "R-600020070",
+   "issue_ids": [
+    "Q0137",
+    "Q0363"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda škola skutečně otevře Laboratorního asistenta pro nástup 2027, resp. proč u Maséra ve zdravotnictví aktuálně neplánuje další otevření – jde o vyjádřený záměr ke dni kontroly, nikoli o závazné rozhodnutí."
+  },
+  {
+   "task_id": "R-600020355",
+   "issue_ids": [
+    "Q0281"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "misto_vyuky",
+   "cesta_k_uzavreni": "Úkol dojezdovosti: místa výuky z rejstříku plus potvrzení školy.",
+   "otazka": "Web školy explicitně neuvádí, ve které budově (Čsl. armády 681/10, nebo Slovanská 1000/55) bude Technické lyceum vyučováno."
+  },
+  {
+   "task_id": "R-600020797",
+   "issue_ids": [
+    "Q0138"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Nebylo dohledáno oficiální vyjádření školy nebo zřizovatele (hl. m. Praha / MHMP) s explicitním důvodem neotevření oboru Informační služby pro 2026/27 – zda jde o dočasné přerušení (např. kvůli nízkému zájmu) nebo o plánovaný trvalý útlum oboru."
+  },
+  {
+   "task_id": "R-600024016",
+   "issue_ids": [
+    "Q0353",
+    "Q0354"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Přímé dobové potvrzení, že škola vědomě nevyhlásila přijímací řízení do těchto dvou oborů pro 2025/26 (např. věta na webu z jara 2025 typu 'tento obor letos neotevíráme'), se nepodařilo dohledat – web nenabízí archiv a web.archive.org nebyl z tohoto prostředí dostupný."
+  },
+  {
+   "task_id": "R-600024016",
+   "issue_ids": [
+    "Q0353",
+    "Q0354"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda byl v roce 2025 dostatek přihlášek/absolventů příslušných tříletých oborů, aby škola nástavbové studium mohla otevřít, nelze z dostupných zdrojů ověřit."
+  },
+  {
+   "task_id": "R-600025047",
+   "issue_ids": [
+    "Q0139"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "duvod_zmeny",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 1 se příčina samotné změny nezkoumá.",
+   "otazka": "Proč škola pro rok 2026/27 nevyhlásila přijímací řízení do 69-41-L/02 – nízký zájem uchazečů, záměr nahradit učebním oborem 69-53-H/01, nebo jiný organizační důvod?"
+  },
+  {
+   "task_id": "R-600025047",
+   "issue_ids": [
+    "Q0139"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Je plánováno obnovení přijímacího řízení do tohoto oboru v některém z dalších let, dokud zůstává registrován?"
+  },
+  {
+   "task_id": "R-600025047",
+   "issue_ids": [
+    "Q0139"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "chybi_oznameni_skoly",
+   "cesta_k_uzavreni": "Výroční zpráva školy, nebo přiznat, že datovaný zdroj neexistuje.",
+   "otazka": "Limit nástroje pro webové vyhledávání byl v této session vyčerpán – stálo by za doplňující kontrolu přes plnohodnotné vyhledávání (např. výroční zprávu školy nebo zprávy zřizovatele/kraje k síti oborů)."
+  },
+  {
+   "task_id": "R-600073017",
+   "issue_ids": [
+    "Q0140",
+    "Q0193"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Nebylo dohledáno přímé vyhlášení 1. kola přijímacího řízení pro školní rok 2026/2027 (obvykle vyhlašováno na jaře 2026) – archiv aktualit dostupný z webu sahá jen k 25. 6. 2026."
+  },
+  {
+   "task_id": "R-600073017",
+   "issue_ids": [
+    "Q0140",
+    "Q0193"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "dokument_zrizovatele",
+   "cesta_k_uzavreni": "Usnesení rady nebo zastupitelstva kraje; lze hledat v úředních deskách krajů.",
+   "otazka": "Není doložen přesný důvod, proč se obor Mechanik seřizovač stal „dobíhajícím\" (nízký zájem uchazečů, kapacitní/personální důvody, rozhodnutí zřizovatele apod.) – web tento důvod neuvádí a nebyl dohledán žádný zdroj zřizovatele (Karlovarský kraj) ani regionálního zpravodajství k této konkrétní škole."
+  },
+  {
+   "task_id": "R-600170080",
+   "issue_ids": [
+    "Q0142",
+    "Q0226"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum, odkdy web používá tvar „Elektromobility“ místo „Elektromobilita“, nebylo dohledáno – jde jen o změnu zápisu/gramatického tvaru bez vlivu na závěr."
+  },
+  {
+   "task_id": "R-600170080",
+   "issue_ids": [
+    "Q0141",
+    "Q0227"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum, odkdy web používá tvar „Multimédií“ místo „Multimédia“, nebylo dohledáno – jde jen o změnu zápisu/gramatického tvaru bez vlivu na závěr."
+  },
+  {
+   "task_id": "R-600170161",
+   "issue_ids": [
+    "Q0245"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "seznam_pokusneho_overovani",
+   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
+   "otazka": "Přesné číslo jednací a plné znění vyhlášení pokusného ověřování MŠMT (a jeho dodatků) se nepodařilo dohledat na aktuálním webu msmt.gov.cz – staré odkazy na soubory vedou na chybovou stránku."
+  },
+  {
+   "task_id": "R-600170161",
+   "issue_ids": [
+    "Q0245"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Není doloženo, ve kterém z pracovišť školy (sady Na Polabí 411/72, K Učilišti 2566, K Učilišti 2183) se obor 78-42-M/08 fakticky vyučuje."
+  },
+  {
+   "task_id": "R-600170179",
+   "issue_ids": [
+    "Q0143"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "dokument_zrizovatele",
+   "cesta_k_uzavreni": "Usnesení rady nebo zastupitelstva kraje; lze hledat v úředních deskách krajů.",
+   "otazka": "Přesné datum a formu rozhodnutí zřizovatele (Středočeský kraj) o nahrazení oboru Informační služby oborem Lyceum se nepodařilo dohledat samostatným zdrojem zřizovatele; doloženo je jen vlastní oznámení školy."
+  },
+  {
+   "task_id": "R-600170179",
+   "issue_ids": [
+    "Q0314"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "seznam_pokusneho_overovani",
+   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
+   "otazka": "Přesné znění a datum vyhlášení celostátního pokusného ověřování oboru 78-42-M/08 MŠMT nebylo dohledáno přímým zdrojem MŠMT, pouze nepřímo doloženo označením „režim pokusného ověřování“ v datech CERMAT."
+  },
+  {
+   "task_id": "R-600170179",
+   "issue_ids": [
+    "Q0314"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Datum očekávaného doplnění zápisu oboru 78-42-M/08 do rejstříku škol není známo."
+  },
+  {
+   "task_id": "R-600170195",
+   "issue_ids": [
+    "Q0144",
+    "Q0145"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda škola formálně zrušila akreditaci obou oborů, nebo jen dočasně nevyhlásila přijímací řízení."
+  },
+  {
+   "task_id": "R-600170195",
+   "issue_ids": [
+    "Q0144",
+    "Q0145"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda dálková tříletá varianta obou oborů (evidovaná v rejstříku) reálně běží pro stávající studenty."
+  },
+  {
+   "task_id": "R-600170195",
+   "issue_ids": [
+    "Q0144",
+    "Q0145"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda se výrok o „zkráceném studiu“ na webu vztahuje i na tyto dva nástavbové obory, nebo jde o zcela jinou (H/E) kategorii programů."
+  },
+  {
+   "task_id": "R-600170195",
+   "issue_ids": [
+    "Q0262"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda šlo v roce 2025 o skutečné nevyhlášení přijímacího řízení do oboru Podnikání, nebo jen o chybějící záznam v datech CERMAT."
+  },
+  {
+   "task_id": "R-600170195",
+   "issue_ids": [
+    "Q0262"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "jina_kola_prijimaciho_rizeni",
+   "cesta_k_uzavreni": "Data 2. kola 2024 a 2025, která už v repozitáři jsou.",
+   "otazka": "Kolik uchazečů bylo do oboru přijato v roce 2025, pokud vůbec nějaké řízení proběhlo mimo evidenci CERMAT."
+  },
+  {
+   "task_id": "R-600170195",
+   "issue_ids": [
+    "Q0262"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda souvisí obnovení nabídky Podnikání s omezením nabídky Provozní techniky a Provozní elektrotechniky (Q0144, Q0145) v témže roce."
+  },
+  {
+   "task_id": "R-600170241",
+   "issue_ids": [
+    "Q0146"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "dokument_zrizovatele",
+   "cesta_k_uzavreni": "Usnesení rady nebo zastupitelstva kraje; lze hledat v úředních deskách krajů.",
+   "otazka": "Není doloženo přesné datum ani orgán rozhodnutí o neotevření samostatného oboru Cestovní ruch (zda šlo o rozhodnutí zřizovatele – Středočeského kraje – nebo jen o interní rozhodnutí školy)."
+  },
+  {
+   "task_id": "R-600170241",
+   "issue_ids": [
+    "Q0258"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "seznam_pokusneho_overovani",
+   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
+   "otazka": "Přímý zdroj MŠMT k celostátnímu vyhlášení pokusného ověřování oboru 78-42-M/08 Lyceum z listopadu 2024 nebyl při rešerši dostupný (odkaz na webu školy vedl na chybu 404) – doloženo pouze vyjádřením školy, ne přímo textem vyhlášení MŠMT."
+  },
+  {
+   "task_id": "R-600170241",
+   "issue_ids": [
+    "Q0258"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum případného zápisu oboru 78-42-M/08 do rejstříku MŠMT (po 30. 6. 2026) není doloženo."
+  },
+  {
+   "task_id": "R-600170284",
+   "issue_ids": [
+    "Q0208"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Nebyl dohledán žádný regionální novinový článek (Českobudějovický/Jihočeský deník) ani prohlášení Jihočeského kraje, které by explicitně spojovalo vznik zaměření Technik jaderných zařízení s personální poptávkou JE Temelín."
+  },
+  {
+   "task_id": "R-600170284",
+   "issue_ids": [
+    "Q0208"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Není zjištěno přesné datum rozhodnutí o zavedení zaměření Technik jaderných zařízení (pouze rámcově dovoditelné ze zápisu oboru do rejstříku k 31. 12. 2025 a z data zveřejnění související aktuality o ČEZ podpoře k 27. 11. 2025)."
+  },
+  {
+   "task_id": "R-600170284",
+   "issue_ids": [
+    "Q0208"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "prenos_statistik",
+   "cesta_k_uzavreni": "Rozhodnutí člověka o srovnatelnosti, ne další rešerše.",
+   "otazka": "Historická statistika přijímacího řízení pro 23-44-L/01 z roku 2025 se vztahuje jen k jednomu zaměření (svařování) – před sloučením/rozdělením statistik na úrovni zaměření by bylo třeba ověřit, zda CERMAT/škola vedou zaměření jako oddělené obory pro účely přijímacích statistik i v dalších letech."
+  },
+  {
+   "task_id": "R-600170349",
+   "issue_ids": [
+    "Q0239"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "seznam_pokusneho_overovani",
+   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
+   "otazka": "Nebyl dohledán samostatný dokument MŠMT (rozhodnutí/dodatek k pokusnému ověřování) potvrzující zařazení REDIZO 600170349 do celostátního pokusného ověřování oboru 78-42-M/08 – doloženo pouze nepřímo přes web školy a data CERMAT."
+  },
+  {
+   "task_id": "R-600170349",
+   "issue_ids": [
+    "Q0239"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "chybi_oznameni_skoly",
+   "cesta_k_uzavreni": "Výroční zpráva školy, nebo přiznat, že datovaný zdroj neexistuje.",
+   "otazka": "Nebylo ověřeno, zda výuka v oboru 78-42-M/08 od 1. 9. 2026 skutečně reálně začala (např. potvrzením v následné výroční zprávě), pouze že byla inzerována a nabízena v přijímacím řízení."
+  },
+  {
+   "task_id": "R-600170381",
+   "issue_ids": [
+    "Q0382"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda a z jakého důvodu škola v roce 2025 do oboru 23-44-L/01 nevyhlásila přijímací řízení."
+  },
+  {
+   "task_id": "R-600170462",
+   "issue_ids": [
+    "Q0380"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "misto_vyuky",
+   "cesta_k_uzavreni": "Úkol dojezdovosti: místa výuky z rejstříku plus potvrzení školy.",
+   "otazka": "Přesná adresa a IZO nově vzniklého odloučeného pracoviště Hasičská škola - v rejstříku k 30. 6. 2026 dosud nezapsáno."
+  },
+  {
+   "task_id": "R-600170586",
+   "issue_ids": [
+    "Q0381"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "rejstrik_zapis",
+   "cesta_k_uzavreni": "Novější snímek rejstříku MŠMT, až vyjde.",
+   "otazka": "Přesné datum zahájení výuky oboru Elektrotechnika a vysvětlení data 2.11.2023 na webu školy vůči zápisu do rejstříku až koncem roku 2025."
+  },
+  {
+   "task_id": "R-600171388",
+   "issue_ids": [
+    "Q0383"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "record_only",
+   "kategorie": "rejstrik_zapis",
+   "cesta_k_uzavreni": "Novější snímek rejstříku MŠMT, až vyjde.",
+   "otazka": "Nepodařilo se dohledat explicitní prohlášení školy nebo zřizovatele (Olomoucký kraj) o zavedení oboru 26-41-L/52 od školního roku 2026/27 ani přesné datum zápisu do rejstříku mezi 31. 3. 2025 a 31. 12. 2025."
+  },
+  {
+   "task_id": "R-600171388",
+   "issue_ids": [
+    "Q0383"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "record_only",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Není potvrzeno, zda je marketingový název zaměření „Elektrotechnik pro robotiku a automatizaci“ oficiální součástí ŠVP, nebo jen aktuální propagační označení pro přijímací řízení 2026."
+  },
+  {
+   "task_id": "R-610450620",
+   "issue_ids": [
+    "Q0156"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Uvedla škola oficiálně důvod nezařazení Veřejnosprávní činnosti do nabídky 2026/27 (např. v zápisu ze zasedání zřizovatele nebo tiskové zprávě)?"
+  },
+  {
+   "task_id": "R-610451049",
+   "issue_ids": [
+    "Q0378"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "dokument_zrizovatele",
+   "cesta_k_uzavreni": "Usnesení rady nebo zastupitelstva kraje; lze hledat v úředních deskách krajů.",
+   "otazka": "Přesné datum rozhodnutí zřizovatele o zařazení oboru do sítě škol."
+  },
+  {
+   "task_id": "R-650069021",
+   "issue_ids": [
+    "Q0157"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Bylo přijímací řízení do denního nástavbového studia Provozní technika pro 2026/27 vyhlášeno mimo 1. kolo JPZ, nebo nebylo vyhlášeno vůbec?"
+  },
+  {
+   "task_id": "R-651012988",
+   "issue_ids": [
+    "Q0158"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Bylo přijímací řízení do oboru Vlasová kosmetika pro 2026/27 vyhlášeno mimo 1. kolo JPZ, nebo nebylo vyhlášeno vůbec?"
+  },
+  {
+   "task_id": "R-651028922",
+   "issue_ids": [
+    "Q0161",
+    "Q0386",
+    "Q0387"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Provozovala škola anglický a český program odděleně už v roce 2025, nebo jde o nové organizační rozdělení pro 2026?"
+  },
+  {
+   "task_id": "R-651028922",
+   "issue_ids": [
+    "Q0161",
+    "Q0386",
+    "Q0387"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Je Na Příkopě 850/8 nové sídlo, další místo výuky, nebo jen korespondenční/marketingová adresa? Proč rejstřík MŠMT tuto adresu k 30. 6. 2026 neeviduje?"
+  },
+  {
+   "task_id": "R-680000011",
+   "issue_ids": [
+    "Q0162",
+    "Q0163"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "rejstrik_zapis",
+   "cesta_k_uzavreni": "Novější snímek rejstříku MŠMT, až vyjde.",
+   "otazka": "Byl obor 68-42-M/01 formálně vyřazen z rejstříku, nebo jen dobíhá pro dříve přijaté žáky?"
+  },
+  {
+   "task_id": "R-680000011",
+   "issue_ids": [
+    "Q0395",
+    "Q0396"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "seznam_pokusneho_overovani",
+   "cesta_k_uzavreni": "Jeden seznam škol zapojených do pokusného ověřování oboru 78-42-M/08 od MŠMT.",
+   "otazka": "Je Vyšší policejní škola a Střední policejní škola MV v Praze oficiálně uvedena v seznamu škol zapojených do pokusného ověřování oboru 68-42-L/01?"
+  },
+  {
+   "task_id": "R-680000011",
+   "issue_ids": [
+    "Q0395",
+    "Q0396"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "rejstrik_zapis",
+   "cesta_k_uzavreni": "Novější snímek rejstříku MŠMT, až vyjde.",
+   "otazka": "Kdy bude obor 68-42-L/01 zapsán do rejstříku MŠMT?"
+  },
+  {
+   "task_id": "R-691000212",
+   "issue_ids": [
+    "Q0164"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Zda a od kdy se plánuje případné obnovení přijímacího řízení do čtyřletého oboru 79-41-K/41."
+  },
+  {
+   "task_id": "R-691000212",
+   "issue_ids": [
+    "Q0164"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum zveřejnění oznámení o neotevření čtyřletého oboru pro 2026/27 (na stránce školy chybí datum)."
+  },
+  {
+   "task_id": "R-691000549",
+   "issue_ids": [
+    "Q0405",
+    "Q0421"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum vyhlášení přijímacího řízení pro školní rok 2026/27 (zřizovatelské rozhodnutí o založení gymnázia) se na webu školy nepodařilo dohledat; jde o soukromou školu, oficiální zřizovací dokument nebyl nalezen veřejně."
+  },
+  {
+   "task_id": "R-691001111",
+   "issue_ids": [
+    "Q0165",
+    "Q0268"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Web školy necituje doslovný text „Ekonom - specializace sportovní“ z roku 2025 (archiv webu nebyl dostupný) – kontinuita je doložena shodou oboru, ŠVP a obsahu specializace, nikoli přímým dobovým snímkem webu z roku 2025."
+  },
+  {
+   "task_id": "R-691001111",
+   "issue_ids": [
+    "Q0166",
+    "Q0269"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "approve_mapping",
+   "kategorie": "obsah_vs_zapis",
+   "cesta_k_uzavreni": "Školní vzdělávací program školy; u pouhé změny textu je podle pravidel mimo rozsah.",
+   "otazka": "Web školy necituje doslovný text „Ekonom - specializace jazyková a odborná“ z roku 2025 (archiv webu nebyl dostupný) – kontinuita je doložena shodou oboru, ŠVP a obsahu specializace, nikoli přímým dobovým snímkem webu z roku 2025."
+  },
+  {
+   "task_id": "R-691007144",
+   "issue_ids": [
+    "Q0408",
+    "Q0424"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "rejstrik_zapis",
+   "cesta_k_uzavreni": "Novější snímek rejstříku MŠMT, až vyjde.",
+   "otazka": "Přesný důvod, proč se první ročník otevřený v září 2025 neobjevuje v datech CERMAT 1. kola JPZ 2025 (např. mimořádný/dodatečný zápis mimo standardní JPZ, nebo administrativní zpoždění registrace IZO), nebyl na webu školy explicitně doložen."
+  },
+  {
+   "task_id": "R-691007144",
+   "issue_ids": [
+    "Q0408",
+    "Q0424"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "kapacita_pocty",
+   "cesta_k_uzavreni": "Data kapacit 1. kola 2026, která už v repozitáři jsou.",
+   "otazka": "Plánovaná kapacita a přesný počet přijímaných žáků pro školní rok 2026/27 nebyly na webu školy nalezeny."
+  },
+  {
+   "task_id": "R-691009341",
+   "issue_ids": [
+    "Q0167",
+    "Q0194"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Zda gymnázium AVIDA v období 2026/2027 fakticky dobíhá s existujícím ročníkem bez nového náboru, nebo zda přijímací řízení pro rok 2026/2027 proběhlo jinou (např. neveřejnou/přímou) formou mimo systém DiPSy a CERMAT."
+  },
+  {
+   "task_id": "R-691009341",
+   "issue_ids": [
+    "Q0167",
+    "Q0194"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Přesný důvod přesunu plánovaného rozšíření (všeobecné gymnázium, pedagogické lyceum) na září 2027 a zda se týká i nového náboru do sportovního zaměření."
+  },
+  {
+   "task_id": "R-691012458",
+   "issue_ids": [
+    "Q0171",
+    "Q0372"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "manual_review",
+   "kategorie": "misto_vyuky",
+   "cesta_k_uzavreni": "Úkol dojezdovosti: místa výuky z rejstříku plus potvrzení školy.",
+   "otazka": "Ve které budově (pracovišti) bude nově čtyřleté gymnázium 79-41-K/41 vyučováno?"
+  },
+  {
+   "task_id": "R-691012458",
+   "issue_ids": [
+    "Q0171",
+    "Q0372"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "manual_review",
+   "kategorie": "rejstrik_zapis",
+   "cesta_k_uzavreni": "Novější snímek rejstříku MŠMT, až vyjde.",
+   "otazka": "Kdy bude 79-41-K/41 zapsán do rejstříku MŠMT?"
+  },
+  {
+   "task_id": "R-691015163",
+   "issue_ids": [
+    "Q0390"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "manual_review",
+   "kategorie": "misto_vyuky",
+   "cesta_k_uzavreni": "Úkol dojezdovosti: místa výuky z rejstříku plus potvrzení školy.",
+   "otazka": "Bude Bosonohy zapsána jako samostatné místo výuky, případně samostatné IZO, nebo zůstane součástí IZO 181121662?"
+  },
+  {
+   "task_id": "R-691016551",
+   "issue_ids": [
+    "Q0391",
+    "Q0420"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "manual_review",
+   "kategorie": "rejstrik_zapis",
+   "cesta_k_uzavreni": "Novější snímek rejstříku MŠMT, až vyjde.",
+   "otazka": "Bude nástavbové studium 65-41-L/51 Gastronomie zapsáno do rejstříku MŠMT do zahájení výuky v září 2026?"
+  },
+  {
+   "task_id": "R-691016640",
+   "issue_ids": [
+    "Q0393"
+   ],
+   "status": "rozpor_zdrojů",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Proběhlo skutečně přijímací řízení do oboru 78-42-M/08 na Digital Academy Kutná Hora v roce 2026, nebo jde o chybný/nedokončený záznam v datech CERMAT?"
+  },
+  {
+   "task_id": "R-691016836",
+   "issue_ids": [
+    "Q0173",
+    "Q0195"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Bude škola znovu přijímat nové žáky do 1. ročníku v některém z příštích let?"
+  },
+  {
+   "task_id": "R-691017280",
+   "issue_ids": [
+    "Q0174",
+    "Q0196"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda žáci případně přijatí pod REDIZO 691017280 v roce 2025 pokračují ve studiu pod REDIZO 600005950."
+  },
+  {
+   "task_id": "R-691017280",
+   "issue_ids": [
+    "Q0174",
+    "Q0196"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "pravni_doklad_subjektu",
+   "cesta_k_uzavreni": "Otevřená data ARES nebo sbírka listin; webové rozhraní justice agentům nevrací obsah.",
+   "otazka": "Mechanismus a datum zániku subjektu (sloučení, nebo prostý výmaz) je nutné doložit sbírkou listin; ARES potvrzuje jen to, že subjekt už zapsán není."
+  },
+  {
+   "task_id": "R-691017301",
+   "issue_ids": [
+    "Q0175",
+    "Q0197"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda žáci případně přijatí pod REDIZO 691017301 v roce 2025 pokračují ve studiu v rámci skupiny FOSTRA."
+  },
+  {
+   "task_id": "R-691017301",
+   "issue_ids": [
+    "Q0175",
+    "Q0197"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "record_only",
+   "kategorie": "pravni_doklad_subjektu",
+   "cesta_k_uzavreni": "Otevřená data ARES nebo sbírka listin; webové rozhraní justice agentům nevrací obsah.",
+   "otazka": "Mechanismus a datum zániku subjektu (sloučení, nebo prostý výmaz) je nutné doložit sbírkou listin; ARES potvrzuje jen to, že subjekt už zapsán není."
+  },
+  {
+   "task_id": "R-691017310",
+   "issue_ids": [
+    "Q0176",
+    "Q0198"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda žáci případně přijatí pod REDIZO 691017310 v roce 2025 pokračují ve studiu v rámci skupiny FOSTRA."
+  },
+  {
+   "task_id": "R-691017310",
+   "issue_ids": [
+    "Q0176",
+    "Q0198"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "record_only",
+   "kategorie": "pravni_doklad_subjektu",
+   "cesta_k_uzavreni": "Otevřená data ARES nebo sbírka listin; webové rozhraní justice agentům nevrací obsah.",
+   "otazka": "Mechanismus a datum zániku subjektu (sloučení, nebo prostý výmaz) je nutné doložit sbírkou listin; ARES potvrzuje jen to, že subjekt už zapsán není."
+  },
+  {
+   "task_id": "R-691017328",
+   "issue_ids": [
+    "Q0177",
+    "Q0199"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda žáci případně přijatí pod REDIZO 691017328 v roce 2025 pokračují ve studiu v rámci skupiny FOSTRA."
+  },
+  {
+   "task_id": "R-691017328",
+   "issue_ids": [
+    "Q0177",
+    "Q0199"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "record_only",
+   "kategorie": "pravni_doklad_subjektu",
+   "cesta_k_uzavreni": "Otevřená data ARES nebo sbírka listin; webové rozhraní justice agentům nevrací obsah.",
+   "otazka": "Mechanismus a datum zániku subjektu (sloučení, nebo prostý výmaz) je nutné doložit sbírkou listin; ARES potvrzuje jen to, že subjekt už zapsán není."
+  },
+  {
+   "task_id": "R-691017344",
+   "issue_ids": [
+    "Q0178",
+    "Q0179",
+    "Q0200"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Doporučujeme přehodnotit nález úkolu R-600005950 u otázek Q0325 a Q0326 - jejich tehdejší závěr 'žádná z těchto nabídek nemá v datech 2025 obdobu' je touto rešerší vyvrácen nálezem obdoby v REDIZO 691017344."
+  },
+  {
+   "task_id": "R-691017344",
+   "issue_ids": [
+    "Q0178",
+    "Q0179",
+    "Q0200"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda přeznačení zaměření pro budoucí psychology z 'Meda' (CERMAT 2026) na 'Alma' (aktuální web) proběhlo až po podání přihlášek, a zda jde o totéž zaměření nebo o jeho rozdělení."
+  },
+  {
+   "task_id": "R-691017344",
+   "issue_ids": [
+    "Q0178",
+    "Q0179",
+    "Q0200"
+   ],
+   "status": "pravděpodobné",
+   "recommended_action": "manual_review",
+   "kategorie": "pravni_doklad_subjektu",
+   "cesta_k_uzavreni": "Otevřená data ARES nebo sbírka listin; webové rozhraní justice agentům nevrací obsah.",
+   "otazka": "Mechanismus a datum zániku subjektu (sloučení, nebo prostý výmaz) je nutné doložit sbírkou listin; ARES potvrzuje jen to, že subjekt už zapsán není."
+  },
+  {
+   "task_id": "R-691017981",
+   "issue_ids": [
+    "Q0394"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "trvalost_ukonceni",
+   "cesta_k_uzavreni": "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné.",
+   "otazka": "Přesné datum a trvalost přesunu výuky do Sousedíkovy 1044/8 - zda jde o dočasné nebo trvalé místo výuky ekonomického lycea i gymnázia."
+  },
+  {
+   "task_id": "R-691018715",
+   "issue_ids": [
+    "Q0413",
+    "Q0428"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda PRIGO skupina v Brně provozovala tuto školu (nebo její předchůdkyni) reálně již dříve mimo JPZ režim, nebylo možné z dostupných zdrojů ověřit."
+  },
+  {
+   "task_id": "R-691018731",
+   "issue_ids": [
+    "Q0407",
+    "Q0423"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "neurceno",
+   "cesta_k_uzavreni": "Nezařazeno, vyžaduje ruční pohled.",
+   "otazka": "Zda PRIGO skupina v Brně provozovala tuto školu (nebo její předchůdkyni) reálně již dříve mimo JPZ režim, nebylo možné z dostupných zdrojů ověřit."
+  },
+  {
+   "task_id": "R-691018839",
+   "issue_ids": [
+    "Q0406",
+    "Q0422"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "manual_review",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum budoucího zápisu oboru 23-44-L/01 do rejstříku MŠMT není známo."
+  },
+  {
+   "task_id": "R-691018871",
+   "issue_ids": [
+    "Q0414",
+    "Q0429"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "manual_review",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum budoucího zápisu školy do rejstříku MŠMT a přidělení IZO není známo."
+  },
+  {
+   "task_id": "R-691019088",
+   "issue_ids": [
+    "Q0412",
+    "Q0427"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "kapacita_pocty",
+   "cesta_k_uzavreni": "Data kapacit 1. kola 2026, která už v repozitáři jsou.",
+   "otazka": "Přesný důvod založení druhé právnické osoby vedle staršího Gymnázia KUDYKAMPUS (kapacitní rozšíření vs. jiný záměr) nebyl dohledán."
+  },
+  {
+   "task_id": "R-691019193",
+   "issue_ids": [
+    "Q0409",
+    "Q0425"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum zápisu školy do rejstříku MŠMT mezi 31. 3. 2025 a 31. 12. 2025 nebylo dohledáno."
+  },
+  {
+   "task_id": "R-691019258",
+   "issue_ids": [
+    "Q0410",
+    "Q0411",
+    "Q0426"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum zápisu středoškolských oborů do rejstříku MŠMT mezi 31. 3. 2025 a 31. 12. 2025 nebylo dohledáno."
+  },
+  {
+   "task_id": "R-691020035",
+   "issue_ids": [
+    "Q0415",
+    "Q0416",
+    "Q0430"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum zápisu školy do rejstříku MŠMT (mimo sledovaná čtyři data) nebylo dohledáno."
+  },
+  {
+   "task_id": "R-691020060",
+   "issue_ids": [
+    "Q0418",
+    "Q0432"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "datum_udalosti",
+   "cesta_k_uzavreni": "Podle schváleného pravidla 8 se událost datuje do intervalu mezi snímky.",
+   "otazka": "Přesné datum zápisu školy do rejstříku MŠMT a jméno zakladatele ústavu nebyly dohledány."
+  },
+  {
+   "task_id": "R-691020094",
+   "issue_ids": [
+    "Q0417",
+    "Q0431"
+   ],
+   "status": "potvrzeno",
+   "recommended_action": "record_only",
+   "kategorie": "pravni_doklad_subjektu",
+   "cesta_k_uzavreni": "Otevřená data ARES nebo sbírka listin; webové rozhraní justice agentům nevrací obsah.",
+   "otazka": "Přesné datum zápisu školy do rejstříku MŠMT nebylo dohledáno; IČO 17590426 se nepodařilo ověřit v obchodním/veřejném rejstříku (or.justice.cz) samostatným dotazem – údaj pochází z webu školy."
+  }
+ ]
+}
