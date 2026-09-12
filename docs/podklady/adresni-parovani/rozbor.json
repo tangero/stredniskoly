@@ -1,0 +1,1236 @@
+{
+  "scope": {
+    "2025": {
+      "offers": 3059,
+      "redizo": 1105,
+      "addresses": 1056,
+      "without_number_address": 34
+    },
+    "2026": {
+      "offers": 3091,
+      "redizo": 1104,
+      "addresses": 1062,
+      "without_number_address": 32
+    }
+  },
+  "cross_redizo_pairs": [
+    {
+      "redizo_2025": "600007936",
+      "redizo_2026": "600007987",
+      "adresa": "prazska 1222|rakovnik|26901",
+      "nazev_2025": "Střední zemědělská škola",
+      "nazev_2026": "Masarykova obch. a zeměděl. akademie Rakovník, SOŠ",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": true,
+      "old_same_address_current": false,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600004848",
+      "redizo_2026": "600004775",
+      "adresa": "vinohradska 1971|praha|12000",
+      "nazev_2025": "SŠ ekonom. se sport. zaměřením s.r.o.",
+      "nazev_2026": "Obchodní akademie Vinohradská",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600004775",
+      "redizo_2026": "600004848",
+      "adresa": "vinohradska 1971|praha|12000",
+      "nazev_2025": "Obchodní akademie Vinohradská",
+      "nazev_2026": "SŠ ekonom. se sport. zaměřením s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600170071",
+      "redizo_2026": "600006280",
+      "adresa": "ucnovska 100|praha|19000",
+      "nazev_2025": "SOS logistiky a podnikání",
+      "nazev_2026": "Střední odborná škola Jarov",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600006280",
+      "redizo_2026": "600170071",
+      "adresa": "ucnovska 100|praha|19000",
+      "nazev_2025": "Střední odborná škola Jarov",
+      "nazev_2026": "SOS logistiky a podnikání",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600013898",
+      "redizo_2026": "600006018",
+      "adresa": "mendlovo namesti 1|brno|60300",
+      "nazev_2025": "PORG Brno - gymnázium, ZŠ a MŠ, o.p.s.",
+      "nazev_2026": "PORG - gymnázium, ZŠ a MŠ, o.p.s.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": true,
+      "old_same_address_current": false,
+      "current_same_address_previous": false,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600011631",
+      "redizo_2026": "691004048",
+      "adresa": "hradecka 1151|hradec kralove|50003",
+      "nazev_2025": "SŠ a VOŠ aplikované kybernetiky s.r.o.",
+      "nazev_2026": "SŠ Sion High School",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": false,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600006328",
+      "redizo_2026": "600005798",
+      "adresa": "ceskobrodska 362|praha|19000",
+      "nazev_2025": "Soukr. SOŠ a Soukr. SOU BEAN, s.r.o.",
+      "nazev_2026": "SŠ kosmetiky a hotelnictví BEAN, s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600005798",
+      "redizo_2026": "600006328",
+      "adresa": "ceskobrodska 362|praha|19000",
+      "nazev_2025": "SŠ kosmetiky a hotelnictví BEAN, s.r.o.",
+      "nazev_2026": "Soukr. SOŠ a Soukr. SOU BEAN, s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600170853",
+      "redizo_2026": "600012522",
+      "adresa": "sokolovska 150|rybitvi|53354",
+      "nazev_2025": "SPŠ stavební Pardubice",
+      "nazev_2026": "EDUCA Pardubice - SOŠ, s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600012522",
+      "redizo_2026": "600170853",
+      "adresa": "sokolovska 150|rybitvi|53354",
+      "nazev_2025": "EDUCA Pardubice - SOŠ, s.r.o.",
+      "nazev_2026": "SPŠ stavební Pardubice",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600016374",
+      "redizo_2026": "600016307",
+      "adresa": "pionyru 2069|frydek mistek|73801",
+      "nazev_2025": "Střední škola inform.technologií, s.r.o.",
+      "nazev_2026": "Střední škola řemesel",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "680000062",
+      "redizo_2026": "600016307",
+      "adresa": "pionyru 2069|frydek mistek|73801",
+      "nazev_2025": "SOŠ požár. ochrany a VOŠ požár. ochrany",
+      "nazev_2026": "Střední škola řemesel",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600016307",
+      "redizo_2026": "600016374",
+      "adresa": "pionyru 2069|frydek mistek|73801",
+      "nazev_2025": "Střední škola řemesel",
+      "nazev_2026": "Střední škola inform.technologií, s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "680000062",
+      "redizo_2026": "600016374",
+      "adresa": "pionyru 2069|frydek mistek|73801",
+      "nazev_2025": "SOŠ požár. ochrany a VOŠ požár. ochrany",
+      "nazev_2026": "Střední škola inform.technologií, s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600016307",
+      "redizo_2026": "680000062",
+      "adresa": "pionyru 2069|frydek mistek|73801",
+      "nazev_2025": "Střední škola řemesel",
+      "nazev_2026": "SOŠ požár. ochrany a VOŠ požár. ochrany",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600016374",
+      "redizo_2026": "680000062",
+      "adresa": "pionyru 2069|frydek mistek|73801",
+      "nazev_2025": "Střední škola inform.technologií, s.r.o.",
+      "nazev_2026": "SOŠ požár. ochrany a VOŠ požár. ochrany",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600005984",
+      "redizo_2026": "691001111",
+      "adresa": "prusikova 2577|praha|15500",
+      "nazev_2025": "Gymnázium Přírodní škola, z.ú.",
+      "nazev_2026": "Anglo - německá obchodní akademie a.s.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": true,
+      "old_same_address_current": false,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600013979",
+      "redizo_2026": "600013839",
+      "adresa": "stredni 552|brno|60200",
+      "nazev_2025": "SŠ a VOŠ tradičních řemesel s.r.o.",
+      "nazev_2026": "Obchodní akademie ELDO, o.p.s.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600013839",
+      "redizo_2026": "600013979",
+      "adresa": "stredni 552|brno|60200",
+      "nazev_2025": "Obchodní akademie ELDO, o.p.s.",
+      "nazev_2026": "SŠ a VOŠ tradičních řemesel s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600005895",
+      "redizo_2026": "600006409",
+      "adresa": "trojska 211|praha|17100",
+      "nazev_2025": "Trojské gymnázium s.r.o.",
+      "nazev_2026": "Euroškola Praha SOŠ s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600006409",
+      "redizo_2026": "600005895",
+      "adresa": "trojska 211|praha|17100",
+      "nazev_2025": "Euroškola Praha SOŠ s.r.o.",
+      "nazev_2026": "Trojské gymnázium s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600011038",
+      "redizo_2026": "600011020",
+      "adresa": "svatovaclavska 1404|zatec|43801",
+      "nazev_2025": "SPŠ elektrotech. a zař. pro DVPP, s.r.o.",
+      "nazev_2026": "Soukromá obchodní akademie, spol. s r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600011020",
+      "redizo_2026": "600011038",
+      "adresa": "svatovaclavska 1404|zatec|43801",
+      "nazev_2025": "Soukromá obchodní akademie, spol. s r.o.",
+      "nazev_2026": "SPŠ elektrotech. a zař. pro DVPP, s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600019454",
+      "redizo_2026": "600004902",
+      "adresa": "jecna 527|praha|12000",
+      "nazev_2025": "Církevní střední zdravotnická škola",
+      "nazev_2026": "SOŠ sociální svaté Zdislavy",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600004902",
+      "redizo_2026": "600019454",
+      "adresa": "jecna 527|praha|12000",
+      "nazev_2025": "SOŠ sociální svaté Zdislavy",
+      "nazev_2026": "Církevní střední zdravotnická škola",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600012514",
+      "redizo_2026": "600012468",
+      "adresa": "u josefa 118|pardubice|53009",
+      "nazev_2025": "Labská SOŠ a SOU Pardubice, s. r. o.",
+      "nazev_2026": "SŠ cestovního ruchu a grafického designu, s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600012468",
+      "redizo_2026": "600012514",
+      "adresa": "u josefa 118|pardubice|53009",
+      "nazev_2025": "SŠ cest. ruchu a graf. designu, s.r.o.",
+      "nazev_2026": "Labská SOŠ a SOU Pardubice, s. r. o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600016706",
+      "redizo_2026": "600016617",
+      "adresa": "leonovova 1795|karvina|73301",
+      "nazev_2025": "SOŠ ochrany osob a majetku s.r.o.",
+      "nazev_2026": "Obchodní akademie a Česko - anglická ZŠ s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600016617",
+      "redizo_2026": "600016706",
+      "adresa": "leonovova 1795|karvina|73301",
+      "nazev_2025": "Obchodní akademie a Česko - anglická ZŠ s.r.o.",
+      "nazev_2026": "SOŠ ochrany osob a majetku s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600013537",
+      "redizo_2026": "600013511",
+      "adresa": "bzenecka 4226|brno|62800",
+      "nazev_2025": "Gymnázium Globe, s.r.o.",
+      "nazev_2026": "SŠ KNIH,o.p.s.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600013511",
+      "redizo_2026": "600013537",
+      "adresa": "bzenecka 4226|brno|62800",
+      "nazev_2025": "SŠ KNIH,o.p.s.",
+      "nazev_2026": "Gymnázium Globe, s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "610100581",
+      "redizo_2026": "600009459",
+      "adresa": "vejprnicka 663|plzen|31800",
+      "nazev_2025": "Střední odborné učiliště elektrotech.",
+      "nazev_2026": "Sportovní gymnázium Plzeň",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600009459",
+      "redizo_2026": "610100581",
+      "adresa": "vejprnicka 663|plzen|31800",
+      "nazev_2025": "Sportovní gymnázium Plzeň",
+      "nazev_2026": "Střední odborné učiliště elektrotech.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600016447",
+      "redizo_2026": "600017591",
+      "adresa": "mojmirovcu 1002|ostrava|70900",
+      "nazev_2025": "PRIGO, gymnázium 8leté a 4leté, s.r.o.",
+      "nazev_2026": "PRIGO, gymnázium 6leté a 4leté, s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": false,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600170012",
+      "redizo_2026": "600005861",
+      "adresa": "jablonskeho 333|praha|17000",
+      "nazev_2025": "Obchodní akademie Holešovice",
+      "nazev_2026": "VOŠ oděvního návrhářství a SPŠ oděvní",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600005861",
+      "redizo_2026": "600170012",
+      "adresa": "jablonskeho 333|praha|17000",
+      "nazev_2025": "VOŠ oděvního návrhářství a SPŠ oděvní",
+      "nazev_2026": "Obchodní akademie Holešovice",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600170098",
+      "redizo_2026": "600006727",
+      "adresa": "cernoleska 1997|benesov|25601",
+      "nazev_2025": "Integrovaná střední škola technická",
+      "nazev_2026": "SOŠ a SZŠ",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600006727",
+      "redizo_2026": "600170098",
+      "adresa": "cernoleska 1997|benesov|25601",
+      "nazev_2025": "SOŠ a SZŠ",
+      "nazev_2026": "Integrovaná střední škola technická",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600006026",
+      "redizo_2026": "600006034",
+      "adresa": "svidnicka 599|praha|18100",
+      "nazev_2025": "Královská střední škola, s.r.o.",
+      "nazev_2026": "Soukr. střední škola gastronomie s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": false,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600011283",
+      "redizo_2026": "600011291",
+      "adresa": "frani sramka 1350|teplice|41501",
+      "nazev_2025": "Střední škola stavební a strojní",
+      "nazev_2026": "Střední škola obchodu a služeb",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600011291",
+      "redizo_2026": "600011283",
+      "adresa": "frani sramka 1350|teplice|41501",
+      "nazev_2025": "Střední škola obchodu a služeb",
+      "nazev_2026": "Střední škola stavební a strojní",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "691012105",
+      "redizo_2026": "600015092",
+      "adresa": "na lindovce 1463|kromeriz|76701",
+      "nazev_2025": "Střední odborná škola sv. Jana Boska",
+      "nazev_2026": "SŠ hotelová a služeb Kroměříž",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600015092",
+      "redizo_2026": "691012105",
+      "adresa": "na lindovce 1463|kromeriz|76701",
+      "nazev_2025": "SŠ hotelová a služeb Kroměříž",
+      "nazev_2026": "Střední odborná škola sv. Jana Boska",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "691017280",
+      "redizo_2026": "600005950",
+      "adresa": "rohacova 1148|praha|13000",
+      "nazev_2025": "Gymnázium FOSTRA Aspira s.r.o.",
+      "nazev_2026": "Gymnázium FOSTRA International s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": true,
+      "old_same_address_current": false,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "691017310",
+      "redizo_2026": "600005950",
+      "adresa": "rohacova 1148|praha|13000",
+      "nazev_2025": "Gymnázium FOSTRA Pontia s.r.o.",
+      "nazev_2026": "Gymnázium FOSTRA International s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": true,
+      "old_same_address_current": false,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "691017328",
+      "redizo_2026": "600005950",
+      "adresa": "rohacova 1148|praha|13000",
+      "nazev_2025": "Gymnázium FOSTRA Europea s.r.o.",
+      "nazev_2026": "Gymnázium FOSTRA International s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": true,
+      "old_same_address_current": false,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "691017344",
+      "redizo_2026": "600005950",
+      "adresa": "rohacova 1148|praha|13000",
+      "nazev_2025": "Gymnázium FOSTRA Meda s.r.o.",
+      "nazev_2026": "Gymnázium FOSTRA International s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": true,
+      "old_same_address_current": false,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600011089",
+      "redizo_2026": "600011127",
+      "adresa": "pionyru 2806|most|43401",
+      "nazev_2025": "SOŠ podnikatelská, s.r.o.",
+      "nazev_2026": "Střední odborná škola InterDACT s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600011127",
+      "redizo_2026": "600011089",
+      "adresa": "pionyru 2806|most|43401",
+      "nazev_2025": "Střední odborná škola InterDACT s.r.o.",
+      "nazev_2026": "SOŠ podnikatelská, s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600015882",
+      "redizo_2026": "600015831",
+      "adresa": "u klafarku 1685|zdar nad sazavou|59101",
+      "nazev_2025": "SŠ gastronomická Adolpha Kolpinga",
+      "nazev_2026": "Biskupské gymnázium",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600015831",
+      "redizo_2026": "600015882",
+      "adresa": "u klafarku 1685|zdar nad sazavou|59101",
+      "nazev_2025": "Biskupské gymnázium",
+      "nazev_2026": "SŠ Adolpha Kolpinga",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600008550",
+      "redizo_2026": "600008584",
+      "adresa": "celakovskeho 200|pisek|39701",
+      "nazev_2025": "Střední zemědělská škola",
+      "nazev_2026": "Obchodní akademie a JŠ s právem SJZ",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600008584",
+      "redizo_2026": "600008550",
+      "adresa": "celakovskeho 200|pisek|39701",
+      "nazev_2025": "Obchodní akademie a JŠ s právem SJZ",
+      "nazev_2026": "Střední zemědělská škola",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600016242",
+      "redizo_2026": "600020011",
+      "adresa": "tr t g masaryka 451|frydek mistek|73801",
+      "nazev_2025": "Střední škola gastro., oděv. a služeb",
+      "nazev_2026": "Střední zdravotnická škola",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600020011",
+      "redizo_2026": "600016242",
+      "adresa": "tr t g masaryka 451|frydek mistek|73801",
+      "nazev_2025": "Střední zdravotnická škola",
+      "nazev_2026": "Střední škola gastro., oděv. a služeb",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600005631",
+      "redizo_2026": "600171418",
+      "adresa": "radlicka 591|praha|15800",
+      "nazev_2025": "Hotelová škola a Gymnázium Radlická",
+      "nazev_2026": "Gymnázium a SOŠ pro zrakově postižené",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": true,
+      "old_same_address_current": false,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "691017972",
+      "redizo_2026": "691015341",
+      "adresa": "jose martiho 269|praha|16200",
+      "nazev_2025": "Gymn.a Sport.gymn.se zaměř.na esporty",
+      "nazev_2026": "Střední škola knižní kultury s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "691015341",
+      "redizo_2026": "691017972",
+      "adresa": "jose martiho 269|praha|16200",
+      "nazev_2025": "Střední škola knižní kultury s.r.o.",
+      "nazev_2026": "Gymn.a Sport.gymn.se zaměř.na esporty",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "691015163",
+      "redizo_2026": "600013669",
+      "adresa": "hudcova 367|brno|61200",
+      "nazev_2025": "ScioŠkola Brno Medlánky - SŠ, s.r.o.",
+      "nazev_2026": "Střední odborná škola EDUCAnet Brno",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600013669",
+      "redizo_2026": "691015163",
+      "adresa": "hudcova 367|brno|61200",
+      "nazev_2025": "Střední odborná škola EDUCAnet Brno",
+      "nazev_2026": "ScioŠkola Brno Medlánky - SŠ, s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "610100530",
+      "redizo_2026": "600019675",
+      "adresa": "karlovarska 1210|plzen|32300",
+      "nazev_2025": "Střední průmyslová škola dopravní",
+      "nazev_2026": "Střední zdravot.škola a VOŠ zdravotnická",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600019675",
+      "redizo_2026": "610100530",
+      "adresa": "karlovarska 1210|plzen|32300",
+      "nazev_2025": "Střední zdravot.škola a VOŠ zdravotnická",
+      "nazev_2026": "Střední průmyslová škola dopravní",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "651023572",
+      "redizo_2026": "600008886",
+      "adresa": "bydlinskeho 2474|tabor|39002",
+      "nazev_2025": "SŠ obch.,služeb a řemes. a JŠ s práv.SJZ",
+      "nazev_2026": "Střední škola spojů a informatiky",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600008886",
+      "redizo_2026": "651023572",
+      "adresa": "bydlinskeho 2474|tabor|39002",
+      "nazev_2025": "Střední škola spojů a informatiky",
+      "nazev_2026": "SŠ obch.,služeb a řemes. a JŠ s práv.SJZ",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": true,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "691018774",
+      "redizo_2026": "691006989",
+      "adresa": "hloubetinska 78|praha|19800",
+      "nazev_2025": "Gymnázium bezpečnostně právní, s.r.o.",
+      "nazev_2026": "Střední zahradnická škola a SOU s.r.o.",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": true,
+      "current_same_address_previous": false,
+      "shared_izo": []
+    },
+    {
+      "redizo_2025": "600007570",
+      "redizo_2026": "691006474",
+      "adresa": "na hrazi 742|podebrady|29001",
+      "nazev_2025": "EKO Gymnázium a SOŠ Multimediál. studií",
+      "nazev_2026": "ZŠ a SŠ JEDNA RADOST",
+      "new_redizo_absent_2025": false,
+      "old_redizo_absent_2026": false,
+      "old_same_address_current": false,
+      "current_same_address_previous": false,
+      "shared_izo": []
+    }
+  ],
+  "name_changes_same_address_redizo": [
+    {
+      "redizo": "600007987",
+      "address": "prazska 1222|rakovnik|26901",
+      "old": [
+        "Masarykova obchodní akademie"
+      ],
+      "new": [
+        "Masarykova obch. a zeměděl. akademie Rakovník, SOŠ"
+      ],
+      "old_izo": [
+        "izo_000069167"
+      ],
+      "new_izo": [
+        "izo_000069167"
+      ]
+    },
+    {
+      "redizo": "600008274",
+      "address": "jachymova 478|jindrichuv hradec|37701",
+      "old": [
+        "SOŠ a SOU"
+      ],
+      "new": [
+        "SOŠ a SOU, Jindřichův Hradec, Jáchymova 478"
+      ],
+      "old_izo": [
+        "izo_000073041"
+      ],
+      "new_izo": [
+        "izo_000073041"
+      ]
+    },
+    {
+      "redizo": "600010309",
+      "address": "komenskeho 562|kadan|43201",
+      "old": [
+        "SPŠ a OA Kadaň"
+      ],
+      "new": [
+        "SPŠ stavební a OA Kadaň"
+      ],
+      "old_izo": [
+        "izo_000082104"
+      ],
+      "new_izo": [
+        "izo_000082104"
+      ]
+    },
+    {
+      "redizo": "600013090",
+      "address": "predmesti 427|kraliky|56169",
+      "old": [
+        "Střední odborné učiliště opravárenské"
+      ],
+      "new": [
+        "Střední škola technická a sociální Králíky"
+      ],
+      "old_izo": [
+        "izo_000087939"
+      ],
+      "new_izo": [
+        "izo_000087939"
+      ]
+    },
+    {
+      "redizo": "600013782",
+      "address": "cichnova 982|brno|62400",
+      "old": [
+        "SŠ inform., poštovnictví a finančnictví"
+      ],
+      "new": [
+        "SŠ a VOŠ informatiky a financí Brno"
+      ],
+      "old_izo": [
+        "izo_000380385"
+      ],
+      "new_izo": [
+        "izo_000380385"
+      ]
+    },
+    {
+      "redizo": "600004856",
+      "address": "podskalska 365|praha|12800",
+      "old": [
+        "VOŠek.st.,G,SPŠpotr.t. a SOŠpřír.a vet."
+      ],
+      "new": [
+        "SPŠ, SOŠ a G, Praha 2, Podskalská 10"
+      ],
+      "old_izo": [
+        "izo_000638366"
+      ],
+      "new_izo": [
+        "izo_000638366"
+      ]
+    },
+    {
+      "redizo": "600012824",
+      "address": "nadrazni 1083|svitavy|56802",
+      "old": [
+        "Střední odborné učiliště Svitavy"
+      ],
+      "new": [
+        "Střední škola technická Svitavy"
+      ],
+      "old_izo": [
+        "izo_015034569"
+      ],
+      "new_izo": [
+        "izo_015034569"
+      ]
+    },
+    {
+      "redizo": "600011941",
+      "address": "sportovni 322|tremosnice|53843",
+      "old": [
+        "SOŠ a SOU technické"
+      ],
+      "new": [
+        "SOŠ a SOU technické, Třemošnice, Sportovní 322"
+      ],
+      "old_izo": [
+        "izo_015052796"
+      ],
+      "new_izo": [
+        "izo_015052796"
+      ]
+    },
+    {
+      "redizo": "600170110",
+      "address": "hlavackovo namesti 673|slany|27401",
+      "old": [
+        "Střední odborné učiliště"
+      ],
+      "new": [
+        "Střední odborná škola a Střední odborné učiliště"
+      ],
+      "old_izo": [
+        "izo_046414991"
+      ],
+      "new_izo": [
+        "izo_046414991"
+      ]
+    },
+    {
+      "redizo": "600012468",
+      "address": "u josefa 118|pardubice|53009",
+      "old": [
+        "SŠ cest. ruchu a graf. designu, s.r.o."
+      ],
+      "new": [
+        "SŠ cestovního ruchu a grafického designu, s.r.o."
+      ],
+      "old_izo": [
+        "izo_046521798"
+      ],
+      "new_izo": [
+        "izo_046521798"
+      ]
+    },
+    {
+      "redizo": "600007278",
+      "address": "sadova 1234|caslav|28601",
+      "old": [
+        "Střední zemědělská škola"
+      ],
+      "new": [
+        "Střední zemědělská škola a Střední odbor. učiliště"
+      ],
+      "old_izo": [
+        "izo_049797999"
+      ],
+      "new_izo": [
+        "izo_049797999"
+      ]
+    },
+    {
+      "redizo": "600020339",
+      "address": "nam t g masaryka 788|tabor|39002",
+      "old": [
+        "VOŠ a Střední zemědělská škola"
+      ],
+      "new": [
+        "VOŠ a Střední zemědělská škola, Tábor"
+      ],
+      "old_izo": [
+        "izo_060064781"
+      ],
+      "new_izo": [
+        "izo_060064781"
+      ]
+    },
+    {
+      "redizo": "600020321",
+      "address": "jiraskova 1615|tabor|39002",
+      "old": [
+        "Obchodní akademie"
+      ],
+      "new": [
+        "Obchodní akademie, Tábor, Jiráskova 1615"
+      ],
+      "old_izo": [
+        "izo_060064790"
+      ],
+      "new_izo": [
+        "izo_060064790"
+      ]
+    },
+    {
+      "redizo": "600012891",
+      "address": "komenskeho 586|vrchlabi|54301",
+      "old": [
+        "Krkonošské gymnázium a SOŠ"
+      ],
+      "new": [
+        "Krkonošské gymnázium a Střední odborná škola"
+      ],
+      "old_izo": [
+        "izo_060153245"
+      ],
+      "new_izo": [
+        "izo_060153245"
+      ]
+    },
+    {
+      "redizo": "600005542",
+      "address": "preslova 72|praha|15000",
+      "old": [
+        "Smíchovská SPŠ a gymnázium"
+      ],
+      "new": [
+        "Smíchovská SPŠ, gymnázium a hotelová škola"
+      ],
+      "old_izo": [
+        "izo_061386855"
+      ],
+      "new_izo": [
+        "izo_061386855"
+      ]
+    },
+    {
+      "redizo": "600008037",
+      "address": "skolni 995|trhove sviny|37401",
+      "old": [
+        "Gymnázium"
+      ],
+      "new": [
+        "Gymnázium, Trhové Sviny, Školní 995"
+      ],
+      "old_izo": [
+        "izo_062534408"
+      ],
+      "new_izo": [
+        "izo_062534408"
+      ]
+    },
+    {
+      "redizo": "600012247",
+      "address": "kladska 335|nachod|54701",
+      "old": [
+        "SŠ zdr. Náchod - Evangelická akademie"
+      ],
+      "new": [
+        "Evangelická VOŠ sociální a SZŠ"
+      ],
+      "old_izo": [
+        "izo_102101531"
+      ],
+      "new_izo": [
+        "izo_102101531"
+      ]
+    },
+    {
+      "redizo": "600015882",
+      "address": "u klafarku 1685|zdar nad sazavou|59101",
+      "old": [
+        "SŠ gastronomická Adolpha Kolpinga"
+      ],
+      "new": [
+        "SŠ Adolpha Kolpinga"
+      ],
+      "old_izo": [
+        "izo_110020553"
+      ],
+      "new_izo": [
+        "izo_110020553"
+      ]
+    },
+    {
+      "redizo": "600019624",
+      "address": "mostecka 1912|tabor|39002",
+      "old": [
+        "Střední zdravotnická škola"
+      ],
+      "new": [
+        "Střední zdravotnická škola, Tábor, Mostecká 1912"
+      ],
+      "old_izo": [
+        "izo_110010256"
+      ],
+      "new_izo": [
+        "izo_110010256"
+      ]
+    },
+    {
+      "redizo": "600013740",
+      "address": "lerchova 343|brno|60200",
+      "old": [
+        "Cyrilomet.gymnázium a SOŠ pedagog. Brno"
+      ],
+      "new": [
+        "Cyrilometodějské gymnázium, SPedŠ a MŠ Brno"
+      ],
+      "old_izo": [
+        "izo_110012461"
+      ],
+      "new_izo": [
+        "izo_110012461"
+      ]
+    },
+    {
+      "redizo": "600019756",
+      "address": "masarykova 2033|havlickuv brod|58001",
+      "old": [
+        "Střední zdravot.škola a VOŠ zdravotnická"
+      ],
+      "new": [
+        "SZŠ a VOŠZ Havlíčkův Brod"
+      ],
+      "old_izo": [
+        "izo_110030559"
+      ],
+      "new_izo": [
+        "izo_110030559"
+      ]
+    },
+    {
+      "redizo": "600171272",
+      "address": "krakovska 1095|ostrava|70030",
+      "old": [
+        "Střední škola společného stravování"
+      ],
+      "new": [
+        "Hotelová škola, Ostrava, příspěvková organizace"
+      ],
+      "old_izo": [
+        "izo_130002437"
+      ],
+      "new_izo": [
+        "izo_130002437"
+      ]
+    },
+    {
+      "redizo": "651015995",
+      "address": "novomeskeho 2139|praha|14900",
+      "old": [
+        "SOŠ multimediál. a propag. tvorby s.r.o."
+      ],
+      "new": [
+        "EDUSO"
+      ],
+      "old_izo": [
+        "izo_151016003"
+      ],
+      "new_izo": [
+        "izo_151016003"
+      ]
+    },
+    {
+      "redizo": "691012164",
+      "address": "filipinskeho 300|brno|61500",
+      "old": [
+        "Škola příběhem - církevní ZŠ a gymnázium"
+      ],
+      "new": [
+        "Evangelické gymnázium a ZŠ Brno"
+      ],
+      "old_izo": [
+        "izo_181141906"
+      ],
+      "new_izo": [
+        "izo_181141906"
+      ]
+    },
+    {
+      "redizo": "691015856",
+      "address": "treboradicka 1110|praha|18200",
+      "old": [
+        "Meridian česko-britská ZŠ a gymnázium"
+      ],
+      "new": [
+        "Perrott Hill MŠ, ZŠ a gymnázium s.r.o."
+      ],
+      "old_izo": [
+        "izo_181141922"
+      ],
+      "new_izo": [
+        "izo_181141922"
+      ]
+    }
+  ],
+  "pending_1004": {
+    "no_exact_address_2025": 49,
+    "same_address_same_redizo": 950,
+    "same_address_same_redizo_same_kkov": 867,
+    "exact_key_in_official_2025": 230,
+    "same_address_other_redizo": 88,
+    "same_address_same_redizo_no_kkov": 83
+  },
+  "source_hashes": {
+    "2025": "b4016252e34db63aeac538f9983bada503fb79770ac565c63f4a5a230b96bdaf",
+    "2026": "a003441f4beed6fb9c181aa00f9d1a59a9c206ff10f113ad807740e68d5511d5"
+  }
+}
