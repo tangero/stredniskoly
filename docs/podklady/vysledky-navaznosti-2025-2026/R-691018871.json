@@ -1,0 +1,106 @@
+{
+  "task_id": "R-691018871",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": [
+      "2025-03-31",
+      "2025-12-31",
+      "2026-03-31",
+      "2026-06-30"
+    ],
+    "summary": "REDIZO 691018871 chybí ve všech čtyřech snímcích rejstříku MŠMT (2025-03-31 až 2026-06-30). Jde o nově zakládanou školu, jejíž zápis do rejstříku škol podle vlastního webu i tiskové zprávy zřizovatele proběhl (kladné rozhodnutí MŠMT z 25. 11. 2025), ale výuka má začít až 1. 9. 2026 – zápis se do žádného ze čtyř dostupných snímků (poslední k 30. 6. 2026) ještě nepromítl."
+  },
+  "findings": [
+    {
+      "issue_ids": [
+        "Q0414",
+        "Q0429"
+      ],
+      "status": "potvrzeno",
+      "observations": [
+        "Právnická osoba „První technické lyceum Nová Paka - střední škola s.r.o.“ (IČ 21948321) vznikla 21. 8. 2024; jediným společníkem (100 %, vklad 300 000 Kč) je SQS Vláknová optika a.s. (IČO 60913037), jednatelem je Wilhelm Quittner.",
+        "Zřizovatel SQS vláknová optika a.s. na vlastním webu (sqs-fiber.cz) oznámil, že MŠMT vydalo k žádosti o zápis školy kladné rozhodnutí 25. 11. 2025 a že škola zahájí výuku 1. 9. 2026.",
+        "Oficiální web školy (ptlnp.cz) potvrzuje obor Technické lyceum se zaměřením na přírodní a technické vědy, kapacitu max. 15 žáků ve třídě, adaptační kurz 7.–11. 9. 2026 a dny otevřených dveří 30. 11. 2026 a 16. 1. 2027 pro přijímací řízení do 2026/27.",
+        "V rejstříku MŠMT REDIZO 691018871 chybí ve všech čtyřech snímcích (2025-03-31 až 2026-06-30) – to odpovídá tomu, že kladné rozhodnutí MŠMT padlo až 25. 11. 2025 a formální zápis do rejstříku škol se do posledního dostupného snímku (30. 6. 2026) ještě nepromítl.",
+        "V 1. kole JPZ 2025 škola nemá žádnou nabídku, v roce 2026 nabízí obor 78-42-M/01 Technické lyceum – jde o zcela novou školu bez historie."
+      ],
+      "conclusion": "Jde o skutečně nově vznikající školu založenou společností SQS Vláknová optika a.s., s kladným rozhodnutím MŠMT o zápisu z 25. 11. 2025 a plánovaným zahájením výuky 1. 9. 2026. Chybějící záznam ve všech čtyřech snímcích rejstříku je vysvětlen časovým odstupem mezi rozhodnutím MŠMT a promítnutím do rejstříkových dat, nikoli chybou identifikace REDIZO.",
+      "alternative_explanations": [
+        "Nelze vyloučit, že by formální zápis do rejstříku škol mohl být ještě podmíněn splněním dalších podmínek a nemusí proběhnout přesně k 1. 9. 2026; k datu zpracování to však žádný zdroj nenaznačuje."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": [
+          "78-42-M/01 (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "Kotíkova 287, 509 01 Nová Paka",
+          "role": "sídlo",
+          "izo": "691018871",
+          "valid_period": "od 21. 8. 2024 (obchodní rejstřík); v rejstříku škol MŠMT dosud nezapsáno",
+          "source_url": "https://rejstrik-firem.kurzy.cz/21948321/"
+        },
+        {
+          "text": "Kotíkova 287, 509 01 Nová Paka",
+          "role": "místo výuky",
+          "izo": "nezjištěno (škola dosud nemá IZO v rejstříku MŠMT)",
+          "valid_period": "plánováno od 1. 9. 2026",
+          "source_url": "https://www.ptlnp.cz/"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.sqs-fiber.cz/clanek/30/prvni-technicke-lyceum-nova-paka-ziskalo-kladne-rozhodnuti-msmt/",
+          "title": "První technické lyceum Nová Paka získalo kladné rozhodnutí MŠMT – sqs-fiber.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "MŠMT vydalo kladné rozhodnutí 25. 11. 2025, výuka začne 1. 9. 2026, zřizovatelem je SQS vláknová optika a.s.",
+          "applicable_period": "rozhodnutí 25. 11. 2025, zahájení výuky 1. 9. 2026"
+        },
+        {
+          "url": "https://www.ptlnp.cz/",
+          "title": "První technické lyceum Nová Paka – oficiální web",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor Technické lyceum, kapacita max. 15 žáků ve třídě, adaptační kurz 7.–11. 9. 2026, dny otevřených dveří pro 2026/27.",
+          "applicable_period": "stav k datu kontroly, přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://rejstrik-firem.kurzy.cz/21948321/",
+          "title": "Veřejný rejstřík – První technické lyceum Nová Paka - střední škola s.r.o.",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Vznik subjektu 21. 8. 2024, jediný společník SQS Vláknová optika a.s., jednatel Wilhelm Quittner.",
+          "applicable_period": "od 21. 8. 2024"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "REDIZO 691018871 není evidováno ani ve snímku k 30. 6. 2026.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-691018871",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "0 nabídek v roce 2025, 1 nabídka (78-42-M/01 Technické lyceum) v roce 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "manual_review",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přesné datum budoucího zápisu školy do rejstříku MŠMT a přidělení IZO není známo."
+      ]
+    }
+  ]
+}

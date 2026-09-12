@@ -1,0 +1,88 @@
+{
+  "task_id": "R-691020060",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Subjekt REDIZO 691020060 ani IZO 250013908 nejsou zapsány v žádném ze čtyř snímků rejstříku MŠMT (2025-03-31 až 2026-06-30). Škola byla dohledána mimo rejstřík: je to Střední pedagogická škola Inspira z. ú., IČO 22587802, zapsaná jako ústav u Krajského soudu v Brně 17. 2. 2025 (spisová značka U 400), sídlo Znojemská 1118, Pohořelice; výuka na adrese nám. Svobody 79, Pohořelice má být slavnostně zahájena 1. 9. 2026."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0418", "Q0432"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2026 REDIZO 691020060 nabízí obor 75-31-M/01 Předškolní a mimoškolní pedagogika (4leté, denní, český) bez upřesněného zaměření; v roce 2025 REDIZO nemá žádnou nabídku.",
+        "Subjekt ani IZO 250013908 nejsou zapsány v žádném ze čtyř sledovaných snímků rejstříku MŠMT.",
+        "Oficiální web školy (pedagogickaskola.eu) uvádí adresu nám. Svobody 79, Pohořelice (shodné s podkladem CERMAT), ředitele Mgr. Bc. Jiřího Štágla a plánované slavnostní zahájení výuky 1. 9. 2026 v 12:30 na náměstí Svobody 79; obor Předškolní a mimoškolní pedagogika se otevírá poprvé ve školním roce 2026/2027.",
+        "Veřejný rejstřík (or.justice.cz) eviduje právnickou osobu „Střední pedagogická škola Inspira z. ú.“, IČO 22587802, vzniklou zápisem 17. 2. 2025 u Krajského soudu v Brně (spisová značka U 400), sídlo Znojemská 1118, Pohořelice.",
+        "Zdroje neuvádějí konkrétní datum zápisu školy do rejstříku škol MŠMT ani podrobnosti o zakladateli ústavu nad rámec samotné právnické osoby; tato dílčí informace se nepodařilo doložit."
+      ],
+      "conclusion": "Jde o zcela novou školu: ústav Střední pedagogická škola Inspira z. ú. byl založen zápisem 17. 2. 2025 a výuka oboru 75-31-M/01 Předškolní a mimoškolní pedagogika má být poprvé zahájena 1. 9. 2026. Škola není zapsána v žádném z dostupných snímků rejstříku MŠMT – zápis buď proběhl po 30. 6. 2026, nebo dosud neproběhl. Nabídka nemá žádného předchůdce v datech 2025.",
+      "alternative_explanations": [
+        "Zápis do rejstříku MŠMT mohl proběhnout po 30. 6. 2026 v novějším snímku, který není mezi sledovanými čtyřmi; to však závěr o vzniku nové školy nemění."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["75-31-M/01 (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Znojemská 1118, 691 23 Pohořelice",
+          "role": "sídlo",
+          "izo": "691020060",
+          "valid_period": "od 17. 2. 2025 (mimo sledované snímky rejstříku MŠMT)",
+          "source_url": "https://or.justice.cz/ias/ui/rejstrik-$firma?nazev=Inspira"
+        },
+        {
+          "text": "nám. Svobody 79, 691 23 Pohořelice",
+          "role": "místo výuky",
+          "izo": "250013908",
+          "valid_period": "od 1. 9. 2026 (plánované zahájení výuky, mimo sledované snímky rejstříku MŠMT)",
+          "source_url": "https://www.pedagogickaskola.eu/"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "REDIZO 691020060 ani IZO 250013908 nejsou evidovány k 30. 6. 2026 (shodně chybí i ve snímcích 2025-03-31, 2025-12-31, 2026-03-31).",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "https://www.pedagogickaskola.eu/",
+          "title": "Střední pedagogická škola INSPIRA – oficiální web",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Adresa nám. Svobody 79, Pohořelice, plánované slavnostní zahájení výuky 1. 9. 2026, obor Předškolní a mimoškolní pedagogika otevírán poprvé.",
+          "applicable_period": "stav webu k září 2026"
+        },
+        {
+          "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?nazev=Inspira",
+          "title": "Veřejný rejstřík a Sbírka listin – Střední pedagogická škola Inspira z. ú.",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "IČO 22587802, ústav zapsán 17. 2. 2025 u Krajského soudu v Brně (U 400), sídlo Znojemská 1118, Pohořelice.",
+          "applicable_period": "stav rejstříku k 12. 9. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-691020060",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "REDIZO 691020060 bez nabídky v roce 2025, jedna nabídka 75-31-M/01 v roce 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přesné datum zápisu školy do rejstříku MŠMT a jméno zakladatele ústavu nebyly dohledány."
+      ]
+    }
+  ]
+}

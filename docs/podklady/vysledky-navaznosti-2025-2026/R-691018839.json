@@ -1,0 +1,113 @@
+{
+  "task_id": "R-691018839",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": [
+      "2025-03-31",
+      "2025-12-31",
+      "2026-03-31",
+      "2026-06-30"
+    ],
+    "summary": "REDIZO 691018839 (Střední škola Akademie AGROSTROJ, s.r.o., IČ 29211948) chybí ve snímku k 31. 3. 2025. Od 31. 12. 2025 do 30. 6. 2026 je beze změny veden IZO 250002299 se dvěma místy výuky (U Nádraží 2529 Pelhřimov a Masarykova 410 Kamenice nad Lipou) a dvěma výučními obory: 23-51-H/01 Strojní mechanik a 23-56-H/01 Obráběč kovů (oba 3leté, denní, český). Nový obor 23-44-L/01 Mechanik strojů a zařízení z nabídky CERMAT 2026 není registrován v žádném ze čtyř snímků. Výuční obory H nepodléhají JPZ, proto se v datech CERMAT (JPZ) neobjevují – chybějící historie 2025 pro obor 23-44-L/01 tedy neznamená zánik, ale nový maturitní/nástavbový obor mimo dosavadní nabídku."
+  },
+  "findings": [
+    {
+      "issue_ids": [
+        "Q0406",
+        "Q0422"
+      ],
+      "status": "potvrzeno",
+      "observations": [
+        "Zřizovatelem školy je AGROSTROJ Pelhřimov, a.s. (IČ 00009971, jediný společník, 100% podíl); škola jako s.r.o. (IČ 29211948) byla založena už 7. 4. 2010, ředitelem je od téhož data Lubomír Stoklásek.",
+        "Vlastní aktualita školy z 28. 8. 2025 oznamuje: „S radostí oznamujeme, že zítra slavnostně otevřeme brány nové Akademie Agrostroj“ – slavnostní otevření nové budovy/školy proběhlo 29. 8. 2025, což časově odpovídá prvnímu výskytu REDIZO 691018839 v rejstříku MŠMT (chybí ve snímku 2025-03-31, přítomen od 2025-12-31).",
+        "V 1. kole JPZ 2025 škola nemá žádnou nabídku (výuční obory H JPZ nevyžadují), v roce 2026 nabízí obor 23-44-L/01 Mechanik strojů a zařízení se zaměřením „Technik robotických a výrobních systémů, 23-51-H/01“.",
+        "Web školy (akademie-agrostroj.cz) k datu kontroly potvrzuje aktuální nabídku tří oborů, včetně „Mechanik strojů a zařízení“ (nástavbové studium 3+1 roky, kapacita 12 žáků, maturitní zakončení, garance zaměstnání od zřizovatele) vedle výučních oborů Obráběč kovů a Strojní mechanik.",
+        "Obor 23-44-L/01 není evidován v rejstříku MŠMT ani ve snímku k 30. 6. 2026 – jde o odstup zápisu, který sám o sobě existenci oboru nevyvrací, protože jej dokládá CERMAT i web školy."
+      ],
+      "conclusion": "Střední škola Akademie AGROSTROJ je dlouhodobě existující subjekt (s.r.o. od 2010, zřizovatel AGROSTROJ Pelhřimov, a.s.), který 29. 8. 2025 otevřel novou školní budovu a od té doby figuruje v rejstříku MŠMT pod REDIZO 691018839. Nabídka oboru 23-44-L/01 Mechanik strojů a zařízení pro rok 2026 je nová (dosud škola nabízela jen výuční obory H, které JPZ nevyžadují) a webem školy je potvrzena jako reálně vyučovaný program, byť dosud nezapsaný v rejstříku škol.",
+      "alternative_explanations": [
+        "Nelze vyloučit, že se stejné IČO 29211948 dříve podílelo na provozu školy pod jiným REDIZO nebo v jiném režimu před rokem 2025; to by vyžadovalo starší snímky rejstříku mimo dostupné čtyři."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": [
+          "23-44-L/01 (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "U Nádraží 1967, 393 01 Pelhřimov",
+          "role": "sídlo",
+          "izo": "691018839",
+          "valid_period": "2025-12-31 až 2026-06-30 (ve snímku 2025-03-31 subjekt chybí)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "U Nádraží 2529, 393 01 Pelhřimov",
+          "role": "místo výuky",
+          "izo": "250002299",
+          "valid_period": "2025-12-31 až 2026-06-30",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Masarykova 410, 394 70 Kamenice nad Lipou",
+          "role": "místo výuky",
+          "izo": "250002299",
+          "valid_period": "2025-12-31 až 2026-06-30",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.akademie-agrostroj.cz/aktuality/ostatni/novinky-z-akademie-agrostroj-20250828/",
+          "title": "Finální přípravy na slavnostní otevření Akademie – akademie-agrostroj.cz",
+          "published_at": "2025-08-28",
+          "checked_at": "2026-09-12",
+          "supports": "Slavnostní otevření nové Akademie Agrostroj proběhlo 29. 8. 2025.",
+          "applicable_period": "srpen 2025"
+        },
+        {
+          "url": "https://akademie-agrostroj.cz",
+          "title": "Střední škola Akademie Agrostroj Pelhřimov – oficiální web",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Aktuální nabídka oborů zahrnuje Mechanika strojů a zařízení (nástavbové maturitní studium 3+1, kapacita 12 žáků) vedle výučních oborů Obráběč kovů a Strojní mechanik; zřizovatel AGROSTROJ Pelhřimov.",
+          "applicable_period": "stav k datu kontroly"
+        },
+        {
+          "url": "https://rejstrik-firem.kurzy.cz/29211948/",
+          "title": "Veřejný rejstřík – Střední škola Akademie AGROSTROJ, s.r.o.",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Založení 7. 4. 2010, jediný společník AGROSTROJ Pelhřimov, a.s., ředitel Lubomír Stoklásek.",
+          "applicable_period": "od 2010"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "IZO 250002299 s obory 23-51-H/01 a 23-56-H/01 a dvěma místy výuky; obor 23-44-L/01 není evidován.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-691018839",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "0 nabídek v roce 2025, 1 nabídka (23-44-L/01) v roce 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "manual_review",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přesné datum budoucího zápisu oboru 23-44-L/01 do rejstříku MŠMT není známo."
+      ]
+    }
+  ]
+}

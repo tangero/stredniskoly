@@ -1,10 +1,10 @@
 # Dohledávání návaznosti škol a oborů 2025–2026
 
-Verze 1.1 · 12. 9. 2026. Fronta k výzkumu, nikoli schválená migrační mapa.
+Verze 1.2 · 12. 9. 2026. Fronta k výzkumu, nikoli schválená migrační mapa. Rešerše je provedena pro všech 192 úkolů; výsledky jsou podklad k přezkoumání, ne schválené mapování.
 
 Souhrn celého úkolu, stav realizace a přejímací podmínky: [Návaznost škol a oborů](ukol-navaznost-skol-a-oboru-2027.md).
 
-## Kolik zbývá práce
+## Rozsah rešerše
 
 | Rozsah | Množství | Jednotka |
 |---|---:|---|
@@ -92,13 +92,26 @@ Stav `potvrzeno` vyžaduje přímý doložitelný zdroj pro konkrétní závěr 
 
 ## Soubory a reprodukce
 
-- [Fronta pro agenta](podklady/fronta-dohledavani-2025-2026.json): 192 úkolů, dosud všechny `not_started`.
+- [Fronta pro agenta](podklady/fronta-dohledavani-2025-2026.json): 192 úkolů. Pole `status` ve frontě zůstává `not_started`; stav zpracování nese samostatný soubor výsledku, aby regenerování fronty rešerši nepřepsalo.
+- [Výsledky rešerše](podklady/vysledky-navaznosti-2025-2026/): jeden soubor na úkol, všech 436 otázek pokryto.
+- [Prohlížeč výsledků](prohlizec-vysledku-navaznosti.html): nálezy vedle nabídek obou ročníků; sestavení `python3 tools/vysledky-prohlizec/build.py`.
+- [Rejstřík k frontě](podklady/rejstrik-k-fronte-2025-2026.json): strojový přehled ze čtyř snímků rejstříku MŠMT; generuje `python3 scripts/enrich-continuity-registry.py`, podklad k jednomu úkolu tiskne `python3 scripts/task-brief.py <ID>`.
+- Kontroly: `python3 scripts/check-continuity-results.py` a `python3 scripts/check-continuity-sources.py`.
 - [Výchozí matice](matice-zmen-skol-a-oboru-2025-2026.md).
 - Generování: `python3 scripts/prepare-continuity-research.py`.
 
-Fronta nemění produkci ani lokálně uložená rozhodnutí prohlížeče. Rešerše zatím nebyla spuštěna.
+Fronta nemění produkci ani lokálně uložená rozhodnutí prohlížeče. Rešerše byla provedena a její výsledky leží mimo frontu, takže přegenerování fronty o ně nepřijde.
+
+## Uzavřený číselník vztahů
+
+`relationship.type` má jen hodnoty `continuation`, `new_offer`, `closed`, `rename_only`, `merge`, `split` a `unknown`. Dvě situace se do něj nevejdou přirozeně a řeší se takto:
+
+- **Obnovená nabídka** (obor zůstal zapsán, přijímací řízení se v jednom roce nevyhlásilo a pak zase ano) je `continuation`.
+- **Nahrazení oboru jiným** je `closed` u zanikající nabídky; nástupce se popíše slovně v pozorováních a odkáže se na otázku, která se jím zabývá.
+- **Nabídka roku 2025 chybějící v roce 2026, zatímco obor zůstává zapsán v rejstříku**, je `closed` ve smyslu ukončení nabídky, nikoli zániku oboru. Dodržení této konvence kontroluje `scripts/check-continuity-results.py`.
 
 ## Historie
 
 - **1.0:** 526 úkolů; do rešerše byly zahrnuty i prosté změny údajů a neúplné adresy.
+- **1.2:** Rešerše provedena pro všech 192 úkolů. Přibyly datované snímky rejstříku MŠMT jako důkazní zdroj, jejich dávkové propojení s frontou, prohlížeč výsledků a dvě kontroly. Upřesněn uzavřený číselník vztahů.
 - **1.1:** Po upřesnění zadání ponecháno 192 úkolů. 624 pozorování se pouze eviduje v `record_only`, 16 datových mezer v `data_gaps`. ID původních otázek jsou zachována. Tachov 600170535: žádná doložená změna, ulice chybí v obou letech; odstraněn z tabulky konkrétních změn. Původní počty 526/336 už nejsou aktuální frontou.

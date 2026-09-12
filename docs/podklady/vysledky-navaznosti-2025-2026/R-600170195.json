@@ -1,0 +1,196 @@
+{
+ "task_id": "R-600170195",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt REDIZO 600170195 (Střední odborná škola a Střední odborné učiliště, Nymburk, V Kolonii 1804, IČ 14451026, zřizovatel Středočeský kraj) figuruje beze změny názvu, sídla i IZO 014451026 ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026). Obory 23-43-L/51 Provozní technika, 26-41-L/52 Provozní elektrotechnika a 64-41-L/51 Podnikání jsou u IZO 014451026 zapsány ve všech čtyřech snímcích, vždy ve dvou variantách (2 roky denní i 3 roky dálková forma u stejného kódu). Registrace všech tří oborů tedy trvá nepřetržitě od doby před rokem 2025 do poloviny roku 2026 – žádný z nich není nově založený ani formálně zrušený obor; nesoulad s nabídkou CERMAT proto nelze vysvětlit změnou zápisu v rejstříku."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0144",
+    "Q0145"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela 23-43-L/51 Provozní technika (2 roky, denní) a 26-41-L/52 Provozní elektrotechnika (2 roky, denní); v 1. kole JPZ 2026 obě nabídky chybí, zatímco 26-41-M/01 Elektrotechnika a 63-41-M/01 Ekonomika a podnikání pokračují v obou letech a nově přibývá 64-41-L/51 Podnikání.",
+    "Rejstřík MŠMT eviduje oba obory u IZO 014451026 ve všech čtyřech snímcích (31. 3. 2025 – 30. 6. 2026), vždy v obou formách (2 roky denní i 3 roky dálková pod stejným kódem) – registrace trvá i po roce 2026.",
+    "Aktuální web školy (copnb.cz) člení nabídku oborů do kategorií Čtyřleté maturitní obory, Tříleté učební obory, obory pro žáky se speciálními vzdělávacími potřebami, Nástavbové denní studium (dvouleté) a Zkrácené studium učebních oborů. V žádné z těchto kategorií nejsou Provozní technika ani Provozní elektrotechnika uvedeny; jedinou položkou v kategorii „Nástavbové denní studium (dvouleté)“ je obor 64-41-L/51 Podnikání.",
+    "Samostatné stránky podle vzoru URL použitého u jiných oborů (/23-43-l-51-provozni-technika, /26-41-l-52-provozni-elektrotechnika, /provozni-technika, /provozni-elektrotechnika) na webu školy neexistují (HTTP 404) – oba obory nemají žádnou aktuální prezentaci.",
+    "Stránka „Zkrácené studium učebních oborů“ obsahuje větu: „Ve školním roce 2026/27 nebudeme otevírat žádný obor vzdělání ve zkrácené formě vzdělání.“ Nelze ale s jistotou ověřit, že se tato kategorie na webu vztahuje i na oborové kódy L/51 a L/52 (nástavbové studium) – nadpis stránky odkazuje na „zkrácené studium učebních oborů“, což je na jiných školách obvykle odlišná kategorie (kratší doplňkové studium pro absolventy jiné maturity) než dvouleté nástavbové studium. Přiřazení této věty k Provozní technice a Provozní elektrotechnice je tedy jen pravděpodobné, ne jisté.",
+    "Články „Přijímací řízení na školní rok 2025/26“ a „Přijímací řízení na školní rok 2026/27“ na webu školy (obě stránky nesou stejné datum publikace 22. 4. 2026, patrně kvůli migraci webu) neobsahují v samotném textu žádný konkrétní seznam otevíraných oborů – jen odkaz na systém DiPSy/prihlaskynastredni.cz – proto je nelze použít jako přímý datovaný důkaz obsahu nabídky pro daný rok."
+   ],
+   "conclusion": "Škola pravděpodobně pro školní rok 2026/27 neotevřela (nevyhlásila) přijímací řízení do nástavbových oborů 23-43-L/51 Provozní technika a 26-41-L/52 Provozní elektrotechnika (2letá denní forma). Oba obory zůstávají formálně zapsány v rejstříku MŠMT po celé sledované období, ale na aktuálním webu školy nejsou v žádné kategorii oborů uvedeny; jediným prezentovaným nástavbovým denním oborem je nyní Podnikání. Jde tedy spíše o přerušení/nevyhlášení přijímacího řízení než o zánik oboru, přímý doklad (výslovné oznámení školy jmenující tyto dva obory) se ale nepodařilo dohledat.",
+   "alternative_explanations": [
+    "Oba obory mohly být formálně i fakticky trvale zrušeny a jejich přítomnost v rejstříku k 30. 6. 2026 je jen odstup administrativní aktualizace, který se projeví až v pozdějším snímku.",
+    "Škola mohla přesunout výuku na dálkovou tříletou variantu stejného kódu (evidovanou v rejstříku) a jen denní dvouletá forma pro nové uchazeče zanikla – na webu ale není o žádné aktivní dálkové variantě zmínka.",
+    "Věta o „zkráceném studiu“ na webu se skutečně může týkat i těchto dvou oborů, pokud škola pod tímto pojmem myslí právě nástavbové obory jiné než Podnikání – terminologie webu a kódy v rejstříku se ale plně neshodují, takže to nelze potvrdit."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "23-43-L/51 (2025)",
+     "26-41-L/52 (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
+    {
+     "text": "V Kolonii 1804, 288 02 Nymburk",
+     "role": "sídlo",
+     "izo": "600170195",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "V Kolonii 1804, 288 02 Nymburk",
+     "role": "místo výuky",
+     "izo": "014451026",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600170195",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídky 23-43-L/51 Provozní technika a 26-41-L/52 Provozní elektrotechnika (2 roky, denní) přítomné v roce 2025 a chybějící v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obory 23-43-L/51 Provozní technika a 26-41-L/52 Provozní elektrotechnika zůstávají u IZO 014451026 registrovány (denní i dálková forma) i k 30. 6. 2026.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "https://www.copnb.cz/studijni-obory-2",
+     "title": "Studijní obory – SOŠ a SOU Nymburk (COP Nymburk)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Aktuální přehled kategorií oborů školy neobsahuje Provozní techniku ani Provozní elektrotechniku; jediný nástavbový denní obor je Podnikání.",
+     "applicable_period": "stav webu k 12. 9. 2026"
+    },
+    {
+     "url": "https://www.copnb.cz/nastavbove-denni-studium-dvoulete",
+     "title": "Nástavbové denní studium (dvouleté) – SOŠ a SOU Nymburk",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Jediným uvedeným oborem v kategorii nástavbového denního studia je 64-41-L/51 Podnikání; Provozní technika ani Provozní elektrotechnika zde nejsou zmíněny.",
+     "applicable_period": "stav webu k 12. 9. 2026"
+    },
+    {
+     "url": "https://www.copnb.cz/zkracene-studium-ucebnich-oboru",
+     "title": "Zkrácené studium učebních oborů – SOŠ a SOU Nymburk",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola uvádí: „Ve školním roce 2026/27 nebudeme otevírat žádný obor vzdělání ve zkrácené formě vzdělání.“ Možná souvislost s absencí Provozní techniky a Provozní elektrotechniky, ale kategorie stránky (zkrácené studium učebních oborů) se doslovně neshoduje s kódy L/51 a L/52 (nástavbové studium), proto jde jen o podpůrný, nikoli jednoznačný důkaz.",
+     "applicable_period": "školní rok 2026/27"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Zda škola formálně zrušila akreditaci obou oborů, nebo jen dočasně nevyhlásila přijímací řízení.",
+    "Zda dálková tříletá varianta obou oborů (evidovaná v rejstříku) reálně běží pro stávající studenty.",
+    "Zda se výrok o „zkráceném studiu“ na webu vztahuje i na tyto dva nástavbové obory, nebo jde o zcela jinou (H/E) kategorii programů."
+   ]
+  },
+  {
+   "issue_ids": [
+    "Q0262"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "V 1. kole JPZ 2025 škola obor 64-41-L/51 Podnikání nenabízela; v 1. kole JPZ 2026 se nabídka (2 roky, denní) nově objevuje.",
+    "Rejstřík MŠMT eviduje obor 64-41-L/51 Podnikání u IZO 014451026 ve všech čtyřech snímcích (31. 3. 2025 – 30. 6. 2026), v obou formách (2 roky denní i 3 roky dálková) – obor byl zapsán už před rokem 2025, nejde tedy o nově založený obor.",
+    "Aktuální web školy prezentuje „Nástavbové denní studium (dvouleté)“ jako samostatnou kategorii s jediným oborem 64-41-L/51 Podnikání, určeným „pro vyučené“ a zakončeným maturitní zkouškou – obor je součástí stálé nabídky školy.",
+    "Web školy má archivované fotogalerie z maturitních plesů tříd nástavbového studia oboru Podnikání (např. „Maturitní ples třídy nástavbového studia oboru Podnikání“, „Maturitní ples nástavbových tříd podnikání a strojírenství“) – dokládá to, že obor škola v minulosti již vyučovala a měla jeho absolventy, tedy jde o dlouhodobě provozovaný obor, nikoli novinku. Všechny archivní stránky ale nesou stejné datum publikace 22. 4. 2026, patrně kvůli migraci webu, takže z nich nelze odvodit přesný rok konání plesu.",
+    "Stránky „Přijímací řízení na školní rok 2025/26“ a „na školní rok 2026/27“ neobsahují v textu článku konkrétní seznam oborů pro daný rok (jen odkaz na DiPSy/prihlaskynastredni.cz), takže nejde o přímý datovaný důkaz, že obor v roce 2025 chyběl a v roce 2026 se objevil – tuto skutečnost dokládají pouze přiložená data CERMAT.",
+    "Vztah je veden jako pokračování (continuation): obor je v rejstříku zapsán nepřetržitě a v roce 2026 se pouze znovu vyhlásilo přijímací řízení. Fronta nemá samostatný typ pro obnovenou nabídku."
+   ],
+   "conclusion": "Nepřiřazená nabídka 64-41-L/51 Podnikání (nástavbové denní studium) v roce 2026 pravděpodobně představuje obnovené/nově vyhlášené přijímací řízení pro dlouhodobě existující nástavbový obor, který škola v roce 2025 v nabídce CERMAT neměla, nikoli nově vzniklý obor. Odpovídá tomu trvalá registrace oboru v rejstříku MŠMT před rokem 2025 i to, že škola obor aktuálně prezentuje jako součást své stálé nabídky a v minulosti již měla jeho absolventy. Přímé dobové oznámení školy potvrzující důvod chybějící nabídky v roce 2025 se ale nepodařilo dohledat.",
+   "alternative_explanations": [
+    "Obor mohl být v roce 2025 fakticky nabízen, ale z technických důvodů (chyba/výpadek) chybí v datech CERMAT – to by absenci nabídky vysvětlovalo jinak než nevyhlášením přijímacího řízení školou.",
+    "Otevření pro 2026/27 mohlo být jednorázové rozhodnutí (např. přesun kapacity uvolněné omezením Provozní techniky/elektrotechniky na Podnikání) – souvislost s nálezem Q0144/Q0145 nelze z dostupných zdrojů ani potvrdit, ani vyloučit."
+   ],
+   "relationship": {
+    "type": "continuation",
+    "from": [],
+    "to": [
+     "64-41-L/51 (2026)"
+    ]
+   },
+   "addresses": [
+    {
+     "text": "V Kolonii 1804, 288 02 Nymburk",
+     "role": "sídlo",
+     "izo": "600170195",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+    },
+    {
+     "text": "V Kolonii 1804, 288 02 Nymburk",
+     "role": "místo výuky",
+     "izo": "014451026",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600170195",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 64-41-L/51 Podnikání (2 roky, denní) chybí v roce 2025 a je nově přítomna v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 64-41-L/51 Podnikání je u IZO 014451026 registrován už ke stavu k 31. 3. 2025, tedy před vznikem nabídky CERMAT 2026 – nejde o nově založený obor.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://www.copnb.cz/nastavbove-denni-studium-dvoulete",
+     "title": "Nástavbové denní studium (dvouleté) – SOŠ a SOU Nymburk",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola aktuálně prezentuje 64-41-L/51 Podnikání jako svůj jediný nástavbový denní obor, určený pro absolventy tříletých učebních oborů, zakončený maturitní zkouškou.",
+     "applicable_period": "stav webu k 12. 9. 2026"
+    },
+    {
+     "url": "https://www.copnb.cz/maturitni-ples-tridy-nastavboveho-studia-oboru-podnikani",
+     "title": "Maturitní ples třídy nástavbového studia oboru Podnikání – SOŠ a SOU Nymburk",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola má archivovanou fotogalerii z maturitního plesu třídy nástavbového studia oboru Podnikání, což dokládá, že obor v minulosti reálně vyučovala a měl absolventy.",
+     "applicable_period": "nedatováno přesně (archivní stránka, publikační metadata webu 22. 4. 2026 patrně z migrace)"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Zda šlo v roce 2025 o skutečné nevyhlášení přijímacího řízení do oboru Podnikání, nebo jen o chybějící záznam v datech CERMAT.",
+    "Kolik uchazečů bylo do oboru přijato v roce 2025, pokud vůbec nějaké řízení proběhlo mimo evidenci CERMAT.",
+    "Zda souvisí obnovení nabídky Podnikání s omezením nabídky Provozní techniky a Provozní elektrotechniky (Q0144, Q0145) v témže roce."
+   ]
+  }
+ ]
+}

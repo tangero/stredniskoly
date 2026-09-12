@@ -1,6 +1,6 @@
 # Návaznost škol a oborů mezi roky — souhrnné zadání
 
-**Verze:** 1.0 · **Datum:** 12. 9. 2026 · **Stav:** analýza a podklady připravené, realizace návazností a rešerše nezahájené.
+**Verze:** 1.1 · **Datum:** 12. 9. 2026 · **Stav:** rešerše dokončena pro všech 192 úkolů fronty; zápis návazností do katalogu, profily a nasazení zůstávají neprovedené.
 
 Tento dokument je vstupním bodem k celému úkolu. Platná rozhodnutí uživatele jsou uvedena níže a v zadání rešerše verze 1.1. Starší počty a návrhy v historii dokumentů nejsou aktuálním zadáním.
 
@@ -43,6 +43,45 @@ Jeden úkol soustřeďuje otázky a kontext jedné organizace; u PORG spojuje dv
 
 Původních **1 004** případů vzniklo srovnáním nabídky 2026 s historickým katalogem aplikace, který má jiné pokrytí než původní XLSX 2025. **404 není nové vyčíslení téže množiny**, ale součet nespárovaných řádků obou ročníků v nové metodě. Původní prohlížeč a jeho uživatelská rozhodnutí zůstávají samostatným podkladem.
 
+## 3a. Výsledek rešerše
+
+Všech 192 úkolů fronty má vlastní soubor výsledku a všech 436 otázek fronty je pokryto právě jednou. Souvisejících otázek se často týká jediný nález, proto je nálezů méně než otázek.
+
+| Stav nálezu | Počet |
+|---|---:|
+| potvrzeno | 210 |
+| pravděpodobné | 42 |
+| rozpor zdrojů | 3 |
+| nedohledáno | 1 |
+| **nálezů celkem** | **256** |
+
+| Typ vztahu | Počet | | Doporučená akce | Počet |
+|---|---:|---|---|---:|
+| nová nabídka | 77 | | schválit mapování | 82 |
+| pokračování | 66 | | jen zaevidovat | 126 |
+| ukončená nabídka | 60 | | ruční přezkum | 48 |
+| přejmenování | 26 | | | |
+| sloučení | 16 | | | |
+| rozdělení | 7 | | | |
+| nejasné | 4 | | | |
+
+Doporučená akce není schválením. `approve_mapping` znamená návrh k přijetí do migrační mapy, `record_only` pouhou evidenci beze změny statistik, `manual_review` případ, který vyžaduje rozhodnutí člověka. Zvlášť je vedeno 169 nálezů s alespoň jednou zaznamenanou otevřenou otázkou.
+
+Srovnatelnost historických výsledků je posouzena samostatně od návaznosti: 59 nálezů srovnatelných, 44 částečně, 147 nesrovnatelných a 6 neurčených. Rešerše navrhuje 20 vazeb mezi úkoly, například mezi školami skupiny FOSTRA nebo mezi sloučeným učilištěm a jeho nástupcem.
+
+Nejčastější průřezová vysvětlení: celostátní pokusné ověřování oboru 78-42-M/08 Lyceum vyhlášené MŠMT v listopadu 2024, úpravy krajské sítě víceletých gymnázií z podzimu 2025 a obory otevírané ve víceletém cyklu, typicky jednou za dva roky u zdravotnických škol.
+
+### Kontrola kvality
+
+Dvě kontroly jsou reprodukovatelné z kořene repozitáře:
+
+```sh
+python3 scripts/check-continuity-results.py   # pokrytí otázek, povinná pole, číselníky, konvence
+python3 scripts/check-continuity-sources.py   # dostupnost každého citovaného odkazu
+```
+
+Ze 461 externích odkazů odpovědělo 443 kódem 200. Zbývajících 18 rozebírá [kontrola zdrojů](podklady/kontrola-zdroju-navaznosti-2025-2026.md); vymyšlený zdroj mezi nimi není. Jeden odkaz je doložitelně neexistující a je určen k opravě.
+
 ## 4. Mapa kompletní dokumentace
 
 | Soubor | Obsah |
@@ -59,6 +98,11 @@ Původních **1 004** případů vzniklo srovnáním nabídky 2026 s historický
 | [Generátor matice](../scripts/analyze-year-change-matrix.py) | Reprodukovatelné porovnání XLSX a generování dokumentu |
 | [Generátor fronty](../scripts/prepare-continuity-research.py) | Seskupení otázek a oddělení prostých pozorování |
 | [Manifest zdrojů](podklady/navaznost-zdroje-2025-2026.json) | URL a SHA-256 přesných vstupních XLSX |
+| [Výsledky rešerše](podklady/vysledky-navaznosti-2025-2026/) | Jeden soubor na úkol: nálezy, důkazy, adresy, kontrola rejstříku |
+| [Prohlížeč výsledků](prohlizec-vysledku-navaznosti.html) | Offline kontrola nálezů vedle nabídek obou ročníků |
+| [Rejstřík k frontě](podklady/rejstrik-k-fronte-2025-2026.json) | Strojový přehled ze čtyř snímků rejstříku MŠMT ke každému úkolu |
+| [Snímky rejstříku](../data/msmt_rejstrik/README.md) | Zdroj, rozsah a použití datovaných snímků MŠMT |
+| [Kontrola zdrojů](podklady/kontrola-zdroju-navaznosti-2025-2026.md) | Výsledek ověření dostupnosti citovaných odkazů |
 
 ## 5. Reprodukce
 
@@ -101,9 +145,9 @@ Tato dokumentační dodávka sama neprovádí žádný z těchto kroků v produk
 
 ## 8. Aktuální stav a historie
 
-**Hotovo:** adresní rozbor; matice a reprodukovatelné skripty; zúžená fronta; zadání rešerše a formát výsledku; pravidla pro historické poznámky; oprava nesprávného zařazení Tachova. Ověřeny součty, jedinečnost a úplnost rozdělení ročníků, zachování 1 076 původních otázek mezi rešerší, prostou evidencí a mezerami v datech.
+**Hotovo:** adresní rozbor; matice a reprodukovatelné skripty; zúžená fronta; zadání rešerše a formát výsledku; pravidla pro historické poznámky; oprava nesprávného zařazení Tachova. Ověřeny součty, jedinečnost a úplnost rozdělení ročníků, zachování 1 076 původních otázek mezi rešerší, prostou evidencí a mezerami v datech. Nově: stažené datované snímky rejstříku MŠMT a jejich dávkové propojení s frontou; rešerše všech 192 úkolů s uloženými nálezy; prohlížeč výsledků; strojová kontrola nálezů i dostupnosti citovaných zdrojů.
 
-**Nehotovo:** vlastní rešerše (všechny úkoly `not_started`), schválená migrační mapa, začlenění nové fronty do prohlížeče, implementace poznámek na profilech, doplnění skutečných míst výuky, nasazení těchto změn. Tato dokumentace netvrdí, že data 2027 jsou úplná.
+**Nehotovo:** schválená migrační mapa (rešerše je podklad k přezkoumání, ne schválení), začlenění nové fronty do původního prohlížeče rozboru 1 004 případů, implementace poznámek na profilech, doplnění skutečných míst výuky pro dojezdovost, nasazení těchto změn. Otevřené zůstává 48 nálezů s doporučením ruční přezkum a 4 případy bez doloženého závěru (3 rozpory zdrojů, 1 nedohledáno). Tato dokumentace netvrdí, že data 2027 jsou úplná.
 
 **Historie rozhodnutí:**
 
@@ -111,3 +155,6 @@ Tato dokumentační dodávka sama neprovádí žádný z těchto kroků v produk
 - Původní široká rešeršní fronta měla 526 úkolů.
 - Po upřesnění uživatele se samotné změny názvů a adres pouze evidují. Platná fronta má 192 úkolů; 624 pozorování a 16 datových mezer jsou oddělené.
 - Tento souhrn ukládá kompletní zadání a propojuje již připravenou dokumentaci. Nové požadavky měnit verzovaně; zdrojové ročníky ani rozhodnutí nepřepisovat bez zachování historie.
+- Webová aplikace rejstříku MŠMT agentům nevrací obsah, proto se jako důkaz používají datované čtvrtletní snímky otevřených dat. Dokládají stav ke konkrétnímu dni, ale zápis se do nich promítá s odstupem; samotný zápis oboru navíc nedokazuje vyhlášení přijímacího řízení.
+- Číselník `relationship.type` zůstává uzavřený. Obnovená nabídka se vede jako pokračování, nahrazení oboru jiným jako ukončená nabídka s nástupcem popsaným slovně; kontrola této konvence je součástí ověřovacího skriptu.
+- Rešerše opravila vlastní dřívější nález: nabídky „Meda“ pod REDIZO 600005950 nejsou novou nabídkou, ale pokračováním nabídek zaniklého REDIZO 691017344.

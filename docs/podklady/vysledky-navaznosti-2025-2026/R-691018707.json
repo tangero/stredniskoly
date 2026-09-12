@@ -1,0 +1,186 @@
+{
+  "task_id": "R-691018707",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": [
+      "2025-03-31",
+      "2025-12-31",
+      "2026-03-31",
+      "2026-06-30"
+    ],
+    "summary": "REDIZO 691018707 (Gymnázium se sportovní přípravou Šeberov, IČ 22466754) chybí ve snímku k 31. 3. 2025 – subjekt podle ARES/obchodního rejstříku vznikl teprve 1. 1. 2025 a školu založilo hlavní město Praha. Od snímku 2025-12-31 do 2026-06-30 je beze změny veden IZO 250001926 (Střední škola, místo výuky V ladech 6, Šeberov) s jediným registrovaným oborem 79-42-K/41 Gymnázium se sportovní přípravou (4leté, denní, český). Rejstřík eviduje obor jako celek, jednotlivá sportovní zaměření (basketbal, ragby/rugby, plavání, hokej, házená, atletika, fotbal, triatlon) jsou vnitřním členěním CERMAT/školy, nikoli samostatnými položkami rejstříku."
+  },
+  "findings": [
+    {
+      "issue_ids": [
+        "Q0180",
+        "Q0181",
+        "Q0182",
+        "Q0183",
+        "Q0184",
+        "Q0185",
+        "Q0186",
+        "Q0397",
+        "Q0398",
+        "Q0399",
+        "Q0401",
+        "Q0402",
+        "Q0403",
+        "Q0404"
+      ],
+      "status": "potvrzeno",
+      "observations": [
+        "Škola zahájila provoz 29. 8. 2025 (slavnostní otevření, vlastní aktualita školy) a v 1. kole JPZ 2025 nabízela obor 79-42-K/41 Gymnázium se sportovní přípravou v sedmi zaměřeních: basketbal, ragby, plavání, hokej, házená, atletika, fotbal.",
+        "V 1. kole JPZ 2026 je stejný obor nabízen v týchž sedmi zaměřeních, jen s doplněným kódem oboru přímo do textu zaměření (např. „basketbal 79-42-K/41“) a se změnou hláskování „ragby“ → „rugby“; obsahově jde o tutéž disciplínu.",
+        "Aktuální web školy (sgymseberov.cz) k datu kontroly uvádí týchž sedm sportovních zaměření (Atletika, Basketbal, Fotbal, Házená, Hokej, Plavání, Rugby) jako své zaměření vzdělávání.",
+        "Zřizovatelem je hlavní město Praha (IČO 00064581), ředitelkou je Mgr. Eva Buzková (od 1. 6. 2025). Rejstřík MŠMT eviduje jediný obor 79-42-K/41 u IZO 250001926 ve všech snímcích od 31. 12. 2025 do 30. 6. 2026 beze změny."
+      ],
+      "conclusion": "Sedm zaměření oboru 79-42-K/41 nabízených v roce 2025 pokračuje beze změny obsahu i v roce 2026; rozdíl je pouze ve formátu zápisu textu zaměření (doplnění kódu oboru) a v přepisu „ragby“ na „rugby“.",
+      "alternative_explanations": [
+        "Nelze z dostupných zdrojů vyloučit dílčí úpravu ŠVP jednotlivých sportovních zaměření mezi lety 2025 a 2026 – rejstřík ani CERMAT takovou úroveň podrobnosti nedokládají."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": [
+          "79-42-K/41 basketbal (2025)",
+          "79-42-K/41 ragby (2025)",
+          "79-42-K/41 plavání (2025)",
+          "79-42-K/41 hokej (2025)",
+          "79-42-K/41 házená (2025)",
+          "79-42-K/41 atletika (2025)",
+          "79-42-K/41 fotbal (2025)"
+        ],
+        "to": [
+          "79-42-K/41 basketbal 79-42-K/41 (2026)",
+          "79-42-K/41 rugby (2026)",
+          "79-42-K/41 plavání (2026)",
+          "79-42-K/41 hokej (2026)",
+          "79-42-K/41 házená (2026)",
+          "79-42-K/41 atletika (2026)",
+          "79-42-K/41 fotbal (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "V ladech 6, 149 00 Šeberov, Praha",
+          "role": "sídlo",
+          "izo": "691018707",
+          "valid_period": "2025-12-31 až 2026-06-30 (subjekt vznikl 1. 1. 2025, ve snímku 2025-03-31 ještě neexistoval)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "V ladech 6, 149 00 Šeberov, Praha",
+          "role": "místo výuky",
+          "izo": "250001926",
+          "valid_period": "2025-12-31 až 2026-06-30",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://sgymseberov.cz",
+          "title": "Gymnázium se sportovní přípravou Šeberov – oficiální web",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola zahájila provoz v září 2025, nabízí obor 79-42-K/41 v osmi sportovních zaměřeních (mj. atletika, basketbal, fotbal, házená, hokej, plavání, rugby).",
+          "applicable_period": "stav k září 2026"
+        },
+        {
+          "url": "https://www.atlasskolstvi.cz/ss1399-gymnazium-se-sportovni-pripravou-seberov",
+          "title": "Atlas školství – Gymnázium se sportovní přípravou Šeberov",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Zřizovatel je kraj (hlavní město Praha jako kraj), obor 79-42-K/41, kapacita 60 žáků pro 2026/27, IČ 22466754, REDIZO 691018707.",
+          "applicable_period": "stav k datu kontroly"
+        },
+        {
+          "url": "https://rejstrik-firem.kurzy.cz/22466754/",
+          "title": "Veřejný rejstřík – Gymnázium se sportovní přípravou Šeberov",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Zřizovatel HLAVNÍ MĚSTO PRAHA (IČO 00064581), vznik subjektu 1. 1. 2025, ředitelka Mgr. Eva Buzková od 1. 6. 2025.",
+          "applicable_period": "od 1. 1. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 79-42-K/41 Gymnázium se sportovní přípravou registrován u IZO 250001926, adresa V ladech 6, Šeberov.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-691018707",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Sedm zaměření v roce 2025, osm v roce 2026 (jen jiný zápis textu, viz observations).",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": [
+        "Q0400"
+      ],
+      "status": "potvrzeno",
+      "observations": [
+        "Zaměření „triatlon“ oboru 79-42-K/41 se objevuje poprvé v 1. kole JPZ 2026; v nabídce roku 2025 (7 zaměření) chybělo.",
+        "Web školy (sgymseberov.cz) k datu kontroly uvádí triatlon jako jedno z aktuálně nabízených sportovních zaměření vedle sedmi ostatních."
+      ],
+      "conclusion": "Triatlon je nové sportovní zaměření oboru 79-42-K/41, rozšiřující nabídku školy od školního roku 2026/27; nemá předchůdce v nabídce 2025.",
+      "alternative_explanations": [],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": [
+          "79-42-K/41 triatlon (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "V ladech 6, 149 00 Šeberov, Praha",
+          "role": "sídlo",
+          "izo": "691018707",
+          "valid_period": "2025-12-31 až 2026-06-30 (subjekt vznikl 1. 1. 2025, ve snímku 2025-03-31 ještě neexistoval)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "V ladech 6, 149 00 Šeberov, Praha",
+          "role": "místo výuky",
+          "izo": "250001926",
+          "valid_period": "2025-12-31 až 2026-06-30",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://sgymseberov.cz",
+          "title": "Gymnázium se sportovní přípravou Šeberov – oficiální web",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Triatlon uveden mezi aktuálně nabízenými sportovními zaměřeními školy.",
+          "applicable_period": "stav k září 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-691018707",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Zaměření triatlon přítomno v nabídce 2026 a chybějící v nabídce 2025.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

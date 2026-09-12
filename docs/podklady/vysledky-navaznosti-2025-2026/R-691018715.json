@@ -1,0 +1,99 @@
+{
+  "task_id": "R-691018715",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": [
+      "2025-03-31",
+      "2025-12-31",
+      "2026-03-31",
+      "2026-06-30"
+    ],
+    "summary": "REDIZO 691018715 chybí ve snímku k 31. 3. 2025, od 31. 12. 2025 do 30. 6. 2026 je veden pod názvem ERUNI, univerzitní střední pedagogická škola Brno, s.r.o. (IČ 19754515), IZO 250010623 „Střední škola“, sídlo i místo výuky Královopolská 3052/139, Brno-Žabovřesky. Registrován je jediný obor 75-31-M/01 Předškolní a mimoškolní pedagogika (4leté, denní, český) beze změny napříč snímky; ke snímku 2026-06-30 přibyla navíc školní jídelna-výdejna (IZO 250015510) na téže adrese."
+  },
+  "findings": [
+    {
+      "issue_ids": [
+        "Q0413",
+        "Q0428"
+      ],
+      "status": "potvrzeno",
+      "observations": [
+        "Právnická osoba IČ 19754515 vznikla 22. 9. 2023 v obchodním rejstříku pod názvem „PRIGO, střední pedagogická škola Brno, s.r.o.“; teprve 21. 10. 2025 se změnil jak název na ERUNI, univerzitní střední pedagogická škola Brno, s.r.o., tak vlastnická struktura (jediným společníkem se stala ERUNI, univerzitní gymnázium a střední odborná škola Praha, z.ú., IČ 05259428) i statutární orgán (nová jednatelka Ing. Linda Foltýnová DiS.).",
+        "REDIZO 691018715 se v rejstříku MŠMT poprvé objevuje ve snímku k 31. 12. 2025 – tedy krátce po přejmenování/změně vlastníka z října 2025; ve snímku k 31. 3. 2025 subjekt chybí úplně.",
+        "V 1. kole JPZ 2025 škola nemá žádnou nabídku, v roce 2026 nabízí jediný obor 75-31-M/01 Předškolní a mimoškolní pedagogika se zaměřením „Univerzitní příprava v pedagogice, psychologii a moderních metodách učení“ – jde o první účast tohoto REDIZO v centrálním přijímacím řízení JPZ.",
+        "Sesterská škola stejné skupiny na téže adrese (ERUNI, univerzitní gymnázium Brno, s.r.o., REDIZO 691018731) prochází identickým vzorem přejmenování z PRIGO na ERUNI k témuž datu 21. 10. 2025 – jde tedy o koordinovanou akvizici/rebranding celé brněnské pobočky PRIGO skupinou ERUNI, nikoli o ojedinělou událost."
+      ],
+      "conclusion": "Škola je právně kontinuálním subjektem založeným 22. 9. 2023 (dříve PRIGO, střední pedagogická škola Brno, s.r.o.), který v říjnu 2025 změnil vlastníka a název na ERUNI. Do rejstříku škol MŠMT a do centrálního přijímacího řízení (JPZ) vstupuje poprvé pro školní rok 2026/27 – nabídka 75-31-M/01 z roku 2026 tedy nemá srovnatelnou historickou nabídku z roku 2025.",
+      "alternative_explanations": [
+        "Nelze z dostupných zdrojů ověřit, zda škola pod dřívějším názvem PRIGO fakticky vyučovala žáky před rokem 2025 mimo režim JPZ (např. jako nezapsaná nebo v jiném režimu); k tomu by bylo třeba dohledat archivní web PRIGO, což přesahuje dostupné zdroje."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": [
+          "75-31-M/01 (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "Královopolská 3052/139, 612 00 Žabovřesky, Brno",
+          "role": "sídlo",
+          "izo": "691018715",
+          "valid_period": "2025-12-31 až 2026-06-30 (ve snímku 2025-03-31 subjekt chybí)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Královopolská 3052/139, 612 00 Žabovřesky, Brno",
+          "role": "místo výuky",
+          "izo": "250010623",
+          "valid_period": "2025-12-31 až 2026-06-30",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://rejstrik-firem.kurzy.cz/19754515/",
+          "title": "Veřejný rejstřík – ERUNI, univerzitní střední pedagogická škola Brno, s.r.o.",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Vznik subjektu 22. 9. 2023, přejmenování z PRIGO, střední pedagogická škola Brno, s.r.o. a změna vlastníka/jednatele k 21. 10. 2025.",
+          "applicable_period": "2023–2025"
+        },
+        {
+          "url": "https://rejstrik-firem.kurzy.cz/19754485/",
+          "title": "Veřejný rejstřík – ERUNI, univerzitní gymnázium Brno, s.r.o. (sesterská škola)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Analogické přejmenování sesterské školy z PRIGO na ERUNI k 21. 10. 2025 potvrzuje koordinovaný rebranding celé brněnské pobočky.",
+          "applicable_period": "2023–2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "IZO 250010623, obor 75-31-M/01, adresa Královopolská 3052/139 Brno, subjekt veden od 31. 12. 2025.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-691018715",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "0 nabídek v roce 2025, 1 nabídka (75-31-M/01) v roce 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [
+        "R-691018731"
+      ],
+      "unanswered_questions": [
+        "Zda PRIGO skupina v Brně provozovala tuto školu (nebo její předchůdkyni) reálně již dříve mimo JPZ režim, nebylo možné z dostupných zdrojů ověřit."
+      ]
+    }
+  ]
+}
