@@ -66,18 +66,25 @@ def main():
         prvni = next((n for rok in ("2026", "2025")
                       for n in (t.get("context_offers", {}).get(rok) or [])), {})
         for f in v["findings"]:
-            kkovy = {z.get("kkov") for oid in f["issue_ids"]
-                     for z in otazky.get(oid, {}).get("zaznamy", []) if z.get("kkov")}
-            strany = {}
-            for rok in ("2025", "2026"):
-                strany[rok] = [nabidka(n) for n in (t.get("context_offers", {}).get(rok) or [])
-                               if n.get("KKOV") in kkovy]
             sporne = {oid: otazky.get(oid, {}) for oid in f["issue_ids"]}
-            # ID_SOF nabídek, kterých se otázky týkají, a ročníky, v nichž leží.
             sporne_id = sorted({z["id"] for o in sporne.values()
                                 for z in o.get("zaznamy", []) if z.get("id")})
             sporne_roky = sorted({z["rok"] for o in sporne.values()
                                   for z in o.get("zaznamy", []) if z.get("rok")})
+            kkovy = {z.get("kkov") for oid in f["issue_ids"]
+                     for z in otazky.get(oid, {}).get("zaznamy", []) if z.get("kkov")}
+            # Do rozdílu patří jen nabídky, kterých se nález skutečně týká. Ostatní
+            # nabídky téhož kódu jsou kontext: kdyby se vypsaly vedle sebe, čtenář by
+            # je pároval podle pořadí řádků, což bývá jiná dvojice, než nález tvrdí.
+            strany = {"2025": [], "2026": []}
+            kontext = {"2025": [], "2026": []}
+            for rok in ("2025", "2026"):
+                for n in (t.get("context_offers", {}).get(rok) or []):
+                    if n.get("KKOV") not in kkovy:
+                        continue
+                    zaznam = nabidka(n)
+                    cil = strany if zaznam["id"] in sporne_id else kontext
+                    cil[rok].append(zaznam)
             rejstrik = [v_rejstriku[oid] for oid in f["issue_ids"] if oid in v_rejstriku]
             pripady.append({
                 "task": v["task_id"],
@@ -96,6 +103,7 @@ def main():
                 "akce": f["recommended_action"],
                 "zaver": f.get("conclusion"),
                 "strany": strany,
+                "kontext": kontext,
                 "rejstrik": rejstrik,
                 "pozorovani": f.get("observations") or [],
                 "alternativy": f.get("alternative_explanations") or [],
