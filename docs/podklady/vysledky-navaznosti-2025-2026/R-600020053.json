@@ -1,0 +1,106 @@
+{
+ "task_id": "R-600020053",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrdil plnou kontinuitu subjektu: Střední zdravotnická škola a Vyšší odborná škola zdravotnická Emanuela Pöttinga a Jazyková škola s právem státní jazykové zkoušky Olomouc (REDIZO 600020053), sídlo Pöttingova 624/2, 779 00 Olomouc, figuruje beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026), včetně IZO 110030818 „Střední škola\" s místem výuky na téže adrese. Registrované obory jsou ve všech čtyřech snímcích shodné: 53-41-M/02 Nutriční asistent, 53-41-M/03 Praktická sestra, 53-43-M/01 Laboratorní asistent, 53-41-M/01 Zdravotnický asistent (dobíhající) a 53-44-M/03 Asistent zubního technika. Obor Asistent zubního technika je tedy zapsán v rejstříku po celé sledované období beze změny, přestože v 1. kole JPZ 2026 chybí v nabídce CERMAT."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0136"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela obor 53-44-M/03 Asistent zubního technika (4leté denní studium, český jazyk); v 1. kole JPZ 2026 tato nabídka chybí, zatímco obory Nutriční asistent (53-41-M/02), Praktická sestra (53-41-M/03) a Laboratorní asistent (53-43-M/01) pokračují v obou letech beze změny.",
+    "Rejstřík MŠMT eviduje obor 53-44-M/03 u IZO 110030818 beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) – registrace oboru trvá i po chybějící nabídce v roce 2026.",
+    "Oficiální web školy (www.epol.cz) v sekci Obory vzdělání SZŠ uvádí obor Asistent zubního technika (53-44-M/03) jako součást standardní nabídky čtyř maturitních oborů školy.",
+    "Oficiální web školy v sekci Přijímací řízení SZŠ u oboru Asistent zubního technika doslovně uvádí: „Ve školním roce 2026/2027 nebude otevřen (otevírá se jednou za dva roky)\" a dále „Obor bude otevřen ve školním roce 2027/2028\".",
+    "Škola tedy sama vysvětluje chybějící nabídku v 1. kole JPZ 2026 jako důsledek pravidelného dvouletého cyklu otevírání tohoto oboru, nikoli jako jeho zrušení.",
+    "Typ vztahu je veden jako 'closed' ve smyslu ukončení nabídky v ročníku 2026, nikoli zániku oboru: obor zůstává v rejstříku MŠMT zapsán a přijímací řízení se jen nevyhlásilo. Stejnou konvenci používají ostatní nálezy fronty."
+   ],
+   "conclusion": "Obor 53-44-M/03 Asistent zubního technika nebyl zrušen. Škola jej dlouhodobě otevírá jen jednou za dva roky a pro školní rok 2026/27 přijímací řízení do tohoto oboru nevyhlásila; sama na webu uvádí, že obor znovu otevře pro školní rok 2027/2028. Chybějící nabídka v CERMAT datech pro rok 2026 je tedy doložený důsledek pravidelného přerušení přijímání, nikoli zánik oboru – v souladu s tím zůstává obor po celé sledované období zapsán v rejstříku MŠMT.",
+   "alternative_explanations": [
+    "Web školy je aktuální stav k datu dohledání (12. 9. 2026), nikoli přímý doklad úmyslu platného již v době přípravy nabídky pro 1. kolo JPZ 2026 na jaře 2026 – je ale konzistentní s chybějící nabídkou a s trvalým zápisem oboru v rejstříku, alternativní vysvětlení (např. dodatečné zrušení a znovuobnovení plánu) nemá oporu v žádném dohledaném zdroji."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "53-44-M/03 Asistent zubního technika (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
+    {
+     "text": "Pöttingova 624/2, 779 00 Olomouc",
+     "role": "sídlo",
+     "izo": "600020053",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Pöttingova 624/2, 779 00 Olomouc",
+     "role": "místo výuky",
+     "izo": "110030818",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "https://www.epol.cz/szs/prijimaci-rizeni-szs/",
+     "title": "Přijímací řízení SZŠ – Střední zdravotnická škola a Vyšší odborná škola zdravotnická Emanuela Pöttinga Olomouc",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola doslovně uvádí u oboru Asistent zubního technika (53-44-M/03): „Ve školním roce 2026/2027 nebude otevřen (otevírá se jednou za dva roky)\" a „Obor bude otevřen ve školním roce 2027/2028\" – přijímací řízení pro rok 2026/27 se do tohoto oboru nekoná, ostatní tři obory (Praktická sestra, Nutriční asistent, Laboratorní asistent) se otevírají.",
+     "applicable_period": "přijímací řízení 2026/27, stav webu k 12. 9. 2026"
+    },
+    {
+     "url": "https://www.epol.cz/szs/obory-vzdelani-szs/",
+     "title": "Obory vzdělání SZŠ – Střední zdravotnická škola a Vyšší odborná škola zdravotnická Emanuela Pöttinga Olomouc",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor Asistent zubního technika (53-44-M/03) je uveden jako součást standardní nabídky maturitních oborů školy (čtyřleté denní studium ukončené maturitní zkouškou).",
+     "applicable_period": "stav webu k 12. 9. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 53-44-M/03 Asistent zubního technika zůstává u IZO 110030818 registrován; subjekt i IZO jsou beze změn.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 53-44-M/03 Asistent zubního technika je u IZO 110030818 registrován už k 31. 3. 2025 (počátek sledovaného období).",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600020053",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 53-44-M/03 Asistent zubního technika přítomna v roce 2025 a chybějící v roce 2026; ostatní tři obory (Nutriční asistent, Praktická sestra, Laboratorní asistent) pokračují v obou letech.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Zda byl dvouletý cyklus otevírání oboru zaveden už před rokem 2025, nebo šlo o novinku platnou poprvé pro 1. kolo JPZ 2026 – web školy uvádí jen aktuální stav, ne historii cyklu."
+   ]
+  }
+ ]
+}

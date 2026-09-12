@@ -1,0 +1,106 @@
+{
+  "task_id": "R-600014665",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": [
+      "2025-03-31",
+      "2025-12-31",
+      "2026-03-31",
+      "2026-06-30"
+    ],
+    "summary": "REDIZO 600014665 „Veřejnosprávní akademie a střední škola, s.r.o.“ (soukromá škola, sídlo náměstí Svobody 494, Strážnice) je ve všech čtyřech snímcích beze změny. IZO 110012275 „Střední škola“ eviduje ve všech snímcích (31. 3. 2025 až 30. 6. 2026) beze změny osm oborů/forem, včetně 63-41-M/01 Ekonomika a podnikání (denní) a 68-43-M/01 Veřejnosprávní činnost (denní i kombinovaná) – registrace oboru Ekonomika a podnikání tedy trvá i po roce 2026. Místo výuky náměstí Svobody 494 je ve všech snímcích shodné."
+  },
+  "findings": [
+    {
+      "issue_ids": [
+        "Q0088"
+      ],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 63-41-M/01 Ekonomika a podnikání i obor 68-43-M/01 Veřejnosprávní činnost; v 1. kole JPZ 2026 nabízí už jen Veřejnosprávní činnost.",
+        "Rejstřík MŠMT eviduje obor 63-41-M/01 u IZO 110012275 beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) – obor formálně nebyl vyřazen.",
+        "Oficiální oznámení školy „Vyhlášení 1. kola přijímacího řízení pro školní rok 2026/2027“ (hs-straznice.cz) jmenovitě otevírá jen obory Veřejnosprávní činnost (68-43-M/01) a Kadeřník (69-51-H/01); Ekonomika a podnikání mezi vyhlášenými obory není.",
+        "Stejně tak oznámení 2. kola přijímacího řízení 2026/2027 vyhlašuje přijímání jen do oborů Kadeřník a Veřejná správa (Veřejnosprávní činnost).",
+        "Aktuální web školy v přehledu nabízených oborů uvádí jen Veřejnosprávní činnost, Kadeřníka a studium pedagogiky pro asistenty pedagoga; Ekonomika a podnikání se v hlavní nabídce oborů neobjevuje."
+      ],
+      "conclusion": "Škola pro školní rok 2026/27 nevyhlásila přijímací řízení do oboru 63-41-M/01 Ekonomika a podnikání (obor chybí ve všech kolech přijímacího řízení 2026/2027 i v aktuální nabídce oborů na webu), zatímco obor zůstává v rejstříku MŠMT registrován i k 30. 6. 2026. Jde tedy o přerušení (nevyhlášení) přijímacího řízení do tohoto oboru, nikoli o doložené formální zrušení oboru.",
+      "alternative_explanations": [
+        "Obor mohl být otevřen jen pro nástavbové/vyšší ročníky bez nového přijímacího řízení – zdroje to nedokládají ani nevylučují.",
+        "Škola coby soukromý subjekt (s.r.o.) mohla rozhodnutí o pozastavení oboru učinit z kapacitních či ekonomických důvodů vlastního rozhodnutí; příčina se dle zadání nezkoumá."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": [
+          "63-41-M/01 (2025)"
+        ],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "náměstí Svobody 494, 696 62 Strážnice",
+          "role": "sídlo",
+          "izo": "600014665",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "náměstí Svobody 494, 696 62 Strážnice",
+          "role": "místo výuky",
+          "izo": "110012275",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 63-41-M/01 Ekonomika a podnikání zůstává u IZO 110012275 registrován.",
+          "applicable_period": "stav rejstříku k 2026-06-30"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600014665",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 63-41-M/01 Ekonomika a podnikání přítomna v roce 2025 a chybějící v roce 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://www.hs-straznice.cz/vyhlaseni-1-kola-prijimaciho-rizeni-pro-skolni-rok-2026-2027/",
+          "title": "Vyhlášení 1. kola přijímacího řízení pro školní rok 2026/2027 (hs-straznice.cz)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola vyhlašuje 1. kolo přijímacího řízení 2026/2027 jen do oborů Veřejnosprávní činnost a Kadeřník; Ekonomika a podnikání není uvedena.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://www.hs-straznice.cz/vyhlaseni-2-kola-prijimaciho-rizeni-pro-skolni-rok-2026-2027/",
+          "title": "Vyhlášení 2. kola přijímacího řízení pro školní rok 2026/2027 (hs-straznice.cz)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola vyhlašuje 2. kolo přijímacího řízení 2026/2027 jen do oborů Kadeřník a Veřejná správa.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://www.hs-straznice.cz/",
+          "title": "Veřejnosprávní akademie a střední škola, s.r.o. – úvodní stránka",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Aktuální nabídka oborů na webu neobsahuje Ekonomiku a podnikání (63-41-M/01).",
+          "applicable_period": "aktuální nabídka oborů (2026)"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda a kdy bude přijímací řízení do oboru Ekonomika a podnikání znovu vyhlášeno, zdroje neuvádějí."
+      ]
+    }
+  ]
+}

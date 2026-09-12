@@ -1,0 +1,99 @@
+{
+ "task_id": "R-600019560",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt Střední zdravotnická škola a Vyšší odborná škola zdravotnická, Příbram I, Jiráskovy sady 113 (REDIZO 600019560) je ve všech čtyřech snímcích beze změny, včetně jediného IZO střední školy 110031105 (místo výuky Jiráskovy sady 113, Příbram). Obor 53-41-M/02 Nutriční asistent je u tohoto IZO zapsán ve všech čtyřech snímcích včetně 2026-06-30 – registrace oboru trvá i po chybějící nabídce v roce 2026."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0130"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela čtyři obory: 53-41-M/02 Nutriční asistent, 53-41-M/03 Praktická sestra, 53-41-M/04 Masér ve zdravotnictví a 78-42-M/04 Zdravotnické lyceum.",
+    "V 1. kole JPZ 2026 z nabídky vypadl pouze obor 53-41-M/02 Nutriční asistent; ostatní tři obory pokračují.",
+    "Rejstřík MŠMT eviduje obor 53-41-M/02 u IZO 110031105 ve všech čtyřech snímcích, tedy i po datu, kdy chyběl v nabídce CERMAT 2026 – obor nebyl z rejstříku vyřazen.",
+    "Vlastní web školy (szspb.cz) v sekci přijímacího řízení pro školní rok 2027/2028 uvádí, že škola bude opět otevírat Nutriční asistent (53-41-M/02, 12 přijímaných) společně s Praktickou sestrou, Zdravotnickým lyceem a Masérem ve zdravotnictví – tedy obor je součástí plánu školy i po roce 2026, jen na jeden ročník (2026/2027) přijímací řízení chybělo.",
+    "Typ vztahu je veden jako 'closed' ve smyslu ukončení nabídky v ročníku 2026, nikoli zániku oboru: obor zůstává v rejstříku MŠMT zapsán a přijímací řízení se jen nevyhlásilo. Stejnou konvenci používají ostatní nálezy fronty."
+   ],
+   "conclusion": "Obor 53-41-M/02 Nutriční asistent na SZŠ a VOŠZ Příbram zůstává registrován a škola s ním počítá i do budoucna (potvrzeno vlastním plánem přijímacího řízení pro 2027/2028). Chybějící nabídka v 1. kole JPZ 2026 je tedy jednoroční výpadek přijímacího řízení, nikoli zánik oboru.",
+   "alternative_explanations": [
+    "Přesný důvod jednoletého výpadku (např. nedostatek zájemců, kapacitní důvody, záměrné střídání s jiným oborem) nebyl na webu školy výslovně uveden a nebyl dohledán."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "53-41-M/02 Nutriční asistent (nabídka 2025)"
+    ],
+    "to": [
+     "53-41-M/02 Nutriční asistent (plán 2027/2028)"
+    ]
+   },
+   "addresses": [
+    {
+     "text": "Jiráskovy sady 113, 261 01 Příbram I, Příbram",
+     "role": "sídlo",
+     "izo": "600019560",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Jiráskovy sady 113, 261 01 Příbram I, Příbram",
+     "role": "místo výuky",
+     "izo": "110031105",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "https://www.szspb.cz/stredni-skola/prijimaci-rizeni-do-ss/prijimaci-rizeni/",
+     "title": "Přijímací řízení do SŠ – SZŠ a VOŠZ Příbram",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola pro školní rok 2027/2028 plánuje otevřít obory Praktická sestra (54), Zdravotnické lyceum (26), Nutriční asistent (12) a Masér ve zdravotnictví (16) – potvrzuje, že obor Nutriční asistent nebyl zrušen.",
+     "applicable_period": "přijímací řízení 2027/2028"
+    },
+    {
+     "url": "https://www.szspb.cz/stredni-skola/obory-ss/nutricni-asistent/",
+     "title": "Nutriční asistent – SZŠ a VOŠZ Příbram",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obecný popis oboru na webu školy, obor je veden jako součást aktuální nabídky; periodicita otevírání není na stránce vysvětlena.",
+     "applicable_period": "aktuální stav webu, bez uvedeného data"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 53-41-M/02 Nutriční asistent zůstává registrován u IZO 110031105 ve všech čtyřech snímcích, tedy i k 30. 6. 2026.",
+     "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600019560",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 53-41-M/02 Nutriční asistent přítomna v 1. kole JPZ 2025 a chybějící v 1. kole JPZ 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Přesný důvod výpadku přijímacího řízení pro rok 2026/2027 (nedostatek přihlášek vs. záměrné plánování) nebyl dohledán."
+   ]
+  }
+ ]
+}

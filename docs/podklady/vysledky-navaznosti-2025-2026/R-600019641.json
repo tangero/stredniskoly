@@ -1,0 +1,162 @@
+{
+ "task_id": "R-600019641",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt Střední zdravotnická škola a vyšší odborná škola zdravotnická Karlovy Vary, příspěvková organizace (REDIZO 600019641) je ve všech čtyřech snímcích beze změny, včetně jediného IZO střední školy 110030672 se dvěma místy výuky (Zahradní 719/21 a Poděbradská 1247/2, obojí Karlovy Vary). Obory 53-43-M/01 Laboratorní asistent, 53-44-M/03 Asistent zubního technika a 53-41-M/04 Masér ve zdravotnictví jsou u tohoto IZO zapsány souběžně ve všech čtyřech snímcích spolu s Praktickou sestrou, Zdravotnickým lyceem, Nutričním asistentem a dalšími dobíhajícími obory – registrace všech těchto oborů trvá bez ohledu na to, které z nich se v daném roce otvírají k přijímacímu řízení."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0133",
+    "Q0134"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela pět oborů, mimo jiné 53-43-M/01 Laboratorní asistent a 53-44-M/03 Asistent zubního technika.",
+    "V 1. kole JPZ 2026 tyto dva obory v nabídce chybí; zůstávají jen Nutriční asistent, Praktická sestra, Masér ve zdravotnictví a Zdravotnické lyceum.",
+    "Rejstřík MŠMT eviduje oba obory (53-43-M/01 i 53-44-M/03) u IZO 110030672 ve všech čtyřech snímcích, tedy i k 30. 6. 2026 – ani jeden obor nebyl z rejstříku vyřazen.",
+    "Škola zveřejnila na svém webu dokument „Otevíráme studijní obory na SŠ a VOŠZ ve školním roce 2026/2027“ (PDF), který pro tento školní rok jmenovitě uvádí jen čtyři obory SŠ: Praktická sestra (48 míst, 2 třídy), Zdravotnické lyceum (24, 1 třída), Nutriční asistent (24, 1 třída) a Masér ve zdravotnictví (24, 1 třída) – Laboratorní asistent ani Asistent zubního technika mezi otevíranými obory pro 2026/2027 uvedeny nejsou.",
+    "Typ vztahu je veden jako 'closed' ve smyslu ukončení nabídky v ročníku 2026, nikoli zániku oboru: obor zůstává v rejstříku MŠMT zapsán a přijímací řízení se jen nevyhlásilo. Stejnou konvenci používají ostatní nálezy fronty."
+   ],
+   "conclusion": "Škola pro školní rok 2026/2027 záměrně neotvírá obory 53-43-M/01 Laboratorní asistent a 53-44-M/03 Asistent zubního technika – potvrzuje to vlastní oficiální přehled otevíraných oborů školy. Oba obory přitom zůstávají zapsány v rejstříku MŠMT, jde tedy o výpadek přijímacího řízení pro tento ročník, nikoli o zánik oborů.",
+   "alternative_explanations": [
+    "Zdroj neuvádí, zda jde o pravidelné střídání s jinými obory (podobně jako doloženo u SZŠ České Budějovice) nebo o samostatné rozhodnutí pro tento jeden ročník; přesné pravidlo nebylo dohledáno."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "53-43-M/01 Laboratorní asistent (nabídka 2025)",
+     "53-44-M/03 Asistent zubního technika (nabídka 2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
+    {
+     "text": "Poděbradská 1247/2, 360 01 Karlovy Vary",
+     "role": "sídlo",
+     "izo": "600019641",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Zahradní 719/21, 360 01 Karlovy Vary; Poděbradská 1247/2, 360 01 Karlovy Vary",
+     "role": "místo výuky",
+     "izo": "110030672",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky); přiřazení konkrétních oborů ke konkrétní budově nezjištěno",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "https://www.zdravkakv.cz/wp-content/uploads/2025/12/Otevirane-obory-2026-2027.pdf",
+     "title": "Otevíráme studijní obory na SŠ a VOŠZ ve školním roce 2026/2027 – SZŠ a VOŠZ Karlovy Vary",
+     "published_at": "2025-12",
+     "checked_at": "2026-09-12",
+     "supports": "Oficiální seznam pro 2026/2027 obsahuje jen Praktickou sestru, Zdravotnické lyceum, Nutričního asistenta a Maséra ve zdravotnictví; Laboratorní asistent a Asistent zubního technika nejsou uvedeny mezi otevíranými obory.",
+     "applicable_period": "školní rok 2026/2027"
+    },
+    {
+     "url": "https://www.zdravkakv.cz/studijni-obory/",
+     "title": "Studijní obory – SZŠ a VOŠZ Karlovy Vary",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obecný přehled oborů školy (Praktická sestra, Masér ve zdravotnictví, Asistent zubního technika, Laboratorní asistent, Nutriční asistent) bez uvedení, které se pro daný rok otvírají.",
+     "applicable_period": "aktuální stav webu, bez uvedeného data"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obory 53-43-M/01 a 53-44-M/03 zůstávají registrovány u IZO 110030672 ve všech čtyřech snímcích, tedy i k 30. 6. 2026.",
+     "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600019641",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídky 53-43-M/01 a 53-44-M/03 přítomny v 1. kole JPZ 2025 a chybějící v 1. kole JPZ 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Zda jde o pravidelné (např. dvouleté) střídání oborů, nebo o jednorázové rozhodnutí pro rok 2026/2027 – nedohledáno."
+   ]
+  },
+  {
+   "issue_ids": [
+    "Q0362"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 nebyl obor 53-41-M/04 Masér ve zdravotnictví v nabídce; v roce 2026 se objevuje nově vedle Praktické sestry, Nutričního asistenta a Zdravotnického lycea.",
+    "Rejstřík MŠMT eviduje obor 53-41-M/04 u IZO 110030672 ve všech čtyřech snímcích včetně 2025-03-31 – obor byl zapsán už předtím, v roce 2025 se do něj jen nepřijímalo.",
+    "Oficiální přehled školy „Otevíráme studijní obory na SŠ a VOŠZ ve školním roce 2026/2027“ (PDF) potvrzuje, že Masér ve zdravotnictví (53-41-M/04) je pro 2026/2027 skutečně otevírán, s kapacitou 24 přijímaných v 1 třídě."
+   ],
+   "conclusion": "Obor 53-41-M/04 Masér ve zdravotnictví není nový – byl v rejstříku zapsán už před rokem 2025. V roce 2025 do něj škola nepřijímala, pro školní rok 2026/2027 přijímací řízení obnovila, což potvrzuje i oficiální dokument školy o otevíraných oborech. Jde o obnovení nabídky existujícího oboru, nikoli o založení nového.",
+   "alternative_explanations": [
+    "Přesné pravidlo, zda jde o dvouleté střídání s jiným oborem (analogicky k Laboratornímu asistentovi/Asistentu zubního technika), nebylo dohledáno."
+   ],
+   "relationship": {
+    "type": "continuation",
+    "from": [
+     "53-41-M/04 Masér ve zdravotnictví (registrován, bez nabídky 2025)"
+    ],
+    "to": [
+     "53-41-M/04 Masér ve zdravotnictví (nabídka 2026)"
+    ]
+   },
+   "addresses": [
+    {
+     "text": "Zahradní 719/21, 360 01 Karlovy Vary; Poděbradská 1247/2, 360 01 Karlovy Vary",
+     "role": "místo výuky",
+     "izo": "110030672",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky); přiřazení konkrétních oborů ke konkrétní budově nezjištěno",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "https://www.zdravkakv.cz/wp-content/uploads/2025/12/Otevirane-obory-2026-2027.pdf",
+     "title": "Otevíráme studijní obory na SŠ a VOŠZ ve školním roce 2026/2027 – SZŠ a VOŠZ Karlovy Vary",
+     "published_at": "2025-12",
+     "checked_at": "2026-09-12",
+     "supports": "Masér ve zdravotnictví (53-41-M/04) je uveden mezi obory otevíranými pro 2026/2027 s kapacitou 24 žáků v 1 třídě.",
+     "applicable_period": "školní rok 2026/2027"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 53-41-M/04 Masér ve zdravotnictví je u IZO 110030672 registrován ve všech čtyřech snímcích, včetně 2025-03-31.",
+     "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600019641",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 53-41-M/04 chybí v 1. kole JPZ 2025 a je přítomna v 1. kole JPZ 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": []
+  }
+ ]
+}

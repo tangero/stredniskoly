@@ -1,0 +1,142 @@
+{
+  "task_id": "R-600171400",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu: Integrovaná střední škola Valašské Meziříčí (REDIZO 600171400), sídlo Palackého 239/49, 757 01 Valašské Meziříčí, IZO 130001473 „Střední škola“ na téže adrese, beze změny ve všech čtyřech snímcích. Obor 28-42-L/01 Chemik operátor (4leté) i obor 28-52-H/01 Chemik (3leté) zůstávají v rejstříku zapsány ve všech snímcích včetně 30. 6. 2026. Obor 78-42-M/05 Přírodovědné lyceum není v žádném ze čtyř snímků evidován – jde o novou nabídku, jejíž zápis do rejstříku zatím neproběhl."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0150"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela čtyřletý obor 28-42-L/01 Chemik operátor; v 1. kole JPZ 2026 tato nabídka chybí, zatímco 23-44-L/01 Mechanik strojů a zařízení, 26-41-L/01 Mechanik elektrotechnik a 64-41-L/51 Podnikání pokračují v obou letech.",
+        "Rejstřík MŠMT eviduje obor 28-42-L/01 Chemik operátor (4leté) u IZO 130001473 ve všech čtyřech snímcích včetně 30. 6. 2026 – registrace oboru trvá.",
+        "Web školy (stránka „Seznam oborů pro přijímací řízení školního roku 2026/2027“) uvádí, že do 1. ročníku pro rok 2026/27 se přijímá pouze do vyjmenovaných oborů (Přírodovědné lyceum, Požární ochrana, Mechanik elektrotechnik, Mechanik strojů a zařízení, a řada tříletých oborů) a výslovně dodává: „Obory uváděné v nabídce Přehled oborů jsou stále na škole vyučovány, ale noví žáci se přibírají pouze do níže uvedených oborů.“ Chemik operátor v seznamu vyhlášených oborů pro 2026/27 chybí.",
+        "Podstránka „Chemické obory“ potvrzuje, že obor 28-42-L/01 Chemik operátor na škole i nadále existuje jako součást vzdělávací nabídky, ale bez uvedení, že by byl vyhlášen pro přijímací řízení 2026/27."
+      ],
+      "conclusion": "Obor 28-42-L/01 Chemik operátor škola pro školní rok 2026/27 nevyhlásila k přijetí nových žáků – jde o přerušení přijímacího řízení do tohoto oboru, nikoli o jeho zrušení. Obor zůstává registrován v rejstříku MŠMT a podle webu školy je „stále na škole vyučován“ (stávající žáci pokračují).",
+      "alternative_explanations": [
+        "Škola obor v budoucnu formálně zruší, pokud se rozhodnutí o nepřijímání zopakuje – k datu zpracování to však doloženo není."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["28-42-L/01 (2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Palackého 239/49, 757 01 Valašské Meziříčí",
+          "role": "sídlo",
+          "izo": "600171400",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Palackého 239/49, 757 01 Valašské Meziříčí",
+          "role": "místo výuky",
+          "izo": "130001473",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.issvm.cz/informace-o-skole/seznam-oboru-pro-prijimaci-rizeni-skolniho-roku-2026-2027",
+          "title": "Seznam oborů pro přijímací řízení školního roku 2026/2027 – ISŠVM Valašské Meziříčí",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Chemik operátor 28-42-L/01 není v seznamu vyhlášených oborů pro 2026/27; škola uvádí, že nevyjmenované obory se stále vyučují, ale nepřijímají se do nich noví žáci.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://www.issvm.cz/stredni-skola/chemicke-obory",
+          "title": "Chemické obory – ISŠVM Valašské Meziříčí",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 28-42-L/01 Chemik operátor je uveden jako součást stálé vzdělávací nabídky školy (chemický obor), bez potvrzení vyhlášení pro 2026/27.",
+          "applicable_period": "aktuální nabídka oborů školy"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 28-42-L/01 Chemik operátor zůstává u IZO 130001473 registrován i k 30. 6. 2026.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600171400",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 28-42-L/01 Chemik operátor přítomna v roce 2025 a chybějící v roce 2026; ostatní obory pokračují.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0379"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/05 Přírodovědné lyceum (4leté, denní), který v roce 2025 v nabídce nebyl.",
+        "Web školy (stránka „Seznam oborů pro přijímací řízení školního roku 2026/2027“) uvádí Přírodovědné lyceum 78-42-M/05 mezi maturitními obory a výslovně jej označuje jako „nový“.",
+        "Obor 78-42-M/05 zatím není evidován v žádném ze čtyř snímků rejstříku MŠMT (ani k 30. 6. 2026) – jde o odstup zápisu do rejstříku, nikoli o rozpor s nabídkou CERMAT a webem školy."
+      ],
+      "conclusion": "Přírodovědné lyceum 78-42-M/05 je nový obor, který škola otevírá od školního roku 2026/27; sama škola jej na webu označuje jako „nový“. Nemá předchůdce v nabídce školy z roku 2025.",
+      "alternative_explanations": [
+        "Formální zápis oboru do rejstříku MŠMT může proběhnout až po 30. 6. 2026; to otevření oboru od září 2026 neovlivňuje."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["78-42-M/05 (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Palackého 239/49, 757 01 Valašské Meziříčí",
+          "role": "místo výuky",
+          "izo": "130001473",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.issvm.cz/informace-o-skole/seznam-oboru-pro-prijimaci-rizeni-skolniho-roku-2026-2027",
+          "title": "Seznam oborů pro přijímací řízení školního roku 2026/2027 – ISŠVM Valašské Meziříčí",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Přírodovědné lyceum 78-42-M/05 je uvedeno v seznamu vyhlášených oborů pro 2026/27 a explicitně označeno jako nový obor.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 78-42-M/05 není u IZO 130001473 evidován ani k 30. 6. 2026 (odstup zápisu do rejstříku).",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600171400",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 78-42-M/05 Přírodovědné lyceum přítomna v roce 2026 a chybějící v roce 2025.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

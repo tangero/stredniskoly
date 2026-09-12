@@ -1,0 +1,95 @@
+{
+  "task_id": "R-600014771",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": [
+      "2025-03-31",
+      "2025-12-31",
+      "2026-03-31",
+      "2026-06-30"
+    ],
+    "summary": "REDIZO 600014771 „Střední odborná škola sociální u Matky Boží Jihlava“ (sídlo Fibichova 978/67, Jihlava) je ve všech čtyřech snímcích beze změny. IZO 110012542 „Střední škola“ eviduje ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) shodně obory 53-41-H/01 Ošetřovatel, 75-41-M/01 Sociální činnost a 75-31-M/02 Pedagogika pro asistenty ve školství (posledně jmenovaný chybí ve snímku k 30. 6. 2026, mimo rozsah zadaných otázek). Obor 78-42-M/03 Pedagogické lyceum není evidován v žádném ze čtyř snímků, ani k 30. 6. 2026 – jde o odstup zápisu do rejstříku, nikoli o rozpor s nabídkou CERMAT."
+  },
+  "findings": [
+    {
+      "issue_ids": [
+        "Q0352"
+      ],
+      "status": "pravděpodobné",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/03 Pedagogické lyceum se zaměřením „Příprava na pedagogická povolání“; v roce 2025 tato nabídka chyběla.",
+        "Rejstřík MŠMT obor 78-42-M/03 u IZO 110012542 neeviduje v žádném ze čtyř snímků (31. 3. 2025 až 30. 6. 2026) – zápis do rejstříku dosud neproběhl nebo je s velkým odstupem.",
+        "Škola na svém webu (sosmb.cz) zveřejnila v sekci Aktuálně dokument „Kriteria přijímacího řízení 2026“ obsahující samostatná kritéria pro obor Pedagogické lyceum se zaměřením na přípravu pro pedagogická povolání pro školní rok 2026/2027 – tedy reálně vyhlásila přijímací řízení do tohoto oboru."
+      ],
+      "conclusion": "Nabídka 78-42-M/03 Pedagogické lyceum je pravděpodobně novým oborem školy pro školní rok 2026/27 – potvrzuje to jak nová položka v CERMAT datech 2026, tak samostatná kritéria přijímacího řízení školy pro tento obor. Chybějící zápis v rejstříku MŠMT (ani k 30. 6. 2026) tomu neodporuje, protože zápis do rejstříku se typicky opožďuje za vyhlášením přijímacího řízení; zůstává ale nedoloženo přímým zápisem v oficiálním rejstříku, proto status jen „pravděpodobné“, nikoli „potvrzeno“.",
+      "alternative_explanations": [
+        "Bez zápisu v rejstříku MŠMT nelze zcela vyloučit, že obor nakonec nebyl / nebude oficiálně zřízen a přijímací řízení proběhlo jen podmínečně do doby dokončení registrace."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": [
+          "78-42-M/03 (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "Fibichova 978/67, 586 01 Jihlava",
+          "role": "sídlo",
+          "izo": "600014771",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Fibichova 978/67, 586 01 Jihlava",
+          "role": "místo výuky",
+          "izo": "110012542",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 78-42-M/03 Pedagogické lyceum není u IZO 110012542 evidován ani k 30. 6. 2026.",
+          "applicable_period": "stav rejstříku k 2026-06-30"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600014771",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 78-42-M/03 Pedagogické lyceum přítomna jen v roce 2026, v roce 2025 chybí.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://www.sosmb.cz/aktualne/kriteria-prijimaciho-rizeni-2026",
+          "title": "Kriteria přijímacího řízení 2026 | SOŠ sociální u Matky Boží Jihlava",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stránka odkazuje na samostatný dokument „Kriteria 1. kolo 2026 – Pedagogické lyceum“, tedy škola vyhlásila přijímací řízení do tohoto oboru pro rok 2026/27.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://www.sosmb.cz/",
+          "title": "SOŠ sociální u Matky Boží Jihlava – úvodní stránka",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Pedagogické lyceum je uvedeno v nabídce maturitních oborů v sekci pro uchazeče.",
+          "applicable_period": "aktuální nabídka oborů (2026)"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "manual_review",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda a kdy bude obor 78-42-M/03 formálně zapsán do rejstříku MŠMT u IZO 110012542, zdroje nedokládají."
+      ]
+    }
+  ]
+}

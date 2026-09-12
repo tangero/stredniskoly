@@ -16,6 +16,7 @@ from collections import Counter
 from pathlib import Path
 
 FRONTA = Path("docs/podklady/fronta-dohledavani-2025-2026.json")
+REJSTRIK = Path("docs/podklady/rejstrik-k-fronte-2025-2026.json")
 VYSLEDKY = Path("docs/podklady/vysledky-navaznosti-2025-2026")
 
 STATUS = {"potvrzeno", "pravděpodobné", "rozpor_zdrojů", "nedohledáno"}
@@ -27,6 +28,39 @@ POVINNA_POLE = ["issue_ids", "status", "observations", "conclusion", "alternativ
                 "recommended_action", "related_task_ids", "unanswered_questions"]
 # Odkazy, které se nedokládají otevřením v prohlížeči
 LOKALNI_ZDROJE = ("fronta-dohledavani", "matice-zmen", "lkod-ftp.msmt.gov.cz")
+
+
+def zkontroluj_konvenci(slozka):
+    """Nabídka roku 2025, která v roce 2026 chybí, zatímco obor zůstává v rejstříku
+    zapsán, se napříč frontou vede jako `closed` – ukončení nabídky, nikoli zánik oboru.
+    Odchylka není chyba sama o sobě, ale mísí dvě významově různé věci v jednom poli."""
+    if not REJSTRIK.exists():
+        return []
+    rej = json.loads(REJSTRIK.read_text())
+    posledni = rej["snapshots"][-1]
+    rok_a_zapis = {}
+    for data in rej["tasks"].values():
+        for n in data["nabidky"]:
+            rok_a_zapis[n["issue_id"]] = (n["rok_nabidky"], n["obor_v_rejstriku"][posledni])
+    nalezy = []
+    for cesta in sorted(slozka.glob("*.json")):
+        try:
+            v = json.loads(cesta.read_text())
+        except json.JSONDecodeError:
+            continue
+        for f in v.get("findings", []):
+            znamé = [i for i in f.get("issue_ids", []) if i in rok_a_zapis]
+            if not znamé:
+                continue
+            if {rok_a_zapis[i][0] for i in znamé} != {2025}:
+                continue
+            if not all(rok_a_zapis[i][1] for i in znamé):
+                continue
+            typ = f.get("relationship", {}).get("type")
+            if typ not in ("closed", "unknown"):
+                nalezy.append(f"{v['task_id']}/{','.join(znamé)}: nabídka 2025 chybí v 2026 a obor "
+                              f"zůstává v rejstříku – fronta pro to používá 'closed', zde je {typ!r}")
+    return nalezy
 
 
 def main():
@@ -107,6 +141,8 @@ def main():
             for a in f.get("addresses", []):
                 if not a.get("role"):
                     chyby.append(f"{oznaceni}: adresa bez role – {a.get('text')}")
+
+    chyby.extend(zkontroluj_konvenci(VYSLEDKY))
 
     print(f"Zpracováno {hotovo} z {len(ukoly)} úkolů fronty.")
     print(f"Statusy nálezů: {dict(statusy)}")

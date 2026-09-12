@@ -1,0 +1,99 @@
+{
+ "task_id": "R-600019616",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt Střední zdravotnická škola, Písek, Národní svobody 420 (REDIZO 600019616) je ve všech čtyřech snímcích beze změny, včetně jediného IZO střední školy 110010108 (místo výuky třída Národní svobody 420, Písek). Obor 78-42-M/04 Zdravotnické lyceum je u tohoto IZO zapsán ve všech čtyřech snímcích včetně 2026-06-30 (vedle dobíhajícího staršího kódu 78-42-M/005) – registrace oboru trvá i po chybějící nabídce v roce 2026."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0132"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela dva obory: 53-41-M/03 Praktická sestra a 78-42-M/04 Zdravotnické lyceum.",
+    "V 1. kole JPZ 2026 zůstala v nabídce jen Praktická sestra; Zdravotnické lyceum chybí.",
+    "Rejstřík MŠMT eviduje obor 78-42-M/04 u IZO 110010108 ve všech čtyřech snímcích, tedy i k 30. 6. 2026 – obor nebyl z rejstříku vyřazen.",
+    "Vlastní web školy (szs-pi.cz) v sekci přijímacího řízení pro školní rok 2027/2028 uvádí, že škola bude znovu otevírat Praktickou sestru (30 přijímaných) i Zdravotnické lyceum (30 přijímaných) – obor je tedy součástí plánu školy i po roce 2026, na jeden ročník (2026/2027) přijímací řízení chybělo.",
+    "Typ vztahu je veden jako 'closed' ve smyslu ukončení nabídky v ročníku 2026, nikoli zániku oboru: obor zůstává v rejstříku MŠMT zapsán a přijímací řízení se jen nevyhlásilo. Stejnou konvenci používají ostatní nálezy fronty."
+   ],
+   "conclusion": "Obor 78-42-M/04 Zdravotnické lyceum na Střední zdravotnické škole v Písku zůstává registrován a škola s ním počítá i do budoucna (potvrzeno vlastním plánem přijímacího řízení pro 2027/2028, kde je uveden spolu s Praktickou sestrou). Chybějící nabídka v 1. kole JPZ 2026 je jednoroční výpadek přijímacího řízení, nikoli zánik oboru.",
+   "alternative_explanations": [
+    "Přesný důvod jednoletého výpadku (nedostatek zájemců, kapacitní důvody, případné střídání s jiným oborem) nebyl na webu školy výslovně uveden a nebyl dohledán; technická chyba na stránce kritérií přijímacího řízení pro rok 2026/2027 znemožnila ověřit dobové detaily."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "78-42-M/04 Zdravotnické lyceum (nabídka 2025)"
+    ],
+    "to": [
+     "78-42-M/04 Zdravotnické lyceum (plán 2027/2028)"
+    ]
+   },
+   "addresses": [
+    {
+     "text": "třída Národní svobody 420, 397 01 Pražské Předměstí, Písek",
+     "role": "sídlo",
+     "izo": "600019616",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "třída Národní svobody 420, 397 01 Pražské Předměstí, Písek",
+     "role": "místo výuky",
+     "izo": "110010108",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "https://www.szs-pi.cz/prijimaci-rizeni",
+     "title": "Přijímací řízení – Střední zdravotnická škola, Písek",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola pro školní rok 2027/2028 plánuje otevřít Praktickou sestru (30 přijímaných) a Zdravotnické lyceum (30 přijímaných) – potvrzuje, že obor Zdravotnické lyceum nebyl zrušen.",
+     "applicable_period": "přijímací řízení 2027/2028"
+    },
+    {
+     "url": "https://www.szs-pi.cz/zakladni-info/studijni-obory",
+     "title": "Studijní obory – Střední zdravotnická škola, Písek",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor Zdravotnické lyceum 78-42-M/04 je veden mezi vyučovanými obory školy (učební plán 2. a 4. ročník), bez explicitního uvedení, pro který přijímací ročník se právě otevírá.",
+     "applicable_period": "aktuální stav webu, bez uvedeného data"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/04 Zdravotnické lyceum zůstává registrován u IZO 110010108 ve všech čtyřech snímcích, tedy i k 30. 6. 2026.",
+     "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600019616",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 78-42-M/04 Zdravotnické lyceum přítomna v 1. kole JPZ 2025 a chybějící v 1. kole JPZ 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Přesný důvod výpadku přijímacího řízení pro rok 2026/2027 nebyl dohledán; stránka kritérií přijímacího řízení pro tento ročník byla v době kontroly technicky nedostupná (chyba serveru)."
+   ]
+  }
+ ]
+}

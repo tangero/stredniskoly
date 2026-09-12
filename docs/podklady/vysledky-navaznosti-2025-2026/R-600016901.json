@@ -1,0 +1,103 @@
+{
+  "task_id": "R-600016901",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "REDIZO 600016901 (EDUCA - Střední odborná škola, s.r.o., B. Martinů 1994/4, Nový Jičín) je ve všech čtyřech snímcích beze změny názvu, sídla i IZO 110025580. Registrované obory jsou konstantní: 63-41-M/01 Ekonomika a podnikání, 18-20-M/01 Informační technologie a 65-42-M/02 Cestovní ruch (všechny 4leté, denní, dvojjazyčné), dále učební a distanční obory (34-53-H/01, 64-41-L/51, 66-51-H/01). Rejstřík zaměření v rámci kódu 18-20-M/01 samostatně neeviduje – texty zaměření jsou pouze marketingovou nadstavbou jednoho kódu KKOV."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0108", "Q0109", "Q0357", "Q0358"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 nabízela škola u REDIZO 600016901 obor 18-20-M/01 Informační technologie ve dvou zaměřeních: „Počítačová grafika“ a „Automatizace a robotika“.",
+        "V 1. kole JPZ 2026 nabízí táž škola tentýž obor ve dvou zaměřeních „Multimédia“ a „Robotika“ – jiná jazyková podoba názvu, ale stejný počet paralelních tříd u stejného kódu oboru.",
+        "Oficiální web školy (educa-sos.eu) používá pro obě zaměření beze změny stará URL adresy z roku 2025 – /automatizace-a-robotika a /pocitacova-grafika – ale AKTUÁLNÍ obsah těchto stránek byl přepsán: stránka na URL /automatizace-a-robotika nyní nese název a obsah „Robotika“ (programování robotů, PLC automatů), stránka na URL /pocitacova-grafika nese název a obsah „Multimédia“ (práce s grafikou, fotografií, videem, zvukem).",
+        "Shoda staré URL a nového obsahu je přímým dokladem, že jde o přejmenování téhož zaměření, nikoli o zánik jednoho a vznik zcela nezávislého jiného: „Automatizace a robotika“ → „Robotika“, „Počítačová grafika“ → „Multimédia“.",
+        "Popis obsahu zaměření se mezi starým a novým názvem částečně liší – „Robotika“ je užší (soustředí se na roboty a automatizaci bez obecné výuky IT), „Multimédia“ je oproti „Počítačové grafice“ rozšířena o video a zvuk – jde tedy o přejmenování spojené s částečnou obsahovou úpravou, ne o čistě kosmetickou změnu názvu.",
+        "InfoAbsolvent.cz pro přijímací řízení 2026/2027 potvrzuje aktuální názvy „Robotika“ a „Multimédia“ jako oficiální nabídku školy."
+      ],
+      "conclusion": "Zaměření oboru 18-20-M/01 Informační technologie byla mezi lety 2025 a 2026 přejmenována při zachování stejných webových adres školy: „Automatizace a robotika“ na „Robotika“ a „Počítačová grafika“ na „Multimédia“. Jde o pokračování týchž dvou tříd/zaměření pod novými názvy, spojené s dílčí úpravou zaměření obsahu (užší robotika, rozšířená multimédia o video/zvuk).",
+      "alternative_explanations": [
+        "Obsahová úprava (rozšíření/zúžení zaměření) mohla být natolik významná, že jde spíše o nový obsah vyučovaný pod starou infrastrukturou webu než o prosté přejmenování – k posouzení míry změny ŠVP nebyl dohledán žádný zdroj."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": [
+          "18-20-M/01 Automatizace a robotika (2025)",
+          "18-20-M/01 Počítačová grafika (2025)"
+        ],
+        "to": [
+          "18-20-M/01 Robotika (2026)",
+          "18-20-M/01 Multimédia (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "B. Martinů 1994/4, 741 01 Nový Jičín",
+          "role": "sídlo",
+          "izo": "600016901",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "B. Martinů 1994/4, 741 01 Nový Jičín",
+          "role": "místo výuky",
+          "izo": "110025580",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "http://www.educa-sos.eu/automatizace-a-robotika",
+          "title": "Robotika (URL /automatizace-a-robotika) – EDUCA SOŠ Nový Jičín",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stránka na staré URL adrese zaměření Automatizace a robotika nyní nese název a obsah Robotika (18-20-M/01), přímo dokládá přejmenování.",
+          "applicable_period": "stav webu k datu kontroly 2026-09-12"
+        },
+        {
+          "url": "http://www.educa-sos.eu/pocitacova-grafika",
+          "title": "Multimédia (URL /pocitacova-grafika) – EDUCA SOŠ Nový Jičín",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stránka na staré URL adrese zaměření Počítačová grafika nyní nese název a obsah Multimédia (18-20-M/01), přímo dokládá přejmenování.",
+          "applicable_period": "stav webu k datu kontroly 2026-09-12"
+        },
+        {
+          "url": "https://www.infoabsolvent.cz/Skoly/Skola/600016901",
+          "title": "EDUCA - Střední odborná škola, s.r.o. – InfoAbsolvent",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Potvrzuje aktuální oficiální nabídku dvou zaměření IT: Multimédia a Robotika, pro přijímací řízení 2026/2027.",
+          "applicable_period": "přijímací řízení 2026/2027"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "K 30. 6. 2026 je obor 18-20-M/01 u IZO 110025580 registrován beze změny kódu; zaměření se v rejstříku samostatně nezapisují.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600016901",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V roce 2025 zaměření Počítačová grafika a Automatizace a robotika, v roce 2026 zaměření Multimédia a Robotika u téhož oboru a školy.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "partially",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Do jaké míry se změnil školní vzdělávací program (ŠVP) při přejmenování z Počítačové grafiky na Multimédia a z Automatizace a robotiky na Robotiku – jde jen o marketingovou úpravu, nebo o věcnou změnu obsahu výuky?"
+      ]
+    }
+  ]
+}

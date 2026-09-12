@@ -1,0 +1,105 @@
+{
+  "task_id": "R-691000549",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "REDIZO 691000549 se ve snímku k 31. 3. 2025 jmenovalo „Základní škola a mateřská škola Parentes Praha“ a nemělo žádnou střední školu ani IZO 250002248 – subjekt tehdy provozoval pouze MŠ a ZŠ. Od snímku k 31. 12. 2025 (a beze změny i k 31. 3. 2026 a 30. 6. 2026) je subjekt veden pod novým názvem „Gymnázium, základní škola a mateřská škola Parentes Praha“ a nově obsahuje IZO 250002248 typu „Střední škola“ s místem výuky Tlumačovská 1237/32, 155 00 Stodůlky, Praha, a s registrovaným oborem 79-41-K/41 Gymnázium (4leté, denní, český jazyk výuky). Sídlo právnické osoby (Tlumačovská 1237/32) je ve všech čtyřech snímcích shodné. Jde tedy o doložený vznik nové střední školy (gymnázia) v rámci existující organizace mezi 31. 3. 2025 a 31. 12. 2025, nikoli o sloučení s jiným subjektem ani o přenesení existující nabídky."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0405", "Q0421"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 organizace REDIZO 691000549 nenabízela žádný obor; v 1. kole JPZ 2026 nově nabízí 79-41-K/41 Gymnázium, zaměření „všeobecné s rozvojem charakteru“, 4leté denní studium, IZO izo_250002248 (ID_SOF cad4224d-eb43-4535-8bdf-79e3947835e5).",
+        "Rejstřík MŠMT k 31. 3. 2025 subjekt REDIZO 691000549 eviduje jako „Základní škola a mateřská škola Parentes Praha“ bez jakéhokoli IZO střední školy – IZO 250002248 tam vůbec není.",
+        "Od snímku k 31. 12. 2025 (trvá i k 31. 3. 2026 a 30. 6. 2026) je subjekt přejmenován na „Gymnázium, základní škola a mateřská škola Parentes Praha“ a nově obsahuje IZO 250002248 „Střední škola“ s oborem 79-41-K/41 Gymnázium na adrese Tlumačovská 1237/32, Stodůlky, Praha – shodné s nabídkou CERMAT 2026 i s Q0421 (nepřiřazená školní jednotka izo_250002248).",
+        "Web gymnázia (gymnazium.parentes.cz) popisuje školu jako „čtyřleté denní gymnázium zaměřené na akademickou kvalitu, osobní zrání a formaci charakteru“, což odpovídá zaměření „všeobecné s rozvojem charakteru“ z nabídky CERMAT.",
+        "Aktualita školy z 11. 9. 2026 s titulkem „Gymnázium Parentes přivítalo v lavicích první studenty“ přímo popisuje zahájení výuky prvního ročníku gymnázia: „Do vzdělávací nabídky školy Parentes letos přibyl další důležitý dílek: čtyřleté gymnázium“, do prvního ročníku nastoupilo 11 studentů. Ředitel PhDr. Michal Šabatka je citován k cíli přípravy studentů na VŠ studium.",
+        "Hlavní web parentes.cz potvrzuje, že instituce nyní nabízí „ucelenou cestu vzděláváním od mateřské školky až po maturitu“ a odkazuje na samostatnou sekci gymnázia."
+      ],
+      "conclusion": "Jde o nově založenou střední školu (gymnázium) v rámci již existující organizace Parentes Praha (MŠ a ZŠ), nikoli o pokračování, přejmenování ani sloučení s jinou nabídkou. Nový obor 79-41-K/41 Gymnázium a nová školní jednotka IZO 250002248 vznikly mezi 31. 3. 2025 a 31. 12. 2025 (zápis do rejstříku) a přijímací řízení bylo skutečně vyhlášeno a naplněno – první ročník zahájil výuku v září 2026 s 11 studenty, jak dokládá aktualita školy z 11. 9. 2026. Q0405 (nabídka oboru) i Q0421 (školní jednotka izo_250002248) popisují tutéž organizační událost a jsou pokryty společně.",
+      "alternative_explanations": [
+        "Formální zápis do rejstříku (31. 12. 2025) mohl předcházet skutečnému vyhlášení přijímacího řízení o několik měsíců; přesné datum vyhlášení řízení pro rok 2026/27 se na webu školy nepodařilo dohledat, ale ukončení řízení a zahájení výuky je doloženo."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["79-41-K/41 (2026), IZO 250002248"]
+      },
+      "addresses": [
+        {
+          "text": "Tlumačovská 1237/32, 155 00 Stodůlky, Praha",
+          "role": "sídlo",
+          "izo": "691000549",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Tlumačovská 1237/32, 155 00 Stodůlky, Praha",
+          "role": "místo výuky",
+          "izo": "250002248",
+          "valid_period": "2025-12-31 až 2026-06-30 (IZO ve snímku k 2025-03-31 neexistuje)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR (přes scripts/lookup_msmt_registry.py)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "K 31. 3. 2025 subjekt REDIZO 691000549 nese název „Základní škola a mateřská škola Parentes Praha“ a IZO 250002248 v něm vůbec není evidováno.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR (přes scripts/lookup_msmt_registry.py)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "K 30. 6. 2026 (shodně i 2025-12-31 a 2026-03-31) je subjekt veden jako „Gymnázium, základní škola a mateřská škola Parentes Praha“ s IZO 250002248 typu Střední škola a oborem 79-41-K/41 Gymnázium na adrese Tlumačovská 1237/32.",
+          "applicable_period": "stav rejstříku k 2025-12-31 / 2026-03-31 / 2026-06-30"
+        },
+        {
+          "url": "https://gymnazium.parentes.cz/gymnazium-parentes-privitalo-v-lavicich-prvni-studenty",
+          "title": "Gymnázium Parentes přivítalo v lavicích první studenty",
+          "published_at": "2026-09-11",
+          "checked_at": "2026-09-12",
+          "supports": "Škola oznamuje, že do vzdělávací nabídky letos (2026) přibylo čtyřleté gymnázium a do jeho prvního ročníku nastoupilo 11 studentů – přímý důkaz vzniku a otevření nového oboru/školní jednotky.",
+          "applicable_period": "školní rok 2026/27, zahájení výuky září 2026"
+        },
+        {
+          "url": "https://gymnazium.parentes.cz/",
+          "title": "Gymnázium Parentes – úvodní stránka",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Popisuje školu jako čtyřleté denní gymnázium zaměřené na akademickou kvalitu, osobní zrání a formaci charakteru, což odpovídá zaměření „všeobecné s rozvojem charakteru“ z nabídky CERMAT 2026.",
+          "applicable_period": "stav webu k 2026-09-12"
+        },
+        {
+          "url": "https://parentes.cz",
+          "title": "Parentes Praha – úvodní stránka",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Potvrzuje, že organizace Parentes nyní nabízí vzdělávání na třech úrovních (MŠ, ZŠ, gymnázium) a odkazuje na samostatný web gymnázia.",
+          "applicable_period": "stav webu k 2026-09-12"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-691000549",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V roce 2025 REDIZO 691000549 nemá žádnou nabídku; v roce 2026 nabízí 79-41-K/41 Gymnázium, zaměření všeobecné s rozvojem charakteru, 4leté denní studium, IZO izo_250002248.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přesné datum vyhlášení přijímacího řízení pro školní rok 2026/27 (zřizovatelské rozhodnutí o založení gymnázia) se na webu školy nepodařilo dohledat; jde o soukromou školu, oficiální zřizovací dokument nebyl nalezen veřejně."
+      ]
+    }
+  ]
+}

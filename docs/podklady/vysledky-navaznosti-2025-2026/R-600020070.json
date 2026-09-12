@@ -1,0 +1,132 @@
+{
+  "task_id": "R-600020070",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrdil plnou kontinuitu subjektu: Střední zdravotnická škola a Vyšší odborná škola zdravotnická, Ostrava, příspěvková organizace (REDIZO 600020070) figuruje beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026), stejně jako IZO 110030893 „Střední škola“ se dvěma místy výuky: Jeremenkova 754/2, Vítkovice, Ostrava a 1. máje 2208/11, Mariánské Hory, Ostrava. Registrované obory jsou ve všech čtyřech snímcích totožné a beze změny (mj. 53-43-M/01 Laboratorní asistent a 53-41-M/04 Masér ve zdravotnictví, oba denní, český jazyk, 4 roky) – rozdíly v nabídce 1. kola JPZ 2025 vs. 2026 se v rejstříku vůbec neprojevují."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0137", "Q0363"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 53-43-M/01 Laboratorní asistent (4 roky, denní, český), v 1. kole JPZ 2026 tato nabídka chybí.",
+        "V 1. kole JPZ 2026 škola nově nabízela obor 53-41-M/04 Masér ve zdravotnictví (4 roky, denní, český), v 1. kole JPZ 2025 tato nabídka chyběla.",
+        "Oba obory jsou v rejstříku MŠMT zapsány u IZO 110030893 beze změny ve všech čtyřech snímcích (2025-03-31 až 2026-06-30) – zápis obou oborů trvá i po roce 2026, nabídka JPZ se u žádného z nich nekryje s (ne)existencí zápisu.",
+        "Oficiální web školy (zdrav-ova.cz) v sekci Obory na SZŠ uvádí u obou oborů detailní stránku s přehledem „Konkretizované učební plány“ podle ročníků nástupu.",
+        "U oboru Laboratorní asistent (53-43-M/01) web uvádí učební plány pro nástupové ročníky „2023 - 2027“ a „2025 - 2029“ (žádný ročník 2026), a status „Obor ve školním roce 2027/2028 plánujeme OTEVŘÍT – PLÁNOVANÝ“ s kapacitou 1 třída. To přesně odpovídá vzoru z CERMAT: obor byl otevřen pro nástup 2025, pro nástup 2026 otevřen nebyl, škola počítá s dalším otevřením pro nástup 2027.",
+        "U oboru Masér ve zdravotnictví (53-41-M/04) web uvádí učební plány pro nástupové ročníky „2024 - 2028“ a „2026 - 2030“ (žádný ročník 2025), a status „Obor ve školním roce 2027/2028 neplánujeme OTEVŘÍT“ s počtem přijímaných žáků 0. To přesně odpovídá vzoru z CERMAT: obor nebyl otevřen pro nástup 2025, pro nástup 2026 otevřen byl, další otevření není zatím plánováno.",
+        "Web ani stránky jednotlivých oborů neuvádějí explicitně, na kterém z obou pracovišť (Jeremenkova 754 vs. 1. máje 2208/11) se který obor vyučuje; kontaktní stránka školy popisuje Jeremenkova jako sídlo a 1. máje jako korespondenční adresu, zároveň však uvádí samostatnou telefonní ústřednu pro obě budovy jako funkční pracoviště školy – rozdělení výuky podle oboru zdroj nerozlišuje."
+      ],
+      "conclusion": "Zjištěné rozdíly v nabídce CERMAT mezi lety 2025 a 2026 u obou oborů (Laboratorní asistent chybí 2026, Masér ve zdravotnictví chybí 2025) odpovídají doložené praxi školy otevírat tyto dva menší zdravotnické obory nepravidelně podle zájmu/kapacity, nikoli jejich zániku či vzájemné záměně. Aktuální oficiální web školy explicitně uvádí historii nástupových ročníků obou oborů (chybějící ročník nástupu přesně v tom roce, kdy obor chyběl i v CERMAT) a u obou oborů zvlášť deklaruje plán/neplán dalšího otevření. Oba obory zůstávají zapsány v rejstříku MŠMT ve všech čtyřech snímcích 2025–2026 beze změny.",
+      "alternative_explanations": [
+        "Plán otevření pro školní rok 2027/2028 (u Laboratorního asistenta „plánovaný“, u Maséra „neplánujeme“) je vyjádření záměru ke dni kontroly (12. 9. 2026), nikoli závazný stav – škola jej může ještě změnit.",
+        "Nelze vyloučit, že jde o koordinované střídání kapacity mezi oběma obory (společné zdroje/učebny), zdroj to ale explicitně netvrdí."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["53-43-M/01 Laboratorní asistent (nástup 2025)", "53-41-M/04 Masér ve zdravotnictví (nástup 2024)"],
+        "to": ["53-43-M/01 Laboratorní asistent (plánovaný nástup 2027)", "53-41-M/04 Masér ve zdravotnictví (nástup 2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Jeremenkova 754/2, 703 00 Ostrava-Vítkovice",
+          "role": "sídlo / místo výuky",
+          "izo": "110030893",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku); web školy uvádí jako sídlo a hlavní budovu s vlastní telefonní ústřednou",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "1. máje 2208/11, 709 00 Ostrava-Mariánské Hory",
+          "role": "místo výuky (rejstřík); web školy jej uvádí jako korespondenční adresu, zároveň jako budovu s vlastní telefonní ústřednou",
+          "izo": "110030893",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600020070",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ 2025 a 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Laboratorní asistent 53-43-M/01 přítomen v nabídce 2025, chybí 2026; Masér ve zdravotnictví 53-41-M/04 přítomen v nabídce 2026, chybí 2025.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "K 31. 3. 2025 jsou u IZO 110030893 zapsány oba obory 53-43-M/01 i 53-41-M/04.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "K 31. 12. 2025 jsou u IZO 110030893 zapsány oba obory 53-43-M/01 i 53-41-M/04, beze změny.",
+          "applicable_period": "stav rejstříku k 31. 12. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "K 31. 3. 2026 jsou u IZO 110030893 zapsány oba obory 53-43-M/01 i 53-41-M/04, beze změny.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "K 30. 6. 2026 jsou u IZO 110030893 zapsány oba obory 53-43-M/01 i 53-41-M/04, beze změny; registrace obou oborů trvá i po roce 2026.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "https://www.zdrav-ova.cz/obory-na-szs/laboratorni-asisten/",
+          "title": "Laboratorní asistent 53-43-M/01 | ZDRAV-OVA.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Konkretizované učební plány pro nástupové ročníky 2023 a 2025 (ne 2026); text „Obor ve školním roce 2027/2028 plánujeme OTEVŘÍT – PLÁNOVANÝ“, kapacita 1 třída.",
+          "applicable_period": "aktuální stav webu k 12. 9. 2026, retrospektivně dokládá nástupové ročníky 2023 a 2025"
+        },
+        {
+          "url": "https://www.zdrav-ova.cz/obory-na-szs/maser-ve-zdravotnictvi/",
+          "title": "Masér ve zdravotnictví 53-41-M/04 | ZDRAV-OVA.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Konkretizované učební plány pro nástupové ročníky 2024 a 2026 (ne 2025); text „Obor ve školním roce 2027/2028 neplánujeme OTEVŘÍT“, počet přijímaných žáků 0.",
+          "applicable_period": "aktuální stav webu k 12. 9. 2026, retrospektivně dokládá nástupové ročníky 2024 a 2026"
+        },
+        {
+          "url": "https://www.zdrav-ova.cz/obory-na-szs",
+          "title": "Obory na SZŠ | ZDRAV-OVA.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Oba obory (Laboratorní asistent i Masér ve zdravotnictví) jsou k 12. 9. 2026 nadále vedeny mezi sedmi obory nabízenými na SZŠ.",
+          "applicable_period": "aktuální stav webu k 12. 9. 2026"
+        },
+        {
+          "url": "https://www.zdrav-ova.cz/kontakty",
+          "title": "Kontakty | ZDRAV-OVA.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Sídlo školy Jeremenkova 754/2; korespondenční adresa 1. máje 2208/11; obě adresy mají vlastní telefonní ústřednu jako funkční budova školy.",
+          "applicable_period": "aktuální stav webu k 12. 9. 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Které z obou pracovišť (Jeremenkova vs. 1. máje) je místem výuky konkrétně pro Laboratorního asistenta a pro Maséra ve zdravotnictví – zdroje to nerozlišují.",
+        "Zda škola skutečně otevře Laboratorního asistenta pro nástup 2027, resp. proč u Maséra ve zdravotnictví aktuálně neplánuje další otevření – jde o vyjádřený záměr ke dni kontroly, nikoli o závazné rozhodnutí."
+      ]
+    }
+  ]
+}

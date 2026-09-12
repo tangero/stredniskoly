@@ -1,0 +1,105 @@
+{
+  "task_id": "R-691000212",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrdil plnou kontinuitu subjektu: Gymnázium mezinárodních a veřejných vztahů Praha s.r.o. (REDIZO 691000212), sídlo Kuncova 1580/1, 155 00 Stodůlky, Praha, figuruje beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026), včetně IZO 181002931 („Střední škola“) s místy výuky Kuncova 1580/1 a Plzeňská 39/117, 150 00 Košíře, Praha. Registrované obory střední školy jsou ve všech snímcích shodné: 79-41-K/41 Gymnázium (4leté, denní, český), 79-41-K/61 Gymnázium (6leté, denní, český) a 79-41-K/81 Gymnázium (8leté, denní, dvojjazyčný/jiný). Žádný signál sloučení či rozdělení subjektu ani IZO nebyl zjištěn."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0164"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela čtyřleté gymnázium 79-41-K/41; v 1. kole JPZ 2026 tato nabídka chybí, zatímco šestileté 79-41-K/61 a osmileté 79-41-K/81 pokračují v obou letech.",
+        "Rejstřík MŠMT eviduje obor 79-41-K/41 u IZO 181002931 ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) beze změny; subjekt (REDIZO 691000212) i IZO jsou stabilní, žádný signál sloučení/rozdělení.",
+        "Na webu školy (www.gmvv.cz) existuje samostatná stránka přijímacího řízení pro čtyřletý obor s explicitním textem: „Vážení uchazeči, omlouváme se, ale pro školní rok 2026/2027 není tento obor nabízen.“",
+        "Obecná stránka o čtyřletém oboru (kód 79-41-K/41, motto „Projektovou výukou k všestrannosti“) na webu školy nadále existuje a popisuje obor jako součást vzdělávací nabídky, pouze bez aktuálně vyhlášeného přijímacího řízení.",
+        "Škola v roce 2026 vyhlásila 2. kolo přijímacího řízení s volnými místy pouze v osmiletém (3 místa) a šestiletém (8 míst) oboru; čtyřletý obor mezi nimi není uveden, což odpovídá zjištění, že se pro 2026/27 neotevírá."
+      ],
+      "conclusion": "Čtyřleté gymnázium 79-41-K/41 škola pro školní rok 2026/27 neotevírá – potvrzuje to přímo vlastní web školy (stránka přijímacího řízení pro čtyřletý obor s výslovným oznámením o neotevření oboru). Nejde o zánik oboru ani školy: obor 79-41-K/41 zůstává registrován v rejstříku MŠMT i k 30. 6. 2026 a škola jej nadále prezentuje jako součást své vzdělávací nabídky. Chybějící nabídka v CERMAT datech 2026 je tedy přerušení přijímacího řízení do tohoto oboru, nikoli jeho zrušení.",
+      "alternative_explanations": [
+        "Škola nevylučuje obnovení přijímacího řízení do čtyřletého oboru v některém z dalších let – text na webu hovoří jen o školním roce 2026/2027.",
+        "Stránka s oznámením o neotevření oboru nemá uvedeno datum publikace; nelze zcela vyloučit, že jde o starší text ponechaný na webu, byť obsahově odpovídá aktuálnímu stavu (chybějící nabídka v CERMAT 2026 i nezmínění čtyřletého oboru ve 2. kole přijímacího řízení)."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["79-41-K/41 (2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Kuncova 1580/1, 155 00 Stodůlky, Praha",
+          "role": "sídlo",
+          "izo": "691000212",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Kuncova 1580/1, 155 00 Stodůlky, Praha",
+          "role": "místo výuky",
+          "izo": "181002931",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Plzeňská 39/117, 150 00 Košíře, Praha",
+          "role": "místo výuky",
+          "izo": "181002931",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.gmvv.cz/pro-uchazece/ctyrlety-obor/prijimaci-rizeni",
+          "title": "Přijímací řízení – čtyřletý obor | Gymnázium mezinárodních a veřejných vztahů Praha",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola výslovně uvádí: „Vážení uchazeči, omlouváme se, ale pro školní rok 2026/2027 není tento obor nabízen.“ – čtyřletý obor 79-41-K/41 se pro 2026/27 neotevírá. Stránka nemá uvedeno datum publikace.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://www.gmvv.cz/pro-uchazece/ctyrlety-obor/",
+          "title": "Čtyřletý obor – Gymnázium mezinárodních a veřejných vztahů Praha",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 79-41-K/41 (motto „Projektovou výukou k všestrannosti“) je na webu nadále popsán jako součást vzdělávací nabídky školy; stránka neuvádí datum aktualizace.",
+          "applicable_period": "aktuální webová prezentace (staženo 2026-09-12)"
+        },
+        {
+          "url": "https://www.gmvv.cz",
+          "title": "Gymnázium mezinárodních a veřejných vztahů Praha – domovská stránka",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola v rámci 2. kola přijímacího řízení nabízí volná místa jen v osmiletém (3 místa) a šestiletém (8 míst) oboru; čtyřletý obor mezi nimi zmíněn není.",
+          "applicable_period": "2. kolo přijímacího řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 79-41-K/41 Gymnázium (4leté) zůstává u IZO 181002931 registrován; subjekt i IZO jsou beze změn.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-691000212",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 79-41-K/41 přítomna v roce 2025 a chybějící v roce 2026; nabídky 79-41-K/61 a 79-41-K/81 pokračují beze změny v obou letech.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda a od kdy se plánuje případné obnovení přijímacího řízení do čtyřletého oboru 79-41-K/41.",
+        "Přesné datum zveřejnění oznámení o neotevření čtyřletého oboru pro 2026/27 (na stránce školy chybí datum)."
+      ]
+    }
+  ]
+}

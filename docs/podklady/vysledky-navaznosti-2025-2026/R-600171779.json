@@ -1,0 +1,76 @@
+{
+  "task_id": "R-600171779",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu: Vyšší odborná škola a střední škola Boskovice, příspěvková organizace (REDIZO 600171779), sídlo Hybešova 982/53, 680 01 Boskovice, IZO 110250249 „Střední škola“ s místy výuky Hybešova 982/53 a Komenského 57/1, Boskovice, beze změny ve všech čtyřech snímcích. Obor 75-41-M/01 Sociální činnost není evidován v žádném ze čtyř snímků rejstříku (ani k 30. 6. 2026) – jde o zcela nový obor, jehož zápis do rejstříku k datu posledního snímku ještě neproběhl."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0375"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nově nabízí obor 75-41-M/01 Sociální činnost (4leté, denní), který v roce 2025 v nabídce nebyl; ostatních pět nabídek (Informační technologie, Veterinářství, Praktická sestra, Ekonomika a podnikání, Hotelnictví) pokračuje beze změny v obou letech.",
+        "Web školy má samostatnou podstránku k oboru s textem: „Nově otevřený obor sociální činnost přivítá své první studenty od září 2026“, uvádí délku a formu studia „4 roky, denní“ a kapacitu 30 přijímaných uchazečů.",
+        "Obor 75-41-M/01 není evidován v žádném ze čtyř snímků rejstříku MŠMT u IZO 110250249 – odstup zápisu do rejstříku, který nevyvrací závěr o novém oboru doloženém CERMAT nabídkou i webem školy."
+      ],
+      "conclusion": "Obor 75-41-M/01 Sociální činnost je nový obor, který škola otevírá poprvé od školního roku 2026/27 (první nástup studentů v září 2026). Nemá žádného předchůdce v nabídce školy z roku 2025.",
+      "alternative_explanations": [
+        "Formální zápis oboru do rejstříku MŠMT může proběhnout až po 30. 6. 2026; to otevření oboru od září 2026 neovlivňuje."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["75-41-M/01 (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Hybešova 982/53, 680 01 Boskovice",
+          "role": "sídlo",
+          "izo": "600171779",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Hybešova 982/53, 680 01 Boskovice; Komenského 57/1, 680 01 Boskovice",
+          "role": "místo výuky",
+          "izo": "110250249",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.vosassboskovice.cz/socialni-cinnost",
+          "title": "Sociální činnost – VOŠ a SŠ Boskovice",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola potvrzuje: nově otevřený obor Sociální činnost 75-41-M/01, první studenti od září 2026, 4leté denní studium, kapacita 30 uchazečů.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 75-41-M/01 Sociální činnost není u IZO 110250249 evidován ani k 30. 6. 2026 (odstup zápisu do rejstříku).",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600171779",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 75-41-M/01 Sociální činnost přítomna v roce 2026 a chybějící v roce 2025.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "task_id": "R-600025047",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu Střední škola, základní škola a mateřská škola pro zdravotně znevýhodněné, Brno, Kamenomlýnská 2 (REDIZO 600025047) i IZO 110300025 „Střední škola“ (Kamenomlýnská 124/2, 603 00 Pisárky, Brno) beze změny ve všech čtyřech snímcích. Ve všech čtyřech snímcích je u IZO 110300025 shodně zapsáno sedm oborů: 75-41-M/01 Sociální činnost, 66-51-E/01 Prodavačské práce, 69-53-H/01 Rekondiční a sportovní masér, 66-51-H/01 Prodavač (dobíhající), 63-41-M/02 Obchodní akademie, 75-41-E/01 Pečovatelské služby a 69-41-L/02 Masér sportovní a rekondiční – včetně snímku k 30. 6. 2026. Registrace oboru 69-41-L/02 tedy trvá i přesto, že v 1. kole JPZ 2026 chybí v nabídce CERMAT (na rozdíl od roku 2025, kdy nabízen byl)."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0139"],
+      "status": "pravděpodobné",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela maturitní obor 69-41-L/02 Masér sportovní a rekondiční (4leté, denní); v 1. kole JPZ 2026 tato nabídka chybí, zatímco Obchodní akademie 63-41-M/02 a Sociální činnost 75-41-M/01 pokračují v obou letech beze změny.",
+        "Obor 69-41-L/02 zůstává zapsán v rejstříku MŠMT u IZO 110300025 ve všech čtyřech snímcích včetně 30. 6. 2026 – registrace tedy formálně trvá.",
+        "Aktuální oficiální web školy (kamenomlynska.cz, ověřeno 12. 9. 2026) uvádí v sekci Střední škola jako maturitní obory pouze Obchodní akademii a Sociální činnost; obor Masér sportovní a rekondiční (69-41-L/02) v aktuální nabídce oborů střední školy vůbec neuveden, ani na hlavní stránce sekce, ani v hlavním menu.",
+        "Škola nadále samostatně nabízí příbuzný učební obor 69-53-H/01 Rekondiční a sportovní masér (3letý, závěrečná zkouška, výuční list); stránka tohoto oboru neobsahuje žádnou zmínku o maturitní variantě L/02 ani o jejím sloučení či nahrazení.",
+        "Stránka přijímacího řízení školy (kamenomlynska.cz/prijimaci-rizeni) obsahuje dokumenty vztažené ke školnímu roku 2025/2026 a mezi vypsanými maturitními obory opět uvádí jen Obchodní akademii a Sociální činnost; explicitní věta typu „obor Masér sportovní a rekondiční letos neotevíráme“ ani vysvětlení důvodu (nízký zájem, sloučení apod.) na webu školy dohledána nebyla, včetně sekce Aktuality.",
+        "Web nemá samostatnou podstránku „Obory“ (adresa kamenomlynska.cz/obory vrací chybu 404) a cílenou tiskovou zprávu k tomuto konkrétnímu oboru se přes běžné vyhledávání dohledat nepodařilo – v rámci session byl vyčerpán limit nástroje pro webové vyhledávání, dohledávání proto probíhalo přímým načítáním stránek školy."
+      ],
+      "conclusion": "Škola pro školní rok 2026/27 pravděpodobně nevyhlásila přijímací řízení do maturitního oboru 69-41-L/02 Masér sportovní a rekondiční – jak nabídka CERMAT 2026, tak aktuální struktura webu školy (kde je uveden jen učební obor 69-53-H/01 Rekondiční a sportovní masér a dva maturitní obory bez L/02) tomu nasvědčují. Obor přitom zůstává formálně zapsán v rejstříku MŠMT i k 30. 6. 2026, takže nejde o doložený zánik oboru, jen o pravděpodobné přerušení přijímacího řízení. Konkrétní důvod (nízký zájem uchazečů, záměr nahradit učebním oborem, organizační rozhodnutí) se na webu školy nepodařilo dohledat, a proto jej nelze potvrdit.",
+      "alternative_explanations": [
+        "Škola mohla obor sloučit nebo nahradit učebním oborem 69-53-H/01 Rekondiční a sportovní masér – shoda zaměření (masérství) tomu nasvědčuje, ale žádný zdroj toto sloučení výslovně nepotvrzuje ani nevylučuje.",
+        "Nevyhlášení mohlo být jednorázové (např. nedostatek přihlášek v aktuálním cyklu) a obor může být znovu otevřen v některém z dalších let, protože zůstává registrován.",
+        "Web školy nemusí být zcela aktuální nebo úplný (chybějící stránka /obory, absence archivu kritérií pro 2026/2027), takže nelze vyloučit, že relevantní informace existuje jinde (např. ve výroční zprávě nebo u zřizovatele), jen se ji nepodařilo dohledat."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["69-41-L/02 (2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Kamenomlýnská 124/2, 603 00 Pisárky, Brno",
+          "role": "sídlo",
+          "izo": "600025047",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Kamenomlýnská 124/2, 603 00 Pisárky, Brno",
+          "role": "místo výuky",
+          "izo": "110300025",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600025047",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 69-41-L/02 Masér sportovní a rekondiční přítomna v 1. kole JPZ 2025 a chybějící v 1. kole JPZ 2026; obory 63-41-M/02 a 75-41-M/01 pokračují v obou letech beze změny.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 69-41-L/02 Masér sportovní a rekondiční zůstává u IZO 110300025 registrován i k 30. 6. 2026; subjekt i IZO jsou beze změn oproti dřívějším snímkům.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "https://www.kamenomlynska.cz",
+          "title": "Kamenomlýnská – oficiální web školy (úvodní stránka a struktura menu)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Hlavní menu sekce Střední škola uvádí maturitní obory Obchodní akademie a Sociální činnost a učební obory (mj. Rekondiční a sportovní masér); obor Masér sportovní a rekondiční (L/02) v menu není.",
+          "applicable_period": "aktuální stav webu, září 2026"
+        },
+        {
+          "url": "https://www.kamenomlynska.cz/stredni-skola",
+          "title": "Střední škola – Kamenomlýnská",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Přehled oborů střední školy: maturitní jen Obchodní akademie a Sociální činnost, učební mj. Rekondiční a sportovní masér; žádné vysvětlení k oboru L/02 na stránce není.",
+          "applicable_period": "aktuální stav webu, září 2026"
+        },
+        {
+          "url": "https://www.kamenomlynska.cz/rekondicni-a-sportovni-maser",
+          "title": "Rekondiční a sportovní masér – Kamenomlýnská",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Popis učebního oboru 69-53-H/01 (3 roky, závěrečná zkouška); bez zmínky o maturitní variantě 69-41-L/02 nebo jejím sloučení.",
+          "applicable_period": "aktuální stav webu, září 2026"
+        },
+        {
+          "url": "https://www.kamenomlynska.cz/prijimaci-rizeni",
+          "title": "Přijímací řízení – Kamenomlýnská",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Dokumenty k přijímacímu řízení (školní rok 2025/2026) vypisují maturitní obory jen Obchodní akademii a Sociální činnost a učební obory vč. Rekondiční a sportovní masér; obor Masér sportovní a rekondiční se v dokumentech neobjevuje, bez explicitního odůvodnění.",
+          "applicable_period": "přijímací řízení 2025/2026 (nejaktuálnější dostupný dokument k datu ověření)"
+        },
+        {
+          "url": "https://www.kamenomlynska.cz/aktuality",
+          "title": "Aktuality – Kamenomlýnská",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V přehledu aktualit (např. Zahájení školního roku 2026/2027) nebyla dohledána zpráva o zrušení, sloučení nebo neotevření oboru Masér sportovní a rekondiční.",
+          "applicable_period": "aktuální stav webu, září 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "manual_review",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Proč škola pro rok 2026/27 nevyhlásila přijímací řízení do 69-41-L/02 – nízký zájem uchazečů, záměr nahradit učebním oborem 69-53-H/01, nebo jiný organizační důvod?",
+        "Je plánováno obnovení přijímacího řízení do tohoto oboru v některém z dalších let, dokud zůstává registrován?",
+        "Limit nástroje pro webové vyhledávání byl v této session vyčerpán – stálo by za doplňující kontrolu přes plnohodnotné vyhledávání (např. výroční zprávu školy nebo zprávy zřizovatele/kraje k síti oborů)."
+      ]
+    }
+  ]
+}

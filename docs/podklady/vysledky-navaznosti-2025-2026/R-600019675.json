@@ -1,0 +1,248 @@
+{
+  "task_id": "R-600019675",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrdil kontinuitu subjektu: Střední zdravotnická škola a Vyšší odborná škola zdravotnická, Plzeň, Karlovarská 99 (REDIZO 600019675, IZO 110030966 „Střední škola“, sídlo i místo výuky Karlovarská 1210/99, 323 00 Bolevec, Plzeň) figuruje beze změny názvu, sídla a IZO ve všech čtyřech snímcích. Obor 53-44-M/03 Asistent zubního technika (4leté denní) je zapsán ve VŠECH čtyřech snímcích včetně 2025-03-31. Obor 53-41-M/02 Nutriční asistent (4leté denní) NENÍ zapsán ve snímku 2025-03-31, ale je zapsán ve snímcích 2025-12-31, 2026-03-31 a 2026-06-30 – tedy byl do rejstříku nově zapsán mezi březnem a prosincem 2025. Ostatní obory školy (Praktická sestra 53-41-M/03 denní i večerní, Laboratorní asistent 53-43-M/01, Masér sportovní a rekondiční 69-41-L/02, Zdravotnické lyceum 78-42-M/04, Ošetřovatel 53-41-H/01) jsou ve všech snímcích shodné a beze změny."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0364"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nově nabízí obor 53-41-M/02 Nutriční asistent (4leté, denní, český); v 1. kole JPZ 2025 tato nabídka chybí.",
+        "Rejstřík MŠMT obor 53-41-M/02 u IZO 110030966 NEeviduje ve snímku 2025-03-31, ale eviduje jej ve snímcích 2025-12-31, 2026-03-31 i 2026-06-30 – zápis do rejstříku proběhl mezi březnem a prosincem 2025, tedy krátce před vyhlášením přijímacího řízení pro školní rok 2026/27.",
+        "Web školy (www.zdravka-plzen.cz) má pro obor samostatnou stránku „Nutriční asistent – denní forma studia“ (kód 53-41-M/02, 4 roky denní) v aktuální nabídce SZŠ pro přijímací řízení 2026/27, vedle Praktické sestry, Laboratorního asistenta, Asistenta zubního technika, Zdravotnického lycea a Maséra sportovního a rekondičního.",
+        "Stránka přijímacího řízení SZŠ pro školní rok 2026/27 uvádí, že školní vzdělávací program pro obor je dostupný v dokumentu s označením „UP-NA.pdf“ datovaným listopadem 2025 – to odpovídá vzniku ŠVP těsně před zápisem oboru do rejstříku (mezi 2025-03-31 a 2025-12-31).",
+        "Výsledky 1. kola přijímacího řízení na SZŠ pro školní rok 2025/26 (zveřejněno 15. 5. 2025) obor Nutriční asistent neobsahují – mezi zveřejněnými výsledkovými listinami jsou jen Praktická sestra, Zdravotnické lyceum, Laboratorní asistent a Masér sportovní a rekondiční.",
+        "Výsledky 1. kola přijímacího řízení na SZŠ pro školní rok 2026/27 (zveřejněno 15. 5. 2026) obor Nutriční asistent naopak obsahují spolu s ostatními šesti obory SZŠ.",
+        "Ve výsledkových listinách pro školní rok 2024/25 (15. 5. 2024) obor Nutriční asistent rovněž chybí – nenašla se žádná stopa dřívějšího otevření oboru."
+      ],
+      "conclusion": "Obor 53-41-M/02 Nutriční asistent je na této škole skutečně nový obor, poprvé nabízený a obsazovaný v 1. kole přijímacího řízení pro školní rok 2026/27. Podporuje to shoda tří nezávislých zdrojů: (1) obor chybí v rejstříku MŠMT k 31. 3. 2025 a objevuje se až ve snímku k 31. 12. 2025, (2) škola k němu má školní vzdělávací program datovaný listopadem 2025, (3) obor chybí ve výsledcích přijímacího řízení školy pro roky 2024/25 i 2025/26 a poprvé se objevuje ve výsledcích pro rok 2026/27. Obor nemá žádného předchůdce v nabídce školy z roku 2025.",
+      "alternative_explanations": [
+        "Nelze zcela vyloučit, že škola měla obor akreditován ještě dříve a jen jej fakticky neotvírala; dostupné zdroje (rejstřík, ŠVP z listopadu 2025, výsledky přijímacích řízení 2024/25 a 2025/26) tuto alternativu ale nepodporují."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["53-41-M/02 Nutriční asistent, denní studium (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Karlovarská 1210/99, 323 00 Bolevec, Plzeň",
+          "role": "sídlo",
+          "izo": "600019675",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Karlovarská 1210/99, 323 00 Bolevec, Plzeň",
+          "role": "místo výuky",
+          "izo": "110030966",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.zdravka-plzen.cz/obor-nutricni-asistent-denni-forma-studia/",
+          "title": "Obor Nutriční asistent – denní forma studia | Zdravka Plzeň",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola má samostatnou stránku oboru Nutriční asistent (kód 53-41-M/02, 4 roky denní, maturita) jako součást aktuální nabídky SZŠ.",
+          "applicable_period": "aktuální nabídka školy (2026)"
+        },
+        {
+          "url": "https://www.zdravka-plzen.cz/szs-prijimaci-rizeni/",
+          "title": "SZŠ – přijímací řízení | Zdravka Plzeň",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Pro školní rok 2026/27 je mezi šesti nabízenými obory SZŠ i Nutriční asistent; ŠVP oboru je uveden v dokumentu „UP-NA.pdf“ z listopadu 2025.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://www.zdravka-plzen.cz/vysledky-prijimaciho-rizeni-na-skolni-rok-2025-26/",
+          "title": "Výsledky přijímacího řízení na školní rok 2025/26 | Zdravka Plzeň",
+          "published_at": "2025-05-15",
+          "checked_at": "2026-09-12",
+          "supports": "Výsledkové listiny 1. kola pro rok 2025/26 obsahují jen Praktickou sestru, Zdravotnické lyceum, Laboratorního asistenta a Maséra sportovního a rekondičního – Nutriční asistent chybí.",
+          "applicable_period": "přijímací řízení 2025/26"
+        },
+        {
+          "url": "https://www.zdravka-plzen.cz/vysledky-prijimaciho-rizeni-na-stredni-skolu-pro-skolni-rok-2026-27/",
+          "title": "Výsledky přijímacího řízení na střední školu pro školní rok 2026/27 | Zdravka Plzeň",
+          "published_at": "2026-05-15",
+          "checked_at": "2026-09-12",
+          "supports": "Výsledkové listiny 1. kola pro rok 2026/27 obsahují všech šest oborů SZŠ včetně Nutričního asistenta.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://www.zdravka-plzen.cz/vysledkove-listiny-prijimacich-zkousek-na-skolni-rok-2024-25/",
+          "title": "Výsledkové listiny přijímacích zkoušek na školní rok 2024/25 | Zdravka Plzeň",
+          "published_at": "2024-05-15",
+          "checked_at": "2026-09-12",
+          "supports": "Ani ve výsledcích pro rok 2024/25 se obor Nutriční asistent neobjevuje – žádná stopa dřívějšího otevření oboru na této škole.",
+          "applicable_period": "přijímací řízení 2024/25"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": "2025-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Obor 53-41-M/02 Nutriční asistent u IZO 110030966 k tomuto datu v rejstříku není zapsán.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": "2025-12-31",
+          "checked_at": "2026-09-12",
+          "supports": "Obor 53-41-M/02 Nutriční asistent je u IZO 110030966 nově zapsán (poprvé z porovnávaných snímků).",
+          "applicable_period": "stav rejstříku k 31. 12. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": "2026-06-30",
+          "checked_at": "2026-09-12",
+          "supports": "Obor 53-41-M/02 Nutriční asistent zůstává u IZO 110030966 zapsán i k 30. 6. 2026.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600019675",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 53-41-M/02 Nutriční asistent přítomna v roce 2026 a chybějící v roce 2025; ostatní obory (kromě 53-44-M/03, viz Q0365) beze změny.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přesné datum zápisu oboru do rejstříku mezi 31. 3. 2025 a 31. 12. 2025 nebylo dohledáno (chybí snímek s jemnějším rozlišením)."
+      ]
+    },
+    {
+      "issue_ids": ["Q0365"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nabízí obor 53-44-M/03 Asistent zubního technika (4leté, denní, český); v 1. kole JPZ 2025 tato nabídka chybí.",
+        "Rejstřík MŠMT eviduje obor 53-44-M/03 u IZO 110030966 nepřetržitě ve VŠECH čtyřech snímcích včetně 2025-03-31 – obor byl registrován už před rokem 2025 a registrace nikdy nezanikla.",
+        "Web školy má pro obor samostatnou stránku „SZŠ – obor Asistent zubního technika“, součástí webu jsou i starší články: administrativní oznámení ze 18. 1. 2023 o změně termínu zkoušky manuální zručnosti pro uchazeče tohoto oboru a samostatná stránka výsledků přijímacího řízení pro rok 2023/2024, kde je obor Asistent zubního technika mezi obsazovanými obory uveden.",
+        "Výsledkové listiny přijímacího řízení pro školní rok 2024/25 (zveřejněno 15. 5. 2024) obor Asistent zubního technika neobsahují – mezi obory jsou jen Praktická sestra, Laboratorní asistent, Zdravotnické lyceum a Masér sportovní a rekondiční.",
+        "Výsledky přijímacího řízení pro školní rok 2025/26 (zveřejněno 15. 5. 2025) obor Asistent zubního technika rovněž neobsahují (stejná čtveřice oborů jako v roce 2024/25).",
+        "Výsledky přijímacího řízení pro školní rok 2026/27 (zveřejněno 15. 5. 2026) obor Asistent zubního technika naopak obsahují spolu s ostatními pěti obory SZŠ včetně Nutričního asistenta.",
+        "Obor tedy byl skutečně obsazován v přijímacím řízení pro rok 2023/24, poté dvě po sobě jdoucí přijímací řízení (2024/25 a 2025/26) nebyla vyhlášena, a pro rok 2026/27 bylo přijímací řízení opět vyhlášeno a obsazeno – po celou dobu zůstal obor nepřetržitě zapsán v rejstříku MŠMT."
+      ],
+      "conclusion": "Obor 53-44-M/03 Asistent zubního technika nezanikl a nejde o nový obor – jde o obor s dlouhodobě přerušovaným (nikoli každoročním) přijímacím řízením. Doloženo je obsazování v roce 2023/24, výpadek přijímacího řízení v letech 2024/25 a 2025/26, a obnovení přijímacího řízení pro rok 2026/27. Nepřiřazená nabídka 2026 v datech CERMAT tedy odpovídá reálnému obnovení nabídky téhož, nepřetržitě registrovaného oboru, nikoli nově založenému oboru.",
+      "alternative_explanations": [
+        "Nelze vyloučit, že obor byl obsazován i v jiných letech mimo sledované období (např. 2022/23 nebo dříve); to na závěr o kontinuitě oboru nemá vliv."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["53-44-M/03 Asistent zubního technika, denní studium (naposledy obsazeno 2023/24)"],
+        "to": ["53-44-M/03 Asistent zubního technika, denní studium (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Karlovarská 1210/99, 323 00 Bolevec, Plzeň",
+          "role": "sídlo",
+          "izo": "600019675",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Karlovarská 1210/99, 323 00 Bolevec, Plzeň",
+          "role": "místo výuky",
+          "izo": "110030966",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.zdravka-plzen.cz/szs-obor-asistent-zubniho-technika/",
+          "title": "SZŠ – obor Asistent zubního technika | Zdravka Plzeň",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola má samostatnou stránku oboru Asistent zubního technika (kód 53-44-M/03, 4 roky denní, maturita) jako součást aktuální i historické nabídky SZŠ.",
+          "applicable_period": "aktuální nabídka školy (2026)"
+        },
+        {
+          "url": "https://www.zdravka-plzen.cz/pro-uchazece-oboru-asistent-zubniho-technika/",
+          "title": "Pro uchazeče oboru Asistent zubního technika | Zdravka Plzeň",
+          "published_at": "2023-01-18",
+          "checked_at": "2026-09-12",
+          "supports": "Administrativní oznámení školy o změně termínu zkoušky manuální zručnosti pro uchazeče oboru z roku 2023 – dokládá reálné probíhající přijímací řízení do oboru v roce 2023.",
+          "applicable_period": "přijímací řízení 2023"
+        },
+        {
+          "url": "https://www.zdravka-plzen.cz/vysledky-prijimaciho-rizeni-pro-rok-2023-2024/",
+          "title": "Výsledky přijímacího řízení pro rok 2023/2024 | Zdravka Plzeň",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor Asistent zubního technika je uveden mezi obsazovanými obory ve výsledcích přijímacího řízení pro školní rok 2023/24.",
+          "applicable_period": "přijímací řízení 2023/24"
+        },
+        {
+          "url": "https://www.zdravka-plzen.cz/vysledkove-listiny-prijimacich-zkousek-na-skolni-rok-2024-25/",
+          "title": "Výsledkové listiny přijímacích zkoušek na školní rok 2024/25 | Zdravka Plzeň",
+          "published_at": "2024-05-15",
+          "checked_at": "2026-09-12",
+          "supports": "Obor Asistent zubního technika chybí mezi obsazovanými obory pro rok 2024/25.",
+          "applicable_period": "přijímací řízení 2024/25"
+        },
+        {
+          "url": "https://www.zdravka-plzen.cz/vysledky-prijimaciho-rizeni-na-skolni-rok-2025-26/",
+          "title": "Výsledky přijímacího řízení na školní rok 2025/26 | Zdravka Plzeň",
+          "published_at": "2025-05-15",
+          "checked_at": "2026-09-12",
+          "supports": "Obor Asistent zubního technika chybí mezi obsazovanými obory pro rok 2025/26 (shoduje se s chybějící nabídkou v datech CERMAT 2025).",
+          "applicable_period": "přijímací řízení 2025/26"
+        },
+        {
+          "url": "https://www.zdravka-plzen.cz/vysledky-prijimaciho-rizeni-na-stredni-skolu-pro-skolni-rok-2026-27/",
+          "title": "Výsledky přijímacího řízení na střední školu pro školní rok 2026/27 | Zdravka Plzeň",
+          "published_at": "2026-05-15",
+          "checked_at": "2026-09-12",
+          "supports": "Obor Asistent zubního technika je opět mezi obsazovanými obory pro rok 2026/27.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": "2025-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Obor 53-44-M/03 Asistent zubního technika je u IZO 110030966 zapsán už k tomuto datu, tedy před přijímacím řízením 2025.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": "2026-06-30",
+          "checked_at": "2026-09-12",
+          "supports": "Obor 53-44-M/03 Asistent zubního technika zůstává u IZO 110030966 zapsán nepřetržitě i k 30. 6. 2026.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600019675",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 53-44-M/03 Asistent zubního technika přítomna v roce 2026 a chybějící v roce 2025; ostatní obory (kromě 53-41-M/02, viz Q0364) beze změny.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Nebylo ověřeno, zda obor běžel i v letech 2021/22 nebo 2022/23 (mimo dostupné archivní stránky webu); pro závěr o kontinuitě to není nutné."
+      ]
+    }
+  ]
+}

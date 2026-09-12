@@ -1,0 +1,361 @@
+{
+  "task_id": "R-600013855",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": [
+      "2025-03-31",
+      "2025-12-31",
+      "2026-03-31",
+      "2026-06-30"
+    ],
+    "summary": "Rejstřík potvrzuje nepřerušenou existenci REDIZO 600013855 „Střední škola strojírenská a elektrotechnická Brno, příspěvková organizace“ (sídlo Trnkova 2482/113, Líšeň, Brno) ve všech čtyřech snímcích. IZO 000380431 „Střední škola“ je registrováno beze změny s obory 23-45-L/01 Mechanik seřizovač a 26-41-L/01 Mechanik elektrotechnik (a dalšími: Technické lyceum, Elektrotechnika, Provozní elektrotechnika, Provozní technika, Nástrojař, Obráběč kovů, Elektrikář - silnoproud, Strojní mechanik ad.) ve všech snímcích 31. 3. 2025 – 30. 6. 2026. Místa výuky Trnkova 2482/113 a Gajdošova 1300/18 jsou uvedena ve všech snímcích; ve snímku k 30. 6. 2026 přibylo třetí místo výuky Pionýrská 254/23, Ponava, Brno – jde o doplnění záznamu mimo rozsah zadaných otázek, příčina se nezkoumá."
+  },
+  "findings": [
+    {
+      "issue_ids": [
+        "Q0082",
+        "Q0222"
+      ],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 23-45-L/01 Mechanik seřizovač se zaměřením „Elektromechanik pro zařízení a přístroje“; v 1. kole JPZ 2026 nabízí týž obor a kód se zaměřením „elektromechanik pro zařízení a přístroje (L0+H)“ – jde o jiný zápis textu (malá počáteční písmena, doplněný dovětek „(L0+H)“), délka, forma i jazyk výuky zůstávají shodné.",
+        "Rejstřík MŠMT eviduje obor 23-45-L/01 u IZO 000380431 beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) – obor nebyl v žádném období vyřazen.",
+        "Škola popisuje program jako „Mechanik seřizovač s Elektromechanikem pro zařízení a přístroje“ – žák získává výuční list Elektromechanik a maturitu v oboru Mechanik seřizovač; odpovídá dovětku „(L0+H)“ v datech 2026."
+      ],
+      "conclusion": "Jde o pokračování téhož oboru 23-45-L/01 a téhož zaměření; dovětek „(L0+H)“ v datech 2026 pouze upřesňuje, že jde o program spojující maturitní vzdělání (L0) s výučním listem v příbuzném učebním oboru (H), jak popisuje i web školy. Nejde o nový ani o zrušený obor či zaměření.",
+      "alternative_explanations": [
+        "Podklady nevylučují dílčí úpravu obsahu ŠVP mezi lety 2025 a 2026 – tu k dispozici nemáme."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": [
+          "23-45-L/01 Elektromechanik pro zařízení a přístroje (2025)"
+        ],
+        "to": [
+          "23-45-L/01 elektromechanik pro zařízení a přístroje (L0+H) (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "Trnkova 2482/113, 628 00 Líšeň, Brno",
+          "role": "sídlo",
+          "izo": "600013855",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Trnkova 2482/113, 628 00 Líšeň, Brno",
+          "role": "místo výuky",
+          "izo": "000380431",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Gajdošova 1300/18, 615 00 Židenice, Brno",
+          "role": "místo výuky",
+          "izo": "000380431",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 23-45-L/01 zůstává u IZO 000380431 registrován beze změny.",
+          "applicable_period": "stav rejstříku k 2026-06-30"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 23-45-L/01 byl u IZO 000380431 registrován už k 31. 3. 2025.",
+          "applicable_period": "stav rejstříku k 2025-03-31"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600013855",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 23-45-L/01 / „Elektromechanik pro zařízení a přístroje“ (2025) a „elektromechanik pro zařízení a přístroje (L0+H)“ (2026) v 1. kole JPZ.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://www.sssebrno.cz/obory/mechanik-serizovac",
+          "title": "Obory – Střední škola strojírenská a elektrotechnická Brno (sssebrno.cz)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola popisuje program jako „Mechanik seřizovač s Elektromechanikem pro zařízení a přístroje“ – žák získává výuční list Elektromechanik a maturitu v oboru Mechanik seřizovač; odpovídá dovětku „(L0+H)“ v datech 2026.",
+          "applicable_period": "aktuální nabídka oborů (2026)"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": [
+        "Q0083",
+        "Q0221"
+      ],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 23-45-L/01 Mechanik seřizovač se zaměřením „Obráběč kovů“; v 1. kole JPZ 2026 nabízí týž obor a kód se zaměřením „obráběč kovů (L0+H)“ – jde o jiný zápis textu (malá počáteční písmena, doplněný dovětek „(L0+H)“), délka, forma i jazyk výuky zůstávají shodné.",
+        "Rejstřík MŠMT eviduje obor 23-45-L/01 u IZO 000380431 beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) – obor nebyl v žádném období vyřazen.",
+        "Škola popisuje druhou variantu programu jako „Mechanik seřizovač s Obráběčem kovů“ – shoduje se se zaměřením „obráběč kovů (L0+H)“ v datech 2026."
+      ],
+      "conclusion": "Jde o pokračování téhož oboru 23-45-L/01 a téhož zaměření; dovětek „(L0+H)“ v datech 2026 pouze upřesňuje, že jde o program spojující maturitní vzdělání (L0) s výučním listem v příbuzném učebním oboru (H), jak popisuje i web školy. Nejde o nový ani o zrušený obor či zaměření.",
+      "alternative_explanations": [
+        "Podklady nevylučují dílčí úpravu obsahu ŠVP mezi lety 2025 a 2026 – tu k dispozici nemáme."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": [
+          "23-45-L/01 Obráběč kovů (2025)"
+        ],
+        "to": [
+          "23-45-L/01 obráběč kovů (L0+H) (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "Trnkova 2482/113, 628 00 Líšeň, Brno",
+          "role": "sídlo",
+          "izo": "600013855",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Trnkova 2482/113, 628 00 Líšeň, Brno",
+          "role": "místo výuky",
+          "izo": "000380431",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Gajdošova 1300/18, 615 00 Židenice, Brno",
+          "role": "místo výuky",
+          "izo": "000380431",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 23-45-L/01 zůstává u IZO 000380431 registrován beze změny.",
+          "applicable_period": "stav rejstříku k 2026-06-30"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 23-45-L/01 byl u IZO 000380431 registrován už k 31. 3. 2025.",
+          "applicable_period": "stav rejstříku k 2025-03-31"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600013855",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 23-45-L/01 / „Obráběč kovů“ (2025) a „obráběč kovů (L0+H)“ (2026) v 1. kole JPZ.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://www.sssebrno.cz/obory/mechanik-serizovac",
+          "title": "Obory – Střední škola strojírenská a elektrotechnická Brno (sssebrno.cz)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola popisuje druhou variantu programu jako „Mechanik seřizovač s Obráběčem kovů“ – shoduje se se zaměřením „obráběč kovů (L0+H)“ v datech 2026.",
+          "applicable_period": "aktuální nabídka oborů (2026)"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": [
+        "Q0084",
+        "Q0224"
+      ],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 26-41-L/01 Mechanik elektrotechnik se zaměřením „Elektromechanik pro zařízení a přístroje“; v 1. kole JPZ 2026 nabízí týž obor a kód se zaměřením „elektromechanik pro zařízení a přístroje (L0+H)“ – jde o jiný zápis textu (malá počáteční písmena, doplněný dovětek „(L0+H)“), délka, forma i jazyk výuky zůstávají shodné.",
+        "Rejstřík MŠMT eviduje obor 26-41-L/01 u IZO 000380431 beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) – obor nebyl v žádném období vyřazen.",
+        "Škola na stránce oboru Mechanik elektrotechnik zmiňuje zaměření „Elektromechanik pro zařízení a přístroje“ jako součást nabídky kombinovaného studia s výučním listem."
+      ],
+      "conclusion": "Jde o pokračování téhož oboru 26-41-L/01 a téhož zaměření; dovětek „(L0+H)“ v datech 2026 pouze upřesňuje, že jde o program spojující maturitní vzdělání (L0) s výučním listem v příbuzném učebním oboru (H), jak popisuje i web školy. Nejde o nový ani o zrušený obor či zaměření.",
+      "alternative_explanations": [
+        "Podklady nevylučují dílčí úpravu obsahu ŠVP mezi lety 2025 a 2026 – tu k dispozici nemáme."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": [
+          "26-41-L/01 Elektromechanik pro zařízení a přístroje (2025)"
+        ],
+        "to": [
+          "26-41-L/01 elektromechanik pro zařízení a přístroje (L0+H) (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "Trnkova 2482/113, 628 00 Líšeň, Brno",
+          "role": "sídlo",
+          "izo": "600013855",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Trnkova 2482/113, 628 00 Líšeň, Brno",
+          "role": "místo výuky",
+          "izo": "000380431",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Gajdošova 1300/18, 615 00 Židenice, Brno",
+          "role": "místo výuky",
+          "izo": "000380431",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 26-41-L/01 zůstává u IZO 000380431 registrován beze změny.",
+          "applicable_period": "stav rejstříku k 2026-06-30"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 26-41-L/01 byl u IZO 000380431 registrován už k 31. 3. 2025.",
+          "applicable_period": "stav rejstříku k 2025-03-31"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600013855",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 26-41-L/01 / „Elektromechanik pro zařízení a přístroje“ (2025) a „elektromechanik pro zařízení a přístroje (L0+H)“ (2026) v 1. kole JPZ.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://www.sssebrno.cz/obory/mechanik-elektrotechnik",
+          "title": "Obory – Střední škola strojírenská a elektrotechnická Brno (sssebrno.cz)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola na stránce oboru Mechanik elektrotechnik zmiňuje zaměření „Elektromechanik pro zařízení a přístroje“ jako součást nabídky kombinovaného studia s výučním listem.",
+          "applicable_period": "aktuální nabídka oborů (2026)"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": [
+        "Q0085",
+        "Q0223"
+      ],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 26-41-L/01 Mechanik elektrotechnik se zaměřením „Elektrikář - silnoproud“; v 1. kole JPZ 2026 nabízí týž obor a kód se zaměřením „elektrikář - silnoproud (L0+H)“ – jde o jiný zápis textu (malá počáteční písmena, doplněný dovětek „(L0+H)“), délka, forma i jazyk výuky zůstávají shodné.",
+        "Rejstřík MŠMT eviduje obor 26-41-L/01 u IZO 000380431 beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) – obor nebyl v žádném období vyřazen.",
+        "Škola popisuje program „Mechanik elektrotechnik s Elektrikářem silnoproud“ jako čtyřleté denní studium kombinující obory 26-41-L/01 a 26-51-H/02, zakončené maturitní zkouškou a výučním listem – odpovídá dovětku „(L0+H)“ v datech 2026."
+      ],
+      "conclusion": "Jde o pokračování téhož oboru 26-41-L/01 a téhož zaměření; dovětek „(L0+H)“ v datech 2026 pouze upřesňuje, že jde o program spojující maturitní vzdělání (L0) s výučním listem v příbuzném učebním oboru (H), jak popisuje i web školy. Nejde o nový ani o zrušený obor či zaměření.",
+      "alternative_explanations": [
+        "Podklady nevylučují dílčí úpravu obsahu ŠVP mezi lety 2025 a 2026 – tu k dispozici nemáme."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": [
+          "26-41-L/01 Elektrikář - silnoproud (2025)"
+        ],
+        "to": [
+          "26-41-L/01 elektrikář - silnoproud (L0+H) (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "Trnkova 2482/113, 628 00 Líšeň, Brno",
+          "role": "sídlo",
+          "izo": "600013855",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Trnkova 2482/113, 628 00 Líšeň, Brno",
+          "role": "místo výuky",
+          "izo": "000380431",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Gajdošova 1300/18, 615 00 Židenice, Brno",
+          "role": "místo výuky",
+          "izo": "000380431",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 26-41-L/01 zůstává u IZO 000380431 registrován beze změny.",
+          "applicable_period": "stav rejstříku k 2026-06-30"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 26-41-L/01 byl u IZO 000380431 registrován už k 31. 3. 2025.",
+          "applicable_period": "stav rejstříku k 2025-03-31"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600013855",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 26-41-L/01 / „Elektrikář - silnoproud“ (2025) a „elektrikář - silnoproud (L0+H)“ (2026) v 1. kole JPZ.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://www.sssebrno.cz/obory/mechanik-elektrotechnik",
+          "title": "Obory – Střední škola strojírenská a elektrotechnická Brno (sssebrno.cz)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola popisuje program „Mechanik elektrotechnik s Elektrikářem silnoproud“ jako čtyřleté denní studium kombinující obory 26-41-L/01 a 26-51-H/02, zakončené maturitní zkouškou a výučním listem – odpovídá dovětku „(L0+H)“ v datech 2026.",
+          "applicable_period": "aktuální nabídka oborů (2026)"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

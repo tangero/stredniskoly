@@ -1,0 +1,88 @@
+{
+  "task_id": "R-600019624",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Subjekt Střední zdravotnická škola, Tábor, Mostecká 1912 (REDIZO 600019624) je ve všech čtyřech snímcích beze změny, včetně jediného IZO střední školy 110010256 (místo výuky Mostecká 1912/19, Tábor). Obor 78-42-M/04 Zdravotnické lyceum NENÍ u tohoto IZO zapsán v žádném ze čtyř snímků, ani k 30. 6. 2026 – nejde tedy o obor, který by rejstřík k datu poslední kontroly evidoval; zapsané obory jsou jen Praktická sestra, Ošetřovatel a dobíhající kódy Zdravotnického asistenta. CERMAT data zároveň uvádějí u této REDIZO v roce 2025 zkrácený název „Střední zdravotnická škola“ a v roce 2026 plný název „Střední zdravotnická škola, Tábor, Mostecká 1912“ – jde o pouhý rozdíl v zápisu textu názvu mezi ročníky dat CERMAT, nikoli o změnu doloženou rejstříkem, a příčina se dále nezkoumala."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0346"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela jediný obor: 53-41-M/03 Praktická sestra.",
+        "V 1. kole JPZ 2026 přibyl k Praktické sestře nový obor 78-42-M/04 Zdravotnické lyceum.",
+        "Obor 78-42-M/04 není u REDIZO 600019624 zapsán v žádném ze čtyř snímků rejstříku MŠMT (2025-03-31 až 2026-06-30) – zápis v rejstříku dosud neproběhl.",
+        "Vlastní web školy (szs-tabor.cz) má samostatnou stránku k oboru Zdravotnické lyceum s poznámkou přímo u kódu oboru: „(nově připravujeme od 1. 9. 2026)“ – škola sama obor označuje jako nově zaváděný od školního roku 2026/2027.",
+        "Web školy v přehledu studijních oborů uvádí Zdravotnické lyceum jako třetí obor vedle Ošetřovatele a Praktické sestry, v souladu s nabídkou CERMAT 2026."
+      ],
+      "conclusion": "Zdravotnické lyceum 78-42-M/04 je na této škole skutečně nový obor, zaváděný od školního roku 2026/2027, jak potvrzuje vlastní vyjádření školy na jejím webu. Chybějící zápis v rejstříku MŠMT i ve snímku k 30. 6. 2026 odpovídá běžnému zpoždění aktualizace rejstříku popsanému v zadání rešerše, nevyvrací tedy otevření oboru doložené CERMAT nabídkou 2026 a webem školy.",
+      "alternative_explanations": [
+        "Nelze vyloučit, že k formálnímu zápisu oboru do rejstříku MŠMT nakonec nedojde nebo dojde s podmínkami odlišnými od záměru; k datu zpracování o tom ale žádný zdroj neinformuje."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["78-42-M/04 Zdravotnické lyceum (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Mostecká 1912/19, 390 02 Tábor",
+          "role": "sídlo",
+          "izo": "600019624",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Mostecká 1912/19, 390 02 Tábor",
+          "role": "místo výuky",
+          "izo": "110010256",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.szs-tabor.cz/studium/zdravotnicke-lyceum/",
+          "title": "Zdravotnické lyceum – Střední zdravotnická škola, Tábor",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stránka oboru přímo uvádí u kódu 78-42-M/04 poznámku „(nově připravujeme od 1. 9. 2026)“ – potvrzuje, že jde o nový obor od školního roku 2026/2027.",
+          "applicable_period": "od školního roku 2026/2027"
+        },
+        {
+          "url": "https://www.szs-tabor.cz/prijimaci-rizeni/",
+          "title": "Přijímací řízení – Střední zdravotnická škola, Tábor",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Zdravotnické lyceum je uvedeno mezi třemi studijními obory školy vedle Ošetřovatele a Praktické sestry.",
+          "applicable_period": "aktuální stav webu, bez uvedeného data"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 78-42-M/04 není u IZO 110010256 evidován ani k 30. 6. 2026 (odstup zápisu do rejstříku).",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600019624",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 78-42-M/04 Zdravotnické lyceum chybí v 1. kole JPZ 2025 a je přítomna v 1. kole JPZ 2026; v roce 2025 je REDIZO uvedeno pod zkráceným názvem „Střední zdravotnická škola“, v roce 2026 pod plným názvem – jde o rozdíl v zápisu textu, příčina se nezkoumala.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Kdo formálně o zavedení oboru rozhodl (zřizovatel/kraj) a kdy proběhne zápis do rejstříku MŠMT – nedohledáno."
+      ]
+    }
+  ]
+}
