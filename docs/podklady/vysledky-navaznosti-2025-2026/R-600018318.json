@@ -1,0 +1,81 @@
+{
+  "task_id": "R-600018318",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu: Střední škola gastronomie, farmářství a služeb Jeseník (REDIZO 600018318, IČ 00495433), sídlo U Jatek 916/8, beze změny ve všech čtyřech snímcích. IZO 107880741 „Střední škola\" má stejná dvě místa výuky ve všech snímcích (U Jatek 916/8, Jeseník a Horní Heřmanice 47, Bernartice; pořadí uvedení míst se mezi snímky liší, obsahově beze změny). Obor 41-45-M/01 Mechanizace a služby je evidován beze změny ve všech čtyřech snímcích, stejně jako všechny ostatní obory školy (53-41-M/02, 53-41-M/04, 64-41-L/51 a řada tříletých učebních oborů)."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0128"],
+      "status": "rozpor_zdrojů",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 41-45-M/01 Mechanizace a služby; v 1. kole JPZ 2026 tato nabídka mezi čtyřmi maturitními obory chybí (zůstávají jen Nutriční asistent, Masér ve zdravotnictví a nástavbové Podnikání).",
+        "Rejstřík MŠMT eviduje obor 41-45-M/01 Mechanizace a služby u IZO 107880741 beze změny ve všech čtyřech snímcích včetně 30. 6. 2026 – akreditace oboru trvá.",
+        "Oficiální web školy (sosjesenik.cz) byl při rešerši opakovaně nedostupný (chyba spojení / timeout na portu 443 z více nezávislých nástrojů), takže primární zdroj školy nebylo možné otevřít a přečíst.",
+        "Katalogový záznam třetí strany (atlasskolstvi.cz, záznam „SS720 – Střední škola gastronomie, farmářství a služeb Jeseník\") uvádí obor Mechanizace a služby (41-45-M/01) mezi čtyřletými maturitními obory s kapacitou 15 přijímaných žáků a označuje jej jako otevíraný pro přijímací řízení 2026/27; datum aktualizace tohoto katalogového záznamu se ale nepodařilo ověřit, takže není jisté, zda odráží skutečně aktuální (2026) nebo starší nabídku."
+      ],
+      "conclusion": null,
+      "alternative_explanations": [
+        "Obor mohl být pro 1. kolo JPZ 2026 skutečně dočasně nenabízen (nízký zájem, personální důvody) a katalogový záznam je jen neaktualizovaný přebytek z dřívějších let.",
+        "Obor mohl být nabízen mimo 1. kolo JPZ (např. v dalších kolech přijímacího řízení) nebo formou, kterou datová sada CERMAT pro 1. kolo nezachycuje.",
+        "Katalogový záznam může být aktuální a chybějící řádek v CERMAT datech 2026 může být jen chybou/opomenutím při přípravě podkladu, nikoli skutečným stavem nabídky školy."
+      ],
+      "relationship": {
+        "type": "unknown",
+        "from": ["41-45-M/01 Mechanizace a služby (2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "U Jatek 916/8, 790 01 Jeseník",
+          "role": "sídlo",
+          "izo": "600018318",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "U Jatek 916/8, 790 01 Jeseník; 47, 790 57 Horní Heřmanice, Bernartice",
+          "role": "místo výuky",
+          "izo": "107880741",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 41-45-M/01 Mechanizace a služby je u IZO 107880741 evidován beze změny ve všech čtyřech snímcích – akreditace nezanikla.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "https://www.atlasskolstvi.cz/ss720-stredni-skola-gastronomie-farmarstvi-a-sluzeb-jesenik",
+          "title": "SS720 – Střední škola gastronomie, farmářství a služeb Jeseník (Atlas školství)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Katalogový záznam třetí strany uvádí obor Mechanizace a služby (41-45-M/01) s kapacitou 15 míst jako otevíraný pro přijímací řízení 2026/27; nejde o primární zdroj školy a datum aktuálnosti záznamu nebylo možné ověřit.",
+          "applicable_period": "neověřeno, záznam bez uvedeného data aktualizace"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600018318",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 41-45-M/01 přítomna v 1. kole JPZ 2025 a chybějící v 1. kole JPZ 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "unknown",
+      "recommended_action": "manual_review",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Oficiální web školy (sosjesenik.cz) byl po celou dobu rešerše nedostupný (odmítnuté/timeoutované spojení na HTTPS z více nástrojů) – je potřeba jej ověřit později nebo kontaktovat školu přímo, zda obor Mechanizace a služby byl pro 1. kolo přijímacího řízení 2026/27 skutečně vyhlášen."
+      ]
+    }
+  ]
+}

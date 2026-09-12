@@ -1,0 +1,105 @@
+{
+  "task_id": "R-600170586",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": [
+      "2025-03-31",
+      "2025-12-31",
+      "2026-03-31",
+      "2026-06-30"
+    ],
+    "summary": "Rejstřík potvrdil kontinuitu subjektu Střední odborná škola energetická a stavební, Obchodní akademie a Střední zdravotnická škola, Chomutov, p. o. (REDIZO 600170586, IZO 130002054) ve všech čtyřech snímcích, se stejným sídlem (Na Průhoně 4800, Chomutov). Obor 26-41-M/01 Elektrotechnika chybí ve snímku 2025-03-31, ale je evidován ve snímcích 2025-12-31, 2026-03-31 i 2026-06-30 - byl tedy do rejstříku doplněn v průběhu roku 2025."
+  },
+  "findings": [
+    {
+      "issue_ids": [
+        "Q0381"
+      ],
+      "status": "pravděpodobné",
+      "observations": [
+        "V 1. kole JPZ 2025 škola obor 26-41-M/01 Elektrotechnika nenabízela; v 1. kole JPZ 2026 se objevuje nově vedle dosavadního oboru 26-41-L/01 Mechanik elektrotechnik.",
+        "Rejstřík MŠMT obor 26-41-M/01 u IZO 130002054 neobsahuje ve snímku k 31. 3. 2025, ale eviduje jej ve všech třech následujících snímcích (31. 12. 2025, 31. 3. 2026, 30. 6. 2026) - obor byl do rejstříku doplněn v průběhu roku 2025.",
+        "Web školy (esoz.cz) obsahuje samostatnou stránku oboru Elektrotechnika (26-41-M/01) s podporou partnera ČEZ a.s.; stránka je ovšem datována 2. 11. 2023, tedy dříve, než se obor objevil v rejstříku - datum pravděpodobně odpovídá jen obecnému datu publikace šablony webu, nikoli datu zahájení výuky, ale zdroj to s jistotou nepotvrzuje.",
+        "Přímé oznámení školy nebo zřizovatele (Ústeckého kraje) o zahájení oboru pro konkrétní školní rok se nepodařilo dohledat."
+      ],
+      "conclusion": "Rejstřík dokládá, že obor 26-41-M/01 byl do evidence doplněn mezi 31. 3. 2025 a 31. 12. 2025, což spolu s chybějící nabídkou 2025 a novou nabídkou 2026 nasvědčuje novému oboru bez předchůdce. Datovaná stránka webu školy z roku 2023 tomuto přímo neodporuje (mohla vzniknout jako předstih), ale jednoznačný potvrzující zdroj o datu zahájení výuky chybí, proto závěr zůstává na úrovni pravděpodobnosti.",
+      "alternative_explanations": [
+        "Stránka o oboru mohla vzniknout již v roce 2023 jako příprava/ohlášení budoucího oboru, fakticky spuštěného až pro některý z pozdějších školních roků.",
+        "Nelze vyloučit chybu nebo neaktuálnost data publikace na webu školy nesouvisející se skutečným stavem výuky."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": [
+          "26-41-M/01 Elektrotechnika (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "Na Průhoně 4800, 430 03 Chomutov",
+          "role": "sídlo",
+          "izo": "600170586",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Na Průhoně 4800, 430 03 Chomutov",
+          "role": "místo výuky",
+          "izo": "130002054",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.esoz.cz/elektrotechnika/",
+          "title": "Elektrotechnika (26-41-M/01) – ESOZ Chomutov",
+          "published_at": "2023-11-02",
+          "checked_at": "2026-09-12",
+          "supports": "Škola prezentuje obor Elektrotechnika se čtyřletým studiem a maturitou a podporou partnera ČEZ; stránka je datována 2.11.2023, dříve než se obor objevil v rejstříku.",
+          "applicable_period": "stav webu k datu rešerše, září 2026 (datum publikace 2023 nejisté ve vztahu k reálnému zahájení)"
+        },
+        {
+          "url": "https://www.esoz.cz/obory-vzdelani/",
+          "title": "Obory vzdělání – ESOZ Chomutov",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Elektrotechnika uvedena jako čtyřletý maturitní obor v aktuální nabídce školy.",
+          "applicable_period": "stav webu k datu rešerše, září 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2025",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 26-41-M/01 u IZO 130002054 k tomuto datu evidován není.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 26-41-M/01 je u IZO 130002054 evidován k 30. 6. 2026.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600170586",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 26-41-M/01 chybí v 1. kole JPZ 2025 a objevuje se v 1. kole JPZ 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "manual_review",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přesné datum zahájení výuky oboru Elektrotechnika a vysvětlení data 2.11.2023 na webu školy vůči zápisu do rejstříku až koncem roku 2025."
+      ]
+    }
+  ]
+}

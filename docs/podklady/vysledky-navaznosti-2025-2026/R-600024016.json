@@ -1,0 +1,123 @@
+{
+  "task_id": "R-600024016",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrdil plnou kontinuitu subjektu: Vyšší odborná škola, Střední škola, Základní škola a Mateřská škola, Hradec Králové, Štefánikova 549 (REDIZO 600024016, IZO střední školy 110013450) figuruje beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026), včetně sídla Štefánikova 549/27, Moravské Předměstí, Hradec Králové. Škola je speciální/inkluzivní zařízení (VOŠ, SŠ, ZŠ, MŠ, internát) zřizované Královéhradeckým krajem, s širokým portfoliem učňovských a nástavbových oborů. Oba dotazované obory – 33-42-L/51 Nábytkářská a dřevařská výroba a 64-41-L/51 Podnikání – jsou u IZO 110013450 zapsány ve VŠECH čtyřech snímcích beze změny, shodně s dalšími 12 obory (Truhlář, Kuchař-číšník, Kadeřník, Pekař, Cukrář, Reprodukční grafik, Umělecký truhlář a řezbář, Předškolní a mimoškolní pedagogika, Reprodukční grafik pro média, Truhlářská a čalounická výroba, Stravovací a ubytovací služby, Potravinářská výroba)."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0353", "Q0354"],
+      "status": "pravděpodobné",
+      "observations": [
+        "V 1. kole JPZ 2025 škola v CERMAT nabídce uváděla pouze dva obory téže organizace: 34-53-L/01 Reprodukční grafik pro média a 75-31-M/01 Předškolní a mimoškolní pedagogika. Obory 33-42-L/51 Nábytkářská a dřevařská výroba a 64-41-L/51 Podnikání v nabídce 2025 chybí.",
+        "V 1. kole JPZ 2026 přibyly u téže organizace právě tyto dva obory (33-42-L/51 a 64-41-L/51) vedle pokračujících 34-53-L/01 a 75-31-M/01.",
+        "Rejstřík MŠMT eviduje oba obory (33-42-L/51 i 64-41-L/51) u IZO 110013450 ve všech čtyřech snímcích včetně 31. 3. 2025 – registrace obou oborů tedy trvala i v době, kdy CERMAT nabídku pro 2025 neobsahovala.",
+        "Web školy (neslhk.com) potvrzuje, že oba obory jsou dlouhodobě etablovanou součástí portfolia s vlastními popisnými stránkami a samostatnými kritérii přijímacího řízení pro školní rok 2026/2027 (https://neslhk.com/stredni-skola/prijimaci-rizeni/): 33-42-L/51 Nábytkářská a dřevařská výroba (nástavbové studium pro absolventy oboru zpracování dřeva s výučním listem, přednostně pro uchazeče se sluchovým postižením) a 64-41-L/51 Podnikání (nástavbový obor pro absolventy jakéhokoli oboru s výučním listem kategorie H, ukončený maturitou).",
+        "Stránka výsledků přijímacího řízení do maturitních oborů (https://neslhk.com/stredni-skola-vysledky-prijimaciho-rizeni-do-maturitnich-oboru/) uvádí pro školní rok 2026/2027 samostatné výsledky 1. i 2. kola pro obor Podnikání; pro Nábytkářskou a dřevařskou výrobu jsou tam obor jen zmíněn v celkovém přehledu oborů, bez samostatného oddílu výsledků – to může znamenat nižší počet přihlášek, ne zrušení přijímacího řízení.",
+        "Web školy neobsahuje archiv kritérií ani výsledků přijímacího řízení pro školní rok 2025/2026 (stránka přijímacího řízení zobrazuje jen aktuální ročník 2026/2027) a služba web.archive.org nebyla z tohoto prostředí dostupná, takže přímé dobové potvrzení 'v roce 2025 obor neotevíráme' se nepodařilo dohledat."
+      ],
+      "conclusion": "Nejpravděpodobnějším vysvětlením je, že škola pro přijímací řízení 2025/26 nevyhlásila (neotevřela) nábor do nástavbových oborů 33-42-L/51 Nábytkářská a dřevařská výroba a 64-41-L/51 Podnikání, ačkoli oba obory zůstávaly po celou dobu zapsány v rejstříku MŠMT u IZO 110013450. Pro 2026/27 přijímací řízení do obou oborů znovu vyhlásila. Nejde tedy o nové obory, ale o obnovení přijímacího řízení do již existujících nástavbových oborů určených absolventům tříletých učebních oborů s výučním listem (typicky pro žáky se sluchovým postižením, kterým je škola specializovaně určena).",
+      "alternative_explanations": [
+        "Obor mohl být v roce 2025 vyhlášen, ale z přiložených dat (CERMAT 1. kolo JPZ) chybí kvůli jiné technické příčině (např. jiná forma přijímacího řízení bez JPZ, chyba v exportu) – tuto možnost přiložená data ani web nevyvracejí s jistotou.",
+        "Nízký počet přihlášek mohl vést k tomu, že přijímací řízení bylo vyhlášeno, ale nedošlo k žádnému přijetí, což by se v CERMAT nabídce projevilo podobně jako nevyhlášení."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["33-42-L/51 (registrováno 2025, nenabízeno v CERMAT 2025)", "64-41-L/51 (registrováno 2025, nenabízeno v CERMAT 2025)"],
+        "to": ["33-42-L/51 (2026)", "64-41-L/51 (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Štefánikova 549/27, 500 11 Moravské Předměstí, Hradec Králové",
+          "role": "sídlo",
+          "izo": "600024016",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Štefánikova 549/27, 500 11 Moravské Předměstí, Hradec Králové",
+          "role": "místo výuky",
+          "izo": "110013450",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://neslhk.com",
+          "title": "NESLHK – Vyšší odborná škola, Střední škola, Základní škola a Mateřská škola, Hradec Králové, Štefánikova 549",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Potvrzuje identitu školy (domácí doména odvozená z kontaktního e-mailu v rejstříku) a přehled aktuálně nabízených oborů, mj. Nábytkářská a dřevařská výroba (33-42-L/51) a Podnikání (64-41-L/51) jako dlouhodobě etablované obory portfolia.",
+          "applicable_period": "aktuální stav webu, 2026"
+        },
+        {
+          "url": "https://neslhk.com/stredni-skola/prijimaci-rizeni/",
+          "title": "Přijímací řízení – Střední škola NESLHK",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Pro školní rok 2026/2027 škola vyhlašuje přijímací řízení do obou dotazovaných oborů (33-42-L/51 Nábytkářská a dřevařská výroba, 64-41-L/51 Podnikání) se samostatnými kritérii; stránka neobsahuje archiv pro školní rok 2025/2026.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://neslhk.com/nabytkarska-a-drevarska-vyroba/",
+          "title": "Nábytkářská a dřevařská výroba – popis oboru NESLHK",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor je nástavbovým studiem pro absolventy oboru zpracování dřeva (výuční list), přednostně určeným uchazečům se sluchovým postižením – potvrzuje, že jde o dlouhodobě existující nástavbový obor, nikoli o nově vytvořený obor.",
+          "applicable_period": "aktuální popis oboru, 2026"
+        },
+        {
+          "url": "https://neslhk.com/podnikani/",
+          "title": "Podnikání – popis oboru NESLHK",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor je nástavbovým studiem zakončeným maturitou pro absolventy oborů s výučním listem kategorie H, přednostně určeným uchazečům se sluchovým postižením – potvrzuje dlouhodobou existenci oboru.",
+          "applicable_period": "aktuální popis oboru, 2026"
+        },
+        {
+          "url": "https://neslhk.com/stredni-skola-vysledky-prijimaciho-rizeni-do-maturitnich-oboru/",
+          "title": "Výsledky přijímacího řízení do maturitních oborů – NESLHK",
+          "published_at": "2026-06-25",
+          "checked_at": "2026-09-12",
+          "supports": "Pro školní rok 2026/2027 jsou zveřejněny samostatné výsledky 1. a 2. kola pro obor Podnikání; obor Nábytkářská a dřevařská výroba je zmíněn jen v celkovém přehledu oborů bez samostatného oddílu výsledků. Stránka neobsahuje údaje pro školní rok 2025/2026.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "K 31. 3. 2025 jsou u IZO 110013450 zapsány oba obory 33-42-L/51 i 64-41-L/51, přestože CERMAT nabídka pro 1. kolo JPZ 2025 tyto obory neobsahuje.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "K 30. 6. 2026 zůstávají oba obory zapsány u IZO 110013450 beze změny, subjekt i sídlo jsou shodné se snímkem 2025-03-31.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600024016",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídky 33-42-L/51 a 64-41-L/51 chybí v roce 2025 (nabídka obsahuje jen 34-53-L/01 a 75-31-M/01) a jsou přítomny v roce 2026 (spolu s pokračujícími 34-53-L/01 a 75-31-M/01).",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přímé dobové potvrzení, že škola vědomě nevyhlásila přijímací řízení do těchto dvou oborů pro 2025/26 (např. věta na webu z jara 2025 typu 'tento obor letos neotevíráme'), se nepodařilo dohledat – web nenabízí archiv a web.archive.org nebyl z tohoto prostředí dostupný.",
+        "Zda byl v roce 2025 dostatek přihlášek/absolventů příslušných tříletých oborů, aby škola nástavbové studium mohla otevřít, nelze z dostupných zdrojů ověřit."
+      ]
+    }
+  ]
+}

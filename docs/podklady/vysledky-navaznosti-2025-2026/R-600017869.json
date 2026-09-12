@@ -1,0 +1,102 @@
+{
+  "task_id": "R-600017869",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu: Střední průmyslová škola stavební, Lipník nad Bečvou, Komenského sady 257 (REDIZO 600017869, IČ 70259941), sídlo Komenského sady 257/26, beze změny ve všech čtyřech snímcích. IZO 000842907 „Střední škola\" má stejná dvě místa výuky ve všech snímcích (Komenského sady 257/26 a Novosady 155/2). Obor 36-47-M/01 Stavebnictví je evidován beze změny (denní i dálková forma), spolu s obory 82-41-M/11 Design interiéru (od 2025-12-31, dříve 82-41-M/05 Grafický design v dobíhajícím režimu). Rejstřík zaměření uvnitř oboru 36-47-M/01 neeviduje – ta jsou vnitřní záležitostí ŠVP."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0124", "Q0125", "Q0250"],
+      "status": "pravděpodobné",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 36-47-M/01 Stavebnictví ve dvou nabídkách se zaměřeními „Architektura a pozemní stavitelství (ARC)\" a „Inženýrské stavby (INS)\".",
+        "V 1. kole JPZ 2026 stejný kód 36-47-M/01 Stavebnictví figuruje jako jediná nabídka bez uvedeného zaměření.",
+        "Aktuální web školy (spsslipnik.cz) nabízí pod stavebním zaměřením mj. samostatné podstránky „Architektura a pozemní stavitelství\" a „Dopravní a vodohospodářské stavby\", obě výslovně popsané jako „Čtyřletý maturitní obor Stavebnictví 36-47-M/01\" se zaměřením – tedy dvě zaměření téhož kódu, nikoli dva různé obory.",
+        "Podstránka „Architektura a pozemní stavitelství\" používá zkratku ARC shodnou s CERMAT nabídkou 2025 a uvádí, že ŠVP Stavebnictví platí od 1. 9. 2025; termíny přijímacího řízení na stránce (podání přihlášek 1.–22. 2. 2027, zkoušky 12.–13. 4. 2027) se ale týkají až cyklu 2027/28, nikoli přímo sledovaného ročníku 2026.",
+        "Web dále nabízí samostatný obor „Interiérový design a architektura\" – ten odpovídá jinému, samostatně vedenému kódu 82-41-M/11 Design interiéru, nikoli zaměření uvnitř Stavebnictví.",
+        "Přímý popis přijímacího řízení konkrétně pro ročník 2026/27 s rozpisem zaměření a kapacit se nepodařilo na webu dohledat; dostupné podstránky pro uchazeče uvádějí jen souhrnné názvy oborů bez kódů a bez rozlišení podle ročníku."
+      ],
+      "conclusion": "Obor 36-47-M/01 Stavebnictví pokračuje beze změny kódu i po roce 2026 a škola i nadále (alespoň v cyklu 2027/28) nabízí dvě zaměření – jedno kontinuálně navazující na „Architekturu a pozemní stavitelství\" (ARC) z roku 2025, druhé nově pojmenované „Dopravní a vodohospodářské stavby\", což je pravděpodobně přejmenovaný nástupce zaměření „Inženýrské stavby\" (INS). Jediná souhrnná nabídka bez zaměření v CERMAT datech 2026 tak spíše odpovídá způsobu, jak škola nahlásila nabídku do JPZ (jedna společná přijímací zkouška na obor, volba zaměření až následně), než skutečnému zrušení jednoho ze zaměření.",
+      "alternative_explanations": [
+        "Není vyloučeno, že škola pro školní rok 2026/27 dočasně sloučila přijímací řízení do jedné společné nabídky a teprve od cyklu 2027/28 opět prezentuje dvě pojmenovaná zaměření – přesný stav pro rok 2026/27 nebyl z dostupných zdrojů ověřen.",
+        "„Dopravní a vodohospodářské stavby\" nemusí být přímým přejmenováním „Inženýrských staveb\" – může jít o obsahově upravené zaměření zavedené novým ŠVP od 1. 9. 2025."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": [
+          "36-47-M/01 Stavebnictví - Architektura a pozemní stavitelství (ARC) (2025)",
+          "36-47-M/01 Stavebnictví - Inženýrské stavby (INS) (2025)"
+        ],
+        "to": ["36-47-M/01 Stavebnictví, bez zaměření v CERMAT datech (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Komenského sady 257/26, 751 31 Lipník nad Bečvou I-Město",
+          "role": "sídlo",
+          "izo": "600017869",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Komenského sady 257/26, 751 31 Lipník nad Bečvou I-Město; Novosady 155/2, 751 31 Lipník nad Bečvou I-Město",
+          "role": "místo výuky",
+          "izo": "000842907",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://spsslipnik.cz/studijni-obory/architektura-a-pozemni-stavitelstvi",
+          "title": "Architektura a pozemní stavitelství – SPŠ stavební Lipník",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Popisuje zaměření Architektura a pozemní stavitelství (zkratka ARC) jako součást oboru Stavebnictví 36-47-M/01, ŠVP platné od 1. 9. 2025.",
+          "applicable_period": "aktuální nabídka, termíny uvedené pro cyklus 2027/28"
+        },
+        {
+          "url": "https://spsslipnik.cz/studijni-obory/dopravni-a-vodohospodarske-stavby",
+          "title": "Dopravní a vodohospodářské stavby – SPŠ stavební Lipník",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Popisuje druhé zaměření oboru Stavebnictví 36-47-M/01 zaměřené na dopravní, vodohospodářské a krajinné stavby – pravděpodobný nástupce zaměření Inženýrské stavby.",
+          "applicable_period": "aktuální nabídka, termíny uvedené pro cyklus 2027/28"
+        },
+        {
+          "url": "https://spsslipnik.cz/studijni-obory",
+          "title": "Studijní obory – SPŠ stavební Lipník",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Přehled aktuálně nabízených oborů včetně čtyř denních programů a dálkového studia pozemního stavitelství.",
+          "applicable_period": "aktuální nabídka"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 36-47-M/01 Stavebnictví (denní i dálková forma) je u IZO 000842907 evidován beze změny ve všech čtyřech snímcích.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600017869",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V roce 2025 dvě nabídky 36-47-M/01 se zaměřeními ARC a INS, v roce 2026 jediná nabídka téhož kódu bez zaměření.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "partially",
+      "recommended_action": "manual_review",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Byla pro školní rok 2026/27 (cyklus, ke kterému se vztahují data CERMAT 2026) nabídka skutečně jednotná, nebo šlo jen o způsob zápisu do CERMAT XLSX a zaměření se volilo stejně jako v roce 2025? Přímý dokument (kritéria přijímacího řízení 2026) nebyl na webu dohledán.",
+        "Je zaměření „Dopravní a vodohospodářské stavby\" formálně totožné s dřívějším „Inženýrské stavby\", nebo jde o obsahově novou variantu zavedenou ŠVP od 1. 9. 2025?"
+      ]
+    }
+  ]
+}

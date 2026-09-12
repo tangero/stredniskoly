@@ -1,0 +1,136 @@
+{
+  "task_id": "R-610200381",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu: Střední průmyslová škola, Trutnov, Školní 101 (REDIZO 610200381), sídlo Školní 101, 541 01 Vnitřní Město, Trutnov, IZO 110200403 „Střední škola“ se čtyřmi místy výuky v Trutnově a Mladých Bukách, beze změny ve všech čtyřech snímcích. Obor 18-20-M/01 Informační technologie (4leté, denní) zůstává registrován u IZO 110200403 ve všech čtyřech snímcích včetně 30. 6. 2026 – nejde o zápis nového oboru mezi lety, ale o týž obor po celé sledované období."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0154", "Q0373"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 i 2026 škola nabízí obor 18-20-M/01 Informační technologie se zaměřením na informatiku a management; text zaměření se zkrátil z „Informační technologie – informatika a management“ (2025) na „informatika a management“ (2026) – jde jen o kratší formát zápisu, u téhož oboru se stejným způsobem zkrátila i ostatní tři nabídky školy (elektronické počítačové systémy, strojírenství – počítačová grafika, elektrotechnika – slaboproudá elektrotechnika).",
+        "Obor 18-20-M/01 Informační technologie je registrován u IZO 110200403 ve všech čtyřech snímcích rejstříku MŠMT beze změny; rejstřík zaměření uvnitř oboru samostatně nerozlišuje.",
+        "Web školy (spstrutnov.cz, přijímací řízení) potvrzuje, že pro 2026/27 škola vyhlašuje samostatně obor „18-20-M/01 Informační technologie – Informatika a management“ s kapacitou 30 míst."
+      ],
+      "conclusion": "Jde o tutéž nabídku oboru 18-20-M/01 Informační technologie se zaměřením informatika a management v obou letech; rozdíl je pouze ve zkráceném formátu zápisu textu zaměření (bez prefixu s názvem oboru), nikoli o zánik a vznik nové nabídky.",
+      "alternative_explanations": [],
+      "relationship": {
+        "type": "continuation",
+        "from": ["18-20-M/01 Informační technologie – informatika a management (2025)"],
+        "to": ["18-20-M/01 informatika a management (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Školní 101, 541 01 Vnitřní Město, Trutnov",
+          "role": "sídlo",
+          "izo": "610200381",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Školní 101, 541 01 Vnitřní Město, Trutnov; Horská 59 a Horská 618, Trutnov; Mladé Buky 5",
+          "role": "místo výuky",
+          "izo": "110200403",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 18-20-M/01 Informační technologie zůstává u IZO 110200403 registrován beze změny ve všech čtyřech snímcích.",
+          "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
+        },
+        {
+          "url": "https://www.spstrutnov.cz/studium/prijimaci-rizeni",
+          "title": "Přijímací řízení – SPŠ Trutnov",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola vyhlašuje pro 2026/27 obor 18-20-M/01 Informační technologie – Informatika a management, 30 míst.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-610200381",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Text zaměření „Informační technologie – informatika a management“ (2025) a „informatika a management“ (2026) u téhož oboru a téže školy.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0155", "Q0374"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 i 2026 škola nabízí obor 18-20-M/01 Informační technologie se zaměřením na elektronické počítačové systémy; text zaměření se zkrátil z „Informační technologie – elektronické počítačové systémy“ (2025) na „elektronické počítačové systémy“ (2026) – stejný vzorec zkrácení jako u ostatních tří nabídek školy.",
+        "Obor 18-20-M/01 Informační technologie je registrován u IZO 110200403 ve všech čtyřech snímcích rejstříku MŠMT beze změny.",
+        "Web školy (spstrutnov.cz, přijímací řízení) potvrzuje, že pro 2026/27 škola vyhlašuje samostatně obor „18-20-M/01 Informační technologie – Elektronické počítačové systémy“ s kapacitou 30 míst."
+      ],
+      "conclusion": "Jde o tutéž nabídku oboru 18-20-M/01 Informační technologie se zaměřením elektronické počítačové systémy v obou letech; rozdíl je pouze ve zkráceném formátu zápisu textu zaměření.",
+      "alternative_explanations": [],
+      "relationship": {
+        "type": "continuation",
+        "from": ["18-20-M/01 Informační technologie – elektronické počítačové systémy (2025)"],
+        "to": ["18-20-M/01 elektronické počítačové systémy (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Školní 101, 541 01 Vnitřní Město, Trutnov",
+          "role": "sídlo",
+          "izo": "610200381",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Školní 101, 541 01 Vnitřní Město, Trutnov; Horská 59 a Horská 618, Trutnov; Mladé Buky 5",
+          "role": "místo výuky",
+          "izo": "110200403",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 18-20-M/01 Informační technologie zůstává u IZO 110200403 registrován beze změny ve všech čtyřech snímcích.",
+          "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
+        },
+        {
+          "url": "https://www.spstrutnov.cz/studium/prijimaci-rizeni",
+          "title": "Přijímací řízení – SPŠ Trutnov",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola vyhlašuje pro 2026/27 obor 18-20-M/01 Informační technologie – Elektronické počítačové systémy, 30 míst.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-610200381",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Text zaměření „Informační technologie – elektronické počítačové systémy“ (2025) a „elektronické počítačové systémy“ (2026) u téhož oboru a téže školy.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "task_id": "R-600170241",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrdil kontinuitu subjektu: Střední průmyslová škola Emila Kolbena Rakovník, příspěvková organizace (REDIZO 600170241), sídlo Sídl. Gen. J. Kholla 2501, 269 01 Rakovník II, figuruje beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026), včetně IZO 007820186 „Střední škola“ s místy výuky Sídl. Gen. J. Kholla 2501 a Lubenská 2309. Obor 65-42-M/02 Cestovní ruch je u tohoto IZO registrován ve všech čtyřech snímcích beze změny. Obor 78-42-M/08 Lyceum (režim pokusného ověřování) není evidován v žádném ze čtyř snímků – jde o nově zaváděný pokusně ověřovaný obor, u kterého zápis do rejstříku dosud (k 30. 6. 2026) neproběhl."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0146"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 65-42-M/02 Cestovní ruch, zaměření „Cestovní ruch a stravovací služby“, 4 roky, denní (ID_SOF d0bb7548-e732-4577-8199-b7f95c328135); v 1. kole JPZ 2026 tato nabídka chybí, zatímco ostatní čtyři obory školy (Informační technologie, Strojírenství, Elektrotechnika, Podnikání) pokračují beze změny v obou letech.",
+        "Rejstřík MŠMT eviduje obor 65-42-M/02 Cestovní ruch u IZO 007820186 shodně ve všech čtyřech snímcích od 31. 3. 2025 do 30. 6. 2026 – formální registrace oboru trvá i po roce, kdy chybí nabídka v JPZ.",
+        "Web školy na vlastní stránce oboru (spsrakovnik.cz/104-cestovni-ruch) k datu kontroly výslovně uvádí: „V rámci otevření nového studijního oboru Lyceum … se v novém školním roce 2026/2027 již obor Cestovní ruch pro první ročníky neotevře.“",
+        "Aktuální přehled studijních oborů školy pro 2026/27 (spsrakovnik.cz/9-studijni-obory) již Cestovní ruch neuvádí jako samostatný maturitní obor; místo toho je „Cestovní ruch“ vedena jako jedna ze dvou oborových orientací (spolu s „Mediální studia“) nového oboru 78-42-M/08 Lyceum, volitelná až od 3. ročníku.",
+        "Novinkový článek školy z 26. 6. 2026 o zveřejnění ŠVP oboru Lyceum potvrzuje totéž členění: obecný základ v 1.–2. ročníku, od 3. ročníku volba orientace Mediální studia nebo Cestovní ruch."
+      ],
+      "conclusion": "Škola pro školní rok 2026/27 nevyhlásila přijímací řízení do samostatného oboru 65-42-M/02 Cestovní ruch – podle vlastního oznámení školy jde o přímý důsledek otevření nového oboru 78-42-M/08 Lyceum, jehož jedna ze dvou oborových orientací od 3. ročníku nese název „Cestovní ruch“. Nejde o zánik registrace: obor 65-42-M/02 zůstává zapsán v rejstříku MŠMT ve všech čtyřech snímcích. Jde tedy o přerušení/nevyhlášení přijímacího řízení do samostatného oboru, obsahově částečně nahrazené oborovou orientací v rámci jiného, širšího oboru se zcela jiným kódem KKOV.",
+      "alternative_explanations": [
+        "Obor 65-42-M/02 zůstává formálně registrován, takže jej škola teoreticky může znovu vyhlásit jako samostatný obor, pokud by se lyceum neosvědčilo nebo klesl zájem o orientaci cestovní ruch v jeho rámci.",
+        "Není doloženo, že ŠVP oborové orientace „Cestovní ruch“ v lyceu je obsahově totožné s dřívějším samostatným oborem 65-42-M/02 – jde o jiný kód oboru (78-42-M/08) a orientace se vyučuje až od 3. ročníku po společném základu, nikoli po celé 4 roky."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["65-42-M/02 Cestovní ruch (2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Sídl. Gen. J. Kholla 2501, 269 01 Rakovník II, Rakovník",
+          "role": "sídlo",
+          "izo": "600170241",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Sídl. Gen. J. Kholla 2501, 269 01 Rakovník II, Rakovník; Lubenská 2309, 269 01 Rakovník II, Rakovník",
+          "role": "místo výuky",
+          "izo": "007820186",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600170241",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 65-42-M/02 Cestovní ruch přítomna v roce 2025 a chybějící v roce 2026; ostatní čtyři obory pokračují beze změny.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 30. 6. 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 65-42-M/02 Cestovní ruch zůstává u IZO 007820186 registrován i ve snímku k 30. 6. 2026 (a shodně ve zbylých třech snímcích).",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "https://spsrakovnik.cz/104-cestovni-ruch",
+          "title": "Cestovní ruch (65-42-M/02) – Střední průmyslová škola Emila Kolbena Rakovník",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola výslovně uvádí, že v souvislosti s otevřením nového oboru Lyceum se obor Cestovní ruch pro první ročníky ve školním roce 2026/2027 neotevře.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://spsrakovnik.cz/9-studijni-obory",
+          "title": "Studijní obory – Střední průmyslová škola Emila Kolbena Rakovník",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Aktuální přehled oborů pro 2026/27 neuvádí Cestovní ruch jako samostatný obor; figuruje jako oborová orientace v rámci oboru Lyceum 78-42-M/08.",
+          "applicable_period": "nabídka oborů 2026/27"
+        },
+        {
+          "url": "https://spsrakovnik.cz/novinky/455-zverejnili-jsme-skolni-vzdelavaci-program-noveho-oboru-lyceum/",
+          "title": "Zveřejnili jsme školní vzdělávací program nového oboru Lyceum",
+          "published_at": "2026-06-26",
+          "checked_at": "2026-09-12",
+          "supports": "Potvrzuje zveřejnění ŠVP nového oboru Lyceum pro 2026/27 se dvěma oborovými orientacemi od 3. ročníku, mimo jiné Cestovní ruch.",
+          "applicable_period": "školní rok 2026/27"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Není doloženo přesné datum ani orgán rozhodnutí o neotevření samostatného oboru Cestovní ruch (zda šlo o rozhodnutí zřizovatele – Středočeského kraje – nebo jen o interní rozhodnutí školy)."
+      ]
+    },
+    {
+      "issue_ids": ["Q0258"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/08 Lyceum (režim pokusného ověřování), zaměření „Lyceum“, 4 roky, denní (ID_SOF 32717042-6064-4ab9-b713-cd923e143801); v roce 2025 v nabídce nebyl.",
+        "Rejstřík MŠMT neeviduje obor 78-42-M/08 u IZO 007820186 v žádném ze čtyř snímků (31. 3. 2025 až 30. 6. 2026) – jde o odstup zápisu nově zaváděného pokusně ověřovaného oboru.",
+        "Web školy (spsrakovnik.cz/122-lyceum) uvádí: „V roce 2026 poprvé otevíráme zcela nový obor – Lyceum“, jde o čtyřletý maturitní obor kombinující všeobecné vzdělání s profilací od 3. ročníku (Mediální studia nebo Cestovní ruch); stránka odkazuje na MŠMT jako zdroj rámcového vzdělávacího programu s poznámkou „Informace k pilotnímu oboru“.",
+        "Odkaz na konkrétní stránku MŠMT o vyhlášení pokusného ověřování, uvedený na webu školy (msmt.gov.cz/vzdelavani/stredni-vzdelavani/vyhlaseni-pokusneho-overovani-vzdelavani-podle-ramcoveho), byl k datu kontroly nedostupný (chyba 404) – celostátní vyhlášení pokusného ověřování z listopadu 2024 tak nebylo nezávisle ověřeno přímo na webu MŠMT, pouze odkazem na školním webu.",
+        "Novinkový článek školy z 26. 6. 2026 potvrzuje zveřejnění školního vzdělávacího programu nového oboru Lyceum pro školní rok 2026/2027 se strukturou: obecný základ v 1.–2. ročníku, od 3. ročníku volba orientace Mediální studia nebo Cestovní ruch.",
+        "Aktuální přehled studijních oborů školy pro 2026/27 řadí Lyceum 78-42-M/08 mezi čtyřleté maturitní obory."
+      ],
+      "conclusion": "Obor 78-42-M/08 Lyceum je skutečně nový obor, otevřený školou od školního roku 2026/27 (podle vlastního vyjádření školy poprvé v její historii), nikoli přejmenování dřívějšího lycea 78-42-M/01 či 78-42-M/02. Škola jej prezentuje jako obor v režimu pokusného ověřování MŠMT a uvádí, že jeho zavedení přímo souviselo s ukončením přijímání do dosud samostatného oboru Cestovní ruch (viz nález Q0146) – Cestovní ruch je nyní jednou ze dvou oborových orientací lycea od 3. ročníku. Absence oboru v rejstříku MŠMT ve všech čtyřech snímcích odpovídá administrativnímu odstupu zápisu nově zaváděného pokusného ověřování, nikoli neexistenci oboru; nabídku v JPZ 2026 i zveřejněný ŠVP dokládá přímo web školy.",
+      "alternative_explanations": [
+        "Formální zápis pokusného ověřování do rejstříku MŠMT u tohoto REDIZO mohl proběhnout až po 30. 6. 2026 (rejstřík se aktualizuje se zpožděním); to otevření oboru od září 2026 podle dostupných zdrojů neovlivňuje.",
+        "Nelze vyloučit, že celostátní pokusné ověřování oboru Lyceum bylo MŠMT vyhlášeno s jinými parametry či harmonogramem, než uvádí škola – přímý zdroj MŠMT nebyl při rešerši dostupný (odkaz vedl na chybovou stránku 404), ověřeno je pouze tvrzení školy."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["78-42-M/08 Lyceum (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Sídl. Gen. J. Kholla 2501, 269 01 Rakovník II, Rakovník; Lubenská 2309, 269 01 Rakovník II, Rakovník",
+          "role": "místo výuky",
+          "izo": "007820186",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600170241",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 78-42-M/08 Lyceum (režim pokusného ověřování) přítomna v roce 2026 a chybějící v roce 2025.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 30. 6. 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 78-42-M/08 není u IZO 007820186 evidován ani ve snímku k 30. 6. 2026 (a shodně chybí ve zbylých třech snímcích).",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "https://spsrakovnik.cz/122-lyceum",
+          "title": "Lyceum (78-42-M/08) – Střední průmyslová škola Emila Kolbena Rakovník",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola uvádí, že v roce 2026 poprvé otevírá zcela nový obor Lyceum, čtyřletý maturitní obor v režimu pokusného ověřování s profilací od 3. ročníku (Mediální studia / Cestovní ruch).",
+          "applicable_period": "školní rok 2026/27"
+        },
+        {
+          "url": "https://spsrakovnik.cz/9-studijni-obory",
+          "title": "Studijní obory – Střední průmyslová škola Emila Kolbena Rakovník",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Přehled oborů pro 2026/27 řadí Lyceum 78-42-M/08 mezi čtyřleté maturitní obory.",
+          "applicable_period": "nabídka oborů 2026/27"
+        },
+        {
+          "url": "https://spsrakovnik.cz/novinky/455-zverejnili-jsme-skolni-vzdelavaci-program-noveho-oboru-lyceum/",
+          "title": "Zveřejnili jsme školní vzdělávací program nového oboru Lyceum",
+          "published_at": "2026-06-26",
+          "checked_at": "2026-09-12",
+          "supports": "Potvrzuje zveřejnění ŠVP nového oboru Lyceum pro 2026/27, poprvé otevíraného na této škole.",
+          "applicable_period": "školní rok 2026/27"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přímý zdroj MŠMT k celostátnímu vyhlášení pokusného ověřování oboru 78-42-M/08 Lyceum z listopadu 2024 nebyl při rešerši dostupný (odkaz na webu školy vedl na chybu 404) – doloženo pouze vyjádřením školy, ne přímo textem vyhlášení MŠMT.",
+        "Přesné datum případného zápisu oboru 78-42-M/08 do rejstříku MŠMT (po 30. 6. 2026) není doloženo."
+      ]
+    }
+  ]
+}

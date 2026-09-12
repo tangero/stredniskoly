@@ -1,0 +1,97 @@
+{
+  "task_id": "R-651028922",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "1. Slovanské gymnázium a jazyková škola s právem státní jazykové zkoušky (REDIZO 651028922) je ve všech čtyřech snímcích vedena beze změny identity; rejstřík uvádí sídlo Masná 700/13, Staré Město, Praha, shodně i k 30. 6. 2026. IZO 151028931 „Střední škola\" má jediné místo výuky Masná 700/13 ve všech snímcích. Obor 79-41-K/41 Gymnázium je registrován ve dvou formách (4leté denní „dvojjazyčný/jiný\" jazyk výuky a 4leté dálkové český jazyk) beze změny ve všech snímcích; rejstřík nerozlišuje jednotlivá zaměření v rámci denní formy."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0161", "Q0386", "Q0387"],
+      "status": "pravděpodobné",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela jedinou řádku oboru 79-41-K/41 Gymnázium se zaměřením zapsaným jako „79-41-K/41\" (tedy pouze kódem oboru bez popisného textu) a jazykem výuky „Český s výukou vybraných předmětů v cizím jazyce\".",
+        "V 1. kole JPZ 2026 stejný obor nabízí ve dvou samostatných řádcích: „všeobecné - vybrané předměty v anglickém jazyce\" a „všeobecné - český program\", oba se stejným kódem 79-41-K/41 a stejným jazykem výuky.",
+        "Oficiální web školy (slovgym.cz) potvrzuje, že škola aktuálně nabízí přesně dva programy: „Program v češtině\" (příprava na vysoké školy v ČR) a „Program s výukou v angličtině\" (minimálně úroveň B1, výuka odborných předmětů v angličtině), oba čtyřleté – terminologicky odpovídá dvěma nabídkám CERMAT 2026.",
+        "Rejstřík MŠMT eviduje po celé sledované období jen jednu denní variantu oboru 79-41-K/41 s jazykem výuky „dvojjazyčný/jiný\", což je slučitelné s tím, že škola již v roce 2025 fakticky provozovala bilingvní i český program v rámci jednoho zápisu – CERMAT ale u nabídky 2025 zaznamenal zaměření jen jako placeholder rovný kódu oboru, nikoli popisný text.",
+        "V datech CERMAT se u téže školy mezi lety 2025 a 2026 liší uvedená adresa: v roce 2025 je uvedena Masná 700, Praha, v roce 2026 Na příkopě 850, Praha. Rejstřík MŠMT uvádí sídlo Masná 700/13 shodně ve všech čtyřech snímcích včetně 30. 6. 2026. Web školy (slovgym.cz) uvádí v patičce adresu Na Příkopě 850/8, Praha 1, bez zmínky o stěhování nebo změně sídla."
+      ],
+      "conclusion": "Nabídka 2026 rozděluje dřívější jedinou položku oboru 79-41-K/41 na dvě zaměření odpovídající dvěma programům, které škola prezentuje na svém webu (český program a anglický program). Není doloženo, zda škola oba programy provozovala odděleně už v roce 2025 a CERMAT je jen nezaznamenal samostatně (spíše to podporuje jazyková poznámka „dvojjazyčný/jiný\" v rejstříku), nebo zda je rozdělení skutečně nové pro rok 2026. Adresa Na Příkopě 850 uvedená v CERMAT 2026 a na webu školy neodpovídá sídlu vedenému v rejstříku MŠMT (Masná 700) ani k poslednímu snímku 30. 6. 2026 – jde buď o dosud nezapsanou změnu sídla, nebo o jiné pracoviště/kontaktní adresu vedle registrovaného sídla; role adresy Na Příkopě 850 nebyla samostatně doložena.",
+      "alternative_explanations": [
+        "Škola mohla nabízet oba programy (český i anglický) odděleně už v roce 2025 a rozdělení nabídky je jen zpřesnění zápisu v CERMAT datech pro 2026, nikoli nová organizační skutečnost.",
+        "Adresa Na Příkopě 850 může být jen kontaktní/korespondenční adresou nebo pracovištěm doplňkovým k registrovanému sídlu Masná 700, nikoli důkazem přestěhování celé školy."
+      ],
+      "relationship": {
+        "type": "split",
+        "from": ["79-41-K/41 (2025, obecná nabídka)"],
+        "to": ["79-41-K/41 všeobecné - anglický program (2026)", "79-41-K/41 všeobecné - český program (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Masná 700/13, 110 00 Staré Město, Praha",
+          "role": "sídlo",
+          "izo": "651028922",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Masná 700/13, 110 00 Staré Město, Praha",
+          "role": "místo výuky",
+          "izo": "151028931",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Na Příkopě 850/8, 110 00 Praha 1",
+          "role": "nezjištěná",
+          "izo": "",
+          "valid_period": "uvedeno v nabídce CERMAT 2026 a na aktuálním webu školy; v rejstříku MŠMT k 30. 6. 2026 nezapsáno",
+          "source_url": "https://slovgym.cz"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://slovgym.cz",
+          "title": "Slovgym — Gymnázium v centru Prahy",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Aktuální patička webu uvádí adresu Na Příkopě 850/8, Praha 1, bez zmínky o adrese Masná 700 nebo o stěhování.",
+          "applicable_period": "aktuální stav webu 2026"
+        },
+        {
+          "url": "https://slovgym.cz/pro-uchazece",
+          "title": "Pro uchazeče – Slovgym",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola nabízí dva programy pro přijímací řízení: „Program v češtině\" a „Program s výukou v angličtině\" (min. úroveň B1), oba čtyřleté.",
+          "applicable_period": "přijímací řízení 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Sídlo Masná 700/13 a jediné místo výuky Masná 700/13 zůstávají zapsány beze změny k 30. 6. 2026; jediná denní varianta oboru 79-41-K/41 s jazykem „dvojjazyčný/jiný\".",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-651028922",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Jedna nabídka 79-41-K/41 s adresou Masná 700 v roce 2025; dvě nabídky (anglický/český program) s adresou Na příkopě 850 v roce 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "partially",
+      "recommended_action": "manual_review",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Provozovala škola anglický a český program odděleně už v roce 2025, nebo jde o nové organizační rozdělení pro 2026?",
+        "Je Na Příkopě 850/8 nové sídlo, další místo výuky, nebo jen korespondenční/marketingová adresa? Proč rejstřík MŠMT tuto adresu k 30. 6. 2026 neeviduje?"
+      ]
+    }
+  ]
+}

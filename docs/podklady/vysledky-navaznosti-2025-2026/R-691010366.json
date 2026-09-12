@@ -5,35 +5,103 @@
   "registry_check": {
     "checked_at": "2026-09-12",
     "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík MŠMT potvrzuje plnou kontinuitu subjektu AGEL Střední zdravotnická škola a Vyšší odborná škola zdravotnická s.r.o. (REDIZO 691010366, sídlo Antošovická 107/55, 711 00 Koblov, Ostrava) beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026). IZO 181086263 „Střední škola\" je ve všech snímcích vedeno se dvěma místy výuky – Slovenská 1911/1, Český Těšín a Antošovická 107/55, Ostrava-Koblov – a se stejným seznamem oborů, mimo jiné 78-42-M/04 Zdravotnické lyceum (4leté, denní), který je zapsán beze změny ve všech čtyřech snímcích. Rejstřík sám nerozlišuje, na kterém z obou míst výuky se který obor v daném školním roce skutečně otevírá k přijímacímu řízení."
+    "summary": "Subjekt AGEL Střední zdravotnická škola a Vyšší odborná škola zdravotnická s.r.o. (REDIZO 691010366, IČO 02560739) je ve všech čtyřech snímcích rejstříku (31. 3. 2025 až 30. 6. 2026) beze změny, sídlo Antošovická 107/55, 711 00 Ostrava-Koblov. IZO 181086263 „Střední škola\" má ve všech snímcích shodná dvě místa výuky – Slovenská 1911/1, Český Těšín a Antošovická 107/55, Ostrava-Koblov – a shodný seznam registrovaných oborů, mezi nimi 78-42-M/04 Zdravotnické lyceum (4leté, denní), beze změny ve všech snímcích. Rejstřík eviduje obor na úrovni IZO, nikoli na úrovni jednotlivého místa výuky, takže z něj samotného nelze zjistit, zda je obor fakticky vyučován na jednom, nebo na obou pracovištích – to je otázka, kterou musí doložit jiný zdroj (viz nálezy níže)."
   },
   "findings": [
     {
-      "issue_ids": ["Q0168", "Q0388"],
+      "issue_ids": ["Q0169"],
       "status": "potvrzeno",
       "observations": [
-        "V 1. kole JPZ 2025 škola nabízela obor 78-42-M/04 Zdravotnické lyceum jako dvě samostatné nabídky – zvlášť pro pracoviště Český Těšín (Q0168, ID_SOF 55d5e19d-b779-4c44-97a5-ea48b31c02ef) a zvlášť pro pracoviště Ostrava-Koblov (Q0169). V 1. kole JPZ 2026 je u téhož oboru jen jedna nabídka bez uvedeného textu zaměření/pracoviště (Q0388, ID_SOF 935b9a3a-6a41-46bf-b93a-f64851d2e30c).",
-        "Rejstřík MŠMT eviduje obor 78-42-M/04 u IZO 181086263 beze změny ve všech čtyřech snímcích (2025-03-31 až 2026-06-30), s oběma místy výuky zapsanými po celou dobu – rejstřík tedy sám neříká, na kterém pracovišti se obor v roce 2026 otevírá.",
-        "Web pracoviště Český Těšín (ceskytesin.szs.agel.cz/uchazeci-o-studium/informace, ověřeno 12. 9. 2026) výslovně vyhlašuje přijímací řízení pro školní rok 2026/2027 do oboru Zdravotnické lyceum 78-42-M/04, denní forma, 4 roky, 25 přijímaných žáků, s termíny JPZ 10. a 13. dubna 2026 (náhradní 29.–30. 4. 2026).",
-        "Web pracoviště Ostrava-Koblov (ostrava.szs.agel.cz/uchazeci-o-studium/informace, ověřeno 12. 9. 2026) pro školní rok 2026/2027 uvádí jen obory Praktická sestra (53-41-M/03, 30 míst) a Laboratorní asistent (53-43-M/01, 16 míst) – Zdravotnické lyceum mezi vyhlášenými obory tohoto pracoviště pro 2026/27 chybí."
+        "V 1. kole JPZ 2025 škola nabízela obor 78-42-M/04 Zdravotnické lyceum jako samostatnou nabídku se zaměřením/pracovištěm „Ostrava-Koblov\", odlišnou od souběžné nabídky téhož oboru pro pracoviště „Český Těšín\" (viz nález k Q0168/Q0388).",
+        "V 1. kole JPZ 2026 CERMAT eviduje pro školu jen jednu nabídku 78-42-M/04 Zdravotnické lyceum, a to bez textu zaměření/pracoviště; samostatná nabídka s textem „Ostrava-Koblov\" v datech 2026 chybí.",
+        "Rejstřík MŠMT eviduje obor 78-42-M/04 u IZO 181086263 beze změny ve všech čtyřech snímcích (2025-03-31 až 2026-06-30) včetně obou míst výuky – samotný zápis v rejstříku nerozlišuje, na kterém konkrétním pracovišti se obor fakticky vyučuje, takže z něj samotného nelze usuzovat na zánik ani pokračování na konkrétní adrese.",
+        "Webová stránka pracoviště Ostrava-Koblov (podstránka „Studijní obory\") uvádí Zdravotnické lyceum mezi obory, které pracoviště nabízí obecně, ale na detailní stránce oboru je uveden kód 78-42-M/04 a výslovná věta: „Tento obor neotevíráme pro školní rok 2026/2027.\""
       ],
-      "conclusion": "Jediná nabídka 78-42-M/04 Zdravotnické lyceum v datech CERMAT 2026 (Q0388) odpovídá pokračování oboru na pracovišti Český Těšín, kde škola pro školní rok 2026/2027 vlastním oznámením vyhlásila přijímací řízení do tohoto oboru (25 míst). Chybějící text zaměření u nabídky 2026 je proto vysvětlitelný tím, že obor se nově otevírá jen na jednom z dřívějších dvou pracovišť, nikoli čistě formální změnou zápisu pokrývající obě pracoviště zároveň. Nabídka z Českého Těšína 2025 (Q0168) tak věcně pokračuje v nabídce 2026 (Q0388).",
+      "conclusion": "Škola pro školní rok 2026/27 na pracovišti Ostrava-Koblov obor 78-42-M/04 Zdravotnické lyceum neotevírá – přijímací řízení na tomto konkrétním pracovišti nevyhlašuje. Jde o vlastní, aktuální prohlášení školy na webu daného pracoviště, nikoli o odvozený závěr z chybějící nabídky CERMAT. Obor přitom zůstává zapsán v rejstříku MŠMT i k 30. 6. 2026, takže nejde o zánik registrace oboru u IZO jako celku, pouze o nevyhlášené přijímací řízení na tomto pracovišti pro rok 2026/27.",
       "alternative_explanations": [
-        "Nelze zcela vyloučit, že CERMAT text zaměření byl vynechán jen formálně a nabídka 2026 by měla pokrývat i Ostravu-Koblov; tomu ale odporuje, že vlastní stránka přijímacího řízení Ostravy-Koblova pro 2026/27 obor Zdravotnické lyceum mezi vyhlášenými obory vůbec neuvádí."
+        "Škola může v některém z dalších školních roků přijímací řízení na tomto pracovišti znovu vyhlásit, protože registrace oboru u IZO trvá a web hovoří jen o roku 2026/2027.",
+        "Nelze vyloučit, že jde o dočasné přerušení kvůli nízkému zájmu, nikoli o trvalé opuštění výuky lycea v Ostravě-Koblově; k tomu chybí doklad."
       ],
       "relationship": {
-        "type": "continuation",
-        "from": ["78-42-M/04 Zdravotnické lyceum, Český Těšín (2025, Q0168)"],
-        "to": ["78-42-M/04 Zdravotnické lyceum, bez textu zaměření (2026, Q0388) – odpovídá pracovišti Český Těšín"]
+        "type": "closed",
+        "from": ["78-42-M/04 Zdravotnické lyceum, Ostrava-Koblov (2025)"],
+        "to": []
       },
       "addresses": [
         {
-          "text": "Antošovická 107/55, 711 00 Koblov, Ostrava",
+          "text": "Antošovická 107/55, 711 00 Ostrava-Koblov",
           "role": "sídlo",
           "izo": "691010366",
           "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
           "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
         },
+        {
+          "text": "Antošovická 107/55, 711 00 Ostrava-Koblov",
+          "role": "místo výuky",
+          "izo": "181086263",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://ostrava.szs.agel.cz/studenti-a-rodice/studijni-obory/zdravotnicke-lyceum",
+          "title": "Obor Zdravotnické lyceum – AGEL Střední zdravotnická škola a Vyšší odborná škola zdravotnická, Ostrava-Koblov",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Detail oboru 78-42-M/04 na webu pracoviště Ostrava-Koblov obsahuje větu „Tento obor neotevíráme pro školní rok 2026/2027.\"",
+          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
+        },
+        {
+          "url": "https://ostrava.szs.agel.cz/studenti-a-rodice/studijni-obory",
+          "title": "Studijní obory – AGEL Střední zdravotnická škola, Ostrava-Koblov",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Přehledová stránka pracoviště Ostrava-Koblov uvádí obor Zdravotnické lyceum ve svém katalogu oborů (s odkazem na detail, kde je uvedeno neotevření pro 2026/2027).",
+          "applicable_period": "aktuální stav webu ke dni kontroly, 2026-09-12"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 78-42-M/04 zůstává u IZO 181086263 registrován na obou místech výuky (Ostrava-Koblov i Český Těšín); subjekt i IZO jsou beze změn ve všech čtyřech snímcích.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026 (a shodně k 2025-03-31, 2025-12-31, 2026-03-31)"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-691010366",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 78-42-M/04 Zdravotnické lyceum se zaměřením „Ostrava-Koblov\" přítomna v roce 2025, v roce 2026 chybí samostatná nabídka s tímto textem zaměření.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0168", "Q0388"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 78-42-M/04 Zdravotnické lyceum jako samostatnou nabídku se zaměřením/pracovištěm „Český Těšín\", odlišnou od souběžné nabídky téhož oboru pro pracoviště „Ostrava-Koblov\" (viz nález k Q0169).",
+        "V 1. kole JPZ 2026 CERMAT eviduje pro školu jedinou nabídku 78-42-M/04 Zdravotnické lyceum, tentokrát bez textu zaměření/pracoviště (pole zaměření je prázdné).",
+        "Webová stránka pracoviště Český Těšín (podstránka „Studijní obory\") uvádí Zdravotnické lyceum mezi svými obory a na detailní stránce oboru (kód 78-42-M/04) je uvedena výslovná věta: „Tento obor otevíráme pro školní rok 2026/2027.\"",
+        "Odpovídající detailní stránka téhož oboru na webu pracoviště Ostrava-Koblov uvádí opačné tvrzení – že obor pro 2026/2027 neotevírá (viz nález k Q0169) – což ukazuje, že rozdíl mezi pracovišti je reálný, nejde jen o rozdílnou aktuálnost webů.",
+        "Rejstřík MŠMT eviduje obor 78-42-M/04 u IZO 181086263 beze změny ve všech čtyřech snímcích (2025-03-31 až 2026-06-30) včetně obou míst výuky; sám o sobě nerozlišuje pracoviště na úrovni oboru."
+      ],
+      "conclusion": "Jediná nabídka 78-42-M/04 Zdravotnické lyceum v datech CERMAT 2026 (Q0388) je pokračováním nabídky pracoviště Český Těšín z roku 2025 (Q0168). Chybějící text zaměření/pracoviště v datech CERMAT 2026 je jen jiný způsob zápisu jedné zbývající nabídky (bez rozlišení pracoviště v textu), nikoli sloučení nabídek obou pracovišť do jedné položky – druhé pracoviště (Ostrava-Koblov) obor v roce 2026/27 podle vlastního vyjádření školy neotevírá vůbec (viz Q0169), takže není co slučovat. Škola na webu pracoviště Český Těšín aktuálně otevření oboru pro 2026/2027 potvrzuje.",
+      "alternative_explanations": [
+        "Formálně nelze zcela vyloučit, že by nabídka CERMAT 2026 měla sloužit i pro případné uchazeče hlásící se na pracoviště Ostrava-Koblov, pokud by tam škola dodatečně přijímací řízení vyhlásila; tomu ale vlastní aktuální vyjádření školy na webu (Q0169) odporuje."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["78-42-M/04 Zdravotnické lyceum, Český Těšín (2025)"],
+        "to": ["78-42-M/04 Zdravotnické lyceum, bez textu zaměření – pracoviště Český Těšín (2026)"]
+      },
+      "addresses": [
         {
           "text": "Slovenská 1911/1, 737 01 Český Těšín",
           "role": "místo výuky",
@@ -44,109 +112,48 @@
       ],
       "evidence": [
         {
-          "url": "https://ceskytesin.szs.agel.cz/uchazeci-o-studium/informace",
-          "title": "Informace o přijímacím řízení – AGEL SZŠ a VOŠZ, pracoviště Český Těšín",
+          "url": "https://ceskytesin.szs.agel.cz/studenti-a-rodice/studijni-obory/zdravotnicke-lyceum",
+          "title": "Obor Zdravotnické lyceum – AGEL Střední zdravotnická škola a Vyšší odborná škola zdravotnická, Český Těšín",
           "published_at": null,
           "checked_at": "2026-09-12",
-          "supports": "Škola v Českém Těšíně vyhlašuje pro školní rok 2026/2027 přijímací řízení do oboru Zdravotnické lyceum 78-42-M/04 (denní, 4 roky, 25 míst) i do oboru Praktická sestra.",
-          "applicable_period": "přijímací řízení 2026/2027"
+          "supports": "Detail oboru 78-42-M/04 na webu pracoviště Český Těšín obsahuje větu „Tento obor otevíráme pro školní rok 2026/2027.\"",
+          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
         },
         {
-          "url": "https://ostrava.szs.agel.cz/uchazeci-o-studium/informace",
-          "title": "Informace o přijímacím řízení – AGEL SZŠ a VOŠZ, pracoviště Ostrava-Koblov",
+          "url": "https://ceskytesin.szs.agel.cz/studenti-a-rodice/studijni-obory",
+          "title": "Studijní obory – AGEL Střední zdravotnická škola, Český Těšín",
           "published_at": null,
           "checked_at": "2026-09-12",
-          "supports": "Škola v Ostravě-Koblově vyhlašuje pro školní rok 2026/2027 přijímací řízení pouze do oborů Praktická sestra a Laboratorní asistent; Zdravotnické lyceum zde uvedeno není.",
-          "applicable_period": "přijímací řízení 2026/2027"
+          "supports": "Přehledová stránka pracoviště Český Těšín uvádí obor Zdravotnické lyceum ve svém katalogu oborů (spolu s Praktickou sestrou; bez Laboratorního asistenta).",
+          "applicable_period": "aktuální stav webu ke dni kontroly, 2026-09-12"
+        },
+        {
+          "url": "https://ostrava.szs.agel.cz/studenti-a-rodice/studijni-obory/zdravotnicke-lyceum",
+          "title": "Obor Zdravotnické lyceum – AGEL Střední zdravotnická škola a Vyšší odborná škola zdravotnická, Ostrava-Koblov",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Kontrolní srovnání: shodná stránka pracoviště Ostrava-Koblov uvádí u téhož oboru opačné tvrzení (obor se pro 2026/2027 neotevírá), což potvrzuje, že rozdíl mezi pracovišti je reálný.",
+          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
         },
         {
           "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
           "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
           "published_at": null,
           "checked_at": "2026-09-12",
-          "supports": "Obor 78-42-M/04 Zdravotnické lyceum zůstává u IZO 181086263 registrován se dvěma místy výuky (Český Těšín, Ostrava-Koblov); subjekt i IZO beze změn.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
+          "supports": "Obor 78-42-M/04 zůstává u IZO 181086263 registrován na obou místech výuky; subjekt i IZO jsou beze změn ve všech čtyřech snímcích.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026 (a shodně k 2025-03-31, 2025-12-31, 2026-03-31)"
         },
         {
           "url": "fronta-dohledavani-2025-2026.json, úkol R-691010366",
           "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
           "published_at": null,
           "checked_at": "2026-09-12",
-          "supports": "Nabídka 78-42-M/04 Zdravotnické lyceum se zaměřením „Český Těšín\" v roce 2025 a nabídka bez textu zaměření v roce 2026.",
+          "supports": "Nabídka 78-42-M/04 Zdravotnické lyceum se zaměřením „Český Těšín\" přítomna v roce 2025; v roce 2026 přítomna jediná nabídka téhož kódu bez textu zaměření.",
           "applicable_period": "1. kola JPZ 2025 a 2026"
         }
       ],
-      "history_comparability": "partially",
+      "history_comparability": "comparable",
       "recommended_action": "approve_mapping",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Kritéria PDF pro pracoviště Ostrava-Koblov (kriteria-pro-uchazece-2026-2027-fin.pdf) se nepodařilo strojově přečíst kvůli kódování; jeho obsah byl ověřen jen nepřímo přes souhrnnou stránku „informace\", která Zdravotnické lyceum pro toto pracoviště neuvádí."
-      ]
-    },
-    {
-      "issue_ids": ["Q0169"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela 78-42-M/04 Zdravotnické lyceum na pracovišti Ostrava-Koblov (Q0169, ID_SOF c4370b39-584e-44fb-886c-d4d3ce658fe3).",
-        "Vlastní stránka přijímacího řízení pracoviště Ostrava-Koblov (ostrava.szs.agel.cz/uchazeci-o-studium/informace, ověřeno 12. 9. 2026) pro školní rok 2026/2027 uvádí jen obory Praktická sestra (53-41-M/03) a Laboratorní asistent (53-43-M/01); Zdravotnické lyceum mezi vyhlášenými obory chybí.",
-        "Obor 78-42-M/04 zůstává zapsán v rejstříku MŠMT u IZO 181086263 beze změny ve všech čtyřech snímcích včetně 30. 6. 2026 – jde tedy o nevyhlášení přijímacího řízení na tomto konkrétním pracovišti, nikoli o výmaz oboru z registrace.",
-        "Obecná stránka studijních oborů školy (ostrava.szs.agel.cz/studenti-a-rodice/studijni-obory, ověřeno 12. 9. 2026) Zdravotnické lyceum mezi vzdělávací nabídkou Ostravy-Koblova nadále uvádí, což odpovídá spíše dobíhajícím ročníkům již přijatých žáků než novému přijímacímu řízení."
-      ],
-      "conclusion": "Škola pro školní rok 2026/2027 nevyhlásila přijímací řízení do oboru 78-42-M/04 Zdravotnické lyceum na pracovišti Ostrava-Koblov, na rozdíl od Českého Těšína, kde přijímací řízení do téhož oboru vyhlásila (viz nález Q0168/Q0388). Obor zůstává v rejstříku MŠMT registrován, jde tedy o doložené pozastavení nabírání nových žáků na tomto konkrétním pracovišti k datu ověření, nikoli o prokázané trvalé zrušení oboru jako takového.",
-      "alternative_explanations": [
-        "Škola může přijímací řízení pro toto pracoviště vyhlásit dodatečně v dalším kole nebo v následujících letech; k datu ověření (12. 9. 2026) tak ale neučinila.",
-        "Nelze zcela vyloučit neaktuálnost webu, ale souhrnná stránka přijímacího řízení i rozpis počtu míst pro Ostravu-Koblov shodně obor neuvádí."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["78-42-M/04 Zdravotnické lyceum, Ostrava-Koblov (2025, Q0169)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Antošovická 107/55, 711 00 Koblov, Ostrava",
-          "role": "místo výuky",
-          "izo": "181086263",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://ostrava.szs.agel.cz/uchazeci-o-studium/informace",
-          "title": "Informace o přijímacím řízení – AGEL SZŠ a VOŠZ, pracoviště Ostrava-Koblov",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Pro školní rok 2026/2027 se v Ostravě-Koblově vyhlašuje přijímací řízení jen do oborů Praktická sestra a Laboratorní asistent, Zdravotnické lyceum chybí.",
-          "applicable_period": "přijímací řízení 2026/2027"
-        },
-        {
-          "url": "https://ostrava.szs.agel.cz/studenti-a-rodice/studijni-obory",
-          "title": "Studijní obory – AGEL SZŠ a VOŠZ, pracoviště Ostrava-Koblov",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Zdravotnické lyceum je nadále uvedeno v obecném přehledu oborů pracoviště Ostrava-Koblov (patrně dobíhající ročníky), aniž by pro něj bylo pro 2026/27 vyhlášeno přijímací řízení.",
-          "applicable_period": "stav webu k 12. 9. 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 78-42-M/04 Zdravotnické lyceum zůstává u IZO 181086263 registrován i s místem výuky Ostrava-Koblov; registrace samotná nedokazuje vyhlášení přijímacího řízení.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-691010366",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 78-42-M/04 Zdravotnické lyceum se zaměřením „Ostrava-Koblov\" byla přítomna v roce 2025 a v roce 2026 pro toto pracoviště chybí.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
       "related_task_ids": [],
       "unanswered_questions": []
     }

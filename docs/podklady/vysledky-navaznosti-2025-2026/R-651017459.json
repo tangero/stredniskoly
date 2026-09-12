@@ -1,0 +1,126 @@
+{
+  "task_id": "R-651017459",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Střední škola - Podorlické vzdělávací centrum, Dobruška (REDIZO 651017459) je ve všech čtyřech snímcích vedena beze změny identity, sídlo Pulická 695, Dobruška. IZO 151017891 „Střední škola\" má tři stálá místa výuky ve stejné podobě ve všech snímcích (poslední snímek 30. 6. 2026 uvádí stejná místa jen v jiném pořadí výpisu). Obor 18-20-M/01 Informační technologie zůstává registrován ve všech čtyřech snímcích beze změny; rejstřík neeviduje jednotlivá zaměření, pouze samotný KKOV kód, takže změnu textu zaměření mezi lety 2025 a 2026 z rejstříku nelze ověřit ani vyvrátit."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0159", "Q0385"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 18-20-M/01 Informační technologie se zaměřením „Robotika\"; v 1. kole JPZ 2026 se stejný obor nabízí se zaměřením „Programování, vývoj aplikací a robotika\".",
+        "Oficiální web školy (sspvc.cz) uvádí mezi aktuálními čtyřletými studijními obory samostatnou podstránku „obory/it-robotika\" popsanou jako „Informační technologie (programování, robotika)\", kód 18-20-M/01 – text zaměření je rozšířenou verzí dřívějšího jednoslovného označení „Robotika\".",
+        "Rejstřík MŠMT eviduje obor 18-20-M/01 u IZO 151017891 beze změny ve všech čtyřech snímcích; rejstřík nerozlišuje jednotlivá zaměření, takže kontinuitu tohoto konkrétního zaměření dokládá především web školy."
+      ],
+      "conclusion": "Jde o tutéž nabídku téhož oboru 18-20-M/01 se zaměřením na robotiku a programování; mezi lety 2025 a 2026 se změnil pouze text zaměření (rozšíření z „Robotika\" na „Programování, vývoj aplikací a robotika\"), nikoli obor samotný.",
+      "alternative_explanations": [
+        "Rozšíření názvu zaměření mohlo doprovázet i úpravu obsahu ŠVP (např. posílení výuky programování); to nebylo z dostupných zdrojů ověřeno a podle zadání se příčina textové změny nezkoumá."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["18-20-M/01 Robotika (2025)"],
+        "to": ["18-20-M/01 Programování, vývoj aplikací a robotika (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Pulická 695, 518 01 Dobruška",
+          "role": "sídlo",
+          "izo": "651017459",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.sspvc.cz/obory",
+          "title": "Obory studia – Střední škola - Podorlické vzdělávací centrum, Dobruška",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola vede IT obor 18-20-M/01 ve dvou zaměřeních; jedno z nich je popsáno jako „Informační technologie (programování, robotika)\" s odkazem na podstránku it-robotika.",
+          "applicable_period": "aktuální nabídka školy 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 18-20-M/01 zůstává u IZO 151017891 registrován beze změny.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-651017459",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Zaměření „Robotika\" (2025) a „Programování, vývoj aplikací a robotika\" (2026) v rámci téhož oboru 18-20-M/01.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "partially",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0160", "Q0384"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 18-20-M/01 Informační technologie se zaměřením „Počítačová grafika\"; v 1. kole JPZ 2026 se stejný obor nabízí se zaměřením „Počítačová grafika, audio-video tvorba a produkční tisk\".",
+        "Oficiální web školy (sspvc.cz) uvádí druhou aktuální variantu IT oboru na podstránce „obory/it-grafika\", jejíž nadpis zní přesně „INFORMAČNÍ TECHNOLOGIE se zaměřením na počítačovou grafiku, audio-video tvorbu a produkční tisk\" – shoda s textem nabídky CERMAT 2026.",
+        "Přehledová stránka „obory\" popisuje tutéž variantu stručněji jako „Informační technologie (grafika, audio-video)\", což potvrzuje, že jde o rozšířený/aktualizovaný popis dřívějšího zaměření „Počítačová grafika\", nikoli o nový program."
+      ],
+      "conclusion": "Jde o tutéž nabídku téhož oboru 18-20-M/01 se zaměřením na počítačovou grafiku; mezi lety 2025 a 2026 se změnil pouze text zaměření (doplnění o audio-video tvorbu a produkční tisk), nikoli obor samotný.",
+      "alternative_explanations": [
+        "Rozšíření zaměření mohlo znamenat i reálné rozšíření obsahu výuky o audio-video a tiskovou produkci; to nebylo ověřeno a příčina textové změny se podle zadání nezkoumá."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["18-20-M/01 Počítačová grafika (2025)"],
+        "to": ["18-20-M/01 Počítačová grafika, audio-video tvorba a produkční tisk (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Pulická 695, 518 01 Dobruška",
+          "role": "sídlo",
+          "izo": "651017459",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.sspvc.cz/obory/it-grafika",
+          "title": "Informační technologie se zaměřením na počítačovou grafiku, audio-video tvorbu a produkční tisk – sspvc.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Přesný text zaměření aktuální nabídky odpovídá zaměření z nabídky CERMAT 2026.",
+          "applicable_period": "aktuální nabídka školy 2026"
+        },
+        {
+          "url": "https://www.sspvc.cz/obory",
+          "title": "Obory studia – Střední škola - Podorlické vzdělávací centrum, Dobruška",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola vede druhou variantu IT oboru jako „grafika, audio-video\" s odkazem na podstránku it-grafika.",
+          "applicable_period": "aktuální nabídka školy 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-651017459",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Zaměření „Počítačová grafika\" (2025) a „Počítačová grafika, audio-video tvorba a produkční tisk\" (2026) v rámci téhož oboru 18-20-M/01.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "partially",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

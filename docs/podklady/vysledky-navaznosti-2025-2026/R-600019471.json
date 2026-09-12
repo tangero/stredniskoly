@@ -1,0 +1,85 @@
+{
+  "task_id": "R-600019471",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu: Střední zdravotnická škola, Praha 10, Ruská 2200/91 (REDIZO 600019471, IČ 00638765), sídlo Ruská 2200/91, beze změny ve všech čtyřech snímcích. IZO 110031008 „Střední škola\" má jediné místo výuky (Ruská 2200/91) beze změny. Obor 53-44-M/01 Ortoticko-protetický technik je evidován ve všech čtyřech snímcích – akreditace oboru existovala už před rokem 2025 a trvá nepřetržitě."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0366"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola obor 53-44-M/01 Ortoticko-protetický technik nenabízela (nabídka obsahovala jen Praktickou sestru, Bezpečnostně právní činnost, Sociální činnost a Zdravotnické lyceum); v 1. kole JPZ 2026 se obor v nabídce nově objevuje.",
+        "Rejstřík MŠMT eviduje obor 53-44-M/01 u IZO 110031008 už od nejstaršího dostupného snímku (31. 3. 2025) a nepřetržitě i v následujících snímcích – obor tedy nebyl v roce 2025 nově akreditován, jen nebyl otevřen k přijímacímu řízení.",
+        "Aktuální web školy (szsvinohrady.cz) má samostatnou podstránku oboru Ortoticko-protetický technik (53-44-M/01, čtyřleté denní studium, maturitní zkouška, výuka mj. s 3D tiskárnou).",
+        "Stránka pro uchazeče (szsvinohrady.cz/pro-uchazece/prijimaci-rizeni) uvádí obor Ortoticko-protetický technik mezi šesti obory otevíranými k přijímacímu řízení pro školní rok 2026/27, spolu s Praktickou sestrou, Zdravotnickým lyceem, Bezpečnostně právní činností, Sociální činností a Ošetřovatelem; přesná kritéria a kapacity měla být dle stránky doplněny do 31. 1. 2026."
+      ],
+      "conclusion": "Obor 53-44-M/01 Ortoticko-protetický technik je dlouhodobě akreditovaným oborem školy (v rejstříku evidován už v roce 2025), který ale v 1. kole přijímacího řízení 2025 nebyl otevřen; pro školní rok 2026/27 škola přijímací řízení do tohoto oboru obnovila. Nejde tedy o nový obor, ale o obnovení dříve nenabízeného, avšak stále registrovaného oboru.",
+      "alternative_explanations": [
+        "Důvod, proč obor nebyl otevřen v roce 2025 (např. nedostatek zájemců v předchozím kole, personální kapacita), nebyl zjišťován – zadání jej neoznačuje za nutné dohledat."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["53-44-M/01 Ortoticko-protetický technik, registrován ale neotevřen (2025)"],
+        "to": ["53-44-M/01 Ortoticko-protetický technik, otevřen k přijímacímu řízení (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Ruská 2200/91, 100 00 Vinohrady, Praha",
+          "role": "sídlo",
+          "izo": "600019471",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Ruská 2200/91, 100 00 Vinohrady, Praha",
+          "role": "místo výuky",
+          "izo": "110031008",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://szsvinohrady.cz/studijni-obory/ortoticko-proteticky-technik",
+          "title": "Ortoticko-protetický technik – Střední zdravotnická škola, Praha 10 (SZŠ Vinohrady)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Popis oboru 53-44-M/01 jako čtyřletého maturitního studia aktuálně nabízeného školou.",
+          "applicable_period": "aktuální nabídka"
+        },
+        {
+          "url": "https://szsvinohrady.cz/pro-uchazece/prijimaci-rizeni",
+          "title": "Přijímací řízení – SZŠ Vinohrady",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor Ortoticko-protetický technik je uveden mezi šesti obory otevíranými k přijímacímu řízení pro školní rok 2026/27.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 53-44-M/01 je u IZO 110031008 evidován ve všech čtyřech snímcích včetně nejstaršího z 31. 3. 2025.",
+          "applicable_period": "stav rejstříku 31. 3. 2025 až 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600019471",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 53-44-M/01 chybí v 1. kole JPZ 2025 a je přítomna v 1. kole JPZ 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

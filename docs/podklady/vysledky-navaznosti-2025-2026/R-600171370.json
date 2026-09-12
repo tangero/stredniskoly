@@ -1,0 +1,92 @@
+{
+  "task_id": "R-600171370",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": [
+      "2025-03-31",
+      "2025-12-31",
+      "2026-03-31",
+      "2026-06-30"
+    ],
+    "summary": "Rejstřík potvrdil kontinuitu subjektu Střední škola technická, Přerov, Kouřílkova 8 (REDIZO 600171370, IZO 130001538) ve všech čtyřech snímcích, se stejným sídlem a stejnými třemi místy výuky (Kouřílkova 1028/8, 9. května 194/88, bří Hovůrkových 2750/17 - pořadí výpisu adres se mezi snímky liší, adresy samotné se nemění). Obor 23-43-L/51 Provozní technika je evidován beze změny ve všech čtyřech snímcích, včetně dvouleté denní i tříleté dálkové/večerní varianty."
+  },
+  "findings": [
+    {
+      "issue_ids": [
+        "Q0149"
+      ],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela nástavbový obor 23-43-L/51 Provozní technika v denní dvouleté formě; v 1. kole JPZ 2026 tato nabídka v datech úkolu chybí.",
+        "Rejstřík MŠMT eviduje obor 23-43-L/51 Provozní technika u IZO 130001538 nepřetržitě ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026), včetně dvouleté denní i tříleté dálkové/večerní varianty - registrace oboru trvá beze změny.",
+        "Web školy (kourilkova8.cz, sekce Nástavbové studium) uvádí u oboru Provozní technika (určeno pro absolventy učebních oborů skupiny 23 - Strojírenství a strojírenská výroba, denní 2 roky nebo dálkové 3 roky) explicitní poznámku \"VE ŠKOLNÍM ROCE 2026/2027 SE NEOTEVÍRÁ\", vztahující se k oběma formám studia."
+      ],
+      "conclusion": "Škola pro školní rok 2026/27 neotevírá nástavbový obor Provozní technika (ani denní, ani dálkovou formu), přestože obor zůstává v rejstříku MŠMT registrován. Chybějící nabídka v CERMAT datech pro rok 2026 je tedy přerušení přijímacího řízení, nikoli zánik oboru.",
+      "alternative_explanations": [
+        "Obor může být v některém budoucím roce znovu otevřen - registrace v rejstříku k tomu zůstává platná."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": [
+          "23-43-L/51 Provozní technika, denní (2025)"
+        ],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Kouřílkova 1028/8, 750 02 Přerov I-Město, Přerov",
+          "role": "sídlo",
+          "izo": "600171370",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Kouřílkova 1028/8, 750 02 Přerov I-Město, Přerov",
+          "role": "místo výuky",
+          "izo": "130001538",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "9. května 194/88, 750 02 Přerov I-Město, Přerov; bří Hovůrkových 2750/17, 750 02 Přerov I-Město, Přerov",
+          "role": "nezjištěná",
+          "izo": "130001538",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://kourilkova8.cz/uchazec/obory/",
+          "title": "Obory – Střední škola technická, Přerov, Kouřílkova 8",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "U oboru Provozní technika (nástavbové studium, denní i dálková forma) uvedena poznámka \"VE ŠKOLNÍM ROCE 2026/2027 SE NEOTEVÍRÁ\".",
+          "applicable_period": "školní rok 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 23-43-L/51 zůstává u IZO 130001538 registrován ve všech čtyřech snímcích.",
+          "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600171370",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 23-43-L/51 (denní) přítomna v 1. kole JPZ 2025 a chybí v 1. kole JPZ 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

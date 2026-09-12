@@ -1,0 +1,97 @@
+{
+  "task_id": "R-600170462",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": [
+      "2025-03-31",
+      "2025-12-31",
+      "2026-03-31",
+      "2026-06-30"
+    ],
+    "summary": "Rejstřík potvrdil kontinuitu subjektu Integrovaná střední škola Cheb, příspěvková organizace (REDIZO 600170462, IZO 130002046) ve všech čtyřech snímcích, se stejným sídlem (Obrněné brigády 2258/6, Cheb) a stejným seznamem míst výuky i registrovaných oborů. Obor 39-08-M/01 Požární ochrana není evidován v žádném ze čtyř snímků (31. 3. 2025 až 30. 6. 2026) - jde o odstup zápisu vůči realitě zjištěné na webu školy a v médiích."
+  },
+  "findings": [
+    {
+      "issue_ids": [
+        "Q0380"
+      ],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nenabízela obor 39-08-M/01 Požární ochrana; v 1. kole JPZ 2026 se tato nabídka objevuje nově vedle pěti dosavadních maturitních oborů.",
+        "Obor 39-08-M/01 není evidován v žádném ze čtyř snímků rejstříku MŠMT u REDIZO 600170462 (31. 3. 2025 - 30. 6. 2026) - jde o odstup zápisu, nikoli o nesoulad s realitou.",
+        "Škola na svém webu (isscheb.eu, článek z 1. 9. 2026) popisuje slavnostní přijetí prvních žáků nového maturitního oboru Požární ochrana (39-08-M/01), konané ve Valdštejnské obrazárně chebského muzea, za účasti zástupců zřizovatele - Karlovarského kraje (radní pro školství Mgr. Hana Žáková) a Hasičského záchranného sboru Karlovarského kraje (ředitel plk. Ing. Oldřich Volf). Vedením byla pověřena vedoucí učitelka \"nově vzniklého odloučeného pracoviště Hasičská škola\".",
+        "Web školy (isscheb.eu/obory-podle-skol) uvádí Požární ochranu jako samostatnou kategorii s vlastní stránkou oboru.",
+        "Fulltextové vyhledávání dohledalo i regionální zpravodajství (irozhlas.cz - \"V Chebu se příští školní rok otevře nový maturitní obor požární ochrana\", chebsky.denik.cz - \"Obor požární ochrana v Chebu rozšíří možnosti vzdělávání v Karlovarském kraji\", oboje datováno cca 11 měsíců před rešerší, tj. přibližně říjen 2025), které oznámení oboru potvrzují nezávisle na webu školy."
+      ],
+      "conclusion": "Obor 39-08-M/01 Požární ochrana je prokazatelně nový obor, otevřený od školního roku 2026/27 se založením samostatného odloučeného pracoviště \"Hasičská škola\". Nemá žádného předchůdce v nabídce školy z roku 2025.",
+      "alternative_explanations": [
+        "Formální zápis oboru do rejstříku MŠMT mohl proběhnout až po 30. 6. 2026; to otevření výuky od září 2026 nevyvrací."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": [
+          "39-08-M/01 Požární ochrana (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "Obrněné brigády 2258/6, 350 02 Cheb",
+          "role": "sídlo",
+          "izo": "600170462",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "nezjištěno (nově vzniklé odloučené pracoviště \"Hasičská škola\")",
+          "role": "nezjištěná",
+          "izo": "130002046",
+          "valid_period": "od 2026 (mimo rejstřík k 30.6.2026)",
+          "source_url": "https://www.isscheb.eu/prijeti-zaku-1-rocniku-do-oboru-pozarni-ochrana/"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.isscheb.eu/prijeti-zaku-1-rocniku-do-oboru-pozarni-ochrana/",
+          "title": "Slavnostní přijetí žáků 1. ročníku do oboru požární ochrana – ISŠ Cheb",
+          "published_at": "2026-09-01",
+          "checked_at": "2026-09-12",
+          "supports": "Škola potvrzuje přijetí prvních žáků nového maturitního oboru Požární ochrana od září 2026, se zřízením odloučeného pracoviště Hasičská škola a za účasti Karlovarského kraje a HZS.",
+          "applicable_period": "školní rok 2026/27"
+        },
+        {
+          "url": "https://www.isscheb.eu/obory-podle-skol/",
+          "title": "Obory podle škol – ISŠ Cheb",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Požární ochrana (39-08-M/01) uvedena jako samostatná kategorie/obor s vlastní stránkou.",
+          "applicable_period": "stav webu k datu rešerše, září 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 39-08-M/01 není u REDIZO 600170462 evidován ani k 30. 6. 2026.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600170462",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 39-08-M/01 chybí v 1. kole JPZ 2025 a objevuje se v 1. kole JPZ 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přesná adresa a IZO nově vzniklého odloučeného pracoviště Hasičská škola - v rejstříku k 30. 6. 2026 dosud nezapsáno."
+      ]
+    }
+  ]
+}

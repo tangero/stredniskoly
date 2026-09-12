@@ -1,0 +1,86 @@
+{
+  "task_id": "R-691012431",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu Střední průmyslová škola Otty Wichterleho, příspěvková organizace (REDIZO 691012431), IZO 110028881 „Střední škola“, sídlo Hostovského 910, Hronov, beze změny ve všech čtyřech snímcích. Obor 34-52-L/01 Tiskař na polygrafických strojích (čtyřletý, s maturitou) zůstává u tohoto IZO zapsán ve všech snímcích do 30. 6. 2026 včetně, stejně jako příbuzný tříletý učební obor 34-52-H/01 Tiskař na polygrafických strojích a čtyřletý 34-53-L/01 Reprodukční grafik pro média. Registrace oboru tedy trvá i po vypadnutí z nabídky CERMAT 2026."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0170"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela čtyřletý maturitní obor 34-52-L/01 Tiskař na polygrafických strojích se zaměřením „Operátor tisku“ (výuka ve Velkém Poříčí); v 1. kole JPZ 2026 tato nabídka u REDIZO 691012431 chybí.",
+        "Web školy (sekce Maturitní obory, spsow.cz) uvádí obor „Operátor tisku“ ve Velkém Poříčí (kapacita 21 studentů, přijímání s talentovou zkouškou) s výslovnou poznámkou, že tento obor NENÍ otevřen pro školní rok 2026/27.",
+        "Táž stránka potvrzuje, že příbuzné obory Reprodukční grafik, Elektrotechnika, Oděvní design a Strojírenství pro rok 2026/27 otevřeny jsou; výpadek se týká jen konkrétního maturitního zaměření Operátor tisku.",
+        "Web školy (sekce Přijímací řízení, spsow.cz/prijimaci-rizeni-informace/) potvrzuje, že tříletý učební obor Tiskař na polygrafických strojích (34-52-H/01, bez maturity, i ve zkráceném studiu) je pro 2026/27 nadále v nabídce.",
+        "Rejstřík MŠMT eviduje obor 34-52-L/01 u IZO 110028881 ve všech čtyřech snímcích (do 30. 6. 2026 včetně) - registrace oboru trvá, i když přijímací řízení do něj v roce 2026 vyhlášeno nebylo."
+      ],
+      "conclusion": "Škola pro školní rok 2026/27 neotvírá čtyřletý maturitní obor 34-52-L/01 Tiskař na polygrafických strojích se zaměřením Operátor tisku (Velké Poříčí); jde o přerušení přijímacího řízení do tohoto konkrétního zaměření, doložené přímo webem školy, nikoli o zánik oboru - ten zůstává zapsán v rejstříku MŠMT. Příbuzný tříletý učební obor Tiskař na polygrafických strojích (bez maturity) škola dál nabízí.",
+      "alternative_explanations": [
+        "Škola obor v některém dalším roce může znovu otevřít; web to ani nepotvrzuje, ani nevylučuje."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["34-52-L/01 (2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Hostovského 910, 549 31 Hronov",
+          "role": "sídlo",
+          "izo": "691012431",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Náchodská 542, 549 32 Velké Poříčí",
+          "role": "místo výuky",
+          "izo": "110028881",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky, dle rejstříku; konkrétní přiřazení oboru k budově dokládá web školy)",
+          "source_url": "https://spsow.cz/maturitni-obory/"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://spsow.cz/maturitni-obory/",
+          "title": "Maturitní obory - Digital Academy... (Střední průmyslová škola Otty Wichterleho)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor Operátor tisku (Velké Poříčí) je uveden s poznámkou „NENÍ otevřen pro rok 2026/27“; ostatní maturitní obory pro 2026/27 otevřeny jsou.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://spsow.cz/prijimaci-rizeni-informace/",
+          "title": "Přijímací řízení - informace (SPŠ Otty Wichterleho)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Tříletý učební obor Tiskař na polygrafických strojích (i zkrácené studium) je součástí nabídky přijímacího řízení 2026/27.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 34-52-L/01 zůstává u IZO 110028881 registrován k 30. 6. 2026; subjekt i IZO jsou beze změn.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-691012431",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 34-52-L/01 Tiskař na polygrafických strojích / Operátor tisku přítomna v roce 2025 a chybějící v roce 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

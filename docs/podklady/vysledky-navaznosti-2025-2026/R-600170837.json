@@ -1,0 +1,92 @@
+{
+  "task_id": "R-600170837",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": [
+      "2025-03-31",
+      "2025-12-31",
+      "2026-03-31",
+      "2026-06-30"
+    ],
+    "summary": "Rejstřík potvrdil plnou kontinuitu subjektu Střední škola automobilní Holice (REDIZO 600170837, IZO 013582909) ve všech čtyřech snímcích, se stejným sídlem i jediným místem výuky (Nádražní 301, Holice). Obor 39-41-L/01 Autotronik i navazující výuční obory 26-57-H/01 Autoelektrikář a 23-68-H/01 Mechanik opravář motorových vozidel jsou zapsány beze změny ve všech čtyřech snímcích."
+  },
+  "findings": [
+    {
+      "issue_ids": [
+        "Q0147",
+        "Q0148",
+        "Q0259",
+        "Q0260"
+      ],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 39-41-L/01 Autotronik ve dvou zaměřeních s texty \"Automechanik\" a \"Autoelektrikář\" (Q0147, Q0148); v 1. kole JPZ 2026 nabízela týž obor 39-41-L/01 Autotronik ve dvou zaměřeních s texty \"26-57-H/01 Autoelektrikář\" a \"23-68-H/01 Mechanik opravář motorových vozidel\" (Q0259, Q0260) - zápis nyní obsahuje i kód KKOV navazujícího výučního oboru.",
+        "Rejstřík MŠMT eviduje u IZO 013582909 po celé sledované období (2025-03-31 až 2026-06-30) beze změny obor 39-41-L/01 Autotronik i oba navazující výuční obory 26-57-H/01 Autoelektrikář a 23-68-H/01 Mechanik opravář motorových vozidel - žádný z kódů nebyl v mezidobí přidán ani odebrán.",
+        "Web školy (spsauto.cz/pro-uchazece/studijni-obory) aktuálně popisuje obor Autotronik ve dvou zaměřeních označených přesně \"Autotronik (23-68-H/01 Mechanik opravář motorových vozidel)\" a \"Autotronik (26-57-H/01 Autoelektrikář)\", s možností vykonat po 3. ročníku závěrečnou zkoušku \"v oboru automechanik\", resp. \"v oboru autoelektrikář\" - tedy hovorové \"Automechanik\" odpovídá formálnímu názvu \"Mechanik opravář motorových vozidel\" pro totéž zaměření."
+      ],
+      "conclusion": "Jde o tutéž dvojici zaměření oboru Autotronik v obou letech (Autoelektrikář a Automechanik/Mechanik opravář motorových vozidel). Mezi lety 2025 a 2026 se změnil pouze způsob zápisu textu zaměření - doplnění kódu KKOV navazujícího výučního oboru a použití formálního názvu namísto hovorového - nikoli obsah nabídky.",
+      "alternative_explanations": [
+        "Doplnění kódu KKOV by teoreticky mohlo souviset se změnou způsobu dokládání dvojí kvalifikace (maturita + výuční list), příčinu ale zadání nevyžaduje zkoumat a přímý zdroj k tomu chybí."
+      ],
+      "relationship": {
+        "type": "rename_only",
+        "from": [
+          "39-41-L/01 Autotronik – Automechanik (2025)",
+          "39-41-L/01 Autotronik – Autoelektrikář (2025)"
+        ],
+        "to": [
+          "39-41-L/01 Autotronik – 23-68-H/01 Mechanik opravář motorových vozidel (2026)",
+          "39-41-L/01 Autotronik – 26-57-H/01 Autoelektrikář (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "Nádražní 301, 534 01 Holice",
+          "role": "sídlo",
+          "izo": "600170837",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Nádražní 301, 534 01 Holice",
+          "role": "místo výuky",
+          "izo": "013582909",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.spsauto.cz/pro-uchazece/studijni-obory",
+          "title": "Studijní obory – SPŠ Auto Holice",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Autotronik nabízen ve dvou zaměřeních shodných s kódy 23-68-H/01 Mechanik opravář motorových vozidel a 26-57-H/01 Autoelektrikář, s možností závěrečné zkoušky automechanik/autoelektrikář po 3. ročníku.",
+          "applicable_period": "stav webu k datu rešerše, září 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obory 39-41-L/01, 26-57-H/01 a 23-68-H/01 registrovány u IZO 013582909 beze změny ve všech snímcích.",
+          "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600170837",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Zaměření zapsaná v 1. kole JPZ 2025 jako \"Automechanik\"/\"Autoelektrikář\" a v 1. kole JPZ 2026 jako \"23-68-H/01 Mechanik opravář motorových vozidel\"/\"26-57-H/01 Autoelektrikář\".",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

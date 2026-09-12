@@ -1,0 +1,88 @@
+{
+  "task_id": "R-600019462",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu: Vyšší odborná škola zdravotnická a Střední zdravotnická škola, Praha 4, 5. května 51 (REDIZO 600019462, IČ 00638722), sídlo 5. května 200/51, beze změny ve všech čtyřech snímcích. IZO 110031067 „Střední škola\" má jediné místo výuky (5. května 200/51) beze změny. Obor 69-41-L/02 Masér sportovní a rekondiční je evidován ve všech čtyřech snímcích včetně 30. 6. 2026 – akreditace formálně trvá. Obor 53-41-M/04 Masér ve zdravotnictví naopak v žádném ze čtyř snímků u tohoto IZO evidován není – jde tedy o odstup mezi reálnou nabídkou a zápisem do rejstříku, obdobně jako u jiných nově zaváděných oborů ve frontě."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0129", "Q0367"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 69-41-L/02 Masér sportovní a rekondiční; v 1. kole JPZ 2026 tato nabídka chybí a místo ní se nově objevuje obor 53-41-M/04 Masér ve zdravotnictví.",
+        "Aktuální web školy (zdravotnickaskola5kvetna.cz), konkrétně podstránka oboru Masér ve zdravotnictví, uvádí doslova: „Masér ve zdravotnictví nahrazuje obor Masér sportovní a rekondiční s tím, že výuka sportovních masáží... zůstává zachována.\"",
+        "Tatáž podstránka uvádí platné podmínky přijímacího řízení pro školní rok 2026/27 (podání přihlášek do 20. 2. 2026, zkoušky 10. a 13. 4. 2026, kapacita 28 přijímaných), což odpovídá období, k němuž se vztahují CERMAT data 2026.",
+        "Rejstřík MŠMT eviduje obor 69-41-L/02 u IZO 110031067 nadále ve všech čtyřech snímcích (formální akreditace nebyla zrušena), zatímco nový kód 53-41-M/04 v rejstříku pro toto IZO zatím evidován není – jde o odstup v zápisu do rejstříku, ne o rozpor s nabídkou.",
+        "Obor 53-41-M/04 Masér ve zdravotnictví je přitom u jiné školy (REDIZO 600018318, Jeseník) v rejstříku evidován už od 31. 3. 2025 – jde tedy o celostátně existující kód, na který škola v Praze nově přechází."
+      ],
+      "conclusion": "Škola nahradila obor Masér sportovní a rekondiční (69-41-L/02) novým oborem Masér ve zdravotnictví (53-41-M/04) od školního roku 2026/27, jak výslovně potvrzuje vlastní web školy. Výuka sportovních masáží je podle školy v novém oboru zachována, jde tedy o změnu kódu/rámcového vzdělávacího programu při zachování příbuzného obsahu, nikoli o zánik oboru a nezávislý vznik nového.",
+      "alternative_explanations": [
+        "Rozsah shody obsahu mezi starým a novým RVP nebyl ověřován do detailu (jen citace školy, že výuka sportovních masáží zůstává) – nelze vyloučit dílčí obsahové rozdíly nad rámec přejmenování kódu."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["69-41-L/02 Masér sportovní a rekondiční (2025)"],
+        "to": ["53-41-M/04 Masér ve zdravotnictví (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "5. května 200/51, 140 00 Nusle, Praha",
+          "role": "sídlo",
+          "izo": "600019462",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "5. května 200/51, 140 00 Nusle, Praha",
+          "role": "místo výuky",
+          "izo": "110031067",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.zdravotnickaskola5kvetna.cz/maser-ve-zdravotnictvi",
+          "title": "Masér ve zdravotnictví – Vyšší odborná škola zdravotnická a Střední zdravotnická škola, Praha 4",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola výslovně uvádí, že obor Masér ve zdravotnictví (53-41-M/04) nahrazuje obor Masér sportovní a rekondiční, výuka sportovních masáží zůstává zachována; uvedeny termíny přijímacího řízení pro 2026/27.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://www.zdravotnickaskola5kvetna.cz/",
+          "title": "Vyšší odborná škola zdravotnická a Střední zdravotnická škola, Praha 4 – úvodní stránka",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Web neuvádí mezi aktuálně nabízenými obory Masér sportovní a rekondiční, pouze Masér ve zdravotnictví.",
+          "applicable_period": "aktuální nabídka"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 69-41-L/02 zůstává u IZO 110031067 evidován i k 30. 6. 2026; obor 53-41-M/04 u tohoto IZO evidován není (odstup zápisu).",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600019462",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 69-41-L/02 přítomna v roce 2025 a chybějící v roce 2026; nabídka 53-41-M/04 přítomna v roce 2026 a chybějící v roce 2025.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "partially",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Jde o celostátní reformu oborové soustavy (nahrazení 69-41-L/02 kódem 53-41-M/04 plošně), nebo o rozhodnutí jednotlivé školy? Nebylo ověřeno u MŠMT/NPI."
+      ]
+    }
+  ]
+}

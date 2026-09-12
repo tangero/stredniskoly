@@ -1,0 +1,247 @@
+{
+ "task_id": "R-600170179",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrzuje kontinuitu subjektu REDIZO 600170179 (Střední pedagogická škola a Střední odborná škola služeb Mladá Boleslav, příspěvková organizace, IČ 00473944, sídlo Na Karmeli 206/11, 293 01 Mladá Boleslav II) beze změny názvu i sídla ve všech čtyřech snímcích. IZO 107820251 „Střední škola“ je ve všech čtyřech snímcích vedeno se stejnými třemi místy výuky (Na Karmeli 206/11; Erbenova 792; Gellnerova 1257, vše Mladá Boleslav II) – pořadí adres ve výpisu snímku k 30. 6. 2026 je jiné než v předchozích, obsah adres je ale shodný, nejde o doloženou změnu. Obor 72-41-M/01 Informační služby je zapsán ve všech čtyřech snímcích beze změny (registrace trvá). Obor 78-42-M/08 Lyceum (režim pokusného ověřování) není zapsán v žádném ze čtyř snímků, ačkoli podle dokladů školy je pro školní rok 2026/27 reálně otevřen a přijímací řízení do něj proběhlo – jde o odstup zápisu nově schváleného oboru do rejstříku, nikoli o rozpor s nabídkou CERMAT. Rejstřík nerozlišuje, který obor se vyučuje na které ze tří adres IZO 107820251; matici míst výuky podle oborů se z dostupných snímků nepodařilo sestavit a nebylo to ani cílem tohoto úkolu."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0143"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela obor 72-41-M/01 Informační služby, zaměření „Informační služby“, 4 roky, denní; v 1. kole JPZ 2026 tato nabídka u REDIZO 600170179 chybí, zatímco Předškolní a mimoškolní pedagogika (75-31-M/01) a Pedagogické lyceum (78-42-M/03) pokračují v obou letech.",
+    "Rejstřík MŠMT eviduje obor 72-41-M/01 u IZO 107820251 ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) beze změny – formální registrace oboru trvá.",
+    "Škola na webu v článku „Přijímací řízení 2026“ (zveřejněno 30. 1. 2026) uvádí kompletní seznam „Otevírané obory a počty přijímaných“ pro školní rok 2026/27: Předškolní a mimoškolní pedagogika (28), Pedagogické lyceum (28), „Lyceum (nástupce oboru Informační služby)“ (28), Cukrář a pekař (30) a Designér (25). Informační služby v tomto výčtu chybí a obor Lyceum je zde školou výslovně označen jako jeho nástupce.",
+    "Samostatná podstránka oboru Informační služby (72-41-M/01) na webu školy je stále online a nabízí ke stažení ŠVP, ale v patičkovém výčtu „Naše obory“ (aktuální přehled šesti aktivně nabízených oborů: Předškolní a mimoškolní pedagogika, Pedagogické lyceum, Lyceum, Designér, Cukrář, Pekař) už uvedena není – zůstává jen v hlavním menu jako archivní odkaz.",
+    "Nástupnickou nabídkou je podle školy 78-42-M/08 Lyceum – Cestovní ruch, Média / zaměření Všeobecné lyceum (2026) (řešeno samostatně v otázce Q0314). Vztah je zde veden jako 'closed', protože fronta nemá typ pro nahrazení oboru jiným a pole 'to' se u ukončené nabídky nechává prázdné; nástupce je proto zaznamenán slovně."
+   ],
+   "conclusion": "Škola pro školní rok 2026/27 nevyhlásila přijímací řízení do oboru 72-41-M/01 Informační služby a sama tuto změnu na webu popisuje jako nahrazení novým oborem Lyceum 78-42-M/08 (viz Q0314 – škola jej výslovně nazývá „nástupcem oboru Informační služby“). Nejde o formální zánik oboru: 72-41-M/01 zůstává zapsán v rejstříku MŠMT ve všech čtyřech sledovaných snímcích. Chybějící nabídka 2026 je tedy přerušení/ukončení přijímacího řízení do tohoto oboru ve prospěch nově otevřeného oboru, nikoli zánik registrace.",
+   "alternative_explanations": [
+    "Škola formálně mohla obor pouze dočasně nenabízet a v budoucnu přijímací řízení do Informačních služeb obnovit, protože registrace trvá; k datu zpracování o tom ale škola nekomunikuje a naopak obor v aktuální nabídce oborů na webu nefiguruje."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "72-41-M/01 Informační služby (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
+    {
+     "text": "Na Karmeli 206/11, 293 01 Mladá Boleslav II, Mladá Boleslav",
+     "role": "sídlo",
+     "izo": "600170179",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Na Karmeli 206/11; Erbenova 792; Gellnerova 1257 (vše 293 01 Mladá Boleslav II, Mladá Boleslav) – tři místa výuky IZO 107820251, rejstřík nerozlišuje podle oboru",
+     "role": "místo výuky",
+     "izo": "107820251",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky, jen pořadí adres ve snímku 2026-06-30 je jiné)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "https://www.spgsmb.cz/2026/01/prijimaci-rizeni-2026/",
+     "title": "Přijímací řízení 2026 – SPgŠ a SOŠS Mladá Boleslav",
+     "published_at": "2026-01-30",
+     "checked_at": "2026-09-12",
+     "supports": "Seznam otevíraných oborů pro 2026/27 neobsahuje Informační služby; obor Lyceum je výslovně označen jako „nástupce oboru Informační služby“.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://www.spgsmb.cz/nase-obory/informacni-sluzby/",
+     "title": "Informační služby – SPgŠ a SOŠS Mladá Boleslav",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Archivní podstránka oboru 72-41-M/01 se ŠVP existuje, ale obor už není v aktuálním patičkovém výčtu šesti nabízených oborů školy.",
+     "applicable_period": "stav webu k 12. 9. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 31. 3. 2025",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 72-41-M/01 Informační služby zapsán u IZO 107820251.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 31. 12. 2025",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 72-41-M/01 Informační služby zůstává zapsán u IZO 107820251.",
+     "applicable_period": "stav rejstříku k 31. 12. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 31. 3. 2026",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 72-41-M/01 Informační služby zůstává zapsán u IZO 107820251.",
+     "applicable_period": "stav rejstříku k 31. 3. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 30. 6. 2026",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 72-41-M/01 Informační služby zapsán i v posledním sledovaném snímku – registrace trvá i po vyhlášeném nahrazení oboru pro přijímací řízení.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600170179",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 72-41-M/01 Informační služby přítomna v roce 2025 a chybějící v roce 2026; ostatní obory (Předškolní a mimoškolní pedagogika, Pedagogické lyceum) pokračují.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Přesné datum a formu rozhodnutí zřizovatele (Středočeský kraj) o nahrazení oboru Informační služby oborem Lyceum se nepodařilo dohledat samostatným zdrojem zřizovatele; doloženo je jen vlastní oznámení školy."
+   ]
+  },
+  {
+   "issue_ids": [
+    "Q0314"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/08 Lyceum (režim pokusného ověřování), zaměření „Všeobecné lyceum“, 4 roky, denní; v roce 2025 u REDIZO 600170179 tato nabídka nebyla.",
+    "Rejstřík MŠMT neeviduje obor 78-42-M/08 u IZO 107820251 v žádném ze čtyř snímků (31. 3. 2025 až 30. 6. 2026).",
+    "Podstránka „Lyceum“ na webu školy popisuje obor „LYCEUM (Cestovní ruch, Média) (78-42-M/08)“ jako „moderní učební plán všeobecného oboru (na základě UP gymnázia)“ se dvěma specializacemi (Cestovní ruch nebo Média) a odkazuje na kritéria přijetí a ŠVP „Všeobecné lyceum“.",
+    "Oficiální dokument „Kritéria přijímacího řízení pro školní rok 2026/27“ (podepsán ředitelem Mgr. Štefanem Klímou 23. 12. 2025) uvádí LYCEUM (Cestovní ruch, Média) 78-42-M/08 se „schváleným max. počtem přijímaných žáků“ 28 a popisuje bodovaná kritéria a termín pohovoru 26.–27. 3. 2026.",
+    "Článek „Přijímací řízení 2026“ (30. 1. 2026) řadí Lyceum mezi pět otevíraných oborů pro 2026/27 a výslovně jej označuje jako „nástupce oboru Informační služby“ (viz Q0143).",
+    "Článek „Výsledky přijímacích zkoušek 2026“ (15. 5. 2026) obsahuje přílohu „Všeobecné lyceum.pdf“ s výsledky přijímacího řízení – dokládá, že přijímací řízení do oboru skutečně proběhlo a žáci byli přijati; název přílohy odpovídá zaměření „Všeobecné lyceum“ z dat CERMAT.",
+    "Absence oboru v rejstříku ve všech čtyřech snímcích odpovídá vzorci pozorovanému u nově zaváděných oborů s odstupem zápisu (obdobně jako u jiných škol v této frontě, např. pedagogické lyceum v úkolu R-600012026, které také chybělo ve snímku k 30. 6. 2026)."
+   ],
+   "conclusion": "Obor 78-42-M/08 Lyceum je u této školy reálně fungující nová nabídka pro školní rok 2026/27 se specializacemi Cestovní ruch nebo Média, obecně vedená pod zaměřením „Všeobecné lyceum“, doložená kritérii přijímacího řízení, harmonogramem i zveřejněnými výsledky přijímacího řízení. Škola jej sama prezentuje jako náhradu dřívějšího oboru Informační služby (72-41-M/01, viz Q0143). Absence oboru v rejstříku MŠMT ve všech čtyřech snímcích je vysvětlitelná zpožděním zápisu nově schváleného oboru do rejstříku, nikoli tím, že by obor v realitě neexistoval.",
+   "alternative_explanations": [
+    "Nelze zcela vyloučit, že zápis do rejstříku byl z nějakého důvodu pozastaven nad rámec obvyklého zpoždění; přímý doklad o schválení zápisu MŠMT k dispozici není, pouze doklady školy o reálné realizaci oboru a o proběhlém přijímacím řízení.",
+    "Vodítko o „celostátním pokusném ověřování oboru 78-42-M/08 vyhlášeném MŠMT v listopadu 2024“ se nepodařilo dohledat přímým zdrojem MŠMT – dostupné dokumenty školy potvrzují realizaci oboru a označení „režim pokusného ověřování“ v datech CERMAT, ale neobsahují odkaz na konkrétní vyhlašovací dokument MŠMT."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [
+     "72-41-M/01 Informační služby (2025)"
+    ],
+    "to": [
+     "78-42-M/08 Lyceum – Cestovní ruch, Média / zaměření Všeobecné lyceum (2026)"
+    ]
+   },
+   "addresses": [
+    {
+     "text": "Na Karmeli 206/11, 293 01 Mladá Boleslav II, Mladá Boleslav",
+     "role": "sídlo",
+     "izo": "600170179",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Na Karmeli 206/11; Erbenova 792; Gellnerova 1257 (vše 293 01 Mladá Boleslav II, Mladá Boleslav) – tři místa výuky IZO 107820251, rejstřík nerozlišuje podle oboru; konkrétní budova výuky nového oboru Lyceum nebyla samostatně doložena",
+     "role": "místo výuky",
+     "izo": "107820251",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky, jen pořadí adres ve snímku 2026-06-30 je jiné)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "https://www.spgsmb.cz/nase-obory/lyceum/",
+     "title": "Lyceum – SPgŠ a SOŠS Mladá Boleslav",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Popis oboru LYCEUM (Cestovní ruch, Média) 78-42-M/08 jako moderního všeobecného oboru; odkaz na ŠVP „Všeobecné lyceum“ a kritéria přijetí.",
+     "applicable_period": "stav webu k 12. 9. 2026, obor pro přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://www.spgsmb.cz/wp-content/uploads/2026/09/../../documents/Kriteria/Kriteria-prijimaciho-rizeni-26-Lyceum.pdf",
+     "title": "Kritéria přijímacího řízení pro školní rok 2026/27 – LYCEUM (Cestovní ruch, Média) 78-42-M/08",
+     "published_at": "2025-12-23",
+     "checked_at": "2026-09-12",
+     "supports": "Oficiální dokument školy: schválený max. počet přijímaných žáků 28 pro obor 78-42-M/08, kritéria a termín pohovoru 26.–27. 3. 2026, podepsáno ředitelem 23. 12. 2025.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://www.spgsmb.cz/2026/01/prijimaci-rizeni-2026/",
+     "title": "Přijímací řízení 2026 – SPgŠ a SOŠS Mladá Boleslav",
+     "published_at": "2026-01-30",
+     "checked_at": "2026-09-12",
+     "supports": "Lyceum uvedeno mezi pěti otevíranými obory pro 2026/27 (28 přijímaných), výslovně označeno jako nástupce oboru Informační služby.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://www.spgsmb.cz/2026/05/vysledky-2026/",
+     "title": "Výsledky přijímacích zkoušek 2026 – SPgŠ a SOŠS Mladá Boleslav",
+     "published_at": "2026-05-15",
+     "checked_at": "2026-09-12",
+     "supports": "Zveřejněny výsledky přijímacího řízení včetně přílohy „Všeobecné lyceum.pdf“ – přijímací řízení do oboru reálně proběhlo.",
+     "applicable_period": "výsledky přijímacího řízení 2026/27"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 31. 3. 2025",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/08 není u IZO 107820251 evidován.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 31. 12. 2025",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/08 stále není u IZO 107820251 evidován.",
+     "applicable_period": "stav rejstříku k 31. 12. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 31. 3. 2026",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/08 stále není u IZO 107820251 evidován, přestože kritéria přijímacího řízení do něj byla už 23. 12. 2025 schválena.",
+     "applicable_period": "stav rejstříku k 31. 3. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR k 30. 6. 2026",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/08 není evidován ani v posledním sledovaném snímku, ačkoli výsledky přijímacího řízení do něj byly už zveřejněny 15. 5. 2026 – zápis do rejstříku má odstup.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600170179",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 78-42-M/08 Lyceum, zaměření Všeobecné lyceum, přítomna v roce 2026 a chybějící v roce 2025.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Přesné znění a datum vyhlášení celostátního pokusného ověřování oboru 78-42-M/08 MŠMT nebylo dohledáno přímým zdrojem MŠMT, pouze nepřímo doloženo označením „režim pokusného ověřování“ v datech CERMAT.",
+    "Datum očekávaného doplnění zápisu oboru 78-42-M/08 do rejstříku škol není známo."
+   ]
+  }
+ ]
+}

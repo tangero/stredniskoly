@@ -1,0 +1,99 @@
+{
+  "task_id": "R-610451049",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Subjekt Střední odborná škola a Střední odborné učiliště, Mladá Boleslav, Jičínská 762 (REDIZO 610451049, IČO 69793000) je ve všech čtyřech snímcích veden beze změny identity, sídlo Jičínská 762. IZO 110451066 „Střední škola\" má stálá místa výuky Jičínská 762 a Jičínská 1025. Obor 39-08-M/01 Požární ochrana v rejstříku chybí k 31. 3. 2025, ale je zapsán ve všech dalších třech snímcích (31. 12. 2025 až 30. 6. 2026) – jde tedy o nově zapsaný obor mezi březnem a prosincem 2025. Ostatní čtyři obory z nabídky CERMAT (23-45-M/01 Dopravní prostředky, 64-41-L/51 Podnikání, 68-43-M/01 Veřejnosprávní činnost, 78-42-M/01 Technické lyceum) zůstávají v rejstříku ve všech snímcích beze změny."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0378"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela čtyři obory (Dopravní prostředky, Podnikání, Veřejnosprávní činnost, Technické lyceum); v 1. kole JPZ 2026 přibyl pátý obor 39-08-M/01 Požární ochrana, ostatní čtyři pokračují beze změny.",
+        "Rejstřík MŠMT obor 39-08-M/01 u IZO 110451066 neeviduje k 31. 3. 2025, ale eviduje jej ve všech snímcích od 31. 12. 2025 do 30. 6. 2026 – zápis proběhl v průběhu roku 2025, tedy dříve, než škola obor poprvé nabídla v JPZ 2026.",
+        "Oficiální web školy (odbskmb.cz) má samostatnou podstránku pro obor Požární ochrana (39-08-M/01, čtyřletý, denní, maturitní, absolventi získávají řidičské oprávnění skupin B a C, obor vyžaduje zdravotní způsobilost a fyzické testy) a uvádí jej mezi pěti aktuálně nabízenými studijními obory na stránce „Přehled oborů\" – shoduje se přesně s nabídkou CERMAT 2026 (Technické lyceum, Veřejnosprávní činnost, Dopravní prostředky, Požární ochrana, Podnikání)."
+      ],
+      "conclusion": "Požární ochrana (39-08-M/01) je nový obor, který škola zapsala do rejstříku MŠMT v průběhu roku 2025 (mezi 31. 3. a 31. 12. 2025) a poprvé jej nabídla v přijímacím řízení pro školní rok 2026/27. Nemá předchůdce v nabídce školy z roku 2025.",
+      "alternative_explanations": [
+        "Přesné datum rozhodnutí zřizovatele (Středočeský kraj) o zařazení oboru ani datum zápisu do rejstříku nebylo dohledáno na webu školy; víme jen, že k němu došlo mezi snímky 31. 3. 2025 a 31. 12. 2025."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["39-08-M/01 (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Jičínská 762, 293 01 Mladá Boleslav III, Mladá Boleslav",
+          "role": "sídlo",
+          "izo": "610451049",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Jičínská 762, 293 01 Mladá Boleslav III, Mladá Boleslav",
+          "role": "místo výuky",
+          "izo": "110451066",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Jičínská 1025, 293 01 Mladá Boleslav III, Mladá Boleslav",
+          "role": "místo výuky",
+          "izo": "110451066",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 39-08-M/01 Požární ochrana u IZO 110451066 k tomuto datu ještě není evidován.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 39-08-M/01 Požární ochrana je u IZO 110451066 evidován; subjekt a IZO beze změn.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "https://www.odbskmb.cz/pozarni-ochrana",
+          "title": "Požární ochrana – SOŠ a SOU Mladá Boleslav",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola provozuje samostatnou stránku oboru Požární ochrana (39-08-M/01, 4leté denní maturitní studium s řidičským oprávněním B a C).",
+          "applicable_period": "aktuální nabídka školy 2026"
+        },
+        {
+          "url": "https://www.odbskmb.cz/prehled-oboru",
+          "title": "Přehled oborů – SOŠ a SOU Mladá Boleslav",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Požární ochrana je uvedena mezi pěti aktuálně nabízenými studijními obory školy spolu s Technickým lyceem, Veřejnosprávní činností, Dopravními prostředky a Podnikáním – shoda s nabídkou CERMAT 2026.",
+          "applicable_period": "aktuální nabídka školy 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-610451049",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 39-08-M/01 Požární ochrana přítomna pouze v roce 2026, chybí v roce 2025; ostatní čtyři obory pokračují v obou letech.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": ["Přesné datum rozhodnutí zřizovatele o zařazení oboru do sítě škol."]
+    }
+  ]
+}

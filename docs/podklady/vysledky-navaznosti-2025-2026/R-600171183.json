@@ -1,0 +1,86 @@
+{
+  "task_id": "R-600171183",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": [
+      "2025-03-31",
+      "2025-12-31",
+      "2026-03-31",
+      "2026-06-30"
+    ],
+    "summary": "Rejstřík potvrdil kontinuitu subjektu Střední škola, Jablunkov, příspěvková organizace (REDIZO 600171183, IZO 000100340) ve všech čtyřech snímcích, se stejným sídlem (Školní 416, Jablunkov) a stejným místem výuky (Zahradní 102, Jablunkov). Obor 63-41-M/02 Obchodní akademie není evidován v žádném ze čtyř snímků (31. 3. 2025 - 30. 6. 2026)."
+  },
+  "findings": [
+    {
+      "issue_ids": [
+        "Q0213"
+      ],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela dva maturitní obory (18-20-M/01 Informační technologie, 23-45-M/01 Dopravní prostředky); v 1. kole JPZ 2026 přibyl třetí - 63-41-M/02 Obchodní akademie.",
+        "Obor 63-41-M/02 není evidován v žádném ze čtyř snímků rejstříku MŠMT u REDIZO 600171183 (31. 3. 2025 - 30. 6. 2026) - jde o odstup zápisu.",
+        "Regionální médium eHutník (článek \"Střední škola Jablunkov otevře obchodní akademii\", publikováno 4.-6. 2. 2026) cituje ředitele školy Romana Szotkowského: nový čtyřletý maturitní obor Obchodní akademie škola otevírá \"od příštího školního roku\" (2026/27) jako reakci na poptávku zaměstnavatelů v regionu a přání žáků a rodičů; článek obor výslovně označuje za nový (\"Nový čtyřletý maturitní obor nevznikl pouze na základě interního rozhodnutí...\").",
+        "Článek dokládá, že škola dosud (více než 15 let) vyučuje obor Doprava a logistika a od roku 2020 obor IT v průmyslu, ale Obchodní akademie mezi jejími obory dosud nebyla."
+      ],
+      "conclusion": "Obor 63-41-M/02 Obchodní akademie je prokazatelně nový obor, otevřený od školního roku 2026/27 na základě rozhodnutí vedení školy reagujícího na poptávku zaměstnavatelů v regionu. Nemá předchůdce v nabídce školy z roku 2025.",
+      "alternative_explanations": [
+        "Zápis do rejstříku MŠMT mohl proběhnout až po 30. 6. 2026, což otevření výuky od září 2026 nevyvrací."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": [
+          "63-41-M/02 Obchodní akademie (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "Školní 416, 739 91 Jablunkov",
+          "role": "sídlo",
+          "izo": "600171183",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Zahradní 102, 739 91 Jablunkov",
+          "role": "místo výuky",
+          "izo": "000100340",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://ehutnik.cz/zpravy/stredni-skola-jablunkov-otevre-obchodni-akademii",
+          "title": "Střední škola Jablunkov otevře obchodní akademii – eHutník",
+          "published_at": "2026-02-04",
+          "checked_at": "2026-09-12",
+          "supports": "Ředitel školy potvrzuje otevření nového čtyřletého maturitního oboru Obchodní akademie od školního roku 2026/27.",
+          "applicable_period": "školní rok 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 63-41-M/02 není u REDIZO 600171183 evidován ani k 30. 6. 2026.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600171183",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 63-41-M/02 chybí v 1. kole JPZ 2025 a objevuje se v 1. kole JPZ 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

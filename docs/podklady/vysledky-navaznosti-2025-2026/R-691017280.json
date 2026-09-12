@@ -1,0 +1,53 @@
+{
+  "task_id": "R-691017280",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Gymnázium FOSTRA Aspira s.r.o. (REDIZO 691017280, IČ 28408144, IZO 181141990, sídlo Roháčova 1148/63, Žižkov, Praha) je evidováno pouze ve snímku k 31. 3. 2025 s oborem 79-41-K/41 Gymnázium (4leté, denní, český) a zaměřením 'Rozvíjíme a podporujeme'. Ve všech dalších snímcích (31. 12. 2025, 31. 3. 2026, 30. 6. 2026) subjekt i jeho IZO 181141990 z rejstříku zcela zmizely a nejsou vedeny pod žádným jiným REDIZO v dostupných snímcích. Souběžně (mezi 31. 3. 2025 a 31. 12. 2025) získalo IZO 108000877 pod REDIZO 600005950 (Gymnázium FOSTRA International s.r.o.) nové místo výuky Havlíčkovo náměstí 300/10, Žižkov, Praha, a REDIZO 600005950 nabízí v 1. kole JPZ 2026 nový obor 79-41-K/41 se zaměřením 'Aspira - Rozvíjíme a podporujeme'."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0174", "Q0196"],
+      "status": "pravděpodobné",
+      "observations": [
+        "V 1. kole JPZ 2025 nabízel REDIZO 691017280 (Gymnázium FOSTRA Aspira s.r.o., sídlo Roháčova 1148/63, IZO 181141990) obor 79-41-K/41 Gymnázium se zaměřením 'Rozvíjíme a podporujeme' (4leté, denní, český). V roce 2026 nemá REDIZO 691017280 žádnou nabídku.",
+        "Rejstřík MŠMT eviduje REDIZO 691017280 a jeho IZO 181141990 pouze k 31. 3. 2025; ve snímcích k 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026 subjekt i IZO chybí zcela.",
+        "Již zpracovaný úkol R-600005950 zjistil, že mezi snímky 31. 3. 2025 a 31. 12. 2025 získalo IZO 108000877 (REDIZO 600005950, Gymnázium FOSTRA International s.r.o.) nové místo výuky Havlíčkovo náměstí 300/10, Žižkov, Praha, a že REDIZO 600005950 nabízí v 1. kole JPZ 2026 nový obor 79-41-K/41 se zaměřením 'Aspira - Rozvíjíme a podporujeme' - textově shodná klíčová fráze s doplněným značkovým prefixem 'Aspira'.",
+        "Web fostra.cz (ověřeno 12. 9. 2026, stránka gymnazia a hlavní stránka) potvrzuje aktuální existenci programu 'Fostra Aspira' (popsán jako mezinárodní česko-anglický program) na adrese Havlíčkovo náměstí 300/10, Praha 3 - Žižkov. Web uvádí v patičce jedinou právnickou osobu - Gymnázium FOSTRA International s.r.o., IČ 49244884; samostatná entita 'Gymnázium FOSTRA Aspira s.r.o.' (IČ 28408144) na webu už není zmíněna vůbec.",
+        "Pokus o přímé ověření stavu společnosti IČ 28408144 v obchodním rejstříku (or.justice.cz) a v ARES selhal technicky - obě služby jsou postavené na JavaScriptové aplikaci, kterou nelze načíst jako statickou stránku; přímé obchodně-rejstříkové potvrzení zániku/fúze společnosti se nepodařilo získat."
+      ],
+      "conclusion": "Popis z úkolu R-600005950 se potvrzuje: REDIZO 691017280 (Gymnázium FOSTRA Aspira s.r.o.) zmizelo z rejstříku MŠMT po 31. 3. 2025 souběžně se vznikem nového místa výuky Havlíčkovo náměstí 300/10 pod REDIZO 600005950, kam přešla i nabídka se shodnou klíčovou frází zaměření ('Rozvíjíme a podporujeme' → 'Aspira - Rozvíjíme a podporujeme'), a program Fostra Aspira dnes na webu figuruje výhradně pod jedinou právnickou osobou Gymnázium FOSTRA International s.r.o. Jde pravděpodobně o organizační sloučení menší sesterské školy do REDIZO 600005950, nikoli o prostý zánik bez návaznosti. Přímé prohlášení školy/zřizovatele k okamžiku a způsobu sloučení, ani obchodně-rejstříkové potvrzení fúze, nebylo dohledáno.",
+      "alternative_explanations": [
+        "REDIZO 691017280 mohlo zaniknout i bez formální organizační fúze (např. zrušení právnické osoby bez převodu žáků) a shoda textu zaměření může být jen převzetím marketingové značky v rámci téže franšízové skupiny FOSTRA bez skutečné návaznosti.",
+        "Nelze vyloučit, že žáci přijatí v roce 2025 pod REDIZO 691017280 do studia vůbec nenastoupili nebo přestoupili jinam mimo skupinu FOSTRA."
+      ],
+      "relationship": {
+        "type": "merge",
+        "from": ["691017280 Gymnázium FOSTRA Aspira s.r.o. - Rozvíjíme a podporujeme (2025)"],
+        "to": ["600005950 Gymnázium FOSTRA International s.r.o. - Aspira - Rozvíjíme a podporujeme (2026)"]
+      },
+      "addresses": [
+        {"text": "Roháčova 1148/63, 130 00 Žižkov, Praha", "role": "sídlo", "izo": "691017280", "valid_period": "pouze 2025-03-31 (subjekt dále nedohledán)", "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"},
+        {"text": "Roháčova 1148/63, 130 00 Žižkov, Praha", "role": "místo výuky", "izo": "181141990", "valid_period": "pouze 2025-03-31", "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"},
+        {"text": "Havlíčkovo náměstí 300/10, 130 00 Žižkov, Praha", "role": "místo výuky", "izo": "108000877", "valid_period": "2025-12-31 až 2026-06-30 (REDIZO 600005950)", "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"}
+      ],
+      "evidence": [
+        {"url": "fronta-dohledavani-2025-2026.json, úkol R-691017280", "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)", "published_at": null, "checked_at": "2026-09-12", "supports": "Nabídka 79-41-K/41 'Rozvíjíme a podporujeme' pod REDIZO 691017280 v roce 2025, žádná nabídka v roce 2026.", "applicable_period": "1. kola JPZ 2025 a 2026"},
+        {"url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld", "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2025", "published_at": null, "checked_at": "2026-09-12", "supports": "REDIZO 691017280 s IZO 181141990 evidován k 31. 3. 2025, sídlo Roháčova 1148/63.", "applicable_period": "stav rejstříku k 31. 3. 2025"},
+        {"url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld", "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 12. 2025", "published_at": null, "checked_at": "2026-09-12", "supports": "REDIZO 691017280 i jeho IZO 181141990 ve snímku k 31. 12. 2025 chybí; IZO 108000877 (REDIZO 600005950) získává nové místo výuky Havlíčkovo náměstí 300/10.", "applicable_period": "stav rejstříku k 31. 12. 2025"},
+        {"url": "docs/podklady/vysledky-navaznosti-2025-2026/R-600005950.json", "title": "Nález úkolu R-600005950 (Gymnázium FOSTRA International)", "published_at": "2026-09-12", "checked_at": "2026-09-12", "supports": "Detailní doložení pravděpodobného sloučení REDIZO 691017280 do REDIZO 600005950 (otázka Q0324), včetně shody textu zaměření a adresy.", "applicable_period": "zpracováno 2026-09-12"},
+        {"url": "https://www.fostra.cz/gymnazia", "title": "Gymnázia | Gymnázium Fostra", "published_at": null, "checked_at": "2026-09-12", "supports": "Program Fostra Aspira je uveden na adrese Havlíčkovo náměstí 10, Praha 3 - Žižkov, výhradně pod Gymnázium FOSTRA International s.r.o.", "applicable_period": "školní rok 2026/27"},
+        {"url": "https://www.fostra.cz", "title": "Fostra – hlavní stránka", "published_at": null, "checked_at": "2026-09-12", "supports": "V patičce webu je uvedena jediná právnická osoba Gymnázium FOSTRA International s.r.o., IČ 49244884; žádná zmínka o samostatné entitě Aspira s.r.o.", "applicable_period": "stav webu 2026-09-12"}
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "manual_review",
+      "related_task_ids": ["R-600005950"],
+      "unanswered_questions": [
+        "Zda bylo REDIZO 691017280 formálně sloučeno do REDIZO 600005950, nebo jen zrušeno bez organizačního nástupnictví; obchodně-rejstříkové potvrzení (or.justice.cz, ARES) se technicky nepodařilo dohledat.",
+        "Zda žáci případně přijatí pod REDIZO 691017280 v roce 2025 pokračují ve studiu pod REDIZO 600005950."
+      ]
+    }
+  ]
+}

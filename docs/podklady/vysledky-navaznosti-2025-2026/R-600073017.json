@@ -1,0 +1,115 @@
+{
+  "task_id": "R-600073017",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrdil plnou kontinuitu subjektu Střední škola, základní škola a mateřská škola Kraslice, příspěvková organizace (REDIZO 600073017, sídlo Havlíčkova 1717, 358 01 Kraslice) beze změny ve všech čtyřech snímcích. IZO 181025906 „Střední škola\" je registrováno se dvěma místy výuky (Pod nádražím 1093/7 a Havlíčkova 1717, obojí Kraslice) a se stejnou pěticí oborů ve všech snímcích: 39-41-L/02 Mechanik instalatérských a elektrotechnických zařízení, 23-45-L/01 Mechanik seřizovač, 23-52-H/01 Nástrojař, 31-57-H/01 Výrobce textilií a 23-51-H/01 Strojní mechanik. Žádný obor ani IZO nezmizel, nepřibyl ani nepřešel k jinému REDIZO – rejstřík sám neukazuje zánik ani sloučení organizace."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0140", "Q0193"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 organizace nabízela jediný obor vyžadující JPZ – 23-45-L/01 Mechanik seřizovač (4leté, denní, český); v 1. kole JPZ 2026 CERMAT pro celé REDIZO 600073017 neuvádí žádnou nabídku (0 nabídek), protože tento jediný maturitní obor s JPZ nebyl pro nové uchazeče otevřen. Ostatní registrované obory školy (23-52-H/01 Nástrojař, 31-57-H/01 Výrobce textilií, 23-51-H/01 Strojní mechanik, 39-41-L/02 Mechanik instalatérských a elektrotechnických zařízení) jsou tříleté učební obory bez povinné JPZ, takže se v datech CERMAT 1. kola JPZ objevit nemohly ani v roce 2025 – nulová nabídka organizace v roce 2026 proto neznamená zánik ani odchod celé školy z přijímacího řízení.",
+        "Vlastní stránka školy k oboru Mechanik seřizovač (skolakraslice.cz/mechanik-serizovac) uvádí doslova: obor je označen jako „dobíhající obor\" s počtem přijímaných žáků 0, tedy se pro školní rok 2026/2027 neotvírá nová první třída pro nové uchazeče.",
+        "Web školy zveřejnil oznámení „Nabídka profilových maturitních zkoušek\" (4. 9. 2026) vztahující se k oboru 23-45-L/01 Mechanik seřizovač pro školní rok 2026/2027 – týká se stávajících (již studujících) žáků directujících k maturitě, což potvrzuje, že obor jako takový nezanikl, jen nepřijímá nové žáky.",
+        "Vyhlášení 3. kola přijímacího řízení pro školní rok 2026/2027 (25. 6. 2026, skolakraslice.cz) nabízelo pouze obory Strojní mechanik (2 místa) a Nástrojař (7 míst) – Mechanik seřizovač mezi nabízenými obory chybí.",
+        "Vyhlášení 4. kola přijímacího řízení pro školní rok 2026/2027 (dokument č. j. HAVL/2026/118/4, 4. 9. 2026) vyhlašuje přijímací řízení výhradně pro obor Nástrojař 23-52-H/01 (2 volná místa) – Mechanik seřizovač se v žádném z dohledaných kol 2026/27 mezi vyhlašovanými obory neobjevuje.",
+        "Škola nadále běžně provozuje SŠ, ZŠ i MŠ na obou registrovaných místech výuky (Pod nádražím 1093/7 a Havlíčkova 1717, Kraslice); web uvádí aktuální dění na všech třech součástech (aktuality ZŠ, SŠ i MŠ), včetně předávání výučních listů 2025/26 a přijetí nových prvňáčků 2026/27 – žádný signál organizační změny, sloučení nebo omezení provozu nebyl nalezen.",
+        "Dohledávání 1. kola přijímacího řízení pro školní rok 2026/2027 (typicky vyhlašováno na jaře 2026) se na webu školy nezdařilo – archiv aktualit dostupný nástrojem sahá jen k 25. 6. 2026 (3. kolo); přímý zdroj k vyhlášení 1. kola proto chybí, ale výsledek (obor „dobíhající\", 0 přijímaných) je doložen aktuální stránkou oboru a navazujícími koly."
+      ],
+      "conclusion": "Nulová nabídka celé organizace REDIZO 600073017 v datech CERMAT 1. kola JPZ 2026 je plně vysvětlena tím, že jediný obor školy podléhající JPZ – 23-45-L/01 Mechanik seřizovač – je od školního roku 2026/2027 „dobíhajícím oborem\" s nulovým počtem nově přijímaných žáků (doloženo přímo webem školy); ostatní obory školy JPZ nepodléhají, a proto se v tomto datovém výřezu nikdy neobjevovaly. Nejde o zánik, sloučení ani organizační přechod celé školy – ZŠ, MŠ i tři učební obory SŠ (Nástrojař, Strojní mechanik, Výrobce textilií) běžně pokračují na obou místech výuky v přijímacím řízení 2026/2027 (2.–4. kolo doloženo). Obor Mechanik seřizovač zůstává zapsán v rejstříku MŠMT ve všech snímcích, protože ve škole dobíhají již přijatí žáci (potvrzeno oznámením o profilových maturitách pro 2026/2027); nové první ročníky se ale neotvírají.",
+      "alternative_explanations": [
+        "Nebylo dohledáno přímé oznámení 1. kola přijímacího řízení pro 2026/27 – status „dobíhající obor, 0 přijímaných\" mohl teoreticky nastat až po neúspěšném 1. kole (nedostatek zájemců), nikoli od počátku; k rozlišení chybí zdroj z jara 2026.",
+        "Škola formálně obor z rejstříku nevyřadila, což ponechává možnost (byť zatím nedoloženou), že přijímací řízení pro tento obor bude v některém budoucím roce znovu vyhlášeno."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["23-45-L/01 Mechanik seřizovač (2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Havlíčkova 1717, 358 01 Kraslice",
+          "role": "sídlo",
+          "izo": "600073017",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Pod nádražím 1093/7, 358 01 Kraslice",
+          "role": "místo výuky",
+          "izo": "181025906",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Havlíčkova 1717, 358 01 Kraslice",
+          "role": "místo výuky",
+          "izo": "181025906",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.skolakraslice.cz/mechanik-serizovac",
+          "title": "Mechanik seřizovač – Střední škola, základní škola a mateřská škola Kraslice",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 23-45-L/01 Mechanik seřizovač je označen jako „dobíhající obor\" s počtem přijímaných žáků 0 pro školní rok 2026/2027 – nová třída se neotvírá.",
+          "applicable_period": "stav webu k 2026-09-12, vztahuje se k přijímacímu řízení 2026/27"
+        },
+        {
+          "url": "https://www.skolakraslice.cz/obory",
+          "title": "Obory – Střední škola, základní škola a mateřská škola Kraslice",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola nadále prezentuje Mechanika seřizovače mezi svými obory (4letý, maturitní), vedle tří tříletých učebních oborů (Strojní mechanik, Nástrojař, Výrobce textilií).",
+          "applicable_period": "stav webu k 2026-09-12"
+        },
+        {
+          "url": "https://www.skolakraslice.cz/aktuality/4-kolo-prijimaciho-rizeni-skolni-rok-20262027",
+          "title": "4. kolo přijímacího řízení - školní rok 2026/2027",
+          "published_at": "2026-09-04",
+          "checked_at": "2026-09-12",
+          "supports": "Vyhlášení 4. kola přijímacího řízení pro 2026/2027 (dokument č. j. HAVL/2026/118/4) se týká výhradně oboru Nástrojař 23-52-H/01 (2 místa); Mechanik seřizovač není mezi vyhlašovanými obory.",
+          "applicable_period": "přijímací řízení 2026/27, 4. kolo (4.–11. 9. 2026)"
+        },
+        {
+          "url": "https://www.skolakraslice.cz/aktuality/nabidka-profilovych-maturitnich-zkousek",
+          "title": "Nabídka profilových maturitních zkoušek",
+          "published_at": "2026-09-04",
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka profilových maturitních zkoušek pro obor 23-45-L/01 Mechanik seřizovač v roce 2026/2027 – dokládá, že stávající (dobíhající) třída tohoto oboru ve škole reálně existuje a směřuje k maturitě.",
+          "applicable_period": "školní rok 2026/2027"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 23-45-L/01 Mechanik seřizovač zůstává u IZO 181025906 registrován i k 30. 6. 2026, spolu se všemi ostatními obory a oběma místy výuky; subjekt beze změny.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600073017",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "REDIZO 600073017 mělo v 1. kole JPZ 2025 jedinou nabídku (23-45-L/01 Mechanik seřizovač), v 1. kole JPZ 2026 nemá žádnou nabídku.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Nebylo dohledáno přímé vyhlášení 1. kola přijímacího řízení pro školní rok 2026/2027 (obvykle vyhlašováno na jaře 2026) – archiv aktualit dostupný z webu sahá jen k 25. 6. 2026.",
+        "Není doložen přesný důvod, proč se obor Mechanik seřizovač stal „dobíhajícím\" (nízký zájem uchazečů, kapacitní/personální důvody, rozhodnutí zřizovatele apod.) – web tento důvod neuvádí a nebyl dohledán žádný zdroj zřizovatele (Karlovarský kraj) ani regionálního zpravodajství k této konkrétní škole."
+      ]
+    }
+  ]
+}
