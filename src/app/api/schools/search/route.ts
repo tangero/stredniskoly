@@ -29,6 +29,8 @@ function normalizeText(text: string): string {
 }
 
 interface School {
+  source_id?: string;
+  catalog_year?: number;
   id: string;
   nazev: string;
   nazev_display?: string;
@@ -119,8 +121,16 @@ export async function GET(request: NextRequest) {
   const offset = Number.isFinite(rawOffset) ? Math.max(0, Math.floor(rawOffset)) : 0;
   try {
     const data = await getSchoolsData();
-    const index = uniqueSchoolIndex(data['2025'] || [], s => s.id);
-    const schools = Array.from(index.values());
+    const legacyIndex = uniqueSchoolIndex(data['2025'] || [], s => s.id);
+    const current = await getSchools2026Data();
+    // Katalog 2026 stojí na vlastních záznamech CERMAT, nikoli na shodě s historií.
+    // Staré položky ponecháváme dostupné pro uložené odkazy, ne v běžném hledání.
+    const schools: School[] = current.map(row => ({
+      ...row, nazev_display: [row.nazev, row.ulice].filter(Boolean).join(' · '), catalog_year: 2026,
+      adresa: [row.ulice, row.obec].filter(Boolean).join(', '),
+      // Adresa ze zdroje 2026; nepotvrzuje místo výuky pro novou sezónu.
+    }));
+    const index = uniqueSchoolIndex(schools, s => s.id);
     const canonicalSchools = Object.values(await getSchoolAnalysis());
     const slugContext = buildSlugContext(data['2025'] || [], canonicalSchools);
     const canonicalById = new Map(canonicalSchools.map(s => [s.id, s]));
@@ -131,9 +141,19 @@ export async function GET(request: NextRequest) {
     }
     // Jen názvy pro existující adresy profilů. Historická fakta se tímto
     // základním klíčem nikdy nepárují, používají úplné ID níže.
-    const routeSchool = (school: School): School => ({ ...school, nazev: school.zamereni
-      ? canonicalNames.get(school.id.split('_')[0]) ?? school.nazev
-      : canonicalById.get(school.id)?.nazev ?? school.nazev });
+    const routeSchool = (school: School): School => {
+      const legacy = legacyIndex.get(normalizeSchoolKey(school.id));
+      const route = legacy ?? school;
+      return ({ ...route, nazev: route.zamereni
+      ? canonicalNames.get(route.id.split('_')[0]) ?? route.nazev
+      : canonicalById.get(route.id)?.nazev ?? route.nazev });
+    };
+    const profileCounts = new Map<string, number>();
+    for (const school of schools) {
+      if (!legacyIndex.has(normalizeSchoolKey(school.id))) continue;
+      const slug = getSchoolSlug(routeSchool(school), slugContext);
+      profileCounts.set(slug, (profileCounts.get(slug) ?? 0) + 1);
+    }
     if (!krajeCache) {
       const krajMap = new Map<string, string>();
       schools.forEach(s => { if (s.kraj_kod && s.kraj) krajMap.set(s.kraj_kod, s.kraj.trim()); });
@@ -155,6 +175,9 @@ export async function GET(request: NextRequest) {
         zamereni: normalizeZamereni(s.zamereni), obec: s.obec, ulice: s.ulice, adresa: s.adresa,
         kraj: s.kraj, kraj_kod: s.kraj_kod, typ: s.typ, delka_studia: s.delka_studia,
         slug: getSchoolSlug(routeSchool(s), slugContext),
+        href: s.source_id && (!legacyIndex.has(normalizeSchoolKey(s.id)) || profileCounts.get(getSchoolSlug(routeSchool(s), slugContext)) !== 1) ? `/nabidka/2026/${s.source_id}` : `/skola/${getSchoolSlug(routeSchool(s), slugContext)}`,
+        catalog_year: s.catalog_year ?? 2025,
+        offer_2027_status: 'unverified',
         history: result ? {
           year: 2026, round: 1, source_valid_at: result.source_valid_at ?? null,
           accepted: finite(result.prijati), capacity: finite(result.kapacita),
@@ -168,11 +191,11 @@ export async function GET(request: NextRequest) {
     if (params.has('ids')) {
       const ids = readSchoolIds(params.get('ids'));
       const found = ids.flatMap(id => {
-        const school = index.get(normalizeSchoolKey(id));
+        const school = index.get(normalizeSchoolKey(id)) ?? legacyIndex.get(normalizeSchoolKey(id));
         return school ? [serialize(school, id)] : [];
       });
       return NextResponse.json({ schools: found, kraje: krajeCache, total: found.length,
-        missingIds: ids.filter(id => !index.has(normalizeSchoolKey(id))), catalogYear: 2025 });
+        missingIds: ids.filter(id => !index.has(normalizeSchoolKey(id)) && !legacyIndex.has(normalizeSchoolKey(id))), catalogYear: 2026 });
     }
     const query = normalizeText((params.get('search') || '').trim());
     const duration = params.get('delkaStudia');
@@ -184,7 +207,7 @@ export async function GET(request: NextRequest) {
         .some(value => normalizeText(value || '').includes(query));
     }).sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs') || a.id.localeCompare(b.id, 'cs'));
     return NextResponse.json({ schools: (params.get('simulatorCatalog') === '1' ? filtered : filtered.slice(offset, offset + limit)).map(s => serialize(s)),
-      kraje: krajeCache, total: filtered.length, catalogYear: 2025 });
+      kraje: krajeCache, total: filtered.length, catalogYear: 2026 });
   } catch (error) {
     console.error('Error searching schools:', error);
     return NextResponse.json({ error: 'Školy se nepodařilo načíst.' }, { status: 500 });

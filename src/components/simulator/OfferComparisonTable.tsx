@@ -7,6 +7,8 @@ import { applicationsPerPlace } from '@/lib/admission-summary';
 export interface ComparisonOffer {
   id: string;
   slug: string;
+  href?: string;
+  otherOffers?: ComparisonOffer[];
   name: string;
   program: string;
   place: string;
@@ -26,6 +28,7 @@ export interface OwnScore {
 
 interface Props {
   offers: ComparisonOffer[];
+  view?: 'table' | 'cards';
   own: OwnScore;
   savedIds: ReadonlySet<string>;
   onToggleSave: (id: string) => void;
@@ -82,7 +85,7 @@ function SaveButton({ saved, offer, onToggle }: { saved: boolean; offer: Compari
 /** Průměry předmětů se počítají nad jinou skupinou konajících než souhrn,
  * takže se u části oborů nesečtou přesně. Nikdy je nevydáváme za sčítance.
  */
-export function OfferComparisonTable({ offers, own, savedIds, onToggleSave }: Props) {
+export function OfferComparisonTable({ offers, own, savedIds, onToggleSave, view = 'table' }: Props) {
   const mine = totalScore(own);
 
   const rows = offers.map(offer => {
@@ -98,6 +101,17 @@ export function OfferComparisonTable({ offers, own, savedIds, onToggleSave }: Pr
     };
   });
 
+  function otherPrograms(offer: ComparisonOffer) {
+    if (!offer.otherOffers?.length) return null;
+    return <details className="mt-3 text-sm"><summary className="cursor-pointer py-2 font-medium text-blue-800">Další obory této školy ({offer.otherOffers.length})</summary>
+      <p className="my-2 text-xs text-slate-600">I mimo tvoje filtry; mohou mít jiné místo výuky.</p>
+      <ul className="divide-y divide-slate-200">{offer.otherOffers.map(other => <li key={other.id} className="flex items-start justify-between gap-3 py-3">
+        <div><Link className="font-semibold text-blue-800 hover:underline" href={other.href ?? `/skola/${other.slug}`}>{other.program}</Link>
+        <p className="mt-1 text-xs text-slate-600">Průměr přijatých 2026: {number(other.acceptedTotal)} / 100</p></div>
+        <SaveButton offer={other} saved={savedIds.has(other.id)} onToggle={() => onToggleSave(other.id)} />
+      </li>)}</ul></details>;
+  }
+
   const withoutSubjects = offers.filter(offer => offer.acceptedCzech === null || offer.acceptedMaths === null).length;
 
   if (!rows.length) {
@@ -111,17 +125,18 @@ export function OfferComparisonTable({ offers, own, savedIds, onToggleSave }: Pr
   return (
     <>
       {/* Mobil: tabulku nelze zmenšit, proto stejná data jako karty. */}
-      <ul className="space-y-3 lg:hidden">
+      <ul className={`space-y-3 ${view === 'table' ? 'lg:hidden' : ''}`}>
         {rows.map(({ offer, total, czech, maths, imbalance, ratio, saved }) => (
           <li key={offer.id} className={`rounded-xl border bg-white p-4 ${saved ? 'border-blue-400' : 'border-slate-200'}`}>
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0">
-                <Link href={`/skola/${offer.slug}`} className="font-semibold text-slate-900 hover:text-blue-700 hover:underline">{offer.name}</Link>
-                <p className="mt-1 text-sm text-blue-800">{offer.program}</p>
+                <Link href={offer.href ?? `/skola/${offer.slug}`} className="font-semibold text-slate-900 hover:text-blue-700 hover:underline">{offer.name}</Link>
+                <p className="mt-1 font-semibold text-blue-800">{offer.program}</p>
                 <p className="mt-1 text-sm text-slate-500">{offer.place}</p>
               </div>
               <SaveButton saved={saved} offer={offer} onToggle={() => onToggleSave(offer.id)} />
             </div>
+            {otherPrograms(offer)}
             <div className="mt-3"><Standing gap={total} needsOwnScore={mine === null && offer.acceptedTotal !== null} /></div>
             {imbalance && <p className="mt-2 text-sm text-slate-600">{imbalance}</p>}
             <dl className="mt-3 grid grid-cols-3 gap-3 border-t border-slate-200 pt-3 text-sm">
@@ -129,7 +144,7 @@ export function OfferComparisonTable({ offers, own, savedIds, onToggleSave }: Pr
                 <div key={label}>
                   <dt className="text-xs text-slate-600">{label}</dt>
                   <dd className="mt-1 font-semibold tabular-nums text-slate-900">{number(accepted)}<span className="text-xs font-normal text-slate-500"> / {max}</span></dd>
-                  <dd className="text-xs"><Gap gap={gap} /> proti tobě</dd>
+                  <dd className="text-xs"><Gap gap={gap} /> tvůj odstup</dd>
                 </div>
               ))}
             </dl>
@@ -141,7 +156,7 @@ export function OfferComparisonTable({ offers, own, savedIds, onToggleSave }: Pr
         ))}
       </ul>
 
-      <div className="hidden overflow-x-auto rounded-xl border border-slate-200 bg-white lg:block">
+      <div className={`${view === 'table' ? 'hidden lg:block' : 'hidden'} overflow-x-auto rounded-xl border border-slate-200 bg-white`}>
         <table className="w-full border-collapse text-sm">
           <caption className="sr-only">Porovnání oborů podle průměrů přijatých v roce 2026 a tvého výsledku</caption>
           <thead>
@@ -169,8 +184,9 @@ export function OfferComparisonTable({ offers, own, savedIds, onToggleSave }: Pr
               <tr key={offer.id} className={`border-b border-slate-100 last:border-0 ${saved ? 'bg-blue-50/60' : ''}`}>
                 <td className="px-3 py-3"><SaveButton saved={saved} offer={offer} onToggle={() => onToggleSave(offer.id)} /></td>
                 <td className="max-w-72 px-3 py-3">
-                  <Link href={`/skola/${offer.slug}`} className="font-semibold text-slate-900 hover:text-blue-700 hover:underline">{offer.name}</Link>
-                  <span className="mt-0.5 block text-xs text-slate-500">{offer.program} · {offer.place}</span>
+                  <Link href={offer.href ?? `/skola/${offer.slug}`} className="font-semibold text-slate-900 hover:text-blue-700 hover:underline">{offer.name}</Link>
+                  <span className="mt-1 block font-semibold text-blue-800">{offer.program}</span><span className="mt-1 block text-xs text-slate-500">{offer.place}</span>
+                  {otherPrograms(offer)}
                 </td>
                 <td className="px-3 py-3">
                   <Standing gap={total} needsOwnScore={mine === null && offer.acceptedTotal !== null} />
@@ -194,10 +210,9 @@ export function OfferComparisonTable({ offers, own, savedIds, onToggleSave }: Pr
       </div>
 
       <p className="mt-3 text-xs leading-relaxed text-slate-600">
-        Sloupce „rozdíl“ porovnávají tvůj výsledek s průměrem přijatých v roce 2026. Kladné číslo znamená, že jsi nad loňským
-        průměrem, nikoli že jsi přijat. Průměr není bodové minimum a nepřenáší se na rok 2027. Součet češtiny a matematiky se
+        Sloupce „rozdíl“ porovnávají tvůj výsledek s průměrem přijatých v roce 2026. Kladné číslo znamená, že jsi nad průměrem z roku 2026, nikoli že jsi přijat. Průměr není bodové minimum a nepřenáší se na rok 2027. Součet češtiny a matematiky se
         u části oborů mírně liší od celkového průměru, protože každý průměr se počítá nad jinou skupinou konajících.
-        Pomlčka znamená chybějící nebo neověřený údaj, nikoli nulu.
+        Pomlčka znamená chybějící nebo neověřený údaj, nikoli nulu. Počet přihlášek na místo není osobní šance na přijetí.
       </p>
       {withoutSubjects > 0 && (
         <p className="mt-2 text-xs leading-relaxed text-slate-600">

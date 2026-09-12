@@ -8,6 +8,8 @@ const base = process.env.BASE_URL;
 if (!base) throw new Error('Nastavte BASE_URL na testované nasazení.');
 const catalog = JSON.parse(await readFile(new URL('../public/schools_data.json', import.meta.url), 'utf8'))['2025'];
 const index = uniqueSchoolIndex(catalog, s => s.id);
+const currentCatalog = JSON.parse(await readFile(new URL('../public/applications_2026.json', import.meta.url), 'utf8')).data;
+const currentIndex = uniqueSchoolIndex(currentCatalog, s => s.id);
 const results = uniqueSchoolIndex(Object.entries(JSON.parse(await readFile(new URL('../public/cermat_results_2026.json', import.meta.url), 'utf8'))), ([id]) => id);
 async function get(path) {
   const response = await fetch(new URL(path, base));
@@ -34,7 +36,7 @@ test('skóre nemění seznam, pořadí ani celkový počet; stránkování zpř�
   const low = await search({ minScore: '0', maxScore: '0', limit: '20' });
   const high = await search({ minScore: '100', maxScore: '100', limit: '20' });
   assert.deepEqual(low, high);
-  assert.equal(low.total, index.size);
+  assert.equal(low.total, currentIndex.size);
   assert.equal(low.schools.length, 20);
   low.schools.forEach(verifySchool);
   const next = await search({ offset: '20', limit: '20' });
@@ -74,7 +76,7 @@ test('přímé načtení zachová pořadí, zaměření, čárky a neznámá ID'
   assert.equal(match.schools.length, 1);
   verifySchool(match.schools[0]);
   // Nejednoznačné historické ID se nesmí vybrat podle pořadí řádků.
-  const ambiguous = catalog.find(s => !index.has(normalizeSchoolKey(s.id)));
+  const ambiguous = catalog.find(s => !index.has(normalizeSchoolKey(s.id)) && !currentIndex.has(normalizeSchoolKey(s.id)));
   assert.ok(ambiguous);
   assert.deepEqual((await search({ ids: JSON.stringify([ambiguous.id]) })).schools, []);
 });
@@ -130,7 +132,10 @@ test('poptávka 2026 odpovídá úplné identitě oboru, chybějící párován�
   if(!row){assert.equal(school.demand,null);missing++;continue;}
   assert.deepEqual(school.demand,{year:2026,round:1,applications:row.prihlasky,first_priority:row.pp[0],capacity:row.kapacita});matched++;
  }
- assert.ok(matched>0);assert.ok(missing>0);
+ assert.equal(matched, currentIndex.size);assert.equal(missing, 0);
+ const oldOnly = catalog.find(row => index.has(normalizeSchoolKey(row.id)) && !currentIndex.has(normalizeSchoolKey(row.id)));
+ const legacy = await search({ids: JSON.stringify([oldOnly.id])});
+ assert.equal(legacy.schools[0].demand, null);
 });
 
 test('profil Macharova lycea nenabízí nedoložený index jako snadné přijetí', async()=>{

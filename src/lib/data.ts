@@ -1254,6 +1254,12 @@ export async function getInspisDataByRedizo(redizo: string): Promise<SchoolInspi
  * Sloučený záznam: dynamická data 2026 + statická data joinnutá z 2025
  */
 export interface School2026Data {
+  source_id: string;
+  ulice?: string;
+  psc?: string;
+  izo?: string;
+  forma?: string;
+  jazyk?: string;
   admission_context?: AdmissionContext;
   id: string;
   redizo: string;
@@ -1306,6 +1312,12 @@ export interface SchoolResult {
 
 /** Raw záznam z applications_2026.json (jen dynamická data per obor) */
 interface Raw2026Record {
+  source_id: string;
+  ulice?: string;
+  psc?: string;
+  izo?: string;
+  forma?: string;
+  jazyk?: string;
   admission_context?: AdmissionContext;
   redizo: string;
   kkov: string;
@@ -1369,6 +1381,8 @@ export async function getSchools2026Data(): Promise<School2026Data[]> {
     const s = staticIndex.get(normalizeSchoolKey(r.id));
     return {
       id: r.id,
+      source_id: r.source_id,
+      ulice: r.ulice, psc: r.psc, izo: r.izo, forma: r.forma, jazyk: r.jazyk,
       redizo: r.redizo,
       nazev: r.nazev,
       nazev_display: s?.nazev_display || r.nazev,

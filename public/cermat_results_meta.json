@@ -7,14 +7,14 @@
   "source": {
     "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2026_kolo1_skolobory_vysledky.xlsx",
     "valid_at": "2026-08-17",
-    "checked_at": "2026-09-11",
+    "checked_at": "2026-09-12",
     "sha256": "a003441f4beed6fb9c181aa00f9d1a59a9c206ff10f113ad807740e68d5511d5",
     "rows": 6368
   },
   "comparison_source": {
     "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2025_kolo1_skolobory_vysledky.xlsx",
     "valid_at": "2026-01-23",
-    "checked_at": "2026-09-11",
+    "checked_at": "2026-09-12",
     "sha256": "b4016252e34db63aeac538f9983bada503fb79770ac565c63f4a5a230b96bdaf",
     "rows": 6351
   },

@@ -106,3 +106,11 @@ test('chybějící historický průměr se odlišuje od nezadaných vlastních b
   assert.match(html, /Srovnání s přijatými/);
   assert.doesNotMatch(html, />Šance</);
 });
+
+test('karty i tabulka nabízejí ostatní obory školy včetně přesného odkazu a uložení', () => {
+  const other = offer({ id: 'other', program: 'Technické lyceum', href: '/nabidka/2026/overeny-identifikator' });
+  const html = render([offer({ otherOffers: [other] })], { czech: 35, maths: 40 });
+  assert.match(html, /Další obory této školy \(1\)/);
+  assert.match(html, /Uložit do výběru: Technické lyceum/);
+  assert.match(html, /I mimo tvoje filtry/);
+});
