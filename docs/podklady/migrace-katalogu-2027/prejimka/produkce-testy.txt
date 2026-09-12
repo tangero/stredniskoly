@@ -1,0 +1,45 @@
+(node:9598) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/patrickzandl/GitHub/gymnazium/src/lib/school-key.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/patrickzandl/GitHub/gymnazium/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ katalog zpřístupní každý záznam importu 2026 právě jednou (2696.461291ms)
+✔ chybějící historická shoda nezabrání detailu ani přesnému načtení do výběru (2003.039542ms)
+✔ neexistující detail vrací 404 a zadržený průměr MESIT zůstává null (146.515083ms)
+✔ skutečný detail Macharova lycea publikuje správnou škálu a počty (1953.216375ms)
+✔ P0 veřejný text a metadata: /skola/600007774-gymnazium-j-s-machara-kralovicka-technicke-lyceum (2412.599833ms)
+✔ P0 veřejný text a metadata: /skola/600007774-gymnazium-j-s-machara-kralovicka-technicke-lyceum/detail (381.488417ms)
+✔ P0 veřejný text a metadata: /skola/600007774-gymnazium-j-s-machara-kralovicka-technicke-lyceum/pro-me (247.172708ms)
+✔ P0 veřejný text a metadata: /skola/600007774-gymnazium-j-s-machara-kralovicka (894.467166ms)
+✔ P0 veřejný text a metadata: /skoly (820.700042ms)
+✔ P0 veřejný text a metadata: /vysledky/2026 (1446.011708ms)
+✔ P0 veřejný text a metadata: /regiony/stredocesky (1135.156667ms)
+✔ P0 veřejný text a metadata: /regiony (810.713458ms)
+✔ JSON a Markdown nemají numerickou hranici přijetí (1210.143167ms)
+✔ starý průvodce šancemi směruje do udržovaného simulátoru a zachová výběr (349.880292ms)
+✔ výpis dojezdu nevrací minimum ani neověřenou obtížnost, průměr má škálu 0–100 (306.867167ms)
+✔ čtyřleté a osmileté gymnázium zůstanou oddělené, termíny jsou archivní (55.947208ms)
+✔ přehled školy označí staré termíny jako archivní (563.374833ms)
+✔ známý zadržený výsledek MESIT není mezi publikovanými výsledky (733.129084ms)
+(node:9601) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/patrickzandl/GitHub/gymnazium/src/lib/school-key.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/patrickzandl/GitHub/gymnazium/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ skóre nemění seznam, pořadí ani celkový počet; stránkování zpřístupní další obory (3223.534542ms)
+✔ filtry fungují bez diakritiky a prázdný výsledek není chyba (684.002458ms)
+✔ přímé načtení zachová pořadí, zaměření, čárky a neznámá ID (1051.064125ms)
+✔ odkaz používá kanonický název profilu a rozlišuje délku studia (1525.4915ms)
+✔ detail API nevrací falešné minimum, školní body ani žebříček ze součtu minim (420.99775ms)
+✔ veřejně doručovaný JS simulátoru neobsahuje původní predikční větve (3734.858584ms)
+✔ poptávka 2026 odpovídá úplné identitě oboru, chybějící párování nemá fallback (1172.590542ms)
+✔ profil Macharova lycea nenabízí nedoložený index jako snadné přijetí (257.1685ms)
+✔ simulátor vrací konající a důvody nepřijetí včetně skutečné nuly (199.948917ms)
+✔ dopravní kontrakt vrací jen dopravu a skutečné položky nad limitem (4010.497709ms)
+✔ úplný aktuálně dostupný katalog poskytuje skutečné názvy oborů bez změny běžného stránkování (1867.730667ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12379.430083

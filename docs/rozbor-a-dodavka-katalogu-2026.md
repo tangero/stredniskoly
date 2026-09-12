@@ -1,6 +1,6 @@
 # Rozbor 1 004 nabídek a dokončení simulátoru
 
-Verze 1.0, 12. 9. 2026. Stav: implementováno, probíhá přejímka. Nabídka 2027 není tímto potvrzená.
+Verze 1.1, 12. 9. 2026. Stav: nasazeno a veřejně ověřeno. Nabídka 2027 není tímto potvrzená.
 
 ## Co znamenalo číslo 1 004
 
@@ -55,3 +55,15 @@ Import zahrnuje pouze denní nezkrácené obory s povinnou JPZ. Nepokrývá cel�
 - 29 integračních kontrol nad produkčním sestavením: úplnost množiny 3 091 ID, jedinečnost cílových odkazů, detaily z každé vynechané skupiny, neexistující nabídka 404, zadržený průměr MESIT stále null a celá přejímka P0.
 - Cílené jednotkové/renderovací kontroly porovnání, uloženého výběru, ostatních oborů a interpretace chybějících údajů.
 - Skutečný prohlížeč 1440 px a 390 px: 40 bodů ČJ + 35 MA se porovnalo po předmětech; uložení přežilo načtení sdíleného odkazu, který přidal starý i nový obor. Šířka dokumentu na mobilu 390 px, bez přetékání. Režim karet a tabulky respektuje uložené položky.
+
+### Doplnění množin
+
+Starý vyhledávač měl 2 777 jednoznačných položek, nový import má 3 091. Průnik je 2 087, pouze v původním katalogu zůstává 690 a pouze v importu 2026 je 1 004. Proto se celkový počet zvýší o 314, nikoli o 1 004. Těch 690 není označeno za zaniklé: zůstávají ve zdrojové historii a v dohledávání uložených položek, ale nejsou vydávány za nabídku doloženou importem 2026. Import přidal pět identifikačních/adresních polí; porovnání všech ostatních polí všech 3 091 řádků s předchozí produkcí potvrdilo shodu.
+
+## Veřejné nasazení
+
+PR #83 sloučeno. Produkční commit `90b4e7794225da23b380e08f9b794beb05191842`, deployment `dpl_BZ1aew4nbdLAv77zAQ1MsWQKU3W6` READY s aliasem `www.prijimackynaskolu.cz`. Všech 29 integračních kontrol prošlo na veřejné doméně (0 selhání). Skutečný mobilní prohlížeč potvrdil 20 karet na první straně, nové popisky a šířku dokumentu 390 px. Důkazy jsou v `docs/podklady/migrace-katalogu-2027/prejimka/`.
+
+### Historie
+- v1.0: rozbor, rozhodnutí o katalogu a lokální přejímka.
+- v1.1: doplněn rozklad obou množin a doloženo veřejné nasazení.
