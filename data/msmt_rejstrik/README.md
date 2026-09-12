@@ -45,3 +45,15 @@ python3 scripts/lookup_msmt_registry.py izo:061386855  # podle IZO
 Jako URL zdroje uvádějte odkaz na konkrétní snímek (viz tabulka výše)
 plus datum snímku v poli `applicable_period`, např. „stav rejstříku
 k 31. 12. 2025".
+
+## Dávkové použití ve frontě rešerše
+
+```sh
+python3 scripts/enrich-continuity-registry.py   # rejstřík ke všem 192 úkolům
+python3 scripts/task-brief.py R-600012026       # podklad k jednomu úkolu
+```
+
+První skript zapisuje `docs/podklady/rejstrik-k-fronte-2025-2026.json`; druhý z něj
+a z fronty sestaví čitelný podklad pro rešerši jednoho úkolu. Strojová klasifikace
+nabídek je vodítko, ne nález: zápis oboru v rejstříku nedokazuje vyhlášení
+přijímacího řízení a rejstřík se aktualizuje s odstupem.
