@@ -50,6 +50,8 @@ next-env.d.ts
 !/data/city_narratives.json
 !/data/csi_snapshots/
 !/data/csi_snapshots/*.json
+!/data/msmt_rejstrik/
+!/data/msmt_rejstrik/README.md
 
 # TT Decoder outputs (large binary/generated files)
 /data/decoded_tt*/
@@ -62,3 +64,6 @@ tt_decoder_*.log
 
 /.playwright-mcp
 __pycache__/
+
+# Lokální snímky rejstříku MŠMT (velké soubory, zdroj a postup v data/msmt_rejstrik/README.md)
+data/msmt_rejstrik/*.jsonld

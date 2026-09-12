@@ -1,0 +1,45 @@
+# Lokální snímky rejstříku MŠMT
+
+Strojově čitelné snímky Rejstříku škol a školských zařízení pro rešerši
+návazností 2025–2026 (`docs/ukol-navaznost-skol-a-oboru-2027.md`).
+
+Webová aplikace rejstříku (rejstriky.msmt.cz) je JavaScriptová a agentům
+nevrací obsah. MŠMT ale publikuje tentýž rejstřík jako otevřená data ve
+formátu JSON-LD, a to ve **datovaných čtvrtletních snímcích** — pro účely
+rešerše jde o kvalitnější důkaz než živý web, protože dokládá stav
+ke konkrétnímu dni.
+
+## Zdroj
+
+- Datová sada: [Rejstřík škol a školských zařízení – celá ČR](https://data.gov.cz/datov%C3%A9-sady?dotaz=rejst%C5%99%C3%ADk%20%C5%A1kol) (poskytovatel MŠMT, IČ 00022985)
+- Soubory: `https://lkod-ftp.msmt.gov.cz/00022985/…/rssz-cela-cr-YYYY-MM-DD.jsonld`
+- Seznam distribucí lze získat dotazem na SPARQL endpoint data.gov.cz.
+
+## Stažené snímky
+
+| Soubor | Stav rejstříku k datu | URL |
+|---|---|---|
+| `rssz-2025-12-31.jsonld` | 31. 12. 2025 | https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld |
+| `rssz-2026-06-30.jsonld` | 30. 6. 2026 | https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld |
+
+Struktura: `list` obsahuje subjekty podle `redIzo`; každý má sídlo
+(s kódem RÚIAN), ředitele, zřizovatele a `skolyAZarizeni` s IZO včetně
+**míst výuky** (`mistaVyuky`) — hodí se i pro úkol dojezdovosti.
+
+Pozor: zánik subjektu se v rejstříku může projevit s odstupem. Např.
+Hotelová škola a Gymnázium Radlická (600005631) se sloučila k 1. 1. 2026,
+ale ve snímku k 30. 6. 2026 ještě je vedena — datum snímku proto vždy
+uvádějte jako součást důkazu.
+
+## Použití
+
+```sh
+python3 scripts/lookup_msmt_registry.py 600005542      # podle REDIZO
+python3 scripts/lookup_msmt_registry.py izo:061386855  # podle IZO
+```
+
+## Do evidence nálezů
+
+Jako URL zdroje uvádějte odkaz na konkrétní snímek (viz tabulka výše)
+plus datum snímku v poli `applicable_period`, např. „stav rejstříku
+k 31. 12. 2025".
