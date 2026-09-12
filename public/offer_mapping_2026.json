@@ -1,0 +1,2593 @@
+{
+ "meta": {
+  "description": "Nabídka 1. kola 2026 → stabilní identifikátor katalogu. Chybí-li nabídka v mapě, buď na katalog sedne přímo, nebo je nová, nebo ji nelze jednoznačně přiřadit.",
+  "generator": "scripts/build-offer-mapping-2026.py",
+  "counts": {
+   "shoda_klice": 2113,
+   "nova_nabidka": 351,
+   "jedna_ku_jedne": 490,
+   "text_zamereni": 63,
+   "nejednoznacne_vic_v_katalogu": 18,
+   "nejednoznacny_text": 56,
+   "kolize_odstraneno": 2
+  },
+  "mapped": 551
+ },
+ "mapping": {
+  "600001873_79-41-K/81": {
+   "katalog_id": "600001873_79-41-K/81_hudební",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600004597_79-41-K/81": {
+   "katalog_id": "600004597_79-41-K/81_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600004619_36-47-M/01_dle_volby_zamereni_ARS_BIM_POS_DOS_VES_od_2_rocniku": {
+   "katalog_id": "600004619_36-47-M/01_dle_volby_zaměření_od_2.ročníku",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600004619_36-47-M/01_dle_volby_zamereni_ars_bim_pos_dos_ves_od_2_rocniku"
+  },
+  "600004635_79-41-K/41_SVP_GYMNAZIA_JANA_PALACHA_PRAHA_1_s_r_o": {
+   "katalog_id": "600004635_79-41-K/41",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600004635_79-41-K/41_svp_gymnazia_jana_palacha_praha_1_s_r_o"
+  },
+  "600004694_79-41-K/41_Vzdelani_cesta_ke_svobode": {
+   "katalog_id": "600004694_79-41-K/41_Všeobecné",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600004694_79-41-K/41_vzdelani_cesta_ke_svobode"
+  },
+  "600004694_79-41-K/81_Vzdelani_cesta_ke_svobode": {
+   "katalog_id": "600004694_79-41-K/81_všeobecné",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600004694_79-41-K/81_vzdelani_cesta_ke_svobode"
+  },
+  "600004741_65-42-M/01": {
+   "katalog_id": "600004741_65-42-M/01_HOTEL",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600004759_78-42-M/08_Finance_v_digitalni_dobe": {
+   "katalog_id": "600004759_78-42-M/08",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600004759_78-42-M/08_finance_v_digitalni_dobe"
+  },
+  "600004791_79-41-K/81": {
+   "katalog_id": "600004791_79-41-K/81_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600004902_68-43-M/01": {
+   "katalog_id": "600004902_68-43-M/01_Veřejnosprávní_činnost",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600004902_75-41-M/01": {
+   "katalog_id": "600004902_75-41-M/01_Sociální_činnost",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600004911_79-41-K/41": {
+   "katalog_id": "600004911_79-41-K/41_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600004911_79-41-K/81": {
+   "katalog_id": "600004911_79-41-K/81_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600004961_79-41-K/61_Nemecky_jazyk": {
+   "katalog_id": "600004961_79-41-K/61_vybrané_předměty_v_cizím_jazyce___zaměření_na_NJ_",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "600004961_79-41-K/61_nemecky_jazyk"
+  },
+  "600004961_79-41-K/61_Vseobecne": {
+   "katalog_id": "600004961_79-41-K/61_všeobecné_studim",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "600004961_79-41-K/61_vseobecne"
+  },
+  "600004961_79-41-K/61_Vytvarna_vychova": {
+   "katalog_id": "600004961_79-41-K/61_estetickovýchovné_předměty___zaměření_na_VV_",
+   "zpusob": "text_zamereni",
+   "shoda": 0.667,
+   "vysledky_id": "600004961_79-41-K/61_vytvarna_vychova"
+  },
+  "600005178_79-41-K/41_vseobecne_gymnazium": {
+   "katalog_id": "600005178_79-41-K/41_obecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600005178_79-41-K/61_Vseobecne_gymnazium": {
+   "katalog_id": "600005178_79-41-K/61_všeobecné",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600005178_79-41-K/61_vseobecne_gymnazium"
+  },
+  "600005178_79-41-K/81_Vseobecne_gymnazium": {
+   "katalog_id": "600005178_79-41-K/81_všeobecné",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600005178_79-41-K/81_vseobecne_gymnazium"
+  },
+  "600005267_79-41-K/41_Skola_je_dilna_lidskosti": {
+   "katalog_id": "600005267_79-41-K/41",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600005267_79-41-K/41_skola_je_dilna_lidskosti"
+  },
+  "600005267_79-41-K/61_Skola_je_dilna_lidskosti": {
+   "katalog_id": "600005267_79-41-K/61",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600005267_79-41-K/61_skola_je_dilna_lidskosti"
+  },
+  "600005267_79-41-K/81_Skola_je_dilnou_lidskosti": {
+   "katalog_id": "600005267_79-41-K/81",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600005267_79-41-K/81_skola_je_dilnou_lidskosti"
+  },
+  "600005364_79-41-K/41_Ucime_se_pro_budoucnost": {
+   "katalog_id": "600005364_79-41-K/41_Gymnázium",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600005364_79-41-K/41_ucime_se_pro_budoucnost"
+  },
+  "600005381_23-45-L/01_Obrabec_kovu_23_56_H_01": {
+   "katalog_id": "600005381_23-45-L/01_23_56_H/01_Obráběč_kovů",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600005381_23-45-L/01_obrabec_kovu_23_56_h_01"
+  },
+  "600005381_36-47-M/01_Priprava_a_realizace_staveb": {
+   "katalog_id": "600005381_36-47-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600005381_36-47-M/01_priprava_a_realizace_staveb"
+  },
+  "600005381_39-41-L/01_Autoelektrikar_26_57_H_01": {
+   "katalog_id": "600005381_39-41-L/01_26_57_H/01_Autoelektrikář",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "600005381_39-41-L/01_autoelektrikar_26_57_h_01"
+  },
+  "600005381_39-41-L/01_Mechanik_opravar_motorovych_vozidel_23_68_H_01": {
+   "katalog_id": "600005381_39-41-L/01_23_68_H/01_Mechanik_opravář_motorových_vozidel",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "600005381_39-41-L/01_mechanik_opravar_motorovych_vozidel_23_68_h_01"
+  },
+  "600005381_39-41-L/02_Instalater_36_52_H_01": {
+   "katalog_id": "600005381_39-41-L/02_36_52_H/01_Instalatér",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600005381_39-41-L/02_instalater_36_52_h_01"
+  },
+  "600005500_79-41-K/61_SVP_GOP_vseobecne_s_rozsirenou_vyukou_AJ": {
+   "katalog_id": "600005500_79-41-K/61_ŠVP_GOP_s_rozšířenou_výukou_AJ",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600005500_79-41-K/61_svp_gop_vseobecne_s_rozsirenou_vyukou_aj"
+  },
+  "600005518_79-41-K/41_Per_partes_ad_astra": {
+   "katalog_id": "600005518_79-41-K/41_Per_partes_ad_astra_(zaměření_na_matematiku_s_rozšířenou_výukou_informatiky_a_fyziky)",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600005518_79-41-K/41_per_partes_ad_astra"
+  },
+  "600005518_79-41-K/81_Cizi_jazyky_brana_do_sveta": {
+   "katalog_id": "600005518_79-41-K/81_Cizí_jazyky_–_brána_do_světa_(zaměření_na_živé_jazyky)",
+   "zpusob": "text_zamereni",
+   "shoda": 0.902,
+   "vysledky_id": "600005518_79-41-K/81_cizi_jazyky_brana_do_sveta"
+  },
+  "600005551_79-43-K/61": {
+   "katalog_id": "600005551_79-43-K/61_79_43_K/61",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600005593_79-41-K/81": {
+   "katalog_id": "600005593_79-41-K/81_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600005658_26-41-L/01_Elektromechanik_pro_zarizeni_a_pristroje_obor_L_H": {
+   "katalog_id": "600005658_26-41-L/01_s_výučním_listem_a_s_maturitou_(L+H)",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600005658_26-41-L/01_elektromechanik_pro_zarizeni_a_pristroje_obor_l_h"
+  },
+  "600005658_39-41-L/01_Mechanik_opravar_motorovych_vozidel_obor_L_H": {
+   "katalog_id": "600005658_39-41-L/01_s_výučním_listem_a_s_maturitou_(L+H)",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600005658_39-41-L/01_mechanik_opravar_motorovych_vozidel_obor_l_h"
+  },
+  "600005895_79-41-K/81_vseobecne": {
+   "katalog_id": "600005895_79-41-K/81",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600005933_79-41-K/41_Vzdelani_pro_budoucnost_vseobecne": {
+   "katalog_id": "600005933_79-41-K/41_Vzdělání_pro_budoucnost",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600005933_79-41-K/41_vzdelani_pro_budoucnost_vseobecne"
+  },
+  "600005992_79-41-K/81_79_41_K_81_Gymnazium": {
+   "katalog_id": "600005992_79-41-K/81",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600005992_79-41-K/81_79_41_k_81_gymnazium"
+  },
+  "600005992_79-43-K/61_79_43_K_61_Dvojjazycne_gymnazium": {
+   "katalog_id": "600005992_79-43-K/61",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600005992_79-43-K/61_79_43_k_61_dvojjazycne_gymnazium"
+  },
+  "600006123_79-41-K/41_geografie": {
+   "katalog_id": "600006123_79-41-K/41",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600006174_26-41-L/01_Elektronik_pro_informacni_a_komunikacni_techniku": {
+   "katalog_id": "600006174_26-41-L/01_26_41_L+H/01_Elektronik_pro_informační_a_komunikační_techniku",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600006174_26-41-L/01_elektronik_pro_informacni_a_komunikacni_techniku"
+  },
+  "600006174_26-41-M/01_Zabezpecovaci_technika_a_kamerove_systemy": {
+   "katalog_id": "600006174_26-41-M/01_Zabezpečovací_technika_a_bezpečnostní_technologie",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600006174_26-41-M/01_zabezpecovaci_technika_a_kamerove_systemy"
+  },
+  "600006247_79-41-K/41_vseobecne_Nase_skola_v_Evrope": {
+   "katalog_id": "600006247_79-41-K/41_Naše_škola_v_Evropě",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600006247_79-41-K/41_vseobecne_nase_skola_v_evrope"
+  },
+  "600006247_79-41-K/81_vseobecne_Moje_tvoje_nase_skola": {
+   "katalog_id": "600006247_79-41-K/81_Moje,_tvoje,_naše_škola",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600006247_79-41-K/81_vseobecne_moje_tvoje_nase_skola"
+  },
+  "600006298_65-41-L/01_Gastronomie": {
+   "katalog_id": "600006298_65-41-L/01_Gastronomie_se_zaměřením_v_kombinaci_s_oborem_65_51_H/01_Kuchař___číšník",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600006298_65-41-L/01_gastronomie"
+  },
+  "600006310_18-20-M/01": {
+   "katalog_id": "600006310_18-20-M/01_Informační_technologie",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600006310_65-42-M/02": {
+   "katalog_id": "600006310_65-42-M/02_Cestovní_ruch",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600006409_63-41-M/01": {
+   "katalog_id": "600006409_63-41-M/01_Ekonomika_a_služby",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600006565_79-41-K/41": {
+   "katalog_id": "600006565_79-41-K/41_Informační_technologie_a_jejich_aplikace",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600006581_65-41-L/01_Gastronomie_PLUS_v_kombinaci_s_oborem_Kuchar_cisnik": {
+   "katalog_id": "600006581_65-41-L/01_Gastronomie_PLUS",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600006581_65-41-L/01_gastronomie_plus_v_kombinaci_s_oborem_kuchar_cisnik"
+  },
+  "600006654_34-53-L/01_34_53_H_01_Reprodukcni_grafik": {
+   "katalog_id": "600006654_34-53-L/01_Reprodukční_grafik",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600006654_34-53-L/01_34_53_h_01_reprodukcni_grafik"
+  },
+  "600006662_75-31-M/01_Denni_studium": {
+   "katalog_id": "600006662_75-31-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600006662_75-31-M/01_denni_studium"
+  },
+  "600006662_78-42-M/08_Lyceum_v_oboru_humanitnich_a_spolecenskych_ved": {
+   "katalog_id": "600006662_78-42-M/08",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600006662_78-42-M/08_lyceum_v_oboru_humanitnich_a_spolecenskych_ved"
+  },
+  "600006751_79-41-K/41_Skola_pro_zivot": {
+   "katalog_id": "600006751_79-41-K/41",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600006751_79-41-K/41_skola_pro_zivot"
+  },
+  "600006751_79-41-K/81_Skola_pro_zivot": {
+   "katalog_id": "600006751_79-41-K/81",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600006751_79-41-K/81_skola_pro_zivot"
+  },
+  "600006778_63-41-M/02": {
+   "katalog_id": "600006778_63-41-M/02_informatika,_cizí_jazyky",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600006841_63-41-M/01_Ekonomika_a_informatika_v_podnikani": {
+   "katalog_id": "600006841_63-41-M/01_Ekonomika_a_informatika_podniku",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600006841_63-41-M/01_ekonomika_a_informatika_v_podnikani"
+  },
+  "600006905_23-41-M/01_3D_modelovani_a_technologie": {
+   "katalog_id": "600006905_23-41-M/01_Strojírenství_s_počítačovou_podporou",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600006905_23-41-M/01_3d_modelovani_a_technologie"
+  },
+  "600006905_26-41-M/01_Aplikace_elektrotechniky_zamereni_Automatizace_a_robotika": {
+   "katalog_id": "600006905_26-41-M/01_Aplikace_elektrotechniky___Automatizační_technika",
+   "zpusob": "text_zamereni",
+   "shoda": 0.894,
+   "vysledky_id": "600006905_26-41-M/01_aplikace_elektrotechniky_zamereni_automatizace_a_robotika"
+  },
+  "600006905_26-41-M/01_Aplikace_elektrotechniky_zamereni_Elektroenergetika": {
+   "katalog_id": "600006905_26-41-M/01_Aplikace_elektrotechniky___Elektroenergetika",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "600006905_26-41-M/01_aplikace_elektrotechniky_zamereni_elektroenergetika"
+  },
+  "600006930_18-20-M/01_Informacni_technologie": {
+   "katalog_id": "600006930_18-20-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600006930_18-20-M/01_informacni_technologie"
+  },
+  "600006930_65-42-M/02_Cestovni_ruch": {
+   "katalog_id": "600006930_65-42-M/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600006930_65-42-M/02_cestovni_ruch"
+  },
+  "600007146_34-42-M/01_produktovy_design": {
+   "katalog_id": "600007146_34-42-M/01_počítačová_grafika",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600007529_63-41-M/02": {
+   "katalog_id": "600007529_63-41-M/02_Obchodní_akademie",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600007529_78-42-M/02": {
+   "katalog_id": "600007529_78-42-M/02_Ekonomické_lyceum",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600007545_26-41-L/01": {
+   "katalog_id": "600007545_26-41-L/01_Mechatronik",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600007545_26-41-M/01": {
+   "katalog_id": "600007545_26-41-M/01_IT_Technik",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600007545_37-41-M/01": {
+   "katalog_id": "600007545_37-41-M/01_Průmyslový_logistik",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600007553_79-41-K/41_vseobecne": {
+   "katalog_id": "600007553_79-41-K/41",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600007553_79-41-K/81_vseobecne": {
+   "katalog_id": "600007553_79-41-K/81",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600007600_41-41-M/01": {
+   "katalog_id": "600007600_41-41-M/01_41_41_M/01",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600007600_43-41-M/01": {
+   "katalog_id": "600007600_43-41-M/01_43_41_M/01",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600007600_68-43-M/01": {
+   "katalog_id": "600007600_68-43-M/01_68_43_M/01",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600007600_78-42-M/05": {
+   "katalog_id": "600007600_78-42-M/05_78_42_M/05",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600007782_75-41-M/01": {
+   "katalog_id": "600007782_75-41-M/01_75_41_M/01",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600007995_79-41-K/41_vseobecne": {
+   "katalog_id": "600007995_79-41-K/41",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600007995_79-41-K/81_vseobecne": {
+   "katalog_id": "600007995_79-41-K/81",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600008002_79-41-K/41_Prirodni_vedy_a_matematika_vseobecne": {
+   "katalog_id": "600008002_79-41-K/41",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008002_79-41-K/41_prirodni_vedy_a_matematika_vseobecne"
+  },
+  "600008002_79-41-K/81_Vseobecne": {
+   "katalog_id": "600008002_79-41-K/81",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008002_79-41-K/81_vseobecne"
+  },
+  "600008029_79-41-K/81_vseobecne": {
+   "katalog_id": "600008029_79-41-K/81",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600008096_79-41-K/41_SVP_CAG_Ctyrlete_4G": {
+   "katalog_id": "600008096_79-41-K/41_ŠVP_ČAG_(čtyřleté_gymnázium)",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008096_79-41-K/41_svp_cag_ctyrlete_4g"
+  },
+  "600008096_79-41-K/81_SVP_CAG_Osmilete_8G": {
+   "katalog_id": "600008096_79-41-K/81_ŠVP_ČAG_(osmileté_gymnázium)",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008096_79-41-K/81_svp_cag_osmilete_8g"
+  },
+  "600008100_79-41-K/41_ctyrlete": {
+   "katalog_id": "600008100_79-41-K/41",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600008100_79-41-K/81_osmilete": {
+   "katalog_id": "600008100_79-41-K/81",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600008118_68-42-M/01_Bezpecnostne_pravni_cinnost": {
+   "katalog_id": "600008118_68-42-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008118_68-42-M/01_bezpecnostne_pravni_cinnost"
+  },
+  "600008193_23-45-L/01_Mechanik_serizovac_mechatronik_Elektromechanik_pro_zarizeni_a_pristroje_L0_H": {
+   "katalog_id": "600008193_23-45-L/01_Mechatronik_+_Elektromechanik_pro_zařízení_a_přístroje_(L0+H)",
+   "zpusob": "text_zamereni",
+   "shoda": 0.832,
+   "vysledky_id": "600008193_23-45-L/01_mechanik_serizovac_mechatronik_elektromechanik_pro_zarizeni_a_pristroje_l0_h"
+  },
+  "600008266_18-20-M/01": {
+   "katalog_id": "600008266_18-20-M/01_IT_vzdělání_pro_praxi_i_další_studium",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600008266_79-41-K/41": {
+   "katalog_id": "600008266_79-41-K/41_Gymnázium_EDUCAnet",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600008274_37-41-M/01_zamereni_na_logistiku_a_obsluzne_systemy": {
+   "katalog_id": "600008274_37-41-M/01",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600008363_16-01-M/01_Vodohospodar": {
+   "katalog_id": "600008363_16-01-M/01_Vodohospodářství",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008363_16-01-M/01_vodohospodar"
+  },
+  "600008371_63-41-M/02_obchodni_akademie": {
+   "katalog_id": "600008371_63-41-M/02",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600008487_23-45-L/01_Obrabec_kovu": {
+   "katalog_id": "600008487_23-45-L/01",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600008487_26-41-L/01_Elektrikar": {
+   "katalog_id": "600008487_26-41-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008487_26-41-L/01_elektrikar"
+  },
+  "600008487_33-41-L/01_Truhlar": {
+   "katalog_id": "600008487_33-41-L/01_Technik_CNC___dřevovýroba",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008487_33-41-L/01_truhlar"
+  },
+  "600008509_18-20-M/01_Programovani_pocitacove_site_webove_stranky": {
+   "katalog_id": "600008509_18-20-M/01_Informační_technologie",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008509_18-20-M/01_programovani_pocitacove_site_webove_stranky"
+  },
+  "600008509_66-41-L/01_Specialista_na_cestovni_ruch": {
+   "katalog_id": "600008509_66-41-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008509_66-41-L/01_specialista_na_cestovni_ruch"
+  },
+  "600008533_79-41-K/41_skola_branou_do_zivota": {
+   "katalog_id": "600008533_79-41-K/41",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600008533_79-41-K/61_Skola_branou_do_zivota": {
+   "katalog_id": "600008533_79-41-K/61",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008533_79-41-K/61_skola_branou_do_zivota"
+  },
+  "600008541_79-41-K/41_SVP_pro_ctyrlete_gymnazium_a_vyssi_stupen_osmileteho_gymnazia": {
+   "katalog_id": "600008541_79-41-K/41_všeobecné",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008541_79-41-K/41_svp_pro_ctyrlete_gymnazium_a_vyssi_stupen_osmileteho_gymnazia"
+  },
+  "600008541_79-41-K/61_SVP_pro_sestilete_gymnazium": {
+   "katalog_id": "600008541_79-41-K/61_všeobecné",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008541_79-41-K/61_svp_pro_sestilete_gymnazium"
+  },
+  "600008541_79-41-K/81_SVP_pro_nizsi_stupen_osmileteho_gymnazia": {
+   "katalog_id": "600008541_79-41-K/81_všeobecné",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008541_79-41-K/81_svp_pro_nizsi_stupen_osmileteho_gymnazia"
+  },
+  "600008649_78-42-M/01_CONSTATIA_SAPIENTIA_PIETAS_VIRTUS": {
+   "katalog_id": "600008649_78-42-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008649_78-42-M/01_constatia_sapientia_pietas_virtus"
+  },
+  "600008649_79-41-K/81_CONSTATIA_SAPIENTIA_PIETAS_VIRTUS": {
+   "katalog_id": "600008649_79-41-K/81_Constantia___Sapientia___Pietas___Virtus",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008649_79-41-K/81_constatia_sapientia_pietas_virtus"
+  },
+  "600008703_18-20-M/01_Moderni_informacni_technologie": {
+   "katalog_id": "600008703_18-20-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008703_18-20-M/01_moderni_informacni_technologie"
+  },
+  "600008703_26-41-M/01_Pocitace_a_robotika": {
+   "katalog_id": "600008703_26-41-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008703_26-41-M/01_pocitace_a_robotika"
+  },
+  "600008703_63-41-M/02_Digitalni_marketing_a_reklama": {
+   "katalog_id": "600008703_63-41-M/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008703_63-41-M/02_digitalni_marketing_a_reklama"
+  },
+  "600008819_79-41-K/41": {
+   "katalog_id": "600008819_79-41-K/41_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600008819_79-41-K/61": {
+   "katalog_id": "600008819_79-41-K/61_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600008886_26-41-L/01_26_51_H_02_Elektrikar_silnoproud": {
+   "katalog_id": "600008886_26-41-L/01_26_51_H/02_Elektrikář_pro_silnoproud",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008886_26-41-L/01_26_51_h_02_elektrikar_silnoproud"
+  },
+  "600008886_26-45-M/01_Aplikovana_elektronika_a_informatika": {
+   "katalog_id": "600008886_26-45-M/01_Digitální_telekomunikační_technika",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008886_26-45-M/01_aplikovana_elektronika_a_informatika"
+  },
+  "600008941_26-41-L/01_Automatizace_a_elektronicke_systemy": {
+   "katalog_id": "600008941_26-41-L/01_L0+H_v_zaměření_26_52_H/01_Elektromechanik_pro_zařízení_a_přístroje_",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600008941_26-41-L/01_automatizace_a_elektronicke_systemy"
+  },
+  "600009122_75-31-M/01": {
+   "katalog_id": "600009122_75-31-M/01_Školní_vzdělávací_program_pro_Předškolní_a_mimoškolní_pedagogiku",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600009122_75-41-M/01": {
+   "katalog_id": "600009122_75-41-M/01_Školní_vzdělávací_program_pro_Sociální_činnost",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600009122_78-42-M/03": {
+   "katalog_id": "600009122_78-42-M/03_Školní_vzdělávací_program_pro_Pedagogické_lyceum",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600009122_79-41-K/41": {
+   "katalog_id": "600009122_79-41-K/41_Školní_vzdělávací_program_pro_gymnaziální_vzdělávání_se_zaměřením_na_tělesnou_výchovu",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600009203_16-01-M/01": {
+   "katalog_id": "600009203_16-01-M/01_Ekologie_a_životní_prostředí",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600009203_28-44-M/01": {
+   "katalog_id": "600009203_28-44-M/01_Aplikovaná_chemie",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600009335_23-41-M/01_Strojirenstvi": {
+   "katalog_id": "600009335_23-41-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600009335_23-41-M/01_strojirenstvi"
+  },
+  "600009335_26-41-M/01_Elektrotechnika_Automatizacni_technika": {
+   "katalog_id": "600009335_26-41-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600009335_26-41-M/01_elektrotechnika_automatizacni_technika"
+  },
+  "600009335_63-41-M/01_Informatika_a_reklama": {
+   "katalog_id": "600009335_63-41-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600009335_63-41-M/01_informatika_a_reklama"
+  },
+  "600009386_53-41-M/03": {
+   "katalog_id": "600009386_53-41-M/03_Praktická_sestra",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600009386_63-41-M/02_Jazykove_nebo_Sportovni": {
+   "katalog_id": "600009386_63-41-M/02_Obchodní_akademie_Klatovy,_sportovní_a_jazykové_zaměření_",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600009386_63-41-M/02_jazykove_nebo_sportovni"
+  },
+  "600009386_69-41-L/01": {
+   "katalog_id": "600009386_69-41-L/01_Kosmetické_služby",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600009386_69-41-L/02": {
+   "katalog_id": "600009386_69-41-L/02_Masér_sportovní_a_rekondiční",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600009386_78-42-M/08_Humanitni_s_rozsirenou_vyukou_jazyku_zamerenych_na_cestovni_ruch_nebo_Zdravotnictvi_a_socialni_sluzby": {
+   "katalog_id": "600009386_78-42-M/08_Humanitní_s_rozšířenou_výukou_jazyků_zaměřených_na_cestovní_ruch,_Zdravotnictví_a_sociální_služby",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600009386_78-42-M/08_humanitni_s_rozsirenou_vyukou_jazyku_zamerenych_na_cestovni_ruch_nebo_zdravotnictvi_a_socialni_sluzby"
+  },
+  "600009424_41-41-M/01": {
+   "katalog_id": "600009424_41-41-M/01_Agropodnikání",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600009424_65-41-L/01": {
+   "katalog_id": "600009424_65-41-L/01_Gastronomie",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600009459_79-42-K/41_Volejbal_divky": {
+   "katalog_id": "600009459_79-42-K/41_volejbal_(jen_dívky)",
+   "zpusob": "text_zamereni",
+   "shoda": 0.867,
+   "vysledky_id": "600009459_79-42-K/41_volejbal_divky"
+  },
+  "600009467_18-20-M/01_Informacni_technologie_se_specializaci_na_datovou_analytiku_nebo_grafiku_na_PC_nebo_programovani_a_vyvoj_SW_nebo_na_pocitacove_site_a_kybernetickou_bezpecnost_IT_technicke": {
+   "katalog_id": "600009467_18-20-M/01_Informační_technologie_se_specializací_na_datovou_analytiku_nebo_grafiku_na_PC_nebo_programování_a_vývoj_SW_nebo_na_počítačové_sítě_a_kybernetickou_bezpečnost_(Digitální_svět)",
+   "zpusob": "text_zamereni",
+   "shoda": 0.912,
+   "vysledky_id": "600009467_18-20-M/01_informacni_technologie_se_specializaci_na_datovou_analytiku_nebo_grafiku_na_pc_nebo_programovani_a_vyvoj_sw_nebo_na_pocitacove_site_a_kybernetickou_bezpecnost_it_technicke"
+  },
+  "600009467_18-20-M/01_Informacni_technologie_se_specializaci_na_ekonomicke_a_podnikatelske_kompetence_a_zpracovani_a_vizualizaci_dat_IT_ekonomicke_a_zpracovani_dat": {
+   "katalog_id": "600009467_18-20-M/01_Informační_technologie_se_specializací_na_ekonomické_a_podnikatelské_kompetence_a_zpracování_a_vizualizaci_(Svět_ekonomiky)",
+   "zpusob": "text_zamereni",
+   "shoda": 0.905,
+   "vysledky_id": "600009467_18-20-M/01_informacni_technologie_se_specializaci_na_ekonomicke_a_podnikatelske_kompetence_a_zpracovani_a_vizualizaci_dat_it_ekonomicke_a_zpracovani_dat"
+  },
+  "600009467_78-42-M/01_Technicke_lyceum": {
+   "katalog_id": "600009467_78-42-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600009467_78-42-M/01_technicke_lyceum"
+  },
+  "600009491_18-20-M/01_Datova_analyza_vyvoj_aplikaci_sprava_systemu": {
+   "katalog_id": "600009491_18-20-M/01_Datová_analytika,_vývoj_aplikací,_správa_systémů",
+   "zpusob": "text_zamereni",
+   "shoda": 0.947,
+   "vysledky_id": "600009491_18-20-M/01_datova_analyza_vyvoj_aplikaci_sprava_systemu"
+  },
+  "600009564_68-42-M/01_Bezpecnostne_pravni_cinnost": {
+   "katalog_id": "600009564_68-42-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600009564_68-42-M/01_bezpecnostne_pravni_cinnost"
+  },
+  "600009564_68-43-M/01_Verejnospravni_cinnost": {
+   "katalog_id": "600009564_68-43-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600009564_68-43-M/01_verejnospravni_cinnost"
+  },
+  "600009831_75-31-M/01": {
+   "katalog_id": "600009831_75-31-M/01_Předškolní_a_mimoškolní_pedagogika",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600009831_78-42-M/02": {
+   "katalog_id": "600009831_78-42-M/02_Ekonomické_lyceum",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600009831_79-41-K/41_Inspirace_a_vzdelani_v_souvislostech": {
+   "katalog_id": "600009831_79-41-K/41_Inspirace_a_poznání_v_souvislostech",
+   "zpusob": "text_zamereni",
+   "shoda": 0.746,
+   "vysledky_id": "600009831_79-41-K/41_inspirace_a_vzdelani_v_souvislostech"
+  },
+  "600009858_23-45-L/01_Obrabec_kovu": {
+   "katalog_id": "600009858_23-45-L/01_23_56_H/01_Obráběč_kovů",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600009858_23-45-L/01_obrabec_kovu"
+  },
+  "600009858_65-41-L/01_Gastronomie": {
+   "katalog_id": "600009858_65-41-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600009858_65-41-L/01_gastronomie"
+  },
+  "600009858_66-41-L/01_Obchodnik": {
+   "katalog_id": "600009858_66-41-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600009858_66-41-L/01_obchodnik"
+  },
+  "600009947_79-41-K/41_Skola_pro_21_stoleti": {
+   "katalog_id": "600009947_79-41-K/41_všeobecné_gymnázium",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600009947_79-41-K/41_skola_pro_21_stoleti"
+  },
+  "600009947_79-41-K/81_Skola_pro_21_stoleti": {
+   "katalog_id": "600009947_79-41-K/81_všeobecné_osmileté_gymnázium",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600009947_79-41-K/81_skola_pro_21_stoleti"
+  },
+  "600009963_65-41-L/01_kuchar_cisnik": {
+   "katalog_id": "600009963_65-41-L/01",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600009998_79-41-K/41": {
+   "katalog_id": "600009998_79-41-K/41_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600009998_79-41-K/81": {
+   "katalog_id": "600009998_79-41-K/81_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600010112_65-42-M/01_HOTELNICTVI_a_CESTOVNI_RUCH": {
+   "katalog_id": "600010112_65-42-M/01_Hotelnictví,_Cestovní_ruch",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600010112_65-42-M/01_hotelnictvi_a_cestovni_ruch"
+  },
+  "600010198_79-41-K/41_79_41_K_41_Humanitni": {
+   "katalog_id": "600010198_79-41-K/41_79_41_K/41___humanitní_zaměření",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "600010198_79-41-K/41_79_41_k_41_humanitni"
+  },
+  "600010198_79-41-K/41_79_41_K_41_Vseobecne": {
+   "katalog_id": "600010198_79-41-K/41_79_41_K/41___všeobecné_zaměření",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "600010198_79-41-K/41_79_41_k_41_vseobecne"
+  },
+  "600010210_18-20-M/01": {
+   "katalog_id": "600010210_18-20-M/01_Počítačové_sítě,_programování_a_kybernetika",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600010210_65-42-M/01": {
+   "katalog_id": "600010210_65-42-M/01_Hotelnictví_a_Cestovní_ruch",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600010210_68-43-M/01": {
+   "katalog_id": "600010210_68-43-M/01_Veřejná_správa_a_bezpečnost",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600010368_23-45-L/01_Obrabec_kovu": {
+   "katalog_id": "600010368_23-45-L/01_23_56_H/01_Obráběč_kovů",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600010368_23-45-L/01_obrabec_kovu"
+  },
+  "600010368_39-41-L/01_Mechanik_opravar_motorovych_vozidel": {
+   "katalog_id": "600010368_39-41-L/01_23_68_H/01_Mechanik_opravář_motorových_vozidel",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600010368_39-41-L/01_mechanik_opravar_motorovych_vozidel"
+  },
+  "600010490_23-41-M/01_se_zamerenim_na_3D_technologie": {
+   "katalog_id": "600010490_23-41-M/01_3D_technologie",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600010490_23-41-M/01_se_zamerenim_na_3d_technologie"
+  },
+  "600010490_23-45-L/01_CNC_stroje_doplnujici_obor_Obrabec_kovu": {
+   "katalog_id": "600010490_23-45-L/01_CNC_stroje_+_doplňující_obor_23_56_H/01_Obráběč_kovů",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600010490_23-45-L/01_cnc_stroje_doplnujici_obor_obrabec_kovu"
+  },
+  "600010490_26-41-L/01_robotika_doplnujici_obor_Elektrikar": {
+   "katalog_id": "600010490_26-41-L/01_robotika_+_doplňující_obor_26_51_H/01_Elektrikář",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600010490_26-41-L/01_robotika_doplnujici_obor_elektrikar"
+  },
+  "600010554_79-41-K/41": {
+   "katalog_id": "600010554_79-41-K/41_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600010554_79-41-K/81": {
+   "katalog_id": "600010554_79-41-K/81_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600010554_79-43-K/61": {
+   "katalog_id": "600010554_79-43-K/61_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600010902_53-41-M/04": {
+   "katalog_id": "600010902_53-41-M/04_Masér_ve_zdravotnictví",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600010902_69-41-L/01": {
+   "katalog_id": "600010902_69-41-L/01_Kosmetické_služby",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600010929_79-41-K/41_vseobecne": {
+   "katalog_id": "600010929_79-41-K/41",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600010929_79-41-K/81_vseobecne": {
+   "katalog_id": "600010929_79-41-K/81",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600010996_63-41-M/01": {
+   "katalog_id": "600010996_63-41-M/01_na_cestovní_ruch",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600011003_26-41-M/01": {
+   "katalog_id": "600011003_26-41-M/01_Mechatronika",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600011003_63-41-M/01": {
+   "katalog_id": "600011003_63-41-M/01_Cestovní__ruch",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600011003_79-41-K/81": {
+   "katalog_id": "600011003_79-41-K/81_Gymnázium",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600011020_37-41-M/01": {
+   "katalog_id": "600011020_37-41-M/01_Logistika",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600011038_26-41-M/01": {
+   "katalog_id": "600011038_26-41-M/01_Automatizace_a_robotika",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600011119_26-41-L/01_Mechanik_elektrotechnik_2v1": {
+   "katalog_id": "600011119_26-41-L/01_Elektromechanik_pro_zařízení_a_přístroje",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600011119_26-41-L/01_mechanik_elektrotechnik_2v1"
+  },
+  "600011143_65-41-L/01_Management_v_gastronomii": {
+   "katalog_id": "600011143_65-41-L/01_Kulinářský_specialista",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600011143_65-41-L/01_management_v_gastronomii"
+  },
+  "600011143_69-41-L/01": {
+   "katalog_id": "600011143_69-41-L/01_Kosmetické_služby",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600011232_79-41-K/81_vseobecne": {
+   "katalog_id": "600011232_79-41-K/81",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600011291_66-41-L/01_66_51_H_01_Prodavac": {
+   "katalog_id": "600011291_66-41-L/01_Obchodník_+_Prodavač",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600011291_66-41-L/01_66_51_h_01_prodavac"
+  },
+  "600011348_26-41-L/01": {
+   "katalog_id": "600011348_26-41-L/01_26_52_H/01_Elektromechanik_pro_zařízení_a_přístroje",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600011453_28-44-M/01": {
+   "katalog_id": "600011453_28-44-M/01_aplikovaná_chemie",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600011453_79-41-K/41": {
+   "katalog_id": "600011453_79-41-K/41_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600011453_79-41-K/81": {
+   "katalog_id": "600011453_79-41-K/81_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600011658_78-42-M/01_Architektura": {
+   "katalog_id": "600011658_78-42-M/01_Lyceum_se_zaměřením_na_architekturu",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600011658_78-42-M/01_architektura"
+  },
+  "600011712_69-41-L/01_Kosmeticka": {
+   "katalog_id": "600011712_69-41-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600011712_69-41-L/01_kosmeticka"
+  },
+  "600011739_75-41-M/01": {
+   "katalog_id": "600011739_75-41-M/01_Výchovná_a_humanitární_činnost",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600011739_78-42-M/02": {
+   "katalog_id": "600011739_78-42-M/02_s_rozšířenou_výukou_anglického_jazyka",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600011798_78-42-M/08": {
+   "katalog_id": "600011798_78-42-M/08_cizí_jazyky",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600011887_79-41-K/41_SVP_zpracovany_podle_RVP_G_urceny_pro_1_4_rocnik_ctyrleteho_vzdelavani": {
+   "katalog_id": "600011887_79-41-K/41_Školní_vzdělávací_program_zpracovaný_podle_RVP_G_určený_pro_1.___4._ročník_čtyřletého_vzdělávání",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600011887_79-41-K/41_svp_zpracovany_podle_rvp_g_urceny_pro_1_4_rocnik_ctyrleteho_vzdelavani"
+  },
+  "600011887_79-41-K/81_SVP_zpracovany_podle_RVP_ZV_a_RVP_G_urceny_pro_primu_az_oktavu_osmileteho_vzdelavani": {
+   "katalog_id": "600011887_79-41-K/81_Školní_vzdělávací_program_zpracovaný_podle_RVP_ZV_určený_pro_primu,_sekundu,_tercii_a_kvartu_osmiletého_vzdělávání",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600011887_79-41-K/81_svp_zpracovany_podle_rvp_zv_a_rvp_g_urceny_pro_primu_az_oktavu_osmileteho_vzdelavani"
+  },
+  "600011941_23-45-L/01_Programovani_a_obsluha_CNC_stroju_v_kombinaci_s_oborem_23_56_H_01_Obrabec_kovu_L0_H_maturita_vyucni_list_ve_3_rocniku": {
+   "katalog_id": "600011941_23-45-L/01_Programování_a_obsluha_CNC_strojů",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600011941_23-45-L/01_programovani_a_obsluha_cnc_stroju_v_kombinaci_s_oborem_23_56_h_01_obrabec_kovu_l0_h_maturita_vyucni_list_ve_3_rocniku"
+  },
+  "600011941_33-41-L/01_Truhlar_a_navrhar_konstrukci_v_kombinaci_s_oborem_33_56_H_01_Truhlar_L0_H_maturita_vyucni_list_ve_3_rocniku": {
+   "katalog_id": "600011941_33-41-L/01_Truhlář_a_návrhář_konstrukcí",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600011941_33-41-L/01_truhlar_a_navrhar_konstrukci_v_kombinaci_s_oborem_33_56_h_01_truhlar_l0_h_maturita_vyucni_list_ve_3_rocniku"
+  },
+  "600011984_26-41-M/01_Mechatronika": {
+   "katalog_id": "600011984_26-41-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600011984_26-41-M/01_mechatronika"
+  },
+  "600011992_79-41-K/41": {
+   "katalog_id": "600011992_79-41-K/41_Gymnázium_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600011992_79-41-K/61": {
+   "katalog_id": "600011992_79-41-K/61_Gymnázium_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600012000_63-41-M/02_zamereni_na_cizi_jazyky": {
+   "katalog_id": "600012000_63-41-M/02_se_zaměřením_na_cizí_jazyky",
+   "zpusob": "text_zamereni",
+   "shoda": 0.714
+  },
+  "600012018_41-43-M/01_Rybarstvi": {
+   "katalog_id": "600012018_41-43-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600012018_41-43-M/01_rybarstvi"
+  },
+  "600012018_41-44-M/01_Zahradnictvi": {
+   "katalog_id": "600012018_41-44-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600012018_41-44-M/01_zahradnictvi"
+  },
+  "600012069_23-41-M/01_Programovani_CNC_stroju_a_mechatronika": {
+   "katalog_id": "600012069_23-41-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600012069_23-41-M/01_programovani_cnc_stroju_a_mechatronika"
+  },
+  "600012077_36-47-M/01": {
+   "katalog_id": "600012077_36-47-M/01_Architektura_a_stavitelství",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600012093_63-41-M/01_Pravni_management_Management_cestovniho_ruchu_Firemni_management_Financni_management": {
+   "katalog_id": "600012093_63-41-M/01_Právní_management,_Management_cestovního_ruchu,_Finanční_management,_Firemní_management",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600012093_63-41-M/01_pravni_management_management_cestovniho_ruchu_firemni_management_financni_management"
+  },
+  "600012271_65-42-M/02_cestovni_ruch_s_rozsirenou_vyukou_anglickeho_jazyka": {
+   "katalog_id": "600012271_65-42-M/02",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600012298_63-41-M/02": {
+   "katalog_id": "600012298_63-41-M/02_Public_Relations,_média_a_marketingová_komunikace",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600012298_78-42-M/02": {
+   "katalog_id": "600012298_78-42-M/02_Gymnaziální_lyceum",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600012298_79-41-K/41": {
+   "katalog_id": "600012298_79-41-K/41_Gymnázium___živé_jazyky",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600012328_63-41-M/02_63_41_M_02": {
+   "katalog_id": "600012328_63-41-M/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600012328_63-41-M/02_63_41_m_02"
+  },
+  "600012409_79-42-K/41_Gymnazium_se_sportovni_pripravou": {
+   "katalog_id": "600012409_79-42-K/41_sportovní_příprava",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600012409_79-42-K/41_gymnazium_se_sportovni_pripravou"
+  },
+  "600012573_26-41-L/01_Elektromechanik_pro_zarireni_a_pristroje": {
+   "katalog_id": "600012573_26-41-L/01_Elektromechanik_pro_chladící_a_klimatizační_techniku___dvojobor_vyučení_+_maturita",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600012573_26-41-L/01_elektromechanik_pro_zarireni_a_pristroje"
+  },
+  "600012581_18-20-M/01_Informatika_v_ekonomice_se_zamerenim_na_podnikani": {
+   "katalog_id": "600012581_18-20-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600012581_18-20-M/01_informatika_v_ekonomice_se_zamerenim_na_podnikani"
+  },
+  "600012590_26-41-M/01": {
+   "katalog_id": "600012590_26-41-M/01_(profilace_od_3._ročníku)",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600012638_79-41-K/41_Gymnazium_vseobecne_ctyrlete": {
+   "katalog_id": "600012638_79-41-K/41",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600012638_79-41-K/41_gymnazium_vseobecne_ctyrlete"
+  },
+  "600012638_79-41-K/81_Gymnazium_vseobecne_osmilete": {
+   "katalog_id": "600012638_79-41-K/81",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600012638_79-41-K/81_gymnazium_vseobecne_osmilete"
+  },
+  "600012701_79-41-K/41_79_41_K_41_Gymnazium": {
+   "katalog_id": "600012701_79-41-K/41",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600012701_79-41-K/41_79_41_k_41_gymnazium"
+  },
+  "600012701_79-41-K/81_79_41_K_81_Gymnazium": {
+   "katalog_id": "600012701_79-41-K/81",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600012701_79-41-K/81_79_41_k_81_gymnazium"
+  },
+  "600012760_78-42-M/01_Letectvi": {
+   "katalog_id": "600012760_78-42-M/01_Letecké_lyceum",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600012760_78-42-M/01_letectvi"
+  },
+  "600012816_65-42-M/01_Hotelnictvi": {
+   "katalog_id": "600012816_65-42-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600012816_65-42-M/01_hotelnictvi"
+  },
+  "600012816_68-42-M/01_Bezpecnostne_pravni_cinnost": {
+   "katalog_id": "600012816_68-42-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600012816_68-42-M/01_bezpecnostne_pravni_cinnost"
+  },
+  "600012816_75-41-M/01_Socialni_cinnost": {
+   "katalog_id": "600012816_75-41-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600012816_75-41-M/01_socialni_cinnost"
+  },
+  "600013006_28-44-M/01_Forenzni_analyza_Vyroba_a_zpracovani_polymeru_Farmaceuticky_asistent": {
+   "katalog_id": "600013006_28-44-M/01_Forenzní_analýza,_Farmaceutické_substance___farmaceutický_asistent,_Výroba_a_zpracování_polymerů",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600013006_28-44-M/01_forenzni_analyza_vyroba_a_zpracovani_polymeru_farmaceuticky_asistent"
+  },
+  "600013006_65-42-M/02_Cestovni_ruch": {
+   "katalog_id": "600013006_65-42-M/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600013006_65-42-M/02_cestovni_ruch"
+  },
+  "600013260_79-41-K/41": {
+   "katalog_id": "600013260_79-41-K/41_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013260_79-41-K/61": {
+   "katalog_id": "600013260_79-41-K/61_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013294_79-41-K/41_vseobecne": {
+   "katalog_id": "600013294_79-41-K/41",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013294_79-41-K/81_vseobecne": {
+   "katalog_id": "600013294_79-41-K/81",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013359_33-42-M/01_Interierova_tvorba": {
+   "katalog_id": "600013359_33-42-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600013359_33-42-M/01_interierova_tvorba"
+  },
+  "600013359_36-47-M/01_Pozemni_stavby": {
+   "katalog_id": "600013359_36-47-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600013359_36-47-M/01_pozemni_stavby"
+  },
+  "600013383_65-42-M/02_Cestovni_ruch_Palubni_stevard_Animator_volneho_casu": {
+   "katalog_id": "600013383_65-42-M/02_Animátor_volného_času_/_Palubní_stevard_/_Cestovní_ruch",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600013383_65-42-M/02_cestovni_ruch_palubni_stevard_animator_volneho_casu"
+  },
+  "600013383_78-42-M/02_Rizeni_a_provoz_hotelu": {
+   "katalog_id": "600013383_78-42-M/02_se_zaměřením_Řízení_a_provoz_hotelu",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600013383_78-42-M/02_rizeni_a_provoz_hotelu"
+  },
+  "600013391_23-45-L/01": {
+   "katalog_id": "600013391_23-45-L/01_Mechanik_seřizovač",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013391_26-41-L/01": {
+   "katalog_id": "600013391_26-41-L/01_Mechanik_elektrotechnik",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013405_79-41-K/41": {
+   "katalog_id": "600013405_79-41-K/41_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013405_79-41-K/81": {
+   "katalog_id": "600013405_79-41-K/81_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013413_79-41-K/81_Gymnazium": {
+   "katalog_id": "600013413_79-41-K/81",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600013413_79-41-K/81_gymnazium"
+  },
+  "600013448_79-41-K/41_vseobecne": {
+   "katalog_id": "600013448_79-41-K/41_všeobecné_4L",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013448_79-41-K/61_programovani": {
+   "katalog_id": "600013448_79-41-K/61_programování_6L",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013472_79-41-K/61_rozsirena_vyuka_anglictiny": {
+   "katalog_id": "600013472_79-41-K/61_rozšířená_výuka_anglického_jazyka_(6leté)",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013600_68-42-M/01": {
+   "katalog_id": "600013600_68-42-M/01_Veřejnoprávní_ochrana",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013626_79-43-K/61_dvojjazycne_gymnazium": {
+   "katalog_id": "600013626_79-43-K/61_jazykově_přírodovědné_studium",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013634_79-42-K/41_Gymnazium_se_sportovni_pripravou_atletika_basketbal_divky_volejbal": {
+   "katalog_id": "600013634_79-42-K/41_atletika,_basketbal_dívky,_volejbal",
+   "zpusob": "text_zamereni",
+   "shoda": 0.713,
+   "vysledky_id": "600013634_79-42-K/41_gymnazium_se_sportovni_pripravou_atletika_basketbal_divky_volejbal"
+  },
+  "600013634_79-42-K/41_Gymnazium_se_sportovni_pripravou_fotbal_chlapci_plavani": {
+   "katalog_id": "600013634_79-42-K/41_fotbal_chlapci,_plavání",
+   "zpusob": "text_zamereni",
+   "shoda": 0.615,
+   "vysledky_id": "600013634_79-42-K/41_gymnazium_se_sportovni_pripravou_fotbal_chlapci_plavani"
+  },
+  "600013634_79-42-K/61_Gymnazium_se_sportovni_pripravou_sportovni_gymnastika_judo_tenis_triatlon": {
+   "katalog_id": "600013634_79-42-K/61_sportovní_gymnastika,_judo,_tenis,_triatlon",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600013634_79-42-K/61_gymnazium_se_sportovni_pripravou_sportovni_gymnastika_judo_tenis_triatlon"
+  },
+  "600013677_79-41-K/41": {
+   "katalog_id": "600013677_79-41-K/41_Všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013677_79-41-K/81": {
+   "katalog_id": "600013677_79-41-K/81_Všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013758_79-41-K/61": {
+   "katalog_id": "600013758_79-41-K/61_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013758_79-41-K/81": {
+   "katalog_id": "600013758_79-41-K/81_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013766_65-41-L/01_kuchar_cisnik": {
+   "katalog_id": "600013766_65-41-L/01_65_51_H/01_Kuchař_číšník",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013782_26-41-L/01_Informacni_a_zabezpecovaci_technika_26_52_H_01_Elektromechanik_pro_zarizeni_a_pristroje": {
+   "katalog_id": "600013782_26-41-L/01_Informační_a_zebazpečovací_technika_+_Elektromechanik_pro_zařízení_a_přístroje",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600013782_26-41-L/01_informacni_a_zabezpecovaci_technika_26_52_h_01_elektromechanik_pro_zarizeni_a_pristroje"
+  },
+  "600013782_37-42-M/01_Logsitika": {
+   "katalog_id": "600013782_37-42-M/01_Logistika",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600013782_37-42-M/01_logsitika"
+  },
+  "600013782_78-42-M/01": {
+   "katalog_id": "600013782_78-42-M/01_Technické_lyceum",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013821_39-41-L/02_Instalater_36_52_H_01": {
+   "katalog_id": "600013821_39-41-L/02_36_52_H/01_Instalatér",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600013821_39-41-L/02_instalater_36_52_h_01"
+  },
+  "600013839_78-42-M/02_Marketinkova_komunikace": {
+   "katalog_id": "600013839_78-42-M/02_Marketingová_komunikace",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600013839_78-42-M/02_marketinkova_komunikace"
+  },
+  "600013847_33-42-M/01_Ctyrlete_studium": {
+   "katalog_id": "600013847_33-42-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600013847_33-42-M/01_ctyrlete_studium"
+  },
+  "600013855_23-45-L/01_elektromechanik_pro_zarizeni_a_pristroje_L0_H": {
+   "katalog_id": "600013855_23-45-L/01_Elektromechanik_pro_zařízení_a_přístroje",
+   "zpusob": "text_zamereni",
+   "shoda": 0.955,
+   "vysledky_id": "600013855_23-45-L/01_elektromechanik_pro_zarizeni_a_pristroje_l0_h"
+  },
+  "600013855_23-45-L/01_obrabec_kovu_L0_H": {
+   "katalog_id": "600013855_23-45-L/01_Obráběč_kovů",
+   "zpusob": "text_zamereni",
+   "shoda": 0.889,
+   "vysledky_id": "600013855_23-45-L/01_obrabec_kovu_l0_h"
+  },
+  "600013855_26-41-L/01_elektrikar_silnoproud_L0_H": {
+   "katalog_id": "600013855_26-41-L/01_Elektrikář___silnoproud",
+   "zpusob": "text_zamereni",
+   "shoda": 0.933,
+   "vysledky_id": "600013855_26-41-L/01_elektrikar_silnoproud_l0_h"
+  },
+  "600013855_26-41-L/01_elektromechanik_pro_zarizeni_a_pristroje_L0_H": {
+   "katalog_id": "600013855_26-41-L/01_Elektromechanik_pro_zařízení_a_přístroje",
+   "zpusob": "text_zamereni",
+   "shoda": 0.955,
+   "vysledky_id": "600013855_26-41-L/01_elektromechanik_pro_zarizeni_a_pristroje_l0_h"
+  },
+  "600013863_79-41-K/41": {
+   "katalog_id": "600013863_79-41-K/41_čtyřleté_studium___zaměření_na_AJ",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013863_79-41-K/61": {
+   "katalog_id": "600013863_79-41-K/61_šestileté_studium___zaměření_na_AJ",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013863_79-41-K/81": {
+   "katalog_id": "600013863_79-41-K/81_osmileté_studium___klasické_jazyky",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013863_79-43-K/61": {
+   "katalog_id": "600013863_79-43-K/61_šestileté_studium___španělský_jazyk_a_literatura",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013880_78-42-M/08_Cestovni_ruch_a_rozvoj_regionu": {
+   "katalog_id": "600013880_78-42-M/08_cestovní_ruch",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600013880_78-42-M/08_cestovni_ruch_a_rozvoj_regionu"
+  },
+  "600013910_34-57-L/01_34_57_H_01_Knihar": {
+   "katalog_id": "600013910_34-57-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600013910_34-57-L/01_34_57_h_01_knihar"
+  },
+  "600013928_79-41-K/41": {
+   "katalog_id": "600013928_79-41-K/41_Přírodovědné_gymnázium",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600013987_79-41-K/61": {
+   "katalog_id": "600013987_79-41-K/61_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600014029_26-41-L/01_zamereni_CNC_stroje": {
+   "katalog_id": "600014029_26-41-L/01_CNC_stroje",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600014029_26-41-L/01_zamereni_cnc_stroje"
+  },
+  "600014029_63-41-M/01_zamereni_Organizace_a_provoz_firmy": {
+   "katalog_id": "600014029_63-41-M/01_Organizace_a_provoz_firmy",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600014029_63-41-M/01_zamereni_organizace_a_provoz_firmy"
+  },
+  "600014053_79-41-K/81_vseobecny": {
+   "katalog_id": "600014053_79-41-K/81",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600014070_79-41-K/41_SVP_Ctyrlete_vseobecne_studium": {
+   "katalog_id": "600014070_79-41-K/41",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600014070_79-41-K/41_svp_ctyrlete_vseobecne_studium"
+  },
+  "600014070_79-41-K/81_SVP_Osmilete_vseobecne_studium": {
+   "katalog_id": "600014070_79-41-K/81",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600014070_79-41-K/81_svp_osmilete_vseobecne_studium"
+  },
+  "600014118_79-41-K/81": {
+   "katalog_id": "600014118_79-41-K/81_gymnázium",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600014151_79-41-K/41": {
+   "katalog_id": "600014151_79-41-K/41_Gymnázium_Čtyřleté",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600014151_79-41-K/81": {
+   "katalog_id": "600014151_79-41-K/81_Gymnázium_Osmileté",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600014258_79-41-K/41_4_vseobecne": {
+   "katalog_id": "600014258_79-41-K/41_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600014258_79-41-K/81_8_vseobecne": {
+   "katalog_id": "600014258_79-41-K/81_všeobecná",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600014291_23-44-L/01_Strojni_mechanik": {
+   "katalog_id": "600014291_23-44-L/01_obor_23_51_H/01_Strojní_mechanik",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600014291_23-44-L/01_strojni_mechanik"
+  },
+  "600014355_78-42-M/01_Technicke_lyceum": {
+   "katalog_id": "600014355_78-42-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600014355_78-42-M/01_technicke_lyceum"
+  },
+  "600014436_75-31-M/01_Predskolni_a_mimoskolni_pedagogika": {
+   "katalog_id": "600014436_75-31-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600014436_75-31-M/01_predskolni_a_mimoskolni_pedagogika"
+  },
+  "600014436_75-41-M/01_Socialni_cinnost": {
+   "katalog_id": "600014436_75-41-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600014436_75-41-M/01_socialni_cinnost"
+  },
+  "600014452_18-20-M/01_Informacni_technologie": {
+   "katalog_id": "600014452_18-20-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600014452_18-20-M/01_informacni_technologie"
+  },
+  "600014452_78-42-M/08_Lyceum": {
+   "katalog_id": "600014452_78-42-M/08",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600014452_78-42-M/08_lyceum"
+  },
+  "600014461_65-41-L/01_Gastronomie_s_hotelovym_provozem": {
+   "katalog_id": "600014461_65-41-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600014461_65-41-L/01_gastronomie_s_hotelovym_provozem"
+  },
+  "600014487_34-56-L/01_Fotograf_se_zamerenim_na_multimedia": {
+   "katalog_id": "600014487_34-56-L/01_multimédia",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600014487_34-56-L/01_fotograf_se_zamerenim_na_multimedia"
+  },
+  "600014673_79-41-K/81": {
+   "katalog_id": "600014673_79-41-K/81_osmileté",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600014860_65-42-M/02_Ekonomika_a_cestovni_ruch_Management_aktivniho_volneho_casu_Medialni_marketing_cestovniho_ruchu": {
+   "katalog_id": "600014860_65-42-M/02_ŠVP:_Ekonomika_a_cestovní_ruch,_ŠVP:_Management_aktivního_volného_času,_ŠVP:_Mediální_marketing_cestovního_ruchu",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600014860_65-42-M/02_ekonomika_a_cestovni_ruch_management_aktivniho_volneho_casu_medialni_marketing_cestovniho_ruchu"
+  },
+  "600014860_68-43-M/01_Pravni_administrativa_a_evropska_integrace": {
+   "katalog_id": "600014860_68-43-M/01_ŠVP:_Právní_administrativa_a_evropská_integrace",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600014860_68-43-M/01_pravni_administrativa_a_evropska_integrace"
+  },
+  "600014860_75-31-M/01_Ucitel_ucitelka_materske_skoly": {
+   "katalog_id": "600014860_75-31-M/01_ŠVP:_Učitel,_učitelka_mateřské_školy",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600014860_75-31-M/01_ucitel_ucitelka_materske_skoly"
+  },
+  "600014932_79-41-K/81": {
+   "katalog_id": "600014932_79-41-K/81_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600015033_79-41-K/41": {
+   "katalog_id": "600015033_79-41-K/41_Tradice_a_prosperita",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600015033_79-41-K/61": {
+   "katalog_id": "600015033_79-41-K/61_Tradice_a_prosperita",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600015068_33-42-M/01_Vyroba_a_tvorba_nabytku_pomoci_CNC_technologii": {
+   "katalog_id": "600015068_33-42-M/01_Nábytkářství_a_čalounictví",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015068_33-42-M/01_vyroba_a_tvorba_nabytku_pomoci_cnc_technologii"
+  },
+  "600015076_43-41-M/01": {
+   "katalog_id": "600015076_43-41-M/01_Veterinářství",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600015092_65-42-M/01_SVP_hotelnictvi_a_cestovni_ruch": {
+   "katalog_id": "600015092_65-42-M/01_hotelnictví_a_cestovní_ruch",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "600015092_65-42-M/01_svp_hotelnictvi_a_cestovni_ruch"
+  },
+  "600015092_65-42-M/01_SVP_hotelnictvi_a_rekreologie": {
+   "katalog_id": "600015092_65-42-M/01_hotelnictví_a_rekreologie",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "600015092_65-42-M/01_svp_hotelnictvi_a_rekreologie"
+  },
+  "600015092_69-41-L/02": {
+   "katalog_id": "600015092_69-41-L/02_masér_sportovní_a_rekondiční",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600015106_29-42-M/01_Chemicka_mikrobialni_a_senzoricka_analyza_potravin": {
+   "katalog_id": "600015106_29-42-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015106_29-42-M/01_chemicka_mikrobialni_a_senzoricka_analyza_potravin"
+  },
+  "600015157_79-41-K/41_vseobecne": {
+   "katalog_id": "600015157_79-41-K/41",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600015211_79-41-K/81_vseobecne": {
+   "katalog_id": "600015211_79-41-K/81",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600015297_63-41-M/01_zamereni_Firemni_management": {
+   "katalog_id": "600015297_63-41-M/01_Ekonomika_a_podnikání_zaměření_Firemní_management",
+   "zpusob": "text_zamereni",
+   "shoda": 0.654,
+   "vysledky_id": "600015297_63-41-M/01_zamereni_firemni_management"
+  },
+  "600015297_68-43-M/01_zamereni_Statni_sluzba_a_spravni_rizeni": {
+   "katalog_id": "600015297_68-43-M/01_Veřejnosprávní_činnost_zaměření_Státní_služba_a_správní_řízení",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015297_68-43-M/01_zamereni_statni_sluzba_a_spravni_rizeni"
+  },
+  "600015408_23-45-L/01_23_56_H_01_Obrabec_kovu": {
+   "katalog_id": "600015408_23-45-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015408_23-45-L/01_23_56_h_01_obrabec_kovu"
+  },
+  "600015408_39-41-L/02_36_52_H_01_Instalater": {
+   "katalog_id": "600015408_39-41-L/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015408_39-41-L/02_36_52_h_01_instalater"
+  },
+  "600015441_36-45-M/01": {
+   "katalog_id": "600015441_36-45-M/01_Technická_zařízení_a_energetická_náročnost_budov",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600015581_69-41-L/01_Kosmeticka": {
+   "katalog_id": "600015581_69-41-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015581_69-41-L/01_kosmeticka"
+  },
+  "600015629_63-41-M/02_ekonomika_a_finance": {
+   "katalog_id": "600015629_63-41-M/02",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600015629_78-42-M/08": {
+   "katalog_id": "600015629_78-42-M/08_Technika",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600015637_63-41-M/02_M": {
+   "katalog_id": "600015637_63-41-M/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015637_63-41-M/02_m"
+  },
+  "600015670_41-41-M/01_Ekologie": {
+   "katalog_id": "600015670_41-41-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015670_41-41-M/01_ekologie"
+  },
+  "600015700_79-41-K/81_Vseobecne": {
+   "katalog_id": "600015700_79-41-K/81_všeobecné,_jazykové,_informatika",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015700_79-41-K/81_vseobecne"
+  },
+  "600015700_79-43-K/61_Vyuka_vybranych_predmetu_v_nemeckem_jazyce": {
+   "katalog_id": "600015700_79-43-K/61_jazykové",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015700_79-43-K/61_vyuka_vybranych_predmetu_v_nemeckem_jazyce"
+  },
+  "600015785_18-20-M/01_Informatika_v_ekonomice": {
+   "katalog_id": "600015785_18-20-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015785_18-20-M/01_informatika_v_ekonomice"
+  },
+  "600015785_79-41-K/41": {
+   "katalog_id": "600015785_79-41-K/41_délka_studia_čtyři_roky",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600015785_79-41-K/81": {
+   "katalog_id": "600015785_79-41-K/81_délka_studia_osm_let",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600015815_65-42-M/02_Cestovni_ruch": {
+   "katalog_id": "600015815_65-42-M/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015815_65-42-M/02_cestovni_ruch"
+  },
+  "600015815_75-41-M/01_Socialni_cinnost": {
+   "katalog_id": "600015815_75-41-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015815_75-41-M/01_socialni_cinnost"
+  },
+  "600015882_78-42-M/01_Multimedia": {
+   "katalog_id": "600015882_78-42-M/01_Multimedia_(délka_studia_4_roky)",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015882_78-42-M/01_multimedia"
+  },
+  "600015971_21-44-L/01_Modelar": {
+   "katalog_id": "600015971_21-44-L/01_L0+H__Technik_modelových_zařízení,_modelář",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015971_21-44-L/01_modelar"
+  },
+  "600015971_23-45-L/01_Obrabec_kovu": {
+   "katalog_id": "600015971_23-45-L/01_L0+H__Mechanik_seřizovač,_obráběč_kovů",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015971_23-45-L/01_obrabec_kovu"
+  },
+  "600015971_26-41-L/01_Elektrikar": {
+   "katalog_id": "600015971_26-41-L/01_L0+H_Mechanik_elektrotechnik,_Elektrikář",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015971_26-41-L/01_elektrikar"
+  },
+  "600015971_39-41-L/02_Instalater": {
+   "katalog_id": "600015971_39-41-L/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600015971_39-41-L/02_instalater"
+  },
+  "600016242_31-43-M/01_31_43_M_01_Odevnictvi": {
+   "katalog_id": "600016242_31-43-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600016242_31-43-M/01_31_43_m_01_odevnictvi"
+  },
+  "600016242_65-41-L/01_65_41_L_01_Gastronomie": {
+   "katalog_id": "600016242_65-41-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600016242_65-41-L/01_65_41_l_01_gastronomie"
+  },
+  "600016242_65-42-M/02_65_42_M_02_Cestovni_ruch": {
+   "katalog_id": "600016242_65-42-M/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600016242_65-42-M/02_65_42_m_02_cestovni_ruch"
+  },
+  "600016242_69-41-L/01_69_41_L_01_Kosmeticke_sluzby": {
+   "katalog_id": "600016242_69-41-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600016242_69-41-L/01_69_41_l_01_kosmeticke_sluzby"
+  },
+  "600016358_63-41-M/01_Internetove_sluzby_a_aplikace": {
+   "katalog_id": "600016358_63-41-M/01_Podnikání_v_euroregionu_a_internetové_služby_a_aplikace",
+   "zpusob": "text_zamereni",
+   "shoda": 0.688,
+   "vysledky_id": "600016358_63-41-M/01_internetove_sluzby_a_aplikace"
+  },
+  "600016358_63-41-M/01_Pozemni_stavitelstvi": {
+   "katalog_id": "600016358_63-41-M/01_Podnikání_v_euroregionu_a_pozemní_stavitelství",
+   "zpusob": "text_zamereni",
+   "shoda": 0.643,
+   "vysledky_id": "600016358_63-41-M/01_pozemni_stavitelstvi"
+  },
+  "600016374_18-20-M/01_Kyberbezpecnost_pocitacovych_siti": {
+   "katalog_id": "600016374_18-20-M/01_Počítačové_sítě_/_kyberbezpečnost",
+   "zpusob": "text_zamereni",
+   "shoda": 0.931,
+   "vysledky_id": "600016374_18-20-M/01_kyberbezpecnost_pocitacovych_siti"
+  },
+  "600016455_79-41-K/41": {
+   "katalog_id": "600016455_79-41-K/41_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600016455_79-41-K/81": {
+   "katalog_id": "600016455_79-41-K/81_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600016536_18-20-M/01": {
+   "katalog_id": "600016536_18-20-M/01_Kybernetická_bezpečnost_a_právo",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600016536_63-41-M/02": {
+   "katalog_id": "600016536_63-41-M/02_Daně_a_finance",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600016579_18-20-M/01_Informacni_technologie": {
+   "katalog_id": "600016579_18-20-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600016579_18-20-M/01_informacni_technologie"
+  },
+  "600016617_63-41-M/02_Karvina_Ekonomika_a_sport": {
+   "katalog_id": "600016617_63-41-M/02_Ekonomika_a_sport",
+   "zpusob": "text_zamereni",
+   "shoda": 0.8,
+   "vysledky_id": "600016617_63-41-M/02_karvina_ekonomika_a_sport"
+  },
+  "600016617_63-41-M/02_Ostrava_Fotbalova_akademie": {
+   "katalog_id": "600016617_63-41-M/02_Fotbalová_akademie",
+   "zpusob": "text_zamereni",
+   "shoda": 0.821,
+   "vysledky_id": "600016617_63-41-M/02_ostrava_fotbalova_akademie"
+  },
+  "600016617_63-41-M/02_Ostrava_Trenerska_akademie": {
+   "katalog_id": "600016617_63-41-M/02_Trenérská_akademie",
+   "zpusob": "text_zamereni",
+   "shoda": 0.821,
+   "vysledky_id": "600016617_63-41-M/02_ostrava_trenerska_akademie"
+  },
+  "600016617_78-42-M/02_Karvina_Ekonomicke_lyceum": {
+   "katalog_id": "600016617_78-42-M/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600016617_78-42-M/02_karvina_ekonomicke_lyceum"
+  },
+  "600016749_26-41-M/01": {
+   "katalog_id": "600016749_26-41-M/01_Aplikace_počítačů",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600016803_63-41-M/02_cestovni_ruch_digitalni_marketing_nebo_vypocetni_technika": {
+   "katalog_id": "600016803_63-41-M/02_Cestovní_ruch,_výpočetní_technika",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600016803_78-42-M/02_Cestovni_ruch_digitalni_marketing_nebo_vypocetni_technika": {
+   "katalog_id": "600016803_78-42-M/02_Cestovní_ruch,_výpočetní_technika",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600016803_78-42-M/02_cestovni_ruch_digitalni_marketing_nebo_vypocetni_technika"
+  },
+  "600016820_79-41-K/41": {
+   "katalog_id": "600016820_79-41-K/41_čtyřletý_všeobecně_vzdělávací_program",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600016820_79-41-K/61": {
+   "katalog_id": "600016820_79-41-K/61_šestiletý_všeobecně_vzdělávací_program",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600016838_53-41-M/03": {
+   "katalog_id": "600016838_53-41-M/03_zdravotnické",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600016838_53-41-M/04": {
+   "katalog_id": "600016838_53-41-M/04_zdravotnické",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600016838_75-31-M/01": {
+   "katalog_id": "600016838_75-31-M/01_pedagogické",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600016838_78-42-M/03": {
+   "katalog_id": "600016838_78-42-M/03_pedagogické",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600017036_79-41-K/81": {
+   "katalog_id": "600017036_79-41-K/81_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600017079_16-02-M/01": {
+   "katalog_id": "600017079_16-02-M/01_Obnovitelné_zdroje_energií",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600017079_23-41-M/01": {
+   "katalog_id": "600017079_23-41-M/01_Počítačová_podpora_strojírenství",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600017079_63-41-M/02": {
+   "katalog_id": "600017079_63-41-M/02_Zahraniční_obchod_a_mediální_komunikace,_Bankovnictví",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600017125_41-43-M/02_Chov_koni_a_jezdecky_sport": {
+   "katalog_id": "600017125_41-43-M/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600017125_41-43-M/02_chov_koni_a_jezdecky_sport"
+  },
+  "600017133_23-44-L/01_23_44_L_01": {
+   "katalog_id": "600017133_23-44-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600017133_23-44-L/01_23_44_l_01"
+  },
+  "600017133_26-41-L/01_26_41_L_01_Vypocetni_a_elektronicke_systemy": {
+   "katalog_id": "600017133_26-41-L/01_výpočetní_a_elektronické_systémy",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "600017133_26-41-L/01_26_41_l_01_vypocetni_a_elektronicke_systemy"
+  },
+  "600017133_26-45-M/01_26_45_M_01": {
+   "katalog_id": "600017133_26-45-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600017133_26-45-M/01_26_45_m_01"
+  },
+  "600017257_37-42-M/01": {
+   "katalog_id": "600017257_37-42-M/01_Marketing_a_logistika",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600017311_28-42-L/01_Chemik_operator_Chemik": {
+   "katalog_id": "600017311_28-42-L/01_kombinovaný_obor_L0+H_s_oborem_28_52_H/01_Chemik",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600017311_28-42-L/01_chemik_operator_chemik"
+  },
+  "600017320_79-41-K/41_Tvorim_tvoris_tvorime": {
+   "katalog_id": "600017320_79-41-K/41",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600017320_79-41-K/41_tvorim_tvoris_tvorime"
+  },
+  "600017320_79-41-K/81_Tvorim_tvoris_tvorime": {
+   "katalog_id": "600017320_79-41-K/81",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600017320_79-41-K/81_tvorim_tvoris_tvorime"
+  },
+  "600017443_79-41-K/41_Anglicky_jazyk_prvni_cizi_jazyk": {
+   "katalog_id": "600017443_79-41-K/41_čtyřletý_obor___první_cizí_jazyk_anglický_jazyk",
+   "zpusob": "text_zamereni",
+   "shoda": 0.852,
+   "vysledky_id": "600017443_79-41-K/41_anglicky_jazyk_prvni_cizi_jazyk"
+  },
+  "600017443_79-41-K/41_Nemecky_jazyk_prvni_cizi_jazyk": {
+   "katalog_id": "600017443_79-41-K/41_čtyřletý_obor___první_cizí_jazyk_německý_jazyk",
+   "zpusob": "text_zamereni",
+   "shoda": 0.846,
+   "vysledky_id": "600017443_79-41-K/41_nemecky_jazyk_prvni_cizi_jazyk"
+  },
+  "600017443_79-41-K/61_Francouzsky_jazyk_prvni_cizi_jazyk": {
+   "katalog_id": "600017443_79-41-K/61_šestiletý_obor___první_cizí_jazyk_francouzský_jazyk",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600017443_79-41-K/61_francouzsky_jazyk_prvni_cizi_jazyk"
+  },
+  "600017460_18-20-M/01_ekonomicke_zaklady": {
+   "katalog_id": "600017460_18-20-M/01",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600017460_63-41-M/02_marketing_a_digitalni_technologie": {
+   "katalog_id": "600017460_63-41-M/02__s_rozšířenou_výukou_marketingu_a_digitálních_technologií",
+   "zpusob": "text_zamereni",
+   "shoda": 0.951
+  },
+  "600017460_63-41-M/02_ucetnictvi_a_dane": {
+   "katalog_id": "600017460_63-41-M/02_se_zaměřením_na_účetnictví_a_daně",
+   "zpusob": "text_zamereni",
+   "shoda": 0.778
+  },
+  "600017486_79-41-K/81_vseobecne": {
+   "katalog_id": "600017486_79-41-K/81",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600017494_79-41-K/41_anglicky_jazyk": {
+   "katalog_id": "600017494_79-41-K/41_živé_jazyky_anglický_jazyk",
+   "zpusob": "text_zamereni",
+   "shoda": 0.839
+  },
+  "600017494_79-43-K/61_spanelsky_jazyk": {
+   "katalog_id": "600017494_79-43-K/61",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600017508_79-41-K/41_vseobecne": {
+   "katalog_id": "600017508_79-41-K/41_ŠVP_G,_Tradice,_kvalita,_budoucnost_pro_21._století",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600017508_79-41-K/81_vseobecne": {
+   "katalog_id": "600017508_79-41-K/81_TRADICE,_KVALITA,_BUDOUCNOST_PRO_21._STOLETÍ,_PROJEKT_22",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600017591_79-41-K/41_Mezinarodni_gymnazium": {
+   "katalog_id": "600017591_79-41-K/41",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600017591_79-41-K/41_mezinarodni_gymnazium"
+  },
+  "600017591_79-41-K/61_Mezinarodni_gymnazium": {
+   "katalog_id": "600017591_79-41-K/61",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600017591_79-41-K/61_mezinarodni_gymnazium"
+  },
+  "600017648_79-41-K/81_Matematika_a_priroda": {
+   "katalog_id": "600017648_79-41-K/81_ŠVP_Matematika_a_příroda",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "600017648_79-41-K/81_matematika_a_priroda"
+  },
+  "600017648_79-41-K/81_Mluvime_anglicky": {
+   "katalog_id": "600017648_79-41-K/81_ŠVP_Mluvíme_anglicky",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "600017648_79-41-K/81_mluvime_anglicky"
+  },
+  "600017656_26-45-M/01_Informacni_a_komunikacni_technologie": {
+   "katalog_id": "600017656_26-45-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600017656_26-45-M/01_informacni_a_komunikacni_technologie"
+  },
+  "600017681_36-47-M/01": {
+   "katalog_id": "600017681_36-47-M/01_Pozemní_stavitelství",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600017753_28-44-M/01_Aplikovana_chemie": {
+   "katalog_id": "600017753_28-44-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600017753_28-44-M/01_aplikovana_chemie"
+  },
+  "600017753_78-42-M/05_Prirodovedne_lyceum_2_0": {
+   "katalog_id": "600017753_78-42-M/05",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600017753_78-42-M/05_prirodovedne_lyceum_2_0"
+  },
+  "600017770_41-46-M/01_M": {
+   "katalog_id": "600017770_41-46-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600017770_41-46-M/01_m"
+  },
+  "600017796_63-41-M/02_Firemni_management_a_Sportovni_management": {
+   "katalog_id": "600017796_63-41-M/02_Firemní_management;_Sportovní_management",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "600017796_63-41-M/02_firemni_management_a_sportovni_management"
+  },
+  "600017842_75-31-M/01_Predskolni_a_mimoskolni_pedagogika": {
+   "katalog_id": "600017842_75-31-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600017842_75-31-M/01_predskolni_a_mimoskolni_pedagogika"
+  },
+  "600017842_78-42-M/03_Pedagogicke_lyceum": {
+   "katalog_id": "600017842_78-42-M/03",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600017842_78-42-M/03_pedagogicke_lyceum"
+  },
+  "600017842_79-41-K/41_Ctyrlete_gymnazium_zive_jazyky": {
+   "katalog_id": "600017842_79-41-K/41",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600017842_79-41-K/41_ctyrlete_gymnazium_zive_jazyky"
+  },
+  "600017842_79-41-K/61_Sestilete_gymnazium_zive_jazyky": {
+   "katalog_id": "600017842_79-41-K/61",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600017842_79-41-K/61_sestilete_gymnazium_zive_jazyky"
+  },
+  "600017931_65-42-M/02": {
+   "katalog_id": "600017931_65-42-M/02_Cestovní_ruch",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600017982_18-20-M/01": {
+   "katalog_id": "600017982_18-20-M/01_Informační_technologie",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600017982_26-41-M/01": {
+   "katalog_id": "600017982_26-41-M/01_elektrotechnika",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600018091_39-41-L/01_Automechanik_23_68_H_01": {
+   "katalog_id": "600018091_39-41-L/01_Mechanik_opravář_motorových_vozidel_(ŠVP_Automechanik)_",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600018091_39-41-L/01_automechanik_23_68_h_01"
+  },
+  "600018156_78-42-M/01": {
+   "katalog_id": "600018156_78-42-M/01_Technické_lyceum",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600018164_36-45-M/01_Technicka_zarizeni_budov": {
+   "katalog_id": "600018164_36-45-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600018164_36-45-M/01_technicka_zarizeni_budov"
+  },
+  "600018245_63-41-M/01_Management_kvality": {
+   "katalog_id": "600018245_63-41-M/01_řízení_jakosti",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600018245_63-41-M/01_management_kvality"
+  },
+  "600018342_63-41-M/02_Zamereni_na_zahranicni_obchod": {
+   "katalog_id": "600018342_63-41-M/02_Obchodní_akademie_se_zaměřením_na_zahraniční_obchod",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600018342_63-41-M/02_zamereni_na_zahranicni_obchod"
+  },
+  "600018342_65-42-M/01_Zamereni_na_cestovni_ruch": {
+   "katalog_id": "600018342_65-42-M/01_Hotelnictví_se_zaměřením_na_cestovní_ruch",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600018342_65-42-M/01_zamereni_na_cestovni_ruch"
+  },
+  "600019349_75-31-M/01": {
+   "katalog_id": "600019349_75-31-M/01_učitel/ka_mateřské_školy",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600019535_53-41-M/03": {
+   "katalog_id": "600019535_53-41-M/03_Praktická_sestra",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600019624_53-41-M/03": {
+   "katalog_id": "600019624_53-41-M/03_Praktická_sestra",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600019683_75-41-M/01_Aktivizacni_pracovnik": {
+   "katalog_id": "600019683_75-41-M/01_Přímá_péče_o_klienta",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600019683_75-41-M/01_aktivizacni_pracovnik"
+  },
+  "600019691_53-41-M/03": {
+   "katalog_id": "600019691_53-41-M/03_Praktická_sestra_H_+_M",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600019829_53-41-M/02_Nutricni_asistent": {
+   "katalog_id": "600019829_53-41-M/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600019829_53-41-M/02_nutricni_asistent"
+  },
+  "600019829_53-41-M/04_Maser_ve_zdravotnictvi": {
+   "katalog_id": "600019829_53-41-M/04",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600019829_53-41-M/04_maser_ve_zdravotnictvi"
+  },
+  "600019829_63-41-M/02_Obchodni_akademie": {
+   "katalog_id": "600019829_63-41-M/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600019829_63-41-M/02_obchodni_akademie"
+  },
+  "600019829_78-42-M/04_Promedicus": {
+   "katalog_id": "600019829_78-42-M/04",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600019829_78-42-M/04_promedicus"
+  },
+  "600020037_18-20-M/01": {
+   "katalog_id": "600020037_18-20-M/01_Informatika_v_ekonomice",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600020151_18-20-M/01_Informacni_technologie_v_elektrotechnice": {
+   "katalog_id": "600020151_18-20-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600020151_18-20-M/01_informacni_technologie_v_elektrotechnice"
+  },
+  "600020266_18-20-M/01_Informacni_technologie": {
+   "katalog_id": "600020266_18-20-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600020266_18-20-M/01_informacni_technologie"
+  },
+  "600020410_26-41-L/01": {
+   "katalog_id": "600020410_26-41-L/01_Digitální_technika_a_mechatronika",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600020410_34-42-M/01": {
+   "katalog_id": "600020410_34-42-M/01_Obalový_a_grafický_design",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600020525_63-41-M/01_Sportovni_akademie_zamereni_Trenerstvi": {
+   "katalog_id": "600020525_63-41-M/01_Sportovní_akademie_(Trenérství)",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "600020525_63-41-M/01_sportovni_akademie_zamereni_trenerstvi"
+  },
+  "600020797_79-41-K/41": {
+   "katalog_id": "600020797_79-41-K/41_Gymnázium_Ječná",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600024211_23-45-L/01": {
+   "katalog_id": "600024211_23-45-L/01_Programátor_CNC_strojů_",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600025021_65-41-L/01_Gastronomie": {
+   "katalog_id": "600025021_65-41-L/01_Gastronomické_služby",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600025021_65-41-L/01_gastronomie"
+  },
+  "600025021_78-42-M/03_Pedagogicke_lyceum": {
+   "katalog_id": "600025021_78-42-M/03",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600025021_78-42-M/03_pedagogicke_lyceum"
+  },
+  "600026612_69-41-L/02": {
+   "katalog_id": "600026612_69-41-L/02_Masér_sportovní_a_rekondiční",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600026612_75-41-M/01": {
+   "katalog_id": "600026612_75-41-M/01_Sociální_činnost",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600027210_18-20-M/01_Pocitacove_systemy_a_aplikovana_elektrotechnika": {
+   "katalog_id": "600027210_18-20-M/01_Výpočetní_technika_a_aplikovaná_elektronika",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600027210_18-20-M/01_pocitacove_systemy_a_aplikovana_elektrotechnika"
+  },
+  "600027341_75-41-M/01_SVP_Prace_v_socialnich_sluzbach_pripravuje_odborne_pracovniky_pro_cinnosti_spojene_s_poskytovanim_socialnich_sluzeb_pro_ruzne_cilove_skupiny_Studium_je_zakonceno_maturitni_zkouskou": {
+   "katalog_id": "600027341_75-41-M/01_ŠVP_\"Práce_v_sociálních_službách\"_připravuje_odborné_pracovníky_pro_činnosti_spojené_s_poskytováním_sociálních_služeb._Studium_je_zakončeno_maturitní_zkouškou.",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600027341_75-41-M/01_svp_prace_v_socialnich_sluzbach_pripravuje_odborne_pracovniky_pro_cinnosti_spojene_s_poskytovanim_socialnich_sluzeb_pro_ruzne_cilove_skupiny_studium_je_zakonceno_maturitni_zkouskou"
+  },
+  "600077594_79-41-K/41_vseobecne": {
+   "katalog_id": "600077594_79-41-K/41",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600170012_63-41-M/01_Management_sportovnich_zarizeni": {
+   "katalog_id": "600170012_63-41-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170012_63-41-M/01_management_sportovnich_zarizeni"
+  },
+  "600170012_63-41-M/02_Obchodni_akademie": {
+   "katalog_id": "600170012_63-41-M/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170012_63-41-M/02_obchodni_akademie"
+  },
+  "600170071_37-41-M/01_Provoz_a_ekonomika_dopravy": {
+   "katalog_id": "600170071_37-41-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170071_37-41-M/01_provoz_a_ekonomika_dopravy"
+  },
+  "600170071_37-42-M/01_Logisticke_a_financni_sluzby": {
+   "katalog_id": "600170071_37-42-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170071_37-42-M/01_logisticke_a_financni_sluzby"
+  },
+  "600170071_63-41-M/01_Ekonomika_a_podnikani": {
+   "katalog_id": "600170071_63-41-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170071_63-41-M/01_ekonomika_a_podnikani"
+  },
+  "600170071_78-42-M/08_Lyceum": {
+   "katalog_id": "600170071_78-42-M/08",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170071_78-42-M/08_lyceum"
+  },
+  "600170080_79-41-K/41_Elektromobility": {
+   "katalog_id": "600170080_79-41-K/41_Elektromobilita",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "600170080_79-41-K/41_elektromobility"
+  },
+  "600170080_79-41-K/41_Multimedii": {
+   "katalog_id": "600170080_79-41-K/41_Multimédia",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "600170080_79-41-K/41_multimedii"
+  },
+  "600170128_39-08-M/01_Strojnik_pozarni_techniky": {
+   "katalog_id": "600170128_39-08-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170128_39-08-M/01_strojnik_pozarni_techniky"
+  },
+  "600170128_78-42-M/01_Elektrotechnika_a_strojirenstvi": {
+   "katalog_id": "600170128_78-42-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170128_78-42-M/01_elektrotechnika_a_strojirenstvi"
+  },
+  "600170161_26-41-L/01_26_52_H_01_Elektro_digitalizace_automatizace": {
+   "katalog_id": "600170161_26-41-L/01_Elektromechanik_pro_zařízení_a_přístroje___26_52_H/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170161_26-41-L/01_26_52_h_01_elektro_digitalizace_automatizace"
+  },
+  "600170179_75-31-M/01_Predskolni_pedagogika": {
+   "katalog_id": "600170179_75-31-M/01_Pedagogika",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170179_75-31-M/01_predskolni_pedagogika"
+  },
+  "600170276_18-20-M/01": {
+   "katalog_id": "600170276_18-20-M/01_Programování_a_počítačové_sítě",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600170276_26-41-L/01_26_51_H_02_Elektrikar_silnoproud": {
+   "katalog_id": "600170276_26-41-L/01__Elektrikář___silnoproud__26_51_H/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170276_26-41-L/01_26_51_h_02_elektrikar_silnoproud"
+  },
+  "600170292_63-41-M/01_SVP_Obchodne_podnikatelska_cinnost": {
+   "katalog_id": "600170292_63-41-M/01_Obchodně_podnikatelská_činnost",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170292_63-41-M/01_svp_obchodne_podnikatelska_cinnost"
+  },
+  "600170292_69-41-L/01_SVP_Kosmeticka": {
+   "katalog_id": "600170292_69-41-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170292_69-41-L/01_svp_kosmeticka"
+  },
+  "600170292_78-42-M/08_komunikace_a_marketing": {
+   "katalog_id": "600170292_78-42-M/08",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600170331_65-41-L/01_Kuchar": {
+   "katalog_id": "600170331_65-41-L/01_zaměření_Kuchař_(model_L_+_H)",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170331_65-41-L/01_kuchar"
+  },
+  "600170357_23-45-L/01_Programovani_CNC_L0_H": {
+   "katalog_id": "600170357_23-45-L/01_Programování_a_obsluha_CNC_(L+H)_(ve_3._ročníku_získání_výučního_listu_v_oboru_Obráběč_kovů)",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170357_23-45-L/01_programovani_cnc_l0_h"
+  },
+  "600170357_78-42-M/01": {
+   "katalog_id": "600170357_78-42-M/01_Počítačová_grafika_a_vizualizace_nebo_Procesy_ve_strojírenství",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600170373_26-41-L/01_26_52_H_01_Mechanik_elektrotechnik_pro_zarizeni_a_pristroje": {
+   "katalog_id": "600170373_26-41-L/01_Mechanik_elektrotechnik_se_zaměřením_na_silnoproud,_doplňující_obor_26_52_H/01_Elektromechanik_pro_zařízení_a_přístroje",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170373_26-41-L/01_26_52_h_01_mechanik_elektrotechnik_pro_zarizeni_a_pristroje"
+  },
+  "600170373_66-41-L/01_66_51_H_01_Prodavac_aranzer": {
+   "katalog_id": "600170373_66-41-L/01_Obchod,_doprava_a_služby,_doplňující_obor_66_51_H/01_Prodavač",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170373_66-41-L/01_66_51_h_01_prodavac_aranzer"
+  },
+  "600170403_78-42-M/08": {
+   "katalog_id": "600170403_78-42-M/08_Všeobecné_lyceum",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600170438_18-20-M/01_SVP_Sprava_siti_a_programovani_nebo_Kyberneticka_bezpecnost": {
+   "katalog_id": "600170438_18-20-M/01_ŠVP:_Informačni_technologie,_od_2._ročníku_volba_specializace_Správa_sítí_a_programování_nebo_Kybernetická_bezpečnost",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170438_18-20-M/01_svp_sprava_siti_a_programovani_nebo_kyberneticka_bezpecnost"
+  },
+  "600170438_23-45-L/01_SVP_Mechanik_programator_programovani_a_obsluha_technologickych_pracovist": {
+   "katalog_id": "600170438_23-45-L/01_ŠVP:_Mechanik_programátor___programování_a_obsluha_technologických_pracovišť_+_23_56_H/01_Obráběč_kovů",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170438_23-45-L/01_svp_mechanik_programator_programovani_a_obsluha_technologickych_pracovist"
+  },
+  "600170438_26-41-L/01_SVP_Mechanik_elektronik_digitalni_technika": {
+   "katalog_id": "600170438_26-41-L/01_ŠVP:_Mechanik_elektronik___digitální_technika_+_26_52_H/01_Elektromechanik_pro_zařízení_a_přístroje",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170438_26-41-L/01_svp_mechanik_elektronik_digitalni_technika"
+  },
+  "600170438_78-42-M/01_SVP_Lyceum_modernich_technologii": {
+   "katalog_id": "600170438_78-42-M/01_ŠVP:_Technické_lyceum",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170438_78-42-M/01_svp_lyceum_modernich_technologii"
+  },
+  "600170462_63-41-M/01": {
+   "katalog_id": "600170462_63-41-M/01_Management_kvality",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600170535_18-20-M/01": {
+   "katalog_id": "600170535_18-20-M/01_Aplikované_informační_technologie",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600170535_78-42-M/01": {
+   "katalog_id": "600170535_78-42-M/01_Technické_lyceum___ekologie_a_architektura",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600170594_26-41-L/01_pocitacove_ridici_a_zabezpecovaci_systemy": {
+   "katalog_id": "600170594_26-41-L/01_Studijní_obor_zaměřený_na_číslicovou_a_řídící_techniku_nebo_na_zabezpečovací_techniku.",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600170608_23-45-L/01_pro_CNC_obrabeci_stroje_nebo_pro_CNC_vstrikovaci_stroje_vyber_zamereni_od_2_rocniku": {
+   "katalog_id": "600170608_23-45-L/01_Mechanik_seřizovač_pro_CNC_stroje",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170608_23-45-L/01_pro_cnc_obrabeci_stroje_nebo_pro_cnc_vstrikovaci_stroje_vyber_zamereni_od_2_rocniku"
+  },
+  "600170641_23-45-L/01_Mechanik_CNC_stroju_a_zarizeni": {
+   "katalog_id": "600170641_23-45-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170641_23-45-L/01_mechanik_cnc_stroju_a_zarizeni"
+  },
+  "600170641_26-41-M/01_Pocitacove_systemy": {
+   "katalog_id": "600170641_26-41-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170641_26-41-M/01_pocitacove_systemy"
+  },
+  "600170675_63-41-M/02_OA_se_zamerenim_na_cizi_jazyky": {
+   "katalog_id": "600170675_63-41-M/02_Obchodní_akademie_se_zaměřením_na_cizí_jazyky",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170675_63-41-M/02_oa_se_zamerenim_na_cizi_jazyky"
+  },
+  "600170675_78-42-M/02_Ekonomicke_lyceum": {
+   "katalog_id": "600170675_78-42-M/02_Ekonomické_lyceum_se_zaměřením_na_cizí_jazyky",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170675_78-42-M/02_ekonomicke_lyceum"
+  },
+  "600170730_75-41-M/01_denni_forma_vzdelavani": {
+   "katalog_id": "600170730_75-41-M/01",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600170837_23-45-M/01": {
+   "katalog_id": "600170837_23-45-M/01_Manažer_silniční_dopravy",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600170837_39-41-L/01_26_57_H_01_Autoelektrikar": {
+   "katalog_id": "600170837_39-41-L/01_Autoelektrikář",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "600170837_39-41-L/01_26_57_h_01_autoelektrikar"
+  },
+  "600170853_33-41-L/01_Operator_drevarske_a_nabytkarske_vyroby": {
+   "katalog_id": "600170853_33-41-L/01_Truhlář_33_56_H/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170853_33-41-L/01_operator_drevarske_a_nabytkarske_vyroby"
+  },
+  "600170853_36-47-M/01_Pozemni_stavitelstvi": {
+   "katalog_id": "600170853_36-47-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170853_36-47-M/01_pozemni_stavitelstvi"
+  },
+  "600170993_23-44-L/01_Mechanik_stroju_a_zarizeni_L_H": {
+   "katalog_id": "600170993_23-44-L/01_se_zaměřením_na_CNC_stroje",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600170993_23-44-L/01_mechanik_stroju_a_zarizeni_l_h"
+  },
+  "600171051_23-45-L/01_Obrabec_kovu_moznost_ziskat_vyucni_list_ve_3_r": {
+   "katalog_id": "600171051_23-45-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171051_23-45-L/01_obrabec_kovu_moznost_ziskat_vyucni_list_ve_3_r"
+  },
+  "600171051_26-41-L/01_Elektromechanik_pro_zarizeni_a_pristroje_moznost_ziskat_vyucni_list_ve_3_r": {
+   "katalog_id": "600171051_26-41-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171051_26-41-L/01_elektromechanik_pro_zarizeni_a_pristroje_moznost_ziskat_vyucni_list_ve_3_r"
+  },
+  "600171051_34-53-L/01_Reprodukcni_grafik_moznost_ziskat_vyucni_list_ve_3_r": {
+   "katalog_id": "600171051_34-53-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171051_34-53-L/01_reprodukcni_grafik_moznost_ziskat_vyucni_list_ve_3_r"
+  },
+  "600171086_23-44-L/01_23_52_H_01_Nastrojar": {
+   "katalog_id": "600171086_23-44-L/01_Nástrojář",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171086_23-44-L/01_23_52_h_01_nastrojar"
+  },
+  "600171230_75-41-M/01": {
+   "katalog_id": "600171230_75-41-M/01_Sociálně_výchovná",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600171248_26-41-L/01_Zabezpecovaci_protipozarni_a_regulacni_systemy_kombinace_s_oborem_26_51_H_01_Elektrikar": {
+   "katalog_id": "600171248_26-41-L/01_Zabezpečovací,_protipožární_a_regulační_systémy",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171248_26-41-L/01_zabezpecovaci_protipozarni_a_regulacni_systemy_kombinace_s_oborem_26_51_h_01_elektrikar"
+  },
+  "600171248_39-41-L/02_kombinace_s_oborem_36_52_H_01_Instalater": {
+   "katalog_id": "600171248_39-41-L/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171248_39-41-L/02_kombinace_s_oborem_36_52_h_01_instalater"
+  },
+  "600171256_65-42-M/01": {
+   "katalog_id": "600171256_65-42-M/01_Hotelový_provoz_a_gastronomie",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600171256_65-42-M/02": {
+   "katalog_id": "600171256_65-42-M/02_Cestovní_ruch",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600171299_34-56-L/01_MULTIMEDIALNI_TECHNIK_FOTOGRAF": {
+   "katalog_id": "600171299_34-56-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171299_34-56-L/01_multimedialni_technik_fotograf"
+  },
+  "600171299_63-41-M/01_MANAGEMENT_OBCHODNICH_FIREM_A_SPORTOVNICH_KLUBU": {
+   "katalog_id": "600171299_63-41-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171299_63-41-M/01_management_obchodnich_firem_a_sportovnich_klubu"
+  },
+  "600171299_69-41-L/01_KOSMETICKE_SLUZBY": {
+   "katalog_id": "600171299_69-41-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171299_69-41-L/01_kosmeticke_sluzby"
+  },
+  "600171299_69-41-L/02_69_53_H_01_Rekondicni_a_sportovni_maser": {
+   "katalog_id": "600171299_69-41-L/02_Rekondiční_a_sportovní_masér",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171299_69-41-L/02_69_53_h_01_rekondicni_a_sportovni_maser"
+  },
+  "600171302_23-62-L/01_Jemny_mechanik": {
+   "katalog_id": "600171302_23-62-L/01_23_62_H/01_Jemný_mechanik",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171302_23-62-L/01_jemny_mechanik"
+  },
+  "600171302_26-41-L/01_Elektrikar": {
+   "katalog_id": "600171302_26-41-L/01_26_51_H/01_Elektrikář",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171302_26-41-L/01_elektrikar"
+  },
+  "600171311_26-41-L/01_Elektromechanik_pro_zarizeni_a_pristroje": {
+   "katalog_id": "600171311_26-41-L/01_Elektromechanik_pro_stroje_a_zařízení",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171311_26-41-L/01_elektromechanik_pro_zarizeni_a_pristroje"
+  },
+  "600171337_18-20-M/01_Programovani_a_pocitacove_systemy": {
+   "katalog_id": "600171337_18-20-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171337_18-20-M/01_programovani_a_pocitacove_systemy"
+  },
+  "600171337_26-41-L/01_Silnoproud_slaboproud_a_energetika": {
+   "katalog_id": "600171337_26-41-L/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171337_26-41-L/01_silnoproud_slaboproud_a_energetika"
+  },
+  "600171337_26-41-M/01_Programovani_automatizace_a_robotika": {
+   "katalog_id": "600171337_26-41-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171337_26-41-M/01_programovani_automatizace_a_robotika"
+  },
+  "600171388_23-44-L/01_v_kombinaci_s_oborem_23_51_H_01_Strojni_mechanik": {
+   "katalog_id": "600171388_23-44-L/01_kombinace_s_oborem__23_51_H/01_Strojní_mechanik",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171388_23-44-L/01_v_kombinaci_s_oborem_23_51_h_01_strojni_mechanik"
+  },
+  "600171388_66-41-L/01_v_kombinaci_s_oborem_66_51_H_01_Prodavac": {
+   "katalog_id": "600171388_66-41-L/01_kombinace_s_oborem_66_51_H/01_Prodavač",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171388_66-41-L/01_v_kombinaci_s_oborem_66_51_h_01_prodavac"
+  },
+  "600171531_63-41-M/01_Obchodni_ekonomicka_a_personalni_cinnost": {
+   "katalog_id": "600171531_63-41-M/01_Obchodní,_ekonomické_a_personální_činnosti",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "600171531_63-41-M/01_obchodni_ekonomicka_a_personalni_cinnost"
+  },
+  "600171710_79-42-K/41_Hazena_divky": {
+   "katalog_id": "600171710_79-42-K/41_Házená",
+   "zpusob": "text_zamereni",
+   "shoda": 0.667,
+   "vysledky_id": "600171710_79-42-K/41_hazena_divky"
+  },
+  "600171728_79-41-K/41_vseobecne_s_rozsirenou_vyukou_telesne_vychovy": {
+   "katalog_id": "600171728_79-41-K/41_všeobecné_/_s_rozšířenou_výukou_TV",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600171728_79-41-K/81_s_rozsirenou_vyukou_telesne_vychovy": {
+   "katalog_id": "600171728_79-41-K/81_s_rozšířenou_výukou_TV",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0
+  },
+  "600171833_26-41-L/01": {
+   "katalog_id": "600171833_26-41-L/01_Elektrikář",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600171841_18-20-M/01": {
+   "katalog_id": "600171841_18-20-M/01_Elektronické_počítačové_systémy",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "600171841_23-41-M/01": {
+   "katalog_id": "600171841_23-41-M/01_Výpočetní_systémy_ve_strojírenství",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "610100530_39-41-L/01_39_41_L_01": {
+   "katalog_id": "610100530_39-41-L/01_Mechanik_opravář_motorových_vozidel",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "610100530_39-41-L/01_39_41_l_01"
+  },
+  "610100581_18-20-M/01_komercni_praxe": {
+   "katalog_id": "610100581_18-20-M/01",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "610100581_26-41-L/01_elektronicka_zarizeni_uc_obor_26_51_H_01_Elektrikar": {
+   "katalog_id": "610100581_26-41-L/01_Elektronická_zařízení",
+   "zpusob": "text_zamereni",
+   "shoda": 0.731,
+   "vysledky_id": "610100581_26-41-L/01_elektronicka_zarizeni_uc_obor_26_51_h_01_elektrikar"
+  },
+  "610100581_26-41-L/01_informacni_technologie_uc_obor_26_51_H_01_Elektrikar": {
+   "katalog_id": "610100581_26-41-L/01_Informační_technologie",
+   "zpusob": "text_zamereni",
+   "shoda": 0.741,
+   "vysledky_id": "610100581_26-41-L/01_informacni_technologie_uc_obor_26_51_h_01_elektrikar"
+  },
+  "610100581_39-41-L/02_Uc_obor_Elektrikar_silnoproud": {
+   "katalog_id": "610100581_39-41-L/02",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "610100581_39-41-L/02_uc_obor_elektrikar_silnoproud"
+  },
+  "610100645_26-41-M/01_mechatronika_robotika": {
+   "katalog_id": "610100645_26-41-M/01_mechatronika",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "610100645_63-41-M/01_ve_strojirenstvi": {
+   "katalog_id": "610100645_63-41-M/01_strojírenství",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "610200381_18-20-M/01_elektronicke_pocitacove_systemy": {
+   "katalog_id": "610200381_18-20-M/01_Informační_technologie_–_elektronické_počítačové_systémy",
+   "zpusob": "text_zamereni",
+   "shoda": 0.712
+  },
+  "610200381_18-20-M/01_informatika_a_management": {
+   "katalog_id": "610200381_18-20-M/01_Informační_technologie_–_informatika_a_management",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0
+  },
+  "610200381_26-41-M/01_slaboprouda_elektrotechnika": {
+   "katalog_id": "610200381_26-41-M/01_Elektrotechnika_–_slaboproudá_elektrotechnika",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "610250833_23-45-L/01": {
+   "katalog_id": "610250833_23-45-L/01_Mechanik_seřizovač",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "610300580_23-41-M/01": {
+   "katalog_id": "610300580_23-41-M/01_počítačové_systémy_a_programování",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "610300580_36-47-M/01": {
+   "katalog_id": "610300580_36-47-M/01_pozemní_stavitelství",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "610380061_79-41-K/81_Le_chajim_maskilim": {
+   "katalog_id": "610380061_79-41-K/81",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "610380061_79-41-K/81_le_chajim_maskilim"
+  },
+  "610451049_23-45-M/01": {
+   "katalog_id": "610451049_23-45-M/01_Dopravní_prostředky_a_logistika",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "610451049_68-43-M/01": {
+   "katalog_id": "610451049_68-43-M/01_Veřejná_správa_",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "610451219_79-41-K/81_vseobecne": {
+   "katalog_id": "610451219_79-41-K/81_Všeobecné_gymnázium",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "650004639_79-41-K/81": {
+   "katalog_id": "650004639_79-41-K/81__Brána_světovým_jazykům_otevřena",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "650068955_79-41-K/81": {
+   "katalog_id": "650068955_79-41-K/81_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "650069021_23-45-L/01_L0_H_Obrabec_kovu": {
+   "katalog_id": "650069021_23-45-L/01_Obráběč_kovů",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "650069021_23-45-L/01_l0_h_obrabec_kovu"
+  },
+  "650069021_26-41-L/01_L0_H_Elektrikar_slaboproud": {
+   "katalog_id": "650069021_26-41-L/01_Elektrikář_(slaboproud)",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "650069021_26-41-L/01_l0_h_elektrikar_slaboproud"
+  },
+  "650071484_79-41-K/41_Skola_pro_zivot_vseobecne": {
+   "katalog_id": "650071484_79-41-K/41_Škola_pro_život___všeobecné_zaměření",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "650071484_79-41-K/41_skola_pro_zivot_vseobecne"
+  },
+  "650071484_79-41-K/81_Skola_pro_zivot_vseobecne": {
+   "katalog_id": "650071484_79-41-K/81_Škola_pro_život_všeobecné_zaměření",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "650071484_79-41-K/81_skola_pro_zivot_vseobecne"
+  },
+  "650075684_78-42-M/06": {
+   "katalog_id": "650075684_78-42-M/06_Waldorfské_lyceum",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "651012988_69-41-L/01": {
+   "katalog_id": "651012988_69-41-L/01_Kosmetička",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "651012988_72-41-M/01": {
+   "katalog_id": "651012988_72-41-M/01_Knihovnické_a_informační_systémy_a_služby",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "651014646_68-42-M/01": {
+   "katalog_id": "651014646_68-42-M/01_Veřejnoprávní_ochrana",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "651023572_63-41-M/01": {
+   "katalog_id": "651023572_63-41-M/01_Obchodní_management",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "651023572_65-42-M/01": {
+   "katalog_id": "651023572_65-42-M/01_Management_hotelového_provozu",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "651023572_72-41-M/01": {
+   "katalog_id": "651023572_72-41-M/01_Knihovnictví",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "651027888_68-43-M/01_Pripraven_na_uspesny_a_spokojeny_zivot": {
+   "katalog_id": "651027888_68-43-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "651027888_68-43-M/01_pripraven_na_uspesny_a_spokojeny_zivot"
+  },
+  "651033772_16-01-M/01_Vodohospodar": {
+   "katalog_id": "651033772_16-01-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "651033772_16-01-M/01_vodohospodar"
+  },
+  "651036232_68-42-M/01": {
+   "katalog_id": "651036232_68-42-M/01_Veřejnoprávní_ochrana",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "651040370_79-41-K/81": {
+   "katalog_id": "651040370_79-41-K/81_s_rozšířenou_výukou_jazyků_(IB_a_IGCSE)",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "680000062_39-08-M/01_Pozarni_ochrana": {
+   "katalog_id": "680000062_39-08-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "680000062_39-08-M/01_pozarni_ochrana"
+  },
+  "690000014_23-41-M/01_specialista_vzdusnych_sil_pobocka_Sokolov": {
+   "katalog_id": "690000014_23-41-M/01_specialista_vzdušných_sil___Sokolov",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "690000014_23-41-M/01_specialista_vzdusnych_sil_pobocka_sokolov"
+  },
+  "691000107_39-41-L/01_Autoelektrikar": {
+   "katalog_id": "691000107_39-41-L/01_26_57_H/01___Autoelektrikář",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "691000107_39-41-L/01_autoelektrikar"
+  },
+  "691000565_79-41-K/41_4lete_gymnazium": {
+   "katalog_id": "691000565_79-41-K/41",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691000662_23-44-L/01_Mechanik_stroju_a_zarizeni_s_3D_modelovanim": {
+   "katalog_id": "691000662_23-44-L/01_Mechanik_strojů_a_zařízení_s_3D_modelování",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691001111_63-41-M/01_specializace_jazykova_a_odborna": {
+   "katalog_id": "691001111_63-41-M/01_Ekonom___specializace_jazyková_a_odborná",
+   "zpusob": "text_zamereni",
+   "shoda": 0.881
+  },
+  "691001111_63-41-M/01_specializace_sportovni": {
+   "katalog_id": "691001111_63-41-M/01_Ekonom___specializace_sportovní",
+   "zpusob": "text_zamereni",
+   "shoda": 0.851
+  },
+  "691003009_79-41-K/81_Gymnazium": {
+   "katalog_id": "691003009_79-41-K/81",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "691003009_79-41-K/81_gymnazium"
+  },
+  "691003050_79-41-K/41": {
+   "katalog_id": "691003050_79-41-K/41_Všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691003807_23-41-M/01": {
+   "katalog_id": "691003807_23-41-M/01_Počítačová_grafika_a_CNC_technika,_Řízení_kvality,_Robotika",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691003807_34-42-M/01": {
+   "katalog_id": "691003807_34-42-M/01_Grafika_a_design",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691005265_78-42-M/01_Lyceum_21_stoleti_Informacni_a_digitalni_technologie": {
+   "katalog_id": "691005265_78-42-M/01_ICT",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "691005265_78-42-M/01_lyceum_21_stoleti_informacni_a_digitalni_technologie"
+  },
+  "691005648_78-42-M/06": {
+   "katalog_id": "691005648_78-42-M/06_volba_zaměření_od_3._ročníku_(technické,_přírodovědné,_humanitní)",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691006270_79-41-K/41_SRaZ_v_Jezkovi_Seberizene_vzdelavani_s_moznosti_profilace_v_oblasti_umelecke_seberozvojove_ci_IT": {
+   "katalog_id": "691006270_79-41-K/41_Sebeřízené_vzdělávání_s_profilací_uměleckou,_IT_či_seberozvojovou",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "691006270_79-41-K/41_sraz_v_jezkovi_seberizene_vzdelavani_s_moznosti_profilace_v_oblasti_umelecke_seberozvojove_ci_it"
+  },
+  "691008426_78-42-M/03": {
+   "katalog_id": "691008426_78-42-M/03_pedagogické",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691008426_79-41-K/41": {
+   "katalog_id": "691008426_79-41-K/41_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691008914_23-41-M/01_mechatronika_CAD_CAM": {
+   "katalog_id": "691008914_23-41-M/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "691008914_23-41-M/01_mechatronika_cad_cam"
+  },
+  "691008914_23-45-L/01_23_56_H_01_Obrabec_kovu": {
+   "katalog_id": "691008914_23-45-L/01_Obráběč_kovů_23_56_H/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "691008914_23-45-L/01_23_56_h_01_obrabec_kovu"
+  },
+  "691008914_26-41-L/01_26_52_H_01_Elektromechanik_pro_zarizeni_a_pristroje": {
+   "katalog_id": "691008914_26-41-L/01_Elektromechanik_pro_zařízení_a_přístroje_\t26_52_H/01",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "691008914_26-41-L/01_26_52_h_01_elektromechanik_pro_zarizeni_a_pristroje"
+  },
+  "691009201_79-41-K/41_vseobecne_gymnazium": {
+   "katalog_id": "691009201_79-41-K/41",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691009465_41-41-M/01_Agropodnikani": {
+   "katalog_id": "691009465_41-41-M/01_Rostlinolékařství,_Chovatelství",
+   "zpusob": "jedna_ku_jedne",
+   "vysledky_id": "691009465_41-41-M/01_agropodnikani"
+  },
+  "691009627_79-41-K/41": {
+   "katalog_id": "691009627_79-41-K/41_„JDU_SI_SVOU_CESTOU_SVĚTEM“_",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691010366_53-41-M/03_Ostrava": {
+   "katalog_id": "691010366_53-41-M/03_Ostrava_Koblov",
+   "zpusob": "text_zamereni",
+   "shoda": 0.632,
+   "vysledky_id": "691010366_53-41-M/03_ostrava"
+  },
+  "691010366_53-43-M/01": {
+   "katalog_id": "691010366_53-43-M/01_Ostrava_Koblov",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691012342_79-41-K/41_pouze_online_vyuka_a_expedice": {
+   "katalog_id": "691012342_79-41-K/41_Expediční___kombinovaná_online_výuka",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691013489_79-41-K/41": {
+   "katalog_id": "691013489_79-41-K/41_IT,_technologie,_pohyb,_well_being",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691013802_78-42-M/06": {
+   "katalog_id": "691013802_78-42-M/06_Humanitní",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691015341_66-43-M/01": {
+   "katalog_id": "691015341_66-43-M/01_Knižní_kultura",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691015554_79-41-K/41": {
+   "katalog_id": "691015554_79-41-K/41_Gymnázium_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691015554_79-41-K/81": {
+   "katalog_id": "691015554_79-41-K/81_Gymnázium_všeobecné",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691017832_79-41-K/41_vseobecne_zamereni": {
+   "katalog_id": "691017832_79-41-K/41",
+   "zpusob": "jedna_ku_jedne"
+  },
+  "691018707_79-42-K/41_atletika_79_42_K_41": {
+   "katalog_id": "691018707_79-42-K/41_atletika",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "691018707_79-42-K/41_atletika_79_42_k_41"
+  },
+  "691018707_79-42-K/41_basketbal_79_42_K_41": {
+   "katalog_id": "691018707_79-42-K/41_basketbal",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "691018707_79-42-K/41_basketbal_79_42_k_41"
+  },
+  "691018707_79-42-K/41_fotbal_79_42_K_41": {
+   "katalog_id": "691018707_79-42-K/41_fotbal_",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "691018707_79-42-K/41_fotbal_79_42_k_41"
+  },
+  "691018707_79-42-K/41_hazena_79_42_K_41": {
+   "katalog_id": "691018707_79-42-K/41_házená",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "691018707_79-42-K/41_hazena_79_42_k_41"
+  },
+  "691018707_79-42-K/41_hokej_79_42_K_41": {
+   "katalog_id": "691018707_79-42-K/41_hokej",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "691018707_79-42-K/41_hokej_79_42_k_41"
+  },
+  "691018707_79-42-K/41_plavani_79_42_K_41": {
+   "katalog_id": "691018707_79-42-K/41_plavání",
+   "zpusob": "text_zamereni",
+   "shoda": 1.0,
+   "vysledky_id": "691018707_79-42-K/41_plavani_79_42_k_41"
+  },
+  "691018707_79-42-K/41_rugby_79_42_K_41": {
+   "katalog_id": "691018707_79-42-K/41_ragby",
+   "zpusob": "text_zamereni",
+   "shoda": 0.75,
+   "vysledky_id": "691018707_79-42-K/41_rugby_79_42_k_41"
+  }
+ }
+}

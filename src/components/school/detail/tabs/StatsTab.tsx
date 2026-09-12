@@ -4,7 +4,7 @@ import type { ExtendedSchoolStats, SchoolProgram } from '@/lib/data';
 import { AdmissionScoreValue } from '@/components/AdmissionScoreValue';
 
 interface StatsTabProps {
-  program: Pick<SchoolProgram, 'prihlasky'>;
+  program: Pick<SchoolProgram, 'prihlasky' | 'rok' | 'nevypsano_2026'>;
   extendedStats: ExtendedSchoolStats | null;
 }
 
@@ -14,6 +14,10 @@ function count(value: number | undefined): string {
 }
 
 export function StatsTab({ program, extendedStats }: StatsTabProps) {
+  // Čísla záznamu patří ročníku, ze kterého pocházejí. Nadpis proto nesmí být
+  // napevno loňský: u nabídky, kterou škola letos nevypsala, jsou údaje loňské,
+  // u ostatních letošní.
+  const rokUdaju = program.rok ?? 2025;
   const priorities = extendedStats ? Array.from({
     length: Math.max(extendedStats.prihlasky_priority.length, extendedStats.prijati_priority.length),
   }, (_, index) => ({
@@ -24,7 +28,7 @@ export function StatsTab({ program, extendedStats }: StatsTabProps) {
   return (
     <div className="space-y-6">
       <div className="rounded-lg border border-slate-200 bg-white p-6">
-        <h3 className="font-semibold text-slate-900">Historické údaje 2025</h3>
+        <h3 className="font-semibold text-slate-900">Údaje z přijímacího řízení {rokUdaju}</h3>
         <dl className="mt-4 grid gap-6 sm:grid-cols-2">
           <div>
             <dt className="text-sm text-slate-600">Počet přihlášek</dt>
@@ -35,7 +39,12 @@ export function StatsTab({ program, extendedStats }: StatsTabProps) {
             <dd className="mt-1 text-sm text-slate-700">Nemáme ověřené minimum pro přijetí.</dd>
           </div>
         </dl>
-        <p className="mt-4 text-sm text-slate-600">Historická data nejsou podmínkami přijímacího řízení 2027 ani odhadem vašeho přijetí.</p>
+        <p className="mt-4 text-sm text-slate-600">
+          {program.nevypsano_2026
+            ? `Obor se v roce 2026 nevypisoval, proto jsou uvedená čísla z roku ${rokUdaju}. `
+            : ''}
+          Údaje z minulých řízení nejsou podmínkami přijímacího řízení 2027 ani odhadem vašeho přijetí.
+        </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">

@@ -150,12 +150,14 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
     fs.readFile(path.join(dataDir, 'cermat_results_2026.json'), 'utf-8'),
   ]);
 
-  const schoolsData = JSON.parse(schoolsDataRaw) as { '2024': RawSchool[]; '2025': RawSchool[] };
+  const schoolsData = JSON.parse(schoolsDataRaw) as { '2024': RawSchool[]; '2025': RawSchool[]; '2026'?: RawSchool[] };
   const apps2026Parsed = JSON.parse(apps2026Raw);
   const cermat2026 = JSON.parse(cermat2026Raw) as Record<string, RawSchool>;
 
   const all2024: RawSchool[] = schoolsData['2024'] || [];
-  const all2025: RawSchool[] = schoolsData['2025'] || [];
+  // Aktuální nabídka města je poslední ročník katalogu; proměnné níže si
+  // ponechávají historické názvy, mění se jen zdroj dat.
+  const all2025: RawSchool[] = schoolsData['2026'] || schoolsData['2025'] || [];
   const apps2026Map = uniqueSchoolIndex<RawSchool>(apps2026Parsed.data || [], r => r.id);
   const cermatIndex = uniqueSchoolIndex(Object.entries(cermat2026), ([key]) => key);
 

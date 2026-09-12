@@ -72,7 +72,12 @@ export async function getAllSchoolsForSearch(): Promise<School[]> {
 
   const analysis = await getSchoolAnalysis();
   const schoolsData = await getSchoolsData();
-  const yearData: Array<Record<string, unknown>> = (schoolsData as Record<string, unknown>)['2025'] as Array<Record<string, unknown>> || [];
+  // Aktuální nabídka je poslední ročník katalogu. Ročník 2026 nese letošní
+  // čísla a u nabídek, které se letos nevypsaly, i loňský záznam s příznakem,
+  // aby jejich stránka nezanikla.
+  const schoolsRecord = schoolsData as Record<string, unknown>;
+  const yearData: Array<Record<string, unknown>> =
+    (schoolsRecord['2026'] ?? schoolsRecord['2025']) as Array<Record<string, unknown>> || [];
 
   // Vytvořit mapu baseId -> seznam zaměření
   const zamereniMap = new Map<string, Array<Record<string, unknown>>>();
@@ -351,7 +356,7 @@ export async function generateAllSlugs(): Promise<{ slug: string }[]> {
   const filePath = path.join(dataDir, 'schools_data.json');
   const content = await fs.readFile(filePath, 'utf-8');
   const data = JSON.parse(content);
-  const yearData = data['2025'] || data['2024'] || [];
+  const yearData = data['2026'] || data['2025'] || data['2024'] || [];
 
   // Seskupit školy podle REDIZO
   const schoolsByRedizo = new Map<string, School[]>();
@@ -444,7 +449,7 @@ export async function generateTopSlugs(count: number = 200): Promise<{ slug: str
   const filePath = path.join(dataDir, 'schools_data.json');
   const content = await fs.readFile(filePath, 'utf-8');
   const data = JSON.parse(content);
-  const yearData = data['2025'] || data['2024'] || [];
+  const yearData = data['2026'] || data['2025'] || data['2024'] || [];
 
   // Seskupit školy podle REDIZO
   const schoolsByRedizo = new Map<string, School[]>();
@@ -672,6 +677,12 @@ export interface SchoolProgram {
   min_body: number;
   index_poptavky: number;
   obec: string;
+  /** Ročník, ze kterého pocházejí čísla záznamu. */
+  rok?: number;
+  /** Ročník zděděných historických ukazatelů (hranice přijetí, kohorty). */
+  historicka_data_rok?: number;
+  /** Nabídka, kterou škola v aktuálním ročníku nevypsala. */
+  nevypsano_2026?: boolean;
   // Matching 2025↔2026
   is_new_2026?: boolean;
   matched_2025_id?: string;
@@ -696,7 +707,7 @@ export async function getProgramsByRedizo(redizo: string): Promise<SchoolProgram
   const filePath = path.join(dataDir, 'schools_data.json');
   const content = await fs.readFile(filePath, 'utf-8');
   const data = JSON.parse(content);
-  const yearData = data['2025'] || data['2024'] || [];
+  const yearData = data['2026'] || data['2025'] || data['2024'] || [];
 
   // Najít všechny záznamy pro tuto školu v schools_data.json
   const detailedRecords = yearData.filter((s: { redizo: string }) => s.redizo === redizo);
@@ -709,6 +720,9 @@ export async function getProgramsByRedizo(redizo: string): Promise<SchoolProgram
     min_body: number;
     prihlasky: number;
     prijati: number;
+    rok?: number;
+    historicka_data_rok?: number;
+    nevypsano_2026?: boolean;
   }>>();
 
   for (const record of detailedRecords) {
@@ -729,6 +743,9 @@ export async function getProgramsByRedizo(redizo: string): Promise<SchoolProgram
         min_body: Math.round((record.min_body || 0) / 2),
         prihlasky: record.prihlasky,
         prijati: record.prijati,
+        rok: record.rok,
+        historicka_data_rok: record.historicka_data_rok,
+        nevypsano_2026: record.nevypsano_2026,
       });
     }
   }
@@ -768,6 +785,10 @@ export async function getProgramsByRedizo(redizo: string): Promise<SchoolProgram
           min_body: z.min_body,
           index_poptavky: zamereniIndexPoptavky,
           obec: school.obec,
+          // Ročník putuje s čísly, aby je stránka nepopsala cizím rokem
+          ...(z.rok ? { rok: z.rok } : {}),
+          ...(z.historicka_data_rok ? { historicka_data_rok: z.historicka_data_rok } : {}),
+          ...(z.nevypsano_2026 ? { nevypsano_2026: true } : {}),
           ...matchingMeta,
         });
       }
