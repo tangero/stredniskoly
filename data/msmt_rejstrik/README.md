@@ -19,7 +19,9 @@ ke konkrétnímu dni.
 
 | Soubor | Stav rejstříku k datu | URL |
 |---|---|---|
+| `rssz-2025-03-31.jsonld` | 31. 3. 2025 (období 1. kola JPZ 2025) | https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld |
 | `rssz-2025-12-31.jsonld` | 31. 12. 2025 | https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld |
+| `rssz-2026-03-31.jsonld` | 31. 3. 2026 (období 1. kola JPZ 2026) | https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld |
 | `rssz-2026-06-30.jsonld` | 30. 6. 2026 | https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld |
 
 Struktura: `list` obsahuje subjekty podle `redIzo`; každý má sídlo

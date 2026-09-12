@@ -20,6 +20,8 @@ def hledat(dotaz: str) -> None:
         sys.exit("Žádné snímky v data/msmt_rejstrik/ – stáhněte je podle README v tomto adresáři.")
     po_izo = dotaz.lower().startswith("izo:")
     hledane = dotaz[4:] if po_izo else dotaz
+    if po_izo and hledane.lower().startswith("izo_"):
+        hledane = hledane[4:]
     for soubor in soubory:
         data = json.load(open(soubor))
         datum = data.get("datumVystupu", soubor)

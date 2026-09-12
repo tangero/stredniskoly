@@ -2,6 +2,11 @@
   "task_id": "R-600005658",
   "queue_version": 2,
   "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT potvrdil hlavní závěr o pokračování školy: subjekt REDIZO 600005658 i zařízení IZO 110001885 jsou vedeny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) pod stejným názvem, sídlem Plzeňská 298/217, Motol a shodnými místy výuky, a obor Aranžér je v nich označen jako dobíhající. Rejstřík zároveň ukázal, že obory Provozní technika a Propagace zůstávají k 30. 6. 2026 formálně registrované (nikoli dobíhající) a obor Technické lyceum dosud registrován není – rejstřík zachycuje registraci oborů, nikoli jejich nabídku v přijímacím řízení, a změny se v něm projevují s odstupem, takže závěry o nabídce nevyvrací. Absence rejstříku v původním nálezu nezpůsobila chybu, pouze sníženou jistotu u pokračování subjektu a dobíhání oboru Aranžér, které rejstřík nyní potvrdil."
+  },
   "findings": [
     {
       "issue_ids": ["Q0018", "Q0019"],
@@ -12,12 +17,15 @@
         "Archivovaný přehled oborů z 23. 1. 2026 – tedy v době přijímacího řízení pro školní rok 2026/2027 – už mezi nástavbovými obory uvádí pouze Podnikání (denní a dálková forma); Provozní technika a Propagace z nabídky pro nové uchazeče zmizely. Totéž potvrzuje snímek webu z 7. 3. 2026.",
         "Zánik nabídky neznamená zánik výuky: PDF školy z října 2025 s okruhy k praktické maturitní zkoušce pro školní rok 2025/2026 dokládá, že žáci oboru Provozní technika ve škole dále studují (obor dobíhá s ročníky přijatými dříve).",
         "Výroční zpráva školy za školní rok 2024/2025 označuje učební obor 66-52-H/01 Aranžér jako „dobíhající obor“. Protože nástavba Propagace je určena výhradně absolventům Aranžéra, ztráta nabídky Propagace v roce 2026 s dobíháním Aranžéra logicky souvisí (zdroje však tuto souvislost přímo neuvádějí).",
-        "Samotná škola (REDIZO 600005658, IZO 110001885) mezi roky pokračuje beze změny názvu, adresy sídla i zřizovatele; ve výroční zprávě 2024/2025 jsou jako místa výuky zapsány Plzeňská 298/217a (Praha 5 – Motol, teoretická výuka), Plzeňská 1315/137 (Praha 5 – Košíře, odborný výcvik) a Moravská 965/3 (Praha 2 – Vinohrady, kde se vyučuje i nástavba Propagace)."
+        "Samotná škola (REDIZO 600005658, IZO 110001885) mezi roky pokračuje beze změny názvu, adresy sídla i zřizovatele; ve výroční zprávě 2024/2025 jsou jako místa výuky zapsány Plzeňská 298/217a (Praha 5 – Motol, teoretická výuka), Plzeňská 1315/137 (Praha 5 – Košíře, odborný výcvik) a Moravská 965/3 (Praha 2 – Vinohrady, kde se vyučuje i nástavba Propagace).",
+        "Rejstřík MŠMT vede subjekt Střední průmyslová škola dopravní, a.s. (REDIZO 600005658, IČ 25632141) i zařízení IZO 110001885 ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026 a 30. 6. 2026) pod stejným názvem a sídlem Plzeňská 298/217, Motol (výroční zpráva uvádí č. 298/217a – drobný rozdíl v zápisu čísla, nikoli jiná adresa); místa výuky jsou ve všech snímcích shodná a kromě sídla, Košíř a Vinohrad zahrnují i Sazečskou 3206/3 (Strašnice) a náměstí Hrdinů 725/13 (Nusle).",
+        "Obor Aranžér (66-52-H/01) je v rejstříku označen jako dobíhající již ve snímku k 31. 3. 2025, což potvrzuje údaj výroční zprávy o dobíhajícím oboru a podporuje souvislost se zánikem nabídky nástavby Propagace. Naproti tomu obory Provozní technika (23-43-L/51) a Propagace (66-42-L/51) jsou v rejstříku evidovány jako plně registrované (nikoli dobíhající) i ve snímku k 30. 6. 2026 – rejstřík zachycuje registraci oborů, nikoli jejich nabídku v přijímacím řízení, takže ukončení přijímání nových žáků nepotvrzuje ani nevyvrací; k formálnímu vyřazení těchto oborů z rejstříku k 30. 6. 2026 nedošlo."
       ],
       "conclusion": "Škola pro školní rok 2026/2027 ukončila přijímání nových žáků do nástavbových oborů 23-43-L/51 Provozní technika a 66-42-L/51 Propagace (v přehledu oborů pro přijímací řízení 2026/2027 zůstává z nástavbových oborů pouze Podnikání). Obor Provozní technika přitom ve škole dobíhá s dříve přijatými ročníky – nejde o okamžitý zánik výuky, ale o ukončení nabídky pro nové uchazeče. Škola sama (REDIZO/IZO, název, sídlo) mezi roky 2025 a 2026 pokračuje beze změny.",
       "alternative_explanations": [
         "Nelze vyloučit, že škola přijímání do těchto nástavbových oborů jen přerušila (např. pro nízký zájem) a obnoví je v pozdějším roce; webové snímky popisují pouze nabídku pro rok 2026/2027.",
-        "Data fronty pokrývají pouze 1. kolo JPZ a denní studium; zdroje nevylučují, že byly tyto obory nabídnuty ve 2. kole 2026 nebo v jiné formě studia."
+        "Data fronty pokrývají pouze 1. kolo JPZ a denní studium; zdroje nevylučují, že byly tyto obory nabídnuty ve 2. kole 2026 nebo v jiné formě studia.",
+        "Rejstřík MŠMT eviduje obory Provozní technika a Propagace jako registrované (nikoli dobíhající) i ve snímku k 30. 6. 2026; škola tedy k tomuto datu nepodnikla formální kroky k vyřazení oborů z rejstříku, což odpovídá možnosti, že jejich nabídku pro nové uchazeče pouze dočasně pozastavila."
       ],
       "relationship": {
         "type": "closed",
@@ -45,6 +53,20 @@
           "izo": "",
           "valid_period": "školní rok 2024/2025 (denní forma nástavby Propagace, obory Aranžér, Podnikání aj.)",
           "source_url": "https://www.sps-dopravni.cz/wp-content/uploads/2025/10/VZ_SPSD_24_25_final.pdf"
+        },
+        {
+          "text": "Sazečská 3206/3, Praha 10 – Strašnice",
+          "role": "místo výuky (dle rejstříku MŠMT)",
+          "izo": "izo_110001885",
+          "valid_period": "dle rejstříku ve všech snímcích 31. 3. 2025 až 30. 6. 2026",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "náměstí Hrdinů 725/13, Praha 4 – Nusle",
+          "role": "místo výuky (dle rejstříku MŠMT)",
+          "izo": "izo_110001885",
+          "valid_period": "dle rejstříku ve všech snímcích 31. 3. 2025 až 30. 6. 2026",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
         }
       ],
       "evidence": [
@@ -95,6 +117,30 @@
           "checked_at": "2026-09-12",
           "supports": "Žáci oboru 23-43-L/51 Provozní technika ve škole i ve školním roce 2025/2026 studují a připravují se na maturitní zkoušku – obor dobíhá, nezanikl okamžitě.",
           "applicable_period": "školní rok 2025/2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2025)",
+          "published_at": "2025-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt REDIZO 600005658 i IZO 110001885 jsou vedeny v období 1. kola JPZ 2025; sídlo Plzeňská 298/217, Motol; obory Provozní technika a Propagace registrované, obor Aranžér označen jako dobíhající.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+          "published_at": "2026-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "V období 1. kola JPZ 2026 subjekt, název, sídlo i místa výuky beze změny oproti roku 2025; skladba registrovaných oborů shodná se snímkem k 31. 3. 2025.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 30. 6. 2026)",
+          "published_at": "2026-06-30",
+          "checked_at": "2026-09-12",
+          "supports": "I po skončení školního roku 2025/2026 subjekt pokračuje beze změny názvu, sídla i míst výuky; Provozní technika a Propagace zůstávají registrované (nikoli dobíhající), obor Technické lyceum dosud evidován není.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
         }
       ],
       "history_comparability": "not_comparable",
@@ -111,11 +157,13 @@
         "V datech CERMAT z 1. kola 2026 se u školy Střední průmyslová škola dopravní, a.s. (REDIZO 600005658) objevuje nová nabídka čtyřletého maturitního oboru 78-42-M/01 Technické lyceum, která v datech 1. kola 2025 nebyla. Všechny ostatní čtyřleté obory školy (Informační technologie, Provoz a ekonomika dopravy, Mechanik elektrotechnik, Autotronik) v roce 2026 pokračují vedle ní – nejde o přejmenování ani náhradu jiného oboru.",
         "Archivovaný přehled oborů na webu školy z 15. 11. 2025 Technické lyceum ještě neobsahuje (čtyřleté maturitní obory jsou jen Informační technologie a Provoz a ekonomika dopravy plus kombinované L+H obory).",
         "Stránka oboru Technické lyceum je na webu školy doložena poprvé archivním snímkem ze 7. 3. 2026 a profil absolventa oboru (PDF) škola zveřejnila v únoru 2026 – tedy v době přijímacího řízení pro školní rok 2026/2027.",
-        "Výroční zpráva školy za školní rok 2024/2025 obor Technické lyceum nezmiňuje a za rok 2024/2025 uvádí ve skladbě oborů „beze změn“."
+        "Výroční zpráva školy za školní rok 2024/2025 obor Technické lyceum nezmiňuje a za rok 2024/2025 uvádí ve skladbě oborů „beze změn“.",
+        "Rejstřík MŠMT vede školu (REDIZO 600005658, IZO 110001885) pod stejným názvem, sídlem Plzeňská 298/217, Motol a shodnými místy výuky ve snímku k 31. 3. 2025 i k 31. 3. 2026 a 30. 6. 2026 – novou nabídku tedy zařadil dosavadní subjekt, nikoli nová či sloučená škola. Obor 78-42-M/01 Technické lyceum však rejstřík ani ve snímku k 30. 6. 2026 mezi registrovanými obory školy neuvádí; registrace oboru se v rejstříku může projevit s odstupem (typicky před zahájením výuky k 1. 9. 2026), takže absence sama o sobě nabídce v přijímacím řízení neodporuje."
       ],
       "conclusion": "Obor 78-42-M/01 Technické lyceum je nově otevřený čtyřletý maturitní obor, který škola zařadila do nabídky poprvé pro přijímací řízení na školní rok 2026/2027 (materiály k oboru zveřejnila v únoru–březnu 2026). Nemá proto žádného předchůdce v roce 2025 a historické statistiky na něj nelze přenášet z žádného jiného oboru školy.",
       "alternative_explanations": [
-        "Zdroje nevylučují, že škola obor připravovala dříve a v roce 2025 ho nenabídla např. pro nedokončenou registraci; pro rok 2025 však žádná nabídka ani výuka doložena není."
+        "Zdroje nevylučují, že škola obor připravovala dříve a v roce 2025 ho nenabídla např. pro nedokončenou registraci; pro rok 2025 však žádná nabídka ani výuka doložena není.",
+        "Snímek rejstříku MŠMT k 30. 6. 2026 obor Technické lyceum mezi registrovanými obory školy dosud neeviduje; to je slučitelné s tím, že registrace proběhne až před zahájením výuky 1. 9. 2026, z rejstříku však zatím nelze potvrdit, že k ní skutečně došlo."
       ],
       "relationship": {
         "type": "new_offer",
@@ -171,6 +219,22 @@
           "checked_at": "2026-09-12",
           "supports": "Za školní rok 2024/2025 škola uvádí ve skladbě oborů beze změn a Technické lyceum nezmiňuje – obor v té době ještě neexistoval v nabídce.",
           "applicable_period": "školní rok 2024/2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2025)",
+          "published_at": "2025-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Skladba registrovaných oborů školy (22 oborů) k 31. 3. 2025 obor 78-42-M/01 Technické lyceum neobsahuje; subjekt veden pod shodným REDIZO/IZO, názvem a sídlem.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 30. 6. 2026)",
+          "published_at": "2026-06-30",
+          "checked_at": "2026-09-12",
+          "supports": "K 30. 6. 2026 subjekt pokračuje beze změny názvu, sídla i míst výuky; Technické lyceum mezi registrovanými obory dosud není – registrace se v rejstříku může projevit s odstupem.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
         }
       ],
       "history_comparability": "not_comparable",

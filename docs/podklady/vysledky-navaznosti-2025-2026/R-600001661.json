@@ -11,12 +11,15 @@
         "Nepřiřazená nabídka roku 2026 je čtyřleté Gymnázium (KKOV 79-41-K/41), které v nabídce roku 2025 neexistuje. Název školy se mezi roky změnil z „Academic School, MŠ, ZŠ a SŠ, s.r.o.“ na „Academic School, Gymnázium, SOŠ, ZŠ a MŠ, s.r.o.“ – přibylo „Gymnázium“, což odpovídá nově otevřenému oboru.",
         "Web školy (academicschool.cz/gymnazium, stránka evidovaná od prosince 2025) uvádí „Gymnázium Academic School: Otevíráme v září 2026“ a popisuje čtyřleté studium s dvoujazyčnou výukou.",
         "Slovácký deník 13. 2. 2026 píše, že uherskohradišťská Academic School otevře od září 2026 čtyřleté gymnázium s jednou třídou o kapacitě 20 míst; dosud škola na středním stupni nabízela pouze obor informačních technologií (střední škola vznikla v roce 2022).",
-        "Adresa se mezi ročníky dat změnila: záznam 2025 uvádí Studentské náměstí 1531, záznamy 2026 uvádějí Města Mayen 1536. Studentské náměstí 1531 je sídlo právnické osoby a adresa základní školy (dle webu školy a obchodního rejstříku, IČO 25349520), zatímco Města Mayen 1536 škola uvádí jako adresu střední školy a gymnázia. Škola má pod jedním REDIZO více IZO (střední škola 181134799, základní škola 110009312, mateřská škola 110009321 aj.)."
+        "Adresa se mezi ročníky dat změnila: záznam 2025 uvádí Studentské náměstí 1531, záznamy 2026 uvádějí Města Mayen 1536. Studentské náměstí 1531 je sídlo právnické osoby a adresa základní školy (dle webu školy a obchodního rejstříku, IČO 25349520), zatímco Města Mayen 1536 škola uvádí jako adresu střední školy a gymnázia. Škola má pod jedním REDIZO více IZO (střední škola 181134799, základní škola 110009312, mateřská škola 110009321 aj.).",
+        "Rejstřík MŠMT vede subjekt REDIZO 600001661 (IČ 25349520) ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) beze změny sídla Studentské náměstí 1531, Mařatice, a IZO 181134799 (Střední škola) s místem výuky Města Mayen 1536, Mařatice – role obou adres z dat CERMAT je tak rejstříkem potvrzena.",
+        "Úplný název subjektu je v rejstříku ve všech snímcích totožný: „Academic School, Mateřská škola, základní škola a střední škola, s.r.o.“ – tj. bez „Gymnázium“ i ve snímku k 30. 6. 2026. Názvy v datech CERMAT („Academic School, MŠ, ZŠ a SŠ, s.r.o.“ v 2025 a „Academic School, Gymnázium, SOŠ, ZŠ a MŠ, s.r.o.“ v 2026) jsou tedy zkrácené varianty, které úplnému názvu v rejstříku nemusí odpovídat; změna názvu v datech 2026 nemá ve snímcích rejstříku obdobu.",
+        "Rejstřík nevede pod REDIZO 600001661 žádné samostatné IZO gymnázia (ani ve snímku k 30. 6. 2026); nabídka Gymnázium v datech 2026 tak vychází ze stávajícího IZO střední školy 181134799, což je konzistentní s tím, že obě nabídky CERMAT 2026 (IT i Gymnázium) uvádějí stejné IZO."
       ],
       "conclusion": "Nepřiřazená nabídka Gymnázium (79-41-K/41) z roku 2026 je nově otevřený obor, který soukromá škola Academic School, s.r.o. (REDIZO 600001661, IZO střední školy 181134799) zahajuje od školního roku 2026/2027. Jde o novou nabídku bez předchůdce v roce 2025; obor Informační technologie přitom pokračuje beze změny. Změna názvu školy i rozdílná adresa v datech souvisejí s tímto rozšířením (název nově obsahuje „Gymnázium“, adresa Města Mayen 1536 je místo výuky střední školy, zatímco Studentské náměstí 1531 je sídlo právnické osoby) a neznamenají vznik nové školy ani zánik původní.",
       "alternative_explanations": [
-        "Zdroje nevylučují, že zápis gymnázia do rejstříku škol proběhl formálně již dříve (např. během roku 2025) a k přijímání prvních žáků došlo až pro školní rok 2026/2027; pro datovou návaznost nabídek přijímacího řízení je to však bez vlivu – v nabídce 2025 gymnázium nefiguruje.",
-        "Rozdíl adres mezi ročníky může být pouze rozdílem v tom, kterou adresu škola do dat CERMAT nahlásila (sídlo vs. místo výuky); případné fyzické stěhování střední školy zdroje ani nepotvrzují, ani nevylučují, obě adresy jsou ve stejné lokalitě Mařatice."
+        "Zdroje nevylučují, že zápis gymnázia do rejstříku škol proběhl formálně již dříve (např. během roku 2025) a k přijímání prvních žáků došlo až pro školní rok 2026/2027; pro datovou návaznost nabídek přijímacího řízení je to však bez vlivu – v nabídce 2025 gymnázium nefiguruje. Snímky rejstříku tuto variantu spíše zeslabují: úplný název subjektu neobsahuje „Gymnázium“ ani ve snímku k 30. 6. 2026 a pod REDIZO není vedeno samostatné IZO gymnázia, takže gymnázium zřejmě formálně působí v rámci stávajícího IZO střední školy 181134799.",
+        "Rozdíl adres mezi ročníky vysvětluje rejstřík: ve všech snímcích (31. 3. 2025 až 30. 6. 2026) je Studentské náměstí 1531 vedeno jako sídlo subjektu a Města Mayen 1536 jako místo výuky střední školy (IZO 181134799) současně; jde tedy jen o to, kterou adresu škola do dat CERMAT nahlásila, nikoli o fyzické stěhování."
       ],
       "relationship": {
         "type": "new_offer",
@@ -27,16 +30,20 @@
         {
           "text": "Studentské náměstí 1531, Mařatice, 686 01 Uherské Hradiště",
           "role": "sídlo",
-          "izo": "izo_181134799 (střední škola); sídlo právnické osoby IČO 25349520",
-          "valid_period": "soukromá škola sídlí na této adrese dlouhodobě; v datech CERMAT 2025 uvedena u nabídky SŠ",
-          "source_url": "https://academicschool.cz/ochrana-osobnich-udaju/"
+          "izo": "izo_181134799 (střední škola); sídlo právnické osoby IČO 25349520; místo výuky ZŠ (IZO 110009312)",
+          "valid_period": "soukromá škola sídlí na této adrese dlouhodobě; v datech CERMAT 2025 uvedena u nabídky SŠ; rejstřík MŠMT ji vede jako sídlo ve všech snímcích 31. 3. 2025 až 30. 6. 2026",
+          "source_url": "https://academicschool.cz/ochrana-osobnich-udaju/",
+          "registry_role": "sídlo subjektu REDIZO 600001661",
+          "registry_source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
         },
         {
           "text": "Města Mayen 1536, Mařatice, 686 01 Uherské Hradiště",
           "role": "místo výuky",
           "izo": "izo_181134799 (střední škola)",
-          "valid_period": "dle webu školy adresa střední školy a gymnázia; v datech CERMAT 2026 u všech nabídek SŠ",
-          "source_url": "https://academicschool.cz/gymnazium/"
+          "valid_period": "dle webu školy adresa střední školy a gymnázia; v datech CERMAT 2026 u všech nabídek SŠ; rejstřík MŠMT ji vede jako místo výuky IZO 181134799 ve všech snímcích 31. 3. 2025 až 30. 6. 2026",
+          "source_url": "https://academicschool.cz/gymnazium/",
+          "registry_role": "místo výuky (C10) IZO 181134799 – Střední škola",
+          "registry_source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
         }
       ],
       "evidence": [
@@ -87,6 +94,38 @@
           "checked_at": "2026-09-12",
           "supports": "Sídlo právnické osoby (IČO 25349520) Studentské náměstí 1531, Mařatice, Uherské Hradiště",
           "applicable_period": "aktuální web"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2025)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt REDIZO 600001661 (IČ 25349520) veden pod názvem „Academic School, Mateřská škola, základní škola a střední škola, s.r.o.“ se sídlem Studentské náměstí 1531, Mařatice; IZO 181134799 (Střední škola) s místem výuky Města Mayen 1536, Mařatice; žádné IZO gymnázia",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 12. 2025)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stav shodný se snímkem k 31. 3. 2025: stejný název, sídlo Studentské náměstí 1531 a místo výuky střední školy Města Mayen 1536; žádná změna před kola JPZ 2026",
+          "applicable_period": "stav rejstříku k 31. 12. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt i IZO 181134799 beze změny v období 1. kola JPZ 2026; úplný název stále bez „Gymnázium“, takže název „Academic School, Gymnázium, SOŠ, ZŠ a MŠ, s.r.o.“ v datech CERMAT 2026 je zkrácená/odlišná varianta, nikoli úplný rejstříkový název",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 30. 6. 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Ani po oznámeném otevření gymnázia není vedeno samostatné IZO gymnázia ani název s „Gymnázium“; gymnázium formálně působí v rámci IZO střední školy 181134799 – potvrzuje, že nová nabídka neznamená vznik nové školy",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
         }
       ],
       "history_comparability": "not_comparable",
@@ -94,5 +133,10 @@
       "related_task_ids": [],
       "unanswered_questions": []
     }
-  ]
+  ],
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT potvrdil všechny klíčové závěry nálezu: subjekt REDIZO 600001661 (IČ 25349520) je veden ve všech čtyřech snímcích beze změny sídla (Studentské náměstí 1531, Mařatice) a IZO střední školy 181134799 má trvale místo výuky Města Mayen 1536, takže rozdíl adres v datech CERMAT je pouze sídlo vs. místo výuky. Rejstřík zároveň ukázal, že úplný název subjektu zůstává „Academic School, Mateřská škola, základní škola a střední škola, s.r.o.“ i k 30. 6. 2026 a žádné samostatné IZO gymnázia neexistuje – název s „Gymnázium“ v datech CERMAT 2026 je zkrácená varianta a gymnázium působí pod IZO střední školy. Absence rejstříku v původním nálezu nezpůsobila chybu, jen nepotvrdila roli adres a ponechala otevřenou otázku formálního založení gymnázia; status findingu zůstává „potvrzeno“."
+  }
 }

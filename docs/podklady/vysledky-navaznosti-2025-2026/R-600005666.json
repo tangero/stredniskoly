@@ -14,12 +14,16 @@
         "Archivní snímek z 14. 12. 2025 již obsahuje Sportovní management v menu studijních oborů (příprava nabídky pro rok 2026/2027), zatímco obsah stránky přijímacího řízení ještě popisuje kolo 2025/2026.",
         "Aktuální stránka přijímacího řízení školy uvádí pro školní rok 2026/2027 samostatná kritéria pro čtyři obory včetně 'Sportovní management 2026/2027'. Stránka oboru Sportovní management uvádí kód KKOV 63-41-M/02 a čtyřleté denní studium zakončené maturitou, tedy shodné parametry s nabídkou v datech 2026.",
         "Na agregátoru SeznamŠkol.eu je u oboru Obchodní akademie této školy citováno vyjádření školy: 'V roce 2026/27 spouštíme nový projekt, Obchodní akademii se zaměřením na Sportovní management.'",
-        "Stránka oboru Sportovní management nemá ve Wayback Machine žádný archivní snímek (CDX dotaz vrátil prázdný výsledek), což je konzistentní s tím, že stránka vznikla až v souvislosti s novou nabídkou pro rok 2026/2027."
+        "Stránka oboru Sportovní management nemá ve Wayback Machine žádný archivní snímek (CDX dotaz vrátil prázdný výsledek), což je konzistentní s tím, že stránka vznikla až v souvislosti s novou nabídkou pro rok 2026/2027.",
+        "Rejstřík MŠMT vede subjekt Gymnázium, střední odborná škola a Pražská taneční konzervatoř, s.r.o. (REDIZO 600005666, IČ 25122690) ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) pod stejným REDIZO, názvem i sídlem Laudova 1024/10, Řepy; kontinuita právnické osoby mezi roky 2025 a 2026 je tak potvrzena.",
+        "Rejstřík vede pro IZO 110007701 (Střední škola) ve všech snímcích tři místa výuky: Laudova 1024/10, Řepy (C31), Za Poříčskou bránou 257/8, Karlín (C10) a Dykova 50/20, Vinohrady (C10). Adresa Laudova 1024 uvedená u nabídek v datech CERMAT odpovídá místu výuky Řepy i sídlu subjektu.",
+        "Rejstřík MŠMT vede u IZO 110007701 obor 63-41-M/02 Obchodní akademie (denní forma, čtyřleté studium) nepřetržitě od snímku k 31. 3. 2025 do snímku k 30. 6. 2026; otevřená data rejstříku zaměření oborů nerozlišují, takže nové zaměření sportovní management se v nich neprojevilo jako nový obor – to je konzistentní se závěrem, že jde o nové zaměření stávajícího zapsaného oboru, nikoli o nově zapsaný obor.",
+        "Mezi snímky k 31. 3. 2025 a 31. 12. 2025 rejstřík zaznamenal změny kapacit oborů u IZO 110007701: Obchodní akademie 170 → 200, Hotelnictví 160 → 110, Kosmetické služby 140 → 200; kapacita Gymnázia (79-41-K/41) zůstala 120."
       ],
       "conclusion": "Nabídka Obchodní akademie – sportovní management (KKOV 63-41-M/02) je nové zaměření oboru, které škola otevřela pro školní rok 2026/2027 vedle pokračující obecné Obchodní akademie. Nejde o přejmenování ani o rozdělení stávající nabídky: obecná Obchodní akademie pokračuje v roce 2026 dál jako samostatná nabídka a škola samotná nové zaměření označuje za 'nový projekt' spouštěný v roce 2026/27. Návaznost: Obchodní akademie 2025 → Obchodní akademie (zaměření obchodní akademie) 2026 jako pokračování; Obchodní akademie – sportovní management 2026 je nová nabídka bez předchůdce v roce 2025.",
       "alternative_explanations": [
         "Teoreticky by zaměření sportovní management mohlo být jen nově odlišeným zápisem dosavadní interní specializace Obchodní akademie; tomu ale odporuje absence jakékoli zmínky o sportovním managementu na webu školy v květnu 2025 i výslovné označení 'nový projekt' pro rok 2026/27.",
-        "Nedohledali jsme datovaný dokument MŠMT o rozšíření zápisu oboru v rejstříku škol, takže přesné datum zápisu zaměření do rejstříku zůstává nezjištěné; pro otázku návaznosti nabídek to ale není rozhodující."
+        "Přesné datum zápisu zaměření sportovní management do rejstříku škol zůstává nezjištěné: ověřené snímky otevřených dat MŠMT vedou obory jen na úrovni kódu KKOV bez zaměření, takže zaměření se v nich neprojeví. Zjištěné snímky ale potvrzují, že obor 63-41-M/02 byl zapsán nepřetržitě od 31. 3. 2025 do 30. 6. 2026; pro otázku návaznosti nabídek to není rozhodující."
       ],
       "relationship": {
         "type": "new_offer",
@@ -40,6 +44,34 @@
           "izo": "izo_110007701",
           "valid_period": "2025–2026",
           "source_url": "fronta-dohledavani-2025-2026.json, úkol R-600005666"
+        },
+        {
+          "text": "Laudova 1024/10, Řepy, 163 00 Praha",
+          "role": "sídlo",
+          "izo": "izo_110007701",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (beze změny ve všech snímcích)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Laudova 1024/10, Řepy, 163 00 Praha",
+          "role": "místo výuky (C31)",
+          "izo": "izo_110007701",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (ve všech snímcích)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Za Poříčskou bránou 257/8, Karlín, 186 00 Praha",
+          "role": "místo výuky (C10)",
+          "izo": "izo_110007701",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (ve všech snímcích)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Dykova 50/20, Vinohrady, 101 00 Praha",
+          "role": "místo výuky (C10)",
+          "izo": "izo_110007701",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (ve všech snímcích)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
         }
       ],
       "evidence": [
@@ -98,15 +130,52 @@
           "checked_at": "2026-09-12",
           "supports": "Shoda REDIZO 600005666, IZO 110007701 a sídla Laudova 1024/10, Praha 6 – Řepy s údaji v datech fronty; potvrzuje kontinuitu právnické osoby.",
           "applicable_period": "aktuální stav, konzistentní s lety 2025–2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2025)",
+          "published_at": "2025-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt Gymnázium, střední odborná škola a Pražská taneční konzervatoř, s.r.o. (REDIZO 600005666, IČ 25122690) je veden se sídlem Laudova 1024/10, Řepy; u IZO 110007701 jsou zapsány obory 63-41-M/02 Obchodní akademie, 65-42-M/01 Hotelnictví, 69-41-L/01 Kosmetické služby a 79-41-K/41 Gymnázium (vše denní, čtyřleté) a místa výuky Řepy, Karlín a Vinohrady.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025 (období 1. kola JPZ 2025)"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 12. 2025)",
+          "published_at": "2025-12-31",
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt i IZO 110007701 vedeny beze změny názvu, sídla a míst výuky; obor 63-41-M/02 Obchodní akademie je zapsán i nadále (kapacita navýšena ze 170 na 200), zaměření rejstřík v otevřených datech nerozlišuje.",
+          "applicable_period": "stav rejstříku k 31. 12. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+          "published_at": "2026-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Ve snímku z období 1. kola JPZ 2026 je subjekt veden pod stejným REDIZO, názvem a sídlem; obor 63-41-M/02 Obchodní akademie (denní, čtyřletý) je zapsán – nová nabídka sportovní management tedy vychází z existujícího zapsaného oboru, nikoli z nově zapsaného oboru.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026 (období 1. kola JPZ 2026)"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 30. 6. 2026)",
+          "published_at": "2026-06-30",
+          "checked_at": "2026-09-12",
+          "supports": "Nejnovější snímek potvrzuje bezezměňový stav: stejný název subjektu, sídlo Laudova 1024/10, Řepy, tři místa výuky IZO 110007701 (Řepy C31, Karlín C10, Vinohrady C10) a zapsaný obor 63-41-M/02.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
         }
       ],
       "history_comparability": "not_comparable",
       "recommended_action": "record_only",
       "related_task_ids": [],
       "unanswered_questions": [
-        "Přesné datum zápisu zaměření sportovní management do rejstříku škol MŠMT nebylo dohledáno (rejstřík neumožnil strojové ověření); pro návaznost nabídek to není podstatné.",
+        "Přesné datum zápisu zaměření sportovní management do rejstříku škol nelze z otevřených dat MŠMT určit – snímky vedou obory jen na úrovni kódu KKOV bez zaměření (obor 63-41-M/02 je zapsán nepřetržitě od 31. 3. 2025); vyžadovalo by to plnou evidenci rejstříku včetně zápisů o zaměřeních.",
         "Zda má zaměření sportovní management samostatný plánovaný počet přijímaných žáků oddělený od obecné Obchodní akademie, lze dořešit z PDF kritérií 2026/2027 na webu školy."
       ]
     }
-  ]
+  ],
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT potvrdil všechny původní závěry: subjekt REDIZO 600005666 (Gymnázium, střední odborná škola a Pražská taneční konzervatoř, s.r.o.) je veden ve všech čtyřech snímcích beze změny názvu, sídla Laudova 1024/10, Řepy i míst výuky, a obor 63-41-M/02 Obchodní akademie je u IZO 110007701 zapsán nepřetržitě od 31. 3. 2025 do 30. 6. 2026 – nová nabídka sportovní management tedy skutečně vychází ze stávajícího zapsaného oboru. Absence rejstříku v původním nálezu nezpůsobila chybu, jen neověřenost identity a sídla, která je nyní potvrzena; otevřená data zaměření oborů nerozlišují, takže datum zápisu zaměření zůstává nezjištěné. Překvapení: IZO 110007701 má kromě sídla v Řepech další dvě místa výuky (Karlín, Vinohrady) a zapsaný obor Gymnázium 79-41-K/41, který se v nabídkách CERMAT 1. kola JPZ neobjevuje."
+  }
 }

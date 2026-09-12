@@ -2,6 +2,11 @@
   "task_id": "R-600005143",
   "queue_version": 2,
   "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT plně potvrdil závěry nálezu: subjekt 600005143 (Gymnázium, Praha 4, Na Vítězné pláni 1160, IČ 00335487) i IZO 000335487 jsou vedeny beze změny názvu, sídla i místa výuky ve všech čtyřech snímcích od 31. 3. 2025 do 30. 6. 2026. Tím je potvrzena totožnost školy u přejmenovaných nabídek (francouzština, němčina) i to, že absence španělské nabídky v roce 2026 není způsobena zánikem či přeměnou školy. Absence rejstříku v původním nálezu nezpůsobila chybu ani nejistotu – rejstřík obory a zaměření neeviduje, takže klíčovým důkazem na úrovni nabídek zůstává vlastní dokumentace školy."
+  },
   "findings": [
     {
       "issue_ids": ["Q0005", "Q0219"],
@@ -9,7 +14,8 @@
       "observations": [
         "V datech CERMAT za rok 2025 je u Gymnázia, Praha 4, Na Vítězné pláni 1160 (REDIZO 600005143, IZO 000335487) vedena šestiletá nabídka „Gymnázium – s výukou francouzského jazyka“ (KKOV 79-41-K/61, denní studium). V roce 2026 figuruje nabídka „Gymnázium – s výukou francouzštiny“ se stejným kódem oboru 79-41-K/61, stejnou délkou studia (6 let), stejnou školou, IZO i adresou.",
         "Web školy (stránka s výsledky přijímacího řízení v minulých letech) uvádí, že škola v roce 2025 i v roce 2026 přijímala do šestiletého studia třídu 1.B „šestileté studium s výukou francouzského jazyka“ po 30 studentech – škola tedy pro oba ročníky používá dlouhé znění názvu zaměření.",
-        "Odlišný zápis v datech 2026 („s výukou francouzštiny“ místo „s výukou francouzského jazyka“) je tedy pouze jiná formulace téhož zaměření, nikoli nový obor. Kód KKOV, délka studia, kapacita (30 míst) i označení třídy (1.B) zůstávají shodné."
+        "Odlišný zápis v datech 2026 („s výukou francouzštiny“ místo „s výukou francouzského jazyka“) je tedy pouze jiná formulace téhož zaměření, nikoli nový obor. Kód KKOV, délka studia, kapacita (30 míst) i označení třídy (1.B) zůstávají shodné.",
+        "Rejstřík MŠMT vede subjekt 600005143 i IZO 000335487 ve snímcích k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026 pod stejným názvem (Gymnázium, Praha 4, Na Vítězné pláni 1160) a se stejným sídlem i místem výuky; identita školy se mezi roky 2025 a 2026 tedy vůbec nezměnila a změna se týká výhradně zápisu názvu zaměření v datech CERMAT."
       ],
       "conclusion": "Šestiletá nabídka s výukou francouzštiny z roku 2026 je pokračováním šestileté nabídky s výukou francouzského jazyka z roku 2025 na téže škole; jde o změnu pouze v zápisu názvu zaměření (vlastní nabídka školy se nezměnila).",
       "alternative_explanations": [],
@@ -25,6 +31,20 @@
           "izo": "000335487",
           "valid_period": "2025–2026 (obě roky dle dat fronty; dle ŠVP školy dlouhodobě)",
           "source_url": "https://www.gvp.cz/studium/svp/sestilete2020dsd_.pdf"
+        },
+        {
+          "text": "Na Vítězné pláni 1160/1, Nusle, 140 00 Praha 4 (RÚIAN 27536076)",
+          "role": "sídlo",
+          "izo": "600005143",
+          "valid_period": "2025–2026 (shodné ve snímcích rejstříku MŠMT k 2025-03-31, 2025-12-31, 2026-03-31 i 2026-06-30)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
+        },
+        {
+          "text": "Na Vítězné pláni 1160/1, Nusle, Praha 4 (RÚIAN 27536076)",
+          "role": "místo výuky",
+          "izo": "000335487",
+          "valid_period": "2025–2026 (shodné se sídlem; dle rejstříku MŠMT ve všech čtyřech snímcích)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
         }
       ],
       "evidence": [
@@ -41,8 +61,16 @@
           "title": "GVP – Přijímací řízení v minulých letech (konečné výsledky 2025 a 2026)",
           "published_at": null,
           "checked_at": "2026-09-12",
-          "supports": "Škola sama dokumentuje, že v roce 2025 i 2026 přijímala třídu 1.B šestiletého studia „s výukou francouzského jazyka“ (30 studentů); potvrzuje kontinuitu nabídky a fakt, že rozdíl je jen v zápisu v datech CERMAT.",
+          "supports": "Škola sama dokumentuje, že v roce 2025 i v roce 2026 přijímala třídu 1.B šestiletého studia „s výukou francouzského jazyka“ (30 studentů); potvrzuje kontinuitu nabídky a fakt, že rozdíl je jen v zápisu v datech CERMAT.",
           "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt 600005143 i IZO 000335487 jsou vedeny shodně (název, sídlo Na Vítězné pláni 1160/1, místo výuky) ve snímcích k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026; rejstřík potvrzuje kontinuitu identity školy, na níž proběhlo pouze přejmenování zaměření v datech CERMAT.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026 (shodný se snímky 2025-03-31, 2025-12-31 a 2026-06-30)"
         }
       ],
       "history_comparability": "comparable",
@@ -57,7 +85,8 @@
         "V datech CERMAT za rok 2025 je u téže školy vedena šestiletá nabídka „Gymnázium – s posílenou výukou německého jazyka“ (KKOV 79-41-K/61). V roce 2026 figuruje „Gymnázium – s posílenou výukou němčiny“, opět s kódem 79-41-K/61, šestiletou délkou, stejným IZO i adresou.",
         "Web školy uvádí, že v roce 2025 i v roce 2026 přijímala třídu 1.A „šestileté studium s posílenou výukou německého jazyka“ po 30 studentech; škola tedy pro oba roky používá dlouhé znění.",
         "Školní vzdělávací program školy dokumentuje, že program „Všeobecné gymnázium č.j. 230/09 s posílenou výukou německého jazyka“ na škole existuje dlouhodobě (registrován od roku 2009) pod IZO 000335487 a REDIZO 600005143.",
-        "Odlišný zápis v datech 2026 („s posílenou výukou němčiny“) je pouze jiná formulace téhož zaměření, nikoli nový obor."
+        "Odlišný zápis v datech 2026 („s posílenou výukou němčiny“) je pouze jiná formulace téhož zaměření, nikoli nový obor.",
+        "Rejstřík MŠMT potvrzuje údaje ze ŠVP: subjekt 600005143 (IČ 00335487) a IZO 000335487 jsou vedeny ve všech snímcích od 31. 3. 2025 do 30. 6. 2026 beze změny názvu, sídla i místa výuky; totožnost právnické osoby i školy mezi roky 2025 a 2026 je tedy prokázána i z úřední evidence."
       ],
       "conclusion": "Šestiletá nabídka s posílenou výukou němčiny z roku 2026 je pokračováním šestileté nabídky s posílenou výukou německého jazyka z roku 2025 na téže škole; jde o změnu pouze v zápisu názvu zaměření.",
       "alternative_explanations": [],
@@ -73,6 +102,20 @@
           "izo": "000335487",
           "valid_period": "2025–2026 (obě roky dle dat fronty; dle ŠVP školy dlouhodobě)",
           "source_url": "https://www.gvp.cz/studium/svp/sestilete2020dsd_.pdf"
+        },
+        {
+          "text": "Na Vítězné pláni 1160/1, Nusle, 140 00 Praha 4 (RÚIAN 27536076)",
+          "role": "sídlo",
+          "izo": "600005143",
+          "valid_period": "2025–2026 (shodné ve snímcích rejstříku MŠMT k 2025-03-31, 2025-12-31, 2026-03-31 i 2026-06-30)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
+        },
+        {
+          "text": "Na Vítězné pláni 1160/1, Nusle, Praha 4 (RÚIAN 27536076)",
+          "role": "místo výuky",
+          "izo": "000335487",
+          "valid_period": "2025–2026 (shodné se sídlem; dle rejstříku MŠMT ve všech čtyřech snímcích)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
         }
       ],
       "evidence": [
@@ -99,6 +142,14 @@
           "checked_at": "2026-09-12",
           "supports": "Dokládá totožnost právnické osoby (IČO 00335487, IZO 000335487, IZO ředitelství 600005143) a dlouhodobou existenci programu s posílenou výukou německého jazyka (č.j. 230/09).",
           "applicable_period": "dokument z roku cca 2020; program registrován od 2009"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt 600005143 (IČ 00335487) a IZO 000335487 jsou vedeny shodně (název, sídlo, místo výuky) ve snímcích k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026; rejstřík nezávisle potvrzuje totožnost školy doloženou ŠVP.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026 (shodný se snímky 2025-03-31, 2025-12-31 a 2026-06-30)"
         }
       ],
       "history_comparability": "comparable",
@@ -113,7 +164,8 @@
         "V datech CERMAT za rok 2025 škola nabízela třetí šestiletou nabídku „Gymnázium – s výukou španělského jazyka“ (KKOV 79-41-K/61). V datech za rok 2026 žádná nabídka se španělštinou u tohoto REDIZO není – šestileté studium je zastoupeno jen zaměřeními na němčinu a francouzštinu.",
         "Web školy tuto absenci přímo potvrzuje: ve výsledcích přijímacího řízení 2026 uvádí pro šestileté studium pouze třídu 1.A (posílená němčina) a 1.B (francouzština), zatímco v roce 2025 ještě uvádí třetí třídu 1.C „šestileté studium s výukou španělského jazyka“ (30 studentů, 622 přihlášek).",
         "Na aktuální stránce pro uchazeče (přijímací řízení 2027) škola opět otevírá tři třídy šestiletého studia včetně třídy 1.C se španělštinou. Španělské zaměření tedy bylo pro ročník 2026 pouze přerušeno a pro rok 2027 je obnoveno – nejde o trvalý zánik oboru.",
-        "Sama absence v datech CERMAT by zánik nedokazovala; rozhodující je vlastní dokumentace školy o přijímacích řízeních 2025 a 2026."
+        "Sama absence v datech CERMAT by zánik nedokazovala; rozhodující je vlastní dokumentace školy o přijímacích řízeních 2025 a 2026.",
+        "Rejstřík MŠMT vede subjekt 600005143 i IZO 000335487 nepřetržitě ve všech snímcích od 31. 3. 2025 do 30. 6. 2026 beze změny názvu, sídla i místa výuky – vypadnutí španělské nabídky v roce 2026 tedy není způsobeno zánikem, sloučením ani přeměnou školy. Rejstřík obory a zaměření neeviduje, takže samotné přerušení nabídky nepotvrzuje ani nevyvrací; dokládá je dokumentace školy."
       ],
       "conclusion": "Šestiletá nabídka s výukou španělského jazyka byla v přijímacím řízení 2026 na této škole neotevřena (přerušení na jeden ročník); pro rok 2027 ji škola znovu otevírá. Nemá tedy v roce 2026 žádnou návaznost a nelze ji mapovat na žádnou jinou nabídku.",
       "alternative_explanations": [
@@ -131,6 +183,20 @@
           "izo": "000335487",
           "valid_period": "2025–2026 (obě roky dle dat fronty; dle ŠVP školy dlouhodobě)",
           "source_url": "https://www.gvp.cz/studium/svp/sestilete2020dsd_.pdf"
+        },
+        {
+          "text": "Na Vítězné pláni 1160/1, Nusle, 140 00 Praha 4 (RÚIAN 27536076)",
+          "role": "sídlo",
+          "izo": "600005143",
+          "valid_period": "2025–2026 (shodné ve snímcích rejstříku MŠMT k 2025-03-31, 2025-12-31, 2026-03-31 i 2026-06-30)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
+        },
+        {
+          "text": "Na Vítězné pláni 1160/1, Nusle, Praha 4 (RÚIAN 27536076)",
+          "role": "místo výuky",
+          "izo": "000335487",
+          "valid_period": "2025–2026 (shodné se sídlem; dle rejstříku MŠMT ve všech čtyřech snímcích)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
         }
       ],
       "evidence": [
@@ -157,6 +223,14 @@
           "checked_at": "2026-09-12",
           "supports": "Pro rok 2027 škola opět otevírá tři třídy šestiletého studia včetně třídy 1.C angličtina–španělština; španělské zaměření tedy bylo v roce 2026 pouze přerušeno.",
           "applicable_period": "přijímací řízení 2027"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt 600005143 i IZO 000335487 existují nepřetržitě ve všech snímcích od 31. 3. 2025 do 30. 6. 2026 beze změny; absence španělské nabídky v roce 2026 tedy není způsobena zánikem či přeměnou školy. Rejstřík obory neeviduje, takže samotné přerušení nabídky dokládá dokumentace školy.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026 (shodný se snímky 2025-03-31, 2025-12-31 a 2026-06-30)"
         }
       ],
       "history_comparability": "not_comparable",

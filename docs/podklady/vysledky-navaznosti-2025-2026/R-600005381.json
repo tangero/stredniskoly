@@ -10,7 +10,9 @@
         "V datech CERMAT za rok 2025 je u školy Akademie řemesel Praha - SŠ technická (REDIZO 600005381, Zelený pruh 1294, Praha) nepřiřazená nabídka oboru Autotronik (kód KKOV 39-41-L/01, čtyřleté denní studium) se zaměřením zapsaným jako „23-68-H/01 Mechanik opravář motorových vozidel“.",
         "V datech za rok 2026 je u stejné školy nepřiřazená nabídka téhož oboru Autotronik (39-41-L/01) se zaměřením zapsaným obráceně: „Mechanik opravář motorových vozidel 23-68-H/01“.",
         "Oba záznamy se shodují ve všech podstatných údajích – REDIZO, IZO (izo_007810041), název školy, adresa, kód a název oboru, kód a název zaměření, délka studia (4 roky), denní forma, český jazyk. Jediný rozdíl je pořadí kódu a názvu zaměření v textovém poli „ZAMĚŘENÍ OBORU“ (rok 2025: kód před názvem; rok 2026: kód za názvem). Stejná změna formátu zápisu je vidět i u ostatních oborů této školy, které byly přiřazeny (např. Mechanik seřizovač, Mechanik instalatérských a elektrotechnických zařízení), takže jde o celoplošnou změnu formátu exportu, nikoli o změnu nabídky školy.",
-        "Autotronik je čtyřletý maturitní obor, ve kterém žáci mohou získat i výuční list; „zaměření“ v datech odpovídá příslušnému učebnímu oboru (zde Mechanik opravář motorových vozidel 23-68-H/01). Nezávislé katalogy (Atlas Školství, Stredniskoly.cz) uvádějí obor Autotronik 39-41-L/01 u této školy i pro školní rok 2026/27, a to právě se zaměřeními Mechanik opravář motorových vozidel a Autoelektrikář; stránka školy na zelenypruh.cz má pro obor Autotronik samostatnou stránku a potvrzuje totožnost školy (IČ 148 915 22, IZO 600005381, Zelený pruh 1294/52, Praha 4)."
+        "Autotronik je čtyřletý maturitní obor, ve kterém žáci mohou získat i výuční list; „zaměření“ v datech odpovídá příslušnému učebnímu oboru (zde Mechanik opravář motorových vozidel 23-68-H/01). Nezávislé katalogy (Atlas Školství, Stredniskoly.cz) uvádějí obor Autotronik 39-41-L/01 u této školy i pro školní rok 2026/27, a to právě se zaměřeními Mechanik opravář motorových vozidel a Autoelektrikář; stránka školy na zelenypruh.cz má pro obor Autotronik samostatnou stránku a potvrzuje totožnost školy (IČ 148 915 22, IZO 600005381, Zelený pruh 1294/52, Praha 4).",
+        "Rejstřík MŠMT vede subjekt REDIZO 600005381 (IČ 14891522, „Akademie řemesel Praha - Střední škola technická“) ve všech čtyřech snímcích 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 a 30. 6. 2026 pod stejným REDIZO, názvem a sídlem Zelený pruh 1294/52, Krč, PSČ 147 00 – kontinuita školy mezi přijímacími řízeními 2025 a 2026 je tedy úředním registrem potvrzena (rejstřík používá plný název „Střední škola technická“, CERMAT zkrácený „SŠ technická“).",
+        "Rejstřík vede k IZO 007810041 (Střední škola) kromě místa výuky C11 Zelený pruh 1294/52, Krč (shodného se sídlem) také místo výuky C10 Vrbova 1233/34, Braník, a to ve všech čtyřech snímcích; adresa v datech CERMAT (Zelený pruh 1294) odpovídá sídlu, které je zároveň řádným místem výuky."
       ],
       "conclusion": "Nepřiřazená nabídka 2025 (Autotronik, zaměření Mechanik opravář motorových vozidel 23-68-H/01) a nepřiřazená nabídka 2026 jsou jedna a táž nabídka téhož oboru na téže škole. Rozpor vznikl pouze změnou formátu textového zápisu zaměření mezi ročníky dat CERMAT (prohození pořadí kódu a názvu), nikoli skutečnou změnou nabídky. Návaznost 2025→2026 lze schválit.",
       "alternative_explanations": [
@@ -28,6 +30,20 @@
           "izo": "izo_007810041",
           "valid_period": "2025–2026 (i aktuálně dle webu školy)",
           "source_url": "https://www.zelenypruh.cz/obory/autotronik/"
+        },
+        {
+          "text": "Zelený pruh 1294/52, Krč, 147 00 Praha 4",
+          "role": "sídlo (rejstřík MŠMT)",
+          "izo": "izo_007810041",
+          "valid_period": "všechny snímky rejstříku 31. 3. 2025 – 30. 6. 2026",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+        },
+        {
+          "text": "Vrbova 1233/34, Braník, Praha 4",
+          "role": "místo výuky (C10) IZO 007810041",
+          "izo": "izo_007810041",
+          "valid_period": "všechny snímky rejstříku 31. 3. 2025 – 30. 6. 2026",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
         }
       ],
       "evidence": [
@@ -62,6 +78,22 @@
           "checked_at": "2026-09-12",
           "supports": "Stránka dokládá, že v přijímacím řízení 2025 existovala nabídka Autotronik se zaměřením 23-68-H/01 Mechanik opravář motorových vozidel (čtyřleté studium, 67 přihlášek, kapacita 14 míst).",
           "applicable_period": "přijímací řízení 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2025)",
+          "published_at": "2025-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Snímek vede subjekt REDIZO 600005381 pod názvem „Akademie řemesel Praha - Střední škola technická“ (IČ 14891522) se sídlem Zelený pruh 1294/52, Krč, PSČ 147 00; IZO 007810041 (Střední škola) má místa výuky C11 Zelený pruh 1294/52 a C10 Vrbova 1233/34, Braník. Dokládá existenci a identitu školy v období přijímacího řízení 2025.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+          "published_at": "2026-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt REDIZO 600005381 je ve snímku veden beze změny názvu, sídla i míst výuky oproti 31. 3. 2025. Dokládá kontinuitu školy mezi přijímacími řízeními 2025 a 2026.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
         }
       ],
       "history_comparability": "comparable",
@@ -76,7 +108,9 @@
         "V datech CERMAT za rok 2025 je u školy Akademie řemesel Praha - SŠ technická (REDIZO 600005381, Zelený pruh 1294, Praha) nepřiřazená nabídka oboru Autotronik (kód KKOV 39-41-L/01, čtyřleté denní studium) se zaměřením zapsaným jako „26-57-H/01 Autoelektrikář“.",
         "V datech za rok 2026 je u stejné školy nepřiřazená nabídka téhož oboru Autotronik (39-41-L/01) se zaměřením zapsaným obráceně: „Autoelektrikář 26-57-H/01“.",
         "Oba záznamy se shodují ve všech podstatných údajích – REDIZO, IZO (izo_007810041), název školy, adresa, kód a název oboru, kód a název zaměření, délka studia (4 roky), denní forma, český jazyk. Jediný rozdíl je pořadí kódu a názvu zaměření v textovém poli „ZAMĚŘENÍ OBORU“, tedy tatáž formátová změna exportu jako u ostatních oborů školy.",
-        "„Zaměření“ Autoelektrikář 26-57-H/01 označuje variantu, v níž žák oboru Autotronik získává výuční list autoelektrikáře. Nezávislé katalogy (Atlas Školství, Stredniskoly.cz) uvádějí obor Autotronik 39-41-L/01 u této školy i pro školní rok 2026/27 právě se zaměřeními Mechanik opravář motorových vozidel a Autoelektrikář."
+        "„Zaměření“ Autoelektrikář 26-57-H/01 označuje variantu, v níž žák oboru Autotronik získává výuční list autoelektrikáře. Nezávislé katalogy (Atlas Školství, Stredniskoly.cz) uvádějí obor Autotronik 39-41-L/01 u této školy i pro školní rok 2026/27 právě se zaměřeními Mechanik opravář motorových vozidel a Autoelektrikář.",
+        "Rejstřík MŠMT vede subjekt REDIZO 600005381 (IČ 14891522, „Akademie řemesel Praha - Střední škola technická“) ve všech čtyřech snímcích 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 a 30. 6. 2026 pod stejným REDIZO, názvem a sídlem Zelený pruh 1294/52, Krč, PSČ 147 00 – kontinuita školy mezi přijímacími řízeními 2025 a 2026 je tedy úředním registrem potvrzena (rejstřík používá plný název „Střední škola technická“, CERMAT zkrácený „SŠ technická“).",
+        "Rejstřík vede k IZO 007810041 (Střední škola) kromě místa výuky C11 Zelený pruh 1294/52, Krč (shodného se sídlem) také místo výuky C10 Vrbova 1233/34, Braník, a to ve všech čtyřech snímcích; adresa v datech CERMAT (Zelený pruh 1294) odpovídá sídlu, které je zároveň řádným místem výuky."
       ],
       "conclusion": "Nepřiřazená nabídka 2025 (Autotronik, zaměření Autoelektrikář 26-57-H/01) a nepřiřazená nabídka 2026 jsou jedna a táž nabídka téhož oboru na téže škole. Rozpor vznikl pouze změnou formátu textového zápisu zaměření mezi ročníky dat CERMAT, nikoli skutečnou změnou nabídky. Návaznost 2025→2026 lze schválit.",
       "alternative_explanations": [
@@ -94,6 +128,20 @@
           "izo": "izo_007810041",
           "valid_period": "2025–2026 (i aktuálně dle webu školy)",
           "source_url": "https://www.zelenypruh.cz/obory/autotronik/"
+        },
+        {
+          "text": "Zelený pruh 1294/52, Krč, 147 00 Praha 4",
+          "role": "sídlo (rejstřík MŠMT)",
+          "izo": "izo_007810041",
+          "valid_period": "všechny snímky rejstříku 31. 3. 2025 – 30. 6. 2026",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+        },
+        {
+          "text": "Vrbova 1233/34, Braník, Praha 4",
+          "role": "místo výuky (C10) IZO 007810041",
+          "izo": "izo_007810041",
+          "valid_period": "všechny snímky rejstříku 31. 3. 2025 – 30. 6. 2026",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
         }
       ],
       "evidence": [
@@ -128,6 +176,22 @@
           "checked_at": "2026-09-12",
           "supports": "Katalog pro REDIZO 600005381 uvádí pro školní rok 2026/27 mimo jiné obor Autotronik 39-41-L/01 (denní, 4 roky, kapacita 30) a samostatné učební obory Autoelektrikář 26-57-H/01 a Mechanik opravář motorových vozidel 23-68-H/01 – tedy kontinuitu autooborů školy.",
           "applicable_period": "školní rok 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2025)",
+          "published_at": "2025-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Snímek vede subjekt REDIZO 600005381 pod názvem „Akademie řemesel Praha - Střední škola technická“ (IČ 14891522) se sídlem Zelený pruh 1294/52, Krč, PSČ 147 00; IZO 007810041 (Střední škola) má místa výuky C11 Zelený pruh 1294/52 a C10 Vrbova 1233/34, Braník. Dokládá existenci a identitu školy v období přijímacího řízení 2025.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+          "published_at": "2026-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt REDIZO 600005381 je ve snímku veden beze změny názvu, sídla i míst výuky oproti 31. 3. 2025. Dokládá kontinuitu školy mezi přijímacími řízeními 2025 a 2026.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
         }
       ],
       "history_comparability": "comparable",
@@ -135,5 +199,10 @@
       "related_task_ids": [],
       "unanswered_questions": []
     }
-  ]
+  ],
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT potvrdil závěry obou nálezů: subjekt REDIZO 600005381 (Akademie řemesel Praha - Střední škola technická, IČ 14891522) je veden ve všech čtyřech snímcích 31. 3. 2025 – 30. 6. 2026 beze změny názvu a sídla Zelený pruh 1294/52, Krč, takže identita a kontinuita školy mezi přijímacími řízeními 2025 a 2026 je úředně doložena. Absence rejstříku v původním nálezu nezpůsobila chybu ani podstatnou nejistotu – závěry o formátové, nikoli věcné příčině rozporu v datech CERMAT zůstávají v platnosti. Jedinou novou skutečností je, že IZO 007810041 má vedle sídla (místo výuky C11) i druhé místo výuky C10 Vrbova 1233/34, Braník, které původní nález neuváděl."
+  }
 }

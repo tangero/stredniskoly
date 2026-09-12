@@ -9,7 +9,8 @@
       "observations": [
         "V přiložených datech CERMAT (1. kolo přijímacího řízení, denní studium) mělo Gymnázium Na Pražačce (REDIZO 600004961, IZO 000335398, Nad Ohradou 2825, Praha) v roce 2025 nabídku oboru 79-41-K/61 Gymnázium (šestileté) se zaměřením zapsaným jako „estetickovýchovné předměty - zaměření na VV“; v roce 2026 má stejná škola nabídku téhož oboru se zaměřením „Výtvarná výchova“. Kód oboru (KKOV), délka studia (6 let), forma (denní) i jazyk studia jsou v obou letech shodné.",
         "Podle Wikipedie nabízí Gymnázium Na Pražačce studium právě ve třech zaměřeních šestiletého gymnázia: všeobecné (třídy A), výtvarné (třídy C) a německé (třídy D). Výtvarné zaměření je tedy dlouhodobou součástí nabídky školy.",
-        "Samostatný agregátor prijimackynaskolu.cz uvádí u školy tři obory/zaměření s celkovou kapacitou 90 míst (tj. tři třídy po 30 žácích) v roce 2026 a zároveň vypisuje názvy zaměření z roku 2025 („estetickovýchovné předměty…“), což potvrzuje, že jde o tři paralelní třídní zaměření téže školy v obou letech."
+        "Samostatný agregátor prijimackynaskolu.cz uvádí u školy tři obory/zaměření s celkovou kapacitou 90 míst (tj. tři třídy po 30 žácích) v roce 2026 a zároveň vypisuje názvy zaměření z roku 2025 („estetickovýchovné předměty…“), což potvrzuje, že jde o tři paralelní třídní zaměření téže školy v obou letech.",
+        "Rejstřík MŠMT vede subjekt REDIZO 600004961 (Gymnázium Na Pražačce, Praha 3, Nad Ohradou 23, IČ 60461675) i IZO 000335398 ve všech čtyřech sledovaných snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) pod stejným úplným názvem, se sídlem Nad Ohradou 2825/23, Žižkov, a shodným místem výuky na téže adrese; nepřetržitá existence školy mezi přijímacími řízeními 2025 a 2026 je tak potvrzena."
       ],
       "conclusion": "Jde o tentýž obor a totéž výtvarné zaměření šestiletého gymnázia; mezi rokem 2025 a 2026 se změnilo pouze pojmenování zaměření v datech přijímacího řízení („estetickovýchovné předměty - zaměření na VV“ → „Výtvarná výchova“). Návaznost je přímá, 1:1.",
       "alternative_explanations": [
@@ -34,6 +35,20 @@
           "izo": "izo_000335398",
           "valid_period": "2025–2026",
           "source_url": "fronta-dohledavani-2025-2026.json, úkol R-600004961"
+        },
+        {
+          "text": "Nad Ohradou 2825/23, Žižkov, 130 00 Praha 3",
+          "role": "sídlo",
+          "izo": "izo_000335398",
+          "valid_period": "2025–2026",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
+        },
+        {
+          "text": "Nad Ohradou 2825/23, Žižkov, 130 00 Praha 3",
+          "role": "místo výuky (mistaVyuky, rejstřík MŠMT)",
+          "izo": "izo_000335398",
+          "valid_period": "2025–2026",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
         }
       ],
       "evidence": [
@@ -60,6 +75,14 @@
           "checked_at": "2026-09-12",
           "supports": "Tři obory/zaměření, kapacita 90 míst v roce 2026; vypisuje názvy zaměření z roku 2025 a upozorňuje na chybějící shodu s importem 2026 – jde o změnu pojmenování, nikoli zánik.",
           "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt REDIZO 600004961 i IZO 000335398 jsou ve snímku vedeny pod úplným názvem Gymnázium Na Pražačce, Praha 3, Nad Ohradou 23, se sídlem Nad Ohradou 2825/23, Žižkov, a shodným místem výuky; stav je totožný se snímky k 31. 3. 2025, 31. 12. 2025 a 30. 6. 2026, takže škola mezi přijímacími řízeními 2025 a 2026 existovala nepřetržitě a nešlo o zánik ani vznik nového subjektu.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026 (shodný se snímky 31. 3. 2025, 31. 12. 2025 a 30. 6. 2026)"
         }
       ],
       "history_comparability": "comparable",
@@ -73,7 +96,8 @@
       "observations": [
         "V přiložených datech CERMAT mělo Gymnázium Na Pražačce v roce 2025 nabídku oboru 79-41-K/61 Gymnázium (šestileté) se zaměřením „vybrané předměty v cizím jazyce - zaměření na NJ“; v roce 2026 má stejná škola nabídku téhož oboru se zaměřením „Německý jazyk“. KKOV, délka studia, forma i jazyk studia („Český s výukou vybraných předmětů v cizím jazyce“) jsou v obou letech shodné.",
         "Podle Wikipedie nabízí škola tři zaměření šestiletého gymnázia – všeobecné, výtvarné a německé (třídy D). Článek dále popisuje rozšířenou spolupráci s německými institucemi (DAAD, ZfA, Goethe-Institut), zkoušky DSD1/DSD2 a působení německých pedagogů, což odpovídá tomu, že se vybrané předměty vyučují v němčině.",
-        "Web školy dokumentuje v roce 2026 aktivitu tříd s německým zaměřením (výměnný pobyt se Schwäbisch Gmünd, účast v soutěži Jugend debattiert Europa v němčině), tedy pokračující provoz německého zaměření."
+        "Web školy dokumentuje v roce 2026 aktivitu tříd s německým zaměřením (výměnný pobyt se Schwäbisch Gmünd, účast v soutěži Jugend debattiert Europa v němčině), tedy pokračující provoz německého zaměření.",
+        "Rejstřík MŠMT vede subjekt REDIZO 600004961 (Gymnázium Na Pražačce, Praha 3, Nad Ohradou 23, IČ 60461675) i IZO 000335398 ve všech čtyřech sledovaných snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) pod stejným úplným názvem, se sídlem Nad Ohradou 2825/23, Žižkov, a shodným místem výuky na téže adrese; nepřetržitá existence školy mezi přijímacími řízeními 2025 a 2026 je tak potvrzena."
       ],
       "conclusion": "Jde o tentýž obor a totéž jazykové zaměření šestiletého gymnázia; mezi rokem 2025 a 2026 se změnilo pouze pojmenování zaměření („vybrané předměty v cizím jazyce - zaměření na NJ“ → „Německý jazyk“). Návaznost je přímá, 1:1.",
       "alternative_explanations": [
@@ -98,6 +122,20 @@
           "izo": "izo_000335398",
           "valid_period": "2025–2026",
           "source_url": "fronta-dohledavani-2025-2026.json, úkol R-600004961"
+        },
+        {
+          "text": "Nad Ohradou 2825/23, Žižkov, 130 00 Praha 3",
+          "role": "sídlo",
+          "izo": "izo_000335398",
+          "valid_period": "2025–2026",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
+        },
+        {
+          "text": "Nad Ohradou 2825/23, Žižkov, 130 00 Praha 3",
+          "role": "místo výuky (mistaVyuky, rejstřík MŠMT)",
+          "izo": "izo_000335398",
+          "valid_period": "2025–2026",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
         }
       ],
       "evidence": [
@@ -124,6 +162,14 @@
           "checked_at": "2026-09-12",
           "supports": "Aktuality z roku 2026 dokládají provoz tříd s německým zaměřením (výměna Schwäbisch Gmünd březen 2026, soutěž Jugend debattiert Europa duben 2026).",
           "applicable_period": "školní rok 2025/2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt REDIZO 600004961 i IZO 000335398 jsou ve snímku vedeny pod úplným názvem Gymnázium Na Pražačce, Praha 3, Nad Ohradou 23, se sídlem Nad Ohradou 2825/23, Žižkov, a shodným místem výuky; stav je totožný se snímky k 31. 3. 2025, 31. 12. 2025 a 30. 6. 2026, takže škola mezi přijímacími řízeními 2025 a 2026 existovala nepřetržitě a nešlo o zánik ani vznik nového subjektu.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026 (shodný se snímky 31. 3. 2025, 31. 12. 2025 a 30. 6. 2026)"
         }
       ],
       "history_comparability": "comparable",
@@ -137,7 +183,8 @@
       "observations": [
         "V přiložených datech CERMAT mělo Gymnázium Na Pražačce v roce 2025 nabídku oboru 79-41-K/61 Gymnázium (šestileté) se zaměřením zapsaným jako „všeobecné studim“ (zjevný překlep v podkladu); v roce 2026 má stejná škola nabídku téhož oboru se zaměřením „Všeobecné“. KKOV, délka studia, forma i jazyk studia jsou v obou letech shodné.",
         "Podle Wikipedie je všeobecné zaměření (třídy A) jedním ze tří dlouhodobých zaměření šestiletého gymnázia Na Pražačce.",
-        "Agregátor prijimackynaskolu.cz uvádí u školy v roce 2026 tři obory s celkovou kapacitou 90 míst a zároveň vypisuje zaměření roku 2025 včetně zápisu „všeobecné studim“, což potvrzuje, že jde o tatáž tři zaměření v obou letech."
+        "Agregátor prijimackynaskolu.cz uvádí u školy v roce 2026 tři obory s celkovou kapacitou 90 míst a zároveň vypisuje zaměření roku 2025 včetně zápisu „všeobecné studim“, což potvrzuje, že jde o tatáž tři zaměření v obou letech.",
+        "Rejstřík MŠMT vede subjekt REDIZO 600004961 (Gymnázium Na Pražačce, Praha 3, Nad Ohradou 23, IČ 60461675) i IZO 000335398 ve všech čtyřech sledovaných snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) pod stejným úplným názvem, se sídlem Nad Ohradou 2825/23, Žižkov, a shodným místem výuky na téže adrese; nepřetržitá existence školy mezi přijímacími řízeními 2025 a 2026 je tak potvrzena."
       ],
       "conclusion": "Jde o tentýž obor a totéž všeobecné zaměření šestiletého gymnázia; mezi rokem 2025 a 2026 se změnil pouze zápis názvu zaměření („všeobecné studim“ → „Všeobecné“). Návaznost je přímá, 1:1.",
       "alternative_explanations": [],
@@ -160,6 +207,20 @@
           "izo": "izo_000335398",
           "valid_period": "2025–2026",
           "source_url": "fronta-dohledavani-2025-2026.json, úkol R-600004961"
+        },
+        {
+          "text": "Nad Ohradou 2825/23, Žižkov, 130 00 Praha 3",
+          "role": "sídlo",
+          "izo": "izo_000335398",
+          "valid_period": "2025–2026",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
+        },
+        {
+          "text": "Nad Ohradou 2825/23, Žižkov, 130 00 Praha 3",
+          "role": "místo výuky (mistaVyuky, rejstřík MŠMT)",
+          "izo": "izo_000335398",
+          "valid_period": "2025–2026",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
         }
       ],
       "evidence": [
@@ -186,6 +247,14 @@
           "checked_at": "2026-09-12",
           "supports": "Škola má v roce 2026 tři zaměření s kapacitou 90 míst; zápis „všeobecné studim“ z roku 2025 odpovídá všeobecnému zaměření.",
           "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt REDIZO 600004961 i IZO 000335398 jsou ve snímku vedeny pod úplným názvem Gymnázium Na Pražačce, Praha 3, Nad Ohradou 23, se sídlem Nad Ohradou 2825/23, Žižkov, a shodným místem výuky; stav je totožný se snímky k 31. 3. 2025, 31. 12. 2025 a 30. 6. 2026, takže škola mezi přijímacími řízeními 2025 a 2026 existovala nepřetržitě a nešlo o zánik ani vznik nového subjektu.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026 (shodný se snímky 31. 3. 2025, 31. 12. 2025 a 30. 6. 2026)"
         }
       ],
       "history_comparability": "comparable",
@@ -193,5 +262,10 @@
       "related_task_ids": [],
       "unanswered_questions": []
     }
-  ]
+  ],
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT plně potvrdil původní závěry: subjekt REDIZO 600004961 (Gymnázium Na Pražačce, Praha 3, Nad Ohradou 23, IČ 60461675) i IZO 000335398 jsou vedeny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) beze změny názvu, sídla (Nad Ohradou 2825/23, Žižkov) i místa výuky, takže škola mezi přijímacími řízeními 2025 a 2026 existovala nepřetržitě. Absence rejstříku v původním nálezu nezpůsobila chybu ani sníženou jistotu – závěry typu rename_only zůstávají v platnosti a jsou nyní doloženy i úředním zdrojem."
+  }
 }

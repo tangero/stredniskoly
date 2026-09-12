@@ -2,6 +2,11 @@
   "task_id": "R-600005518",
   "queue_version": 2,
   "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT plně potvrdil původní závěry: subjekt REDIZO 600005518 (Gymnázium Christiana Dopplera, IČ 61385701) i jeho IZO 061385701 (Střední škola) jsou vedeny ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) beze změny názvu, sídla Zborovská 621/45, Malá Strana, Praha 5, i místa výuky C51 na téže adrese. Absence rejstříku v původním nálezu nezpůsobila chybu ani nejistotu – závěr rename_only byl podložen daty CERMAT a webem školy a rejstřík jej nyní nezávisle stvrzuje."
+  },
   "findings": [
     {
       "issue_ids": ["Q0012", "Q0302"],
@@ -9,7 +14,8 @@
       "observations": [
         "V datech CERMAT za rok 2025 se nabídka osmiletého gymnázia Gymnázia Christiana Dopplera (REDIZO 600005518, IZO izo_061385701, Zborovská 621, Praha) jmenovala „Myslím, tedy jsem (zaměření na matematiku s rozšířenou výukou informatiky a fyziky)“ s kódem oboru 79-41-K/81. V roce 2026 je u stejné školy, na stejné adrese a pod stejným kódem oboru 79-41-K/81 nabídka „Myslím, tedy jsem“ – bez vysvětlující závorky.",
         "Web školy pro přijímací řízení na školní rok 2026/2027 (kritéria datována 28. 1. 2026) uvádí obor jako 79-41-K/81 „Myslím, tedy jsem“, osmileté studium se zaměřením na matematiku s rozšířenou výukou informatiky a fyziky. Popisné zaměření z roku 2025 tedy přesně odpovídá obsahu oboru v roce 2026; změnil se jen způsob zápisu názvu v datech CERMAT (popis zaměření se přesunul z názvu do samostatného textu).",
-        "KamDoSkoly.cz (agregátor z rejstříku škol MŠMT a otevřených dat CERMAT) potvrzuje kontinuitu školy pod REDIZO 600005518 na adrese Zborovská 621/45 a uvádí tutéž nabídku pod delším názvem i pro rok 2024 („osmileté studium se zaměřením na matematiku s rozšířenou výukou informatiky a fyziky“), s konstantní kapacitou 30 míst napříč lety 2024–2026."
+        "KamDoSkoly.cz (agregátor z rejstříku škol MŠMT a otevřených dat CERMAT) potvrzuje kontinuitu školy pod REDIZO 600005518 na adrese Zborovská 621/45 a uvádí tutéž nabídku pod delším názvem i pro rok 2024 („osmileté studium se zaměřením na matematiku s rozšířenou výukou informatiky a fyziky“), s konstantní kapacitou 30 míst napříč lety 2024–2026.",
+        "Rejstřík MŠMT vede subjekt REDIZO 600005518 (Gymnázium Christiana Dopplera, IČ 61385701) ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026) pod stejným názvem a se stejným sídlem Zborovská 621/45, Malá Strana, 150 00 Praha 5; IZO 061385701 (Střední škola) má ve všech snímcích místo výuky C51 na téže adrese. Rejstřík tedy potvrzuje kontinuitu školy i stability adresy mezi přijímacími řízeními 2025 a 2026."
       ],
       "conclusion": "Jde o tentýž obor: osmileté gymnázium 79-41-K/81 se zaměřením na matematiku s rozšířenou výukou informatiky a fyziky na Gymnáziu Christiana Dopplera. Mezi roky 2025 a 2026 došlo pouze ke změně zápisu názvu nabídky (zkrácení o popis zaměření v závorce), nikoli ke změně oboru, kódu KKOV, délky studia ani kapacity. Nabídku Q0012 z roku 2025 lze spárovat s nabídkou Q0302 z roku 2026.",
       "alternative_explanations": [],
@@ -25,6 +31,20 @@
           "izo": "izo_061385701",
           "valid_period": "2024–2026 (beze změny dle rejstříku a dat CERMAT)",
           "source_url": "https://www.kamdoskoly.cz/skola/gymnazium-gymnazium-christiana-dopplera-600005518.html"
+        },
+        {
+          "text": "Zborovská 621/45, Malá Strana, 150 00 Praha 5",
+          "role": "sídlo (dle rejstříku MŠMT)",
+          "izo": "izo_061385701",
+          "valid_period": "konstantní ve snímcích 2025-03-31, 2025-12-31, 2026-03-31 i 2026-06-30",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+        },
+        {
+          "text": "Zborovská 621/45, Malá Strana, 150 00 Praha 5",
+          "role": "místo výuky C51 (dle rejstříku MŠMT, IZO 061385701 Střední škola)",
+          "izo": "izo_061385701",
+          "valid_period": "konstantní ve snímcích 2025-03-31, 2025-12-31, 2026-03-31 i 2026-06-30",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
         }
       ],
       "evidence": [
@@ -51,6 +71,22 @@
           "checked_at": "2026-09-12",
           "supports": "Kontinuita školy pod REDIZO 600005518 na adrese Zborovská 621/45; nabídka oboru s týmž zaměřením (matematika s rozšířenou výukou informatiky a fyziky, 30 míst) doložena průběžně pro roky 2024 i 2025 z otevřených dat CERMAT.",
           "applicable_period": "2024–2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2025)",
+          "published_at": "2025-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt REDIZO 600005518 (Gymnázium Christiana Dopplera, IČ 61385701) je veden v rejstříku k 31. 3. 2025 se sídlem Zborovská 621/45, Malá Strana, Praha 5; IZO 061385701 (Střední škola) má místo výuky C51 na téže adrese – shoda s údaji v datech CERMAT 2025.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+          "published_at": "2026-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt REDIZO 600005518 je veden v rejstříku k 31. 3. 2026 beze změny názvu i sídla; IZO 061385701 (Střední škola) má nadále místo výuky C51 Zborovská 621/45 – potvrzuje kontinuitu školy mezi přijímacími řízeními 2025 a 2026 (shodně i snímky k 31. 12. 2025 a 30. 6. 2026).",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
         }
       ],
       "history_comparability": "comparable",
@@ -64,7 +100,8 @@
       "observations": [
         "V datech CERMAT za rok 2025 se druhá nabídka osmiletého gymnázia Gymnázia Christiana Dopplera (REDIZO 600005518, IZO izo_061385701, Zborovská 621, Praha) jmenovala „Cizí jazyky – brána do světa (zaměření na živé jazyky)“ s kódem oboru 79-41-K/81. V roce 2026 je u stejné školy, na stejné adrese a pod stejným kódem oboru 79-41-K/81 nabídka „Cizí jazyky – brána do světa“ – bez vysvětlující závorky.",
         "Web školy pro přijímací řízení na školní rok 2026/2027 (kritéria datována 28. 1. 2026) uvádí obor jako 79-41-K/81 „Cizí jazyky – brána do světa“, osmileté studium se zaměřením na živé jazyky. Zaměření na živé jazyky uvedené v závorce v roce 2025 tedy přesně odpovídá obsahu oboru v roce 2026; změnil se jen způsob zápisu názvu v datech CERMAT.",
-        "KamDoSkoly.cz dokládá kontinuitu školy pod REDIZO 600005518 a uvádí jazykový osmiletý obor (kapacita 30 míst) i pro rok 2024 pod názvem „osmileté studium se zaměřením na živé jazyky“ – obor tedy funguje dlouhodobě a marketingový název se měnil jen v zápisu."
+        "KamDoSkoly.cz dokládá kontinuitu školy pod REDIZO 600005518 a uvádí jazykový osmiletý obor (kapacita 30 míst) i pro rok 2024 pod názvem „osmileté studium se zaměřením na živé jazyky“ – obor tedy funguje dlouhodobě a marketingový název se měnil jen v zápisu.",
+        "Rejstřík MŠMT vede subjekt REDIZO 600005518 (Gymnázium Christiana Dopplera, IČ 61385701) ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026) pod stejným názvem a se stejným sídlem Zborovská 621/45, Malá Strana, 150 00 Praha 5; IZO 061385701 (Střední škola) má ve všech snímcích místo výuky C51 na téže adrese. Rejstřík tedy potvrzuje kontinuitu školy i stability adresy mezi přijímacími řízeními 2025 a 2026."
       ],
       "conclusion": "Jde o tentýž obor: osmileté gymnázium 79-41-K/81 se zaměřením na živé jazyky na Gymnáziu Christiana Dopplera. Mezi roky 2025 a 2026 došlo pouze ke změně zápisu názvu nabídky (vypuštění popisu zaměření v závorce), nikoli ke změně oboru, kódu KKOV, délky studia ani kapacity. Nabídku Q0013 z roku 2025 lze spárovat s nabídkou Q0301 z roku 2026.",
       "alternative_explanations": [],
@@ -80,6 +117,20 @@
           "izo": "izo_061385701",
           "valid_period": "2024–2026 (beze změny dle rejstříku a dat CERMAT)",
           "source_url": "https://www.kamdoskoly.cz/skola/gymnazium-gymnazium-christiana-dopplera-600005518.html"
+        },
+        {
+          "text": "Zborovská 621/45, Malá Strana, 150 00 Praha 5",
+          "role": "sídlo (dle rejstříku MŠMT)",
+          "izo": "izo_061385701",
+          "valid_period": "konstantní ve snímcích 2025-03-31, 2025-12-31, 2026-03-31 i 2026-06-30",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+        },
+        {
+          "text": "Zborovská 621/45, Malá Strana, 150 00 Praha 5",
+          "role": "místo výuky C51 (dle rejstříku MŠMT, IZO 061385701 Střední škola)",
+          "izo": "izo_061385701",
+          "valid_period": "konstantní ve snímcích 2025-03-31, 2025-12-31, 2026-03-31 i 2026-06-30",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
         }
       ],
       "evidence": [
@@ -106,6 +157,22 @@
           "checked_at": "2026-09-12",
           "supports": "Kontinuita školy pod REDIZO 600005518 na adrese Zborovská 621/45; jazykový osmiletý obor (zaměření na živé jazyky, 30 míst) doložen průběžně pro roky 2024 i 2025 z otevřených dat CERMAT.",
           "applicable_period": "2024–2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2025)",
+          "published_at": "2025-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt REDIZO 600005518 (Gymnázium Christiana Dopplera, IČ 61385701) je veden v rejstříku k 31. 3. 2025 se sídlem Zborovská 621/45, Malá Strana, Praha 5; IZO 061385701 (Střední škola) má místo výuky C51 na téže adrese – shoda s údaji v datech CERMAT 2025.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+          "published_at": "2026-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt REDIZO 600005518 je veden v rejstříku k 31. 3. 2026 beze změny názvu i sídla; IZO 061385701 (Střední škola) má nadále místo výuky C51 Zborovská 621/45 – potvrzuje kontinuitu školy mezi přijímacími řízeními 2025 a 2026 (shodně i snímky k 31. 12. 2025 a 30. 6. 2026).",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
         }
       ],
       "history_comparability": "comparable",

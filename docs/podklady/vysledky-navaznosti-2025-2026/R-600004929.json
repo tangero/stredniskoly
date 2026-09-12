@@ -2,6 +2,11 @@
   "task_id": "R-600004929",
   "queue_version": 2,
   "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT potvrdil závěry nálezu: subjekt 600004929 'Obchodní akademie, Praha 3, Kubelíkova 37' (IČ 70107050) i jeho IZO 110002008 jsou vedeny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) beze změny názvu, sídla i místa výuky (Kubelíkova 1221/37, Žižkov, RÚIAN 21779571). Nový obor 78-42-M/08 tedy skutečně otevírá nezměněná právnická osoba na stejné adrese a nejde o důsledek sloučení, přejmenování ani přesunu školy. Absence rejstříku v původním nálezu nezpůsobila chybu ani nejistotu – pouze chyběl formální důkaz identity subjektu, který je nyní doplněn."
+  },
   "findings": [
     {
       "issue_ids": ["Q0339"],
@@ -12,7 +17,8 @@
         "Server prijimacky-onlinekurzy.cz (KOMPLET, zpracování dat CERMAT) uvádí pro obor 'Lyceum (režim pokusného ověřování) (Lyceum OA Kubelíkova)', kód 78-42-M/08, statistiky pouze pro rok 2026 (kapacita 30, přihlášeno 114, přijato 30); pro roky 2025 a 2024 jsou hodnoty prázdné ('—').",
         "Školský profil školy na iDNES.cz uvádí doslovné sdělení školy 'Plánujeme: budeme otevírat obor 78-42-M/08 Lyceum (režim pokusného ověřování)' – tedy že jde o nově otevíraný obor. Obsah stránky se nepodařilo načíst kvůli souhlasové stěně, údaj pochází z vyhledávacího úryvku a je proto brán jako vodítko, nikoli hlavní důkaz.",
         "Obor 78-42-M/08 Lyceum v režimu pokusného ověřování se v datech přijímacího řízení 2026 objevil nově u více pražských škol současně (např. Smíchovská SPŠ, OA Heroldovy sady – ta na webu píše 'Ve školním roce 2026/2027 otevíráme ... Lyceum (režim pokusného ověřování) – kód oboru 78-42-M/08'). Jde tedy o celostátní novinku MŠMT, kterou si řada škol otevřela právě od školního roku 2026/2027.",
-        "Adresa Kubelíkova 1221/37, Praha 3 – Žižkov je sídlem i místem výuky školy a je v obou letech shodná; žádná změna adresy ani entity (REDIZO/IZO) se nekonala."
+        "Adresa Kubelíkova 1221/37, Praha 3 – Žižkov je sídlem i místem výuky školy a je v obou letech shodná; žádná změna adresy ani entity (REDIZO/IZO) se nekonala.",
+        "Rejstřík MŠMT (otevřená data, snímky k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026) vede subjekt 600004929 'Obchodní akademie, Praha 3, Kubelíkova 37' (IČ 70107050) a jeho IZO 110002008 (Střední škola) ve všech čtyřech snímcích beze změny – shodný název, shodné sídlo Kubelíkova 1221/37, Žižkov (RÚIAN 21779571) a jediné místo výuky na téže adrese. Rejstřík tak potvrzuje, že mezi přijímacími řízeními 2025 a 2026 nedošlo k žádné změně entity, názvu ani adresy školy."
       ],
       "conclusion": "Nabídka 'Lyceum (režim pokusného ověřování) 78-42-M/08, zaměření Lyceum OA Kubelíkova' je nový obor, který Obchodní akademie Kubelíkova otevřela poprvé pro přijímací řízení na školní rok 2026/2027. Nejde o přejmenování ani přepis žádného z existujících oborů – Obchodní akademie 63-41-M/02 (obě zaměření) i Ekonomické lyceum 78-42-M/02 pokračují v roce 2026 vedle něj beze změny. Nepřiřazenost nabídky 2026 je tedy správný stav: k oboru neexistuje historie z roku 2025 a nemá být mapován na žádný obor z roku 2025.",
       "alternative_explanations": [
@@ -30,6 +36,20 @@
           "izo": "izo_110002008",
           "valid_period": "2025–2026 (beze změny)",
           "source_url": "https://www.edulist.cz/skola/600004929/"
+        },
+        {
+          "text": "Kubelíkova 1221/37, Žižkov, 130 00 Praha 3 (RÚIAN 21779571)",
+          "role": "sídlo (podle rejstříku MŠMT)",
+          "izo": "izo_110002008",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (ve všech čtyřech snímcích beze změny)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Kubelíkova 1221/37, Žižkov, 130 00 Praha 3 (RÚIAN 21779571)",
+          "role": "místo výuky (mistaVyuky, podle rejstříku MŠMT)",
+          "izo": "izo_110002008",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (jediné místo výuky IZO 110002008, ve všech čtyřech snímcích beze změny)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
         }
       ],
       "evidence": [
@@ -80,6 +100,22 @@
           "checked_at": "2026-09-12",
           "supports": "Kontext: obor Lyceum (režim pokusného ověřování) 78-42-M/08 otevírá od školního roku 2026/2027 více pražských škol současně; jde o celostátní novinku MŠMT, nikoli o přejmenování existujícího oboru.",
           "applicable_period": "školní rok 2026/2027"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2025)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt 600004929 'Obchodní akademie, Praha 3, Kubelíkova 37' (IČ 70107050) je veden v období 1. kola JPZ 2025; sídlo Kubelíkova 1221/37, Žižkov (RÚIAN 21779571), IZO 110002008 (Střední škola) s jediným místem výuky na téže adrese.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V období 1. kola JPZ 2026 je subjekt veden pod stejným REDIZO 600004929, názvem i sídlem jako v roce 2025; IZO 110002008 má i nadále jediné místo výuky Kubelíkova 1221/37, Žižkov. Totožný stav dokládají i snímky k 31. 12. 2025 a 30. 6. 2026 – mezi roky 2025 a 2026 tedy nedošlo ke změně entity, názvu ani adresy.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
         }
       ],
       "history_comparability": "not_comparable",
