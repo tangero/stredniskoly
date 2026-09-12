@@ -1,125 +1,141 @@
 {
-  "task_id": "R-600170284",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík potvrzuje kontinuitu subjektu Střední odborná škola a Střední odborné učiliště, Hněvkovice 865 (REDIZO 600170284), sídlo Hněvkovice na pravém břehu Vlt. 865, 375 01 Týn nad Vltavou, beze změny ve všech čtyřech snímcích, včetně jediného IZO 000073130 „Střední škola“ s místem výuky na stejné adrese. Obor 23-44-L/01 Mechanik strojů a zařízení (4leté, denní) u tohoto IZO chybí ve snímku k 31. 3. 2025, ale je evidován ve všech třech následujících snímcích (31. 12. 2025, 31. 3. 2026, 30. 6. 2026) – jde o pozdější zápis existujícího kódu oboru do rejstříku, nikoli o jeho zánik a nové zavedení. Rejstřík eviduje obor jako jeden celek (bez rozlišení zaměření), takže sám o sobě nedokládá přidání zaměření Technik jaderných zařízení – to dokládá až obsah CERMAT nabídky a web školy."
-  },
-  "findings": [
+ "task_id": "R-600170284",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrzuje kontinuitu subjektu Střední odborná škola a Střední odborné učiliště, Hněvkovice 865 (REDIZO 600170284), sídlo Hněvkovice na pravém břehu Vlt. 865, 375 01 Týn nad Vltavou, beze změny ve všech čtyřech snímcích, včetně jediného IZO 000073130 „Střední škola“ s místem výuky na stejné adrese. Obor 23-44-L/01 Mechanik strojů a zařízení (4leté, denní) u tohoto IZO chybí ve snímku k 31. 3. 2025, ale je evidován ve všech třech následujících snímcích (31. 12. 2025, 31. 3. 2026, 30. 6. 2026) – jde o pozdější zápis existujícího kódu oboru do rejstříku, nikoli o jeho zánik a nové zavedení. Rejstřík eviduje obor jako jeden celek (bez rozlišení zaměření), takže sám o sobě nedokládá přidání zaměření Technik jaderných zařízení – to dokládá až obsah CERMAT nabídky a web školy."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0208"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "CERMAT 1. kolo JPZ 2025: škola nabízela obor 23-44-L/01 Mechanik strojů a zařízení pouze se zaměřením „Mechanik strojů a zařízení se zaměřením na svařování“ (4 roky, denní).",
+    "CERMAT 1. kolo JPZ 2026: škola nabízí týž kód oboru 23-44-L/01 ve DVOU zaměřeních současně – nadále „se zaměřením na svařování“ a nově „Technik jaderných zařízení“ (obě 4leté, denní).",
+    "Oficiální stránka školy „Přijímací řízení pro školní rok 2026/2027“ (isshnevkovice.cz) přímo uvádí obor 23-44-L/01 ve dvou samostatných zaměřeních s vlastní kapacitou: „Mechanik strojů a zařízení se zaměřením na svařování“ (8 míst) a „Mechanik strojů a zařízení – technik jaderných zařízení“ (11 míst) – přesně odpovídá struktuře nabídky CERMAT 2026.",
+    "Stránka školy „Nabídka učebních oborů a maturitního studia“ popisuje zaměření Technik jaderných zařízení jako čtyřletý maturitní obor zakončený i výučním listem, jehož absolvent získá svářečské oprávnění a je „připraven k údržbě a opravám zařízení jaderných elektráren“ – věcně souvisí s blízkostí JE Temelín, byť stránka Temelín jmenovitě nezmiňuje.",
+    "Škola dlouhodobě spolupracuje se skupinou ČEZ v oblasti jaderné energetiky: aktualita „Podpora výuky oboru Svářeč a potrubář v jaderné energetice“ (zveřejněno 27. 11. 2025) dokládá příspěvek Nadace ČEZ na odměny učitelům odborného výcviku v příbuzném oboru 23-51-H/01 Strojní mechanik (RVP Svářeč a potrubář v jaderné energetice) pro období 11. 12. 2024–11. 12. 2025 – jde o jiný obor než 23-44-L/01, ale dokládá existující institucionální vazbu školy na jadernou energetiku a ČEZ, do níž nové zaměření Technik jaderných zařízení věcně zapadá.",
+    "V rejstříku MŠMT obor 23-44-L/01 chybí ve snímku k 31. 3. 2025, ale je zapsán ve snímcích k 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026 – rejstřík obor eviduje jako jeden kód bez rozlišení zaměření, takže dokládá jen pozdější formální zápis kódu, nikoli samotné přidání zaměření.",
+    "Nebyl dohledán žádný samostatný článek regionálního tisku (Českobudějovický/Jihočeský deník) ani tiskové oznámení kraje, které by explicitně spojovalo vznik zaměření Technik jaderných zařízení s personální poptávkou JE Temelín; vazba na Temelín je odvozena z popisu profilu absolventa a z blízkosti a existující spolupráce s ČEZ, nikoli z přímého prohlášení."
+   ],
+   "conclusion": "Nepřiřazená nabídka 2026 (23-44-L/01 Mechanik strojů a zařízení, zaměření „Technik jaderných zařízení“) je doloženě nové zaměření přidané k existujícímu kódu oboru, které škola od školního roku 2026/27 nabízí SOUBĚŽNĚ s pokračujícím zaměřením na svařování – nejde o náhradu ani přejmenování zaměření z roku 2025. Potvrzuje to jak struktura nabídky CERMAT (2026 = 2 zaměření místo 1), tak vlastní aktuální přijímací stránka školy, která obě zaměření vypisuje se samostatnou kapacitou (8 vs. 11 míst) pro školní rok 2026/2027. Věcná souvislost s jadernou energetikou (JE Temelín) je podepřena popisem profilu absolventa („údržba a opravy zařízení jaderných elektráren“) a doloženou spoluprací školy s Nadací ČEZ na příbuzném oboru zaměřeném na jadernou energetiku; přímé zdůvodnění vzniku zaměření potřebou personálu pro Temelín ale nebylo v dostupných zdrojích nalezeno doslovně vyjádřeno.",
+   "alternative_explanations": [
+    "Nové zaměření mohlo vzniknout z obecnějšího záměru rozšířit portfolio oboru 23-44-L/01 (např. z důvodu poptávky žáků nebo kapacitních důvodů), nikoliv výhradně kvůli JE Temelín – přímý doklad kauzality chybí.",
+    "Zápis oboru 23-44-L/01 do rejstříku až k 31. 12. 2025 mohl souviset právě s formálním schvalováním rozšíření o zaměření Technik jaderných zařízení, ale rejstřík zaměření nerozlišuje, takže to nelze z něj samotného ověřit."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "23-44-L/01 Mechanik strojů a zařízení – zaměření Technik jaderných zařízení (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0208"],
-      "status": "potvrzeno",
-      "observations": [
-        "CERMAT 1. kolo JPZ 2025: škola nabízela obor 23-44-L/01 Mechanik strojů a zařízení pouze se zaměřením „Mechanik strojů a zařízení se zaměřením na svařování“ (4 roky, denní).",
-        "CERMAT 1. kolo JPZ 2026: škola nabízí týž kód oboru 23-44-L/01 ve DVOU zaměřeních současně – nadále „se zaměřením na svařování“ a nově „Technik jaderných zařízení“ (obě 4leté, denní).",
-        "Oficiální stránka školy „Přijímací řízení pro školní rok 2026/2027“ (isshnevkovice.cz) přímo uvádí obor 23-44-L/01 ve dvou samostatných zaměřeních s vlastní kapacitou: „Mechanik strojů a zařízení se zaměřením na svařování“ (8 míst) a „Mechanik strojů a zařízení – technik jaderných zařízení“ (11 míst) – přesně odpovídá struktuře nabídky CERMAT 2026.",
-        "Stránka školy „Nabídka učebních oborů a maturitního studia“ popisuje zaměření Technik jaderných zařízení jako čtyřletý maturitní obor zakončený i výučním listem, jehož absolvent získá svářečské oprávnění a je „připraven k údržbě a opravám zařízení jaderných elektráren“ – věcně souvisí s blízkostí JE Temelín, byť stránka Temelín jmenovitě nezmiňuje.",
-        "Škola dlouhodobě spolupracuje se skupinou ČEZ v oblasti jaderné energetiky: aktualita „Podpora výuky oboru Svářeč a potrubář v jaderné energetice“ (zveřejněno 27. 11. 2025) dokládá příspěvek Nadace ČEZ na odměny učitelům odborného výcviku v příbuzném oboru 23-51-H/01 Strojní mechanik (RVP Svářeč a potrubář v jaderné energetice) pro období 11. 12. 2024–11. 12. 2025 – jde o jiný obor než 23-44-L/01, ale dokládá existující institucionální vazbu školy na jadernou energetiku a ČEZ, do níž nové zaměření Technik jaderných zařízení věcně zapadá.",
-        "V rejstříku MŠMT obor 23-44-L/01 chybí ve snímku k 31. 3. 2025, ale je zapsán ve snímcích k 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026 – rejstřík obor eviduje jako jeden kód bez rozlišení zaměření, takže dokládá jen pozdější formální zápis kódu, nikoli samotné přidání zaměření.",
-        "Nebyl dohledán žádný samostatný článek regionálního tisku (Českobudějovický/Jihočeský deník) ani tiskové oznámení kraje, které by explicitně spojovalo vznik zaměření Technik jaderných zařízení s personální poptávkou JE Temelín; vazba na Temelín je odvozena z popisu profilu absolventa a z blízkosti a existující spolupráce s ČEZ, nikoli z přímého prohlášení."
-      ],
-      "conclusion": "Nepřiřazená nabídka 2026 (23-44-L/01 Mechanik strojů a zařízení, zaměření „Technik jaderných zařízení“) je doloženě nové zaměření přidané k existujícímu kódu oboru, které škola od školního roku 2026/27 nabízí SOUBĚŽNĚ s pokračujícím zaměřením na svařování – nejde o náhradu ani přejmenování zaměření z roku 2025. Potvrzuje to jak struktura nabídky CERMAT (2026 = 2 zaměření místo 1), tak vlastní aktuální přijímací stránka školy, která obě zaměření vypisuje se samostatnou kapacitou (8 vs. 11 míst) pro školní rok 2026/2027. Věcná souvislost s jadernou energetikou (JE Temelín) je podepřena popisem profilu absolventa („údržba a opravy zařízení jaderných elektráren“) a doloženou spoluprací školy s Nadací ČEZ na příbuzném oboru zaměřeném na jadernou energetiku; přímé zdůvodnění vzniku zaměření potřebou personálu pro Temelín ale nebylo v dostupných zdrojích nalezeno doslovně vyjádřeno.",
-      "alternative_explanations": [
-        "Nové zaměření mohlo vzniknout z obecnějšího záměru rozšířit portfolio oboru 23-44-L/01 (např. z důvodu poptávky žáků nebo kapacitních důvodů), nikoliv výhradně kvůli JE Temelín – přímý doklad kauzality chybí.",
-        "Zápis oboru 23-44-L/01 do rejstříku až k 31. 12. 2025 mohl souviset právě s formálním schvalováním rozšíření o zaměření Technik jaderných zařízení, ale rejstřík zaměření nerozlišuje, takže to nelze z něj samotného ověřit."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["23-44-L/01 Mechanik strojů a zařízení – zaměření Technik jaderných zařízení (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Hněvkovice na pravém břehu Vlt. 865, 375 01 Týn nad Vltavou",
-          "role": "sídlo",
-          "izo": "600170284",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Hněvkovice na pravém břehu Vlt. 865, 375 01 Týn nad Vltavou",
-          "role": "místo výuky",
-          "izo": "000073130",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600170284",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "V roce 2025 obor 23-44-L/01 pouze se zaměřením na svařování; v roce 2026 tentýž kód se dvěma zaměřeními zároveň – svařování i nové Technik jaderných zařízení.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 23-44-L/01 není u IZO 000073130 evidován.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 23-44-L/01 (4leté, denní) se u IZO 000073130 poprvé objevuje jako registrovaný.",
-          "applicable_period": "stav rejstříku k 31. 12. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 23-44-L/01 zůstává u IZO 000073130 registrován, subjekt beze změn.",
-          "applicable_period": "stav rejstříku k 31. 3. 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 23-44-L/01 zůstává u IZO 000073130 registrován, subjekt i IZO beze změn.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "http://www.isshnevkovice.cz/informace-pro-zaky-a-uchazece/prijimaci-rizeni-pro-skolni-rok-2026-2027/",
-          "title": "Přijímací řízení pro školní rok 2026/2027 – SOŠ a SOU Hněvkovice",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola pro 2026/2027 přímo vypisuje obor 23-44-L/01 ve dvou zaměřeních se samostatnou kapacitou: „Mechanik strojů a zařízení se zaměřením na svařování“ (8 míst) a „Mechanik strojů a zařízení – technik jaderných zařízení“ (11 míst).",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "http://www.isshnevkovice.cz/informace-pro-zaky-a-uchazece/nabidka-ucebnich-oboru-a-maturitniho-studia/",
-          "title": "Nabídka učebních oborů a maturitního studia – SOŠ a SOU Hněvkovice",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Popisuje zaměření Technik jaderných zařízení (obor 23-44-L/01) jako nové čtyřleté maturitní zaměření se svářečským oprávněním, jehož absolvent je připraven k údržbě a opravám zařízení jaderných elektráren; potvrzuje souběžné trvání zaměření na svařování.",
-          "applicable_period": "nabídka platná pro rok 2026/27"
-        },
-        {
-          "url": "http://www.isshnevkovice.cz/uvod/aktualni-sdeleni/podpora-vyuky-oboru-svarec-a-potrubar-v-jaderne-energetice.html",
-          "title": "Podpora výuky oboru Svářeč a potrubář v jaderné energetice – SOŠ a SOU Hněvkovice",
-          "published_at": "2025-11-27",
-          "checked_at": "2026-09-12",
-          "supports": "Dokládá financování Nadací ČEZ pro výuku příbuzného oboru zaměřeného na jadernou energetiku na téže škole (jiný kód oboru, 23-51-H/01) – potvrzuje existující institucionální vazbu školy na ČEZ a jadernou energetiku, do níž nové zaměření Technik jaderných zařízení věcně zapadá, ale přímo nedokládá důvod jeho vzniku ani vazbu na Temelín jmenovitě.",
-          "applicable_period": "podpora za období 11. 12. 2024 – 11. 12. 2025"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Nebyl dohledán žádný regionální novinový článek (Českobudějovický/Jihočeský deník) ani prohlášení Jihočeského kraje, které by explicitně spojovalo vznik zaměření Technik jaderných zařízení s personální poptávkou JE Temelín.",
-        "Není zjištěno přesné datum rozhodnutí o zavedení zaměření Technik jaderných zařízení (pouze rámcově dovoditelné ze zápisu oboru do rejstříku k 31. 12. 2025 a z data zveřejnění související aktuality o ČEZ podpoře k 27. 11. 2025).",
-        "Historická statistika přijímacího řízení pro 23-44-L/01 z roku 2025 se vztahuje jen k jednomu zaměření (svařování) – před sloučením/rozdělením statistik na úrovni zaměření by bylo třeba ověřit, zda CERMAT/škola vedou zaměření jako oddělené obory pro účely přijímacích statistik i v dalších letech."
-      ]
+     "text": "Hněvkovice na pravém břehu Vlt. 865, 375 01 Týn nad Vltavou",
+     "role": "sídlo",
+     "izo": "600170284",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Hněvkovice na pravém břehu Vlt. 865, 375 01 Týn nad Vltavou",
+     "role": "místo výuky",
+     "izo": "000073130",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600170284",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "V roce 2025 obor 23-44-L/01 pouze se zaměřením na svařování; v roce 2026 tentýž kód se dvěma zaměřeními zároveň – svařování i nové Technik jaderných zařízení.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 23-44-L/01 není u IZO 000073130 evidován.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 23-44-L/01 (4leté, denní) se u IZO 000073130 poprvé objevuje jako registrovaný.",
+     "applicable_period": "stav rejstříku k 31. 12. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 23-44-L/01 zůstává u IZO 000073130 registrován, subjekt beze změn.",
+     "applicable_period": "stav rejstříku k 31. 3. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 23-44-L/01 zůstává u IZO 000073130 registrován, subjekt i IZO beze změn.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "http://www.isshnevkovice.cz/informace-pro-zaky-a-uchazece/prijimaci-rizeni-pro-skolni-rok-2026-2027/",
+     "title": "Přijímací řízení pro školní rok 2026/2027 – SOŠ a SOU Hněvkovice",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola pro 2026/2027 přímo vypisuje obor 23-44-L/01 ve dvou zaměřeních se samostatnou kapacitou: „Mechanik strojů a zařízení se zaměřením na svařování“ (8 míst) a „Mechanik strojů a zařízení – technik jaderných zařízení“ (11 míst).",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "http://www.isshnevkovice.cz/informace-pro-zaky-a-uchazece/nabidka-ucebnich-oboru-a-maturitniho-studia/",
+     "title": "Nabídka učebních oborů a maturitního studia – SOŠ a SOU Hněvkovice",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Popisuje zaměření Technik jaderných zařízení (obor 23-44-L/01) jako nové čtyřleté maturitní zaměření se svářečským oprávněním, jehož absolvent je připraven k údržbě a opravám zařízení jaderných elektráren; potvrzuje souběžné trvání zaměření na svařování.",
+     "applicable_period": "nabídka platná pro rok 2026/27"
+    },
+    {
+     "url": "http://www.isshnevkovice.cz/uvod/aktualni-sdeleni/podpora-vyuky-oboru-svarec-a-potrubar-v-jaderne-energetice.html",
+     "title": "Podpora výuky oboru Svářeč a potrubář v jaderné energetice – SOŠ a SOU Hněvkovice",
+     "published_at": "2025-11-27",
+     "checked_at": "2026-09-12",
+     "supports": "Dokládá financování Nadací ČEZ pro výuku příbuzného oboru zaměřeného na jadernou energetiku na téže škole (jiný kód oboru, 23-51-H/01) – potvrzuje existující institucionální vazbu školy na ČEZ a jadernou energetiku, do níž nové zaměření Technik jaderných zařízení věcně zapadá, ale přímo nedokládá důvod jeho vzniku ani vazbu na Temelín jmenovitě.",
+     "applicable_period": "podpora za období 11. 12. 2024 – 11. 12. 2025"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Nebyl dohledán žádný regionální novinový článek (Českobudějovický/Jihočeský deník) ani prohlášení Jihočeského kraje, které by explicitně spojovalo vznik zaměření Technik jaderných zařízení s personální poptávkou JE Temelín."
+   ],
+   "resolved_questions": [
+    {
+     "otazka": "Není zjištěno přesné datum rozhodnutí o zavedení zaměření Technik jaderných zařízení (pouze rámcově dovoditelné ze zápisu oboru do rejstříku k 31. 12. 2025 a z data zveřejnění související aktuality o ČEZ podpoře k 27. 11. 2025).",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    }
+   ],
+   "decisions_required": [
+    "Historická statistika přijímacího řízení pro 23-44-L/01 z roku 2025 se vztahuje jen k jednomu zaměření (svařování) – před sloučením/rozdělením statistik na úrovni zaměření by bylo třeba ověřit, zda CERMAT/škola vedou zaměření jako oddělené obory pro účely přijímacích statistik i v dalších letech."
+   ]
+  }
+ ]
 }

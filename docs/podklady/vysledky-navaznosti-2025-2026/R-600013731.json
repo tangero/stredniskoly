@@ -1,78 +1,91 @@
 {
-  "task_id": "R-600013731",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Střední odborná škola MORAVA o.p.s. (REDIZO 600013731) je beze změny názvu a sídla (Řehořova 1165/5, Brno) ve všech čtyřech snímcích. IZO 110012488 mělo k 31. 3. 2025 registrováno šest oborů (mj. Obchodní akademie, Ekonomika a podnikání, Sociální činnost, Veřejnosprávní činnost) bez oboru 78-42-M/03 Pedagogické lyceum; od snímku 31. 12. 2025 přibyl obor 78-42-M/03 Pedagogické lyceum a zůstává registrován i k 30. 6. 2026. Místo výuky (Řehořova 1165/5) je ve všech snímcích shodné."
-  },
-  "findings": [
+ "task_id": "R-600013731",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Střední odborná škola MORAVA o.p.s. (REDIZO 600013731) je beze změny názvu a sídla (Řehořova 1165/5, Brno) ve všech čtyřech snímcích. IZO 110012488 mělo k 31. 3. 2025 registrováno šest oborů (mj. Obchodní akademie, Ekonomika a podnikání, Sociální činnost, Veřejnosprávní činnost) bez oboru 78-42-M/03 Pedagogické lyceum; od snímku 31. 12. 2025 přibyl obor 78-42-M/03 Pedagogické lyceum a zůstává registrován i k 30. 6. 2026. Místo výuky (Řehořova 1165/5) je ve všech snímcích shodné."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0351"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola obor 78-42-M/03 Pedagogické lyceum nenabízela; v 1. kole JPZ 2026 se objevuje jako nová nabídka vedle pokračujících oborů Veřejnosprávní činnost a Sociální činnost.",
+    "K 31. 3. 2025 obor 78-42-M/03 u IZO 110012488 v rejstříku MŠMT není zapsán; od snímku 31. 12. 2025 je zapsán a zůstává i k 30. 6. 2026 – zápis do rejstříku tedy proběhl mezi oběma snímky roku 2025, v souladu s přípravou na přijímací řízení 2026.",
+    "Web školy (sos-morava.cz) uvádí Pedagogické lyceum (78-42-M/03, denní, 4 roky) jako jeden ze čtyř aktuálně nabízených studijních oborů.",
+    "V sekci aktualit školy se nepodařilo dohledat konkrétní oznámení o zavedení oboru; chybí tedy přímý zdroj s datem rozhodnutí, obor je ale doložen jak rejstříkem, tak aktuální nabídkou školy."
+   ],
+   "conclusion": "Pedagogické lyceum 78-42-M/03 je nový obor SOŠ MORAVA o.p.s., zapsaný do rejstříku MŠMT na přelomu let 2025 a poprvé nabízený v přijímacím řízení pro školní rok 2026/2027. Nemá předchůdce v nabídce školy z roku 2025.",
+   "alternative_explanations": [],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "78-42-M/03 (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0351"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola obor 78-42-M/03 Pedagogické lyceum nenabízela; v 1. kole JPZ 2026 se objevuje jako nová nabídka vedle pokračujících oborů Veřejnosprávní činnost a Sociální činnost.",
-        "K 31. 3. 2025 obor 78-42-M/03 u IZO 110012488 v rejstříku MŠMT není zapsán; od snímku 31. 12. 2025 je zapsán a zůstává i k 30. 6. 2026 – zápis do rejstříku tedy proběhl mezi oběma snímky roku 2025, v souladu s přípravou na přijímací řízení 2026.",
-        "Web školy (sos-morava.cz) uvádí Pedagogické lyceum (78-42-M/03, denní, 4 roky) jako jeden ze čtyř aktuálně nabízených studijních oborů.",
-        "V sekci aktualit školy se nepodařilo dohledat konkrétní oznámení o zavedení oboru; chybí tedy přímý zdroj s datem rozhodnutí, obor je ale doložen jak rejstříkem, tak aktuální nabídkou školy."
-      ],
-      "conclusion": "Pedagogické lyceum 78-42-M/03 je nový obor SOŠ MORAVA o.p.s., zapsaný do rejstříku MŠMT na přelomu let 2025 a poprvé nabízený v přijímacím řízení pro školní rok 2026/2027. Nemá předchůdce v nabídce školy z roku 2025.",
-      "alternative_explanations": [],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["78-42-M/03 (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Řehořova 1165/5, 618 00 Černovice, Brno",
-          "role": "místo výuky",
-          "izo": "110012488",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600013731",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ 2025 a 2026)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 78-42-M/03 Pedagogické lyceum chybí v roce 2025 a je přítomna v roce 2026, ostatní obory pokračují.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "K 31. 3. 2025 obor 78-42-M/03 u IZO 110012488 ještě není zapsán.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "K 31. 12. 2025 je obor 78-42-M/03 u IZO 110012488 již zapsán.",
-          "applicable_period": "stav rejstříku k 31. 12. 2025"
-        },
-        {
-          "url": "https://www.sos-morava.cz/pro-uchazece/studijni-obory/",
-          "title": "Studijní obory – Střední odborná škola MORAVA o.p.s.",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola aktuálně nabízí Pedagogické lyceum (78-42-M/03) jako jeden ze čtyř studijních oborů.",
-          "applicable_period": "aktuální nabídka školy (2026)"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Přesné datum rozhodnutí o zavedení oboru (v aktualitách školy nedohledáno)."
-      ]
+     "text": "Řehořova 1165/5, 618 00 Černovice, Brno",
+     "role": "místo výuky",
+     "izo": "110012488",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600013731",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ 2025 a 2026)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 78-42-M/03 Pedagogické lyceum chybí v roce 2025 a je přítomna v roce 2026, ostatní obory pokračují.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "K 31. 3. 2025 obor 78-42-M/03 u IZO 110012488 ještě není zapsán.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "K 31. 12. 2025 je obor 78-42-M/03 u IZO 110012488 již zapsán.",
+     "applicable_period": "stav rejstříku k 31. 12. 2025"
+    },
+    {
+     "url": "https://www.sos-morava.cz/pro-uchazece/studijni-obory/",
+     "title": "Studijní obory – Střední odborná škola MORAVA o.p.s.",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola aktuálně nabízí Pedagogické lyceum (78-42-M/03) jako jeden ze čtyř studijních oborů.",
+     "applicable_period": "aktuální nabídka školy (2026)"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přesné datum rozhodnutí o zavedení oboru (v aktualitách školy nedohledáno).",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    }
+   ]
+  }
+ ]
 }

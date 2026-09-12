@@ -1,116 +1,136 @@
 {
-  "task_id": "R-600007561",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík MŠMT potvrdil plnou kontinuitu subjektu: REDIZO 600007561 „Hotelová škola Poděbrady, příspěvková organizace“ (IČ 00069175) je ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) vedeno beze změny názvu, sídla Komenského 156/7, Poděbrady III (RÚIAN 18316590) i struktury IZO – střední škola IZO 000069175, domov mládeže IZO 002002833 a školní jídelna IZO 102814180, vše s místem výuky na adrese sídla. Rejstřík tedy vylučuje sloučení, rozdělení, přejmenování i adresní změnu; na úrovni KKOV obory v lokálním snímku evidovány nejsou, takže vznik oboru Lyceum dokládají data CERMAT a web školy."
-  },
-  "findings": [
+ "task_id": "R-600007561",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík MŠMT potvrdil plnou kontinuitu subjektu: REDIZO 600007561 „Hotelová škola Poděbrady, příspěvková organizace“ (IČ 00069175) je ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) vedeno beze změny názvu, sídla Komenského 156/7, Poděbrady III (RÚIAN 18316590) i struktury IZO – střední škola IZO 000069175, domov mládeže IZO 002002833 a školní jídelna IZO 102814180, vše s místem výuky na adrese sídla. Rejstřík tedy vylučuje sloučení, rozdělení, přejmenování i adresní změnu; na úrovni KKOV obory v lokálním snímku evidovány nejsou, takže vznik oboru Lyceum dokládají data CERMAT a web školy."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0206"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V datech CERMAT (1. kolo JPZ, denní studium) vystupuje v obou letech stejný subjekt: REDIZO 600007561, IZO 000069175, „Hotelová škola“, Komenského 156, Poděbrady, PSČ 290 01. V roce 2025 nabízela jediný obor – 65-42-M/01 Hotelnictví (4leté, denní). V roce 2026 nabízí tentýž obor Hotelnictví 65-42-M/01 (pokračuje beze změny kódu, názvu i délky studia) a vedle něj nově 78-42-M/08 Lyceum (režim pokusného ověřování), 4leté denní studium – právě tato nabídka je předmětem otázky Q0206.",
+    "Rejstřík MŠMT (otevřená data, snímky k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 a 30. 6. 2026) vede organizaci „Hotelová škola Poděbrady, příspěvková organizace“ (IČ 00069175) ve všech čtyřech snímcích beze jakékoli změny názvu, sídla Komenského 156/7, Poděbrady III i IZO střední školy 000069175. Škola se tedy mezi ročníky nerozdělila, nesloučila ani nepřejmenovala; adresa v nabídkách je současně sídlem i jediným místem výuky.",
+    "Oficiální web školy (hotelovkapodebrady.cz) dokládá, že obor 78-42-M/08 Lyceum škola otevřela pro školní rok 2026/2027 jako nový: stránka přijímacího řízení uvádí školní vzdělávací program „Moderní ekonomika a udržitelný rozvoj“, denní formu, kapacitu 30 žáků v jedné třídě prvního ročníku a podání přihlášek v 1. kole od 1. do 20. února 2026. Po 1. kole škola vyhlásila 2. kolo s 15 volnými místy (přihlášky 19.–25. 5. 2026).",
+    "Web školy pro rok 2026/2027 nabízí současně oba obory – 65-42-M/01 Hotelnictví (ŠVP Hotelnictví s turismem a event managementem) i 78-42-M/08 Lyceum – což potvrzuje, že Lyceum není přejmenováním ani náhradou Hotelnictví, ale novou, paralelní nabídkou.",
+    "Lyceum 78-42-M/08 je celostátní pilotní obor MŠMT v režimu pokusného ověřování; Hotelová škola Poděbrady jej zařadila s vlastním profilem zaměřeným na ekonomii, management a udržitelný rozvoj, který využívá služebního zázemí školy (školní hotel Junior, stáže Erasmus+).",
+    "Statistiky přijímacího řízení oboru Hotelnictví 65-42-M/01 jsou mezi roky 2025 a 2026 plně srovnatelné (tentýž obor, škola i adresa); nové Lyceum nemá v roce 2025 žádný protějšek, takže žádnou historii přebírat nemůže – srovnatelnost se týká jen pokračujícího oboru.",
+    "Data CERMAT odpovídají pro nabídku: obor 78-42-M/08 nefiguruje v žádném kole let 2024 ani 2025 a poprvé se objevuje v 1. kole 2026 s kapacitou 30 míst. O zápisu do rejstříku před rokem 2025 to nevypovídá."
+   ],
+   "conclusion": "Nepřiřazená nabídka 78-42-M/08 Lyceum (režim pokusného ověřování) v roce 2026 je nově otevřený obor Hotelové školy Poděbrady (REDIZO 600007561, IZO 000069175) pro školní rok 2026/2027, doložený přímo webem školy (kapacita 30 žáků, 1. kolo přijímacího řízení únor 2026). Nejde o přejmenování, změnu kódu ani náhradu jiného oboru: obor Hotelnictví 65-42-M/01 nabídka 2026 obsahuje vedle lycea beze změny. Škola samotná mezi ročníky pokračuje beze změny identity (REDIZO, IZO, IČ, název, sídlo i místo výuky) – jedinou změnou je rozšíření nabídky o nový obor.",
+   "alternative_explanations": [
+    "Teoreticky by Lyceum mohlo být pokračováním některého oboru nabízeného školou před rokem 2025 (mimo sledované období), tj. obnovením po přerušení; dostupné zdroje to nevylučují, ale data fronty pro rok 2025 ani web školy žádné dřívější lyceum nezmiňují a škola obor prezentuje jako nově otevíraný.",
+    "Absence lycea v nabídce 2025 sama o sobě nedokazuje, že obor nebyl v rejstříku registrován již dříve (registrace ≠ nabídka v přijímačkách); pro srovnání let 2025/2026 je ale rozhodné, že v přijímacím řízení 2025 nabízen nebyl."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "REDIZO 600007561 / IZO 000069175 (Hotelová škola Poděbrady, Komenského 156/7) – nový obor 2026: 78-42-M/08 Lyceum (režim pokusného ověřování), ŠVP Moderní ekonomika a udržitelný rozvoj"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0206"],
-      "status": "potvrzeno",
-      "observations": [
-        "V datech CERMAT (1. kolo JPZ, denní studium) vystupuje v obou letech stejný subjekt: REDIZO 600007561, IZO 000069175, „Hotelová škola“, Komenského 156, Poděbrady, PSČ 290 01. V roce 2025 nabízela jediný obor – 65-42-M/01 Hotelnictví (4leté, denní). V roce 2026 nabízí tentýž obor Hotelnictví 65-42-M/01 (pokračuje beze změny kódu, názvu i délky studia) a vedle něj nově 78-42-M/08 Lyceum (režim pokusného ověřování), 4leté denní studium – právě tato nabídka je předmětem otázky Q0206.",
-        "Rejstřík MŠMT (otevřená data, snímky k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 a 30. 6. 2026) vede organizaci „Hotelová škola Poděbrady, příspěvková organizace“ (IČ 00069175) ve všech čtyřech snímcích beze jakékoli změny názvu, sídla Komenského 156/7, Poděbrady III i IZO střední školy 000069175. Škola se tedy mezi ročníky nerozdělila, nesloučila ani nepřejmenovala; adresa v nabídkách je současně sídlem i jediným místem výuky.",
-        "Oficiální web školy (hotelovkapodebrady.cz) dokládá, že obor 78-42-M/08 Lyceum škola otevřela pro školní rok 2026/2027 jako nový: stránka přijímacího řízení uvádí školní vzdělávací program „Moderní ekonomika a udržitelný rozvoj“, denní formu, kapacitu 30 žáků v jedné třídě prvního ročníku a podání přihlášek v 1. kole od 1. do 20. února 2026. Po 1. kole škola vyhlásila 2. kolo s 15 volnými místy (přihlášky 19.–25. 5. 2026).",
-        "Web školy pro rok 2026/2027 nabízí současně oba obory – 65-42-M/01 Hotelnictví (ŠVP Hotelnictví s turismem a event managementem) i 78-42-M/08 Lyceum – což potvrzuje, že Lyceum není přejmenováním ani náhradou Hotelnictví, ale novou, paralelní nabídkou.",
-        "Lyceum 78-42-M/08 je celostátní pilotní obor MŠMT v režimu pokusného ověřování; Hotelová škola Poděbrady jej zařadila s vlastním profilem zaměřeným na ekonomii, management a udržitelný rozvoj, který využívá služebního zázemí školy (školní hotel Junior, stáže Erasmus+)."
-      ],
-      "conclusion": "Nepřiřazená nabídka 78-42-M/08 Lyceum (režim pokusného ověřování) v roce 2026 je nově otevřený obor Hotelové školy Poděbrady (REDIZO 600007561, IZO 000069175) pro školní rok 2026/2027, doložený přímo webem školy (kapacita 30 žáků, 1. kolo přijímacího řízení únor 2026). Nejde o přejmenování, změnu kódu ani náhradu jiného oboru: obor Hotelnictví 65-42-M/01 nabídka 2026 obsahuje vedle lycea beze změny. Škola samotná mezi ročníky pokračuje beze změny identity (REDIZO, IZO, IČ, název, sídlo i místo výuky) – jedinou změnou je rozšíření nabídky o nový obor.",
-      "alternative_explanations": [
-        "Teoreticky by Lyceum mohlo být pokračováním některého oboru nabízeného školou před rokem 2025 (mimo sledované období), tj. obnovením po přerušení; dostupné zdroje to nevylučují, ale data fronty pro rok 2025 ani web školy žádné dřívější lyceum nezmiňují a škola obor prezentuje jako nově otevíraný.",
-        "Absence lycea v nabídce 2025 sama o sobě nedokazuje, že obor nebyl v rejstříku registrován již dříve (registrace ≠ nabídka v přijímačkách); pro srovnání let 2025/2026 je ale rozhodné, že v přijímacím řízení 2025 nabízen nebyl."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": [
-          "REDIZO 600007561 / IZO 000069175 (Hotelová škola Poděbrady, Komenského 156/7) – nový obor 2026: 78-42-M/08 Lyceum (režim pokusného ověřování), ŠVP Moderní ekonomika a udržitelný rozvoj"
-        ]
-      },
-      "addresses": [
-        {
-          "text": "Komenského 156/7, Poděbrady III, 290 01 Poděbrady (RÚIAN 18316590)",
-          "role": "sídlo",
-          "izo": "izo_000069175",
-          "valid_period": "všechny snímky rejstříku 31. 3. 2025 – 30. 6. 2026 beze změny; v datech CERMAT zapsána jako „Komenského 156, Poděbrady“",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Komenského 156/7, Poděbrady III, 290 01 Poděbrady (RÚIAN 18316590)",
-          "role": "místo výuky",
-          "izo": "izo_000069175",
-          "valid_period": "všechny snímky rejstříku 31. 3. 2025 – 30. 6. 2026; jediné místo výuky střední školy, shodné se sídlem",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600007561",
-          "title": "Rešeršní fronta – kontextové nabídky REDIZO 600007561, roky 2025/2026",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Rok 2025: jediná nabídka 65-42-M/01 Hotelnictví. Rok 2026: pokračující 65-42-M/01 Hotelnictví plus nová nabídka 78-42-M/08 Lyceum (režim pokusného ověřování); obě pod stejným REDIZO, IZO, názvem školy a adresou.",
-          "applicable_period": "přijímací řízení 2025 a 2026 (1. kolo JPZ, denní studium)"
-        },
-        {
-          "url": "https://hotelovkapodebrady.cz/buduhotelovak/prijimaci-rizeni/lyceum-1-kolo",
-          "title": "Lyceum – přijímací řízení pro školní rok 2026/2027 | Hotelová škola Poděbrady",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola vyhlašuje přijímací řízení 2026/2027 do oboru 78-42-M/08 Lyceum, ŠVP „Moderní ekonomika a udržitelný rozvoj“, denní forma, 30 žáků v jedné třídě 1. ročníku, přihlášky 1.–20. 2. 2026, jednotná přijímací zkouška CZVV – přímý důkaz nového otevření oboru pro rok 2026/2027.",
-          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
-        },
-        {
-          "url": "https://hotelovkapodebrady.cz/buduhotelovak/lyceum",
-          "title": "Lyceum – 2. kolo přijímacího řízení | Hotelová škola Poděbrady",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Po 1. kole škola otevřela 2. kolo přijímacího řízení do oboru 78-42-M/08 Lyceum s 15 volnými místy (přihlášky 19.–25. 5. 2026) – potvrzuje, že obor byl v roce 2026 skutečně v nabídce a škola do něj reálně přijímala.",
-          "applicable_period": "2. kolo přijímacího řízení 2026 (květen 2026)"
-        },
-        {
-          "url": "https://hotelovkapodebrady.cz/buduhotelovak/prijimaci-rizeni",
-          "title": "Přijímací řízení 2026/2027 | Hotelová škola Poděbrady",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Přehled oborů pro 2026/2027: 65-42-M/01 Hotelnictví i 78-42-M/08 Lyceum současně – dokládá, že Lyceum nenahrazuje Hotelnictví, ale jde o paralelní novou nabídku.",
-          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2025)",
-          "published_at": "2025-03-31",
-          "checked_at": "2026-09-12",
-          "supports": "Stav v období 1. kola JPZ 2025: REDIZO 600007561 „Hotelová škola Poděbrady, příspěvková organizace“ (IČ 00069175), sídlo Komenského 156/7, Poděbrady III; střední škola IZO 000069175 s místem výuky na adrese sídla.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025 (období 1. kola JPZ 2025)"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
-          "published_at": "2026-03-31",
-          "checked_at": "2026-09-12",
-          "supports": "Stav v období 1. kola JPZ 2026: subjekt veden beze změny názvu, sídla i IZO oproti roku 2025 – vylučuje sloučení, rozdělení, přejmenování a adresní změnu jako vysvětlení nové nabídky.",
-          "applicable_period": "stav rejstříku k 31. 3. 2026 (období 1. kola JPZ 2026)"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 30. 6. 2026)",
-          "published_at": "2026-06-30",
-          "checked_at": "2026-09-12",
-          "supports": "Nejnovější snímek: REDIZO 600007561 i IZO 000069175 nadále vedeny beze změny (sídlo Komenského 156/7, RÚIAN 18316590); identita školy stabilní i po skončení přijímacího řízení 2026.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda škola některý lyceální obor nabízela či registrovala již před rokem 2025, se v rámci úkolu nezjišťovalo; pro dvouleté srovnání 2025/2026 to ale nemá vliv – v roce 2025 obor v přijímacím řízení nabízen nebyl.",
-        "Statistiky přijímacího řízení oboru Hotelnictví 65-42-M/01 jsou mezi roky 2025 a 2026 plně srovnatelné (tentýž obor, škola i adresa); nové Lyceum nemá v roce 2025 žádný protějšek, takže žádnou historii přebírat nemůže – srovnatelnost se týká jen pokračujícího oboru."
-      ]
+     "text": "Komenského 156/7, Poděbrady III, 290 01 Poděbrady (RÚIAN 18316590)",
+     "role": "sídlo",
+     "izo": "izo_000069175",
+     "valid_period": "všechny snímky rejstříku 31. 3. 2025 – 30. 6. 2026 beze změny; v datech CERMAT zapsána jako „Komenského 156, Poděbrady“",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Komenského 156/7, Poděbrady III, 290 01 Poděbrady (RÚIAN 18316590)",
+     "role": "místo výuky",
+     "izo": "izo_000069175",
+     "valid_period": "všechny snímky rejstříku 31. 3. 2025 – 30. 6. 2026; jediné místo výuky střední školy, shodné se sídlem",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600007561",
+     "title": "Rešeršní fronta – kontextové nabídky REDIZO 600007561, roky 2025/2026",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Rok 2025: jediná nabídka 65-42-M/01 Hotelnictví. Rok 2026: pokračující 65-42-M/01 Hotelnictví plus nová nabídka 78-42-M/08 Lyceum (režim pokusného ověřování); obě pod stejným REDIZO, IZO, názvem školy a adresou.",
+     "applicable_period": "přijímací řízení 2025 a 2026 (1. kolo JPZ, denní studium)"
+    },
+    {
+     "url": "https://hotelovkapodebrady.cz/buduhotelovak/prijimaci-rizeni/lyceum-1-kolo",
+     "title": "Lyceum – přijímací řízení pro školní rok 2026/2027 | Hotelová škola Poděbrady",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola vyhlašuje přijímací řízení 2026/2027 do oboru 78-42-M/08 Lyceum, ŠVP „Moderní ekonomika a udržitelný rozvoj“, denní forma, 30 žáků v jedné třídě 1. ročníku, přihlášky 1.–20. 2. 2026, jednotná přijímací zkouška CZVV – přímý důkaz nového otevření oboru pro rok 2026/2027.",
+     "applicable_period": "přijímací řízení pro školní rok 2026/2027"
+    },
+    {
+     "url": "https://hotelovkapodebrady.cz/buduhotelovak/lyceum",
+     "title": "Lyceum – 2. kolo přijímacího řízení | Hotelová škola Poděbrady",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Po 1. kole škola otevřela 2. kolo přijímacího řízení do oboru 78-42-M/08 Lyceum s 15 volnými místy (přihlášky 19.–25. 5. 2026) – potvrzuje, že obor byl v roce 2026 skutečně v nabídce a škola do něj reálně přijímala.",
+     "applicable_period": "2. kolo přijímacího řízení 2026 (květen 2026)"
+    },
+    {
+     "url": "https://hotelovkapodebrady.cz/buduhotelovak/prijimaci-rizeni",
+     "title": "Přijímací řízení 2026/2027 | Hotelová škola Poděbrady",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Přehled oborů pro 2026/2027: 65-42-M/01 Hotelnictví i 78-42-M/08 Lyceum současně – dokládá, že Lyceum nenahrazuje Hotelnictví, ale jde o paralelní novou nabídku.",
+     "applicable_period": "přijímací řízení pro školní rok 2026/2027"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2025)",
+     "published_at": "2025-03-31",
+     "checked_at": "2026-09-12",
+     "supports": "Stav v období 1. kola JPZ 2025: REDIZO 600007561 „Hotelová škola Poděbrady, příspěvková organizace“ (IČ 00069175), sídlo Komenského 156/7, Poděbrady III; střední škola IZO 000069175 s místem výuky na adrese sídla.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025 (období 1. kola JPZ 2025)"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+     "published_at": "2026-03-31",
+     "checked_at": "2026-09-12",
+     "supports": "Stav v období 1. kola JPZ 2026: subjekt veden beze změny názvu, sídla i IZO oproti roku 2025 – vylučuje sloučení, rozdělení, přejmenování a adresní změnu jako vysvětlení nové nabídky.",
+     "applicable_period": "stav rejstříku k 31. 3. 2026 (období 1. kola JPZ 2026)"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 30. 6. 2026)",
+     "published_at": "2026-06-30",
+     "checked_at": "2026-09-12",
+     "supports": "Nejnovější snímek: REDIZO 600007561 i IZO 000069175 nadále vedeny beze změny (sídlo Komenského 156/7, RÚIAN 18316590); identita školy stabilní i po skončení přijímacího řízení 2026.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx; data/PZ2024_kolo2_uchazeci_prihlasky_vysledky.xlsx; data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx; data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx; data/PZ2026_kolo1_skolobory_kapacity.xlsx",
+     "title": "CERMAT – přihlášky a výsledky přijímacího řízení (soubory v repozitáři)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/08 chybí ve všech kolech let 2024 a 2025, poprvé je v 1. kole 2026. Soubory 2024 a 2025 jsou na úrovni uchazečů, obor bez přihlášek v nich chybí, i kdyby vypsán byl.",
+     "applicable_period": "1. a 2. kolo 2024 a 2025, 1. kolo 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda škola některý lyceální obor nabízela či registrovala již před rokem 2025, se v rámci úkolu nezjišťovalo; pro dvouleté srovnání 2025/2026 to ale nemá vliv – v roce 2025 obor v přijímacím řízení nabízen nebyl.",
+     "uzavreno": "Odpovězeno z dat CERMAT dostupných v repozitáři: data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2024_kolo2_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx, data/PZ2026_kolo1_skolobory_kapacity.xlsx"
+    }
+   ]
+  }
+ ]
 }

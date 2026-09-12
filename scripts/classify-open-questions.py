@@ -38,7 +38,7 @@ KATEGORIE = [
      r"perioda|pravideln\w+ cykl|dvouletý interval|víceletého cyklu|jak často",
      "Test dvouletého cyklu proti datům 2024; u delších period je potřeba starší ročník."),
     ("trvalost_ukonceni",
-     r"trval\w+|dočasn\w+|jednoroční přerušení|znovu (vyhlás|otevř)|zda a kdy|bude .*(otevřen|vyhlášen)|2027",
+     r"trval\w+|dočasn\w+|jednoroční přerušení|znovu (vyhlás|otevř)|zda a kdy|zda a od kdy|obnoven\w*|vznikne|bude .*(otevřen|vyhlášen)|2027",
      "Nabídka roku 2027, až bude zveřejněna. Do té doby nerozhodnutelné."),
     ("prenos_statistik",
      r"statistik|přenášet|přenositeln|srovnateln",

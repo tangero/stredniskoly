@@ -90,8 +90,12 @@
    "history_comparability": "partially",
    "recommended_action": "approve_mapping",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Přesné datum formálního výmazu REDIZO 600013898 z rejstříku MŠMT (k 30. 6. 2026 ještě evidováno)."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přesné datum formálního výmazu REDIZO 600013898 z rejstříku MŠMT (k 30. 6. 2026 ještě evidováno).",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    }
    ]
   },
   {
@@ -278,8 +282,12 @@
    "history_comparability": "partially",
    "recommended_action": "manual_review",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Přesný důvod a datum změny jazykového profilu výuky u zaměření 4leté Nový PORG Praha 4."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přesný důvod a datum změny jazykového profilu výuky u zaměření 4leté Nový PORG Praha 4.",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 1: příčina samotné změny názvu, textu zaměření nebo adresního údaje se nezkoumá, změna se pouze konstatuje."
+    }
    ]
   }
  ]

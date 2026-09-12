@@ -22,7 +22,8 @@
     "V 1. kole JPZ 2026 škola nově nabízí obor 65-41-L/51 Gastronomie se zaměřením „Gastronomický management“ (2 roky, denní); v roce 2025 tato nabídka u REDIZO 600013383 chyběla.",
     "Rejstřík MŠMT eviduje obor 65-41-L/51 Gastronomie u IZO 110000048 ve všech čtyřech snímcích, včetně 31. 3. 2025 – obor byl tedy registrován už předtím, než se objevil v nabídce CERMAT 2026.",
     "Web školy (cergas-bk.cz) popisuje Gastronomický management jako maturitní nástavbové studium určené pro absolventy gastronomických učebních oborů (např. Kuchař-číšník) – odpovídá kódu L/51 (nástavba po tříletém oboru s výučním listem).",
-    "Data 1. kola přijímacího řízení 2024 (úroveň uchazečů) evidují u téhož IZO obor 65-41-L/51 s 2 přihláškami a 0 přijatými uchazeči. Obor se tedy v roce 2024 nabízel, v roce 2025 v 1. kole chyběl a v roce 2026 je vypsán znovu. Nejde o novou nabídku, ale o návrat po vynechaném ročníku; vztah proto veden jako pokračování."
+    "Data 1. kola přijímacího řízení 2024 (úroveň uchazečů) evidují u téhož IZO obor 65-41-L/51 s 2 přihláškami a 0 přijatými uchazeči. Obor se tedy v roce 2024 nabízel, v roce 2025 v 1. kole chyběl a v roce 2026 je vypsán znovu. Nejde o novou nabídku, ale o návrat po vynechaném ročníku; vztah proto veden jako pokračování.",
+    "Data CERMAT odpovídají: v 1. kole 2024 byl obor 65-41-L/51 vypsán a přihlásili se do něj dva uchazeči, žádný přijat nebyl. Obor tedy nebyl jen formální položkou rejstříku, přijímací řízení proběhlo, ale nenaplnilo se."
    ],
    "conclusion": "Jde pravděpodobně o obnovení přijímacího řízení do dříve registrovaného, ale v 1. kole JPZ 2025 nenabízeného nástavbového oboru Gastronomie/Gastronomický management, nikoli o obor s nově vzniklým kódem.",
    "alternative_explanations": [
@@ -90,14 +91,29 @@
      "checked_at": "2026-09-12",
      "supports": "Obor 65-41-L/51 měl u tohoto IZO v 1. kole 2024 2 přihlášek a 0 přijatých uchazečů – obor byl v roce 2024 nabízen.",
      "applicable_period": "1. kolo přijímacího řízení 2024"
+    },
+    {
+     "url": "data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx",
+     "title": "CERMAT – přihlášky a výsledky přijímacího řízení (soubory v repozitáři)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 65-41-L/51 měl v 1. kole 2024 dvě přihlášky a nula přijatých. Soubory 2024 a 2025 jsou na úrovni uchazečů, obor bez přihlášek v nich chybí, i kdyby vypsán byl.",
+     "applicable_period": "1. a 2. kolo 2024 a 2025, 1. kolo 2026"
     }
    ],
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Přesné datum vyhlášení přijímacího řízení pro Gastronomický management 2026/27 nebylo na webu školy dohledáno.",
-    "Není jasné, zda obor byl v minulosti (před rokem 2025) fakticky vyučován, nebo zůstával v rejstříku jen formálně neaktivní."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přesné datum vyhlášení přijímacího řízení pro Gastronomický management 2026/27 nebylo na webu školy dohledáno.",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    },
+    {
+     "otazka": "Není jasné, zda obor byl v minulosti (před rokem 2025) fakticky vyučován, nebo zůstával v rejstříku jen formálně neaktivní.",
+     "uzavreno": "Odpovězeno z dat CERMAT dostupných v repozitáři: data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx"
+    }
    ]
   }
  ]

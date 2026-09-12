@@ -1,172 +1,199 @@
 {
-  "task_id": "R-600170080",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík potvrdil plnou kontinuitu subjektu: Střední odborná škola automobilní, informatiky a Gymnázium, Weilova 1270/4, Hostivař, Praha 10 (REDIZO 600170080, IČ 00497070) figuruje beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026), včetně IZO 000497070 (Střední škola, místa výuky Weilova 1270/4 Hostivař, Dobronická 47/7 Libuš, Mlýnská 105 Desná III, U plynárny 1403/99 Michle). Obor 79-41-K/41 Gymnázium je ve všech snímcích registrován shodně, rejstřík ovšem neeviduje textové zaměření uvnitř oboru (to je pouze údaj CERMAT/školy), takže samotný rejstřík rozdíl mezi 'Elektromobilita/Elektromobility' a 'Multimédia/Multimédií' nerozliší."
-  },
-  "findings": [
+ "task_id": "R-600170080",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrdil plnou kontinuitu subjektu: Střední odborná škola automobilní, informatiky a Gymnázium, Weilova 1270/4, Hostivař, Praha 10 (REDIZO 600170080, IČ 00497070) figuruje beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026), včetně IZO 000497070 (Střední škola, místa výuky Weilova 1270/4 Hostivař, Dobronická 47/7 Libuš, Mlýnská 105 Desná III, U plynárny 1403/99 Michle). Obor 79-41-K/41 Gymnázium je ve všech snímcích registrován shodně, rejstřík ovšem neeviduje textové zaměření uvnitř oboru (to je pouze údaj CERMAT/školy), takže samotný rejstřík rozdíl mezi 'Elektromobilita/Elektromobility' a 'Multimédia/Multimédií' nerozliší."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0142",
+    "Q0226"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela 79-41-K/41 Gymnázium se zaměřením zapsaným jako „Elektromobilita“; v 1. kole JPZ 2026 stejný obor 79-41-K/41 se zaměřením zapsaným jako „Elektromobility“.",
+    "Obor 79-41-K/41 Gymnázium je u IZO 000497070 registrován v rejstříku MŠMT beze změny ve všech čtyřech snímcích 2025-03-31 až 2026-06-30.",
+    "Web školy (skolahostivar.cz) má samostatnou trvalou stránku https://skolahostivar.cz/gymnazium-elektromobility/ s programem „Gymnázium Elektromobility“, KKOV 79–41–K/41, kapacita 30 žáků, zaměření na automobily s alternativními pohony (elektrotechnika, elektromobily) – shoduje se kódem oboru i obsahem s nabídkou CERMAT.",
+    "Souhrnná stránka oborů https://skolahostivar.cz/obory/ i úvodní stránka https://skolahostivar.cz/ uvádějí toto zaměření pod názvem „Gymnázium Elektromobility“ (2. pád), tedy stejný tvar jako nabídka CERMAT 2026; starší článek školy naopak používá tvar „Gymnázium elektromobilita“ (1. pád), shodný s nabídkou CERMAT 2025.",
+    "Žádná z otevřených stránek školy nezmiňuje zánik, přerušení ani nově vzniklé zaměření elektromobility – prezentuje se jako průběžně nabízený program bez uvedeného data vzniku."
+   ],
+   "conclusion": "Jde o tutéž nabídku zaměření gymnázia na elektromobilitu, pouze zapsanou v CERMAT datech jiným gramatickým tvarem (1. pád „Elektromobilita“ v roce 2025, 2. pád „Elektromobility“ v roce 2026). Škola program dlouhodobě a nepřetržitě nabízí pod týmž kódem oboru 79-41-K/41 a se stejným obsahem; web nepoužívá pro toto zaměření žádný jiný text ani neuvádí přerušení.",
+   "alternative_explanations": [
+    "Teoreticky mohlo dojít k drobné úpravě ŠVP mezi lety, aniž by se to projevilo na veřejné prezentaci webu – to však žádný dostupný zdroj nenaznačuje."
+   ],
+   "relationship": {
+    "type": "rename_only",
+    "from": [
+     "79-41-K/41 Gymnázium – zaměření Elektromobilita (2025)"
+    ],
+    "to": [
+     "79-41-K/41 Gymnázium – zaměření Elektromobility (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0142", "Q0226"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela 79-41-K/41 Gymnázium se zaměřením zapsaným jako „Elektromobilita“; v 1. kole JPZ 2026 stejný obor 79-41-K/41 se zaměřením zapsaným jako „Elektromobility“.",
-        "Obor 79-41-K/41 Gymnázium je u IZO 000497070 registrován v rejstříku MŠMT beze změny ve všech čtyřech snímcích 2025-03-31 až 2026-06-30.",
-        "Web školy (skolahostivar.cz) má samostatnou trvalou stránku https://skolahostivar.cz/gymnazium-elektromobility/ s programem „Gymnázium Elektromobility“, KKOV 79–41–K/41, kapacita 30 žáků, zaměření na automobily s alternativními pohony (elektrotechnika, elektromobily) – shoduje se kódem oboru i obsahem s nabídkou CERMAT.",
-        "Souhrnná stránka oborů https://skolahostivar.cz/obory/ i úvodní stránka https://skolahostivar.cz/ uvádějí toto zaměření pod názvem „Gymnázium Elektromobility“ (2. pád), tedy stejný tvar jako nabídka CERMAT 2026; starší článek školy naopak používá tvar „Gymnázium elektromobilita“ (1. pád), shodný s nabídkou CERMAT 2025.",
-        "Žádná z otevřených stránek školy nezmiňuje zánik, přerušení ani nově vzniklé zaměření elektromobility – prezentuje se jako průběžně nabízený program bez uvedeného data vzniku."
-      ],
-      "conclusion": "Jde o tutéž nabídku zaměření gymnázia na elektromobilitu, pouze zapsanou v CERMAT datech jiným gramatickým tvarem (1. pád „Elektromobilita“ v roce 2025, 2. pád „Elektromobility“ v roce 2026). Škola program dlouhodobě a nepřetržitě nabízí pod týmž kódem oboru 79-41-K/41 a se stejným obsahem; web nepoužívá pro toto zaměření žádný jiný text ani neuvádí přerušení.",
-      "alternative_explanations": [
-        "Teoreticky mohlo dojít k drobné úpravě ŠVP mezi lety, aniž by se to projevilo na veřejné prezentaci webu – to však žádný dostupný zdroj nenaznačuje."
-      ],
-      "relationship": {
-        "type": "rename_only",
-        "from": ["79-41-K/41 Gymnázium – zaměření Elektromobilita (2025)"],
-        "to": ["79-41-K/41 Gymnázium – zaměření Elektromobility (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Weilova 1270/4, 102 00 Hostivař, Praha",
-          "role": "sídlo",
-          "izo": "600170080",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Weilova 1270/4, 102 00 Hostivař, Praha",
-          "role": "místo výuky",
-          "izo": "000497070",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://skolahostivar.cz/gymnazium-elektromobility/",
-          "title": "Gymnázium Elektromobility – SOŠ automobilní, informatiky a Gymnázium",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola trvale nabízí program Gymnázium Elektromobility, KKOV 79-41-K/41, kapacita 30 žáků, zaměření na alternativní pohony/elektrotechniku – shoda s oborem a obsahem nabídky CERMAT v obou letech.",
-          "applicable_period": "aktuální nabídka školy, stav k 2026-09-12"
-        },
-        {
-          "url": "https://skolahostivar.cz/obory/",
-          "title": "Obory – Střední odborná škola automobilní, informatiky a Gymnázium",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Souhrn oborů školy uvádí „Gymnázium Elektromobility“ jako jeden ze dvou trvale nabízených gymnaziálních programů, bez zmínky o nedávném vzniku či přerušení.",
-          "applicable_period": "aktuální nabídka školy, stav k 2026-09-12"
-        },
-        {
-          "url": "https://skolahostivar.cz/gymnazium/",
-          "title": "Gymnázium elektromobilita a Karlova univerzita – skolahostivar.cz",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Starší text webu školy používá pro totéž zaměření tvar 1. pádu „Gymnázium elektromobilita“, odpovídající zápisu v nabídce CERMAT 2025.",
-          "applicable_period": "publikační historie webu, přesné datum nezjištěno"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 79-41-K/41 Gymnázium zůstává u IZO 000497070 registrován beze změny; subjekt i IZO jsou beze změn.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600170080",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 79-41-K/41 Gymnázium se zaměřením „Elektromobilita“ v roce 2025 a „Elektromobility“ v roce 2026, stejný REDIZO/IZO, shodná délka i forma studia.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "comparable",
-      "recommended_action": "approve_mapping",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Přesné datum, odkdy web používá tvar „Elektromobility“ místo „Elektromobilita“, nebylo dohledáno – jde jen o změnu zápisu/gramatického tvaru bez vlivu na závěr."
-      ]
+     "text": "Weilova 1270/4, 102 00 Hostivař, Praha",
+     "role": "sídlo",
+     "izo": "600170080",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     },
     {
-      "issue_ids": ["Q0141", "Q0227"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela 79-41-K/41 Gymnázium se zaměřením zapsaným jako „Multimédia“; v 1. kole JPZ 2026 stejný obor 79-41-K/41 se zaměřením zapsaným jako „Multimédií“.",
-        "Obor 79-41-K/41 Gymnázium je u IZO 000497070 registrován v rejstříku MŠMT beze změny ve všech čtyřech snímcích 2025-03-31 až 2026-06-30.",
-        "Web školy má samostatnou trvalou stránku https://skolahostivar.cz/gymnazium-multimedii/ s programem „Gymnázium Multimédií“, KKOV 79–41–K/41, kapacita 30 žáků, výuka grafiky, kresby, animace, fotografie, zvuku, videa a webdesignu – obsahově odpovídá zaměření „Multimédia/Multimédií“ z nabídky CERMAT.",
-        "Souhrnná stránka oborů https://skolahostivar.cz/obory/ uvádí „Gymnázium Multimédií“ jako trvalou součást nabídky vedle „Gymnázia Elektromobility“, bez zmínky o nedávném vzniku či přerušení programu.",
-        "Název na webu je ve 2. pádě („Multimédií“), shodně s tvarem zápisu v nabídce CERMAT 2026; nabídka CERMAT 2025 používá 1. pád „Multimédia“ – jde o stejnou změnu gramatického tvaru jako u zaměření elektromobility na téže škole."
-      ],
-      "conclusion": "Jde o tutéž nabídku zaměření gymnázia na multimédia, pouze zapsanou v CERMAT datech jiným gramatickým tvarem (1. pád „Multimédia“ v roce 2025, 2. pád „Multimédií“ v roce 2026). Škola program dlouhodobě a nepřetržitě nabízí pod týmž kódem oboru 79-41-K/41 a se stejným obsahem výuky.",
-      "alternative_explanations": [
-        "Teoreticky mohlo dojít k drobné úpravě ŠVP mezi lety, aniž by se to projevilo na veřejné prezentaci webu – to však žádný dostupný zdroj nenaznačuje."
-      ],
-      "relationship": {
-        "type": "rename_only",
-        "from": ["79-41-K/41 Gymnázium – zaměření Multimédia (2025)"],
-        "to": ["79-41-K/41 Gymnázium – zaměření Multimédií (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Weilova 1270/4, 102 00 Hostivař, Praha",
-          "role": "sídlo",
-          "izo": "600170080",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Weilova 1270/4, 102 00 Hostivař, Praha",
-          "role": "místo výuky",
-          "izo": "000497070",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://skolahostivar.cz/gymnazium-multimedii/",
-          "title": "Gymnázium Multimédií – SOŠ automobilní, informatiky a Gymnázium",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola trvale nabízí program Gymnázium Multimédií, KKOV 79-41-K/41, kapacita 30 žáků, výuka grafiky, multimédií, marketingu a designu – shoda s oborem a obsahem nabídky CERMAT v obou letech.",
-          "applicable_period": "aktuální nabídka školy, stav k 2026-09-12"
-        },
-        {
-          "url": "https://skolahostivar.cz/obory/",
-          "title": "Obory – Střední odborná škola automobilní, informatiky a Gymnázium",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Souhrn oborů školy uvádí „Gymnázium Multimédií“ jako jeden ze dvou trvale nabízených gymnaziálních programů, bez zmínky o nedávném vzniku či přerušení.",
-          "applicable_period": "aktuální nabídka školy, stav k 2026-09-12"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 79-41-K/41 Gymnázium zůstává u IZO 000497070 registrován beze změny; subjekt i IZO jsou beze změn.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600170080",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 79-41-K/41 Gymnázium se zaměřením „Multimédia“ v roce 2025 a „Multimédií“ v roce 2026, stejný REDIZO/IZO, shodná délka i forma studia.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "comparable",
-      "recommended_action": "approve_mapping",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Přesné datum, odkdy web používá tvar „Multimédií“ místo „Multimédia“, nebylo dohledáno – jde jen o změnu zápisu/gramatického tvaru bez vlivu na závěr."
-      ]
+     "text": "Weilova 1270/4, 102 00 Hostivař, Praha",
+     "role": "místo výuky",
+     "izo": "000497070",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://skolahostivar.cz/gymnazium-elektromobility/",
+     "title": "Gymnázium Elektromobility – SOŠ automobilní, informatiky a Gymnázium",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola trvale nabízí program Gymnázium Elektromobility, KKOV 79-41-K/41, kapacita 30 žáků, zaměření na alternativní pohony/elektrotechniku – shoda s oborem a obsahem nabídky CERMAT v obou letech.",
+     "applicable_period": "aktuální nabídka školy, stav k 2026-09-12"
+    },
+    {
+     "url": "https://skolahostivar.cz/obory/",
+     "title": "Obory – Střední odborná škola automobilní, informatiky a Gymnázium",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Souhrn oborů školy uvádí „Gymnázium Elektromobility“ jako jeden ze dvou trvale nabízených gymnaziálních programů, bez zmínky o nedávném vzniku či přerušení.",
+     "applicable_period": "aktuální nabídka školy, stav k 2026-09-12"
+    },
+    {
+     "url": "https://skolahostivar.cz/gymnazium/",
+     "title": "Gymnázium elektromobilita a Karlova univerzita – skolahostivar.cz",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Starší text webu školy používá pro totéž zaměření tvar 1. pádu „Gymnázium elektromobilita“, odpovídající zápisu v nabídce CERMAT 2025.",
+     "applicable_period": "publikační historie webu, přesné datum nezjištěno"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 79-41-K/41 Gymnázium zůstává u IZO 000497070 registrován beze změny; subjekt i IZO jsou beze změn.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600170080",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 79-41-K/41 Gymnázium se zaměřením „Elektromobilita“ v roce 2025 a „Elektromobility“ v roce 2026, stejný REDIZO/IZO, shodná délka i forma studia.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "comparable",
+   "recommended_action": "approve_mapping",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přesné datum, odkdy web používá tvar „Elektromobility“ místo „Elektromobilita“, nebylo dohledáno – jde jen o změnu zápisu/gramatického tvaru bez vlivu na závěr.",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    }
+   ]
+  },
+  {
+   "issue_ids": [
+    "Q0141",
+    "Q0227"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela 79-41-K/41 Gymnázium se zaměřením zapsaným jako „Multimédia“; v 1. kole JPZ 2026 stejný obor 79-41-K/41 se zaměřením zapsaným jako „Multimédií“.",
+    "Obor 79-41-K/41 Gymnázium je u IZO 000497070 registrován v rejstříku MŠMT beze změny ve všech čtyřech snímcích 2025-03-31 až 2026-06-30.",
+    "Web školy má samostatnou trvalou stránku https://skolahostivar.cz/gymnazium-multimedii/ s programem „Gymnázium Multimédií“, KKOV 79–41–K/41, kapacita 30 žáků, výuka grafiky, kresby, animace, fotografie, zvuku, videa a webdesignu – obsahově odpovídá zaměření „Multimédia/Multimédií“ z nabídky CERMAT.",
+    "Souhrnná stránka oborů https://skolahostivar.cz/obory/ uvádí „Gymnázium Multimédií“ jako trvalou součást nabídky vedle „Gymnázia Elektromobility“, bez zmínky o nedávném vzniku či přerušení programu.",
+    "Název na webu je ve 2. pádě („Multimédií“), shodně s tvarem zápisu v nabídce CERMAT 2026; nabídka CERMAT 2025 používá 1. pád „Multimédia“ – jde o stejnou změnu gramatického tvaru jako u zaměření elektromobility na téže škole."
+   ],
+   "conclusion": "Jde o tutéž nabídku zaměření gymnázia na multimédia, pouze zapsanou v CERMAT datech jiným gramatickým tvarem (1. pád „Multimédia“ v roce 2025, 2. pád „Multimédií“ v roce 2026). Škola program dlouhodobě a nepřetržitě nabízí pod týmž kódem oboru 79-41-K/41 a se stejným obsahem výuky.",
+   "alternative_explanations": [
+    "Teoreticky mohlo dojít k drobné úpravě ŠVP mezi lety, aniž by se to projevilo na veřejné prezentaci webu – to však žádný dostupný zdroj nenaznačuje."
+   ],
+   "relationship": {
+    "type": "rename_only",
+    "from": [
+     "79-41-K/41 Gymnázium – zaměření Multimédia (2025)"
+    ],
+    "to": [
+     "79-41-K/41 Gymnázium – zaměření Multimédií (2026)"
+    ]
+   },
+   "addresses": [
+    {
+     "text": "Weilova 1270/4, 102 00 Hostivař, Praha",
+     "role": "sídlo",
+     "izo": "600170080",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Weilova 1270/4, 102 00 Hostivař, Praha",
+     "role": "místo výuky",
+     "izo": "000497070",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "https://skolahostivar.cz/gymnazium-multimedii/",
+     "title": "Gymnázium Multimédií – SOŠ automobilní, informatiky a Gymnázium",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola trvale nabízí program Gymnázium Multimédií, KKOV 79-41-K/41, kapacita 30 žáků, výuka grafiky, multimédií, marketingu a designu – shoda s oborem a obsahem nabídky CERMAT v obou letech.",
+     "applicable_period": "aktuální nabídka školy, stav k 2026-09-12"
+    },
+    {
+     "url": "https://skolahostivar.cz/obory/",
+     "title": "Obory – Střední odborná škola automobilní, informatiky a Gymnázium",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Souhrn oborů školy uvádí „Gymnázium Multimédií“ jako jeden ze dvou trvale nabízených gymnaziálních programů, bez zmínky o nedávném vzniku či přerušení.",
+     "applicable_period": "aktuální nabídka školy, stav k 2026-09-12"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 79-41-K/41 Gymnázium zůstává u IZO 000497070 registrován beze změny; subjekt i IZO jsou beze změn.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600170080",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 79-41-K/41 Gymnázium se zaměřením „Multimédia“ v roce 2025 a „Multimédií“ v roce 2026, stejný REDIZO/IZO, shodná délka i forma studia.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "comparable",
+   "recommended_action": "approve_mapping",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přesné datum, odkdy web používá tvar „Multimédií“ místo „Multimédia“, nebylo dohledáno – jde jen o změnu zápisu/gramatického tvaru bez vlivu na závěr.",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    }
+   ]
+  }
+ ]
 }

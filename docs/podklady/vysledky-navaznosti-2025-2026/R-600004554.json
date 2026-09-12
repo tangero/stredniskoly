@@ -1,154 +1,163 @@
 {
-  "task_id": "R-600004554",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík MŠMT potvrdil, že subjekt REDIZO 600004554 (Střední průmyslová škola sdělovací techniky, Praha 1, Panská 3) je veden ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) beze změny úplného názvu, sídla (Panská 856/3, Nové Město) i IZO 061388866; místa výuky jsou Panská 856/3 a Malá Štupartská 977/8. Absence rejstříku v původním nálezu nezpůsobila chybu – tvrzení o stabilitě identity školy se potvrdilo. Rejstřík neobsahuje údaje o vyučovaných oborech, takže samotné ukončení nabídky zaměření Globální síťové technologie ověřit nelze a závěr o něm zůstává podložen ostatními zdroji."
-  },
-  "findings": [
+ "task_id": "R-600004554",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík MŠMT potvrdil, že subjekt REDIZO 600004554 (Střední průmyslová škola sdělovací techniky, Praha 1, Panská 3) je veden ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) beze změny úplného názvu, sídla (Panská 856/3, Nové Město) i IZO 061388866; místa výuky jsou Panská 856/3 a Malá Štupartská 977/8. Absence rejstříku v původním nálezu nezpůsobila chybu – tvrzení o stabilitě identity školy se potvrdilo. Rejstřík neobsahuje údaje o vyučovaných oborech, takže samotné ukončení nabídky zaměření Globální síťové technologie ověřit nelze a závěr o něm zůstává podložen ostatními zdroji."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0001"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "Z dat fronty: v 1. kole jednotné přijímací zkoušky 2025 nabízela Střední průmyslová škola sdělovací techniky (REDIZO 600004554, IZO 061388866, Panská 856, Praha) čtyřletý denní obor 26-45-M/01 Telekomunikace ve dvou školních vzdělávacích programech – Audiovizuální technika a Globální síťové technologie – a vedle toho Technické lyceum (78-42-M/01). V přijímacím řízení 2026 (pro školní rok 2026/27) zůstaly jen Audiovizuální technika a Technické lyceum; nabídka se zaměřením Globální síťové technologie chybí. Identita školy se mezi roky nezměnila: shodné REDIZO, IZO, název i adresa.",
+    "Výroční zpráva školy za školní rok 2024/2025 (zveřejněna v říjnu 2025) uvádí oba programy 26-45-M/01 (Audiovizuální technika i Globální síťové technologie) jako vyučované a v přehledu přijímacího řízení pro školní rok 2025/26 počítá s Globálními síťovými technologiemi (121 přihlášek). Zaměření bylo tedy v přijímacím řízení 2025 reálně nabízeno a obsazováno; podle historického importu na prijimackynaskolu.cz bylo v roce 2025 přijato 11 uchazečů z kapacity 30.",
+    "Web školy (panska.cz, načteno 12. 9. 2026) označuje Globální síťové technologie v přehledu učebních plánů a ŠVP jako „dobíhající obor“ a v nabídce přijímacího řízení pro školní rok 2027/2028 už je neuvádí – nabízeny jsou pouze Audiovizuální technika, Filmová a televizní tvorba a Technické lyceum. Škola tedy do zaměření Globální síťové technologie nové žáky nepřijímá a dříve přijaté ročníky dobíhají.",
+    "Wikipedie (článek o škole, poslední editace 6. 9. 2026) uvádí, že „před školním rokem 2025/26 byly obory AVT a GST spojeny do jednoho“. Historie editací článku ukazuje poznámku „Obor GST na panské už není dostupný“ z 22. 9. 2025 a doplnění informace o spojení z 25. 3. 2026 s uvedením zdroje „web školy a vlastní vědomost“. Uvedené období 2025/26 je v rozporu s tím, že zaměření Globální síťové technologie bylo v přijímacím řízení 2025 samostatně nabízeno; spojení se nejspíš týká nabídky pro školní rok 2026/27. Příznivé okolnosti (společný program CISCO Academy ve výuce datových sítí, společná exteriérová cvičení prvních ročníků AVT a GST dle výroční zprávy 2024/25) sloučení obsahu výuky do Audiovizuální techniky podporují, ale přímé datované oznámení školy se nenalezlo.",
+    "V datech fronty nenabízí v roce 2026 zaměření „Globální síťové technologie“ žádná jiná škola; nabídka se tedy nepřesunula jinam.",
+    "Rejstřík MŠMT vede subjekt REDIZO 600004554 (Střední průmyslová škola sdělovací techniky, Praha 1, Panská 3, IČ 61388866) ve všech čtyřech ověřených snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) beze změny úplného názvu i sídla (Panská 856/3, Nové Město, PSČ 110 00); škola tedy v sledovaném období nezanikla a identita se nezměnila.",
+    "Rejstřík k IZO 061388866 (Střední škola) eviduje ve všech snímcích dvě místa výuky: sídlo Panská 856/3, Nové Město, a dále Malá Štupartská 977/8, Staré Město. Rejstřík neobsahuje údaj o vyučovaných oborech, takže ukončení nabídky zaměření Globální síťové technologie ani nepotvrzuje, ani nevyvrací.",
+    "Statistiky zaměření Globální síťové technologie z roku 2025 (121 přihlášek, 11 přijatých) nelze přenášet na Audiovizuální techniku 2026 – i kdyby k sloučení obsahu došlo, jde o jinou uchazečskou skupinu; výsledky Audiovizuální techniky 2026 mohou být ovlivněny přílivem bývalých uchazečů o GST, což je třeba při prezentaci historických dat zohlednit."
+   ],
+   "conclusion": "Zaměření (školní vzdělávací program) Globální síťové technologie oboru 26-45-M/01 Telekomunikace SPŠ sdělovací techniky, Praha 1, Panská 856/3, škola od přijímacího řízení 2026 (školní rok 2026/27) přestala nabízet; program u dříve přijatých ročníků dobíhá. Škola samotná pokračuje beze změny identity (stejné REDIZO 600004554 a IZO 061388866, název i adresa v obou letech) a programy Audiovizuální technika a Technické lyceum nabízí v roce 2025 i 2026. Nepřiřazená nabídka 2025 tedy nemá v roce 2026 žádné pokračování, ani u jiné školy.",
+   "alternative_explanations": [
+    "Podle Wikipedie (s odkazem na web školy) bylo zaměření Globální síťové technologie sloučeno s Audiovizuální technikou; nelze vyloučit, že část obsahu výuky přešla do programu Audiovizuální technika (jehož popis nově zmiňuje správu sítí a serverů). Přímé datované oznámení školy o sloučení se však dohledat nepodařilo, takže formálně jde o ukončení samostatné nabídky, nikoli o doložené převedení.",
+    "Data fronty pokrývají 1. kolo JPZ; teoreticky nelze vyloučit, že škola nabídku Globálních síťových technologií vyhlásila pouze ve 2. kole přijímacího řízení 2026. Web školy ji však mezi přijímanými obory neuvádí ani pro rok 2027/28 a označuje ji za dobíhající, což toto vysvětlení nepodporuje."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "600004554 | 26-45-M/01 Telekomunikace – Globální síťové technologie (ID_SOF 15de1fe5-b5ca-4a45-987c-e775b2c46f29, rok 2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0001"],
-      "status": "potvrzeno",
-      "observations": [
-        "Z dat fronty: v 1. kole jednotné přijímací zkoušky 2025 nabízela Střední průmyslová škola sdělovací techniky (REDIZO 600004554, IZO 061388866, Panská 856, Praha) čtyřletý denní obor 26-45-M/01 Telekomunikace ve dvou školních vzdělávacích programech – Audiovizuální technika a Globální síťové technologie – a vedle toho Technické lyceum (78-42-M/01). V přijímacím řízení 2026 (pro školní rok 2026/27) zůstaly jen Audiovizuální technika a Technické lyceum; nabídka se zaměřením Globální síťové technologie chybí. Identita školy se mezi roky nezměnila: shodné REDIZO, IZO, název i adresa.",
-        "Výroční zpráva školy za školní rok 2024/2025 (zveřejněna v říjnu 2025) uvádí oba programy 26-45-M/01 (Audiovizuální technika i Globální síťové technologie) jako vyučované a v přehledu přijímacího řízení pro školní rok 2025/26 počítá s Globálními síťovými technologiemi (121 přihlášek). Zaměření bylo tedy v přijímacím řízení 2025 reálně nabízeno a obsazováno; podle historického importu na prijimackynaskolu.cz bylo v roce 2025 přijato 11 uchazečů z kapacity 30.",
-        "Web školy (panska.cz, načteno 12. 9. 2026) označuje Globální síťové technologie v přehledu učebních plánů a ŠVP jako „dobíhající obor“ a v nabídce přijímacího řízení pro školní rok 2027/2028 už je neuvádí – nabízeny jsou pouze Audiovizuální technika, Filmová a televizní tvorba a Technické lyceum. Škola tedy do zaměření Globální síťové technologie nové žáky nepřijímá a dříve přijaté ročníky dobíhají.",
-        "Wikipedie (článek o škole, poslední editace 6. 9. 2026) uvádí, že „před školním rokem 2025/26 byly obory AVT a GST spojeny do jednoho“. Historie editací článku ukazuje poznámku „Obor GST na panské už není dostupný“ z 22. 9. 2025 a doplnění informace o spojení z 25. 3. 2026 s uvedením zdroje „web školy a vlastní vědomost“. Uvedené období 2025/26 je v rozporu s tím, že zaměření Globální síťové technologie bylo v přijímacím řízení 2025 samostatně nabízeno; spojení se nejspíš týká nabídky pro školní rok 2026/27. Příznivé okolnosti (společný program CISCO Academy ve výuce datových sítí, společná exteriérová cvičení prvních ročníků AVT a GST dle výroční zprávy 2024/25) sloučení obsahu výuky do Audiovizuální techniky podporují, ale přímé datované oznámení školy se nenalezlo.",
-        "V datech fronty nenabízí v roce 2026 zaměření „Globální síťové technologie“ žádná jiná škola; nabídka se tedy nepřesunula jinam.",
-        "Rejstřík MŠMT vede subjekt REDIZO 600004554 (Střední průmyslová škola sdělovací techniky, Praha 1, Panská 3, IČ 61388866) ve všech čtyřech ověřených snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) beze změny úplného názvu i sídla (Panská 856/3, Nové Město, PSČ 110 00); škola tedy v sledovaném období nezanikla a identita se nezměnila.",
-        "Rejstřík k IZO 061388866 (Střední škola) eviduje ve všech snímcích dvě místa výuky: sídlo Panská 856/3, Nové Město, a dále Malá Štupartská 977/8, Staré Město. Rejstřík neobsahuje údaj o vyučovaných oborech, takže ukončení nabídky zaměření Globální síťové technologie ani nepotvrzuje, ani nevyvrací."
-      ],
-      "conclusion": "Zaměření (školní vzdělávací program) Globální síťové technologie oboru 26-45-M/01 Telekomunikace SPŠ sdělovací techniky, Praha 1, Panská 856/3, škola od přijímacího řízení 2026 (školní rok 2026/27) přestala nabízet; program u dříve přijatých ročníků dobíhá. Škola samotná pokračuje beze změny identity (stejné REDIZO 600004554 a IZO 061388866, název i adresa v obou letech) a programy Audiovizuální technika a Technické lyceum nabízí v roce 2025 i 2026. Nepřiřazená nabídka 2025 tedy nemá v roce 2026 žádné pokračování, ani u jiné školy.",
-      "alternative_explanations": [
-        "Podle Wikipedie (s odkazem na web školy) bylo zaměření Globální síťové technologie sloučeno s Audiovizuální technikou; nelze vyloučit, že část obsahu výuky přešla do programu Audiovizuální technika (jehož popis nově zmiňuje správu sítí a serverů). Přímé datované oznámení školy o sloučení se však dohledat nepodařilo, takže formálně jde o ukončení samostatné nabídky, nikoli o doložené převedení.",
-        "Data fronty pokrývají 1. kolo JPZ; teoreticky nelze vyloučit, že škola nabídku Globálních síťových technologií vyhlásila pouze ve 2. kole přijímacího řízení 2026. Web školy ji však mezi přijímanými obory neuvádí ani pro rok 2027/28 a označuje ji za dobíhající, což toto vysvětlení nepodporuje."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["600004554 | 26-45-M/01 Telekomunikace – Globální síťové technologie (ID_SOF 15de1fe5-b5ca-4a45-987c-e775b2c46f29, rok 2025)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Panská 856/3, 110 00 Praha 1 (v datech CERMAT zapsáno jako Panská 856, Praha, 110 00)",
-          "role": "sídlo",
-          "izo": "izo_061388866",
-          "valid_period": "2025–2026",
-          "source_url": "fronta-dohledavani-2025-2026.json, úkol R-600004554"
-        },
-        {
-          "text": "Panská 856/3, Nové Město, PSČ 110 00 (RÚIAN 21706581)",
-          "role": "sídlo",
-          "izo": "izo_061388866",
-          "valid_period": "stavy rejstříku k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 a 30. 6. 2026",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
-        },
-        {
-          "text": "Panská 856/3, Nové Město (RÚIAN 21706581) – místo výuky C31",
-          "role": "místo výuky",
-          "izo": "izo_061388866",
-          "valid_period": "stavy rejstříku k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 a 30. 6. 2026",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
-        },
-        {
-          "text": "Malá Štupartská 977/8, Staré Město (RÚIAN 21726230) – místo výuky C10",
-          "role": "místo výuky",
-          "izo": "izo_061388866",
-          "valid_period": "stavy rejstříku k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 a 30. 6. 2026",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600004554",
-          "title": "Fronta dohledávání 2025–2026 – context_offers",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "V roce 2025 nabídka 26-45-M/01 Telekomunikace – Globální síťové technologie existuje, v roce 2026 chybí; REDIZO, IZO, název školy i adresa jsou v obou letech shodné; žádná jiná škola ve frontě zaměření v roce 2026 nenabízí.",
-          "applicable_period": "přijímací řízení 2025 a 2026 (1. kolo JPZ, denní studium)"
-        },
-        {
-          "url": "https://www.panska.cz/wp-content/uploads/2025/10/Vyrocni-zprava-2024-25.pdf",
-          "title": "Výroční zpráva o činnosti školy za školní rok 2024/2025 – SPŠ sdělovací techniky",
-          "published_at": "2025-10",
-          "checked_at": "2026-09-12",
-          "supports": "Škola sama uvádí oba programy 26-45-M/01 (Audiovizuální technika i Globální síťové technologie) jako vyučované a v přijímacím řízení pro školní rok 2025/26 počítá s Globálními síťovými technologiemi (121 přihlášek); dokládá, že zaměření v roce 2025 reálně fungovalo.",
-          "applicable_period": "školní rok 2024/2025, přijímací řízení pro 2025/26"
-        },
-        {
-          "url": "https://www.panska.cz/ucebni-plany/",
-          "title": "Učební plány | Panská – SPŠ sdělovací techniky",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola označuje Globální síťové technologie výslovně jako „dobíhající obor“ – nové žáky do něj nepřijímá, stávající ročníky dostudují.",
-          "applicable_period": "stav k září 2026"
-        },
-        {
-          "url": "https://www.panska.cz/",
-          "title": "Panská – Střední průmyslová škola sdělovací techniky (úvodní stránka)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola prezentuje pouze tři studijní obory – Audiovizuální technika, Filmová a televizní tvorba, Technické lyceum; Globální síťové technologie v nabídce chybí.",
-          "applicable_period": "stav k září 2026"
-        },
-        {
-          "url": "https://www.panska.cz/prijimaci-rizeni/",
-          "title": "Přijímací řízení pro školní rok 2027/2028 | Panská",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Pro přijímací řízení 2027/28 škola uvádí tři bloky oborů (kapacity 60, 30 a 90 žáků); mezi přijímanými obory není Globální síťové technologie – ukončení nabídky není jednorázové.",
-          "applicable_period": "přijímací řízení pro školní rok 2027/2028"
-        },
-        {
-          "url": "https://cs.wikipedia.org/wiki/St%C5%99edn%C3%AD_pr%C5%AFmyslov%C3%A1_%C5%A1kola_sd%C4%9Blovac%C3%AD_techniky",
-          "title": "Střední průmyslová škola sdělovací techniky – Wikipedie",
-          "published_at": "2026-09-06",
-          "checked_at": "2026-09-12",
-          "supports": "Tvrzení o spojení oborů Audiovizuální technika a Globální síťové technologie do jednoho; historie editací datuje odstranění GST z nabídky k září 2025. Formulace o školním roce 2025/26 je v rozporu s daty CERMAT (GST samostatně nabízeno v přijímačkách 2025), proto je sloučení evidováno jen jako alternativní vysvětlení.",
-          "applicable_period": "2025–2026"
-        },
-        {
-          "url": "https://www.prijimackynaskolu.cz/skola/600004554-sps-sdelovaci-techniky-panska-telekomunikace-globalni-sitove-technologie",
-          "title": "SPŠ sdělovací techniky, Panská – Telekomunikace, Globální síťové technologie (Přijímačky na školu)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Historický import z přijímacího řízení 2025: 121 přihlášek, 11 přijatých, kapacita 30 míst – dokládá, že zaměření bylo v roce 2025 skutečně obsazováno. (Vyhledávací úryvek k této stránce uváděl, že obor nebude otevřen pro školní rok 2026/27; v načteném textu stránky tato věta viditelná není, proto slouží jen jako vodítko.)",
-          "applicable_period": "přijímací řízení 2025"
-        },
-        {
-          "url": "https://web.archive.org/web/2026/https://www.panska.cz/globalni-sitove-technologie/",
-          "title": "Globální síťové technologie | SPŠ sdělovací techniky (archivovaná stránka oboru)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Archivovaná stránka oboru popisuje program 26-45-M/01 Telekomunikace, ŠVP Globální síťové technologie; aktuální stránka /gst/ na webu školy již neexistuje (HTTP 404).",
-          "applicable_period": "do ukončení nabídky"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2025)",
-          "published_at": "2025-03-31",
-          "checked_at": "2026-09-12",
-          "supports": "Subjekt REDIZO 600004554 (Střední průmyslová škola sdělovací techniky, Praha 1, Panská 3, IČ 61388866) je v rejstříku veden se sídlem Panská 856/3, Nové Město; IZO 061388866 (Střední škola) má místa výuky Panská 856/3 a Malá Štupartská 977/8. Potvrzuje identitu školy v období 1. kola JPZ 2025.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 30. 6. 2026)",
-          "published_at": "2026-06-30",
-          "checked_at": "2026-09-12",
-          "supports": "Subjekt REDIZO 600004554 je veden beze změny úplného názvu, sídla i IZO 061388866 včetně obou míst výuky; totožný stav vykazují i mezilehlé snímky k 31. 12. 2025 a 31. 3. 2026. Potvrzuje, že škola v roce 2026 pokračuje se stejnou identitou a ukončení nabídky GST není spojeno se změnou subjektu.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Přímé datované oznámení školy o ukončení přijímání do zaměření Globální síťové technologie (případně o formálním sloučení s Audiovizuální technikou) se dohledat nepodařilo; závěr vychází z označení „dobíhající obor“ na webu školy, výroční zprávy 2024/25 a absence nabídky v přijímacích řízeních 2026 i 2027.",
-        "Statistiky zaměření Globální síťové technologie z roku 2025 (121 přihlášek, 11 přijatých) nelze přenášet na Audiovizuální techniku 2026 – i kdyby k sloučení obsahu došlo, jde o jinou uchazečskou skupinu; výsledky Audiovizuální techniky 2026 mohou být ovlivněny přílivem bývalých uchazečů o GST, což je třeba při prezentaci historických dat zohlednit."
-      ]
+     "text": "Panská 856/3, 110 00 Praha 1 (v datech CERMAT zapsáno jako Panská 856, Praha, 110 00)",
+     "role": "sídlo",
+     "izo": "izo_061388866",
+     "valid_period": "2025–2026",
+     "source_url": "fronta-dohledavani-2025-2026.json, úkol R-600004554"
+    },
+    {
+     "text": "Panská 856/3, Nové Město, PSČ 110 00 (RÚIAN 21706581)",
+     "role": "sídlo",
+     "izo": "izo_061388866",
+     "valid_period": "stavy rejstříku k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 a 30. 6. 2026",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+    },
+    {
+     "text": "Panská 856/3, Nové Město (RÚIAN 21706581) – místo výuky C31",
+     "role": "místo výuky",
+     "izo": "izo_061388866",
+     "valid_period": "stavy rejstříku k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 a 30. 6. 2026",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+    },
+    {
+     "text": "Malá Štupartská 977/8, Staré Město (RÚIAN 21726230) – místo výuky C10",
+     "role": "místo výuky",
+     "izo": "izo_061388866",
+     "valid_period": "stavy rejstříku k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 a 30. 6. 2026",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600004554",
+     "title": "Fronta dohledávání 2025–2026 – context_offers",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "V roce 2025 nabídka 26-45-M/01 Telekomunikace – Globální síťové technologie existuje, v roce 2026 chybí; REDIZO, IZO, název školy i adresa jsou v obou letech shodné; žádná jiná škola ve frontě zaměření v roce 2026 nenabízí.",
+     "applicable_period": "přijímací řízení 2025 a 2026 (1. kolo JPZ, denní studium)"
+    },
+    {
+     "url": "https://www.panska.cz/wp-content/uploads/2025/10/Vyrocni-zprava-2024-25.pdf",
+     "title": "Výroční zpráva o činnosti školy za školní rok 2024/2025 – SPŠ sdělovací techniky",
+     "published_at": "2025-10",
+     "checked_at": "2026-09-12",
+     "supports": "Škola sama uvádí oba programy 26-45-M/01 (Audiovizuální technika i Globální síťové technologie) jako vyučované a v přijímacím řízení pro školní rok 2025/26 počítá s Globálními síťovými technologiemi (121 přihlášek); dokládá, že zaměření v roce 2025 reálně fungovalo.",
+     "applicable_period": "školní rok 2024/2025, přijímací řízení pro 2025/26"
+    },
+    {
+     "url": "https://www.panska.cz/ucebni-plany/",
+     "title": "Učební plány | Panská – SPŠ sdělovací techniky",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola označuje Globální síťové technologie výslovně jako „dobíhající obor“ – nové žáky do něj nepřijímá, stávající ročníky dostudují.",
+     "applicable_period": "stav k září 2026"
+    },
+    {
+     "url": "https://www.panska.cz/",
+     "title": "Panská – Střední průmyslová škola sdělovací techniky (úvodní stránka)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola prezentuje pouze tři studijní obory – Audiovizuální technika, Filmová a televizní tvorba, Technické lyceum; Globální síťové technologie v nabídce chybí.",
+     "applicable_period": "stav k září 2026"
+    },
+    {
+     "url": "https://www.panska.cz/prijimaci-rizeni/",
+     "title": "Přijímací řízení pro školní rok 2027/2028 | Panská",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Pro přijímací řízení 2027/28 škola uvádí tři bloky oborů (kapacity 60, 30 a 90 žáků); mezi přijímanými obory není Globální síťové technologie – ukončení nabídky není jednorázové.",
+     "applicable_period": "přijímací řízení pro školní rok 2027/2028"
+    },
+    {
+     "url": "https://cs.wikipedia.org/wiki/St%C5%99edn%C3%AD_pr%C5%AFmyslov%C3%A1_%C5%A1kola_sd%C4%9Blovac%C3%AD_techniky",
+     "title": "Střední průmyslová škola sdělovací techniky – Wikipedie",
+     "published_at": "2026-09-06",
+     "checked_at": "2026-09-12",
+     "supports": "Tvrzení o spojení oborů Audiovizuální technika a Globální síťové technologie do jednoho; historie editací datuje odstranění GST z nabídky k září 2025. Formulace o školním roce 2025/26 je v rozporu s daty CERMAT (GST samostatně nabízeno v přijímačkách 2025), proto je sloučení evidováno jen jako alternativní vysvětlení.",
+     "applicable_period": "2025–2026"
+    },
+    {
+     "url": "https://www.prijimackynaskolu.cz/skola/600004554-sps-sdelovaci-techniky-panska-telekomunikace-globalni-sitove-technologie",
+     "title": "SPŠ sdělovací techniky, Panská – Telekomunikace, Globální síťové technologie (Přijímačky na školu)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Historický import z přijímacího řízení 2025: 121 přihlášek, 11 přijatých, kapacita 30 míst – dokládá, že zaměření bylo v roce 2025 skutečně obsazováno. (Vyhledávací úryvek k této stránce uváděl, že obor nebude otevřen pro školní rok 2026/27; v načteném textu stránky tato věta viditelná není, proto slouží jen jako vodítko.)",
+     "applicable_period": "přijímací řízení 2025"
+    },
+    {
+     "url": "https://web.archive.org/web/2026/https://www.panska.cz/globalni-sitove-technologie/",
+     "title": "Globální síťové technologie | SPŠ sdělovací techniky (archivovaná stránka oboru)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Archivovaná stránka oboru popisuje program 26-45-M/01 Telekomunikace, ŠVP Globální síťové technologie; aktuální stránka /gst/ na webu školy již neexistuje (HTTP 404).",
+     "applicable_period": "do ukončení nabídky"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2025)",
+     "published_at": "2025-03-31",
+     "checked_at": "2026-09-12",
+     "supports": "Subjekt REDIZO 600004554 (Střední průmyslová škola sdělovací techniky, Praha 1, Panská 3, IČ 61388866) je v rejstříku veden se sídlem Panská 856/3, Nové Město; IZO 061388866 (Střední škola) má místa výuky Panská 856/3 a Malá Štupartská 977/8. Potvrzuje identitu školy v období 1. kola JPZ 2025.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 30. 6. 2026)",
+     "published_at": "2026-06-30",
+     "checked_at": "2026-09-12",
+     "supports": "Subjekt REDIZO 600004554 je veden beze změny úplného názvu, sídla i IZO 061388866 včetně obou míst výuky; totožný stav vykazují i mezilehlé snímky k 31. 12. 2025 a 31. 3. 2026. Potvrzuje, že škola v roce 2026 pokračuje se stejnou identitou a ukončení nabídky GST není spojeno se změnou subjektu.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Přímé datované oznámení školy o ukončení přijímání do zaměření Globální síťové technologie (případně o formálním sloučení s Audiovizuální technikou) se dohledat nepodařilo; závěr vychází z označení „dobíhající obor“ na webu školy, výroční zprávy 2024/25 a absence nabídky v přijímacích řízeních 2026 i 2027."
+   ]
+  }
+ ]
 }

@@ -1,96 +1,115 @@
 {
-  "task_id": "R-600015726",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu Gymnázium Moravský Krumlov, příspěvková organizace (REDIZO 600015726, sídlo Smetanova 168, 672 01 Moravský Krumlov) i IZO 102867071 „Střední škola\" ve všech čtyřech snímcích. Obory 79-41-K/41 Gymnázium (4leté) a 79-41-K/61 Gymnázium (6leté) jsou zapsané beze změny kódu ve všech snímcích. Rejstřík zaměření uvnitř kódu 79-41-K/41 neeviduje, takže rozdělení nabídky na dvě zaměření v roce 2026 z něj nelze ověřit ani vyvrátit – jde o vnitřní členění přijímacího řízení. K IZO je vedeno šest adres míst výuky (Smetanova 168, Smetanova 169, Na Střelnici, Palackého 60, nám. Klášterní 126, Nádražní 698) beze změny mezi snímky; rejstřík nerozlišuje, které místo náleží kterému zaměření."
-  },
-  "findings": [
+ "task_id": "R-600015726",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu Gymnázium Moravský Krumlov, příspěvková organizace (REDIZO 600015726, sídlo Smetanova 168, 672 01 Moravský Krumlov) i IZO 102867071 „Střední škola\" ve všech čtyřech snímcích. Obory 79-41-K/41 Gymnázium (4leté) a 79-41-K/61 Gymnázium (6leté) jsou zapsané beze změny kódu ve všech snímcích. Rejstřík zaměření uvnitř kódu 79-41-K/41 neeviduje, takže rozdělení nabídky na dvě zaměření v roce 2026 z něj nelze ověřit ani vyvrátit – jde o vnitřní členění přijímacího řízení. K IZO je vedeno šest adres míst výuky (Smetanova 168, Smetanova 169, Na Střelnici, Palackého 60, nám. Klášterní 126, Nádražní 698) beze změny mezi snímky; rejstřík nerozlišuje, které místo náleží kterému zaměření."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0095",
+    "Q0311",
+    "Q0312"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela čtyřletý obor 79-41-K/41 Gymnázium bez uvedeného zaměření (jedna nabídka).",
+    "V 1. kole JPZ 2026 stejný kód 79-41-K/41 obsahuje dvě samostatné nabídky se zaměřeními „aplikovaná informatika (Technologie pro budoucnost, vzdělávání pro život)\" a „Všeobecné zaměření (Ne pro školu, ale pro život)\".",
+    "Web školy (mkgym.cz, sekce Studijní obory) pro školní rok 2026/27 popisuje pod kódem 7941K/41 dvě samostatné nabídky: obecné čtyřleté zaměření (\"všeobecné vzdělávání v souvislostech prostřednictvím projektové a blokové výuky\") a nové zaměření aplikovaná informatika (\"všeobecné vzdělávání s rozšířenou výukou matematiky a informatiky\", spolupráce s odborníky ze skupiny ČEZ, programování, odborná angličtina).",
+    "Webová stránka přijímacího řízení školy (mkgym.cz/uchazeci/prijimaci-rizeni) potvrzuje pro 2026/27 tři samostatně vypsané větve: šestiletý obor 7941K/61, čtyřletý obor všeobecný 7941K/41 a čtyřletý obor aplikovaná informatika 7941K/41, každou s vlastními kritérii přijímacího řízení.",
+    "Rejstřík MŠMT eviduje kód 79-41-K/41 beze změny ve všech čtyřech snímcích u téhož IZO 102867071 – dělení na zaměření se v rejstříku (který zaměření nesleduje) neprojevuje."
+   ],
+   "conclusion": "Škola pro školní rok 2026/27 rozdělila dosavadní jednotnou nabídku čtyřletého gymnázia 79-41-K/41 na dvě paralelní zaměření v rámci téhož kódu oboru: pokračující všeobecné zaměření (obsahová kontinuace nabídky z roku 2025) a nově zavedené zaměření aplikovaná informatika s rozšířenou výukou matematiky a informatiky. Jde o rozdělení nabídky (split) v rámci jednoho, beze změny zapsaného oboru, nikoli o vznik nového kódu ani o zánik oboru.",
+   "alternative_explanations": [
+    "Rejstřík MŠMT nerozlišuje zaměření uvnitř kódu, takže dělení na dvě větve nelze institucionálně ověřit jinak než z webu školy a dat CERMAT; teoreticky mohlo jít i o pouhé přejmenování s doplněním druhé rovnocenné nabídky, nikoli o odvození jedné třídy z druhé."
+   ],
+   "relationship": {
+    "type": "split",
+    "from": [
+     "79-41-K/41 Gymnázium, bez zaměření (2025)"
+    ],
+    "to": [
+     "79-41-K/41 Gymnázium – Všeobecné zaměření (2026)",
+     "79-41-K/41 Gymnázium – aplikovaná informatika (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0095", "Q0311", "Q0312"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela čtyřletý obor 79-41-K/41 Gymnázium bez uvedeného zaměření (jedna nabídka).",
-        "V 1. kole JPZ 2026 stejný kód 79-41-K/41 obsahuje dvě samostatné nabídky se zaměřeními „aplikovaná informatika (Technologie pro budoucnost, vzdělávání pro život)\" a „Všeobecné zaměření (Ne pro školu, ale pro život)\".",
-        "Web školy (mkgym.cz, sekce Studijní obory) pro školní rok 2026/27 popisuje pod kódem 7941K/41 dvě samostatné nabídky: obecné čtyřleté zaměření (\"všeobecné vzdělávání v souvislostech prostřednictvím projektové a blokové výuky\") a nové zaměření aplikovaná informatika (\"všeobecné vzdělávání s rozšířenou výukou matematiky a informatiky\", spolupráce s odborníky ze skupiny ČEZ, programování, odborná angličtina).",
-        "Webová stránka přijímacího řízení školy (mkgym.cz/uchazeci/prijimaci-rizeni) potvrzuje pro 2026/27 tři samostatně vypsané větve: šestiletý obor 7941K/61, čtyřletý obor všeobecný 7941K/41 a čtyřletý obor aplikovaná informatika 7941K/41, každou s vlastními kritérii přijímacího řízení.",
-        "Rejstřík MŠMT eviduje kód 79-41-K/41 beze změny ve všech čtyřech snímcích u téhož IZO 102867071 – dělení na zaměření se v rejstříku (který zaměření nesleduje) neprojevuje."
-      ],
-      "conclusion": "Škola pro školní rok 2026/27 rozdělila dosavadní jednotnou nabídku čtyřletého gymnázia 79-41-K/41 na dvě paralelní zaměření v rámci téhož kódu oboru: pokračující všeobecné zaměření (obsahová kontinuace nabídky z roku 2025) a nově zavedené zaměření aplikovaná informatika s rozšířenou výukou matematiky a informatiky. Jde o rozdělení nabídky (split) v rámci jednoho, beze změny zapsaného oboru, nikoli o vznik nového kódu ani o zánik oboru.",
-      "alternative_explanations": [
-        "Rejstřík MŠMT nerozlišuje zaměření uvnitř kódu, takže dělení na dvě větve nelze institucionálně ověřit jinak než z webu školy a dat CERMAT; teoreticky mohlo jít i o pouhé přejmenování s doplněním druhé rovnocenné nabídky, nikoli o odvození jedné třídy z druhé."
-      ],
-      "relationship": {
-        "type": "split",
-        "from": ["79-41-K/41 Gymnázium, bez zaměření (2025)"],
-        "to": ["79-41-K/41 Gymnázium – Všeobecné zaměření (2026)", "79-41-K/41 Gymnázium – aplikovaná informatika (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Smetanova 168, 672 01 Moravský Krumlov",
-          "role": "sídlo",
-          "izo": "600015726",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Smetanova 168, 672 01 Moravský Krumlov",
-          "role": "místo výuky",
-          "izo": "102867071",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Na Střelnici; Palackého 60; nám. Klášterní 126; Smetanova 169; Nádražní 698 (vše 672 01 Moravský Krumlov)",
-          "role": "nezjištěná",
-          "izo": "102867071",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.mkgym.cz/uchazeci/studijni-obory",
-          "title": "Studijní obory | Gymnázium Moravský Krumlov",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Popisuje dvě samostatné nabídky pod kódem 7941K/41 pro 2026/27: obecné čtyřleté zaměření a nové zaměření aplikovaná informatika s rozšířenou výukou matematiky a informatiky a spoluprací s ČEZ.",
-          "applicable_period": "školní rok 2026/27"
-        },
-        {
-          "url": "https://www.mkgym.cz/uchazeci/prijimaci-rizeni",
-          "title": "Přijímací řízení | Gymnázium Moravský Krumlov",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Potvrzuje tři samostatně vypsané obory/zaměření pro 2026/27 (6letý, 4letý všeobecný, 4letý aplikovaná informatika), každý s vlastními kritérii.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Kód 79-41-K/41 zůstává u IZO 102867071 zapsán beze změny; rejstřík zaměření nesleduje.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600015726",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "V roce 2025 jedna nabídka 79-41-K/41 bez zaměření, v roce 2026 dvě nabídky téhož kódu se zaměřeními aplikovaná informatika a Všeobecné zaměření.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "partially",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Jak se historické výsledky přijímacího řízení oboru 79-41-K/41 (2025) mají promítnout do dvou nových zaměření – proporcionálně, nebo jen k jednomu z nich (Všeobecné zaměření jako přímý nástupce)?",
-        "Přesné datum rozhodnutí školy/zřizovatele o zavedení zaměření aplikovaná informatika."
-      ]
+     "text": "Smetanova 168, 672 01 Moravský Krumlov",
+     "role": "sídlo",
+     "izo": "600015726",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Smetanova 168, 672 01 Moravský Krumlov",
+     "role": "místo výuky",
+     "izo": "102867071",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Na Střelnici; Palackého 60; nám. Klášterní 126; Smetanova 169; Nádražní 698 (vše 672 01 Moravský Krumlov)",
+     "role": "nezjištěná",
+     "izo": "102867071",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.mkgym.cz/uchazeci/studijni-obory",
+     "title": "Studijní obory | Gymnázium Moravský Krumlov",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Popisuje dvě samostatné nabídky pod kódem 7941K/41 pro 2026/27: obecné čtyřleté zaměření a nové zaměření aplikovaná informatika s rozšířenou výukou matematiky a informatiky a spoluprací s ČEZ.",
+     "applicable_period": "školní rok 2026/27"
+    },
+    {
+     "url": "https://www.mkgym.cz/uchazeci/prijimaci-rizeni",
+     "title": "Přijímací řízení | Gymnázium Moravský Krumlov",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Potvrzuje tři samostatně vypsané obory/zaměření pro 2026/27 (6letý, 4letý všeobecný, 4letý aplikovaná informatika), každý s vlastními kritérii.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Kód 79-41-K/41 zůstává u IZO 102867071 zapsán beze změny; rejstřík zaměření nesleduje.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600015726",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "V roce 2025 jedna nabídka 79-41-K/41 bez zaměření, v roce 2026 dvě nabídky téhož kódu se zaměřeními aplikovaná informatika a Všeobecné zaměření.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Jak se historické výsledky přijímacího řízení oboru 79-41-K/41 (2025) mají promítnout do dvou nových zaměření – proporcionálně, nebo jen k jednomu z nich (Všeobecné zaměření jako přímý nástupce)?"
+   ],
+   "resolved_questions": [
+    {
+     "otazka": "Přesné datum rozhodnutí školy/zřizovatele o zavedení zaměření aplikovaná informatika.",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    }
+   ]
+  }
+ ]
 }

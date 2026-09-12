@@ -1,131 +1,156 @@
 {
-  "task_id": "R-600019781",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík potvrdil plnou kontinuitu subjektu: Střední škola zdravotnická a sociální Chrudim, Poděbradova 336 (REDIZO 600019781, IČO 00498891, IZO 110009754) figuruje beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026). U IZO 110009754 jsou ve všech snímcích shodně evidovány obory 53-41-M/03 Praktická sestra (4leté denní i 5leté večerní), 53-41-H/01 Ošetřovatel (3leté denní) a 75-41-M/01 Sociální činnost (4leté denní i 5leté večerní). Obor Sociální činnost tedy byl v rejstříku zapsán nepřetržitě už před rokem 2025 i po celé sledované období, bez ohledu na to, zda byl v daném roce nabízen v 1. kole JPZ."
-  },
-  "findings": [
+ "task_id": "R-600019781",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrdil plnou kontinuitu subjektu: Střední škola zdravotnická a sociální Chrudim, Poděbradova 336 (REDIZO 600019781, IČO 00498891, IZO 110009754) figuruje beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026). U IZO 110009754 jsou ve všech snímcích shodně evidovány obory 53-41-M/03 Praktická sestra (4leté denní i 5leté večerní), 53-41-H/01 Ošetřovatel (3leté denní) a 75-41-M/01 Sociální činnost (4leté denní i 5leté večerní). Obor Sociální činnost tedy byl v rejstříku zapsán nepřetržitě už před rokem 2025 i po celé sledované období, bez ohledu na to, zda byl v daném roce nabízen v 1. kole JPZ."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0343"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela pouze obor 53-41-M/03 Praktická sestra (4leté denní); obor 75-41-M/01 Sociální činnost v nabídce CERMAT 2025 chybí. V 1. kole JPZ 2026 škola nabízí oba obory: 53-41-M/03 Praktická sestra i nově (proti roku 2025) 75-41-M/01 Sociální činnost (4leté denní).",
+    "Rejstřík MŠMT eviduje obor 75-41-M/01 Sociální činnost (4leté denní i 5leté večerní) u IZO 110009754 beze změny ve všech čtyřech snímcích od 31. 3. 2025 do 30. 6. 2026 – obor byl zapsán už před rokem 2025 a zůstal zapsán po celé sledované období.",
+    "Výroční zpráva školy za školní rok 2024/2025 (kapitola 7. Přijímací řízení, str. 19) výslovně uvádí, že přijímací řízení do 1. ročníku pro školní rok 2025/2026 se konalo pouze pro obor 53-41-M/03 Praktická sestra (139 přihlášených, 58 přijatých); obor Sociální činnost v této kapitole vůbec není zmíněn – potvrzuje se tedy, že v roce 2025 skutečně nebylo vyhlášeno přijímací řízení do Sociální činnosti, nejde jen o mezeru v datech CERMAT.",
+    "Táž výroční zpráva (kapitola 5.1 a 5.3, str. 13) potvrzuje, že ŠVP pro obor 75-41-M/01 Sociální činnost byl ve školním roce 2024/2025 stále platný a vyučovaný, ale v tomto oboru existovala pouze třída 3. ročníku (17 žáků) – žádní žáci v 1., 2. ani 4. ročníku Sociální činnosti. To ukazuje, že škola do 1. ročníku Sociální činnosti nepřijímala žáky přinejmenším ve školních letech 2023/2024 a 2024/2025, tedy i před rokem 2025 řešeným v této frontě.",
+    "Aktuální web školy (https://szs.chrudim.cz/pro-uchazece/prijimaci-rizeni, staženo 12. 9. 2026) uvádí pro školní rok 2026/27 konkrétní kapacity přijímacího řízení: Praktická sestra 60 přijímaných / 2 třídy a Sociální činnost 24 přijímaných / 1 třída – obor Sociální činnost je tedy pro rok 2026/27 reálně a konkrétně vyhlášen, nejde o plán bez detailů.",
+    "Web školy (sekce Studijní obory, https://szs.chrudim.cz/) nabízí samostatnou podstránku https://szs.chrudim.cz/socialni-cinnost, ale bez uvedení historie otevírání/přerušování oboru; přímé vysvětlení důvodu přerušení a obnovení (např. střídání s jiným oborem nebo nedostatečný zájem) se na webu školy ani ve výroční zprávě nepodařilo dohledat.",
+    "Data CERMAT odpovídají pro roky 2024 a 2025: obor 75-41-M/01 nefiguruje ani v jednom z jejich dvou kol. Pro rok 2026 má v 1. kole kapacitu 24. Přerušení se tedy netýkalo jen prvního kola."
+   ],
+   "conclusion": "Obor 75-41-M/01 Sociální činnost (4leté denní) u SŠ zdravotnické a sociální Chrudim (REDIZO 600019781, IZO 110009754) nezanikl a nejde o nově vzniklý obor v roce 2026. Obor byl v rejstříku MŠMT zapsán nepřetržitě přinejmenším od 31. 3. 2025 dodnes a měl platný ŠVP i vyučovanou třídu (3. ročník) už ve školním roce 2024/2025. Přijímací řízení do 1. ročníku Sociální činnosti však škola dle vlastní výroční zprávy pro školní rok 2025/2026 nevyhlásila (nabízela jen Praktickou sestru) a dle stavu žáků v ročnících do 1. ročníku Sociální činnosti nepřijímala žáky přinejmenším od školního roku 2023/2024. Pro školní rok 2026/2027 škola přijímací řízení do Sociální činnosti znovu vyhlásila (24 přijímaných, 1 třída) a nabídku potvrzuje i CERMAT 2026. Jde tedy o dočasné přerušení a následné obnovení přijímacího řízení do existujícího, nepřetržitě registrovaného oboru, nikoli o zánik a vznik nového oboru.",
+   "alternative_explanations": [
+    "Přesný důvod, proč škola do Sociální činnosti nepřijímala žáky ve školních letech 2023/2024 a 2024/2025 (např. nedostatečný zájem uchazečů, kapacitní/personální důvody, rozhodnutí zřizovatele), se z dostupných zdrojů nepodařilo dohledat a podle zadání se ani nemá dále zkoumat jako příčina.",
+    "Nelze vyloučit, že škola obor v mezidobí nabízela mimo 1. kolo JPZ (např. v dalších kolech přijímacího řízení) – to by nabídku v datech CERMAT 1. kola neovlivnilo, ale rešerše k tomu nemá přímý doklad."
+   ],
+   "relationship": {
+    "type": "continuation",
+    "from": [
+     "75-41-M/01 Sociální činnost (naposledy s otevřeným 1. ročníkem cca 2022/2023, bez nových přijímaných v 2023/2024 a 2024/2025)"
+    ],
+    "to": [
+     "75-41-M/01 Sociální činnost (2026) – přijímací řízení obnoveno pro školní rok 2026/2027"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0343"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela pouze obor 53-41-M/03 Praktická sestra (4leté denní); obor 75-41-M/01 Sociální činnost v nabídce CERMAT 2025 chybí. V 1. kole JPZ 2026 škola nabízí oba obory: 53-41-M/03 Praktická sestra i nově (proti roku 2025) 75-41-M/01 Sociální činnost (4leté denní).",
-        "Rejstřík MŠMT eviduje obor 75-41-M/01 Sociální činnost (4leté denní i 5leté večerní) u IZO 110009754 beze změny ve všech čtyřech snímcích od 31. 3. 2025 do 30. 6. 2026 – obor byl zapsán už před rokem 2025 a zůstal zapsán po celé sledované období.",
-        "Výroční zpráva školy za školní rok 2024/2025 (kapitola 7. Přijímací řízení, str. 19) výslovně uvádí, že přijímací řízení do 1. ročníku pro školní rok 2025/2026 se konalo pouze pro obor 53-41-M/03 Praktická sestra (139 přihlášených, 58 přijatých); obor Sociální činnost v této kapitole vůbec není zmíněn – potvrzuje se tedy, že v roce 2025 skutečně nebylo vyhlášeno přijímací řízení do Sociální činnosti, nejde jen o mezeru v datech CERMAT.",
-        "Táž výroční zpráva (kapitola 5.1 a 5.3, str. 13) potvrzuje, že ŠVP pro obor 75-41-M/01 Sociální činnost byl ve školním roce 2024/2025 stále platný a vyučovaný, ale v tomto oboru existovala pouze třída 3. ročníku (17 žáků) – žádní žáci v 1., 2. ani 4. ročníku Sociální činnosti. To ukazuje, že škola do 1. ročníku Sociální činnosti nepřijímala žáky přinejmenším ve školních letech 2023/2024 a 2024/2025, tedy i před rokem 2025 řešeným v této frontě.",
-        "Aktuální web školy (https://szs.chrudim.cz/pro-uchazece/prijimaci-rizeni, staženo 12. 9. 2026) uvádí pro školní rok 2026/27 konkrétní kapacity přijímacího řízení: Praktická sestra 60 přijímaných / 2 třídy a Sociální činnost 24 přijímaných / 1 třída – obor Sociální činnost je tedy pro rok 2026/27 reálně a konkrétně vyhlášen, nejde o plán bez detailů.",
-        "Web školy (sekce Studijní obory, https://szs.chrudim.cz/) nabízí samostatnou podstránku https://szs.chrudim.cz/socialni-cinnost, ale bez uvedení historie otevírání/přerušování oboru; přímé vysvětlení důvodu přerušení a obnovení (např. střídání s jiným oborem nebo nedostatečný zájem) se na webu školy ani ve výroční zprávě nepodařilo dohledat."
-      ],
-      "conclusion": "Obor 75-41-M/01 Sociální činnost (4leté denní) u SŠ zdravotnické a sociální Chrudim (REDIZO 600019781, IZO 110009754) nezanikl a nejde o nově vzniklý obor v roce 2026. Obor byl v rejstříku MŠMT zapsán nepřetržitě přinejmenším od 31. 3. 2025 dodnes a měl platný ŠVP i vyučovanou třídu (3. ročník) už ve školním roce 2024/2025. Přijímací řízení do 1. ročníku Sociální činnosti však škola dle vlastní výroční zprávy pro školní rok 2025/2026 nevyhlásila (nabízela jen Praktickou sestru) a dle stavu žáků v ročnících do 1. ročníku Sociální činnosti nepřijímala žáky přinejmenším od školního roku 2023/2024. Pro školní rok 2026/2027 škola přijímací řízení do Sociální činnosti znovu vyhlásila (24 přijímaných, 1 třída) a nabídku potvrzuje i CERMAT 2026. Jde tedy o dočasné přerušení a následné obnovení přijímacího řízení do existujícího, nepřetržitě registrovaného oboru, nikoli o zánik a vznik nového oboru.",
-      "alternative_explanations": [
-        "Přesný důvod, proč škola do Sociální činnosti nepřijímala žáky ve školních letech 2023/2024 a 2024/2025 (např. nedostatečný zájem uchazečů, kapacitní/personální důvody, rozhodnutí zřizovatele), se z dostupných zdrojů nepodařilo dohledat a podle zadání se ani nemá dále zkoumat jako příčina.",
-        "Nelze vyloučit, že škola obor v mezidobí nabízela mimo 1. kolo JPZ (např. v dalších kolech přijímacího řízení) – to by nabídku v datech CERMAT 1. kola neovlivnilo, ale rešerše k tomu nemá přímý doklad."
-      ],
-      "relationship": {
-        "type": "continuation",
-        "from": ["75-41-M/01 Sociální činnost (naposledy s otevřeným 1. ročníkem cca 2022/2023, bez nových přijímaných v 2023/2024 a 2024/2025)"],
-        "to": ["75-41-M/01 Sociální činnost (2026) – přijímací řízení obnoveno pro školní rok 2026/2027"]
-      },
-      "addresses": [
-        {
-          "text": "Poděbradova 336, 537 01 Chrudim IV, Chrudim",
-          "role": "sídlo",
-          "izo": "600019781",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Poděbradova 336, 537 01 Chrudim IV, Chrudim",
-          "role": "místo výuky",
-          "izo": "110009754",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 75-41-M/01 Sociální činnost (4leté denní i 5leté večerní) evidován u IZO 110009754 už k 31. 3. 2025.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 75-41-M/01 Sociální činnost zůstává u IZO 110009754 evidován beze změny k 31. 12. 2025.",
-          "applicable_period": "stav rejstříku k 31. 12. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 75-41-M/01 Sociální činnost zůstává u IZO 110009754 evidován beze změny k 31. 3. 2026.",
-          "applicable_period": "stav rejstříku k 31. 3. 2026"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 75-41-M/01 Sociální činnost zůstává u IZO 110009754 evidován beze změny i k 30. 6. 2026; subjekt i IZO jsou po celé období beze změny.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600019781",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 75-41-M/01 Sociální činnost (4leté denní) chybí v 1. kole JPZ 2025 (škola nabízela jen Praktickou sestru) a je nově přítomna v 1. kole JPZ 2026 vedle pokračující Praktické sestry.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        },
-        {
-          "url": "http://szs.chrudim.cz/content/wys_pages/uredni_deska/VZ_2025.pdf",
-          "title": "Výroční zpráva školy za školní rok 2024/2025 – Střední škola zdravotnická a sociální Chrudim",
-          "published_at": "2025-09",
-          "checked_at": "2026-09-12",
-          "supports": "Kap. 7 Přijímací řízení: přijímací řízení do 1. ročníku pro školní rok 2025/2026 se konalo výhradně pro obor 53-41-M/03 Praktická sestra (139 přihlášených, 58 přijatých); Sociální činnost není zmíněna. Kap. 5.1 a 5.3: obor 75-41-M/01 Sociální činnost měl ve školním roce 2024/2025 platný ŠVP, ale žáky pouze ve 3. ročníku (17), bez 1., 2. a 4. ročníku.",
-          "applicable_period": "školní rok 2024/2025; přijímací řízení pro 2025/2026"
-        },
-        {
-          "url": "https://szs.chrudim.cz/pro-uchazece/prijimaci-rizeni",
-          "title": "Přijímací řízení – Střední škola zdravotnická a sociální Chrudim",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Pro školní rok 2026/27 škola vyhlašuje přijímací řízení do obou oborů: Praktická sestra (60 přijímaných, 2 třídy) a Sociální činnost (24 přijímaných, 1 třída), s termíny JPZ 10. a 13. 4. 2026.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://szs.chrudim.cz/",
-          "title": "Střední škola zdravotnická a sociální Chrudim – úvodní stránka",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola aktuálně nabízí dva studijní obory – Praktická sestra a Sociální činnost – s vlastními podstránkami; potvrzuje oficiální doménu školy.",
-          "applicable_period": "stav webu k 12. 9. 2026"
-        },
-        {
-          "url": "https://szs.chrudim.cz/dokumenty/vyrocni-zpravy",
-          "title": "Výroční zprávy – Střední škola zdravotnická a sociální Chrudim",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Přehled dostupných výročních zpráv školy, včetně odkazu na výroční zprávu za školní rok 2024/2025 použitou jako zdroj.",
-          "applicable_period": "stav webu k 12. 9. 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Přesný důvod přerušení přijímacího řízení do Sociální činnosti ve školních letech 2023/2024 a 2024/2025 (zájem uchazečů, kapacita, personální důvody) se nepodařilo dohledat a nebyl dle zadání dále zkoumán.",
-        "Nebylo ověřeno, zda škola obor Sociální činnost nabízela v dalších kolech přijímacího řízení mimo 1. kolo JPZ v letech, kdy chybí v datech CERMAT."
-      ]
+     "text": "Poděbradova 336, 537 01 Chrudim IV, Chrudim",
+     "role": "sídlo",
+     "izo": "600019781",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Poděbradova 336, 537 01 Chrudim IV, Chrudim",
+     "role": "místo výuky",
+     "izo": "110009754",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 75-41-M/01 Sociální činnost (4leté denní i 5leté večerní) evidován u IZO 110009754 už k 31. 3. 2025.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 75-41-M/01 Sociální činnost zůstává u IZO 110009754 evidován beze změny k 31. 12. 2025.",
+     "applicable_period": "stav rejstříku k 31. 12. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 75-41-M/01 Sociální činnost zůstává u IZO 110009754 evidován beze změny k 31. 3. 2026.",
+     "applicable_period": "stav rejstříku k 31. 3. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 75-41-M/01 Sociální činnost zůstává u IZO 110009754 evidován beze změny i k 30. 6. 2026; subjekt i IZO jsou po celé období beze změny.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600019781",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 75-41-M/01 Sociální činnost (4leté denní) chybí v 1. kole JPZ 2025 (škola nabízela jen Praktickou sestru) a je nově přítomna v 1. kole JPZ 2026 vedle pokračující Praktické sestry.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "http://szs.chrudim.cz/content/wys_pages/uredni_deska/VZ_2025.pdf",
+     "title": "Výroční zpráva školy za školní rok 2024/2025 – Střední škola zdravotnická a sociální Chrudim",
+     "published_at": "2025-09",
+     "checked_at": "2026-09-12",
+     "supports": "Kap. 7 Přijímací řízení: přijímací řízení do 1. ročníku pro školní rok 2025/2026 se konalo výhradně pro obor 53-41-M/03 Praktická sestra (139 přihlášených, 58 přijatých); Sociální činnost není zmíněna. Kap. 5.1 a 5.3: obor 75-41-M/01 Sociální činnost měl ve školním roce 2024/2025 platný ŠVP, ale žáky pouze ve 3. ročníku (17), bez 1., 2. a 4. ročníku.",
+     "applicable_period": "školní rok 2024/2025; přijímací řízení pro 2025/2026"
+    },
+    {
+     "url": "https://szs.chrudim.cz/pro-uchazece/prijimaci-rizeni",
+     "title": "Přijímací řízení – Střední škola zdravotnická a sociální Chrudim",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Pro školní rok 2026/27 škola vyhlašuje přijímací řízení do obou oborů: Praktická sestra (60 přijímaných, 2 třídy) a Sociální činnost (24 přijímaných, 1 třída), s termíny JPZ 10. a 13. 4. 2026.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://szs.chrudim.cz/",
+     "title": "Střední škola zdravotnická a sociální Chrudim – úvodní stránka",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola aktuálně nabízí dva studijní obory – Praktická sestra a Sociální činnost – s vlastními podstránkami; potvrzuje oficiální doménu školy.",
+     "applicable_period": "stav webu k 12. 9. 2026"
+    },
+    {
+     "url": "https://szs.chrudim.cz/dokumenty/vyrocni-zpravy",
+     "title": "Výroční zprávy – Střední škola zdravotnická a sociální Chrudim",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Přehled dostupných výročních zpráv školy, včetně odkazu na výroční zprávu za školní rok 2024/2025 použitou jako zdroj.",
+     "applicable_period": "stav webu k 12. 9. 2026"
+    },
+    {
+     "url": "data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx; data/PZ2024_kolo2_uchazeci_prihlasky_vysledky.xlsx; data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx; data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx; data/PZ2026_kolo1_skolobory_kapacity.xlsx",
+     "title": "CERMAT – přihlášky a výsledky přijímacího řízení (soubory v repozitáři)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 75-41-M/01 chybí v 1. i 2. kole let 2024 a 2025. Soubory 2024 a 2025 jsou na úrovni uchazečů, obor bez přihlášek v nich chybí, i kdyby vypsán byl.",
+     "applicable_period": "1. a 2. kolo 2024 a 2025, 1. kolo 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Přesný důvod přerušení přijímacího řízení do Sociální činnosti ve školních letech 2023/2024 a 2024/2025 (zájem uchazečů, kapacita, personální důvody) se nepodařilo dohledat a nebyl dle zadání dále zkoumán."
+   ],
+   "resolved_questions": [
+    {
+     "otazka": "Nebylo ověřeno, zda škola obor Sociální činnost nabízela v dalších kolech přijímacího řízení mimo 1. kolo JPZ v letech, kdy chybí v datech CERMAT.",
+     "uzavreno": "Odpovězeno z dat CERMAT dostupných v repozitáři: data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2024_kolo2_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx, data/PZ2026_kolo1_skolobory_kapacity.xlsx"
+    }
+   ]
+  }
+ ]
 }

@@ -1,88 +1,104 @@
 {
-  "task_id": "R-691020035",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Subjekt REDIZO 691020035 ani IZO 250013517 nejsou zapsány v žádném ze čtyř snímků rejstříku MŠMT (2025-03-31 až 2026-06-30). Škola byla dohledána mimo rejstřík: je to Klinická univerzitní škola EduVia, gymnázium a střední škola pedagogická, příspěvková organizace, IČO 24049646, vzniklá 1. 1. 2026, se sídlem/pracovištěm Do Hlinek 926/9, 103 00 Praha 10-Kolovraty. Zřizovatelem je hlavní město Praha, spoluzřizovatelem na základě memoranda z 27. 11. 2025 Univerzita Karlova (Pedagogická fakulta); výuka má být zahájena 1. 9. 2026."
-  },
-  "findings": [
+ "task_id": "R-691020035",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt REDIZO 691020035 ani IZO 250013517 nejsou zapsány v žádném ze čtyř snímků rejstříku MŠMT (2025-03-31 až 2026-06-30). Škola byla dohledána mimo rejstřík: je to Klinická univerzitní škola EduVia, gymnázium a střední škola pedagogická, příspěvková organizace, IČO 24049646, vzniklá 1. 1. 2026, se sídlem/pracovištěm Do Hlinek 926/9, 103 00 Praha 10-Kolovraty. Zřizovatelem je hlavní město Praha, spoluzřizovatelem na základě memoranda z 27. 11. 2025 Univerzita Karlova (Pedagogická fakulta); výuka má být zahájena 1. 9. 2026."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0415",
+    "Q0416",
+    "Q0430"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2026 REDIZO 691020035 nabízí dva obory bez upřesněného zaměření: 75-31-M/01 Předškolní a mimoškolní pedagogika a 79-41-K/41 Gymnázium (oba 4leté, denní, český); v roce 2025 REDIZO nemá žádnou nabídku.",
+    "Subjekt ani IZO 250013517 nejsou zapsány v žádném ze čtyř sledovaných snímků rejstříku MŠMT – jde o školu zapsanou (pokud vůbec) až po 30. 6. 2026, nebo dosud nezapsanou.",
+    "Oficiální web školy (eduvia.pedf.cuni.cz/o-skole/uredni-deska/) uvádí přesně shodné IZO 250013517, REDIZO 691020035 a IČO 24049646 pro „Klinickou univerzitní školu EduVia, gymnázium a střední škola pedagogická, příspěvková organizace“ na adrese Do Hlinek 926/9, Praha 10-Kolovraty, s oběma uvedenými obory.",
+    "Tisková zpráva Pedagogické fakulty Univerzity Karlovy (pedf.cuni.cz/PEDF-3664.html) popisuje memorandum o spolupráci podepsané 27. 11. 2025 mezi hlavním městem Prahou (zřizovatel) a Univerzitou Karlovou/Pedagogickou fakultou (spoluzřizovatel), na jehož základě klinická škola EduVia vzniká; výuka má být zahájena 1. 9. 2026, den otevřených dveří 30. 1. 2026, přijímací zkoušky v dubnu 2026, kapacita cca 60 žáků (gymnázium) a 30 žáků (pedagogická škola) v ročníku.",
+    "Rejstřík ekonomických subjektů eviduje „Klinická univerzitní škola EduVia..., příspěvková organizace“ s IČO 24049646 a datem vzniku 1. 1. 2026."
+   ],
+   "conclusion": "Jde o zcela novou školu zřízenou k 1. 1. 2026 hlavním městem Prahou ve spolupráci s Univerzitou Karlovou (Pedagogickou fakultou) jako tzv. klinickou univerzitní školu; výuka má být zahájena 1. 9. 2026. Škola k poslednímu dostupnému snímku (30. 6. 2026) ještě není zapsána v rejstříku MŠMT, což odpovídá organizačnímu harmonogramu (zápis těsně před zahájením výuky), nikoli chybě přiřazení. Oba obory (Gymnázium 79-41-K/41 a Předškolní a mimoškolní pedagogika 75-31-M/01) jsou pro tuto školu nové bez předchůdce.",
+   "alternative_explanations": [
+    "Zápis do rejstříku MŠMT mohl proběhnout po 30. 6. 2026 v novějším snímku, který není mezi sledovanými čtyřmi; to však závěr o vzniku nové školy nemění."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "79-41-K/41 (2026)",
+     "75-31-M/01 (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0415", "Q0416", "Q0430"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2026 REDIZO 691020035 nabízí dva obory bez upřesněného zaměření: 75-31-M/01 Předškolní a mimoškolní pedagogika a 79-41-K/41 Gymnázium (oba 4leté, denní, český); v roce 2025 REDIZO nemá žádnou nabídku.",
-        "Subjekt ani IZO 250013517 nejsou zapsány v žádném ze čtyř sledovaných snímků rejstříku MŠMT – jde o školu zapsanou (pokud vůbec) až po 30. 6. 2026, nebo dosud nezapsanou.",
-        "Oficiální web školy (eduvia.pedf.cuni.cz/o-skole/uredni-deska/) uvádí přesně shodné IZO 250013517, REDIZO 691020035 a IČO 24049646 pro „Klinickou univerzitní školu EduVia, gymnázium a střední škola pedagogická, příspěvková organizace“ na adrese Do Hlinek 926/9, Praha 10-Kolovraty, s oběma uvedenými obory.",
-        "Tisková zpráva Pedagogické fakulty Univerzity Karlovy (pedf.cuni.cz/PEDF-3664.html) popisuje memorandum o spolupráci podepsané 27. 11. 2025 mezi hlavním městem Prahou (zřizovatel) a Univerzitou Karlovou/Pedagogickou fakultou (spoluzřizovatel), na jehož základě klinická škola EduVia vzniká; výuka má být zahájena 1. 9. 2026, den otevřených dveří 30. 1. 2026, přijímací zkoušky v dubnu 2026, kapacita cca 60 žáků (gymnázium) a 30 žáků (pedagogická škola) v ročníku.",
-        "Rejstřík ekonomických subjektů eviduje „Klinická univerzitní škola EduVia..., příspěvková organizace“ s IČO 24049646 a datem vzniku 1. 1. 2026."
-      ],
-      "conclusion": "Jde o zcela novou školu zřízenou k 1. 1. 2026 hlavním městem Prahou ve spolupráci s Univerzitou Karlovou (Pedagogickou fakultou) jako tzv. klinickou univerzitní školu; výuka má být zahájena 1. 9. 2026. Škola k poslednímu dostupnému snímku (30. 6. 2026) ještě není zapsána v rejstříku MŠMT, což odpovídá organizačnímu harmonogramu (zápis těsně před zahájením výuky), nikoli chybě přiřazení. Oba obory (Gymnázium 79-41-K/41 a Předškolní a mimoškolní pedagogika 75-31-M/01) jsou pro tuto školu nové bez předchůdce.",
-      "alternative_explanations": [
-        "Zápis do rejstříku MŠMT mohl proběhnout po 30. 6. 2026 v novějším snímku, který není mezi sledovanými čtyřmi; to však závěr o vzniku nové školy nemění."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["79-41-K/41 (2026)", "75-31-M/01 (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Do Hlinek 926/9, 103 00 Praha 10-Kolovraty",
-          "role": "sídlo",
-          "izo": "691020035",
-          "valid_period": "od 1. 1. 2026 (mimo sledované snímky rejstříku MŠMT)",
-          "source_url": "https://eduvia.pedf.cuni.cz/o-skole/uredni-deska/"
-        },
-        {
-          "text": "Do Hlinek 926/9, 103 00 Praha 10-Kolovraty",
-          "role": "místo výuky",
-          "izo": "250013517",
-          "valid_period": "od 1. 9. 2026 (plánované zahájení výuky, mimo sledované snímky rejstříku MŠMT)",
-          "source_url": "https://eduvia.pedf.cuni.cz/o-skole/uredni-deska/"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "REDIZO 691020035 ani IZO 250013517 nejsou evidovány k 30. 6. 2026 (shodně chybí i ve snímcích 2025-03-31, 2025-12-31, 2026-03-31).",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "https://eduvia.pedf.cuni.cz/o-skole/uredni-deska/",
-          "title": "Úřední deska – Klinická univerzitní škola EduVia",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Potvrzuje IZO 250013517, REDIZO 691020035, IČO 24049646, adresu Do Hlinek 926/9 a oba obory.",
-          "applicable_period": "stav webu k září 2026"
-        },
-        {
-          "url": "https://pedf.cuni.cz/PEDF-3664.html",
-          "title": "Tisková zpráva Pedagogické fakulty UK – memorandum o spolupráci na škole EduVia",
-          "published_at": "2025-11-27",
-          "checked_at": "2026-09-12",
-          "supports": "Memorandum z 27. 11. 2025 mezi hl. m. Prahou (zřizovatel) a UK/Pedagogickou fakultou (spoluzřizovatel); výuka od 1. 9. 2026, přijímací zkoušky duben 2026.",
-          "applicable_period": "vznik školy, zahájení výuky 2026/27"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-691020035",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "REDIZO 691020035 bez nabídky v roce 2025, dvě nabídky (Gymnázium a Předškolní a mimoškolní pedagogika) v roce 2026.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Přesné datum zápisu školy do rejstříku MŠMT (mimo sledovaná čtyři data) nebylo dohledáno."
-      ]
+     "text": "Do Hlinek 926/9, 103 00 Praha 10-Kolovraty",
+     "role": "sídlo",
+     "izo": "691020035",
+     "valid_period": "od 1. 1. 2026 (mimo sledované snímky rejstříku MŠMT)",
+     "source_url": "https://eduvia.pedf.cuni.cz/o-skole/uredni-deska/"
+    },
+    {
+     "text": "Do Hlinek 926/9, 103 00 Praha 10-Kolovraty",
+     "role": "místo výuky",
+     "izo": "250013517",
+     "valid_period": "od 1. 9. 2026 (plánované zahájení výuky, mimo sledované snímky rejstříku MŠMT)",
+     "source_url": "https://eduvia.pedf.cuni.cz/o-skole/uredni-deska/"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "REDIZO 691020035 ani IZO 250013517 nejsou evidovány k 30. 6. 2026 (shodně chybí i ve snímcích 2025-03-31, 2025-12-31, 2026-03-31).",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "https://eduvia.pedf.cuni.cz/o-skole/uredni-deska/",
+     "title": "Úřední deska – Klinická univerzitní škola EduVia",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Potvrzuje IZO 250013517, REDIZO 691020035, IČO 24049646, adresu Do Hlinek 926/9 a oba obory.",
+     "applicable_period": "stav webu k září 2026"
+    },
+    {
+     "url": "https://pedf.cuni.cz/PEDF-3664.html",
+     "title": "Tisková zpráva Pedagogické fakulty UK – memorandum o spolupráci na škole EduVia",
+     "published_at": "2025-11-27",
+     "checked_at": "2026-09-12",
+     "supports": "Memorandum z 27. 11. 2025 mezi hl. m. Prahou (zřizovatel) a UK/Pedagogickou fakultou (spoluzřizovatel); výuka od 1. 9. 2026, přijímací zkoušky duben 2026.",
+     "applicable_period": "vznik školy, zahájení výuky 2026/27"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-691020035",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "REDIZO 691020035 bez nabídky v roce 2025, dvě nabídky (Gymnázium a Předškolní a mimoškolní pedagogika) v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přesné datum zápisu školy do rejstříku MŠMT (mimo sledovaná čtyři data) nebylo dohledáno.",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    }
+   ]
+  }
+ ]
 }

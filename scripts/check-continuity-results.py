@@ -138,6 +138,21 @@ def main():
                     chyby.append(f"{oznaceni}: evidence bez url")
                 if not e.get("checked_at"):
                     chyby.append(f"{oznaceni}: evidence {url[:60]} bez checked_at")
+            for pole, popis in (("resolved_questions", "uzavřená otázka"),
+                                ("decisions_required", "rozhodnutí k přezkumu")):
+                hodnota = f.get(pole)
+                if hodnota is None:
+                    continue
+                if not isinstance(hodnota, list):
+                    chyby.append(f"{oznaceni}: {pole} musí být seznam")
+                    continue
+                for polozka in hodnota:
+                    if pole == "resolved_questions":
+                        if not isinstance(polozka, dict) or not polozka.get("otazka") \
+                                or not polozka.get("uzavreno"):
+                            chyby.append(f"{oznaceni}: {popis} musí mít 'otazka' a 'uzavreno'")
+                    elif not isinstance(polozka, str) or not polozka.strip():
+                        chyby.append(f"{oznaceni}: {popis} musí být neprázdný text")
             for a in f.get("addresses", []):
                 if not a.get("role"):
                     chyby.append(f"{oznaceni}: adresa bez role – {a.get('text')}")

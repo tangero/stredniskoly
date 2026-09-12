@@ -1,202 +1,227 @@
 {
-  "task_id": "R-600006697",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Rejstřík potvrzuje kontinuitu subjektu Střední průmyslová škola, Vlašim, Komenského 41 (REDIZO 600006697), sídlo Komenského 41, 258 01 Vlašim, ve všech čtyřech snímcích. IZO 061664553 „Střední škola“ má ve všech snímcích shodná místa výuky (Velíšská 116, Luční 1699, Komenského 41, čp. 368 - Vlašim, jen v jiném pořadí zápisu) a shodnou sadu registrovaných oborů: 18-20-M/01 Informační technologie, 23-41-M/01 Strojírenství, 23-45-L/01 Mechanik seřizovač, 23-51-H/01 Strojní mechanik, 23-56-H/01 Obráběč kovů, 33-42-M/01 Nábytkářská a dřevařská výroba, 36-47-M/01 Stavebnictví a 78-42-M/01 Technické lyceum. Obor 78-42-M/08 Lyceum (režim pokusného ověřování) není v žádném ze čtyř snímků evidován - jde o odstup zápisu u nově vyhlášeného pilotního oboru, nikoli o rozpor s nabídkou CERMAT 2026."
-  },
-  "findings": [
+ "task_id": "R-600006697",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Rejstřík potvrzuje kontinuitu subjektu Střední průmyslová škola, Vlašim, Komenského 41 (REDIZO 600006697), sídlo Komenského 41, 258 01 Vlašim, ve všech čtyřech snímcích. IZO 061664553 „Střední škola“ má ve všech snímcích shodná místa výuky (Velíšská 116, Luční 1699, Komenského 41, čp. 368 - Vlašim, jen v jiném pořadí zápisu) a shodnou sadu registrovaných oborů: 18-20-M/01 Informační technologie, 23-41-M/01 Strojírenství, 23-45-L/01 Mechanik seřizovač, 23-51-H/01 Strojní mechanik, 23-56-H/01 Obráběč kovů, 33-42-M/01 Nábytkářská a dřevařská výroba, 36-47-M/01 Stavebnictví a 78-42-M/01 Technické lyceum. Obor 78-42-M/08 Lyceum (režim pokusného ověřování) není v žádném ze čtyř snímků evidován - jde o odstup zápisu u nově vyhlášeného pilotního oboru, nikoli o rozpor s nabídkou CERMAT 2026."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0033",
+    "Q0034",
+    "Q0306"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela obor 23-45-L/01 Mechanik seřizovač ve dvou samostatných řádcích se zaměřeními „Mechatronik + 23-56-H/01 Obráběč kovů“ a „Programování CNC + 23-56-H/01 Obráběč kovů“; v 1. kole JPZ 2026 je u téhož kódu oboru jediný řádek bez upřesnění zaměření.",
+    "Aktuální kritéria přijímacího řízení školy (sps-vlasim.cz) pro rok 2026/27 uvádějí u oboru 23-45-L/01 Mechanik seřizovač výslovně obě zaměření - „Pro programování CNC“ (12 žáků) a „Mechatronik“ (12 žáků) - a poznámku: „v DiPSy se přijímá 24 žáků na společný obor 23-45-L/01 Mechanik seřizovač - první ročník je společný, na jednotlivá ŠVP se žáci rozdělí od druhého ročníku“.",
+    "Rejstřík MŠMT eviduje obor 23-45-L/01 Mechanik seřizovač u IZO 061664553 beze změny ve všech čtyřech snímcích.",
+    "Vysvětlením chybějícího rozlišení zaměření v datech CERMAT 2026 je tedy patrně to, že se do DIPSY/CERMAT přihlašuje na jeden společný obor s rozdělením do ŠVP až od druhého ročníku, zatímco v roce 2025 byl záznam veden odděleně po jednotlivých zaměřeních."
+   ],
+   "conclusion": "Obor 23-45-L/01 Mechanik seřizovač pokračuje beze změny včetně obou zaměření (Mechatronik, Programování CNC ve spojení s Obráběčem kovů); rozdíl mezi lety je dán jen odlišným způsobem zápisu (2025 odděleně po zaměřeních, 2026 souhrnně za společný první ročník), nikoli zrušením jednoho ze zaměření.",
+   "alternative_explanations": [
+    "Nelze zcela vyloučit, že v roce 2026 škola dočasně neotevřela obě zaměření zvlášť a data jen slila administrativně - to však aktuální kritéria přijímacího řízení nepotvrzují, naopak obě zaměření výslovně uvádějí."
+   ],
+   "relationship": {
+    "type": "continuation",
+    "from": [
+     "23-45-L/01 Mechanik seřizovač - Mechatronik (2025)",
+     "23-45-L/01 Mechanik seřizovač - Programování CNC (2025)"
+    ],
+    "to": [
+     "23-45-L/01 Mechanik seřizovač (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0033", "Q0034", "Q0306"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela obor 23-45-L/01 Mechanik seřizovač ve dvou samostatných řádcích se zaměřeními „Mechatronik + 23-56-H/01 Obráběč kovů“ a „Programování CNC + 23-56-H/01 Obráběč kovů“; v 1. kole JPZ 2026 je u téhož kódu oboru jediný řádek bez upřesnění zaměření.",
-        "Aktuální kritéria přijímacího řízení školy (sps-vlasim.cz) pro rok 2026/27 uvádějí u oboru 23-45-L/01 Mechanik seřizovač výslovně obě zaměření - „Pro programování CNC“ (12 žáků) a „Mechatronik“ (12 žáků) - a poznámku: „v DiPSy se přijímá 24 žáků na společný obor 23-45-L/01 Mechanik seřizovač - první ročník je společný, na jednotlivá ŠVP se žáci rozdělí od druhého ročníku“.",
-        "Rejstřík MŠMT eviduje obor 23-45-L/01 Mechanik seřizovač u IZO 061664553 beze změny ve všech čtyřech snímcích.",
-        "Vysvětlením chybějícího rozlišení zaměření v datech CERMAT 2026 je tedy patrně to, že se do DIPSY/CERMAT přihlašuje na jeden společný obor s rozdělením do ŠVP až od druhého ročníku, zatímco v roce 2025 byl záznam veden odděleně po jednotlivých zaměřeních."
-      ],
-      "conclusion": "Obor 23-45-L/01 Mechanik seřizovač pokračuje beze změny včetně obou zaměření (Mechatronik, Programování CNC ve spojení s Obráběčem kovů); rozdíl mezi lety je dán jen odlišným způsobem zápisu (2025 odděleně po zaměřeních, 2026 souhrnně za společný první ročník), nikoli zrušením jednoho ze zaměření.",
-      "alternative_explanations": [
-        "Nelze zcela vyloučit, že v roce 2026 škola dočasně neotevřela obě zaměření zvlášť a data jen slila administrativně - to však aktuální kritéria přijímacího řízení nepotvrzují, naopak obě zaměření výslovně uvádějí."
-      ],
-      "relationship": {
-        "type": "continuation",
-        "from": ["23-45-L/01 Mechanik seřizovač - Mechatronik (2025)", "23-45-L/01 Mechanik seřizovač - Programování CNC (2025)"],
-        "to": ["23-45-L/01 Mechanik seřizovač (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Komenského 41, 258 01 Vlašim",
-          "role": "sídlo",
-          "izo": "600006697",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Velíšská 116, 258 01 Vlašim; Luční 1699, 258 01 Vlašim; Komenského 41, 258 01 Vlašim; čp. 368, 258 01 Vlašim",
-          "role": "místo výuky",
-          "izo": "061664553",
-          "valid_period": "2025-03-31 až 2026-06-30 (čtyři místa výuky ve všech snímcích, bez určení, které se váže na Mechanika seřizovače)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.sps-vlasim.cz/jsem-uchazec/prijimaci-rizeni-2026_1",
-          "title": "Přijímací řízení 2026 | Střední průmyslová škola Vlašim",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 23-45-L/01 Mechanik seřizovač je pro 2026/27 nabízen se zaměřeními Programování CNC a Mechatronik; první ročník je společný, rozdělení do ŠVP od druhého ročníku.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 23-45-L/01 Mechanik seřizovač zůstává registrován u IZO 061664553 i k 30. 6. 2026.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600006697",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Dva řádky se zaměřeními v roce 2025 vs. jeden souhrnný řádek u téhož kódu oboru v roce 2026.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "partially",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": ["Jak správně rozdělit statistiku přijímacího řízení 2026 (jeden souhrnný záznam) zpět na dvě zaměření pro srovnání s rokem 2025."]
+     "text": "Komenského 41, 258 01 Vlašim",
+     "role": "sídlo",
+     "izo": "600006697",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     },
     {
-      "issue_ids": ["Q0035"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela obor 78-42-M/01 Technické lyceum se zaměřením „Rozvoj technického myšlení“; v 1. kole JPZ 2026 tato nabídka u téhož REDIZO chybí.",
-        "Aktuální přehled maturitních oborů pro přijímací řízení 2026/27 na webu školy (sps-vlasim.cz) uvádí obory Informační technologie, Stavebnictví, Strojírenství, Nábytkářská a dřevařská výroba, Mechanik seřizovač a nově Lyceum 78-42-M/08 - Technické lyceum mezi nimi není.",
-        "Rejstřík MŠMT nadále eviduje obor 78-42-M/01 Technické lyceum u IZO 061664553 ve všech čtyřech snímcích včetně 30. 6. 2026 - registrace oboru trvá, chybí jen jeho vyhlášení v přijímacím řízení pro rok 2026/27.",
-        "Škola ve stejném období (15. 12. 2025) byla zařazena do pokusného ověřování nového oboru Lyceum 78-42-M/08 (viz nález k Q0307), který nabídku Technického lycea v přijímacím řízení nahradil."
-      ],
-      "conclusion": "Škola pro školní rok 2026/27 neotevírá přijímací řízení do Technického lycea (78-42-M/01); obor zůstává registrován v rejstříku, ale v aktuální nabídce chybí a byl v praxi nahrazen novým pilotním oborem Lyceum 78-42-M/08. Nejde o doložený formální zánik oboru, jen o přerušení náboru.",
-      "alternative_explanations": [
-        "Obor může být kdykoliv znovu vyhlášen, protože zůstává v rejstříku; k datu zpracování žádný dokument o jeho formálním rušení nebyl nalezen."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["78-42-M/01 Technické lyceum (2025)"],
-        "to": []
-      },
-      "addresses": [
-        {
-          "text": "Komenského 41, 258 01 Vlašim",
-          "role": "místo výuky",
-          "izo": "061664553",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.sps-vlasim.cz/jsem-uchazec/prijimaci-rizeni-2026_1",
-          "title": "Přijímací řízení 2026 | Střední průmyslová škola Vlašim",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Seznam maturitních oborů pro 2026/27 neobsahuje Technické lyceum, obsahuje nově Lyceum 78-42-M/08.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 78-42-M/01 Technické lyceum zůstává u IZO 061664553 registrován i k 30. 6. 2026.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600006697",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 78-42-M/01 Technické lyceum přítomna v roce 2025 a chybějící v roce 2026.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": []
-    },
-    {
-      "issue_ids": ["Q0307"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/08 Lyceum (režim pokusného ověřování), který v roce 2025 v nabídce nebyl.",
-        "Web školy (sps-vlasim.cz) uvádí: „Škola SPŠ Vlašim, Komenského 41 byla zařazena do pokusného ověřování dne 15. prosince 2025“ s oborovou orientací „Přírodovědná studia a udržitelná budoucnost“ nebo „Mediální studia a digitální komunikace“.",
-        "Aktuální kritéria přijímacího řízení 2026/27 potvrzují nabídku 78-42-M/08 Lyceum pro 30 žáků, bez lékařského posudku.",
-        "Pilotní obor 78-42-M/08 zatím není evidován v žádném ze čtyř snímků rejstříku MŠMT (poslední 30. 6. 2026) - jde o odstup zápisu u celostátně nového pokusného ověřování, které MŠMT vyhlásilo v listopadu 2024 a do kterého jsou školy postupně dodatky zařazovány.",
-        "Obor v nabídce školy funkčně nahradil dříve nabízené Technické lyceum 78-42-M/01 (viz nález k Q0035), formálně však jde o odlišný kód oboru se samostatným rámcovým vzdělávacím programem."
-      ],
-      "conclusion": "Lyceum 78-42-M/08 je nový pilotní obor (celostátní pokusné ověřování MŠMT vyhlášené v listopadu 2024), do kterého byla škola zařazena 15. 12. 2025. Nemá formálního předchůdce v nabídce školy z roku 2025 - jde o jiný kód oboru vzdělání, i když v přijímacím řízení nahradil dříve nabízené Technické lyceum.",
-      "alternative_explanations": [
-        "Zápis oboru do rejstříku MŠMT může proběhnout až po 30. 6. 2026 v souladu s celostátním harmonogramem pokusného ověřování; to otevření oboru od září 2026 neovlivňuje."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["78-42-M/08 Lyceum (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Komenského 41, 258 01 Vlašim",
-          "role": "místo výuky",
-          "izo": "061664553",
-          "valid_period": "od 2026/27 (nezapsáno v rejstříku k 30. 6. 2026)",
-          "source_url": "https://www.sps-vlasim.cz/jsem-uchazec/maturitni-obory/lyceum-78-42-m-08"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.sps-vlasim.cz/jsem-uchazec/maturitni-obory/lyceum-78-42-m-08",
-          "title": "Lyceum 78-42-M/08 | Střední průmyslová škola Vlašim",
-          "published_at": "2025-12-15",
-          "checked_at": "2026-09-12",
-          "supports": "Škola byla do pokusného ověřování oboru Lyceum 78-42-M/08 zařazena 15. 12. 2025, s oborovou orientací Přírodovědná studia a udržitelná budoucnost / Mediální studia a digitální komunikace.",
-          "applicable_period": "od školního roku 2026/27"
-        },
-        {
-          "url": "https://www.sps-vlasim.cz/jsem-uchazec/prijimaci-rizeni-2026_1",
-          "title": "Přijímací řízení 2026 | Střední průmyslová škola Vlašim",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Kritéria přijímacího řízení 2026/27 potvrzují nabídku 78-42-M/08 Lyceum pro 30 žáků.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 78-42-M/08 není u IZO 061664553 evidován ani k 30. 6. 2026 (odstup zápisu).",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600006697",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 78-42-M/08 Lyceum přítomna v roce 2026 a chybějící v roce 2025.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": []
+     "text": "Velíšská 116, 258 01 Vlašim; Luční 1699, 258 01 Vlašim; Komenského 41, 258 01 Vlašim; čp. 368, 258 01 Vlašim",
+     "role": "místo výuky",
+     "izo": "061664553",
+     "valid_period": "2025-03-31 až 2026-06-30 (čtyři místa výuky ve všech snímcích, bez určení, které se váže na Mechanika seřizovače)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.sps-vlasim.cz/jsem-uchazec/prijimaci-rizeni-2026_1",
+     "title": "Přijímací řízení 2026 | Střední průmyslová škola Vlašim",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 23-45-L/01 Mechanik seřizovač je pro 2026/27 nabízen se zaměřeními Programování CNC a Mechatronik; první ročník je společný, rozdělení do ŠVP od druhého ročníku.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 23-45-L/01 Mechanik seřizovač zůstává registrován u IZO 061664553 i k 30. 6. 2026.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600006697",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Dva řádky se zaměřeními v roce 2025 vs. jeden souhrnný řádek u téhož kódu oboru v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "decisions_required": [
+    "Jak správně rozdělit statistiku přijímacího řízení 2026 (jeden souhrnný záznam) zpět na dvě zaměření pro srovnání s rokem 2025."
+   ]
+  },
+  {
+   "issue_ids": [
+    "Q0035"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela obor 78-42-M/01 Technické lyceum se zaměřením „Rozvoj technického myšlení“; v 1. kole JPZ 2026 tato nabídka u téhož REDIZO chybí.",
+    "Aktuální přehled maturitních oborů pro přijímací řízení 2026/27 na webu školy (sps-vlasim.cz) uvádí obory Informační technologie, Stavebnictví, Strojírenství, Nábytkářská a dřevařská výroba, Mechanik seřizovač a nově Lyceum 78-42-M/08 - Technické lyceum mezi nimi není.",
+    "Rejstřík MŠMT nadále eviduje obor 78-42-M/01 Technické lyceum u IZO 061664553 ve všech čtyřech snímcích včetně 30. 6. 2026 - registrace oboru trvá, chybí jen jeho vyhlášení v přijímacím řízení pro rok 2026/27.",
+    "Škola ve stejném období (15. 12. 2025) byla zařazena do pokusného ověřování nového oboru Lyceum 78-42-M/08 (viz nález k Q0307), který nabídku Technického lycea v přijímacím řízení nahradil."
+   ],
+   "conclusion": "Škola pro školní rok 2026/27 neotevírá přijímací řízení do Technického lycea (78-42-M/01); obor zůstává registrován v rejstříku, ale v aktuální nabídce chybí a byl v praxi nahrazen novým pilotním oborem Lyceum 78-42-M/08. Nejde o doložený formální zánik oboru, jen o přerušení náboru.",
+   "alternative_explanations": [
+    "Obor může být kdykoliv znovu vyhlášen, protože zůstává v rejstříku; k datu zpracování žádný dokument o jeho formálním rušení nebyl nalezen."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "78-42-M/01 Technické lyceum (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
+    {
+     "text": "Komenského 41, 258 01 Vlašim",
+     "role": "místo výuky",
+     "izo": "061664553",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "https://www.sps-vlasim.cz/jsem-uchazec/prijimaci-rizeni-2026_1",
+     "title": "Přijímací řízení 2026 | Střední průmyslová škola Vlašim",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Seznam maturitních oborů pro 2026/27 neobsahuje Technické lyceum, obsahuje nově Lyceum 78-42-M/08.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/01 Technické lyceum zůstává u IZO 061664553 registrován i k 30. 6. 2026.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600006697",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 78-42-M/01 Technické lyceum přítomna v roce 2025 a chybějící v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": []
+  },
+  {
+   "issue_ids": [
+    "Q0307"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/08 Lyceum (režim pokusného ověřování), který v roce 2025 v nabídce nebyl.",
+    "Web školy (sps-vlasim.cz) uvádí: „Škola SPŠ Vlašim, Komenského 41 byla zařazena do pokusného ověřování dne 15. prosince 2025“ s oborovou orientací „Přírodovědná studia a udržitelná budoucnost“ nebo „Mediální studia a digitální komunikace“.",
+    "Aktuální kritéria přijímacího řízení 2026/27 potvrzují nabídku 78-42-M/08 Lyceum pro 30 žáků, bez lékařského posudku.",
+    "Pilotní obor 78-42-M/08 zatím není evidován v žádném ze čtyř snímků rejstříku MŠMT (poslední 30. 6. 2026) - jde o odstup zápisu u celostátně nového pokusného ověřování, které MŠMT vyhlásilo v listopadu 2024 a do kterého jsou školy postupně dodatky zařazovány.",
+    "Obor v nabídce školy funkčně nahradil dříve nabízené Technické lyceum 78-42-M/01 (viz nález k Q0035), formálně však jde o odlišný kód oboru se samostatným rámcovým vzdělávacím programem."
+   ],
+   "conclusion": "Lyceum 78-42-M/08 je nový pilotní obor (celostátní pokusné ověřování MŠMT vyhlášené v listopadu 2024), do kterého byla škola zařazena 15. 12. 2025. Nemá formálního předchůdce v nabídce školy z roku 2025 - jde o jiný kód oboru vzdělání, i když v přijímacím řízení nahradil dříve nabízené Technické lyceum.",
+   "alternative_explanations": [
+    "Zápis oboru do rejstříku MŠMT může proběhnout až po 30. 6. 2026 v souladu s celostátním harmonogramem pokusného ověřování; to otevření oboru od září 2026 neovlivňuje."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "78-42-M/08 Lyceum (2026)"
+    ]
+   },
+   "addresses": [
+    {
+     "text": "Komenského 41, 258 01 Vlašim",
+     "role": "místo výuky",
+     "izo": "061664553",
+     "valid_period": "od 2026/27 (nezapsáno v rejstříku k 30. 6. 2026)",
+     "source_url": "https://www.sps-vlasim.cz/jsem-uchazec/maturitni-obory/lyceum-78-42-m-08"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "https://www.sps-vlasim.cz/jsem-uchazec/maturitni-obory/lyceum-78-42-m-08",
+     "title": "Lyceum 78-42-M/08 | Střední průmyslová škola Vlašim",
+     "published_at": "2025-12-15",
+     "checked_at": "2026-09-12",
+     "supports": "Škola byla do pokusného ověřování oboru Lyceum 78-42-M/08 zařazena 15. 12. 2025, s oborovou orientací Přírodovědná studia a udržitelná budoucnost / Mediální studia a digitální komunikace.",
+     "applicable_period": "od školního roku 2026/27"
+    },
+    {
+     "url": "https://www.sps-vlasim.cz/jsem-uchazec/prijimaci-rizeni-2026_1",
+     "title": "Přijímací řízení 2026 | Střední průmyslová škola Vlašim",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Kritéria přijímacího řízení 2026/27 potvrzují nabídku 78-42-M/08 Lyceum pro 30 žáků.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 78-42-M/08 není u IZO 061664553 evidován ani k 30. 6. 2026 (odstup zápisu).",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600006697",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 78-42-M/08 Lyceum přítomna v roce 2026 a chybějící v roce 2025.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": []
+  }
+ ]
 }

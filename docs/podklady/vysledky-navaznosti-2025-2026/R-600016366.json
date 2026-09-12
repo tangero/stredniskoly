@@ -1,88 +1,107 @@
 {
-  "task_id": "R-600016366",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Subjekt Gymnázium EDUCAnet Ostrava s.r.o. (REDIZO 600016366, sídlo Mjr. Nováka 1455/34, 700 30 Hrabůvka, Ostrava) je ve všech čtyřech snímcích beze změny, včetně IZO 049562339 „Střední škola\" na téže adrese. Obor 79-41-K/41 Gymnázium (4leté, denní, český) je zapsán beze změny ve všech čtyřech snímcích; rejstřík zaměření uvnitř kódu nesleduje, takže rozdělení nabídky na dvě zaměření z něj nelze ověřit ani vyvrátit."
-  },
-  "findings": [
+ "task_id": "R-600016366",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt Gymnázium EDUCAnet Ostrava s.r.o. (REDIZO 600016366, sídlo Mjr. Nováka 1455/34, 700 30 Hrabůvka, Ostrava) je ve všech čtyřech snímcích beze změny, včetně IZO 049562339 „Střední škola\" na téže adrese. Obor 79-41-K/41 Gymnázium (4leté, denní, český) je zapsán beze změny ve všech čtyřech snímcích; rejstřík zaměření uvnitř kódu nesleduje, takže rozdělení nabídky na dvě zaměření z něj nelze ověřit ani vyvrátit."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0100",
+    "Q0284",
+    "Q0285"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela jedinou nabídku 79-41-K/41 Gymnázium se zaměřením „S rozšířenou výukou jazyků a IT\". V 1. kole JPZ 2026 se pod stejným kódem objevují dvě nabídky: „Gymnázium\" (obecný název) a „Business & Management\".",
+    "Web školy (ostrava.educanet.cz/nase-programy/business-a-management) popisuje Business & Management jako „Nový a naprosto unikátní středoškolský studijní program\" určený zájemcům o řízení podniků, sportovních klubů nebo vlastní podnikání, s výukou od odborníků z praxe a se ziskem MBA titulu ihned po maturitě – tedy jde o školou samou deklarovaný nový program.",
+    "Web školy (ostrava.educanet.cz/nase-programy/gymnazium) popisuje program „Gymnázium\" s důrazem na jazykovou přípravu (jazykové certifikáty, výuka části nejazykových předmětů v angličtině, mezinárodní AP kurzy), ale bez výslovné zmínky o zaměření na IT, které bylo součástí názvu nabídky z roku 2025.",
+    "Rejstřík MŠMT eviduje kód 79-41-K/41 beze změny u téhož IZO 049562339 ve všech čtyřech snímcích; zaměření rejstřík nesleduje."
+   ],
+   "conclusion": "Škola pro školní rok 2026/27 rozdělila dosavadní jedinou nabídku čtyřletého gymnázia (dříve „S rozšířenou výukou jazyků a IT\") na dvě paralelní větve pod stejným kódem: obecnější „Gymnázium\" s jazykovým zaměřením a nově zavedený program „Business & Management\", který škola sama označuje za nový. Jde o rozdělení nabídky (split) v rámci jednoho, beze změny zapsaného oboru; přímé pokračování zaměření na IT z roku 2025 v programu „Gymnázium\" 2026 nebylo na webu potvrzeno – akcent na IT z popisu spíše vymizel ve prospěch jazykového zaměření.",
+   "alternative_explanations": [
+    "„Gymnázium\" (2026) může být jen přejmenovaná a obsahově zúžená verze původního zaměření „S rozšířenou výukou jazyků a IT\" (jazyková složka zůstala, IT složka byla oslabena nebo přesunuta jinam), nebo může jít o zcela přeformulovanou nabídku bez přímé obsahové vazby na rok 2025 – zdroje toto nerozlišují."
+   ],
+   "relationship": {
+    "type": "split",
+    "from": [
+     "79-41-K/41 – S rozšířenou výukou jazyků a IT (2025)"
+    ],
+    "to": [
+     "79-41-K/41 – Gymnázium (2026)",
+     "79-41-K/41 – Business & Management (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0100", "Q0284", "Q0285"],
-      "status": "pravděpodobné",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela jedinou nabídku 79-41-K/41 Gymnázium se zaměřením „S rozšířenou výukou jazyků a IT\". V 1. kole JPZ 2026 se pod stejným kódem objevují dvě nabídky: „Gymnázium\" (obecný název) a „Business & Management\".",
-        "Web školy (ostrava.educanet.cz/nase-programy/business-a-management) popisuje Business & Management jako „Nový a naprosto unikátní středoškolský studijní program\" určený zájemcům o řízení podniků, sportovních klubů nebo vlastní podnikání, s výukou od odborníků z praxe a se ziskem MBA titulu ihned po maturitě – tedy jde o školou samou deklarovaný nový program.",
-        "Web školy (ostrava.educanet.cz/nase-programy/gymnazium) popisuje program „Gymnázium\" s důrazem na jazykovou přípravu (jazykové certifikáty, výuka části nejazykových předmětů v angličtině, mezinárodní AP kurzy), ale bez výslovné zmínky o zaměření na IT, které bylo součástí názvu nabídky z roku 2025.",
-        "Rejstřík MŠMT eviduje kód 79-41-K/41 beze změny u téhož IZO 049562339 ve všech čtyřech snímcích; zaměření rejstřík nesleduje."
-      ],
-      "conclusion": "Škola pro školní rok 2026/27 rozdělila dosavadní jedinou nabídku čtyřletého gymnázia (dříve „S rozšířenou výukou jazyků a IT\") na dvě paralelní větve pod stejným kódem: obecnější „Gymnázium\" s jazykovým zaměřením a nově zavedený program „Business & Management\", který škola sama označuje za nový. Jde o rozdělení nabídky (split) v rámci jednoho, beze změny zapsaného oboru; přímé pokračování zaměření na IT z roku 2025 v programu „Gymnázium\" 2026 nebylo na webu potvrzeno – akcent na IT z popisu spíše vymizel ve prospěch jazykového zaměření.",
-      "alternative_explanations": [
-        "„Gymnázium\" (2026) může být jen přejmenovaná a obsahově zúžená verze původního zaměření „S rozšířenou výukou jazyků a IT\" (jazyková složka zůstala, IT složka byla oslabena nebo přesunuta jinam), nebo může jít o zcela přeformulovanou nabídku bez přímé obsahové vazby na rok 2025 – zdroje toto nerozlišují."
-      ],
-      "relationship": {
-        "type": "split",
-        "from": ["79-41-K/41 – S rozšířenou výukou jazyků a IT (2025)"],
-        "to": ["79-41-K/41 – Gymnázium (2026)", "79-41-K/41 – Business & Management (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Mjr. Nováka 1455/34, 700 30 Hrabůvka, Ostrava",
-          "role": "sídlo",
-          "izo": "600016366",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Mjr. Nováka 1455/34, 700 30 Hrabůvka, Ostrava",
-          "role": "místo výuky",
-          "izo": "049562339",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://ostrava.educanet.cz/nase-programy/business-a-management/",
-          "title": "Business & management | EDUCANET Ostrava",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Popisuje Business & Management jako nový a unikátní program; nespecifikuje přesné datum spuštění, ale explicitně jej označuje za „nový\".",
-          "applicable_period": "aktuální nabídka (2026)"
-        },
-        {
-          "url": "https://ostrava.educanet.cz/nase-programy/gymnazium/",
-          "title": "Gymnázium | EDUCANET Ostrava",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Popisuje program Gymnázium s důrazem na jazykovou přípravu a mezinárodní vzdělávání, bez výslovné zmínky o IT zaměření.",
-          "applicable_period": "aktuální nabídka (2026)"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Kód 79-41-K/41 zůstává u IZO 049562339 zapsán beze změny; rejstřík zaměření nesleduje.",
-          "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600016366",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "V roce 2025 jedna nabídka se zaměřením „S rozšířenou výukou jazyků a IT\", v roce 2026 dvě nabídky „Gymnázium\" a „Business & Management\".",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "partially",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda program „Gymnázium\" (2026) skutečně obsahově navazuje na dřívější zaměření „S rozšířenou výukou jazyků a IT\", nebo je jazykový akcent jedinou zachovanou složkou.",
-        "Přesné datum spuštění programu Business & Management (škola jej pouze označuje za nový, bez data)."
-      ]
+     "text": "Mjr. Nováka 1455/34, 700 30 Hrabůvka, Ostrava",
+     "role": "sídlo",
+     "izo": "600016366",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Mjr. Nováka 1455/34, 700 30 Hrabůvka, Ostrava",
+     "role": "místo výuky",
+     "izo": "049562339",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://ostrava.educanet.cz/nase-programy/business-a-management/",
+     "title": "Business & management | EDUCANET Ostrava",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Popisuje Business & Management jako nový a unikátní program; nespecifikuje přesné datum spuštění, ale explicitně jej označuje za „nový\".",
+     "applicable_period": "aktuální nabídka (2026)"
+    },
+    {
+     "url": "https://ostrava.educanet.cz/nase-programy/gymnazium/",
+     "title": "Gymnázium | EDUCANET Ostrava",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Popisuje program Gymnázium s důrazem na jazykovou přípravu a mezinárodní vzdělávání, bez výslovné zmínky o IT zaměření.",
+     "applicable_period": "aktuální nabídka (2026)"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Kód 79-41-K/41 zůstává u IZO 049562339 zapsán beze změny; rejstřík zaměření nesleduje.",
+     "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600016366",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "V roce 2025 jedna nabídka se zaměřením „S rozšířenou výukou jazyků a IT\", v roce 2026 dvě nabídky „Gymnázium\" a „Business & Management\".",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Zda program „Gymnázium\" (2026) skutečně obsahově navazuje na dřívější zaměření „S rozšířenou výukou jazyků a IT\", nebo je jazykový akcent jedinou zachovanou složkou."
+   ],
+   "resolved_questions": [
+    {
+     "otazka": "Přesné datum spuštění programu Business & Management (škola jej pouze označuje za nový, bez data).",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    }
+   ]
+  }
+ ]
 }

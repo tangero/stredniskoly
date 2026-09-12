@@ -119,7 +119,8 @@
     "Aktuální web školy prezentuje „Nástavbové denní studium (dvouleté)“ jako samostatnou kategorii s jediným oborem 64-41-L/51 Podnikání, určeným „pro vyučené“ a zakončeným maturitní zkouškou – obor je součástí stálé nabídky školy.",
     "Web školy má archivované fotogalerie z maturitních plesů tříd nástavbového studia oboru Podnikání (např. „Maturitní ples třídy nástavbového studia oboru Podnikání“, „Maturitní ples nástavbových tříd podnikání a strojírenství“) – dokládá to, že obor škola v minulosti již vyučovala a měla jeho absolventy, tedy jde o dlouhodobě provozovaný obor, nikoli novinku. Všechny archivní stránky ale nesou stejné datum publikace 22. 4. 2026, patrně kvůli migraci webu, takže z nich nelze odvodit přesný rok konání plesu.",
     "Stránky „Přijímací řízení na školní rok 2025/26“ a „na školní rok 2026/27“ neobsahují v textu článku konkrétní seznam oborů pro daný rok (jen odkaz na DiPSy/prihlaskynastredni.cz), takže nejde o přímý datovaný důkaz, že obor v roce 2025 chyběl a v roce 2026 se objevil – tuto skutečnost dokládají pouze přiložená data CERMAT.",
-    "Vztah je veden jako pokračování (continuation): obor je v rejstříku zapsán nepřetržitě a v roce 2026 se pouze znovu vyhlásilo přijímací řízení. Fronta nemá samostatný typ pro obnovenou nabídku."
+    "Vztah je veden jako pokračování (continuation): obor je v rejstříku zapsán nepřetržitě a v roce 2026 se pouze znovu vyhlásilo přijímací řízení. Fronta nemá samostatný typ pro obnovenou nabídku.",
+    "Data CERMAT odpovídají: v roce 2025 obor 64-41-L/51 nefiguruje v 1. ani ve 2. kole, žádné přijímací řízení do něj tedy neproběhlo. V 1. kole 2024 měl 58 přihlášek a jednoho přijatého uchazeče, pro rok 2026 má kapacitu 30."
    ],
    "conclusion": "Nepřiřazená nabídka 64-41-L/51 Podnikání (nástavbové denní studium) v roce 2026 pravděpodobně představuje obnovené/nově vyhlášené přijímací řízení pro dlouhodobě existující nástavbový obor, který škola v roce 2025 v nabídce CERMAT neměla, nikoli nově vzniklý obor. Odpovídá tomu trvalá registrace oboru v rejstříku MŠMT před rokem 2025 i to, že škola obor aktuálně prezentuje jako součást své stálé nabídky a v minulosti již měla jeho absolventy. Přímé dobové oznámení školy potvrzující důvod chybějící nabídky v roce 2025 se ale nepodařilo dohledat.",
    "alternative_explanations": [
@@ -181,6 +182,14 @@
      "checked_at": "2026-09-12",
      "supports": "Škola má archivovanou fotogalerii z maturitního plesu třídy nástavbového studia oboru Podnikání, což dokládá, že obor v minulosti reálně vyučovala a měl absolventy.",
      "applicable_period": "nedatováno přesně (archivní stránka, publikační metadata webu 22. 4. 2026 patrně z migrace)"
+    },
+    {
+     "url": "data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx; data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx; data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx; data/PZ2026_kolo1_skolobory_kapacity.xlsx",
+     "title": "CERMAT – přihlášky a výsledky přijímacího řízení (soubory v repozitáři)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 64-41-L/51 chybí v obou kolech 2025; v 1. kole 2024 měl 58 přihlášek a 1 přijatého. Soubory 2024 a 2025 jsou na úrovni uchazečů, obor bez přihlášek v nich chybí, i kdyby vypsán byl.",
+     "applicable_period": "1. a 2. kolo 2024 a 2025, 1. kolo 2026"
     }
    ],
    "history_comparability": "not_comparable",
@@ -188,8 +197,13 @@
    "related_task_ids": [],
    "unanswered_questions": [
     "Zda šlo v roce 2025 o skutečné nevyhlášení přijímacího řízení do oboru Podnikání, nebo jen o chybějící záznam v datech CERMAT.",
-    "Kolik uchazečů bylo do oboru přijato v roce 2025, pokud vůbec nějaké řízení proběhlo mimo evidenci CERMAT.",
     "Zda souvisí obnovení nabídky Podnikání s omezením nabídky Provozní techniky a Provozní elektrotechniky (Q0144, Q0145) v témže roce."
+   ],
+   "resolved_questions": [
+    {
+     "otazka": "Kolik uchazečů bylo do oboru přijato v roce 2025, pokud vůbec nějaké řízení proběhlo mimo evidenci CERMAT.",
+     "uzavreno": "Odpovězeno z dat CERMAT dostupných v repozitáři: data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx, data/PZ2026_kolo1_skolobory_kapacity.xlsx"
+    }
    ]
   }
  ]

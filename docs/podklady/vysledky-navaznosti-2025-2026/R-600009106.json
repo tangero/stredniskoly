@@ -27,7 +27,8 @@
     "Zpráva školy z 31. 8. 2025 „Zahájení vzdělávání – dálkové nástavbové studium\" popisuje zahájení výuky nástavbového studia od 10. 9. 2025 výhradně jako dálkové (středeční konzultace); o denní formě nástavby se text vůbec nezmiňuje.",
     "Vyhlášení 1. kola přijímacího řízení pro školní rok 2026/2027 (16. 1. 2026) obsahuje obor „65-41-L/51 Gastronomie a hotelnictví\" popsaný jako „Dvouleté nástavbové studium s maturitní zkouškou (denní) – určeno pouze pro všechny absolventy oborů KUCHAŘ a ČÍŠNÍK\".",
     "Výsledky 1. kola přijímacího řízení pro školní rok 2026/2027 (15. 5. 2026) potvrzují mezi 8 obory položku „65-41-L/51 Gastronomie nástavba – denní studium\" – denní forma tedy byla pro rok 2026 skutečně otevřena a obsazena.",
-    "Data 1. kola přijímacího řízení 2024 (úroveň uchazečů) evidují u téhož IZO obor 65-41-L/51 s 43 přihláškami a 26 přijatými uchazeči. Obor se tedy v roce 2024 nabízel, v roce 2025 v 1. kole chyběl a v roce 2026 je vypsán znovu. Nejde o novou nabídku, ale o návrat po vynechaném ročníku; vztah proto veden jako pokračování."
+    "Data 1. kola přijímacího řízení 2024 (úroveň uchazečů) evidují u téhož IZO obor 65-41-L/51 s 43 přihláškami a 26 přijatými uchazeči. Obor se tedy v roce 2024 nabízel, v roce 2025 v 1. kole chyběl a v roce 2026 je vypsán znovu. Nejde o novou nabídku, ale o návrat po vynechaném ročníku; vztah proto veden jako pokračování.",
+    "Data CERMAT odpovídají: v 1. kole 2024 měl obor 65-41-L/51 u tohoto IZO 43 přihlášek a 26 přijatých, ve 2. kole 2024 a v obou kolech 2025 nefiguruje. Jde tedy skutečně o obnovení dříve přerušené nabídky, ne o její první vypsání."
    ],
    "conclusion": "Denní nástavbové studium 65-41-L/51 Gastronomie (zaměření „Gastronomie a hotelnictví nástavba\") nebylo pro školní rok 2025/2026 školou vyhlášeno ani otevřeno – v 1. i 2. kole přijímacího řízení 2025/2026 figurovalo nástavbové studium pouze v dálkové formě. Pro školní rok 2026/2027 škola denní nástavbové studium nově vyhlásila a v 1. kole obsadila (výsledky zveřejněny 15. 5. 2026). Nepřiřazená nabídka v CERMAT datech 2026 tedy odpovídá reálně nové/obnovené nabídce denní formy studia, nikoli chybě v párování dat. Obor samotný (kód 65-41-L/51) přitom zůstává v rejstříku MŠMT zapsán nepřetržitě ve všech snímcích – zápis pokrývá obě formy studia a nerozlišuje, která z nich je v daném roce fakticky vyhlašována.",
    "alternative_explanations": [
@@ -144,13 +145,25 @@
      "checked_at": "2026-09-12",
      "supports": "Obor 65-41-L/51 měl u tohoto IZO v 1. kole 2024 43 přihlášek a 26 přijatých uchazečů – obor byl v roce 2024 nabízen.",
      "applicable_period": "1. kolo přijímacího řízení 2024"
+    },
+    {
+     "url": "data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx; data/PZ2024_kolo2_uchazeci_prihlasky_vysledky.xlsx; data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx; data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx",
+     "title": "CERMAT – přihlášky a výsledky přijímacího řízení (soubory v repozitáři)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 65-41-L/51 běžel v 1. kole 2024 a chybí v obou kolech 2025. Soubory 2024 a 2025 jsou na úrovni uchazečů, obor bez přihlášek v nich chybí, i kdyby vypsán byl.",
+     "applicable_period": "1. a 2. kolo 2024 a 2025, 1. kolo 2026"
     }
    ],
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Nebylo dohledáno, zda denní forma nástavbového studia 65-41-L/51 Gastronomie běžela u této školy někdy před rokem 2025 (mimo sledované období fronty); pokud ano, šlo by spíše o obnovení dříve přerušené nabídky než o zcela nový program."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Nebylo dohledáno, zda denní forma nástavbového studia 65-41-L/51 Gastronomie běžela u této školy někdy před rokem 2025 (mimo sledované období fronty); pokud ano, šlo by spíše o obnovení dříve přerušené nabídky než o zcela nový program.",
+     "uzavreno": "Odpovězeno z dat CERMAT dostupných v repozitáři: data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2024_kolo2_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx"
+    }
    ]
   }
  ]

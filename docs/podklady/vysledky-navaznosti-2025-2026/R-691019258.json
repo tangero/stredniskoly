@@ -1,87 +1,103 @@
 {
-  "task_id": "R-691019258",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Subjekt REDIZO 691019258 (ERUNI, univerzitní gymnázium a střední odborná škola Praha, z.ú.) chybí ve snímku 2025-03-31. Od snímku 2025-12-31 je evidován beze změny i v 2026-03-31 a 2026-06-30: sídlo Politických vězňů 1419/11, 110 00 Praha 1-Nové Město, IZO 250004453 „Střední škola“ se dvěma obory: 79-41-K/41 Gymnázium a 75-31-M/01 Předškolní a mimoškolní pedagogika (oba 4leté, denní, český)."
-  },
-  "findings": [
+ "task_id": "R-691019258",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt REDIZO 691019258 (ERUNI, univerzitní gymnázium a střední odborná škola Praha, z.ú.) chybí ve snímku 2025-03-31. Od snímku 2025-12-31 je evidován beze změny i v 2026-03-31 a 2026-06-30: sídlo Politických vězňů 1419/11, 110 00 Praha 1-Nové Město, IZO 250004453 „Střední škola“ se dvěma obory: 79-41-K/41 Gymnázium a 75-31-M/01 Předškolní a mimoškolní pedagogika (oba 4leté, denní, český)."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0410",
+    "Q0411",
+    "Q0426"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 REDIZO 691019258 nemá žádnou nabídku; v 1. kole JPZ 2026 nabízí dva obory: 75-31-M/01 Předškolní a mimoškolní pedagogika (zaměření „Univerzitní příprava v pedagogice, psychologii a moderních metodách učení“) a 79-41-K/41 Gymnázium (zaměření „Univerzitní akademické výzkumné gymnázium“), oba 4leté, denní, český jazyk.",
+    "Rejstřík MŠMT subjekt neeviduje ve snímku 2025-03-31; od snímku 2025-12-31 (shodně i 2026-03-31 a 2026-06-30) jej eviduje s IZO 250004453 „Střední škola“ a oběma uvedenými obory na adrese Politických vězňů 1419/11, Praha 1.",
+    "Oficiální web zřizovatele (eruni.org) popisuje ERUNI jako soukromou neziskovou vzdělávací instituci založenou v roce 1999, akreditované výukové centrum University of London, která „provozuje univerzitní gymnázia a střední pedagogické školy v Praze a Brně“.",
+    "Obchodní/veřejný rejstřík (or.justice.cz) eviduje právnickou osobu ERUNI, univerzitní gymnázium a střední odborná škola Praha, z.ú., IČO 05259428, vznik zápisem 22. 7. 2016, sídlo Politických vězňů 1419/11, Praha 1 – táž právnická osoba jako v rejstříku MŠMT, dlouhodobě existující, avšak nově zapsaná se středoškolskými obory až mezi snímky 2025-03-31 a 2025-12-31."
+   ],
+   "conclusion": "Právnická osoba ERUNI existuje od roku 2016 jako soukromá vzdělávací instituce, ale jako střední škola s obory Gymnázium (79-41-K/41) a Předškolní a mimoškolní pedagogika (75-31-M/01) byla do rejstříku MŠMT zapsána teprve mezi 31. 3. 2025 a 31. 12. 2025. Jde o nově zřízenou střední školu (novou větev dosavadní instituce), oba obory jsou pro tuto školu nové a nemají předchůdce v datech 2025.",
+   "alternative_explanations": [
+    "Kontinuitu na úrovni celé instituce ERUNI (vysokoškolské a jazykové vzdělávání od roku 1999/2016) nelze vyloučit, to se ale netýká středoškolských oborů, které jsou prokazatelně nové."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "79-41-K/41 (2026)",
+     "75-31-M/01 (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0410", "Q0411", "Q0426"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 REDIZO 691019258 nemá žádnou nabídku; v 1. kole JPZ 2026 nabízí dva obory: 75-31-M/01 Předškolní a mimoškolní pedagogika (zaměření „Univerzitní příprava v pedagogice, psychologii a moderních metodách učení“) a 79-41-K/41 Gymnázium (zaměření „Univerzitní akademické výzkumné gymnázium“), oba 4leté, denní, český jazyk.",
-        "Rejstřík MŠMT subjekt neeviduje ve snímku 2025-03-31; od snímku 2025-12-31 (shodně i 2026-03-31 a 2026-06-30) jej eviduje s IZO 250004453 „Střední škola“ a oběma uvedenými obory na adrese Politických vězňů 1419/11, Praha 1.",
-        "Oficiální web zřizovatele (eruni.org) popisuje ERUNI jako soukromou neziskovou vzdělávací instituci založenou v roce 1999, akreditované výukové centrum University of London, která „provozuje univerzitní gymnázia a střední pedagogické školy v Praze a Brně“.",
-        "Obchodní/veřejný rejstřík (or.justice.cz) eviduje právnickou osobu ERUNI, univerzitní gymnázium a střední odborná škola Praha, z.ú., IČO 05259428, vznik zápisem 22. 7. 2016, sídlo Politických vězňů 1419/11, Praha 1 – táž právnická osoba jako v rejstříku MŠMT, dlouhodobě existující, avšak nově zapsaná se středoškolskými obory až mezi snímky 2025-03-31 a 2025-12-31."
-      ],
-      "conclusion": "Právnická osoba ERUNI existuje od roku 2016 jako soukromá vzdělávací instituce, ale jako střední škola s obory Gymnázium (79-41-K/41) a Předškolní a mimoškolní pedagogika (75-31-M/01) byla do rejstříku MŠMT zapsána teprve mezi 31. 3. 2025 a 31. 12. 2025. Jde o nově zřízenou střední školu (novou větev dosavadní instituce), oba obory jsou pro tuto školu nové a nemají předchůdce v datech 2025.",
-      "alternative_explanations": [
-        "Kontinuitu na úrovni celé instituce ERUNI (vysokoškolské a jazykové vzdělávání od roku 1999/2016) nelze vyloučit, to se ale netýká středoškolských oborů, které jsou prokazatelně nové."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["79-41-K/41 (2026)", "75-31-M/01 (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Politických vězňů 1419/11, 110 00 Praha 1-Nové Město",
-          "role": "sídlo",
-          "izo": "691019258",
-          "valid_period": "2025-12-31 až 2026-06-30 (chybí ve snímku 2025-03-31)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Politických vězňů 1419/11, 110 00 Praha 1-Nové Město",
-          "role": "místo výuky",
-          "izo": "250004453",
-          "valid_period": "2025-12-31 až 2026-06-30 (chybí ve snímku 2025-03-31)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "REDIZO 691019258 s IZO 250004453 a oběma obory evidován od snímku 2025-12-31, chybí ve snímku 2025-03-31.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026 (shodně 2025-12-31 a 2026-03-31)"
-        },
-        {
-          "url": "https://eruni.org/cs/",
-          "title": "ERUNI – oficiální web instituce",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "ERUNI založena 1999, provozuje univerzitní gymnázia a střední pedagogické školy v Praze a Brně; adresa Politických vězňů 11, Praha.",
-          "applicable_period": "stav webu k září 2026"
-        },
-        {
-          "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=05259428",
-          "title": "Veřejný rejstřík a Sbírka listin – ERUNI, univerzitní gymnázium a střední odborná škola Praha, z.ú.",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "IČO 05259428, vznik zápisem 22. 7. 2016, sídlo Politických vězňů 1419/11, Praha 1.",
-          "applicable_period": "stav rejstříku k 12. 9. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-691019258",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "REDIZO 691019258 bez nabídky v roce 2025, dvě nabídky (Gymnázium a Předškolní a mimoškolní pedagogika) v roce 2026.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Přesné datum zápisu středoškolských oborů do rejstříku MŠMT mezi 31. 3. 2025 a 31. 12. 2025 nebylo dohledáno."
-      ]
+     "text": "Politických vězňů 1419/11, 110 00 Praha 1-Nové Město",
+     "role": "sídlo",
+     "izo": "691019258",
+     "valid_period": "2025-12-31 až 2026-06-30 (chybí ve snímku 2025-03-31)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Politických vězňů 1419/11, 110 00 Praha 1-Nové Město",
+     "role": "místo výuky",
+     "izo": "250004453",
+     "valid_period": "2025-12-31 až 2026-06-30 (chybí ve snímku 2025-03-31)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "REDIZO 691019258 s IZO 250004453 a oběma obory evidován od snímku 2025-12-31, chybí ve snímku 2025-03-31.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026 (shodně 2025-12-31 a 2026-03-31)"
+    },
+    {
+     "url": "https://eruni.org/cs/",
+     "title": "ERUNI – oficiální web instituce",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "ERUNI založena 1999, provozuje univerzitní gymnázia a střední pedagogické školy v Praze a Brně; adresa Politických vězňů 11, Praha.",
+     "applicable_period": "stav webu k září 2026"
+    },
+    {
+     "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?ico=05259428",
+     "title": "Veřejný rejstřík a Sbírka listin – ERUNI, univerzitní gymnázium a střední odborná škola Praha, z.ú.",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "IČO 05259428, vznik zápisem 22. 7. 2016, sídlo Politických vězňů 1419/11, Praha 1.",
+     "applicable_period": "stav rejstříku k 12. 9. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-691019258",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "REDIZO 691019258 bez nabídky v roce 2025, dvě nabídky (Gymnázium a Předškolní a mimoškolní pedagogika) v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přesné datum zápisu středoškolských oborů do rejstříku MŠMT mezi 31. 3. 2025 a 31. 12. 2025 nebylo dohledáno.",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    }
+   ]
+  }
+ ]
 }

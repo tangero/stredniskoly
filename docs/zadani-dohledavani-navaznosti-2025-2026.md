@@ -1,6 +1,6 @@
 # Dohledávání návaznosti škol a oborů 2025–2026
 
-Verze 1.2 · 12. 9. 2026. Fronta k výzkumu, nikoli schválená migrační mapa. Rešerše je provedena pro všech 192 úkolů; výsledky jsou podklad k přezkoumání, ne schválené mapování.
+Verze 1.3 · 12. 9. 2026. Fronta k výzkumu, nikoli schválená migrační mapa. Rešerše je provedena pro všech 192 úkolů; výsledky jsou podklad k přezkoumání, ne schválené mapování.
 
 Souhrn celého úkolu, stav realizace a přejímací podmínky: [Návaznost škol a oborů](ukol-navaznost-skol-a-oboru-2027.md).
 
@@ -88,6 +88,14 @@ Každý záznam v `findings` má obsahovat:
 }
 ```
 
+Nález může navíc nést dvě nepovinná pole, která oddělují tři různé věci od sebe:
+
+- `unanswered_questions` — otázka, na kterou by odpověděl další zdroj, ale ten se nenašel;
+- `resolved_questions` — otázka uzavřená bez dalšího dohledávání, každá jako `{"otazka": …, "uzavreno": …}`, kde `uzavreno` říká proč (schválené pravidlo, nebo data, která odpověděla);
+- `decisions_required` — věc, která nečeká na zdroj, ale na rozhodnutí člověka při přezkumu, typicky rozdělení historických statistik.
+
+Rozdíl je podstatný: počet otevřených otázek jinak přeceňuje zbývající práci. Otázka na přesné datum události není mezera v rešerši, ale vědomé rozhodnutí podle pravidla 8.
+
 Stav `potvrzeno` vyžaduje přímý doložitelný zdroj pro konkrétní závěr a období. Odkazy kontrolovat; pokud je zdroj nedostupný, zapsat omezení. Nálezy ukládat do samostatného souboru podle ID úkolu, aby regenerování vstupní fronty nezničilo výzkum.
 
 ## Soubory a reprodukce
@@ -113,5 +121,6 @@ Fronta nemění produkci ani lokálně uložená rozhodnutí prohlížeče. Reš
 ## Historie
 
 - **1.0:** 526 úkolů; do rešerše byly zahrnuty i prosté změny údajů a neúplné adresy.
+- **1.3:** Doplněna pole `resolved_questions` a `decisions_required`, aby se uzavřené otázky a rozhodnutí nemíchaly s otevřenými. Přidán `scripts/offer-history.py` nad soubory CERMAT 2024–2026.
 - **1.2:** Rešerše provedena pro všech 192 úkolů. Přibyly datované snímky rejstříku MŠMT jako důkazní zdroj, jejich dávkové propojení s frontou, prohlížeč výsledků a dvě kontroly. Upřesněn uzavřený číselník vztahů.
 - **1.1:** Po upřesnění zadání ponecháno 192 úkolů. 624 pozorování se pouze eviduje v `record_only`, 16 datových mezer v `data_gaps`. ID původních otázek jsou zachována. Tachov 600170535: žádná doložená změna, ulice chybí v obou letech; odstraněn z tabulky konkrétních změn. Původní počty 526/336 už nejsou aktuální frontou.

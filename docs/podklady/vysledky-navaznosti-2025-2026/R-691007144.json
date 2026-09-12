@@ -1,132 +1,167 @@
 {
-  "task_id": "R-691007144",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "K 31. 3. 2025 rejstřík MŠMT eviduje subjekt REDIZO 691007144 pod názvem „Základní škola a mateřská škola VŠTE s.r.o.“, sídlo Okružní 517/10, 370 01 České Budějovice 4; IZO 250002426 (typ „Střední škola“) v tomto snímku vůbec neexistuje. K 31. 12. 2025 se subjekt přejmenoval na „Technické gymnázium, základní škola a mateřská škola VŠTE s.r.o.“ a poprvé se objevuje IZO 250002426 „Střední škola“, místo výuky Okružní 517/10, s oborem 79-41-K/41 Gymnázium (4leté, denní, český jazyk). Stav je shodný i ve snímcích 31. 3. 2026 a 30. 6. 2026 – IZO i obor zůstávají zapsané beze změny. Rejstřík tedy dokládá, že středoškolská větev (gymnázium) této organizace vznikla až mezi březnem a prosincem 2025."
-  },
-  "findings": [
+ "task_id": "R-691007144",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "K 31. 3. 2025 rejstřík MŠMT eviduje subjekt REDIZO 691007144 pod názvem „Základní škola a mateřská škola VŠTE s.r.o.“, sídlo Okružní 517/10, 370 01 České Budějovice 4; IZO 250002426 (typ „Střední škola“) v tomto snímku vůbec neexistuje. K 31. 12. 2025 se subjekt přejmenoval na „Technické gymnázium, základní škola a mateřská škola VŠTE s.r.o.“ a poprvé se objevuje IZO 250002426 „Střední škola“, místo výuky Okružní 517/10, s oborem 79-41-K/41 Gymnázium (4leté, denní, český jazyk). Stav je shodný i ve snímcích 31. 3. 2026 a 30. 6. 2026 – IZO i obor zůstávají zapsané beze změny. Rejstřík tedy dokládá, že středoškolská větev (gymnázium) této organizace vznikla až mezi březnem a prosincem 2025."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0408",
+    "Q0424"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola (REDIZO 691007144) nemá v datech CERMAT žádnou nabídku (0 řádků). V 1. kole JPZ 2026 se nově objevuje jedna nabídka: 79-41-K/41 Gymnázium, bez zaměření, 4leté denní studium, IZO izo_250002426, adresa Okružní 517, České Budějovice.",
+    "Rejstřík MŠMT k 31. 3. 2025 nezná IZO 250002426 vůbec; subjekt v tomto snímku vystupuje jen jako „Základní škola a mateřská škola VŠTE s.r.o.“. Teprve k 31. 12. 2025 přibývá IZO 250002426 „Střední škola“ s oborem 79-41-K/41 a subjekt mění název na „Technické gymnázium, základní škola a mateřská škola VŠTE s.r.o.“. Ve snímcích 31. 3. 2026 a 30. 6. 2026 je stav shodný s 31. 12. 2025.",
+    "Web zsmsvste.cz (základní a mateřská škola VŠTE) prezentuje instituci jako trojici Mateřská škola / Základní škola / Technické gymnázium a na gymnázium odkazuje na samostatnou doménu https://www.gymokruzni.cz/.",
+    "Web gymokruzni.cz se prezentuje jako „První technické gymnázium v jižních Čechách“, sídlící v areálu Vysoké školy technické a ekonomické v Českých Budějovicích (VŠTE), s přístupem studentů k laboratořím a menze VŠTE. Adresa Okružní 517/10 odpovídá kampusu VŠTE.",
+    "Sekce aktualit na gymokruzni.cz obsahuje položku „Zahájení školního roku 2025/2026 proběhne 1. 9. 2025 od 8:15. Těšíme se na vás.“ – tedy první ročník gymnázia byl fyzicky otevřen v září 2025, přestože IZO 250002426 se v rejstříku MŠMT objevuje až ve snímku k 31. 12. 2025 (odstup zápisu do rejstříku za skutečným otevřením).",
+    "Stránka „Pro uchazeče“ na gymokruzni.cz uvádí pro školní rok 2026/2027 obor 79-41-K/41 Gymnázium, čtyřleté denní studium, s formulací, že škola „opět otevírá první ročník čtyřletého studia“, a odkazuje na standardní přijímací řízení s JPZ (výsledky 2. kola k 23. 6. 2026, 3. kolo do 17. 8. 2026, den otevřených dveří 26. 10. 2026).",
+    "Stránka „O škole“ uvádí, že společnost provozující školu byla zapsána do obchodního rejstříku již 7. 8. 2014, ale konkrétní školní rok otevření samotného gymnázia web explicitně neednotí – tuto informaci dokládá až položka v aktualitách o zahájení školního roku 2025/2026.",
+    "Data CERMAT odpovídají: první ročník byl přijat ve 2. kole přijímacího řízení 2025, kde obor 79-41-K/41 vykazuje 19 přihlášek a 14 přijatých uchazečů. V 1. kole 2025 skutečně nefiguruje, takže škola nabírala až v dodatečném kole.",
+    "Přehled škol a oborů CERMAT pro 1. kolo 2026 uvádí u oboru 79-41-K/41 kapacitu 50 míst."
+   ],
+   "conclusion": "Nabídka 79-41-K/41 Gymnázium u REDIZO 691007144 / IZO izo_250002426 v 1. kole JPZ 2026 nemá předchůdce v datech 2025, protože jde o zcela nově založené Technické gymnázium VŠTE, které fyzicky zahájilo výuku prvního ročníku 1. 9. 2025 v rámci dosavadní Základní školy a mateřské školy VŠTE s.r.o. (sídlo/areál VŠTE, Okružní 517/10, České Budějovice). Registrace IZO 250002426 v rejstříku MŠMT následovala až ve snímku k 31. 12. 2025, tedy s odstupem po skutečném otevření. Nejde o sloučení s jinou existující střední školou ani o pouhé přejmenování stávající nabídky – jde o novou organizační složku (novou školní jednotku i nový obor) v rámci existující právnické osoby, která se poprvé účastní standardního 1. kola JPZ až v roce 2026. Otázky Q0408 (nepřiřazená nabídka) a Q0424 (nepřiřazená školní jednotka) popisují tentýž jev – vznik IZO 250002426 a jeho oboru 79-41-K/41 – proto jsou pokryty společným nálezem.",
+   "alternative_explanations": [
+    "Nelze vyloučit, že první ročník otevřený v září 2025 byl naplněn mimo standardní JPZ mechanismus (např. malý počet žáků, dodatečný zápis) – proto se v CERMAT datech 2025 neobjevuje žádná nabídka této školy; zdroje ale tuto konkrétní příčinu neuvádějí, jde o hypotézu, ne o doložený fakt.",
+    "Formálně by šlo případ interpretovat i jako rozšíření stávající právnické osoby (ZŠ a MŠ VŠTE s.r.o.) o novou střední školu, nikoli jako sloučení dvou samostatných škol – zdroje nenaznačují žádnou druhou zanikající organizaci, se kterou by šlo o sloučení."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "79-41-K/41 Gymnázium, IZO izo_250002426 (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0408", "Q0424"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola (REDIZO 691007144) nemá v datech CERMAT žádnou nabídku (0 řádků). V 1. kole JPZ 2026 se nově objevuje jedna nabídka: 79-41-K/41 Gymnázium, bez zaměření, 4leté denní studium, IZO izo_250002426, adresa Okružní 517, České Budějovice.",
-        "Rejstřík MŠMT k 31. 3. 2025 nezná IZO 250002426 vůbec; subjekt v tomto snímku vystupuje jen jako „Základní škola a mateřská škola VŠTE s.r.o.“. Teprve k 31. 12. 2025 přibývá IZO 250002426 „Střední škola“ s oborem 79-41-K/41 a subjekt mění název na „Technické gymnázium, základní škola a mateřská škola VŠTE s.r.o.“. Ve snímcích 31. 3. 2026 a 30. 6. 2026 je stav shodný s 31. 12. 2025.",
-        "Web zsmsvste.cz (základní a mateřská škola VŠTE) prezentuje instituci jako trojici Mateřská škola / Základní škola / Technické gymnázium a na gymnázium odkazuje na samostatnou doménu https://www.gymokruzni.cz/.",
-        "Web gymokruzni.cz se prezentuje jako „První technické gymnázium v jižních Čechách“, sídlící v areálu Vysoké školy technické a ekonomické v Českých Budějovicích (VŠTE), s přístupem studentů k laboratořím a menze VŠTE. Adresa Okružní 517/10 odpovídá kampusu VŠTE.",
-        "Sekce aktualit na gymokruzni.cz obsahuje položku „Zahájení školního roku 2025/2026 proběhne 1. 9. 2025 od 8:15. Těšíme se na vás.“ – tedy první ročník gymnázia byl fyzicky otevřen v září 2025, přestože IZO 250002426 se v rejstříku MŠMT objevuje až ve snímku k 31. 12. 2025 (odstup zápisu do rejstříku za skutečným otevřením).",
-        "Stránka „Pro uchazeče“ na gymokruzni.cz uvádí pro školní rok 2026/2027 obor 79-41-K/41 Gymnázium, čtyřleté denní studium, s formulací, že škola „opět otevírá první ročník čtyřletého studia“, a odkazuje na standardní přijímací řízení s JPZ (výsledky 2. kola k 23. 6. 2026, 3. kolo do 17. 8. 2026, den otevřených dveří 26. 10. 2026).",
-        "Stránka „O škole“ uvádí, že společnost provozující školu byla zapsána do obchodního rejstříku již 7. 8. 2014, ale konkrétní školní rok otevření samotného gymnázia web explicitně neednotí – tuto informaci dokládá až položka v aktualitách o zahájení školního roku 2025/2026."
-      ],
-      "conclusion": "Nabídka 79-41-K/41 Gymnázium u REDIZO 691007144 / IZO izo_250002426 v 1. kole JPZ 2026 nemá předchůdce v datech 2025, protože jde o zcela nově založené Technické gymnázium VŠTE, které fyzicky zahájilo výuku prvního ročníku 1. 9. 2025 v rámci dosavadní Základní školy a mateřské školy VŠTE s.r.o. (sídlo/areál VŠTE, Okružní 517/10, České Budějovice). Registrace IZO 250002426 v rejstříku MŠMT následovala až ve snímku k 31. 12. 2025, tedy s odstupem po skutečném otevření. Nejde o sloučení s jinou existující střední školou ani o pouhé přejmenování stávající nabídky – jde o novou organizační složku (novou školní jednotku i nový obor) v rámci existující právnické osoby, která se poprvé účastní standardního 1. kola JPZ až v roce 2026. Otázky Q0408 (nepřiřazená nabídka) a Q0424 (nepřiřazená školní jednotka) popisují tentýž jev – vznik IZO 250002426 a jeho oboru 79-41-K/41 – proto jsou pokryty společným nálezem.",
-      "alternative_explanations": [
-        "Nelze vyloučit, že první ročník otevřený v září 2025 byl naplněn mimo standardní JPZ mechanismus (např. malý počet žáků, dodatečný zápis) – proto se v CERMAT datech 2025 neobjevuje žádná nabídka této školy; zdroje ale tuto konkrétní příčinu neuvádějí, jde o hypotézu, ne o doložený fakt.",
-        "Formálně by šlo případ interpretovat i jako rozšíření stávající právnické osoby (ZŠ a MŠ VŠTE s.r.o.) o novou střední školu, nikoli jako sloučení dvou samostatných škol – zdroje nenaznačují žádnou druhou zanikající organizaci, se kterou by šlo o sloučení."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["79-41-K/41 Gymnázium, IZO izo_250002426 (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Okružní 517/10, 370 01 České Budějovice 4, České Budějovice",
-          "role": "sídlo",
-          "izo": "691007144",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky, subjekt pod oběma názvy)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Okružní 517/10, 370 01 České Budějovice 4, České Budějovice",
-          "role": "místo výuky",
-          "izo": "250002426",
-          "valid_period": "2025-12-31 až 2026-06-30 (IZO se ve snímku k 2025-03-31 nevyskytuje)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-691007144",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ) a snímky rejstříku MŠMT",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "V roce 2025 škola neměla žádnou nabídku, v roce 2026 nově nabízí 79-41-K/41 Gymnázium; IZO 250002426 se v rejstříku objevuje až od snímku 2025-12-31.",
-          "applicable_period": "1. kola JPZ 2025 a 2026; rejstřík 2025-03-31 až 2026-06-30"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "K 31. 3. 2025 subjekt figuruje jako „Základní škola a mateřská škola VŠTE s.r.o.“; IZO 250002426 v tomto snímku neexistuje.",
-          "applicable_period": "stav rejstříku k 31. 3. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "K 31. 12. 2025 subjekt se přejmenoval na „Technické gymnázium, základní škola a mateřská škola VŠTE s.r.o.“ a poprvé se objevuje IZO 250002426 „Střední škola“ s oborem 79-41-K/41 Gymnázium.",
-          "applicable_period": "stav rejstříku k 31. 12. 2025"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "K 30. 6. 2026 zůstává IZO 250002426 i obor 79-41-K/41 zapsán beze změny, shodně jako ve snímku 2025-12-31 a 2026-03-31.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "https://zsmsvste.cz",
-          "title": "Základní škola a mateřská škola VŠTE – oficiální web",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Instituce se prezentuje jako trojice Mateřská škola / Základní škola / Technické gymnázium; na gymnázium odkazuje samostatná doména gymokruzni.cz.",
-          "applicable_period": "stav webu k 2026-09-12"
-        },
-        {
-          "url": "https://www.gymokruzni.cz/",
-          "title": "Technické gymnázium VŠTE – úvodní stránka",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola se popisuje jako „první technické gymnázium v jižních Čechách“, sídlící v areálu VŠTE v Českých Budějovicích.",
-          "applicable_period": "stav webu k 2026-09-12"
-        },
-        {
-          "url": "https://www.gymokruzni.cz/aktuality/",
-          "title": "Aktuality – Technické gymnázium VŠTE",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Aktualita „Zahájení školního roku 2025/2026 proběhne 1. 9. 2025 od 8:15“ dokládá, že první ročník gymnázia byl fyzicky otevřen v září 2025, tedy dříve, než se IZO objevilo v rejstříku MŠMT (poprvé ve snímku 2025-12-31).",
-          "applicable_period": "školní rok 2025/2026 a 2026/2027"
-        },
-        {
-          "url": "https://www.gymokruzni.cz/pro-uchazece/",
-          "title": "Pro uchazeče – přijímací řízení – Technické gymnázium VŠTE",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Pro školní rok 2026/2027 škola nabízí obor 79-41-K/41 Gymnázium (4leté denní studium) a popisuje standardní přijímací řízení s JPZ; formulace „opět otevíráme první ročník“ navazuje na otevření v roce 2025.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://www.gymokruzni.cz/o-skole/",
-          "title": "O škole – Technické gymnázium VŠTE",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Provozující společnost byla zapsána do obchodního rejstříku 7. 8. 2014; stránka nespecifikuje přesný školní rok otevření gymnázia (tuto informaci doplňuje sekce aktualit).",
-          "applicable_period": "stav webu k 2026-09-12"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Přesný důvod, proč se první ročník otevřený v září 2025 neobjevuje v datech CERMAT 1. kola JPZ 2025 (např. mimořádný/dodatečný zápis mimo standardní JPZ, nebo administrativní zpoždění registrace IZO), nebyl na webu školy explicitně doložen.",
-        "Plánovaná kapacita a přesný počet přijímaných žáků pro školní rok 2026/27 nebyly na webu školy nalezeny."
-      ]
+     "text": "Okružní 517/10, 370 01 České Budějovice 4, České Budějovice",
+     "role": "sídlo",
+     "izo": "691007144",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky, subjekt pod oběma názvy)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Okružní 517/10, 370 01 České Budějovice 4, České Budějovice",
+     "role": "místo výuky",
+     "izo": "250002426",
+     "valid_period": "2025-12-31 až 2026-06-30 (IZO se ve snímku k 2025-03-31 nevyskytuje)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-691007144",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ) a snímky rejstříku MŠMT",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "V roce 2025 škola neměla žádnou nabídku, v roce 2026 nově nabízí 79-41-K/41 Gymnázium; IZO 250002426 se v rejstříku objevuje až od snímku 2025-12-31.",
+     "applicable_period": "1. kola JPZ 2025 a 2026; rejstřík 2025-03-31 až 2026-06-30"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "K 31. 3. 2025 subjekt figuruje jako „Základní škola a mateřská škola VŠTE s.r.o.“; IZO 250002426 v tomto snímku neexistuje.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "K 31. 12. 2025 subjekt se přejmenoval na „Technické gymnázium, základní škola a mateřská škola VŠTE s.r.o.“ a poprvé se objevuje IZO 250002426 „Střední škola“ s oborem 79-41-K/41 Gymnázium.",
+     "applicable_period": "stav rejstříku k 31. 12. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "K 30. 6. 2026 zůstává IZO 250002426 i obor 79-41-K/41 zapsán beze změny, shodně jako ve snímku 2025-12-31 a 2026-03-31.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "https://zsmsvste.cz",
+     "title": "Základní škola a mateřská škola VŠTE – oficiální web",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Instituce se prezentuje jako trojice Mateřská škola / Základní škola / Technické gymnázium; na gymnázium odkazuje samostatná doména gymokruzni.cz.",
+     "applicable_period": "stav webu k 2026-09-12"
+    },
+    {
+     "url": "https://www.gymokruzni.cz/",
+     "title": "Technické gymnázium VŠTE – úvodní stránka",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola se popisuje jako „první technické gymnázium v jižních Čechách“, sídlící v areálu VŠTE v Českých Budějovicích.",
+     "applicable_period": "stav webu k 2026-09-12"
+    },
+    {
+     "url": "https://www.gymokruzni.cz/aktuality/",
+     "title": "Aktuality – Technické gymnázium VŠTE",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Aktualita „Zahájení školního roku 2025/2026 proběhne 1. 9. 2025 od 8:15“ dokládá, že první ročník gymnázia byl fyzicky otevřen v září 2025, tedy dříve, než se IZO objevilo v rejstříku MŠMT (poprvé ve snímku 2025-12-31).",
+     "applicable_period": "školní rok 2025/2026 a 2026/2027"
+    },
+    {
+     "url": "https://www.gymokruzni.cz/pro-uchazece/",
+     "title": "Pro uchazeče – přijímací řízení – Technické gymnázium VŠTE",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Pro školní rok 2026/2027 škola nabízí obor 79-41-K/41 Gymnázium (4leté denní studium) a popisuje standardní přijímací řízení s JPZ; formulace „opět otevíráme první ročník“ navazuje na otevření v roce 2025.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://www.gymokruzni.cz/o-skole/",
+     "title": "O škole – Technické gymnázium VŠTE",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Provozující společnost byla zapsána do obchodního rejstříku 7. 8. 2014; stránka nespecifikuje přesný školní rok otevření gymnázia (tuto informaci doplňuje sekce aktualit).",
+     "applicable_period": "stav webu k 2026-09-12"
+    },
+    {
+     "url": "data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx; data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx",
+     "title": "CERMAT – přihlášky a výsledky přijímacího řízení (soubory v repozitáři)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 79-41-K/41 má ve 2. kole 2025 19 přihlášek a 14 přijatých; v 1. kole 2025 chybí. Soubory 2024 a 2025 jsou na úrovni uchazečů, obor bez přihlášek v nich chybí, i kdyby vypsán byl.",
+     "applicable_period": "1. a 2. kolo 2024 a 2025, 1. kolo 2026"
+    },
+    {
+     "url": "data/PZ2026_kolo1_skolobory_kapacity.xlsx",
+     "title": "CERMAT – přihlášky a výsledky přijímacího řízení (soubory v repozitáři)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Kapacita oboru 79-41-K/41 pro 1. kolo 2026 je 50 míst. Soubory 2024 a 2025 jsou na úrovni uchazečů, obor bez přihlášek v nich chybí, i kdyby vypsán byl.",
+     "applicable_period": "1. a 2. kolo 2024 a 2025, 1. kolo 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přesný důvod, proč se první ročník otevřený v září 2025 neobjevuje v datech CERMAT 1. kola JPZ 2025 (např. mimořádný/dodatečný zápis mimo standardní JPZ, nebo administrativní zpoždění registrace IZO), nebyl na webu školy explicitně doložen.",
+     "uzavreno": "Odpovězeno z dat CERMAT dostupných v repozitáři: data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx"
+    },
+    {
+     "otazka": "Plánovaná kapacita a přesný počet přijímaných žáků pro školní rok 2026/27 nebyly na webu školy nalezeny.",
+     "uzavreno": "Odpovězeno z dat CERMAT dostupných v repozitáři: data/PZ2026_kolo1_skolobory_kapacity.xlsx"
+    }
+   ]
+  }
+ ]
 }

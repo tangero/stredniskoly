@@ -24,7 +24,8 @@
     "Oficiální web školy (www.epol.cz) v sekci Obory vzdělání SZŠ uvádí obor Asistent zubního technika (53-44-M/03) jako součást standardní nabídky čtyř maturitních oborů školy.",
     "Oficiální web školy v sekci Přijímací řízení SZŠ u oboru Asistent zubního technika doslovně uvádí: „Ve školním roce 2026/2027 nebude otevřen (otevírá se jednou za dva roky)\" a dále „Obor bude otevřen ve školním roce 2027/2028\".",
     "Škola tedy sama vysvětluje chybějící nabídku v 1. kole JPZ 2026 jako důsledek pravidelného dvouletého cyklu otevírání tohoto oboru, nikoli jako jeho zrušení.",
-    "Typ vztahu je veden jako 'closed' ve smyslu ukončení nabídky v ročníku 2026, nikoli zániku oboru: obor zůstává v rejstříku MŠMT zapsán a přijímací řízení se jen nevyhlásilo. Stejnou konvenci používají ostatní nálezy fronty."
+    "Typ vztahu je veden jako 'closed' ve smyslu ukončení nabídky v ročníku 2026, nikoli zániku oboru: obor zůstává v rejstříku MŠMT zapsán a přijímací řízení se jen nevyhlásilo. Stejnou konvenci používají ostatní nálezy fronty.",
+    "Data CERMAT jsou s cyklem slučitelná i zpětně: obor 53-44-M/03 nefiguruje v žádném kole roku 2024, v 1. kole 2025 má 152 přihlášek a 30 přijatých a v roce 2026 chybí. Sled 2024 ne, 2025 ano, 2026 ne odpovídá lichému cyklu, který škola popisuje, a naznačuje, že platil už před rokem 2025."
    ],
    "conclusion": "Obor 53-44-M/03 Asistent zubního technika nebyl zrušen. Škola jej dlouhodobě otevírá jen jednou za dva roky a pro školní rok 2026/27 přijímací řízení do tohoto oboru nevyhlásila; sama na webu uvádí, že obor znovu otevře pro školní rok 2027/2028. Chybějící nabídka v CERMAT datech pro rok 2026 je tedy doložený důsledek pravidelného přerušení přijímání, nikoli zánik oboru – v souladu s tím zůstává obor po celé sledované období zapsán v rejstříku MŠMT.",
    "alternative_explanations": [
@@ -93,13 +94,25 @@
      "checked_at": "2026-09-12",
      "supports": "Nabídka 53-44-M/03 Asistent zubního technika přítomna v roce 2025 a chybějící v roce 2026; ostatní tři obory (Nutriční asistent, Praktická sestra, Laboratorní asistent) pokračují v obou letech.",
      "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx; data/PZ2024_kolo2_uchazeci_prihlasky_vysledky.xlsx; data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx; data/PZ2026_kolo1_skolobory_kapacity.xlsx",
+     "title": "CERMAT – přihlášky a výsledky přijímacího řízení (soubory v repozitáři)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 53-44-M/03 chybí v obou kolech 2024, je v 1. kole 2025 a chybí v 1. kole 2026. Soubory 2024 a 2025 jsou na úrovni uchazečů, obor bez přihlášek v nich chybí, i kdyby vypsán byl.",
+     "applicable_period": "1. a 2. kolo 2024 a 2025, 1. kolo 2026"
     }
    ],
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda byl dvouletý cyklus otevírání oboru zaveden už před rokem 2025, nebo šlo o novinku platnou poprvé pro 1. kolo JPZ 2026 – web školy uvádí jen aktuální stav, ne historii cyklu."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda byl dvouletý cyklus otevírání oboru zaveden už před rokem 2025, nebo šlo o novinku platnou poprvé pro 1. kolo JPZ 2026 – web školy uvádí jen aktuální stav, ne historii cyklu.",
+     "uzavreno": "Odpovězeno z dat CERMAT dostupných v repozitáři: data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2024_kolo2_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2026_kolo1_skolobory_kapacity.xlsx"
+    }
    ]
   }
  ]

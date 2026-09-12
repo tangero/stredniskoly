@@ -1,95 +1,109 @@
 {
-  "task_id": "R-691019193",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Subjekt REDIZO 691019193 (Gymnázium Laury Bassi s.r.o.) chybí ve snímku 2025-03-31. Od snímku 2025-12-31 je evidován beze změny i v 2026-03-31 a 2026-06-30: sídlo Hurbanova 1276/12, 142 00 Praha 4-Krč, IZO 250004160 „Střední škola“ s místem výuky Spálená 75/16, 110 00 Praha 1-Nové Město a oborem 79-41-K/41 Gymnázium (4leté, denní, český)."
-  },
-  "findings": [
+ "task_id": "R-691019193",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Subjekt REDIZO 691019193 (Gymnázium Laury Bassi s.r.o.) chybí ve snímku 2025-03-31. Od snímku 2025-12-31 je evidován beze změny i v 2026-03-31 a 2026-06-30: sídlo Hurbanova 1276/12, 142 00 Praha 4-Krč, IZO 250004160 „Střední škola“ s místem výuky Spálená 75/16, 110 00 Praha 1-Nové Město a oborem 79-41-K/41 Gymnázium (4leté, denní, český)."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0409",
+    "Q0425"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 REDIZO 691019193 nemá žádnou nabídku; v 1. kole JPZ 2026 nabízí obor 79-41-K/41 Gymnázium (4leté, denní, český) bez upřesněného zaměření.",
+    "Rejstřík MŠMT subjekt REDIZO 691019193 neeviduje ve snímku 2025-03-31, ale od snímku 2025-12-31 (shodně i 2026-03-31 a 2026-06-30) jej eviduje včetně IZO 250004160 „Střední škola“ s oborem 79-41-K/41 Gymnázium na adrese Spálená 75/16, Praha 1.",
+    "Oficiální web školy (gybassi.cz) uvádí, že gymnázium založila v září 2025 Tereza Bočanová jako soukromé, projektově orientované gymnázium v centru Prahy; první přijímací řízení (kritéria a tzv. přestupové zkoušky formou prezentace projektu) je zveřejněné pro školní rok 2026/2027, školné 138 000 Kč ročně.",
+    "Obchodní rejstřík (or.justice.cz) eviduje právnickou osobu Gymnázium Laury Bassi s.r.o., IČO 22070621, vznik zápisem 20. 9. 2024, sídlo Hurbanova 1276/12, Praha 4-Krč – shodné se sídlem v rejstříku MŠMT."
+   ],
+   "conclusion": "Jde o zcela novou školu i novou nabídku: právnická osoba vznikla 20. 9. 2024, škola byla otevřena v září 2025 a do rejstříku MŠMT jako střední škola s oborem 79-41-K/41 byla zapsána mezi snímky 2025-03-31 a 2025-12-31. První dokládané přijímací řízení směřuje ke školnímu roku 2026/2027. Nabídka nemá žádného předchůdce v datech 2025.",
+   "alternative_explanations": [
+    "Nelze vyloučit, že škola přijala první ročník už v září 2025 mimo systém JPZ (např. vlastním přijímacím řízením bez centrální evidence v datech CERMAT za rok 2025); to by závěr o nové nabídce v roce 2026 nezpochybnilo, jde jen o okamžik prvního zachycení v datech JPZ."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "79-41-K/41 (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0409", "Q0425"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 REDIZO 691019193 nemá žádnou nabídku; v 1. kole JPZ 2026 nabízí obor 79-41-K/41 Gymnázium (4leté, denní, český) bez upřesněného zaměření.",
-        "Rejstřík MŠMT subjekt REDIZO 691019193 neeviduje ve snímku 2025-03-31, ale od snímku 2025-12-31 (shodně i 2026-03-31 a 2026-06-30) jej eviduje včetně IZO 250004160 „Střední škola“ s oborem 79-41-K/41 Gymnázium na adrese Spálená 75/16, Praha 1.",
-        "Oficiální web školy (gybassi.cz) uvádí, že gymnázium založila v září 2025 Tereza Bočanová jako soukromé, projektově orientované gymnázium v centru Prahy; první přijímací řízení (kritéria a tzv. přestupové zkoušky formou prezentace projektu) je zveřejněné pro školní rok 2026/2027, školné 138 000 Kč ročně.",
-        "Obchodní rejstřík (or.justice.cz) eviduje právnickou osobu Gymnázium Laury Bassi s.r.o., IČO 22070621, vznik zápisem 20. 9. 2024, sídlo Hurbanova 1276/12, Praha 4-Krč – shodné se sídlem v rejstříku MŠMT."
-      ],
-      "conclusion": "Jde o zcela novou školu i novou nabídku: právnická osoba vznikla 20. 9. 2024, škola byla otevřena v září 2025 a do rejstříku MŠMT jako střední škola s oborem 79-41-K/41 byla zapsána mezi snímky 2025-03-31 a 2025-12-31. První dokládané přijímací řízení směřuje ke školnímu roku 2026/2027. Nabídka nemá žádného předchůdce v datech 2025.",
-      "alternative_explanations": [
-        "Nelze vyloučit, že škola přijala první ročník už v září 2025 mimo systém JPZ (např. vlastním přijímacím řízením bez centrální evidence v datech CERMAT za rok 2025); to by závěr o nové nabídce v roce 2026 nezpochybnilo, jde jen o okamžik prvního zachycení v datech JPZ."
-      ],
-      "relationship": {
-        "type": "new_offer",
-        "from": [],
-        "to": ["79-41-K/41 (2026)"]
-      },
-      "addresses": [
-        {
-          "text": "Hurbanova 1276/12, 142 00 Praha 4-Krč",
-          "role": "sídlo",
-          "izo": "691019193",
-          "valid_period": "2025-12-31 až 2026-06-30 (chybí ve snímku 2025-03-31)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        },
-        {
-          "text": "Spálená 75/16, 110 00 Praha 1-Nové Město",
-          "role": "místo výuky",
-          "izo": "250004160",
-          "valid_period": "2025-12-31 až 2026-06-30 (chybí ve snímku 2025-03-31)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "REDIZO 691019193 s IZO 250004160 a oborem 79-41-K/41 evidován od snímku 2025-12-31, chybí ve snímku 2025-03-31.",
-          "applicable_period": "stav rejstříku k 30. 6. 2026 (shodně 2025-12-31 a 2026-03-31)"
-        },
-        {
-          "url": "https://gybassi.cz/",
-          "title": "Gymnázium Laury Bassi – O škole",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola založena v září 2025 Terezou Bočanovou jako soukromé projektové gymnázium v centru Prahy.",
-          "applicable_period": "stav webu školy k září 2026"
-        },
-        {
-          "url": "https://gybassi.cz/prijimaci-rizeni/",
-          "title": "Přijímací řízení – Gymnázium Laury Bassi",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Zveřejněná kritéria přijímacího řízení pro školní rok 2026/2027, školné 138 000 Kč.",
-          "applicable_period": "přijímací řízení 2026/27"
-        },
-        {
-          "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?nazev=Gymn%C3%A1zium+Laury+Bassi",
-          "title": "Veřejný rejstřík a Sbírka listin – Gymnázium Laury Bassi s.r.o.",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "IČO 22070621, vznik zápisem 20. 9. 2024, sídlo Hurbanova 1276/12, Praha 4-Krč.",
-          "applicable_period": "stav rejstříku k 12. 9. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-691019193",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "REDIZO 691019193 bez nabídky v roce 2025, jedna nabídka 79-41-K/41 Gymnázium v roce 2026.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Přesné datum zápisu školy do rejstříku MŠMT mezi 31. 3. 2025 a 31. 12. 2025 nebylo dohledáno."
-      ]
+     "text": "Hurbanova 1276/12, 142 00 Praha 4-Krč",
+     "role": "sídlo",
+     "izo": "691019193",
+     "valid_period": "2025-12-31 až 2026-06-30 (chybí ve snímku 2025-03-31)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Spálená 75/16, 110 00 Praha 1-Nové Město",
+     "role": "místo výuky",
+     "izo": "250004160",
+     "valid_period": "2025-12-31 až 2026-06-30 (chybí ve snímku 2025-03-31)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "REDIZO 691019193 s IZO 250004160 a oborem 79-41-K/41 evidován od snímku 2025-12-31, chybí ve snímku 2025-03-31.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026 (shodně 2025-12-31 a 2026-03-31)"
+    },
+    {
+     "url": "https://gybassi.cz/",
+     "title": "Gymnázium Laury Bassi – O škole",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola založena v září 2025 Terezou Bočanovou jako soukromé projektové gymnázium v centru Prahy.",
+     "applicable_period": "stav webu školy k září 2026"
+    },
+    {
+     "url": "https://gybassi.cz/prijimaci-rizeni/",
+     "title": "Přijímací řízení – Gymnázium Laury Bassi",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Zveřejněná kritéria přijímacího řízení pro školní rok 2026/2027, školné 138 000 Kč.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://or.justice.cz/ias/ui/rejstrik-$firma?nazev=Gymn%C3%A1zium+Laury+Bassi",
+     "title": "Veřejný rejstřík a Sbírka listin – Gymnázium Laury Bassi s.r.o.",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "IČO 22070621, vznik zápisem 20. 9. 2024, sídlo Hurbanova 1276/12, Praha 4-Krč.",
+     "applicable_period": "stav rejstříku k 12. 9. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-691019193",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "REDIZO 691019193 bez nabídky v roce 2025, jedna nabídka 79-41-K/41 Gymnázium v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přesné datum zápisu školy do rejstříku MŠMT mezi 31. 3. 2025 a 31. 12. 2025 nebylo dohledáno.",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    }
+   ]
+  }
+ ]
 }

@@ -24,7 +24,8 @@
     "Rejstřík MŠMT eviduje obor 64-41-L/51 Podnikání u IZO 107820102 již ve snímku k 31. 3. 2025 (kapacita 100, denní forma, délka 2 roky) i k 31. 3. 2026 – registrace oboru tedy předcházela nabídce v přijímačkách 2026.",
     "AtlasŠkolství.cz uvádí u školy nástavbu Podnikání 64-41-L/51 s plánem přijetí 30 žáků pro rok 2026/27 a zároveň sloupec přihlášeni/přijati 2025/26 s hodnotou 0/0, což je konzistentní s tím, že v kole 2025 škola nástavbu v 1. kole JPZ nenabízela.",
     "Název školy, adresa sídla (Jaroslava Šípka 187, Stochov, PSČ 273 03) i IZO jsou v obou letech i ve všech snímcích rejstříku shodné; nešlo o žádnou organizační změnu.",
-    "Data 1. kola přijímacího řízení 2024 (úroveň uchazečů) evidují u téhož IZO obor 64-41-L/51 s 59 přihláškami a 30 přijatými uchazeči. Obor se tedy v roce 2024 nabízel, v roce 2025 v 1. kole chyběl a v roce 2026 je vypsán znovu. Nejde o novou nabídku, ale o návrat po vynechaném ročníku; vztah proto veden jako pokračování."
+    "Data 1. kola přijímacího řízení 2024 (úroveň uchazečů) evidují u téhož IZO obor 64-41-L/51 s 59 přihláškami a 30 přijatými uchazeči. Obor se tedy v roce 2024 nabízel, v roce 2025 v 1. kole chyběl a v roce 2026 je vypsán znovu. Nejde o novou nabídku, ale o návrat po vynechaném ročníku; vztah proto veden jako pokračování.",
+    "Data CERMAT odpovídají: obor 64-41-L/51 v roce 2025 nefiguruje ani v 1., ani ve 2. kole. V 1. kole 2024 přitom měl 59 přihlášek a 30 přijatých a pro rok 2026 má kapacitu 17. Rok 2025 byl tedy vynechán celý, nejen jeho první kolo."
    ],
    "conclusion": "Nabídka 64-41-L/51 Podnikání není novou nabídkou školy. Data 1. kola 2024 ukazují u téhož IZO 59 přihlášek a 30 přijatých uchazečů, obor tedy v roce 2024 běžel. V roce 2025 nebyl v 1. kole vypsán a pro rok 2026 se vypisuje znovu – jde o obnovení nabídky po vynechaném ročníku.",
    "alternative_explanations": [
@@ -108,13 +109,25 @@
      "checked_at": "2026-09-12",
      "supports": "Obor 64-41-L/51 měl u tohoto IZO v 1. kole 2024 59 přihlášek a 30 přijatých uchazečů – obor byl v roce 2024 nabízen.",
      "applicable_period": "1. kolo přijímacího řízení 2024"
+    },
+    {
+     "url": "data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx; data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx; data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx; data/PZ2026_kolo1_skolobory_kapacity.xlsx",
+     "title": "CERMAT – přihlášky a výsledky přijímacího řízení (soubory v repozitáři)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 64-41-L/51 chybí v 1. i 2. kole 2025 a je přítomen v 1. kole 2024 i 2026. Soubory 2024 a 2025 jsou na úrovni uchazečů, obor bez přihlášek v nich chybí, i kdyby vypsán byl.",
+     "applicable_period": "1. a 2. kolo 2024 a 2025, 1. kolo 2026"
     }
    ],
    "history_comparability": "not_comparable",
    "recommended_action": "approve_mapping",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda byla nástavba Podnikání nabízena i v přijímacím řízení 2025 mimo 1. kolo JPZ (2. kolo apod.), z dostupných zdrojů nelze rozhodnout."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda byla nástavba Podnikání nabízena i v přijímacím řízení 2025 mimo 1. kolo JPZ (2. kolo apod.), z dostupných zdrojů nelze rozhodnout.",
+     "uzavreno": "Odpovězeno z dat CERMAT dostupných v repozitáři: data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx, data/PZ2026_kolo1_skolobory_kapacity.xlsx"
+    }
    ]
   }
  ]

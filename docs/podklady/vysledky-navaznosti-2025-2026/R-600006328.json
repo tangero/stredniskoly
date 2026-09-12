@@ -1,73 +1,165 @@
 {
-  "task_id": "R-600006328",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Soukromá střední odborná škola a Soukromé střední odborné učiliště BEAN, s.r.o. (REDIZO 600006328, IZO 110007808) je ve všech čtyřech snímcích beze změny názvu a IZO, sídlo Českobrodská 362/32, 190 00 Hrdlořezy, Praha. Škola má rozsáhlé portfolio cca 25 oborů na třech místech výuky (Českobrodská - Hrdlořezy, Poděbradská - Vysočany, U Domu služeb - Modřany od 31. 12. 2025). Obory 41-44-M/01 Zahradnictví, 63-41-M/01 Ekonomika a podnikání a 63-41-M/02 Obchodní akademie jsou registrovány nepřetržitě ve všech čtyřech snímcích – žádný z nich v rejstříku nechybí ani nezaniká."
-  },
-  "findings": [
+ "task_id": "R-600006328",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Soukromá střední odborná škola a Soukromé střední odborné učiliště BEAN, s.r.o. (REDIZO 600006328, IZO 110007808) je ve všech čtyřech snímcích beze změny názvu a IZO, sídlo Českobrodská 362/32, 190 00 Hrdlořezy, Praha. Škola má rozsáhlé portfolio cca 25 oborů na třech místech výuky (Českobrodská - Hrdlořezy, Poděbradská - Vysočany, U Domu služeb - Modřany od 31. 12. 2025). Obory 41-44-M/01 Zahradnictví, 63-41-M/01 Ekonomika a podnikání a 63-41-M/02 Obchodní akademie jsou registrovány nepřetržitě ve všech čtyřech snímcích – žádný z nich v rejstříku nechybí ani nezaniká."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0027",
+    "Q0028"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 škola nabízela mimo jiné obory 41-44-M/01 Zahradnictví a 63-41-M/01 Ekonomika a podnikání se zaměřením „Aplikace informačních technologií“. V 1. kole JPZ 2026 tyto dvě nabídky mezi celkovými dvěma nabídkami školy chybí (zůstává jen Obchodní akademie a Ekonomické lyceum – sportovní management).",
+    "Rejstřík MŠMT eviduje oba obory (41-44-M/01 i 63-41-M/01) nepřetržitě ve všech čtyřech snímcích včetně 30. 6. 2026 – registrace trvá.",
+    "Vlastní web školy (bean.cz) k přijímacímu řízení pro školní rok 2026/2027 uvádí v pobočce Vysočany obor „Zahradnictví“ a v pobočce Modřany „Aplikace informačních technologií“ jako aktuálně nabízené programy – tedy oba obory jsou podle školy pro školní rok 2026/2027 stále v nabídce.",
+    "Škola na témže webu výslovně uvádí, že pro školní rok 2026/2027 neotevírá jen dálkovou formu Obchodní akademie – jde tedy o selektivní omezení konkrétních forem/oborů v 1. kole centralizovaného přijímacího řízení, nikoli o plošné rušení programů."
+   ],
+   "conclusion": "Zahradnictví a Ekonomika a podnikání (Aplikace informačních technologií) nejsou zrušeny – zůstávají registrovány v rejstříku i uvedeny na webu školy jako součást nabídky pro 2026/2027. Jejich nepřítomnost v datech 1. kola JPZ 2026 je pravděpodobně důsledkem toho, že škola tyto obory pro daný ročník neotevírá v 1. kole centralizovaného řízení (např. plánuje je naplňovat v dalších kolech nebo je nabízí jen při dostatečném zájmu), nikoli zánikem oboru.",
+   "alternative_explanations": [
+    "Nelze vyloučit, že aktuální webová nabídka odráží až plán pro následující přijímací cyklus (2027/28) a pro rok 2026/27 obory fakticky neběžely vůbec; přímé prohlášení školy k důvodu nepřítomnosti v 1. kole JPZ 2026 nebylo nalezeno."
+   ],
+   "relationship": {
+    "type": "closed",
+    "from": [
+     "41-44-M/01 Zahradnictví (2025)",
+     "63-41-M/01 Ekonomika a podnikání - Aplikace informačních technologií (2025)"
+    ],
+    "to": []
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0027", "Q0028"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 škola nabízela mimo jiné obory 41-44-M/01 Zahradnictví a 63-41-M/01 Ekonomika a podnikání se zaměřením „Aplikace informačních technologií“. V 1. kole JPZ 2026 tyto dvě nabídky mezi celkovými dvěma nabídkami školy chybí (zůstává jen Obchodní akademie a Ekonomické lyceum – sportovní management).",
-        "Rejstřík MŠMT eviduje oba obory (41-44-M/01 i 63-41-M/01) nepřetržitě ve všech čtyřech snímcích včetně 30. 6. 2026 – registrace trvá.",
-        "Vlastní web školy (bean.cz) k přijímacímu řízení pro školní rok 2026/2027 uvádí v pobočce Vysočany obor „Zahradnictví“ a v pobočce Modřany „Aplikace informačních technologií“ jako aktuálně nabízené programy – tedy oba obory jsou podle školy pro školní rok 2026/2027 stále v nabídce.",
-        "Škola na témže webu výslovně uvádí, že pro školní rok 2026/2027 neotevírá jen dálkovou formu Obchodní akademie – jde tedy o selektivní omezení konkrétních forem/oborů v 1. kole centralizovaného přijímacího řízení, nikoli o plošné rušení programů."
-      ],
-      "conclusion": "Zahradnictví a Ekonomika a podnikání (Aplikace informačních technologií) nejsou zrušeny – zůstávají registrovány v rejstříku i uvedeny na webu školy jako součást nabídky pro 2026/2027. Jejich nepřítomnost v datech 1. kola JPZ 2026 je pravděpodobně důsledkem toho, že škola tyto obory pro daný ročník neotevírá v 1. kole centralizovaného řízení (např. plánuje je naplňovat v dalších kolech nebo je nabízí jen při dostatečném zájmu), nikoli zánikem oboru.",
-      "alternative_explanations": [
-        "Nelze vyloučit, že aktuální webová nabídka odráží až plán pro následující přijímací cyklus (2027/28) a pro rok 2026/27 obory fakticky neběžely vůbec; přímé prohlášení školy k důvodu nepřítomnosti v 1. kole JPZ 2026 nebylo nalezeno."
-      ],
-      "relationship": {
-        "type": "closed",
-        "from": ["41-44-M/01 Zahradnictví (2025)", "63-41-M/01 Ekonomika a podnikání - Aplikace informačních technologií (2025)"],
-        "to": []
-      },
-      "addresses": [
-        {"text": "Poděbradská 179/1, 190 00 Vysočany, Praha", "role": "místo výuky", "izo": "110007808", "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)", "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"},
-        {"text": "U Domu služeb 166/5, 143 00 Modřany, Praha", "role": "místo výuky", "izo": "110007808", "valid_period": "od 2025-12-31", "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld"}
-      ],
-      "evidence": [
-        {"url": "http://www.bean.cz", "title": "BEAN – Soukromá SOŠ a SOU (hlavní stránka)", "published_at": null, "checked_at": "2026-09-12", "supports": "Pro školní rok 2026/2027 škola uvádí Zahradnictví (Vysočany) a Aplikace informačních technologií (Modřany) mezi nabízenými programy; explicitně uvádí, že neotevírá jen dálkovou Obchodní akademii.", "applicable_period": "přijímací řízení 2026/27"},
-        {"url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld", "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR", "published_at": null, "checked_at": "2026-09-12", "supports": "Obory 41-44-M/01 a 63-41-M/01 zůstávají u IZO 110007808 registrovány i k 30. 6. 2026.", "applicable_period": "stav rejstříku k 30. 6. 2026"},
-        {"url": "fronta-dohledavani-2025-2026.json, úkol R-600006328", "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)", "published_at": null, "checked_at": "2026-09-12", "supports": "Nabídky 41-44-M/01 a 63-41-M/01 (Aplikace IT) přítomny v roce 2025, chybějící v roce 2026.", "applicable_period": "1. kola JPZ 2025 a 2026"}
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda škola tyto obory pro školní rok 2026/2027 fakticky otevřela v pozdějším kole přijímacího řízení, nebo je zcela vynechala."
-      ]
+     "text": "Poděbradská 179/1, 190 00 Vysočany, Praha",
+     "role": "místo výuky",
+     "izo": "110007808",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     },
     {
-      "issue_ids": ["Q0342"],
-      "status": "pravděpodobné",
-      "observations": [
-        "Obor 63-41-M/02 Obchodní akademie je v rejstříku MŠMT registrován nepřetržitě ve všech čtyřech snímcích (od 31. 3. 2025 do 30. 6. 2026), ale v 1. kole JPZ 2025 škola tento obor nenabízela – objevuje se poprvé až v datech 2026.",
-        "Web školy (bean.cz) potvrzuje, že Obchodní akademie je pro školní rok 2026/2027 aktuálně nabízena (denní forma; dálková forma pro 2026/2027 výslovně neotevřena)."
-      ],
-      "conclusion": "Jde pravděpodobně o obnovení přijímacího řízení do již dříve registrovaného oboru, nikoli o zcela nový obor – Obchodní akademie byla v rejstříku zapsána už před rokem 2025, jen se v 1. kole JPZ 2025 nenabízela.",
-      "alternative_explanations": [
-        "Nelze vyloučit, že obor byl fakticky otevřen poprvé až pro školní rok 2026/2027 a dřívější registrace v rejstříku byla jen formální (bez reálné výuky) – k tomu chybí přímý doklad."
-      ],
-      "relationship": {"type": "continuation", "from": [], "to": ["63-41-M/02 Obchodní akademie (2026)"]},
-      "addresses": [
-        {"text": "U Domu služeb 166/5, 143 00 Modřany, Praha", "role": "místo výuky", "izo": "110007808", "valid_period": "od 2025-12-31", "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld"}
-      ],
-      "evidence": [
-        {"url": "http://www.bean.cz", "title": "BEAN – Soukromá SOŠ a SOU (hlavní stránka)", "published_at": null, "checked_at": "2026-09-12", "supports": "Obchodní akademie (denní forma) uvedena mezi programy nabízenými pro 2026/2027 v pobočce Modřany.", "applicable_period": "přijímací řízení 2026/27"},
-        {"url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld", "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2025", "published_at": null, "checked_at": "2026-09-12", "supports": "Obor 63-41-M/02 Obchodní akademie registrován u IZO 110007808 už k 31. 3. 2025, přestože v 1. kole JPZ 2025 nabízen nebyl.", "applicable_period": "stav rejstříku k 31. 3. 2025"},
-        {"url": "fronta-dohledavani-2025-2026.json, úkol R-600006328", "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)", "published_at": null, "checked_at": "2026-09-12", "supports": "Nabídka 63-41-M/02 Obchodní akademie přítomna pouze v roce 2026.", "applicable_period": "1. kola JPZ 2025 a 2026"}
-      ],
-      "history_comparability": "partially",
-      "recommended_action": "manual_review",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Zda obor Obchodní akademie reálně běžel i před rokem 2026, jen bez centralizovaného přijímání v 1. kole JPZ."
-      ]
+     "text": "U Domu služeb 166/5, 143 00 Modřany, Praha",
+     "role": "místo výuky",
+     "izo": "110007808",
+     "valid_period": "od 2025-12-31",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "http://www.bean.cz",
+     "title": "BEAN – Soukromá SOŠ a SOU (hlavní stránka)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Pro školní rok 2026/2027 škola uvádí Zahradnictví (Vysočany) a Aplikace informačních technologií (Modřany) mezi nabízenými programy; explicitně uvádí, že neotevírá jen dálkovou Obchodní akademii.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obory 41-44-M/01 a 63-41-M/01 zůstávají u IZO 110007808 registrovány i k 30. 6. 2026.",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600006328",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídky 41-44-M/01 a 63-41-M/01 (Aplikace IT) přítomny v roce 2025, chybějící v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Zda škola tyto obory pro školní rok 2026/2027 fakticky otevřela v pozdějším kole přijímacího řízení, nebo je zcela vynechala."
+   ]
+  },
+  {
+   "issue_ids": [
+    "Q0342"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "Obor 63-41-M/02 Obchodní akademie je v rejstříku MŠMT registrován nepřetržitě ve všech čtyřech snímcích (od 31. 3. 2025 do 30. 6. 2026), ale v 1. kole JPZ 2025 škola tento obor nenabízela – objevuje se poprvé až v datech 2026.",
+    "Web školy (bean.cz) potvrzuje, že Obchodní akademie je pro školní rok 2026/2027 aktuálně nabízena (denní forma; dálková forma pro 2026/2027 výslovně neotevřena).",
+    "Data CERMAT odpovídají: obor 63-41-M/02 běžel v roce 2024 v obou kolech, a to výrazně ve druhém (1. kolo 8 přihlášek a 3 přijatí, 2. kolo 201 přihlášek a 25 přijatých). V roce 2025 chybí v obou kolech. Nejde tedy o nový obor, ale o návrat po vynechaném ročníku."
+   ],
+   "conclusion": "Jde pravděpodobně o obnovení přijímacího řízení do již dříve registrovaného oboru, nikoli o zcela nový obor – Obchodní akademie byla v rejstříku zapsána už před rokem 2025, jen se v 1. kole JPZ 2025 nenabízela.",
+   "alternative_explanations": [
+    "Nelze vyloučit, že obor byl fakticky otevřen poprvé až pro školní rok 2026/2027 a dřívější registrace v rejstříku byla jen formální (bez reálné výuky) – k tomu chybí přímý doklad."
+   ],
+   "relationship": {
+    "type": "continuation",
+    "from": [],
+    "to": [
+     "63-41-M/02 Obchodní akademie (2026)"
+    ]
+   },
+   "addresses": [
+    {
+     "text": "U Domu služeb 166/5, 143 00 Modřany, Praha",
+     "role": "místo výuky",
+     "izo": "110007808",
+     "valid_period": "od 2025-12-31",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "http://www.bean.cz",
+     "title": "BEAN – Soukromá SOŠ a SOU (hlavní stránka)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obchodní akademie (denní forma) uvedena mezi programy nabízenými pro 2026/2027 v pobočce Modřany.",
+     "applicable_period": "přijímací řízení 2026/27"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2025",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 63-41-M/02 Obchodní akademie registrován u IZO 110007808 už k 31. 3. 2025, přestože v 1. kole JPZ 2025 nabízen nebyl.",
+     "applicable_period": "stav rejstříku k 31. 3. 2025"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600006328",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 63-41-M/02 Obchodní akademie přítomna pouze v roce 2026.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx; data/PZ2024_kolo2_uchazeci_prihlasky_vysledky.xlsx; data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx; data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx",
+     "title": "CERMAT – přihlášky a výsledky přijímacího řízení (soubory v repozitáři)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 63-41-M/02 běžel v obou kolech 2024 a chybí v obou kolech 2025. Soubory 2024 a 2025 jsou na úrovni uchazečů, obor bez přihlášek v nich chybí, i kdyby vypsán byl.",
+     "applicable_period": "1. a 2. kolo 2024 a 2025, 1. kolo 2026"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda obor Obchodní akademie reálně běžel i před rokem 2026, jen bez centralizovaného přijímání v 1. kole JPZ.",
+     "uzavreno": "Odpovězeno z dat CERMAT dostupných v repozitáři: data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2024_kolo2_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx"
+    }
+   ]
+  }
+ ]
 }

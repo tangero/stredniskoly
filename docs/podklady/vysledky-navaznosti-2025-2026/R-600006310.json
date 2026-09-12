@@ -1,74 +1,91 @@
 {
-  "task_id": "R-600006310",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Soukromá střední škola a základní škola (1. KŠPA) Praha s.r.o. (REDIZO 600006310, IZO 110007786) je ve všech čtyřech snímcích beze změny – sídlo i jediné místo výuky Chabařovická 1125/4, 182 00 Kobylisy, Praha. Registrované obory zahrnují ve všech snímcích shodně: 63-41-M/01 Ekonomika a podnikání (4l denní, 4l kombinovaná, 5l dálková dobíhající), 65-42-M/02 Cestovní ruch (4l denní, 5l dálková), 82-41-M/05 Grafický design (4l denní), 64-41-L/51 Podnikání (2l denní nástavba, 3l dálková nástavba) a 18-20-M/01 Informační technologie (4l denní, 5l dálková). Obor 79-41-K/41 Gymnázium, který škola nabízí v 1. kole JPZ 2026, není evidován v žádném ze čtyř snímků rejstříku včetně posledního k 30. 6. 2026."
-  },
-  "findings": [
+ "task_id": "R-600006310",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Soukromá střední škola a základní škola (1. KŠPA) Praha s.r.o. (REDIZO 600006310, IZO 110007786) je ve všech čtyřech snímcích beze změny – sídlo i jediné místo výuky Chabařovická 1125/4, 182 00 Kobylisy, Praha. Registrované obory zahrnují ve všech snímcích shodně: 63-41-M/01 Ekonomika a podnikání (4l denní, 4l kombinovaná, 5l dálková dobíhající), 65-42-M/02 Cestovní ruch (4l denní, 5l dálková), 82-41-M/05 Grafický design (4l denní), 64-41-L/51 Podnikání (2l denní nástavba, 3l dálková nástavba) a 18-20-M/01 Informační technologie (4l denní, 5l dálková). Obor 79-41-K/41 Gymnázium, který škola nabízí v 1. kole JPZ 2026, není evidován v žádném ze čtyř snímků rejstříku včetně posledního k 30. 6. 2026."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0341"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 nabízela škola čtyři obory: Informační technologie, Ekonomika a podnikání (zaměření Podnikání a Sportovní management) a Cestovní ruch. Obor Gymnázium mezi nimi nebyl.",
+    "V 1. kole JPZ 2026 přibyla pátá nabídka: 79-41-K/41 Gymnázium (4leté, denní, bez uvedeného zaměření) – ostatní čtyři obory pokračují beze změny.",
+    "Web školy (1kspa-praha.cz) přímo v hlavní nabídce studijních oborů uvádí Gymnázium vedle Cestovního ruchu, Grafického designu, Ekonomiky a podnikání a Informačních technologií, se samostatnou prezentační podstránkou popisující všeobecné zaměření přípravy.",
+    "Rejstřík MŠMT obor 79-41-K/41 u IZO 110007786 neeviduje v žádném ze čtyř snímků (ani k 30. 6. 2026) – jde o odstup zápisu do rejstříku vůči reálné nabídce, kterou dokládá CERMAT i vlastní web školy."
+   ],
+   "conclusion": "Gymnázium 79-41-K/41 je nový obor bez předchůdce v nabídce školy z roku 2025, potvrzený přímo webem školy jako součást aktuální nabídky. Absence v rejstříku MŠMT je jen důsledek odstupu zápisu, nikoli rozpor s existencí oboru.",
+   "alternative_explanations": [],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "79-41-K/41 Gymnázium (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0341"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 nabízela škola čtyři obory: Informační technologie, Ekonomika a podnikání (zaměření Podnikání a Sportovní management) a Cestovní ruch. Obor Gymnázium mezi nimi nebyl.",
-        "V 1. kole JPZ 2026 přibyla pátá nabídka: 79-41-K/41 Gymnázium (4leté, denní, bez uvedeného zaměření) – ostatní čtyři obory pokračují beze změny.",
-        "Web školy (1kspa-praha.cz) přímo v hlavní nabídce studijních oborů uvádí Gymnázium vedle Cestovního ruchu, Grafického designu, Ekonomiky a podnikání a Informačních technologií, se samostatnou prezentační podstránkou popisující všeobecné zaměření přípravy.",
-        "Rejstřík MŠMT obor 79-41-K/41 u IZO 110007786 neeviduje v žádném ze čtyř snímků (ani k 30. 6. 2026) – jde o odstup zápisu do rejstříku vůči reálné nabídce, kterou dokládá CERMAT i vlastní web školy."
-      ],
-      "conclusion": "Gymnázium 79-41-K/41 je nový obor bez předchůdce v nabídce školy z roku 2025, potvrzený přímo webem školy jako součást aktuální nabídky. Absence v rejstříku MŠMT je jen důsledek odstupu zápisu, nikoli rozpor s existencí oboru.",
-      "alternative_explanations": [],
-      "relationship": {"type": "new_offer", "from": [], "to": ["79-41-K/41 Gymnázium (2026)"]},
-      "addresses": [
-        {
-          "text": "Chabařovická 1125/4, 182 00 Kobylisy, Praha",
-          "role": "místo výuky",
-          "izo": "110007786",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://1kspa-praha.cz/",
-          "title": "1. KŠPA Praha – hlavní stránka (Studijní obory)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Gymnázium je uvedeno mezi aktuálně nabízenými studijními obory školy, se samostatnou prezentační podstránkou.",
-          "applicable_period": "aktuální nabídka oborů, ověřeno 2026-09-12"
-        },
-        {
-          "url": "https://1kspa-praha.cz/gymnazium/",
-          "title": "Gymnázium | 1. KŠPA Praha",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Podstránka popisuje všeobecně vzdělávací charakter oboru; datum zahájení výuky ani konkrétní zaměření stránka neuvádí.",
-          "applicable_period": "aktuální popis oboru, bez uvedeného data"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 79-41-K/41 není u IZO 110007786 evidován ani k 30. 6. 2026 (odstup zápisu).",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600006310",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Nabídka 79-41-K/41 Gymnázium přítomna pouze v roce 2026 (5. nabídka), v roce 2025 škola měla jen 4 nabídky bez gymnázia.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Přesné datum zahájení výuky oboru Gymnázium a případné konkrétní zaměření (web ho neuvádí)."
-      ]
+     "text": "Chabařovická 1125/4, 182 00 Kobylisy, Praha",
+     "role": "místo výuky",
+     "izo": "110007786",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://1kspa-praha.cz/",
+     "title": "1. KŠPA Praha – hlavní stránka (Studijní obory)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Gymnázium je uvedeno mezi aktuálně nabízenými studijními obory školy, se samostatnou prezentační podstránkou.",
+     "applicable_period": "aktuální nabídka oborů, ověřeno 2026-09-12"
+    },
+    {
+     "url": "https://1kspa-praha.cz/gymnazium/",
+     "title": "Gymnázium | 1. KŠPA Praha",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Podstránka popisuje všeobecně vzdělávací charakter oboru; datum zahájení výuky ani konkrétní zaměření stránka neuvádí.",
+     "applicable_period": "aktuální popis oboru, bez uvedeného data"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 79-41-K/41 není u IZO 110007786 evidován ani k 30. 6. 2026 (odstup zápisu).",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600006310",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Nabídka 79-41-K/41 Gymnázium přítomna pouze v roce 2026 (5. nabídka), v roce 2025 škola měla jen 4 nabídky bez gymnázia.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přesné datum zahájení výuky oboru Gymnázium a případné konkrétní zaměření (web ho neuvádí).",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    }
+   ]
+  }
+ ]
 }

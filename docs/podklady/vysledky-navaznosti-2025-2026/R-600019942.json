@@ -23,7 +23,8 @@
     "Rejstřík MŠMT eviduje obor 75-41-M/01 Sociální činnost u IZO 110009878 nepřetržitě ve všech čtyřech snímcích od 31. 3. 2025 do 30. 6. 2026 – tedy již před 1. kolem JPZ 2025, kdy obor v CERMAT nabídce chyběl.",
     "Aktuální web školy (szskm.cz, ověřeno 12. 9. 2026) potvrzuje, že obor Sociální činnost je řádnou a aktivně nabízenou součástí přijímacího řízení pro školní rok 2026/27 (kapacita 30 míst), vedle oboru Praktická sestra (60 míst) – jde o skutečnou, nikoli jen technickou nabídku.",
     "Na webu školy (sekce Aktuality i popis oboru Sociální činnost) se nepodařilo dohledat žádnou zprávu vysvětlující, proč obor nebyl součástí nabídky 1. kola JPZ 2025, ani potvrzení/vyvrácení dočasného pozastavení náboru v tomto oboru.",
-    "Vztah je veden jako pokračování (continuation), nikoli jako nová nabídka: obor je v rejstříku zapsán nepřetržitě a v roce 2026 se pouze obnovuje přijímací řízení."
+    "Vztah je veden jako pokračování (continuation), nikoli jako nová nabídka: obor je v rejstříku zapsán nepřetržitě a v roce 2026 se pouze obnovuje přijímací řízení.",
+    "Data CERMAT odpovídají na obojí: v roce 2025 obor 75-41-M/01 nefiguruje v 1. ani ve 2. kole, zatímco v 1. kole 2024 měl 64 přihlášek a 23 přijatých. Obor tedy před rokem 2025 běžel a vynechán byl celý ročník 2025."
    ],
    "conclusion": "Obor 75-41-M/01 Sociální činnost nebyl v roce 2026 nově založen. Rejstřík MŠMT ho eviduje u IZO 110009878 nepřetržitě už od 31. 3. 2025, tedy ještě před 1. kolem JPZ 2025, ve kterém obor v nabídce školy chyběl. Nabídka oboru v CERMAT 2026 je proto obnovení přijímání do již existujícího, nepřetržitě registrovaného oboru, nikoli vznik nového oboru. Aktuální web školy potvrzuje, že jde o skutečně a aktivně nabízený obor pro 2026/27 (30 míst), nikoli o datovou anomálii.",
    "alternative_explanations": [
@@ -128,14 +129,27 @@
      "checked_at": "2026-09-12",
      "supports": "Nabídka 75-41-M/01 Sociální činnost chybí v roce 2025 (škola nabízela jen 53-41-M/03 Praktická sestra) a je přítomna v roce 2026 spolu s 53-41-M/03 Praktická sestra.",
      "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx; data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx; data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx",
+     "title": "CERMAT – přihlášky a výsledky přijímacího řízení (soubory v repozitáři)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 75-41-M/01 je v 1. kole 2024 (64 přihlášek, 23 přijatých) a chybí v obou kolech 2025. Soubory 2024 a 2025 jsou na úrovni uchazečů, obor bez přihlášek v nich chybí, i kdyby vypsán byl.",
+     "applicable_period": "1. a 2. kolo 2024 a 2025, 1. kolo 2026"
     }
    ],
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
    "unanswered_questions": [
-    "Přesná příčina, proč obor Sociální činnost nebyl součástí nabídky 1. kola JPZ 2025 (dočasné pozastavení náboru, nedostatečný zájem uchazečů, kapacitní/personální důvody, nebo jiný důvod) – ve veřejně dostupných zdrojích školy nedoloženo.",
-    "Zda byl obor nabízen ve 2. kole přijímacího řízení 2025 nebo v letech před 2025 – mimo rozsah dostupných dat (rozsah úkolu je jen 1. kolo JPZ 2025 a 2026)."
+    "Přesná příčina, proč obor Sociální činnost nebyl součástí nabídky 1. kola JPZ 2025 (dočasné pozastavení náboru, nedostatečný zájem uchazečů, kapacitní/personální důvody, nebo jiný důvod) – ve veřejně dostupných zdrojích školy nedoloženo."
+   ],
+   "resolved_questions": [
+    {
+     "otazka": "Zda byl obor nabízen ve 2. kole přijímacího řízení 2025 nebo v letech před 2025 – mimo rozsah dostupných dat (rozsah úkolu je jen 1. kolo JPZ 2025 a 2026).",
+     "uzavreno": "Odpovězeno z dat CERMAT dostupných v repozitáři: data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx"
+    }
    ]
   }
  ]

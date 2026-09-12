@@ -1,68 +1,86 @@
 {
-  "task_id": "R-600006077",
-  "queue_version": 2,
-  "processed_at": "2026-09-12",
-  "registry_check": {
-    "checked_at": "2026-09-12",
-    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
-    "summary": "Církevní střední škola Jana Boska (REDIZO 600006077, IZO 110380223) je ve všech čtyřech snímcích rejstříku beze změny – sídlo i jediné místo výuky Vítkova 15/12, 186 00 Karlín, Praha. Registrované obory jsou ve všech snímcích shodné: 75-41-E/01 Pečovatelské služby (3leté, denní, výuční list) a 53-41-H/01 Ošetřovatel (3leté, denní, výuční list). Obor 75-41-L/51 Sociální činnost (2letá maturitní nástavba), který škola nabízí v 1. kole JPZ 2026, není evidován v žádném ze čtyř snímků rejstříku včetně posledního k 30. 6. 2026."
-  },
-  "findings": [
+ "task_id": "R-600006077",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Církevní střední škola Jana Boska (REDIZO 600006077, IZO 110380223) je ve všech čtyřech snímcích rejstříku beze změny – sídlo i jediné místo výuky Vítkova 15/12, 186 00 Karlín, Praha. Registrované obory jsou ve všech snímcích shodné: 75-41-E/01 Pečovatelské služby (3leté, denní, výuční list) a 53-41-H/01 Ošetřovatel (3leté, denní, výuční list). Obor 75-41-L/51 Sociální činnost (2letá maturitní nástavba), který škola nabízí v 1. kole JPZ 2026, není evidován v žádném ze čtyř snímků rejstříku včetně posledního k 30. 6. 2026."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0376",
+    "Q0419"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 neměla škola žádnou nabídku (0 nabídek) – oba její tehdejší obory (Pečovatelské služby, Ošetřovatel) jsou tříleté učební obory zakončené výučním listem, na které se jednotná přijímací zkouška nevztahuje.",
+    "V 1. kole JPZ 2026 se škola v datech objevuje poprvé, s nabídkou nového oboru 75-41-L/51 Sociální činnost (2letá, denní, bez uvedeného zaměření) – tento obor je maturitní, a proto JPZ vyžaduje, což vysvětluje, proč se škola jako „nepřiřazená školní jednotka“ (Q0419) objevuje až v datech 2026.",
+    "Vlastní web školy (cssjb.cz/studijniobory) obor přímo popisuje: „Obor Sociální činnost (75-41-L/51) je dvouletá maturitní nástavba určená pro absolventy všech tříletých učebních oborů s výučním listem. Obor se na naší škole vyučuje v denní formě studia.“ – tedy jde o nástavbové studium navazující na výuční list, otevřené i pro absolventy vlastních oborů Pečovatel/Ošetřovatel i jiných škol.",
+    "Obor 75-41-L/51 není evidován v žádném ze čtyř snímků rejstříku MŠMT (ani k 30. 6. 2026) – jde o odstup zápisu do rejstříku vůči reálné nabídce školy, obdobně jako u jiných nově otevíraných oborů v této frontě."
+   ],
+   "conclusion": "Sociální činnost 75-41-L/51 je nová nabídka bez předchůdce v datech 2025 – nejde o nepřiřazenou nabídku existujícího oboru, ale o skutečně nový (dosud v rejstříku nezapsaný) obor, doložený přímo popisem na webu školy. Škola se proto v datech JPZ objevuje poprvé až v roce 2026, protože její dosavadní obory JPZ nevyžadují.",
+   "alternative_explanations": [
+    "Nelze vyloučit, že obor byl školou fakticky zaveden již dříve (např. pro jiné než 1. kolo JPZ nebo v jiném vstupním roce) a do centralizovaných dat CERMAT se dostal až pro rok 2026 – k tomu ale nebyl nalezen žádný doklad."
+   ],
+   "relationship": {
+    "type": "new_offer",
+    "from": [],
+    "to": [
+     "75-41-L/51 Sociální činnost (2026)"
+    ]
+   },
+   "addresses": [
     {
-      "issue_ids": ["Q0376", "Q0419"],
-      "status": "potvrzeno",
-      "observations": [
-        "V 1. kole JPZ 2025 neměla škola žádnou nabídku (0 nabídek) – oba její tehdejší obory (Pečovatelské služby, Ošetřovatel) jsou tříleté učební obory zakončené výučním listem, na které se jednotná přijímací zkouška nevztahuje.",
-        "V 1. kole JPZ 2026 se škola v datech objevuje poprvé, s nabídkou nového oboru 75-41-L/51 Sociální činnost (2letá, denní, bez uvedeného zaměření) – tento obor je maturitní, a proto JPZ vyžaduje, což vysvětluje, proč se škola jako „nepřiřazená školní jednotka“ (Q0419) objevuje až v datech 2026.",
-        "Vlastní web školy (cssjb.cz/studijniobory) obor přímo popisuje: „Obor Sociální činnost (75-41-L/51) je dvouletá maturitní nástavba určená pro absolventy všech tříletých učebních oborů s výučním listem. Obor se na naší škole vyučuje v denní formě studia.“ – tedy jde o nástavbové studium navazující na výuční list, otevřené i pro absolventy vlastních oborů Pečovatel/Ošetřovatel i jiných škol.",
-        "Obor 75-41-L/51 není evidován v žádném ze čtyř snímků rejstříku MŠMT (ani k 30. 6. 2026) – jde o odstup zápisu do rejstříku vůči reálné nabídce školy, obdobně jako u jiných nově otevíraných oborů v této frontě."
-      ],
-      "conclusion": "Sociální činnost 75-41-L/51 je nová nabídka bez předchůdce v datech 2025 – nejde o nepřiřazenou nabídku existujícího oboru, ale o skutečně nový (dosud v rejstříku nezapsaný) obor, doložený přímo popisem na webu školy. Škola se proto v datech JPZ objevuje poprvé až v roce 2026, protože její dosavadní obory JPZ nevyžadují.",
-      "alternative_explanations": [
-        "Nelze vyloučit, že obor byl školou fakticky zaveden již dříve (např. pro jiné než 1. kolo JPZ nebo v jiném vstupním roce) a do centralizovaných dat CERMAT se dostal až pro rok 2026 – k tomu ale nebyl nalezen žádný doklad."
-      ],
-      "relationship": {"type": "new_offer", "from": [], "to": ["75-41-L/51 Sociální činnost (2026)"]},
-      "addresses": [
-        {
-          "text": "Vítkova 15/12, 186 00 Karlín, Praha",
-          "role": "místo výuky",
-          "izo": "110380223",
-          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
-          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
-        }
-      ],
-      "evidence": [
-        {
-          "url": "https://www.cssjb.cz/studijniobory/",
-          "title": "Studijní obory – Církevní střední škola Jana Boska",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola popisuje obor Sociální činnost (75-41-L/51) jako dvouletou maturitní nástavbu v denní formě, otevřenou pro absolventy tříletých učebních oborů.",
-          "applicable_period": "aktuální nabídka oborů, ověřeno 2026-09-12"
-        },
-        {
-          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
-          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Obor 75-41-L/51 není u IZO 110380223 evidován ani k 30. 6. 2026 (odstup zápisu).",
-          "applicable_period": "stav rejstříku k 30. 6. 2026"
-        },
-        {
-          "url": "fronta-dohledavani-2025-2026.json, úkol R-600006077",
-          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
-          "published_at": null,
-          "checked_at": "2026-09-12",
-          "supports": "Škola má v roce 2025 nula nabídek a v roce 2026 jedinou nabídku oboru 75-41-L/51 Sociální činnost.",
-          "applicable_period": "1. kola JPZ 2025 a 2026"
-        }
-      ],
-      "history_comparability": "not_comparable",
-      "recommended_action": "record_only",
-      "related_task_ids": [],
-      "unanswered_questions": [
-        "Přesné datum zahájení výuky oboru Sociální činnost na této škole (webová stránka datum neuvádí)."
-      ]
+     "text": "Vítkova 15/12, 186 00 Karlín, Praha",
+     "role": "místo výuky",
+     "izo": "110380223",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
     }
-  ]
+   ],
+   "evidence": [
+    {
+     "url": "https://www.cssjb.cz/studijniobory/",
+     "title": "Studijní obory – Církevní střední škola Jana Boska",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola popisuje obor Sociální činnost (75-41-L/51) jako dvouletou maturitní nástavbu v denní formě, otevřenou pro absolventy tříletých učebních oborů.",
+     "applicable_period": "aktuální nabídka oborů, ověřeno 2026-09-12"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 75-41-L/51 není u IZO 110380223 evidován ani k 30. 6. 2026 (odstup zápisu).",
+     "applicable_period": "stav rejstříku k 30. 6. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600006077",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola má v roce 2025 nula nabídek a v roce 2026 jedinou nabídku oboru 75-41-L/51 Sociální činnost.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "not_comparable",
+   "recommended_action": "record_only",
+   "related_task_ids": [],
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přesné datum zahájení výuky oboru Sociální činnost na této škole (webová stránka datum neuvádí).",
+     "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    }
+   ]
+  }
+ ]
 }
