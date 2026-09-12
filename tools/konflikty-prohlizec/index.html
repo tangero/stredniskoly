@@ -1,0 +1,331 @@
+<title>Návaznost nabídek 2025–2026</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
+<style>
+:root{
+  --ground:#f4f6f8; --surface:#fff; --surface-2:#eef1f5;
+  --ink:#171c24; --ink-muted:#5b6675; --ink-faint:#8b94a2;
+  --line:#dce1e8; --line-strong:#c3cbd6;
+  --accent:#1f4e79; --accent-soft:#e4edf6;
+  --sig-end:#9e3324; --sig-end-bg:#f8e9e6;
+  --sig-new:#1a6349; --sig-new-bg:#e4f1eb;
+  --sig-same:#4a5563; --sig-same-bg:#e9ecf0;
+  --sig-org:#63479a; --sig-org-bg:#eee9f7;
+  --warn:#8a5a08; --warn-bg:#faf0dc;
+  --radius:4px;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#111419; --surface:#191d24; --surface-2:#20252d;
+    --ink:#e7eaef; --ink-muted:#9ea8b6; --ink-faint:#78818f;
+    --line:#282e37; --line-strong:#3a424e;
+    --accent:#7aa9d8; --accent-soft:#1c2a39;
+    --sig-end:#e08573; --sig-end-bg:#33201c;
+    --sig-new:#66bd9c; --sig-new-bg:#152c25;
+    --sig-same:#9aa4b2; --sig-same-bg:#232830;
+    --sig-org:#a992dd; --sig-org-bg:#241f33;
+    --warn:#d9ab5c; --warn-bg:#2e2517;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#111419; --surface:#191d24; --surface-2:#20252d;
+  --ink:#e7eaef; --ink-muted:#9ea8b6; --ink-faint:#78818f;
+  --line:#282e37; --line-strong:#3a424e;
+  --accent:#7aa9d8; --accent-soft:#1c2a39;
+  --sig-end:#e08573; --sig-end-bg:#33201c;
+  --sig-new:#66bd9c; --sig-new-bg:#152c25;
+  --sig-same:#9aa4b2; --sig-same-bg:#232830;
+  --sig-org:#a992dd; --sig-org-bg:#241f33;
+  --warn:#d9ab5c; --warn-bg:#2e2517;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font:15px/1.55 var(--sans);
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:0}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+
+/* ---- hlavička ---- */
+header{background:var(--surface);border-bottom:1px solid var(--line)}
+.head-in{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-end;justify-content:space-between;
+  padding-block:22px 18px}
+h1{font:600 27px/1.15 var(--serif);margin:0 0 5px;letter-spacing:-.01em;text-wrap:balance}
+.sub{margin:0;color:var(--ink-muted);font-size:13.5px;max-width:62ch}
+.tally{display:flex;gap:0;list-style:none;margin:0;padding:0;border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+.tally li{padding:8px 15px;border-right:1px solid var(--line);text-align:center}
+.tally li:last-child{border-right:0}
+.tally b{display:block;font:500 19px/1.1 var(--mono);font-variant-numeric:tabular-nums}
+.tally span{font-size:11px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.07em}
+.tally .ok b{color:var(--sig-new)}
+
+/* ---- filtry ---- */
+.filters{background:var(--surface-2);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.filters-in{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding-block:11px}
+input[type=search],select{font:inherit;font-size:13.5px;color:var(--ink);background:var(--surface);
+  border:1px solid var(--line-strong);border-radius:var(--radius);padding:6px 9px}
+input[type=search]{flex:1 1 230px;min-width:0}
+.toggle{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ink-muted);
+  background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--radius);
+  padding:6px 10px;cursor:pointer}
+.toggle input{margin:0;accent-color:var(--accent)}
+#count{font:500 13px/1 var(--mono);color:var(--ink-muted);margin-left:auto;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* ---- případ ---- */
+main{padding-block:20px 60px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  margin-bottom:12px}
+.case-head{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:baseline;
+  padding:13px 16px;border-bottom:1px solid var(--line)}
+.school{font:600 16px/1.3 var(--serif);margin:0;flex:1 1 300px;min-width:0}
+.school small{display:block;font:400 12.5px/1.4 var(--sans);color:var(--ink-muted)}
+.ids{font:400 12px/1.5 var(--mono);color:var(--ink-faint);white-space:nowrap}
+.chip{font-size:11.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;
+  padding:3px 8px;border-radius:99px;white-space:nowrap}
+.v-closed{background:var(--sig-end-bg);color:var(--sig-end)}
+.v-new_offer{background:var(--sig-new-bg);color:var(--sig-new)}
+.v-continuation,.v-rename_only{background:var(--sig-same-bg);color:var(--sig-same)}
+.v-merge,.v-split{background:var(--sig-org-bg);color:var(--sig-org)}
+.st{font-size:11.5px;color:var(--ink-muted);border:1px solid var(--line-strong);
+  padding:2px 7px;border-radius:99px;white-space:nowrap}
+.st.pravd{color:var(--warn);border-color:var(--warn)}
+
+/* ---- jádro: rozdíl mezi ročníky ---- */
+.diff{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.year{background:var(--surface);padding:12px 16px}
+.year>h3{font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-faint);margin:0 0 9px}
+.offer{border-left:3px solid var(--line-strong);padding:5px 0 5px 10px;margin-bottom:8px}
+.offer:last-child{margin-bottom:0}
+.offer.hit{border-left-color:currentColor}
+.offer.hit.side-end{color:var(--sig-end)}
+.offer.hit.side-new{color:var(--sig-new)}
+.offer .kk{font:500 12.5px/1.4 var(--mono);font-variant-numeric:tabular-nums}
+.offer .nm{color:var(--ink);font-size:14px}
+.offer .zm{color:var(--ink-muted);font-size:13px}
+.offer .meta{color:var(--ink-faint);font-size:12px}
+.none{color:var(--ink-faint);font-size:13.5px;font-style:italic;padding:5px 0 5px 13px}
+
+/* ---- rejstřík ---- */
+.reg{padding:11px 16px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;
+  gap:7px 16px;align-items:center}
+.reg h3{font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-faint);margin:0}
+.snaps{display:flex;gap:5px;align-items:center}
+.snap{font:500 11px/1 var(--mono);padding:4px 6px;border-radius:3px;border:1px solid var(--line-strong);
+  color:var(--ink-faint)}
+.snap.yes{background:var(--sig-new-bg);color:var(--sig-new);border-color:transparent}
+.snap.no{background:var(--sig-end-bg);color:var(--sig-end);border-color:transparent}
+.reg .kkl{font:500 12px/1 var(--mono);color:var(--ink-muted)}
+
+/* ---- závěr a detaily ---- */
+.verdict{padding:12px 16px;border-top:1px solid var(--line);font-size:14.5px;max-width:78ch}
+.flag{display:flex;gap:8px;align-items:flex-start;padding:10px 16px;border-top:1px solid var(--line);
+  background:var(--warn-bg);font-size:13.5px}
+.flag b{color:var(--warn);white-space:nowrap;font-weight:600}
+.flag ul{margin:0;padding-left:17px}
+details{border-top:1px solid var(--line)}
+summary{padding:9px 16px;cursor:pointer;font-size:13px;color:var(--accent);
+  list-style:none;user-select:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸ ";display:inline-block;transition:transform .15s}
+details[open] summary::before{transform:rotate(90deg)}
+.body{padding:2px 16px 16px;font-size:13.5px;color:var(--ink-muted);max-width:82ch}
+.body h4{font:600 11px/1 var(--sans);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-faint);margin:15px 0 7px}
+.body ul{margin:0;padding-left:17px}
+.body li{margin-bottom:6px}
+.body li:last-child{margin-bottom:0}
+.body a{word-break:break-word}
+.src{display:block;color:var(--ink-faint);font-size:12.5px}
+.empty{text-align:center;color:var(--ink-muted);padding:50px 20px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:640px){
+  .diff{grid-template-columns:1fr}
+  .head-in{padding-block:18px 14px}
+  h1{font-size:23px}
+  .tally{width:100%}
+  .tally li{flex:1}
+}
+</style>
+
+<header>
+  <div class="wrap head-in">
+    <div>
+      <h1>Návaznost nabídek 2025–2026</h1>
+      <p class="sub">Kontrola rešerše: co o téže nabídce říká první kolo 2025, co rok 2026 a co rejstřík MŠMT. Doprovodná data jsou složená pod každým případem.</p>
+    </div>
+    <ul class="tally" id="tally"></ul>
+  </div>
+</header>
+
+<div class="filters">
+  <div class="wrap filters-in">
+    <input type="search" id="q" placeholder="Škola, obec, REDIZO, kód oboru nebo ID úkolu" aria-label="Hledat">
+    <select id="vztah" aria-label="Typ návaznosti"></select>
+    <select id="status" aria-label="Stav nálezu"></select>
+    <label class="toggle" for="jenOtevrene"><input type="checkbox" id="jenOtevrene"> Jen s otevřenou otázkou</label>
+    <label class="toggle" for="jenRozhodnuti"><input type="checkbox" id="jenRozhodnuti"> Jen k rozhodnutí</label>
+    <span id="count"></span>
+  </div>
+</div>
+
+<main class="wrap" id="list"></main>
+
+<script src="data.js"></script>
+<script>
+(function(){
+  var D = window.DATA, P = D.pripady;
+
+  var VZTAH = {closed:"ukončená nabídka", new_offer:"nová nabídka", continuation:"pokračuje",
+    rename_only:"jen jiný zápis", merge:"sloučení", split:"rozdělení", unknown:"nerozhodnuto"};
+  var SROV = {comparable:"srovnatelné", partially:"částečně srovnatelné",
+    not_comparable:"nesrovnatelné", unknown:"neurčeno"};
+  var AKCE = {approve_mapping:"schválit mapování", record_only:"jen zaevidovat",
+    manual_review:"ruční přezkum"};
+
+  function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g, function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+
+  function offerHtml(n, zvyrazni, strana){
+    var cls = "offer" + (zvyrazni ? " hit side-" + strana : "");
+    return '<div class="'+cls+'">'
+      + '<div class="kk">'+esc(n.kkov)+'</div>'
+      + '<div class="nm">'+esc(n.obor)+'</div>'
+      + (n.zamereni ? '<div class="zm">'+esc(n.zamereni)+'</div>' : '')
+      + '<div class="meta">'+esc(n.delka)+' roky · '+esc(n.forma)+' · '+esc(n.jazyk)+'</div>'
+      + '</div>';
+  }
+
+  function yearHtml(c, rok, zvyr, strana){
+    var list = c.strany[rok] || [];
+    var inner = list.length
+      ? list.map(function(n){ return offerHtml(n, zvyr[n.id]===true, strana); }).join("")
+      : '<p class="none">V tomto roce škola tuto nabídku nemá.</p>';
+    return '<div class="year"><h3>'+rok+'</h3>'+inner+'</div>';
+  }
+
+  function regHtml(c){
+    if(!c.rejstrik || !c.rejstrik.length) return "";
+    return c.rejstrik.map(function(r){
+      var snaps = r.snimky.map(function(je, i){
+        return '<span class="snap '+(je?"yes":"no")+'" title="'+esc(D.snimky[i])+'">'
+          + esc(D.snimky[i].slice(2).replace(/-/g,"."))+'</span>';
+      }).join("");
+      return '<div class="reg"><h3>Rejstřík MŠMT</h3>'
+        + '<span class="kkl">'+esc(r.kkov)+'</span>'
+        + '<span class="snaps">'+snaps+'</span></div>';
+    }).join("");
+  }
+
+  function listHtml(titulek, pole, mapper){
+    if(!pole || !pole.length) return "";
+    return '<h4>'+titulek+'</h4><ul>'+pole.map(mapper).join("")+'</ul>';
+  }
+
+  function caseHtml(c){
+    var zvyr = c.zvyrazni, strana = c.strana;
+
+    var flags = "";
+    if(c.otevrene.length) flags += '<div class="flag"><b>Otevřeno:</b><ul>'
+      + c.otevrene.map(function(t){ return '<li>'+esc(t)+'</li>'; }).join("") + '</ul></div>';
+    if(c.rozhodnuti.length) flags += '<div class="flag"><b>K rozhodnutí:</b><ul>'
+      + c.rozhodnuti.map(function(t){ return '<li>'+esc(t)+'</li>'; }).join("") + '</ul></div>';
+
+    var detail = listHtml("Pozorování", c.pozorovani, function(t){ return '<li>'+esc(t)+'</li>'; })
+      + listHtml("Co zdroje nevylučují", c.alternativy, function(t){ return '<li>'+esc(t)+'</li>'; })
+      + listHtml("Vazby", (c.od.concat(c.na.map(function(x){return "→ "+x;}))),
+          function(t){ return '<li>'+esc(t)+'</li>'; })
+      + listHtml("Adresy", c.adresy, function(a){
+          return '<li>'+esc(a.text)+' <span class="src">'+esc(a.role||"")
+            +(a.valid_period?" · "+esc(a.valid_period):"")+'</span></li>'; })
+      + listHtml("Zdroje", c.zdroje, function(e){
+          var u = e.url||"", link = /^https?:/.test(u)
+            ? '<a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(e.titul||u)+'</a>'
+            : esc(e.titul||u);
+          return '<li>'+link+'<span class="src">'+esc(e["dokládá"]||"")+'</span></li>'; })
+      + listHtml("Uzavřené otázky", c.uzavrene, function(r){
+          return '<li>'+esc(r.otazka)+'<span class="src">'+esc(r.uzavreno)+'</span></li>'; })
+      + listHtml("Související úkoly", c.souvisi, function(t){ return '<li>'+esc(t)+'</li>'; });
+
+    return '<article class="case">'
+      + '<div class="case-head">'
+      +   '<h2 class="school">'+esc(c.skola||"—")
+      +     '<small>'+esc(c.obec||"")+'</small></h2>'
+      +   '<span class="chip v-'+esc(c.vztah)+'">'+esc(VZTAH[c.vztah]||c.vztah)+'</span>'
+      +   '<span class="st'+(c.status==="pravděpodobné"?" pravd":"")+'">'+esc(c.status)+'</span>'
+      +   '<span class="ids">'+esc(c.redizo.join(", "))+' · '+esc(c.issue_ids.join(" "))+'</span>'
+      + '</div>'
+      + '<div class="diff">'+yearHtml(c,"2025",zvyr,strana)+yearHtml(c,"2026",zvyr,strana)+'</div>'
+      + regHtml(c)
+      + (c.zaver ? '<p class="verdict">'+esc(c.zaver)+'</p>' : "")
+      + flags
+      + (detail ? '<details><summary>Podklady, zdroje a uzavřené otázky</summary>'
+          + '<div class="body">'+detail+'</div></details>' : "")
+      + '</article>';
+  }
+
+  // Sporná nabídka se v rozdílu zvýrazní. Leží-li jen v roce 2025, je to nabídka,
+  // která v roce 2026 chybí; leží-li jen v roce 2026, je to nabídka, která přibyla.
+  P.forEach(function(c){
+    c.zvyrazni = {};
+    (c.sporne || []).forEach(function(id){ c.zvyrazni[id] = true; });
+    var r = c.sporne_roky || [];
+    c.strana = (r.length === 1 && r[0] === 2026) ? "new" : "end";
+    c.hledej = [c.skola, c.obec, c.redizo.join(" "), c.task, c.issue_ids.join(" "),
+      (c.strany["2025"]||[]).concat(c.strany["2026"]||[]).map(function(n){
+        return n.kkov+" "+n.obor+" "+n.zamereni; }).join(" ")].join(" ").toLowerCase();
+  });
+
+  var el = {q:document.getElementById("q"), vztah:document.getElementById("vztah"),
+    status:document.getElementById("status"), list:document.getElementById("list"),
+    count:document.getElementById("count"), tally:document.getElementById("tally"),
+    jenOtevrene:document.getElementById("jenOtevrene"),
+    jenRozhodnuti:document.getElementById("jenRozhodnuti")};
+
+  function fill(sel, vsechny, label, popisky){
+    sel.innerHTML = '<option value="">'+label+'</option>'
+      + vsechny.map(function(v){ return '<option value="'+esc(v)+'">'
+          +esc((popisky&&popisky[v])||v)+'</option>'; }).join("");
+  }
+  fill(el.vztah, Object.keys(VZTAH).filter(function(k){
+    return P.some(function(c){ return c.vztah===k; }); }), "Všechny návaznosti", VZTAH);
+  fill(el.status, Array.from(new Set(P.map(function(c){ return c.status; }))).sort(),
+    "Všechny stavy");
+
+  var otevrene = P.reduce(function(a,c){ return a+c.otevrene.length; },0);
+  var rozhod = P.reduce(function(a,c){ return a+c.rozhodnuti.length; },0);
+  el.tally.innerHTML =
+      '<li><b>'+D.pocty.ukolu+'</b><span>úkolů</span></li>'
+    + '<li><b>'+D.pocty.nalezu+'</b><span>nálezů</span></li>'
+    + '<li class="ok"><b>0</b><span>sporů</span></li>'
+    + '<li><b>'+otevrene+'</b><span>otevřených</span></li>'
+    + '<li><b>'+rozhod+'</b><span>k rozhodnutí</span></li>';
+
+  function render(){
+    var q = el.q.value.trim().toLowerCase();
+    var v = el.vztah.value, s = el.status.value;
+    var vysl = P.filter(function(c){
+      if(v && c.vztah!==v) return false;
+      if(s && c.status!==s) return false;
+      if(el.jenOtevrene.checked && !c.otevrene.length) return false;
+      if(el.jenRozhodnuti.checked && !c.rozhodnuti.length) return false;
+      if(q && c.hledej.indexOf(q)===-1) return false;
+      return true;
+    });
+    el.count.textContent = vysl.length + " z " + P.length;
+    el.list.innerHTML = vysl.length
+      ? vysl.map(caseHtml).join("")
+      : '<p class="empty">Žádný případ neodpovídá filtru.</p>';
+  }
+
+  [el.q, el.vztah, el.status, el.jenOtevrene, el.jenRozhodnuti].forEach(function(n){
+    n.addEventListener("input", render);
+  });
+  render();
+})();
+</script>
