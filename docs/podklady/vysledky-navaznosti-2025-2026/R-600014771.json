@@ -87,8 +87,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "manual_review",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda a kdy bude obor 78-42-M/03 formálně zapsán do rejstříku MŠMT u IZO 110012542, zdroje nedokládají."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda a kdy bude obor 78-42-M/03 formálně zapsán do rejstříku MŠMT u IZO 110012542, zdroje nedokládají.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

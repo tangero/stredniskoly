@@ -171,14 +171,15 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda má zaměření sportovní management samostatný plánovaný počet přijímaných žáků oddělený od obecné Obchodní akademie, lze dořešit z PDF kritérií 2026/2027 na webu školy."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Přesné datum zápisu zaměření sportovní management do rejstříku škol nelze z otevřených dat MŠMT určit – snímky vedou obory jen na úrovni kódu KKOV bez zaměření (obor 63-41-M/02 je zapsán nepřetržitě od 31. 3. 2025); vyžadovalo by to plnou evidenci rejstříku včetně zápisů o zaměřeních.",
      "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
     }
+   ],
+   "decisions_required": [
+    "Zda má zaměření sportovní management samostatný plánovaný počet přijímaných žáků oddělený od obecné Obchodní akademie, lze dořešit z PDF kritérií 2026/2027 na webu školy."
    ]
   }
  ],

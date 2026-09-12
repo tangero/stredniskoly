@@ -116,9 +116,7 @@
    "history_comparability": "not_comparable",
    "recommended_action": "manual_review",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Je plánováno obnovení přijímacího řízení do tohoto oboru v některém z dalších let, dokud zůstává registrován?"
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Proč škola pro rok 2026/27 nevyhlásila přijímací řízení do 69-41-L/02 – nízký zájem uchazečů, záměr nahradit učebním oborem 69-53-H/01, nebo jiný organizační důvod?",
@@ -127,6 +125,10 @@
     {
      "otazka": "Limit nástroje pro webové vyhledávání byl v této session vyčerpán – stálo by za doplňující kontrolu přes plnohodnotné vyhledávání (např. výroční zprávu školy nebo zprávy zřizovatele/kraje k síti oborů).",
      "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    },
+    {
+     "otazka": "Je plánováno obnovení přijímacího řízení do tohoto oboru v některém z dalších let, dokud zůstává registrován?",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
     }
    ]
   }

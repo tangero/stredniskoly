@@ -176,8 +176,12 @@
    "history_comparability": "partially",
    "recommended_action": "approve_mapping",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda škola v 1. kole JPZ 2025 zaměření sportovní střelba skutečně nevypsala, nebo zda jen nebylo v datech CERMAT vedeno samostatně – Wayback Machine byl v době rešerše dočasně nedostupný, takže stav webu školy z jara 2025 nebylo možné ověřit."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda škola v 1. kole JPZ 2025 zaměření sportovní střelba skutečně nevypsala, nebo zda jen nebylo v datech CERMAT vedeno samostatně – Wayback Machine byl v době rešerše dočasně nedostupný, takže stav webu školy z jara 2025 nebylo možné ověřit.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

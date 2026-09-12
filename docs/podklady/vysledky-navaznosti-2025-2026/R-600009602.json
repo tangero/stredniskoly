@@ -113,9 +113,16 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda jde o trvalé ukončení výuky zaměření, nebo jen o nepřijímání nových žáků pro 2026/2027 (škola důvod na webu neuvádí; docházející ročníky zřejmě dokončí studium).",
-    "Data 2. kola přijímacího řízení 2026 nejsou zveřejněna a starší soubory vedou nabídky jen na úrovni kódu oboru bez zaměření, takže samotné zaměření vnitřní obchod v nich dohledat nelze. Obor 63-41-M/01 jako celek běžel v 1. kole 2024 i 2025 a pokračuje 2026."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda jde o trvalé ukončení výuky zaměření, nebo jen o nepřijímání nových žáků pro 2026/2027 (škola důvod na webu neuvádí; docházející ročníky zřejmě dokončí studium).",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    },
+    {
+     "otazka": "Data 2. kola přijímacího řízení 2026 nejsou zveřejněna a starší soubory vedou nabídky jen na úrovni kódu oboru bez zaměření, takže samotné zaměření vnitřní obchod v nich dohledat nelze. Obor 63-41-M/01 jako celek běžel v 1. kole 2024 i 2025 a pokračuje 2026.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

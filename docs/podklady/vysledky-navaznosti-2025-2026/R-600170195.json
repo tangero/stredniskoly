@@ -102,9 +102,7 @@
    "history_comparability": "not_comparable",
    "recommended_action": "manual_review",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda škola formálně zrušila akreditaci obou oborů, nebo jen dočasně nevyhlásila přijímací řízení."
-   ],
+   "unanswered_questions": [],
    "decisions_required": [
     "Zda se výrok o „zkráceném studiu“ na webu vztahuje i na tyto dva nástavbové obory, nebo jde o zcela jinou (H/E) kategorii programů."
    ],
@@ -112,6 +110,10 @@
     {
      "otazka": "Zda dálková tříletá varianta obou oborů (evidovaná v rejstříku) reálně běží pro stávající studenty.",
      "uzavreno": "Mimo rozsah tohoto běhu: otázka patří k úkolu doložení míst výuky pro dojezdovost, případně k formám studia mimo denní nezkrácené studium."
+    },
+    {
+     "otazka": "Zda škola formálně zrušila akreditaci obou oborů, nebo jen dočasně nevyhlásila přijímací řízení.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
     }
    ]
   },
@@ -202,14 +204,19 @@
    "history_comparability": "not_comparable",
    "recommended_action": "manual_review",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda šlo v roce 2025 o skutečné nevyhlášení přijímacího řízení do oboru Podnikání, nebo jen o chybějící záznam v datech CERMAT. Odpověď by dala data 2. kola přijímacího řízení 2026, která zveřejněna nejsou. Dostupné zdroje otázku neuzavírají.",
-    "Zda souvisí obnovení nabídky Podnikání s omezením nabídky Provozní techniky a Provozní elektrotechniky (Q0144, Q0145) v témže roce."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Kolik uchazečů bylo do oboru přijato v roce 2025, pokud vůbec nějaké řízení proběhlo mimo evidenci CERMAT.",
      "uzavreno": "Odpovězeno z dat CERMAT dostupných v repozitáři: data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx, data/PZ2026_kolo1_skolobory_kapacity.xlsx"
+    },
+    {
+     "otazka": "Zda šlo v roce 2025 o skutečné nevyhlášení přijímacího řízení do oboru Podnikání, nebo jen o chybějící záznam v datech CERMAT. Odpověď by dala data 2. kola přijímacího řízení 2026, která zveřejněna nejsou. Dostupné zdroje otázku neuzavírají.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    },
+    {
+     "otazka": "Zda souvisí obnovení nabídky Podnikání s omezením nabídky Provozní techniky a Provozní elektrotechniky (Q0144, Q0145) v témže roce.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
     }
    ]
   }

@@ -105,13 +105,15 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda a od kdy se plánuje případné obnovení přijímacího řízení do čtyřletého oboru 79-41-K/41."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Přesné datum zveřejnění oznámení o neotevření čtyřletého oboru pro 2026/27 (na stránce školy chybí datum).",
      "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
+    },
+    {
+     "otazka": "Zda a od kdy se plánuje případné obnovení přijímacího řízení do čtyřletého oboru 79-41-K/41.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
     }
    ]
   }

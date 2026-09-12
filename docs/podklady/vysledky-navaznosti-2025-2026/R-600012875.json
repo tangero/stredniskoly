@@ -96,13 +96,15 @@
    "history_comparability": "not_comparable",
    "recommended_action": "manual_review",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda se zaměření může v budoucnu vrátit souběžně se sportovním gymnáziem."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Zda škola explicitně potvrdila ukončení zaměření „s rozšířením TV\" a nasměrování zájemců do samostatného sportovního gymnázia.",
      "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v číselníku je dokladem, že existuje po právu. Běh řeší jen spory mezi zdroji, ne doplňující potvrzení."
+    },
+    {
+     "otazka": "Zda se zaměření může v budoucnu vrátit souběžně se sportovním gymnáziem.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
     }
    ]
   }

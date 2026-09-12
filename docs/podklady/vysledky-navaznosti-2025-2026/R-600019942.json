@@ -142,13 +142,15 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Přesná příčina, proč obor Sociální činnost nebyl součástí nabídky 1. kola JPZ 2025 (dočasné pozastavení náboru, nedostatečný zájem uchazečů, kapacitní/personální důvody, nebo jiný důvod) – ve veřejně dostupných zdrojích školy nedoloženo."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Zda byl obor nabízen ve 2. kole přijímacího řízení 2025 nebo v letech před 2025 – mimo rozsah dostupných dat (rozsah úkolu je jen 1. kolo JPZ 2025 a 2026).",
      "uzavreno": "Odpovězeno z dat CERMAT dostupných v repozitáři: data/PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx, data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx"
+    },
+    {
+     "otazka": "Přesná příčina, proč obor Sociální činnost nebyl součástí nabídky 1. kola JPZ 2025 (dočasné pozastavení náboru, nedostatečný zájem uchazečů, kapacitní/personální důvody, nebo jiný důvod) – ve veřejně dostupných zdrojích školy nedoloženo.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
     }
    ]
   }

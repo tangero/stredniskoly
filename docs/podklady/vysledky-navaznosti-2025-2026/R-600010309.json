@@ -105,8 +105,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda jde o trvalé ukončení nabídky oboru 63-41-M/01, nebo jen o přerušení na školní rok 2026/2027 (obor je na webu školy stále prezentován a registrace v rejstříku nebyla ze snímků vyvrácena) – rozhodne až nabídka pro rok 2027."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda jde o trvalé ukončení nabídky oboru 63-41-M/01, nebo jen o přerušení na školní rok 2026/2027 (obor je na webu školy stále prezentován a registrace v rejstříku nebyla ze snímků vyvrácena) – rozhodne až nabídka pro rok 2027.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

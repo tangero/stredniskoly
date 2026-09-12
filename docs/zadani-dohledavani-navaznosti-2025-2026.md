@@ -1,6 +1,6 @@
 # Dohledávání návaznosti škol a oborů 2025–2026
 
-Verze 1.4 · 12. 9. 2026. Fronta k výzkumu, nikoli schválená migrační mapa. Rešerše je provedena pro všech 192 úkolů; výsledky jsou podklad k přezkoumání, ne schválené mapování.
+Verze 1.5 · 12. 9. 2026. Fronta k výzkumu, nikoli schválená migrační mapa. Rešerše je provedena pro všech 192 úkolů; výsledky jsou podklad k přezkoumání, ne schválené mapování.
 
 Souhrn celého úkolu, stav realizace a přejímací podmínky: [Návaznost škol a oborů](ukol-navaznost-skol-a-oboru-2027.md).
 
@@ -59,6 +59,16 @@ Zápis školy nebo oboru v datech CERMAT, v rejstříku MŠMT nebo v ARES je dos
 Role zdrojů se liší. Rejstřík MŠMT říká, co existuje. Data CERMAT říkají, co bylo v daném roce skutečně vypsáno v 1. kole. Nedatovaný katalog třetí strany neříká ani jedno, protože popisuje portfolio školy bez vazby na ročník, a nabídku doloženou číselníkem proto nevyvrací. Odstup zápisu do rejstříku není spor: obor doložený daty CERMAT existuje, i když jej rejstřík ještě nevede.
 
 Spory hledá `python3 scripts/find-data-conflicts.py` ve čtyřech podobách: nabídka u školy chybějící v rejstříku, IZO vedené pod jiným zřizovatelem, obor s jinou délkou studia, a nález se stavem rozpor zdrojů nebo nerozhodnutým vztahem.
+
+## Obor se vypíše, nebo nevypíše
+
+Školy obory zřizují a zase je v některém roce nevypisují. Důvod ani trvalost takového rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala; objeví-li se v nabídce dalšího ročníku, zaznamená se to tehdy. Formulace „obor byl zrušen“ se nepoužívá, dokud to škola sama neuvádí.
+
+Hlavní prací je proto párování nabídek, které se jmenují mírně jinak. Totéž zaměření píší školy každý rok jinými slovy: „s výukou francouzského jazyka“ a „s výukou francouzštiny“, „s posílenou výukou německého jazyka“ a „s posílenou výukou němčiny“, „všeobecné studim“, „všeobecné studium“ a „Všeobecné“, „zaměření na VV“ a „Výtvarná výchova“. Jde o tytéž obory a mají se spojit.
+
+Kandidáty hledá `python3 scripts/match-zamereni.py`. Texty nejprve normalizuje: sundá diakritiku, rozepíše zkratky, sjednotí tvary názvů jazyků a předmětů, odtrhne české koncovky a vypustí výplňová slova. Pak u každé školy porovná nabídky téhož kódu oboru a téže délky studia z obou ročníků a ponechá jen vzájemně nejlepší dvojice.
+
+Vzájemnost je podstatná. Má-li škola u jednoho kódu víc zaměření, jejich pořadí ve zdrojovém souboru s párováním nesouvisí a bez tohoto omezení by se spojila křížem.
 
 ## Zadání pro výzkumného agenta
 
@@ -129,6 +139,7 @@ Fronta nemění produkci ani lokálně uložená rozhodnutí prohlížeče. Reš
 ## Historie
 
 - **1.0:** 526 úkolů; do rešerše byly zahrnuty i prosté změny údajů a neúplné adresy.
+- **1.5:** Doplněno pravidlo, že se nedohledává důvod ani trvalost nevypsání oboru, a `scripts/match-zamereni.py` pro párování mírně odlišných názvů zaměření.
 - **1.4:** Doplněna zásada, že zápis v číselníku je dokladem existence a běh řeší jen spory. Přidán `scripts/find-data-conflicts.py`.
 - **1.3:** Doplněna pole `resolved_questions` a `decisions_required`, aby se uzavřené otázky a rozhodnutí nemíchaly s otevřenými. Přidán `scripts/offer-history.py` nad soubory CERMAT 2024–2026.
 - **1.2:** Rešerše provedena pro všech 192 úkolů. Přibyly datované snímky rejstříku MŠMT jako důkazní zdroj, jejich dávkové propojení s frontou, prohlížeč výsledků a dvě kontroly. Upřesněn uzavřený číselník vztahů.

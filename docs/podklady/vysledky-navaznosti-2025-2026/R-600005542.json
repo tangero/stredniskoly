@@ -144,14 +144,15 @@
    "related_task_ids": [
     "R-600005631"
    ],
-   "unanswered_questions": [
-    "Historické statistiky přijímacího řízení 2025 pro Hotelnictví, Cestovní ruch a Lyceum se vztahují k samostatné Radlické škole s vlastními kritérii; po sloučení platí pro rok 2026/2027 nová kritéria sloučené školy (u Lycea školní testy a pohovor s cut-off 40 bodů, u Hotelnictví a Cestovního ruchu pouze JPZ s minimem 15 bodů), takže srovnatelnost výsledků je jen částečná a měla by být prezentována s poznámkou o změně organizace i kritérií."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Přesné datum právního sloučení (1. 1. 2026) je doloženo jen sekundárním zdrojem (Wikipedie citující usnesení Zastupitelstva HMP č. 28/39 ze 20. 11. 2025); text usnesení se nepodařilo přímo načíst. Rejstřík MŠMT sloučení nezávisle potvrzuje (mezi snímky k 31. 12. 2025 a 31. 3. 2026 došlo k přejmenování subjektu a převzetí pracovišť Radlice), ale přesné datum účinnosti z něj neplyne.",
      "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
     }
+   ],
+   "decisions_required": [
+    "Historické statistiky přijímacího řízení 2025 pro Hotelnictví, Cestovní ruch a Lyceum se vztahují k samostatné Radlické škole s vlastními kritérii; po sloučení platí pro rok 2026/2027 nová kritéria sloučené školy (u Lycea školní testy a pohovor s cut-off 40 bodů, u Hotelnictví a Cestovního ruchu pouze JPZ s minimem 15 bodů), takže srovnatelnost výsledků je jen částečná a měla by být prezentována s poznámkou o změně organizace i kritérií."
    ]
   }
  ],

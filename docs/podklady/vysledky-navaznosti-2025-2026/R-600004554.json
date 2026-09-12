@@ -155,8 +155,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Přímé datované oznámení školy o ukončení přijímání do zaměření Globální síťové technologie (případně o formálním sloučení s Audiovizuální technikou) se dohledat nepodařilo; závěr vychází z označení „dobíhající obor“ na webu školy, výroční zprávy 2024/25 a absence nabídky v přijímacích řízeních 2026 i 2027."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přímé datované oznámení školy o ukončení přijímání do zaměření Globální síťové technologie (případně o formálním sloučení s Audiovizuální technikou) se dohledat nepodařilo; závěr vychází z označení „dobíhající obor“ na webu školy, výroční zprávy 2024/25 a absence nabídky v přijímacích řízeních 2026 i 2027.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

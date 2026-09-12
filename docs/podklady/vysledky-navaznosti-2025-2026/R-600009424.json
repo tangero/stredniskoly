@@ -99,8 +99,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda a od kdy případně škola nábor do oboru Ekologie a životní prostředí znovu otevře, nebylo dohledáno."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda a od kdy případně škola nábor do oboru Ekologie a životní prostředí znovu otevře, nebylo dohledáno.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   },
   {

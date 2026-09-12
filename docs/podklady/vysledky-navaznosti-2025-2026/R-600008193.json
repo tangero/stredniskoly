@@ -114,9 +114,16 @@
    "history_comparability": "not_comparable",
    "recommended_action": "approve_mapping",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Bude obor 78-42-M/08 Všeobecné lyceum znovu vypsán v přijímacím řízení 2027 nebo později?",
-    "Z jakého důvodu škola obor pro rok 2026/2027 nevypsala (příčina nebyla předmětem rešerše)?"
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Bude obor 78-42-M/08 Všeobecné lyceum znovu vypsán v přijímacím řízení 2027 nebo později?",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    },
+    {
+     "otazka": "Z jakého důvodu škola obor pro rok 2026/2027 nevypsala (příčina nebyla předmětem rešerše)?",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

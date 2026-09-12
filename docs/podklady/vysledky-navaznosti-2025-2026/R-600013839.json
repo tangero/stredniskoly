@@ -95,8 +95,12 @@
    "history_comparability": "partially",
    "recommended_action": "manual_review",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda byla třída Management sportu otevírána i v letech před 2025/2026, a tedy zda jde o obnovení, nebo o skutečně první samostatné otevření vedle obecné Obchodní akademie."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda byla třída Management sportu otevírána i v letech před 2025/2026, a tedy zda jde o obnovení, nebo o skutečně první samostatné otevření vedle obecné Obchodní akademie.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

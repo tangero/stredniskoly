@@ -91,8 +91,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Bude škola znovu přijímat nové žáky do 1. ročníku v některém z příštích let?"
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Bude škola znovu přijímat nové žáky do 1. ročníku v některém z příštích let?",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

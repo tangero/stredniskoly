@@ -116,8 +116,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "manual_review",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Nebylo dohledáno oficiální vyjádření školy nebo zřizovatele (hl. m. Praha / MHMP) s explicitním důvodem neotevření oboru Informační služby pro 2026/27 – zda jde o dočasné přerušení (např. kvůli nízkému zájmu) nebo o plánovaný trvalý útlum oboru."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Nebylo dohledáno oficiální vyjádření školy nebo zřizovatele (hl. m. Praha / MHMP) s explicitním důvodem neotevření oboru Informační služby pro 2026/27 – zda jde o dočasné přerušení (např. kvůli nízkému zájmu) nebo o plánovaný trvalý útlum oboru.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

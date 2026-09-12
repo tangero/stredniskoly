@@ -199,8 +199,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Je ukončení přijímání do programu PROUD trvalé, nebo jde o jednoroční přerušení? K tomu by pomohla výroční zpráva školy za 2025/2026 nebo vyjádření školy."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Je ukončení přijímání do programu PROUD trvalé, nebo jde o jednoroční přerušení? K tomu by pomohla výroční zpráva školy za 2025/2026 nebo vyjádření školy.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

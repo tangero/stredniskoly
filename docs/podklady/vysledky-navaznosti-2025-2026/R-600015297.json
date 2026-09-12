@@ -79,8 +79,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "manual_review",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Nebylo dohledáno, zda a kdy bylo zaměření formálně zrušeno v ŠVP, ani zda jeho obsah převzalo jiné zaměření."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Nebylo dohledáno, zda a kdy bylo zaměření formálně zrušeno v ŠVP, ani zda jeho obsah převzalo jiné zaměření.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   },
   {

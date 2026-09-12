@@ -110,8 +110,12 @@
    "history_comparability": "partially",
    "recommended_action": "approve_mapping",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda již v přijímacím řízení 2025 byl výběr zaměření koncipován až po 1. ročníku (jako v roce 2026), nebo zda se uchazeči hlásili přímo na zaměření – kritéria PŘ 2025/2026 pro Lyceum nebyla dohledatelná (Wayback Machine dočasně nedostupná)."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda již v přijímacím řízení 2025 byl výběr zaměření koncipován až po 1. ročníku (jako v roce 2026), nebo zda se uchazeči hlásili přímo na zaměření – kritéria PŘ 2025/2026 pro Lyceum nebyla dohledatelná (Wayback Machine dočasně nedostupná).",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

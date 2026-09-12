@@ -116,8 +116,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Bylo druhé oznámené zaměření lycea (Právo a státní správa) skutečně otevřeno od 2026/2027, a proč se neobjevilo v nabídce 1. kola JPZ 2026 v datech CERMAT?"
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Bylo druhé oznámené zaměření lycea (Právo a státní správa) skutečně otevřeno od 2026/2027, a proč se neobjevilo v nabídce 1. kola JPZ 2026 v datech CERMAT?",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

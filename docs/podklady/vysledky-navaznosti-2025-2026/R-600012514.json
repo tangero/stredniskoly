@@ -89,8 +89,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "manual_review",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda škola plánuje denní Podnikání znovu vyhlásit, případně proč mezi 2025 a 2026 vypadlo z vyhlášené nabídky."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda škola plánuje denní Podnikání znovu vyhlásit, případně proč mezi 2025 a 2026 vypadlo z vyhlášené nabídky.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

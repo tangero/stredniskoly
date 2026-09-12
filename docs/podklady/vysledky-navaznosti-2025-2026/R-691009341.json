@@ -142,9 +142,16 @@
    "history_comparability": "not_comparable",
    "recommended_action": "manual_review",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda gymnázium AVIDA v období 2026/2027 fakticky dobíhá s existujícím ročníkem bez nového náboru, nebo zda přijímací řízení pro rok 2026/2027 proběhlo jinou (např. neveřejnou/přímou) formou mimo systém DiPSy a CERMAT.",
-    "Přesný důvod přesunu plánovaného rozšíření (všeobecné gymnázium, pedagogické lyceum) na září 2027 a zda se týká i nového náboru do sportovního zaměření."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda gymnázium AVIDA v období 2026/2027 fakticky dobíhá s existujícím ročníkem bez nového náboru, nebo zda přijímací řízení pro rok 2026/2027 proběhlo jinou (např. neveřejnou/přímou) formou mimo systém DiPSy a CERMAT.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    },
+    {
+     "otazka": "Přesný důvod přesunu plánovaného rozšíření (všeobecné gymnázium, pedagogické lyceum) na září 2027 a zda se týká i nového náboru do sportovního zaměření.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

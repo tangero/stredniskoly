@@ -110,8 +110,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Přesné datum a trvalost přesunu výuky do Sousedíkovy 1044/8 - zda jde o dočasné nebo trvalé místo výuky ekonomického lycea i gymnázia."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Přesné datum a trvalost přesunu výuky do Sousedíkovy 1044/8 - zda jde o dočasné nebo trvalé místo výuky ekonomického lycea i gymnázia.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

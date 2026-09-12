@@ -97,8 +97,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda MŠMT/kraj formálně schválili ukončení oboru Polygrafie, nebo jde jen o dočasné nevypsání 1. kola pro rok 2026/27."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda MŠMT/kraj formálně schválili ukončení oboru Polygrafie, nebo jde jen o dočasné nevypsání 1. kola pro rok 2026/27.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

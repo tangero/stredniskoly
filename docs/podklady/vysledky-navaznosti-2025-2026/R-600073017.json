@@ -116,13 +116,15 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Nebylo dohledáno přímé vyhlášení 1. kola přijímacího řízení pro školní rok 2026/2027 (obvykle vyhlašováno na jaře 2026) – archiv aktualit dostupný z webu sahá jen k 25. 6. 2026."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Není doložen přesný důvod, proč se obor Mechanik seřizovač stal „dobíhajícím\" (nízký zájem uchazečů, kapacitní/personální důvody, rozhodnutí zřizovatele apod.) – web tento důvod neuvádí a nebyl dohledán žádný zdroj zřizovatele (Karlovarský kraj) ani regionálního zpravodajství k této konkrétní škole.",
      "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
+    },
+    {
+     "otazka": "Nebylo dohledáno přímé vyhlášení 1. kola přijímacího řízení pro školní rok 2026/2027 (obvykle vyhlašováno na jaře 2026) – archiv aktualit dostupný z webu sahá jen k 25. 6. 2026.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
     }
    ]
   }

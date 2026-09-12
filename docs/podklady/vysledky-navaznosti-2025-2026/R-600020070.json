@@ -137,13 +137,15 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda škola skutečně otevře Laboratorního asistenta pro nástup 2027, resp. proč u Maséra ve zdravotnictví aktuálně neplánuje další otevření – jde o vyjádřený záměr ke dni kontroly, nikoli o závazné rozhodnutí."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Které z obou pracovišť (Jeremenkova vs. 1. máje) je místem výuky konkrétně pro Laboratorního asistenta a pro Maséra ve zdravotnictví – zdroje to nerozlišují.",
      "uzavreno": "Mimo rozsah tohoto běhu: otázka nepatří k návaznosti nabídek, ale k samostatnému úkolu doložení míst výuky pro dojezdovost."
+    },
+    {
+     "otazka": "Zda škola skutečně otevře Laboratorního asistenta pro nástup 2027, resp. proč u Maséra ve zdravotnictví aktuálně neplánuje další otevření – jde o vyjádřený záměr ke dni kontroly, nikoli o závazné rozhodnutí.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
     }
    ]
   }

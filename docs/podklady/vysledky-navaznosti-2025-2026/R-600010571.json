@@ -98,8 +98,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda a kdy může být přijímací řízení do oboru Veřejnosprávní činnost znovu vyhlášeno."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Zda a kdy může být přijímací řízení do oboru Veřejnosprávní činnost znovu vyhlášeno.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

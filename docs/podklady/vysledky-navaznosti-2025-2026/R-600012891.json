@@ -88,8 +88,12 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Kdy přesně a v jaké podobě (kód oboru, forma) vznikne v Hostinném avizovaný náhradní čtyřletý obor."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Kdy přesně a v jaké podobě (kód oboru, forma) vznikne v Hostinném avizovaný náhradní čtyřletý obor.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   },
   {

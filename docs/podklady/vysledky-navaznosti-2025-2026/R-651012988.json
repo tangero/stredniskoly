@@ -79,8 +79,12 @@
    "history_comparability": "unknown",
    "recommended_action": "manual_review",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Bylo přijímací řízení do oboru Vlasová kosmetika pro 2026/27 vyhlášeno mimo 1. kolo JPZ, nebo nebylo vyhlášeno vůbec? Odpověď by dala data 2. kola přijímacího řízení 2026, která zveřejněna nejsou. Dostupné zdroje otázku neuzavírají."
+   "unanswered_questions": [],
+   "resolved_questions": [
+    {
+     "otazka": "Bylo přijímací řízení do oboru Vlasová kosmetika pro 2026/27 vyhlášeno mimo 1. kolo JPZ, nebo nebylo vyhlášeno vůbec? Odpověď by dala data 2. kola přijímacího řízení 2026, která zveřejněna nejsou. Dostupné zdroje otázku neuzavírají.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
+    }
    ]
   }
  ]

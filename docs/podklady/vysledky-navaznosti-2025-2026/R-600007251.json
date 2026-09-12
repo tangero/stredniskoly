@@ -111,13 +111,15 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Není ověřeno, zda a kdy bude obor 78-42-M/02 formálně vyřazen z rejstříku MŠMT, ani zda škola plánuje jeho budoucí obnovení souběžně s pokusně ověřovaným Lyceem."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Nepodařilo se přímo ověřit zápis VOŠ, SPŠ a OA Čáslav v oficiálním seznamu MŠMT škol zapojených do pokusného ověřování oboru 78-42-M/08 Lyceum – stránky msmt.gov.cz s vyhlášením a se seznamem zapojených škol (např. https://msmt.gov.cz/vzdelavani/stredni-vzdelavani/vyhlaseni-pokusneho-overovani-vzdelavani-podle-ramcoveho a https://msmt.gov.cz/vzdelavani/stredni-vzdelavani/seznam-skol-zarazenych-do-pokusneho-overovani-vzdelavani) vrátily při automatizovaném načtení chybu „Stránka nenalezena“. Závěr je přesto podložen přímo webem školy a shodou s daty CERMAT.",
      "uzavreno": "Doloženo seznamem škol MŠMT k pokusnému ověřování oboru Lyceum (archiv.msmt.gov.cz, platný k 15. 12. 2025) a čísly jednacími vyhlášení."
+    },
+    {
+     "otazka": "Není ověřeno, zda a kdy bude obor 78-42-M/02 formálně vyřazen z rejstříku MŠMT, ani zda škola plánuje jeho budoucí obnovení souběžně s pokusně ověřovaným Lyceem.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
     }
    ]
   }

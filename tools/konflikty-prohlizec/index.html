@@ -165,7 +165,7 @@ details[open] summary::before{transform:rotate(90deg)}
   <div class="wrap head-in">
     <div>
       <h1>Návaznost nabídek 2025–2026</h1>
-      <p class="sub">Kontrola rešerše: co o téže nabídce říká první kolo 2025, co rok 2026 a co rejstřík MŠMT. Doprovodná data jsou složená pod každým případem.</p>
+      <p class="sub">Kontrola rešerše: dvojice nabídek, kterou nález páruje, vedle sebe za oba ročníky, a pod ní stav oboru v rejstříku MŠMT. Doprovodná data jsou složená pod každým případem.</p>
     </div>
     <ul class="tally" id="tally"></ul>
   </div>
@@ -189,7 +189,9 @@ details[open] summary::before{transform:rotate(90deg)}
 (function(){
   var D = window.DATA, P = D.pripady;
 
-  var VZTAH = {closed:"ukončená nabídka", new_offer:"nová nabídka", continuation:"pokračuje",
+  // Chybějící nabídka znamená, že ji škola v daném roce nevypsala. O tom, zda je
+  // rozhodnutí trvalé, data nic neříkají, a názvosloví to proto netvrdí.
+  var VZTAH = {closed:"letos nevypsáno", new_offer:"nově vypsáno", continuation:"pokračuje",
     rename_only:"jen jiný zápis", merge:"sloučení", split:"rozdělení", unknown:"nerozhodnuto"};
   var SROV = {comparable:"srovnatelné", partially:"částečně srovnatelné",
     not_comparable:"nesrovnatelné", unknown:"neurčeno"};
@@ -213,20 +215,20 @@ details[open] summary::before{transform:rotate(90deg)}
     var list = c.strany[rok] || [];
     var inner = list.length
       ? list.map(function(n){ return offerHtml(n, true, strana); }).join("")
-      : '<p class="none">V tomto roce škola tuto nabídku nemá.</p>';
+      : '<p class="none">Škola tuto nabídku v tomto roce nevypsala.</p>';
     return '<div class="year"><h3>'+rok+'</h3>'+inner+'</div>';
   }
 
   // Spojka mezi sloupci říká, co nález o dvojici tvrdí. Bez ní by čtenář
   // pároval řádky podle pořadí, které se zaměřeními nesouvisí.
   var SPOJKA = {rename_only:["=","táž nabídka,<br>jiný zápis"], continuation:["=","táž nabídka"],
-    merge:["→","sloučeno"], split:["→","rozděleno"], new_offer:["+","nová"],
-    closed:["×","ukončena"], unknown:["?","nerozhodnuto"]};
+    merge:["→","sloučeno"], split:["→","rozděleno"], new_offer:["+","nově vypsáno"],
+    closed:["×","letos nevypsáno"], unknown:["?","nerozhodnuto"]};
   function linkHtml(c){
     var maR = (c.strany["2025"]||[]).length, maN = (c.strany["2026"]||[]).length;
     var s = SPOJKA[c.vztah] || ["·", c.vztah];
     var sym = (maR && maN) ? s[0] : (maN ? "+" : "×");
-    var txt = (maR && maN) ? s[1] : (maN ? "nová nabídka" : "ukončená nabídka");
+    var txt = (maR && maN) ? s[1] : (maN ? "nově vypsáno" : "letos nevypsáno");
     return '<div class="link"><span data-sym="'+esc(sym)+'">'+txt+'</span></div>';
   }
 

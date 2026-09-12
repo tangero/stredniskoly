@@ -67,7 +67,7 @@ Všech 192 úkolů fronty má vlastní soubor výsledku a všech 436 otázek fro
 
 Doporučená akce není schválením. `approve_mapping` znamená návrh k přijetí do migrační mapy, `record_only` pouhou evidenci beze změny statistik, `manual_review` případ, který vyžaduje rozhodnutí člověka.
 
-Nálezy nesly 227 otevřených otázek. Sto třicet devět je uzavřeno i s důvodem a 32 přesunuto mezi rozhodnutí k přezkumu, takže dnes jich zbývá 53 ve 47 úkolech a všechny čekají na data, která zatím neexistují. Rozbor podle cesty k uzavření je v [přehledu konfliktů](prehled-konfliktu-navaznosti.md).
+Nálezy nesly 227 otevřených otázek. Dnes jich je nula: 190 je uzavřeno i s důvodem a 34 přesunuto mezi rozhodnutí k přezkumu. Poslední skupinu uzavřelo pravidlo, že se nedohledává důvod ani trvalost toho, že škola obor v daném roce nevypsala. Rozbor podle cesty k uzavření je v [přehledu konfliktů](prehled-konfliktu-navaznosti.md).
 
 Srovnatelnost historických výsledků je posouzena samostatně od návaznosti: 59 nálezů srovnatelných, 44 částečně, 147 nesrovnatelných a 6 neurčených. Rešerše navrhuje 20 vazeb mezi úkoly, například mezi školami skupiny FOSTRA nebo mezi sloučeným učilištěm a jeho nástupcem.
 
@@ -113,6 +113,8 @@ Ze 461 externích odkazů odpovědělo 443 kódem 200. Zbývajících 18 rozebí
 | [Dvouletý cyklus](dvoulety-cyklus-nabidky-oboru.md) | Obory vypisované obden, test proti datům 1. kola 2024 |
 | [Pokusné ověřování Lyceum](podklady/pokusne-overovani-lyceum-skoly.json) | 45 škol ze seznamu MŠMT s datem zápisu oboru |
 | [Spory v datech](podklady/spory-v-datech-2025-2026.json) | Výstup hledání rozporů mezi číselníky |
+| [Návrhy párování](podklady/navrhy-parovani-zamereni.json) | Dvojice zaměření, která jsou totéž jinými slovy |
+| [Prohlížeč konfliktů](../tools/konflikty-prohlizec/README.md) | Kontrola dvojic nabídek vedle sebe za oba ročníky |
 | [Podklad cyklu](podklady/dvoulety-cyklus-2024-2026.json) | Stopa každé nepřiřazené nabídky v roce 2024 |
 
 ## 5. Reprodukce
@@ -169,4 +171,5 @@ Tato dokumentační dodávka sama neprovádí žádný z těchto kroků v produk
 - Webová aplikace rejstříku MŠMT agentům nevrací obsah, proto se jako důkaz používají datované čtvrtletní snímky otevřených dat. Dokládají stav ke konkrétnímu dni, ale zápis se do nich promítá s odstupem; samotný zápis oboru navíc nedokazuje vyhlášení přijímacího řízení.
 - Číselník `relationship.type` zůstává uzavřený. Obnovená nabídka se vede jako pokračování, nahrazení oboru jiným jako ukončená nabídka s nástupcem popsaným slovně; kontrola této konvence je součástí ověřovacího skriptu.
 - Rešerše opravila vlastní dřívější nález: nabídky „Meda“ pod REDIZO 600005950 nejsou novou nabídkou, ale pokračováním nabídek zaniklého REDIZO 691017344.
+- Školy obory zřizují a v některém roce je nevypisují. Důvod ani trvalost se nedohledávají; zaznamená se, že škola obor v daném roce nevypsala. Hlavní prací je párovat nabídky, které se jmenují mírně jinak.
 - Část nepřiřazených nabídek vzniká tím, že škola obor vypisuje jednou za dva roky. Ze dvou ročníků to nelze odlišit od zániku či vzniku; jako třetí bod v čase proto slouží data 1. kola 2024. Jsou na úrovni uchazečů, takže přítomnost oboru je silný důkaz, ale jeho nepřítomnost slabý.

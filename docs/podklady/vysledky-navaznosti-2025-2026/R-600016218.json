@@ -98,13 +98,15 @@
    "history_comparability": "not_comparable",
    "recommended_action": "record_only",
    "related_task_ids": [],
-   "unanswered_questions": [
-    "Zda škola pro školní rok 2026/27 denní dvouletou nástavbu Podnikání skutečně neotevřela, nebo ji jen nevypsala v 1. kole JPZ. Odpověď by dala data 2. kola přijímacího řízení 2026, která zveřejněna nejsou. Dostupné zdroje otázku neuzavírají."
-   ],
+   "unanswered_questions": [],
    "resolved_questions": [
     {
      "otazka": "Důvod chybějících kritérií pro nástavbové studium na webu školy pro 3. kolo 2026.",
      "uzavreno": "Uzavřeno podle schváleného pravidla 1: příčina rozhodnutí školy se nezkoumá, pro návaznost nabídky není potřebná."
+    },
+    {
+     "otazka": "Zda škola pro školní rok 2026/27 denní dvouletou nástavbu Podnikání skutečně neotevřela, nebo ji jen nevypsala v 1. kole JPZ. Odpověď by dala data 2. kola přijímacího řízení 2026, která zveřejněna nejsou. Dostupné zdroje otázku neuzavírají.",
+     "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
     }
    ]
   }

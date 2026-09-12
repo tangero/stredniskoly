@@ -1,6 +1,6 @@
 # Přehled konfliktů návazností: co je vyřešeno a co zbývá
 
-Verze 2.0 · 12. 9. 2026. Návazné na [souhrnné zadání](ukol-navaznost-skol-a-oboru-2027.md).
+Verze 2.1 · 12. 9. 2026. Návazné na [souhrnné zadání](ukol-navaznost-skol-a-oboru-2027.md).
 
 Konfliktem se zde rozumí nabídka nebo školní jednotka, kterou konzervativní párování dvou ročníků nespojilo. Fronta jich obsahovala 436 otázek ve 192 úkolech.
 
@@ -59,15 +59,15 @@ Výsledek podle stavu nálezu:
 
 ## Část 3: co zbývá otevřené
 
-Původně nesly nálezy 227 otevřených otázek ve 149 úkolech. Po uplatnění zásady o číselnících jich zbývá **53 ve 47 úkolech**. Sto třicet devět otázek je uzavřeno v poli `resolved_questions` i s důvodem uzavření a 32 přesunuto do `decisions_required` jako věci k rozhodnutí, ne k dohledání. Třídění vytváří `scripts/classify-open-questions.py`.
+Nálezy nesly 227 otevřených otázek ve 149 úkolech. Dnes jich je **nula**. Sto devadesát je uzavřeno v poli `resolved_questions` i s důvodem uzavření a 34 přesunuto do `decisions_required` jako věci k rozhodnutí při přezkumu, ne k dohledání. Třídění vytváří `scripts/classify-open-questions.py`.
 
-| Co zbývá otevřené | Otázek | Proč |
-|---|---:|---|
-| Je ukončení nabídky trvalé, nebo dočasné | 45 | Odpoví až nabídka přijímacího řízení 2027 |
-| Byl obor vypsán mimo 1. kolo 2026 | 6 | Data 2. kola 2026 nejsou zveřejněna |
-| Vrátí se zaměření v dalších letech | 2 | Odpoví až nabídka 2027 |
+Poslední skupinu, 45 otázek po tom, zda je nevypsání oboru trvalé, uzavřelo pravidlo, že se důvod ani trvalost nedohledávají. Škola obor v daném roce vypsala, nebo nevypsala; to je celé tvrzení, které data unesou.
 
-Žádná z nich není spor. Všechny čekají na data, která dnes neexistují.
+## Párování mírně odlišných názvů
+
+Hlavní prací zůstává spojit nabídky, které se jmenují jinými slovy. `scripts/match-zamereni.py` texty normalizuje a hledá vzájemně nejlepší dvojice u téhož kódu oboru a téže délky studia.
+
+Kontrola nad hotovou rešerší našla **73 kandidátů a všech 73 už rešerše spárovala**; žádná dvojice nezůstala nespojená. Omezení na vzájemně nejlepší shodu je přitom nutné: u školy se třemi zaměřeními téhož kódu by se jinak nabídky spojily křížem, protože se shoduje jejich společný začátek.
 
 ### A. Uzavře je rozhodnutí, ne rešerše — **hotovo**
 
