@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Nejžádanější studijní obory',
-  description: 'Žebříček nejžádanějších středoškolských oborů v ČR. Převis poptávky 2026, obtížnost přijetí, statistiky podle měst.',
+  description: 'Žebříček nejžádanějších středoškolských oborů v ČR. Převis poptávky 2026 a statistiky podle měst. Historická data nejsou odhadem osobního přijetí.',
   openGraph: {
     title: 'Nejžádanější studijní obory | Přijímačky na střední školy',
     description: 'Žebříček nejžádanějších středoškolských oborů v ČR.',

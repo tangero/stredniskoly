@@ -11,8 +11,7 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-3 text-sm" style={{ color: '#28313b' }}>O projektu</h3>
             <p className="text-sm mb-3" style={{ color: '#818c99' }}>
-              Stránka využívá reálná data z CERMAT a ČŠI pro zobrazení dat a odhad
-              šancí na přijetí na střední školy v ČR.
+              Stránka využívá data CERMAT a ČŠI pro porovnání středních škol a historických výsledků přijímacího řízení.
             </p>
             <p className="text-sm" style={{ color: '#818c99' }}>
               <strong style={{ color: '#28313b' }}>Autor:</strong> <a href="https://cs.wikipedia.org/wiki/Patrick_Zandl">Patrick Zandl</a> a <a href="https://www.hlidacstatu.cz">Hlídač státu</a>

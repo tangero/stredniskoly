@@ -159,13 +159,6 @@ function linesLabel(lines: string[]): string {
   return lines.join(' → ');
 }
 
-function jpzBadgeColor(jpzMin: number | null): string {
-  if (jpzMin === null) return 'bg-slate-100 text-slate-600';
-  if (jpzMin >= 70) return 'bg-red-100 text-red-800';
-  if (jpzMin >= 50) return 'bg-amber-100 text-amber-800';
-  if (jpzMin >= 30) return 'bg-green-100 text-green-800';
-  return 'bg-emerald-100 text-emerald-800';
-}
 
 function konkurenceLabel(index: number | null): { text: string; color: string } {
   if (index === null) return { text: '—', color: 'text-slate-500' };
@@ -732,13 +725,13 @@ export function DostupnostClient() {
                               <th className="text-center px-3 py-2 font-medium">Délka</th>
                               <th className="text-center px-3 py-2 font-medium">Typ</th>
                               <th className="text-center px-3 py-2 font-medium">
-                                Body prům
+                                Průměr 2026
                                 <InfoTooltip title="Průměrné body JPZ">
-                                  Průměrný součet bodů z ČJ + MA všech přijatých. Max 100 bodů. Čím vyšší, tím náročnější škola.
+                                  Průměrný přepočtený skór ČJ + MA přijatých konajících JPZ v 1. kole 2026, z maxima 100. Není to hranice přijetí ani hodnocení kvality školy.
                                 </InfoTooltip>
                               </th>
                               <th className="text-center px-3 py-2 font-medium">
-                                Konkurence
+                                Poptávka 2025
                                 <InfoTooltip title="Index konkurence">
                                   Poměr přihlášek ke kapacitě. Nad 3× = vysoká konkurence.
                                 </InfoTooltip>
@@ -764,7 +757,7 @@ export function DostupnostClient() {
                                   </td>
                                   <td className="px-3 py-2 text-center">
                                     {prog.jpzPrumer !== null ? (
-                                      <span className={`inline-block px-2 py-0.5 rounded text-xs font-bold ${jpzBadgeColor(prog.jpzPrumer)}`}>
+                                      <span className={`inline-block px-2 py-0.5 rounded text-xs font-bold bg-blue-50 text-blue-900`}>
                                         {prog.jpzPrumer}
                                       </span>
                                     ) : <span className="text-slate-400">—</span>}
@@ -796,8 +789,8 @@ export function DostupnostClient() {
                                   </p>
                                 </div>
                                 {prog.jpzPrumer !== null && (
-                                  <span className={`shrink-0 px-2 py-0.5 rounded text-xs font-bold ${jpzBadgeColor(prog.jpzPrumer)}`}>
-                                    {prog.jpzPrumer}b
+                                  <span className={`shrink-0 px-2 py-0.5 rounded text-xs font-bold bg-blue-50 text-blue-900`}>
+                                    {prog.jpzPrumer} / 100 · 2026
                                   </span>
                                 )}
                               </div>

@@ -125,19 +125,19 @@ export default async function RegionPage({ params, searchParams }: Props) {
               <div className="text-3xl font-bold text-blue-600">
                 {Math.round(stats.totalKapacita / 100) / 10}k
               </div>
-              <div className="text-sm text-slate-600">Celková kapacita</div>
+              <div className="text-sm text-slate-600">Kapacita 2025</div>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-sm text-center">
               <div className="text-3xl font-bold text-blue-600">
                 {stats.avgIndexPoptavky.toFixed(1)}
               </div>
-              <div className="text-sm text-slate-600">Prům. index poptávky</div>
+              <div className="text-sm text-slate-600">Prům. index poptávky 2025</div>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-sm text-center">
               <div className="text-3xl font-bold text-blue-600">
-                {Math.round(stats.avgMinBody)}
+                {stats.totalPrihlasky.toLocaleString('cs-CZ')}
               </div>
-              <div className="text-sm text-slate-600">Prům. min. body</div>
+              <div className="text-sm text-slate-600">Přihlášky 2025</div>
             </div>
           </div>
 

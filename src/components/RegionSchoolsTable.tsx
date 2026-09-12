@@ -199,7 +199,7 @@ function SortableHeader({
 }
 
 export function RegionSchoolsTable({ schools, allSchools, extendedStatsMap, trendDataMap, krajName }: Props) {
-  const [sortKey, setSortKey] = useState<SortKey>('jpz');
+  const [sortKey, setSortKey] = useState<SortKey>('skore');
   const [sortDir, setSortDir] = useState<SortDir>('desc');
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -236,8 +236,8 @@ export function RegionSchoolsTable({ schools, allSchools, extendedStatsMap, tren
           valB = statsB?.jpz_min || 0;
           break;
         case 'skore':
-          valA = statsA?.jpz_prumer || a.prumer_body;
-          valB = statsB?.jpz_prumer || b.prumer_body;
+          valA = statsA?.jpz_prumer ?? a.prumer_body;
+          valB = statsB?.jpz_prumer ?? b.prumer_body;
           break;
         case 'kapacita':
           valA = a.kapacita;
@@ -339,22 +339,7 @@ export function RegionSchoolsTable({ schools, allSchools, extendedStatsMap, tren
                   </InfoTooltip>
                 </div>
               </th>
-              <SortableHeader
-                label="Body min"
-                sortKeyName="jpz"
-                sortKey={sortKey}
-                sortDir={sortDir}
-                onSort={handleSort}
-                tooltip={
-                  <InfoTooltip title="Minimální body pro přijetí">
-                    <strong>Minimální počet bodů z JPZ</strong> s jakým byl někdo přijat.
-                    <br /><br />
-                    Menší čísla = body jednoho studenta (ČJ / MA).
-                    <br /><br />
-                    Maximum: 100 bodů (50 ČJ + 50 MA)
-                  </InfoTooltip>
-                }
-              />
+              <th className="px-3 py-2">Hranice přijetí<br /><span className="text-xs font-normal">neověřeno</span></th>
               <SortableHeader
                 label="Body průměr"
                 sortKeyName="skore"
@@ -362,8 +347,8 @@ export function RegionSchoolsTable({ schools, allSchools, extendedStatsMap, tren
                 sortDir={sortDir}
                 onSort={handleSort}
                 tooltip={
-                  <InfoTooltip title="Průměrné body přijatých">
-                    <strong>Průměrné body z JPZ</strong> všech přijatých studentů.
+                  <InfoTooltip title="Historický průměr 2025">
+                    <strong>Průměrné body z JPZ</strong> v historickém importu 2025; vymezení skupiny není doložené.
                     <br /><br />
                     <span className="text-amber-400">📝</span> = obor má dodatečná kritéria (prospěch aj.)
                   </InfoTooltip>
@@ -412,9 +397,9 @@ export function RegionSchoolsTable({ schools, allSchools, extendedStatsMap, tren
                   <InfoTooltip title="Meziroční trend přihlášek">
                     <strong>Změna počtu přihlášek</strong> mezi lety 2024 a 2025.
                     <br /><br />
-                    • <span className="text-green-400">↓ Pokles</span> = menší konkurence letos, lepší šance
+                    • <span className="text-green-400">↓ Pokles</span> = méně přihlášek v roce 2025
                     <br />
-                    • <span className="text-red-400">↑ Nárůst</span> = větší konkurence letos
+                    • <span className="text-red-400">↑ Nárůst</span> = více přihlášek v roce 2025
                     <br /><br />
                     <strong>Tip:</strong> Školy s vysokou konkurencí v předchozích letech mívají
                     příští rok pokles přihlášek (lidé se bojí). Naopak školy s nízkou konkurencí
@@ -500,7 +485,7 @@ export function RegionSchoolsTable({ schools, allSchools, extendedStatsMap, tren
                   <td className="p-3 text-center">
                     <div className="flex items-center justify-center gap-1">
                       <span className={`text-lg font-bold ${hasExtra ? 'text-amber-600' : 'text-slate-900'}`}>
-                        {stats?.jpz_prumer || school.prumer_body}
+                        {stats?.jpz_prumer ?? school.prumer_body}
                       </span>
                       {hasExtra && (
                         <span title="Obor má dodatečná kritéria (prospěch aj.)" className="cursor-help">
@@ -599,10 +584,8 @@ export function RegionSchoolsTable({ schools, allSchools, extendedStatsMap, tren
                 </div>
                 <div className="text-right shrink-0">
                   <div className="text-2xl font-bold text-blue-600">{jpzMin ?? '—'}</div>
-                  <div className="text-xs text-slate-500">JPZ bodů</div>
-                  {hasExtra && (
-                    <div className="text-xs text-amber-600">skóre: {school.min_body}</div>
-                  )}
+                  <div className="text-xs text-slate-500">Hranice neověřena</div>
+
                 </div>
               </div>
               <div className="flex justify-between items-center mt-3 pt-3 border-t border-slate-100">

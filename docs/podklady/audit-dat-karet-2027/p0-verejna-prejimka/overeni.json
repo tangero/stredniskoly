@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-11",
+  "domain": "https://www.prijimackynaskolu.cz",
+  "deploymentId": "dpl_GVJ5hgb9y9k5pTG3XZ7mSbTHgMaZ",
+  "state": "READY",
+  "applicationCommit": "04c369fb7a4d9b5e360dfb76260932e92c75524c",
+  "prs": [
+    81,
+    82
+  ],
+  "tests": {
+    "publicIntegration": 26,
+    "passed": 26,
+    "failed": 0,
+    "localUnitAndRender": 18
+  },
+  "browser": {
+    "mobileWidth": 390,
+    "desktopWidth": 1440,
+    "subjectScores": [
+      "36,1 / 50 bodů",
+      "30,1 / 50 bodů"
+    ],
+    "legacyMinimumVisible": false,
+    "horizontalOverflow": false,
+    "archiveInitiallyClosed": true,
+    "unverified2027NoticeVisible": true
+  },
+  "scope": "P0 publikace dat a celowebové O-13. Není přejímkou úplného katalogu ani nabídky 2027."
+}

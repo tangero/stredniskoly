@@ -105,7 +105,7 @@ interface SchoolDetail {
   min_body: number | null;
   jpz_min: number | null;
   index_poptavky: number;
-  obtiznost: number;
+  obtiznost: number | null;
   kapacita: number;
   prijati: number;
   competing_schools: Array<{
@@ -311,7 +311,7 @@ export async function GET(
       ...unavailableAdmissionScores(),
       year: 2025,
       index_poptavky: school.index_poptavky || 0,
-      obtiznost: school.obtiznost || 0,
+      obtiznost: null,
       kapacita: school.kapacita || 0,
       prijati: school.prijati || 0,
       competing_schools: competingSchools,

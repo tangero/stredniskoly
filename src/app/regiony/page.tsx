@@ -230,9 +230,9 @@ export default async function RegionsPage() {
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-blue-600">
-                        {Math.round(kraj.stats.avgMinBody)}
+                        {kraj.stats.totalPrihlasky.toLocaleString('cs-CZ')}
                       </div>
-                      <div className="text-slate-600">Prům. min. body</div>
+                      <div className="text-slate-600">Přihlášky 2025</div>
                     </div>
                   </div>
                   <div className="mt-4 text-blue-600 text-sm font-medium group-hover:underline">

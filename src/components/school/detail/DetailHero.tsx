@@ -52,17 +52,9 @@ export function DetailHero({
         {/* Key metrics */}
         <div className="flex flex-wrap items-center gap-4">
           <div className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-lg">
-            <Trophy className="w-5 h-5" />
-            <div>
-              <div className="text-xs opacity-80">Min. body</div>
-              <div className="text-lg font-bold">{minBody}</div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-lg">
             <Users className="w-5 h-5" />
             <div>
-              <div className="text-xs opacity-80">Poptávka</div>
+              <div className="text-xs opacity-80">Poptávka 2025</div>
               <div className="text-lg font-bold">
                 {indexPoptavky.toFixed(1)}× {demand.emoji}
               </div>

@@ -127,7 +127,6 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
 
   const tabs: { id: TabId; label: string }[] = [
     { id: 'previs2026', label: 'Nejžádanější obory 2026' },
-    { id: 'obtiznost2025', label: 'Obtížnost přijetí 2025' },
     { id: 'mesta', label: 'Převis podle měst' },
   ];
 
@@ -185,13 +184,7 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
   );
 
   // Obtížnost 2025 - Top 100
-  const obtiznost2025 = useMemo(() =>
-    [...filtered]
-      .filter(s => s.prihlasky > 0)
-      .sort((a, b) => b.obtiznost - a.obtiznost)
-      .slice(0, 100),
-    [filtered]
-  );
+
 
   // Převis podle měst
   const cityStats = useMemo(() => {
@@ -393,103 +386,6 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      )}
-
-      {/* Tab: Obtížnost 2025 */}
-      {activeTab === 'obtiznost2025' && (
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-          <div className="p-5 border-b">
-            <h2 className="text-xl font-semibold">Nejobtížnější obory 2025</h2>
-            <p className="text-slate-600 text-sm mt-1">
-              Seřazeno podle indexu obtížnosti přijetí (kombinace min. bodů, poptávky a selektivity).
-              Zobrazeno {obtiznost2025.length} oborů.
-            </p>
-          </div>
-
-          {/* Desktop */}
-          <div className="hidden md:block overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead className="bg-slate-50">
-                <tr>
-                  <th className="text-left px-3 py-2 font-medium text-slate-600 w-8">#</th>
-                  <th className="text-left px-3 py-2 font-medium text-slate-600">Škola</th>
-                  <th className="text-left px-3 py-2 font-medium text-slate-600">Obor</th>
-                  <th className="text-center px-3 py-2 font-medium text-slate-600">Délka</th>
-                  <th className="text-left px-3 py-2 font-medium text-slate-600">Město</th>
-                  <th className="text-right px-3 py-2 font-medium text-slate-600">Min. body</th>
-                  <th className="text-right px-3 py-2 font-medium text-slate-600">Převis</th>
-                  <th className="text-right px-3 py-2 font-medium text-slate-600">Obtížnost</th>
-                </tr>
-              </thead>
-              <tbody>
-                {obtiznost2025.map((s, idx) => {
-                  const diffColor = s.obtiznost >= 80 ? 'bg-red-100 text-red-800' :
-                                    s.obtiznost >= 60 ? 'bg-orange-100 text-orange-800' :
-                                    s.obtiznost >= 40 ? 'bg-amber-100 text-amber-800' :
-                                    'bg-slate-100 text-slate-700';
-                  return (
-                    <tr key={s.id} className="border-t hover:bg-slate-50">
-                      <td className="px-3 py-2 text-slate-400">{idx + 1}</td>
-                      <td className="px-3 py-2">
-                        <Link href={`/skola/${s.slug}`} className="text-blue-600 hover:underline font-medium">
-                          {s.nazev}
-                        </Link>
-                      </td>
-                      <td className="px-3 py-2 text-slate-600">{s.obor}</td>
-                      <td className="px-3 py-2 text-center">
-                        <span className={`inline-block px-2 py-0.5 rounded text-[11px] font-bold ${delkaColors[s.delka_studia] || 'bg-slate-200 text-slate-700'}`}>
-                          {s.delka_studia}L
-                        </span>
-                      </td>
-                      <td className="px-3 py-2 text-slate-500">{s.obec}</td>
-                      <td className="px-3 py-2 text-right tabular-nums font-medium">{s.min_body}</td>
-                      <td className="px-3 py-2 text-right tabular-nums">{s.index_poptavky.toFixed(1)}×</td>
-                      <td className="px-3 py-2 text-right">
-                        <span className={`inline-block px-2 py-0.5 rounded text-sm font-bold ${diffColor}`}>
-                          {s.obtiznost.toFixed(0)}
-                        </span>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Mobile */}
-          <div className="md:hidden divide-y">
-            {obtiznost2025.map((s, idx) => {
-              const diffColor = s.obtiznost >= 80 ? 'bg-red-100 text-red-800' :
-                                s.obtiznost >= 60 ? 'bg-orange-100 text-orange-800' :
-                                s.obtiznost >= 40 ? 'bg-amber-100 text-amber-800' :
-                                'bg-slate-100 text-slate-700';
-              return (
-                <div key={s.id} className="p-4">
-                  <div className="flex items-start justify-between gap-2 mb-1">
-                    <div className="flex items-center gap-2 min-w-0">
-                      <span className="text-slate-400 text-sm font-medium shrink-0">{idx + 1}.</span>
-                      <Link href={`/skola/${s.slug}`} className="text-blue-600 hover:underline font-medium text-sm truncate">
-                        {s.nazev}
-                      </Link>
-                    </div>
-                    <span className={`inline-block px-2 py-0.5 rounded text-sm font-bold shrink-0 ${diffColor}`}>
-                      {s.obtiznost.toFixed(0)}
-                    </span>
-                  </div>
-                  <div className="text-sm text-slate-600 mb-1 truncate">{s.obor}</div>
-                  <div className="flex flex-wrap items-center gap-2 text-xs">
-                    <span className={`inline-block px-2 py-0.5 rounded font-bold ${delkaColors[s.delka_studia] || 'bg-slate-200 text-slate-700'}`}>
-                      {s.delka_studia}L
-                    </span>
-                    <span className="text-slate-500">{s.obec}</span>
-                    <span className="ml-auto text-slate-700 font-medium">min. {s.min_body}b</span>
-                    <span className="text-slate-500">{s.index_poptavky.toFixed(1)}× převis</span>
-                  </div>
-                </div>
-              );
-            })}
           </div>
         </div>
       )}

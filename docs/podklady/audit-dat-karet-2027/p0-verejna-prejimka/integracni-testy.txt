@@ -1,0 +1,38 @@
+✔ skutečný detail Macharova lycea publikuje správnou škálu a počty (1516.198166ms)
+✔ P0 veřejný text a metadata: /skola/600007774-gymnazium-j-s-machara-kralovicka-technicke-lyceum (2249.478958ms)
+✔ P0 veřejný text a metadata: /skola/600007774-gymnazium-j-s-machara-kralovicka-technicke-lyceum/detail (513.2635ms)
+✔ P0 veřejný text a metadata: /skola/600007774-gymnazium-j-s-machara-kralovicka-technicke-lyceum/pro-me (385.573708ms)
+✔ P0 veřejný text a metadata: /skola/600007774-gymnazium-j-s-machara-kralovicka (666.429709ms)
+✔ P0 veřejný text a metadata: /skoly (664.238792ms)
+✔ P0 veřejný text a metadata: /vysledky/2026 (1050.556583ms)
+✔ P0 veřejný text a metadata: /regiony/stredocesky (904.499875ms)
+✔ P0 veřejný text a metadata: /regiony (607.901375ms)
+✔ JSON a Markdown nemají numerickou hranici přijetí (1509.289917ms)
+✔ starý průvodce šancemi směruje do udržovaného simulátoru a zachová výběr (500.193833ms)
+✔ výpis dojezdu nevrací minimum ani neověřenou obtížnost, průměr má škálu 0–100 (1794.895916ms)
+✔ čtyřleté a osmileté gymnázium zůstanou oddělené, termíny jsou archivní (57.590167ms)
+✔ přehled školy označí staré termíny jako archivní (560.729958ms)
+✔ známý zadržený výsledek MESIT není mezi publikovanými výsledky (1463.431708ms)
+(node:46470) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///private/tmp/gymnazium-p0-2027/src/lib/school-key.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /private/tmp/gymnazium-p0-2027/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ skóre nemění seznam, pořadí ani celkový počet; stránkování zpřístupní další obory (3028.36625ms)
+✔ filtry fungují bez diakritiky a prázdný výsledek není chyba (375.899375ms)
+✔ přímé načtení zachová pořadí, zaměření, čárky a neznámá ID (1029.014625ms)
+✔ odkaz používá kanonický název profilu a rozlišuje délku studia (1535.511208ms)
+✔ detail API nevrací falešné minimum, školní body ani žebříček ze součtu minim (401.682584ms)
+✔ veřejně doručovaný JS simulátoru neobsahuje původní predikční větve (1078.020542ms)
+✔ poptávka 2026 odpovídá úplné identitě oboru, chybějící párování nemá fallback (571.572708ms)
+✔ profil Macharova lycea nenabízí nedoložený index jako snadné přijetí (238.102916ms)
+✔ simulátor vrací konající a důvody nepřijetí včetně skutečné nuly (203.65775ms)
+✔ dopravní kontrakt vrací jen dopravu a skutečné položky nad limitem (3049.724833ms)
+✔ úplný aktuálně dostupný katalog poskytuje skutečné názvy oborů bez změny běžného stránkování (948.817ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13004.060542

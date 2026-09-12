@@ -91,11 +91,7 @@ export function DetailTabs({
 
         {activeTab === 'competition' && (
           <div role="tabpanel" id="tabpanel-competition" aria-labelledby="tab-competition">
-            <CompetitionTab
-              school={school}
-              program={program}
-              schoolDetail={schoolDetail}
-            />
+            <CompetitionTab />
           </div>
         )}
 

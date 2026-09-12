@@ -54,3 +54,13 @@ test('nula se vykreslí jako údaj, chybějící priorita a skóre se nedoplní 
   assert.doesNotMatch(html, /NaN|undefined/);
   assert.doesNotMatch(render(null), /Průměrné výsledky JPZ/);
 });
+
+test('starý termín i text s chybným rokem zůstanou pouze v označeném archivu', () => {
+  const { ArchivedAdmissionText } = load('src/components/ArchivedAdmissionText.tsx');
+  for (const value of ['12. 11. 2024, 23. 1. 2025', '14. 12. 20236', 'leden', null]) {
+    const html = renderToStaticMarkup(React.createElement(ArchivedAdmissionText, { value }));
+    assert.match(html, /Pro rok 2027 neověřeno/);
+    assert.doesNotMatch(html, /<details open/);
+    if (value) { assert.match(html, /Starší údaj z InspIS/); assert.ok(html.includes(value)); }
+  }
+});
