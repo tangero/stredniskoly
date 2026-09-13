@@ -1,6 +1,6 @@
 # Prototyp stránky školy: deník rozhodnutí
 
-Verze 1.0 · 12. 9. 2026 · Prototyp, ne produkční kód.
+Verze 1.1 · 13. 9. 2026 · Prototyp, ne produkční kód.
 
 Cíl: ověřit, jestli jde stránku postavit tak, aby rodič a žák poznali, **jak těžké je se na školu dostat**, **jak těžké bude ji vystudovat** a **jaké jsou na ní podmínky**.
 
@@ -164,3 +164,39 @@ Původně bylo v plánu až deset. Kola 4 a 5 už opravovala formulace, ne stavb
 
 ### Neověřeno
 Prototyp jsem nemohl zkontrolovat vykreslený, rozšíření prohlížeče bylo během práce odpojené. Kontrola proběhla nad kódem a obsahem, ne vizuálně.
+
+---
+
+## Kolo 7 — pozice na přihlášce a souběžné přihlášky
+
+Doplněno na základě připomínky, že u každého oboru chybí, kolik uchazečů si jej dalo na první, druhé a třetí místo, a kam se hlásili zároveň.
+
+### R7.1 Pozice na přihlášce je jiná otázka než konkurence
+Tlak prvních voleb dělí kapacitou a měří, jak těžké je se dostat. Nový **podíl prvních voleb** dělí počtem přihlášek a měří, jak si obor lidé na přihlášku psali.
+
+Obě čísla se rozcházejí. Osmileté gymnázium Machara má tlak 4,10× (94. percentil, velmi těžké), ale podíl prvních voleb 53 %, což je mezi osmiletými gymnázii 51. percentil, tedy zcela obvyklé. Je to těžká škola, ne škola, kterou by si lidé psali první častěji než jiná gymnázia.
+
+### R7.2 Kohorta se odvozuje z percentilu, ne z absolutní hodnoty
+Prahy se mezi typy studia neslučují. Horní třetina začíná u lyceí na 32 % prvních voleb, u nástaveb na 66 %. Absolutní práh by lyceum označil za záložní volbu vždy a nástavbu skoro nikdy.
+
+Kohorta je proto tercil ve srovnatelné skupině, stejně jako všechny ostatní verdikty na stránce.
+
+### R7.3 Kohorta je vlastnost nabídky, ne školy
+Zaznělo „roztřídit školy do kohort“. Data to nepodporují: obory téže školy skončí v různých kohortách. Kohorta se proto uvádí u každého oboru, ne jako štítek školy.
+
+### R7.4 Kohorta neměří kvalitu
+Záložní volba znamená pojistku, ne horší školu. Do textu karty patří tato věta přímo, jinak se kohorta přečte jako hodnocení.
+
+### R7.5 Ověřeno, že kohorta není šum
+Na 1 508 nabídkách spárovaných mezi roky 2025 a 2026 je korelace podílu prvních voleb 0,834, medián absolutní změny 5,2 procentního bodu a ve stejné třetině zůstalo 66 % nabídek proti 33 %, které by dala náhoda. Bez tohoto ověření by se kohorta nezobrazovala.
+
+### R7.6 Souběžné přihlášky dostaly vlastní blok
+„Kam se hlásili titíž uchazeči“ neodpovídá ani na jednu ze tří otázek. Odpovídá na čtvrtou, kterou si rodič klade stejně často: **s čím si tuhle školu srovnávat**. Dostala proto samostatný blok „S čím si ji lidé srovnávají?“.
+
+U lycea je to nejvýmluvnější: 30 % jeho uchazečů se hlásilo na gymnázium v Čelákovicích a 22 % na gymnázium téže školy. Lyceum tedy soutěží s gymnázii, ne s průmyslovkami.
+
+### R7.7 Stáří dat je napsané v úvodu bloku
+Souběh jde spočítat jen za rok 2025, protože za rok 2026 zveřejnil CERMAT pouze souhrny za obory. Data jsou navíc bez zaměření, takže platí za obor školy jako celek. Obojí stojí v bloku, ne v poznámce pod čarou.
+
+### R7.8 Práh 10 uchazečů
+Souběh se nezveřejňuje u oborů s méně než deseti uchazeči, aby z něj nešlo dopočítat jednotlivce. Stejná logika jako u mezí zveřejnění maturitních výsledků.

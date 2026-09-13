@@ -144,6 +144,13 @@ footer{border-top:1px solid var(--rule);padding-block:20px 44px;color:var(--ink-
   </section>
 
   <section>
+    <h2 class="qmark">S čím si ji lidé srovnávají?</h2>
+    <p class="verdict" id="verdikt4"></p>
+    <p class="lede" id="lede4"></p>
+    <div id="blok4"></div>
+  </section>
+
+  <section class="block">
     <h2 class="qmark">Jaké tu budou nároky?</h2>
     <p class="verdict warm" id="verdikt2"></p>
     <p class="lede" id="lede2"></p>
@@ -170,15 +177,33 @@ footer{border-top:1px solid var(--rule);padding-block:20px 44px;color:var(--ink-
     {id:'gy8', nadpis:'Gymnázium 8leté', vstup:'z 5. třídy', skupina:'osmiletých gymnázií',
      kap:30, prih:233, pp:[123,56,54,0,0], prij:30, pret:82, jinam:36, nesplnil:85,
      prumer:80.13, cj:39.5, ma:40.63, poptavka:7.77, tlak:4.10,
-     pctP:86, pctT:94, pctM:94, n:273, medT:1.73, medP:3.31, medM:60.9},
+     pctP:86, pctT:94, pctM:94, n:273, medT:1.73, medP:3.31, medM:60.9,
+     pctVolba:51, medVolba:52,
+     soubeh:{uchazecu:222, poradi:[117,63,42], s:[
+       {podil:52, skola:'Gymnázium J. A. Komenského', obec:'Čelákovice', obor:'Gymnázium'},
+       {podil:28, skola:'Gymnázium Františka Palackého', obec:'Neratovice', obor:'Gymnázium'},
+       {podil:14, skola:'Gymnázium Českolipská', obec:'Praha', obor:'Gymnázium'},
+       {podil:13, skola:'Gymnázium Litoměřická', obec:'Praha', obor:'Gymnázium'}]}},
     {id:'gy4', nadpis:'Gymnázium 4leté', vstup:'z 9. třídy', skupina:'čtyřletých gymnázií',
      kap:30, prih:94, pp:[41,40,11,1,1], prij:30, pret:14, jinam:45, nesplnil:5,
      prumer:80.28, cj:42.34, ma:37.93, poptavka:3.13, tlak:1.37,
-     pctP:70, pctT:73, pctM:86, n:437, medT:1.03, medP:2.60, medM:69.1},
+     pctP:70, pctT:73, pctM:86, n:437, medT:1.03, medP:2.60, medM:69.1,
+     pctVolba:57, medVolba:39,
+     soubeh:{uchazecu:97, poradi:[32,41,22], s:[
+       {podil:40, skola:'Gymnázium J. A. Komenského', obec:'Čelákovice', obor:'Gymnázium'},
+       {podil:16, skola:'SKOLAEUPRAHA', obec:'Praha', obor:'Gymnázium'},
+       {podil:14, skola:'Gymnázium Františka Palackého', obec:'Neratovice', obor:'Gymnázium'},
+       {podil:11, skola:'Gymnázium Litoměřická', obec:'Praha', obor:'Gymnázium'}]}},
     {id:'lyc', nadpis:'Technické lyceum', vstup:'z 9. třídy', skupina:'lyceí',
      kap:30, prih:65, pp:[17,18,30,0,0], prij:23, pret:0, jinam:32, nesplnil:10,
      prumer:68.74, cj:34.57, ma:34.17, poptavka:2.17, tlak:0.57,
-     pctP:37, pctT:41, pctM:85, n:289, medT:0.68, medP:2.77, medM:57.3}
+     pctP:37, pctT:41, pctM:85, n:289, medT:0.68, medP:2.77, medM:57.3,
+     pctVolba:52, medVolba:26,
+     soubeh:{uchazecu:37, poradi:[7,15,15], s:[
+       {podil:30, skola:'Gymnázium J. A. Komenského', obec:'Čelákovice', obor:'Gymnázium'},
+       {podil:22, skola:'Gymnázium J. S. Machara', obec:'tato škola', obor:'Gymnázium'},
+       {podil:14, skola:'SPŠ na Proseku', obec:'Praha', obor:'Informační technologie'},
+       {podil:11, skola:'Střední zemědělská škola', obec:'Brandýs nad Labem', obor:'Ekologie a životní prostředí'}]}}
   ];
 
   var SILNE = [
@@ -211,6 +236,18 @@ footer{border-top:1px solid var(--rule);padding-block:20px 44px;color:var(--ink-
   function cs(n, d){ return n.toLocaleString('cs-CZ', {maximumFractionDigits: d===undefined?0:d}); }
   function esc(s){ return String(s).replace(/[&<>"]/g, function(c){
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  // Kohorta se odvozuje z percentilu ve srovnatelné skupině, ne z absolutní
+  // hodnoty: hranicí horní třetiny je u lyceí 32 %, u nástaveb 66 %.
+  function priorityVeta(o){
+    var kohorta = o.pctVolba >= 67
+        ? 'Mezi obdobnými obory patří k těm, které si lidé <b>píší jako první volbu</b> nejčastěji.'
+      : o.pctVolba >= 33
+        ? 'To je mezi obdobnými obory <b>obvyklý poměr</b> první volby a pojistky.'
+        : 'Většina uchazečů si ho píše jako <b>druhou nebo třetí volbu</b>, tedy jako pojistku.';
+    return 'Z ' + cs(o.prih) + ' přihlášek jich ' + cs(o.pp[0]) + ' mělo obor na prvním místě, '
+      + cs(o.pp[1]) + ' na druhém a ' + cs(o.pp[2]) + ' na třetím. ' + kohorta;
+  }
 
   function fakt(o){
     return '<div class="fact">'
@@ -255,6 +292,11 @@ footer{border-top:1px solid var(--rule);padding-block:20px 44px;color:var(--ink-
         vyznam:cs(o.prih) + ' přihlášek na ' + cs(o.kap) + ' míst. Běžná hodnota je ' + cs(o.medP,2)
           + '×. <b>Toto číslo konkurenci nadsazuje</b>: každý uchazeč podává až tři přihlášky a část z nich jsou pojistky.',
         pct:o.pctP, n:o.n, skupina:o.skupina})
+      + fakt({nadpis:'Jako kolikátou volbu si obor lidé psali', hodnota:cs(o.pp[0]/o.prih*100)+' % první',
+        vyznam: priorityVeta(o),
+        pct:o.pctVolba, n:o.n, skupina:o.skupina,
+        zdroj:'Běžná hodnota mezi ' + o.skupina + ' je ' + cs(o.medVolba) + ' % prvních voleb. '
+          + 'Tohle neříká nic o kvalitě: záložní obor bývá ten, který lidé volí podle dostupnosti.'})
       + fakt({nadpis:'Kolik uchazečů se nevešlo', hodnota:cs(o.pret), vyznam:pretVeta,
         zdroj:cs(o.jinam) + ' uchazečů, kteří by se sem dostali, nastoupilo na obor, který měli na přihlášce výš.'})
       + (o.nesplnil / o.prih >= 0.2
@@ -265,6 +307,25 @@ footer{border-top:1px solid var(--rule);padding-block:20px 44px;color:var(--ink-
         : '')
       + '<div class="gap"><h3>Kolik bodů bylo potřeba, nevíme</h3>'
       + '<p>CERMAT nezveřejňuje, kolik bodů měl poslední přijatý, a z průměru se to spočítat nedá. Kritéria pro rok 2027 zveřejňuje škola na svém webu.</p></div>';
+
+    // ---- S čím si ji lidé srovnávají?
+    var sb = o.soubeh;
+    document.getElementById('verdikt4').textContent =
+      'Uchazeči o tento obor si nejčastěji podávali přihlášku také na ' + sb.s[0].skola + '.';
+    document.getElementById('lede4').textContent =
+      'Vychází z přihlášek roku 2025, kde CERMAT zveřejnil jednotlivé uchazeče. Za rok 2026 zveřejnil jen souhrny, souběh proto novější nemáme.';
+
+    document.getElementById('blok4').innerHTML =
+      '<div class="fact"><div class="fact-top"><h3>Kam se hlásili titíž uchazeči</h3>'
+      + '<span class="num">' + cs(sb.uchazecu) + '</span></div>'
+      + '<p class="means">Ze ' + cs(sb.uchazecu) + ' uchazečů, kteří si obor v roce 2025 napsali na přihlášku, se jich tolik hlásilo i jinam:</p>'
+      + '<table><thead><tr><th>Škola</th><th>Obor</th><th class="n">Podíl uchazečů</th></tr></thead><tbody>'
+      + sb.s.map(function(x){
+          return '<tr><td>' + esc(x.skola) + '<small style="display:block;color:#6b6a66">' + esc(x.obec)
+            + '</small></td><td>' + esc(x.obor) + '</td><td class="n">' + cs(x.podil) + ' %</td></tr>'; }).join('')
+      + '</tbody></table>'
+      + '<p class="src">Podíl je počítaný z uchazečů o tento obor, ne z přihlášek. Součet proto přesahuje 100 %, každý si podával až tři přihlášky. '
+      + 'Neříká, kam nakonec nastoupili, ale co zvažovali zároveň.</p></div>';
 
     // ---- Jaké tu budou nároky?
     var v2 = o.pctM >= 90 ? 'Spolužáci sem přicházejí s velmi dobrými výsledky, tempo bude rychlé.'

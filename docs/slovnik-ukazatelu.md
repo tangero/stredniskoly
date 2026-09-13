@@ -1,12 +1,12 @@
 # Slovník ukazatelů
 
-Verze 1.1 · 12. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.2 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
 Pravidlo pro celý projekt: **údaj bez doloženého výpočtu se nezobrazuje.** Když nevíme, jak vznikl, patří do oddílu 5, ne na stránku.
 
-## 1. Poptávka po oboru
+## 1. Poptávka po oboru a pozice na přihlášce
 
 ### Kapacita míst
 Počet míst, které škola pro obor v daném kole vypsala. Zdroj: CERMAT, sloupec `KAPACITA`. Pole `kapacita`.
@@ -21,6 +21,51 @@ Rozpad přihlášek na priority 1 až 5. Zdroj: CERMAT, `PŘIHLÁŠKY - PRIORITA
 
 ### První priority
 Přihlášky s prioritou 1, tedy kolik uchazečů si obor zapsalo jako nejžádanější volbu. První položka pole `prihlasky_priority`.
+
+### Podíl prvních voleb
+`přihlášky s prioritou 1 ÷ přihlášky celkem`. Jednotka je procento.
+
+Odpovídá na jinou otázku než tlak prvních voleb. Tlak měří **konkurenci** a dělí kapacitou. Podíl měří **pozici oboru na přihlášce** a dělí počtem přihlášek: kolik z těch, kdo se sem přihlásili, sem chtělo nejvíc. Malá škola s pěti místy a velká se sto padesáti mohou mít týž podíl.
+
+Rozdělení ročníku 2026 ze 3 091 nabídek: dolní čtvrtina 0,24, medián 0,34, horní čtvrtina 0,46.
+
+Hodnota silně závisí na typu studia, takže se **nikdy nesrovnává napříč typy**. Medián podílu prvních voleb je u nástaveb 57 %, u osmiletých gymnázií 52 %, u lyceí 26 %.
+
+Je to stabilní vlastnost oboru, ne výkyv ročníku. Na 1 508 nabídkách spárovaných mezi roky 2025 a 2026 je korelace 0,834 a medián absolutní změny 5,2 procentního bodu.
+
+Neříká nic o tom, jak je těžké se dostat. Obor, který si skoro všichni dávají první, může mít volná místa.
+
+### Kohorta podle pozice na přihlášce
+Zařazení nabídky do tří skupin podle **percentilu podílu prvních voleb ve srovnatelné skupině** (oddíl 4):
+
+| Kohorta | Percentil ve skupině | Význam |
+|---|---|---|
+| Škola první volby | nad 67. | uchazeči ji píší na přihlášku jako nejžádanější častěji než dvě třetiny obdobných oborů |
+| Smíšená pozice | 33. až 67. | obvyklý poměr první volby a pojistky |
+| Záložní volba | pod 33. | většina uchazečů si ji píše jako druhou nebo třetí |
+
+Absolutní prahy se nepoužívají, protože se mezi typy studia neslučují: hranice horní třetiny je u lyceí 32 %, u nástaveb 66 %.
+
+Kohorta je stabilní: mezi roky 2025 a 2026 zůstalo ve stejné třetině 66 % nabídek proti 33 %, které by dala náhoda.
+
+**Neříká nic o kvalitě školy.** Záložní volba znamená, že si ji uchazeči píší jako pojistku, nikoli že je horší. Typicky jde o obory, které lidé volí podle dostupnosti.
+
+Název „škola první volby“ je zavedený pro **nabídku**, ne pro celou školu; škola může mít obor první volby i záložní obor zároveň. Na stránce školy se proto uvádí u každého oboru zvlášť.
+
+### Souběžné přihlášky
+Na jaké jiné obory se hlásili titíž uchazeči. Pole `soubeh` v `public/soubeh_prihlasek_2025.json`, generuje `scripts/build-soubeh-prihlasek.py`.
+
+Zdroj jsou údaje o jednotlivých uchazečích za rok 2025 (`PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx`), kde je na jednom řádku až pět škol z jedné přihlášky. Podíl je `uchazečů se společnou přihláškou ÷ uchazečů o obor`.
+
+Tři meze, které se musí uvést vždy:
+
+1. **Rok 2025, ne 2026.** Za rok 2026 zveřejnil CERMAT jen souhrny za obory, ne řádky uchazečů, takže souběh za aktuální ročník spočítat nelze.
+2. **Bez zaměření.** Soubor nese jen REDIZO a KKOV, takže souběh platí za obor školy jako celek, ne za jednotlivé zaměření.
+3. **Nezveřejňuje se pod 10 uchazeči** o obor, aby nešlo dopočítat jednotlivce.
+
+Do souboru se zapisuje šest nejčastějších souběhů. Názvy oborů bez jednotné zkoušky, tedy hlavně učebních, doplňuje rejstřík škol MŠMT.
+
+Neříká, kam uchazeči nakonec nastoupili. Popisuje, co si psali na přihlášku.
 
 ### Přihlášky na místo
 `přihlášky celkem ÷ kapacita míst`. Pole `index_poptavky`.
@@ -162,5 +207,6 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.2 | Doplněn podíl prvních voleb, kohorta podle pozice na přihlášce a souběžné přihlášky. |
 | 1.1 | Doplněn tlak prvních voleb, naplněnost a přetlak. Zaznamenán neúspěšný pokus o zpětné odvození indexu obtížnosti a zjištění, že složený index nepřidává rozlišovací schopnost. |
 | 1.0 | První soupis. Podkladem je audit obtížnosti, audit dat karet, [návrh prezentace dat](navrh-prezentace-dat-skoly-2027.md) a [maturitní výsledky](maturitni-vysledky-a-kvalita-skoly-2027.md). |
