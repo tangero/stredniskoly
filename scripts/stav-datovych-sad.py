@@ -222,8 +222,21 @@ def prepni(registr: dict, sid: str, obdobi: str, kdy: str | None, jistota: str, 
         sys.exit("přepnutí vyžaduje --doklad: commit importu a výsledek kontrol")
     predchozi = dict(s["zobrazeno"])
     s.setdefault("historie_obdobi", []).append(predchozi)
-    s["zobrazeno"] = {"obdobi": obdobi, **({"soubor": soubor} if soubor else {}), "prepnuto": dt.date.today().isoformat()}
-    s["ocekavano"] = {"obdobi": None, "kdy": kdy, "jistota": jistota, "zduvodneni": zduvodneni}
+    # Převzaté období mizí z dostupných, jinak by kontrola dál hlásila „zdroj zveřejnil, web nepřevzal“.
+    prevzato = next((d for d in s.get("dostupne", []) if str(d.get("obdobi")) == str(obdobi)), None)
+    if prevzato:
+        s["dostupne"].remove(prevzato)
+    s["zobrazeno"] = {
+        "obdobi": obdobi,
+        **({"soubor": soubor} if soubor else {}),
+        **({"verze": prevzato["verze"]} if prevzato and prevzato.get("verze") else {}),
+        "prepnuto": dt.date.today().isoformat(),
+        **({"z_dostupne": prevzato} if prevzato else {}),
+    }
+    # Revize téhož období nemění, na jaké další období čekáme.
+    revize = str(obdobi) == str(predchozi.get("obdobi"))
+    if not (revize and kdy is None):
+        s["ocekavano"] = {"obdobi": None, "kdy": kdy, "jistota": jistota, "zduvodneni": zduvodneni}
     # Výstupy s rokem v názvu, například pasma_prijeti_2026.json, se přepínají s obdobím.
     if kontrola_soubor and s.get("kontrola_obdobi"):
         s["kontrola_obdobi"]["soubor"] = kontrola_soubor
@@ -238,6 +251,8 @@ def vrat(registr: dict, sid: str, duvod: str) -> None:
         sys.exit(f"{sid}: není kam vrátit")
     aktualni = s["zobrazeno"]
     s["zobrazeno"] = s["historie_obdobi"].pop()
+    if aktualni.get("z_dostupne"):
+        s.setdefault("dostupne", []).append(aktualni["z_dostupne"])
     registr["historie_prepnuti"].append({
         "datum": dt.date.today().isoformat(), "sada": sid, "z": aktualni.get("obdobi"), "na": s["zobrazeno"].get("obdobi"), "doklad": f"vráceno: {duvod}",
     })
