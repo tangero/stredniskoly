@@ -65,6 +65,17 @@ def nacti_uchazece() -> dict[str, dict[str, list[float]]]:
     return obory
 
 
+def celostatni_rozdeleni(obory: dict) -> list[float]:
+    """Seřazené výsledky všech soutěžících v ročníku, pro převod na percentil."""
+    return sorted(b for o in obory.values() for b in o["prijati"] + o["nevesli_se"])
+
+
+def percentil(rozdeleni: list[float], body: float) -> float:
+    """Kolik procent soutěžících mělo stejný nebo horší výsledek."""
+    import bisect
+    return bisect.bisect_right(rozdeleni, body) / len(rozdeleni) * 100
+
+
 def pasma(prijati: list[float], nevesli: list[float]) -> list[dict]:
     """Pásma po pěti bodech; krajní pásma s málo uchazeči se slučují dovnitř."""
     hrubá: dict[int, list[int]] = collections.defaultdict(lambda: [0, 0])
@@ -140,6 +151,9 @@ def kontext_katalogu() -> tuple[collections.Counter, dict[str, str]]:
 def main() -> None:
     obory = nacti_uchazece()
     zamereni, typy = kontext_katalogu()
+    # Obtížnost zkoušky se mezi ročníky mění: celostátní medián spadl z 53 bodů
+    # v roce 2024 na 46 v roce 2025. Percentil tenhle vliv odstraňuje.
+    rozdeleni = celostatni_rozdeleni(obory)
 
     vystup: dict[str, dict] = {}
     for klic, o in obory.items():
@@ -155,6 +169,7 @@ def main() -> None:
             "nastoupilo_jinam": len(o["jinam"]),
             "nesplnilo_podminky": len(o["nesplnili"]),
             "min_prijaty": round(min(prijati), 1),
+            "min_prijaty_percentil": round(percentil(rozdeleni, min(prijati)), 1),
             # obor s víc zaměřeními sdílí jeden klíč, hranice je pak rozmazaná
             "vice_zamereni": zamereni.get(klic, 1) > 1,
             "talentova_zkouska": klic.split("_")[1].startswith("82"),

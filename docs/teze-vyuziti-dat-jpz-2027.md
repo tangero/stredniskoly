@@ -1,8 +1,8 @@
 # Využití dat o uchazečích a podrobných dat JPZ
 
-Verze 1.2 · 13. 9. 2026 · Teze 1 a 3 schváleny k realizaci a po dvou kolech oponentury přepracovány, teze 2, 4 a 5 odloženy.
+Verze 1.3 · 13. 9. 2026 · Teze 1 a 3 realizovány po třech kolech oponentury, teze 2, 4 a 5 odloženy.
 
-Vypořádané oponentury jsou v oddílech na konci. První kolo změnilo výpočet ostrosti hranice, druhé opravilo nepravdivou větu ve vzorovém zobrazení a snížilo očekávané pokrytí.
+Vypořádané oponentury jsou v oddílech na konci. První kolo změnilo výpočet ostrosti hranice, druhé opravilo nepravdivou větu ve vzorovém zobrazení, třetí odhalilo, že posun hranice mezi ročníky není náhodný, ale z větší části odráží obtížnost testu.
 
 Pět námětů, jak z dat CERMATu o jednotlivých uchazečích lépe odpovědět na otázky, jak těžké je se na školu dostat, jak náročné bude tam studovat a kam dítě směřovat. Vzniklo poté, co [dokumentace zdrojů](zdroje-dat.md) ukázala, že tyto soubory používáme jen zlomkem.
 
@@ -79,7 +79,11 @@ Na užší skupině 1 185 oborů, které mají v obou letech i aspoň pět odmí
 
 Obě meze jsou tedy srovnatelně stabilní, ale **šířka pásma stabilní není**: proti mediánové šířce 8 bodů se mezi ročníky mění o 4 body. Prostřední věta o rozmezí, ve kterém rozhodovala další kritéria, proto popisuje loňsko a nesmí být formulována jako pravidlo školy.
 
-Hranice je vodítko, ne cíl. Věta o posunu mezi ročníky je povinnou součástí zobrazení, ne poznámkou pod čarou. Její znění: „Mezi loňskem a předloňskem se tahle hranice posunula u poloviny oborů o víc než šest bodů.“
+**Posun hranice mezi ročníky není náhodný**, viz námitku Q1. Mezi roky 2024 a 2025 klesla hranice u 60 % oborů a stoupla u 35 %, s průměrem −2,9 bodu, zatímco celostátní medián výsledku spadl z 53 na 46 bodů. Většina posunu tedy popisuje obtížnost zkoušky, ne změnu náročnosti školy.
+
+Hranice je vodítko, ne cíl. Věta o posunu je povinnou součástí zobrazení, ne poznámkou pod čarou. Její znění: „Hranice se mezi ročníky posouvá o jednotky bodů; mění se totiž i obtížnost samotné zkoušky, ne jen zájem o školu.“
+
+Vedle hranice v bodech se proto uvádí i její **celostátní percentil**, který vliv obtížnosti odstraňuje, viz námitku Q2. Nezpřesňuje ji: korelace mezi ročníky je 0,873 proti 0,867 u bodů. Jen odstraňuje systematický posun.
 
 Párování vyžadovalo převod IZO na REDIZO, protože soubor za rok 2024 má jiné schéma a jako klíč používá IZO. Převodní tabulka pochází z katalogu 2026, takže zahrnuje jen školy, které v roce 2026 existovaly; 105 z 1 309 IZO, tedy 8 %, se převést nepodařilo. Ověření tím platí pro školy, které přežily do roku 2026, ne pro celý soubor.
 
@@ -343,10 +347,53 @@ Námitka zněla, že třicet soutěžících je málo a pásma jsou proto nespol
 
 **Zamítnuto.** Spolehlivost jednotlivých pásem řeší slučování na pět soutěžících v pásmu, ne celkový práh. Po vyřazení oborů bez odmítnutých, viz námitku P3, navíc odpadl hlavní zdroj nespolehlivých tabulek.
 
+## Oponentura verze 1.2
+
+Vypořádáno 13. 9. 2026, třetí kolo. Pět námitek, čtyři přijaty, jedna zamítnuta.
+
+### Q1 · Posun hranice mezi ročníky se vydával za náhodný, ale je systematický — **přijato, doplněno**
+
+Verze 1.2 uváděla medián absolutní změny hranice 6 bodů a četla ho jako kolísání poptávky. Znaménko jsem nezkoumal.
+
+**Doklad.** Na 2 428 oborech se hranice mezi roky 2024 a 2025 posunula **dolů u 60 % oborů a nahoru u 35 %**, s průměrem −2,9 bodu. Ve stejné době klesl celostátní medián výsledku soutěžících z 53 na 46 bodů. Většina posunu tedy nepopisuje změnu náročnosti školy, ale to, že zkouška byla jiná.
+
+**Vypořádání.** Věta o posunu přeformulována: mluví o tom, že se mezi ročníky mění i obtížnost samotné zkoušky, ne jen zájem o školu. Doplněn převod hranice na celostátní percentil, který tenhle vliv odstraňuje.
+
+### Q2 · Chyběla jednotka nezávislá na obtížnosti testu — **přijato, doplněno**
+
+Dítě v roce 2027 dostane výsledek z jiného testu než uchazeči v roce 2025. Body proto nejsou přímo srovnatelné.
+
+**Doklad.** Vyjádříme-li hranici jako celostátní percentil místo bodů, systematický posun mezi ročníky klesne z −2,5 bodu na +1,4 percentilového bodu. Náhodná složka se přitom nezmění: korelace je 0,873 proti 0,867 a medián absolutní změny 6,1 percentilového bodu proti 6,0 bodu.
+
+**Vypořádání.** Percentil se ukládá vedle bodů a zobrazuje se jako doplněk, protože dítě drží v ruce body. Zároveň to znamená, že **percentil hranici nezpřesňuje**, jen odstraňuje zkreslení z obtížnosti testu; slib přesnější predikce z něj vyvodit nelze.
+
+### Q3 · Stejná tabulka se objeví na dvou různých stránkách oborů — **přijato, doplněno upozornění**
+
+Data neznají zaměření, takže nabídky lišící se jen zaměřením sdílejí jeden klíč.
+
+**Doklad.** 440 z 3 091 nabídek roku 2026, tedy 14 %, sdílí klíč s jinou nabídkou; jde o 187 klíčů. Čtenář uvidí na dvou stránkách tutéž tabulku, aniž by pochopil proč.
+
+**Vypořádání.** U těchto nabídek se nad tabulku přidává věta, že údaje platí za celý obor školy, protože zdroj zaměření nerozlišuje. Pole `vice_zamereni` už v datech je.
+
+### Q4 · Nová zaměření dostávala historii, kterou nemají — **přijato, doplněno upozornění**
+
+**Doklad.** 451 z 1 004 nabídek označených jako nové by dostalo pásma z roku 2025, protože jejich kombinace REDIZO a KKOV v datech existuje.
+
+**Vypořádání.** Není to chyba: obor na škole existoval, nové je zaměření. Tabulka se zobrazí, ale s větou, že jde o údaje za obor jako celek z doby před vypsáním tohoto zaměření.
+
+### Q5 · Návrh přepočítat pásma přímo na percentily — **zamítnuto**
+
+Námitka zněla, že když je percentil lepší jednotka, mají v něm být i pásma.
+
+**Argument.** Dítě drží v ruce body, ne percentil; CERMAT sice percentil zveřejňuje, ale rodič porovnává výsledek s hranicí školy v bodech. Tabulka v percentilech by vyžadovala převod v hlavě u každého řádku. Q2 navíc ukázala, že percentil **nezpřesňuje**, jen odstraňuje systematické zkreslení; to stačí ošetřit jedním doplňkovým údajem u hranice.
+
+**Zamítnuto.** Pásma zůstávají v bodech, percentil se uvádí u hranice jako doplněk.
+
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.3 | Vypořádána oponentura verze 1.2, pět námitek. Posun hranice mezi ročníky rozpoznán jako z větší části vliv obtížnosti testu, doplněn celostátní percentil hranice. Teze 1 a 3 realizovány v aplikaci. |
 | 1.2 | Vypořádána oponentura verze 1.1, osm námitek, šest přijato a dvě zamítnuty. Opravena nepravdivá věta ve vzorovém zobrazení, ověřeny obě meze pásma nejistoty, potlačeny tabulky pásem u oborů bez odmítnutých, přepočítáno pokrytí, zúžena teze 2. |
 | 1.1 | Vypořádána oponentura, jedenáct námitek. Ostrost hranice nahrazena mírou *rozhodl test*, doplněno ověření mezi ročníky 2024 a 2025, opravena tautologie u nenaplněných oborů, změněno hlavní zobrazení teze 1. Tři námitky zamítnuty. |
 | 1.0 | Pět tezí. Teze 1 a 3 schváleny k realizaci a rozpracovány do návrhu, zbylé tři odloženy se zdůvodněním. |

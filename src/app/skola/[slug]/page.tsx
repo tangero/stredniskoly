@@ -13,6 +13,8 @@ import { Applications2026Banner } from '@/components/Applications2026Banner';
 import { SchoolResults2026 } from '@/components/SchoolResults2026';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { getNoteForSchool } from '@/lib/school-notes';
+import { getPasmaPrijeti } from '@/lib/pasma-prijeti';
+import { PasmaPrijetiCard } from '@/components/school/detail/PasmaPrijetiCard';
 import { SchoolNote } from '@/components/SchoolNote';
 import { getDemandClass, createSlug } from '@/lib/utils';
 import { categoryLabels, categoryColors, krajNames, getSchoolTypeFullName } from '@/types/school';
@@ -393,6 +395,9 @@ export default async function SchoolDetailPage({ params }: Props) {
                 result2026={results2026.find(r => normalizeSchoolKey(r.offer_id ?? '') === normalizeSchoolKey(program.id))}
                 data2025={await get2025RecordById(program.id)}
               />
+
+              {/* Jak dopadli loňští uchazeči s podobným výsledkem */}
+              <PasmaPrijetiCard data={await getPasmaPrijeti(program.id)} />
 
               {/* Quick Facts */}
               <QuickFactsCard facts={quickFacts} />
@@ -903,6 +908,7 @@ export default async function SchoolDetailPage({ params }: Props) {
             result2026={results2026.find(r => normalizeSchoolKey(r.offer_id ?? '') === normalizeSchoolKey(program.id))}
             data2025={await get2025RecordById(program.id)}
           />
+          <PasmaPrijetiCard data={await getPasmaPrijeti(program.id)} />
           <div className="my-6 rounded-xl bg-white p-6">
             <h2 className="font-semibold">Přijetí a kapacita · {program.rok ?? 2025}</h2>
             <p className="mt-2">Přijatí v roce {program.rok ?? 2025}: {program.prijati}. Kapacita: {program.kapacita} míst.</p>
