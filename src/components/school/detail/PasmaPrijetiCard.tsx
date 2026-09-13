@@ -4,10 +4,14 @@ import { cislo, tvar } from '@/lib/cesky-tvar';
 
 interface PasmaPrijetiCardProps {
   data: PasmaPrijetiObor | null;
-  /** Nabídka je vypsaná v 1. kole 2026. Bez ní se při chybějících datech nic nezobrazí. */
-  vypsana2026?: boolean;
-  /** Nabídka je v roce 2026 nová, například nové zaměření existujícího oboru. */
-  nova2026?: boolean;
+  /** Rok dat o uchazečích z registru stavu datových sad, sada cermat-uchazeci-kolo1. */
+  rok: number;
+  /** Rok nabídky z registru, sada cermat-prihlasky. */
+  rokNabidky: number;
+  /** Nabídka je vypsaná v 1. kole roku nabídky. Bez ní se při chybějících datech nic nezobrazí. */
+  vypsana?: boolean;
+  /** Nabídka je v roce nabídky nová, například nové zaměření existujícího oboru. */
+  nova?: boolean;
 }
 
 
@@ -33,17 +37,17 @@ function Obal({ children }: { children: React.ReactNode }) {
 }
 
 /** Upozornění, která mění výklad všech čísel pod nimi, proto stojí nahoře. */
-function Upozorneni({ data, nova2026 }: { data: PasmaPrijetiObor; nova2026?: boolean }) {
-  if (!data.vice_zamereni && !nova2026) return null;
+function Upozorneni({ data, nova, rok, rokNabidky }: { data: PasmaPrijetiObor; nova?: boolean; rok: number; rokNabidky: number }) {
+  if (!data.vice_zamereni && !nova) return null;
   return (
     <div className="mt-3 rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-900">
-      {nova2026 && (
+      {nova && (
         <p>
-          Tuto nabídku vedeme v roce 2026 jako novou. Údaje níže popisují celý obor školy
-          v roce 2025, tedy dobu před jejím vypsáním.
+          Tuto nabídku vedeme v roce {rokNabidky} jako novou. Údaje níže popisují celý obor školy
+          v roce {rok}, tedy dobu před jejím vypsáním.
         </p>
       )}
-      {data.vice_zamereni && !nova2026 && (
+      {data.vice_zamereni && !nova && (
         <p>
           Údaje platí za celý obor školy, protože zdroj jednotlivá zaměření nerozlišuje.
           Stejná čísla proto uvidíte i u ostatních zaměření tohoto oboru.
@@ -53,14 +57,14 @@ function Upozorneni({ data, nova2026 }: { data: PasmaPrijetiObor; nova2026?: boo
   );
 }
 
-export function PasmaPrijetiCard({ data, vypsana2026, nova2026 }: PasmaPrijetiCardProps) {
+export function PasmaPrijetiCard({ data, rok, rokNabidky, vypsana, nova }: PasmaPrijetiCardProps) {
   if (!data) {
     // Mlčet by šlo, ale rodič by nepoznal, zda údaj chybí, nebo jsme na něj zapomněli.
-    if (!vypsana2026) return null;
+    if (!vypsana) return null;
     return (
       <Obal>
         <p className="mt-2 text-slate-700">
-          Za 1. kolo 2025 nemáme o uchazečích o tento obor údaje, takže nelze ukázat,
+          Za 1. kolo {rok} nemáme o uchazečích o tento obor údaje, takže nelze ukázat,
           s jakým výsledkem se sem loni dostávali.
         </p>
       </Obal>
@@ -71,9 +75,9 @@ export function PasmaPrijetiCard({ data, vypsana2026, nova2026 }: PasmaPrijetiCa
   if (data.nikdo_neodmitnut_pro_kapacitu) {
     return (
       <Obal>
-        <Upozorneni data={data} nova2026={nova2026} />
+        <Upozorneni data={data} nova={nova} rok={rok} rokNabidky={rokNabidky} />
         <p className="mt-3 text-slate-700">
-          V roce 2025 se na tento obor <strong>nikdo nevešel kvůli kapacitě</strong>.
+          V roce {rok} se na tento obor <strong>nikdo nevešel kvůli kapacitě</strong>.
           {data.nesplnilo_podminky > 0 && (
             <> Neznamená to, že se dostali všichni: {cislo(data.nesplnilo_podminky)}{' '}
             {tvar(data.nesplnilo_podminky, 'uchazeč nesplnil', 'uchazeči nesplnili', 'uchazečů nesplnilo')}{' '}
@@ -99,12 +103,12 @@ export function PasmaPrijetiCard({ data, vypsana2026, nova2026 }: PasmaPrijetiCa
   return (
     <Obal>
       <p className="mt-1 text-sm text-slate-500">
-        Výsledky jednotné zkoušky uchazečů o tento obor v 1. kole přijímacího řízení 2025.
+        Výsledky jednotné zkoušky uchazečů o tento obor v 1. kole přijímacího řízení {rok}.
         Body jsou součet češtiny a matematiky, každá za nejvýš 50 bodů, a to lepší z obou
         pokusů. U upravených testů se procentní výsledek s body přesně neshoduje.
       </p>
 
-      <Upozorneni data={data} nova2026={nova2026} />
+      <Upozorneni data={data} nova={nova} rok={rok} rokNabidky={rokNabidky} />
 
       {hraniceSmysl ? (
         <ul className="mt-4 space-y-2 text-slate-800">
@@ -152,7 +156,7 @@ export function PasmaPrijetiCard({ data, vypsana2026, nova2026 }: PasmaPrijetiCa
 
       <p className="mt-4 text-sm text-slate-500">
         Hranice se mezi ročníky posouvá o jednotky bodů; mění se totiž i obtížnost samotné
-        zkoušky, ne jen zájem o školu. Čísla popisují jen 1. kolo roku 2025, nikoli druhé
+        zkoušky, ne jen zájem o školu. Čísla popisují jen 1. kolo roku {rok}, nikoli druhé
         kolo, a nejsou předpovědí.
       </p>
 

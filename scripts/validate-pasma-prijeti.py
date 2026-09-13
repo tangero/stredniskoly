@@ -23,6 +23,10 @@ import openpyxl
 
 KOREN = Path(__file__).resolve().parent.parent
 VYSTUP = KOREN / "docs" / "podklady" / "overeni-pasem-prijeti-2024-2025.json"
+# Doklad srovnává pevně roky 2024 a 2025, proto roky nebere z registru. Po přepnutí webu na 2026
+# zůstává soubor 2025 pro tuto validaci a srovnání 2025–2026 vyžaduje vlastní doklad.
+UCHAZECI_2025 = KOREN / "data" / "PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx"
+PASMA_2025 = KOREN / "public" / "pasma_prijeti_2025.json"
 
 # Sdílené funkce generátoru, aby doklad počítal totéž co data na webu.
 _spec = importlib.util.spec_from_file_location("gen", KOREN / "scripts" / "build-pasma-prijeti.py")
@@ -99,9 +103,10 @@ def nacti_2024(mapa: dict[str, str]) -> tuple[dict, list[float], int, int]:
 def main() -> None:
     # Populace všech dokladů: obory s povinnou jednotnou zkouškou, stejně jako data na webu.
     jpz = gen.povinna_jpz()
+    gen.ZDROJ = UCHAZECI_2025
     _o25, u25 = gen.nacti_uchazece()
     o25 = {k: v for k, v in _o25.items() if gen.ma_jpz(k, jpz)}
-    pasma = json.load(open(KOREN / "public" / "pasma_prijeti_2025.json", encoding="utf-8"))["data"]
+    pasma = json.load(open(PASMA_2025, encoding="utf-8"))["data"]
     nabidky = json.load(open(KOREN / "public" / "applications_2026.json", encoding="utf-8"))["data"]
     katalog = json.load(open(KOREN / "public" / "schools_data.json", encoding="utf-8"))
     mapa = mapa_izo_redizo()
@@ -275,4 +280,9 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser(description="Doklady pásem přijetí, srovnání let 2024 a 2025.")
+    ap.add_argument("--uchazeci-2025", type=Path, default=UCHAZECI_2025,
+                    help="data uchazečů 2025; po revizi CERMATu soubor z data/linka/prace/<KÓD>/, jinak doklad smíchá verze")
+    UCHAZECI_2025 = ap.parse_args().uchazeci_2025
     main()

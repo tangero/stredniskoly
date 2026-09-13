@@ -96,6 +96,20 @@ def srovnej_pasma(novy: Path, stavajici: Path) -> dict:
     }
 
 
+def dopad_uchazeci(rok: int, zobrazene_obdobi: str | None) -> str:
+    """Věta pro oznámení a popis PR. Web čte jen pásma zobrazeného roku; souběžné přihlášky nezobrazuje."""
+    soubeh = f"public/soubeh_prihlasek_{rok}.json web nezobrazuje."
+    if str(rok) == str(zobrazene_obdobi):
+        return (
+            f"Přepíše public/pasma_prijeti_{rok}.json, který čte stránka oboru; po sloučení se tam změní čísla. "
+            f"{soubeh} Doklady v docs/podklady a čísla ve slovníku přepočítej nad týmž souborem."
+        )
+    return (
+        f"Nové soubory za rok {rok}; web je nečte, dokud se v registru nepřepne období sady "
+        f"cermat-uchazeci-kolo1. {soubeh}"
+    )
+
+
 def zpracuj_uchazeci(uloha: dict, soubor: Path, prace: Path, struktura: dict) -> dict:
     chybi = [s for s in POVINNE_UCHAZECI if s not in struktura["hlavicka"]]
     if chybi:
@@ -123,11 +137,7 @@ def zpracuj_uchazeci(uloha: dict, soubor: Path, prace: Path, struktura: dict) ->
             str(pasma): f"public/pasma_prijeti_{rok}.json",
             str(soubeh): f"public/soubeh_prihlasek_{rok}.json",
         },
-        "dopad": (
-            "Nové soubory za další rok; web je nečte, dokud se nepřepne registr a nenapojí kód."
-            if uloha["druh"] == "nove_obdobi"
-            else "Přepíše soubory, které web čte; po sloučení se změní čísla na stránkách oborů."
-        ),
+        "dopad": dopad_uchazeci(rok, uloha.get("zobrazene_obdobi")),
     }
 
 
