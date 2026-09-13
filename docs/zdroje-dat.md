@@ -402,7 +402,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-13. Neupravovat ru�
 | `cermat-kapacity` | web | 2026 | `PZ2026_kolo1_skolobory_vysledky.xlsx` | — | 2027 | 2027-03, odhad | Srovnání ročníků na stránce oboru. |
 | `cermat-prihlasky` | web | 2026 | `PZ2026_kolo1_skolobory_vysledky.xlsx` | — | 2027 | 2027-03, odhad | Srovnání ročníků na stránce oboru. |
 | `cermat-vysledky` | web | 2026 | `PZ2026_kolo1_skolobory_vysledky.xlsx` | — | 2027 | 2027-08, odhad | Srovnání ročníků na stránce oboru; výsledky 2025 slouží jako srovnávací zdroj v public/cermat_results_meta.json. |
-| `cermat-uchazeci-kolo1` | web | 2025 | `data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx` | 2025, 2026 | 2027 | 2027-05, odhad | Rok 2025 zůstává pro ověření stability mezi ročníky ve scripts/validate-pasma-prijeti.py a pro vývoj hranice přijetí. |
+| `cermat-uchazeci-kolo1` | web | 2025 | `PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx` | 2026 | 2027 | 2027-05, odhad | Rok 2025 zůstává pro ověření stability mezi ročníky ve scripts/validate-pasma-prijeti.py a pro vývoj hranice přijetí. |
 | `cermat-uchazeci-kolo2` | nepoužito | 2025 | `data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx` | 2026 | 2027 | 2027-06, odhad | Není na webu. |
 | `cermat-polozkova-jpz` | analýza | 2025 | `data/JPZ2025_M6_polozkova_data.xlsx` | 2026 | 2027 | 2027-05, odhad | Není na webu; slouží dokladu teze 4. |
 | `cermat-maturita` | plánováno | nic | `MZ2026j_SC_skolobory.xlsx` | 2026 | 2026 po podzimu | neznámo | Maturitní výsledky předchozích let jako řada vývoje. |

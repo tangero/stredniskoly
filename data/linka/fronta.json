@@ -173,7 +173,7 @@
       "last_modified": "Wed, 20 May 2026 15:14:28 GMT",
       "vytvoreno": "2026-09-13T09:52:18+00:00",
       "zobrazene_obdobi": "2025",
-      "stav": "oznameno",
+      "stav": "predano",
       "historie": [
         {
           "cas": "2026-09-13T09:52:18+00:00",
@@ -186,6 +186,16 @@
         {
           "cas": "2026-09-13T09:53:41+00:00",
           "stav": "oznameno"
+        },
+        {
+          "cas": "2026-09-13T11:04:54+00:00",
+          "stav": "schvaleno",
+          "poznamka": "příkazová řádka, příkazová řádka"
+        },
+        {
+          "cas": "2026-09-13T11:05:19+00:00",
+          "stav": "predano",
+          "poznamka": "https://github.com/tangero/stredniskoly/pull/84"
         }
       ],
       "priprava": {
@@ -236,6 +246,24 @@
           "telegram"
         ],
         "nanecisto": false
+      },
+      "rozhodnuti": {
+        "cas": "2026-09-13T11:04:54+00:00",
+        "rozhodnuti": "schvaleno",
+        "kanal": "příkazová řádka",
+        "od": "příkazová řádka"
+      },
+      "predani": {
+        "plan": {
+          "vetev": "data/cermat-uchazeci-kolo1-2025-qnype",
+          "soubory": {
+            "/Users/imac/Github/stredniskoly/data/linka/prace/QNYPE/pasma_prijeti_2025.json": "public/pasma_prijeti_2025.json",
+            "/Users/imac/Github/stredniskoly/data/linka/prace/QNYPE/soubeh_prihlasek_2025.json": "public/soubeh_prihlasek_2025.json"
+          },
+          "nadpis": "data: cermat-uchazeci-kolo1 2025 (QNYPE)",
+          "telo": "Připravila datová linka, schváleno 2026-09-13T11:04:54+00:00 přes příkazová řádka.\n\nZdroj: https://data.cermat.cz/files/JPZ-polozkova-data/2025/Uchazeci/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx\nsha256: cdc799ead4182c6d348c3a6745c9f2327fa526ea6c861a91c9b5e6440c446b31\n\nPřepíše soubory, které web čte; po sloučení se změní čísla na stránkách oborů.\n\nPo sloučení přepni období v registru: `python3 scripts/stav-datovych-sad.py prepni …`."
+        },
+        "pull_request": "https://github.com/tangero/stredniskoly/pull/84"
       }
     },
     "3GQMK": {
@@ -247,7 +275,7 @@
       "last_modified": "Wed, 20 May 2026 13:10:56 GMT",
       "vytvoreno": "2026-09-13T09:52:18+00:00",
       "zobrazene_obdobi": "2025",
-      "stav": "oznameno",
+      "stav": "predano",
       "historie": [
         {
           "cas": "2026-09-13T09:52:18+00:00",
@@ -260,6 +288,16 @@
         {
           "cas": "2026-09-13T09:53:41+00:00",
           "stav": "oznameno"
+        },
+        {
+          "cas": "2026-09-13T11:04:54+00:00",
+          "stav": "schvaleno",
+          "poznamka": "příkazová řádka, příkazová řádka"
+        },
+        {
+          "cas": "2026-09-13T11:05:31+00:00",
+          "stav": "predano",
+          "poznamka": "https://github.com/tangero/stredniskoly/pull/85"
         }
       ],
       "priprava": {
@@ -310,6 +348,24 @@
           "telegram"
         ],
         "nanecisto": false
+      },
+      "rozhodnuti": {
+        "cas": "2026-09-13T11:04:54+00:00",
+        "rozhodnuti": "schvaleno",
+        "kanal": "příkazová řádka",
+        "od": "příkazová řádka"
+      },
+      "predani": {
+        "plan": {
+          "vetev": "data/cermat-uchazeci-kolo1-2026-3gqmk",
+          "soubory": {
+            "/Users/imac/Github/stredniskoly/data/linka/prace/3GQMK/pasma_prijeti_2026.json": "public/pasma_prijeti_2026.json",
+            "/Users/imac/Github/stredniskoly/data/linka/prace/3GQMK/soubeh_prihlasek_2026.json": "public/soubeh_prihlasek_2026.json"
+          },
+          "nadpis": "data: cermat-uchazeci-kolo1 2026 (3GQMK)",
+          "telo": "Připravila datová linka, schváleno 2026-09-13T11:04:54+00:00 přes příkazová řádka.\n\nZdroj: https://data.cermat.cz/files/JPZ-polozkova-data/2026/Uchazeci/PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx\nsha256: 6e9ca63a52d26f9ae5d8c658c1d818cce12c8ef4a8c0b0d2752e6efaaa75e66f\n\nNové soubory za další rok; web je nečte, dokud se nepřepne registr a nenapojí kód.\n\nPo sloučení přepni období v registru: `python3 scripts/stav-datovych-sad.py prepni …`."
+        },
+        "pull_request": "https://github.com/tangero/stredniskoly/pull/85"
       }
     },
     "GQ99C": {
@@ -321,7 +377,7 @@
       "last_modified": "Tue, 18 Aug 2026 20:29:53 GMT",
       "vytvoreno": "2026-09-13T09:52:19+00:00",
       "zobrazene_obdobi": null,
-      "stav": "oznameno",
+      "stav": "predano",
       "historie": [
         {
           "cas": "2026-09-13T09:52:19+00:00",
@@ -334,6 +390,16 @@
         {
           "cas": "2026-09-13T09:53:41+00:00",
           "stav": "oznameno"
+        },
+        {
+          "cas": "2026-09-13T11:04:54+00:00",
+          "stav": "schvaleno",
+          "poznamka": "příkazová řádka, příkazová řádka"
+        },
+        {
+          "cas": "2026-09-13T11:05:31+00:00",
+          "stav": "predano",
+          "poznamka": "bez souborů"
         }
       ],
       "priprava": {
@@ -361,6 +427,21 @@
           "telegram"
         ],
         "nanecisto": false
+      },
+      "rozhodnuti": {
+        "cas": "2026-09-13T11:04:54+00:00",
+        "rozhodnuti": "schvaleno",
+        "kanal": "příkazová řádka",
+        "od": "příkazová řádka"
+      },
+      "predani": {
+        "plan": {
+          "vetev": "data/cermat-maturita-2026-gq99c",
+          "soubory": {},
+          "nadpis": "data: cermat-maturita 2026 (GQ99C)",
+          "telo": "Připravila datová linka, schváleno 2026-09-13T11:04:54+00:00 přes příkazová řádka.\n\nZdroj: https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2026j_SC_skolobory.xlsx\nsha256: 6a814e0a69c2603d5c6191b7c616b311d21910520dc40d1ce1d919bbf5337896\n\n\n\nPo sloučení přepni období v registru: `python3 scripts/stav-datovych-sad.py prepni …`."
+        },
+        "poznamka": "Bez souborů k předání. Další krok: Import do webu podle docs/maturitni-vysledky-a-kvalita-skoly-2027.md."
       }
     },
     "HYUWH": {
@@ -372,7 +453,7 @@
       "last_modified": "",
       "vytvoreno": "2026-09-13T09:52:20+00:00",
       "zobrazene_obdobi": "2026-02-11",
-      "stav": "oznameno",
+      "stav": "predano",
       "historie": [
         {
           "cas": "2026-09-13T09:52:20+00:00",
@@ -385,6 +466,16 @@
         {
           "cas": "2026-09-13T09:53:41+00:00",
           "stav": "oznameno"
+        },
+        {
+          "cas": "2026-09-13T11:04:54+00:00",
+          "stav": "schvaleno",
+          "poznamka": "příkazová řádka, příkazová řádka"
+        },
+        {
+          "cas": "2026-09-13T11:05:31+00:00",
+          "stav": "predano",
+          "poznamka": "bez souborů"
         }
       ],
       "priprava": {
@@ -399,6 +490,21 @@
           "telegram"
         ],
         "nanecisto": false
+      },
+      "rozhodnuti": {
+        "cas": "2026-09-13T11:04:54+00:00",
+        "rozhodnuti": "schvaleno",
+        "kanal": "příkazová řádka",
+        "od": "příkazová řádka"
+      },
+      "predani": {
+        "plan": {
+          "vetev": "data/csi-inspis-2026-02-11-hyuwh",
+          "soubory": {},
+          "nadpis": "data: csi-inspis 2026-02-11 (HYUWH)",
+          "telo": "Připravila datová linka, schváleno 2026-09-13T11:04:54+00:00 přes příkazová řádka.\n\nZdroj: https://opendata.csicr.cz/DataSet/Detail/70\nsha256: \n\n\n\nPo sloučení přepni období v registru: `python3 scripts/stav-datovych-sad.py prepni …`."
+        },
+        "poznamka": "Bez souborů k předání. Další krok: Najít nový zdroj profilů InspIS, nebo workflow vypnout. Soubor workflow je v pracovním stromu smazaný, necommitováno."
       }
     }
   },
