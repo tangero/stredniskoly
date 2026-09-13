@@ -1,6 +1,6 @@
 # Prototyp stránky školy: deník rozhodnutí
 
-Verze 1.1 · 13. 9. 2026 · Prototyp, ne produkční kód.
+Verze 1.2 · 13. 9. 2026 · Prototyp, ne produkční kód.
 
 Cíl: ověřit, jestli jde stránku postavit tak, aby rodič a žák poznali, **jak těžké je se na školu dostat**, **jak těžké bude ji vystudovat** a **jaké jsou na ní podmínky**.
 
@@ -200,3 +200,26 @@ Souběh jde spočítat jen za rok 2025, protože za rok 2026 zveřejnil CERMAT p
 
 ### R7.8 Práh 10 uchazečů
 Souběh se nezveřejňuje u oborů s méně než deseti uchazeči, aby z něj nešlo dopočítat jednotlivce. Stejná logika jako u mezí zveřejnění maturitních výsledků.
+
+---
+
+## Kolo 8 — nejnižší přijatý výsledek
+
+### R8.1 Chybějící data nechyběla
+Kolo 6 uzavřelo, že stropem stránky jsou dvě chybějící data: maturitní výsledky a hranice přijetí. Druhé tvrzení bylo nesprávné.
+
+Pole `jpz_min_actual` je v katalogu od začátku, počítá ho `scripts/enrich_schools_data.py` z dat uchazečů za rok 2025 a je k dispozici u 4 350 oborů. Slovník ukazatelů přitom tvrdil, že takový údaj nemáme. Opraveno ve verzi 1.3 slovníku.
+
+### R8.2 Nejnižší přijatý není hranice přijetí
+Je to dolní mez toho, co stačilo, protože školy k testu přidávají vlastní kritéria a podle nich mohou přijmout uchazeče se slabším testem. Karta to říká tučně přímo v textu, ne v poznámce.
+
+Blok o chybějící hranici na stránce zůstává, ale s přesnějším nadpisem: skutečnou hranici nezveřejňuje nikdo.
+
+### R8.3 Práh deseti přijatých
+U 1 586 ze 4 350 oborů je přijatých méně než deset a minimum je pak údaj o jednom uchazeči. Pod tímto prahem se místo čísla zobrazuje vysvětlení proč. Technické lyceum s jedenácti přijatými práh těsně splní.
+
+### R8.4 Medián vedle minima
+Samotné minimum svádí k závěru „stačí 65 bodů“. Vedle něj proto stojí, že polovina přijatých měla víc než medián. U osmiletého gymnázia je rozdíl výmluvný: minimum 65, medián 77,5.
+
+### R8.5 Patička rozlišuje ročníky
+Stránka teď míchá dva ročníky: poptávka a přijetí jsou z roku 2026, nejnižší přijatý výsledek a souběžné přihlášky z roku 2025. Patička to rozepisuje po zdrojích.

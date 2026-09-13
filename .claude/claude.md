@@ -138,13 +138,46 @@ Dodržuj standardy z:
 - Database: PostgreSQL (primary), SQLite (dev)
 - Hosting: Vercel (frontend), Railway/Fly.io (backend)
 
+## Dokumentace zdrojů — POVINNÉ
+
+**`docs/zdroje-dat.md` je soupis všech zdrojových souborů sloupec po sloupci.** U každého sloupce je uvedeno, na jakou otázku rodiče by šel použít a zda ho používáme. Oddíl 3 je seznam sloupců, které nevyužíváme.
+
+**Povinný krok: než navrhneš stránku, sekci, ukazatel nebo funkci, projdi `docs/zdroje-dat.md` celý, včetně oddílu 3, a do návrhu napiš, které nepoužité sloupce jsi zvážil a proč je nepoužiješ.**
+
+Důvod existence tohoto pravidla: návrh stránky školy z 12. 9. 2026 vznikl z toho, co web už zobrazoval, a minul tři použitelné údaje ležící ve zdrojích, které projekt už zpracovával. Jeden z nich byl dokonce spočítaný a uložený v katalogu, zatímco slovník ukazatelů tvrdil, že ho nemáme.
+
+Pravidla:
+
+1. **Nikdy neinventarizuj data podle toho, co web zobrazuje.** Vždy podle sloupců ve zdroji.
+2. **Nový zdroj nebo sloupec zapiš do `docs/zdroje-dat.md`** ve stejné dávce, ve které ho začneš používat, včetně sloupců, které nepoužiješ.
+3. **Zamítnutí je platný závěr, mlčení není.** Když se sloupec nehodí, napiš proč.
+
+Dělba rolí: `docs/zdroje-dat.md` říká, **co existuje**. `docs/slovnik-ukazatelu.md` říká, **jak se to jmenuje a počítá**.
+
+## Slovník ukazatelů — POVINNÉ
+
+**`docs/slovnik-ukazatelu.md` je závazný soupis názvů a veličin.** Obsahuje definici, vzorec, zdroj a jednotku každého ukazatele a hlavně to, co ukazatel **neříká**.
+
+Pravidla:
+
+1. **Před zobrazením jakéhokoli čísla** na webu si ověř jeho zápis ve slovníku. Údaj bez doloženého výpočtu se nezobrazuje.
+2. **Nový ukazatel nezaváděj** bez zápisu do slovníku: název, definice, vzorec, zdroj, jednotka, rozsah platnosti a co neříká.
+3. **Nepoužívej vlastní název** pro veličinu, která už jméno má. Jméno ze slovníku platí v datech, v kódu, v API i v textech.
+4. **Změní-li se výpočet**, oprav slovník a zvyš jeho verzi ve stejné dávce.
+
+Ve slovníku je i oddíl ukazatelů bez doloženého výpočtu (například `obtiznost`). Ty se nesmí používat k řazení, průměrování ani zobrazení, dokud jejich definice nevznikne.
+
+Návazné dokumenty: [prezentace dat na stránce školy](../docs/navrh-prezentace-dat-skoly-2027.md), [maturitní výsledky](../docs/maturitni-vysledky-a-kvalita-skoly-2027.md).
+
 ## Critical Rules
 
-1. **NIKDY** neduplikuj obsah mezi `/docs/` a `~/github/patrick-knowledgebase/`
-2. **VŽDY** zapiš learnings **BĚHEM** práce, NE až na konci
-3. **VŽDY** updatuj project notes **PŘED** ukončením session
-4. **VŽDY** se zeptej na konci session: "Něco ještě zapsat do KB?"
-5. **VŽDY** commituj změny v knowledge-base po session
+1. **VŽDY** projdi `docs/zdroje-dat.md` celý, než navrhneš stránku, sekci nebo ukazatel, a napiš, které nepoužité sloupce jsi zvážil
+2. **VŽDY** ověř ukazatel ve `docs/slovnik-ukazatelu.md`, než jej zobrazíš, a zapiš tam nový, než jej zavedeš
+3. **NIKDY** neduplikuj obsah mezi `/docs/` a `~/github/patrick-knowledgebase/`
+4. **VŽDY** zapiš learnings **BĚHEM** práce, NE až na konci
+5. **VŽDY** updatuj project notes **PŘED** ukončením session
+6. **VŽDY** se zeptej na konci session: "Něco ještě zapsat do KB?"
+7. **VŽDY** commituj změny v knowledge-base po session
 
 ## Common Patterns Reference
 
@@ -169,4 +202,4 @@ Pokud problém vyřešíš a není dokumentován → **IHNED** dokumentuj.
 ---
 **Template version:** 1.0
 **Created:** 2026-02-21
-**Last updated:** 2026-02-21
+**Last updated:** 2026-09-13

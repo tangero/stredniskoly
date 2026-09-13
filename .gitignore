@@ -67,3 +67,4 @@ __pycache__/
 
 # Lokální snímky rejstříku MŠMT (velké soubory, zdroj a postup v data/msmt_rejstrik/README.md)
 data/msmt_rejstrik/*.jsonld
+.claude/worktrees/

@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.2 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.3 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -119,8 +119,31 @@ Pole `cj_prumer` a `ma_prumer` v ročníku 2025, převedené na škálu předmě
 
 **Nesmí se nazývat průměrem přijatých.** Zdroj nedokládá, které skupiny se průměr týká ani z kolika osob vznikl; kontrakt to nese v poli `population: 'not_documented'`. Průměr roku 2026 naproti tomu prokazatelně patří přijatým. Proto se obě čísla nedávají do jedné srovnávací tabulky.
 
+### Nejnižší výsledek JPZ mezi přijatými
+Nejnižší součet bodů z češtiny a matematiky mezi uchazeči, kteří byli na obor **přijati a zařazeni**. Rozsah 0 až 100. Pole `jpz_min_actual`, doplňkově `cj_at_jpz_min` a `ma_at_jpz_min`, tedy body téhož uchazeče po předmětech.
+
+Zdroj jsou data uchazečů CERMATu za 1. kolo 2025, kde je u každé volby příznak přijetí i výsledek testu. Počítá `scripts/enrich_schools_data.py`, mezivýsledek je v `data/jpz_stats_2025.json`. Filtr je `ss{n}_prijat == 1`; hodnota 2 znamená, že se uchazeč dostal jinam, a do minima nepatří. Procentní skór 0 až 200 se dělí dvěma.
+
+**Není to hranice přijetí.** Je to nejnižší výsledek, se kterým se někdo dostal, tedy dolní mez toho, co stačilo. Skutečná hranice může být níž i výš, protože školy přidávají vlastní kritéria, například známky nebo talentovou zkoušku, a podle nich mohou přijmout uchazeče se slabším testem.
+
+Čtyři omezení, která se musí uvést spolu s číslem:
+
+1. **Rok 2025.** Za rok 2026 data uchazečů zveřejněná nejsou. V katalogu 2026 je hodnota převzatá a označená polem `historicka_data_rok`.
+2. **Bez zaměření.** Zdroj nese jen REDIZO a KKOV. U 213 z 2 558 kombinací sdílí několik zaměření jednu hodnotu.
+3. **Malé počty.** 1 586 ze 4 350 oborů má méně než deset přijatých. Minimum je tam jednotlivý uchazeč, ne stabilní vlastnost oboru, a nezobrazuje se.
+4. **Nepředpovídá příští rok.** Popisuje jeden ročník, nikoli požadavek školy.
+
+### Medián a průměr JPZ přijatých 2025
+Pole `jpz_median` a `jpz_prumer_actual`, počítaná týmž skriptem ze stejné množiny přijatých, ve stejném rozsahu 0 až 100.
+
+Medián je u šikmého rozdělení vypovídavější než průměr a měl by mít při zobrazení přednost. Obě čísla jsou v katalogu, ale na webu se zatím nikde nepoužívají.
+
+Nezaměňovat s **průměrem JPZ přijatých** z oddílu výše, který pochází z agregátů CERMATu za rok 2026. Ten platí za nabídku včetně zaměření, tenhle za celý KKOV školy, a jsou to jiné ročníky.
+
 ### Hranice přijetí
-**Nemáme.** CERMAT ji nezveřejňuje a nelze ji odvodit z průměru. Na stránce se uvádí, že ověřené minimum nemáme.
+**Nemáme a mít nebudeme.** CERMAT nezveřejňuje, kolik bodů měl poslední přijatý podle kritérií školy, a z průměru se to spočítat nedá. Nejbližší doložený údaj je nejnižší výsledek JPZ mezi přijatými výše, který je dolní mezí, ne hranicí.
+
+Do 13. 9. 2026 tu stálo, že nemáme ani to minimum. Bylo to nesprávné: pole `jpz_min_actual` existuje v katalogu od začátku a počítá ho `scripts/enrich_schools_data.py`.
 
 ## 3. Kohorty přijatých
 
@@ -207,6 +230,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.3 | Opraveno tvrzení, že nemáme nejnižší výsledek přijatých. Doplněn nejnižší výsledek JPZ mezi přijatými, medián a průměr JPZ přijatých 2025. |
 | 1.2 | Doplněn podíl prvních voleb, kohorta podle pozice na přihlášce a souběžné přihlášky. |
 | 1.1 | Doplněn tlak prvních voleb, naplněnost a přetlak. Zaznamenán neúspěšný pokus o zpětné odvození indexu obtížnosti a zjištění, že složený index nepřidává rozlišovací schopnost. |
 | 1.0 | První soupis. Podkladem je audit obtížnosti, audit dat karet, [návrh prezentace dat](navrh-prezentace-dat-skoly-2027.md) a [maturitní výsledky](maturitni-vysledky-a-kvalita-skoly-2027.md). |

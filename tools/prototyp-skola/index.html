@@ -166,7 +166,8 @@ footer{border-top:1px solid var(--rule);padding-block:20px 44px;color:var(--ink-
 </main>
 
 <footer class="wrap">
-  Čísla: CERMAT, 1. kolo přijímacího řízení 2026, stav k 17. 8. 2026.
+  Čísla o poptávce a přijetí: CERMAT, 1. kolo 2026, stav k 17. 8. 2026.
+  Nejnižší přijatý výsledek a souběžné přihlášky: CERMAT, data uchazečů za 1. kolo 2025, novější nejsou.
   Popis školy: Česká školní inspekce, zpráva z 14.–16. ledna 2025.
   Prototyp k posouzení, ne veřejná stránka.
 </footer>
@@ -179,6 +180,7 @@ footer{border-top:1px solid var(--rule);padding-block:20px 44px;color:var(--ink-
      prumer:80.13, cj:39.5, ma:40.63, poptavka:7.77, tlak:4.10,
      pctP:86, pctT:94, pctM:94, n:273, medT:1.73, medP:3.31, medM:60.9,
      pctVolba:51, medVolba:52,
+     min25:65.0, minCj:35.0, minMa:30.0, medi25:77.5, prij25:30,
      soubeh:{uchazecu:222, poradi:[117,63,42], s:[
        {podil:52, skola:'Gymnázium J. A. Komenského', obec:'Čelákovice', obor:'Gymnázium'},
        {podil:28, skola:'Gymnázium Františka Palackého', obec:'Neratovice', obor:'Gymnázium'},
@@ -189,6 +191,7 @@ footer{border-top:1px solid var(--rule);padding-block:20px 44px;color:var(--ink-
      prumer:80.28, cj:42.34, ma:37.93, poptavka:3.13, tlak:1.37,
      pctP:70, pctT:73, pctM:86, n:437, medT:1.03, medP:2.60, medM:69.1,
      pctVolba:57, medVolba:39,
+     min25:69.0, minCj:36.0, minMa:33.0, medi25:76.0, prij25:29,
      soubeh:{uchazecu:97, poradi:[32,41,22], s:[
        {podil:40, skola:'Gymnázium J. A. Komenského', obec:'Čelákovice', obor:'Gymnázium'},
        {podil:16, skola:'SKOLAEUPRAHA', obec:'Praha', obor:'Gymnázium'},
@@ -199,6 +202,7 @@ footer{border-top:1px solid var(--rule);padding-block:20px 44px;color:var(--ink-
      prumer:68.74, cj:34.57, ma:34.17, poptavka:2.17, tlak:0.57,
      pctP:37, pctT:41, pctM:85, n:289, medT:0.68, medP:2.77, medM:57.3,
      pctVolba:52, medVolba:26,
+     min25:50.0, minCj:26.0, minMa:24.0, medi25:69.0, prij25:11,
      soubeh:{uchazecu:37, poradi:[7,15,15], s:[
        {podil:30, skola:'Gymnázium J. A. Komenského', obec:'Čelákovice', obor:'Gymnázium'},
        {podil:22, skola:'Gymnázium J. S. Machara', obec:'tato škola', obor:'Gymnázium'},
@@ -305,8 +309,16 @@ footer{border-top:1px solid var(--rule);padding-block:20px 44px;color:var(--ink-
               + 'Tak velký podíl znamená, že škola má vlastní požadavky nad rámec jednotné zkoušky. '
               + '<b>Přečtěte si kritéria školy dřív, než podáte přihlášku.</b>'})
         : '')
-      + '<div class="gap"><h3>Kolik bodů bylo potřeba, nevíme</h3>'
-      + '<p>CERMAT nezveřejňuje, kolik bodů měl poslední přijatý, a z průměru se to spočítat nedá. Kritéria pro rok 2027 zveřejňuje škola na svém webu.</p></div>';
+      + (o.prij25 >= 10
+        ? fakt({nadpis:'Nejnižší výsledek, se kterým se sem někdo dostal', hodnota:cs(o.min25,1)+' ze 100',
+            vyznam:'V roce 2025 měl nejslabší přijatý ' + cs(o.minCj,1) + ' bodu z češtiny a ' + cs(o.minMa,1)
+              + ' z matematiky. Polovina přijatých měla víc než ' + cs(o.medi25,1) + '. '
+              + '<b>Není to hranice přijetí</b>, jen nejnižší výsledek, se kterým to někomu vyšlo; škola k testu přidává vlastní kritéria.',
+            zdroj:'Rok 2025, spočítáno z ' + cs(o.prij25) + ' přijatých. Za rok 2026 CERMAT údaje o jednotlivých uchazečích nezveřejnil. Platí za celý obor školy, ne za jeho zaměření.'})
+        : '<div class="gap"><h3>Nejnižší přijatý výsledek neuvádíme</h3>'
+          + '<p>Přijatých bylo v roce 2025 jen ' + cs(o.prij25) + ', takže nejnižší výsledek je údaj o jednom uchazeči, ne vlastnost oboru.</p></div>')
+      + '<div class="gap"><h3>Skutečnou hranici přijetí nezveřejňuje nikdo</h3>'
+      + '<p>CERMAT nezveřejňuje, kolik bodů měl poslední přijatý po započtení kritérií školy. Kritéria pro rok 2027 vyhlašuje škola na svém webu.</p></div>';
 
     // ---- S čím si ji lidé srovnávají?
     var sb = o.soubeh;
