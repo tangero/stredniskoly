@@ -19,6 +19,73 @@ interface ChangelogEntry {
 
 const changelog: ChangelogEntry[] = [
   {
+    version: '2.7.0',
+    date: '13. 9. 2026',
+    title: 'Ročník 2026 v katalogu a jak dopadli loňští uchazeči',
+    changes: [
+      { type: 'new', text: 'Nová sekce „Jak to dopadlo loni“ na stránce oboru: pod kolika body se v 1. kole 2025 nedostal nikdo, nad kolika se dostali všichni a kolik uchazečů uspělo v rozmezí mezi tím' },
+      { type: 'new', text: 'U každého oboru věta o tom, zda o přijetí rozhodoval hlavně výsledek jednotné zkoušky, nebo i další kritéria školy; u oborů s talentovou zkouškou se nezobrazuje' },
+      { type: 'new', text: 'Podrobné rozdělení přijatých podle výsledku zkoušky na rozkliknutí, jen u oborů, kde se někdo nevešel kvůli kapacitě' },
+      { type: 'new', text: 'Ročník 2026 přidán do katalogu se stabilními adresami nabídek; žádná stránka z roku 2025 nezanikla' },
+      { type: 'new', text: 'Statistiky oboru ukazují data 1. kola 2026: přihlášky podle priority, průměrné výsledky přijatých a srovnání ročníků 2025 a 2026' },
+      { type: 'improve', text: 'Přehled oborů na stránce školy přejmenován na „Studijní obory školy“ a uspořádán do přehledných záložek' },
+      { type: 'improve', text: 'Web uvádí, kde je návaznost oboru mezi roky nejistá, a nabízí nahlásit správný stav přes GitHub Issues' },
+      { type: 'improve', text: 'Simulátor sjednocen s katalogem a pracuje s celou nabídkou 1. kola 2026' },
+      { type: 'improve', text: 'Každé číslo na webu má doloženou definici v závazném slovníku ukazatelů, včetně toho, co číslo neříká' },
+      { type: 'fix', text: 'Opraveny nadpisy, které označovaly data roku 2026 jako rok 2025' },
+      { type: 'fix', text: 'Přegenerována mapa stránek z aktuálního katalogu' },
+    ],
+  },
+  {
+    version: '2.6.0',
+    date: '11. 9. 2026',
+    title: 'Simulátor výběru oboru a kalendář přijímaček 2027',
+    changes: [
+      { type: 'new', text: 'Kalendář přijímacího řízení 2027 a obnovená data CERMAT (#71)' },
+      { type: 'new', text: 'Simulátor výběru oboru s dojezdovou dobou, výsledky uchazečů a důvody nepřijetí' },
+      { type: 'new', text: 'Srovnávací tabulka oborů v simulátoru bez omezení počtu vybraných oborů' },
+      { type: 'improve', text: 'Výsledky oborů a související nabídky škol zvýrazněny na stránce školy' },
+      { type: 'fix', text: 'Z profilu oboru odstraněn index obtížnosti, jehož výpočet se nepodařilo doložit' },
+      { type: 'fix', text: 'Odstraněny osobní predikce šancí a neověřená minima bodů z regionálních souhrnů' },
+      { type: 'fix', text: 'Rozlišena délka studia ve srovnání oborů a v odkazech z přehledu kraje' },
+      { type: 'fix', text: 'Opraveny náhledové obrázky při sdílení (chyba 500 a chybějící české znaky)' },
+    ],
+  },
+  {
+    version: '2.5.1',
+    date: '5. 6. 2026',
+    title: 'Opravy tipů o prioritě a výsledků',
+    changes: [
+      { type: 'fix', text: 'Opraven zavádějící tip o prioritě: priorita neurčuje šanci na přijetí, jen pořadí nástupu (#70)' },
+      { type: 'fix', text: 'Školy ve výsledcích se zobrazují s rozlišujícím názvem, například pražská gymnázia (#69, #63)' },
+      { type: 'fix', text: 'Filtry na stránce výsledků se zachovají po návratu z detailu školy (#60)' },
+    ],
+  },
+  {
+    version: '2.5.0',
+    date: '16. 5. 2026',
+    title: 'Výsledky přijímaček 2026 a přehledy měst',
+    changes: [
+      { type: 'new', text: 'Stránka s výsledky přijímacího řízení 2026 a jejich souhrn na úvodní stránce' },
+      { type: 'new', text: 'Výsledky 1. kola 2026 na stránce každé školy' },
+      { type: 'new', text: 'Přehledy středních škol pro 20 největších měst' },
+      { type: 'fix', text: 'Sjednoceny jednotky výsledků CERMAT; součet češtiny a matematiky se uvádí správně na škále do 200 %' },
+      { type: 'fix', text: 'Opraveno školné Rakouského gymnázia (#59)' },
+    ],
+  },
+  {
+    version: '2.4.4',
+    date: '30. 4. 2026',
+    title: 'Opravy kapacit, regionů a vyhledávání',
+    changes: [
+      { type: 'fix', text: 'Opravena kapacita u 212 škol s více zaměřeními (#55)' },
+      { type: 'fix', text: 'Opravena chyba 404 u kraje Hlavní město Praha (#57)' },
+      { type: 'fix', text: 'Moje šance fungují i s jedinou vybranou školou (#56)' },
+      { type: 'improve', text: 'Vyhledávání v Moje šance podporuje víceslovné dotazy (#50)' },
+      { type: 'fix', text: 'Opraveny gramatické chyby „převys“ a „Rychlé fakta“ (#51)' },
+    ],
+  },
+  {
     version: '2.4.3',
     date: '10. 3. 2026',
     title: 'Oprava zobrazení kapacit a oborů na detailu školy',
