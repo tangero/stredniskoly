@@ -151,9 +151,17 @@
       "pouziti": "web",
       "zobrazeno": {
         "obdobi": "2025",
-        "soubor": "data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx",
-        "stazeno": "2026-01-29",
-        "verze": "předběžná, platné přihlášky ke dni 13. 5. 2025"
+        "soubor": "https://data.cermat.cz/files/JPZ-polozkova-data/2025/Uchazeci/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx",
+        "verze": "finální, včetně údajů o vzdání se přijetí",
+        "prepnuto": "2026-09-13",
+        "z_dostupne": {
+          "obdobi": "2025",
+          "verze": "finální, včetně údajů o vzdání se přijetí",
+          "soubor": "https://data.cermat.cz/files/JPZ-polozkova-data/2025/Uchazeci/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx",
+          "zverejneno": "2026-05-20",
+          "zjisteno": "2026-09-13",
+          "poznamka": "159 172 řádků proti 159 196 v předběžné verzi; list přejmenován z „data“ na „Sheet 1“."
+        }
       },
       "ocekavano": {
         "obdobi": "2027",
@@ -186,14 +194,6 @@
       ],
       "dostupne": [
         {
-          "obdobi": "2025",
-          "verze": "finální, včetně údajů o vzdání se přijetí",
-          "soubor": "https://data.cermat.cz/files/JPZ-polozkova-data/2025/Uchazeci/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx",
-          "zverejneno": "2026-05-20",
-          "zjisteno": "2026-09-13",
-          "poznamka": "159 172 řádků proti 159 196 v předběžné verzi; list přejmenován z „data“ na „Sheet 1“."
-        },
-        {
           "obdobi": "2026",
           "verze": "předběžná, platné přihlášky ke dni 13. 5. 2026",
           "soubor": "https://data.cermat.cz/files/JPZ-polozkova-data/2026/Uchazeci/PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx",
@@ -213,7 +213,15 @@
         "sledovat": [
           "https://data.cermat.cz/files/JPZ-polozkova-data/{rok}/Uchazeci/PZ{rok}_kolo1_uchazeci_prihlasky_vysledky.xlsx"
         ]
-      }
+      },
+      "historie_obdobi": [
+        {
+          "obdobi": "2025",
+          "soubor": "data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx",
+          "stazeno": "2026-01-29",
+          "verze": "předběžná, platné přihlášky ke dni 13. 5. 2025"
+        }
+      ]
     },
     "cermat-uchazeci-kolo2": {
       "nazev": "CERMAT, data o jednotlivých uchazečích, 2. kolo",
@@ -746,5 +754,13 @@
     "Jak zavést nový ukazatel": "Postup.",
     "Historie": "Záznam změn."
   },
-  "historie_prepnuti": []
+  "historie_prepnuti": [
+    {
+      "datum": "2026-09-13",
+      "sada": "cermat-uchazeci-kolo1",
+      "z": "2025",
+      "na": "2025",
+      "doklad": "Revize téhož období: PR #84 (merge 1f2901e), zdroj sha256 cdc799ead4182c6d348c3a6745c9f2327fa526ea6c861a91c9b5e6440c446b31. Pásma a souběh 2025 z finální revize, doklad overeni-pasem-prijeti přepočítán nad týmž souborem. jpz_min_actual v katalogu zatím z předběžné verze (enrich_schools_data.py čte sloupce podle pozice)."
+    }
+  ]
 }
