@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.13 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.14 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -177,6 +177,34 @@ Dvě skupiny do něj **nepatří** a při zobrazení se uvádějí zvlášť:
 - **Nesplnili podmínky**: vypadli na jiném kritériu než na výsledku testu.
 
 U osmiletého gymnázia J. S. Machara bylo v roce 2025 soutěžících 67, ale nesplnilo podmínky 107 dalších uchazečů. Podíl přijatých ze soutěžících by bez této poznámky byl zavádějící.
+
+### Podíl přijatých ze soutěžících
+`přijatí ÷ (přijatí + nepřijatí kvůli kapacitě)` za nabídku a ročník. Zdroj: CERMAT, souhrny 1. kola. Pole `podil_prijatych_ze_soutezicich` v `public/souhrny_kolo1.json`.
+
+Odpovídá přímo na otázku „jak těžké je se sem dostat“ ve tvaru, kterému rozumí každý: z uchazečů, kteří splnili podmínky školy a o místo tu opravdu soutěžili, se dostal každý kolikátý. U osmiletého gymnázia J. S. Machara v roce 2026 30 ze 112, zhruba každý čtvrtý; v roce 2025 29 ze 67.
+
+Do jmenovatele **nepatří** uchazeči, kteří nesplnili podmínky, a ti, kdo byli přijati na obor výš na přihlášce; oba počty se uvádějí vedle, protože bez nich by podíl vypadal příznivěji, než jaký byl celý průběh (viz soutěžící o obor). Když nikdo nebyl odmítnut kvůli kapacitě, podíl je 1 a o přijetí rozhodovaly jen podmínky školy.
+
+Rozdělení 2026 u 1 736 nabídek s aspoň jedním odmítnutým: dolní čtvrtina 0,46, medián 0,61, horní čtvrtina 0,78. Mezi roky 2025 a 2026 u 1 868 nabídek s aspoň 20 soutěžícími v obou letech korelace 0,723 a medián změny 9,4 procentního bodu (`docs/podklady/overeni-srovnani-rocniku.json`). S tlakem prvních voleb souhlasí pořadím (Spearman −0,76), tlak ale zůstává ověřeným ukazatelem pro předpověď dalšího roku.
+
+**Neříká, jakou šanci má konkrétní uchazeč**, ani jak se to změní příští rok. Soutěžící nejsou náhodný vzorek: kdo se dostal výš, sem nesoutěžil, a ti mívají lepší výsledky.
+
+### Obtížnost přijetí slovy
+Slovní zařazení nabídky podle podílu přijatých ze soutěžících v jednom ročníku. Pole `zarazeni_obtiznosti`.
+
+| Hodnota | Podmínka | Věta na stránce | Nabídek 2026 |
+|---|---|---|---:|
+| `kapacita_nerozhodovala` | nikdo nebyl odmítnut kvůli kapacitě | Místo bylo pro všechny, kdo splnili podmínky školy | 1 355 |
+| `vetsina_uspela` | podíl aspoň 2/3 | Dostala se většina soutěžících | 739 |
+| `stredne_tezke` | 1/2 až 2/3 | Dostat se sem je středně těžké | 476 |
+| `tezke` | 1/3 až 1/2 | Dostat se sem je těžké | 353 |
+| `velmi_tezke` | méně než 1/3 | Dostat se sem je velmi těžké | 168 |
+
+Prahy jsou zlomky, které se dají říct slovy (třetina, polovina, dvě třetiny), ne kvantily; vycházejí z otázky rodiče, ne z rozdělení. Mezi roky 2025 a 2026 zůstalo zařazení stejné u 48,6 % a posunulo se nejvýš o stupeň u 90,2 % nabídek s aspoň 20 soutěžícími, **proto se věta vždy doplňuje podílem a předchozím ročníkem**, například „zhruba každý čtvrtý; rok předtím skoro každý druhý“.
+
+Zařazení se nezobrazuje pod 10 soutěžícími (jeden uchazeč by přehodil stupeň) a u oborů s talentovou zkouškou se doplňuje větou, že rozhodovala i ona.
+
+**Není to hodnocení školy** a nesmí se používat k řazení škol. Nahrazuje zamítnutý index obtížnosti (oddíl 6) popisem jednoho ročníku, který jde ověřit ze zdroje. Podmínky školy mohou být hlavní překážkou i tam, kde kapacita nerozhodovala; proto se počet nesplněných podmínek uvádí vedle, kdykoli dosáhne počtu přijatých nebo 20 % přihlášek.
 
 ### Podíl přijatých podle bodového pásma
 Pro každý obor rozdělení soutěžících do pásem po pěti bodech a podíl přijatých v každém pásmu. Pole `pasma` v `public/pasma_prijeti_2025.json`, generuje `scripts/build-pasma-prijeti.py`.
@@ -380,6 +408,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.14 | Doplněn podíl přijatých ze soutěžících a obtížnost přijetí slovy, s rozdělením a stabilitou mezi ročníky. |
 | 1.13 | Doplněny přijatí podle priority, vzdali se přijetí, průměrné percentilové umístění přijatých a uchazečů, percentil ve srovnatelné skupině a změna mezi ročníky ze souhrnů 1. kola (`public/souhrny_kolo1.json`). Ověřeno, že historický průměr 2025 odpovídá průměru přijatých, a doplněna oficiální varianta percentilu nejnižšího přijatého. |
 | 1.12 | Čísla pásem přijetí, míry *rozhodl test*, pásma nejistoty, hustoty u hranice a percentilu nejnižšího přijatého přepočítána z finální revize dat uchazečů 2025 (PR #84). Výpočet se nemění. Stabilita míry *rozhodl test* mezi roky 2024 a 2025 vychází 0,725 místo 0,673, šířky pásma 0,692 místo 0,666. Souběžné přihlášky vedeny jako finální revize. |
 | 1.11 | Doplněny ukazatele 2. kola: kapacita, přihlášky, přijatí, nepřijatí kvůli kapacitě, nejnižší výsledek přijatých a nevypsané 2. kolo u nenaplněného oboru. |

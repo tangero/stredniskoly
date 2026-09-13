@@ -1,6 +1,6 @@
 # Stránka oboru: vrstvy podle otázek uchazeče
 
-Verze 1.0 · 13. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, výsledná podoba v oddílu 7.
+Verze 1.1 · 13. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, revize po zpětné vazbě v oddílu 7, výsledná podoba v oddílu 8.
 
 Navazuje na schválený dokument [Grafy na stránce školy a oboru](grafy-skoly-a-oboru-2027.md), který určuje, **jaké grafy máme a jak se kreslí**. Tento dokument určuje, **v jakém pořadí a v jaké podobě je stránka nabídne**, aby odpověděla na tři otázky:
 
@@ -212,7 +212,35 @@ Oprava: odpověď 2 říká opak a je to užitečná informace, protože o prior
 | Věta „Pořadí na přihlášce šanci nemění“ v odpovědi 2 | **použít** | opravuje rozšířený mýtus, platí pro všechny nabídky, odkazuje na výklad algoritmu |
 | Přijatí podle priority u otázky 3 („kolik spolužáků sem chtělo nejvíc“) | **použít** | 3 076 nabídek; popisuje složení přijatých bez rady k taktice |
 
-## 7. Výsledná podoba
+## 7. Revize po zpětné vazbě: odpověď nebyla srozumitelná
+
+**Zpětná vazba zadavatele** k odpovědi z kola 5 u osmiletého gymnázia Machara: z věty „nevešlo se 82 uchazečů … na jedno místo připadlo 4,1 uchazeče … víc nebo stejně jako u 94 ze 100 … podmínky nesplnilo 85 z 233“ **nejde poznat, jestli je těžké se sem dostat**. Graf „Zájem po letech“ navíc svedl ke čtení „všichni, kdo si školu dali na první a druhé místo, se dostali“.
+
+**Rozbor chyby.**
+1. Věta skládala tři různá čísla se třemi jmenovateli (uchazeči, místa, obory ve skupině) a nechala úsudek na čtenáři. Kolo 2 zavrhlo slovní verdikt ze obavy ze „známky školy“ a tím odpověď vyprázdnilo.
+2. Graf „Zájem po letech“ ukazoval přihlášky podle priority s čárkou kapacity. Čtenář barvy přirozeně čte jako „kdo se dostal“. Skutečnost u Machara 2026: 123 lidí mělo obor jako první volbu, přijato z nich bylo 28; celkem se dostalo 30 ze 233 přihlášek. Priorita přitom šanci nemění (kolo 5).
+
+**Nové měření** (`docs/podklady/overeni-srovnani-rocniku.json`, `podil_prijatych_ze_soutezicich`): podíl přijatých ze soutěžících, tedy z těch, kdo splnili podmínky a nešli jinam výš, je srozumitelný („dostal se každý čtvrtý“), mezi roky 2025 a 2026 má korelaci 0,723 a s ověřeným tlakem prvních voleb souhlasí pořadím (Spearman −0,76). U osmiletého gymnázia Machara ale kolísá: 29 ze 67 v roce 2025, 30 ze 112 v roce 2026.
+
+**Rozhodnutí.**
+
+| Prvek | Rozhodnutí | Argument |
+|---|---|---|
+| Slovní verdikt obtížnosti | **použít, oprava kola 2** | bez něj odpověď neodpovídá; verdikt stojí na podílu přijatých ze soutěžících s prahy třetina, polovina, dvě třetiny, zapsaný ve slovníku 1.14 jako *obtížnost přijetí slovy*; není to známka školy ani žebříček |
+| Verdikt bez podílu a předchozího roku | **zavrhnout** | zařazení se mezi roky nezměnilo jen u 48,6 % nabídek, o nejvýš stupeň u 90,2 %; věta proto vždy nese „zhruba každý čtvrtý; v roce 2025 zhruba každý druhý“ |
+| Tlak prvních voleb a percentil ve skupině v odpovědi | **přesunout do důkazů** | tři jmenovatele v jedné větě byly příčinou nesrozumitelnosti |
+| Graf přihlášek podle priority s kapacitou („Zájem po letech“) | **zavrhnout na stránce oboru** | prokazatelně svedl ke čtení „kdo se dostal“; nahrazuje ho graf „Kolik soutěžících se dostalo“ po letech |
+| Graf „Kolik soutěžících se dostalo“ | **použít jako první důkaz** | přijatí a nevešlí po letech na jedné ose; ukazuje i trend zájmu (67 → 112 soutěžících) |
+| Srovnání se skupinou v podílu přijatých ze soutěžících | **použít místo tlaku** | stejná veličina jako verdikt, jeden jmenovatel na stránce |
+| „28 z 30 přijatých si obor dalo jako první volbu“ u otázky 3 | **zavrhnout** | stejné riziko jako graf priorit: čte se jako výhoda první volby |
+| Počet nesplněných podmínek vedle verdiktu | **použít**, když dosáhne počtu přijatých nebo 20 % přihlášek | u Machara 85 z 233; bez něj by verdikt počítaný jen ze soutěžících vypadal příznivěji |
+
+**Nové znění odpovědi 1** (šablony podle stavu):
+- stav A, osmileté gymnázium: „**Dostat se sem je velmi těžké.** V 1. kole 2026 se ze 112 uchazečů, kteří splnili podmínky školy a o místo tu soutěžili, dostalo 30, tedy zhruba každý čtvrtý. V roce 2025: zhruba každý druhý, 29 z 67. Kromě toho 85 z 233 přihlášených nesplnilo podmínky školy.“
+- stav A, čtyřleté gymnázium: „**Dostala se většina uchazečů, kteří o místo soutěžili, ale ne všichni.** V 1. kole 2026 se z 44 … dostalo 30, tedy zhruba dva ze tří.“
+- stav C, technické lyceum: „**Místo bylo pro všechny, kdo splnili podmínky školy.** V 1. kole 2026 škola přijala 23 uchazečů na 30 míst a nikoho neodmítla kvůli kapacitě. Volná místa nabídla ve 2. kole (7).“
+
+## 8. Výsledná podoba
 
 ```
 ┌───────────────────────────────────────────────┐
@@ -223,11 +251,11 @@ Oprava: odpověď 2 říká opak a je to užitečná informace, protože o prior
 │  Přijetí · Pomoc · Studium        (lepivé)    │
 ├───────────────────────────────────────────────┤
 │ 1 JAK TĚŽKÉ BUDE SE DOSTAT      1. kolo 2026  │
-│ V 1. kole 2026 se nevešlo 82 uchazečů, kteří  │
-│ splnili podmínky. Jako první volbu obor chtělo│
-│ 4,1× víc lidí než míst (2025: 3,9×), víc než  │
-│ u 94 ze 100 osmiletých gymnázií.              │
-│  ▸ Zájem po letech        ▸ Proti podobným    │
+│ Dostat se sem je velmi těžké. V 1. kole 2026  │
+│ se ze 112 uchazečů, kteří splnili podmínky,   │
+│ dostalo 30, zhruba každý čtvrtý (2025: každý  │
+│ druhý). 85 z 233 nesplnilo podmínky školy.    │
+│  ▸ Kolik soutěžících se dostalo ▸ Proti podob.│
 │  ▸ Jak dopadly přihlášky  ▸ Body v roce 2025  │
 ├───────────────────────────────────────────────┤
 │ 2 CO VÁM POMŮŽE                               │
@@ -240,8 +268,7 @@ Oprava: odpověď 2 říká opak a je to užitečná informace, protože o prior
 ├───────────────────────────────────────────────┤
 │ 3 JAK SE TU STUDUJE                           │
 │ Spolužáci přicházejí s výsledky kolem 92.     │
-│ percentilu celé země; 28 z 30 si obor dalo    │
-│ jako první volbu.                             │
+│ percentilu celé země.                         │
 │ Inspekce 2025: silné stránky / na co pozor    │
 │ Podpora žáků: psycholog, poradenství, IVP     │
 │ Na co se zeptat na dni otevřených dveří       │
@@ -250,13 +277,13 @@ Oprava: odpověď 2 říká opak a je to užitečná informace, protože o prior
 └───────────────────────────────────────────────┘
 ```
 
-## 8. Souhrn rozhodnutí
+## 9. Souhrn rozhodnutí
 
 | Použít | Skrýt podle stavu | Odložit | Zavrhnout |
 |---|---|---|---|
-| odpověď ve třech větách; kotvy tří otázek; zájem po letech; jak dopadly přihlášky; tečkový graf skupiny; pásma (rozbalit); věta „pořadí na přihlášce šanci nemění“; přijatí podle priority u otázky 3; souběh; 2. kolo; odkaz na kritéria na webu školy; podíl nesplněných podmínek ≥ 20 %; věta o talentové zkoušce; úroveň spolužáků v percentilech; inspekce souhrn; podpora žáků; změna mezi ročníky u spárovaných; uložit mezi zvažované; metodika dole | pásma a tečkový graf u nenaplněných oborů; změna u nespárovaných | maturitní výsledky; kohorty přijatých; potvrzená kritéria z portálu (až budou) | slovní verdikt obtížnosti; rada „dejte obor na první místo“; poměr přihlášek na místo jako první údaj; osobní šance; vlastní body na stránce oboru; snazší obory v okolí; termín DOD z InspIS; absence z inspekce; prázdná karta maturity; hodnoticí barvy |
+| odpověď ve třech větách; kotvy tří otázek; slovní verdikt s podílem a předchozím rokem; kolik soutěžících se dostalo; co se stalo se všemi přihláškami; tečkový graf skupiny v podílu přijatých; pásma (rozbalit); věta „pořadí na přihlášce šanci nemění“; souběh; 2. kolo; odkaz na kritéria na webu školy; podíl nesplněných podmínek ≥ 20 %; věta o talentové zkoušce; úroveň spolužáků v percentilech; inspekce souhrn; podpora žáků; změna mezi ročníky u spárovaných; uložit mezi zvažované; metodika dole | pásma a tečkový graf u nenaplněných oborů; změna u nespárovaných | maturitní výsledky; kohorty přijatých; potvrzená kritéria z portálu (až budou) | verdikt bez podílu a roku; graf přihlášek podle priority; „28 z 30 si dalo jako první volbu“; rada „dejte obor na první místo“; poměr přihlášek na místo jako první údaj; osobní šance; vlastní body na stránce oboru; snazší obory v okolí; termín DOD z InspIS; absence z inspekce; prázdná karta maturity; hodnoticí barvy |
 
-## 9. Zvážené nepoužité sloupce
+## 10. Zvážené nepoužité sloupce
 
 Prošel jsem oddíl 3 soupisu zdrojů; rozhodnutí pro tuto stránku:
 
@@ -264,7 +291,7 @@ Prošel jsem oddíl 3 soupisu zdrojů; rozhodnutí pro tuto stránku:
 |---|---|
 | Web a kontakt školy (rejstřík CSV, `WWW`) | **použít**: odkaz na kritéria; do datové vrstvy ho přivést (dnes v ní není) |
 | Dobíhající obor (rejstřík, `dobihajiciObor`) | **použít**, jakmile se dostane do datové vrstvy: varování „škola obor dobíhá“ patří do odpovědi 2 |
-| Přijatí podle priority | **použít** u otázky 3 jako údaj o spolužácích, ne jako rada k pořadí |
+| Přijatí podle priority | **zavrhnout na stránce oboru** (revize, oddíl 7): čte se jako výhoda první volby; data zůstávají v souhrnech |
 | Výsledky všech uchazečů | **použít** průměrné umístění uchazečů jako srovnání u úrovně spolužáků |
 | `hard_facts.support_services` | **použít**, otázka 3 |
 | Maturitní výsledky | **odložit**, import |
@@ -276,7 +303,7 @@ Prošel jsem oddíl 3 soupisu zdrojů; rozhodnutí pro tuto stránku:
 | Data uchazečů 2. kola | **zavrhnout**: jen 133 oborů s aspoň deseti přijatými |
 | Důvod nepřijetí jednotlivce, AKKO platnost, ředitel | **zavrhnout**: duplicitní, bez vypovídací hodnoty pro rodiče, osobní údaj |
 
-## 10. Otevřené otázky k rozhodnutí
+## 11. Otevřené otázky k rozhodnutí
 
 1. Mají věty odpovědi generovat pevné šablony (navrhuji), nebo je psát redakce pro nejnavštěvovanější obory?
 2. Přivést web školy a dobíhající obor do datové vrstvy v téže dávce jako grafy (P7)?
@@ -286,4 +313,5 @@ Prošel jsem oddíl 3 soupisu zdrojů; rozhodnutí pro tuto stránku:
 
 | Verze | Změna |
 |---|---|
+| 1.1 | Revize po zpětné vazbě: slovní verdikt obtížnosti z podílu přijatých ze soutěžících, graf „Kolik soutěžících se dostalo“ místo grafu priorit, srovnání skupiny ve stejné veličině. |
 | 1.0 | Pět kol návrhu vrstev stránky oboru: tři otázky, odpověď nad důkazy, stavy nabídky podle výsledku 1. kola, vzhled a ovládání; souhrn rozhodnutí a zvážené nepoužité sloupce. |

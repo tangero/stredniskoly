@@ -136,7 +136,9 @@
         "Přijatí podle priority",
         "Vzdali se přijetí",
         "Průměrné percentilové umístění přijatých",
-        "Průměrné percentilové umístění uchazečů"
+        "Průměrné percentilové umístění uchazečů",
+        "Podíl přijatých ze soutěžících",
+        "Obtížnost přijetí slovy"
       ],
       "aktualizace": {
         "zdroj": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ{rok}_kolo1_skolobory_vysledky.xlsx",

@@ -60,7 +60,7 @@ Každý graf odpovídá na jednu otázku, má tabulkový ekvivalent, rok a zdroj
 | Graf | Otázka | Forma | Data | Ve slovníku |
 |---|---|---|---|---|
 | Dlaždice | Jak je na tom obor letos a oproti loňsku | 4 dlaždice s hodnotou a změnou | tlak prvních voleb, přihlášky na místo, nepřijatí kvůli kapacitě, naplněnost | ano; změna mezi ročníky nově |
-| Zájem o obor po letech | Roste, nebo klesá zájem | skládaný sloupec přihlášek podle priority, čárka kapacity, rok bez dat jako prázdný rámeček | `KAPACITA`, `PŘIHLÁŠKY – PRIORITA 1–5` | ano |
+| ~~Zájem o obor po letech~~ → **Kolik soutěžících se dostalo** | Jak těžké bylo se dostat a jak se to mění | přijatí a nevešlí po letech na jedné ose; graf přihlášek podle priority zavržen, protože svádí ke čtení „kdo se dostal“ ([vrstvy stránky, oddíl 7](vrstvy-stranky-oboru-2027.md)) | `PŘIJATÍ`, `NEPŘIJATI – NEDOSTATEČNÁ KAPACITA` | ano, podíl přijatých ze soutěžících |
 | Jak těžké je se dostat proti podobným oborům | Kde obor stojí v celé zemi | tečkový graf skupiny, zvýrazněný obor, loňská poloha kroužkem, medián a hranice 1× | tlak prvních voleb, rozdělení ve srovnatelné skupině | tlak ano; percentil ve skupině nově |
 | Jak dopadly přihlášky | Nevejdu se, nebo jde o pojistku | skládaný pruh po letech | `PŘIJATÍ`, `NEPŘIJATI` – 4 důvody | ano |
 | Kdo se dostal podle priority | Berou hlavně ty, kdo je chtěli nejvíc | skládaný pruh po letech | `PŘIJATÍ – PRIORITA 1–5` | nově |

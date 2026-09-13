@@ -91,5 +91,43 @@
    "do_2_bodu": 2182,
    "median_rozdilu": 0.5
   }
+ },
+ "podil_prijatych_ze_soutezicich": {
+  "2025": {
+   "zarazeni": {
+    "kapacita_nerozhodovala": 1281,
+    "stredne_tezke": 511,
+    "tezke": 352,
+    "velmi_tezke": 167,
+    "vetsina_uspela": 747,
+    "null": 1
+   },
+   "ctvrtiny_podilu_u_nabidek_s_odmitnutymi": [
+    0.47,
+    0.62,
+    0.77
+   ]
+  },
+  "2026": {
+   "zarazeni": {
+    "vetsina_uspela": 739,
+    "kapacita_nerozhodovala": 1355,
+    "stredne_tezke": 476,
+    "velmi_tezke": 168,
+    "tezke": 353
+   },
+   "ctvrtiny_podilu_u_nabidek_s_odmitnutymi": [
+    0.46,
+    0.61,
+    0.78
+   ]
+  },
+  "2025-2026": {
+   "n_aspon_20_soutezicich_v_obou_letech": 1868,
+   "korelace": 0.723,
+   "median_abs_zmeny_pb": 9.4,
+   "stejne_zarazeni_pct": 48.6,
+   "nejvys_o_stupen_pct": 90.2
+  }
  }
 }

@@ -105,9 +105,13 @@ def nacti_rocnik(soubor: Path, rok: int) -> dict[str, dict]:
         klic = make_key(str(r["REDIZO"]), r["KKOV"], r.get("ZAMĚŘENÍ OBORU") or "")
         if klic in nabidky:
             raise ValueError(f"{soubor.name}: duplicitní nabídka {klic}")
+        z = zaznam(r)
         nabidky[klic] = {
             "redizo": str(r["REDIZO"]), "kkov": r["KKOV"], "zamereni": r.get("ZAMĚŘENÍ OBORU") or "",
-            "skupina": f"{r['TYP ŠKOLY']}_{r['DÉLKA STUDIA']}", **zaznam(r),
+            "skupina": f"{r['TYP ŠKOLY']}_{r['DÉLKA STUDIA']}", **z,
+            "podil_prijatych_ze_soutezicich": round(z["prijati"] / (z["prijati"] + z["capacity_rejected"]), 3)
+            if z["prijati"] is not None and z["capacity_rejected"] is not None and z["prijati"] + z["capacity_rejected"] > 0 else None,
+            "zarazeni_obtiznosti": zarazeni_obtiznosti(z),
         }
     return nabidky
 
@@ -177,6 +181,50 @@ def shoda_s_jinymi_zdroji(rocniky: dict[int, dict]) -> dict:
             "n": len(rozdily), "do_2_bodu": sum(1 for d in rozdily if d <= 2),
             "median_rozdilu": round(statistics.median(rozdily), 2) if rozdily else None,
         }
+    return out
+
+
+def zarazeni_obtiznosti(r: dict) -> str | None:
+    """Slovní zařazení obtížnosti přijetí (slovník ukazatelů): podle podílu přijatých ze soutěžících."""
+    prijati, nevesli = r.get("prijati"), r.get("capacity_rejected")
+    if prijati is None or nevesli is None:
+        return None
+    if nevesli == 0:
+        return "kapacita_nerozhodovala"
+    podil = prijati / (prijati + nevesli)
+    return "velmi_tezke" if podil < 1 / 3 else "tezke" if podil < 1 / 2 else "stredne_tezke" if podil < 2 / 3 else "vetsina_uspela"
+
+
+def doklad_podilu(rocniky: dict[int, dict], nabidky: dict[str, dict], roky: list[int]) -> dict:
+    """Rozdělení a stabilita podílu přijatých ze soutěžících a jeho slovního zařazení."""
+    out = {}
+    for rok in roky:
+        kat = Counter(zarazeni_obtiznosti(v) for v in rocniky[rok].values())
+        podily = [v["prijati"] / (v["prijati"] + v["capacity_rejected"]) for v in rocniky[rok].values()
+                  if v.get("capacity_rejected") and v.get("prijati") is not None]
+        out[str(rok)] = {"zarazeni": dict(kat), "ctvrtiny_podilu_u_nabidek_s_odmitnutymi": ctvrtiny(podily)}
+    poradi = ["kapacita_nerozhodovala", "vetsina_uspela", "stredne_tezke", "tezke", "velmi_tezke"]
+    for i, rok in enumerate(roky[1:], start=1):
+        pred = str(roky[i - 1]); klic = f"{pred}-{rok}"
+        pary = []
+        for v in nabidky.values():
+            a_, b_ = v.get(pred), v.get(str(rok))
+            if not a_ or not b_ or klic not in v.get("parovani", {}):
+                continue
+            if None in (a_["prijati"], a_["capacity_rejected"], b_["prijati"], b_["capacity_rejected"]):
+                continue
+            sa, sb = a_["prijati"] + a_["capacity_rejected"], b_["prijati"] + b_["capacity_rejected"]
+            if sa >= 20 and sb >= 20:
+                pary.append((a_["prijati"] / sa, b_["prijati"] / sb, zarazeni_obtiznosti(a_), zarazeni_obtiznosti(b_)))
+        if len(pary) >= 3:
+            xa, xb = [x[0] for x in pary], [x[1] for x in pary]
+            out[klic] = {
+                "n_aspon_20_soutezicich_v_obou_letech": len(pary),
+                "korelace": round(statistics.correlation(xa, xb), 3),
+                "median_abs_zmeny_pb": round(100 * statistics.median(abs(a - b) for a, b in zip(xa, xb)), 1),
+                "stejne_zarazeni_pct": round(100 * sum(1 for x in pary if x[2] == x[3]) / len(pary), 1),
+                "nejvys_o_stupen_pct": round(100 * sum(1 for x in pary if abs(poradi.index(x[2]) - poradi.index(x[3])) <= 1) / len(pary), 1),
+            }
     return out
 
 
@@ -288,7 +336,8 @@ def main() -> None:
         "nabidky": kompaktni,
     }
     doklad = {"zdroj_skriptu": "scripts/build-souhrny-kolo1.py", "rocniky": zdroje, "parovani": doklad_parovani,
-              "stabilita": stabilita, "shoda_s_jinymi_zdroji": shoda_s_jinymi_zdroji(rocniky)}
+              "stabilita": stabilita, "shoda_s_jinymi_zdroji": shoda_s_jinymi_zdroji(rocniky),
+              "podil_prijatych_ze_soutezicich": doklad_podilu(rocniky, nabidky, roky)}
 
     text = json.dumps(vystup, ensure_ascii=False, separators=(",", ":"), allow_nan=False) + "\n"
     a.vystup.write_text(text, encoding="utf-8")
