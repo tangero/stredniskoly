@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.16 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.17 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -360,6 +360,20 @@ Formulace na stránce: „vyšší nebo stejný jako u 94 ze 100 osmiletých gym
 
 **Neříká nic o kvalitě.** Popisuje polohu v rozdělení jednoho ukazatele v jednom roce.
 
+### Pořadí v kraji
+Pořadí nabídky mezi nabídkami téže srovnatelné skupiny (typ školy a délka studia) ve stejném kraji a ročníku. Praha je samostatný kraj. Počítá se ze souhrnů 1. kola ve `src/lib/souhrny-kolo1.ts` podle dvou ukazatelů a nikdy z jejich kombinace:
+
+| Pořadí | Ukazatel | Směr | Stabilita 2025→2026 |
+|---|---|---|---|
+| **podle zájmu** | tlak prvních voleb | vyšší hodnota = vyšší pořadí | ve stejné třetině pořadí 66,4 %, medián posunu 5 míst |
+| **podle výsledků přijatých** | průměrné percentilové umístění přijatých | vyšší hodnota = vyšší pořadí | ve stejné třetině pořadí 68,1 %, medián posunu 5 míst |
+
+Stabilita měřena na 2 757 a 2 723 spárovaných nabídkách ve skupinách s aspoň 10 nabídkami v obou letech. Shodná hodnota dává shodné pořadí („2.–3.“).
+
+**Nezobrazuje se ve skupině s méně než 10 nabídkami** (19 z 96 skupin kraj × typ v roce 2026, například osmiletá gymnázia v Karlovarském kraji: 7). **Podle obtížnosti přijetí se neřadí**: pořadí podle podílu přijatých ze soutěžících uchazečů se mezi roky přehazuje, u osmiletého gymnázia J. S. Machara ze 7. na 17. místo z 32.
+
+Na stránce vždy s ukazatelem, skupinou, krajem, rokem a předchozím rokem: „2. z 32 osmiletých gymnázií ve Středočeském kraji podle výsledků přijatých (2026; v roce 2025 také 2.)“. **Neříká, která škola je lepší.** Pořadí podle výsledků přijatých popisuje, s jakými výsledky sem uchazeči přicházejí, ne kvalitu výuky. Hranice kraje neodpovídá tomu, kam se uchazeči skutečně hlásí (u Machara je zhruba polovina oborů výš a níž na přihlášce v Praze), proto pořadí doplňuje, ale nenahrazuje obory výš a níž na přihlášce.
+
 ### Změna mezi ročníky
 Rozdíl hodnoty ukazatele v zobrazeném ročníku a v předchozím ročníku téže nabídky. Počítá se jen u nabídek spárovaných podle `docs/grafy-skoly-a-oboru-2027.md`, pravidlo 7: shodný klíč nabídky, nebo jediná nabídka téže školy a oboru v obou ročnících. Způsob párování nese pole `parovani`. Mezi roky 2025 a 2026 je spárováno 2 858 z 3 091 nabídek, z toho 543 jako jediná nabídka téže školy a oboru.
 
@@ -437,6 +451,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.17 | Doplněno pořadí v kraji podle zájmu a podle výsledků přijatých, s prahem 10 nabídek a doklady stability. |
 | 1.16 | Odkaz na slovník pojmů; pojem „soutěžící uchazeči“ pro texty stránek. |
 | 1.15 | Vysvětleno nesplnění podmínek podle metodiky MŠMT; doplněna odvozená hranice úspěšnosti, výsledek uchazečů o obor a obory výš a níž na přihlášce. |
 | 1.14 | Doplněn podíl přijatých ze soutěžících a obtížnost přijetí slovy, s rozdělením a stabilitou mezi ročníky. |

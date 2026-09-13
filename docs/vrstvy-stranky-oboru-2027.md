@@ -1,6 +1,6 @@
 # Stránka oboru: vrstvy podle otázek uchazeče
 
-Verze 1.3 · 13. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, tři revize po zpětné vazbě v oddílu 7, výsledná podoba v oddílu 8. Pojmy v textech stránky podle [slovníku pojmů](slovnik-pojmu.md).
+Verze 1.4 · 13. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, čtyři revize po zpětné vazbě v oddílu 7, výsledná podoba v oddílu 8. Pojmy v textech stránky podle [slovníku pojmů](slovnik-pojmu.md).
 
 Navazuje na schválený dokument [Grafy na stránce školy a oboru](grafy-skoly-a-oboru-2027.md), který určuje, **jaké grafy máme a jak se kreslí**. Tento dokument určuje, **v jakém pořadí a v jaké podobě je stránka nabídne**, aby odpověděla na tři otázky:
 
@@ -283,6 +283,22 @@ Oprava: odpověď 2 říká opak a je to užitečná informace, protože o prior
 | „nesplnili podmínky“, „podmínky školy“ | **nahradit** „nedosáhli požadavku školy“, „kritéria školy“ | viz revize 7.2; sjednoceno ve slovníku pojmů |
 | Slovník pojmů | **založit** `docs/slovnik-pojmu.md`, povinný podle CLAUDE.md | jeden zdroj pojmů pro všechny stránky; odlišný od slovníku ukazatelů, který drží názvy v datech |
 
+### 7.4 Čtvrtá revize: pořadí v kraji
+
+**Zpětná vazba zadavatele:** žebříček v rámci kraje (u Prahy v rámci Prahy) nevadí.
+
+**Rozhodnutí.**
+
+| Prvek | Rozhodnutí | Argument |
+|---|---|---|
+| Pořadí v kraji mezi obory stejného typu a délky | **použít** | rodina vybírá v kraji; 96 skupin s mediánem 21 nabídek |
+| Pořadí podle zájmu (tlak prvních voleb) a podle výsledků přijatých (průměrné percentilové umístění) | **použít obě, zvlášť** | stabilní: ve stejné třetině pořadí 66–68 %, Machar 8leté 4. a 2. z 32 v obou letech |
+| Pořadí podle obtížnosti přijetí | **zavrhnout** | Machar 8leté 7. → 17. z 32 mezi roky; obtížnost zůstává slovní |
+| Souhrnné pořadí nebo pořadí celé školy | **zavrhnout** | kombinace ukazatelů nemá doložený výpočet; škola má obory různého typu |
+| Pořadí ve skupině pod 10 nabídek | **zavrhnout**, jen seznam | 19 z 96 skupin; pořadí „3. ze 7“ vypadá jako hodnocení |
+| Umístění na stránce | **otázka 1** (podle zájmu) a **otázka 3** (podle výsledků přijatých), s mini grafem skupiny v kraji | každé pořadí odpovídá na jinou otázku |
+| Obory výš a níž na přihlášce | **ponechat vedle pořadí** | hranice kraje neodpovídá tomu, kam se uchazeči hlásí; u Machara zhruba polovina v Praze |
+
 ## 8. Výsledná podoba
 
 ```
@@ -356,6 +372,7 @@ Prošel jsem oddíl 3 soupisu zdrojů; rozhodnutí pro tuto stránku:
 
 | Verze | Změna |
 |---|---|
+| 1.4 | Čtvrtá revize: pořadí v kraji podle zájmu a podle výsledků přijatých, práh 10 nabídek, bez pořadí podle obtížnosti. |
 | 1.3 | Třetí revize: „soutěžící uchazeči“ s vysvětlením při prvním výskytu v bloku, slovník pojmů. |
 | 1.2 | Druhá revize: „nesplnili podmínky“ vysvětleno podle metodiky MŠMT a nahrazeno „nedosáhli požadavku školy“ s odvozenou hranicí úspěšnosti; přidán výsledek uchazečů (sem, výš, níž, nikam) a obory výš a níž na přihlášce s obtížností přijetí. |
 | 1.1 | Revize po zpětné vazbě: slovní verdikt obtížnosti z podílu přijatých ze soutěžících, graf „Kolik soutěžících se dostalo“ místo grafu priorit, srovnání skupiny ve stejné veličině. |

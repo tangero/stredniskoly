@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.0 · 13. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.1 · 13. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -48,6 +48,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **tlak prvních voleb** | kolik uchazečů chtělo obor jako 1. volbu na jedno místo | „kolik uchazečů chtělo obor jako 1. volbu na jedno místo“ | poptávka, převis |
 | **přihlášky na místo** | počet přihlášek děleno počtem míst; konkurenci nadsazuje | „jeden uchazeč podává víc přihlášek, proto toto číslo konkurenci nadsazuje“ | uchazečů na místo |
 | **spolužáci** | přijatí na obor, u otázky „jak se tu studuje“ | není potřeba | třída, kolektiv |
+| **pořadí v kraji podle zájmu**, **pořadí v kraji podle výsledků přijatých** | pořadí oboru mezi obory stejného typu a délky v kraji (Praha samostatně) | „2. z 32 osmiletých gymnázií ve Středočeském kraji podle výsledků přijatých“; vždy s rokem | žebříček, nejlepší, top, hodnocení školy |
 
 ## 4. Slova, která se nepoužívají vůbec
 
@@ -56,11 +57,12 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | loni, letos, letošní | nejednoznačné pro rodinu hlásící se na příští rok | výslovný rok z registru |
 | šance (jako hodnota) | nezobrazujeme osobní šance ani predikce | „jak dopadli uchazeči v roce …“; slovo „šance“ jen v záporu: „není to šance konkrétního uchazeče“, „šanci nemění“ |
 | hranice přijetí | nikdo ji nezveřejňuje (slovník ukazatelů) | nejnižší výsledek přijatých, hranice úspěšnosti |
-| žebříček, nejlepší škola | web školy neřadí podle kvality | srovnání se srovnatelnou skupinou |
+| žebříček, nejlepší škola | web neřadí školy podle kvality; řadí jen obory stejného typu v kraji podle zájmu nebo výsledků přijatých | pořadí v kraji podle zájmu, pořadí v kraji podle výsledků přijatých |
 | obtížnost studia, kvalita školy (z přijímacích dat) | přijímací data popisují vstup, ne studium | spolužáci přicházejí s výsledky kolem …; inspekce |
 
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.1 | Pořadí v kraji podle zájmu a podle výsledků přijatých jako povolený pojem; „žebříček“ zůstává zakázaný. |
 | 1.0 | Založení: pojmy pro uchazeče a výsledek přijímání (včetně „soutěžící uchazeči“ a „nedosáhli požadavku školy“), přihlášku, výsledky a obtížnost; pravidlo vysvětlení při prvním výskytu v každém bloku; zakázaná slova. |

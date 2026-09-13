@@ -761,6 +761,11 @@
     "Nevypsané 2. kolo u nenaplněného oboru": [
       "cermat-kolo2-agregaty",
       "cermat-vysledky"
+    ],
+    "Pořadí v kraji": [
+      "cermat-vysledky",
+      "cermat-prihlasky",
+      "cermat-kapacity"
     ]
   },
   "ukazatele_mimo_registr": {
