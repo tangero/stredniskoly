@@ -76,7 +76,8 @@ jobs:
           fi
 
       - name: Štítek pro issue
-        if: steps.krok.outputs.krok != 'test'
+        # Nanečisto se do repozitáře nic nezapisuje, ani štítek.
+        if: steps.krok.outputs.krok != 'test' && steps.krok.outputs.nanecisto == ''
         run: |
           gh label create nova-data --color 1b4d7a --description "Datová linka, nová data k převzetí" --force
 
