@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.0 · 13. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.1 · 13. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -30,9 +30,16 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | Česká školní inspekce, seznam | opendata.csicr.cz | 9 564 škol | REDIZO | snímky s manifestem |
 | Inspekční zprávy, extrakce | vlastní zpracování zpráv ČŠI | 849 škol | REDIZO | při nové zprávě |
 | INSPIS, profily škol | portál ČŠI | 1 180 škol | REDIZO | ručně |
+| CERMAT, maturitní výsledky | data.cermat.cz, XLSX | jaro 2015 až 2026, stav po podzimu do 2025 | REDIZO, volitelně + SMO16 | ročně |
+| CERMAT, školní agregáty JPZ 2017–2023 | data.cermat.cz, XLSX | 7 ročníků | REDIZO + oborová skupina | uzavřená řada |
 | Dopravní data | PID, GTFS ČR, jízdní řády | celá ČR | zastávka a spoj | podle vydání |
 
-**Co v repozitáři není:** soubory `PZ2026_kolo1_skolobory_vysledky.xlsx` a `PZ2025_kolo1_skolobory_vysledky.xlsx` se stahují ručně a předávají skriptu přes `--input-dir`. V repozitáři zůstává jen odvozený `public/cermat_results_2026.json` a otisk sha256 v `public/cermat_results_meta.json`.
+**Co v repozitáři není.** Zdroj patří do soupisu i tehdy, když jeho soubor na disku neleží. Takových je několik:
+
+- `PZ2026_kolo1_skolobory_vysledky.xlsx` a `PZ2025_kolo1_skolobory_vysledky.xlsx` se stahují ručně a předávají skriptu přes `--input-dir`. V repozitáři zůstává odvozený `public/cermat_results_2026.json` a otisk sha256 v `public/cermat_results_meta.json`.
+- **Maturitní výsledky** (oddíl 2.11) a **školní agregáty JPZ 2017–2023** (oddíl 2.12) staženy nejsou vůbec. Jejich adresy, kontrolní součty a rozměry ověřuje [podklad oponentury](podklady/oponentura-2027-r1.json) z 11. 9. 2026.
+
+První verze tohoto soupisu obě chybějící skupiny vynechala, protože vznikala procházením adresáře `data/`. To je táž chyba v menším: inventura podle toho, co leží po ruce, místo podle toho, jaké zdroje projekt má.
 
 ## 2. Zdroje sloupec po sloupci
 
@@ -117,7 +124,9 @@ Dvanáct souborů, 390 MB, dohromady **zcela nepoužité**. Jeden řádek je jed
 | `k1.1` až `k16.x` | odpovědi na jednotlivé položky | žádná přímá | **ne** a nemá smysl |
 | `b1` až `b16.x` | body za jednotlivé úlohy | žádná přímá | **ne** a nemá smysl |
 
-Podrobnost jednotlivých úloh rodiči nepomůže. Zajímavé je `dt_body` u **všech uchazečů**, ne jen přijatých; to je jediný zdroj, ze kterého jde sestavit rozdělení výsledků těch, kdo se na obor hlásili.
+Podrobnost jednotlivých úloh rodiči nepomůže přímo, ale součty bodů po úlohách ano: jsou jediným zdrojem o tom, **v čem byli silní ti, kdo se na obor hlásili**.
+
+Rozdělení výsledků všech uchazečů o obor tenhle soubor **není** jediný způsob, jak získat. Data uchazečů nesou `c_m_procentni_skor` u 75 % řádků, tedy u všech, kdo jednotnou zkoušku konali. Položková data proti nim přidávají tři věci: body po jednotlivých úlohách, oddělené termíny místo lepšího výsledku, a hrubé body místo procentního skóru.
 
 ### 2.4 Rejstřík škol MŠMT
 
@@ -200,13 +209,72 @@ Otázka rodiče je jediná: **jak dlouho bude dítě dojíždět**. Odpovídáme
 | `offer_mapping_2026.json` | párování nabídek | `build-offer-mapping-2026.py` | |
 | `cohort_meta.json` | normalizace kohort | ruční | |
 
+### 2.11 CERMAT, maturitní výsledky
+
+Ověřeno na `MZ2026j_SC_skolobory.xlsx`, 13. 9. 2026: 2 199 369 bajtů, kontrolní součet sha256 `6a814e0a…`, shodný s auditem. Listy `2026` a `vysvetlivky`, dvě řádky hlavičky, 98 sloupců, 3 739 řádků. **Stažený v repozitáři není.**
+
+Soubor obsahuje osm úrovní agregace ve sloupci `TŘÍDĚNÍ`:
+
+| Třídění | Řádků | K čemu |
+|---|---|---|
+| `total` | 1 | celostátní referenční hodnota |
+| `typ_skoly`, `smo16` | 5 a 16 | referenční rozdělení pro srovnatelnou skupinu |
+| `kraj`, `kraj_typ_skoly`, `kraj_smo16` | 14, 70 a 222 | krajské srovnání |
+| `redizo` | 1 112 | škola jako celek |
+| `redizo_smo16` | 2 297 | **škola a skupina oborů, nejjemnější úroveň** |
+
+Prvních 13 sloupců je identifikace: `id_row`, `TŘÍDĚNÍ`, `ROK`, `REDIZO`, `NÁZEV ŠKOLY`, `ADRESA ŠKOLY`, `TYP ŠKOLY`, `SMO16`, `KRAJ` a jejich názvy. U agregátních řádků je v `REDIZO` písmeno `x`.
+
+Zbylých 85 sloupců je osm bloků se stejnou stavbou: společná část celkem, čeština, matematika, angličtina, němčina, ruština, francouzština, španělština.
+
+| Sloupec v bloku | Obsah | Otázka rodiče | Používáme |
+|---|---|---|---|
+| `PŘIHLÁŠENI`, `KONALI`, `NEKONALI` | velikost populace | z kolika lidí to je | **ne** |
+| `USPĚLI`, `NEUSPĚLI` | počty | kolik jich maturitu udělalo | **ne** |
+| `PODÍL ÚSPĚŠNÝCH (%)` | úspěšní z přihlášených | jaká je šance maturitu udělat | **ne** |
+| `ČISTÁ NEÚSPĚŠNOST (%)` | neuspěli z konajících | kolik jich u zkoušky propadlo | **ne** |
+| `HRUBÁ NEÚSPĚŠNOST (%)` | neuspěli nebo nekonali z přihlášených | kolik jich maturitu nedokončilo | **ne** |
+| `NEÚČAST (%)` | nekonali z přihlášených | kolik jich k maturitě vůbec nešlo | **ne** |
+| `PRŮMĚRNÝ % SKÓR` | průměr z didaktického testu | jak dobře tu píší testy | **ne** |
+| `SMĚRODATNÁ ODCHYLKA % SKÓRU` | rozptyl výsledků | táhne škola všechny, nebo jen špičku | **ne** |
+| `PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ` | umístění proti celé zemi | jak si stojí proti ostatním | **ne** |
+| `PODÍL VOLBY PŘEDMĚTU (%)` | u druhé povinné zkoušky | volí se tu matematika, nebo jazyk | **ne** |
+
+Rozdíl mezi čistou a hrubou neúspěšností je zásadní a list `vysvetlivky` ho definuje. Čistá počítá z konajících, hrubá z přihlášených a započítává i ty, kdo ke zkoušce nešli. Škola může mít výbornou čistou neúspěšnost proto, že slabé žáky ke zkoušce nepustí.
+
+**Napojení na náš katalog je přímé.** Kódy `SMO16` jsou tytéž, jaké nese sloupec `SKUPINA OBORŮ (16)` v agregátech JPZ: GY8, GY6, GY4, LYC, ST1, ST2, SEK, SHP, SHU, SZE, SZD, SUM, UTE, UOS, NTE, NOS. Zkouška napojení z 13. 9. 2026 dopadla takto:
+
+| Výsledek | Nabídek 2026 |
+|---|---|
+| Spárováno na úrovni škola a skupina oborů | 2 782 |
+| Jen agregát za celou školu | 240 |
+| Škola v maturitních datech není | 69 |
+
+Pro 2 782 z 3 091 nabídek tedy existuje maturitní výsledek na úrovni, kterou lze u oboru poctivě zobrazit. Návrh zpracování, deset přejímacích podmínek a rozbor rizik jsou v [maturitní výsledky a kvalita školy](maturitni-vysledky-a-kvalita-skoly-2027.md); slovník vede názvy polí jako kontrakt v oddílu 5.
+
+**Co tenhle zdroj neumí:** týká se jen společné části, tedy didaktických testů. Neobsahuje profilovou část, obhajoby, praktické zkoušky ani uplatnění absolventů. `SMO16` není `KKOV`, takže u školy s více obory v jedné skupině je výsledek společný. A vysoký výsledek může být důsledkem toho, koho škola přijala, ne toho, jak učí.
+
+### 2.12 CERMAT, školní agregáty JPZ 2017–2023
+
+Sedm souborů `JPZ{rok}_skoly-skolobory_vysledky.xlsx`, 18 až 24 sloupců, zhruba 3 300 řádků ročně, kolem 1 070 škol. **Stažené v repozitáři nejsou.** Adresy a kontrolní součty jsou v [podkladu oponentury](podklady/oponentura-2027-r1.json).
+
+Sloupce: identifikace školy a oborové skupiny, `ROČNÍK`, adresa, kraj, zřizovatel, a pak dvakrát blok `PŘIHLÁŠENI`, `KONALI`, `NEKONALI`, `PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ`, `SMĚRODATNÁ ODCHYLKA` zvlášť pro češtinu a matematiku.
+
+Otázka rodiče: **jak dlouho už je tahle škola žádaná**. Je to jediný zdroj, ze kterého jde sestavit řadu vstupní úrovně školy delší než dva roky. Schéma se mezi ročníky mění, takže se musí adaptovat a ověřit zvlášť.
+
+Nepoužíváme.
+
 ## 3. Sloupce, které nepoužíváme
 
 Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to dalo rodiči.
 
 | Co leží nevyužité | Kde | Na co by to bylo | Proč to zatím nepoužíváme |
 |---|---|---|---|
-| Výsledek testu u **všech uchazečů**, nejen přijatých | položková data, `dt_body` | „S 62 body byl loni v polovině těch, kdo se sem hlásili.“ Jediný způsob, jak dát dítěti vlastní číslo do kontextu | soubory nikdo nezpracoval |
+| **Celé maturitní výsledky** | `MZ{rok}j_SC_skolobory.xlsx` | „Maturitu tu loni udělalo 100 % žáků, v češtině jsou nad 80. percentilem.“ Jediná přímá odpověď na otázku, jaké jsou tu nároky. Spárovatelné u 2 782 z 3 091 nabídek | soubor není stažený, import nezačal |
+| Vstupní úroveň školy 2017 až 2023 | `JPZ{rok}_skoly-skolobory_vysledky.xlsx` | „Škola je dlouhodobě žádaná, není to výkyv jednoho roku.“ | soubory nejsou stažené |
+| Výsledek testu u **všech uchazečů**, nejen přijatých | data uchazečů, `c_m_procentni_skor`, vyplněno u 75 % řádků | „S 62 body byl loni v polovině těch, kdo se sem hlásili.“ Jediný způsob, jak dát dítěti vlastní číslo do kontextu | používáme jen přijaté, zbytek ignorujeme |
+| **Profil dovedností** uchazečů o obor | položková data, `b1` až `b16.x` | „Kdo se sem dostal, byl silný v porozumění textu.“ Jediný zdroj o tom, co obor vybírá | soubory nikdo nezpracoval |
+| Výsledky po termínech zvlášť | položková data, listy A až D | kontrola, zda jsou řádné termíny srovnatelně těžké | data uchazečů nesou jen lepší výsledek |
 | **Druhé kolo** přijímacího řízení | `PZ*_kolo2` | „Loni tu po prvním kole zbylo osm míst.“ U nenaplněných oborů je to zásadní | nikdy jsme se na ně nepodívali |
 | **Dobíhající obor** | rejstřík, `dobihajiciObor` | „Škola tenhle obor zavírá.“ Varování před podáním přihlášky | používá se jen v rešeršních skriptech |
 | **Web a kontakt školy** | rejstřík CSV, `WWW`, `Email 1`, `Telefon` | kam jít pro kritéria přijetí a termíny | v datové vrstvě vůbec není |
@@ -240,4 +308,5 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 
 | Verze | Změna |
 |---|---|
+| 1.1 | Doplněny maturitní výsledky a školní agregáty JPZ 2017–2023, tedy ověřené zdroje, které nejsou stažené v repozitáři. První verze je vynechala, protože vznikla procházením adresáře `data/`. |
 | 1.0 | První soupis. Vznikl po zjištění, že tři použitelné údaje ležely nepoužité ve zdrojích, které projekt už zpracovával. |
