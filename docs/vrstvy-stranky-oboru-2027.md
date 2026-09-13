@@ -1,6 +1,6 @@
 # Stránka oboru: vrstvy podle otázek uchazeče
 
-Verze 1.1 · 13. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, revize po zpětné vazbě v oddílu 7, výsledná podoba v oddílu 8.
+Verze 1.2 · 13. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, dvě revize po zpětné vazbě v oddílu 7, výsledná podoba v oddílu 8.
 
 Navazuje na schválený dokument [Grafy na stránce školy a oboru](grafy-skoly-a-oboru-2027.md), který určuje, **jaké grafy máme a jak se kreslí**. Tento dokument určuje, **v jakém pořadí a v jaké podobě je stránka nabídne**, aby odpověděla na tři otázky:
 
@@ -212,7 +212,9 @@ Oprava: odpověď 2 říká opak a je to užitečná informace, protože o prior
 | Věta „Pořadí na přihlášce šanci nemění“ v odpovědi 2 | **použít** | opravuje rozšířený mýtus, platí pro všechny nabídky, odkazuje na výklad algoritmu |
 | Přijatí podle priority u otázky 3 („kolik spolužáků sem chtělo nejvíc“) | **použít** | 3 076 nabídek; popisuje složení přijatých bez rady k taktice |
 
-## 7. Revize po zpětné vazbě: odpověď nebyla srozumitelná
+## 7. Revize po zpětné vazbě
+
+### 7.1 První revize: odpověď nebyla srozumitelná
 
 **Zpětná vazba zadavatele** k odpovědi z kola 5 u osmiletého gymnázia Machara: z věty „nevešlo se 82 uchazečů … na jedno místo připadlo 4,1 uchazeče … víc nebo stejně jako u 94 ze 100 … podmínky nesplnilo 85 z 233“ **nejde poznat, jestli je těžké se sem dostat**. Graf „Zájem po letech“ navíc svedl ke čtení „všichni, kdo si školu dali na první a druhé místo, se dostali“.
 
@@ -239,6 +241,34 @@ Oprava: odpověď 2 říká opak a je to užitečná informace, protože o prior
 - stav A, osmileté gymnázium: „**Dostat se sem je velmi těžké.** V 1. kole 2026 se ze 112 uchazečů, kteří splnili podmínky školy a o místo tu soutěžili, dostalo 30, tedy zhruba každý čtvrtý. V roce 2025: zhruba každý druhý, 29 z 67. Kromě toho 85 z 233 přihlášených nesplnilo podmínky školy.“
 - stav A, čtyřleté gymnázium: „**Dostala se většina uchazečů, kteří o místo soutěžili, ale ne všichni.** V 1. kole 2026 se z 44 … dostalo 30, tedy zhruba dva ze tří.“
 - stav C, technické lyceum: „**Místo bylo pro všechny, kdo splnili podmínky školy.** V 1. kole 2026 škola přijala 23 uchazečů na 30 míst a nikoho neodmítla kvůli kapacitě. Volná místa nabídla ve 2. kole (7).“
+
+### 7.2 Druhá revize: „nesplnili podmínky“ a obory výš a níž na přihlášce
+
+**Zpětná vazba zadavatele.**
+1. Výraz „nesplnili podmínky školy“ je nesrozumitelný a těch lidí je každý rok hodně. Udělali chybu v přihlášce?
+2. Stránka by měla ukázat obory, které uchazeči měli na přihlášce výš a níž, a porovnat obtížnost přijetí na ně.
+
+**Co říká metodika a data** (`docs/podklady/rozbor-podminek-a-poradi-2026.json`, `scripts/rozbor-podminek-a-poradi.py`):
+- Metodika MŠMT 2026/2027 dovoluje vylučující kritéria jen tam, kde to umožňuje předpis, typicky **hranici úspěšnosti** v jednotné, školní nebo talentové zkoušce nebo v celkovém hodnocení. Nesplnění kritérií není chyba v přihlášce; kdo na jednotnou zkoušku nepřišel, mezi nesplněné se nepočítá.
+- V roce 2026 nesplnilo podmínky 41 763 ze 424 353 přihlášek (9,8 %).
+- U 1 156 oborů s aspoň pěti nesplněnými a pěti soutěžícími data vysvětlí nesplnění hranicí ve slabším testu u 286 a v součtu u 187; u 683 rozhodovalo jiné kritérium.
+- **Ověřeno na kritériích školy:** osmileté gymnázium J. S. Machara vyhlásilo pro rok 2026, že uchazeč s méně než 20 body v kterémkoli testu nemůže být přijat. Data dávají nejvýš 19 bodů u nesplněných a nejméně 20 u soutěžících. Web školy navíc uvádí, že poslední přijatý v roce 2025 měl 65 bodů, stejně jako pásma přijetí.
+- **Kam se dostali uchazeči o osmileté gymnázium Machara 2026:** z 233 sem 30, výš 37, níž 25, **nikam 141**. Obory výš i níž byly až na jeden také „velmi těžké“. U čtyřletého gymnázia se nikam nedostali 4 z 94.
+
+**Rozhodnutí.**
+
+| Prvek | Rozhodnutí | Argument |
+|---|---|---|
+| Výraz „nesplnili podmínky školy“ | **nahradit** „nedosáhli požadavku školy“ | slovo „podmínky“ čte laik jako formální náležitosti přihlášky; metodika jde o kritéria, typicky hranici bodů |
+| Odvozená hranice úspěšnosti („podle výsledků to odpovídá minimu 20 bodů v každém testu“) | **použít**, jen kde ji data jednoznačně oddělí | 473 z 1 156 oborů; ověřeno proti kritériím Machara; vždy „podle výsledků to odpovídá“ a odkaz na kritéria, protože jde o odhad z jednoho ročníku |
+| Obecná věta u oborů, kde hranici data nevysvětlí | **použít** „například minima bodů, výsledku školní zkoušky nebo jiné podmínky z kritérií“ | 683 oborů; odkazuje čtenáře ke kritériím místo ticha |
+| Jak dopadli všichni, kdo se sem hlásili (sem / výš / níž / nikam) | **použít** jako první důkaz otázky 2 | odpovídá na skutečnou obavu rodiny, že nebude mít kam nastoupit; u Machara 141 z 233 nikam |
+| Obory výš a níž na přihlášce s obtížností přijetí | **použít** místo souběžných přihlášek bez směru | zadavatel; ukazuje, že alternativy uchazečů Machara byly stejně těžké; stejná veličina obtížnosti jako odpověď 1 |
+| Věta „pomůže mít na přihlášce i obor, kde v 1. kole místo bylo“ | **použít**, jen když se nikam nedostala aspoň čtvrtina uchazečů | je to jediná rada, kterou data podloží bez tvrzení o prioritě; pod čtvrtinou by strašila zbytečně |
+| Barevné štítky obtížnosti v tabulce | **zavrhnout**, štítky neutrální | kolo 5: barvy nehodnotí; text štítku nese význam |
+| Výběr „bezpečnějších“ škol do tabulky podle obtížnosti | **zavrhnout** | tabulka ukazuje skutečné volby uchazečů, ne doporučení; jinak by vznikl žebříček |
+
+**Rok dat.** Rozbor je z dat uchazečů 2026, která registr zatím nezobrazuje (sada `cermat-uchazeci-kolo1` ukazuje 2025). Prototyp je proto označuje rokem 2026; web je převezme až po přepnutí registru, do té doby z roku 2025.
 
 ## 8. Výsledná podoba
 
@@ -313,5 +343,6 @@ Prošel jsem oddíl 3 soupisu zdrojů; rozhodnutí pro tuto stránku:
 
 | Verze | Změna |
 |---|---|
+| 1.2 | Druhá revize: „nesplnili podmínky“ vysvětleno podle metodiky MŠMT a nahrazeno „nedosáhli požadavku školy“ s odvozenou hranicí úspěšnosti; přidán výsledek uchazečů (sem, výš, níž, nikam) a obory výš a níž na přihlášce s obtížností přijetí. |
 | 1.1 | Revize po zpětné vazbě: slovní verdikt obtížnosti z podílu přijatých ze soutěžících, graf „Kolik soutěžících se dostalo“ místo grafu priorit, srovnání skupiny ve stejné veličině. |
 | 1.0 | Pět kol návrhu vrstev stránky oboru: tři otázky, odpověď nad důkazy, stavy nabídky podle výsledku 1. kola, vzhled a ovládání; souhrn rozhodnutí a zvážené nepoužité sloupce. |

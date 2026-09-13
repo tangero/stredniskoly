@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.14 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.15 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -103,6 +103,31 @@ Uchazeči, kteří splnili podmínky, ale nevešli se. Pole `capacity_rejected`.
 
 ### Nepřijatí pro nesplnění podmínek
 Pole `conditions_not_met`. Odlišné od předchozího: tady nerozhodovala kapacita.
+
+**Co to znamená.** Podle [metodiky MŠMT k přijímacímu řízení 2026/2027](https://msmt.gov.cz/media/wp-content/uploads/2026/08/Metodika_prijimaci-rizeni_2026-2027.pdf) (oddíl o kritériích přijímání a oddíl Vyhodnocení výsledků prvního kola) smějí kritéria uchazeče vyloučit jen tam, kde to umožňuje předpis: nesplněná **hranice úspěšnosti** (v jednotné zkoušce, ve školní nebo talentové zkoušce, nebo v celkovém hodnocení), zdravotní způsobilost, doklady k pobytu, nedokončené předchozí vzdělávání. Takový uchazeč jde do seznamu bez pořadí s příznakem „nesplnil kritéria“. Kdo na jednotnou zkoušku nepřišel, dostane 0 bodů a mezi nesplněné podmínky se **nepočítá**. Nejde tedy o chybu v přihlášce; nedoložený doklad se podle metodiky projeví jen v hodnocení.
+
+Na stránce se neříká „nesplnili podmínky“, ale „nedosáhli požadavku školy“, a kde to jde, jakého (odvozená hranice úspěšnosti). V roce 2026 šlo o 41 763 ze 424 353 přihlášek, 9,8 %; u 10 859 z nich uchazeč výsledek jednotné zkoušky nemá (`docs/podklady/rozbor-podminek-a-poradi-2026.json`).
+
+### Odvozená hranice úspěšnosti
+Nejnižší výsledek jednotné zkoušky, pod kterým v datech uchazečů leží všichni, kdo nesplnili podmínky, a nad kterým všichni soutěžící. Zkouší se součet bodů a slabší z obou testů. Pole `odvozena_hranice` s typem `soucet`, `slabsi_test`, nebo `nevysvetleno_vysledkem_jpz`. Počítá `scripts/rozbor-podminek-a-poradi.py`.
+
+Počítá se jen u oborů s aspoň pěti nesplněnými s výsledkem a pěti soutěžícími. V roce 2026 z 1 156 takových oborů odpovídá hranici ve slabším testu 286, v součtu 187 a výsledkem zkoušky se nevysvětlí 683 (rozhodovala školní zkouška, prospěch nebo jiné kritérium).
+
+Ověřeno proti kritériím školy: osmileté gymnázium J. S. Machara stanovilo pro rok 2026 minimum 20 bodů v každém testu; data dávají nejvýše 19 bodů u nesplněných a nejméně 20 u soutěžících.
+
+**Je to odhad z jednoho ročníku, ne vyhlášené kritérium.** Na stránce se uvádí slovy „podle výsledků to odpovídá minimu X bodů ve slabším testu“ a vždy s odkazem na kritéria školy. Hranice se může mezi roky změnit; nová kritéria vyhlašuje škola.
+
+### Výsledek uchazečů o obor
+Kam se v 1. kole dostali všichni, kdo měli obor na přihlášce: sem, na obor výš na přihlášce, na obor níž, nebo nikam. Zdroj: data o uchazečích. Pole `vysledek_uchazecu`.
+
+Osmileté gymnázium J. S. Machara 2026: z 233 uchazečů 30 sem, 37 výš, 25 níž, **141 nikam**. Čtyřleté gymnázium téže školy: z 94 uchazečů nikam 4.
+
+**Neříká, jak dopadne konkrétní uchazeč** a nesmí se číst jako rada k pořadí; priorita šanci na přijetí nemění. Popisuje, jak často se uchazečům o tento obor nepodařilo najít místo v 1. kole vůbec, což je užitečný údaj pro sestavení celé přihlášky.
+
+### Obory výš a níž na přihlášce
+Souběžné přihlášky rozdělené podle toho, zda uchazeč měl druhý obor na přihlášce před tímto oborem, nebo za ním, s obtížností přijetí slovy u každého z nich. Pole `obory_vys`, `obory_niz`; stejné meze jako souběžné přihlášky, nezveřejňuje se pod 10 uchazeči.
+
+Pořadí na přihlášce vyjadřuje, kam uchazeč chce víc, ne jak těžký obor je; u Machara se tatáž gymnázia objevují výš i níž. Srovnání obtížnosti je popis jednoho ročníku, ne žebříček.
 
 ### Přijati na vyšší prioritu
 Uchazeči, kteří na tento obor přijati nebyli, protože byli přijati na obor uvedený na přihlášce výš. Zdroj: CERMAT, `NEPŘIJATI - PŘIJAT NA VYŠŠÍ PRIORITU`. Pole `higher_priority`, v datech uchazečů `prijato_na_vyssi_prioritu`.
@@ -408,6 +433,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.15 | Vysvětleno nesplnění podmínek podle metodiky MŠMT; doplněna odvozená hranice úspěšnosti, výsledek uchazečů o obor a obory výš a níž na přihlášce. |
 | 1.14 | Doplněn podíl přijatých ze soutěžících a obtížnost přijetí slovy, s rozdělením a stabilitou mezi ročníky. |
 | 1.13 | Doplněny přijatí podle priority, vzdali se přijetí, průměrné percentilové umístění přijatých a uchazečů, percentil ve srovnatelné skupině a změna mezi ročníky ze souhrnů 1. kola (`public/souhrny_kolo1.json`). Ověřeno, že historický průměr 2025 odpovídá průměru přijatých, a doplněna oficiální varianta percentilu nejnižšího přijatého. |
 | 1.12 | Čísla pásem přijetí, míry *rozhodl test*, pásma nejistoty, hustoty u hranice a percentilu nejnižšího přijatého přepočítána z finální revize dat uchazečů 2025 (PR #84). Výpočet se nemění. Stabilita míry *rozhodl test* mezi roky 2024 a 2025 vychází 0,725 místo 0,673, šířky pásma 0,692 místo 0,666. Souběžné přihlášky vedeny jako finální revize. |

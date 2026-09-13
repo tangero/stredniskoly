@@ -199,7 +199,10 @@
         "Pásmo nejistoty",
         "Percentil nejnižšího přijatého",
         "Hustota u hranice",
-        "Kohorty přijatých"
+        "Kohorty přijatých",
+        "Odvozená hranice úspěšnosti",
+        "Výsledek uchazečů o obor",
+        "Obory výš a níž na přihlášce"
       ],
       "dostupne": [
         {
