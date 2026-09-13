@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.4 · 13. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.5 · 13. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -74,19 +74,32 @@ Soubor přihlášek přidává:
 | `PŘIHLÁŠKY - PRIORITA 1` až `5` | rozpad podle pořadí na přihlášce | je to škola první volby, nebo pojistka | ano, od 13. 9. 2026 i jako podíl |
 | `INDEX POPTÁVKY` | přihlášky děleno kapacitou | kolik uchazečů na místo | ano, ale nadsazuje konkurenci |
 
-Soubor výsledků přidává:
+Soubor výsledků má **91 sloupců** a stejnou stavbu v 1. i 2. kole. Verze 1.4 tohoto soupisu uváděla jen sedm z nich; zbytek doplněn 13. 9. 2026 při zapracování 2. kola. Sloupce 0 až 30 jsou shodné s tabulkou výše.
 
-| Sloupec | Obsah | Otázka rodiče | Používáme |
+| Sloupce | Obsah | Otázka rodiče | Používáme |
 |---|---|---|---|
-| `PŘIJATÍ` | počet přijatých | naplnili obor | ano |
-| `NEPŘIJATI - NEDOSTATEČNÁ KAPACITA` | splnili, ale nevešli se | jak velký je přetlak | ano |
-| `NEPŘIJATI - NESPLNĚNÍ PODMÍNEK` | neuspěli u podmínek školy | má škola vlastní požadavky | ano |
-| `NEPŘIJATI - PŘIJAT NA VYŠŠÍ PRIORITU` | dostali se, ale šli jinam | jak často je to náhradní volba | ano |
-| `NEPŘIJATI - VZDAL SE PŘIJETÍ` | odstoupili | okrajové | ano |
-| `ČJ+MA - % SKÓR - PRŮMĚR (PŘIJATI)` | průměr přijatých | s jakými spolužáky se dítě potká | ano |
-| `ČJ` a `MA - % SKÓR - PRŮMĚR (PŘIJATI)` | průměr po předmětech | který předmět je tu důležitější | ano |
+| 31 `KAPACITA`, 32 `INDEX POPTÁVKY`, 33 `PŘIHLÁŠKY CELKEM` | stejné jako v souboru přihlášek | jaký je zájem | ano |
+| 34 `PŘIJATÍ` | počet přijatých | naplnili obor | ano |
+| 35–39 `PŘIHLÁŠKY - PRIORITA 1` až `5` | přihlášky podle pořadí | je to škola první volby | ano |
+| 40–44 `PŘIJATÍ - PRIORITA 1` až `5` | přijatí podle pořadí na přihlášce | dostávají se sem ti, kdo ji chtěli nejvíc | **ne**; za rok 2026 vyplněno u 6 274 z 6 368 řádků, přestože web tvrdil, že CERMAT tento údaj nezveřejňuje |
+| 45–47 `ČJ+MA`, `ČJ`, `MA - KONALI` | kolik uchazečů o obor psalo zkoušku | z kolika lidí jsou výsledky | **ne** |
+| 48–56 `% SKÓR - PRŮMĚR`, `MIN`, `MAX` všech uchazečů | výsledky všech, kdo se hlásili, nejen přijatých | jak si stojí konkurence | **ne** |
+| 57–65 `PERCENTIL - PRŮMĚR`, `MIN`, `MAX` všech uchazečů | totéž jako celostátní percentil | kde je konkurence proti celé zemi | **ne** |
+| 66–68 `KONALI (PŘIJATI)` | kolik přijatých má výsledek zkoušky | z kolika lidí je průměr přijatých | **ne** |
+| 69–71 `% SKÓR - PRŮMĚR (PŘIJATI)` | průměr přijatých | s jakými spolužáky se dítě potká | ano |
+| 72–74 `% SKÓR - MIN (PŘIJATI)` | **oficiální nejnižší výsledek přijatých**, po nabídkách včetně zaměření | s kolika body se sem někdo dostal | **ne**, počítáme ho sami z dat uchazečů bez zaměření, viz níže |
+| 75–77 `% SKÓR - MAX (PŘIJATI)` | nejvyšší výsledek přijatých | rozpětí třídy | **ne** |
+| 78–86 `PERCENTIL - PRŮMĚR`, `MIN`, `MAX (PŘIJATI)` | percentily přijatých | kde je hranice proti celé zemi | **ne** |
+| 87 `NEPŘIJATI - PŘIJAT NA VYŠŠÍ PRIORITU` | nepřijati sem, protože přijati na obor uvedený výš | jak často je to náhradní volba | ano |
+| 88 `NEPŘIJATI - NEDOSTATEČNÁ KAPACITA` | splnili, ale nevešli se | jak velký je přetlak | ano |
+| 89 `NEPŘIJATI - NESPLNĚNÍ PODMÍNEK` | neuspěli u podmínek školy | má škola vlastní požadavky | ano |
+| 90 `NEPŘIJATI - VZDAL SE PŘIJETÍ` | odstoupili | okrajové | ano |
 
-**Co tenhle zdroj neumí:** nemá žádný údaj o jednotlivém uchazeči, takže z něj nelze zjistit nejnižší přijatý výsledek ani souběžné přihlášky. Ročník 2026 navíc zatím nemá zveřejněné přijaté podle priority.
+**Oficiální minimum přijatých odpovídá našemu výpočtu.** U 2 601 nabídek roku 2025 s jediným zaměřením se sloupec 72 shoduje s nejnižším přijatým spočítaným z dat uchazečů u 2 518, tedy u 97 %; rozdíly jsou převážně u nástaveb 64-41-L/51. Oficiální sloupec je navíc po zaměřeních a za rok 2026 vyplněn u 3 207 řádků. Hranici mezi nepřijatými, tedy horní mez pásma nejistoty, soubor nenese; ta dál vyžaduje data uchazečů.
+
+Verze 1.4 tu tvrdila, že z tohoto zdroje nelze zjistit nejnižší přijatý výsledek a že přijatí podle priority za rok 2026 nejsou zveřejněni. Obojí bylo nepravdivé.
+
+**Druhé kolo** vychází ve stejných třech souborech se stejnou stavbou: `PZ{rok}_kolo2_skolobory_kapacity.xlsx`, `…_prihlasky.xlsx` a `…_vysledky.xlsx`. Identifikátor `ID_SOF` se mezi koly **liší**; nabídky se párují podle `REDIZO`, `KKOV`, `ZAMĚŘENÍ OBORU`, `FORMA VZDĚLÁVÁNÍ`, `DÉLKA STUDIA`, `ZKRÁCENÉ STUDIUM` a `JAZYK STUDIA`. V roce 2026 má 2. kolo 1 060 denních nezkrácených nabídek s povinnou zkouškou, 886 z nich se spáruje s 1. kolem a 174 existuje jen ve 2. kole. Denní forma se v souborech vyskytuje i jako „den2“.
 
 ### 2.2 CERMAT, data uchazečů
 
@@ -278,8 +291,11 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 | Výsledek testu u **všech uchazečů**, nejen přijatých | data uchazečů, `c_m_procentni_skor`, vyplněno u 75 % řádků | „S 62 body byl loni v polovině těch, kdo se sem hlásili.“ Jediný způsob, jak dát dítěti vlastní číslo do kontextu | **zpracováno 13. 9. 2026**, na web zatím nenapojeno |
 | **Profil dovedností** uchazečů o obor | položková data, `b1` až `b16.x` | „Kdo se sem dostal, byl silný v porozumění textu.“ Jediný zdroj o tom, co obor vybírá | soubory nikdo nezpracoval |
 | Výsledky po termínech zvlášť | položková data, listy A až D | kontrola, zda jsou řádné termíny srovnatelně těžké | data uchazečů nesou jen lepší výsledek |
-| **Agregáty 2. kola** za obory | `PZ{rok}_kolo2_skolobory_*.xlsx` | Kapacity, přihlášky a přijatí ve 2. kole po oborech, bez práce s řádky uchazečů | nestažené, zjištěno 13. 9. 2026 |
-| **Druhé kolo** přijímacího řízení | `PZ*_kolo2` | „Loni tu po prvním kole zbylo osm míst.“ U nenaplněných oborů je to zásadní | nikdy jsme se na ně nepodívali |
+| **Oficiální nejnižší a nejvyšší výsledek přijatých** a jejich percentily | souhrny výsledků, sloupce 72–86 | „S 65 body se sem loni někdo dostal“ po zaměřeních a za aktuální rok, bez dat uchazečů | počítáme vlastní minimum z dat uchazečů za rok 2025 bez zaměření; oficiální sloupec se shoduje u 97 % oborů |
+| **Přijatí podle priority** | souhrny výsledků, sloupce 40–44 | „Tři čtvrtiny přijatých si obor zapsaly jako první volbu“ | web za rok 2026 nesprávně tvrdil, že nejsou zveřejnění |
+| Výsledky zkoušky **všech uchazečů** o obor v souhrnu | souhrny výsledků, sloupce 45–65 | průměr, minimum a maximum konkurence bez zpracování dat uchazečů | nepoužito |
+| **Agregáty 2. kola** za obory | `PZ{rok}_kolo2_skolobory_*.xlsx` | „Loni tu bylo 2. kolo s 12 místy“ | **zapracovává se od 13. 9. 2026**, viz `docs/druhe-kolo.md` |
+| **Data uchazečů 2. kola** | `PZ{rok}_kolo2_uchazeci_prihlasky_vysledky.xlsx` | pásma přijetí ve 2. kole | zamítnuto pro 2. kolo: jen 133 oborů má ve 2. kole aspoň deset přijatých s výsledkem zkoušky |
 | **Dobíhající obor** | rejstřík, `dobihajiciObor` | „Škola tenhle obor zavírá.“ Varování před podáním přihlášky | používá se jen v rešeršních skriptech |
 | **Web a kontakt školy** | rejstřík CSV, `WWW`, `Email 1`, `Telefon` | kam jít pro kritéria přijetí a termíny | v datové vrstvě vůbec není |
 | `jpz_prumer_actual`, `jpz_median` | katalog 2025 | medián říká víc než průměr, když je rozdělení šikmé | spočítané, nikdy nezobrazené |
@@ -400,7 +416,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-13. Neupravovat ru�
 | `doprava-gtfs` | web | 2026-02-07 | `data/PID_GTFS.zip` | — | — | neznámo | Nahrazuje se celý. |
 | `katalog-historie` | web | 2025 | `public/schools_data.json` | — | — | neznámo | Nepřepíná se. |
 | `school-analysis-legacy` | nezobrazovat | 2025 | `public/school_analysis.json` | — | — | neznámo | Nepřepíná se. |
-| `cermat-kolo2-agregaty` | nepoužito | nic | `Nestaženo.` | 2026 | 2027 | 2027-09, odhad | Není na webu. |
+| `cermat-kolo2-agregaty` | web | 2026 | `PZ2026_kolo2_skolobory_vysledky.xlsx` | — | 2027 | 2027-09, odhad | Předchozí rok zůstává ve výstupu a na stránce slouží k větě, zda škola 2. kolo vypsala i tehdy. |
 
 #### Aktualizace a automatizace
 
@@ -423,7 +439,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-13. Neupravovat ru�
 | `doprava-gtfs` | příprava | PID se obnovuje denně, Last-Modified 13. 9. 2026. | scripts/build_transit_graph_v2.py a převodníky KOMPLET v scripts/. | PID lze stahovat automaticky; celostátní data KOMPLET se získávají ručně a stavba grafu je náročná, proto doporučeno obnovovat při změně jízdních řádů, ne průběžně. |
 | `katalog-historie` | neaktualizuje se | — | — | Nepřepíná se. |
 | `school-analysis-legacy` | neaktualizuje se | — | — | Generátor není dohledaný, soubor nejde aktualizovat, jen nahradit katalogem. |
-| `cermat-kolo2-agregaty` | jen detekce | HTTP HEAD. | Neexistuje. | Rozhodnout o zpracování druhého kola. |
+| `cermat-kolo2-agregaty` | příprava | HTTP HEAD. | scripts/build-druhe-kolo.py; v datové lince zpracovatel cermat-kolo2-agregaty stáhne k souboru 2. kola i výsledky 1. kola téhož roku a doplní ročník do stávajícího výstupu. | Schválit úlohu, zkontrolovat počty v pull requestu a přepnout období v registru. |
 
 <!-- stav-datovych-sad:do -->
 
@@ -440,6 +456,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-13. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.5 | Úplný soupis 91 sloupců souboru výsledků, druhé kolo a párování nabídek mezi koly. Opravena nepravdivá tvrzení o nejnižším přijatém výsledku a o přijatých podle priority 2026. |
 | 1.4 | Doplněna aktualizace a automatizace datových sad, příkaz `zjisti`, agregáty 2. kola jako nový zdroj; opraveno tvrzení, že data uchazečů 2026 nevyšla. |
 | 1.3 | Doplněn oddíl 5 o stavu datových sad: registr období, očekávaných termínů a přepínání, kontrolní skript. |
 | 1.2 | Doplněn odvozený soubor pásem přijetí; výsledky všech uchazečů už nejsou nevyužité. |

@@ -44,6 +44,7 @@ Fronta je v `data/linka/fronta.json`. Pracovní soubory ve `data/linka/prace/<K�
 | Sada | Zpracování | Předání po schválení |
 |---|---|---|
 | `cermat-uchazeci-kolo1` | kontrola povinných sloupců, `build-pasma-prijeti.py` a `build-soubeh-prihlasek.py` do pracovního adresáře, srovnání s tím, co je na webu | větev s novými soubory `public/pasma_prijeti_<rok>.json` a `public/soubeh_prihlasek_<rok>.json` a pull request |
+| `cermat-kolo2-agregaty` | stažení výsledků 1. kola téhož roku, `build-druhe-kolo.py` s doplněním ročníku do stávajícího výstupu, pojistka proti nabídkám bez 2. kola | větev s `public/druhe_kolo.json` a pull request; web nový rok ukáže až po přepnutí období v registru |
 | ostatní | stažení, sha256, listy, hlavička, počet řádků, změny struktury proti předchozímu souboru | záznam rozhodnutí ve frontě a doporučený ruční krok |
 
 Změna struktury, například přejmenovaný list nebo chybějící sloupec, úlohu nezastaví, ale v oznámení je uvedena jako první věc. Chybějící povinný sloupec zpracování zastaví a úloha skončí ve stavu `selhalo` s vysvětlením.

@@ -15,6 +15,8 @@ import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { getNoteForSchool } from '@/lib/school-notes';
 import { getPasmaPrijeti } from '@/lib/pasma-prijeti';
 import { PasmaPrijetiCard } from '@/components/school/detail/PasmaPrijetiCard';
+import { getDruheKolo } from '@/lib/druhe-kolo';
+import { DruheKoloCard } from '@/components/school/detail/DruheKoloCard';
 import { SchoolNote } from '@/components/SchoolNote';
 import { getDemandClass, createSlug } from '@/lib/utils';
 import { categoryLabels, categoryColors, krajNames, getSchoolTypeFullName } from '@/types/school';
@@ -402,6 +404,7 @@ export default async function SchoolDetailPage({ params }: Props) {
                 vypsana2026={!!match2026ToProgram(data2026, program)}
                 nova2026={!!match2026ToProgram(data2026, program)?.is_new}
               />
+              <DruheKoloCard data={await getDruheKolo(program.id, program.zamereni)} />
 
               {/* Quick Facts */}
               <QuickFactsCard facts={quickFacts} />
@@ -917,6 +920,7 @@ export default async function SchoolDetailPage({ params }: Props) {
             vypsana2026={!!program2026}
             nova2026={!!program2026?.is_new}
           />
+          <DruheKoloCard data={await getDruheKolo(program.id, program.zamereni)} />
           <div className="my-6 rounded-xl bg-white p-6">
             <h2 className="font-semibold">Přijetí a kapacita · {program.rok ?? 2025}</h2>
             <p className="mt-2">Přijatí v roce {program.rok ?? 2025}: {program.prijati}. Kapacita: {program.kapacita} míst.</p>

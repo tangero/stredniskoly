@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.10 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.11 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -218,6 +218,38 @@ Medián je 28,1 %, takže u poloviny oborů se kolem hranice tísní víc než �
 
 Do 13. 9. 2026 tu stálo, že nemáme ani to minimum. Bylo to nesprávné: pole `jpz_min_actual` existuje v katalogu od začátku a počítá ho `scripts/enrich_schools_data.py`.
 
+### Kapacita 2. kola
+Počet míst, která škola vypsala ve 2. kole přijímacího řízení. Zdroj: CERMAT, `PZ{rok}_kolo2_skolobory_vysledky.xlsx`, sloupec `KAPACITA`. Pole `kapacita` v ročníku souboru `public/druhe_kolo.json`, generuje `scripts/build-druhe-kolo.py`.
+
+**Nedá se dopočítat z 1. kola.** Rozdílu kapacity a přijatých z 1. kola se rovná jen u 47 % nabídek roku 2026, protože se do ní promítají uchazeči, kteří se přijetí vzdali, a rozhodnutí školy. Zobrazuje se jen zveřejněná hodnota.
+
+Popisuje nabídku v jednom roce. Neříká, zda škola 2. kolo vypíše příště.
+
+### Přihlášky ve 2. kole
+Počet přihlášek podaných na nabídku ve 2. kole. Sloupec `PŘIHLÁŠKY CELKEM`, pole `prihlasky`.
+
+Nesčítá se s přihláškami 1. kola; jde o jiné řízení s jinými uchazeči.
+
+### Přijatí ve 2. kole
+Počet přijatých ve 2. kole. Sloupec `PŘIJATÍ`, pole `prijati`. V roce 2026 obsadilo 2. kolo 4 946 z 12 034 vypsaných míst.
+
+### Nepřijatí kvůli kapacitě ve 2. kole
+Uchazeči, kteří ve 2. kole splnili podmínky, ale nevešli se. Sloupec `NEPŘIJATI - NEDOSTATEČNÁ KAPACITA`, pole `neveslo_se`. V roce 2026 se to stalo u 199 z 1 060 nabídek.
+
+Ukazuje, že ani 2. kolo nemusí být jistota.
+
+### Nejnižší výsledek přijatých ve 2. kole
+Oficiální nejnižší součet bodů z češtiny a matematiky mezi přijatými ve 2. kole. Sloupec `ČJ+MA - % SKÓR - MIN (PŘIJATI)` dělený dvěma, škála 0 až 100 bodů. Pole `min_prijaty`, počet přijatých s výsledkem zkoušky `prijatych_s_vysledkem`.
+
+**Zobrazuje se jen při aspoň deseti přijatých s výsledkem zkoušky**, stejně jako nejnižší výsledek JPZ mezi přijatými v 1. kole. V roce 2026 to splní 133 nabídek.
+
+Není to hranice přijetí; škola mohla vážit i jiná kritéria.
+
+### Nevypsané 2. kolo u nenaplněného oboru
+Nabídka, která v 1. kole přijala méně uchazečů, než měla míst, a přesto ve 2. kole nebyla. Kombinuje souhrn výsledků 1. kola se souhrnem 2. kola téhož roku. Pole `stav` s hodnotou `nenaplneno_bez_2_kola`.
+
+V roce 2026 platí pro 47 % oborů, které se v 1. kole nenaplnily. Věta na webu proto varuje, že volná místa po 1. kole neznamenají 2. kolo.
+
 ## 3. Kohorty přijatých
 
 Devět skupin přijatých podle úrovně a vyváženosti výsledku, například „Výborný matematik“ nebo „Slabší humanitní“. Definice hranic je v `public/cohort_meta.json`.
@@ -304,6 +336,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.11 | Doplněny ukazatele 2. kola: kapacita, přihlášky, přijatí, nepřijatí kvůli kapacitě, nejnižší výsledek přijatých a nevypsané 2. kolo u nenaplněného oboru. |
 | 1.10 | Opraveno tvrzení, že data o uchazečích za rok 2026 nejsou zveřejněná; vyšla 20. 5. 2026. |
 | 1.9 | Každý ukazatel je přiřazen datové sadě v registru stavu datových sad, který určuje zobrazené období. |
 | 1.8 | Pole přejmenováno na `prijato_na_vyssi_prioritu`. Talentové obory dostávají místo verdiktu větu o talentové zkoušce. Příznak sdíleného záznamu počítán i z nabídky 2026. Dolní mez pásma nejistoty podléhá prahu deseti přijatých. |

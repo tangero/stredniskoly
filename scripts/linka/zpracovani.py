@@ -131,7 +131,44 @@ def zpracuj_uchazeci(uloha: dict, soubor: Path, prace: Path, struktura: dict) ->
     }
 
 
-ZPRACOVATELE = {"cermat-uchazeci-kolo1": zpracuj_uchazeci}
+def zpracuj_druhe_kolo(uloha: dict, soubor: Path, prace: Path, struktura: dict, stahni_fn=jadro.stahni) -> dict:
+    """Soubor výsledků 2. kola potřebuje výsledky 1. kola téhož roku, ty se stáhnou k němu."""
+    if "_kolo2_" not in uloha["url"]:
+        raise ValueError("adresa neodpovídá souboru 2. kola")
+    rok = int(uloha["obdobi"])
+    kolo1 = stahni_fn(uloha["url"].replace("_kolo2_", "_kolo1_"), prace / f"PZ{rok}_kolo1_skolobory_vysledky.xlsx")
+    vystup = prace / "druhe_kolo.json"
+    stavajici = jadro.KOREN / "public" / "druhe_kolo.json"
+    zprava = spust("build-druhe-kolo.py", "--rok", str(rok), "--kolo1", kolo1["soubor"], "--kolo2", str(soubor),
+                   "--zaklad", str(stavajici), "--vystup", str(vystup))
+    novy = json.loads(vystup.read_text(encoding="utf-8"))
+    stavy = novy["meta"]["rocniky"][str(rok)]["stavy"]
+    predchozi = json.loads(stavajici.read_text(encoding="utf-8")) if stavajici.exists() else {"meta": {"rocniky": {}}}
+    rok_srovnani = max((int(r) for r in predchozi["meta"].get("rocniky", {}) if int(r) != rok), default=None)
+    stavy_srovnani = predchozi["meta"]["rocniky"][str(rok_srovnani)]["stavy"] if rok_srovnani else {}
+
+    # Pojistka proti tichému selhání, stejně jako u dat uchazečů.
+    if not stavy.get("vypsano"):
+        raise ValueError("zpracování nenašlo žádnou nabídku s 2. kolem; zkontroluj párování a filtr povinné zkoušky")
+    min_podil = float(os.environ.get("LINKA_MIN_PODIL_OBORU", "0.5"))
+    if stavy_srovnani.get("vypsano") and stavy["vypsano"] < min_podil * stavy_srovnani["vypsano"]:
+        raise ValueError(f"podezřele málo nabídek s 2. kolem: {stavy['vypsano']} proti {stavy_srovnani['vypsano']} v roce {rok_srovnani}")
+    return {
+        "zpracovatel": "cermat-kolo2-agregaty",
+        "vystupy_skriptu": [zprava],
+        "srovnani": {
+            "oboru_nove": sum(stavy.values()), "oboru_na_webu": sum(stavy_srovnani.values()),
+            "s_pasmy_nove": stavy.get("vypsano", 0), "s_pasmy_na_webu": stavy_srovnani.get("vypsano", 0),
+            "spolecnych_oboru": 0, "median_zmeny_nejnizsiho_prijateho": None,
+            "popis": f"nabídek s 2. kolem {stavy.get('vypsano', 0)} (v roce {rok_srovnani} {stavy_srovnani.get('vypsano', 0)}), "
+                     f"nenaplněných bez 2. kola {stavy.get('nenaplneno_bez_2_kola', 0)}",
+        },
+        "predani": {str(vystup): "public/druhe_kolo.json"},
+        "dopad": "Doplní ročník do public/druhe_kolo.json. Web ho ukáže až po přepnutí období sady cermat-kolo2-agregaty v registru.",
+    }
+
+
+ZPRACOVATELE = {"cermat-uchazeci-kolo1": zpracuj_uchazeci, "cermat-kolo2-agregaty": zpracuj_druhe_kolo}
 
 
 def priprav(uloha: dict, registr: dict, stahni_fn=jadro.stahni) -> None:
@@ -171,7 +208,10 @@ def priprav(uloha: dict, registr: dict, stahni_fn=jadro.stahni) -> None:
 
         zpracovatel = ZPRACOVATELE.get(uloha["sada"])
         if zpracovatel and struktura is not None:
-            priprava["zpracovani"] = zpracovatel(uloha, soubor, prace, struktura)
+            if zpracovatel is zpracuj_druhe_kolo:
+                priprava["zpracovani"] = zpracovatel(uloha, soubor, prace, struktura, stahni_fn=stahni_fn)
+            else:
+                priprava["zpracovani"] = zpracovatel(uloha, soubor, prace, struktura)
             priprava["dopad"] = priprava["zpracovani"]["dopad"]
         else:
             priprava["dopad"] = "Soubor je stažený a zkontrolovaný; sada nemá automatické zpracování. " + sada.get("aktualizace", {}).get("lidsky_krok", "")

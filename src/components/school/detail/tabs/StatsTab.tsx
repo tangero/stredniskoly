@@ -50,7 +50,8 @@ export function StatsTab({ program, extendedStats, data2026, result2026, data202
     accepted: extendedStats.prijati_priority[index],
   })) : [];
 
-  // Přihlášky podle priority za rok 2026 CERMAT zveřejňuje, přijaté podle priority ne.
+  // CERMAT zveřejňuje za rok 2026 i přijaté podle priority (sloupce 40–44 souboru výsledků);
+  // do katalogu se zatím neimportují, proto se ukazují jen přihlášky. Viz docs/zdroje-dat.md, oddíl 3.
   const priority2026 = data2026?.prihlasky_priority?.filter(v => typeof v === 'number') ?? [];
   const kontext = data2026?.admission_context;
   const prijati2026 = kontext?.accepted ?? result2026?.prijati;
@@ -133,7 +134,7 @@ export function StatsTab({ program, extendedStats, data2026, result2026, data202
             <p className="mt-4 text-sm text-slate-600">
               Kolik uchazečů si obor zapsalo jako první, druhou a další volbu.
               {prijati2026 !== undefined && ` Přijato bylo ${count(prijati2026)} uchazečů.`}
-              {' '}Kolik přijatých mělo kterou prioritu, CERMAT za rok 2026 nezveřejňuje.
+              {' '}Kolik přijatých mělo kterou prioritu, CERMAT za rok 2026 zveřejňuje, ale na webu to zatím nezobrazujeme.
             </p>
           </div>
         )}

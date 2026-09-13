@@ -672,38 +672,46 @@
       "nazev": "CERMAT, kapacity, přihlášky a výsledky 2. kola",
       "dokumentace": "docs/zdroje-dat.md#21-cermat-agregovaná-data-za-obory",
       "cyklus": "rocni",
-      "pouziti": "nepouzito",
+      "pouziti": "web",
       "zobrazeno": {
-        "obdobi": null,
-        "poznamka": "Nestaženo."
+        "obdobi": "2026",
+        "soubor": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2026_kolo2_skolobory_vysledky.xlsx",
+        "stazeno": "2026-09-13",
+        "zkontrolovano": "2026-09-13",
+        "sha256": "c69aca68fb2b2c1633571b1d64a4a1c25dd47d58d6d3cc969f939989a98cc926",
+        "poznamka": "Spolu s výsledky 1. kola téhož roku; rok 2025 je v témže výstupu jako srovnání."
       },
-      "dostupne": [
-        {
-          "obdobi": "2026",
-          "soubor": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2026_kolo2_skolobory_vysledky.xlsx",
-          "zverejneno": "2026-09-02",
-          "zjisteno": "2026-09-13"
-        }
-      ],
       "ocekavano": {
         "obdobi": "2027",
         "kdy": "2027-09",
         "jistota": "odhad",
-        "zduvodneni": "Výsledky 2. kola 2026 vyšly 2. 9. 2026."
+        "zduvodneni": "Výsledky 2. kola 2026 byly zveřejněny 2. 9. 2026."
       },
-      "po_prepnuti": "Není na webu.",
-      "vystupy": [],
-      "ukazatele": [],
+      "po_prepnuti": "Předchozí rok zůstává ve výstupu a na stránce slouží k větě, zda škola 2. kolo vypsala i tehdy.",
+      "vystupy": [
+        "public/druhe_kolo.json"
+      ],
+      "ukazatele": [
+        "Kapacita 2. kola",
+        "Přihlášky ve 2. kole",
+        "Přijatí ve 2. kole",
+        "Nepřijatí kvůli kapacitě ve 2. kole",
+        "Nejnižší výsledek přijatých ve 2. kole"
+      ],
       "aktualizace": {
         "zdroj": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ{rok}_kolo2_skolobory_{kapacity|prihlasky|vysledky}.xlsx",
         "katalog": "https://data.cermat.cz/data-a-analyticke-vystupy-jednotna-prijimaci-zkouska/agregovana-data-jpz.html",
         "detekce": "HTTP HEAD.",
-        "import": "Neexistuje.",
-        "automatizace": "detekce",
-        "lidsky_krok": "Rozhodnout o zpracování druhého kola.",
+        "import": "scripts/build-druhe-kolo.py; v datové lince zpracovatel cermat-kolo2-agregaty stáhne k souboru 2. kola i výsledky 1. kola téhož roku a doplní ročník do stávajícího výstupu.",
+        "automatizace": "priprava",
+        "lidsky_krok": "Schválit úlohu, zkontrolovat počty v pull requestu a přepnout období v registru.",
         "sledovat": [
           "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ{rok}_kolo2_skolobory_vysledky.xlsx"
         ]
+      },
+      "kontrola_obdobi": {
+        "soubor": "public/druhe_kolo.json",
+        "cesta": "meta.nejnovejsi_rok"
       }
     }
   },
@@ -723,6 +731,10 @@
     "Přetlak": [
       "cermat-vysledky",
       "cermat-kapacity"
+    ],
+    "Nevypsané 2. kolo u nenaplněného oboru": [
+      "cermat-kolo2-agregaty",
+      "cermat-vysledky"
     ]
   },
   "ukazatele_mimo_registr": {

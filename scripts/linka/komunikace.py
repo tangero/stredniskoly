@@ -46,8 +46,11 @@ def text_ulohy(u: dict) -> str:
     if st:
         radky.append(f"Kontrola: {len(st['listy'])} list(y), {st['sloupcu']} sloupců, {cislo(st['radku'])} řádků")
     z = p.get("zpracovani")
-    if z:
-        sr = z["srovnani"]
+    sr = z["srovnani"] if z else None
+    if sr and sr.get("popis"):
+        # Zpracovatel s vlastním shrnutím, například 2. kolo.
+        radky.append(f"Zpracování: {sr['popis']}.")
+    elif sr:
         zmena = sr["median_zmeny_nejnizsiho_prijateho"]
         radky.append(
             f"Zpracování: {cislo(sr['oboru_nove'])} oborů, {cislo(sr['s_pasmy_nove'])} s pásmy "
