@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.5 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.6 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -155,7 +155,9 @@ Pro každý obor rozdělení soutěžících do pásem po pěti bodech a podíl 
 
 Zdroj jsou data uchazečů CERMATu za 1. kolo 2025. Škála je 0 až 100 bodů, tedy procentní skór dělený dvěma.
 
-Pásmo s méně než pěti soutěžícími se slučuje se sousedním, aby „1 z 1“ nevypadalo jako spolehlivých 100 %. Pásma se zobrazují jen u oborů s aspoň 30 soutěžícími; těch je 1 705.
+Pásmo s méně než pěti soutěžícími se slučuje se sousedním, aby „1 z 1“ nevypadalo jako spolehlivých 100 %. Pásma se počítají jen u oborů s aspoň 30 soutěžícími, z nichž aspoň jeden byl odmítnut kvůli kapacitě; těch je 1 546.
+
+Obory, kde nikdo odmítnut nebyl, pásma nemají: každé by vyšlo na 100 % a tabulka by vypadala jako záruka přijetí. Místo ní platí pole `nikdo_neodmitnut_pro_kapacitu`.
 
 **Není to šance konkrétního uchazeče.** Popisuje, jak dopadli loňští uchazeči s podobným výsledkem. Kritéria, kapacita i složení uchazečů se mezi roky mění, takže formulace musí být v minulém čase o roce 2025.
 
@@ -172,6 +174,8 @@ Ověřeno mezi ročníky: na 1 185 oborech spárovaných mezi roky 2024 a 2025 j
 
 **Neměří kvalitu ani spravedlnost.** Nízká hodnota znamená, že škola vážila i něco jiného než test, například prospěch nebo vlastní zkoušku, což je legitimní.
 
+**Název je zkratka, ne důkaz příčiny.** Míra popisuje shodu pořadí podle testu s výsledkem přijímání. Škola, která řadí podle prospěchu, dosáhne vysoké hodnoty také, protože prospěch s výsledkem testu souvisí. Vysoká hodnota tedy neznamená, že jiné kritérium použito nebylo, jen že s testem nešlo do rozporu.
+
 **Číslo se nezobrazuje**, zobrazuje se věta o tom, co znamená. Projekt si na této míře už jednou vylámal zuby: AUC 0,870 bylo v dřívějším textu nesprávně popsáno jako „správně odhadlo 87 % oborů“.
 
 Nezobrazuje se vůbec u uměleckých oborů skupiny 82 (`talentova_zkouska`), kde je medián 0,66, protože o přijetí rozhoduje z velké části talentová zkouška, o které data nemáme. U oborů s více zaměřeními pod jedním klíčem (`vice_zamereni`) je medián 0,92 a zobrazuje se s poznámkou.
@@ -183,7 +187,9 @@ Uvnitř tohoto rozsahu rozhodovala o přijetí i jiná kritéria než test. Pod 
 
 Medián podílu soutěžících v pásmu je 29 %, horní čtvrtina 51 %.
 
-**Je to popis loňska, ne míra.** Oba konce určuje jediný uchazeč, takže se **nepoužívá k porovnávání oborů ani k řazení**. Ve verzi 1.4 tu stál ukazatel „překryv u hranice přijetí“, který z těchto dvou hodnot dělal měřítko; při záměně krajních hodnot za devadesátý a desátý percentil se u 41 % oborů obracel verdikt, a proto byl nahrazen mírou *rozhodl test*.
+Meze se dosazují do vět **každá zvlášť**: pod dolní mezí se nedostal nikdo, nad horní se dostali všichni. U 8 % oborů jsou obě meze shodné a platí třetí věta, že přesně s tímto výsledkem se někdo dostal a někdo ne.
+
+**Je to popis loňska, ne míra.** Oba konce určuje jediný uchazeč, takže se **nepoužívá k porovnávání oborů ani k řazení**. Šířka pásma je navíc mezi ročníky nestabilní: korelace 0,682 a medián změny 4 body proti mediánové šířce 8 bodů. Ve verzi 1.4 tu stál ukazatel „překryv u hranice přijetí“, který z těchto dvou hodnot dělal měřítko; při záměně krajních hodnot za devadesátý a desátý percentil se u 41 % oborů obracel verdikt, a proto byl nahrazen mírou *rozhodl test*.
 
 ### Hustota u hranice
 Podíl soutěžících, jejichž výsledek leží do pěti bodů od nejnižšího přijatého. Pole `hustota_u_hranice`.
@@ -280,6 +286,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.6 | Doplněno, že míra *rozhodl test* popisuje shodu pořadí, ne příčinu. Pásma se nepočítají u oborů bez odmítnutých. Doplněna pravidla pro dosazení mezí pásma nejistoty. |
 | 1.5 | Překryv u hranice přijetí zrušen jako nerobustní a nahrazen mírou *rozhodl test*; krajní hodnoty zůstávají jako pásmo nejistoty bez srovnávací funkce. |
 | 1.4 | Doplněni soutěžící o obor, podíl přijatých podle bodového pásma, překryv u hranice přijetí a hustota u hranice. |
 | 1.3 | Opraveno tvrzení, že nemáme nejnižší výsledek přijatých. Doplněn nejnižší výsledek JPZ mezi přijatými, medián a průměr JPZ přijatých 2025. |

@@ -179,7 +179,10 @@ def main() -> None:
             # uchazeči, kteří nesplnili podmínky, se do soutěžících nepočítají.
             zaznam["nikdo_neodmitnut_pro_kapacitu"] = True
 
-        if soutezicich >= MIN_SOUTEZICICH:
+        # Bez jediného odmítnutého vychází každé pásmo na 100 % a tabulka
+        # nic nerozlišuje; místo ní se zobrazuje věta o tom, že se nikdo
+        # nevešel kvůli kapacitě.
+        if soutezicich >= MIN_SOUTEZICICH and nevesli:
             zaznam["pasma"] = pasma(prijati, nevesli)
 
         vystup[klic] = zaznam
