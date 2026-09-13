@@ -124,6 +124,8 @@ Text tvrdil, že šlo o přijaté, kteří dali přednost jinému oboru. Pole `h
 
 Ověřeno součtem: přijatí, odešlí jinam, nevešli se, nesplnili podmínky a odstoupili dávají přesně počet přihlášek.
 
+> **Oprava 13. 9. 2026.** Ani tenhle výklad nebyl přesný. Sloupec CERMATu zní „NEPŘIJATI – PŘIJAT NA VYŠŠÍ PRIORITU“: tito uchazeči sem přijati nebyli, protože byli přijati na obor uvedený výš. Zda by se sem dostali, se nevyhodnocovalo. Opraveno v prototypu i ve slovníku v hesle „Přijati na vyšší prioritu“, podnět z externí oponentury [tezí o datech JPZ](teze-vyuziti-dat-jpz-2027.md), námitka R6.
+
 ### R4.4 Shrnutí školy je citace, ne parafráze
 Verdikt třetího bloku byl můj vlastní text. Nahrazen doslovným shrnutím z inspekční zprávy.
 

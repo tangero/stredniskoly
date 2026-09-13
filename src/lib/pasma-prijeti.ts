@@ -14,6 +14,7 @@ export interface PasmoPrijeti {
  *
  * Zdroj jsou data CERMATu o jednotlivých uchazečích. Klíčem je REDIZO a KKOV
  * bez zaměření, takže nabídky lišící se jen zaměřením sdílejí jeden záznam.
+ * Obsahuje jen obory s povinnou jednotnou zkouškou.
  */
 export interface PasmaPrijetiObor {
   soutezicich: number;
@@ -29,6 +30,10 @@ export interface PasmaPrijetiObor {
   max_neprijaty?: number;
   /** Meze rozmezí, ve kterém rozhodovala i jiná kritéria než test. */
   pasmo_nejistoty?: [number, number];
+  /** Přesný počet soutěžících s výsledkem uvnitř pásma nejistoty. */
+  pasmo_nejistoty_soutezilo?: number;
+  /** Z toho přijatých. */
+  pasmo_nejistoty_prijato?: number;
   /** Shoda pořadí podle testu s výsledkem přijímání, plocha pod ROC křivkou. */
   rozhodl_test?: number;
   hustota_u_hranice?: number;

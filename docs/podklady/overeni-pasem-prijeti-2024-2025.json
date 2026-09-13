@@ -1,0 +1,187 @@
+{
+ "zdroj_skriptu": "scripts/validate-pasma-prijeti.py",
+ "populace": "obory s povinnou jednotnou zkouškou podle PZ2026_kolo1_skolobory_prihlasky.xlsx, záloha kategorie K, L, M",
+ "pasmo_nejistoty_populace_obory_s_hranici": {
+  "n": 1440,
+  "shodne_meze_pct": 8.5,
+  "horni_nad_dolni_pct": 83.9,
+  "mezera_pct": 7.6,
+  "median_v_pasmu_pct": 26.8,
+  "median_hustota_u_hranice_pct": 28.1
+ },
+ "rozhodl_test_populace_obory_s_hranici": {
+  "n": 1440,
+  "median": 0.972,
+  "rovno_1_pct": 10.0,
+  "aspon_0_95_pct": 65.4,
+  "aspon_0_85_pct": 93.1,
+  "pod_0_70_pct": 0.6,
+  "median_podle_skupiny": {
+   "ostatni": {
+    "n": 1303,
+    "median": 0.976
+   },
+   "vice_zamereni": {
+    "n": 125,
+    "median": 0.925
+   },
+   "talentova": {
+    "n": 12,
+    "median": 0.78
+   }
+  }
+ },
+ "rozhodl_test_nejnizsi_skupiny_kkov": [
+  {
+   "kkov": "79-42",
+   "n": 12,
+   "median": 0.78
+  },
+  {
+   "kkov": "65-41",
+   "n": 7,
+   "median": 0.862
+  },
+  {
+   "kkov": "23-43",
+   "n": 5,
+   "median": 0.873
+  },
+  {
+   "kkov": "41-43",
+   "n": 5,
+   "median": 0.912
+  },
+  {
+   "kkov": "64-41",
+   "n": 74,
+   "median": 0.915
+  },
+  {
+   "kkov": "36-45",
+   "n": 5,
+   "median": 0.917
+  },
+  {
+   "kkov": "37-41",
+   "n": 10,
+   "median": 0.927
+  },
+  {
+   "kkov": "68-42",
+   "n": 35,
+   "median": 0.94
+  }
+ ],
+ "prevod_izo_2024": {
+  "izo_celkem": 1179,
+  "neprevedeno": 5,
+  "zdroj": "data/Rejstrik_skol/SkolyAMista.csv"
+ },
+ "dolni_mez_populace_aspon_10_prijatych_v_obou_letech": {
+  "n": 2320,
+  "korelace": 0.863,
+  "median_abs_zmeny": 6.0,
+  "podil_zmena_nad_10_pct": 25.5,
+  "podil_zmena_nad_20_pct": 4.4,
+  "prumer_posunu": -3.02,
+  "median_posunu": -3.0,
+  "posun_dolu_pct": 60.7,
+  "posun_nahoru_pct": 34.9
+ },
+ "dolni_mez_jako_percentil": {
+  "n": 2320,
+  "korelace": 0.869,
+  "median_abs_zmeny": 6.41,
+  "podil_zmena_nad_10_pct": 34.2,
+  "podil_zmena_nad_20_pct": 11.5,
+  "median_posunu_pb": 1.73
+ },
+ "celostatni_median_uchazecu": {
+  "2024": 54.0,
+  "2025": 46.0
+ },
+ "meze_populace_aspon_10_prijatych_a_5_odmitnutych_v_obou_letech": {
+  "dolni_mez": {
+   "n": 1149,
+   "korelace": 0.878,
+   "median_abs_zmeny": 7.0,
+   "podil_zmena_nad_10_pct": 30.2,
+   "podil_zmena_nad_20_pct": 4.2
+  },
+  "horni_mez": {
+   "n": 1149,
+   "korelace": 0.858,
+   "median_abs_zmeny": 8.0,
+   "podil_zmena_nad_10_pct": 33.8,
+   "podil_zmena_nad_20_pct": 4.4
+  },
+  "sirka_pasma": {
+   "n": 1149,
+   "korelace": 0.666,
+   "median_abs_zmeny": 4.0,
+   "podil_zmena_nad_10_pct": 14.2,
+   "podil_zmena_nad_20_pct": 2.3
+  },
+  "median_sirky_2025": 7.0,
+  "rozhodl_test": {
+   "n": 1149,
+   "korelace": 0.673,
+   "median_abs_zmeny": 0.01,
+   "podil_zmena_nad_10_pct": 0.0,
+   "podil_zmena_nad_20_pct": 0.0
+  }
+ },
+ "nastoupili_jinam_populace_aspon_10_prijatych_a_10_jinam": {
+  "n": 2304,
+  "median_rozdilu_prumeru": 8.73,
+  "kladny_rozdil_pct": 97.0
+ },
+ "pokryti_populace_nabidky_applications_2026": {
+  "n": 3091,
+  "stavy": {
+   "nikdo_neodmitnut_pro_kapacitu": 1179,
+   "pasma_i_veta": 1526,
+   "bez_dat_2025": 112,
+   "jen_pasma": 128,
+   "jen_dilci_udaje": 90,
+   "jen_veta": 56
+  },
+  "sdili_klic_s_jinou_nabidkou": 440,
+  "klicu_s_vice_nabidkami": 187,
+  "is_new_s_pasmy": 451,
+  "is_new": 1004
+ },
+ "tabulka_by_byla_cela_100_pct": {
+  "n": 156,
+  "z_toho_nekdo_nesplnil_podminky": 102
+ },
+ "prah_soutezicich": {
+  "30": {
+   "nabidek_2026": 1654,
+   "median_nejsirsiho_pasma": 20.0
+  },
+  "50": {
+   "nabidek_2026": 1088,
+   "median_nejsirsiho_pasma": 20
+  }
+ },
+ "kohorty_prijatych_populace_id_katalog_2025": {
+  "oboru_s_kohortami": 2808,
+  "s_aspon_20_prijatymi": 2026,
+  "median_podilu_matematickych_pct": 26.7,
+  "rozsah_pct": [
+   0.0,
+   96.2
+  ]
+ },
+ "teze4_terminy_M6_2025_populace_psali_oba_radne_terminy": {
+  "psali_A": 6883,
+  "psali_oba_pct_z_A": 95.8,
+  "n_paru": 6597,
+  "prumer_B_minus_A": -0.62,
+  "median_B_minus_A": -1.0,
+  "lepsi_v_A_pct": 51.0,
+  "lepsi_v_B_pct": 42.1
+ }
+}

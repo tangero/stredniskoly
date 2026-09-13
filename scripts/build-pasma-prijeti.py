@@ -32,9 +32,21 @@ MIN_PRIJATYCH = 10       # pod tímto počtem nemá hranice smysl
 MIN_ODMITNUTYCH = 5      # bez odmítnutých není co ohraničovat
 OKOLI_HRANICE = 5        # body, ve kterých se měří hustota u hranice
 
+# Skupiny oborů, kde o přijetí rozhoduje talentová zkouška: umělecké obory
+# skupiny 82 a gymnázia se sportovní přípravou 79-42. Míra "rozhodl test" je
+# u nich mediánově 0,66 a 0,78 proti 0,97 u ostatních.
+TALENTOVE_SKUPINY = ("82-", "79-42")
+# Kategorie oborů, u kterých je jednotná zkouška povinná; slouží jen jako
+# záloha, když nabídka chybí v souboru přihlášek 2026 se sloupcem POVINNOST JPZ.
+KATEGORIE_S_JPZ = ("K", "L", "M")
 
-def nacti_uchazece() -> dict[str, dict[str, list[float]]]:
-    """Výsledky uchazečů u každého oboru rozdělené podle toho, jak dopadli."""
+
+def nacti_uchazece() -> tuple[dict[str, dict[str, list[float]]], list[float]]:
+    """Výsledky uchazečů u každého oboru rozdělené podle toho, jak dopadli.
+
+    Vrací i seřazené výsledky jednotlivých uchazečů; řádek souboru je jeden
+    uchazeč, takže každý se v rozdělení objeví jednou bez ohledu na počet přihlášek.
+    """
     wb = openpyxl.load_workbook(ZDROJ, read_only=True)
     it = wb["data"].iter_rows(values_only=True)
     ix = {n: i for i, n in enumerate(next(it))}
@@ -42,11 +54,13 @@ def nacti_uchazece() -> dict[str, dict[str, list[float]]]:
     obory: dict[str, dict[str, list[float]]] = collections.defaultdict(
         lambda: {"prijati": [], "nevesli_se": [], "nesplnili": [], "jinam": []}
     )
+    uchazeci: list[float] = []
     for radek in it:
         skor = radek[ix["c_m_procentni_skor"]]
         if skor is None:
             continue
         body = float(skor) / 2  # procentní skór 0–200 na škálu 0–100
+        uchazeci.append(body)
         for k in range(1, 6):
             redizo = radek[ix[f"ss{k}_redizo"]]
             kkov = radek[ix[f"ss{k}_kkov"]]
@@ -62,16 +76,11 @@ def nacti_uchazece() -> dict[str, dict[str, list[float]]]:
                 o["nesplnili"].append(body)
             elif duvod == "prijat_na_vyssi_prioritu":
                 o["jinam"].append(body)
-    return obory
-
-
-def celostatni_rozdeleni(obory: dict) -> list[float]:
-    """Seřazené výsledky všech soutěžících v ročníku, pro převod na percentil."""
-    return sorted(b for o in obory.values() for b in o["prijati"] + o["nevesli_se"])
+    return obory, sorted(uchazeci)
 
 
 def percentil(rozdeleni: list[float], body: float) -> float:
-    """Kolik procent soutěžících mělo stejný nebo horší výsledek."""
+    """Kolik procent uchazečů v celé zemi mělo stejný nebo horší výsledek."""
     import bisect
     return bisect.bisect_right(rozdeleni, body) / len(rozdeleni) * 100
 
@@ -131,6 +140,30 @@ def rozhodl_test(prijati: list[float], nevesli: list[float]) -> float:
     return (soucet - n1 * (n1 + 1) / 2) / (n1 * n0)
 
 
+def povinna_jpz() -> dict[str, bool]:
+    """REDIZO_KKOV → zda se na obor koná jednotná zkouška, podle přihlášek 2026.
+
+    U oborů bez povinné zkoušky mají výsledek jen uchazeči, kteří ji psali kvůli
+    jiné přihlášce. Pásma by pak popisovala nahodilou podmnožinu a obor, který
+    podle testu vůbec nepřijímá.
+    """
+    wb = openpyxl.load_workbook(KOREN / "data" / "PZ2026_kolo1_skolobory_prihlasky.xlsx", read_only=True)
+    it = wb[wb.sheetnames[0]].iter_rows(values_only=True)
+    ix = {n: i for i, n in enumerate(next(it))}
+    mapa: dict[str, bool] = {}
+    for r in it:
+        klic = f"{r[ix['REDIZO']]}_{r[ix['KKOV']]}"
+        mapa[klic] = mapa.get(klic, False) or r[ix["POVINNOST JPZ"]] == 1
+    return mapa
+
+
+def ma_jpz(klic: str, mapa: dict[str, bool]) -> bool:
+    if klic in mapa:
+        return mapa[klic]
+    kkov = klic.split("_")[1]
+    return kkov.split("/")[0][-1:] in KATEGORIE_S_JPZ
+
+
 def kontext_katalogu() -> tuple[collections.Counter, dict[str, str]]:
     """Počet zaměření na kombinaci REDIZO a KKOV a typ školy."""
     data = json.load(open(KATALOG, encoding="utf-8"))
@@ -149,17 +182,20 @@ def kontext_katalogu() -> tuple[collections.Counter, dict[str, str]]:
 
 
 def main() -> None:
-    obory = nacti_uchazece()
+    # Obtížnost zkoušky se mezi ročníky mění, percentil mezi uchazeči tenhle vliv odstraňuje.
+    obory, rozdeleni = nacti_uchazece()
     zamereni, typy = kontext_katalogu()
-    # Obtížnost zkoušky se mezi ročníky mění: celostátní medián spadl z 53 bodů
-    # v roce 2024 na 46 v roce 2025. Percentil tenhle vliv odstraňuje.
-    rozdeleni = celostatni_rozdeleni(obory)
+    jpz = povinna_jpz()
+    vynechano_bez_jpz = 0
 
     vystup: dict[str, dict] = {}
     for klic, o in obory.items():
         prijati, nevesli = o["prijati"], o["nevesli_se"]
         soutezicich = len(prijati) + len(nevesli)
         if not prijati:
+            continue
+        if not ma_jpz(klic, jpz):
+            vynechano_bez_jpz += 1
             continue
 
         zaznam: dict = {
@@ -172,7 +208,7 @@ def main() -> None:
             "min_prijaty_percentil": round(percentil(rozdeleni, min(prijati)), 1),
             # obor s víc zaměřeními sdílí jeden klíč, hranice je pak rozmazaná
             "vice_zamereni": zamereni.get(klic, 1) > 1,
-            "talentova_zkouska": klic.split("_")[1].startswith("82"),
+            "talentova_zkouska": klic.split("_")[1].startswith(TALENTOVE_SKUPINY),
             "typ": typy.get(klic),
         }
 
@@ -183,9 +219,13 @@ def main() -> None:
                 # pásmo nejistoty: mezi nejnižším přijatým a nejvyšším nepřijatým
                 # se o přijetí rozhodovalo i podle jiných kritérií než testu
                 zaznam["pasmo_nejistoty"] = [round(min(prijati), 1), round(max(nevesli), 1)]
-                v_pasmu = sum(1 for b in prijati + nevesli
-                              if min(prijati) <= b <= max(nevesli))
+                lo, hi = min(prijati), max(nevesli)
+                v_pasmu = sum(1 for b in prijati + nevesli if lo <= b <= hi)
                 zaznam["v_pasmu_nejistoty"] = round(v_pasmu / soutezicich, 3)
+                # Přesné počty pro větu „z N uchazečů v tomto rozmezí se dostalo M“;
+                # součet pětibodových pásem by započítal i uchazeče mimo rozmezí.
+                zaznam["pasmo_nejistoty_soutezilo"] = v_pasmu
+                zaznam["pasmo_nejistoty_prijato"] = sum(1 for b in prijati if lo <= b <= hi)
                 u_hranice = sum(1 for b in prijati + nevesli
                                 if abs(b - min(prijati)) <= OKOLI_HRANICE)
                 zaznam["hustota_u_hranice"] = round(u_hranice / soutezicich, 3)
@@ -206,7 +246,7 @@ def main() -> None:
         "rok": 2025,
         "kolo": 1,
         "zdroj": ZDROJ.name,
-        "uroven": "REDIZO_KKOV (bez zaměření)",
+        "uroven": "REDIZO_KKOV (bez zaměření), jen obory s povinnou jednotnou zkouškou",
         "skala": "body 0–100, procentní skór CERMAT dělený dvěma",
         "sirka_pasma": SIRKA_PASMA,
         "prahy": {
@@ -219,7 +259,8 @@ def main() -> None:
     }, ensure_ascii=False), encoding="utf-8")
     s_pasmy = sum(1 for z in vystup.values() if "pasma" in z)
     s_hranici = sum(1 for z in vystup.values() if "rozhodl_test" in z)
-    print(f"zapsáno {len(vystup)} oborů, z toho {s_pasmy} s pásmy a {s_hranici} s hranicí")
+    print(f"zapsáno {len(vystup)} oborů, z toho {s_pasmy} s pásmy a {s_hranici} s hranicí; "
+          f"vynecháno {vynechano_bez_jpz} oborů bez povinné jednotné zkoušky")
 
 
 if __name__ == "__main__":

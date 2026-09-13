@@ -8,6 +8,13 @@ interface PasmaPrijetiCardProps {
 
 const cislo = (v: number) => v.toLocaleString('cs-CZ', { maximumFractionDigits: 1 });
 
+/** Český tvar podle počtu: 1 uchazeč, 2–4 uchazeči, 5 a víc uchazečů. */
+function tvar(n: number, jeden: string, dva: string, pet: string): string {
+  if (n === 1) return jeden;
+  if (n >= 2 && n <= 4) return dva;
+  return pet;
+}
+
 /**
  * Verdikt o tom, co o přijetí rozhodlo. Zobrazuje se věta, nikdy hodnota:
  * plocha pod ROC křivkou je pro čtenáře nesrozumitelná a projekt ji už jednou
@@ -30,8 +37,9 @@ export function PasmaPrijetiCard({ data, nazevOboru }: PasmaPrijetiCardProps) {
         <p className="mt-2 text-slate-700">
           V roce 2025 se na tento obor <strong>nikdo nevešel kvůli kapacitě</strong>.
           {data.nesplnilo_podminky > 0 && (
-            <> Neznamená to, že se dostali všichni: {cislo(data.nesplnilo_podminky)} uchazečů
-            nesplnilo podmínky školy, tedy jiné kritérium než výsledek testu.</>
+            <> Neznamená to, že se dostali všichni: {cislo(data.nesplnilo_podminky)}{' '}
+            {tvar(data.nesplnilo_podminky, 'uchazeč nesplnil', 'uchazeči nesplnili', 'uchazečů nesplnilo')}{' '}
+            podmínky školy, tedy jiné kritérium než výsledek testu.</>
           )}
         </p>
       </section>
@@ -40,11 +48,9 @@ export function PasmaPrijetiCard({ data, nazevOboru }: PasmaPrijetiCardProps) {
 
   const lo = data.pasmo_nejistoty?.[0] ?? data.min_prijaty;
   const hi = data.pasmo_nejistoty?.[1];
-  const vPasmu = data.pasma
-    ? data.pasma.filter(p => hi !== undefined && p.od < hi && p.do > lo)
-    : [];
-  const soutezilo = vPasmu.reduce((s, p) => s + p.soutezilo, 0);
-  const prijato = vPasmu.reduce((s, p) => s + p.prijato, 0);
+  // Přesné počty z generátoru; součet pětibodových pásem by zahrnul i uchazeče mimo rozmezí.
+  const soutezilo = data.pasmo_nejistoty_soutezilo ?? 0;
+  const prijato = data.pasmo_nejistoty_prijato ?? 0;
 
   return (
     <section className="my-6 rounded-xl bg-white p-6">
@@ -52,21 +58,25 @@ export function PasmaPrijetiCard({ data, nazevOboru }: PasmaPrijetiCardProps) {
         Jak to dopadlo loni{nazevOboru ? ` · ${nazevOboru}` : ''}
       </h2>
       <p className="mt-1 text-sm text-slate-500">
-        Výsledky jednotné zkoušky uchazečů o tento obor v 1. kole 2025, na škále 0 až 100 bodů
-        za češtinu a matematiku dohromady.
+        Výsledky jednotné zkoušky uchazečů o tento obor v 1. kole přijímacího řízení 2025.
+        Body jsou součet češtiny a matematiky, každá za nejvýš 50 bodů, a to lepší z obou
+        pokusů. U upravených testů se procentní výsledek s body přesně neshoduje.
       </p>
 
       <ul className="mt-4 space-y-2 text-slate-800">
         <li>
           Pod <strong>{cislo(lo)} bodů</strong> se nedostal nikdo.
-          <span className="text-slate-500"> To je víc než u {Math.round(data.min_prijaty_percentil)} ze 100 uchazečů v celé zemi.</span>
+          <span className="text-slate-500"> Stejně nebo méně bodů mělo {Math.round(data.min_prijaty_percentil)} ze 100 uchazečů v celé zemi.</span>
         </li>
         {hi !== undefined && hi > lo && (
           <>
             <li>Nad <strong>{cislo(hi)} bodů</strong> se dostali všichni.</li>
             <li>
               Mezi {cislo(lo)} a {cislo(hi)} body rozhodovala i další kritéria
-              {soutezilo > 0 && <>; z {cislo(soutezilo)} uchazečů v tomto rozmezí se dostalo {cislo(prijato)}</>}.
+              {soutezilo > 0 && (
+                <>; z {cislo(soutezilo)} {tvar(soutezilo, 'uchazeče', 'uchazečů', 'uchazečů')} v tomto
+                rozmezí {tvar(prijato, 'se dostal', 'se dostali', 'se dostalo')} {cislo(prijato)}</>
+              )}.
             </li>
           </>
         )}
@@ -87,7 +97,8 @@ export function PasmaPrijetiCard({ data, nazevOboru }: PasmaPrijetiCardProps) {
 
       <p className="mt-4 text-sm text-slate-500">
         Hranice se mezi ročníky posouvá o jednotky bodů; mění se totiž i obtížnost samotné
-        zkoušky, ne jen zájem o školu. Čísla popisují rok 2025 a nejsou předpovědí.
+        zkoušky, ne jen zájem o školu. Čísla popisují jen 1. kolo roku 2025, nikoli druhé
+        kolo, a nejsou předpovědí.
       </p>
 
       {(data.vice_zamereni || data.nastoupilo_jinam > 0 || data.nesplnilo_podminky > 0) && (
@@ -97,15 +108,16 @@ export function PasmaPrijetiCard({ data, nazevOboru }: PasmaPrijetiCardProps) {
           )}
           {data.nastoupilo_jinam > 0 && (
             <li>
-              Nejsou tu započítáni uchazeči, kteří se sem dostali, ale nastoupili na obor
-              uvedený na přihlášce výš. Loni jich bylo {cislo(data.nastoupilo_jinam)} a mívají
-              lepší výsledky než ostatní.
+              Nejsou tu započítáni uchazeči, kteří byli přijati na obor uvedený na přihlášce
+              výš, a o toto místo proto už nesoutěžili. Loni {tvar(data.nastoupilo_jinam, 'to byl', 'to byli', 'jich bylo')}{' '}
+              {cislo(data.nastoupilo_jinam)} a mívají lepší výsledky než ostatní.
             </li>
           )}
           {data.nesplnilo_podminky > 0 && (
             <li>
-              Dalších {cislo(data.nesplnilo_podminky)} uchazečů nesplnilo podmínky školy,
-              tedy jiné kritérium než výsledek testu. Ti do počtů výše nevstupují.
+              {tvar(data.nesplnilo_podminky, 'Další', 'Další', 'Dalších')} {cislo(data.nesplnilo_podminky)}{' '}
+              {tvar(data.nesplnilo_podminky, 'uchazeč nesplnil', 'uchazeči nesplnili', 'uchazečů nesplnilo')}{' '}
+              podmínky školy, tedy jiné kritérium než výsledek testu. Do počtů výše nevstupují.
             </li>
           )}
         </ul>

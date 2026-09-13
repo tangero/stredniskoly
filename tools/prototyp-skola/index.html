@@ -302,7 +302,7 @@ footer{border-top:1px solid var(--rule);padding-block:20px 44px;color:var(--ink-
         zdroj:'Běžná hodnota mezi ' + o.skupina + ' je ' + cs(o.medVolba) + ' % prvních voleb. '
           + 'Tohle neříká nic o kvalitě: záložní obor bývá ten, který lidé volí podle dostupnosti.'})
       + fakt({nadpis:'Kolik uchazečů se nevešlo', hodnota:cs(o.pret), vyznam:pretVeta,
-        zdroj:cs(o.jinam) + ' uchazečů, kteří by se sem dostali, nastoupilo na obor, který měli na přihlášce výš.'})
+        zdroj:cs(o.jinam) + ' dalších uchazečů sem přijato nebylo, protože byli přijati na obor, který měli na přihlášce výš.'})
       + (o.nesplnil / o.prih >= 0.2
         ? fakt({nadpis:'Kolik uchazečů nesplnilo podmínky', hodnota:cs(o.nesplnil),
             vyznam:'To je ' + cs(o.nesplnil / o.prih * 100) + ' % všech přihlášených. '
