@@ -19,6 +19,7 @@ KOREN = Path(__file__).resolve().parent.parent
 ZDROJ = KOREN / "data" / "PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx"
 REJSTRIK = KOREN / "data" / "msmt_rejstrik" / "rssz-2026-06-30.jsonld"
 VYSTUP = KOREN / "public" / "soubeh_prihlasek_2025.json"
+ROK = 2025
 MAX_VOLEB = 5
 POCET_SOUBEHU = 6
 MIN_UCHAZECU = 10
@@ -76,6 +77,10 @@ def nazvy_oboru() -> dict[str, dict]:
                 },
             )
 
+    if not REJSTRIK.exists():
+        # Snímky rejstříku se do gitu neukládají; bez nich zůstanou učební obory bez názvu.
+        print(f"varování: {REJSTRIK.name} chybí, obory bez JPZ zůstanou bez názvu")
+        return mapa
     rejstrik = json.load(open(REJSTRIK, encoding="utf-8"))["list"]
     for zaznam in rejstrik:
         redizo = str(zaznam.get("redIzo") or "")
@@ -131,10 +136,11 @@ def main() -> None:
             "soubeh": nej,
         }
 
+    VYSTUP.parent.mkdir(parents=True, exist_ok=True)
     VYSTUP.write_text(
         json.dumps(
             {
-                "rok": 2025,
+                "rok": ROK,
                 "zdroj": ZDROJ.name,
                 "uroven": "REDIZO_KKOV (bez zaměření)",
                 "min_uchazecu": MIN_UCHAZECU,
@@ -144,8 +150,21 @@ def main() -> None:
         ),
         encoding="utf-8",
     )
-    print(f"zapsáno {len(vystup)} oborů do {VYSTUP.relative_to(KOREN)}")
+    print(f"zapsáno {len(vystup)} oborů do {VYSTUP}")
+
+
+def argumenty() -> None:
+    """Vstup, výstup a rok lze přepsat; datová linka tak zpracuje nový soubor mimo public/."""
+    import argparse
+    global ZDROJ, VYSTUP, ROK
+    ap = argparse.ArgumentParser(description="Souběžné přihlášky z dat uchazečů CERMAT.")
+    ap.add_argument("--zdroj", type=Path, default=ZDROJ)
+    ap.add_argument("--vystup", type=Path, default=VYSTUP)
+    ap.add_argument("--rok", type=int, default=ROK)
+    a = ap.parse_args()
+    ZDROJ, VYSTUP, ROK = a.zdroj, a.vystup, a.rok
 
 
 if __name__ == "__main__":
+    argumenty()
     main()

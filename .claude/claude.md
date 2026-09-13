@@ -166,6 +166,8 @@ Pravidla:
 4. **Registr neupravuj ručně.** Přepínej `python3 scripts/stav-datovych-sad.py prepni` s dokladem, vracej `vrat`.
 5. **Nová sada nebo nový ukazatel** se zapisuje do registru ve stejné dávce. Po každé změně dat spusť `python3 scripts/stav-datovych-sad.py kontrola`.
 
+Nová data zjišťuje a připravuje **datová linka** (`scripts/datova-linka.py`, `docs/datova-linka.md`). Nová data se přebírají přes její úlohy a schválení, ne ručním stahováním mimo ni. Po změně linky spusť `python3 -m unittest tests/test_datova_linka.py`.
+
 ## Slovník ukazatelů — POVINNÉ
 
 **`docs/slovnik-ukazatelu.md` je závazný soupis názvů a veličin.** Obsahuje definici, vzorec, zdroj a jednotku každého ukazatele a hlavně to, co ukazatel **neříká**.

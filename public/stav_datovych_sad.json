@@ -207,7 +207,7 @@
         "katalog": "https://data.cermat.cz/data-a-analyticke-vystupy-jednotna-prijimaci-zkouska/datove-soubory.html",
         "detekce": "HTTP HEAD a katalogová stránka Datové soubory.",
         "revize": "Dvě verze: předběžná v květnu téhož roku, finální o rok později. Revize mění názvy listů, proto skripty čtou první list.",
-        "import": "scripts/build-pasma-prijeti.py, scripts/build-soubeh-prihlasek.py, scripts/validate-pasma-prijeti.py; názvy výstupů nesou rok a v kódu jsou zapsané napevno.",
+        "import": "scripts/build-pasma-prijeti.py, scripts/build-soubeh-prihlasek.py, scripts/validate-pasma-prijeti.py; názvy výstupů nesou rok a v kódu jsou zapsané napevno. Pozor: scripts/enrich_schools_data.py, který počítá nejnižší přijatý výsledek do katalogu, čte sloupce podle pozice; v souboru za rok 2026 se pořadí sloupců změnilo a příznak přijetí je text, takže bez úpravy by počítal chybně. Datová linka ho nespouští.",
         "automatizace": "priprava",
         "lidsky_krok": "Převzetí mění čísla v dokladech tezí a na webu, proto revize výsledků validace před přepnutím.",
         "sledovat": [
@@ -377,7 +377,8 @@
       "pouziti": "web",
       "zobrazeno": {
         "obdobi": "2026-06-30",
-        "soubor": "data/msmt_rejstrik/rssz-2026-06-30.jsonld"
+        "soubor": "data/msmt_rejstrik/rssz-2026-06-30.jsonld",
+        "stazeno": "2026-09-12"
       },
       "ocekavano": {
         "obdobi": "2026-09-30",
@@ -605,7 +606,8 @@
         "lidsky_krok": "PID lze stahovat automaticky; celostátní data KOMPLET se získávají ručně a stavba grafu je náročná, proto doporučeno obnovovat při změně jízdních řádů, ne průběžně.",
         "sledovat": [
           "https://data.pid.cz/PID_GTFS.zip"
-        ]
+        ],
+        "revize_oznamovat": false
       }
     },
     "katalog-historie": {

@@ -1,0 +1,116 @@
+name: Datová linka
+
+# Plán a bezpečnostní hranice: docs/datova-linka.md.
+# Pondělí: zjištění, příprava a oznámení. Denně: schválení a předání schválených úloh.
+# Linka nikdy nepřepíná zobrazené období; předání vytvoří jen pull request.
+
+on:
+  schedule:
+    - cron: "30 5 * * 1"   # pondělí 05:30 UTC, beh
+    - cron: "0 6 * * *"    # denně 06:00 UTC, schvaleni a predej
+  workflow_dispatch:
+    inputs:
+      krok:
+        description: "beh, schvaleni, nebo test"
+        required: true
+        default: test
+      nanecisto:
+        description: "nic neposílat ven"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: datova-linka
+  cancel-in-progress: false
+
+jobs:
+  linka:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Závislosti
+        run: pip install openpyxl
+
+      - name: Určit krok
+        id: krok
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "krok=${{ inputs.krok }}" >> "$GITHUB_OUTPUT"
+            echo "nanecisto=${{ inputs.nanecisto && '--nanecisto' || '' }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "30 5 * * 1" ]; then
+            echo "krok=beh" >> "$GITHUB_OUTPUT"
+          else
+            echo "krok=schvaleni" >> "$GITHUB_OUTPUT"
+          fi
+          kanaly="--kanal github"
+          [ -n "$TELEGRAM_BOT_TOKEN" ] && kanaly="$kanaly --kanal telegram"
+          echo "kanaly=$kanaly" >> "$GITHUB_OUTPUT"
+
+      - name: Testy nanečisto
+        run: python3 -m unittest tests/test_datova_linka.py
+
+      - name: Obnovit frontu z větve linka/stav
+        if: steps.krok.outputs.krok != 'test'
+        run: |
+          # Bez větve se použije fronta z main, aby se neoznámilo znovu to, co už správce dostal.
+          mkdir -p data/linka
+          if git fetch origin linka/stav 2>/dev/null && git show origin/linka/stav:data/linka/fronta.json > /tmp/fronta.json; then
+            mv /tmp/fronta.json data/linka/fronta.json
+          fi
+
+      - name: Štítek pro issue
+        if: steps.krok.outputs.krok != 'test'
+        run: |
+          gh label create nova-data --color 1b4d7a --description "Datová linka, nová data k převzetí" --force
+
+      - name: Zjištění, příprava, oznámení
+        if: steps.krok.outputs.krok == 'beh'
+        run: python3 scripts/datova-linka.py ${{ steps.krok.outputs.nanecisto }} beh ${{ steps.krok.outputs.kanaly }}
+
+      - name: Schválení a předání
+        if: steps.krok.outputs.krok == 'schvaleni'
+        run: |
+          git config user.name "datova-linka[bot]"
+          git config user.email "datova-linka@users.noreply.github.com"
+          python3 scripts/datova-linka.py ${{ steps.krok.outputs.nanecisto }} schvaleni ${{ steps.krok.outputs.kanaly }}
+          python3 scripts/datova-linka.py ${{ steps.krok.outputs.nanecisto }} predej --vse-schvalene
+
+      - name: Uložit frontu do větve linka/stav
+        if: steps.krok.outputs.krok != 'test' && steps.krok.outputs.nanecisto == ''
+        run: |
+          git config user.name "datova-linka[bot]"
+          git config user.email "datova-linka@users.noreply.github.com"
+          cp data/linka/fronta.json /tmp/fronta.json
+          git worktree add /tmp/stav -B linka/stav
+          mkdir -p /tmp/stav/data/linka
+          cp /tmp/fronta.json /tmp/stav/data/linka/fronta.json
+          git -C /tmp/stav add data/linka/fronta.json
+          git -C /tmp/stav commit -m "linka: stav fronty $(date -u +%F)" || echo "fronta beze změny"
+          git -C /tmp/stav push -f origin linka/stav
+
+      - name: Oznámení a pracovní soubory jako artefakt
+        if: always() && steps.krok.outputs.krok != 'test'
+        uses: actions/upload-artifact@v4
+        with:
+          name: datova-linka-${{ github.run_id }}
+          path: |
+            data/linka/fronta.json
+            data/linka/oznameni/
+          if-no-files-found: ignore

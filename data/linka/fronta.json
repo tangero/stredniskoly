@@ -1,0 +1,453 @@
+{
+  "verze": 1,
+  "zname": {
+    "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2027_kolo1_skolobory_kapacity.xlsx": {
+      "stav": 404,
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2025_kolo1_skolobory_kapacity.xlsx": {
+      "stav": 200,
+      "last_modified": "Tue, 18 Aug 2026 20:28:26 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2026_kolo1_skolobory_kapacity.xlsx": {
+      "stav": 200,
+      "last_modified": "Tue, 18 Aug 2026 20:28:32 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2027_kolo1_skolobory_prihlasky.xlsx": {
+      "stav": 404,
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2025_kolo1_skolobory_prihlasky.xlsx": {
+      "stav": 200,
+      "last_modified": "Tue, 18 Aug 2026 20:28:27 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2026_kolo1_skolobory_prihlasky.xlsx": {
+      "stav": 200,
+      "last_modified": "Tue, 18 Aug 2026 20:28:33 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2027_kolo1_skolobory_vysledky.xlsx": {
+      "stav": 404,
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2025_kolo1_skolobory_vysledky.xlsx": {
+      "stav": 200,
+      "last_modified": "Tue, 18 Aug 2026 20:28:30 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2026_kolo1_skolobory_vysledky.xlsx": {
+      "stav": 200,
+      "last_modified": "Wed, 02 Sep 2026 08:10:40 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/JPZ-polozkova-data/2027/Uchazeci/PZ2027_kolo1_uchazeci_prihlasky_vysledky.xlsx": {
+      "stav": 404,
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/JPZ-polozkova-data/2025/Uchazeci/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx": {
+      "stav": 200,
+      "last_modified": "Wed, 20 May 2026 15:14:28 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/JPZ-polozkova-data/2026/Uchazeci/PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx": {
+      "stav": 200,
+      "last_modified": "Wed, 20 May 2026 13:10:56 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/JPZ-polozkova-data/2027/Uchazeci/PZ2027_kolo2_uchazeci_prihlasky_vysledky.xlsx": {
+      "stav": 404,
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/JPZ-polozkova-data/2025/Uchazeci/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx": {
+      "stav": 200,
+      "last_modified": "Wed, 20 May 2026 15:14:28 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/JPZ-polozkova-data/2026/Uchazeci/PZ2026_kolo2_uchazeci_prihlasky_vysledky.xlsx": {
+      "stav": 200,
+      "last_modified": "Wed, 24 Jun 2026 21:10:53 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/JPZ-polozkova-data/2027/Polozkova_data/JPZ2027_M6_polozkova_data.xlsx": {
+      "stav": 404,
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/JPZ-polozkova-data/2025/Polozkova_data/JPZ2025_M6_polozkova_data.xlsx": {
+      "stav": 200,
+      "last_modified": "Wed, 28 May 2025 14:43:28 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/JPZ-polozkova-data/2026/Polozkova_data/JPZ2026_M6_polozkova_data.xlsx": {
+      "stav": 200,
+      "last_modified": "Tue, 19 May 2026 10:54:18 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2027j_SC_skolobory.xlsx": {
+      "stav": 404,
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2025j_SC_skolobory.xlsx": {
+      "stav": 200,
+      "last_modified": "Tue, 18 Aug 2026 20:29:50 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2026j_SC_skolobory.xlsx": {
+      "stav": 200,
+      "last_modified": "Tue, 18 Aug 2026 20:29:53 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2026jap_SC_skolobory.xlsx": {
+      "stav": 404,
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2027jap_SC_skolobory.xlsx": {
+      "stav": 404,
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2025jap_SC_skolobory.xlsx": {
+      "stav": 200,
+      "last_modified": "Tue, 18 Aug 2026 20:29:51 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2025-09-30.jsonld": {
+      "stav": 404,
+      "zjisteno": "2026-09-13"
+    },
+    "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2025-12-31.jsonld": {
+      "stav": 404,
+      "zjisteno": "2026-09-13"
+    },
+    "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-09-30.jsonld": {
+      "stav": 404,
+      "zjisteno": "2026-09-13"
+    },
+    "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld": {
+      "stav": 200,
+      "last_modified": "Mon, 30 Mar 2026 11:23:43 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld": {
+      "stav": 200,
+      "last_modified": "Wed, 01 Jul 2026 05:05:44 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://opendata.csicr.cz/DataSet/Detail/69": {
+      "stav": 200,
+      "last_modified": "",
+      "zjisteno": "2026-09-13"
+    },
+    "https://opendata.csicr.cz/DataSet/Detail/70": {
+      "stav": 404,
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.pid.cz/PID_GTFS.zip": {
+      "stav": 200,
+      "last_modified": "Sun, 13 Sep 2026 01:51:58 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2027_kolo2_skolobory_vysledky.xlsx": {
+      "stav": 404,
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2025_kolo2_skolobory_vysledky.xlsx": {
+      "stav": 200,
+      "last_modified": "Tue, 18 Aug 2026 20:28:32 GMT",
+      "zjisteno": "2026-09-13"
+    },
+    "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2026_kolo2_skolobory_vysledky.xlsx": {
+      "stav": 200,
+      "last_modified": "Wed, 02 Sep 2026 08:11:10 GMT",
+      "zjisteno": "2026-09-13"
+    }
+  },
+  "ulohy": {
+    "QNYPE": {
+      "kod": "QNYPE",
+      "sada": "cermat-uchazeci-kolo1",
+      "druh": "revize",
+      "obdobi": "2025",
+      "url": "https://data.cermat.cz/files/JPZ-polozkova-data/2025/Uchazeci/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx",
+      "last_modified": "Wed, 20 May 2026 15:14:28 GMT",
+      "vytvoreno": "2026-09-13T09:52:18+00:00",
+      "zobrazene_obdobi": "2025",
+      "stav": "oznameno",
+      "historie": [
+        {
+          "cas": "2026-09-13T09:52:18+00:00",
+          "stav": "zjisteno"
+        },
+        {
+          "cas": "2026-09-13T09:52:57+00:00",
+          "stav": "pripraveno"
+        },
+        {
+          "cas": "2026-09-13T09:53:41+00:00",
+          "stav": "oznameno"
+        }
+      ],
+      "priprava": {
+        "cas": "2026-09-13T09:52:20+00:00",
+        "stazeno": {
+          "velikost": 17571097,
+          "sha256": "cdc799ead4182c6d348c3a6745c9f2327fa526ea6c861a91c9b5e6440c446b31",
+          "last_modified": "Wed, 20 May 2026 15:14:28 GMT"
+        },
+        "struktura": {
+          "listy": [
+            "Sheet 1",
+            "legenda"
+          ],
+          "sloupcu": 40,
+          "radku": 159172
+        },
+        "zmeny_struktury": [
+          "listy se změnily z ['data', 'legenda'] na ['Sheet 1', 'legenda']",
+          "pořadí sloupců se změnilo; skripty čtoucí sloupce podle pozice dají chybné výsledky"
+        ],
+        "zpracovani": {
+          "zpracovatel": "cermat-uchazeci-kolo1",
+          "vystupy_skriptu": [
+            "zapsáno 2846 oborů, z toho 1497 s pásmy a 1439 s hranicí; vynecháno 1469 oborů bez povinné jednotné zkoušky",
+            "zapsáno 5043 oborů do /Users/imac/Github/stredniskoly/data/linka/prace/QNYPE/soubeh_prihlasek_2025.json"
+          ],
+          "srovnani": {
+            "oboru_nove": 2846,
+            "oboru_na_webu": 2853,
+            "s_pasmy_nove": 1497,
+            "s_pasmy_na_webu": 1502,
+            "spolecnych_oboru": 2846,
+            "median_zmeny_nejnizsiho_prijateho": 0.0
+          },
+          "predani": {
+            "/Users/imac/Github/stredniskoly/data/linka/prace/QNYPE/pasma_prijeti_2025.json": "public/pasma_prijeti_2025.json",
+            "/Users/imac/Github/stredniskoly/data/linka/prace/QNYPE/soubeh_prihlasek_2025.json": "public/soubeh_prihlasek_2025.json"
+          },
+          "dopad": "Přepíše soubory, které web čte; po sloučení se změní čísla na stránkách oborů."
+        },
+        "dopad": "Přepíše soubory, které web čte; po sloučení se změní čísla na stránkách oborů."
+      },
+      "oznameni": {
+        "cas": "2026-09-13T09:53:41+00:00",
+        "kanaly": [
+          "soubor",
+          "telegram"
+        ],
+        "nanecisto": false
+      }
+    },
+    "3GQMK": {
+      "kod": "3GQMK",
+      "sada": "cermat-uchazeci-kolo1",
+      "druh": "nove_obdobi",
+      "obdobi": "2026",
+      "url": "https://data.cermat.cz/files/JPZ-polozkova-data/2026/Uchazeci/PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx",
+      "last_modified": "Wed, 20 May 2026 13:10:56 GMT",
+      "vytvoreno": "2026-09-13T09:52:18+00:00",
+      "zobrazene_obdobi": "2025",
+      "stav": "oznameno",
+      "historie": [
+        {
+          "cas": "2026-09-13T09:52:18+00:00",
+          "stav": "zjisteno"
+        },
+        {
+          "cas": "2026-09-13T09:53:36+00:00",
+          "stav": "pripraveno"
+        },
+        {
+          "cas": "2026-09-13T09:53:41+00:00",
+          "stav": "oznameno"
+        }
+      ],
+      "priprava": {
+        "cas": "2026-09-13T09:52:57+00:00",
+        "stazeno": {
+          "velikost": 16446840,
+          "sha256": "6e9ca63a52d26f9ae5d8c658c1d818cce12c8ef4a8c0b0d2752e6efaaa75e66f",
+          "last_modified": "Wed, 20 May 2026 13:10:56 GMT"
+        },
+        "struktura": {
+          "listy": [
+            "Sheet 1",
+            "legenda"
+          ],
+          "sloupcu": 40,
+          "radku": 156210
+        },
+        "zmeny_struktury": [
+          "listy se změnily z ['data', 'legenda'] na ['Sheet 1', 'legenda']",
+          "pořadí sloupců se změnilo; skripty čtoucí sloupce podle pozice dají chybné výsledky"
+        ],
+        "zpracovani": {
+          "zpracovatel": "cermat-uchazeci-kolo1",
+          "vystupy_skriptu": [
+            "zapsáno 2879 oborů, z toho 1485 s pásmy a 1416 s hranicí; vynecháno 1493 oborů bez povinné jednotné zkoušky",
+            "zapsáno 5077 oborů do /Users/imac/Github/stredniskoly/data/linka/prace/3GQMK/soubeh_prihlasek_2026.json"
+          ],
+          "srovnani": {
+            "oboru_nove": 2879,
+            "oboru_na_webu": 2853,
+            "s_pasmy_nove": 1485,
+            "s_pasmy_na_webu": 1502,
+            "spolecnych_oboru": 2765,
+            "median_zmeny_nejnizsiho_prijateho": 5.0
+          },
+          "predani": {
+            "/Users/imac/Github/stredniskoly/data/linka/prace/3GQMK/pasma_prijeti_2026.json": "public/pasma_prijeti_2026.json",
+            "/Users/imac/Github/stredniskoly/data/linka/prace/3GQMK/soubeh_prihlasek_2026.json": "public/soubeh_prihlasek_2026.json"
+          },
+          "dopad": "Nové soubory za další rok; web je nečte, dokud se nepřepne registr a nenapojí kód."
+        },
+        "dopad": "Nové soubory za další rok; web je nečte, dokud se nepřepne registr a nenapojí kód."
+      },
+      "oznameni": {
+        "cas": "2026-09-13T09:53:41+00:00",
+        "kanaly": [
+          "soubor",
+          "telegram"
+        ],
+        "nanecisto": false
+      }
+    },
+    "GQ99C": {
+      "kod": "GQ99C",
+      "sada": "cermat-maturita",
+      "druh": "nove_obdobi",
+      "obdobi": "2026",
+      "url": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2026j_SC_skolobory.xlsx",
+      "last_modified": "Tue, 18 Aug 2026 20:29:53 GMT",
+      "vytvoreno": "2026-09-13T09:52:19+00:00",
+      "zobrazene_obdobi": null,
+      "stav": "oznameno",
+      "historie": [
+        {
+          "cas": "2026-09-13T09:52:19+00:00",
+          "stav": "zjisteno"
+        },
+        {
+          "cas": "2026-09-13T09:53:41+00:00",
+          "stav": "pripraveno"
+        },
+        {
+          "cas": "2026-09-13T09:53:41+00:00",
+          "stav": "oznameno"
+        }
+      ],
+      "priprava": {
+        "cas": "2026-09-13T09:53:36+00:00",
+        "stazeno": {
+          "velikost": 2199369,
+          "sha256": "6a814e0a69c2603d5c6191b7c616b311d21910520dc40d1ce1d919bbf5337896",
+          "last_modified": "Tue, 18 Aug 2026 20:29:53 GMT"
+        },
+        "struktura": {
+          "listy": [
+            "2026",
+            "vysvetlivky"
+          ],
+          "sloupcu": 98,
+          "radku": 3738
+        },
+        "zmeny_struktury": [],
+        "dopad": "Soubor je stažený a zkontrolovaný; sada nemá automatické zpracování. Import do webu podle docs/maturitni-vysledky-a-kvalita-skoly-2027.md."
+      },
+      "oznameni": {
+        "cas": "2026-09-13T09:53:41+00:00",
+        "kanaly": [
+          "soubor",
+          "telegram"
+        ],
+        "nanecisto": false
+      }
+    },
+    "HYUWH": {
+      "kod": "HYUWH",
+      "sada": "csi-inspis",
+      "druh": "zmizelo",
+      "obdobi": "2026-02-11",
+      "url": "https://opendata.csicr.cz/DataSet/Detail/70",
+      "last_modified": "",
+      "vytvoreno": "2026-09-13T09:52:20+00:00",
+      "zobrazene_obdobi": "2026-02-11",
+      "stav": "oznameno",
+      "historie": [
+        {
+          "cas": "2026-09-13T09:52:20+00:00",
+          "stav": "zjisteno"
+        },
+        {
+          "cas": "2026-09-13T09:53:41+00:00",
+          "stav": "pripraveno"
+        },
+        {
+          "cas": "2026-09-13T09:53:41+00:00",
+          "stav": "oznameno"
+        }
+      ],
+      "priprava": {
+        "cas": "2026-09-13T09:53:41+00:00",
+        "souhrn": "Zdroj https://opendata.csicr.cz/DataSet/Detail/70 vrací 404.",
+        "dopad": "Sada se nedá obnovit, dokud se nenajde nový zdroj."
+      },
+      "oznameni": {
+        "cas": "2026-09-13T09:53:41+00:00",
+        "kanaly": [
+          "soubor",
+          "telegram"
+        ],
+        "nanecisto": false
+      }
+    }
+  },
+  "behy": [
+    {
+      "cas": "2026-09-13T09:52:17+00:00",
+      "nove_ulohy": [
+        "QNYPE",
+        "3GQMK",
+        "GQ99C",
+        "HYUWH"
+      ],
+      "informace": [
+        {
+          "sada": "cermat-uchazeci-kolo2",
+          "druh": "revize",
+          "obdobi": "2025",
+          "url": "https://data.cermat.cz/files/JPZ-polozkova-data/2025/Uchazeci/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx",
+          "last_modified": "Wed, 20 May 2026 15:14:28 GMT"
+        },
+        {
+          "sada": "cermat-uchazeci-kolo2",
+          "druh": "nove_obdobi",
+          "obdobi": "2026",
+          "url": "https://data.cermat.cz/files/JPZ-polozkova-data/2026/Uchazeci/PZ2026_kolo2_uchazeci_prihlasky_vysledky.xlsx",
+          "last_modified": "Wed, 24 Jun 2026 21:10:53 GMT"
+        },
+        {
+          "sada": "cermat-polozkova-jpz",
+          "druh": "nove_obdobi",
+          "obdobi": "2026",
+          "url": "https://data.cermat.cz/files/JPZ-polozkova-data/2026/Polozkova_data/JPZ2026_M6_polozkova_data.xlsx",
+          "last_modified": "Tue, 19 May 2026 10:54:18 GMT"
+        },
+        {
+          "sada": "cermat-kolo2-agregaty",
+          "druh": "nove_obdobi",
+          "obdobi": "2026",
+          "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2026_kolo2_skolobory_vysledky.xlsx",
+          "last_modified": "Wed, 02 Sep 2026 08:11:10 GMT"
+        }
+      ],
+      "nedostupne": []
+    },
+    {
+      "cas": "2026-09-13T09:53:54+00:00",
+      "nove_ulohy": [],
+      "informace": [],
+      "nedostupne": []
+    }
+  ]
+}

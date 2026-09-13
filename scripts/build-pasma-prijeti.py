@@ -25,6 +25,8 @@ ZDROJ = KOREN / "data" / "PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx"
 KATALOG = KOREN / "public" / "schools_data.json"
 NABIDKY_2026 = KOREN / "public" / "applications_2026.json"
 VYSTUP = KOREN / "public" / "pasma_prijeti_2025.json"
+ROK = 2025
+PRIHLASKY_S_POVINNOSTI = KOREN / "data" / "PZ2026_kolo1_skolobory_prihlasky.xlsx"
 
 SIRKA_PASMA = 5
 MIN_SOUTEZICICH = 30     # pod tímto počtem se pásma nezveřejňují
@@ -40,6 +42,11 @@ TALENTOVE_SKUPINY = ("82-", "79-42")
 # Kategorie oborů, u kterých je jednotná zkouška povinná; slouží jen jako
 # záloha, když nabídka chybí v souboru přihlášek 2026 se sloupcem POVINNOST JPZ.
 KATEGORIE_S_JPZ = ("K", "L", "M")
+
+
+def prijat(hodnota) -> bool:
+    """Příznak přijetí: 1 = přijat a zařazen. CERMAT ho zapisuje jako číslo i jako text, v roce 2024 jako True."""
+    return str(hodnota).strip() in ("1", "True", "true")
 
 
 def nacti_uchazece() -> tuple[dict[str, dict[str, list[float]]], list[float]]:
@@ -70,7 +77,7 @@ def nacti_uchazece() -> tuple[dict[str, dict[str, list[float]]], list[float]]:
                 continue
             o = obory[f"{redizo}_{kkov}"]
             duvod = radek[ix[f"ss{k}_duvod_neprijeti"]]
-            if radek[ix[f"ss{k}_prijat"]] == 1:
+            if prijat(radek[ix[f"ss{k}_prijat"]]):
                 o["prijati"].append(body)
             elif duvod == "pro_nedostacujici_kapacitu":
                 o["nevesli_se"].append(body)
@@ -149,13 +156,17 @@ def povinna_jpz() -> dict[str, bool]:
     jiné přihlášce. Pásma by pak popisovala nahodilou podmnožinu a obor, který
     podle testu vůbec nepřijímá.
     """
-    wb = openpyxl.load_workbook(KOREN / "data" / "PZ2026_kolo1_skolobory_prihlasky.xlsx", read_only=True)
+    if not PRIHLASKY_S_POVINNOSTI.exists():
+        # Bez souboru přihlášek rozhodne kategorie oboru; v CI se soubor nestahuje.
+        print(f"varování: {PRIHLASKY_S_POVINNOSTI.name} chybí, povinnost JPZ podle kategorie oboru")
+        return {}
+    wb = openpyxl.load_workbook(PRIHLASKY_S_POVINNOSTI, read_only=True)
     it = wb[wb.sheetnames[0]].iter_rows(values_only=True)
     ix = {n: i for i, n in enumerate(next(it))}
     mapa: dict[str, bool] = {}
     for r in it:
         klic = f"{r[ix['REDIZO']]}_{r[ix['KKOV']]}"
-        mapa[klic] = mapa.get(klic, False) or r[ix["POVINNOST JPZ"]] == 1
+        mapa[klic] = mapa.get(klic, False) or str(r[ix["POVINNOST JPZ"]]).strip() == "1"
     return mapa
 
 
@@ -254,8 +265,9 @@ def main() -> None:
 
         vystup[klic] = zaznam
 
+    VYSTUP.parent.mkdir(parents=True, exist_ok=True)
     VYSTUP.write_text(json.dumps({
-        "rok": 2025,
+        "rok": ROK,
         "kolo": 1,
         "zdroj": ZDROJ.name,
         "uroven": "REDIZO_KKOV (bez zaměření), jen obory s povinnou jednotnou zkouškou",
@@ -275,5 +287,18 @@ def main() -> None:
           f"vynecháno {vynechano_bez_jpz} oborů bez povinné jednotné zkoušky")
 
 
+def argumenty() -> None:
+    """Vstup, výstup a rok lze přepsat; datová linka tak zpracuje nový soubor mimo public/."""
+    import argparse
+    global ZDROJ, VYSTUP, ROK
+    ap = argparse.ArgumentParser(description="Pásma přijetí z dat uchazečů CERMAT.")
+    ap.add_argument("--zdroj", type=Path, default=ZDROJ)
+    ap.add_argument("--vystup", type=Path, default=VYSTUP)
+    ap.add_argument("--rok", type=int, default=ROK)
+    a = ap.parse_args()
+    ZDROJ, VYSTUP, ROK = a.zdroj, a.vystup, a.rok
+
+
 if __name__ == "__main__":
+    argumenty()
     main()
