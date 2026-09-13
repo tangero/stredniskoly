@@ -108,14 +108,14 @@ Pravidla: ukládá se konkrétní nabídka, ne škola; pořadí určuje rodina, 
 
 | # | Úkol | Stav |
 |---|---|---|
-| P1 | Rok 2025 pro srovnání brát z oficiálního souhrnu, ne ze starší revize katalogu | rozpracováno |
-| P2 | Odvozený soubor souhrnů 1. kola po letech s rozdělením ve srovnatelných skupinách a knihovna, která ho čte podle registru | rozpracováno |
-| P3 | Zrušit součtový poměr přihlášek na místo za školu v `Applications2026Banner` | rozpracováno |
-| P4 | Letopočty v dotčených komponentách z registru, jednotný český formát čísel | rozpracováno |
-| P5 | Záznam katalogu 2026, který míchá roky (`prvni_priority` 2026 vedle `prihlasky_priority` a `min_body` 2025 na škále 0–200): nové komponenty ho nečtou, čtou souhrny | rozpracováno |
-| P6 | Slovník: změna mezi ročníky, percentil průměru přijatých, přijatí podle priority, percentil ve srovnatelné skupině; ověřit populaci historického průměru 2025 | rozpracováno |
+| P1 | Rok 2025 pro srovnání brát z oficiálního souhrnu, ne ze starší revize katalogu | **hotovo**: srovnání ročníků ve `StatsTab` čte `src/lib/souhrny-kolo1.ts`; u Machara 8letého se tím opravilo 30 → 29 přijatých v roce 2025 |
+| P2 | Odvozený soubor souhrnů 1. kola po letech s rozdělením ve srovnatelných skupinách a knihovna, která ho čte podle registru | **hotovo**: `scripts/build-souhrny-kolo1.py` → `public/souhrny_kolo1.json`, doklad `docs/podklady/overeni-srovnani-rocniku.json`, testy `tests/test_souhrny_kolo1.py`; párování 2025–2026: 2 858 z 3 091 nabídek (2 315 shodný klíč, 543 jediná nabídka oboru) |
+| P3 | Zrušit součtový poměr přihlášek na místo za školu v `Applications2026Banner` | **hotovo**: přehled školy ukazuje jen vypsané obory, kapacitu a přijaté za ročník z registru; banner přihlášek jen u jediné nabídky |
+| P4 | Letopočty v dotčených komponentách z registru, jednotný český formát čísel | **částečně**: banner, dlaždice přehledu a srovnání ročníků berou rok a platnost z registru. Zbývá `StatsTab` (priority a průměry JPZ), oddělovač a karta „Přijetí a kapacita“ v `page.tsx`, `SchoolResults2026`, `ProgramCard` s `toFixed`; tyto bloky nahradí grafy v P7, proto se nepřepisují dvakrát |
+| P5 | Záznam katalogu 2026, který míchá roky (`prvni_priority` 2026 vedle `prihlasky_priority` a `min_body` 2025 na škále 0–200): nové komponenty ho nečtou, čtou souhrny | **hotovo pro nové komponenty**; katalog zůstává kvůli stávajícím čtenářům (simulátor, regiony) |
+| P6 | Slovník: změna mezi ročníky, percentil průměru přijatých, přijatí podle priority, percentil ve srovnatelné skupině; ověřit populaci historického průměru 2025 | **hotovo**: slovník 1.13 (přijatí podle priority, vzdali se přijetí, průměrné percentilové umístění přijatých a uchazečů, percentil ve srovnatelné skupině, změna mezi ročníky); historický průměr 2025 se shoduje s průměrem přijatých u 2 590 z 2 809 nabídek do 0,5 bodu; zdroje dat 1.6 a registr doplněny |
 | P7 | Grafové komponenty jako serverové SVG bez knihovny, s tabulkou | čeká na P1–P6 |
-| P8 | Dlouhá řada: souhrn 1. kola 2024 a školní agregáty JPZ 2017–2023 přes datovou linku | ověřit dostupnost |
+| P8 | Dlouhá řada: souhrn 1. kola 2024 a školní agregáty JPZ 2017–2023 přes datovou linku | **dostupnost ověřena 13. 9. 2026**: `PZ2024_kolo1_skolobory_vysledky.xlsx` vrací HTTP 200, adresy JPZ 2017–2023 doložené v `docs/podklady/oponentura-2027-r1.json`. Linka sleduje jen loňský, letošní a příští rok a starší ročník nezaloží jako úlohu; převzetí vyžaduje rozšíření linky o historické ročníky. Strukturu souboru 2024 (sloupce, škály) jsem neověřoval; generátor souhrnů ho odmítne, pokud nesedí rok, kolo nebo povinné sloupce. |
 
 Po P7 následuje uložení mezi zvažované, kroky V1–V4 z oddílu 4.3.
 
