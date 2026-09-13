@@ -1,9 +1,12 @@
 import type { PasmaPrijetiObor } from '@/lib/pasma-prijeti';
+import { MIN_PRIJATYCH_PRO_HRANICI } from '@/lib/pasma-prijeti';
 
 interface PasmaPrijetiCardProps {
   data: PasmaPrijetiObor | null;
-  /** Zobrazí se jen u nabídek, které škola letos vypsala. */
-  nazevOboru?: string;
+  /** Nabídka je vypsaná v 1. kole 2026. Bez ní se při chybějících datech nic nezobrazí. */
+  vypsana2026?: boolean;
+  /** Nabídka je v roce 2026 nová, například nové zaměření existujícího oboru. */
+  nova2026?: boolean;
 }
 
 const cislo = (v: number) => v.toLocaleString('cs-CZ', { maximumFractionDigits: 1 });
@@ -26,15 +29,56 @@ function vetaOTom(rozhodl: number): string {
   return 'O přijetí rozhodlo z velké části něco jiného než test. Bez kritérií školy se odhadnout nedá nic.';
 }
 
-export function PasmaPrijetiCard({ data, nazevOboru }: PasmaPrijetiCardProps) {
-  if (!data) return null;
+function Obal({ children }: { children: React.ReactNode }) {
+  return (
+    <section className="my-6 rounded-xl bg-white p-6">
+      <h2 className="font-semibold text-lg">Jak to dopadlo loni</h2>
+      {children}
+    </section>
+  );
+}
+
+/** Upozornění, která mění výklad všech čísel pod nimi, proto stojí nahoře. */
+function Upozorneni({ data, nova2026 }: { data: PasmaPrijetiObor; nova2026?: boolean }) {
+  if (!data.vice_zamereni && !nova2026) return null;
+  return (
+    <div className="mt-3 rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-900">
+      {nova2026 && (
+        <p>
+          Tuto nabídku vedeme v roce 2026 jako novou. Údaje níže popisují celý obor školy
+          v roce 2025, tedy dobu před jejím vypsáním.
+        </p>
+      )}
+      {data.vice_zamereni && !nova2026 && (
+        <p>
+          Údaje platí za celý obor školy, protože zdroj jednotlivá zaměření nerozlišuje.
+          Stejná čísla proto uvidíte i u ostatních zaměření tohoto oboru.
+        </p>
+      )}
+    </div>
+  );
+}
+
+export function PasmaPrijetiCard({ data, vypsana2026, nova2026 }: PasmaPrijetiCardProps) {
+  if (!data) {
+    // Mlčet by šlo, ale rodič by nepoznal, zda údaj chybí, nebo jsme na něj zapomněli.
+    if (!vypsana2026) return null;
+    return (
+      <Obal>
+        <p className="mt-2 text-slate-700">
+          Za 1. kolo 2025 nemáme o uchazečích o tento obor údaje, takže nelze ukázat,
+          s jakým výsledkem se sem loni dostávali.
+        </p>
+      </Obal>
+    );
+  }
 
   // Bez odmítnutých kvůli kapacitě nemá hranice ani tabulka co rozlišovat.
   if (data.nikdo_neodmitnut_pro_kapacitu) {
     return (
-      <section className="my-6 rounded-xl bg-white p-6">
-        <h2 className="font-semibold text-lg">Jak to dopadlo loni</h2>
-        <p className="mt-2 text-slate-700">
+      <Obal>
+        <Upozorneni data={data} nova2026={nova2026} />
+        <p className="mt-3 text-slate-700">
           V roce 2025 se na tento obor <strong>nikdo nevešel kvůli kapacitě</strong>.
           {data.nesplnilo_podminky > 0 && (
             <> Neznamená to, že se dostali všichni: {cislo(data.nesplnilo_podminky)}{' '}
@@ -42,56 +86,73 @@ export function PasmaPrijetiCard({ data, nazevOboru }: PasmaPrijetiCardProps) {
             podmínky školy, tedy jiné kritérium než výsledek testu.</>
           )}
         </p>
-      </section>
+      </Obal>
     );
   }
 
+  // Pod deseti přijatými je nejnižší výsledek údaj o jednom uchazeči, ne o oboru.
+  const hraniceSmysl = data.prijatych >= MIN_PRIJATYCH_PRO_HRANICI;
   const lo = data.pasmo_nejistoty?.[0] ?? data.min_prijaty;
   const hi = data.pasmo_nejistoty?.[1];
   // Přesné počty z generátoru; součet pětibodových pásem by zahrnul i uchazeče mimo rozmezí.
   const soutezilo = data.pasmo_nejistoty_soutezilo ?? 0;
   const prijato = data.pasmo_nejistoty_prijato ?? 0;
+  const maPasma = !!data.pasma && data.pasma.length > 0;
+
+  // Není co ukázat: málo přijatých a žádná tabulka.
+  if (!hraniceSmysl && !maPasma) return null;
 
   return (
-    <section className="my-6 rounded-xl bg-white p-6">
-      <h2 className="font-semibold text-lg">
-        Jak to dopadlo loni{nazevOboru ? ` · ${nazevOboru}` : ''}
-      </h2>
+    <Obal>
       <p className="mt-1 text-sm text-slate-500">
         Výsledky jednotné zkoušky uchazečů o tento obor v 1. kole přijímacího řízení 2025.
         Body jsou součet češtiny a matematiky, každá za nejvýš 50 bodů, a to lepší z obou
         pokusů. U upravených testů se procentní výsledek s body přesně neshoduje.
       </p>
 
-      <ul className="mt-4 space-y-2 text-slate-800">
-        <li>
-          Pod <strong>{cislo(lo)} bodů</strong> se nedostal nikdo.
-          <span className="text-slate-500"> Stejně nebo méně bodů mělo {Math.round(data.min_prijaty_percentil)} ze 100 uchazečů v celé zemi.</span>
-        </li>
-        {hi !== undefined && hi > lo && (
-          <>
-            <li>Nad <strong>{cislo(hi)} bodů</strong> se dostali všichni.</li>
-            <li>
-              Mezi {cislo(lo)} a {cislo(hi)} body rozhodovala i další kritéria
-              {soutezilo > 0 && (
-                <>; z {cislo(soutezilo)} {tvar(soutezilo, 'uchazeče', 'uchazečů', 'uchazečů')} v tomto
-                rozmezí {tvar(prijato, 'se dostal', 'se dostali', 'se dostalo')} {cislo(prijato)}</>
-              )}.
-            </li>
-          </>
-        )}
-        {hi !== undefined && hi === lo && (
-          <li>
-            Nad {cislo(lo)} bodů se dostali všichni. Přesně s {cislo(lo)} body
-            se někdo dostal a někdo ne, rozhodla další kritéria školy.
-          </li>
-        )}
-        {hi !== undefined && hi < lo && (
-          <li>Nad {cislo(hi)} bodů se dostali všichni; mezi {cislo(hi)} a {cislo(lo)} body nebyl nikdo.</li>
-        )}
-      </ul>
+      <Upozorneni data={data} nova2026={nova2026} />
 
-      {data.rozhodl_test !== undefined && !data.talentova_zkouska && (
+      {hraniceSmysl ? (
+        <ul className="mt-4 space-y-2 text-slate-800">
+          <li>
+            Pod <strong>{cislo(lo)} bodů</strong> se nedostal nikdo.
+            <span className="text-slate-500"> Stejně nebo méně bodů mělo {Math.round(data.min_prijaty_percentil)} ze 100 uchazečů v celé zemi.</span>
+          </li>
+          {hi !== undefined && hi > lo && (
+            <>
+              <li>Nad <strong>{cislo(hi)} bodů</strong> se dostali všichni.</li>
+              <li>
+                Mezi {cislo(lo)} a {cislo(hi)} body rozhodovala i další kritéria
+                {soutezilo > 0 && (
+                  <>; z {cislo(soutezilo)} {tvar(soutezilo, 'uchazeče', 'uchazečů', 'uchazečů')} v tomto
+                  rozmezí {tvar(prijato, 'se dostal', 'se dostali', 'se dostalo')} {cislo(prijato)}</>
+                )}.
+              </li>
+            </>
+          )}
+          {hi !== undefined && hi === lo && (
+            <li>
+              Nad {cislo(lo)} bodů se dostali všichni. Přesně s {cislo(lo)} body
+              se někdo dostal a někdo ne, rozhodla další kritéria školy.
+            </li>
+          )}
+          {hi !== undefined && hi < lo && (
+            <li>Nad {cislo(hi)} bodů se dostali všichni; mezi {cislo(hi)} a {cislo(lo)} body nebyl nikdo.</li>
+          )}
+        </ul>
+      ) : (
+        <p className="mt-4 text-slate-700">
+          Přijatých bylo jen {cislo(data.prijatych)}, takže nejnižší výsledek by byl údajem
+          o jednom uchazeči, ne o oboru. Neuvádíme ho.
+        </p>
+      )}
+
+      {data.talentova_zkouska ? (
+        <p className="mt-4 text-slate-700">
+          U tohoto oboru rozhoduje o přijetí i talentová zkouška, o které údaje nemáme.
+          Výsledek jednotné zkoušky proto šanci na přijetí popisuje jen zčásti.
+        </p>
+      ) : data.rozhodl_test !== undefined && (
         <p className="mt-4 text-slate-700">{vetaOTom(data.rozhodl_test)}</p>
       )}
 
@@ -101,16 +162,13 @@ export function PasmaPrijetiCard({ data, nazevOboru }: PasmaPrijetiCardProps) {
         kolo, a nejsou předpovědí.
       </p>
 
-      {(data.vice_zamereni || data.nastoupilo_jinam > 0 || data.nesplnilo_podminky > 0) && (
+      {(data.prijato_na_vyssi_prioritu > 0 || data.nesplnilo_podminky > 0) && (
         <ul className="mt-2 space-y-1 text-sm text-slate-500">
-          {data.vice_zamereni && (
-            <li>Údaje platí za celý obor školy, protože zdroj jednotlivá zaměření nerozlišuje.</li>
-          )}
-          {data.nastoupilo_jinam > 0 && (
+          {data.prijato_na_vyssi_prioritu > 0 && (
             <li>
               Nejsou tu započítáni uchazeči, kteří byli přijati na obor uvedený na přihlášce
-              výš, a o toto místo proto už nesoutěžili. Loni {tvar(data.nastoupilo_jinam, 'to byl', 'to byli', 'jich bylo')}{' '}
-              {cislo(data.nastoupilo_jinam)} a mívají lepší výsledky než ostatní.
+              výš, a o toto místo proto už nesoutěžili. Loni {tvar(data.prijato_na_vyssi_prioritu, 'to byl', 'to byli', 'jich bylo')}{' '}
+              {cislo(data.prijato_na_vyssi_prioritu)} a mívají lepší výsledky než ostatní.
             </li>
           )}
           {data.nesplnilo_podminky > 0 && (
@@ -123,7 +181,7 @@ export function PasmaPrijetiCard({ data, nazevOboru }: PasmaPrijetiCardProps) {
         </ul>
       )}
 
-      {data.pasma && data.pasma.length > 0 && (
+      {maPasma && (
         <details className="mt-4">
           <summary className="cursor-pointer text-sm font-medium text-slate-700">
             Podrobné rozdělení podle výsledku
@@ -136,7 +194,7 @@ export function PasmaPrijetiCard({ data, nazevOboru }: PasmaPrijetiCardProps) {
               </tr>
             </thead>
             <tbody>
-              {data.pasma.map(p => (
+              {data.pasma!.map(p => (
                 <tr key={p.od} className="border-t border-slate-100">
                   <th scope="row" className="py-1.5 font-normal">
                     {cislo(p.od)} až {cislo(p.do)} bodů
@@ -154,6 +212,6 @@ export function PasmaPrijetiCard({ data, nazevOboru }: PasmaPrijetiCardProps) {
           </p>
         </details>
       )}
-    </section>
+    </Obal>
   );
 }

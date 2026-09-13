@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.7 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.8 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -105,7 +105,7 @@ Uchazeči, kteří splnili podmínky, ale nevešli se. Pole `capacity_rejected`.
 Pole `conditions_not_met`. Odlišné od předchozího: tady nerozhodovala kapacita.
 
 ### Přijati na vyšší prioritu
-Uchazeči, kteří na tento obor přijati nebyli, protože byli přijati na obor uvedený na přihlášce výš. Zdroj: CERMAT, `NEPŘIJATI - PŘIJAT NA VYŠŠÍ PRIORITU`. Pole `higher_priority`, v datech uchazečů `nastoupilo_jinam`.
+Uchazeči, kteří na tento obor přijati nebyli, protože byli přijati na obor uvedený na přihlášce výš. Zdroj: CERMAT, `NEPŘIJATI - PŘIJAT NA VYŠŠÍ PRIORITU`. Pole `higher_priority`, v datech uchazečů `prijato_na_vyssi_prioritu`.
 
 **Neříká, že by se sem dostali.** Na tento obor se u nich přijetí nevyhodnocovalo. Do 13. 9. 2026 tu stálo, že jde o přijaté, kteří dali přednost jinému oboru; to bylo nesprávné.
 
@@ -186,10 +186,12 @@ Na stránce se zobrazuje jedna ze tří vět podle hodnoty: 0,97 a výš, 0,85 a
 
 **Číslo se nezobrazuje**, zobrazuje se věta o tom, co znamená. Projekt si na této míře už jednou vylámal zuby: AUC 0,870 bylo v dřívějším textu nesprávně popsáno jako „správně odhadlo 87 % oborů“.
 
-Nezobrazuje se u oborů s talentovou zkouškou (`talentova_zkouska`): uměleckých oborů skupiny 82 a gymnázií se sportovní přípravou 79-42. U sportovních gymnázií je medián 0,78 proti 0,976 u ostatních. U oborů s více zaměřeními pod jedním klíčem (`vice_zamereni`) je medián 0,925 a zobrazuje se s poznámkou.
+Nezobrazuje se u oborů s talentovou zkouškou (`talentova_zkouska`): uměleckých oborů skupiny 82 a gymnázií se sportovní přípravou 79-42. Místo ní stojí věta, že o přijetí rozhoduje i talentová zkouška, o které údaje nemáme. U sportovních gymnázií je medián 0,78 proti 0,976 u ostatních.
+
+U záznamů sdílených víc zaměřeními nebo nabídkami (`vice_zamereni`) je medián 0,925 a nad čísly stojí upozornění. Příznak se počítá z vyššího z počtů zaměření v katalogu 2025 a nabídek téže kombinace školy a oboru v roce 2026.
 
 ### Pásmo nejistoty
-Rozsah od nejnižšího výsledku mezi přijatými k nejvyššímu mezi nepřijatými kvůli kapacitě. Pole `pasmo_nejistoty`, obsazenost `v_pasmu_nejistoty`, přesné počty uvnitř `pasmo_nejistoty_soutezilo` a `pasmo_nejistoty_prijato`. Věta „z N uchazečů v tomto rozmezí se dostalo M“ smí použít jen přesné počty, nikdy součet pětibodových pásem.
+Rozsah od nejnižšího výsledku mezi přijatými k nejvyššímu mezi nepřijatými kvůli kapacitě. Pole `pasmo_nejistoty`, obsazenost `v_pasmu_nejistoty`, přesné počty uvnitř `pasmo_nejistoty_soutezilo` a `pasmo_nejistoty_prijato`. Věta „z N uchazečů v tomto rozmezí se dostalo M“ smí použít jen přesné počty, nikdy součet pětibodových pásem. Dolní mez se na webu neukazuje u oborů s méně než deseti přijatými, stejně jako nejnižší výsledek mezi přijatými; konstanta `MIN_PRIJATYCH_PRO_HRANICI`.
 
 Uvnitř tohoto rozsahu rozhodovala o přijetí i jiná kritéria než test. Pod ním se loni nedostal nikdo, nad ním se dostali všichni.
 
@@ -301,6 +303,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.8 | Pole přejmenováno na `prijato_na_vyssi_prioritu`. Talentové obory dostávají místo verdiktu větu o talentové zkoušce. Příznak sdíleného záznamu počítán i z nabídky 2026. Dolní mez pásma nejistoty podléhá prahu deseti přijatých. |
 | 1.7 | Čísla ukazatelů o hranici přijetí přepočítána jen nad obory s povinnou jednotnou zkouškou; stabilita míry *rozhodl test* opravena z 0,783 na 0,673. Heslo „Nastoupili jinam“ přejmenováno a opraveno, protože tvrdilo přijetí, které se nevyhodnocovalo. Doplněn percentil nejnižšího přijatého a jednotka bodů. Talentový příznak rozšířen o sportovní gymnázia. |
 | 1.6 | Doplněno, že míra *rozhodl test* popisuje shodu pořadí, ne příčinu. Pásma se nepočítají u oborů bez odmítnutých. Doplněna pravidla pro dosazení mezí pásma nejistoty. |
 | 1.5 | Překryv u hranice přijetí zrušen jako nerobustní a nahrazen mírou *rozhodl test*; krajní hodnoty zůstávají jako pásmo nejistoty bez srovnávací funkce. |

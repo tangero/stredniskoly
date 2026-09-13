@@ -24,7 +24,8 @@ const changelog: ChangelogEntry[] = [
     title: 'Ročník 2026 v katalogu a jak dopadli loňští uchazeči',
     changes: [
       { type: 'new', text: 'Nová sekce „Jak to dopadlo loni“ na stránce oboru: pod kolika body se v 1. kole 2025 nedostal nikdo, nad kolika se dostali všichni a kolik uchazečů uspělo v rozmezí mezi tím' },
-      { type: 'new', text: 'U každého oboru věta o tom, zda o přijetí rozhodoval hlavně výsledek jednotné zkoušky, nebo i další kritéria školy; u oborů s talentovou zkouškou se nezobrazuje' },
+      { type: 'new', text: 'U každého oboru věta o tom, zda o přijetí rozhodoval hlavně výsledek jednotné zkoušky, nebo i další kritéria školy; u oborů s talentovou zkouškou místo ní upozornění, že rozhoduje i talentová zkouška' },
+      { type: 'improve', text: 'Upozornění u nabídek, kde údaje platí za celý obor školy nebo kde jde o novou nabídku 2026, a vysvětlení, když údaje za loňsko chybí' },
       { type: 'new', text: 'Podrobné rozdělení přijatých podle výsledku zkoušky na rozkliknutí, jen u oborů, kde se někdo nevešel kvůli kapacitě' },
       { type: 'new', text: 'Ročník 2026 přidán do katalogu se stabilními adresami nabídek; žádná stránka z roku 2025 nezanikla' },
       { type: 'new', text: 'Statistiky oboru ukazují data 1. kola 2026: přihlášky podle priority, průměrné výsledky přijatých a srovnání ročníků 2025 a 2026' },

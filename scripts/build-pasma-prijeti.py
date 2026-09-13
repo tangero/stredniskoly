@@ -6,9 +6,9 @@ uchazečích). Pro každý obor se uchazeči rozdělí podle výsledku jednotné
 do pásem po pěti bodech a spočítá se, kolik z nich bylo přijato.
 
 Počítá se jen mezi **soutěžícími**, tedy mezi přijatými a těmi, kdo se nevešli
-kvůli kapacitě. Uchazeči, kteří nastoupili na obor s vyšší prioritou, o místo
-nakonec nesoutěžili; uchazeči, kteří nesplnili podmínky, neprošli přes jiné
-kritérium než výsledek testu.
+kvůli kapacitě. Uchazeči přijatí na obor s vyšší prioritou o toto místo už
+nesoutěžili; uchazeči, kteří nesplnili podmínky, neprošli přes jiné kritérium
+než výsledek testu.
 
 Výstup: public/pasma_prijeti_2025.json
 """
@@ -23,6 +23,7 @@ import openpyxl
 KOREN = Path(__file__).resolve().parent.parent
 ZDROJ = KOREN / "data" / "PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx"
 KATALOG = KOREN / "public" / "schools_data.json"
+NABIDKY_2026 = KOREN / "public" / "applications_2026.json"
 VYSTUP = KOREN / "public" / "pasma_prijeti_2025.json"
 
 SIRKA_PASMA = 5
@@ -52,7 +53,7 @@ def nacti_uchazece() -> tuple[dict[str, dict[str, list[float]]], list[float]]:
     ix = {n: i for i, n in enumerate(next(it))}
 
     obory: dict[str, dict[str, list[float]]] = collections.defaultdict(
-        lambda: {"prijati": [], "nevesli_se": [], "nesplnili": [], "jinam": []}
+        lambda: {"prijati": [], "nevesli_se": [], "nesplnili": [], "vyssi_priorita": []}
     )
     uchazeci: list[float] = []
     for radek in it:
@@ -75,7 +76,7 @@ def nacti_uchazece() -> tuple[dict[str, dict[str, list[float]]], list[float]]:
             elif duvod == "pro_nesplneni_podminek":
                 o["nesplnili"].append(body)
             elif duvod == "prijat_na_vyssi_prioritu":
-                o["jinam"].append(body)
+                o["vyssi_priorita"].append(body)
     return obory, sorted(uchazeci)
 
 
@@ -165,19 +166,28 @@ def ma_jpz(klic: str, mapa: dict[str, bool]) -> bool:
 
 
 def kontext_katalogu() -> tuple[collections.Counter, dict[str, str]]:
-    """Počet zaměření na kombinaci REDIZO a KKOV a typ školy."""
+    """Počet nabídek na kombinaci REDIZO a KKOV a typ školy.
+
+    Počítá se zvlášť za katalog 2025 a za nabídku 1. kola 2026 a bere se vyšší
+    z obou čísel: pokud škola v roce 2026 vypsala dvě zaměření jednoho oboru,
+    zobrazí se na obou stránkách stejný záznam, i když v roce 2025 bylo jen jedno.
+    """
     data = json.load(open(KATALOG, encoding="utf-8"))
-    poc: collections.Counter = collections.Counter()
     typy: dict[str, str] = {}
-    for rok in ("2025", "2026"):
-        videno = set()
-        for z in data.get(rok, []):
-            klic = f"{z['redizo']}_{z['kkov']}"
-            typy.setdefault(klic, z.get("typ"))
-            if z["id"] not in videno:
-                videno.add(z["id"])
-                if rok == "2025":
-                    poc[klic] += 1
+    za_2025: collections.Counter = collections.Counter()
+    for z in {z["id"]: z for z in data.get("2025", [])}.values():
+        klic = f"{z['redizo']}_{z['kkov']}"
+        za_2025[klic] += 1
+        typy.setdefault(klic, z.get("typ"))
+    for z in data.get("2026", []):
+        typy.setdefault(f"{z['redizo']}_{z['kkov']}", z.get("typ"))
+
+    nabidky = json.load(open(NABIDKY_2026, encoding="utf-8"))["data"]
+    za_2026 = collections.Counter(f"{z['redizo']}_{z['kkov']}" for z in nabidky)
+
+    poc: collections.Counter = collections.Counter()
+    for klic in set(za_2025) | set(za_2026):
+        poc[klic] = max(za_2025[klic], za_2026[klic])
     return poc, typy
 
 
@@ -202,7 +212,8 @@ def main() -> None:
             "soutezicich": soutezicich,
             "prijatych": len(prijati),
             "neveslo_se": len(nevesli),
-            "nastoupilo_jinam": len(o["jinam"]),
+            # Nepřijati sem, protože byli přijati na obor uvedený na přihlášce výš.
+            "prijato_na_vyssi_prioritu": len(o["vyssi_priorita"]),
             "nesplnilo_podminky": len(o["nesplnili"]),
             "min_prijaty": round(min(prijati), 1),
             "min_prijaty_percentil": round(percentil(rozdeleni, min(prijati)), 1),

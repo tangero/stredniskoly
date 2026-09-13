@@ -18,11 +18,11 @@
   "pod_0_70_pct": 0.6,
   "median_podle_skupiny": {
    "ostatni": {
-    "n": 1303,
+    "n": 1300,
     "median": 0.976
    },
    "vice_zamereni": {
-    "n": 125,
+    "n": 128,
     "median": 0.925
    },
    "talentova": {
@@ -132,7 +132,7 @@
    "podil_zmena_nad_20_pct": 0.0
   }
  },
- "nastoupili_jinam_populace_aspon_10_prijatych_a_10_jinam": {
+ "prijati_na_vyssi_prioritu_populace_aspon_10_prijatych_a_10_takovych": {
   "n": 2304,
   "median_rozdilu_prumeru": 8.73,
   "kladny_rozdil_pct": 97.0

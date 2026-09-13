@@ -1,6 +1,6 @@
 # Využití dat o uchazečích a podrobných dat JPZ
 
-Verze 1.4 · 13. 9. 2026 · Teze 1 a 3 realizovány, teze 2, 4 a 5 odloženy.
+Verze 1.5 · 13. 9. 2026 · Teze 1 a 3 realizovány včetně podmínek z oponentur, teze 2, 4 a 5 odloženy.
 
 Vypořádané oponentury jsou v oddílech na konci. První kolo změnilo výpočet ostrosti hranice, druhé opravilo nepravdivou větu ve vzorovém zobrazení, třetí odhalilo, že posun hranice mezi ročníky z větší části odráží obtížnost testu. Externí oponentura verze 1.2 vedla k připnutí dokladů do skriptu a při jejím vypořádání vyšlo najevo, že statistiky zkreslovaly obory bez povinné jednotné zkoušky.
 
@@ -110,16 +110,23 @@ Populace: 3 091 nabídek v `public/applications_2026.json`. Verze 1.2 populaci n
 
 | Stav nabídky 2026 | Počet | Co se zobrazí |
 |---|---|---|
-| Tabulka pásem i věta o tom, co rozhodlo | 1 526 | obojí |
+| Meze, tabulka pásem i věta o tom, co rozhodlo | 1 526 | vše |
 | Nikdo se nevešel kvůli kapacitě | 1 179 | jedna věta |
-| Jen tabulka pásem | 128 | tabulka bez verdiktu |
-| Za rok 2025 data nemáme | 112 | věta, že obor je nový |
-| Jen dílčí údaje | 90 | nic |
-| Jen věta o tom, co rozhodlo | 56 | věta bez tabulky |
+| Meze a tabulka, bez věty o tom, co rozhodlo | 128 | meze a tabulka |
+| Za rok 2025 data nemáme | 112 | věta, že údaje za loňsko nemáme |
+| Jen dolní mez, méně než pět odmítnutých | 86 | věta o nejnižším přijatém |
+| Meze a věta o tom, co rozhodlo, bez tabulky | 56 | meze a věta |
+| Méně než deset přijatých a žádná tabulka | 4 | nic |
+
+Pravidla, podle kterých komponenta volí, co zobrazí, jsou v `src/components/school/detail/PasmaPrijetiCard.tsx`. Dolní mez se neukazuje pod deseti přijatými, protože by šlo o údaj o jednom uchazeči; tak to určuje slovník ukazatelů u nejnižšího výsledku mezi přijatými. Verze 1.4 měla u stavu „jen dílčí údaje“ napsáno „nic“, ale komponenta ve skutečnosti ukazovala dolní mez i u oborů s méně než deseti přijatými; opraveno ve verzi 1.5.
 
 U 1 179 nabídek zní sdělení: **nikdo se loni nevešel kvůli kapacitě**. Neznamená to, že se dostali všichni: v datech roku 2025 je takových oborů s povinnou zkouškou 1 206 a u 706 z nich někdo nesplnil podmínky školy.
 
-440 nabídek, tedy 14 %, sdílí záznam s jinou nabídkou téže školy; jde o 187 záznamů. U nich stojí nad tabulkou věta, že údaje platí za celý obor školy. 451 z 1 004 nabídek označených jako nové dostane údaje za obor z doby před vypsáním nového zaměření. Viz námitky Q3 a Q4.
+440 nabídek, tedy 14 %, sdílí v roce 2026 záznam s jinou nabídkou téže školy; jde o 187 záznamů. Příznak `vice_zamereni` se nově počítá z vyššího z počtů zaměření v katalogu 2025 a nabídek v roce 2026, takže ho nese 458 nabídek. U nich stojí **nad všemi čísly** upozornění, že údaje platí za celý obor školy a stejná čísla uvidí rodič i u dalších zaměření. Verze 1.4 upozornění řadila pod čísla a příznak počítala jen z roku 2025, takže nová zaměření roku 2026 bez něj zůstala.
+
+892 z 1 004 nabídek označených jako nové má údaje za rok 2025, protože kombinace školy a oboru v datech existuje. Nad jejich čísly stojí upozornění, že nabídku vedeme jako novou a údaje popisují celý obor školy před jejím vypsáním. Verze 1.4 uváděla 451, což byl počet nových nabídek s tabulkou pásem, ne se všemi údaji. Viz námitky Q3 a Q4.
+
+U 112 nabídek bez údajů za rok 2025 se místo prvku zobrazí věta, že údaje za 1. kolo 2025 nemáme. Neříká, že je obor nový, protože to data nedokládají.
 
 ### Co to neříká
 Rok 2025 nepředpovídá rok 2027. Kritéria školy se mění, kapacita se mění a složení uchazečů také. Formulace proto mluví v minulém čase o loňsku, nikdy o šanci dítěte.
@@ -170,8 +177,8 @@ Verze 1.2 uváděla u hodnoty 1,00 podíl 7 %, spočítaný z nezaokrouhlených 
 **Ověření mezi ročníky je slabší, než uváděly předchozí verze.** Na 1 149 oborech spárovaných mezi roky 2024 a 2025 je korelace 0,673 a medián absolutní změny 0,01. Verze 1.1 a 1.2 uváděly korelaci 0,783, ale populace zahrnovala obory bez povinné zkoušky, které mají v obou letech trvale nízkou hodnotu a korelaci uměle zvedají. Nízký medián změny spolu s mírnou korelací znamená, že hodnoty se drží blízko sebe, ale pořadí oborů uvnitř úzkého pásma kolem 0,97 se mezi roky mění. Proto se zobrazují jen tři hrubé kategorie, ne pořadí oborů. Viz námitku R10.
 
 ### Dvě zkreslení, která se musí vyloučit
-- **Talentová zkouška.** Příznak `talentova_zkouska` nesou umělecké obory skupiny 82 a gymnázia se sportovní přípravou 79-42. U sportovních gymnázií je medián 0,78 proti 0,976 u ostatních. Umělecké obory skupiny 82 do dat po zúžení na povinnou zkoušku převážně nevstupují. U oborů s příznakem se věta nezobrazuje. Viz námitky O9 a R3.
-- **Více zaměření pod jedním klíčem.** Medián je tam 0,925. Pole `vice_zamereni`. Věta se zobrazuje s poznámkou.
+- **Talentová zkouška.** Příznak `talentova_zkouska` nesou umělecké obory skupiny 82 a gymnázia se sportovní přípravou 79-42. U sportovních gymnázií je medián 0,78 proti 0,976 u ostatních. Umělecké obory skupiny 82 do dat po zúžení na povinnou zkoušku převážně nevstupují. U oborů s příznakem se věta o tom, co rozhodlo, **nahrazuje** větou, že o přijetí rozhoduje i talentová zkouška, o které údaje nemáme; týká se 59 nabídek. Viz námitky O9 a R3.
+- **Více zaměření pod jedním klíčem.** Medián je tam 0,925 na 128 oborech. Pole `vice_zamereni`. Věta se zobrazuje s upozorněním nad čísly.
 
 ### Co to neříká
 Neměří kvalitu ani spravedlnost přijímacího řízení. Nízká hodnota znamená, že škola vážila i něco jiného než test, což může být legitimní.
@@ -194,6 +201,11 @@ Doporučeno externí oponenturou verze 1.2. Každá podmínka má stav a místo,
 | Doklady jsou reprodukovatelné skriptem nad commitnutými daty | splněno | `scripts/validate-pasma-prijeti.py` |
 | Obory bez povinné jednotné zkoušky se nezpracovávají | splněno | `povinna_jpz()` v generátoru |
 | Počty v rozmezí jsou přesné, ne součet pásem | splněno | `pasmo_nejistoty_soutezilo` |
+| Pod deseti přijatými se dolní mez nezobrazuje | splněno ve verzi 1.5 | `MIN_PRIJATYCH_PRO_HRANICI` v `src/lib/pasma-prijeti.ts` |
+| Upozornění na sdílený záznam a na novou nabídku stojí nad čísly | splněno ve verzi 1.5 | komponenta `Upozorneni` |
+| Nabídka bez údajů za rok 2025 dostane vysvětlující větu | splněno ve verzi 1.5 | větev bez dat v komponentě |
+| U talentových oborů věta o talentové zkoušce místo verdiktu | splněno ve verzi 1.5 | `PasmaPrijetiCard.tsx` |
+| Název skupiny odpovídá slovníku: přijati na vyšší prioritu | splněno ve verzi 1.5 | pole `prijato_na_vyssi_prioritu` |
 | Druhé kolo | nesplněno, odloženo | data existují, nejsou zpracovaná |
 
 ## Odložené teze
@@ -501,6 +513,7 @@ Zjištěno při vypořádání R3. Mezi skupinami s nejnižší mírou *rozhodl 
 
 | Verze | Změna |
 |---|---|
+| 1.5 | Závěry zapracovány do kódu: dolní mez se nezobrazuje pod deseti přijatými, upozornění na sdílený záznam a novou nabídku stojí nad čísly, nabídky bez dat dostanou vysvětlující větu, talentové obory větu o talentové zkoušce. Příznak sdíleného záznamu počítán i z nabídky 2026. Pole přejmenováno na `prijato_na_vyssi_prioritu`. Opraveny tři počty v oddílu o pokrytí. |
 | 1.4 | Vypořádána externí oponentura verze 1.2, deset námitek včetně dvou vlastních. Doklady připnuty do `scripts/validate-pasma-prijeti.py`. Vyřazeny obory bez povinné jednotné zkoušky, rozšířen talentový příznak o sportovní gymnázia, percentil přepočítán přes jednotlivé uchazeče, opraven vymyšlený příklad a nepřesné počty v rozmezí. Doplněny podmínky realizace. |
 | 1.3 | Vypořádána oponentura verze 1.2, pět námitek. Posun hranice mezi ročníky rozpoznán jako z větší části vliv obtížnosti testu, doplněn celostátní percentil hranice. Teze 1 a 3 realizovány v aplikaci. |
 | 1.2 | Vypořádána oponentura verze 1.1, osm námitek, šest přijato a dvě zamítnuty. Opravena nepravdivá věta ve vzorovém zobrazení, ověřeny obě meze pásma nejistoty, potlačeny tabulky pásem u oborů bez odmítnutých, přepočítáno pokrytí, zúžena teze 2. |

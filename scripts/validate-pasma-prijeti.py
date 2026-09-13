@@ -185,10 +185,10 @@ def main() -> None:
             [gen.rozhodl_test(o25[k]["prijati"], o25[k]["nevesli_se"]) for k in par_hr]),
     }
 
-    # --- O4: skupina, která nastoupila jinam
-    s_jinam = [k for k, o in o25.items() if len(o["prijati"]) >= 10 and len(o["jinam"]) >= 10]
-    rozdil = [statistics.mean(o25[k]["jinam"]) - statistics.mean(o25[k]["prijati"] + o25[k]["nevesli_se"]) for k in s_jinam]
-    doklad["nastoupili_jinam_populace_aspon_10_prijatych_a_10_jinam"] = {
+    # --- O4: skupina přijatá na vyšší prioritu
+    s_vp = [k for k, o in o25.items() if len(o["prijati"]) >= 10 and len(o["vyssi_priorita"]) >= 10]
+    rozdil = [statistics.mean(o25[k]["vyssi_priorita"]) - statistics.mean(o25[k]["prijati"] + o25[k]["nevesli_se"]) for k in s_vp]
+    doklad["prijati_na_vyssi_prioritu_populace_aspon_10_prijatych_a_10_takovych"] = {
         "n": len(rozdil),
         "median_rozdilu_prumeru": round(statistics.median(rozdil), 2),
         "kladny_rozdil_pct": podil(sum(1 for x in rozdil if x > 0), len(rozdil)),

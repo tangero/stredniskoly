@@ -20,7 +20,8 @@ export interface PasmaPrijetiObor {
   soutezicich: number;
   prijatych: number;
   neveslo_se: number;
-  nastoupilo_jinam: number;
+  /** Nepřijati sem, protože byli přijati na obor uvedený na přihlášce výš. */
+  prijato_na_vyssi_prioritu: number;
   nesplnilo_podminky: number;
   /** Nejnižší výsledek mezi přijatými, škála 0–100. */
   min_prijaty: number;
@@ -37,13 +38,16 @@ export interface PasmaPrijetiObor {
   /** Shoda pořadí podle testu s výsledkem přijímání, plocha pod ROC křivkou. */
   rozhodl_test?: number;
   hustota_u_hranice?: number;
-  /** Několik zaměření sdílí jeden záznam, údaje platí za obor jako celek. */
+  /** Záznam sdílí víc zaměření v roce 2025 nebo víc nabídek v roce 2026; údaje platí za obor jako celek. */
   vice_zamereni: boolean;
   talentova_zkouska: boolean;
   /** Nikdo nebyl odmítnut kvůli kapacitě. Neznamená, že se dostali všichni. */
   nikdo_neodmitnut_pro_kapacitu?: boolean;
   pasma?: PasmoPrijeti[];
 }
+
+/** Pod tímto počtem přijatých je nejnižší výsledek údaj o jednotlivci, ne o oboru (slovník ukazatelů). */
+export const MIN_PRIJATYCH_PRO_HRANICI = 10;
 
 let cache: Record<string, PasmaPrijetiObor> | null = null;
 

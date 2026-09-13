@@ -397,7 +397,11 @@ export default async function SchoolDetailPage({ params }: Props) {
               />
 
               {/* Jak dopadli loňští uchazeči s podobným výsledkem */}
-              <PasmaPrijetiCard data={await getPasmaPrijeti(program.id)} />
+              <PasmaPrijetiCard
+                data={await getPasmaPrijeti(program.id)}
+                vypsana2026={!!match2026ToProgram(data2026, program)}
+                nova2026={!!match2026ToProgram(data2026, program)?.is_new}
+              />
 
               {/* Quick Facts */}
               <QuickFactsCard facts={quickFacts} />
@@ -908,7 +912,11 @@ export default async function SchoolDetailPage({ params }: Props) {
             result2026={results2026.find(r => normalizeSchoolKey(r.offer_id ?? '') === normalizeSchoolKey(program.id))}
             data2025={await get2025RecordById(program.id)}
           />
-          <PasmaPrijetiCard data={await getPasmaPrijeti(program.id)} />
+          <PasmaPrijetiCard
+            data={await getPasmaPrijeti(program.id)}
+            vypsana2026={!!program2026}
+            nova2026={!!program2026?.is_new}
+          />
           <div className="my-6 rounded-xl bg-white p-6">
             <h2 className="font-semibold">Přijetí a kapacita · {program.rok ?? 2025}</h2>
             <p className="mt-2">Přijatí v roce {program.rok ?? 2025}: {program.prijati}. Kapacita: {program.kapacita} míst.</p>
