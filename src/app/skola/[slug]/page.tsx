@@ -22,6 +22,9 @@ import { PasmaPrijetiCard } from '@/components/school/detail/PasmaPrijetiCard';
 import { getDruheKolo } from '@/lib/druhe-kolo';
 import { DruheKoloCard } from '@/components/school/detail/DruheKoloCard';
 import { SchoolNote } from '@/components/SchoolNote';
+import { getProfilOboru } from '@/lib/obor-profil-data';
+import { ProfilOboru } from '@/components/obor/ProfilOboru';
+import { UlozitObor } from '@/components/obor/UlozitObor';
 import { getDemandClass, createSlug } from '@/lib/utils';
 import { categoryLabels, categoryColors, krajNames, getSchoolTypeFullName } from '@/types/school';
 
@@ -782,7 +785,7 @@ export default async function SchoolDetailPage({ params }: Props) {
 
   // Slug pro přehled školy
   const overviewSlug = `${redizo}-${createSlug(school.nazev)}`;
-  const displayOborName = program.zamereni ? `${program.obor} - ${program.zamereni}` : program.obor;
+  const displayOborName = program.zamereni && program.zamereni !== program.obor ? `${program.obor} - ${program.zamereni}` : program.obor;
 
   // JSON-LD strukturovaná data
   const jsonLd = {
@@ -798,6 +801,99 @@ export default async function SchoolDetailPage({ params }: Props) {
       streetAddress: school.adresa,
     },
   };
+
+  // Nová stránka oboru ve třech otázkách (docs/vrstvy-stranky-oboru-2027.md).
+  // Bez souhrnu 1. kola v zobrazeném ročníku zůstává starší podoba níže.
+  const profil = await getProfilOboru(program.id, program.zamereni, redizo);
+  if (profil) {
+    const krajNazev = krajNames[school.kraj_kod] || school.kraj;
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+        <main className="flex-1 bg-[#f4f7fb]">
+          <div className="border-b border-slate-200 bg-white">
+            <div className="mx-auto max-w-6xl px-4 pb-8 pt-4">
+              <nav className="text-[14px] text-slate-500" aria-label="Drobečková navigace">
+                <Link href="/" className="hover:text-[#0074e4]">Domů</Link>
+                <span className="mx-1.5">/</span>
+                <Link href={`/regiony/${krajSlug}`} className="hover:text-[#0074e4]">{krajNazev}</Link>
+                <span className="mx-1.5">/</span>
+                <Link href={`/skola/${overviewSlug}`} className="hover:text-[#0074e4]">{school.nazev}</Link>
+              </nav>
+
+              <div className="mt-6 flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
+                <div className="min-w-0 max-w-3xl">
+                  <p className="text-[17px] font-semibold text-slate-600">
+                    <Link href={`/skola/${overviewSlug}`} className="hover:text-[#0074e4]">{school.nazev}</Link>
+                  </p>
+                  <h1 className="mt-1 text-[32px] font-bold leading-[1.1] text-[#16325c] [text-wrap:balance] md:text-[44px]">
+                    {displayOborName}<span className="text-slate-400">, {program.delka_studia}leté</span>
+                  </h1>
+                  <ul className="mt-4 flex flex-wrap gap-2 text-[14px] text-slate-700">
+                    <li className="rounded-full bg-slate-100 px-3 py-1">{school.obec}, {krajNazev}</li>
+                    {school.zrizovatel && <li className="rounded-full bg-slate-100 px-3 py-1">zřizovatel: {school.zrizovatel}</li>}
+                    {school.prev_zamereni_name && profil.predchoziRok && (
+                      <li className="rounded-full bg-slate-100 px-3 py-1">v roce {profil.predchoziRok} jako „{school.prev_zamereni_name}“</li>
+                    )}
+                  </ul>
+                </div>
+                <div className="flex flex-col items-start gap-3">
+                  <UlozitObor programId={program.id} />
+                  <div className="flex flex-wrap gap-x-4 gap-y-1 text-[15px] font-semibold">
+                    <Link href="/simulator" className="text-[#0074e4] hover:underline">Porovnat v simulátoru</Link>
+                    <Link href={`/skola/${overviewSlug}`} className="text-[#0074e4] hover:underline">Přehled školy</Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ProgramTabs programs={programsForTabs} currentProgramId={program.id} />
+
+          {schoolNoteToShow && (
+            <div className="mx-auto max-w-6xl px-4 pt-6">
+              <SchoolNote note={schoolNoteToShow} />
+            </div>
+          )}
+
+          <ProfilOboru data={profil} inspekceHref={extractions.length > 0 ? `/skola/${overviewSlug}/inspekce` : null} />
+
+          <div className="mx-auto max-w-6xl space-y-6 px-4 pb-12">
+            <SchoolPortalSection zaznam={portalZaznam} />
+
+            <section className="grid gap-6 rounded-2xl bg-white p-6 shadow-[0_1px_0_#dbe3ec] md:grid-cols-2">
+              <div>
+                <h2 className="mb-3 text-[20px] font-bold text-[#16325c]">Kontakt</h2>
+                <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 text-[15px]">
+                  <dt className="text-slate-500">Adresa</dt><dd className="text-slate-900">{school.adresa_plna || school.adresa}</dd>
+                  <dt className="text-slate-500">Okres</dt><dd className="text-slate-900">{school.okres}</dd>
+                  <dt className="text-slate-500">Kraj</dt><dd className="text-slate-900">{krajNazev}</dd>
+                  <dt className="text-slate-500">Zřizovatel</dt><dd className="text-slate-900">{school.zrizovatel}</dd>
+                  {profil.web && (<><dt className="text-slate-500">Web</dt><dd><a href={profil.web} rel="noopener noreferrer" className="break-all font-semibold text-[#0074e4] hover:underline">{profil.web.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a></dd></>)}
+                </dl>
+              </div>
+              <div className="space-y-3 text-[15px] leading-relaxed text-slate-600">
+                <h2 className="text-[20px] font-bold text-[#16325c]">Odkud údaje jsou</h2>
+                <p>
+                  Přijímací řízení: CERMAT, souhrny 1. kola a data o uchazečích. Inspekce: zprávy ČŠI. Kontakt a web: rejstřík škol MŠMT.
+                  Jak přijímání a rozřazení uchazečů funguje, vysvětluje stránka <Link href="/jak-funguje-prijimani" className="font-semibold text-[#0074e4] hover:underline">Jak funguje přijímání</Link>.
+                </p>
+                <p className="flex flex-wrap items-center gap-2 text-[13px] text-slate-500">
+                  Otevřená data:
+                  <a href={`/skola/${overviewSlug}.md`} className="rounded border border-slate-200 px-2 py-0.5 hover:border-slate-300 hover:text-slate-700">Markdown</a>
+                  <a href={`/skola/${overviewSlug}.json`} className="rounded border border-slate-200 px-2 py-0.5 hover:border-slate-300 hover:text-slate-700">JSON</a>
+                </p>
+              </div>
+            </section>
+          </div>
+        </main>
+
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col">

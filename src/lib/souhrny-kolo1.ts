@@ -26,6 +26,10 @@ export interface SouhrnRocniku {
   konali?: number;
   prijatych_s_vysledkem?: number;
   cj_ma_prijati?: number;
+  cj_prijati?: number;
+  ma_prijati?: number;
+  podil_prijatych_ze_soutezicich?: number;
+  zarazeni_obtiznosti?: string;
   prumerne_umisteni_prijatych?: number;
   prumerne_umisteni_uchazecu?: number;
   min_prijaty_percentil_souhrn?: number;
@@ -38,6 +42,8 @@ interface SouhrnNabidkySoubor {
   kkov: string;
   zamereni: string;
   skupina: string;
+  kraj: string;
+  kraj_nazev: string;
   parovani?: Record<string, 'shoda_klice' | 'jedna_ku_jedne'>;
   roky: Record<string, SouhrnRocniku>;
 }
@@ -55,7 +61,13 @@ export interface SouhrnNabidky {
   /** Předchozí ročník, jen u spárované nabídky. */
   predchoziRok: number | null;
   predchozi: SouhrnRocniku | null;
+  /** Klíč nabídky v souhrnech. */
+  klic: string;
   skupina: string;
+  kraj: string;
+  krajNazev: string;
+  redizo: string;
+  kkov: string;
 }
 
 /** Pod tímto počtem nabídek ve skupině se percentil ve skupině nezobrazuje (slovník, oddíl 4). */
@@ -98,8 +110,40 @@ export async function getSouhrnNabidky(programId: string): Promise<SouhrnNabidky
     aktualni,
     predchoziRok: sparovano ? starsi : null,
     predchozi: sparovano ? nabidka.roky[String(starsi)] : null,
+    klic: klic!,
     skupina: aktualni.skupina ?? nabidka.skupina,
+    kraj: nabidka.kraj,
+    krajNazev: nabidka.kraj_nazev,
+    redizo: nabidka.redizo,
+    kkov: nabidka.kkov,
   };
+}
+
+export interface NabidkaVeSkupine {
+  klic: string;
+  tlak?: number;
+  umisteni?: number;
+}
+
+/** Nabídky téže srovnatelné skupiny ve stejném kraji a ročníku (podklad pro pořadí v kraji). */
+export async function nabidkyVeSkupineKraje(rok: number, kraj: string, skupina: string): Promise<NabidkaVeSkupine[]> {
+  const { soubor } = await nacti();
+  const out: NabidkaVeSkupine[] = [];
+  for (const [klic, n] of Object.entries(soubor.nabidky)) {
+    const r = n.roky[String(rok)];
+    if (!r || n.kraj !== kraj || (r.skupina ?? n.skupina) !== skupina) continue;
+    out.push({ klic, tlak: r.tlak_prvnich_voleb, umisteni: r.prumerne_umisteni_prijatych });
+  }
+  return out;
+}
+
+/** Ročník souhrnu pro obor školy (REDIZO_KKOV), jen když má obor v ročníku jedinou nabídku. */
+export async function souhrnOboru(redizoKkov: string, rok: number): Promise<SouhrnRocniku | null> {
+  const { soubor } = await nacti();
+  const nalezene = Object.values(soubor.nabidky)
+    .filter(n => `${n.redizo}_${n.kkov}` === redizoKkov && n.roky[String(rok)])
+    .map(n => n.roky[String(rok)]);
+  return nalezene.length === 1 ? nalezene[0] : null;
 }
 
 /**
