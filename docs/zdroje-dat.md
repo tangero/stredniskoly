@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.3 · 13. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.4 · 13. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -23,7 +23,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | Zdroj | Původ | Rozsah | Klíč | Aktualizace |
 |---|---|---|---|---|
 | CERMAT, agregovaná data za obory | data.cermat.cz, XLSX | 1. kolo 2025 a 2026 | REDIZO + KKOV + zaměření | ročně po zveřejnění |
-| CERMAT, data uchazečů | data.cermat.cz, XLSX | 1. a 2. kolo 2024 a 2025 | řádek = uchazeč | ročně, se zpožděním roku |
+| CERMAT, data uchazečů | data.cermat.cz, XLSX | 1. a 2. kolo od 2024 | řádek = uchazeč | předběžně v květnu téhož roku, finálně o rok později |
 | CERMAT, položková data JPZ | data.cermat.cz, XLSX | 2024 a 2025, 6 testů ročně | řádek = uchazeč a test | ročně |
 | Rejstřík škol MŠMT, JSON-LD | rejstriky.msmt.gov.cz | 4 čtvrtletní snímky | REDIZO | čtvrtletně |
 | Rejstřík škol MŠMT, CSV | rejstriky.msmt.gov.cz | jeden export | REDIZO + IZO + obor | ručně |
@@ -33,6 +33,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | INSPIS, profily škol | portál ČŠI | 1 180 škol | REDIZO | ručně |
 | CERMAT, maturitní výsledky | data.cermat.cz, XLSX | jaro 2015 až 2026, stav po podzimu do 2025 | REDIZO, volitelně + SMO16 | ročně |
 | CERMAT, školní agregáty JPZ 2017–2023 | data.cermat.cz, XLSX | 7 ročníků | REDIZO + oborová skupina | uzavřená řada |
+| CERMAT, agregáty 2. kola | data.cermat.cz, XLSX | kapacity, přihlášky, výsledky od 2024 | REDIZO + KKOV + zaměření | ročně, výsledky v září |
 | Dopravní data | PID, GTFS ČR, jízdní řády | celá ČR | zastávka a spoj | podle vydání |
 
 **Co v repozitáři není.** Zdroj patří do soupisu i tehdy, když jeho soubor na disku neleží. Takových je několik:
@@ -277,6 +278,7 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 | Výsledek testu u **všech uchazečů**, nejen přijatých | data uchazečů, `c_m_procentni_skor`, vyplněno u 75 % řádků | „S 62 body byl loni v polovině těch, kdo se sem hlásili.“ Jediný způsob, jak dát dítěti vlastní číslo do kontextu | **zpracováno 13. 9. 2026**, na web zatím nenapojeno |
 | **Profil dovedností** uchazečů o obor | položková data, `b1` až `b16.x` | „Kdo se sem dostal, byl silný v porozumění textu.“ Jediný zdroj o tom, co obor vybírá | soubory nikdo nezpracoval |
 | Výsledky po termínech zvlášť | položková data, listy A až D | kontrola, zda jsou řádné termíny srovnatelně těžké | data uchazečů nesou jen lepší výsledek |
+| **Agregáty 2. kola** za obory | `PZ{rok}_kolo2_skolobory_*.xlsx` | Kapacity, přihlášky a přijatí ve 2. kole po oborech, bez práce s řádky uchazečů | nestažené, zjištěno 13. 9. 2026 |
 | **Druhé kolo** přijímacího řízení | `PZ*_kolo2` | „Loni tu po prvním kole zbylo osm míst.“ U nenaplněných oborů je to zásadní | nikdy jsme se na ně nepodívali |
 | **Dobíhající obor** | rejstřík, `dobihajiciObor` | „Škola tenhle obor zavírá.“ Varování před podáním přihlášky | používá se jen v rešeršních skriptech |
 | **Web a kontakt školy** | rejstřík CSV, `WWW`, `Email 1`, `Telefon` | kam jít pro kritéria přijetí a termíny | v datové vrstvě vůbec není |
@@ -295,7 +297,7 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 2. **Přihláška není uchazeč.** Jeden uchazeč podává až tři přihlášky, takže součty napříč obory počítají tytéž děti víckrát.
 3. **Škála skóru.** Data uchazečů mají ČJ+MA v rozsahu 0 až 200 %, katalog v rozsahu 0 až 100 bodů. Poměr je dvě ku jedné.
 4. **Chybějící údaj není nula.** U indexu obtížnosti se takhle 386 oborů bez dat tvářilo jako nejsnazší.
-5. **Rok 2026 je neúplný.** Máme přihlášky, kapacity a výsledky, ale ne data uchazečů. Cokoli z uchazečů odvozeného je za rok 2025.
+5. **Data uchazečů zaostávají za souhrny.** Web má přihlášky, kapacity a výsledky za rok 2026, ale data uchazečů jen za rok 2025, a to v předběžné verzi. CERMAT data uchazečů za rok 2026 zveřejnil už 20. 5. 2026; nepřevzali jsme je. Cokoli z uchazečů odvozeného je proto zatím za rok 2025. Do 13. 9. 2026 tu stálo, že data za rok 2026 neexistují.
 6. **Malé počty.** 1 586 ze 4 350 oborů má méně než deset přijatých. Minimum a medián jsou tam velmi kolísavé.
 
 ## 5. Stav datových sad
@@ -345,31 +347,83 @@ Ukazatel spočítaný z více sad, například přihlášky na místo, je v odd�
 
 Přidává-li se nová sada nebo nový ukazatel, zapisuje se do registru ve stejné dávce. Kontrola selže, když ukazatel ze slovníku nepatří žádné sadě.
 
+### Jak se sady aktualizují a co jde automatizovat
+
+U každé sady vede registr v bloku `aktualizace`, odkud nová data přicházejí, jak se pozná, že vyšla, čím se importují, jakou úroveň automatizace sada unese a co musí udělat člověk. Přehled je v druhé tabulce níže.
+
+Zjištění, co zdroje zveřejnily, je automatické a nic nestahuje:
+
+```
+python3 scripts/stav-datovych-sad.py zjisti
+```
+
+Příkaz pošle na sledované adresy dotaz HEAD. Nezveřejněný soubor vrací 404, přepsaný soubor nové datum `Last-Modified`. Takto se 13. 9. 2026 ukázalo, že CERMAT zveřejnil data o uchazečích za rok 2026 už 20. 5. 2026, že přepsal soubory za roky 2025 i 2026 a že existují agregáty 2. kola, které soupis neznal.
+
+**Doporučené uspořádání automatizace ve třech vrstvách:**
+
+1. **Detekce, týdně, pro všechny sady.** Workflow v GitHub Actions spustí `zjisti` a při novém souboru nebo novém datu změny založí úkol „nová data k převzetí“. Je levná a pokrývá i revize.
+2. **Příprava, pro sady s importérem.** Workflow soubor stáhne, spustí import, dokladové skripty a testy a otevře pull request s rozdílem počtů. Stejný vzor už používá obnova seznamu inspekcí.
+3. **Převzetí, vždy člověk.** Revize pull requestu, sloučení a `prepni`. Nasazení po sloučení zajistí Vercel.
+
+Plné převzetí bez člověka se nedoporučuje: CERMAT soubory přepisuje i mění jejich strukturu, při revizi dat uchazečů přejmenoval list z „data“ na „Sheet 1“; převzetí dat uchazečů mění doklady v dokumentech; a nové nabídky je nutné párovat, v roce 2026 zůstalo 56 nejednoznačných.
+
+**Co automatizaci dnes brání:**
+
+- **Pull requesty obnovy inspekcí nikdo neslučuje.** Workflow běží každý týden úspěšně, pull request #54 s daty ze 7. 9. 2026 je otevřený od 13. 4. 2026. Web proto ukazuje seznam inspekcí z 11. 2. 2026.
+- **Zdroj profilů InspIS zmizel.** Datová sada 70 z otevřených dat ČŠI vrací 404, workflow od 10. 8. 2026 padá a jeho soubor je v pracovním stromu smazaný.
+- **Chybí importér jarní fáze.** Pro kapacity a přihlášky před zveřejněním výsledků není udržovaný skript; na jaře 2027 by se data nedala převzít.
+- **Generátor extrakcí inspekčních zpráv není v repozitáři.**
+- **Zdrojové soubory nejsou v gitu** a výstupy nesou rok v názvu, například `pasma_prijeti_2025.json`; workflow je musí stahovat a přejmenovávat.
+
 ### Aktuální stav
 
 <!-- stav-datovych-sad:od -->
 
 _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-13. Neupravovat ručně._
 
-| Sada | Použití | Zobrazujeme | Odkud | Čekáme | Kdy | Po přepnutí |
-|---|---|---|---|---|---|---|
-| `cermat-kapacity` | web | 2026 | `data/PZ2026_kolo1_skolobory_kapacity.xlsx` | 2027 | 2027-03, odhad | Srovnání ročníků na stránce oboru. |
-| `cermat-prihlasky` | web | 2026 | `data/PZ2026_kolo1_skolobory_prihlasky.xlsx` | 2027 | 2027-03, odhad | Srovnání ročníků na stránce oboru. |
-| `cermat-vysledky` | web | 2026 | `PZ2026_kolo1_skolobory_vysledky.xlsx` | 2027 | 2027-08, odhad | Srovnání ročníků na stránce oboru; výsledky 2025 slouží jako srovnávací zdroj v public/cermat_results_meta.json. |
-| `cermat-uchazeci-kolo1` | web | 2025 | `data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx` | 2026 | 2027-01, odhad | Rok 2025 zůstává pro ověření stability mezi ročníky ve scripts/validate-pasma-prijeti.py a pro vývoj hranice přijetí. |
-| `cermat-uchazeci-kolo2` | nepoužito | 2025 | `data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx` | 2026 | 2027-01, odhad | Není na webu. |
-| `cermat-polozkova-jpz` | analýza | 2025 | `data/JPZ2025_M6_polozkova_data.xlsx` | 2026 | 2027-01, odhad | Není na webu; slouží dokladu teze 4. |
-| `cermat-maturita` | plánováno | nic | `MZ2026j_SC_skolobory.xlsx` | 2026 | neznámo | Maturitní výsledky předchozích let jako řada vývoje. |
-| `cermat-jpz-skoly-2017-2023` | nepoužito | nic | `Uzavřená řada, soubory nejsou stažené.` | — | neznámo | Nepřepíná se. |
-| `msmt-rejstrik-snimky` | web | 2026-06-30 | `data/msmt_rejstrik/rssz-2026-06-30.jsonld` | 2026-09-30 | 2026-10, odhad | Starší snímky zůstávají pro návaznost oborů mezi roky. |
-| `msmt-rejstrik-csv` | analýza | 2026-02-11 | `data/Rejstrik_skol/SkolyAMista.csv` | — | neznámo | Nahrazuje se celý. |
-| `msmt-akko` | analýza | 2026-03-08 | `data/AKKO-Kmenové_obory vzdělání (KKOV 5místné).csv` | — | neznámo | Nahrazuje se celý. |
-| `csi-inspekce` | web | 2026-02-11 | `data/csi_snapshots` | — | neznámo | Starší snímky zůstávají v data/csi_snapshots s manifestem. |
-| `csi-extrakce` | web | 2025-11-25 | `data/inspection_extractions.json` | — | neznámo | Starší zpráva téže školy zůstává sbalená pod novější. |
-| `csi-inspis` | web | 2026-02-11 | `data/inspis_school_profiles.json` | — | neznámo | Nahrazuje se celý. |
-| `doprava-gtfs` | web | 2026-02-07 | `data/PID_GTFS.zip` | — | neznámo | Nahrazuje se celý. |
-| `katalog-historie` | web | 2025 | `public/schools_data.json` | — | neznámo | Nepřepíná se. |
-| `school-analysis-legacy` | nezobrazovat | 2025 | `public/school_analysis.json` | — | neznámo | Nepřepíná se. |
+| Sada | Použití | Zobrazujeme | Odkud | Zveřejněno, nepřevzato | Čekáme | Kdy | Po přepnutí |
+|---|---|---|---|---|---|---|---|
+| `cermat-kapacity` | web | 2026 | `PZ2026_kolo1_skolobory_vysledky.xlsx` | — | 2027 | 2027-03, odhad | Srovnání ročníků na stránce oboru. |
+| `cermat-prihlasky` | web | 2026 | `PZ2026_kolo1_skolobory_vysledky.xlsx` | — | 2027 | 2027-03, odhad | Srovnání ročníků na stránce oboru. |
+| `cermat-vysledky` | web | 2026 | `PZ2026_kolo1_skolobory_vysledky.xlsx` | — | 2027 | 2027-08, odhad | Srovnání ročníků na stránce oboru; výsledky 2025 slouží jako srovnávací zdroj v public/cermat_results_meta.json. |
+| `cermat-uchazeci-kolo1` | web | 2025 | `data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx` | 2025, 2026 | 2027 | 2027-05, odhad | Rok 2025 zůstává pro ověření stability mezi ročníky ve scripts/validate-pasma-prijeti.py a pro vývoj hranice přijetí. |
+| `cermat-uchazeci-kolo2` | nepoužito | 2025 | `data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx` | 2026 | 2027 | 2027-06, odhad | Není na webu. |
+| `cermat-polozkova-jpz` | analýza | 2025 | `data/JPZ2025_M6_polozkova_data.xlsx` | 2026 | 2027 | 2027-05, odhad | Není na webu; slouží dokladu teze 4. |
+| `cermat-maturita` | plánováno | nic | `MZ2026j_SC_skolobory.xlsx` | 2026 | 2026 po podzimu | neznámo | Maturitní výsledky předchozích let jako řada vývoje. |
+| `cermat-jpz-skoly-2017-2023` | nepoužito | nic | `Uzavřená řada, soubory nejsou stažené.` | — | — | neznámo | Nepřepíná se. |
+| `msmt-rejstrik-snimky` | web | 2026-06-30 | `data/msmt_rejstrik/rssz-2026-06-30.jsonld` | 2025-06-30, 2025-09-30 | 2026-09-30 | 2026-10, odhad | Starší snímky zůstávají pro návaznost oborů mezi roky. |
+| `msmt-rejstrik-csv` | analýza | 2026-02-11 | `data/Rejstrik_skol/SkolyAMista.csv` | — | — | neznámo | Nahrazuje se celý. |
+| `msmt-akko` | analýza | 2026-03-08 | `data/AKKO-Kmenové_obory vzdělání (KKOV 5místné).csv` | — | — | neznámo | Nahrazuje se celý. |
+| `csi-inspekce` | web | 2026-02-11 | `data/csi_snapshots` | 2026-09-07 | — | neznámo | Starší snímky zůstávají v data/csi_snapshots s manifestem. |
+| `csi-extrakce` | web | 2025-11-25 | `data/inspection_extractions.json` | — | — | neznámo | Starší zpráva téže školy zůstává sbalená pod novější. |
+| `csi-inspis` | web | 2026-02-11 | `data/inspis_school_profiles.json` | — | — | neznámo | Nahrazuje se celý. |
+| `doprava-gtfs` | web | 2026-02-07 | `data/PID_GTFS.zip` | — | — | neznámo | Nahrazuje se celý. |
+| `katalog-historie` | web | 2025 | `public/schools_data.json` | — | — | neznámo | Nepřepíná se. |
+| `school-analysis-legacy` | nezobrazovat | 2025 | `public/school_analysis.json` | — | — | neznámo | Nepřepíná se. |
+| `cermat-kolo2-agregaty` | nepoužito | nic | `Nestaženo.` | 2026 | 2027 | 2027-09, odhad | Není na webu. |
+
+#### Aktualizace a automatizace
+
+| Sada | Automatizace | Jak zjistíme nová data | Import | Co musí udělat člověk |
+|---|---|---|---|---|
+| `cermat-kapacity` | jen detekce | HTTP HEAD: před zveřejněním 404, po revizi nové Last-Modified; katalogová stránka vypisuje dostupné roky. | Chybí udržovaný importér pro fázi před výsledky. scripts/import_cermat_2026_real.py je podle docs/aktualizace-kalendar-data-2027.md zastaralý; scripts/refresh_cermat_data.py čte až soubor výsledků. | Napsat importér kapacit a přihlášek pro jarní fázi, pak revize importu a přepnutí. |
+| `cermat-prihlasky` | jen detekce | HTTP HEAD: před zveřejněním 404, po revizi nové Last-Modified; katalogová stránka vypisuje dostupné roky. | Chybí udržovaný importér pro fázi před výsledky. scripts/import_cermat_2026_real.py je podle docs/aktualizace-kalendar-data-2027.md zastaralý; scripts/refresh_cermat_data.py čte až soubor výsledků. | Napsat importér kapacit a přihlášek pro jarní fázi, pak revize importu a přepnutí. |
+| `cermat-vysledky` | příprava | HTTP HEAD a katalogová stránka, stejně jako u kapacit. | scripts/refresh_cermat_data.py --input-dir s výsledky aktuálního a předchozího roku; kontroluje hlavičky, kolize, rozsah skóre a součet priorit a ukládá sha256 a datum platnosti. | Stáhnout oba soubory, spustit import a testy, zrevidovat rozdíly počtů a přepnout. |
+| `cermat-uchazeci-kolo1` | příprava | HTTP HEAD a katalogová stránka Datové soubory. | scripts/build-pasma-prijeti.py, scripts/build-soubeh-prihlasek.py, scripts/validate-pasma-prijeti.py; názvy výstupů nesou rok a v kódu jsou zapsané napevno. | Převzetí mění čísla v dokladech tezí a na webu, proto revize výsledků validace před přepnutím. |
+| `cermat-uchazeci-kolo2` | jen detekce | HTTP HEAD. | Neexistuje. | Rozhodnout o zpracování druhého kola. |
+| `cermat-polozkova-jpz` | jen detekce | HTTP HEAD pro šest testů. | Jen dokladový výpočet v scripts/validate-pasma-prijeti.py. | Není na webu, převzetí podle potřeby analýzy. |
+| `cermat-maturita` | jen detekce | HTTP HEAD a katalogová stránka. | Jen analytický scripts/maturita_prototype.py, který nezapisuje do public/. | Import do webu podle docs/maturitni-vysledky-a-kvalita-skoly-2027.md. |
+| `cermat-jpz-skoly-2017-2023` | neaktualizuje se | — | — | Uzavřená řada. |
+| `msmt-rejstrik-snimky` | příprava | HTTP HEAD na adresu snímku ke konci čtvrtletí. Složka nese identifikátor ročníku, který se každý rok mění (e9c07729… pro 2025, 250d6b3f… pro 2026); na přelomu roku ho je nutné dohledat v Národním katalogu otevřených dat. | Soubory se ukládají do data/msmt_rejstrik/; zpracování scripts/enrich-continuity-registry.py a scripts/build-navaznost-notes.py. | Jednou ročně dohledat identifikátor nového ročníku. |
+| `msmt-rejstrik-csv` | ruční | Nelze, export z webové aplikace. | scripts/validate-pasma-prijeti.py čte SkolyAMista.csv pro převod IZO na REDIZO. | Doporučeno nahradit čtvrtletním snímkem JSON-LD, který nese IZO i REDIZO; sada by pak zanikla. |
+| `msmt-akko` | ruční | Nesledováno. | Žádný. | Stáhnout při změně číselníku. |
+| `csi-inspekce` | plná | Workflow CSI Weekly Refresh každé pondělí, poslední úspěšný běh 7. 9. 2026. | scripts/process-csi-data.js, snímek s manifestem a rozdílem. | Revidovat a sloučit pull request. Chybí jen tento krok. |
+| `csi-extrakce` | ruční | Nové zprávy jsou v rozdílu data/csi_diff_latest.json z obnovy seznamu inspekcí. | Generátor v repozitáři není; extrakce vznikla mimo repozitář modelem claude_haiku_4_5. | Automatizovatelné až po převzetí generátoru do repozitáře; každá extrakce stojí volání modelu a vyžaduje kontrolu proti textu zprávy. |
+| `csi-inspis` | ruční | Datová sada 70 z otevřených dat ČŠI zmizela: stránka vrací 404 a v seznamu sad chybí. Workflow InspIS Weekly Refresh proto padá od 10. 8. 2026; pull request #34 s daty z 3. 8. 2026 je otevřený od 16. 2. 2026. | scripts/import-inspis-data.js | Najít nový zdroj profilů InspIS, nebo workflow vypnout. Soubor workflow je v pracovním stromu smazaný, necommitováno. |
+| `doprava-gtfs` | příprava | PID se obnovuje denně, Last-Modified 13. 9. 2026. | scripts/build_transit_graph_v2.py a převodníky KOMPLET v scripts/. | PID lze stahovat automaticky; celostátní data KOMPLET se získávají ručně a stavba grafu je náročná, proto doporučeno obnovovat při změně jízdních řádů, ne průběžně. |
+| `katalog-historie` | neaktualizuje se | — | — | Nepřepíná se. |
+| `school-analysis-legacy` | neaktualizuje se | — | — | Generátor není dohledaný, soubor nejde aktualizovat, jen nahradit katalogem. |
+| `cermat-kolo2-agregaty` | jen detekce | HTTP HEAD. | Neexistuje. | Rozhodnout o zpracování druhého kola. |
 
 <!-- stav-datovych-sad:do -->
 
@@ -386,6 +440,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-13. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.4 | Doplněna aktualizace a automatizace datových sad, příkaz `zjisti`, agregáty 2. kola jako nový zdroj; opraveno tvrzení, že data uchazečů 2026 nevyšla. |
 | 1.3 | Doplněn oddíl 5 o stavu datových sad: registr období, očekávaných termínů a přepínání, kontrolní skript. |
 | 1.2 | Doplněn odvozený soubor pásem přijetí; výsledky všech uchazečů už nejsou nevyužité. |
 | 1.1 | Doplněny maturitní výsledky a školní agregáty JPZ 2017–2023, tedy ověřené zdroje, které nejsou stažené v repozitáři. První verze je vynechala, protože vznikla procházením adresáře `data/`. |

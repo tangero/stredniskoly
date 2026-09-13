@@ -27,7 +27,8 @@ MIN_UCHAZECU = 10
 def nacti_volby() -> tuple[collections.Counter, collections.Counter, dict]:
     """Vrátí počty uchazečů, počty podle pořadí a matici souběhů."""
     wb = openpyxl.load_workbook(ZDROJ, read_only=True)
-    it = wb["data"].iter_rows(values_only=True)
+    # První list: CERMAT ho přejmenovává mezi revizemi („data“ → „Sheet 1“, „fyzicke_osoby“).
+    it = wb.worksheets[0].iter_rows(values_only=True)
     hlavicka = list(next(it))
     ix = {n: i for i, n in enumerate(hlavicka)}
 

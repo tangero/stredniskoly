@@ -49,7 +49,8 @@ def nacti_uchazece() -> tuple[dict[str, dict[str, list[float]]], list[float]]:
     uchazeč, takže každý se v rozdělení objeví jednou bez ohledu na počet přihlášek.
     """
     wb = openpyxl.load_workbook(ZDROJ, read_only=True)
-    it = wb["data"].iter_rows(values_only=True)
+    # První list: CERMAT ho přejmenovává mezi revizemi („data“ → „Sheet 1“, „fyzicke_osoby“).
+    it = wb.worksheets[0].iter_rows(values_only=True)
     ix = {n: i for i, n in enumerate(next(it))}
 
     obory: dict[str, dict[str, list[float]]] = collections.defaultdict(

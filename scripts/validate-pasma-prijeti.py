@@ -66,7 +66,8 @@ def mapa_izo_redizo() -> dict[str, str]:
 def nacti_2024(mapa: dict[str, str]) -> tuple[dict, list[float], int, int]:
     """Soubor 2024 má jiné schéma: klíčem je IZO, přijetí je text True/False."""
     wb = openpyxl.load_workbook(KOREN / "data" / "PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx", read_only=True)
-    it = wb["fyzicke_osoby"].iter_rows(values_only=True)
+    # První list: CERMAT ho přejmenovává mezi revizemi („data“ → „Sheet 1“, „fyzicke_osoby“).
+    it = wb.worksheets[0].iter_rows(values_only=True)
     ix = {n: i for i, n in enumerate(next(it))}
     obory = collections.defaultdict(lambda: {"prijati": [], "nevesli_se": []})
     izo_vse, izo_chybi = set(), set()

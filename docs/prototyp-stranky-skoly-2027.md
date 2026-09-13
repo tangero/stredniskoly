@@ -198,7 +198,9 @@ Na 1 508 nabídkách spárovaných mezi roky 2025 a 2026 je korelace podílu prv
 U lycea je to nejvýmluvnější: 30 % jeho uchazečů se hlásilo na gymnázium v Čelákovicích a 22 % na gymnázium téže školy. Lyceum tedy soutěží s gymnázii, ne s průmyslovkami.
 
 ### R7.7 Stáří dat je napsané v úvodu bloku
-Souběh jde spočítat jen za rok 2025, protože za rok 2026 zveřejnil CERMAT pouze souhrny za obory. Data jsou navíc bez zaměření, takže platí za obor školy jako celek. Obojí stojí v bloku, ne v poznámce pod čarou.
+Souběh jde spočítat jen za rok 2025, protože za rok 2026 zveřejnil CERMAT pouze souhrny za obory.
+
+> **Oprava 13. 9. 2026.** Tvrzení neplatilo: data o uchazečích za rok 2026 zveřejnil CERMAT 20. 5. 2026. Zjištěno při rozboru aktualizace datových sad, stav vede `public/stav_datovych_sad.json`. Data jsou navíc bez zaměření, takže platí za obor školy jako celek. Obojí stojí v bloku, ne v poznámce pod čarou.
 
 ### R7.8 Práh 10 uchazečů
 Souběh se nezveřejňuje u oborů s méně než deseti uchazeči, aby z něj nešlo dopočítat jednotlivce. Stejná logika jako u mezí zveřejnění maturitních výsledků.

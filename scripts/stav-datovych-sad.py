@@ -10,6 +10,10 @@ záznam v historii.
     python3 scripts/stav-datovych-sad.py tabulka
     python3 scripts/stav-datovych-sad.py prepni cermat-vysledky 2027 --kdy 2028-08 --doklad "commit abc123, testy prošly"
     python3 scripts/stav-datovych-sad.py vrat cermat-vysledky --duvod "chyba v importu"
+    python3 scripts/stav-datovych-sad.py zjisti
+
+Příkaz zjisti se jen dívá: pošle na sledované adresy dotaz HEAD a vypíše, co
+zdroj zveřejnil nebo přepsal. Nic nestahuje a registr nemění.
 
 Kontrola skončí kódem 1 při chybě. Varování, například uplynulý očekávaný
 termín, na výsledek nemají vliv, ale vypíšou se.
@@ -30,7 +34,8 @@ ZDROJE = KOREN / "docs" / "zdroje-dat.md"
 ZNACKA_OD = "<!-- stav-datovych-sad:od -->"
 ZNACKA_DO = "<!-- stav-datovych-sad:do -->"
 
-POVINNA_POLE = ("nazev", "dokumentace", "cyklus", "pouziti", "zobrazeno", "ocekavano", "po_prepnuti", "vystupy", "ukazatele")
+POVINNA_POLE = ("nazev", "dokumentace", "cyklus", "pouziti", "zobrazeno", "ocekavano", "po_prepnuti", "vystupy", "ukazatele", "aktualizace")
+AUTOMATIZACE = {"plna", "priprava", "detekce", "rucni", "zadna"}
 CYKLY = {"rocni", "ctvrtletni", "prubezne", "rucni", "uzavreno"}
 POUZITI = {"web", "analyza", "planovano", "nepouzito", "nezobrazovat"}
 JISTOTY = {"znamo", "odhad", "neznamo"}
@@ -98,6 +103,11 @@ def kontrola(registr: dict, dnes: dt.date) -> tuple[list[str], list[str]]:
             chyby.append(f"{sid}: neznámý cyklus {s.get('cyklus')}")
         if s.get("pouziti") not in POUZITI:
             chyby.append(f"{sid}: neznámé použití {s.get('pouziti')}")
+        if s.get("aktualizace", {}).get("automatizace") not in AUTOMATIZACE:
+            chyby.append(f"{sid}: neznámá úroveň automatizace {s.get('aktualizace', {}).get('automatizace')}")
+        for d in s.get("dostupne", []):
+            varovani.append(f"{sid}: zdroj zveřejnil {d.get('obdobi')}"
+                            f"{' (' + d['verze'] + ')' if d.get('verze') else ''}, web ho nepřevzal")
         oc = s.get("ocekavano", {})
         if oc.get("jistota") not in JISTOTY:
             chyby.append(f"{sid}: neznámá jistota {oc.get('jistota')}")
@@ -161,8 +171,8 @@ def tabulka(registr: dict) -> str:
     pouziti = {"web": "web", "analyza": "analýza", "planovano": "plánováno", "nepouzito": "nepoužito", "nezobrazovat": "nezobrazovat"}
     jistota = {"znamo": "", "odhad": ", odhad", "neznamo": "neznámo"}
     radky = [
-        "| Sada | Použití | Zobrazujeme | Odkud | Čekáme | Kdy | Po přepnutí |",
-        "|---|---|---|---|---|---|---|",
+        "| Sada | Použití | Zobrazujeme | Odkud | Zveřejněno, nepřevzato | Čekáme | Kdy | Po přepnutí |",
+        "|---|---|---|---|---|---|---|---|",
     ]
     for sid, s in registr["sady"].items():
         oc = s["ocekavano"]
@@ -170,9 +180,24 @@ def tabulka(registr: dict) -> str:
         if odkud.startswith("http"):
             odkud = odkud.rsplit("/", 1)[-1]
         kdy = f"{oc['kdy']}{jistota[oc['jistota']]}" if oc.get("kdy") else jistota[oc["jistota"]] or "—"
+        dostupne = ", ".join(str(d.get("obdobi")) for d in s.get("dostupne", [])) or "—"
         radky.append(
-            f"| `{sid}` | {pouziti[s['pouziti']]} | {zobraz_obdobi(s)} | `{odkud}` | "
+            f"| `{sid}` | {pouziti[s['pouziti']]} | {zobraz_obdobi(s)} | `{odkud}` | {dostupne} | "
             f"{oc.get('obdobi') or '—'} | {kdy} | {s['po_prepnuti']} |"
+        )
+    return "\n".join(radky)
+
+
+def tabulka_aktualizace(registr: dict) -> str:
+    uroven = {"plna": "plná", "priprava": "příprava", "detekce": "jen detekce", "rucni": "ruční", "zadna": "neaktualizuje se"}
+    radky = [
+        "| Sada | Automatizace | Jak zjistíme nová data | Import | Co musí udělat člověk |",
+        "|---|---|---|---|---|",
+    ]
+    for sid, s in registr["sady"].items():
+        a = s["aktualizace"]
+        radky.append(
+            f"| `{sid}` | {uroven[a['automatizace']]} | {a.get('detekce', '—')} | {a.get('import', '—')} | {a.get('lidsky_krok', '—')} |"
         )
     return "\n".join(radky)
 
@@ -184,7 +209,8 @@ def zapis_tabulku(registr: dict) -> None:
     zacatek = text.index(ZNACKA_OD) + len(ZNACKA_OD)
     konec = text.index(ZNACKA_DO)
     nova = (f"\n\n_Vygenerováno z `public/stav_datovych_sad.json` dne {registr['aktualizovano']}. "
-            f"Neupravovat ručně._\n\n{tabulka(registr)}\n\n")
+            f"Neupravovat ručně._\n\n{tabulka(registr)}\n\n#### Aktualizace a automatizace\n\n"
+            f"{tabulka_aktualizace(registr)}\n\n")
     ZDROJE.write_text(text[:zacatek] + nova + text[konec:], encoding="utf-8")
     print(f"tabulka zapsána do {ZDROJE.relative_to(KOREN)}")
 
@@ -217,6 +243,47 @@ def vrat(registr: dict, sid: str, duvod: str) -> None:
     })
 
 
+def zjisti(registr: dict, dnes: dt.date) -> None:
+    """Pošle HEAD na sledované adresy a vypíše, co je nového. Nic nestahuje."""
+    import urllib.error
+    import urllib.request
+
+    def head(url: str) -> tuple[int, str]:
+        hlavicky = {"User-Agent": "prijimackynaskolu.cz kontrola dat"}
+        for metoda in ("HEAD", "GET"):
+            req = urllib.request.Request(url, method=metoda, headers=hlavicky)
+            try:
+                with urllib.request.urlopen(req, timeout=30) as r:
+                    return r.status, r.headers.get("Last-Modified", "")
+            except urllib.error.HTTPError as e:
+                # Některé servery na HEAD odpoví přesměrováním, které urllib nesleduje; GET ho sleduje.
+                if metoda == "HEAD" and 300 <= e.code < 400:
+                    continue
+                return e.code, ""
+            except Exception as e:  # síť, DNS, časový limit
+                return 0, str(e)[:60]
+        return 0, "přesměrování"
+
+    ctvrtleti = [f"{dnes.year - (m > dnes.month)}-{m:02d}-{d}" for m, d in ((3, 31), (6, 30), (9, 30), (12, 31))]
+    for sid, s in registr["sady"].items():
+        vzory = s["aktualizace"].get("sledovat", [])
+        if not vzory:
+            continue
+        roky = {dnes.year - 1, dnes.year, dnes.year + 1}
+        for vzor in vzory:
+            adresy = []
+            if "{rok}" in vzor:
+                adresy = [(str(r), vzor.replace("{rok}", str(r))) for r in sorted(roky)]
+            elif "{ctvrtleti}" in vzor:
+                adresy = [(q, vzor.replace("{ctvrtleti}", q)) for q in sorted(ctvrtleti)]
+            else:
+                adresy = [("—", vzor)]
+            for obdobi, url in adresy:
+                kod, zmena = head(url)
+                stav = "je" if kod == 200 else "není" if kod == 404 else f"chyba {kod} {zmena}"
+                print(f"{sid:28} {obdobi:>10}  {stav:5} {zmena if kod == 200 else ''}  {url.rsplit('/', 1)[-1]}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="prikaz", required=True)
@@ -231,6 +298,7 @@ def main() -> None:
     p.add_argument("--doklad", required=True)
     p.add_argument("--soubor", help="zdrojový soubor nového období")
     p.add_argument("--kontrola-soubor", help="výstup nového období, podle kterého se ověří rok v datech")
+    sub.add_parser("zjisti")
     v = sub.add_parser("vrat")
     v.add_argument("sada")
     v.add_argument("--duvod", required=True)
@@ -247,6 +315,9 @@ def main() -> None:
         sys.exit(1 if chyby else 0)
     if a.prikaz == "tabulka":
         zapis_tabulku(registr)
+        return
+    if a.prikaz == "zjisti":
+        zjisti(registr, dt.date.today())
         return
 
     if a.prikaz == "prepni":

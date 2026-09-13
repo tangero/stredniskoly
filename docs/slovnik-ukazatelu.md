@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.9 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.10 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -59,7 +59,7 @@ Zdroj jsou údaje o jednotlivých uchazečích za rok 2025 (`PZ2025_kolo1_uchaze
 
 Tři meze, které se musí uvést vždy:
 
-1. **Rok 2025, ne 2026.** Za rok 2026 zveřejnil CERMAT jen souhrny za obory, ne řádky uchazečů, takže souběh za aktuální ročník spočítat nelze.
+1. **Rok 2025, předběžná verze.** Soubor zachycuje přihlášky k 13. 5. 2025. CERMAT mezitím 20. 5. 2026 zveřejnil finální revizi roku 2025 i předběžná data za rok 2026; web je zatím nepřevzal, stav vede registr `public/stav_datovych_sad.json` u sady `cermat-uchazeci-kolo1`. Do 13. 9. 2026 tu stálo, že data za rok 2026 neexistují, což nebyla pravda.
 2. **Bez zaměření.** Soubor nese jen REDIZO a KKOV, takže souběh platí za obor školy jako celek, ne za jednotlivé zaměření.
 3. **Nezveřejňuje se pod 10 uchazeči** o obor, aby nešlo dopočítat jednotlivce.
 
@@ -130,7 +130,7 @@ Zdroj jsou data uchazečů CERMATu za 1. kolo 2025, kde je u každé volby pří
 
 Čtyři omezení, která se musí uvést spolu s číslem:
 
-1. **Rok 2025.** Za rok 2026 data uchazečů zveřejněná nejsou. V katalogu 2026 je hodnota převzatá a označená polem `historicka_data_rok`.
+1. **Rok 2025.** Počítá se z předběžné verze dat uchazečů za rok 2025. Novější data existují, viz sada `cermat-uchazeci-kolo1` v registru stavu datových sad; do jejich převzetí je hodnota v katalogu 2026 převzatá a označená polem `historicka_data_rok`.
 2. **Bez zaměření.** Zdroj nese jen REDIZO a KKOV. U 213 z 2 558 kombinací sdílí několik zaměření jednu hodnotu.
 3. **Malé počty.** 1 586 ze 4 350 oborů má méně než deset přijatých. Minimum je tam jednotlivý uchazeč, ne stabilní vlastnost oboru, a nezobrazuje se.
 4. **Nepředpovídá příští rok.** Popisuje jeden ročník, nikoli požadavek školy.
@@ -304,6 +304,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.10 | Opraveno tvrzení, že data o uchazečích za rok 2026 nejsou zveřejněná; vyšla 20. 5. 2026. |
 | 1.9 | Každý ukazatel je přiřazen datové sadě v registru stavu datových sad, který určuje zobrazené období. |
 | 1.8 | Pole přejmenováno na `prijato_na_vyssi_prioritu`. Talentové obory dostávají místo verdiktu větu o talentové zkoušce. Příznak sdíleného záznamu počítán i z nabídky 2026. Dolní mez pásma nejistoty podléhá prahu deseti přijatých. |
 | 1.7 | Čísla ukazatelů o hranici přijetí přepočítána jen nad obory s povinnou jednotnou zkouškou; stabilita míry *rozhodl test* opravena z 0,783 na 0,673. Heslo „Nastoupili jinam“ přejmenováno a opraveno, protože tvrdilo přijetí, které se nevyhodnocovalo. Doplněn percentil nejnižšího přijatého a jednotka bodů. Talentový příznak rozšířen o sportovní gymnázia. |
