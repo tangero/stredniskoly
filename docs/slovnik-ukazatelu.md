@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.3 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.4 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -140,6 +140,43 @@ Medián je u šikmého rozdělení vypovídavější než průměr a měl by mí
 
 Nezaměňovat s **průměrem JPZ přijatých** z oddílu výše, který pochází z agregátů CERMATu za rok 2026. Ten platí za nabídku včetně zaměření, tenhle za celý KKOV školy, a jsou to jiné ročníky.
 
+### Soutěžící o obor
+Přijatí a ti, kdo se nevešli kvůli kapacitě, dohromady. Je to jmenovatel všech ukazatelů o hranici přijetí.
+
+Dvě skupiny do něj **nepatří** a při zobrazení se uvádějí zvlášť:
+
+- **Nastoupili jinam**: dostali se, ale dali přednost oboru s vyšší prioritou, takže o místo nakonec nesoutěžili.
+- **Nesplnili podmínky**: vypadli na jiném kritériu než na výsledku testu.
+
+U osmiletého gymnázia J. S. Machara bylo v roce 2025 soutěžících 68, ale nesplnilo podmínky 107 dalších uchazečů. Podíl přijatých ze soutěžících by bez této poznámky byl zavádějící.
+
+### Podíl přijatých podle bodového pásma
+Pro každý obor rozdělení soutěžících do pásem po pěti bodech a podíl přijatých v každém pásmu. Pole `pasma` v `public/pasma_prijeti_2025.json`, generuje `scripts/build-pasma-prijeti.py`.
+
+Zdroj jsou data uchazečů CERMATu za 1. kolo 2025. Škála je 0 až 100 bodů, tedy procentní skór dělený dvěma.
+
+Pásmo s méně než pěti soutěžícími se slučuje se sousedním, aby „1 z 1“ nevypadalo jako spolehlivých 100 %. Pásma se zobrazují jen u oborů s aspoň 30 soutěžícími; těch je 1 705.
+
+**Není to šance konkrétního uchazeče.** Popisuje, jak dopadli loňští uchazeči s podobným výsledkem. Kritéria, kapacita i složení uchazečů se mezi roky mění, takže formulace musí být v minulém čase o roce 2025.
+
+Platí za celý obor školy bez rozlišení zaměření, viz omezení u nejnižšího výsledku JPZ mezi přijatými.
+
+### Překryv u hranice přijetí
+`nejvyšší výsledek mezi nepřijatými kvůli kapacitě − nejnižší výsledek mezi přijatými`, v bodech. Pole `prekryv`.
+
+Nula nebo méně znamená, že o přijetí rozhodl výhradně výsledek testu. Kladná hodnota znamená, že někdo s lepším testem se nedostal a někdo s horším ano, tedy že škola vážila i jiné kritérium.
+
+Počítá se jen u oborů s aspoň deseti přijatými a pěti odmítnutými kvůli kapacitě; těch je 1 545. U 1 381 z nich bez talentové zkoušky a s jediným zaměřením je medián 7 bodů a 17 % má čistý řez.
+
+**Neměří kvalitu ani spravedlnost.** Velký překryv znamená, že škola hodnotí i něco jiného než test, například prospěch nebo vlastní zkoušku, což je legitimní.
+
+Dvě zkreslení jsou v datech označena a ukazatel se nad nimi nezobrazuje bez upozornění. **Více zaměření pod jedním klíčem** (`vice_zamereni`) sčítá obory s různými hranicemi; medián překryvu je tam 17 bodů. **Talentová zkouška** (`talentova_zkouska`) u uměleckých oborů skupiny 82 dává medián 38 bodů.
+
+### Hustota u hranice
+Podíl soutěžících, jejichž výsledek leží do pěti bodů od nejnižšího přijatého. Pole `hustota_u_hranice`.
+
+Medián je 28 %, takže u poloviny oborů se kolem hranice tísní víc než čtvrtina uchazečů a rozhoduje jediný bod. Nízká hodnota znamená, že hranice leží v řídkém místě a jeden bod nic nemění.
+
 ### Hranice přijetí
 **Nemáme a mít nebudeme.** CERMAT nezveřejňuje, kolik bodů měl poslední přijatý podle kritérií školy, a z průměru se to spočítat nedá. Nejbližší doložený údaj je nejnižší výsledek JPZ mezi přijatými výše, který je dolní mezí, ne hranicí.
 
@@ -230,6 +267,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.4 | Doplněni soutěžící o obor, podíl přijatých podle bodového pásma, překryv u hranice přijetí a hustota u hranice. |
 | 1.3 | Opraveno tvrzení, že nemáme nejnižší výsledek přijatých. Doplněn nejnižší výsledek JPZ mezi přijatými, medián a průměr JPZ přijatých 2025. |
 | 1.2 | Doplněn podíl prvních voleb, kohorta podle pozice na přihlášce a souběžné přihlášky. |
 | 1.1 | Doplněn tlak prvních voleb, naplněnost a přetlak. Zaznamenán neúspěšný pokus o zpětné odvození indexu obtížnosti a zjištění, že složený index nepřidává rozlišovací schopnost. |

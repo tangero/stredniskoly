@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.1 · 13. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.2 · 13. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -204,6 +204,7 @@ Otázka rodiče je jediná: **jak dlouho bude dítě dojíždět**. Odpovídáme
 | `cermat_results_2026.json` | CERMAT výsledky 2026 a 2025 | `refresh_cermat_data.py` | nese otisk zdroje |
 | `school_analysis.json` | starší zpracování | nedohledaný | obsahuje `obtiznost` bez doloženého výpočtu |
 | `soubeh_prihlasek_2025.json` | data uchazečů 2025 | `build-soubeh-prihlasek.py` | souběžné přihlášky |
+| `pasma_prijeti_2025.json` | data uchazečů 2025 | `build-pasma-prijeti.py` | podíl přijatých podle bodového pásma a hranice |
 | `csi_inspections.json` | seznam ČŠI | `process-csi-data.js` | |
 | `navaznost_notes.json` | rešerše návaznosti | `build-navaznost-notes.py` | ruční poznámky v `school_notes.json` mají přednost |
 | `offer_mapping_2026.json` | párování nabídek | `build-offer-mapping-2026.py` | |
@@ -272,7 +273,7 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 |---|---|---|---|
 | **Celé maturitní výsledky** | `MZ{rok}j_SC_skolobory.xlsx` | „Maturitu tu loni udělalo 100 % žáků, v češtině jsou nad 80. percentilem.“ Jediná přímá odpověď na otázku, jaké jsou tu nároky. Spárovatelné u 2 782 z 3 091 nabídek | soubor není stažený, import nezačal |
 | Vstupní úroveň školy 2017 až 2023 | `JPZ{rok}_skoly-skolobory_vysledky.xlsx` | „Škola je dlouhodobě žádaná, není to výkyv jednoho roku.“ | soubory nejsou stažené |
-| Výsledek testu u **všech uchazečů**, nejen přijatých | data uchazečů, `c_m_procentni_skor`, vyplněno u 75 % řádků | „S 62 body byl loni v polovině těch, kdo se sem hlásili.“ Jediný způsob, jak dát dítěti vlastní číslo do kontextu | používáme jen přijaté, zbytek ignorujeme |
+| Výsledek testu u **všech uchazečů**, nejen přijatých | data uchazečů, `c_m_procentni_skor`, vyplněno u 75 % řádků | „S 62 body byl loni v polovině těch, kdo se sem hlásili.“ Jediný způsob, jak dát dítěti vlastní číslo do kontextu | **zpracováno 13. 9. 2026**, na web zatím nenapojeno |
 | **Profil dovedností** uchazečů o obor | položková data, `b1` až `b16.x` | „Kdo se sem dostal, byl silný v porozumění textu.“ Jediný zdroj o tom, co obor vybírá | soubory nikdo nezpracoval |
 | Výsledky po termínech zvlášť | položková data, listy A až D | kontrola, zda jsou řádné termíny srovnatelně těžké | data uchazečů nesou jen lepší výsledek |
 | **Druhé kolo** přijímacího řízení | `PZ*_kolo2` | „Loni tu po prvním kole zbylo osm míst.“ U nenaplněných oborů je to zásadní | nikdy jsme se na ně nepodívali |
@@ -308,5 +309,6 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 
 | Verze | Změna |
 |---|---|
+| 1.2 | Doplněn odvozený soubor pásem přijetí; výsledky všech uchazečů už nejsou nevyužité. |
 | 1.1 | Doplněny maturitní výsledky a školní agregáty JPZ 2017–2023, tedy ověřené zdroje, které nejsou stažené v repozitáři. První verze je vynechala, protože vznikla procházením adresáře `data/`. |
 | 1.0 | První soupis. Vznikl po zjištění, že tři použitelné údaje ležely nepoužité ve zdrojích, které projekt už zpracovával. |
