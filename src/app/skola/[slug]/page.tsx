@@ -407,7 +407,7 @@ export default async function SchoolDetailPage({ params }: Props) {
               />
 
               {/* Jak dopadli loňští uchazeči s podobným výsledkem */}
-              {rokPasem && rokNabidky && (
+              {rokPasem && (
                 <PasmaPrijetiCard
                   data={await getPasmaPrijeti(program.id)}
                   rok={rokPasem}
@@ -934,7 +934,7 @@ export default async function SchoolDetailPage({ params }: Props) {
             result2026={results2026.find(r => normalizeSchoolKey(r.offer_id ?? '') === normalizeSchoolKey(program.id))}
             data2025={await get2025RecordById(program.id)}
           />
-          {rokPasem && rokNabidky && (
+          {rokPasem && (
             <PasmaPrijetiCard
               data={await getPasmaPrijeti(program.id)}
               rok={rokPasem}

@@ -38,6 +38,16 @@ class TestPrepnuti(unittest.TestCase):
         self.assertEqual(s["ocekavano"]["obdobi"], "2027")
         self.assertEqual([d["obdobi"] for d in s["dostupne"]], ["2026"])
 
+    def test_nove_obdobi_bez_kdy_ponecha_pozdejsi_ocekavani(self):
+        r = registr()
+        stav.prepni(r, "uchazeci", "2026", None, "neznamo", "", "PR", None, None)
+        self.assertEqual(r["sady"]["uchazeci"]["ocekavano"]["obdobi"], "2027")
+
+    def test_nove_obdobi_s_kdy_prepise_ocekavani(self):
+        r = registr()
+        stav.prepni(r, "uchazeci", "2026", "2027-06", "odhad", "ročně", "PR", None, None)
+        self.assertEqual(r["sady"]["uchazeci"]["ocekavano"]["kdy"], "2027-06")
+
     def test_vraceni_obnovi_dostupne(self):
         r = registr()
         stav.prepni(r, "uchazeci", "2026", None, "neznamo", "", "PR", None, None)

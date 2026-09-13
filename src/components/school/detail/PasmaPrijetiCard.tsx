@@ -6,8 +6,8 @@ interface PasmaPrijetiCardProps {
   data: PasmaPrijetiObor | null;
   /** Rok dat o uchazečích z registru stavu datových sad, sada cermat-uchazeci-kolo1. */
   rok: number;
-  /** Rok nabídky z registru, sada cermat-prihlasky. */
-  rokNabidky: number;
+  /** Rok nabídky z registru, sada cermat-prihlasky; bez něj věta o nové nabídce vynechá rok. */
+  rokNabidky?: number | null;
   /** Nabídka je vypsaná v 1. kole roku nabídky. Bez ní se při chybějících datech nic nezobrazí. */
   vypsana?: boolean;
   /** Nabídka je v roce nabídky nová, například nové zaměření existujícího oboru. */
@@ -37,13 +37,13 @@ function Obal({ children }: { children: React.ReactNode }) {
 }
 
 /** Upozornění, která mění výklad všech čísel pod nimi, proto stojí nahoře. */
-function Upozorneni({ data, nova, rok, rokNabidky }: { data: PasmaPrijetiObor; nova?: boolean; rok: number; rokNabidky: number }) {
+function Upozorneni({ data, nova, rok, rokNabidky }: { data: PasmaPrijetiObor; nova?: boolean; rok: number; rokNabidky?: number | null }) {
   if (!data.vice_zamereni && !nova) return null;
   return (
     <div className="mt-3 rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-900">
       {nova && (
         <p>
-          Tuto nabídku vedeme v roce {rokNabidky} jako novou. Údaje níže popisují celý obor školy
+          Tuto nabídku vedeme{rokNabidky ? ` v roce ${rokNabidky}` : ''} jako novou. Údaje níže popisují celý obor školy
           v roce {rok}, tedy dobu před jejím vypsáním.
         </p>
       )}

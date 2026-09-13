@@ -233,10 +233,15 @@ def prepni(registr: dict, sid: str, obdobi: str, kdy: str | None, jistota: str, 
         "prepnuto": dt.date.today().isoformat(),
         **({"z_dostupne": prevzato} if prevzato else {}),
     }
-    # Revize téhož období nemění, na jaké další období čekáme.
+    # Bez --kdy se očekávání nemaže, pokud pořád míří za nové období (revize téhož období,
+    # nebo přepnutí na 2026, když už čekáme 2027). Jinak se vynuluje a skript na to upozorní.
+    puvodni = s.get("ocekavano") or {}
+    ceka_dal = puvodni.get("obdobi") is not None and str(puvodni["obdobi"]) > str(obdobi)
     revize = str(obdobi) == str(predchozi.get("obdobi"))
-    if not (revize and kdy is None):
+    if kdy is not None or not (revize or ceka_dal):
         s["ocekavano"] = {"obdobi": None, "kdy": kdy, "jistota": jistota, "zduvodneni": zduvodneni}
+        if kdy is None:
+            print(f"VAROVÁNÍ  {sid}: očekávané další období vynulováno, doplň --kdy a --zduvodneni", file=sys.stderr)
     # Výstupy s rokem v názvu, například pasma_prijeti_2026.json, se přepínají s obdobím.
     if kontrola_soubor and s.get("kontrola_obdobi"):
         s["kontrola_obdobi"]["soubor"] = kontrola_soubor
