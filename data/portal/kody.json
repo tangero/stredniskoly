@@ -6,13 +6,13 @@
       "hash": "fd05889dd9438f4ff35edce2a67091c9008a3622427546ca862a9e3d0fd3b5cc",
       "redizo": "600171701",
       "vytvoreno": "2026-09-13",
-      "revokovano": false
+      "revokovano": true
     },
     {
       "hash": "568f78839429d63acc4512d15789d50c589820944cae4f57eee5d33e558acdd6",
       "redizo": "600007774",
       "vytvoreno": "2026-09-13",
-      "revokovano": false
+      "revokovano": true
     }
   ]
 }
