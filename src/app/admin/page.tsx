@@ -1,0 +1,362 @@
+import { Metadata } from 'next';
+import { notFound, redirect } from 'next/navigation';
+import { cookies } from 'next/headers';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import {
+  overAdminToken,
+  getStavDatovychSad,
+  getPortalPrehled,
+  getOtevreneNavrhy,
+  getLinkaFronta,
+  getBehyActions,
+  formatDatumCz,
+  formatDatumCasCz,
+  stariSlovy,
+  StavSady,
+} from '@/lib/admin';
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
+export const metadata: Metadata = {
+  title: 'Administrace',
+  robots: { index: false, follow: false },
+};
+
+interface Props {
+  searchParams: Promise<{ k?: string }>;
+}
+
+const STAV_BADGE: Record<StavSady, string> = {
+  OK: 'bg-green-50 text-green-700 border-green-200',
+  'po termínu': 'bg-amber-50 text-amber-700 border-amber-200',
+  zastaralá: 'bg-red-50 text-red-700 border-red-200',
+};
+
+const VYSLEDEK_BADGE: Record<string, string> = {
+  success: 'bg-green-50 text-green-700 border-green-200',
+  failure: 'bg-red-50 text-red-700 border-red-200',
+  cancelled: 'bg-slate-50 text-slate-600 border-slate-200',
+};
+
+function Sekce({ titulek, children }: { titulek: string; children: React.ReactNode }) {
+  return (
+    <section className="bg-white rounded-xl shadow-sm border border-slate-100 p-6">
+      <h2 className="text-xl font-semibold text-slate-900 mb-4">{titulek}</h2>
+      {children}
+    </section>
+  );
+}
+
+function Poznamka({ children }: { children: React.ReactNode }) {
+  return <p className="text-sm text-slate-500 italic">{children}</p>;
+}
+
+export default async function AdminPage({ searchParams }: Props) {
+  const { k } = await searchParams;
+
+  // Vstup s tokenem v URL: přesměrovat na /admin/auth, který token ověří,
+  // nastaví HttpOnly cookie a přesměruje zpět na čisté /admin. Redirect
+  // response nemá tělo, takže se token nedostane do žádného HTML.
+  if (k !== undefined) {
+    redirect(`/admin/auth?k=${encodeURIComponent(k)}`);
+  }
+
+  const jar = await cookies();
+  if (!overAdminToken(jar.get('admin_token')?.value)) {
+    notFound();
+  }
+
+  const dnes = new Date();
+  const [sady, portal, navrhy, linka, behyActions] = await Promise.all([
+    getStavDatovychSad(dnes),
+    getPortalPrehled(),
+    getOtevreneNavrhy(dnes),
+    getLinkaFronta(),
+    getBehyActions(),
+  ]);
+
+  const sadyPoTerminu = sady.filter((s) => s.stav !== 'OK').length;
+  const pocetNavrhu = navrhy?.length ?? null;
+  const posledniBeh = behyActions?.[0] ?? null;
+  const posledniBehOk = posledniBeh ? posledniBeh.vysledek === 'success' : null;
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+
+      <main className="flex-1">
+        <div className="max-w-6xl mx-auto px-4 py-10 space-y-8">
+          <div>
+            <h1 className="text-3xl font-bold text-slate-900 mb-2">Administrace</h1>
+            <p className="text-sm text-slate-500">
+              {pocetNavrhu === null ? 'moderace nenakonfigurována' : `${pocetNavrhu} ${pocetNavrhu === 1 ? 'návrh čeká' : pocetNavrhu < 5 ? 'návrhy čekají' : 'návrhů čeká'}`}
+              {' · '}
+              {sadyPoTerminu === 0 ? 'všechny sady v pořádku' : `${sadyPoTerminu} ${sadyPoTerminu === 1 ? 'sada' : sadyPoTerminu < 5 ? 'sady' : 'sad'} po termínu`}
+              {' · '}
+              {posledniBehOk === null
+                ? 'běhy automatizací neznámé'
+                : `poslední běh automatizací ${posledniBehOk ? 'OK' : 'selhal'}`}
+            </p>
+          </div>
+
+          {/* 1. Portál pro školy – moderace */}
+          <Sekce titulek="Portál pro školy – moderace">
+            {navrhy === null ? (
+              <Poznamka>Moderace není nakonfigurována (chybí GITHUB_TOKEN).</Poznamka>
+            ) : navrhy.length === 0 ? (
+              <Poznamka>Žádné otevřené návrhy – fronta je prázdná.</Poznamka>
+            ) : (
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-left text-slate-500 border-b border-slate-100">
+                      <th className="py-2 pr-4 font-medium">Issue</th>
+                      <th className="py-2 pr-4 font-medium">Škola</th>
+                      <th className="py-2 pr-4 font-medium">Vytvořeno</th>
+                      <th className="py-2 pr-4 font-medium">Kanál</th>
+                      <th className="py-2 font-medium">Stáří</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {navrhy.map((n) => (
+                      <tr key={n.cislo} className="border-b border-slate-50">
+                        <td className="py-2 pr-4">
+                          <a
+                            href={n.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:underline"
+                          >
+                            #{n.cislo}
+                          </a>
+                        </td>
+                        <td className="py-2 pr-4 text-slate-900">{n.skola}</td>
+                        <td className="py-2 pr-4 text-slate-600">{formatDatumCz(n.vytvoreno)}</td>
+                        <td className="py-2 pr-4 text-slate-600">{n.kanal || '—'}</td>
+                        <td className="py-2 text-slate-600">
+                          {n.stariDni > 3 ? (
+                            <span className="text-amber-700 font-medium">{stariSlovy(n.stariDni)}</span>
+                          ) : (
+                            stariSlovy(n.stariDni)
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+
+            <h3 className="text-sm font-semibold text-slate-700 mb-2">
+              Schválené profily na webu: {portal.pocet}
+            </h3>
+            {portal.posledni.length === 0 ? (
+              <Poznamka>Zatím žádný školou potvrzený profil.</Poznamka>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-left text-slate-500 border-b border-slate-100">
+                      <th className="py-2 pr-4 font-medium">Škola</th>
+                      <th className="py-2 pr-4 font-medium">REDIZO</th>
+                      <th className="py-2 pr-4 font-medium">Potvrzeno</th>
+                      <th className="py-2 font-medium text-right">Vyplněných polí</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {portal.posledni.map((p) => (
+                      <tr key={p.redizo} className="border-b border-slate-50">
+                        <td className="py-2 pr-4 text-slate-900">{p.nazev}</td>
+                        <td className="py-2 pr-4 text-slate-600">{p.redizo}</td>
+                        <td className="py-2 pr-4 text-slate-600">{formatDatumCz(p.potvrzenoDne)}</td>
+                        <td className="py-2 text-slate-600 text-right">{p.pocetPoli}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </Sekce>
+
+          {/* 2. Datové sady */}
+          <Sekce titulek="Datové sady">
+            {sady.length === 0 ? (
+              <Poznamka>Registr stavu datových sad se nepodařilo načíst.</Poznamka>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-left text-slate-500 border-b border-slate-100">
+                      <th className="py-2 pr-4 font-medium">Sada</th>
+                      <th className="py-2 pr-4 font-medium">Zobrazujeme</th>
+                      <th className="py-2 pr-4 font-medium">Čekáme</th>
+                      <th className="py-2 font-medium">Stav</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {sady.map((s) => (
+                      <tr
+                        key={s.klic}
+                        className={`border-b border-slate-50 ${s.stav !== 'OK' ? 'bg-amber-50/40' : ''}`}
+                      >
+                        <td className="py-2 pr-4 text-slate-900">{s.nazev}</td>
+                        <td className="py-2 pr-4 text-slate-600">
+                          {s.zobrazujeme}
+                          {s.zobrazujemePlatneK && (
+                            <span className="block text-xs text-slate-400">
+                              platné k {formatDatumCz(s.zobrazujemePlatneK)}
+                            </span>
+                          )}
+                        </td>
+                        <td className="py-2 pr-4 text-slate-600">
+                          {s.cekame ? `${s.cekame} (${s.cekameKdy || 'neznámo'})` : '—'}
+                        </td>
+                        <td className="py-2">
+                          <span
+                            className={`inline-block px-2 py-0.5 rounded border text-xs font-medium ${STAV_BADGE[s.stav]}`}
+                          >
+                            {s.stav}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </Sekce>
+
+          {/* 3. Datová linka */}
+          <Sekce titulek="Datová linka">
+            {linka.ulohy.length === 0 && linka.behy.length === 0 ? (
+              <Poznamka>Frontu datové linky se nepodařilo načíst, nebo je prázdná.</Poznamka>
+            ) : (
+              <>
+                {Object.keys(linka.pocetDleStavu).length > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {Object.entries(linka.pocetDleStavu).map(([stav, pocet]) => (
+                      <span
+                        key={stav}
+                        className="inline-block px-2 py-1 rounded bg-slate-100 text-slate-700 text-xs font-medium"
+                      >
+                        {stav}: {pocet}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {linka.ulohy.length > 0 && (
+                  <div className="overflow-x-auto mb-6">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="text-left text-slate-500 border-b border-slate-100">
+                          <th className="py-2 pr-4 font-medium">Kód</th>
+                          <th className="py-2 pr-4 font-medium">Sada</th>
+                          <th className="py-2 pr-4 font-medium">Druh</th>
+                          <th className="py-2 pr-4 font-medium">Období</th>
+                          <th className="py-2 pr-4 font-medium">Stav</th>
+                          <th className="py-2 font-medium">Poslední změna</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {linka.ulohy.map((u) => (
+                          <tr key={u.kod} className="border-b border-slate-50">
+                            <td className="py-2 pr-4 font-mono text-slate-900">{u.kod}</td>
+                            <td className="py-2 pr-4 text-slate-600">{u.sada}</td>
+                            <td className="py-2 pr-4 text-slate-600">{u.druh}</td>
+                            <td className="py-2 pr-4 text-slate-600">{u.obdobi}</td>
+                            <td className="py-2 pr-4 text-slate-600">{u.stav}</td>
+                            <td className="py-2 text-slate-600">{formatDatumCasCz(u.posledniZmena)}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+
+                {linka.behy.length > 0 && (
+                  <>
+                    <h3 className="text-sm font-semibold text-slate-700 mb-2">Poslední běhy</h3>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="text-left text-slate-500 border-b border-slate-100">
+                            <th className="py-2 pr-4 font-medium">Čas</th>
+                            <th className="py-2 pr-4 font-medium text-right">Nové úlohy</th>
+                            <th className="py-2 pr-4 font-medium text-right">Informace</th>
+                            <th className="py-2 font-medium text-right">Nedostupné</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {linka.behy.map((b, i) => (
+                            <tr key={i} className="border-b border-slate-50">
+                              <td className="py-2 pr-4 text-slate-600">{formatDatumCasCz(b.cas)}</td>
+                              <td className="py-2 pr-4 text-slate-600 text-right">{b.noveUlohy}</td>
+                              <td className="py-2 pr-4 text-slate-600 text-right">{b.informace}</td>
+                              <td className="py-2 text-slate-600 text-right">{b.nedostupne}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </>
+                )}
+              </>
+            )}
+          </Sekce>
+
+          {/* 4. Automatizace */}
+          <Sekce titulek="Automatizace (GitHub Actions)">
+            {behyActions === null ? (
+              <Poznamka>Automatizace nejsou nakonfigurované (chybí GITHUB_TOKEN).</Poznamka>
+            ) : behyActions.length === 0 ? (
+              <Poznamka>Běhy se nepodařilo načíst, nebo zatím žádné nejsou.</Poznamka>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-left text-slate-500 border-b border-slate-100">
+                      <th className="py-2 pr-4 font-medium">Workflow</th>
+                      <th className="py-2 pr-4 font-medium">Výsledek</th>
+                      <th className="py-2 pr-4 font-medium">Kdy</th>
+                      <th className="py-2 font-medium">Odkaz</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {behyActions.map((b, i) => (
+                      <tr key={i} className="border-b border-slate-50">
+                        <td className="py-2 pr-4 text-slate-900">{b.nazev}</td>
+                        <td className="py-2 pr-4">
+                          <span
+                            className={`inline-block px-2 py-0.5 rounded border text-xs font-medium ${VYSLEDEK_BADGE[b.vysledek] || 'bg-slate-50 text-slate-600 border-slate-200'}`}
+                          >
+                            {b.vysledek}
+                          </span>
+                        </td>
+                        <td className="py-2 pr-4 text-slate-600">{formatDatumCasCz(b.kdy)}</td>
+                        <td className="py-2">
+                          <a
+                            href={b.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:underline"
+                          >
+                            run →
+                          </a>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </Sekce>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
