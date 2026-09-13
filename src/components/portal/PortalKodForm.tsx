@@ -24,16 +24,16 @@ export function PortalKodForm() {
         type="text"
         value={kod}
         onChange={(e) => setKod(e.target.value)}
-        placeholder="např. XXXX-XXXX-XXXX"
+        placeholder="XXXX-XXXX-XXXX"
         autoComplete="off"
-        className="flex-1 rounded-lg border border-slate-300 px-4 py-3 text-lg tracking-widest uppercase focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+        className="flex-1 rounded-lg border border-[#c9d4e1] px-4 py-3 text-lg tracking-widest uppercase focus:border-[#0074e4] focus:outline-none focus:ring-2 focus:ring-blue-200"
       />
       <button
         type="submit"
         disabled={!kod.trim()}
-        className="rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
+        className="rounded-lg bg-[#0074e4] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#005fbd] disabled:cursor-not-allowed disabled:opacity-50"
       >
-        Pokračovat
+        Otevřít profil
       </button>
     </form>
   );

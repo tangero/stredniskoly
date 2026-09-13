@@ -55,12 +55,12 @@ export function PortalMagicForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="e-mail školy z rejstříku MŠMT"
-          className="flex-1 rounded-lg border border-slate-300 px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+          className="flex-1 rounded-lg border border-[#c9d4e1] px-4 py-3 focus:border-[#0074e4] focus:outline-none focus:ring-2 focus:ring-blue-200"
         />
         <button
           type="submit"
           disabled={stav === 'odesilam' || !email.trim()}
-          className="rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
+          className="rounded-lg bg-[#0074e4] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#005fbd] disabled:cursor-not-allowed disabled:opacity-50"
         >
           {stav === 'odesilam' ? 'Odesílám…' : 'Poslat odkaz'}
         </button>
