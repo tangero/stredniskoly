@@ -183,7 +183,8 @@
         "public/pasma_prijeti_2025.json",
         "public/soubeh_prihlasek_2025.json",
         "data/jpz_stats_2025.json",
-        "public/schools_data.json"
+        "public/schools_data.json",
+        "public/kontext_prihlasek_2025.json"
       ],
       "kontrola_obdobi": {
         "soubor": "public/pasma_prijeti_2025.json",
@@ -443,7 +444,7 @@
       "nazev": "Rejstřík škol MŠMT, export CSV",
       "dokumentace": "docs/zdroje-dat.md#24-rejstřík-škol-mšmt",
       "cyklus": "rucni",
-      "pouziti": "analyza",
+      "pouziti": "web",
       "zobrazeno": {
         "obdobi": "2026-02-11",
         "soubor": "data/Rejstrik_skol/SkolyAMista.csv"
@@ -457,7 +458,8 @@
       "obnovit_nejpozdeji": "2027-02-11",
       "po_prepnuti": "Nahrazuje se celý.",
       "vystupy": [
-        "docs/podklady/overeni-pasem-prijeti-2024-2025.json"
+        "docs/podklady/overeni-pasem-prijeti-2024-2025.json",
+        "public/skoly_web.json"
       ],
       "ukazatele": [],
       "aktualizace": {

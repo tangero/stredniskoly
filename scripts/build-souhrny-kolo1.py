@@ -86,6 +86,11 @@ def zaznam(r: dict) -> dict:
         "prijatych_s_vysledkem": konali_prijati,
         # Škála 0–100 jako cj_ma_prijati v cermat_results_2026.json.
         "cj_ma_prijati": zaokrouhli(prumer_prijatych / 2, 2) if s_vysledkem_prijatych and prumer_prijatych is not None else None,
+        # Předměty na škále 0–50 (procentní skór předmětu / 2), jako cj_prijati a ma_prijati v cermat_results_2026.json.
+        "cj_prijati": zaokrouhli(cislo(r, "ČJ - % SKÓR - PRŮMĚR (PŘIJATI)", maximum=100) / 2, 2)
+        if s_vysledkem_prijatych and cislo(r, "ČJ - % SKÓR - PRŮMĚR (PŘIJATI)", maximum=100) is not None else None,
+        "ma_prijati": zaokrouhli(cislo(r, "MA - % SKÓR - PRŮMĚR (PŘIJATI)", maximum=100) / 2, 2)
+        if s_vysledkem_prijatych and cislo(r, "MA - % SKÓR - PRŮMĚR (PŘIJATI)", maximum=100) is not None else None,
         "prumerne_umisteni_prijatych": zaokrouhli(cislo(r, "ČJ+MA - PERCENTIL - PRŮMĚR (PŘIJATI)", maximum=100)) if s_vysledkem_prijatych else None,
         "prumerne_umisteni_uchazecu": zaokrouhli(cislo(r, "ČJ+MA - PERCENTIL - PRŮMĚR", maximum=100)) if konali else None,
         "min_prijaty_percentil_souhrn": zaokrouhli(cislo(r, "ČJ+MA - PERCENTIL - MIN (PŘIJATI)", maximum=100))
@@ -108,7 +113,7 @@ def nacti_rocnik(soubor: Path, rok: int) -> dict[str, dict]:
         z = zaznam(r)
         nabidky[klic] = {
             "redizo": str(r["REDIZO"]), "kkov": r["KKOV"], "zamereni": r.get("ZAMĚŘENÍ OBORU") or "",
-            "skupina": f"{r['TYP ŠKOLY']}_{r['DÉLKA STUDIA']}", **z,
+            "skupina": f"{r['TYP ŠKOLY']}_{r['DÉLKA STUDIA']}", "kraj": r["KRAJ"], "kraj_nazev": r["KRAJ - NÁZEV"], **z,
             "podil_prijatych_ze_soutezicich": round(z["prijati"] / (z["prijati"] + z["capacity_rejected"]), 3)
             if z["prijati"] is not None and z["capacity_rejected"] is not None and z["prijati"] + z["capacity_rejected"] > 0 else None,
             "zarazeni_obtiznosti": zarazeni_obtiznosti(z),
@@ -312,9 +317,9 @@ def main() -> None:
         posledni = v[roky_nabidky[-1]]
         kompaktni[k] = {
             "redizo": posledni["redizo"], "kkov": posledni["kkov"], "zamereni": posledni["zamereni"],
-            "skupina": posledni["skupina"],
+            "skupina": posledni["skupina"], "kraj": posledni["kraj"], "kraj_nazev": posledni["kraj_nazev"],
             **({"parovani": v["parovani"]} if "parovani" in v else {}),
-            "roky": {r: {x: y for x, y in v[r].items() if x not in ("redizo", "kkov", "zamereni") and y is not None}
+            "roky": {r: {x: y for x, y in v[r].items() if x not in ("redizo", "kkov", "zamereni", "kraj", "kraj_nazev") and y is not None}
                      | ({"skupina": v[r]["skupina"]} if v[r]["skupina"] != posledni["skupina"] else {})
                      for r in roky_nabidky},
         }
