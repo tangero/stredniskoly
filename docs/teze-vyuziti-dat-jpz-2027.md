@@ -1,6 +1,6 @@
 # Využití dat o uchazečích a podrobných dat JPZ
 
-Verze 1.6 · 13. 9. 2026 · Teze 1 a 3 realizovány včetně podmínek z oponentur, teze 2, 4 a 5 odloženy.
+Verze 1.7 · 13. 9. 2026 · Teze 1 a 3 realizovány včetně podmínek z oponentur, teze 2, 4 a 5 odloženy.
 
 Vypořádané oponentury jsou v oddílech na konci. První kolo změnilo výpočet ostrosti hranice, druhé opravilo nepravdivou větu ve vzorovém zobrazení, třetí odhalilo, že posun hranice mezi ročníky z větší části odráží obtížnost testu. Externí oponentura verze 1.2 vedla k připnutí dokladů do skriptu a při jejím vypořádání vyšlo najevo, že statistiky zkreslovaly obory bez povinné jednotné zkoušky.
 
@@ -68,11 +68,11 @@ Body jsou součet češtiny a matematiky, každý předmět nejvýš za 50 bodů
 ### Jak se to počítá
 Pro každý obor se uchazeči rozdělí podle výsledku jednotné zkoušky do pásem po pěti bodech a spočítá se podíl přijatých. Počítá se **jen mezi soutěžícími**, tedy mezi přijatými a těmi, kdo se nevešli kvůli kapacitě.
 
-**Jen obory s povinnou jednotnou zkouškou.** Povinnost se bere ze sloupce `POVINNOST JPZ` v přihláškách 2026, zálohou je kategorie oboru K, L nebo M. U ostatních oborů mají výsledek jen uchazeči, kteří zkoušku psali kvůli jiné přihlášce, takže pásma by popisovala nahodilou skupinu u oboru, který podle testu nepřijímá. Vyřazeno je tím 1 497 oborů, převážně učebních. Viz námitku R10.
+**Jen obory s povinnou jednotnou zkouškou.** Povinnost se bere ze sloupce `POVINNOST JPZ` v přihláškách 2026, zálohou je kategorie oboru K, L nebo M. U ostatních oborů mají výsledek jen uchazeči, kteří zkoušku psali kvůli jiné přihlášce, takže pásma by popisovala nahodilou skupinu u oboru, který podle testu nepřijímá. Vyřazeno je tím 1 469 oborů, převážně učebních. Viz námitku R10.
 
 Ze jmenovatele jsou vyřazeny dvě skupiny a obě mají být na stránce uvedeny:
 
-- **Přijati na vyšší prioritu.** Byli přijati na obor uvedený na přihlášce výš, a o toto místo proto už nesoutěžili. Zda by se sem dostali, data neříkají. Je to skupina s lepšími výsledky: na 2 373 oborech s aspoň deseti přijatými a deseti takovými uchazeči je jejich průměr mediánově o 8,7 bodu vyšší než průměr soutěžících a vyšší je u 97 % oborů. Zobrazené počty proto nejsou všichni uchazeči s daným výsledkem. Viz námitky O4 a R6.
+- **Přijati na vyšší prioritu.** Byli přijati na obor uvedený na přihlášce výš, a o toto místo proto už nesoutěžili. Zda by se sem dostali, data neříkají. Je to skupina s lepšími výsledky: na 2 301 oborech s aspoň deseti přijatými a deseti takovými uchazeči je jejich průměr mediánově o 8,8 bodu vyšší než průměr soutěžících a vyšší je u 97 % oborů. Zobrazené počty proto nejsou všichni uchazeči s daným výsledkem. Viz námitky O4 a R6.
 - **Nesplnili podmínky.** Neuspěli u jiného kritéria než u testu. U osmiletého gymnázia J. S. Machara je jich 107, tedy víc než přijatých; to je samo o sobě důležitý signál a patří vedle tabulky.
 
 Pásmo s méně než pěti soutěžícími se slučuje se sousedem, jinak by „1 z 1“ vypadalo jako spolehlivých 100 %. Obory, kde nikdo nebyl odmítnut kvůli kapacitě, pásma nemají vůbec, viz námitku P3.
@@ -80,30 +80,30 @@ Pásmo s méně než pěti soutěžícími se slučuje se sousedem, jinak by „
 Generuje `scripts/build-pasma-prijeti.py` do `public/pasma_prijeti_2025.json`: 2 846 oborů, z toho 1 497 s pásmy a 1 439 s hranicí, z finální revize dat 2025. Předběžná verze dávala 2 853, 1 502 a 1 440.
 
 ### Ověření mezi ročníky
-Rok 2024 se páruje přes převod IZO na REDIZO z exportu rejstříku škol `data/Rejstrik_skol/SkolyAMista.csv`. Z 1 179 IZO se nepodařilo převést 5. Verze 1.2 brala převod z katalogu 2026 a ztrácela tak 105 IZO škol, které v katalogu nejsou; tahle nepřesnost je odstraněna, viz námitku R8.
+Soubor za rok 2024 má od revize z 20. 5. 2026 stejné schéma jako rok 2025 (klíč REDIZO), párování je proto přímé. Předchozí revize měla jiné schéma s klíčem IZO a vyžadovala převod přes export rejstříku; do revize navíc CERMAT přeřadil asi 430 přijatých mezi ty, kdo se přijetí vzdali. Verze 1.2 brala převod z katalogu 2026 a ztrácela tak 105 IZO škol, které v katalogu nejsou, viz námitku R8.
 
-Na 2 356 oborech s aspoň deseti přijatými v obou letech:
+Na 2 321 oborech s aspoň deseti přijatými v obou letech:
 
 | Veličina | Korelace | Medián absolutní změny | Změna nad 10 | Změna nad 20 |
 |---|---|---|---|---|
-| Nejnižší přijatý, body | 0,859 | 6 bodů | 25,6 % | 4,4 % |
-| Nejnižší přijatý, percentil mezi uchazeči | 0,867 | 6,4 percentilového bodu | 34,3 % | 11,3 % |
+| Nejnižší přijatý, body | 0,861 | 6 bodů | 25,3 % | 4,4 % |
+| Nejnižší přijatý, percentil mezi uchazeči | 0,868 | 6,4 percentilového bodu | 34,3 % | 11,4 % |
 
-Na užší skupině 1 158 oborů, které mají v obou letech i aspoň pět odmítnutých:
+Na užší skupině 1 149 oborů, které mají v obou letech i aspoň pět odmítnutých:
 
 | Veličina | Korelace | Medián absolutní změny |
 |---|---|---|
-| Dolní mez, nejnižší přijatý | 0,874 | 7 bodů |
+| Dolní mez, nejnižší přijatý | 0,876 | 7 bodů |
 | Horní mez, nejvyšší nepřijatý | 0,859 | 8 bodů |
-| Šířka pásma nejistoty | 0,692 | 4 body |
+| Šířka pásma nejistoty | 0,663 | 4 body |
 
 Obě meze jsou srovnatelně stabilní, ale **šířka pásma ne**: při mediánové šířce 7 bodů se mezi ročníky mění o 4 body. Prostřední věta o rozmezí proto popisuje loňsko a nesmí znít jako pravidlo školy.
 
-**Posun hranice mezi ročníky není náhodný**, viz námitku Q1. Mezi roky 2024 a 2025 klesla hranice u 60,7 % oborů a stoupla u 34,8 %, mediánově o 3 body, zatímco medián výsledku všech uchazečů spadl z 54 na 46 bodů. Většina posunu tedy popisuje obtížnost zkoušky, ne změnu náročnosti školy.
+**Posun hranice mezi ročníky není náhodný**, viz námitku Q1. Mezi roky 2024 a 2025 klesla hranice u 60,6 % oborů a stoupla u 34,9 %, mediánově o 3 body, zatímco medián výsledku všech uchazečů spadl z 54 na 46 bodů. Většina posunu tedy popisuje obtížnost zkoušky, ne změnu náročnosti školy.
 
 Znění povinné věty: „Hranice se mezi ročníky posouvá o jednotky bodů; mění se totiž i obtížnost samotné zkoušky, ne jen zájem o školu. Čísla popisují jen 1. kolo roku 2025.“
 
-Vedle hranice v bodech se uvádí i **percentil mezi uchazeči**, tedy kolik ze 100 uchazečů v celé zemi mělo stejný nebo horší výsledek. Počítá se přes jednotlivé uchazeče, každého jednou bez ohledu na počet přihlášek, viz námitku R9. Systematický posun odstraňuje: medián posunu je +1,7 percentilového bodu proti −3 bodům. Hranici ale **nezpřesňuje**, korelace je 0,867 proti 0,859. Viz námitku Q2.
+Vedle hranice v bodech se uvádí i **percentil mezi uchazeči**, tedy kolik ze 100 uchazečů v celé zemi mělo stejný nebo horší výsledek. Počítá se přes jednotlivé uchazeče, každého jednou bez ohledu na počet přihlášek, viz námitku R9. Systematický posun odstraňuje: medián posunu je +1,8 percentilového bodu proti −3 bodům. Hranici ale **nezpřesňuje**, korelace je 0,868 proti 0,861. Viz námitku Q2.
 
 ### Pokrytí
 Populace: 3 091 nabídek v `public/applications_2026.json`. Verze 1.2 populaci neuváděla, a oponent ji proto z katalogu nezreprodukoval; katalog `schools_data.json` má 3 239 řádků včetně loni vypsaných nabídek. Viz námitku R2.
@@ -120,7 +120,7 @@ Populace: 3 091 nabídek v `public/applications_2026.json`. Verze 1.2 populaci n
 
 Pravidla, podle kterých komponenta volí, co zobrazí, jsou v `src/components/school/detail/PasmaPrijetiCard.tsx`. Dolní mez se neukazuje pod deseti přijatými, protože by šlo o údaj o jednom uchazeči; tak to určuje slovník ukazatelů u nejnižšího výsledku mezi přijatými. Verze 1.4 měla u stavu „jen dílčí údaje“ napsáno „nic“, ale komponenta ve skutečnosti ukazovala dolní mez i u oborů s méně než deseti přijatými; opraveno ve verzi 1.5.
 
-U 1 179 nabídek zní sdělení: **nikdo se loni nevešel kvůli kapacitě**. Neznamená to, že se dostali všichni: v datech roku 2025 je takových oborů s povinnou zkouškou 1 206 a u 706 z nich někdo nesplnil podmínky školy.
+U 1 179 nabídek zní sdělení: **nikdo se loni nevešel kvůli kapacitě**. Neznamená to, že se dostali všichni: v datech roku 2025 je takových oborů s povinnou zkouškou 1 199 a u 702 z nich někdo nesplnil podmínky školy.
 
 440 nabídek, tedy 14 %, sdílí v roce 2026 záznam s jinou nabídkou téže školy; jde o 187 záznamů. Příznak `vice_zamereni` se nově počítá z vyššího z počtů zaměření v katalogu 2025 a nabídek v roce 2026, takže ho nese 458 nabídek. U nich stojí **nad všemi čísly** upozornění, že údaje platí za celý obor školy a stejná čísla uvidí rodič i u dalších zaměření. Verze 1.4 upozornění řadila pod čísla a příznak počítala jen z roku 2025, takže nová zaměření roku 2026 bez něj zůstala.
 
@@ -174,7 +174,7 @@ Vedle toho se ukládá **pásmo nejistoty** s přesnými počty soutěžících 
 
 Verze 1.2 uváděla u hodnoty 1,00 podíl 7 %, spočítaný z nezaokrouhlených hodnot a nad všemi obory; v datech zaokrouhlených na tři místa to bylo 9,3 %. Viz námitku R1.
 
-**Ověření mezi ročníky je slabší, než uváděly předchozí verze.** Na 1 158 oborech spárovaných mezi roky 2024 a 2025 je korelace 0,725 a medián absolutní změny 0,01 (z předběžné verze dat 2025 vycházelo 0,673 na 1 149 oborech). Verze 1.1 a 1.2 uváděly korelaci 0,783, ale populace zahrnovala obory bez povinné zkoušky, které mají v obou letech trvale nízkou hodnotu a korelaci uměle zvedají. Nízký medián změny spolu s mírnou korelací znamená, že hodnoty se drží blízko sebe, ale pořadí oborů uvnitř úzkého pásma kolem 0,97 se mezi roky mění. Proto se zobrazují jen tři hrubé kategorie, ne pořadí oborů. Viz námitku R10.
+**Ověření mezi ročníky je slabší, než uváděly předchozí verze.** Na 1 149 oborech spárovaných mezi roky 2024 a 2025 je korelace 0,671 a medián absolutní změny 0,01. Verze 1.6 uváděla 0,725, počítanou ze starší revize souboru 2024; revize z 20. 5. 2026 přeřadila asi 430 přijatých mezi ty, kdo se přijetí vzdali, a korelace klesla na současných 0,671 (z předběžné verze dat 2025 vycházelo 0,673). Verze 1.1 a 1.2 uváděly korelaci 0,783, ale populace zahrnovala obory bez povinné zkoušky, které mají v obou letech trvale nízkou hodnotu a korelaci uměle zvedají. Nízký medián změny spolu s mírnou korelací znamená, že hodnoty se drží blízko sebe, ale pořadí oborů uvnitř úzkého pásma kolem 0,97 se mezi roky mění. Proto se zobrazují jen tři hrubé kategorie, ne pořadí oborů. Viz námitku R10.
 
 ### Dvě zkreslení, která se musí vyloučit
 - **Talentová zkouška.** Příznak `talentova_zkouska` nesou umělecké obory skupiny 82 a gymnázia se sportovní přípravou 79-42. U sportovních gymnázií je medián 0,78 proti 0,976 u ostatních. Umělecké obory skupiny 82 do dat po zúžení na povinnou zkoušku převážně nevstupují. U oborů s příznakem se věta o tom, co rozhodlo, **nahrazuje** větou, že o přijetí rozhoduje i talentová zkouška, o které údaje nemáme; týká se 59 nabídek. Viz námitky O9 a R3.
@@ -315,7 +315,7 @@ Námitka zněla, že vyloučení uměleckých oborů zbytečně ubírá pokrytí
 
 Námitka zněla, že spojení dvou ročníků zvětší vzorek a umožní užší pásma u malých oborů.
 
-**Doklad.** Hranice se mezi roky posouvá, medián absolutní změny je 6 bodů a u čtvrtiny oborů přes 10 bodů. Sloučení dvou ročníků by tedy nesmazalo šum, ale rozmazalo samotnou hranici, kterou má ukazatel ukázat. Navíc soubor za rok 2024 používá jiné schéma a jako klíč IZO místo REDIZO; 105 IZO se nepodařilo převést.
+**Doklad.** Hranice se mezi roky posouvá, medián absolutní změny je 6 bodů a u čtvrtiny oborů přes 10 bodů. Sloučení dvou ročníků by tedy nesmazalo šum, ale rozmazalo samotnou hranici, kterou má ukazatel ukázat. Soubor za rok 2024 navíc do revize z 20. 5. 2026 používal jiné schéma a jako klíč IZO místo REDIZO; od té revize má schéma roku 2025 a sloučení by technicky šlo, ale věcná námitka nadále platí.
 
 **Zamítnuto.** Starší ročník má cenu jako nezávislé ověření, ne jako doplněk vzorku.
 
@@ -489,7 +489,7 @@ Vypořádáno 13. 9. 2026 ve verzi 1.4. Oponent ověřil doklady druhého kola a
 
 **Doklad.** Převod přes export rejstříku `data/Rejstrik_skol/SkolyAMista.csv` nepřevede 5 z 1 179 IZO. Převod přes katalog 2026 nepřevedl 105, protože katalog obsahuje jen školy s nabídkou roku 2026 s jednotnou zkouškou; mezi chybějícími jsou tedy zaniklé školy i školy bez takové nabídky. Oponentovo vysvětlení zaniklými školami je proto jen část příčiny.
 
-**Vypořádání.** Dokladový skript používá rejstřík. Výhrada, že ověření platí jen pro školy obsažené v katalogu 2026, tím odpadá.
+**Vypořádání.** Dokladový skript používá rejstřík. Výhrada, že ověření platí jen pro školy obsažené v katalogu 2026, tím odpadá. Od revize souboru 2024 z 20. 5. 2026, která přešla na schéma roku 2025 s klíčem REDIZO, nepřevádí skript nic — obě větve převodu jsou historický záznam.
 
 ### R9 · Tři nepřesnosti v realizaci — **vlastní námitka, přijato, opraveno**
 
@@ -505,14 +505,15 @@ Zjištěno při vypořádání R3. Mezi skupinami s nejnižší mírou *rozhodl 
 
 **Příčina.** U oborů kategorií C, E, H, J a P a u části oborů M a L se jednotná zkouška nekoná, jak dokládá sloupec `POVINNOST JPZ` v přihláškách 2026. Výsledek z testu mají jen uchazeči, kteří ho psali kvůli jiné přihlášce. Na web se tyto obory nedostávaly, protože nabídka roku 2026 obsahuje jen obory kategorií K, L a M, ale vstupovaly do všech statistik v dokumentu.
 
-**Dopad.** Nejvýraznější je u stability míry *rozhodl test*: korelace mezi roky klesla z 0,783 na **0,673**, protože obory bez zkoušky mají trvale nízkou hodnotu a korelaci uměle zvyšovaly. Ostatní čísla se posunula jen málo.
+**Dopad.** Nejvýraznější je u stability míry *rozhodl test*: korelace mezi roky klesla z 0,783 na **0,671** (ve verzi 1.4 uváděno 0,673 z předběžných dat 2025, ve verzi 1.6 pak 0,725 ze starší revize souboru 2024), protože obory bez zkoušky mají trvale nízkou hodnotu a korelaci uměle zvyšovaly. Ostatní čísla se posunula jen málo.
 
-**Vypořádání.** Generátor obory bez povinné zkoušky nezpracovává, vynechá jich 1 497. Dokladový skript používá stejnou populaci. V tezi 3 je slabší stabilita výslovně uvedena a zdůvodňuje, proč se zobrazují jen tři hrubé kategorie.
+**Vypořádání.** Generátor obory bez povinné zkoušky nezpracovává, vynechá jich 1 469. Dokladový skript používá stejnou populaci. V tezi 3 je slabší stabilita výslovně uvedena a zdůvodňuje, proč se zobrazují jen tři hrubé kategorie.
 
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.7 | Doklad přepočítán na aktuálních revizích obou roků: upstream 20. 5. 2026 přepsal i soubor 2024 do schématu roku 2025 (klíč REDIZO, přeřazení asi 430 přijatých mezi vzdavší se), převod IZO ze skriptu odpadl. Korelace stability míry *rozhodl test* je 0,671 místo 0,725; ostatní čísla se posunula v řádu desetin procenta až jednotek oborů. |
 | 1.6 | Čísla tezí 1 a 3 přepočítána z finální revize dat uchazečů 2025 (PR #84). U osmiletého gymnázia J. S. Machara zůstává hranice 65 bodů, ale soutěžících je 67 místo 68 a v pásmu 60 až 70 bodů se dostali 4 z 9 místo 5 z 10. Oddíly oponentur zůstávají historickým záznamem. |
 | 1.5 | Závěry zapracovány do kódu: dolní mez se nezobrazuje pod deseti přijatými, upozornění na sdílený záznam a novou nabídku stojí nad čísly, nabídky bez dat dostanou vysvětlující větu, talentové obory větu o talentové zkoušce. Příznak sdíleného záznamu počítán i z nabídky 2026. Pole přejmenováno na `prijato_na_vyssi_prioritu`. Opraveny tři počty v oddílu o pokrytí. |
 | 1.4 | Vypořádána externí oponentura verze 1.2, deset námitek včetně dvou vlastních. Doklady připnuty do `scripts/validate-pasma-prijeti.py`. Vyřazeny obory bez povinné jednotné zkoušky, rozšířen talentový příznak o sportovní gymnázia, percentil přepočítán přes jednotlivé uchazeče, opraven vymyšlený příklad a nepřesné počty v rozmezí. Doplněny podmínky realizace. |

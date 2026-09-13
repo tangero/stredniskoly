@@ -13,7 +13,6 @@ from __future__ import annotations
 
 import bisect
 import collections
-import csv
 import importlib.util
 import json
 import statistics
@@ -55,49 +54,14 @@ def stabilita(x: list[float], y: list[float]) -> dict:
     }
 
 
-def mapa_izo_redizo() -> dict[str, str]:
-    """IZO → REDIZO z exportu rejstříku škol; pokrývá i školy zaniklé do roku 2026."""
-    soubor = KOREN / "data" / "Rejstrik_skol" / "SkolyAMista.csv"
-    with open(soubor, encoding="utf-8-sig") as f:
-        oddelovac = ";" if ";" in f.readline() else ","
-    with open(soubor, encoding="utf-8-sig") as f:
-        r = csv.reader(f, delimiter=oddelovac)
-        h = next(r)
-        i_izo, i_red = h.index("IZO"), h.index("RED_IZO")
-        return {row[i_izo].lstrip("0"): row[i_red] for row in r if row[i_izo]}
-
-
-def nacti_2024(mapa: dict[str, str]) -> tuple[dict, list[float], int, int]:
-    """Soubor 2024 má jiné schéma: klíčem je IZO, přijetí je text True/False."""
-    wb = openpyxl.load_workbook(KOREN / "data" / "PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx", read_only=True)
-    # První list: CERMAT ho přejmenovává mezi revizemi („data“ → „Sheet 1“, „fyzicke_osoby“).
-    it = wb.worksheets[0].iter_rows(values_only=True)
-    ix = {n: i for i, n in enumerate(next(it))}
-    obory = collections.defaultdict(lambda: {"prijati": [], "nevesli_se": []})
-    izo_vse, izo_chybi = set(), set()
-    uchazeci: list[float] = []
-    for r in it:
-        v = r[ix["celkem_%"]]
-        if not isinstance(v, (int, float)):
-            continue
-        body = float(v) / 2
-        uchazeci.append(body)
-        for k in range(1, 6):
-            izo = r[ix[f"SŠ{k}_izo"]]
-            if not izo:
-                continue
-            izo = str(izo).lstrip("0")
-            izo_vse.add(izo)
-            red = mapa.get(izo)
-            if not red:
-                izo_chybi.add(izo)
-                continue
-            o = obory[f"{red}_{r[ix[f'SŠ{k}_kód_oboru']]}"]
-            if r[ix[f"SŠ{k}_přijat"]] == "True":
-                o["prijati"].append(body)
-            elif r[ix[f"SŠ{k}_důvod_nepřijetí"]] == "pro_nedostacujici_kapacitu":
-                o["nevesli_se"].append(body)
-    return dict(obory), sorted(uchazeci), len(izo_vse), len(izo_chybi)
+def nacti_2024() -> tuple[dict, list[float]]:
+    """Soubor 2024 má od revize z 20. 5. 2026 stejné schéma jako rok 2025
+    (klíč REDIZO, list „Sheet 1“), čte ho tedy stejná funkce generátoru.
+    Do předchozí revize (klíč IZO, přijetí textem True/False) sahal převod
+    přes data/Rejstrik_skol/SkolyAMista.csv; upstream soubor přepsal, takže
+    převod odpadá."""
+    gen.ZDROJ = KOREN / "data" / "PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx"
+    return gen.nacti_uchazece()
 
 
 def over_shodu_verzi(o25: dict, pasma: dict) -> None:
@@ -130,12 +94,15 @@ def main() -> None:
     over_shodu_verzi(_o25, pasma)
     nabidky = json.load(open(KOREN / "public" / "applications_2026.json", encoding="utf-8"))["data"]
     katalog = json.load(open(KOREN / "public" / "schools_data.json", encoding="utf-8"))
-    mapa = mapa_izo_redizo()
-    o24, u24, izo_vse, izo_chybi = nacti_2024(mapa)
+    o24, u24 = nacti_2024()
     o24 = {k: v for k, v in o24.items() if gen.ma_jpz(k, jpz)}
     doklad: dict = {
         "zdroj_skriptu": "scripts/validate-pasma-prijeti.py",
-        "populace": "obory s povinnou jednotnou zkouškou podle PZ2026_kolo1_skolobory_prihlasky.xlsx, záloha kategorie K, L, M",
+        "populace": ("obory s povinnou jednotnou zkouškou podle PZ2026_kolo1_skolobory_prihlasky.xlsx"
+                     if jpz else
+                     "obory s povinnou jednotnou zkouškou, záložní určení podle kategorie K, L, M "
+                     "(chybí PZ2026_kolo1_skolobory_prihlasky.xlsx)"),
+        "schema_2024": "od revize z 20. 5. 2026 má soubor 2024 schéma roku 2025 (REDIZO), převod IZO odpadá",
     }
 
     # --- pásmo nejistoty, populace: obory s hranicí v JSON
@@ -175,7 +142,6 @@ def main() -> None:
         key=lambda x: x["median"])[:8]
 
     # --- stabilita mezi ročníky
-    doklad["prevod_izo_2024"] = {"izo_celkem": izo_vse, "neprevedeno": izo_chybi, "zdroj": "data/Rejstrik_skol/SkolyAMista.csv"}
     par10 = [k for k in o24 if k in o25 and len(o24[k]["prijati"]) >= 10 and len(o25[k]["prijati"]) >= 10]
     lo24 = [min(o24[k]["prijati"]) for k in par10]
     lo25 = [min(o25[k]["prijati"]) for k in par10]
@@ -252,6 +218,12 @@ def main() -> None:
     doklad["tabulka_by_byla_cela_100_pct"] = {
         "n": len(bez_odm),
         "z_toho_nekdo_nesplnil_podminky": sum(1 for o in bez_odm if o["nesplnili"]),
+    }
+    # Věta „nikdo se nevešel kvůli kapacitě" v tezi 1, populace: obory s aspoň jedním přijatým
+    nikdo = [o for o in o25.values() if o["prijati"] and not o["nevesli_se"]]
+    doklad["nikdo_neodmitnut_pro_kapacitu_populace_obory_s_prijatymi"] = {
+        "n": len(nikdo),
+        "z_toho_nekdo_nesplnil_podminky": sum(1 for o in nikdo if o["nesplnili"]),
     }
 
     # --- P8: cena vyššího prahu
