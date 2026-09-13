@@ -3,6 +3,49 @@
 Všechny podstatné změny v projektu jsou dokumentovány v tomto souboru.
 Formát vychází z [Keep a Changelog](https://keepachangelog.com/cs/1.1.0/).
 
+## [Unreleased]
+
+### Přidáno
+
+### Změněno
+
+### Opraveno
+
+---
+
+## [0.5.0] — 2026-09-13
+
+### Přidáno
+- **Ročník 2026 v katalogu** — stabilní adresy nabídek, žádná stránka z roku 2025 nezanikla; statistiky oboru ukazují přihlášky podle priority, průměry přijatých a srovnání ročníků 2025 a 2026
+- **Studijní obory školy** — přehled oborů na stránce školy jako záložky pod společným nadpisem
+- **Jak to dopadlo loni** — nový blok na stránce oboru: pod kolika body se v 1. kole nedostal nikdo, nad kolika se dostali všichni, kolik uspělo v rozmezí a zda rozhodoval hlavně test; ověřeno mezi ročníky 2024 a 2025 a po třech kolech oponentury
+- **Druhé kolo** — nový blok na stránce oboru s kapacitou, přihláškami a přijatými ve 2. kole a s varováním u oborů, které se v 1. kole nenaplnily a 2. kolo nevypsaly
+- **Simulátor výběru oboru** — dojezdová doba, výsledky uchazečů, důvody nepřijetí a srovnávací tabulka bez stropu počtu oborů
+- **Kalendář přijímacího řízení 2027** a obnovená data CERMAT
+- **Přiznaná nejistota návaznosti oborů** — u 216 nabídek poznámka a odkaz na nahlášení správného stavu přes GitHub Issues
+- **Závazný slovník ukazatelů** (`docs/slovnik-ukazatelu.md`) — každé číslo na webu má definici, výpočet a to, co neříká
+- **Dokumentace zdrojů sloupec po sloupci** (`docs/zdroje-dat.md`) — povinný krok před návrhem stránky nebo ukazatele
+- **Registr stavu datových sad** (`public/stav_datovych_sad.json`) — pro 18 sad zobrazené období, očekávané období a termín, role starých dat a vazba na slovník; kontrolní skript `scripts/stav-datovych-sad.py`
+- **Datová linka** (`scripts/datova-linka.py`) — zjištění nových a přepsaných dat, stažení, kontrola, zpracování, oznámení přes Telegram nebo GitHub issue, schválení a předání pull requestem; workflow `.github/workflows/datova-linka.yml`; 28 testů nanečisto
+
+### Změněno
+- **Index obtížnosti odstraněn z profilu oboru** — jeho výpočet se nepodařilo doložit; nahrazen ověřeným tlakem prvních voleb
+- **Zpracovatelské skripty dat uchazečů** — čtou první list a příznak přijetí zapsaný číslem i textem; CERMAT v roce 2026 přejmenoval list a změnil formát
+- **Sjednocený simulátor** pracuje s celou nabídkou 1. kola 2026
+
+### Opraveno
+- **Nadpisy označující data 2026 jako rok 2025** na stránce oboru
+- **Nepravdivá věta o přijatých podle priority** — CERMAT je za rok 2026 zveřejňuje
+- **Neověřená minima bodů a osobní predikce šancí** odstraněny z regionálních souhrnů a simulátoru
+- **Náhledové obrázky při sdílení** — chyba 500 a chybějící české znaky
+- **Tip o prioritě přihlášek** — priorita neurčuje šanci na přijetí (#70); rozlišující názvy škol ve výsledcích (#69, #63); filtry výsledků se zachovají po návratu (#60)
+
+### Známé limitace
+- Stránky oborů bez zaměření ukazují v bloku „Přijetí a kapacita“ čísla z roku 2025; oprava je krok 1 v `docs/navrh-aktualniho-rocniku-dat.md`
+- `scripts/enrich_schools_data.py` čte sloupce podle pozice a na souborech uchazečů 2026 by počítal chybně
+
+---
+
 ## [0.4.1] — 2026-05-16
 
 ### Přidáno

@@ -218,3 +218,13 @@ Pokud problém vyřešíš a není dokumentován → **IHNED** dokumentuj.
 **Template version:** 1.0
 **Created:** 2026-02-21
 **Last updated:** 2026-09-13
+
+## Dokumentace
+Podrobná dokumentace jednotlivých oblastí projektu:
+- [Slovník ukazatelů](../docs/slovnik-ukazatelu.md) — závazné názvy, definice a výpočty všech čísel na webu
+- [Zdroje dat](../docs/zdroje-dat.md) — zdrojové soubory sloupec po sloupci a registr stavu datových sad
+- [Datová linka](../docs/datova-linka.md) — zjištění, zpracování, oznámení a schválení nových dat
+- [Druhé kolo](../docs/druhe-kolo.md) — zobrazení 2. kola přijímacího řízení
+- [Využití dat o uchazečích](../docs/teze-vyuziti-dat-jpz-2027.md) — pásma přijetí a co o přijetí rozhodlo, s oponenturami
+- [Aktuální ročník dat](../docs/navrh-aktualniho-rocniku-dat.md) — návrh opravy zobrazení roku 2025 místo 2026
+- [Prezentace dat na stránce školy](../docs/navrh-prezentace-dat-skoly-2027.md) — co a jak ukazovat rodičům
