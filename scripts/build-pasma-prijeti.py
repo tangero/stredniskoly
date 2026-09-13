@@ -97,6 +97,29 @@ def pasma(prijati: list[float], nevesli: list[float]) -> list[dict]:
     return radky
 
 
+def rozhodl_test(prijati: list[float], nevesli: list[float]) -> float:
+    """Pravděpodobnost, že náhodný přijatý měl lepší výsledek než náhodný odmítnutý.
+
+    Plocha pod ROC křivkou. Hodnota 1,0 znamená, že o přijetí rozhodl výhradně
+    výsledek testu, 0,5 že výsledek nerozhodoval vůbec. Na rozdíl od rozdílu
+    krajních hodnot ji neurčuje jediný uchazeč.
+    """
+    vse = sorted([(b, 1) for b in prijati] + [(b, 0) for b in nevesli])
+    poradi: dict[int, float] = {}
+    i = 0
+    while i < len(vse):  # shodné výsledky dostanou průměrné pořadí
+        j = i
+        while j < len(vse) and vse[j][0] == vse[i][0]:
+            j += 1
+        prumer = (i + j + 1) / 2
+        for k in range(i, j):
+            poradi[k] = prumer
+        i = j
+    soucet = sum(poradi[k] for k, (_, prijat) in enumerate(vse) if prijat)
+    n1, n0 = len(prijati), len(nevesli)
+    return (soucet - n1 * (n1 + 1) / 2) / (n1 * n0)
+
+
 def kontext_katalogu() -> tuple[collections.Counter, dict[str, str]]:
     """Počet zaměření na kombinaci REDIZO a KKOV a typ školy."""
     data = json.load(open(KATALOG, encoding="utf-8"))
@@ -141,12 +164,20 @@ def main() -> None:
         if nevesli:
             zaznam["max_neprijaty"] = round(max(nevesli), 1)
             if len(prijati) >= MIN_PRIJATYCH and len(nevesli) >= MIN_ODMITNUTYCH:
-                zaznam["prekryv"] = round(max(nevesli) - min(prijati), 1)
+                zaznam["rozhodl_test"] = round(rozhodl_test(prijati, nevesli), 3)
+                # pásmo nejistoty: mezi nejnižším přijatým a nejvyšším nepřijatým
+                # se o přijetí rozhodovalo i podle jiných kritérií než testu
+                zaznam["pasmo_nejistoty"] = [round(min(prijati), 1), round(max(nevesli), 1)]
+                v_pasmu = sum(1 for b in prijati + nevesli
+                              if min(prijati) <= b <= max(nevesli))
+                zaznam["v_pasmu_nejistoty"] = round(v_pasmu / soutezicich, 3)
                 u_hranice = sum(1 for b in prijati + nevesli
                                 if abs(b - min(prijati)) <= OKOLI_HRANICE)
                 zaznam["hustota_u_hranice"] = round(u_hranice / soutezicich, 3)
         else:
-            zaznam["vsichni_soutezici_prijati"] = True
+            # Nikdo neodmítnut pro kapacitu. Neříká, že se dostali všichni:
+            # uchazeči, kteří nesplnili podmínky, se do soutěžících nepočítají.
+            zaznam["nikdo_neodmitnut_pro_kapacitu"] = True
 
         if soutezicich >= MIN_SOUTEZICICH:
             zaznam["pasma"] = pasma(prijati, nevesli)
@@ -159,6 +190,7 @@ def main() -> None:
         "zdroj": ZDROJ.name,
         "uroven": "REDIZO_KKOV (bez zaměření)",
         "skala": "body 0–100, procentní skór CERMAT dělený dvěma",
+        "sirka_pasma": SIRKA_PASMA,
         "prahy": {
             "min_soutezicich_pro_pasma": MIN_SOUTEZICICH,
             "min_v_pasmu": MIN_V_PASMU,
@@ -168,7 +200,7 @@ def main() -> None:
         "data": vystup,
     }, ensure_ascii=False), encoding="utf-8")
     s_pasmy = sum(1 for z in vystup.values() if "pasma" in z)
-    s_hranici = sum(1 for z in vystup.values() if "prekryv" in z)
+    s_hranici = sum(1 for z in vystup.values() if "rozhodl_test" in z)
     print(f"zapsáno {len(vystup)} oborů, z toho {s_pasmy} s pásmy a {s_hranici} s hranicí")
 
 

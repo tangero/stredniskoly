@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.4 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.5 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -161,16 +161,29 @@ Pásmo s méně než pěti soutěžícími se slučuje se sousedním, aby „1 z
 
 Platí za celý obor školy bez rozlišení zaměření, viz omezení u nejnižšího výsledku JPZ mezi přijatými.
 
-### Překryv u hranice přijetí
-`nejvyšší výsledek mezi nepřijatými kvůli kapacitě − nejnižší výsledek mezi přijatými`, v bodech. Pole `prekryv`.
+### Rozhodl test
+Pravděpodobnost, že náhodně vybraný přijatý měl lepší výsledek jednotné zkoušky než náhodně vybraný uchazeč, který se nevešel kvůli kapacitě. Plocha pod ROC křivkou. Pole `rozhodl_test`.
 
-Nula nebo méně znamená, že o přijetí rozhodl výhradně výsledek testu. Kladná hodnota znamená, že někdo s lepším testem se nedostal a někdo s horším ano, tedy že škola vážila i jiné kritérium.
+Hodnota 1,0 znamená, že o přijetí rozhodl výhradně výsledek testu. Hodnota 0,5 znamená, že výsledek nerozhodoval vůbec.
 
-Počítá se jen u oborů s aspoň deseti přijatými a pěti odmítnutými kvůli kapacitě; těch je 1 545. U 1 381 z nich bez talentové zkoušky a s jediným zaměřením je medián 7 bodů a 17 % má čistý řez.
+Počítá se u oborů s aspoň deseti přijatými a pěti odmítnutými kvůli kapacitě, tedy u 1 545. Medián je 0,97, hodnotu 1,00 má 7 % oborů, aspoň 0,85 má 87 %.
 
-**Neměří kvalitu ani spravedlnost.** Velký překryv znamená, že škola hodnotí i něco jiného než test, například prospěch nebo vlastní zkoušku, což je legitimní.
+Ověřeno mezi ročníky: na 1 185 oborech spárovaných mezi roky 2024 a 2025 je korelace 0,783 a medián absolutní změny 0,015.
 
-Dvě zkreslení jsou v datech označena a ukazatel se nad nimi nezobrazuje bez upozornění. **Více zaměření pod jedním klíčem** (`vice_zamereni`) sčítá obory s různými hranicemi; medián překryvu je tam 17 bodů. **Talentová zkouška** (`talentova_zkouska`) u uměleckých oborů skupiny 82 dává medián 38 bodů.
+**Neměří kvalitu ani spravedlnost.** Nízká hodnota znamená, že škola vážila i něco jiného než test, například prospěch nebo vlastní zkoušku, což je legitimní.
+
+**Číslo se nezobrazuje**, zobrazuje se věta o tom, co znamená. Projekt si na této míře už jednou vylámal zuby: AUC 0,870 bylo v dřívějším textu nesprávně popsáno jako „správně odhadlo 87 % oborů“.
+
+Nezobrazuje se vůbec u uměleckých oborů skupiny 82 (`talentova_zkouska`), kde je medián 0,66, protože o přijetí rozhoduje z velké části talentová zkouška, o které data nemáme. U oborů s více zaměřeními pod jedním klíčem (`vice_zamereni`) je medián 0,92 a zobrazuje se s poznámkou.
+
+### Pásmo nejistoty
+Rozsah od nejnižšího výsledku mezi přijatými k nejvyššímu mezi nepřijatými kvůli kapacitě. Pole `pasmo_nejistoty`, obsazenost `v_pasmu_nejistoty`.
+
+Uvnitř tohoto rozsahu rozhodovala o přijetí i jiná kritéria než test. Pod ním se loni nedostal nikdo, nad ním se dostali všichni.
+
+Medián podílu soutěžících v pásmu je 29 %, horní čtvrtina 51 %.
+
+**Je to popis loňska, ne míra.** Oba konce určuje jediný uchazeč, takže se **nepoužívá k porovnávání oborů ani k řazení**. Ve verzi 1.4 tu stál ukazatel „překryv u hranice přijetí“, který z těchto dvou hodnot dělal měřítko; při záměně krajních hodnot za devadesátý a desátý percentil se u 41 % oborů obracel verdikt, a proto byl nahrazen mírou *rozhodl test*.
 
 ### Hustota u hranice
 Podíl soutěžících, jejichž výsledek leží do pěti bodů od nejnižšího přijatého. Pole `hustota_u_hranice`.
@@ -267,6 +280,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.5 | Překryv u hranice přijetí zrušen jako nerobustní a nahrazen mírou *rozhodl test*; krajní hodnoty zůstávají jako pásmo nejistoty bez srovnávací funkce. |
 | 1.4 | Doplněni soutěžící o obor, podíl přijatých podle bodového pásma, překryv u hranice přijetí a hustota u hranice. |
 | 1.3 | Opraveno tvrzení, že nemáme nejnižší výsledek přijatých. Doplněn nejnižší výsledek JPZ mezi přijatými, medián a průměr JPZ přijatých 2025. |
 | 1.2 | Doplněn podíl prvních voleb, kohorta podle pozice na přihlášce a souběžné přihlášky. |
