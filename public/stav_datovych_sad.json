@@ -31,7 +31,8 @@
       },
       "po_prepnuti": "Srovnání ročníků na stránce oboru.",
       "vystupy": [
-        "public/schools_data.json"
+        "public/schools_data.json",
+        "public/souhrny_kolo1.json"
       ],
       "ukazatele": [
         "Kapacita míst"
@@ -70,7 +71,8 @@
       "po_prepnuti": "Srovnání ročníků na stránce oboru.",
       "vystupy": [
         "public/applications_2026.json",
-        "public/schools_data.json"
+        "public/schools_data.json",
+        "public/souhrny_kolo1.json"
       ],
       "kontrola_obdobi": {
         "soubor": "public/applications_2026.json",
@@ -118,7 +120,8 @@
         "public/cermat_results_2026.json",
         "public/cermat_results_meta.json",
         "public/applications_2026.json",
-        "public/schools_data.json"
+        "public/schools_data.json",
+        "public/souhrny_kolo1.json"
       ],
       "kontrola_obdobi": {
         "soubor": "public/cermat_results_meta.json",
@@ -129,7 +132,11 @@
         "Nepřijatí kvůli kapacitě",
         "Nepřijatí pro nesplnění podmínek",
         "Přijati na vyšší prioritu",
-        "Průměr JPZ přijatých"
+        "Průměr JPZ přijatých",
+        "Přijatí podle priority",
+        "Vzdali se přijetí",
+        "Průměrné percentilové umístění přijatých",
+        "Průměrné percentilové umístění uchazečů"
       ],
       "aktualizace": {
         "zdroj": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ{rok}_kolo1_skolobory_vysledky.xlsx",
@@ -758,7 +765,9 @@
     "Období": "Pravidlo výkladu maturitních dat.",
     "Meze zveřejnění": "Pravidlo zveřejnění maturitních dat.",
     "Jak zavést nový ukazatel": "Postup.",
-    "Historie": "Záznam změn."
+    "Historie": "Záznam změn.",
+    "Percentil ve srovnatelné skupině": "Metoda nad ukazatelem jedné sady; období určuje sada ukazatele.",
+    "Změna mezi ročníky": "Metoda: rozdíl zobrazeného a předchozího období téže sady; období určuje sada ukazatele."
   },
   "historie_prepnuti": [
     {

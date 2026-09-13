@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.5 · 13. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.6 · 13. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -81,15 +81,15 @@ Soubor výsledků má **91 sloupců** a stejnou stavbu v 1. i 2. kole. Verze 1.4
 | 31 `KAPACITA`, 32 `INDEX POPTÁVKY`, 33 `PŘIHLÁŠKY CELKEM` | stejné jako v souboru přihlášek | jaký je zájem | ano |
 | 34 `PŘIJATÍ` | počet přijatých | naplnili obor | ano |
 | 35–39 `PŘIHLÁŠKY - PRIORITA 1` až `5` | přihlášky podle pořadí | je to škola první volby | ano |
-| 40–44 `PŘIJATÍ - PRIORITA 1` až `5` | přijatí podle pořadí na přihlášce | dostávají se sem ti, kdo ji chtěli nejvíc | **ne**; za rok 2026 vyplněno u 6 274 z 6 368 řádků, přestože web tvrdil, že CERMAT tento údaj nezveřejňuje |
-| 45–47 `ČJ+MA`, `ČJ`, `MA - KONALI` | kolik uchazečů o obor psalo zkoušku | z kolika lidí jsou výsledky | **ne** |
+| 40–44 `PŘIJATÍ - PRIORITA 1` až `5` | přijatí podle pořadí na přihlášce | dostávají se sem ti, kdo ji chtěli nejvíc | **ano od 13. 9. 2026** v `souhrny_kolo1.json` jako přijatí podle priority; za rok 2026 vyplněno u 6 274 z 6 368 řádků |
+| 45–47 `ČJ+MA`, `ČJ`, `MA - KONALI` | kolik uchazečů o obor psalo zkoušku | z kolika lidí jsou výsledky | `ČJ+MA - KONALI` **ano** v `souhrny_kolo1.json` jako jmenovatel; předměty zvlášť ne |
 | 48–56 `% SKÓR - PRŮMĚR`, `MIN`, `MAX` všech uchazečů | výsledky všech, kdo se hlásili, nejen přijatých | jak si stojí konkurence | **ne** |
-| 57–65 `PERCENTIL - PRŮMĚR`, `MIN`, `MAX` všech uchazečů | totéž jako celostátní percentil | kde je konkurence proti celé zemi | **ne** |
+| 57–65 `PERCENTIL - PRŮMĚR`, `MIN`, `MAX` všech uchazečů | totéž jako celostátní percentil | kde je konkurence proti celé zemi | sloupec 57 **ano** jako průměrné percentilové umístění uchazečů; minimum, maximum a předměty ne, minimum a maximum určuje jediný uchazeč |
 | 66–68 `KONALI (PŘIJATI)` | kolik přijatých má výsledek zkoušky | z kolika lidí je průměr přijatých | **ne** |
 | 69–71 `% SKÓR - PRŮMĚR (PŘIJATI)` | průměr přijatých | s jakými spolužáky se dítě potká | ano |
 | 72–74 `% SKÓR - MIN (PŘIJATI)` | **oficiální nejnižší výsledek přijatých**, po nabídkách včetně zaměření | s kolika body se sem někdo dostal | **ne**, počítáme ho sami z dat uchazečů bez zaměření, viz níže |
 | 75–77 `% SKÓR - MAX (PŘIJATI)` | nejvyšší výsledek přijatých | rozpětí třídy | **ne** |
-| 78–86 `PERCENTIL - PRŮMĚR`, `MIN`, `MAX (PŘIJATI)` | percentily přijatých | kde je hranice proti celé zemi | **ne** |
+| 78–86 `PERCENTIL - PRŮMĚR`, `MIN`, `MAX (PŘIJATI)` | percentily přijatých | kde je hranice proti celé zemi | sloupec 78 **ano** jako průměrné percentilové umístění přijatých, sloupec 81 jako `min_prijaty_percentil_souhrn`; maximum a předměty ne |
 | 87 `NEPŘIJATI - PŘIJAT NA VYŠŠÍ PRIORITU` | nepřijati sem, protože přijati na obor uvedený výš | jak často je to náhradní volba | ano |
 | 88 `NEPŘIJATI - NEDOSTATEČNÁ KAPACITA` | splnili, ale nevešli se | jak velký je přetlak | ano |
 | 89 `NEPŘIJATI - NESPLNĚNÍ PODMÍNEK` | neuspěli u podmínek školy | má škola vlastní požadavky | ano |
@@ -217,6 +217,7 @@ Otázka rodiče je jediná: **jak dlouho bude dítě dojíždět**. Odpovídáme
 | `schools_data.json` | CERMAT agregáty + data uchazečů | `build-catalogue-2026.py`, `enrich_schools_data.py` | katalog, ročníky 2024 až 2026 |
 | `applications_2026.json` | CERMAT přihlášky 2026 | `import_cermat_2026_real.py` | pole `pp` jsou priority |
 | `cermat_results_2026.json` | CERMAT výsledky 2026 a 2025 | `refresh_cermat_data.py` | nese otisk zdroje |
+| `souhrny_kolo1.json` | CERMAT souhrny 1. kola všech ročníků v `data/` | `build-souhrny-kolo1.py` | nabídky po ročnících, párování ročníků, rozdělení tlaku prvních voleb ve srovnatelných skupinách; doklad `docs/podklady/overeni-srovnani-rocniku.json` |
 | `school_analysis.json` | starší zpracování | nedohledaný | obsahuje `obtiznost` bez doloženého výpočtu |
 | `soubeh_prihlasek_2025.json` | data uchazečů 2025 | `build-soubeh-prihlasek.py` | souběžné přihlášky |
 | `pasma_prijeti_2025.json` | data uchazečů 2025 | `build-pasma-prijeti.py` | podíl přijatých podle bodového pásma a hranice |
@@ -292,8 +293,8 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 | **Profil dovedností** uchazečů o obor | položková data, `b1` až `b16.x` | „Kdo se sem dostal, byl silný v porozumění textu.“ Jediný zdroj o tom, co obor vybírá | soubory nikdo nezpracoval |
 | Výsledky po termínech zvlášť | položková data, listy A až D | kontrola, zda jsou řádné termíny srovnatelně těžké | data uchazečů nesou jen lepší výsledek |
 | **Oficiální nejnižší a nejvyšší výsledek přijatých** a jejich percentily | souhrny výsledků, sloupce 72–86 | „S 65 body se sem loni někdo dostal“ po zaměřeních a za aktuální rok, bez dat uchazečů | počítáme vlastní minimum z dat uchazečů za rok 2025 bez zaměření; oficiální sloupec se shoduje u 97 % oborů |
-| **Přijatí podle priority** | souhrny výsledků, sloupce 40–44 | „Tři čtvrtiny přijatých si obor zapsaly jako první volbu“ | web za rok 2026 nesprávně tvrdil, že nejsou zveřejnění |
-| Výsledky zkoušky **všech uchazečů** o obor v souhrnu | souhrny výsledků, sloupce 45–65 | průměr, minimum a maximum konkurence bez zpracování dat uchazečů | nepoužito |
+| **Přijatí podle priority** | souhrny výsledků, sloupce 40–44 | „Tři čtvrtiny přijatých si obor zapsaly jako první volbu“ | **zpracováno 13. 9. 2026** do `souhrny_kolo1.json`, na web zatím nenapojeno, viz `docs/grafy-skoly-a-oboru-2027.md` |
+| Výsledky zkoušky **všech uchazečů** o obor v souhrnu | souhrny výsledků, sloupce 45–65 | průměr, minimum a maximum konkurence bez zpracování dat uchazečů | průměrné percentilové umístění **zpracováno 13. 9. 2026**; minimum a maximum zamítnuto, určuje je jediný uchazeč |
 | **Agregáty 2. kola** za obory | `PZ{rok}_kolo2_skolobory_*.xlsx` | „Loni tu bylo 2. kolo s 12 místy“ | **zapracovává se od 13. 9. 2026**, viz `docs/druhe-kolo.md` |
 | **Data uchazečů 2. kola** | `PZ{rok}_kolo2_uchazeci_prihlasky_vysledky.xlsx` | pásma přijetí ve 2. kole | zamítnuto pro 2. kolo: jen 133 oborů má ve 2. kole aspoň deset přijatých s výsledkem zkoušky |
 | **Dobíhající obor** | rejstřík, `dobihajiciObor` | „Škola tenhle obor zavírá.“ Varování před podáním přihlášky | používá se jen v rešeršních skriptech |
@@ -456,6 +457,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-13. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.6 | Souhrny 1. kola po ročnících v `souhrny_kolo1.json`: přijatí podle priority, konající, průměrná percentilová umístění přijatých a uchazečů, oficiální percentil nejnižšího přijatého. |
 | 1.5 | Úplný soupis 91 sloupců souboru výsledků, druhé kolo a párování nabídek mezi koly. Opravena nepravdivá tvrzení o nejnižším přijatém výsledku a o přijatých podle priority 2026. |
 | 1.4 | Doplněna aktualizace a automatizace datových sad, příkaz `zjisti`, agregáty 2. kola jako nový zdroj; opraveno tvrzení, že data uchazečů 2026 nevyšla. |
 | 1.3 | Doplněn oddíl 5 o stavu datových sad: registr období, očekávaných termínů a přepínání, kontrolní skript. |
