@@ -490,30 +490,29 @@
       "cyklus": "prubezne",
       "pouziti": "web",
       "zobrazeno": {
-        "obdobi": "2026-02-11",
+        "obdobi": "2026-09-07",
         "soubor": "data/csi_snapshots",
-        "zdroj": "https://opendata.csicr.cz/Transformation/Download/139"
+        "prepnuto": "2026-09-13",
+        "z_dostupne": {
+          "obdobi": "2026-09-07",
+          "soubor": "PR #54, větev codex/csi-weekly-refresh",
+          "zjisteno": "2026-09-13",
+          "poznamka": "Týdenní workflow data připravuje; pull request byl otevřený od 13. 4. 2026, převzato přímo z větve 13. 9. 2026."
+        }
       },
       "ocekavano": {
         "obdobi": null,
         "kdy": null,
         "jistota": "neznamo",
-        "zduvodneni": "Inspekce přibývají průběžně; obnova je ruční."
+        "zduvodneni": "Inspekce přibývají průběžně; týdenní workflow připravuje snímky do pull requestů."
       },
-      "obnovit_nejpozdeji": "2026-08-11",
+      "obnovit_nejpozdeji": "2026-09-21",
       "po_prepnuti": "Starší snímky zůstávají v data/csi_snapshots s manifestem.",
       "vystupy": [
         "public/csi_inspections.json"
       ],
       "ukazatele": [],
-      "dostupne": [
-        {
-          "obdobi": "2026-09-07",
-          "soubor": "PR #54, větev codex/csi-weekly-refresh",
-          "zjisteno": "2026-09-13",
-          "poznamka": "Týdenní workflow data připravuje, pull request je otevřený od 13. 4. 2026 a nikdo ho neslučuje."
-        }
-      ],
+      "dostupne": [],
       "aktualizace": {
         "zdroj": "https://opendata.csicr.cz/DataSet/Detail/69",
         "detekce": "Workflow CSI Weekly Refresh každé pondělí, poslední úspěšný běh 7. 9. 2026.",
@@ -523,7 +522,14 @@
         "sledovat": [
           "https://opendata.csicr.cz/DataSet/Detail/69"
         ]
-      }
+      },
+      "historie_obdobi": [
+        {
+          "obdobi": "2026-02-11",
+          "soubor": "data/csi_snapshots",
+          "zdroj": "https://opendata.csicr.cz/Transformation/Download/139"
+        }
+      ]
     },
     "csi-extrakce": {
       "nazev": "Inspekční zprávy, strojová extrakce",
@@ -761,6 +767,13 @@
       "z": "2025",
       "na": "2025",
       "doklad": "Revize téhož období: PR #84 (merge 1f2901e), zdroj sha256 cdc799ead4182c6d348c3a6745c9f2327fa526ea6c861a91c9b5e6440c446b31. Pásma a souběh 2025 z finální revize, doklad overeni-pasem-prijeti přepočítán nad týmž souborem. jpz_min_actual v katalogu zatím z předběžné verze (enrich_schools_data.py čte sloupce podle pozice)."
+    },
+    {
+      "datum": "2026-09-13",
+      "sada": "csi-inspekce",
+      "z": "2026-02-11",
+      "na": "2026-09-07",
+      "doklad": "commit 10f3f6a, převzato z PR #54, snímek 2026-09-07T10-17-08-734Z"
     }
   ]
 }

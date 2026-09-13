@@ -216,10 +216,13 @@ def zapis_tabulku(registr: dict) -> None:
 
 
 def prepni(registr: dict, sid: str, obdobi: str, kdy: str | None, jistota: str, zduvodneni: str, doklad: str,
-           soubor: str | None, kontrola_soubor: str | None) -> None:
+           soubor: str | None, kontrola_soubor: str | None, obnovit_nejpozdeji: str | None = None) -> None:
     s = registr["sady"].get(sid) or sys.exit(f"neznámá sada {sid}")
     if not doklad:
         sys.exit("přepnutí vyžaduje --doklad: commit importu a výsledek kontrol")
+    if obnovit_nejpozdeji:
+        dt.date.fromisoformat(obnovit_nejpozdeji)
+        s["obnovit_nejpozdeji"] = obnovit_nejpozdeji
     predchozi = dict(s["zobrazeno"])
     s.setdefault("historie_obdobi", []).append(predchozi)
     # Převzaté období mizí z dostupných, jinak by kontrola dál hlásila „zdroj zveřejnil, web nepřevzal“.
@@ -318,6 +321,7 @@ def main() -> None:
     p.add_argument("--doklad", required=True)
     p.add_argument("--soubor", help="zdrojový soubor nového období")
     p.add_argument("--kontrola-soubor", help="výstup nového období, podle kterého se ověří rok v datech")
+    p.add_argument("--obnovit-nejpozdeji", help="posuň termín plánované obnovy, RRRR-MM-DD")
     sub.add_parser("zjisti")
     v = sub.add_parser("vrat")
     v.add_argument("sada")
@@ -341,7 +345,7 @@ def main() -> None:
         return
 
     if a.prikaz == "prepni":
-        prepni(registr, a.sada, a.obdobi, a.kdy, a.jistota, a.zduvodneni, a.doklad, a.soubor, a.kontrola_soubor)
+        prepni(registr, a.sada, a.obdobi, a.kdy, a.jistota, a.zduvodneni, a.doklad, a.soubor, a.kontrola_soubor, a.obnovit_nejpozdeji)
     else:
         vrat(registr, a.sada, a.duvod)
     # Přepnutí se uloží, jen když registr po změně projde kontrolou.

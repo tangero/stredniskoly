@@ -410,7 +410,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-13. Neupravovat ru�
 | `msmt-rejstrik-snimky` | web | 2026-06-30 | `data/msmt_rejstrik/rssz-2026-06-30.jsonld` | 2025-06-30, 2025-09-30 | 2026-09-30 | 2026-10, odhad | Starší snímky zůstávají pro návaznost oborů mezi roky. |
 | `msmt-rejstrik-csv` | analýza | 2026-02-11 | `data/Rejstrik_skol/SkolyAMista.csv` | — | — | neznámo | Nahrazuje se celý. |
 | `msmt-akko` | analýza | 2026-03-08 | `data/AKKO-Kmenové_obory vzdělání (KKOV 5místné).csv` | — | — | neznámo | Nahrazuje se celý. |
-| `csi-inspekce` | web | 2026-02-11 | `data/csi_snapshots` | 2026-09-07 | — | neznámo | Starší snímky zůstávají v data/csi_snapshots s manifestem. |
+| `csi-inspekce` | web | 2026-09-07 | `data/csi_snapshots` | — | — | neznámo | Starší snímky zůstávají v data/csi_snapshots s manifestem. |
 | `csi-extrakce` | web | 2025-11-25 | `data/inspection_extractions.json` | — | — | neznámo | Starší zpráva téže školy zůstává sbalená pod novější. |
 | `csi-inspis` | web | 2026-02-11 | `data/inspis_school_profiles.json` | — | — | neznámo | Nahrazuje se celý. |
 | `doprava-gtfs` | web | 2026-02-07 | `data/PID_GTFS.zip` | — | — | neznámo | Nahrazuje se celý. |
