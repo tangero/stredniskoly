@@ -2,6 +2,7 @@
 
 import type { ExtendedSchoolStats, SchoolProgram, School2026Data, SchoolResult } from '@/lib/data';
 import { AdmissionScoreValue } from '@/components/AdmissionScoreValue';
+import type { SouhrnNabidky, SouhrnRocniku } from '@/lib/souhrny-kolo1';
 
 interface StatsTabProps {
   program: Pick<SchoolProgram, 'prihlasky' | 'kapacita' | 'prijati' | 'rok' | 'nevypsano_2026'>;
@@ -10,8 +11,8 @@ interface StatsTabProps {
   data2026?: School2026Data;
   /** Výsledky 1. kola 2026 pro tuto nabídku. */
   result2026?: SchoolResult;
-  /** Údaje z roku 2025 pro srovnání vývoje mezi ročníky. */
-  data2025?: { prihlasky?: number; kapacita?: number; prijati?: number };
+  /** Souhrn 1. kola: zobrazený a spárovaný předchozí ročník podle registru a souhrnů CERMATu. */
+  souhrn?: SouhrnNabidky | null;
 }
 
 function count(value: number | undefined | null): string {
@@ -19,26 +20,34 @@ function count(value: number | undefined | null): string {
     ? value.toLocaleString('cs-CZ') : 'Údaj není k dispozici';
 }
 
-function perMisto(prihlasky?: number, kapacita?: number): string | null {
-  if (!prihlasky || !kapacita) return null;
-  return `${(prihlasky / kapacita).toLocaleString('cs-CZ', { maximumFractionDigits: 1 })}×`;
+function nasobek(value?: number): string | null {
+  return typeof value === 'number' ? `${value.toLocaleString('cs-CZ', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}×` : null;
+}
+
+function pocet(value?: number): string | null {
+  return typeof value === 'number' ? value.toLocaleString('cs-CZ') : null;
+}
+
+function umisteni(r: SouhrnRocniku): string | null {
+  return typeof r.prumerne_umisteni_prijatych === 'number'
+    ? `${Math.round(r.prumerne_umisteni_prijatych)}. percentil` : null;
 }
 
 /** Řádek srovnání dvou ročníků; chybějící údaj se nedopočítává. */
-function Radek({ label, r2025, r2026 }: {
-  label: string; r2025: string | null; r2026: string | null;
+function Radek({ label, predchozi, aktualni }: {
+  label: string; predchozi: string | null; aktualni: string | null;
 }) {
-  if (!r2025 && !r2026) return null;
+  if (!predchozi && !aktualni) return null;
   return (
     <tr className="border-t border-slate-100">
       <th scope="row" className="py-2 font-normal text-slate-600">{label}</th>
-      <td className="py-2 text-right tabular-nums">{r2025 ?? '—'}</td>
-      <td className="py-2 text-right font-semibold tabular-nums">{r2026 ?? '—'}</td>
+      <td className="py-2 text-right tabular-nums">{predchozi ?? '—'}</td>
+      <td className="py-2 text-right font-semibold tabular-nums">{aktualni ?? '—'}</td>
     </tr>
   );
 }
 
-export function StatsTab({ program, extendedStats, data2026, result2026, data2025 }: StatsTabProps) {
+export function StatsTab({ program, extendedStats, data2026, result2026, souhrn }: StatsTabProps) {
   // Čísla záznamu patří ročníku, ze kterého pocházejí. Nadpis proto nesmí být
   // napevno loňský: u nabídky, kterou škola letos nevypsala, jsou údaje loňské,
   // u ostatních letošní.
@@ -56,12 +65,8 @@ export function StatsTab({ program, extendedStats, data2026, result2026, data202
   const kontext = data2026?.admission_context;
   const prijati2026 = kontext?.accepted ?? result2026?.prijati;
 
-  // Srovnání ročníků má smysl jen tam, kde jsou obě strany.
-  const srovnani = data2026 && data2025 ? {
-    prihlasky: [data2025.prihlasky, data2026.prihlasky] as const,
-    kapacita: [data2025.kapacita, data2026.kapacita] as const,
-    prijati: [data2025.prijati, prijati2026] as const,
-  } : null;
+  // Srovnání ročníků jen u nabídky spárované se souhrnem předchozího ročníku; body JPZ se mezi ročníky nesrovnávají.
+  const srovnani = souhrn?.predchozi && souhrn.predchoziRok ? souhrn : null;
 
   return (
     <div className="space-y-6">
@@ -87,31 +92,25 @@ export function StatsTab({ program, extendedStats, data2026, result2026, data202
 
       {srovnani && (
         <div className="rounded-lg border border-slate-200 bg-white p-6">
-          <h3 className="font-semibold text-slate-900">Srovnání ročníků 2025 a 2026</h3>
+          <h3 className="font-semibold text-slate-900">Srovnání ročníků {srovnani.predchoziRok} a {srovnani.rok}</h3>
           <div className="overflow-x-auto">
             <table className="mt-4 w-full text-left text-sm">
               <thead><tr className="text-slate-600">
                 <th scope="col" className="pb-2 font-medium">Údaj</th>
-                <th scope="col" className="pb-2 text-right font-medium">2025</th>
-                <th scope="col" className="pb-2 text-right font-medium">2026</th>
+                <th scope="col" className="pb-2 text-right font-medium">{srovnani.predchoziRok}</th>
+                <th scope="col" className="pb-2 text-right font-medium">{srovnani.rok}</th>
               </tr></thead>
               <tbody>
-                <Radek label="Přihlášky celkem"
-                  r2025={srovnani.prihlasky[0] ? count(srovnani.prihlasky[0]) : null}
-                  r2026={srovnani.prihlasky[1] ? count(srovnani.prihlasky[1]) : null} />
-                <Radek label="Kapacita míst"
-                  r2025={srovnani.kapacita[0] ? count(srovnani.kapacita[0]) : null}
-                  r2026={srovnani.kapacita[1] ? count(srovnani.kapacita[1]) : null} />
-                <Radek label="Přijatí"
-                  r2025={srovnani.prijati[0] ? count(srovnani.prijati[0]) : null}
-                  r2026={srovnani.prijati[1] ? count(srovnani.prijati[1]) : null} />
-                <Radek label="Přihlášky na místo"
-                  r2025={perMisto(srovnani.prihlasky[0], srovnani.kapacita[0])}
-                  r2026={perMisto(srovnani.prihlasky[1], srovnani.kapacita[1])} />
+                <Radek label="Přihlášky celkem" predchozi={pocet(srovnani.predchozi!.prihlasky)} aktualni={pocet(srovnani.aktualni.prihlasky)} />
+                <Radek label="Kapacita míst" predchozi={pocet(srovnani.predchozi!.kapacita)} aktualni={pocet(srovnani.aktualni.kapacita)} />
+                <Radek label="Přijatí" predchozi={pocet(srovnani.predchozi!.prijati)} aktualni={pocet(srovnani.aktualni.prijati)} />
+                <Radek label="Přihlášky na místo" predchozi={nasobek(srovnani.predchozi!.index_poptavky)} aktualni={nasobek(srovnani.aktualni.index_poptavky)} />
+                <Radek label="Tlak prvních voleb" predchozi={nasobek(srovnani.predchozi!.tlak_prvnich_voleb)} aktualni={nasobek(srovnani.aktualni.tlak_prvnich_voleb)} />
+                <Radek label="Průměrné percentilové umístění přijatých" predchozi={umisteni(srovnani.predchozi!)} aktualni={umisteni(srovnani.aktualni)} />
               </tbody>
             </table>
           </div>
-          <p className="mt-4 text-sm text-slate-600">Srovnání popisuje, jak se nabídka a zájem vyvíjely mezi ročníky. Nevypovídá o podmínkách přijímacího řízení 2027 ani o vaší šanci na přijetí.</p>
+          <p className="mt-4 text-sm text-slate-600">Srovnání popisuje, jak se nabídka a zájem vyvíjely mezi ročníky. Úroveň přijatých srovnáváme v percentilech celé země, protože body ovlivňuje obtížnost testu. Nevypovídá o podmínkách příštího přijímacího řízení ani o vaší šanci na přijetí.</p>
         </div>
       )}
 
