@@ -152,7 +152,19 @@ Pravidla:
 2. **Nový zdroj nebo sloupec zapiš do `docs/zdroje-dat.md`** ve stejné dávce, ve které ho začneš používat, včetně sloupců, které nepoužiješ.
 3. **Zamítnutí je platný závěr, mlčení není.** Když se sloupec nehodí, napiš proč.
 
-Dělba rolí: `docs/zdroje-dat.md` říká, **co existuje**. `docs/slovnik-ukazatelu.md` říká, **jak se to jmenuje a počítá**.
+Dělba rolí: `docs/zdroje-dat.md` říká, **co existuje**. `docs/slovnik-ukazatelu.md` říká, **jak se to jmenuje a počítá**. `public/stav_datovych_sad.json` říká, **které období se zobrazuje**.
+
+## Stav datových sad — POVINNÉ
+
+**`public/stav_datovych_sad.json` je jediné místo, které určuje, jaké období každé datové sady web zobrazuje.** U každé sady vede zobrazené období a jeho zdroj, očekávané období a termín, roli starých dat po přepnutí a ukazatele ze slovníku, které na sadě stojí. Postup je v `docs/zdroje-dat.md`, oddíl 5.
+
+Pravidla:
+
+1. **Nikdy nepiš letopočet dat napevno** do kódu ani do textu stránky. Období se bere z registru.
+2. **Staré období se zobrazuje, dokud nové neprošlo přepnutím.** Po přepnutí slouží staré jen jako historie a kontext vývoje.
+3. **Ukazatel z více sad** se zobrazí z nejstaršího ze zobrazených období těchto sad.
+4. **Registr neupravuj ručně.** Přepínej `python3 scripts/stav-datovych-sad.py prepni` s dokladem, vracej `vrat`.
+5. **Nová sada nebo nový ukazatel** se zapisuje do registru ve stejné dávce. Po každé změně dat spusť `python3 scripts/stav-datovych-sad.py kontrola`.
 
 ## Slovník ukazatelů — POVINNÉ
 
@@ -173,11 +185,12 @@ Návazné dokumenty: [prezentace dat na stránce školy](../docs/navrh-prezentac
 
 1. **VŽDY** projdi `docs/zdroje-dat.md` celý, než navrhneš stránku, sekci nebo ukazatel, a napiš, které nepoužité sloupce jsi zvážil
 2. **VŽDY** ověř ukazatel ve `docs/slovnik-ukazatelu.md`, než jej zobrazíš, a zapiš tam nový, než jej zavedeš
-3. **NIKDY** neduplikuj obsah mezi `/docs/` a `~/github/patrick-knowledgebase/`
-4. **VŽDY** zapiš learnings **BĚHEM** práce, NE až na konci
-5. **VŽDY** updatuj project notes **PŘED** ukončením session
-6. **VŽDY** se zeptej na konci session: "Něco ještě zapsat do KB?"
-7. **VŽDY** commituj změny v knowledge-base po session
+3. **VŽDY** ber zobrazené období dat z `public/stav_datovych_sad.json`, nikdy z letopočtu v kódu
+4. **NIKDY** neduplikuj obsah mezi `/docs/` a `~/github/patrick-knowledgebase/`
+5. **VŽDY** zapiš learnings **BĚHEM** práce, NE až na konci
+6. **VŽDY** updatuj project notes **PŘED** ukončením session
+7. **VŽDY** se zeptej na konci session: "Něco ještě zapsat do KB?"
+8. **VŽDY** commituj změny v knowledge-base po session
 
 ## Common Patterns Reference
 

@@ -1,0 +1,294 @@
+{
+  "verze": 1,
+  "aktualizovano": "2026-09-13",
+  "popis": "Registr stavu datových sad. Pro každou sadu říká, které období web zobrazuje, odkud je, jaké období čekáme a kdy, co se stane se starými daty po přepnutí a které ukazatele ze slovníku na sadě stojí. Postup a pravidla: docs/zdroje-dat.md, oddíl Stav datových sad. Měnit jen přes scripts/stav-datovych-sad.py.",
+  "pravidla": {
+    "jistota": "znamo = datum doložené zdrojem; odhad = odvozeno z předchozího období, uveď zdůvodnění; neznamo = nelze odhadnout",
+    "cyklus": "rocni, ctvrtletni, prubezne, rucni, uzavreno",
+    "pouziti": "web = zobrazuje se; analyza = jen skripty a dokumenty; planovano = schváleno, neimportováno; nepouzito; nezobrazovat = v datech, ale podle slovníku se nesmí zobrazit",
+    "vice_sad": "Ukazatel z více sad se zobrazí z nejstaršího ze zobrazených období těchto sad."
+  },
+  "sady": {
+    "cermat-kapacity": {
+      "nazev": "CERMAT, kapacity oborů, 1. kolo",
+      "dokumentace": "docs/zdroje-dat.md#21-cermat-agregovaná-data-za-obory",
+      "cyklus": "rocni",
+      "pouziti": "web",
+      "zobrazeno": {
+        "obdobi": "2026",
+        "soubor": "data/PZ2026_kolo1_skolobory_kapacity.xlsx",
+        "stazeno": "2026-03-08"
+      },
+      "ocekavano": {
+        "obdobi": "2027",
+        "kdy": "2027-03",
+        "jistota": "odhad",
+        "zduvodneni": "Soubor za rok 2026 byl stažen 8. 3. 2026."
+      },
+      "po_prepnuti": "Srovnání ročníků na stránce oboru.",
+      "vystupy": ["public/schools_data.json"],
+      "ukazatele": ["Kapacita míst"]
+    },
+    "cermat-prihlasky": {
+      "nazev": "CERMAT, přihlášky na obory, 1. kolo",
+      "dokumentace": "docs/zdroje-dat.md#21-cermat-agregovaná-data-za-obory",
+      "cyklus": "rocni",
+      "pouziti": "web",
+      "zobrazeno": {
+        "obdobi": "2026",
+        "soubor": "data/PZ2026_kolo1_skolobory_prihlasky.xlsx",
+        "stazeno": "2026-03-08"
+      },
+      "ocekavano": {
+        "obdobi": "2027",
+        "kdy": "2027-03",
+        "jistota": "odhad",
+        "zduvodneni": "Přihlášky na střední školy končí 22. 2. 2027; soubor za rok 2026 byl stažen 8. 3. 2026."
+      },
+      "po_prepnuti": "Srovnání ročníků na stránce oboru.",
+      "vystupy": ["public/applications_2026.json", "public/schools_data.json"],
+      "kontrola_obdobi": {"soubor": "public/applications_2026.json", "cesta": "meta.rok"},
+      "ukazatele": ["Přihlášky celkem", "Přihlášky podle priority", "První priority", "Podíl prvních voleb", "Kohorta podle pozice na přihlášce"]
+    },
+    "cermat-vysledky": {
+      "nazev": "CERMAT, výsledky přijímacího řízení, 1. kolo",
+      "dokumentace": "docs/zdroje-dat.md#21-cermat-agregovaná-data-za-obory",
+      "cyklus": "rocni",
+      "pouziti": "web",
+      "zobrazeno": {
+        "obdobi": "2026",
+        "soubor": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2026_kolo1_skolobory_vysledky.xlsx",
+        "platne_k": "2026-08-17",
+        "zkontrolovano": "2026-09-12"
+      },
+      "ocekavano": {
+        "obdobi": "2027",
+        "kdy": "2027-08",
+        "jistota": "odhad",
+        "zduvodneni": "Výsledky za rok 2026 jsou platné k 17. 8. 2026."
+      },
+      "po_prepnuti": "Srovnání ročníků na stránce oboru; výsledky 2025 slouží jako srovnávací zdroj v public/cermat_results_meta.json.",
+      "vystupy": ["public/cermat_results_2026.json", "public/cermat_results_meta.json", "public/applications_2026.json", "public/schools_data.json"],
+      "kontrola_obdobi": {"soubor": "public/cermat_results_meta.json", "cesta": "latest_year"},
+      "ukazatele": ["Přijatí", "Nepřijatí kvůli kapacitě", "Nepřijatí pro nesplnění podmínek", "Přijati na vyšší prioritu", "Průměr JPZ přijatých"]
+    },
+    "cermat-uchazeci-kolo1": {
+      "nazev": "CERMAT, data o jednotlivých uchazečích, 1. kolo",
+      "dokumentace": "docs/zdroje-dat.md#22-cermat-data-uchazečů",
+      "cyklus": "rocni",
+      "pouziti": "web",
+      "zobrazeno": {
+        "obdobi": "2025",
+        "soubor": "data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx",
+        "stazeno": "2026-01-29"
+      },
+      "ocekavano": {
+        "obdobi": "2026",
+        "kdy": "2027-01",
+        "jistota": "odhad",
+        "zduvodneni": "Soubor za rok 2025 byl stažen 29. 1. 2026, data vycházejí zhruba rok po přijímacím řízení."
+      },
+      "po_prepnuti": "Rok 2025 zůstává pro ověření stability mezi ročníky ve scripts/validate-pasma-prijeti.py a pro vývoj hranice přijetí.",
+      "vystupy": ["public/pasma_prijeti_2025.json", "public/soubeh_prihlasek_2025.json", "data/jpz_stats_2025.json", "public/schools_data.json"],
+      "kontrola_obdobi": {"soubor": "public/pasma_prijeti_2025.json", "cesta": "rok"},
+      "ukazatele": ["Souběžné přihlášky", "Nejnižší výsledek JPZ mezi přijatými", "Medián a průměr JPZ přijatých 2025", "Soutěžící o obor", "Podíl přijatých podle bodového pásma", "Rozhodl test", "Pásmo nejistoty", "Percentil nejnižšího přijatého", "Hustota u hranice", "Kohorty přijatých"]
+    },
+    "cermat-uchazeci-kolo2": {
+      "nazev": "CERMAT, data o jednotlivých uchazečích, 2. kolo",
+      "dokumentace": "docs/zdroje-dat.md#22-cermat-data-uchazečů",
+      "cyklus": "rocni",
+      "pouziti": "nepouzito",
+      "zobrazeno": {
+        "obdobi": "2025",
+        "soubor": "data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx",
+        "stazeno": "2026-01-29"
+      },
+      "ocekavano": {
+        "obdobi": "2026",
+        "kdy": "2027-01",
+        "jistota": "odhad",
+        "zduvodneni": "Vychází spolu s daty 1. kola."
+      },
+      "po_prepnuti": "Není na webu.",
+      "vystupy": [],
+      "ukazatele": []
+    },
+    "cermat-polozkova-jpz": {
+      "nazev": "CERMAT, položková data jednotné zkoušky",
+      "dokumentace": "docs/zdroje-dat.md#23-cermat-položková-data-jpz",
+      "cyklus": "rocni",
+      "pouziti": "analyza",
+      "zobrazeno": {
+        "obdobi": "2025",
+        "soubor": "data/JPZ2025_M6_polozkova_data.xlsx",
+        "stazeno": "2026-01-29"
+      },
+      "ocekavano": {
+        "obdobi": "2026",
+        "kdy": "2027-01",
+        "jistota": "odhad",
+        "zduvodneni": "Soubory za rok 2025 byly staženy 29. 1. 2026."
+      },
+      "po_prepnuti": "Není na webu; slouží dokladu teze 4.",
+      "vystupy": ["docs/podklady/overeni-pasem-prijeti-2024-2025.json"],
+      "ukazatele": []
+    },
+    "cermat-maturita": {
+      "nazev": "CERMAT, maturitní výsledky, společná část",
+      "dokumentace": "docs/zdroje-dat.md#211-cermat-maturitní-výsledky",
+      "cyklus": "rocni",
+      "pouziti": "planovano",
+      "zobrazeno": {
+        "obdobi": null,
+        "soubor": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2026j_SC_skolobory.xlsx",
+        "zkontrolovano": "2026-09-13",
+        "poznamka": "Soubor jaro 2026 ověřen proti kontrolnímu součtu, import nezačal."
+      },
+      "ocekavano": {
+        "obdobi": "2026",
+        "kdy": null,
+        "jistota": "neznamo",
+        "zduvodneni": "Termín importu není naplánovaný; data za jaro 2026 už existují."
+      },
+      "po_prepnuti": "Maturitní výsledky předchozích let jako řada vývoje.",
+      "vystupy": [],
+      "ukazatele": ["Úspěšnost maturity", "Průměrný procentní skór maturity", "Odchylka od očekávaného výsledku"]
+    },
+    "cermat-jpz-skoly-2017-2023": {
+      "nazev": "CERMAT, školní agregáty JPZ 2017–2023",
+      "dokumentace": "docs/zdroje-dat.md#212-cermat-školní-agregáty-jpz-20172023",
+      "cyklus": "uzavreno",
+      "pouziti": "nepouzito",
+      "zobrazeno": {"obdobi": null, "poznamka": "Uzavřená řada, soubory nejsou stažené."},
+      "ocekavano": {"obdobi": null, "kdy": null, "jistota": "neznamo", "zduvodneni": "Řada nepokračuje; od roku 2024 ji nahrazují data o uchazečích."},
+      "po_prepnuti": "Nepřepíná se.",
+      "vystupy": [],
+      "ukazatele": []
+    },
+    "msmt-rejstrik-snimky": {
+      "nazev": "Rejstřík škol MŠMT, čtvrtletní snímky JSON-LD",
+      "dokumentace": "docs/zdroje-dat.md#24-rejstřík-škol-mšmt",
+      "cyklus": "ctvrtletni",
+      "pouziti": "web",
+      "zobrazeno": {"obdobi": "2026-06-30", "soubor": "data/msmt_rejstrik/rssz-2026-06-30.jsonld"},
+      "ocekavano": {
+        "obdobi": "2026-09-30",
+        "kdy": "2026-10",
+        "jistota": "odhad",
+        "zduvodneni": "Snímky jsou ke konci čtvrtletí; poslední je k 30. 6. 2026."
+      },
+      "po_prepnuti": "Starší snímky zůstávají pro návaznost oborů mezi roky.",
+      "vystupy": ["public/navaznost_notes.json", "public/soubeh_prihlasek_2025.json"],
+      "ukazatele": []
+    },
+    "msmt-rejstrik-csv": {
+      "nazev": "Rejstřík škol MŠMT, export CSV",
+      "dokumentace": "docs/zdroje-dat.md#24-rejstřík-škol-mšmt",
+      "cyklus": "rucni",
+      "pouziti": "analyza",
+      "zobrazeno": {"obdobi": "2026-02-11", "soubor": "data/Rejstrik_skol/SkolyAMista.csv"},
+      "ocekavano": {"obdobi": null, "kdy": null, "jistota": "neznamo", "zduvodneni": "Obnovuje se ručně při potřebě."},
+      "obnovit_nejpozdeji": "2027-02-11",
+      "po_prepnuti": "Nahrazuje se celý.",
+      "vystupy": ["docs/podklady/overeni-pasem-prijeti-2024-2025.json"],
+      "ukazatele": []
+    },
+    "msmt-akko": {
+      "nazev": "MŠMT, číselník kmenových oborů AKKO",
+      "dokumentace": "docs/zdroje-dat.md#25-číselník-akko",
+      "cyklus": "rucni",
+      "pouziti": "analyza",
+      "zobrazeno": {"obdobi": "2026-03-08", "soubor": "data/AKKO-Kmenové_obory vzdělání (KKOV 5místné).csv"},
+      "ocekavano": {"obdobi": null, "kdy": null, "jistota": "neznamo", "zduvodneni": "Číselník se mění zřídka."},
+      "po_prepnuti": "Nahrazuje se celý.",
+      "vystupy": [],
+      "ukazatele": []
+    },
+    "csi-inspekce": {
+      "nazev": "Česká školní inspekce, seznam inspekcí a odkazy na zprávy",
+      "dokumentace": "docs/zdroje-dat.md#26-česká-školní-inspekce-seznam-inspekcí",
+      "cyklus": "prubezne",
+      "pouziti": "web",
+      "zobrazeno": {"obdobi": "2026-02-11", "soubor": "data/csi_snapshots", "zdroj": "https://opendata.csicr.cz/Transformation/Download/139"},
+      "ocekavano": {"obdobi": null, "kdy": null, "jistota": "neznamo", "zduvodneni": "Inspekce přibývají průběžně; obnova je ruční."},
+      "obnovit_nejpozdeji": "2026-08-11",
+      "po_prepnuti": "Starší snímky zůstávají v data/csi_snapshots s manifestem.",
+      "vystupy": ["public/csi_inspections.json"],
+      "ukazatele": []
+    },
+    "csi-extrakce": {
+      "nazev": "Inspekční zprávy, strojová extrakce",
+      "dokumentace": "docs/zdroje-dat.md#27-inspekční-zprávy-extrakce",
+      "cyklus": "prubezne",
+      "pouziti": "web",
+      "zobrazeno": {"obdobi": "2025-11-25", "soubor": "data/inspection_extractions.json", "poznamka": "Datum je konec nejnovější zpracované inspekce."},
+      "ocekavano": {"obdobi": null, "kdy": null, "jistota": "neznamo", "zduvodneni": "Závisí na obnově seznamu inspekcí."},
+      "obnovit_nejpozdeji": "2026-08-11",
+      "po_prepnuti": "Starší zpráva téže školy zůstává sbalená pod novější.",
+      "vystupy": [],
+      "ukazatele": []
+    },
+    "csi-inspis": {
+      "nazev": "INSPIS, profily škol",
+      "dokumentace": "docs/zdroje-dat.md#28-inspis-profily-škol",
+      "cyklus": "rucni",
+      "pouziti": "web",
+      "zobrazeno": {"obdobi": "2026-02-11", "soubor": "data/inspis_school_profiles.json"},
+      "ocekavano": {"obdobi": null, "kdy": null, "jistota": "neznamo", "zduvodneni": "Obnova je ruční."},
+      "obnovit_nejpozdeji": "2027-02-11",
+      "po_prepnuti": "Nahrazuje se celý.",
+      "vystupy": [],
+      "ukazatele": []
+    },
+    "doprava-gtfs": {
+      "nazev": "Jízdní řády PID a celostátní GTFS",
+      "dokumentace": "docs/zdroje-dat.md#29-dopravní-data",
+      "cyklus": "rucni",
+      "pouziti": "web",
+      "zobrazeno": {"obdobi": "2026-02-07", "soubor": "data/PID_GTFS.zip"},
+      "ocekavano": {"obdobi": null, "kdy": null, "jistota": "neznamo", "zduvodneni": "Jízdní řády se mění s každým vydáním."},
+      "obnovit_nejpozdeji": "2027-01-31",
+      "po_prepnuti": "Nahrazuje se celý.",
+      "vystupy": ["data/transit_graph.json", "public/pid_stops_compact.json"],
+      "ukazatele": []
+    },
+    "katalog-historie": {
+      "nazev": "Katalog, historické ročníky 2024 a 2025",
+      "dokumentace": "docs/zdroje-dat.md#210-odvozené-soubory-v-public",
+      "cyklus": "uzavreno",
+      "pouziti": "web",
+      "zobrazeno": {"obdobi": "2025", "soubor": "public/schools_data.json"},
+      "ocekavano": {"obdobi": null, "kdy": null, "jistota": "neznamo", "zduvodneni": "Historické ročníky se nemění."},
+      "po_prepnuti": "Nepřepíná se.",
+      "vystupy": ["public/schools_data.json"],
+      "ukazatele": ["Historický průměr JPZ 2025"]
+    },
+    "school-analysis-legacy": {
+      "nazev": "school_analysis.json, starší odvozený soubor",
+      "dokumentace": "docs/zdroje-dat.md#210-odvozené-soubory-v-public",
+      "cyklus": "uzavreno",
+      "pouziti": "nezobrazovat",
+      "zobrazeno": {"obdobi": "2025", "soubor": "public/school_analysis.json", "poznamka": "Generátor není dohledaný. Dnes je páteří adres a seznamů na webu, viz docs/navrh-aktualniho-rocniku-dat.md."},
+      "ocekavano": {"obdobi": null, "kdy": null, "jistota": "neznamo", "zduvodneni": "Má být nahrazen katalogem."},
+      "po_prepnuti": "Nepřepíná se.",
+      "vystupy": ["public/school_analysis.json"],
+      "ukazatele": ["Index obtížnosti (`obtiznost`)", "Kategorie oboru (`category_code`, `category_name`)"]
+    }
+  },
+  "ukazatele_z_vice_sad": {
+    "Přihlášky na místo": ["cermat-prihlasky", "cermat-kapacity"],
+    "Tlak prvních voleb": ["cermat-prihlasky", "cermat-kapacity"],
+    "Naplněnost": ["cermat-vysledky", "cermat-kapacity"],
+    "Přetlak": ["cermat-vysledky", "cermat-kapacity"]
+  },
+  "ukazatele_mimo_registr": {
+    "Hranice přijetí": "Neexistuje v žádné sadě, slovník uvádí, že ji nemáme.",
+    "Zařazení do srovnatelné skupiny": "Metoda, ne veličina z datové sady.",
+    "Granularita, která rozhoduje o všem": "Pravidlo výkladu maturitních dat.",
+    "Období": "Pravidlo výkladu maturitních dat.",
+    "Meze zveřejnění": "Pravidlo zveřejnění maturitních dat.",
+    "Jak zavést nový ukazatel": "Postup.",
+    "Historie": "Záznam změn."
+  },
+  "historie_prepnuti": []
+}

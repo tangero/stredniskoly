@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.8 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.9 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -297,12 +297,14 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 1. Zapsat jej sem: název, definice jednou větou, vzorec, zdroj, jednotka, rozsah platnosti.
 2. Uvést, co ukazatel **neříká**. U většiny čísel je to důležitější než definice.
 3. Ověřit, že jméno se neplete s jiným. Pokud podobný ukazatel existuje, buď se použije, nebo se v obou zápisech vysvětlí rozdíl.
-4. Teprve potom jej zobrazit na webu, vždy s větou, co znamená.
+4. Přiřadit ho v registru `public/stav_datovych_sad.json` datové sadě, ze které vzniká, nebo do `ukazatele_z_vice_sad`, když vzniká z více sad. Registr určuje, z jakého období se ukazatel zobrazí; `python3 scripts/stav-datovych-sad.py kontrola` selže, když ukazatel žádné sadě nepatří.
+5. Teprve potom jej zobrazit na webu, vždy s větou, co znamená, a s rokem, ze kterého pochází.
 
 ## 8. Historie
 
 | Verze | Změna |
 |---|---|
+| 1.9 | Každý ukazatel je přiřazen datové sadě v registru stavu datových sad, který určuje zobrazené období. |
 | 1.8 | Pole přejmenováno na `prijato_na_vyssi_prioritu`. Talentové obory dostávají místo verdiktu větu o talentové zkoušce. Příznak sdíleného záznamu počítán i z nabídky 2026. Dolní mez pásma nejistoty podléhá prahu deseti přijatých. |
 | 1.7 | Čísla ukazatelů o hranici přijetí přepočítána jen nad obory s povinnou jednotnou zkouškou; stabilita míry *rozhodl test* opravena z 0,783 na 0,673. Heslo „Nastoupili jinam“ přejmenováno a opraveno, protože tvrdilo přijetí, které se nevyhodnocovalo. Doplněn percentil nejnižšího přijatého a jednotka bodů. Talentový příznak rozšířen o sportovní gymnázia. |
 | 1.6 | Doplněno, že míra *rozhodl test* popisuje shodu pořadí, ne příčinu. Pásma se nepočítají u oborů bez odmítnutých. Doplněna pravidla pro dosazení mezí pásma nejistoty. |

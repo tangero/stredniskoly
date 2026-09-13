@@ -1,6 +1,6 @@
 # Aktuální ročník dat na stránkách škol a oborů
 
-Verze 1.0 · 13. 9. 2026 · Návrh, neimplementováno.
+Verze 1.1 · 13. 9. 2026 · Návrh; registr stavu datových sad hotový, kroky 1 až 5 neimplementovány.
 
 Cíl: stránky ukazují data přijímacího řízení 2026, a jakmile vyjdou data 2027, pak ta. Žádná stránka nesmí nazvat loňská čísla letošními, ani smíchat dva ročníky pod jedním popiskem.
 
@@ -75,13 +75,15 @@ Adresy stránek se nemění, protože se dál odvozují ze `school_analysis.json
 
 Ověření: nový test v `tests/`, který pro každý záznam posledního ročníku katalogu porovná čísla a rok vrácené z `getProgramsByRedizo`. Očekávaný výsledek je 0 rozdílů místo 1 678.
 
-### Krok 2 · Jedna funkce pro ročník
+### Krok 2 · Jedna funkce pro ročník, řízená registrem
+
+Období se neodvozuje z toho, jaký nejnovější ročník v datech leží, ale z registru `public/stav_datovych_sad.json`, viz [zdroje dat, oddíl 5](zdroje-dat.md#5-stav-datových-sad). Import tak může nové období nahrát a ověřit dřív, než ho web ukáže, a přepnutí jde vrátit bez nasazení kódu.
 
 Nový `src/lib/rocnik.ts` nahradí napevno zapsané letopočty.
 
-- `rocnikyKatalogu()` vrátí seznam ročníků v `schools_data.json` seřazený sestupně. Nový ročník se tím projeví bez změny kódu.
-- `udajeNabidky(id)` vrátí pro nabídku čtyři skupiny z tabulky v oddílu 2, každou s vlastním rokem, nebo `null`, když skupina v žádném ročníku není.
-- Odvozené ukazatele, například přihlášky na místo, počítá jen ze skupin téhož roku.
+- `zobrazeneObdobi(sada)` vrátí období sady z registru, například `cermat-vysledky` → 2026.
+- `udajeNabidky(id)` vrátí pro nabídku skupiny z tabulky v oddílu 2, každou z období, které pro ni určuje registr. Když nabídka v tom období záznam nemá, vezme nejbližší starší a označí ho.
+- Ukazatele z více sad, vedené v registru v `ukazatele_z_vice_sad`, počítá z nejstaršího ze zobrazených období těchto sad.
 
 Zápisy `data['2026'] || data['2025'] || data['2024']` v `data.ts` a `cityData.ts` se nahradí voláním funkce. Příznaky s rokem v názvu se převedou na hodnotu: `nevypsano_2026` na `nevypsano_v_rocniku: 2026`. Stará pole zůstanou jako přechodný alias, dokud je čtou komponenty.
 
@@ -147,4 +149,5 @@ Krok 1 hned, protože opraví většinu stránek oborů bez zásahu do adres. Kr
 
 | Verze | Změna |
 |---|---|
+| 1.1 | Krok 2 se opírá o registr stavu datových sad místo o nejnovější ročník v datech. |
 | 1.0 | První návrh po rozboru vady, kdy stránky oborů bez zaměření ukazovaly data 2025. |

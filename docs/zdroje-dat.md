@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.2 · 13. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.3 · 13. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -13,7 +13,8 @@ Než navrhneš stránku, sekci nebo ukazatel:
 1. **Projdi oddíl 2 celý.** Ne jen zdroj, který máš zrovna v ruce.
 2. **Projdi oddíl 3**, tedy soupis sloupců, které nepoužíváme. Je to jediné místo, kde se nevyužitá data dají najít, aniž bys věděl, že existují.
 3. **Do návrhu napiš, které sloupce jsi zvážil a zamítl**, a proč. Zamítnutí je platný závěr, mlčení není.
-4. **Přidáváš-li zdroj nebo sloupec, doplň ho sem** ve stejné dávce. Postup je v oddílu 5.
+4. **Přidáváš-li zdroj nebo sloupec, doplň ho sem** ve stejné dávce. Postup je v oddílu 6.
+5. **Pracuješ-li s obdobím dat**, tedy ukazuješ, importuješ nebo přepínáš ročník, řiď se registrem stavu datových sad v oddílu 5.
 
 Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Tenhle dokument říká, **co existuje**, slovník říká, **jak se to jmenuje a počítá**.
 
@@ -297,18 +298,95 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 5. **Rok 2026 je neúplný.** Máme přihlášky, kapacity a výsledky, ale ne data uchazečů. Cokoli z uchazečů odvozeného je za rok 2025.
 6. **Malé počty.** 1 586 ze 4 350 oborů má méně než deset přijatých. Minimum a medián jsou tam velmi kolísavé.
 
-## 5. Jak přidat zdroj nebo sloupec
+## 5. Stav datových sad
+
+Každá datová sada, kterou web nebo analýza používá, má záznam v registru `public/stav_datovych_sad.json`. Registr je jediné místo, které určuje, **které období sady se zobrazuje**. Kód ani dokumenty období napevno neurčují.
+
+### Co registr u každé sady říká
+
+| Pole | Význam |
+|---|---|
+| `zobrazeno` | Období, které web právě ukazuje, a odkud pochází: soubor, datum stažení nebo platnosti |
+| `ocekavano` | Jaké období čekáme, kdy a s jakou jistotou: `znamo` doložené zdrojem, `odhad` se zdůvodněním, `neznamo` |
+| `po_prepnuti` | Jakou roli dostanou stará data, například srovnání ročníků |
+| `obnovit_nejpozdeji` | U průběžných a ručních sad termín, po kterém jsou data považována za zastaralá |
+| `vystupy` | Odvozené soubory, které ze sady vznikají |
+| `ukazatele` | Ukazatele ze [slovníku](slovnik-ukazatelu.md), které na sadě stojí; názvy musí přesně odpovídat nadpisům slovníku |
+| `kontrola_obdobi` | Soubor a pole, podle kterých se ověří, že období v registru odpovídá skutečným datům |
+
+Ukazatel spočítaný z více sad, například přihlášky na místo, je v oddílu `ukazatele_z_vice_sad`. Zobrazí se z nejstaršího ze zobrazených období těchto sad, takže nikdy nesmíchá kapacitu jednoho roku s přihláškami jiného.
+
+### Pravidla
+
+1. **Staré období se zobrazuje, dokud nové neprošlo přepnutím.** Pokud máme výsledky 2025 a ne 2026, ukazujeme 2025 s rokem 2025. Po přepnutí se rok 2025 ukazuje jen jako historie a kontext vývoje.
+2. **Přepíná se sada, ale nabídka si bere nejbližší starší období, které má.** Obor, který škola v novém roce nevypsala, ukáže poslední rok, kdy existoval, a řekne to.
+3. **Očekávaný termín se hlídá.** Kontrola varuje, když termín uplynul a sada se nepřepnula, nebo když uplynula lhůta obnovy.
+4. **Registr se ručně neupravuje.** Mění se skriptem, aby každé přepnutí mělo záznam v `historie_prepnuti`.
+
+### Postup přepnutí na nové období
+
+1. **Import.** Importní skript nahraje nové období do dat, ale registr zatím ukazuje staré.
+2. **Ověření.** Proběhnou kontroly importu, párování nabídek na stabilní identifikátory, dokladové skripty a testy.
+3. **Přepnutí.** Skript změní období v registru a zapíše doklad:
+   ```
+   python3 scripts/stav-datovych-sad.py prepni cermat-vysledky 2027 \
+     --kdy 2028-08 --zduvodneni "Výsledky 2027 vyšly v srpnu 2027." \
+     --doklad "commit importu, testy prošly"
+   ```
+   Přepnutí se neuloží, pokud období v registru neodpovídá datům; nelze tak přepnout na rok, který ještě není naimportovaný.
+4. **Vrácení.** Když se po přepnutí objeví chyba, jeden příkaz vrátí předchozí období:
+   ```
+   python3 scripts/stav-datovych-sad.py vrat cermat-vysledky --duvod "chyba v importu"
+   ```
+5. **Kontrola** běží při každé změně dat a v přípravě nasazení:
+   ```
+   python3 scripts/stav-datovych-sad.py kontrola
+   ```
+
+Přidává-li se nová sada nebo nový ukazatel, zapisuje se do registru ve stejné dávce. Kontrola selže, když ukazatel ze slovníku nepatří žádné sadě.
+
+### Aktuální stav
+
+<!-- stav-datovych-sad:od -->
+
+_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-13. Neupravovat ručně._
+
+| Sada | Použití | Zobrazujeme | Odkud | Čekáme | Kdy | Po přepnutí |
+|---|---|---|---|---|---|---|
+| `cermat-kapacity` | web | 2026 | `data/PZ2026_kolo1_skolobory_kapacity.xlsx` | 2027 | 2027-03, odhad | Srovnání ročníků na stránce oboru. |
+| `cermat-prihlasky` | web | 2026 | `data/PZ2026_kolo1_skolobory_prihlasky.xlsx` | 2027 | 2027-03, odhad | Srovnání ročníků na stránce oboru. |
+| `cermat-vysledky` | web | 2026 | `PZ2026_kolo1_skolobory_vysledky.xlsx` | 2027 | 2027-08, odhad | Srovnání ročníků na stránce oboru; výsledky 2025 slouží jako srovnávací zdroj v public/cermat_results_meta.json. |
+| `cermat-uchazeci-kolo1` | web | 2025 | `data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx` | 2026 | 2027-01, odhad | Rok 2025 zůstává pro ověření stability mezi ročníky ve scripts/validate-pasma-prijeti.py a pro vývoj hranice přijetí. |
+| `cermat-uchazeci-kolo2` | nepoužito | 2025 | `data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx` | 2026 | 2027-01, odhad | Není na webu. |
+| `cermat-polozkova-jpz` | analýza | 2025 | `data/JPZ2025_M6_polozkova_data.xlsx` | 2026 | 2027-01, odhad | Není na webu; slouží dokladu teze 4. |
+| `cermat-maturita` | plánováno | nic | `MZ2026j_SC_skolobory.xlsx` | 2026 | neznámo | Maturitní výsledky předchozích let jako řada vývoje. |
+| `cermat-jpz-skoly-2017-2023` | nepoužito | nic | `Uzavřená řada, soubory nejsou stažené.` | — | neznámo | Nepřepíná se. |
+| `msmt-rejstrik-snimky` | web | 2026-06-30 | `data/msmt_rejstrik/rssz-2026-06-30.jsonld` | 2026-09-30 | 2026-10, odhad | Starší snímky zůstávají pro návaznost oborů mezi roky. |
+| `msmt-rejstrik-csv` | analýza | 2026-02-11 | `data/Rejstrik_skol/SkolyAMista.csv` | — | neznámo | Nahrazuje se celý. |
+| `msmt-akko` | analýza | 2026-03-08 | `data/AKKO-Kmenové_obory vzdělání (KKOV 5místné).csv` | — | neznámo | Nahrazuje se celý. |
+| `csi-inspekce` | web | 2026-02-11 | `data/csi_snapshots` | — | neznámo | Starší snímky zůstávají v data/csi_snapshots s manifestem. |
+| `csi-extrakce` | web | 2025-11-25 | `data/inspection_extractions.json` | — | neznámo | Starší zpráva téže školy zůstává sbalená pod novější. |
+| `csi-inspis` | web | 2026-02-11 | `data/inspis_school_profiles.json` | — | neznámo | Nahrazuje se celý. |
+| `doprava-gtfs` | web | 2026-02-07 | `data/PID_GTFS.zip` | — | neznámo | Nahrazuje se celý. |
+| `katalog-historie` | web | 2025 | `public/schools_data.json` | — | neznámo | Nepřepíná se. |
+| `school-analysis-legacy` | nezobrazovat | 2025 | `public/school_analysis.json` | — | neznámo | Nepřepíná se. |
+
+<!-- stav-datovych-sad:do -->
+
+## 6. Jak přidat zdroj nebo sloupec
 
 1. Zapiš zdroj do oddílu 1 s původem, rozsahem, klíčem a četností aktualizace.
 2. Vypiš jeho sloupce do oddílu 2 včetně těch, které nepoužiješ. Sloupec, který v soupisu chybí, nikdo podruhé nenajde.
 3. U každého sloupce napiš otázku rodiče, na kterou by šel použít. Když žádná není, napiš to.
 4. Nepoužité sloupce s reálnou hodnotou přidej do oddílu 3.
-5. Zavádíš-li z toho ukazatel, zapiš ho do [slovníku ukazatelů](slovnik-ukazatelu.md) dřív, než ho zobrazíš.
+5. Zapiš sadu do registru `public/stav_datovych_sad.json` s obdobím, očekávaným termínem a rolí starých dat, viz oddíl 5.
+6. Zavádíš-li z toho ukazatel, zapiš ho do [slovníku ukazatelů](slovnik-ukazatelu.md) dřív, než ho zobrazíš, a v registru ho přiřaď sadě.
 
-## 6. Historie
+## 7. Historie
 
 | Verze | Změna |
 |---|---|
+| 1.3 | Doplněn oddíl 5 o stavu datových sad: registr období, očekávaných termínů a přepínání, kontrolní skript. |
 | 1.2 | Doplněn odvozený soubor pásem přijetí; výsledky všech uchazečů už nejsou nevyužité. |
 | 1.1 | Doplněny maturitní výsledky a školní agregáty JPZ 2017–2023, tedy ověřené zdroje, které nejsou stažené v repozitáři. První verze je vynechala, protože vznikla procházením adresáře `data/`. |
 | 1.0 | První soupis. Vznikl po zjištění, že tři použitelné údaje ležely nepoužité ve zdrojích, které projekt už zpracovával. |
