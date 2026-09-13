@@ -229,3 +229,4 @@ Podrobná dokumentace jednotlivých oblastí projektu:
 - [Aktuální ročník dat](../docs/navrh-aktualniho-rocniku-dat.md) — návrh opravy zobrazení roku 2025 místo 2026
 - [Prezentace dat na stránce školy](../docs/navrh-prezentace-dat-skoly-2027.md) — co a jak ukazovat rodičům
 - [Grafy na stránce školy a oboru](../docs/grafy-skoly-a-oboru-2027.md) — schválený návrh grafů, časové řady, pravidla, předpoklady a uložení mezi zvažované
+- [Vrstvy stránky oboru](../docs/vrstvy-stranky-oboru-2027.md) — pět kol návrhu: odpověď na tři otázky uchazeče nad důkazy, stavy nabídky, rozhodnutí použít a zavrhnout
