@@ -6,10 +6,21 @@ Formát vychází z [Keep a Changelog](https://keepachangelog.com/cs/1.1.0/).
 ## [Unreleased]
 
 ### Přidáno
+- **Portál pro školy** (`/pro-skoly`) — škola si sama doplní profilové údaje; přístup přes jednorázový kód nebo magic link zaslaný na rejstříkový e-mail (odkaz platí 72 h), po odeslání potvrzovací e-mail; příspěvky prochází moderací přes GitHub Issues a teprve potom se ukážou na stránce školy
+- **Administrace** (`/admin`) — stav moderace portálu, stav datových sad a běhů datové linky; přístup heslem, relace 12 h
+- **`stav-datovych-sad.py prepni --obnovit-nejpozdeji`** — termín plánované obnovy jde posunout při přepnutí sady
 
 ### Změněno
+- **„Jak to dopadlo loni" z finální revize dat 2025** — CERMAT 20. 5. 2026 zveřejnil finální verzi včetně vzdání se přijetí; počty se u části oborů mírně posunuly (PR #84–#87)
+- **Inspekce ČŠI** — web zobrazuje snímek ze 7. 9. 2026 místo 11. 2. 2026; převzato z větve týdenního workflow (PR #54)
+- **Doklad pásem přijetí přepočítán** na aktuálních revizích obou roků; upstream 20. 5. 2026 přepsal i soubor 2024 do schématu roku 2025 (klíč REDIZO) a přeřadil asi 430 přijatých mezi vzdavší se, takže stabilita míry *rozhodl test* je 0,671 místo 0,725; teze ve verzi 1.7
 
 ### Opraveno
+- **Čtení roku 2024 ve `validate-pasma-prijeti.py`** — po přepsání souboru upstreamem skript padal na chybějících sloupcích; rok 2024 se čte stejnou funkcí jako 2025 a převod IZO odpadl
+- **Zastaralá čísla v tezích JPZ** — věta „nikdo se nevešel kvůli kapacitě" má v dokladu vlastní klíč (1 199 oborů, u 702 někdo nesplnil podmínky)
+
+### Odstraněno
+- **Workflow `inspis-weekly-refresh.yml`** — datová sada InspIS u zdroje zanikla (ČŠI open data vrací 404 od ~10. 8. 2026); web ponechává zamrazená data z 11. 2. 2026, nahrazení řeší portál pro školy
 
 ---
 
