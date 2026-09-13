@@ -57,6 +57,10 @@ next-env.d.ts
 !/data/msmt_rejstrik/
 !/data/msmt_rejstrik/README.md
 
+# Portál pro školy: hashe kódů patří do gitu, plaintext kódy nikdy
+!/data/portal/
+/data/portal/kody-plaintext.json
+
 # TT Decoder outputs (large binary/generated files)
 /data/decoded_tt*/
 /data/gtfs_from_tt*/

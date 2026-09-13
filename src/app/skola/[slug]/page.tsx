@@ -8,6 +8,8 @@ import { Footer } from '@/components/Footer';
 import { ProgramTabs } from '@/components/SchoolDetailClient';
 import { InspectionSummary } from '@/components/InspectionSummary';
 import { SchoolInfoSection } from '@/components/school-profile/SchoolInfoSection';
+import { SchoolPortalSection } from '@/components/school-profile/SchoolPortalSection';
+import { getPortalZaznam } from '@/lib/portal-skol';
 import { getSchoolPageType, getSchoolOverview, getExtendedStatsForProgram, getProgramsByRedizo, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo, getExtractionsByRedizo, getInspisDataByRedizo, get2026DataByRedizo, type School2026Data, getSchoolResultsByRedizo, get2025RecordById } from '@/lib/data';
 import { Applications2026Banner } from '@/components/Applications2026Banner';
 import { SchoolResults2026 } from '@/components/SchoolResults2026';
@@ -290,12 +292,13 @@ export default async function SchoolDetailPage({ params }: Props) {
     if (!overview) notFound();
 
     // Načíst data ČŠI a AI extrakce
-    const [csiData, extractions, inspis, data2026, results2026] = await Promise.all([
+    const [csiData, extractions, inspis, data2026, results2026, portalZaznam] = await Promise.all([
       getCSIDataByRedizo(redizo),
       getExtractionsByRedizo(redizo),
       inspisEnabled ? getInspisDataByRedizo(redizo) : Promise.resolve(null),
       get2026DataByRedizo(redizo),
       getSchoolResultsByRedizo(redizo),
+      getPortalZaznam(redizo),
     ]);
 
     // Seřadit programy podle min_body (nejobtížnější první)
@@ -431,6 +434,9 @@ export default async function SchoolDetailPage({ params }: Props) {
 
               {/* InspIS profil (optional) */}
               {inspis && <SchoolInfoSection data={inspis} />}
+
+              {/* Údaje potvrzené školou (Portál pro školy) */}
+              <SchoolPortalSection zaznam={portalZaznam} />
 
               {/* Strojově čitelné formáty */}
               <div className="pt-4 border-t border-slate-100 flex items-center justify-center gap-3 text-xs text-slate-400">
@@ -642,6 +648,9 @@ export default async function SchoolDetailPage({ params }: Props) {
             {/* InspIS profil školy */}
             {inspis && <SchoolInfoSection data={inspis} />}
 
+            {/* Údaje potvrzené školou (Portál pro školy) */}
+            <SchoolPortalSection zaznam={portalZaznam} />
+
             {/* Inspekce ČŠI */}
             <InspectionSummary
               extractions={extractions}
@@ -709,7 +718,7 @@ export default async function SchoolDetailPage({ params }: Props) {
   const data2026ForDetail = await get2026DataByRedizo(redizo);
   const program2026 = match2026ToProgram(data2026ForDetail, program);
 
-  const [detailedPrograms, extendedStats, csiData, extractions, programNote, schoolNote, results2026] = await Promise.all([
+  const [detailedPrograms, extendedStats, csiData, extractions, programNote, schoolNote, results2026, portalZaznam] = await Promise.all([
     getProgramsByRedizo(redizo),
     getExtendedStatsForProgram(program.id),
     getCSIDataByRedizo(redizo),
@@ -717,6 +726,7 @@ export default async function SchoolDetailPage({ params }: Props) {
     getNoteForSchool(program.id),   // poznámka specifická pro zaměření/obor
     getNoteForSchool(school.id),    // fallback: poznámka pro celý obor (bez zaměření)
     getSchoolResultsByRedizo(redizo),
+    getPortalZaznam(redizo),
   ]);
   // Použít zaměření-specifickou poznámku, nebo fallback na obecnou
   const schoolNoteToShow = programNote || schoolNote;
@@ -942,6 +952,9 @@ export default async function SchoolDetailPage({ params }: Props) {
             csiData={csiData}
             schoolSlug={overviewSlug}
           />
+
+          {/* Údaje potvrzené školou (Portál pro školy) */}
+          <SchoolPortalSection zaznam={portalZaznam} />
 
           {/* Adresa */}
           <div className="bg-white p-6 rounded-xl shadow-sm mb-8">
