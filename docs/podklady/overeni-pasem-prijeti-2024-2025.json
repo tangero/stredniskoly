@@ -2,23 +2,23 @@
  "zdroj_skriptu": "scripts/validate-pasma-prijeti.py",
  "populace": "obory s povinnou jednotnou zkouškou podle PZ2026_kolo1_skolobory_prihlasky.xlsx, záloha kategorie K, L, M",
  "pasmo_nejistoty_populace_obory_s_hranici": {
-  "n": 1440,
-  "shodne_meze_pct": 8.5,
-  "horni_nad_dolni_pct": 83.9,
-  "mezera_pct": 7.6,
-  "median_v_pasmu_pct": 26.8,
-  "median_hustota_u_hranice_pct": 28.1
+  "n": 1439,
+  "shodne_meze_pct": 8.1,
+  "horni_nad_dolni_pct": 84.1,
+  "mezera_pct": 7.8,
+  "median_v_pasmu_pct": 26.7,
+  "median_hustota_u_hranice_pct": 28.0
  },
  "rozhodl_test_populace_obory_s_hranici": {
-  "n": 1440,
+  "n": 1439,
   "median": 0.972,
-  "rovno_1_pct": 10.0,
-  "aspon_0_95_pct": 65.4,
+  "rovno_1_pct": 10.1,
+  "aspon_0_95_pct": 65.5,
   "aspon_0_85_pct": 93.1,
-  "pod_0_70_pct": 0.6,
+  "pod_0_70_pct": 0.5,
   "median_podle_skupiny": {
    "ostatni": {
-    "n": 1300,
+    "n": 1299,
     "median": 0.976
    },
    "vice_zamereni": {
@@ -45,7 +45,7 @@
   {
    "kkov": "23-43",
    "n": 5,
-   "median": 0.873
+   "median": 0.87
   },
   {
    "kkov": "41-43",
@@ -65,12 +65,12 @@
   {
    "kkov": "37-41",
    "n": 10,
-   "median": 0.927
+   "median": 0.926
   },
   {
    "kkov": "68-42",
    "n": 35,
-   "median": 0.94
+   "median": 0.933
   }
  ],
  "prevod_izo_2024": {
@@ -79,23 +79,23 @@
   "zdroj": "data/Rejstrik_skol/SkolyAMista.csv"
  },
  "dolni_mez_populace_aspon_10_prijatych_v_obou_letech": {
-  "n": 2320,
-  "korelace": 0.863,
+  "n": 2356,
+  "korelace": 0.859,
   "median_abs_zmeny": 6.0,
-  "podil_zmena_nad_10_pct": 25.5,
+  "podil_zmena_nad_10_pct": 25.6,
   "podil_zmena_nad_20_pct": 4.4,
-  "prumer_posunu": -3.02,
+  "prumer_posunu": -3.04,
   "median_posunu": -3.0,
   "posun_dolu_pct": 60.7,
-  "posun_nahoru_pct": 34.9
+  "posun_nahoru_pct": 34.8
  },
  "dolni_mez_jako_percentil": {
-  "n": 2320,
-  "korelace": 0.869,
-  "median_abs_zmeny": 6.41,
-  "podil_zmena_nad_10_pct": 34.2,
-  "podil_zmena_nad_20_pct": 11.5,
-  "median_posunu_pb": 1.73
+  "n": 2356,
+  "korelace": 0.867,
+  "median_abs_zmeny": 6.39,
+  "podil_zmena_nad_10_pct": 34.3,
+  "podil_zmena_nad_20_pct": 11.3,
+  "median_posunu_pb": 1.67
  },
  "celostatni_median_uchazecu": {
   "2024": 54.0,
@@ -103,49 +103,49 @@
  },
  "meze_populace_aspon_10_prijatych_a_5_odmitnutych_v_obou_letech": {
   "dolni_mez": {
-   "n": 1149,
-   "korelace": 0.878,
+   "n": 1158,
+   "korelace": 0.874,
    "median_abs_zmeny": 7.0,
-   "podil_zmena_nad_10_pct": 30.2,
+   "podil_zmena_nad_10_pct": 30.4,
    "podil_zmena_nad_20_pct": 4.2
   },
   "horni_mez": {
-   "n": 1149,
-   "korelace": 0.858,
+   "n": 1158,
+   "korelace": 0.859,
    "median_abs_zmeny": 8.0,
-   "podil_zmena_nad_10_pct": 33.8,
-   "podil_zmena_nad_20_pct": 4.4
+   "podil_zmena_nad_10_pct": 33.9,
+   "podil_zmena_nad_20_pct": 4.5
   },
   "sirka_pasma": {
-   "n": 1149,
-   "korelace": 0.666,
+   "n": 1158,
+   "korelace": 0.692,
    "median_abs_zmeny": 4.0,
-   "podil_zmena_nad_10_pct": 14.2,
-   "podil_zmena_nad_20_pct": 2.3
+   "podil_zmena_nad_10_pct": 14.0,
+   "podil_zmena_nad_20_pct": 2.4
   },
   "median_sirky_2025": 7.0,
   "rozhodl_test": {
-   "n": 1149,
-   "korelace": 0.673,
+   "n": 1158,
+   "korelace": 0.725,
    "median_abs_zmeny": 0.01,
    "podil_zmena_nad_10_pct": 0.0,
    "podil_zmena_nad_20_pct": 0.0
   }
  },
  "prijati_na_vyssi_prioritu_populace_aspon_10_prijatych_a_10_takovych": {
-  "n": 2304,
-  "median_rozdilu_prumeru": 8.73,
-  "kladny_rozdil_pct": 97.0
+  "n": 2373,
+  "median_rozdilu_prumeru": 8.72,
+  "kladny_rozdil_pct": 96.8
  },
  "pokryti_populace_nabidky_applications_2026": {
   "n": 3091,
   "stavy": {
-   "nikdo_neodmitnut_pro_kapacitu": 1179,
-   "pasma_i_veta": 1526,
-   "bez_dat_2025": 112,
-   "jen_pasma": 128,
-   "jen_dilci_udaje": 90,
-   "jen_veta": 56
+   "nikdo_neodmitnut_pro_kapacitu": 1175,
+   "pasma_i_veta": 1524,
+   "bez_dat_2025": 116,
+   "jen_pasma": 125,
+   "jen_dilci_udaje": 94,
+   "jen_veta": 57
   },
   "sdili_klic_s_jinou_nabidkou": 440,
   "klicu_s_vice_nabidkami": 187,
@@ -153,17 +153,17 @@
   "is_new": 1004
  },
  "tabulka_by_byla_cela_100_pct": {
-  "n": 156,
+  "n": 152,
   "z_toho_nekdo_nesplnil_podminky": 102
  },
  "prah_soutezicich": {
   "30": {
-   "nabidek_2026": 1654,
-   "median_nejsirsiho_pasma": 20.0
+   "nabidek_2026": 1649,
+   "median_nejsirsiho_pasma": 20
   },
   "50": {
-   "nabidek_2026": 1088,
-   "median_nejsirsiho_pasma": 20
+   "nabidek_2026": 1077,
+   "median_nejsirsiho_pasma": 20.0
   }
  },
  "kohorty_prijatych_populace_id_katalog_2025": {
