@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Souběžné přihlášky: na jaké jiné obory se hlásili uchazeči téhož oboru.
 
-Zdroj: PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx (údaje o jednotlivých
+Zdroj: PZ{rok}_kolo1_uchazeci_prihlasky_vysledky.xlsx (údaje o jednotlivých
 uchazečích, až tři školy na přihlášce). Data jsou na úrovni REDIZO + KKOV,
 bez zaměření — souběh se proto počítá za celý obor školy, ne za jeho zaměření.
 
-Výstup: public/soubeh_prihlasek_2025.json
+Výstup: public/soubeh_prihlasek_{rok}.json; rok bez --rok bere registr stavu datových sad.
 """
 from __future__ import annotations
 
@@ -16,10 +16,16 @@ from pathlib import Path
 import openpyxl
 
 KOREN = Path(__file__).resolve().parent.parent
-ZDROJ = KOREN / "data" / "PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx"
+def zobrazeny_rok() -> int:
+    """Rok dat uchazečů, který web zobrazuje. Letopočet se nepíše napevno, určuje ho registr (docs/zdroje-dat.md, oddíl 5)."""
+    registr = json.loads((KOREN / "public" / "stav_datovych_sad.json").read_text(encoding="utf-8"))
+    return int(registr["sady"]["cermat-uchazeci-kolo1"]["zobrazeno"]["obdobi"])
+
+
+ROK = zobrazeny_rok()
+ZDROJ = KOREN / "data" / f"PZ{ROK}_kolo1_uchazeci_prihlasky_vysledky.xlsx"
 REJSTRIK = KOREN / "data" / "msmt_rejstrik" / "rssz-2026-06-30.jsonld"
-VYSTUP = KOREN / "public" / "soubeh_prihlasek_2025.json"
-ROK = 2025
+VYSTUP = KOREN / "public" / f"soubeh_prihlasek_{ROK}.json"
 MAX_VOLEB = 5
 POCET_SOUBEHU = 6
 MIN_UCHAZECU = 10
@@ -158,11 +164,14 @@ def argumenty() -> None:
     import argparse
     global ZDROJ, VYSTUP, ROK
     ap = argparse.ArgumentParser(description="Souběžné přihlášky z dat uchazečů CERMAT.")
-    ap.add_argument("--zdroj", type=Path, default=ZDROJ)
-    ap.add_argument("--vystup", type=Path, default=VYSTUP)
+    ap.add_argument("--zdroj", type=Path)
+    ap.add_argument("--vystup", type=Path)
     ap.add_argument("--rok", type=int, default=ROK)
     a = ap.parse_args()
-    ZDROJ, VYSTUP, ROK = a.zdroj, a.vystup, a.rok
+    # Bez výslovné cesty se vstup i výstup odvodí z roku, aby --rok 2026 nečetl soubor roku 2025.
+    ROK = a.rok
+    ZDROJ = a.zdroj or KOREN / "data" / f"PZ{ROK}_kolo1_uchazeci_prihlasky_vysledky.xlsx"
+    VYSTUP = a.vystup or KOREN / "public" / f"soubeh_prihlasek_{ROK}.json"
 
 
 if __name__ == "__main__":

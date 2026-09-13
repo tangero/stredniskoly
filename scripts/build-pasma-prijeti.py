@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Pásma přijetí: jaký podíl uchazečů se s daným výsledkem na obor dostal.
 
-Zdroj: PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx (údaje o jednotlivých
+Zdroj: PZ{rok}_kolo1_uchazeci_prihlasky_vysledky.xlsx (údaje o jednotlivých
 uchazečích). Pro každý obor se uchazeči rozdělí podle výsledku jednotné zkoušky
 do pásem po pěti bodech a spočítá se, kolik z nich bylo přijato.
 
@@ -10,7 +10,7 @@ kvůli kapacitě. Uchazeči přijatí na obor s vyšší prioritou o toto místo
 nesoutěžili; uchazeči, kteří nesplnili podmínky, neprošli přes jiné kritérium
 než výsledek testu.
 
-Výstup: public/pasma_prijeti_2025.json
+Výstup: public/pasma_prijeti_{rok}.json; rok bez --rok bere registr stavu datových sad.
 """
 from __future__ import annotations
 
@@ -21,11 +21,17 @@ from pathlib import Path
 import openpyxl
 
 KOREN = Path(__file__).resolve().parent.parent
-ZDROJ = KOREN / "data" / "PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx"
+def zobrazeny_rok() -> int:
+    """Rok dat uchazečů, který web zobrazuje. Letopočet se nepíše napevno, určuje ho registr (docs/zdroje-dat.md, oddíl 5)."""
+    registr = json.loads((KOREN / "public" / "stav_datovych_sad.json").read_text(encoding="utf-8"))
+    return int(registr["sady"]["cermat-uchazeci-kolo1"]["zobrazeno"]["obdobi"])
+
+
+ROK = zobrazeny_rok()
+ZDROJ = KOREN / "data" / f"PZ{ROK}_kolo1_uchazeci_prihlasky_vysledky.xlsx"
 KATALOG = KOREN / "public" / "schools_data.json"
 NABIDKY_2026 = KOREN / "public" / "applications_2026.json"
-VYSTUP = KOREN / "public" / "pasma_prijeti_2025.json"
-ROK = 2025
+VYSTUP = KOREN / "public" / f"pasma_prijeti_{ROK}.json"
 PRIHLASKY_S_POVINNOSTI = KOREN / "data" / "PZ2026_kolo1_skolobory_prihlasky.xlsx"
 
 SIRKA_PASMA = 5
@@ -292,11 +298,14 @@ def argumenty() -> None:
     import argparse
     global ZDROJ, VYSTUP, ROK
     ap = argparse.ArgumentParser(description="Pásma přijetí z dat uchazečů CERMAT.")
-    ap.add_argument("--zdroj", type=Path, default=ZDROJ)
-    ap.add_argument("--vystup", type=Path, default=VYSTUP)
+    ap.add_argument("--zdroj", type=Path)
+    ap.add_argument("--vystup", type=Path)
     ap.add_argument("--rok", type=int, default=ROK)
     a = ap.parse_args()
-    ZDROJ, VYSTUP, ROK = a.zdroj, a.vystup, a.rok
+    # Bez výslovné cesty se vstup i výstup odvodí z roku, aby --rok 2026 nečetl soubor roku 2025.
+    ROK = a.rok
+    ZDROJ = a.zdroj or KOREN / "data" / f"PZ{ROK}_kolo1_uchazeci_prihlasky_vysledky.xlsx"
+    VYSTUP = a.vystup or KOREN / "public" / f"pasma_prijeti_{ROK}.json"
 
 
 if __name__ == "__main__":

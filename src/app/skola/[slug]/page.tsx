@@ -15,7 +15,8 @@ import { Applications2026Banner } from '@/components/Applications2026Banner';
 import { SchoolResults2026 } from '@/components/SchoolResults2026';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { getNoteForSchool } from '@/lib/school-notes';
-import { getPasmaPrijeti } from '@/lib/pasma-prijeti';
+import { getPasmaPrijeti, rokPasemPrijeti } from '@/lib/pasma-prijeti';
+import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { PasmaPrijetiCard } from '@/components/school/detail/PasmaPrijetiCard';
 import { getDruheKolo } from '@/lib/druhe-kolo';
 import { DruheKoloCard } from '@/components/school/detail/DruheKoloCard';
@@ -275,6 +276,10 @@ export default async function SchoolDetailPage({ params }: Props) {
   const pageInfo = await getSchoolPageType(slug);
   const inspisEnabled = process.env.INSPIS_ENABLED !== 'false';
   const overviewV2Enabled = process.env.OVERVIEW_V2_ENABLED !== 'false'; // V2 feature flag
+  // Roky dat pro kartu pásem přijetí určuje registr stavu datových sad, ne kód.
+  const rokPasem = await rokPasemPrijeti();
+  const obdobiNabidky = await zobrazeneObdobi('cermat-prihlasky');
+  const rokNabidky = obdobiNabidky ? Number(obdobiNabidky) : null;
 
   if (!pageInfo.school) {
     notFound();
@@ -402,11 +407,15 @@ export default async function SchoolDetailPage({ params }: Props) {
               />
 
               {/* Jak dopadli loňští uchazeči s podobným výsledkem */}
-              <PasmaPrijetiCard
-                data={await getPasmaPrijeti(program.id)}
-                vypsana2026={!!match2026ToProgram(data2026, program)}
-                nova2026={!!match2026ToProgram(data2026, program)?.is_new}
-              />
+              {rokPasem && (
+                <PasmaPrijetiCard
+                  data={await getPasmaPrijeti(program.id)}
+                  rok={rokPasem}
+                  rokNabidky={rokNabidky}
+                  vypsana={!!match2026ToProgram(data2026, program)}
+                  nova={!!match2026ToProgram(data2026, program)?.is_new}
+                />
+              )}
               <DruheKoloCard data={await getDruheKolo(program.id, program.zamereni)} />
 
               {/* Quick Facts */}
@@ -925,11 +934,15 @@ export default async function SchoolDetailPage({ params }: Props) {
             result2026={results2026.find(r => normalizeSchoolKey(r.offer_id ?? '') === normalizeSchoolKey(program.id))}
             data2025={await get2025RecordById(program.id)}
           />
-          <PasmaPrijetiCard
-            data={await getPasmaPrijeti(program.id)}
-            vypsana2026={!!program2026}
-            nova2026={!!program2026?.is_new}
-          />
+          {rokPasem && (
+            <PasmaPrijetiCard
+              data={await getPasmaPrijeti(program.id)}
+              rok={rokPasem}
+              rokNabidky={rokNabidky}
+              vypsana={!!program2026}
+              nova={!!program2026?.is_new}
+            />
+          )}
           <DruheKoloCard data={await getDruheKolo(program.id, program.zamereni)} />
           <div className="my-6 rounded-xl bg-white p-6">
             <h2 className="font-semibold">Přijetí a kapacita · {program.rok ?? 2025}</h2>

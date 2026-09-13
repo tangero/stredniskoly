@@ -234,6 +234,14 @@ class TestDatovaLinka(unittest.TestCase):
         self.assertIn("pasma", obor)
         self.assertEqual(set(p["zpracovani"]["predani"].values()), {"public/pasma_prijeti_2026.json", "public/soubeh_prihlasek_2026.json"})
 
+    def test_dopad_rozlisi_soubory_ktere_web_cte(self):
+        revize = zpracovani.dopad_uchazeci(2025, "2025")
+        self.assertIn("Přepíše public/pasma_prijeti_2025.json", revize)
+        self.assertIn("public/soubeh_prihlasek_2025.json web nezobrazuje", revize)
+        nove = zpracovani.dopad_uchazeci(2026, "2025")
+        self.assertIn("web je nečte", nove)
+        self.assertNotIn("Přepíše", nove)
+
     def test_prijat_zapsany_jako_text_se_zpracuje(self):
         syntetika_uchazecu(self.tmp / "text.xlsx", prijat_jako=str)
         self.server.soubory["/U/PZ2026_uchazeci.xlsx"] = (200, (self.tmp / "text.xlsx").read_bytes(), "Wed, 20 May 2026 13:10:56 GMT")
