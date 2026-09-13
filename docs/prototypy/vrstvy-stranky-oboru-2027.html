@@ -153,7 +153,7 @@ footer.metodika h2{font-size:1.1rem}
   <footer class="metodika">
     <h2>Odkud čísla jsou a co neříkají</h2>
     <p>Přihlášky, kapacita, přijatí, priority a percentilová umístění: CERMAT, souhrny 1. kola 2025 a 2026. Body v pásmech a souběžné přihlášky: data o uchazečích 1. kola 2025, novější zatím nejsou převzatá. Inspekce: Česká školní inspekce, zpráva z ledna 2025.</p>
-    <p>Čísla popisují minulá kola, nejsou šancí konkrétního uchazeče ani podmínkami příštího přijímacího řízení. Pořadí oborů na přihlášce šanci na přijetí nemění. Maturitní výsledky zatím nemáme.</p>
+    <p>Čísla popisují minulá kola, nejsou šancí konkrétního uchazeče ani kritérii příštího přijímacího řízení. Pořadí oborů na přihlášce šanci na přijetí nemění. Maturitní výsledky zatím nemáme.</p>
     <p class="note">Prototyp k posouzení, ne veřejná stránka. Rozhodnutí k jednotlivým prvkům: docs/vrstvy-stranky-oboru-2027.md.</p>
   </footer>
 </main>
@@ -178,7 +178,7 @@ function tip(n,t){el('title',{},n,t);}
 const ZAR = {velmi_tezke:'velmi těžké', tezke:'těžké', stredne_tezke:'středně těžké', vetsina_uspela:'dostala se většina', kapacita_nerozhodovala:'místo pro všechny', vice_nabidek:'více zaměření', bez_souhrnu:'bez údajů'};
 function pozadavek(K){
   const h=K?.hranice;
-  if (!h || h.typ==='nevysvetleno_vysledkem_jpz') return 'nedosáhlo požadavku školy (například minima bodů, výsledku školní zkoušky nebo jiné podmínky z kritérií)';
+  if (!h || h.typ==='nevysvetleno_vysledkem_jpz') return 'nedosáhlo požadavku školy (například minima bodů, výsledku školní zkoušky nebo jiného požadavku z kritérií)';
   const kde = h.typ==='slabsi_test' ? 'v každém testu' : 'celkem';
   const minimum = h.nejnize_soutezici - h.nejvyse_nesplneny <= 1 ? `${cs(h.nejnize_soutezici)} bodů ${kde}` : `${cs(h.nejvyse_nesplneny+1)} až ${cs(h.nejnize_soutezici)} bodů ${kde}`;
   return `nedosáhlo požadavku školy; podle výsledků to odpovídá minimu ${minimum}`;
@@ -224,30 +224,30 @@ function grafSkupina(box, o){
 }
 
 function grafSoutezici(box, o){
-  const W=560,rowH=58,L=44,R=10,H=[PRED,ROK].length*rowH+4; const s=svg(W,H,'Kolik soutěžících se dostalo');
+  const W=560,rowH=58,L=44,R=10,H=[PRED,ROK].length*rowH+4; const s=svg(W,H,'Kolik soutěžících uchazečů se dostalo');
   const max=Math.max(...[PRED,ROK].map(y=>D.obory[o.kkov][y].prijati+(D.obory[o.kkov][y].kapacita_nevesli||0)));
   [PRED,ROK].forEach((rok,i)=>{const d=D.obory[o.kkov][rok];const so=d.prijati+(d.kapacita_nevesli||0);const yy=i*rowH;const w=v=>(W-L-R)*v/max;
     el('text',{x:0,y:yy+26,'font-size':13,'font-weight':700},s,rok);
     const a=el('rect',{x:L,y:yy+12,width:Math.max(1,w(d.prijati)-2),height:22,rx:3,fill:'var(--s1)'},s);tip(a,`${rok}: přijato ${d.prijati}`);
     if(d.kapacita_nevesli){const b=el('rect',{x:L+w(d.prijati),y:yy+12,width:Math.max(1,w(d.kapacita_nevesli)-2),height:22,rx:3,fill:'var(--s2)'},s);tip(b,`${rok}: nevešli se ${d.kapacita_nevesli}`);}
-    el('text',{x:L,y:yy+50,'font-size':12,fill:'var(--ink)'},s,`přijato ${cs(d.prijati)} ${zOd(so)} ${cs(so)} soutěžících${d.kapacita_nevesli?`, ${cs(d.kapacita_nevesli)} se nevešlo`:', nikdo neodmítnut kvůli kapacitě'}`);});
-  box.innerHTML=`<p class="why">Soutěžící jsou ti, kdo splnili podmínky školy a nedostali se na obor, který měli na přihlášce výš. Modrá část se dostala, oranžová se nevešla.</p><div class="legend"><span><i style="background:var(--s1)"></i>přijati</span><span><i style="background:var(--s2)"></i>nevešli se kvůli kapacitě</span></div>`;
-  box.appendChild(s); box.insertAdjacentHTML('beforeend',`<p class="src">CERMAT, souhrny 1. kola. Mimo soutěžící: nesplnili podmínky a přijati jinam výš na přihlášce, viz další graf.</p>`);
+    el('text',{x:L,y:yy+50,'font-size':12,fill:'var(--ink)'},s,`přijato ${cs(d.prijati)} ${zOd(so)} ${cs(so)} soutěžících uchazečů${d.kapacita_nevesli?`, ${cs(d.kapacita_nevesli)} se nevešlo`:', nikdo neodmítnut kvůli kapacitě'}`);});
+  box.innerHTML=`<p class="why">Soutěžící uchazeči jsou ti, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš. Modrá část se dostala, oranžová se nevešla.</p><div class="legend"><span><i style="background:var(--s1)"></i>přijati</span><span><i style="background:var(--s2)"></i>nevešli se kvůli kapacitě</span></div>`;
+  box.appendChild(s); box.insertAdjacentHTML('beforeend',`<p class="src">CERMAT, souhrny 1. kola. Mezi soutěžící uchazeče nepatří ti, kdo nedosáhli požadavku školy, a ti, které přijali na obor výš na přihlášce; viz další graf.</p>`);
 }
 
 function grafSkupinaPodil(box, o){
   const g=D.skupinyPodil[o.skupina]; const r=D.obory[o.kkov][ROK]; const q=r.prijati/(r.prijati+r.kapacita_nevesli);
-  const W=560,H=120,L=12,R=12; const x=v=>L+(W-L-R)*v; const s=svg(W,H,'Podíl přijatých ze soutěžících ve skupině');
+  const W=560,H=120,L=12,R=12; const x=v=>L+(W-L-R)*v; const s=svg(W,H,'Podíl přijatých ze soutěžících uchazečů ve skupině');
   [0,0.25,0.5,0.75,1].forEach(v=>{el('line',{x1:x(v),x2:x(v),y1:10,y2:H-26,stroke:'var(--grid)'},s);el('text',{x:x(v),y:H-8,'text-anchor':'middle','font-size':11},s,cs(v*100)+' %');});
   g.forEach((v,i)=>el('circle',{cx:x(v),cy:18+((i*37)%56),r:2.6,fill:'var(--dot)'},s));
   el('circle',{cx:x(q),cy:46,r:8,fill:'var(--s1)',stroke:'var(--surface)','stroke-width':2},s);
   const tezsi=Math.round(g.filter(v=>v>q).length/g.length*100);
-  box.innerHTML=`<p class="why">Každá tečka je jeden obor stejného typu a délky: kolik procent soutěžících se dostalo v roce ${ROK}. Vpravo jsou obory, kam se dostali skoro všichni. Modrá tečka je tento obor.</p>`;
-  box.appendChild(s); box.insertAdjacentHTML('beforeend',`<p class="src">U ${tezsi} ze 100 ${o.skupinaNazev} se dostal větší podíl soutěžících než tady. ${cs(g.length)} oborů s aspoň 10 soutěžícími.</p>`);
+  box.innerHTML=`<p class="why">Každá tečka je jeden obor stejného typu a délky: kolik procent soutěžících uchazečů, tedy těch, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš, se dostalo v roce ${ROK}. Vpravo jsou obory, kam se dostali skoro všichni. Modrá tečka je tento obor.</p>`;
+  box.appendChild(s); box.insertAdjacentHTML('beforeend',`<p class="src">U ${tezsi} ze 100 ${o.skupinaNazev} se dostal větší podíl soutěžících uchazečů než tady. ${cs(g.length)} oborů s aspoň 10 soutěžícími uchazeči.</p>`);
 }
 
 function grafVysledek(box, o){
-  const parts=[['prijati','--s1','přijati'],['kapacita_nevesli','--s2','nevešli se kvůli kapacitě'],['vyssi_priorita','--s3','přijati na obor výš na přihlášce'],['nesplnili','--s4','nesplnili podmínky'],['vzdali','--s0','vzdali se']];
+  const parts=[['prijati','--s1','přijati'],['kapacita_nevesli','--s2','nevešli se kvůli kapacitě'],['vyssi_priorita','--s3','přijati na obor výš na přihlášce'],['nesplnili','--s4','nedosáhli požadavku školy'],['vzdali','--s0','vzdali se']];
   const W=560,rowH=40,L=40,R=6,H=[PRED,ROK].length*rowH+4; const s=svg(W,H,'Jak dopadly přihlášky');
   [PRED,ROK].forEach((rok,i)=>{const d=D.obory[o.kkov][rok];const tot=parts.reduce((a,[k])=>a+(d[k]||0),0);const yy=i*rowH;
     el('text',{x:0,y:yy+19,'font-size':12,'font-weight':700},s,rok);let acc=0;
@@ -263,8 +263,8 @@ function grafPasma(box, o){
     el('rect',{x:L,y:yy+5,width:(W-L-R)*b.soutezilo/Math.max(...p.pasma.map(z=>z.soutezilo)),height:14,rx:3,fill:'var(--sunk)'},s);
     const r=el('rect',{x:L,y:yy+5,width:Math.max(0,(W-L-R)*b.prijato/Math.max(...p.pasma.map(z=>z.soutezilo))),height:14,rx:3,fill:'var(--s1)'},s);tip(r,`${b.od}–${b.do} bodů: přijato ${b.prijato} z ${b.soutezilo}`);
     el('text',{x:W-R+6,y:yy+16,'font-size':12,'font-weight':700,fill:'var(--ink)'},s,`${b.prijato} z ${b.soutezilo}`);});
-  box.innerHTML=`<p class="why">Soutěžící o obor v roce 2025 podle součtu bodů z češtiny a matematiky: kolik jich v každém pásmu bylo a kolik se dostalo. Není to šance konkrétního uchazeče.</p><div class="legend"><span><i style="background:var(--s1)"></i>přijati</span><span><i style="background:var(--sunk)"></i>soutěžilo celkem</span></div>`;
-  box.appendChild(s); box.insertAdjacentHTML('beforeend',`<p class="src">Data o uchazečích 1. kola 2025 podle registru. Pod ${cs(p.min_prijaty)} bodů se v roce 2025 nedostal nikdo. Mimo tabulku: ${cs(p.nesplnilo_podminky)} uchazečů nesplnilo podmínky školy.</p>`);
+  box.innerHTML=`<p class="why">Soutěžící uchazeči v roce 2025, tedy ti, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš, podle součtu bodů z češtiny a matematiky (každý test nejvýš 50 bodů): kolik jich v každém pásmu bylo a kolik se dostalo. Není to šance konkrétního uchazeče.</p><div class="legend"><span><i style="background:var(--s1)"></i>přijati</span><span><i style="background:var(--sunk)"></i>soutěžících uchazečů celkem</span></div>`;
+  box.appendChild(s); box.insertAdjacentHTML('beforeend',`<p class="src">Data o uchazečích 1. kola 2025 podle registru. Pod ${cs(p.min_prijaty)} bodů se v roce 2025 nedostal nikdo. Mimo tabulku: ${cs(p.nesplnilo_podminky)} uchazečů nedosáhlo požadavku školy.</p>`);
 }
 
 function grafSoubeh(box, o){
@@ -322,27 +322,27 @@ function render(o){
   const vd=verdikt(r), vp=verdikt(p);
   let v1;
   if (st==='A') {
-    const hlavni = vd==='většina_uspela' ? `<b>Dostala se většina uchazečů</b>, kteří o místo soutěžili, ale ne všichni.` : `<b>Dostat se sem je ${vd}.</b>`;
-    v1 = `${hlavni} V 1. kole ${ROK} se ${zOd(sout(r))} <b>${cs(sout(r))} uchazečů</b>, kteří splnili podmínky školy a o místo tu soutěžili, dostalo ${cs(r.prijati)}, tedy <b>${zlomek(r.prijati,sout(r))}</b>.`;
+    const hlavni = vd==='většina_uspela' ? `<b>Dostala se většina soutěžících uchazečů, ale ne všichni.</b>` : `<b>Dostat se sem je ${vd}.</b>`;
+    v1 = `${hlavni} V 1. kole ${ROK} se ${zOd(sout(r))} <b>${cs(sout(r))} soutěžících uchazečů</b>, tedy těch, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš, dostalo ${cs(r.prijati)}, což je <b>${zlomek(r.prijati,sout(r))}</b>.`;
     v1 += (p.kapacita_nevesli>0) ? ` V roce ${PRED}: ${zlomek(p.prijati,sout(p))}, ${cs(p.prijati)} ${zOd(sout(p))} ${cs(sout(p))}.` : ` V roce ${PRED} kapacita nerozhodovala.`;
   } else {
-    v1 = `<b>Místo bylo pro všechny, kdo splnili podmínky školy.</b> V 1. kole ${ROK} škola přijala ${cs(r.prijati)} uchazečů na ${cs(r.kapacita)} míst a nikoho neodmítla kvůli kapacitě.`;
+    v1 = `<b>Místo bylo pro všechny, kdo splnili požadavky školy.</b> V 1. kole ${ROK} škola přijala ${cs(r.prijati)} uchazečů na ${cs(r.kapacita)} míst a nikoho neodmítla kvůli kapacitě.`;
     if (dk?.stav==='vypsano') v1 += ` Volná místa nabídla ve <b>2. kole</b> (${cs(dk.kapacita)}).`;
   }
   const K=D.kontext2026[o.kkov];
-  if (r.nesplnili >= r.prijati || podil >= 0.2) v1 += ` Kromě toho <b>${cs(r.nesplnili)} ${zOd(r.prihlasky)} ${cs(r.prihlasky)}</b> přihlášených ${pozadavek(K)}.`;
+  if (r.nesplnili >= r.prijati || podil >= 0.2) v1 += ` Kromě toho <b>${cs(r.nesplnili)} ${zOd(r.prihlasky)} ${cs(r.prihlasky)}</b> uchazečů ${pozadavek(K)}.`;
   $('odpoved1').innerHTML=v1;
-  $('odpoved1-src').textContent = st==='A' ? 'Popisuje, jak dopadli uchazeči v jednom ročníku. Neříká, jestli se dostanete vy; mezi roky se to mění.' : 'Nenaplněný obor neznamená jisté přijetí: rozhodují podmínky školy a to, zda obor znovu otevře.';
+  $('odpoved1-src').textContent = st==='A' ? 'Popisuje, jak dopadli uchazeči v jednom ročníku. Neříká, jestli se dostanete vy; mezi roky se to mění.' : 'Nenaplněný obor neznamená jisté přijetí: rozhodují kritéria školy a to, zda obor znovu otevře.';
 
   $('dukazy1').innerHTML='';
-  dukaz('dukazy1','Kolik soutěžících se dostalo',`${PRED}–${ROK}`,box=>grafSoutezici(box,o), true);
+  dukaz('dukazy1','Kolik soutěžících uchazečů se dostalo',`${PRED}–${ROK}`,box=>grafSoutezici(box,o), true);
   if (st==='A') dukaz('dukazy1','Proti podobným oborům',ROK,box=>grafSkupinaPodil(box,o));
   dukaz('dukazy1','Co se stalo se všemi přihláškami',`${PRED}–${ROK}`,box=>grafVysledek(box,o));
   if (st==='A' && pas?.pasma?.length) dukaz('dukazy1','S kolika body se kdo dostal','1. kolo 2025',box=>grafPasma(box,o));
 
   const b2=[];
   if (K?.uchazecu){ const v=K.vysledek; const vs=[...K.vys,...K.niz].map(x=>x.zar).filter(Boolean); const cast=vs.length? Object.entries(vs.reduce((a,z)=>(a[z]=(a[z]||0)+1,a),{})).sort((a,b)=>b[1]-a[1])[0][0] : null;
-    b2.push(`Ze <b>${cs(K.uchazecu)} uchazečů</b>, kteří měli obor na přihlášce, se v 1. kole ${ROK} dostalo sem ${cs(v.sem||0)}, na obor výš ${cs(v.vys||0)}, na obor níž ${cs(v.niz||0)} a <b>nikam ${cs(v.nikam||0)}</b>.${(v.nikam||0)/K.uchazecu>=0.25 && cast ? ` Obory, které měli výš i níž, byly většinou ${ZAR[cast]==='velmi těžké'||ZAR[cast]==='těžké'?'také '+ZAR[cast]:ZAR[cast]}; pomůže mít na přihlášce i obor, kde v 1. kole místo bylo.` : ''}`); }
+    b2.push(`Ze <b>${cs(K.uchazecu)} uchazečů</b>, kteří měli obor na přihlášce, se v 1. kole ${ROK} dostalo sem ${cs(v.sem||0)}, na obor výš ${cs(v.vys||0)}, na obor níž ${cs(v.niz||0)} a <b>nikam ${cs(v.nikam||0)}</b>, tedy na žádný obor z přihlášky.${(v.nikam||0)/K.uchazecu>=0.25 && cast ? ` Obory, které měli výš i níž, byly většinou ${ZAR[cast]==='velmi těžké'||ZAR[cast]==='těžké'?'také '+ZAR[cast]:ZAR[cast]}; pomůže mít na přihlášce i obor, kde v 1. kole místo bylo.` : ''}`); }
   b2.push(`Rozhodují kritéria, která škola vyhlašuje na svém webu. <small><a href="${esc(D.www)}">Kritéria přijetí na webu školy</a> · škola zatím údaje na tomto webu nepotvrdila</small>`);
   b2.push(`Pořadí oborů na přihlášce šanci na přijetí <b>nemění</b>, škola řadí jen podle svých kritérií. Seřaďte obory podle toho, kam chcete chodit. <small><a href="https://www.prijimackynaskolu.cz/jak-funguje-prijimani">Jak rozřazení funguje</a></small>`);
   if (pas?.talentova_zkouska) b2.push('O přijetí rozhoduje i talentová zkouška, o které údaje nemáme.');

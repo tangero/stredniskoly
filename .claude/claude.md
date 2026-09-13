@@ -181,12 +181,24 @@ Pravidla:
 
 Ve slovníku je i oddíl ukazatelů bez doloženého výpočtu (například `obtiznost`). Ty se nesmí používat k řazení, průměrování ani zobrazení, dokud jejich definice nevznikne.
 
+## Slovník pojmů — POVINNÉ
+
+**`docs/slovnik-pojmu.md` určuje, jakými slovy se na webu mluví k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Slovník ukazatelů říká, jak se veličina jmenuje v datech a jak se počítá; slovník pojmů, jak se o ní píše v textu stránky.
+
+Pravidla:
+
+1. **Než napíšeš text stránky**, použij pojmy ze slovníku pojmů a vyhni se slovům ze sloupce „Nepoužívat“.
+2. **Při prvním výskytu v každém bloku** (oddíl, karta, graf) pojem vysvětli standardní větou ze slovníku, například „soutěžící uchazeči, tedy ti, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš“.
+3. **Pojem musí odpovídat množině, ze které se číslo počítá**: „uchazeči“ jsou všichni přihlášení, „soutěžící uchazeči“ jen jejich část.
+4. **Nový pojem zapiš do slovníku pojmů** ve stejné dávce, ve které se poprvé objeví na stránce.
+
 Návazné dokumenty: [prezentace dat na stránce školy](../docs/navrh-prezentace-dat-skoly-2027.md), [maturitní výsledky](../docs/maturitni-vysledky-a-kvalita-skoly-2027.md).
 
 ## Critical Rules
 
 1. **VŽDY** projdi `docs/zdroje-dat.md` celý, než navrhneš stránku, sekci nebo ukazatel, a napiš, které nepoužité sloupce jsi zvážil
 2. **VŽDY** ověř ukazatel ve `docs/slovnik-ukazatelu.md`, než jej zobrazíš, a zapiš tam nový, než jej zavedeš
+2a. **VŽDY** piš texty stránek pojmy z `docs/slovnik-pojmu.md` a pojem vysvětli při prvním výskytu v každém bloku
 3. **VŽDY** ber zobrazené období dat z `public/stav_datovych_sad.json`, nikdy z letopočtu v kódu
 4. **NIKDY** neduplikuj obsah mezi `/docs/` a `~/github/patrick-knowledgebase/`
 5. **VŽDY** zapiš learnings **BĚHEM** práce, NE až na konci
@@ -222,6 +234,7 @@ Pokud problém vyřešíš a není dokumentován → **IHNED** dokumentuj.
 ## Dokumentace
 Podrobná dokumentace jednotlivých oblastí projektu:
 - [Slovník ukazatelů](../docs/slovnik-ukazatelu.md) — závazné názvy, definice a výpočty všech čísel na webu
+- [Slovník pojmů](../docs/slovnik-pojmu.md) — závazné pojmy pro texty na webu, jejich vysvětlení při prvním výskytu a zakázaná slova
 - [Zdroje dat](../docs/zdroje-dat.md) — zdrojové soubory sloupec po sloupci a registr stavu datových sad
 - [Datová linka](../docs/datova-linka.md) — zjištění, zpracování, oznámení a schválení nových dat
 - [Druhé kolo](../docs/druhe-kolo.md) — zobrazení 2. kola přijímacího řízení

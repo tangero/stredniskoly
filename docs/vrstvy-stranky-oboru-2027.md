@@ -1,6 +1,6 @@
 # Stránka oboru: vrstvy podle otázek uchazeče
 
-Verze 1.2 · 13. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, dvě revize po zpětné vazbě v oddílu 7, výsledná podoba v oddílu 8.
+Verze 1.3 · 13. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, tři revize po zpětné vazbě v oddílu 7, výsledná podoba v oddílu 8. Pojmy v textech stránky podle [slovníku pojmů](slovnik-pojmu.md).
 
 Navazuje na schválený dokument [Grafy na stránce školy a oboru](grafy-skoly-a-oboru-2027.md), který určuje, **jaké grafy máme a jak se kreslí**. Tento dokument určuje, **v jakém pořadí a v jaké podobě je stránka nabídne**, aby odpověděla na tři otázky:
 
@@ -270,6 +270,19 @@ Oprava: odpověď 2 říká opak a je to užitečná informace, protože o prior
 
 **Rok dat.** Rozbor je z dat uchazečů 2026, která registr zatím nezobrazuje (sada `cermat-uchazeci-kolo1` ukazuje 2025). Prototyp je proto označuje rokem 2026; web je převezme až po přepnutí registru, do té doby z roku 2025.
 
+### 7.3 Třetí revize: pojmy
+
+**Zpětná vazba zadavatele:** místo „soutěžících“ psát „uchazeči“, a pokud se pojmy liší, „soutěžící uchazeči“; termín vysvětlit při prvním výskytu v každém bloku a mít jeden slovník pojmů, aby se na stránkách nepsalo různě.
+
+**Rozhodnutí.**
+
+| Prvek | Rozhodnutí | Argument |
+|---|---|---|
+| „soutěžící“ | **nahradit** „soutěžící uchazeči“ | u osmiletého gymnázia Machara je uchazečů 233 a soutěžících uchazečů 112; prosté „uchazeči“ by dosadilo čtenáři špatný jmenovatel („každý čtvrtý“ ze 233 by byl nepravdivý) |
+| Vysvětlení při prvním výskytu v každém bloku | **použít** | bloky se čtou samostatně (rozbalený graf, odpověď); standardní věta ze slovníku pojmů |
+| „nesplnili podmínky“, „podmínky školy“ | **nahradit** „nedosáhli požadavku školy“, „kritéria školy“ | viz revize 7.2; sjednoceno ve slovníku pojmů |
+| Slovník pojmů | **založit** `docs/slovnik-pojmu.md`, povinný podle CLAUDE.md | jeden zdroj pojmů pro všechny stránky; odlišný od slovníku ukazatelů, který drží názvy v datech |
+
 ## 8. Výsledná podoba
 
 ```
@@ -343,6 +356,7 @@ Prošel jsem oddíl 3 soupisu zdrojů; rozhodnutí pro tuto stránku:
 
 | Verze | Změna |
 |---|---|
+| 1.3 | Třetí revize: „soutěžící uchazeči“ s vysvětlením při prvním výskytu v bloku, slovník pojmů. |
 | 1.2 | Druhá revize: „nesplnili podmínky“ vysvětleno podle metodiky MŠMT a nahrazeno „nedosáhli požadavku školy“ s odvozenou hranicí úspěšnosti; přidán výsledek uchazečů (sem, výš, níž, nikam) a obory výš a níž na přihlášce s obtížností přijetí. |
 | 1.1 | Revize po zpětné vazbě: slovní verdikt obtížnosti z podílu přijatých ze soutěžících, graf „Kolik soutěžících se dostalo“ místo grafu priorit, srovnání skupiny ve stejné veličině. |
 | 1.0 | Pět kol návrhu vrstev stránky oboru: tři otázky, odpověď nad důkazy, stavy nabídky podle výsledku 1. kola, vzhled a ovládání; souhrn rozhodnutí a zvážené nepoužité sloupce. |

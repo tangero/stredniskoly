@@ -1,8 +1,10 @@
 # Slovník ukazatelů
 
-Verze 1.15 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.16 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
+
+Jakými slovy se o ukazatelích píše v textu stránky, určuje [slovník pojmů](slovnik-pojmu.md). Název ukazatele z tohoto soupisu platí v datech, kódu a API; na stránce se použije pojem odtamtud.
 
 Pravidlo pro celý projekt: **údaj bez doloženého výpočtu se nezobrazuje.** Když nevíme, jak vznikl, patří do oddílu 5, ne na stránku.
 
@@ -195,6 +197,8 @@ Nezaměňovat s **průměrem JPZ přijatých** z oddílu výše, který pocház�
 
 ### Soutěžící o obor
 Přijatí a ti, kdo se nevešli kvůli kapacitě, dohromady. Je to jmenovatel všech ukazatelů o hranici přijetí.
+
+Na stránce se píše **„soutěžící uchazeči“** a při prvním výskytu v bloku se vysvětlí: „tedy ti, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš“ ([slovník pojmů](slovnik-pojmu.md)). Samotné „soutěžící“ ani „uchazeči“ místo tohoto pojmu nestačí: uchazeči jsou všichni přihlášení.
 
 Dvě skupiny do něj **nepatří** a při zobrazení se uvádějí zvlášť:
 
@@ -433,6 +437,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.16 | Odkaz na slovník pojmů; pojem „soutěžící uchazeči“ pro texty stránek. |
 | 1.15 | Vysvětleno nesplnění podmínek podle metodiky MŠMT; doplněna odvozená hranice úspěšnosti, výsledek uchazečů o obor a obory výš a níž na přihlášce. |
 | 1.14 | Doplněn podíl přijatých ze soutěžících a obtížnost přijetí slovy, s rozdělením a stabilitou mezi ročníky. |
 | 1.13 | Doplněny přijatí podle priority, vzdali se přijetí, průměrné percentilové umístění přijatých a uchazečů, percentil ve srovnatelné skupině a změna mezi ročníky ze souhrnů 1. kola (`public/souhrny_kolo1.json`). Ověřeno, že historický průměr 2025 odpovídá průměru přijatých, a doplněna oficiální varianta percentilu nejnižšího přijatého. |
