@@ -6,6 +6,9 @@ Formát vychází z [Keep a Changelog](https://keepachangelog.com/cs/1.1.0/).
 ## [Unreleased]
 
 ### Přidáno
+- **Stránka školy v pěti otázkách** (`src/components/skola/ProfilSkoly.tsx`, `src/lib/skola-profil-data.ts`) — obory s obtížností přijetí, maturita proti skupině oborů (po přepnutí sady), inspekce, profil školy se značkami původu, údaje z portálu u otázek, schéma okolí a souběžné přihlášky; nahrazuje obě starší podoby přehledu; návrh `docs/stranka-skoly-2027.md`
+- **Maturitní výsledky přes datovou linku** (`scripts/build-maturita-skoly.py`, zpracovatel `cermat-maturita`) a příkaz linky `znovu` pro znovuotevření uzavřené úlohy
+- **Portál pro školy**: nepovinná pole stravování a kontakt na výchovného poradce
 - **Stránka oboru ve třech otázkách** (`src/components/obor/ProfilOboru.tsx`) — jak těžké je se dostat, co pomůže, jak se studuje; odpověď slovy nad rozbalovacími důkazy, návrh a rozhodnutí v `docs/vrstvy-stranky-oboru-2027.md`; bez souhrnu 1. kola zůstává starší podoba
 - **Souhrny 1. kola po ročnících** (`scripts/build-souhrny-kolo1.py` → `public/souhrny_kolo1.json`) — párování nabídek mezi roky, obtížnost přijetí slovy, kraj a srovnatelná skupina
 - **Kontext přihlášek** (`scripts/build-kontext-prihlasek.py` → `public/kontext_prihlasek_{rok}.json`) — výsledek uchazečů o obor, obory výš a níž na přihlášce, odvozená hranice úspěšnosti; napojeno na datovou linku

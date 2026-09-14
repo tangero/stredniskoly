@@ -7,10 +7,9 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ProgramTabs } from '@/components/SchoolDetailClient';
 import { InspectionSummary } from '@/components/InspectionSummary';
-import { SchoolInfoSection } from '@/components/school-profile/SchoolInfoSection';
 import { SchoolPortalSection } from '@/components/school-profile/SchoolPortalSection';
 import { getPortalZaznam } from '@/lib/portal-skol';
-import { getSchoolPageType, getSchoolOverview, getExtendedStatsForProgram, getProgramsByRedizo, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo, getExtractionsByRedizo, getInspisDataByRedizo, get2026DataByRedizo, type School2026Data, getSchoolResultsByRedizo } from '@/lib/data';
+import { getSchoolPageType, getSchoolOverview, getExtendedStatsForProgram, getProgramsByRedizo, SchoolProgram, getCSIDataByRedizo, getExtractionsByRedizo, get2026DataByRedizo, type School2026Data, getSchoolResultsByRedizo } from '@/lib/data';
 import { Applications2026Banner } from '@/components/Applications2026Banner';
 import { SchoolResults2026 } from '@/components/SchoolResults2026';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
@@ -22,20 +21,14 @@ import { PasmaPrijetiCard } from '@/components/school/detail/PasmaPrijetiCard';
 import { getDruheKolo } from '@/lib/druhe-kolo';
 import { DruheKoloCard } from '@/components/school/detail/DruheKoloCard';
 import { SchoolNote } from '@/components/SchoolNote';
+import { getProfilSkoly } from '@/lib/skola-profil-data';
+import { ProfilSkoly } from '@/components/skola/ProfilSkoly';
 import { getProfilOboru } from '@/lib/obor-profil-data';
 import { ProfilOboru } from '@/components/obor/ProfilOboru';
 import { UlozitObor } from '@/components/obor/UlozitObor';
-import { getDemandClass, createSlug } from '@/lib/utils';
-import { categoryLabels, categoryColors, krajNames, getSchoolTypeFullName } from '@/types/school';
+import { createSlug } from '@/lib/utils';
+import { categoryLabels, categoryColors, krajNames } from '@/types/school';
 
-// V2 Overview komponenty
-import {
-  OverviewHero,
-  QuickFactsCard,
-  CSISummaryCard,
-  CTASection,
-  QuickFact,
-} from '@/components/school/overview';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -150,136 +143,9 @@ function StudyLengthBadge({ delka }: { delka: number }) {
   );
 }
 
-// Komponenta pro kartu oboru v přehledu
-function ProgramCard({ program, schoolNazev, redizo, showStudyLength, data2026ForProgram }: {
-  program: SchoolProgram;
-  schoolNazev: string;
-  redizo: string;
-  showStudyLength?: boolean;
-  trend?: YearlyTrendData | null;
-  data2026ForProgram?: School2026Data | null;
-}) {
-  const demand = getDemandClass(program.index_poptavky);
-
-  // Vytvořit slug pro detail - pokud má duplicitní název, přidat délku studia do slugu
-  const programSlug = program.zamereni
-    ? showStudyLength
-      ? `${redizo}-${createSlug(schoolNazev, program.obor, program.zamereni, program.delka_studia)}`
-      : `${redizo}-${createSlug(schoolNazev, program.obor, program.zamereni)}`
-    : showStudyLength
-      ? `${redizo}-${createSlug(schoolNazev, program.obor, undefined, program.delka_studia)}`
-      : `${redizo}-${createSlug(schoolNazev, program.obor)}`;
-
-  const baseName = program.zamereni
-    ? `${program.obor} - ${program.zamereni}`
-    : program.obor;
-
-  // Pokud má duplikátní název, přidat délku studia
-  const displayName = showStudyLength ? `${baseName} (${program.delka_studia}leté)` : baseName;
-
-  const isNew = program.is_new_2026;
-  const prevName = program.prev_zamereni_name;
-  const has2026 = !!data2026ForProgram;
-  const d26 = data2026ForProgram;
-  const demand2026 = d26 ? getDemandClass(d26.index_poptavky) : null;
-
-  return (
-    <Link
-      href={`/skola/${programSlug}`}
-      className={`block bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border overflow-hidden ${isNew ? 'border-amber-200' : 'border-slate-100'}`}
-    >
-      <div className="p-5">
-        <div className="flex items-start justify-between gap-4 mb-1">
-          <div className="min-w-0">
-            <h3 className="font-semibold text-lg text-slate-900">{displayName}</h3>
-            <p className="text-sm text-slate-500">
-              {getSchoolTypeFullName(program.typ, program.obor)}
-            </p>
-          </div>
-          <StudyLengthBadge delka={program.delka_studia} />
-        </div>
-
-        {/* Badges - nový obor, přejmenování */}
-        <div className="mb-3 text-xs">
-          {isNew && (
-            <span className="inline-block px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-medium mr-2">
-              V importu 2026
-            </span>
-          )}
-          {prevName && (
-            <span className="text-slate-400">
-              dříve &bdquo;{prevName}&ldquo;
-            </span>
-          )}
-        </div>
-
-        {/* Hlavní čísla - 2026 data pokud existují, jinak 2025 */}
-        {has2026 ? (
-          <>
-            <div className="grid grid-cols-3 gap-4 mt-4">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">{d26!.prihlasky}</div>
-                <div className="text-xs text-slate-500">Přihlášek 2026</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-slate-700">{d26!.kapacita}</div>
-                <div className="text-xs text-slate-500">Míst 2026</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-slate-700">
-                  {d26!.index_poptavky.toFixed(1)}× {demand2026?.emoji}
-                </div>
-                <div className="text-xs text-slate-500">Poptávka</div>
-              </div>
-            </div>
-            {/* Doplňkový řádek s čísly ročníku, ze kterého záznam pochází */}
-            <div className="mt-3 pt-3 border-t border-slate-50 grid grid-cols-3 gap-4 text-xs text-slate-400">
-              <div className="text-center">
-                <span className="font-medium text-red-600">{program.prijati}</span> přijatých {program.rok ?? 2025}
-              </div>
-              <div className="text-center">
-                {program.kapacita} míst {program.rok ?? 2025}
-              </div>
-              <div className="text-center">
-                {program.prihlasky} přihl. {program.rok ?? 2025}
-              </div>
-            </div>
-          </>
-        ) : (
-          <div className="grid grid-cols-3 gap-4 mt-4">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-slate-700">{program.prijati}</div>
-              <div className="text-xs text-slate-500">Přijatí 2025</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-slate-700">{program.kapacita}</div>
-              <div className="text-xs text-slate-500">Kapacita 2025</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-slate-700">
-                {program.index_poptavky.toFixed(1)}× {demand.emoji}
-              </div>
-              <div className="text-xs text-slate-500">Poptávka 2025</div>
-            </div>
-          </div>
-        )}
-
-        <div className="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-sm">
-          <span className="text-slate-500">
-            2025: {program.prihlasky} přihlášek → {program.prijati} přijatých
-          </span>
-          <span className="text-blue-600 font-medium">Detail →</span>
-        </div>
-      </div>
-    </Link>
-  );
-}
-
 export default async function SchoolDetailPage({ params }: Props) {
   const { slug } = await params;
   const pageInfo = await getSchoolPageType(slug);
-  const inspisEnabled = process.env.INSPIS_ENABLED !== 'false';
-  const overviewV2Enabled = process.env.OVERVIEW_V2_ENABLED !== 'false'; // V2 feature flag
   // Roky dat pro kartu pásem přijetí určuje registr stavu datových sad, ne kód.
   const rokPasem = await rokPasemPrijeti();
   const obdobiNabidky = await zobrazeneObdobi('cermat-prihlasky');
@@ -301,422 +167,32 @@ export default async function SchoolDetailPage({ params }: Props) {
     const overview = await getSchoolOverview(redizo);
     if (!overview) notFound();
 
-    // Načíst data ČŠI a AI extrakce
-    const [csiData, extractions, inspis, data2026, results2026, portalZaznam] = await Promise.all([
-      getCSIDataByRedizo(redizo),
-      getExtractionsByRedizo(redizo),
-      inspisEnabled ? getInspisDataByRedizo(redizo) : Promise.resolve(null),
-      get2026DataByRedizo(redizo),
-      getSchoolResultsByRedizo(redizo),
-      getPortalZaznam(redizo),
-    ]);
-
-    // Seřadit programy podle min_body (nejobtížnější první)
-    const sortedPrograms = [...overview.programs].sort((a, b) => a.obor.localeCompare(b.obor, 'cs') || a.id.localeCompare(b.id));
-
-    // Zjistit duplicitní názvy oborů (různá délka studia, ale stejný název)
-    const oborCountsOverview = new Map<string, number>();
-    for (const p of sortedPrograms) {
-      const baseName = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
-      oborCountsOverview.set(baseName, (oborCountsOverview.get(baseName) || 0) + 1);
-    }
-
-    // Načíst trend data pro všechny programy
-    const programIds = sortedPrograms.map(p => p.id);
-    const trendDataMap = await getTrendDataForPrograms(programIds);
-
-    // =====================
-    // V2 OVERVIEW (pokud enabled)
-    // =====================
-    if (overviewV2Enabled && sortedPrograms.length === 1) {
-      // Pro školy s 1 oborem použijeme V2 Overview stránku
-      const program = sortedPrograms[0];
-
-      // Quick facts pro kartu
-      const quickFacts: QuickFact[] = [
-        { label: "Přijatí 2025", value: program.prijati },
-        { label: "Kapacita 2025", value: program.kapacita },
-        { label: "Školné", value: inspis?.rocni_skolne ? `${inspis.rocni_skolne.toLocaleString('cs-CZ')} Kč` : inspis?.rocni_skolne === 0 ? "Zdarma" : "Neuvedeno" },
-        { label: "Jazyky", value: inspis?.vyuka_jazyku?.slice(0, 2).join(", ") || "N/A" },
-      ];
-
-      // AI summary (první extrakce nebo fallback)
-      const aiSummary = extractions.length > 0
-        ? extractions[0].plain_czech_summary?.substring(0, 200) || "Škola poskytuje kvalitní vzdělání."
-        : "Data z inspekce nejsou k dispozici.";
-
-      const overviewSlug = `${redizo}-${createSlug(overview.nazev)}`;
-
+    // Stránka školy v pěti otázkách (docs/stranka-skoly-2027.md) nahrazuje obě starší podoby přehledu.
+      const nabidky2026 = await get2026DataByRedizo(redizo);
+      const programy = [...overview.programs].sort((a, b) => a.obor.localeCompare(b.obor, 'cs') || b.delka_studia - a.delka_studia || a.id.localeCompare(b.id));
+      const vypsane = new Set(programy.filter(p => match2026ToProgram(nabidky2026, p)).map(p => p.id));
+      const prehled = `/skola/${redizo}-${createSlug(overview.nazev)}`;
+      const profil = await getProfilSkoly(redizo, overview.nazev, programy, vypsane);
       return (
         <div className="min-h-screen flex flex-col">
           <Header />
-
           <main className="flex-1">
-            {/* Breadcrumb */}
-            <div className="bg-white border-b">
-              <div className="max-w-6xl mx-auto px-4 py-3">
-                <nav className="text-sm text-slate-600">
-                  <Link href="/" className="hover:text-blue-600">Domů</Link>
-                  <span className="mx-2">/</span>
-                  <Link href="/skoly" className="hover:text-blue-600">Školy</Link>
-                  <span className="mx-2">/</span>
-                  <Link href={`/regiony/${krajSlug}`} className="hover:text-blue-600">
-                    {krajNames[school.kraj_kod] || school.kraj}
-                  </Link>
-                  <span className="mx-2">/</span>
-                  <span className="text-slate-900">{overview.nazev}</span>
-                </nav>
-              </div>
-            </div>
-
-            {/* V2 Hero */}
-            <OverviewHero
-              schoolName={overview.nazev}
-              location={overview.obec}
-              kraj={krajNames[overview.kraj_kod] || overview.kraj}
-              studyLength={program.delka_studia}
-              schoolType={overview.zrizovatel}
-              category={school.category_code}
-              hasInspection={extractions.length > 0}
-              overviewSlug={overviewSlug}
+            <ProfilSkoly
+              data={profil}
+              skola={{
+                nazev: overview.nazev,
+                adresa: overview.adresa_plna || overview.adresa,
+                obec: overview.obec,
+                okres: overview.okres,
+                kraj: krajNames[overview.kraj_kod] || overview.kraj,
+                zrizovatel: overview.zrizovatel,
+              }}
+              odkazy={{ prehled, kraj: `/regiony/${krajSlug}`, inspekce: profil.inspekce ? `${prehled}/inspekce` : null }}
             />
-
-            {/* Vibecoding promo */}
-            <div className="max-w-6xl mx-auto px-4 pt-6 pb-2">
-              <VibecordingPromo />
-            </div>
-
-            {/* Obsah */}
-            <div className="max-w-6xl mx-auto px-4 py-8 space-y-8">
-              {/* Banner přihlášek 2026 */}
-              {data2026.length > 0 && rokNabidky && (
-                <Applications2026Banner
-                  data2026={data2026}
-                  rok={rokNabidky}
-                  platnost={platnostNabidky}
-                />
-              )}
-              <SchoolResults2026 results={results2026} />
-
-              {/* Priority Cards */}
-              <StatsTab
-                program={program}
-                extendedStats={await getExtendedStatsForProgram(program.id)}
-                data2026={match2026ToProgram(data2026, program)}
-                result2026={results2026.find(r => normalizeSchoolKey(r.offer_id ?? '') === normalizeSchoolKey(program.id))}
-                souhrn={await getSouhrnNabidky(program.id)}
-              />
-
-              {/* Jak dopadli loňští uchazeči s podobným výsledkem */}
-              {rokPasem && (
-                <PasmaPrijetiCard
-                  data={await getPasmaPrijeti(program.id)}
-                  rok={rokPasem}
-                  rokNabidky={rokNabidky}
-                  vypsana={!!match2026ToProgram(data2026, program)}
-                  nova={!!match2026ToProgram(data2026, program)?.is_new}
-                />
-              )}
-              <DruheKoloCard data={await getDruheKolo(program.id, program.zamereni)} />
-
-              {/* Quick Facts */}
-              <QuickFactsCard facts={quickFacts} />
-
-              {/* ČŠI Summary */}
-              {extractions.length > 0 && (
-                <CSISummaryCard
-                  summary={aiSummary}
-                  reportUrl={`/skola/${overviewSlug}/inspekce`}
-                />
-              )}
-
-              {/* CTA Buttons */}
-              <CTASection
-                primaryAction={{
-                  label: "Zobrazit detail",
-                  href: `/skola/${overviewSlug}/detail`,
-                }}
-                secondaryAction={{
-                  label: "Je to pro mě?",
-                  href: `/skola/${overviewSlug}/pro-me`,
-                }}
-              />
-
-              {/* InspIS profil (optional) */}
-              {inspis && <SchoolInfoSection data={inspis} />}
-
-              {/* Údaje potvrzené školou (Portál pro školy) */}
-              <SchoolPortalSection zaznam={portalZaznam} />
-
-              {/* Strojově čitelné formáty */}
-              <div className="pt-4 border-t border-slate-100 flex items-center justify-center gap-3 text-xs text-slate-400">
-                <span>Otevřená data:</span>
-                <a
-                  href={`/skola/${overviewSlug}.md`}
-                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-slate-200 hover:border-slate-300 hover:text-slate-600 transition-colors"
-                >
-                  <span className="font-bold leading-none">M&#8595;</span>
-                  Markdown
-                </a>
-                <a
-                  href={`/skola/${overviewSlug}.json`}
-                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-slate-200 hover:border-slate-300 hover:text-slate-600 transition-colors"
-                >
-                  <span className="font-mono leading-none">&#123; &#125;</span>
-                  JSON
-                </a>
-              </div>
-            </div>
           </main>
-
           <Footer />
         </div>
       );
-    }
-
-    // =====================
-    // V1 OVERVIEW (fallback)
-    // =====================
-    return (
-      <div className="min-h-screen flex flex-col">
-        <Header />
-
-        <main className="flex-1">
-          {/* Breadcrumb */}
-          <div className="bg-white border-b">
-            <div className="max-w-6xl mx-auto px-4 py-3">
-              <nav className="text-sm text-slate-600">
-                <Link href="/" className="hover:text-blue-600">Domů</Link>
-                <span className="mx-2">/</span>
-                <Link href="/skoly" className="hover:text-blue-600">Školy</Link>
-                <span className="mx-2">/</span>
-                <Link href={`/regiony/${krajSlug}`} className="hover:text-blue-600">
-                  {krajNames[school.kraj_kod] || school.kraj}
-                </Link>
-                <span className="mx-2">/</span>
-                <span className="text-slate-900">{overview.nazev}</span>
-              </nav>
-            </div>
-          </div>
-
-          {/* Header */}
-          <div className="bg-gradient-to-br from-blue-500 via-blue-500 to-blue-600 text-white py-12">
-            <div className="max-w-6xl mx-auto px-4">
-              <h1 className="text-2xl md:text-4xl font-bold mb-4">{overview.nazev}</h1>
-              <p className="text-lg opacity-90 mb-4">
-                Přehled všech oborů a zaměření
-              </p>
-              <div className="flex flex-wrap items-center gap-4 text-sm opacity-80">
-                <span>{overview.obec}, {krajNames[overview.kraj_kod] || overview.kraj}</span>
-                <span>•</span>
-                <span>{overview.zrizovatel}</span>
-                <span>•</span>
-                <span>{sortedPrograms.length} {sortedPrograms.length === 1 ? 'obor' : sortedPrograms.length < 5 ? 'obory' : 'oborů'}</span>
-              </div>
-              {extractions.length > 0 && (
-                <div className="mt-4">
-                  <Link
-                    href={`/skola/${redizo}-${createSlug(overview.nazev)}/inspekce`}
-                    className="inline-block px-4 py-1 rounded-full text-sm font-medium bg-white/20 text-white hover:bg-white/30 transition-colors"
-                  >
-                    Co si o škole myslí Školská inspekce?
-                  </Link>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Vibecoding promo */}
-          <div className="max-w-6xl mx-auto px-4 pt-6 pb-2">
-            <VibecordingPromo />
-          </div>
-
-          {/* Statistiky přehledu */}
-          <div className="max-w-6xl mx-auto px-4 py-8">
-            {(() => {
-              // Za školu se sčítají jen počty, které nepočítají tytéž uchazeče víckrát: obory, kapacita, přijatí.
-              // Přihlášky a poměry na místo patří k jednotlivým oborům (slovník ukazatelů, přihlášky na místo).
-              const kapacitaRocniku = data2026.reduce((sum, d) => sum + d.kapacita, 0);
-              const prijatiZnami = data2026.length > 0 && data2026.every(d => typeof d.admission_context?.accepted === 'number');
-              const prijatiRocniku = prijatiZnami ? data2026.reduce((sum, d) => sum + (d.admission_context?.accepted ?? 0), 0) : null;
-              if (!data2026.length || !rokNabidky) {
-                return (
-                  <p className="mb-8 rounded-xl bg-white p-4 text-sm text-slate-600 shadow-sm">
-                    Škola v posledním zveřejněném 1. kole nevypsala obor s jednotnou přijímací zkouškou, který bychom měli v datech.
-                    Níže jsou obory z dřívějších ročníků.
-                  </p>
-                );
-              }
-              return (
-                <div className="mb-8">
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                    <div className="rounded-xl bg-white p-4 text-center shadow-sm">
-                      <div className="text-3xl font-bold text-blue-600">{data2026.length.toLocaleString('cs-CZ')}</div>
-                      <div className="text-sm text-slate-500">Vypsaných oborů a zaměření · {rokNabidky}</div>
-                    </div>
-                    <div className="rounded-xl bg-white p-4 text-center shadow-sm">
-                      <div className="text-3xl font-bold text-slate-700">{kapacitaRocniku.toLocaleString('cs-CZ')}</div>
-                      <div className="text-sm text-slate-500">Kapacita míst · {rokNabidky}</div>
-                    </div>
-                    <div className="rounded-xl bg-white p-4 text-center shadow-sm">
-                      <div className="text-3xl font-bold text-slate-700">{prijatiRocniku === null ? '—' : prijatiRocniku.toLocaleString('cs-CZ')}</div>
-                      <div className="text-sm text-slate-500">Přijatých v 1. kole · {rokNabidky}</div>
-                    </div>
-                  </div>
-                  <p className="mt-3 text-sm text-slate-600">
-                    Přihlášky na místo a první priority uvádíme u jednotlivých oborů níže. Součet za celou školu by sčítal různé konkurzy a tytéž uchazeče počítal víckrát.
-                    {platnostNabidky && <> Zdroj: CERMAT, stav k {platnostNabidky.split('-').map(Number).reverse().join('. ')}.</>}
-                  </p>
-                </div>
-              );
-            })()}
-
-            {/* Banner přihlášek: jen u jediné nabídky, u více oborů by duplikoval dlaždice a sčítal konkurzy */}
-            {data2026.length === 1 && rokNabidky && (
-              <Applications2026Banner
-                data2026={data2026}
-                rok={rokNabidky}
-                platnost={platnostNabidky}
-              />
-            )}
-            <SchoolResults2026 results={results2026} />
-
-            {/* Rozdělit programy na ty s 2026 daty a ty pouze z 2025 */}
-            {(() => {
-              // Matchování programů s 2026 daty
-              const programsWith2026: typeof sortedPrograms = [];
-              const programsOnly2025: typeof sortedPrograms = [];
-              const matched2026BaseIds = new Set<string>();
-
-              for (const p of sortedPrograms) {
-                const baseId = normalizeSchoolKey(p.id);
-                const has2026 = !!match2026ToProgram(data2026, p);
-                if (has2026) {
-                  programsWith2026.push(p);
-                  matched2026BaseIds.add(baseId);
-                } else {
-                  programsOnly2025.push(p);
-                }
-              }
-
-              return (
-                <>
-                  {/* Obory 2026 */}
-                  <h2 className="text-2xl font-bold mb-6">
-                    Obory a zaměření
-                    {programsWith2026.length > 0 && (
-                      <span className="text-base font-normal text-slate-500 ml-2">přijímací řízení 2026</span>
-                    )}
-                  </h2>
-
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                    {programsWith2026.map(program => {
-                      const baseName = program.zamereni ? `${program.obor} - ${program.zamereni}` : program.obor;
-                      const hasDuplicateName = (oborCountsOverview.get(baseName) || 0) > 1;
-                      const matching2026 = match2026ToProgram(data2026, program);
-                      return (
-                        <ProgramCard
-                          key={program.id}
-                          program={program}
-                          schoolNazev={overview.nazev}
-                          redizo={redizo}
-                          showStudyLength={hasDuplicateName}
-                          trend={trendDataMap.get(program.id)}
-                          data2026ForProgram={matching2026}
-                        />
-                      );
-                    })}
-                  </div>
-
-                  {/* Obory pouze z 2025 (ukončené) */}
-                  {programsOnly2025.length > 0 && (
-                    <>
-                      <h2 className="text-xl font-semibold mb-2 text-slate-600">
-                        Obory z roku 2025
-                      </h2>
-                      <p className="text-sm text-slate-500 mb-4">
-                        U těchto oborů nemáme jednoznačnou shodu s importem 2026. Neznamená to, že se neotevírají. Zobrazujeme historii 2025; nabídku 2027 ověřte u školy.
-                      </p>
-                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 opacity-75">
-                        {programsOnly2025.map(program => {
-                          const baseName = program.zamereni ? `${program.obor} - ${program.zamereni}` : program.obor;
-                          const hasDuplicateName = (oborCountsOverview.get(baseName) || 0) > 1;
-                          return (
-                            <ProgramCard
-                              key={program.id}
-                              program={program}
-                              schoolNazev={overview.nazev}
-                              redizo={redizo}
-                              showStudyLength={hasDuplicateName}
-                              trend={trendDataMap.get(program.id)}
-                            />
-                          );
-                        })}
-                      </div>
-                    </>
-                  )}
-                </>
-              );
-            })()}
-
-            {/* InspIS profil školy */}
-            {inspis && <SchoolInfoSection data={inspis} />}
-
-            {/* Údaje potvrzené školou (Portál pro školy) */}
-            <SchoolPortalSection zaznam={portalZaznam} />
-
-            {/* Inspekce ČŠI */}
-            <InspectionSummary
-              extractions={extractions}
-              csiData={csiData}
-              schoolSlug={`${redizo}-${createSlug(overview.nazev)}`}
-            />
-
-            {/* Kontakt */}
-            <div className="bg-white p-6 rounded-xl shadow-sm mb-8">
-              <h2 className="text-xl font-semibold mb-4">Kontakt</h2>
-              <div className="space-y-2 text-slate-600">
-                <p><strong>Adresa:</strong> {overview.adresa_plna}</p>
-                <p><strong>Okres:</strong> {overview.okres}</p>
-                <p><strong>Kraj:</strong> {krajNames[overview.kraj_kod] || overview.kraj}</p>
-                <p><strong>Zřizovatel:</strong> {overview.zrizovatel}</p>
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="text-center">
-              <Link
-                href="/simulator"
-                className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
-              >
-                Vyzkoušet v simulátoru
-              </Link>
-            </div>
-
-            {/* Strojově čitelné formáty */}
-            <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-center gap-3 text-xs text-slate-400">
-              <span>Otevřená data:</span>
-              <a
-                href={`/skola/${slug}.md`}
-                className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-slate-200 hover:border-slate-300 hover:text-slate-600 transition-colors"
-              >
-                <span className="font-bold leading-none">M&#8595;</span>
-                Markdown
-              </a>
-              <a
-                href={`/skola/${slug}.json`}
-                className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-slate-200 hover:border-slate-300 hover:text-slate-600 transition-colors"
-              >
-                <span className="font-mono leading-none">&#123; &#125;</span>
-                JSON
-              </a>
-            </div>
-          </div>
-        </main>
-
-        <Footer />
-      </div>
-    );
   }
 
   // =====================

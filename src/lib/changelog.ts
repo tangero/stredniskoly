@@ -10,6 +10,21 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '2.10.0',
+    date: '14. 9. 2026',
+    title: 'Nová stránka školy',
+    changes: [
+      { type: 'new', text: 'Stránka školy odpovídá na pět otázek: co tu lze studovat, jak dobrá škola je, jaká je, kde je a jaké školy jsou v okolí' },
+      { type: 'new', text: 'U každého oboru obtížnost přijetí slovy, přihlášky a průměrné body přijatých; uložení mezi zvažované přímo z přehledu školy' },
+      { type: 'new', text: 'Kam se hlásí stejní uchazeči: školy, které uchazeči oborů školy měli na přihlášce zároveň, s obtížností přijetí a vzdáleností' },
+      { type: 'new', text: 'Schéma okolí školy se školami podle směru a vzdálenosti vzdušnou čarou' },
+      { type: 'new', text: 'Údaje, které vyplnila škola v portálu, jsou označené „Potvrdila škola“ a patří k otázkám, na které odpovídají; odkaz „Editujte: pro vedení školy“' },
+      { type: 'improve', text: 'Každý údaj nese původ: oficiální data, údaj školy, text školy, automatické shrnutí inspekce, nebo starší profil InspIS' },
+      { type: 'improve', text: 'Portál pro školy má nová nepovinná pole stravování a kontakt na výchovného poradce' },
+      { type: 'improve', text: 'Maturitní výsledky se připravují přes datovou linku a na stránce školy se ukážou po schválení dat' },
+    ],
+  },
+  {
     version: '2.9.0',
     date: '14. 9. 2026',
     title: 'Nová stránka oboru: jak těžké je se dostat',

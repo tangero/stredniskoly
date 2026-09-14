@@ -1,6 +1,6 @@
 # Stránka školy: struktura podle otázek rodiny
 
-Verze 1.2 · 14. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, revize dat a rozložení v oddílu 7, výsledná struktura v oddílu 8, předpoklady realizace v oddílu 9. Pojmy v textech stránky podle [slovníku pojmů](slovnik-pojmu.md).
+Verze 1.3 · 14. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, revize dat a rozložení v oddílu 7, výsledná struktura v oddílu 8, předpoklady realizace v oddílu 9. Pojmy v textech stránky podle [slovníku pojmů](slovnik-pojmu.md).
 
 Navazuje na [vrstvy stránky oboru](vrstvy-stranky-oboru-2027.md), podle kterých vznikla stránka oboru ve třech otázkách, a na schválené [grafy stránky školy a oboru](grafy-skoly-a-oboru-2027.md). Maturitní část se řídí [maturitními výsledky a kvalitou školy](maturitni-vysledky-a-kvalita-skoly-2027.md). Názvy ukazatelů drží [slovník](slovnik-ukazatelu.md), období [registr](../public/stav_datovych_sad.json), zdroje [soupis zdrojů](zdroje-dat.md).
 
@@ -430,13 +430,13 @@ PATIČKA
 | S1 | **Maturitní výsledky přes datovou linku**: sada v registru, stažení jarních souborů aspoň 2023–2026, skript do `public/maturita_skoly.json` na úrovni `redizo_smo16` s mediánem skupiny a zařazením, přejímací podmínky maturitního návrhu §8 | **ověřena dostupnost** 14. 9. 2026: `MZ2023j` až `MZ2026j` vrací HTTP 200, soubor 2026 sedí na otisk z auditu; linka zatím maturitu nesleduje |
 | S2 | Slovník ukazatelů: úspěšnost společné části, percentil z češtiny u maturity, podíl volby matematiky, zařazení proti skupině oborů, počet let nad skupinou | nezapsáno |
 | S3 | Slovník pojmů: maturanti, společná část maturity, skupina oborů, souběžní uchazeči, vzdušnou čarou; zákaz „kvalitní škola“ | nezapsáno |
-| S4 | Okolí: skript do `public/okoli_skol.json` se souběhem po oborech a nejbližšími školami stejné skupiny oborů | data v repozitáři, skript nenapsán |
-| S5 | Dobíhající obory z rejstříku do katalogu | použito jen v rešeršních skriptech |
-| S6 | Nahradit zvláštní podobu přehledu „V2“ pro školy s jedním oborem | |
-| S7 | Zobrazení profilu InspIS s datem snímku a bez dnů otevřených dveří | |
-| S8 | Údaje z portálu pro školy rozdělené do oddílů podle otázek, se značkou původu a prázdným stavem; pravidla přednosti z oddílu 7.2 v datové vrstvě, ne v komponentě | dnes jeden blok `SchoolPortalSection` na konci stránky |
-| S9 | Odkaz „Editujte: pro vedení školy“ na `/pro-skoly` v hlavičce, v prázdných stavech a v patičce | |
-| S10 | Banner Vibecoding nahoře na stránce školy; na nové stránce oboru doplněn 14. 9. 2026 (`59a79b1`), předtím chyběl | stránka oboru hotovo |
+| S4 | Okolí: souběh po oborech a nejbližší školy stejné skupiny oborů | **hotovo 14. 9. 2026** výpočtem při vykreslení v `src/lib/skola-profil-data.ts` z `data/school_locations.json` a `public/soubeh_prihlasek_{rok}.json`; samostatný soubor nebyl potřeba, výpočet je pod milisekundu |
+| S5 | Dobíhající obory z rejstříku do katalogu | **nezačato**; stránka zatím upozornění nezobrazuje |
+| S6 | Nahradit zvláštní podobu přehledu „V2“ pro školy s jedním oborem | **hotovo**: obě starší podoby přehledu odstraněny |
+| S7 | Zobrazení profilu InspIS s datem snímku a bez dnů otevřených dveří | **hotovo** |
+| S8 | Údaje z portálu pro školy rozdělené do oddílů podle otázek, se značkou původu a prázdným stavem | **hotovo** na stránce školy (`src/components/skola/ProfilSkoly.tsx`); přednost školného a podpory je v komponentě, přesun do datové vrstvy zůstává |
+| S9 | Odkaz „Editujte: pro vedení školy“ na `/pro-skoly` v hlavičce, v prázdných stavech a v patičce | **hotovo** |
+| S10 | Banner Vibecoding nahoře na stránce školy; na nové stránce oboru doplněn 14. 9. 2026 (`59a79b1`), předtím chyběl | **hotovo** na obou stránkách |
 | S11 | Slovník pojmů: „potvrdila škola“, „text školy“, „starší údaj z InspIS“, „shrnutí vytvořené automaticky“ jako závazné značky původu | nezapsáno |
 
 Bez S1 až S3 může stránka vzniknout s oddílem „Jak si škola vede“ jen z inspekce. Maturita je ale jediný srovnatelný údaj o výsledku studia, takže doporučuji S1 udělat před nasazením.
@@ -485,6 +485,7 @@ Rozhodnuto 14. 9. 2026 bez výhrad k verzi 1.0: pořadí oddílů s „Jak si š
 
 | Verze | Změna |
 |---|---|
+| 1.3 | Realizace na webu (14. 9. 2026): stránka školy v pěti otázkách, okolí a souběh počítané při vykreslení, maturita se zobrazí po přepnutí sady `cermat-maturita`; tlačítko „Sledovat školu“ zatím není, přijde s odesílačem. Souběh přihlášek bere rok z registru (sada `cermat-uchazeci-kolo1`, dnes 2025), prototyp ukazoval 2026. |
 | 1.2 | Rozhodnutí k verzi 1.1: maturita před nasazením, banner na místě, nová pole portálu (stravování, kontakt na výchovného poradce), tlačítko „Sledovat školu“ v hlavičce s odkazem na návrh sledování. |
 | 1.1 | Revize po zpětné vazbě: data definovaná podle původu (oficiální data, potvrdila škola, text školy, strojové shrnutí, starší údaj z InspIS) s pravidly přednosti, údaje z portálu pro školy rozdělené k otázkám, stav vyplnění v hlavičce, odkaz „Editujte: pro vedení školy“, banner Vibecoding nahoře, doplněné údaje ze staré stránky. Nová výsledná struktura, předpoklady S8–S11. |
 | 1.0 | Pět kol: rozcestník a oddíly, pořadí a obory s obtížností přijetí, maturita přes čtyři roky se stabilitou zařazení, okolí podle souběžných přihlášek místo vzdálenosti, profil školy a stavy dat. Předpoklady S1–S7, zvážené sloupce, otevřené otázky. |

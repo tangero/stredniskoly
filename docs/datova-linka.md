@@ -1,6 +1,6 @@
 # Datová linka
 
-Verze 1.2 · 14. 9. 2026 · Plán, provozní příručka a výsledky ověření.
+Verze 1.3 · 14. 9. 2026 · Plán, provozní příručka a výsledky ověření.
 
 Automatizovaný systém, který zjistí, že zdroj zveřejnil nová nebo přepsaná data, stáhne je, zkontroluje a zpracuje, oznámí to správci a po jeho schválení připraví převzetí. **Web se bez schválení nikdy nezmění** a ani po schválení linka sama nepřepíná zobrazené období; to zůstává krokem `prepni` v [registru stavu datových sad](zdroje-dat.md#5-stav-datových-sad).
 
@@ -133,6 +133,7 @@ python3 scripts/datova-linka.py predej --vse-schvalene
 
 | Verze | Změna |
 |---|---|
+| 1.3 | Příkaz `znovu` pro znovuotevření uzavřené úlohy; použit 14. 9. 2026 u GQ99C (maturita jaro 2026), kterou 13. 9. linka předala bez souborů, protože sada ještě neměla zpracovatele. Nové oznámení: issue #89. |
 | 1.2 | Zpracovatel maturitních výsledků (`cermat-maturita`), ověřeno nanečisto 14. 9. 2026: úloha pro jaro 2026, 1 112 škol, roky 2023–2026. |
 | 1.1 | Výsledky ověření: testy nanečisto, tři chyby nalezené ostrým během nanečisto, první ostré oznámení. |
 | 1.0 | Plán a provozní příručka. |
