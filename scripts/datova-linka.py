@@ -7,7 +7,7 @@ Plán, stavy úloh a bezpečnostní hranice: docs/datova-linka.md.
     python3 scripts/datova-linka.py stav
     python3 scripts/datova-linka.py schvaleni                  # přečte odpovědi z Telegramu
     python3 scripts/datova-linka.py schvaleni --kod K7Q2 --rozhodnuti schvaleno
-    python3 scripts/datova-linka.py predej --vse-schvalene
+    python3 scripts/datova-linka.py predej --vse-schvalene --kanal telegram
     python3 scripts/datova-linka.py znovu GQ99C --duvod "sada dostala zpracovatele"
 
 Každý krok přijímá --nanecisto: nic nepošle, nic nepushne a vypíše, co by udělal.
@@ -66,12 +66,14 @@ def main() -> None:
     s.add_argument("kod")
     s.add_argument("--duvod", required=True)
     s = sub.add_parser("predej")
+    s.add_argument("--kanal", action="append", choices=["telegram", "github"], default=[])
     s.add_argument("kod", nargs="?")
     s.add_argument("--vse-schvalene", action="store_true")
     a = ap.parse_args()
 
     registr = jadro.nacti_registr()
     fronta = jadro.nacti_frontu()
+    chyby: list[str] = []
 
     if a.prikaz == "stav":
         for u in sorted(fronta["ulohy"].values(), key=lambda x: x["vytvoreno"]):
@@ -94,33 +96,59 @@ def main() -> None:
             if not a.rozhodnuti:
                 sys.exit("--kod vyžaduje --rozhodnuti")
             zpravy = [{"od": "příkazová řádka", "povoleny": True, "cas": jadro.ted(), "text": f"{'schvaluji' if a.rozhodnuti == 'schvaleno' else 'zamitam'} {a.kod}"}]
-            vysledek = komunikace.uplatni_rozhodnuti(fronta, zpravy, "příkazová řádka")
+            udalosti = komunikace.zpracuj_zpravy(fronta, zpravy, "příkazová řádka")
+            kanaly = a.kanal
         else:
-            vysledek = []
+            udalosti = []
             kanaly = a.kanal or ["telegram"]
             if "telegram" in kanaly:
-                vysledek += komunikace.uplatni_rozhodnuti(fronta, komunikace.zpravy_telegramu(), "telegram")
+                udalosti += komunikace.zpracuj_zpravy(fronta, komunikace.zpravy_telegramu(), "telegram")
             if "github" in kanaly:
-                vysledek += komunikace.uplatni_rozhodnuti(fronta, komunikace.zpravy_githubu(fronta), "github")
-        print("schválení: " + ("; ".join(vysledek) if vysledek else "žádné nové rozhodnutí"))
+                udalosti += komunikace.zpracuj_zpravy(fronta, komunikace.zpravy_githubu(fronta), "github")
+        popisy = [komunikace.popis_udalosti(e, fronta) for e in udalosti]
+        print("schválení: " + ("; ".join(popisy) if popisy else "žádné nové rozhodnutí"))
+        chyby += komunikace.potvrd(fronta, udalosti, kanaly, a.nanecisto, registr)
 
     if a.prikaz == "predej":
         kody = [u["kod"] for u in fronta["ulohy"].values() if u["stav"] == "schvaleno"] if a.vse_schvalene else [a.kod]
+        telegram, komentare, zavrit = [], {}, []
         for k in filter(None, kody):
-            vysledek = predani.predej(fronta["ulohy"][k], registr, a.nanecisto)
+            u = fronta["ulohy"][k]
+            try:
+                vysledek = predani.predej(u, registr, a.nanecisto)
+            except Exception as e:  # jedna úloha nesmí zastavit ostatní ani uložení fronty
+                chyba = str(e)
+                print(f"předání {k} selhalo: {chyba}", file=sys.stderr)
+                chyby.append(f"předání {k}: {chyba}")
+                if not a.nanecisto and u.get("predani_chyba", {}).get("chyba") != chyba:
+                    u["predani_chyba"] = {"cas": jadro.ted(), "chyba": chyba}
+                    telegram.append(komunikace.text_predani(u, chyba=chyba))
+                    if u.get("issue"):
+                        komentare.setdefault(komunikace.cislo_issue(u["issue"]), []).append(telegram[-1])
+                continue
             if a.nanecisto:
                 print(f"[nanečisto] předání {k}: větev {vysledek['plan']['vetev']}")
                 for prikaz in vysledek.get("prikazy", []):
                     print("   " + " ".join(prikaz))
                 if vysledek.get("poznamka"):
                     print("   " + vysledek["poznamka"])
-            else:
-                print(f"předání {k}: {vysledek.get('pull_request') or vysledek.get('poznamka')}")
+                continue
+            u.pop("predani_chyba", None)
+            print(f"předání {k}: {vysledek.get('pull_request') or vysledek.get('poznamka')}")
+            telegram.append(komunikace.text_predani(u, vysledek))
+            if u.get("issue"):
+                cislo = komunikace.cislo_issue(u["issue"])
+                komentare.setdefault(cislo, []).append(telegram[-1])
+                zavrit.append(cislo)
+        if telegram:
+            chyby += komunikace.rozesli(fronta, telegram, komentare, a.kanal, a.nanecisto, tuple(zavrit))
 
     if not a.nanecisto or a.prikaz in ("zjisti", "priprav"):
         jadro.uloz_frontu(fronta)
     else:
         print("[nanečisto] fronta neuložena")
+    if chyby:
+        sys.exit(f"{len(chyby)} chyb, fronta je uložena: " + "; ".join(chyby))
 
 
 if __name__ == "__main__":

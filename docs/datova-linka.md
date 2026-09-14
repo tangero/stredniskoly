@@ -1,6 +1,6 @@
 # Datová linka
 
-Verze 1.3 · 14. 9. 2026 · Plán, provozní příručka a výsledky ověření.
+Verze 1.4 · 14. 9. 2026 · Plán, provozní příručka a výsledky ověření.
 
 Automatizovaný systém, který zjistí, že zdroj zveřejnil nová nebo přepsaná data, stáhne je, zkontroluje a zpracuje, oznámí to správci a po jeho schválení připraví převzetí. **Web se bez schválení nikdy nezmění** a ani po schválení linka sama nepřepíná zobrazené období; to zůstává krokem `prepni` v [registru stavu datových sad](zdroje-dat.md#5-stav-datových-sad).
 
@@ -13,8 +13,8 @@ Podklady: [zdroje dat, oddíl 5](zdroje-dat.md#5-stav-datových-sad), `public/st
 | Zjištění | `zjisti` | Pošle HEAD na sledované adresy z registru a porovná s tím, co už linka zná. Vznikne úloha pro nové období, revizi nebo zmizelý zdroj | ne |
 | Příprava | `priprav` | Stáhne soubor, spočítá sha256, zkontroluje strukturu a spustí zpracovatele sady do pracovního adresáře | ne |
 | Oznámení | `oznam` | Pošle shrnutí s kódem úlohy a návodem ke schválení | Telegram, GitHub issue |
-| Schválení | `schvaleni` | Přečte odpovědi „schvaluji KÓD“ nebo „zamítám KÓD“ z povoleného kanálu | ne |
-| Předání | `predej` | U schválené úlohy vytvoří větev s výstupy a pull request | git push, pull request |
+| Schválení | `schvaleni` | Přečte odpovědi „schvaluji KÓD“ nebo „zamítám KÓD“ z povoleného kanálu a každé rozhodnutí potvrdí | Telegram, komentář v issue |
+| Předání | `predej` | U schválené úlohy vytvoří větev s výstupy a pull request, pošle odkaz a uzavře issue | git push, pull request, Telegram, issue |
 
 `beh` provede zjištění, přípravu a oznámení najednou. `stav` vypíše frontu úloh.
 
@@ -63,10 +63,23 @@ schvaluji K7Q2
 zamítám K7Q2
 ```
 
-Na velikosti písmen a diakritice nezáleží. Linka přijme odpověď jen:
+Na velikosti písmen a diakritice nezáleží. Kód lze vynechat, když je jasné, čeho se zpráva týká:
+
+| Zpráva bez kódu | Týká se |
+|---|---|
+| komentář „schvaluji“ v issue úlohy | té úlohy |
+| odpověď „schvaluji“ na oznámení v Telegramu | všech dosud nerozhodnutých úloh z toho oznámení |
+| „schvaluji vše“ | všech oznámených nerozhodnutých úloh |
+| „schvaluji“ jinde | jediné čekající úlohy; čeká-li jich víc, linka se zeptá |
+
+Linka přijme odpověď jen:
 
 - z Telegramu od nastaveného `TELEGRAM_CHAT_ID`, nebo z komentáře GitHub issue od vlastníka repozitáře;
 - odeslanou až po oznámení dané úlohy.
+
+**Každé rozhodnutí linka potvrdí** do Telegramu i komentářem do issue úlohy: co přijala, odkud a co bude dál. Po předání pošle odkaz na pull request a issue uzavře. Když předání selže, oznámí chybu jednou, úloha zůstane schválená a další běh to zkusí znovu. Na zprávu, která schválení zmiňuje, ale linka jí nerozumí (neznámý kód, víc čekajících úloh bez kódu, jiný tvar), odpoví v tomtéž kanálu, co čeká na rozhodnutí. Bez odpovědi zůstane jen zpráva od cizího odesílatele, zpráva starší než oznámení a opakované stejné rozhodnutí z druhého kanálu. Každou zprávu zpracuje jednou; identifikátory zpracovaných zpráv drží fronta 30 dní.
+
+**Kdy se schválení zpracuje.** Komentář v issue se štítkem `nova-data` spustí workflow okamžitě, potvrzení přijde zhruba do minuty. Telegram workflow spustit neumí, proto se kontroluje každých 15 minut; když ve frontě nic nečeká na rozhodnutí ani předání, běh skončí hned po obnovení fronty.
 
 Telegram čte bez posunu offsetu, takže nespotřebuje zprávy jiným nástrojům. Telegram ale drží nepotvrzené zprávy jen 24 hodin a jiný nástroj je může potvrdit dřív. Záložní cesta proto vždy existuje:
 
@@ -92,7 +105,7 @@ python3 scripts/datova-linka.py schvaleni
 python3 scripts/datova-linka.py predej --vse-schvalene
 ```
 
-**GitHub Actions**, soubor `.github/workflows/datova-linka.yml`: v pondělí ráno `beh`, denně `schvaleni` a `predej`. Fronta se mezi běhy ukládá do větve `linka/stav`. Potřebné secrets: `TELEGRAM_BOT_TOKEN` a `TELEGRAM_CHAT_ID`; pro pull requesty stačí vestavěný `GITHUB_TOKEN` s právy `contents` a `pull-requests`.
+**GitHub Actions**, soubor `.github/workflows/datova-linka.yml`: v pondělí ráno `beh`; `schvaleni` a `predej` po komentáři v issue datové linky a každých 15 minut. Fronta se mezi běhy ukládá do větve `linka/stav`, a to jen když se změnila, takže pravidelné kontroly nevytvářejí commity ani náhledová nasazení. Frontu uloží i běh, ve kterém předání selhalo. Potřebné secrets: `TELEGRAM_BOT_TOKEN` a `TELEGRAM_CHAT_ID`; pro pull requesty stačí vestavěný `GITHUB_TOKEN` s právy `contents` a `pull-requests`.
 
 ## 7. Testy nanečisto
 
@@ -103,7 +116,7 @@ python3 scripts/datova-linka.py predej --vse-schvalene
 3. přípravu se syntetickým souborem uchazečů včetně skutečného spuštění zpracovatelských skriptů;
 4. zastavení při chybějícím povinném sloupci a ohlášení přejmenovaného listu;
 5. text oznámení a jeho doručení do falešného Telegramu;
-6. schválení i zamítnutí, odmítnutí cizího odesílatele a zprávy starší než oznámení;
+6. schválení i zamítnutí, odmítnutí cizího odesílatele a zprávy starší než oznámení; potvrzení do Telegramu a do issue, zpracování zprávy jen jednou, schválení bez kódu, tiché opakované rozhodnutí z druhého kanálu a jediné hlášení opakované chyby předání;
 7. předání nanečisto: plán větve, souborů a pull requestu bez jediného volání gitu.
 
 ## 8. Ověření 13. 9. 2026
@@ -133,6 +146,7 @@ python3 scripts/datova-linka.py predej --vse-schvalene
 
 | Verze | Změna |
 |---|---|
+| 1.4 | Potvrzování rozhodnutí a výsledku předání, odpověď na nesrozumitelné schválení, schválení bez kódu, okamžité zpracování komentáře v issue a kontrola Telegramu každých 15 minut. Důvod: 14. 9. 2026 správce schválil GQ99C v Telegramu i v issue #89 a nedostal žádnou odezvu; denní kontrola ještě neproběhla a linka potvrzení vůbec neposílala. Návod v oznámení nově uvádí skutečný kód místo zástupného „KÓD“, který se dal opsat doslova. |
 | 1.3 | Příkaz `znovu` pro znovuotevření uzavřené úlohy; použit 14. 9. 2026 u GQ99C (maturita jaro 2026), kterou 13. 9. linka předala bez souborů, protože sada ještě neměla zpracovatele. Nové oznámení: issue #89. |
 | 1.2 | Zpracovatel maturitních výsledků (`cermat-maturita`), ověřeno nanečisto 14. 9. 2026: úloha pro jaro 2026, 1 112 škol, roky 2023–2026. |
 | 1.1 | Výsledky ověření: testy nanečisto, tři chyby nalezené ostrým během nanečisto, první ostré oznámení. |

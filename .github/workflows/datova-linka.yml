@@ -1,13 +1,17 @@
 name: Datová linka
 
 # Plán a bezpečnostní hranice: docs/datova-linka.md.
-# Pondělí: zjištění, příprava a oznámení. Denně: schválení a předání schválených úloh.
-# Linka nikdy nepřepíná zobrazené období; předání vytvoří jen pull request.
+# Pondělí: zjištění, příprava a oznámení.
+# Schválení a předání: hned po komentáři v issue se štítkem nova-data, a každých 15 minut
+# kvůli Telegramu, který workflow spustit neumí. Když nic nečeká na rozhodnutí, běh skončí
+# po obnovení fronty. Linka nikdy nepřepíná zobrazené období; předání vytvoří jen pull request.
 
 on:
   schedule:
-    - cron: "30 5 * * 1"   # pondělí 05:30 UTC, beh
-    - cron: "0 6 * * *"    # denně 06:00 UTC, schvaleni a predej
+    - cron: "30 5 * * 1"     # pondělí 05:30 UTC, beh
+    - cron: "*/15 * * * *"   # schvaleni a predej; interval odpovídá INTERVAL_KONTROLY v scripts/linka/komunikace.py
+  issue_comment:
+    types: [created]
   workflow_dispatch:
     inputs:
       krok:
@@ -30,6 +34,13 @@ concurrency:
 
 jobs:
   linka:
+    # Komentář spustí linku jen v issue datové linky a jen když zmiňuje rozhodnutí.
+    # Oprávnění odesílatele ověřuje linka sama (vlastník repozitáře). Komentáře, které
+    # linka píše přes GITHUB_TOKEN, workflow znovu nespouštějí.
+    if: >-
+      github.event_name != 'issue_comment' ||
+      (contains(github.event.issue.labels.*.name, 'nova-data') &&
+       (contains(github.event.comment.body, 'schval') || contains(github.event.comment.body, 'zam')))
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
@@ -38,15 +49,6 @@ jobs:
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Závislosti
-        run: pip install openpyxl
 
       - name: Určit krok
         id: krok
@@ -54,7 +56,7 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "krok=${{ inputs.krok }}" >> "$GITHUB_OUTPUT"
             echo "nanecisto=${{ inputs.nanecisto && '--nanecisto' || '' }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "30 5 * * 1" ]; then
+          elif [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" = "30 5 * * 1" ]; then
             echo "krok=beh" >> "$GITHUB_OUTPUT"
           else
             echo "krok=schvaleni" >> "$GITHUB_OUTPUT"
@@ -63,21 +65,39 @@ jobs:
           [ -n "$TELEGRAM_BOT_TOKEN" ] && kanaly="$kanaly --kanal telegram"
           echo "kanaly=$kanaly" >> "$GITHUB_OUTPUT"
 
-      - name: Testy nanečisto
-        run: python3 -m unittest tests/test_datova_linka.py
-
       - name: Obnovit frontu z větve linka/stav
+        id: fronta
         if: steps.krok.outputs.krok != 'test'
         run: |
           # Bez větve se použije fronta z main, aby se neoznámilo znovu to, co už správce dostal.
           mkdir -p data/linka
-          if git fetch origin linka/stav 2>/dev/null && git show origin/linka/stav:data/linka/fronta.json > /tmp/fronta.json; then
+          if git fetch --depth 1 origin +refs/heads/linka/stav:refs/remotes/origin/linka/stav 2>/dev/null \
+             && git show origin/linka/stav:data/linka/fronta.json > /tmp/fronta.json; then
             mv /tmp/fronta.json data/linka/fronta.json
+            echo "vetev=ano" >> "$GITHUB_OUTPUT"
           fi
+          cp data/linka/fronta.json /tmp/fronta-puvodni.json 2>/dev/null || echo '{}' > /tmp/fronta-puvodni.json
+          ceka=$(python3 -c "import json; f=json.load(open('data/linka/fronta.json')); print('ano' if any(u['stav'] in ('oznameno', 'schvaleno') for u in f['ulohy'].values()) else 'ne')" 2>/dev/null || echo ne)
+          echo "ceka=$ceka" >> "$GITHUB_OUTPUT"
+          echo "Na rozhodnutí nebo předání čeká: $ceka"
+
+      - name: Python
+        if: steps.krok.outputs.krok != 'schvaleni' || steps.fronta.outputs.ceka == 'ano'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Závislosti
+        if: steps.krok.outputs.krok != 'schvaleni' || steps.fronta.outputs.ceka == 'ano'
+        run: pip install openpyxl
+
+      - name: Testy nanečisto
+        if: steps.krok.outputs.krok != 'schvaleni'
+        run: python3 -m unittest tests/test_datova_linka.py
 
       - name: Štítek pro issue
         # Nanečisto se do repozitáře nic nezapisuje, ani štítek.
-        if: steps.krok.outputs.krok != 'test' && steps.krok.outputs.nanecisto == ''
+        if: steps.krok.outputs.krok == 'beh' && steps.krok.outputs.nanecisto == ''
         run: |
           gh label create nova-data --color 1b4d7a --description "Datová linka, nová data k převzetí" --force
 
@@ -86,28 +106,39 @@ jobs:
         run: python3 scripts/datova-linka.py ${{ steps.krok.outputs.nanecisto }} beh ${{ steps.krok.outputs.kanaly }}
 
       - name: Schválení a předání
-        if: steps.krok.outputs.krok == 'schvaleni'
+        if: steps.krok.outputs.krok == 'schvaleni' && steps.fronta.outputs.ceka == 'ano'
         run: |
           git config user.name "datova-linka[bot]"
           git config user.email "datova-linka@users.noreply.github.com"
-          python3 scripts/datova-linka.py ${{ steps.krok.outputs.nanecisto }} schvaleni ${{ steps.krok.outputs.kanaly }}
-          python3 scripts/datova-linka.py ${{ steps.krok.outputs.nanecisto }} predej --vse-schvalene
+          stav=0
+          python3 scripts/datova-linka.py ${{ steps.krok.outputs.nanecisto }} schvaleni ${{ steps.krok.outputs.kanaly }} || stav=1
+          python3 scripts/datova-linka.py ${{ steps.krok.outputs.nanecisto }} predej --vse-schvalene ${{ steps.krok.outputs.kanaly }} || stav=1
+          exit $stav
 
       - name: Uložit frontu do větve linka/stav
-        if: steps.krok.outputs.krok != 'test' && steps.krok.outputs.nanecisto == ''
+        # I po chybě předání: rozhodnutí a zpracované zprávy se nesmí ztratit.
+        if: always() && steps.krok.outputs.krok != 'test' && steps.krok.outputs.nanecisto == ''
         run: |
+          if cmp -s /tmp/fronta-puvodni.json data/linka/fronta.json; then
+            echo "fronta beze změny, nic se neukládá"
+            exit 0
+          fi
           git config user.name "datova-linka[bot]"
           git config user.email "datova-linka@users.noreply.github.com"
           cp data/linka/fronta.json /tmp/fronta.json
-          git worktree add /tmp/stav -B linka/stav
+          if [ "${{ steps.fronta.outputs.vetev }}" = "ano" ]; then
+            git worktree add -B linka/stav /tmp/stav origin/linka/stav
+          else
+            git worktree add -B linka/stav /tmp/stav
+          fi
           mkdir -p /tmp/stav/data/linka
           cp /tmp/fronta.json /tmp/stav/data/linka/fronta.json
           git -C /tmp/stav add data/linka/fronta.json
-          git -C /tmp/stav commit -m "linka: stav fronty $(date -u +%F)" || echo "fronta beze změny"
-          git -C /tmp/stav push -f origin linka/stav
+          git -C /tmp/stav commit -m "linka: stav fronty $(date -u +'%F %H:%M')"
+          git -C /tmp/stav push origin linka/stav
 
       - name: Oznámení a pracovní soubory jako artefakt
-        if: always() && steps.krok.outputs.krok != 'test'
+        if: always() && (steps.krok.outputs.krok == 'beh' || steps.fronta.outputs.ceka == 'ano')
         uses: actions/upload-artifact@v4
         with:
           name: datova-linka-${{ github.run_id }}

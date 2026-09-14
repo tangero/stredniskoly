@@ -92,7 +92,7 @@ class FalesnyServer:
                 parametry = {k: unquote_plus(v) for k, v in parametry.items()}
                 if self.path.endswith("/sendMessage"):
                     server.telegram_odeslano.append(parametry)
-                    odpoved = {"ok": True, "result": {}}
+                    odpoved = {"ok": True, "result": {"message_id": 1000 + len(server.telegram_odeslano)}}
                 elif self.path.endswith("/getUpdates"):
                     odpoved = {"ok": True, "result": server.telegram_aktualizace}
                 else:
@@ -329,7 +329,8 @@ class TestDatovaLinka(unittest.TestCase):
         self.assertEqual(self.server.telegram_odeslano[0]["chat_id"], "42")
         for k in kody:
             self.assertIn(k, text)
-        self.assertIn("schvaluji KÓD", text)
+        self.assertIn(f"schvaluji {kody[0]}", text, "návod ukazuje skutečný kód, ne zástupné KÓD")
+        self.assertNotIn("KÓD“", text)
         self.assertIn("Zpracování:", text)
         self.assertTrue(all(fronta["ulohy"][k]["stav"] == "oznameno" for k in kody))
         self.assertTrue(list(Path(os.environ["LINKA_OZNAMENI"]).glob("*.txt")))
@@ -340,9 +341,13 @@ class TestDatovaLinka(unittest.TestCase):
         komunikace.oznam(fronta, ["telegram"], nanecisto=True)
         self.assertEqual(self.server.telegram_odeslano, [])
 
-    def zprava(self, chat, text, posun_s):
+    def zprava(self, chat, text, posun_s, odpoved_na=None):
         cas = int(dt.datetime.now(dt.timezone.utc).timestamp()) + posun_s
-        return {"update_id": len(self.server.telegram_aktualizace) + 1, "message": {"chat": {"id": chat}, "date": cas, "text": text}}
+        self.posledni_update = getattr(self, "posledni_update", 0) + 1
+        zprava = {"chat": {"id": chat}, "date": cas, "text": text}
+        if odpoved_na is not None:
+            zprava["reply_to_message"] = {"message_id": odpoved_na}
+        return {"update_id": self.posledni_update, "message": zprava}
 
     def test_schvaleni_a_zamitnuti_z_telegramu(self):
         fronta = self.pripravena_fronta()
@@ -361,6 +366,74 @@ class TestDatovaLinka(unittest.TestCase):
         self.assertEqual(fronta["ulohy"][zmizela]["stav"], "oznameno")
         self.assertTrue(any("nemá oprávnění" in z for z in zaznam))
         self.assertTrue(any("starší než oznámení" in z for z in zaznam))
+
+    def test_rozhodnuti_se_potvrdi_do_telegramu_i_do_issue(self):
+        fronta = self.pripravena_fronta()
+        komunikace.oznam(fronta, ["telegram"], nanecisto=False)
+        u = self.ulohy_podle_sady(fronta)["cermat-uchazeci-kolo1"]
+        u["issue"] = "https://github.com/test/repo/issues/89"
+        self.server.telegram_odeslano.clear()
+        self.server.telegram_aktualizace.append(self.zprava(42, f"schvaluji {u['kod']}", 5))
+        udalosti = komunikace.zpracuj_zpravy(fronta, komunikace.zpravy_telegramu(), "telegram")
+        volani = []
+        runner = lambda prikaz, **kw: volani.append(prikaz) or SimpleNamespace(returncode=0, stdout="", stderr="")  # noqa: E731
+        chyby = komunikace.potvrd(fronta, udalosti, ["telegram", "github"], nanecisto=False, registr=self.registr, runner=runner)
+        self.assertEqual(chyby, [])
+        self.assertEqual(len(self.server.telegram_odeslano), 1)
+        self.assertIn(f"{u['kod']} schváleno", self.server.telegram_odeslano[0]["text"])
+        self.assertIn("pull request", self.server.telegram_odeslano[0]["text"])
+        self.assertEqual(volani[0][:4], ["gh", "issue", "comment", "89"])
+
+    def test_zprava_se_zpracuje_jen_jednou(self):
+        fronta = self.pripravena_fronta()
+        komunikace.oznam(fronta, ["telegram"], nanecisto=False)
+        self.server.telegram_aktualizace.append(self.zprava(42, "schvaluji ABCDE", 5))
+        prvni = komunikace.zpracuj_zpravy(fronta, komunikace.zpravy_telegramu(), "telegram")
+        druhy = komunikace.zpracuj_zpravy(fronta, komunikace.zpravy_telegramu(), "telegram")
+        self.assertEqual([e["druh"] for e in prvni], ["neznamy_kod"])
+        self.assertEqual(druhy, [], "na tutéž zprávu se neodpovídá při každém běhu")
+
+    def test_stejne_rozhodnuti_ve_druhem_kanalu_je_tiche(self):
+        fronta = self.pripravena_fronta()
+        komunikace.oznam(fronta, [], nanecisto=False)
+        k = self.ulohy_podle_sady(fronta)["cermat-uchazeci-kolo1"]["kod"]
+        zprava = lambda i: {"id": f"t:{i}", "od": "1", "povoleny": True, "cas": jadro.ted(), "text": f"schvaluji {k}"}  # noqa: E731
+        komunikace.zpracuj_zpravy(fronta, [zprava(1)], "telegram")
+        udalosti = komunikace.zpracuj_zpravy(fronta, [zprava(2)], "github")
+        self.assertEqual([e["druh"] for e in udalosti], ["uz_rozhodnuto"])
+        self.assertEqual(komunikace.potvrd(fronta, udalosti, ["telegram"], nanecisto=False), [])
+        self.assertEqual(self.server.telegram_odeslano, [])
+
+    def test_schvaleni_bez_kodu(self):
+        fronta = self.pripravena_fronta()
+        kody = komunikace.oznam(fronta, ["telegram"], nanecisto=False)
+        id_oznameni = fronta["ulohy"][kody[0]]["oznameni"]["telegram_zpravy"][0]
+        self.server.telegram_aktualizace.extend([
+            self.zprava(42, "Schvaluji kód", 5),                        # tři čekající úlohy: nejasné
+            self.zprava(42, "schválil jsem to včera", 6),               # nerozpoznáno
+            self.zprava(42, "schvaluji", 7, odpoved_na=id_oznameni),    # odpověď na oznámení
+        ])
+        udalosti = komunikace.zpracuj_zpravy(fronta, komunikace.zpravy_telegramu(), "telegram")
+        druhy = [e["druh"] for e in udalosti]
+        self.assertEqual(druhy[:2], ["nejasne", "nerozpoznano"])
+        self.assertEqual(sorted(druhy[2:]), ["schvaleno"] * 3)
+        komunikace.potvrd(fronta, udalosti, ["telegram"], nanecisto=False)
+        text = self.server.telegram_odeslano[-1]["text"]
+        self.assertIn("čeká víc úloh", text)
+        self.assertIn("nerozuměl", text)
+
+    def test_jedina_cekajici_uloha_se_schvali_bez_kodu_i_komentarem(self):
+        fronta = self.pripravena_fronta()
+        komunikace.oznam(fronta, [], nanecisto=False)
+        u = self.ulohy_podle_sady(fronta)
+        uchazeci, revize = u["cermat-uchazeci-kolo1"], u["sada-revize"]
+        zprava = {"id": "g:1", "od": "tangero", "povoleny": True, "cas": jadro.ted(), "text": "Schvaluji.", "uloha": revize["kod"], "issue": "7"}
+        self.assertEqual([e["druh"] for e in komunikace.zpracuj_zpravy(fronta, [zprava], "github")], ["schvaleno"])
+        self.assertEqual(uchazeci["stav"], "oznameno", "komentář v issue platí jen pro jeho úlohu")
+        u["sada-zmizela"]["stav"] = "zamitnuto"
+        zprava = {"id": "t:1", "od": "42", "povoleny": True, "cas": jadro.ted(), "text": "zamítám"}
+        self.assertEqual([e["druh"] for e in komunikace.zpracuj_zpravy(fronta, [zprava], "telegram")], ["zamitnuto"])
+        self.assertEqual(uchazeci["stav"], "zamitnuto")
 
     # ------------------------------------------------------------ předání
 
@@ -444,6 +517,22 @@ class TestDatovaLinka(unittest.TestCase):
         vysledek = predani.predej(u, self.registr, nanecisto=False, runner=lambda *a, **kw: self.fail("bez gitu"))
         self.assertEqual(u["stav"], "predano")
         self.assertIn("Ručně ověřit", vysledek["poznamka"])
+
+    def test_prikazova_radka_predani_hlasi_vysledek_i_chybu_jednou(self):
+        fronta, u = self.schvalena_uloha_uchazecu()
+        u["issue"] = "https://github.com/test/repo/issues/89"
+        jadro.uloz_frontu(fronta)
+        prikaz = [sys.executable, str(KOREN / "scripts/datova-linka.py"), "predej", "--vse-schvalene", "--kanal", "telegram"]
+        # Git v testu neexistuje jako repozitář s origin: předání selže, fronta se přesto uloží.
+        env = {**os.environ, "LINKA_KOREN": str(self.tmp)}
+        for _ in range(2):
+            r = subprocess.run(prikaz, capture_output=True, text=True, env=env)
+            self.assertNotEqual(r.returncode, 0)
+        ulozena = jadro.nacti_frontu()["ulohy"][u["kod"]]
+        self.assertEqual(ulozena["stav"], "schvaleno")
+        self.assertIn("predani_chyba", ulozena)
+        hlaseni = [z["text"] for z in self.server.telegram_odeslano if "předání selhalo" in z["text"]]
+        self.assertEqual(len(hlaseni), 1, "stejná chyba se hlásí jen jednou")
 
     # ------------------------------------------------------------ příkazová řádka
 
