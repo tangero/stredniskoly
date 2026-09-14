@@ -1,6 +1,6 @@
 {
   "verze": 1,
-  "aktualizovano": "2026-09-13",
+  "aktualizovano": "2026-09-14",
   "popis": "Registr stavu datových sad. Pro každou sadu říká, které období web zobrazuje, odkud je, jaké období čekáme a kdy, co se stane se starými daty po přepnutí a které ukazatele ze slovníku na sadě stojí. Postup a pravidla: docs/zdroje-dat.md, oddíl Stav datových sad. Měnit jen přes scripts/stav-datovych-sad.py.",
   "pravidla": {
     "jistota": "znamo = datum doložené zdrojem; odhad = odvozeno z předchozího období, uveď zdůvodnění; neznamo = nelze odhadnout",
@@ -323,21 +323,30 @@
       "nazev": "CERMAT, maturitní výsledky, společná část",
       "dokumentace": "docs/zdroje-dat.md#211-cermat-maturitní-výsledky",
       "cyklus": "rocni",
-      "pouziti": "planovano",
+      "pouziti": "web",
       "zobrazeno": {
-        "obdobi": null,
+        "obdobi": "2026",
         "soubor": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2026j_SC_skolobory.xlsx",
-        "zkontrolovano": "2026-09-13",
-        "poznamka": "Soubor jaro 2026 ověřen proti kontrolnímu součtu, import nezačal."
+        "verze": "jaro",
+        "prepnuto": "2026-09-14",
+        "z_dostupne": {
+          "obdobi": "2026",
+          "verze": "jaro",
+          "soubor": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2026j_SC_skolobory.xlsx",
+          "zverejneno": "2026-08-18",
+          "zjisteno": "2026-09-13"
+        }
       },
       "ocekavano": {
-        "obdobi": "2026 po podzimu",
-        "kdy": null,
-        "jistota": "neznamo",
-        "zduvodneni": "Soubor MZ2026jap zatím neexistuje; termín importu není naplánovaný."
+        "obdobi": null,
+        "kdy": "2027-08",
+        "jistota": "odhad",
+        "zduvodneni": "Jarní výsledky 2026 zveřejnil CERMAT 18. 8. 2026; jaro 2027 se čeká ve stejném období."
       },
       "po_prepnuti": "Předchozí jarní ročníky zůstávají ve výstupu; stránka školy z nich počítá počet let nad skupinou oborů.",
-      "vystupy": [],
+      "vystupy": [
+        "public/maturita_skoly.json"
+      ],
       "ukazatele": [
         "Úspěšnost maturity",
         "Průměrný procentní skór maturity",
@@ -346,15 +355,7 @@
         "Počet let nad skupinou oborů",
         "Podíl volby předmětu u maturity"
       ],
-      "dostupne": [
-        {
-          "obdobi": "2026",
-          "verze": "jaro",
-          "soubor": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2026j_SC_skolobory.xlsx",
-          "zverejneno": "2026-08-18",
-          "zjisteno": "2026-09-13"
-        }
-      ],
+      "dostupne": [],
       "aktualizace": {
         "zdroj": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ{rok}j_SC_skolobory.xlsx a MZ{rok}jap_SC_skolobory.xlsx",
         "katalog": "https://data.cermat.cz/maturitni-zkouska/agregovana-data.html",
@@ -362,12 +363,24 @@
         "revize": "Soubor jaro 2026 byl přepsán 18. 8. 2026.",
         "import": "scripts/build-maturita-skoly.py; v datové lince zpracovatel cermat-maturita stáhne k jarnímu souboru tři předchozí jarní ročníky a doplní je do stávajícího výstupu. Stav po podzimu (jap) se nepřebírá.",
         "automatizace": "priprava",
-        "lidsky_krok": "Schválit úlohu, zkontrolovat počty v pull requestu, po sloučení zapsat výstup public/maturita_skoly.json do vystupy a kontrolu období (meta.nejnovejsi_rok), přepnout období v registru a zapojit stránku školy podle docs/stranka-skoly-2027.md.",
+        "lidsky_krok": "Schválit úlohu, zkontrolovat počty v pull requestu, přepnout období v registru.",
         "sledovat": [
           "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ{rok}j_SC_skolobory.xlsx",
           "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ{rok}jap_SC_skolobory.xlsx"
         ]
-      }
+      },
+      "kontrola_obdobi": {
+        "soubor": "public/maturita_skoly.json",
+        "cesta": "meta.nejnovejsi_rok"
+      },
+      "historie_obdobi": [
+        {
+          "obdobi": null,
+          "soubor": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2026j_SC_skolobory.xlsx",
+          "zkontrolovano": "2026-09-13",
+          "poznamka": "Soubor jaro 2026 ověřen proti kontrolnímu součtu, import nezačal."
+        }
+      ]
     },
     "cermat-jpz-skoly-2017-2023": {
       "nazev": "CERMAT, školní agregáty JPZ 2017–2023",
@@ -798,6 +811,13 @@
       "z": "2026-02-11",
       "na": "2026-09-07",
       "doklad": "commit 10f3f6a, převzato z PR #54, snímek 2026-09-07T10-17-08-734Z"
+    },
+    {
+      "datum": "2026-09-14",
+      "sada": "cermat-maturita",
+      "z": null,
+      "na": "2026",
+      "doklad": "PR #92 (5de82f1), úloha linky GQ99C schválená 14. 9. 2026, sha256 6a814e0a…; testy build-maturita-skoly a linky 34/34"
     }
   ]
 }

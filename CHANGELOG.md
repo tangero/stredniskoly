@@ -7,6 +7,7 @@ Formát vychází z [Keep a Changelog](https://keepachangelog.com/cs/1.1.0/).
 
 ### Přidáno
 - **Stránka školy v pěti otázkách** (`src/components/skola/ProfilSkoly.tsx`, `src/lib/skola-profil-data.ts`) — obory s obtížností přijetí, maturita proti skupině oborů (po přepnutí sady), inspekce, profil školy se značkami původu, údaje z portálu u otázek, schéma okolí a souběžné přihlášky; nahrazuje obě starší podoby přehledu; návrh `docs/stranka-skoly-2027.md`
+- **Maturita na stránce školy** — sada `cermat-maturita` přepnuta na jaro 2026 (PR #92, úloha GQ99C); ročníky 2023–2026, zařazení proti skupině oborů
 - **Maturitní výsledky přes datovou linku** (`scripts/build-maturita-skoly.py`, zpracovatel `cermat-maturita`) a příkaz linky `znovu` pro znovuotevření uzavřené úlohy
 - **Portál pro školy**: nepovinná pole stravování a kontakt na výchovného poradce
 - **Stránka oboru ve třech otázkách** (`src/components/obor/ProfilOboru.tsx`) — jak těžké je se dostat, co pomůže, jak se studuje; odpověď slovy nad rozbalovacími důkazy, návrh a rozhodnutí v `docs/vrstvy-stranky-oboru-2027.md`; bez souhrnu 1. kola zůstává starší podoba
