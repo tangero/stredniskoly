@@ -90,7 +90,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const overviewSlugMeta = `${pageInfo.redizo}-${createSlug(school.nazev)}`;
 
   const program = pageInfo.program;
-  const oborNazev = program?.zamereni ? `${program.obor} - ${program.zamereni}` : school.obor;
+  const oborNazev = program?.zamereni ? `${program.obor} - ${program.zamereni}` : program?.obor ?? school.obor;
   const title = `${school.nazev} - ${oborNazev}`;
   const description = `Přijímací zkoušky ${school.nazev}: ${oborNazev}. Historické výsledky a přihlášky. ${school.obec}, ${krajNames[school.kraj_kod] || school.kraj}`;
 

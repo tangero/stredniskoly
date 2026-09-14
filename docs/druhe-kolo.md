@@ -1,6 +1,6 @@
 # Druhé kolo přijímacího řízení
 
-Verze 1.1 · 13. 9. 2026 · Návrh, realizace a ověření.
+Verze 1.2 · 14. 9. 2026 · Návrh, realizace a ověření.
 
 Otázka rodiče, na kterou web dosud neodpovídal: **když se dítě nedostane v 1. kole, má na tomhle oboru ještě šanci?** A obráceně: dá se se školou počítat jako s pojistkou pro 2. kolo?
 
@@ -30,7 +30,18 @@ Nejnižší výsledek přijatých ve 2. kole je v souhrnu k dispozici, ale aspo�
 
 ## 2. Zobrazení
 
-Blok **Druhé kolo** na stránce oboru a na stránce školy s jediným oborem, pod blokem „Jak to dopadlo loni“. Období určuje registr u sady `cermat-kolo2-agregaty`; starší rok slouží jako srovnání.
+Od 14. 9. 2026 (verze 1.2) se 2. kolo ukazuje na nových stránkách takto; věty skládá jedna funkce `src/lib/druhe-kolo-vyklad.ts`, aby všude zněly stejně:
+
+| Místo | Co ukazuje |
+|---|---|
+| Stránka oboru, otázka „Co vám pomůže“ | jedna věta situace; u vypsaného 2. kola i počet nevešlých. Obor naplněný v 1. kole bez 2. kola jen tam, kde se někdo nevešel: rodina se dozví, že druhá šance nebyla |
+| Stránka oboru, důkaz „2. kolo“ | celý blok podle tabulky níže, předchozí rok a zdroj |
+| Stránka školy, řádek oboru | krátký řádek, například „2. kolo 2026: 7 míst, přijato 2“ nebo „2. kolo 2026 škola nevypsala, i když v 1. kole zbyla místa“ |
+| Otevřená data školy (`.json`, `.md`) | u oboru pole `druhe_kolo` se zveřejněnými počty, stavem, předchozím rokem a popisem |
+
+Nová proti verzi 1.1 je věta o tom, proč škola ve 2. kole nepřijala všechny, když se nikdo nevešel kvůli kapacitě: kolik uchazečů se dostalo na obor výš na přihlášce a kolik nedosáhlo požadavku školy (sloupce 87 a 89).
+
+Původní blok **Druhé kolo** zůstává ve starší podobě stránky oboru (obory bez souhrnu 1. kola), pod blokem „Jak to dopadlo loni“. Období určuje registr u sady `cermat-kolo2-agregaty`; starší rok slouží jako srovnání.
 
 | Situace nabídky v zobrazeném roce | Co blok řekne |
 |---|---|
@@ -77,9 +88,18 @@ Povinný krok podle `docs/zdroje-dat.md`, oddíl 3.
 
 Pod blokem zůstává starší blok „Přijetí a kapacita“ s čísly z roku 2025 u oborů bez zaměření. Jde o vadu popsanou v [návrhu aktuálního ročníku dat](navrh-aktualniho-rocniku-dat.md), krok 1.
 
+## 6. Ověření 14. 9. 2026
+
+- **Zdroj beze změny:** `PZ2026_kolo2_skolobory_vysledky.xlsx` staženo znovu, sha256 `c69aca68…` shodný s importem.
+- **Nezávislý přepočet** z tabulky CERMAT u osmi nabídek 2026 (technické lyceum Gymnázia J. S. Machara, 600170748 obchodní akademie, 600016234 osmileté gymnázium, 600008550, 600010309, 600012760 s nejnižším přijatým, podnikání a mechanizace SŠ gastronomie 600014614) a u lycea Machara 2025: kapacita, přihlášky, přijatí, nevešlí, nedosáhli požadavku, přijati výš i nejnižší přijatý (součet procent češtiny a matematiky vydělený dvěma) sedí.
+- **Prázdná buňka přihlášek** znamená žádnou přihlášku: v souboru 2026 je 234 prázdných a žádná nula, prázdná je vždy i u přijatých, zatímco přijatí 0 při nenulových přihláškách jsou zapsáni nulou (311 řádků).
+- **Web:** všechny situace ověřeny na lokálním serveru na stránce oboru, stránce školy i v otevřených datech; testy `tests/druhe-kolo-vyklad.test.mjs`.
+- **Nalezená chyba mimo 2. kolo:** obory bez zaměření, které přibyly až v ročníku 2026, neměly detail oboru; odkaz padal na přehled školy (například podnikání a mechanizace na SŠ gastronomie, náměstí Svobody). Opraveno v `getSchoolPageType`.
+
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.2 | 2. kolo na nové stránce oboru, stránce školy a v otevřených datech ze společné funkce vět; věta o důvodech nepřijetí ve 2. kole; ověření proti zdroji; oprava detailu nových oborů bez zaměření. |
 | 1.1 | Výsledky ověření importu, testů a zobrazení. |
 | 1.0 | Návrh a realizace. |

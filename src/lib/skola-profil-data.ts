@@ -4,6 +4,7 @@ import { getSchoolsData, getCSIDataByRedizo, getExtractionsByRedizo, getInspisDa
 import { getSouhrnNabidky, souhrnOboru, type SouhrnRocniku } from '@/lib/souhrny-kolo1';
 import { getPortalZaznam, type PortalZaznam } from '@/lib/portal-skol';
 import { getWebSkoly } from '@/lib/skoly-web';
+import { getDruheKolo, type DruheKoloNabidky } from '@/lib/druhe-kolo';
 import { zobrazeneObdobi, platnostObdobi } from '@/lib/stav-datovych-sad';
 import { createSlug } from '@/lib/utils';
 import { zarazeniObtiznosti, soutezicichUchazecu, type ZarazeniObtiznosti } from '@/lib/obor-profil';
@@ -42,6 +43,7 @@ export interface OborSkoly {
   novy: boolean;
   drivejsiNazev: string | null;
   vypsano: boolean;
+  druheKolo: DruheKoloNabidky | null;
 }
 
 export interface MaturitaSkoly {
@@ -224,7 +226,7 @@ export async function getProfilSkoly(
   const obory: OborSkoly[] = await Promise.all(programy.map(async p => {
     const zakladNazvu = p.zamereni && p.zamereni !== p.obor ? `${p.obor} - ${p.zamereni}` : p.obor;
     const duplicitni = (pocetNazvu.get(p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor) ?? 0) > 1;
-    const s = await getSouhrnNabidky(p.id);
+    const [s, druheKolo] = await Promise.all([getSouhrnNabidky(p.id), getDruheKolo(p.id, p.zamereni)]);
     const a = s?.aktualni;
     return {
       id: p.id,
@@ -248,6 +250,7 @@ export async function getProfilSkoly(
       novy: !!p.is_new_2026,
       drivejsiNazev: p.prev_zamereni_name ?? null,
       vypsano: !!a || vypsaneIds.has(p.id),
+      druheKolo,
     };
   }));
 
