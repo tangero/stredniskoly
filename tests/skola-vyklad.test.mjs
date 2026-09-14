@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  vzdalenostKm, smerStupne, proKohoObor, delkaSlovy, oboryVetou, pocetOboru, shrnutiMaturity, letNadSlovy,
+  vzdalenostKm, smerStupne, proKohoObor, delkaSlovy, oboryVetou, pocetOboru, shrnutiMaturity, letNadSlovy, jakCastoNadStredem, nazevSkupinyMaturity,
 } from '../src/lib/skola-vyklad.ts';
 
 const machar = { lat: 50.184405, lon: 14.6701023 };
@@ -67,4 +67,16 @@ test('roky bez zařazení se nepočítají jako ne nad skupinou', () => {
   const nikdy = shrnutiMaturity([2025, 2026], { 2025: { X: zaznam('below') }, 2026: { X: zaznam('indistinguishable') } }, 'X');
   assert.equal(letNadSlovy(nikdy), 'v žádném ze 2 let');
   assert.equal(shrnutiMaturity([2026], {}, 'X').posledni, null);
+});
+
+test('jak často nad středem podobných škol a názvy skupin', () => {
+  assert.equal(jakCastoNadStredem([{ letNad: 4, letSeZarazenim: 4 }, { letNad: 3, letSeZarazenim: 4 }, { letNad: 3, letSeZarazenim: 4 }]), 'téměř každý rok');
+  assert.equal(jakCastoNadStredem([{ letNad: 4, letSeZarazenim: 4 }]), 'každý rok');
+  assert.equal(jakCastoNadStredem([{ letNad: 3, letSeZarazenim: 4 }, { letNad: 2, letSeZarazenim: 4 }]), 've většině let');
+  assert.equal(jakCastoNadStredem([{ letNad: 2, letSeZarazenim: 4 }]), 'zhruba v polovině let');
+  assert.equal(jakCastoNadStredem([{ letNad: 1, letSeZarazenim: 4 }]), 'jen v některých letech');
+  assert.equal(jakCastoNadStredem([{ letNad: 0, letSeZarazenim: 3 }]), 'v žádném ze sledovaných let');
+  assert.equal(jakCastoNadStredem([{ letNad: 0, letSeZarazenim: 0 }]), null);
+  assert.equal(nazevSkupinyMaturity('GY8', 'GYMNÁZIUM 8LETÉ'), 'osmileté gymnázium');
+  assert.equal(nazevSkupinyMaturity('SEK', 'EKONOMICKÉ OBORY'), 'ekonomické obory');
 });

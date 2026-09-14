@@ -26,7 +26,7 @@ const POPISKY_POLI: Record<string, string> = {
   skolne: 'Školné a poplatky', podpora_svp: 'Podpora žáků se SVP', kontakt_vychovny_poradce: 'Kontakt na výchovného poradce',
   prestupy: 'Přestupy během studia', popis_skoly: 'Škola o sobě',
 };
-const STAV_TEXT = { above: 'nad skupinou', indistinguishable: 'nerozlišitelné od skupiny', below: 'pod skupinou' } as const;
+const STAV_TEXT = { above: 'nad středem podobných škol', indistinguishable: 'nerozlišitelné od středu', below: 'pod středem podobných škol' } as const;
 
 export interface SkolaZakladni {
   nazev: string;
@@ -192,14 +192,14 @@ export function otevrenaDataMarkdown(o: OtevrenaDataSkoly): string {
 
   if (o.maturita) {
     r.push(`## Maturita, společná část (jaro)`, '');
-    r.push('Percentil říká, kolik ze 100 maturantů v celé zemi mělo stejný nebo horší výsledek. Srovnává se jen se školami stejné skupiny oborů; výsledek z velké části odráží, koho škola přijímá, a neměří sám o sobě kvalitu výuky.', '');
+    r.push('„Lépe než 84 ze 100“ znamená, že maturanti školy měli v průměru stejný nebo lepší výsledek než 84 ze 100 maturantů v celé zemi. Podobné školy jsou školy se stejným typem oborů; střed znamená, že polovina z nich dopadla lépe a polovina hůř. Výsledek z velké části odráží, koho škola přijímá, a neměří sám o sobě kvalitu výuky.', '');
     for (const s of o.maturita.skupiny_oboru) {
       r.push(`### ${s.nazev}`, '');
-      r.push(`- **Nad skupinou v češtině:** ${s.let_nad_skupinou} ${zOd(s.let_se_zarazenim)} ${s.let_se_zarazenim} let se zařazením`);
-      r.push('', '| Rok | Maturantů | Úspěšně | Čeština, percentil | Zařazení | Matematiku volilo |', '|---|---:|---:|---:|---|---:|');
+      r.push(`- **Čeština nad středem podobných škol:** ${s.let_nad_skupinou} ${zOd(s.let_se_zarazenim)} ${s.let_se_zarazenim} let se srovnáním`);
+      r.push('', '| Rok | Maturitu udělalo | Čeština, lépe než … ze 100 | Srovnání | Matematiku volilo |', '|---|---:|---:|---|---:|');
       for (const rok of s.roky) {
         const cj = rok.cestina, sc = rok.spolecna_cast, ma = rok.matematika;
-        r.push(`| ${rok.rok} | ${cj?.took ?? '—'} | ${sc?.passRate !== undefined ? `${cislo(sc.passRate, sc.passRate % 1 ? 1 : 0)} %` : '—'} | ${cj?.averagePercentile !== undefined ? cislo(cj.averagePercentile, 1) : '—'} | ${rok.zarazeni_proti_skupine ? STAV_TEXT[rok.zarazeni_proti_skupine] : 'bez zařazení'} | ${ma?.subjectChoiceShare !== undefined ? `${Math.round(ma.subjectChoiceShare)} %` : '—'} |`);
+        r.push(`| ${rok.rok} | ${sc?.passed !== undefined && sc.registered ? `${cislo(sc.passed)} ${zOd(sc.registered)} ${cislo(sc.registered)}` : '—'} | ${cj?.averagePercentile !== undefined ? Math.round(cj.averagePercentile) : '—'} | ${rok.zarazeni_proti_skupine ? STAV_TEXT[rok.zarazeni_proti_skupine] : 'bez srovnání'} | ${ma?.subjectChoiceShare !== undefined ? `${Math.round(ma.subjectChoiceShare)} %` : '—'} |`);
       }
       r.push('');
     }

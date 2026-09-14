@@ -1,6 +1,6 @@
 # Stránka školy: struktura podle otázek rodiny
 
-Verze 1.3 · 14. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, revize dat a rozložení v oddílu 7, výsledná struktura v oddílu 8, předpoklady realizace v oddílu 9. Pojmy v textech stránky podle [slovníku pojmů](slovnik-pojmu.md).
+Verze 1.4 · 14. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, revize dat a rozložení v oddílu 7, výsledná struktura v oddílu 8, předpoklady realizace v oddílu 9. Pojmy v textech stránky podle [slovníku pojmů](slovnik-pojmu.md).
 
 Navazuje na [vrstvy stránky oboru](vrstvy-stranky-oboru-2027.md), podle kterých vznikla stránka oboru ve třech otázkách, a na schválené [grafy stránky školy a oboru](grafy-skoly-a-oboru-2027.md). Maturitní část se řídí [maturitními výsledky a kvalitou školy](maturitni-vysledky-a-kvalita-skoly-2027.md). Názvy ukazatelů drží [slovník](slovnik-ukazatelu.md), období [registr](../public/stav_datovych_sad.json), zdroje [soupis zdrojů](zdroje-dat.md).
 
@@ -423,7 +423,23 @@ PATIČKA
 - **Jeden výrazný prvek:** schéma okolí. Ostatní bloky jsou klidné karty s odpovědí nahoře.
 - **Značka původu je vždy text**, ne jen barva: „Potvrdila škola“, „text školy“, „starší údaj z InspIS“.
 
-## 9. Předpoklady realizace
+### 8.2 Revize maturity po nasazení (14. 9. 2026)
+
+Zpětná vazba na Gymnáziu Nad Štolou: oddíl nebyl jasný. Tři téměř stejné věty „maturanti byli v češtině nad školami stejné skupiny oborů …“, pojmy „percentil“ a „skupina oborů“, tři věty o přijímačkách a hlavně žádná odpověď na otázku, jak tu maturita dopadá.
+
+Při rozboru se našla i věcná chyba: úspěšnost je podíl úspěšných z **přihlášených**, ale vedle ní stálo „55 z 55“ z **konajících**; nahoře „98,2 %“ a vedle „55 z 55“.
+
+| Prvek | Rozhodnutí | Proč |
+|---|---|---|
+| Jedna souhrnná věta za školu: „Maturitu v roce 2026 udělalo 146 ze 148 přihlášených maturantů. V češtině byli maturanti všech oborů téměř každý rok nad středem podobných škol.“ | **použít** | odpověď místo výčtu; souhrn frekvence (každý rok, téměř každý rok, ve většině let, zhruba v polovině let, jen v některých letech, v žádném) přes všechny skupiny oborů |
+| Tabulka po oborech: maturitu udělalo, čeština, nad středem po letech, matematika | **použít** | srovnání oborů školy na jeden pohled; na telefonu karta s popisky |
+| „lépe než 91 ze 100 maturantů v zemi“ místo „91. percentil“ | **použít** | stejný význam bez odborného slova |
+| „podobné školy“ a „střed“ s jednou vysvětlující větou místo „školy stejné skupiny oborů“ a „medián“ | **použít** | slovník pojmů 1.4 |
+| Úspěšnost jako „X z Y přihlášených“ a počet těch, kdo ke zkoušce nešli | **použít** | jmenovatel podle CERMATu; opravuje nesoulad procent a počtů |
+| Vliv přijímaček jednou větou s rozsahem za obory | **použít** | „92–96 ze 100 uchazečů, na podobných školách obvykle 68–78“ |
+| Pás podobných škol a tabulka let | **přesunout do „Podrobně po letech“** | pro zájemce, ne pro první čtení |
+
+
 
 | # | Předpoklad | Stav |
 |---|---|---|
@@ -485,6 +501,7 @@ Rozhodnuto 14. 9. 2026 bez výhrad k verzi 1.0: pořadí oddílů s „Jak si š
 
 | Verze | Změna |
 |---|---|
+| 1.4 | Revize maturity (oddíl 8.2): souhrnná věta, tabulka po oborech, „podobné školy“ a „lépe než X ze 100“, oprava jmenovatele úspěšnosti. |
 | 1.3 | Realizace na webu (14. 9. 2026): stránka školy v pěti otázkách, okolí a souběh počítané při vykreslení, maturita se zobrazí po přepnutí sady `cermat-maturita`; tlačítko „Sledovat školu“ zatím není, přijde s odesílačem. Souběh přihlášek bere rok z registru (sada `cermat-uchazeci-kolo1`, dnes 2025), prototyp ukazoval 2026. |
 | 1.2 | Rozhodnutí k verzi 1.1: maturita před nasazením, banner na místě, nová pole portálu (stravování, kontakt na výchovného poradce), tlačítko „Sledovat školu“ v hlavičce s odkazem na návrh sledování. |
 | 1.1 | Revize po zpětné vazbě: data definovaná podle původu (oficiální data, potvrdila škola, text školy, strojové shrnutí, starší údaj z InspIS) s pravidly přednosti, údaje z portálu pro školy rozdělené k otázkám, stav vyplnění v hlavičce, odkaz „Editujte: pro vedení školy“, banner Vibecoding nahoře, doplněné údaje ze staré stránky. Nová výsledná struktura, předpoklady S8–S11. |

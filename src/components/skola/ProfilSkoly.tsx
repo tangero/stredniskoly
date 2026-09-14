@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { ProfilSkolyData, OborSkoly } from '@/lib/skola-profil-data';
 import { cislo, zOd, ZARAZENI_POPISEK, type ZarazeniObtiznosti } from '@/lib/obor-profil';
-import { delkaSlovy, letNadSlovy, oboryVetou, pocetOboru, STAV_POPISEK } from '@/lib/skola-vyklad';
+import { delkaSlovy, jakCastoNadStredem, oboryVetou, pocetOboru, STAV_POPISEK } from '@/lib/skola-vyklad';
 import { formatDatumCz } from '@/lib/portal-skol';
 import { SkupinaVKraji } from '@/components/obor/grafy';
 import { UlozitObor } from '@/components/obor/UlozitObor';
@@ -229,7 +229,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
               } : null,
               (maturita || inspekce) ? {
                 href: '#vede', q: 'Jak dobrá škola je',
-                a: <>{maturita && maturita.skupiny.some(s => s.letSeZarazenim) ? <>maturanti v češtině <b>nad školami stejné skupiny oborů</b>: {maturita.skupiny.filter(s => s.letSeZarazenim).map(s => `${malePismeno(s.nazev)} ${s.letNad ? letNadSlovy(s) : 'v žádném roce'}`).join(', ')}</> : null}{maturita && inspekce ? '; ' : ''}{inspekce ? <>inspekce {rokyInspekce}: přednost „{malePismeno(inspekce.silne[0]?.tag ?? '')}“{inspekce.rizika[0] ? <>, výtka „{malePismeno(inspekce.rizika[0].tag)}“</> : null}</> : null}</>,
+                a: <>{maturita?.celkem?.passed !== undefined && maturita.celkem.registered ? <>maturitu {maturita.celkem.rok} udělalo <b>{cislo(maturita.celkem.passed)} {zOd(maturita.celkem.registered)} {cislo(maturita.celkem.registered)}</b> přihlášených{jakCastoNadStredem(maturita.skupiny) ? <>, v češtině <b>{jakCastoNadStredem(maturita.skupiny)} nad středem podobných škol</b></> : null}</> : null}{maturita && inspekce ? '; ' : ''}{inspekce ? <>inspekce {rokyInspekce}: přednost „{malePismeno(inspekce.silne[0]?.tag ?? '')}“{inspekce.rizika[0] ? <>, výtka „{malePismeno(inspekce.rizika[0].tag)}“</> : null}</> : null}</>,
               } : null,
               inspis ? {
                 href: '#jaka', q: 'Jaká škola je',
@@ -322,101 +322,136 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
         {!maturita && !inspekce && (
           <Karta><p className="text-slate-700">Maturitní výsledky ani shrnutí inspekce pro tuto školu zatím nemáme.{data.inspekceSeznam?.lastInspectionDate ? ` Poslední inspekce proběhla ${formatDatumCz(data.inspekceSeznam.lastInspectionDate.slice(0, 10))}.` : ''}</p></Karta>
         )}
-        {maturita && (
-          <>
-            <Karta className="space-y-3">
-              <p className="max-w-[62ch] text-[19px] leading-relaxed text-slate-800">
-                {maturita.skupiny.map((s, i) => (
-                  <span key={s.smo16}>
-                    {i > 0 ? ' ' : ''}{s.nazev}: maturanti byli v češtině {s.letNad ? <><b className="text-[#16325c]">nad školami stejné skupiny oborů</b> {letNadSlovy(s)}</> : s.letSeZarazenim ? <>nad skupinou {letNadSlovy(s)}</> : 'bez zařazení proti skupině, protože ročník byl malý'}.
-                  </span>
-                ))}
-              </p>
-              {maturita.skupiny.some(s => s.vstup) && (
-                <p className="text-[15px] text-slate-600">
-                  {maturita.skupiny.filter(s => s.vstup).map(s => (
-                    <span key={s.smo16}>Přijatí na obor {s.vstup!.obor} měli u přijímaček v roce {rok} průměrné umístění kolem {Math.round(s.vstup!.umisteni)}. percentilu, střed skupiny je {Math.round(s.vstup!.median)}. </span>
-                  ))}
-                  Dobrý maturitní výsledek je proto z velké části dán tím, koho škola přijímá, a neměří sám o sobě kvalitu výuky.
+        {maturita && (() => {
+          const posledniRok = maturita.roky.at(-1)!;
+          const jakCasto = jakCastoNadStredem(maturita.skupiny);
+          const celkem = maturita.celkem;
+          const vstupy = maturita.skupiny.filter(s => s.vstup).map(s => s.vstup!);
+          const rozsah = (hodnoty: number[]) => {
+            const r = [...new Set(hodnoty.map(Math.round))].sort((a, b) => a - b);
+            return r.length > 1 ? `${r[0]}–${r.at(-1)}` : `${r[0]}`;
+          };
+          const tecka = (stav: string | null) => stav === 'above' ? 'bg-[#16325c]' : stav === 'indistinguishable' ? 'border-2 border-[#16325c] bg-white' : stav === 'below' ? 'border-2 border-dashed border-slate-500 bg-white' : 'bg-slate-200';
+          return (
+            <>
+              <Karta className="space-y-3">
+                <p className="max-w-[64ch] text-[19px] leading-relaxed text-slate-800">
+                  {celkem?.passed !== undefined && celkem.registered ? (
+                    <>Maturitu v roce {celkem.rok} udělalo <b className="text-[#16325c]">{cislo(celkem.passed)} {zOd(celkem.registered)} {cislo(celkem.registered)}</b> přihlášených maturantů.{' '}</>
+                  ) : null}
+                  {jakCasto === 'v žádném ze sledovaných let' ? (
+                    <>V češtině nebyli maturanti nad středem podobných škol <b className="text-[#16325c]">v žádném ze sledovaných let</b>.</>
+                  ) : jakCasto ? (
+                    <>V češtině byli {maturita.skupiny.length > 1 ? 'maturanti všech oborů ' : 'maturanti '}<b className="text-[#16325c]">{jakCasto} nad středem podobných škol</b>.</>
+                  ) : (
+                    <>Srovnání s podobnými školami chybí, protože maturantů bylo v každém roce méně než 10.</>
+                  )}
                 </p>
-              )}
-              <Zdroj>Maturita: společná část, jarní období, CERMAT. Percentil říká, kolik ze 100 maturantů v celé zemi mělo stejný nebo horší výsledek. Srovnává se jen se školami stejné skupiny oborů.</Zdroj>
-            </Karta>
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-              {maturita.skupiny.map(s => {
-                const z = s.posledni!.zaznam;
-                const cj = z.cj ?? {};
-                const ma = z.ma ?? {};
-                const sc = z.spolecna_cast ?? {};
-                return (
-                  <Karta key={s.smo16} className="space-y-3">
-                    <div>
-                      <h3 className="text-[18px] font-bold text-[#16325c]">{s.nazev}</h3>
-                      <p className="text-[13px] text-slate-500">maturita {s.posledni!.rok} · {cislo(cj.took ?? 0)} maturantů{cj.quality === 'small_sample' ? ' · malý ročník, výsledek kolísá' : ''}</p>
-                    </div>
-                    {cj.quality === 'counts_only' ? (
-                      <p className="text-[15px] text-slate-700">Maturantů bylo méně než 10, proto zveřejňujeme jen počty: konalo {cislo(cj.took ?? 0)}, uspělo {cislo(cj.passed ?? 0)}.</p>
-                    ) : (
-                      <dl className="divide-y divide-slate-100 text-[15px]">
-                        <div className="grid grid-cols-[8rem_minmax(0,1fr)] gap-3 py-2">
-                          <dt className="text-slate-500">Úspěšně</dt>
-                          <dd><b className="text-[20px] text-[#16325c]">{sc.passRate !== undefined ? `${cislo(sc.passRate, sc.passRate % 1 ? 1 : 0)} %` : '—'}</b> <span className="text-slate-500">{sc.passed ?? '?'} {zOd(sc.took ?? 0)} {sc.took ?? '?'}</span></dd>
-                        </div>
-                        <div className="grid grid-cols-[8rem_minmax(0,1fr)] gap-3 py-2">
-                          <dt className="text-slate-500">Čeština</dt>
-                          <dd className="space-y-1">
-                            <div><b className="text-[20px] text-[#16325c]">{cj.averagePercentile !== undefined ? `${cislo(cj.averagePercentile, 1)}. percentil` : '—'}</b>{s.medianPercentilSkupiny !== null ? <span className="text-slate-500"> střed skupiny {cislo(s.medianPercentilSkupiny, 1)}</span> : null}</div>
-                            <ol className="flex flex-wrap gap-3" aria-label="Zařazení proti skupině oborů po letech">
-                              {s.roky.map(r => (
-                                <li key={r.rok} className="grid justify-items-center gap-0.5 text-[12px] text-slate-500" title={r.stav ? STAV_POPISEK[r.stav] : 'bez zařazení'}>
-                                  <span className={`block h-3.5 w-3.5 rounded-full ${r.stav === 'above' ? 'bg-[#16325c]' : r.stav === 'indistinguishable' ? 'border-2 border-[#16325c]' : r.stav === 'below' ? 'border-2 border-dashed border-slate-500' : 'bg-slate-200'}`} />
-                                  {r.rok}
-                                </li>
-                              ))}
-                            </ol>
-                            {s.letSeZarazenim > 0 && <div className="text-slate-600">{s.letNad ? `nad skupinou ${letNadSlovy(s)}` : letNadSlovy(s)}</div>}
-                          </dd>
-                        </div>
-                        <div className="grid grid-cols-[8rem_minmax(0,1fr)] gap-3 py-2">
-                          <dt className="text-slate-500">Matematika</dt>
-                          <dd className="text-slate-700">{ma.subjectChoiceShare !== undefined ? `volilo ${Math.round(ma.subjectChoiceShare)} % maturantů, ` : ''}{ma.averagePercentile !== undefined ? `jejich percentil ${cislo(ma.averagePercentile, 1)}` : 'percentil nezveřejňujeme, konalo méně než 10'}</dd>
-                        </div>
-                      </dl>
-                    )}
-                    <details className="group rounded-xl bg-slate-50">
-                      <summary className="flex cursor-pointer list-none items-baseline gap-2 px-4 py-3 font-bold text-[#16325c] [&::-webkit-details-marker]:hidden">
-                        Mezi {s.skolVeSkupine ? cislo(s.skolVeSkupine) : ''} školami skupiny<span className="ml-auto text-[13px] font-normal text-slate-500">čeština {s.posledni!.rok}</span>
-                      </summary>
-                      <div className="space-y-3 px-4 pb-4">
-                        {cj.averagePercentile !== undefined && s.percentilySkupiny.length >= 10 && (
-                          <SkupinaVKraji hodnoty={s.percentilySkupiny} hodnota={cj.averagePercentile} predchozi={null} format={v => `${cislo(v, 1)}. percentil`} formatOsy={v => cislo(v)} osa={[0, 25, 50, 75, 100]} />
+                <p className="text-[15px] leading-relaxed text-slate-600">
+                  Podobné školy jsou školy se stejným typem oborů v celé zemi, například všechna osmiletá gymnázia. Střed znamená, že polovina z nich dopadla lépe a polovina hůř.
+                  {vstupy.length > 0 && <> Na výsledek má velký vliv, koho škola přijímá: přijatí tu měli u přijímaček {rok} průměrně lepší výsledek než {rozsah(vstupy.map(v => v.umisteni))} ze 100 uchazečů, na podobných školách obvykle {rozsah(vstupy.map(v => v.median))}. Dobrá maturita proto sama o sobě neměří kvalitu výuky.</>}
+                </p>
+              </Karta>
+
+              <div className="overflow-hidden rounded-2xl bg-white shadow-[0_1px_0_#dbe3ec]">
+                <div className="hidden grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)_minmax(0,1.2fr)_minmax(0,1.1fr)_minmax(0,1.2fr)] gap-4 border-b border-slate-100 px-5 py-3 text-[13px] font-semibold text-slate-500 md:grid">
+                  <span>Obor</span><span>Maturitu udělalo {posledniRok}</span><span>Čeština {posledniRok}</span><span>Nad středem podobných škol</span><span>Matematika {posledniRok}</span>
+                </div>
+                {maturita.skupiny.map(s => {
+                  const z = s.posledni!.zaznam;
+                  const cj = z.cj ?? {};
+                  const ma = z.ma ?? {};
+                  const sc = z.spolecna_cast ?? {};
+                  const malo = cj.quality === 'counts_only';
+                  return (
+                    <div key={s.smo16} className="grid gap-2 border-b border-slate-100 px-5 py-4 last:border-b-0 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)_minmax(0,1.2fr)_minmax(0,1.1fr)_minmax(0,1.2fr)] md:items-start md:gap-4">
+                      <div>
+                        <h3 className="text-[17px] font-bold text-[#16325c]">{s.nazev.charAt(0).toUpperCase() + s.nazev.slice(1)}</h3>
+                        <p className="text-[13px] text-slate-500">{s.posledni!.rok !== posledniRok ? `poslední maturita ${s.posledni!.rok}` : `${cislo(sc.registered ?? cj.took ?? 0)} přihlášených`}{cj.quality === 'small_sample' ? ', malý ročník' : ''}</p>
+                      </div>
+                      <div className="text-[15px]">
+                        <span className="text-[12px] text-slate-500 md:hidden">Maturitu udělalo {s.posledni!.rok}: </span>
+                        {sc.passed !== undefined && sc.registered ? <b className="text-[#16325c] tabular-nums">{cislo(sc.passed)} {zOd(sc.registered)} {cislo(sc.registered)}</b> : '—'}
+                        {sc.absent ? <span className="block text-[13px] text-slate-500">{cislo(sc.absent)} {sc.absent === 1 ? 'ke zkoušce nešel' : sc.absent < 5 ? 'ke zkoušce nešli' : 'ke zkoušce nešlo'}</span> : null}
+                      </div>
+                      <div className="text-[15px]">
+                        <span className="text-[12px] text-slate-500 md:hidden">Čeština: </span>
+                        {malo || cj.averagePercentile === undefined ? (
+                          <span className="text-slate-600">výsledek nezveřejňujeme, maturantů bylo méně než 10</span>
+                        ) : (
+                          <>
+                            <b className="text-[#16325c]">lépe než {Math.round(cj.averagePercentile)} ze 100</b> maturantů v zemi
+                            {s.medianPercentilSkupiny !== null ? <span className="block text-[13px] text-slate-500">střed podobných škol: {Math.round(s.medianPercentilSkupiny)} ze 100</span> : null}
+                          </>
                         )}
-                        <Zdroj>Každá tečka je jedna škola ve skupině oborů s aspoň 10 maturanty, modrá je tato škola. Pořadí škol stránka neuvádí.</Zdroj>
-                        <div className="overflow-x-auto">
-                          <table className="w-full text-[14px] tabular-nums">
-                            <thead><tr className="text-left text-[12px] text-slate-500"><th className="py-1.5 pr-2">Rok</th><th className="px-2 text-right">Maturantů</th><th className="px-2 text-right">Úspěšně</th><th className="px-2 text-right">Čeština</th><th className="pl-2">Zařazení</th></tr></thead>
-                            <tbody>
-                              {s.roky.map(r => (
+                      </div>
+                      <div className="text-[15px]">
+                        <span className="text-[12px] text-slate-500 md:hidden">Nad středem podobných škol: </span>
+                        <ol className="inline-flex gap-2 align-middle md:flex" aria-label="Čeština proti středu podobných škol po letech">
+                          {s.roky.map(r => (
+                            <li key={r.rok} className="grid justify-items-center gap-0.5 text-[11px] text-slate-500" title={`${r.rok}: ${r.stav ? STAV_POPISEK[r.stav] : 'bez srovnání, málo maturantů'}`}>
+                              <span className={`block h-3.5 w-3.5 rounded-full ${tecka(r.stav)}`} />
+                              {String(r.rok).slice(2)}
+                            </li>
+                          ))}
+                        </ol>
+                        <span className="ml-2 text-slate-700 md:ml-0 md:mt-1 md:block">{s.letSeZarazenim ? `${s.letNad} ${zOd(s.letSeZarazenim)} ${s.letSeZarazenim} let` : 'bez srovnání'}</span>
+                      </div>
+                      <div className="text-[15px] text-slate-700">
+                        <span className="text-[12px] text-slate-500 md:hidden">Matematika: </span>
+                        {ma.subjectChoiceShare !== undefined ? <>volilo <b className="text-[#16325c]">{Math.round(ma.subjectChoiceShare)} %</b></> : '—'}
+                        <span className="block text-[13px] text-slate-500">{ma.averagePercentile !== undefined ? `lépe než ${Math.round(ma.averagePercentile)} ze 100 maturantů, kteří ji psali` : ma.took ? 'výsledek nezveřejňujeme, psalo ji méně než 10' : ''}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+                <div className="flex flex-wrap gap-x-4 gap-y-1 border-t border-slate-100 bg-slate-50 px-5 py-2.5 text-[12px] text-slate-600">
+                  <span className="flex items-center gap-1.5"><span className={`h-3 w-3 rounded-full ${tecka('above')}`} />nad středem</span>
+                  <span className="flex items-center gap-1.5"><span className={`h-3 w-3 rounded-full ${tecka('indistinguishable')}`} />nerozlišitelné, rozdíl je u takto velkého ročníku příliš malý</span>
+                  <span className="flex items-center gap-1.5"><span className={`h-3 w-3 rounded-full ${tecka('below')}`} />pod středem</span>
+                  <span className="flex items-center gap-1.5"><span className={`h-3 w-3 rounded-full ${tecka(null)}`} />bez srovnání</span>
+                </div>
+              </div>
+
+              <Dukaz nadpis="Podrobně po letech" stitek={`jaro ${maturita.roky.at(-Math.min(4, maturita.roky.length))}–${posledniRok}`}>
+                {maturita.skupiny.map(s => {
+                  const cj = s.posledni!.zaznam.cj ?? {};
+                  return (
+                    <div key={s.smo16} className="space-y-2 border-t border-slate-100 pt-3 first:border-t-0 first:pt-0">
+                      <h3 className="text-[16px] font-bold text-[#16325c]">{s.nazev.charAt(0).toUpperCase() + s.nazev.slice(1)}</h3>
+                      {cj.averagePercentile !== undefined && s.percentilySkupiny.length >= 10 && (
+                        <>
+                          <SkupinaVKraji hodnoty={s.percentilySkupiny} hodnota={cj.averagePercentile} predchozi={null} format={v => `lépe než ${Math.round(v)} ze 100`} formatOsy={v => cislo(v)} osa={[0, 25, 50, 75, 100]} />
+                          <Zdroj>Čeština {s.posledni!.rok}: každá tečka je jedna podobná škola s aspoň 10 maturanty ({s.skolVeSkupine ? cislo(s.skolVeSkupine) : ''} škol), modrá je tato škola. Pořadí škol stránka neuvádí.</Zdroj>
+                        </>
+                      )}
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-[14px] tabular-nums">
+                          <thead><tr className="text-left text-[12px] text-slate-500"><th className="py-1.5 pr-2">Rok</th><th className="px-2 text-right">Maturitu udělalo</th><th className="px-2 text-right">Čeština, lépe než … ze 100</th><th className="px-2 text-right">Střed podobných škol</th><th className="pl-2">Srovnání</th></tr></thead>
+                          <tbody>
+                            {s.roky.map(r => {
+                              const sc = r.zaznam?.spolecna_cast;
+                              return (
                                 <tr key={r.rok} className="border-t border-slate-200">
                                   <td className="py-1.5 pr-2">{r.rok}</td>
-                                  <td className="px-2 text-right">{r.zaznam?.cj?.took ?? '—'}</td>
-                                  <td className="px-2 text-right">{r.zaznam?.spolecna_cast?.passRate !== undefined ? `${cislo(r.zaznam.spolecna_cast.passRate, r.zaznam.spolecna_cast.passRate % 1 ? 1 : 0)} %` : '—'}</td>
-                                  <td className="px-2 text-right">{r.zaznam?.cj?.averagePercentile !== undefined ? cislo(r.zaznam.cj.averagePercentile, 1) : '—'}</td>
-                                  <td className="pl-2">{r.stav ? STAV_POPISEK[r.stav] : 'bez zařazení'}</td>
+                                  <td className="px-2 text-right">{sc?.passed !== undefined && sc.registered ? `${cislo(sc.passed)} ${zOd(sc.registered)} ${cislo(sc.registered)}` : '—'}</td>
+                                  <td className="px-2 text-right">{r.zaznam?.cj?.averagePercentile !== undefined ? Math.round(r.zaznam.cj.averagePercentile) : '—'}</td>
+                                  <td className="px-2 text-right">{maturita.stredy[s.smo16]?.[r.rok] !== undefined ? Math.round(maturita.stredy[s.smo16][r.rok]) : '—'}</td>
+                                  <td className="pl-2">{r.stav ? STAV_POPISEK[r.stav] : 'bez srovnání'}</td>
                                 </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                        </div>
-                        <Zdroj>Zařazení: interval průměrného výsledku školy z češtiny je celý nad středem skupiny, celý pod ním, nebo ho zahrnuje. U malého ročníku bývá výsledek nerozlišitelný.</Zdroj>
+                              );
+                            })}
+                          </tbody>
+                        </table>
                       </div>
-                    </details>
-                  </Karta>
-                );
-              })}
-            </div>
-          </>
-        )}
+                    </div>
+                  );
+                })}
+                <Zdroj>Maturita: společná část, jarní období, CERMAT. „Lépe než 84 ze 100“ znamená, že maturanti školy měli v průměru stejný nebo lepší výsledek než 84 ze 100 maturantů v celé zemi (průměrný percentil). Srovnání se středem bere v úvahu velikost ročníku: u malého ročníku bývá rozdíl nerozlišitelný.</Zdroj>
+              </Dukaz>
+            </>
+          );
+        })()}
         {inspekce && (
           <>
             <Karta className="space-y-2">

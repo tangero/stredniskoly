@@ -9,7 +9,7 @@ import { zobrazeneObdobi, platnostObdobi } from '@/lib/stav-datovych-sad';
 import { createSlug } from '@/lib/utils';
 import { zarazeniObtiznosti, soutezicichUchazecu, type ZarazeniObtiznosti } from '@/lib/obor-profil';
 import {
-  proKohoObor, shrnutiMaturity, smerStupne, vzdalenostKm,
+  nazevSkupinyMaturity, proKohoObor, shrnutiMaturity, smerStupne, vzdalenostKm,
   type MaturitaSkupinaRoku, type Poloha, type ShrnutiMaturity,
 } from '@/lib/skola-vyklad';
 import type { CSISchoolData, InspectionExtraction } from '@/types/school';
@@ -49,6 +49,10 @@ export interface OborSkoly {
 export interface MaturitaSkoly {
   obdobi: 'jaro';
   roky: number[];
+  /** Celá škola v posledním roce: přihlášení, konající, úspěšní, nekonající (úspěšnost počítá CERMAT z přihlášených). */
+  celkem: { rok: number; registered?: number; took?: number; passed?: number; absent?: number } | null;
+  /** Střed (medián průměrných percentilů z češtiny) podobných škol po skupině oborů a roce. */
+  stredy: Record<string, Record<number, number>>;
   skupiny: (ShrnutiMaturity & {
     nazev: string;
     percentilySkupiny: number[];
@@ -262,9 +266,12 @@ export async function getProfilSkoly(
     const smo16 = new Set<string>();
     Object.values(maturita.roky).forEach(r => Object.keys(r).forEach(k => k !== 'CELKEM' && smo16.add(k)));
     const posledniRok = String(soubor.meta.nejnovejsi_rok);
+    const celaSkola = maturita.roky[posledniRok]?.CELKEM?.spolecna_cast;
     maturitaVystup = {
       obdobi: 'jaro',
       roky: soubor.meta.roky,
+      stredy: Object.fromEntries([...smo16].map(smo => [smo, Object.fromEntries(soubor.meta.roky.map(rk => [rk, soubor.skupiny[String(rk)]?.[smo]?.medianPercentile]).filter(([, v]) => typeof v === 'number'))])),
+      celkem: celaSkola ? { rok: Number(posledniRok), registered: celaSkola.registered, took: celaSkola.took, passed: celaSkola.passed, absent: celaSkola.absent } : null,
       skupiny: [...smo16].sort().reverse().map(smo => {
         const sh = shrnutiMaturity(soubor.meta.roky, maturita.roky, smo);
         const ref = soubor.skupiny[posledniRok]?.[smo];
@@ -273,8 +280,7 @@ export async function getProfilSkoly(
         const median = skupinyRoku.medianUmisteni.get(smo);
         return {
           ...sh,
-          // CERMAT píše skupiny verzálkami („GYMNÁZIUM 8LETÉ“).
-          nazev: ref?.nazev ? ref.nazev.charAt(0) + ref.nazev.slice(1).toLocaleLowerCase('cs-CZ') : smo,
+          nazev: nazevSkupinyMaturity(smo, ref?.nazev),
           percentilySkupiny: ref?.percentiles ?? [],
           medianPercentilSkupiny: ref?.medianPercentile ?? null,
           skolVeSkupine: ref?.schools ?? null,
