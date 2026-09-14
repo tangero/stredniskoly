@@ -385,7 +385,7 @@ Typická změna mezi 2025 a 2026, dolní čtvrtina / medián / horní čtvrtina:
 
 ## 5. Maturitní výsledky
 
-Analytický návrh je schválený v [maturitní výsledky a kvalita školy](maturitni-vysledky-a-kvalita-skoly-2027.md). Od 14. 9. 2026 vzniká soubor `public/maturita_skoly.json` skriptem `scripts/build-maturita-skoly.py` přes datovou linku (sada `cermat-maturita`); pole mají názvy z kontraktu níže. **Web ho zatím nečte**, dokud se v registru nepřepne období sady.
+Analytický návrh je schválený v [maturitní výsledky a kvalita školy](maturitni-vysledky-a-kvalita-skoly-2027.md). Od 14. 9. 2026 vzniká soubor `public/maturita_skoly.json` skriptem `scripts/build-maturita-skoly.py` přes datovou linku (sada `cermat-maturita`); pole mají názvy z kontraktu níže. Od 14. 9. 2026 je sada přepnutá na jaro 2026 a **web soubor čte na stránce školy** (`src/lib/skola-profil-data.ts`).
 
 ### Granularita, která rozhoduje o všem
 CERMAT zveřejňuje maturitu za právnickou osobu (`redizo`) a za školu ve skupině oborů (`redizo_smo16`). Skupina `SMO16` **není** kód oboru `KKOV`.
