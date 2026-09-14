@@ -10,6 +10,7 @@
   --navy:#16325c; --accent:#0074e4; --accent-soft:#dcebfb;
   --dot:#c3ccd6; --chip:#e9eef5; --chip-ink:#16325c;
   --warn:#8a5a00; --warn-bg:#fff4d6;
+  --skola:#0b7a65; --skola-bg:#e6f5f1; --skola-rule:#b5e0d4;
   --shadow:0 1px 0 #dbe3ec;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
@@ -19,6 +20,7 @@
   --navy:#a9c7f2; --accent:#5aa6ff; --accent-soft:#1c3150;
   --dot:#4a5868; --chip:#222d3a; --chip-ink:#cfe0f7;
   --warn:#f0c46a; --warn-bg:#3a2e12;
+  --skola:#5fd3b6; --skola-bg:#12302a; --skola-rule:#23574b;
   --shadow:0 1px 0 #2b3643;
 }}
 :root[data-theme="dark"]{
@@ -28,9 +30,11 @@
   --navy:#a9c7f2; --accent:#5aa6ff; --accent-soft:#1c3150;
   --dot:#4a5868; --chip:#222d3a; --chip-ink:#cfe0f7;
   --warn:#f0c46a; --warn-bg:#3a2e12;
+  --skola:#5fd3b6; --skola-bg:#12302a; --skola-rule:#23574b;
   --shadow:0 1px 0 #2b3643;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Cabin",system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -169,15 +173,51 @@ td.r,th.r{text-align:right}
 .cislo-k.stejna{background:var(--navy)}
 .obtizt{display:inline-block;white-space:nowrap;background:var(--chip);color:var(--chip-ink);border-radius:999px;padding:1px 9px;font-size:.82rem;font-weight:600}
 .malo{font-size:.8rem;color:var(--ink-3);display:block}
+
+/* Původ údajů */
+.proto label{margin-left:12px;font-weight:600;cursor:pointer}
+.proto select{font:inherit;font-size:.85rem;margin-left:6px}
+.stav-skoly{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:space-between;border-radius:10px;padding:10px 14px;font-size:.95rem}
+.stav-skoly.ano{background:var(--skola-bg);color:var(--skola)}
+.stav-skoly.ne{background:var(--sunk);color:var(--ink-2)}
+.stav-skoly b{font-weight:700}
+.edit{font-weight:700;color:var(--skola);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.stav-skoly.ne .edit{color:var(--accent)}
+.puvod{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;font-weight:700;border-radius:999px;padding:1px 9px;white-space:nowrap;vertical-align:1px}
+.puvod.skola{background:var(--skola-bg);color:var(--skola);border:1px solid var(--skola-rule)}
+.puvod.stroj,.puvod.archiv{background:var(--sunk);color:var(--ink-3)}
+.puvod svg{width:12px;height:12px}
+.ukazka{font-size:.72rem;font-weight:700;color:var(--warn);background:var(--warn-bg);border-radius:4px;padding:0 6px;margin-left:6px;vertical-align:1px}
+.odskoly{background:var(--skola-bg);border:1px solid var(--skola-rule);border-radius:12px;padding:18px 20px;display:grid;gap:14px}
+.odskoly h3{color:var(--skola);font-size:1.12rem}
+.odskoly dl{margin:0;display:grid;gap:0}
+.odskoly dl>div{display:grid;gap:4px;padding:10px 0;border-top:1px solid var(--skola-rule)}
+@media(min-width:760px){.odskoly dl>div{grid-template-columns:13rem 1fr;gap:16px}}
+.odskoly dt{font-size:.88rem;color:var(--ink-2);font-weight:600}
+.odskoly dd{margin:0;color:var(--ink)}
+.odskoly .prazdne{color:var(--ink-2)}
+.citace{background:var(--surface);border:1px solid var(--skola-rule);border-radius:12px;padding:20px 22px;display:grid;gap:10px}
+.citace blockquote{margin:0;font-size:1.12rem;line-height:1.55;color:var(--ink);max-width:68ch}
+.citace blockquote::before{content:"„";color:var(--skola);font-size:2rem;line-height:0;vertical-align:-.45em;margin-right:2px}
+.citace figcaption{font-size:.88rem;color:var(--ink-2)}
+.fakt .puvod{justify-self:start;margin-top:4px}
+.promo{border-top:1px solid var(--rule);padding-top:14px}
+.promo a{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;background:var(--sunk);border:1px solid var(--rule);border-radius:10px;padding:12px 16px;text-decoration:none}
+.promo .k{font-size:.72rem;font-weight:700;color:#fff;background:#0074e4;border-radius:3px;padding:1px 8px;width:fit-content}
+.promo .t{font-weight:600;color:var(--ink)}
+.promo .d{font-size:.85rem;color:var(--ink-3)}
+.promo .b{background:#0074e4;color:#fff;font-weight:600;font-size:.85rem;border-radius:6px;padding:6px 14px;white-space:nowrap}
+.pata-cta{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:16px 20px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between}
+.legenda-puvod{display:flex;flex-wrap:wrap;gap:8px 16px;list-style:none;margin:0;padding:0;align-items:center;font-size:.88rem}
 footer.pata{padding-block:28px 60px;color:var(--ink-2);font-size:.9rem}
 footer.pata .wrap{display:grid;gap:8px}
 </style>
 
-<div class="proto">Prototyp stránky školy · data 1. kola 2026, maturity 2023–2026 a inspekce z podkladů projektu · maturita zatím není na webu</div>
+<div class="proto">Prototyp stránky školy · data 1. kola 2026, maturity 2023–2026 a inspekce z podkladů projektu · maturita zatím není na webu<label for="rezim">Údaje od školy:</label><select id="rezim"><option value="ano">vyplněné (ukázka)</option><option value="ne">nevyplněné (skutečný stav)</option></select></div>
 
 <header class="hero">
   <div class="wrap">
-    <div class="crumb">Domů / Středočeský kraj / Gymnázium J. S. Machara</div>
+    <div class="crumb">Domů / Školy / Středočeský kraj / Gymnázium J. S. Machara</div>
     <div class="stack" style="gap:6px">
       <h1>Gymnázium J. S. Machara</h1>
       <p class="typ">Osmileté a čtyřleté gymnázium a technické lyceum v Brandýse nad Labem-Staré Boleslavi</p>
@@ -185,15 +225,18 @@ footer.pata .wrap{display:grid;gap:8px}
     <ul class="fakta">
       <li>Královická 668, Brandýs nad Labem-Stará Boleslav</li>
       <li>veřejná škola, zřizuje Středočeský kraj</li>
-      <li>okres Praha-východ</li>
+      <li>okres Praha-východ, Středočeský kraj</li>
     </ul>
     <div class="akce">
       <a class="btn" href="#" onclick="return false">Web školy</a>
       <a class="btn ghost" href="#" onclick="return false">Porovnat v simulátoru</a>
     </div>
+    <div class="stav-skoly ano" data-skola="ano"><span><span class="puvod skola"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 6.3l2.4 2.4 5.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Potvrdila škola</span> <b>Údaje od školy:</b> kritéria přijetí, dny otevřených dveří, školné, popis školy · 3. 11. 2026</span><a class="edit" href="#" onclick="return false">Editujte: pro vedení školy</a></div>
+    <div class="stav-skoly ne" data-skola="ne" hidden><span>Škola zatím nic nedoplnila. Údaje na stránce jsou z oficiálních zdrojů.</span><a class="edit" href="#" onclick="return false">Editujte: pro vedení školy</a></div>
+    <div class="promo" aria-label="Naše akce"><a href="#" onclick="return false"><span style="display:grid;gap:2px"><span class="k">Naše akce</span><span class="t">Název aktuální akce Vibecoding <span class="ukazka">ukázka banneru</span></span><span class="d">datum · město</span></span><span class="b">Detaily</span></a></div>
 
     <nav class="rozcestnik" aria-label="Odpovědi na pět otázek">
-      <a href="#obory"><span class="q">Co tu lze studovat</span><span class="ans"><b>3 obory</b> pro žáky z 5. a 9. třídy, <b>90 míst</b> v 1. kole 2026; dostat se na osmileté gymnázium bylo velmi těžké</span></a>
+      <a href="#obory"><span class="q">Co tu lze studovat</span><span class="ans"><b>3 obory</b> pro žáky z 5. a 9. třídy, <b>90 míst</b> v 1. kole 2026; dostat se na osmileté gymnázium bylo velmi těžké<span data-skola="ano">; den otevřených dveří <b>18. 11. 2026</b> <span class="puvod skola"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 6.3l2.4 2.4 5.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Potvrdila škola</span></span></span></a>
       <a href="#vede"><span class="q">Jak dobrá škola je</span><span class="ans">Maturanti v češtině <b>nad školami stejné skupiny oborů</b>: osmileté gymnázium ve 3 ze 4 let, čtyřleté v letech 2025 a 2026; inspekce 2025 chválí výsledky, vytýká malé zapojení žáků</span></a>
       <a href="#jaka"><span class="q">Jaká škola je</span><span class="ans"><b>355 žáků</b>, školní psycholog a výchovný poradce, 6 cizích jazyků, <b>bez bezbariérového přístupu</b></span></a>
       <a href="#kde"><span class="q">Kde je</span><span class="ans">Královická 668 v Brandýse, zastávka <b>Fakulta</b> zhruba 130 m od školy</span></a>
@@ -215,7 +258,21 @@ footer.pata .wrap{display:grid;gap:8px}
     <div class="stack">
       <p class="proc">Obtížnost přijetí popisuje, kolik soutěžících uchazečů se v 1. kole dostalo; soutěžící uchazeči jsou ti, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš. Každý obor má vlastní přijímání, za školu se nesčítá.</p>
       <div class="obory" id="obory-seznam"></div>
-      <p class="zdroj">Nabídka oborů pro přijímací řízení 2027 zatím zveřejněna není; údaje jsou z 1. kola 2026. Kritéria přijetí vyhlašuje škola na svém webu.</p>
+      <div class="odskoly" data-skola="ano">
+        <div class="row" style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between"><h3>Přijímací řízení 2027 podle školy</h3><span class="puvod skola"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 6.3l2.4 2.4 5.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Potvrdila škola · 3. 11. 2026</span></div>
+        <dl>
+          <div><dt>Kritéria přijetí</dt><dd>Pořadí určuje součet bodů z jednotné zkoušky z češtiny a matematiky. Uchazeč musí mít v každém testu aspoň 20 bodů. Při shodě rozhoduje lepší výsledek z matematiky. <span class="ukazka">ukázkový text</span><br><a href="#" onclick="return false">Vyhlášená kritéria na webu školy</a></dd></div>
+          <div><dt>Dny otevřených dveří</dt><dd>18. 11. 2026 a 13. 1. 2027, vždy 14–18 h <span class="ukazka">ukázka</span></dd></div>
+          <div><dt>Přípravné kurzy</dt><dd>Přijímačky nanečisto 5. 12. 2026, zdarma, přihlášky přes web školy <span class="ukazka">ukázka</span></dd></div>
+        </dl>
+        <p class="zdroj">Údaje zadala škola v portálu pro školy a před zveřejněním prošly kontrolou. <a href="#" onclick="return false" style="color:var(--skola)">Editujte: pro vedení školy</a></p>
+      </div>
+      <div class="odskoly" data-skola="ne" hidden style="background:var(--surface);border-style:dashed">
+        <h3 style="color:var(--navy)">Přijímací řízení 2027</h3>
+        <p class="prazdne">Kritéria přijetí, dny otevřených dveří a přípravné kurzy pro rok 2027 škola zatím nedoplnila. Kritéria vyhlašuje škola na svém webu: <a href="#" onclick="return false">www.gbl.cz</a>.</p>
+        <p class="zdroj">Jste z vedení školy? Doplňte je zdarma, uvidí je rodiny na této stránce. <a href="#" onclick="return false">Editujte: pro vedení školy</a></p>
+      </div>
+      <p class="zdroj">Nabídka oborů pro přijímací řízení 2027 zatím zveřejněna není; údaje o oborech jsou z 1. kola 2026, CERMAT, stav k 17. 8. 2026.</p>
       <details class="dukaz">
         <summary>Nabídka oborů po letech<span class="rok">2024–2026</span></summary>
         <div class="obsah">
@@ -244,12 +301,22 @@ footer.pata .wrap{display:grid;gap:8px}
 
       <div class="dvoj" id="smo"></div>
 
+      <div class="karta stack">
+        <p class="odpoved" style="font-size:1.05rem">Gymnázium J. S. Machara je kvalitní školou s výborným prospěchem žáků a moderním zázemím. Slabiny se týkají omezené aktivizace žáků ve výuce, nedostatečné diferenciace a zvýšené absence v 7. ročníku.</p>
+        <span class="puvod stroj">shrnutí vytvořené automaticky ze zprávy ČŠI z 14. 1. 2025</span>
+      </div>
       <div class="insp">
         <div class="karta"><h3>Co inspekce chválí</h3><ul id="i-silne"></ul></div>
         <div class="karta"><h3>Na co si dát pozor</h3><ul id="i-rizika"></ul></div>
         <div class="karta"><h3>Co se změnilo od inspekce 2019</h3><p id="i-zmena" style="font-size:.93rem"></p></div>
       </div>
-      <p class="zdroj">Inspekce ČŠI 14.–16. 1. 2025. Shrnutí vytvořené automaticky ze zprávy; <a href="#" onclick="return false">celá zpráva ČŠI</a>.</p>
+      <div class="dvoj">
+        <div class="karta stack"><h3 style="font-size:1rem">Na co se zeptat na dni otevřených dveří</h3><ul class="seznam" id="i-otazky"></ul></div>
+        <div class="karta stack"><h3 style="font-size:1rem">Inspekce ve škole</h3>
+          <ul class="seznam"><li>14.–16. 1. 2025 · <a href="#" onclick="return false">zpráva ČŠI</a></li><li>7.–10. 1. 2019 · <a href="#" onclick="return false">zpráva ČŠI</a></li></ul>
+          <p class="zdroj"><a href="#" onclick="return false">Celé shrnutí inspekce na našem webu</a></p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -258,22 +325,36 @@ footer.pata .wrap{display:grid;gap:8px}
   <div class="wrap">
     <div class="hlava"><h2>Jaká škola je</h2><span class="rok">inspekce 2025 · profil InspIS</span></div>
     <div class="stack">
+      <figure class="citace" data-skola="ano" style="margin:0">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between"><h3 style="font-size:1.05rem;color:var(--skola)">Škola o sobě</h3><span class="puvod skola">text školy · 3. 11. 2026</span></div>
+        <blockquote>Jsme gymnázium s dlouhou tradicí v Brandýse nad Labem. Stavíme na badatelské výuce přírodních věd, jazycích a na tom, aby se žáci naučili samostatně pracovat. <span class="ukazka">ukázkový text</span></blockquote>
+        <figcaption>Gymnázium J. S. Machara vlastními slovy; text školy neověřujeme.</figcaption>
+      </figure>
       <div class="dvoj">
         <div class="karta stack"><h3 style="font-size:1.05rem">Komu škola sedne</h3><ul class="seznam" id="sedi"></ul></div>
         <div class="karta stack"><h3 style="font-size:1.05rem">Kdo má být opatrný</h3><ul class="seznam" id="opatrne"></ul></div>
       </div>
       <div class="fakty">
         <div class="fakt"><span class="l">Velikost</span><span class="v num">355 žáků</span><span class="d">nejvýš povoleno 420</span></div>
-        <div class="fakt"><span class="l">Zřizovatel</span><span class="v">Středočeský kraj</span><span class="d">veřejná škola, školné se neplatí</span></div>
-        <div class="fakt"><span class="l">Podpora žáků</span><span class="v">školní psycholog, výchovný poradce</span><span class="d">metodik prevence, kariérová poradkyně; 13 žáků s podpůrnými opatřeními</span></div>
-        <div class="fakt"><span class="l">Bezbariérový přístup</span><span class="v">ne</span><span class="d">podle profilu v InspIS</span></div>
+        <div class="fakt"><span class="l">Zřizovatel a školné</span><span class="v">Středočeský kraj</span><span class="d" data-skola="ne" hidden>veřejná škola, školné se neplatí</span><span class="d" data-skola="ano">školné: zdarma, poplatky jen za kurzy a výjezdy <span class="ukazka">ukázka</span></span><span class="puvod skola" data-skola="ano"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 6.3l2.4 2.4 5.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Potvrdila škola</span></div>
+        <div class="fakt"><span class="l">Podpora žáků</span><span class="v">školní psycholog, výchovný poradce</span><span class="d">metodik prevence, kariérová poradkyně; 13 žáků s podpůrnými opatřeními podle zprávy ČŠI</span><span class="d" data-skola="ano">Upravené testy připravujeme se školským poradenským zařízením, žák má individuální konzultace. <span class="ukazka">ukázka</span></span><span class="puvod skola" data-skola="ano"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 6.3l2.4 2.4 5.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Potvrdila škola</span></div>
+        <div class="fakt"><span class="l">Bezbariérový přístup</span><span class="v">ne</span><span class="puvod archiv">starší údaj z InspIS</span></div>
+        <div class="fakt" data-skola="ano"><span class="l">Přestupy během studia</span><span class="v">možné do 3. ročníku</span><span class="d">po rozdílových zkouškách <span class="ukazka">ukázka</span></span><span class="puvod skola"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 6.3l2.4 2.4 5.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Potvrdila škola</span></div>
       </div>
       <details class="dukaz">
         <summary>Výuka a vybavení</summary>
         <div class="obsah">
+          <div><p class="zdroj">Zaměření</p><ul class="stitky"><li>všeobecné</li></ul></div>
           <div><p class="zdroj">Cizí jazyky</p><ul class="stitky"><li>anglický</li><li>německý</li><li>francouzský</li><li>španělský</li><li>ruský</li><li>latinský</li></ul></div>
           <div><p class="zdroj">Odborné učebny</p><ul class="stitky"><li>biologie</li><li>fyzika</li><li>chemie</li><li>ICT</li><li>cizí jazyky</li><li>hudební výchova</li><li>výtvarná výchova</li><li>knihovna</li></ul></div>
           <div><p class="zdroj">Sport</p><ul class="stitky"><li>tělocvična a sportovní hala</li><li>atletický areál</li><li>venkovní hřiště</li></ul></div>
+        </div>
+      </details>
+      <details class="dukaz">
+        <summary>Komunikace s rodiči</summary>
+        <div class="obsah">
+          <div><p class="zdroj">Jak škola informuje</p><ul class="stitky"><li>třídní schůzky</li><li>konzultační hodiny</li><li>individuální schůzky</li><li>e-mail a telefon s učiteli</li><li>školní informační systém</li></ul></div>
+          <div><p class="zdroj">Školní informační systém</p><ul class="stitky"><li>přehled klasifikace</li><li>přehled absence</li><li>e-omluvenka</li><li>třídní kniha a učivo</li><li>zprávy vyučujícím a vedení</li></ul></div>
         </div>
       </details>
       <details class="dukaz">
@@ -281,10 +362,12 @@ footer.pata .wrap{display:grid;gap:8px}
         <div class="obsah">
           <div><p class="zdroj">Zájmové činnosti</p><ul class="stitky"><li>programování a robotika</li><li>přírodovědné</li><li>technické</li><li>hudební</li><li>literárně-dramatické</li><li>turistické</li></ul></div>
           <div><p class="zdroj">Zahraničí</p><ul class="stitky"><li>partnerské školy</li><li>výměnné pobyty</li><li>studijní pobyty</li><li>společné projekty</li></ul></div>
+          <div><p class="zdroj">Formy podpory</p><ul class="stitky"><li>nadaní žáci</li><li>žáci s odlišným mateřským jazykem</li></ul></div>
+          <div><p class="zdroj">Spolupráce</p><ul class="stitky"><li>evropské projekty</li><li>exkurze ve firmách</li></ul></div>
           <div><p class="zdroj">Kurzy a akce</p><ul class="stitky"><li>adaptační kurzy</li><li>lyžování</li><li>plavání</li><li>exkurze</li><li>projektové dny</li><li>školní parlament</li></ul></div>
         </div>
       </details>
-      <p class="zdroj">Profil v InspIS: snímek z 11. 2. 2026, zdroj ČŠI mezitím zanikl. Údaje potvrzené školou v portálu pro školy budou mít přednost; tato škola je zatím nevyplnila.</p>
+      <p class="zdroj"><span class="puvod archiv">starší údaj z InspIS</span> Výuka, vybavení, komunikace a akce jsou ze starého profilu školy v InspIS, export 11. 2. 2026; zdroj ČŠI mezitím zanikl. Údaje, které potvrdí škola, mají přednost.</p>
     </div>
   </div>
 </section>
@@ -295,7 +378,12 @@ footer.pata .wrap{display:grid;gap:8px}
     <div class="okoli">
       <div class="stack">
         <div class="karta stack">
-          <p class="odpoved" style="font-size:1.1rem"><b>Královická 668</b>, Brandýs nad Labem-Stará Boleslav. Nejbližší zastávka <b>Fakulta</b> je zhruba 130 m od školy; podle profilu školy sem jezdí autobus, MHD a vlak.</p>
+          <p class="odpoved" style="font-size:1.1rem"><b>Královická 668</b>, Brandýs nad Labem-Stará Boleslav. Nejbližší zastávka <b>Fakulta</b> je zhruba 130 m od školy.</p>
+          <dl style="margin:0;display:grid;gap:8px;font-size:.93rem">
+            <div><dt class="zdroj">Doprava a umístění</dt><dd style="margin:0">autobus, MHD, vlak · škola stojí u rušné ulice <span class="puvod archiv">starší údaj z InspIS</span></dd></div>
+            <div><dt class="zdroj">V blízkosti školy</dt><dd style="margin:0">park, sportoviště, veřejná knihovna, ZUŠ; ve škole studovna a zahrada <span class="puvod archiv">starší údaj z InspIS</span></dd></div>
+            <div data-skola="ano"><dt class="zdroj">Ubytování</dt><dd style="margin:0">škola ubytování nenabízí <span class="ukazka">ukázka</span> <span class="puvod skola"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 6.3l2.4 2.4 5.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Potvrdila škola</span></dd></div>
+          </dl>
           <div class="akce" style="font-size:.95rem"><a href="#" onclick="return false">Otevřít v Mapy.cz</a><a href="#" onclick="return false">Spočítat dojezd z domova</a></div>
         </div>
         <div class="karta radar-wrap" id="okoli">
@@ -334,7 +422,9 @@ footer.pata .wrap{display:grid;gap:8px}
 <footer class="pata">
   <div class="wrap">
     <p><b>Odkud údaje jsou.</b> Přijímání: CERMAT, souhrny a data o uchazečích 1. kola. Maturita: CERMAT, agregované výsledky společné části. Inspekce: zprávy ČŠI. Profil: InspIS. Adresa a zřizovatel: rejstřík škol MŠMT. Poloha: geokódování adresy.</p>
-    <p class="zdroj">Stránka neřadí školy podle kvality. Srovnání se týká jen škol stejné skupiny oborů a je vždy s rokem.</p>
+    <ul class="legenda-puvod"><li><b>Značky původu:</b></li><li><span class="puvod skola"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 6.3l2.4 2.4 5.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Potvrdila škola</span> údaj zadala škola, prošel kontrolou</li><li><span class="puvod skola">text školy</span> škola o sobě, neověřujeme</li><li><span class="puvod stroj">shrnutí vytvořené automaticky</span> ze zprávy ČŠI</li><li><span class="puvod archiv">starší údaj z InspIS</span> export 11. 2. 2026</li><li>bez značky: oficiální data CERMAT, MŠMT a ČŠI</li></ul>
+    <p class="zdroj">Stránka neřadí školy podle kvality. Srovnání se týká jen škol stejné skupiny oborů a je vždy s rokem. Otevřená data: <a href="#" onclick="return false">Markdown</a> · <a href="#" onclick="return false">JSON</a></p>
+    <div class="pata-cta"><span><b>Jste z vedení školy?</b> Doplňte kritéria přijetí, dny otevřených dveří a popis školy. Je to zdarma a údaje uvidí rodiny na této stránce.</span><a class="edit" style="color:var(--accent)" href="#" onclick="return false">Editujte: pro vedení školy</a></div>
   </div>
 </footer>
 
@@ -346,9 +436,9 @@ const zOd = n => /^(7\d?|17|1\d\d)$/.test(String(n)) ? 'ze' : 'z';
 
 // 1 Obory
 const OBORY = [
-  { n: 'Gymnázium', d: 'osmileté', pro: 'pro žáky z 5. třídy · 8 let · 30 míst', slovo: 'Velmi těžké se dostat', p: 30, s: 112, loni: 'v roce 2025 těžké, 29 z 67', tlak: '4,1' },
-  { n: 'Gymnázium', d: 'čtyřleté', pro: 'pro žáky z 9. třídy · 4 roky · 30 míst', slovo: 'Dostala se většina', p: 30, s: 44, loni: 'v roce 2025 středně těžké, 30 z 54', tlak: '1,4' },
-  { n: 'Technické lyceum', d: '', pro: 'pro žáky z 9. třídy · 4 roky · 30 míst', slovo: 'Místo pro všechny', p: 23, s: null, loni: 'v roce 2025 také, přijato 11', tlak: '0,6', pozn: 'přijato 23 na 30 míst, 2. kolo vypsáno' },
+  { n: 'Gymnázium', d: 'osmileté', pro: 'pro žáky z 5. třídy · 8 let · 30 míst', slovo: 'Velmi těžké se dostat', p: 30, s: 112, prih: 233, body: '80,1', loni: 'v roce 2025 těžké, 29 z 67', tlak: '4,1' },
+  { n: 'Gymnázium', d: 'čtyřleté', pro: 'pro žáky z 9. třídy · 4 roky · 30 míst', slovo: 'Dostala se většina', p: 30, s: 44, prih: 94, body: '80,3', loni: 'v roce 2025 středně těžké, 30 z 54', tlak: '1,4' },
+  { n: 'Technické lyceum', d: '', pro: 'pro žáky z 9. třídy · 4 roky · 30 míst', slovo: 'Místo pro všechny', p: 23, s: null, prih: 65, body: '68,7', loni: 'v roce 2025 také, přijato 11', tlak: '0,6', pozn: 'přijato 23 na 30 míst, 2. kolo vypsáno' },
 ];
 $('#obory-seznam').innerHTML = OBORY.map((o, i) => `
   <article class="obor">
@@ -357,6 +447,7 @@ $('#obory-seznam').innerHTML = OBORY.map((o, i) => `
       <span class="slovo">${o.slovo}</span>
       ${o.s ? `<div class="pruh" role="img" aria-label="${o.p} přijatých ${zOd(o.s)} ${o.s}"><span style="width:${100 * o.p / o.s}%"></span></div>` : ''}
       <span class="det num">${o.s ? `přijato ${o.p} ${zOd(o.s)} ${o.s} soutěžících uchazečů` : o.pozn} · ${o.loni} · tlak prvních voleb ${o.tlak}×</span>
+      <span class="det num" style="color:var(--ink-3)">${o.prih} přihlášek · přijatí měli průměrně ${o.body} bodu z 100</span>
     </div>
     <div class="kroky"><a href="#" onclick="return false">Detail oboru</a><button class="ulozit" type="button" aria-pressed="false" id="ul-${i}">Uložit</button></div>
   </article>`).join('');
@@ -403,12 +494,18 @@ document.querySelectorAll('.pas').forEach(el => {
   el.innerHTML = html;
 });
 
-const I = {"silne": [{"tag": "Výborné výsledky", "detail": "Žáci dlouhodobě dosahují velmi dobrých výsledků v průběhu i při ukončování studia, řada prospívá s vyznamenáním.", "evidence": "Na nižším stupni osmiletého gymnázia ~90 % s vyznamenáním, na vyšším stupni ~60 %, ve čtyřletém ~50 %."}, {"tag": "Moderní zázemí", "detail": "Škola prošla rozsáhlou rekonstrukcí s novými učebnami pro badatelskou výuku, tělocvičnou a outdoorovou učebnou.", "evidence": "Prostory upraveny na učebny pro badatelskou výuku, nová lezecká stěna, relaxační prvky v zahradě."}, {"tag": "Kvalitní estetická výuka", "detail": "Výuka umění využívá zážitkovou pedagogiku a rozvíjí kreativitu a praktické dovednosti.", "evidence": "Hudební workshopy, výtvarná výchova s recyklovanými materiály, prvky relaxace a osobního obohacení."}], "rizika": [{"tag": "Omezená aktivizace žáků", "detail": "V přibližně polovině hodin chybí diskuse mezi žáky, jejich vzájemná spolupráce a reflexe pokroku.", "evidence": "Sebehodnocení a vrstevnické hodnocení začleněno jen zřídka, omezuje se rozvoj kritického myšlení."}, {"tag": "Nedostatečná diferenciace", "detail": "Výuka není vždy přizpůsobena individuálním potřebám, potenciál nadaných žáků zůstává nevyužitý.", "evidence": "Diferenciace nebyla dostatečně zohledněna, omezilo se přizpůsobení obsahu jednotlivým žákům."}, {"tag": "Absence v 7. ročníku", "detail": "V sedmém ročníku osmiletého studia se absence zvýšila až na 267 hodin za rok, což se projevilo zhoršením prospěchu.", "evidence": "Výrazné zvýšení absence v obou sledovaných letech, korelace se zhoršením průměrného prospěchu."}], "sedi": ["Žáci s dobrými studijními výsledky a motivací – škola nabízí kvalitní vzdělání a podporu", "Děti zajímající se o přírodní vědy – silné zaměření na badatelskou výuku a projekty", "Žáci s zájmem o umění a kreativitu – kvalitní estetická výuka s prvky zážitkové pedagogiky"], "opatrne": ["Žáci potřebující individuální přístup – diferenciace výuky není vždy dostatečná", "Děti se sklonem k absenci – zejména v 7. ročníku osmiletého studia jsou problémy s docházkou", "Žáci vyžadující více interaktivní a diskusní výuku – frontální výuka stále převládá"], "zmena": "Škola má stabilní počet žáků (358), zlepšily se materiální podmínky. Od poslední inspekce přetrvávají nedostatky v diferenciaci výuky a aktivizaci žáků, ale pokračuje výborný prospěch."};
+const I = {"otazky": ["Jak konkrétně škola podporuje nadané žáky a jak se liší přístup pro různě schopné žáky?", "Jaké konkrétní kroky podniká škola proti zvýšené absenci v 7. ročníku?", "Jak se ve výuce uplatňuje sebehodnocení a vrstevnické hodnocení žáků?"], "silne": [{"tag": "Výborné výsledky", "detail": "Žáci dlouhodobě dosahují velmi dobrých výsledků v průběhu i při ukončování studia, řada prospívá s vyznamenáním.", "evidence": "Na nižším stupni osmiletého gymnázia ~90 % s vyznamenáním, na vyšším stupni ~60 %, ve čtyřletém ~50 %."}, {"tag": "Moderní zázemí", "detail": "Škola prošla rozsáhlou rekonstrukcí s novými učebnami pro badatelskou výuku, tělocvičnou a outdoorovou učebnou.", "evidence": "Prostory upraveny na učebny pro badatelskou výuku, nová lezecká stěna, relaxační prvky v zahradě."}, {"tag": "Kvalitní estetická výuka", "detail": "Výuka umění využívá zážitkovou pedagogiku a rozvíjí kreativitu a praktické dovednosti.", "evidence": "Hudební workshopy, výtvarná výchova s recyklovanými materiály, prvky relaxace a osobního obohacení."}], "rizika": [{"tag": "Omezená aktivizace žáků", "detail": "V přibližně polovině hodin chybí diskuse mezi žáky, jejich vzájemná spolupráce a reflexe pokroku.", "evidence": "Sebehodnocení a vrstevnické hodnocení začleněno jen zřídka, omezuje se rozvoj kritického myšlení."}, {"tag": "Nedostatečná diferenciace", "detail": "Výuka není vždy přizpůsobena individuálním potřebám, potenciál nadaných žáků zůstává nevyužitý.", "evidence": "Diferenciace nebyla dostatečně zohledněna, omezilo se přizpůsobení obsahu jednotlivým žákům."}, {"tag": "Absence v 7. ročníku", "detail": "V sedmém ročníku osmiletého studia se absence zvýšila až na 267 hodin za rok, což se projevilo zhoršením prospěchu.", "evidence": "Výrazné zvýšení absence v obou sledovaných letech, korelace se zhoršením průměrného prospěchu."}], "sedi": ["Žáci s dobrými studijními výsledky a motivací – škola nabízí kvalitní vzdělání a podporu", "Děti zajímající se o přírodní vědy – silné zaměření na badatelskou výuku a projekty", "Žáci s zájmem o umění a kreativitu – kvalitní estetická výuka s prvky zážitkové pedagogiky"], "opatrne": ["Žáci potřebující individuální přístup – diferenciace výuky není vždy dostatečná", "Děti se sklonem k absenci – zejména v 7. ročníku osmiletého studia jsou problémy s docházkou", "Žáci vyžadující více interaktivní a diskusní výuku – frontální výuka stále převládá"], "zmena": "Škola má stabilní počet žáků (358), zlepšily se materiální podmínky. Od poslední inspekce přetrvávají nedostatky v diferenciaci výuky a aktivizaci žáků, ale pokračuje výborný prospěch."};
 $('#i-silne').innerHTML = I.silne.map(s => `<li><b>${s.tag}.</b> ${s.detail}</li>`).join('');
 $('#i-rizika').innerHTML = I.rizika.map(s => `<li><b>${s.tag}.</b> ${s.detail}</li>`).join('');
 $('#i-zmena').textContent = I.zmena;
+$('#i-otazky').innerHTML = (I.otazky || []).map(s => `<li>${s}</li>`).join('');
 $('#sedi').innerHTML = I.sedi.map(s => `<li>${s}</li>`).join('');
 $('#opatrne').innerHTML = I.opatrne.map(s => `<li>${s}</li>`).join('');
+
+// Režim údajů od školy
+function rezim(v) { document.querySelectorAll('[data-skola]').forEach(el => { el.hidden = el.dataset.skola !== v; }); }
+$('#rezim').addEventListener('change', e => rezim(e.target.value));
+rezim('ano');
 
 // 4 Schéma okolí
 (() => {

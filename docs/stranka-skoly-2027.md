@@ -1,6 +1,6 @@
 # Stránka školy: struktura podle otázek rodiny
 
-Verze 1.0 · 14. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, výsledná struktura v oddílu 7, předpoklady realizace v oddílu 8. Pojmy v textech stránky podle [slovníku pojmů](slovnik-pojmu.md).
+Verze 1.1 · 14. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, revize dat a rozložení v oddílu 7, výsledná struktura v oddílu 8, předpoklady realizace v oddílu 9. Pojmy v textech stránky podle [slovníku pojmů](slovnik-pojmu.md).
 
 Navazuje na [vrstvy stránky oboru](vrstvy-stranky-oboru-2027.md), podle kterých vznikla stránka oboru ve třech otázkách, a na schválené [grafy stránky školy a oboru](grafy-skoly-a-oboru-2027.md). Maturitní část se řídí [maturitními výsledky a kvalitou školy](maturitni-vysledky-a-kvalita-skoly-2027.md). Názvy ukazatelů drží [slovník](slovnik-ukazatelu.md), období [registr](../public/stav_datovych_sad.json), zdroje [soupis zdrojů](zdroje-dat.md).
 
@@ -54,7 +54,7 @@ Ze 1 104 škol, které mají v 1. kole 2026 aspoň jednu nabídku s jednotnou zk
 
 ### 1.4 Zdroje prošlé podle soupisu
 
-Podle povinného kroku v [soupisu zdrojů](zdroje-dat.md) jsem prošel oddíl 2 i oddíl 3. Zvážené a zatím nepoužité sloupce s rozhodnutím jsou v oddílu 9.
+Podle povinného kroku v [soupisu zdrojů](zdroje-dat.md) jsem prošel oddíl 2 i oddíl 3. Zvážené a zatím nepoužité sloupce s rozhodnutím jsou v oddílu 10.
 
 ## 2. Kolo 1: pět otázek jako pět oddílů
 
@@ -258,50 +258,171 @@ Profil InspIS a extrakce inspekce nabízejí desítky polí. Rodina z nich potř
 | Pražská škola | | schéma okolí do 5 km, seznam souběhu beze změny |
 | Bez souběhu (méně než 10 uchazečů u všech oborů) | | jen nejbližší podobné školy |
 
-## 7. Výsledná struktura
+## 7. Revize po zpětné vazbě: data podle původu, potom rozložení
+
+Zpětná vazba k verzi 1.0:
+
+- Stránka musí obsahovat **data z portálu pro školy** (`/pro-skoly`) a musí být **jasně vidět, že je vyplnila škola**.
+- Na stránce má být odkaz **„Editujte: pro vedení školy“** na `/pro-skoly`.
+- **Banner Vibecoding** je povinná součást všech stránek a patří nahoru, protože propaguje služby, které platí provoz webu.
+- Doplnit údaje, které stará stránka měla a verze 1.0 vynechala.
+
+Postup revize: nejdřív definice dat, potom rozložení.
+
+### 7.1 Každý údaj má původ a původ je vidět
+
+Stránka kombinuje pět druhů údajů. Liší se tím, **kdo za údaj ručí**, a čtenář to musí poznat bez čtení patičky.
+
+| Původ | Kdo ručí | Příklady | Značka na stránce |
+|---|---|---|---|
+| **Oficiální data** | CERMAT, MŠMT, ČŠI | obory, místa, přijatí, maturita, adresa, zřizovatel, seznam inspekcí | bez značky; zdrojový řádek s rokem u bloku |
+| **Potvrdila škola** | škola v portálu, po moderaci | kritéria přijetí 2027, dny otevřených dveří, přípravné kurzy, školné, ubytování, podpora SVP, přestupy | „Potvrdila škola · 3. 11. 2026“ u každého údaje |
+| **Text školy** | škola jako autor, neověřujeme | popis školy vlastními slovy | samostatný blok „Škola o sobě“ se značkou „text školy“ |
+| **Strojové shrnutí** | náš model nad zprávou ČŠI | co inspekce chválí a vytýká, komu škola sedne | „shrnutí vytvořené automaticky ze zprávy ČŠI z …“ |
+| **Starší údaj z InspIS** | škola kdysi, dnes nikdo | jazyky, učebny, specialisté, doprava, okolí školy | „starší údaj z InspIS, export 11. 2. 2026“ |
+
+Rozlišení „potvrdila škola“ a „text školy“ přebírá [návrh portálu, §3.3](portal-pro-skoly-2027.md): fakta od školy se nemíchají s její prezentací, jinak čtenář nepozná, co je marketing.
+
+### 7.2 Pravidla přednosti
+
+Když stejnou věc říká víc zdrojů, rozhoduje pořadí. Pravidla patří do datové vrstvy, aby je stránka oboru, stránka školy i otevřená data použily stejně.
+
+| Údaj | Pořadí zdrojů | Když chybí všechny |
+|---|---|---|
+| Kritéria přijetí 2027 | potvrdila škola (text a odkaz) → web školy z rejstříku jako místo, kde je hledat | „kritéria vyhlašuje škola na svém webu“ |
+| Dny otevřených dveří | **jen** potvrdila škola | nic; InspIS se nezobrazí nikdy (u Machara 8. 12. 2021) |
+| Přípravné kurzy | **jen** potvrdila škola | nic |
+| Školné | potvrdila škola → starší údaj z InspIS se značkou → u veřejné školy „školné se neplatí“ | u soukromé a církevní školy „školné neuvedeno“, nikdy nula |
+| Podpora žáků | potvrdila škola (podpora SVP) **a vedle** specialisté a podpora ze zprávy ČŠI | „údaje o podpoře nemáme“ |
+| Ubytování | **jen** potvrdila škola | nic |
+| Přestupy | **jen** potvrdila škola | nic |
+| Popis školy | **jen** text školy | blok se nezobrazí |
+| Obory, místa, přijatí, maturita, adresa | **jen** oficiální data; škola je v portálu potvrzuje nebo rozporuje, nepřepisuje (návrh portálu, §3.1) | stavy z oddílu 6.2 |
+
+### 7.3 Údaje od školy patří k otázce, ne na konec
+
+Verze 1.0 převzala dnešní blok „Údaje potvrzené školou“ jako jeden oddíl. Tím by skončily kritéria přijetí a dny otevřených dveří pod mapou okolí, přestože odpovídají na první otázku. Údaje od školy se proto rozdělí k otázkám:
+
+| Pole portálu | Oddíl | Proč |
+|---|---|---|
+| `kriteria_vlastnimi_slovy`, `odkaz_kriteria` | Co tu lze studovat | kritéria rozhodují o přijetí na obory školy |
+| `dny_otevrenych_dveri` | Co tu lze studovat a v rozcestníku | nejbližší krok, který rodina může udělat |
+| `pripravne_kurzy` | Co tu lze studovat | příprava na přijímačky |
+| `popis_skoly` | Jaká škola je, první blok | škola odpovídá sama za sebe |
+| `skolne` | Jaká škola je | náklady |
+| `podpora_svp`, `prestupy` | Jaká škola je | podpora a pravidla studia |
+| `ubytovani`, `ubytovani_poznamka` | Kde je | dojíždění, nebo bydlení |
+
+### 7.4 Jak je vidět, že údaje vyplnila škola
+
+| Prvek | Rozhodnutí | Proč |
+|---|---|---|
+| Stav vyplnění v hlavičce: „Údaje od školy potvrzeny 3. 11. 2026“, nebo „Škola zatím nic nedoplnila“ | **použít** | rodina hned ví, zda čte jen data, nebo i školu; stav „nevyplnila“ je čestný (návrh portálu, §3.4) |
+| Značka „Potvrdila škola · datum“ u každého údaje | **použít** | datum patří k údaji, protože škola potvrzuje po polích |
+| Blok s údaji od školy ve vlastní barvě (tyrkysová) | **použít** | odlišení od modré značky webu a od šedých strojových a archivních údajů; zelená by vypadala jako hodnocení |
+| „Škola o sobě“ jako citace s názvem školy a značkou „text školy“ | **použít** | prezentace je vidět jako řeč školy, ne jako fakt webu |
+| Prázdné pole portálu jako přeškrtnutý nebo čárkovaný řádek u každého údaje | **zavrhnout** | dnes nevyplnila žádná škola; stránka by byla plná prázdných míst |
+| Jedna prázdná karta za skupinu („Přijímací řízení 2027 od školy“) s vysvětlením a odkazem na editaci | **použít** | jedno místo, kde rodina pochopí, co chybí, a škola, co může doplnit |
+| Údaj z InspIS vydávaný za údaj školy | **zavrhnout** | InspIS vyplňovala škola kdysi, nikdo ho neudržuje |
+
+### 7.5 Odkaz „Editujte: pro vedení školy“
+
+| Místo | Rozhodnutí | Proč |
+|---|---|---|
+| Hlavička, vedle stavu vyplnění | **použít** | vedení školy stránku najde podle názvu a první, co hledá, je „jak to opravit“ |
+| Prázdné karty údajů od školy | **použít** | výzva přesně tam, kde údaj chybí |
+| Patička s větou, co škola může doplnit a že je to zdarma | **použít** | shodné s obsahem `/pro-skoly` |
+| Tlačítko stejné váhy jako „Web školy“ | **zavrhnout** | stránka slouží hlavně rodinám; editace je sekundární akce |
+
+### 7.6 Banner Vibecoding
+
+Komponenta `VibecordingPromo` si akci načítá sama a bez aktivní akce se nevykreslí. Umístění:
+
+| Varianta | Rozhodnutí | Proč |
+|---|---|---|
+| Pod hlavičkou, mezi identitou školy a rozcestníkem | **použít** | na telefonu zůstane na první obrazovce; oddělený rámeček nerozbije rozcestník |
+| Pod rozcestníkem | **zavrhnout** | na telefonu až na druhé obrazovce |
+| Nad názvem školy | **zavrhnout** | rodina by nejdřív viděla reklamu a pak teprve, na jaké je stránce |
+| Na stránce oboru | **doplněno** 14. 9. 2026 pod hlavičku; nová stránka oboru ho vynechala |
+
+### 7.7 Údaje ze staré stránky
+
+| Údaj | Rozhodnutí |
+|---|---|
+| Přihlášky a přijatí u oboru za 2026 | **doplnit** do řádku oboru |
+| Průměrné body přijatých z češtiny a matematiky | **doplnit** do řádku oboru jako drobný údaj |
+| Obory z roku 2025 bez jednoznačné shody s 2026 | **doplnit** pod seznam oborů, když existují |
+| Štítky nového a přejmenovaného oboru | **doplnit** do řádku oboru |
+| Shrnutí inspekce jedním odstavcem, otázky na den otevřených dveří, seznam inspekcí s odkazy, podstránka inspekce | **doplnit** do „Jak si škola vede“ |
+| Profil InspIS: zaměření, CLIL, formy podpory, komunikace s rodiči, školní informační systém, evropské projekty, spolupráce s firmami | **doplnit** do „Jaká škola je“ se značkou „starší údaj z InspIS“ |
+| Profil InspIS: umístění v obci, linka MHD, v blízkosti školy, místa pro volný čas | **doplnit** do „Kde je“ se stejnou značkou |
+| Okres, kraj, drobečková navigace se „Školy“, otevřená data, datum stavu dat CERMAT | **doplnit** |
+| Pořadí „#18 z 273“, meziroční změna bodů, „poptávka“ s emoji, archivní údaje InspIS o přijímačkách, pole, která zdroj nikdy nevyplnil | **vynechat**, důvody v oddílu 10 |
+| Odkazy na podstránky „Zobrazit detail“ a „Je to pro mě?“ | **neřešeno**; podstránky nejdřív ověřit |
+
+## 8. Výsledná struktura
 
 ```text
 HLAVIČKA
-  Název školy, typ podle oborů („osmileté a čtyřleté gymnázium, technické lyceum“)
-  Adresa · zřizovatel · web školy · „Porovnat v simulátoru“
+  Domů / Školy / kraj / škola
+  Název školy · typ podle oborů
+  adresa · zřizovatel · okres a kraj
+  Web školy · Porovnat v simulátoru
+  ┌ stav údajů od školy ─────────────────────────────────────────────┐
+  │ ✓ Údaje od školy potvrzeny 3. 11. 2026    Editujte: pro vedení školy│
+  │   nebo: Škola zatím nic nedoplnila         Editujte: pro vedení školy│
+  └──────────────────────────────────────────────────────────────────┘
 
-ROZCESTNÍK — pět otázek, pod každou jedna věta odpovědi, odkaz na oddíl
-  Co tu lze studovat    3 obory pro žáky z 5. a 9. třídy, 90 míst v 1. kole 2026
-  Jak si škola vede     maturanti v češtině nad skupinou: osmileté gymnázium ve 3 ze 4 let, čtyřleté 2025 a 2026;
-                        inspekce 2025 chválí výsledky, vytýká …
-  Jaká škola je         355 žáků, školní psycholog, 6 cizích jazyků, bez bezbariérového přístupu
-  Kde je                Královická 668, Brandýs; zastávka Fakulta 130 m
-  Jiné školy v okolí    nejvíc uchazečů se zároveň hlásí na gymnázium v Čelákovicích (6 km)
+BANNER VIBECODING (vlastní rámeček, jen při aktivní akci)
 
-1  CO TU LZE STUDOVAT                                        1. kolo 2026
-   řádek oboru: název · z které třídy · délka · místa · obtížnost přijetí slovy
-                s podílem a předchozím rokem · tlak prvních voleb · Uložit · → obor
-   poznámka: nabídka pro rok 2027 bude zveřejněna …
-   důkaz: nabídka oborů po letech (obor × rok)
+ROZCESTNÍK — pět otázek, jedna věta odpovědi
+  Co tu lze studovat    3 obory …; den otevřených dveří 18. 11. 2026 [potvrdila škola]
+  Jak dobrá škola je    …
+  Jaká škola je         …
+  Kde je                …
+  Jiné školy v okolí    …
 
-2  JAK SI ŠKOLA VEDE                                         maturita 2023–2026, inspekce 2025
-   odpověď: dvě věty (maturita, inspekce) + věta o výběru uchazečů
-   po skupinách oborů: úspěšnost · čeština percentil · zařazení 4 let jako řada teček
-                       · matematika volba a percentil
-   důkaz: pás skupiny oborů, škola zvýrazněná; tabulka let
-   inspekce: co chválí / na co si dát pozor / co se změnilo od minula · odkaz na zprávu
+1  CO TU LZE STUDOVAT
+   řádky oborů: obtížnost celou frází („Velmi těžké se dostat“), podíl, předchozí rok,
+                přihlášky, přijatí, body přijatých, tlak, štítky nový/přejmenovaný, Uložit
+   ┌ PŘIJÍMACÍ ŘÍZENÍ 2027 OD ŠKOLY (tyrkysový blok) ─────────────────┐
+   │ kritéria vlastními slovy · odkaz na kritéria · dny otevřených dveří│
+   │ · přípravné kurzy — každé „Potvrdila škola · datum“                │
+   │ prázdné: vysvětlení + web školy + Editujte: pro vedení školy       │
+   └────────────────────────────────────────────────────────────────────┘
+   obory z roku 2025 bez shody (když jsou)
+   důkaz: nabídka oborů po letech
+
+2  JAK SI ŠKOLA VEDE
+   odpověď · maturita po skupinách oborů · inspekce: shrnutí, chválí, pozor,
+   změna od minula, otázky na den otevřených dveří, seznam inspekcí s odkazy
 
 3  JAKÁ ŠKOLA JE
-   odpověď: komu škola sedne, kdo má být opatrný
-   fakta: velikost · zřizovatel a školné · podpora · bezbariérovost
-   důkaz: výuka (jazyky, učebny) · mimo výuku (sbalené) · údaje potvrzené školou
+   ŠKOLA O SOBĚ (citace, text školy) — jen když je vyplněno
+   komu škola sedne / kdo má být opatrný [shrnutí ze zprávy ČŠI]
+   fakta: velikost · zřizovatel a školné [přednost: škola] · podpora [škola + ČŠI]
+          · bezbariérovost · přestupy [škola]
+   důkaz: výuka · mimo výuku · komunikace s rodiči [starší údaj z InspIS]
 
 4  KDE JE A CO JE V OKOLÍ
-   Kde je: adresa, místo výuky, zastávka, Mapy.cz, spočítat dojezd
-   schéma okolí (signaturní prvek): škola uprostřed, kružnice 5/10/20 km,
-                                     tečky škol, souběžné zvýrazněné
-   Kam se hlásí stejní uchazeči: po oborech této školy, obtížnost, vzdálenost
-   Nejbližší školy s podobnými obory
+   kde je: adresa, zastávka, doprava, umístění v obci, v blízkosti školy,
+           ubytování [potvrdila škola]
+   schéma okolí · kam se hlásí stejní uchazeči · nejbližší gymnázia a lycea
 
-PATIČKA  Odkud údaje jsou · otevřená data
+PATIČKA
+  značky původu vysvětlené na jednom místě · otevřená data
+  „Jste z vedení školy? Doplňte kritéria, dny otevřených dveří a popis školy, zdarma.“
+  Editujte: pro vedení školy
 ```
 
-## 8. Předpoklady realizace
+### 8.1 Vizuální principy
+
+- **Stejná identita jako stránka oboru:** písmo Cabin, modrá `#0074e4` pro akce a data webu, tmavě modrá `#16325c` pro nadpisy, podklad `#f4f7fb`.
+- **Barva nese původ, ne hodnocení.** Tyrkysová `#0b7a65` na `#e6f5f1` patří jen údajům od školy; šedé značky strojovým a archivním údajům; data CERMATu a ČŠI jsou bez podbarvení.
+- **Jeden výrazný prvek:** schéma okolí. Ostatní bloky jsou klidné karty s odpovědí nahoře.
+- **Značka původu je vždy text**, ne jen barva: „Potvrdila škola“, „text školy“, „starší údaj z InspIS“.
+
+## 9. Předpoklady realizace
 
 | # | Předpoklad | Stav |
 |---|---|---|
@@ -312,10 +433,14 @@ PATIČKA  Odkud údaje jsou · otevřená data
 | S5 | Dobíhající obory z rejstříku do katalogu | použito jen v rešeršních skriptech |
 | S6 | Nahradit zvláštní podobu přehledu „V2“ pro školy s jedním oborem | |
 | S7 | Zobrazení profilu InspIS s datem snímku a bez dnů otevřených dveří | |
+| S8 | Údaje z portálu pro školy rozdělené do oddílů podle otázek, se značkou původu a prázdným stavem; pravidla přednosti z oddílu 7.2 v datové vrstvě, ne v komponentě | dnes jeden blok `SchoolPortalSection` na konci stránky |
+| S9 | Odkaz „Editujte: pro vedení školy“ na `/pro-skoly` v hlavičce, v prázdných stavech a v patičce | |
+| S10 | Banner Vibecoding nahoře na stránce školy; na nové stránce oboru doplněn 14. 9. 2026 (`59a79b1`), předtím chyběl | stránka oboru hotovo |
+| S11 | Slovník pojmů: „potvrdila škola“, „text školy“, „starší údaj z InspIS“, „shrnutí vytvořené automaticky“ jako závazné značky původu | nezapsáno |
 
 Bez S1 až S3 může stránka vzniknout s oddílem „Jak si škola vede“ jen z inspekce. Maturita je ale jediný srovnatelný údaj o výsledku studia, takže doporučuji S1 udělat před nasazením.
 
-## 9. Zvážené nepoužité sloupce
+## 10. Zvážené nepoužité sloupce
 
 | Sloupec | Rozhodnutí |
 |---|---|
@@ -335,19 +460,26 @@ Bez S1 až S3 může stránka vzniknout s oddílem „Jak si škola vede“ jen 
 | Extrakce `hard_facts.maturita` | **zavrhnout**, jakmile je S1; text ze zprávy se nedá srovnat |
 | Extrakce `school_profile.school_change_summary` | **použít** u inspekce |
 | AKKO `platnostDo` | **zavrhnout**; celostátní rušení oboru se u stávajících nabídek neprojevuje |
-| InspIS `dny_otevrenych_dveri`, `termin_prijimacich_zkousek` | **zavrhnout**, zastaralé |
+| InspIS `dny_otevrenych_dveri`, `termin_prijimacich_zkousek`, `zkousky_z_predmetu`, `forma_prijimaciho_rizeni` | **zavrhnout**, zastaralé (u Machara z let 2021 a 2022); aktuální údaj dodá jen škola přes portál |
+| InspIS `zamereni`, `clil_metoda`, `clil_jazyky`, `podpory_zaku`, `evropske_projekty`, `spoluprace_s_firmami`, `certifikaty`, `nabidka_dalsiho_vzdelavani`, `zpusob_informovani_rodicu`, `funkce_sis` | **použít jako důkaz** v „Jaká škola je“, se značkou „starší údaj z InspIS“; na staré stránce byly |
+| InspIS `umisteni_v_obci`, `linka_mhd`, `v_blizkosti_skoly`, `mista_volny_cas`, `dopravni_dostupnost` | **použít** v „Kde je“, se značkou „starší údaj z InspIS“ |
+| InspIS `pristup_k_pc`, `vyuziti_internetu_ve_vyuce`, `stipendium`, `pripravne_kurzy` | **zavrhnout**; zdroj je nikdy nevyplnil (soupis, 2.8) |
+| Katalog `cj_prumer`, `ma_prumer`, `prumer_body` přijatých | **použít** v řádku oboru; na staré stránce byly |
+| Výsledky 2026 `rank_in_type`, `delta_cj_ma` | **zavrhnout**; pořadí nahrazeno pořadím v kraji, body se mezi roky nesrovnávají |
 | Položková data JPZ | **zavrhnout**; patří ke stránce oboru, ne školy |
 | Data uchazečů `ss*_zrizovatel` | **zavrhnout**; kombinace veřejných a soukromých škol rodině neřekne nic o této škole |
 
-## 10. Otevřené otázky k rozhodnutí
+## 11. Otevřené otázky k rozhodnutí
 
-1. **Pořadí oddílů:** „Jak si škola vede“ jako druhý oddíl (doporučuji), nebo poslední podle zadání?
-2. **Maturita před nasazením:** udělat S1 až S3 před novou stránkou školy (doporučuji), nebo nasadit stránku nejdřív s inspekcí?
-3. **Nadpis „Jak si škola vede“** místo „Jak dobrá škola je“ v oddílu; otázka zůstává v rozcestníku.
-4. **Schéma okolí bez mapového podkladu**, nebo vložená mapa s dlaždicemi?
+1. **Maturita před nasazením:** udělat S1 až S3 před novou stránkou školy (doporučuji), nebo nasadit stránku nejdřív jen s inspekcí?
+2. **Umístění banneru:** mezi identitou školy a rozcestníkem (navrženo), nebo pod rozcestníkem?
+3. **Další pole portálu:** stránka by využila stravování a kontakt na výchovného poradce (návrh portálu, §3.3). Doplnit je do formuláře?
+
+Rozhodnuto 14. 9. 2026 bez výhrad k verzi 1.0: pořadí oddílů s „Jak si škola vede“ na druhém místě, nadpis „Jak si škola vede“, schéma okolí bez mapového podkladu. Obtížnost přijetí jako nadpis celou frází „Velmi těžké se dostat“.
 
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.1 | Revize po zpětné vazbě: data definovaná podle původu (oficiální data, potvrdila škola, text školy, strojové shrnutí, starší údaj z InspIS) s pravidly přednosti, údaje z portálu pro školy rozdělené k otázkám, stav vyplnění v hlavičce, odkaz „Editujte: pro vedení školy“, banner Vibecoding nahoře, doplněné údaje ze staré stránky. Nová výsledná struktura, předpoklady S8–S11. |
 | 1.0 | Pět kol: rozcestník a oddíly, pořadí a obory s obtížností přijetí, maturita přes čtyři roky se stabilitou zařazení, okolí podle souběžných přihlášek místo vzdálenosti, profil školy a stavy dat. Předpoklady S1–S7, zvážené sloupce, otevřené otázky. |
