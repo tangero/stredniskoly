@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { ProfilOboruData, PoradiVKraji } from '@/lib/obor-profil-data';
-import type { ZaznamDruhehoKola } from '@/lib/druhe-kolo';
+import { vetyDruhehoKola, VYSVETLENI_DRUHEHO_KOLA } from '@/lib/druhe-kolo-vyklad';
 import {
   ZARAZENI_POPISEK, cislo, slovniPodil, vKraji, soutezicichUchazecu, textPoradi, vetaPozadavku, zOd, zminitPozadavek,
 } from '@/lib/obor-profil';
@@ -71,13 +71,6 @@ function VetaPoradi({ p, rok, predchoziRok, podle, skupina, kraj, vysvetleni }: 
   );
 }
 
-function druheKoloText(z: ZaznamDruhehoKola | null | undefined): string {
-  if (!z) return '—';
-  if (z.stav === 'vypsano') return `vypsáno: ${cislo(z.kapacita)} míst, ${cislo(z.prihlasky)} přihlášek, přijato ${cislo(z.prijati)}`;
-  if (z.stav === 'nenaplneno_bez_2_kola') return 'obor se v 1. kole nenaplnil, 2. kolo škola nevypsala';
-  return '2. kolo nebylo potřeba';
-}
-
 export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
   const { rok, predchoziRok, aktualni: r, predchozi: p, stav, zarazeni, skupinaNazev, krajNazev } = data;
   const soutezici = soutezicichUchazecu(r) ?? 0;
@@ -85,6 +78,7 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
   const kontext = data.kontext;
   const pasma = data.pasma?.data;
   const dk = data.druheKolo;
+  const dkVety = dk ? vetyDruhehoKola(dk) : null;
   const roky = [p && predchoziRok ? { rok: predchoziRok, r: p } : null, { rok, r }].filter((x): x is { rok: number; r: typeof r } => !!x);
   const rozsahRoku = predchoziRok && p ? `${predchoziRok}–${rok}` : String(rok);
 
@@ -239,8 +233,11 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
               {!pasma?.talentova_zkouska && stav === 'nevesli_se' && pasma?.rozhodl_test !== undefined && pasma.rozhodl_test >= 0.97 && (
                 <li>V roce {data.pasma!.rok} o přijetí rozhodoval hlavně <b>výsledek jednotné zkoušky</b>; pořadí podle testu odpovídalo výsledku přijímání.</li>
               )}
-              {stav !== 'nevesli_se' && dk?.zaznam.stav === 'vypsano' && (
-                <li>Když se obor nenaplní, škola může vypsat <b>2. kolo</b>. V roce {dk.rok}: {druheKoloText(dk.zaznam)}.</li>
+              {dk && dkVety && (dk.zaznam.stav !== 'bez_2_kola' || stav === 'nevesli_se') && (
+                <li>
+                  <b>2. kolo:</b> {dkVety.hlavni}
+                  {dk.zaznam.stav === 'vypsano' && dk.zaznam.neveslo_se > 0 ? <> {dkVety.doplnky[0]}</> : null}
+                </li>
               )}
             </ul>
           </Odpoved>
@@ -284,11 +281,10 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
             )}
             {dk && (
               <Dukaz nadpis="2. kolo" rok={dk.predchozi ? `${dk.rok - 1}–${dk.rok}` : String(dk.rok)} otevreny={stav !== 'nevesli_se'}>
-                <Proc>Když se obor v 1. kole nenaplní, škola může vypsat 2. kolo. Ne vždy to udělá.</Proc>
-                <ul className="space-y-1 text-[15px] text-slate-700">
-                  {dk.predchozi && <li><b>{dk.rok - 1}:</b> {druheKoloText(dk.predchozi)}</li>}
-                  <li><b>{dk.rok}:</b> {druheKoloText(dk.zaznam)}</li>
-                </ul>
+                <p className="text-[16px] leading-relaxed text-slate-800">{dkVety!.hlavni}</p>
+                {dkVety!.doplnky.map(v => <p key={v} className="text-[15px] leading-relaxed text-slate-700">{v}</p>)}
+                {dkVety!.predchozi && <p className="text-[15px] text-slate-700">{dkVety!.predchozi}</p>}
+                <Zdroj>{VYSVETLENI_DRUHEHO_KOLA} CERMAT, výsledky 2. kola {dk.rok}.</Zdroj>
               </Dukaz>
             )}
           </div>

@@ -8,6 +8,7 @@ import { SkupinaVKraji } from '@/components/obor/grafy';
 import { UlozitObor } from '@/components/obor/UlozitObor';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { SchemaOkoli } from '@/components/skola/SchemaOkoli';
+import { vetyDruhehoKola } from '@/lib/druhe-kolo-vyklad';
 
 /**
  * Stránka školy v pěti otázkách: co tu lze studovat, jak si škola vede, jaká škola je, kde je a co je v okolí.
@@ -136,6 +137,11 @@ function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
           <span className="text-[13px] text-slate-500 tabular-nums">
             {o.prihlasky !== null ? `${cislo(o.prihlasky)} přihlášek` : ''}
             {o.cjPrijati !== null && o.maPrijati !== null ? ` · přijatí průměrně čeština ${cislo(o.cjPrijati, 1)} a matematika ${cislo(o.maPrijati, 1)} z 50 bodů` : ''}
+          </span>
+        )}
+        {o.druheKolo && (
+          <span className="text-[13px] text-slate-600" title={[vetyDruhehoKola(o.druheKolo).hlavni, ...vetyDruhehoKola(o.druheKolo).doplnky].join(' ')}>
+            {vetyDruhehoKola(o.druheKolo).kratce}
           </span>
         )}
       </div>
