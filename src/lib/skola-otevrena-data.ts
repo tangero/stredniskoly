@@ -8,6 +8,7 @@
  */
 import type { ProfilSkolyData } from './skola-profil-data';
 import { zOd, type ZarazeniObtiznosti } from './obor-profil.ts';
+import { vetyDruhehoKola } from './druhe-kolo-vyklad.ts';
 
 export const VERZE_SCHEMATU = 2;
 const WEB = 'https://www.prijimackynaskolu.cz';
@@ -85,6 +86,15 @@ export function sestavOtevrenaData(skola: SkolaZakladni, d: ProfilSkolyData, obd
       prumerne_umisteni_prijatych: o.umisteniPrijatych,
       novy_obor: o.novy || null,
       drivejsi_nazev: o.drivejsiNazev,
+      druhe_kolo: o.druheKolo ? (() => {
+        const v = vetyDruhehoKola(o.druheKolo);
+        return {
+          rok: o.druheKolo.rok,
+          ...o.druheKolo.zaznam,
+          predchozi_rok: o.druheKolo.predchozi ? { rok: o.druheKolo.rok - 1, ...o.druheKolo.predchozi } : null,
+          popis: [v.hlavni, ...v.doplnky, v.predchozi].filter(Boolean).join(' '),
+        };
+      })() : null,
     })),
     maturita: d.maturita ? {
       obdobi: 'jaro',
@@ -176,6 +186,7 @@ export function otevrenaDataMarkdown(o: OtevrenaDataSkoly): string {
     if (ob.prihlasky != null) r.push(`- **Přihlášky:** ${cislo(ob.prihlasky)}; **přijatí:** ${cislo(ob.prijati ?? 0)}`);
     if (ob.tlak_prvnich_voleb != null) r.push(`- **Tlak prvních voleb:** ${cislo(ob.tlak_prvnich_voleb, 1)}× (kolik uchazečů chtělo obor jako 1. volbu na jedno místo)`);
     if (ob.cj_prijati != null && ob.ma_prijati != null) r.push(`- **Průměr přijatých:** čeština ${cislo(ob.cj_prijati, 1)}, matematika ${cislo(ob.ma_prijati, 1)} z 50 bodů`);
+    if (ob.druhe_kolo) r.push(`- **2. kolo:** ${ob.druhe_kolo.popis}`);
     r.push(`- **Detail:** ${ob.url}`, '');
   }
 

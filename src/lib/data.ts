@@ -284,6 +284,21 @@ export async function getSchoolPageType(slug: string): Promise<{
     }
   }
 
+  // Obory bez zaměření, které přibyly až v novějším ročníku katalogu, nejsou v school_analysis.json,
+  // a proto je smyčka výše nenajde; stránky školy na ně přitom odkazují stejným tvarem adresy.
+  const pocetOboruPrograms = new Map<string, number>();
+  for (const program of programs) {
+    if (!program.zamereni) pocetOboruPrograms.set(program.obor, (pocetOboruPrograms.get(program.obor) || 0) + 1);
+  }
+  for (const program of programs) {
+    if (program.zamereni) continue;
+    const sDelkou = (pocetOboruPrograms.get(program.obor) || 0) > 1;
+    const oborSlug = `${redizo}-${createSlug(firstSchool.nazev, program.obor, undefined, sDelkou ? program.delka_studia : undefined)}`;
+    if (slug === oborSlug) {
+      return { type: 'program', redizo, school: firstSchool, program };
+    }
+  }
+
   // Fallback - vrátit první školu jako přehled
   return { type: 'overview', redizo, school: firstSchool, program: null };
 }

@@ -1,0 +1,32 @@
+name: Zpráva do Telegramu
+
+# Ruční zpráva správci přes bota datové linky (stejné tajné proměnné jako datova-linka.yml).
+# Vstup je v logu veřejného repozitáře vidět: posílat jen necitlivé zprávy, například výsledek nasazení.
+
+on:
+  workflow_dispatch:
+    inputs:
+      text:
+        description: "Text zprávy"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  zprava:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      TEXT: ${{ inputs.text }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Odeslat
+        run: |
+          cd scripts
+          python3 -c "import os; from linka import komunikace; komunikace.posli_telegram([os.environ['TEXT']])"

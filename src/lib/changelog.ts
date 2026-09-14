@@ -10,6 +10,17 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '2.10.1',
+    date: '14. 9. 2026',
+    title: 'Druhé kolo na nových stránkách',
+    changes: [
+      { type: 'improve', text: 'Stránka oboru ukazuje u 2. kola, kolik uchazečů se nevešlo, zda se nikdo nepřihlásil, proč škola nepřijala všechny a nejnižší výsledek přijatých, s předchozím rokem' },
+      { type: 'new', text: 'Stránka školy u každého oboru uvádí, zda škola vypsala 2. kolo a kolik přijala' },
+      { type: 'new', text: 'Otevřená data školy obsahují údaje o 2. kole u každého oboru' },
+      { type: 'fix', text: 'Obory bez zaměření, které přibyly v nabídce 2026, mají vlastní stránku; odkaz dříve vedl na přehled školy' },
+    ],
+  },
+  {
     version: '2.10.0',
     date: '14. 9. 2026',
     title: 'Nová stránka školy',
