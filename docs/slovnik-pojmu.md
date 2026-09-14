@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.2 · 14. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.3 · 14. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -50,7 +50,23 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **spolužáci** | přijatí na obor, u otázky „jak se tu studuje“ | není potřeba | třída, kolektiv |
 | **pořadí v kraji podle zájmu**, **pořadí v kraji podle výsledků přijatých** | pořadí oboru mezi obory stejného typu a délky v kraji (Praha samostatně) | „2. z 32 osmiletých gymnázií ve Středočeském kraji podle výsledků přijatých“; vždy s rokem | žebříček, nejlepší, top, hodnocení školy |
 
-## 4. Slova, která se nepoužívají vůbec
+## 4. Škola, maturita a původ údajů
+
+| Pojem na stránce | Význam | Vysvětlení při prvním výskytu v bloku | Nepoužívat |
+|---|---|---|---|
+| **maturanti** | žáci, kteří v daném roce konali společnou část maturity | „maturanti, tedy žáci, kteří v roce … konali maturitu“ | absolventi (ne všichni maturanti školu dokončí), studenti |
+| **společná část maturity** | didaktické testy z češtiny, matematiky nebo cizího jazyka, které zadává CERMAT | „testy, které píší maturanti ve všech školách stejně“ | státní maturita, celá maturita |
+| **skupina oborů** | skupina oborů `SMO16`, například osmileté gymnázium; srovnává se jen uvnitř ní | „školy stejné skupiny oborů, tedy například jen osmiletá gymnázia“ | typ školy (když jde o SMO16), kategorie |
+| **nad skupinou**, **nerozlišitelné od skupiny**, **pod skupinou** | zařazení proti mediánu škol téže skupiny oborů s ohledem na velikost ročníku | „u malého ročníku bývá výsledek nerozlišitelný“; vždy s počtem let | lepší, horší, nadprůměrná škola, kvalitní |
+| **jak si škola vede** | nadpis oddílu s maturitou a inspekcí | není potřeba | kvalita školy, hodnocení školy |
+| **souběžní uchazeči**, **kam se hlásí stejní uchazeči** | uchazeči, kteří měli na přihlášce tento obor i obor jiné školy | „uchazeči, kteří měli na přihlášce i tento obor“ | konkurence, konkurenční škola |
+| **vzdušnou čarou** | vzdálenost bez ohledu na dopravu | vždy u vzdálenosti; dojezd je jiný údaj | daleko, blízko (bez čísla) |
+| **Potvrdila škola · datum** | údaj zadala škola v portálu pro školy a prošel kontrolou | značka u údaje, v patičce vysvětlení | ověřeno, oficiální |
+| **text školy** | popis školy vlastními slovy, neověřujeme | „text školy, neověřujeme“ | informace o škole, fakta |
+| **shrnutí vytvořené automaticky ze zprávy ČŠI** | strojová extrakce z inspekční zprávy | značka s datem zprávy | hodnocení inspekce (když jde o shrnutí) |
+| **starší údaj z InspIS** | údaj ze starého profilu InspIS, export 11. 2. 2026 | značka u údaje | aktuální, potvrzeno |
+
+## 5. Slova, která se nepoužívají vůbec
 
 | Slovo | Proč | Místo něj |
 |---|---|---|
@@ -59,11 +75,13 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | hranice přijetí | nikdo ji nezveřejňuje (slovník ukazatelů) | nejnižší výsledek přijatých, hranice úspěšnosti |
 | žebříček, nejlepší škola | web neřadí školy podle kvality; řadí jen obory stejného typu v kraji podle zájmu nebo výsledků přijatých | pořadí v kraji podle zájmu, pořadí v kraji podle výsledků přijatých |
 | obtížnost studia, kvalita školy (z přijímacích dat) | přijímací data popisují vstup, ne studium | spolužáci přicházejí s výsledky kolem …; inspekce |
+| kvalitní škola, nejlepší škola (z maturity) | maturita popisuje úroveň ročníku, ne kvalitu výuky (maturitní návrh §8, podmínka 9) | nad školami stejné skupiny oborů ve … ze 4 let |
 
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.3 | Pojmy pro stránku školy: maturanti, společná část, skupina oborů, zařazení proti skupině, souběžní uchazeči, vzdušnou čarou a značky původu údajů. |
 | 1.2 | Obtížnost přijetí jako samostatný nadpis celou frází „Velmi těžké se dostat“. |
 | 1.1 | Pořadí v kraji podle zájmu a podle výsledků přijatých jako povolený pojem; „žebříček“ zůstává zakázaný. |
 | 1.0 | Založení: pojmy pro uchazeče a výsledek přijímání (včetně „soutěžící uchazeči“ a „nedosáhli požadavku školy“), přihlášku, výsledky a obtížnost; pravidlo vysvětlení při prvním výskytu v každém bloku; zakázaná slova. |

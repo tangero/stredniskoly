@@ -336,12 +336,15 @@
         "jistota": "neznamo",
         "zduvodneni": "Soubor MZ2026jap zatím neexistuje; termín importu není naplánovaný."
       },
-      "po_prepnuti": "Maturitní výsledky předchozích let jako řada vývoje.",
+      "po_prepnuti": "Předchozí jarní ročníky zůstávají ve výstupu; stránka školy z nich počítá počet let nad skupinou oborů.",
       "vystupy": [],
       "ukazatele": [
         "Úspěšnost maturity",
         "Průměrný procentní skór maturity",
-        "Odchylka od očekávaného výsledku"
+        "Odchylka od očekávaného výsledku",
+        "Zařazení proti skupině oborů",
+        "Počet let nad skupinou oborů",
+        "Podíl volby předmětu u maturity"
       ],
       "dostupne": [
         {
@@ -357,9 +360,9 @@
         "katalog": "https://data.cermat.cz/maturitni-zkouska/agregovana-data.html",
         "detekce": "HTTP HEAD a katalogová stránka.",
         "revize": "Soubor jaro 2026 byl přepsán 18. 8. 2026.",
-        "import": "Jen analytický scripts/maturita_prototype.py, který nezapisuje do public/.",
-        "automatizace": "detekce",
-        "lidsky_krok": "Import do webu podle docs/maturitni-vysledky-a-kvalita-skoly-2027.md.",
+        "import": "scripts/build-maturita-skoly.py; v datové lince zpracovatel cermat-maturita stáhne k jarnímu souboru tři předchozí jarní ročníky a doplní je do stávajícího výstupu. Stav po podzimu (jap) se nepřebírá.",
+        "automatizace": "priprava",
+        "lidsky_krok": "Schválit úlohu, zkontrolovat počty v pull requestu, po sloučení zapsat výstup public/maturita_skoly.json do vystupy a kontrolu období (meta.nejnovejsi_rok), přepnout období v registru a zapojit stránku školy podle docs/stranka-skoly-2027.md.",
         "sledovat": [
           "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ{rok}j_SC_skolobory.xlsx",
           "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ{rok}jap_SC_skolobory.xlsx"

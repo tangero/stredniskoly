@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.17 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.18 · 14. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -385,7 +385,7 @@ Typická změna mezi 2025 a 2026, dolní čtvrtina / medián / horní čtvrtina:
 
 ## 5. Maturitní výsledky
 
-Analytický návrh je schválený v [maturitní výsledky a kvalita školy](maturitni-vysledky-a-kvalita-skoly-2027.md). **Do runtime zatím nic z toho importováno není**, takže názvy níže jsou zatím kontrakt, ne existující pole.
+Analytický návrh je schválený v [maturitní výsledky a kvalita školy](maturitni-vysledky-a-kvalita-skoly-2027.md). Od 14. 9. 2026 vzniká soubor `public/maturita_skoly.json` skriptem `scripts/build-maturita-skoly.py` přes datovou linku (sada `cermat-maturita`); pole mají názvy z kontraktu níže. **Web ho zatím nečte**, dokud se v registru nepřepne období sady.
 
 ### Granularita, která rozhoduje o všem
 CERMAT zveřejňuje maturitu za právnickou osobu (`redizo`) a za školu ve skupině oborů (`redizo_smo16`). Skupina `SMO16` **není** kód oboru `KKOV`.
@@ -410,8 +410,27 @@ Výzkumný ukazatel, který by zohlednil vstupní úroveň žáků. **Zatím nee
 
 Vysoký maturitní výsledek může být důsledkem toho, kdo do školy nastoupil. Bez vstupního kontextu se nečte jako zásluha školy.
 
+### Zařazení proti skupině oborů
+Pole `cj.groupComparison` u školy ve skupině oborů: `state` (`above`, `indistinguishable`, `below`), `interval`, `medianPercentScore`, `schools`.
+
+**Výpočet.** Referencí je medián průměrných skórů z češtiny všech škol téže skupiny oborů `SMO16`, téhož roku a jarního období, které mají aspoň 10 konajících; každá škola jeden hlas. U školy s aspoň 10 konajícími se spočítá směrodatná chyba `SE = standardDeviation / √took` a interval `averagePercentScore ± 1,96 · SE`. Interval celý nad mediánem je `above`, celý pod ním `below`, jinak `indistinguishable`. Zdroj: CERMAT, `MZ{rok}j_SC_skolobory.xlsx`. Návrh §5.2.
+
+**Na stránce:** „nad školami stejné skupiny oborů“, „nerozlišitelné od skupiny“, „pod skupinou“. Jen u češtiny, protože jen ji píše celý ročník.
+
+**Neříká**, jak dobře škola učí: výsledek ovlivňuje hlavně to, koho škola přijala. U malé školy skončí většina výsledků jako nerozlišitelné, což je správně. **Stabilita:** mezi jary 2025 a 2026 stejné zařazení u 63,1 % škol s aspoň 30 maturanty, přeskok mezi krajními stavy u 9 z 928 ([stránka školy](stranka-skoly-2027.md), oddíl 4.2). Proto se na stránce neukazuje jeden rok, ale počet let nad skupinou.
+
+### Počet let nad skupinou oborů
+Počet jarních období z posledních čtyř zveřejněných, kdy měla škola ve skupině oborů zařazení `above`. Počítá se při zobrazení z `public/maturita_skoly.json`; roky bez zařazení (méně než 10 konajících, škola ve skupině nebyla) se uvádějí zvlášť, ne jako „ne nad skupinou“.
+
+**Neříká**, že se škola zlepšuje nebo zhoršuje; ze čtyř bodů jde nanejvýš říct „v posledních dvou letech nad skupinou, předtím pod ní“.
+
+### Podíl volby předmětu u maturity
+Pole `ma.subjectChoiceShare`: podíl maturantů, kteří si ve společné části zvolili matematiku místo cizího jazyka, jak ho zveřejňuje CERMAT. Zveřejňuje se i u méně než 10 konajících matematiku, protože se počítá z celého ročníku.
+
+**Na stránce vždy ve dvojici** s průměrným percentilem z matematiky: „matematiku volilo 48 % maturantů, jejich percentil 64“. Samotný percentil z matematiky **neříká** nic o ročníku, když ji volí jen nejlepší žáci (návrh §5.1).
+
 ### Meze zveřejnění
-Při počtu maturantů pod 10 se zveřejňují jen počty, mezi 10 a 29 s upozorněním, od 30 běžně. U malých skupin se nedopočítávají podíly, které by rekonstruovaly skryté údaje.
+Při počtu maturantů pod 10 se zveřejňují jen počty, mezi 10 a 29 s upozorněním, od 30 běžně. U malých skupin se nedopočítávají podíly, které by rekonstruovaly skryté údaje. V `public/maturita_skoly.json` pole `quality`: `complete` (aspoň 30 konajících), `small_sample` (10 až 29), `counts_only` (pod 10, jen počty a podíl volby předmětu), `unavailable`.
 
 ## 6. Ukazatele bez doloženého výpočtu
 
@@ -451,6 +470,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.18 | Maturita: zařazení proti skupině oborů, počet let nad skupinou, podíl volby předmětu; kódy kvality v `public/maturita_skoly.json`; soubor vzniká přes datovou linku. |
 | 1.17 | Doplněno pořadí v kraji podle zájmu a podle výsledků přijatých, s prahem 10 nabídek a doklady stability. |
 | 1.16 | Odkaz na slovník pojmů; pojem „soutěžící uchazeči“ pro texty stránek. |
 | 1.15 | Vysvětleno nesplnění podmínek podle metodiky MŠMT; doplněna odvozená hranice úspěšnosti, výsledek uchazečů o obor a obory výš a níž na přihlášce. |

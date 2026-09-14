@@ -128,25 +128,25 @@ Ověřil jsem, jak je tohle zařazení stabilní mezi jarem 2025 a jarem 2026 (s
 
 | Velikost maturitního ročníku | Škol ve skupině oborů | Stejné zařazení v obou letech | Přeskok z „nad“ na „pod“ nebo zpět |
 |---|---:|---:|---:|
-| 30 a víc | 929 | 62,8 % | 10 |
-| 10 až 29 | 1 145 | 61,1 % | 19 |
+| 30 a víc | 928 | 63,1 % | 9 |
+| 10 až 29 | 1 083 | 61,2 % | 20 |
 
-Jednoletý stav se tedy u třetiny škol mění, ale téměř nikdy mezi krajními stavy. Ve čtyřech letech 2023 až 2026 má stejné zařazení aspoň třikrát 1 556 z 2 050 škol ve skupině oborů.
+Jednoletý stav se tedy u třetiny škol mění, ale téměř nikdy mezi krajními stavy. Ve čtyřech letech 2023 až 2026 má stejné zařazení aspoň třikrát 1 357 z 1 783 škol ve skupině oborů, které mají zařazení ve všech čtyřech letech. Čísla jsou spočítaná nad výstupem `scripts/build-maturita-skoly.py`, tedy s referencí ze škol s aspoň 10 konajícími.
 
 **Závěr:** zařazení jednoho roku samo o sobě neobstojí. Odpověď se opírá o **počet let ze čtyř**, například „v češtině nad skupinou osmiletých gymnázií ve 3 ze 4 let“.
 
-Machar podle stažených souborů:
+Machar podle výstupu `scripts/build-maturita-skoly.py` nad staženými soubory:
 
 | Skupina oborů | Rok | Maturanti | Úspěšně | Čeština, percentil | Medián skupiny | Zařazení | Matematiku volilo | Matematika, percentil |
 |---|---|---:|---:|---:|---:|---|---:|---:|
 | osmileté gymnázium | 2023 | 27 | 100 % | 84,7 | 75,6 | nad | 52 % | 62,7 |
-| | 2024 | 30 | 100 % | 79,0 | 75,8 | nerozlišitelné | 37 % | 54,3 |
-| | 2025 | 30 | 96,8 % | 86,3 | 77,2 | nad | 42 % | 66,1 |
-| | 2026 | 31 | 100 % | 83,9 | 77,0 | nad | 48 % | 64,2 |
-| čtyřleté gymnázium | 2023 | 31 | 93,8 % | 55,9 | 67,4 | pod | 25 % | 39,4 |
-| | 2024 | 28 | 86,2 % | 62,0 | 67,9 | nerozlišitelné | 17 % | 15,7 |
-| | 2025 | 30 | 100 % | 80,2 | 68,3 | nad | 40 % | 53,9 |
-| | 2026 | 29 | 100 % | 78,3 | 67,4 | nad | 52 % | 54,0 |
+|  | 2024 | 30 | 100 % | 79,0 | 76,0 | nerozlišitelné | 37 % | 54,3 |
+|  | 2025 | 30 | 96,8 % | 86,3 | 77,2 | nad | 42 % | 66,1 |
+|  | 2026 | 31 | 100 % | 83,9 | 77,3 | nad | 48 % | 64,2 |
+| čtyřleté gymnázium | 2023 | 31 | 93,8 % | 55,9 | 67,6 | pod | 25 % | nezveřejněno, 8 konajících |
+|  | 2024 | 28 | 86,2 % | 62,0 | 68,3 | nerozlišitelné | 17 % | nezveřejněno, 5 konajících |
+|  | 2025 | 30 | 100 % | 80,2 | 68,4 | nad | 40 % | 53,9 |
+|  | 2026 | 29 | 100 % | 78,3 | 67,4 | nad | 52 % | 54,0 |
 
 Technické lyceum v maturitních datech není: podle inspekční zprávy ho škola vyučuje od školního roku 2024/2025, v datech přijímaček je od roku 2025, a maturanty zatím nemá.
 
@@ -166,7 +166,7 @@ Inspekce je jediný zdroj o tom, **jak se učí**. U Machara z ledna 2025 chvál
 |---|---|---|
 | Nadpis oddílu „Jak si škola vede“ | **použít** | otázka „jak dobrá škola je“ zůstává v rozcestníku; nadpis neslibuje známku, kterou data neunesou |
 | Odpověď ve dvou větách: maturita a inspekce | **použít** | dva nezávislé zdroje, oba s rokem |
-| Maturitní zařazení proti skupině oborů jako počet let ze čtyř | **použít** | jeden rok je nestabilní (62,8 %); u Machara by jediný rok 2026 schoval, že čtyřleté gymnázium bylo v roce 2023 pod skupinou |
+| Maturitní zařazení proti skupině oborů jako počet let ze čtyř | **použít** | jeden rok je nestabilní (63,1 %); u Machara by jediný rok 2026 schoval, že čtyřleté gymnázium bylo v roce 2023 pod skupinou |
 | Percentil z češtiny, úspěšnost s počtem maturantů | **použít** | čeština je jediný test celého ročníku |
 | Matematika jako dvojice „volilo X %, percentil Y“ | **použít** | percentil sám zkresluje |
 | Pás skupiny: všechny školy skupiny jako tečky, škola zvýrazněná | **použít jako důkaz** | poloha bez seznamu škol (návrh, §6) |
