@@ -62,6 +62,13 @@ export const PORTAL_POLE: PortalPoleDef[] = [
     maxLength: 300,
   },
   {
+    key: 'stravovani',
+    label: 'Stravování',
+    napoveda: 'Např. „vlastní jídelna, obědy za 45 Kč, výběr ze dvou jídel“ nebo „jídelna sousední školy“.',
+    typ: 'text',
+    maxLength: 300,
+  },
+  {
     key: 'skolne',
     label: 'Školné a poplatky',
     napoveda: 'Roční školné, případně další poplatky. U bezplatného vzdělávání napište „zdarma“.',
@@ -74,6 +81,13 @@ export const PORTAL_POLE: PortalPoleDef[] = [
     napoveda: 'Jak škola pracuje se žáky SVP a jaké jsou podmínky upravených testů v praxi.',
     typ: 'text',
     maxLength: 500,
+  },
+  {
+    key: 'kontakt_vychovny_poradce',
+    label: 'Kontakt na výchovného poradce',
+    napoveda: 'Funkční e-mail nebo telefon pro rodiče, např. „poradce@skola.cz, konzultace po dohodě“. Jméno uvádět nemusíte.',
+    typ: 'text',
+    maxLength: 300,
   },
   {
     key: 'prestupy',

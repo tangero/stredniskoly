@@ -172,3 +172,15 @@ test('definice polí portálu mají unikátní klíče a limity', () => {
     assert.ok(p.label.length > 0 && p.maxLength > 0);
   }
 });
+
+test('nová nepovinná pole stravování a kontakt na výchovného poradce', () => {
+  const keys = PORTAL_POLE.map((p) => p.key);
+  assert.ok(keys.includes('stravovani') && keys.includes('kontakt_vychovny_poradce'));
+  const v = validatePortalPayload({ ...PAYLOAD, udaje: { stravovani: 'vlastní jídelna', kontakt_vychovny_poradce: 'poradce@skola.cz' } });
+  assert.equal(v.ok, true);
+  assert.equal(v.udaje.stravovani, 'vlastní jídelna');
+  const prazdne = validatePortalPayload({ ...PAYLOAD, udaje: { stravovani: '' }, udaje_sedi: true });
+  assert.equal(prazdne.ok, true);
+  const dlouhe = validatePortalPayload({ ...PAYLOAD, udaje: { kontakt_vychovny_poradce: 'x'.repeat(301) } });
+  assert.equal(dlouhe.ok, false);
+});

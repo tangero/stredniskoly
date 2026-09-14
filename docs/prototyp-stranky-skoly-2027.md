@@ -2,6 +2,8 @@
 
 Verze 1.2 · 13. 9. 2026 · Prototyp, ne produkční kód.
 
+> Realizace pokračuje podle schváleného dokumentu [Grafy na stránce školy a oboru](grafy-skoly-a-oboru-2027.md), který přebírá obsah tohoto prototypu a doplňuje vývoj v čase.
+
 Cíl: ověřit, jestli jde stránku postavit tak, aby rodič a žák poznali, **jak těžké je se na školu dostat**, **jak těžké bude ji vystudovat** a **jaké jsou na ní podmínky**.
 
 Podklad: [slovník ukazatelů](slovnik-ukazatelu.md), [návrh prezentace dat](navrh-prezentace-dat-skoly-2027.md), [maturitní výsledky](maturitni-vysledky-a-kvalita-skoly-2027.md).

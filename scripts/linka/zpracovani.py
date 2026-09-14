@@ -99,6 +99,7 @@ def srovnej_pasma(novy: Path, stavajici: Path) -> dict:
 def dopad_uchazeci(rok: int, zobrazene_obdobi: str | None) -> str:
     """Věta pro oznámení a popis PR. Web čte jen pásma zobrazeného roku; souběžné přihlášky nezobrazuje."""
     soubeh = f"public/soubeh_prihlasek_{rok}.json web nezobrazuje."
+    soubeh += f" Stránka oboru čte public/kontext_prihlasek_{rok}.json podle zobrazeného období."
     if str(rok) == str(zobrazene_obdobi):
         return (
             f"Přepíše public/pasma_prijeti_{rok}.json, který čte stránka oboru; po sloučení se tam změní čísla. "
@@ -117,8 +118,10 @@ def zpracuj_uchazeci(uloha: dict, soubor: Path, prace: Path, struktura: dict) ->
     rok = int(uloha["obdobi"])
     pasma = prace / f"pasma_prijeti_{rok}.json"
     soubeh = prace / f"soubeh_prihlasek_{rok}.json"
+    kontext = prace / f"kontext_prihlasek_{rok}.json"
     vystup_pasma = spust("build-pasma-prijeti.py", "--zdroj", str(soubor), "--vystup", str(pasma), "--rok", str(rok))
     vystup_soubeh = spust("build-soubeh-prihlasek.py", "--zdroj", str(soubor), "--vystup", str(soubeh), "--rok", str(rok))
+    vystup_kontext = spust("build-kontext-prihlasek.py", "--zdroj", str(soubor), "--vystup", str(kontext), "--rok", str(rok))
     srovnani = srovnej_pasma(pasma, jadro.KOREN / "public" / f"pasma_prijeti_{uloha['zobrazene_obdobi']}.json")
     # Pojistka proti tichému selhání: v září 2026 změnil CERMAT příznak přijetí z čísla na text
     # a zpracování vrátilo nula oborů, aniž by skončilo chybou.
@@ -131,11 +134,12 @@ def zpracuj_uchazeci(uloha: dict, soubor: Path, prace: Path, struktura: dict) ->
         )
     return {
         "zpracovatel": "cermat-uchazeci-kolo1",
-        "vystupy_skriptu": [vystup_pasma, vystup_soubeh],
+        "vystupy_skriptu": [vystup_pasma, vystup_soubeh, vystup_kontext],
         "srovnani": srovnani,
         "predani": {
             str(pasma): f"public/pasma_prijeti_{rok}.json",
             str(soubeh): f"public/soubeh_prihlasek_{rok}.json",
+            str(kontext): f"public/kontext_prihlasek_{rok}.json",
         },
         "dopad": dopad_uchazeci(rok, uloha.get("zobrazene_obdobi")),
     }
@@ -178,7 +182,63 @@ def zpracuj_druhe_kolo(uloha: dict, soubor: Path, prace: Path, struktura: dict, 
     }
 
 
-ZPRACOVATELE = {"cermat-uchazeci-kolo1": zpracuj_uchazeci, "cermat-kolo2-agregaty": zpracuj_druhe_kolo}
+def zpracuj_maturitu(uloha: dict, soubor: Path, prace: Path, struktura: dict, stahni_fn=jadro.stahni) -> dict:
+    """Jarní maturitní výsledky: nový rok a tři předchozí, aby zařazení proti skupině šlo číst přes čtyři roky."""
+    if "jap_" in uloha["url"]:
+        return {
+            "zpracovatel": "cermat-maturita",
+            "vystupy_skriptu": [],
+            "srovnani": {"popis": "stav po podzimním období se na web nepřebírá; web ukazuje jen jarní období"},
+            "predani": {},
+            "dopad": "Nic se nepředá. Stav po podzimu a jaro se podle maturitního návrhu nesčítají a nepřekrývají.",
+        }
+    rok = int(uloha["obdobi"])
+    soubory = {rok: soubor}
+    for starsi in range(rok - 3, rok):
+        url = uloha["url"].replace(f"MZ{rok}j_", f"MZ{starsi}j_")
+        try:
+            soubory[starsi] = Path(stahni_fn(url, prace / f"MZ{starsi}j_SC_skolobory.xlsx")["soubor"])
+        except Exception:  # starší ročník chybí: zůstane ze stávajícího výstupu, pokud tam je
+            continue
+    vystup = prace / "maturita_skoly.json"
+    stavajici = jadro.KOREN / "public" / "maturita_skoly.json"
+    argumenty = [a for r, cesta in sorted(soubory.items()) for a in ("--soubor", f"{r}={cesta}")]
+    if stavajici.exists():
+        argumenty += ["--zaklad", str(stavajici)]
+    zprava = spust("build-maturita-skoly.py", *argumenty, "--vystup", str(vystup))
+    novy = json.loads(vystup.read_text(encoding="utf-8"))
+    predchozi = json.loads(stavajici.read_text(encoding="utf-8")) if stavajici.exists() else None
+
+    def se_zarazenim(data: dict, r: int) -> int:
+        return sum(1 for s in data["skoly"].values() for sk in s["roky"].get(str(r), {}).values()
+                   if sk.get("cj", {}).get("groupComparison"))
+
+    skol_nove = sum(1 for s in novy["skoly"].values() if str(rok) in s["roky"])
+    rok_webu = predchozi["meta"]["nejnovejsi_rok"] if predchozi else None
+    skol_web = sum(1 for s in predchozi["skoly"].values() if str(rok_webu) in s["roky"]) if predchozi else 0
+    # Pojistka proti tichému selhání, stejně jako u dat uchazečů.
+    if skol_nove == 0:
+        raise ValueError("zpracování nevrátilo žádnou školu; zkontroluj listy a hlavičku souboru")
+    min_podil = float(os.environ.get("LINKA_MIN_PODIL_OBORU", "0.5"))
+    if skol_web and skol_nove < min_podil * skol_web:
+        raise ValueError(f"podezřele málo škol: {skol_nove} proti {skol_web} v roce {rok_webu} na webu")
+    return {
+        "zpracovatel": "cermat-maturita",
+        "vystupy_skriptu": [zprava],
+        "srovnani": {
+            "popis": f"roky {', '.join(str(r) for r in novy['meta']['roky'])}; v roce {rok} škol {skol_nove}, "
+                     f"škol ve skupině oborů se zařazením proti skupině {se_zarazenim(novy, rok)}"
+                     + (f"; na webu rok {rok_webu} se {skol_web} školami" if predchozi else "; na webu zatím nic"),
+        },
+        "predani": {str(vystup): "public/maturita_skoly.json"},
+        "dopad": "Přepíše public/maturita_skoly.json. Web maturitu ukáže až po přepnutí období sady cermat-maturita v registru "
+                 "a jen na stránce školy; čísla ve slovníku a v dokladech přepočítej nad týmž souborem.",
+    }
+
+
+ZPRACOVATELE = {"cermat-uchazeci-kolo1": zpracuj_uchazeci, "cermat-kolo2-agregaty": zpracuj_druhe_kolo,
+                "cermat-maturita": zpracuj_maturitu}
+S_DALSIMI_SOUBORY = (zpracuj_druhe_kolo, zpracuj_maturitu)
 
 
 def priprav(uloha: dict, registr: dict, stahni_fn=jadro.stahni) -> None:
@@ -218,7 +278,7 @@ def priprav(uloha: dict, registr: dict, stahni_fn=jadro.stahni) -> None:
 
         zpracovatel = ZPRACOVATELE.get(uloha["sada"])
         if zpracovatel and struktura is not None:
-            if zpracovatel is zpracuj_druhe_kolo:
+            if zpracovatel in S_DALSIMI_SOUBORY:
                 priprava["zpracovani"] = zpracovatel(uloha, soubor, prace, struktura, stahni_fn=stahni_fn)
             else:
                 priprava["zpracovani"] = zpracovatel(uloha, soubor, prace, struktura)

@@ -31,7 +31,8 @@
       },
       "po_prepnuti": "Srovnání ročníků na stránce oboru.",
       "vystupy": [
-        "public/schools_data.json"
+        "public/schools_data.json",
+        "public/souhrny_kolo1.json"
       ],
       "ukazatele": [
         "Kapacita míst"
@@ -70,7 +71,8 @@
       "po_prepnuti": "Srovnání ročníků na stránce oboru.",
       "vystupy": [
         "public/applications_2026.json",
-        "public/schools_data.json"
+        "public/schools_data.json",
+        "public/souhrny_kolo1.json"
       ],
       "kontrola_obdobi": {
         "soubor": "public/applications_2026.json",
@@ -118,7 +120,8 @@
         "public/cermat_results_2026.json",
         "public/cermat_results_meta.json",
         "public/applications_2026.json",
-        "public/schools_data.json"
+        "public/schools_data.json",
+        "public/souhrny_kolo1.json"
       ],
       "kontrola_obdobi": {
         "soubor": "public/cermat_results_meta.json",
@@ -129,7 +132,13 @@
         "Nepřijatí kvůli kapacitě",
         "Nepřijatí pro nesplnění podmínek",
         "Přijati na vyšší prioritu",
-        "Průměr JPZ přijatých"
+        "Průměr JPZ přijatých",
+        "Přijatí podle priority",
+        "Vzdali se přijetí",
+        "Průměrné percentilové umístění přijatých",
+        "Průměrné percentilové umístění uchazečů",
+        "Podíl přijatých ze soutěžících",
+        "Obtížnost přijetí slovy"
       ],
       "aktualizace": {
         "zdroj": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ{rok}_kolo1_skolobory_vysledky.xlsx",
@@ -174,7 +183,8 @@
         "public/pasma_prijeti_2025.json",
         "public/soubeh_prihlasek_2025.json",
         "data/jpz_stats_2025.json",
-        "public/schools_data.json"
+        "public/schools_data.json",
+        "public/kontext_prihlasek_2025.json"
       ],
       "kontrola_obdobi": {
         "soubor": "public/pasma_prijeti_2025.json",
@@ -190,7 +200,10 @@
         "Pásmo nejistoty",
         "Percentil nejnižšího přijatého",
         "Hustota u hranice",
-        "Kohorty přijatých"
+        "Kohorty přijatých",
+        "Odvozená hranice úspěšnosti",
+        "Výsledek uchazečů o obor",
+        "Obory výš a níž na přihlášce"
       ],
       "dostupne": [
         {
@@ -323,12 +336,15 @@
         "jistota": "neznamo",
         "zduvodneni": "Soubor MZ2026jap zatím neexistuje; termín importu není naplánovaný."
       },
-      "po_prepnuti": "Maturitní výsledky předchozích let jako řada vývoje.",
+      "po_prepnuti": "Předchozí jarní ročníky zůstávají ve výstupu; stránka školy z nich počítá počet let nad skupinou oborů.",
       "vystupy": [],
       "ukazatele": [
         "Úspěšnost maturity",
         "Průměrný procentní skór maturity",
-        "Odchylka od očekávaného výsledku"
+        "Odchylka od očekávaného výsledku",
+        "Zařazení proti skupině oborů",
+        "Počet let nad skupinou oborů",
+        "Podíl volby předmětu u maturity"
       ],
       "dostupne": [
         {
@@ -344,9 +360,9 @@
         "katalog": "https://data.cermat.cz/maturitni-zkouska/agregovana-data.html",
         "detekce": "HTTP HEAD a katalogová stránka.",
         "revize": "Soubor jaro 2026 byl přepsán 18. 8. 2026.",
-        "import": "Jen analytický scripts/maturita_prototype.py, který nezapisuje do public/.",
-        "automatizace": "detekce",
-        "lidsky_krok": "Import do webu podle docs/maturitni-vysledky-a-kvalita-skoly-2027.md.",
+        "import": "scripts/build-maturita-skoly.py; v datové lince zpracovatel cermat-maturita stáhne k jarnímu souboru tři předchozí jarní ročníky a doplní je do stávajícího výstupu. Stav po podzimu (jap) se nepřebírá.",
+        "automatizace": "priprava",
+        "lidsky_krok": "Schválit úlohu, zkontrolovat počty v pull requestu, po sloučení zapsat výstup public/maturita_skoly.json do vystupy a kontrolu období (meta.nejnovejsi_rok), přepnout období v registru a zapojit stránku školy podle docs/stranka-skoly-2027.md.",
         "sledovat": [
           "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ{rok}j_SC_skolobory.xlsx",
           "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ{rok}jap_SC_skolobory.xlsx"
@@ -431,7 +447,7 @@
       "nazev": "Rejstřík škol MŠMT, export CSV",
       "dokumentace": "docs/zdroje-dat.md#24-rejstřík-škol-mšmt",
       "cyklus": "rucni",
-      "pouziti": "analyza",
+      "pouziti": "web",
       "zobrazeno": {
         "obdobi": "2026-02-11",
         "soubor": "data/Rejstrik_skol/SkolyAMista.csv"
@@ -445,7 +461,8 @@
       "obnovit_nejpozdeji": "2027-02-11",
       "po_prepnuti": "Nahrazuje se celý.",
       "vystupy": [
-        "docs/podklady/overeni-pasem-prijeti-2024-2025.json"
+        "docs/podklady/overeni-pasem-prijeti-2024-2025.json",
+        "public/skoly_web.json"
       ],
       "ukazatele": [],
       "aktualizace": {
@@ -749,6 +766,11 @@
     "Nevypsané 2. kolo u nenaplněného oboru": [
       "cermat-kolo2-agregaty",
       "cermat-vysledky"
+    ],
+    "Pořadí v kraji": [
+      "cermat-vysledky",
+      "cermat-prihlasky",
+      "cermat-kapacity"
     ]
   },
   "ukazatele_mimo_registr": {
@@ -758,7 +780,9 @@
     "Období": "Pravidlo výkladu maturitních dat.",
     "Meze zveřejnění": "Pravidlo zveřejnění maturitních dat.",
     "Jak zavést nový ukazatel": "Postup.",
-    "Historie": "Záznam změn."
+    "Historie": "Záznam změn.",
+    "Percentil ve srovnatelné skupině": "Metoda nad ukazatelem jedné sady; období určuje sada ukazatele.",
+    "Změna mezi ročníky": "Metoda: rozdíl zobrazeného a předchozího období téže sady; období určuje sada ukazatele."
   },
   "historie_prepnuti": [
     {

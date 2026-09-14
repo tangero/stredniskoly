@@ -232,7 +232,7 @@ class TestDatovaLinka(unittest.TestCase):
         self.assertEqual(obor["neveslo_se"], 15)
         self.assertEqual(obor["prijato_na_vyssi_prioritu"], 5)
         self.assertIn("pasma", obor)
-        self.assertEqual(set(p["zpracovani"]["predani"].values()), {"public/pasma_prijeti_2026.json", "public/soubeh_prihlasek_2026.json"})
+        self.assertEqual(set(p["zpracovani"]["predani"].values()), {"public/pasma_prijeti_2026.json", "public/soubeh_prihlasek_2026.json", "public/kontext_prihlasek_2026.json"})
 
     def test_dopad_rozlisi_soubory_ktere_web_cte(self):
         revize = zpracovani.dopad_uchazeci(2025, "2025")

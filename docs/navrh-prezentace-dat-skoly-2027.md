@@ -2,6 +2,8 @@
 
 Verze 1.1 · 12. 9. 2026 · Stav: návrh k rozhodnutí, nic z toho není implementované.
 
+> 13. 9. 2026: grafickou podobu a vývoj v čase rozhoduje schválený dokument [Grafy na stránce školy a oboru](grafy-skoly-a-oboru-2027.md), včetně vysvětlení, proč tento návrh nedošel k realizaci.
+
 Názvy a definice všech ukazatelů drží [slovník ukazatelů](slovnik-ukazatelu.md). Nový ukazatel se nezavádí bez zápisu do něj.
 
 Podklad: [audit obtížnosti přijetí](audit-obtiznost-prijeti-2027.md), [audit dat karet](audit-dat-karet-2027.md), [rešerše návazností](ukol-navaznost-skol-a-oboru-2027.md). Posuzované stránky: [Gymnázium Nad Štolou](https://www.prijimackynaskolu.cz/skola/600171701-gymnazium-nad-stolou) a [jeho čtyřletý obor](https://www.prijimackynaskolu.cz/skola/600171701-gymnazium-nad-stolou-gymnazium-4lete-vseobecne-studium).

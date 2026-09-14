@@ -361,6 +361,7 @@ Výsledek backtestu z prototypu není důkaz; je to vstup pro metodickou oponent
 - Byla přijata možnost popisné prezentace a ověření rozdílu mezi očekávaným a skutečným výsledkem.
 - Bylo odmítnuto tvrzení, že samotné propojení přes REDIZO dokládá stejnou kohortu nebo přidanou hodnotu školy.
 - 12. 9. 2026 byl návrh zpřesněn: profil výsledků ano, známka kvality ne; veřejné srovnání až po kontrole granularity, populace a velikosti vzorku.
+- 14. 9. 2026: import vrstvy 1 a 2 do runtime zahájen: `scripts/build-maturita-skoly.py` a zpracovatel datové linky vytvářejí `public/maturita_skoly.json` (jaro od 2021, společná část, čeština a matematika, zařazení proti mediánu skupiny ze škol s aspoň 10 konajícími). Reference ze škol s aspoň 10 konajícími odpovídá `MIN_N_REFERENCE` prototypu. Web soubor čte až po přepnutí období; zobrazení určuje [stránka školy](stranka-skoly-2027.md).
 - 12. 9. 2026 (v1.1): přijat katalog metrik s češtinou jako hlavním srovnávacím předmětem a matematikou vždy ve dvojici s podílem volby; kvalifikátor srovnání odvozen ze standardní chyby průměru místo pevného prahu; reference je medián škol ve stejné `SMO16`; kritérium publikace výzkumné vrstvy (korelace reziduí v čase) zapsáno předem; přijat analytický prototyp bez zásahu do runtime.
 
 ## 12. Reprodukce a odkazy v projektu

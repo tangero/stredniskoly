@@ -1,8 +1,10 @@
 # Slovník ukazatelů
 
-Verze 1.12 · 13. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.18 · 14. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
+
+Jakými slovy se o ukazatelích píše v textu stránky, určuje [slovník pojmů](slovnik-pojmu.md). Název ukazatele z tohoto soupisu platí v datech, kódu a API; na stránce se použije pojem odtamtud.
 
 Pravidlo pro celý projekt: **údaj bez doloženého výpočtu se nezobrazuje.** Když nevíme, jak vznikl, patří do oddílu 5, ne na stránku.
 
@@ -77,7 +79,7 @@ Samotná hodnota nic neříká, dokud se neporovná se srovnatelnou skupinou; vi
 Přihlášky na místo navíc přeceňují skutečnou konkurenci. U 54 % nabídek roku 2026 by první volby nenaplnily ani kapacitu, přestože medián poptávky je 2,62 přihlášky na místo. Zbytek jsou pojistky uchazečů, kteří nastoupí jinam.
 
 ### Tlak prvních voleb
-`přihlášky s prioritou 1 ÷ kapacita míst`.
+`přihlášky s prioritou 1 ÷ kapacita míst`. Pole `tlak_prvnich_voleb` v `public/souhrny_kolo1.json`.
 
 Hodnota 1,0 znamená, že obor chtělo jako první volbu přesně tolik uchazečů, kolik má míst. Pod 1,0 se obor z prvních voleb nenaplní a bere i uchazeče, pro které byl druhou nebo třetí volbou.
 
@@ -104,10 +106,59 @@ Uchazeči, kteří splnili podmínky, ale nevešli se. Pole `capacity_rejected`.
 ### Nepřijatí pro nesplnění podmínek
 Pole `conditions_not_met`. Odlišné od předchozího: tady nerozhodovala kapacita.
 
+**Co to znamená.** Podle [metodiky MŠMT k přijímacímu řízení 2026/2027](https://msmt.gov.cz/media/wp-content/uploads/2026/08/Metodika_prijimaci-rizeni_2026-2027.pdf) (oddíl o kritériích přijímání a oddíl Vyhodnocení výsledků prvního kola) smějí kritéria uchazeče vyloučit jen tam, kde to umožňuje předpis: nesplněná **hranice úspěšnosti** (v jednotné zkoušce, ve školní nebo talentové zkoušce, nebo v celkovém hodnocení), zdravotní způsobilost, doklady k pobytu, nedokončené předchozí vzdělávání. Takový uchazeč jde do seznamu bez pořadí s příznakem „nesplnil kritéria“. Kdo na jednotnou zkoušku nepřišel, dostane 0 bodů a mezi nesplněné podmínky se **nepočítá**. Nejde tedy o chybu v přihlášce; nedoložený doklad se podle metodiky projeví jen v hodnocení.
+
+Na stránce se neříká „nesplnili podmínky“, ale „nedosáhli požadavku školy“, a kde to jde, jakého (odvozená hranice úspěšnosti). V roce 2026 šlo o 41 763 ze 424 353 přihlášek, 9,8 %; u 10 859 z nich uchazeč výsledek jednotné zkoušky nemá (`docs/podklady/rozbor-podminek-a-poradi-2026.json`).
+
+### Odvozená hranice úspěšnosti
+Nejnižší výsledek jednotné zkoušky, pod kterým v datech uchazečů leží všichni, kdo nesplnili podmínky, a nad kterým všichni soutěžící. Zkouší se součet bodů a slabší z obou testů. Pole `odvozena_hranice` s typem `soucet`, `slabsi_test`, nebo `nevysvetleno_vysledkem_jpz`. Počítá `scripts/rozbor-podminek-a-poradi.py`.
+
+Počítá se jen u oborů s aspoň pěti nesplněnými s výsledkem a pěti soutěžícími. V roce 2026 z 1 156 takových oborů odpovídá hranici ve slabším testu 286, v součtu 187 a výsledkem zkoušky se nevysvětlí 683 (rozhodovala školní zkouška, prospěch nebo jiné kritérium).
+
+Ověřeno proti kritériím školy: osmileté gymnázium J. S. Machara stanovilo pro rok 2026 minimum 20 bodů v každém testu; data dávají nejvýše 19 bodů u nesplněných a nejméně 20 u soutěžících.
+
+**Je to odhad z jednoho ročníku, ne vyhlášené kritérium.** Na stránce se uvádí slovy „podle výsledků to odpovídá minimu X bodů ve slabším testu“ a vždy s odkazem na kritéria školy. Hranice se může mezi roky změnit; nová kritéria vyhlašuje škola.
+
+### Výsledek uchazečů o obor
+Kam se v 1. kole dostali všichni, kdo měli obor na přihlášce: sem, na obor výš na přihlášce, na obor níž, nebo nikam. Zdroj: data o uchazečích. Pole `vysledek_uchazecu`.
+
+Osmileté gymnázium J. S. Machara 2026: z 233 uchazečů 30 sem, 37 výš, 25 níž, **141 nikam**. Čtyřleté gymnázium téže školy: z 94 uchazečů nikam 4.
+
+**Neříká, jak dopadne konkrétní uchazeč** a nesmí se číst jako rada k pořadí; priorita šanci na přijetí nemění. Popisuje, jak často se uchazečům o tento obor nepodařilo najít místo v 1. kole vůbec, což je užitečný údaj pro sestavení celé přihlášky.
+
+### Obory výš a níž na přihlášce
+Souběžné přihlášky rozdělené podle toho, zda uchazeč měl druhý obor na přihlášce před tímto oborem, nebo za ním, s obtížností přijetí slovy u každého z nich. Pole `obory_vys`, `obory_niz`; stejné meze jako souběžné přihlášky, nezveřejňuje se pod 10 uchazeči.
+
+Pořadí na přihlášce vyjadřuje, kam uchazeč chce víc, ne jak těžký obor je; u Machara se tatáž gymnázia objevují výš i níž. Srovnání obtížnosti je popis jednoho ročníku, ne žebříček.
+
 ### Přijati na vyšší prioritu
 Uchazeči, kteří na tento obor přijati nebyli, protože byli přijati na obor uvedený na přihlášce výš. Zdroj: CERMAT, `NEPŘIJATI - PŘIJAT NA VYŠŠÍ PRIORITU`. Pole `higher_priority`, v datech uchazečů `prijato_na_vyssi_prioritu`.
 
 **Neříká, že by se sem dostali.** Na tento obor se u nich přijetí nevyhodnocovalo. Do 13. 9. 2026 tu stálo, že jde o přijaté, kteří dali přednost jinému oboru; to bylo nesprávné.
+
+### Přijatí podle priority
+Rozpad přijatých podle toho, kolikátou volbou pro ně obor byl. Zdroj: CERMAT, souhrny 1. kola, `PŘIJATÍ – PRIORITA 1` až `5`. Pole `prijati_priority` v `public/souhrny_kolo1.json`.
+
+Odpovídá na otázku, zda obor bere hlavně ty, kdo ho chtěli nejvíc. Obor s vysokým tlakem prvních voleb přijímá skoro jen první volby: osmileté gymnázium J. S. Machara v roce 2026 přijalo 28 z 30 uchazečů na první volbu.
+
+**Neříká, kdo by se dostal.** Uchazeč přijatý na vyšší prioritu se na nižší už nevyhodnocuje, takže nízký počet přijatých na druhou volbu neznamená, že druhá volba nemá šanci. Součet se rovná přijatým.
+
+### Vzdali se přijetí
+Uchazeči, kteří byli přijati a přijetí se vzdali. Zdroj: CERMAT, `NEPŘIJATI – VZDAL SE PŘIJETÍ`. Pole `withdrawn`.
+
+Spolu s přijatými, nepřijatými kvůli kapacitě, pro nesplnění podmínek a přijatými na vyšší prioritu dává součet všech přihlášek. Bývá malý; ukazuje se jen jako součást rozpadu přihlášek, ne samostatně.
+
+### Průměrné percentilové umístění přijatých
+Průměr celostátních percentilů výsledku ČJ+MA u přijatých uchazečů. Zdroj: CERMAT, souhrny 1. kola, `ČJ+MA – PERCENTIL – PRŮMĚR (PŘIJATI)`. Pole `prumerne_umisteni_prijatych`, rozsah 0 až 100.
+
+**Slouží ke srovnání vstupní úrovně mezi ročníky místo bodů.** U 2 823 nabídek spárovaných mezi roky 2025 a 2026 se mění mediánově o −0,1 bodu, mezikvartilově od −5,0 do +4,9, zatímco průměr přijatých v bodech se posunul mediánově o +2,6 bodu, převážně kvůli jiné obtížnosti testu. Doklad: `docs/podklady/overeni-srovnani-rocniku.json`.
+
+Není to percentil průměru přijatých, ale průměr percentilů; u šikmého rozdělení se ty dvě hodnoty liší. Popisuje, s jakými výsledky přicházejí spolužáci, ne náročnost studia ani kvalitu školy. Uvádí se jen u nabídek, kde přijatí zkoušku konali.
+
+### Průměrné percentilové umístění uchazečů
+Průměr celostátních percentilů výsledku ČJ+MA u všech, kdo se na obor hlásili a zkoušku konali. Zdroj: `ČJ+MA – PERCENTIL – PRŮMĚR`. Pole `prumerne_umisteni_uchazecu`.
+
+Vedle umístění přijatých ukazuje, zda obor vybírá z uchazečů ty lepší. Hlásí se i uchazeči, pro které byl obor pojistkou, takže hodnota **nepopisuje konkurenci o místo**.
 
 ### Průměr JPZ přijatých
 Průměrný výsledek přijatých uchazečů v jednotné přijímací zkoušce. Zdroj: CERMAT 2026, pole `cj_ma_prijati` (ČJ+MA), `cj_prijati` a `ma_prijati` (jednotlivé předměty).
@@ -120,6 +171,8 @@ Průměrný výsledek přijatých uchazečů v jednotné přijímací zkoušce. 
 Pole `cj_prumer` a `ma_prumer` v ročníku 2025, převedené na škálu předmětu funkcí `historicalSubjectAverage` v `src/lib/admission-metric.ts`: procentní hodnota krát 5, děleno 10, zaokrouhleno na desetinu.
 
 **Nesmí se nazývat průměrem přijatých.** Zdroj nedokládá, které skupiny se průměr týká ani z kolika osob vznikl; kontrakt to nese v poli `population: 'not_documented'`. Průměr roku 2026 naproti tomu prokazatelně patří přijatým. Proto se obě čísla nedávají do jedné srovnávací tabulky.
+
+**Ověření 13. 9. 2026:** hodnota v katalogu 2025 se od oficiálního průměru přijatých ze souhrnu 1. kola 2025 liší nejvýš o 0,5 bodu u 2 590 z 2 809 nabídek, medián rozdílu je 0,02 bodu (`docs/podklady/overeni-srovnani-rocniku.json`). Jde tedy téměř jistě o průměr přijatých ze starší revize. Pro srovnání ročníků se ale nepoužívá: rok 2025 se bere přímo ze souhrnu, pole `cj_ma_prijati` v `public/souhrny_kolo1.json`, a meziročně se srovnává průměrné percentilové umístění přijatých.
 
 ### Nejnižší výsledek JPZ mezi přijatými
 Nejnižší součet bodů z češtiny a matematiky mezi uchazeči, kteří byli na obor **přijati a zařazeni**. Rozsah 0 až 100. Pole `jpz_min_actual`, doplňkově `cj_at_jpz_min` a `ma_at_jpz_min`, tedy body téhož uchazeče po předmětech.
@@ -145,12 +198,42 @@ Nezaměňovat s **průměrem JPZ přijatých** z oddílu výše, který pocház�
 ### Soutěžící o obor
 Přijatí a ti, kdo se nevešli kvůli kapacitě, dohromady. Je to jmenovatel všech ukazatelů o hranici přijetí.
 
+Na stránce se píše **„soutěžící uchazeči“** a při prvním výskytu v bloku se vysvětlí: „tedy ti, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš“ ([slovník pojmů](slovnik-pojmu.md)). Samotné „soutěžící“ ani „uchazeči“ místo tohoto pojmu nestačí: uchazeči jsou všichni přihlášení.
+
 Dvě skupiny do něj **nepatří** a při zobrazení se uvádějí zvlášť:
 
 - **Přijati na vyšší prioritu**: byli přijati na obor uvedený na přihlášce výš, a o toto místo proto už nesoutěžili. Mají lepší výsledky než soutěžící, mediánově o 8,7 bodu u 97 % oborů, takže počty soutěžících nejsou všichni uchazeči s daným výsledkem.
 - **Nesplnili podmínky**: vypadli na jiném kritériu než na výsledku testu.
 
 U osmiletého gymnázia J. S. Machara bylo v roce 2025 soutěžících 67, ale nesplnilo podmínky 107 dalších uchazečů. Podíl přijatých ze soutěžících by bez této poznámky byl zavádějící.
+
+### Podíl přijatých ze soutěžících
+`přijatí ÷ (přijatí + nepřijatí kvůli kapacitě)` za nabídku a ročník. Zdroj: CERMAT, souhrny 1. kola. Pole `podil_prijatych_ze_soutezicich` v `public/souhrny_kolo1.json`.
+
+Odpovídá přímo na otázku „jak těžké je se sem dostat“ ve tvaru, kterému rozumí každý: z uchazečů, kteří splnili podmínky školy a o místo tu opravdu soutěžili, se dostal každý kolikátý. U osmiletého gymnázia J. S. Machara v roce 2026 30 ze 112, zhruba každý čtvrtý; v roce 2025 29 ze 67.
+
+Do jmenovatele **nepatří** uchazeči, kteří nesplnili podmínky, a ti, kdo byli přijati na obor výš na přihlášce; oba počty se uvádějí vedle, protože bez nich by podíl vypadal příznivěji, než jaký byl celý průběh (viz soutěžící o obor). Když nikdo nebyl odmítnut kvůli kapacitě, podíl je 1 a o přijetí rozhodovaly jen podmínky školy.
+
+Rozdělení 2026 u 1 736 nabídek s aspoň jedním odmítnutým: dolní čtvrtina 0,46, medián 0,61, horní čtvrtina 0,78. Mezi roky 2025 a 2026 u 1 868 nabídek s aspoň 20 soutěžícími v obou letech korelace 0,723 a medián změny 9,4 procentního bodu (`docs/podklady/overeni-srovnani-rocniku.json`). S tlakem prvních voleb souhlasí pořadím (Spearman −0,76), tlak ale zůstává ověřeným ukazatelem pro předpověď dalšího roku.
+
+**Neříká, jakou šanci má konkrétní uchazeč**, ani jak se to změní příští rok. Soutěžící nejsou náhodný vzorek: kdo se dostal výš, sem nesoutěžil, a ti mívají lepší výsledky.
+
+### Obtížnost přijetí slovy
+Slovní zařazení nabídky podle podílu přijatých ze soutěžících v jednom ročníku. Pole `zarazeni_obtiznosti`.
+
+| Hodnota | Podmínka | Věta na stránce | Nabídek 2026 |
+|---|---|---|---:|
+| `kapacita_nerozhodovala` | nikdo nebyl odmítnut kvůli kapacitě | Místo bylo pro všechny, kdo splnili podmínky školy | 1 355 |
+| `vetsina_uspela` | podíl aspoň 2/3 | Dostala se většina soutěžících | 739 |
+| `stredne_tezke` | 1/2 až 2/3 | Dostat se sem je středně těžké | 476 |
+| `tezke` | 1/3 až 1/2 | Dostat se sem je těžké | 353 |
+| `velmi_tezke` | méně než 1/3 | Dostat se sem je velmi těžké | 168 |
+
+Prahy jsou zlomky, které se dají říct slovy (třetina, polovina, dvě třetiny), ne kvantily; vycházejí z otázky rodiče, ne z rozdělení. Mezi roky 2025 a 2026 zůstalo zařazení stejné u 48,6 % a posunulo se nejvýš o stupeň u 90,2 % nabídek s aspoň 20 soutěžícími, **proto se věta vždy doplňuje podílem a předchozím ročníkem**, například „zhruba každý čtvrtý; rok předtím skoro každý druhý“.
+
+Zařazení se nezobrazuje pod 10 soutěžícími (jeden uchazeč by přehodil stupeň) a u oborů s talentovou zkouškou se doplňuje větou, že rozhodovala i ona.
+
+**Není to hodnocení školy** a nesmí se používat k řazení škol. Nahrazuje zamítnutý index obtížnosti (oddíl 6) popisem jednoho ročníku, který jde ověřit ze zdroje. Podmínky školy mohou být hlavní překážkou i tam, kde kapacita nerozhodovala; proto se počet nesplněných podmínek uvádí vedle, kdykoli dosáhne počtu přijatých nebo 20 % přihlášek.
 
 ### Podíl přijatých podle bodového pásma
 Pro každý obor rozdělení soutěžících do pásem po pěti bodech a podíl přijatých v každém pásmu. Pole `pasma` v `public/pasma_prijeti_2025.json`, generuje `scripts/build-pasma-prijeti.py`.
@@ -207,6 +290,8 @@ Kolik ze 100 uchazečů v celé zemi mělo stejný nebo horší výsledek než n
 Počítá se z řádků souboru uchazečů, kde je každý uchazeč jednou bez ohledu na počet přihlášek. Do 13. 9. 2026 se počítal přes záznamy uchazeč krát obor, takže uchazeč s třemi přihláškami vážil trojnásobně.
 
 Odstraňuje vliv obtížnosti testu: mezi roky 2024 a 2025 klesl medián výsledku uchazečů z 54 na 46 bodů a hranice v bodech klesla mediánově o 3 body, kdežto percentil se posunul o +1,7 bodu. **Nezpřesňuje ale predikci**: korelace mezi ročníky je 0,867 proti 0,859 u bodů.
+
+Souhrny CERMATu nesou oficiální variantu po nabídkách, `ČJ+MA – PERCENTIL – MIN (PŘIJATI)`, pole `min_prijaty_percentil_souhrn`, vyplněné jen při aspoň deseti přijatých s výsledkem. U oborů s jedinou nabídkou se s hodnotou z dat uchazečů shoduje do 2 bodů u 2 039 z 2 278 v roce 2025 a u 2 182 z 2 286 v roce 2026; percentilovou základnu legenda souhrnu neuvádí. Na stránce se používá jedna z nich a vždy se jménem tohoto ukazatele.
 
 ### Hustota u hranice
 Podíl soutěžících, jejichž výsledek leží do pěti bodů od nejnižšího přijatého. Pole `hustota_u_hranice`.
@@ -268,9 +353,39 @@ Aby číslo něco znamenalo, porovnává se s rozdělením téhož ukazatele v r
 
 Rozdělení se počítá z aktuálního ročníku, nikdy se nezadává ručně, a přepočítává se s každým importem.
 
+### Percentil ve srovnatelné skupině
+Podíl nabídek téže srovnatelné skupiny a téhož ročníku s hodnotou ukazatele menší nebo rovnou hodnotě nabídky, v procentech. Rozdělení tlaku prvních voleb nese `public/souhrny_kolo1.json` v `skupiny.{rok}.{typ_délka}`; skupiny se počítají ze souhrnu každého ročníku zvlášť.
+
+Formulace na stránce: „vyšší nebo stejný jako u 94 ze 100 osmiletých gymnázií“. Ve skupině s méně než 30 nabídkami se percentil nezobrazuje, jen poloha na tečkovém grafu.
+
+**Neříká nic o kvalitě.** Popisuje polohu v rozdělení jednoho ukazatele v jednom roce.
+
+### Pořadí v kraji
+Pořadí nabídky mezi nabídkami téže srovnatelné skupiny (typ školy a délka studia) ve stejném kraji a ročníku. Praha je samostatný kraj. Počítá se ze souhrnů 1. kola ve `src/lib/souhrny-kolo1.ts` podle dvou ukazatelů a nikdy z jejich kombinace:
+
+| Pořadí | Ukazatel | Směr | Stabilita 2025→2026 |
+|---|---|---|---|
+| **podle zájmu** | tlak prvních voleb | vyšší hodnota = vyšší pořadí | ve stejné třetině pořadí 66,4 %, medián posunu 5 míst |
+| **podle výsledků přijatých** | průměrné percentilové umístění přijatých | vyšší hodnota = vyšší pořadí | ve stejné třetině pořadí 68,1 %, medián posunu 5 míst |
+
+Stabilita měřena na 2 757 a 2 723 spárovaných nabídkách ve skupinách s aspoň 10 nabídkami v obou letech. Shodná hodnota dává shodné pořadí („2.–3.“).
+
+**Nezobrazuje se ve skupině s méně než 10 nabídkami** (19 z 96 skupin kraj × typ v roce 2026, například osmiletá gymnázia v Karlovarském kraji: 7). **Podle obtížnosti přijetí se neřadí**: pořadí podle podílu přijatých ze soutěžících uchazečů se mezi roky přehazuje, u osmiletého gymnázia J. S. Machara ze 7. na 17. místo z 32.
+
+Na stránce vždy s ukazatelem, skupinou, krajem, rokem a předchozím rokem: „2. z 32 osmiletých gymnázií ve Středočeském kraji podle výsledků přijatých (2026; v roce 2025 také 2.)“. **Neříká, která škola je lepší.** Pořadí podle výsledků přijatých popisuje, s jakými výsledky sem uchazeči přicházejí, ne kvalitu výuky. Hranice kraje neodpovídá tomu, kam se uchazeči skutečně hlásí (u Machara je zhruba polovina oborů výš a níž na přihlášce v Praze), proto pořadí doplňuje, ale nenahrazuje obory výš a níž na přihlášce.
+
+### Změna mezi ročníky
+Rozdíl hodnoty ukazatele v zobrazeném ročníku a v předchozím ročníku téže nabídky. Počítá se jen u nabídek spárovaných podle `docs/grafy-skoly-a-oboru-2027.md`, pravidlo 7: shodný klíč nabídky, nebo jediná nabídka téže školy a oboru v obou ročnících. Způsob párování nese pole `parovani`. Mezi roky 2025 a 2026 je spárováno 2 858 z 3 091 nabídek, z toho 543 jako jediná nabídka téže školy a oboru.
+
+Srovnávat mezi ročníky se smí kapacita, přihlášky na místo, tlak a podíl prvních voleb a průměrné percentilové umístění přijatých. **Body JPZ se mezi ročníky nesrovnávají**, posun odráží obtížnost testu.
+
+Typická změna mezi 2025 a 2026, dolní čtvrtina / medián / horní čtvrtina: přihlášky na místo −0,48 / −0,04 / +0,40, tlak prvních voleb −0,23 / −0,03 / +0,20, podíl prvních voleb −5,9 / −0,2 / +5,1 procentního bodu, kapacita beze změny u většiny nabídek.
+
+**Neříká, proč se zájem změnil**, ani zda změna vydrží. Ze dvou ročníků nejde mluvit o trendu; slovo „trend“ se nepoužívá, dokud řada nemá aspoň tři doložené ročníky.
+
 ## 5. Maturitní výsledky
 
-Analytický návrh je schválený v [maturitní výsledky a kvalita školy](maturitni-vysledky-a-kvalita-skoly-2027.md). **Do runtime zatím nic z toho importováno není**, takže názvy níže jsou zatím kontrakt, ne existující pole.
+Analytický návrh je schválený v [maturitní výsledky a kvalita školy](maturitni-vysledky-a-kvalita-skoly-2027.md). Od 14. 9. 2026 vzniká soubor `public/maturita_skoly.json` skriptem `scripts/build-maturita-skoly.py` přes datovou linku (sada `cermat-maturita`); pole mají názvy z kontraktu níže. **Web ho zatím nečte**, dokud se v registru nepřepne období sady.
 
 ### Granularita, která rozhoduje o všem
 CERMAT zveřejňuje maturitu za právnickou osobu (`redizo`) a za školu ve skupině oborů (`redizo_smo16`). Skupina `SMO16` **není** kód oboru `KKOV`.
@@ -295,8 +410,27 @@ Výzkumný ukazatel, který by zohlednil vstupní úroveň žáků. **Zatím nee
 
 Vysoký maturitní výsledek může být důsledkem toho, kdo do školy nastoupil. Bez vstupního kontextu se nečte jako zásluha školy.
 
+### Zařazení proti skupině oborů
+Pole `cj.groupComparison` u školy ve skupině oborů: `state` (`above`, `indistinguishable`, `below`), `interval`, `medianPercentScore`, `schools`.
+
+**Výpočet.** Referencí je medián průměrných skórů z češtiny všech škol téže skupiny oborů `SMO16`, téhož roku a jarního období, které mají aspoň 10 konajících; každá škola jeden hlas. U školy s aspoň 10 konajícími se spočítá směrodatná chyba `SE = standardDeviation / √took` a interval `averagePercentScore ± 1,96 · SE`. Interval celý nad mediánem je `above`, celý pod ním `below`, jinak `indistinguishable`. Zdroj: CERMAT, `MZ{rok}j_SC_skolobory.xlsx`. Návrh §5.2.
+
+**Na stránce:** „nad školami stejné skupiny oborů“, „nerozlišitelné od skupiny“, „pod skupinou“. Jen u češtiny, protože jen ji píše celý ročník.
+
+**Neříká**, jak dobře škola učí: výsledek ovlivňuje hlavně to, koho škola přijala. U malé školy skončí většina výsledků jako nerozlišitelné, což je správně. **Stabilita:** mezi jary 2025 a 2026 stejné zařazení u 63,1 % škol s aspoň 30 maturanty, přeskok mezi krajními stavy u 9 z 928 ([stránka školy](stranka-skoly-2027.md), oddíl 4.2). Proto se na stránce neukazuje jeden rok, ale počet let nad skupinou.
+
+### Počet let nad skupinou oborů
+Počet jarních období z posledních čtyř zveřejněných, kdy měla škola ve skupině oborů zařazení `above`. Počítá se při zobrazení z `public/maturita_skoly.json`; roky bez zařazení (méně než 10 konajících, škola ve skupině nebyla) se uvádějí zvlášť, ne jako „ne nad skupinou“.
+
+**Neříká**, že se škola zlepšuje nebo zhoršuje; ze čtyř bodů jde nanejvýš říct „v posledních dvou letech nad skupinou, předtím pod ní“.
+
+### Podíl volby předmětu u maturity
+Pole `ma.subjectChoiceShare`: podíl maturantů, kteří si ve společné části zvolili matematiku místo cizího jazyka, jak ho zveřejňuje CERMAT. Zveřejňuje se i u méně než 10 konajících matematiku, protože se počítá z celého ročníku.
+
+**Na stránce vždy ve dvojici** s průměrným percentilem z matematiky: „matematiku volilo 48 % maturantů, jejich percentil 64“. Samotný percentil z matematiky **neříká** nic o ročníku, když ji volí jen nejlepší žáci (návrh §5.1).
+
 ### Meze zveřejnění
-Při počtu maturantů pod 10 se zveřejňují jen počty, mezi 10 a 29 s upozorněním, od 30 běžně. U malých skupin se nedopočítávají podíly, které by rekonstruovaly skryté údaje.
+Při počtu maturantů pod 10 se zveřejňují jen počty, mezi 10 a 29 s upozorněním, od 30 běžně. U malých skupin se nedopočítávají podíly, které by rekonstruovaly skryté údaje. V `public/maturita_skoly.json` pole `quality`: `complete` (aspoň 30 konajících), `small_sample` (10 až 29), `counts_only` (pod 10, jen počty a podíl volby předmětu), `unavailable`.
 
 ## 6. Ukazatele bez doloženého výpočtu
 
@@ -336,6 +470,12 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.18 | Maturita: zařazení proti skupině oborů, počet let nad skupinou, podíl volby předmětu; kódy kvality v `public/maturita_skoly.json`; soubor vzniká přes datovou linku. |
+| 1.17 | Doplněno pořadí v kraji podle zájmu a podle výsledků přijatých, s prahem 10 nabídek a doklady stability. |
+| 1.16 | Odkaz na slovník pojmů; pojem „soutěžící uchazeči“ pro texty stránek. |
+| 1.15 | Vysvětleno nesplnění podmínek podle metodiky MŠMT; doplněna odvozená hranice úspěšnosti, výsledek uchazečů o obor a obory výš a níž na přihlášce. |
+| 1.14 | Doplněn podíl přijatých ze soutěžících a obtížnost přijetí slovy, s rozdělením a stabilitou mezi ročníky. |
+| 1.13 | Doplněny přijatí podle priority, vzdali se přijetí, průměrné percentilové umístění přijatých a uchazečů, percentil ve srovnatelné skupině a změna mezi ročníky ze souhrnů 1. kola (`public/souhrny_kolo1.json`). Ověřeno, že historický průměr 2025 odpovídá průměru přijatých, a doplněna oficiální varianta percentilu nejnižšího přijatého. |
 | 1.12 | Čísla pásem přijetí, míry *rozhodl test*, pásma nejistoty, hustoty u hranice a percentilu nejnižšího přijatého přepočítána z finální revize dat uchazečů 2025 (PR #84). Výpočet se nemění. Stabilita míry *rozhodl test* mezi roky 2024 a 2025 vychází 0,725 místo 0,673, šířky pásma 0,692 místo 0,666. Souběžné přihlášky vedeny jako finální revize. |
 | 1.11 | Doplněny ukazatele 2. kola: kapacita, přihlášky, přijatí, nepřijatí kvůli kapacitě, nejnižší výsledek přijatých a nevypsané 2. kolo u nenaplněného oboru. |
 | 1.10 | Opraveno tvrzení, že data o uchazečích za rok 2026 nejsou zveřejněná; vyšla 20. 5. 2026. |

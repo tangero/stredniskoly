@@ -1,0 +1,228 @@
+{
+ "zdroj_skriptu": "scripts/rozbor-podminek-a-poradi.py",
+ "rok": "2025",
+ "zdroj": "PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx",
+ "celostatne": {
+  "prihlasek": 432013,
+  "nesplnilo_podminky": 46722,
+  "nesplnilo_bez_vysledku_jpz": 11880,
+  "odvozena_hranice_u_oboru_s_aspon_5_nesplnenymi_a_5_soutezicimi": {
+   "nevysvetleno_vysledkem_jpz": 623,
+   "slabsi_test": 325,
+   "soucet": 160
+  }
+ },
+ "ukazky": {
+  "600007774_79-41-K/81": {
+   "skola": "Gymnázium J. S. Machara, Královická",
+   "obec": "Brandýs nad Labem-Stará Boleslav",
+   "obor": "Gymnázium",
+   "delka": 8,
+   "zarazeni": "tezke",
+   "prijati": 29,
+   "soutezicich": 67,
+   "uchazecu": 222,
+   "vysledek_uchazecu": {
+    "nikam": 138,
+    "sem": 29,
+    "vys": 45,
+    "niz": 10
+   },
+   "odvozena_hranice": {
+    "typ": "slabsi_test",
+    "nejvyse_nesplneny": 19.0,
+    "nejnize_soutezici": 20.0
+   },
+   "nesplnili_bez_vysledku_jpz": 2,
+   "obory_vys": [
+    {
+     "obor": "Gymnázium",
+     "uchazecu": 34,
+     "skola": "Gymnázium, J. A. Komenského",
+     "obec": "Čelákovice",
+     "delka": 8,
+     "zarazeni": "velmi_tezke",
+     "prijati": 29,
+     "soutezicich": 125
+    },
+    {
+     "obor": "Gymnázium",
+     "uchazecu": 28,
+     "skola": "Gymnázium Františka Palackého, Masarykova",
+     "obec": "Neratovice",
+     "delka": 8,
+     "zarazeni": "tezke",
+     "prijati": 30,
+     "soutezicich": 73
+    },
+    {
+     "obor": "Gymnázium",
+     "uchazecu": 15,
+     "skola": "Gymnázium, Českolipská",
+     "obec": "Praha",
+     "delka": 8,
+     "zarazeni": "velmi_tezke",
+     "prijati": 60,
+     "soutezicich": 327
+    },
+    {
+     "obor": "Gymnázium",
+     "uchazecu": 15,
+     "skola": "Gymnázium Jana Palacha, Pod Vrchem",
+     "obec": "Mělník",
+     "delka": 8,
+     "zarazeni": "velmi_tezke",
+     "prijati": 28,
+     "soutezicich": 146
+    },
+    {
+     "obor": "Gymnázium",
+     "uchazecu": 13,
+     "skola": "Gymnázium, Litoměřická",
+     "obec": "Praha",
+     "delka": 8,
+     "zarazeni": "velmi_tezke",
+     "prijati": 60,
+     "soutezicich": 439
+    },
+    {
+     "obor": "Gymnázium",
+     "uchazecu": 13,
+     "skola": "Gymnázium, Chodovická",
+     "obec": "Praha",
+     "delka": 8,
+     "zarazeni": "velmi_tezke",
+     "prijati": 59,
+     "soutezicich": 276
+    }
+   ],
+   "obory_niz": [
+    {
+     "obor": "Gymnázium",
+     "uchazecu": 81,
+     "skola": "Gymnázium, J. A. Komenského",
+     "obec": "Čelákovice",
+     "delka": 8,
+     "zarazeni": "velmi_tezke",
+     "prijati": 29,
+     "soutezicich": 125
+    },
+    {
+     "obor": "Gymnázium",
+     "uchazecu": 34,
+     "skola": "Gymnázium Františka Palackého, Masarykova",
+     "obec": "Neratovice",
+     "delka": 8,
+     "zarazeni": "tezke",
+     "prijati": 30,
+     "soutezicich": 73
+    },
+    {
+     "obor": "Gymnázium",
+     "uchazecu": 16,
+     "skola": "Gymnázium, Litoměřická",
+     "obec": "Praha",
+     "delka": 8,
+     "zarazeni": "velmi_tezke",
+     "prijati": 60,
+     "soutezicich": 439
+    },
+    {
+     "obor": "Gymnázium",
+     "uchazecu": 16,
+     "skola": "Gymnázium, Českolipská",
+     "obec": "Praha",
+     "delka": 8,
+     "zarazeni": "velmi_tezke",
+     "prijati": 60,
+     "soutezicich": 327
+    },
+    {
+     "obor": "Gymnázium",
+     "uchazecu": 13,
+     "skola": "Gymnázium, Chodovická",
+     "obec": "Praha",
+     "delka": 8,
+     "zarazeni": "velmi_tezke",
+     "prijati": 59,
+     "soutezicich": 276
+    },
+    {
+     "obor": "Gymnázium",
+     "uchazecu": 13,
+     "skola": "Gymnázium Bohumila Hrabala, Komenského",
+     "obec": "Nymburk",
+     "delka": 8,
+     "zarazeni": "velmi_tezke",
+     "prijati": 58,
+     "soutezicich": 183
+    }
+   ]
+  },
+  "600007774_79-41-K/41": {
+   "skola": "Gymnázium J. S. Machara, Královická",
+   "obec": "Brandýs nad Labem-Stará Boleslav",
+   "obor": "Gymnázium",
+   "delka": 4,
+   "zarazeni": "stredne_tezke",
+   "prijati": 30,
+   "soutezicich": 54,
+   "uchazecu": 97,
+   "vysledek_uchazecu": {
+    "niz": 14,
+    "nikam": 11,
+    "sem": 30,
+    "vys": 42
+   },
+   "odvozena_hranice": null,
+   "nesplnili_bez_vysledku_jpz": 0,
+   "obory_vys": [
+    {
+     "obor": "Gymnázium",
+     "uchazecu": 13,
+     "skola": "SKOLAEUPRAHA, Lipí",
+     "obec": "Praha",
+     "delka": 4,
+     "zarazeni": "velmi_tezke",
+     "prijati": 29,
+     "soutezicich": 103
+    }
+   ],
+   "obory_niz": [
+    {
+     "obor": "Gymnázium",
+     "uchazecu": 30,
+     "skola": "Gymnázium, J. A. Komenského",
+     "obec": "Čelákovice",
+     "delka": 4,
+     "zarazeni": "tezke",
+     "prijati": 30,
+     "soutezicich": 67
+    }
+   ]
+  },
+  "600007774_78-42-M/01": {
+   "skola": "Gymnázium J. S. Machara, Královická",
+   "obec": "Brandýs nad Labem-Stará Boleslav",
+   "obor": "Technické lyceum",
+   "delka": 4,
+   "zarazeni": "kapacita_nerozhodovala",
+   "prijati": 11,
+   "soutezicich": 11,
+   "uchazecu": 37,
+   "vysledek_uchazecu": {
+    "vys": 23,
+    "sem": 11,
+    "nikam": 3
+   },
+   "odvozena_hranice": {
+    "typ": "soucet",
+    "nejvyse_nesplneny": 43.0,
+    "nejnize_soutezici": 50.0
+   },
+   "nesplnili_bez_vysledku_jpz": 0,
+   "obory_vys": [],
+   "obory_niz": []
+  }
+ }
+}

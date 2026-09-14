@@ -1,0 +1,372 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stránka oboru ve třech otázkách</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&display=swap">
+<style>
+:root{
+  --bg:#f4f7fb; --surface:#ffffff; --sunk:#eef2f7;
+  --ink:#1b2a3a; --ink-2:#48586a; --ink-3:#6f7d8c;
+  --rule:#dbe3ec; --grid:#e8edf3;
+  --navy:#16325c; --accent:#0074e4; --band:#003688;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s0:#9aa6b2;
+  --p1:#104281; --p2:#2a78d6; --p3:#86b6ef;
+  --dot:#b9c4cf; --chip:#e7eefa; --chip-ink:#16325c;
+  --shadow:0 1px 0 #dbe3ec;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11161d; --surface:#18202a; --sunk:#1f2934;
+  --ink:#e8edf3; --ink-2:#b3bfcc; --ink-3:#8795a4;
+  --rule:#2b3643; --grid:#243040;
+  --navy:#a9c7f2; --accent:#5aa6ff; --band:#0b2a55;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s0:#6f7c89;
+  --p1:#86b6ef; --p2:#3987e5; --p3:#1c5cab;
+  --dot:#4a5868; --chip:#1f2e44; --chip-ink:#cfe0f7;
+  --shadow:0 1px 0 #2b3643;
+}}
+:root[data-theme="dark"]{
+  --bg:#11161d; --surface:#18202a; --sunk:#1f2934;
+  --ink:#e8edf3; --ink-2:#b3bfcc; --ink-3:#8795a4;
+  --rule:#2b3643; --grid:#243040;
+  --navy:#a9c7f2; --accent:#5aa6ff; --band:#0b2a55;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s0:#6f7c89;
+  --p1:#86b6ef; --p2:#3987e5; --p3:#1c5cab;
+  --dot:#4a5868; --chip:#1f2e44; --chip-ink:#cfe0f7;
+  --shadow:0 1px 0 #2b3643;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Cabin",system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+h1,h2,h3{color:var(--navy);text-wrap:balance;line-height:1.2;margin:0}
+p{margin:0}
+a{color:var(--accent)}
+.note{background:var(--chip);color:var(--chip-ink);font-size:.85rem;padding:8px 12px;border-radius:8px}
+header.hero{background:var(--surface);border-bottom:1px solid var(--rule)}
+.hero .wrap{padding-block:22px 16px;display:grid;gap:12px}
+.crumb{font-size:.85rem;color:var(--ink-3)}
+h1{font-size:1.9rem}
+.meta{color:var(--ink-2)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tab{font:inherit;font-size:.9rem;cursor:pointer;border:1px solid var(--rule);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px}
+.tab[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--bg)}
+.btn{font:inherit;font-weight:600;cursor:pointer;border-radius:8px;padding:9px 16px;border:1px solid var(--accent);background:var(--accent);color:#fff}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--surface);color:var(--accent)}
+nav.kotvy{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+nav.kotvy .wrap{display:flex;gap:6px;padding-block:8px;overflow-x:auto}
+nav.kotvy a{text-decoration:none;color:var(--ink-2);font-weight:600;padding:6px 12px;border-radius:999px;white-space:nowrap}
+nav.kotvy a:hover{background:var(--sunk);color:var(--ink)}
+section.otazka{padding-block:28px;border-bottom:1px solid var(--rule);scroll-margin-top:56px}
+.otazka .hlava{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:14px}
+.otazka h2{font-size:1.45rem}
+.cislo{display:inline-grid;place-items:center;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--navy);color:var(--bg);font-size:.95rem;margin-right:10px;vertical-align:2px}
+.rok{font-size:.8rem;font-weight:600;color:var(--ink-3);border:1px solid var(--rule);border-radius:999px;padding:2px 10px;white-space:nowrap}
+.dvoj{display:grid;gap:18px}
+@media(min-width:880px){.dvoj{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:start}.dvoj .odpoved{position:sticky;top:64px}}
+.odpoved{background:var(--surface);border-radius:12px;padding:20px 22px;box-shadow:var(--shadow);display:grid;gap:12px}
+.odpoved .veta{font-size:1.22rem;line-height:1.5;color:var(--ink);max-width:40ch}
+.odpoved .veta b{color:var(--navy)}
+.odpoved ul{margin:0;padding-left:1.1rem;display:grid;gap:10px;color:var(--ink)}
+.odpoved li small{display:block;color:var(--ink-3);font-size:.82rem}
+.dukazy{display:grid;gap:12px;min-width:0}
+details.dukaz{background:var(--surface);border-radius:12px;box-shadow:var(--shadow)}
+details.dukaz>summary{cursor:pointer;list-style:none;padding:14px 18px;display:flex;justify-content:space-between;gap:12px;align-items:baseline;font-weight:700;color:var(--navy)}
+details.dukaz>summary::-webkit-details-marker{display:none}
+details.dukaz>summary::after{content:"+";color:var(--accent);font-weight:400;font-size:1.4rem;line-height:1}
+details.dukaz[open]>summary::after{content:"–"}
+details.dukaz>summary span{font-weight:400;font-size:.8rem;color:var(--ink-3);margin-left:auto}
+.telo{padding:0 18px 14px;display:grid;gap:10px}
+.telo .why{color:var(--ink-2);font-size:.93rem}
+.telo svg{width:100%;height:auto;display:block;overflow:visible}
+.telo svg text{fill:var(--ink-2);font-family:inherit}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.82rem;color:var(--ink-2)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.src{font-size:.8rem;color:var(--ink-3)}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:6px 6px;border-top:1px solid var(--rule)}
+thead th{border-top:0;color:var(--ink-3);font-weight:600;font-size:.8rem}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.scroll{overflow-x:auto}
+.chip{display:inline-block;font-size:.78rem;font-weight:600;padding:1px 8px;border-radius:999px;background:var(--sunk);color:var(--ink);white-space:nowrap}
+
+.inspekce{display:grid;gap:12px}
+@media(min-width:640px){.inspekce{grid-template-columns:1fr 1fr}}
+.karta{background:var(--surface);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);display:grid;gap:8px;align-content:start}
+.karta h3{font-size:1rem}
+.karta ul{margin:0;padding-left:1.1rem;display:grid;gap:6px;color:var(--ink-2);font-size:.93rem}
+footer.metodika{padding-block:24px 48px;color:var(--ink-3);font-size:.88rem;display:grid;gap:8px}
+footer.metodika h2{font-size:1.1rem}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="crumb">Prototyp k posouzení · Středočeský kraj · Brandýs nad Labem</p>
+    <h1>Gymnázium J. S. Machara</h1>
+    <div class="row" id="tabs" role="group" aria-label="Obor"></div>
+    <p class="meta" id="meta"></p>
+    <div class="row">
+      <button class="btn" type="button" id="ulozit" aria-pressed="false">Uložit mezi zvažované</button>
+      <button class="btn ghost" type="button">Porovnat v simulátoru</button>
+    </div>
+  </div>
+</header>
+
+<nav class="kotvy" aria-label="Otázky na stránce">
+  <div class="wrap">
+    <a href="#prijeti">1 Jak těžké se dostat</a>
+    <a href="#pomoc">2 Co vám pomůže</a>
+    <a href="#studium">3 Jak se tu studuje</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="otazka" id="prijeti">
+    <div class="hlava"><h2><span class="cislo">1</span>Jak těžké bude se sem dostat</h2><span class="rok" id="rok1"></span></div>
+    <div class="dvoj">
+      <div class="odpoved"><p class="veta" id="odpoved1"></p><p class="src" id="odpoved1-src"></p></div>
+      <div class="dukazy" id="dukazy1"></div>
+    </div>
+  </section>
+
+  <section class="otazka" id="pomoc">
+    <div class="hlava"><h2><span class="cislo">2</span>Co vám pomůže</h2></div>
+    <div class="dvoj">
+      <div class="odpoved"><ul id="odpoved2"></ul></div>
+      <div class="dukazy" id="dukazy2"></div>
+    </div>
+  </section>
+
+  <section class="otazka" id="studium">
+    <div class="hlava"><h2><span class="cislo">3</span>Jak se tu studuje</h2><span class="rok" id="rok3"></span></div>
+    <div class="dvoj">
+      <div class="odpoved"><p class="veta" id="odpoved3"></p><p class="src">Inspekce a podpora žáků platí pro celou školu, ne jen pro tento obor.</p></div>
+      <div class="dukazy" id="dukazy3"></div>
+    </div>
+    <div class="inspekce" id="inspekce" style="margin-top:18px"></div>
+  </section>
+
+  <footer class="metodika">
+    <h2>Odkud čísla jsou a co neříkají</h2>
+    <p>Přihlášky, kapacita, přijatí, priority a percentilová umístění: CERMAT, souhrny 1. kola 2025 a 2026. Body v pásmech a souběžné přihlášky: data o uchazečích 1. kola 2025, novější zatím nejsou převzatá. Inspekce: Česká školní inspekce, zpráva z ledna 2025.</p>
+    <p>Čísla popisují minulá kola, nejsou šancí konkrétního uchazeče ani kritérii příštího přijímacího řízení. Pořadí oborů na přihlášce šanci na přijetí nemění. Maturitní výsledky zatím nemáme.</p>
+    <p class="note">Prototyp k posouzení, ne veřejná stránka. Rozhodnutí k jednotlivým prvkům: docs/vrstvy-stranky-oboru-2027.md.</p>
+  </footer>
+</main>
+
+<script>
+const D = {"obory":{"78-42-M/01":{"2025":{"kapacita":30,"prihlasky":37,"prijati":11,"priority":[7,15,15,0,0],"prijati_priority":[7,2,2,0,0],"konali":36,"prumer_uchazecu":66.8,"perc_prumer_uchazecu":77.7,"prumer_prijatych":66.2,"min_prijaty":50.0,"perc_prumer_prijatych":79.1,"perc_min_prijaty":55.5,"vyssi_priorita":21,"kapacita_nevesli":0,"nesplnili":5,"vzdali":0,"tlak":0.233},"2026":{"kapacita":30,"prihlasky":65,"prijati":23,"priority":[17,18,30,0,0],"prijati_priority":[15,6,2,0,0],"konali":63,"prumer_uchazecu":70.7,"perc_prumer_uchazecu":78.4,"prumer_prijatych":68.7,"min_prijaty":47.0,"perc_prumer_prijatych":77.7,"perc_min_prijaty":45.7,"vyssi_priorita":32,"kapacita_nevesli":0,"nesplnili":10,"vzdali":0,"tlak":0.567}},"79-41-K/41":{"2025":{"kapacita":30,"prihlasky":97,"prijati":30,"priority":[32,41,22,2,0],"prijati_priority":[21,9,0,0,0],"konali":96,"prumer_uchazecu":71.1,"perc_prumer_uchazecu":83.9,"prumer_prijatych":76.9,"min_prijaty":69.0,"perc_prumer_prijatych":92.2,"perc_min_prijaty":84.7,"vyssi_priorita":39,"kapacita_nevesli":24,"nesplnili":4,"vzdali":0,"tlak":1.067},"2026":{"kapacita":30,"prihlasky":94,"prijati":30,"priority":[41,40,11,1,1],"prijati_priority":[27,2,1,0,0],"konali":93,"prumer_uchazecu":74.4,"perc_prumer_uchazecu":83.1,"prumer_prijatych":80.3,"min_prijaty":69.0,"perc_prumer_prijatych":91.0,"perc_min_prijaty":79.8,"vyssi_priorita":45,"kapacita_nevesli":14,"nesplnili":5,"vzdali":0,"tlak":1.367}},"79-41-K/81":{"2025":{"kapacita":30,"prihlasky":222,"prijati":29,"priority":[117,63,42,0,0],"prijati_priority":[28,0,1,0,0],"konali":220,"prumer_uchazecu":50.7,"perc_prumer_uchazecu":56.0,"prumer_prijatych":78.2,"min_prijaty":65.0,"perc_prumer_prijatych":92.5,"perc_min_prijaty":81.7,"vyssi_priorita":45,"kapacita_nevesli":38,"nesplnili":109,"vzdali":1,"tlak":3.9},"2026":{"kapacita":30,"prihlasky":233,"prijati":30,"priority":[123,56,54,0,0],"prijati_priority":[28,1,1,0,0],"konali":229,"prumer_uchazecu":55.4,"perc_prumer_uchazecu":58.1,"prumer_prijatych":80.1,"min_prijaty":73.0,"perc_prumer_prijatych":92.4,"perc_min_prijaty":86.6,"vyssi_priorita":36,"kapacita_nevesli":82,"nesplnili":85,"vzdali":0,"tlak":4.1}}},"skupiny":{"GY4_4":{"2025":{"n":430,"median":1.039,"hodnoty":[0.0,0.0,0.0,0.0,0.0,0.027,0.038,0.038,0.042,0.062,0.067,0.073,0.075,0.096,0.1,0.107,0.111,0.12,0.125,0.125,0.133,0.133,0.148,0.15,0.15,0.16,0.167,0.167,0.167,0.167,0.175,0.192,0.2,0.2,0.208,0.21,0.233,0.25,0.25,0.25,0.25,0.267,0.28,0.3,0.3,0.308,0.32,0.333,0.333,0.348,0.35,0.35,0.375,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.414,0.417,0.433,0.433,0.438,0.464,0.467,0.469,0.471,0.485,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.519,0.519,0.521,0.533,0.533,0.533,0.533,0.533,0.533,0.533,0.55,0.567,0.567,0.571,0.577,0.577,0.583,0.583,0.6,0.6,0.609,0.617,0.625,0.633,0.633,0.636,0.636,0.64,0.64,0.643,0.65,0.656,0.667,0.667,0.667,0.667,0.667,0.667,0.672,0.688,0.7,0.7,0.7,0.733,0.733,0.733,0.733,0.733,0.733,0.75,0.75,0.75,0.75,0.756,0.765,0.767,0.767,0.767,0.767,0.781,0.783,0.8,0.8,0.8,0.8,0.808,0.817,0.833,0.833,0.833,0.833,0.833,0.833,0.833,0.833,0.846,0.85,0.85,0.85,0.857,0.867,0.867,0.867,0.867,0.867,0.875,0.883,0.889,0.9,0.928,0.929,0.933,0.933,0.95,0.95,0.958,0.962,0.967,0.967,0.967,0.967,0.969,0.979,0.983,0.983,0.983,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.011,1.017,1.017,1.031,1.031,1.033,1.033,1.033,1.033,1.033,1.033,1.036,1.042,1.05,1.056,1.059,1.064,1.065,1.067,1.067,1.067,1.067,1.067,1.067,1.067,1.067,1.071,1.071,1.075,1.083,1.083,1.094,1.094,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.111,1.117,1.125,1.133,1.133,1.133,1.133,1.133,1.133,1.133,1.133,1.133,1.133,1.133,1.133,1.143,1.167,1.167,1.167,1.167,1.167,1.167,1.181,1.183,1.2,1.2,1.2,1.2,1.2,1.2,1.219,1.222,1.222,1.224,1.233,1.233,1.233,1.233,1.233,1.25,1.25,1.25,1.25,1.25,1.256,1.267,1.267,1.267,1.267,1.267,1.267,1.275,1.3,1.3,1.312,1.317,1.322,1.326,1.333,1.333,1.333,1.333,1.333,1.333,1.333,1.344,1.367,1.367,1.367,1.378,1.383,1.383,1.4,1.4,1.4,1.411,1.411,1.417,1.423,1.425,1.425,1.433,1.433,1.433,1.433,1.438,1.444,1.45,1.452,1.464,1.467,1.467,1.491,1.5,1.5,1.5,1.5,1.5,1.511,1.52,1.531,1.533,1.533,1.556,1.567,1.567,1.571,1.571,1.583,1.593,1.594,1.594,1.594,1.6,1.6,1.6,1.6,1.6,1.6,1.607,1.611,1.625,1.63,1.633,1.636,1.643,1.647,1.683,1.689,1.7,1.714,1.733,1.733,1.733,1.75,1.753,1.758,1.762,1.763,1.767,1.781,1.79,1.793,1.8,1.8,1.8,1.812,1.833,1.833,1.833,1.833,1.867,1.9,1.9,1.9,1.922,1.93,1.933,1.95,1.964,1.967,1.967,2.0,2.0,2.033,2.033,2.033,2.089,2.091,2.1,2.115,2.167,2.167,2.172,2.234,2.244,2.25,2.467,2.667,2.767,3.0,3.033,3.04,3.2,3.333,3.533]},"2026":{"n":437,"median":1.033,"hodnoty":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.017,0.027,0.062,0.075,0.08,0.083,0.083,0.087,0.1,0.1,0.1,0.1,0.117,0.12,0.12,0.129,0.133,0.133,0.133,0.154,0.16,0.192,0.192,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.206,0.212,0.217,0.233,0.233,0.233,0.25,0.25,0.275,0.278,0.3,0.3,0.3,0.308,0.308,0.327,0.333,0.333,0.333,0.333,0.333,0.333,0.367,0.367,0.367,0.375,0.375,0.4,0.4,0.4,0.4,0.4,0.417,0.417,0.433,0.433,0.433,0.433,0.463,0.467,0.467,0.467,0.467,0.48,0.483,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.52,0.531,0.533,0.533,0.533,0.533,0.536,0.538,0.542,0.55,0.562,0.562,0.564,0.567,0.567,0.567,0.6,0.6,0.617,0.625,0.633,0.633,0.633,0.633,0.65,0.65,0.65,0.656,0.663,0.667,0.667,0.7,0.7,0.7,0.7,0.7,0.708,0.714,0.714,0.727,0.733,0.733,0.733,0.733,0.733,0.733,0.75,0.75,0.75,0.75,0.76,0.767,0.769,0.783,0.783,0.786,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.817,0.817,0.833,0.84,0.844,0.865,0.867,0.867,0.867,0.868,0.875,0.883,0.9,0.9,0.9,0.909,0.917,0.922,0.925,0.925,0.933,0.933,0.933,0.933,0.944,0.944,0.95,0.95,0.95,0.967,0.967,0.967,0.967,0.967,0.967,0.967,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.017,1.017,1.017,1.017,1.033,1.033,1.033,1.033,1.033,1.033,1.033,1.033,1.05,1.05,1.056,1.062,1.067,1.067,1.067,1.067,1.067,1.083,1.083,1.083,1.089,1.094,1.1,1.1,1.111,1.115,1.115,1.117,1.125,1.129,1.129,1.133,1.133,1.133,1.133,1.133,1.133,1.133,1.133,1.135,1.142,1.15,1.15,1.15,1.15,1.167,1.167,1.167,1.179,1.183,1.183,1.185,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.217,1.217,1.233,1.233,1.233,1.233,1.244,1.25,1.25,1.25,1.25,1.256,1.267,1.267,1.267,1.267,1.267,1.267,1.283,1.283,1.286,1.289,1.3,1.3,1.3,1.3,1.3,1.3,1.304,1.311,1.317,1.321,1.321,1.328,1.333,1.333,1.333,1.333,1.333,1.333,1.333,1.333,1.333,1.357,1.367,1.375,1.378,1.391,1.4,1.4,1.4,1.4,1.4,1.4,1.4,1.4,1.402,1.429,1.433,1.45,1.478,1.483,1.483,1.483,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.508,1.52,1.531,1.533,1.533,1.533,1.533,1.545,1.55,1.562,1.567,1.567,1.576,1.577,1.6,1.6,1.6,1.6,1.6,1.6,1.608,1.624,1.625,1.633,1.633,1.644,1.65,1.653,1.667,1.667,1.7,1.7,1.7,1.708,1.714,1.717,1.731,1.733,1.733,1.733,1.75,1.75,1.767,1.767,1.769,1.8,1.812,1.867,1.867,1.867,1.867,1.95,1.967,1.967,1.967,2.0,2.0,2.0,2.0,2.0,2.017,2.044,2.067,2.078,2.08,2.1,2.133,2.143,2.167,2.167,2.167,2.2,2.233,2.328,2.356,2.4,2.406,2.433,2.462,2.467,2.5,2.533,2.533,2.545,2.571,2.625,2.893,2.967,3.182,3.375,3.933]}},"GY8_8":{"2025":{"n":276,"median":1.8,"hodnoty":[0.24,0.35,0.35,0.4,0.435,0.48,0.536,0.536,0.567,0.633,0.643,0.68,0.688,0.733,0.75,0.8,0.8,0.833,0.9,0.9,0.9,0.929,0.933,0.933,0.95,0.955,0.962,0.967,0.969,1.0,1.031,1.033,1.033,1.033,1.033,1.033,1.033,1.062,1.067,1.067,1.071,1.077,1.094,1.1,1.1,1.1,1.1,1.1,1.115,1.133,1.133,1.136,1.136,1.15,1.167,1.167,1.2,1.2,1.2,1.2,1.214,1.233,1.233,1.233,1.233,1.24,1.25,1.25,1.267,1.267,1.269,1.3,1.3,1.3,1.3,1.32,1.32,1.333,1.333,1.333,1.333,1.34,1.357,1.367,1.367,1.389,1.4,1.4,1.4,1.4,1.412,1.417,1.433,1.433,1.433,1.433,1.433,1.455,1.467,1.467,1.467,1.469,1.477,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.531,1.533,1.567,1.567,1.6,1.6,1.6,1.6,1.6,1.6,1.633,1.633,1.667,1.667,1.667,1.667,1.694,1.7,1.7,1.7,1.733,1.75,1.767,1.767,1.767,1.8,1.8,1.8,1.812,1.817,1.833,1.833,1.833,1.857,1.867,1.867,1.893,1.9,1.917,1.917,1.933,1.933,1.933,1.933,1.967,1.967,2.0,2.0,2.0,2.067,2.067,2.067,2.067,2.095,2.097,2.1,2.1,2.1,2.1,2.12,2.125,2.125,2.156,2.156,2.167,2.167,2.179,2.192,2.2,2.217,2.233,2.233,2.233,2.267,2.267,2.267,2.3,2.3,2.3,2.312,2.32,2.333,2.333,2.333,2.367,2.367,2.367,2.4,2.417,2.417,2.433,2.433,2.433,2.433,2.442,2.5,2.517,2.567,2.567,2.6,2.6,2.6,2.6,2.6,2.633,2.692,2.7,2.717,2.733,2.733,2.75,2.767,2.8,2.833,2.9,2.9,2.967,2.967,2.967,3.0,3.0,3.033,3.1,3.1,3.117,3.133,3.143,3.167,3.167,3.2,3.231,3.233,3.25,3.3,3.333,3.333,3.367,3.4,3.417,3.433,3.483,3.5,3.533,3.6,3.633,3.733,3.833,3.867,3.883,3.9,3.933,3.967,4.267,4.333,4.333,4.333,4.367,4.433,4.478,4.933,4.933,5.4,5.633,6.067,6.133]},"2026":{"n":273,"median":1.733,"hodnoty":[0.15,0.2,0.217,0.304,0.353,0.467,0.467,0.5,0.52,0.533,0.594,0.6,0.64,0.72,0.75,0.786,0.8,0.8,0.808,0.812,0.825,0.833,0.85,0.867,0.883,0.897,0.9,0.9,0.9,0.906,0.938,0.964,0.967,0.967,0.967,0.977,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.036,1.036,1.067,1.083,1.1,1.133,1.14,1.167,1.167,1.167,1.183,1.188,1.2,1.2,1.208,1.233,1.267,1.267,1.278,1.278,1.3,1.3,1.312,1.32,1.333,1.333,1.346,1.35,1.367,1.367,1.367,1.367,1.367,1.375,1.393,1.4,1.4,1.4,1.4,1.4,1.4,1.433,1.433,1.438,1.438,1.45,1.467,1.467,1.485,1.5,1.5,1.5,1.5,1.5,1.5,1.531,1.533,1.533,1.533,1.533,1.536,1.55,1.567,1.567,1.567,1.567,1.567,1.576,1.583,1.583,1.587,1.6,1.6,1.6,1.6,1.6,1.633,1.633,1.633,1.65,1.667,1.667,1.679,1.7,1.7,1.7,1.71,1.71,1.719,1.731,1.733,1.733,1.733,1.733,1.75,1.767,1.8,1.8,1.8,1.812,1.817,1.833,1.85,1.85,1.867,1.885,1.917,1.933,1.933,1.933,1.933,1.933,1.967,1.967,1.967,2.0,2.033,2.033,2.033,2.033,2.067,2.067,2.067,2.077,2.1,2.1,2.1,2.1,2.1,2.117,2.12,2.125,2.133,2.133,2.133,2.133,2.156,2.167,2.167,2.188,2.2,2.2,2.222,2.233,2.259,2.267,2.267,2.267,2.267,2.288,2.3,2.3,2.3,2.333,2.344,2.367,2.383,2.4,2.4,2.414,2.417,2.433,2.433,2.453,2.467,2.469,2.484,2.517,2.567,2.567,2.6,2.7,2.7,2.7,2.7,2.767,2.769,2.867,2.867,2.867,2.9,2.9,2.933,3.0,3.0,3.033,3.067,3.1,3.133,3.133,3.167,3.167,3.2,3.217,3.233,3.233,3.367,3.4,3.417,3.433,3.433,3.5,3.533,3.6,3.617,3.617,3.625,3.867,3.933,3.967,4.0,4.017,4.1,4.1,4.167,4.183,4.2,4.318,4.385,4.433,4.491,4.667,4.7,4.733,4.8,4.933,5.333,5.6,6.333,6.533]}},"LYC_4":{"2025":{"n":262,"median":0.758,"hodnoty":[0.0,0.0,0.033,0.04,0.04,0.05,0.067,0.067,0.067,0.067,0.067,0.08,0.1,0.1,0.1,0.1,0.1,0.1,0.115,0.12,0.125,0.133,0.133,0.133,0.143,0.15,0.167,0.167,0.175,0.2,0.2,0.2,0.2,0.2,0.2,0.208,0.217,0.219,0.227,0.227,0.233,0.233,0.233,0.233,0.233,0.24,0.261,0.267,0.267,0.267,0.267,0.281,0.3,0.3,0.3,0.3,0.312,0.333,0.333,0.333,0.35,0.357,0.357,0.364,0.367,0.367,0.367,0.367,0.38,0.392,0.4,0.4,0.414,0.433,0.433,0.44,0.45,0.467,0.467,0.467,0.467,0.467,0.467,0.478,0.5,0.5,0.5,0.5,0.5,0.533,0.533,0.533,0.533,0.55,0.556,0.562,0.567,0.577,0.586,0.591,0.6,0.6,0.6,0.607,0.619,0.633,0.633,0.633,0.633,0.633,0.633,0.633,0.652,0.667,0.667,0.667,0.667,0.683,0.7,0.7,0.7,0.7,0.706,0.714,0.719,0.732,0.733,0.733,0.733,0.733,0.75,0.767,0.767,0.8,0.8,0.826,0.833,0.833,0.867,0.867,0.875,0.881,0.883,0.893,0.898,0.9,0.9,0.9,0.926,0.933,0.933,0.933,0.933,0.95,0.952,0.967,0.967,1.0,1.0,1.0,1.0,1.0,1.0,1.017,1.02,1.033,1.033,1.033,1.033,1.036,1.042,1.043,1.067,1.067,1.067,1.071,1.08,1.1,1.1,1.1,1.1,1.111,1.133,1.133,1.133,1.133,1.138,1.138,1.15,1.167,1.188,1.2,1.2,1.2,1.233,1.24,1.25,1.267,1.267,1.267,1.283,1.3,1.3,1.3,1.317,1.333,1.333,1.357,1.367,1.367,1.4,1.4,1.4,1.4,1.4,1.4,1.4,1.4,1.423,1.429,1.433,1.433,1.462,1.467,1.5,1.5,1.533,1.533,1.533,1.533,1.567,1.583,1.6,1.6,1.6,1.6,1.633,1.633,1.656,1.667,1.733,1.733,1.767,1.767,1.767,1.8,1.8,1.812,1.833,1.867,1.867,1.933,1.967,2.033,2.183,2.267,2.3,2.406,2.792,2.867,2.929,3.133]},"2026":{"n":289,"median":0.678,"hodnoty":[0.0,0.0,0.033,0.043,0.05,0.05,0.05,0.067,0.067,0.067,0.067,0.067,0.069,0.071,0.077,0.08,0.083,0.083,0.1,0.1,0.1,0.1,0.1,0.107,0.125,0.133,0.133,0.133,0.133,0.133,0.133,0.133,0.133,0.138,0.15,0.16,0.167,0.167,0.167,0.182,0.192,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.207,0.231,0.233,0.233,0.233,0.233,0.233,0.25,0.261,0.267,0.267,0.273,0.3,0.3,0.3,0.3,0.321,0.333,0.333,0.333,0.35,0.357,0.364,0.367,0.367,0.367,0.367,0.375,0.375,0.385,0.4,0.4,0.4,0.4,0.4,0.402,0.417,0.417,0.433,0.433,0.435,0.435,0.438,0.438,0.444,0.45,0.458,0.462,0.467,0.467,0.467,0.467,0.475,0.483,0.488,0.5,0.5,0.5,0.5,0.5,0.5,0.533,0.533,0.533,0.533,0.533,0.567,0.567,0.567,0.567,0.591,0.6,0.6,0.6,0.6,0.6,0.6,0.606,0.607,0.607,0.62,0.633,0.633,0.633,0.633,0.64,0.643,0.65,0.65,0.667,0.667,0.667,0.667,0.667,0.667,0.667,0.678,0.692,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.733,0.733,0.733,0.733,0.733,0.739,0.762,0.765,0.767,0.767,0.767,0.767,0.767,0.786,0.8,0.8,0.8,0.8,0.808,0.821,0.833,0.833,0.867,0.867,0.867,0.867,0.867,0.9,0.933,0.933,0.933,0.933,0.947,0.967,0.967,0.967,0.967,0.967,0.978,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.043,1.05,1.067,1.067,1.067,1.067,1.094,1.1,1.1,1.1,1.1,1.12,1.125,1.133,1.133,1.133,1.138,1.2,1.2,1.2,1.2,1.207,1.214,1.233,1.256,1.267,1.283,1.3,1.3,1.333,1.333,1.339,1.357,1.383,1.383,1.386,1.433,1.433,1.467,1.467,1.467,1.467,1.467,1.5,1.5,1.5,1.5,1.5,1.526,1.533,1.536,1.536,1.559,1.562,1.567,1.567,1.567,1.597,1.6,1.6,1.6,1.6,1.6,1.6,1.607,1.633,1.667,1.667,1.683,1.733,1.767,1.8,1.867,1.867,1.875,1.9,2.033,2.067,2.073,2.186,2.188,2.2,2.208,2.219,2.3,2.367,2.655,2.9,4.071]}}},"soubeh2025":{"79-41-K/41":{"uchazecu":97,"s":[{"skola":"Gymnázium, J. A. Komenského","obec":"Čelákovice","obor":"Gymnázium","podil":0.4021},{"skola":"SKOLAEUPRAHA, Lipí","obec":"Praha","obor":"Gymnázium","podil":0.1649},{"skola":"Gymnázium Františka Palackého, Masarykova","obec":"Neratovice","obor":"Gymnázium","podil":0.1443},{"skola":"Gymnázium, Litoměřická","obec":"Praha","obor":"Gymnázium","podil":0.1134}]},"78-42-M/01":{"uchazecu":37,"s":[{"skola":"Gymnázium, J. A. Komenského","obec":"Čelákovice","obor":"Gymnázium","podil":0.2973},{"skola":"Gymnázium J. S. Machara, Královická","obec":"Brandýs nad Labem-Stará Boleslav","obor":"Gymnázium","podil":0.2162},{"skola":"Střední průmyslová škola na Proseku, Novoborská","obec":"Praha","obor":"Informační technologie","podil":0.1351},{"skola":"Střední zemědělská škola, Zápská","obec":"Brandýs nad Labem-Stará Boleslav","obor":"Ekologie a životní prostředí","podil":0.1081}]},"79-41-K/81":{"uchazecu":222,"s":[{"skola":"Gymnázium, J. A. Komenského","obec":"Čelákovice","obor":"Gymnázium","podil":0.518},{"skola":"Gymnázium Františka Palackého, Masarykova","obec":"Neratovice","obor":"Gymnázium","podil":0.2793},{"skola":"Gymnázium, Českolipská","obec":"Praha","obor":"Gymnázium","podil":0.1396},{"skola":"Gymnázium, Litoměřická","obec":"Praha","obor":"Gymnázium","podil":0.1306}]}},"pasma2025":{"79-41-K/81":{"soutezicich":67,"prijatych":29,"neveslo_se":38,"nesplnilo_podminky":107,"min_prijaty":65.0,"pasmo_nejistoty":[65.0,65.0],"rozhodl_test":0.999,"nikdo_neodmitnut_pro_kapacitu":null,"talentova_zkouska":false,"pasma":[{"od":40,"do":45,"prijato":0,"soutezilo":7},{"od":45,"do":50,"prijato":0,"soutezilo":8},{"od":50,"do":55,"prijato":0,"soutezilo":7},{"od":55,"do":60,"prijato":0,"soutezilo":11},{"od":60,"do":70,"prijato":4,"soutezilo":9},{"od":70,"do":75,"prijato":9,"soutezilo":9},{"od":75,"do":85,"prijato":7,"soutezilo":7},{"od":85,"do":95,"prijato":9,"soutezilo":9}]},"79-41-K/41":{"soutezicich":53,"prijatych":29,"neveslo_se":24,"nesplnilo_podminky":4,"min_prijaty":69.0,"pasmo_nejistoty":[69.0,69.0],"rozhodl_test":0.999,"nikdo_neodmitnut_pro_kapacitu":null,"talentova_zkouska":false,"pasma":[{"od":40,"do":60,"prijato":0,"soutezilo":10},{"od":60,"do":65,"prijato":0,"soutezilo":8},{"od":65,"do":70,"prijato":1,"soutezilo":7},{"od":70,"do":75,"prijato":9,"soutezilo":9},{"od":75,"do":80,"prijato":11,"soutezilo":11},{"od":80,"do":90,"prijato":8,"soutezilo":8}]},"78-42-M/01":{"soutezicich":11,"prijatych":11,"neveslo_se":0,"nesplnilo_podminky":5,"min_prijaty":50.0,"pasmo_nejistoty":null,"rozhodl_test":null,"nikdo_neodmitnut_pro_kapacitu":true,"talentova_zkouska":false,"pasma":null}},"druheKolo":{"2025":{"78-42-M/01":{"stav":"vypsano","kapacita":19,"prihlasky":13,"prijati":2,"neveslo_se":0,"nesplnilo_podminky":4,"prijato_na_vyssi_prioritu":7,"prijatych_s_vysledkem":2},"79-41-K/41":{"stav":"bez_2_kola"},"79-41-K/81":{"stav":"nenaplneno_bez_2_kola","kolo1_kapacita":30,"kolo1_prijati":29}},"2026":{"78-42-M/01":{"stav":"vypsano","kapacita":7,"prihlasky":13,"prijati":2,"neveslo_se":0,"nesplnilo_podminky":2,"prijato_na_vyssi_prioritu":9,"prijatych_s_vysledkem":2},"79-41-K/41":{"stav":"bez_2_kola"},"79-41-K/81":{"stav":"bez_2_kola"}}},"inspekce":{"datum":"2025-01-14","souhrn":"Gymnázium J. S. Machara je kvalitní školou s výborným prospěchem žáků a moderním zázemím. Silné stránky jsou dlouhodobě výborné výsledky, nové učebny pro badatelskou výuku a kvalitní estetická výuka. Slabiny se týkají omezené aktivizace žáků ve výuce, nedostatečné diferenciace a zvýšené absence v 7. ročníku. Škola by měla více rozvíjet sebehodnocení, diskuse mezi žáky a propojení teorie s praxí.","silne":["Výborné výsledky: Žáci dlouhodobě dosahují velmi dobrých výsledků v průběhu i při ukončování studia, řada prospívá s vyznamenáním.","Moderní zázemí: Škola prošla rozsáhlou rekonstrukcí s novými učebnami pro badatelskou výuku, tělocvičnou a outdoorovou učebnou.","Kvalitní estetická výuka: Výuka umění využívá zážitkovou pedagogiku a rozvíjí kreativitu a praktické dovednosti."],"rizika":["Omezená aktivizace žáků: V přibližně polovině hodin chybí diskuse mezi žáky, jejich vzájemná spolupráce a reflexe pokroku.","Nedostatečná diferenciace: Výuka není vždy přizpůsobena individuálním potřebám, potenciál nadaných žáků zůstává nevyužitý.","Absence v 7. ročníku: V sedmém ročníku osmiletého studia se absence zvýšila až na 267 hodin za rok, což se projevilo zhoršením prospěchu."],"otazky":["Jak konkrétně škola podporuje nadané žáky a jak se liší přístup pro různě schopné žáky?","Jaké konkrétní kroky podniká škola proti zvýšené absenci v 7. ročníku?","Jak se ve výuce uplatňuje sebehodnocení a vrstevnické hodnocení žáků?"],"podpora":["Školní poradenské pracoviště s výchovnou poradkyní a kariérovou poradkyní","Individuální vzdělávací plány pro žáky se speciálními vzdělávacími potřebami (13 žáků se SVP, 1 podle IVP)","Pravidelné konzultace se školskými poradenskými zařízeními o podpůrných opatřeních","Adaptační pobyty pro nové žáky a sportovní kurzy pro posilování kolektivu"],"komu":["Žáci s dobrými studijními výsledky a motivací – škola nabízí kvalitní vzdělání a podporu","Děti zajímající se o přírodní vědy – silné zaměření na badatelskou výuku a projekty","Žáci s zájmem o umění a kreativitu – kvalitní estetická výuka s prvky zážitkové pedagogiky"]},"www":"http://www.gbl.cz","skupinyPodil":{"GY4_4":[0.263,0.278,0.278,0.28,0.297,0.303,0.312,0.324,0.328,0.329,0.333,0.337,0.357,0.363,0.37,0.372,0.377,0.38,0.382,0.39,0.395,0.398,0.4,0.4,0.405,0.405,0.405,0.405,0.406,0.407,0.414,0.414,0.416,0.417,0.42,0.421,0.429,0.433,0.435,0.436,0.44,0.441,0.441,0.444,0.444,0.446,0.448,0.455,0.472,0.472,0.476,0.476,0.476,0.477,0.481,0.484,0.492,0.492,0.492,0.495,0.5,0.5,0.5,0.5,0.504,0.504,0.508,0.508,0.511,0.517,0.517,0.517,0.526,0.526,0.526,0.526,0.536,0.536,0.541,0.542,0.542,0.545,0.548,0.55,0.553,0.553,0.557,0.56,0.562,0.562,0.565,0.566,0.566,0.571,0.571,0.577,0.577,0.577,0.579,0.58,0.58,0.588,0.588,0.588,0.588,0.596,0.597,0.6,0.6,0.6,0.6,0.6,0.605,0.606,0.612,0.615,0.615,0.621,0.621,0.625,0.625,0.625,0.625,0.625,0.625,0.625,0.625,0.627,0.628,0.629,0.632,0.632,0.632,0.638,0.638,0.638,0.638,0.638,0.638,0.641,0.643,0.652,0.652,0.653,0.667,0.667,0.667,0.667,0.672,0.674,0.682,0.682,0.682,0.682,0.682,0.698,0.698,0.698,0.7,0.701,0.704,0.706,0.707,0.709,0.711,0.714,0.714,0.714,0.723,0.723,0.732,0.732,0.732,0.732,0.732,0.732,0.732,0.733,0.741,0.741,0.741,0.744,0.75,0.75,0.75,0.75,0.75,0.75,0.756,0.759,0.759,0.763,0.763,0.765,0.769,0.769,0.769,0.772,0.779,0.78,0.78,0.789,0.789,0.789,0.789,0.791,0.793,0.793,0.8,0.804,0.811,0.811,0.811,0.811,0.811,0.822,0.822,0.822,0.829,0.832,0.833,0.833,0.833,0.833,0.833,0.833,0.833,0.845,0.848,0.849,0.853,0.857,0.857,0.857,0.857,0.857,0.867,0.87,0.87,0.87,0.87,0.879,0.88,0.882,0.882,0.882,0.882,0.882,0.882,0.882,0.882,0.882,0.891,0.896,0.899,0.9,0.908,0.909,0.909,0.909,0.909,0.909,0.909,0.923,0.928,0.938,0.938,0.944,0.952,0.952,0.968,0.968,0.968,0.977,0.984,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0],"GY8_8":[0.074,0.077,0.09,0.092,0.093,0.11,0.117,0.117,0.121,0.131,0.138,0.138,0.14,0.145,0.149,0.149,0.151,0.152,0.153,0.155,0.162,0.165,0.171,0.175,0.181,0.181,0.183,0.189,0.191,0.194,0.198,0.199,0.207,0.208,0.209,0.213,0.217,0.219,0.22,0.225,0.225,0.226,0.233,0.233,0.235,0.236,0.238,0.238,0.238,0.244,0.248,0.252,0.256,0.259,0.265,0.268,0.268,0.268,0.273,0.274,0.274,0.277,0.278,0.28,0.281,0.283,0.297,0.302,0.306,0.31,0.311,0.312,0.312,0.312,0.315,0.315,0.316,0.318,0.321,0.33,0.335,0.337,0.337,0.341,0.342,0.345,0.345,0.347,0.349,0.349,0.349,0.351,0.359,0.36,0.361,0.362,0.362,0.366,0.367,0.372,0.377,0.378,0.385,0.39,0.39,0.39,0.39,0.39,0.39,0.392,0.393,0.395,0.397,0.4,0.403,0.403,0.408,0.414,0.419,0.423,0.424,0.425,0.426,0.429,0.431,0.432,0.435,0.441,0.441,0.441,0.443,0.446,0.448,0.448,0.451,0.452,0.456,0.458,0.459,0.462,0.462,0.471,0.476,0.476,0.48,0.483,0.484,0.484,0.49,0.49,0.492,0.492,0.492,0.492,0.5,0.5,0.508,0.508,0.509,0.52,0.526,0.533,0.537,0.537,0.545,0.545,0.545,0.545,0.556,0.556,0.558,0.558,0.558,0.558,0.558,0.558,0.56,0.561,0.563,0.564,0.566,0.569,0.577,0.577,0.577,0.578,0.581,0.581,0.583,0.585,0.587,0.588,0.591,0.6,0.604,0.604,0.604,0.604,0.612,0.617,0.625,0.625,0.63,0.63,0.632,0.636,0.641,0.641,0.643,0.643,0.644,0.652,0.652,0.659,0.667,0.667,0.667,0.682,0.69,0.698,0.698,0.698,0.702,0.706,0.707,0.711,0.711,0.718,0.725,0.725,0.725,0.732,0.735,0.738,0.741,0.758,0.762,0.769,0.784,0.789,0.789,0.8,0.806,0.811,0.818,0.829,0.838,0.903,0.931,0.941,0.941,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0],"LYC_4":[0.229,0.239,0.274,0.327,0.333,0.345,0.353,0.361,0.361,0.376,0.384,0.387,0.395,0.4,0.401,0.405,0.408,0.409,0.411,0.416,0.417,0.431,0.433,0.435,0.441,0.443,0.444,0.446,0.448,0.453,0.455,0.475,0.475,0.476,0.476,0.479,0.492,0.5,0.5,0.5,0.5,0.504,0.508,0.508,0.508,0.508,0.521,0.526,0.526,0.526,0.528,0.533,0.536,0.541,0.541,0.543,0.545,0.551,0.556,0.556,0.566,0.569,0.575,0.577,0.577,0.588,0.592,0.6,0.608,0.609,0.612,0.634,0.638,0.638,0.638,0.638,0.638,0.64,0.652,0.652,0.667,0.667,0.667,0.667,0.667,0.682,0.682,0.682,0.698,0.703,0.707,0.71,0.727,0.737,0.75,0.75,0.75,0.769,0.778,0.778,0.789,0.8,0.806,0.811,0.811,0.811,0.812,0.833,0.833,0.833,0.833,0.833,0.833,0.852,0.857,0.857,0.879,0.882,0.889,0.897,0.909,0.909,0.909,0.909,0.909,0.909,0.938,0.938,0.96,0.967,0.968,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0]},"kontext2026":{"79-41-K/81":{"uchazecu":233,"vysledek":{"nikam":141,"vys":37,"niz":25,"sem":30},"hranice":{"typ":"slabsi_test","nejvyse_nesplneny":19.0,"nejnize_soutezici":20.0},"vys":[{"skola":"Gymnázium, J. A. Komenského","obec":"Čelákovice","obor":"Gymnázium","delka":8,"n":38,"zar":"velmi_tezke","pr":30,"so":141},{"skola":"Gymnázium Františka Palackého, Masarykova","obec":"Neratovice","obor":"Gymnázium","delka":8,"n":25,"zar":"velmi_tezke","pr":30,"so":95},{"skola":"Gymnázium, Českolipská","obec":"Praha","obor":"Gymnázium","delka":8,"n":17,"zar":"velmi_tezke","pr":60,"so":436},{"skola":"Gymnázium, Chodovická","obec":"Praha","obor":"Gymnázium","delka":8,"n":16,"zar":"velmi_tezke","pr":60,"so":267},{"skola":"Gymnázium Jana Palacha, Pod Vrchem","obec":"Mělník","obor":"Gymnázium","delka":8,"n":13,"zar":"velmi_tezke","pr":29,"so":115},{"skola":"Gymnázium, Litoměřická","obec":"Praha","obor":"Gymnázium","delka":8,"n":11,"zar":"velmi_tezke","pr":30,"so":392}],"niz":[{"skola":"Gymnázium, J. A. Komenského","obec":"Čelákovice","obor":"Gymnázium","delka":8,"n":88,"zar":"velmi_tezke","pr":30,"so":141},{"skola":"Gymnázium, Chodovická","obec":"Praha","obor":"Gymnázium","delka":8,"n":36,"zar":"velmi_tezke","pr":60,"so":267},{"skola":"Gymnázium Františka Palackého, Masarykova","obec":"Neratovice","obor":"Gymnázium","delka":8,"n":27,"zar":"velmi_tezke","pr":30,"so":95},{"skola":"Gymnázium Bohumila Hrabala, Komenského","obec":"Nymburk","obor":"Gymnázium","delka":8,"n":19,"zar":"tezke","pr":60,"so":139},{"skola":"Gymnázium, Českolipská","obec":"Praha","obor":"Gymnázium","delka":8,"n":16,"zar":"velmi_tezke","pr":60,"so":436},{"skola":"Gymnázium, Litoměřická","obec":"Praha","obor":"Gymnázium","delka":8,"n":12,"zar":"velmi_tezke","pr":30,"so":392}]},"79-41-K/41":{"uchazecu":94,"vysledek":{"sem":30,"vys":46,"niz":14,"nikam":4},"hranice":{"typ":"slabsi_test","nejvyse_nesplneny":14.0,"nejnize_soutezici":15.0},"vys":[],"niz":[{"skola":"Gymnázium, J. A. Komenského","obec":"Čelákovice","obor":"Gymnázium","delka":4,"n":21,"zar":"vetsina_uspela","pr":30,"so":41},{"skola":"Gymnázium Františka Palackého, Masarykova","obec":"Neratovice","obor":"Gymnázium","delka":4,"n":19,"zar":"vetsina_uspela","pr":30,"so":36},{"skola":"Gymnázium J. S. Machara, Královická","obec":"Brandýs nad Labem-Stará Boleslav","obor":"Technické lyceum","delka":4,"n":14,"zar":"kapacita_nerozhodovala","pr":23,"so":23}]},"78-42-M/01":{"uchazecu":65,"vysledek":{"vys":36,"sem":23,"niz":1,"nikam":5},"hranice":{"typ":"slabsi_test","nejvyse_nesplneny":19.0,"nejnize_soutezici":21.0},"vys":[{"skola":"Gymnázium J. S. Machara, Královická","obec":"Brandýs nad Labem-Stará Boleslav","obor":"Gymnázium","delka":4,"n":14,"zar":"vetsina_uspela","pr":30,"so":44}],"niz":[]}}};
+const OBORY = [
+  {kkov:'79-41-K/81', nazev:'osmileté gymnázium', vstup:'z 5. třídy', skupina:'GY8_8', skupinaNazev:'osmiletých gymnázií'},
+  {kkov:'79-41-K/41', nazev:'čtyřleté gymnázium', vstup:'z 9. třídy', skupina:'GY4_4', skupinaNazev:'čtyřletých gymnázií'},
+  {kkov:'78-42-M/01', nazev:'technické lyceum', vstup:'z 9. třídy', skupina:'LYC_4', skupinaNazev:'lyceí'}
+];
+const ROK = '2026', PRED = '2025';
+const NS = 'http://www.w3.org/2000/svg';
+const cs = (n, d=0) => Number(n).toLocaleString('cs-CZ', {minimumFractionDigits:d, maximumFractionDigits:d});
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $ = id => document.getElementById(id);
+// Předložka před číslem: „ze“ tam, kde se číslovka vyslovuje se s/z na začátku (7, 17, 70–79, 100–199).
+const zOd = n => /^(7\d?|17|1\d\d)$/.test(String(n)) ? 'ze' : 'z';
+function svg(w,h,label){const s=document.createElementNS(NS,'svg');s.setAttribute('viewBox',`0 0 ${w} ${h}`);s.setAttribute('role','img');s.setAttribute('aria-label',label);return s;}
+function el(tag,a,p,text){const e=document.createElementNS(NS,tag);for(const k in a){if(tag==='text'&&k==='fill')e.style.fill=a[k];else e.setAttribute(k,a[k]);}if(text!==undefined)e.textContent=text;p.appendChild(e);return e;}
+function tip(n,t){el('title',{},n,t);}
+const ZAR = {velmi_tezke:'velmi těžké', tezke:'těžké', stredne_tezke:'středně těžké', vetsina_uspela:'dostala se většina', kapacita_nerozhodovala:'místo pro všechny', vice_nabidek:'více zaměření', bez_souhrnu:'bez údajů'};
+function pozadavek(K){
+  const h=K?.hranice;
+  if (!h || h.typ==='nevysvetleno_vysledkem_jpz') return 'nedosáhlo požadavku školy (například minima bodů, výsledku školní zkoušky nebo jiného požadavku z kritérií)';
+  const kde = h.typ==='slabsi_test' ? 'v každém testu' : 'celkem';
+  const minimum = h.nejnize_soutezici - h.nejvyse_nesplneny <= 1 ? `${cs(h.nejnize_soutezici)} bodů ${kde}` : `${cs(h.nejvyse_nesplneny+1)} až ${cs(h.nejnize_soutezici)} bodů ${kde}`;
+  return `nedosáhlo požadavku školy; podle výsledků to odpovídá minimu ${minimum}`;
+}
+function stav(r){ if ((r.kapacita_nevesli||0) > 0) return 'A'; return r.prijati >= r.kapacita ? 'B' : 'C'; }
+function dukaz(id, nadpis, rok, obsah, otevreno){
+  const d = document.createElement('details'); d.className='dukaz'; if (otevreno) d.open = true;
+  d.innerHTML = `<summary>${esc(nadpis)}<span>${esc(rok)}</span></summary><div class="telo"></div>`;
+  obsah(d.querySelector('.telo')); $(id).appendChild(d);
+}
+function pct(arr,v){return Math.round(arr.filter(x=>x<=v).length/arr.length*100);}
+
+function grafZajem(box, o){
+  const W=560,H=220,L=36,R=70,T=18,B=30, rows=[PRED,ROK].map(r=>D.obory[o.kkov][r]);
+  const max=Math.max(...rows.map(x=>Math.max(x.prihlasky,x.kapacita)))*1.15;
+  const y=v=>T+(H-T-B)*(1-v/max); const s=svg(W,H,'Přihlášky podle priority a kapacita');
+  const krok = max>150?50:max>60?20:10;
+  for(let v=0;v<=max;v+=krok){el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:'var(--grid)'},s);el('text',{x:L-6,y:y(v)+4,'text-anchor':'end','font-size':11},s,cs(v));}
+  [PRED,ROK].forEach((rok,i)=>{const d=D.obory[o.kkov][rok];const cx=L+(W-L-R)*(i+0.5)/2,bw=64;
+    el('text',{x:cx,y:H-8,'text-anchor':'middle','font-size':13,'font-weight':700},s,rok);
+    const p=[d.priority[0],d.priority[1],d.priority.slice(2).reduce((a,b)=>a+b,0)];let acc=0;
+    p.forEach((v,j)=>{if(!v)return;const r=el('rect',{x:cx-bw/2,y:y(acc+v),width:bw,height:Math.max(0,y(acc)-y(acc+v)-2),rx:2,fill:`var(${['--p1','--p2','--p3'][j]})`},s);tip(r,`${rok}: ${['1. volba','2. volba','3. a další'][j]} ${cs(v)}`);acc+=v;});
+    el('line',{x1:cx-bw/2-10,x2:cx+bw/2+10,y1:y(d.kapacita),y2:y(d.kapacita),stroke:'var(--ink)','stroke-width':2},s);
+    el('text',{x:cx+bw/2+14,y:y(d.kapacita)+4,'font-size':11},s,`${d.kapacita} míst`);
+    el('text',{x:cx,y:y(d.prihlasky)-6,'text-anchor':'middle','font-size':12,'font-weight':700,fill:'var(--ink)'},s,cs(d.prihlasky));
+  });
+  box.innerHTML=`<p class="why">Sloupec jsou přihlášky podle toho, kolikátou volbou obor byl; čárka je kapacita.</p><div class="legend"><span><i style="background:var(--p1)"></i>1. volba</span><span><i style="background:var(--p2)"></i>2. volba</span><span><i style="background:var(--p3)"></i>3. a další</span></div>`;
+  box.appendChild(s); box.insertAdjacentHTML('beforeend','<p class="src">CERMAT, souhrny 1. kola. Předchozí ročník jen u spárované nabídky.</p>');
+}
+
+function grafSkupina(box, o){
+  const g=D.skupiny[o.skupina][ROK], a=D.obory[o.kkov][PRED].tlak, b=D.obory[o.kkov][ROK].tlak;
+  const W=560,H=130,L=12,R=12, top=Math.max(4,Math.ceil(Math.max(a,b)+0.5)); const x=v=>L+(W-L-R)*Math.min(v,top)/top;
+  const s=svg(W,H,'Tlak prvních voleb ve srovnatelné skupině');
+  for(let v=0;v<=top;v++){el('line',{x1:x(v),x2:x(v),y1:14,y2:H-26,stroke:'var(--grid)'},s);el('text',{x:x(v),y:H-8,'text-anchor':'middle','font-size':11},s,cs(v)+'×');}
+  g.hodnoty.forEach((v,i)=>el('circle',{cx:x(v),cy:24+((i*37)%56),r:2.6,fill:'var(--dot)'},s));
+  el('line',{x1:x(g.median),x2:x(g.median),y1:10,y2:H-26,stroke:'var(--ink-3)','stroke-width':2},s);
+  el('text',{x:x(g.median)+5,y:12,'font-size':11},s,`medián ${cs(g.median,2)}×`);
+  const c0=el('circle',{cx:x(a),cy:52,r:6,fill:'none',stroke:'var(--s1)','stroke-width':2},s);tip(c0,`${PRED}: ${cs(a,2)}×`);
+  el('circle',{cx:x(b),cy:52,r:8,fill:'var(--s1)',stroke:'var(--surface)','stroke-width':2},s);
+  box.innerHTML=`<p class="why">Každá tečka je jeden obor stejného typu a délky v celé zemi. Modrá tečka je tento obor v roce ${ROK}, kroužek v roce ${PRED}. Hodnota je tlak prvních voleb: kolik uchazečů chtělo obor jako první volbu na jedno místo.</p>`;
+  box.appendChild(s); box.insertAdjacentHTML('beforeend',`<p class="src">${cs(g.n)} ${o.skupinaNazev} v roce ${ROK}. Tlak prvních voleb je ve slovníku jediný ověřený ukazatel obtížnosti přijetí.</p>`);
+}
+
+function grafSoutezici(box, o){
+  const W=560,rowH=58,L=44,R=10,H=[PRED,ROK].length*rowH+4; const s=svg(W,H,'Kolik soutěžících uchazečů se dostalo');
+  const max=Math.max(...[PRED,ROK].map(y=>D.obory[o.kkov][y].prijati+(D.obory[o.kkov][y].kapacita_nevesli||0)));
+  [PRED,ROK].forEach((rok,i)=>{const d=D.obory[o.kkov][rok];const so=d.prijati+(d.kapacita_nevesli||0);const yy=i*rowH;const w=v=>(W-L-R)*v/max;
+    el('text',{x:0,y:yy+26,'font-size':13,'font-weight':700},s,rok);
+    const a=el('rect',{x:L,y:yy+12,width:Math.max(1,w(d.prijati)-2),height:22,rx:3,fill:'var(--s1)'},s);tip(a,`${rok}: přijato ${d.prijati}`);
+    if(d.kapacita_nevesli){const b=el('rect',{x:L+w(d.prijati),y:yy+12,width:Math.max(1,w(d.kapacita_nevesli)-2),height:22,rx:3,fill:'var(--s2)'},s);tip(b,`${rok}: nevešli se ${d.kapacita_nevesli}`);}
+    el('text',{x:L,y:yy+50,'font-size':12,fill:'var(--ink)'},s,`přijato ${cs(d.prijati)} ${zOd(so)} ${cs(so)} soutěžících uchazečů${d.kapacita_nevesli?`, ${cs(d.kapacita_nevesli)} se nevešlo`:', nikdo neodmítnut kvůli kapacitě'}`);});
+  box.innerHTML=`<p class="why">Soutěžící uchazeči jsou ti, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš. Modrá část se dostala, oranžová se nevešla.</p><div class="legend"><span><i style="background:var(--s1)"></i>přijati</span><span><i style="background:var(--s2)"></i>nevešli se kvůli kapacitě</span></div>`;
+  box.appendChild(s); box.insertAdjacentHTML('beforeend',`<p class="src">CERMAT, souhrny 1. kola. Mezi soutěžící uchazeče nepatří ti, kdo nedosáhli požadavku školy, a ti, které přijali na obor výš na přihlášce; viz další graf.</p>`);
+}
+
+function grafSkupinaPodil(box, o){
+  const g=D.skupinyPodil[o.skupina]; const r=D.obory[o.kkov][ROK]; const q=r.prijati/(r.prijati+r.kapacita_nevesli);
+  const W=560,H=120,L=12,R=12; const x=v=>L+(W-L-R)*v; const s=svg(W,H,'Podíl přijatých ze soutěžících uchazečů ve skupině');
+  [0,0.25,0.5,0.75,1].forEach(v=>{el('line',{x1:x(v),x2:x(v),y1:10,y2:H-26,stroke:'var(--grid)'},s);el('text',{x:x(v),y:H-8,'text-anchor':'middle','font-size':11},s,cs(v*100)+' %');});
+  g.forEach((v,i)=>el('circle',{cx:x(v),cy:18+((i*37)%56),r:2.6,fill:'var(--dot)'},s));
+  el('circle',{cx:x(q),cy:46,r:8,fill:'var(--s1)',stroke:'var(--surface)','stroke-width':2},s);
+  const tezsi=Math.round(g.filter(v=>v>q).length/g.length*100);
+  box.innerHTML=`<p class="why">Každá tečka je jeden obor stejného typu a délky: kolik procent soutěžících uchazečů, tedy těch, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš, se dostalo v roce ${ROK}. Vpravo jsou obory, kam se dostali skoro všichni. Modrá tečka je tento obor.</p>`;
+  box.appendChild(s); box.insertAdjacentHTML('beforeend',`<p class="src">U ${tezsi} ze 100 ${o.skupinaNazev} se dostal větší podíl soutěžících uchazečů než tady. ${cs(g.length)} oborů s aspoň 10 soutěžícími uchazeči.</p>`);
+}
+
+function grafVysledek(box, o){
+  const parts=[['prijati','--s1','přijati'],['kapacita_nevesli','--s2','nevešli se kvůli kapacitě'],['vyssi_priorita','--s3','přijati na obor výš na přihlášce'],['nesplnili','--s4','nedosáhli požadavku školy'],['vzdali','--s0','vzdali se']];
+  const W=560,rowH=40,L=40,R=6,H=[PRED,ROK].length*rowH+4; const s=svg(W,H,'Jak dopadly přihlášky');
+  [PRED,ROK].forEach((rok,i)=>{const d=D.obory[o.kkov][rok];const tot=parts.reduce((a,[k])=>a+(d[k]||0),0);const yy=i*rowH;
+    el('text',{x:0,y:yy+19,'font-size':12,'font-weight':700},s,rok);let acc=0;
+    parts.forEach(([k,c,n])=>{const v=d[k]||0;if(!v)return;const w=(W-L-R)*v/tot;const r=el('rect',{x:L+(W-L-R)*acc/tot,y:yy+4,width:Math.max(.5,w-2),height:22,rx:3,fill:`var(${c})`},s);tip(r,`${rok}: ${n} ${cs(v)} z ${cs(tot)}`);
+      if(w>30)el('text',{x:L+(W-L-R)*acc/tot+5,y:yy+19,'font-size':11,'font-weight':700,fill:'#fff'},s,cs(v));acc+=v;});});
+  box.innerHTML=`<p class="why">Všechny přihlášky na obor rozdělené podle výsledku.</p><div class="legend">${parts.map(([,c,n])=>`<span><i style="background:var(${c})"></i>${n}</span>`).join('')}</div>`;
+  box.appendChild(s);
+}
+
+function grafPasma(box, o){
+  const p=D.pasma2025[o.kkov]; const W=560,rowH=24,L=92,R=46,H=p.pasma.length*rowH+4; const s=svg(W,H,'Přijatí podle bodového pásma v roce 2025');
+  p.pasma.forEach((b,i)=>{const yy=i*rowH;el('text',{x:0,y:yy+15,'font-size':12},s,`${b.od}–${b.do} bodů`);
+    el('rect',{x:L,y:yy+5,width:(W-L-R)*b.soutezilo/Math.max(...p.pasma.map(z=>z.soutezilo)),height:14,rx:3,fill:'var(--sunk)'},s);
+    const r=el('rect',{x:L,y:yy+5,width:Math.max(0,(W-L-R)*b.prijato/Math.max(...p.pasma.map(z=>z.soutezilo))),height:14,rx:3,fill:'var(--s1)'},s);tip(r,`${b.od}–${b.do} bodů: přijato ${b.prijato} z ${b.soutezilo}`);
+    el('text',{x:W-R+6,y:yy+16,'font-size':12,'font-weight':700,fill:'var(--ink)'},s,`${b.prijato} z ${b.soutezilo}`);});
+  box.innerHTML=`<p class="why">Soutěžící uchazeči v roce 2025, tedy ti, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš, podle součtu bodů z češtiny a matematiky (každý test nejvýš 50 bodů): kolik jich v každém pásmu bylo a kolik se dostalo. Není to šance konkrétního uchazeče.</p><div class="legend"><span><i style="background:var(--s1)"></i>přijati</span><span><i style="background:var(--sunk)"></i>soutěžících uchazečů celkem</span></div>`;
+  box.appendChild(s); box.insertAdjacentHTML('beforeend',`<p class="src">Data o uchazečích 1. kola 2025 podle registru. Pod ${cs(p.min_prijaty)} bodů se v roce 2025 nedostal nikdo. Mimo tabulku: ${cs(p.nesplnilo_podminky)} uchazečů nedosáhlo požadavku školy.</p>`);
+}
+
+function grafSoubeh(box, o){
+  const sb=D.soubeh2025[o.kkov]; const W=560,rowH=34,L=240,R=44,H=sb.s.length*rowH; const s=svg(W,H,'Souběžné přihlášky');
+  sb.s.forEach((x,i)=>{const yy=i*rowH;el('text',{x:0,y:yy+14,'font-size':12,fill:'var(--ink)'},s,x.skola.length>32?x.skola.slice(0,31)+'…':x.skola);el('text',{x:0,y:yy+28,'font-size':10.5},s,`${x.obec} · ${x.obor}`);
+    el('rect',{x:L,y:yy+8,width:W-L-R,height:12,rx:3,fill:'var(--sunk)'},s);el('rect',{x:L,y:yy+8,width:(W-L-R)*x.podil,height:12,rx:3,fill:'var(--s1)'},s);
+    el('text',{x:W-R+6,y:yy+19,'font-size':12,'font-weight':700,fill:'var(--ink)'},s,cs(x.podil*100)+' %');});
+  box.innerHTML=`<p class="why">Podíl uchazečů o tento obor, kteří si podali přihlášku i jinam. Ukazuje, s čím obor soutěží, ne kam kdo nastoupil.</p>`;
+  box.appendChild(s); box.insertAdjacentHTML('beforeend',`<p class="src">Z ${cs(sb.uchazecu)} uchazečů v roce 2025. Platí za obor školy bez zaměření.</p>`);
+}
+
+function grafVysledekUchazecu(box, o){
+  const K=D.kontext2026[o.kkov], v=K.vysledek; const parts=[['sem','--s1','přijati sem'],['vys','--s3','přijati na obor výš na přihlášce'],['niz','--p3','přijati na obor níž na přihlášce'],['nikam','--s2','v 1. kole nikam']];
+  const W=560,H=52,L=0,R=0,tot=K.uchazecu; const s=svg(W,H,'Jak dopadli uchazeči o obor'); let acc=0;
+  parts.forEach(([k,c,n])=>{const x=v[k]||0; if(!x) return; const w=(W-L-R)*x/tot; const rr=el('rect',{x:L+(W-L-R)*acc/tot,y:4,width:Math.max(.5,w-2),height:26,rx:3,fill:`var(${c})`},s); tip(rr,`${n}: ${x}`); if(w>28) el('text',{x:L+(W-L-R)*acc/tot+6,y:22,'font-size':12,'font-weight':700,fill:k==='niz'?'var(--ink)':'#fff'},s,cs(x)); acc+=x;});
+  box.innerHTML=`<p class="why">Všichni, kdo měli tento obor na přihlášce, podle toho, kam je v 1. kole ${ROK} rozřadili.</p><div class="legend">${parts.map(([,c,n])=>`<span><i style="background:var(${c})"></i>${n}</span>`).join('')}</div>`;
+  box.appendChild(s); box.insertAdjacentHTML('beforeend',`<p class="src">Data o uchazečích 1. kola ${ROK}, ${cs(tot)} uchazečů. Neříká, jak dopadnete vy; pořadí na přihlášce šanci nemění.</p>`);
+}
+
+function tabulkaVysNiz(box, o){
+  const K=D.kontext2026[o.kkov];
+  const radek=x=>`<tr><td>${esc(x.skola||'')}<small style="display:block;color:var(--ink-3)">${esc(x.obec||'')} · ${esc(x.obor||'')}${x.delka?` · ${x.delka}leté`:''}</small></td><td class="n">${cs(x.n)}</td><td><span class="chip ${x.zar}">${ZAR[x.zar]||'—'}</span>${x.so?`<small style="display:block;color:var(--ink-3)">${cs(x.pr)} ${zOd(x.so)} ${cs(x.so)}</small>`:''}</td></tr>`;
+  const blok=(nadpis,L)=>L.length?`<tr><th colspan="3" style="padding-top:12px">${nadpis}</th></tr>${L.map(radek).join('')}`:'';
+  const r=D.obory[o.kkov][ROK]; const tato=r.kapacita_nevesli>0 ? (r.prijati/(r.prijati+r.kapacita_nevesli)<1/3?'velmi_tezke':r.prijati/(r.prijati+r.kapacita_nevesli)<1/2?'tezke':r.prijati/(r.prijati+r.kapacita_nevesli)<2/3?'stredne_tezke':'vetsina_uspela') : 'kapacita_nerozhodovala';
+  box.innerHTML=`<p class="why">Obory, které měli uchazeči na přihlášce před tímto oborem a za ním, s tím, jak těžké bylo se na ně dostat. Tento obor: <span class="chip ${tato}">${ZAR[tato]}</span></p>
+  <div class="scroll"><table><thead><tr><th>Obor</th><th class="n">Uchazečů</th><th>Obtížnost přijetí ${ROK}</th></tr></thead><tbody>${blok('Měli výš na přihlášce',K.vys)}${blok('Měli níž na přihlášce',K.niz)}</tbody></table></div>
+  <p class="src">Jen obory s aspoň 10 společnými uchazeči. Pořadí na přihlášce říká, kam kdo chtěl víc, ne jak je obor těžký: tatáž gymnázia bývají u různých uchazečů výš i níž.</p>`;
+}
+
+function grafDruheKolo(box, o){
+  const rows=[PRED,ROK].map(r=>[r,D.druheKolo[r]?.[o.kkov]]);
+  box.innerHTML=`<p class="why">Když se obor v 1. kole nenaplní, škola může vypsat 2. kolo. Ne vždy to udělá.</p><div class="scroll"><table><thead><tr><th>Rok</th><th>2. kolo</th><th class="n">Míst</th><th class="n">Přihlášek</th><th class="n">Přijato</th></tr></thead><tbody>${rows.map(([r,z])=>`<tr><td>${r}</td><td>${!z?'—':z.stav==='vypsano'?'vypsáno':z.stav==='nenaplneno_bez_2_kola'?'nenaplněno, nevypsáno':'nebylo potřeba'}</td><td class="n">${z?.kapacita??'—'}</td><td class="n">${z?.prihlasky??'—'}</td><td class="n">${z?.prijati??'—'}</td></tr>`).join('')}</tbody></table></div><p class="src">CERMAT, souhrny 2. kola.</p>`;
+}
+
+function grafSpoluzaci(box, o){
+  const W=560,rowH=40,L=44,R=16,H=[PRED,ROK].length*rowH+24; const x=v=>L+(W-L-R)*v/100; const s=svg(W,H,'Průměrné percentilové umístění');
+  for(let v=0;v<=100;v+=25){el('line',{x1:x(v),x2:x(v),y1:4,y2:H-22,stroke:'var(--grid)'},s);el('text',{x:x(v),y:H-6,'text-anchor':'middle','font-size':11},s,String(v));}
+  [PRED,ROK].forEach((rok,i)=>{const d=D.obory[o.kkov][rok];const cy=i*rowH+20;el('text',{x:0,y:cy+4,'font-size':12,'font-weight':700},s,rok);
+    el('rect',{x:x(d.perc_prumer_uchazecu)-2,y:cy-10,width:4,height:20,rx:2,fill:'var(--s0)'},s);
+    const c=el('circle',{cx:x(d.perc_prumer_prijatych),cy,r:8,fill:'var(--s1)',stroke:'var(--surface)','stroke-width':2},s);tip(c,`${rok}: přijatí ${cs(d.perc_prumer_prijatych)}. percentil`);
+    el('text',{x:Math.min(x(d.perc_prumer_prijatych)+12,W-30),y:cy+4,'font-size':12,'font-weight':700,fill:'var(--ink)'},s,cs(d.perc_prumer_prijatych));});
+  box.innerHTML=`<p class="why">Průměrné umístění v jednotné zkoušce proti celé zemi: modrá tečka přijatí, šedá značka všichni, kdo se hlásili. V percentilech, protože body ovlivňuje obtížnost testu.</p><div class="legend"><span><i style="background:var(--s1)"></i>přijatí</span><span><i style="background:var(--s0)"></i>všichni uchazeči</span></div>`;
+  box.appendChild(s); box.insertAdjacentHTML('beforeend','<p class="src">Popisuje spolužáky, ne náročnost studia.</p>');
+}
+
+function render(o){
+  document.querySelectorAll('#tabs .tab').forEach(t=>t.setAttribute('aria-pressed',String(t.dataset.kkov===o.kkov)));
+  const r=D.obory[o.kkov][ROK], p=D.obory[o.kkov][PRED], st=stav(r), pas=D.pasma2025[o.kkov], dk=D.druheKolo[ROK]?.[o.kkov];
+  $('meta').textContent=`${o.nazev[0].toUpperCase()+o.nazev.slice(1)} · přijímání ${o.vstup} · ${r.kapacita} míst v 1. kole ${ROK}`;
+  $('rok1').textContent=`1. kolo ${ROK}`; $('rok3').textContent=`${ROK} a inspekce ${D.inspekce.datum.slice(0,4)}`;
+  const g=D.skupiny[o.skupina][ROK]; const podil=r.prihlasky? r.nesplnili/r.prihlasky : 0;
+  const sout=(x)=>x.prijati+(x.kapacita_nevesli||0);
+  const zlomek=(pr,so)=>{const q=pr/so; if(q>=0.9) return 'skoro všichni'; const n=Math.round(1/q); if(q>=0.75) return 'zhruba tři ze čtyř'; if(q>=0.62) return 'zhruba dva ze tří'; if(q>=0.45) return 'zhruba každý druhý'; return n<=10?`zhruba každý ${['','','druhý','třetí','čtvrtý','pátý','šestý','sedmý','osmý','devátý','desátý'][n]}`:'méně než každý desátý';};
+  const verdikt=(x)=>{if(!(x.kapacita_nevesli>0)) return null; const q=x.prijati/sout(x); return q<1/3?'velmi těžké':q<1/2?'těžké':q<2/3?'středně těžké':'většina_uspela';};
+  const vd=verdikt(r), vp=verdikt(p);
+  let v1;
+  if (st==='A') {
+    const hlavni = vd==='většina_uspela' ? `<b>Dostala se většina soutěžících uchazečů, ale ne všichni.</b>` : `<b>Dostat se sem je ${vd}.</b>`;
+    v1 = `${hlavni} V 1. kole ${ROK} se ${zOd(sout(r))} <b>${cs(sout(r))} soutěžících uchazečů</b>, tedy těch, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš, dostalo ${cs(r.prijati)}, což je <b>${zlomek(r.prijati,sout(r))}</b>.`;
+    v1 += (p.kapacita_nevesli>0) ? ` V roce ${PRED}: ${zlomek(p.prijati,sout(p))}, ${cs(p.prijati)} ${zOd(sout(p))} ${cs(sout(p))}.` : ` V roce ${PRED} kapacita nerozhodovala.`;
+  } else {
+    v1 = `<b>Místo bylo pro všechny, kdo splnili požadavky školy.</b> V 1. kole ${ROK} škola přijala ${cs(r.prijati)} uchazečů na ${cs(r.kapacita)} míst a nikoho neodmítla kvůli kapacitě.`;
+    if (dk?.stav==='vypsano') v1 += ` Volná místa nabídla ve <b>2. kole</b> (${cs(dk.kapacita)}).`;
+  }
+  const K=D.kontext2026[o.kkov];
+  if (r.nesplnili >= r.prijati || podil >= 0.2) v1 += ` Kromě toho <b>${cs(r.nesplnili)} ${zOd(r.prihlasky)} ${cs(r.prihlasky)}</b> uchazečů ${pozadavek(K)}.`;
+  $('odpoved1').innerHTML=v1;
+  $('odpoved1-src').textContent = st==='A' ? 'Popisuje, jak dopadli uchazeči v jednom ročníku. Neříká, jestli se dostanete vy; mezi roky se to mění.' : 'Nenaplněný obor neznamená jisté přijetí: rozhodují kritéria školy a to, zda obor znovu otevře.';
+
+  $('dukazy1').innerHTML='';
+  dukaz('dukazy1','Kolik soutěžících uchazečů se dostalo',`${PRED}–${ROK}`,box=>grafSoutezici(box,o), true);
+  if (st==='A') dukaz('dukazy1','Proti podobným oborům',ROK,box=>grafSkupinaPodil(box,o));
+  dukaz('dukazy1','Co se stalo se všemi přihláškami',`${PRED}–${ROK}`,box=>grafVysledek(box,o));
+  if (st==='A' && pas?.pasma?.length) dukaz('dukazy1','S kolika body se kdo dostal','1. kolo 2025',box=>grafPasma(box,o));
+
+  const b2=[];
+  if (K?.uchazecu){ const v=K.vysledek; const vs=[...K.vys,...K.niz].map(x=>x.zar).filter(Boolean); const cast=vs.length? Object.entries(vs.reduce((a,z)=>(a[z]=(a[z]||0)+1,a),{})).sort((a,b)=>b[1]-a[1])[0][0] : null;
+    b2.push(`Ze <b>${cs(K.uchazecu)} uchazečů</b>, kteří měli obor na přihlášce, se v 1. kole ${ROK} dostalo sem ${cs(v.sem||0)}, na obor výš ${cs(v.vys||0)}, na obor níž ${cs(v.niz||0)} a <b>nikam ${cs(v.nikam||0)}</b>, tedy na žádný obor z přihlášky.${(v.nikam||0)/K.uchazecu>=0.25 && cast ? ` Obory, které měli výš i níž, byly většinou ${ZAR[cast]==='velmi těžké'||ZAR[cast]==='těžké'?'také '+ZAR[cast]:ZAR[cast]}; pomůže mít na přihlášce i obor, kde v 1. kole místo bylo.` : ''}`); }
+  b2.push(`Rozhodují kritéria, která škola vyhlašuje na svém webu. <small><a href="${esc(D.www)}">Kritéria přijetí na webu školy</a> · škola zatím údaje na tomto webu nepotvrdila</small>`);
+  b2.push(`Pořadí oborů na přihlášce šanci na přijetí <b>nemění</b>, škola řadí jen podle svých kritérií. Seřaďte obory podle toho, kam chcete chodit. <small><a href="https://www.prijimackynaskolu.cz/jak-funguje-prijimani">Jak rozřazení funguje</a></small>`);
+  if (pas?.talentova_zkouska) b2.push('O přijetí rozhoduje i talentová zkouška, o které údaje nemáme.');
+  else if (st==='A' && pas?.rozhodl_test >= 0.97) b2.push(`V roce 2025 o přijetí rozhodoval hlavně <b>výsledek jednotné zkoušky</b>; pořadí podle testu odpovídalo výsledku přijímání.`);
+  if (st!=='A' && dk?.stav==='vypsano') b2.push(`Když se obor nenaplní, bývá tu <b>2. kolo</b>: ${PRED} s ${cs(D.druheKolo[PRED][o.kkov]?.kapacita)} místy, ${ROK} se ${cs(dk.kapacita)}.`);
+  $('odpoved2').innerHTML=b2.map(x=>`<li>${x}</li>`).join('');
+  $('dukazy2').innerHTML='';
+  if (K?.uchazecu) dukaz('dukazy2','Jak dopadli všichni, kdo se sem hlásili',ROK,box=>grafVysledekUchazecu(box,o), true);
+  if (K && (K.vys.length||K.niz.length)) dukaz('dukazy2','Obory výš a níž na přihlášce',ROK,box=>tabulkaVysNiz(box,o), true);
+  dukaz('dukazy2','2. kolo',`${PRED}–${ROK}`,box=>grafDruheKolo(box,o), st!=='A');
+
+  $('odpoved3').innerHTML=`Přijatí mají v jednotné zkoušce průměrné umístění kolem <b>${cs(r.perc_prumer_prijatych)}. percentilu</b> celé země: s podobnými výsledky tu budou spolužáci.`;
+  $('dukazy3').innerHTML='';
+  dukaz('dukazy3','S jakými výsledky přicházejí spolužáci',`${PRED}–${ROK}`,box=>grafSpoluzaci(box,o), true);
+  const I=D.inspekce;
+  $('inspekce').innerHTML=`
+    <div class="karta"><h3>Co inspekce chválí</h3><ul>${I.silne.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
+    <div class="karta"><h3>Na co si dát pozor</h3><ul>${I.rizika.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
+    <div class="karta"><h3>Podpora žáků</h3><ul>${I.podpora.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
+    <div class="karta"><h3>Na co se zeptat na dni otevřených dveří</h3><ul>${I.otazky.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`;
+}
+
+$('tabs').innerHTML=OBORY.map(o=>`<button type="button" class="tab" data-kkov="${o.kkov}" aria-pressed="false">${o.nazev}</button>`).join('');
+document.querySelectorAll('#tabs .tab').forEach(t=>t.addEventListener('click',()=>render(OBORY.find(o=>o.kkov===t.dataset.kkov))));
+$('ulozit').addEventListener('click',e=>{const on=e.currentTarget.getAttribute('aria-pressed')!=='true';e.currentTarget.setAttribute('aria-pressed',String(on));e.currentTarget.textContent=on?'Uloženo mezi zvažované':'Uložit mezi zvažované';});
+render(OBORY[0]);
+</script>

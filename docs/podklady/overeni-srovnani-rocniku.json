@@ -1,0 +1,133 @@
+{
+ "zdroj_skriptu": "scripts/build-souhrny-kolo1.py",
+ "rocniky": {
+  "2025": {
+   "soubor": "PZ2025_kolo1_skolobory_vysledky.xlsx",
+   "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2025_kolo1_skolobory_vysledky.xlsx",
+   "sha256": "b4016252e34db63aeac538f9983bada503fb79770ac565c63f4a5a230b96bdaf",
+   "nabidek": 3059
+  },
+  "2026": {
+   "soubor": "PZ2026_kolo1_skolobory_vysledky.xlsx",
+   "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2026_kolo1_skolobory_vysledky.xlsx",
+   "sha256": "a003441f4beed6fb9c181aa00f9d1a59a9c206ff10f113ad807740e68d5511d5",
+   "nabidek": 3091
+  }
+ },
+ "parovani": {
+  "2025-2026": {
+   "nabidek_novy_rocnik": 3091,
+   "sparovano": 2858,
+   "shoda_klice": 2315,
+   "jedna_ku_jedne": 543,
+   "bez_predchoziho_rocniku": 233
+  }
+ },
+ "stabilita": {
+  "2025-2026": {
+   "kapacita": {
+    "n": 2858,
+    "ctvrtiny_zmeny": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "index_poptavky": {
+    "n": 2857,
+    "ctvrtiny_zmeny": [
+     -0.48,
+     -0.04,
+     0.4
+    ]
+   },
+   "tlak_prvnich_voleb": {
+    "n": 2857,
+    "ctvrtiny_zmeny": [
+     -0.23,
+     -0.03,
+     0.2
+    ]
+   },
+   "cj_ma_prijati": {
+    "n": 2823,
+    "ctvrtiny_zmeny": [
+     -0.73,
+     2.62,
+     5.79
+    ]
+   },
+   "prumerne_umisteni_prijatych": {
+    "n": 2823,
+    "ctvrtiny_zmeny": [
+     -5.0,
+     -0.1,
+     4.9
+    ]
+   },
+   "podil_prvnich_voleb_pb": {
+    "n": 2857,
+    "ctvrtiny_zmeny": [
+     -5.94,
+     -0.19,
+     5.09
+    ]
+   }
+  }
+ },
+ "shoda_s_jinymi_zdroji": {
+  "historicky_prumer_2025_proti_prumeru_prijatych": {
+   "n": 2809,
+   "do_0_5_bodu": 2590,
+   "median_rozdilu": 0.02
+  },
+  "min_prijaty_percentil_2025_souhrn_proti_datum_uchazecu": {
+   "n": 2278,
+   "do_2_bodu": 2039,
+   "median_rozdilu": 1.3
+  },
+  "min_prijaty_percentil_2026_souhrn_proti_datum_uchazecu": {
+   "n": 2286,
+   "do_2_bodu": 2182,
+   "median_rozdilu": 0.5
+  }
+ },
+ "podil_prijatych_ze_soutezicich": {
+  "2025": {
+   "zarazeni": {
+    "kapacita_nerozhodovala": 1281,
+    "stredne_tezke": 511,
+    "tezke": 352,
+    "velmi_tezke": 167,
+    "vetsina_uspela": 747,
+    "null": 1
+   },
+   "ctvrtiny_podilu_u_nabidek_s_odmitnutymi": [
+    0.47,
+    0.62,
+    0.77
+   ]
+  },
+  "2026": {
+   "zarazeni": {
+    "vetsina_uspela": 739,
+    "kapacita_nerozhodovala": 1355,
+    "stredne_tezke": 476,
+    "velmi_tezke": 168,
+    "tezke": 353
+   },
+   "ctvrtiny_podilu_u_nabidek_s_odmitnutymi": [
+    0.46,
+    0.61,
+    0.78
+   ]
+  },
+  "2025-2026": {
+   "n_aspon_20_soutezicich_v_obou_letech": 1868,
+   "korelace": 0.723,
+   "median_abs_zmeny_pb": 9.4,
+   "stejne_zarazeni_pct": 48.6,
+   "nejvys_o_stupen_pct": 90.2
+  }
+ }
+}

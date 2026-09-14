@@ -1,6 +1,6 @@
 # Datová linka
 
-Verze 1.1 · 13. 9. 2026 · Plán, provozní příručka a výsledky ověření.
+Verze 1.2 · 14. 9. 2026 · Plán, provozní příručka a výsledky ověření.
 
 Automatizovaný systém, který zjistí, že zdroj zveřejnil nová nebo přepsaná data, stáhne je, zkontroluje a zpracuje, oznámí to správci a po jeho schválení připraví převzetí. **Web se bez schválení nikdy nezmění** a ani po schválení linka sama nepřepíná zobrazené období; to zůstává krokem `prepni` v [registru stavu datových sad](zdroje-dat.md#5-stav-datových-sad).
 
@@ -44,6 +44,7 @@ Fronta je v `data/linka/fronta.json`. Pracovní soubory ve `data/linka/prace/<K�
 | Sada | Zpracování | Předání po schválení |
 |---|---|---|
 | `cermat-uchazeci-kolo1` | kontrola povinných sloupců, `build-pasma-prijeti.py` a `build-soubeh-prihlasek.py` do pracovního adresáře, srovnání s tím, co je na webu | větev s novými soubory `public/pasma_prijeti_<rok>.json` a `public/soubeh_prihlasek_<rok>.json` a pull request |
+| `cermat-maturita` | k jarnímu souboru stažení tří předchozích jarních ročníků, `build-maturita-skoly.py` s doplněním do stávajícího výstupu, kontrola povinných sloupců češtiny (včetně pasti směrodatné odchylky a percentilu), pojistka proti poklesu počtu škol; stav po podzimu se nezpracuje | větev s `public/maturita_skoly.json` a pull request; web ho čte až po přepnutí období v registru |
 | `cermat-kolo2-agregaty` | stažení výsledků 1. kola téhož roku, `build-druhe-kolo.py` s doplněním ročníku do stávajícího výstupu, pojistka proti nabídkám bez 2. kola | větev s `public/druhe_kolo.json` a pull request; web nový rok ukáže až po přepnutí období v registru |
 | ostatní | stažení, sha256, listy, hlavička, počet řádků, změny struktury proti předchozímu souboru | záznam rozhodnutí ve frontě a doporučený ruční krok |
 
@@ -130,5 +131,6 @@ python3 scripts/datova-linka.py predej --vse-schvalene
 
 | Verze | Změna |
 |---|---|
+| 1.2 | Zpracovatel maturitních výsledků (`cermat-maturita`), ověřeno nanečisto 14. 9. 2026: úloha pro jaro 2026, 1 112 škol, roky 2023–2026. |
 | 1.1 | Výsledky ověření: testy nanečisto, tři chyby nalezené ostrým během nanečisto, první ostré oznámení. |
 | 1.0 | Plán a provozní příručka. |

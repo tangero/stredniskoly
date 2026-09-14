@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.5 · 13. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.8 · 14. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -81,15 +81,15 @@ Soubor výsledků má **91 sloupců** a stejnou stavbu v 1. i 2. kole. Verze 1.4
 | 31 `KAPACITA`, 32 `INDEX POPTÁVKY`, 33 `PŘIHLÁŠKY CELKEM` | stejné jako v souboru přihlášek | jaký je zájem | ano |
 | 34 `PŘIJATÍ` | počet přijatých | naplnili obor | ano |
 | 35–39 `PŘIHLÁŠKY - PRIORITA 1` až `5` | přihlášky podle pořadí | je to škola první volby | ano |
-| 40–44 `PŘIJATÍ - PRIORITA 1` až `5` | přijatí podle pořadí na přihlášce | dostávají se sem ti, kdo ji chtěli nejvíc | **ne**; za rok 2026 vyplněno u 6 274 z 6 368 řádků, přestože web tvrdil, že CERMAT tento údaj nezveřejňuje |
-| 45–47 `ČJ+MA`, `ČJ`, `MA - KONALI` | kolik uchazečů o obor psalo zkoušku | z kolika lidí jsou výsledky | **ne** |
+| 40–44 `PŘIJATÍ - PRIORITA 1` až `5` | přijatí podle pořadí na přihlášce | dostávají se sem ti, kdo ji chtěli nejvíc | **ano od 13. 9. 2026** v `souhrny_kolo1.json` jako přijatí podle priority; za rok 2026 vyplněno u 6 274 z 6 368 řádků |
+| 45–47 `ČJ+MA`, `ČJ`, `MA - KONALI` | kolik uchazečů o obor psalo zkoušku | z kolika lidí jsou výsledky | `ČJ+MA - KONALI` **ano** v `souhrny_kolo1.json` jako jmenovatel; předměty zvlášť ne |
 | 48–56 `% SKÓR - PRŮMĚR`, `MIN`, `MAX` všech uchazečů | výsledky všech, kdo se hlásili, nejen přijatých | jak si stojí konkurence | **ne** |
-| 57–65 `PERCENTIL - PRŮMĚR`, `MIN`, `MAX` všech uchazečů | totéž jako celostátní percentil | kde je konkurence proti celé zemi | **ne** |
+| 57–65 `PERCENTIL - PRŮMĚR`, `MIN`, `MAX` všech uchazečů | totéž jako celostátní percentil | kde je konkurence proti celé zemi | sloupec 57 **ano** jako průměrné percentilové umístění uchazečů; minimum, maximum a předměty ne, minimum a maximum určuje jediný uchazeč |
 | 66–68 `KONALI (PŘIJATI)` | kolik přijatých má výsledek zkoušky | z kolika lidí je průměr přijatých | **ne** |
 | 69–71 `% SKÓR - PRŮMĚR (PŘIJATI)` | průměr přijatých | s jakými spolužáky se dítě potká | ano |
 | 72–74 `% SKÓR - MIN (PŘIJATI)` | **oficiální nejnižší výsledek přijatých**, po nabídkách včetně zaměření | s kolika body se sem někdo dostal | **ne**, počítáme ho sami z dat uchazečů bez zaměření, viz níže |
 | 75–77 `% SKÓR - MAX (PŘIJATI)` | nejvyšší výsledek přijatých | rozpětí třídy | **ne** |
-| 78–86 `PERCENTIL - PRŮMĚR`, `MIN`, `MAX (PŘIJATI)` | percentily přijatých | kde je hranice proti celé zemi | **ne** |
+| 78–86 `PERCENTIL - PRŮMĚR`, `MIN`, `MAX (PŘIJATI)` | percentily přijatých | kde je hranice proti celé zemi | sloupec 78 **ano** jako průměrné percentilové umístění přijatých, sloupec 81 jako `min_prijaty_percentil_souhrn`; maximum a předměty ne |
 | 87 `NEPŘIJATI - PŘIJAT NA VYŠŠÍ PRIORITU` | nepřijati sem, protože přijati na obor uvedený výš | jak často je to náhradní volba | ano |
 | 88 `NEPŘIJATI - NEDOSTATEČNÁ KAPACITA` | splnili, ale nevešli se | jak velký je přetlak | ano |
 | 89 `NEPŘIJATI - NESPLNĚNÍ PODMÍNEK` | neuspěli u podmínek školy | má škola vlastní požadavky | ano |
@@ -162,7 +162,7 @@ Zajímavé sloupce JSON-LD, mimo adresu a názvy:
 | `skolyAZarizeni[].mistaVyuky[]` | kde se skutečně učí | kam bude dítě dojíždět | částečně |
 | `emaily` | kontakty | koho oslovit | **ne** |
 
-CSV export navíc nese `WWW`, `Telefon`, `Email 1`, `Ředitel` a `ID datové schránky`. **Odkaz na web školy nepoužíváme nikde**, přitom je to první věc, kterou rodič po přečtení profilu hledá.
+CSV export navíc nese `WWW`, `Telefon`, `Email 1`, `Ředitel` a `ID datové schránky`. **`WWW` používáme od 13. 9. 2026** jako odkaz na kritéria přijetí na stránce oboru (`public/skoly_web.json`, `scripts/build-skoly-web.py`). Telefon a e-mail nezobrazujeme (e-mail slouží portálu pro školy), ředitele ne (osobní údaj bez vypovídací hodnoty).
 
 ### 2.5 Číselník AKKO
 
@@ -217,7 +217,11 @@ Otázka rodiče je jediná: **jak dlouho bude dítě dojíždět**. Odpovídáme
 | `schools_data.json` | CERMAT agregáty + data uchazečů | `build-catalogue-2026.py`, `enrich_schools_data.py` | katalog, ročníky 2024 až 2026 |
 | `applications_2026.json` | CERMAT přihlášky 2026 | `import_cermat_2026_real.py` | pole `pp` jsou priority |
 | `cermat_results_2026.json` | CERMAT výsledky 2026 a 2025 | `refresh_cermat_data.py` | nese otisk zdroje |
+| `kontext_prihlasek_{rok}.json` | data uchazečů | `build-kontext-prihlasek.py` | výsledek uchazečů o obor, obory výš a níž na přihlášce, odvozená hranice úspěšnosti; linka přepočítává s pásmy a souběhem |
+| `skoly_web.json` | rejstřík CSV, `WWW` | `build-skoly-web.py` | odkaz na web školy |
+| `souhrny_kolo1.json` | CERMAT souhrny 1. kola všech ročníků v `data/` | `build-souhrny-kolo1.py` | nabídky po ročnících, párování ročníků, rozdělení tlaku prvních voleb ve srovnatelných skupinách; doklad `docs/podklady/overeni-srovnani-rocniku.json` |
 | `school_analysis.json` | starší zpracování | nedohledaný | obsahuje `obtiznost` bez doloženého výpočtu |
+| `maturita_skoly.json` | CERMAT maturita, jaro, `redizo` a `redizo_smo16` | `build-maturita-skoly.py` přes datovou linku | společná část, čeština a matematika po letech od 2021; zařazení proti skupině oborů; meze zveřejnění jako kódy kvality; vzniká od 14. 9. 2026, web ho zatím nečte |
 | `soubeh_prihlasek_2025.json` | data uchazečů 2025 | `build-soubeh-prihlasek.py` | souběžné přihlášky |
 | `pasma_prijeti_2025.json` | data uchazečů 2025 | `build-pasma-prijeti.py` | podíl přijatých podle bodového pásma a hranice |
 | `csi_inspections.json` | seznam ČŠI | `process-csi-data.js` | |
@@ -286,18 +290,18 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 
 | Co leží nevyužité | Kde | Na co by to bylo | Proč to zatím nepoužíváme |
 |---|---|---|---|
-| **Celé maturitní výsledky** | `MZ{rok}j_SC_skolobory.xlsx` | „Maturitu tu loni udělalo 100 % žáků, v češtině jsou nad 80. percentilem.“ Jediná přímá odpověď na otázku, jaké jsou tu nároky. Spárovatelné u 2 782 z 3 091 nabídek | soubor není stažený, import nezačal |
+| **Celé maturitní výsledky** | `MZ{rok}j_SC_skolobory.xlsx` | „Maturitu tu v roce 2026 udělalo 100 % žáků, v češtině jsou nad 80. percentilem.“ Jediná přímá odpověď na otázku, jaké jsou tu nároky. Spárovatelné u 2 782 z 3 091 nabídek | **zpracovává se od 14. 9. 2026** přes datovou linku do `public/maturita_skoly.json` (společná část, čeština, matematika, jaro 2021+); cizí jazyky, stav po podzimu a roky před 2021 zamítnuty v [návrhu stránky školy](stranka-skoly-2027.md), oddíl 10 |
 | Vstupní úroveň školy 2017 až 2023 | `JPZ{rok}_skoly-skolobory_vysledky.xlsx` | „Škola je dlouhodobě žádaná, není to výkyv jednoho roku.“ | soubory nejsou stažené |
 | Výsledek testu u **všech uchazečů**, nejen přijatých | data uchazečů, `c_m_procentni_skor`, vyplněno u 75 % řádků | „S 62 body byl loni v polovině těch, kdo se sem hlásili.“ Jediný způsob, jak dát dítěti vlastní číslo do kontextu | **zpracováno 13. 9. 2026**, na web zatím nenapojeno |
 | **Profil dovedností** uchazečů o obor | položková data, `b1` až `b16.x` | „Kdo se sem dostal, byl silný v porozumění textu.“ Jediný zdroj o tom, co obor vybírá | soubory nikdo nezpracoval |
 | Výsledky po termínech zvlášť | položková data, listy A až D | kontrola, zda jsou řádné termíny srovnatelně těžké | data uchazečů nesou jen lepší výsledek |
 | **Oficiální nejnižší a nejvyšší výsledek přijatých** a jejich percentily | souhrny výsledků, sloupce 72–86 | „S 65 body se sem loni někdo dostal“ po zaměřeních a za aktuální rok, bez dat uchazečů | počítáme vlastní minimum z dat uchazečů za rok 2025 bez zaměření; oficiální sloupec se shoduje u 97 % oborů |
-| **Přijatí podle priority** | souhrny výsledků, sloupce 40–44 | „Tři čtvrtiny přijatých si obor zapsaly jako první volbu“ | web za rok 2026 nesprávně tvrdil, že nejsou zveřejnění |
-| Výsledky zkoušky **všech uchazečů** o obor v souhrnu | souhrny výsledků, sloupce 45–65 | průměr, minimum a maximum konkurence bez zpracování dat uchazečů | nepoužito |
+| **Přijatí podle priority** | souhrny výsledků, sloupce 40–44 | „Tři čtvrtiny přijatých si obor zapsaly jako první volbu“ | **zpracováno 13. 9. 2026** do `souhrny_kolo1.json`, na web zatím nenapojeno, viz `docs/grafy-skoly-a-oboru-2027.md` |
+| Výsledky zkoušky **všech uchazečů** o obor v souhrnu | souhrny výsledků, sloupce 45–65 | průměr, minimum a maximum konkurence bez zpracování dat uchazečů | průměrné percentilové umístění **zpracováno 13. 9. 2026**; minimum a maximum zamítnuto, určuje je jediný uchazeč |
 | **Agregáty 2. kola** za obory | `PZ{rok}_kolo2_skolobory_*.xlsx` | „Loni tu bylo 2. kolo s 12 místy“ | **zapracovává se od 13. 9. 2026**, viz `docs/druhe-kolo.md` |
 | **Data uchazečů 2. kola** | `PZ{rok}_kolo2_uchazeci_prihlasky_vysledky.xlsx` | pásma přijetí ve 2. kole | zamítnuto pro 2. kolo: jen 133 oborů má ve 2. kole aspoň deset přijatých s výsledkem zkoušky |
 | **Dobíhající obor** | rejstřík, `dobihajiciObor` | „Škola tenhle obor zavírá.“ Varování před podáním přihlášky | používá se jen v rešeršních skriptech |
-| **Web a kontakt školy** | rejstřík CSV, `WWW`, `Email 1`, `Telefon` | kam jít pro kritéria přijetí a termíny | v datové vrstvě vůbec není |
+| **Web a kontakt školy** | rejstřík CSV, `WWW`, `Email 1`, `Telefon` | kam jít pro kritéria přijetí a termíny | `WWW` **používáno od 13. 9. 2026** (`skoly_web.json`); telefon a e-mail na web nepatří |
 | `jpz_prumer_actual`, `jpz_median` | katalog 2025 | medián říká víc než průměr, když je rozdělení šikmé | spočítané, nikdy nezobrazené |
 | `hard_facts.support_services` | extrakce inspekce | „Mají školního psychologa a doučování.“ | nezobrazeno |
 | `hard_facts.absence` | extrakce inspekce | absence po ročnících je signál o atmosféře | jen okrajově |
@@ -428,7 +432,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-13. Neupravovat ru�
 | `cermat-uchazeci-kolo1` | příprava | HTTP HEAD a katalogová stránka Datové soubory. | scripts/build-pasma-prijeti.py, scripts/build-soubeh-prihlasek.py, scripts/validate-pasma-prijeti.py; názvy výstupů nesou rok a v kódu jsou zapsané napevno. Pozor: scripts/enrich_schools_data.py, který počítá nejnižší přijatý výsledek do katalogu, čte sloupce podle pozice; v souboru za rok 2026 se pořadí sloupců změnilo a příznak přijetí je text, takže bez úpravy by počítal chybně. Datová linka ho nespouští. | Převzetí mění čísla v dokladech tezí a na webu, proto revize výsledků validace před přepnutím. |
 | `cermat-uchazeci-kolo2` | jen detekce | HTTP HEAD. | Neexistuje. | Rozhodnout o zpracování druhého kola. |
 | `cermat-polozkova-jpz` | jen detekce | HTTP HEAD pro šest testů. | Jen dokladový výpočet v scripts/validate-pasma-prijeti.py. | Není na webu, převzetí podle potřeby analýzy. |
-| `cermat-maturita` | jen detekce | HTTP HEAD a katalogová stránka. | Jen analytický scripts/maturita_prototype.py, který nezapisuje do public/. | Import do webu podle docs/maturitni-vysledky-a-kvalita-skoly-2027.md. |
+| `cermat-maturita` | příprava | HTTP HEAD a katalogová stránka. | scripts/build-maturita-skoly.py; v datové lince zpracovatel cermat-maturita stáhne k jarnímu souboru tři předchozí jarní ročníky a doplní je do stávajícího výstupu. Stav po podzimu se nepřebírá. | Schválit úlohu, zkontrolovat počty v pull requestu, zapsat výstup a kontrolu období do registru, přepnout období a zapojit stránku školy. |
 | `cermat-jpz-skoly-2017-2023` | neaktualizuje se | — | — | Uzavřená řada. |
 | `msmt-rejstrik-snimky` | příprava | HTTP HEAD na adresu snímku ke konci čtvrtletí. Složka nese identifikátor ročníku, který se každý rok mění (e9c07729… pro 2025, 250d6b3f… pro 2026); na přelomu roku ho je nutné dohledat v Národním katalogu otevřených dat. | Soubory se ukládají do data/msmt_rejstrik/; zpracování scripts/enrich-continuity-registry.py a scripts/build-navaznost-notes.py. | Jednou ročně dohledat identifikátor nového ročníku. |
 | `msmt-rejstrik-csv` | ruční | Nelze, export z webové aplikace. | scripts/validate-pasma-prijeti.py čte SkolyAMista.csv pro převod IZO na REDIZO. | Doporučeno nahradit čtvrtletním snímkem JSON-LD, který nese IZO i REDIZO; sada by pak zanikla. |
@@ -456,6 +460,9 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-13. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.8 | Maturitní výsledky přes datovou linku do `public/maturita_skoly.json`; zpracovatel sady `cermat-maturita`. |
+| 1.7 | Kontext přihlášek po oborech (`kontext_prihlasek_{rok}.json`), web škol z rejstříku (`skoly_web.json`), kraj a body přijatých po předmětech v souhrnech. |
+| 1.6 | Souhrny 1. kola po ročnících v `souhrny_kolo1.json`: přijatí podle priority, konající, průměrná percentilová umístění přijatých a uchazečů, oficiální percentil nejnižšího přijatého. |
 | 1.5 | Úplný soupis 91 sloupců souboru výsledků, druhé kolo a párování nabídek mezi koly. Opravena nepravdivá tvrzení o nejnižším přijatém výsledku a o přijatých podle priority 2026. |
 | 1.4 | Doplněna aktualizace a automatizace datových sad, příkaz `zjisti`, agregáty 2. kola jako nový zdroj; opraveno tvrzení, že data uchazečů 2026 nevyšla. |
 | 1.3 | Doplněn oddíl 5 o stavu datových sad: registr období, očekávaných termínů a přepínání, kontrolní skript. |

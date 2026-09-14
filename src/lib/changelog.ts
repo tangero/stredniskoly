@@ -10,6 +10,22 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '2.9.0',
+    date: '14. 9. 2026',
+    title: 'Nová stránka oboru: jak těžké je se dostat',
+    changes: [
+      { type: 'new', text: 'Stránka oboru odpovídá na tři otázky: jak těžké je se sem dostat, co vám pomůže a jak se tu studuje' },
+      { type: 'new', text: 'Obtížnost přijetí slovy (velmi těžké, těžké, středně těžké) podle toho, kolik soutěžících uchazečů se v 1. kole dostalo, vždy se srovnáním s předchozím rokem' },
+      { type: 'new', text: 'Vysvětlení, kolik uchazečů nedosáhlo požadavku školy, a když to z výsledků jde poznat, jaké minimum bodů škola vyžadovala' },
+      { type: 'new', text: 'Obory, které měli uchazeči na přihlášce výš a níž, s obtížností přijetí na ně, a kolik uchazečů se v 1. kole nedostalo nikam' },
+      { type: 'new', text: 'Pořadí v kraji podle zájmu a podle výsledků přijatých mezi obory stejného typu a délky; Praha samostatně' },
+      { type: 'new', text: 'Tlačítko „Uložit mezi zvažované“ sdílí výběr se simulátorem' },
+      { type: 'improve', text: 'Grafy po letech, rozpad všech přihlášek, bodová pásma a tabulka údajů v číslech na rozkliknutí; čitelné i na mobilu' },
+      { type: 'improve', text: 'Shrnutí inspekce na stránce oboru: co chválí, na co si dát pozor, podpora žáků a otázky na den otevřených dveří' },
+      { type: 'fix', text: 'Stránka školy už nesčítá přihlášky a přijaté přes různé obory do zavádějících poměrů' },
+    ],
+  },
+  {
     version: '2.8.0',
     date: '13. 9. 2026',
     title: 'Portál pro školy a čerstvější data inspekcí',
