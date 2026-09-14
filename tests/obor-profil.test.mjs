@@ -28,9 +28,20 @@ test('podíl slovy a předložka před číslem', () => {
   assert.equal(slovniPodil(60, 436), 'zhruba každý sedmý');
   assert.equal(slovniPodil(1, 50), 'méně než každý desátý');
   assert.equal(zOd(112), 'ze');
-  assert.equal(zOd(67), 'z');
+  assert.equal(zOd(67), 'ze');
   assert.equal(zOd(7), 'ze');
-  assert.equal(zOd(44), 'z');
+  assert.equal(zOd(44), 'ze');
+  assert.equal(zOd(4), 'ze');
+  assert.equal(zOd(2), 'ze');
+  assert.equal(zOd(12), 'ze');
+  assert.equal(zOd(30), 'ze');
+  assert.equal(zOd(55), 'z');
+  assert.equal(zOd(10), 'z');
+  assert.equal(zOd(1), 'z');
+  assert.equal(zOd(85), 'z');
+  assert.equal(zOd(233), 'ze');
+  assert.equal(zOd(1000), 'z');
+  assert.equal(zOd(2500), 'ze');
 });
 
 test('stav nabídky a zmínka o požadavku školy', () => {

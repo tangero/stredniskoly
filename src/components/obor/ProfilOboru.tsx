@@ -62,11 +62,11 @@ function Zdroj({ children }: { children: ReactNode }) {
 
 function VetaPoradi({ p, rok, predchoziRok, podle, skupina, kraj, vysvetleni }: { p: PoradiVKraji; rok: number; predchoziRok: number | null; podle: string; skupina: string; kraj: string; vysvetleni: string }) {
   const drive = p.predchozi && predchoziRok
-    ? p.predchozi.od === p.poradi.od && p.predchozi.do === p.poradi.do ? `, v roce ${predchoziRok} také ${textPoradi(p.predchozi)}` : `, v roce ${predchoziRok} ${textPoradi(p.predchozi)} z ${cislo(p.predchozi.z)}`
+    ? p.predchozi.od === p.poradi.od && p.predchozi.do === p.poradi.do ? `, v roce ${predchoziRok} také ${textPoradi(p.predchozi)}` : `, v roce ${predchoziRok} ${textPoradi(p.predchozi)} ${zOd(p.predchozi.z)} ${cislo(p.predchozi.z)}`
     : '';
   return (
     <p className="text-[15px] leading-relaxed text-slate-700">
-      <b className="text-[#16325c]">{textPoradi(p.poradi)} z {cislo(p.poradi.z)}</b> {skupina} {vKraji(kraj)} {podle} ({rok}{drive}). {vysvetleni}
+      <b className="text-[#16325c]">{textPoradi(p.poradi)} {zOd(p.poradi.z)} {cislo(p.poradi.z)}</b> {skupina} {vKraji(kraj)} {podle} ({rok}{drive}). {vysvetleni}
     </p>
   );
 }
@@ -157,7 +157,7 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
                   format={v => `${cislo(v, Number.isInteger(v) ? 0 : 1)}×`}
                   osa={(() => { const top = Math.max(2, Math.ceil(Math.max(...data.poradiZajem!.hodnoty) * 1.05)); const krok = top > 6 ? 2 : 1; return Array.from({ length: Math.floor(top / krok) + 1 }, (_, i) => i * krok); })()}
                 />
-                <Zdroj>{textPoradi(data.poradiZajem.poradi)} z {cislo(data.poradiZajem.poradi.z)} podle zájmu. Pořadí neříká, která škola je lepší.</Zdroj>
+                <Zdroj>{textPoradi(data.poradiZajem.poradi)} {zOd(data.poradiZajem.poradi.z)} {cislo(data.poradiZajem.poradi.z)} podle zájmu. Pořadí neříká, která škola je lepší.</Zdroj>
               </Dukaz>
             )}
 
@@ -319,7 +319,7 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
               <Dukaz nadpis="Pořadí v kraji podle výsledků přijatých" rok={String(rok)} otevreny>
                 <Proc>Každá tečka je jeden obor stejného typu a délky {vKraji(krajNazev)}: průměrné umístění přijatých v celé zemi, v percentilech. Plná modrá tečka je tento obor, kroužek předchozí rok.</Proc>
                 <SkupinaVKraji hodnoty={data.poradiVysledky.hodnoty} hodnota={data.poradiVysledky.hodnota} predchozi={data.poradiVysledky.hodnotaPredchozi} format={v => `${cislo(v)}. percentil`} formatOsy={v => cislo(v)} osa={[0, 25, 50, 75, 100]} />
-                <Zdroj>{textPoradi(data.poradiVysledky.poradi)} z {cislo(data.poradiVysledky.poradi.z)} podle výsledků přijatých. Pořadí neříká, která škola je lepší.</Zdroj>
+                <Zdroj>{textPoradi(data.poradiVysledky.poradi)} {zOd(data.poradiVysledky.poradi.z)} {cislo(data.poradiVysledky.poradi.z)} podle výsledků přijatých. Pořadí neříká, která škola je lepší.</Zdroj>
               </Dukaz>
             )}
           </div>

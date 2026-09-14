@@ -42,7 +42,7 @@ export function MrizkaSoutezicich({ prijati, soutezici }: { prijati: number; sou
     <figure className="space-y-2">
       <div
         role="img"
-        aria-label={`${cislo(prijati)} přijatých z ${cislo(soutezici)} soutěžících uchazečů`}
+        aria-label={`${cislo(prijati)} přijatých ${zOd(soutezici)} ${cislo(soutezici)} soutěžících uchazečů`}
         className="grid gap-[3px]"
         style={{ gridTemplateColumns: `repeat(auto-fill, minmax(${celkem > 60 ? 10 : 14}px, 1fr))` }}
       >
@@ -139,7 +139,7 @@ export function RozpadPrihlasek({ radky }: { radky: RozpadRoku[] }) {
                   if (!v) return null;
                   const podil = (100 * v) / celkem;
                   return (
-                    <span key={k} title={`${popis}: ${v} z ${celkem}`} className="flex items-center overflow-hidden rounded-[3px] px-1.5 text-[12px] font-bold tabular-nums"
+                    <span key={k} title={`${popis}: ${v} ${zOd(celkem)} ${celkem}`} className="flex items-center overflow-hidden rounded-[3px] px-1.5 text-[12px] font-bold tabular-nums"
                       style={{ flex: v, background: barva, color: k === 'vzdali' ? BARVY.navy : '#fff' }}>
                       {podil >= 9 ? cislo(v) : ''}
                     </span>
