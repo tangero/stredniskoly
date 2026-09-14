@@ -850,6 +850,11 @@ export default async function SchoolDetailPage({ params }: Props) {
             </div>
           </div>
 
+          {/* Propagace služeb, které platí provoz webu: povinná součást všech stránek, nahoře */}
+          <div className="mx-auto max-w-6xl px-4 pt-2">
+            <VibecordingPromo />
+          </div>
+
           <ProgramTabs programs={programsForTabs} currentProgramId={program.id} />
 
           {schoolNoteToShow && (
