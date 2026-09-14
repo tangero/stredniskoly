@@ -7,8 +7,10 @@ const DISPLAY_FIELDS: Array<{ key: string; label: string; typ?: 'url' | 'ubytova
   { key: 'kriteria_vlastnimi_slovy', label: 'Kritéria vlastními slovy' },
   { key: 'pripravne_kurzy', label: 'Přípravné kurzy / přijímačky nanečisto' },
   { key: 'ubytovani', label: 'Ubytování', typ: 'ubytovani' },
+  { key: 'stravovani', label: 'Stravování' },
   { key: 'skolne', label: 'Školné a poplatky' },
   { key: 'podpora_svp', label: 'Podpora žáků se SVP' },
+  { key: 'kontakt_vychovny_poradce', label: 'Kontakt na výchovného poradce' },
   { key: 'prestupy', label: 'Přestupy v průběhu studia' },
 ];
 

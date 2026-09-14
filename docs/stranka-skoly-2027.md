@@ -1,6 +1,6 @@
 # Stránka školy: struktura podle otázek rodiny
 
-Verze 1.1 · 14. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, revize dat a rozložení v oddílu 7, výsledná struktura v oddílu 8, předpoklady realizace v oddílu 9. Pojmy v textech stránky podle [slovníku pojmů](slovnik-pojmu.md).
+Verze 1.2 · 14. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, revize dat a rozložení v oddílu 7, výsledná struktura v oddílu 8, předpoklady realizace v oddílu 9. Pojmy v textech stránky podle [slovníku pojmů](slovnik-pojmu.md).
 
 Navazuje na [vrstvy stránky oboru](vrstvy-stranky-oboru-2027.md), podle kterých vznikla stránka oboru ve třech otázkách, a na schválené [grafy stránky školy a oboru](grafy-skoly-a-oboru-2027.md). Maturitní část se řídí [maturitními výsledky a kvalitou školy](maturitni-vysledky-a-kvalita-skoly-2027.md). Názvy ukazatelů drží [slovník](slovnik-ukazatelu.md), období [registr](../public/stav_datovych_sad.json), zdroje [soupis zdrojů](zdroje-dat.md).
 
@@ -310,7 +310,8 @@ Verze 1.0 převzala dnešní blok „Údaje potvrzené školou“ jako jeden odd
 | `pripravne_kurzy` | Co tu lze studovat | příprava na přijímačky |
 | `popis_skoly` | Jaká škola je, první blok | škola odpovídá sama za sebe |
 | `skolne` | Jaká škola je | náklady |
-| `podpora_svp`, `prestupy` | Jaká škola je | podpora a pravidla studia |
+| `podpora_svp`, `kontakt_vychovny_poradce`, `prestupy` | Jaká škola je | podpora a pravidla studia; kontakt na poradce u podpory žáků |
+| `stravovani` | Kde je, vedle ubytování | provoz pro dojíždějící |
 | `ubytovani`, `ubytovani_poznamka` | Kde je | dojíždění, nebo bydlení |
 
 ### 7.4 Jak je vidět, že údaje vyplnila škola
@@ -367,7 +368,7 @@ HLAVIČKA
   Domů / Školy / kraj / škola
   Název školy · typ podle oborů
   adresa · zřizovatel · okres a kraj
-  Web školy · Porovnat v simulátoru
+  Web školy · Porovnat v simulátoru · Sledovat školu (zvonek, rozbalí panel s e-mailem)
   ┌ stav údajů od školy ─────────────────────────────────────────────┐
   │ ✓ Údaje od školy potvrzeny 3. 11. 2026    Editujte: pro vedení školy│
   │   nebo: Škola zatím nic nedoplnila         Editujte: pro vedení školy│
@@ -469,11 +470,14 @@ Bez S1 až S3 může stránka vzniknout s oddílem „Jak si škola vede“ jen 
 | Položková data JPZ | **zavrhnout**; patří ke stránce oboru, ne školy |
 | Data uchazečů `ss*_zrizovatel` | **zavrhnout**; kombinace veřejných a soukromých škol rodině neřekne nic o této škole |
 
-## 11. Otevřené otázky k rozhodnutí
+## 11. Rozhodnutí a otevřené otázky
 
-1. **Maturita před nasazením:** udělat S1 až S3 před novou stránkou školy (doporučuji), nebo nasadit stránku nejdřív jen s inspekcí?
-2. **Umístění banneru:** mezi identitou školy a rozcestníkem (navrženo), nebo pod rozcestníkem?
-3. **Další pole portálu:** stránka by využila stravování a kontakt na výchovného poradce (návrh portálu, §3.3). Doplnit je do formuláře?
+Rozhodnuto 14. 9. 2026 k verzi 1.1:
+
+1. **Maturita před nasazením:** ano, S1 až S3 se udělají před novou stránkou školy.
+2. **Banner Vibecoding** zůstává mezi identitou školy a rozcestníkem.
+3. **Portál pro školy** má nová nepovinná pole „Stravování“ a „Kontakt na výchovného poradce“.
+4. **Sledovat školu:** tlačítko v řadě akcí hlavičky; rozesílání souhrnů po událostech navrhuje [sledování škol](sledovani-skol-2027.md). Na web přijde až s odesílačem.
 
 Rozhodnuto 14. 9. 2026 bez výhrad k verzi 1.0: pořadí oddílů s „Jak si škola vede“ na druhém místě, nadpis „Jak si škola vede“, schéma okolí bez mapového podkladu. Obtížnost přijetí jako nadpis celou frází „Velmi těžké se dostat“.
 
@@ -481,5 +485,6 @@ Rozhodnuto 14. 9. 2026 bez výhrad k verzi 1.0: pořadí oddílů s „Jak si š
 
 | Verze | Změna |
 |---|---|
+| 1.2 | Rozhodnutí k verzi 1.1: maturita před nasazením, banner na místě, nová pole portálu (stravování, kontakt na výchovného poradce), tlačítko „Sledovat školu“ v hlavičce s odkazem na návrh sledování. |
 | 1.1 | Revize po zpětné vazbě: data definovaná podle původu (oficiální data, potvrdila škola, text školy, strojové shrnutí, starší údaj z InspIS) s pravidly přednosti, údaje z portálu pro školy rozdělené k otázkám, stav vyplnění v hlavičce, odkaz „Editujte: pro vedení školy“, banner Vibecoding nahoře, doplněné údaje ze staré stránky. Nová výsledná struktura, předpoklady S8–S11. |
 | 1.0 | Pět kol: rozcestník a oddíly, pořadí a obory s obtížností přijetí, maturita přes čtyři roky se stabilitou zařazení, okolí podle souběžných přihlášek místo vzdálenosti, profil školy a stavy dat. Předpoklady S1–S7, zvážené sloupce, otevřené otázky. |

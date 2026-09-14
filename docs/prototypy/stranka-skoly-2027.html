@@ -207,6 +207,10 @@ td.r,th.r{text-align:right}
 .promo .t{font-weight:600;color:var(--ink)}
 .promo .d{font-size:.85rem;color:var(--ink-3)}
 .promo .b{background:#0074e4;color:#fff;font-weight:600;font-size:.85rem;border-radius:6px;padding:6px 14px;white-space:nowrap}
+.sledovat-panel{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:14px 16px;display:grid;gap:10px;max-width:640px}
+.radek-form{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.radek-form input{font:inherit;flex:1 1 14rem;min-width:0;border:1px solid var(--rule);border-radius:8px;padding:8px 12px;background:var(--bg);color:var(--ink)}
+.sledovat-panel .hotovo{color:var(--skola);font-weight:600}
 .pata-cta{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:16px 20px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between}
 .legenda-puvod{display:flex;flex-wrap:wrap;gap:8px 16px;list-style:none;margin:0;padding:0;align-items:center;font-size:.88rem}
 footer.pata{padding-block:28px 60px;color:var(--ink-2);font-size:.9rem}
@@ -230,7 +234,14 @@ footer.pata .wrap{display:grid;gap:8px}
     <div class="akce">
       <a class="btn" href="#" onclick="return false">Web školy</a>
       <a class="btn ghost" href="#" onclick="return false">Porovnat v simulátoru</a>
+      <button class="btn ghost" type="button" id="sledovat" aria-expanded="false" aria-controls="sledovat-panel"><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" style="vertical-align:-2px;margin-right:6px"><path d="M8 1.8a4.2 4.2 0 0 0-4.2 4.2v2.6L2.5 11h11l-1.3-2.4V6A4.2 4.2 0 0 0 8 1.8zM6.4 12.6a1.6 1.6 0 0 0 3.2 0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Sledovat školu</button>
     </div>
+    <form class="sledovat-panel" id="sledovat-panel" hidden onsubmit="event.preventDefault();this.querySelector('.hotovo').hidden=false;document.getElementById('sledovat').lastChild.textContent='Potvrďte v e-mailu'">
+      <p><b>Sledovat Gymnázium J. S. Machara.</b> Pošleme e-mail, když zveřejníme nové obory, výsledky přijímání, maturitu nebo inspekci, nebo když škola doplní údaje. Nejvýš jeden e-mail denně za všechny školy, které sledujete.</p>
+      <div class="radek-form"><label for="sledovat-email" class="zdroj">E-mail</label><input id="sledovat-email" type="email" required placeholder="vas@email.cz" autocomplete="email"><button class="btn" type="submit">Sledovat</button></div>
+      <p class="zdroj">Adresu použijeme jen pro tato upozornění. Odhlásit se jde jedním kliknutím v každém e-mailu. <span class="ukazka">prototyp, nic se neodesílá</span></p>
+      <p class="hotovo" hidden>Poslali jsme potvrzovací e-mail. Sledování začne po kliknutí na odkaz v něm.</p>
+    </form>
     <div class="stav-skoly ano" data-skola="ano"><span><span class="puvod skola"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 6.3l2.4 2.4 5.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Potvrdila škola</span> <b>Údaje od školy:</b> kritéria přijetí, dny otevřených dveří, školné, popis školy · 3. 11. 2026</span><a class="edit" href="#" onclick="return false">Editujte: pro vedení školy</a></div>
     <div class="stav-skoly ne" data-skola="ne" hidden><span>Škola zatím nic nedoplnila. Údaje na stránce jsou z oficiálních zdrojů.</span><a class="edit" href="#" onclick="return false">Editujte: pro vedení školy</a></div>
     <div class="promo" aria-label="Naše akce"><a href="#" onclick="return false"><span style="display:grid;gap:2px"><span class="k">Naše akce</span><span class="t">Název aktuální akce Vibecoding <span class="ukazka">ukázka banneru</span></span><span class="d">datum · město</span></span><span class="b">Detaily</span></a></div>
@@ -337,7 +348,7 @@ footer.pata .wrap{display:grid;gap:8px}
       <div class="fakty">
         <div class="fakt"><span class="l">Velikost</span><span class="v num">355 žáků</span><span class="d">nejvýš povoleno 420</span></div>
         <div class="fakt"><span class="l">Zřizovatel a školné</span><span class="v">Středočeský kraj</span><span class="d" data-skola="ne" hidden>veřejná škola, školné se neplatí</span><span class="d" data-skola="ano">školné: zdarma, poplatky jen za kurzy a výjezdy <span class="ukazka">ukázka</span></span><span class="puvod skola" data-skola="ano"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 6.3l2.4 2.4 5.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Potvrdila škola</span></div>
-        <div class="fakt"><span class="l">Podpora žáků</span><span class="v">školní psycholog, výchovný poradce</span><span class="d">metodik prevence, kariérová poradkyně; 13 žáků s podpůrnými opatřeními podle zprávy ČŠI</span><span class="d" data-skola="ano">Upravené testy připravujeme se školským poradenským zařízením, žák má individuální konzultace. <span class="ukazka">ukázka</span></span><span class="puvod skola" data-skola="ano"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 6.3l2.4 2.4 5.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Potvrdila škola</span></div>
+        <div class="fakt"><span class="l">Podpora žáků</span><span class="v">školní psycholog, výchovný poradce</span><span class="d">metodik prevence, kariérová poradkyně; 13 žáků s podpůrnými opatřeními podle zprávy ČŠI</span><span class="d" data-skola="ano">Upravené testy připravujeme se školským poradenským zařízením, žák má individuální konzultace. Výchovný poradce: poradce@skola.example, konzultace po dohodě. <span class="ukazka">ukázka</span></span><span class="puvod skola" data-skola="ano"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 6.3l2.4 2.4 5.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Potvrdila škola</span></div>
         <div class="fakt"><span class="l">Bezbariérový přístup</span><span class="v">ne</span><span class="puvod archiv">starší údaj z InspIS</span></div>
         <div class="fakt" data-skola="ano"><span class="l">Přestupy během studia</span><span class="v">možné do 3. ročníku</span><span class="d">po rozdílových zkouškách <span class="ukazka">ukázka</span></span><span class="puvod skola"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 6.3l2.4 2.4 5.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Potvrdila škola</span></div>
       </div>
@@ -382,6 +393,7 @@ footer.pata .wrap{display:grid;gap:8px}
           <dl style="margin:0;display:grid;gap:8px;font-size:.93rem">
             <div><dt class="zdroj">Doprava a umístění</dt><dd style="margin:0">autobus, MHD, vlak · škola stojí u rušné ulice <span class="puvod archiv">starší údaj z InspIS</span></dd></div>
             <div><dt class="zdroj">V blízkosti školy</dt><dd style="margin:0">park, sportoviště, veřejná knihovna, ZUŠ; ve škole studovna a zahrada <span class="puvod archiv">starší údaj z InspIS</span></dd></div>
+            <div data-skola="ano"><dt class="zdroj">Stravování</dt><dd style="margin:0">vlastní jídelna, výběr ze dvou jídel <span class="ukazka">ukázka</span> <span class="puvod skola"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 6.3l2.4 2.4 5.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Potvrdila škola</span></dd></div>
             <div data-skola="ano"><dt class="zdroj">Ubytování</dt><dd style="margin:0">škola ubytování nenabízí <span class="ukazka">ukázka</span> <span class="puvod skola"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 6.3l2.4 2.4 5.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Potvrdila škola</span></dd></div>
           </dl>
           <div class="akce" style="font-size:.95rem"><a href="#" onclick="return false">Otevřít v Mapy.cz</a><a href="#" onclick="return false">Spočítat dojezd z domova</a></div>
@@ -501,6 +513,8 @@ $('#i-zmena').textContent = I.zmena;
 $('#i-otazky').innerHTML = (I.otazky || []).map(s => `<li>${s}</li>`).join('');
 $('#sedi').innerHTML = I.sedi.map(s => `<li>${s}</li>`).join('');
 $('#opatrne').innerHTML = I.opatrne.map(s => `<li>${s}</li>`).join('');
+
+$('#sledovat').addEventListener('click', e => { const panel = $('#sledovat-panel'); panel.hidden = !panel.hidden; e.currentTarget.setAttribute('aria-expanded', !panel.hidden); if (!panel.hidden) $('#sledovat-email').focus(); });
 
 // Režim údajů od školy
 function rezim(v) { document.querySelectorAll('[data-skola]').forEach(el => { el.hidden = el.dataset.skola !== v; }); }
