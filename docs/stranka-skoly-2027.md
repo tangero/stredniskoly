@@ -431,7 +431,7 @@ PATIČKA
 | S2 | Slovník ukazatelů: úspěšnost společné části, percentil z češtiny u maturity, podíl volby matematiky, zařazení proti skupině oborů, počet let nad skupinou | nezapsáno |
 | S3 | Slovník pojmů: maturanti, společná část maturity, skupina oborů, souběžní uchazeči, vzdušnou čarou; zákaz „kvalitní škola“ | nezapsáno |
 | S4 | Okolí: souběh po oborech a nejbližší školy stejné skupiny oborů | **hotovo 14. 9. 2026** výpočtem při vykreslení v `src/lib/skola-profil-data.ts` z `data/school_locations.json` a `public/soubeh_prihlasek_{rok}.json`; samostatný soubor nebyl potřeba, výpočet je pod milisekundu |
-| S5 | Dobíhající obory z rejstříku do katalogu | **nezačato**; stránka zatím upozornění nezobrazuje |
+| S5 | Dobíhající obory z rejstříku do katalogu | **zastaveno na výkladu** (14. 9. 2026): snímek rejstříku 30. 6. 2026 má 1 120 dobíhajících oborů z 15 494, ale 23 z nich škola v 1. kole 2026 vypsala a přijímala (například 600171850, 39-41-L/01). Příznak tedy neznamená „obor už nepřijímá“, nebo platí jen pro jedno místo výuky či IZO. Dokud se význam neověří u MŠMT nebo u škol, upozornění se nezobrazuje (slovník ukazatelů: údaj bez doloženého výkladu se nezobrazuje). |
 | S6 | Nahradit zvláštní podobu přehledu „V2“ pro školy s jedním oborem | **hotovo**: obě starší podoby přehledu odstraněny |
 | S7 | Zobrazení profilu InspIS s datem snímku a bez dnů otevřených dveří | **hotovo** |
 | S8 | Údaje z portálu pro školy rozdělené do oddílů podle otázek, se značkou původu a prázdným stavem | **hotovo** na stránce školy (`src/components/skola/ProfilSkoly.tsx`); přednost školného a podpory je v komponentě, přesun do datové vrstvy zůstává |
