@@ -8,6 +8,7 @@ Plán, stavy úloh a bezpečnostní hranice: docs/datova-linka.md.
     python3 scripts/datova-linka.py schvaleni                  # přečte odpovědi z Telegramu
     python3 scripts/datova-linka.py schvaleni --kod K7Q2 --rozhodnuti schvaleno
     python3 scripts/datova-linka.py predej --vse-schvalene
+    python3 scripts/datova-linka.py znovu GQ99C --duvod "sada dostala zpracovatele"
 
 Každý krok přijímá --nanecisto: nic nepošle, nic nepushne a vypíše, co by udělal.
 """
@@ -61,6 +62,9 @@ def main() -> None:
     s.add_argument("--kanal", action="append", choices=["telegram", "github"], default=[])
     s.add_argument("--kod")
     s.add_argument("--rozhodnuti", choices=["schvaleno", "zamitnuto"])
+    s = sub.add_parser("znovu")
+    s.add_argument("kod")
+    s.add_argument("--duvod", required=True)
     s = sub.add_parser("predej")
     s.add_argument("kod", nargs="?")
     s.add_argument("--vse-schvalene", action="store_true")
@@ -73,6 +77,10 @@ def main() -> None:
         for u in sorted(fronta["ulohy"].values(), key=lambda x: x["vytvoreno"]):
             print(f"{u['kod']}  {u['stav']:11} {u['sada']:24} {str(u['obdobi']):10} {u['druh']}")
         return
+
+    if a.prikaz == "znovu":
+        jadro.znovu_otevri(fronta["ulohy"][a.kod], a.duvod)
+        print(f"{a.kod}: znovu otevřeno, další běh ji připraví a oznámí")
 
     if a.prikaz in ("zjisti", "beh"):
         krok_zjisti(fronta, registr)

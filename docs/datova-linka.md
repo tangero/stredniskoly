@@ -18,6 +18,8 @@ Podklady: [zdroje dat, oddíl 5](zdroje-dat.md#5-stav-datových-sad), `public/st
 
 `beh` provede zjištění, přípravu a oznámení najednou. `stav` vypíše frontu úloh.
 
+`znovu KÓD --duvod …` vrátí uzavřenou úlohu (předanou, bez změny, zamítnutou nebo selhanou) do stavu `zjisteno`, typicky když sada mezitím dostala zpracovatele. Předchozí příprava, oznámení a rozhodnutí zůstanou v `predchozi_kola`; úloha se znovu připraví, oznámí a čeká na **nové** schválení, protože zprávy starší než oznámení se ignorují.
+
 Všechny kroky přijímají `--nanecisto`: nic nepošle, nic nepushne, jen vypíše, co by udělal, a oznámení uloží do souboru.
 
 ## 2. Úloha a její stavy

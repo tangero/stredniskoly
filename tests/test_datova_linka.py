@@ -371,6 +371,28 @@ class TestDatovaLinka(unittest.TestCase):
         komunikace.uplatni_rozhodnuti(fronta, [{"od": "test", "povoleny": True, "cas": jadro.ted(), "text": f"schvaluji {u['kod']}"}], "test")
         return fronta, u
 
+    def test_znovu_otevrena_uloha_ceka_na_nove_schvaleni(self):
+        fronta, _ = self.zjisti()
+        u = self.ulohy_podle_sady(fronta)["cermat-uchazeci-kolo1"]
+        u["priprava"] = {"souhrn": "staré"}
+        u["oznameni"] = {"cas": "2026-09-13T09:00:00+00:00", "kanaly": ["soubor"]}
+        u["rozhodnuti"] = {"cas": "2026-09-13T10:00:00+00:00", "rozhodnuti": "schvaleno"}
+        jadro.zmen_stav(u, "predano")
+        with self.assertRaises(ValueError):
+            jadro.znovu_otevri(u, " ")
+        jadro.znovu_otevri(u, "sada dostala zpracovatele")
+        self.assertEqual(u["stav"], "zjisteno")
+        self.assertNotIn("priprava", u)
+        self.assertEqual(u["predchozi_kola"][0]["stav"], "predano")
+        # Staré schválení nové oznámení nepotvrdí.
+        u["oznameni"] = {"cas": "2026-09-14T08:00:00+00:00", "kanaly": ["soubor"]}
+        jadro.zmen_stav(u, "oznameno")
+        zprava = {"od": "1", "povoleny": True, "cas": "2026-09-13T10:00:00+00:00", "text": f"schvaluji {u['kod']}"}
+        komunikace.uplatni_rozhodnuti(fronta, [zprava], "telegram")
+        self.assertEqual(u["stav"], "oznameno")
+        with self.assertRaises(ValueError):
+            jadro.znovu_otevri(u, "nelze, čeká na rozhodnutí")
+
     def test_predani_vyzaduje_schvaleni(self):
         fronta = self.pripravena_fronta()
         u = self.ulohy_podle_sady(fronta)["cermat-uchazeci-kolo1"]

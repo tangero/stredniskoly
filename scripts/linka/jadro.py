@@ -123,6 +123,25 @@ def zmen_stav(uloha: dict, stav: str, poznamka: str = "") -> None:
     uloha.setdefault("historie", []).append({"cas": ted(), "stav": stav, **({"poznamka": poznamka} if poznamka else {})})
 
 
+ZNOVU_OTEVRITELNE = ("predano", "bez_zmeny", "zamitnuto", "selhalo")
+
+
+def znovu_otevri(uloha: dict, duvod: str) -> None:
+    """Vrátí uzavřenou úlohu do stavu zjisteno, například když sada mezitím dostala zpracovatele.
+
+    Předchozí přípravu, oznámení a rozhodnutí úloha nezapomene: přesunou se do předchozích kol.
+    Nové schválení platí jen pro nové oznámení, starší zprávy se ignorují.
+    """
+    if not duvod.strip():
+        raise ValueError("znovuotevření vyžaduje důvod")
+    if uloha["stav"] not in ZNOVU_OTEVRITELNE:
+        raise ValueError(f"{uloha['kod']}: znovu otevřít lze jen úlohu ve stavu {', '.join(ZNOVU_OTEVRITELNE)}, stav je {uloha['stav']}")
+    kolo = {k: uloha.pop(k) for k in ("priprava", "oznameni", "issue", "rozhodnuti", "predani") if k in uloha}
+    kolo["stav"] = uloha["stav"]
+    uloha.setdefault("predchozi_kola", []).append(kolo)
+    zmen_stav(uloha, "zjisteno", f"znovu otevřeno: {duvod.strip()}")
+
+
 def nacti_registr() -> dict:
     return json.loads(registr_cesta().read_text(encoding="utf-8"))
 
