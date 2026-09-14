@@ -248,6 +248,7 @@ export default async function SchoolDetailPage({ params }: Props) {
       id: p.id,
       nazev: p.nazev,
       obor: displayName,
+      zakladniNazev: baseName,
       typ: p.typ,
       delka_studia: p.delka_studia,
       min_body: p.min_body,

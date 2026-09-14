@@ -628,7 +628,10 @@ interface ProgramTabsProps {
   programs: Array<{
     id: string;
     nazev: string;
+    /** Název k zobrazení, u duplicitních názvů s délkou v závorce. */
     obor: string;
+    /** Název oboru a zaměření bez délky studia. */
+    zakladniNazev?: string;
     typ: string;
     delka_studia: number;
     min_body: number;
@@ -641,104 +644,87 @@ interface ProgramTabsProps {
   currentProgramId: string;
 }
 
-const delkaLabels: Record<number, { label: string; sublabel: string; color: string }> = {
-  2: { label: '2leté', sublabel: 'nástavbové', color: 'bg-slate-500' },
-  3: { label: '3leté', sublabel: 'učební obory', color: 'bg-slate-500' },
-  4: { label: '4leté', sublabel: 'z 9. třídy', color: 'bg-blue-600' },
-  5: { label: '5leté', sublabel: 'z 9. třídy', color: 'bg-blue-600' },
-  6: { label: '6leté', sublabel: 'ze 7. třídy', color: 'bg-violet-600' },
-  8: { label: '8leté', sublabel: 'z 5. třídy', color: 'bg-emerald-600' },
-};
+const DELKA_SLOVY: Record<number, string> = { 2: 'dvouleté', 3: 'tříleté', 4: 'čtyřleté', 5: 'pětileté', 6: 'šestileté', 8: 'osmileté' };
 
+/** Ze které třídy se na obor hlásí; nástavby po vyučení. */
+function proKoho(typ: string, delka: number): string {
+  if (typ === 'NAS') return 'po vyučení';
+  if (delka === 8) return 'z 5. třídy';
+  if (delka === 6) return 'ze 7. třídy';
+  return 'z 9. třídy';
+}
+
+const hezkyNazev = (nazev: string) => nazev.replace(/ - /g, ' – ');
+const mist = (n: number) => `${n} ${n === 1 ? 'místo' : n >= 2 && n <= 4 ? 'místa' : 'míst'}`;
+
+/**
+ * Přepínač oborů školy. Ukazuje jen to, čím se obory liší: když mají všechny stejný název
+ * (například tři gymnázia různé délky), název je jednou nad záložkami a záložky nesou délku,
+ * pro koho obor je a počet míst.
+ */
 export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
   // Jediný obor přepínač nepotřebuje – jeho data jsou rovnou na stránce.
   if (programs.length <= 1) return null;
 
-  // Uvnitř délky studia řadíme podle názvu, skupiny od nejkratší.
-  const groups = new Map<number, typeof programs>();
-  for (const p of programs) {
-    if (!groups.has(p.delka_studia)) groups.set(p.delka_studia, []);
-    groups.get(p.delka_studia)!.push(p);
-  }
-  const sortedPrograms = [...groups.entries()]
-    .sort(([a], [b]) => a - b)
-    .flatMap(([, progs]) => [...progs].sort((a, b) => a.obor.localeCompare(b.obor, 'cs')));
+  const nazevBezDelky = (p: ProgramTabsProps['programs'][number]) => p.zakladniNazev ?? p.obor.replace(/\s*\(\d+leté\)$/, '');
+  const nazvy = new Set(programs.map(nazevBezDelky));
+  const spolecnyNazev = nazvy.size === 1 ? [...nazvy][0] : null;
+  const pocetPodleNazvu = new Map<string, number>();
+  programs.forEach(p => pocetPodleNazvu.set(nazevBezDelky(p), (pocetPodleNazvu.get(nazevBezDelky(p)) ?? 0) + 1));
 
-  const delky = [...groups.keys()].sort((a, b) => a - b);
-  const hasMixedLengths = delky.length > 1;
+  // Od nejmladších uchazečů: osmileté (z 5. třídy), šestileté, pak čtyřleté a kratší; uvnitř podle názvu.
+  const serazene = [...programs].sort((a, b) =>
+    (b.delka_studia >= 6 ? b.delka_studia : 0) - (a.delka_studia >= 6 ? a.delka_studia : 0)
+    || nazevBezDelky(a).localeCompare(nazevBezDelky(b), 'cs')
+    || b.delka_studia - a.delka_studia);
   const totalKapacita = programs.reduce((sum, p) => sum + (p.kapacita || 0), 0);
 
   return (
-    <div className="bg-slate-50 border-b border-slate-200">
-      <div className="max-w-6xl mx-auto px-4 py-5">
-        <h2 className="text-xl font-bold text-slate-900">Studijní obory školy</h2>
-        <p className="mt-0.5 text-sm text-slate-500">
-          {programs.length === 1 ? '1 obor' : `${programs.length} obory`}
-          {totalKapacita > 0 && ` · ${totalKapacita} míst celkem`}
-          {' · vyberte obor a uvidíte jeho data'}
-        </p>
-
-        {/* Vysvětlivka délek studia místo nadpisů nad každou skupinou */}
-        {hasMixedLengths && (
-          <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-500">
-            {delky.map(d => {
-              const info = delkaLabels[d] || { label: `${d}leté`, sublabel: '', color: 'bg-slate-500' };
-              return (
-                <span key={d} className="inline-flex items-center gap-1.5">
-                  <span className={`inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold text-white ${info.color}`}>
-                    {info.label}
-                  </span>
-                  {info.sublabel}
-                </span>
-              );
-            })}
+    <div className="border-b border-slate-200 bg-slate-50">
+      <div className="mx-auto max-w-6xl px-4 py-5">
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <h2 className="text-xl font-bold text-slate-900">Obory školy</h2>
+          <p className="text-sm text-slate-500">
+            {programs.length} {programs.length < 5 ? 'obory' : 'oborů'}{totalKapacita > 0 && `, ${totalKapacita} míst celkem`}
+          </p>
+        </div>
+        {spolecnyNazev && (
+          <p className="mt-1 text-[15px] text-slate-700">
+            <span className="font-semibold text-slate-900">{hezkyNazev(spolecnyNazev)}</span>, obory se liší délkou studia
           </p>
         )}
 
-        {/* Záložky oborů */}
-        <nav aria-label="Studijní obory školy" className="mt-3 flex flex-wrap gap-2">
-          {sortedPrograms.map(program => {
-            const info = delkaLabels[program.delka_studia]
-              || { label: `${program.delka_studia}leté`, sublabel: '', color: 'bg-slate-500' };
+        <nav aria-label="Obory školy" className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          {serazene.map(program => {
             const isActive = program.id === currentProgramId;
+            const nazev = nazevBezDelky(program);
+            const delka = DELKA_SLOVY[program.delka_studia] ?? `${program.delka_studia}leté`;
+            const hlavni = spolecnyNazev
+              ? delka.charAt(0).toUpperCase() + delka.slice(1)
+              : `${hezkyNazev(nazev)}${(pocetPodleNazvu.get(nazev) ?? 0) > 1 ? `, ${delka}` : ''}`;
             return (
               <Link
                 key={program.id}
                 href={`/skola/${program.slug}`}
                 aria-current={isActive ? 'page' : undefined}
-                className={`
-                  group inline-flex max-w-full items-center gap-2 rounded-lg border px-3 py-2
-                  text-sm transition-colors focus-visible:outline-none focus-visible:ring-2
-                  focus-visible:ring-blue-500 focus-visible:ring-offset-1
-                  ${isActive
+                className={`group grid gap-0.5 rounded-xl border px-4 py-3 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1 ${
+                  isActive
                     ? 'border-blue-600 bg-blue-600 text-white shadow-sm'
-                    : 'border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:bg-blue-50'
-                  }
-                `}
+                    : 'border-slate-200 bg-white text-slate-800 hover:border-blue-300 hover:bg-blue-50'
+                }`}
               >
-                <span className={`inline-flex flex-shrink-0 items-center rounded px-1.5 py-0.5 text-[10px] font-bold ${
-                  isActive ? 'bg-white/20 text-white' : `${info.color} text-white`
-                }`}>
-                  {info.label}
+                <span className="text-[16px] font-semibold leading-snug">{hlavni}</span>
+                <span className={`text-[13px] ${isActive ? 'text-blue-100' : 'text-slate-500'}`}>
+                  {proKoho(program.typ, program.delka_studia)}
+                  {spolecnyNazev || (pocetPodleNazvu.get(nazev) ?? 0) > 1 ? '' : ` · ${delka}`}
+                  {program.kapacita ? ` · ${mist(program.kapacita)}` : ''}
                 </span>
-                <span className="min-w-0 truncate font-medium">{program.obor}</span>
-                {program.is_new_2026 && (
-                  <span className={`flex-shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold ${
-                    isActive ? 'bg-white/20 text-white' : 'bg-amber-100 text-amber-700'
-                  }`}>
-                    nově 2026
+                {(program.is_new_2026 || program.prev_zamereni_name) && (
+                  <span className={`text-[12px] ${isActive ? 'text-blue-100' : 'text-slate-500'}`}>
+                    {program.is_new_2026 && <span className={`mr-1.5 rounded px-1.5 py-0.5 font-semibold ${isActive ? 'bg-white/20 text-white' : 'bg-amber-100 text-amber-800'}`}>nový obor</span>}
+                    {program.prev_zamereni_name && <>dříve „{program.prev_zamereni_name}“</>}
                   </span>
                 )}
-                {program.prev_zamereni_name && (
-                  <span className={`flex-shrink-0 text-xs font-normal ${isActive ? 'text-blue-200' : 'text-slate-400'}`}>
-                    dříve {program.prev_zamereni_name}
-                  </span>
-                )}
-                {program.kapacita ? (
-                  <span className={`flex-shrink-0 text-xs tabular-nums ${isActive ? 'text-blue-100' : 'text-slate-500'}`}>
-                    {program.kapacita} míst
-                  </span>
-                ) : null}
               </Link>
             );
           })}
