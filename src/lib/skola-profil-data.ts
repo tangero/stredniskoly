@@ -123,9 +123,13 @@ async function nazvySkol() {
   return mapa;
 }
 
-async function ctiJson<T>(...casti: string[]): Promise<T | null> {
+/**
+ * Cesty musí být v kódu napsané doslova: Next.js podle nich při sestavení přibaluje soubory k funkci.
+ * Cesta složená z proměnných částí by přibalila celý projekt včetně adresáře data/ (564 MB, PR #90).
+ */
+async function ctiSoubor<T>(soubor: string): Promise<T | null> {
   try {
-    return JSON.parse(await fs.readFile(path.join(process.cwd(), ...casti), 'utf-8')) as T;
+    return JSON.parse(await fs.readFile(soubor, 'utf-8')) as T;
   } catch {
     return null;
   }
@@ -137,7 +141,7 @@ interface SouhrnySouborLehky {
 let skupinyCache: { rok: string; skupinyPodleSkoly: Map<string, Set<string>>; medianUmisteni: Map<string, number> } | null = null;
 async function skupinySkol(rok: string) {
   if (skupinyCache?.rok === rok) return skupinyCache;
-  const souhrny = await ctiJson<SouhrnySouborLehky>('public', 'souhrny_kolo1.json');
+  const souhrny = await ctiSoubor<SouhrnySouborLehky>(path.join(process.cwd(), 'public', 'souhrny_kolo1.json'));
   const skupinyPodleSkoly = new Map<string, Set<string>>();
   const umisteni = new Map<string, number[]>();
   for (const n of Object.values(souhrny?.nabidky ?? {})) {
@@ -172,7 +176,7 @@ let maturitaCache: MaturitaSoubor | null | undefined;
 async function maturitaSkoly(redizo: string): Promise<MaturitaSoubor['skoly'][string] & { soubor: MaturitaSoubor } | null> {
   const obdobi = await zobrazeneObdobi('cermat-maturita');
   if (!obdobi) return null;
-  if (maturitaCache === undefined) maturitaCache = await ctiJson<MaturitaSoubor>('public', 'maturita_skoly.json');
+  if (maturitaCache === undefined) maturitaCache = await ctiSoubor<MaturitaSoubor>(path.join(process.cwd(), 'public', 'maturita_skoly.json'));
   const skola = maturitaCache?.skoly[redizo];
   return skola && maturitaCache ? { ...skola, soubor: maturitaCache } : null;
 }
@@ -181,7 +185,7 @@ type Lokace = { lat: number; lon: number; stop_name: string; distance_km: number
 let lokaceCache: Record<string, Lokace> | null = null;
 async function lokace() {
   if (lokaceCache) return lokaceCache;
-  const d = await ctiJson<{ schools: Record<string, Lokace> }>('data', 'school_locations.json');
+  const d = await ctiSoubor<{ schools: Record<string, Lokace> }>(path.join(process.cwd(), 'data', 'school_locations.json'));
   lokaceCache = d?.schools ?? {};
   return lokaceCache;
 }
@@ -292,7 +296,7 @@ export async function getProfilSkoly(
   const soubehPodleSkoly = new Map<string, number>();
   if (obdobiUchazecu) {
     const rokUchazecu = Number(obdobiUchazecu);
-    const soubor = await ctiJson<SoubehSoubor>('public', `soubeh_prihlasek_${rokUchazecu}.json`);
+    const soubor = await ctiSoubor<SoubehSoubor>(path.join(process.cwd(), 'public', `soubeh_prihlasek_${rokUchazecu}.json`));
     if (soubor) {
       const nazvyOboru = new Map(programy.map(p => [`${redizo}_${p.id.split('_')[1]}`, p]));
       const oboryS: NonNullable<ProfilSkolyData['soubeh']>['obory'] = [];
