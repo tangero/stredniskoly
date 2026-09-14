@@ -26,6 +26,8 @@ Formát vychází z [Keep a Changelog](https://keepachangelog.com/cs/1.1.0/).
 - **Doklad pásem přijetí přepočítán** na aktuálních revizích obou roků; upstream 20. 5. 2026 přepsal i soubor 2024 do schématu roku 2025 (klíč REDIZO) a přeřadil asi 430 přijatých mezi vzdavší se, takže stabilita míry *rozhodl test* je 0,671 místo 0,725; teze ve verzi 1.7
 
 ### Opraveno
+- **Otevřená data školy** (`/skola/{slug}.md`, `.json`) — stejná datová vrstva jako stránka školy: ročník z registru, obtížnost přijetí, maturita, údaje od školy s původem, souběžné přihlášky; bez součtu přihlášek za školu; JSON ve verzi schématu 2
+- **Předložka z/ze před čísly** — podle výslovnosti čísla, ne jen u sedmiček a stovek
 - **Součtové poměry na stránce školy** — přehled školy a banner přihlášek nesčítají přihlášky a přijaté přes různé obory; srovnání ročníků ze souhrnů CERMATu
 - **Čtení roku 2024 ve `validate-pasma-prijeti.py`** — po přepsání souboru upstreamem skript padal na chybějících sloupcích; rok 2024 se čte stejnou funkcí jako 2025 a převod IZO odpadl
 - **Zastaralá čísla v tezích JPZ** — věta „nikdo se nevešel kvůli kapacitě" má v dokladu vlastní klíč (1 199 oborů, u 702 někdo nesplnil podmínky)

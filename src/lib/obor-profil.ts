@@ -67,9 +67,30 @@ export function slovniPodil(prijati: number, celkem: number): string {
   return `zhruba každý ${RADOVE[Math.round(1 / q)]}`;
 }
 
-/** Předložka před číslovkou: „ze“ tam, kde se vyslovuje se s/z na začátku (7, 17, 70–79, 100–199). */
+const JEDNOTKY = ['nula', 'jeden', 'dva', 'tři', 'čtyři', 'pět', 'šest', 'sedm', 'osm', 'devět'];
+const NACTE = ['deset', 'jedenáct', 'dvanáct', 'třináct', 'čtrnáct', 'patnáct', 'šestnáct', 'sedmnáct', 'osmnáct', 'devatenáct'];
+const DESITKY = ['', '', 'dvacet', 'třicet', 'čtyřicet', 'padesát', 'šedesát', 'sedmdesát', 'osmdesát', 'devadesát'];
+const STOVKY = ['', 'sto', 'dvě stě', 'tři sta', 'čtyři sta', 'pět set', 'šest set', 'sedm set', 'osm set', 'devět set'];
+
+/** První vyslovené slovo celého nezáporného čísla. */
+function prvniSlovo(n: number): string {
+  if (n >= 1000) {
+    const tisice = Math.floor(n / 1000);
+    return tisice === 1 ? 'tisíc' : prvniSlovo(tisice);
+  }
+  if (n >= 100) return STOVKY[Math.floor(n / 100)];
+  if (n >= 20) return DESITKY[Math.floor(n / 10)];
+  if (n >= 10) return NACTE[n - 10];
+  return JEDNOTKY[n];
+}
+
+/**
+ * Předložka před číslovkou podle výslovnosti: „ze“ před s, z, š, ž a před skupinami dv, tř, čt
+ * („ze 112“, „ze 44“, „ze 67“, „ze 2“), jinak „z“ („z 30“, „z 55“, „z 1 000“).
+ */
 export function zOd(n: number): 'z' | 'ze' {
-  return /^(7\d?|17|1\d\d)$/.test(String(n)) ? 'ze' : 'z';
+  const cele = Math.abs(Math.round(n));
+  return /^(s|z|š|ž|dv|tř|čt)/.test(prvniSlovo(cele)) ? 'ze' : 'z';
 }
 
 export function cislo(n: number, desetin = 0): string {

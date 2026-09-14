@@ -21,7 +21,9 @@ export const changelog: ChangelogEntry[] = [
       { type: 'new', text: 'Údaje, které vyplnila škola v portálu, jsou označené „Potvrdila škola“ a patří k otázkám, na které odpovídají; odkaz „Editujte: pro vedení školy“' },
       { type: 'improve', text: 'Každý údaj nese původ: oficiální data, údaj školy, text školy, automatické shrnutí inspekce, nebo starší profil InspIS' },
       { type: 'improve', text: 'Portál pro školy má nová nepovinná pole stravování a kontakt na výchovného poradce' },
-      { type: 'improve', text: 'Maturitní výsledky se připravují přes datovou linku a na stránce školy se ukážou po schválení dat' },
+      { type: 'improve', text: 'Maturitní výsledky společné části za roky 2023–2026 na stránce školy, srovnané se školami stejné skupiny oborů' },
+      { type: 'fix', text: 'Otevřená data školy v Markdownu a JSON ukazují stejný ročník a obsah jako stránka školy místo dat z roku 2025' },
+      { type: 'fix', text: 'Opravena předložka před čísly podle výslovnosti: „ze 44“, „ze 4 let“, „z 55“' },
     ],
   },
   {
