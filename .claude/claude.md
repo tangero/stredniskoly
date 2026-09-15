@@ -244,4 +244,4 @@ Podrobná dokumentace jednotlivých oblastí projektu:
 - [Grafy na stránce školy a oboru](../docs/grafy-skoly-a-oboru-2027.md) — schválený návrh grafů, časové řady, pravidla, předpoklady a uložení mezi zvažované
 - [Vrstvy stránky oboru](../docs/vrstvy-stranky-oboru-2027.md) — pět kol návrhu: odpověď na tři otázky uchazeče nad důkazy, stavy nabídky, rozhodnutí použít a zavrhnout
 - [Stránka školy](../docs/stranka-skoly-2027.md) — pět otázek rodiny: obory, jak si škola vede (maturita proti skupině oborů, inspekce), jaká škola je, kde je a okolí podle souběžných přihlášek
-- [Sledování škol](../docs/sledovani-skol-2027.md) — upozornění e-mailem na změny sledovaných škol: události z přepnutí sad a portálu, denní souhrn seskupený podle události
+- [Sledování škol a oborů](../docs/sledovani-skol-2027.md) — upozornění e-mailem na změny sledovaných škol a oborů: události z přepnutí sad a portálu, identita oboru mezi ročníky, denní souhrn seskupený podle události, úložiště odběrů mimo repozitář
