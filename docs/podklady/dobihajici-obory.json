@@ -1,0 +1,82 @@
+{
+  "snimek": "rssz-2026-06-30.jsonld",
+  "rocnik_nabidek": "2026",
+  "odolnost_zaveru_na_definici": [
+    {
+      "definice": "C00+D00",
+      "zaznamu": 723,
+      "hruby_join": 29,
+      "presny_join": 0
+    },
+    {
+      "definice": "C00+D00+E00",
+      "zaznamu": 754,
+      "hruby_join": 29,
+      "presny_join": 0
+    },
+    {
+      "definice": "bez filtru druhu",
+      "zaznamu": 1194,
+      "hruby_join": 29,
+      "presny_join": 0
+    }
+  ],
+  "jednotky_poctu": {
+    "zaznamu_oboru_celkem": 15494,
+    "zaznamu_dobihajicich_vsechny_druhy": 1194,
+    "zaznamu_dobihajicich_ss": 723,
+    "unikatnich_redizo_kkov_ss": 654,
+    "unikatnich_redizo_kkov_forma_delka_ss": 722,
+    "poznamka": "Jednotka rozhoduje. Jedna škola může mít týž obor zapsaný víckrát (denní i dálkově, různá délka), takže počet záznamů je vyšší než počet unikátních dvojic REDIZO a KKOV."
+  },
+  "druhy_skol_u_dobihajicich": {
+    "C00": 673,
+    "B00": 432,
+    "D00": 50,
+    "E00": 31,
+    "M40": 8
+  },
+  "nabidek_v_rocniku": 3091,
+  "join": {
+    "hrube_redizo_kkov": {
+      "nabidek": 29,
+      "klice": [
+        "600005216_65-42-M/01",
+        "600005216_65-42-M/02",
+        "600005429_75-41-M/01",
+        "600005640_64-41-L/51_podnikani",
+        "600005968_79-41-K/41_nase_skola",
+        "600006026_63-41-M/02_business_academy_cj_aj",
+        "600006026_63-41-M/02_obchodni_akademie_cj",
+        "600006026_68-43-M/01",
+        "600006310_63-41-M/01_podnikani",
+        "600006310_63-41-M/01_sportovni_management",
+        "600006930_18-20-M/01_informacni_technologie",
+        "600006930_65-42-M/02_cestovni_ruch",
+        "600009211_63-41-M/02_cestovni_ruch",
+        "600009211_63-41-M/02_pravo_a_finance",
+        "600009904_63-41-M/02_informacni_technologie_sportovni_management_moderni_asistentka",
+        "600010520_63-41-M/02",
+        "600010678_64-41-L/51",
+        "600011038_26-41-M/01",
+        "600015360_68-43-M/01",
+        "600015572_63-41-M/01_ekonomika_a_bezpecnost_podniku",
+        "600015572_63-41-M/01_komercni_pravo",
+        "600015572_63-41-M/01_podnikani_v_kynologii",
+        "600019829_53-41-M/03_prakticka_sestra_v_cervenem_kostelci",
+        "600019829_53-41-M/03_prakticka_sestra_v_trutnove",
+        "600170802_64-41-L/51_podnikani",
+        "600170896_64-41-L/51",
+        "600171086_64-41-L/51",
+        "600171850_39-41-L/01_mechanik_opravar_motorovych_vozidel",
+        "691003807_64-41-L/51"
+      ]
+    },
+    "presne_redizo_kkov_forma_delka": {
+      "nabidek": 0,
+      "klice": []
+    },
+    "nabidek_bez_zaznamu_v_rejstriku": 51
+  },
+  "zaver": "Hrubý join je nepoužitelný: všechny jeho zásahy jsou nabídky, u nichž dobíhá jiná forma nebo délka téhož oboru. Rozhoduje přesný join, a ten vychází na nulu při každé zkoušené definici druhu školy."
+}
