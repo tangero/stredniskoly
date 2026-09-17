@@ -2,7 +2,15 @@
 
 import Link from 'next/link';
 import { AKTUALNI_VERZE } from '@/lib/changelog';
-import { OdberPaticka } from '@/components/novinky/OdberPaticka';
+import dynamic from 'next/dynamic';
+
+// Formulář odběru se v patičce načítá až v prohlížeči. Patička je na všech
+// stránkách webu včetně 1 179 stránek škol; kdyby se formulář vykresloval při
+// generování, prodlouží každou z nich a build naráží na časový limit.
+const OdberPaticka = dynamic(
+  () => import('@/components/novinky/OdberPaticka').then((m) => ({ default: m.OdberPaticka })),
+  { ssr: false },
+);
 
 export function Footer() {
   return (
