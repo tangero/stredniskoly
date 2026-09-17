@@ -245,4 +245,4 @@ Podrobná dokumentace jednotlivých oblastí projektu:
 - [Vrstvy stránky oboru](../docs/vrstvy-stranky-oboru-2027.md) — pět kol návrhu: odpověď na tři otázky uchazeče nad důkazy, stavy nabídky, rozhodnutí použít a zavrhnout
 - [Stránka školy](../docs/stranka-skoly-2027.md) — pět otázek rodiny: obory, jak si škola vede (maturita proti skupině oborů, inspekce), jaká škola je, kde je a okolí podle souběžných přihlášek
 - [Sledování škol](../docs/sledovani-skol-2027.md) — upozornění e-mailem na změny sledovaných škol: události z přepnutí sad a portálu, denní souhrn seskupený podle události
-- [Novinky k přijímačkám](../docs/novinky-k-prijimackam-2027.md) — plošný odběr termínů a pokynů e-mailem: obsah vázaný na kalendář MŠMT, formulář na titulce, v patičce a u kalendáře, kontakty a rozesílky v Resendu s potvrzením
+- [Novinky k přijímačkám](../docs/novinky-k-prijimackam-2027.md) — plošný odběr termínů a pokynů e-mailem: obsah vázaný na kalendář MŠMT, jen ročník se zveřejněným kalendářem, formulář na titulce, v patičce a u kalendáře, odběratelé v Neonu a dávky přes Resend, s oponenturou
