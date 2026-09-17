@@ -1,6 +1,6 @@
 # Sledování škol a oborů e-mailem
 
-Verze 2.1 · 15. 9. 2026 · Návrh k rozhodnutí, nic není implementované.
+Verze 2.2 · 17. 9. 2026 · Návrh k rozhodnutí, nic není implementované.
 
 Rodina zadá e-mail a dostane upozornění, když na webu přibudou nové údaje o škole nebo oboru, který sleduje. Navazuje na [stránku školy](stranka-skoly-2027.md), [stránku oboru](vrstvy-stranky-oboru-2027.md), [registr stavu datových sad](../public/stav_datovych_sad.json), [datovou linku](datova-linka.md) a [portál pro školy](portal-pro-skoly-2027.md).
 
@@ -56,7 +56,7 @@ Nejtěžší část, tedy vědět, co se kdy změnilo, projekt z velké části 
 
 **Revize téhož období se neoznamují.** `prepni` s týmž obdobím zapíše událost s `oznamovat: false`. CERMAT soubory přepisuje často: revize kapacit a přihlášek 2026 změnila 281 kapacit a 1 022 počtů přihlášek. Upozornění na každou revizi by přehlušilo nová data.
 
-**Pozor na očekávání rodin.** Podle registru čekáme místa a přihlášky 2027 v březnu, tedy po termínu podání přihlášek. Upozornění `nabidka_zverejnena` rodině nepomůže přihlášku podat. Před termínem přihlášek jsou užitečné jen `udaje_od_skoly` (kritéria, dny otevřených dveří) a do budoucna dobíhající obor z rejstříku (oddíl 9). Text tlačítka proto nesmí slibovat, že dáme vědět o nabídce oborů včas. Kdy CERMAT soubor s kapacitami skutečně zveřejní, ověří v lednu `stav-datovych-sad.py zjisti`.
+**Pozor na očekávání rodin.** Podle registru čekáme místa a přihlášky 2027 v březnu, tedy po termínu podání přihlášek. Upozornění `nabidka_zverejnena` rodině nepomůže přihlášku podat. Před termínem přihlášek jsou užitečné jen `udaje_od_skoly` (kritéria, dny otevřených dveří). Text tlačítka proto nesmí slibovat, že dáme vědět o nabídce oborů včas. Do verze 2.1 tu stál i dobíhající obor z rejstříku; měření ho jako zprávu před termínem přihlášek vyvrátilo, viz oddíl 9. Kdy CERMAT soubor s kapacitami skutečně zveřejní, ověří v lednu `stav-datovych-sad.py zjisti`.
 
 ### 3.2 Záznam události
 
@@ -284,7 +284,7 @@ Prošel jsem [zdroje dat](zdroje-dat.md) celé, včetně oddílu 3. E-mail neuka
 
 | Sloupec | Rozhodnutí | Proč |
 |---|---|---|
-| Rejstřík, `dobihajiciObor` | **použít, až bude na stránce oboru** | „Škola tenhle obor dobíhá“ je pro sledující oboru nejcennější zpráva a přichází před termínem přihlášek, na rozdíl od dat CERMATu. Dnes je jen v rešeršních skriptech; e-mail nesmí ohlásit, co stránka neukazuje. Zdroj je čtvrtletní (`msmt-rejstrik-snimky`), událost by vznikla při přepnutí snímku |
+| Rejstřík, `dobihajiciObor` | **zavrhnout jako událost pro sledovaný obor** (opraveno 17. 9. 2026) | Verze 2.1 z něj dělala „nejcennější zprávu před termínem přihlášek“. Měření to vyvrátilo: proti snímku k 30. 6. 2026 je **nula z 3 091 nabídek** 1. kola 2026 vedena jako dobíhající, a všech 29 zásahů hrubého joinu je falešných (dobíhá jiná forma nebo délka téhož oboru). U sledovaného, aktuálně nabízeného oboru by událost prakticky nikdy nenastala. Zbývá slabší role: rozlišit „obor se už nenabírá“ od „obor škola letos nevypsala“ u nabídky, která v ročníku chybí — to ale není zpráva, kterou by chtěl dostat e-mailem někdo, kdo si obor sleduje. Párovat vždy REDIZO + KKOV + forma + délka. Doklad `docs/podklady/dobihajici-obory.json`, reprodukuje `scripts/dobihajici-obory.py` |
 | Rejstřík, nový obor v `skolyAZarizeni[].obory[]` | **zvážit se sledováním školy** | „Škola má zapsaný nový obor“ zajímá sledující školy, ale stránka školy obory z rejstříku bez nabídky CERMATu neukazuje; stejná podmínka jako výše |
 | AKKO, `platnostDo` | zavrhnout | obor se celostátně ruší zřídka a sada je ruční, bez detekce; dobíhající obor v rejstříku to pokryje u konkrétní školy |
 | Rejstřík, `reditel` | zavrhnout | změna ředitele je osobní údaj se spornou vypovídací hodnotou (zdroje dat, oddíl 3) |
@@ -316,12 +316,13 @@ F0 je užitečná i bez e-mailů: ze záznamu událostí jde sestavit stránku �
 2. **Revize:** neoznamovat vůbec (navrženo), nebo jen když se u oboru změní obtížnost přijetí slovy?
 3. **Platnost odběru:** 12 měsíců s prodloužením (navrženo), nebo do konce přijímacího řízení?
 4. **Upozornění pro školu:** má škola dostat e-mail, když se změní její údaje z oficiálních zdrojů? Pro redakci by to bylo levné ověřování dat a navázalo by to na portál.
-5. **Dobíhající obor:** zařadit převod `dobihajiciObor` na stránku oboru před F3, aby sledování oboru mělo zprávu i před termínem přihlášek?
+5. ~~**Dobíhající obor:** zařadit převod `dobihajiciObor` na stránku oboru před F3, aby sledování oboru mělo zprávu i před termínem přihlášek?~~ **Uzavřeno 17. 9. 2026:** ne. Otázka stála na předpokladu, že se příznak týká nabízených oborů; měření dalo nulu z 3 091 nabídek (oddíl 9). Sledování oboru tedy zprávu před termínem přihlášek z tohoto zdroje mít nebude.
 
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 2.2 | **Dobíhající obor zavržen jako událost** (17. 9. 2026). Verze 2.1 z něj dělala nejcennější zprávu před termínem přihlášek; měření proti snímku rejstříku k 30. 6. 2026 ale dalo nulu z 3 091 nabídek 1. kola 2026 a všech 29 zásahů hrubého joinu je falešných (dobíhá jiná forma nebo délka téhož oboru). Opraveny tři pasáže: §3.1, řádek v §9 a otevřená otázka 5, která je tím uzavřená. Doklad `docs/podklady/dobihajici-obory.json` vzniká v `scripts/dobihajici-obory.py` na větvi feat/maturita-srozumitelne. |
 | 2.1 | Vercel nemá vlastní databázi, Neon se zakládá z Vercel Marketplace. Náklady podle ceníků z 15. 9. 2026: s Resend Pro a Vercel Pro provoz nic navíc nestojí. Co z Resendu Pro použít (dávky, idempotence, webhooky nedoručitelnosti, druhá doména, příjem odpovědí) a co zavrhnout (kontakty, témata, rozesílky, automatizace, šablony, sledování otevření). |
 | 2.0 | Sledování oboru vedle školy: katalog událostí po úrovních, identita oboru mezi ročníky podle párování (2 315 shod klíče, 543 párů jedna ku jedné, 434 bez páru), převod odběru bez páru na školu. Průzkum stavu kódu. Revize se neoznamují. Inspekce podle přidaných inspekcí místo změněných škol (168 z 269). Úložiště Neon Postgres, odesílač Vercel Cron, nic uloženého do potvrzení, platnost 12 měsíců. Upozornění, že data CERMATu o nabídce přicházejí po termínu přihlášek. Zvážené nepoužité sloupce. |
 | 1.0 | Návrh: upozornění na události místo úprav, denní souhrn seskupený podle události, zdroje událostí, umístění tlačítka, identita bez účtu, pořadí realizace. |
