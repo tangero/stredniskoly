@@ -1,6 +1,6 @@
 # Oponentura codexu k novinkám k přijímačkám
 
-Kola 1 až 5 · 17. 9. 2026 · Vypracoval codex (codex-cli 0.153.4). Kolo 1 k [návrhu v1.1](../novinky-k-prijimackam-2027.md), vypořádání v oddílu 13 návrhu; kolo 2 k verzi 1.2 (oddíl 14) a kolo 3 k verzi 1.3 (oddíl 15) a kolo 4 k verzi 1.4 (oddíl 16) a kolo 5 k verzi 1.5 (oddíl 17).
+Kola 1 až 5 a cílené kolo · 17. 9. 2026 · Vypracoval codex (codex-cli 0.153.4). Kolo 1 k [návrhu v1.1](../novinky-k-prijimackam-2027.md), vypořádání v oddílu 13 návrhu; kolo 2 k verzi 1.2 (oddíl 14) a kolo 3 k verzi 1.3 (oddíl 15) a kolo 4 k verzi 1.4 (oddíl 16) a kolo 5 k verzi 1.5 (oddíl 17) a cílené kolo k verzi 1.6, jen na opravy z kola 5 (oddíl 18).
 
 ## Metoda (co jsi spustil a přečetl)
 
@@ -805,3 +805,128 @@ Nejde o tvrzení o skutečné spotřebě účtu, nýbrž o protipříklad k prav
 ## Celkový verdikt
 
 **zbývají blokační problémy: I1 — opakovaná rezervace dávky, I2 — obnova dílčích výsledků webhooků, I3 — kvóta přes přelom období.**
+
+---
+
+# Cílené kolo (k verzi 1.6, jen opravy z kola 5)
+
+## Metoda
+
+Porovnal jsem I1–I3 a J1–J3 z [předchozí oponentury:725](/Users/imac/Github/stredniskoly/docs/podklady/oponentura-codex-novinky-2027.md:725) s oddílem 6 aktuálního návrhu. Oddíl 17 sloužil pouze k identifikaci oprav. Dříve odstraněné body samostatně neotevírám.
+
+Kontroloval jsem konkrétní pořadí operací; podmínky B/C, opakovanou rezervaci a omezení `NOT NULL` jsem navíc ověřil nad uvedeným DDL v SQLite v paměti. Nejde o integrační test PostgreSQL. Produkční implementace a nastavení poskytovatele jsou **neověřené**; níže uvedené námitky vycházejí z kontraktu. Do souborů jsem nic nezapisoval.
+
+## Stav bodů I1–I3 a J1–J3
+
+| bod | stav | důkaz |
+|---|---|---|
+| I1 | ČÁSTEČNĚ | Klíč obsahující `pokus` odstranil kolizi rezervací, ale B/C neověřují číslo pokusu, takže starý pracovník může změnit novější pokus; viz K1 a [novinky-k-prijimackam-2027.md:355](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:355). |
+| I2 | ČÁSTEČNĚ | Samostatné doplňování výsledků a obnova podle chybějících položek jsou doplněné, ale předčasné uzavření dovoluje smazat tělo potřebné pro obnovu; viz K2 a [novinky-k-prijimackam-2027.md:358](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:358). |
+| I3 | ČÁSTEČNĚ | Přenos a dodatečná rezervace pokrývají původní scénář, ale zůstává přechod období mezi kontrolou a HTTP i rezervace vzniklá po účtování; viz K3–K4 a [novinky-k-prijimackam-2027.md:354](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:354). |
+| J1 | ODSTRANĚNO | Retenční vysvětlení výslovně přiznává adresu v neuzavřeném těle a stanoví lhůty jejího odstranění včetně `neurcita`; [novinky-k-prijimackam-2027.md:336](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:336). |
+| J2 | ČÁSTEČNĚ | Společná transakce je určená, ale vznik žádosti bez platnosti odporuje DDL a zdroj rozhodného času zůstává nejasný; viz K5, L1 a [novinky-k-prijimackam-2027.md:349](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:349). |
+| J3 | ODSTRANĚNO | B rozlišuje změněné složení od již převzaté či zrušené dávky a druhé skupině výslovně zakazuje rušení a účtování; [novinky-k-prijimackam-2027.md:355](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:355). |
+
+## Zbývající blokační problémy
+
+**K1 — Číslo pokusu nechrání přechody dávky**
+
+**Dopad:** Starý pracovník může převzít a uzavřít novější pokus, zatímco jeho rezervace zůstane nevypořádaná.
+
+**Důkaz:** Upsert zvyšuje `pokus`, ale B kontroluje pouze identifikátor, stav a složení; C kontroluje pouze identifikátor a stav. Teprve aktualizace rezervace kontroluje pokus: [novinky-k-prijimackam-2027.md:353](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:353), [ř. 355](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:355), [ř. 358](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:358).
+
+Konkrétní pořadí:
+
+1. Pracovník W1 dokončí A pro dávku D, pokus 1, a pozastaví se před B.
+2. Obnova osiřelou dávku zruší, vypořádá rezervaci 1 a vrátí položky na `ceka`, jak dovoluje [ř. 365](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:365).
+3. W2 upsertem obnoví stejné D se stejným složením jako pokus 2 a založí rezervaci 2.
+4. W1 pokračuje: jeho B uspěje, protože číslo pokusu nekontroluje.
+5. Po odeslání uspěje i jeho C, ale vypořádání pro pokus 1 nenajde žádný nevypořádaný řádek.
+6. D je `odeslana`; rezervace 2 zůstává otevřená a další C již nevyhraje.
+
+Model potvrdil: `old B wins=1`, `old C wins=1`, `settled old rows=0`, `new pending=1`.
+
+**Návrh řešení:** Vázat všechny přechody pracovníka, včetně chybových a rušících větví, na očekávané `(davka_id, pokus)`. Ověření pokusu musí předcházet změně položek i rozpočtu ve stejné transakci.
+
+**K2 — První webhook umožňuje smazat tělo před dokončením obnovy**
+
+**Dopad:** Po ztrátě odpovědi nelze předepsaným opakováním získat zbývající výsledky.
+
+**Důkaz:** První webhook uzavírá dávku, uzavření maže tělo a obnova přesto vyžaduje původní bajty: [novinky-k-prijimackam-2027.md:358](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:358), [ř. 332](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:332), [ř. 363](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:363).
+
+Konkrétní pořadí:
+
+1. Resend přijme dávku s položkami P a Q; proces spadne před uložením odpovědi.
+2. Webhook P uzavře a zaúčtuje celou dávku; výsledek Q stále chybí.
+3. Podle retenčního pravidla se tělo nahradí prázdným textem.
+4. Po šesti hodinách obnova potřebuje zopakovat původní požadavek, ale jeho bajty už nemá.
+
+**Návrh řešení:** Oddělit zaúčtování od dokončení obnovy také v životnosti těla. Tělo mazat až po získání všech výsledků nebo po definitivním ukončení možnosti opakování; odpovídajícím způsobem upřesnit retenční text.
+
+**K3 — Přenos před B nechrání první HTTP volání přes hranici období**
+
+**Dopad:** Skutečné odeslání může překročit strop nového období, přestože všechny předepsané kontroly uspějí.
+
+**Důkaz:** Přenos probíhá před B, HTTP až po jeho commitu; další rezervaci text výslovně požaduje při opakování: [novinky-k-prijimackam-2027.md:354](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:354), [ř. 355](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:355), [ř. 363](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:363).
+
+Konkrétní pořadí:
+
+1. Těsně před koncem období O1 kontrola potvrdí rezervaci 100 zpráv v aktuálním O1.
+2. B commitne ještě v O1.
+3. Nastane O2; první HTTP volání odešle 100 zpráv již v O2.
+4. Ostatní dávky v O2 využijí dalších 44 950 zpráv při místním stropu 45 000.
+5. Dávka má pouze rezervaci O1, takže v O2 lokálně projde 44 950, ale skutečně odejde 45 050.
+
+Nejde o obnovení po pádu, které nová větev řeší, nýbrž o první volání přes hranici.
+
+**Návrh řešení:** Vymezit odesílací časové okno a rezervovat všechna období, do kterých může předání spadnout. Při překročení okna musí pracovník před HTTP zajistit nové krytí; samotná kontrola před B nestačí.
+
+**K4 — Dodatečná rezervace může vzniknout po jediném účtovacím přechodu**
+
+**Dopad:** Nové období zůstane zatížené rezervací, pro kterou kontrakt už nemá automatické vypořádání.
+
+**Důkaz:** Opakování přes hranici zakládá další rezervaci, ale vypořádání je dovoleno pouze vítězi `predavana → odeslana`: [novinky-k-prijimackam-2027.md:363](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:363), [ř. 358](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:358).
+
+Konkrétní pořadí nezávislé na smazání těla:
+
+1. Dávka odeslaná v O1 nemá uloženou odpověď.
+2. V O2 po šesti hodinách obnova načte dávku a tělo pro opakování.
+3. Než založí rezervaci O2, webhook P uzavře dávku a vypořádá dosavadní rezervaci O1.
+4. Obnova založí rezervaci O2; jiné položky stále nemají výsledek.
+5. Proces spadne. Při pozdějším získání výsledků C nevyhraje, protože dávka už je `odeslana`, a rezervace O2 zůstane otevřená.
+
+Model potvrdil: `repeated C wins=0`, `new pending=1`.
+
+**Návrh řešení:** Serializovat přidávání rezervací s účtováním stejného pokusu. Vypořádání dodatečných rezervací musí mít vlastní jednorázovou podmínku a fungovat i po zaúčtování dávky, bez opětovného započtení odeslání.
+
+**K5 — Nová žádost výzvy bez platnosti odporuje schématu**
+
+**Dopad:** Předepsaným způsobem nelze založit žádost `novy_rocnik`; blokuje to větev výzev k novému ročníku.
+
+**Důkaz:** Nový postup přikazuje vznik žádosti bez platnosti a pozdější doplnění `plati_do`, ale sloupec je `NOT NULL`: [novinky-k-prijimackam-2027.md:349](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:349), [ř. 208](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:208).
+
+Pořadí `příprava výzvy → INSERT žádosti s dosud nevyplněným plati_do` skončilo nad uvedeným DDL:
+
+```text
+NOT NULL constraint failed: zadost_o_potvrzeni.plati_do
+```
+
+Náhradní reprezentaci dosud neaktivní platnosti text neurčuje.
+
+**Návrh řešení:** Povolit pro dosud neodeslaný `novy_rocnik` prázdnou platnost nebo zavést explicitní stav čekající na aktivaci; taková žádost nesmí být potvrditelná. Aktivaci a termíny doplnit atomicky s výsledkem výzvy.
+
+## Nikoli blokační k dopsání
+
+**L1 — Společná transakce ještě neurčuje zdroj času výzvy**
+
+**Dopad:** Dvě implementace mohou odvodit konec platnosti od různých okamžiků.
+
+**Důkaz:** Návrh slibuje 30 dnů od odeslání, ale nová formulace váže nastavení na transakci doplnění výsledku bez explicitního určení hodnoty času: [novinky-k-prijimackam-2027.md:167](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:167), [ř. 349](/Users/imac/Github/stredniskoly/docs/novinky-k-prijimackam-2027.md:349).
+
+Konkrétní pořadí: výzva odejde v 10:00, odpověď se ztratí a výsledek se doplní v 16:00. Čas odeslání a čas transakce se liší o šest hodin; samotná atomicita tento rozdíl neřeší.
+
+**Návrh řešení:** Výslovně určit zdroj `vyzva_odeslana` a z něj odvodit oba termíny. Pokud má lhůta začínat až zjištěním výsledku, upravit tomu i slib „od odeslání“.
+
+## Celkový verdikt
+
+**zbývají blokační problémy: K1, K2, K3, K4 a K5.** K5 blokuje větev výzev k novému ročníku; K1–K4 se týkají společného odesílacího mechanismu.

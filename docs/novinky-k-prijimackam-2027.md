@@ -1,6 +1,6 @@
 # Novinky k přijímačkám e-mailem
 
-Verze 1.8 · 17. 9. 2026 · Návrh k rozhodnutí, nic není implementované. Vypořádána [oponentura v1.0](oponentura-novinky-k-prijimackam-2027.md) (oddíl 12) a [oponentura codexu](podklady/oponentura-codex-novinky-2027.md), kola 1 až 5 (oddíly 13 až 17). **Oddíl 6 zadavatel schválil 17. 9. 2026** ve všech pěti částech, včetně volby databáze Neon. Oprava podle kola 5 (číslo pokusu u dávky, oddělené účtování dávky a výsledků položek, rezervace kvóty v období možného odeslání) ale **oponenturou neprošla**, protože dohodnutý počet pěti kol je vyčerpán. **Závazný implementační kontrakt je oddíl 6**; oddíly 12 až 16 zaznamenávají cestu k němu a starší formulace v nich jsou historické.
+Verze 1.9 · 17. 9. 2026 · Návrh k rozhodnutí, nic není implementované. Vypořádána [oponentura v1.0](oponentura-novinky-k-prijimackam-2027.md) (oddíl 12) a [oponentura codexu](podklady/oponentura-codex-novinky-2027.md), kola 1 až 5 (oddíly 13 až 17). **Oddíl 6 zadavatel schválil 17. 9. 2026** ve všech pěti částech, včetně volby databáze Neon. Oprava podle kola 5 (číslo pokusu u dávky, oddělené účtování dávky a výsledků položek, rezervace kvóty v období možného odeslání) ale **oponenturou neprošla**, protože dohodnutý počet pěti kol je vyčerpán. **Závazný implementační kontrakt je oddíl 6**; oddíly 12 až 16 zaznamenávají cestu k němu a starší formulace v nich jsou historické.
 
 Návštěvník webu zadá e-mail a během přijímacího řízení dostává s předstihem připomínky termínů a pokyny, co je potřeba připravit. Na rozdíl od [sledování škol a oborů](sledovani-skol-2027.md) (větev `docs/sledovani-skol-a-oboru`, v2.1) dostanou všichni odběratelé téhož ročníku a druhu studia stejný obsah. Návrh navazuje na [kalendář přijímaček](aktualizace-kalendar-data-2027.md) (`src/data/admissions-2027.json`, sada `msmt-harmonogram` v registru na větvi `feat/titulka-nabidka-oboru`) a na [analýzu návštěvnosti](analyza-navstevnosti-2026.md).
 
@@ -183,7 +183,7 @@ davka:            pripravena → predavana → odeslana | neurcita
 
 Pravidla, na kterých stojí celý postup:
 
-1. **Každý přechod je podmíněná aktualizace** (`update … where id = ? and stav = ?`) a vyhrát ho může jen jeden zpracovatel. Kdo prohraje, nic neúčtuje a přečte si nový stav.
+1. **Každý přechod je podmíněná aktualizace** (`update … where id = ? and stav = ? and pokus = ?`) a vyhrát ho může jen jeden zpracovatel. Kdo prohraje, nic neúčtuje a přečte si nový stav. **Pracovník si pamatuje číslo pokusu, které sám založil, a uvádí ho v každé své aktualizaci** — v předání, v uzavření, v chybové i rušící větvi. Starý pracovník tak nemůže převzít novější pokus téže dávky. Ověření pokusu je v téže transakci jako změna položek a rozpočtu.
 2. **Hranice předání je commit transakce B**, tedy přechod dávky na `predavana`. Do té chvíle lze dávku zrušit, po ní už ne.
 3. **Odhlášení a předání o hranici soutěží.** Odhlášení zkusí `update davka set stav='zrusena' where id = ? and stav = 'pripravena'`. Uspěje-li, dávka se nepředá vůbec: její ostatní položky se vrátí na `ceka`, odhlášená se přepne na `zahozena` a rezervace kvóty se vypořádá. Neuspěje-li (dávka už je `predavana`), odhlášení odběr zruší, ale položku nechá dojít, protože e-mail už mohl odejít.
 4. **Transakce B kontroluje složení.** Přechod proběhne jen tehdy, když `clenove_otisk` dávky odpovídá aktuálně rezervovaným položkám. Jinak se dávka zruší a sestaví znovu. Odhlášení mezi A a B tedy nemůže poslat e-mail někomu, kdo už odběr nemá.
@@ -200,13 +200,16 @@ Navazují na schéma sledování v2.1 (§7.2); `odberatel` je společný. Zaklá
 create table zadost_o_potvrzeni (
   jti text primary key,
   ucel text not null check (ucel in ('novinky', 'kalendar', 'novy_rocnik')),
+  stav text not null check (stav in ('ceka_na_vyzvu', 'aktivni', 'spotrebovana')),
   email text not null,
   volby jsonb not null,
   souhlas_verze text not null,
   zdroj text not null,
   vytvoreno timestamptz not null,
-  plati_do timestamptz not null,          -- 72 h, u účelu 'novy_rocnik' 30 dnů
-  spotrebovano timestamptz
+  plati_do timestamptz,                   -- 72 h; u 'novy_rocnik' se doplní až s odesláním
+                                          -- výzvy (30 dnů), do té doby je prázdné
+  spotrebovano timestamptz,
+  check (stav <> 'aktivni' or plati_do is not null)
 );
 
 create table odber_novinek (
@@ -295,7 +298,8 @@ create table rezervace_kvoty (
   obdobi text not null,                   -- 'mesic:2027-01' | 'den:2026-11-03'
   ucel text not null,                     -- 'celkem' | 'potvrzeni'
   pocet int not null,
-  vyporadano timestamptz,                 -- vyplní jediný vítězný přechod
+  volani_provedeno boolean not null default false,  -- zapisuje se před HTTP voláním
+  vyporadano timestamptz,                 -- jednorázově, nezávisle na stavu dávky
   primary key (davka_id, pokus, obdobi, ucel)
 );
 
@@ -329,11 +333,11 @@ create table limit_potvrzeni (
 Poznámky ke schématu:
 
 - **Identifikátor zprávy nese ročník** (`novinky/2027/kriteria`), takže zpráva dalšího ročníku s minulou nekoliduje.
-- **Tělo dávky je text**, protože `jsonb` nezachová pořadí klíčů ani mezery a opakovaný pokus musí poslat tytéž bajty. Otisk se počítá nad tímto textem. Po uzavření dávky se `telo` nahradí prázdným textem a nastaví `telo_smazano`.
+- **Tělo dávky je text**, protože `jsonb` nezachová pořadí klíčů ani mezery a opakovaný pokus musí poslat tytéž bajty. Otisk se počítá nad tímto textem. **Tělo se maže teprve tehdy, když už ho žádná obnova nemůže potřebovat:** jsou známé výsledky všech položek dávky, nebo uplynulo okno opakování (24 hodin od `predano_v`), nebo je dávka `neurcita` déle než 30 dnů. Uzavření dávky (stav `odeslana`) samo tělo nemaže, protože výsledky některých položek mohou ještě chybět.
 - **Evidence odeslání se neruší s adresátem.** Oba cizí klíče položky mají `on delete set null` a položka nese vlastní `adresat_otisk`, takže po smazání žádosti nebo identity zůstane doklad, co se komu odeslalo, bez adresy.
 - **Do `webhook_udalost` se adresa neukládá**, jen její otisk a tělo bez adresy.
 - **Doby uložení**: žádost 72 h (u účelu `novy_rocnik` 30 dnů); odběr do odhlášení nebo do konce ročníku; doklad souhlasu 3 roky po zániku účelu; `limit_potvrzeni` 30 dnů; `polozka_odeslani`, `davka`, `rezervace_kvoty` a `webhook_udalost` 12 měsíců; provozní záznamy Resendu podle jeho nastavení, na které nemáme vliv.
-- **Co zbude po odhlášení:** doklad souhlasu s otiskem adresy a položky fronty s otiskem adresy. Adresa sama zmizí s identitou a s žádostí, **s jedinou výjimkou: v těle neuzavřené dávky zůstává, dokud se dávka neuzavře**, protože z něj se skládá opakovaný požadavek. Nejdéle to je 24 hodin od předání; u dávky, o které rozhoduje člověk (`neurcita`), se tělo maže nejpozději po 30 dnech, i když rozhodnutí nepadlo. Stránka zásad to říká takto přesně, ne zkratkou „zůstane jen otisk“.
+- **Co zbude po odhlášení:** doklad souhlasu s otiskem adresy a položky fronty s otiskem adresy. Adresa sama zmizí s identitou a s žádostí, **s jedinou výjimkou: v těle dávky zůstává, dokud je tělo potřeba pro obnovu**. To je do doby, kdy jsou známé výsledky všech položek, nejdéle 24 hodin od předání; u dávky, o které rozhoduje člověk (`neurcita`), nejpozději 30 dnů. Stránka zásad to říká takto přesně, ne zkratkou „zůstane jen otisk“.
 - **Retenční úklid** je denní úloha a její selhání je předmětem dohledu (oddíl 10).
 
 ### Průběh
@@ -346,21 +350,22 @@ Poznámky ke schématu:
    - u `kalendar` založí `zprava_o_kalendari` ve stavu `ceka` a zapíše doklad; uvítání nevzniká;
    - u `novy_rocnik` založí odběr nového ročníku, zapíše doklad, přepne `zprava_o_kalendari` na `uzavren` a vloží položku `uvitani`.
 
-   **Rozhodný okamžik u výzvy:** žádost účelu `novy_rocnik` vzniká bez platnosti a `plati_do` se jí doplní **ve stejné transakci, ve které se doplní výsledek položky výzvy**; tehdy se také `zprava_o_kalendari` přepne na `vyzvan`, zapíše `vyzva_odeslana` a `ceka_do` se nastaví na týž okamžik plus 30 dnů. Platnost tokenu se vždy ověřuje proti žádosti, takže odkaz platí přesně slíbených 30 dnů od odeslání výzvy.
+   **Rozhodný okamžik u výzvy:** žádost účelu `novy_rocnik` vzniká ve stavu `ceka_na_vyzvu` s prázdným `plati_do` a **v tomto stavu ji nelze potvrdit**. Jakmile je znám výsledek položky výzvy, jedna transakce ji přepne na `aktivni`, doplní `plati_do`, přepne `zprava_o_kalendari` na `vyzvan`, zapíše `vyzva_odeslana` a nastaví `ceka_do`. **Rozhodným časem je okamžik odeslání podle Resendu** (`created_at` e-mailu z odpovědi nebo z webhooku); není-li znám, použije se `predano_v` dávky, tedy čas těsně před voláním. Nikdy se nepoužije čas transakce, aby zpožděné doplnění výsledku lhůtu nezkracovalo. Od tohoto okamžiku běží 30 dnů pro `plati_do` i pro `ceka_do`, takže odkaz platí přesně slíbených 30 dnů od odeslání výzvy.
    Pak se e-mail pošle hned; když se to nepovede, pošle ho nejbližší běh odesílače.
 5. **Odeslání jedné dávky.** Transakce jsou vymezené tak, aby pád nemohl zapomenout na provedené odeslání ani zaúčtovat jedno odeslání dvakrát.
    1. **Platnost zprávy** (splatnost, konec užitečnosti, soulad `otisk_kalendare` s nasazeným kalendářem) se ověřuje při naplnění fronty, při sestavení dávky, před předáním **a znovu před každým opakováním**, které může vyvolat odeslání. Prošlá položka se přepne na `zahozena` a ohlásí se.
    2. **Transakce A.** Vybere až 100 položek `ceka` téže zprávy příkazem `select … for update skip locked`, ověří podmínku účelu (potvrzení potřebuje platnou žádost, obsahová zpráva aktivní odběr, výzva čekající požadavek), sestaví hotové tělo, spočítá `otisk_tela` a `clenove_otisk` a vloží dávku příkazem `insert … on conflict (idempotency_key) do update set stav = 'pripravena', pokus = davka.pokus + 1, zalozeno = now() where davka.stav in ('chyba', 'zrusena')`. Tím se **prokazatelně neodeslaná dávka použije znovu s týmž klíčem** místo kolize na jedinečnosti; klíč idempotence zůstává stejný, protože tělo je stejné. **Nový pokus má vlastní rezervaci** (`rezervace_kvoty` je klíčovaná i podle `pokus`), takže se nesrazí s už vypořádanou rezervací předchozího pokusu a opožděný zpracovatel nemůže vypořádat rezervaci novějšího pokusu. Položky přepne na `pripravena`.
-   3. **Rezervace kvóty** je součástí transakce A a je **společná pro všechny e-maily novinek**: nejdřív měsíční řádek `ucel = 'celkem'`, u potvrzení navíc denní řádek. Každá rezervace je podmíněná aktualizace `update rozpocet_emailu set rezervovano = rezervovano + :n where obdobi = … and ucel = … and rezervovano + spotrebovano + :n <= limit_pocet returning *` a zapíše se do `rezervace_kvoty`. Když některá neprojde, transakce se vrátí, položky zůstanou `ceka` a ohlásí se to. Souběžné dávky tak společný strop přečerpat nemohou. **Rezervace musí platit v období, ve kterém může dojít ke skutečnému odeslání**, ne v tom, kdy vznikla: před transakcí B se u dávky, jejíž rezervace patří jinému období než současnému, rezervace atomicky přenese do současného období (uvolní se stará, rezervuje nová; nepovede-li se to, dávka se zruší a položky zůstanou `ceka`). Totéž platí u denního rozpočtu potvrzení přes půlnoc.
-   4. **Transakce B.** `update davka set stav='predavana', predano_v=now() where id = ? and stav='pripravena' and clenove_otisk = ?` a totéž pro položky. Když aktualizace neprojde, rozhoduje důvod: je-li dávka stále `pripravena`, ale se změněným složením (například kvůli odhlášení), zruší se, rezervace se vypořádá a zbytek se sestaví znovu; je-li už `predavana`, `odeslana` nebo `zrusena`, patří **jinému vítězi** a tento běh jen načte stav a skončí, nic neruší a nic neúčtuje. Commit. **Teprve teď** smí přijít volání Resendu.
+   3. **Rezervace kvóty** je součástí transakce A a je **společná pro všechny e-maily novinek**: nejdřív měsíční řádek `ucel = 'celkem'`, u potvrzení navíc denní řádek. Každá rezervace je podmíněná aktualizace `update rozpocet_emailu set rezervovano = rezervovano + :n where obdobi = … and ucel = … and rezervovano + spotrebovano + :n <= limit_pocet returning *` a zapíše se do `rezervace_kvoty`. Když některá neprojde, transakce se vrátí, položky zůstanou `ceka` a ohlásí se to. Souběžné dávky tak společný strop přečerpat nemohou. **Rezervace musí platit v období, ve kterém může dojít ke skutečnému odeslání**, ne v tom, kdy vznikla. Proto platí dvě pravidla: (a) před transakcí B se u dávky, jejíž rezervace patří jinému období než současnému, rezervace atomicky přenese do současného období (uvolní se stará, rezervuje nová; nepovede-li se to, dávka se zruší a položky zůstanou `ceka`); (b) **dávka se nepředává v posledních 10 minutách období** — do konce měsíce u řádku `celkem`, do konce dne u denního řádku potvrzení. Předání v takové chvíli se odloží a rezervace se pořídí rovnou na následující období. První volání proto nemůže spadnout do období, pro které kapacitu nemá.
+   4. **Transakce B.** `update davka set stav='predavana', predano_v=now() where id = ? and pokus = ? and stav='pripravena' and clenove_otisk = ?` a totéž pro položky; `pokus` je ten, který pracovník sám založil. Ve stejné transakci se u všech rezervací tohoto pokusu nastaví `volani_provedeno = true`, protože po commitu B už volání může nastat. Když aktualizace neprojde, rozhoduje důvod: je-li dávka stále `pripravena`, ale se změněným složením (například kvůli odhlášení), zruší se, rezervace se vypořádá a zbytek se sestaví znovu; je-li už `predavana`, `odeslana` nebo `zrusena`, patří **jinému vítězi** a tento běh jen načte stav a skončí, nic neruší a nic neúčtuje. Commit. **Teprve teď** smí přijít volání Resendu.
    5. **Volání.** `POST /emails/batch`, nejvýš 100 adres, tělo přesně z `davka.telo`, hlavička `Idempotency-Key` z `davka.idempotency_key`, respektování `429` a `Retry-After`. Každý e-mail nese **značku (tag) s `polozka_id`**; podpora značek u dávkového odeslání se ověřuje v N0.
    6. **Transakce C: účtování dávky a výsledky položek jsou dvě různé věci.**
-      - **Účtování dávky proběhne jednou.** `update davka set stav='odeslana', uzavreno=now() where id=? and stav='predavana'`; **jen když tato aktualizace uspěje**, převede se rezervace toho pokusu (`update rezervace_kvoty set vyporadano=now() where davka_id=? and pokus=? and vyporadano is null returning *` a podle vrácených řádků se sníží `rezervovano` a zvýší `spotrebovano`). Účtuje se **velikost dávky**, ne počet známých výsledků, takže druhý zpracovatel nic nepřičte. Dávka se uzavře i tehdy, když je z odpovědi nebo z prvního webhooku zřejmé, že požadavek Resend přijal.
+      - **Účtování dávky proběhne jednou.** `update davka set stav='odeslana', uzavreno=now() where id=? and pokus=? and stav='predavana'`. Účtuje se **velikost dávky**, ne počet známých výsledků, takže druhý zpracovatel nic nepřičte. Dávka se uzavře i tehdy, když je z odpovědi nebo z prvního webhooku zřejmé, že požadavek Resend přijal.
+      - **Rezervace se vypořádávají samostatně a jednorázově, nezávisle na stavu dávky**: `update rezervace_kvoty set vyporadano=now() where davka_id=? and pokus=? and obdobi=? and vyporadano is null returning *`. Podle `volani_provedeno` se buď převede `rezervovano` na `spotrebovano` (volání nastalo), nebo se rezervace jen uvolní (prokazatelně nenastalo). Tím se vypořádá i rezervace, která vznikla později pro jiné období, a to i tehdy, když dávka už je `odeslana` nebo `neurcita`. Nevypořádané rezervace starší než hodinu hlídá dohled.
       - **Výsledek jednotlivé položky se doplňuje samostatně** a nezávisle na tom, kdo vyhrál přechod dávky: `update polozka_odeslani set stav='odeslana', resend_id=?, odeslano=? where id=? and stav='predavana'`. Webhook tedy smí doplnit položku i po uzavření dávky, a pozdní výsledek se neztratí.
       - Prokazatelná chyba bez odeslání (například `422`): dávka `chyba`, položky zpět na `ceka`, rezervace se vypořádá uvolněním.
    7. **Neznámý výsledek.** Když odpověď nepřijde, zůstane dávka `predavana` a rezervace platí. Obnova se řídí **chybějícími výsledky položek**, ne počtem webhooků:
       - **webhooky** se značkou `polozka_id` doplní, co dorazí, každý sám za sebe;
-      - **zbývají-li položky bez výsledku** po 6 hodinách, je to do 24 hodin od `predano_v` a **platnost zprávy podle 5.1 stále trvá**, odesílač zopakuje týž požadavek s týmž klíčem a týmiž bajty: Resend vrátí původní odpověď s identifikátory všech e-mailů, a pokud první pokus vůbec nedošel, e-maily odejdou teď. Přesahuje-li opakování do jiného období, musí se kapacita rezervovat i v novém období; stará nejistá rezervace se neuvolňuje;
+      - **zbývají-li položky bez výsledku** po 6 hodinách, je to do 24 hodin od `predano_v`, tělo dávky ještě nebylo smazáno (viz poznámka ke schématu) a **platnost zprávy podle 5.1 stále trvá**, odesílač zopakuje týž požadavek s týmž klíčem a týmiž bajty: Resend vrátí původní odpověď s identifikátory všech e-mailů, a pokud první pokus vůbec nedošel, e-maily odejdou teď. Přesahuje-li opakování do jiného období, musí se kapacita rezervovat i v novém období; stará nejistá rezervace se neuvolňuje;
       - **opakování se neprovede**, když platnost zprávy už netrvá, když v novém období není kapacita, nebo když od `predano_v` uplynulo 24 hodin. Položky bez výsledku pak jdou na `neurcita`, dávka rovněž, nic se neposílá a rozhodne člověk.
    8. **Osiřelá `pripravena`.** Dávka, která zůstane `pripravena` déle než 15 minut (pád mezi A a B), se přebírá obnovou: ověří se platnost zprávy i složení a pak se buď dokončí transakcí B, nebo se dávka zruší, rezervace vypořádá a položky vrátí na `ceka`. Přechod je podmíněný, takže původní běh a obnova se nemohou potkat.
    9. **Oprava textu už předané zprávy** se nikdy nedělá změnou klíče: je to **nová zpráva** s vlastním identifikátorem a schválením.
@@ -462,7 +467,7 @@ Odhad 2–5 % přihlášených z přibližně 5 000 identifikovaných návštěv
 
 První e-mail, který musí odejít, je „Školy vyhlašují kritéria“ **12. 1. 2027**. Prosincový e-mail o výběru školy odejde, jen pokud bude N2 hotová.
 
-**Provozní dohled** od N1: chybějící běh cronu, dávky ve stavu `pripravena` starší než 15 minut, `predavana` starší než 6 hodin nebo `neurcita`, rezervace bez vypořádání, položky fronty ve stavu `ceka` po splatnosti, zprávy po konci užitečnosti, rezervace, které se dlouho nepřevedly na spotřebu, spotřebovaná kvóta nad 80 % a zásah do rezervy portálu, podíl nedoručení a stížností, nespárované webhooky a **selhání retenčního úklidu**. Všechno do Telegramu, stejně jako datová linka.
+**Provozní dohled** od N1: chybějící běh cronu, dávky ve stavu `pripravena` starší než 15 minut, `predavana` starší než 6 hodin nebo `neurcita`, rezervace bez vypořádání starší než hodinu, těla dávek starší než okno opakování, položky fronty ve stavu `ceka` po splatnosti, zprávy po konci užitečnosti, rezervace, které se dlouho nepřevedly na spotřebu, spotřebovaná kvóta nad 80 % a zásah do rezervy portálu, podíl nedoručení a stížností, nespárované webhooky a **selhání retenčního úklidu**. Všechno do Telegramu, stejně jako datová linka.
 
 ## 11. Otevřené otázky
 
@@ -654,10 +659,30 @@ Kolo 5 bylo poslední z dohodnutých pěti. Ověřilo verzi 1.5 a **odstraněné
 2. Rozhodnout otevřené otázky z oddílu 11, hlavně právní kontrolu; režim analytiky je od 17. 9. 2026 rozhodnutý (Matomo má schválení).
 3. Teprve pak N0.
 
+## 18. Vypořádání cíleného kola oponentury
+
+Cílené kolo zkoumalo jen opravy z kola 5, tedy tu část oddílu 6, která oponenturou neprošla. **J1 a J3 jsou odstraněné**, ostatní body byly odstraněné jen částečně a kolo přidalo pět blokačních (K1 až K5) a jeden nikoli blokační (L1). Všechny se přijímají; každý je doložený konkrétním pořadím operací, dva z nich codex ověřil i modelem nad schématem.
+
+| # | Námitka | Vypořádání | Kde |
+|---|---|---|---|
+| **K1** | Číslo pokusu chránilo jen rezervaci, ne přechody dávky: starý pracovník mohl převzít a uzavřít novější pokus a rezervace nového pokusu zůstala otevřená | **přijato.** Pravidlo 1 nově ukládá, že **pracovník uvádí číslo svého pokusu v každé aktualizaci** — v předání, uzavření, chybové i rušící větvi — a ověření pokusu je v téže transakci jako změna položek a rozpočtu | 6 (Stavy, pravidlo 1; kroky 5.4 a 5.6) |
+| **K2** | První webhook uzavřel dávku, uzavření smazalo tělo a obnova pak neměla bajty pro opakování | **přijato.** Uzavření dávky **tělo nemaže**. Tělo se maže teprve tehdy, když jsou známé výsledky všech položek, nebo když uplyne okno opakování (24 hodin), nebo u dávky `neurcita` po 30 dnech. Retenční text tomu odpovídá | 6 (poznámky ke schématu, „Co zbude po odhlášení“, krok 5.7) |
+| **K3** | Přenos rezervace před předáním nechránil první volání, které spadlo už do nového období | **přijato.** Doplněno pravidlo, že **dávka se nepředává v posledních 10 minutách období**; předání se odloží a rezervace se pořídí rovnou na následující období. První volání tak nemůže spadnout do období bez kapacity | 6 (krok 5.3) |
+| **K4** | Dodatečná rezervace pro nové období mohla vzniknout po jediném účtovacím přechodu a zůstat navždy otevřená | **přijato.** Rezervace se vypořádávají **samostatně a jednorázově, nezávisle na stavu dávky**, podle nového příznaku `volani_provedeno`: buď se převedou na spotřebu, nebo se uvolní. Vypořádání funguje i u dávky `odeslana` nebo `neurcita` a nevypořádané rezervace hlídá dohled | 6 (tabulka `rezervace_kvoty`, kroky 5.4 a 5.6, dohled) |
+| **K5** | Žádost výzvy měla vzniknout bez platnosti, ale sloupec byl `not null`; větev výzev proto nešla realizovat | **přijato.** `zadost_o_potvrzeni` má nově `stav` (`ceka_na_vyzvu`, `aktivni`, `spotrebovana`), `plati_do` je nepovinné a omezení `check (stav <> 'aktivni' or plati_do is not null)` hlídá, že aktivní žádost platnost má. Žádost ve stavu `ceka_na_vyzvu` nelze potvrdit | 6 (tabulka `zadost_o_potvrzeni`, krok 5.4 a rozhodný okamžik u výzvy) |
+| L1 | nebyl určen zdroj času, od kterého běží 30 dnů výzvy | přijato: rozhodným časem je **okamžik odeslání podle Resendu** (`created_at`), a není-li znám, `predano_v` dávky. Čas transakce se nepoužije, aby zpožděné doplnění výsledku lhůtu nekrátilo |
+
+### Kde skončit s oponenturou
+
+Cílené kolo ukázalo, že na úrovni popisu souběhu lze takto pokračovat dlouho: každá oprava odemkne další, ještě užší protipříklad. Body K1 až K5 byly konkrétní a opravitelné několika větami, ale příští kolo by hledalo protipříklady už na okrajích právě dopsaných pravidel.
+
+**Doporučený postup:** oddíl 6 už dál neoponovat a zbytek ověřit tam, kde je souběh prokazatelný, tedy v přejímce N1 a N2. Ty mají zkoušky přímo na tyhle případy: pád mezi transakcemi, dvě souběžná spuštění, opakování v okně idempotence, odhlášení před i po hranici předání, obrácené pořadí webhooků a souběžné dávky proti rozpočtu. Co neprojde testem, se opraví v kódu, ne v dokumentu.
+
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.9 | Vypořádáno cílené kolo oponentury na opravy z kola 5: přijato pět blokačních bodů a jedno upřesnění. Pracovník uvádí číslo svého pokusu v každé aktualizaci, takže starý pracovník nemůže převzít novější pokus. Tělo dávky se maže až po získání všech výsledků nebo po okně opakování, ne při uzavření dávky. Dávka se nepředává v posledních 10 minutách období. Rezervace kvóty se vypořádávají jednorázově a nezávisle na stavu dávky podle příznaku provedeného volání. Žádost o potvrzení má stav a nepovinné `plati_do`, takže žádost čekající na výzvu lze založit. Rozhodným časem lhůty výzvy je okamžik odeslání podle Resendu. Doplněno doporučení oponenturu oddílu 6 ukončit a zbytek ověřit přejímkou N1 a N2. |
 | 1.8 | Zadavatel schválil oddíl 6 v celém rozsahu a jako úložiště potvrdil Neon Postgres s vlastní frontou odeslání. Ke kontrole zbývá jen oprava podle kola 5. |
 | 1.7 | Režim analytiky rozhodnut: Matomo má schválení a smí měřit bez souhlasové lišty (potvrzeno zadavatelem 17. 9. 2026). Otevřená otázka na analytiku padá, N0 ji už neobsahuje a v oddílu 9 zůstává jen podmínka, že odběr musí fungovat i při zablokovaném měření. |
 | 1.6 | Vypořádána oponentura codexu, kolo 5 (poslední): přijaty tři blokační body a tři upřesnění. Dávka má číslo pokusu a rezervace je klíčovaná podle pokusu, takže opětovné použití dávky nekoliduje s vypořádanou rezervací. Účtování dávky je oddělené od doplňování výsledků jednotlivých položek a obnova se řídí chybějícími výsledky, ne počtem webhooků. Rezervace kvóty musí platit v období, ve kterém může dojít k odeslání, i při opakování přes přelom měsíce nebo dne. Doplněn rozhodný okamžik třicetidenní lhůty výzvy, přesná retence adresy v těle neuzavřené dávky a rozlišení důvodů prohraného přechodu B. Tato verze už oponenturou neprošla. |
