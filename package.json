@@ -9,7 +9,8 @@
     "lint": "eslint",
     "update:csi": "node scripts/process-csi-data.js",
     "inspis:build-data": "node scripts/import-inspis-data.js",
-    "sitemap:build": "node scripts/generate-sitemap.js"
+    "sitemap:build": "node scripts/generate-sitemap.js",
+    "test:novinky": "node --experimental-strip-types --test tests/novinky-*.test.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.96.0",
@@ -22,7 +23,8 @@
     "next": "16.1.4",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "tailwind-merge": "^3.4.0"
+    "tailwind-merge": "^3.4.0",
+    "@neondatabase/serverless": "^1.0.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
