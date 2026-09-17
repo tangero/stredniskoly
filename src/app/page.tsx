@@ -4,11 +4,42 @@ import { Footer } from '@/components/Footer';
 import { SchoolSearch } from '@/components/SchoolSearch';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { getAllSchoolsForSearch, getAllKraje } from '@/lib/data';
+import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
+import calendar from '@/data/admissions-2027.json';
 
 export const metadata = {
   title: 'Výběr střední školy a kalendář přijímaček 2027',
   description: 'Termíny přijímaček 2027 podle MŠMT a historické výsledky škol 2024–2026. Prozkoumej obory, porovnej výsledky a naplánuj přihlášky.',
 };
+
+// Věta o nabídce oborů závisí na dnešním datu, proto se stránka obnovuje denně.
+export const revalidate = 86400;
+
+/**
+ * Upozornění, že web ukazuje obory z posledního přijímacího řízení a kdy školy vyhlásí nové.
+ * Rok nabídky bere z registru stavu datových sad, termín z kalendáře MŠMT v admissions-2027.json.
+ * Po převzetí nové nabídky (registr přepne cermat-prihlasky) upozornění zmizí.
+ */
+async function nabidkaOboru(): Promise<string | null> {
+  const obdobi = await zobrazeneObdobi('cermat-prihlasky');
+  const vyhlaseni = calendar.groups
+    .find((g) => g.id === 'stredni-skoly')
+    ?.events.find((e) => e.id === 'ss-kriteria');
+  if (!obdobi || !vyhlaseni) return null;
+  const rokNabidky = Number(obdobi);
+  const rokNovy = Number(vyhlaseni.start.slice(0, 4));
+  if (rokNabidky >= rokNovy) return null;
+
+  const dnes = new Date().toISOString().slice(0, 10);
+  const termin = `${vyhlaseni.date} ${rokNovy}`;
+  if (dnes < vyhlaseni.start) {
+    return `Obory a místa na webu jsou z přijímacího řízení ${rokNabidky}. Nabídku oborů pro rok ${rokNovy}, tedy obory a počet míst, školy zveřejní spolu s kritérii přijetí ${termin}. Do té doby si ověř přímo u školy, jestli obor otevírá.`;
+  }
+  if (dnes <= (vyhlaseni.end ?? vyhlaseni.start)) {
+    return `Školy právě zveřejňují kritéria přijetí a s nimi nabídku oborů pro rok ${rokNovy}, tedy obory a počet míst (${termin}). Obory a místa na webu jsou zatím z přijímacího řízení ${rokNabidky}; ověř si nabídku přímo u školy.`;
+  }
+  return `Školy zveřejnily kritéria přijetí a nabídku oborů pro rok ${rokNovy} ${termin}. Obory a místa na webu jsou zatím z přijímacího řízení ${rokNabidky}; nové doplníme, až je CERMAT zveřejní v otevřených datech.`;
+}
 
 export default async function HomePage() {
   const schools = await getAllSchoolsForSearch();
@@ -17,6 +48,7 @@ export default async function HomePage() {
   // Počet unikátních škol (podle REDIZO), ne zaměření
   const totalSchools = new Set(schools.map(s => s.id.split('_')[0])).size;
   const totalKraje = kraje.length;
+  const upozorneniNabidka = await nabidkaOboru();
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -33,6 +65,11 @@ export default async function HomePage() {
             <p className="text-blue-300 text-sm mb-2">PŘIJÍMAČKY 2027</p>
             <h2 className="text-2xl font-bold mb-3">Termíny už známe. Výběr školy může začít.</h2>
             <p className="text-slate-300 mb-5">Přihlášky na SŠ: 1.–22. února 2027. Konzervatoře už 1.–30. listopadu 2026.</p>
+            {upozorneniNabidka && (
+              <p className="mb-5 rounded-lg border border-amber-300/40 bg-amber-300/10 px-4 py-3 text-sm leading-relaxed text-amber-50">
+                {upozorneniNabidka}
+              </p>
+            )}
             <div className="grid sm:grid-cols-2 gap-3">
               <Link href="/prijimacky-2027" className="rounded-lg bg-blue-700 p-5 hover:bg-blue-600">
                 <h3 className="font-bold mb-2">Kalendář přijímaček 2027 →</h3>

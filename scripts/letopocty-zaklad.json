@@ -20,14 +20,6 @@
   "školy podle měst | Přijímačky 2026",
   "školy podle měst — přijímačky 2026"
  ],
- "src/app/moje-sance/MojeSanceClient.tsx": [
-  "Minimum 2025",
-  "Nové 2026",
-  "Přihlášek 2026",
-  "Přihlášky podle priority (2026)",
-  "Přijato v 2025",
-  "těte a kritérií školy pro rok 2027 nelze určit osobní šanci ani"
- ],
  "src/app/nabidka/2026/[sourceId]/page.tsx": [
   "1. kolo 2026, platnost 17. 8. 2026",
   "Historické výsledky 2026",
@@ -80,12 +72,6 @@
  "src/app/skola/[slug]/page.tsx": [
   "Data z přijímacího řízení 2025"
  ],
- "src/app/skola/[slug]/page.v1_original.tsx": [
-  "Min. body 2025",
-  "Min. skóre pro přijetí (2025):",
-  "Přihlášky a přijetí 2025",
-  "└ v roce 2024:"
- ],
  "src/app/skola/[slug]/pro-me/page.tsx": [
   "né podmínky a nabídku pro rok 2027?"
  ],
@@ -117,10 +103,6 @@
  ],
  "src/components/RegionSchoolsTable.tsx": [
   "Historický průměr 2025"
- ],
- "src/components/SchoolDetailClient.tsx": [
-  "Historické minimum JPZ 2025",
-  "ia a bodové hodnocení pro rok 2027 ověřte přímo u školy."
  ],
  "src/components/SchoolsPageTabs.tsx": [
   "Nejžádanější obory 2026",
