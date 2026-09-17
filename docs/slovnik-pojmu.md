@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.3 · 14. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.5 · 17. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -37,6 +37,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **hranice úspěšnosti** | minimum bodů z kritérií školy; když ji odvozujeme z dat, vždy „podle výsledků to odpovídá“ | „minimum bodů, bez kterého škola uchazeče nepřijme“ | hranice přijetí (tu nezná nikdo) |
 | **1. kolo**, **2. kolo** | kola přijímacího řízení podle harmonogramu MŠMT | u 2. kola: „když se obor v 1. kole nenaplní, škola může vypsat 2. kolo“ | druhé kolo bez čísla ročníku |
 | **místa**, **kapacita** | počet míst, které škola pro obor v kole vypsala | není potřeba | volná místa (jen u 2. kola) |
+| **nabídka oborů** | obory a počet míst, které školy pro dané přijímací řízení vypíšou; školy je zveřejňují spolu s kritérii přijetí, agregovaná data CERMATu k nim vycházejí až o několik měsíců později | „nabídka oborů pro rok …, tedy obory a počet míst“; termín zveřejnění vždy s rokem a s tím, že ho školy zveřejňují s kritérii | seznam oborů, otevírané obory (bez roku), vyhlášení nabídky (školy vyhlašují kritéria) |
 
 ## 3. Výsledky a obtížnost
 
@@ -81,6 +82,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.5 | Nabídka oborů jako pojem pro upozornění na titulní stránce: obory a počet míst, které školy vypíšou. Zveřejňují ji s kritérii přijetí, proto se termín uvádí jako zveřejnění kritérií, ne jako „vyhlášení nabídky“. Verze 1.4 patří větvi `feat/maturita-srozumitelne`. |
 | 1.3 | Pojmy pro stránku školy: maturanti, společná část, skupina oborů, zařazení proti skupině, souběžní uchazeči, vzdušnou čarou a značky původu údajů. |
 | 1.2 | Obtížnost přijetí jako samostatný nadpis celou frází „Velmi těžké se dostat“. |
 | 1.1 | Pořadí v kraji podle zájmu a podle výsledků přijatých jako povolený pojem; „žebříček“ zůstává zakázaný. |

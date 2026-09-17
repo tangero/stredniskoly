@@ -33,12 +33,12 @@ async function nabidkaOboru(): Promise<string | null> {
   const dnes = new Date().toISOString().slice(0, 10);
   const termin = `${vyhlaseni.date} ${rokNovy}`;
   if (dnes < vyhlaseni.start) {
-    return `Obory a kapacity na webu jsou z přijímacího řízení ${rokNabidky}. Nabídku oborů pro rok ${rokNovy} vyhlásí školy ${termin}. Do té doby si ověř přímo u školy, jestli obor otevírá.`;
+    return `Obory a místa na webu jsou z přijímacího řízení ${rokNabidky}. Nabídku oborů pro rok ${rokNovy}, tedy obory a počet míst, školy zveřejní spolu s kritérii přijetí ${termin}. Do té doby si ověř přímo u školy, jestli obor otevírá.`;
   }
   if (dnes <= (vyhlaseni.end ?? vyhlaseni.start)) {
-    return `Školy právě vyhlašují nabídku oborů pro rok ${rokNovy} (${termin}). Obory a kapacity na webu jsou zatím z přijímacího řízení ${rokNabidky}; ověř si nabídku přímo u školy.`;
+    return `Školy právě zveřejňují kritéria přijetí a s nimi nabídku oborů pro rok ${rokNovy}, tedy obory a počet míst (${termin}). Obory a místa na webu jsou zatím z přijímacího řízení ${rokNabidky}; ověř si nabídku přímo u školy.`;
   }
-  return `Školy vyhlásily nabídku oborů pro rok ${rokNovy} ${termin}. Obory a kapacity na webu jsou zatím z přijímacího řízení ${rokNabidky}; nové doplníme, až je CERMAT zveřejní v otevřených datech.`;
+  return `Školy zveřejnily kritéria přijetí a nabídku oborů pro rok ${rokNovy} ${termin}. Obory a místa na webu jsou zatím z přijímacího řízení ${rokNabidky}; nové doplníme, až je CERMAT zveřejní v otevřených datech.`;
 }
 
 export default async function HomePage() {

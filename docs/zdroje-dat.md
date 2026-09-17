@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.8 · 14. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.9 · 17. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -35,6 +35,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | CERMAT, školní agregáty JPZ 2017–2023 | data.cermat.cz, XLSX | 7 ročníků | REDIZO + oborová skupina | uzavřená řada |
 | CERMAT, agregáty 2. kola | data.cermat.cz, XLSX | kapacity, přihlášky, výsledky od 2024 | REDIZO + KKOV + zaměření | ročně, výsledky v září |
 | Dopravní data | PID, GTFS ČR, jízdní řády | celá ČR | zastávka a spoj | podle vydání |
+| Harmonogram přijímacího řízení MŠMT | opis termínů z metodiky MŠMT do `src/data/admissions-2027.json` | jedno přijímací řízení, 3 skupiny a 20 událostí | identifikátor události | ručně, jednou ročně |
 
 **Co v repozitáři není.** Zdroj patří do soupisu i tehdy, když jeho soubor na disku neleží. Takových je několik:
 
@@ -284,6 +285,22 @@ Otázka rodiče: **jak dlouho už je tahle škola žádaná**. Je to jediný zdr
 
 Nepoužíváme.
 
+### 2.13 Harmonogram přijímacího řízení MŠMT
+
+`src/data/admissions-2027.json`, ruční opis termínů z metodiky MŠMT. Pole `checkedAt` nese datum ověření, `source` a `jpzSource` adresy, ze kterých se termíny opsaly. Tři skupiny (`stredni-skoly`, `konzervatore`, `jpz`) a 20 událostí.
+
+| Pole události | Obsah | Otázka rodiče | Používáme |
+|---|---|---|---|
+| `id` | identifikátor události, například `ss-kriteria` | žádná, technické | ano, stránka podle něj vybírá termín |
+| `start`, `end` | rozsah termínu | do kdy to musím stihnout | ano |
+| `date` | termín slovy, například „15.–31. ledna“ | tamtéž | ano |
+| `title` | název události | co se v ten den děje | ano |
+| `note` | doporučení k události | co mám udělat | ano, na stránce přijímaček |
+
+Používá ho stránka [přijímačky 2027](../src/app/prijimacky-2027/page.tsx) a od 17. 9. 2026 i **hlavní stránka**: z události `ss-kriteria` bere termín, kdy školy zveřejní kritéria přijetí a s nimi nabídku oborů. Rok, ze kterého web ukazuje obory a místa, bere z registru (sada `cermat-prihlasky`), ne z tohoto souboru.
+
+**Není v registru stavu datových sad** a soubor nese rok v názvu. Zapsat ho jako sadu (kdo a kdy opisuje harmonogram na další ročník, jak se pozná, že MŠMT vydalo nový) zůstává otevřené; dokud se nestane, po sezóně nikdo neupozorní, že termíny doběhly.
+
 ## 3. Sloupce, které nepoužíváme
 
 Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to dalo rodiči.
@@ -460,6 +477,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-14. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.9 | Harmonogram přijímacího řízení MŠMT (`src/data/admissions-2027.json`) zapsaný jako zdroj, protože z něj od 17. 9. 2026 čerpá i hlavní stránka; není v registru stavu datových sad a nese rok v názvu. |
 | 1.8 | Maturitní výsledky přes datovou linku do `public/maturita_skoly.json`; zpracovatel sady `cermat-maturita`. |
 | 1.7 | Kontext přihlášek po oborech (`kontext_prihlasek_{rok}.json`), web škol z rejstříku (`skoly_web.json`), kraj a body přijatých po předmětech v souhrnech. |
 | 1.6 | Souhrny 1. kola po ročnících v `souhrny_kolo1.json`: přijatí podle priority, konající, průměrná percentilová umístění přijatých a uchazečů, oficiální percentil nejnižšího přijatého. |
