@@ -1,6 +1,6 @@
 # Novinky k přijímačkám e-mailem
 
-Verze 1.10 · 17. 9. 2026 · Návrh k rozhodnutí, nic není implementované. Vypořádána [oponentura v1.0](oponentura-novinky-k-prijimackam-2027.md) (oddíl 12) a [oponentura codexu](podklady/oponentura-codex-novinky-2027.md), kola 1 až 5 (oddíly 13 až 17). **Oddíl 6 zadavatel schválil 17. 9. 2026** ve všech pěti částech, včetně volby databáze Neon. Oprava podle kola 5 (číslo pokusu u dávky, oddělené účtování dávky a výsledků položek, rezervace kvóty v období možného odeslání) ale **oponenturou neprošla**, protože dohodnutý počet pěti kol je vyčerpán. **Závazný implementační kontrakt je oddíl 6**; oddíly 12 až 16 zaznamenávají cestu k němu a starší formulace v nich jsou historické.
+Verze 1.11 · 17. 9. 2026 · Návrh k rozhodnutí, nic není implementované. Vypořádána [oponentura v1.0](oponentura-novinky-k-prijimackam-2027.md) (oddíl 12) a [oponentura codexu](podklady/oponentura-codex-novinky-2027.md), kola 1 až 5 (oddíly 13 až 17). **Oddíl 6 zadavatel schválil 17. 9. 2026** ve všech pěti částech, včetně volby databáze Neon. Oprava podle kola 5 (číslo pokusu u dávky, oddělené účtování dávky a výsledků položek, rezervace kvóty v období možného odeslání) ale **oponenturou neprošla**, protože dohodnutý počet pěti kol je vyčerpán. **Závazný implementační kontrakt je oddíl 6**; oddíly 12 až 16 zaznamenávají cestu k němu a starší formulace v nich jsou historické.
 
 Návštěvník webu zadá e-mail a během přijímacího řízení dostává s předstihem připomínky termínů a pokyny, co je potřeba připravit. Na rozdíl od [sledování škol a oborů](sledovani-skol-2027.md) (větev `docs/sledovani-skol-a-oboru`, v2.1) dostanou všichni odběratelé téhož ročníku a druhu studia stejný obsah. Návrh navazuje na [kalendář přijímaček](aktualizace-kalendar-data-2027.md) (`src/data/admissions-2027.json`, sada `msmt-harmonogram` v registru na větvi `feat/titulka-nabidka-oboru`) a na [analýzu návštěvnosti](analyza-navstevnosti-2026.md).
 
@@ -45,18 +45,18 @@ Kalendář 2027 dává pevné body, ke kterým se většina zpráv váže. Sloup
 
 | E-mail | Spouštěč | Datum odeslání 2027 | Komu | Obsah |
 |---|---|---|---|---|
-| **Uvítání** | potvrzení odběru | okamžik potvrzení, posílá se hned | všem | přehled termínů ročníku, odkaz na kalendář a ICS, co dělat teď podle měsíce; zmínka o datech přepnutých od posledního e-mailu |
+| **Uvítání** | potvrzení odběru | okamžik potvrzení, posílá se hned | všem | přehled termínů ročníku, odkaz na kalendář a ICS, co dělat teď podle měsíce. **Podmíněný blok** o datech, která na web přibyla, se vypíše jen tehdy, když od přepnutí sady uplynulo méně než dva měsíce; nový odběratel jinak žádný „poslední e-mail“ nemá |
 | Výběr školy a dny otevřených dveří | redakční datum | **7. 12. 2026**, jen pokud je N2 hotová; jinak se obsah přesune do uvítání | SŠ, víceleté | jak vybírat, co se ptát, odkaz na simulátor a stránky škol |
 | **Školy vyhlašují kritéria** | `ss-kriteria` minus 3 dny | **12. 1. 2027** | SŠ, víceleté | co v kritériích hledat: požadavek školy, hranice úspěšnosti, školní zkouška. **Nabídku oborů pro rok 2027 zveřejňují školy ve svých kritériích**, web ji bude mít až z otevřených dat CERMATu. **První e-mail, který musí odejít** |
 | **Přihlášky** | `ss-prihlasky` minus 5 dní | **27. 1. 2027** | SŠ, víceleté | jak podat přihlášku, pořadí na přihlášce („šanci na přijetí nemění, škola řadí jen podle svých kritérií“), přílohy |
 | **Připomínka přihlášek** | konec `ss-prihlasky` minus 4 dny | **18. 2. 2027** | SŠ, víceleté | přihlášky se podávají do 22. 2. 2027 |
-| Nová nabídka oborů na webu | publikace dat: přepnutí `cermat-kapacity` **a** `cermat-prihlasky` | podle přepnutí, nejdřív po jarním importu | SŠ, víceleté | obory a místa pro rok 2027 jsou na stránkách škol i na webu |
+| Nová data o 1. kole na webu | publikace dat: přepnutí `cermat-kapacity` **a** `cermat-prihlasky` | podle přepnutí, nejdřív po jarním importu | SŠ, víceleté | **retrospektivně**: kolik míst školy vypsaly a kolik přihlášek obory dostaly v 1. kole tohoto roku. Není to výzva k výběru, protože odběratelé ročníku už přihlášky podali; pro ročník, který se hlásí příště, se totéž zmíní v uvítání |
 | Školní a talentové zkoušky | `ss-skolni` minus 7 dní | **8. 3. 2027** | SŠ, víceleté | pozvánka od školy, náhradní termíny 26. 4. – 5. 5. 2027 |
 | **Jednotná zkouška, čtyřleté obory** | `jpz-4-1` minus 10 dní | **2. 4. 2027** | SŠ | oba řádné termíny (12. a 13. 4.), co s sebou, náhradní termíny 29. a 30. 4. při nemoci |
 | **Jednotná zkouška, víceletá gymnázia** | `jpz-vice-1` minus 10 dní | **4. 4. 2027** | víceleté | oba řádné termíny (14. a 15. 4.) a náhradní termíny |
 | **Výsledky a 2. kolo** | `ss-vysledky` | **14. 5. 2027** ráno | SŠ, víceleté | jak zjistit výsledek; co když se uchazeč nedostal nikam: školy vyhlásí obory a kritéria 2. kola 14.–18. 5. a **přihlášky do 2. kola se podávají jen 19.–24. 5. 2027** |
 | Výsledky 2. kola a konec ročníku | `k2-vysledky` | **22. 6. 2027** | všem | co dál; odběr ročníku končí, nabídka jedné zprávy o dalším kalendáři pro mladšího sourozence |
-| Kalendář dalšího ročníku | publikace dat: přepnutí `msmt-harmonogram` | podle přepnutí, čekáme srpen 2027 | kdo si o zprávu řekl (oddíl 4) | vyšel kalendář ročníku 2028; odkaz na potvrzení nového odběru |
+| Kalendář dalšího ročníku | publikace dat: přepnutí `msmt-harmonogram` | podle přepnutí, čekáme srpen 2027 | kdo si o zprávu řekl (oddíl 4) | vyšel kalendář ročníku 2028; odkaz na potvrzení nového odběru. **Týž běh, který výzvy odesílá, také maže požadavky, jejichž 30denní lhůta uplynula**, aby nezůstaly viset |
 
 Z pevného plánu vychází **v lednu 2027 dvě zprávy, v únoru jedna**; víc jich v měsíci bude jen tehdy, když se sejde se zprávou o datech nebo s uvítáním nových odběratelů. Dřívější tvrzení „v únoru dvě až tři“ bylo nepodložené.
 
@@ -123,6 +123,8 @@ Podoba formuláře:
 - **Opakované přihlášení** téže adresy nezakládá druhého odběratele: adresa se normalizuje (malá písmena, bez mezer) a připojí se k existující identitě. Změna adresy znamená nové ověření, staré odběry zůstanou do potvrzení nové adresy.
 - Stavy: „Posílat termíny“ → „Potvrď v e-mailu“ → „Odebíráš termíny“. Stav si pamatuje prohlížeč a formuláře se pak na webu skryjí.
 
+**Konzervatoře ve formuláři:** kalendář má budoucí termíny konzervatoří, takže se formulář zobrazí i rodině konzervatoristy. Proto je pod výběrem druhu studia jedna věta: „Konzervatoře zatím neposíláme, protože je web nepokrývá; jejich termíny najdeš v kalendáři.“ Bez ní působí nabídka rozbitě. Stejná věta je na `/novinky`.
+
 **Mimo web:** stránka `/novinky` s QR kódem je určená výchovným poradcům základních škol a rodičovským skupinám. Adresy základních škol z rejstříku k oslovení **nepoužijeme**, viz oddíl 8.
 
 ## 5. Kdo se přihlašuje: věk, souhlas a práva
@@ -134,7 +136,7 @@ Uchazeči o víceleté gymnázium mají 11 až 13 let, uchazeči po 9. třídě 
 - Neptáme se na jméno, školu ani ročník dítěte ve škole. Povinné jsou jen adresa, druh studia a souhlas; **kraj je nepovinný** a slouží budoucím krajským zprávám.
 - **Doklad souhlasu** (čl. 7 GDPR) se ukládá **do samostatné tabulky**, ne do odběru: účel, ročník, verze znění souhlasu, místo formuláře, čas potvrzení, čas zániku a den, kdy se doklad smaže. Odhlášení tedy smaže odběr a doklad zůstane po dobu uložení. Znění souhlasu je verzované v repozitáři, takže je zpětně dohledatelné, s čím kdo souhlasil.
 - **Informační povinnost** (čl. 13 GDPR) plní stránka zásad: správce a jeho kontakt, účel, právní titul, rozsah, zpracovatelé (Vercel, Neon, Resend), doba uložení po jednotlivých druzích záznamů, práva na přístup, opravu, výmaz a odvolání souhlasu a postup, jak je uplatnit.
-- **Právní kontrola před N1** má tři přejímací body: (1) znění souhlasu a jeho doklad, (2) text zásad včetně správce, zpracovatelů, dob uložení a případných předání mimo EU, (3) oslovení v e-mailech, když souhlas dává rodič a obsah čte dítě.
+- **Právní kontrola před N1** má tři přejímací body: (1) znění souhlasu a jeho doklad, (2) text zásad včetně správce, zpracovatelů, dob uložení a **předání do třetích zemí**: Resend je americký zpracovatel a databáze Neon se zakládá **v evropském regionu**, takže zásady musí jmenovat právní základ přenosu, (3) oslovení v e-mailech, když souhlas dává rodič a obsah čte dítě.
 - Smlouvy se zpracovateli a regiony databáze jsou mimo repozitář; jejich prověření je úkol N0, ne tvrzení tohoto návrhu.
 
 ## 6. Úložiště a rozesílání
@@ -695,6 +697,7 @@ Cílené kolo ukázalo, že na úrovni popisu souběhu lze takto pokračovat dlo
 
 | Verze | Změna |
 |---|---|
+| 1.11 | Vypořádán zbytek oponentury k v1.1: březnová zpráva o nových datech je přeformulovaná retrospektivně (odběratelé ročníku už přihlášky podali), uvítání má podmíněný blok o nových datech, formulář vysvětluje jednou větou, proč konzervatoř v nabídce není, právní kontrola má výslovně předání do třetích zemí (Resend v USA, Neon v evropském regionu) a mazání nepotvrzených požadavků na kalendář je součástí téhož běhu, který odesílá výzvy. M2 a M3 byly vyřešené už ve verzi 1.2. |
 | 1.10 | Zadavatel rozhodl všech pět otevřených otázek: návrh zásad ochrany osobních údajů napíšu já a právní kontrolu zajistí zadavatel; sledování škol schváleno a připojí se v N4; jarní importér kapacit a přihlášek se napíše do února 2027; portál se převede na společný rozpočet v N4; kraj se ptá nepovinně a do vzniku krajského obsahu na něm nic nestojí. Potvrzen název, tykání a označení odkazů, ponechána zpráva o dalším kalendáři. Oddíl 11 přepsán z otevřených otázek na soupis rozhodnutí a zbývající práce. |
 | 1.9 | Vypořádáno cílené kolo oponentury na opravy z kola 5: přijato pět blokačních bodů a jedno upřesnění. Pracovník uvádí číslo svého pokusu v každé aktualizaci, takže starý pracovník nemůže převzít novější pokus. Tělo dávky se maže až po získání všech výsledků nebo po okně opakování, ne při uzavření dávky. Dávka se nepředává v posledních 10 minutách období. Rezervace kvóty se vypořádávají jednorázově a nezávisle na stavu dávky podle příznaku provedeného volání. Žádost o potvrzení má stav a nepovinné `plati_do`, takže žádost čekající na výzvu lze založit. Rozhodným časem lhůty výzvy je okamžik odeslání podle Resendu. Doplněno doporučení oponenturu oddílu 6 ukončit a zbytek ověřit přejímkou N1 a N2. |
 | 1.8 | Zadavatel schválil oddíl 6 v celém rozsahu a jako úložiště potvrdil Neon Postgres s vlastní frontou odeslání. Ke kontrole zbývá jen oprava podle kola 5. |
