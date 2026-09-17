@@ -31,6 +31,8 @@ export interface Polozka {
   odberatel_id: string | null;
   zadost_jti: string | null;
   adresat_otisk: string;
+  /** Adresa se bere z identity nebo ze žádosti; položka sama nese jen otisk. */
+  email: string;
 }
 
 export interface DavkaZaznam {
@@ -124,12 +126,15 @@ export async function pripravDavku(
   const max = para.max ?? DAVKA_MAX;
 
   const vybrane = await s.dotaz<Polozka>(
-    `select id, zprava, ucel, odberatel_id, zadost_jti, adresat_otisk
-       from polozka_odeslani
-      where zprava = $1 and stav = 'ceka'
-      order by vlozeno
+    `select p.id, p.zprava, p.ucel, p.odberatel_id, p.zadost_jti, p.adresat_otisk,
+            coalesce(u.email, z.email) as email
+       from polozka_odeslani p
+       left join odberatel u on u.id = p.odberatel_id
+       left join zadost_o_potvrzeni z on z.jti = p.zadost_jti
+      where p.zprava = $1 and p.stav = 'ceka' and coalesce(u.email, z.email) is not null
+      order by p.vlozeno
       limit $2
-      for update skip locked`,
+      for update of p skip locked`,
     [para.zprava, max],
   );
   const polozky = vybrane.rows;
