@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.18 · 14. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.19 · 17. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -393,9 +393,32 @@ CERMAT zveřejňuje maturitu za právnickou osobu (`redizo`) a za školu ve skup
 Z toho plyne tvrdé pravidlo: školní agregát se nikdy nezobrazí jako výsledek konkrétního oboru. Když přesný oborový výsledek nemáme, nadpis zní „výsledek školy ve skupině oborů“.
 
 ### Úspěšnost maturity
-Podíl úspěšných z konajících. Pole `passRate`. Vždy se jmenovatelem vedle podílu.
+Podíl úspěšných **z přihlášených** ke společné části, jak ho počítá CERMAT ve sloupci `PODÍL ÚSPĚŠNÝCH (%)`. Pole `passRate`. Vždy se jmenovatelem vedle podílu, a to se **stejným** jmenovatelem, ze kterého je podíl spočítaný: „maturitu udělalo 45 ze 47 přihlášených“.
 
-Úspěšnost konajících není úspěšnost všech přihlášených; neúčast se vede zvlášť jako `nonParticipationRate`.
+Doprovodná pole ze stejného bloku: `registered` přihlášení, `took` konající, `passed` úspěšní, `failed` neúspěšní, `absent` nekonající, `nonParticipationRate` neúčast z přihlášených, `grossFailureRate` hrubá neúspěšnost z přihlášených.
+
+**Změna výpočtu 17. 9. 2026 (dřív podíl z konajících).** Do té doby tenhle soupis tvrdil, že `passRate` je podíl z konajících, a stránka školy vedle procenta vypisovala počet konajících. Vznikl z toho nesoulad: „98,2 %“ vedle „55 z 55“. Zjištěno při revizi maturitního oddílu po zpětné vazbě na Gymnáziu Nad Štolou 14. 9. 2026. Doklad z `public/maturita_skoly.json`: škola s `registered` 47, `took` 46, `passed` 45 má `passRate` 95,74, což je 45/47; z konajících by vyšlo 97,83. Souhlasí i se soupisem zdrojů, oddíl 2.11, kde je `PODÍL ÚSPĚŠNÝCH (%)` definovaný jako úspěšní z přihlášených. **Hodnoty v datech se nemění**, mění se jejich výklad a jmenovatel uváděný na stránce.
+
+**Neříká**, kolik žáků školu dokončí: kdo k maturitě vůbec nešel, je v `absent`, a škola může úspěšnost zvýšit tím, že slabé žáky ke zkoušce nepustí. Proto se vedle podílu uvádí i počet nekonajících.
+
+### Maturita za celou školu
+Společná část za právnickou osobu bez rozdělení na skupiny oborů: `skoly[redizo].roky[rok].CELKEM`, v souboru CERMATu třídění `redizo`. Stejná pole jako u skupiny oborů.
+
+**Na stránce** slouží jen souhrnné větě za školu („maturitu v roce 2026 udělalo 146 ze 148 přihlášených maturantů“). Podle pravidla o granularitě se **nikdy** nezobrazí jako výsledek oboru ani skupiny oborů.
+
+### Střed podobných škol
+Medián přes všechny školy téže skupiny oborů `SMO16`, téhož roku a jarního období, které mají aspoň 10 konajících; každá škola jeden hlas. Pole v `skupiny[rok][SMO16]`: `medianPercentile` medián průměrných percentilů, `medianPercentScore` medián průměrných procentních skórů, `medianPassRate` medián úspěšnosti, `schools` počet škol, `percentiles` jejich percentily.
+
+**Na stránce** se ukazuje `medianPercentile` vedle percentilu školy, u posledního roku i v řadě po letech. Pojem v textu je „střed podobných škol“ podle [slovníku pojmů](slovnik-pojmu.md).
+
+**Neříká** totéž co reference zařazení: zařazení se počítá proti `medianPercentScore`, viz upozornění u ukazatele Zařazení proti skupině oborů.
+
+### Frekvence let nad středem podobných škol
+Slovní souhrn toho, jak často měla škola v češtině zařazení `above`, spočítaný **přes všechny skupiny oborů školy dohromady**: podíl = součet let se zařazením `above` děleno součtem let se zařazením. Prahy: 1 „každý rok“, od 0,75 „téměř každý rok“, nad 0,5 „ve většině let“, právě 0,5 „zhruba v polovině let“, nad 0 „jen v některých letech“, 0 „v žádném ze sledovaných let“. Počítá se při zobrazení z `public/maturita_skoly.json` (`src/lib/skola-vyklad.ts`, `jakCastoNadStredem`).
+
+Roky bez zařazení se do jmenovatele nepočítají, stejně jako u ukazatele Počet let nad skupinou oborů, který zůstává výchozím tvarem pro jednu skupinu oborů.
+
+**Neříká** nic o vývoji v čase: je to podíl, ne trend. U školy s více skupinami oborů míchá roky různých skupin, proto se v textu uvádí s předmětem a s tím, že jde o všechny obory („v češtině byli maturanti všech oborů téměř každý rok nad středem podobných škol“).
 
 ### Průměrný procentní skór maturity
 Průměrný výsledek v didaktickém testu daného předmětu. Pole `averagePercentScore`, rozptyl `standardDeviation`, percentil `averagePercentile`.
@@ -415,7 +438,9 @@ Pole `cj.groupComparison` u školy ve skupině oborů: `state` (`above`, `indist
 
 **Výpočet.** Referencí je medián průměrných skórů z češtiny všech škol téže skupiny oborů `SMO16`, téhož roku a jarního období, které mají aspoň 10 konajících; každá škola jeden hlas. U školy s aspoň 10 konajícími se spočítá směrodatná chyba `SE = standardDeviation / √took` a interval `averagePercentScore ± 1,96 · SE`. Interval celý nad mediánem je `above`, celý pod ním `below`, jinak `indistinguishable`. Zdroj: CERMAT, `MZ{rok}j_SC_skolobory.xlsx`. Návrh §5.2.
 
-**Na stránce:** „nad školami stejné skupiny oborů“, „nerozlišitelné od skupiny“, „pod skupinou“. Jen u češtiny, protože jen ji píše celý ročník.
+**Na stránce:** „nad středem podobných škol“, „nerozlišitelné od středu“, „pod středem podobných škol“ (slovník pojmů 1.4). Jen u češtiny, protože jen ji píše celý ročník.
+
+**Pozor na dvě různé reference.** Zařazení se počítá proti mediánu průměrných **procentních skórů** (`medianPercentScore`) a s intervalem spolehlivosti, ale vedle něj stránka ukazuje střed podobných škol jako medián **percentilů** (`medianPercentile`). Škola proto může mít percentil nad uvedeným středem a zároveň zařazení `indistinguishable`, protože interval přes medián skórů přesahuje. Není to rozpor ve výpočtu, ale čtenář vidí dvě čísla a nálepku, která k nim na první pohled nesedí; text u tabulky proto říká, že srovnání bere v úvahu velikost ročníku. Sjednotit obě reference na jednu veličinu zůstává otevřené.
 
 **Neříká**, jak dobře škola učí: výsledek ovlivňuje hlavně to, koho škola přijala. U malé školy skončí většina výsledků jako nerozlišitelné, což je správně. **Stabilita:** mezi jary 2025 a 2026 stejné zařazení u 63,1 % škol s aspoň 30 maturanty, přeskok mezi krajními stavy u 9 z 928 ([stránka školy](stranka-skoly-2027.md), oddíl 4.2). Proto se na stránce neukazuje jeden rok, ale počet let nad skupinou.
 
@@ -423,6 +448,8 @@ Pole `cj.groupComparison` u školy ve skupině oborů: `state` (`above`, `indist
 Počet jarních období z posledních čtyř zveřejněných, kdy měla škola ve skupině oborů zařazení `above`. Počítá se při zobrazení z `public/maturita_skoly.json`; roky bez zařazení (méně než 10 konajících, škola ve skupině nebyla) se uvádějí zvlášť, ne jako „ne nad skupinou“.
 
 **Neříká**, že se škola zlepšuje nebo zhoršuje; ze čtyř bodů jde nanejvýš říct „v posledních dvou letech nad skupinou, předtím pod ní“.
+
+Souhrn za celou školu, tedy přes všechny její skupiny oborů, vede ukazatel Frekvence let nad středem podobných škol.
 
 ### Podíl volby předmětu u maturity
 Pole `ma.subjectChoiceShare`: podíl maturantů, kteří si ve společné části zvolili matematiku místo cizího jazyka, jak ho zveřejňuje CERMAT. Zveřejňuje se i u méně než 10 konajících matematiku, protože se počítá z celého ročníku.
@@ -470,6 +497,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.19 | **Úspěšnost maturity opravena na podíl z přihlášených** (17. 9. 2026), protože pole `passRate` pochází ze sloupce `PODÍL ÚSPĚŠNÝCH (%)`, který CERMAT počítá z přihlášených; dosavadní definice „z konajících“ byla nepravdivá a na stránce z ní vznikl nesoulad procenta a počtu. Hodnoty v datech se nemění. Doplněny ukazatele maturita za celou školu, střed podobných škol a frekvence let nad středem podobných škol, které zavedla revize maturitního oddílu ze 14. 9. 2026. U zařazení proti skupině oborů zapsáno, že jeho referencí je medián skórů, kdežto zobrazený střed je medián percentilů. |
 | 1.18 | Maturita: zařazení proti skupině oborů, počet let nad skupinou, podíl volby předmětu; kódy kvality v `public/maturita_skoly.json`; soubor vzniká přes datovou linku. |
 | 1.17 | Doplněno pořadí v kraji podle zájmu a podle výsledků přijatých, s prahem 10 nabídek a doklady stability. |
 | 1.16 | Odkaz na slovník pojmů; pojem „soutěžící uchazeči“ pro texty stránek. |

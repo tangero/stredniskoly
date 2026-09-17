@@ -353,7 +353,10 @@
         "Odchylka od očekávaného výsledku",
         "Zařazení proti skupině oborů",
         "Počet let nad skupinou oborů",
-        "Podíl volby předmětu u maturity"
+        "Podíl volby předmětu u maturity",
+        "Maturita za celou školu",
+        "Střed podobných škol",
+        "Frekvence let nad středem podobných škol"
       ],
       "dostupne": [],
       "aktualizace": {

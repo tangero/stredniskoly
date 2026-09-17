@@ -703,7 +703,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
         </div>
         <div className="space-y-2 text-[14px] text-slate-600">
           <p className="flex flex-wrap items-center gap-2"><b className="text-slate-700">Značky původu:</b> <Puvod typ="skola" /> údaj zadala škola a prošel kontrolou · <Puvod typ="text" /> škola o sobě, neověřujeme · <Puvod typ="stroj" /> ze zprávy ČŠI · <Puvod typ="archiv" /> export 11. 2. 2026 · bez značky: oficiální data CERMAT, MŠMT a ČŠI</p>
-          <p>Stránka neřadí školy podle kvality. Srovnání se týká jen škol stejné skupiny oborů a je vždy s rokem.</p>
+          <p>Stránka neřadí školy podle kvality. Srovnání se týká jen podobných škol, tedy škol se stejným typem oborů, a je vždy s rokem.</p>
           <p className="flex flex-wrap items-center gap-2 text-[13px] text-slate-500">
             Otevřená data:
             <a href={`${odkazy.prehled}.md`} className="rounded border border-slate-200 px-2 py-0.5 hover:border-slate-300 hover:text-slate-700">Markdown</a>
