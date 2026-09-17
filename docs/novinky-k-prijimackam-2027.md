@@ -1,12 +1,12 @@
 # Novinky k přijímačkám e-mailem
 
-Verze 1.9 · 17. 9. 2026 · Návrh k rozhodnutí, nic není implementované. Vypořádána [oponentura v1.0](oponentura-novinky-k-prijimackam-2027.md) (oddíl 12) a [oponentura codexu](podklady/oponentura-codex-novinky-2027.md), kola 1 až 5 (oddíly 13 až 17). **Oddíl 6 zadavatel schválil 17. 9. 2026** ve všech pěti částech, včetně volby databáze Neon. Oprava podle kola 5 (číslo pokusu u dávky, oddělené účtování dávky a výsledků položek, rezervace kvóty v období možného odeslání) ale **oponenturou neprošla**, protože dohodnutý počet pěti kol je vyčerpán. **Závazný implementační kontrakt je oddíl 6**; oddíly 12 až 16 zaznamenávají cestu k němu a starší formulace v nich jsou historické.
+Verze 1.10 · 17. 9. 2026 · Návrh k rozhodnutí, nic není implementované. Vypořádána [oponentura v1.0](oponentura-novinky-k-prijimackam-2027.md) (oddíl 12) a [oponentura codexu](podklady/oponentura-codex-novinky-2027.md), kola 1 až 5 (oddíly 13 až 17). **Oddíl 6 zadavatel schválil 17. 9. 2026** ve všech pěti částech, včetně volby databáze Neon. Oprava podle kola 5 (číslo pokusu u dávky, oddělené účtování dávky a výsledků položek, rezervace kvóty v období možného odeslání) ale **oponenturou neprošla**, protože dohodnutý počet pěti kol je vyčerpán. **Závazný implementační kontrakt je oddíl 6**; oddíly 12 až 16 zaznamenávají cestu k němu a starší formulace v nich jsou historické.
 
 Návštěvník webu zadá e-mail a během přijímacího řízení dostává s předstihem připomínky termínů a pokyny, co je potřeba připravit. Na rozdíl od [sledování škol a oborů](sledovani-skol-2027.md) (větev `docs/sledovani-skol-a-oboru`, v2.1) dostanou všichni odběratelé téhož ročníku a druhu studia stejný obsah. Návrh navazuje na [kalendář přijímaček](aktualizace-kalendar-data-2027.md) (`src/data/admissions-2027.json`, sada `msmt-harmonogram` v registru na větvi `feat/titulka-nabidka-oboru`) a na [analýzu návštěvnosti](analyza-navstevnosti-2026.md).
 
 ## 1. Hlavní rozhodnutí
 
-1. **Novinky nabízejí jen samy sebe.** Společný formulář se sledováním školy vznikne, až bude sledování schválené a bude mít fungující odesílač. Do té doby formulář nabízí jen termíny. Obě funkce ale ukládají odběratele do stejné databáze (bod 7), takže pozdější spojení nepotřebuje žádný převod dat.
+1. **Novinky se spustí samostatně, sledování se připojí v N4.** Sledování škol a oborů zadavatel schválil 17. 9. 2026, ale novinky na něj nečekají: společný formulář „sledovat školu / odebírat termíny“ a jedna správa odběrů vzniknou ve fázi N4, až bude sledování mít fungující odesílač. Obě funkce ukládají odběratele do stejné databáze (bod 7), takže spojení nepotřebuje žádný převod dat.
 2. **Novinky se spustí dřív než sledování.** Nepotřebují záznam událostí ani převod klíčů oborů, stačí jim kalendář MŠMT, který web už má.
 3. **Formulář nabízí jen ročník, pro který je zveřejněný kalendář, a jen druh studia, který web pokrývá.** Pro ročník přijímaček 2027 to je střední škola po 9. třídě a víceleté gymnázium. **Konzervatoř se nenabízí**, protože web obory bez jednotné zkoušky nepokrývá a e-maily by odkazovaly na nástroje, které konzervatořím nic neřeknou. Rodinám s mladšími dětmi formulář nabídne jen jednu zprávu, až vyjde další kalendář (oddíl 4).
 4. **Termíny v e-mailu se berou z kalendáře, ne z textu.** Šablona odkazuje na událost (`ss-prihlasky`) a generátor doplní datum a rok ze souboru kalendáře. Letopočet se do šablon nepíše. Každá zpráva má výslovně uvedený **druh spouštěče**: potvrzení odběru, kalendářní událost, redakční datum, nebo publikace dat (oddíl 3).
@@ -103,6 +103,7 @@ Podoba formuláře:
 │ a 2. kolo.                                                          │
 │ Hlásíš se na: [x] střední školu po 9. třídě                        │
 │               [ ] víceleté gymnázium                                │
+│ Kraj (nepovinně): [ Středočeský ▾ ]                                 │
 │ [ e-mail                         ]  [ Posílat termíny ]            │
 │ [ ] Odběr zakládám pro sebe nebo své dítě a je mi alespoň 15 let.   │
 │ Nejvýš pár e-mailů měsíčně, jen do konce přijímaček 2027.          │
@@ -115,6 +116,7 @@ Podoba formuláře:
 
 - **Souhlas se zaškrtává vždy v prvním kroku**, na každém místě formuláře včetně patičky. Bez zaškrtnutí se potvrzovací e-mail neposílá. Formulář v patičce je zkrácený jen o vysvětlující text, ne o souhlas.
 - **Druh studia jde zaškrtnout oba** (rodič dvou dětí). Zpráva, která se týká obou, se pošle jednou.
+- **Kraj je nepovinný** (rozhodnutí zadavatele 17. 9. 2026). Do doby, než vznikne krajský obsah, na něj **nic nestojí**: nepoužívá se k segmentaci odeslání ani k výběru příjemců, jen se ukládá. Formulář v patičce ho nemá vůbec, doplňuje se na potvrzovací stránce. Prázdná hodnota je platná a nesmí být důvodem k neodeslání.
 - **Rok v textu** se bere ze zobrazeného období sady `msmt-harmonogram`. Formulář se zobrazí, jen když kalendář toho období obsahuje budoucí událost. Po poslední události ročníku formulář nabízí už jen zprávu o dalším kalendáři. Automatika tak nemůže nabídnout ročník, pro který obsah neexistuje.
 - **Potvrzení má dva kroky** (rozhodnutí 12): odkaz z e-mailu vede na obslužnou cestu, která token ověří, vymění ho za krátkou relaci v cookie `HttpOnly` a **hned přesměruje na stránku bez tokenu**. Stránka ukáže rekapitulaci (adresa, ročník, druh studia, znění souhlasu) a tlačítko „Potvrdit odběr“; odběr vzniká až odesláním tohoto formuláře, které platnost i vazbu údajů ověří znovu. Stránka se v analytice neměří (oddíl 6, průběh, kroky 3 a 4).
 - **Zpráva o dalším kalendáři** je samostatný účel s vlastním souhlasem a má tři stavy: `ceka` (nejdéle 18 měsíců od potvrzení), `vyzvan` (od odeslání výzvy běží 30 dnů, a to i kdyby původních 18 měsíců mezitím uplynulo) a `uzavren`. Rozhodující je vždy `ceka_do` toho stavu, v jakém záznam právě je. Po potvrzení nového odběru nebo po uplynutí lhůty se záznam smaže; doklad souhlasu k němu zůstává podle doby uložení. Souhlas se na nový ročník nepřevádí automaticky.
@@ -129,7 +131,7 @@ Uchazeči o víceleté gymnázium mají 11 až 13 let, uchazeči po 9. třídě 
 
 - Souhlas je jedna pravdivá podmínka: **„Odběr zakládám pro sebe nebo své dítě a je mi alespoň 15 let.“**
 - E-maily oslovují **rodinu**: tykají jako web a píšou tak, aby jim rozuměl rodič i uchazeč.
-- Neptáme se na jméno, školu, kraj ani ročník dítěte ve škole. Stačí druh studia.
+- Neptáme se na jméno, školu ani ročník dítěte ve škole. Povinné jsou jen adresa, druh studia a souhlas; **kraj je nepovinný** a slouží budoucím krajským zprávám.
 - **Doklad souhlasu** (čl. 7 GDPR) se ukládá **do samostatné tabulky**, ne do odběru: účel, ročník, verze znění souhlasu, místo formuláře, čas potvrzení, čas zániku a den, kdy se doklad smaže. Odhlášení tedy smaže odběr a doklad zůstane po dobu uložení. Znění souhlasu je verzované v repozitáři, takže je zpětně dohledatelné, s čím kdo souhlasil.
 - **Informační povinnost** (čl. 13 GDPR) plní stránka zásad: správce a jeho kontakt, účel, právní titul, rozsah, zpracovatelé (Vercel, Neon, Resend), doba uložení po jednotlivých druzích záznamů, práva na přístup, opravu, výmaz a odvolání souhlasu a postup, jak je uplatnit.
 - **Právní kontrola před N1** má tři přejímací body: (1) znění souhlasu a jeho doklad, (2) text zásad včetně správce, zpracovatelů, dob uložení a případných předání mimo EU, (3) oslovení v e-mailech, když souhlas dává rodič a obsah čte dítě.
@@ -216,6 +218,7 @@ create table odber_novinek (
   odberatel_id uuid references odberatel on delete cascade,
   rocnik text not null,
   druh_studia text not null check (druh_studia in ('ss', 'vicelete')),
+  kraj text,                              -- nepovinné; zatím se k odesílání nepoužívá
   zdroj text not null,
   potvrzeno timestamptz not null,
   primary key (odberatel_id, rocnik, druh_studia)
@@ -376,7 +379,7 @@ Poznámky ke schématu:
    - **potlačení adresy** (`suppression.added`) se **nepáruje na položku vůbec**, protože nese jen adresu a identifikátor potlačení a může vzniknout i ručně u Resendu. Vyhodnocuje se podle normalizované adresy: zruší všechny odběry té adresy a další e-maily se jí neposílají.
 
    Příjem požadavku Resendem není doklad doručení.
-9. **Kvóta a rozpočet.** Hlavička `x-resend-monthly-quota` udává **spotřebovanou** kvótu, ne zbývající; podle ní se nastavuje `limit_pocet` měsíčního řádku `celkem`. Tento jediný řádek drží strop pro všechny e-maily novinek (obsah, uvítání, potvrzení) a je nastavený tak, aby zůstala **rezerva 5 000 e-mailů měsíčně** portálu a hlášení chyb; denní řádek potvrzení je jen doplňkové omezení proti zneužití formuláře. Portál a hlášení chyb dnes volají Resend přímo (`src/lib/portal-email.ts:16`, `src/app/api/bug-report/route.ts:80`) a do rozpočtu nepřispívají, takže rezerva stojí na odhadu; jejich zapojení je úkol N4 a otevřená otázka 5.
+9. **Kvóta a rozpočet.** Hlavička `x-resend-monthly-quota` udává **spotřebovanou** kvótu, ne zbývající; podle ní se nastavuje `limit_pocet` měsíčního řádku `celkem`. Tento jediný řádek drží strop pro všechny e-maily novinek (obsah, uvítání, potvrzení) a je nastavený tak, aby zůstala **rezerva 5 000 e-mailů měsíčně** portálu a hlášení chyb; denní řádek potvrzení je jen doplňkové omezení proti zneužití formuláře. Portál a hlášení chyb dnes volají Resend přímo (`src/lib/portal-email.ts:16`, `src/app/api/bug-report/route.ts:80`) a do rozpočtu nepřispívají, takže rezerva zatím stojí na odhadu. **Zadavatel 17. 9. 2026 rozhodl je do společného rozpočtu převést ve fázi N4**; do té doby hlídá spotřebu dohled.
 
 **Kapacita počítaná poctivě.** Nový lednový odběratel dostane potvrzení, uvítání, kritéria a přihlášky, tedy čtyři e-maily za měsíc. Při 10 000 takových odběratelů to je 40 000 e-mailů; se dvěma zprávami sledování 60 000, a to bez portálu. Tarif s 50 000 e-maily měsíčně tedy unese v nejsilnějším měsíci řádově **8 000 až 10 000 odběratelů jen pro novinky**, a jen pokud sledování běží zvlášť. Nad tím je potřeba vyšší tarif; rozhodnutí patří do N3, kdy už bude počet odběratelů známý.
 
@@ -459,31 +462,41 @@ Odhad 2–5 % přihlášených z přibližně 5 000 identifikovaných návštěv
 
 | Fáze | Obsah | Hotovo, když | Termín |
 |---|---|---|---|
-| **N0 Předpoklady** | sloučit `feat/titulka-nabidka-oboru` (sada `msmt-harmonogram`); zásady ochrany osobních údajů s právní kontrolou podle oddílu 5, včetně popisu Matoma mezi zpracováními; databáze Neon; odesílací subdoména se SPF, DKIM, DMARC a **ověřením vypnutého měření přes API**; ověření tarifů a zbývající kvóty Resendu; smlouvy se zpracovateli a regiony databáze | stránka zásad je na webu, subdoména ověřená, měření doložené výstupem z API, `stav-datovych-sad.py kontrola` zná `msmt-harmonogram`, odběr funguje i při zablokované analytice | do 15. 11. 2026 |
+| **N0 Předpoklady** | sloučit `feat/titulka-nabidka-oboru` (sada `msmt-harmonogram`); **návrh zásad ochrany osobních údajů a znění souhlasu do repozitáře** podle oddílu 5 (účel, právní titul, zpracovatelé Vercel, Neon, Resend, Matomo, doby uložení po druzích záznamů, práva a jak je uplatnit) a jeho právní kontrola, kterou zajistí zadavatel; databáze Neon; odesílací subdoména se SPF, DKIM, DMARC a **ověřením vypnutého měření přes API**; ověření tarifů a zbývající kvóty Resendu; smlouvy se zpracovateli a regiony databáze | návrh zásad je v repozitáři, po právní kontrole je stránka zásad na webu, subdoména ověřená, měření doložené výstupem z API, `stav-datovych-sad.py kontrola` zná `msmt-harmonogram`, odběr funguje i při zablokované analytice | do 15. 11. 2026 |
 | **N1 Odběr** | API `prihlasit`, dvoukrokové `potvrdit`, `sprava`, `odhlasit` podle RFC 8058; jednorázovost žádosti; limit na IP **v režimu blokování**, limit na adresu a denní rozpočet; doklad souhlasu; **minimální fronta a odesílač s hranicí předání, rezervací kvóty, obnovou podle 5.7 a 5.8 a úklidem prošlých žádostí**, aby potvrzení i uvítání odcházely hned a nic se neztratilo; připojení k Neonu s interaktivními transakcemi; webhook s idempotentním příjmem událostí a zpracováním potlačení adresy; formulář v patičce, na titulní stránce a v kalendáři; stránka `/novinky`; pojmy do slovníku; události v Matomu | na náhledu projde: potvrzení dvěma kroky a potvrzovací e-mail do minuty, načtení odkazu robotem odběr nezaloží, druhé kliknutí nezaloží druhý odběr, po odhlášení starý odkaz odběr neobnoví, odhlášení jedním kliknutím funguje z Gmailu a ruší jen jeden účel, překročení limitů se zablokuje, nedoručitelná adresa odběr smaže, dvě zprávy téže adrese se spárují i při obráceném pořadí webhooků, pád mezi transakcí A a B i mezi B a C obnova dokončí bez druhého e-mailu a prošlá žádost se uklidí | do 1. 12. 2026 |
 | **N2 Obsah a dávky** | šablony podle oddílu 3; `plan` a `priprav`; manifest v `public/`; naplňování fronty, dávkové odeslání, značky s `polozka_id`, obnova podle bodu 5.7, kontrola platnosti zprávy při naplnění, sestavení i před předáním; retenční úklid; testy | projde celá cesta schválení → nasazení → načtení manifestu → nanečisto odeslání; testy: pád mezi transakcí B a C (položka zůstane `predavana` a obnova ji dokončí bez druhého e-mailu), souběh dvou spuštění (tentýž příjemce se nesmí dostat do dvou dávek), souběžné dávky proti rozpočtu (rezervace nesmí přečerpat limit), `429` s `Retry-After`, opakování téhož požadavku v okně 24 hodin, dávka starší 24 hodin (`neurcita`), oprava textu po předání (nová zpráva, ne nový klíč), položka po konci užitečnosti ve frontě z dřívějška, odhlášení před i po hranici předání, dvě zprávy téže adrese a obrácené pořadí webhooků; změřená velikost funkce a doba běhu při cílovém počtu příjemců | do 15. 12. 2026 |
-| **N3 Rozšíření** | odkaz na stránkách škol, věta v simulátoru, konce průvodců; zpráva o nové nabídce oborů (**závisí na jarním importéru kapacit a přihlášek, který dnes chybí**); zpráva o dalším kalendáři; zkouška přechodu ročníku včetně ICS; rozhodnutí o tarifu podle počtu odběratelů | zkouška přechodu ročníku projde a zpráva o nové nabídce oborů odešla | březen 2027 |
-| **N4 Se sledováním** | společný panel „sledovat školu / odebírat termíny“, jedna správa odběrů, sjednocená expirace a mazání identity | odběratel spravuje obojí z jednoho odkazu a odhlášení jednoho účelu druhý nezruší | až bude sledování fungovat |
+| **N3 Rozšíření** | odkaz na stránkách škol, věta v simulátoru, konce průvodců; **jarní importér kapacit a přihlášek do února 2027** (rozhodnuto 17. 9. 2026; dnes chybí udržovaný skript pro fázi před výsledky) a na něm závislá zpráva o nové nabídce oborů; zpráva o dalším kalendáři; zkouška přechodu ročníku včetně ICS; rozhodnutí o tarifu podle počtu odběratelů | zkouška přechodu ročníku projde a zpráva o nové nabídce oborů odešla | březen 2027 |
+| **N4 Se sledováním** | společný panel „sledovat školu / odebírat termíny“, jedna správa odběrů, sjednocená expirace a mazání identity; **převedení `portal-email.ts` a hlášení chyb na společnou frontu a rozpočet** (rozhodnuto 17. 9. 2026), takže rezerva kvóty přestane být odhadem | odběratel spravuje obojí z jednoho odkazu, odhlášení jednoho účelu druhý nezruší a všechny e-maily webu se účtují v jednom rozpočtu | až bude sledování fungovat |
 
 První e-mail, který musí odejít, je „Školy vyhlašují kritéria“ **12. 1. 2027**. Prosincový e-mail o výběru školy odejde, jen pokud bude N2 hotová.
 
 **Provozní dohled** od N1: chybějící běh cronu, dávky ve stavu `pripravena` starší než 15 minut, `predavana` starší než 6 hodin nebo `neurcita`, rezervace bez vypořádání starší než hodinu, těla dávek starší než okno opakování, položky fronty ve stavu `ceka` po splatnosti, zprávy po konci užitečnosti, rezervace, které se dlouho nepřevedly na spotřebu, spotřebovaná kvóta nad 80 % a zásah do rezervy portálu, podíl nedoručení a stížností, nespárované webhooky a **selhání retenčního úklidu**. Všechno do Telegramu, stejně jako datová linka.
 
-## 11. Otevřené otázky
+## 11. Rozhodnutí a co ještě není hotové
 
-1. **Právní kontrola:** znění souhlasu a jeho doklad, text zásad (správce, zpracovatelé, doby uložení, předání mimo EU) a oslovení rodiny v e-mailech.
-2. **Sledování škol:** schválit, nebo ne? Na novinky to vliv nemá, rozhoduje o N4.
-3. **Zpráva o dalším kalendáři:** nabízet (navrženo), nebo mladším rodinám nenabízet nic?
-4. **Jarní importér kapacit a přihlášek:** kdo a kdy ho napíše? Bez něj zpráva o nové nabídce oborů v N3 nemá co oznámit.
-5. **Zapojení portálu do společného rozpočtu:** převést `portal-email.ts` na společnou frontu a účtování (navrženo v N4), nebo nechat rezervu jen jako odhad?
+**Rozhodnuto zadavatelem 17. 9. 2026:**
 
-**Rozhodnuto 17. 9. 2026:**
+| Věc | Rozhodnutí |
+|---|---|
+| Úložiště | **Neon Postgres** s vlastní frontou odeslání (varianta B v oddílu 6). Kontakty a rozesílky Resendu se nepoužijí |
+| Oddíl 6 | **schválen jako celek**: tři druhy adresáta, stavy a přechody, tabulky i průběh |
+| Režim analytiky | Matomo **má schválení a smí měřit bez souhlasové lišty**; odběr přesto nesmí na analytice záviset |
+| Zásady ochrany osobních údajů | **návrh napíšu do repozitáře**, právní kontrolu zajistí zadavatel (N0) |
+| Sledování škol a oborů | **schváleno**; společný formulář a jedna správa odběrů se dělají v N4 |
+| Jarní importér kapacit a přihlášek | **napsat do února 2027**, aby zpráva o nové nabídce oborů v N3 měla co oznámit |
+| Zapojení portálu do rozpočtu kvóty | **převést v N4**, do té doby rezerva 5 000 e-mailů stojí na odhadu a hlídá ji dohled |
+| Název | **Termíny přijímaček e-mailem** |
+| Tón | **tykání a oslovení rodiny**, souhlas dává dospělý |
+| Označení odkazů | **`?zdroj=novinky`**, otevření ani kliknutí se v e-mailu neměří |
+| Kraj ve formuláři | **ptát se nepovinně**; do vzniku krajského obsahu na něm nic nestojí |
+| Zpráva o dalším kalendáři | **ponechat** i s novým potvrzením do 30 dnů |
+| Konzervatoře | pro ročník 2027 **nenabízet**, web je nepokrývá |
 
-- **Úložiště: Neon Postgres** s vlastní frontou odeslání (varianta B v oddílu 6). Kontakty a rozesílky Resendu se nepoužijí.
-- **Oddíl 6 schválen jako celek**, tedy i tři druhy adresáta, stavy a jejich přechody, tabulky a průběh odeslání.
-- **Režim analytiky:** Matomo má schválení a smí měřit bez souhlasové lišty, takže otázka z verze 1.6 padá a novinky na ni nečekají (oddíl 9).
+**Co ještě není hotové a není to rozhodnutí, ale práce nebo ověření:**
 
-Po oponenturách navrženo a čeká na potvrzení zadavatele: název „Termíny přijímaček e-mailem“, tykání, odkazy s `?zdroj=novinky`, plošně jen velké přijímačkové změny dat a zatím bez kraje ve formuláři.
+1. **Ověřit v N0 stav služeb**, který z repozitáře zjistit nelze: tarif Vercelu (kolikrát denně smí běžet cron), tarif a zbývající kvótu Resendu, skutečné vypnutí měření na odesílací subdoméně, podporu značek u dávkového odeslání, dostupnost omezení požadavků ve firewallu, smlouvy se zpracovateli a region databáze.
+2. **Nechat zkontrolovat opravy v oddílu 6** z kola 5 a z cíleného kola, nebo je ověřit až přejímkou N1 a N2 (doporučeno, viz oddíl 18).
+3. **Sloučit `feat/titulka-nabidka-oboru`**, jinak registr nezná sadu `msmt-harmonogram` a formulář nemá odkud vzít ročník.
 
 ## 12. Vypořádání oponentury v1.0
 
@@ -536,7 +549,7 @@ Přijaty všechny, dvě s upřesněním:
 | N6 | Jedna adresa nemohla odebírat oba druhy studia | přijato: primární klíč zahrnuje `druh_studia`, formulář dovolí obojí, společná zpráva se pošle jednou; identifikátor zprávy nese ročník; popsána normalizace adresy a nové ověření při její změně |
 | N7 | One-click odhlášení potřebuje přesný kontrakt | přijato: hlavičky vypsané doslova, POST bez cookies a bez přesměrování, pokrytí DKIM, GET nic neruší, rozsah jen jeden účel, test na skutečných hlavičkách |
 | N8 | Kalendář neodvodí všechny zprávy a text o 2. kole je nepřesný | přijato: čtyři druhy spouštěče, prosincová zpráva má pevné datum 7. 12. 2026, věta o 2. kole opravena na „přihlášky se podávají jen 19.–24. 5. 2027“, zpráva o JPZ zahrnuje druhý i náhradní termín |
-| N9 | Pravidla sezóny si odporovala a nová nabídka má opomenutou závislost | přijato s upřesněním: sezóna je od otevření odběru do poslední události ročníku (22. 6. 2027), pásma přijetí se týkají minulého ročníku a samostatnou zprávu nedostanou. Spouštěč nové nabídky je přepnutí `cermat-kapacity` **a** `cermat-prihlasky`, tedy sjednoceno se sledováním. Jarní importér je výslovná závislost N3 a otevřená otázka 4. Lednová zpráva mluví o nabídce, kterou zveřejňují školy, ne o datech na webu |
+| N9 | Pravidla sezóny si odporovala a nová nabídka má opomenutou závislost | přijato s upřesněním: sezóna je od otevření odběru do poslední události ročníku (22. 6. 2027), pásma přijetí se týkají minulého ročníku a samostatnou zprávu nedostanou. Spouštěč nové nabídky je přepnutí `cermat-kapacity` **a** `cermat-prihlasky`, tedy sjednoceno se sledováním. Jarní importér je výslovná závislost N3 (termín únor 2027, rozhodnuto 17. 9. 2026). Lednová zpráva mluví o nabídce, kterou zveřejňují školy, ne o datech na webu |
 | N10 | Přechod ročníku neřeší zákaz letopočtů v šablonách | přijato: zkouška přechodu na zkušební ročník včetně ICS je v N3; doloženo, že generátor kalendáře má rok napevno |
 | N11 | Chybí cesta od schváleného souboru k odesílači | přijato: manifest a zprávy v `public/{rocnik}/`, otisk kalendáře ve zprávě, nové schválení při změně kalendáře, přejímka N2 ověřuje celou cestu po nasazení |
 | N12 | Kapacitní odhad ignoroval potvrzení a uvítání a špatně čte hlavičku kvóty | přijato: propočet přepsán (lednový odběratel dostane čtyři e-maily, 10 000 odběratelů 40 000 e-mailů, se sledováním 60 000), kapacita snížena na 8 000 až 10 000 odběratelů, hlavička označena jako **spotřebovaná** kvóta a doplněna rezerva 5 000 e-mailů pro portál |
@@ -676,12 +689,13 @@ Cílené kolo zkoumalo jen opravy z kola 5, tedy tu část oddílu 6, která opo
 
 Cílené kolo ukázalo, že na úrovni popisu souběhu lze takto pokračovat dlouho: každá oprava odemkne další, ještě užší protipříklad. Body K1 až K5 byly konkrétní a opravitelné několika větami, ale příští kolo by hledalo protipříklady už na okrajích právě dopsaných pravidel.
 
-**Doporučený postup:** oddíl 6 už dál neoponovat a zbytek ověřit tam, kde je souběh prokazatelný, tedy v přejímce N1 a N2. Ty mají zkoušky přímo na tyhle případy: pád mezi transakcemi, dvě souběžná spuštění, opakování v okně idempotence, odhlášení před i po hranici předání, obrácené pořadí webhooků a souběžné dávky proti rozpočtu. Co neprojde testem, se opraví v kódu, ne v dokumentu.
+**Doporučený postup (k rozhodnutí, viz oddíl 11):** oddíl 6 už dál neoponovat a zbytek ověřit tam, kde je souběh prokazatelný, tedy v přejímce N1 a N2. Ty mají zkoušky přímo na tyhle případy: pád mezi transakcemi, dvě souběžná spuštění, opakování v okně idempotence, odhlášení před i po hranici předání, obrácené pořadí webhooků a souběžné dávky proti rozpočtu. Co neprojde testem, se opraví v kódu, ne v dokumentu.
 
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.10 | Zadavatel rozhodl všech pět otevřených otázek: návrh zásad ochrany osobních údajů napíšu já a právní kontrolu zajistí zadavatel; sledování škol schváleno a připojí se v N4; jarní importér kapacit a přihlášek se napíše do února 2027; portál se převede na společný rozpočet v N4; kraj se ptá nepovinně a do vzniku krajského obsahu na něm nic nestojí. Potvrzen název, tykání a označení odkazů, ponechána zpráva o dalším kalendáři. Oddíl 11 přepsán z otevřených otázek na soupis rozhodnutí a zbývající práce. |
 | 1.9 | Vypořádáno cílené kolo oponentury na opravy z kola 5: přijato pět blokačních bodů a jedno upřesnění. Pracovník uvádí číslo svého pokusu v každé aktualizaci, takže starý pracovník nemůže převzít novější pokus. Tělo dávky se maže až po získání všech výsledků nebo po okně opakování, ne při uzavření dávky. Dávka se nepředává v posledních 10 minutách období. Rezervace kvóty se vypořádávají jednorázově a nezávisle na stavu dávky podle příznaku provedeného volání. Žádost o potvrzení má stav a nepovinné `plati_do`, takže žádost čekající na výzvu lze založit. Rozhodným časem lhůty výzvy je okamžik odeslání podle Resendu. Doplněno doporučení oponenturu oddílu 6 ukončit a zbytek ověřit přejímkou N1 a N2. |
 | 1.8 | Zadavatel schválil oddíl 6 v celém rozsahu a jako úložiště potvrdil Neon Postgres s vlastní frontou odeslání. Ke kontrole zbývá jen oprava podle kola 5. |
 | 1.7 | Režim analytiky rozhodnut: Matomo má schválení a smí měřit bez souhlasové lišty (potvrzeno zadavatelem 17. 9. 2026). Otevřená otázka na analytiku padá, N0 ji už neobsahuje a v oddílu 9 zůstává jen podmínka, že odběr musí fungovat i při zablokovaném měření. |
