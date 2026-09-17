@@ -757,6 +757,41 @@
         "soubor": "public/druhe_kolo.json",
         "cesta": "meta.nejnovejsi_rok"
       }
+    },
+    "msmt-harmonogram": {
+      "nazev": "MŠMT, harmonogram přijímacího řízení",
+      "dokumentace": "docs/zdroje-dat.md#213-harmonogram-přijímacího-řízení-mšmt",
+      "cyklus": "rocni",
+      "pouziti": "web",
+      "zobrazeno": {
+        "obdobi": "2027",
+        "soubor": "src/data/admissions-2027.json",
+        "zdroj": "https://msmt.gov.cz/media/wp-content/uploads/2026/08/Casovy-harmonogram_2026-2027.pdf",
+        "opsano": "2026-09-11",
+        "poznamka": "Ruční opis termínů z harmonogramu a sdělení o termínech na webu MŠMT. Soubor nese rok v názvu, proto se při novém ročníku zakládá nový."
+      },
+      "ocekavano": {
+        "obdobi": "2028",
+        "kdy": "2027-08",
+        "jistota": "odhad",
+        "zduvodneni": "Harmonogram a sdělení o termínech pro přijímací řízení 2027 vyšly na webu MŠMT v srpnu 2026."
+      },
+      "obnovit_nejpozdeji": "2027-09-30",
+      "po_prepnuti": "Termíny předchozího ročníku se nezobrazují; soubor zůstává jako doklad, co web ukazoval.",
+      "vystupy": [
+        "src/data/admissions-2027.json"
+      ],
+      "ukazatele": [],
+      "aktualizace": {
+        "zdroj": "https://msmt.gov.cz/vzdelavani/stredni-vzdelavani/prijimani-na-stredni-skoly-a-konzervatore",
+        "katalog": "https://msmt.gov.cz/media/wp-content/uploads/2026/08/Casovy-harmonogram_2026-2027.pdf a Sdeleni-o-terminech_2026-2027.pdf",
+        "detekce": "Ruční kontrola stránky MŠMT o přijímání na střední školy. Adresy souborů nesou ročník i měsíc vydání, takže se mění celé; HTTP HEAD na starou adresu nová data neodhalí.",
+        "revize": "MŠMT termíny během ročníku upřesňuje; opis nese datum kontroly v poli checkedAt.",
+        "import": "Ruční opis do src/data/admissions-2027.json. Čte ho stránka přijímaček a hlavní stránka (termín zveřejnění kritérií).",
+        "automatizace": "rucni",
+        "lidsky_krok": "Po vydání harmonogramu na další přijímací řízení opsat termíny do nového souboru, přepnout období a zkontrolovat věty na hlavní stránce.",
+        "sledovat": []
+      }
     }
   },
   "ukazatele_z_vice_sad": {

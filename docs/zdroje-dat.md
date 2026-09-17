@@ -299,7 +299,9 @@ Nepoužíváme.
 
 Používá ho stránka [přijímačky 2027](../src/app/prijimacky-2027/page.tsx) a od 17. 9. 2026 i **hlavní stránka**: z události `ss-kriteria` bere termín, kdy školy zveřejní kritéria přijetí a s nimi nabídku oborů. Rok, ze kterého web ukazuje obory a místa, bere z registru (sada `cermat-prihlasky`), ne z tohoto souboru.
 
-**Není v registru stavu datových sad** a soubor nese rok v názvu. Zapsat ho jako sadu (kdo a kdy opisuje harmonogram na další ročník, jak se pozná, že MŠMT vydalo nový) zůstává otevřené; dokud se nestane, po sezóně nikdo neupozorní, že termíny doběhly.
+V registru je jako sada `msmt-harmonogram`, období 2027, obnova nejpozději do 30. 9. 2027. Termíny se opisují ručně z harmonogramu a ze sdělení o termínech na webu MŠMT; adresy obou souborů nesou ročník i měsíc vydání, takže se při novém přijímacím řízení mění celé a dotazem HEAD na starou adresu se nová data nepoznají. Kontrola proto hlídá termín obnovy, ne zdroj.
+
+Soubor nese rok v názvu: nový ročník znamená nový soubor a přepnutí období v registru.
 
 ## 3. Sloupce, které nepoužíváme
 
@@ -438,6 +440,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-14. Neupravovat ru�
 | `katalog-historie` | web | 2025 | `public/schools_data.json` | — | — | neznámo | Nepřepíná se. |
 | `school-analysis-legacy` | nezobrazovat | 2025 | `public/school_analysis.json` | — | — | neznámo | Nepřepíná se. |
 | `cermat-kolo2-agregaty` | web | 2026 | `PZ2026_kolo2_skolobory_vysledky.xlsx` | — | 2027 | 2027-09, odhad | Předchozí rok zůstává ve výstupu a na stránce slouží k větě, zda škola 2. kolo vypsala i tehdy. |
+| `msmt-harmonogram` | web | 2027 | `src/data/admissions-2027.json` | — | 2028 | 2027-08, odhad | Termíny předchozího ročníku se nezobrazují; soubor zůstává jako doklad, co web ukazoval. |
 
 #### Aktualizace a automatizace
 
@@ -461,6 +464,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-14. Neupravovat ru�
 | `katalog-historie` | neaktualizuje se | — | — | Nepřepíná se. |
 | `school-analysis-legacy` | neaktualizuje se | — | — | Generátor není dohledaný, soubor nejde aktualizovat, jen nahradit katalogem. |
 | `cermat-kolo2-agregaty` | příprava | HTTP HEAD. | scripts/build-druhe-kolo.py; v datové lince zpracovatel cermat-kolo2-agregaty stáhne k souboru 2. kola i výsledky 1. kola téhož roku a doplní ročník do stávajícího výstupu. | Schválit úlohu, zkontrolovat počty v pull requestu a přepnout období v registru. |
+| `msmt-harmonogram` | ruční | Ruční kontrola stránky MŠMT o přijímání na střední školy. Adresy souborů nesou ročník i měsíc vydání, takže se mění celé; HTTP HEAD na starou adresu nová data neodhalí. | Ruční opis do src/data/admissions-2027.json. Čte ho stránka přijímaček a hlavní stránka (termín zveřejnění kritérií). | Po vydání harmonogramu na další přijímací řízení opsat termíny do nového souboru, přepnout období a zkontrolovat věty na hlavní stránce. |
 
 <!-- stav-datovych-sad:do -->
 
@@ -477,7 +481,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-14. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
-| 1.9 | Harmonogram přijímacího řízení MŠMT (`src/data/admissions-2027.json`) zapsaný jako zdroj, protože z něj od 17. 9. 2026 čerpá i hlavní stránka; není v registru stavu datových sad a nese rok v názvu. |
+| 1.9 | Harmonogram přijímacího řízení MŠMT (`src/data/admissions-2027.json`) zapsaný jako zdroj, protože z něj od 17. 9. 2026 čerpá i hlavní stránka, a jako sada `msmt-harmonogram` v registru; termíny se opisují z webu MŠMT ručně, detekce nového ročníku dotazem HEAD nejde. |
 | 1.8 | Maturitní výsledky přes datovou linku do `public/maturita_skoly.json`; zpracovatel sady `cermat-maturita`. |
 | 1.7 | Kontext přihlášek po oborech (`kontext_prihlasek_{rok}.json`), web škol z rejstříku (`skoly_web.json`), kraj a body přijatých po předmětech v souhrnech. |
 | 1.6 | Souhrny 1. kola po ročnících v `souhrny_kolo1.json`: přijatí podle priority, konající, průměrná percentilová umístění přijatých a uchazečů, oficiální percentil nejnižšího přijatého. |
