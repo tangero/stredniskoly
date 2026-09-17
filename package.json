@@ -7,6 +7,8 @@
     "build": "node scripts/generate-sitemap.js && next build",
     "start": "next start",
     "lint": "eslint",
+    "test": "python3 -m unittest discover -s tests",
+    "kontroly": "python3 scripts/stav-datovych-sad.py kontrola && python3 scripts/kontrola-letopoctu.py && npx tsc --noEmit",
     "update:csi": "node scripts/process-csi-data.js",
     "inspis:build-data": "node scripts/import-inspis-data.js",
     "sitemap:build": "node scripts/generate-sitemap.js"

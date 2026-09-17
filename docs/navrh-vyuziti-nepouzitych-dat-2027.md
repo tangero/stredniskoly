@@ -397,7 +397,9 @@ D4 nový ukazatel nezavádí; `dobihajiciObor` je příznak, ne veličina. Patř
 Po oponentuře zůstávají otevřené **dvě**; ostatní čtyři se shodou návrhu a oponentury uzavřely a jsou vypsané v oddílu 9.
 
 1. **Přepnout data uchazečů na předběžný ročník 2026, nebo čekat na finální revizi v květnu 2027?** Návrh i oponentura doporučují přepnout. Zbývá potvrdit zadavatelem, protože je to jediné rozhodnutí, které mění čísla na webu.
-2. **Co s `min_body` a jeho mrtvými konzumenty?** Smazat komponenty, které ho umí zobrazit (`MojeSanceClient`, adresář `guided/`, `page.v1_original.tsx`, mrtvé funkce v `SchoolDetailClient`), nebo je před oživením převést na pásma přijetí? Otázka je přejmenovaná podle kola 2 oponentury: průvodce je jen jeden z šesti konzumentů a ne největší (oddíl 4, D1 krok 3).
+2. ~~**Co s `min_body` a jeho mrtvými konzumenty?**~~ **Uzavřeno 17. 9. 2026: smazáno.** Odstraněno deset souborů (`MojeSanceClient` a jeho `.bak`, `page.v1_original.tsx`, `SchoolInfoSection.v1_original.tsx`, celý adresář `guided/` se šesti soubory) a chirurgicky devět mrtvých exportů ze `SchoolDetailClient`, který se tím zmenšil z 862 na 116 řádků a přejmenoval na `ProgramTabs.tsx` podle jediné komponenty, která v něm zbyla. Dál mrtvá pole `min_body2024` a `min_body2025` v `cityData`, prop `minBody` v `DetailHero`, a v `data.ts` osiřelé `getTrendDataMap`, `getTrendDataForProgram` a `getSchoolDifficultyProfile` (vracela rovnou `null`).
+
+   Dvě věci se přitom ukázaly jinak, než tvrdila inventura: **`/moje-sance` je živá route** krytá integračním testem, takže zůstává jako přesměrování na `/simulator`, a **`getTrendDataMap` byla naopak mrtvá**, protože `getTrendDataForSchools` deleguje na `getTrendDataForPrograms`. Jejím smazáním zmizela i latentní nesrovnalost: nechávala `min_body` v procentní škále 0–200, zatímco druhá funkce téhož typu dělila dvěma. Lint klesl z 255 na 204 problémů.
 
 **Uzavřeno bez dalšího rozhodování:** graf priorit se ruší ve prospěch údaje o složení třídy; opravy textů o dobíhajícím oboru se dělají hned jako D4a; D2 jde před D3; krajová míra nezaměstnanosti se zamítá; zjištění se do soupisu zdrojů zapisují hned.
 

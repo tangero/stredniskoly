@@ -1,0 +1,54 @@
+name: Testy
+
+# Do 17. 9. 2026 projekt žádné obecné CI neměl: jediné testy běžely uvnitř
+# workflow datové linky, a to jen tests/test_datova_linka.py. Proto si nikdo
+# nevšiml, že dva testy jsou rozbité — jeden porovnával syntetická data s ostrým
+# public/maturita_skoly.json, druhý byl psaný v pytestu, který se neinstaluje.
+on:
+  push:
+    branches-ignore:
+      - linka/stav
+  pull_request:
+
+jobs:
+  python:
+    name: Python testy a kontroly dat
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Závislosti
+        run: pip install openpyxl
+
+      - name: Testy
+        run: python3 -m unittest discover -s tests
+
+      - name: Stav datových sad
+        # Období v registru musí odpovídat datům a každý ukazatel ze slovníku
+        # musí patřit nějaké sadě.
+        run: python3 scripts/stav-datovych-sad.py kontrola
+
+      - name: Letopočty napevno
+        # Rok se bere z registru, ne z kódu. Hlásí jen nové výskyty proti základu.
+        run: python3 scripts/kontrola-letopoctu.py
+
+  typescript:
+    name: TypeScript
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Závislosti
+        run: npm ci
+
+      - name: Typy
+        run: npx tsc --noEmit

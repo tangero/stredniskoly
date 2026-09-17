@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { ProgramTabs } from '@/components/SchoolDetailClient';
+import { ProgramTabs } from '@/components/ProgramTabs';
 import { InspectionSummary } from '@/components/InspectionSummary';
 import { SchoolPortalSection } from '@/components/school-profile/SchoolPortalSection';
 import { getPortalZaznam } from '@/lib/portal-skol';

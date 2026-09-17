@@ -82,11 +82,9 @@ export interface CitySchoolRow {
   kapacita2024: number | null;
   prihlasky2024: number | null;
   index2024: number | null;
-  min_body2024: number | null;
   kapacita2025: number | null;
   prihlasky2025: number | null;
   index2025: number | null;
-  min_body2025: number | null;
   kapacita2026: number | null;
   prihlasky2026: number | null;
   index2026: number | null;
@@ -192,11 +190,9 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
       kapacita2024: s24?.kapacita ?? null,
       prihlasky2024: s24?.prihlasky ?? null,
       index2024: s24 ? (s24.index_poptavky ?? null) : null,
-      min_body2024: s24?.min_body ?? null,
       kapacita2025: s25.kapacita ?? null,
       prihlasky2025: s25.prihlasky ?? null,
       index2025: s25.index_poptavky ?? null,
-      min_body2025: s25.min_body ?? null,
       kapacita2026: app26?.kapacita ?? null,
       prihlasky2026: app26?.prihlasky ?? null,
       index2026: app26?.idx ?? null,
