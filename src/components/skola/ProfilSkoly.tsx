@@ -376,12 +376,13 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                       </div>
                       <div className="text-[15px]">
                         <span className="text-[12px] text-slate-500 md:hidden">Čeština: </span>
-                        {malo || cj.averagePercentile === undefined ? (
+                        {malo || cj.averagePercentScore === undefined ? (
                           <span className="text-slate-600">výsledek nezveřejňujeme, maturantů bylo méně než 10</span>
                         ) : (
                           <>
-                            <b className="text-[#16325c]">lépe než {Math.round(cj.averagePercentile)} ze 100</b> maturantů v zemi
-                            {s.medianPercentilSkupiny !== null ? <span className="block text-[13px] text-slate-500">střed podobných škol: {Math.round(s.medianPercentilSkupiny)} ze 100</span> : null}
+                            <b className="text-[#16325c]">{cislo(cj.averagePercentScore, 1)} %</b> bodů v testu
+                            {s.stredPodobnychSkol !== null ? <span className="block text-[13px] text-slate-500">střed podobných škol: {cislo(s.stredPodobnychSkol, 1)} %</span> : null}
+                            {cj.averagePercentile !== undefined ? <span className="block text-[13px] text-slate-500">v celé zemi lépe než {Math.round(cj.averagePercentile)} ze 100 maturantů</span> : null}
                           </>
                         )}
                       </div>
@@ -419,24 +420,25 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                   return (
                     <div key={s.smo16} className="space-y-2 border-t border-slate-100 pt-3 first:border-t-0 first:pt-0">
                       <h3 className="text-[16px] font-bold text-[#16325c]">{s.nazev.charAt(0).toUpperCase() + s.nazev.slice(1)}</h3>
-                      {cj.averagePercentile !== undefined && s.percentilySkupiny.length >= 10 && (
+                      {cj.averagePercentScore !== undefined && s.skoryPodobnychSkol.length >= 10 && (
                         <>
-                          <SkupinaVKraji hodnoty={s.percentilySkupiny} hodnota={cj.averagePercentile} predchozi={null} format={v => `lépe než ${Math.round(v)} ze 100`} formatOsy={v => cislo(v)} osa={[0, 25, 50, 75, 100]} />
-                          <Zdroj>Čeština {s.posledni!.rok}: každá tečka je jedna podobná škola s aspoň 10 maturanty ({s.skolVeSkupine ? cislo(s.skolVeSkupine) : ''} škol), modrá je tato škola. Pořadí škol stránka neuvádí.</Zdroj>
+                          <SkupinaVKraji hodnoty={s.skoryPodobnychSkol} hodnota={cj.averagePercentScore} predchozi={null} format={v => `${cislo(v, 1)} % bodů`} formatOsy={v => cislo(v)} osa={[0, 25, 50, 75, 100]} />
+                          <Zdroj>Čeština {s.posledni!.rok}: každá tečka je jedna podobná škola s aspoň 10 maturanty ({s.skolVeSkupine ? cislo(s.skolVeSkupine) : ''} škol), modrá je tato škola. Osa je průměrný podíl bodů z testu, tedy táž veličina, ze které se počítá střed i srovnání. Pořadí škol stránka neuvádí.</Zdroj>
                         </>
                       )}
                       <div className="overflow-x-auto">
                         <table className="w-full text-[14px] tabular-nums">
-                          <thead><tr className="text-left text-[12px] text-slate-500"><th className="py-1.5 pr-2">Rok</th><th className="px-2 text-right">Maturitu udělalo</th><th className="px-2 text-right">Čeština, lépe než … ze 100</th><th className="px-2 text-right">Střed podobných škol</th><th className="pl-2">Srovnání</th></tr></thead>
+                          <thead><tr className="text-left text-[12px] text-slate-500"><th className="py-1.5 pr-2">Rok</th><th className="px-2 text-right">Maturitu udělalo</th><th className="px-2 text-right">Čeština, % bodů</th><th className="px-2 text-right">Střed podobných škol</th><th className="pl-2">Srovnání</th></tr></thead>
                           <tbody>
                             {s.roky.map(r => {
                               const sc = r.zaznam?.spolecna_cast;
+                              const cjRok = r.zaznam?.cj;
                               return (
                                 <tr key={r.rok} className="border-t border-slate-200">
                                   <td className="py-1.5 pr-2">{r.rok}</td>
                                   <td className="px-2 text-right">{sc?.passed !== undefined && sc.registered ? `${cislo(sc.passed)} ${zOd(sc.registered)} ${cislo(sc.registered)}` : '—'}</td>
-                                  <td className="px-2 text-right">{r.zaznam?.cj?.averagePercentile !== undefined ? Math.round(r.zaznam.cj.averagePercentile) : '—'}</td>
-                                  <td className="px-2 text-right">{maturita.stredy[s.smo16]?.[r.rok] !== undefined ? Math.round(maturita.stredy[s.smo16][r.rok]) : '—'}</td>
+                                  <td className="px-2 text-right">{cjRok?.averagePercentScore !== undefined ? `${cislo(cjRok.averagePercentScore, 1)} %` : '—'}</td>
+                                  <td className="px-2 text-right">{cjRok?.groupComparison ? `${cislo(cjRok.groupComparison.medianPercentScore, 1)} %` : '—'}</td>
                                   <td className="pl-2">{r.stav ? STAV_POPISEK[r.stav] : 'bez srovnání'}</td>
                                 </tr>
                               );
@@ -447,7 +449,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                     </div>
                   );
                 })}
-                <Zdroj>Maturita: společná část, jarní období, CERMAT. „Lépe než 84 ze 100“ znamená, že maturanti školy měli v průměru stejný nebo lepší výsledek než 84 ze 100 maturantů v celé zemi (průměrný percentil). Srovnání se středem bere v úvahu velikost ročníku: u malého ročníku bývá rozdíl nerozlišitelný.</Zdroj>
+                <Zdroj>Maturita: společná část, jarní období, CERMAT. Srovnání s podobnými školami stojí na jediné veličině, na průměrném podílu bodů z testu: střed je prostředek podobných škol a podle něj se počítá i srovnání, které bere v úvahu velikost ročníku, takže u malého ročníku bývá rozdíl nerozlišitelný. Údaj „v celé zemi lépe než 84 ze 100 maturantů“ je jiný pohled: neporovnává školu s podobnými školami, ale její maturanty se všemi maturanty v zemi.</Zdroj>
               </Dukaz>
             </>
           );

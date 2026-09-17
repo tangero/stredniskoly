@@ -51,12 +51,12 @@ export interface MaturitaSkoly {
   roky: number[];
   /** Celá škola v posledním roce: přihlášení, konající, úspěšní, nekonající (úspěšnost počítá CERMAT z přihlášených). */
   celkem: { rok: number; registered?: number; took?: number; passed?: number; absent?: number } | null;
-  /** Střed (medián průměrných percentilů z češtiny) podobných škol po skupině oborů a roce. */
-  stredy: Record<string, Record<number, number>>;
   skupiny: (ShrnutiMaturity & {
     nazev: string;
-    percentilySkupiny: number[];
-    medianPercentilSkupiny: number | null;
+    /** Průměrné výsledky podobných škol z češtiny v posledním roce, pro graf; táž veličina jako střed. */
+    skoryPodobnychSkol: number[];
+    /** Střed podobných škol: medián průměrných procentních skórů, tedy reference zařazení. */
+    stredPodobnychSkol: number | null;
     skolVeSkupine: number | null;
     vstup: { umisteni: number; median: number; obor: string } | null;
   })[];
@@ -173,10 +173,32 @@ async function skupinySkol(rok: string) {
 
 interface MaturitaSoubor {
   meta: { roky: number[]; nejnovejsi_rok: number };
-  skupiny: Record<string, Record<string, { nazev: string; schools: number; medianPercentile: number | null; percentiles: number[] }>>;
+  skupiny: Record<string, Record<string, { nazev: string; schools: number; medianPercentScore: number | null; medianPercentile: number | null; percentiles: number[] }>>;
   skoly: Record<string, { nazev: string; roky: Record<string, Record<string, MaturitaSkupinaRoku>> }>;
 }
 let maturitaCache: MaturitaSoubor | null | undefined;
+
+/** Práh konajících, od kterého škola vstupuje do reference skupiny (slovník: Zařazení proti skupině oborů). */
+const REFERENCE_MIN_KONALO = 10;
+const skoryCache = new Map<string, number[]>();
+
+/**
+ * Průměrné výsledky z češtiny všech podobných škol, tedy škol téže skupiny oborů a roku s aspoň
+ * deseti konajícími. Táž veličina, ze které se počítá střed i zařazení, aby graf ukazoval totéž
+ * srovnání jako věta nad ním.
+ */
+function skoryPodobnychSkol(soubor: MaturitaSoubor, rok: string, smo16: string): number[] {
+  const klic = `${rok}_${smo16}`;
+  const ulozene = skoryCache.get(klic);
+  if (ulozene) return ulozene;
+  const skory: number[] = [];
+  for (const skola of Object.values(soubor.skoly)) {
+    const cj = skola.roky[rok]?.[smo16]?.cj;
+    if (cj && typeof cj.averagePercentScore === 'number' && (cj.took ?? 0) >= REFERENCE_MIN_KONALO) skory.push(cj.averagePercentScore);
+  }
+  skoryCache.set(klic, skory);
+  return skory;
+}
 
 /** Maturita se zobrazí, jen když registr sadu cermat-maturita přepnul na období a soubor existuje. */
 async function maturitaSkoly(redizo: string): Promise<MaturitaSoubor['skoly'][string] & { soubor: MaturitaSoubor } | null> {
@@ -270,7 +292,6 @@ export async function getProfilSkoly(
     maturitaVystup = {
       obdobi: 'jaro',
       roky: soubor.meta.roky,
-      stredy: Object.fromEntries([...smo16].map(smo => [smo, Object.fromEntries(soubor.meta.roky.map(rk => [rk, soubor.skupiny[String(rk)]?.[smo]?.medianPercentile]).filter(([, v]) => typeof v === 'number'))])),
       celkem: celaSkola ? { rok: Number(posledniRok), registered: celaSkola.registered, took: celaSkola.took, passed: celaSkola.passed, absent: celaSkola.absent } : null,
       skupiny: [...smo16].sort().reverse().map(smo => {
         const sh = shrnutiMaturity(soubor.meta.roky, maturita.roky, smo);
@@ -281,8 +302,8 @@ export async function getProfilSkoly(
         return {
           ...sh,
           nazev: nazevSkupinyMaturity(smo, ref?.nazev),
-          percentilySkupiny: ref?.percentiles ?? [],
-          medianPercentilSkupiny: ref?.medianPercentile ?? null,
+          skoryPodobnychSkol: skoryPodobnychSkol(soubor, posledniRok, smo),
+          stredPodobnychSkol: ref?.medianPercentScore ?? null,
           skolVeSkupine: ref?.schools ?? null,
           vstup: obor && median !== undefined ? { umisteni: obor.umisteniPrijatych!, median, obor: `${obor.nazev} (${obor.delka}leté)` } : null,
         };

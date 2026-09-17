@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.4 · 14. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.4 · 17. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -59,7 +59,8 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **podobné školy** | školy stejné skupiny oborů `SMO16` v celé zemi, například všechna osmiletá gymnázia; srovnává se jen uvnitř ní | „podobné školy jsou školy se stejným typem oborů v celé zemi, například všechna osmiletá gymnázia“ | skupina oborů (v textu pro rodiče), kategorie, konkurence |
 | **střed podobných škol** | medián průměrných výsledků podobných škol | „střed znamená, že polovina z nich dopadla lépe a polovina hůř“ | průměr (je to medián), norma |
 | **nad středem podobných škol**, **nerozlišitelné od středu**, **pod středem podobných škol** | zařazení proti mediánu podobných škol s ohledem na velikost ročníku | „nerozlišitelné: rozdíl je u takto velkého ročníku příliš malý“; vždy s počtem let („3 ze 4 let“) a souhrnem za školu („téměř každý rok“) | lepší škola, horší škola, nadprůměrná škola, kvalitní, nad skupinou (v textu pro rodiče) |
-| **lépe než X ze 100 maturantů** | průměrný percentil maturantů školy v předmětu | „maturanti školy měli v průměru stejný nebo lepší výsledek než X ze 100 maturantů v celé zemi“ | percentil (v hlavním textu), pořadí |
+| **v celé zemi lépe než X ze 100 maturantů** | průměrný percentil maturantů školy v předmětu; srovnání se všemi maturanty v zemi, ne s podobnými školami | „maturanti školy měli v průměru stejný nebo lepší výsledek než X ze 100 maturantů v celé zemi“; slova „v celé zemi“ se nevypouštějí | percentil (v hlavním textu), pořadí, lépe než X ze 100 bez určení, proti komu |
+| **% bodů v testu**, **průměrný podíl bodů** | průměrný procentní skór z didaktického testu; veličina, ve které se porovnává se středem podobných škol | „průměrný podíl bodů, které maturanti v testu získali“ | skór, percentil (jsou to jiné veličiny), body (těmi se měří jednotná zkouška)  |
 | **maturitu udělalo X z Y přihlášených** | úspěšní ze všech přihlášených ke společné části (tak ji počítá CERMAT) | u rozdílu přihlášených a konajících: „1 ke zkoušce nešel“ | úspěšnost bez jmenovatele, X z Y konajících vedle podílu z přihlášených |
 | **jak si škola vede** | nadpis oddílu s maturitou a inspekcí | není potřeba | kvalita školy, hodnocení školy |
 | **souběžní uchazeči**, **kam se hlásí stejní uchazeči** | uchazeči, kteří měli na přihlášce tento obor i obor jiné školy | „uchazeči, kteří měli na přihlášce i tento obor“ | konkurence, konkurenční škola |
@@ -84,7 +85,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
-| 1.4 | Maturita srozumitelněji: „podobné školy“, „střed podobných škol“, „nad středem podobných škol“, „lépe než X ze 100 maturantů“, „maturitu udělalo X z Y přihlášených“; „skupina oborů“ a „percentil“ jen v podrobnostech. |
+| 1.4 | Maturita srozumitelněji: „podobné školy“, „střed podobných škol“, „nad středem podobných škol“, „maturitu udělalo X z Y přihlášených“; „skupina oborů“ a „percentil“ jen v podrobnostech. Srovnání s podobnými školami se vede v % bodů v testu, percentil se uvádí jen jako „v celé zemi lépe než X ze 100 maturantů“, aby se dvě různá srovnání nepletla. |
 | 1.3 | Pojmy pro stránku školy: maturanti, společná část, skupina oborů, zařazení proti skupině, souběžní uchazeči, vzdušnou čarou a značky původu údajů. |
 | 1.2 | Obtížnost přijetí jako samostatný nadpis celou frází „Velmi těžké se dostat“. |
 | 1.1 | Pořadí v kraji podle zájmu a podle výsledků přijatých jako povolený pojem; „žebříček“ zůstává zakázaný. |

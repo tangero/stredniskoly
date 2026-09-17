@@ -26,6 +26,7 @@ Formát vychází z [Keep a Changelog](https://keepachangelog.com/cs/1.1.0/).
 - **Doklad pásem přijetí přepočítán** na aktuálních revizích obou roků; upstream 20. 5. 2026 přepsal i soubor 2024 do schématu roku 2025 (klíč REDIZO) a přeřadil asi 430 přijatých mezi vzdavší se, takže stabilita míry *rozhodl test* je 0,671 místo 0,725; teze ve verzi 1.7
 
 ### Opraveno
+- **Srovnání maturity s podobnými školami v jedné veličině** — střed, výsledek školy i graf v podílu bodů z testu, tedy v tom, proti čemu se počítá zařazení; percentil zůstává jako srovnání s maturanty v celé zemi (slovník ukazatelů 1.20)
 - **Maturita na stránce školy srozumitelněji** — souhrnná věta, tabulka po oborech, „lépe než X ze 100“ a „podobné školy“ (slovník pojmů 1.4); úspěšnost z přihlášených, dříve stál vedle podílu počet z konajících
 - **Detail nových oborů bez zaměření** — obory, které přibyly až v ročníku 2026, nebyly v `school_analysis.json`, a `getSchoolPageType` je nenašel; odkaz vedl na přehled školy
 - **2. kolo na nových stránkách** — stránka oboru měla jen zkrácenou větu a stránka školy 2. kolo neukazovala; věty sdílí `src/lib/druhe-kolo-vyklad.ts` (stránka oboru, stránka školy, otevřená data, starší karta)
