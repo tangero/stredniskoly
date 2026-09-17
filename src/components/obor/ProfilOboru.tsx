@@ -77,6 +77,9 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
   const soutezicichDriv = p ? soutezicichUchazecu(p) : null;
   const kontext = data.kontext;
   const pasma = data.pasma?.data;
+  // CERMAT vydává data o uchazečích nejdřív předběžně, finální revizi až o rok
+  // později. Dokud web ukazuje předběžný ročník, musí to být u čísel vidět.
+  const verzeUchazecu = data.verzeUchazecu?.startsWith('předběžná') ? ` Údaje jsou z ${data.verzeUchazecu}.` : '';
   const dk = data.druheKolo;
   const dkVety = dk ? vetyDruhehoKola(dk) : null;
   const roky = [p && predchoziRok ? { rok: predchoziRok, r: p } : null, { rok, r }].filter((x): x is { rok: number; r: typeof r } => !!x);
@@ -167,7 +170,7 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
                   {pasma.prijatych >= 10 && <> Pod <b>{cislo(pasma.min_prijaty)} bodů</b> se nedostal nikdo; stejně nebo méně bodů mělo {Math.round(pasma.min_prijaty_percentil)} ze 100 uchazečů v celé zemi.</>}
                 </Proc>
                 <PasmaBodu pasma={pasma.pasma} />
-                <Zdroj>Data o uchazečích 1. kola {data.pasma.rok}. Není to šance konkrétního uchazeče a platí za obor školy bez zaměření.</Zdroj>
+                <Zdroj>Data o uchazečích 1. kola {data.pasma.rok}. Není to šance konkrétního uchazeče a platí za obor školy bez zaměření.{verzeUchazecu}</Zdroj>
               </Dukaz>
             )}
 
@@ -247,7 +250,7 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
               <Dukaz nadpis="Jak dopadli všichni, kdo se sem hlásili" rok={`1. kolo ${kontext.rok}`} otevreny>
                 <Proc>Všichni uchazeči, kteří měli tento obor na přihlášce, podle toho, kam je v 1. kole {kontext.rok} rozřadili.</Proc>
                 <VysledekUchazecu {...kontext.data.vysledek_uchazecu} />
-                <Zdroj>Data o uchazečích 1. kola {kontext.rok}, {cislo(kontext.data.uchazecu)} uchazečů. Neříká, jak dopadnete vy; pořadí na přihlášce šanci nemění.</Zdroj>
+                <Zdroj>Data o uchazečích 1. kola {kontext.rok}, {cislo(kontext.data.uchazecu)} uchazečů. Neříká, jak dopadnete vy; pořadí na přihlášce šanci nemění.{verzeUchazecu}</Zdroj>
               </Dukaz>
             )}
             {kontext && (kontext.vys.length > 0 || kontext.niz.length > 0) && (
@@ -297,6 +300,7 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
               <p className="text-[19px] leading-relaxed text-slate-800">
                 Přijatí v roce {rok} měli v jednotné zkoušce průměrné umístění kolem <b className="text-[#16325c]">{Math.round(r.prumerne_umisteni_prijatych)}. percentilu</b> celé země; percentil říká, kolik ze 100 uchazečů v celé zemi mělo stejný nebo horší výsledek.
                 {r.cj_prijati !== undefined && r.ma_prijati !== undefined && <> V bodech: čeština průměrně {cislo(r.cj_prijati, 1)} a matematika {cislo(r.ma_prijati, 1)} z 50.</>}
+                {pasma?.median_prijatych !== undefined && <> Polovina přijatých měla dohromady <b className="text-[#16325c]">{cislo(pasma.median_prijatych, 1)} bodů</b> nebo míň.</>}
               </p>
             ) : (
               <p className="text-[17px] text-slate-700">Výsledky přijatých v jednotné zkoušce pro tento obor nemáme.</p>
@@ -307,7 +311,7 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
             {data.jazyky && data.jazyky.length > 0 && (
               <p className="text-[15px] text-slate-700">Vyučované jazyky podle profilu v InspIS: {data.jazyky.join(', ')}.</p>
             )}
-            <Zdroj>Popisuje, s jakými výsledky sem přicházejí spolužáci, ne náročnost studia ani kvalitu výuky. Inspekce a podpora žáků platí pro celou školu.</Zdroj>
+            <Zdroj>Popisuje, s jakými výsledky sem přicházejí spolužáci, ne náročnost studia ani kvalitu výuky. Inspekce a podpora žáků platí pro celou školu.{pasma?.median_prijatych !== undefined && ` Průměr je z dat CERMATu za tuto nabídku, prostřední hodnota z dat o uchazečích za celý obor školy bez zaměření (1. kolo ${data.pasma?.rok}); u šikmého rozdělení leží pod průměrem.${verzeUchazecu}`}</Zdroj>
           </Odpoved>
 
           <div className="space-y-3">

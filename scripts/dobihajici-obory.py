@@ -112,6 +112,9 @@ def spocitej(snimek: Path, souhrny: Path, rok: str) -> dict[str, Any]:
     hrube_zasahy: list[str] = []
     presne_zasahy: list[str] = []
     bez_zaznamu: list[str] = []
+    # Jedna dvojice REDIZO a KKOV může mít víc nabídek (různá zaměření), proto se
+    # počet klíčů nabídek a počet unikátních dvojic liší a doklad uvádí obojí.
+    dvojice_zasahu: dict[tuple[str, str], list[str]] = {}
     vsechny_pary_rejstriku = {(z["redizo"], z["kod"]) for z in zaznamy}
 
     for klic, nabidka in v_rocniku.items():
@@ -121,6 +124,7 @@ def spocitej(snimek: Path, souhrny: Path, rok: str) -> dict[str, Any]:
             continue
         if (redizo, kkov) in hrube_ss:
             hrube_zasahy.append(klic)
+            dvojice_zasahu.setdefault((redizo, kkov), []).append(klic)
         if (redizo, kkov, FORMA_DENNI, delka_nabidky(nabidka, rok)) in presne_ss:
             presne_zasahy.append(klic)
 
@@ -161,10 +165,16 @@ def spocitej(snimek: Path, souhrny: Path, rok: str) -> dict[str, Any]:
         "join": {
             "hrube_redizo_kkov": {
                 "nabidek": len(hrube_zasahy),
+                "unikatnich_dvojic": len({(nabidky[k]["redizo"], nabidky[k]["kkov"]) for k in hrube_zasahy}),
+                "dvojice_a_jejich_nabidky": {
+                    f"{r}_{kk}": sorted(ks)
+                    for (r, kk), ks in sorted(dvojice_zasahu.items())
+                },
                 "klice": sorted(hrube_zasahy),
             },
             "presne_redizo_kkov_forma_delka": {
                 "nabidek": len(presne_zasahy),
+                "unikatnich_dvojic": len({(nabidky[k]["redizo"], nabidky[k]["kkov"]) for k in presne_zasahy}),
                 "klice": sorted(presne_zasahy),
             },
             "nabidek_bez_zaznamu_v_rejstriku": len(bez_zaznamu),
@@ -195,8 +205,9 @@ def main() -> None:
     print(f"  dobíhajících záznamů SŠ:              {j['zaznamu_dobihajicich_ss']}")
     print(f"  z toho unikátních REDIZO+KKOV:        {j['unikatnich_redizo_kkov_ss']}")
     print(f"  unikátních i s formou a délkou:       {j['unikatnich_redizo_kkov_forma_delka_ss']}")
-    print(f"  zásahů hrubým joinem:                 {doklad['join']['hrube_redizo_kkov']['nabidek']}")
-    print(f"  zásahů přesným joinem:                {doklad['join']['presne_redizo_kkov_forma_delka']['nabidek']}")
+    hr, pr = doklad["join"]["hrube_redizo_kkov"], doklad["join"]["presne_redizo_kkov_forma_delka"]
+    print(f"  zásahů hrubým joinem:                 {hr['nabidek']} nabídek = {hr['unikatnich_dvojic']} dvojic")
+    print(f"  zásahů přesným joinem:                {pr['nabidek']} nabídek = {pr['unikatnich_dvojic']} dvojic")
     print(f"  nabídek bez záznamu v rejstříku:      {doklad['join']['nabidek_bez_zaznamu_v_rejstriku']}")
     print(f"Doklad: {a.vystup.relative_to(KOREN)}")
 

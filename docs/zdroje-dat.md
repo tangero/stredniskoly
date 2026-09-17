@@ -399,14 +399,14 @@ Plné převzetí bez člověka se nedoporučuje: CERMAT soubory přepisuje i mě
 
 <!-- stav-datovych-sad:od -->
 
-_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-14. Neupravovat ručně._
+_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-17. Neupravovat ručně._
 
 | Sada | Použití | Zobrazujeme | Odkud | Zveřejněno, nepřevzato | Čekáme | Kdy | Po přepnutí |
 |---|---|---|---|---|---|---|---|
 | `cermat-kapacity` | web | 2026 | `PZ2026_kolo1_skolobory_vysledky.xlsx` | — | 2027 | 2027-03, odhad | Srovnání ročníků na stránce oboru. |
 | `cermat-prihlasky` | web | 2026 | `PZ2026_kolo1_skolobory_vysledky.xlsx` | — | 2027 | 2027-03, odhad | Srovnání ročníků na stránce oboru. |
 | `cermat-vysledky` | web | 2026 | `PZ2026_kolo1_skolobory_vysledky.xlsx` | — | 2027 | 2027-08, odhad | Srovnání ročníků na stránce oboru; výsledky 2025 slouží jako srovnávací zdroj v public/cermat_results_meta.json. |
-| `cermat-uchazeci-kolo1` | web | 2025 | `PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx` | 2026 | 2027 | 2027-05, odhad | Rok 2025 zůstává pro ověření stability mezi ročníky ve scripts/validate-pasma-prijeti.py a pro vývoj hranice přijetí. |
+| `cermat-uchazeci-kolo1` | web | 2026 | `PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx` | — | — | 2027-05, odhad | Rok 2025 zůstává pro ověření stability mezi ročníky ve scripts/validate-pasma-prijeti.py a pro vývoj hranice přijetí. |
 | `cermat-uchazeci-kolo2` | nepoužito | 2025 | `data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx` | 2026 | 2027 | 2027-06, odhad | Není na webu. |
 | `cermat-polozkova-jpz` | analýza | 2025 | `data/JPZ2025_M6_polozkova_data.xlsx` | 2026 | 2027 | 2027-05, odhad | Není na webu; slouží dokladu teze 4. |
 | `cermat-maturita` | web | 2026 | `MZ2026j_SC_skolobory.xlsx` | — | — | 2027-08, odhad | Předchozí jarní ročníky zůstávají ve výstupu; stránka školy z nich počítá počet let nad skupinou oborů. |
@@ -429,7 +429,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-14. Neupravovat ru�
 | `cermat-kapacity` | jen detekce | HTTP HEAD: před zveřejněním 404, po revizi nové Last-Modified; katalogová stránka vypisuje dostupné roky. | Chybí udržovaný importér pro fázi před výsledky. scripts/import_cermat_2026_real.py je podle docs/aktualizace-kalendar-data-2027.md zastaralý; scripts/refresh_cermat_data.py čte až soubor výsledků. | Napsat importér kapacit a přihlášek pro jarní fázi, pak revize importu a přepnutí. |
 | `cermat-prihlasky` | jen detekce | HTTP HEAD: před zveřejněním 404, po revizi nové Last-Modified; katalogová stránka vypisuje dostupné roky. | Chybí udržovaný importér pro fázi před výsledky. scripts/import_cermat_2026_real.py je podle docs/aktualizace-kalendar-data-2027.md zastaralý; scripts/refresh_cermat_data.py čte až soubor výsledků. | Napsat importér kapacit a přihlášek pro jarní fázi, pak revize importu a přepnutí. |
 | `cermat-vysledky` | příprava | HTTP HEAD a katalogová stránka, stejně jako u kapacit. | scripts/refresh_cermat_data.py --input-dir s výsledky aktuálního a předchozího roku; kontroluje hlavičky, kolize, rozsah skóre a součet priorit a ukládá sha256 a datum platnosti. | Stáhnout oba soubory, spustit import a testy, zrevidovat rozdíly počtů a přepnout. |
-| `cermat-uchazeci-kolo1` | příprava | HTTP HEAD a katalogová stránka Datové soubory. | scripts/build-pasma-prijeti.py, scripts/build-soubeh-prihlasek.py, scripts/validate-pasma-prijeti.py; názvy výstupů nesou rok a v kódu jsou zapsané napevno. Pozor: scripts/enrich_schools_data.py, který počítá nejnižší přijatý výsledek do katalogu, čte sloupce podle pozice; v souboru za rok 2026 se pořadí sloupců změnilo a příznak přijetí je text, takže bez úpravy by počítal chybně. Datová linka ho nespouští. | Převzetí mění čísla v dokladech tezí a na webu, proto revize výsledků validace před přepnutím. |
+| `cermat-uchazeci-kolo1` | příprava | HTTP HEAD a katalogová stránka Datové soubory. | scripts/build-pasma-prijeti.py, scripts/build-soubeh-prihlasek.py, scripts/build-kontext-prihlasek.py; doklad stability mezi ročníky scripts/validate-pasma-prijeti.py --rocniky STARY-NOVY. Výstupy nesou rok v názvu, registr ho drží zástupným {obdobi}, ne napevno. Pozor: scripts/enrich_schools_data.py čte sloupce podle pozice a s textovým příznakem přijetí by počítal chybně; datová linka ho nespouští a katalogové minimum se na webu nezobrazuje. | Převzetí mění čísla v dokladech tezí a na webu, proto revize výsledků validace před přepnutím. |
 | `cermat-uchazeci-kolo2` | jen detekce | HTTP HEAD. | Neexistuje. | Rozhodnout o zpracování druhého kola. |
 | `cermat-polozkova-jpz` | jen detekce | HTTP HEAD pro šest testů. | Jen dokladový výpočet v scripts/validate-pasma-prijeti.py. | Není na webu, převzetí podle potřeby analýzy. |
 | `cermat-maturita` | příprava | HTTP HEAD a katalogová stránka. | scripts/build-maturita-skoly.py; v datové lince zpracovatel cermat-maturita stáhne k jarnímu souboru tři předchozí jarní ročníky a doplní je do stávajícího výstupu. Stav po podzimu (jap) se nepřebírá. | Schválit úlohu, zkontrolovat počty v pull requestu, přepnout období v registru. |

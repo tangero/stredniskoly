@@ -1,6 +1,6 @@
 # Co udělat s daty, která máme a nepoužíváme
 
-Verze 1.1 · 17. 9. 2026 · **Návrh k rozhodnutí.** Vypořádána [oponentura v1.0](oponentura-navrh-nepouzitych-dat-2027.md), viz oddíl 9.
+Verze 1.2 · 17. 9. 2026 · **Návrh k rozhodnutí.** Vypořádána [oponentura](oponentura-navrh-nepouzitych-dat-2027.md) v kolech 1 a 2, viz oddíl 9.
 
 Zadání znělo: projít tři sady dat, které leží nepoužité, a navrhnout, jak s nimi pracovat, aby web rodině vysvětlil, **kterou školu si vybrat, jak je dobrá, jak kvalitně přistupuje ke vzdělávání a jak si vedou její absolventi**.
 
@@ -62,6 +62,16 @@ Web je nečte jen proto, že registr u sady `cermat-uchazeci-kolo1` drží `zobr
 
 **Zbytek webu ale letopočty napevno má a verze 1.0 to zamlčela.** Oponentura na to upozornila a přepočet ukázal větší rozsah, než uváděla: `src/lib/data.ts` má 13 přístupů tvaru `data['RRRR']` (mimo jiné řádky 897, 950, 1045, 1129, 1304) a dalších 11 řádků je jinde v `src/`; uživatelských textů s letopočtem napevno je zhruba **101 ve 36 souborech**. Část z nich je napevno správně — datum exportu InspIS, platnost dat CERMATu, harmonogram MŠMT na rok 2027 — takže skutečný dluh je menší podmnožina, kterou je nutné projít ručně. Sweep ročníků v textech je tedy samostatná práce, ne nula; zařazuje se do D3.
 
+**Co je dnes na roce 2025.** Ze třinácti sad s použitím `web` drží rok 2025 **jediná** — `cermat-uchazeci-kolo1`. Kapacity, přihlášky, výsledky, obtížnost přijetí, pořadí v kraji, maturita i 2. kolo jsou 2026. Přijímací řízení 2026 tedy web ukazuje; přepnutí se týká **tří bloků odvozených z dat o jednotlivých uchazečích**:
+
+| Blok | Změna po přepnutí |
+|---|---|
+| Pásma přijetí, nejnižší přijatý, pásmo nejistoty, *rozhodl test*, hustota u hranice | 2 846 → 2 879 oborů, z toho 118 nových; věta o tom, co rozhodlo, změní kategorii u **305 z 1 173** oborů |
+| Výsledek uchazečů o obor, obory výš a níž, odvozená hranice úspěšnosti | 5 043 → 5 077 oborů; hranice u **1 108 → 1 156** oborů; obory výš a níž u 2 622 → 2 658 |
+| Souběžné přihlášky | 5 043 → 5 077 oborů |
+
+**Nejnižší přijatý výsledek se posune**: medián +1 bod, dolní čtvrtina −3, horní +6. Není to změna nároků škol, ale jiná obtížnost testu — percentil téhož uchazeče se posunul o −0,1 bodu. Je to doklad pravidla, že body se mezi ročníky nesrovnávají.
+
 **Co přepnutí přinese rodině.** Stránka oboru dnes míchá dva ročníky: slovní verdikt obtížnosti a pořadí v kraji počítá ze souhrnů roku **2026**, zatímco pásma přijetí, „kam se dostali uchazeči“ a obory výš a níž na přihlášce jsou z roku **2025** (`src/lib/obor-profil-data.ts`, `souhrn.rok` vedle `kontextVysledek.rok`). Každý blok svůj rok uvádí, takže pravidlo registru porušené není, ale rodina čte jeden příběh ze dvou ročníků. Přepnutí tenhle rozpor odstraní.
 
 Změní se i obsah. Podíl uchazečů, kteří se v 1. kole nedostali nikam, klesl mezi roky: medián ze 7 % na 5 %, a oborů s aspoň čtvrtinou takových uchazečů je 483 místo 588. Věta „pomůže mít na přihlášce i obor, kde v 1. kole místo bylo“ se podle [vrstev stránky oboru](vrstvy-stranky-oboru-2027.md) spouští právě na prahu čtvrtiny, takže se po přepnutí objeví u 105 oborů méně. Pokrytí pásem se nemění (1 485 proti 1 497; 195 oborů pásma získá, 205 ztratí).
@@ -96,7 +106,9 @@ Soupis zdrojů (oddíl 3) i [stránka školy](stranka-skoly-2027.md) (S5) počí
 | C00 + D00 + E00 (oponentura) | 754 | 29 | **0** |
 | bez filtru druhu (i základní školy a jídelny) | 1 194 | 29 | **0** |
 
-Spor o jednotku tedy závěr nemění ani v krajním případě, kdy se filtr druhu vypustí úplně. Jednotky, ve kterých se čísla uvádějí: 723 je **záznamů** (jedna škola může mít týž obor zapsaný víckrát v různých formách), 654 je **unikátních dvojic REDIZO a KKOV**, a hrubý join zasahuje **29 klíčů nabídek**, což je 23 unikátních dvojic.
+Spor o jednotku tedy závěr nemění ani v krajním případě, kdy se filtr druhu vypustí úplně. Jednotky, ve kterých se čísla uvádějí: 723 je **záznamů** (jedna škola může mít týž obor zapsaný víckrát v různých formách), 654 je **unikátních dvojic REDIZO a KKOV**, a hrubý join zasahuje **29 klíčů nabídek**, což je **23 unikátních dvojic**.
+
+Kolo 2 oponentury u posledního čísla přepočtem dostalo 20. Doklad ho nově uvádí sám, včetně rozpisu, které dvojici patří které nabídky: 23 dvojic dává 29 klíčů proto, že **pět dvojic má víc nabídek** s různým zaměřením (například `600015572_63-41-M/01` tři). Číslo 23 se tím dá z dokladu ověřit, aniž by ho někdo musel dopočítávat.
 
 Hrubý klíč REDIZO + KKOV dá 23 zásahů, ale **všech 23 je falešných**, chybovost 100 %. Vzorec je pokaždé stejný: dobíhá jiná forma nebo délka téhož oboru, ne ta nabízená. SŠ gastronomická a hotelová zavírá dálkové Hotelnictví a učí denní; Karlínské gymnázium zavírá pětiletou dálkovou formu; šest škol zavírá tříletou dálkovou nástavbu Podnikání a nabízí dvouletou denní. Z toho plyne tvrdé pravidlo: **jakékoli použití pole musí párovat i formu a délku studia.**
 
@@ -198,24 +210,49 @@ Pořadí je dané závislostmi a rizikem, ne důležitostí. D1 odemyká nejvíc
 
 | Dávka | Co dělá | Závisí na |
 |---|---|---|
-| **D4a** | opraví tvrzení o dobíhajícím oboru ve třech dokumentech | na ničem, hotovo hned |
+| **D4a** | opraví tvrzení o dobíhajícím oboru ve čtyřech dokumentech | na ničem, hotovo hned |
 | **D1** | přepne data uchazečů na rok 2026 | na opravách skriptů a dokladu |
 | **D2** | zobrazí už spočítané ukazatele, srovná dvojí implementaci obtížnosti | na ničem |
 | **D3** | zavede podíl přijatých na první volbu, nahradí tabulku ze staré cesty | na testu srozumitelnosti |
 | **D4b** | použije dobíhající obor v mřížce nabídky v čase | na mřížce, která neexistuje |
 | **D5** | doplní větu, že o absolventech data nemáme | na ničem |
 
-### D1 — Přepnout data uchazečů na rok 2026
+### D1 — Přepnout data uchazečů na rok 2026 — **hotovo 17. 9. 2026**
+
+Provedeno v tomto pořadí: zdrojový soubor přesunut do `data/`; srovnání ročníků vytaženo do funkce `stabilita_rocniku` v `scripts/validate-pasma-prijeti.py` a zpřístupněno přes `--rocniky 2025-2026` (výchozí doklad 2024–2025 zůstal bajt v bajt shodný); vznikl `docs/podklady/overeni-pasem-prijeti-2025-2026.json`; slovník ukazatelů přepočítán na verzi 1.21; registr přepnut a zkontrolován; stránka oboru u obou bloků uvádí, že ročník je předběžný.
+
+**Doplněno 17. 9. 2026: medián JPZ přijatých.** Při rozboru zaniklého `data/jpz_stats_2025.json` vyšlo najevo, že z jeho devíti polí má pět náhradu jinde (a průměr dokonce lepší, oficiální a se zaměřením), ale **medián přijatých nikde**. Slovník přitom od verze 1.3 tvrdil, že medián „měl by mít při zobrazení přednost“, a nikdy se nezobrazil. Doloženo, že na tom záleží: medián leží **systematicky pod průměrem**, mediánově o 1,1 bodu na 2 517 nabídkách roku 2026, u 35 % oborů aspoň o 2 body. Je to ta šikmost, před kterou slovník varuje — pár výborných výsledků táhne průměr nahoru.
+
+Medián proto nepřibyl oživením rozbitého skriptu, ale do `scripts/build-pasma-prijeti.py`, tedy do souboru, který vzniká z téhož zdroje, už se přepíná s registrem a už nese nejnižší přijatý. Oba ročníky přegenerovány; kontrola proti předchozí verzi ukázala **nula změn mimo nové pole**. Zamítnuta zůstala pole `cj_at_jpz_min`, `ma_at_jpz_min`, `cj_min_independent` a `ma_min_independent`: každé určuje jediný uchazeč a poslední dvě mohou pocházet od dvou různých lidí, takže vedle sebe popisují uchazeče, který nemusí existovat.
+
+Dvě věci se přitom opravily nad rámec zadání. **Registr nesl letopočet napevno** v `kontrola_obdobi.soubor` a ve `vystupy` (`pasma_prijeti_2025.json`), takže přepnutí na první pokus selhalo; nově se píše zástupné `{obdobi}`, které `scripts/stav-datovych-sad.py` dosazuje ze zobrazeného období. **Z `vystupy` vypadl `data/jpz_stats_2025.json`**, protože pro rok 2026 neexistuje: počítá ho rozbitý `enrich_schools_data.py`, který linka nespouští a jehož výstup se na webu nezobrazuje.
 
 Odstraní míchání ročníků na stránce oboru a zaktualizuje pásma, souběh i kontext přihlášek. Práce je v překážkách, ne v přepnutí.
 
 1. Přesunout zdrojový xlsx z `data/linka/prace/3GQMK/` do `data/`, aby šel přepočítat. (Do gitu nepatří, jen na disk vedle ročníků 2024 a 2025.)
 2. Opravit `scripts/enrich_schools_data.py` na čtení podle hlavičky a na textový příznak přijetí; přepočítat `jpz_min_actual` a katalog z roku 2026. Bez toho by katalog zůstal na předběžném roce 2025, zatímco pásma půjdou na 2026. **Oprava sama katalog neodemkne:** `scripts/build-catalogue-2026.py` má konstantu `HISTORICKE` s jedenácti poli (mezi nimi `jpz_min_actual`, `min_body`, `cohorts`, `prijati_priority`), která se do ročníku 2026 kopírují z roku 2025 a záznam dostane `historicka_data_rok = 2025`; nese to 2 664 z 3 239 záznamů. Součástí kroku je tedy i rozhodnutí, která pole z `HISTORICKE` vypadnou.
+**Krok 2 není podmínkou přepnutí (zjištěno 17. 9. 2026).** Katalogové minimum se totiž **nikde nezobrazuje**: `unavailableAdmissionScores()` v `src/lib/historical-scores.ts` nuluje `jpz_min`, `min_body`, `cj_at_jpz_min`, `ma_at_jpz_min` i `cohorts`, a `jpz_min_actual` je v `src/` pouhý typ v hledacím API. Obávaný nový nesoulad — pásma z roku 2026 vedle katalogového minima z roku 2025 — tedy nevznikne, protože katalogové minimum nemá čtenáře. Nejnižší přijatý výsledek, který stránka oboru ukazuje, pochází z `pasma_prijeti_{rok}.json`, a ten se přepíná spolu se sadou. **Oprava enrichu se tím odpojuje od přepnutí** a zůstává samostatným úklidem.
+
 3. **Rozhodnout, co s `min_body`.** Oponentura upozornila, že se pod krokem 2 skrývá rozhodnutí o poli, které se porovnává s body uchazeče. Ověření ho posunulo dvakrát:
    - `min_body` **není** `jpz_min_actual` a `enrich_schools_data.py` ho nepočítá. Je to jiné pole na jiné škále (rozsah 10 až 168 proti 0 až 100), v katalogu od prvního importu, **nepočítá ho žádný skript v repozitáři** a jeho výklad není doložen. Oprava enrichu na něj tedy nesáhne vůbec.
    - Porovnání „máte výrazně více bodů než minimum“ je v `PersonalizedResults.tsx` a `BodySimulator.tsx` skutečně napsané, ale **průvodce není nikde v aplikaci použitý**: `GuidedJourneyWizard` nemá mimo vlastní adresář jediný import a citované věty nejsou ani v buildu. **Není to tedy zobrazovaná chyba dnešního webu**, jak oponentura tvrdí, ale mrtvý kód.
 
-   Přesto zůstává pravda, že `historicka_data_rok` nikdo nezobrazuje: v `src/` se pole jen prochází `data.ts` a žádná komponenta ho nerenderuje. Rozhodnutí proto zní: **`min_body` jako ukazatel nezavádět** (nemá doložený výpočet, takže podle pravidla projektu se zobrazovat nesmí) a mrtvý průvodce buď smazat, nebo před jeho oživením převést na pásma přijetí. Do D1 patří jen to první, tedy zápis do slovníku mezi ukazatele bez doloženého výpočtu.
+   Přesto zůstává pravda, že `historicka_data_rok` nikdo nezobrazuje: v `src/` se pole jen prochází `data.ts` a žádná komponenta ho nerenderuje.
+
+   **Kolo 2 oponentury namítlo, že se tu verze 1.1 zastavila příliš brzy, a mělo pravdu** — ne však z uvedeného důvodu. Inventura všech konzumentů `min_body` v `src/` dala tento obrázek:
+
+   | Místo | Co dělá | Vidí to uživatel |
+   |---|---|---|
+   | `MojeSanceClient.tsx:355, 425, 435` | vypíše hodnotu s popiskem „Minimum 2025 · škála JPZ 0–100“ | **ne** — `/moje-sance` je od commitu `5911793` jen 307 přesměrování na `/simulator`, komponenta není nikde importovaná ani v buildu |
+   | `SchoolDetailClient.tsx:387–395` | vážený průměr podobných škol | **ne** — funkce nemá volajícího, jediný možný konzument vrací `null` |
+   | `guided/BodySimulator.tsx`, `guided/PersonalizedResults.tsx` | „Máte výrazně více bodů než minimum“ | **ne** — mrtvý adresář |
+   | `cityData.ts:195–199` | nese do dat měst | **ne** — nikdo to nečte |
+   | `page.v1_original.tsx` | výpis | **ne** — není route |
+   | `/api/chances`, `/api/school-details` | vracejí `min_body: null` | — |
+
+   **Nikde na veřejné adrese se `min_body` dnes nezobrazuje**, takže formulace „renderuje se na `/moje-sance`“ neplatí; obě API ho navíc nulují, takže by kód na `null.toFixed()` spadl dřív, než by něco vypsal. Riziko je ale skutečné a je horší, než kdyby šlo o prostý údaj: **kdyby někdo zrušil přesměrování, stránka začne zobrazovat loňská zkopírovaná čísla** (2 808 z 2 812 hodnot 2026 je identických s rokem 2025) **s rozsahem až 168 pod popiskem „škála JPZ 0–100“ a bez dělení dvěma**, které zbytek kódu dělá. Navíc `min_body` pochází ze `school_analysis.json`, tedy ze sady `school-analysis-legacy`, kterou registr vede s použitím **`nezobrazovat`**.
+
+   **Rozhodnutí:** `min_body` jako ukazatel nezavádět (nemá doložený výpočet) a **odstranit mrtvé konzumenty**, ne je jen popsat ve slovníku. Zápis do slovníku mezi ukazatele bez doloženého výpočtu sám nestačí — pravidlo projektu říká, že nedoložený údaj se nezobrazuje, a kód, který ho zobrazit umí, je jen jedním smazaným řádkem od toho, aby to udělal.
 4. Rozšířit `scripts/validate-pasma-prijeti.py` o dvojici ročníků jako parametr a vyrobit doklad `docs/podklady/overeni-pasem-prijeti-2025-2026.json`.
 5. Přepočítat čísla ve slovníku ukazatelů, která z dat uchazečů pocházejí (stabilita míry *rozhodl test*, šířka pásma nejistoty, percentil nejnižšího přijatého, hustota u hranice), a zvýšit jeho verzi.
 6. `python3 scripts/stav-datovych-sad.py prepni cermat-uchazeci-kolo1 2026 --kdy 2027-05 --zduvodneni … --doklad …`, pak `kontrola`.
@@ -237,14 +274,20 @@ Nejvíc přinese **průměrné percentilové umístění uchazečů** vedle už 
 
 Navrhuji proto třetí možnost: **ponechat výpočet jen v generátoru, nechat TypeScript pole z JSON číst a uplatňovat nad ním už jen práh zobrazení.** Zmizí duplicitní definice, doklad dál funguje a dělba rolí odpovídá slovníku — Python počítá veličinu, TypeScript rozhoduje, kdy se ukáže. Mrtvý export `percentilTlakuVeSkupine` se odstraní bez náhrady.
 
+**Past se tím ale přesouvá, ne ruší** — na to oponentura upozornila správně. Pole v JSON dál ponese zařazení i pro obory pod prahem a `rozbor-podminek-a-poradi.py` je tak čte už dnes. Součástí D2 je proto **zápis do slovníku u ukazatele *Obtížnost přijetí slovy***: datové pole `zarazeni_obtiznosti` nese hodnoty i pod prahem deseti soutěžících a **práh je pravidlo zobrazení, ne součást definice**. Bez té věty příští konzument JSON chybu zopakuje.
+
 ### D3 — Přijatí podle priority jako složení třídy
 
 **Pořadí kroků obráceno oponenturou (S3).** Verze 1.0 zaváděla ukazatel rovnou a test srozumitelnosti nechávala jako dodatečnou pojistku v rizicích. To je špatně: jediný důvod existence tohoto ukazatele je nové čtení („složení třídy“), a právě srozumitelnost ho odlišuje od varianty, kterou vrstvy 1.4 zavrhly. Test, jehož negativní výsledek by stál proti už odvedené práci, není test. Proto:
 
-1. **Test věty** ve finální podobě bloku na třech lidech podle oddílu 1.2 [stránky školy](stranka-skoly-2027.md). Kritérium: věta nesmí vyvolat otázku na pořadí přihlášky.
+1. **Test věty** ve finální podobě bloku na třech lidech podle oddílu 1.2 [stránky školy](stranka-skoly-2027.md). Testuje se **na dvou místech a obě musí projít**:
+   - *stránka oboru izolovaně* — věta nesmí vyvolat otázku na pořadí přihlášky;
+   - *stránka školy s obory různých typů* (dokladový příklad Machara: osmileté gymnázium, čtyřleté gymnázium, technické lyceum) — čtení nesmí sklouznout ke srovnání „lyceum je horší než gymnázium“.
+
+   Druhé místo doplnila oponentura a má pravdu: celoplošných 8,3 % rozptylu nechrání konkrétní školu. U Machara je mezera mediánů mezi gymnáziem a lyceem 0,14, tedy srovnatelná s vnitroskupinovou odchylkou 0,17 až 0,19, takže právě u smíšené školy může typ vysvětlovat podstatnou část rozdílu mezi dvěma kartami. Pravidlo „pojmenovat typ“ to řeší jen textově a test musí ověřit, že to stačí.
 2. **Zápis do slovníku** (oddíl 5) — jen když test projde.
 3. **Implementace**: převést `StatsTab` ze staré cesty `extendedStats` na souhrny, vzít ročník z registru místo napevno zapsaného `data['2025']`, zobrazit v bloku „Jak se tu studuje“. Tím zmizí i tabulka priorit ze starší revize katalogu, která se u 315 nabídek rozchází s oficiálními čísly, a mrtvá věta ve `StatsTab.tsx:136`, která říká, že přijaté podle priority nezobrazujeme.
-4. **Sweep letopočtů** v textech dotčených komponent (oddíl 2.1).
+4. **Sweep letopočtů** v textech dotčených komponent (oddíl 2.1). Protože jde o zhruba 101 textů ve 36 souborech, dostane sweep **vlastní kontrolní seznam a grepový test**, který v CI hlásí nový letopočet v uživatelském textu. Bez něj se u takového rozsahu spolehlivě něco přehlédne. Test musí umět povolit legitimní výjimky — datum exportu InspIS, platnost dat CERMATu, harmonogram MŠMT — nejlépe seznamem povolených míst, ne vypnutím kontroly.
 
 **Pravidla, bez kterých se to nesmí zobrazit:**
 - nikdy v bloku o obtížnosti přijetí a nikdy vedle počtu přijatých jako poměr;
@@ -268,8 +311,11 @@ Ne jako varování. **Dávka se podle oponentury dělí na dvě části**, proto
 | [soupis zdrojů](zdroje-dat.md), oddíl 3 | „Škola tenhle obor zavírá.“ Varování před podáním přihlášky | role je opačná: rozlišení doběhlého oboru od nevypsaného ročníku |
 | [stránka školy](stranka-skoly-2027.md), oddíl 10, řádek S5 | „použít, S5“ bez určení role | totéž, s odkazem na doklad |
 | [grafy](grafy-skoly-a-oboru-2027.md), oddíl 7 | „zamítnuto pro graf, patří do textu oboru a do portálu pro školy“ | zpřesnit: do textu patří jen u chybějící nabídky |
+| **[sledování škol a oborů](sledovani-skol-2027.md) v2.1**, větev `docs/sledovani-skol-a-oboru`, commit `19dbcf7` | §3.1 „před termínem přihlášek jsou užitečné jen `udaje_od_skoly` … a do budoucna dobíhající obor z rejstříku“; §9 „**nejcennější zpráva a přichází před termínem přihlášek**“; otevřená otázka 5 | mechanismus se měřením nepotvrdil: událost „obor dobíhá“ by u sledovaného, aktuálně nabízeného oboru prakticky nikdy nenastala. Zbývá role rozlišení „doběhl × nevypsaný ročník“ |
 
-Oponentura žádala opravu ve **čtyřech** dokumentech a čtvrtým jmenovala [sledování škol](sledovani-skol-2027.md), oddíl 9 a otevřenou otázku 5. **To je nedoložené:** dokument má sedm oddílů a čtyři otevřené otázky, slova „dobíhající“, „zavírá“ ani „zaniká“ v něm nejsou ani jednou a jeho katalog událostí uvádí tři zdroje — přepnutí datové sady, příspěvek z portálu, nová inspekční zpráva. Opravovat se tam tedy nemá co. Body S7 o rozdělení dávky to nijak neoslabuje.
+**Dokumenty jsou čtyři, ne tři. Verze 1.1 to popřela a mýlila se.** Tvrdil jsem, že dokument sledování o dobíhajícím oboru nemluví, protože má sedm oddílů a čtyři otevřené otázky. To platí o **verzi 1.0 na větvi `feat/maturita-srozumitelne`**, kde jsem ho četl. Živá verze je ale **2.1 z 15. 9. 2026 na větvi `docs/sledovani-skol-a-oboru`** (12 oddílů, 5 otevřených otázek) a všechny tři pasáže v ní jsou doslova. Kanonická je ta novější — odkazuje se na ni i [návrh novinek](novinky-k-prijimackam-2027.md) včetně čísel oddílů. Oponentura měla v kole 1 pravdu a kolo 2 to doložilo.
+
+**Procesní poučení, které z toho plyne.** Ověřuje-li se tvrzení o dokumentu, uvádí se **větev, verze a commit**, ne jen název souboru. Záměna v1.0 a v2.1 je přesně ten druh chyby, který projekt jinde řeší registrem období: soubor téhož jména může nést různá data podle toho, odkud se čte. Doklady v tomto návrhu proto nově uvádějí commit.
 
 **D4b, zobrazení, svázané s mřížkou.** Až mřížka vznikne:
 
@@ -349,13 +395,15 @@ D4 nový ukazatel nezavádí; `dobihajiciObor` je příznak, ne veličina. Patř
 Po oponentuře zůstávají otevřené **dvě**; ostatní čtyři se shodou návrhu a oponentury uzavřely a jsou vypsané v oddílu 9.
 
 1. **Přepnout data uchazečů na předběžný ročník 2026, nebo čekat na finální revizi v květnu 2027?** Návrh i oponentura doporučují přepnout. Zbývá potvrdit zadavatelem, protože je to jediné rozhodnutí, které mění čísla na webu.
-2. **Co s mrtvým průvodcem** (`GuidedJourneyWizard`)? Smazat, nebo před oživením převést porovnání bodů na pásma přijetí? Vyplynulo z ověření S4 a v návrhu v1.0 to nebylo (oddíl 4, D1 krok 3).
+2. **Co s `min_body` a jeho mrtvými konzumenty?** Smazat komponenty, které ho umí zobrazit (`MojeSanceClient`, adresář `guided/`, `page.v1_original.tsx`, mrtvé funkce v `SchoolDetailClient`), nebo je před oživením převést na pásma přijetí? Otázka je přejmenovaná podle kola 2 oponentury: průvodce je jen jeden z šesti konzumentů a ne největší (oddíl 4, D1 krok 3).
 
 **Uzavřeno bez dalšího rozhodování:** graf priorit se ruší ve prospěch údaje o složení třídy; opravy textů o dobíhajícím oboru se dělají hned jako D4a; D2 jde před D3; krajová míra nezaměstnanosti se zamítá; zjištění se do soupisu zdrojů zapisují hned.
 
-## 9. Vypořádání oponentury v1.0
+## 9. Vypořádání oponentury
 
-[Oponentura](oponentura-navrh-nepouzitych-dat-2027.md) přepočítala zdrojová čísla návrhu a vznesla sedm sporných bodů. **Pět se přijímá, dva se měřením nepotvrdily.** Oponentura zároveň doměřila jednu věc, kterou návrh opomněl, a vyšla v jeho prospěch: korelace ukazatele D3 s podílem přijatých ze soutěžících je −0,224, takže to není převyprávěná obtížnost přijetí.
+### Kolo 1 (oponentura v1.0)
+
+Oponentura přepočítala zdrojová čísla návrhu a vznesla sedm sporných bodů. **Šest se přijímá, jeden se měřením nepotvrdil.** (Verze 1.1 uváděla „pět přijato, dva nepotvrzeny“; S7 se v kole 2 ukázal jako platný, viz N1.) Oponentura zároveň doměřila jednu věc, kterou návrh opomněl, a vyšla v jeho prospěch: korelace ukazatele D3 s podílem přijatých ze soutěžících je −0,224, takže to není převyprávěná obtížnost přijetí.
 
 | # | Námitka | Vypořádání | Kde |
 |---|---|---|---|
@@ -365,9 +413,23 @@ Po oponentuře zůstávají otevřené **dvě**; ostatní čtyři se shodou náv
 | **S4** | D1 krok 2 skrývá rozhodnutí o `min_body` v průvodci a odporuje si se zamítnutím sloupců 72–86 | **přijato v jádru, opraveno ve dvou faktech.** Skryté rozhodnutí tam skutečně bylo a D1 má nově samostatný krok 3. Ověření ale ukázalo, že (a) `min_body` **není** `jpz_min_actual`, je to jiné pole na jiné škále, které nepočítá žádný skript, takže oprava enrichu se ho netýká, a (b) průvodce **není nikde v aplikaci použitý** a citované věty nejsou ani v buildu, takže to není „zobrazovaná chyba dnešního webu“, ale mrtvý kód. Rozpor s tabulkou 1 tím mizí: D1 se týká `jpz_min_actual`, ne bodového minima v průvodci | D1 kroky 2–3 |
 | **S5** | Tvrzení „rok nikde v kódu napevno není“ je přehnané | **přijato, a rozsah je větší, než oponentura uvedla.** 13 přístupů `data['RRRR']` v `data.ts`, 11 dalších řádků jinde a zhruba 101 uživatelských textů s letopočtem ve 36 souborech. Věta v 2.1 zúžena na jmenované čtečky a sweep zařazen do D3 | 2.1, D3 |
 | **S6** | Čísla o dobíhajícím oboru nejsou doložená skriptem; oponentura měří 754 místo 723 | **přijato v požadavku, rozpor rozhodnut.** Doklad vzniká `scripts/dobihajici-obory.py` → `docs/podklady/dobihajici-obory.json`. Rozdíl 723/754 je definiční: oponentura zahrnula druh E00, tedy vyšší odborné školy. **Přesný join vychází na nulu při všech třech definicích včetně varianty bez filtru druhu**, takže spor o jednotku závěr nemění | 2.2 |
-| **S7** | D4 stojí na neimplementované mřížce; opravy se mají dotknout čtyř dokumentů | **přijato v jádru, čtvrtý dokument vyvrácen.** Dávka rozdělena na D4a (opravy textů, hned) a D4b (zobrazení, až s mřížkou). Čtvrtým dokumentem ale oponentura jmenovala sledování škol, oddíl 9 a otázku 5 — dokument má sedm oddílů a čtyři otázky a slova „dobíhající“, „zavírá“ ani „zaniká“ v něm nejsou ani jednou. Opravují se tedy tři dokumenty | D4 |
+| **S7** | D4 stojí na neimplementované mřížce; opravy se mají dotknout čtyř dokumentů | **přijato celé.** Dávka rozdělena na D4a (opravy textů, hned) a D4b (zobrazení, až s mřížkou). Verze 1.1 čtvrtý dokument odmítla a **mýlila se**: četla sledování škol ve verzi 1.0 na aktuální větvi, kdežto živá je v2.1 na větvi `docs/sledovani-skol-a-oboru`, kde jsou všechny tři citované pasáže doslova. Opraveno v kole 2, viz N1 | D4a |
 
-**Stanoviska k otevřeným otázkám** se přijímají všechna: přepnout na rok 2026 (s podmínkou S4), zrušit graf priorit a zavedení podmínit testem, opravit texty hned, **D2 před D3**, absolventy uzavřít větou a krajovou míru **zamítnout**, zjištění zapsat do soupisu zdrojů hned. U dvou z nich návrh postup upřesňuje:
+### Kolo 2 oponentury (v2.0)
+
+Kolo 2 přepočítalo proti-důkazy verze 1.1 a **všechny je potvrdilo** — eta² 0,0834, `min_body` ≠ `jpz_min_actual`, mrtvý průvodce, reprodukovatelnost dokladu, 13 přístupů letopočtů — a stáhlo vlastní formulaci „zobrazovaná chyba dnešního webu“. Vzneslo tři nové body:
+
+| # | Námitka | Vypořádání | Kde |
+|---|---|---|---|
+| **N1** | „Vyvrácení“ čtvrtého dokumentu četlo starou verzi sledování škol | **přijato celé; verze 1.1 se mýlila.** Živá verze je v2.1 z 15. 9. 2026 na větvi `docs/sledovani-skol-a-oboru` (commit `19dbcf7`, 12 oddílů, 5 otevřených otázek) a všechny tři citované pasáže jsou v ní doslova. Četl jsem v1.0 na aktuální větvi. D4a má nově **čtyři dokumenty** a návrh přijímá procesní pravidlo uvádět u ověření větev, verzi a commit | D4a |
+| **N2** | Rozhodnutí o `min_body` je poddimenzované, údaj se renderuje na `/moje-sance` a jinde | **přijato v jádru, opraveno v dopadu.** Inventura šesti konzumentů potvrzuje, že se verze 1.1 zastavila brzy. Ale **na žádné veřejné adrese se `min_body` nezobrazuje**: `/moje-sance` je 307 přesměrování na `/simulator`, komponenta není v buildu a obě API vracejí `null`. Riziko je přesto reálné, protože kód by po zrušení přesměrování vypsal zkopírovaná loňská čísla pod chybným popiskem. Rozhodnutí proto zesíleno z „zapsat do slovníku“ na **„zapsat a odstranit mrtvé konzumenty“**; otevřená otázka 2 přejmenována | D1 krok 3 |
+| **N3** | Test D3 má obsahovat školu se smíšenými typy studia | **přijato celé.** Argument, že celoplošných 8,3 % nechrání konkrétní školu, je správný: u Machara je mezera mediánů mezi gymnáziem a lyceem 0,14, tedy na úrovni vnitroskupinové odchylky. Test má nově dvě místa a obě musí projít | D3 krok 1 |
+
+**Drobnosti kola 2** přijaty všechny tři: slovník u *Obtížnosti přijetí slovy* dostane větu, že datové pole nese hodnoty i pod prahem a práh je pravidlo zobrazení; doklad nově sám uvádí počet unikátních dvojic s rozpisem (**23**, ne 20 — 29 klíčů vzniká tím, že pět dvojic má víc nabídek); sweep letopočtů dostane kontrolní seznam a grepový test v CI se seznamem povolených výjimek.
+
+### Stanoviska k otevřeným otázkám (kolo 1)
+
+Přijímají se všechna: přepnout na rok 2026 (s podmínkou S4), zrušit graf priorit a zavedení podmínit testem, opravit texty hned, **D2 před D3**, absolventy uzavřít větou a krajovou míru **zamítnout**, zjištění zapsat do soupisu zdrojů hned. U dvou z nich návrh postup upřesňuje:
 
 - **Dvojí implementace obtížnosti** (stanovisko 4): oponentura doporučuje odstranit pole z JSON. To ale rozbije `scripts/rozbor-podminek-a-poradi.py`, který ho čte, a hlavně práh deseti soutěžících je podle slovníku **pravidlo zobrazení, ne součást definice**. Navrhuji proto ponechat výpočet v generátoru a nechat TypeScript pole číst a uplatňovat nad ním jen práh; zůstane jedna definice a jedno místo, kde se rozhoduje o zobrazení.
 - **Drobnost o kapacitě** (oddíl 4 oponentury): tvrzení „z 723 dobíhajících záznamů má kapacitu 0 jen 5“ je po sjednocení metodiky potvrzené — platí pro definici C00 + D00, kterou doklad uvádí výslovně.
@@ -376,5 +438,6 @@ Po oponentuře zůstávají otevřené **dvě**; ostatní čtyři se shodou náv
 
 | Verze | Změna |
 |---|---|
+| 1.2 | Vypořádáno kolo 2 oponentury. **N1 přijat a verze 1.1 opravena:** tvrzení, že dokument sledování škol o dobíhajícím oboru nemluví, četlo verzi 1.0 na aktuální větvi, kdežto živá je v2.1 na větvi `docs/sledovani-skol-a-oboru`; D4a má čtyři dokumenty a návrh přijímá pravidlo uvádět u ověření větev, verzi a commit. **N2 přijat v jádru, opraven v dopadu:** inventura šesti konzumentů `min_body` potvrdila, že se v1.1 zastavila brzy, ale na veřejné adrese se údaj nezobrazuje (`/moje-sance` je přesměrování, API vracejí `null`); rozhodnutí zesíleno na odstranění mrtvých konzumentů. **N3 přijat:** test D3 probíhá i na škole se smíšenými typy. Drobnosti: slovník dostane větu o prahu jako pravidle zobrazení, doklad uvádí unikátní dvojice (23, ne 20), sweep letopočtů dostane test v CI. |
 | 1.1 | Vypořádána oponentura v1.0: přijato S2, S3, S5, S6 a S7 v jádru, S1 a S4 částečně. Doložen skript `scripts/dobihajici-obory.py` a s ním rozhodnut spor 723/754 (definiční rozdíl o druh E00; nula platí při všech definicích). Změřeno, že typ studia vysvětluje jen 8,3 % rozptylu, takže zákaz srovnání napříč typy se nahrazuje povinností typ pojmenovat. D3 přeřazeno za D2 a test srozumitelnosti předřazen zápisu do slovníku. Rozdělení ve slovníku rozepsáno po skupinách včetně nástavby. Zjištěno, že `min_body` není `jpz_min_actual` a že průvodce, o který se opírá S4, je mrtvý kód. Krajová míra nezaměstnanosti zamítnuta. Vyvráceno, že o dobíhajícím oboru mluví dokument sledování škol. |
 | 1.0 | První návrh. Zjištěno, že data uchazečů 2026 jsou převzatá a chybí jen přepnutí registru; že dobíhající obor se netýká ani jedné z 3 091 nabídek a jeho dokumentovaná role je nepravdivá; že přijatí podle priority nesou vlastní informaci, web je už ukazuje ze starší revize katalogu s rozdílem u 315 nabídek, a rozpor dvou schválených dokumentů se řeší přesunem do jiného bloku; že obtížnost přijetí má dvě neshodné implementace; a že na otázku o absolventech nelze odpovědět ani ze zdrojů mimo projekt, protože jmenovatel odmítá jako nevěrohodný sám MŠMT. |

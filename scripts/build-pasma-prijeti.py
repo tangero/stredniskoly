@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import collections
 import json
+import statistics
 from pathlib import Path
 
 import openpyxl
@@ -237,6 +238,11 @@ def main() -> None:
             "min_prijaty_percentil": round(percentil(rozdeleni, min(prijati)), 1),
             # obor s víc zaměřeními sdílí jeden klíč, hranice je pak rozmazaná
             "vice_zamereni": zamereni.get(klic, 1) > 1,
+            # Medián přijatých: u šikmého rozdělení vypovídavější než průměr,
+            # který pár výborných výsledků táhne nahoru. Jen při aspoň deseti
+            # přijatých, stejně jako nejnižší přijatý; níž je to údaj o jednotlivcích.
+            **({"median_prijatych": round(statistics.median(prijati), 1)}
+               if len(prijati) >= MIN_PRIJATYCH else {}),
             "talentova_zkouska": klic.split("_")[1].startswith(TALENTOVE_SKUPINY),
             "typ": typy.get(klic),
         }

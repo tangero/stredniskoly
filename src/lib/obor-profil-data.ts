@@ -3,6 +3,7 @@ import { getSouhrnNabidky, nabidkyVeSkupineKraje, souhrnOboru, type SouhrnRocnik
 import { getKontextPrihlasek, type KontextPrihlasek } from '@/lib/kontext-prihlasek';
 import { getPasmaPrijeti, rokPasemPrijeti, type PasmaPrijetiObor } from '@/lib/pasma-prijeti';
 import { getDruheKolo, type DruheKoloNabidky } from '@/lib/druhe-kolo';
+import { verzeObdobi } from '@/lib/stav-datovych-sad';
 import { getWebSkoly } from '@/lib/skoly-web';
 import { createSlug } from '@/lib/utils';
 import {
@@ -49,6 +50,8 @@ export interface ProfilOboruData {
   poradiZajem: PoradiVKraji | null;
   poradiVysledky: PoradiVKraji | null;
   pasma: { rok: number; data: PasmaPrijetiObor } | null;
+  /** Verze dat o uchazečích z registru; nese ji jen předběžný ročník. */
+  verzeUchazecu: string | null;
   kontext: { rok: number; data: KontextPrihlasek; vys: OborNaPrihlasce[]; niz: OborNaPrihlasce[] } | null;
   druheKolo: DruheKoloNabidky | null;
   web: string | null;
@@ -110,9 +113,10 @@ async function poradi(rok: number, kraj: string, skupina: string, klic: string, 
 export async function getProfilOboru(programId: string, zamereni: string | undefined, redizo: string): Promise<ProfilOboruData | null> {
   const souhrn = await getSouhrnNabidky(programId);
   if (!souhrn) return null;
-  const [rokPasem, kontextVysledek, druheKolo, web, extrakce, inspis, nazvy] = await Promise.all([
+  const [rokPasem, kontextVysledek, druheKolo, web, extrakce, inspis, nazvy, verzeUchazecu] = await Promise.all([
     rokPasemPrijeti(), getKontextPrihlasek(programId), getDruheKolo(programId, zamereni), getWebSkoly(redizo),
     getExtractionsByRedizo(redizo), getInspisDataByRedizo(redizo), nazvyOboru(),
+    verzeObdobi('cermat-uchazeci-kolo1'),
   ]);
   const pasmaData = rokPasem ? await getPasmaPrijeti(programId) : null;
 
@@ -162,6 +166,7 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
     poradiZajem,
     poradiVysledky,
     pasma: rokPasem && pasmaData ? { rok: rokPasem, data: pasmaData } : null,
+    verzeUchazecu,
     kontext,
     druheKolo,
     web,

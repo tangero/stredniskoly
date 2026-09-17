@@ -1,0 +1,66 @@
+{
+ "zdroj_skriptu": "scripts/validate-pasma-prijeti.py --rocniky",
+ "populace": "obory s povinnou jednotnou zkouškou, stejně jako data na webu",
+ "rocniky": [
+  2025,
+  2026
+ ],
+ "soubory": {
+  "2025": "PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx",
+  "2026": "PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx"
+ },
+ "dolni_mez_populace_aspon_10_prijatych_v_obou_letech": {
+  "n": 2345,
+  "korelace": 0.879,
+  "median_abs_zmeny": 5.0,
+  "podil_zmena_nad_10_pct": 16.6,
+  "podil_zmena_nad_20_pct": 1.7,
+  "prumer_posunu": 1.49,
+  "median_posunu": 1.0,
+  "posun_dolu_pct": 37.0,
+  "posun_nahoru_pct": 55.8
+ },
+ "dolni_mez_jako_percentil": {
+  "n": 2345,
+  "korelace": 0.883,
+  "median_abs_zmeny": 5.8,
+  "podil_zmena_nad_10_pct": 31.8,
+  "podil_zmena_nad_20_pct": 9.1,
+  "median_posunu_pb": -0.11
+ },
+ "celostatni_median_uchazecu": {
+  "2025": 46.0,
+  "2026": 49.0
+ },
+ "meze_populace_aspon_10_prijatych_a_5_odmitnutych_v_obou_letech": {
+  "dolni_mez": {
+   "n": 1173,
+   "korelace": 0.899,
+   "median_abs_zmeny": 5.0,
+   "podil_zmena_nad_10_pct": 14.7,
+   "podil_zmena_nad_20_pct": 1.3
+  },
+  "horni_mez": {
+   "n": 1173,
+   "korelace": 0.865,
+   "median_abs_zmeny": 5.0,
+   "podil_zmena_nad_10_pct": 17.1,
+   "podil_zmena_nad_20_pct": 1.7
+  },
+  "sirka_pasma": {
+   "n": 1173,
+   "korelace": 0.719,
+   "median_abs_zmeny": 3.0,
+   "podil_zmena_nad_10_pct": 10.6,
+   "podil_zmena_nad_20_pct": 1.6
+  },
+  "median_sirky_2026": 6.0,
+  "rozhodl_test": {
+   "n": 1173,
+   "korelace": 0.672,
+   "median_abs_zmeny": 0.01,
+   "podil_zmena_nad_10_pct": 0.0,
+   "podil_zmena_nad_20_pct": 0.0
+  }
+ }
+}

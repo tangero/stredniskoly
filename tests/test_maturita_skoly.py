@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -160,12 +161,33 @@ class TestLinkaMaturita(unittest.TestCase):
             stazene.append(url)
             raise OSError("404")
 
+        # Stávající výstup ukazuje na neexistující soubor v dočasném adresáři, aby se
+        # pojistka neporovnávala s ostrým public/maturita_skoly.json.
         vysledek = self.zpracovani.zpracuj_maturitu(
-            self.uloha("https://example.test/MZ2026j_SC_skolobory.xlsx"), soubor, self.dir, {}, stahni_fn=stahni)
+            self.uloha("https://example.test/MZ2026j_SC_skolobory.xlsx"), soubor, self.dir, {}, stahni_fn=stahni,
+            stavajici=self.dir / "neexistuje.json")
         self.assertEqual(len(stazene), 3)
         self.assertIn("MZ2023j_", stazene[0])
         self.assertEqual(list(vysledek["predani"].values()), ["public/maturita_skoly.json"])
         self.assertIn("v roce 2026 škol", vysledek["srovnani"]["popis"])
+        self.assertIn("na webu zatím nic", vysledek["srovnani"]["popis"])
+
+    def test_pojistka_zastavi_podezrele_maly_vystup(self):
+        """Když nový soubor nese zlomek škol proti webu, úloha musí selhat, ne tiše předat."""
+        soubor = self.dir / "MZ2026j_SC_skolobory.xlsx"
+        zapis_soubor(soubor, skupina_gy8())
+        # Základ tváříci se jako web s mnoha školami; nový soubor jich má patnáct.
+        zaklad = self.dir / "zaklad.json"
+        zaklad.write_text(json.dumps({
+            "meta": {"nejnovejsi_rok": 2026, "roky": [2026]},
+            "skupiny": {},
+            "skoly": {f"6000{i:05d}": {"roky": {"2026": {"GY8": {"cj": {"took": 40}}}}} for i in range(200)},
+        }, ensure_ascii=False), encoding="utf-8")
+
+        with self.assertRaisesRegex(ValueError, "podezřele málo škol"):
+            self.zpracovani.zpracuj_maturitu(
+                self.uloha("https://example.test/MZ2026j_SC_skolobory.xlsx"), soubor, self.dir, {},
+                stahni_fn=lambda url, cil: (_ for _ in ()).throw(OSError("404")), stavajici=zaklad)
 
     def test_stav_po_podzimu_se_nepreda(self):
         vysledek = self.zpracovani.zpracuj_maturitu(
