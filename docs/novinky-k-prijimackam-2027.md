@@ -1,6 +1,6 @@
 # Novinky k přijímačkám e-mailem
 
-Verze 1.7 · 17. 9. 2026 · Návrh k rozhodnutí, nic není implementované. Vypořádána [oponentura v1.0](oponentura-novinky-k-prijimackam-2027.md) (oddíl 12) a [oponentura codexu](podklady/oponentura-codex-novinky-2027.md), kola 1 až 5 (oddíly 13 až 17). **Oprava podle kola 5 už oponenturou neprošla**, protože dohodnutý počet pěti kol je vyčerpán. **Závazný implementační kontrakt je oddíl 6**; oddíly 12 až 16 zaznamenávají cestu k němu a starší formulace v nich jsou historické.
+Verze 1.8 · 17. 9. 2026 · Návrh k rozhodnutí, nic není implementované. Vypořádána [oponentura v1.0](oponentura-novinky-k-prijimackam-2027.md) (oddíl 12) a [oponentura codexu](podklady/oponentura-codex-novinky-2027.md), kola 1 až 5 (oddíly 13 až 17). **Oddíl 6 zadavatel schválil 17. 9. 2026** ve všech pěti částech, včetně volby databáze Neon. Oprava podle kola 5 (číslo pokusu u dávky, oddělené účtování dávky a výsledků položek, rezervace kvóty v období možného odeslání) ale **oponenturou neprošla**, protože dohodnutý počet pěti kol je vyčerpán. **Závazný implementační kontrakt je oddíl 6**; oddíly 12 až 16 zaznamenávají cestu k němu a starší formulace v nich jsou historické.
 
 Návštěvník webu zadá e-mail a během přijímacího řízení dostává s předstihem připomínky termínů a pokyny, co je potřeba připravit. Na rozdíl od [sledování škol a oborů](sledovani-skol-2027.md) (větev `docs/sledovani-skol-a-oboru`, v2.1) dostanou všichni odběratelé téhož ročníku a druhu studia stejný obsah. Návrh navazuje na [kalendář přijímaček](aktualizace-kalendar-data-2027.md) (`src/data/admissions-2027.json`, sada `msmt-harmonogram` v registru na větvi `feat/titulka-nabidka-oboru`) a na [analýzu návštěvnosti](analyza-navstevnosti-2026.md).
 
@@ -137,11 +137,11 @@ Uchazeči o víceleté gymnázium mají 11 až 13 let, uchazeči po 9. třídě 
 
 ## 6. Úložiště a rozesílání
 
-**Tento oddíl je závazný implementační kontrakt.** Oddíly 12 až 16 zaznamenávají, jak se k němu návrh dopracoval; kde se s nimi rozchází, platí oddíl 6.
+**Tento oddíl je závazný implementační kontrakt a zadavatel ho schválil 17. 9. 2026** v celém rozsahu: volba úložiště, tři druhy adresáta a tři účely žádosti, stavy a jejich přechody, tabulky i průběh. Oddíly 12 až 17 zaznamenávají, jak se k němu návrh dopracoval; kde se s nimi rozchází, platí oddíl 6.
 
 | Varianta | Rozhodnutí | Proč |
 |---|---|---|
-| **B. Databáze Neon Postgres a dávky transakčních e-mailů** | **doporučeno** | omezení počtu potvrzení na adresu, jednorázovost žádosti, fronta odeslání a doklady souhlasu potřebují úložiště tak jako tak; jedno úložiště souhlasů pro novinky i sledování, jedna cesta k mazání; bezplatný Neon, Resend už používáme |
+| **B. Databáze Neon Postgres a dávky transakčních e-mailů** | **schváleno 17. 9. 2026** | omezení počtu potvrzení na adresu, jednorázovost žádosti, fronta odeslání a doklady souhlasu potřebují úložiště tak jako tak; jedno úložiště souhlasů pro novinky i sledování, jedna cesta k mazání; bezplatný Neon, Resend už používáme |
 | A. Kontakty a rozesílky v Resendu | zavrhnout | argument „bez databáze“ neplatí; druhé úložiště souhlasů s vlastním odhlašováním a pozdější převod dat; marketingový tarif je zdarma jen do 1 000 kontaktů, pak od 40 USD měsíčně za 5 000, tedy v nejsilnější sezóně |
 | C. Samostatná služba na newslettery (Ecomail, Mailchimp) | zavrhnout | další zpracovatel osobních údajů, texty mimo repozitář |
 | D. Seznam v repozitáři nebo v GitHub issues | zavrhnout | repozitář je veřejný |
@@ -472,7 +472,11 @@ První e-mail, který musí odejít, je „Školy vyhlašují kritéria“ **12.
 4. **Jarní importér kapacit a přihlášek:** kdo a kdy ho napíše? Bez něj zpráva o nové nabídce oborů v N3 nemá co oznámit.
 5. **Zapojení portálu do společného rozpočtu:** převést `portal-email.ts` na společnou frontu a účtování (navrženo v N4), nebo nechat rezervu jen jako odhad?
 
-**Rozhodnuto 17. 9. 2026:** režim analytiky. Matomo má schválení a smí měřit bez souhlasové lišty, takže otázka z verze 1.6 padá a novinky na ni nečekají (oddíl 9).
+**Rozhodnuto 17. 9. 2026:**
+
+- **Úložiště: Neon Postgres** s vlastní frontou odeslání (varianta B v oddílu 6). Kontakty a rozesílky Resendu se nepoužijí.
+- **Oddíl 6 schválen jako celek**, tedy i tři druhy adresáta, stavy a jejich přechody, tabulky a průběh odeslání.
+- **Režim analytiky:** Matomo má schválení a smí měřit bez souhlasové lišty, takže otázka z verze 1.6 padá a novinky na ni nečekají (oddíl 9).
 
 Po oponenturách navrženo a čeká na potvrzení zadavatele: název „Termíny přijímaček e-mailem“, tykání, odkazy s `?zdroj=novinky`, plošně jen velké přijímačkové změny dat a zatím bez kraje ve formuláři.
 
@@ -646,7 +650,7 @@ Kolo 5 bylo poslední z dohodnutých pěti. Ověřilo verzi 1.5 a **odstraněné
 
 ### Co zbývá udělat před realizací
 
-1. **Nechat oddíl 6 zkontrolovat** — oprava podle kola 5 je jediná část návrhu bez oponentury.
+1. **Nechat zkontrolovat opravu podle kola 5** — tři body v oddílu 6 (číslo pokusu u dávky, oddělené účtování dávky a výsledků položek, rezervace kvóty v období možného odeslání) jsou jediná část návrhu bez oponentury. Obsah oddílu 6 je jinak schválený.
 2. Rozhodnout otevřené otázky z oddílu 11, hlavně právní kontrolu; režim analytiky je od 17. 9. 2026 rozhodnutý (Matomo má schválení).
 3. Teprve pak N0.
 
@@ -654,6 +658,7 @@ Kolo 5 bylo poslední z dohodnutých pěti. Ověřilo verzi 1.5 a **odstraněné
 
 | Verze | Změna |
 |---|---|
+| 1.8 | Zadavatel schválil oddíl 6 v celém rozsahu a jako úložiště potvrdil Neon Postgres s vlastní frontou odeslání. Ke kontrole zbývá jen oprava podle kola 5. |
 | 1.7 | Režim analytiky rozhodnut: Matomo má schválení a smí měřit bez souhlasové lišty (potvrzeno zadavatelem 17. 9. 2026). Otevřená otázka na analytiku padá, N0 ji už neobsahuje a v oddílu 9 zůstává jen podmínka, že odběr musí fungovat i při zablokovaném měření. |
 | 1.6 | Vypořádána oponentura codexu, kolo 5 (poslední): přijaty tři blokační body a tři upřesnění. Dávka má číslo pokusu a rezervace je klíčovaná podle pokusu, takže opětovné použití dávky nekoliduje s vypořádanou rezervací. Účtování dávky je oddělené od doplňování výsledků jednotlivých položek a obnova se řídí chybějícími výsledky, ne počtem webhooků. Rezervace kvóty musí platit v období, ve kterém může dojít k odeslání, i při opakování přes přelom měsíce nebo dne. Doplněn rozhodný okamžik třicetidenní lhůty výzvy, přesná retence adresy v těle neuzavřené dávky a rozlišení důvodů prohraného přechodu B. Tato verze už oponenturou neprošla. |
 | 1.5 | Vypořádána oponentura codexu, kolo 4: přijato všech šest blokačních bodů a pět dalších. Každý přechod stavu je podmíněná aktualizace s jediným vítězem: odhlášení a předání soutěží o hranici, transakce B kontroluje složení dávky, transakce C vypořádá rezervaci jen při vítězném přechodu. Evidence odeslání se neruší kaskádou, ale odpojuje. Obnova pokrývá i dávku uvízlou v `pripravena` a před každým opakováním znovu ověřuje platnost zprávy. Strop kvóty drží jediný měsíční řádek pro všechny e-maily novinek. Žádost o potvrzení má účel `novinky`, `kalendar` nebo `novy_rocnik` s vlastní platností. Potlačení adresy se vyhodnocuje podle adresy, ne podle položky. Webhooky neukládají adresu. Oddíl 6 je označen za závazný kontrakt. |
