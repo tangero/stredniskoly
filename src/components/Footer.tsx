@@ -2,12 +2,16 @@
 
 import Link from 'next/link';
 import { AKTUALNI_VERZE } from '@/lib/changelog';
+import { OdberPaticka } from '@/components/novinky/OdberPaticka';
 
 export function Footer() {
   return (
     <footer style={{ backgroundColor: '#f2f5f7' }} className="mt-auto">
       <div className="max-w-7xl mx-auto px-4 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+          {/* Sloupec 0: odběr termínů e-mailem (zobrazí se, jen když je zapnutý) */}
+          <OdberPaticka />
+
           {/* Sloupec 1 */}
           <div>
             <h3 className="font-semibold mb-3 text-sm" style={{ color: '#28313b' }}>O projektu</h3>
@@ -36,6 +40,8 @@ export function Footer() {
                 { href: '/dostupnost', label: 'Školy dostupné MHD' },
                 { href: '/regiony', label: 'Přehled regionů' },
                 { href: '/jak-vybrat-skolu', label: 'Jak vybrat a uspět' },
+                { href: '/novinky', label: 'Termíny e-mailem' },
+                { href: '/ochrana-osobnich-udaju', label: 'Ochrana osobních údajů' },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="no-underline transition-colors hover:opacity-80" style={{ color: '#0074e4' }}>
