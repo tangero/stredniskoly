@@ -131,7 +131,7 @@ Po P7 následuje uložení mezi zvažované, kroky V1–V4 z oddílu 4.3.
 | Školní agregáty JPZ 2017–2023 | **až po stažení**, P8 |
 | Položková data JPZ | zamítnuto: pro graf stránky nevypovídají, nezpracovaná |
 | Důvod nepřijetí jednotlivce | zamítnuto: duplicitní se souhrnem |
-| Dobíhající obor z rejstříku | zamítnuto pro graf, patří do textu oboru a do portálu pro školy |
+| Dobíhající obor z rejstříku | zamítnuto pro graf; do textu patří **jen u nabídky, která v zobrazeném ročníku chybí**, a to jako rozlišení „obor se už nenabírá“ od dvouletého cyklu. Upřesněno 17. 9. 2026: varování před přihláškou by se netýkalo ani jedné z 3 091 nabídek. V mřížce „Nabídka oborů v čase“ (oddíl 4.2) je to výplň stavu „bez dat“ |
 | Ředitel a délka funkce | zamítnuto: osobní údaj bez doložené vypovídací hodnoty |
 
 ## Historie

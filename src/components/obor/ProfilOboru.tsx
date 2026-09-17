@@ -301,6 +301,13 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
                 Přijatí v roce {rok} měli v jednotné zkoušce průměrné umístění kolem <b className="text-[#16325c]">{Math.round(r.prumerne_umisteni_prijatych)}. percentilu</b> celé země; percentil říká, kolik ze 100 uchazečů v celé zemi mělo stejný nebo horší výsledek.
                 {r.cj_prijati !== undefined && r.ma_prijati !== undefined && <> V bodech: čeština průměrně {cislo(r.cj_prijati, 1)} a matematika {cislo(r.ma_prijati, 1)} z 50.</>}
                 {pasma?.median_prijatych !== undefined && <> Polovina přijatých měla dohromady <b className="text-[#16325c]">{cislo(pasma.median_prijatych, 1)} bodů</b> nebo míň.</>}
+                {r.prumerne_umisteni_uchazecu !== undefined && (
+                  <> Všichni, kdo se sem hlásili a zkoušku konali, měli průměrné umístění {Math.round(r.prumerne_umisteni_uchazecu)}. percentilu
+                    {r.prumerne_umisteni_uchazecu < r.prumerne_umisteni_prijatych - 2
+                      ? <>, takže obor si z uchazečů vybíral ty s lepším výsledkem.</>
+                      : <>, tedy podobné jako přijatí.</>}
+                  </>
+                )}
               </p>
             ) : (
               <p className="text-[17px] text-slate-700">Výsledky přijatých v jednotné zkoušce pro tento obor nemáme.</p>

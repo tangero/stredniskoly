@@ -260,7 +260,9 @@ Odstraní míchání ročníků na stránce oboru a zaktualizuje pásma, souběh
 
 **Rozhodnout před začátkem:** přepnout na předběžná data, nebo počkat na finální revizi v květnu 2027? Doporučuji přepnout — rozdíl předběžné a finální verze byl u roku 2025 dvacet čtyři řádků ze 159 196 a míchání ročníků na jedné stránce je horší vada než neúplnost, kterou lze pojmenovat v patičce.
 
-### D2 — Napojit na web to, co už v souhrnech leží
+### D2 — Napojit na web to, co už v souhrnech leží — **hotovo 17. 9. 2026**
+
+Provedeno: **obtížnost přijetí má jednu definici** (počítá generátor, práh uplatňuje zobrazení; ověřeno, že se nezměnil ani jeden z 6 150 záznamů), **mrtvý export `percentilTlakuVeSkupine` odstraněn** a na stránku oboru přibylo **průměrné percentilové umístění uchazečů** vedle umístění přijatých. Dvojice čísel odpovídá na otázku, zda si obor z uchazečů vybírá: u 3 076 nabídek s oběma údaji se věta dělí zhruba půl na půl, takže rozlišuje. Slovník 1.23.
 
 **Pořadí změněno oponenturou: D2 jde před D3.** Argument je přijat — D2 odstraňuje dvě doložené chyby a povrchuje už schválené ukazatele, kdežto D3 zavádí nový ukazatel s nevyřízeným rizikem mylného čtení. Závislost mezi nimi žádná není.
 
@@ -304,7 +306,7 @@ Tím se vyřeší rozpor mezi grafy 1.0 a vrstvami 1.4: graf „Kdo se dostal po
 
 Ne jako varování. **Dávka se podle oponentury dělí na dvě části**, protože mřížka „Nabídka oborů v čase“, do které měl příznak jít, není implementovaná — zobrazení by tedy bylo v nepostavené funkci.
 
-**D4a, oprava textů, nezávislá a hotová hned.** Dokumenty dnes tvrdí mechanismus, který měření vyvrací:
+**D4a, oprava textů — hotovo 17. 9. 2026.** Dokumenty dnes tvrdí mechanismus, který měření vyvrací:
 
 | Dokument | Co tvrdí | Oprava |
 |---|---|---|

@@ -2,6 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { normalizeSchoolKey } from '@/lib/school-key';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
+import type { ZarazeniObtiznosti } from '@/lib/obor-profil';
 
 /**
  * Souhrny 1. kola za obory po ročnících, public/souhrny_kolo1.json.
@@ -29,7 +30,7 @@ export interface SouhrnRocniku {
   cj_prijati?: number;
   ma_prijati?: number;
   podil_prijatych_ze_soutezicich?: number;
-  zarazeni_obtiznosti?: string;
+  zarazeni_obtiznosti?: ZarazeniObtiznosti;
   prumerne_umisteni_prijatych?: number;
   prumerne_umisteni_uchazecu?: number;
   min_prijaty_percentil_souhrn?: number;
@@ -146,17 +147,3 @@ export async function souhrnOboru(redizoKkov: string, rok: number): Promise<Souh
   return nalezene.length === 1 ? nalezene[0] : null;
 }
 
-/**
- * Percentil tlaku prvních voleb ve srovnatelné skupině: podíl nabídek téhož ročníku
- * a skupiny s hodnotou menší nebo rovnou. Null pod MIN_NABIDEK_VE_SKUPINE.
- */
-export async function percentilTlakuVeSkupine(rok: number, skupina: string, hodnota: number) {
-  const { soubor } = await nacti();
-  const s = soubor.skupiny[String(rok)]?.[skupina];
-  if (!s || s.n < MIN_NABIDEK_VE_SKUPINE) return null;
-  const hodnoty = s.tlak_prvnich_voleb;
-  const pod = hodnoty.filter(v => v <= hodnota).length;
-  const stred = Math.floor(hodnoty.length / 2);
-  const median = hodnoty.length % 2 ? hodnoty[stred] : (hodnoty[stred - 1] + hodnoty[stred]) / 2;
-  return { percentil: Math.round((pod / hodnoty.length) * 100), n: s.n, median };
-}

@@ -157,7 +157,7 @@ Zajímavé sloupce JSON-LD, mimo adresu a názvy:
 | `platnostNaDobuNeurcitou` | časové omezení zápisu | hrozí zrušení školy | **ne** |
 | `skolyAZarizeni[].obory[].kod`, `.nazev` | obory zapsané v rejstříku | co škola smí učit | ano |
 | `skolyAZarizeni[].obory[].kapacita` | povolená kapacita oboru | kolik žáků smí mít | **ne**, používáme kapacitu z CERMATu |
-| `skolyAZarizeni[].obory[].dobihajiciObor` | obor se dobíhá | **zavírá škola tenhle obor** | **ne na webu**, jen v rešeršních skriptech |
+| `skolyAZarizeni[].obory[].dobihajiciObor` | obor se dobíhá | **doběhl tenhle obor, nebo ho škola letos jen nevypsala** | **ne na webu**, jen v rešeršních skriptech; párovat vždy i na formu a délku, viz oddíl 3 |
 | `skolyAZarizeni[].obory[].jazykOboru`, `.formaVzdelavani`, `.delkaVzdelavani` | parametry oboru | v jakém jazyce a jak dlouho | ano |
 | `skolyAZarizeni[].mistaVyuky[]` | kde se skutečně učí | kam bude dítě dojíždět | částečně |
 | `emaily` | kontakty | koho oslovit | **ne** |
@@ -300,7 +300,7 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 | Výsledky zkoušky **všech uchazečů** o obor v souhrnu | souhrny výsledků, sloupce 45–65 | průměr, minimum a maximum konkurence bez zpracování dat uchazečů | průměrné percentilové umístění **zpracováno 13. 9. 2026**; minimum a maximum zamítnuto, určuje je jediný uchazeč |
 | **Agregáty 2. kola** za obory | `PZ{rok}_kolo2_skolobory_*.xlsx` | „Loni tu bylo 2. kolo s 12 místy“ | **zapracovává se od 13. 9. 2026**, viz `docs/druhe-kolo.md` |
 | **Data uchazečů 2. kola** | `PZ{rok}_kolo2_uchazeci_prihlasky_vysledky.xlsx` | pásma přijetí ve 2. kole | zamítnuto pro 2. kolo: jen 133 oborů má ve 2. kole aspoň deset přijatých s výsledkem zkoušky |
-| **Dobíhající obor** | rejstřík, `dobihajiciObor` | „Škola tenhle obor zavírá.“ Varování před podáním přihlášky | používá se jen v rešeršních skriptech |
+| **Dobíhající obor** | rejstřík, `dobihajiciObor` | **ne varování před přihláškou**, ale rozlišení „obor se už nenabírá“ od „obor škola letos nevypsala“ u chybějící nabídky | používá se jen v rešeršních skriptech; role opravena 17. 9. 2026, viz níže |
 | **Web a kontakt školy** | rejstřík CSV, `WWW`, `Email 1`, `Telefon` | kam jít pro kritéria přijetí a termíny | `WWW` **používáno od 13. 9. 2026** (`skoly_web.json`); telefon a e-mail na web nepatří |
 | `jpz_prumer_actual`, `jpz_median` | katalog 2025 | medián říká víc než průměr, když je rozdělení šikmé | spočítané, nikdy nezobrazené |
 | `hard_facts.support_services` | extrakce inspekce | „Mají školního psychologa a doučování.“ | nezobrazeno |
@@ -308,6 +308,10 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 | Důvod nepřijetí u jednotlivce | data uchazečů, `ss*_duvod_neprijeti` | rozpad už máme z agregátu | duplicitní |
 | Platnost oboru v číselníku | AKKO, `platnostDo` | obor se ruší celostátně | nezobrazeno |
 | Ředitel a délka jeho funkce | rejstřík, `reditel` | stabilita vedení | sporná vypovídací hodnota |
+
+**Dobíhající obor neříká, co se od něj čekalo.** Do 17. 9. 2026 tu stálo, že příznak poslouží jako varování „škola tenhle obor zavírá“ před podáním přihlášky. Měření to vyvrátilo: proti snímku rejstříku k 30. 6. 2026 je **nula z 3 091 nabídek** 1. kola 2026 vedena jako dobíhající. Hrubý join na REDIZO a KKOV dá 29 zásahů, ale **všech 29 je falešných** — pokaždé dobíhá jiná forma nebo délka téhož oboru, typicky dálková nástavba vedle denní. Závěr platí i při nejširší definici druhu školy. Reprodukuje `python3 scripts/dobihajici-obory.py`, doklad `docs/podklady/dobihajici-obory.json`.
+
+Použitelná role je opačná: ze 723 dobíhajících záznamů středních škol se jich **722 v 1. kole 2026 nenabíralo v žádné formě**. Příznak tedy rozliší „obor už se nenabírá“ od „obor škola v tomto roce nevypsala“, což je přesně to, co chybí [dvouletému cyklu nabídky oboru](dvoulety-cyklus-nabidky-oboru.md). Dvě pravidla pro jakékoli použití: **párovat REDIZO + KKOV + forma + délka** (na hrubém klíči je chybovost 100 %) a používat **jen u nabídky, která v zobrazeném ročníku chybí**.
 
 **Duplicity, které je třeba srovnat.** `school_analysis.json` už nese `priority_pcts`, tedy podíl priorit v procentech, a `total_applicants`. Je to totéž, co od 13. 9. 2026 počítáme jako podíl prvních voleb, ale ze staršího zpracování. U 1 550 z 1 602 nabídek se `total_applicants` shoduje s `prihlasky`; rozdíl u zbytku vzniká tím, že data uchazečů neznají zaměření, takže sčítají všechna zaměření jednoho KKOV dohromady. Jako zdroj pravdy platí `prihlasky_priority` z agregátů CERMATu.
 

@@ -468,7 +468,7 @@ Bez S1 až S3 může stránka vzniknout s oddílem „Jak si škola vede“ jen 
 | Maturita: cizí jazyky zvlášť | **zavrhnout pro první verzi**; malé skupiny, samovýběr |
 | Maturita před rokem 2021 | **zavrhnout**; zlom metodiky 2020/2021 (návrh, §2.1) |
 | Školní agregáty JPZ 2017–2023 | **zavrhnout pro první verzi**; nestaženo, P8 v grafech |
-| Rejstřík `dobihajiciObor` | **použít**, S5 |
+| Rejstřík `dobihajiciObor` | **použít jinak, než S5 předpokládal** (opraveno 17. 9. 2026): ne jako varování před přihláškou, ale jako rozlišení „obor se už nenabírá“ od „obor škola letos nevypsala“ u nabídky, která v ročníku chybí. Měření: nula z 3 091 nabídek 2026 je dobíhající, hrubý join dá 29 falešných zásahů; párovat vždy i formu a délku. Doklad `docs/podklady/dobihajici-obory.json` |
 | Rejstřík `mistaVyuky` | **použít**, když se liší od sídla; sídlo není místo výuky (maturitní návrh, §7) |
 | Rejstřík `kapacita` oborů | **zavrhnout**; povolená kapacita není vypsaná místa, rodinu by mátla vedle kapacity z CERMATu |
 | Rejstřík `reditel`, `emaily`, CSV `Telefon` | **zavrhnout** (soupis, 2.4) |

@@ -13,6 +13,8 @@ export interface RocnikProVyklad {
   capacity_rejected?: number;
   conditions_not_met?: number;
   higher_priority?: number;
+  /** Zařazení ze souhrnů; nese hodnotu i pod prahem zobrazení, ten uplatní `zarazeniObtiznosti`. */
+  zarazeni_obtiznosti?: ZarazeniObtiznosti;
 }
 
 export type ZarazeniObtiznosti =
@@ -40,17 +42,23 @@ export function soutezicichUchazecu(r: RocnikProVyklad): number | null {
   return r.prijati + r.capacity_rejected;
 }
 
-/** Obtížnost přijetí slovy podle podílu přijatých ze soutěžících uchazečů. */
+/**
+ * Obtížnost přijetí slovy, jak ji smí zobrazit stránka.
+ *
+ * Veličinu počítá `scripts/build-souhrny-kolo1.py` do pole `zarazeni_obtiznosti`;
+ * tady se nad ní uplatní **jen pravidlo zobrazení**: pod deseti soutěžícími
+ * uchazeči by jediný uchazeč přehodil stupeň, takže se zařazení neukazuje.
+ *
+ * Dělba rolí je záměrná a slovník ji zapisuje: Python počítá, TypeScript
+ * rozhoduje, kdy se to ukáže. Do 17. 9. 2026 si zařazení počítala obě strany
+ * zvlášť a lišily se právě o tenhle práh.
+ */
 export function zarazeniObtiznosti(r: RocnikProVyklad): ZarazeniObtiznosti | null {
   const soutezici = soutezicichUchazecu(r);
   if (soutezici === null) return null;
   if (r.capacity_rejected === 0) return 'kapacita_nerozhodovala';
   if (soutezici < MIN_SOUTEZICICH_PRO_ZARAZENI) return null;
-  const podil = r.prijati! / soutezici;
-  if (podil < 1 / 3) return 'velmi_tezke';
-  if (podil < 1 / 2) return 'tezke';
-  if (podil < 2 / 3) return 'stredne_tezke';
-  return 'vetsina_uspela';
+  return r.zarazeni_obtiznosti ?? null;
 }
 
 const RADOVE = ['', '', 'druhý', 'třetí', 'čtvrtý', 'pátý', 'šestý', 'sedmý', 'osmý', 'devátý', 'desátý'];

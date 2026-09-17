@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.22 · 17. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.23 · 17. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -242,6 +242,8 @@ Slovní zařazení nabídky podle podílu přijatých ze soutěžících v jedno
 Prahy jsou zlomky, které se dají říct slovy (třetina, polovina, dvě třetiny), ne kvantily; vycházejí z otázky rodiče, ne z rozdělení. Mezi roky 2025 a 2026 zůstalo zařazení stejné u 48,6 % a posunulo se nejvýš o stupeň u 90,2 % nabídek s aspoň 20 soutěžícími, **proto se věta vždy doplňuje podílem a předchozím ročníkem**, například „zhruba každý čtvrtý; rok předtím skoro každý druhý“.
 
 Zařazení se nezobrazuje pod 10 soutěžícími (jeden uchazeč by přehodil stupeň) a u oborů s talentovou zkouškou se doplňuje větou, že rozhodovala i ona.
+
+**Práh je pravidlo zobrazení, ne součást definice.** Datové pole `zarazeni_obtiznosti` v `public/souhrny_kolo1.json` proto nese hodnotu **i pro obory pod prahem** a kdokoli ho čte přímo, musí práh uplatnit sám. Od 17. 9. 2026 platí dělba: veličinu počítá `scripts/build-souhrny-kolo1.py`, práh uplatňuje `zarazeniObtiznosti` v `src/lib/obor-profil.ts`. Do té doby si zařazení počítaly obě strany zvlášť a lišily se právě o tenhle práh; ověřeno, že sjednocení nezměnilo ani jeden z 6 150 zobrazovaných záznamů.
 
 **Není to hodnocení školy** a nesmí se používat k řazení škol. Nahrazuje zamítnutý index obtížnosti (oddíl 6) popisem jednoho ročníku, který jde ověřit ze zdroje. Podmínky školy mohou být hlavní překážkou i tam, kde kapacita nerozhodovala; proto se počet nesplněných podmínek uvádí vedle, kdykoli dosáhne počtu přijatých nebo 20 % přihlášek.
 
@@ -516,6 +518,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.23 | **Obtížnost přijetí má jednu definici** (17. 9. 2026): počítá ji generátor souhrnů, práh deseti soutěžících uplatňuje až zobrazení. Dosud existovaly dvě implementace, které se o práh lišily; sjednocení nezměnilo ani jeden z 6 150 zobrazovaných záznamů. Zapsáno, že datové pole nese hodnoty i pod prahem. |
 | 1.22 | **Medián JPZ přijatých zaveden jako ukazatel** (17. 9. 2026) a přesunut do `public/pasma_prijeti_{rok}.json`, kde vzniká ze stejného zdroje jako nejnižší přijatý a přepíná se s registrem. Nahrazuje pole `jpz_median` a `jpz_prumer_actual` ze starého katalogu, která pocházela z předběžné verze roku 2025 a z rozbitého `enrich_schools_data.py`, a na webu se nikdy nepoužila. Doloženo, že medián leží systematicky pod průměrem (mediánově o 1,1 bodu na 2 517 nabídkách roku 2026), takže průměr přeceňuje typického přijatého. Pole `cj_at_jpz_min`, `ma_at_jpz_min`, `cj_min_independent` a `ma_min_independent` zamítnuta: každé určuje jediný uchazeč a poslední dvě mohou pocházet od dvou různých lidí. |
 | 1.21 | **Doklady stability přepočítány na dvojici ročníků 2025 a 2026** (17. 9. 2026) před přepnutím sady `cermat-uchazeci-kolo1` na rok 2026. Výpočty se nemění, mění se doložená čísla. Míra *rozhodl test* vychází hůř než dřív (korelace 0,672 proti 0,725 na dvojici 2024–2025) a zařazení do tří kategorií se mění u 26 % oborů, což potvrzuje dosavadní rozhodnutí nezobrazovat ji jako číslo. Šířka pásma nejistoty 0,719 a mediánová šířka 6 bodů. Percentil nejnižšího přijatého 0,883 proti 0,879 u bodů; medián výsledku uchazečů stoupl ze 46 na 49 bodů, takže nejnižší přijatý v bodech stoupl o 1 bod, zatímco jeho percentil se nehnul. Doklad `docs/podklady/overeni-pasem-prijeti-2025-2026.json` počítá `scripts/validate-pasma-prijeti.py --rocniky 2025-2026`. |
 | 1.20 | **Srovnání s podobnými školami sjednoceno na jednu veličinu** (17. 9. 2026): střed, hodnota školy i osa grafu jsou v průměrném procentním skóru, tedy v tom, proti čemu se počítá zařazení; dřív se zobrazoval medián percentilů. Percentil dostal vlastní ukazatel Umístění maturantů v celé zemi, protože odpovídá na jinou otázku. |
