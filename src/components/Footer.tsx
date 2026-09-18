@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { AKTUALNI_VERZE } from '@/lib/changelog';
 
+
 export function Footer() {
   return (
     <footer style={{ backgroundColor: '#f2f5f7' }} className="mt-auto">
@@ -36,6 +37,8 @@ export function Footer() {
                 { href: '/dostupnost', label: 'Školy dostupné MHD' },
                 { href: '/regiony', label: 'Přehled regionů' },
                 { href: '/jak-vybrat-skolu', label: 'Jak vybrat a uspět' },
+                { href: '/novinky', label: 'Termíny e-mailem' },
+                { href: '/ochrana-osobnich-udaju', label: 'Ochrana osobních údajů' },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="no-underline transition-colors hover:opacity-80" style={{ color: '#0074e4' }}>

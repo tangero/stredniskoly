@@ -3,6 +3,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SchoolSearch } from '@/components/SchoolSearch';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
+import { OdberBlok } from '@/components/novinky/OdberBlok';
 import { getAllSchoolsForSearch, getAllKraje } from '@/lib/data';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import calendar from '@/data/admissions-2027.json';
@@ -65,11 +66,16 @@ export default async function HomePage() {
             <p className="text-blue-300 text-sm mb-2">PŘIJÍMAČKY 2027</p>
             <h2 className="text-2xl font-bold mb-3">Termíny už známe. Výběr školy může začít.</h2>
             <p className="text-slate-300 mb-5">Přihlášky na SŠ: 1.–22. února 2027. Konzervatoře už 1.–30. listopadu 2026.</p>
+            {/* Upozornění, z jakého roku jsou obory (větev titulky) */}
             {upozorneniNabidka && (
               <p className="mb-5 rounded-lg border border-amber-300/40 bg-amber-300/10 px-4 py-3 text-sm leading-relaxed text-amber-50">
                 {upozorneniNabidka}
               </p>
             )}
+            <div className="mb-5">
+              {/* Odběr termínů: hlavní místo formuláře (návrh novinek, oddíl 4) */}
+              <OdberBlok zdroj="titulka-karta" varianta="karta" nadpis="Novinky k přijímačkám e-mailem" />
+            </div>
             <div className="grid sm:grid-cols-2 gap-3">
               <Link href="/prijimacky-2027" className="rounded-lg bg-blue-700 p-5 hover:bg-blue-600">
                 <h3 className="font-bold mb-2">Kalendář přijímaček 2027 →</h3>

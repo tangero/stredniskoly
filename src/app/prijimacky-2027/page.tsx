@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { OdberBlok } from '@/components/novinky/OdberBlok';
 import calendar from '@/data/admissions-2027.json';
 
 export const metadata: Metadata = {
@@ -34,6 +35,15 @@ export default function Admissions2027Page() {
           <div className="bg-white border border-slate-200 rounded-xl p-5 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
             <div><h2 className="font-semibold">Ulož si termíny</h2><p className="text-sm text-slate-600 mt-1">Soubor obsahuje všechny tři skupiny. Po importu si ponech relevantní události; stažená kopie se sama neaktualizuje.</p></div>
             <a href="/prijimacky-2027.ics" download className="shrink-0 rounded-lg bg-blue-700 text-white px-5 py-3 font-semibold text-center hover:bg-blue-800">Stáhnout kalendář (.ics)</a>
+          </div>
+          {/* Stažená kopie se sama neaktualizuje, odběr je odpověď na to
+              (docs/novinky-k-prijimackam-2027.md, oddíl 4). */}
+          <div className="mt-4">
+            <OdberBlok
+              zdroj="kalendar"
+              varianta="stranka"
+              nadpis="Termíny a novinky ti pošleme e-mailem"
+            />
           </div>
           {calendar.groups.map(group => (
             <section key={group.id} id={group.id} className="pt-12 scroll-mt-24">
