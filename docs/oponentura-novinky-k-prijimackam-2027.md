@@ -4,6 +4,8 @@ Verze 2.0 · 17. 9. 2026 · Kolo 2 se vztahuje k [návrhu v1.1](novinky-k-prijim
 
 # Kolo 2: oponentura návrhu v1.1
 
+**Vypořádáno v [návrhu](novinky-k-prijimackam-2027.md) v1.14, oddíl 12.** Všechny tři sporné body i pět drobností přijaty; M1, M2 a M3 se částečně kryjí s body N9, N11 a N6 [oponentury codexu](podklady/oponentura-codex-novinky-2027.md), která posuzovala tutéž verzi 1.1 nezávisle. Porovnání obou oponentur je v témže oddílu. Nepřijata zůstala jediná dílčí varianta: hodnota „ještě nevím“ u druhu studia, protože dva zaškrtnuté druhy dávají totéž.
+
 ## 0. Metoda
 
 v1.1 přijímá všech sedm bodů kola 1, dvě s úpravou, a S4 rozšiřuje o dvě nová ověřitelná tvrzení. Ověřil jsem je online, přečetl nové části (rozhodnutí 3, 5, 7 a 8, schéma tabulek, průběh odesílání, revize harmonogramu) a zkontroloval návaznost na registr stavu datových sad.

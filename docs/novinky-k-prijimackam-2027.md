@@ -1,6 +1,6 @@
 # Novinky k přijímačkám e-mailem
 
-Verze 1.13 · 18. 9. 2026 · Návrh k rozhodnutí, nic není implementované. Vypořádána [oponentura v1.0](oponentura-novinky-k-prijimackam-2027.md) (oddíl 12) a [oponentura codexu](podklady/oponentura-codex-novinky-2027.md), kola 1 až 5 (oddíly 13 až 17). **Oddíl 6 zadavatel schválil 17. 9. 2026** ve všech pěti částech, včetně volby databáze Neon. Oprava podle kola 5 (číslo pokusu u dávky, oddělené účtování dávky a výsledků položek, rezervace kvóty v období možného odeslání) ale **oponenturou neprošla**, protože dohodnutý počet pěti kol je vyčerpán. **Závazný implementační kontrakt je oddíl 6**; oddíly 12 až 16 zaznamenávají cestu k němu a starší formulace v nich jsou historické.
+Verze 1.14 · 18. 9. 2026 · Návrh k rozhodnutí, nic není implementované. Vypořádána [oponentura](oponentura-novinky-k-prijimackam-2027.md), kola 1 a 2 (oddíl 12), a [oponentura codexu](podklady/oponentura-codex-novinky-2027.md), kola 1 až 5 a cílené kolo (oddíly 13 až 18). **Oddíl 6 zadavatel schválil 17. 9. 2026** ve všech pěti částech, včetně volby databáze Neon. Oprava podle kola 5 (číslo pokusu u dávky, oddělené účtování dávky a výsledků položek, rezervace kvóty v období možného odeslání) ale **oponenturou neprošla**, protože dohodnutý počet pěti kol je vyčerpán. **Závazný implementační kontrakt je oddíl 6**; oddíly 12 až 16 zaznamenávají cestu k němu a starší formulace v nich jsou historické.
 
 Návštěvník webu zadá e-mail a během přijímacího řízení dostává s předstihem připomínky termínů a pokyny, co je potřeba připravit. Na rozdíl od [sledování škol a oborů](sledovani-skol-2027.md) (větev `docs/sledovani-skol-a-oboru`, v2.1) dostanou všichni odběratelé téhož ročníku a druhu studia stejný obsah. Návrh navazuje na [kalendář přijímaček](aktualizace-kalendar-data-2027.md) (`src/data/admissions-2027.json`, sada `msmt-harmonogram` v registru na větvi `feat/titulka-nabidka-oboru`) a na [analýzu návštěvnosti](analyza-navstevnosti-2026.md).
 
@@ -520,7 +520,9 @@ První e-mail, který musí odejít, je „Školy vyhlašují kritéria“ **12.
 3. **Ověřit opravy v oddílu 6** z kola 5 a z cíleného kola přejímkou N1 a N2 (doporučeno, viz oddíl 18).
 4. **Ověřit v N0 nastavení domény přes API**, že měření otevření a kliknutí je vypnuté; ostatní limity služeb zadavatel ověřil 18. 9. 2026.
 
-## 12. Vypořádání oponentury v1.0
+## 12. Vypořádání oponentury, kola 1 a 2
+
+### Kolo 1 (body S1 až S7)
 
 [Oponentura](oponentura-novinky-k-prijimackam-2027.md) ověřila kalendář, místa formuláře, ochrany, Matomo i ceník Resendu a vznesla sedm sporných bodů. **Všech sedm se přijímá, S1 a S3 s úpravou.** Ověření k S4 šlo dál než oponentura: omezení požadavků ve firewallu Vercelu na adresu nestačí, takže databázi potřebuje i varianta s kontakty Resendu, a návrh proto přechází na databázi bez podmínky. Měření v e-mailech naopak překážkou spuštění není.
 
@@ -541,6 +543,41 @@ První e-mail, který musí odejít, je „Školy vyhlašují kritéria“ **12.
 - sloučení větve s harmonogramem a ověření firewallu jsou v N0;
 - cíl „potvrzení odběru“ v Matomu je podmínkou dokončení N1;
 - e-mail musí být schválený nejpozději den před odesláním, u e-mailu o výsledcích týden předem.
+
+### Kolo 2 (body M1 až M3)
+
+Kolo 2 posuzovalo verzi 1.1, tedy **tutéž verzi jako kolo 1 oponentury codexu**, a nezávisle na něm. Obě oponentury potvrdily vypořádání kola 1 a shodly se na dvou ze tří sporných bodů; kolo 2 k nim přidalo pět drobností, které codex nenašel. Body se proto vypořádávají sloučeně: kde už na námitku odpověděl některý bod codexu, je to uvedeno a text se nemění podruhé.
+
+**Průsečík obou oponentur**
+
+| Bod kola 2 | Odpovídající bod codexu | Co přidalo které kolo |
+|---|---|---|
+| **M1** lednová i březnová zpráva mluví o nabídce mimo rytmus webu | **N9** (codex, kolo 1) — jen lednová zpráva | codex pojmenoval lednovou zprávu a závislost na jarním importéru; kolo 2 jako jediné našlo, že **březnová zpráva jde ročníku, který už přihlášky podal** |
+| **M2** není definováno, jak se e-maily dostanou z repozitáře k odesílači | **N11** (codex, kolo 1) — „chybí cesta od schváleného souboru k odesílači“ | shodná námitka i shodné řešení (manifest v `public/`); codex navíc žádal otisk kalendáře ve zprávě |
+| **M3** schéma vylučuje rodinu s oběma druhy studia | **N6** (codex, kolo 1) | shodné; codex k tomu doplnil normalizaci adresy a ročník v identifikátoru zprávy |
+| drobnost: uvítání slibuje zmínku o datech, kterou nový odběratel nemá | — | jen kolo 2 |
+| drobnost: dvojklik na potvrzovací odkaz pošle uvítání dvakrát | **B2** a **C1** (codex) | codex šel dál: jednorázová žádost a jedinečnost položky ve frontě |
+| drobnost: formulář neřekne, proč v nabídce není konzervatoř | — | jen kolo 2 |
+| drobnost: zásady musí jmenovat právní základ přenosu k americkému zpracovateli | **N3**, **N4** (codex) řešily doklad a doby uložení, přenos ne | jen kolo 2 |
+| drobnost: nepotvrzené požadavky na kalendář zůstanou viset | **N5**, **D5** (codex) řešily životní cyklus, mazání v běhu ne | kolo 2 doplnilo, kdo mazání provede |
+
+**Sporné body**
+
+| # | Námitka | Vypořádání | Kde |
+|---|---|---|---|
+| **M1** | Lednová zpráva slibuje nabídku oborů, kterou web v lednu nemá; březnová zpráva o nové nabídce jde odběratelům ročníku 2027, kteří přihlášky podali 22. 2., a zve je k výběru, který mají za sebou | **přijato.** Lednová zpráva slib nabídky na webu nemá: říká, že **nabídku oborů pro rok 2027 zveřejňují školy ve svých kritériích** a web ji bude mít až z otevřených dat CERMATu. Březnová zpráva je přeformulovaná **retrospektivně** („kolik míst školy vypsaly a kolik přihlášek obory dostaly v 1. kole tohoto roku“) a výslovně není výzvou k výběru. Přesun do uvítání dalšího ročníku přijat v mírnější podobě, kterou navrhla oponentura jako druhou možnost: ročníku, který se hlásí příště, se totéž zmíní v uvítání, takže zpráva nemá dvojí adresáta | 3 |
+| **M2** | Garance „odesílač posílá jen e-maily viditelné na nasazeném webu“ stojí na adresáři `content/`, který web neservíruje | **přijato.** Z obou nabídnutých cest je zvolen **manifest v `public/novinky/{rocnik}/`**, ne API route s `CRON_SECRET`: zprávy tak obsluhuje Next.js po nasazení a odesílač čte tentýž obsah, jaký je na webu. Šablony zůstávají v `content/novinky/sablony/`, generátor z nich vyrábí zprávu i manifest. Dostupnost manifestu i zprávy po nasazení je podmínkou dokončení N2, takže „Hotovo, když“ je ověřitelné. Ve zprávě je navíc otisk kalendáře, takže změna termínu po schválení vyžádá schválení nové (bod N11 codexu) | 1 (bod 5), 7, 10 |
+| **M3** | Primární klíč `(odberatel_id, rocnik)` nepustí rodinu s deváťákem i sedmákem pod jednu adresu | **přijato.** Primární klíč `odber_novinek` je `(odberatel_id, rocnik, druh_studia)` a formulář dovolí zaškrtnout oba druhy studia. Zpráva, která se týká obou, se pošle jednou. Hodnota „ještě nevím“ z oponentury se **nezavádí**: dva zaškrtnuté druhy dávají totéž a nepotřebují třetí stav, který by se musel někdy rozhodnout | 4, 6 (tabulka `odber_novinek`) |
+
+**Drobnosti** přijaty všechny:
+
+- uvítání má **podmíněný blok** o nových datech: vypíše se jen tehdy, když od přepnutí sady uplynuly méně než dva měsíce, takže nový odběratel nedostane zmínku o „posledním e-mailu“, který nemá (oddíl 3);
+- dvojí kliknutí na potvrzovací odkaz uvítání nezopakuje: žádost je jednorázová (`spotrebovana`) a fronta má jedinečnost `(odberatel_id, zprava)`, takže druhá položka uvítání nevznikne; každý odeslaný e-mail včetně uvítání má vlastní položku ve frontě, tedy i evidenci odeslání (oddíl 6);
+- formulář i stránka `/novinky` mají větu „Konzervatoře zatím neposíláme, protože je web nepokrývá; jejich termíny najdeš v kalendáři“ (oddíl 4);
+- právní kontrola má výslovný přejímací bod na **předání do třetích zemí**: Resend je americký zpracovatel a databáze Neon se zakládá v evropském regionu, takže zásady jmenují právní základ přenosu (oddíl 5). Kontrolu zadavatel schválil 18. 9. 2026;
+- **týž běh, který odesílá výzvy po přepnutí `msmt-harmonogram`, maže požadavky, jejichž 30denní lhůta uplynula** (oddíl 3, řádek „Kalendář dalšího ročníku“), takže nepotvrzené nezůstanou viset.
+
+**Stanoviska k otevřeným otázkám** kolo 2 nemění: právní kontrola i zpráva o dalším kalendáři zůstávají, jak oponentura doporučuje. Doporučení schválit aspoň fázi F0 sledování jako sdílenou infrastrukturu je **vyřízené šířeji**: zadavatel 17. 9. 2026 schválil sledování celé. Zprávy o nových datech na F0 přesto nečekají — do jejího zprovoznění je píše redakce ručně podle přepnutí v registru (oddíl 7), takže N3 na cizí fázi nestojí.
 
 ## 13. Vypořádání oponentury codexu, kolo 1
 
@@ -717,6 +754,7 @@ Cílené kolo ukázalo, že na úrovni popisu souběhu lze takto pokračovat dlo
 
 | Verze | Změna |
 |---|---|
+| 1.14 | Vypořádání oponentury, kolo 2 (body M1 až M3 a pět drobností), zapsáno do oddílu 12 a sloučeno s oponenturou codexu: obě posuzovaly verzi 1.1 nezávisle, M1 se částečně kryje s N9, M2 s N11 a M3 s N6. Věcně byly všechny body vyřešené už ve verzích 1.2 a 1.11, chybělo jejich vypořádání v návrhu. Doloženo, co našlo jen kolo 2 (březnová zpráva jde ročníku, který už přihlášky podal; podmíněný blok v uvítání; věta o konzervatořích; právní základ přenosu do třetích zemí; mazání nepotvrzených požadavků v běhu výzev) a co jen codex. Zamítnuta hodnota „ještě nevím“ u druhu studia: dva zaškrtnuté druhy dávají totéž. |
 | 1.13 | Rozhodnutí zadavatele z 18. 9. 2026: e-maily se posílají z hlavní domény `prijimackynaskolu.cz` (ověřené, subdoména se nezakládá) a k tomu tři pojistky proti sdílené reputaci a kvótě; právní kontrola zásad schválena; limity služeb neblokují; sloučení větve s harmonogramem povoleno. Zbývající práce zúžena na databázi Neon, tajemství a firewall ve Vercelu, sloučení větve a přejímku. |
 | 1.12 | Doplněn stav realizace: hotová migrace, knihovny, API, formuláře, stránky, generátor a návrh zásad na větvi `feat/novinky-odber`; odběr drží vypnutý přepínač `NOVINKY_ZAPNUTO`, dokud nejsou účty a právní kontrola. Konec užitečnosti květnové zprávy je 24. 5. 2027, tedy poslední den podávání přihlášek do 2. kola. |
 | 1.11 | Vypořádán zbytek oponentury k v1.1: březnová zpráva o nových datech je přeformulovaná retrospektivně (odběratelé ročníku už přihlášky podali), uvítání má podmíněný blok o nových datech, formulář vysvětluje jednou větou, proč konzervatoř v nabídce není, právní kontrola má výslovně předání do třetích zemí (Resend v USA, Neon v evropském regionu) a mazání nepotvrzených požadavků na kalendář je součástí téhož běhu, který odesílá výzvy. M2 a M3 byly vyřešené už ve verzi 1.2. |
