@@ -1,8 +1,64 @@
 # Oponentura k návrhu „Novinky k přijímačkám e-mailem"
 
-Verze 2.0 · 17. 9. 2026 · Kolo 2 se vztahuje k [návrhu v1.1](novinky-k-prijimackam-2027.md). Kolo 1 (oponentura v1.0) je archivováno dole.
+Verze 3.0 · 18. 9. 2026 · Kolo 3 se vztahuje k [návrhu v1.14](novinky-k-prijimackam-2027.md). Kola 1 a 2 jsou archivována dole.
 
-# Kolo 2: oponentura návrhu v1.1
+# Kolo 3: oponentura návrhu v1.14 — závěr: schvaluji, blokační nález žádný
+
+**Vypořádáno v [návrhu](novinky-k-prijimackam-2027.md) v1.15, oddíl 12.** Body T1 až T4 přijaty všechny, T2 oběma nabídnutými cestami zároveň a T4 i s důvodem z registru, který jde dál než oponentura: květnové přepnutí `cermat-uchazeci-kolo1` je finální revize dat roku 2026, ne výsledky ročníku 2027. Oponentura návrhu je tím uzavřená, zbytek ověří přejímky N1 a N2.
+
+## 0. Metoda
+
+Přečetl jsem celou v1.14 včetně všech oddílů vypořádání (12 až 18) a ověřil tři věci nezávisle na textu: (1) že vypořádání M1–M3 z kola 2 je v normativních oddílech skutečně provedené, (2) že nová tvrzení v1.13/v1.14 o stavu realizace a registru datových sad jsou pravdivá, (3) zda rozhodnutí zadavatele ze 17. a 18. 9. 2026 nevyrobila rozpory mezi normativními oddíly 1–11.
+
+## 1. Vypořádání bodů kola 2 potvrzuji
+
+- **M1 — vypořádáno přesně podle návrhu oponentury.** Lednová zpráva „Školy vyhlašují kritéria" už nabídku na webu neslibuje: říká, že nabídku oborů pro rok 2027 zveřejňují školy ve svých kritériích a web ji bude mít až z otevřených dat CERMATu (oddíl 3). Březnová zpráva je přeformulovaná retrospektivně („kolik míst školy vypsaly a kolik přihlášek obory dostaly v 1. kole tohoto roku"), výslovně není výzvou k výběru a pro ročník, který se hlásí příště, se totéž zmíní v uvítání — tedy druhá, mírnější varianta, kterou jsem v M1 nabídl. Tvrzení historie v1.14, že věcná oprava existovala už ve verzích 1.2 (N9/N11 codexu) a 1.11 a chyběl jen její zápis do vypořádání kola 2, sedí s tabulkou Historie.
+- **M2 — vypořádáno první z navrhovaných variant.** Manifest a zprávy leží v `public/novinky/{rocnik}/`, rozhodnutí 5 je přepsané na „odesílač čte e-maily z manifestu na nasazeném webu" a přejímka N2 ověřuje celou cestu schválení → nasazení → načtení manifestu → nanečisto odeslání. Ověřil jsem, že cesta `public/novinky/2027/*` nekoliduje s app routami `/novinky`, `/novinky/potvrzeni` apod. (žádná z nich se nepřekrývá se souborovou cestou).
+- **M3 — vypořádáno, zamítnutí dílčí varianty přijímám.** Primární klíč `odber_novinek` je `(odberatel_id, rocnik, druh_studia)`, formulář dovolí zaškrtnout oba druhy studia a jedinečnost položky fronty `(odberatel_id, zprava)` vynutí, že společná zpráva odejde jednou. Hodnotu „ještě nevím" návrh zamítá s argumentem, že dva zaškrtnuté druhy dávají totéž a třetí stav by se musel někdy rozhodnout — argument uznávám, námitku stahuji.
+
+## 2. Nezávisle ověřená nová tvrzení v1.13/v1.14
+
+- **Stav realizace (oddíl 10) je pravdivý.** Větev `feat/novinky-odber` existuje a nese `db/migrace/001-novinky.sql`, knihovny `src/lib/novinky-*.ts` (db, email, fronta, odběr, odesílač, rozpočet, šablony, token), sedm endpointů `src/app/api/novinky/*` včetně cronu a webhooku, stránky `/novinky` včetně potvrzení, správy a odhlášení, formulářové komponenty, generátor `scripts/novinky.py` se sedmi šablonami v `content/novinky/sablony/` a čtyři testovací soubory. Poslední commit větve řeší odesílání z hlavní domény, což odpovídá rozhodnutí z 18. 9.
+- **Časování datových sad podle registru** (`public/stav_datovych_sad.json`): `cermat-uchazeci-kolo1` (zdroj pásem přijetí) se čeká 2027-05 — tedy uvnitř sezóny ročníku 2027, jak rozhodnutí 8 tvrdí. `cermat-kapacity` a `cermat-prihlasky` se čekají 2027-03, `msmt-harmonogram` pro 2028 v 2027-08. Rozpětí v oddílu 8 sedí.
+
+## 3. Nové nálezy kola 3 (žádný není blokační)
+
+### T1 — Normativní oddíly si po rozhodnutích z 18. 9. odporují
+
+Oponentura se vždycky soustředila na to, co text slibuje; teď poprvé text slibuje dvě různé věci zároveň, protože rozhodnutí zadavatele ze 17.–18. 9. se propsala jen do části oddílů:
+
+1. **Hlavička** tvrdí „Návrh k rozhodnutí, nic není implementované", zatímco oddíl 10 popisuje hotovou migraci, knihovny, endpointy, formuláře, stránky a generátor s 50 testy na větvi `feat/novinky-odber` (ověřeno výše, stav je pravdivý — nepravdivá je hlavička).
+2. **Oddíl 10** uvádí jako nespuštěné „odesílací subdoména s DNS" a „právní kontrola zásad" — ale rozhodnutí z 18. 9. (oddíly 6 a 11) subdoménu ruší a právní kontrolu schvaluje. Snapshot je datovaný k 17. 9., čtenář plánu N0 ale z aktuální verze dokumentu dostane úkol, který se nemá dělat.
+3. **Oddíl 2** tvrdí, že tarif Resendu s 50 000 e-maily je „neověřený" a že frekvenci cronu „z repozitáře ověřit nelze" — zatímco oddíl 11 zaznamenává, že zadavatel 18. 9. kvótu Resendu i frekvenci cronu ověřil a „limity neblokují".
+4. **Krok 5.5** říká, že „podpora značek u dávkového odeslání se ověřuje v N0" — zatímco oddíl 11 řadí značky u dávek mezi věci, které „nestojí v cestě" (tedy ověřené 18. 9.).
+
+**Vypořádání:** protože oddíl 6 je prohlášen závazným kontraktem a oddíly 12–18 historií, musí být vzájemně konzistentní právě oddíly 1–11. Stačí: hlavičku přepsat na „rozhodnuto, implementace čeká na účty", oddíl 10 předat k 18. 9. (škrtnout subdoménu a právní kontrolu ze zbývající práce) a v oddílu 2 a kroku 5.5 doplnit u příslušných řádků „ověřil zadavatel 18. 9. 2026".
+
+### T2 — Žádost `novy_rocnik` ve stavu `ceka_na_vyzvu` nemá cestu k výmazu
+
+Oprava K5 (kolo 5 codexu) zavedla žádost se stavem `ceka_na_vyzvu` a prázdným `plati_do`; `plati_do` se doplní až transakcí, která se spustí **známým výsledkem položky výzvy**. Když ale výsledek nikdy nedorazí — položka výzvy přejde po 24 hodinách na `neurcita` (krok 5.7) a člověk dávku nevyřídí, nebo se webhook ztratí — žádost zůstane ve stavu `ceka_na_vyzvu` s `plati_do = null` **bez jakékoli lhůty**: retenční úklid je klíčovaný na lhůty (`plati_do`, `ceka_do`) a doba uložení „žádost 30 dnů" se bez `plati_do` nedá spočítat. Krok 8 pomáhá jen částečně: při trvalém nedoručení maže **odběry**, ale příjemce výzvy žádný odběr nemá (jeho ročník skončil), takže se na něj pravidlo nevztahuje.
+
+**Vypořádání:** stačí jedna věta v poznámkách ke schématu: žádost `novy_rocnik` ve stavu `ceka_na_vyzvu` se maže podle `vytvoreno` (např. po 40 dnech = 30denní lhůta + rezerva), nebo se ruší při přechodu položky výzvy na `neurcita`/`zahozena`.
+
+### T3 — One-click odhlášení po M3 nemá jednoznačný cíl
+
+Krok 7 říká, že odhlášení „zruší odběr té zprávy, ze které odkaz vede". Po M3 má ale odběratel až **dva** odběry (`ss` + `vicelete`) a společná zpráva (např. „Přihlášky", segment `[ss, vicelete]`) odchází pod jedním `polozka_id` oběma. „Odběr té zprávy" neexistuje — zpráva není klíč tabulky `odber_novinek` a k jedné položce fronty se vážou dva záznamy odběru. Přejímací zkouška N1 „odhlášení jedním kliknutím ruší jen jeden účel" je tak pro společné zprávy neověřitelná, dokud se nedefinuje, co je v tomto případě „účel".
+
+**Vypořádání:** stanovit, že one-click ze zprávy ruší **všechny odběry příjemce v segmentech té zprávy** (u společné zprávy oba — kdo dostal jeden e-mail za obě děti, zrušení obou pochopí) a krok 7 přepsat z „odběru té zprávy" na „odběry v segmentech zprávy". Případně opačně, jen jeden segment — ale pak musí být určeno který.
+
+### T4 — Rozhodnutí 8 slibuje plošné oznámení „výsledky 1. kola", které tabulka obsahu neimplementuje
+
+Rozhodnutí 8 říká, že plošně se oznamují „nová nabídka oborů **a výsledky 1. kola**". Tabulka v oddílu 3 ale má řádek jen pro nabídku (spouštěč `cermat-kapacity` ∧ `cermat-prihlasky`); žádná zpráva není vázaná na přepnutí `cermat-uchazeci-kolo1`. Táže sada přitom podle registru čeká přepnutí v květnu 2027 — uvnitř sezóny — a zároveň z ní vycházejí „pásma přijetí", která rozhodnutí 8 výslovně posílá **jen jako zmínku** v nejbližším e-mailu. Text tak čte jedno přepnutí dvakrát a rozporně: jednou jako samostatnou zprávu, podruhé jako zmínku.
+
+**Vypořádání:** doporučuji rozhodnutí 8 zúžit na „novou nabídku oborů" a výsledky 1. kola výslovně zařadit mezi zmínky v nejbližším e-mailu, stejně jako pásma — odběratelé ročníku 2027 své výsledky v květnu už znají od škol, takže hodnota samostatné zprávy by byla opět jen retrospektivní (stejný argument jako u M1). Alternativa je doplnit řádek se spouštěčem `cermat-uchazeci-kolo1`, ale to považuji za horší.
+
+## 4. Stanovisko k v1.14
+
+**Návrh v1.14 schvaluji; blokační nález kolo 3 nemá.** Všechny tři sporné body kola 2 jsou vypořádané věcně i v textu a nová tvrzení o stavu realizace a registru jsem ověřil jako pravdivá. Nálezy T1–T4 jsou synchronizační a doprecizovací (jedna věta až pár řádků), ne koncepční; jejich zápis do textu doporučuji ještě před zahájením N0, protože oddíly 1–11 jsou jediná část, ze které se bude realizovat. Souhlasím rovněž s doporučením oddílu 18 oponenturu oddílu 6 ukončit: souběh je prokazatelný v přejímkách N1/N2, ne v dokumentu, a přejímací zkoušky jsou na tyto případy napsané.
+
+---
+
+# Kolo 2: oponentura návrhu v1.1 (archiv, 17. 9. 2026)
 
 **Vypořádáno v [návrhu](novinky-k-prijimackam-2027.md) v1.14, oddíl 12.** Všechny tři sporné body i pět drobností přijaty; M1, M2 a M3 se částečně kryjí s body N9, N11 a N6 [oponentury codexu](podklady/oponentura-codex-novinky-2027.md), která posuzovala tutéž verzi 1.1 nezávisle. Porovnání obou oponentur je v témže oddílu. Nepřijata zůstala jediná dílčí varianta: hodnota „ještě nevím“ u druhu studia, protože dva zaškrtnuté druhy dávají totéž.
 
@@ -147,5 +203,6 @@ Návrh je obsahově i technicky dobře postavený a jeho jádro (kalendář jako
 
 | Verze | Změna |
 |---|---|
+| 3.0 | Kolo 3 k návrhu v1.14: vypořádání M1–M3 potvrzeno v textu i nezávislým ověřením (stav realizace na `feat/novinky-odber` a časování sad v registru jsou pravdivé). **Návrh schvaluji, blokační nález žádný.** Čtyři nové neblokační nálezy: T1 rozpory mezi normativními oddíly po rozhodnutích z 18. 9. (hlavička „nic není implementované" vs. hotová realizace, subdoména a právní kontrola v oddílu 10, neověřenost tarifu a značek v oddílech 2 a 6), T2 žádost `novy_rocnik` ve stavu `ceka_na_vyzvu` nemá cestu k výmazu, T3 one-click odhlášení po M3 nemá jednoznačný cíl u společné zprávy obou segmentů, T4 rozhodnutí 8 slibuje plošné oznámení výsledků 1. kola, které tabulka obsahu neimplementuje. |
 | 2.0 | Kolo 2 k návrhu v1.1: online ověření potvrzuje obě nová tvrzení (měření v Resendu výchozí vypnuté; firewall Vercelu na Pro jen IP/JA4, okno ≤ 10 minut), vypořádání kola 1 přijímám. Tři zbývající body: e-maily o nabídce nového roku mimo rytmus webu (M1), nedefinovaný mechanismus čtení e-mailů z nasazeného webu (M2), schéma odběru vylučuje oba druhy studia (M3). |
 | 1.0 | První oponentura. Sedm sporných bodů S1–S7 k vypořádání, stanoviska k otevřeným otázkám 1–7, ověření kalendáře, míst formuláře, ochran, Matomo a ceníku Resendu. |
