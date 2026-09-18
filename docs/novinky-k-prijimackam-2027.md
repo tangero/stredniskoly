@@ -716,10 +716,34 @@ Tím zanikl i nález P1-10 z code review a spolu s ním půlka stavového automa
 
 Zadavatel zároveň potvrdil, že chce **sledování vybraných škol** s upozorněním na změny u nich, například když škola vypíše den otevřených dveří. To není tento newsletter, ale samostatný produkt popsaný ve [sledování škol a oborů](sledovani-skol-2027.md). Sdílí s novinkami identitu odběratele, frontu odeslání i rozpočet kvóty, takže se dá postavit na hotovém základu; potřebuje ale záznam událostí (F0 sledování) a u dnů otevřených dveří platí, že je web zná jen od škol, které je vyplní v portálu.
 
+## 21. Nasazení 18. 9. 2026 a co ukázalo první skutečné volání
+
+Migrace proběhla na produkci přes `POST /api/novinky/migrace`: dvaadvacet příkazů, jedenáct tabulek, opakované spuštění nic nezměnilo. V databázi neleží nic jiného, takže vlastní schéma vedle `public` není potřeba.
+
+**První skutečné volání formuláře ale spadlo.** `POST /api/novinky/prihlasit` vrátil 500 a v logu stálo `error: could not determine data type of parameter $2` (Postgres `42P18`). Počitadlo limitu předávalo dotazu tři argumenty, ale v jeho textu byly jen `$1` a `$3`: druhý byl povolený počet, který se porovnává až v JavaScriptu, takže v dotazu nikdy neměl co dělat. Postgres nemá z čeho odvodit typ parametru, který v dotazu není, a odmítne celý dotaz.
+
+Co to říká o zkoušení, které návrh do téhle chvíle měl:
+
+- **Šest kol oponentury a code review od čtyř recenzentů tuhle chybu minuly.** Číslo `$3` v textu dotazu vypadá správně, pokud čtenář nepočítá argumenty na druhé straně volání. Je to chyba, kterou najde jedině stroj.
+- **Jednotkové testy ji minout musely.** Všech 61 běží proti falešnému spojení, které dotaz jen zaznamená. Falešné spojení nikdy neřekne „takový parametr neznám“, takže celá vrstva dotazů byla do nasazení neověřená.
+- Platí tedy silnější verze lekce z oddílu 19: nejen že **přečtený dokument nedokazuje chování kódu**, ale **prošlý test proti falešné databázi nedokazuje, že dotaz vůbec jde spustit**.
+
+Proto vznikly dvě pojistky, každá na jednu z příčin:
+
+| Pojistka | Co hlídá | Kde |
+|---|---|---|
+| **Test číslování parametrů** | čísla `$n` v každém dotazu tvoří souvislou řadu od `$1` a nejvyšší odpovídá počtu předaných argumentů | `tests/novinky-parametry.test.mjs` |
+| **Kouřová zkouška proti databázi** | celá cesta člověka (přihlášení → dávka → potvrzení → správa → odhlášení → úklid) proti skutečnému Postgresu | `src/lib/novinky-kourova-zkouska.ts`, spouští se `POST /api/novinky/kourova-zkouska` |
+
+Kouřová zkouška **neposílá e-mail**: dávku připraví, předá a uzavře jako chybnou, takže se položka vrátí do fronty a Resend se nevolá. Po sobě smaže všechny své záznamy; adresa je z `example.com` (RFC 2606) a IP z 203.0.113.0/24 (RFC 5737), takže nemůže patřit nikomu skutečnému. Endpoint je chráněný týmž tajemstvím jako cron (`CRON_SECRET`) a existuje ze stejného důvodu jako endpoint migrace: připojovací řetězec je ve Vercelu tajný, takže se zvenčí spustit nedá.
+
+**Pravidlo pro další práci:** po každé změně schématu nebo dotazů a po každém nasazení se spouští kouřová zkouška. Test číslování parametrů běží v CI spolu s ostatními.
+
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.16 | Nasazení na produkci (oddíl 21): migrace proběhla, jedenáct tabulek, databáze jinak prázdná. První skutečné volání formuláře spadlo na `42P18`, protože počitadlo limitu předávalo dotazu parametr, který v jeho textu nebyl; opraveno. Doplněny dvě pojistky: test číslování parametrů a kouřová zkouška celé cesty proti skutečné databázi, která neposílá e-mail a po sobě uklidí. Zapsáno, že prošlý test proti falešnému spojení nedokazuje spustitelnost dotazu. |
 | 1.15 | Revize produktu (oddíl 20): jeden newsletter bez ročníku a bez segmentů, formulář jen e-mail a souhlas na třech místech. Zanikla zpráva o dalším kalendáři, tabulka `zprava_o_kalendari`, ročník a druh studia v odběru, kraj, segment u položky i nález P1-10. Termíny jednotné zkoušky jdou všem v jedné zprávě. Obsah je dvojí: termíny a zprávy o nových datech na webu; širší školství zamítnuto. Doplněna past s uvítáním po opakovaném přihlášení. |
 | 1.14 | Vypořádáno code review kódu (PR #96, oddíl 19): deset závažných nálezů opraveno a kontrakt upraven podle skutečnosti — potvrzení a uvítání přes dávku s rezervací kvóty a s konzumentem v cronu, zrušení dávky vrací ostatní položky a maže tělo, položka nese segment a odhlášení ruší jen ten, odkazy platí 400 dnů a token nezůstává v adrese, limit rozpočtu se nepřepisuje, účinek webhooku uvnitř stráže s tolerancí času podpisu. |
 | 1.13 | Rozhodnutí zadavatele z 18. 9. 2026: e-maily se posílají z hlavní domény `prijimackynaskolu.cz` (ověřené, subdoména se nezakládá) a k tomu tři pojistky proti sdílené reputaci a kvótě; právní kontrola zásad schválena; limity služeb neblokují; sloučení větve s harmonogramem povoleno. Zbývající práce zúžena na databázi Neon, tajemství a firewall ve Vercelu, sloučení větve a přejímku. |
