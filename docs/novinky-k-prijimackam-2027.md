@@ -1,6 +1,6 @@
 # Novinky k přijímačkám e-mailem
 
-Verze 1.12 · 17. 9. 2026 · Návrh k rozhodnutí, nic není implementované. Vypořádána [oponentura v1.0](oponentura-novinky-k-prijimackam-2027.md) (oddíl 12) a [oponentura codexu](podklady/oponentura-codex-novinky-2027.md), kola 1 až 5 (oddíly 13 až 17). **Oddíl 6 zadavatel schválil 17. 9. 2026** ve všech pěti částech, včetně volby databáze Neon. Oprava podle kola 5 (číslo pokusu u dávky, oddělené účtování dávky a výsledků položek, rezervace kvóty v období možného odeslání) ale **oponenturou neprošla**, protože dohodnutý počet pěti kol je vyčerpán. **Závazný implementační kontrakt je oddíl 6**; oddíly 12 až 16 zaznamenávají cestu k němu a starší formulace v nich jsou historické.
+Verze 1.13 · 18. 9. 2026 · Návrh k rozhodnutí, nic není implementované. Vypořádána [oponentura v1.0](oponentura-novinky-k-prijimackam-2027.md) (oddíl 12) a [oponentura codexu](podklady/oponentura-codex-novinky-2027.md), kola 1 až 5 (oddíly 13 až 17). **Oddíl 6 zadavatel schválil 17. 9. 2026** ve všech pěti částech, včetně volby databáze Neon. Oprava podle kola 5 (číslo pokusu u dávky, oddělené účtování dávky a výsledků položek, rezervace kvóty v období možného odeslání) ale **oponenturou neprošla**, protože dohodnutý počet pěti kol je vyčerpán. **Závazný implementační kontrakt je oddíl 6**; oddíly 12 až 16 zaznamenávají cestu k němu a starší formulace v nich jsou historické.
 
 Návštěvník webu zadá e-mail a během přijímacího řízení dostává s předstihem připomínky termínů a pokyny, co je potřeba připravit. Na rozdíl od [sledování škol a oborů](sledovani-skol-2027.md) (větev `docs/sledovani-skol-a-oboru`, v2.1) dostanou všichni odběratelé téhož ročníku a druhu studia stejný obsah. Návrh navazuje na [kalendář přijímaček](aktualizace-kalendar-data-2027.md) (`src/data/admissions-2027.json`, sada `msmt-harmonogram` v registru na větvi `feat/titulka-nabidka-oboru`) a na [analýzu návštěvnosti](analyza-navstevnosti-2026.md).
 
@@ -136,7 +136,7 @@ Uchazeči o víceleté gymnázium mají 11 až 13 let, uchazeči po 9. třídě 
 - Neptáme se na jméno, školu ani ročník dítěte ve škole. Povinné jsou jen adresa, druh studia a souhlas; **kraj je nepovinný** a slouží budoucím krajským zprávám.
 - **Doklad souhlasu** (čl. 7 GDPR) se ukládá **do samostatné tabulky**, ne do odběru: účel, ročník, verze znění souhlasu, místo formuláře, čas potvrzení, čas zániku a den, kdy se doklad smaže. Odhlášení tedy smaže odběr a doklad zůstane po dobu uložení. Znění souhlasu je verzované v repozitáři, takže je zpětně dohledatelné, s čím kdo souhlasil.
 - **Informační povinnost** (čl. 13 GDPR) plní stránka zásad: správce a jeho kontakt, účel, právní titul, rozsah, zpracovatelé (Vercel, Neon, Resend), doba uložení po jednotlivých druzích záznamů, práva na přístup, opravu, výmaz a odvolání souhlasu a postup, jak je uplatnit.
-- **Právní kontrola před N1** má tři přejímací body: (1) znění souhlasu a jeho doklad, (2) text zásad včetně správce, zpracovatelů, dob uložení a **předání do třetích zemí**: Resend je americký zpracovatel a databáze Neon se zakládá **v evropském regionu**, takže zásady musí jmenovat právní základ přenosu, (3) oslovení v e-mailech, když souhlas dává rodič a obsah čte dítě.
+- **Právní kontrola: schváleno zadavatelem 18. 9. 2026.** Text zásad je na `/ochrana-osobnich-udaju`. Kontrola měla tři přejímací body: (1) znění souhlasu a jeho doklad, (2) text zásad včetně správce, zpracovatelů, dob uložení a **předání do třetích zemí**: Resend je americký zpracovatel a databáze Neon se zakládá **v evropském regionu**, takže zásady musí jmenovat právní základ přenosu, (3) oslovení v e-mailech, když souhlas dává rodič a obsah čte dítě. Změní-li se rozsah údajů nebo doby uložení, text se mění a kontrola se opakuje.
 - Smlouvy se zpracovateli a regiony databáze jsou mimo repozitář; jejich prověření je úkol N0, ne tvrzení tohoto návrhu.
 
 ## 6. Úložiště a rozesílání
@@ -389,7 +389,15 @@ Poznámky ke schématu:
 
 ### Odesílací doména
 
-E-maily půjdou z `novinky@novinky.prijimackynaskolu.cz`. Subdoména **riziko omezuje, neodstraňuje**: Gmail a další poskytovatelé hodnotí část reputace na úrovni hlavní domény včetně subdomén a kvóta Resendu je společná. Proto k ní patří sledování reputace (Postmaster Tools), SPF, DKIM a DMARC a možnost **plošné zprávy pozastavit**, zatímco odkazy portálu a hlášení chyb běží dál. Měření otevření a kliknutí zůstane na subdoméně vypnuté; N0 to ověří v nastavení domény přes API a test to hlídá.
+**Rozhodnutí zadavatele 18. 9. 2026: posílá se z hlavní domény** `novinky@prijimackynaskolu.cz`, která je nastavená a ověřená. Odesílací subdoména se nezakládá.
+
+Důsledek je potřeba pojmenovat: novinky tím **sdílejí reputaci i kvótu** s odkazy portálu pro školy a s hlášením chyb. Kdyby plošné zprávy někdo hromadně označil za spam, dopadlo by to i na přihlašovací e-maily škol. Proto k tomuto rozhodnutí patří tři pojistky:
+
+1. **Umět plošné zprávy pozastavit** jedním přepínačem, zatímco provozní e-maily běží dál. Drží ho rozpočet kvóty: stačí snížit limit řádku `celkem` na nulu.
+2. **Sledovat reputaci domény** (Postmaster Tools) a podíl stížností; nad 0,1 % se rozesílání zastaví a hledá se příčina.
+3. **Rezerva 5 000 e-mailů měsíčně** pro portál a hlášení chyb má o to větší význam, protože novinky sahají do stejné kvóty.
+
+SPF, DKIM a DMARC na hlavní doméně už platí pro dnešní provozní e-maily. Měření otevření a kliknutí zůstává vypnuté; N0 to ověří v nastavení domény přes API a test to hlídá.
 
 ## 7. Jak e-mail vzniká a jak se dostane k odesílači
 
@@ -466,7 +474,7 @@ Odhad 2–5 % přihlášených z přibližně 5 000 identifikovaných návštěv
 
 | Fáze | Obsah | Hotovo, když | Termín |
 |---|---|---|---|
-| **N0 Předpoklady** | sloučit `feat/titulka-nabidka-oboru` (sada `msmt-harmonogram`); **návrh zásad ochrany osobních údajů a znění souhlasu do repozitáře** podle oddílu 5 (účel, právní titul, zpracovatelé Vercel, Neon, Resend, Matomo, doby uložení po druzích záznamů, práva a jak je uplatnit) a jeho právní kontrola, kterou zajistí zadavatel; databáze Neon; odesílací subdoména se SPF, DKIM, DMARC a **ověřením vypnutého měření přes API**; ověření tarifů a zbývající kvóty Resendu; smlouvy se zpracovateli a regiony databáze | návrh zásad je v repozitáři, po právní kontrole je stránka zásad na webu, subdoména ověřená, měření doložené výstupem z API, `stav-datovych-sad.py kontrola` zná `msmt-harmonogram`, odběr funguje i při zablokované analytice | do 15. 11. 2026 |
+| **N0 Předpoklady** | sloučit `feat/titulka-nabidka-oboru` (sada `msmt-harmonogram`); **návrh zásad ochrany osobních údajů a znění souhlasu do repozitáře** podle oddílu 5 (účel, právní titul, zpracovatelé Vercel, Neon, Resend, Matomo, doby uložení po druzích záznamů, práva a jak je uplatnit) a jeho právní kontrola, kterou zajistí zadavatel; databáze Neon; ověření, že měření otevření a kliknutí je na hlavní doméně vypnuté (přes API); databáze Neon v evropském regionu | stránka zásad je na webu a schválená, měření doložené výstupem z API, `stav-datovych-sad.py kontrola` zná `msmt-harmonogram`, odběr funguje i při zablokované analytice | do 15. 11. 2026 |
 | **N1 Odběr** | API `prihlasit`, dvoukrokové `potvrdit`, `sprava`, `odhlasit` podle RFC 8058; jednorázovost žádosti; limit na IP **v režimu blokování**, limit na adresu a denní rozpočet; doklad souhlasu; **minimální fronta a odesílač s hranicí předání, rezervací kvóty, obnovou podle 5.7 a 5.8 a úklidem prošlých žádostí**, aby potvrzení i uvítání odcházely hned a nic se neztratilo; připojení k Neonu s interaktivními transakcemi; webhook s idempotentním příjmem událostí a zpracováním potlačení adresy; formulář v patičce, na titulní stránce a v kalendáři; stránka `/novinky`; pojmy do slovníku; události v Matomu | na náhledu projde: potvrzení dvěma kroky a potvrzovací e-mail do minuty, načtení odkazu robotem odběr nezaloží, druhé kliknutí nezaloží druhý odběr, po odhlášení starý odkaz odběr neobnoví, odhlášení jedním kliknutím funguje z Gmailu a ruší jen jeden účel, překročení limitů se zablokuje, nedoručitelná adresa odběr smaže, dvě zprávy téže adrese se spárují i při obráceném pořadí webhooků, pád mezi transakcí A a B i mezi B a C obnova dokončí bez druhého e-mailu a prošlá žádost se uklidí | do 1. 12. 2026 |
 | **N2 Obsah a dávky** | šablony podle oddílu 3; `plan` a `priprav`; manifest v `public/`; naplňování fronty, dávkové odeslání, značky s `polozka_id`, obnova podle bodu 5.7, kontrola platnosti zprávy při naplnění, sestavení i před předáním; retenční úklid; testy | projde celá cesta schválení → nasazení → načtení manifestu → nanečisto odeslání; testy: pád mezi transakcí B a C (položka zůstane `predavana` a obnova ji dokončí bez druhého e-mailu), souběh dvou spuštění (tentýž příjemce se nesmí dostat do dvou dávek), souběžné dávky proti rozpočtu (rezervace nesmí přečerpat limit), `429` s `Retry-After`, opakování téhož požadavku v okně 24 hodin, dávka starší 24 hodin (`neurcita`), oprava textu po předání (nová zpráva, ne nový klíč), položka po konci užitečnosti ve frontě z dřívějška, odhlášení před i po hranici předání, dvě zprávy téže adrese a obrácené pořadí webhooků; změřená velikost funkce a doba běhu při cílovém počtu příjemců | do 15. 12. 2026 |
 | **N3 Rozšíření** | odkaz na stránkách škol, věta v simulátoru, konce průvodců; **jarní importér kapacit a přihlášek do února 2027** (rozhodnuto 17. 9. 2026; dnes chybí udržovaný skript pro fázi před výsledky) a na něm závislá zpráva o nové nabídce oborů; zpráva o dalším kalendáři; zkouška přechodu ročníku včetně ICS; rozhodnutí o tarifu podle počtu odběratelů | zkouška přechodu ročníku projde a zpráva o nové nabídce oborů odešla | březen 2027 |
@@ -496,11 +504,21 @@ První e-mail, který musí odejít, je „Školy vyhlašují kritéria“ **12.
 | Zpráva o dalším kalendáři | **ponechat** i s novým potvrzením do 30 dnů |
 | Konzervatoře | pro ročník 2027 **nenabízet**, web je nepokrývá |
 
+**Rozhodnuto 18. 9. 2026:**
+
+| Věc | Rozhodnutí |
+|---|---|
+| Odesílací doména | **hlavní doména** `novinky@prijimackynaskolu.cz`, nastavená a ověřená; subdoména se nezakládá. Pojistky proti sdílené reputaci jsou v oddílu 6 |
+| Právní kontrola zásad | **schváleno**; stránka `/ochrana-osobnich-udaju` je hotová |
+| Ověření služeb | **limity nás neblokují**: tarif Vercelu a frekvence cronu, kvóta Resendu, vypnuté měření, značky u dávek ani omezení požadavků ve firewallu nestojí v cestě |
+| Sloučení `feat/titulka-nabidka-oboru` | **povoleno**; registr pak zná sadu `msmt-harmonogram` a formulář má odkud vzít ročník |
+
 **Co ještě není hotové a není to rozhodnutí, ale práce nebo ověření:**
 
-1. **Ověřit v N0 stav služeb**, který z repozitáře zjistit nelze: tarif Vercelu (kolikrát denně smí běžet cron), tarif a zbývající kvótu Resendu, skutečné vypnutí měření na odesílací subdoméně, podporu značek u dávkového odeslání, dostupnost omezení požadavků ve firewallu, smlouvy se zpracovateli a region databáze.
-2. **Nechat zkontrolovat opravy v oddílu 6** z kola 5 a z cíleného kola, nebo je ověřit až přejímkou N1 a N2 (doporučeno, viz oddíl 18).
-3. **Sloučit `feat/titulka-nabidka-oboru`**, jinak registr nezná sadu `msmt-harmonogram` a formulář nemá odkud vzít ročník.
+1. **Založit databázi Neon v evropském regionu** a doplnit `DATABASE_URL`, `NOVINKY_SECRET`, `CRON_SECRET`, `RESEND_WEBHOOK_SECRET` a `RESEND_MESICNI_KVOTA` do Vercelu; zapnout pravidlo omezení požadavků na `/api/novinky/prihlasit`. Teprve pak se odběr zapne přepínačem `NOVINKY_ZAPNUTO`.
+2. **Sloučit `feat/titulka-nabidka-oboru`** (povoleno 18. 9. 2026). V registru datových sad vznikne konflikt s větví `feat/maturita-srozumitelne`, která tentýž soubor mění; řeší se spojením obou sad, ne přijetím jedné strany.
+3. **Ověřit opravy v oddílu 6** z kola 5 a z cíleného kola přejímkou N1 a N2 (doporučeno, viz oddíl 18).
+4. **Ověřit v N0 nastavení domény přes API**, že měření otevření a kliknutí je vypnuté; ostatní limity služeb zadavatel ověřil 18. 9. 2026.
 
 ## 12. Vypořádání oponentury v1.0
 
@@ -699,6 +717,7 @@ Cílené kolo ukázalo, že na úrovni popisu souběhu lze takto pokračovat dlo
 
 | Verze | Změna |
 |---|---|
+| 1.13 | Rozhodnutí zadavatele z 18. 9. 2026: e-maily se posílají z hlavní domény `prijimackynaskolu.cz` (ověřené, subdoména se nezakládá) a k tomu tři pojistky proti sdílené reputaci a kvótě; právní kontrola zásad schválena; limity služeb neblokují; sloučení větve s harmonogramem povoleno. Zbývající práce zúžena na databázi Neon, tajemství a firewall ve Vercelu, sloučení větve a přejímku. |
 | 1.12 | Doplněn stav realizace: hotová migrace, knihovny, API, formuláře, stránky, generátor a návrh zásad na větvi `feat/novinky-odber`; odběr drží vypnutý přepínač `NOVINKY_ZAPNUTO`, dokud nejsou účty a právní kontrola. Konec užitečnosti květnové zprávy je 24. 5. 2027, tedy poslední den podávání přihlášek do 2. kola. |
 | 1.11 | Vypořádán zbytek oponentury k v1.1: březnová zpráva o nových datech je přeformulovaná retrospektivně (odběratelé ročníku už přihlášky podali), uvítání má podmíněný blok o nových datech, formulář vysvětluje jednou větou, proč konzervatoř v nabídce není, právní kontrola má výslovně předání do třetích zemí (Resend v USA, Neon v evropském regionu) a mazání nepotvrzených požadavků na kalendář je součástí téhož běhu, který odesílá výzvy. M2 a M3 byly vyřešené už ve verzi 1.2. |
 | 1.10 | Zadavatel rozhodl všech pět otevřených otázek: návrh zásad ochrany osobních údajů napíšu já a právní kontrolu zajistí zadavatel; sledování škol schváleno a připojí se v N4; jarní importér kapacit a přihlášek se napíše do února 2027; portál se převede na společný rozpočet v N4; kraj se ptá nepovinně a do vzniku krajského obsahu na něm nic nestojí. Potvrzen název, tykání a označení odkazů, ponechána zpráva o dalším kalendáři. Oddíl 11 přepsán z otevřených otázek na soupis rozhodnutí a zbývající práce. |
