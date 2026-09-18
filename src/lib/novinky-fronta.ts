@@ -122,6 +122,13 @@ export async function pripravDavku(
     telo: (polozky: Polozka[]) => string;
     kdy?: Date;
     max?: number;
+    /**
+     * Omezení na jednu konkrétní položku. Bez něj se vybere nejstarší čekající
+     * položka zprávy — inline odeslání potvrzení by tak poslalo cizí položku
+     * z fronty (stalo se 18. 9. 2026: místo potvrzení nové žádosti odletěla
+     * do Resendu zbytková adresa kouřové zkoušky na example.com).
+     */
+    jenPolozkaId?: string;
   },
 ): Promise<{ davka: DavkaZaznam; polozky: Polozka[] } | null> {
   const kdy = para.kdy ?? new Date();
@@ -134,10 +141,11 @@ export async function pripravDavku(
        left join odberatel u on u.id = p.odberatel_id
        left join zadost_o_potvrzeni z on z.jti = p.zadost_jti
       where p.zprava = $1 and p.stav = 'ceka' and coalesce(u.email, z.email) is not null
+        and ($3::uuid is null or p.id = $3::uuid)
       order by p.vlozeno
       limit $2
       for update of p skip locked`,
-    [para.zprava, max],
+    [para.zprava, max, para.jenPolozkaId ?? null],
   );
   const polozky = vybrane.rows;
   if (polozky.length === 0) return null;
@@ -480,6 +488,12 @@ export async function zapisVysledekPolozky(
  * Servisní položky (potvrzení a uvítání), které inline odeslání nestihlo.
  * Odesílač je dovozí; jinak by po výpadku Resendu potvrzení nikdy nedošlo
  * a žádost by za 72 hodin propadla.
+ *
+ * Položky na rezervované testovací domény (RFC 2606) se nevyzvedávají: Resend
+ * je odmítne stavem 422, takže dovoz je marný. Takové položky vznikají jen
+ * z kouřové zkoušky — formulář je odfiltruje už na vstupu — a poklidí je
+ * zkouška sama. Bez filtru je jinak cron závodící se zkouškou skutečně poslal
+ * do Resendu (stalo se 18. 9. 2026).
  */
 export async function najdiServisniPolozky(
   s: Spojeni,
@@ -495,6 +509,8 @@ export async function najdiServisniPolozky(
        left join zadost_o_potvrzeni z on z.jti = p.zadost_jti
       where p.stav = 'ceka' and p.ucel in ('potvrzeni', 'uvitani')
         and coalesce(u.email, z.email) is not null
+        and split_part(coalesce(u.email, z.email), '@', 2)
+              not in ('example.com', 'example.org', 'example.net', 'example.edu')
       order by p.vlozeno
       limit $1
       for update of p skip locked`,

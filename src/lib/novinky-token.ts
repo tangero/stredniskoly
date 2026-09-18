@@ -126,6 +126,19 @@ export function jeEmailPlatny(email: string): boolean {
   return email.length > 0 && email.length <= 320 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+/** Rezervované domény pro dokumentaci a testy (RFC 2606). */
+const REZERVOVANE_DOMENY = new Set(['example.com', 'example.org', 'example.net', 'example.edu']);
+
+/**
+ * Je adresa doručitelná přes Resend? Rezervované testovací domény Resend
+ * odmítne stavem 422 (validation_error „Invalid `to` field“), takže je
+ * odfiltrujeme dřív, než se zařadí do fronty a marně se opakují.
+ */
+export function jeRezervovanaDomena(email: string): boolean {
+  const domena = email.split('@')[1];
+  return REZERVOVANE_DOMENY.has(domena);
+}
+
 /** Náhodný identifikátor pro dávku, položku nebo doklad. */
 export function noveId(): string {
   return randomUUID();

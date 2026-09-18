@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { jeDbNastavena } from '@/lib/novinky-db';
 import { prihlas, SOUHLAS_VERZE } from '@/lib/novinky-odber';
-import { jeEmailPlatny, normalizujEmail, PRIHLASENI_NEUTRALNI_ODPOVED } from '@/lib/novinky-token';
+import { jeEmailPlatny, normalizujEmail, PRIHLASENI_NEUTRALNI_ODPOVED, jeRezervovanaDomena } from '@/lib/novinky-token';
 import { jeResendNastaven } from '@/lib/novinky-email';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { odesliServisni } from '@/lib/novinky-servisni';
@@ -47,6 +47,12 @@ export async function POST(request: NextRequest) {
   const email = normalizujEmail(typeof telo.email === 'string' ? telo.email : '');
   if (!jeEmailPlatny(email)) {
     return NextResponse.json({ error: 'Zadej prosím platnou e-mailovou adresu.' }, { status: 400 });
+  }
+  if (jeRezervovanaDomena(email)) {
+    return NextResponse.json(
+      { error: 'Testovací domény jako example.com poštovní služba odmítá. Zadej prosím skutečnou adresu.' },
+      { status: 400 },
+    );
   }
   if (telo.souhlas !== true) {
     return NextResponse.json(

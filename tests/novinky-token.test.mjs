@@ -10,6 +10,7 @@ import {
   otisk,
   normalizujEmail,
   jeEmailPlatny,
+  jeRezervovanaDomena,
   ZADOST_PLATNOST_MS,
   VYZVA_PLATNOST_MS,
 } from '../src/lib/novinky-token.ts';
@@ -87,6 +88,15 @@ test('kontrola podoby adresy odmítne zjevné nesmysly', () => {
   assert.ok(!jeEmailPlatny('rodina@example'));
   assert.ok(!jeEmailPlatny('rodina @example.com'));
   assert.ok(!jeEmailPlatny(`${'a'.repeat(315)}@example.com`));
+});
+
+test('rezervované testovací domény se poznají před odesláním (422 Resendu)', () => {
+  assert.ok(jeRezervovanaDomena('rodina@example.com'));
+  assert.ok(jeRezervovanaDomena('rodina@example.org'));
+  assert.ok(jeRezervovanaDomena('rodina@example.net'));
+  assert.ok(jeRezervovanaDomena('rodina@example.edu'));
+  assert.ok(!jeRezervovanaDomena('rodina@seznam.cz'));
+  assert.ok(!jeRezervovanaDomena('rodina@example.cz'));
 });
 
 test('bez tajemství se token nevyrobí a ověření selže tiše', () => {
