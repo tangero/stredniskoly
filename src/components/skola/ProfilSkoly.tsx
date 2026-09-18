@@ -103,8 +103,11 @@ function Zdroj({ children }: { children: ReactNode }) {
 
 function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
   const nadpis = o.zarazeni ? NADPIS_OBTIZNOSTI[o.zarazeni] : o.prijati !== null ? `Přijato ${cislo(o.prijati)}` : 'Údaje o přijímání nemáme';
+  // Každá karta je vlastní mřížka, takže sloupec `auto` by v každé vyšel jinak široký podle obsahu
+  // a karty by se rozjely. Poslední sloupec má proto pevnou míru a akce v něm jsou v obou stavech
+  // stejně široké (viz kompaktní podoba UlozitObor).
   return (
-    <article className="grid gap-3 rounded-2xl bg-white p-5 shadow-[0_1px_0_#dbe3ec] md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.5fr)_auto] md:items-center md:gap-6">
+    <article className="grid gap-3 rounded-2xl bg-white p-5 shadow-[0_1px_0_#dbe3ec] md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.5fr)_minmax(0,20rem)] md:items-center md:gap-6">
       <div className="min-w-0">
         <h3 className="text-[19px] font-bold leading-snug text-[#16325c]">
           <Link href={o.href} className="hover:text-[#0074e4]">{o.nazev}{o.delka ? `, ${o.delka}leté` : ''}</Link>
@@ -147,7 +150,7 @@ function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
       </div>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[15px] font-semibold">
         <Link href={o.href} className="text-[#0074e4] hover:underline">Detail oboru</Link>
-        <UlozitObor programId={o.id} />
+        <UlozitObor programId={o.id} kompaktni />
       </div>
     </article>
   );
