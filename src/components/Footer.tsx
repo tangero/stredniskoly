@@ -18,9 +18,13 @@ export function Footer() {
             <p className="text-sm" style={{ color: '#818c99' }}>
               <strong style={{ color: '#28313b' }}>Autor:</strong> <a href="https://cs.wikipedia.org/wiki/Patrick_Zandl">Patrick Zandl</a> a <a href="https://www.hlidacstatu.cz">Hlídač státu</a>
             </p>
-            <a href="mailto:patrick@zandl.cz" className="text-sm no-underline mt-1 inline-block" style={{ color: '#0074e4' }}>
-              patrick@zandl.cz
-            </a> | <a href='https://www.vibecoding.cz'>Vibecoding.cz</a>
+            <p className="text-sm mt-2" style={{ color: '#818c99' }}>
+              <strong style={{ color: '#28313b' }}>Podpora a kontakt:</strong>{' '}
+              <a href="mailto:eduarda@prijimackynaskolu.cz" className="no-underline" style={{ color: '#0074e4' }}>
+                eduarda@prijimackynaskolu.cz
+              </a>
+            </p>
+            <a href='https://www.vibecoding.cz' className="text-sm no-underline mt-1 inline-block" style={{ color: '#0074e4' }}>Vibecoding.cz</a>
             <p className="text-xs mt-3" style={{ color: '#818c99' }}>
               Pro hlášení chyb použijte prosím tlačítko vpravo dole
             </p>
