@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.5 · 17. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.6 · 18. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -37,6 +37,8 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **hranice úspěšnosti** | minimum bodů z kritérií školy; když ji odvozujeme z dat, vždy „podle výsledků to odpovídá“ | „minimum bodů, bez kterého škola uchazeče nepřijme“ | hranice přijetí (tu nezná nikdo) |
 | **1. kolo**, **2. kolo** | kola přijímacího řízení podle harmonogramu MŠMT | u 2. kola: „když se obor v 1. kole nenaplní, škola může vypsat 2. kolo“ | druhé kolo bez čísla ročníku |
 | **místa**, **kapacita** | počet míst, které škola pro obor v kole vypsala | není potřeba | volná místa (jen u 2. kola) |
+| **obor bez jednotné zkoušky** | obor, u kterého se jednotná přijímací zkouška nekoná: kategorie C, E, H, J a P, například učební obory s výučním listem; přehled je zatím nezahrnuje | v tabulce stačí značka „bez jednotné zkoušky“, pod tabulkou: „Obory bez jednotné zkoušky, například učební obory s výučním listem, přehled zatím nezahrnuje; uvádíme u nich jen název.“ | obor bez JPZ, obor bez přijímaček, nematuritní obor (není totéž) |
+| **mimo přehled** | obor, který přehled nezahrnuje z jiného důvodu než kvůli chybějící jednotné zkoušce (například jiná forma studia nebo talentový obor) | jen jako značka v tabulce, vysvětlení nese poznámka pod tabulkou | neznámý obor, bez údajů (údaje existují, jen je nezpracováváme) |
 | **nabídka oborů** | obory a počet míst, které školy pro dané přijímací řízení vypíšou; školy je zveřejňují spolu s kritérii přijetí, agregovaná data CERMATu k nim vycházejí až o několik měsíců později | „nabídka oborů pro rok …, tedy obory a počet míst“; termín zveřejnění vždy s rokem a s tím, že ho školy zveřejňují s kritérii | seznam oborů, otevírané obory (bez roku), vyhlášení nabídky (školy vyhlašují kritéria) |
 
 ## 3. Výsledky a obtížnost
@@ -86,6 +88,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.6 | Obor bez jednotné zkoušky a mimo přehled: značky pro obory výš a níž na přihlášce, které přehled nezahrnuje; dosud se ukazovaly jen kódem a značkou „bez údajů“. |
 | 1.5 | Nabídka oborů jako pojem pro upozornění na titulní stránce: obory a počet míst, které školy vypíšou. Zveřejňují ji s kritérii přijetí, proto se termín uvádí jako zveřejnění kritérií, ne jako „vyhlášení nabídky“. |
 | 1.4 | Maturita srozumitelněji: „podobné školy“, „střed podobných škol“, „nad středem podobných škol“, „maturitu udělalo X z Y přihlášených“; „skupina oborů“ a „percentil“ jen v podrobnostech. Srovnání s podobnými školami se vede v % bodů v testu, percentil se uvádí jen jako „v celé zemi lépe než X ze 100 maturantů“, aby se dvě různá srovnání nepletla. |
 | 1.3 | Pojmy pro stránku školy: maturanti, společná část, skupina oborů, zařazení proti skupině, souběžní uchazeči, vzdušnou čarou a značky původu údajů. |

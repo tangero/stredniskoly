@@ -11,9 +11,13 @@ from __future__ import annotations
 
 import collections
 import json
+import sys
 from pathlib import Path
 
 import openpyxl
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from nazvy_oboru import nazvy_oboru  # noqa: E402
 
 KOREN = Path(__file__).resolve().parent.parent
 def zobrazeny_rok() -> int:
@@ -24,7 +28,6 @@ def zobrazeny_rok() -> int:
 
 ROK = zobrazeny_rok()
 ZDROJ = KOREN / "data" / f"PZ{ROK}_kolo1_uchazeci_prihlasky_vysledky.xlsx"
-REJSTRIK = KOREN / "data" / "msmt_rejstrik" / "rssz-2026-06-30.jsonld"
 VYSTUP = KOREN / "public" / f"soubeh_prihlasek_{ROK}.json"
 MAX_VOLEB = 5
 POCET_SOUBEHU = 6
@@ -57,59 +60,6 @@ def nacti_volby() -> tuple[collections.Counter, collections.Counter, dict]:
                 if jiny != klic:
                     soubeh[klic][jiny] += 1
     return uchazecu, poradi, soubeh
-
-
-def nazvy_oboru() -> dict[str, dict]:
-    """Mapa REDIZO_KKOV → název školy a oboru.
-
-    Hlavní zdroj je katalog JPZ, doplňkový rejstřík škol MŠMT: uchazeči se hlásí
-    i na učební obory kategorie H, které jednotnou zkoušku nemají, a v katalogu
-    tedy nejsou.
-    """
-    mapa: dict[str, dict] = {}
-
-    data = json.load(open(KOREN / "public" / "schools_data.json", encoding="utf-8"))
-    for rok in ("2025", "2026"):
-        for z in data.get(rok, []):
-            klic = f"{z['redizo']}_{z.get('kkov') or z['id'].split('_')[1]}"
-            mapa.setdefault(
-                klic,
-                {
-                    "skola": z.get("nazev_display") or z.get("nazev"),
-                    "obec": z.get("obec"),
-                    "obor": z.get("obor"),
-                    "id": z["id"],
-                    "jpz": True,
-                },
-            )
-
-    if not REJSTRIK.exists():
-        # Snímky rejstříku se do gitu neukládají; bez nich zůstanou učební obory bez názvu.
-        print(f"varování: {REJSTRIK.name} chybí, obory bez JPZ zůstanou bez názvu")
-        return mapa
-    rejstrik = json.load(open(REJSTRIK, encoding="utf-8"))["list"]
-    for zaznam in rejstrik:
-        redizo = str(zaznam.get("redIzo") or "")
-        if not redizo:
-            continue
-        nazev = zaznam.get("zkracenyNazev") or zaznam.get("uplnyNazev")
-        obec = (zaznam.get("adresa") or {}).get("obec")
-        for skola in zaznam.get("skolyAZarizeni", []):
-            for obor in skola.get("obory", []):
-                kod = obor.get("kod")
-                if not kod:
-                    continue
-                mapa.setdefault(
-                    f"{redizo}_{kod}",
-                    {
-                        "skola": nazev,
-                        "obec": obec,
-                        "obor": obor.get("nazev"),
-                        "id": None,
-                        "jpz": False,
-                    },
-                )
-    return mapa
 
 
 def main() -> None:

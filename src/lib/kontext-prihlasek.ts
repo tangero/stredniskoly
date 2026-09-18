@@ -16,28 +16,45 @@ export interface KontextPrihlasek {
   odvozena_hranice?: OdvozenaHranice;
 }
 
+/** Obor výš nebo níž na přihlášce, který přehled nezahrnuje; název z rejstříku škol, může chybět. */
+export interface OborMimoPrehled {
+  skola: string | null;
+  obec: string | null;
+  obor: string | null;
+  bez_jednotne_zkousky: boolean;
+}
+
+interface KontextSoubor {
+  data: Record<string, KontextPrihlasek>;
+  mimo: Record<string, OborMimoPrehled>;
+}
+
 const SADA = 'cermat-uchazeci-kolo1';
-const cache = new Map<string, Record<string, KontextPrihlasek>>();
+const cache = new Map<string, KontextSoubor>();
 
 export async function rokKontextu(): Promise<number | null> {
   const obdobi = await zobrazeneObdobi(SADA);
   return obdobi ? Number(obdobi) : null;
 }
 
-export async function getKontextPrihlasek(programId: string): Promise<{ rok: number; kontext: KontextPrihlasek } | null> {
+export async function getKontextPrihlasek(programId: string): Promise<{
+  rok: number; kontext: KontextPrihlasek; mimoPrehled: Record<string, OborMimoPrehled>;
+} | null> {
   const rok = await rokKontextu();
   if (!rok) return null;
   const klic = String(rok);
   if (!cache.has(klic)) {
-    let data: Record<string, KontextPrihlasek> = {};
+    let soubor: KontextSoubor = { data: {}, mimo: {} };
     try {
-      data = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public', `kontext_prihlasek_${klic}.json`), 'utf-8')).data ?? {};
+      const json = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public', `kontext_prihlasek_${klic}.json`), 'utf-8'));
+      soubor = { data: json.data ?? {}, mimo: json.mimo_prehled ?? {} };
     } catch {
       // chybějící soubor není chyba, oddíl se nezobrazí
     }
-    cache.set(klic, data);
+    cache.set(klic, soubor);
   }
   const [redizo, kkov] = programId.split('_');
-  const kontext = cache.get(klic)![`${redizo}_${kkov}`];
-  return kontext ? { rok, kontext } : null;
+  const { data, mimo } = cache.get(klic)!;
+  const kontext = data[`${redizo}_${kkov}`];
+  return kontext ? { rok, kontext, mimoPrehled: mimo } : null;
 }

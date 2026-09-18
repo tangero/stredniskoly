@@ -6,6 +6,10 @@ Zdroj: PZ{rok}_kolo1_uchazeci_prihlasky_vysledky.xlsx (údaje o jednotlivých uc
 Klíč: REDIZO_KKOV (zdroj nenese zaměření, údaje platí za obor školy jako celek).
 Výstup: public/kontext_prihlasek_{rok}.json; rok bez --rok bere registr stavu datových sad.
 
+Obory výš a níž na přihlášce, které přehled nezahrnuje (například učební obory bez jednotné
+zkoušky), nesou v poli `mimo_prehled` název školy, obce a oboru z rejstříku škol MŠMT
+(scripts/nazvy_oboru.py), aby je stránka nemusela ukazovat jen kódem.
+
 Meze (slovník ukazatelů):
   - obor s méně než 10 uchazeči se nezapisuje,
   - obory výš a níž na přihlášce jen s aspoň 10 společnými uchazeči,
@@ -18,9 +22,13 @@ from __future__ import annotations
 import argparse
 import collections
 import json
+import sys
 from pathlib import Path
 
 import openpyxl
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from nazvy_oboru import bez_jednotne_zkousky, nazvy_oboru  # noqa: E402
 
 KOREN = Path(__file__).resolve().parent.parent
 MIN_UCHAZECU = 10
@@ -51,6 +59,20 @@ def odvozena_hranice(soutezici: list[tuple], nesplnili: list[tuple]) -> dict | N
         if nejvyse < nejnize:
             return {"typ": typ, "nejvyse_nesplneny": nejvyse, "nejnize_soutezici": nejnize}
     return {"typ": "nevysvetleno_vysledkem_jpz"}
+
+
+def mimo_prehled(data: dict[str, dict], nazvy: dict[str, dict]) -> dict[str, dict]:
+    """Popis oborů výš a níž na přihlášce, které katalog JPZ nevede (název z rejstříku, nebo žádný)."""
+    klice = {k for z in data.values() for k, _ in z["obory_vys"] + z["obory_niz"]}
+    vystup = {}
+    for k in sorted(klice):
+        popis = nazvy.get(k)
+        if popis and popis["jpz"]:
+            continue  # stránku oboru web najde sám
+        popis = popis or {}
+        vystup[k] = {"skola": popis.get("skola"), "obec": popis.get("obec"), "obor": popis.get("obor"),
+                     "bez_jednotne_zkousky": bez_jednotne_zkousky(k)}
+    return vystup
 
 
 def main() -> None:
@@ -117,6 +139,7 @@ def main() -> None:
         "rok": rok, "kolo": 1, "zdroj": zdroj.name, "generator": "scripts/build-kontext-prihlasek.py",
         "meze": {"min_uchazecu": MIN_UCHAZECU, "min_spolecnych": MIN_SPOLECNYCH, "min_pro_hranici": MIN_PRO_HRANICI},
         "data": data,
+        "mimo_prehled": mimo_prehled(data, nazvy_oboru()),
     }, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     print(f"zapsáno {len(data)} oborů do {vystup}")
 
