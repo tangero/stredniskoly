@@ -107,6 +107,8 @@ python3 scripts/datova-linka.py predej --vse-schvalene
 
 **GitHub Actions**, soubor `.github/workflows/datova-linka.yml`: v pondělí ráno `beh`; `schvaleni` a `predej` po komentáři v issue datové linky a každých 15 minut. Fronta se mezi běhy ukládá do větve `linka/stav`, a to jen když se změnila, takže pravidelné kontroly nevytvářejí commity ani náhledová nasazení. Frontu uloží i běh, ve kterém předání selhalo. Potřebné secrets: `TELEGRAM_BOT_TOKEN` a `TELEGRAM_CHAT_ID`; pro pull requesty stačí vestavěný `GITHUB_TOKEN` s právy `contents` a `pull-requests`.
 
+**Zastaralý index názvů oborů.** Když zpracování dat uchazečů skončí chybou `nazvy-oboru.json vznikl ze snímku …, registr zobrazuje …`, někdo přepnul snímek rejstříku MŠMT bez přegenerování indexu. Je to záměr: generátor raději skončí, než aby přepsal názvy oborů prázdnými hodnotami. Oprava je ruční krok z `docs/zdroje-dat.md`, oddíl 5: `python3 scripts/build-nazvy-oboru-rejstrik.py` nad staženým snímkem, commit `data/msmt_rejstrik/nazvy-oboru.json` a nové spuštění úlohy příkazem `znovu`.
+
 ## 7. Testy nanečisto
 
 `python3 -m unittest tests/test_datova_linka.py` spustí celou linku proti falešnému zdroji na lokálním HTTP serveru a proti falešnému Telegram API. Ověřuje:

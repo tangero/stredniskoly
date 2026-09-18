@@ -465,7 +465,7 @@
         "revize": "Starší snímky se přepisují: snímek k 30. 6. 2025 změněn 15. 6. 2026.",
         "import": "Soubory se ukládají do data/msmt_rejstrik/; zpracování scripts/enrich-continuity-registry.py a scripts/build-navaznost-notes.py.",
         "automatizace": "priprava",
-        "lidsky_krok": "Jednou ročně dohledat identifikátor nového ročníku.",
+        "lidsky_krok": "Jednou ročně dohledat identifikátor nového ročníku. Po každém přepnutí snímku spustit scripts/build-nazvy-oboru-rejstrik.py a commitnout data/msmt_rejstrik/nazvy-oboru.json; bez toho generátory souběhu a kontextu přihlášek odmítnou běžet.",
         "sledovat": [
           "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-{ctvrtleti}.jsonld"
         ]

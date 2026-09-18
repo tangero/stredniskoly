@@ -382,6 +382,10 @@ def main() -> None:
     uloz(registr)
     zapis_tabulku(registr)
     print(f"{a.sada}: uloženo")
+    if a.sada == "msmt-rejstrik-snimky":
+        # Generátory souběhu a kontextu přihlášek bez nového indexu odmítnou běžet (scripts/nazvy_oboru.py).
+        print("NUTNÝ KROK  přegenerujte index názvů oborů a commitněte ho s registrem:\n"
+              "            python3 scripts/build-nazvy-oboru-rejstrik.py")
 
 
 if __name__ == "__main__":
