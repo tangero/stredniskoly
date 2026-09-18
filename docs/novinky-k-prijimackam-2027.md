@@ -1,6 +1,6 @@
 # Novinky k přijímačkám e-mailem
 
-Verze 1.14 · 18. 9. 2026 · Návrh k rozhodnutí, nic není implementované. Vypořádána [oponentura v1.0](oponentura-novinky-k-prijimackam-2027.md) (oddíl 12) a [oponentura codexu](podklady/oponentura-codex-novinky-2027.md), kola 1 až 5 (oddíly 13 až 17). **Oddíl 6 zadavatel schválil 17. 9. 2026** ve všech pěti částech, včetně volby databáze Neon. Oprava podle kola 5 (číslo pokusu u dávky, oddělené účtování dávky a výsledků položek, rezervace kvóty v období možného odeslání) ale **oponenturou neprošla**, protože dohodnutý počet pěti kol je vyčerpán. **Závazný implementační kontrakt je oddíl 6**; oddíly 12 až 16 zaznamenávají cestu k němu a starší formulace v nich jsou historické.
+Verze 1.15 · 18. 9. 2026 · Návrh k rozhodnutí, nic není implementované. Vypořádána [oponentura v1.0](oponentura-novinky-k-prijimackam-2027.md) (oddíl 12) a [oponentura codexu](podklady/oponentura-codex-novinky-2027.md), kola 1 až 5 (oddíly 13 až 17). **Oddíl 6 zadavatel schválil 17. 9. 2026** ve všech pěti částech, včetně volby databáze Neon. Oprava podle kola 5 (číslo pokusu u dávky, oddělené účtování dávky a výsledků položek, rezervace kvóty v období možného odeslání) ale **oponenturou neprošla**, protože dohodnutý počet pěti kol je vyčerpán. **Závazný implementační kontrakt je oddíl 6**; oddíly 12 až 16 zaznamenávají cestu k němu a starší formulace v nich jsou historické.
 
 Návštěvník webu zadá e-mail a během přijímacího řízení dostává s předstihem připomínky termínů a pokyny, co je potřeba připravit. Na rozdíl od [sledování škol a oborů](sledovani-skol-2027.md) (větev `docs/sledovani-skol-a-oboru`, v2.1) dostanou všichni odběratelé téhož ročníku a druhu studia stejný obsah. Návrh navazuje na [kalendář přijímaček](aktualizace-kalendar-data-2027.md) (`src/data/admissions-2027.json`, sada `msmt-harmonogram` v registru na větvi `feat/titulka-nabidka-oboru`) a na [analýzu návštěvnosti](analyza-navstevnosti-2026.md).
 
@@ -8,12 +8,12 @@ Návštěvník webu zadá e-mail a během přijímacího řízení dostává s p
 
 1. **Novinky se spustí samostatně, sledování se připojí v N4.** Sledování škol a oborů zadavatel schválil 17. 9. 2026, ale novinky na něj nečekají: společný formulář „sledovat školu / odebírat termíny“ a jedna správa odběrů vzniknou ve fázi N4, až bude sledování mít fungující odesílač. Obě funkce ukládají odběratele do stejné databáze (bod 7), takže spojení nepotřebuje žádný převod dat.
 2. **Novinky se spustí dřív než sledování.** Nepotřebují záznam událostí ani převod klíčů oborů, stačí jim kalendář MŠMT, který web už má.
-3. **Formulář nabízí jen ročník, pro který je zveřejněný kalendář, a jen druh studia, který web pokrývá.** Pro ročník přijímaček 2027 to je střední škola po 9. třídě a víceleté gymnázium. **Konzervatoř se nenabízí**, protože web obory bez jednotné zkoušky nepokrývá a e-maily by odkazovaly na nástroje, které konzervatořím nic neřeknou. Rodinám s mladšími dětmi formulář nabídne jen jednu zprávu, až vyjde další kalendář (oddíl 4).
+3. **Je to jeden newsletter bez ročníku a bez segmentů** (rozhodnutí zadavatele 18. 9. 2026). Formulář má jen e-mail a souhlas; neptá se na ročník, druh studia ani kraj. Odběr běží, dokud se člověk neodhlásí, takže se dá založit i rok dopředu a rodina mladšího dítěte nepotřebuje žádný obchvat. Termíny jednotné zkoušky se posílají **všem v jedné zprávě** s větou, který den platí pro čtyřleté obory a který pro víceletá gymnázia. **Konzervatoře se neposílají**, protože je web nepokrývá; jejich termíny zůstávají v kalendáři.
 4. **Termíny v e-mailu se berou z kalendáře, ne z textu.** Šablona odkazuje na událost (`ss-prihlasky`) a generátor doplní datum a rok ze souboru kalendáře. Letopočet se do šablon nepíše. Každá zpráva má výslovně uvedený **druh spouštěče**: potvrzení odběru, kalendářní událost, redakční datum, nebo publikace dat (oddíl 3).
 5. **Každý e-mail vzniká v repozitáři a odejde jen po sloučení pull requestu.** Texty procházejí [slovníkem pojmů](slovnik-pojmu.md) stejně jako stránky webu. Odesílač čte e-maily z **manifestu na nasazeném webu**, takže nic neodejde bez revize a bez nasazení (oddíl 7).
 6. **Formulář je výrazný, ale nevyskakuje.** Má stálé místo na titulní stránce, v patičce a u kalendáře. Vyskakovací okno ani lišta přes obsah se nepoužijí.
 7. **Odběratelé leží ve vlastní databázi Neon Postgres, e-maily odcházejí jako dávky transakčních e-mailů Resendu.** Omezení počtu potvrzovacích e-mailů na jednu adresu potřebuje úložiště tak jako tak. Kontakty Resendu by tedy byly druhým úložištěm souhlasů, ne náhradou databáze (oddíl 6).
-8. **Plošně se oznamují jen velké změny dat, které se týkají přijímaček, a jen v sezóně ročníku:** nová nabídka oborů a výsledky 1. kola. **Sezóna ročníku je od otevření odběru do poslední události ročníku v kalendáři**, tedy pro rok 2027 do 22. 6. 2027. Pásma přijetí vycházejí z dat uchazečů zpravidla v květnu, tedy uvnitř sezóny, ale týkají se **minulého** ročníku: zmíní se v nejbližším e-mailu, samostatný nedostanou. Maturita a inspekce patří do sledování školy, doprava ani revize nikam.
+8. **Obsah je dvojí: termíny přijímacího řízení a zprávy o nových datech na webu** (rozhodnutí zadavatele 18. 9. 2026). Plošně se oznamují jen velké změny dat, které se týkají přijímaček: nová nabídka oborů a výsledky 1. kola. **Sezóna ročníku je od otevření odběru do poslední události ročníku v kalendáři**, tedy pro rok 2027 do 22. 6. 2027. Pásma přijetí vycházejí z dat uchazečů zpravidla v květnu, tedy uvnitř sezóny, ale týkají se **minulého** ročníku: zmíní se v nejbližším e-mailu, samostatný nedostanou. Maturita a inspekce patří do sledování školy, doprava ani revize nikam.
 9. **Odhlašuje se odběr, ne člověk.** Odhlášení termínů ruší jen odběr termínů. Odběratel se smaže, jakmile mu nezbývá žádný odběr ani čekající požadavek; doklad souhlasu a evidence odeslání se od něj **odpojí a zůstanou bez adresy**, jen s jejím otiskem (oddíl 6). Samostatný účel „zpráva o dalším kalendáři“ i budoucí sledování školy zůstávají odhlášením termínů nedotčené.
 10. **Odesílač posílá splatné a dosud neodeslané zprávy, ne „dnešní“.** Každá zpráva má datum splatnosti a **konec užitečnosti**; po něm se neodesílá a hlásí se to jako chyba. Výpadek jednoho dne tedy zprávu neztratí (oddíl 6).
 11. **Všechny e-maily jdou jednou frontou a mají pevnou hranici předání.** Potvrzení, uvítání i obsahové zprávy mají ve frontě položku, která vzniká dřív než volání Resendu. Před voláním se trvale zapíše, že odeslání mohlo začít; od té chvíle se tělo požadavku ani klíč nemění a odhlášení položku neruší. Kvóta se rezervuje předem, ne účtuje dodatečně (oddíl 6).
@@ -46,17 +46,15 @@ Kalendář 2027 dává pevné body, ke kterým se většina zpráv váže. Sloup
 | E-mail | Spouštěč | Datum odeslání 2027 | Komu | Obsah |
 |---|---|---|---|---|
 | **Uvítání** | potvrzení odběru | okamžik potvrzení, posílá se hned | všem | přehled termínů ročníku, odkaz na kalendář a ICS, co dělat teď podle měsíce. **Podmíněný blok** o datech, která na web přibyla, se vypíše jen tehdy, když od přepnutí sady uplynulo méně než dva měsíce; nový odběratel jinak žádný „poslední e-mail“ nemá |
-| Výběr školy a dny otevřených dveří | redakční datum | **7. 12. 2026**, jen pokud je N2 hotová; jinak se obsah přesune do uvítání | SŠ, víceleté | jak vybírat, co se ptát, odkaz na simulátor a stránky škol |
-| **Školy vyhlašují kritéria** | `ss-kriteria` minus 3 dny | **12. 1. 2027** | SŠ, víceleté | co v kritériích hledat: požadavek školy, hranice úspěšnosti, školní zkouška. **Nabídku oborů pro rok 2027 zveřejňují školy ve svých kritériích**, web ji bude mít až z otevřených dat CERMATu. **První e-mail, který musí odejít** |
-| **Přihlášky** | `ss-prihlasky` minus 5 dní | **27. 1. 2027** | SŠ, víceleté | jak podat přihlášku, pořadí na přihlášce („šanci na přijetí nemění, škola řadí jen podle svých kritérií“), přílohy |
-| **Připomínka přihlášek** | konec `ss-prihlasky` minus 4 dny | **18. 2. 2027** | SŠ, víceleté | přihlášky se podávají do 22. 2. 2027 |
-| Nová data o 1. kole na webu | publikace dat: přepnutí `cermat-kapacity` **a** `cermat-prihlasky` | podle přepnutí, nejdřív po jarním importu | SŠ, víceleté | **retrospektivně**: kolik míst školy vypsaly a kolik přihlášek obory dostaly v 1. kole tohoto roku. Není to výzva k výběru, protože odběratelé ročníku už přihlášky podali; pro ročník, který se hlásí příště, se totéž zmíní v uvítání |
-| Školní a talentové zkoušky | `ss-skolni` minus 7 dní | **8. 3. 2027** | SŠ, víceleté | pozvánka od školy, náhradní termíny 26. 4. – 5. 5. 2027 |
-| **Jednotná zkouška, čtyřleté obory** | `jpz-4-1` minus 10 dní | **2. 4. 2027** | SŠ | oba řádné termíny (12. a 13. 4.), co s sebou, náhradní termíny 29. a 30. 4. při nemoci |
-| **Jednotná zkouška, víceletá gymnázia** | `jpz-vice-1` minus 10 dní | **4. 4. 2027** | víceleté | oba řádné termíny (14. a 15. 4.) a náhradní termíny |
-| **Výsledky a 2. kolo** | `ss-vysledky` | **14. 5. 2027** ráno | SŠ, víceleté | jak zjistit výsledek; co když se uchazeč nedostal nikam: školy vyhlásí obory a kritéria 2. kola 14.–18. 5. a **přihlášky do 2. kola se podávají jen 19.–24. 5. 2027** |
+| Výběr školy a dny otevřených dveří | redakční datum | **7. 12. 2026**, jen pokud je N2 hotová; jinak se obsah přesune do uvítání | všem | jak vybírat, co se ptát, odkaz na simulátor a stránky škol |
+| **Školy vyhlašují kritéria** | `ss-kriteria` minus 3 dny | **12. 1. 2027** | všem | co v kritériích hledat: požadavek školy, hranice úspěšnosti, školní zkouška. **Nabídku oborů pro rok 2027 zveřejňují školy ve svých kritériích**, web ji bude mít až z otevřených dat CERMATu. **První e-mail, který musí odejít** |
+| **Přihlášky** | `ss-prihlasky` minus 5 dní | **27. 1. 2027** | všem | jak podat přihlášku, pořadí na přihlášce („šanci na přijetí nemění, škola řadí jen podle svých kritérií“), přílohy |
+| **Připomínka přihlášek** | konec `ss-prihlasky` minus 4 dny | **18. 2. 2027** | všem | přihlášky se podávají do 22. 2. 2027 |
+| Nová data o 1. kole na webu | publikace dat: přepnutí `cermat-kapacity` **a** `cermat-prihlasky` | podle přepnutí, nejdřív po jarním importu | všem | **retrospektivně**: kolik míst školy vypsaly a kolik přihlášek obory dostaly v 1. kole tohoto roku. Není to výzva k výběru, protože odběratelé ročníku už přihlášky podali; pro ročník, který se hlásí příště, se totéž zmíní v uvítání |
+| Školní a talentové zkoušky | `ss-skolni` minus 7 dní | **8. 3. 2027** | všem | pozvánka od školy, náhradní termíny 26. 4. – 5. 5. 2027 |
+| **Jednotná zkouška** | `jpz-4-1` minus 10 dní | **2. 4. 2027** | všem | všechny čtyři dny (12. a 13. 4. pro čtyřleté obory, 14. a 15. 4. pro víceletá gymnázia) s větou, který pro koho platí; co s sebou, náhradní termíny 29. a 30. 4. |
+| **Výsledky a 2. kolo** | `ss-vysledky` | **14. 5. 2027** ráno | všem | jak zjistit výsledek; co když se uchazeč nedostal nikam: školy vyhlásí obory a kritéria 2. kola 14.–18. 5. a **přihlášky do 2. kola se podávají jen 19.–24. 5. 2027** |
 | Výsledky 2. kola a konec ročníku | `k2-vysledky` | **22. 6. 2027** | všem | co dál; odběr ročníku končí, nabídka jedné zprávy o dalším kalendáři pro mladšího sourozence |
-| Kalendář dalšího ročníku | publikace dat: přepnutí `msmt-harmonogram` | podle přepnutí, čekáme srpen 2027 | kdo si o zprávu řekl (oddíl 4) | vyšel kalendář ročníku 2028; odkaz na potvrzení nového odběru. **Týž běh, který výzvy odesílá, také maže požadavky, jejichž 30denní lhůta uplynula**, aby nezůstaly viset |
 
 Z pevného plánu vychází **v lednu 2027 dvě zprávy, v únoru jedna**; víc jich v měsíci bude jen tehdy, když se sejde se zprávou o datech nebo s uvítáním nových odběratelů. Dřívější tvrzení „v únoru dvě až tři“ bylo nepodložené.
 
@@ -80,8 +78,8 @@ Nejvíc návštěv měl web v únoru a květnu (4 969 a 4 435 identifikovaných 
 | Místo | Rozhodnutí | Proč |
 |---|---|---|
 | **Titulní stránka, tmavá karta „Přijímačky 2027“** (`src/app/page.tsx`), pod větou o termínech přihlášek | **použít, hlavní místo** | karta už mluví o termínech, formulář v ní na „Termíny už známe“ přirozeně navazuje |
-| **Titulní stránka, modrý pás „Vyzkoušej zdarma“** na konci | **použít**, druhý formulář | kdo dočte titulní stránku, dostane druhou příležitost; pás už je výzvou k akci |
-| **Patička na všech stránkách** (`src/components/Footer.tsx`), nový první sloupec „Termíny e-mailem“ | **použít** | je na každé stránce webu včetně stránek škol, kam přichází většina lidí z vyhledávání |
+| **Titulní stránka, modrý pás „Vyzkoušej zdarma“** na konci | **zavrhnout pro první verzi** (rozhodnutí 18. 9. 2026) | tři místa stačí na ověření; každé další je plocha na chyby |
+| **Patička na všech stránkách** | **zavrhnout pro první verzi**, zůstane jen odkaz na `/novinky` | formulář v patičce se vykresloval na 1 179 stránkách škol a build narážel na časový limit; odkaz stojí nic |
 | **Kalendář `/prijimacky-2027`**, vedle „Ulož si termíny“ | **použít, výrazně** | stránka dnes píše, že se stažená kopie sama neaktualizuje, a odběr je přesně odpověď na to |
 | **Stránka školy a oboru** | **malý odkaz pod hlavičkou**; společný panel se sledováním až podle rozhodnutí 1 | sledování zakazuje tlačítko dřív, než funguje odesílač |
 | **Simulátor a zvažované obory** | **použít** jako větu pod seznamem: „Připomeneme ti termín přihlášek“ | rodině se zvažovanými obory se termín přihlášek hodí nejvíc |
@@ -97,20 +95,15 @@ Nejvíc návštěv měl web v únoru a květnu (4 969 a 4 435 identifikovaných 
 Podoba formuláře:
 
 ```text
-┌ Termíny přijímaček e-mailem ───────────────────────────────────────┐
-│ Pošleme ti s předstihem termíny přijímaček 2027 a co je potřeba    │
-│ připravit: kritéria, přihlášky, jednotná zkouška, výsledky         │
-│ a 2. kolo.                                                          │
-│ Hlásíš se na: [x] střední školu po 9. třídě                        │
-│               [ ] víceleté gymnázium                                │
-│ Kraj (nepovinně): [ Středočeský ▾ ]                                 │
-│ [ e-mail                         ]  [ Posílat termíny ]            │
+┌ Novinky k přijímačkám e-mailem ────────────────────────────────────┐
+│ Pošleme ti s předstihem termíny přijímacího řízení 2027           │
+│ a napíšeme, co je potřeba připravit: kritéria, přihlášky, jednotná │
+│ zkouška, výsledky a 2. kolo. K tomu zprávu, když na web přibudou   │
+│ nová data.                                                         │
+│ [ e-mail                         ]  [ Odebírat novinky ]           │
 │ [ ] Odběr zakládám pro sebe nebo své dítě a je mi alespoň 15 let.   │
-│ Nejvýš pár e-mailů měsíčně, jen do konce přijímaček 2027.          │
-│ Odhlásit se jde jedním kliknutím. Zásady ochrany osobních údajů    │
-│                                                                     │
-│ Přijímačky vás čekají až v dalších letech?                         │
-│ → Dejte mi vědět, až vyjde kalendář dalšího ročníku (jeden e-mail) │
+│ Nejvýš pár e-mailů měsíčně. Odhlásit se jde jedním kliknutím.      │
+│ Zásady ochrany osobních údajů                                      │
 └────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -154,25 +147,16 @@ Uchazeči o víceleté gymnázium mají 11 až 13 let, uchazeči po 9. třídě 
 
 **Rozhodnutí o sledování na volbě nezávisí.** Pokud se sledování schválí, přidá do téže databáze své tabulky a přebere odhlašování i roční expiraci. Pokud ne, novinky mají vlastní malou databázi.
 
-### Tři druhy adresáta a tři účely žádosti
+### Dva druhy adresáta
 
 | Adresát | Kde je zapsaný | Co mu smí odejít |
 |---|---|---|
-| **žádost o potvrzení** | `zadost_o_potvrzeni` | jen e-mail té žádosti |
-| **odběratel s aktivním odběrem** | `odberatel` + `odber_novinek` | uvítání a obsahové zprávy jeho ročníku a segmentu |
-| **čekající na další kalendář** | `zprava_o_kalendari` | jen výzva k potvrzení nového ročníku |
+| **žádost o potvrzení** | `zadost_o_potvrzeni`, platnost 72 h | jen potvrzovací e-mail té žádosti |
+| **odběratel** | `odberatel` + `odber_novinek` | uvítání a všechny zprávy newsletteru |
 
-Žádost má **účel** a podle něj platnost i to, co její potvrzení založí:
+Odběr je **jeden na odběratele**: nemá ročník, druh studia ani kraj. Ročník nese každá zpráva (bere se z registru), takže identifikátor zprávy koliduje jen v rámci ročníku. Uvítání má v identifikátoru `jti` žádosti: kdo se odhlásí a za měsíc přihlásí znovu, musí uvítání dostat znovu, a s pevným názvem by narazil na jedinečnost položky.
 
-| Účel žádosti | Vzniká | Platnost | Potvrzení založí |
-|---|---|---|---|
-| `novinky` | z formuláře odběru | 72 h | odběr ročníku a segmentů, doklad souhlasu, položku uvítání |
-| `kalendar` | z volby „dejte mi vědět, až vyjde další kalendář“ | 72 h | jen `zprava_o_kalendari` ve stavu `ceka` a doklad souhlasu; žádné uvítání |
-| `novy_rocnik` | vystaví ji odesílač spolu s výzvou po přepnutí `msmt-harmonogram` | **30 dnů od odeslání výzvy**, nikoli od přípravy | odběr nového ročníku a doklad souhlasu; současně uzavře `zprava_o_kalendari` na `uzavren`, obojí v jedné transakci |
-
-**Do potvrzení se ukládá žádost, ne odběr.** Žádost nese adresu, volby, verzi souhlasu, zdroj a `jti`; po platnosti se maže. Odběr, doklad souhlasu ani identita odběratele do potvrzení nevznikají.
-
-Všechny e-maily novinek mají položku v jedné frontě `polozka_odeslani`, která vzniká **před** voláním Resendu. **Potvrzení a uvítání se posílají hned** v témže požadavku, který je založil, s cílovou dobou doručení do minuty. Jdou ale **stejnou cestou jako obsahové zprávy**: dávka o jednom příjemci, rezervace kvóty, hranice předání. Jinak by formulář obcházel strop i rezervu pro portál. Když inline odeslání nevyjde, položka zůstane ve frontě a **cron ji doveze** (`dovezServisni`) dřív než obsahové zprávy, protože žádost o potvrzení propadá za 72 hodin. Obsahové zprávy a výzvy posílá cron.
+**Do potvrzení se ukládá žádost, ne odběr.** Žádost nese adresu, verzi souhlasu a zdroj; po 72 hodinách se sama maže. Odběr, doklad souhlasu ani identita odběratele do potvrzení nevznikají.
 
 ### Stavy a jejich přechody
 
@@ -203,55 +187,33 @@ Navazují na schéma sledování v2.1 (§7.2); `odberatel` je společný. Zaklá
 
 create table zadost_o_potvrzeni (
   jti text primary key,
-  ucel text not null check (ucel in ('novinky', 'kalendar', 'novy_rocnik')),
-  stav text not null check (stav in ('ceka_na_vyzvu', 'aktivni', 'spotrebovana')),
   email text not null,
-  volby jsonb not null,
   souhlas_verze text not null,
   zdroj text not null,
-  vytvoreno timestamptz not null,
-  plati_do timestamptz,                   -- 72 h; u 'novy_rocnik' se doplní až s odesláním
-                                          -- výzvy (30 dnů), do té doby je prázdné
-  spotrebovano timestamptz,
-  check (stav <> 'aktivni' or plati_do is not null)
+  vytvoreno timestamptz not null default now(),
+  plati_do timestamptz not null,          -- vytvoreno + 72 h
+  spotrebovano timestamptz
 );
 
-create table odber_novinek (
-  odberatel_id uuid references odberatel on delete cascade,
-  rocnik text not null,
-  druh_studia text not null check (druh_studia in ('ss', 'vicelete')),
-  kraj text,                              -- nepovinné; zatím se k odesílání nepoužívá
-  zdroj text not null,
-  potvrzeno timestamptz not null,
-  primary key (odberatel_id, rocnik, druh_studia)
+create table odber_novinek (              -- jeden odběr na odběratele
+  odberatel_id uuid primary key references odberatel on delete cascade,
+  zdroj text not null,                    -- místo formuláře: titulka-karta, kalendar, novinky
+  potvrzeno timestamptz not null default now()
 );
 
-create table doklad_souhlasu (
+create table doklad_souhlasu (            -- přežívá zánik odběru i smazání identity
   id uuid primary key,
   odberatel_id uuid references odberatel on delete set null,
   email_otisk text not null,              -- HMAC adresy s odděleným tajemstvím
-  ucel text not null,
-  rocnik text,
   souhlas_verze text not null,
   zdroj text not null,
-  potvrzeno timestamptz not null,
+  potvrzeno timestamptz not null default now(),
   zaniklo timestamptz,
-  smazat_po timestamptz
-);
-
-create table zprava_o_kalendari (
-  odberatel_id uuid references odberatel on delete cascade,
-  cilovy_rocnik text not null,
-  stav text not null check (stav in ('ceka', 'vyzvan', 'uzavren')),
-  potvrzeno timestamptz not null,
-  ceka_do timestamptz not null,           -- 'ceka': potvrzeno + 18 měsíců;
-                                          -- 'vyzvan': čas výzvy + 30 dnů
-  vyzva_odeslana timestamptz,
-  primary key (odberatel_id, cilovy_rocnik)
+  smazat_po timestamptz                   -- zaniklo + 3 roky
 );
 
 create table zprava_verze (
-  zprava text not null,
+  zprava text not null,                   -- 'novinky/2027/kriteria'
   otisk_obsahu text not null,
   otisk_kalendare text not null,
   splatnost date not null,
@@ -265,47 +227,43 @@ create table davka (
   telo text not null,                     -- hotové serializované tělo požadavku
   telo_smazano boolean not null default false,
   otisk_tela text not null,
-  clenove_otisk text not null,            -- sha256 setříděných id položek
-  pokus int not null default 1,           -- zvyšuje se při opětovném použití dávky
-  idempotency_key text not null unique,   -- novinky/{zprava}/{otisk_tela}
+  clenove_otisk text not null,
+  pokus int not null default 1,
+  idempotency_key text not null unique,
   stav text not null check (stav in ('pripravena', 'predavana', 'odeslana',
                                      'chyba', 'zrusena', 'neurcita')),
   predano_v timestamptz,
-  zalozeno timestamptz not null,
+  zalozeno timestamptz not null default now(),
   uzavreno timestamptz
 );
 
-create table polozka_odeslani (
+create table polozka_odeslani (           -- fronta: jedna zpráva jednomu adresátovi
   id uuid primary key,
   zprava text not null,
-  ucel text not null check (ucel in ('potvrzeni', 'uvitani', 'obsah', 'vyzva')),
+  ucel text not null check (ucel in ('potvrzeni', 'uvitani', 'obsah')),
   odberatel_id uuid references odberatel on delete set null,
   zadost_jti text references zadost_o_potvrzeni on delete set null,
   adresat_otisk text not null,            -- HMAC adresy; zůstává i po odpojení
-  segment text[],                         -- segment zprávy; podle něj se ruší odběr
   stav text not null check (stav in ('ceka', 'pripravena', 'predavana',
                                      'odeslana', 'neurcita', 'zahozena')),
   davka_id uuid references davka,
   otisk_obsahu text,
-  vlozeno timestamptz not null,
+  vlozeno timestamptz not null default now(),
   predano_v timestamptz,
   odeslano timestamptz,
   resend_id text,
   stav_doruceni text
 );
-create unique index polozka_odberatel on polozka_odeslani (odberatel_id, zprava)
-  where odberatel_id is not null;
-create unique index polozka_zadost on polozka_odeslani (zadost_jti, zprava)
-  where zadost_jti is not null;
+-- jedinečnost podle adresáta: (odberatel_id, zprava) a (zadost_jti, zprava)
 
 create table rezervace_kvoty (
   davka_id uuid references davka on delete cascade,
-  pokus int not null,                     -- ke kterému pokusu dávky rezervace patří
+  pokus int not null,
   obdobi text not null,                   -- 'mesic:2027-01' | 'den:2026-11-03'
   ucel text not null,                     -- 'celkem' | 'potvrzeni'
   pocet int not null,
-  volani_provedeno boolean not null default false,  -- zapisuje se před HTTP voláním
-  vyporadano timestamptz,                 -- jednorázově, nezávisle na stavu dávky
+  volani_provedeno boolean not null default false,
+  vyporadano timestamptz,
   primary key (davka_id, pokus, obdobi, ucel)
 );
 
@@ -322,18 +280,18 @@ create table webhook_udalost (
   event_id text primary key,
   typ text not null,
   resend_id text,
-  email_otisk text,                       -- HMAC adresy z těla, ne adresa
+  email_otisk text,                       -- HMAC adresy, ne adresa
   polozka_id uuid references polozka_odeslani on delete set null,
-  telo_bez_adresy jsonb not null,         -- tělo s odstraněnou adresou
-  prijato timestamptz not null,
+  telo_bez_adresy jsonb not null,
+  prijato timestamptz not null default now(),
   zpracovano timestamptz,
   ucinek_hotov timestamptz                -- účinek (zrušení odběru) doběhl
 );
 
 create table limit_potvrzeni (
-  otisk text primary key,
+  otisk text primary key,                 -- HMAC adresy nebo IP
   pocet int not null,
-  od timestamptz not null
+  od timestamptz not null default now()
 );
 ```
 
@@ -352,13 +310,7 @@ Poznámky ke schématu:
 1. **`POST /api/novinky/prihlasit`** přijme adresu, druh studia (jeden nebo oba) nebo volbu „až vyjde další kalendář“, souhlas, verzi jeho znění, zdroj a skryté pole. Odpověď je vždy stejná. Limity: pravidlo ve firewallu Vercelu na IP adresu **v režimu blokování**, `limit_potvrzeni` na adresu a denní rozpočet potvrzení. V jedné transakci vznikne `zadost_o_potvrzeni` s účelem `novinky` nebo `kalendar` a položka fronty s účelem `potvrzeni`; pak se e-mail pošle hned (bod 5).
 2. **Potvrzovací e-mail** nese token HMAC (`NOVINKY_SECRET`, vzor `portal-magic.ts`) s `jti` žádosti. Platnost tokenu je shodná s platností žádosti.
 3. **`GET /api/novinky/potvrdit?t=…`** je obslužná cesta: ověří podpis, platnost a nespotřebovanou žádost, vymění token za **krátkou relaci v cookie `HttpOnly`** (vzor `src/app/admin/auth/route.ts`) a přesměruje na `/novinky/potvrzeni`, tedy na adresu bez tokenu. Nic nezakládá a nic neposílá, takže robot poštovního systému odběr nevytvoří. Stránka má `noindex` a neměří se; obslužná cesta a stránka mají různé adresy, takže se v Next.js nestřetnou.
-4. **`POST /api/novinky/potvrdit`** přečte relaci, znovu ověří platnost i vazbu údajů a v jedné transakci podle **účelu žádosti**: označí žádost `spotrebovano` (druhé použití odkazu tím padá) a pak
-   - u `novinky` založí odběratele a odběr, zapíše doklad a vloží položku `uvitani`;
-   - u `kalendar` založí `zprava_o_kalendari` ve stavu `ceka` a zapíše doklad; uvítání nevzniká;
-   - u `novy_rocnik` založí odběr nového ročníku, zapíše doklad, přepne `zprava_o_kalendari` na `uzavren` a vloží položku `uvitani`.
-
-   **Rozhodný okamžik u výzvy:** žádost účelu `novy_rocnik` vzniká ve stavu `ceka_na_vyzvu` s prázdným `plati_do` a **v tomto stavu ji nelze potvrdit**. Jakmile je znám výsledek položky výzvy, jedna transakce ji přepne na `aktivni`, doplní `plati_do`, přepne `zprava_o_kalendari` na `vyzvan`, zapíše `vyzva_odeslana` a nastaví `ceka_do`. **Rozhodným časem je okamžik odeslání podle Resendu** (`created_at` e-mailu z odpovědi nebo z webhooku); není-li znám, použije se `predano_v` dávky, tedy čas těsně před voláním. Nikdy se nepoužije čas transakce, aby zpožděné doplnění výsledku lhůtu nezkracovalo. Od tohoto okamžiku běží 30 dnů pro `plati_do` i pro `ceka_do`, takže odkaz platí přesně slíbených 30 dnů od odeslání výzvy.
-   Pak se e-mail pošle hned; když se to nepovede, pošle ho nejbližší běh odesílače.
+4. **`POST /api/novinky/potvrdit`** přečte relaci, znovu ověří platnost i vazbu údajů a v jedné transakci: označí žádost `spotrebovano` (druhé použití odkazu tím padá), založí odběratele a odběr, zapíše `doklad_souhlasu` a vloží položku uvítání do fronty. Pak se uvítání pošle hned; když se to nepovede, pošle ho nejbližší běh odesílače.
 5. **Odeslání jedné dávky.** Transakce jsou vymezené tak, aby pád nemohl zapomenout na provedené odeslání ani zaúčtovat jedno odeslání dvakrát.
    1. **Platnost zprávy** (splatnost, konec užitečnosti, soulad `otisk_kalendare` s nasazeným kalendářem) se ověřuje při naplnění fronty, při sestavení dávky, před předáním **a znovu před každým opakováním**, které může vyvolat odeslání. Prošlá položka se přepne na `zahozena` a ohlásí se.
    2. **Transakce A.** Vybere až 100 položek `ceka` téže zprávy příkazem `select … for update skip locked`, ověří podmínku účelu (potvrzení potřebuje platnou žádost, obsahová zpráva aktivní odběr, výzva čekající požadavek), sestaví hotové tělo, spočítá `otisk_tela` a `clenove_otisk` a vloží dávku příkazem `insert … on conflict (idempotency_key) do update set stav = 'pripravena', pokus = davka.pokus + 1, zalozeno = now() where davka.stav in ('chyba', 'zrusena')`. Tím se **prokazatelně neodeslaná dávka použije znovu s týmž klíčem** místo kolize na jedinečnosti; klíč idempotence zůstává stejný, protože tělo je stejné. **Nový pokus má vlastní rezervaci** (`rezervace_kvoty` je klíčovaná i podle `pokus`), takže se nesrazí s už vypořádanou rezervací předchozího pokusu a opožděný zpracovatel nemůže vypořádat rezervaci novějšího pokusu. Položky přepne na `pripravena`.
@@ -379,7 +331,7 @@ Poznámky ke schématu:
 6. **Odesílač** je Vercel Cron na `/api/novinky/odeslat`, chráněný `CRON_SECRET`, dvakrát denně (ráno a večer) a navíc jako obnova nevyřízené práce. Frekvence závisí na tarifu Vercelu a patří do ověření v N0. Běh: naplní frontu z manifestu na nasazeném webu (oddíl 7), zahodí prošlé položky, odešle dávky podle bodu 5, dokončí obnovu podle 5.7 a 5.8 a vystaví výzvy k novému ročníku.
 7. **Odhlášení jedním kliknutím** má přesný kontrakt podle RFC 8058: `List-Unsubscribe: <https://…/api/novinky/odhlasit?t=…>` a `List-Unsubscribe-Post: List-Unsubscribe=One-Click`, obě hlavičky pokryté podpisem DKIM. Endpoint přijímá **POST bez cookies a bez přesměrování** a v jedné transakci: zruší odběr té zprávy, ze které odkaz vede, zapíše dokladu `zaniklo` a `smazat_po` a vypořádá se s jeho položkami podle pravidla 3 v oddílu Stavy (položku `ceka` zahodí; u `pripravena` zkusí zrušit celou dávku; u `predavana` a pozdější nechá dojít). `GET` na tutéž adresu jen zobrazí stránku, aby skener odběr nezrušil. Odhlášení všech účelů je samostatná akce na stránce správy.
 
-   **Segment, platnost odkazů a token v adrese.** Ruší se odběr **v segmentech té zprávy**, ze které odkaz vede; segment nese položka fronty, takže klik v e-mailu o čtyřletých oborech nezruší odběr pro víceleté gymnázium. Odkazy na odhlášení a správu platí **400 dnů**, tedy déle než ročník: odkaz z lednového e-mailu musí fungovat i v květnu, jinak by tiše selhalo právo odhlásit se. Jednorázovost nehlídá token, ale stav v databázi, a neplatný odkaz vrací **chybu, ne úspěch**. Ruční kliknutí navíc token v adrese nenechává: obslužná cesta ho vymění za krátkou relaci v cookie a přesměruje na stránku bez tokenu, protože Matomo měří celý web a hlášení chyby posílá aktuální adresu.
+   **Platnost odkazů a token v adrese.** Odkazy na odhlášení a správu platí **400 dnů**, tedy déle než ročník: odkaz z lednového e-mailu musí fungovat i v květnu, jinak by tiše selhalo právo odhlásit se. Jednorázovost nehlídá token, ale stav v databázi, a neplatný odkaz vrací **chybu, ne úspěch**. Ruční kliknutí navíc token v adrese nenechává: obslužná cesta ho vymění za krátkou relaci v cookie a přesměruje na stránku bez tokenu, protože Matomo měří celý web a hlášení chyby posílá aktuální adresu.
 8. **Webhooky** mají dvě třídy a `/api/novinky/resend-webhook` je zpracovává **v jedné transakci s vložením**; o účinku se rozhoduje **uvnitř** té transakce, takže duplicitní doručení sem vůbec nedojde a přehraný `email.bounced` nemůže zrušit nově založený odběr. Podpis se přijímá jen s časem do 5 minut. Dokončení účinku se značí `ucinek_hotov` a nedokončené dožene cron:
    - **události e-mailu** (`email.sent`, `email.delivered`, `email.bounced`, `email.complained`, `email.failed`, `email.delivery_delayed`) se párují podle značky `polozka_id`, jinak podle `resend_id`; nespárovaná událost čeká a spáruje se později. Trvalá nedoručitelnost a stížnost odběr smažou, `failed` a `delivery_delayed` jdou do hlášení;
    - **potlačení adresy** (`suppression.added`) se **nepáruje na položku vůbec**, protože nese jen adresu a identifikátor potlačení a může vzniknout i ručně u Resendu. Vyhodnocuje se podle normalizované adresy: zruší všechny odběry té adresy a další e-maily se jí neposílají.
@@ -738,10 +690,37 @@ Cílené kolo ukázalo, že na úrovni popisu souběhu lze takto pokračovat dlo
 
 **Poučení do příště:** oponentura návrhu neuhlídá, že kód dělá to, co návrh říká. Verze 1.6 vznikla jako oprava bez oponentury a právě její body v kódu chyběly. Kontrakt a kód si musí sednout u revize kódu, ne u revize dokumentu.
 
+## 20. Revize produktu 18. 9. 2026: jeden newsletter
+
+Zadavatel při čtení návrhu upřesnil, co si od odběru představoval: **jeden newsletter, který si člověk zapne a běží mu dál**, ne odběr svázaný s jedním ročníkem přijímaček. To je jiný produkt, než jaký návrh popisoval do verze 1.14, a je výrazně jednodušší.
+
+### Co odpadlo a co to ušetřilo
+
+| Co | Proč to bylo v návrhu | Proč to odpadlo |
+|---|---|---|
+| **Zpráva o dalším kalendáři** a celá tabulka `zprava_o_kalendari` | odběr končil s ročníkem, takže rodina mladšího dítěte potřebovala most: „ozveme se, až vyjde další kalendář“ | odběr běží dál, takže se mladší rodina prostě přihlásí a čeká |
+| **Ročník a druh studia v odběru**, tři účely žádosti, účel položky `vyzva` | cílení zpráv podle segmentu | jedna zpráva pro všechny; u jednotné zkoušky se pošlou všechny čtyři dny s větou, který pro koho platí |
+| **Kraj ve formuláři** | budoucí krajské zprávy | nemá konzumenta a každé pole snižuje podíl vyplněných formulářů |
+| **Segment u položky fronty** | odhlášení mělo rušit jen segment zprávy (nález P1-10) | odběr je jeden, takže odhlášení znamená konec celého newsletteru |
+| **Formulář v patičce a druhý na titulce** | co nejvíc míst k přihlášení | tři místa stačí na ověření; patičkový formulář navíc prodlužoval build o 1 179 stránek škol |
+
+Tím zanikl i nález P1-10 z code review a spolu s ním půlka stavového automatu. Zůstalo jedenáct tabulek a dvaadvacet příkazů migrace.
+
+### Co zůstalo a proč
+
+- **Ročník nese každá zpráva**, ne odběr. Bere se z registru stavu datových sad, takže se nikde nepíše napevno a identifikátor zprávy koliduje jen v rámci ročníku.
+- **Uvítání má v identifikátoru `jti`** žádosti. Bez toho by člověk, který se odhlásí a za měsíc přihlásí znovu, uvítání tiše nedostal, protože položka fronty je jedinečná na adresáta a zprávu. Tuhle past odhalila revize modelu, ne testy.
+- **Obsah je dvojí:** termíny přijímacího řízení a zprávy o nových datech na webu. Širší záběr („celé české školství“) zadavatel zvážil a zamítl, protože by slíbil víc, než co jde odvodit z dat a kalendáře; bez redakční práce by zůstal nenaplněný.
+
+### Druhý produkt: sledování konkrétních škol
+
+Zadavatel zároveň potvrdil, že chce **sledování vybraných škol** s upozorněním na změny u nich, například když škola vypíše den otevřených dveří. To není tento newsletter, ale samostatný produkt popsaný ve [sledování škol a oborů](sledovani-skol-2027.md). Sdílí s novinkami identitu odběratele, frontu odeslání i rozpočet kvóty, takže se dá postavit na hotovém základu; potřebuje ale záznam událostí (F0 sledování) a u dnů otevřených dveří platí, že je web zná jen od škol, které je vyplní v portálu.
+
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.15 | Revize produktu (oddíl 20): jeden newsletter bez ročníku a bez segmentů, formulář jen e-mail a souhlas na třech místech. Zanikla zpráva o dalším kalendáři, tabulka `zprava_o_kalendari`, ročník a druh studia v odběru, kraj, segment u položky i nález P1-10. Termíny jednotné zkoušky jdou všem v jedné zprávě. Obsah je dvojí: termíny a zprávy o nových datech na webu; širší školství zamítnuto. Doplněna past s uvítáním po opakovaném přihlášení. |
 | 1.14 | Vypořádáno code review kódu (PR #96, oddíl 19): deset závažných nálezů opraveno a kontrakt upraven podle skutečnosti — potvrzení a uvítání přes dávku s rezervací kvóty a s konzumentem v cronu, zrušení dávky vrací ostatní položky a maže tělo, položka nese segment a odhlášení ruší jen ten, odkazy platí 400 dnů a token nezůstává v adrese, limit rozpočtu se nepřepisuje, účinek webhooku uvnitř stráže s tolerancí času podpisu. |
 | 1.13 | Rozhodnutí zadavatele z 18. 9. 2026: e-maily se posílají z hlavní domény `prijimackynaskolu.cz` (ověřené, subdoména se nezakládá) a k tomu tři pojistky proti sdílené reputaci a kvótě; právní kontrola zásad schválena; limity služeb neblokují; sloučení větve s harmonogramem povoleno. Zbývající práce zúžena na databázi Neon, tajemství a firewall ve Vercelu, sloučení větve a přejímku. |
 | 1.12 | Doplněn stav realizace: hotová migrace, knihovny, API, formuláře, stránky, generátor a návrh zásad na větvi `feat/novinky-odber`; odběr drží vypnutý přepínač `NOVINKY_ZAPNUTO`, dokud nejsou účty a právní kontrola. Konec užitečnosti květnové zprávy je 24. 5. 2027, tedy poslední den podávání přihlášek do 2. kola. |
