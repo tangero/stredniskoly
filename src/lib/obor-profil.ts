@@ -37,6 +37,51 @@ export const ZARAZENI_POPISEK: Record<ZarazeniObtiznosti, string> = {
   velmi_tezke: 'velmi těžké',
 };
 
+/**
+ * Proč obor výš nebo níž na přihlášce přehled nezahrnuje. `null` znamená, že se
+ * o něm nedá říct nic — ani v soupisu oborů mimo přehled není.
+ */
+export type ZnackaMimoPrehled = 'bez_zkousky' | 'jiny';
+
+/** Záznam oboru mimo přehled, jak ho nese `kontext_prihlasek_<rok>.json`. */
+export interface ZaznamMimoPrehled {
+  bez_jednotne_zkousky: boolean;
+}
+
+/**
+ * Značka pro obor v tabulce oborů výš a níž.
+ *
+ * Tři stavy, ne dva: obor z katalogu značku nepotřebuje (`null`), obor ze soupisu
+ * mimo přehled dostane důvod, a obor, o kterém **nevíme nic** — není v katalogu
+ * ani v soupisu — taky `null`, protože tabulka u něj smí říct jen „bez údajů“.
+ *
+ * Třetí stav je tu záměrně: dokud se `jiny` dával i oboru, který v soupisu není,
+ * tvrdila značka „mimo přehled“ i tam, kde přehled o oboru neví vůbec nic
+ * (P2 z code review PR #99). V datech 2026 takový obor není, ale tvrzení musí
+ * platit z definice, ne shodou dat.
+ */
+export function znackaMimoPrehled(
+  vKatalogu: boolean,
+  zaznam: ZaznamMimoPrehled | undefined,
+): ZnackaMimoPrehled | null {
+  if (vKatalogu || !zaznam) return null;
+  return zaznam.bez_jednotne_zkousky ? 'bez_zkousky' : 'jiny';
+}
+
+/**
+ * Text ve sloupci obtížnosti: zařazení, když ho obor má, jinak důvod, proč ho
+ * přehled nezahrnuje, jinak „bez údajů“. Pojmy drží `docs/slovnik-pojmu.md`.
+ */
+export function popisekObtiznosti(o: {
+  zarazeni: ZarazeniObtiznosti | null;
+  mimoPrehled: ZnackaMimoPrehled | null;
+}): string {
+  if (o.zarazeni) return ZARAZENI_POPISEK[o.zarazeni];
+  if (o.mimoPrehled === 'bez_zkousky') return 'bez jednotné zkoušky';
+  if (o.mimoPrehled === 'jiny') return 'mimo přehled';
+  return 'bez údajů';
+}
+
 export function soutezicichUchazecu(r: RocnikProVyklad): number | null {
   if (typeof r.prijati !== 'number' || typeof r.capacity_rejected !== 'number') return null;
   return r.prijati + r.capacity_rejected;

@@ -7,8 +7,8 @@ import { verzeObdobi } from '@/lib/stav-datovych-sad';
 import { getWebSkoly } from '@/lib/skoly-web';
 import { createSlug } from '@/lib/utils';
 import {
-  nazevSkupiny, poradiVeSkupine, stavNabidky, zarazeniObtiznosti, soutezicichUchazecu,
-  type Poradi, type StavNabidky, type ZarazeniObtiznosti,
+  nazevSkupiny, poradiVeSkupine, stavNabidky, zarazeniObtiznosti, soutezicichUchazecu, znackaMimoPrehled,
+  type Poradi, type StavNabidky, type ZarazeniObtiznosti, type ZnackaMimoPrehled,
 } from '@/lib/obor-profil';
 
 /**
@@ -35,7 +35,7 @@ export interface OborNaPrihlasce {
   prijati: number | null;
   soutezici: number | null;
   /** Obor, který přehled nezahrnuje: bez jednotné zkoušky (například učební obor), nebo z jiného důvodu. */
-  mimoPrehled: 'bez_zkousky' | 'jiny' | null;
+  mimoPrehled: ZnackaMimoPrehled | null;
 }
 
 export interface ProfilOboruData {
@@ -139,7 +139,7 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
         klic: k, uchazecu: n,
         skola: nazev?.skola ?? mimo?.skola ?? k, obec: nazev?.obec ?? mimo?.obec ?? '', obor: nazev?.obor ?? mimo?.obor ?? '',
         delka: nazev?.delka,
-        mimoPrehled: nazev ? null : mimo?.bez_jednotne_zkousky ? 'bez_zkousky' : 'jiny',
+        mimoPrehled: znackaMimoPrehled(Boolean(nazev), mimo),
         href: nazev ? `/skola/${k.split('_')[0]}-${createSlug(nazev.nazev)}` : null,
         zarazeni: r ? zarazeniObtiznosti(r) : null,
         prijati: r?.prijati ?? null,
