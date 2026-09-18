@@ -222,12 +222,6 @@ Otázka rodiče je jediná: **jak dlouho bude dítě dojíždět**. Odpovídáme
 | `skoly_web.json` | rejstřík CSV, `WWW` | `build-skoly-web.py` | odkaz na web školy |
 | `souhrny_kolo1.json` | CERMAT souhrny 1. kola všech ročníků v `data/` | `build-souhrny-kolo1.py` | nabídky po ročnících, párování ročníků (i podle mapy nabídek ročníku), rozdělení tlaku prvních voleb ve srovnatelných skupinách; doklad `docs/podklady/overeni-srovnani-rocniku.json` |
 | `school_analysis.json` | starší zpracování | nedohledaný | obsahuje `obtiznost` bez doloženého výpočtu |
-
-**Který záznam katalogu popisuje obor.** Klíč `REDIZO_KKOV` nenese zaměření, takže ho může mít několik nabídek téže školy — a ty se mohou lišit názvem, obcí i oborem. V katalogu 2026 je takových klíčů **43**, v ročnících 2024 a 2025 po jednom. `scripts/nazvy_oboru.py` proto vybírá ve dvou krocích: nejdřív **nejnovější ročník**, který klíč vede (stejně jako `nazvyOboru()` na webu, aby popis školy nezněl v souběhu jinak než na stránce oboru), a mezi záznamy téhož ročníku **podle `id` abecedně**.
-
-Druhý krok je jen o stabilitě, ne o správnosti: bez pevného kritéria by vítěz záležel na pořadí záznamů v souboru a přegenerování týchž dat by mohlo dát jiný výsledek. Že to platí, se dá ověřit dvojím spuštěním generátoru — druhý běh musí dát bajtově stejný soubor.
-
-Kdo vybraný záznam mění, ať počítá s tím, že se tím mění popis školy v souběžných přihláškách. Přechod na nejnovější ročník v září 2026 změnil popis u 23 škol: 18 dostalo úplnější název (číslo popisné, které starší ročník neuváděl), 6 správnější obec — například Soukromá obchodní akademie Opava měla vedenou Ostravu — a **žádná škola nedostala popis kratší**.
 | `maturita_skoly.json` | CERMAT maturita, jaro, `redizo` a `redizo_smo16` | `build-maturita-skoly.py` přes datovou linku | společná část, čeština a matematika po letech od 2021; zařazení proti skupině oborů; meze zveřejnění jako kódy kvality; vzniká přes datovou linku od 14. 9. 2026 (PR #92), web ho čte na stránce školy |
 | `soubeh_prihlasek_2025.json` | data uchazečů 2025 | `build-soubeh-prihlasek.py` | souběžné přihlášky; popis školy z katalogu přes `scripts/nazvy_oboru.py` — ročníky od nejnovějšího, uvnitř ročníku podle `id` abecedně (viz poznámka níže) |
 | `pasma_prijeti_2025.json` | data uchazečů 2025 | `build-pasma-prijeti.py` | podíl přijatých podle bodového pásma a hranice |
@@ -235,6 +229,14 @@ Kdo vybraný záznam mění, ať počítá s tím, že se tím mění popis ško
 | `navaznost_notes.json` | rešerše návaznosti | `build-navaznost-notes.py` | ruční poznámky v `school_notes.json` mají přednost |
 | `offer_mapping_2026.json` | párování nabídek | `build-offer-mapping-2026.py` | nabídka 2026 → loňský klíč katalogu; kromě heuristik přebírá ručně ověřené páry z `docs/podklady/overene-pary-nabidek-2026.csv` (sloupce `id_2026`, `katalog_id`, `doklad`); čte ji katalog 2026, souhrny 1. kola i hledání souhrnu na stránce |
 | `cohort_meta.json` | normalizace kohort | ruční | |
+
+**Který záznam katalogu popisuje obor.** Klíč `REDIZO_KKOV` nenese zaměření, takže ho může nést několik nabídek téže školy, a ty se mohou lišit názvem, obcí i oborem: PORG má pod jedním klíčem osmileté gymnázium v Praze, Brně i Ostravě. V katalogu 2026 je takových klíčů **43**, v ročnících 2024 a 2025 po jednom.
+
+`scripts/nazvy_oboru.py` proto vybírá stejně jako `nazvyOboru()` na webu: nejdřív **nejnovější ročník**, který klíč vede, a mezi nabídkami téhož ročníku **první v pořadí souboru**. Obě strany tak dávají identický popis — ověřeno na všech 5 434 klíčích, které souběh používá, s nulovým rozdílem. Do září 2026 se pravidla lišila: Python bral starší ročník, takže popis školy zněl v souběhu jinak než na stránce oboru.
+
+Vybírat mezi nabídkami téhož ročníku abecedně podle `id` bylo zvažováno a **zavrženo**: u PORG by vyhrálo Brno jen proto, že jeho `id` je bez diakritiky, a obec by se proti dosavadnímu stavu změnila bez jakéhokoli dokladu, že je nová správnější. Nejednoznačnost se místo toho **hlásí** při každém běhu generátoru; rozhodnout ji z dat nejde, musela by odpovědět škola nebo rejstřík, která nabídka klíč zastupuje. Pořadí v souboru není záruka stability napříč přegenerováním katalogu — je to jen shoda s tím, co ukazuje stránka oboru.
+
+Přechod na nejnovější ročník změnil popis u **36 klíčů, tedy 32 škol**: 30 dostalo delší název, nejčastěji o číslo popisné, **žádný se nezkrátil**, a 6 má jinou obec. U obcí to **není jednosměrné zlepšení** — Soukromá obchodní akademie Opava má místo Ostravy Opavu, ale MŠ Montessori Beroun má místo Berouna Králův Dvůr. Který zápis je správný, z katalogu nepoznáme. Rozpad, metoda výpočtu a všechny případy jsou v [dokladu](podklady/dopad-precedence-nazvu-2026-09-18.md).
 
 ### 2.11 CERMAT, maturitní výsledky
 

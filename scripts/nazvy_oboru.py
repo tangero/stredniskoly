@@ -7,10 +7,23 @@ a ty v katalogu nejsou. Používají generátory souběžných přihlášek a ko
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 KOREN = Path(__file__).resolve().parent.parent
 REJSTRIK = KOREN / "data" / "msmt_rejstrik" / "rssz-2026-06-30.jsonld"
+
+
+def vychozi_rejstrik() -> Path:
+    """Snímek rejstříku, který se použije, když volající neurčí jiný.
+
+    Cestu smí přebít proměnná `MSMT_REJSTRIK`. Slouží prostředím, kde velký
+    snímek není a ani být nemůže: integrační testy datové linky používají
+    zkrácený snímek `tests/fixtures/rssz-test.jsonld`, aby se dalo ověřit
+    zpracování, a ne dostupnost třicetimegabajtového souboru.
+    """
+    z_prostredi = os.environ.get("MSMT_REJSTRIK")
+    return Path(z_prostredi) if z_prostredi else REJSTRIK
 
 # Kategorie oborů, u kterých se jednotná zkouška nekoná (docs/teze-vyuziti-dat-jpz-2027.md, R10)
 KATEGORIE_BEZ_JPZ = frozenset("CEHJP")
@@ -22,7 +35,7 @@ def bez_jednotne_zkousky(klic: str) -> bool:
     return len(kkov) > 6 and kkov[6] in KATEGORIE_BEZ_JPZ
 
 
-def nazvy_oboru(rejstrik: Path = REJSTRIK, povinny_rejstrik: bool = True) -> dict[str, dict]:
+def nazvy_oboru(rejstrik: Path | None = None, povinny_rejstrik: bool = True) -> dict[str, dict]:
     """Mapa REDIZO_KKOV → škola, obec, obor, id stránky a příznak `jpz` (obor je v katalogu JPZ).
 
     Ročníky katalogu se procházejí **od nejnovějšího**, takže u školy vedené ve
@@ -32,25 +45,46 @@ def nazvy_oboru(rejstrik: Path = REJSTRIK, povinny_rejstrik: bool = True) -> dic
     stránka oboru úplný. Pevné letopočty navíc mlčky vynechávaly ročník 2024,
     který katalog taky vede.
 
-    Uvnitř ročníku se mezi **záznamy téhož klíče** vybírá podle `id`, abecedně.
-    Klíč je REDIZO + kód oboru bez zaměření, takže ho může nést několik nabídek
-    téže školy — v katalogu 2026 je takových klíčů s rozdílným názvem, obcí nebo
-    oborem 43. Bez pevného kritéria by vítěz záležel na pořadí záznamů v souboru
-    a přegenerování týchž dat by mohlo dát jiný výsledek. Řazení podle `id`
-    **netvrdí, že vybraná nabídka je ta správná**; zajišťuje jen, že je vždy
-    stejná.
+    Uvnitř ročníku vyhrává **první záznam v pořadí, jak je v souboru** — opět
+    stejně jako web. Klíč je REDIZO + kód oboru bez zaměření, takže ho může nést
+    několik nabídek téže školy: PORG má pod jedním klíčem osmileté gymnázium
+    v Praze, Brně i Ostravě. V katalogu 2026 je takových klíčů s rozdílným
+    názvem, obcí nebo oborem 43.
+
+    Vybírat mezi nimi abecedně podle `id` jsem zkusil a zavrhl: u PORG by vyhrálo
+    Brno jen proto, že jeho `id` je bez diakritiky, a proti dnešnímu stavu by to
+    **změnilo obec bez jakéhokoli dokladu**, že je nová správnější. Pořadí
+    v souboru je aspoň shodné s tím, co ukazuje stránka oboru, takže se popis
+    školy neliší podle toho, kde se člověk dívá.
+
+    Kolik klíčů je konfliktních, funkce **vypíše**; tichý arbitrární výběr je
+    horší než viditelná nejednoznačnost. Rozhodnout ji z dat nejde — musela by
+    odpovědět škola nebo rejstřík, která nabídka klíč zastupuje.
 
     `povinny_rejstrik` je pojistka proti tichému zahození názvů: bez snímku
     rejstříku zůstanou obory mimo katalog bez názvu, a kdyby generátor takový
     výstup zapsal, přišel by web o víc než tisíc názvů, aniž by to někdo poznal.
     Volající, který snímek nemá a nepotřebuje, si ho vypne výslovně.
     """
+    rejstrik = rejstrik if rejstrik is not None else vychozi_rejstrik()
     mapa: dict[str, dict] = {}
 
     data = json.load(open(KOREN / "public" / "schools_data.json", encoding="utf-8"))
+    konflikty: dict[str, set[tuple]] = {}
     for rok in sorted(data, reverse=True):
-        for z in sorted(data.get(rok, []), key=lambda z: str(z.get("id") or "")):
-            klic = f"{z['redizo']}_{z.get('kkov') or z['id'].split('_')[1]}"
+        for z in data.get(rok, []):
+            kkov = z.get("kkov") or (str(z.get("id") or "").split("_") + ["", ""])[1]
+            if not kkov:
+                # Bez kódu oboru klíč nesestavíme; záznam nemá jak být nalezen.
+                print(f"varování: záznam bez kkov i použitelného id: {z.get('redizo')}")
+                continue
+            klic = f"{z['redizo']}_{kkov}"
+            popis = (
+                z.get("nazev_display") or z.get("nazev"),
+                z.get("obec"),
+                z.get("obor"),
+            )
+            konflikty.setdefault(f"{rok}|{klic}", set()).add(popis)
             mapa.setdefault(
                 klic,
                 {
@@ -61,6 +95,11 @@ def nazvy_oboru(rejstrik: Path = REJSTRIK, povinny_rejstrik: bool = True) -> dic
                     "jpz": True,
                 },
             )
+
+    sporne = sum(1 for varianty in konflikty.values() if len(varianty) > 1)
+    if sporne:
+        print(f"poznámka: {sporne} klíčů má v jednom ročníku víc nabídek s rozdílným popisem; "
+              f"vyhrává první v pořadí souboru, stejně jako na webu")
 
     if not rejstrik.exists():
         # Snímky rejstříku se do gitu neukládají (30 MB), takže na cizím stroji chybí.

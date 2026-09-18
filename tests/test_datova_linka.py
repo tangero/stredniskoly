@@ -137,6 +137,10 @@ class TestDatovaLinka(unittest.TestCase):
             "TELEGRAM_CHAT_ID": "42",
             # Syntetický soubor má jeden obor; pojistku proti málo oborům ověřuje samostatný test.
             "LINKA_MIN_PODIL_OBORU": "0",
+            # Zpracování uchazečů potřebuje snímek rejstříku škol, ten má desítky
+            # megabajtů a do gitu se neukládá. Test běží nad zkráceným snímkem,
+            # protože ověřuje zpracování, ne dostupnost velkého souboru.
+            "MSMT_REJSTRIK": str(Path(__file__).resolve().parent / "fixtures" / "rssz-test.jsonld"),
         })
         a = self.server.adresa
         # Zdroj: nové období uchazečů, revize výsledků, starý soubor, zmizelý zdroj, nepoužívaná sada.
