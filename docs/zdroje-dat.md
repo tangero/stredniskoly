@@ -222,8 +222,14 @@ Otázka rodiče je jediná: **jak dlouho bude dítě dojíždět**. Odpovídáme
 | `skoly_web.json` | rejstřík CSV, `WWW` | `build-skoly-web.py` | odkaz na web školy |
 | `souhrny_kolo1.json` | CERMAT souhrny 1. kola všech ročníků v `data/` | `build-souhrny-kolo1.py` | nabídky po ročnících, párování ročníků (i podle mapy nabídek ročníku), rozdělení tlaku prvních voleb ve srovnatelných skupinách; doklad `docs/podklady/overeni-srovnani-rocniku.json` |
 | `school_analysis.json` | starší zpracování | nedohledaný | obsahuje `obtiznost` bez doloženého výpočtu |
+
+**Který záznam katalogu popisuje obor.** Klíč `REDIZO_KKOV` nenese zaměření, takže ho může mít několik nabídek téže školy — a ty se mohou lišit názvem, obcí i oborem. V katalogu 2026 je takových klíčů **43**, v ročnících 2024 a 2025 po jednom. `scripts/nazvy_oboru.py` proto vybírá ve dvou krocích: nejdřív **nejnovější ročník**, který klíč vede (stejně jako `nazvyOboru()` na webu, aby popis školy nezněl v souběhu jinak než na stránce oboru), a mezi záznamy téhož ročníku **podle `id` abecedně**.
+
+Druhý krok je jen o stabilitě, ne o správnosti: bez pevného kritéria by vítěz záležel na pořadí záznamů v souboru a přegenerování týchž dat by mohlo dát jiný výsledek. Že to platí, se dá ověřit dvojím spuštěním generátoru — druhý běh musí dát bajtově stejný soubor.
+
+Kdo vybraný záznam mění, ať počítá s tím, že se tím mění popis školy v souběžných přihláškách. Přechod na nejnovější ročník v září 2026 změnil popis u 23 škol: 18 dostalo úplnější název (číslo popisné, které starší ročník neuváděl), 6 správnější obec — například Soukromá obchodní akademie Opava měla vedenou Ostravu — a **žádná škola nedostala popis kratší**.
 | `maturita_skoly.json` | CERMAT maturita, jaro, `redizo` a `redizo_smo16` | `build-maturita-skoly.py` přes datovou linku | společná část, čeština a matematika po letech od 2021; zařazení proti skupině oborů; meze zveřejnění jako kódy kvality; vzniká přes datovou linku od 14. 9. 2026 (PR #92), web ho čte na stránce školy |
-| `soubeh_prihlasek_2025.json` | data uchazečů 2025 | `build-soubeh-prihlasek.py` | souběžné přihlášky |
+| `soubeh_prihlasek_2025.json` | data uchazečů 2025 | `build-soubeh-prihlasek.py` | souběžné přihlášky; popis školy z katalogu přes `scripts/nazvy_oboru.py` — ročníky od nejnovějšího, uvnitř ročníku podle `id` abecedně (viz poznámka níže) |
 | `pasma_prijeti_2025.json` | data uchazečů 2025 | `build-pasma-prijeti.py` | podíl přijatých podle bodového pásma a hranice |
 | `csi_inspections.json` | seznam ČŠI | `process-csi-data.js` | |
 | `navaznost_notes.json` | rešerše návaznosti | `build-navaznost-notes.py` | ruční poznámky v `school_notes.json` mají přednost |
