@@ -72,9 +72,14 @@ def nacti_overene(cesta: Path, nabidky: dict, katalog_ids: set) -> dict:
     if not cesta.exists():
         return {}
     overene = {}
-    with cesta.open(newline="") as f:
-        for radek in csv.DictReader(f):
-            ident, katalog_id = radek["id_2026"].strip(), radek["katalog_id"].strip()
+    with cesta.open(newline="", encoding="utf-8-sig") as f:
+        cteni = csv.DictReader(f)
+        if not {"id_2026", "katalog_id"} <= set(cteni.fieldnames or []):
+            raise SystemExit(f"{cesta.name}: chybí sloupec id_2026 nebo katalog_id")
+        for cislo, radek in enumerate(cteni, start=2):
+            ident, katalog_id = (radek.get("id_2026") or "").strip(), (radek.get("katalog_id") or "").strip()
+            if not ident or not katalog_id:
+                raise SystemExit(f"{cesta.name}, řádek {cislo}: prázdné id_2026 nebo katalog_id")
             if ident not in nabidky:
                 raise SystemExit(f"{cesta.name}: nabídka 2026 {ident!r} v přihláškách není")
             if katalog_id not in katalog_ids:
@@ -85,27 +90,13 @@ def nacti_overene(cesta: Path, nabidky: dict, katalog_ids: set) -> dict:
     return overene
 
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--out", default=str(ROOT / "public/offer_mapping_2026.json"))
-    parser.add_argument("--overene", default=str(OVERENE))
-    args = parser.parse_args()
+def sestav_mapu(nabidky: dict[str, dict], katalog: list[dict],
+                overene: dict[str, str]) -> tuple[dict[str, dict], dict[str, int], int]:
+    """Mapa nabídka 2026 → záznam katalogu, počty podle způsobu a počet odstraněných kolizí.
 
-    katalog = json.loads(KATALOG.read_text())["2025"]
-    vysledky = json.loads(VYSLEDKY.read_text())
-    prihlasky = {z["id"]: z for z in json.loads(PRIHLASKY.read_text())["data"]}
-
-    # Kanonickým seznamem nabídek 2026 jsou přihlášky: obsahují všechny nabídky
-    # včetně těch bez zveřejněných výsledků a nesou úplné údaje o škole.
-    # Soubor výsledků používá tytéž nabídky, jen s identifikátorem psaným malými
-    # písmeny; párují se proto přes source_id, ne přes identifikátor.
-    nabidky = {ident: {"zamereni": z.get("zamereni") or "", "source_id": z.get("source_id")}
-               for ident, z in prihlasky.items()}
-    podle_source = {z.get("source_id"): ident for ident, z in vysledky.items()
-                    if z.get("source_id")}
-    for ident, data in nabidky.items():
-        data["vysledky_id"] = podle_source.get(data.get("source_id"))
-
+    Ověřený pár, který by se srazil s jinou nabídkou (přes mapu i přes přímou shodu
+    klíče), nebo který přímá shoda klíče přebije jiným cílem, je chyba vstupu.
+    """
     podle_klice = {normalizuj_klic(z["id"]): z for z in katalog}
     katalog_zaklad = defaultdict(list)
     nabidky_zaklad = defaultdict(list)
@@ -113,7 +104,16 @@ def main():
         katalog_zaklad[zaklad(z["id"])].append(z)
     for ident in nabidky:
         nabidky_zaklad[zaklad(ident)].append(ident)
-    overene = nacti_overene(Path(args.overene), nabidky, {z["id"] for z in katalog})
+
+    # Záznamy katalogu, které si nabídka 2026 najde sama přímou shodou klíče
+    primo = {podle_klice[normalizuj_klic(i)]["id"]: i for i in nabidky if normalizuj_klic(i) in podle_klice}
+    for ident, katalog_id in overene.items():
+        cil = podle_klice.get(normalizuj_klic(ident))
+        if cil and cil["id"] != katalog_id:
+            raise SystemExit(f"Ověřený pár {ident} -> {katalog_id}: nabídka sedí přímou shodou klíče na {cil['id']}")
+        if primo.get(katalog_id, ident) != ident:
+            raise SystemExit(f"Ověřený pár {ident} -> {katalog_id}: záznam katalogu už přímou shodou klíče "
+                             f"patří nabídce {primo[katalog_id]}")
 
     mapa = {}
     duvody = defaultdict(int)
@@ -167,6 +167,32 @@ def main():
         for ident in identy:
             mapa.pop(ident, None)
         duvody["kolize_odstraneno"] += len(identy)
+    return mapa, duvody, len(kolize)
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--out", default=str(ROOT / "public/offer_mapping_2026.json"))
+    parser.add_argument("--overene", default=str(OVERENE))
+    args = parser.parse_args()
+
+    katalog = json.loads(KATALOG.read_text())["2025"]
+    vysledky = json.loads(VYSLEDKY.read_text())
+    prihlasky = {z["id"]: z for z in json.loads(PRIHLASKY.read_text())["data"]}
+
+    # Kanonickým seznamem nabídek 2026 jsou přihlášky: obsahují všechny nabídky
+    # včetně těch bez zveřejněných výsledků a nesou úplné údaje o škole.
+    # Soubor výsledků používá tytéž nabídky, jen s identifikátorem psaným malými
+    # písmeny; párují se proto přes source_id, ne přes identifikátor.
+    nabidky = {ident: {"zamereni": z.get("zamereni") or "", "source_id": z.get("source_id")}
+               for ident, z in prihlasky.items()}
+    podle_source = {z.get("source_id"): ident for ident, z in vysledky.items()
+                    if z.get("source_id")}
+    for ident, data in nabidky.items():
+        data["vysledky_id"] = podle_source.get(data.get("source_id"))
+
+    overene = nacti_overene(Path(args.overene), nabidky, {z["id"] for z in katalog})
+    mapa, duvody, kolize = sestav_mapu(nabidky, katalog, overene)
 
     # Klíč souboru výsledků se liší velikostí písmen; mapa ho uvádí zvlášť,
     # aby si stránka našla výsledky i bez opakované normalizace.
@@ -190,7 +216,7 @@ def main():
     print(f"Nabídek 2026: {len(nabidky)}")
     for k, v in sorted(duvody.items(), key=lambda x: -x[1]):
         print(f"  {v:5}  {k}")
-    print(f"\nV mapě: {len(mapa)}; kolizí odstraněno: {len(kolize)}")
+    print(f"\nV mapě: {len(mapa)}; kolizí odstraněno: {kolize}")
     print(f"Zapsáno do {args.out}")
 
 

@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { indexKlicuRocniku, normalizeSchoolKey } from '@/lib/school-key';
+import { indexKlicuRocniku, klicZdrojeProStranku, normalizeSchoolKey } from '@/lib/school-key';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import type { ZarazeniObtiznosti } from '@/lib/obor-profil';
 
@@ -108,6 +108,8 @@ async function mapaRocniku(obdobi: string): Promise<Map<string, string>> {
     index = indexKlicuRocniku(soubor.mapping ?? {});
   } catch (e) {
     if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e;
+    // Bez mapy najdou souhrn jen stránky, jejichž klíč se nezměnil; soubor se za běhu neobjeví.
+    console.warn(`souhrny-kolo1: chybí public/offer_mapping_${obdobi}.json, stránky s přepsaným zaměřením souhrn nenajdou`);
   }
   mapyRocniku.set(obdobi, index);
   return index;
@@ -119,11 +121,8 @@ export async function getSouhrnNabidky(programId: string): Promise<SouhrnNabidky
   if (!obdobi) return null;
   const { soubor, index } = await nacti();
   // Stránka s přepsaným zaměřením nese loňský klíč katalogu; letošní nabídku najde přes mapu nabídek.
-  const vlastni = normalizeSchoolKey(programId);
-  const kandidati = [(await mapaRocniku(obdobi)).get(vlastni), vlastni];
-  const klic = kandidati
-    .map(k => (k ? index.get(k) : undefined))
-    .find(k => k !== undefined && soubor.nabidky[k].roky[obdobi] !== undefined);
+  const klic = klicZdrojeProStranku(programId, await mapaRocniku(obdobi), index,
+    k => soubor.nabidky[k].roky[obdobi] !== undefined);
   const nabidka = klic ? soubor.nabidky[klic] : undefined;
   const aktualni = nabidka?.roky[obdobi];
   if (!nabidka || !aktualni) return null;

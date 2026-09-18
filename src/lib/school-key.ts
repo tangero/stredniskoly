@@ -24,14 +24,32 @@ export function uniqueSchoolIndex<T>(rows: T[], key: (row: T) => string): Map<st
  * klíč nabídky v ročníku. Stránka nese loňský klíč katalogu, zdroje ročníku klíč z dat CERMAT;
  * klíč, na který by mířily dvě nabídky, v indexu není.
  */
-export function indexKlicuRocniku(mapa: Record<string, { katalog_id: string }>): Map<string, string> {
+export function indexKlicuRocniku(mapa: Record<string, { katalog_id?: string } | null>): Map<string, string> {
   const index = new Map<string, string>();
   const kolize = new Set<string>();
-  for (const [ident, { katalog_id }] of Object.entries(mapa)) {
-    const stranka = normalizeSchoolKey(katalog_id);
+  for (const [ident, zaznam] of Object.entries(mapa)) {
+    if (!zaznam?.katalog_id) continue;
+    const stranka = normalizeSchoolKey(zaznam.katalog_id);
     if (index.has(stranka)) kolize.add(stranka);
     else index.set(stranka, normalizeSchoolKey(ident));
   }
   kolize.forEach(k => index.delete(k));
   return index;
+}
+
+/**
+ * Klíč záznamu zdroje ročníku pro stránku. Přednost má letošní nabídka podle mapy nabídek,
+ * pak vlastní klíč stránky; bere se první, pro který zdroj nese data zobrazeného ročníku.
+ * `indexZdroje` vede normalizovaný klíč na klíč ve zdroji.
+ */
+export function klicZdrojeProStranku(
+  programId: string,
+  indexRocniku: Map<string, string>,
+  indexZdroje: Map<string, string>,
+  maRocnik: (klic: string) => boolean,
+): string | undefined {
+  const vlastni = normalizeSchoolKey(programId);
+  return [indexRocniku.get(vlastni), vlastni]
+    .map(k => (k ? indexZdroje.get(k) : undefined))
+    .find((k): k is string => k !== undefined && maRocnik(k));
 }
