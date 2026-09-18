@@ -10,6 +10,22 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '2.12.0',
+    date: '18. 9. 2026',
+    title: 'Kolik bodů je potřeba a data z přijímaček 2026',
+    changes: [
+      { type: 'new', text: 'Sekce „S kolika body se sem lidé dostali“ na stránce oboru: nejnižší výsledek přijatého, prostřední výsledek přijatých a průměr po předmětech; dva ročníky vedle sebe a celostátní prostřední výsledek uchazečů, aby bylo poznat, zda se změnily nároky školy, nebo obtížnost testu' },
+      { type: 'new', text: 'Blok „Dá se slabší předmět dohnat tím druhým?“: jak hluboko mohl jít jeden předmět, když druhý vyšel, a nejslabší výsledek, se kterým byl někdo přijat v každém předmětu' },
+      { type: 'new', text: 'Stránka školy rozlišuje obor, který se už nenabírá, od oboru, který škola letos jen nevypsala' },
+      { type: 'new', text: 'Stránka školy otevřeně říká, že o uplatnění absolventů spolehlivá data nejsou, a vysvětluje proč' },
+      { type: 'new', text: 'Titulní stránka upozorňuje, z jakého roku jsou zobrazené obory, a kdy školy vyhlásí novou nabídku' },
+      { type: 'improve', text: 'Přihlášky, pásma přijetí, souběžné přihlášky i kontext přihlášky přepnuté na 1. kolo 2026 — stránka oboru už nemíchá dva ročníky; nový ukazatel: prostřední (mediánový) výsledek přijatých' },
+      { type: 'improve', text: 'Název školy v hlavičce stránky školy nese i obec, když ji samotný název neobsahuje' },
+      { type: 'fix', text: 'Obory bez jednotné zkoušky a obory mimo přehled se ukazují se jménem a vysvětlující značkou místo kódu; obor, o kterém přehled nic neví, se nově pozná a neříká u něj „mimo přehled“' },
+      { type: 'fix', text: 'Patnáct oborů s přepsaným zaměřením mělo dvě stránky — sloučeno do jedné s celou historií a souhrn 1. kola je u všech stránek, u kterých má být' },
+    ],
+  },
+  {
     version: '2.11.0',
     date: '18. 9. 2026',
     title: 'Odběr novinek e-mailem',
