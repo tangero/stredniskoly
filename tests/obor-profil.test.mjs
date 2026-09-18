@@ -5,19 +5,25 @@ import {
   poradiVeSkupine, textPoradi, nazevSkupiny, soutezicichUchazecu, vKraji,
 } from '../src/lib/obor-profil.ts';
 
-const machar8 = { kapacita: 30, prihlasky: 233, prijati: 30, capacity_rejected: 82, conditions_not_met: 85, higher_priority: 36 };
+const machar8 = { kapacita: 30, prihlasky: 233, prijati: 30, capacity_rejected: 82, conditions_not_met: 85, higher_priority: 36, zarazeni_obtiznosti: 'velmi_tezke' };
 
-test('obtížnost přijetí slovy odpovídá prahům třetina, polovina, dvě třetiny', () => {
+// Od 17. 9. 2026 (dávka D2) počítá zařazení generátor `build-souhrny-kolo1.py`
+// a TypeScript nad ním uplatňuje jen pravidlo zobrazení. Prahy třetina, polovina
+// a dvě třetiny proto testuje `tests/test_souhrny_kolo1.py`, ne tenhle soubor.
+test('obtížnost přijetí se přebírá z dat, nepočítá se znovu', () => {
   assert.equal(zarazeniObtiznosti(machar8), 'velmi_tezke');
-  assert.equal(zarazeniObtiznosti({ prijati: 29, capacity_rejected: 38 }), 'tezke');
-  assert.equal(zarazeniObtiznosti({ prijati: 30, capacity_rejected: 24 }), 'stredne_tezke');
-  assert.equal(zarazeniObtiznosti({ prijati: 30, capacity_rejected: 14 }), 'vetsina_uspela');
+  assert.equal(zarazeniObtiznosti({ prijati: 29, capacity_rejected: 38, zarazeni_obtiznosti: 'tezke' }), 'tezke');
+  assert.equal(zarazeniObtiznosti({ prijati: 30, capacity_rejected: 24, zarazeni_obtiznosti: 'stredne_tezke' }), 'stredne_tezke');
+  assert.equal(zarazeniObtiznosti({ prijati: 30, capacity_rejected: 14, zarazeni_obtiznosti: 'vetsina_uspela' }), 'vetsina_uspela');
+  // Bez odmítnutých kvůli kapacitě rozhoduje zobrazení samo: pole z dat se nečeká.
   assert.equal(zarazeniObtiznosti({ prijati: 23, capacity_rejected: 0 }), 'kapacita_nerozhodovala');
 });
 
 test('pod deseti soutěžícími uchazeči a bez údaje se obtížnost neurčí', () => {
-  assert.equal(zarazeniObtiznosti({ prijati: 3, capacity_rejected: 4 }), null);
+  assert.equal(zarazeniObtiznosti({ prijati: 3, capacity_rejected: 4, zarazeni_obtiznosti: 'velmi_tezke' }), null);
   assert.equal(zarazeniObtiznosti({ prijati: 3 }), null);
+  // Data zařazení nenesou (starší ročník, chybějící pole): stránka nic netvrdí.
+  assert.equal(zarazeniObtiznosti({ prijati: 30, capacity_rejected: 82 }), null);
   assert.equal(soutezicichUchazecu({ prijati: 30, capacity_rejected: 82 }), 112);
 });
 
