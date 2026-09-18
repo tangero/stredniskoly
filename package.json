@@ -12,7 +12,9 @@
     "update:csi": "node scripts/process-csi-data.js",
     "inspis:build-data": "node scripts/import-inspis-data.js",
     "sitemap:build": "node scripts/generate-sitemap.js",
-    "test:novinky": "node --experimental-strip-types --test tests/novinky-*.test.mjs"
+    "test:novinky": "node --experimental-strip-types --test tests/novinky-*.test.mjs",
+    "novinky:migrace": "node scripts/novinky-migrace.mjs",
+    "novinky:migrace-kontrola": "node scripts/novinky-migrace.mjs --kontrola"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.96.0",
