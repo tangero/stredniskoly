@@ -42,6 +42,20 @@ export function delkaSlovy(delka: number): string {
 
 const DELKA_PRIDAVNE: Record<number, string> = { 2: 'dvouleté', 3: 'tříleté', 4: 'čtyřleté', 5: 'pětileté', 6: 'šestileté', 8: 'osmileté' };
 
+/**
+ * „Gymnázium, Nad Štolou, Praha“: k názvu školy připojí obec, pokud ji název sám neobsahuje.
+ * Podle návrhu stránky školy pozná rodina školu právě podle místa, proto patří do hlavičky.
+ * Obec se hledá jako celé slovo: podřetězcem by obec „Aš“ seděla na „Vlašim“ a „Bor“ na „Tábor“.
+ * Ze 1 120 škol katalogu 2026 má obec v názvu 151, u těch se nic nepřipojuje.
+ */
+export function nazevSObci(nazev: string, obec: string): string {
+  if (!obec) return nazev;
+  const bezDiakritiky = (s: string) => s.toLowerCase().normalize('NFD').replace(/\p{Mn}/gu, '');
+  const hledana = bezDiakritiky(obec).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const celeSlovo = new RegExp(`(^|[^a-z0-9])${hledana}([^a-z0-9]|$)`);
+  return celeSlovo.test(bezDiakritiky(nazev)) ? nazev : `${nazev}, ${obec}`;
+}
+
 /** „Gymnázium osmileté a čtyřleté, technické lyceum“: obory školy podle názvu, délky jen u opakovaného názvu. */
 export function oboryVetou(obory: { obor: string; delka: number }[], nejvic = 4): string {
   const podleNazvu = new Map<string, number[]>();

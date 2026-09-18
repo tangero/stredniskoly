@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { ProfilSkolyData, OborSkoly } from '@/lib/skola-profil-data';
 import { cislo, zOd, ZARAZENI_POPISEK, type ZarazeniObtiznosti } from '@/lib/obor-profil';
-import { delkaSlovy, jakCastoNadStredem, oboryVetou, pocetOboru, STAV_POPISEK } from '@/lib/skola-vyklad';
+import { delkaSlovy, jakCastoNadStredem, nazevSObci, oboryVetou, pocetOboru, STAV_POPISEK } from '@/lib/skola-vyklad';
 import { formatDatumCz } from '@/lib/portal-skol';
 import { SkupinaVKraji } from '@/components/obor/grafy';
 import { UlozitObor } from '@/components/obor/UlozitObor';
@@ -197,8 +197,8 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
             <span className="text-slate-700">{skola.nazev}</span>
           </nav>
           <div>
-            <h1 className="text-[32px] font-bold leading-[1.1] text-[#16325c] [text-wrap:balance] md:text-[44px]">{skola.nazev}</h1>
-            {obory.length > 0 && <p className="mt-1 text-[18px] text-slate-600">{oboryVetou(vypsane.length ? vypsane.map(o => ({ obor: o.nazev, delka: o.delka })) : obory.map(o => ({ obor: o.nazev, delka: o.delka })))} · {skola.obec}</p>}
+            <h1 className="text-[32px] font-bold leading-[1.1] text-[#16325c] [text-wrap:balance] md:text-[44px]">{nazevSObci(skola.nazev, skola.obec)}</h1>
+            {obory.length > 0 && <p className="mt-1 text-[18px] text-slate-600">{oboryVetou(vypsane.length ? vypsane.map(o => ({ obor: o.nazev, delka: o.delka })) : obory.map(o => ({ obor: o.nazev, delka: o.delka })))}</p>}
           </div>
           <ul className="flex flex-wrap gap-2 text-[14px] text-slate-700">
             <li className="rounded-full bg-slate-100 px-3 py-1">{skola.adresa}</li>
