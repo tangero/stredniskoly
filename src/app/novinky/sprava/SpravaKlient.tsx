@@ -4,14 +4,9 @@ import { useEffect, useState } from 'react';
 
 interface Prehled {
   email: string;
-  odbery: Array<{ rocnik: string; druh_studia: string; kraj: string | null }>;
-  cekaNaKalendar: Array<{ cilovy_rocnik: string; stav: string }>;
+  odebira: boolean;
+  potvrzeno: string | null;
 }
-
-const NAZEV_DRUHU: Record<string, string> = {
-  ss: 'střední škola po 9. třídě',
-  vicelete: 'víceleté gymnázium',
-};
 
 /** Přehled odběrů se čte z odkazu v e-mailu; token zůstává jen v adrese. */
 export function SpravaKlient() {
@@ -85,37 +80,17 @@ export function SpravaKlient() {
       <h1 className="text-2xl font-bold mb-3" style={{ color: '#28313b' }}>
         Správa odběru
       </h1>
-      <p className="text-slate-700 mb-6">Odběry adresy {prehled.email}:</p>
-
-      {prehled.odbery.length > 0 ? (
-        <ul className="mb-6 space-y-1 text-slate-700">
-          {prehled.odbery.map((o) => (
-            <li key={`${o.rocnik}-${o.druh_studia}`}>
-              Termíny přijímacího řízení {o.rocnik}: {NAZEV_DRUHU[o.druh_studia] ?? o.druh_studia}
-              {o.kraj ? ` · kraj ${o.kraj}` : ''}
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p className="mb-6 text-slate-700">Žádný odběr termínů teď nemáš.</p>
-      )}
-
-      {prehled.cekaNaKalendar.length > 0 && (
-        <ul className="mb-6 space-y-1 text-slate-700">
-          {prehled.cekaNaKalendar.map((k) => (
-            <li key={k.cilovy_rocnik}>
-              Zpráva, až vyjde kalendář ročníku {k.cilovy_rocnik} (stav: {k.stav})
-            </li>
-          ))}
-        </ul>
-      )}
+      <p className="text-slate-700 mb-6">
+        Adresa {prehled.email}{' '}
+        {prehled.odebira ? 'odebírá novinky k přijímačkám.' : 'novinky teď neodebírá.'}
+      </p>
 
       <button
         type="button"
         onClick={odhlasVse}
         className="rounded-lg border-2 border-blue-700 px-4 py-2 font-semibold text-blue-700 hover:bg-blue-50"
       >
-        Odhlásit všechno
+        Odhlásit odběr
       </button>
     </div>
   );

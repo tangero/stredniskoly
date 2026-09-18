@@ -52,19 +52,13 @@ export default function OchranaOsobnichUdajuPage() {
 
             <h2 className="text-2xl font-bold mt-8 mb-3">Odběr termínů e-mailem</h2>
             <p className="text-slate-700">
-              Když se přihlásíte k odběru termínů přijímacího řízení, zpracováváme:
+              Když se přihlásíte k odběru novinek, zpracováváme:
             </p>
             <ul className="list-disc pl-6 text-slate-700 space-y-1">
               <li>
                 <strong>e-mailovou adresu</strong>, na kterou odběr posíláme,
               </li>
-              <li>
-                <strong>ročník přijímacího řízení a druh studia</strong>, abychom vám poslali jen to,
-                co se vás týká,
-              </li>
-              <li>
-                <strong>kraj</strong>, pokud jste ho vyplnili; je nepovinný,
-              </li>
+
               <li>
                 <strong>místo formuláře</strong>, ze kterého jste odběr založili, abychom viděli, co
                 lidem pomáhá,
@@ -95,11 +89,11 @@ export default function OchranaOsobnichUdajuPage() {
             <h2 className="text-2xl font-bold mt-8 mb-3">Jak dlouho údaje držíme</h2>
             <ul className="list-disc pl-6 text-slate-700 space-y-1">
               <li>
-                <strong>žádost o potvrzení:</strong> 72 hodin; u výzvy k dalšímu ročníku 30 dnů,
+                <strong>žádost o potvrzení:</strong> 72 hodin,
               </li>
               <li>
-                <strong>odběr:</strong> do odhlášení, nejdéle do konce přijímacího řízení, na které
-                je přihlášený,
+                <strong>odběr:</strong> do odhlášení. Odběr není vázaný na ročník, takže běží, dokud
+                se neodhlásíte; odhlásit se jde jedním kliknutím v každém e-mailu,
               </li>
               <li>
                 <strong>doklad souhlasu:</strong> 3 roky po skončení odběru, a to už jen jako otisk

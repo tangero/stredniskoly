@@ -5,6 +5,7 @@ import { najdiAktivniZadost, potvrd } from '@/lib/novinky-odber';
 import { overToken } from '@/lib/novinky-token';
 import { jeResendNastaven } from '@/lib/novinky-email';
 import { odesliServisni } from '@/lib/novinky-servisni';
+import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 
 // ============================================================================
 // Potvrzení odběru dvěma kroky (docs/novinky-k-prijimackam-2027.md, kroky 3 a 4).
@@ -83,7 +84,7 @@ export async function POST(request: NextRequest) {
 
   const vysledek = await potvrd(jti);
   const odpoved = vysledek.ok
-    ? NextResponse.json({ success: true, rocnik: vysledek.rocnik })
+    ? NextResponse.json({ success: true })
     : NextResponse.json({ error: vysledek.duvod ?? 'Potvrzení se nepovedlo.' }, { status: 400 });
   odpoved.cookies.delete(COOKIE);
 
@@ -91,13 +92,13 @@ export async function POST(request: NextRequest) {
     try {
       // Stejná cesta jako u obsahových zpráv: dávka, rezervace kvóty, hranice
       // předání. Když to hned nevyjde, uvítání dožene odesílač z fronty.
+      const rocnik = (await zobrazeneObdobi('msmt-harmonogram')) ?? '';
       await odesliServisni({
         id: vysledek.uvitaniPolozkaId,
-        zprava: `novinky/${vysledek.rocnik ?? zadost.volby.rocnik}/uvitani`,
+        zprava: vysledek.uvitaniZprava ?? 'novinky/uvitani',
         email: vysledek.email,
         ucel: 'uvitani',
-        rocnik: vysledek.rocnik ?? zadost.volby.rocnik,
-        druhy: zadost.volby.druhy,
+        rocnik,
       });
     } catch (chyba) {
       // Fronta uvítání drží; odešle ho nejbližší běh odesílače.

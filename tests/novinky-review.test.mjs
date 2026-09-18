@@ -154,10 +154,38 @@ test('P1-2 a P1-3: potvrzení i uvítání jdou přes dávku s rezervací kvóty
   assert.ok(cron.includes('dovezServisni'), 'cron musí servisní položky dovážet');
 });
 
-test('P1-10: odhlášení ruší jen segment zprávy', () => {
+test('P1-10 po revizi produktu: odběr je jeden, odhlášení ruší celý', () => {
+  // Nález P1-10 (odhlášení rušilo oba segmenty) zanikl rozhodnutím zadavatele
+  // z 18. 9. 2026: odběr je jeden newsletter bez ročníku a bez segmentů.
+  // Test proto hlídá, že segmentace nezůstala nikde napůl.
   const zdroj = readFileSync(new URL('../src/lib/novinky-odber.ts', import.meta.url), 'utf8');
   const usek = zdroj.slice(zdroj.indexOf('export async function odhlas'));
-  assert.ok(usek.includes('druh_studia = any($3::text[])'), 'maže se jen segment zprávy');
+  assert.ok(usek.includes('delete from odber_novinek where odberatel_id = $1'));
+  assert.ok(!usek.includes('druh_studia'), 'segment se už nikde nerozhoduje');
+
   const schema = readFileSync(new URL('../src/lib/novinky-schema.ts', import.meta.url), 'utf8');
-  assert.ok(schema.includes('segment text[]'), 'položka musí segment nést');
+  assert.ok(!schema.includes('segment text[]'), 'položka segment nenese');
+  assert.ok(!schema.includes('druh_studia'), 'odběr nemá druh studia');
+  assert.ok(!schema.includes('zprava_o_kalendari'), 'čekání na kalendář zaniklo');
+  assert.ok(schema.includes('odberatel_id uuid primary key'), 'jeden odběr na odběratele');
+});
+
+test('odběr nemá ročník: ten se bere u každé zprávy z registru', () => {
+  const zdroj = readFileSync(new URL('../src/lib/novinky-odber.ts', import.meta.url), 'utf8');
+  const prihlas = zdroj.slice(zdroj.indexOf('export async function prihlas'), zdroj.indexOf('async function zvysLimit'));
+  assert.ok(!prihlas.includes('rocnik'), 'přihlášení se na ročník neptá');
+  const formular = readFileSync(
+    new URL('../src/components/novinky/OdberFormular.tsx', import.meta.url),
+    'utf8',
+  );
+  // Hledá se v odesílaném těle požadavku, ne v komentářích.
+  const telo = formular.slice(formular.indexOf('body: JSON.stringify'), formular.indexOf('});', formular.indexOf('body: JSON.stringify')));
+  for (const pole of ['druhy', 'kraj', 'rocnik', 'jenKalendar']) {
+    assert.ok(!telo.includes(pole), `formulář nemá posílat ${pole}`);
+  }
+});
+
+test('opakované přihlášení dostane uvítání znovu (klíč zprávy nese jti)', () => {
+  const zdroj = readFileSync(new URL('../src/lib/novinky-odber.ts', import.meta.url), 'utf8');
+  assert.ok(zdroj.includes('`novinky/uvitani/${jti}`'), 'jinak by uvítání tiše nepřišlo');
 });

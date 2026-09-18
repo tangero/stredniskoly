@@ -68,14 +68,14 @@ export async function GET(request: NextRequest) {
         nanecisto: true,
         rocnik,
         zprav_v_manifestu: zpravy.length,
-        splatne: splatne.map((z) => ({ zprava: z.zprava, segment: z.segment, predmet: z.predmet })),
+        splatne: splatne.map((z) => ({ zprava: z.zprava, predmet: z.predmet })),
       });
     }
 
     const obnova = await obnovUviznute(kdy);
     // Potvrzení a uvítání, která inline odeslání nestihla. Musí jít dřív než
     // obsahové zprávy: bez potvrzení propadne žádost za 72 hodin.
-    const servisni = await dovezServisni(kdy);
+    const servisni = await dovezServisni(rocnik, kdy);
     const ucinky = await dokonciUcinkyWebhooku();
     const vysledky = [];
     for (const z of splatne) {

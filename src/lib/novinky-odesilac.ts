@@ -37,7 +37,6 @@ export interface ZpravaZManifestu {
   rocnik: string;
   splatnost: string;
   konec_uzitecnosti: string;
-  segment: Array<'ss' | 'vicelete'>;
   predmet: string;
   html: string;
   text: string;
@@ -88,11 +87,10 @@ export async function zapisVerzi(s: Spojeni, z: ZpravaZManifestu): Promise<strin
  * `on conflict do nothing`, takže opakované naplnění nic nezdvojí.
  */
 export async function naplnFrontu(s: Spojeni, z: ZpravaZManifestu): Promise<number> {
+  // Odběr je jeden pro všechny: zpráva jde každému, kdo odebírá.
   const prijemci = await s.dotaz<{ odberatel_id: string; email: string }>(
-    `select distinct o.odberatel_id, u.email
-       from odber_novinek o join odberatel u on u.id = o.odberatel_id
-      where o.rocnik = $1 and o.druh_studia = any($2::text[])`,
-    [z.rocnik, z.segment],
+    `select o.odberatel_id, u.email
+       from odber_novinek o join odberatel u on u.id = o.odberatel_id`,
   );
   let pridano = 0;
   for (const p of prijemci.rows) {
@@ -101,7 +99,6 @@ export async function naplnFrontu(s: Spojeni, z: ZpravaZManifestu): Promise<numb
       ucel: 'obsah',
       odberatelId: p.odberatel_id,
       adresatOtisk: otisk(`email:${p.email}`),
-      segment: [...z.segment],
     });
     if (id) pridano += 1;
   }

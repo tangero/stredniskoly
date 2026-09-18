@@ -1,6 +1,5 @@
 import { obalka } from './novinky-email.ts';
 import { potvrzovaciOdkaz } from './novinky-token.ts';
-import type { DruhStudia } from './novinky-token.ts';
 
 // ============================================================================
 // Texty servisních e-mailů odběru (potvrzení, uvítání).
@@ -21,37 +20,23 @@ function patickaOdberu(spravaOdkaz: string, odhlasitOdkaz: string): string {
   return `<a href="${spravaOdkaz}" style="color: #0074e4;">Upravit odběr</a> · <a href="${odhlasitOdkaz}" style="color: #0074e4;">Odhlásit se</a>`;
 }
 
-/** Jak se druh studia pojmenuje v textu pro rodinu. */
-export function nazevDruhu(druh: DruhStudia): string {
-  return druh === 'ss' ? 'střední škola po 9. třídě' : 'víceleté gymnázium';
-}
-
 export interface PotvrzeniPara {
   token: string;
-  rocnik: string;
-  druhy: DruhStudia[];
-  /** Prázdné druhy znamenají žádost o zprávu, až vyjde další kalendář. */
-  jenKalendar?: boolean;
 }
 
 /** E-mail s potvrzovacím odkazem. Odkaz jen otevře stránku, odběr nezaloží. */
 export function potvrzovaciEmail(para: PotvrzeniPara): { predmet: string; html: string; text: string } {
   const odkaz = potvrzovaciOdkaz(para.token);
-  const co = para.jenKalendar
-    ? `zprávu o tom, až vyjde kalendář přijímacího řízení pro rok ${Number(para.rocnik) + 1}`
-    : `termíny přijímacího řízení ${para.rocnik} a pokyny, co je potřeba připravit`;
-  const komu = para.jenKalendar
-    ? ''
-    : `<p style="color: #818c99; font-size: 14px;">Přihlašuješ se pro: ${para.druhy.map(nazevDruhu).join(' a ')}.</p>`;
+  const co =
+    'termíny přijímacího řízení, pokyny, co je potřeba připravit, a zprávy o nových datech na webu';
 
-  const predmet = 'Potvrď odběr termínů přijímaček';
+  const predmet = 'Potvrď odběr novinek k přijímačkám';
   const html = obalka(
     `<p>Dobrý den,</p>
      <p>někdo zadal tuto adresu, aby dostával ${co}. Odběr začne, až ho potvrdíš:</p>
      <p style="text-align: center; margin: 24px 0;">
        <a href="${odkaz}" style="display: inline-block; background: #0074e4; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600;">Potvrdit odběr</a>
      </p>
-     ${komu}
      <p>Odkaz platí 72 hodin a použít ho jde jednou. Pokud jsi o odběr nežádal, e-mail prostě ignoruj: bez potvrzení nic dalšího nepřijde a adresu si nikam neukládáme.</p>`,
     PATICKA_POTVRZENI,
   );
@@ -69,8 +54,8 @@ export function potvrzovaciEmail(para: PotvrzeniPara): { predmet: string; html: 
 }
 
 export interface UvitaniPara {
+  /** Ročník přijímacího řízení, jehož termíny právě běží; z registru, ne z kódu. */
   rocnik: string;
-  druhy: DruhStudia[];
   /** Nejbližší termíny z kalendáře MŠMT: popis a datum slovy. */
   terminy: Array<{ nazev: string; datum: string }>;
   spravaOdkaz: string;

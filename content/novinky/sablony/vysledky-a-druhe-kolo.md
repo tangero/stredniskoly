@@ -3,7 +3,6 @@ spoustec: kalendar
 udalost: ss-vysledky
 predstih_dni: 0
 konec_uzitecnosti: udalost:k2-prihlasky
-segment: ss,vicelete
 ---
 # Výsledky prvního kola jsou dnes. Co dělat dál
 

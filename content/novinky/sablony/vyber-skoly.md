@@ -3,7 +3,6 @@ spoustec: redakcni
 datum: 12-07
 rok_posun: -1
 uzitecnost_dni: 30
-segment: ss,vicelete
 ---
 # Jak vybírat školu, než začnou kritéria
 

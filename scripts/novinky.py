@@ -238,7 +238,6 @@ def priprav(nazvy: list[str] | None) -> int:
             "rocnik": rocnik,
             "splatnost": splatnost.isoformat(),
             "konec_uzitecnosti": konec.isoformat(),
-            "segment": [c.strip() for c in s.meta.get("segment", "ss,vicelete").split(",")],
             "predmet": predmet,
             "html": na_html(telo_md),
             "text": telo_md,
@@ -274,16 +273,13 @@ def plan() -> int:
     rocnik = rocnik_z_registru(registr)
     kalendar = nacti_kalendar(rocnik)
     print(f"Ročník přijímacího řízení: {rocnik}")
-    print(f"{'zpráva':22} {'odeslat':12} {'do':12} segment")
+    print(f"{'zpráva':22} {'odeslat':12} {'do':12}")
     for s in nacti_sablony():
         if s.meta.get("spoustec") in {"potvrzeni", "publikace"}:
             print(f"{s.nazev:22} {'—':12} {'—':12} posílá {s.meta.get('spoustec')}")
             continue
         splatnost, konec = spocitej_datum(s, kalendar, rocnik)
-        print(
-            f"{s.nazev:22} {splatnost.isoformat():12} {konec.isoformat():12} "
-            f"{s.meta.get('segment', 'ss,vicelete')}"
-        )
+        print(f"{s.nazev:22} {splatnost.isoformat():12} {konec.isoformat():12}")
     return 0
 
 

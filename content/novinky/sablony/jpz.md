@@ -3,13 +3,17 @@ spoustec: kalendar
 udalost: jpz-4-1
 predstih_dni: 10
 konec_uzitecnosti: udalost:jpz-nahradni-2
-segment: ss
 ---
-# Jednotná zkouška na čtyřleté obory: {{datum:jpz-4-1}} a {{datum:jpz-4-2}}
+# Jednotná zkouška se blíží. Který den se píše a co s sebou
 
 Dobrý den,
 
-jednotná zkouška na čtyřleté obory a nástavby se koná {{datum:jpz-4-1}} a {{datum:jpz-4-2}}. Uchazeč píše testy z češtiny a z matematiky, každý test má nejvýš 50 bodů a počítá se lepší ze dvou pokusů.
+jednotná zkouška se koná ve čtyřech dnech podle toho, kam se uchazeč hlásí:
+
+- **Čtyřleté obory a nástavby:** {{datum:jpz-4-1}} a {{datum:jpz-4-2}}.
+- **Šestiletá a osmiletá gymnázia:** {{datum:jpz-vice-1}} a {{datum:jpz-vice-2}}.
+
+Uchazeč píše testy z češtiny a z matematiky, každý test má nejvýš 50 bodů a počítá se lepší ze dvou pokusů.
 
 **Co je potřeba:**
 

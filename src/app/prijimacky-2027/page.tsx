@@ -42,7 +42,7 @@ export default function Admissions2027Page() {
             <OdberBlok
               zdroj="kalendar"
               varianta="stranka"
-              nadpis="Změny termínů ti pošleme e-mailem"
+              nadpis="Termíny a novinky ti pošleme e-mailem"
             />
           </div>
           {calendar.groups.map(group => (

@@ -3,7 +3,6 @@ spoustec: kalendar
 udalost: ss-prihlasky
 predstih_dni: 5
 konec_uzitecnosti: konec_udalosti
-segment: ss,vicelete
 ---
 # Přihlášky na střední školy se podávají {{datum:ss-prihlasky}}
 

@@ -3,7 +3,6 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { OdberBlok } from '@/components/novinky/OdberBlok';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
-import { getAllKraje } from '@/lib/data';
 import calendar from '@/data/admissions-2027.json';
 
 // ============================================================================
@@ -12,16 +11,15 @@ import calendar from '@/data/admissions-2027.json';
 // ============================================================================
 
 export const metadata = {
-  title: 'Termíny přijímaček e-mailem',
+  title: 'Novinky k přijímačkám e-mailem',
   description:
-    'Pošleme ti termíny přijímacího řízení s předstihem a napíšeme, co je potřeba připravit. Kritéria, přihlášky, jednotná zkouška, výsledky a 2. kolo.',
+    'Pošleme ti termíny přijímacího řízení s předstihem, napíšeme, co je potřeba připravit, a dáme vědět, když na web přibudou nová data o školách a oborech.',
 };
 
 export const revalidate = 3600;
 
 export default async function NovinkyPage() {
   const rocnik = await zobrazeneObdobi('msmt-harmonogram');
-  const kraje = await getAllKraje();
   const dnes = new Date().toISOString().slice(0, 10);
   const nejblizsi = calendar.groups
     .filter((g) => g.id !== 'konzervatore')
@@ -37,15 +35,15 @@ export default async function NovinkyPage() {
         <section className="py-12" style={{ backgroundColor: '#ffffff' }}>
           <div className="max-w-3xl mx-auto px-4">
             <h1 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#28313b' }}>
-              Termíny přijímaček e-mailem
+              Novinky k přijímačkám e-mailem
             </h1>
             <p className="text-lg text-slate-600 mb-8">
               {rocnik
-                ? `Pošleme ti s předstihem termíny přijímacího řízení ${rocnik} a napíšeme, co je potřeba připravit. Nejvýš pár e-mailů měsíčně.`
+                ? `Pošleme ti s předstihem termíny přijímacího řízení ${rocnik}, napíšeme, co je potřeba připravit, a dáme vědět, když na web přibudou nová data. Jeden odběr, nejvýš pár e-mailů měsíčně, a běží dál i v dalších letech.`
                 : 'Odběr otevřeme, až MŠMT zveřejní harmonogram dalšího přijímacího řízení.'}
             </p>
 
-            <OdberBlok zdroj="novinky" varianta="stranka" kraje={kraje} />
+            <OdberBlok zdroj="novinky" varianta="stranka" />
 
             <h2 className="text-2xl font-bold mt-12 mb-4" style={{ color: '#28313b' }}>
               Co ti přijde
@@ -60,8 +58,8 @@ export default async function NovinkyPage() {
                 kritérií.
               </li>
               <li>
-                <strong>Jednotná zkouška:</strong> který den se píše, co s sebou a jak je to
-                s náhradním termínem.
+                <strong>Jednotná zkouška:</strong> který den se píše pro čtyřleté obory a který pro
+                víceletá gymnázia, co s sebou a jak je to s náhradním termínem.
               </li>
               <li>
                 <strong>Výsledky a 2. kolo:</strong> jak zjistit výsledek a co dělat, když se uchazeč
@@ -108,8 +106,9 @@ export default async function NovinkyPage() {
               .
             </p>
             <p className="text-slate-700 mt-3">
-              Konzervatoře zatím neposíláme, protože je web nepokrývá; jejich termíny najdeš
-              v kalendáři.
+              Odběr je jeden pro všechny a není vázaný na ročník: běží dál, dokud se neodhlásíš,
+              takže se dá založit i rok dopředu. Konzervatoře zatím neposíláme, protože je web
+              nepokrývá; jejich termíny najdeš v kalendáři.
             </p>
           </div>
         </section>

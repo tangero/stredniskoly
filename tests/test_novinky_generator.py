@@ -160,7 +160,7 @@ class GeneratorTest(unittest.TestCase):
         )
         self.sablona(
             "prihlasky",
-            "spoustec: kalendar\nudalost: ss-prihlasky\npredstih_dni: 5\nsegment: ss",
+            "spoustec: kalendar\nudalost: ss-prihlasky\npredstih_dni: 5",
             "# Přihlášky\n\nPodávají se {{datum:ss-prihlasky}}.",
         )
         self.assertEqual(self.novinky.priprav(None), 0)
@@ -171,7 +171,6 @@ class GeneratorTest(unittest.TestCase):
         self.assertEqual(manifest["otisk_kalendare"], self.novinky.otisk_kalendare(KALENDAR))
         # Identifikátor zprávy nese ročník, aby nekolidoval mezi roky.
         self.assertTrue(all(z["zprava"].startswith("novinky/2027/") for z in manifest["zpravy"]))
-        self.assertEqual(self.vystup("prihlasky")["segment"], ["ss"])
 
     def test_potvrzeni_a_publikace_se_negeneruji(self) -> None:
         self.sablona("uvitani", "spoustec: potvrzeni", "# Uvítání\n\nText.")

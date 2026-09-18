@@ -4,7 +4,6 @@ udalost: ss-prihlasky
 vztah: konec
 predstih_dni: 4
 konec_uzitecnosti: konec_udalosti
-segment: ss,vicelete
 ---
 # Připomínka: přihlášky se podávají do {{datum:ss-prihlasky}}
 

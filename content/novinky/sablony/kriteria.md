@@ -3,7 +3,6 @@ spoustec: kalendar
 udalost: ss-kriteria
 predstih_dni: 3
 konec_uzitecnosti: konec_udalosti
-segment: ss,vicelete
 ---
 # Školy zveřejňují kritéria přijetí. Na co se dívat
 

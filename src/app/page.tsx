@@ -74,7 +74,7 @@ export default async function HomePage() {
             )}
             <div className="mb-5">
               {/* Odběr termínů: hlavní místo formuláře (návrh novinek, oddíl 4) */}
-              <OdberBlok zdroj="titulka-karta" varianta="karta" nadpis="Termíny přijímaček e-mailem" />
+              <OdberBlok zdroj="titulka-karta" varianta="karta" nadpis="Novinky k přijímačkám e-mailem" />
             </div>
             <div className="grid sm:grid-cols-2 gap-3">
               <Link href="/prijimacky-2027" className="rounded-lg bg-blue-700 p-5 hover:bg-blue-600">
@@ -298,10 +298,6 @@ export default async function HomePage() {
           >
             Spustit simulátor
           </Link>
-          <div className="mt-10 max-w-xl mx-auto text-left">
-            {/* Druhá příležitost k odběru pro toho, kdo dočetl titulní stránku */}
-            <OdberBlok zdroj="titulka-pas" varianta="pas" nadpis="Ať ti neuteče termín" />
-          </div>
         </div>
       </section>
 

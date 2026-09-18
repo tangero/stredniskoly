@@ -22,7 +22,7 @@ import type { Spojeni } from './novinky-db.ts';
 //  4. Rezervace kvóty se vypořádávají jednorázově a nezávisle na stavu dávky.
 // ============================================================================
 
-export type UcelPolozky = 'potvrzeni' | 'uvitani' | 'obsah' | 'vyzva';
+export type UcelPolozky = 'potvrzeni' | 'uvitani' | 'obsah';
 
 export interface Polozka {
   id: string;
@@ -56,26 +56,16 @@ export async function zaradPolozku(
     odberatelId?: string | null;
     zadostJti?: string | null;
     adresatOtisk: string;
-    /** Segment zprávy; podle něj se pak ruší odběr, ne podle celého ročníku. */
-    segment?: string[] | null;
   },
 ): Promise<string | null> {
   const id = noveId();
   const vysledek = await s.dotaz<{ id: string }>(
     `insert into polozka_odeslani
-       (id, zprava, ucel, odberatel_id, zadost_jti, adresat_otisk, segment, stav)
-     values ($1, $2, $3, $4, $5, $6, $7, 'ceka')
+       (id, zprava, ucel, odberatel_id, zadost_jti, adresat_otisk, stav)
+     values ($1, $2, $3, $4, $5, $6, 'ceka')
      on conflict do nothing
      returning id`,
-    [
-      id,
-      para.zprava,
-      para.ucel,
-      para.odberatelId ?? null,
-      para.zadostJti ?? null,
-      para.adresatOtisk,
-      para.segment ?? null,
-    ],
+    [id, para.zprava, para.ucel, para.odberatelId ?? null, para.zadostJti ?? null, para.adresatOtisk],
   );
   return vysledek.rows[0]?.id ?? null;
 }
@@ -198,28 +188,14 @@ async function jeAdresatZpusobily(s: Spojeni, p: Polozka): Promise<boolean> {
   if (p.ucel === 'potvrzeni') {
     const v = await s.dotaz(
       `select 1 from zadost_o_potvrzeni
-        where jti = $1 and stav = 'aktivni' and spotrebovano is null and plati_do > now()`,
+        where jti = $1 and spotrebovano is null and plati_do > now()`,
       [p.zadost_jti],
     );
     return v.rowCount > 0;
   }
-  if (p.ucel === 'vyzva') {
-    const v = await s.dotaz(
-      `select 1 from zprava_o_kalendari where odberatel_id = $1 and stav in ('ceka', 'vyzvan')`,
-      [p.odberatel_id],
-    );
-    return v.rowCount > 0;
-  }
-  if (p.ucel === 'uvitani') {
-    const v = await s.dotaz(`select 1 from odber_novinek where odberatel_id = $1`, [p.odberatel_id]);
-    return v.rowCount > 0;
-  }
-  // Obsahová zpráva: aktivní odběr ročníku, který zpráva nese.
-  const rocnik = p.zprava.split('/')[1];
-  const v = await s.dotaz(`select 1 from odber_novinek where odberatel_id = $1 and rocnik = $2`, [
-    p.odberatel_id,
-    rocnik,
-  ]);
+  // Uvítání i obsahová zpráva potřebují aktivní odběr; jiná podmínka není,
+  // protože odběr je jeden a nemá ročník ani segment.
+  const v = await s.dotaz(`select 1 from odber_novinek where odberatel_id = $1`, [p.odberatel_id]);
   return v.rowCount > 0;
 }
 

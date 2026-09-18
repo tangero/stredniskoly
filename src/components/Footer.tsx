@@ -2,24 +2,13 @@
 
 import Link from 'next/link';
 import { AKTUALNI_VERZE } from '@/lib/changelog';
-import dynamic from 'next/dynamic';
 
-// Formulář odběru se v patičce načítá až v prohlížeči. Patička je na všech
-// stránkách webu včetně 1 179 stránek škol; kdyby se formulář vykresloval při
-// generování, prodlouží každou z nich a build naráží na časový limit.
-const OdberPaticka = dynamic(
-  () => import('@/components/novinky/OdberPaticka').then((m) => ({ default: m.OdberPaticka })),
-  { ssr: false },
-);
 
 export function Footer() {
   return (
     <footer style={{ backgroundColor: '#f2f5f7' }} className="mt-auto">
       <div className="max-w-7xl mx-auto px-4 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-          {/* Sloupec 0: odběr termínů e-mailem (zobrazí se, jen když je zapnutý) */}
-          <OdberPaticka />
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
           {/* Sloupec 1 */}
           <div>
             <h3 className="font-semibold mb-3 text-sm" style={{ color: '#28313b' }}>O projektu</h3>

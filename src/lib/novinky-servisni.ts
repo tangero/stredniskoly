@@ -17,7 +17,6 @@ import {
   SPRAVA_PLATNOST_MS,
   ZADOST_PLATNOST_MS,
 } from './novinky-token.ts';
-import type { DruhStudia } from './novinky-token.ts';
 import calendar from '@/data/admissions-2027.json';
 
 // ============================================================================
@@ -34,17 +33,18 @@ import calendar from '@/data/admissions-2027.json';
 // hranice předání → volání → vypořádání.
 // ============================================================================
 
-/** Nejbližší termíny z kalendáře pro uvítání; letopočet se bere odtud. */
+/**
+ * Nejbližší termíny z kalendáře pro uvítání; letopočet se bere odtud.
+ * Odběr je jeden pro všechny, takže se posílají termíny všech druhů studia
+ * a e-mail u nich říká, který pro koho platí.
+ */
 export function nejblizsiTerminy(
-  druhy: DruhStudia[],
   dnes = new Date().toISOString().slice(0, 10),
 ): Array<{ nazev: string; datum: string }> {
-  const skupiny = calendar.groups.filter((g) => g.id !== 'konzervatore');
-  const jenVicelete = druhy.length === 1 && druhy[0] === 'vicelete';
-  return skupiny
+  return calendar.groups
+    .filter((g) => g.id !== 'konzervatore')
     .flatMap((g) => g.events)
     .filter((e) => (e.end ?? e.start) >= dnes)
-    .filter((e) => (jenVicelete ? !e.id.startsWith('jpz-4') : !e.id.startsWith('jpz-vice')))
     .sort((a, b) => a.start.localeCompare(b.start))
     .slice(0, 6)
     .map((e) => ({ nazev: e.title, datum: e.date }));
@@ -56,26 +56,18 @@ export function obsahServisni(para: {
   polozkaId: string;
   email: string;
   rocnik: string;
-  druhy: DruhStudia[];
   jti?: string | null;
-  jenKalendar?: boolean;
 }): ZpravaProAdresata {
   if (para.ucel === 'potvrzeni') {
     if (!para.jti) throw new Error('potvrzení bez žádosti nelze poslat');
-    const sablona = potvrzovaciEmail({
-      token: vytvorToken(para.jti, ZADOST_PLATNOST_MS),
-      rocnik: para.rocnik,
-      druhy: para.druhy,
-      jenKalendar: para.jenKalendar,
-    });
+    const sablona = potvrzovaciEmail({ token: vytvorToken(para.jti, ZADOST_PLATNOST_MS) });
     return { polozkaId: para.polozkaId, email: para.email, ...sablona };
   }
 
   const token = vytvorToken(para.polozkaId, SPRAVA_PLATNOST_MS);
   const sablona = uvitaciEmail({
     rocnik: para.rocnik,
-    druhy: para.druhy,
-    terminy: nejblizsiTerminy(para.druhy),
+    terminy: nejblizsiTerminy(),
     spravaOdkaz: `https://www.prijimackynaskolu.cz/api/novinky/sprava?t=${encodeURIComponent(token)}`,
     odhlasitOdkaz: odhlasovaciOdkaz(token),
   });
@@ -96,9 +88,7 @@ export async function odesliServisni(
   polozka: Pick<Polozka, 'id' | 'zprava' | 'email'> & {
     ucel: 'potvrzeni' | 'uvitani';
     rocnik: string;
-    druhy: DruhStudia[];
     jti?: string | null;
-    jenKalendar?: boolean;
   },
   kdy = new Date(),
 ): Promise<VysledekServisni> {
@@ -121,9 +111,7 @@ export async function odesliServisni(
               polozkaId: p.id,
               email: p.email,
               rocnik: polozka.rocnik,
-              druhy: polozka.druhy,
               jti: p.zadost_jti ?? polozka.jti,
-              jenKalendar: polozka.jenKalendar,
             }),
           ),
         ),
@@ -164,22 +152,22 @@ export async function odesliServisni(
  * by slib „fronta je záloha“ neplatil: po výpadku Resendu by potvrzení nikdy
  * nedošlo a žádost by propadla.
  */
-export async function dovezServisni(kdy = new Date()): Promise<{ odeslano: number; chyby: string[] }> {
+export async function dovezServisni(
+  rocnik: string,
+  kdy = new Date(),
+): Promise<{ odeslano: number; chyby: string[] }> {
   const polozky = await vTransakci((s) => najdiServisniPolozky(s, 50));
   let odeslano = 0;
   const chyby: string[] = [];
   for (const p of polozky) {
-    const volby = await zjistiVolby(p);
     const vysledek = await odesliServisni(
       {
         id: p.id,
         zprava: p.zprava,
         email: p.email,
         ucel: p.ucel === 'potvrzeni' ? 'potvrzeni' : 'uvitani',
-        rocnik: p.rocnik,
-        druhy: volby.druhy,
+        rocnik,
         jti: p.jti,
-        jenKalendar: volby.jenKalendar,
       },
       kdy,
     );
@@ -187,31 +175,4 @@ export async function dovezServisni(kdy = new Date()): Promise<{ odeslano: numbe
     else chyby.push(`${p.ucel} ${p.id}: ${vysledek.duvod ?? 'neodesláno'}`);
   }
   return { odeslano, chyby };
-}
-
-/** Druhy studia pro obsah e-mailu: ze žádosti u potvrzení, z odběru u uvítání. */
-async function zjistiVolby(p: {
-  ucel: string;
-  odberatel_id: string | null;
-  zadost_jti: string | null;
-  rocnik: string;
-}): Promise<{ druhy: DruhStudia[]; jenKalendar: boolean }> {
-  return vTransakci(async (s) => {
-    if (p.zadost_jti) {
-      const v = await s.dotaz<{ volby: { druhy?: DruhStudia[] }; ucel: string }>(
-        `select volby, ucel from zadost_o_potvrzeni where jti = $1`,
-        [p.zadost_jti],
-      );
-      const radek = v.rows[0];
-      return {
-        druhy: radek?.volby?.druhy ?? [],
-        jenKalendar: radek?.ucel === 'kalendar',
-      };
-    }
-    const v = await s.dotaz<{ druh_studia: DruhStudia }>(
-      `select druh_studia from odber_novinek where odberatel_id = $1 and rocnik = $2`,
-      [p.odberatel_id, p.rocnik],
-    );
-    return { druhy: v.rows.map((r) => r.druh_studia), jenKalendar: false };
-  });
 }

@@ -13,38 +13,28 @@ create table if not exists odberatel (
 
 create table if not exists zadost_o_potvrzeni (
   jti text primary key,
-  ucel text not null check (ucel in ('novinky', 'kalendar', 'novy_rocnik')),
-  stav text not null check (stav in ('ceka_na_vyzvu', 'aktivni', 'spotrebovana')),
   email text not null,
-  volby jsonb not null,
   souhlas_verze text not null,
   zdroj text not null,
   vytvoreno timestamptz not null default now(),
-  plati_do timestamptz,
-  spotrebovano timestamptz,
-  check (stav <> 'aktivni' or plati_do is not null)
+  plati_do timestamptz not null,
+  spotrebovano timestamptz
 );
 
 create index if not exists zadost_plati_do on zadost_o_potvrzeni (plati_do);
 
-create table if not exists odber_novinek (
-  odberatel_id uuid not null references odberatel on delete cascade,
-  rocnik text not null,
-  druh_studia text not null check (druh_studia in ('ss', 'vicelete')),
-  kraj text,
-  zdroj text not null,
-  potvrzeno timestamptz not null default now(),
-  primary key (odberatel_id, rocnik, druh_studia)
-);
+create index if not exists zadost_plati_do on zadost_o_potvrzeni (plati_do);
 
-create index if not exists odber_rocnik_druh on odber_novinek (rocnik, druh_studia);
+create table if not exists odber_novinek (
+  odberatel_id uuid primary key references odberatel on delete cascade,
+  zdroj text not null,
+  potvrzeno timestamptz not null default now()
+);
 
 create table if not exists doklad_souhlasu (
   id uuid primary key,
   odberatel_id uuid references odberatel on delete set null,
   email_otisk text not null,
-  ucel text not null,
-  rocnik text,
   souhlas_verze text not null,
   zdroj text not null,
   potvrzeno timestamptz not null default now(),
@@ -53,18 +43,6 @@ create table if not exists doklad_souhlasu (
 );
 
 create index if not exists doklad_smazat_po on doklad_souhlasu (smazat_po);
-
-create table if not exists zprava_o_kalendari (
-  odberatel_id uuid not null references odberatel on delete cascade,
-  cilovy_rocnik text not null,
-  stav text not null check (stav in ('ceka', 'vyzvan', 'uzavren')),
-  potvrzeno timestamptz not null default now(),
-  ceka_do timestamptz not null,
-  vyzva_odeslana timestamptz,
-  primary key (odberatel_id, cilovy_rocnik)
-);
-
-create index if not exists kalendar_ceka_do on zprava_o_kalendari (stav, ceka_do);
 
 create table if not exists zprava_verze (
   zprava text not null,
@@ -96,11 +74,10 @@ create index if not exists davka_stav on davka (stav, zalozeno);
 create table if not exists polozka_odeslani (
   id uuid primary key,
   zprava text not null,
-  ucel text not null check (ucel in ('potvrzeni', 'uvitani', 'obsah', 'vyzva')),
+  ucel text not null check (ucel in ('potvrzeni', 'uvitani', 'obsah')),
   odberatel_id uuid references odberatel on delete set null,
   zadost_jti text references zadost_o_potvrzeni on delete set null,
   adresat_otisk text not null,
-  segment text[],
   stav text not null check (stav in ('ceka', 'pripravena', 'predavana',
                                      'odeslana', 'neurcita', 'zahozena')),
   davka_id uuid references davka,

@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { jeDbNastavena } from '@/lib/novinky-db';
 import { prihlas, SOUHLAS_VERZE } from '@/lib/novinky-odber';
 import { jeEmailPlatny, normalizujEmail, PRIHLASENI_NEUTRALNI_ODPOVED } from '@/lib/novinky-token';
-import type { DruhStudia } from '@/lib/novinky-token';
 import { jeResendNastaven } from '@/lib/novinky-email';
+import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { odesliServisni } from '@/lib/novinky-servisni';
 
 // ============================================================================
@@ -16,7 +16,6 @@ import { odesliServisni } from '@/lib/novinky-servisni';
 // se odeslání nepovede (cílová doba doručení je do minuty).
 // ============================================================================
 
-const POVOLENE_DRUHY: DruhStudia[] = ['ss', 'vicelete'];
 const POVOLENE_ZDROJE = [
   'titulka-karta',
   'titulka-pas',
@@ -56,32 +55,13 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const druhy = Array.isArray(telo.druhy)
-    ? (telo.druhy.filter((d): d is DruhStudia => POVOLENE_DRUHY.includes(d as DruhStudia)) as DruhStudia[])
-    : [];
-  const jenKalendar = telo.jenKalendar === true;
-  if (druhy.length === 0 && !jenKalendar) {
-    return NextResponse.json({ error: 'Vyber prosím, na co se hlásíš.' }, { status: 400 });
-  }
-
-  const rocnik = typeof telo.rocnik === 'string' && /^\d{4}$/.test(telo.rocnik) ? telo.rocnik : null;
-  if (!rocnik) {
-    return NextResponse.json({ error: 'Chybí ročník přijímacího řízení.' }, { status: 400 });
-  }
-  const kraj = typeof telo.kraj === 'string' && telo.kraj.trim().length > 0 ? telo.kraj.trim().slice(0, 60) : null;
   const zdroj = typeof telo.zdroj === 'string' && POVOLENE_ZDROJE.includes(telo.zdroj) ? telo.zdroj : 'neznamy';
+  // Ročník se bere z registru, ne z formuláře: odběr je jeden a běží dál.
+  const rocnik = (await zobrazeneObdobi('msmt-harmonogram')) ?? '';
   const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'neznama';
 
   try {
-    const vysledek = await prihlas({
-      email,
-      druhy: jenKalendar ? [] : druhy,
-      rocnik,
-      kraj,
-      zdroj,
-      ip,
-      cilovyRocnik: jenKalendar ? String(Number(rocnik) + 1) : undefined,
-    });
+    const vysledek = await prihlas({ email, zdroj, ip });
 
     if (vysledek.poslat && vysledek.jti && vysledek.polozkaId) {
       // Odesílá se hned, ale **stejnou cestou jako obsahové zprávy**: dávka,
@@ -90,13 +70,11 @@ export async function POST(request: NextRequest) {
       // a doveze ji odesílač (dovezServisni).
       const poslano = await odesliServisni({
         id: vysledek.polozkaId,
-        zprava: `novinky/${rocnik}/potvrzeni`,
+        zprava: 'novinky/potvrzeni',
         email,
         ucel: 'potvrzeni',
         rocnik,
-        druhy,
         jti: vysledek.jti,
-        jenKalendar,
       });
       if (!poslano.odeslano) {
         console.error(`✉️ Potvrzení neodešlo hned (${poslano.duvod ?? '?'}), zůstává ve frontě.`);

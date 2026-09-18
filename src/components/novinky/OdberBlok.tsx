@@ -18,7 +18,6 @@ import calendar from '@/data/admissions-2027.json';
 export interface OdberBlokProps {
   zdroj: string;
   varianta?: Varianta;
-  kraje?: Array<{ kod: string; nazev: string }>;
   nadpis?: string;
 }
 
@@ -27,13 +26,13 @@ function maBudouciUdalost(dnes = new Date().toISOString().slice(0, 10)): boolean
   return calendar.groups.some((g) => g.events.some((e) => (e.end ?? e.start) >= dnes));
 }
 
-export async function OdberBlok({ zdroj, varianta = 'karta', kraje, nadpis }: OdberBlokProps) {
+export async function OdberBlok({ zdroj, varianta = 'karta', nadpis }: OdberBlokProps) {
   if (process.env.NOVINKY_ZAPNUTO !== '1') return null;
 
   const rocnik = await zobrazeneObdobi('msmt-harmonogram');
   if (!rocnik || !maBudouciUdalost()) return null;
 
-  const naTmavem = varianta === 'karta' || varianta === 'pas';
+  const naTmavem = varianta === 'karta';
   const obal = naTmavem
     ? 'rounded-xl border border-white/20 bg-white/5 p-4'
     : 'rounded-xl border border-slate-200 bg-white p-4';
@@ -43,7 +42,7 @@ export async function OdberBlok({ zdroj, varianta = 'karta', kraje, nadpis }: Od
       {nadpis && (
         <h3 className={`mb-2 font-bold ${naTmavem ? 'text-white' : 'text-slate-900'}`}>{nadpis}</h3>
       )}
-      <OdberFormular rocnik={rocnik} zdroj={zdroj} varianta={varianta} kraje={kraje} />
+      <OdberFormular rocnik={rocnik} zdroj={zdroj} varianta={varianta} />
     </div>
   );
 }
