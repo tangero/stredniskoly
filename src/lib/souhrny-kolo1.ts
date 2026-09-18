@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { normalizeSchoolKey } from '@/lib/school-key';
+import { indexKlicuRocniku, klicZdrojeProStranku, normalizeSchoolKey } from '@/lib/school-key';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import type { ZarazeniObtiznosti } from '@/lib/obor-profil';
 
@@ -45,7 +45,7 @@ interface SouhrnNabidkySoubor {
   skupina: string;
   kraj: string;
   kraj_nazev: string;
-  parovani?: Record<string, 'shoda_klice' | 'jedna_ku_jedne'>;
+  parovani?: Record<string, 'shoda_klice' | 'jedna_ku_jedne' | 'text_zamereni' | 'overeno_rucne'>;
   roky: Record<string, SouhrnRocniku>;
 }
 
@@ -94,12 +94,35 @@ async function nacti() {
   return cache;
 }
 
+const mapyRocniku = new Map<string, Map<string, string>>();
+
+/** Mapa nabídek ročníku (scripts/build-offer-mapping-{rok}.py); prázdná, když pro ročník neexistuje. */
+async function mapaRocniku(obdobi: string): Promise<Map<string, string>> {
+  const hotova = mapyRocniku.get(obdobi);
+  if (hotova) return hotova;
+  let index = new Map<string, string>();
+  try {
+    const soubor = JSON.parse(
+      await fs.readFile(path.join(process.cwd(), 'public', `offer_mapping_${obdobi}.json`), 'utf-8'),
+    );
+    index = indexKlicuRocniku(soubor.mapping ?? {});
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e;
+    // Bez mapy najdou souhrn jen stránky, jejichž klíč se nezměnil; soubor se za běhu neobjeví.
+    console.warn(`souhrny-kolo1: chybí public/offer_mapping_${obdobi}.json, stránky s přepsaným zaměřením souhrn nenajdou`);
+  }
+  mapyRocniku.set(obdobi, index);
+  return index;
+}
+
 /** Souhrn nabídky pro zobrazený ročník a spárovaný předchozí ročník; null, když nabídka v ročníku není. */
 export async function getSouhrnNabidky(programId: string): Promise<SouhrnNabidky | null> {
   const obdobi = await zobrazeneObdobi('cermat-vysledky');
   if (!obdobi) return null;
   const { soubor, index } = await nacti();
-  const klic = index.get(normalizeSchoolKey(programId));
+  // Stránka s přepsaným zaměřením nese loňský klíč katalogu; letošní nabídku najde přes mapu nabídek.
+  const klic = klicZdrojeProStranku(programId, await mapaRocniku(obdobi), index,
+    k => soubor.nabidky[k].roky[obdobi] !== undefined);
   const nabidka = klic ? soubor.nabidky[klic] : undefined;
   const aktualni = nabidka?.roky[obdobi];
   if (!nabidka || !aktualni) return null;

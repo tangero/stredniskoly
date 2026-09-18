@@ -35,6 +35,26 @@ class TestParovani(unittest.TestCase):
         novy = {"1_A_x": nabidka("1", "A", "x"), "1_A_z": nabidka("1", "A", "z")}
         self.assertEqual(souhrny.paruj(stary, novy), {"1_A_x": ("1_A_x", "shoda_klice")})
 
+    def test_par_z_mapy_nabidek(self):
+        # Víc nabídek na obou stranách: heuristika mlčí, mapa pár zná (klíče mapy s diakritikou).
+        stary = {"1_A_nemecky_jazyk": nabidka("1", "A", "německý jazyk"), "1_A_francouzsky_jazyk": nabidka("1", "A", "francouzský jazyk")}
+        novy = {"1_A_nemcina": nabidka("1", "A", "němčina"), "1_A_francouzstina": nabidka("1", "A", "francouzština")}
+        mapa = {"1_A_němčina": {"katalog_id": "1_A_německý_jazyk", "zpusob": "overeno_rucne"}}
+        self.assertEqual(souhrny.paruj(stary, novy, mapa), {"1_A_nemcina": ("1_A_nemecky_jazyk", "overeno_rucne")})
+
+    def test_mapa_neprebije_shodu_klice_ani_nepouzije_starou_nabidku_dvakrat(self):
+        stary = {"1_A_x": nabidka("1", "A", "x"), "1_A_y": nabidka("1", "A", "y")}
+        novy = {"1_A_x": nabidka("1", "A", "x"), "1_A_z": nabidka("1", "A", "z")}
+        mapa = {"1_A_x": {"katalog_id": "1_A_y", "zpusob": "text_zamereni"},
+                "1_A_z": {"katalog_id": "1_A_x", "zpusob": "text_zamereni"}}
+        self.assertEqual(souhrny.paruj(stary, novy, mapa), {"1_A_x": ("1_A_x", "shoda_klice")})
+
+    def test_mapa_na_neexistujici_nabidku_se_ignoruje(self):
+        mapa = {"1_A_z": {"katalog_id": "9_B_q", "zpusob": "jedna_ku_jedne"}}
+        stary = {"1_A_x": nabidka("1", "A", "x"), "1_A_y": nabidka("1", "A", "y")}
+        novy = {"1_A_z": nabidka("1", "A", "z"), "1_A_w": nabidka("1", "A", "w")}
+        self.assertEqual(souhrny.paruj(stary, novy, mapa), {})
+
 
 class TestZaznam(unittest.TestCase):
     def radek(self, **zmeny) -> dict:

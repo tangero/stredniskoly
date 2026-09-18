@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.23 · 17. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.24 · 18. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -224,7 +224,7 @@ Odpovídá přímo na otázku „jak těžké je se sem dostat“ ve tvaru, kter
 
 Do jmenovatele **nepatří** uchazeči, kteří nesplnili podmínky, a ti, kdo byli přijati na obor výš na přihlášce; oba počty se uvádějí vedle, protože bez nich by podíl vypadal příznivěji, než jaký byl celý průběh (viz soutěžící o obor). Když nikdo nebyl odmítnut kvůli kapacitě, podíl je 1 a o přijetí rozhodovaly jen podmínky školy.
 
-Rozdělení 2026 u 1 736 nabídek s aspoň jedním odmítnutým: dolní čtvrtina 0,46, medián 0,61, horní čtvrtina 0,78. Mezi roky 2025 a 2026 u 1 868 nabídek s aspoň 20 soutěžícími v obou letech korelace 0,723 a medián změny 9,4 procentního bodu (`docs/podklady/overeni-srovnani-rocniku.json`). S tlakem prvních voleb souhlasí pořadím (Spearman −0,76), tlak ale zůstává ověřeným ukazatelem pro předpověď dalšího roku.
+Rozdělení 2026 u 1 736 nabídek s aspoň jedním odmítnutým: dolní čtvrtina 0,46, medián 0,61, horní čtvrtina 0,78. Mezi roky 2025 a 2026 u 1 913 nabídek s aspoň 20 soutěžícími v obou letech korelace 0,727 a medián změny 9,3 procentního bodu (`docs/podklady/overeni-srovnani-rocniku.json`). S tlakem prvních voleb souhlasí pořadím (Spearman −0,76), tlak ale zůstává ověřeným ukazatelem pro předpověď dalšího roku.
 
 **Neříká, jakou šanci má konkrétní uchazeč**, ani jak se to změní příští rok. Soutěžící nejsou náhodný vzorek: kdo se dostal výš, sem nesoutěžil, a ti mívají lepší výsledky.
 
@@ -239,7 +239,7 @@ Slovní zařazení nabídky podle podílu přijatých ze soutěžících v jedno
 | `tezke` | 1/3 až 1/2 | Dostat se sem je těžké | 353 |
 | `velmi_tezke` | méně než 1/3 | Dostat se sem je velmi těžké | 168 |
 
-Prahy jsou zlomky, které se dají říct slovy (třetina, polovina, dvě třetiny), ne kvantily; vycházejí z otázky rodiče, ne z rozdělení. Mezi roky 2025 a 2026 zůstalo zařazení stejné u 48,6 % a posunulo se nejvýš o stupeň u 90,2 % nabídek s aspoň 20 soutěžícími, **proto se věta vždy doplňuje podílem a předchozím ročníkem**, například „zhruba každý čtvrtý; rok předtím skoro každý druhý“.
+Prahy jsou zlomky, které se dají říct slovy (třetina, polovina, dvě třetiny), ne kvantily; vycházejí z otázky rodiče, ne z rozdělení. Mezi roky 2025 a 2026 zůstalo zařazení stejné u 48,9 % a posunulo se nejvýš o stupeň u 90,3 % nabídek s aspoň 20 soutěžícími, **proto se věta vždy doplňuje podílem a předchozím ročníkem**, například „zhruba každý čtvrtý; rok předtím skoro každý druhý“.
 
 Zařazení se nezobrazuje pod 10 soutěžícími (jeden uchazeč by přehodil stupeň) a u oborů s talentovou zkouškou se doplňuje větou, že rozhodovala i ona.
 
@@ -389,7 +389,7 @@ Stabilita měřena na 2 757 a 2 723 spárovaných nabídkách ve skupinách s as
 Na stránce vždy s ukazatelem, skupinou, krajem, rokem a předchozím rokem: „2. z 32 osmiletých gymnázií ve Středočeském kraji podle výsledků přijatých (2026; v roce 2025 také 2.)“. **Neříká, která škola je lepší.** Pořadí podle výsledků přijatých popisuje, s jakými výsledky sem uchazeči přicházejí, ne kvalitu výuky. Hranice kraje neodpovídá tomu, kam se uchazeči skutečně hlásí (u Machara je zhruba polovina oborů výš a níž na přihlášce v Praze), proto pořadí doplňuje, ale nenahrazuje obory výš a níž na přihlášce.
 
 ### Změna mezi ročníky
-Rozdíl hodnoty ukazatele v zobrazeném ročníku a v předchozím ročníku téže nabídky. Počítá se jen u nabídek spárovaných podle `docs/grafy-skoly-a-oboru-2027.md`, pravidlo 7: shodný klíč nabídky, nebo jediná nabídka téže školy a oboru v obou ročnících. Způsob párování nese pole `parovani`. Mezi roky 2025 a 2026 je spárováno 2 858 z 3 091 nabídek, z toho 543 jako jediná nabídka téže školy a oboru.
+Rozdíl hodnoty ukazatele v zobrazeném ročníku a v předchozím ročníku téže nabídky. Počítá se jen u nabídek spárovaných podle `docs/grafy-skoly-a-oboru-2027.md`, pravidlo 7: shodný klíč nabídky, pár z mapy nabídek ročníku (`public/offer_mapping_{rok}.json`, na které stojí i stránky nabídek), nebo jediná nabídka téže školy a oboru v obou ročnících. Způsob párování nese pole `parovani`. Mezi roky 2025 a 2026 je spárováno 2 934 z 3 091 nabídek: 2 315 shodným klíčem, 543 jako jediná nabídka téže školy a oboru, 61 jednoznačnou shodou textu zaměření a 15 ručně ověřenými páry.
 
 Srovnávat mezi ročníky se smí kapacita, přihlášky na místo, tlak a podíl prvních voleb a průměrné percentilové umístění přijatých. **Body JPZ se mezi ročníky nesrovnávají**, posun odráží obtížnost testu.
 
@@ -518,6 +518,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.24 | **Párování ročníků podle mapy nabídek** (18. 9. 2026): změna mezi ročníky se počítá i u nabídek spárovaných mapou nabídek (shoda textu zaměření, ručně ověřený pár), tedy stejně, jak párují stránky. Spárovaných nabídek 2025–2026 je 2 934 místo 2 858; stabilita podílu přijatých ze soutěžících vychází na 1 913 nabídkách 0,727 místo 0,723, stejné zařazení obtížnosti 48,9 % místo 48,6 %. |
 | 1.23 | **Obtížnost přijetí má jednu definici** (17. 9. 2026): počítá ji generátor souhrnů, práh deseti soutěžících uplatňuje až zobrazení. Dosud existovaly dvě implementace, které se o práh lišily; sjednocení nezměnilo ani jeden z 6 150 zobrazovaných záznamů. Zapsáno, že datové pole nese hodnoty i pod prahem. |
 | 1.22 | **Medián JPZ přijatých zaveden jako ukazatel** (17. 9. 2026) a přesunut do `public/pasma_prijeti_{rok}.json`, kde vzniká ze stejného zdroje jako nejnižší přijatý a přepíná se s registrem. Nahrazuje pole `jpz_median` a `jpz_prumer_actual` ze starého katalogu, která pocházela z předběžné verze roku 2025 a z rozbitého `enrich_schools_data.py`, a na webu se nikdy nepoužila. Doloženo, že medián leží systematicky pod průměrem (mediánově o 1,1 bodu na 2 517 nabídkách roku 2026), takže průměr přeceňuje typického přijatého. Pole `cj_at_jpz_min`, `ma_at_jpz_min`, `cj_min_independent` a `ma_min_independent` zamítnuta: každé určuje jediný uchazeč a poslední dvě mohou pocházet od dvou různých lidí. |
 | 1.21 | **Doklady stability přepočítány na dvojici ročníků 2025 a 2026** (17. 9. 2026) před přepnutím sady `cermat-uchazeci-kolo1` na rok 2026. Výpočty se nemění, mění se doložená čísla. Míra *rozhodl test* vychází hůř než dřív (korelace 0,672 proti 0,725 na dvojici 2024–2025) a zařazení do tří kategorií se mění u 26 % oborů, což potvrzuje dosavadní rozhodnutí nezobrazovat ji jako číslo. Šířka pásma nejistoty 0,719 a mediánová šířka 6 bodů. Percentil nejnižšího přijatého 0,883 proti 0,879 u bodů; medián výsledku uchazečů stoupl ze 46 na 49 bodů, takže nejnižší přijatý v bodech stoupl o 1 bod, zatímco jeho percentil se nehnul. Doklad `docs/podklady/overeni-pasem-prijeti-2025-2026.json` počítá `scripts/validate-pasma-prijeti.py --rocniky 2025-2026`. |
