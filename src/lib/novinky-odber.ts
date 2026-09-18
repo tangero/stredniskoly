@@ -91,17 +91,21 @@ export async function prihlas(vstup: PrihlaseniVstup): Promise<PrihlaseniVyslede
 /**
  * Počitadlo v okně 24 hodin. Otisk je HMAC s odděleným tajemstvím, takže
  * tabulka nenese adresu ani IP.
+ *
+ * `limit` se porovnává až tady v JavaScriptu, takže **do dotazu nepatří**:
+ * Postgres odmítne celý dotaz (`42P18`), když mu předáme parametr, který se
+ * v textu nevyskytuje. Hlídá to `tests/novinky-parametry.test.mjs`.
  */
 async function zvysLimit(s: Spojeni, otiskHodnoty: string, limit: number): Promise<boolean> {
   const v = await s.dotaz<{ pocet: number }>(
     `insert into limit_potvrzeni (otisk, pocet, od) values ($1, 1, now())
      on conflict (otisk) do update
-       set pocet = case when limit_potvrzeni.od < now() - ($3::text || ' milliseconds')::interval
+       set pocet = case when limit_potvrzeni.od < now() - ($2::text || ' milliseconds')::interval
                         then 1 else limit_potvrzeni.pocet + 1 end,
-           od = case when limit_potvrzeni.od < now() - ($3::text || ' milliseconds')::interval
+           od = case when limit_potvrzeni.od < now() - ($2::text || ' milliseconds')::interval
                      then now() else limit_potvrzeni.od end
      returning pocet`,
-    [otiskHodnoty, limit, String(OKNO_LIMITU_MS)],
+    [otiskHodnoty, String(OKNO_LIMITU_MS)],
   );
   return (v.rows[0]?.pocet ?? limit + 1) <= limit;
 }
