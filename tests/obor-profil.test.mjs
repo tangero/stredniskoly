@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   zarazeniObtiznosti, slovniPodil, zOd, stavNabidky, zminitPozadavek, vetaPozadavku,
-  poradiVeSkupine, textPoradi, nazevSkupiny, soutezicichUchazecu, vKraji,
+  poradiVeSkupine, textPoradi, nazevSkupiny, soutezicichUchazecu, vKraji, nazevNabidky,
 } from '../src/lib/obor-profil.ts';
 
 const machar8 = { kapacita: 30, prihlasky: 233, prijati: 30, capacity_rejected: 82, conditions_not_met: 85, higher_priority: 36, zarazeni_obtiznosti: 'velmi_tezke' };
@@ -85,4 +85,15 @@ test('kraj v 6. pádě s předložkou', () => {
   assert.equal(vKraji('Jihomoravský'), 'v Jihomoravském kraji');
   assert.equal(vKraji('Hlavní město Praha'), 'v Praze');
   assert.equal(vKraji('Kraj Vysočina'), 'v Kraji Vysočina');
+});
+
+test('název nabídky odliší obory téže školy délkou studia', () => {
+  // Víceletá gymnázia mají shodný obor i zaměření; bez délky vypadají v porovnání stejně.
+  assert.equal(nazevNabidky('Gymnázium', 'všeobecné studium', 8), 'Gymnázium · všeobecné studium, 8leté');
+  assert.equal(nazevNabidky('Gymnázium', 'všeobecné studium', 6), 'Gymnázium · všeobecné studium, 6leté');
+  assert.notEqual(nazevNabidky('Gymnázium', '', 8), nazevNabidky('Gymnázium', '', 6));
+  // Bez zaměření i bez délky zůstane jen název oboru.
+  assert.equal(nazevNabidky('Informační technologie', '', 4), 'Informační technologie, 4leté');
+  assert.equal(nazevNabidky('Gymnázium', null, null), 'Gymnázium');
+  assert.equal(nazevNabidky('Gymnázium'), 'Gymnázium');
 });
