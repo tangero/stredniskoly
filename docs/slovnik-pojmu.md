@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.7 · 18. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.8 · 18. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -38,7 +38,8 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **1. kolo**, **2. kolo** | kola přijímacího řízení podle harmonogramu MŠMT | u 2. kola: „když se obor v 1. kole nenaplní, škola může vypsat 2. kolo“ | druhé kolo bez čísla ročníku |
 | **místa**, **kapacita** | počet míst, které škola pro obor v kole vypsala | není potřeba | volná místa (jen u 2. kola) |
 | **obor bez jednotné zkoušky** | obor, u kterého se jednotná přijímací zkouška nekoná: kategorie C, E, H, J a P, například učební obory s výučním listem; přehled je zatím nezahrnuje | v tabulce stačí značka „bez jednotné zkoušky“, pod tabulkou: „Obory bez jednotné zkoušky, například učební obory s výučním listem, a několik dalších oborů přehled zatím nezahrnuje; uvádíme u nich jen název.“ Věta mluví i o oborech mimo přehled, protože jedna poznámka vysvětluje obě značky | obor bez JPZ, obor bez přijímaček, nematuritní obor (není totéž) |
-| **mimo přehled** | obor, který přehled nezahrnuje z jiného důvodu než kvůli chybějící jednotné zkoušce (například jiná forma studia nebo talentový obor) | jen jako značka v tabulce, vysvětlení nese poznámka pod tabulkou | neznámý obor, bez údajů (údaje existují, jen je nezpracováváme) |
+| **mimo přehled** | obor, který přehled nezahrnuje z jiného důvodu než kvůli chybějící jednotné zkoušce (například jiná forma studia nebo talentový obor) | jen jako značka v tabulce, vysvětlení nese poznámka pod tabulkou | neznámý obor; **bez údajů** (to je jiný stav: u oboru mimo přehled důvod známe) |
+| **bez údajů** | o oboru na přihlášce nevíme nic: nevede ho katalog a není ani v soupisu oborů mimo přehled, takže o něm neumíme říct ani to, proč ho přehled nezahrnuje | jen jako značka v tabulce; nikdy se nedoplňuje domněnkou, proč obor chybí | mimo přehled, bez jednotné zkoušky (obojí tvrdí důvod, který neznáme) |
 | **nabídka oborů** | obory a počet míst, které školy pro dané přijímací řízení vypíšou; školy je zveřejňují spolu s kritérii přijetí, agregovaná data CERMATu k nim vycházejí až o několik měsíců později | „nabídka oborů pro rok …, tedy obory a počet míst“; termín zveřejnění vždy s rokem a s tím, že ho školy zveřejňují s kritérii | seznam oborů, otevírané obory (bez roku), vyhlášení nabídky (školy vyhlašují kritéria) |
 
 ## 3. Výsledky a obtížnost
@@ -88,6 +89,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.8 | Doplněn čtvrtý stav sloupce obtížnosti: **bez údajů** pro obor, který nevede katalog ani soupis oborů mimo přehled. Bez toho slovník popisoval tři stavy ze čtyř a chybějící stav se dal snadno zaměnit za „mimo přehled“. |
 | 1.7 | Věta pod tabulkou oborů výš a níž vysvětluje obě značky, tedy i obory mimo přehled („a několik dalších oborů“); dosud slovník předepisoval znění jen o oborech bez jednotné zkoušky, zatímco stránka správně mluvila o obojím. |
 | 1.6 | Obor bez jednotné zkoušky a mimo přehled: značky pro obory výš a níž na přihlášce, které přehled nezahrnuje; dosud se ukazovaly jen kódem a značkou „bez údajů“. |
 | 1.5 | Nabídka oborů jako pojem pro upozornění na titulní stránce: obory a počet míst, které školy vypíšou. Zveřejňují ji s kritérii přijetí, proto se termín uvádí jako zveřejnění kritérií, ne jako „vyhlášení nabídky“. |
