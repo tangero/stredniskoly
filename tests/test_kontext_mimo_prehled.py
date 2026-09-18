@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import os
 import sys
 import tempfile
 import unittest
@@ -160,6 +161,26 @@ class TestRejstrik(ZakladKatalogu):
     KATALOG = {"2026": [{"redizo": "600000001", "kkov": "65-42-M/01",
                          "id": "600000001_65-42-M/01", "nazev_display": "Z katalogu",
                          "obec": "Zkušebnice", "obor": "Hotelnictví"}]}
+
+    def test_rejstrik_je_povinny_ve_vychozim_stavu(self):
+        """Bez parametrů je rejstřík povinný — tak ho volají oba generátory.
+
+        Mutační test odhalil, že tohle nekryl žádný test: `povinny_rejstrik` se
+        všude předával výslovně, takže změna výchozí hodnoty na `False` prošla.
+        Generátory přitom volají `nazvy_oboru()` bez parametrů, takže na výchozí
+        hodnotě stojí celá pojistka.
+        """
+        with tempfile.TemporaryDirectory() as docasny:
+            koren = Path(docasny)
+            (koren / "public").mkdir()
+            (koren / "public" / "schools_data.json").write_text(
+                json.dumps(self.KATALOG, ensure_ascii=False), encoding="utf-8")
+            with unittest.mock.patch.object(nazvy_oboru, "KOREN", koren), \
+                 unittest.mock.patch.object(nazvy_oboru, "REJSTRIK", koren / "chybi.jsonld"), \
+                 unittest.mock.patch.dict(os.environ, {}, clear=False):
+                os.environ.pop("MSMT_REJSTRIK", None)
+                with self.assertRaises(FileNotFoundError):
+                    nazvy_oboru.nazvy_oboru()
 
     def test_chybejici_rejstrik_je_chyba(self):
         with self.assertRaises(FileNotFoundError) as chyba:

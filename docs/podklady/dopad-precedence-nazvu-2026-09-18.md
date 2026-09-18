@@ -19,8 +19,9 @@ Ani jedno nebylo špatně — měřila se jiná věc, a ani jedno to neuvádělo
       název delší: 30, název kratší: 0, změněná obec: 6
 
 **Nesoulad s webem je nulový.** Pravidlo `nazvy_oboru.py` se srovnalo s `nazvyOboru()`
-v `src/lib/obor-profil-data.ts` a porovnání obou nad všemi 5 434 klíči, které souběh
-používá, dalo 0 rozdílů. Před opravou jich bylo 36.
+v `src/lib/obor-profil-data.ts` a porovnání obou nad 2 841 klíči, které souběh používá
+a katalog vede, dalo 0 rozdílů. Zbylých 2 593 klíčů katalog nevede, takže web u nich
+popis nemá a srovnávat není co. Před opravou byl nesoulad 36.
 
 **Obce nejsou jednosměrné zlepšení.** Šest změn: Ostrava → Opava u Soukromé obchodní
 akademie Opava (název školy mluví pro Opavu), ale také Beroun → Králův Dvůr u MŠ
