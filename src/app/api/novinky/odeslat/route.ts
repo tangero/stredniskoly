@@ -12,7 +12,7 @@ import {
 } from '@/lib/novinky-odesilac';
 import { dovezServisni } from '@/lib/novinky-servisni';
 import { uklid } from '@/lib/novinky-odber';
-import { denniObdobi, mesicniObdobi, mesicniStrop } from '@/lib/novinky-rozpocet';
+import { denniObdobi, kvotaTarifu, limitRozpoctu, mesicniObdobi } from '@/lib/novinky-rozpocet';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 
 // ============================================================================
@@ -23,8 +23,6 @@ import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 //
 // `?nanecisto=1` jen vypíše, co by běh udělal, a nic neodešle.
 // ============================================================================
-
-const DENNI_LIMIT_POTVRZENI = 500;
 
 function jeCronOveren(request: NextRequest): boolean {
   const ocekavany = process.env.CRON_SECRET;
@@ -52,12 +50,14 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Registr nezná období sady msmt-harmonogram.' }, { status: 500 });
   }
 
-  const kvota = Number(process.env.RESEND_MESICNI_KVOTA ?? '50000');
+  const kvota = kvotaTarifu();
   const base = `https://${request.headers.get('host') ?? 'www.prijimackynaskolu.cz'}`;
 
   try {
-    await zajistiRozpocet(mesicniObdobi(kdy), 'celkem', mesicniStrop(kvota));
-    await zajistiRozpocet(denniObdobi(kdy), 'potvrzeni', DENNI_LIMIT_POTVRZENI);
+    // Řádky zakládá i rezervace sama; tady se zajistí předem, aby byl strop
+    // vidět v rozpočtu ještě před prvním odesláním.
+    await zajistiRozpocet(mesicniObdobi(kdy), 'celkem', limitRozpoctu('celkem'));
+    await zajistiRozpocet(denniObdobi(kdy), 'potvrzeni', limitRozpoctu('potvrzeni'));
 
     const zpravy = await nactiZpravy(base, rocnik);
     const den = kdy.toISOString().slice(0, 10);

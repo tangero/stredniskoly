@@ -28,6 +28,23 @@ export const PRODLENI_PRED_OPAKOVANIM_MS = 6 * 60 * 60 * 1000;
 
 export type UcelRozpoctu = 'celkem' | 'potvrzeni';
 
+/** Kolik potvrzovacích e-mailů smí odejít za jeden den. */
+export const DENNI_LIMIT_POTVRZENI = 500;
+
+/** Měsíční kvóta tarifu Resendu; z prostředí, aby se dala změnit bez nasazení. */
+export function kvotaTarifu(): number {
+  const z = Number(process.env.RESEND_MESICNI_KVOTA ?? '50000');
+  return Number.isFinite(z) && z > 0 ? z : 50000;
+}
+
+/**
+ * Limit, s jakým vzniká nový řádek rozpočtu. Musí být na jednom místě, protože
+ * řádek zakládá jak cron, tak rezervace při přihlášení z formuláře.
+ */
+export function limitRozpoctu(ucel: UcelRozpoctu): number {
+  return ucel === 'celkem' ? mesicniStrop(kvotaTarifu()) : DENNI_LIMIT_POTVRZENI;
+}
+
 /** Měsíční období pro strop všech e-mailů novinek, například `mesic:2027-01`. */
 export function mesicniObdobi(kdy: Date): string {
   const rok = kdy.getUTCFullYear();

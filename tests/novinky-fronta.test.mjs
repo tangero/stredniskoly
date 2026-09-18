@@ -173,20 +173,41 @@ test('výsledek položky se doplní i po uzavření dávky', async () => {
 });
 
 test('rezervace kvóty je podmíněná limitem a nezdaří se, když nestačí', async () => {
-  const s = spojeni([{ rows: [], rowCount: 0 }]);
+  // Nejdřív se řádek rozpočtu zajistí (`do nothing`), pak se na něm rezervuje.
+  const s = spojeni([
+    { rows: [], rowCount: 0 },
+    { rows: [], rowCount: 0 },
+  ]);
   assert.equal(await rezervujKvotu(s, 'd1', 1, 100, 'obsah', UPROSTRED_MESICE), false);
-  assert.ok(s.dotazy[0].sql.includes('rezervovano + spotrebovano + $3 <= limit_pocet'));
+  const podmineny = s.dotazy.find((d) =>
+    d.sql.includes('rezervovano + spotrebovano + $3 <= limit_pocet'),
+  );
+  assert.ok(podmineny, 'rezervace musí být podmíněná limitem');
 });
 
-test('potvrzení rezervuje měsíční strop i denní limit', async () => {
+test('rezervace si zajistí řádek rozpočtu sama a nepřepíše existující limit', async () => {
+  // Bez toho by potvrzení z formuláře v novém dni ani měsíci nemělo kam
+  // rezervovat, protože řádek zakládal jen cron, a odešlo by až po jeho běhu.
   const s = spojeni([
     { rows: [], rowCount: 1 },
     { rows: [], rowCount: 1 },
-    { rows: [], rowCount: 1 },
-    { rows: [], rowCount: 1 },
   ]);
+  assert.equal(await rezervujKvotu(s, 'd1', 1, 1, 'obsah', UPROSTRED_MESICE), true);
+  const zalozeni = s.dotazy.find((d) => d.sql.includes('insert into rozpocet_emailu'));
+  assert.ok(zalozeni, 'řádek rozpočtu se musí zajistit');
+  assert.ok(
+    zalozeni.sql.includes('on conflict (obdobi, ucel) do nothing'),
+    'ručně snížený limit je pojistka, kterou nikdo nepřepisuje',
+  );
+  assert.ok(s.dotazy.indexOf(zalozeni) < s.dotazy.findIndex((d) => d.sql.includes('update rozpocet_emailu')));
+});
+
+test('potvrzení rezervuje měsíční strop i denní limit', async () => {
+  const s = spojeni(Array.from({ length: 6 }, () => ({ rows: [], rowCount: 1 })));
   assert.equal(await rezervujKvotu(s, 'd1', 1, 1, 'potvrzeni', UPROSTRED_MESICE), true);
-  const obdobi = s.dotazy.filter((d) => d.sql.includes('rozpocet_emailu')).map((d) => d.hodnoty[0]);
+  const obdobi = s.dotazy
+    .filter((d) => d.sql.includes('update rozpocet_emailu'))
+    .map((d) => d.hodnoty[0]);
   assert.deepEqual(obdobi, ['mesic:2027-01', 'den:2027-01-12']);
 });
 

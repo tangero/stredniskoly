@@ -14,8 +14,8 @@ import {
   prihlas,
   uklid,
 } from './novinky-odber.ts';
-import { dokonciUcinkyWebhooku, obnovUviznute, uklidOdesilace, zajistiRozpocet } from './novinky-odesilac.ts';
-import { denniObdobi, mesicniObdobi } from './novinky-rozpocet.ts';
+import { dokonciUcinkyWebhooku, obnovUviznute, uklidOdesilace } from './novinky-odesilac.ts';
+import { obdobiKRezervaci } from './novinky-rozpocet.ts';
 import { otisk } from './novinky-token.ts';
 
 // ============================================================================
@@ -70,17 +70,20 @@ export async function kourovaZkouska(kdy = new Date()): Promise<VysledekZkousky>
   let chyba: string | undefined;
 
   try {
-    // --- Rozpočet: bez jeho řádku nemá dávka z čeho rezervovat. -------------
-    const mesic = mesicniObdobi(kdy);
-    const den = denniObdobi(kdy);
-    await zajistiRozpocet(mesic, 'celkem', 1000);
-    await zajistiRozpocet(den, 'sluzebni', 1000);
-    const radky = await dotaz<{ obdobi: string }>(
-      `select obdobi from rozpocet_emailu
-        where (obdobi = $1 and ucel = 'celkem') or (obdobi = $2 and ucel = 'sluzebni')`,
-      [mesic, den],
+    // --- Rozpočet: řádky si zakládá rezervace sama, nic se tu nepřipravuje. --
+    // Zkouška je schválně nezakládá: kdyby to udělala, zakryla by tím past,
+    // kvůli které vznikla — potvrzení z formuláře v novém dni nebo měsíci
+    // nemělo kam rezervovat, protože řádek zakládal jen cron.
+    const obdobi = obdobiKRezervaci(kdy, 'potvrzeni');
+    const radky = await dotaz<{ obdobi: string; ucel: string; limit_pocet: number }>(
+      `select obdobi, ucel, limit_pocet from rozpocet_emailu where obdobi = any($1::text[])`,
+      [obdobi.map((o) => o.obdobi)],
     );
-    tvrd('rozpočet má řádky', radky.rows.length >= 1, `${radky.rows.length}`);
+    tvrd(
+      'rozpočet zjištěn (řádky smí i chybět)',
+      true,
+      `${radky.rows.length} z ${obdobi.length}: ${radky.rows.map((r) => `${r.ucel} ${r.limit_pocet}`).join(', ') || 'žádný'}`,
+    );
 
     // --- Krok 1: přihlášení -------------------------------------------------
     const prihlaseni = await prihlas({ email: adresa, zdroj: 'novinky', ip: IP_ZKOUSKY });

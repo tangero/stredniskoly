@@ -4,6 +4,7 @@ import {
   OKNO_OPAKOVANI_MS,
   PRODLENI_PRED_OPAKOVANIM_MS,
   klicIdempotence,
+  limitRozpoctu,
   obdobiKRezervaci,
   otiskClenu,
   otiskTela,
@@ -271,6 +272,16 @@ export async function rezervujKvotu(
   kdy = new Date(),
 ): Promise<boolean> {
   for (const { obdobi, ucel: ucelRozpoctu } of obdobiKRezervaci(kdy, ucel)) {
+    // Řádek rozpočtu si zajišťuje rezervace sama, ve stejné transakci. Kdyby ho
+    // zakládal jen cron, potvrzení z formuláře by v novém dni ani měsíci nemělo
+    // kam rezervovat a odešlo by až po nejbližším běhu cronu — místo slíbené
+    // minuty až za šest hodin. `do nothing` drží pravidlo, že ručně snížený
+    // limit je pojistka, kterou nikdo nepřepisuje.
+    await s.dotaz(
+      `insert into rozpocet_emailu (obdobi, ucel, limit_pocet) values ($1, $2, $3)
+       on conflict (obdobi, ucel) do nothing`,
+      [obdobi, ucelRozpoctu, limitRozpoctu(ucelRozpoctu)],
+    );
     const v = await s.dotaz(
       `update rozpocet_emailu set rezervovano = rezervovano + $3
         where obdobi = $1 and ucel = $2 and rezervovano + spotrebovano + $3 <= limit_pocet`,
