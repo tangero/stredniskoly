@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.25 · 18. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.26 · 18. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -307,6 +307,31 @@ Odstraňuje vliv obtížnosti testu. Mezi roky 2025 a 2026 stoupl medián výsle
 
 Souhrny CERMATu nesou oficiální variantu po nabídkách, `ČJ+MA – PERCENTIL – MIN (PŘIJATI)`, pole `min_prijaty_percentil_souhrn`, vyplněné jen při aspoň deseti přijatých s výsledkem. U oborů s jedinou nabídkou se s hodnotou z dat uchazečů shoduje do 2 bodů u 2 039 z 2 278 v roce 2025 a u 2 182 z 2 286 v roce 2026; percentilovou základnu legenda souhrnu neuvádí. Na stránce se používá jedna z nich a vždy se jménem tohoto ukazatele.
 
+### Nejslabší přijatý v předmětu
+Výsledky **jednoho skutečného přijatého** s nejnižším výsledkem v daném předmětu, vždy s oběma jeho předměty. Pole `nejslabsi_cj` a `nejslabsi_ma` v `public/pasma_prijeti_{rok}.json`, každé jako `{cj, ma}`. Jednotka body 0 až 50 za předmět.
+
+**Výpočet.** Mezi přijatými a zařazenými se najde uchazeč s nejnižší češtinou a uchazeč s nejnižší matematikou; při shodě rozhoduje druhý předmět. Zapisují se oba jeho výsledky, ne jen ten nejnižší. **Může jít o téhož člověka** a stránka to pak řekne jako jednu větu, ne jako dva údaje.
+
+**Proč takhle.** Dvě samostatná minima, každé z jiného člověka, by vedle sebe popisovala uchazeče, který nemusí existovat; taková pole (`cj_min_independent`, `ma_min_independent`) slovník zamítl ve verzi 1.22. Dvojice s oběma předměty téhož člověka popisuje kombinaci, která opravdu nastala, a odpovídá na otázku, jestli jde slabší předmět dohnat tím druhým.
+
+**Co neříká.** Je to údaj o jednotlivci: příští ročník ho nezopakuje a **k porovnávání ani řazení oborů se nepoužívá**. Není to hranice ani doporučení. Zobrazuje se jen při aspoň 10 přijatých s výsledkem obou testů.
+
+### Podlaha slabšího předmětu
+Nejnižší hodnota **slabšího z obou předmětů** mezi přijatými: pro každého přijatého se vezme menší ze dvojice čeština a matematika a z nich minimum. Pole `podlaha_slabsiho`, jednotka body 0 až 50.
+
+**K čemu je.** Říká, jak hluboko smí jít jeden předmět, když druhý vyjde. Měření na 2 757 oborech s aspoň deseti přijatými (1. kolo 2026) ukazuje plynulý přechod podle obtížnosti přijetí: medián podlahy je 23 bodů u oborů, kam je velmi těžké se dostat, 16 u těžkých, 13 u středně těžkých, 10 tam, kde se dostala většina, a 7 tam, kde kapacita nerozhodovala.
+
+**Co neříká.** Také ji určuje jediný uchazeč, takže se mezi ročníky nemusí opakovat a **nepoužívá se k řazení**. Neříká, že s vyšší hodnotou je přijetí jisté: škola má i vlastní kritéria.
+
+### Nevyrovnaní přijatí
+Kolik přijatých mělo mezi češtinou a matematikou rozdíl **aspoň 10 bodů**, a z kolika přijatých. Pole `nevyrovnanych` a `nevyrovnanych_z`, jednotka počet.
+
+**Výpočet.** Podíl přijatých s `|čeština − matematika| ≥ 10` na škále 0 až 50 za předmět. Práh je v generátoru konstanta `NEVYROVNANY_ROZDIL`.
+
+**Proč je z trojice nejdůležitější.** Jako jediný z rozboru předmětů **má jmenovatel**, takže snese slovní výklad i srovnání. Měření 1. kola 2026: i na oborech, kam je velmi těžké se dostat, mělo takový rozdíl 23 % přijatých, u ostatních zhruba 37 %. Nevyrovnanost sama tedy překážkou není; překážkou je jeden opravdu slabý předmět.
+
+**Co neříká.** Nic o konkrétním uchazeči a nic o tom, že by škola nevyrovnané výsledky zvýhodňovala nebo znevýhodňovala. Zobrazuje se jen při aspoň 10 přijatých s výsledkem obou testů.
+
 ### Celostátní medián uchazečů
 Kolik bodů měl prostřední uchazeč v celé zemi v daném ročníku 1. kola. Pole `celostatni_median_uchazecu` v hlavičce `public/pasma_prijeti_{rok}.json`, vedle něj `celostatne_uchazecu` jako velikost populace. Jednotka body 0 až 100.
 
@@ -527,7 +552,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
-| 1.25 | **Celostátní medián uchazečů zaveden jako ukazatel** (18. 9. 2026) do hlavičky `pasma_prijeti_{rok}.json`: 46,0 bodu v roce 2025 a 49,0 v roce 2026. Bez něj se bodové výsledky dvou ročníků nesmějí postavit vedle sebe, protože posun dělá obtížnost testu. Vzniklo kvůli nové sekci „S kolika body se sem lidé dostali“ na stránce oboru, která ukazuje body za dva ročníky vedle sebe a u každého i výsledek prostředního uchazeče v celé zemi. |
+| 1.26 | **Rozbor výsledků přijatých po předmětech** (18. 9. 2026): tři nové ukazatele odpovídají na otázku, jestli jde slabší předmět dohnat tím druhým. Nejslabší přijatý v předmětu se uvádí **s oběma svými výsledky**, takže popisuje skutečnou kombinaci, ne dvojici minim ze dvou lidí zamítnutou ve verzi 1.22. Podlaha slabšího předmětu roste s obtížností přijetí (medián 23 bodů u velmi těžkých oborů proti 7 tam, kde kapacita nerozhodovala). Nevyrovnaní přijatí jsou jediný údaj z trojice se jmenovatelem, a proto jediný, který snese slovní výklad a srovnání. |\n| 1.25 | **Celostátní medián uchazečů zaveden jako ukazatel** (18. 9. 2026) do hlavičky `pasma_prijeti_{rok}.json`: 46,0 bodu v roce 2025 a 49,0 v roce 2026. Bez něj se bodové výsledky dvou ročníků nesmějí postavit vedle sebe, protože posun dělá obtížnost testu. Vzniklo kvůli nové sekci „S kolika body se sem lidé dostali“ na stránce oboru, která ukazuje body za dva ročníky vedle sebe a u každého i výsledek prostředního uchazeče v celé zemi. |
 | 1.24 | **Párování ročníků podle mapy nabídek** (18. 9. 2026): změna mezi ročníky se počítá i u nabídek spárovaných mapou nabídek (shoda textu zaměření, ručně ověřený pár), tedy stejně, jak párují stránky. Spárovaných nabídek 2025–2026 je 2 934 místo 2 858; stabilita podílu přijatých ze soutěžících vychází na 1 913 nabídkách 0,727 místo 0,723, stejné zařazení obtížnosti 48,9 % místo 48,6 %. |
 | 1.23 | **Obtížnost přijetí má jednu definici** (17. 9. 2026): počítá ji generátor souhrnů, práh deseti soutěžících uplatňuje až zobrazení. Dosud existovaly dvě implementace, které se o práh lišily; sjednocení nezměnilo ani jeden z 6 150 zobrazovaných záznamů. Zapsáno, že datové pole nese hodnoty i pod prahem. |
 | 1.22 | **Medián JPZ přijatých zaveden jako ukazatel** (17. 9. 2026) a přesunut do `public/pasma_prijeti_{rok}.json`, kde vzniká ze stejného zdroje jako nejnižší přijatý a přepíná se s registrem. Nahrazuje pole `jpz_median` a `jpz_prumer_actual` ze starého katalogu, která pocházela z předběžné verze roku 2025 a z rozbitého `enrich_schools_data.py`, a na webu se nikdy nepoužila. Doloženo, že medián leží systematicky pod průměrem (mediánově o 1,1 bodu na 2 517 nabídkách roku 2026), takže průměr přeceňuje typického přijatého. Pole `cj_at_jpz_min`, `ma_at_jpz_min`, `cj_min_independent` a `ma_min_independent` zamítnuta: každé určuje jediný uchazeč a poslední dvě mohou pocházet od dvou různých lidí. |

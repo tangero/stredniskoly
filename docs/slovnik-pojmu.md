@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.8 · 18. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.9 · 18. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -46,6 +46,8 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 |---|---|---|---|
 | **body** | součet bodů z testů jednotné zkoušky z češtiny a matematiky, každý test nejvýš 50 bodů, lepší z obou pokusů | „součet bodů z češtiny a matematiky, každý test nejvýš 50 bodů“ | skóre, procenta (u bodů) |
 | **prostřední uchazeč v celé zemi** | medián výsledků všech uchazečů daného ročníku; měřítko, jak těžký byl test | „celá země: prostřední uchazeč 49 bodů“; u srovnání dvou ročníků vždy s oběma roky | průměrný uchazeč, běžný uchazeč, celostátní průměr (je to medián) |
+| **nevyrovnaný výsledek** | rozdíl mezi češtinou a matematikou aspoň 10 bodů | „rozdíl mezi předměty aspoň 10 bodů: 4 z 30 přijatých“ | nevyvážený, jednostranný, slabý v matematice (u konkrétního uchazeče) |
+| **slabší předmět** | ten z dvojice čeština a matematika, ve kterém měl uchazeč míň bodů | „ve slabším předmětu neměl nikdo z přijatých míň než 30 z 50“ | horší předmět, propadák (mimo souhrnnou větu) |
 | **umístění v celé zemi**, **percentil** | kolik ze 100 uchazečů v celé zemi mělo stejný nebo horší výsledek | „percentil říká, kolik ze 100 uchazečů v celé zemi mělo stejný nebo horší výsledek“ | pořadí, známka |
 | **obtížnost přijetí** (velmi těžké, těžké, středně těžké, dostala se většina, místo pro všechny) | slovní zařazení podle toho, kolik soutěžících uchazečů se dostalo | vždy s podílem a rokem: „dostat se sem je velmi těžké: ze 112 soutěžících uchazečů se v 1. kole 2026 dostalo 30“; jako samostatný nadpis u oboru celou frází: „Velmi těžké se dostat“, „Těžké se dostat“, „Středně těžké se dostat“; v tabulce pod sloupcem „Obtížnost přijetí“ stačí „velmi těžké“ | náročnost školy, kvalita, obtížnost studia, samotné „Velmi těžké“ jako nadpis |
 | **tlak prvních voleb** | kolik uchazečů chtělo obor jako 1. volbu na jedno místo | „kolik uchazečů chtělo obor jako 1. volbu na jedno místo“ | poptávka, převis |
@@ -89,6 +91,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.9 | Pojmy **nevyrovnaný výsledek** a **slabší předmět** pro blok „Dá se slabší předmět dohnat tím druhým?“ na stránce oboru. Slovo *propadák* zůstává jen v souhrnné větě o oboru, nikdy o konkrétním uchazeči. |
 | 1.8 | Pojem **prostřední uchazeč v celé zemi** pro celostátní medián, který na stránce oboru stojí u bodů obou ročníků. Bez něj by dvojice bodových čísel tvrdila, že se změnily nároky školy, zatímco se změnila obtížnost testu. |
 | 1.7 | Pojem **obor se už nenabírá** pro obor vedený v rejstříku jako dobíhající a v zobrazeném ročníku nevypsaný (dávka D4b). U vypsaného oboru se nepoužívá, protože mezi vypsanými je dobíhajících nula. |
 | 1.6 | Pojem **absolventi** zaveden výhradně pro větu, že o jejich uplatnění data nemáme (dávka D5). Do té doby bylo slovo jen na seznamu zakázaných u hesla *maturanti*, takže věta o chybějících datech by pravidlo slovníku porušila. Jakýkoli údaj o uplatnění, úspěšnosti nebo přechodu na vysokou školu zůstává zakázaný, protože pro něj zdroj neexistuje. |

@@ -50,6 +50,22 @@ export interface PasmaPrijetiObor {
   median_prijatych?: number;
   /** Nikdo nebyl odmítnut kvůli kapacitě. Neznamená, že se dostali všichni. */
   nikdo_neodmitnut_pro_kapacitu?: boolean;
+  /**
+   * Rozbor výsledků přijatých po předmětech: jde slabší předmět dohnat tím druhým?
+   *
+   * `nejslabsi_cj` a `nejslabsi_ma` jsou **dva skuteční přijatí**, každý s oběma
+   * svými výsledky, takže popisují kombinaci, která nastala. Může to být týž
+   * člověk. `podlaha_slabsiho` je nejnižší hodnota slabšího z obou předmětů;
+   * i tu určuje jediný uchazeč. Jmenovatel má jen dvojice `nevyrovnanych`
+   * a `nevyrovnanych_z`, proto jen ona snese slovní výklad. Vše jen při aspoň
+   * deseti přijatých s výsledkem obou testů.
+   */
+  predmety_z?: number;
+  nejslabsi_cj?: { cj: number; ma: number };
+  nejslabsi_ma?: { cj: number; ma: number };
+  podlaha_slabsiho?: number;
+  nevyrovnanych?: number;
+  nevyrovnanych_z?: number;
   pasma?: PasmoPrijeti[];
 }
 
