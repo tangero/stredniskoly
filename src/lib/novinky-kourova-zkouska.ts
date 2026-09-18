@@ -68,6 +68,11 @@ export async function kourovaZkouska(kdy = new Date()): Promise<VysledekZkousky>
     kroky.push({ popis, ok, detail });
   };
   let chyba: string | undefined;
+  // Dávky, které zkouška vytvořila. Vede se to zvlášť, protože uzavření dávky
+  // na `chyba` nastaví položkám `davka_id = null`: po něm už dávku ze položek
+  // dohledat nelze a poklid by ji nechal v tabulce i s její rezervací a
+  // naúčtovanou spotřebou.
+  const zkusebniDavky: string[] = [];
 
   try {
     // --- Rozpočet: řádky si zakládá rezervace sama, nic se tu nepřipravuje. --
@@ -91,7 +96,7 @@ export async function kourovaZkouska(kdy = new Date()): Promise<VysledekZkousky>
     tvrd('žádost má jti', Boolean(prihlaseni.jti));
     tvrd('vznikla položka fronty', Boolean(prihlaseni.polozkaId));
     if (!prihlaseni.jti) {
-      return { ok: false, adresa, kroky, poklid: await poklid(adresa, kdy), chyba: 'bez žádosti' };
+      return { ok: false, adresa, kroky, poklid: await poklid(adresa, kdy, zkusebniDavky), chyba: 'bez žádosti' };
     }
 
     const nactena = await najdiAktivniZadost(prihlaseni.jti);
@@ -119,6 +124,7 @@ export async function kourovaZkouska(kdy = new Date()): Promise<VysledekZkousky>
     );
     tvrd('dávka se připravila (A)', pripravena !== null);
     if (pripravena) {
+      zkusebniDavky.push(pripravena.davka.id);
       const predano = await vTransakci((s) => predejDavku(s, pripravena.davka, kdy, 'potvrzeni'));
       tvrd('dávka se předala (B)', predano.predano === true, predano.duvod);
 
@@ -234,7 +240,7 @@ export async function kourovaZkouska(kdy = new Date()): Promise<VysledekZkousky>
     chyba = e instanceof Error ? e.message : String(e);
   }
 
-  const uklizeno = await poklid(adresa, kdy).catch((e) => {
+  const uklizeno = await poklid(adresa, kdy, zkusebniDavky).catch((e) => {
     chyba = `${chyba ? `${chyba}; ` : ''}poklid selhal: ${e instanceof Error ? e.message : e}`;
     return {};
   });
@@ -258,7 +264,11 @@ export async function kourovaZkouska(kdy = new Date()): Promise<VysledekZkousky>
  * pojistka a nemaže se; ostatní prázdné řádky nedrží žádnou spotřebu, takže se
  * smazáním nic neztrácí a vzniknou znovu se správným limitem.
  */
-async function poklid(adresa: string, kdy: Date): Promise<Record<string, number>> {
+async function poklid(
+  adresa: string,
+  kdy: Date,
+  zkusebniDavky: string[] = [],
+): Promise<Record<string, number>> {
   const otiskEmailu = otisk(`email:${adresa}`);
   const otiskIp = otisk(`ip:${IP_ZKOUSKY}`);
   const obdobi = obdobiKRezervaci(kdy, 'potvrzeni').map((o) => o.obdobi);
@@ -267,7 +277,9 @@ async function poklid(adresa: string, kdy: Date): Promise<Record<string, number>
       `delete from polozka_odeslani where adresat_otisk = $1 returning davka_id`,
       [otiskEmailu],
     );
-    const davky = [...new Set(polozky.rows.map((r) => r.davka_id).filter(Boolean))] as string[];
+    const davky = [
+      ...new Set([...polozky.rows.map((r) => r.davka_id).filter(Boolean), ...zkusebniDavky]),
+    ] as string[];
     for (const id of davky) {
       // Zkouška nic neodeslala, takže spotřeba i rezervace, které naúčtovala,
       // jsou fiktivní a vracejí se do rozpočtu. Bez toho by každý běh snižoval
