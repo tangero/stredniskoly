@@ -3,6 +3,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import type { PortalSkolData } from './portal-skol';
 import { formatDatumCz } from './portal-skol.ts';
+import { dotaz, jeDbNastavena } from './novinky-db.ts';
 
 // ============================================================================
 // /admin – stavová stránka: přístup přes token v URL, stav moderace,
@@ -313,6 +314,57 @@ export async function getBehyActions(): Promise<AdminBehActions[] | null> {
     }));
   } catch {
     return [];
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Odběr novinek (Neon Postgres přes novinky-db). Adresy se neukazují,
+// jen počty a rozpad podle místa přihlášení.
+// ----------------------------------------------------------------------------
+
+export interface AdminNovinky {
+  /** Aktivní odběry (potvrzené a neodhlášené). */
+  odberatele: number;
+  nove7: number;
+  nove30: number;
+  /** Vyplněné formuláře čekající na kliknutí v e-mailu. */
+  cekajiciPotvrzeni: number;
+  /** Položky ve frontě odesílače (typicky potvrzení k dovozu). */
+  frontaCeka: number;
+  dleZdroje: Array<{ zdroj: string; pocet: number }>;
+}
+
+/** null = odběr není nakonfigurován (chybí DATABASE_URL) nebo se databáze nedá číst. */
+export async function getNovinkyPrehled(): Promise<AdminNovinky | null> {
+  if (!jeDbNastavena()) return null;
+  try {
+    const odbery = await dotaz<{ celkem: number; nove7: number; nove30: number }>(
+      `select count(*)::int as celkem,
+              count(*) filter (where potvrzeno > now() - interval '7 days')::int as nove7,
+              count(*) filter (where potvrzeno > now() - interval '30 days')::int as nove30
+         from odber_novinek`,
+    );
+    const zadosti = await dotaz<{ pocet: number }>(
+      `select count(*)::int as pocet from zadost_o_potvrzeni
+        where spotrebovano is null and plati_do > now()`,
+    );
+    const fronta = await dotaz<{ pocet: number }>(
+      `select count(*)::int as pocet from polozka_odeslani where stav = 'ceka'`,
+    );
+    const zdroje = await dotaz<{ zdroj: string; pocet: number }>(
+      `select zdroj, count(*)::int as pocet from odber_novinek
+        group by zdroj order by pocet desc, zdroj`,
+    );
+    return {
+      odberatele: odbery.rows[0]?.celkem ?? 0,
+      nove7: odbery.rows[0]?.nove7 ?? 0,
+      nove30: odbery.rows[0]?.nove30 ?? 0,
+      cekajiciPotvrzeni: zadosti.rows[0]?.pocet ?? 0,
+      frontaCeka: fronta.rows[0]?.pocet ?? 0,
+      dleZdroje: zdroje.rows,
+    };
+  } catch {
+    return null;
   }
 }
 
