@@ -57,3 +57,17 @@ První skript zapisuje `docs/podklady/rejstrik-k-fronte-2025-2026.json`; druhý 
 a z fronty sestaví čitelný podklad pro rešerši jednoho úkolu. Strojová klasifikace
 nabídek je vodítko, ne nález: zápis oboru v rejstříku nedokazuje vyhlášení
 přijímacího řízení a rejstřík se aktualizuje s odstupem.
+
+## Index názvů v gitu
+
+Snímky se do gitu neukládají, datová linka v CI je proto nemá. Generátory souběžných
+přihlášek a kontextu přihlášek potřebují jen názvy škol a oborů, a ty čtou z indexu
+`nazvy-oboru.json`, který v gitu je. Vzniká ze snímku, který určuje registr:
+
+```sh
+python3 scripts/build-nazvy-oboru-rejstrik.py
+```
+
+Po každém přepnutí snímku v registru (`msmt-rejstrik-snimky`), i po převzetí revize
+téhož čtvrtletí, index přegenerujte; generátory index, jehož záznam `zobrazeno`
+neodpovídá registru, odmítnou.

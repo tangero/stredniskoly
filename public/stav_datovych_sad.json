@@ -439,7 +439,8 @@
       "vystupy": [
         "public/navaznost_notes.json",
         "public/soubeh_prihlasek_2025.json",
-        "public/dobihajici_obory.json"
+        "public/dobihajici_obory.json",
+        "data/msmt_rejstrik/nazvy-oboru.json"
       ],
       "ukazatele": [],
       "dostupne": [

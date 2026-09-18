@@ -148,6 +148,8 @@ Rozdělení výsledků všech uchazečů o obor tenhle soubor **není** jediný 
 
 Dvě podoby téhož. **JSON-LD snímky** (`data/msmt_rejstrik/rssz-*.jsonld`, čtvrtletní, v gitu ignorované kvůli velikosti) se používají na návaznost oborů mezi roky a na doplnění názvů oborů bez jednotné zkoušky. **CSV export** (`data/Rejstrik_skol/`) je jednorázový.
 
+**Index názvů** `data/msmt_rejstrik/nazvy-oboru.json` (v gitu, asi 0,6 MB) vzniká skriptem `scripts/build-nazvy-oboru-rejstrik.py` ze snímku, který určuje registr (`msmt-rejstrik-snimky`, `zobrazeno.soubor`), a nese celý záznam `zobrazeno` z registru a otisk sha256 snímku. Obsahuje jen `redIzo` s názvem školy (`zkracenyNazev`, jinak `uplnyNazev`) a obcí sídla, a kódy a názvy oborů (`skolyAZarizeni[].obory[].kod`, `.nazev`). Čtou ho generátory souběžných přihlášek a kontextu přihlášek (`scripts/nazvy_oboru.py`), takže je má i datová linka v CI, kde snímky nejsou. Po každém přepnutí snímku v registru, i po převzetí revize téhož čtvrtletí, se musí přegenerovat; generátory index, jehož záznam `zobrazeno` neodpovídá registru, odmítnou.
+
 Zajímavé sloupce JSON-LD, mimo adresu a názvy:
 
 | Pole | Obsah | Otázka rodiče | Používáme |
@@ -218,7 +220,7 @@ Otázka rodiče je jediná: **jak dlouho bude dítě dojíždět**. Odpovídáme
 | `schools_data.json` | CERMAT agregáty + data uchazečů | `build-catalogue-2026.py`, `enrich_schools_data.py` | katalog, ročníky 2024 až 2026 |
 | `applications_2026.json` | CERMAT přihlášky 2026 | `import_cermat_2026_real.py` | pole `pp` jsou priority |
 | `cermat_results_2026.json` | CERMAT výsledky 2026 a 2025 | `refresh_cermat_data.py` | nese otisk zdroje |
-| `kontext_prihlasek_{rok}.json` | data uchazečů, rejstřík škol MŠMT (názvy) | `build-kontext-prihlasek.py` | výsledek uchazečů o obor, obory výš a níž na přihlášce, odvozená hranice úspěšnosti; linka přepočítává s pásmy a souběhem; pole `mimo_prehled` nese název školy, obce a oboru u oborů, které katalog nevede (z `scripts/nazvy_oboru.py`, stejně jako souběžné přihlášky), a příznak kategorie bez jednotné zkoušky (C, E, H, J, P); rozsah dopadu vypíše `scripts/dopad-mimo-prehled.py` |
+| `kontext_prihlasek_{rok}.json` | data uchazečů, index názvů z rejstříku škol MŠMT | `build-kontext-prihlasek.py` | výsledek uchazečů o obor, obory výš a níž na přihlášce, odvozená hranice úspěšnosti; linka přepočítává s pásmy a souběhem; pole `mimo_prehled` nese název školy, obce a oboru u oborů, které katalog nevede (z `scripts/nazvy_oboru.py`, stejně jako souběžné přihlášky), a příznak kategorie bez jednotné zkoušky (C, E, H, J, P) |
 | `skoly_web.json` | rejstřík CSV, `WWW` | `build-skoly-web.py` | odkaz na web školy |
 | `souhrny_kolo1.json` | CERMAT souhrny 1. kola všech ročníků v `data/` | `build-souhrny-kolo1.py` | nabídky po ročnících, párování ročníků (i podle mapy nabídek ročníku), rozdělení tlaku prvních voleb ve srovnatelných skupinách; doklad `docs/podklady/overeni-srovnani-rocniku.json` |
 | `school_analysis.json` | starší zpracování | nedohledaný | obsahuje `obtiznost` bez doloženého výpočtu |
