@@ -12,28 +12,31 @@
 // Řetězec se nikam nevypisuje, ani do logu.
 // ============================================================================
 
-import { readFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { Pool } from '@neondatabase/serverless';
+import { MIGRACE_NOVINEK, TABULKY_NOVINEK } from '../src/lib/novinky-schema.ts';
 
 const KOREN = join(dirname(fileURLToPath(import.meta.url)), '..');
 const MIGRACE = join(KOREN, 'db', 'migrace', '001-novinky.sql');
 
-const TABULKY = [
-  'odberatel',
-  'zadost_o_potvrzeni',
-  'odber_novinek',
-  'doklad_souhlasu',
-  'zprava_o_kalendari',
-  'zprava_verze',
-  'davka',
-  'polozka_odeslani',
-  'rezervace_kvoty',
-  'rozpocet_emailu',
-  'webhook_udalost',
-  'limit_potvrzeni',
-];
+const TABULKY = [...TABULKY_NOVINEK];
+
+/** Vygeneruje .sql soubor z modulu, aby se nemohly rozejít. */
+function zapisSql() {
+  const hlavicka = [
+    '-- ============================================================================',
+    '-- GENEROVÁNO z src/lib/novinky-schema.ts',
+    '--   node --experimental-strip-types scripts/novinky-migrace.mjs --zapis-sql',
+    '-- Neupravovat ručně; zdrojem pravdy je modul, protože migraci je potřeba umět',
+    '-- spustit i z nasazené aplikace (/api/novinky/migrace).',
+    '-- ============================================================================',
+    '',
+  ].join('\n');
+  writeFileSync(MIGRACE, `${hlavicka}${MIGRACE_NOVINEK.join(';\n\n')};\n`, 'utf8');
+  console.log(`Zapsáno ${MIGRACE_NOVINEK.length} příkazů do ${MIGRACE}`);
+}
 
 function pripojeni() {
   if (process.env.DATABASE_URL) return process.env.DATABASE_URL;
@@ -48,14 +51,19 @@ function pripojeni() {
 }
 
 async function main() {
+  if (process.argv.includes('--zapis-sql')) {
+    zapisSql();
+    return;
+  }
   const jenKontrola = process.argv.includes('--kontrola');
   const pool = new Pool({ connectionString: pripojeni() });
   const klient = await pool.connect();
   try {
     if (!jenKontrola) {
-      const sql = readFileSync(MIGRACE, 'utf8');
-      await klient.query(sql);
-      console.log('Migrace proběhla.');
+      for (const prikaz of MIGRACE_NOVINEK) {
+        await klient.query(prikaz);
+      }
+      console.log(`Migrace proběhla, ${MIGRACE_NOVINEK.length} příkazů.`);
     }
 
     const stav = await klient.query(
