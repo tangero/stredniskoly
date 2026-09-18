@@ -1,8 +1,8 @@
 # Maturitní výsledky a kvalita školy
 
-**Verze:** 1.1
-**Datum:** 12. 9. 2026
-**Stav:** schválený analytický návrh doplněný o katalog metrik, kritérium publikace výzkumné vrstvy a analytický prototyp; import maturitních dat do runtime a veřejná implementace ještě nezačaly.
+**Verze:** 1.2
+**Datum:** 18. 9. 2026
+**Stav:** schválený návrh, **vrstvy 1 a 2 jsou od 14. 9. 2026 v provozu na stránce školy** (sada `cermat-maturita`, jaro 2026, `public/maturita_skoly.json`). Vrstva 3 zůstává nepublikovaná podle §5.3. Co ještě chybí, je v oddílu 10. Verze 1.1 tvrdila, že implementace nezačala; to přestalo platit týž týden a hlavička se neopravila.
 
 Tento dokument ukládá kompletní návrh, jak v projektu pracovat s maturitními výsledky. Určuje zdroje, jejich granularitu, bezpečný rozsah zveřejnění, výzkumný pilot a přejímací podmínky. Nenavrhuje jednu známku ani žebříček „kvality škol“.
 
@@ -113,7 +113,7 @@ Inspekční zpráva, školné, dojezd, podpora a uplatnění mají zůstat oddě
 | `docs/podklady/oponentura-2027-r1.json` | Auditní součty, vzorky a zdroje JPZ/MZ | Důkazní podklad auditu, ne runtime dataset. |
 | `docs/navrh-rozvoje-2027.md` | Rozhodnutí a limity z předchozí oponentury | Autoritativní projektový kontext; viz zejména část o MZ. |
 
-V aktuálním produkčním exportu není maturitní dataset implementován. Ověřené vzorky MZ sloužily k auditu a návrhu, nikoli jako veřejná funkce.
+**Od 14. 9. 2026 maturitní dataset v exportu je:** `public/maturita_skoly.json` vzniká skriptem `scripts/build-maturita-skoly.py` a zpracovatelem `cermat-maturita` v datové lince (`scripts/linka/zpracovani.py`). Nese jarní období, roky 2023 až 2026, předměty `spolecna_cast`, `cj` a `ma`, granularitu školy i školy ve skupině oborů a oddíl `skupiny` s mediány `SMO16`. Věta níže platila do 13. 9. 2026: ověřené vzorky MZ sloužily k auditu a návrhu, nikoli jako veřejná funkce.
 
 ### 3.6 Kandidátní zdroje k dohledání
 
@@ -352,7 +352,26 @@ Výsledek backtestu z prototypu není důkaz; je to vstup pro metodickou oponent
 
 **Hotové ve verzi 1.1:** ověření, že kritérium publikace z §5.3 rozliší stabilní školní efekt od šumu (samotest prototypu); katalog metrik vrstvy 1 s jmenovateli a výkladem (§5.1); definice reference a kvalifikátoru odvozeného ze standardní chyby (§5.2); předem zapsané kritérium publikace výzkumné vrstvy a popis asymetrického zkreslení vstupu (§5.3); seznam kandidátních zdrojů k dohledání (§3.6); analytický prototyp se samotestem na syntetických datech (§9.1).
 
-**Není hotové:** běh prototypu nad skutečnými soubory CERMAT a ověření mapy sloupců proti vysvětlivkám, úplný import MZ do runtime, datový kontrakt v kódu, aktualizace všech ročníků, veřejné profily, referenční srovnání na webu, rozhodnutí o kohortním pilotu, testy rendereru a produkční přejímka. Aktuální `public/cermat_results_2026.json` obsahuje JPZ, nikoli maturitní data.
+**Hotové od 14. 9. 2026 (doplněno 18. 9. 2026 po kontrole kódu):** vrstvy 1 a 2 jsou v provozu.
+
+| Krok z §9 | Stav | Kde |
+|---|---|---|
+| 1. Audit zdrojů a ETL | **hotovo** pro jaro 2023–2026; zpracovatel stahuje k jarnímu souboru tři předchozí ročníky a `jap` nepřebírá | `scripts/build-maturita-skoly.py`, `scripts/linka/zpracovani.py` |
+| 2. Datový profil | **hotovo** v podobě výstupu s oddílem `skupiny` a mezemi zveřejnění | `public/maturita_skoly.json` |
+| 3. Popisný profil školy | **hotovo**: úspěšnost společné části s jmenovatelem, percentil z češtiny, dvojice „podíl volby matematiky a percentil“, vývoj po letech | `src/components/skola/ProfilSkoly.tsx`, `src/lib/skola-profil-data.ts` |
+| 4. Kontextové srovnání | **hotovo**: medián skupiny `SMO16` a kvalifikátor z intervalu `±1,96 · SE` podle §5.2, prahy `n < 10` a `n < 30` | `scripts/build-maturita-skoly.py`, slovník ukazatelů, heslo *Zařazení proti skupině oborů* |
+| 5. Můj výběr | **bezpředmětné**: samostatná stránka porovnání uložených oborů v projektu neexistuje | — |
+| 6. Kohortní pilot | **nezahájen**, a je to správně: vrstva 3 se bez validace nepublikuje | slovník, heslo *Odchylka od očekávaného výsledku* |
+
+**Není hotové (stav k 18. 9. 2026):**
+
+1. **Směrodatná odchylka slovně** (§5.1, metrika 4). Pole `standardDeviation` se počítá jen jako vstup do standardní chyby; věta „výsledky vyrovnané / rozptýlené“ na stránce není.
+2. **Neúčast jako samostatný podíl** (§5.1, metrika 5). `nonParticipationRate` je v typech, ale nevykresluje se; zobrazuje se jen počet nekonajících jako doprovodná věta.
+3. **Běh prototypu nad skutečnými soubory CERMAT** a ověření mapy sloupců proti listu `vysvětlivky` (§9.1). V `docs/podklady/` je jen samotest na syntetických datech. Pozor na záměnu: nad skutečnými soubory běží `build-maturita-skoly.py`, nikoli `maturita_prototype.py`.
+4. **Testy na organizační změny** (přejímací podmínka 7). `tests/test_maturita_skoly.py` pokrývá malý vzorek, nezveřejněnou hodnotu, chybějící sloupec, zlom metodiky a oddělení jara od stavu po podzimu, ale **ne** školu s více `SMO16`, změnu REDIZO nebo IZO, sloučení školy ani více pracovišť.
+5. **Ročníky 2015–2022.** Výstup nese jaro 2023–2026; starší řada se nestahuje, takže „počet let nad skupinou“ se počítá z krátké řady.
+
+`public/cermat_results_2026.json` dál obsahuje JPZ, nikoli maturitní data; maturita má vlastní soubor.
 
 ## 11. Historie rozhodnutí
 
@@ -362,6 +381,7 @@ Výsledek backtestu z prototypu není důkaz; je to vstup pro metodickou oponent
 - Bylo odmítnuto tvrzení, že samotné propojení přes REDIZO dokládá stejnou kohortu nebo přidanou hodnotu školy.
 - 12. 9. 2026 byl návrh zpřesněn: profil výsledků ano, známka kvality ne; veřejné srovnání až po kontrole granularity, populace a velikosti vzorku.
 - 14. 9. 2026: import vrstvy 1 a 2 do runtime zahájen: `scripts/build-maturita-skoly.py` a zpracovatel datové linky vytvářejí `public/maturita_skoly.json` (jaro od 2021, společná část, čeština a matematika, zařazení proti mediánu skupiny ze škol s aspoň 10 konajícími). Reference ze škol s aspoň 10 konajícími odpovídá `MIN_N_REFERENCE` prototypu. Web soubor čte až po přepnutí období; zobrazení určuje [stránka školy](stranka-skoly-2027.md).
+- 18. 9. 2026 (v1.2): hlavička a oddíly 3.5 a 10 srovnány se skutečností. Dokument od 14. 9. 2026 tvrdil dvě protichůdné věci: hlavička „implementace nezačala“ proti historii „import vrstvy 1 a 2 zahájen“. Platí historie; kontrola kódu 18. 9. 2026 doložila datovou linku, registr, výstup i zobrazení na stránce školy. Nově vypsáno pět konkrétních zbývajících položek (odchylka slovně, neúčast, běh prototypu nad skutečnými soubory, testy organizačních změn, ročníky před 2023) místo staré věty, že není hotové nic.
 - 12. 9. 2026 (v1.1): přijat katalog metrik s češtinou jako hlavním srovnávacím předmětem a matematikou vždy ve dvojici s podílem volby; kvalifikátor srovnání odvozen ze standardní chyby průměru místo pevného prahu; reference je medián škol ve stejné `SMO16`; kritérium publikace výzkumné vrstvy (korelace reziduí v čase) zapsáno předem; přijat analytický prototyp bez zásahu do runtime.
 
 ## 12. Reprodukce a odkazy v projektu

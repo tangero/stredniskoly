@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.9 · 17. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.10 · 18. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -332,6 +332,21 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 
 Použitelná role je opačná: ze 723 dobíhajících záznamů středních škol se jich **722 v 1. kole 2026 nenabíralo v žádné formě**. Příznak tedy rozliší „obor už se nenabírá“ od „obor škola v tomto roce nevypsala“, což je přesně to, co chybí [dvouletému cyklu nabídky oboru](dvoulety-cyklus-nabidky-oboru.md). Dvě pravidla pro jakékoli použití: **párovat REDIZO + KKOV + forma + délka** (na hrubém klíči je chybovost 100 %) a používat **jen u nabídky, která v zobrazeném ročníku chybí**.
 
+**Jak si vedou absolventi školy: zdroj neexistuje, a to ani mimo projekt.** Rešerše ze 17. 9. 2026 hledala, čím odpovědět na otázku po uplatnění absolventů konkrétní školy. Výsledek je záporný a zapisuje se sem, aby ho nikdo nehledal podruhé.
+
+| Zdroj | Nejjemnější úroveň | Proč nepoužít |
+|---|---|---|
+| Infoabsolvent.cz (NPI ČR) | obor KKOV × kraj, **ne škola** | není v katalogu otevřených dat, tabulky jsou obrázky v PDF |
+| MPSV, pololetní statistiky absolventů | **IZO školy × obor** | jediný nález s IZO, a přesto nepoužitelný, viz níže |
+| MPSV, otevřená data „Kvalifikační struktura absolventů“ | okres × kategorie vzdělání | školy v ní nejsou |
+| MŠMT, matrika SIMS, přechod na VŠ | kategorie vzdělání × přijímající VŠ | na úrovni školy neexistuje |
+| Národní katalog otevřených dat | — | sada „uplatnění absolventů“ ani „nezaměstnanost absolventů“ v katalogu **není** |
+| ČSÚ | ČR a kraje | školy nejsou předmětem |
+
+Soubor MPSV nese IZO, a přesto z něj ukazatel udělat nejde: chybí **jmenovatel** (uvádí jen počet absolventů v evidenci úřadu práce, ne počet absolventů školy), okres je okres evidence uchazeče a ne sídlo školy, počty jsou mikroskopické (6 354 z 8 881 řádků má hodnotu 1, medián 6 osob na IZO) a řada se přestala doplňovat po 30. 9. 2024. Rozhodující je pátý důvod: **jmenovatel označuje za nevěrohodný sám jeho správce** — MŠMT píše, že školy do matriky nedoplňují složenou maturitu u celých ročníků a že u 11 % gymnázií se do vysokoškolského studia zapsalo víc absolventů, než jich ten rok maturovalo. Postavit na tom ukazatel by znamenalo tvrdit víc než ministerstvo, které data sbírá.
+
+Zamítnuta je i **krajová míra nezaměstnanosti za skupinu oborů**: odpovídá na otázku o trhu práce v kraji, ne o této škole, a na stránce školy svádí přisoudit kraj škole. Rozbor je v [využití nepoužitých dat](navrh-vyuziti-nepouzitych-dat-2027.md), oddíl 3.1. Rozhodnutí se mění jen novým zdrojem zapsaným sem.
+
 **Duplicity, které je třeba srovnat.** `school_analysis.json` už nese `priority_pcts`, tedy podíl priorit v procentech, a `total_applicants`. Je to totéž, co od 13. 9. 2026 počítáme jako podíl prvních voleb, ale ze staršího zpracování. U 1 550 z 1 602 nabídek se `total_applicants` shoduje s `prihlasky`; rozdíl u zbytku vzniká tím, že data uchazečů neznají zaměření, takže sčítají všechna zaměření jednoho KKOV dohromady. Jako zdroj pravdy platí `prihlasky_priority` z agregátů CERMATu.
 
 ## 4. Pasti, které platí napříč zdroji
@@ -485,6 +500,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-17. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.10 | Zapsán **záporný nález o absolventech** (oddíl 3): na otázku, jak si vedou absolventi konkrétní školy, nemá odpověď žádný z šesti prověřených veřejných zdrojů. Soubor MPSV nese IZO, ale chybí mu jmenovatel a ten sám MŠMT označuje za nevěrohodný; krajová míra nezaměstnanosti za skupinu oborů zamítnuta, protože popisuje trh práce v kraji, ne školu. Rešerše ze 17. 9. 2026 tím přestává žít jen v návrhu. |
 | 1.9 | Harmonogram přijímacího řízení MŠMT (`src/data/admissions-2027.json`) zapsaný jako zdroj, protože z něj od 17. 9. 2026 čerpá i hlavní stránka, a jako sada `msmt-harmonogram` v registru; termíny se opisují z webu MŠMT ručně, detekce nového ročníku dotazem HEAD nejde. |
 | 1.8 | Maturitní výsledky přes datovou linku do `public/maturita_skoly.json`; zpracovatel sady `cermat-maturita`. |
 | 1.7 | Kontext přihlášek po oborech (`kontext_prihlasek_{rok}.json`), web škol z rejstříku (`skoly_web.json`), kraj a body přijatých po předmětech v souhrnech. |
