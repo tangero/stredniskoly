@@ -1,6 +1,6 @@
 # Stránka oboru: vrstvy podle otázek uchazeče
 
-Verze 1.4 · 13. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, čtyři revize po zpětné vazbě v oddílu 7, výsledná podoba v oddílu 8. Pojmy v textech stránky podle [slovníku pojmů](slovnik-pojmu.md).
+Verze 1.5 · 18. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, čtyři revize po zpětné vazbě v oddílu 7, výsledná podoba v oddílu 8. Pojmy v textech stránky podle [slovníku pojmů](slovnik-pojmu.md).
 
 Navazuje na schválený dokument [Grafy na stránce školy a oboru](grafy-skoly-a-oboru-2027.md), který určuje, **jaké grafy máme a jak se kreslí**. Tento dokument určuje, **v jakém pořadí a v jaké podobě je stránka nabídne**, aby odpověděla na tři otázky:
 
@@ -301,6 +301,16 @@ Oprava: odpověď 2 říká opak a je to užitečná informace, protože o prior
 
 ## 8. Výsledná podoba
 
+**Doplněno 18. 9. 2026: nad otázku 1 přibyla sekce „S kolika body se sem lidé dostali“.** Rozhodl o ní zadavatel s odůvodněním, že podle bodů se řada rodin rozhoduje a čísla byla zatím schovaná v rozbalovacím důkazu a ve větě uvnitř otázky 3. Sekce nese tři velká čísla za zobrazený ročník (nejnižší přijatý s percentilem, prostřední výsledek přijatých, průměr přijatých s rozpadem na češtinu a matematiku) a pod nimi **dva ročníky vedle sebe, u každého s celostátním mediánem uchazečů**.
+
+Tři rozhodnutí, která k tomu patří:
+
+1. **Nejmenuje se „body potřebné pro přijetí“.** Slovník ukazatelů u nejnižšího přijatého říká: „Není to hranice přijetí.“ Název sekce i popisky proto mluví o tom, s čím se někdo dostal, ne o tom, co je potřeba.
+2. **Body po předmětech jsou průměr přijatých, ne hranice.** Minimum po předmětech projekt zamítl, protože každé takové číslo určuje jediný uchazeč a dvě „nezávislá“ minima mohou pocházet od dvou různých lidí ([využití nepoužitých dat](navrh-vyuziti-nepouzitych-dat-2027.md), D1).
+3. **Dva ročníky se ukazují s celostátním posunem.** Samotná dvojice bodových čísel by tvrdila, že se změnily nároky školy; mezi roky 2025 a 2026 se ale posunula celá země o +3 body kvůli obtížnosti testu. Proto je u každého roku i výsledek prostředního uchazeče v celé zemi a věta, že rozdíl oboru se porovnává s tímto posunem, ne s nulou.
+
+**Zamítnuto ve stejné dávce: sedmistupňová škála obtížnosti.** Změřeno na 1 404 nabídkách s oběma ročníky a aspoň deseti soutěžícími: při dnešních pěti stupních zůstane zařazení mezi roky stejné u 52,8 % nabídek, při sedmi jen u 36,3 %. Jemnější škála by tedy u dvou třetin oborů přehodila nálepku rok co rok, což je pravý opak stálosti, kvůli které sekce vznikla. Zůstává pětistupňová škála s doloženým výpočtem.
+
 ```
 ┌───────────────────────────────────────────────┐
 │ Gymnázium J. S. Machara · osmileté gymnázium  │
@@ -372,6 +382,7 @@ Prošel jsem oddíl 3 soupisu zdrojů; rozhodnutí pro tuto stránku:
 
 | Verze | Změna |
 |---|---|
+| 1.5 | Nad otázku 1 přidána sekce **S kolika body se sem lidé dostali** (rozhodnutí zadavatele 18. 9. 2026): tři velká čísla za zobrazený ročník a dva ročníky vedle sebe, u každého s celostátním mediánem uchazečů, aby dvojice bodů netvrdila změnu nároků školy tam, kde se posunula obtížnost testu. Sedmistupňová škála obtížnosti zamítnuta měřením: zařazení by mezi roky vydrželo jen u 36,3 % nabídek proti 52,8 % u dnešních pěti stupňů. |
 | 1.4 | Čtvrtá revize: pořadí v kraji podle zájmu a podle výsledků přijatých, práh 10 nabídek, bez pořadí podle obtížnosti. |
 | 1.3 | Třetí revize: „soutěžící uchazeči“ s vysvětlením při prvním výskytu v bloku, slovník pojmů. |
 | 1.2 | Druhá revize: „nesplnili podmínky“ vysvětleno podle metodiky MŠMT a nahrazeno „nedosáhli požadavku školy“ s odvozenou hranicí úspěšnosti; přidán výsledek uchazečů (sem, výš, níž, nikam) a obory výš a níž na přihlášce s obtížností přijetí. |

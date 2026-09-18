@@ -284,6 +284,12 @@ def main() -> None:
         "zdroj": ZDROJ.name,
         "uroven": "REDIZO_KKOV (bez zaměření), jen obory s povinnou jednotnou zkouškou",
         "skala": "body 0–100, procentní skór CERMAT dělený dvěma",
+        # Kolik bodů měl prostřední uchazeč v celé zemi. Bez tohoto čísla se
+        # bodové výsledky dvou ročníků nedají poctivě postavit vedle sebe:
+        # mezi 2025 a 2026 se posunuly o celostátní rozdíl, tedy obtížností
+        # testu, ne nároky škol (slovník ukazatelů, Percentil nejnižšího přijatého).
+        "celostatni_median_uchazecu": round(statistics.median(rozdeleni), 1) if rozdeleni else None,
+        "celostatne_uchazecu": len(rozdeleni),
         "sirka_pasma": SIRKA_PASMA,
         "prahy": {
             "min_soutezicich_pro_pasma": MIN_SOUTEZICICH,

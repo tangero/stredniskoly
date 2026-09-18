@@ -58,6 +58,8 @@ export const MIN_PRIJATYCH_PRO_HRANICI = 10;
 
 const SADA = 'cermat-uchazeci-kolo1';
 const cache = new Map<string, Record<string, PasmaPrijetiObor>>();
+/** Celostátní medián uchazečů podle roku; bez něj se body dvou ročníků nedají srovnat. */
+const cacheMedian = new Map<string, number | null>();
 
 /** Rok dat o uchazečích, ze kterého se pásma zobrazují; null, když sada nic nezobrazuje. */
 export async function rokPasemPrijeti(): Promise<number | null> {
@@ -70,15 +72,40 @@ async function nacti(rok: number): Promise<Record<string, PasmaPrijetiObor>> {
   const ulozeno = cache.get(klic);
   if (ulozeno) return ulozeno;
   let data: Record<string, PasmaPrijetiObor> = {};
+  let median: number | null = null;
   try {
     // Výstup nese rok v názvu (pasma_prijeti_2026.json); přepíná se s obdobím v registru.
     const soubor = path.join(process.cwd(), 'public', `pasma_prijeti_${klic}.json`);
-    data = JSON.parse(await fs.readFile(soubor, 'utf-8')).data ?? {};
+    const obsah = JSON.parse(await fs.readFile(soubor, 'utf-8'));
+    data = obsah.data ?? {};
+    median = typeof obsah.celostatni_median_uchazecu === 'number' ? obsah.celostatni_median_uchazecu : null;
   } catch {
     // chybějící soubor není chyba, sekce se prostě nezobrazí
   }
   cache.set(klic, data);
+  cacheMedian.set(klic, median);
   return data;
+}
+
+/**
+ * Kolik bodů měl prostřední uchazeč v celé zemi v daném roce.
+ *
+ * Bez tohoto čísla se bodové výsledky dvou ročníků nesmí postavit vedle sebe:
+ * posun mezi roky dělá obtížnost testu, ne nároky škol. Mezi 2025 a 2026 se
+ * celostátní medián zvedl ze 46 na 49 bodů, zatímco percentil téhož uchazeče
+ * se nezměnil (slovník ukazatelů, *Percentil nejnižšího přijatého*).
+ */
+export async function celostatniMedianUchazecu(rok: number): Promise<number | null> {
+  await nacti(rok);
+  return cacheMedian.get(String(rok)) ?? null;
+}
+
+/** Údaje o oboru za určený rok; pro srovnání se zobrazeným ročníkem. */
+export async function getPasmaPrijetiZaRok(programId: string, rok: number): Promise<PasmaPrijetiObor | null> {
+  const casti = programId.split('_');
+  if (casti.length < 2) return null;
+  const data = await nacti(rok);
+  return data[`${casti[0]}_${casti[1]}`] ?? null;
 }
 
 /**

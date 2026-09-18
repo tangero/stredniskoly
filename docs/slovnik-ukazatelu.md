@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.23 · 17. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.24 · 18. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -307,6 +307,15 @@ Odstraňuje vliv obtížnosti testu. Mezi roky 2025 a 2026 stoupl medián výsle
 
 Souhrny CERMATu nesou oficiální variantu po nabídkách, `ČJ+MA – PERCENTIL – MIN (PŘIJATI)`, pole `min_prijaty_percentil_souhrn`, vyplněné jen při aspoň deseti přijatých s výsledkem. U oborů s jedinou nabídkou se s hodnotou z dat uchazečů shoduje do 2 bodů u 2 039 z 2 278 v roce 2025 a u 2 182 z 2 286 v roce 2026; percentilovou základnu legenda souhrnu neuvádí. Na stránce se používá jedna z nich a vždy se jménem tohoto ukazatele.
 
+### Celostátní medián uchazečů
+Kolik bodů měl prostřední uchazeč v celé zemi v daném ročníku 1. kola. Pole `celostatni_median_uchazecu` v hlavičce `public/pasma_prijeti_{rok}.json`, vedle něj `celostatne_uchazecu` jako velikost populace. Jednotka body 0 až 100.
+
+**Výpočet.** Medián výsledků všech uchazečů ze souboru dat uchazečů CERMATu; řádek souboru je jeden uchazeč, takže každý se počítá jednou bez ohledu na počet přihlášek. Počítá ho `scripts/build-pasma-prijeti.py` ze stejného rozdělení, ze kterého se berou percentily, takže obě čísla popisují tutéž populaci. Hodnoty: 2025 = 46,0 bodu ze 119 588 uchazečů, 2026 = 49,0 bodu ze 119 206.
+
+**K čemu je.** Je to měřítko obtížnosti testu, bez kterého se **bodové výsledky dvou ročníků nesmí postavit vedle sebe**. Posun mezi roky 2025 a 2026 o +3 body udělala celá země, ne školy: průměr přijatých se posunul mediánově o +2,6 bodu, zatímco percentilové umístění přijatých o −0,1. Stránka oboru proto u každého roku uvádí i tohle číslo a čtenáře vede porovnat rozdíl oboru s posunem země, ne s nulou.
+
+**Co neříká.** Nic o jednotlivé škole ani oboru. Není to hranice, práh ani doporučený počet bodů. Není to ani úplná náprava nesrovnatelnosti: k meziročnímu srovnání jedním číslem dál slouží percentilová umístění, ne body.
+
 ### Hustota u hranice
 Podíl soutěžících, jejichž výsledek leží do pěti bodů od nejnižšího přijatého. Pole `hustota_u_hranice`.
 
@@ -518,6 +527,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.24 | **Celostátní medián uchazečů zaveden jako ukazatel** (18. 9. 2026) do hlavičky `pasma_prijeti_{rok}.json`: 46,0 bodu v roce 2025 a 49,0 v roce 2026. Bez něj se bodové výsledky dvou ročníků nesmějí postavit vedle sebe, protože posun dělá obtížnost testu. Vzniklo kvůli nové sekci „S kolika body se sem lidé dostali“ na stránce oboru, která ukazuje body za dva ročníky vedle sebe a u každého i výsledek prostředního uchazeče v celé zemi. |
 | 1.23 | **Obtížnost přijetí má jednu definici** (17. 9. 2026): počítá ji generátor souhrnů, práh deseti soutěžících uplatňuje až zobrazení. Dosud existovaly dvě implementace, které se o práh lišily; sjednocení nezměnilo ani jeden z 6 150 zobrazovaných záznamů. Zapsáno, že datové pole nese hodnoty i pod prahem. |
 | 1.22 | **Medián JPZ přijatých zaveden jako ukazatel** (17. 9. 2026) a přesunut do `public/pasma_prijeti_{rok}.json`, kde vzniká ze stejného zdroje jako nejnižší přijatý a přepíná se s registrem. Nahrazuje pole `jpz_median` a `jpz_prumer_actual` ze starého katalogu, která pocházela z předběžné verze roku 2025 a z rozbitého `enrich_schools_data.py`, a na webu se nikdy nepoužila. Doloženo, že medián leží systematicky pod průměrem (mediánově o 1,1 bodu na 2 517 nabídkách roku 2026), takže průměr přeceňuje typického přijatého. Pole `cj_at_jpz_min`, `ma_at_jpz_min`, `cj_min_independent` a `ma_min_independent` zamítnuta: každé určuje jediný uchazeč a poslední dvě mohou pocházet od dvou různých lidí. |
 | 1.21 | **Doklady stability přepočítány na dvojici ročníků 2025 a 2026** (17. 9. 2026) před přepnutím sady `cermat-uchazeci-kolo1` na rok 2026. Výpočty se nemění, mění se doložená čísla. Míra *rozhodl test* vychází hůř než dřív (korelace 0,672 proti 0,725 na dvojici 2024–2025) a zařazení do tří kategorií se mění u 26 % oborů, což potvrzuje dosavadní rozhodnutí nezobrazovat ji jako číslo. Šířka pásma nejistoty 0,719 a mediánová šířka 6 bodů. Percentil nejnižšího přijatého 0,883 proti 0,879 u bodů; medián výsledku uchazečů stoupl ze 46 na 49 bodů, takže nejnižší přijatý v bodech stoupl o 1 bod, zatímco jeho percentil se nehnul. Doklad `docs/podklady/overeni-pasem-prijeti-2025-2026.json` počítá `scripts/validate-pasma-prijeti.py --rocniky 2025-2026`. |

@@ -1,7 +1,7 @@
 import { getSchoolsData, getExtractionsByRedizo, getInspisDataByRedizo } from '@/lib/data';
 import { getSouhrnNabidky, nabidkyVeSkupineKraje, souhrnOboru, type SouhrnRocniku } from '@/lib/souhrny-kolo1';
 import { getKontextPrihlasek, type KontextPrihlasek } from '@/lib/kontext-prihlasek';
-import { getPasmaPrijeti, rokPasemPrijeti, type PasmaPrijetiObor } from '@/lib/pasma-prijeti';
+import { getPasmaPrijeti, getPasmaPrijetiZaRok, celostatniMedianUchazecu, rokPasemPrijeti, type PasmaPrijetiObor } from '@/lib/pasma-prijeti';
 import { getDruheKolo, type DruheKoloNabidky } from '@/lib/druhe-kolo';
 import { verzeObdobi } from '@/lib/stav-datovych-sad';
 import { getWebSkoly } from '@/lib/skoly-web';
@@ -50,6 +50,19 @@ export interface ProfilOboruData {
   poradiZajem: PoradiVKraji | null;
   poradiVysledky: PoradiVKraji | null;
   pasma: { rok: number; data: PasmaPrijetiObor } | null;
+  /**
+   * Bodové výsledky předchozího ročníku vedle zobrazeného, s celostátním
+   * mediánem uchazečů obou let. Bez něj by dvojice čísel tvrdila, že se změnily
+   * nároky školy, zatímco se změnila obtížnost testu.
+   */
+  srovnaniRocniku: {
+    rok: number;
+    predchoziRok: number;
+    data: PasmaPrijetiObor;
+    predchozi: PasmaPrijetiObor;
+    celostatniMedian: number | null;
+    celostatniMedianPredchozi: number | null;
+  } | null;
   /** Verze dat o uchazečích z registru; nese ji jen předběžný ročník. */
   verzeUchazecu: string | null;
   kontext: { rok: number; data: KontextPrihlasek; vys: OborNaPrihlasce[]; niz: OborNaPrihlasce[] } | null;
@@ -120,6 +133,28 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
   ]);
   const pasmaData = rokPasem ? await getPasmaPrijeti(programId) : null;
 
+  // Předchozí ročník pásem se odvozuje od zobrazeného, ne z napsaného letopočtu;
+  // když soubor neexistuje, srovnání se prostě nezobrazí.
+  let srovnaniRocniku: ProfilOboruData['srovnaniRocniku'] = null;
+  if (rokPasem && pasmaData) {
+    const predchoziRokPasem = rokPasem - 1;
+    const [predchoziPasma, median, medianPredchozi] = await Promise.all([
+      getPasmaPrijetiZaRok(programId, predchoziRokPasem),
+      celostatniMedianUchazecu(rokPasem),
+      celostatniMedianUchazecu(predchoziRokPasem),
+    ]);
+    if (predchoziPasma) {
+      srovnaniRocniku = {
+        rok: rokPasem,
+        predchoziRok: predchoziRokPasem,
+        data: pasmaData,
+        predchozi: predchoziPasma,
+        celostatniMedian: median,
+        celostatniMedianPredchozi: medianPredchozi,
+      };
+    }
+  }
+
   const klicSouhrnu = souhrn.klic;
 
   const [poradiZajem, poradiVysledky] = await Promise.all([
@@ -166,6 +201,7 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
     poradiZajem,
     poradiVysledky,
     pasma: rokPasem && pasmaData ? { rok: rokPasem, data: pasmaData } : null,
+    srovnaniRocniku,
     verzeUchazecu,
     kontext,
     druheKolo,
