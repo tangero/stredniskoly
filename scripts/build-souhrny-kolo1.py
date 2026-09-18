@@ -11,8 +11,11 @@ Výstupy:
 
 Párování ročníků (docs/grafy-skoly-a-oboru-2027.md, pravidlo 7):
   1. shodný klíč nabídky REDIZO_KKOV_zaměření,
-  2. jinak jediná nabídka téže školy a oboru v obou ročnících,
-  3. jinak se nabídka nepáruje a předchozí rok se u ní nezobrazí.
+  2. jinak pár z mapy nabídek public/offer_mapping_{rok}.json, pokud pro ročník existuje
+     (jediná nabídka oboru, jednoznačná shoda textu zaměření, ručně ověřený pár);
+     stránky nabídek stojí na téže mapě, takže souhrn a stránka párují stejně,
+  3. jinak jediná nabídka téže školy a oboru v obou ročnících,
+  4. jinak se nabídka nepáruje a předchozí rok se u ní nezobrazí.
 
     python3 scripts/build-souhrny-kolo1.py                  # všechny ročníky, jejichž soubor leží v data/
     python3 scripts/build-souhrny-kolo1.py --zdroj-dir /cesta --rok 2025 --rok 2026
@@ -121,12 +124,46 @@ def nacti_rocnik(soubor: Path, rok: int) -> dict[str, dict]:
     return nabidky
 
 
-def paruj(stary: dict[str, dict], novy: dict[str, dict]) -> dict[str, tuple[str, str]]:
+def normalizuj(klic: str) -> str:
+    """Klíč REDIZO_KKOV_zaměření v podobě, jakou souhrny používají (make_key)."""
+    redizo, kkov, *zamereni = klic.split("_", 2)
+    return make_key(redizo, kkov, zamereni[0] if zamereni else "")
+
+
+def jednoznacny_index(klice) -> dict[str, str]:
+    """Normalizovaný klíč → klíč souhrnu; klíče, které se po normalizaci srazí, v indexu nejsou."""
+    index: dict[str, str] = {}
+    kolize = set()
+    for k in klice:
+        n = normalizuj(k)
+        if n in index:
+            kolize.add(n)
+        index[n] = k
+    return {n: k for n, k in index.items() if n not in kolize}
+
+
+def nacti_mapu(rok: int, adresar: Path) -> dict[str, dict]:
+    """Mapa nabídek ročníku na předchozí katalog (scripts/build-offer-mapping-{rok}.py); prázdná, když chybí."""
+    soubor = adresar / f"offer_mapping_{rok}.json"
+    return json.loads(soubor.read_text())["mapping"] if soubor.exists() else {}
+
+
+def paruj(stary: dict[str, dict], novy: dict[str, dict],
+          mapa: dict[str, dict] | None = None) -> dict[str, tuple[str, str]]:
     """Nový klíč → (starý klíč, způsob). Nejednoznačné páry se vynechají."""
     pary: dict[str, tuple[str, str]] = {}
     for k in novy:
         if k in stary:
             pary[k] = (k, "shoda_klice")
+    if mapa:
+        idx_novy, idx_stary = jednoznacny_index(novy), jednoznacny_index(stary)
+        pouzite = {s for s, _ in pary.values()}
+        for ident, info in sorted(mapa.items()):
+            n = idx_novy.get(normalizuj(ident))
+            s = idx_stary.get(normalizuj(info["katalog_id"]))
+            if n and s and n not in pary and s not in pouzite:
+                pary[n] = (s, info["zpusob"])
+                pouzite.add(s)
     zbyle_nove = defaultdict(list)
     zbyle_stare = defaultdict(list)
     pouzite = {s for s, _ in pary.values()}
@@ -239,6 +276,8 @@ def main() -> None:
     ap.add_argument("--rok", type=int, action="append", help="ročník; bez uvedení všechny nalezené soubory")
     ap.add_argument("--vystup", type=Path, default=VYSTUP)
     ap.add_argument("--doklad", type=Path, default=DOKLAD)
+    ap.add_argument("--mapy-dir", type=Path, default=KOREN / "public",
+                    help="adresář s offer_mapping_{rok}.json")
     a = ap.parse_args()
 
     roky = sorted(a.rok) if a.rok else sorted(
@@ -266,7 +305,7 @@ def main() -> None:
         if i == 0:
             continue
         predchozi = roky[i - 1]
-        pary = paruj(rocniky[predchozi], rocniky[rok])
+        pary = paruj(rocniky[predchozi], rocniky[rok], nacti_mapu(rok, a.mapy_dir))
         zpusoby = Counter(z for _, z in pary.values())
         doklad_parovani[f"{predchozi}-{rok}"] = {
             "nabidek_novy_rocnik": len(rocniky[rok]),

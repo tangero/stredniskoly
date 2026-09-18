@@ -17,16 +17,18 @@
  "parovani": {
   "2025-2026": {
    "nabidek_novy_rocnik": 3091,
-   "sparovano": 2858,
+   "sparovano": 2934,
    "shoda_klice": 2315,
    "jedna_ku_jedne": 543,
-   "bez_predchoziho_rocniku": 233
+   "text_zamereni": 61,
+   "overeno_rucne": 15,
+   "bez_predchoziho_rocniku": 157
   }
  },
  "stabilita": {
   "2025-2026": {
    "kapacita": {
-    "n": 2858,
+    "n": 2934,
     "ctvrtiny_zmeny": [
      0.0,
      0.0,
@@ -34,7 +36,7 @@
     ]
    },
    "index_poptavky": {
-    "n": 2857,
+    "n": 2933,
     "ctvrtiny_zmeny": [
      -0.48,
      -0.04,
@@ -42,35 +44,35 @@
     ]
    },
    "tlak_prvnich_voleb": {
-    "n": 2857,
+    "n": 2933,
     "ctvrtiny_zmeny": [
      -0.23,
-     -0.03,
+     -0.02,
      0.2
     ]
    },
    "cj_ma_prijati": {
-    "n": 2823,
+    "n": 2899,
     "ctvrtiny_zmeny": [
      -0.73,
      2.62,
-     5.79
+     5.77
     ]
    },
    "prumerne_umisteni_prijatych": {
-    "n": 2823,
+    "n": 2899,
     "ctvrtiny_zmeny": [
-     -5.0,
+     -5.1,
      -0.1,
      4.9
     ]
    },
    "podil_prvnich_voleb_pb": {
-    "n": 2857,
+    "n": 2933,
     "ctvrtiny_zmeny": [
-     -5.94,
-     -0.19,
-     5.09
+     -5.95,
+     -0.25,
+     5.11
     ]
    }
   }
@@ -123,11 +125,11 @@
    ]
   },
   "2025-2026": {
-   "n_aspon_20_soutezicich_v_obou_letech": 1868,
-   "korelace": 0.723,
-   "median_abs_zmeny_pb": 9.4,
-   "stejne_zarazeni_pct": 48.6,
-   "nejvys_o_stupen_pct": 90.2
+   "n_aspon_20_soutezicich_v_obou_letech": 1913,
+   "korelace": 0.727,
+   "median_abs_zmeny_pb": 9.3,
+   "stejne_zarazeni_pct": 48.9,
+   "nejvys_o_stupen_pct": 90.3
   }
  }
 }

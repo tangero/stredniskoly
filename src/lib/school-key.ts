@@ -18,3 +18,20 @@ export function uniqueSchoolIndex<T>(rows: T[], key: (row: T) => string): Map<st
   for (const id of ambiguous) index.delete(id);
   return index;
 }
+
+/**
+ * Z mapy nabídek (public/offer_mapping_{rok}.json) index normalizovaný klíč stránky → normalizovaný
+ * klíč nabídky v ročníku. Stránka nese loňský klíč katalogu, zdroje ročníku klíč z dat CERMAT;
+ * klíč, na který by mířily dvě nabídky, v indexu není.
+ */
+export function indexKlicuRocniku(mapa: Record<string, { katalog_id: string }>): Map<string, string> {
+  const index = new Map<string, string>();
+  const kolize = new Set<string>();
+  for (const [ident, { katalog_id }] of Object.entries(mapa)) {
+    const stranka = normalizeSchoolKey(katalog_id);
+    if (index.has(stranka)) kolize.add(stranka);
+    else index.set(stranka, normalizeSchoolKey(ident));
+  }
+  kolize.forEach(k => index.delete(k));
+  return index;
+}
