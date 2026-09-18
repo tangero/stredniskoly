@@ -4,7 +4,7 @@ import type { ProfilOboruData, PoradiVKraji } from '@/lib/obor-profil-data';
 import { MIN_PRIJATYCH_PRO_HRANICI } from '@/lib/pasma-prijeti';
 import { vetyDruhehoKola, VYSVETLENI_DRUHEHO_KOLA } from '@/lib/druhe-kolo-vyklad';
 import {
-  ZARAZENI_POPISEK, cislo, slovniPodil, vKraji, soutezicichUchazecu, textPoradi, vetaPozadavku, zOd, zminitPozadavek,
+  ZARAZENI_POPISEK, cislo, popisekObtiznosti, slovniPodil, vKraji, soutezicichUchazecu, textPoradi, vetaPozadavku, zOd, zminitPozadavek,
 } from '@/lib/obor-profil';
 import {
   MrizkaSoutezicich, PasmaBodu, RozpadPrihlasek, SkupinaVKraji, SloupceSoutezicich, VysledekUchazecu,
@@ -421,7 +421,7 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
                             </td>
                             <td className="py-2 px-3 text-right tabular-nums">{cislo(o.uchazecu)}</td>
                             <td className="py-2 pl-3">
-                              <span className="inline-block whitespace-nowrap rounded-full bg-slate-100 px-2.5 py-0.5 text-[13px] font-semibold text-slate-800">{o.zarazeni ? ZARAZENI_POPISEK[o.zarazeni] : o.mimoPrehled === 'bez_zkousky' ? 'bez jednotné zkoušky' : o.mimoPrehled ? 'mimo přehled' : 'bez údajů'}</span>
+                              <span className="inline-block whitespace-nowrap rounded-full bg-slate-100 px-2.5 py-0.5 text-[13px] font-semibold text-slate-800">{popisekObtiznosti(o)}</span>
                               {o.soutezici ? <span className="block text-[12px] text-slate-500">{cislo(o.prijati ?? 0)} {zOd(o.soutezici)} {cislo(o.soutezici)}</span> : null}
                             </td>
                           </tr>

@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.10 · 18. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.11 · 18. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -38,8 +38,9 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **1. kolo**, **2. kolo** | kola přijímacího řízení podle harmonogramu MŠMT | u 2. kola: „když se obor v 1. kole nenaplní, škola může vypsat 2. kolo“ | druhé kolo bez čísla ročníku |
 | **místa**, **kapacita** | počet míst, které škola pro obor v kole vypsala | není potřeba | volná místa (jen u 2. kola) |
 | **obor se už nenabírá** | obor vedený v rejstříku jako dobíhající a v zobrazeném ročníku nevypsaný | „škola tenhle obor dokončuje se stávajícími žáky a nové uchazeče do něj nepřijímá“ | zrušený obor, zaniklý obor (dokud to neuvádí škola); jakékoli varování u oboru, který škola v ročníku **vypsala** — mezi vypsanými je dobíhajících nula |
-| **obor bez jednotné zkoušky** | obor, u kterého se jednotná přijímací zkouška nekoná: kategorie C, E, H, J a P, například učební obory s výučním listem; přehled je zatím nezahrnuje | v tabulce stačí značka „bez jednotné zkoušky“, pod tabulkou: „Obory bez jednotné zkoušky, například učební obory s výučním listem, přehled zatím nezahrnuje; uvádíme u nich jen název.“ | obor bez JPZ, obor bez přijímaček, nematuritní obor (není totéž) |
-| **mimo přehled** | obor, který přehled nezahrnuje z jiného důvodu než kvůli chybějící jednotné zkoušce (například jiná forma studia nebo talentový obor) | jen jako značka v tabulce, vysvětlení nese poznámka pod tabulkou | neznámý obor, bez údajů (údaje existují, jen je nezpracováváme) |
+| **obor bez jednotné zkoušky** | obor, u kterého se jednotná přijímací zkouška nekoná: kategorie C, E, H, J a P, například učební obory s výučním listem; přehled je zatím nezahrnuje | v tabulce stačí značka „bez jednotné zkoušky“, pod tabulkou: „Obory bez jednotné zkoušky, například učební obory s výučním listem, a několik dalších oborů přehled zatím nezahrnuje; uvádíme u nich jen název.“ Věta mluví i o oborech mimo přehled, protože jedna poznámka vysvětluje obě značky | obor bez JPZ, obor bez přijímaček, nematuritní obor (není totéž) |
+| **mimo přehled** | obor, který přehled nezahrnuje z jiného důvodu než kvůli chybějící jednotné zkoušce (například jiná forma studia nebo talentový obor) | jen jako značka v tabulce, vysvětlení nese poznámka pod tabulkou | neznámý obor; **bez údajů** (to je jiný stav: u oboru mimo přehled důvod známe) |
+| **bez údajů** | o oboru na přihlášce nevíme nic: nevede ho katalog a není ani v soupisu oborů mimo přehled, takže o něm neumíme říct ani to, proč ho přehled nezahrnuje | jen jako značka v tabulce; nikdy se nedoplňuje domněnkou, proč obor chybí | mimo přehled, bez jednotné zkoušky (obojí tvrdí důvod, který neznáme) |
 | **nabídka oborů** | obory a počet míst, které školy pro dané přijímací řízení vypíšou; školy je zveřejňují spolu s kritérii přijetí, agregovaná data CERMATu k nim vycházejí až o několik měsíců později | „nabídka oborů pro rok …, tedy obory a počet míst“; termín zveřejnění vždy s rokem a s tím, že ho školy zveřejňují s kritérii | seznam oborů, otevírané obory (bez roku), vyhlášení nabídky (školy vyhlašují kritéria) |
 
 ## 3. Výsledky a obtížnost
@@ -93,6 +94,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.11 | Věta pod tabulkou oborů výš a níž vysvětluje obě značky, tedy i obory mimo přehled („a několik dalších oborů“); dosud slovník předepisoval znění jen o oborech bez jednotné zkoušky, zatímco stránka správně mluvila o obojím. Doplněn čtvrtý stav sloupce obtížnosti: **bez údajů** pro obor, který nevede katalog ani soupis oborů mimo přehled — bez něj slovník popisoval tři stavy ze čtyř a chybějící stav se dal zaměnit za „mimo přehled“. |
 | 1.10 | Pojmy **nevyrovnaný výsledek** a **slabší předmět** pro blok „Dá se slabší předmět dohnat tím druhým?“ na stránce oboru. Slovo *propadák* zůstává jen v souhrnné větě o oboru, nikdy o konkrétním uchazeči. |
 | 1.9 | Pojem **prostřední uchazeč v celé zemi** pro celostátní medián, který na stránce oboru stojí u bodů obou ročníků. Bez něj by dvojice bodových čísel tvrdila, že se změnily nároky školy, zatímco se změnila obtížnost testu. |
 | 1.8 | Pojem **obor se už nenabírá** pro obor vedený v rejstříku jako dobíhající a v zobrazeném ročníku nevypsaný (dávka D4b). U vypsaného oboru se nepoužívá, protože mezi vypsanými je dobíhajících nula. |
