@@ -8,11 +8,16 @@ import { odhlasovaciOdkaz } from './novinky-token.ts';
 // tytéž bajty pod týmž klíčem idempotence. Každý e-mail nese značku (tag)
 // s identifikátorem položky, aby se webhook dal spárovat i bez resend_id.
 //
-// Měření otevření a kliknutí se na odesílací subdoméně nezapíná; slib
-// „v e-mailech neměříme“ stojí na nastavení domény, ne na jednotlivém volání.
+// Odesílá se z **hlavní domény** prijimackynaskolu.cz, která je nastavená
+// a ověřená (rozhodnutí zadavatele 18. 9. 2026). Kvůli tomu sdílí novinky
+// reputaci s odkazy portálu a hlášením chyb, takže je o to důležitější umět
+// plošné zprávy pozastavit, zatímco provozní e-maily běží dál.
+//
+// Měření otevření a kliknutí se na doméně nezapíná; slib „v e-mailech
+// neměříme“ stojí na nastavení domény, ne na jednotlivém volání.
 // ============================================================================
 
-export const ODESILATEL_NOVINKY = 'Přijímačky na školu <novinky@novinky.prijimackynaskolu.cz>';
+export const ODESILATEL_NOVINKY = 'Přijímačky na školu <novinky@prijimackynaskolu.cz>';
 const API_DAVKA = 'https://api.resend.com/emails/batch';
 
 export interface ZpravaProAdresata {

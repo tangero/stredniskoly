@@ -5,9 +5,9 @@ import { Footer } from '@/components/Footer';
 // ============================================================================
 // Zásady ochrany osobních údajů.
 //
-// NÁVRH K PRÁVNÍ KONTROLE. Vznikl podle docs/novinky-k-prijimackam-2027.md,
-// oddíl 5 a oddíl 6 (doby uložení po druzích záznamů). Před spuštěním odběru
-// musí projít kontrolou; do té doby je stránka dostupná, ale odběr zapnutý není.
+// Text vznikl podle docs/novinky-k-prijimackam-2027.md, oddíl 5 a oddíl 6
+// (doby uložení po druzích záznamů). **Právní kontrolu schválil zadavatel
+// 18. 9. 2026**, takže odběr na ni už nečeká.
 //
 // Co text musí držet a co se nesmí rozejít se skutečností:
 //  - rozsah údajů odpovídá schématu v db/migrace/001-novinky.sql,
