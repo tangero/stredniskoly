@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from collections import Counter
 from pathlib import Path
 from typing import Any, Iterator
@@ -80,6 +81,68 @@ def delka_nabidky(souhrn: dict[str, Any], rok: str) -> str | None:
         return DELKA_Z_LET.get(int(skupina.rsplit("_", 1)[1]))
     except ValueError:
         return None
+
+
+def stare_kody(zaznamy: list[dict[str, Any]], v_rocniku: dict[str, dict]) -> dict[str, Any]:
+    """Proč se starý trojmístný kód oboru nesmí normalizovat na dvojmístný.
+
+    Ze 602 dobíhajících denních oborů jich většina nese starý kód (`82-44-M/001`),
+    který katalog nepoužívá. Nabízí se kódy sjednotit, jenže u řady škol vede
+    rejstřík starý kód jako dobíhající a **nový kód téhož oboru jako aktivní**.
+    Normalizace by pak u vypisovaného oboru tvrdila, že se už nenabírá.
+
+    Počítá se ve dvou definicích „aktivního oboru“, protože každá dává jiné číslo
+    a bez uvedení definice je údaj nepřenositelný:
+
+    - ``v_rejstriku``: obor, který rejstřík nevede jako dobíhající,
+    - ``vypsany_v_rocniku``: navíc musí být v nabídce 1. kola daného ročníku.
+
+    Args:
+        zaznamy: Všechny obory středních škol ze snímku rejstříku.
+        v_rocniku: Nabídky 1. kola vyhodnocovaného ročníku.
+
+    Returns:
+        Počty kolizí a dotčených škol v obou definicích.
+    """
+    leta = {kod: roky for roky, kod in DELKA_Z_LET.items()}
+    podle_skoly: dict[str, list[dict[str, Any]]] = {}
+    for z in zaznamy:
+        if z["druh"] in DRUHY_SS and z["kod"]:
+            podle_skoly.setdefault(z["redizo"], []).append(z)
+    vypsane = {(n["redizo"], n["kkov"]) for n in v_rocniku.values()}
+
+    stare = [z for z in podle_skoly_hodnoty(podle_skoly)
+             if z["dobihajici"] and z["forma"] == FORMA_DENNI
+             and re.search(r"/\d{3}$", z["kod"] or "") and leta.get(z["delka"])]
+
+    vysledek: dict[str, Any] = {
+        "starych_dennich_dobihajicich": len(stare),
+        "definice": {
+            "v_rejstriku": "obor, který rejstřík nevede jako dobíhající",
+            "vypsany_v_rocniku": "navíc je v nabídce 1. kola vyhodnocovaného ročníku",
+        },
+    }
+    for nazev, jen_vypsane in (("v_rejstriku", False), ("vypsany_v_rocniku", True)):
+        kolize = []
+        for z in stare:
+            zaklad = z["kod"].rsplit("/", 1)[0]
+            for o in podle_skoly[z["redizo"]]:
+                if (not o["dobihajici"] and o["forma"] == FORMA_DENNI and re.search(r"/\d{2}$", o["kod"] or "")
+                        and o["kod"].rsplit("/", 1)[0] == zaklad and o["delka"] == z["delka"]
+                        and (not jen_vypsane or (z["redizo"], o["kod"]) in vypsane)):
+                    kolize.append((z["redizo"], z["kod"]))
+                    break
+        vysledek[nazev] = {"oboru": len(kolize), "skol": len({r for r, _ in kolize})}
+    vysledek["zaver"] = (
+        "Normalizace kódů by u stovek oborů tvrdila u aktivně vedeného oboru, že se nenabírá. "
+        "Staré kódy se proto nepárují; cenou je nízká účinnost příznaku."
+    )
+    return vysledek
+
+
+def podle_skoly_hodnoty(podle_skoly: dict[str, list[dict[str, Any]]]) -> list[dict[str, Any]]:
+    """Všechny záznamy ze slovníku podle škol."""
+    return [z for obory in podle_skoly.values() for z in obory]
 
 
 def spocitej(snimek: Path, souhrny: Path, rok: str) -> dict[str, Any]:
@@ -148,6 +211,7 @@ def spocitej(snimek: Path, souhrny: Path, rok: str) -> dict[str, Any]:
         "snimek": snimek.name,
         "rocnik_nabidek": rok,
         "odolnost_zaveru_na_definici": odolnost,
+        "stare_kody_oboru": stare_kody(zaznamy, v_rocniku),
         "jednotky_poctu": {
             "zaznamu_oboru_celkem": len(zaznamy),
             "zaznamu_dobihajicich_vsechny_druhy": len(dobihajici),

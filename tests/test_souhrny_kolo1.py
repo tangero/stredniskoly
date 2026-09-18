@@ -91,5 +91,45 @@ class TestZaznam(unittest.TestCase):
             souhrny.zaznam(self.radek(**{"PŘIHLÁŠKY CELKEM": 61}))
 
 
+class TestZarazeniObtiznosti(unittest.TestCase):
+    """Prahy slovního zařazení podle slovníku ukazatelů: třetina, polovina, dvě třetiny.
+
+    Od dávky D2 (17. 9. 2026) počítá zařazení jen tenhle generátor a TypeScript
+    nad ním uplatňuje pouze práh zobrazení. Prahy proto testuje Python, ne
+    `tests/obor-profil.test.mjs`, kde do té doby byla druhá implementace.
+    """
+
+    def zarazeni(self, prijati: int, nevesli: int) -> str | None:
+        return souhrny.zarazeni_obtiznosti({"prijati": prijati, "capacity_rejected": nevesli})
+
+    def test_prahy(self):
+        # podíl přijatých ze soutěžících: 30/112 = 0,268 < 1/3
+        self.assertEqual(self.zarazeni(30, 82), "velmi_tezke")
+        # 29/67 = 0,433, tedy mezi třetinou a polovinou
+        self.assertEqual(self.zarazeni(29, 38), "tezke")
+        # 30/54 = 0,556, mezi polovinou a dvěma třetinami
+        self.assertEqual(self.zarazeni(30, 24), "stredne_tezke")
+        # 30/44 = 0,682, nad dvěma třetinami
+        self.assertEqual(self.zarazeni(30, 14), "vetsina_uspela")
+
+    def test_hranice_jsou_ostre_zdola(self):
+        # přesně třetina a přesně polovina patří do mírnějšího stupně
+        self.assertEqual(self.zarazeni(10, 20), "tezke")
+        self.assertEqual(self.zarazeni(10, 10), "stredne_tezke")
+        self.assertEqual(self.zarazeni(20, 10), "vetsina_uspela")
+
+    def test_bez_odmitnutych_kapacita_nerozhodovala(self):
+        self.assertEqual(self.zarazeni(23, 0), "kapacita_nerozhodovala")
+
+    def test_chybejici_udaj_neni_nula(self):
+        self.assertIsNone(souhrny.zarazeni_obtiznosti({"prijati": 30}))
+        self.assertIsNone(souhrny.zarazeni_obtiznosti({"capacity_rejected": 5}))
+
+    def test_prah_deseti_soutezicich_generator_neuplatnuje(self):
+        # Práh je pravidlo zobrazení, ne součást definice (slovník ukazatelů),
+        # takže pole v datech hodnotu nese i u nabídky se sedmi soutěžícími.
+        self.assertEqual(self.zarazeni(3, 4), "tezke")
+
+
 if __name__ == "__main__":
     unittest.main()

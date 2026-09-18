@@ -1,0 +1,87 @@
+{
+ "popis": "Doklad k jemnosti škály obtížnosti a k rozboru výsledků přijatých po předmětech.",
+ "generator": "scripts/rozbor-skaly-a-predmetu.py",
+ "skala_obtiznosti": {
+  "rocniky": [
+   "2025",
+   "2026"
+  ],
+  "nabidek": 1442,
+  "podminka": "spárováno a aspoň 10 soutěžících v obou letech",
+  "stejne_zarazeni_pct": {
+   "5": 53.4,
+   "7": 36.4
+  },
+  "zaver": "jemnější škála přehazuje nálepku podstatně častěji; pět stupňů zůstává"
+ },
+ "rozbor_predmetu": {
+  "rok": "2026",
+  "oboru_s_rozborem": 2757,
+  "podminka": "aspoň 10 přijatých s výsledkem obou testů",
+  "podle_obtiznosti": {
+   "velmi_tezke": {
+    "oboru": 153,
+    "median_podlahy": 23.0,
+    "median_podilu_nevyrovnanych_pct": 23
+   },
+   "tezke": {
+    "oboru": 316,
+    "median_podlahy": 16.0,
+    "median_podilu_nevyrovnanych_pct": 33
+   },
+   "stredne_tezke": {
+    "oboru": 436,
+    "median_podlahy": 13.0,
+    "median_podilu_nevyrovnanych_pct": 38
+   },
+   "vetsina_uspela": {
+    "oboru": 691,
+    "median_podlahy": 10.0,
+    "median_podilu_nevyrovnanych_pct": 37
+   },
+   "kapacita_nerozhodovala": {
+    "oboru": 888,
+    "median_podlahy": 7.0,
+    "median_podilu_nevyrovnanych_pct": 37
+   }
+  },
+  "podle_typu": {
+   "GY4": {
+    "oboru": 337,
+    "median_podlahy": 19.0,
+    "median_podilu_nevyrovnanych_pct": 33
+   },
+   "GY6": {
+    "oboru": 68,
+    "median_podlahy": 15.5,
+    "median_podilu_nevyrovnanych_pct": 25
+   },
+   "GY8": {
+    "oboru": 261,
+    "median_podlahy": 17.0,
+    "median_podilu_nevyrovnanych_pct": 22
+   },
+   "LYC": {
+    "oboru": 234,
+    "median_podlahy": 14.0,
+    "median_podilu_nevyrovnanych_pct": 40
+   },
+   "NAS": {
+    "oboru": 229,
+    "median_podlahy": 5.0,
+    "median_podilu_nevyrovnanych_pct": 50
+   },
+   "SOS": {
+    "oboru": 1118,
+    "median_podlahy": 9.0,
+    "median_podilu_nevyrovnanych_pct": 39
+   },
+   "SOU": {
+    "oboru": 237,
+    "median_podlahy": 7.0,
+    "median_podilu_nevyrovnanych_pct": 31
+   }
+  },
+  "zaver": "podlaha slabšího předmětu roste s obtížností plynule, ale nevyrovnanost sama překážkou není"
+ }
+}
