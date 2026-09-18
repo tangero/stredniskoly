@@ -52,7 +52,9 @@ Fronta je v `data/linka/fronta.json`. Pracovní soubory ve `data/linka/prace/<K�
 
 Změna struktury, například přejmenovaný list nebo chybějící sloupec, úlohu nezastaví, ale v oznámení je uvedena jako první věc. Chybějící povinný sloupec zpracování zastaví a úloha skončí ve stavu `selhalo` s vysvětlením.
 
-**Zpracování uchazečů potřebuje snímek rejstříku škol MŠMT** v `data/msmt_rejstrik/`. Snímky mají desítky megabajtů a do gitu se neukládají, takže na čerstvě naklonovaném repozitáři chybí; postup stažení je v `data/msmt_rejstrik/README.md`. Bez snímku se úloha **zastaví** s návodem, protože názvy oborů, které katalog nevede, se berou právě odtud — a výstup bez nich by z webu odebral víc než tisíc názvů, aniž by to bylo na první pohled poznat.
+**Zpracování uchazečů potřebuje snímek rejstříku škol MŠMT** v `data/msmt_rejstrik/`. Snímky mají desítky megabajtů a do gitu se neukládají, takže na čerstvě naklonovaném repozitáři chybí; postup stažení je v `data/msmt_rejstrik/README.md`. Bez snímku se úloha **zastaví** s návodem, protože názvy oborů, které katalog nevede, se berou právě odtud — a výstup bez nich by z webu odebral víc než tisíc názvů, aniž by to bylo na první pohled poznat. Ve workflow snímek obstará krok `Snímek rejstříku škol` skriptem `scripts/stahni-rejstrik.py`, který ověří otisk; ten samý skript s `--kontrola` řekne, jestli je snímek na místě.
+
+Cestu ke snímku smí přebít proměnná `MSMT_REJSTRIK`. Je to pro prostředí, kde velký snímek být nemůže: integrační testy míří na zkrácený `tests/fixtures/rssz-test.jsonld`. **V provozu ji nenastavuj** — snímek by se dal zaměnit za testovací a data by přišla o názvy. Nepoužitelný snímek úlohu zastaví i tehdy, když soubor existuje: kontroluje se, kolik oborů mimo katalog dodal, ne že je na disku.
 
 ## 4. Oznámení a schválení
 

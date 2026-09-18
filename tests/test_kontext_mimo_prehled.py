@@ -136,6 +136,33 @@ class TestKonfliktniKlice(ZakladKatalogu):
         # bez ohledu na pořadí. Pravidlo je jiné: pořadí souboru.
         self.assertEqual(self.mapa(self.dve_nabidky(["Zlín", "Adamov"]))["1_79-41-K/41"]["obec"], "Zlín")
 
+    def test_konflikt_jen_v_obci_se_hlasi(self):
+        """Stejný název, rozdílná obec. Mutace, která z porovnání vypustí obec,
+        musí spadnout — pozitivní test se shodným názvem ji jinak přežije."""
+        katalog = {"2026": [
+            {"redizo": "1", "kkov": "79-41-K/41", "id": "1_79-41-K/41_a",
+             "nazev_display": "Táž škola", "obec": "Brno", "obor": "Gymnázium"},
+            {"redizo": "1", "kkov": "79-41-K/41", "id": "1_79-41-K/41_b",
+             "nazev_display": "Táž škola", "obec": "Praha", "obor": "Gymnázium"},
+        ]}
+        with unittest.mock.patch("builtins.print") as vypis:
+            self.mapa(katalog)
+        hlaseni = " ".join(str(a) for volani in vypis.call_args_list for a in volani.args)
+        self.assertIn("víc nabídek s rozdílným popisem", hlaseni)
+
+    def test_konflikt_jen_v_oboru_se_hlasi(self):
+        """Stejný název i obec, rozdílný obor."""
+        katalog = {"2026": [
+            {"redizo": "1", "kkov": "79-41-K/41", "id": "1_79-41-K/41_a",
+             "nazev_display": "Táž škola", "obec": "Brno", "obor": "Gymnázium"},
+            {"redizo": "1", "kkov": "79-41-K/41", "id": "1_79-41-K/41_b",
+             "nazev_display": "Táž škola", "obec": "Brno", "obor": "Gymnázium se sportovní přípravou"},
+        ]}
+        with unittest.mock.patch("builtins.print") as vypis:
+            self.mapa(katalog)
+        hlaseni = " ".join(str(a) for volani in vypis.call_args_list for a in volani.args)
+        self.assertIn("víc nabídek s rozdílným popisem", hlaseni)
+
     def test_konflikt_se_hlasi(self):
         with unittest.mock.patch("builtins.print") as vypis:
             self.mapa(self.dve_nabidky(["Brno", "Praha"]))
@@ -202,6 +229,32 @@ class TestRejstrik(ZakladKatalogu):
         mapa = self.mapa(self.KATALOG, rejstrik=self.FIXTURE, povinny=True)
         self.assertEqual(mapa["600000002_41-51-E/01"]["skola"],
                          "Zkušební učiliště bez zkráceného názvu")
+
+    def test_prazdny_snimek_je_chyba(self):
+        """Existence souboru je slabší podmínka než jeho použitelnost.
+
+        `{"list": []}` je platný JSON se správnou strukturou, projde `exists()`
+        a nedodá ani jeden název — tedy přesně ten výsledek, kterému má pojistka
+        zabránit. Totéž pro záznam bez `redIzo`.
+        """
+        for obsah in ({"list": []}, {"list": [{}]}, {"list": [{"redIzo": "9", "skolyAZarizeni": []}]}):
+            with self.subTest(obsah=obsah), tempfile.TemporaryDirectory() as docasny:
+                snimek = Path(docasny) / "prazdny.jsonld"
+                snimek.write_text(json.dumps(obsah), encoding="utf-8")
+                with self.assertRaises(ValueError) as chyba:
+                    self.mapa(self.KATALOG, rejstrik=snimek, povinny=True)
+                self.assertIn("nedodal ani jeden obor", str(chyba.exception))
+
+    def test_poskozeny_snimek_ma_srozumitelnou_chybu(self):
+        for obsah in ("{tohle není json", json.dumps({"bez_klice_list": 1})):
+            with self.subTest(obsah=obsah[:20]), tempfile.TemporaryDirectory() as docasny:
+                snimek = Path(docasny) / "spatny.jsonld"
+                snimek.write_text(obsah, encoding="utf-8")
+                with self.assertRaises(ValueError) as chyba:
+                    self.mapa(self.KATALOG, rejstrik=snimek, povinny=True)
+                # Zpráva musí nést cestu a odkaz na postup, ne jen typ výjimky.
+                self.assertIn("nejde přečíst", str(chyba.exception))
+                self.assertIn("README", str(chyba.exception))
 
     def test_volajici_si_smi_rejstrik_odpustit_vyslovne(self):
         mapa = self.mapa(self.KATALOG, rejstrik=Path("/neexistuje/rssz.jsonld"), povinny=False)

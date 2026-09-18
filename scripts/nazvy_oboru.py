@@ -112,14 +112,27 @@ def nazvy_oboru(rejstrik: Path | None = None, povinny_rejstrik: bool = True) -> 
             )
         print(f"varování: {rejstrik.name} chybí, obory bez JPZ zůstanou bez názvu")
         return mapa
-    for zaznam in json.load(open(rejstrik, encoding="utf-8"))["list"]:
+
+    # Chyby čtení dostanou cestu a návod. Bez toho by `IsADirectoryError` nebo
+    # `KeyError: 'list'` posílaly člověka hledat příčinu do kódu.
+    try:
+        zaznamy = json.load(open(rejstrik, encoding="utf-8"))["list"]
+    except (OSError, ValueError, KeyError, TypeError) as chyba:
+        raise ValueError(
+            f"{rejstrik} nejde přečíst jako snímek rejstříku ({type(chyba).__name__}: {chyba}). "
+            f"Čekám JSON s polem `list`; postup stažení je v data/msmt_rejstrik/README.md "
+            f"a ověřit snímek umí `python3 scripts/stahni-rejstrik.py --kontrola`."
+        ) from chyba
+
+    pred = len(mapa)
+    for zaznam in zaznamy:
         redizo = str(zaznam.get("redIzo") or "")
         if not redizo:
             continue
         nazev = zaznam.get("zkracenyNazev") or zaznam.get("uplnyNazev")
         obec = (zaznam.get("adresa") or {}).get("obec")
-        for skola in zaznam.get("skolyAZarizeni", []):
-            for obor in skola.get("obory", []):
+        for skola in zaznam.get("skolyAZarizeni") or []:
+            for obor in skola.get("obory") or []:
                 kod = obor.get("kod")
                 if not kod:
                     continue
@@ -127,4 +140,19 @@ def nazvy_oboru(rejstrik: Path | None = None, povinny_rejstrik: bool = True) -> 
                     f"{redizo}_{kod}",
                     {"skola": nazev, "obec": obec, "obor": obor.get("nazev"), "id": None, "jpz": False},
                 )
+
+    # Existence souboru je slabší podmínka než jeho použitelnost: `{"list": []}`
+    # je platný JSON se správnou strukturou a projde, jen z něj nevznikne ani
+    # jeden název. Přesně to je výsledek, kterému má pojistka zabránit, takže se
+    # kontroluje, co rejstřík skutečně dodal, ne že soubor existuje.
+    dodano = len(mapa) - pred
+    if dodano == 0:
+        if povinny_rejstrik:
+            raise ValueError(
+                f"{rejstrik} nedodal ani jeden obor mimo katalog (záznamů v `list`: "
+                f"{len(zaznamy)}). Takový snímek je nepoužitelný a výstup by z webu "
+                f"odebral víc než tisíc názvů; ověř ho příkazem "
+                f"`python3 scripts/stahni-rejstrik.py --kontrola`."
+            )
+        print(f"varování: {rejstrik.name} nedodal žádný obor mimo katalog")
     return mapa

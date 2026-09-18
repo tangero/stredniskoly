@@ -20,8 +20,9 @@ Ani jedno nebylo špatně — měřila se jiná věc, a ani jedno to neuvádělo
 
 **Nesoulad s webem je nulový.** Pravidlo `nazvy_oboru.py` se srovnalo s `nazvyOboru()`
 v `src/lib/obor-profil-data.ts` a porovnání obou nad 2 841 klíči, které souběh používá
-a katalog vede, dalo 0 rozdílů. Zbylých 2 593 klíčů katalog nevede, takže web u nich
-popis nemá a srovnávat není co. Před opravou byl nesoulad 36.
+a katalog vede, dalo 0 rozdílů. Zbylých 2 593 klíčů katalog nevede, takže je nemá ani
+katalogová mapa `nazvyOboru()` a srovnávat není co; stránka oboru u nich popis bere
+z pole `mimo_prehled` v kontextu přihlášek. Před opravou byl nesoulad 36.
 
 **Obce nejsou jednosměrné zlepšení.** Šest změn: Ostrava → Opava u Soukromé obchodní
 akademie Opava (název školy mluví pro Opavu), ale také Beroun → Králův Dvůr u MŠ
@@ -34,7 +35,7 @@ abecedně podle `id`. U PORG, který má pod jedním klíčem osmileté gymnázi
 i Ostravě, by vyhrálo Brno jen proto, že jeho `id` je bez diakritiky (`8lete` < `8leté`).
 Proti dosavadnímu stavu by se tedy změnila obec bez dokladu, a navíc by vznikly tři nové
 rozdíly proti webu. Nejednoznačnost se místo toho hlásí při každém běhu generátoru:
-45 klíčů má v jednom ročníku víc nabídek s rozdílným popisem.
+45 dvojic ročník a klíč má víc nabídek s rozdílným popisem, tedy 43 klíčů roku 2026 a po jednom z let 2024 a 2025.
 
 ## Všech 36 případů
 
