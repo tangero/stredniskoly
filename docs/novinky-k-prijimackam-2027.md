@@ -770,12 +770,21 @@ Tři úpravy:
 - **poklid vrací spotřebu i rezervaci**, kterou zkouška naúčtovala, podle záznamů `rezervace_kvoty` té dávky. Zkouška nic neodeslala, takže ta spotřeba je fiktivní a do rozpočtu nepatří,
 - **`opravVadneLimityRozpoctu()`** smaže řádky, jejichž limit nesouhlasí s modulem nebo mají účel mimo `celkem` a `potvrzeni`. **Nespouští se automaticky** (`?oprav-rozpocet=1`): smazání zahodí i evidovanou spotřebu, takže kdyby to dělal cron po změně kvóty v prostředí, rozpočet by se uprostřed měsíce vynuloval a skutečná kvóta Resendu by se dala překročit.
 
-Všechny čtyři nálezy mají týž tvar: leží tam, **kde se dvě části kontraktu potkávají** — dotaz a jeho argumenty, cron a formulář, zkouška a stav, který měla nechat vzniknout sám, účtování kvóty a zkouška, která nic neodesílá. Při další práci na odběru se má hledat právě tam.
+### Pátý nález: po uzavření dávky ji z položek nedohledáš
+
+Oprava rozpočtu prozradila, že poklid zkoušky **nikdy nesmazal ani jednu dávku** a nevracel spotřebu: výpis pokaždé uváděl `davky: 0` a v rozpočtu se nasčítalo `spotrebovano: 6`. Příčina je v kontraktu samotném — `uzavriDavku(…, 'chyba')` nastaví položkám `davka_id = null`, protože se vracejí do fronty a k žádné dávce už nepatří. Po tomto kroku dávku z položek dohledat nelze.
+
+Poklid si proto vede identifikátory dávek, které zkouška vytvořila, zvlášť, a spojuje je s tím, co najde u položek. Bez toho zůstávala v tabulkách dávka, její rezervace i naúčtovaná spotřeba.
+
+Stojí za zaznamenání, že tohle není chyba v produkčním kódu: nulování `davka_id` je správné. Je to chyba v předpokladu, že stav se dá po skončení práce zrekonstruovat z dat — a ten předpoklad měl jen úklid zkoušky.
+
+Všech pět nálezů má týž tvar: leží tam, **kde se dvě části kontraktu potkávají** — dotaz a jeho argumenty, cron a formulář, zkouška a stav, který měla nechat vzniknout sám, účtování kvóty a zkouška, která nic neodesílá, úklid a přechod, který mu vzal vazbu na data. Při další práci na odběru se má hledat právě tam.
 
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.20 | Pátý nález (oddíl 21): poklid zkoušky nesmazal ani jednu dávku a nevracel spotřebu, protože uzavření dávky na `chyba` nastaví položkám `davka_id = null` a dávku pak z položek nedohledáš. Poklid si identifikátory dávek vede zvlášť. Není to chyba produkčního kódu, ale předpokladu, že stav jde zrekonstruovat z dat po skončení práce. |
 | 1.19 | Čtvrtý nález (oddíl 21): dávka uzavřená jako chybná se po hranici předání účtuje jako spotřebovaná kvóta, takže každý běh zkoušky ujídal z měsíční kapacity a řádek rozpočtu nikdy nebyl prázdný. Dávka zkoušky má jednu položku, poklid vrací fiktivní spotřebu i rezervaci a vadné řádky se opravují vědomou správcovskou akcí `?oprav-rozpocet=1`, nikdy ne automaticky. |
 | 1.18 | Třetí nález (oddíl 21): první, chybný běh kouřové zkoušky zanechal v produkčním rozpočtu měsíční strop 1000 místo 45 000 a řádek s neexistujícím účelem; `do nothing` by je nikdy nepřepsal. Zkouška teď limity porovnává s `limitRozpoctu()`, odmítá řádky s neznámým účelem a po sobě maže prázdné řádky rozpočtu, vyjma řádku s nulovým limitem, který je ruční pojistka. Zapsáno, že všechny tři nálezy leží tam, kde se dvě části kontraktu potkávají. Kouřová zkouška na produkci prošla celá, 28 kroků. |
 | 1.17 | Druhý nález kouřové zkoušky (oddíl 21): řádky rozpočtu zakládal jen cron, takže potvrzení z formuláře po půlnoci nemělo kam rezervovat a odešlo by až v 6:00 místo do minuty. Rezervace si řádek zajišťuje sama ve stejné transakci, `do nothing` drží pojistku ručně sníženého limitu, limity sjednoceny do `limitRozpoctu()`. |
