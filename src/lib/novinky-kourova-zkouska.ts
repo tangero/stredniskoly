@@ -110,7 +110,9 @@ export async function kourovaZkouska(kdy = new Date()): Promise<VysledekZkousky>
         zprava: 'novinky/potvrzeni',
         ucel: 'potvrzeni',
         otiskObsahu: 'kourova-zkouska',
-        max: 5,
+        // Jedna položka: dávka projde hranicí předání, takže se její kvóta naúčtuje
+        // jako spotřebovaná (konzervativní pravidlo kontraktu). Poklid ji pak vrátí.
+        max: 1,
         kdy,
         telo: (polozky) => JSON.stringify(polozky.map((p) => ({ id: p.id }))),
       }),
@@ -267,6 +269,35 @@ async function poklid(adresa: string, kdy: Date): Promise<Record<string, number>
     );
     const davky = [...new Set(polozky.rows.map((r) => r.davka_id).filter(Boolean))] as string[];
     for (const id of davky) {
+      // Zkouška nic neodeslala, takže spotřeba i rezervace, které naúčtovala,
+      // jsou fiktivní a vracejí se do rozpočtu. Bez toho by každý běh snižoval
+      // skutečnou kapacitu měsíce a řádek by nikdy nebyl prázdný.
+      const rez = await s.dotaz<{
+        obdobi: string;
+        ucel: string;
+        pocet: number;
+        volani_provedeno: boolean;
+        vyporadano: string | null;
+      }>(
+        `select obdobi, ucel, pocet, volani_provedeno, vyporadano
+           from rezervace_kvoty where davka_id = $1`,
+        [id],
+      );
+      for (const r of rez.rows) {
+        if (r.vyporadano === null) {
+          await s.dotaz(
+            `update rozpocet_emailu set rezervovano = greatest(0, rezervovano - $3)
+              where obdobi = $1 and ucel = $2`,
+            [r.obdobi, r.ucel, r.pocet],
+          );
+        } else if (r.volani_provedeno) {
+          await s.dotaz(
+            `update rozpocet_emailu set spotrebovano = greatest(0, spotrebovano - $3)
+              where obdobi = $1 and ucel = $2`,
+            [r.obdobi, r.ucel, r.pocet],
+          );
+        }
+      }
       await s.dotaz(`delete from rezervace_kvoty where davka_id = $1`, [id]);
       await s.dotaz(`delete from davka where id = $1`, [id]);
     }
@@ -292,4 +323,33 @@ async function poklid(adresa: string, kdy: Date): Promise<Record<string, number>
       rozpocty: rozpocty.rowCount,
     };
   });
+}
+
+/**
+ * Správcovská akce: smaže řádky rozpočtu, jejichž limit nesouhlasí s modulem,
+ * nebo které mají účel mimo `celkem` a `potvrzeni`. Řádek se zakládá jednou a
+ * `do nothing` ho nepřepíše, takže poškozený řádek jinak nejde opravit.
+ *
+ * **Nespouští se automaticky**, protože smazání zahodí i evidovanou spotřebu:
+ * kdyby to udělal cron po změně kvóty v prostředí, rozpočet by se uprostřed
+ * měsíce vynuloval a skutečná kvóta Resendu by se dala překročit. Volá se
+ * vědomě, `?oprav-rozpocet=1`, když je jasné, že spotřeba na řádku je fiktivní.
+ */
+export async function opravVadneLimityRozpoctu(): Promise<
+  Array<{ obdobi: string; ucel: string; limit_pocet: number; spotrebovano: number }>
+> {
+  const vadne = await dotaz<{
+    obdobi: string;
+    ucel: string;
+    limit_pocet: number;
+    spotrebovano: number;
+  }>(
+    `delete from rozpocet_emailu
+      where ucel not in ('celkem', 'potvrzeni')
+         or (ucel = 'celkem' and limit_pocet <> $1)
+         or (ucel = 'potvrzeni' and limit_pocet <> $2)
+      returning obdobi, ucel, limit_pocet, spotrebovano`,
+    [limitRozpoctu('celkem'), limitRozpoctu('potvrzeni')],
+  );
+  return vadne.rows;
 }

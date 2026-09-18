@@ -751,10 +751,33 @@ Zkouška sama řádky rozpočtu **schválně nezakládá**. Kdyby si je připrav
 
 Za pozornost stojí, že tenhle nález má stejný tvar jako první: obě chyby ležely v místě, kde se dvě části kontraktu potkávají (dotaz a jeho argumenty, cron a formulář), a obě byly neviditelné pro testy proti falešnému spojení i pro čtení dokumentu. Kouřová zkouška je našla v první minutě běhu.
 
+### Třetí nález: zkouška sama zanechala v rozpočtu špatný limit
+
+První, ještě chybný běh zkoušky si řádky rozpočtu zakládal sám — a se špatnými hodnotami: měsíční strop `1000` místo `45 000` a účel `sluzebni`, který v typu `UcelRozpoctu` vůbec není. Protože se řádek zakládá jednou a `do nothing` ho nikdy nepřepíše, **zůstal by ten limit v produkční tabulce do konce září** a nikdo by si ho nevšiml. Kdyby se odběr mezitím zapnul, strop by byl pětačtyřicetkrát nižší, než má být.
+
+Z toho plynou dvě pravidla, která zkouška teď vynucuje:
+
+1. **Limity se kontrolují proti modulu.** Každý existující řádek období, které zkouška používá, se porovná s `limitRozpoctu()`, a v rozpočtu nesmí ležet řádek s neznámým účelem. Hlídá to i budoucí případ, kdy někdo změní `RESEND_MESICNI_KVOTA` v prostředí a starý řádek zůstane.
+2. **Zkouška po sobě uklidí i řádky rozpočtu.** Prázdný řádek nedrží spotřebu ani rezervaci, takže se smazáním nic neztrácí a vznikne znovu se správným limitem. Bez toho by navíc příští běh nezkoušel to podstatné — že si rezervace řádek umí založit sama — protože by ho našel hotový. **Řádek s nulovým limitem se nemaže:** to je ruční pojistka „zastav rozesílku“ a ta musí přežít cokoli.
+
+### Čtvrtý nález: zkouška ujídala z měsíční kvóty
+
+Hned první běh opravené zkoušky ukázal další vrstvu. Dávka uzavřená jako chybná **se po překročení hranice předání účtuje jako spotřebovaná kvóta**, protože transakce B zapsala `volani_provedeno = true`. Pro produkci je to správné a konzervativní: jakmile volání mohlo dojít k Resendu, nesmí se ta kapacita tvářit jako volná. Pro zkoušku to ale znamenalo, že každý běh snížil skutečnou kapacitu měsíce, aniž cokoli odešlo — a řádek rozpočtu už nikdy nebyl prázdný, takže ho poklid nemohl smazat a vadný limit `1000` na něm přežíval.
+
+Tři úpravy:
+
+- **dávka má jednu položku** (`max: 1`), aby byl dopad nejmenší,
+- **poklid vrací spotřebu i rezervaci**, kterou zkouška naúčtovala, podle záznamů `rezervace_kvoty` té dávky. Zkouška nic neodeslala, takže ta spotřeba je fiktivní a do rozpočtu nepatří,
+- **`opravVadneLimityRozpoctu()`** smaže řádky, jejichž limit nesouhlasí s modulem nebo mají účel mimo `celkem` a `potvrzeni`. **Nespouští se automaticky** (`?oprav-rozpocet=1`): smazání zahodí i evidovanou spotřebu, takže kdyby to dělal cron po změně kvóty v prostředí, rozpočet by se uprostřed měsíce vynuloval a skutečná kvóta Resendu by se dala překročit.
+
+Všechny čtyři nálezy mají týž tvar: leží tam, **kde se dvě části kontraktu potkávají** — dotaz a jeho argumenty, cron a formulář, zkouška a stav, který měla nechat vzniknout sám, účtování kvóty a zkouška, která nic neodesílá. Při další práci na odběru se má hledat právě tam.
+
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.19 | Čtvrtý nález (oddíl 21): dávka uzavřená jako chybná se po hranici předání účtuje jako spotřebovaná kvóta, takže každý běh zkoušky ujídal z měsíční kapacity a řádek rozpočtu nikdy nebyl prázdný. Dávka zkoušky má jednu položku, poklid vrací fiktivní spotřebu i rezervaci a vadné řádky se opravují vědomou správcovskou akcí `?oprav-rozpocet=1`, nikdy ne automaticky. |
+| 1.18 | Třetí nález (oddíl 21): první, chybný běh kouřové zkoušky zanechal v produkčním rozpočtu měsíční strop 1000 místo 45 000 a řádek s neexistujícím účelem; `do nothing` by je nikdy nepřepsal. Zkouška teď limity porovnává s `limitRozpoctu()`, odmítá řádky s neznámým účelem a po sobě maže prázdné řádky rozpočtu, vyjma řádku s nulovým limitem, který je ruční pojistka. Zapsáno, že všechny tři nálezy leží tam, kde se dvě části kontraktu potkávají. Kouřová zkouška na produkci prošla celá, 28 kroků. |
 | 1.17 | Druhý nález kouřové zkoušky (oddíl 21): řádky rozpočtu zakládal jen cron, takže potvrzení z formuláře po půlnoci nemělo kam rezervovat a odešlo by až v 6:00 místo do minuty. Rezervace si řádek zajišťuje sama ve stejné transakci, `do nothing` drží pojistku ručně sníženého limitu, limity sjednoceny do `limitRozpoctu()`. |
 | 1.16 | Nasazení na produkci (oddíl 21): migrace proběhla, jedenáct tabulek, databáze jinak prázdná. První skutečné volání formuláře spadlo na `42P18`, protože počitadlo limitu předávalo dotazu parametr, který v jeho textu nebyl; opraveno. Doplněny dvě pojistky: test číslování parametrů a kouřová zkouška celé cesty proti skutečné databázi, která neposílá e-mail a po sobě uklidí. Zapsáno, že prošlý test proti falešnému spojení nedokazuje spustitelnost dotazu. |
 | 1.15 | Revize produktu (oddíl 20): jeden newsletter bez ročníku a bez segmentů, formulář jen e-mail a souhlas na třech místech. Zanikla zpráva o dalším kalendáři, tabulka `zprava_o_kalendari`, ročník a druh studia v odběru, kraj, segment u položky i nález P1-10. Termíny jednotné zkoušky jdou všem v jedné zprávě. Obsah je dvojí: termíny a zprávy o nových datech na webu; širší školství zamítnuto. Doplněna past s uvítáním po opakovaném přihlášení. |
