@@ -1,6 +1,6 @@
 # Stránka školy: struktura podle otázek rodiny
 
-Verze 1.5 · 17. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, revize dat a rozložení v oddílu 7, výsledná struktura v oddílu 8, předpoklady realizace v oddílu 9. Pojmy v textech stránky podle [slovníku pojmů](slovnik-pojmu.md).
+Verze 1.6 · 18. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, revize dat a rozložení v oddílu 7, výsledná struktura v oddílu 8, předpoklady realizace v oddílu 9. Pojmy v textech stránky podle [slovníku pojmů](slovnik-pojmu.md).
 
 Navazuje na [vrstvy stránky oboru](vrstvy-stranky-oboru-2027.md), podle kterých vznikla stránka oboru ve třech otázkách, a na schválené [grafy stránky školy a oboru](grafy-skoly-a-oboru-2027.md). Maturitní část se řídí [maturitními výsledky a kvalitou školy](maturitni-vysledky-a-kvalita-skoly-2027.md). Názvy ukazatelů drží [slovník](slovnik-ukazatelu.md), období [registr](../public/stav_datovych_sad.json), zdroje [soupis zdrojů](zdroje-dat.md).
 
@@ -105,7 +105,7 @@ Jediné slovo „velmi těžké“ za celou školu by lhalo dvěma oborům ze t�
 | Součet přihlášek a přihlášky na místo za školu | **zavrhnout** | sčítá různé konkurzy, P3 v grafech |
 | Tlačítko „Uložit mezi zvažované“ u každého oboru | **použít** | ukládá se nabídka, ne škola (grafy, oddíl 4.3) |
 | Nabídka oborů po letech (obor × rok) | **použít jako důkaz** | Technické lyceum je v datech přijímaček od roku 2025; souhrny 1. kola jsou za 2025 a 2026, katalog od 2024 |
-| Upozornění na dobíhající obor z rejstříku | **použít, když nastane** | „škola tento obor dobíhá“ je varování před podáním přihlášky; u Machara žádný |
+| Upozornění na dobíhající obor z rejstříku | **použít jen u nabídky, která v ročníku chybí** | není to varování před přihláškou: mezi vypsanými nabídkami je dobíhajících nula. Rozlišuje „obor se už nenabírá“ od „obor škola letos nevypsala“ (opraveno 17. 9. 2026, viz oddíl 10) |
 
 ## 4. Kolo 3: „Jak dobrá škola je“ bez známky
 
@@ -448,7 +448,7 @@ Při rozboru se našla i věcná chyba: úspěšnost je podíl úspěšných z *
 | S2 | Slovník ukazatelů: úspěšnost společné části, percentil z češtiny u maturity, podíl volby matematiky, zařazení proti skupině oborů, počet let nad skupinou | nezapsáno |
 | S3 | Slovník pojmů: maturanti, společná část maturity, skupina oborů, souběžní uchazeči, vzdušnou čarou; zákaz „kvalitní škola“ | nezapsáno |
 | S4 | Okolí: souběh po oborech a nejbližší školy stejné skupiny oborů | **hotovo 14. 9. 2026** výpočtem při vykreslení v `src/lib/skola-profil-data.ts` z `data/school_locations.json` a `public/soubeh_prihlasek_{rok}.json`; samostatný soubor nebyl potřeba, výpočet je pod milisekundu |
-| S5 | Dobíhající obory z rejstříku do katalogu | **výklad rozhodnut, role obrácena** (17. 9. 2026): měření proti 3 091 nabídkám 1. kola 2026 dalo **nulu** dobíhajících. Dřívějších 23 zásahů pocházelo z hrubého joinu na REDIZO a KKOV a **všech 23 je falešných** — dobíhá jiná forma nebo délka téhož oboru, ne ta nabízená; párovat se proto musí i forma a délka. Příznak není varování před přihláškou, ale rozlišení „obor se už nenabírá“ od „obor škola letos nevypsala“ u nabídky, která v ročníku chybí. Upozornění u vypsané nabídky se nezobrazuje, protože se netýká ani jedné. Zobrazení čeká na mřížku nabídky v čase (D4b). Doklad `docs/podklady/dobihajici-obory.json`, výpočet `scripts/dobihajici-obory.py`, rozbor [využití nepoužitých dat](navrh-vyuziti-nepouzitych-dat-2027.md) §2.2 |
+| S5 | Dobíhající obory z rejstříku do katalogu | **výklad rozhodnut, role obrácena** (17. 9. 2026): měření proti 3 091 nabídkám 1. kola 2026 dalo **nulu** dobíhajících. Dřívějších 23 zásahů pocházelo z hrubého joinu na REDIZO a KKOV a **všech 23 je falešných** — dobíhá jiná forma nebo délka téhož oboru, ne ta nabízená; párovat se proto musí i forma a délka. Příznak není varování před přihláškou, ale rozlišení „obor se už nenabírá“ od „obor škola letos nevypsala“ u nabídky, která v ročníku chybí. Upozornění u vypsané nabídky se nezobrazuje, protože se netýká ani jedné. **Zobrazeno od 18. 9. 2026** v bloku „Obory z dřívějších let“; mřížka nabídky v čase k tomu potřeba nebyla. Účinnost je zatím jedna nabídka: 404 z 602 dobíhajících oborů nese starý trojmístný kód, který katalog nepoužívá, a normalizovat ho nelze (u 343 škol běží starý kód jako dobíhající a nový jako aktivní). Doklad `docs/podklady/dobihajici-obory.json`, výpočet `scripts/dobihajici-obory.py`, rozbor [využití nepoužitých dat](navrh-vyuziti-nepouzitych-dat-2027.md) §2.2 |
 | S6 | Nahradit zvláštní podobu přehledu „V2“ pro školy s jedním oborem | **hotovo**: obě starší podoby přehledu odstraněny |
 | S7 | Zobrazení profilu InspIS s datem snímku a bez dnů otevřených dveří | **hotovo** |
 | S8 | Údaje z portálu pro školy rozdělené do oddílů podle otázek, se značkou původu a prázdným stavem | **hotovo** na stránce školy (`src/components/skola/ProfilSkoly.tsx`); přednost školného a podpory je v komponentě, přesun do datové vrstvy zůstává |

@@ -319,7 +319,7 @@ Výsledky **jednoho skutečného přijatého** s nejnižším výsledkem v dané
 ### Podlaha slabšího předmětu
 Nejnižší hodnota **slabšího z obou předmětů** mezi přijatými: pro každého přijatého se vezme menší ze dvojice čeština a matematika a z nich minimum. Pole `podlaha_slabsiho`, jednotka body 0 až 50.
 
-**K čemu je.** Říká, jak hluboko smí jít jeden předmět, když druhý vyjde. Měření na 2 757 oborech s aspoň deseti přijatými (1. kolo 2026) ukazuje plynulý přechod podle obtížnosti přijetí: medián podlahy je 23 bodů u oborů, kam je velmi těžké se dostat, 16 u těžkých, 13 u středně těžkých, 10 tam, kde se dostala většina, a 7 tam, kde kapacita nerozhodovala.
+**K čemu je.** Říká, jak hluboko smí jít jeden předmět, když druhý vyjde. Měření na 2 757 oborech s aspoň deseti přijatými (1. kolo 2026; doklad `docs/podklady/rozbor-skaly-a-predmetu.json`) ukazuje plynulý přechod podle obtížnosti přijetí: medián podlahy je 23 bodů u oborů, kam je velmi těžké se dostat, 16 u těžkých, 13 u středně těžkých, 10 tam, kde se dostala většina, a 7 tam, kde kapacita nerozhodovala.
 
 **Co neříká.** Také ji určuje jediný uchazeč, takže se mezi ročníky nemusí opakovat a **nepoužívá se k řazení**. Neříká, že s vyšší hodnotou je přijetí jisté: škola má i vlastní kritéria.
 
@@ -328,7 +328,7 @@ Kolik přijatých mělo mezi češtinou a matematikou rozdíl **aspoň 10 bodů*
 
 **Výpočet.** Podíl přijatých s `|čeština − matematika| ≥ 10` na škále 0 až 50 za předmět. Práh je v generátoru konstanta `NEVYROVNANY_ROZDIL`.
 
-**Proč je z trojice nejdůležitější.** Jako jediný z rozboru předmětů **má jmenovatel**, takže snese slovní výklad i srovnání. Měření 1. kola 2026: i na oborech, kam je velmi těžké se dostat, mělo takový rozdíl 23 % přijatých, u ostatních zhruba 37 %. Nevyrovnanost sama tedy překážkou není; překážkou je jeden opravdu slabý předmět.
+**Proč je z trojice nejdůležitější.** Jako jediný z rozboru předmětů **má jmenovatel**, takže snese slovní výklad i srovnání. Měření 1. kola 2026 (týž doklad): i na oborech, kam je velmi těžké se dostat, mělo takový rozdíl 23 % přijatých, u ostatních zhruba 37 %. Nevyrovnanost sama tedy překážkou není; překážkou je jeden opravdu slabý předmět.
 
 **Co neříká.** Nic o konkrétním uchazeči a nic o tom, že by škola nevyrovnané výsledky zvýhodňovala nebo znevýhodňovala. Zobrazuje se jen při aspoň 10 přijatých s výsledkem obou testů.
 

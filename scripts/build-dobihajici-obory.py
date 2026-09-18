@@ -38,6 +38,15 @@ _spec.loader.exec_module(_dob)
 LETA_Z_DELKY = {kod: roky for roky, kod in _dob.DELKA_Z_LET.items()}
 
 
+def pod_korenem(cesta: Path) -> str:
+    """Cesta vůči kořeni repozitáře; mimo něj se vrátí, jak byla zadána."""
+    cesta = cesta.resolve()
+    try:
+        return str(cesta.relative_to(KOREN))
+    except ValueError:
+        return str(cesta)
+
+
 def nejnovejsi_snimek() -> Path:
     """Vrátí nejnovější stažený snímek rejstříku.
 
@@ -80,7 +89,7 @@ def sestav(snimek: Path) -> dict[str, Any]:
     return {
         "meta": {
             "popis": "Obory, které škola podle rejstříku dokončuje se stávajícími žáky a nenabírá do nich.",
-            "snimek": str(snimek.relative_to(KOREN)),
+            "snimek": pod_korenem(snimek),
             "obdobi": snimek.stem.replace("rssz-", ""),
             "vytvoreno": date.today().isoformat(),
             "parovani": "REDIZO + KKOV + denní forma + délka studia; hrubý klíč REDIZO + KKOV má 100% chybovost",
@@ -103,7 +112,7 @@ def main() -> None:
     vystup = sestav(snimek)
     args.vystup.write_text(json.dumps(vystup, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     meta = vystup["meta"]
-    print(f"{args.vystup.relative_to(KOREN)}: {meta['z_toho_dennich']} denních oborů "
+    print(f"{pod_korenem(args.vystup)}: {meta['z_toho_dennich']} denních oborů "
           f"z {meta['dobihajicich_zaznamu']} dobíhajících záznamů, snímek {meta['obdobi']}")
 
 
