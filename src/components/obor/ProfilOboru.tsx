@@ -79,7 +79,15 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
   const pasma = data.pasma?.data;
   // CERMAT vydává data o uchazečích nejdřív předběžně, finální revizi až o rok
   // později. Dokud web ukazuje předběžný ročník, musí to být u čísel vidět.
-  const verzeUchazecu = data.verzeUchazecu?.startsWith('předběžná') ? ` Údaje jsou z ${data.verzeUchazecu}.` : '';
+  // Registr nese verzi jako přívlastek („předběžná, platné přihlášky ke dni 13. 5. 2026“),
+  // takže se nesmí dosadit do vazby, která žádá jiný pád. První část je přívlastek,
+  // zbytek za čárkou upřesnění; věta je proto skládaná, ne interpolovaná celá.
+  const verzeUchazecu = (() => {
+    const verze = data.verzeUchazecu;
+    if (!verze?.startsWith('předběžná')) return '';
+    const upresneni = verze.slice(verze.indexOf(',') + 1).trim();
+    return upresneni ? ` Data o uchazečích jsou předběžná: ${upresneni}.` : ' Data o uchazečích jsou předběžná.';
+  })();
   const dk = data.druheKolo;
   const dkVety = dk ? vetyDruhehoKola(dk) : null;
   const roky = [p && predchoziRok ? { rok: predchoziRok, r: p } : null, { rok, r }].filter((x): x is { rok: number; r: typeof r } => !!x);
