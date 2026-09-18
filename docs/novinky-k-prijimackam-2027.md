@@ -751,10 +751,22 @@ Zkouška sama řádky rozpočtu **schválně nezakládá**. Kdyby si je připrav
 
 Za pozornost stojí, že tenhle nález má stejný tvar jako první: obě chyby ležely v místě, kde se dvě části kontraktu potkávají (dotaz a jeho argumenty, cron a formulář), a obě byly neviditelné pro testy proti falešnému spojení i pro čtení dokumentu. Kouřová zkouška je našla v první minutě běhu.
 
+### Třetí nález: zkouška sama zanechala v rozpočtu špatný limit
+
+První, ještě chybný běh zkoušky si řádky rozpočtu zakládal sám — a se špatnými hodnotami: měsíční strop `1000` místo `45 000` a účel `sluzebni`, který v typu `UcelRozpoctu` vůbec není. Protože se řádek zakládá jednou a `do nothing` ho nikdy nepřepíše, **zůstal by ten limit v produkční tabulce do konce září** a nikdo by si ho nevšiml. Kdyby se odběr mezitím zapnul, strop by byl pětačtyřicetkrát nižší, než má být.
+
+Z toho plynou dvě pravidla, která zkouška teď vynucuje:
+
+1. **Limity se kontrolují proti modulu.** Každý existující řádek období, které zkouška používá, se porovná s `limitRozpoctu()`, a v rozpočtu nesmí ležet řádek s neznámým účelem. Hlídá to i budoucí případ, kdy někdo změní `RESEND_MESICNI_KVOTA` v prostředí a starý řádek zůstane.
+2. **Zkouška po sobě uklidí i řádky rozpočtu.** Prázdný řádek nedrží spotřebu ani rezervaci, takže se smazáním nic neztrácí a vznikne znovu se správným limitem. Bez toho by navíc příští běh nezkoušel to podstatné — že si rezervace řádek umí založit sama — protože by ho našel hotový. **Řádek s nulovým limitem se nemaže:** to je ruční pojistka „zastav rozesílku“ a ta musí přežít cokoli.
+
+Všechny tři nálezy mají týž tvar: leží tam, **kde se dvě části kontraktu potkávají** — dotaz a jeho argumenty, cron a formulář, zkouška a stav, který měla nechat vzniknout sám. Při další práci na odběru se má hledat právě tam.
+
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.18 | Třetí nález (oddíl 21): první, chybný běh kouřové zkoušky zanechal v produkčním rozpočtu měsíční strop 1000 místo 45 000 a řádek s neexistujícím účelem; `do nothing` by je nikdy nepřepsal. Zkouška teď limity porovnává s `limitRozpoctu()`, odmítá řádky s neznámým účelem a po sobě maže prázdné řádky rozpočtu, vyjma řádku s nulovým limitem, který je ruční pojistka. Zapsáno, že všechny tři nálezy leží tam, kde se dvě části kontraktu potkávají. Kouřová zkouška na produkci prošla celá, 28 kroků. |
 | 1.17 | Druhý nález kouřové zkoušky (oddíl 21): řádky rozpočtu zakládal jen cron, takže potvrzení z formuláře po půlnoci nemělo kam rezervovat a odešlo by až v 6:00 místo do minuty. Rezervace si řádek zajišťuje sama ve stejné transakci, `do nothing` drží pojistku ručně sníženého limitu, limity sjednoceny do `limitRozpoctu()`. |
 | 1.16 | Nasazení na produkci (oddíl 21): migrace proběhla, jedenáct tabulek, databáze jinak prázdná. První skutečné volání formuláře spadlo na `42P18`, protože počitadlo limitu předávalo dotazu parametr, který v jeho textu nebyl; opraveno. Doplněny dvě pojistky: test číslování parametrů a kouřová zkouška celé cesty proti skutečné databázi, která neposílá e-mail a po sobě uklidí. Zapsáno, že prošlý test proti falešnému spojení nedokazuje spustitelnost dotazu. |
 | 1.15 | Revize produktu (oddíl 20): jeden newsletter bez ročníku a bez segmentů, formulář jen e-mail a souhlas na třech místech. Zanikla zpráva o dalším kalendáři, tabulka `zprava_o_kalendari`, ročník a druh studia v odběru, kraj, segment u položky i nález P1-10. Termíny jednotné zkoušky jdou všem v jedné zprávě. Obsah je dvojí: termíny a zprávy o nových datech na webu; širší školství zamítnuto. Doplněna past s uvítáním po opakovaném přihlášení. |
