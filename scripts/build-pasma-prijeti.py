@@ -41,6 +41,7 @@ MIN_V_PASMU = 5          # pásmo s méně uchazeči se slučuje do sousedního
 MIN_PRIJATYCH = 10       # pod tímto počtem nemá hranice smysl
 MIN_ODMITNUTYCH = 5      # bez odmítnutých není co ohraničovat
 OKOLI_HRANICE = 5        # body, ve kterých se měří hustota u hranice
+NEVYROVNANY_ROZDIL = 10  # rozdíl mezi předměty, od kterého je výsledek nevyrovnaný
 
 # Skupiny oborů, kde o přijetí rozhoduje talentová zkouška: umělecké obory
 # skupiny 82 a gymnázia se sportovní přípravou 79-42. Míra "rozhodl test" je
@@ -68,7 +69,7 @@ def nacti_uchazece() -> tuple[dict[str, dict[str, list[float]]], list[float]]:
     ix = {n: i for i, n in enumerate(next(it))}
 
     obory: dict[str, dict[str, list[float]]] = collections.defaultdict(
-        lambda: {"prijati": [], "nevesli_se": [], "nesplnili": [], "vyssi_priorita": []}
+        lambda: {"prijati": [], "nevesli_se": [], "nesplnili": [], "vyssi_priorita": [], "prijati_predmety": []}
     )
     uchazeci: list[float] = []
     for radek in it:
@@ -77,6 +78,10 @@ def nacti_uchazece() -> tuple[dict[str, dict[str, list[float]]], list[float]]:
             continue
         body = float(skor) / 2  # procentní skór 0–200 na škálu 0–100
         uchazeci.append(body)
+        # Předměty zvlášť na škále 0–50; chybí-li jeden, dvojice se nesbírá,
+        # protože rozbor vyrovnanosti potřebuje oba.
+        cj, ma = radek[ix["c_procentni_skor"]], radek[ix["m_procentni_skor"]]
+        predmety = (float(cj) / 2, float(ma) / 2) if cj is not None and ma is not None else None
         for k in range(1, 6):
             redizo = radek[ix[f"ss{k}_redizo"]]
             kkov = radek[ix[f"ss{k}_kkov"]]
@@ -86,6 +91,8 @@ def nacti_uchazece() -> tuple[dict[str, dict[str, list[float]]], list[float]]:
             duvod = radek[ix[f"ss{k}_duvod_neprijeti"]]
             if prijat(radek[ix[f"ss{k}_prijat"]]):
                 o["prijati"].append(body)
+                if predmety is not None:
+                    o["prijati_predmety"].append(predmety)
             elif duvod == "pro_nedostacujici_kapacitu":
                 o["nevesli_se"].append(body)
             elif duvod == "pro_nesplneni_podminek":
@@ -131,6 +138,40 @@ def pasma(prijati: list[float], nevesli: list[float]) -> list[dict]:
                             "soutezilo": a["soutezilo"] + b["soutezilo"]}
         radky.pop(max(i, j))
     return radky
+
+
+def rozbor_predmetu(dvojice: list[tuple[float, float]]) -> dict:
+    """Dá se slabší předmět dohnat tím druhým? Rozbor výsledků přijatých po předmětech.
+
+    Vrací tři věci, každou s jiným charakterem:
+
+    - ``nejslabsi_cj`` a ``nejslabsi_ma``: **dva skuteční přijatí**, každý s oběma
+      svými výsledky. Není to dvojice minim složená ze dvou lidí; každý záznam
+      patří jednomu uchazeči, takže popisuje kombinaci, která opravdu nastala.
+    - ``podlaha_slabsiho``: nejnižší hodnota slabšího z obou předmětů mezi
+      přijatými. Také ji určuje jediný uchazeč.
+    - ``nevyrovnanych`` a ``nevyrovnanych_z``: kolik přijatých mělo mezi předměty
+      rozdíl aspoň ``NEVYROVNANY_ROZDIL`` bodů. Jediný údaj z téhle trojice, který
+      má jmenovatel, a proto jediný, který snese slovní výklad a srovnávání.
+
+    Args:
+        dvojice: Výsledky přijatých jako (čeština, matematika) na škále 0–50.
+
+    Returns:
+        Slovník s rozborem; prázdný, když dvojic je málo (práh MIN_PRIJATYCH).
+    """
+    if len(dvojice) < MIN_PRIJATYCH:
+        return {}
+    nejslabsi_cj = min(dvojice, key=lambda d: (d[0], d[1]))
+    nejslabsi_ma = min(dvojice, key=lambda d: (d[1], d[0]))
+    return {
+        "predmety_z": len(dvojice),
+        "nejslabsi_cj": {"cj": round(nejslabsi_cj[0], 1), "ma": round(nejslabsi_cj[1], 1)},
+        "nejslabsi_ma": {"cj": round(nejslabsi_ma[0], 1), "ma": round(nejslabsi_ma[1], 1)},
+        "podlaha_slabsiho": round(min(min(c, m) for c, m in dvojice), 1),
+        "nevyrovnanych": sum(1 for c, m in dvojice if abs(c - m) >= NEVYROVNANY_ROZDIL),
+        "nevyrovnanych_z": len(dvojice),
+    }
 
 
 def rozhodl_test(prijati: list[float], nevesli: list[float]) -> float:
@@ -245,6 +286,8 @@ def main() -> None:
                if len(prijati) >= MIN_PRIJATYCH else {}),
             "talentova_zkouska": klic.split("_")[1].startswith(TALENTOVE_SKUPINY),
             "typ": typy.get(klic),
+            # Rozbor po předmětech: jde slabší předmět dohnat tím druhým?
+            **rozbor_predmetu(o["prijati_predmety"]),
         }
 
         if nevesli:
@@ -284,6 +327,12 @@ def main() -> None:
         "zdroj": ZDROJ.name,
         "uroven": "REDIZO_KKOV (bez zaměření), jen obory s povinnou jednotnou zkouškou",
         "skala": "body 0–100, procentní skór CERMAT dělený dvěma",
+        # Kolik bodů měl prostřední uchazeč v celé zemi. Bez tohoto čísla se
+        # bodové výsledky dvou ročníků nedají poctivě postavit vedle sebe:
+        # mezi 2025 a 2026 se posunuly o celostátní rozdíl, tedy obtížností
+        # testu, ne nároky škol (slovník ukazatelů, Percentil nejnižšího přijatého).
+        "celostatni_median_uchazecu": round(statistics.median(rozdeleni), 1) if rozdeleni else None,
+        "celostatne_uchazecu": len(rozdeleni),
         "sirka_pasma": SIRKA_PASMA,
         "prahy": {
             "min_soutezicich_pro_pasma": MIN_SOUTEZICICH,

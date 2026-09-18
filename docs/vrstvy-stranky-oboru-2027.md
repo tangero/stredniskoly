@@ -1,6 +1,6 @@
 # Stránka oboru: vrstvy podle otázek uchazeče
 
-Verze 1.4 · 13. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, čtyři revize po zpětné vazbě v oddílu 7, výsledná podoba v oddílu 8. Pojmy v textech stránky podle [slovníku pojmů](slovnik-pojmu.md).
+Verze 1.7 · 18. 9. 2026 · Návrh k rozhodnutí. Deník pěti kol, čtyři revize po zpětné vazbě v oddílu 7, výsledná podoba v oddílu 8. Pojmy v textech stránky podle [slovníku pojmů](slovnik-pojmu.md).
 
 Navazuje na schválený dokument [Grafy na stránce školy a oboru](grafy-skoly-a-oboru-2027.md), který určuje, **jaké grafy máme a jak se kreslí**. Tento dokument určuje, **v jakém pořadí a v jaké podobě je stránka nabídne**, aby odpověděla na tři otázky:
 
@@ -301,6 +301,22 @@ Oprava: odpověď 2 říká opak a je to užitečná informace, protože o prior
 
 ## 8. Výsledná podoba
 
+**Doplněno 18. 9. 2026: nad otázku 1 přibyla sekce „S kolika body se sem lidé dostali“.** Rozhodl o ní zadavatel s odůvodněním, že podle bodů se řada rodin rozhoduje a čísla byla zatím schovaná v rozbalovacím důkazu a ve větě uvnitř otázky 3. Sekce nese tři velká čísla za zobrazený ročník (nejnižší přijatý s percentilem, prostřední výsledek přijatých, průměr přijatých s rozpadem na češtinu a matematiku) a pod nimi **dva ročníky vedle sebe, u každého s celostátním mediánem uchazečů**.
+
+Tři rozhodnutí, která k tomu patří:
+
+1. **Nejmenuje se „body potřebné pro přijetí“.** Slovník ukazatelů u nejnižšího přijatého říká: „Není to hranice přijetí.“ Název sekce i popisky proto mluví o tom, s čím se někdo dostal, ne o tom, co je potřeba.
+2. **Body po předmětech jsou průměr přijatých, ne hranice.** Minimum po předmětech projekt zamítl, protože každé takové číslo určuje jediný uchazeč a dvě „nezávislá“ minima mohou pocházet od dvou různých lidí ([využití nepoužitých dat](navrh-vyuziti-nepouzitych-dat-2027.md), D1).
+3. **Dva ročníky se ukazují s celostátním posunem.** Samotná dvojice bodových čísel by tvrdila, že se změnily nároky školy; mezi roky 2025 a 2026 se ale posunula celá země o +3 body kvůli obtížnosti testu. Proto je u každého roku i výsledek prostředního uchazeče v celé zemi a věta, že rozdíl oboru se porovnává s tímto posunem, ne s nulou.
+
+**Doplněno 18. 9. 2026: blok „Dá se slabší předmět dohnat tím druhým?“.** Odpovídá na otázku, kterou nic jiného na stránce neřeší: když mi nejde matematika, doženu to češtinou? Nese tři údaje — podlahu slabšího předmětu, dva skutečné přijaté s nejslabší češtinou a s nejslabší matematikou (oba vždy s oběma svými výsledky, a je-li to týž člověk, řekne se to jednou větou) a počet nevyrovnaných přijatých se jmenovatelem.
+
+Slovní výklad se **odvozuje z naměřené podlahy**, ne z tvrzení o typu školy: nad polovinou bodů „výrazně slabý předmět se tu nedožene“, pod 14 body „i s jedním slabým předmětem se sem někdo dostal“. Měření na 2 757 oborech (týž doklad) ukázalo, že podlaha roste s obtížností plynule (medián 23 bodů u velmi těžkých oborů proti 7 tam, kde kapacita nerozhodovala), ale že **nevyrovnanost sama překážkou není**: i na nejtěžších oborech mělo rozdíl aspoň deset bodů 23 % přijatých. Věta „na dobrém gymnáziu se to nedožene“ by proto byla přísnější než data; překážkou je jeden opravdu slabý předmět, ne nevyrovnanost.
+
+První dva údaje popisují jednotlivce, takže se u nich na stránce výslovně říká, že se příští rok nemusí opakovat a že se podle nich obory neřadí.
+
+**Zamítnuto ve stejné dávce: sedmistupňová škála obtížnosti.** Změřeno na 1 442 nabídkách s oběma ročníky a aspoň deseti soutěžícími: při dnešních pěti stupních zůstane zařazení mezi roky stejné u 53,4 % nabídek, při sedmi jen u 36,4 %. Doklad `docs/podklady/rozbor-skaly-a-predmetu.json`, přepočítá `python3 scripts/rozbor-skaly-a-predmetu.py`. Jemnější škála by tedy u dvou třetin oborů přehodila nálepku rok co rok, což je pravý opak stálosti, kvůli které sekce vznikla. Zůstává pětistupňová škála s doloženým výpočtem.
+
 ```
 ┌───────────────────────────────────────────────┐
 │ Gymnázium J. S. Machara · osmileté gymnázium  │
@@ -372,6 +388,9 @@ Prošel jsem oddíl 3 soupisu zdrojů; rozhodnutí pro tuto stránku:
 
 | Verze | Změna |
 |---|---|
+| 1.7 | Čísla o škále přepočítána po změně párování ročníků z PR #97 (1 442 nabídek, 53,4 % proti 36,4 %) a obě měření doložena skriptem `scripts/rozbor-skaly-a-predmetu.py`; dřív ležela jen v jednorázovém výpočtu mimo repozitář. |
+| 1.6 | Do sekce s body přidán blok **Dá se slabší předmět dohnat tím druhým?**: podlaha slabšího předmětu, dva skuteční přijatí s oběma výsledky a počet nevyrovnaných se jmenovatelem. Slovní výklad se odvozuje z naměřené podlahy. Doloženo, že nevyrovnanost sama překážkou není (23 % přijatých i na nejtěžších oborech), překážkou je jeden opravdu slabý předmět. |
+| 1.5 | Nad otázku 1 přidána sekce **S kolika body se sem lidé dostali** (rozhodnutí zadavatele 18. 9. 2026): tři velká čísla za zobrazený ročník a dva ročníky vedle sebe, u každého s celostátním mediánem uchazečů, aby dvojice bodů netvrdila změnu nároků školy tam, kde se posunula obtížnost testu. Sedmistupňová škála obtížnosti zamítnuta měřením: zařazení by mezi roky vydrželo jen u 36,3 % nabídek proti 52,8 % u dnešních pěti stupňů. |
 | 1.4 | Čtvrtá revize: pořadí v kraji podle zájmu a podle výsledků přijatých, práh 10 nabídek, bez pořadí podle obtížnosti. |
 | 1.3 | Třetí revize: „soutěžící uchazeči“ s vysvětlením při prvním výskytu v bloku, slovník pojmů. |
 | 1.2 | Druhá revize: „nesplnili podmínky“ vysvětleno podle metodiky MŠMT a nahrazeno „nedosáhli požadavku školy“ s odvozenou hranicí úspěšnosti; přidán výsledek uchazečů (sem, výš, níž, nikam) a obory výš a níž na přihlášce s obtížností přijetí. |

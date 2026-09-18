@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { ProfilOboruData, PoradiVKraji } from '@/lib/obor-profil-data';
+import { MIN_PRIJATYCH_PRO_HRANICI } from '@/lib/pasma-prijeti';
 import { vetyDruhehoKola, VYSVETLENI_DRUHEHO_KOLA } from '@/lib/druhe-kolo-vyklad';
 import {
   ZARAZENI_POPISEK, cislo, popisekObtiznosti, slovniPodil, vKraji, soutezicichUchazecu, textPoradi, vetaPozadavku, zOd, zminitPozadavek,
@@ -60,6 +61,145 @@ function Zdroj({ children }: { children: ReactNode }) {
   return <p className="text-[13px] leading-relaxed text-slate-500">{children}</p>;
 }
 
+/**
+ * Slovní výklad rozboru předmětů. Odvozuje se z naměřené podlahy slabšího
+ * předmětu, ne z napevno napsaného tvrzení o typu školy.
+ *
+ * Měření na 2 757 oborech s aspoň deseti přijatými (1. kolo 2026): u oborů,
+ * kam je velmi těžké se dostat, je medián podlahy 23 bodů z 50, u oborů, kde
+ * kapacita nerozhodovala, 7. Rozdíl aspoň deset bodů mezi předměty mělo
+ * i na nejtěžších oborech 23 % přijatých, takže nevyrovnanost sama o sobě
+ * překážka není; překážkou je jeden opravdu slabý předmět.
+ */
+function vykladPredmetu(podlaha: number, nevyrovnanych: number, z: number): string {
+  const podilNevyrovnanych = z > 0 ? nevyrovnanych / z : 0;
+  const zaklad = podlaha >= 25
+    ? 'Výrazně slabý předmět se tu tím druhým nedožene: ani jeden z přijatých neměl ve slabším předmětu míň než polovinu bodů.'
+    : podlaha <= 14
+      ? 'I s jedním slabým předmětem se sem někdo dostal, když ho vyvážil tím druhým.'
+      : 'Slabší předmět jde částečně dohnat tím druhým, ale úplný propadák mezi přijatými není.';
+  const dovetek = podilNevyrovnanych >= 0.25
+    ? ' Nevyrovnané výsledky tu nejsou výjimkou.'
+    : podilNevyrovnanych <= 0.1
+      ? ' Přijatí tu mají oba předměty spíš vyrovnané.'
+      : '';
+  return zaklad + dovetek;
+}
+
+/** Body bez zbytečné desetinné nuly: 30 místo 30,0, ale 32,5 zůstane. */
+function body(n: number): string {
+  return n.toLocaleString('cs-CZ', { maximumFractionDigits: 1 });
+}
+
+/** Jedno velké číslo s popiskem; bez hodnoty se nevykreslí. */
+function VelkeCislo({ hodnota, jednotka, popisek, detail }: { hodnota: number | undefined; jednotka: string; popisek: string; detail?: ReactNode }) {
+  if (hodnota === undefined) return null;
+  return (
+    <div className="rounded-2xl bg-white p-5 shadow-[0_1px_0_#dbe3ec,0_12px_32px_-24px_rgba(22,50,92,0.35)]">
+      <p className="text-[38px] font-bold leading-none text-[#16325c]">{cislo(hodnota)}<span className="ml-1 text-[18px] font-semibold text-slate-500">{jednotka}</span></p>
+      <p className="mt-2 text-[15px] font-semibold text-[#16325c]">{popisek}</p>
+      {detail && <p className="mt-1 text-[14px] leading-relaxed text-slate-600">{detail}</p>}
+    </div>
+  );
+}
+
+/**
+ * S kolika body se na obor lidé dostali, a jak to vypadalo o rok dřív.
+ *
+ * Tři pravidla, bez kterých se sekce nesmí zobrazit:
+ *
+ * 1. **Není to hranice přijetí.** Nejnižší přijatý je dolní mez toho, co
+ *    stačilo; škola má vlastní kritéria, která data neznají (slovník
+ *    ukazatelů, *Nejnižší výsledek JPZ mezi přijatými*).
+ * 2. **Body se mezi ročníky nesrovnávají.** Proto je u každého roku
+ *    celostátní medián uchazečů: mezi 2025 a 2026 se zvedl ze 46 na 49 bodů,
+ *    takže posun u oboru je z větší části obtížnost testu, ne nároky školy.
+ * 3. **Prahy zobrazení.** Nejnižší a prostřední výsledek se ukazují jen při
+ *    aspoň deseti přijatých; pod tím je to údaj o jednotlivci.
+ */
+function BodyKPrijeti({ data, verzeUchazecu }: { data: ProfilOboruData; verzeUchazecu: string }) {
+  const s = data.srovnaniRocniku;
+  if (!s) return null;
+  const r = data.aktualni;
+  const dost = s.data.prijatych >= MIN_PRIJATYCH_PRO_HRANICI;
+  const dostDriv = s.predchozi.prijatych >= MIN_PRIJATYCH_PRO_HRANICI;
+  const posunZeme = s.celostatniMedian !== null && s.celostatniMedianPredchozi !== null
+    ? s.celostatniMedian - s.celostatniMedianPredchozi : null;
+
+  return (
+    <section id="body" className="scroll-mt-20 border-b border-slate-200 py-10">
+      <div className="mb-6 flex flex-wrap items-baseline justify-between gap-3">
+        <h2 className="text-2xl font-bold text-[#16325c] md:text-[28px]">S kolika body se sem lidé dostali</h2>
+        <span className="rounded-full border border-slate-300 px-3 py-0.5 text-[13px] font-semibold text-slate-500">1. kolo {s.rok}</span>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {dost && <VelkeCislo hodnota={s.data.min_prijaty} jednotka="bodů" popisek="Nejníž, s čím se sem někdo dostal"
+          detail={<>Stejně nebo míň mělo {Math.round(s.data.min_prijaty_percentil)} ze 100 uchazečů v celé zemi. Není to hranice přijetí: škola má i vlastní kritéria.</>} />}
+        {dost && <VelkeCislo hodnota={s.data.median_prijatych} jednotka="bodů" popisek="Polovina přijatých měla tolik nebo míň" />}
+        <VelkeCislo hodnota={r.cj_ma_prijati} jednotka="bodů" popisek="Průměr přijatých"
+          detail={r.cj_prijati !== undefined && r.ma_prijati !== undefined
+            ? <>Čeština {cislo(r.cj_prijati, 1)} a matematika {cislo(r.ma_prijati, 1)}, každý test z 50.</>
+            : undefined} />
+      </div>
+
+      {s.data.podlaha_slabsiho !== undefined && s.data.nejslabsi_cj && s.data.nejslabsi_ma && (
+        <div className="mt-6 rounded-2xl bg-white p-6 shadow-[0_1px_0_#dbe3ec,0_12px_32px_-24px_rgba(22,50,92,0.35)]">
+          <h3 className="text-[19px] font-bold text-[#16325c]">Dá se slabší předmět dohnat tím druhým?</h3>
+          <p className="mt-2 max-w-[70ch] text-[17px] leading-relaxed text-slate-800">
+            Ve slabším předmětu neměl nikdo z přijatých míň než <b>{body(s.data.podlaha_slabsiho)} z 50</b>.
+            {' '}{vykladPredmetu(s.data.podlaha_slabsiho, s.data.nevyrovnanych ?? 0, s.data.nevyrovnanych_z ?? 0)}
+          </p>
+          <ul className="mt-3 space-y-1.5 text-[15px] text-slate-700">
+            {s.data.nejslabsi_cj.cj === s.data.nejslabsi_ma.cj && s.data.nejslabsi_cj.ma === s.data.nejslabsi_ma.ma ? (
+              <li>Nejslabší v obou předmětech byl <b>týž přijatý</b>: čeština {body(s.data.nejslabsi_cj.cj)}, matematika {body(s.data.nejslabsi_cj.ma)}.</li>
+            ) : (
+              <>
+                <li>Přijatý s <b>nejslabší češtinou</b> měl {body(s.data.nejslabsi_cj.cj)} z češtiny a {body(s.data.nejslabsi_cj.ma)} z matematiky.</li>
+                <li>Přijatý s <b>nejslabší matematikou</b> měl {body(s.data.nejslabsi_ma.ma)} z matematiky a {body(s.data.nejslabsi_ma.cj)} z češtiny.</li>
+              </>
+            )}
+            {s.data.nevyrovnanych !== undefined && s.data.nevyrovnanych_z !== undefined && (
+              <li>Rozdíl mezi předměty aspoň 10 bodů: <b>{cislo(s.data.nevyrovnanych)} z {cislo(s.data.nevyrovnanych_z)}</b> přijatých.</li>
+            )}
+          </ul>
+          <p className="mt-3 text-[13px] leading-relaxed text-slate-500">
+            Řádky o nejslabších výsledcích popisují jednotlivé přijaté, takže se příští rok nemusí opakovat; srovnávat obory podle nich nelze. Poslední řádek má jmenovatel a je z něj vidět, jak časté nevyrovnané výsledky mezi přijatými jsou. Není to šance konkrétního uchazeče.
+          </p>
+        </div>
+      )}
+
+      <div className="mt-6 grid gap-4 lg:grid-cols-[minmax(0,3fr)_minmax(0,4fr)]">
+        <div className="grid grid-cols-2 gap-3">
+          {[[s.predchoziRok, s.predchozi, s.celostatniMedianPredchozi, dostDriv] as const,
+            [s.rok, s.data, s.celostatniMedian, dost] as const].map(([rok, z, median, ukaz]) => (
+            <div key={rok} className="rounded-2xl border border-slate-200 bg-white p-4">
+              <p className="text-[13px] font-semibold uppercase tracking-wide text-slate-500">1. kolo {rok}</p>
+              <p className="mt-1 text-[30px] font-bold leading-none text-[#16325c]">
+                {ukaz && z.min_prijaty !== undefined ? <>{cislo(z.min_prijaty)}<span className="ml-1 text-[15px] font-semibold text-slate-500">bodů</span></> : <span className="text-[18px] text-slate-400">bez údaje</span>}
+              </p>
+              <p className="mt-1 text-[14px] text-slate-600">nejníž, s čím se sem někdo dostal</p>
+              {median !== null && <p className="mt-2 text-[14px] text-slate-600">celá země: prostřední uchazeč <b>{cislo(median)}</b></p>}
+            </div>
+          ))}
+        </div>
+        <div className="space-y-2 self-center">
+          <p className="text-[17px] leading-relaxed text-slate-800">
+            {posunZeme !== null && Math.abs(posunZeme) >= 1
+              ? <>Mezi roky {s.predchoziRok} a {s.rok} se posunula celá země o {cislo(Math.abs(posunZeme))} {Math.abs(posunZeme) < 2 ? 'bod' : Math.abs(posunZeme) < 5 ? 'body' : 'bodů'} {posunZeme > 0 ? 'nahoru' : 'dolů'}, protože byl jinak těžký test. Rozdíl u tohoto oboru proto porovnávejte s tímto posunem, ne s nulou.</>
+              : <>Body se mezi ročníky nesrovnávají přímo: posun dělá obtížnost testu, ne nároky školy. Proto je u každého roku i výsledek prostředního uchazeče v celé zemi.</>}
+          </p>
+          {s.data.talentova_zkouska && <p className="text-[15px] text-slate-700">Obor má i talentovou zkoušku, takže jednotná zkouška o přijetí nerozhodovala sama.</p>}
+        </div>
+      </div>
+
+      <div className="mt-4">
+        <Zdroj>Data o uchazečích 1. kola {s.rok} a {s.predchoziRok}, CERMAT; průměr přijatých ze souhrnů za tuto nabídku. Nejnižší a prostřední výsledek platí za obor školy bez zaměření a jen při aspoň {MIN_PRIJATYCH_PRO_HRANICI} přijatých. Průměr za předmět se počítá z přijatých, kteří ten test psali, takže se oba nemusí přesně sečíst na celkový průměr. Není to předpověď pro příští ročník ani šance konkrétního uchazeče.{verzeUchazecu}</Zdroj>
+      </div>
+    </section>
+  );
+}
+
 function VetaPoradi({ p, rok, predchoziRok, podle, skupina, kraj, vysvetleni }: { p: PoradiVKraji; rok: number; predchoziRok: number | null; podle: string; skupina: string; kraj: string; vysvetleni: string }) {
   const drive = p.predchozi && predchoziRok
     ? p.predchozi.od === p.poradi.od && p.predchozi.do === p.poradi.do ? `, v roce ${predchoziRok} také ${textPoradi(p.predchozi)}` : `, v roce ${predchoziRok} ${textPoradi(p.predchozi)} ${zOd(p.predchozi.z)} ${cislo(p.predchozi.z)}`
@@ -106,6 +246,7 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
     <div className="bg-[#f4f7fb]">
       <nav aria-label="Otázky na stránce" className="sticky top-0 z-20 border-b border-slate-200 bg-[#f4f7fb]/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-4 py-2 text-[15px] font-semibold [scrollbar-width:none]">
+          {data.srovnaniRocniku && <a href="#body" className="whitespace-nowrap rounded-full px-3 py-1.5 text-slate-600 hover:bg-white hover:text-[#16325c]">Body k přijetí</a>}
           <a href="#prijeti" className="whitespace-nowrap rounded-full px-3 py-1.5 text-slate-600 hover:bg-white hover:text-[#16325c]">1 Jak těžké se dostat</a>
           <a href="#pomoc" className="whitespace-nowrap rounded-full px-3 py-1.5 text-slate-600 hover:bg-white hover:text-[#16325c]">2 Co vám pomůže</a>
           <a href="#studium" className="whitespace-nowrap rounded-full px-3 py-1.5 text-slate-600 hover:bg-white hover:text-[#16325c]">3 Jak se tu studuje</a>
@@ -113,6 +254,8 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
       </nav>
 
       <div className="mx-auto max-w-6xl px-4">
+        <BodyKPrijeti data={data} verzeUchazecu={verzeUchazecu} />
+
         {/* 1 · Jak těžké bude se dostat */}
         <Otazka id="prijeti" cislo={1} nadpis="Jak těžké je se sem dostat" rok={`1. kolo ${rok}`}>
           <Odpoved>

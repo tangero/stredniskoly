@@ -21,6 +21,22 @@
       "presny_join": 0
     }
   ],
+  "stare_kody_oboru": {
+    "starych_dennich_dobihajicich": 404,
+    "definice": {
+      "v_rejstriku": "obor, který rejstřík nevede jako dobíhající",
+      "vypsany_v_rocniku": "navíc je v nabídce 1. kola vyhodnocovaného ročníku"
+    },
+    "v_rejstriku": {
+      "oboru": 320,
+      "skol": 123
+    },
+    "vypsany_v_rocniku": {
+      "oboru": 180,
+      "skol": 92
+    },
+    "zaver": "Normalizace kódů by u stovek oborů tvrdila u aktivně vedeného oboru, že se nenabírá. Staré kódy se proto nepárují; cenou je nízká účinnost příznaku."
+  },
   "jednotky_poctu": {
     "zaznamu_oboru_celkem": 15494,
     "zaznamu_dobihajicich_vsechny_druhy": 1194,

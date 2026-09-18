@@ -198,6 +198,10 @@
         "Rozhodl test",
         "Pásmo nejistoty",
         "Percentil nejnižšího přijatého",
+        "Celostátní medián uchazečů",
+        "Nejslabší přijatý v předmětu",
+        "Podlaha slabšího předmětu",
+        "Nevyrovnaní přijatí",
         "Hustota u hranice",
         "Kohorty přijatých",
         "Odvozená hranice úspěšnosti",
@@ -434,7 +438,8 @@
       "po_prepnuti": "Starší snímky zůstávají pro návaznost oborů mezi roky.",
       "vystupy": [
         "public/navaznost_notes.json",
-        "public/soubeh_prihlasek_2025.json"
+        "public/soubeh_prihlasek_2025.json",
+        "public/dobihajici_obory.json"
       ],
       "ukazatele": [],
       "dostupne": [
