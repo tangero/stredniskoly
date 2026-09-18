@@ -80,14 +80,27 @@ export async function kourovaZkouska(kdy = new Date()): Promise<VysledekZkousky>
     // kvůli které vznikla — potvrzení z formuláře v novém dni nebo měsíci
     // nemělo kam rezervovat, protože řádek zakládal jen cron.
     const obdobi = obdobiKRezervaci(kdy, 'potvrzeni');
-    const radky = await dotaz<{ obdobi: string; ucel: string; limit_pocet: number }>(
-      `select obdobi, ucel, limit_pocet from rozpocet_emailu where obdobi = any($1::text[])`,
+    const radky = await dotaz<{
+      obdobi: string;
+      ucel: string;
+      limit_pocet: number;
+      rezervovano: number;
+      spotrebovano: number;
+    }>(
+      `select obdobi, ucel, limit_pocet, rezervovano, spotrebovano from rozpocet_emailu
+        where obdobi = any($1::text[])`,
       [obdobi.map((o) => o.obdobi)],
     );
+    // Obsazenost je ve výpisu schválně: každý běh zkoušky svou spotřebu vrací,
+    // takže tahle čísla nesmí mezi běhy růst. Kdyby rostla, poklid něco nevrací.
     tvrd(
       'rozpočet zjištěn (řádky smí i chybět)',
       true,
-      `${radky.rows.length} z ${obdobi.length}: ${radky.rows.map((r) => `${r.ucel} ${r.limit_pocet}`).join(', ') || 'žádný'}`,
+      `${radky.rows.length} z ${obdobi.length}: ${
+        radky.rows
+          .map((r) => `${r.ucel} ${r.spotrebovano}+${r.rezervovano}/${r.limit_pocet}`)
+          .join(', ') || 'žádný'
+      }`,
     );
 
     // --- Krok 1: přihlášení -------------------------------------------------
