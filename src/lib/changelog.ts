@@ -10,6 +10,17 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '2.11.0',
+    date: '18. 9. 2026',
+    title: 'Odběr novinek e-mailem',
+    changes: [
+      { type: 'new', text: 'Odběr novinek e-mailem: s předstihem pošleme termíny přijímacího řízení a zprávu, když na web přibudou nová data; formulář je na titulní stránce a dalších místech webu' },
+      { type: 'new', text: 'Odběr začíná až potvrzením odkazem v e-mailu, odhlášení je jedním kliknutím v každé zprávě; v e-mailech nic neměříme' },
+      { type: 'new', text: 'Administrace ukazuje přehled odběru: počet odběratelů, nové za 7 a 30 dní, čekající potvrzení, stav fronty a odkud se lidé přihlašují' },
+      { type: 'fix', text: 'Potvrzovací e-mail se posílá na adresu, se kterou se člověk právě přihlásil; odesílač dříve mohl z fronty vzít cizí čekající položku a potvrzení nedorazilo' },
+    ],
+  },
+  {
     version: '2.10.2',
     date: '14. 9. 2026',
     title: 'Srozumitelnější maturita na stránce školy',
