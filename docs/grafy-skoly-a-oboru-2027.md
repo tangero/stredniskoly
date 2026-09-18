@@ -102,14 +102,14 @@ Pravidla: ukládá se konkrétní nabídka, ne škola; pořadí určuje rodina, 
 4. **Roky z registru**, žádný letopočet v kódu ani v textu.
 5. **Malé počty potichu nezmizí.** Pod 10 přijatými se minimum nezobrazuje a graf řekne proč.
 6. **Každý graf má tabulku.** Hodnoty jsou dostupné bez najetí myší.
-7. **Srovnání ročníků jen u jednoznačně spárovaných nabídek.** Nejednoznačný pár se ukáže bez předchozího roku a s vysvětlením.
+7. **Srovnání ročníků jen u jednoznačně spárovaných nabídek.** Nejednoznačný pár se ukáže bez předchozího roku a s vysvětlením. Pár je jednoznačný při shodném klíči nabídky, při páru z mapy nabídek ročníku (`public/offer_mapping_{rok}.json`: jediná nabídka oboru, jednoznačná shoda textu zaměření, ručně ověřený pár) nebo u jediné nabídky téže školy a oboru v obou ročnících. Souhrny i stránky tak párují podle téže mapy.
 
 ## 6. Předpoklady realizace
 
 | # | Úkol | Stav |
 |---|---|---|
 | P1 | Rok 2025 pro srovnání brát z oficiálního souhrnu, ne ze starší revize katalogu | **hotovo**: srovnání ročníků ve `StatsTab` čte `src/lib/souhrny-kolo1.ts`; u Machara 8letého se tím opravilo 30 → 29 přijatých v roce 2025 |
-| P2 | Odvozený soubor souhrnů 1. kola po letech s rozdělením ve srovnatelných skupinách a knihovna, která ho čte podle registru | **hotovo**: `scripts/build-souhrny-kolo1.py` → `public/souhrny_kolo1.json`, doklad `docs/podklady/overeni-srovnani-rocniku.json`, testy `tests/test_souhrny_kolo1.py`; párování 2025–2026: 2 858 z 3 091 nabídek (2 315 shodný klíč, 543 jediná nabídka oboru) |
+| P2 | Odvozený soubor souhrnů 1. kola po letech s rozdělením ve srovnatelných skupinách a knihovna, která ho čte podle registru | **hotovo**: `scripts/build-souhrny-kolo1.py` → `public/souhrny_kolo1.json`, doklad `docs/podklady/overeni-srovnani-rocniku.json`, testy `tests/test_souhrny_kolo1.py`; párování 2025–2026: 2 934 z 3 091 nabídek (2 315 shodný klíč, 543 jediná nabídka oboru, 61 shoda textu zaměření, 15 ručně ověřených párů) |
 | P3 | Zrušit součtový poměr přihlášek na místo za školu v `Applications2026Banner` | **hotovo**: přehled školy ukazuje jen vypsané obory, kapacitu a přijaté za ročník z registru; banner přihlášek jen u jediné nabídky |
 | P4 | Letopočty v dotčených komponentách z registru, jednotný český formát čísel | **částečně**: banner, dlaždice přehledu a srovnání ročníků berou rok a platnost z registru. Zbývá `StatsTab` (priority a průměry JPZ), oddělovač a karta „Přijetí a kapacita“ v `page.tsx`, `SchoolResults2026`, `ProgramCard` s `toFixed`; tyto bloky nahradí grafy v P7, proto se nepřepisují dvakrát |
 | P5 | Záznam katalogu 2026, který míchá roky (`prvni_priority` 2026 vedle `prihlasky_priority` a `min_body` 2025 na škále 0–200): nové komponenty ho nečtou, čtou souhrny | **hotovo pro nové komponenty**; katalog zůstává kvůli stávajícím čtenářům (simulátor, regiony) |
