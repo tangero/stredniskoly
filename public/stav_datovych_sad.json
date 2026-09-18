@@ -1,6 +1,6 @@
 {
   "verze": 1,
-  "aktualizovano": "2026-09-17",
+  "aktualizovano": "2026-09-18",
   "popis": "Registr stavu datových sad. Pro každou sadu říká, které období web zobrazuje, odkud je, jaké období čekáme a kdy, co se stane se starými daty po přepnutí a které ukazatele ze slovníku na sadě stojí. Postup a pravidla: docs/zdroje-dat.md, oddíl Stav datových sad. Měnit jen přes scripts/stav-datovych-sad.py.",
   "pravidla": {
     "jistota": "znamo = datum doložené zdrojem; odhad = odvozeno z předchozího období, uveď zdůvodnění; neznamo = nelze odhadnout",
@@ -427,7 +427,8 @@
       "zobrazeno": {
         "obdobi": "2026-06-30",
         "soubor": "data/msmt_rejstrik/rssz-2026-06-30.jsonld",
-        "stazeno": "2026-09-12"
+        "sha256": "e75386ea526241d5d2e5f75131b87ea72fd491514d7bdc5c10830c18ef60c136",
+        "prepnuto": "2026-09-18"
       },
       "ocekavano": {
         "obdobi": "2026-09-30",
@@ -439,7 +440,8 @@
       "vystupy": [
         "public/navaznost_notes.json",
         "public/soubeh_prihlasek_2025.json",
-        "public/dobihajici_obory.json"
+        "public/dobihajici_obory.json",
+        "data/msmt_rejstrik/nazvy-oboru.json"
       ],
       "ukazatele": [],
       "dostupne": [
@@ -463,11 +465,18 @@
         "revize": "Starší snímky se přepisují: snímek k 30. 6. 2025 změněn 15. 6. 2026.",
         "import": "Soubory se ukládají do data/msmt_rejstrik/; zpracování scripts/enrich-continuity-registry.py a scripts/build-navaznost-notes.py.",
         "automatizace": "priprava",
-        "lidsky_krok": "Jednou ročně dohledat identifikátor nového ročníku.",
+        "lidsky_krok": "Jednou ročně dohledat identifikátor nového ročníku. Po každém přepnutí snímku spustit scripts/build-nazvy-oboru-rejstrik.py a commitnout data/msmt_rejstrik/nazvy-oboru.json; bez toho generátory souběhu a kontextu přihlášek odmítnou běžet.",
         "sledovat": [
           "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-{ctvrtleti}.jsonld"
         ]
-      }
+      },
+      "historie_obdobi": [
+        {
+          "obdobi": "2026-06-30",
+          "soubor": "data/msmt_rejstrik/rssz-2026-06-30.jsonld",
+          "stazeno": "2026-09-12"
+        }
+      ]
     },
     "msmt-rejstrik-csv": {
       "nazev": "Rejstřík škol MŠMT, export CSV",
@@ -873,6 +882,13 @@
       "z": "2025",
       "na": "2026",
       "doklad": "docs/podklady/overeni-pasem-prijeti-2025-2026.json; výstupy 2026 sloučeny PR #85 (3GQMK); slovník ukazatelů 1.21; testy 79 OK"
+    },
+    {
+      "datum": "2026-09-18",
+      "sada": "msmt-rejstrik-snimky",
+      "z": "2026-06-30",
+      "na": "2026-06-30",
+      "doklad": "zapsán otisk sha256 téhož snímku (stažen 2026-09-12) kvůli kontrole indexu názvů oborů, větev fix/kontext-nazvy-index"
     }
   ]
 }

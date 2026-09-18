@@ -148,6 +148,8 @@ Rozdělení výsledků všech uchazečů o obor tenhle soubor **není** jediný 
 
 Dvě podoby téhož. **JSON-LD snímky** (`data/msmt_rejstrik/rssz-*.jsonld`, čtvrtletní, v gitu ignorované kvůli velikosti) se používají na návaznost oborů mezi roky a na doplnění názvů oborů bez jednotné zkoušky. **CSV export** (`data/Rejstrik_skol/`) je jednorázový.
 
+**Index názvů** `data/msmt_rejstrik/nazvy-oboru.json` (v gitu, asi 0,6 MB) vzniká skriptem `scripts/build-nazvy-oboru-rejstrik.py` ze snímku, který určuje registr (`msmt-rejstrik-snimky`, `zobrazeno.soubor`), a nese celý záznam `zobrazeno` z registru a otisk sha256 snímku. Obsahuje jen `redIzo` s názvem školy (`zkracenyNazev`, jinak `uplnyNazev`) a obcí sídla, a kódy a názvy oborů (`skolyAZarizeni[].obory[].kod`, `.nazev`). Čtou ho generátory souběžných přihlášek a kontextu přihlášek (`scripts/nazvy_oboru.py`), takže je má i datová linka v CI, kde snímky nejsou. Otisk snímku zapisuje do registru příkaz `stav-datovych-sad.py prepni` u každého lokálního souboru; generátor indexu odmítne snímek s jiným otiskem. Po každém přepnutí snímku, i po převzetí revize téhož čtvrtletí, se index musí přegenerovat; generátory index, jehož záznam `zobrazeno` včetně otisku neodpovídá registru, odmítnou.
+
 Zajímavé sloupce JSON-LD, mimo adresu a názvy:
 
 | Pole | Obsah | Otázka rodiče | Používáme |
@@ -218,7 +220,7 @@ Otázka rodiče je jediná: **jak dlouho bude dítě dojíždět**. Odpovídáme
 | `schools_data.json` | CERMAT agregáty + data uchazečů | `build-catalogue-2026.py`, `enrich_schools_data.py` | katalog, ročníky 2024 až 2026 |
 | `applications_2026.json` | CERMAT přihlášky 2026 | `import_cermat_2026_real.py` | pole `pp` jsou priority |
 | `cermat_results_2026.json` | CERMAT výsledky 2026 a 2025 | `refresh_cermat_data.py` | nese otisk zdroje |
-| `kontext_prihlasek_{rok}.json` | data uchazečů, rejstřík škol MŠMT (názvy) | `build-kontext-prihlasek.py` | výsledek uchazečů o obor, obory výš a níž na přihlášce, odvozená hranice úspěšnosti; linka přepočítává s pásmy a souběhem; pole `mimo_prehled` nese název školy, obce a oboru u oborů, které katalog nevede (z `scripts/nazvy_oboru.py`, stejně jako souběžné přihlášky), a příznak kategorie bez jednotné zkoušky (C, E, H, J, P); rozsah dopadu vypíše `scripts/dopad-mimo-prehled.py` |
+| `kontext_prihlasek_{rok}.json` | data uchazečů, index názvů z rejstříku škol MŠMT | `build-kontext-prihlasek.py` | výsledek uchazečů o obor, obory výš a níž na přihlášce, odvozená hranice úspěšnosti; linka přepočítává s pásmy a souběhem; pole `mimo_prehled` nese název školy, obce a oboru u oborů, které katalog nevede (z `scripts/nazvy_oboru.py`, stejně jako souběžné přihlášky), a příznak kategorie bez jednotné zkoušky (C, E, H, J, P) |
 | `skoly_web.json` | rejstřík CSV, `WWW` | `build-skoly-web.py` | odkaz na web školy |
 | `souhrny_kolo1.json` | CERMAT souhrny 1. kola všech ročníků v `data/` | `build-souhrny-kolo1.py` | nabídky po ročnících, párování ročníků (i podle mapy nabídek ročníku), rozdělení tlaku prvních voleb ve srovnatelných skupinách; doklad `docs/podklady/overeni-srovnani-rocniku.json` |
 | `school_analysis.json` | starší zpracování | nedohledaný | obsahuje `obtiznost` bez doloženého výpočtu |
@@ -394,6 +396,15 @@ Ukazatel spočítaný z více sad, například přihlášky na místo, je v odd�
      --doklad "commit importu, testy prošly"
    ```
    Přepnutí se neuloží, pokud období v registru neodpovídá datům; nelze tak přepnout na rok, který ještě není naimportovaný.
+
+   **Snímek rejstříku MŠMT (`msmt-rejstrik-snimky`): po každém přepnutí, i po převzetí revize téhož čtvrtletí, přegenerujte index názvů a commitněte ho spolu s registrem:**
+   ```
+   python3 scripts/stav-datovych-sad.py prepni msmt-rejstrik-snimky 2026-09-30 \
+     --soubor data/msmt_rejstrik/rssz-2026-09-30.jsonld --doklad "…"
+   python3 scripts/build-nazvy-oboru-rejstrik.py
+   git add public/stav_datovych_sad.json data/msmt_rejstrik/nazvy-oboru.json
+   ```
+   Bez toho generátory souběžných přihlášek a kontextu přihlášek záměrně odmítnou běžet, protože index neodpovídá registru. V datové lince i v CI se to projeví jako chyba zpracování, ne jako tiše ztracené názvy oborů. Příkaz `prepni` na tento krok po přepnutí snímku upozorní.
 4. **Vrácení.** Když se po přepnutí objeví chyba, jeden příkaz vrátí předchozí období:
    ```
    python3 scripts/stav-datovych-sad.py vrat cermat-vysledky --duvod "chyba v importu"
@@ -437,7 +448,7 @@ Plné převzetí bez člověka se nedoporučuje: CERMAT soubory přepisuje i mě
 
 <!-- stav-datovych-sad:od -->
 
-_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-17. Neupravovat ručně._
+_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ručně._
 
 | Sada | Použití | Zobrazujeme | Odkud | Zveřejněno, nepřevzato | Čekáme | Kdy | Po přepnutí |
 |---|---|---|---|---|---|---|---|
@@ -473,7 +484,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-17. Neupravovat ru�
 | `cermat-polozkova-jpz` | jen detekce | HTTP HEAD pro šest testů. | Jen dokladový výpočet v scripts/validate-pasma-prijeti.py. | Není na webu, převzetí podle potřeby analýzy. |
 | `cermat-maturita` | příprava | HTTP HEAD a katalogová stránka. | scripts/build-maturita-skoly.py; v datové lince zpracovatel cermat-maturita stáhne k jarnímu souboru tři předchozí jarní ročníky a doplní je do stávajícího výstupu. Stav po podzimu (jap) se nepřebírá. | Schválit úlohu, zkontrolovat počty v pull requestu, přepnout období v registru. |
 | `cermat-jpz-skoly-2017-2023` | neaktualizuje se | — | — | Uzavřená řada. |
-| `msmt-rejstrik-snimky` | příprava | HTTP HEAD na adresu snímku ke konci čtvrtletí. Složka nese identifikátor ročníku, který se každý rok mění (e9c07729… pro 2025, 250d6b3f… pro 2026); na přelomu roku ho je nutné dohledat v Národním katalogu otevřených dat. | Soubory se ukládají do data/msmt_rejstrik/; zpracování scripts/enrich-continuity-registry.py a scripts/build-navaznost-notes.py. | Jednou ročně dohledat identifikátor nového ročníku. |
+| `msmt-rejstrik-snimky` | příprava | HTTP HEAD na adresu snímku ke konci čtvrtletí. Složka nese identifikátor ročníku, který se každý rok mění (e9c07729… pro 2025, 250d6b3f… pro 2026); na přelomu roku ho je nutné dohledat v Národním katalogu otevřených dat. | Soubory se ukládají do data/msmt_rejstrik/; zpracování scripts/enrich-continuity-registry.py a scripts/build-navaznost-notes.py. | Jednou ročně dohledat identifikátor nového ročníku. Po každém přepnutí snímku spustit scripts/build-nazvy-oboru-rejstrik.py a commitnout data/msmt_rejstrik/nazvy-oboru.json; bez toho generátory souběhu a kontextu přihlášek odmítnou běžet. |
 | `msmt-rejstrik-csv` | ruční | Nelze, export z webové aplikace. | scripts/validate-pasma-prijeti.py čte SkolyAMista.csv pro převod IZO na REDIZO. | Doporučeno nahradit čtvrtletním snímkem JSON-LD, který nese IZO i REDIZO; sada by pak zanikla. |
 | `msmt-akko` | ruční | Nesledováno. | Žádný. | Stáhnout při změně číselníku. |
 | `csi-inspekce` | plná | Workflow CSI Weekly Refresh každé pondělí, poslední úspěšný běh 7. 9. 2026. | scripts/process-csi-data.js, snímek s manifestem a rozdílem. | Revidovat a sloučit pull request. Chybí jen tento krok. |

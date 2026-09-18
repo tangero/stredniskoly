@@ -13,6 +13,10 @@ KOREN = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(KOREN / "scripts"))
 import nazvy_oboru  # noqa: E402
 
+_spec_i = importlib.util.spec_from_file_location("index", KOREN / "scripts" / "build-nazvy-oboru-rejstrik.py")
+index_mod = importlib.util.module_from_spec(_spec_i)
+_spec_i.loader.exec_module(index_mod)
+
 _spec = importlib.util.spec_from_file_location("kontext", KOREN / "scripts" / "build-kontext-prihlasek.py")
 kontext = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(kontext)
@@ -50,6 +54,70 @@ class TestMimoPrehled(unittest.TestCase):
         vystup = kontext.mimo_prehled({"x": zaznam(vys=["2_82-41-M/01"])}, self.NAZVY)
         self.assertEqual(vystup["2_82-41-M/01"],
                          {"skola": None, "obec": None, "obor": None, "bez_jednotne_zkousky": False})
+
+
+REJSTRIK = [{"redIzo": 1, "zkracenyNazev": "SŠ gastronomie", "adresa": {"obec": "Praha"},
+             "skolyAZarizeni": [{"obory": [{"kod": "65-51-H/01", "nazev": "Kuchař - číšník"},
+                                           {"kod": "65-42-M/01", "nazev": "Hotelnictví"}]}]},
+            {"redIzo": 2, "zkracenyNazev": "ZŠ", "skolyAZarizeni": [{"obory": []}]}]
+
+
+class TestIndex(unittest.TestCase):
+    def test_index_nese_jen_skoly_s_obory(self):
+        index = index_mod.sestav_index(REJSTRIK)
+        self.assertEqual(index["skoly"], {"1": ["SŠ gastronomie", "Praha"]})
+        self.assertEqual(index["nabidky"], {"1": ["65-42-M/01", "65-51-H/01"]})
+
+    def test_dva_nazvy_jednoho_kodu_jsou_chyba(self):
+        vadny = [{"redIzo": 1, "skolyAZarizeni": [{"obory": [{"kod": "X", "nazev": "a"}, {"kod": "X", "nazev": "b"}]}]}]
+        with self.assertRaises(SystemExit):
+            index_mod.sestav_index(vadny)
+
+    def test_nazvy_z_indexu_a_katalog_ma_prednost(self):
+        index = index_mod.sestav_index(REJSTRIK)
+        katalog = {"2025": [{"id": "1_65-42-M/01", "redizo": "1", "kkov": "65-42-M/01", "nazev": "Hotelovka",
+                             "obec": "Praha", "obor": "Hotelnictví"}], "2026": []}
+        mapa = nazvy_oboru.nazvy_oboru(index=index, katalog=katalog, zobrazeny="2026")
+        self.assertTrue(mapa["1_65-42-M/01"]["jpz"])
+        self.assertEqual(mapa["1_65-51-H/01"], {"skola": "SŠ gastronomie", "obec": "Praha", "obor": "Kuchař - číšník",
+                                                "id": None, "jpz": False})
+
+    def test_poradi_rocniku_z_registru(self):
+        self.assertEqual(nazvy_oboru.poradi_rocniku({"2024": [], "2025": [], "2026": []}, "2026"), ["2025", "2026"])
+        self.assertEqual(nazvy_oboru.poradi_rocniku({"2026": [], "2027": []}, "2027"), ["2026", "2027"])
+
+    def test_chybejici_nebo_zastaraly_index_je_chyba(self):
+        import json
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            registr = Path(d) / "registr.json"
+            index = Path(d) / "index.json"
+
+            def zapis(zobrazeno_registr, zobrazeno_index):
+                registr.write_text(json.dumps({"sady": {"msmt-rejstrik-snimky": {"zobrazeno": zobrazeno_registr}}}))
+                index.write_text(json.dumps({"meta": {"registr": zobrazeno_index}, "nabidky": {}}))
+
+            puvodni = {"obdobi": "2026-06-30", "soubor": "data/msmt_rejstrik/rssz-2026-06-30.jsonld", "sha256": "aaa"}
+            zapis(puvodni, puvodni)
+            self.assertEqual(nazvy_oboru.nacti_index(index, registr)["nabidky"], {})
+            with self.assertRaises(SystemExit):
+                nazvy_oboru.nacti_index(Path(d) / "neni.json", registr)
+            # Nové období
+            zapis({**puvodni, "obdobi": "2026-09-30"}, puvodni)
+            with self.assertRaises(SystemExit):
+                nazvy_oboru.nacti_index(index, registr)
+            # Revize téhož období převzatá týž den: liší se jen otisk
+            zapis({**puvodni, "sha256": "bbb"}, puvodni)
+            with self.assertRaises(SystemExit):
+                nazvy_oboru.nacti_index(index, registr)
+            # Registr bez otisku nestačí na ověření indexu
+            bez_otisku = {k: v for k, v in puvodni.items() if k != "sha256"}
+            zapis(bez_otisku, bez_otisku)
+            with self.assertRaises(SystemExit):
+                nazvy_oboru.nacti_index(index, registr)
+
+    def test_index_v_repozitari_odpovida_registru(self):
+        self.assertTrue(nazvy_oboru.nacti_index()["nabidky"])
 
 
 if __name__ == "__main__":

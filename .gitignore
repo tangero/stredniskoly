@@ -56,6 +56,7 @@ next-env.d.ts
 !/data/csi_snapshots/*.json
 !/data/msmt_rejstrik/
 !/data/msmt_rejstrik/README.md
+!/data/msmt_rejstrik/nazvy-oboru.json
 
 # Portál pro školy: hashe kódů patří do gitu, plaintext kódy nikdy
 !/data/portal/
