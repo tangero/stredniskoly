@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { timingSafeEqual } from 'crypto';
 import { jeDbNastavena } from '@/lib/novinky-db';
-import { kourovaZkouska } from '@/lib/novinky-kourova-zkouska';
+import { kourovaZkouska, opravVadneLimityRozpoctu } from '@/lib/novinky-kourova-zkouska';
 
 // ============================================================================
 // Kouřová zkouška odběru proti skutečné databázi.
@@ -30,6 +30,15 @@ export async function POST(request: NextRequest) {
   if (!jeDbNastavena()) {
     return NextResponse.json({ error: 'DATABASE_URL není nastavený.' }, { status: 503 });
   }
+
+  // Správcovská oprava poškozených řádků rozpočtu. Vědomý krok, ne automatika:
+  // podrobnosti u `opravVadneLimityRozpoctu`.
+  let opraveno: unknown;
+  if (request.nextUrl.searchParams.get('oprav-rozpocet') === '1') {
+    opraveno = await opravVadneLimityRozpoctu();
+    console.log('🧹 Oprava rozpočtu novinek:', opraveno);
+  }
+
   const vysledek = await kourovaZkouska();
   const nesplnene = vysledek.kroky.filter((k) => !k.ok);
   if (vysledek.ok) {
@@ -41,5 +50,8 @@ export async function POST(request: NextRequest) {
       nesplnene,
     );
   }
-  return NextResponse.json(vysledek, { status: vysledek.ok ? 200 : 500 });
+  return NextResponse.json(
+    opraveno === undefined ? vysledek : { ...vysledek, opraveno },
+    { status: vysledek.ok ? 200 : 500 },
+  );
 }
