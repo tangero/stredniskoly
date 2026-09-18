@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.6 · 18. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.7 · 18. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -37,6 +37,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **hranice úspěšnosti** | minimum bodů z kritérií školy; když ji odvozujeme z dat, vždy „podle výsledků to odpovídá“ | „minimum bodů, bez kterého škola uchazeče nepřijme“ | hranice přijetí (tu nezná nikdo) |
 | **1. kolo**, **2. kolo** | kola přijímacího řízení podle harmonogramu MŠMT | u 2. kola: „když se obor v 1. kole nenaplní, škola může vypsat 2. kolo“ | druhé kolo bez čísla ročníku |
 | **místa**, **kapacita** | počet míst, které škola pro obor v kole vypsala | není potřeba | volná místa (jen u 2. kola) |
+| **obor se už nenabírá** | obor vedený v rejstříku jako dobíhající a v zobrazeném ročníku nevypsaný | „škola tenhle obor dokončuje se stávajícími žáky a nové uchazeče do něj nepřijímá“ | zrušený obor, zaniklý obor (dokud to neuvádí škola); jakékoli varování u oboru, který škola v ročníku **vypsala** — mezi vypsanými je dobíhajících nula |
 | **nabídka oborů** | obory a počet míst, které školy pro dané přijímací řízení vypíšou; školy je zveřejňují spolu s kritérii přijetí, agregovaná data CERMATu k nim vycházejí až o několik měsíců později | „nabídka oborů pro rok …, tedy obory a počet míst“; termín zveřejnění vždy s rokem a s tím, že ho školy zveřejňují s kritérii | seznam oborů, otevírané obory (bez roku), vyhlášení nabídky (školy vyhlašují kritéria) |
 
 ## 3. Výsledky a obtížnost
@@ -87,6 +88,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.7 | Pojem **obor se už nenabírá** pro obor vedený v rejstříku jako dobíhající a v zobrazeném ročníku nevypsaný (dávka D4b). U vypsaného oboru se nepoužívá, protože mezi vypsanými je dobíhajících nula. |
 | 1.6 | Pojem **absolventi** zaveden výhradně pro větu, že o jejich uplatnění data nemáme (dávka D5). Do té doby bylo slovo jen na seznamu zakázaných u hesla *maturanti*, takže věta o chybějících datech by pravidlo slovníku porušila. Jakýkoli údaj o uplatnění, úspěšnosti nebo přechodu na vysokou školu zůstává zakázaný, protože pro něj zdroj neexistuje. |
 | 1.5 | Nabídka oborů jako pojem pro upozornění na titulní stránce: obory a počet míst, které školy vypíšou. Zveřejňují ji s kritérii přijetí, proto se termín uvádí jako zveřejnění kritérií, ne jako „vyhlášení nabídky“. |
 | 1.4 | Maturita srozumitelněji: „podobné školy“, „střed podobných škol“, „nad středem podobných škol“, „maturitu udělalo X z Y přihlášených“; „skupina oborů“ a „percentil“ jen v podrobnostech. Srovnání s podobnými školami se vede v % bodů v testu, percentil se uvádí jen jako „v celé zemi lépe než X ze 100 maturantů“, aby se dvě různá srovnání nepletla. |

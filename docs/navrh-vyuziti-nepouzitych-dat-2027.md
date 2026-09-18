@@ -1,6 +1,6 @@
 # Co udělat s daty, která máme a nepoužíváme
 
-Verze 1.2 · 17. 9. 2026 · **Návrh k rozhodnutí.** Vypořádána [oponentura](oponentura-navrh-nepouzitych-dat-2027.md) v kolech 1 a 2, viz oddíl 9.
+Verze 1.3 · 18. 9. 2026 · **Návrh k rozhodnutí.** Vypořádána [oponentura](oponentura-navrh-nepouzitych-dat-2027.md) v kolech 1 a 2, viz oddíl 9.
 
 Zadání znělo: projít tři sady dat, které leží nepoužité, a navrhnout, jak s nimi pracovat, aby web rodině vysvětlil, **kterou školu si vybrat, jak je dobrá, jak kvalitně přistupuje ke vzdělávání a jak si vedou její absolventi**.
 
@@ -214,7 +214,7 @@ Pořadí je dané závislostmi a rizikem, ne důležitostí. D1 odemyká nejvíc
 | **D1** | přepne data uchazečů na rok 2026 | na opravách skriptů a dokladu |
 | **D2** | zobrazí už spočítané ukazatele, srovná dvojí implementaci obtížnosti | na ničem |
 | **D3** | zavede podíl přijatých na první volbu, nahradí tabulku ze staré cesty | na testu srozumitelnosti |
-| **D4b** | použije dobíhající obor v mřížce nabídky v čase | na mřížce, která neexistuje |
+| **D4b** | rozliší „obor se už nenabírá“ od nevypsaného ročníku — **menší varianta hotová 18. 9. 2026** v bloku „Obory z dřívějších let“; mřížka nabídky v čase čeká dál na P7 | na ničem (mřížka jen pro stav „bez dat“) |
 | **D5** | doplní větu, že o absolventech data nemáme | na ničem |
 
 ### D1 — Přepnout data uchazečů na rok 2026 — **hotovo 17. 9. 2026**
@@ -319,7 +319,13 @@ Ne jako varování. **Dávka se podle oponentury dělí na dvě části**, proto
 
 **Procesní poučení, které z toho plyne.** Ověřuje-li se tvrzení o dokumentu, uvádí se **větev, verze a commit**, ne jen název souboru. Záměna v1.0 a v2.1 je přesně ten druh chyby, který projekt jinde řeší registrem období: soubor téhož jména může nést různá data podle toho, odkud se čte. Doklady v tomto návrhu proto nově uvádějí commit.
 
-**D4b, zobrazení, svázané s mřížkou.** Až mřížka vznikne:
+**D4b, zobrazení — menší varianta hotová 18. 9. 2026.** Verze 1.2 čekala s celou dávkou na mřížku „Nabídka oborů v čase“, která je pod krokem P7 a nemá ani datový model, ani víc než dva ročníky dat. Kontrola kódu ale ukázala, že rozlišení, kvůli kterému příznak existuje, **žádnou mřížku nepotřebuje**: stránka školy už má blok „Obory z dřívějších let“ (`ProfilSkoly.tsx`), který u všech nevypsaných oborů říkal jen „nabídku ověřte u školy“ — tedy i u těch, které se prokazatelně nevrátí.
+
+Provedeno: `scripts/build-dobihajici-obory.py` vyrábí `public/dobihajici_obory.json` (602 denních oborů středních škol ze snímku 30. 6. 2026); čtečka `src/lib/dobihajici-obory.ts` páruje na **REDIZO + KKOV + délku studia** a datová vrstva příznak nasazuje **jen u oboru, který v zobrazeném ročníku chybí**. Blok se dělí na dva seznamy: „do těchto oborů už škola nenabírá“ a zbytek s opatrnou větou doplněnou o dvouletý cyklus. Pojem *obor se už nenabírá* je ve slovníku pojmů 1.7, soubor ve výstupech sady `msmt-rejstrik-snimky`, zápis v [soupisu zdrojů](zdroje-dat.md) 1.11.
+
+**Rozsah je malý a je to tak správně:** z 8 797 nabídek katalogu se příznak trefí do **12** a ani jedna z nich není v roce 2026 vypsaná. Dobíhající obory se do katalogu z větší části nedostanou, protože ten nese jen nabídky, které se v datech CERMATu objevily. Dvanáct rodin ale dostane jistotu místo výzvy „ověřte si to“.
+
+**Co zůstává na mřížce.** Stav „bez dat“ v mřížce obor × rok, tedy původní zadání D4b, čeká dál na P7 a na víceletou řadu; dnešní dva ročníky souhrnů na mřížku „v čase“ nestačí. Až mřížka vznikne:
 
 - Párovat **REDIZO + KKOV + forma + délka**, nikdy jen REDIZO + KKOV.
 - Použít jen u oborů, které v zobrazeném ročníku **chybí**.
@@ -442,6 +448,7 @@ Přijímají se všechna: přepnout na rok 2026 (s podmínkou S4), zrušit graf 
 
 | Verze | Změna |
 |---|---|
+| 1.3 | **D5 a menší varianta D4b hotové 18. 9. 2026.** D5: na stránce školy je věta, že o uplatnění absolventů data nemáme, i s důvodem; pojem *absolventi* zaveden ve slovníku pojmů 1.6, protože do té doby byl jen na seznamu zakázaných u hesla *maturanti*; záporný nález rešerše zapsán do soupisu zdrojů 1.10. D4b: kontrola kódu ukázala, že rozlišení „obor se už nenabírá“ nepotřebuje mřížku — blok „Obory z dřívějších let“ na stránce školy existuje a u všech nevypsaných oborů říkal jen „ověřte u školy“. Příznak se páruje na REDIZO + KKOV + délku a trefí 12 nabídek katalogu, žádnou vypsanou. Mřížka obor × rok zůstává na P7. |
 | 1.2 | Vypořádáno kolo 2 oponentury. **N1 přijat a verze 1.1 opravena:** tvrzení, že dokument sledování škol o dobíhajícím oboru nemluví, četlo verzi 1.0 na aktuální větvi, kdežto živá je v2.1 na větvi `docs/sledovani-skol-a-oboru`; D4a má čtyři dokumenty a návrh přijímá pravidlo uvádět u ověření větev, verzi a commit. **N2 přijat v jádru, opraven v dopadu:** inventura šesti konzumentů `min_body` potvrdila, že se v1.1 zastavila brzy, ale na veřejné adrese se údaj nezobrazuje (`/moje-sance` je přesměrování, API vracejí `null`); rozhodnutí zesíleno na odstranění mrtvých konzumentů. **N3 přijat:** test D3 probíhá i na škole se smíšenými typy. Drobnosti: slovník dostane větu o prahu jako pravidle zobrazení, doklad uvádí unikátní dvojice (23, ne 20), sweep letopočtů dostane test v CI. |
 | 1.1 | Vypořádána oponentura v1.0: přijato S2, S3, S5, S6 a S7 v jádru, S1 a S4 částečně. Doložen skript `scripts/dobihajici-obory.py` a s ním rozhodnut spor 723/754 (definiční rozdíl o druh E00; nula platí při všech definicích). Změřeno, že typ studia vysvětluje jen 8,3 % rozptylu, takže zákaz srovnání napříč typy se nahrazuje povinností typ pojmenovat. D3 přeřazeno za D2 a test srozumitelnosti předřazen zápisu do slovníku. Rozdělení ve slovníku rozepsáno po skupinách včetně nástavby. Zjištěno, že `min_body` není `jpz_min_actual` a že průvodce, o který se opírá S4, je mrtvý kód. Krajová míra nezaměstnanosti zamítnuta. Vyvráceno, že o dobíhajícím oboru mluví dokument sledování škol. |
 | 1.0 | První návrh. Zjištěno, že data uchazečů 2026 jsou převzatá a chybí jen přepnutí registru; že dobíhající obor se netýká ani jedné z 3 091 nabídek a jeho dokumentovaná role je nepravdivá; že přijatí podle priority nesou vlastní informaci, web je už ukazuje ze starší revize katalogu s rozdílem u 315 nabídek, a rozpor dvou schválených dokumentů se řeší přesunem do jiného bloku; že obtížnost přijetí má dvě neshodné implementace; a že na otázku o absolventech nelze odpovědět ani ze zdrojů mimo projekt, protože jmenovatel odmítá jako nevěrohodný sám MŠMT. |

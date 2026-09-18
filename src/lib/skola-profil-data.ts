@@ -4,6 +4,7 @@ import { getSchoolsData, getCSIDataByRedizo, getExtractionsByRedizo, getInspisDa
 import { getSouhrnNabidky, souhrnOboru, type SouhrnRocniku } from '@/lib/souhrny-kolo1';
 import { getPortalZaznam, type PortalZaznam } from '@/lib/portal-skol';
 import { getWebSkoly } from '@/lib/skoly-web';
+import { nenabiraSe } from '@/lib/dobihajici-obory';
 import { getDruheKolo, type DruheKoloNabidky } from '@/lib/druhe-kolo';
 import { zobrazeneObdobi, platnostObdobi } from '@/lib/stav-datovych-sad';
 import { createSlug } from '@/lib/utils';
@@ -43,6 +44,8 @@ export interface OborSkoly {
   novy: boolean;
   drivejsiNazev: string | null;
   vypsano: boolean;
+  /** Rejstřík obor vede jako dobíhající: škola ho dokončuje a nenabírá do něj. */
+  nenabira: boolean;
   druheKolo: DruheKoloNabidky | null;
 }
 
@@ -230,6 +233,11 @@ export function odkazOboru(redizo: string, nazevSkoly: string, program: SchoolPr
   return `/skola/${redizo}-${createSlug(nazevSkoly, program.obor, program.zamereni || undefined, delka)}`;
 }
 
+/** Klíč nabídky je `REDIZO_KKOV[_zaměření]`; KKOV podtržítko neobsahuje. */
+function kkovZId(id: string): string {
+  return id.split('_')[1] ?? '';
+}
+
 export async function getProfilSkoly(
   redizo: string,
   nazevSkoly: string,
@@ -254,6 +262,10 @@ export async function getProfilSkoly(
     const duplicitni = (pocetNazvu.get(p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor) ?? 0) > 1;
     const [s, druheKolo] = await Promise.all([getSouhrnNabidky(p.id), getDruheKolo(p.id, p.zamereni)]);
     const a = s?.aktualni;
+    // Příznak platí jen u nabídky, která v zobrazeném ročníku chybí; u vypsané
+    // nabídky je dobíhajících nula, takže by tvrzení nemělo oporu.
+    const vypsano = !!a || vypsaneIds.has(p.id);
+    const nenabira = vypsano ? false : await nenabiraSe(redizo, kkovZId(p.id), p.delka_studia);
     return {
       id: p.id,
       href: odkazOboru(redizo, nazevSkoly, p, duplicitni),
@@ -275,7 +287,8 @@ export async function getProfilSkoly(
       umisteniPrijatych: a?.prumerne_umisteni_prijatych ?? null,
       novy: !!p.is_new_2026,
       drivejsiNazev: p.prev_zamereni_name ?? null,
-      vypsano: !!a || vypsaneIds.has(p.id),
+      vypsano,
+      nenabira,
       druheKolo,
     };
   }));

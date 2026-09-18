@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.10 · 18. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.11 · 18. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -319,7 +319,7 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 | Výsledky zkoušky **všech uchazečů** o obor v souhrnu | souhrny výsledků, sloupce 45–65 | průměr, minimum a maximum konkurence bez zpracování dat uchazečů | průměrné percentilové umístění **zpracováno 13. 9. 2026**; minimum a maximum zamítnuto, určuje je jediný uchazeč |
 | **Agregáty 2. kola** za obory | `PZ{rok}_kolo2_skolobory_*.xlsx` | „Loni tu bylo 2. kolo s 12 místy“ | **zapracovává se od 13. 9. 2026**, viz `docs/druhe-kolo.md` |
 | **Data uchazečů 2. kola** | `PZ{rok}_kolo2_uchazeci_prihlasky_vysledky.xlsx` | pásma přijetí ve 2. kole | zamítnuto pro 2. kolo: jen 133 oborů má ve 2. kole aspoň deset přijatých s výsledkem zkoušky |
-| **Dobíhající obor** | rejstřík, `dobihajiciObor` | **ne varování před přihláškou**, ale rozlišení „obor se už nenabírá“ od „obor škola letos nevypsala“ u chybějící nabídky | používá se jen v rešeršních skriptech; role opravena 17. 9. 2026, viz níže |
+| **Dobíhající obor** | rejstřík, `dobihajiciObor` | **ne varování před přihláškou**, ale rozlišení „obor se už nenabírá“ od „obor škola letos nevypsala“ u chybějící nabídky | **používá se od 18. 9. 2026** v bloku „Obory z dřívějších let“ na stránce školy; `scripts/build-dobihajici-obory.py` → `public/dobihajici_obory.json` (602 denních oborů ze snímku 30. 6. 2026), z toho se v katalogu trefí 12 nabídek a **žádná z nich není vypsaná** v roce 2026 |
 | **Web a kontakt školy** | rejstřík CSV, `WWW`, `Email 1`, `Telefon` | kam jít pro kritéria přijetí a termíny | `WWW` **používáno od 13. 9. 2026** (`skoly_web.json`); telefon a e-mail na web nepatří |
 | `jpz_prumer_actual`, `jpz_median` | katalog 2025 | medián říká víc než průměr, když je rozdělení šikmé | spočítané, nikdy nezobrazené |
 | `hard_facts.support_services` | extrakce inspekce | „Mají školního psychologa a doučování.“ | nezobrazeno |
@@ -500,6 +500,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-17. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.11 | Příznak `dobihajiciObor` se poprvé používá na webu: `build-dobihajici-obory.py` vyrábí `public/dobihajici_obory.json` a stránka školy jím v bloku „Obory z dřívějších let“ odlišuje obor, který se už nenabírá, od oboru, který škola v tomto roce jen nevypsala. Párování REDIZO + KKOV + denní forma + délka; nula dobíhajících mezi vypsanými nabídkami tím zůstává respektovaná. Soubor doplněn do výstupů sady `msmt-rejstrik-snimky`. |
 | 1.10 | Zapsán **záporný nález o absolventech** (oddíl 3): na otázku, jak si vedou absolventi konkrétní školy, nemá odpověď žádný z šesti prověřených veřejných zdrojů. Soubor MPSV nese IZO, ale chybí mu jmenovatel a ten sám MŠMT označuje za nevěrohodný; krajová míra nezaměstnanosti za skupinu oborů zamítnuta, protože popisuje trh práce v kraji, ne školu. Rešerše ze 17. 9. 2026 tím přestává žít jen v návrhu. |
 | 1.9 | Harmonogram přijímacího řízení MŠMT (`src/data/admissions-2027.json`) zapsaný jako zdroj, protože z něj od 17. 9. 2026 čerpá i hlavní stránka, a jako sada `msmt-harmonogram` v registru; termíny se opisují z webu MŠMT ručně, detekce nového ročníku dotazem HEAD nejde. |
 | 1.8 | Maturitní výsledky přes datovou linku do `public/maturita_skoly.json`; zpracovatel sady `cermat-maturita`. |

@@ -161,6 +161,10 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
   const posledniPotvrzeni = vyplneno.map(([, v]) => v!.potvrzeno_dne).sort().at(-1);
   const vypsane = obory.filter(o => o.vypsano);
   const nevypsane = obory.filter(o => !o.vypsano);
+  // Rejstřík odliší obor, který škola dokončuje se stávajícími žáky, od oboru,
+  // který v tomto roce jen nevypsala a příští rok ho vypsat může.
+  const nenabirane = nevypsane.filter(o => o.nenabira);
+  const nejiste = nevypsane.filter(o => !o.nenabira);
   const mist = vypsane.reduce((s, o) => s + (o.kapacita ?? 0), 0);
   const nejtezsi = PORADI_OBTIZNOSTI.map(z => vypsane.find(o => o.zarazeni === z)).find(Boolean);
   const verejna = /veřejn|státní/i.test(skola.zrizovatel);
@@ -308,10 +312,22 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
 
         {nevypsane.length > 0 && (
           <Dukaz nadpis="Obory z dřívějších let" stitek={`${nevypsane.length}`}>
-            <p className="text-[15px] text-slate-600">U těchto oborů nemáme jednoznačnou shodu s 1. kolem {rok}. Neznamená to, že je škola neotevírá; nabídku ověřte u školy.</p>
-            <ul className="space-y-1 text-[15px]">
-              {nevypsane.map(o => <li key={o.id}><Link href={o.href} className="font-semibold text-[#0074e4] hover:underline">{o.nazev}, {o.delka}leté</Link></li>)}
-            </ul>
+            {nenabirane.length > 0 && (
+              <>
+                <p className="text-[15px] text-slate-600">Do těchto oborů už škola nenabírá: dokončuje je se stávajícími žáky a nové uchazeče do nich nepřijímá. Vede je tak rejstřík škol MŠMT.</p>
+                <ul className="space-y-1 text-[15px]">
+                  {nenabirane.map(o => <li key={o.id}><Link href={o.href} className="font-semibold text-[#0074e4] hover:underline">{o.nazev}, {o.delka}leté</Link></li>)}
+                </ul>
+              </>
+            )}
+            {nejiste.length > 0 && (
+              <>
+                <p className={`text-[15px] text-slate-600${nenabirane.length > 0 ? ' mt-3' : ''}`}>U těchto oborů nemáme jednoznačnou shodu s 1. kolem {rok}. Neznamená to, že je škola neotevírá: řada škol vypisuje obor jen jednou za dva roky. Nabídku ověřte u školy.</p>
+                <ul className="space-y-1 text-[15px]">
+                  {nejiste.map(o => <li key={o.id}><Link href={o.href} className="font-semibold text-[#0074e4] hover:underline">{o.nazev}, {o.delka}leté</Link></li>)}
+                </ul>
+              </>
+            )}
           </Dukaz>
         )}
         <Zdroj>Nabídka oborů pro další přijímací řízení se zveřejňuje až po uzávěrce škol; údaje o oborech jsou z 1. kola {rok}, CERMAT{data.platnostDat ? `, stav k ${formatDatumCz(data.platnostDat)}` : ''}.</Zdroj>
