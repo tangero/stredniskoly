@@ -74,6 +74,24 @@ def ukazatele_slovniku() -> set[str]:
     return vysledek
 
 
+def dosad_obdobi(cesta: str, sada: dict) -> str:
+    """Dosadí zobrazené období za `{obdobi}` v cestě k souboru.
+
+    Výstupy některých sad nesou rok v názvu (`pasma_prijeti_2026.json`). Kdyby
+    byl rok v registru napevno, každé přepnutí by ho musel někdo přepsat ručně
+    a kontrola by po přepnutí hlásila starý soubor. Zápis `{obdobi}` to řeší
+    a drží pravidlo projektu, že se letopočet nikde nepíše napevno.
+
+    Args:
+        cesta: Cesta z registru, volitelně se zástupným `{obdobi}`.
+        sada: Záznam sady, ze kterého se bere `zobrazeno.obdobi`.
+
+    Returns:
+        Cesta se zobrazeným obdobím.
+    """
+    return cesta.replace("{obdobi}", str(sada.get("zobrazeno", {}).get("obdobi", "")))
+
+
 def hodnota(soubor: Path, cesta: str):
     data = json.loads(soubor.read_text(encoding="utf-8"))
     for cast in cesta.split("."):
@@ -119,13 +137,14 @@ def kontrola(registr: dict, dnes: dt.date) -> tuple[list[str], list[str]]:
         if soubor and not soubor.startswith("http") and not (KOREN / soubor).exists():
             varovani.append(f"{sid}: soubor {soubor} v repozitáři není (některé zdroje se nestahují)")
         for v in s.get("vystupy", []):
-            if not (KOREN / v).exists():
-                chyby.append(f"{sid}: výstup {v} neexistuje")
+            cesta = dosad_obdobi(v, s)
+            if not (KOREN / cesta).exists():
+                chyby.append(f"{sid}: výstup {cesta} neexistuje")
 
         # Období v registru musí odpovídat tomu, co je skutečně v datech.
         ko = s.get("kontrola_obdobi")
         if ko:
-            skutecne = str(hodnota(KOREN / ko["soubor"], ko["cesta"]))
+            skutecne = str(hodnota(KOREN / dosad_obdobi(ko["soubor"], s), ko["cesta"]))
             if skutecne != str(s["zobrazeno"]["obdobi"]):
                 chyby.append(f"{sid}: registr uvádí období {s['zobrazeno']['obdobi']}, data v {ko['soubor']} mají {skutecne}")
 

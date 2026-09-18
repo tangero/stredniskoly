@@ -1,6 +1,6 @@
 {
   "verze": 1,
-  "aktualizovano": "2026-09-14",
+  "aktualizovano": "2026-09-17",
   "popis": "Registr stavu datových sad. Pro každou sadu říká, které období web zobrazuje, odkud je, jaké období čekáme a kdy, co se stane se starými daty po přepnutí a které ukazatele ze slovníku na sadě stojí. Postup a pravidla: docs/zdroje-dat.md, oddíl Stav datových sad. Měnit jen přes scripts/stav-datovych-sad.py.",
   "pravidla": {
     "jistota": "znamo = datum doložené zdrojem; odhad = odvozeno z předchozího období, uveď zdůvodnění; neznamo = nelze odhadnout",
@@ -159,41 +159,40 @@
       "cyklus": "rocni",
       "pouziti": "web",
       "zobrazeno": {
-        "obdobi": "2025",
-        "soubor": "https://data.cermat.cz/files/JPZ-polozkova-data/2025/Uchazeci/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx",
-        "verze": "finální, včetně údajů o vzdání se přijetí",
-        "prepnuto": "2026-09-13",
+        "obdobi": "2026",
+        "soubor": "https://data.cermat.cz/files/JPZ-polozkova-data/2026/Uchazeci/PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx",
+        "verze": "předběžná, platné přihlášky ke dni 13. 5. 2026",
+        "prepnuto": "2026-09-17",
         "z_dostupne": {
-          "obdobi": "2025",
-          "verze": "finální, včetně údajů o vzdání se přijetí",
-          "soubor": "https://data.cermat.cz/files/JPZ-polozkova-data/2025/Uchazeci/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx",
+          "obdobi": "2026",
+          "verze": "předběžná, platné přihlášky ke dni 13. 5. 2026",
+          "soubor": "https://data.cermat.cz/files/JPZ-polozkova-data/2026/Uchazeci/PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx",
           "zverejneno": "2026-05-20",
           "zjisteno": "2026-09-13",
-          "poznamka": "159 172 řádků proti 159 196 v předběžné verzi; list přejmenován z „data“ na „Sheet 1“."
+          "poznamka": "156 210 řádků."
         }
       },
       "ocekavano": {
-        "obdobi": "2027",
+        "obdobi": null,
         "kdy": "2027-05",
         "jistota": "odhad",
-        "zduvodneni": "Předběžná verze za rok 2026 vyšla 20. 5. 2026 a zachycuje přihlášky k 13. 5.; finální revize předchozího ročníku vychází současně."
+        "zduvodneni": "Předběžná data uchazečů 2026 (přihlášky k 13. 5. 2026) vyšla 20. 5. 2026; finální revize se čeká v květnu 2027."
       },
       "po_prepnuti": "Rok 2025 zůstává pro ověření stability mezi ročníky ve scripts/validate-pasma-prijeti.py a pro vývoj hranice přijetí.",
       "vystupy": [
-        "public/pasma_prijeti_2025.json",
-        "public/soubeh_prihlasek_2025.json",
-        "data/jpz_stats_2025.json",
-        "public/schools_data.json",
-        "public/kontext_prihlasek_2025.json"
+        "public/pasma_prijeti_{obdobi}.json",
+        "public/soubeh_prihlasek_{obdobi}.json",
+        "public/kontext_prihlasek_{obdobi}.json",
+        "public/schools_data.json"
       ],
       "kontrola_obdobi": {
-        "soubor": "public/pasma_prijeti_2025.json",
+        "soubor": "public/pasma_prijeti_{obdobi}.json",
         "cesta": "rok"
       },
       "ukazatele": [
         "Souběžné přihlášky",
         "Nejnižší výsledek JPZ mezi přijatými",
-        "Medián a průměr JPZ přijatých 2025",
+        "Medián JPZ přijatých",
         "Soutěžící o obor",
         "Podíl přijatých podle bodového pásma",
         "Rozhodl test",
@@ -205,22 +204,13 @@
         "Výsledek uchazečů o obor",
         "Obory výš a níž na přihlášce"
       ],
-      "dostupne": [
-        {
-          "obdobi": "2026",
-          "verze": "předběžná, platné přihlášky ke dni 13. 5. 2026",
-          "soubor": "https://data.cermat.cz/files/JPZ-polozkova-data/2026/Uchazeci/PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx",
-          "zverejneno": "2026-05-20",
-          "zjisteno": "2026-09-13",
-          "poznamka": "156 210 řádků."
-        }
-      ],
+      "dostupne": [],
       "aktualizace": {
         "zdroj": "https://data.cermat.cz/files/JPZ-polozkova-data/{rok}/Uchazeci/PZ{rok}_kolo1_uchazeci_prihlasky_vysledky.xlsx",
         "katalog": "https://data.cermat.cz/data-a-analyticke-vystupy-jednotna-prijimaci-zkouska/datove-soubory.html",
         "detekce": "HTTP HEAD a katalogová stránka Datové soubory.",
         "revize": "Dvě verze: předběžná v květnu téhož roku, finální o rok později. Revize mění názvy listů, proto skripty čtou první list.",
-        "import": "scripts/build-pasma-prijeti.py, scripts/build-soubeh-prihlasek.py, scripts/validate-pasma-prijeti.py; názvy výstupů nesou rok a v kódu jsou zapsané napevno. Pozor: scripts/enrich_schools_data.py, který počítá nejnižší přijatý výsledek do katalogu, čte sloupce podle pozice; v souboru za rok 2026 se pořadí sloupců změnilo a příznak přijetí je text, takže bez úpravy by počítal chybně. Datová linka ho nespouští.",
+        "import": "scripts/build-pasma-prijeti.py, scripts/build-soubeh-prihlasek.py, scripts/build-kontext-prihlasek.py; doklad stability mezi ročníky scripts/validate-pasma-prijeti.py --rocniky STARY-NOVY. Výstupy nesou rok v názvu, registr ho drží zástupným {obdobi}, ne napevno. Pozor: scripts/enrich_schools_data.py čte sloupce podle pozice a s textovým příznakem přijetí by počítal chybně; datová linka ho nespouští a katalogové minimum se na webu nezobrazuje.",
         "automatizace": "priprava",
         "lidsky_krok": "Převzetí mění čísla v dokladech tezí a na webu, proto revize výsledků validace před přepnutím.",
         "sledovat": [
@@ -233,6 +223,20 @@
           "soubor": "data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx",
           "stazeno": "2026-01-29",
           "verze": "předběžná, platné přihlášky ke dni 13. 5. 2025"
+        },
+        {
+          "obdobi": "2025",
+          "soubor": "https://data.cermat.cz/files/JPZ-polozkova-data/2025/Uchazeci/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx",
+          "verze": "finální, včetně údajů o vzdání se přijetí",
+          "prepnuto": "2026-09-13",
+          "z_dostupne": {
+            "obdobi": "2025",
+            "verze": "finální, včetně údajů o vzdání se přijetí",
+            "soubor": "https://data.cermat.cz/files/JPZ-polozkova-data/2025/Uchazeci/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx",
+            "zverejneno": "2026-05-20",
+            "zjisteno": "2026-09-13",
+            "poznamka": "159 172 řádků proti 159 196 v předběžné verzi; list přejmenován z „data“ na „Sheet 1“."
+          }
         }
       ]
     },
@@ -353,7 +357,11 @@
         "Odchylka od očekávaného výsledku",
         "Zařazení proti skupině oborů",
         "Počet let nad skupinou oborů",
-        "Podíl volby předmětu u maturity"
+        "Podíl volby předmětu u maturity",
+        "Maturita za celou školu",
+        "Střed podobných škol",
+        "Frekvence let nad středem podobných škol",
+        "Umístění maturantů v celé zemi"
       ],
       "dostupne": [],
       "aktualizace": {
@@ -757,6 +765,41 @@
         "soubor": "public/druhe_kolo.json",
         "cesta": "meta.nejnovejsi_rok"
       }
+    },
+    "msmt-harmonogram": {
+      "nazev": "MŠMT, harmonogram přijímacího řízení",
+      "dokumentace": "docs/zdroje-dat.md#213-harmonogram-přijímacího-řízení-mšmt",
+      "cyklus": "rocni",
+      "pouziti": "web",
+      "zobrazeno": {
+        "obdobi": "2027",
+        "soubor": "src/data/admissions-2027.json",
+        "zdroj": "https://msmt.gov.cz/media/wp-content/uploads/2026/08/Casovy-harmonogram_2026-2027.pdf",
+        "opsano": "2026-09-11",
+        "poznamka": "Ruční opis termínů z harmonogramu a sdělení o termínech na webu MŠMT. Soubor nese rok v názvu, proto se při novém ročníku zakládá nový."
+      },
+      "ocekavano": {
+        "obdobi": "2028",
+        "kdy": "2027-08",
+        "jistota": "odhad",
+        "zduvodneni": "Harmonogram a sdělení o termínech pro přijímací řízení 2027 vyšly na webu MŠMT v srpnu 2026."
+      },
+      "obnovit_nejpozdeji": "2027-09-30",
+      "po_prepnuti": "Termíny předchozího ročníku se nezobrazují; soubor zůstává jako doklad, co web ukazoval.",
+      "vystupy": [
+        "src/data/admissions-2027.json"
+      ],
+      "ukazatele": [],
+      "aktualizace": {
+        "zdroj": "https://msmt.gov.cz/vzdelavani/stredni-vzdelavani/prijimani-na-stredni-skoly-a-konzervatore",
+        "katalog": "https://msmt.gov.cz/media/wp-content/uploads/2026/08/Casovy-harmonogram_2026-2027.pdf a Sdeleni-o-terminech_2026-2027.pdf",
+        "detekce": "Ruční kontrola stránky MŠMT o přijímání na střední školy. Adresy souborů nesou ročník i měsíc vydání, takže se mění celé; HTTP HEAD na starou adresu nová data neodhalí.",
+        "revize": "MŠMT termíny během ročníku upřesňuje; opis nese datum kontroly v poli checkedAt.",
+        "import": "Ruční opis do src/data/admissions-2027.json. Čte ho stránka přijímaček a hlavní stránka (termín zveřejnění kritérií).",
+        "automatizace": "rucni",
+        "lidsky_krok": "Po vydání harmonogramu na další přijímací řízení opsat termíny do nového souboru, přepnout období a zkontrolovat věty na hlavní stránce.",
+        "sledovat": []
+      }
     }
   },
   "ukazatele_z_vice_sad": {
@@ -818,6 +861,13 @@
       "z": null,
       "na": "2026",
       "doklad": "PR #92 (5de82f1), úloha linky GQ99C schválená 14. 9. 2026, sha256 6a814e0a…; testy build-maturita-skoly a linky 34/34"
+    },
+    {
+      "datum": "2026-09-17",
+      "sada": "cermat-uchazeci-kolo1",
+      "z": "2025",
+      "na": "2026",
+      "doklad": "docs/podklady/overeni-pasem-prijeti-2025-2026.json; výstupy 2026 sloučeny PR #85 (3GQMK); slovník ukazatelů 1.21; testy 79 OK"
     }
   ]
 }

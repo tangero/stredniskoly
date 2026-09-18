@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowLeft, Trophy, Users } from 'lucide-react';
+import { ArrowLeft, Users } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 import { getDemandClass } from '@/lib/utils';
 
@@ -8,7 +8,6 @@ interface DetailHeroProps {
   programName: string;
   location: string;
   kraj: string;
-  minBody: number;
   indexPoptavky: number;
   studyLength: number;
   overviewSlug: string;
@@ -19,7 +18,6 @@ export function DetailHero({
   programName,
   location,
   kraj,
-  minBody,
   indexPoptavky,
   studyLength,
   overviewSlug,

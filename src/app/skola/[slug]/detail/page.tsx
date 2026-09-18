@@ -124,7 +124,6 @@ export default async function SchoolDetailPageV2({ params }: Props) {
           programName={program.zamereni ? `${program.obor} - ${program.zamereni}` : program.obor}
           location={school.obec}
           kraj={krajNames[school.kraj_kod] || school.kraj}
-          minBody={program.min_body}
           indexPoptavky={program.index_poptavky}
           studyLength={program.delka_studia}
           overviewSlug={overviewSlug}

@@ -182,8 +182,20 @@ def zpracuj_druhe_kolo(uloha: dict, soubor: Path, prace: Path, struktura: dict, 
     }
 
 
-def zpracuj_maturitu(uloha: dict, soubor: Path, prace: Path, struktura: dict, stahni_fn=jadro.stahni) -> dict:
-    """Jarní maturitní výsledky: nový rok a tři předchozí, aby zařazení proti skupině šlo číst přes čtyři roky."""
+def zpracuj_maturitu(uloha: dict, soubor: Path, prace: Path, struktura: dict, stahni_fn=jadro.stahni,
+                     stavajici: Path | None = None) -> dict:
+    """Jarní maturitní výsledky: nový rok a tři předchozí, aby zařazení proti skupině šlo číst přes čtyři roky.
+
+    Args:
+        uloha: Úloha datové linky.
+        soubor: Stažený soubor jarního období.
+        prace: Pracovní adresář úlohy.
+        struktura: Výsledek kontroly struktury souboru.
+        stahni_fn: Funkce stahování; testy ji nahrazují.
+        stavajici: Výstup, který se přepíše a proti kterému se měří pojistka.
+            Výchozí je `public/maturita_skoly.json`; testy sem dávají vlastní soubor,
+            aby pojistka neporovnávala syntetická data s ostrým webem.
+    """
     if "jap_" in uloha["url"]:
         return {
             "zpracovatel": "cermat-maturita",
@@ -201,7 +213,8 @@ def zpracuj_maturitu(uloha: dict, soubor: Path, prace: Path, struktura: dict, st
         except Exception:  # starší ročník chybí: zůstane ze stávajícího výstupu, pokud tam je
             continue
     vystup = prace / "maturita_skoly.json"
-    stavajici = jadro.KOREN / "public" / "maturita_skoly.json"
+    if stavajici is None:
+        stavajici = jadro.KOREN / "public" / "maturita_skoly.json"
     argumenty = [a for r, cesta in sorted(soubory.items()) for a in ("--soubor", f"{r}={cesta}")]
     if stavajici.exists():
         argumenty += ["--zaklad", str(stavajici)]

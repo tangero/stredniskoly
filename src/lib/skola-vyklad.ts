@@ -135,10 +135,36 @@ export function shrnutiMaturity(
 }
 
 export const STAV_POPISEK: Record<StavProtiSkupine, string> = {
-  above: 'nad skupinou',
-  indistinguishable: 'nerozlišitelné od skupiny',
-  below: 'pod skupinou',
+  above: 'nad středem podobných škol',
+  indistinguishable: 'nerozlišitelné od středu',
+  below: 'pod středem podobných škol',
 };
+
+const SKUPINY_MATURITY: Record<string, string> = {
+  GY8: 'osmileté gymnázium', GY6: 'šestileté gymnázium', GY4: 'čtyřleté gymnázium', LYC: 'lyceum',
+};
+
+/** Název skupiny oborů pro text stránky: „osmileté gymnázium“; ostatní skupiny podle CERMATu malými písmeny. */
+export function nazevSkupinyMaturity(smo16: string, nazevCermat: string | null | undefined): string {
+  return SKUPINY_MATURITY[smo16] ?? (nazevCermat ?? smo16).toLocaleLowerCase('cs-CZ');
+}
+
+/**
+ * Jak často byla škola v češtině nad středem podobných škol, za všechny skupiny oborů dohromady.
+ * Null, když žádný rok nemá zařazení.
+ */
+export function jakCastoNadStredem(skupiny: { letNad: number; letSeZarazenim: number }[]): string | null {
+  const nad = skupiny.reduce((s, x) => s + x.letNad, 0);
+  const celkem = skupiny.reduce((s, x) => s + x.letSeZarazenim, 0);
+  if (!celkem) return null;
+  const podil = nad / celkem;
+  if (podil === 1) return 'každý rok';
+  if (podil >= 0.75) return 'téměř každý rok';
+  if (podil > 0.5) return 've většině let';
+  if (podil === 0.5) return 'zhruba v polovině let';
+  if (podil > 0) return 'jen v některých letech';
+  return 'v žádném ze sledovaných let';
+}
 
 /** „ve 3 ze 4 let“, „ve všech 4 letech“, „v roce 2026“. */
 export function letNadSlovy(s: ShrnutiMaturity): string {

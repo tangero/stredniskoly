@@ -10,7 +10,7 @@ import type { ProfilSkolyData } from './skola-profil-data';
 import { zOd, type ZarazeniObtiznosti } from './obor-profil.ts';
 import { vetyDruhehoKola } from './druhe-kolo-vyklad.ts';
 
-export const VERZE_SCHEMATU = 2;
+export const VERZE_SCHEMATU = 3;
 const WEB = 'https://www.prijimackynaskolu.cz';
 
 const OBTIZNOST_TEXT: Record<ZarazeniObtiznosti, string> = {
@@ -26,7 +26,7 @@ const POPISKY_POLI: Record<string, string> = {
   skolne: 'Školné a poplatky', podpora_svp: 'Podpora žáků se SVP', kontakt_vychovny_poradce: 'Kontakt na výchovného poradce',
   prestupy: 'Přestupy během studia', popis_skoly: 'Škola o sobě',
 };
-const STAV_TEXT = { above: 'nad skupinou', indistinguishable: 'nerozlišitelné od skupiny', below: 'pod skupinou' } as const;
+const STAV_TEXT = { above: 'nad středem podobných škol', indistinguishable: 'nerozlišitelné od středu', below: 'pod středem podobných škol' } as const;
 
 export interface SkolaZakladni {
   nazev: string;
@@ -104,7 +104,7 @@ export function sestavOtevrenaData(skola: SkolaZakladni, d: ProfilSkolyData, obd
         let_nad_skupinou: s.letNad,
         let_se_zarazenim: s.letSeZarazenim,
         skol_ve_skupine: s.skolVeSkupine,
-        median_percentilu_skupiny: s.medianPercentilSkupiny,
+        stred_podobnych_skol_procent_bodu: s.stredPodobnychSkol,
         roky: s.roky.filter(r => r.zaznam).map(r => bezNull({
           rok: r.rok,
           spolecna_cast: r.zaznam!.spolecna_cast ?? null,
@@ -192,14 +192,14 @@ export function otevrenaDataMarkdown(o: OtevrenaDataSkoly): string {
 
   if (o.maturita) {
     r.push(`## Maturita, společná část (jaro)`, '');
-    r.push('Percentil říká, kolik ze 100 maturantů v celé zemi mělo stejný nebo horší výsledek. Srovnává se jen se školami stejné skupiny oborů; výsledek z velké části odráží, koho škola přijímá, a neměří sám o sobě kvalitu výuky.', '');
+    r.push('Podobné školy jsou školy se stejným typem oborů; střed znamená, že polovina z nich dopadla lépe a polovina hůř. Srovnání i střed stojí na průměrném podílu bodů z testu, tedy na jedné veličině. Výsledek z velké části odráží, koho škola přijímá, a neměří sám o sobě kvalitu výuky.', '');
     for (const s of o.maturita.skupiny_oboru) {
       r.push(`### ${s.nazev}`, '');
-      r.push(`- **Nad skupinou v češtině:** ${s.let_nad_skupinou} ${zOd(s.let_se_zarazenim)} ${s.let_se_zarazenim} let se zařazením`);
-      r.push('', '| Rok | Maturantů | Úspěšně | Čeština, percentil | Zařazení | Matematiku volilo |', '|---|---:|---:|---:|---|---:|');
+      r.push(`- **Čeština nad středem podobných škol:** ${s.let_nad_skupinou} ${zOd(s.let_se_zarazenim)} ${s.let_se_zarazenim} let se srovnáním`);
+      r.push('', '| Rok | Maturitu udělalo | Čeština, % bodů | Střed podobných škol | Srovnání | Matematiku volilo |', '|---|---:|---:|---:|---|---:|');
       for (const rok of s.roky) {
         const cj = rok.cestina, sc = rok.spolecna_cast, ma = rok.matematika;
-        r.push(`| ${rok.rok} | ${cj?.took ?? '—'} | ${sc?.passRate !== undefined ? `${cislo(sc.passRate, sc.passRate % 1 ? 1 : 0)} %` : '—'} | ${cj?.averagePercentile !== undefined ? cislo(cj.averagePercentile, 1) : '—'} | ${rok.zarazeni_proti_skupine ? STAV_TEXT[rok.zarazeni_proti_skupine] : 'bez zařazení'} | ${ma?.subjectChoiceShare !== undefined ? `${Math.round(ma.subjectChoiceShare)} %` : '—'} |`);
+        r.push(`| ${rok.rok} | ${sc?.passed !== undefined && sc.registered ? `${cislo(sc.passed)} ${zOd(sc.registered)} ${cislo(sc.registered)}` : '—'} | ${cj?.averagePercentScore !== undefined ? `${cislo(cj.averagePercentScore, 1)} %` : '—'} | ${cj?.groupComparison ? `${cislo(cj.groupComparison.medianPercentScore, 1)} %` : '—'} | ${rok.zarazeni_proti_skupine ? STAV_TEXT[rok.zarazeni_proti_skupine] : 'bez srovnání'} | ${ma?.subjectChoiceShare !== undefined ? `${Math.round(ma.subjectChoiceShare)} %` : '—'} |`);
       }
       r.push('');
     }

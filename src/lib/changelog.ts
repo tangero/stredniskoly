@@ -10,6 +10,17 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '2.10.2',
+    date: '14. 9. 2026',
+    title: 'Srozumitelnější maturita na stránce školy',
+    changes: [
+      { type: 'improve', text: 'Maturita na stránce školy začíná jednou větou: kolik maturantů maturitu udělalo a jak často byli v češtině nad středem podobných škol' },
+      { type: 'improve', text: 'Přehledná tabulka po oborech a výsledky slovy „lépe než 91 ze 100 maturantů“ místo percentilů; podrobnosti po letech na rozkliknutí' },
+      { type: 'fix', text: 'Úspěšnost u maturity se uvádí z přihlášených maturantů, stejně jako ji počítá CERMAT; dříve stál vedle podílu počet z konajících' },
+      { type: 'fix', text: 'Srovnání s podobnými školami je celé v jedné veličině, v podílu bodů z testu: střed, výsledek školy i graf. Percentil zůstal jen jako srovnání s maturanty v celé zemi' },
+    ],
+  },
+  {
     version: '2.10.1',
     date: '14. 9. 2026',
     title: 'Druhé kolo na nových stránkách',

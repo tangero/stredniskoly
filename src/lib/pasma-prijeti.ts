@@ -43,6 +43,11 @@ export interface PasmaPrijetiObor {
   /** Záznam sdílí víc zaměření v katalogu nebo víc nabídek v aktuálním roce; údaje platí za obor jako celek. */
   vice_zamereni: boolean;
   talentova_zkouska: boolean;
+  /**
+   * Prostřední výsledek mezi přijatými, jen při aspoň deseti přijatých.
+   * U šikmého rozdělení leží pod průměrem, který pár výborných výsledků táhne nahoru.
+   */
+  median_prijatych?: number;
   /** Nikdo nebyl odmítnut kvůli kapacitě. Neznamená, že se dostali všichni. */
   nikdo_neodmitnut_pro_kapacitu?: boolean;
   pasma?: PasmoPrijeti[];

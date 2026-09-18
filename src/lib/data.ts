@@ -1008,82 +1008,6 @@ export interface YearlyTrendData {
   minBodyChange: number;        // rozdíl bodů
 }
 
-// Cache pro trend data
-let trendDataCache: Map<string, YearlyTrendData> | null = null;
-
-/**
- * Načte a spočítá trend data pro všechny školy
- */
-async function getTrendDataMap(): Promise<Map<string, YearlyTrendData>> {
-  if (trendDataCache) return trendDataCache;
-
-  const filePath = path.join(dataDir, 'schools_data.json');
-  const content = await fs.readFile(filePath, 'utf-8');
-  const data = JSON.parse(content);
-
-  trendDataCache = new Map();
-
-  // Indexovat data 2024 podle ID
-  const data2024Map = new Map<string, {
-    prihlasky: number;
-    prijati: number;
-    index_poptavky: number;
-    min_body: number;
-  }>();
-
-  for (const school of (data['2024'] || [])) {
-    const baseId = school.id.split('_').slice(0, 2).join('_');
-    data2024Map.set(baseId, {
-      prihlasky: school.prihlasky || 0,
-      prijati: school.prijati || 0,
-      index_poptavky: school.index_poptavky || 0,
-      min_body: school.min_body || 0
-    });
-  }
-
-  // Spárovat s daty 2025
-  for (const school of (data['2025'] || [])) {
-    const baseId = school.id.split('_').slice(0, 2).join('_');
-    const prev = data2024Map.get(baseId);
-
-    const prihlasky2025 = school.prihlasky || 0;
-    const prihlasky2024 = prev?.prihlasky || 0;
-    const prijati2024 = prev?.prijati || 0;
-    const indexPoptavky2025 = school.index_poptavky || 0;
-    const indexPoptavky2024 = prev?.index_poptavky || 0;
-    const minBody2025 = school.min_body || 0;
-    const minBody2024 = prev?.min_body || 0;
-
-    // Spočítat změny
-    let prihlaskyChange = 0;
-    let prihlaskyDirection: 'up' | 'down' | 'stable' = 'stable';
-
-    if (prihlasky2024 > 0) {
-      prihlaskyChange = ((prihlasky2025 - prihlasky2024) / prihlasky2024) * 100;
-      if (prihlaskyChange > 5) {
-        prihlaskyDirection = 'up';
-      } else if (prihlaskyChange < -5) {
-        prihlaskyDirection = 'down';
-      }
-    }
-
-    trendDataCache.set(baseId, {
-      prihlasky2024,
-      prihlasky2025,
-      prihlaskyChange,
-      prihlaskyDirection,
-      prijati2024,
-      indexPoptavky2024,
-      indexPoptavky2025,
-      indexChange: indexPoptavky2025 - indexPoptavky2024,
-      minBody2024,
-      minBody2025,
-      minBodyChange: minBody2025 - minBody2024
-    });
-  }
-
-  return trendDataCache;
-}
 
 /**
  * Získá trend data pro pole škol
@@ -1097,7 +1021,7 @@ let trendDataByProgramCache: Map<string, YearlyTrendData> | null = null;
 
 /**
  * Načte trend data pro všechny programy včetně zaměření
- * Na rozdíl od getTrendDataMap, tato funkce používá plné ID (včetně zaměření)
+ * Používá plné ID nabídky včetně zaměření.
  */
 async function getTrendDataByProgramMap(): Promise<Map<string, YearlyTrendData>> {
   if (trendDataByProgramCache) return trendDataByProgramCache;
@@ -1198,57 +1122,10 @@ export async function getTrendDataForPrograms(programIds: string[]): Promise<Map
 /**
  * Profil náročnosti školy
  */
-export interface SchoolDifficultyProfile {
-  // Percentily náročnosti
-  percentilOverall: number;        // Percentil mezi všemi školami
-  percentilInType: number;         // Percentil v rámci typu (GY4, SOŠ, ...)
-  rankInType: number;              // Pořadí v typu
-  totalInType: number;             // Celkem škol daného typu
-
-  // Index zaměření (normalizovaný)
-  focusIndex: number;              // z_ma - z_cj (kladný = matematické)
-  focusLabel: string;              // Textový popis zaměření
-  z_cj: number;                    // Z-skóre pro ČJ
-  z_ma: number;                    // Z-skóre pro MA
-
-  // Srovnání s průměrem
-  cjDiffFromAvg: number;           // Rozdíl ČJ od celostátního průměru
-  maDiffFromAvg: number;           // Rozdíl MA od celostátního průměru
-  minBodyDiffFromAvg: number;      // Rozdíl min_body od průměru
-
-  // Srovnání s typem
-  cjDiffFromType: number;          // Rozdíl ČJ od průměru typu
-  maDiffFromType: number;          // Rozdíl MA od průměru typu
-  minBodyDiffFromType: number;     // Rozdíl min_body od průměru typu
-
-  // Celostátní statistiky (pro kontext)
-  nationalStats: {
-    cjMean: number;
-    cjStd: number;
-    maMean: number;
-    maStd: number;
-    minBodyMean: number;
-    minBodyStd: number;
-  };
-
-  // Statistiky typu
-  typeStats: {
-    cjMean: number;
-    maMean: number;
-    minBodyMean: number;
-    typeName: string;
-  };
-}
 
 /** Historický žebříček používal součet nezávislých minim různých lidí.
  * Bez ověřené srovnatelné populace ho nelze vracet ani nahrazovat heuristikou.
  */
-export async function getSchoolDifficultyProfile(
-  _schoolId: string,
-  _schoolType: string
-): Promise<SchoolDifficultyProfile | null> {
-  return null;
-}
 
 // ============================================================================
 // InspIS PORTÁL Data (file-based)

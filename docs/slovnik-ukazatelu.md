@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.18 · 14. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.23 · 17. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -188,12 +188,22 @@ Zdroj jsou data uchazečů CERMATu za 1. kolo 2025, kde je u každé volby pří
 3. **Malé počty.** 1 586 ze 4 350 oborů má méně než deset přijatých. Minimum je tam jednotlivý uchazeč, ne stabilní vlastnost oboru, a nezobrazuje se.
 4. **Nepředpovídá příští rok.** Popisuje jeden ročník, nikoli požadavek školy.
 
-### Medián a průměr JPZ přijatých 2025
-Pole `jpz_median` a `jpz_prumer_actual`, počítaná týmž skriptem ze stejné množiny přijatých, ve stejném rozsahu 0 až 100.
+### Medián JPZ přijatých
+Prostřední výsledek jednotné zkoušky mezi přijatými: polovina přijatých měla stejně nebo míň, polovina stejně nebo víc. Rozsah 0 až 100 bodů. Pole `median_prijatych` v `public/pasma_prijeti_{rok}.json`, generuje `scripts/build-pasma-prijeti.py`.
 
-Medián je u šikmého rozdělení vypovídavější než průměr a měl by mít při zobrazení přednost. Obě čísla jsou v katalogu, ale na webu se zatím nikde nepoužívají.
+**Proč vedle průměru.** Rozdělení výsledků přijatých je šikmé doprava: pár výborných výsledků táhne průměr nahoru, takže průměr přeceňuje typického přijatého. Na 2 517 nabídkách roku 2026 s aspoň deseti přijatými leží medián **systematicky pod průměrem**, mediánově o 1,1 bodu (dolní čtvrtina −2,3, horní −0,1); rozdíl aspoň 2 body má 35 % oborů, aspoň 5 bodů 2,4 %. Jednotný záporný směr je ta šikmost.
 
-Nezaměňovat s **průměrem JPZ přijatých** z oddílu výše, který pochází z agregátů CERMATu za rok 2026. Ten platí za nabídku včetně zaměření, tenhle za celý KKOV školy, a jsou to jiné ročníky.
+**Tři meze, které platí spolu s číslem:**
+
+1. **Aspoň deset přijatých.** Pod tím se nezobrazuje, stejně jako nejnižší výsledek mezi přijatými; je to pak údaj o jednotlivcích. Splňuje 2 517 z 2 879 oborů roku 2026.
+2. **Bez zaměření.** Zdroj nese jen REDIZO a KKOV, takže u 440 z 3 091 nabídek (14,2 %) sdílí několik zaměření jednu hodnotu. Táž mez jako u nejnižšího výsledku mezi přijatými.
+3. **Mezi ročníky se nesrovnává.** Body odrážejí obtížnost testu; k srovnání ročníků slouží průměrné percentilové umístění přijatých.
+
+**Neříká nic o náročnosti studia ani o kvalitě výuky.** Popisuje, s jakými výsledky přicházejí spolužáci.
+
+Nezaměňovat s **průměrem JPZ přijatých** z oddílu výše. Ten pochází z agregátů CERMATu a platí za nabídku **včetně zaměření**; tenhle za celý obor školy. Zobrazují se vedle sebe právě proto, že se liší, a rozdíl se nedopočítává.
+
+**Nahrazuje pole `jpz_median` a `jpz_prumer_actual`** ze staršího katalogu (17. 9. 2026). Ta vznikala v `scripts/enrich_schools_data.py`, který čte sloupce podle pozice a od revize zdroje počítá chybně, a pocházela z předběžné verze dat za rok 2025. Na webu se nikdy nepoužila. Mezivýsledek `data/jpz_stats_2025.json` tím pozbyl roli; jeho pole `cj_at_jpz_min`, `ma_at_jpz_min`, `cj_min_independent` a `ma_min_independent` se **nepřebírají**, protože každé určuje jediný uchazeč a poslední dvě mohou pocházet od dvou různých lidí, takže vedle sebe popisují uchazeče, který nemusí existovat.
 
 ### Soutěžící o obor
 Přijatí a ti, kdo se nevešli kvůli kapacitě, dohromady. Je to jmenovatel všech ukazatelů o hranici přijetí.
@@ -233,6 +243,8 @@ Prahy jsou zlomky, které se dají říct slovy (třetina, polovina, dvě třeti
 
 Zařazení se nezobrazuje pod 10 soutěžícími (jeden uchazeč by přehodil stupeň) a u oborů s talentovou zkouškou se doplňuje větou, že rozhodovala i ona.
 
+**Práh je pravidlo zobrazení, ne součást definice.** Datové pole `zarazeni_obtiznosti` v `public/souhrny_kolo1.json` proto nese hodnotu **i pro obory pod prahem** a kdokoli ho čte přímo, musí práh uplatnit sám. Od 17. 9. 2026 platí dělba: veličinu počítá `scripts/build-souhrny-kolo1.py`, práh uplatňuje `zarazeniObtiznosti` v `src/lib/obor-profil.ts`. Do té doby si zařazení počítaly obě strany zvlášť a lišily se právě o tenhle práh; ověřeno, že sjednocení nezměnilo ani jeden z 6 150 zobrazovaných záznamů.
+
 **Není to hodnocení školy** a nesmí se používat k řazení škol. Nahrazuje zamítnutý index obtížnosti (oddíl 6) popisem jednoho ročníku, který jde ověřit ze zdroje. Podmínky školy mohou být hlavní překážkou i tam, kde kapacita nerozhodovala; proto se počet nesplněných podmínek uvádí vedle, kdykoli dosáhne počtu přijatých nebo 20 % přihlášek.
 
 ### Podíl přijatých podle bodového pásma
@@ -261,7 +273,9 @@ Ukládá se zaokrouhlené na tři desetinná místa. Počítá se u oborů s asp
 
 Na stránce se zobrazuje jedna ze tří vět podle hodnoty: 0,97 a výš, 0,85 až 0,97, pod 0,85. U 1 427 oborů bez talentové zkoušky připadá na první 52,4 %, na druhou 41,1 % a na třetí 6,4 %.
 
-**Mezi ročníky je stabilní jen hrubě.** Na 1 158 oborech spárovaných mezi roky 2024 a 2025 je korelace 0,725 a medián absolutní změny 0,01. Hodnoty se drží blízko sebe, ale pořadí oborů v úzkém pásmu kolem 0,97 se mění. Proto se neřadí a nezobrazuje jako číslo, jen jako tři kategorie. Do verze 1.6 tu stála korelace 0,783, spočítaná včetně oborů bez povinné zkoušky, které ji uměle zvyšovaly; do verze 1.11 korelace 0,673 na 1 149 oborech z předběžné verze dat 2025.
+**Mezi ročníky je stabilní jen hrubě.** Na 1 173 oborech spárovaných mezi roky 2025 a 2026 je korelace **0,672** a medián absolutní změny 0,01. Hodnoty se drží blízko sebe, ale pořadí oborů v úzkém pásmu kolem 0,97 se mění. Proto se neřadí a nezobrazuje jako číslo, jen jako tři kategorie.
+
+Na dvojici 2024–2025 vycházela korelace 0,725 na 1 158 oborech, takže **novější dvojice ročníků vyšla hůř**. Zařazení do tří kategorií se přitom mezi roky 2025 a 2026 mění u 305 z 1 173 oborů, tedy u 26 %. Je to důvod tuto míru dál nezobrazovat jako číslo a nepoužívat k řazení, ne důvod ji zrušit: medián změny zůstává 0,01 a věta o tom, co rozhodlo, popisuje jeden ročník. Starší hodnoty: do verze 1.6 tu stála korelace 0,783, spočítaná včetně oborů bez povinné zkoušky, které ji uměle zvyšovaly; do verze 1.11 korelace 0,673 na 1 149 oborech z předběžné verze dat 2025. Doklad: `docs/podklady/overeni-pasem-prijeti-2025-2026.json`.
 
 **Neměří kvalitu ani spravedlnost.** Nízká hodnota znamená, že škola vážila i něco jiného než test, například prospěch nebo vlastní zkoušku, což je legitimní.
 
@@ -282,14 +296,14 @@ Medián podílu soutěžících v pásmu je 26,7 %.
 
 Meze se dosazují do vět **každá zvlášť**: pod dolní mezí se nedostal nikdo, nad horní se dostali všichni. U 8,1 % z 1 439 oborů jsou obě meze shodné a platí třetí věta, že přesně s tímto výsledkem se někdo dostal a někdo ne. U 7,8 % je horní mez nižší než dolní a mezi nimi nespadl nikdo.
 
-**Je to popis loňska, ne míra.** Oba konce určuje jediný uchazeč, takže se **nepoužívá k porovnávání oborů ani k řazení**. Šířka pásma je navíc mezi ročníky nestabilní: na 1 158 oborech korelace 0,692 a medián změny 4 body proti mediánové šířce 7 bodů. Ve verzi 1.4 tu stál ukazatel „překryv u hranice přijetí“, který z těchto dvou hodnot dělal měřítko; při záměně krajních hodnot za devadesátý a desátý percentil se u 41 % oborů obracel verdikt, a proto byl nahrazen mírou *rozhodl test*.
+**Je to popis loňska, ne míra.** Oba konce určuje jediný uchazeč, takže se **nepoužívá k porovnávání oborů ani k řazení**. Šířka pásma je navíc mezi ročníky nestabilní: na 1 173 oborech spárovaných mezi roky 2025 a 2026 korelace 0,719 a medián změny 3 body proti mediánové šířce 6 bodů (na dvojici 2024–2025 to bylo 0,692, 4 body a šířka 7 bodů). Ve verzi 1.4 tu stál ukazatel „překryv u hranice přijetí“, který z těchto dvou hodnot dělal měřítko; při záměně krajních hodnot za devadesátý a desátý percentil se u 41 % oborů obracel verdikt, a proto byl nahrazen mírou *rozhodl test*.
 
 ### Percentil nejnižšího přijatého
 Kolik ze 100 uchazečů v celé zemi mělo stejný nebo horší výsledek než nejnižší přijatý na obor. Pole `min_prijaty_percentil`.
 
 Počítá se z řádků souboru uchazečů, kde je každý uchazeč jednou bez ohledu na počet přihlášek. Do 13. 9. 2026 se počítal přes záznamy uchazeč krát obor, takže uchazeč s třemi přihláškami vážil trojnásobně.
 
-Odstraňuje vliv obtížnosti testu: mezi roky 2024 a 2025 klesl medián výsledku uchazečů z 54 na 46 bodů a hranice v bodech klesla mediánově o 3 body, kdežto percentil se posunul o +1,7 bodu. **Nezpřesňuje ale predikci**: korelace mezi ročníky je 0,867 proti 0,859 u bodů.
+Odstraňuje vliv obtížnosti testu. Mezi roky 2025 a 2026 stoupl medián výsledku uchazečů ze 46 na 49 bodů a nejnižší přijatý v bodech se posunul mediánově o +1 bod, kdežto jeho percentil o −0,11 bodu. Týž jev opačným směrem byl mezi roky 2024 a 2025: medián klesl z 54 na 46 bodů, hranice v bodech o 3 body dolů, percentil o +1,7 bodu nahoru. **Nezpřesňuje ale predikci**: korelace mezi roky 2025 a 2026 je 0,883 u percentilu proti 0,879 u bodů (2024–2025: 0,867 proti 0,859).
 
 Souhrny CERMATu nesou oficiální variantu po nabídkách, `ČJ+MA – PERCENTIL – MIN (PŘIJATI)`, pole `min_prijaty_percentil_souhrn`, vyplněné jen při aspoň deseti přijatých s výsledkem. U oborů s jedinou nabídkou se s hodnotou z dat uchazečů shoduje do 2 bodů u 2 039 z 2 278 v roce 2025 a u 2 182 z 2 286 v roce 2026; percentilovou základnu legenda souhrnu neuvádí. Na stránce se používá jedna z nich a vždy se jménem tohoto ukazatele.
 
@@ -393,9 +407,39 @@ CERMAT zveřejňuje maturitu za právnickou osobu (`redizo`) a za školu ve skup
 Z toho plyne tvrdé pravidlo: školní agregát se nikdy nezobrazí jako výsledek konkrétního oboru. Když přesný oborový výsledek nemáme, nadpis zní „výsledek školy ve skupině oborů“.
 
 ### Úspěšnost maturity
-Podíl úspěšných z konajících. Pole `passRate`. Vždy se jmenovatelem vedle podílu.
+Podíl úspěšných **z přihlášených** ke společné části, jak ho počítá CERMAT ve sloupci `PODÍL ÚSPĚŠNÝCH (%)`. Pole `passRate`. Vždy se jmenovatelem vedle podílu, a to se **stejným** jmenovatelem, ze kterého je podíl spočítaný: „maturitu udělalo 45 ze 47 přihlášených“.
 
-Úspěšnost konajících není úspěšnost všech přihlášených; neúčast se vede zvlášť jako `nonParticipationRate`.
+Doprovodná pole ze stejného bloku: `registered` přihlášení, `took` konající, `passed` úspěšní, `failed` neúspěšní, `absent` nekonající, `nonParticipationRate` neúčast z přihlášených, `grossFailureRate` hrubá neúspěšnost z přihlášených.
+
+**Změna výpočtu 17. 9. 2026 (dřív podíl z konajících).** Do té doby tenhle soupis tvrdil, že `passRate` je podíl z konajících, a stránka školy vedle procenta vypisovala počet konajících. Vznikl z toho nesoulad: „98,2 %“ vedle „55 z 55“. Zjištěno při revizi maturitního oddílu po zpětné vazbě na Gymnáziu Nad Štolou 14. 9. 2026. Doklad z `public/maturita_skoly.json`: škola s `registered` 47, `took` 46, `passed` 45 má `passRate` 95,74, což je 45/47; z konajících by vyšlo 97,83. Souhlasí i se soupisem zdrojů, oddíl 2.11, kde je `PODÍL ÚSPĚŠNÝCH (%)` definovaný jako úspěšní z přihlášených. **Hodnoty v datech se nemění**, mění se jejich výklad a jmenovatel uváděný na stránce.
+
+**Neříká**, kolik žáků školu dokončí: kdo k maturitě vůbec nešel, je v `absent`, a škola může úspěšnost zvýšit tím, že slabé žáky ke zkoušce nepustí. Proto se vedle podílu uvádí i počet nekonajících.
+
+### Maturita za celou školu
+Společná část za právnickou osobu bez rozdělení na skupiny oborů: `skoly[redizo].roky[rok].CELKEM`, v souboru CERMATu třídění `redizo`. Stejná pole jako u skupiny oborů.
+
+**Na stránce** slouží jen souhrnné větě za školu („maturitu v roce 2026 udělalo 146 ze 148 přihlášených maturantů“). Podle pravidla o granularitě se **nikdy** nezobrazí jako výsledek oboru ani skupiny oborů.
+
+### Střed podobných škol
+**Medián průměrných procentních skórů z češtiny** přes všechny školy téže skupiny oborů `SMO16`, téhož roku a jarního období, které mají aspoň 10 konajících; každá škola jeden hlas. Jde o **tutéž veličinu, proti které se počítá zařazení**: pole `cj.groupComparison.medianPercentScore` u roku školy, souhrnně `skupiny[rok][SMO16].medianPercentScore`.
+
+**Na stránce** stojí vedle průměrného procentního skóru školy: v kartě oboru, v tabulce po letech a jako osa grafu, kde každá tečka je jedna podobná škola. Pojem v textu je „střed podobných škol“ podle [slovníku pojmů](slovnik-pojmu.md).
+
+**Sjednoceno 17. 9. 2026.** Do té doby se zobrazoval `medianPercentile`, tedy medián průměrných percentilů, zatímco zařazení se počítalo proti mediánu skórů. Čtenář tak viděl dvě čísla z různých veličin a vedle nich nálepku odvozenou z třetí. Kontrola nad `public/maturita_skoly.json` ukázala, že zařazení si s percentilem v žádném z 8 145 srovnání neodporovalo ve směru (0 případů „nad středem“ pod mediánem percentilů a naopak), ale u 4 470 srovnání bylo „nerozlišitelné“, přestože čísla vedle sebe rozdíl ukazovala. Od té doby se vše, co porovnává školu s podobnými školami, počítá i zobrazuje v průměrném procentním skóru.
+
+`medianPercentile` a `percentiles` v souboru zůstávají, web je nepoužívá.
+
+### Umístění maturantů v celé zemi
+Průměrný percentil maturantů školy v předmětu, pole `averagePercentile`. Na stránce „v celé zemi lépe než 84 ze 100 maturantů“.
+
+**Je to jiné srovnání než střed podobných škol**: porovnává maturanty školy se všemi maturanty v zemi, ne školu se školami téhož typu. Proto se nikdy neuvádí jako důvod zařazení a v textu se od srovnání s podobnými školami odděluje slovy „v celé zemi“.
+
+### Frekvence let nad středem podobných škol
+Slovní souhrn toho, jak často měla škola v češtině zařazení `above`, spočítaný **přes všechny skupiny oborů školy dohromady**: podíl = součet let se zařazením `above` děleno součtem let se zařazením. Prahy: 1 „každý rok“, od 0,75 „téměř každý rok“, nad 0,5 „ve většině let“, právě 0,5 „zhruba v polovině let“, nad 0 „jen v některých letech“, 0 „v žádném ze sledovaných let“. Počítá se při zobrazení z `public/maturita_skoly.json` (`src/lib/skola-vyklad.ts`, `jakCastoNadStredem`).
+
+Roky bez zařazení se do jmenovatele nepočítají, stejně jako u ukazatele Počet let nad skupinou oborů, který zůstává výchozím tvarem pro jednu skupinu oborů.
+
+**Neříká** nic o vývoji v čase: je to podíl, ne trend. U školy s více skupinami oborů míchá roky různých skupin, proto se v textu uvádí s předmětem a s tím, že jde o všechny obory („v češtině byli maturanti všech oborů téměř každý rok nad středem podobných škol“).
 
 ### Průměrný procentní skór maturity
 Průměrný výsledek v didaktickém testu daného předmětu. Pole `averagePercentScore`, rozptyl `standardDeviation`, percentil `averagePercentile`.
@@ -415,7 +459,9 @@ Pole `cj.groupComparison` u školy ve skupině oborů: `state` (`above`, `indist
 
 **Výpočet.** Referencí je medián průměrných skórů z češtiny všech škol téže skupiny oborů `SMO16`, téhož roku a jarního období, které mají aspoň 10 konajících; každá škola jeden hlas. U školy s aspoň 10 konajícími se spočítá směrodatná chyba `SE = standardDeviation / √took` a interval `averagePercentScore ± 1,96 · SE`. Interval celý nad mediánem je `above`, celý pod ním `below`, jinak `indistinguishable`. Zdroj: CERMAT, `MZ{rok}j_SC_skolobory.xlsx`. Návrh §5.2.
 
-**Na stránce:** „nad školami stejné skupiny oborů“, „nerozlišitelné od skupiny“, „pod skupinou“. Jen u češtiny, protože jen ji píše celý ročník.
+**Na stránce:** „nad středem podobných škol“, „nerozlišitelné od středu“, „pod středem podobných škol“ (slovník pojmů 1.4). Jen u češtiny, protože jen ji píše celý ročník.
+
+**Jedna veličina pro celé srovnání.** Zobrazený střed podobných škol, hodnota školy i osa grafu jsou od 17. 9. 2026 v průměrném procentním skóru, tedy v téže veličině, ze které se počítá zařazení (`medianPercentScore`). Zůstává jediný rozdíl, který musí text vysvětlit: zařazení navíc bere v úvahu velikost ročníku, takže u malé školy vyjde `indistinguishable`, i když se obě čísla vedle sebe liší. Percentil se u srovnání s podobnými školami nepoužívá, patří ukazateli Umístění maturantů v celé zemi.
 
 **Neříká**, jak dobře škola učí: výsledek ovlivňuje hlavně to, koho škola přijala. U malé školy skončí většina výsledků jako nerozlišitelné, což je správně. **Stabilita:** mezi jary 2025 a 2026 stejné zařazení u 63,1 % škol s aspoň 30 maturanty, přeskok mezi krajními stavy u 9 z 928 ([stránka školy](stranka-skoly-2027.md), oddíl 4.2). Proto se na stránce neukazuje jeden rok, ale počet let nad skupinou.
 
@@ -423,6 +469,8 @@ Pole `cj.groupComparison` u školy ve skupině oborů: `state` (`above`, `indist
 Počet jarních období z posledních čtyř zveřejněných, kdy měla škola ve skupině oborů zařazení `above`. Počítá se při zobrazení z `public/maturita_skoly.json`; roky bez zařazení (méně než 10 konajících, škola ve skupině nebyla) se uvádějí zvlášť, ne jako „ne nad skupinou“.
 
 **Neříká**, že se škola zlepšuje nebo zhoršuje; ze čtyř bodů jde nanejvýš říct „v posledních dvou letech nad skupinou, předtím pod ní“.
+
+Souhrn za celou školu, tedy přes všechny její skupiny oborů, vede ukazatel Frekvence let nad středem podobných škol.
 
 ### Podíl volby předmětu u maturity
 Pole `ma.subjectChoiceShare`: podíl maturantů, kteří si ve společné části zvolili matematiku místo cizího jazyka, jak ho zveřejňuje CERMAT. Zveřejňuje se i u méně než 10 konajících matematiku, protože se počítá z celého ročníku.
@@ -470,6 +518,11 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.23 | **Obtížnost přijetí má jednu definici** (17. 9. 2026): počítá ji generátor souhrnů, práh deseti soutěžících uplatňuje až zobrazení. Dosud existovaly dvě implementace, které se o práh lišily; sjednocení nezměnilo ani jeden z 6 150 zobrazovaných záznamů. Zapsáno, že datové pole nese hodnoty i pod prahem. |
+| 1.22 | **Medián JPZ přijatých zaveden jako ukazatel** (17. 9. 2026) a přesunut do `public/pasma_prijeti_{rok}.json`, kde vzniká ze stejného zdroje jako nejnižší přijatý a přepíná se s registrem. Nahrazuje pole `jpz_median` a `jpz_prumer_actual` ze starého katalogu, která pocházela z předběžné verze roku 2025 a z rozbitého `enrich_schools_data.py`, a na webu se nikdy nepoužila. Doloženo, že medián leží systematicky pod průměrem (mediánově o 1,1 bodu na 2 517 nabídkách roku 2026), takže průměr přeceňuje typického přijatého. Pole `cj_at_jpz_min`, `ma_at_jpz_min`, `cj_min_independent` a `ma_min_independent` zamítnuta: každé určuje jediný uchazeč a poslední dvě mohou pocházet od dvou různých lidí. |
+| 1.21 | **Doklady stability přepočítány na dvojici ročníků 2025 a 2026** (17. 9. 2026) před přepnutím sady `cermat-uchazeci-kolo1` na rok 2026. Výpočty se nemění, mění se doložená čísla. Míra *rozhodl test* vychází hůř než dřív (korelace 0,672 proti 0,725 na dvojici 2024–2025) a zařazení do tří kategorií se mění u 26 % oborů, což potvrzuje dosavadní rozhodnutí nezobrazovat ji jako číslo. Šířka pásma nejistoty 0,719 a mediánová šířka 6 bodů. Percentil nejnižšího přijatého 0,883 proti 0,879 u bodů; medián výsledku uchazečů stoupl ze 46 na 49 bodů, takže nejnižší přijatý v bodech stoupl o 1 bod, zatímco jeho percentil se nehnul. Doklad `docs/podklady/overeni-pasem-prijeti-2025-2026.json` počítá `scripts/validate-pasma-prijeti.py --rocniky 2025-2026`. |
+| 1.20 | **Srovnání s podobnými školami sjednoceno na jednu veličinu** (17. 9. 2026): střed, hodnota školy i osa grafu jsou v průměrném procentním skóru, tedy v tom, proti čemu se počítá zařazení; dřív se zobrazoval medián percentilů. Percentil dostal vlastní ukazatel Umístění maturantů v celé zemi, protože odpovídá na jinou otázku. |
+| 1.19 | **Úspěšnost maturity opravena na podíl z přihlášených** (17. 9. 2026), protože pole `passRate` pochází ze sloupce `PODÍL ÚSPĚŠNÝCH (%)`, který CERMAT počítá z přihlášených; dosavadní definice „z konajících“ byla nepravdivá a na stránce z ní vznikl nesoulad procenta a počtu. Hodnoty v datech se nemění. Doplněny ukazatele maturita za celou školu, střed podobných škol a frekvence let nad středem podobných škol, které zavedla revize maturitního oddílu ze 14. 9. 2026. U zařazení proti skupině oborů zapsáno, že jeho referencí je medián skórů, kdežto zobrazený střed je medián percentilů. |
 | 1.18 | Maturita: zařazení proti skupině oborů, počet let nad skupinou, podíl volby předmětu; kódy kvality v `public/maturita_skoly.json`; soubor vzniká přes datovou linku. |
 | 1.17 | Doplněno pořadí v kraji podle zájmu a podle výsledků přijatých, s prahem 10 nabídek a doklady stability. |
 | 1.16 | Odkaz na slovník pojmů; pojem „soutěžící uchazeči“ pro texty stránek. |

@@ -1,0 +1,158 @@
+{
+ "src/app/api/portal-skoly/route.ts": [
+  "tových zdrojů (obory/kapacity 2026):** škola potvrdila, že sedí"
+ ],
+ "src/app/layout.tsx": [
+  "dojíždění. Kalendář přijímání 2027 a historické výsledky škol do"
+ ],
+ "src/app/mesto/[mesto]/page.tsx": [
+  "Proč mohou chybět data 2026?",
+  "Výsledky přijímacích zkoušek 2026, kapacity, zájem uchazečů a s",
+  "Vývoj 2024–2026",
+  "Zájem 2026",
+  "ly ${meta.nazev} | Přijímačky 2026",
+  "ly ${meta.nazev} — přijímačky 2026",
+  "přihlášek 2026"
+ ],
+ "src/app/mesto/page.tsx": [
+  "Přihlášek 2026",
+  "ech. Data přijímacích zkoušek 2026, kapacity a zájem uchazečů.",
+  "školy podle měst | Přijímačky 2026",
+  "školy podle měst — přijímačky 2026"
+ ],
+ "src/app/nabidka/2026/[sourceId]/page.tsx": [
+  "1. kolo 2026, platnost 17. 8. 2026",
+  "Historické výsledky 2026",
+  "Kapacita 2026",
+  "NABÍDKA OBORU · 1. KOLO 2026",
+  "Zdroj: CERMAT, 1. kolo 2026, platnost 17. 8. 2026",
+  "ritéria a místo výuky pro rok 2027 zatím nejsou potvrzené."
+ ],
+ "src/app/opengraph-image.tsx": [
+  "svou střední školu. Přijímání 2027 a historické výsledky škol."
+ ],
+ "src/app/page.tsx": [
+  "Kalendář přijímaček 2027 →",
+  "MT a historické výsledky škol 2024–2026. Prozkoumej obory, porov",
+  "Obnovené výsledky 2026 →",
+  "PŘIJÍMAČKY 2027",
+  "Termíny přijímaček 2027 podle MŠMT a historické výsle",
+  "Výsledky přijímaček 2026 jsou venku — porovnej výsledk",
+  "í školy a kalendář přijímaček 2027"
+ ],
+ "src/app/prijimacky-2027/page.tsx": [
+  "Historické výsledky 2026 →",
+  "Kalendář přijímaček 2027",
+  "Kalendář přijímaček 2027: přihlášky, JPZ a výsledky",
+  "MŠMT: sdělení o termínech JPZ 2027 (PDF)",
+  "NÁSTUP DO ŠKOLY V ZÁŘÍ 2027",
+  "Ověřeno 11. září 2026 · školní rok 2026/2027 ·",
+  "ity jednotlivých škol pro rok 2027 zatím postupně přibudou. Výsl",
+  "m postupně přibudou. Výsledky 2026 na tomto webu popisují minulý"
+ ],
+ "src/app/regiony/[kraj]/page.tsx": [
+  "Kapacita 2025",
+  "Prům. index poptávky 2025",
+  "Přihlášky 2025"
+ ],
+ "src/app/regiony/page.tsx": [
+  "Přihlášky 2025"
+ ],
+ "src/app/simulator/SimulatorClient.tsx": [
+  "JPZ. Úplná nabídka a kritéria 2027 se doplňují.",
+  "Můj výběr 2027",
+  "Nabídky doložené v 1. kole 2026, v rozsahu denních nezkrácený",
+  "SIMULÁTOR 2027",
+  "říček škol podle výsledků JPZ 2026"
+ ],
+ "src/app/simulator/page.tsx": [
+  "Simulátor výběru školy 2027",
+  "Simulátor výběru školy 2027 | Přijímačky na střední školy"
+ ],
+ "src/app/skola/[slug]/page.tsx": [
+  "Data z přijímacího řízení 2025"
+ ],
+ "src/app/skola/[slug]/pro-me/page.tsx": [
+  "né podmínky a nabídku pro rok 2027?"
+ ],
+ "src/app/skoly/page.tsx": [
+  "Míst 2026",
+  "Oborů s daty 2026",
+  "Prům. převis 2026",
+  "Přihlášek 2026",
+  "h oborů v ČR. Převis poptávky 2026 a statistiky podle měst. Hist"
+ ],
+ "src/app/vysledky/[year]/ResultsClient.tsx": [
+  "Termíny přijímaček 2027 →"
+ ],
+ "src/components/ArchivedAdmissionText.tsx": [
+  "Pro rok 2027 neověřeno. Aktuální údaj ověř",
+  "údaj z InspIS (export 11. 2. 2026)"
+ ],
+ "src/components/CitySchoolsTable.tsx": [
+  "Kapacita 2026",
+  "Přihlášky 2026",
+  "Zobrazena data 2025 (2026 nedostupná)",
+  "data 2025"
+ ],
+ "src/components/Footer.tsx": [
+  "Kalendář 2027"
+ ],
+ "src/components/Header.tsx": [
+  "Kalendář 2027"
+ ],
+ "src/components/RegionSchoolsTable.tsx": [
+  "Historický průměr 2025"
+ ],
+ "src/components/SchoolsPageTabs.tsx": [
+  "Nejžádanější obory 2026",
+  "Nejžádanější studijní obory 2026",
+  "Převis poptávky podle měst (2026)"
+ ],
+ "src/components/portal/PortalEditForm.tsx": [
+  "Kapacita 2026",
+  "Přihlášek 2026"
+ ],
+ "src/components/school/detail/DetailHero.tsx": [
+  "Poptávka 2025"
+ ],
+ "src/components/school/detail/tabs/StatsTab.tsx": [
+  "Obor se v roce 2026 nevypisoval, proto jsou uvede",
+  "Průměrné výsledky JPZ · 2025",
+  "Průměrné výsledky JPZ · 2026",
+  "Přihlášky podle priority · 2026",
+  "ky a přijatí podle priority · 2025",
+  "přijatých uchazečů v 1. kole 2026 na standardní škále testu. Ne"
+ ],
+ "src/components/school-profile/SchoolPortalSection.tsx": [
+  "Kritéria přijímacího řízení 2027"
+ ],
+ "src/components/simulator/OfferComparisonTable.tsx": [
+  "odle průměrů přijatých v roce 2026 a tvého výsledku"
+ ],
+ "src/components/skola/ProfilSkoly.tsx": [
+  "export 11. 2. 2026 · bez značky: oficiální data",
+  "školy v InspIS, export 11. 2. 2026; zdroj ČŠI mezitím zanikl. Úd"
+ ],
+ "src/lib/admission-summary.ts": [
+  "V roce 2026 nebyl nikdo odmítnut kvůli ne",
+  "kvůli nedostatku míst v roce 2026: ${context.capacity_rejected."
+ ],
+ "src/lib/cityNarrative.ts": [
+  "ařilo spárovat s prvním kolem 2026, evidujeme ${n(totals.kapacit",
+  "m ani poklesem nabídky. Údaje 2026 nejsou vyhlášenými kapacitami",
+  "ský přehled vychází z nabídky 2025, proto nezahrnuje všechny nov"
+ ],
+ "src/lib/og-image.tsx": [
+  "Přijímání 2027"
+ ],
+ "src/lib/portal-skol.ts": [
+  "a kritéria přijímacího řízení 2027",
+  "např. „18. 11. 2026 a 13. 1. 2027“.",
+  "y včetně roku, např. „18. 11. 2026 a 13. 1. 2027“.",
+  "údaj z InspIS, export 11. 2. 2026"
+ ],
+ "src/lib/skola-otevrena-data.ts": [
+  "údaj z InspIS, export 11. 2. 2026)"
+ ]
+}

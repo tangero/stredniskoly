@@ -54,14 +54,90 @@ def stabilita(x: list[float], y: list[float]) -> dict:
     }
 
 
-def nacti_2024() -> tuple[dict, list[float]]:
-    """Soubor 2024 má od revize z 20. 5. 2026 stejné schéma jako rok 2025
-    (klíč REDIZO, list „Sheet 1“), čte ho tedy stejná funkce generátoru.
-    Do předchozí revize (klíč IZO, přijetí textem True/False) sahal převod
-    přes data/Rejstrik_skol/SkolyAMista.csv; upstream soubor přepsal, takže
-    převod odpadá."""
-    gen.ZDROJ = KOREN / "data" / "PZ2024_kolo1_uchazeci_prihlasky_vysledky.xlsx"
+def soubor_uchazecu(rok: int) -> Path:
+    """Cesta k datům uchazečů daného ročníku v `data/`."""
+    return KOREN / "data" / f"PZ{rok}_kolo1_uchazeci_prihlasky_vysledky.xlsx"
+
+
+def nacti_rocnik(rok: int, zdroj: Path | None = None) -> tuple[dict, list[float]]:
+    """Načte data uchazečů jednoho ročníku funkcí generátoru.
+
+    Soubory 2024 až 2026 mají od revize z 20. 5. 2026 shodné schéma (klíč REDIZO,
+    list „Sheet 1“), čte je tedy tatáž funkce. Do předchozí revize (klíč IZO,
+    přijetí textem True/False) sahal převod přes data/Rejstrik_skol/SkolyAMista.csv;
+    upstream soubor přepsal, takže převod odpadá.
+
+    Args:
+        rok: Ročník 1. kola.
+        zdroj: Nepovinná cesta k souboru; výchozí je `data/PZ{rok}_kolo1_…xlsx`.
+
+    Returns:
+        Dvojice (obory, rozdělení výsledků všech uchazečů).
+    """
+    gen.ZDROJ = zdroj or soubor_uchazecu(rok)
     return gen.nacti_uchazece()
+
+
+def stabilita_rocniku(stary: int, novy: int, jpz, zdroj_stary: Path | None = None,
+                      zdroj_novy: Path | None = None) -> dict:
+    """Srovnání dvou ročníků: dolní mez, její percentil, šířka pásma a *rozhodl test*.
+
+    Tohle je jediné místo, kde se stabilita mezi ročníky počítá. Doklad
+    2024–2025 i doklad k přepnutí na nový ročník ji berou odtud, aby nevznikly
+    dvě definice téhož, jako se to stalo u obtížnosti přijetí.
+
+    Args:
+        stary: Starší ročník.
+        novy: Novější ročník.
+        jpz: Množina oborů s povinnou jednotnou zkouškou z generátoru.
+        zdroj_stary: Nepovinná cesta k souboru staršího ročníku.
+        zdroj_novy: Nepovinná cesta k souboru novějšího ročníku.
+
+    Returns:
+        Doklad se čtyřmi bloky a s pojmenovanými populacemi.
+    """
+    o_s, u_s = nacti_rocnik(stary, zdroj_stary)
+    o_n, u_n = nacti_rocnik(novy, zdroj_novy)
+    o_s = {k: v for k, v in o_s.items() if gen.ma_jpz(k, jpz)}
+    o_n = {k: v for k, v in o_n.items() if gen.ma_jpz(k, jpz)}
+
+    par10 = [k for k in o_s if k in o_n and len(o_s[k]["prijati"]) >= 10 and len(o_n[k]["prijati"]) >= 10]
+    lo_s = [min(o_s[k]["prijati"]) for k in par10]
+    lo_n = [min(o_n[k]["prijati"]) for k in par10]
+    posun = [b - a for a, b in zip(lo_s, lo_n)]
+
+    pct = lambda r, x: bisect.bisect_right(r, x) / len(r) * 100
+    p_s = [pct(u_s, x) for x in lo_s]
+    p_n = [pct(u_n, x) for x in lo_n]
+
+    par_hr = [k for k in par10 if len(o_s[k]["nevesli_se"]) >= 5 and len(o_n[k]["nevesli_se"]) >= 5]
+    f_lo = lambda o: min(o["prijati"])
+    f_hi = lambda o: max(o["nevesli_se"])
+    f_sir = lambda o: max(o["nevesli_se"]) - min(o["prijati"])
+
+    return {
+        "dolni_mez_populace_aspon_10_prijatych_v_obou_letech": {
+            **stabilita(lo_s, lo_n),
+            "prumer_posunu": round(statistics.mean(posun), 2),
+            "median_posunu": round(statistics.median(posun), 2),
+            "posun_dolu_pct": podil(sum(1 for x in posun if x < 0), len(posun)),
+            "posun_nahoru_pct": podil(sum(1 for x in posun if x > 0), len(posun)),
+        },
+        "dolni_mez_jako_percentil": {
+            **stabilita(p_s, p_n),
+            "median_posunu_pb": round(statistics.median(b - a for a, b in zip(p_s, p_n)), 2),
+        },
+        "celostatni_median_uchazecu": {str(stary): statistics.median(u_s), str(novy): statistics.median(u_n)},
+        "meze_populace_aspon_10_prijatych_a_5_odmitnutych_v_obou_letech": {
+            "dolni_mez": stabilita([f_lo(o_s[k]) for k in par_hr], [f_lo(o_n[k]) for k in par_hr]),
+            "horni_mez": stabilita([f_hi(o_s[k]) for k in par_hr], [f_hi(o_n[k]) for k in par_hr]),
+            "sirka_pasma": stabilita([f_sir(o_s[k]) for k in par_hr], [f_sir(o_n[k]) for k in par_hr]),
+            f"median_sirky_{novy}": statistics.median(f_sir(o_n[k]) for k in par_hr),
+            "rozhodl_test": stabilita(
+                [gen.rozhodl_test(o_s[k]["prijati"], o_s[k]["nevesli_se"]) for k in par_hr],
+                [gen.rozhodl_test(o_n[k]["prijati"], o_n[k]["nevesli_se"]) for k in par_hr]),
+        },
+    }
 
 
 def over_shodu_verzi(o25: dict, pasma: dict) -> None:
@@ -94,8 +170,6 @@ def main() -> None:
     over_shodu_verzi(_o25, pasma)
     nabidky = json.load(open(KOREN / "public" / "applications_2026.json", encoding="utf-8"))["data"]
     katalog = json.load(open(KOREN / "public" / "schools_data.json", encoding="utf-8"))
-    o24, u24 = nacti_2024()
-    o24 = {k: v for k, v in o24.items() if gen.ma_jpz(k, jpz)}
     doklad: dict = {
         "zdroj_skriptu": "scripts/validate-pasma-prijeti.py",
         "populace": ("obory s povinnou jednotnou zkouškou podle PZ2026_kolo1_skolobory_prihlasky.xlsx"
@@ -141,42 +215,8 @@ def main() -> None:
         ({"kkov": k, "n": len(v), "median": round(statistics.median(v), 3)} for k, v in podle_kkov.items() if len(v) >= 5),
         key=lambda x: x["median"])[:8]
 
-    # --- stabilita mezi ročníky
-    par10 = [k for k in o24 if k in o25 and len(o24[k]["prijati"]) >= 10 and len(o25[k]["prijati"]) >= 10]
-    lo24 = [min(o24[k]["prijati"]) for k in par10]
-    lo25 = [min(o25[k]["prijati"]) for k in par10]
-    posun = [b - a for a, b in zip(lo24, lo25)]
-    doklad["dolni_mez_populace_aspon_10_prijatych_v_obou_letech"] = {
-        **stabilita(lo24, lo25),
-        "prumer_posunu": round(statistics.mean(posun), 2),
-        "median_posunu": round(statistics.median(posun), 2),
-        "posun_dolu_pct": podil(sum(1 for x in posun if x < 0), len(posun)),
-        "posun_nahoru_pct": podil(sum(1 for x in posun if x > 0), len(posun)),
-    }
-    # Rozdělení jednotlivých uchazečů, každý jednou, stejně jako v generátoru.
-    r24, r25 = u24, u25
-    pct = lambda r, x: bisect.bisect_right(r, x) / len(r) * 100
-    p24 = [pct(r24, x) for x in lo24]
-    p25 = [pct(r25, x) for x in lo25]
-    doklad["dolni_mez_jako_percentil"] = {
-        **stabilita(p24, p25),
-        "median_posunu_pb": round(statistics.median(b - a for a, b in zip(p24, p25)), 2),
-    }
-    doklad["celostatni_median_uchazecu"] = {"2024": statistics.median(r24), "2025": statistics.median(r25)}
-
-    par_hr = [k for k in par10 if len(o24[k]["nevesli_se"]) >= 5 and len(o25[k]["nevesli_se"]) >= 5]
-    f_lo = lambda o: min(o["prijati"])
-    f_hi = lambda o: max(o["nevesli_se"])
-    f_sir = lambda o: max(o["nevesli_se"]) - min(o["prijati"])
-    doklad["meze_populace_aspon_10_prijatych_a_5_odmitnutych_v_obou_letech"] = {
-        "dolni_mez": stabilita([f_lo(o24[k]) for k in par_hr], [f_lo(o25[k]) for k in par_hr]),
-        "horni_mez": stabilita([f_hi(o24[k]) for k in par_hr], [f_hi(o25[k]) for k in par_hr]),
-        "sirka_pasma": stabilita([f_sir(o24[k]) for k in par_hr], [f_sir(o25[k]) for k in par_hr]),
-        "median_sirky_2025": statistics.median(f_sir(o25[k]) for k in par_hr),
-        "rozhodl_test": stabilita(
-            [gen.rozhodl_test(o24[k]["prijati"], o24[k]["nevesli_se"]) for k in par_hr],
-            [gen.rozhodl_test(o25[k]["prijati"], o25[k]["nevesli_se"]) for k in par_hr]),
-    }
+    # --- stabilita mezi ročníky; tentýž výpočet použije i doklad k přepnutí ročníku
+    doklad.update(stabilita_rocniku(2024, 2025, jpz, zdroj_novy=UCHAZECI_2025))
 
     # --- O4: skupina přijatá na vyšší prioritu
     s_vp = [k for k, o in o25.items() if len(o["prijati"]) >= 10 and len(o["vyssi_priorita"]) >= 10]
@@ -272,10 +312,36 @@ def main() -> None:
     print(json.dumps(doklad, ensure_ascii=False, indent=1))
 
 
+def doklad_prepnuti(stary: int, novy: int) -> None:
+    """Doklad stability pro přepnutí sady na nový ročník.
+
+    Počítá jen srovnání dvou ročníků, ne doklady tezí navázané na rok 2025.
+    Výstup: `docs/podklady/overeni-pasem-prijeti-{stary}-{novy}.json`.
+    """
+    vystup = KOREN / "docs" / "podklady" / f"overeni-pasem-prijeti-{stary}-{novy}.json"
+    doklad = {
+        "zdroj_skriptu": "scripts/validate-pasma-prijeti.py --rocniky",
+        "populace": "obory s povinnou jednotnou zkouškou, stejně jako data na webu",
+        "rocniky": [stary, novy],
+        "soubory": {str(r): soubor_uchazecu(r).name for r in (stary, novy)},
+        **stabilita_rocniku(stary, novy, gen.povinna_jpz()),
+    }
+    vystup.write_text(json.dumps(doklad, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(json.dumps(doklad, ensure_ascii=False, indent=1))
+    print(f"\nDoklad: {vystup.relative_to(KOREN)}")
+
+
 if __name__ == "__main__":
     import argparse
-    ap = argparse.ArgumentParser(description="Doklady pásem přijetí, srovnání let 2024 a 2025.")
+    ap = argparse.ArgumentParser(description="Doklady pásem přijetí; výchozí srovnání let 2024 a 2025.")
     ap.add_argument("--uchazeci-2025", type=Path, default=UCHAZECI_2025,
                     help="data uchazečů 2025; po revizi CERMATu soubor z data/linka/prace/<KÓD>/, jinak doklad smíchá verze")
-    UCHAZECI_2025 = ap.parse_args().uchazeci_2025
-    main()
+    ap.add_argument("--rocniky", metavar="STARY-NOVY",
+                    help="spočítá jen stabilitu mezi dvěma ročníky, například 2025-2026; "
+                         "slouží jako doklad k přepnutí období sady cermat-uchazeci-kolo1")
+    a = ap.parse_args()
+    if a.rocniky:
+        doklad_prepnuti(*(int(x) for x in a.rocniky.split("-", 1)))
+    else:
+        UCHAZECI_2025 = a.uchazeci_2025
+        main()

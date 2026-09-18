@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.8 · 14. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.9 · 17. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -35,6 +35,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | CERMAT, školní agregáty JPZ 2017–2023 | data.cermat.cz, XLSX | 7 ročníků | REDIZO + oborová skupina | uzavřená řada |
 | CERMAT, agregáty 2. kola | data.cermat.cz, XLSX | kapacity, přihlášky, výsledky od 2024 | REDIZO + KKOV + zaměření | ročně, výsledky v září |
 | Dopravní data | PID, GTFS ČR, jízdní řády | celá ČR | zastávka a spoj | podle vydání |
+| Harmonogram přijímacího řízení MŠMT | opis termínů z metodiky MŠMT do `src/data/admissions-2027.json` | jedno přijímací řízení, 3 skupiny a 20 událostí | identifikátor události | ručně, jednou ročně |
 
 **Co v repozitáři není.** Zdroj patří do soupisu i tehdy, když jeho soubor na disku neleží. Takových je několik:
 
@@ -157,7 +158,7 @@ Zajímavé sloupce JSON-LD, mimo adresu a názvy:
 | `platnostNaDobuNeurcitou` | časové omezení zápisu | hrozí zrušení školy | **ne** |
 | `skolyAZarizeni[].obory[].kod`, `.nazev` | obory zapsané v rejstříku | co škola smí učit | ano |
 | `skolyAZarizeni[].obory[].kapacita` | povolená kapacita oboru | kolik žáků smí mít | **ne**, používáme kapacitu z CERMATu |
-| `skolyAZarizeni[].obory[].dobihajiciObor` | obor se dobíhá | **zavírá škola tenhle obor** | **ne na webu**, jen v rešeršních skriptech |
+| `skolyAZarizeni[].obory[].dobihajiciObor` | obor se dobíhá | **doběhl tenhle obor, nebo ho škola letos jen nevypsala** | **ne na webu**, jen v rešeršních skriptech; párovat vždy i na formu a délku, viz oddíl 3 |
 | `skolyAZarizeni[].obory[].jazykOboru`, `.formaVzdelavani`, `.delkaVzdelavani` | parametry oboru | v jakém jazyce a jak dlouho | ano |
 | `skolyAZarizeni[].mistaVyuky[]` | kde se skutečně učí | kam bude dítě dojíždět | částečně |
 | `emaily` | kontakty | koho oslovit | **ne** |
@@ -284,6 +285,24 @@ Otázka rodiče: **jak dlouho už je tahle škola žádaná**. Je to jediný zdr
 
 Nepoužíváme.
 
+### 2.13 Harmonogram přijímacího řízení MŠMT
+
+`src/data/admissions-2027.json`, ruční opis termínů z metodiky MŠMT. Pole `checkedAt` nese datum ověření, `source` a `jpzSource` adresy, ze kterých se termíny opsaly. Tři skupiny (`stredni-skoly`, `konzervatore`, `jpz`) a 20 událostí.
+
+| Pole události | Obsah | Otázka rodiče | Používáme |
+|---|---|---|---|
+| `id` | identifikátor události, například `ss-kriteria` | žádná, technické | ano, stránka podle něj vybírá termín |
+| `start`, `end` | rozsah termínu | do kdy to musím stihnout | ano |
+| `date` | termín slovy, například „15.–31. ledna“ | tamtéž | ano |
+| `title` | název události | co se v ten den děje | ano |
+| `note` | doporučení k události | co mám udělat | ano, na stránce přijímaček |
+
+Používá ho stránka [přijímačky 2027](../src/app/prijimacky-2027/page.tsx) a od 17. 9. 2026 i **hlavní stránka**: z události `ss-kriteria` bere termín, kdy školy zveřejní kritéria přijetí a s nimi nabídku oborů. Rok, ze kterého web ukazuje obory a místa, bere z registru (sada `cermat-prihlasky`), ne z tohoto souboru.
+
+V registru je jako sada `msmt-harmonogram`, období 2027, obnova nejpozději do 30. 9. 2027. Termíny se opisují ručně z harmonogramu a ze sdělení o termínech na webu MŠMT; adresy obou souborů nesou ročník i měsíc vydání, takže se při novém přijímacím řízení mění celé a dotazem HEAD na starou adresu se nová data nepoznají. Kontrola proto hlídá termín obnovy, ne zdroj.
+
+Soubor nese rok v názvu: nový ročník znamená nový soubor a přepnutí období v registru.
+
 ## 3. Sloupce, které nepoužíváme
 
 Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to dalo rodiči.
@@ -300,7 +319,7 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 | Výsledky zkoušky **všech uchazečů** o obor v souhrnu | souhrny výsledků, sloupce 45–65 | průměr, minimum a maximum konkurence bez zpracování dat uchazečů | průměrné percentilové umístění **zpracováno 13. 9. 2026**; minimum a maximum zamítnuto, určuje je jediný uchazeč |
 | **Agregáty 2. kola** za obory | `PZ{rok}_kolo2_skolobory_*.xlsx` | „Loni tu bylo 2. kolo s 12 místy“ | **zapracovává se od 13. 9. 2026**, viz `docs/druhe-kolo.md` |
 | **Data uchazečů 2. kola** | `PZ{rok}_kolo2_uchazeci_prihlasky_vysledky.xlsx` | pásma přijetí ve 2. kole | zamítnuto pro 2. kolo: jen 133 oborů má ve 2. kole aspoň deset přijatých s výsledkem zkoušky |
-| **Dobíhající obor** | rejstřík, `dobihajiciObor` | „Škola tenhle obor zavírá.“ Varování před podáním přihlášky | používá se jen v rešeršních skriptech |
+| **Dobíhající obor** | rejstřík, `dobihajiciObor` | **ne varování před přihláškou**, ale rozlišení „obor se už nenabírá“ od „obor škola letos nevypsala“ u chybějící nabídky | používá se jen v rešeršních skriptech; role opravena 17. 9. 2026, viz níže |
 | **Web a kontakt školy** | rejstřík CSV, `WWW`, `Email 1`, `Telefon` | kam jít pro kritéria přijetí a termíny | `WWW` **používáno od 13. 9. 2026** (`skoly_web.json`); telefon a e-mail na web nepatří |
 | `jpz_prumer_actual`, `jpz_median` | katalog 2025 | medián říká víc než průměr, když je rozdělení šikmé | spočítané, nikdy nezobrazené |
 | `hard_facts.support_services` | extrakce inspekce | „Mají školního psychologa a doučování.“ | nezobrazeno |
@@ -308,6 +327,10 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 | Důvod nepřijetí u jednotlivce | data uchazečů, `ss*_duvod_neprijeti` | rozpad už máme z agregátu | duplicitní |
 | Platnost oboru v číselníku | AKKO, `platnostDo` | obor se ruší celostátně | nezobrazeno |
 | Ředitel a délka jeho funkce | rejstřík, `reditel` | stabilita vedení | sporná vypovídací hodnota |
+
+**Dobíhající obor neříká, co se od něj čekalo.** Do 17. 9. 2026 tu stálo, že příznak poslouží jako varování „škola tenhle obor zavírá“ před podáním přihlášky. Měření to vyvrátilo: proti snímku rejstříku k 30. 6. 2026 je **nula z 3 091 nabídek** 1. kola 2026 vedena jako dobíhající. Hrubý join na REDIZO a KKOV dá 29 zásahů, ale **všech 29 je falešných** — pokaždé dobíhá jiná forma nebo délka téhož oboru, typicky dálková nástavba vedle denní. Závěr platí i při nejširší definici druhu školy. Reprodukuje `python3 scripts/dobihajici-obory.py`, doklad `docs/podklady/dobihajici-obory.json`.
+
+Použitelná role je opačná: ze 723 dobíhajících záznamů středních škol se jich **722 v 1. kole 2026 nenabíralo v žádné formě**. Příznak tedy rozliší „obor už se nenabírá“ od „obor škola v tomto roce nevypsala“, což je přesně to, co chybí [dvouletému cyklu nabídky oboru](dvoulety-cyklus-nabidky-oboru.md). Dvě pravidla pro jakékoli použití: **párovat REDIZO + KKOV + forma + délka** (na hrubém klíči je chybovost 100 %) a používat **jen u nabídky, která v zobrazeném ročníku chybí**.
 
 **Duplicity, které je třeba srovnat.** `school_analysis.json` už nese `priority_pcts`, tedy podíl priorit v procentech, a `total_applicants`. Je to totéž, co od 13. 9. 2026 počítáme jako podíl prvních voleb, ale ze staršího zpracování. U 1 550 z 1 602 nabídek se `total_applicants` shoduje s `prihlasky`; rozdíl u zbytku vzniká tím, že data uchazečů neznají zaměření, takže sčítají všechna zaměření jednoho KKOV dohromady. Jako zdroj pravdy platí `prihlasky_priority` z agregátů CERMATu.
 
@@ -399,14 +422,14 @@ Plné převzetí bez člověka se nedoporučuje: CERMAT soubory přepisuje i mě
 
 <!-- stav-datovych-sad:od -->
 
-_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-14. Neupravovat ručně._
+_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-17. Neupravovat ručně._
 
 | Sada | Použití | Zobrazujeme | Odkud | Zveřejněno, nepřevzato | Čekáme | Kdy | Po přepnutí |
 |---|---|---|---|---|---|---|---|
 | `cermat-kapacity` | web | 2026 | `PZ2026_kolo1_skolobory_vysledky.xlsx` | — | 2027 | 2027-03, odhad | Srovnání ročníků na stránce oboru. |
 | `cermat-prihlasky` | web | 2026 | `PZ2026_kolo1_skolobory_vysledky.xlsx` | — | 2027 | 2027-03, odhad | Srovnání ročníků na stránce oboru. |
 | `cermat-vysledky` | web | 2026 | `PZ2026_kolo1_skolobory_vysledky.xlsx` | — | 2027 | 2027-08, odhad | Srovnání ročníků na stránce oboru; výsledky 2025 slouží jako srovnávací zdroj v public/cermat_results_meta.json. |
-| `cermat-uchazeci-kolo1` | web | 2025 | `PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx` | 2026 | 2027 | 2027-05, odhad | Rok 2025 zůstává pro ověření stability mezi ročníky ve scripts/validate-pasma-prijeti.py a pro vývoj hranice přijetí. |
+| `cermat-uchazeci-kolo1` | web | 2026 | `PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx` | — | — | 2027-05, odhad | Rok 2025 zůstává pro ověření stability mezi ročníky ve scripts/validate-pasma-prijeti.py a pro vývoj hranice přijetí. |
 | `cermat-uchazeci-kolo2` | nepoužito | 2025 | `data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx` | 2026 | 2027 | 2027-06, odhad | Není na webu. |
 | `cermat-polozkova-jpz` | analýza | 2025 | `data/JPZ2025_M6_polozkova_data.xlsx` | 2026 | 2027 | 2027-05, odhad | Není na webu; slouží dokladu teze 4. |
 | `cermat-maturita` | web | 2026 | `MZ2026j_SC_skolobory.xlsx` | — | — | 2027-08, odhad | Předchozí jarní ročníky zůstávají ve výstupu; stránka školy z nich počítá počet let nad skupinou oborů. |
@@ -421,6 +444,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-14. Neupravovat ru�
 | `katalog-historie` | web | 2025 | `public/schools_data.json` | — | — | neznámo | Nepřepíná se. |
 | `school-analysis-legacy` | nezobrazovat | 2025 | `public/school_analysis.json` | — | — | neznámo | Nepřepíná se. |
 | `cermat-kolo2-agregaty` | web | 2026 | `PZ2026_kolo2_skolobory_vysledky.xlsx` | — | 2027 | 2027-09, odhad | Předchozí rok zůstává ve výstupu a na stránce slouží k větě, zda škola 2. kolo vypsala i tehdy. |
+| `msmt-harmonogram` | web | 2027 | `src/data/admissions-2027.json` | — | 2028 | 2027-08, odhad | Termíny předchozího ročníku se nezobrazují; soubor zůstává jako doklad, co web ukazoval. |
 
 #### Aktualizace a automatizace
 
@@ -429,7 +453,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-14. Neupravovat ru�
 | `cermat-kapacity` | jen detekce | HTTP HEAD: před zveřejněním 404, po revizi nové Last-Modified; katalogová stránka vypisuje dostupné roky. | Chybí udržovaný importér pro fázi před výsledky. scripts/import_cermat_2026_real.py je podle docs/aktualizace-kalendar-data-2027.md zastaralý; scripts/refresh_cermat_data.py čte až soubor výsledků. | Napsat importér kapacit a přihlášek pro jarní fázi, pak revize importu a přepnutí. |
 | `cermat-prihlasky` | jen detekce | HTTP HEAD: před zveřejněním 404, po revizi nové Last-Modified; katalogová stránka vypisuje dostupné roky. | Chybí udržovaný importér pro fázi před výsledky. scripts/import_cermat_2026_real.py je podle docs/aktualizace-kalendar-data-2027.md zastaralý; scripts/refresh_cermat_data.py čte až soubor výsledků. | Napsat importér kapacit a přihlášek pro jarní fázi, pak revize importu a přepnutí. |
 | `cermat-vysledky` | příprava | HTTP HEAD a katalogová stránka, stejně jako u kapacit. | scripts/refresh_cermat_data.py --input-dir s výsledky aktuálního a předchozího roku; kontroluje hlavičky, kolize, rozsah skóre a součet priorit a ukládá sha256 a datum platnosti. | Stáhnout oba soubory, spustit import a testy, zrevidovat rozdíly počtů a přepnout. |
-| `cermat-uchazeci-kolo1` | příprava | HTTP HEAD a katalogová stránka Datové soubory. | scripts/build-pasma-prijeti.py, scripts/build-soubeh-prihlasek.py, scripts/validate-pasma-prijeti.py; názvy výstupů nesou rok a v kódu jsou zapsané napevno. Pozor: scripts/enrich_schools_data.py, který počítá nejnižší přijatý výsledek do katalogu, čte sloupce podle pozice; v souboru za rok 2026 se pořadí sloupců změnilo a příznak přijetí je text, takže bez úpravy by počítal chybně. Datová linka ho nespouští. | Převzetí mění čísla v dokladech tezí a na webu, proto revize výsledků validace před přepnutím. |
+| `cermat-uchazeci-kolo1` | příprava | HTTP HEAD a katalogová stránka Datové soubory. | scripts/build-pasma-prijeti.py, scripts/build-soubeh-prihlasek.py, scripts/build-kontext-prihlasek.py; doklad stability mezi ročníky scripts/validate-pasma-prijeti.py --rocniky STARY-NOVY. Výstupy nesou rok v názvu, registr ho drží zástupným {obdobi}, ne napevno. Pozor: scripts/enrich_schools_data.py čte sloupce podle pozice a s textovým příznakem přijetí by počítal chybně; datová linka ho nespouští a katalogové minimum se na webu nezobrazuje. | Převzetí mění čísla v dokladech tezí a na webu, proto revize výsledků validace před přepnutím. |
 | `cermat-uchazeci-kolo2` | jen detekce | HTTP HEAD. | Neexistuje. | Rozhodnout o zpracování druhého kola. |
 | `cermat-polozkova-jpz` | jen detekce | HTTP HEAD pro šest testů. | Jen dokladový výpočet v scripts/validate-pasma-prijeti.py. | Není na webu, převzetí podle potřeby analýzy. |
 | `cermat-maturita` | příprava | HTTP HEAD a katalogová stránka. | scripts/build-maturita-skoly.py; v datové lince zpracovatel cermat-maturita stáhne k jarnímu souboru tři předchozí jarní ročníky a doplní je do stávajícího výstupu. Stav po podzimu (jap) se nepřebírá. | Schválit úlohu, zkontrolovat počty v pull requestu, přepnout období v registru. |
@@ -444,6 +468,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-14. Neupravovat ru�
 | `katalog-historie` | neaktualizuje se | — | — | Nepřepíná se. |
 | `school-analysis-legacy` | neaktualizuje se | — | — | Generátor není dohledaný, soubor nejde aktualizovat, jen nahradit katalogem. |
 | `cermat-kolo2-agregaty` | příprava | HTTP HEAD. | scripts/build-druhe-kolo.py; v datové lince zpracovatel cermat-kolo2-agregaty stáhne k souboru 2. kola i výsledky 1. kola téhož roku a doplní ročník do stávajícího výstupu. | Schválit úlohu, zkontrolovat počty v pull requestu a přepnout období v registru. |
+| `msmt-harmonogram` | ruční | Ruční kontrola stránky MŠMT o přijímání na střední školy. Adresy souborů nesou ročník i měsíc vydání, takže se mění celé; HTTP HEAD na starou adresu nová data neodhalí. | Ruční opis do src/data/admissions-2027.json. Čte ho stránka přijímaček a hlavní stránka (termín zveřejnění kritérií). | Po vydání harmonogramu na další přijímací řízení opsat termíny do nového souboru, přepnout období a zkontrolovat věty na hlavní stránce. |
 
 <!-- stav-datovych-sad:do -->
 
@@ -460,6 +485,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-14. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.9 | Harmonogram přijímacího řízení MŠMT (`src/data/admissions-2027.json`) zapsaný jako zdroj, protože z něj od 17. 9. 2026 čerpá i hlavní stránka, a jako sada `msmt-harmonogram` v registru; termíny se opisují z webu MŠMT ručně, detekce nového ročníku dotazem HEAD nejde. |
 | 1.8 | Maturitní výsledky přes datovou linku do `public/maturita_skoly.json`; zpracovatel sady `cermat-maturita`. |
 | 1.7 | Kontext přihlášek po oborech (`kontext_prihlasek_{rok}.json`), web škol z rejstříku (`skoly_web.json`), kraj a body přijatých po předmětech v souhrnech. |
 | 1.6 | Souhrny 1. kola po ročnících v `souhrny_kolo1.json`: přijatí podle priority, konající, průměrná percentilová umístění přijatých a uchazečů, oficiální percentil nejnižšího přijatého. |
