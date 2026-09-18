@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.5 · 17. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.6 · 18. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -56,6 +56,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | Pojem na stránce | Význam | Vysvětlení při prvním výskytu v bloku | Nepoužívat |
 |---|---|---|---|
 | **maturanti** | žáci, kteří v daném roce konali společnou část maturity | „maturanti, tedy žáci, kteří v roce … konali maturitu“ | absolventi (ne všichni maturanti školu dokončí), studenti |
+| **absolventi** | ti, kdo školu dokončili; **používá se jen ve větě, že o jejich uplatnění data nemáme** | „absolventi, tedy ti, kdo školu dokončili“ | jako náhrada za maturanty; jakýkoli údaj o uplatnění, úspěšnosti nebo přechodu na vysokou školu, protože pro ně zdroj neexistuje ([zdroje dat](zdroje-dat.md), oddíl 3) |
 | **společná část maturity** | didaktické testy z češtiny, matematiky nebo cizího jazyka, které zadává CERMAT | „testy, které píší maturanti ve všech školách stejně“ | státní maturita, celá maturita |
 | **podobné školy** | školy stejné skupiny oborů `SMO16` v celé zemi, například všechna osmiletá gymnázia; srovnává se jen uvnitř ní | „podobné školy jsou školy se stejným typem oborů v celé zemi, například všechna osmiletá gymnázia“ | skupina oborů (v textu pro rodiče), kategorie, konkurence |
 | **střed podobných škol** | medián průměrných výsledků podobných škol | „střed znamená, že polovina z nich dopadla lépe a polovina hůř“ | průměr (je to medián), norma |
@@ -86,6 +87,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.6 | Pojem **absolventi** zaveden výhradně pro větu, že o jejich uplatnění data nemáme (dávka D5). Do té doby bylo slovo jen na seznamu zakázaných u hesla *maturanti*, takže věta o chybějících datech by pravidlo slovníku porušila. Jakýkoli údaj o uplatnění, úspěšnosti nebo přechodu na vysokou školu zůstává zakázaný, protože pro něj zdroj neexistuje. |
 | 1.5 | Nabídka oborů jako pojem pro upozornění na titulní stránce: obory a počet míst, které školy vypíšou. Zveřejňují ji s kritérii přijetí, proto se termín uvádí jako zveřejnění kritérií, ne jako „vyhlášení nabídky“. |
 | 1.4 | Maturita srozumitelněji: „podobné školy“, „střed podobných škol“, „nad středem podobných škol“, „maturitu udělalo X z Y přihlášených“; „skupina oborů“ a „percentil“ jen v podrobnostech. Srovnání s podobnými školami se vede v % bodů v testu, percentil se uvádí jen jako „v celé zemi lépe než X ze 100 maturantů“, aby se dvě různá srovnání nepletla. |
 | 1.3 | Pojmy pro stránku školy: maturanti, společná část, skupina oborů, zařazení proti skupině, souběžní uchazeči, vzdušnou čarou a značky původu údajů. |

@@ -497,6 +497,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
             </div>
           </>
         )}
+        <Zdroj>Jak si vedou absolventi školy, tedy ti, kdo ji dokončili, tu nenajdete. Veřejná data o uplatnění po jednotlivých školách v Česku nejsou: nejpodrobnější zdroj, statistika MPSV, uvádí jen počet absolventů v evidenci úřadu práce, ne kolik jich škola má, takže z něj podíl spočítat nejde. MŠMT navíc samo označuje evidenci dokončeného studia za nevěrohodnou, protože školy maturitu do matriky nedoplňují u celých ročníků. Raději to řekneme takhle, než abychom tu otázku mlčky vynechali.</Zdroj>
       </Oddil>
 
       {/* 3 · Jaká škola je */}
