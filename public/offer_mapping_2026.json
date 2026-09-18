@@ -7,11 +7,12 @@
    "nova_nabidka": 351,
    "jedna_ku_jedne": 490,
    "text_zamereni": 63,
-   "nejednoznacne_vic_v_katalogu": 18,
-   "nejednoznacny_text": 56,
+   "overeno_rucne": 15,
+   "nejednoznacne_vic_v_katalogu": 12,
+   "nejednoznacny_text": 47,
    "kolize_odstraneno": 2
   },
-  "mapped": 551
+  "mapped": 566
  },
  "mapping": {
   "600001873_79-41-K/81": {
@@ -89,6 +90,14 @@
    "shoda": 0.667,
    "vysledky_id": "600004961_79-41-K/61_vytvarna_vychova"
   },
+  "600005143_79-41-K/61_s_posilenou_vyukou_nemciny": {
+   "katalog_id": "600005143_79-41-K/61_s_posílenou_výukou_německého_jazyka",
+   "zpusob": "overeno_rucne"
+  },
+  "600005143_79-41-K/61_s_vyukou_francouzstiny": {
+   "katalog_id": "600005143_79-41-K/61_s_výukou_francouzského_jazyka",
+   "zpusob": "overeno_rucne"
+  },
   "600005178_79-41-K/41_vseobecne_gymnazium": {
    "katalog_id": "600005178_79-41-K/41_obecné",
    "zpusob": "jedna_ku_jedne"
@@ -150,6 +159,11 @@
    "zpusob": "jedna_ku_jedne",
    "vysledky_id": "600005381_39-41-L/02_instalater_36_52_h_01"
   },
+  "600005500_79-41-K/41_SVP_GOP_vseobecne": {
+   "katalog_id": "600005500_79-41-K/41_ŠVP_GOP_",
+   "zpusob": "overeno_rucne",
+   "vysledky_id": "600005500_79-41-K/41_svp_gop_vseobecne"
+  },
   "600005500_79-41-K/61_SVP_GOP_vseobecne_s_rozsirenou_vyukou_AJ": {
    "katalog_id": "600005500_79-41-K/61_ŠVP_GOP_s_rozšířenou_výukou_AJ",
    "zpusob": "jedna_ku_jedne",
@@ -165,6 +179,11 @@
    "zpusob": "text_zamereni",
    "shoda": 0.902,
    "vysledky_id": "600005518_79-41-K/81_cizi_jazyky_brana_do_sveta"
+  },
+  "600005518_79-41-K/81_Myslim_tedy_jsem": {
+   "katalog_id": "600005518_79-41-K/81_Myslím,_tedy_jsem_(zaměření_na_matematiku_s_rozšířenou_výukou_informatiky_a_fyziky)",
+   "zpusob": "overeno_rucne",
+   "vysledky_id": "600005518_79-41-K/81_myslim_tedy_jsem"
   },
   "600005551_79-43-K/61": {
    "katalog_id": "600005551_79-43-K/61_79_43_K/61",
@@ -192,6 +211,16 @@
    "katalog_id": "600005933_79-41-K/41_Vzdělání_pro_budoucnost",
    "zpusob": "jedna_ku_jedne",
    "vysledky_id": "600005933_79-41-K/41_vzdelani_pro_budoucnost_vseobecne"
+  },
+  "600005950_79-41-K/41_International_Rozvijime_v_globalnich_souvislostech_Praha_3": {
+   "katalog_id": "600005950_79-41-K/41_Rozvíjíme_v_globálních_souvislostech_Praha_3",
+   "zpusob": "overeno_rucne",
+   "vysledky_id": "600005950_79-41-K/41_international_rozvijime_v_globalnich_souvislostech_praha_3"
+  },
+  "600005950_79-41-K/41_International_Rozvijime_v_globalnich_souvislostech_Praha_5": {
+   "katalog_id": "600005950_79-41-K/41_Rozvíjíme_v_globálních_souvislostech_Praha_5",
+   "zpusob": "overeno_rucne",
+   "vysledky_id": "600005950_79-41-K/41_international_rozvijime_v_globalnich_souvislostech_praha_5"
   },
   "600005992_79-41-K/81_79_41_K_81_Gymnazium": {
    "katalog_id": "600005992_79-41-K/81",
@@ -243,6 +272,16 @@
   "600006409_63-41-M/01": {
    "katalog_id": "600006409_63-41-M/01_Ekonomika_a_služby",
    "zpusob": "jedna_ku_jedne"
+  },
+  "600006433_65-41-L/01_Cisnik": {
+   "katalog_id": "600006433_65-41-L/01_Gastronomie___číšník",
+   "zpusob": "overeno_rucne",
+   "vysledky_id": "600006433_65-41-L/01_cisnik"
+  },
+  "600006433_65-41-L/01_Kuchar": {
+   "katalog_id": "600006433_65-41-L/01_Gastronomie___kuchař",
+   "zpusob": "overeno_rucne",
+   "vysledky_id": "600006433_65-41-L/01_kuchar"
   },
   "600006565_79-41-K/41": {
    "katalog_id": "600006565_79-41-K/41_Informační_technologie_a_jejich_aplikace",
@@ -1012,6 +1051,16 @@
    "zpusob": "jedna_ku_jedne",
    "vysledky_id": "600013006_65-42-M/02_cestovni_ruch"
   },
+  "600013197_39-41-L/01_Autoelektrikar_AU_AEL": {
+   "katalog_id": "600013197_39-41-L/01_Autoelektrikář",
+   "zpusob": "overeno_rucne",
+   "vysledky_id": "600013197_39-41-L/01_autoelektrikar_au_ael"
+  },
+  "600013197_39-41-L/01_Mechanik_opravar_motorovych_vozidel_AU_MOMV": {
+   "katalog_id": "600013197_39-41-L/01_Mechanik_opravář_motorových_vozidel",
+   "zpusob": "overeno_rucne",
+   "vysledky_id": "600013197_39-41-L/01_mechanik_opravar_motorovych_vozidel_au_momv"
+  },
   "600013260_79-41-K/41": {
    "katalog_id": "600013260_79-41-K/41_všeobecné",
    "zpusob": "jedna_ku_jedne"
@@ -1591,6 +1640,15 @@
    "katalog_id": "600016838_78-42-M/03_pedagogické",
    "zpusob": "jedna_ku_jedne"
   },
+  "600016901_18-20-M/01_Robotika": {
+   "katalog_id": "600016901_18-20-M/01_Automatizace_a_robotika_",
+   "zpusob": "overeno_rucne",
+   "vysledky_id": "600016901_18-20-M/01_robotika"
+  },
+  "600016935_79-41-K/41_telesna_vychova": {
+   "katalog_id": "600016935_79-41-K/41_TV",
+   "zpusob": "overeno_rucne"
+  },
   "600017036_79-41-K/81": {
    "katalog_id": "600017036_79-41-K/81_všeobecné",
    "zpusob": "jedna_ku_jedne"
@@ -1622,6 +1680,11 @@
    "zpusob": "text_zamereni",
    "shoda": 1.0,
    "vysledky_id": "600017133_26-41-L/01_26_41_l_01_vypocetni_a_elektronicke_systemy"
+  },
+  "600017133_26-41-L/01_26_51_H_02_Elektrikar_silnoproud": {
+   "katalog_id": "600017133_26-41-L/01_silnoproudá_zařízení___L0+H_mechanik_elektrotechnik_silnoproudá_zařízení_+_Elektrikář_silnoproud",
+   "zpusob": "overeno_rucne",
+   "vysledky_id": "600017133_26-41-L/01_26_51_h_02_elektrikar_silnoproud"
   },
   "600017133_26-45-M/01_26_45_M_01": {
    "katalog_id": "600017133_26-45-M/01",
@@ -2279,6 +2342,11 @@
    "shoda": 0.741,
    "vysledky_id": "610100581_26-41-L/01_informacni_technologie_uc_obor_26_51_h_01_elektrikar"
   },
+  "610100581_26-41-L/01_silnoprouda_zarizeni_uc_obor_26_51_H_02_Elektrikar_silnoproud": {
+   "katalog_id": "610100581_26-41-L/01_Silnoproudá_zařízení",
+   "zpusob": "overeno_rucne",
+   "vysledky_id": "610100581_26-41-L/01_silnoprouda_zarizeni_uc_obor_26_51_h_02_elektrikar_silnoproud"
+  },
   "610100581_39-41-L/02_Uc_obor_Elektrikar_silnoproud": {
    "katalog_id": "610100581_39-41-L/02",
    "zpusob": "jedna_ku_jedne",
@@ -2378,6 +2446,11 @@
   "651014646_68-42-M/01": {
    "katalog_id": "651014646_68-42-M/01_Veřejnoprávní_ochrana",
    "zpusob": "jedna_ku_jedne"
+  },
+  "651017459_18-20-M/01_Programovani_vyvoj_aplikaci_a_robotika": {
+   "katalog_id": "651017459_18-20-M/01_Robotika",
+   "zpusob": "overeno_rucne",
+   "vysledky_id": "651017459_18-20-M/01_programovani_vyvoj_aplikaci_a_robotika"
   },
   "651023572_63-41-M/01": {
    "katalog_id": "651023572_63-41-M/01_Obchodní_management",

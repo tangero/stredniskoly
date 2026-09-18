@@ -19,10 +19,17 @@ Mapa se staví ve třech krocích, od nejjistějšího:
 Nabídky, u nichž má katalog víc položek než rok 2026, se záměrně nemapují:
 jedna letošní nabídka by se přiřadila dvěma stránkám a obě by ukázaly táž čísla.
 
+Před kroky 2 a 3 platí ručně ověřené páry z docs/podklady/overene-pary-nabidek-2026.csv.
+Jsou to nabídky, které heuristika nechá nespárované nebo spáruje špatně, ale
+návaznost je doložená (rešerše, kontrola člověkem). Ověřený pár má přednost
+před heuristikou; když odkazuje na neexistující nabídku nebo se srazí s jiným
+párem, skript skončí chybou místo tichého zahození.
+
 Použití:
     python3 scripts/build-offer-mapping-2026.py [--out CESTA]
 """
 import argparse
+import csv
 import importlib.util
 import json
 import re
@@ -34,6 +41,7 @@ ROOT = Path(__file__).resolve().parent.parent
 KATALOG = ROOT / "public/schools_data.json"
 VYSLEDKY = ROOT / "public/cermat_results_2026.json"
 PRIHLASKY = ROOT / "public/applications_2026.json"
+OVERENE = ROOT / "docs/podklady/overene-pary-nabidek-2026.csv"
 
 MIN_SHODA = 0.6      # pod tím už jde spíš o jiné zaměření
 MIN_ODSTUP = 0.15    # rozdíl proti druhé nejlepší, aby šlo o jednoznačnou volbu
@@ -59,9 +67,28 @@ def zaklad(ident: str) -> str:
     return "_".join(normalizuj_klic(ident).split("_")[:2])
 
 
+def nacti_overene(cesta: Path, nabidky: dict, katalog_ids: set) -> dict:
+    """Ručně ověřené páry id_2026 -> katalog_id; neplatný řádek je chyba vstupu."""
+    if not cesta.exists():
+        return {}
+    overene = {}
+    with cesta.open(newline="") as f:
+        for radek in csv.DictReader(f):
+            ident, katalog_id = radek["id_2026"].strip(), radek["katalog_id"].strip()
+            if ident not in nabidky:
+                raise SystemExit(f"{cesta.name}: nabídka 2026 {ident!r} v přihláškách není")
+            if katalog_id not in katalog_ids:
+                raise SystemExit(f"{cesta.name}: záznam katalogu {katalog_id!r} v roce 2025 není")
+            if ident in overene:
+                raise SystemExit(f"{cesta.name}: nabídka {ident!r} je uvedena dvakrát")
+            overene[ident] = katalog_id
+    return overene
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", default=str(ROOT / "public/offer_mapping_2026.json"))
+    parser.add_argument("--overene", default=str(OVERENE))
     args = parser.parse_args()
 
     katalog = json.loads(KATALOG.read_text())["2025"]
@@ -86,6 +113,7 @@ def main():
         katalog_zaklad[zaklad(z["id"])].append(z)
     for ident in nabidky:
         nabidky_zaklad[zaklad(ident)].append(ident)
+    overene = nacti_overene(Path(args.overene), nabidky, {z["id"] for z in katalog})
 
     mapa = {}
     duvody = defaultdict(int)
@@ -94,6 +122,11 @@ def main():
         if klic in podle_klice:
             duvody["shoda_klice"] += 1
             continue  # stránka si nabídku najde sama, mapa ji nepotřebuje
+
+        if ident in overene:
+            mapa[ident] = {"katalog_id": overene[ident], "zpusob": "overeno_rucne"}
+            duvody["overeno_rucne"] += 1
+            continue
 
         z = zaklad(ident)
         v_katalogu = katalog_zaklad.get(z, [])
@@ -126,6 +159,10 @@ def main():
     for ident, info in mapa.items():
         obsazeno[info["katalog_id"]].append(ident)
     kolize = {k: v for k, v in obsazeno.items() if len(v) > 1}
+    sporne = {k: v for k, v in kolize.items() if any(i in overene for i in v)}
+    if sporne:
+        raise SystemExit("Ověřený pár se srazil s jiným párem na témže záznamu katalogu: "
+                         + "; ".join(f"{k} <- {v}" for k, v in sporne.items()))
     for katalog_id, identy in kolize.items():
         for ident in identy:
             mapa.pop(ident, None)
