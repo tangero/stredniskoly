@@ -28,8 +28,17 @@ export const PRODLENI_PRED_OPAKOVANIM_MS = 6 * 60 * 60 * 1000;
 
 export type UcelRozpoctu = 'celkem' | 'potvrzeni';
 
-/** Kolik potvrzovacích e-mailů smí odejít za jeden den. */
-export const DENNI_LIMIT_POTVRZENI = 500;
+/**
+ * Kolik potvrzovacích e-mailů smí odejít za jeden den.
+ *
+ * Je to pojistka proti nárazu, ne cíl: strop na měsíc drží řádek `celkem`
+ * (kvóta tarifu bez rezervy portálu), takže dvě tisícovky denně se do měsíce
+ * nevejdou a vázající zůstane měsíční strop. Denní limit má zabránit tomu, aby
+ * jediný den — ať už zájmem, nebo robotem — spotřeboval kapacitu celého měsíce.
+ *
+ * 500 bylo na zkoušení; pro provoz to zvýšil zadavatel 18. 9. 2026 na 2000.
+ */
+export const DENNI_LIMIT_POTVRZENI = 2000;
 
 /** Měsíční kvóta tarifu Resendu; z prostředí, aby se dala změnit bez nasazení. */
 export function kvotaTarifu(): number {
