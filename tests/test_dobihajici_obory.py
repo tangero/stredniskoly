@@ -94,7 +94,8 @@ class TestVystup(unittest.TestCase):
     def test_stare_trojmistne_kody_se_nenormalizuji(self):
         """Starý kód oboru (`82-44-M/001`) se nesmí párovat s novým (`82-44-M/01`).
 
-        U 343 škol vede rejstřík starý kód jako dobíhající a nový jako aktivní.
+        U 180 oborů ve 92 školách je nový kód téhož oboru vypsaný v 1. kole 2026
+        (doklad `docs/podklady/dobihajici-obory.json`, oddíl `stare_kody_oboru`).
         Kdyby se kódy normalizovaly, stránka by u aktivně vypisovaného oboru
         tvrdila, že se už nenabírá. Proto se staré kódy prostě nespárují.
         """
