@@ -22,13 +22,14 @@ export function SpravaKlient() {
   useEffect(() => {
     let zruseno = false;
     const nacti = async () => {
-      const token = new URLSearchParams(window.location.search).get('t');
-      if (!token) {
-        if (!zruseno) setChyba('Odkaz je neúplný. Otevři ho prosím přímo z e-mailu.');
+      if (new URLSearchParams(window.location.search).get('stav') === 'neplatny') {
+        if (!zruseno) setChyba('Odkaz už neplatí. Otevři prosím odkaz z novějšího e-mailu.');
         return;
       }
       try {
-        const odpoved = await fetch(`/api/novinky/sprava?t=${encodeURIComponent(token)}`);
+        // Přehled se čte z krátké relace, kterou nastavila obslužná cesta;
+        // token v adrese není, aby neskončil v analytice.
+        const odpoved = await fetch('/api/novinky/sprava');
         const data = await odpoved.json().catch(() => ({}));
         if (!odpoved.ok) throw new Error((data as { error?: string }).error ?? 'Odkaz vypršel.');
         if (!zruseno) setPrehled(data as Prehled);
@@ -43,9 +44,7 @@ export function SpravaKlient() {
   }, []);
 
   async function odhlasVse() {
-    const token = new URLSearchParams(window.location.search).get('t');
-    if (!token) return;
-    const odpoved = await fetch(`/api/novinky/sprava?t=${encodeURIComponent(token)}`, {
+    const odpoved = await fetch('/api/novinky/sprava', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ akce: 'vse' }),

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createHmac, timingSafeEqual } from 'crypto';
-import { jeDbNastavena, vTransakci } from '@/lib/novinky-db';
+import { dotaz, jeDbNastavena, vTransakci } from '@/lib/novinky-db';
 import { zrusPodleAdresy } from '@/lib/novinky-odber';
 import { otisk } from '@/lib/novinky-token';
 import { zapisVysledekPolozky } from '@/lib/novinky-fronta';
@@ -21,12 +21,20 @@ import { zapisVysledekPolozky } from '@/lib/novinky-fronta';
 
 const TRVALE_ZRUSENI = ['email.bounced', 'email.complained', 'suppression.added'];
 
-/** Ověří podpis webhooku (Svix formát, který Resend používá). */
+/** Kolik smí být podpis starý, aby nešlo staré doručení přehrát. */
+const TOLERANCE_PODPISU_MS = 5 * 60 * 1000;
+
+/** Ověří podpis webhooku (Svix formát, který Resend používá) i jeho čas. */
 function jePodpisPlatny(surove: string, hlavicky: Headers, secret: string): boolean {
   const id = hlavicky.get('svix-id');
   const timestamp = hlavicky.get('svix-timestamp');
   const podpisy = hlavicky.get('svix-signature');
   if (!id || !timestamp || !podpisy) return false;
+
+  // Bez kontroly času by šlo staré doručení přehrát a zrušit odběr, který si
+  // člověk mezitím znovu založil.
+  const cas = Number(timestamp) * 1000;
+  if (!Number.isFinite(cas) || Math.abs(Date.now() - cas) > TOLERANCE_PODPISU_MS) return false;
 
   const klic = Buffer.from(secret.replace(/^whsec_/, ''), 'base64');
   const ocekavany = createHmac('sha256', klic).update(`${id}.${timestamp}.${surove}`).digest('base64');
@@ -79,6 +87,7 @@ export async function POST(request: NextRequest) {
   const polozkaZeZnacky = znacky.find((z) => z.name === 'polozka')?.value ?? null;
 
   try {
+    let zrusitAdresu = false;
     await vTransakci(async (s) => {
       const vlozeno = await s.dotaz(
         `insert into webhook_udalost (event_id, typ, resend_id, email_otisk, polozka_id, telo_bez_adresy)
@@ -108,14 +117,23 @@ export async function POST(request: NextRequest) {
       if (polozkaId) {
         await zapisVysledekPolozky(s, polozkaId, resendId, typ.replace('email.', ''));
       }
+      // Účinek se rozhoduje **uvnitř** stráže: duplicitní doručení sem vůbec
+      // nedojde (insert narazil na konflikt a funkce se vrátila dřív), takže
+      // opožděný přehraný `email.bounced` nemůže zrušit nově založený odběr.
+      zrusitAdresu = TRVALE_ZRUSENI.includes(typ) && Boolean(adresa);
       await s.dotaz(`update webhook_udalost set zpracovano = now() where event_id = $1`, [eventId]);
     });
 
     // Potlačení adresy a trvalá nedoručitelnost ruší odběr podle adresy,
-    // nezávisle na tom, jestli se událost spárovala s položkou.
-    if (TRVALE_ZRUSENI.includes(typ) && adresa) {
+    // nezávisle na tom, jestli se událost spárovala s položkou. Kdyby proces
+    // spadl mezi transakcí a tímto krokem, dožene ho úklid odesílače podle
+    // nezpracovaných účinků (viz dokonciUcinkyWebhooku).
+    if (zrusitAdresu && adresa) {
       const zrusene = await zrusPodleAdresy(adresa);
       console.log(`✉️ Webhook ${typ}: zrušeno ${zrusene} odběrů podle adresy.`);
+      await dotaz(`update webhook_udalost set ucinek_hotov = now() where event_id = $1`, [eventId]);
+    } else {
+      await dotaz(`update webhook_udalost set ucinek_hotov = now() where event_id = $1`, [eventId]);
     }
   } catch (chyba) {
     console.error('❌ Zpracování webhooku selhalo:', chyba);

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { jeDbNastavena } from '@/lib/novinky-db';
 import { odhlas } from '@/lib/novinky-odber';
 import { overToken } from '@/lib/novinky-token';
+import { nastavRelaciOdhlaseni, precitRelaciOdhlaseni } from '@/lib/novinky-relace';
 
 // ============================================================================
 // Odhlášení jedním kliknutím podle RFC 8058
@@ -16,11 +17,16 @@ export async function POST(request: NextRequest) {
   if (!jeDbNastavena() || !process.env.NOVINKY_SECRET) {
     return NextResponse.json({ error: 'Odběr novinek není nakonfigurován.' }, { status: 503 });
   }
-  const token = request.nextUrl.searchParams.get('t') ?? '';
-  const polozkaId = overToken(token);
+  // Relace z cookie (běžné kliknutí na stránce), jinak token z adresy: tak
+  // přichází odhlášení jedním kliknutím z poštovního klienta.
+  const polozkaId = precitRelaciOdhlaseni(request) ?? overToken(request.nextUrl.searchParams.get('t') ?? '');
   if (!polozkaId) {
-    // Odhlašovací odkaz nesmí vracet 500 ani nic prozrazovat.
-    return NextResponse.json({ success: true });
+    // Neplatný odkaz **nesmí tvrdit, že odhlášení proběhlo**: tiché selhání
+    // práva odhlásit se je horší než chybová odpověď.
+    return NextResponse.json(
+      { error: 'Odkaz už neplatí. Odhlásit se jde ve správě odběru z novějšího e-mailu.' },
+      { status: 400 },
+    );
   }
   try {
     const vysledek = await odhlas(polozkaId);
@@ -32,10 +38,21 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ success: true });
 }
 
-/** Ruční kliknutí v e-mailu: stránka s potvrzením, žádná změna stavu. */
+/**
+ * Ruční kliknutí v e-mailu: token se vymění za krátkou relaci v cookie a
+ * adresa se přesměruje **bez tokenu**. Token opravňuje k odhlášení i ke čtení
+ * adresy ve správě, takže nesmí skončit v Matomu ani v hlášení chyby.
+ * Stránka sama nic nemění; odhlášení potvrzuje člověk až tlačítkem.
+ */
 export async function GET(request: NextRequest) {
   const token = request.nextUrl.searchParams.get('t') ?? '';
+  const polozkaId = overToken(token);
   const cil = new URL('/novinky/odhlaseni', request.url);
-  if (token) cil.searchParams.set('t', token);
-  return NextResponse.redirect(cil);
+  if (!polozkaId) {
+    cil.searchParams.set('stav', 'neplatny');
+    return NextResponse.redirect(cil);
+  }
+  const odpoved = NextResponse.redirect(cil);
+  nastavRelaciOdhlaseni(odpoved, polozkaId);
+  return odpoved;
 }

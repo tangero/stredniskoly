@@ -1,6 +1,6 @@
 import { vTransakci, dotaz } from './novinky-db.ts';
 import type { Spojeni } from './novinky-db.ts';
-import { zaradPolozku } from './novinky-fronta.ts';
+import { uklidEvidence, zaradPolozku, zrusDavkuPolozky } from './novinky-fronta.ts';
 import {
   ZADOST_PLATNOST_MS,
   noveId,
@@ -245,18 +245,30 @@ export interface OdhlaseniVysledek {
  */
 export async function odhlas(polozkaId: string): Promise<OdhlaseniVysledek> {
   return vTransakci(async (s) => {
-    const v = await s.dotaz<{ odberatel_id: string | null; zprava: string }>(
-      `select odberatel_id, zprava from polozka_odeslani where id = $1`,
+    const v = await s.dotaz<{ odberatel_id: string | null; zprava: string; segment: string[] | null }>(
+      `select odberatel_id, zprava, segment from polozka_odeslani where id = $1`,
       [polozkaId],
     );
     const polozka = v.rows[0];
     if (!polozka?.odberatel_id) return { ok: false, zahozeno: 0, duvod: 'odkaz neplatí' };
 
     const rocnik = polozka.zprava.split('/')[1];
-    await s.dotaz(`delete from odber_novinek where odberatel_id = $1 and rocnik = $2`, [
-      polozka.odberatel_id,
-      rocnik,
-    ]);
+    // Ruší se odběr **v segmentech té zprávy**, ze které odkaz vede. Kdo klikne
+    // v e-mailu o jednotné zkoušce pro čtyřleté obory, nepřijde tím o odběr
+    // pro víceleté gymnázium. Segment bez hodnoty znamená celý ročník.
+    const segment = polozka.segment && polozka.segment.length > 0 ? polozka.segment : null;
+    if (segment) {
+      await s.dotaz(
+        `delete from odber_novinek
+          where odberatel_id = $1 and rocnik = $2 and druh_studia = any($3::text[])`,
+        [polozka.odberatel_id, rocnik, segment],
+      );
+    } else {
+      await s.dotaz(`delete from odber_novinek where odberatel_id = $1 and rocnik = $2`, [
+        polozka.odberatel_id,
+        rocnik,
+      ]);
+    }
     await s.dotaz(
       `update doklad_souhlasu
           set zaniklo = coalesce(zaniklo, now()), smazat_po = coalesce(smazat_po, now() + interval '3 years')
@@ -273,20 +285,17 @@ export async function odhlas(polozkaId: string): Promise<OdhlaseniVysledek> {
     );
     let zahozeno = 0;
     for (const p of pripravene.rows) {
+      // U položky v dávce se **nejdřív zruší celá dávka**: její ostatní položky
+      // se vrátí do fronty a rezervace se vypořádá. Kdyby se jen zahodila naše
+      // položka, zbylí příjemci by zprávu nikdy nedostali, protože transakce A
+      // vybírá jen stav `ceka`.
+      if (p.davka_id) await zrusDavkuPolozky(s, p.id);
       const prechod = await s.dotaz(
         `update polozka_odeslani set stav = 'zahozena'
           where id = $1 and stav in ('ceka', 'pripravena')`,
         [p.id],
       );
       zahozeno += prechod.rowCount;
-      if (p.davka_id) {
-        // Podmíněně: uspěje jen tehdy, když dávka ještě nebyla předána.
-        await s.dotaz(
-          `update davka set stav = 'zrusena', uzavreno = now()
-            where id = $1 and stav = 'pripravena'`,
-          [p.davka_id],
-        );
-      }
     }
     await smazOsirelouIdentitu(s, polozka.odberatel_id);
     return { ok: true, zahozeno };
@@ -354,14 +363,33 @@ export async function odhlasVse(polozkaId: string): Promise<boolean> {
         where odberatel_id = $1`,
       [odberatelId],
     );
-    await s.dotaz(
-      `update polozka_odeslani set stav = 'zahozena'
-        where odberatel_id = $1 and stav in ('ceka', 'pripravena')`,
-      [odberatelId],
-    );
+    await zahodNepredanePolozky(s, odberatelId);
     await smazOsirelouIdentitu(s, odberatelId);
     return true;
   });
+}
+
+/**
+ * Zahodí nepředané položky odběratele. Dávku, ve které leží, nejdřív zruší,
+ * aby ostatní příjemci zůstali ve frontě (P1-1 z code review).
+ */
+async function zahodNepredanePolozky(s: Spojeni, odberatelId: string): Promise<number> {
+  const nepredane = await s.dotaz<{ id: string; davka_id: string | null }>(
+    `select id, davka_id from polozka_odeslani
+      where odberatel_id = $1 and stav in ('ceka', 'pripravena')`,
+    [odberatelId],
+  );
+  let zahozeno = 0;
+  for (const p of nepredane.rows) {
+    if (p.davka_id) await zrusDavkuPolozky(s, p.id);
+    const v = await s.dotaz(
+      `update polozka_odeslani set stav = 'zahozena'
+        where id = $1 and stav in ('ceka', 'pripravena')`,
+      [p.id],
+    );
+    zahozeno += v.rowCount;
+  }
+  return zahozeno;
 }
 
 /** Trvale nedoručitelná adresa nebo stížnost: odběr končí hned. */
@@ -379,28 +407,44 @@ export async function zrusPodleAdresy(email: string): Promise<number> {
         where odberatel_id = $1`,
       [odberatelId],
     );
-    await s.dotaz(
-      `update polozka_odeslani set stav = 'zahozena'
-        where odberatel_id = $1 and stav in ('ceka', 'pripravena')`,
-      [odberatelId],
-    );
+    await zahodNepredanePolozky(s, odberatelId);
     await smazOsirelouIdentitu(s, odberatelId);
     return zrusene.rowCount;
   });
 }
 
 /** Denní úklid: prošlé žádosti, doklady po lhůtě a stará počitadla. */
-export async function uklid(): Promise<{ zadosti: number; doklady: number; limity: number }> {
+export async function uklid(): Promise<{
+  zadosti: number;
+  doklady: number;
+  limity: number;
+  kalendar: number;
+  polozky: number;
+  davky: number;
+  webhooky: number;
+}> {
   return vTransakci(async (s) => {
     const zadosti = await s.dotaz(
       `delete from zadost_o_potvrzeni
         where (plati_do is not null and plati_do < now())
-           or (stav = 'spotrebovana' and spotrebovano < now() - interval '7 days')`,
+           or (stav = 'spotrebovana' and spotrebovano < now() - interval '7 days')
+           or (stav = 'ceka_na_vyzvu' and vytvoreno < now() - interval '40 days')`,
     );
     const doklady = await s.dotaz(
       `delete from doklad_souhlasu where smazat_po is not null and smazat_po < now()`,
     );
     const limity = await s.dotaz(`delete from limit_potvrzeni where od < now() - interval '30 days'`);
-    return { zadosti: zadosti.rowCount, doklady: doklady.rowCount, limity: limity.rowCount };
+    // Čekání na kalendář má vlastní lhůtu: po `ceka_do` už nemá co oznámit.
+    const kalendar = await s.dotaz(
+      `delete from zprava_o_kalendari where stav = 'uzavren' or ceka_do < now()`,
+    );
+    const evidence = await uklidEvidence(s);
+    return {
+      zadosti: zadosti.rowCount,
+      doklady: doklady.rowCount,
+      limity: limity.rowCount,
+      kalendar: kalendar.rowCount,
+      ...evidence,
+    };
   });
 }

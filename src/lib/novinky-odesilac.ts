@@ -3,7 +3,9 @@ import { dotaz, vTransakci } from './novinky-db.ts';
 import type { Spojeni } from './novinky-db.ts';
 import {
   jeZpravaPlatna,
+  najdiNedokonceneUcinky,
   najdiUviznuteDavky,
+  rezervujKvotu,
   pripravDavku,
   predejDavku,
   smiSeOpakovat,
@@ -18,7 +20,7 @@ import {
 import type { DavkaZaznam, Polozka } from './novinky-fronta.ts';
 import { odesliDavku, sestavTeloDavky } from './novinky-email.ts';
 import { obalka } from './novinky-email.ts';
-import { odhlasovaciOdkaz, otisk, vytvorToken, VYZVA_PLATNOST_MS } from './novinky-token.ts';
+import { odhlasovaciOdkaz, otisk, vytvorToken, SPRAVA_PLATNOST_MS } from './novinky-token.ts';
 import { DAVKA_MAX } from './novinky-rozpocet.ts';
 import calendar from '@/data/admissions-2027.json';
 
@@ -99,6 +101,7 @@ export async function naplnFrontu(s: Spojeni, z: ZpravaZManifestu): Promise<numb
       ucel: 'obsah',
       odberatelId: p.odberatel_id,
       adresatOtisk: otisk(`email:${p.email}`),
+      segment: [...z.segment],
     });
     if (id) pridano += 1;
   }
@@ -173,14 +176,14 @@ export async function zpracujZpravu(
 function teloProZpravu(z: ZpravaZManifestu, polozky: Polozka[]): string {
   return sestavTeloDavky(
     polozky.map((p) => {
-      const token = vytvorToken(p.id, VYZVA_PLATNOST_MS);
+      const token = vytvorToken(p.id, SPRAVA_PLATNOST_MS);
       return {
         polozkaId: p.id,
         email: p.email,
         predmet: z.predmet,
         html: obalka(
           z.html,
-          `<a href="https://www.prijimackynaskolu.cz/novinky/sprava?t=${encodeURIComponent(token)}" style="color:#0074e4;">Upravit odběr</a> · <a href="${odhlasovaciOdkaz(token)}" style="color:#0074e4;">Odhlásit se</a>`,
+          `<a href="https://www.prijimackynaskolu.cz/api/novinky/sprava?t=${encodeURIComponent(token)}" style="color:#0074e4;">Upravit odběr</a> · <a href="${odhlasovaciOdkaz(token)}" style="color:#0074e4;">Odhlásit se</a>`,
         ),
         text: z.text,
         odhlasovaciToken: token,
@@ -270,6 +273,31 @@ export async function obnovUviznute(kdy = new Date()): Promise<VysledekObnovy> {
       vysledek.neurcite += 1;
       continue;
     }
+    // Opakování může být první skutečné odeslání. Když spadá do jiného období
+    // než původní rezervace, musí mít kapacitu i tam; starou rezervaci
+    // neuvolňujeme, protože o jejím odeslání nic nevíme.
+    const pocet = await vTransakci(async (s) => {
+      const v = await s.dotaz<{ pocet: number }>(
+        `select count(*)::int as pocet from polozka_odeslani where davka_id = $1`,
+        [d.id],
+      );
+      return v.rows[0]?.pocet ?? 0;
+    });
+    const kryti = await vTransakci((s) => rezervujKvotu(s, d.id, d.pokus, pocet, 'obsah', kdy)).catch(
+      () => false,
+    );
+    if (!kryti) {
+      await vTransakci(async (s) => {
+        await uzavriDavku(s, d.id, d.pokus, 'neurcita');
+        await s.dotaz(
+          `update polozka_odeslani set stav = 'neurcita' where davka_id = $1 and stav = 'predavana'`,
+          [d.id],
+        );
+      });
+      vysledek.neurcite += 1;
+      continue;
+    }
+
     const odpoved = await odesliDavku(d.telo, d.idempotency_key);
     if (odpoved.ok) {
       await vTransakci(async (s) => {
@@ -286,6 +314,33 @@ export async function obnovUviznute(kdy = new Date()): Promise<VysledekObnovy> {
     }
   }
   return vysledek;
+}
+
+/**
+ * Dožene účinky webhooků, které se zapsaly, ale nedoběhly (pád mezi commitem
+ * a zrušením odběru). Bez toho by nedoručitelná adresa zůstala v odběru.
+ */
+export async function dokonciUcinkyWebhooku(): Promise<number> {
+  const nedokoncene = await vTransakci((s) => najdiNedokonceneUcinky(s, 50));
+  let hotovo = 0;
+  for (const u of nedokoncene) {
+    // Adresu v tabulce nemáme (ukládá se jen otisk), zrušíme proto odběr podle
+    // otisku: identitu najdeme přes doklady a položky se stejným otiskem.
+    await vTransakci(async (s) => {
+      await s.dotaz(
+        `delete from odber_novinek
+          where odberatel_id in (
+            select p.odberatel_id from polozka_odeslani p
+             where p.adresat_otisk = $1 and p.odberatel_id is not null)`,
+        [u.email_otisk],
+      );
+      await s.dotaz(`update webhook_udalost set ucinek_hotov = now() where event_id = $1`, [
+        u.event_id,
+      ]);
+    });
+    hotovo += 1;
+  }
+  return hotovo;
 }
 
 /** Denní úklid těl dávek a nevypořádaných rezervací uzavřených dávek. */
@@ -305,11 +360,16 @@ export async function uklidOdesilace(kdy = new Date()): Promise<{ tela: number; 
   });
 }
 
-/** Nastaví strop rozpočtu podle kvóty tarifu; volá se před během. */
+/**
+ * Založí řádek rozpočtu, když ještě neexistuje. **Existující limit nepřepisuje**:
+ * snížení limitu na nulu je pojistka, kterou má člověk k ruce, aby plošné
+ * zprávy pozastavil, zatímco odkazy portálu běží dál. Kdyby ho cron přepsal,
+ * pojistka by po dvanácti hodinách zmizela.
+ */
 export async function zajistiRozpocet(obdobi: string, ucel: string, limit: number): Promise<void> {
   await dotaz(
     `insert into rozpocet_emailu (obdobi, ucel, limit_pocet) values ($1, $2, $3)
-     on conflict (obdobi, ucel) do update set limit_pocet = excluded.limit_pocet`,
+     on conflict (obdobi, ucel) do nothing`,
     [obdobi, ucel, limit],
   );
 }

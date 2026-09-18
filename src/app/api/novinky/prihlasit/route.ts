@@ -3,9 +3,8 @@ import { jeDbNastavena } from '@/lib/novinky-db';
 import { prihlas, SOUHLAS_VERZE } from '@/lib/novinky-odber';
 import { jeEmailPlatny, normalizujEmail, PRIHLASENI_NEUTRALNI_ODPOVED } from '@/lib/novinky-token';
 import type { DruhStudia } from '@/lib/novinky-token';
-import { odesliDavku, sestavTeloDavky, jeResendNastaven } from '@/lib/novinky-email';
-import { potvrzovaciEmail } from '@/lib/novinky-sablony';
-import { dotaz } from '@/lib/novinky-db';
+import { jeResendNastaven } from '@/lib/novinky-email';
+import { odesliServisni } from '@/lib/novinky-servisni';
 
 // ============================================================================
 // Přihlášení k odběru novinek (docs/novinky-k-prijimackam-2027.md, krok 1).
@@ -84,27 +83,23 @@ export async function POST(request: NextRequest) {
       cilovyRocnik: jenKalendar ? String(Number(rocnik) + 1) : undefined,
     });
 
-    if (vysledek.poslat && vysledek.token && vysledek.polozkaId) {
-      const sablona = potvrzovaciEmail({
-        token: vysledek.token,
+    if (vysledek.poslat && vysledek.jti && vysledek.polozkaId) {
+      // Odesílá se hned, ale **stejnou cestou jako obsahové zprávy**: dávka,
+      // rezervace kvóty, hranice předání. Jinak by formulář obcházel strop
+      // a rezervu pro portál. Když to hned nevyjde, položka zůstane ve frontě
+      // a doveze ji odesílač (dovezServisni).
+      const poslano = await odesliServisni({
+        id: vysledek.polozkaId,
+        zprava: `novinky/${rocnik}/potvrzeni`,
+        email,
+        ucel: 'potvrzeni',
         rocnik,
         druhy,
+        jti: vysledek.jti,
         jenKalendar,
       });
-      const teloDavky = sestavTeloDavky([
-        { polozkaId: vysledek.polozkaId, email, ...sablona },
-      ]);
-      const odeslano = await odesliDavku(teloDavky, `potvrzeni/${vysledek.jti}`);
-      if (odeslano.ok) {
-        await dotaz(
-          `update polozka_odeslani
-              set stav = 'odeslana', odeslano = now(), resend_id = $2, predano_v = now()
-            where id = $1`,
-          [vysledek.polozkaId, odeslano.idEmailu[0] ?? null],
-        );
-      } else {
-        // Nepovedlo se hned: položka zůstává ve frontě a doveze ji odesílač.
-        console.error('✉️ Potvrzovací e-mail se neodeslal hned, zůstává ve frontě.');
+      if (!poslano.odeslano) {
+        console.error(`✉️ Potvrzení neodešlo hned (${poslano.duvod ?? '?'}), zůstává ve frontě.`);
       }
     } else {
       console.log(`✉️ Potvrzovací e-mail se neposílá (${vysledek.duvod ?? 'limit'}).`);

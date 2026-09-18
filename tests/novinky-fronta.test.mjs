@@ -54,6 +54,7 @@ test('předání se neprovede v posledních deseti minutách období', async () 
 
 test('předání váže podmínku na identifikátor, pokus, stav i složení dávky', async () => {
   const s = spojeni([
+    { rows: [], rowCount: 0 }, // rezervace k přenosu: žádná
     { rows: [{ clenove_otisk: DAVKA.clenove_otisk, stav: 'pripravena' }], rowCount: 1 },
     { rows: [{ id: 'p1' }, { id: 'p2' }], rowCount: 2 },
     { rows: [], rowCount: 1 }, // přechod dávky
@@ -74,7 +75,10 @@ test('předání váže podmínku na identifikátor, pokus, stav i složení dá
 });
 
 test('dávku, kterou převzal jiný vítěz, předání jen načte a nic neruší', async () => {
-  const s = spojeni([{ rows: [{ clenove_otisk: DAVKA.clenove_otisk, stav: 'predavana' }], rowCount: 1 }]);
+  const s = spojeni([
+    { rows: [], rowCount: 0 }, // rezervace k přenosu: žádná
+    { rows: [{ clenove_otisk: DAVKA.clenove_otisk, stav: 'predavana' }], rowCount: 1 },
+  ]);
   const v = await predejDavku(s, DAVKA, UPROSTRED_MESICE);
   assert.equal(v.predano, false);
   assert.match(v.duvod, /ve stavu predavana/);
@@ -84,6 +88,7 @@ test('dávku, kterou převzal jiný vítěz, předání jen načte a nic neruš�
 
 test('změněné složení dosud připravené dávky předání zastaví', async () => {
   const s = spojeni([
+    { rows: [], rowCount: 0 }, // rezervace k přenosu: žádná
     { rows: [{ clenove_otisk: DAVKA.clenove_otisk, stav: 'pripravena' }], rowCount: 1 },
     { rows: [{ id: 'p1' }], rowCount: 1 }, // p2 se odhlásil
   ]);

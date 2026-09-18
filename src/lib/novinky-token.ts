@@ -14,6 +14,14 @@ import { createHmac, randomBytes, randomUUID, timingSafeEqual } from 'crypto';
 
 export const ZADOST_PLATNOST_MS = 72 * 60 * 60 * 1000; // 72 hodin
 export const VYZVA_PLATNOST_MS = 30 * 24 * 60 * 60 * 1000; // 30 dnů
+
+/**
+ * Platnost odkazů pro odhlášení a správu odběru. Musí přežít celý ročník
+ * přijímacího řízení: odkaz z lednového e-mailu musí fungovat i v květnu,
+ * jinak by tiše selhalo právo odhlásit se (a s ním i odhlášení jedním
+ * kliknutím v Gmailu). Jednorázovost tu nehlídá token, ale stav v databázi.
+ */
+export const SPRAVA_PLATNOST_MS = 400 * 24 * 60 * 60 * 1000; // 400 dnů
 export const NOVINKY_BASE_URL = 'https://www.prijimackynaskolu.cz';
 
 /** Neutrální odpověď přihlašovacího endpointu – vždy stejná (anti-enumerace). */

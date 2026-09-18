@@ -9,14 +9,8 @@ export function OdhlaseniKlient() {
 
   async function odhlas() {
     setStav('posilam');
-    const token = new URLSearchParams(window.location.search).get('t');
-    if (!token) {
-      setStav('chyba');
-      return;
-    }
-    const odpoved = await fetch(`/api/novinky/odhlasit?t=${encodeURIComponent(token)}`, {
-      method: 'POST',
-    });
+    // Token už v adrese není: obslužná cesta ho vyměnila za krátkou relaci.
+    const odpoved = await fetch('/api/novinky/odhlasit', { method: 'POST' });
     setStav(odpoved.ok ? 'hotovo' : 'chyba');
   }
 

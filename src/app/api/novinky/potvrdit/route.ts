@@ -1,12 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createHmac, timingSafeEqual } from 'crypto';
-import { jeDbNastavena, dotaz } from '@/lib/novinky-db';
+import { jeDbNastavena } from '@/lib/novinky-db';
 import { najdiAktivniZadost, potvrd } from '@/lib/novinky-odber';
-import { overToken, vytvorToken, odhlasovaciOdkaz, VYZVA_PLATNOST_MS } from '@/lib/novinky-token';
-import { odesliDavku, sestavTeloDavky, jeResendNastaven } from '@/lib/novinky-email';
-import { uvitaciEmail } from '@/lib/novinky-sablony';
-import type { DruhStudia } from '@/lib/novinky-token';
-import calendar from '@/data/admissions-2027.json';
+import { overToken } from '@/lib/novinky-token';
+import { jeResendNastaven } from '@/lib/novinky-email';
+import { odesliServisni } from '@/lib/novinky-servisni';
 
 // ============================================================================
 // Potvrzení odběru dvěma kroky (docs/novinky-k-prijimackam-2027.md, kroky 3 a 4).
@@ -91,9 +89,13 @@ export async function POST(request: NextRequest) {
 
   if (vysledek.ok && vysledek.uvitaniPolozkaId && vysledek.email && jeResendNastaven()) {
     try {
-      await posliUvitani({
-        polozkaId: vysledek.uvitaniPolozkaId,
+      // Stejná cesta jako u obsahových zpráv: dávka, rezervace kvóty, hranice
+      // předání. Když to hned nevyjde, uvítání dožene odesílač z fronty.
+      await odesliServisni({
+        id: vysledek.uvitaniPolozkaId,
+        zprava: `novinky/${vysledek.rocnik ?? zadost.volby.rocnik}/uvitani`,
         email: vysledek.email,
+        ucel: 'uvitani',
         rocnik: vysledek.rocnik ?? zadost.volby.rocnik,
         druhy: zadost.volby.druhy,
       });
@@ -105,48 +107,4 @@ export async function POST(request: NextRequest) {
   return odpoved;
 }
 
-/** Uvítání se posílá hned po potvrzení; položka ve frontě je záloha. */
-async function posliUvitani(para: {
-  polozkaId: string;
-  email: string;
-  rocnik: string;
-  druhy: DruhStudia[];
-}): Promise<void> {
-  const token = vytvorToken(para.polozkaId, VYZVA_PLATNOST_MS);
-  const sablona = uvitaciEmail({
-    rocnik: para.rocnik,
-    druhy: para.druhy,
-    terminy: nejblizsiTerminy(para.druhy),
-    spravaOdkaz: `https://www.prijimackynaskolu.cz/novinky/sprava?t=${encodeURIComponent(token)}`,
-    odhlasitOdkaz: odhlasovaciOdkaz(token),
-  });
-  const telo = sestavTeloDavky([
-    { polozkaId: para.polozkaId, email: para.email, ...sablona, odhlasovaciToken: token },
-  ]);
-  const odeslano = await odesliDavku(telo, `uvitani/${para.polozkaId}`);
-  if (odeslano.ok) {
-    await dotaz(
-      `update polozka_odeslani
-          set stav = 'odeslana', odeslano = now(), predano_v = now(), resend_id = $2
-        where id = $1`,
-      [para.polozkaId, odeslano.idEmailu[0] ?? null],
-    );
-  }
-}
 
-/**
- * Nejbližší termíny z kalendáře MŠMT. Letopočet se nikde nepíše napevno,
- * bere se ze souboru kalendáře.
- */
-function nejblizsiTerminy(druhy: DruhStudia[]): Array<{ nazev: string; datum: string }> {
-  const dnes = new Date().toISOString().slice(0, 10);
-  const skupiny = calendar.groups.filter((g) =>
-    druhy.includes('ss') || druhy.includes('vicelete') ? g.id !== 'konzervatore' : true,
-  );
-  const udalosti = skupiny
-    .flatMap((g) => g.events)
-    .filter((e) => (e.end ?? e.start) >= dnes)
-    .sort((a, b) => a.start.localeCompare(b.start))
-    .slice(0, 6);
-  return udalosti.map((e) => ({ nazev: e.title, datum: e.date }));
-}

@@ -3,12 +3,14 @@ import { timingSafeEqual } from 'crypto';
 import { jeDbNastavena } from '@/lib/novinky-db';
 import { jeResendNastaven } from '@/lib/novinky-email';
 import {
+  dokonciUcinkyWebhooku,
   nactiZpravy,
   obnovUviznute,
   uklidOdesilace,
   zajistiRozpocet,
   zpracujZpravu,
 } from '@/lib/novinky-odesilac';
+import { dovezServisni } from '@/lib/novinky-servisni';
 import { uklid } from '@/lib/novinky-odber';
 import { denniObdobi, mesicniObdobi, mesicniStrop } from '@/lib/novinky-rozpocet';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
@@ -71,6 +73,10 @@ export async function GET(request: NextRequest) {
     }
 
     const obnova = await obnovUviznute(kdy);
+    // Potvrzení a uvítání, která inline odeslání nestihla. Musí jít dřív než
+    // obsahové zprávy: bez potvrzení propadne žádost za 72 hodin.
+    const servisni = await dovezServisni(kdy);
+    const ucinky = await dokonciUcinkyWebhooku();
     const vysledky = [];
     for (const z of splatne) {
       vysledky.push(await zpracujZpravu(z, base, kdy));
@@ -78,7 +84,14 @@ export async function GET(request: NextRequest) {
     const uklidZadosti = await uklid();
     const uklidTel = await uklidOdesilace(kdy);
 
-    const souhrn = { rocnik, obnova, vysledky, uklid: { ...uklidZadosti, ...uklidTel } };
+    const souhrn = {
+      rocnik,
+      obnova,
+      servisni,
+      ucinkyWebhooku: ucinky,
+      vysledky,
+      uklid: { ...uklidZadosti, ...uklidTel },
+    };
     console.log('✉️ Běh odesílače novinek:', JSON.stringify(souhrn));
     return NextResponse.json(souhrn);
   } catch (chyba) {

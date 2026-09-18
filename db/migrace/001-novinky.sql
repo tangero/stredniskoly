@@ -100,6 +100,7 @@ create table if not exists polozka_odeslani (
   odberatel_id uuid references odberatel on delete set null,
   zadost_jti text references zadost_o_potvrzeni on delete set null,
   adresat_otisk text not null,
+  segment text[],
   stav text not null check (stav in ('ceka', 'pripravena', 'predavana',
                                      'odeslana', 'neurcita', 'zahozena')),
   davka_id uuid references davka,
@@ -152,7 +153,8 @@ create table if not exists webhook_udalost (
   polozka_id uuid references polozka_odeslani on delete set null,
   telo_bez_adresy jsonb not null,
   prijato timestamptz not null default now(),
-  zpracovano timestamptz
+  zpracovano timestamptz,
+  ucinek_hotov timestamptz
 );
 
 create index if not exists webhook_nezpracovane on webhook_udalost (zpracovano)
