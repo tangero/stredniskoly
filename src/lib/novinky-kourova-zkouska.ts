@@ -15,7 +15,7 @@ import {
   uklid,
 } from './novinky-odber.ts';
 import { dokonciUcinkyWebhooku, obnovUviznute, uklidOdesilace } from './novinky-odesilac.ts';
-import { obdobiKRezervaci } from './novinky-rozpocet.ts';
+import { limitRozpoctu, obdobiKRezervaci } from './novinky-rozpocet.ts';
 import { otisk } from './novinky-token.ts';
 
 // ============================================================================
@@ -91,7 +91,7 @@ export async function kourovaZkouska(kdy = new Date()): Promise<VysledekZkousky>
     tvrd('žádost má jti', Boolean(prihlaseni.jti));
     tvrd('vznikla položka fronty', Boolean(prihlaseni.polozkaId));
     if (!prihlaseni.jti) {
-      return { ok: false, adresa, kroky, poklid: await poklid(adresa), chyba: 'bez žádosti' };
+      return { ok: false, adresa, kroky, poklid: await poklid(adresa, kdy), chyba: 'bez žádosti' };
     }
 
     const nactena = await najdiAktivniZadost(prihlaseni.jti);
@@ -208,11 +208,31 @@ export async function kourovaZkouska(kdy = new Date()): Promise<VysledekZkousky>
     tvrd('úklid odesílače proběhl', uo !== null, JSON.stringify(uo));
     const servisni = await vTransakci((s) => najdiServisniPolozky(s, 5));
     tvrd('hledání servisních položek proběhlo', Array.isArray(servisni), `${servisni.length}`);
+
+    // --- Limity rozpočtu: musí odpovídat tomu, co říká modul ---------------
+    // Řádek se zakládá jednou a `do nothing` ho nikdy nepřepíše, takže špatný
+    // limit by v tabulce zůstal do konce období, aniž by si toho kdokoli všiml.
+    // Právě to se stalo prvním během této zkoušky, který si řádky zakládal sám.
+    const poRezervaci = await dotaz<{ obdobi: string; ucel: string; limit_pocet: number }>(
+      `select obdobi, ucel, limit_pocet from rozpocet_emailu where obdobi = any($1::text[])`,
+      [obdobi.map((o) => o.obdobi)],
+    );
+    for (const { obdobi: o, ucel: u } of obdobi) {
+      const radek = poRezervaci.rows.find((r) => r.obdobi === o && r.ucel === u);
+      const ocekavany = limitRozpoctu(u);
+      tvrd(
+        `limit rozpočtu ${u} odpovídá modulu`,
+        radek !== undefined && radek.limit_pocet === ocekavany,
+        radek ? `má ${radek.limit_pocet}, čeká ${ocekavany}` : 'řádek chybí',
+      );
+    }
+    const cizi = poRezervaci.rows.filter((r) => r.ucel !== 'celkem' && r.ucel !== 'potvrzeni');
+    tvrd('v rozpočtu nejsou řádky s neznámým účelem', cizi.length === 0, cizi.map((r) => r.ucel).join(','));
   } catch (e) {
     chyba = e instanceof Error ? e.message : String(e);
   }
 
-  const uklizeno = await poklid(adresa).catch((e) => {
+  const uklizeno = await poklid(adresa, kdy).catch((e) => {
     chyba = `${chyba ? `${chyba}; ` : ''}poklid selhal: ${e instanceof Error ? e.message : e}`;
     return {};
   });
@@ -229,10 +249,17 @@ export async function kourovaZkouska(kdy = new Date()): Promise<VysledekZkousky>
 /**
  * Smaže všechno, co zkušební adresa v databázi zanechala. Maže se podle otisku
  * adresy a podle adresy samotné, protože obojí se v tabulkách vyskytuje.
+ *
+ * Uklízí i **prázdné řádky rozpočtu** období, kterých se zkouška dotkla. Bez
+ * toho by příští běh už nezkoušel to podstatné — že si rezervace řádek umí
+ * založit sama — protože by ho našel hotový. Řádek s nulovým limitem je ruční
+ * pojistka a nemaže se; ostatní prázdné řádky nedrží žádnou spotřebu, takže se
+ * smazáním nic neztrácí a vzniknou znovu se správným limitem.
  */
-async function poklid(adresa: string): Promise<Record<string, number>> {
+async function poklid(adresa: string, kdy: Date): Promise<Record<string, number>> {
   const otiskEmailu = otisk(`email:${adresa}`);
   const otiskIp = otisk(`ip:${IP_ZKOUSKY}`);
+  const obdobi = obdobiKRezervaci(kdy, 'potvrzeni').map((o) => o.obdobi);
   return vTransakci(async (s) => {
     const polozky = await s.dotaz<{ davka_id: string | null }>(
       `delete from polozka_odeslani where adresat_otisk = $1 returning davka_id`,
@@ -249,6 +276,12 @@ async function poklid(adresa: string): Promise<Record<string, number>> {
     const limity = await s.dotaz(`delete from limit_potvrzeni where otisk = any($1::text[])`, [
       [otiskEmailu, otiskIp],
     ]);
+    const rozpocty = await s.dotaz(
+      `delete from rozpocet_emailu
+        where obdobi = any($1::text[]) and rezervovano = 0 and spotrebovano = 0
+          and limit_pocet > 0`,
+      [obdobi],
+    );
     return {
       polozky: polozky.rowCount,
       davky: davky.length,
@@ -256,6 +289,7 @@ async function poklid(adresa: string): Promise<Record<string, number>> {
       doklady: doklady.rowCount,
       odberatele: odberatele.rowCount,
       limity: limity.rowCount,
+      rozpocty: rozpocty.rowCount,
     };
   });
 }
