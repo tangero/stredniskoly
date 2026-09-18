@@ -1,0 +1,930 @@
+{
+  "popis": "Ověření mapy sloupců build-maturita-skoly.py proti hlavičce a listu „vysvetlivky“ souborů MZ{rok}j_SC_skolobory.xlsx. Přejímací podmínka 2 maturitního návrhu, §8.",
+  "overeno": "2026-09-18",
+  "mapa_skriptu": {
+    "bloky": {
+      "spolecna_cast": "SPOLECNA CAST MZ CELKEM",
+      "cj": "CESKY JAZYK",
+      "ma": "MATEMATIKA"
+    },
+    "sloupce": {
+      "PRIHLASENI": "registered",
+      "KONALI": "took",
+      "USPELI": "passed",
+      "NEUSPELI": "failed",
+      "NEKONALI": "absent",
+      "PODIL USPESNYCH (%)": "passRate",
+      "HRUBA NEUSPESNOST (%)": "grossFailureRate",
+      "NEUCAST (%)": "nonParticipationRate",
+      "PRUMERNY % SKOR": "averagePercentScore",
+      "SMERODATNA ODCHYLKA % SKORU": "standardDeviation",
+      "PRUMERNE PERCENTILOVE UMISTENI": "averagePercentile",
+      "PODIL VOLBY PREDMETU (%)": "subjectChoiceShare"
+    },
+    "povinne": [
+      "CESKY JAZYK / KONALI",
+      "CESKY JAZYK / PRUMERNE PERCENTILOVE UMISTENI",
+      "CESKY JAZYK / PRUMERNY % SKOR",
+      "CESKY JAZYK / SMERODATNA ODCHYLKA % SKORU",
+      "SPOLECNA CAST MZ CELKEM / PODIL USPESNYCH (%)"
+    ]
+  },
+  "tolerance_dopoctu_p_b": 0.05,
+  "schema_shodne_mezi_rocniky": true,
+  "roky": [
+    {
+      "rok": 2021,
+      "soubor": "MZ2021j_SC_skolobory.xlsx",
+      "sha256": "1999e2f1d56409203e90e2bad0dab962ea31f02b50ffd6396cf332a3e5d47a70",
+      "url": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2021j_SC_skolobory.xlsx",
+      "listy": [
+        "2021",
+        "vysvetlivky"
+      ],
+      "sloupcu": 98,
+      "bloky": [
+        "ANGLICTINA",
+        "CESKY JAZYK",
+        "FRANCOUZSTINA",
+        "MATEMATIKA",
+        "NEMCINA",
+        "RUSTINA",
+        "SPANELSTINA",
+        "SPOLECNA CAST MZ CELKEM"
+      ],
+      "radku": {
+        "redizo": 1093,
+        "redizo_smo16": 2209
+      },
+      "vysvetlivky": {
+        "CISTA NEUSPESNOST": {
+          "nazev": "čistá neúspěšnost",
+          "popis": "podíl žáků, kteří u zkoušky neuspěli, z celkového počtu žáků, kteří zkoušku konali"
+        },
+        "HRUBA NEUSPESNOST": {
+          "nazev": "hrubá neúspěšnost",
+          "popis": "podíl žáků, kteří u zkoušky neuspěli nebo ji nekonali, z přihlášených ke zkoušce"
+        },
+        "PODIL USPESNYCH": {
+          "nazev": "podíl úspěšných",
+          "popis": "podíl žáků, kteří u zkoušky uspěli, z přihlášených ke zkoušce"
+        },
+        "PRUMERNY % SKOR": {
+          "nazev": "průměrný % skór",
+          "popis": "průměrný dosažený počet bodů z didaktického testu z maximálního dosažitelného počtu bodů (%)"
+        },
+        "SMERODATNA ODCHYLKA % SKORU": {
+          "nazev": "směrodatná odchylka % skóru",
+          "popis": "míra variability výsledků v dané skupině maturantů"
+        },
+        "PRUMERNE PERCENTILOVE UMISTENI": {
+          "nazev": "průměrné percentilové umístění",
+          "popis": "percentilové umístění vyjadřuje, kolik % žáků dosáhlo horšího či stejného výsledku jako konkrétní žák"
+        },
+        "PODIL VOLBY PREDMETU": {
+          "nazev": "podíl volby předmětu",
+          "popis": "podíl maturantů, kteří si zvolili daný předmět 2. povinné zkoušky, ze všech maturantů přihlášených k 2. povinné zkoušce (%)"
+        }
+      },
+      "nemapovane_sloupce_v_nasich_blocich": [
+        "CESKY JAZYK / CISTA NEUSPESNOST (%)",
+        "MATEMATIKA / CISTA NEUSPESNOST (%)",
+        "SPOLECNA CAST MZ CELKEM / CISTA NEUSPESNOST (%)"
+      ],
+      "dopocty": {
+        "SPOLECNA CAST MZ CELKEM / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 3302,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 3302,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / HRUBA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI + NEKONALI) / PRIHLASENI",
+          "radku": 3302,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / NEUCAST (%)": {
+          "vzorec": "(NEKONALI) / PRIHLASENI",
+          "radku": 3302,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "CESKY JAZYK / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 3302,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "CESKY JAZYK / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 3302,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "MATEMATIKA / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 1405,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "MATEMATIKA / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 1405,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        }
+      },
+      "rozsahy": {
+        "CESKY JAZYK / PRUMERNE PERCENTILOVE UMISTENI": {
+          "hodnot": 3285,
+          "min": 2.96,
+          "median": 42.67,
+          "max": 98.77
+        },
+        "CESKY JAZYK / PRUMERNY % SKOR": {
+          "hodnot": 3285,
+          "min": 37.0,
+          "median": 66.67,
+          "max": 97.06
+        },
+        "CESKY JAZYK / SMERODATNA ODCHYLKA % SKORU": {
+          "hodnot": 3280,
+          "min": 1.86,
+          "median": 11.72,
+          "max": 25.48
+        },
+        "MATEMATIKA / PRUMERNE PERCENTILOVE UMISTENI": {
+          "hodnot": 1402,
+          "min": 2.7,
+          "median": 48.65,
+          "max": 91.28
+        },
+        "MATEMATIKA / PRUMERNY % SKOR": {
+          "hodnot": 1402,
+          "min": 9.0,
+          "median": 49.1,
+          "max": 85.92
+        },
+        "MATEMATIKA / SMERODATNA ODCHYLKA % SKORU": {
+          "hodnot": 1399,
+          "min": 0.0,
+          "median": 16.92,
+          "max": 40.23
+        }
+      },
+      "nalezy": []
+    },
+    {
+      "rok": 2022,
+      "soubor": "MZ2022j_SC_skolobory.xlsx",
+      "sha256": "663e7d1b8962d2bb326e918426abf6f0bf1bcb1969e6f3f5ab4f82164dd12233",
+      "url": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2022j_SC_skolobory.xlsx",
+      "listy": [
+        "2022",
+        "vysvetlivky"
+      ],
+      "sloupcu": 98,
+      "bloky": [
+        "ANGLICTINA",
+        "CESKY JAZYK",
+        "FRANCOUZSTINA",
+        "MATEMATIKA",
+        "NEMCINA",
+        "RUSTINA",
+        "SPANELSTINA",
+        "SPOLECNA CAST MZ CELKEM"
+      ],
+      "radku": {
+        "redizo": 1095,
+        "redizo_smo16": 2185
+      },
+      "vysvetlivky": {
+        "CISTA NEUSPESNOST": {
+          "nazev": "čistá neúspěšnost",
+          "popis": "podíl žáků, kteří u zkoušky neuspěli, z celkového počtu žáků, kteří zkoušku konali"
+        },
+        "HRUBA NEUSPESNOST": {
+          "nazev": "hrubá neúspěšnost",
+          "popis": "podíl žáků, kteří u zkoušky neuspěli nebo ji nekonali, z přihlášených ke zkoušce"
+        },
+        "PODIL USPESNYCH": {
+          "nazev": "podíl úspěšných",
+          "popis": "podíl žáků, kteří u zkoušky uspěli, z přihlášených ke zkoušce"
+        },
+        "PRUMERNY % SKOR": {
+          "nazev": "průměrný % skór",
+          "popis": "průměrný dosažený počet bodů z didaktického testu z maximálního dosažitelného počtu bodů (%)"
+        },
+        "SMERODATNA ODCHYLKA % SKORU": {
+          "nazev": "směrodatná odchylka % skóru",
+          "popis": "míra variability výsledků v dané skupině maturantů"
+        },
+        "PRUMERNE PERCENTILOVE UMISTENI": {
+          "nazev": "průměrné percentilové umístění",
+          "popis": "percentilové umístění vyjadřuje, kolik % žáků dosáhlo horšího či stejného výsledku jako konkrétní žák"
+        },
+        "PODIL VOLBY PREDMETU": {
+          "nazev": "podíl volby předmětu",
+          "popis": "podíl maturantů, kteří si zvolili daný předmět 2. povinné zkoušky, ze všech maturantů přihlášených k 2. povinné zkoušce (%)"
+        }
+      },
+      "nemapovane_sloupce_v_nasich_blocich": [
+        "CESKY JAZYK / CISTA NEUSPESNOST (%)",
+        "MATEMATIKA / CISTA NEUSPESNOST (%)",
+        "SPOLECNA CAST MZ CELKEM / CISTA NEUSPESNOST (%)"
+      ],
+      "dopocty": {
+        "SPOLECNA CAST MZ CELKEM / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 3280,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 3280,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / HRUBA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI + NEKONALI) / PRIHLASENI",
+          "radku": 3280,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / NEUCAST (%)": {
+          "vzorec": "(NEKONALI) / PRIHLASENI",
+          "radku": 3280,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "CESKY JAZYK / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 3280,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "CESKY JAZYK / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 3280,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "MATEMATIKA / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 1297,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "MATEMATIKA / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 1297,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        }
+      },
+      "rozsahy": {
+        "CESKY JAZYK / PRUMERNE PERCENTILOVE UMISTENI": {
+          "hodnot": 3280,
+          "min": 5.4,
+          "median": 43.12,
+          "max": 92.21
+        },
+        "CESKY JAZYK / PRUMERNY % SKOR": {
+          "hodnot": 3280,
+          "min": 36.0,
+          "median": 63.0,
+          "max": 91.06
+        },
+        "CESKY JAZYK / SMERODATNA ODCHYLKA % SKORU": {
+          "hodnot": 3278,
+          "min": 2.0,
+          "median": 13.09,
+          "max": 28.79
+        },
+        "MATEMATIKA / PRUMERNE PERCENTILOVE UMISTENI": {
+          "hodnot": 1297,
+          "min": 1.77,
+          "median": 49.35,
+          "max": 89.36
+        },
+        "MATEMATIKA / PRUMERNY % SKOR": {
+          "hodnot": 1297,
+          "min": 11.2,
+          "median": 65.11,
+          "max": 91.2
+        },
+        "MATEMATIKA / SMERODATNA ODCHYLKA % SKORU": {
+          "hodnot": 1296,
+          "min": 0.0,
+          "median": 15.72,
+          "max": 33.36
+        }
+      },
+      "nalezy": []
+    },
+    {
+      "rok": 2023,
+      "soubor": "MZ2023j_SC_skolobory.xlsx",
+      "sha256": "04a484d4f73861d971213ece461dc8e8893174e2fad3278b84403ebdc51f9d8d",
+      "url": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2023j_SC_skolobory.xlsx",
+      "listy": [
+        "2023",
+        "vysvetlivky"
+      ],
+      "sloupcu": 98,
+      "bloky": [
+        "ANGLICTINA",
+        "CESKY JAZYK",
+        "FRANCOUZSTINA",
+        "MATEMATIKA",
+        "NEMCINA",
+        "RUSTINA",
+        "SPANELSTINA",
+        "SPOLECNA CAST MZ CELKEM"
+      ],
+      "radku": {
+        "redizo": 1096,
+        "redizo_smo16": 2178
+      },
+      "vysvetlivky": {
+        "CISTA NEUSPESNOST": {
+          "nazev": "čistá neúspěšnost",
+          "popis": "podíl žáků, kteří u zkoušky neuspěli, z celkového počtu žáků, kteří zkoušku konali"
+        },
+        "HRUBA NEUSPESNOST": {
+          "nazev": "hrubá neúspěšnost",
+          "popis": "podíl žáků, kteří u zkoušky neuspěli nebo ji nekonali, z přihlášených ke zkoušce"
+        },
+        "PODIL USPESNYCH": {
+          "nazev": "podíl úspěšných",
+          "popis": "podíl žáků, kteří u zkoušky uspěli, z přihlášených ke zkoušce"
+        },
+        "PRUMERNY % SKOR": {
+          "nazev": "průměrný % skór",
+          "popis": "průměrný dosažený počet bodů z didaktického testu z maximálního dosažitelného počtu bodů (%)"
+        },
+        "SMERODATNA ODCHYLKA % SKORU": {
+          "nazev": "směrodatná odchylka % skóru",
+          "popis": "míra variability výsledků v dané skupině maturantů"
+        },
+        "PRUMERNE PERCENTILOVE UMISTENI": {
+          "nazev": "průměrné percentilové umístění",
+          "popis": "percentilové umístění vyjadřuje, kolik % žáků dosáhlo horšího či stejného výsledku jako konkrétní žák"
+        },
+        "PODIL VOLBY PREDMETU": {
+          "nazev": "podíl volby předmětu",
+          "popis": "podíl maturantů, kteří si zvolili daný předmět 2. povinné zkoušky, ze všech maturantů přihlášených k 2. povinné zkoušce (%)"
+        }
+      },
+      "nemapovane_sloupce_v_nasich_blocich": [
+        "CESKY JAZYK / CISTA NEUSPESNOST (%)",
+        "MATEMATIKA / CISTA NEUSPESNOST (%)",
+        "SPOLECNA CAST MZ CELKEM / CISTA NEUSPESNOST (%)"
+      ],
+      "dopocty": {
+        "SPOLECNA CAST MZ CELKEM / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 3274,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 3273,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / HRUBA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI + NEKONALI) / PRIHLASENI",
+          "radku": 3274,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / NEUCAST (%)": {
+          "vzorec": "(NEKONALI) / PRIHLASENI",
+          "radku": 3274,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "CESKY JAZYK / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 3274,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "CESKY JAZYK / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 3273,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "MATEMATIKA / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 1362,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "MATEMATIKA / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 1362,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        }
+      },
+      "rozsahy": {
+        "CESKY JAZYK / PRUMERNE PERCENTILOVE UMISTENI": {
+          "hodnot": 3273,
+          "min": 4.21,
+          "median": 43.53,
+          "max": 95.27
+        },
+        "CESKY JAZYK / PRUMERNY % SKOR": {
+          "hodnot": 3273,
+          "min": 36.0,
+          "median": 66.57,
+          "max": 94.0
+        },
+        "CESKY JAZYK / SMERODATNA ODCHYLKA % SKORU": {
+          "hodnot": 3273,
+          "min": 2.97,
+          "median": 12.24,
+          "max": 27.48
+        },
+        "MATEMATIKA / PRUMERNE PERCENTILOVE UMISTENI": {
+          "hodnot": 1362,
+          "min": 1.3,
+          "median": 47.28,
+          "max": 87.81
+        },
+        "MATEMATIKA / PRUMERNY % SKOR": {
+          "hodnot": 1362,
+          "min": 10.86,
+          "median": 59.57,
+          "max": 88.5
+        },
+        "MATEMATIKA / SMERODATNA ODCHYLKA % SKORU": {
+          "hodnot": 1362,
+          "min": 1.15,
+          "median": 15.98,
+          "max": 32.7
+        }
+      },
+      "nalezy": []
+    },
+    {
+      "rok": 2024,
+      "soubor": "MZ2024j_SC_skolobory.xlsx",
+      "sha256": "9efe41de8dd4fad13c080ccfb56018fb042f1dc962977bb21b2e648805ef2732",
+      "url": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2024j_SC_skolobory.xlsx",
+      "listy": [
+        "2024",
+        "vysvetlivky"
+      ],
+      "sloupcu": 98,
+      "bloky": [
+        "ANGLICTINA",
+        "CESKY JAZYK",
+        "FRANCOUZSTINA",
+        "MATEMATIKA",
+        "NEMCINA",
+        "RUSTINA",
+        "SPANELSTINA",
+        "SPOLECNA CAST MZ CELKEM"
+      ],
+      "radku": {
+        "redizo": 1102,
+        "redizo_smo16": 2217
+      },
+      "vysvetlivky": {
+        "CISTA NEUSPESNOST": {
+          "nazev": "čistá neúspěšnost",
+          "popis": "podíl žáků, kteří u zkoušky neuspěli, z celkového počtu žáků, kteří zkoušku konali"
+        },
+        "HRUBA NEUSPESNOST": {
+          "nazev": "hrubá neúspěšnost",
+          "popis": "podíl žáků, kteří u zkoušky neuspěli nebo ji nekonali, z přihlášených ke zkoušce"
+        },
+        "PODIL USPESNYCH": {
+          "nazev": "podíl úspěšných",
+          "popis": "podíl žáků, kteří u zkoušky uspěli, z přihlášených ke zkoušce"
+        },
+        "PRUMERNY % SKOR": {
+          "nazev": "průměrný % skór",
+          "popis": "průměrný dosažený počet bodů z didaktického testu z maximálního dosažitelného počtu bodů (%)"
+        },
+        "SMERODATNA ODCHYLKA % SKORU": {
+          "nazev": "směrodatná odchylka % skóru",
+          "popis": "míra variability výsledků v dané skupině maturantů"
+        },
+        "PRUMERNE PERCENTILOVE UMISTENI": {
+          "nazev": "průměrné percentilové umístění",
+          "popis": "percentilové umístění vyjadřuje, kolik % žáků dosáhlo horšího či stejného výsledku jako konkrétní žák"
+        },
+        "PODIL VOLBY PREDMETU": {
+          "nazev": "podíl volby předmětu",
+          "popis": "podíl maturantů, kteří si zvolili daný předmět 2. povinné zkoušky, ze všech maturantů přihlášených k 2. povinné zkoušce (%)"
+        }
+      },
+      "nemapovane_sloupce_v_nasich_blocich": [
+        "CESKY JAZYK / CISTA NEUSPESNOST (%)",
+        "MATEMATIKA / CISTA NEUSPESNOST (%)",
+        "SPOLECNA CAST MZ CELKEM / CISTA NEUSPESNOST (%)"
+      ],
+      "dopocty": {
+        "SPOLECNA CAST MZ CELKEM / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 3319,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 3319,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / HRUBA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI + NEKONALI) / PRIHLASENI",
+          "radku": 3319,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / NEUCAST (%)": {
+          "vzorec": "(NEKONALI) / PRIHLASENI",
+          "radku": 3319,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "CESKY JAZYK / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 3319,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "CESKY JAZYK / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 3319,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "MATEMATIKA / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 1433,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "MATEMATIKA / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 1433,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        }
+      },
+      "rozsahy": {
+        "CESKY JAZYK / PRUMERNE PERCENTILOVE UMISTENI": {
+          "hodnot": 3319,
+          "min": 5.75,
+          "median": 43.21,
+          "max": 93.67
+        },
+        "CESKY JAZYK / PRUMERNY % SKOR": {
+          "hodnot": 3319,
+          "min": 42.46,
+          "median": 70.4,
+          "max": 93.42
+        },
+        "CESKY JAZYK / SMERODATNA ODCHYLKA % SKORU": {
+          "hodnot": 3318,
+          "min": 1.15,
+          "median": 11.18,
+          "max": 29.56
+        },
+        "MATEMATIKA / PRUMERNE PERCENTILOVE UMISTENI": {
+          "hodnot": 1433,
+          "min": 0.79,
+          "median": 46.93,
+          "max": 90.49
+        },
+        "MATEMATIKA / PRUMERNY % SKOR": {
+          "hodnot": 1433,
+          "min": 17.0,
+          "median": 70.75,
+          "max": 95.71
+        },
+        "MATEMATIKA / SMERODATNA ODCHYLKA % SKORU": {
+          "hodnot": 1433,
+          "min": 2.69,
+          "median": 14.81,
+          "max": 42.72
+        }
+      },
+      "nalezy": []
+    },
+    {
+      "rok": 2025,
+      "soubor": "MZ2025j_SC_skolobory.xlsx",
+      "sha256": "fe7716a6913522897448caac05a05ada9a33259950b9d15b2efcc0f049520b31",
+      "url": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2025j_SC_skolobory.xlsx",
+      "listy": [
+        "2025",
+        "vysvetlivky"
+      ],
+      "sloupcu": 98,
+      "bloky": [
+        "ANGLICTINA",
+        "CESKY JAZYK",
+        "FRANCOUZSTINA",
+        "MATEMATIKA",
+        "NEMCINA",
+        "RUSTINA",
+        "SPANELSTINA",
+        "SPOLECNA CAST MZ CELKEM"
+      ],
+      "radku": {
+        "redizo": 1107,
+        "redizo_smo16": 2249
+      },
+      "vysvetlivky": {
+        "CISTA NEUSPESNOST": {
+          "nazev": "čistá neúspěšnost",
+          "popis": "podíl žáků, kteří u zkoušky neuspěli, z celkového počtu žáků, kteří zkoušku konali"
+        },
+        "HRUBA NEUSPESNOST": {
+          "nazev": "hrubá neúspěšnost",
+          "popis": "podíl žáků, kteří u zkoušky neuspěli nebo ji nekonali, z přihlášených ke zkoušce"
+        },
+        "PODIL USPESNYCH": {
+          "nazev": "podíl úspěšných",
+          "popis": "podíl žáků, kteří u zkoušky uspěli, z přihlášených ke zkoušce"
+        },
+        "PRUMERNY % SKOR": {
+          "nazev": "průměrný % skór",
+          "popis": "průměrný dosažený počet bodů z didaktického testu z maximálního dosažitelného počtu bodů (%)"
+        },
+        "SMERODATNA ODCHYLKA % SKORU": {
+          "nazev": "směrodatná odchylka % skóru",
+          "popis": "míra variability výsledků v dané skupině maturantů"
+        },
+        "PRUMERNE PERCENTILOVE UMISTENI": {
+          "nazev": "průměrné percentilové umístění",
+          "popis": "percentilové umístění vyjadřuje, kolik % žáků dosáhlo horšího či stejného výsledku jako konkrétní žák"
+        },
+        "PODIL VOLBY PREDMETU": {
+          "nazev": "podíl volby předmětu",
+          "popis": "podíl maturantů, kteří si zvolili daný předmět 2. povinné zkoušky, ze všech maturantů přihlášených k 2. povinné zkoušce (%)"
+        }
+      },
+      "nemapovane_sloupce_v_nasich_blocich": [
+        "CESKY JAZYK / CISTA NEUSPESNOST (%)",
+        "MATEMATIKA / CISTA NEUSPESNOST (%)",
+        "SPOLECNA CAST MZ CELKEM / CISTA NEUSPESNOST (%)"
+      ],
+      "dopocty": {
+        "SPOLECNA CAST MZ CELKEM / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 3356,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 3356,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / HRUBA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI + NEKONALI) / PRIHLASENI",
+          "radku": 3356,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / NEUCAST (%)": {
+          "vzorec": "(NEKONALI) / PRIHLASENI",
+          "radku": 3356,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "CESKY JAZYK / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 3356,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "CESKY JAZYK / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 3356,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "MATEMATIKA / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 1553,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "MATEMATIKA / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 1553,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        }
+      },
+      "rozsahy": {
+        "CESKY JAZYK / PRUMERNE PERCENTILOVE UMISTENI": {
+          "hodnot": 3356,
+          "min": 4.83,
+          "median": 43.38,
+          "max": 93.51
+        },
+        "CESKY JAZYK / PRUMERNY % SKOR": {
+          "hodnot": 3356,
+          "min": 34.25,
+          "median": 63.38,
+          "max": 92.41
+        },
+        "CESKY JAZYK / SMERODATNA ODCHYLKA % SKORU": {
+          "hodnot": 3356,
+          "min": 3.55,
+          "median": 12.98,
+          "max": 26.76
+        },
+        "MATEMATIKA / PRUMERNE PERCENTILOVE UMISTENI": {
+          "hodnot": 1553,
+          "min": 1.42,
+          "median": 47.53,
+          "max": 89.53
+        },
+        "MATEMATIKA / PRUMERNY % SKOR": {
+          "hodnot": 1553,
+          "min": 16.0,
+          "median": 56.33,
+          "max": 88.55
+        },
+        "MATEMATIKA / SMERODATNA ODCHYLKA % SKORU": {
+          "hodnot": 1552,
+          "min": 1.15,
+          "median": 15.57,
+          "max": 31.29
+        }
+      },
+      "nalezy": []
+    },
+    {
+      "rok": 2026,
+      "soubor": "MZ2026j_SC_skolobory.xlsx",
+      "sha256": "6a814e0a69c2603d5c6191b7c616b311d21910520dc40d1ce1d919bbf5337896",
+      "url": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2026j_SC_skolobory.xlsx",
+      "listy": [
+        "2026",
+        "vysvetlivky"
+      ],
+      "sloupcu": 98,
+      "bloky": [
+        "ANGLICTINA",
+        "CESKY JAZYK",
+        "FRANCOUZSTINA",
+        "MATEMATIKA",
+        "NEMCINA",
+        "RUSTINA",
+        "SPANELSTINA",
+        "SPOLECNA CAST MZ CELKEM"
+      ],
+      "radku": {
+        "redizo": 1112,
+        "redizo_smo16": 2297
+      },
+      "vysvetlivky": {
+        "CISTA NEUSPESNOST": {
+          "nazev": "čistá neúspěšnost",
+          "popis": "podíl žáků, kteří u zkoušky neuspěli, z celkového počtu žáků, kteří zkoušku konali"
+        },
+        "HRUBA NEUSPESNOST": {
+          "nazev": "hrubá neúspěšnost",
+          "popis": "podíl žáků, kteří u zkoušky neuspěli nebo ji nekonali, z přihlášených ke zkoušce"
+        },
+        "PODIL USPESNYCH": {
+          "nazev": "podíl úspěšných",
+          "popis": "podíl žáků, kteří u zkoušky uspěli, z přihlášených ke zkoušce"
+        },
+        "PRUMERNY % SKOR": {
+          "nazev": "průměrný % skór",
+          "popis": "průměrný dosažený počet bodů z didaktického testu z maximálního dosažitelného počtu bodů (%)"
+        },
+        "SMERODATNA ODCHYLKA % SKORU": {
+          "nazev": "směrodatná odchylka % skóru",
+          "popis": "míra variability výsledků v dané skupině maturantů"
+        },
+        "PRUMERNE PERCENTILOVE UMISTENI": {
+          "nazev": "průměrné percentilové umístění",
+          "popis": "percentilové umístění vyjadřuje, kolik % žáků dosáhlo horšího či stejného výsledku jako konkrétní žák"
+        },
+        "PODIL VOLBY PREDMETU": {
+          "nazev": "podíl volby předmětu",
+          "popis": "podíl maturantů, kteří si zvolili daný předmět 2. povinné zkoušky, ze všech maturantů přihlášených k 2. povinné zkoušce (%)"
+        }
+      },
+      "nemapovane_sloupce_v_nasich_blocich": [
+        "CESKY JAZYK / CISTA NEUSPESNOST (%)",
+        "MATEMATIKA / CISTA NEUSPESNOST (%)",
+        "SPOLECNA CAST MZ CELKEM / CISTA NEUSPESNOST (%)"
+      ],
+      "dopocty": {
+        "SPOLECNA CAST MZ CELKEM / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 3375,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 3375,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / HRUBA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI + NEKONALI) / PRIHLASENI",
+          "radku": 3375,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "SPOLECNA CAST MZ CELKEM / NEUCAST (%)": {
+          "vzorec": "(NEKONALI) / PRIHLASENI",
+          "radku": 3375,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "CESKY JAZYK / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 3375,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "CESKY JAZYK / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 3375,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "MATEMATIKA / PODIL USPESNYCH (%)": {
+          "vzorec": "(USPELI) / PRIHLASENI",
+          "radku": 1558,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        },
+        "MATEMATIKA / CISTA NEUSPESNOST (%)": {
+          "vzorec": "(NEUSPELI) / KONALI",
+          "radku": 1558,
+          "neshod": 0,
+          "nejvetsi_rozdil": 0.0
+        }
+      },
+      "rozsahy": {
+        "CESKY JAZYK / PRUMERNE PERCENTILOVE UMISTENI": {
+          "hodnot": 3375,
+          "min": 4.18,
+          "median": 44.31,
+          "max": 93.37
+        },
+        "CESKY JAZYK / PRUMERNY % SKOR": {
+          "hodnot": 3375,
+          "min": 39.0,
+          "median": 66.12,
+          "max": 92.5
+        },
+        "CESKY JAZYK / SMERODATNA ODCHYLKA % SKORU": {
+          "hodnot": 3374,
+          "min": 3.96,
+          "median": 12.24,
+          "max": 23.87
+        },
+        "MATEMATIKA / PRUMERNE PERCENTILOVE UMISTENI": {
+          "hodnot": 1558,
+          "min": 2.05,
+          "median": 47.21,
+          "max": 88.24
+        },
+        "MATEMATIKA / PRUMERNY % SKOR": {
+          "hodnot": 1558,
+          "min": 11.33,
+          "median": 60.17,
+          "max": 89.52
+        },
+        "MATEMATIKA / SMERODATNA ODCHYLKA % SKORU": {
+          "hodnot": 1558,
+          "min": 1.79,
+          "median": 17.01,
+          "max": 39.28
+        }
+      },
+      "nalezy": []
+    }
+  ]
+}

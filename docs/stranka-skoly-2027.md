@@ -135,6 +135,8 @@ Jednoletý stav se tedy u třetiny škol mění, ale téměř nikdy mezi krajní
 
 **Závěr:** zařazení jednoho roku samo o sobě neobstojí. Odpověď se opírá o **počet let ze čtyř**, například „v češtině nad skupinou osmiletých gymnázií ve 3 ze 4 let“.
 
+**Proč zrovna čtyři a ne víc (doměřeno 18. 9. 2026).** Nabízelo se prodloužit řadu o jara 2021 a 2022, která jsou dostupná a se zbytkem srovnatelná. Měření ale ukázalo, že delší okno nic nepřidá: většinové zařazení z posledních *n* let trefí následující ročník v 62,1 % (jeden rok), 65,6 % (dva), 65,7 % (tři), 64,8 % (čtyři) a 66,2 % (pět). Nejdůležitější je, že totéž plato platí i pro školy pod 30 konajícími (61,2 / 65,1 / 64,6 / 64,9 / 65,4 %), tedy právě tam, kde měl být jeden rok šum a delší řada lék. Šestileté okno by naopak změnilo znění u 403 z 1 627 škol ve skupině oborů a o 156 škol zmenšilo pokrytí, protože starší zařazení nemají. Čtyřleté okno tedy zůstává. Doklad `docs/podklady/delka-rady-maturity.json`, počítá `scripts/delka-rady-maturity.py`.
+
 Machar podle výstupu `scripts/build-maturita-skoly.py` nad staženými soubory:
 
 | Skupina oborů | Rok | Maturanti | Úspěšně | Čeština, percentil | Medián skupiny | Zařazení | Matematiku volilo | Matematika, percentil |

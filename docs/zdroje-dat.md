@@ -250,20 +250,27 @@ Prvních 13 sloupců je identifikace: `id_row`, `TŘÍDĚNÍ`, `ROK`, `REDIZO`, 
 
 Zbylých 85 sloupců je osm bloků se stejnou stavbou: společná část celkem, čeština, matematika, angličtina, němčina, ruština, francouzština, španělština.
 
+Sloupec `NEÚČAST (%)` a `HRUBÁ NEÚSPĚŠNOST (%)` jsou **jen v bloku společné části**; předmětové bloky je nemají. Naopak `PODÍL VOLBY PŘEDMĚTU (%)` je jen u druhé povinné zkoušky, tedy ne u češtiny ani u společné části.
+
 | Sloupec v bloku | Obsah | Otázka rodiče | Používáme |
 |---|---|---|---|
-| `PŘIHLÁŠENI`, `KONALI`, `NEKONALI` | velikost populace | z kolika lidí to je | **ne** |
-| `USPĚLI`, `NEUSPĚLI` | počty | kolik jich maturitu udělalo | **ne** |
-| `PODÍL ÚSPĚŠNÝCH (%)` | úspěšní z přihlášených | jaká je šance maturitu udělat | **ne** |
-| `ČISTÁ NEÚSPĚŠNOST (%)` | neuspěli z konajících | kolik jich u zkoušky propadlo | **ne** |
-| `HRUBÁ NEÚSPĚŠNOST (%)` | neuspěli nebo nekonali z přihlášených | kolik jich maturitu nedokončilo | **ne** |
-| `NEÚČAST (%)` | nekonali z přihlášených | kolik jich k maturitě vůbec nešlo | **ne** |
-| `PRŮMĚRNÝ % SKÓR` | průměr z didaktického testu | jak dobře tu píší testy | **ne** |
-| `SMĚRODATNÁ ODCHYLKA % SKÓRU` | rozptyl výsledků | táhne škola všechny, nebo jen špičku | **ne** |
-| `PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ` | umístění proti celé zemi | jak si stojí proti ostatním | **ne** |
-| `PODÍL VOLBY PŘEDMĚTU (%)` | u druhé povinné zkoušky | volí se tu matematika, nebo jazyk | **ne** |
+| `PŘIHLÁŠENI`, `KONALI`, `NEKONALI` | velikost populace | z kolika lidí to je | **ano**, jmenovatel u každého podílu |
+| `USPĚLI`, `NEUSPĚLI` | počty | kolik jich maturitu udělalo | **ano** |
+| `PODÍL ÚSPĚŠNÝCH (%)` | úspěšní z přihlášených | jaká je šance maturitu udělat | **ano**, hlavní číslo oddílu „Jak si škola vede“ |
+| `ČISTÁ NEÚSPĚŠNOST (%)` | neuspěli z konajících | kolik jich u zkoušky propadlo | **ne**, kontrakt pro ni nemá pole; viz maturitní návrh, oddíl 10 |
+| `HRUBÁ NEÚSPĚŠNOST (%)` | neuspěli nebo nekonali z přihlášených | kolik jich maturitu nedokončilo | **ano** do dat, na stránce zatím ne |
+| `NEÚČAST (%)` | nekonali z přihlášených | kolik jich k maturitě vůbec nešlo | **ano od 18. 9. 2026**, sloupec „ke zkoušce nešlo“ v tabulce po letech |
+| `PRŮMĚRNÝ % SKÓR` | průměr z didaktického testu | jak dobře tu píší testy | **ano**, čeština a matematika; veličina celého srovnání s podobnými školami |
+| `SMĚRODATNÁ ODCHYLKA % SKÓRU` | rozptyl výsledků | táhne škola všechny, nebo jen špičku | **ano jen k výpočtu** zařazení, na stránce se nezobrazuje |
+| `PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ` | umístění proti celé zemi | jak si stojí proti ostatním | **ano**, „v celé zemi lépe než 84 ze 100 maturantů“ |
+| `PODÍL VOLBY PŘEDMĚTU (%)` | u druhé povinné zkoušky | volí se tu matematika, nebo jazyk | **ano**, vždy ve dvojici s percentilem z matematiky |
+| cizí jazyky (5 bloků) | angličtina, němčina, ruština, francouzština, španělština | jak se tu učí jazyky | **ne**, malé skupiny a samovýběr |
+
+Do 18. 9. 2026 měla tahle tabulka u všech sloupců „ne“, přestože se maturita zpracovává od 14. 9. 2026. Byl to pozůstatek stavu před implementací; oddíl 3 mezitím říkal opak.
 
 Rozdíl mezi čistou a hrubou neúspěšností je zásadní a list `vysvetlivky` ho definuje. Čistá počítá z konajících, hrubá z přihlášených a započítává i ty, kdo ke zkoušce nešli. Škola může mít výbornou čistou neúspěšnost proto, že slabé žáky ke zkoušce nepustí.
+
+**Mapa sloupců je ověřená proti listu `vysvetlivky`** (18. 9. 2026, `scripts/overeni-sloupcu-maturity.py`, doklad `docs/podklady/overeni-sloupcu-maturity.json`). Ověření se opakuje po každém novém ročníku a nekontroluje jen názvy: dopočítává podíly z počtů, takže by odhalilo i sloupec, který se jmenuje správně a nese něco jiného. Všechny čtyři dopočty sedí do posledního místa ve všech řádcích ročníků 2021 až 2026 a **schéma je ve všech šesti ročnících totožné** (98 sloupců, 8 bloků, stejné názvy). Duplicitní klíč `třídění + REDIZO + SMO16` se v žádném ročníku nevyskytuje; kontrolu na něj má od téhož data i `build-maturita-skoly.py`.
 
 **Napojení na náš katalog je přímé.** Kódy `SMO16` jsou tytéž, jaké nese sloupec `SKUPINA OBORŮ (16)` v agregátech JPZ: GY8, GY6, GY4, LYC, ST1, ST2, SEK, SHP, SHU, SZE, SZD, SUM, UTE, UOS, NTE, NOS. Zkouška napojení z 13. 9. 2026 dopadla takto:
 
@@ -311,7 +318,7 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 
 | Co leží nevyužité | Kde | Na co by to bylo | Proč to zatím nepoužíváme |
 |---|---|---|---|
-| **Celé maturitní výsledky** | `MZ{rok}j_SC_skolobory.xlsx` | „Maturitu tu v roce 2026 udělalo 100 % žáků, v češtině jsou nad 80. percentilem.“ Jediná přímá odpověď na otázku, jaké jsou tu nároky. Spárovatelné u 2 782 z 3 091 nabídek | **zpracovává se od 14. 9. 2026** přes datovou linku do `public/maturita_skoly.json` (společná část, čeština, matematika, jaro 2021+); cizí jazyky, stav po podzimu a roky před 2021 zamítnuty v [návrhu stránky školy](stranka-skoly-2027.md), oddíl 10 |
+| **Celé maturitní výsledky** | `MZ{rok}j_SC_skolobory.xlsx` | „Maturitu tu v roce 2026 udělalo 100 % žáků, v češtině jsou nad 80. percentilem.“ Jediná přímá odpověď na otázku, jaké jsou tu nároky. Spárovatelné u 2 782 z 3 091 nabídek | **zpracovává se od 14. 9. 2026** přes datovou linku do `public/maturita_skoly.json` (společná část, čeština, matematika, jaro 2023–2026); cizí jazyky, stav po podzimu a roky před 2021 zamítnuty v [návrhu stránky školy](stranka-skoly-2027.md), oddíl 10. **Ročníky 2021 a 2022 zamítnuty 18. 9. 2026 měřením** (`scripts/delka-rady-maturity.py`): delší okno zařazení nezpevní ani u malých škol |
 | Vstupní úroveň školy 2017 až 2023 | `JPZ{rok}_skoly-skolobory_vysledky.xlsx` | „Škola je dlouhodobě žádaná, není to výkyv jednoho roku.“ | soubory nejsou stažené |
 | Výsledek testu u **všech uchazečů**, nejen přijatých | data uchazečů, `c_m_procentni_skor`, vyplněno u 75 % řádků | „S 62 body byl loni v polovině těch, kdo se sem hlásili.“ Jediný způsob, jak dát dítěti vlastní číslo do kontextu | **zpracováno 13. 9. 2026**, na web zatím nenapojeno |
 | **Profil dovedností** uchazečů o obor | položková data, `b1` až `b16.x` | „Kdo se sem dostal, byl silný v porozumění textu.“ Jediný zdroj o tom, co obor vybírá | soubory nikdo nezpracoval |
