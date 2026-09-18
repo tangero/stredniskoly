@@ -34,6 +34,8 @@ export interface OborNaPrihlasce {
   zarazeni: ZarazeniObtiznosti | null;
   prijati: number | null;
   soutezici: number | null;
+  /** Obor, který přehled nezahrnuje: bez jednotné zkoušky (například učební obor), nebo z jiného důvodu. */
+  mimoPrehled: 'bez_zkousky' | 'jiny' | null;
 }
 
 export interface ProfilOboruData {
@@ -131,10 +133,13 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
   if (kontextVysledek) {
     const prevod = async ([k, n]: [string, number]): Promise<OborNaPrihlasce> => {
       const nazev = nazvy.get(k);
+      const mimo = nazev ? undefined : kontextVysledek.mimoPrehled[k];
       const r = await souhrnOboru(k, kontextVysledek.rok);
       return {
         klic: k, uchazecu: n,
-        skola: nazev?.skola ?? k, obec: nazev?.obec ?? '', obor: nazev?.obor ?? '', delka: nazev?.delka,
+        skola: nazev?.skola ?? mimo?.skola ?? k, obec: nazev?.obec ?? mimo?.obec ?? '', obor: nazev?.obor ?? mimo?.obor ?? '',
+        delka: nazev?.delka,
+        mimoPrehled: nazev ? null : mimo?.bez_jednotne_zkousky ? 'bez_zkousky' : 'jiny',
         href: nazev ? `/skola/${k.split('_')[0]}-${createSlug(nazev.nazev)}` : null,
         zarazeni: r ? zarazeniObtiznosti(r) : null,
         prijati: r?.prijati ?? null,
