@@ -739,10 +739,23 @@ Kouřová zkouška **neposílá e-mail**: dávku připraví, předá a uzavře j
 
 **Pravidlo pro další práci:** po každé změně schématu nebo dotazů a po každém nasazení se spouští kouřová zkouška. Test číslování parametrů běží v CI spolu s ostatními.
 
+### Druhý nález: řádek rozpočtu zakládal jen cron
+
+První běh kouřové zkoušky na produkci našel hned další věc — zkouška se zastavila na `kvóta nestačí` při přípravě dávky. Příčina: řádky tabulky `rozpocet_emailu` zakládal **jen cron odesílače** (`/api/novinky/odeslat`, v 6:00 a 18:00). Rezervace kvóty ale žádný řádek nezakládá, jen na existující sahá podmíněnou aktualizací.
+
+Důsledek pro člověka u formuláře: denní řádek `(den:…, potvrzeni)` vzniká teprve prvním během cronu toho dne. **Kdo se přihlásí po půlnoci, tomu potvrzení nemá kam rezervovat**, `pripravDavku` skončí na nedostatku kvóty a položka zůstane ve frontě až do 6:00. Kontrakt slibuje doručení do minuty; místo toho by přišlo za několik hodin, tedy dávno po chvíli, kdy člověk u formuláře stál. Totéž platí pro měsíční řádek prvního dne měsíce.
+
+Oprava je v rezervaci, ne u volajících: `rezervujKvotu` si řádek **zajistí sama, ve stejné transakci**, `insert … on conflict (obdobi, ucel) do nothing`. Tím zůstává v platnosti pravidlo z kola 5, že ručně snížený limit je pojistka, kterou nikdo nepřepisuje. Limity vznikly jako `limitRozpoctu()` v modulu rozpočtu, aby cron a formulář nemohly mít každý jiný strop.
+
+Zkouška sama řádky rozpočtu **schválně nezakládá**. Kdyby si je připravila, zakryla by přesně tu past, kvůli které vznikla.
+
+Za pozornost stojí, že tenhle nález má stejný tvar jako první: obě chyby ležely v místě, kde se dvě části kontraktu potkávají (dotaz a jeho argumenty, cron a formulář), a obě byly neviditelné pro testy proti falešnému spojení i pro čtení dokumentu. Kouřová zkouška je našla v první minutě běhu.
+
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.17 | Druhý nález kouřové zkoušky (oddíl 21): řádky rozpočtu zakládal jen cron, takže potvrzení z formuláře po půlnoci nemělo kam rezervovat a odešlo by až v 6:00 místo do minuty. Rezervace si řádek zajišťuje sama ve stejné transakci, `do nothing` drží pojistku ručně sníženého limitu, limity sjednoceny do `limitRozpoctu()`. |
 | 1.16 | Nasazení na produkci (oddíl 21): migrace proběhla, jedenáct tabulek, databáze jinak prázdná. První skutečné volání formuláře spadlo na `42P18`, protože počitadlo limitu předávalo dotazu parametr, který v jeho textu nebyl; opraveno. Doplněny dvě pojistky: test číslování parametrů a kouřová zkouška celé cesty proti skutečné databázi, která neposílá e-mail a po sobě uklidí. Zapsáno, že prošlý test proti falešnému spojení nedokazuje spustitelnost dotazu. |
 | 1.15 | Revize produktu (oddíl 20): jeden newsletter bez ročníku a bez segmentů, formulář jen e-mail a souhlas na třech místech. Zanikla zpráva o dalším kalendáři, tabulka `zprava_o_kalendari`, ročník a druh studia v odběru, kraj, segment u položky i nález P1-10. Termíny jednotné zkoušky jdou všem v jedné zprávě. Obsah je dvojí: termíny a zprávy o nových datech na webu; širší školství zamítnuto. Doplněna past s uvítáním po opakovaném přihlášení. |
 | 1.14 | Vypořádáno code review kódu (PR #96, oddíl 19): deset závažných nálezů opraveno a kontrakt upraven podle skutečnosti — potvrzení a uvítání přes dávku s rezervací kvóty a s konzumentem v cronu, zrušení dávky vrací ostatní položky a maže tělo, položka nese segment a odhlášení ruší jen ten, odkazy platí 400 dnů a token nezůstává v adrese, limit rozpočtu se nepřepisuje, účinek webhooku uvnitř stráže s tolerancí času podpisu. |
