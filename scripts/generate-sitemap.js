@@ -192,7 +192,6 @@ function main() {
     ['/regiony', 'weekly', '0.8'],
     ['/dostupnost', 'weekly', '0.8'],
     ['/praha-dostupnost', 'weekly', '0.7'],
-    ['/jak-funguje-prijimani', 'monthly', '0.8'],
     ['/jak-vybrat-skolu', 'monthly', '0.7'],
     ['/changelog', 'weekly', '0.6'],
   ];
