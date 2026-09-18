@@ -148,7 +148,7 @@ Rozdělení výsledků všech uchazečů o obor tenhle soubor **není** jediný 
 
 Dvě podoby téhož. **JSON-LD snímky** (`data/msmt_rejstrik/rssz-*.jsonld`, čtvrtletní, v gitu ignorované kvůli velikosti) se používají na návaznost oborů mezi roky a na doplnění názvů oborů bez jednotné zkoušky. **CSV export** (`data/Rejstrik_skol/`) je jednorázový.
 
-**Index názvů** `data/msmt_rejstrik/nazvy-oboru.json` (v gitu, asi 0,6 MB) vzniká skriptem `scripts/build-nazvy-oboru-rejstrik.py` ze snímku, který určuje registr (`msmt-rejstrik-snimky`, `zobrazeno.soubor`), a nese celý záznam `zobrazeno` z registru a otisk sha256 snímku. Obsahuje jen `redIzo` s názvem školy (`zkracenyNazev`, jinak `uplnyNazev`) a obcí sídla, a kódy a názvy oborů (`skolyAZarizeni[].obory[].kod`, `.nazev`). Čtou ho generátory souběžných přihlášek a kontextu přihlášek (`scripts/nazvy_oboru.py`), takže je má i datová linka v CI, kde snímky nejsou. Po každém přepnutí snímku v registru, i po převzetí revize téhož čtvrtletí, se musí přegenerovat; generátory index, jehož záznam `zobrazeno` neodpovídá registru, odmítnou.
+**Index názvů** `data/msmt_rejstrik/nazvy-oboru.json` (v gitu, asi 0,6 MB) vzniká skriptem `scripts/build-nazvy-oboru-rejstrik.py` ze snímku, který určuje registr (`msmt-rejstrik-snimky`, `zobrazeno.soubor`), a nese celý záznam `zobrazeno` z registru a otisk sha256 snímku. Obsahuje jen `redIzo` s názvem školy (`zkracenyNazev`, jinak `uplnyNazev`) a obcí sídla, a kódy a názvy oborů (`skolyAZarizeni[].obory[].kod`, `.nazev`). Čtou ho generátory souběžných přihlášek a kontextu přihlášek (`scripts/nazvy_oboru.py`), takže je má i datová linka v CI, kde snímky nejsou. Otisk snímku zapisuje do registru příkaz `stav-datovych-sad.py prepni` u každého lokálního souboru; generátor indexu odmítne snímek s jiným otiskem. Po každém přepnutí snímku, i po převzetí revize téhož čtvrtletí, se index musí přegenerovat; generátory index, jehož záznam `zobrazeno` včetně otisku neodpovídá registru, odmítnou.
 
 Zajímavé sloupce JSON-LD, mimo adresu a názvy:
 
@@ -439,7 +439,7 @@ Plné převzetí bez člověka se nedoporučuje: CERMAT soubory přepisuje i mě
 
 <!-- stav-datovych-sad:od -->
 
-_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-17. Neupravovat ručně._
+_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ručně._
 
 | Sada | Použití | Zobrazujeme | Odkud | Zveřejněno, nepřevzato | Čekáme | Kdy | Po přepnutí |
 |---|---|---|---|---|---|---|---|

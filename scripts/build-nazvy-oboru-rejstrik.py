@@ -65,10 +65,14 @@ def main() -> None:
     if not snimek.exists():
         raise SystemExit(f"snímek {snimek} chybí; stáhněte ho podle docs/zdroje-dat.md, oddíl 2.4")
     obsah = snimek.read_bytes()
+    otisk = hashlib.sha256(obsah).hexdigest()
+    if zobrazeno.get("sha256") != otisk:
+        raise SystemExit(f"otisk snímku {snimek.name} ({otisk}) neodpovídá registru ({zobrazeno.get('sha256')}); "
+                         "převezměte snímek příkazem stav-datovych-sad.py prepni, který otisk zapíše")
     index = sestav_index(json.loads(obsah)["list"])
     a.vystup.write_text(json.dumps({
         "meta": {"obdobi": str(zobrazeno["obdobi"]), "registr": zobrazeno, "snimek": snimek.name,
-                 "sha256": hashlib.sha256(obsah).hexdigest(), "generator": "scripts/build-nazvy-oboru-rejstrik.py"},
+                 "sha256": otisk, "generator": "scripts/build-nazvy-oboru-rejstrik.py"},
         **index,
     }, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     print(f"zapsáno {len(index['skoly'])} škol, {len(index['obory'])} oborů do {a.vystup}")

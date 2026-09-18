@@ -22,6 +22,28 @@ def registr() -> dict:
     }
 
 
+class TestOtisk(unittest.TestCase):
+    def test_dve_revize_tehoz_obdobi_v_jeden_den_se_lisi_otiskem(self):
+        import tempfile
+        with tempfile.TemporaryDirectory(dir=KOREN / "data") as d:
+            soubor = Path(d) / "snimek.jsonld"
+            relativni = str(soubor.relative_to(KOREN))
+            r = registr()
+            soubor.write_text("první revize")
+            stav.prepni(r, "uchazeci", "2026", None, "neznamo", "", "PR", relativni, None)
+            prvni = dict(r["sady"]["uchazeci"]["zobrazeno"])
+            soubor.write_text("druhá revize")
+            stav.prepni(r, "uchazeci", "2026", None, "neznamo", "", "PR", relativni, None)
+            druhy = r["sady"]["uchazeci"]["zobrazeno"]
+            self.assertTrue(prvni["sha256"])
+            self.assertNotEqual(prvni, druhy)
+
+    def test_vzdaleny_soubor_otisk_nema(self):
+        r = registr()
+        stav.prepni(r, "uchazeci", "2026", None, "neznamo", "", "PR", "https://example.cz/x.xlsx", None)
+        self.assertNotIn("sha256", r["sady"]["uchazeci"]["zobrazeno"])
+
+
 class TestPrepnuti(unittest.TestCase):
     def test_prevzate_obdobi_zmizi_z_dostupnych(self):
         r = registr()

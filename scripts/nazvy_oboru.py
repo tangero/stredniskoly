@@ -42,8 +42,9 @@ def nacti_index(cesta: Path = INDEX, registr: Path = REGISTR) -> dict:
         raise SystemExit(f"{cesta.name} chybí; vytvořte ho scripts/build-nazvy-oboru-rejstrik.py")
     index = json.loads(cesta.read_text(encoding="utf-8"))
     zobrazeno = json.loads(registr.read_text(encoding="utf-8"))["sady"]["msmt-rejstrik-snimky"]["zobrazeno"]
-    # Celý záznam, ne jen období: revize téhož čtvrtletí přepíše zobrazeno příkazem prepni.
-    if index["meta"].get("registr") != zobrazeno:
+    # Celý záznam včetně otisku snímku, ne jen období: revize téhož čtvrtletí přepíše zobrazeno
+    # příkazem prepni a otisk ji odliší, i když proběhne týž den.
+    if not zobrazeno.get("sha256") or index["meta"].get("registr") != zobrazeno:
         raise SystemExit(f"{cesta.name} vznikl ze snímku {index['meta'].get('registr')}, registr zobrazuje "
                          f"{zobrazeno}; přegenerujte ho scripts/build-nazvy-oboru-rejstrik.py")
     return index

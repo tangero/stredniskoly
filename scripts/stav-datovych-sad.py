@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
 import json
 import re
 import sys
@@ -248,9 +249,14 @@ def prepni(registr: dict, sid: str, obdobi: str, kdy: str | None, jistota: str, 
     prevzato = next((d for d in s.get("dostupne", []) if str(d.get("obdobi")) == str(obdobi)), None)
     if prevzato:
         s["dostupne"].remove(prevzato)
+    # Otisk lokálního souboru odliší i dvě revize téhož období převzaté v jeden den;
+    # podle něj se hlídá zastaralost odvozených indexů (scripts/nazvy_oboru.py).
+    otisk = (hashlib.sha256((KOREN / soubor).read_bytes()).hexdigest()
+             if soubor and not soubor.startswith("http") and (KOREN / soubor).is_file() else None)
     s["zobrazeno"] = {
         "obdobi": obdobi,
         **({"soubor": soubor} if soubor else {}),
+        **({"sha256": otisk} if otisk else {}),
         **({"verze": prevzato["verze"]} if prevzato and prevzato.get("verze") else {}),
         "prepnuto": dt.date.today().isoformat(),
         **({"z_dostupne": prevzato} if prevzato else {}),

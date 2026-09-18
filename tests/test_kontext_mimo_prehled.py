@@ -97,7 +97,7 @@ class TestIndex(unittest.TestCase):
                 registr.write_text(json.dumps({"sady": {"msmt-rejstrik-snimky": {"zobrazeno": zobrazeno_registr}}}))
                 index.write_text(json.dumps({"meta": {"registr": zobrazeno_index}, "nabidky": {}}))
 
-            puvodni = {"obdobi": "2026-06-30", "soubor": "data/msmt_rejstrik/rssz-2026-06-30.jsonld", "stazeno": "2026-09-12"}
+            puvodni = {"obdobi": "2026-06-30", "soubor": "data/msmt_rejstrik/rssz-2026-06-30.jsonld", "sha256": "aaa"}
             zapis(puvodni, puvodni)
             self.assertEqual(nazvy_oboru.nacti_index(index, registr)["nabidky"], {})
             with self.assertRaises(SystemExit):
@@ -106,8 +106,13 @@ class TestIndex(unittest.TestCase):
             zapis({**puvodni, "obdobi": "2026-09-30"}, puvodni)
             with self.assertRaises(SystemExit):
                 nazvy_oboru.nacti_index(index, registr)
-            # Revize téhož období převzatá příkazem prepni: záznam zobrazeno se přepíše
-            zapis({"obdobi": "2026-06-30", "soubor": puvodni["soubor"], "prepnuto": "2026-10-02"}, puvodni)
+            # Revize téhož období převzatá týž den: liší se jen otisk
+            zapis({**puvodni, "sha256": "bbb"}, puvodni)
+            with self.assertRaises(SystemExit):
+                nazvy_oboru.nacti_index(index, registr)
+            # Registr bez otisku nestačí na ověření indexu
+            bez_otisku = {k: v for k, v in puvodni.items() if k != "sha256"}
+            zapis(bez_otisku, bez_otisku)
             with self.assertRaises(SystemExit):
                 nazvy_oboru.nacti_index(index, registr)
 
