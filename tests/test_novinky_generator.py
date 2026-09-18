@@ -14,6 +14,8 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -176,6 +178,42 @@ class GeneratorTest(unittest.TestCase):
         self.sablona("nova-data", "spoustec: publikace\nsady: cermat-prihlasky", "# Nová data\n\nText.")
         self.assertEqual(self.novinky.priprav(None), 0)
         self.assertFalse((self.koren / "vystup" / "2027" / "uvitani.json").exists())
+
+
+class OtiskKalendareTest(unittest.TestCase):
+    """Otisk kalendáře musí v Pythonu a v TypeScriptu vyjít stejně.
+
+    Generátor otisk zapisuje do zprávy, odesílač ho porovnává s nasazeným
+    kalendářem. Kdyby se serializace rozešla (unicode, mezery, pořadí klíčů),
+    odesílač by odmítl **každou** zprávu s tím, že se kalendář změnil.
+    """
+
+    def test_python_a_typescript_daji_stejny_otisk(self) -> None:
+        if not shutil.which("node"):
+            self.skipTest("node není k dispozici")
+        sys.path.insert(0, str(KOREN / "scripts"))
+        for modul in [m for m in list(sys.modules) if m == "novinky"]:
+            del sys.modules[modul]
+        import novinky  # noqa: PLC0415
+
+        kalendar_cesta = KOREN / "src" / "data" / "admissions-2027.json"
+        with kalendar_cesta.open(encoding="utf-8") as f:
+            kalendar = json.load(f)
+
+        z_pythonu = novinky.otisk_kalendare(kalendar)
+        vystup = subprocess.run(
+            [
+                "node",
+                "-e",
+                "const{createHash}=require('crypto');"
+                f"const k=require({str(kalendar_cesta)!r});"
+                "process.stdout.write(createHash('sha256').update(JSON.stringify(k)).digest('hex'));",
+            ],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        self.assertEqual(z_pythonu, vystup.stdout.strip())
 
 
 if __name__ == "__main__":
