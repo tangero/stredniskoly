@@ -76,3 +76,7 @@ __pycache__/
 # Lokální snímky rejstříku MŠMT (velké soubory, zdroj a postup v data/msmt_rejstrik/README.md)
 data/msmt_rejstrik/*.jsonld
 .claude/worktrees/
+
+# Vygenerované zprávy odběru: vznikají skriptem scripts/novinky.py a schvalují
+# se samostatným pull requestem, ne spolu s kódem odběru.
+public/novinky/

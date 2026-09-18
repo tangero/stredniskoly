@@ -21,7 +21,7 @@ export const metadata = {
     'Jaké údaje web Přijímačky na školu zpracovává, proč, jak dlouho je drží a jak svá práva uplatnit.',
 };
 
-const POSLEDNI_ZMENA = '17. 9. 2026';
+const POSLEDNI_ZMENA = '18. 9. 2026';
 
 export default function OchranaOsobnichUdajuPage() {
   return (
