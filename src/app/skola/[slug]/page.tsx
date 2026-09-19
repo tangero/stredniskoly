@@ -499,8 +499,17 @@ export default async function SchoolDetailPage({ params }: Props) {
                 </svg>
               </div>
               <div>
-                <h2 className="text-lg font-bold text-slate-700">Data z přijímacího řízení 2025</h2>
-                <p className="text-sm text-slate-500">Historický import 2025. Údaje nejsou podmínkami přijetí pro rok 2027.</p>
+                {/* Ročník se bere z dat nabídky, nikdy z letopočtu v kódu; do 19. 9. 2026 tu stálo
+                    napevno 2025, ačkoli registr zobrazoval jiné období. Když ročník neznáme,
+                    neuvádí se — tvrdit rok, který nemáme čím doložit, je horší než mlčet. */}
+                <h2 className="text-lg font-bold text-slate-700">
+                  Data z přijímacího řízení{program.rok ? ` ${program.rok}` : ''}
+                </h2>
+                <p className="text-sm text-slate-500">
+                  {program.rok && rokNabidky && program.rok < rokNabidky
+                    ? `Poslední ročník, ve kterém se obor vypisoval, je ${program.rok}; web jinak zobrazuje ${rokNabidky}.`
+                    : 'Údaje popisují uvedené přijímací řízení, nejsou podmínkami přijetí pro další ročník.'}
+                </p>
               </div>
             </div>
           </div>
@@ -531,7 +540,7 @@ export default async function SchoolDetailPage({ params }: Props) {
           )}
           <DruheKoloCard data={await getDruheKolo(program.id, program.zamereni)} />
           <div className="my-6 rounded-xl bg-white p-6">
-            <h2 className="font-semibold">Přijetí a kapacita · {program.rok ?? 2025}</h2>
+            <h2 className="font-semibold">Přijetí a kapacita{program.rok ? ` · ${program.rok}` : ''}</h2>
             <p className="mt-2">Přijatí v roce {program.rok ?? 2025}: {program.prijati}. Kapacita: {program.kapacita} míst.</p>
           </div>
 

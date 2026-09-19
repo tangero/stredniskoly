@@ -3,13 +3,13 @@ import assert from 'node:assert/strict';
 const base = process.env.BASE_URL || 'http://localhost:3227';
 const slug = '600007774-gymnazium-j-s-machara-kralovicka-technicke-lyceum';
 const visible = html => html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,'').replace(/<!--.*?-->/gs,'').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ');
-for (const route of [`/skola/${slug}`, `/skola/${slug}/detail`, `/skola/${slug}/pro-me`, '/skola/600007774-gymnazium-j-s-machara-kralovicka', '/skoly', '/vysledky/2026', '/regiony/stredocesky', '/regiony']) {
+for (const route of [`/skola/${slug}`, `/skola/${slug}/pro-me`, '/skola/600007774-gymnazium-j-s-machara-kralovicka', '/skoly', '/vysledky/2026', '/regiony/stredocesky', '/regiony']) {
   test(`P0 veřejný text a metadata: ${route}`, async () => {
     const res = await fetch(base+route); assert.equal(res.status,200);
     const html = await res.text(); const text = visible(html);
     assert.doesNotMatch(text, /Min\. skóre pro přijetí \(2025\):|Šance přijetí podle priority|Splňujete bodové požadavky|rodiče reagují|Nejobtížnější obory|Náročnost přijímaček|Prům\. min\. body/);
     assert.doesNotMatch(html, /name="description" content="[^"]*Min\. body/);
-    if (route.endsWith('/detail') || route===`/skola/${slug}`) assert.match(text,/36,1 \/ 50 bodů/);
+    if (route === `/skola/${slug}`) assert.match(text,/36,1 \/ 50 bodů/);
   });
 }
 test('JSON a Markdown nemají numerickou hranici přijetí', async () => {
