@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
-"""Obstará snímek rejstříku škol MŠMT, který potřebuje zpracování uchazečů.
+"""Ruční pomůcka: stáhne snímek rejstříku škol MŠMT, který zobrazuje registr.
 
     python3 scripts/stahni-rejstrik.py            # stáhne, když chybí
     python3 scripts/stahni-rejstrik.py --kontrola  # jen ověří, nestahuje
 
-Snímky mají třicet megabajtů a do gitu se neukládají, takže na čerstvém stroji
-ani na runneru CI nejsou. Bez nich se zpracování uchazečů zastaví, protože názvy
-oborů, které katalog nevede, se berou právě odtud — a výstup bez nich by z webu
-odebral víc než tisíc názvů.
+Snímky mají třicet megabajtů a do gitu se neukládají. Datová linka ani CI je
+nepotřebují, protože názvy oborů čtou z indexu `data/msmt_rejstrik/nazvy-oboru.json`.
+Snímek potřebuje jen člověk, který index přegenerovává
+(`scripts/build-nazvy-oboru-rejstrik.py`) nebo dělá rešerši návazností.
+
+Soubor a otisk bere z registru (`msmt-rejstrik-snimky`, `zobrazeno.soubor` a
+`zobrazeno.sha256`), adresu ze sledované adresy sady (`aktualizace.sledovat`,
+šablona `{ctvrtleti}`). Nový snímek se převezme příkazem `stav-datovych-sad.py
+prepni`, který otisk zapíše; tenhle skript zdroj dat nemění.
 
 Otisk je součástí zápisu, ne volitelná kontrola: zabraňuje tomu, aby se do
 zpracování dostal jiný snímek, než se kterým jsou porovnaná data. Když se otisk
@@ -18,23 +23,28 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import sys
 import urllib.request
 from pathlib import Path
 
 KOREN = Path(__file__).resolve().parent.parent
-ADRESAR = KOREN / "data" / "msmt_rejstrik"
 
-# Snímek, se kterým jsou porovnaná data v public/. Seznam všech stažených snímků
-# a jejich zdrojů je v data/msmt_rejstrik/README.md; tady je ten jediný, na
-# kterém stojí zpracování, aby se zdroj nedal zaměnit omylem.
-SNIMEK = {
-    "soubor": "rssz-2026-06-30.jsonld",
-    "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/"
-           "rssz-cela-cr-2026-06-30.jsonld",
-    "sha256": "e75386ea526241d5d2e5f75131b87ea72fd491514d7bdc5c10830c18ef60c136",
-    "stav_k": "2026-06-30",
-}
+REGISTR = KOREN / "public" / "stav_datovych_sad.json"
+
+
+def snimek_z_registru() -> dict:
+    """Soubor, otisk, adresa a období snímku, který registr zobrazuje."""
+    sada = json.loads(REGISTR.read_text(encoding="utf-8"))["sady"]["msmt-rejstrik-snimky"]
+    zobrazeno = sada["zobrazeno"]
+    if not zobrazeno.get("sha256"):
+        raise SystemExit("registr u snímku nemá otisk; převezměte snímek příkazem stav-datovych-sad.py prepni")
+    sablona = sada["aktualizace"]["sledovat"][0]
+    return {"cesta": KOREN / zobrazeno["soubor"], "sha256": zobrazeno["sha256"], "stav_k": str(zobrazeno["obdobi"]),
+            "url": sablona.replace("{ctvrtleti}", str(zobrazeno["obdobi"]))}
+
+
+SNIMEK = snimek_z_registru()
 
 
 def otisk(cesta: Path) -> str:
@@ -48,7 +58,7 @@ def otisk(cesta: Path) -> str:
 
 def stav() -> tuple[Path, str | None]:
     """Cesta ke snímku a jeho otisk, nebo `None`, když soubor není."""
-    cesta = ADRESAR / SNIMEK["soubor"]
+    cesta = SNIMEK["cesta"]
     return cesta, otisk(cesta) if cesta.exists() else None
 
 
@@ -56,19 +66,19 @@ def stahni() -> Path:
     """Stáhne snímek do dočasného souboru, ověří otisk a teprve pak ho přesune."""
     cesta, mam = stav()
     if mam == SNIMEK["sha256"]:
-        print(f"snímek {SNIMEK['soubor']} už je na místě a otisk souhlasí")
+        print(f"snímek {cesta.name} už je na místě a otisk souhlasí")
         return cesta
     if mam is not None:
         raise SystemExit(
             f"{cesta} existuje, ale má jiný otisk ({mam[:12]}… místo "
             f"{SNIMEK['sha256'][:12]}…). Skript ho nepřepíše: rozhodnout o změně "
-            f"zdroje dat musí člověk. Smaž soubor, nebo uprav SNIMEK v tomto skriptu."
+            f"zdroje dat musí člověk: smaž soubor, nebo převezmi nový snímek příkazem prepni."
         )
 
-    ADRESAR.mkdir(parents=True, exist_ok=True)
+    cesta.parent.mkdir(parents=True, exist_ok=True)
     rozpracovany = cesta.with_suffix(cesta.suffix + ".rozpracovany")
     print(f"stahuji {SNIMEK['url']}")
-    urllib.request.urlretrieve(SNIMEK["url"], rozpracovany)  # noqa: S310 (adresa je v kódu)
+    urllib.request.urlretrieve(SNIMEK["url"], rozpracovany)  # noqa: S310 (adresa z registru)
     mam = otisk(rozpracovany)
     if mam != SNIMEK["sha256"]:
         rozpracovany.unlink(missing_ok=True)
@@ -78,7 +88,7 @@ def stahni() -> Path:
         )
     rozpracovany.replace(cesta)
     velikost = cesta.stat().st_size / 1048576
-    print(f"snímek {SNIMEK['soubor']} stažen, {velikost:.1f} MB, otisk souhlasí")
+    print(f"snímek {cesta.name} stažen, {velikost:.1f} MB, otisk souhlasí")
     return cesta
 
 
@@ -91,7 +101,7 @@ def kontrola() -> int:
     if mam != SNIMEK["sha256"]:
         print(f"snímek má jiný otisk než očekávaný: {mam[:12]}… / {SNIMEK['sha256'][:12]}…")
         return 1
-    print(f"snímek {SNIMEK['soubor']} je na místě, stav rejstříku k {SNIMEK['stav_k']}")
+    print(f"snímek {cesta.name} je na místě, stav rejstříku k {SNIMEK['stav_k']}")
     return 0
 
 

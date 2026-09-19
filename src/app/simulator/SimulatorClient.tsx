@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { normalizeSchoolKey } from '@/lib/school-key';
+import { nazevNabidky } from '@/lib/obor-profil';
 import { matchesSearchLocation, splitByCommute } from '@/lib/simulator-filter';
 import { rankAdmissionOffers, rankingPages, type AdmissionContext } from '@/lib/admission-summary';
 import { MAX_SELECTION, readSelection, selectionForShare, shareUrlFor } from '@/lib/simulator-state';
@@ -65,7 +66,7 @@ function toComparisonOffer(school: School, commuteMinutes: number | null): Compa
     slug: school.slug,
     href: school.href,
     name: school.nazev_display || school.nazev,
-    program: school.zamereni ? `${school.obor} · ${school.zamereni}` : school.obor,
+    program: nazevNabidky(school.obor, school.zamereni, school.delka_studia),
     place: school.adresa || school.ulice || school.obec,
     acceptedTotal: context ? context.average_accepted : school.history?.average ?? null,
     acceptedCzech: school.history?.average_cj ?? null,

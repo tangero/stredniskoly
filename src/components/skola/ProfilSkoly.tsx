@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { ProfilSkolyData, OborSkoly } from '@/lib/skola-profil-data';
 import { cislo, zOd, ZARAZENI_POPISEK, type ZarazeniObtiznosti } from '@/lib/obor-profil';
-import { delkaSlovy, jakCastoNadStredem, oboryVetou, pocetOboru, STAV_POPISEK } from '@/lib/skola-vyklad';
+import { delkaSlovy, jakCastoNadStredem, nazevSObci, oboryVetou, pocetOboru, STAV_POPISEK } from '@/lib/skola-vyklad';
 import { formatDatumCz } from '@/lib/portal-skol';
 import { SkupinaVKraji } from '@/components/obor/grafy';
 import { UlozitObor } from '@/components/obor/UlozitObor';
@@ -103,8 +103,11 @@ function Zdroj({ children }: { children: ReactNode }) {
 
 function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
   const nadpis = o.zarazeni ? NADPIS_OBTIZNOSTI[o.zarazeni] : o.prijati !== null ? `Přijato ${cislo(o.prijati)}` : 'Údaje o přijímání nemáme';
+  // Každá karta je vlastní mřížka, takže sloupec `auto` by v každé vyšel jinak široký podle obsahu
+  // a karty by se rozjely. Poslední sloupec má proto pevnou míru a akce v něm jsou v obou stavech
+  // stejně široké (viz kompaktní podoba UlozitObor).
   return (
-    <article className="grid gap-3 rounded-2xl bg-white p-5 shadow-[0_1px_0_#dbe3ec] md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.5fr)_auto] md:items-center md:gap-6">
+    <article className="grid gap-3 rounded-2xl bg-white p-5 shadow-[0_1px_0_#dbe3ec] md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.5fr)_minmax(0,20rem)] md:items-center md:gap-6">
       <div className="min-w-0">
         <h3 className="text-[19px] font-bold leading-snug text-[#16325c]">
           <Link href={o.href} className="hover:text-[#0074e4]">{o.nazev}{o.delka ? `, ${o.delka}leté` : ''}</Link>
@@ -147,7 +150,7 @@ function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
       </div>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[15px] font-semibold">
         <Link href={o.href} className="text-[#0074e4] hover:underline">Detail oboru</Link>
-        <UlozitObor programId={o.id} />
+        <UlozitObor programId={o.id} kompaktni />
       </div>
     </article>
   );
@@ -197,8 +200,8 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
             <span className="text-slate-700">{skola.nazev}</span>
           </nav>
           <div>
-            <h1 className="text-[32px] font-bold leading-[1.1] text-[#16325c] [text-wrap:balance] md:text-[44px]">{skola.nazev}</h1>
-            {obory.length > 0 && <p className="mt-1 text-[18px] text-slate-600">{oboryVetou(vypsane.length ? vypsane.map(o => ({ obor: o.nazev, delka: o.delka })) : obory.map(o => ({ obor: o.nazev, delka: o.delka })))} · {skola.obec}</p>}
+            <h1 className="text-[32px] font-bold leading-[1.1] text-[#16325c] [text-wrap:balance] md:text-[44px]">{nazevSObci(skola.nazev, skola.obec)}</h1>
+            {obory.length > 0 && <p className="mt-1 text-[18px] text-slate-600">{oboryVetou(vypsane.length ? vypsane.map(o => ({ obor: o.nazev, delka: o.delka })) : obory.map(o => ({ obor: o.nazev, delka: o.delka })))}</p>}
           </div>
           <ul className="flex flex-wrap gap-2 text-[14px] text-slate-700">
             <li className="rounded-full bg-slate-100 px-3 py-1">{skola.adresa}</li>
@@ -444,7 +447,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                       )}
                       <div className="overflow-x-auto">
                         <table className="w-full text-[14px] tabular-nums">
-                          <thead><tr className="text-left text-[12px] text-slate-500"><th className="py-1.5 pr-2">Rok</th><th className="px-2 text-right">Maturitu udělalo</th><th className="px-2 text-right">Čeština, % bodů</th><th className="px-2 text-right">Střed podobných škol</th><th className="pl-2">Srovnání</th></tr></thead>
+                          <thead><tr className="text-left text-[12px] text-slate-500"><th className="py-1.5 pr-2">Rok</th><th className="px-2 text-right">Maturitu udělalo</th><th className="px-2 text-right">Ke zkoušce nešlo</th><th className="px-2 text-right">Čeština, % bodů</th><th className="px-2 text-right">Střed podobných škol</th><th className="pl-2">Srovnání</th></tr></thead>
                           <tbody>
                             {s.roky.map(r => {
                               const sc = r.zaznam?.spolecna_cast;
@@ -453,6 +456,8 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                                 <tr key={r.rok} className="border-t border-slate-200">
                                   <td className="py-1.5 pr-2">{r.rok}</td>
                                   <td className="px-2 text-right">{sc?.passed !== undefined && sc.registered ? `${cislo(sc.passed)} ${zOd(sc.registered)} ${cislo(sc.registered)}` : '—'}</td>
+                                  {/* Neúčast jako podíl s počtem, bez výkladu (maturitní návrh §5.1, metrika 5). */}
+                                  <td className="px-2 text-right">{sc?.absent === undefined ? '—' : !sc.absent ? '0' : sc.nonParticipationRate !== undefined ? `${cislo(sc.absent)} (${cislo(sc.nonParticipationRate, 1)} %)` : cislo(sc.absent)}</td>
                                   <td className="px-2 text-right">{cjRok?.averagePercentScore !== undefined ? `${cislo(cjRok.averagePercentScore, 1)} %` : '—'}</td>
                                   <td className="px-2 text-right">{cjRok?.groupComparison ? `${cislo(cjRok.groupComparison.medianPercentScore, 1)} %` : '—'}</td>
                                   <td className="pl-2">{r.stav ? STAV_POPISEK[r.stav] : 'bez srovnání'}</td>
@@ -465,7 +470,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                     </div>
                   );
                 })}
-                <Zdroj>Maturita: společná část, jarní období, CERMAT. Srovnání s podobnými školami stojí na jediné veličině, na průměrném podílu bodů z testu: střed je prostředek podobných škol a podle něj se počítá i srovnání, které bere v úvahu velikost ročníku, takže u malého ročníku bývá rozdíl nerozlišitelný. Údaj „v celé zemi lépe než 84 ze 100 maturantů“ je jiný pohled: neporovnává školu s podobnými školami, ale její maturanty se všemi maturanty v zemi.</Zdroj>
+                <Zdroj>Maturita: společná část, jarní období, CERMAT. Sloupec „ke zkoušce nešlo“ je počet přihlášených maturantů, kteří zkoušku nekonali, a jeho podíl z přihlášených; důvod data neuvádějí, může jít o nemoc i o neuzavřený ročník. Srovnání s podobnými školami stojí na jediné veličině, na průměrném podílu bodů z testu: střed je prostředek podobných škol a podle něj se počítá i srovnání, které bere v úvahu velikost ročníku, takže u malého ročníku bývá rozdíl nerozlišitelný. Údaj „v celé zemi lépe než 84 ze 100 maturantů“ je jiný pohled: neporovnává školu s podobnými školami, ale její maturanty se všemi maturanty v zemi.</Zdroj>
               </Dukaz>
             </>
           );

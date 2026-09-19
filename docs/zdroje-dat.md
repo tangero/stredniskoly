@@ -148,6 +148,8 @@ Rozdělení výsledků všech uchazečů o obor tenhle soubor **není** jediný 
 
 Dvě podoby téhož. **JSON-LD snímky** (`data/msmt_rejstrik/rssz-*.jsonld`, čtvrtletní, v gitu ignorované kvůli velikosti) se používají na návaznost oborů mezi roky a na doplnění názvů oborů bez jednotné zkoušky. **CSV export** (`data/Rejstrik_skol/`) je jednorázový.
 
+**Index názvů** `data/msmt_rejstrik/nazvy-oboru.json` (v gitu, asi 0,6 MB) vzniká skriptem `scripts/build-nazvy-oboru-rejstrik.py` ze snímku, který určuje registr (`msmt-rejstrik-snimky`, `zobrazeno.soubor`), a nese celý záznam `zobrazeno` z registru a otisk sha256 snímku. Obsahuje jen `redIzo` s názvem školy (`zkracenyNazev`, jinak `uplnyNazev`) a obcí sídla, a kódy a názvy oborů (`skolyAZarizeni[].obory[].kod`, `.nazev`). Čtou ho generátory souběžných přihlášek a kontextu přihlášek (`scripts/nazvy_oboru.py`), takže je má i datová linka v CI, kde snímky nejsou. Otisk snímku zapisuje do registru příkaz `stav-datovych-sad.py prepni` u každého lokálního souboru; generátor indexu odmítne snímek s jiným otiskem. Po každém přepnutí snímku, i po převzetí revize téhož čtvrtletí, se index musí přegenerovat; generátory index, jehož záznam `zobrazeno` včetně otisku neodpovídá registru, odmítnou.
+
 Zajímavé sloupce JSON-LD, mimo adresu a názvy:
 
 | Pole | Obsah | Otázka rodiče | Používáme |
@@ -218,7 +220,7 @@ Otázka rodiče je jediná: **jak dlouho bude dítě dojíždět**. Odpovídáme
 | `schools_data.json` | CERMAT agregáty + data uchazečů | `build-catalogue-2026.py`, `enrich_schools_data.py` | katalog, ročníky 2024 až 2026 |
 | `applications_2026.json` | CERMAT přihlášky 2026 | `import_cermat_2026_real.py` | pole `pp` jsou priority |
 | `cermat_results_2026.json` | CERMAT výsledky 2026 a 2025 | `refresh_cermat_data.py` | nese otisk zdroje |
-| `kontext_prihlasek_{rok}.json` | data uchazečů, rejstřík škol MŠMT (názvy) | `build-kontext-prihlasek.py` | výsledek uchazečů o obor, obory výš a níž na přihlášce, odvozená hranice úspěšnosti; linka přepočítává s pásmy a souběhem; pole `mimo_prehled` nese název školy, obce a oboru u oborů, které katalog nevede (z `scripts/nazvy_oboru.py`, stejně jako souběžné přihlášky), a příznak kategorie bez jednotné zkoušky (C, E, H, J, P); rozsah dopadu vypíše `scripts/dopad-mimo-prehled.py` |
+| `kontext_prihlasek_{rok}.json` | data uchazečů, index názvů z rejstříku škol MŠMT | `build-kontext-prihlasek.py` | výsledek uchazečů o obor, obory výš a níž na přihlášce, odvozená hranice úspěšnosti; linka přepočítává s pásmy a souběhem; pole `mimo_prehled` nese název školy, obce a oboru u oborů, které katalog nevede (z `scripts/nazvy_oboru.py`, stejně jako souběžné přihlášky), a příznak kategorie bez jednotné zkoušky (C, E, H, J, P) |
 | `skoly_web.json` | rejstřík CSV, `WWW` | `build-skoly-web.py` | odkaz na web školy |
 | `souhrny_kolo1.json` | CERMAT souhrny 1. kola všech ročníků v `data/` | `build-souhrny-kolo1.py` | nabídky po ročnících, párování ročníků (i podle mapy nabídek ročníku), rozdělení tlaku prvních voleb ve srovnatelných skupinách; doklad `docs/podklady/overeni-srovnani-rocniku.json` |
 | `school_analysis.json` | starší zpracování | nedohledaný | obsahuje `obtiznost` bez doloženého výpočtu |
@@ -232,7 +234,7 @@ Otázka rodiče je jediná: **jak dlouho bude dítě dojíždět**. Odpovídáme
 
 **Který záznam katalogu popisuje obor.** Klíč `REDIZO_KKOV` nenese zaměření, takže ho může nést několik nabídek téže školy, a ty se mohou lišit názvem, obcí i oborem: PORG má pod jedním klíčem osmileté gymnázium v Praze, Brně i Ostravě. V katalogu 2026 je takových klíčů **43**, v ročnících 2024 a 2025 po jednom.
 
-`scripts/nazvy_oboru.py` proto vybírá stejně jako `nazvyOboru()` na webu: nejdřív **nejnovější ročník**, který klíč vede, a mezi nabídkami téhož ročníku **první v pořadí souboru**. Obě strany tak dávají identický popis — ověřeno na 2 841 klíčích, které souběh používá a katalog vede, s nulovým rozdílem. Zbylých 2 593 klíčů ze souběhu katalog nevede, takže je nemá ani katalogová mapa `nazvyOboru()` a srovnávat není co. Stránka oboru u nich popis má — bere ho z pole `mimo_prehled` v kontextu přihlášek, kam jde z rejstříku. Do září 2026 se pravidla lišila: Python bral starší ročník, takže popis školy zněl v souběhu jinak než na stránce oboru.
+`scripts/nazvy_oboru.py` proto vybírá stejně jako `nazvyOboru()` na webu: nejdřív **nejnovější ročník**, který klíč vede, od zobrazeného podle registru (`cermat-vysledky`) ke starším, takže ročník naimportovaný před přepnutím se nečte, a mezi nabídkami téhož ročníku **první v pořadí souboru**. Obě strany tak dávají identický popis — ověřeno na 2 841 klíčích, které souběh používá a katalog vede, s nulovým rozdílem. Zbylých 2 593 klíčů ze souběhu katalog nevede, takže je nemá ani katalogová mapa `nazvyOboru()` a srovnávat není co. Stránka oboru u nich popis má — bere ho z pole `mimo_prehled` v kontextu přihlášek, kam jde z indexu rejstříku. Do září 2026 se pravidla lišila: Python bral starší ročník, takže popis školy zněl v souběhu jinak než na stránce oboru.
 
 Vybírat mezi nabídkami téhož ročníku abecedně podle `id` bylo zvažováno a **zavrženo**: u PORG by vyhrálo Brno jen proto, že jeho `id` je bez diakritiky, a obec by se proti dosavadnímu stavu změnila bez jakéhokoli dokladu, že je nová správnější. Nejednoznačnost se místo toho **hlásí** při každém běhu generátoru (počítají se dvojice ročník a klíč, tedy 43 klíčů roku 2026 a po jednom z let 2024 a 2025); rozhodnout ji z dat nejde, musela by odpovědět škola nebo rejstřík, která nabídka klíč zastupuje. Pořadí v souboru není záruka stability napříč přegenerováním katalogu — je to jen shoda s tím, co ukazuje stránka oboru.
 
@@ -256,20 +258,27 @@ Prvních 13 sloupců je identifikace: `id_row`, `TŘÍDĚNÍ`, `ROK`, `REDIZO`, 
 
 Zbylých 85 sloupců je osm bloků se stejnou stavbou: společná část celkem, čeština, matematika, angličtina, němčina, ruština, francouzština, španělština.
 
+Sloupec `NEÚČAST (%)` a `HRUBÁ NEÚSPĚŠNOST (%)` jsou **jen v bloku společné části**; předmětové bloky je nemají. Naopak `PODÍL VOLBY PŘEDMĚTU (%)` je jen u druhé povinné zkoušky, tedy ne u češtiny ani u společné části.
+
 | Sloupec v bloku | Obsah | Otázka rodiče | Používáme |
 |---|---|---|---|
-| `PŘIHLÁŠENI`, `KONALI`, `NEKONALI` | velikost populace | z kolika lidí to je | **ne** |
-| `USPĚLI`, `NEUSPĚLI` | počty | kolik jich maturitu udělalo | **ne** |
-| `PODÍL ÚSPĚŠNÝCH (%)` | úspěšní z přihlášených | jaká je šance maturitu udělat | **ne** |
-| `ČISTÁ NEÚSPĚŠNOST (%)` | neuspěli z konajících | kolik jich u zkoušky propadlo | **ne** |
-| `HRUBÁ NEÚSPĚŠNOST (%)` | neuspěli nebo nekonali z přihlášených | kolik jich maturitu nedokončilo | **ne** |
-| `NEÚČAST (%)` | nekonali z přihlášených | kolik jich k maturitě vůbec nešlo | **ne** |
-| `PRŮMĚRNÝ % SKÓR` | průměr z didaktického testu | jak dobře tu píší testy | **ne** |
-| `SMĚRODATNÁ ODCHYLKA % SKÓRU` | rozptyl výsledků | táhne škola všechny, nebo jen špičku | **ne** |
-| `PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ` | umístění proti celé zemi | jak si stojí proti ostatním | **ne** |
-| `PODÍL VOLBY PŘEDMĚTU (%)` | u druhé povinné zkoušky | volí se tu matematika, nebo jazyk | **ne** |
+| `PŘIHLÁŠENI`, `KONALI`, `NEKONALI` | velikost populace | z kolika lidí to je | **ano**, jmenovatel u každého podílu |
+| `USPĚLI`, `NEUSPĚLI` | počty | kolik jich maturitu udělalo | **ano** |
+| `PODÍL ÚSPĚŠNÝCH (%)` | úspěšní z přihlášených | jaká je šance maturitu udělat | **ano**, hlavní číslo oddílu „Jak si škola vede“ |
+| `ČISTÁ NEÚSPĚŠNOST (%)` | neuspěli z konajících | kolik jich u zkoušky propadlo | **ne**, kontrakt pro ni nemá pole; viz maturitní návrh, oddíl 10 |
+| `HRUBÁ NEÚSPĚŠNOST (%)` | neuspěli nebo nekonali z přihlášených | kolik jich maturitu nedokončilo | **ano** do dat, na stránce zatím ne |
+| `NEÚČAST (%)` | nekonali z přihlášených | kolik jich k maturitě vůbec nešlo | **ano od 18. 9. 2026**, sloupec „ke zkoušce nešlo“ v tabulce po letech |
+| `PRŮMĚRNÝ % SKÓR` | průměr z didaktického testu | jak dobře tu píší testy | **ano**, čeština a matematika; veličina celého srovnání s podobnými školami |
+| `SMĚRODATNÁ ODCHYLKA % SKÓRU` | rozptyl výsledků | táhne škola všechny, nebo jen špičku | **ano jen k výpočtu** zařazení, na stránce se nezobrazuje |
+| `PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ` | umístění proti celé zemi | jak si stojí proti ostatním | **ano**, „v celé zemi lépe než 84 ze 100 maturantů“ |
+| `PODÍL VOLBY PŘEDMĚTU (%)` | u druhé povinné zkoušky | volí se tu matematika, nebo jazyk | **ano**, vždy ve dvojici s percentilem z matematiky |
+| cizí jazyky (5 bloků) | angličtina, němčina, ruština, francouzština, španělština | jak se tu učí jazyky | **ne**, malé skupiny a samovýběr |
+
+Do 18. 9. 2026 měla tahle tabulka u všech sloupců „ne“, přestože se maturita zpracovává od 14. 9. 2026. Byl to pozůstatek stavu před implementací; oddíl 3 mezitím říkal opak.
 
 Rozdíl mezi čistou a hrubou neúspěšností je zásadní a list `vysvetlivky` ho definuje. Čistá počítá z konajících, hrubá z přihlášených a započítává i ty, kdo ke zkoušce nešli. Škola může mít výbornou čistou neúspěšnost proto, že slabé žáky ke zkoušce nepustí.
+
+**Mapa sloupců je ověřená proti listu `vysvetlivky`** (18. 9. 2026, `scripts/overeni-sloupcu-maturity.py`, doklad `docs/podklady/overeni-sloupcu-maturity.json`). Ověření se opakuje po každém novém ročníku a nekontroluje jen názvy: dopočítává podíly z počtů, takže by odhalilo i sloupec, který se jmenuje správně a nese něco jiného. Všechny čtyři dopočty sedí do posledního místa ve všech řádcích ročníků 2021 až 2026 a **schéma je ve všech šesti ročnících totožné** (98 sloupců, 8 bloků, stejné názvy). Duplicitní klíč `třídění + REDIZO + SMO16` se v žádném ročníku nevyskytuje; kontrolu na něj má od téhož data i `build-maturita-skoly.py`.
 
 **Napojení na náš katalog je přímé.** Kódy `SMO16` jsou tytéž, jaké nese sloupec `SKUPINA OBORŮ (16)` v agregátech JPZ: GY8, GY6, GY4, LYC, ST1, ST2, SEK, SHP, SHU, SZE, SZD, SUM, UTE, UOS, NTE, NOS. Zkouška napojení z 13. 9. 2026 dopadla takto:
 
@@ -317,7 +326,7 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 
 | Co leží nevyužité | Kde | Na co by to bylo | Proč to zatím nepoužíváme |
 |---|---|---|---|
-| **Celé maturitní výsledky** | `MZ{rok}j_SC_skolobory.xlsx` | „Maturitu tu v roce 2026 udělalo 100 % žáků, v češtině jsou nad 80. percentilem.“ Jediná přímá odpověď na otázku, jaké jsou tu nároky. Spárovatelné u 2 782 z 3 091 nabídek | **zpracovává se od 14. 9. 2026** přes datovou linku do `public/maturita_skoly.json` (společná část, čeština, matematika, jaro 2021+); cizí jazyky, stav po podzimu a roky před 2021 zamítnuty v [návrhu stránky školy](stranka-skoly-2027.md), oddíl 10 |
+| **Celé maturitní výsledky** | `MZ{rok}j_SC_skolobory.xlsx` | „Maturitu tu v roce 2026 udělalo 100 % žáků, v češtině jsou nad 80. percentilem.“ Jediná přímá odpověď na otázku, jaké jsou tu nároky. Spárovatelné u 2 782 z 3 091 nabídek | **zpracovává se od 14. 9. 2026** přes datovou linku do `public/maturita_skoly.json` (společná část, čeština, matematika, jaro 2023–2026); cizí jazyky, stav po podzimu a roky před 2021 zamítnuty v [návrhu stránky školy](stranka-skoly-2027.md), oddíl 10. **Ročníky 2021 a 2022 zamítnuty 18. 9. 2026 měřením** (`scripts/delka-rady-maturity.py`): delší okno zařazení nezpevní ani u malých škol |
 | Vstupní úroveň školy 2017 až 2023 | `JPZ{rok}_skoly-skolobory_vysledky.xlsx` | „Škola je dlouhodobě žádaná, není to výkyv jednoho roku.“ | soubory nejsou stažené |
 | Výsledek testu u **všech uchazečů**, nejen přijatých | data uchazečů, `c_m_procentni_skor`, vyplněno u 75 % řádků | „S 62 body byl loni v polovině těch, kdo se sem hlásili.“ Jediný způsob, jak dát dítěti vlastní číslo do kontextu | **zpracováno 13. 9. 2026**, na web zatím nenapojeno |
 | **Profil dovedností** uchazečů o obor | položková data, `b1` až `b16.x` | „Kdo se sem dostal, byl silný v porozumění textu.“ Jediný zdroj o tom, co obor vybírá | soubory nikdo nezpracoval |
@@ -402,6 +411,15 @@ Ukazatel spočítaný z více sad, například přihlášky na místo, je v odd�
      --doklad "commit importu, testy prošly"
    ```
    Přepnutí se neuloží, pokud období v registru neodpovídá datům; nelze tak přepnout na rok, který ještě není naimportovaný.
+
+   **Snímek rejstříku MŠMT (`msmt-rejstrik-snimky`): po každém přepnutí, i po převzetí revize téhož čtvrtletí, přegenerujte index názvů a commitněte ho spolu s registrem:**
+   ```
+   python3 scripts/stav-datovych-sad.py prepni msmt-rejstrik-snimky 2026-09-30 \
+     --soubor data/msmt_rejstrik/rssz-2026-09-30.jsonld --doklad "…"
+   python3 scripts/build-nazvy-oboru-rejstrik.py
+   git add public/stav_datovych_sad.json data/msmt_rejstrik/nazvy-oboru.json
+   ```
+   Bez toho generátory souběžných přihlášek a kontextu přihlášek záměrně odmítnou běžet, protože index neodpovídá registru. V datové lince i v CI se to projeví jako chyba zpracování, ne jako tiše ztracené názvy oborů. Příkaz `prepni` na tento krok po přepnutí snímku upozorní.
 4. **Vrácení.** Když se po přepnutí objeví chyba, jeden příkaz vrátí předchozí období:
    ```
    python3 scripts/stav-datovych-sad.py vrat cermat-vysledky --duvod "chyba v importu"
@@ -445,7 +463,7 @@ Plné převzetí bez člověka se nedoporučuje: CERMAT soubory přepisuje i mě
 
 <!-- stav-datovych-sad:od -->
 
-_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-17. Neupravovat ručně._
+_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ručně._
 
 | Sada | Použití | Zobrazujeme | Odkud | Zveřejněno, nepřevzato | Čekáme | Kdy | Po přepnutí |
 |---|---|---|---|---|---|---|---|
@@ -481,7 +499,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-17. Neupravovat ru�
 | `cermat-polozkova-jpz` | jen detekce | HTTP HEAD pro šest testů. | Jen dokladový výpočet v scripts/validate-pasma-prijeti.py. | Není na webu, převzetí podle potřeby analýzy. |
 | `cermat-maturita` | příprava | HTTP HEAD a katalogová stránka. | scripts/build-maturita-skoly.py; v datové lince zpracovatel cermat-maturita stáhne k jarnímu souboru tři předchozí jarní ročníky a doplní je do stávajícího výstupu. Stav po podzimu (jap) se nepřebírá. | Schválit úlohu, zkontrolovat počty v pull requestu, přepnout období v registru. |
 | `cermat-jpz-skoly-2017-2023` | neaktualizuje se | — | — | Uzavřená řada. |
-| `msmt-rejstrik-snimky` | příprava | HTTP HEAD na adresu snímku ke konci čtvrtletí. Složka nese identifikátor ročníku, který se každý rok mění (e9c07729… pro 2025, 250d6b3f… pro 2026); na přelomu roku ho je nutné dohledat v Národním katalogu otevřených dat. | Soubory se ukládají do data/msmt_rejstrik/; zpracování scripts/enrich-continuity-registry.py a scripts/build-navaznost-notes.py. | Jednou ročně dohledat identifikátor nového ročníku. |
+| `msmt-rejstrik-snimky` | příprava | HTTP HEAD na adresu snímku ke konci čtvrtletí. Složka nese identifikátor ročníku, který se každý rok mění (e9c07729… pro 2025, 250d6b3f… pro 2026); na přelomu roku ho je nutné dohledat v Národním katalogu otevřených dat. | Soubory se ukládají do data/msmt_rejstrik/; zpracování scripts/enrich-continuity-registry.py a scripts/build-navaznost-notes.py. | Jednou ročně dohledat identifikátor nového ročníku. Po každém přepnutí snímku spustit scripts/build-nazvy-oboru-rejstrik.py a commitnout data/msmt_rejstrik/nazvy-oboru.json; bez toho generátory souběhu a kontextu přihlášek odmítnou běžet. |
 | `msmt-rejstrik-csv` | ruční | Nelze, export z webové aplikace. | scripts/validate-pasma-prijeti.py čte SkolyAMista.csv pro převod IZO na REDIZO. | Doporučeno nahradit čtvrtletním snímkem JSON-LD, který nese IZO i REDIZO; sada by pak zanikla. |
 | `msmt-akko` | ruční | Nesledováno. | Žádný. | Stáhnout při změně číselníku. |
 | `csi-inspekce` | plná | Workflow CSI Weekly Refresh každé pondělí, poslední úspěšný běh 7. 9. 2026. | scripts/process-csi-data.js, snímek s manifestem a rozdílem. | Revidovat a sloučit pull request. Chybí jen tento krok. |

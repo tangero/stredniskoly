@@ -23,8 +23,8 @@ PREDMET = ["PŘIHLÁŠENI", "KONALI", "USPĚLI", "NEUSPĚLI", "NEKONALI", "PRŮM
            "PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ", "PODÍL ÚSPĚŠNÝCH (%)", "ČISTÁ NEÚSPĚŠNOST (%)"]
 
 
-def radek(trideni, redizo, smo, n, skor, sd, percentil, uspesnost=100, ma_volba=50):
-    ident = [f"{trideni}_{redizo}_{smo}", f"{redizo}_{smo}", trideni, 2026, redizo, f"Škola {redizo}", "adresa",
+def radek(trideni, redizo, smo, n, skor, sd, percentil, uspesnost=100, ma_volba=50, nazev=None, adresa="adresa"):
+    ident = [f"{trideni}_{redizo}_{smo}", f"{redizo}_{smo}", trideni, 2026, redizo, nazev or f"Škola {redizo}", adresa,
              "GYM", "GYMNÁZIUM", smo, f"SKUPINA {smo}", "CZ010", "Praha"]
     celkem = [n, n, n, 0, 0, uspesnost, 0, 0, 0]
     cj = [n, n, n, 0, 0, skor, sd, percentil, 100, 0]
@@ -133,6 +133,113 @@ class TestMaturitaSkoly(unittest.TestCase):
         self.assertEqual(dalsi["meta"]["roky"], [2025, 2026])
         self.assertIn("2025", dalsi["skoly"]["600000100"]["roky"])
         self.assertEqual(dalsi["meta"]["nejnovejsi_rok"], 2026)
+
+
+def clenove_skupiny(smo, prvni_redizo, pocet=11):
+    """Skupina oborů s dost školami, aby měla referenční medián."""
+    return [radek("redizo_smo16", str(prvni_redizo + i), smo, 40, 70 + i, 10, 60 + i) for i in range(pocet)]
+
+
+class TestOrganizacniZmeny(unittest.TestCase):
+    """Přejímací podmínka 7 (návrh §8): více SMO16 u jedné školy, změna REDIZO, sloučení, více pracovišť.
+
+    Společné pravidlo, které tyhle testy hlídají: školní agregát se nesmí rozkopírovat na skupiny
+    oborů a starší hodnoty se nesmí připojit k nástupci bez doložené návaznosti (návrh §7).
+    """
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.dir = Path(self.tmp.name)
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def soubor(self, rok, radky):
+        cesta = self.dir / f"MZ{rok}j_SC_skolobory.xlsx"
+        zapis_soubor(cesta, radky)
+        return cesta
+
+    def test_skola_s_vice_skupinami_oboru(self):
+        """Tři skupiny oborů zůstanou oddělené a školní agregát se na ně nepřepíše."""
+        radky = clenove_skupiny("GY8", 600000000) + clenove_skupiny("GY4", 600000200) + clenove_skupiny("LYC", 600000400)
+        # Jedna škola nabízí všechny tři skupiny; v každé má jiný výsledek.
+        radky += [
+            radek("redizo_smo16", "600000900", "GY8", 60, 95, 5, 95),
+            radek("redizo_smo16", "600000900", "GY4", 60, 50, 5, 30),
+            radek("redizo_smo16", "600000900", "LYC", 12, 76, 20, 70),
+            radek("redizo", "600000900", "CELKEM", 132, 80, 10, 70),
+        ]
+        vystup = bm.sestav({2026: self.soubor(2026, radky)}, None)
+        skola = vystup["skoly"]["600000900"]["roky"]["2026"]
+        self.assertEqual(sorted(skola), ["CELKEM", "GY4", "GY8", "LYC"])
+        self.assertEqual(skola["GY8"]["cj"]["groupComparison"]["state"], "above")
+        self.assertEqual(skola["GY4"]["cj"]["groupComparison"]["state"], "below")
+        self.assertEqual(skola["LYC"]["cj"]["groupComparison"]["state"], "indistinguishable")
+        # Školní agregát nesmí nést zařazení: není z něj poznat, ke které skupině patří.
+        self.assertNotIn("groupComparison", skola["CELKEM"]["cj"])
+        # Do reference každé skupiny vstoupí škola právě jednou, ne třikrát. V lyceu má jen
+        # dvanáct maturantů, což na vstup do reference stačí (práh je deset konajících).
+        for smo in ("GY8", "GY4", "LYC"):
+            self.assertEqual(vystup["skupiny"]["2026"][smo]["schools"], 12)
+
+    def test_zmena_redizo_nespoji_radu(self):
+        """Škola s novým REDIZO je nová škola; loňské hodnoty se k ní nepřipojí."""
+        loni = clenove_skupiny("GY8", 600000000) + [
+            radek("redizo_smo16", "600000900", "GY8", 60, 95, 5, 95, nazev="Gymnázium"),
+            radek("redizo", "600000900", "CELKEM", 60, 95, 5, 95, nazev="Gymnázium"),
+        ]
+        letos = clenove_skupiny("GY8", 600000000) + [
+            radek("redizo_smo16", "600000901", "GY8", 60, 95, 5, 95, nazev="Gymnázium"),
+            radek("redizo", "600000901", "CELKEM", 60, 95, 5, 95, nazev="Gymnázium"),
+        ]
+        vystup = bm.sestav({2025: self.soubor(2025, loni), 2026: self.soubor(2026, letos)}, None)
+        self.assertEqual(sorted(vystup["skoly"]["600000900"]["roky"]), ["2025"])
+        self.assertEqual(sorted(vystup["skoly"]["600000901"]["roky"]), ["2026"])
+        self.assertEqual(vystup["meta"]["roky"], [2025, 2026])
+
+    def test_slouceni_skoly_neprevezme_historii(self):
+        """Ze dvou škol zbude jedna: nástupce má jen svůj rok, zaniklá škola zůstane s loňským."""
+        loni = clenove_skupiny("GY8", 600000000) + [
+            radek("redizo_smo16", "600000900", "GY8", 40, 90, 5, 90),
+            radek("redizo_smo16", "600000901", "GY8", 30, 60, 5, 35),
+            radek("redizo", "600000900", "CELKEM", 40, 90, 5, 90),
+            radek("redizo", "600000901", "CELKEM", 30, 60, 5, 35),
+        ]
+        letos = clenove_skupiny("GY8", 600000000) + [
+            radek("redizo_smo16", "600000900", "GY8", 70, 80, 5, 75),
+            radek("redizo", "600000900", "CELKEM", 70, 80, 5, 75),
+        ]
+        vystup = bm.sestav({2025: self.soubor(2025, loni), 2026: self.soubor(2026, letos)}, None)
+        self.assertEqual(sorted(vystup["skoly"]["600000900"]["roky"]), ["2025", "2026"])
+        self.assertEqual(sorted(vystup["skoly"]["600000901"]["roky"]), ["2025"])
+        # Zaniklá škola do reference letošního roku nevstupuje.
+        self.assertEqual(vystup["skupiny"]["2025"]["GY8"]["schools"], 13)
+        self.assertEqual(vystup["skupiny"]["2026"]["GY8"]["schools"], 12)
+
+    def test_vice_pracovist_jako_duplicitni_radek_zastavi_zpracovani(self):
+        """Dva řádky téže školy a skupiny oborů by se tiše přepsaly; zpracování musí spadnout."""
+        radky = clenove_skupiny("GY8", 600000000) + [
+            radek("redizo_smo16", "600000900", "GY8", 40, 90, 5, 90, adresa="Nad Štolou 1510"),
+            radek("redizo_smo16", "600000900", "GY8", 20, 50, 5, 20, adresa="odloučené pracoviště"),
+        ]
+        with self.assertRaisesRegex(ValueError, "duplicitní řádek redizo_smo16 600000900 GY8"):
+            bm.sestav({2026: self.soubor(2026, radky)}, None)
+
+    def test_zanikla_skupina_oboru_nezustane_v_novem_roce(self):
+        """Škola přestala nabízet jednu skupinu oborů: v novém roce tam nesmí zůstat loňská hodnota."""
+        loni = clenove_skupiny("GY8", 600000000) + clenove_skupiny("GY4", 600000200) + [
+            radek("redizo_smo16", "600000900", "GY8", 40, 90, 5, 90),
+            radek("redizo_smo16", "600000900", "GY4", 40, 70, 5, 60),
+            radek("redizo", "600000900", "CELKEM", 80, 80, 5, 75),
+        ]
+        letos = clenove_skupiny("GY8", 600000000) + clenove_skupiny("GY4", 600000200) + [
+            radek("redizo_smo16", "600000900", "GY8", 40, 90, 5, 90),
+            radek("redizo", "600000900", "CELKEM", 40, 90, 5, 90),
+        ]
+        vystup = bm.sestav({2025: self.soubor(2025, loni), 2026: self.soubor(2026, letos)}, None)
+        roky = vystup["skoly"]["600000900"]["roky"]
+        self.assertEqual(sorted(roky["2025"]), ["CELKEM", "GY4", "GY8"])
+        self.assertEqual(sorted(roky["2026"]), ["CELKEM", "GY8"])
 
 
 class TestLinkaMaturita(unittest.TestCase):

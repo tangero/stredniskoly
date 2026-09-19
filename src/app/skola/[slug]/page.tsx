@@ -360,7 +360,7 @@ export default async function SchoolDetailPage({ params }: Props) {
                 <h2 className="text-[20px] font-bold text-[#16325c]">Odkud údaje jsou</h2>
                 <p>
                   Přijímací řízení: CERMAT, souhrny 1. kola a data o uchazečích. Inspekce: zprávy ČŠI. Kontakt a web: rejstřík škol MŠMT.
-                  Jak přijímání a rozřazení uchazečů funguje, vysvětluje stránka <Link href="/jak-funguje-prijimani" className="font-semibold text-[#0074e4] hover:underline">Jak funguje přijímání</Link>.
+                  Jak přijímání a rozřazení uchazečů funguje, vysvětluje stránka <Link href="/jak-vybrat-skolu#jak-se-rozhoduje" className="font-semibold text-[#0074e4] hover:underline">Jak funguje přijímání</Link>.
                 </p>
                 <p className="flex flex-wrap items-center gap-2 text-[13px] text-slate-500">
                   Otevřená data:

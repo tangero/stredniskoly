@@ -8,7 +8,9 @@ import {
   stariVeDnech,
   formatDatumCasCz,
   stariSlovy,
+  getNovinkyPrehled,
 } from '../src/lib/admin.ts';
+import { nastavPoolProTesty } from '../src/lib/novinky-db.ts';
 
 test('auth: správný token projde, constant-time porovnání', () => {
   assert.equal(overAdminToken('tajny-token-123', 'tajny-token-123'), true);
@@ -97,4 +99,72 @@ test('stáří ve dnech a česky slovy', () => {
 test('formátování data a času česky', () => {
   assert.equal(formatDatumCasCz('2026-09-13T11:04:54+00:00'), '13. 9. 2026 11:04');
   assert.equal(formatDatumCasCz('neni-datum'), 'neni-datum'); // neparsrovatelné projde beze změny
+});
+
+test('přehled novinek: bez DATABASE_URL vrací null (odběr nenakonfigurován)', async () => {
+  const puvodni = process.env.DATABASE_URL;
+  delete process.env.DATABASE_URL;
+  try {
+    assert.equal(await getNovinkyPrehled(), null);
+  } finally {
+    if (puvodni !== undefined) process.env.DATABASE_URL = puvodni;
+  }
+});
+
+test('přehled novinek: počty z databáze se namapují, adresy se nečtou', async () => {
+  const puvodni = process.env.DATABASE_URL;
+  process.env.DATABASE_URL = 'postgres://test';
+  const dotazy = [];
+  nastavPoolProTesty({
+    async query(sql) {
+      dotazy.push(sql);
+      if (sql.includes('group by zdroj')) {
+        return { rows: [{ zdroj: 'titulka-karta', pocet: 9 }, { zdroj: 'paticka', pocet: 3 }], rowCount: 2 };
+      }
+      if (sql.includes('from odber_novinek')) {
+        return { rows: [{ celkem: 12, nove7: 3, nove30: 5 }], rowCount: 1 };
+      }
+      if (sql.includes('from zadost_o_potvrzeni')) return { rows: [{ pocet: 2 }], rowCount: 1 };
+      if (sql.includes('from polozka_odeslani')) return { rows: [{ pocet: 4 }], rowCount: 1 };
+      throw new Error(`neočekávaný dotaz: ${sql}`);
+    },
+  });
+  try {
+    const n = await getNovinkyPrehled();
+    assert.deepEqual(n, {
+      odberatele: 12,
+      nove7: 3,
+      nove30: 5,
+      cekajiciPotvrzeni: 2,
+      frontaCeka: 4,
+      dleZdroje: [
+        { zdroj: 'titulka-karta', pocet: 9 },
+        { zdroj: 'paticka', pocet: 3 },
+      ],
+    });
+    // Přehled smí číst jen počty; select e-mailových adres by administraci
+    // vynesl osobní údaje, které k přehledu nepotřebuje.
+    assert.ok(dotazy.every((q) => !/\bemail\b/.test(q)), 'dotazy nesmí sahat na adresy');
+  } finally {
+    nastavPoolProTesty(null);
+    if (puvodni === undefined) delete process.env.DATABASE_URL;
+    else process.env.DATABASE_URL = puvodni;
+  }
+});
+
+test('přehled novinek: chyba databáze znamená null, ne pád stránky', async () => {
+  const puvodni = process.env.DATABASE_URL;
+  process.env.DATABASE_URL = 'postgres://test';
+  nastavPoolProTesty({
+    async query() {
+      throw new Error('databáze nedostupná');
+    },
+  });
+  try {
+    assert.equal(await getNovinkyPrehled(), null);
+  } finally {
+    nastavPoolProTesty(null);
+    if (puvodni === undefined) delete process.env.DATABASE_URL;
+    else process.env.DATABASE_URL = puvodni;
+  }
 });

@@ -381,7 +381,7 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
               </li>
               <li>
                 Pořadí oborů na přihlášce šanci na přijetí <b>nemění</b>, škola řadí jen podle svých kritérií. Seřaďte obory podle toho, kam chcete chodit.
-                <span className="block text-[14px]"><Link href="/jak-funguje-prijimani" className="font-semibold text-[#0074e4] hover:underline">Jak rozřazení funguje</Link></span>
+                <span className="block text-[14px]"><Link href="/jak-vybrat-skolu#jak-se-rozhoduje" className="font-semibold text-[#0074e4] hover:underline">Jak rozřazení funguje</Link></span>
               </li>
               {pasma?.talentova_zkouska && <li>O přijetí rozhoduje i <b>talentová zkouška</b>, o které údaje nemáme.</li>}
               {!pasma?.talentova_zkouska && stav === 'nevesli_se' && pasma?.rozhodl_test !== undefined && pasma.rozhodl_test >= 0.97 && (
@@ -422,6 +422,7 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
                             <td className="py-2 px-3 text-right tabular-nums">{cislo(o.uchazecu)}</td>
                             <td className="py-2 pl-3">
                               <span className="inline-block whitespace-nowrap rounded-full bg-slate-100 px-2.5 py-0.5 text-[13px] font-semibold text-slate-800">{popisekObtiznosti(o)}</span>
+                              {o.zarazeni && o.mimoPrehled ? <span className="block text-[12px] text-slate-500">{popisekObtiznosti({ zarazeni: null, mimoPrehled: o.mimoPrehled })}</span> : null}
                               {o.soutezici ? <span className="block text-[12px] text-slate-500">{cislo(o.prijati ?? 0)} {zOd(o.soutezici)} {cislo(o.soutezici)}</span> : null}
                             </td>
                           </tr>
@@ -430,7 +431,7 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
                     ))}
                   </table>
                 </div>
-                <Zdroj>Jen obory s aspoň 10 společnými uchazeči. Pořadí na přihlášce říká, kam kdo chtěl víc, ne jak je obor těžký: tatáž škola bývá u různých uchazečů výš i níž.{[...kontext.vys, ...kontext.niz].some(o => o.mimoPrehled) && ' Obory bez jednotné zkoušky, například učební obory s výučním listem, a několik dalších oborů přehled zatím nezahrnuje; uvádíme u nich jen název.'}</Zdroj>
+                <Zdroj>Jen obory s aspoň 10 společnými uchazeči. Pořadí na přihlášce říká, kam kdo chtěl víc, ne jak je obor těžký: tatáž škola bývá u různých uchazečů výš i níž.{[...kontext.vys, ...kontext.niz].some(o => o.mimoPrehled) && ' Obory bez jednotné zkoušky, například učební obory s výučním listem, a několik dalších oborů přehled zatím nezahrnuje a nemají u nás vlastní stránku.'}</Zdroj>
               </Dukaz>
             )}
             {dk && (

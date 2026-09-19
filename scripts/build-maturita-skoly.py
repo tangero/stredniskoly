@@ -127,6 +127,7 @@ def nacti(cesta: Path, rok: int) -> tuple[list[dict], dict]:
 
     vystup = []
     pocty = {"redizo": 0, "redizo_smo16": 0}
+    videne: set[tuple[str, str, str]] = set()
     for radek in radky:
         trideni = str(radek[ident["TRIDENI"]] or "").strip()
         if trideni not in pocty:
@@ -140,11 +141,18 @@ def nacti(cesta: Path, rok: int) -> tuple[list[dict], dict]:
                 if idx is not None:
                     zaznam[pole] = cislo(radek[idx])
             predmety[klic] = zaznam
+        redizo = str(radek[ident["REDIZO"]]).strip()
+        smo16 = "CELKEM" if trideni == "redizo" else str(radek[ident["SMO16"]]).strip()
+        # Přejímací podmínka 3 (návrh §8) žádá kontrolu duplicit. Škola s více pracovišti má
+        # ve zdroji jediný řádek na skupinu oborů; druhý řádek téhož klíče by první tiše přepsal.
+        if (trideni, redizo, smo16) in videne:
+            raise ValueError(f"{cesta.name}: duplicitní řádek {trideni} {redizo} {smo16}")
+        videne.add((trideni, redizo, smo16))
         vystup.append({
             "trideni": trideni,
-            "redizo": str(radek[ident["REDIZO"]]).strip(),
+            "redizo": redizo,
             "nazev": str(radek[ident["NAZEV SKOLY"]] or "").strip(),
-            "smo16": "CELKEM" if trideni == "redizo" else str(radek[ident["SMO16"]]).strip(),
+            "smo16": smo16,
             "smo16_nazev": str(radek[ident["SMO16 - NAZEV"]]).strip() if "SMO16 - NAZEV" in ident else None,
             "predmety": predmety,
         })

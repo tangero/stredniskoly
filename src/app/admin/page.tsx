@@ -10,6 +10,7 @@ import {
   getOtevreneNavrhy,
   getLinkaFronta,
   getBehyActions,
+  getNovinkyPrehled,
   formatDatumCz,
   formatDatumCasCz,
   stariSlovy,
@@ -53,6 +54,13 @@ function Poznamka({ children }: { children: React.ReactNode }) {
   return <p className="text-sm text-slate-500 italic">{children}</p>;
 }
 
+/** České počítadlo odběratelů: 1 odběratel, 2–4 odběratelé, 5+ odběratelů. */
+function odberateleSlovy(n: number): string {
+  if (n === 1) return '1 odběratel';
+  if (n < 5) return `${n} odběratelé`;
+  return `${n} odběratelů`;
+}
+
 export default async function AdminPage({ searchParams }: Props) {
   const { k } = await searchParams;
 
@@ -69,12 +77,13 @@ export default async function AdminPage({ searchParams }: Props) {
   }
 
   const dnes = new Date();
-  const [sady, portal, navrhy, linka, behyActions] = await Promise.all([
+  const [sady, portal, navrhy, linka, behyActions, novinky] = await Promise.all([
     getStavDatovychSad(dnes),
     getPortalPrehled(),
     getOtevreneNavrhy(dnes),
     getLinkaFronta(),
     getBehyActions(),
+    getNovinkyPrehled(),
   ]);
 
   const sadyPoTerminu = sady.filter((s) => s.stav !== 'OK').length;
@@ -94,6 +103,8 @@ export default async function AdminPage({ searchParams }: Props) {
               {pocetNavrhu === null ? 'moderace nenakonfigurována' : `${pocetNavrhu} ${pocetNavrhu === 1 ? 'návrh čeká' : pocetNavrhu < 5 ? 'návrhy čekají' : 'návrhů čeká'}`}
               {' · '}
               {sadyPoTerminu === 0 ? 'všechny sady v pořádku' : `${sadyPoTerminu} ${sadyPoTerminu === 1 ? 'sada' : sadyPoTerminu < 5 ? 'sady' : 'sad'} po termínu`}
+              {' · '}
+              {novinky === null ? 'odběr novinek nenakonfigurován' : `${odberateleSlovy(novinky.odberatele)} novinek`}
               {' · '}
               {posledniBehOk === null
                 ? 'běhy automatizací neznámé'
@@ -180,7 +191,61 @@ export default async function AdminPage({ searchParams }: Props) {
             )}
           </Sekce>
 
-          {/* 2. Datové sady */}
+          {/* 2. Odběr novinek */}
+          <Sekce titulek="Odběr novinek">
+            {novinky === null ? (
+              <Poznamka>
+                Odběr novinek není nakonfigurován (chybí DATABASE_URL), nebo se databáze
+                nepodařilo přečíst.
+              </Poznamka>
+            ) : (
+              <>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="inline-block px-2 py-1 rounded bg-blue-50 text-blue-700 text-xs font-medium">
+                    aktivní odběratelé: {novinky.odberatele}
+                  </span>
+                  <span className="inline-block px-2 py-1 rounded bg-slate-100 text-slate-700 text-xs font-medium">
+                    noví za 7 dní: {novinky.nove7}
+                  </span>
+                  <span className="inline-block px-2 py-1 rounded bg-slate-100 text-slate-700 text-xs font-medium">
+                    noví za 30 dní: {novinky.nove30}
+                  </span>
+                  <span className="inline-block px-2 py-1 rounded bg-slate-100 text-slate-700 text-xs font-medium">
+                    čeká na potvrzení: {novinky.cekajiciPotvrzeni}
+                  </span>
+                  <span
+                    className={`inline-block px-2 py-1 rounded text-xs font-medium ${
+                      novinky.frontaCeka > 0
+                        ? 'bg-amber-50 text-amber-700'
+                        : 'bg-slate-100 text-slate-700'
+                    }`}
+                  >
+                    fronta e-mailů: {novinky.frontaCeka}
+                  </span>
+                </div>
+
+                {novinky.dleZdroje.length > 0 && (
+                  <>
+                    <h3 className="text-sm font-semibold text-slate-700 mb-2">
+                      Odkud se přihlašují
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {novinky.dleZdroje.map((z) => (
+                        <span
+                          key={z.zdroj}
+                          className="inline-block px-2 py-1 rounded bg-slate-100 text-slate-700 text-xs font-medium"
+                        >
+                          {z.zdroj}: {z.pocet}
+                        </span>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </>
+            )}
+          </Sekce>
+
+          {/* 3. Datové sady */}
           <Sekce titulek="Datové sady">
             {sady.length === 0 ? (
               <Poznamka>Registr stavu datových sad se nepodařilo načíst.</Poznamka>
@@ -228,7 +293,7 @@ export default async function AdminPage({ searchParams }: Props) {
             )}
           </Sekce>
 
-          {/* 3. Datová linka */}
+          {/* 4. Datová linka */}
           <Sekce titulek="Datová linka">
             {linka.ulohy.length === 0 && linka.behy.length === 0 ? (
               <Poznamka>Frontu datové linky se nepodařilo načíst, nebo je prázdná.</Poznamka>
@@ -307,7 +372,7 @@ export default async function AdminPage({ searchParams }: Props) {
             )}
           </Sekce>
 
-          {/* 4. Automatizace */}
+          {/* 5. Automatizace */}
           <Sekce titulek="Automatizace (GitHub Actions)">
             {behyActions === null ? (
               <Poznamka>Automatizace nejsou nakonfigurované (chybí GITHUB_TOKEN).</Poznamka>

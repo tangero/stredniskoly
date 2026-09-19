@@ -108,6 +108,13 @@ const nextConfig: NextConfig = {
         destination: '/vysledky/2026',
         permanent: true,
       },
+      // Průvodci sloučeni do jednoho návodu (docs/pruvodce-vyberem-skoly-2027.md).
+      // Kotva míří na krok, který nese obsah zrušené stránky.
+      {
+        source: '/jak-funguje-prijimani',
+        destination: '/jak-vybrat-skolu#jak-se-rozhoduje',
+        permanent: true,
+      },
     ];
   },
 

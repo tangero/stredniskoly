@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.26 · 18. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.27 · 18. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -447,7 +447,14 @@ Doprovodná pole ze stejného bloku: `registered` přihlášení, `took` konají
 
 **Změna výpočtu 17. 9. 2026 (dřív podíl z konajících).** Do té doby tenhle soupis tvrdil, že `passRate` je podíl z konajících, a stránka školy vedle procenta vypisovala počet konajících. Vznikl z toho nesoulad: „98,2 %“ vedle „55 z 55“. Zjištěno při revizi maturitního oddílu po zpětné vazbě na Gymnáziu Nad Štolou 14. 9. 2026. Doklad z `public/maturita_skoly.json`: škola s `registered` 47, `took` 46, `passed` 45 má `passRate` 95,74, což je 45/47; z konajících by vyšlo 97,83. Souhlasí i se soupisem zdrojů, oddíl 2.11, kde je `PODÍL ÚSPĚŠNÝCH (%)` definovaný jako úspěšní z přihlášených. **Hodnoty v datech se nemění**, mění se jejich výklad a jmenovatel uváděný na stránce.
 
-**Neříká**, kolik žáků školu dokončí: kdo k maturitě vůbec nešel, je v `absent`, a škola může úspěšnost zvýšit tím, že slabé žáky ke zkoušce nepustí. Proto se vedle podílu uvádí i počet nekonajících.
+**Neříká**, kolik žáků školu dokončí: kdo k maturitě vůbec nešel, je v `absent`, a škola může úspěšnost zvýšit tím, že slabé žáky ke zkoušce nepustí. Proto se vedle podílu uvádí i počet nekonajících, viz Neúčast u maturity.
+
+### Neúčast u maturity
+Podíl přihlášených ke společné části, kteří zkoušku **nekonali**, jak ho počítá CERMAT ve sloupci `NEÚČAST (%)`: `NEKONALI / PŘIHLÁŠENI`. Pole `nonParticipationRate`, počet `absent`, jednotka procenta, rozsah 0 až 100. Zdroj: CERMAT, `MZ{rok}j_SC_skolobory.xlsx`, jen blok společné části; předmětové bloky sloupec nemají. Vzorec ověřen dopočtem z počtů ve všech řádcích ročníků 2021 až 2026 (`docs/podklady/overeni-sloupcu-maturity.json`).
+
+**Na stránce** jen jako důkaz: sloupec „ke zkoušce nešlo“ v tabulce po letech na stránce školy, vždy počet a vedle něj podíl („2 (3,9 %)“). Při méně než deseti konajících se podíl nezveřejňuje a zůstane jen počet. Pojem pro text je „ke zkoušce nešlo“ podle [slovníku pojmů](slovnik-pojmu.md), nikdy „neúčast“ ani „absence“.
+
+**Neříká důvod.** Za nekonáním může být nemoc, neuzavřený ročník i odklad na podzimní termín; data rozdíl neznají. Proto se u čísla nikdy neuvádí výklad a proto je v důkazní tabulce, ne v hlavní kartě: jeden rok je u malé školy jeden člověk. Smysl dává až opakovaně vysoká hodnota napříč roky (maturitní návrh, §5.1, metrika 5).
 
 ### Maturita za celou školu
 Společná část za právnickou osobu bez rozdělení na skupiny oborů: `skoly[redizo].roky[rok].CELKEM`, v souboru CERMATu třídění `redizo`. Stejná pole jako u skupiny oborů.
@@ -472,6 +479,8 @@ Průměrný percentil maturantů školy v předmětu, pole `averagePercentile`. 
 Slovní souhrn toho, jak často měla škola v češtině zařazení `above`, spočítaný **přes všechny skupiny oborů školy dohromady**: podíl = součet let se zařazením `above` děleno součtem let se zařazením. Prahy: 1 „každý rok“, od 0,75 „téměř každý rok“, nad 0,5 „ve většině let“, právě 0,5 „zhruba v polovině let“, nad 0 „jen v některých letech“, 0 „v žádném ze sledovaných let“. Počítá se při zobrazení z `public/maturita_skoly.json` (`src/lib/skola-vyklad.ts`, `jakCastoNadStredem`).
 
 Roky bez zařazení se do jmenovatele nepočítají, stejně jako u ukazatele Počet let nad skupinou oborů, který zůstává výchozím tvarem pro jednu skupinu oborů.
+
+**Okno jsou čtyři roky a zůstávají čtyři** (`pocet = 4` v `shrnutiMaturity`). Delší okno se 18. 9. 2026 měřilo a zamítlo: většinové zařazení z jednoho roku trefí následující ročník v 62,1 %, ze dvou v 65,6 %, ze tří v 65,7 %, ze čtyř v 64,8 % a z pěti v 66,2 %; u malých škol pod 30 konajícími 61,2 / 65,1 / 64,6 / 64,9 / 65,4 %. Přínos končí u druhého roku, zatímco šestileté okno by změnilo znění u 403 z 1 627 škol ve skupině oborů a o 156 zmenšilo pokrytí. Doklad `docs/podklady/delka-rady-maturity.json`, počítá `scripts/delka-rady-maturity.py`.
 
 **Neříká** nic o vývoji v čase: je to podíl, ne trend. U školy s více skupinami oborů míchá roky různých skupin, proto se v textu uvádí s předmětem a s tím, že jde o všechny obory („v češtině byli maturanti všech oborů téměř každý rok nad středem podobných škol“).
 
@@ -552,6 +561,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.27 | **Neúčast u maturity zavedena jako ukazatel** (18. 9. 2026): `nonParticipationRate` se zobrazuje jako sloupec „ke zkoušce nešlo“ v tabulce po letech, počet a podíl z přihlášených. Vzorec ověřen dopočtem z počtů ve všech řádcích ročníků 2021 až 2026. U hesla Frekvence let nad středem podobných škol zapsáno, že okno jsou čtyři roky a proč se neprodlužuje: předpovědní schopnost je od druhého roku plochá (62,1 → 65,6 → 65,7 → 64,8 → 66,2 %), a to i u malých škol, zatímco šestileté okno by změnilo znění u 403 z 1 627 škol ve skupině oborů. |
 | 1.26 | **Rozbor výsledků přijatých po předmětech** (18. 9. 2026): tři nové ukazatele odpovídají na otázku, jestli jde slabší předmět dohnat tím druhým. Nejslabší přijatý v předmětu se uvádí **s oběma svými výsledky**, takže popisuje skutečnou kombinaci, ne dvojici minim ze dvou lidí zamítnutou ve verzi 1.22. Podlaha slabšího předmětu roste s obtížností přijetí (medián 23 bodů u velmi těžkých oborů proti 7 tam, kde kapacita nerozhodovala). Nevyrovnaní přijatí jsou jediný údaj z trojice se jmenovatelem, a proto jediný, který snese slovní výklad a srovnání. |
 | 1.25 | **Celostátní medián uchazečů zaveden jako ukazatel** (18. 9. 2026) do hlavičky `pasma_prijeti_{rok}.json`: 46,0 bodu v roce 2025 a 49,0 v roce 2026. Bez něj se bodové výsledky dvou ročníků nesmějí postavit vedle sebe, protože posun dělá obtížnost testu. Vzniklo kvůli nové sekci „S kolika body se sem lidé dostali“ na stránce oboru, která ukazuje body za dva ročníky vedle sebe a u každého i výsledek prostředního uchazeče v celé zemi. |
 | 1.24 | **Párování ročníků podle mapy nabídek** (18. 9. 2026): změna mezi ročníky se počítá i u nabídek spárovaných mapou nabídek (shoda textu zaměření, ručně ověřený pár), tedy stejně, jak párují stránky. Spárovaných nabídek 2025–2026 je 2 934 místo 2 858; stabilita podílu přijatých ze soutěžících vychází na 1 913 nabídkách 0,727 místo 0,723, stejné zařazení obtížnosti 48,9 % místo 48,6 %. |

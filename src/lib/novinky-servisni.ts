@@ -101,6 +101,10 @@ export async function odesliServisni(
       otiskObsahu: 'servisni',
       max: 1,
       kdy,
+      // Servisní e-mail posílá výhradně položku, která odeslání vyvolala.
+      // Bez omezení by dávka zamkla nejstarší čekající položku zprávy — tedy
+      // potenciálně cizí adresu místo té, na kterou se člověk právě přihlásil.
+      jenPolozkaId: polozka.id,
       // Tělo se skládá z položek, které transakce A opravdu zamkla; adresu
       // bere z identity nebo ze žádosti, ne z parametru.
       telo: (polozky) =>

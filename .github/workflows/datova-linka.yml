@@ -101,14 +101,6 @@ jobs:
         run: |
           gh label create nova-data --color 1b4d7a --description "Datová linka, nová data k převzetí" --force
 
-      # Zpracování uchazečů bere názvy oborů, které katalog nevede, z rejstříku
-      # škol MŠMT. Snímek má třicet megabajtů a do gitu se neukládá, takže na
-      # runneru není a bez něj by se úloha zastavila. Otisk hlídá, že se do
-      # zpracování nedostane jiný snímek, než se kterým jsou porovnaná data.
-      - name: Snímek rejstříku škol
-        if: steps.krok.outputs.krok == 'beh' || steps.krok.outputs.krok == 'schvaleni'
-        run: python3 scripts/stahni-rejstrik.py
-
       - name: Zjištění, příprava, oznámení
         if: steps.krok.outputs.krok == 'beh'
         run: python3 scripts/datova-linka.py ${{ steps.krok.outputs.nanecisto }} beh ${{ steps.krok.outputs.kanaly }}

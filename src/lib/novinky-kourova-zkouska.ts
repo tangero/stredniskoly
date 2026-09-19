@@ -128,10 +128,13 @@ export async function kourovaZkouska(kdy = new Date()): Promise<VysledekZkousky>
         zprava: 'novinky/potvrzeni',
         ucel: 'potvrzeni',
         otiskObsahu: 'kourova-zkouska',
-        // Jedna položka: dávka projde hranicí předání, takže se její kvóta naúčtuje
-        // jako spotřebovaná (konzervativní pravidlo kontraktu). Poklid ji pak vrátí.
+        // Jedna položka, a to výhradně ta zkušební: bez omezení by zkouška
+        // zamkla nejstarší čekající položku, tedy klidně skutečného člověka.
+        // Dávka projde hranicí předání, takže se její kvóta naúčtuje jako
+        // spotřebovaná (konzervativní pravidlo kontraktu). Poklid ji pak vrátí.
         max: 1,
         kdy,
+        jenPolozkaId: prihlaseni.polozkaId,
         telo: (polozky) => JSON.stringify(polozky.map((p) => ({ id: p.id }))),
       }),
     );

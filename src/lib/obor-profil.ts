@@ -150,6 +150,18 @@ export function cislo(n: number, desetin = 0): string {
   return n.toLocaleString('cs-CZ', { minimumFractionDigits: desetin, maximumFractionDigits: desetin });
 }
 
+/**
+ * Název nabídky do seznamů a porovnání: „Gymnázium · všeobecné studium, 8leté“.
+ *
+ * Délka studia je součástí názvu, protože bez ní **nejdou odlišit nabídky téže školy**: víceletá
+ * gymnázia mají shodný obor i zaměření a lišila by je jen čísla vedle nich. Stejný tvar nese
+ * nadpis oboru na stránce školy, aby se po prokliku název nezměnil.
+ */
+export function nazevNabidky(obor: string, zamereni?: string | null, delka?: number | null): string {
+  const zaklad = zamereni ? `${obor} · ${zamereni}` : obor;
+  return delka ? `${zaklad}, ${delka}leté` : zaklad;
+}
+
 export type StavNabidky = 'nevesli_se' | 'naplneno' | 'nenaplneno';
 
 /** Co se v 1. kole stalo: nevešli se kvůli kapacitě, naplněno bez odmítnutých, nenaplněno. */

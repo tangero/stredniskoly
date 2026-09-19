@@ -1,0 +1,222 @@
+{
+  "popis": "Má smysl prodlužovat maturitní řadu kvůli ukazateli „počet let nad středem podobných škol“? Předpovědní schopnost okna a dopad na znění. Podmínky výpočtu jsou v hlavičce skriptu.",
+  "spocteno": "2026-09-18",
+  "zdroj": {
+    "soubor": "/private/tmp/claude-501/-Users-imac-Github-stredniskoly/d8e48ce0-f773-4a91-be98-e4040541ebcc/scratchpad/maturita_6let.json",
+    "roky": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "skol": 1136,
+    "skol_ve_skupine_oboru": 2476
+  },
+  "predpoved_posledniho_rocniku": {
+    "rocnik": 2026,
+    "podle_skupin": {
+      "vsechny": [
+        {
+          "okno_let": 1,
+          "roky_okna": [
+            2025
+          ],
+          "paru": 2011,
+          "sedi": 1249,
+          "podil_%": 62.1
+        },
+        {
+          "okno_let": 2,
+          "roky_okna": [
+            2024,
+            2025
+          ],
+          "paru": 1862,
+          "sedi": 1222,
+          "podil_%": 65.6
+        },
+        {
+          "okno_let": 3,
+          "roky_okna": [
+            2023,
+            2024,
+            2025
+          ],
+          "paru": 1783,
+          "sedi": 1172,
+          "podil_%": 65.7
+        },
+        {
+          "okno_let": 4,
+          "roky_okna": [
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "paru": 1695,
+          "sedi": 1099,
+          "podil_%": 64.8
+        },
+        {
+          "okno_let": 5,
+          "roky_okna": [
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "paru": 1623,
+          "sedi": 1075,
+          "podil_%": 66.2
+        }
+      ],
+      "male_pod_30_konajicich": [
+        {
+          "okno_let": 1,
+          "roky_okna": [
+            2025
+          ],
+          "paru": 1083,
+          "sedi": 663,
+          "podil_%": 61.2
+        },
+        {
+          "okno_let": 2,
+          "roky_okna": [
+            2024,
+            2025
+          ],
+          "paru": 949,
+          "sedi": 618,
+          "podil_%": 65.1
+        },
+        {
+          "okno_let": 3,
+          "roky_okna": [
+            2023,
+            2024,
+            2025
+          ],
+          "paru": 869,
+          "sedi": 561,
+          "podil_%": 64.6
+        },
+        {
+          "okno_let": 4,
+          "roky_okna": [
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "paru": 791,
+          "sedi": 513,
+          "podil_%": 64.9
+        },
+        {
+          "okno_let": 5,
+          "roky_okna": [
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "paru": 739,
+          "sedi": 483,
+          "podil_%": 65.4
+        }
+      ],
+      "velke_od_30_konajicich": [
+        {
+          "okno_let": 1,
+          "roky_okna": [
+            2025
+          ],
+          "paru": 928,
+          "sedi": 586,
+          "podil_%": 63.1
+        },
+        {
+          "okno_let": 2,
+          "roky_okna": [
+            2024,
+            2025
+          ],
+          "paru": 913,
+          "sedi": 604,
+          "podil_%": 66.2
+        },
+        {
+          "okno_let": 3,
+          "roky_okna": [
+            2023,
+            2024,
+            2025
+          ],
+          "paru": 914,
+          "sedi": 611,
+          "podil_%": 66.8
+        },
+        {
+          "okno_let": 4,
+          "roky_okna": [
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "paru": 904,
+          "sedi": 586,
+          "podil_%": 64.8
+        },
+        {
+          "okno_let": 5,
+          "roky_okna": [
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "paru": 884,
+          "sedi": 592,
+          "podil_%": 67.0
+        }
+      ]
+    }
+  },
+  "dopad_na_zneni": {
+    "kratke_okno": [
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "dlouhe_okno": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "se_zarazenim_ve_vsech_letech_kratkeho_okna": 1783,
+    "se_zarazenim_ve_vsech_letech_dlouheho_okna": 1627,
+    "zneni_se_lisi": 403,
+    "zmeny": {
+      "v žádném ze sledovaných let → jen v některých letech": 99,
+      "zhruba v polovině let → jen v některých letech": 80,
+      "téměř každý rok → ve většině let": 62,
+      "téměř každý rok → zhruba v polovině let": 55,
+      "každý rok → téměř každý rok": 42,
+      "zhruba v polovině let → ve většině let": 31,
+      "jen v některých letech → zhruba v polovině let": 20,
+      "každý rok → ve většině let": 14
+    }
+  }
+}

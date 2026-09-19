@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useEffect, useRef, useMemo, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { krajNames } from '@/types/school';
+import { bezVyberu, ctiSurovyVyber, odebiratVyber, pocetZvazovanych } from '@/lib/vyber-zvazovanych';
 
 interface SearchResult {
   href?: string;
@@ -47,6 +48,7 @@ export function Header() {
   const searchDropdownRef = useRef<HTMLDivElement>(null);
   const searchCacheRef = useRef<Map<string, { expiresAt: number; results: SearchResult[] }>>(new Map());
   const router = useRouter();
+  const vyber = useSyncExternalStore(odebiratVyber, ctiSurovyVyber, bezVyberu);
 
   const navLinks = [
     { href: '/prijimacky-2027', label: 'Kalendář 2027' },
@@ -55,9 +57,10 @@ export function Header() {
     { href: '/skoly', label: 'Analýza škol' },
     { href: '/dostupnost', label: 'Dojezdovost MHD' },
     { href: '/regiony', label: 'Regiony' },
-    { href: '/jak-vybrat-skolu', label: 'Průvodce' },
-    { href: '/jak-funguje-prijimani', label: 'Jak to funguje?' },
-    { href: '/issues', label: 'Nahlášené chyby' },
+    { href: '/jak-vybrat-skolu', label: 'Jak vybrat školu' },
+    // Počet je null, dokud se výběr nenačte v prohlížeči; na serveru se proto vykreslí bez závorky
+    // a hydratace sedí. Ukládají se obory, ne školy, takže i počet je v oborech.
+    { href: '/simulator?vyber=1', label: pocetZvazovanych(vyber) ? `Zvažované obory (${pocetZvazovanych(vyber)})` : 'Zvažované obory' },
   ];
 
   // Načíst seznam krajů

@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   vzdalenostKm, smerStupne, proKohoObor, delkaSlovy, oboryVetou, pocetOboru, shrnutiMaturity, letNadSlovy, jakCastoNadStredem, nazevSkupinyMaturity,
+  nazevSObci,
 } from '../src/lib/skola-vyklad.ts';
 
 const machar = { lat: 50.184405, lon: 14.6701023 };
@@ -79,4 +80,17 @@ test('jak často nad středem podobných škol a názvy skupin', () => {
   assert.equal(jakCastoNadStredem([{ letNad: 0, letSeZarazenim: 0 }]), null);
   assert.equal(nazevSkupinyMaturity('GY8', 'GYMNÁZIUM 8LETÉ'), 'osmileté gymnázium');
   assert.equal(nazevSkupinyMaturity('SEK', 'EKONOMICKÉ OBORY'), 'ekonomické obory');
+});
+
+test('název školy s obcí v hlavičce', () => {
+  assert.equal(nazevSObci('Gymnázium, Nad Štolou', 'Praha'), 'Gymnázium, Nad Štolou, Praha');
+  assert.equal(nazevSObci('Gymnázium J. S. Machara', 'Brandýs nad Labem-Stará Boleslav'), 'Gymnázium J. S. Machara, Brandýs nad Labem-Stará Boleslav');
+  // Obec už v názvu je, nepřipojuje se podruhé.
+  assert.equal(nazevSObci('GYMNÁZIUM JANA PALACHA PRAHA 1, Pštrossova', 'Praha'), 'GYMNÁZIUM JANA PALACHA PRAHA 1, Pštrossova');
+  assert.equal(nazevSObci('Gymnázium Aš, Hlavní', 'Aš'), 'Gymnázium Aš, Hlavní');
+  assert.equal(nazevSObci('Hotelová škola Mariánské Lázně, Komenského', 'Mariánské Lázně'), 'Hotelová škola Mariánské Lázně, Komenského');
+  // Krátká obec se nesmí chytit uvnitř slova: „Aš“ ve „Vlašim“, „Bor“ v „Tábor“.
+  assert.equal(nazevSObci('Gymnázium Vlašim', 'Aš'), 'Gymnázium Vlašim, Aš');
+  assert.equal(nazevSObci('Střední škola, Plzeňská 231', 'Bor'), 'Střední škola, Plzeňská 231, Bor');
+  assert.equal(nazevSObci('Střední škola', ''), 'Střední škola');
 });
