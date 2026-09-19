@@ -493,15 +493,22 @@ export async function dosadSpravce(
     await zamkniPlatnou(s, puvodni.id);
     await zneplatni(s, puvodni.id);
     if (puvodniZustaneEditorem && normalizujEmail(puvodni.email) !== udaje.email) {
-      await vlozRoli(s, {
-        redizo,
-        osobaId: puvodni.osoba_id,
-        role: 'editor',
-        udaje: { ...puvodni, zverejnit_jmeno: false },
-        zmenuProvedl,
-        duvod,
-        nahrazujeId: puvodni.id,
-      });
+      try {
+        await vlozRoli(s, {
+          redizo,
+          osobaId: puvodni.osoba_id,
+          role: 'editor',
+          udaje: { ...puvodni, zverejnit_jmeno: false },
+          zmenuProvedl,
+          duvod,
+          nahrazujeId: puvodni.id,
+        });
+      } catch (chyba) {
+        if (jeKolize(chyba)) {
+          throw new PortalChyba('skola_ma_spravce', 'Správce mezitím změnil někdo jiný. Načtěte stránku znovu.');
+        }
+        throw chyba;
+      }
     }
   }
   // Nová osoba může být editorem téže školy: její editorský záznam nahradíme.
@@ -679,6 +686,39 @@ export async function spotrebujOdkaz(s: Spojeni, nonce: string, ucel: string): P
     [nonce, ucel],
   );
   return r.rowCount === 1;
+}
+
+// ----------------------------------------------------------------------------
+// Výmaz kontaktu člověka bez účtu (host z rejstříkové adresy, návrh bez účtu):
+// jeho e-mail je jen v událostech a případně v pozvánce, osoba_id nemá.
+// ----------------------------------------------------------------------------
+
+export async function vymazKontakt(s: Spojeni, email: string, kdo: string, duvod: string): Promise<number> {
+  if (!duvod.trim()) throw new PortalChyba('neplatne_udaje', 'Výmaz musí mít důvod.');
+  const cisty = normalizujEmail(email);
+  if (!jePlatnyEmail(cisty)) throw new PortalChyba('neplatne_udaje', 'Zadejte platnou e-mailovou adresu.');
+  const maUcet = await s.dotaz(`select 1 from portal_role where lower(email) = $1 limit 1`, [cisty]);
+  if (maUcet.rowCount > 0) {
+    throw new PortalChyba('neplatne_udaje', 'Adresa patří osobě s účtem; použijte výmaz u její role ve škole.');
+  }
+  const udalosti = await s.dotaz<{ redizo: string }>(
+    `update portal_udalost set detail = detail - array['kontakt', 'email']
+      where lower(detail->>'kontakt') = $1 or lower(detail->>'email') = $1
+      returning redizo`,
+    [cisty],
+  );
+  const pozvanky = await s.dotaz<{ redizo: string }>(
+    `update portal_pozvanka
+        set email = 'vymazano+' || left(id::text, 8) || '@invalid',
+            zruseno = case when prijato is null then coalesce(zruseno, now()) else zruseno end
+      where lower(email) = $1
+      returning redizo`,
+    [cisty],
+  );
+  for (const redizo of new Set([...udalosti.rows, ...pozvanky.rows].map((r) => r.redizo))) {
+    await zapisUdalost(s, redizo, null, 'osoba_anonymizovana', { provedl: `admin:${kdo}`, duvod, bez_uctu: true });
+  }
+  return udalosti.rows.length + pozvanky.rows.length;
 }
 
 // ----------------------------------------------------------------------------

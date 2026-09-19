@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'fs';
-import { MIGRACE_PORTALU, TABULKY_PORTALU } from '../src/lib/portal-schema.ts';
+import { MIGRACE_PORTALU } from '../src/lib/portal-schema.ts';
 
 const SQL = readFileSync(new URL('../db/migrace/002-portal.sql', import.meta.url), 'utf8');
 

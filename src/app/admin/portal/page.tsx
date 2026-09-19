@@ -125,6 +125,15 @@ async function PrehledSkol() {
           ))}
         </tbody>
       </table>
+      <h3 className="text-lg font-semibold mt-6 mb-2">Výmaz kontaktu bez účtu</h3>
+      <p className="text-sm text-slate-500 mb-2">
+        Pro člověka, který poslal návrh bez účtu (host z rejstříkové adresy). Osobu s účtem vymažte u její role ve škole.
+      </p>
+      <Formular redizo="" akce="vymazat_kontakt">
+        <input name="email" type="email" required aria-label="E-mail k výmazu" placeholder="e-mail" className={VSTUP} />
+        <Duvod />
+        <button className={TLACITKO}>Vymazat kontakt</button>
+      </Formular>
     </section>
   );
 }

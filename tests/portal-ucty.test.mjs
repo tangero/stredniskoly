@@ -22,6 +22,7 @@ import {
   zrusPozvanku,
   zapisUdalost,
   otevrenePozvanky,
+  vymazKontakt,
 } from '../src/lib/portal-ucty.ts';
 
 // Skutečný Postgres v procesu (PGlite): unikátní částečné indexy, `for update`
@@ -317,4 +318,16 @@ test('odkaz spotřebovaný v transakci, která selhala, jde použít znovu', asy
   );
   assert.equal(await spotrebujOdkaz(s, 'nonce-x', 'prihlaseni'), true);
   assert.equal(await spotrebujOdkaz(s, 'nonce-x', 'prihlaseni'), false);
+});
+
+test('výmaz kontaktu bez účtu: zmizí z událostí, osobu s účtem odmítne', async () => {
+  const { db, s, tx } = await novaDb();
+  await tx((t) => uplatniKod(t, 'a', '600000030', JANA));
+  await zapisUdalost(s, '600000030', null, 'host_z_rejstriku', { issue: 7, kontakt: 'Host@Skola.cz' });
+  await assert.rejects(vymazKontakt(s, 'host@skola.cz', 'patrick', ''), (e) => e.kod === 'neplatne_udaje');
+  await assert.rejects(vymazKontakt(s, JANA.email, 'patrick', 'žádost'), (e) => e.kod === 'neplatne_udaje');
+  assert.equal(await tx((t) => vymazKontakt(t, 'host@skola.cz', 'patrick', 'žádost')), 1);
+  const obsah = JSON.stringify((await db.query(`select detail from portal_udalost`)).rows);
+  assert.ok(!obsah.toLowerCase().includes('host@skola.cz'));
+  assert.ok(obsah.includes('"issue":7'));
 });

@@ -145,7 +145,7 @@ Nový pojem na webu „profil spravuje“ se zapíše do [slovníku pojmů](slov
 | Neschválený návrh a odchod editora | návrh zůstává v issue, moderace posuzuje obsah, ne osobu |
 | Pozvánka na adresu, která už roli ve škole má | nový záznam jen při změně role; jinak hláška |
 | Ztráta přístupu k e-mailu | admin změní e-mail s důvodem |
-| Žádost o smazání osobních údajů | platné záznamy se zneplatní, v historii se jméno a e-mail nahradí zástupným textem ve všech školách osoby; pozvánky na její adresy ztratí adresu (nevyřízené se zruší); z událostí zmizí `kontakt` s její adresou. Stopa „kdo změnil údaj školy“ zůstane jako „editor školy“. GitHub issue osobní údaje nenesou, takže se výmaz jich netýká |
+| Žádost o smazání osobních údajů | platné záznamy se zneplatní, v historii se jméno a e-mail nahradí zástupným textem ve všech školách osoby; pozvánky na její adresy ztratí adresu (nevyřízené se zruší); z událostí zmizí `kontakt` s její adresou. Stopa „kdo změnil údaj školy“ zůstane jako „editor školy“. GitHub issue osobní údaje nenesou, takže se výmaz jich netýká. Kontakt člověka bez účtu (host) maže administrace podle e-mailu |
 
 ## 8. Facebooková skupina: odloženo
 
@@ -199,11 +199,14 @@ Review: `docs/review-pr-111-portal-ucty.md` v hlavním pracovním stromu. Nasaze
 | 17 | `--out` mimo `.gitignore` | Uvnitř repozitáře jen do `data/portal/kody-plaintext.json`. |
 | drobnosti | | Úklid mapy omezení četnosti; `PortalUcet` maže pole pozvánky jen po úspěchu; změna e-mailu u osoby bez rolí vrací srozumitelnou hlášku; popisky a `role="status"` v administraci; oprava komentáře u rejstříkového odkazu; pozvánka neslibuje „jedním kliknutím“; sloupec `prijal_role_id` v 2.1. Změna e-mailu na adresu jiné osoby se odmítne (`email_obsazen`). |
 
+**Re-review (19. 9. 2026)** schválilo merge a našlo tři nízká rezidua: výmaz kontaktu hosta bez účtu neměl cestu v administraci (doplněno: `vymazKontakt`, formulář „Výmaz kontaktu bez účtu“ v `/admin/portal`), vložení editorského záznamu původního správce v `dosadSpravce` bylo mimo zachycení kolize (doplněno) a kontrola `email_obsazen` je jen v aplikaci (přijato, viz níže). Nepoužitý import v `tests/portal-schema.test.mjs` odstraněn.
+
 **Vědomě přijatá rizika:**
 
 - *Relace bez stavu na 30 dní.* Cookie nese jen podepsané `osoba_id`; role se čtou při každém požadavku, takže zrušení role v administraci platí okamžitě. Ukradenou cookie osoby, která roli dál má, jde zneplatnit jen změnou `PORTAL_MAGIC_SECRET` (odhlásí všechny). Pro 20 škol přijatelné.
 - *Rejstříkový odkaz není jednorázový.* Platí do vypršení; u školy se správcem vede jen k návrhu jako host a správce dostane upozornění. Jednorázový by rozbil sdílenou rejstříkovou schránku, ze které odkaz otevírá víc lidí.
 - *Souběžná migrace.* `/api/portal/migrace` se spouští jednou ručně; příkazy jsou `if not exists`, souběh by skončil chybou jednoho z běhů, ne poškozením.
+- *Jedinečnost adresy mezi osobami hlídá aplikace, ne index.* Změna e-mailu na adresu jiné osoby se odmítne (`email_obsazen`), ale unikátní index na `lower(email)` nejde: tatáž osoba má stejnou adresu v rolích ve více školách. Souběh by vyžadoval, aby dvě osoby ve stejné chvíli potvrdily odkazem tutéž novou adresu.
 - *Tabulka `portal_odkaz` roste.* Řádek na přihlášení, v pilotu stovky. Úklid (řádky starší než platnost tokenu) až při rozšíření.
 
 ## Historie

@@ -4,6 +4,7 @@ import { jeDbNastavena, vTransakci } from '@/lib/novinky-db';
 import { jeNasPuvod } from '@/lib/portal-relace';
 import {
   anonymizujOsobu,
+  vymazKontakt,
   dosadSpravce,
   overUdajeOsoby,
   PortalChyba,
@@ -67,6 +68,11 @@ export async function POST(request: NextRequest) {
       case 'anonymizovat':
         await vTransakci((s) => anonymizujOsobu(s, pole('osoba_id'), KDO, duvod));
         break;
+      case 'vymazat_kontakt': {
+        const pocet = await vTransakci((s) => vymazKontakt(s, pole('email'), KDO, duvod));
+        if (pocet === 0) return zpet('chyba', 'Adresa se v portálu nenašla.');
+        break;
+      }
       default:
         return zpet('chyba', 'Neznámá akce.');
     }
