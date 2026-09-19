@@ -1,4 +1,6 @@
 import { PortalZaznam, zaznamMaObsah, formatDatumCz } from '@/lib/portal-skol';
+import type { VerejnySpravce } from '@/lib/portal-ucty';
+import { profilSpravujeText } from '@/lib/portal-verejne';
 
 // Zobrazovaná pole v daném pořadí; popis_skoly se vykresluje odděleně („od školy“)
 const DISPLAY_FIELDS: Array<{ key: string; label: string; typ?: 'url' | 'ubytovani' }> = [
@@ -14,8 +16,26 @@ const DISPLAY_FIELDS: Array<{ key: string; label: string; typ?: 'url' | 'ubytova
   { key: 'prestupy', label: 'Přestupy v průběhu studia' },
 ];
 
-export function SchoolPortalSection({ zaznam }: { zaznam: PortalZaznam | null }) {
-  if (!zaznamMaObsah(zaznam)) return null;
+interface SchoolPortalSectionProps {
+  zaznam: PortalZaznam | null;
+  /** Platný správce profilu; jméno jen se souhlasem (docs/ucty-portalu-skol-2027.md, 3). */
+  spravce?: VerejnySpravce | null;
+}
+
+const Spravuje = ({ spravce }: { spravce: VerejnySpravce }) => (
+  <p className="text-xs text-slate-500">{profilSpravujeText(spravce)}</p>
+);
+
+export function SchoolPortalSection({ zaznam, spravce = null }: SchoolPortalSectionProps) {
+  if (!zaznamMaObsah(zaznam)) {
+    if (!spravce) return null;
+    return (
+      <section className="bg-white px-6 py-4 rounded-xl shadow-sm mb-8">
+        <Spravuje spravce={spravce} />
+        <p className="text-sm text-slate-600 mt-1">Škola zatím údaje o sobě nedoplnila.</p>
+      </section>
+    );
+  }
   const z = zaznam!;
 
   const nejnovejsi = Object.values(z.udaje)
@@ -58,6 +78,11 @@ export function SchoolPortalSection({ zaznam }: { zaznam: PortalZaznam | null })
           </span>
         )}
       </div>
+      {spravce && (
+        <div className="-mt-3 mb-4">
+          <Spravuje spravce={spravce} />
+        </div>
+      )}
 
       {radky.length > 0 && (
         <dl className="divide-y divide-slate-100">

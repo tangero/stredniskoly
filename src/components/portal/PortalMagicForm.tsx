@@ -37,7 +37,7 @@ export function PortalMagicForm() {
   if (stav === 'odeslano') {
     return (
       <div className="rounded-lg bg-green-50 border border-green-200 px-4 py-3 text-sm text-green-800">
-        Pokud adresu známe, poslali jsme na ni odkaz pro úpravu profilu školy. Odkaz platí 72 hodin.
+        Pokud adresu známe, poslali jsme na ni odkaz pro přihlášení. Odkaz platí 72 hodin.
       </div>
     );
   }
@@ -46,7 +46,7 @@ export function PortalMagicForm() {
     <form onSubmit={handleSubmit} className="space-y-3">
       <div className="flex flex-col sm:flex-row gap-3">
         <label htmlFor="portal-email" className="sr-only">
-          E-mail školy z rejstříku MŠMT
+          E-mail školy z rejstříku MŠMT nebo váš e-mail
         </label>
         <input
           id="portal-email"
@@ -54,7 +54,7 @@ export function PortalMagicForm() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="e-mail školy z rejstříku MŠMT"
+          placeholder="e-mail školy z rejstříku nebo váš e-mail"
           className="flex-1 rounded-lg border border-[#c9d4e1] px-4 py-3 focus:border-[#0074e4] focus:outline-none focus:ring-2 focus:ring-blue-200"
         />
         <button

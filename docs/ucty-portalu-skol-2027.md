@@ -1,6 +1,6 @@
 # Účty portálu pro školy: správce, editoři a pilot 20 škol
 
-Verze 1.1 · 19. 9. 2026 · Schváleno zadavatelem 19. 9. 2026.
+Verze 1.2 · 19. 9. 2026 · Schváleno zadavatelem 19. 9. 2026, kroky 1–6 realizovány.
 
 Navazuje na [portál pro školy](portal-pro-skoly-2027.md) (v1.5). Ten dnes pracuje s kódem vázaným na školu: kdo kód zná, edituje, a o osobě nevíme nic. Pilot s 20 školami potřebuje vědět, **kdo** za školu data zadává, ukázat to veřejně a umět to změnit.
 
@@ -163,9 +163,23 @@ Kdyby se k ní později přistoupilo, otevře druhý vstup (odkaz na e-mail z re
 6. Veřejné „profil spravuje“ na stránce školy a vyhledání na `/pro-skoly`; přepis textu o jménech; slovník pojmů.
 7. Běh celé cesty naostro na testovací škole, pak kódy pro 20 škol a text pozvánky.
 
+### 9.1 Realizace kroků 1–6 (19. 9. 2026, větev `feat/portal-ucty`)
+
+| Krok | Kde | Poznámka |
+|---|---|---|
+| 1 | `src/lib/portal-schema.ts`, `src/lib/portal-ucty.ts`, `tests/portal-ucty.test.mjs` | Testy nad PGlite (skutečný Postgres v paměti), invariant jednoho správce hlídá částečný unikátní index. |
+| 2 | `/api/portal/kod`, `/api/portal/uplatnit`, `/api/portal/prihlasit`, `/pro-skoly/prihlaseni/[token]` | Kód jde v těle POST, ne v adrese. Odkaz pro přihlášení se spotřebuje až tlačítkem (POST), protože skenery školní pošty otevírají odkazy GET. |
+| 3 | `/pro-skoly/profil`, `/api/portal/ucet`, `/pro-skoly/pozvanka/[token]`, `/pro-skoly/email/[token]` | Změna e-mailu platí pro osobu, tedy ve všech jejích školách. |
+| 4 | `/api/portal-skoly` | S databází účtů kód formulář přímo neotevírá (musí se nejdřív uplatnit), jinak by ho mohl používat kdokoli, komu byl přeposlán. Issue nese „Zadal: jméno, funkce (role)“. |
+| 5 | `/admin/portal`, `/admin/portal/akce`, tabulka pilotu v `/admin` | Akce leží pod `/admin`, protože cookie `admin_token` má `path=/admin`. Sloupce „Kód uplatněn“ a „Schváleno“ z oddílu 4 tabulka zatím nemá: uplatnění je vidět podle správce, schválení v moderaci výše na stránce. |
+| 6 | `src/lib/portal-verejne.ts`, `SchoolPortalSection`, `/api/portal/skoly`, `/pro-skoly` | Cache s tagem `portal-spravci` se zneplatní hned (`expire: 0`), jinak nejpozději za hodinu. |
+
+**Odchylky od návrhu:** formulář v profilu předvyplňuje schválené údaje, ne čekající návrh; kdo návrh opravuje, musí změny zadat znovu. Pozvaný editor souhlas se zveřejněním nedává, protože se jméno editora nezveřejňuje nikdy.
+
 ## Historie
 
 | Verze | Změna |
 |---|---|
 | 1.0 | První návrh po rozhodnutích zadavatele 19. 9. 2026. |
 | 1.1 | Schváleno. Správcem osobních údajů je Patrick Zandl (obchodní název Zandl AI Therapy Company). Facebooková skupina odložena. |
+| 1.2 | Kroky 1–6 realizovány (oddíl 9.1) s odchylkami: přihlášení tlačítkem kvůli skenerům pošty, kód bez databáze účtů funguje postaru, s ní jen k založení správce. |

@@ -105,7 +105,8 @@ export const PortalZalozeni = ({ nazevSkoly, auth, predvyplnenyEmail = '' }: Por
 
       <p className="text-xs text-slate-500">
         Jméno, funkci a e-mail zpracovává Patrick Zandl jako správce osobních údajů, aby vám mohl
-        posílat přihlašovací odkazy a u každé změny profilu vést, kdo ji provedl. Údaje nepředáváme
+        posílat přihlašovací odkazy a u každé změny profilu vést, kdo ji provedl. Uchováváme je po
+        dobu trvání účtu a v historii změn profilu, dokud nepožádáte o výmaz. Údaje nepředáváme
         dalším stranám. Zrušení účtu nebo výmaz údajů vyřídíte na{' '}
         <a href="mailto:patrick@zandl.cz" className="underline">
           patrick@zandl.cz
