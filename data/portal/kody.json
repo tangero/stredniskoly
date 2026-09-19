@@ -19,6 +19,126 @@
       "redizo": "600171701",
       "vytvoreno": "2026-09-13",
       "revokovano": true
+    },
+    {
+      "hash": "2b86f0e8e1a0b8f4fe058b41630bc7a30467ec9bd3d0db5a4ee2a660db027acd",
+      "redizo": "600006247",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "c6960bb38d26aedb25b718161dd848bdf1f798ef6f6c2cb8bbf1031fb179de07",
+      "redizo": "600005721",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "de239c1e67280173b13014a19af087bec4d24adc2d01f9e91f72ff2c8bb23ac5",
+      "redizo": "600005976",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "ff73b90a6611c380d2e9198f0ffd0b1d0ae125b3e4d4e0fd29154f6d2ebcba10",
+      "redizo": "600005071",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "716a865de0120ea29f2387e44b6fc8d1368de9d17226b7eeb32704dd7e929ec1",
+      "redizo": "600004643",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "87ad92d2aeb22642f29c9710613cb84102693bd106760d4c121d9f829d7ba6b5",
+      "redizo": "600013448",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "ede32579ef7206272f7c3765ac1796dcd32ed7eef7e479986d53e6e870ea33fd",
+      "redizo": "600019861",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "3248550fd6069870dd80667eacaeb768e4014e7397eac68a562076dcb2334a92",
+      "redizo": "600013502",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "cc59e07232c7a01065d216dc5e5653c435cbc57a46542f966c62d35d7955081b",
+      "redizo": "600017648",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "851e5686dcf0528358a74d249e0aa89f5b93af329e7b9f9a78e47de149dbf69f",
+      "redizo": "600017460",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "d34363e2cdc41a60543229d35507f77f26d1ff271e01455803e305eebefac06e",
+      "redizo": "600009602",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "22729ee669d05df8285cd768499d1e5331acc2f9aad56f8e5a1bbeb7f12dde4d",
+      "redizo": "600010589",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "a26e7582ad651e2e9a6ea9824603cc8779cad1303a9582fa7e04d88cea5b760f",
+      "redizo": "600016927",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "d26174019a5112773877cc4ec5b79b0689a542e331e2c9acc1cce050fb10e4c5",
+      "redizo": "600007995",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "0726c4ba0b53fa50e4580108b4d75c0e94fda13dfafb006f06c994e0bf845c3c",
+      "redizo": "600011658",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "0026c3238bc7dc994fb605f4ffdc7294fa219fa25c2af8593b6c9be8bca8db82",
+      "redizo": "600011453",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "063317ca89df4fcb3216bff8f8ab522ee831002d30231295b77c5a51533fba56",
+      "redizo": "600012310",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "b582d1e107183f7d465ae71ba503489ac6ad3a97a2ac415cfa227ccfca89a08e",
+      "redizo": "600171051",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "7c537d459bc6dbcb8ca3635776a4cd02fb6b884871a72bf499ba419a954983fa",
+      "redizo": "600171230",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "828f739681909f8b2a5d8a78d711fc276e7cdb188df6768aa2d437af90f955eb",
+      "redizo": "600007065",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
     }
   ]
 }
