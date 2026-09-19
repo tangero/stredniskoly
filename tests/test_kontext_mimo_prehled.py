@@ -224,6 +224,13 @@ class TestIndexVMape(ZakladKatalogu):
         self.assertEqual(mapa["600000001_65-42-M/01"]["skola"], "Z katalogu")
         self.assertTrue(mapa["600000001_65-42-M/01"]["jpz"])
 
+    def test_zaznam_bez_kkov_dostane_klic_z_id(self):
+        # Stejně jako klicOboru() na webu: klíč z id, obor je v katalogu, takže nejde do mimo_prehled.
+        katalog = {"2026": [{"redizo": "600000001", "id": "600000001_65-51-H/01", "nazev_display": "Z katalogu",
+                             "obec": "Zkušebnice", "obor": "Kuchař - číšník"}]}
+        zaznam = self.mapa(katalog)["600000001_65-51-H/01"]
+        self.assertEqual((zaznam["skola"], zaznam["jpz"]), ("Z katalogu", True))
+
     def test_vychozi_volani_bez_indexu_je_chyba(self):
         # Generátory volají nazvy_oboru() bez parametrů; na výchozím chování stojí celá pojistka.
         with unittest.mock.patch.object(nazvy_oboru, "INDEX", Path("/neexistuje/nazvy-oboru.json")):

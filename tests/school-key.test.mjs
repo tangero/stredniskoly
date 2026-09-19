@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { indexKlicuRocniku, klicZdrojeProStranku, normalizeSchoolKey, uniqueSchoolIndex } from '../src/lib/school-key.ts';
+import { indexKlicuRocniku, klicOboru, klicZdrojeProStranku, normalizeSchoolKey, rocnikyKatalogu, uniqueSchoolIndex } from '../src/lib/school-key.ts';
 
 test('normalizuje diakritiku a oddělovače při zachování oboru', () => {
   assert.equal(normalizeSchoolKey('123_79-41-K/41_IT & Sítě'), '123_79-41-K/41_it_site');
@@ -42,4 +42,18 @@ test('klíč souhrnu: přednost má letošní nabídka z mapy, pak vlastní klí
   // Mapa nepřebije vlastní klíč, když letošní záznam pod mapovaným klíčem ve zdroji chybí.
   const bezLetosniho = new Map([[normalizeSchoolKey('1_A_gastronomie_kuchar'), '1_A_gastronomie_kuchar']]);
   assert.equal(klicZdrojeProStranku('1_A_Gastronomie___kuchař', indexRocniku, bezLetosniho, k => zdroj[k][2025] !== undefined), '1_A_gastronomie_kuchar');
+});
+
+test('ročníky katalogu od zobrazeného ke starším, stejně jako scripts/nazvy_oboru.py', () => {
+  assert.deepEqual(rocnikyKatalogu(['2024', '2025', '2026'], '2026'), ['2026', '2025', '2024']);
+  assert.deepEqual(rocnikyKatalogu(['2026', '2027'], '2027'), ['2027', '2026']);
+  // Ročník naimportovaný před přepnutím v registru se nečte (nález P1 review PR #109).
+  assert.deepEqual(rocnikyKatalogu(['2026', '2027'], '2026'), ['2026']);
+  assert.deepEqual(rocnikyKatalogu(['2025', '2026'], null), ['2026', '2025']);
+});
+
+test('klíč oboru z kkov, jinak z id, stejně jako scripts/nazvy_oboru.py', () => {
+  assert.equal(klicOboru({ redizo: '1', kkov: '79-41-K/41', id: '1_79-41-K/41_x' }), '1_79-41-K/41');
+  assert.equal(klicOboru({ redizo: '1', id: '1_79-41-K/41' }), '1_79-41-K/41');
+  assert.equal(klicOboru({ redizo: '1', id: '' }), null);
 });
