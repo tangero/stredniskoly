@@ -163,6 +163,61 @@ export async function zapisUdaje(s: Spojeni, z: ZmenaProfilu): Promise<string[]>
   return zmenena;
 }
 
+export interface HistorieHodnoty {
+  id: string;
+  pole: string;
+  hodnota: string;
+  zdroj: PortalHodnota['zdroj'];
+  platne_od: string;
+  zneplatneno: string | null;
+  zmenu_provedl: string;
+  duvod: string | null;
+  jmeno: string | null;
+}
+
+/** Celá historie profilu školy od nejnovější, i se jménem editora. */
+export async function historieProfilu(s: Spojeni, redizo: string): Promise<HistorieHodnoty[]> {
+  const r = await s.dotaz<HistorieHodnoty>(
+    `select p.id, p.pole, p.hodnota, p.zdroj, p.platne_od, p.zneplatneno, p.zmenu_provedl, p.duvod, r.jmeno
+       from portal_profil p left join portal_role r on r.id = p.role_id
+      where p.redizo = $1 order by p.platne_od desc, p.pole`,
+    [redizo],
+  );
+  return r.rows;
+}
+
+/**
+ * Vrátí pole na hodnotu, kterou ta současná nahradila. Historie se nepřepisuje:
+ * platná hodnota se zneplatní a předchozí se vloží jako nový řádek. Když
+ * předchůdce není, pole se jen smaže. Vrací obnovenou hodnotu, nebo null.
+ */
+export async function vratPredchozi(
+  s: Spojeni,
+  z: { redizo: string; nazev: string; verze_prijimani: string; pole: string; kdo: string; duvod: string },
+): Promise<string | null> {
+  if (!z.duvod.trim()) throw new PortalChyba('neplatne_udaje', 'Návrat k předchozí verzi musí nést důvod.');
+
+  const r = await s.dotaz<{ predchozi: string | null }>(
+    `select s.hodnota as predchozi from portal_profil p
+       left join portal_profil s on s.id = p.nahrazuje_id
+      where p.redizo = $1 and p.pole = $2 and p.zneplatneno is null for update of p`,
+    [z.redizo, z.pole],
+  );
+  if (r.rows.length === 0) throw new PortalChyba('profil_zmenen', 'Pole už platnou hodnotu nemá.');
+
+  const predchozi = r.rows[0].predchozi ?? '';
+  await zapisUdaje(s, {
+    redizo: z.redizo,
+    nazev: z.nazev,
+    verze_prijimani: z.verze_prijimani,
+    udaje: { [z.pole]: predchozi },
+    zdroj: 'redakce',
+    zmenuProvedl: `admin:${z.kdo}`,
+    duvod: z.duvod,
+  });
+  return predchozi || null;
+}
+
 /** Zpětná oprava jedné hodnoty redakcí; důvod je povinný. */
 export async function opravRedakce(
   s: Spojeni,

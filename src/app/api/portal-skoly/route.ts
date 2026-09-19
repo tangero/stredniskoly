@@ -210,8 +210,9 @@ export async function POST(request: NextRequest) {
   }
   const redizo = autor.redizo;
 
-  // Validace payloadu (povolená pole, délky, URL, souhlas, e-mail)
-  const vysledek = validatePortalPayload(body);
+  // Validace payloadu (povolená pole, délky, URL, souhlas, e-mail). Přihlášený
+  // editor kontakt nezadává, bere se z jeho účtu.
+  const vysledek = validatePortalPayload(body, { kontaktPovinny: !autor.role });
   if (!vysledek.ok) {
     return NextResponse.json({ error: vysledek.error }, { status: 400 });
   }
@@ -226,7 +227,7 @@ export async function POST(request: NextRequest) {
     udaje_sedi: vysledek.udaje_sedi,
     nesrovnalost: vysledek.nesrovnalost,
     souhlas_cc_by: true,
-    kontakt_email: vysledek.kontakt_email,
+    kontakt_email: vysledek.kontakt_email || autor.role?.email || '',
   };
 
   const base = (process.env.PORTAL_BASE_URL || PORTAL_PRODUKCNI_BASE_URL).replace(/\/$/, '');

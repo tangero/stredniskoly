@@ -1,6 +1,6 @@
 # Portál pro školy: autorizace a sběr dat
 
-Verze 1.1 · 13. 9. 2026 · Schváleno k zpracování; ověřena proveditelnost datové schránky (oddíl 2.4).
+Verze 1.8 · 19. 9. 2026 · Schváleno k zpracování; od verze 1.8 se údaje od škol publikují bez předchozí moderace (oddíl 4).
 
 Navazuje na [návrh rozvoje 2027, oddíl 6 a 7](navrh-rozvoje-2027.md), kde je pilot ověřování profilů školami schválen koncepčně, a uzavírá jeho první otevřenou otázku: jak poznáme, že editor smí editovat profil této školy. Podklady: [zdroje dat](zdroje-dat.md), [systém poznámek ke školám](school-notes-system.md), [datová linka](datova-linka.md).
 
@@ -110,14 +110,32 @@ Profil funguje i bez školy: z dat, jak dnes. Neodpověď nikdy neodstraní úda
 
 **Odůvodnění.** Jakákoli povinnost by selektivně zvýhodňovala školy s administrativní kapacitou — přesně ta slepá skvrna, kvůli které byl InspIS nerovnoměrný. „Neověřeno školou" je čestný stav, ne trest. Klikací potvrzení minimalizuje cenu účasti: potvrdit 12 předvyplněných údajů je minuta práce, vyplňovat prázdný formulář je půl hodiny.
 
-## 4. Moderace a publikace
+**Předvyplňovat se smí jen tím, co škola sama potvrdila (od 19. 9. 2026).** Dny otevřených dveří, školné a přípravné kurzy se do polí už nepředvyplňují ze snímku InspIS. Zobrazí se vedle prázdného pole jako věta „Podle staršího profilu InspIS: …“, kterou musí člověk ze školy přepsat, ne odkliknout.
 
-- Návrhy vrstvy 0 i 1 čekají ve frontě; publikuje je člověk. Šablona fronty a schvalování se přejímá z [datové linky](datova-linka.md): úloha → schválení → PR.
-- Automaticky projde jen kosmetika od vrstvy 1 (překlep v textu od školy), nikdy čísla, termíny a kritéria.
-- Každý údaj na webu nese původ a datum: „potvrzeno školou 3. 11. 2026", „z dat CERMATu, srpen 2026", „neověřeno".
-- Zobrazení využije existující kanál poznámek (`public/school_notes.json`); sada se po realizaci zapíše do registru `public/stav_datovych_sad.json` podle [pravidel pro nový zdroj](zdroje-dat.md#6-jak-přidat-zdroj-nebo-sloupec).
+Důvod je doložený: první odeslání pilotu (issue #115, 19. 9. 2026) potvrdilo dny otevřených dveří **24. 11. 2022 a 10. 1. 2023** pro přijímací řízení 2027. Škola chybu neudělala — potvrdila, co jsme jí nabídli. [Zdroje dat](zdroje-dat.md), oddíl 2.8, u toho pole past popisují: „u části škol obsahuje data z roku 2014. Bez kontroly roku se nesmí zobrazovat jako termín.“ Předvyplnění tu past obcházelo tím, že z ní jedním kliknutím udělalo údaj se značkou „Potvrdila škola“.
 
-**Odůvodnění.** „Web se bez schválení nikdy nezmění" je zásada, kterou projekt už má zapsanou u externích zdrojů; u vstupu od tisíce dobrovolníků platí dvojnásob. Automatická kosmetika je jediná výjimka, protože bez ní by moderace zahltily překlepy.
+Věta o InspIS nikde neuvádí ročník, protože stáří samotné hodnoty neznáme; datum 11. 2. 2026 je datum exportu, ne údaje. U školného navíc platí, že chybějící hodnota neznamená zdarma — vyplněná je u 212 z 1 180 škol —, takže se u školy bez hodnoty nepíše nic. U přípravných kurzů je formulace volnější („škola přípravné kurzy nabízela“), protože ano/ne se mezi roky mění málo.
+
+Cena je zaplacená vědomě: potvrdit prázdný formulář je dražší než odkliknout předvyplněný. Levnější účast za cenu čtyři roky starých termínů se značkou „Potvrdila škola“ ale není úspora, je to škoda na jediné věci, kterou tu prodáváme.
+
+## 4. Publikace a zpětná moderace
+
+**Od 19. 9. 2026 platí opačné pořadí, než popisovala verze 1.0 tohoto dokumentu.** Původní znění je pod čarou na konci oddílu, protože obrat zásady je potřeba umět vysvětlit, ne zamlčet.
+
+- **Údaje od vrstvy 1 (pověřený člověk školy) se publikují bez předchozí moderace**, bez zbytečného odkladu — zápis do `portal_profil` zneplatní tag cache, strop je hodina. Na nic se nečeká.
+- **Pojistkou je zpětná oprava, ne fronta.** `portal_profil` nic nepřepisuje: oprava je nový řádek a zneplatnění starého, návrat k předchozí verzi totéž. Obojí z `/admin/portal` s povinným důvodem.
+- **Každá změna se hlásí zadavateli do Telegramu** hned. To je jediná věc, která ze zpětné moderace dělá moderaci a ne naději.
+- **Nesrovnalost v datech katalogu** je jediné, co dál míří do fronty (GitHub issue s labelem `portal-skoly`) — opravit ji musí člověk v datech, ne škola ve svém profilu.
+- **Vrstva 0 (kdokoli) tímhle nijak nezískává.** Hlásí přes „Nahlásit chybu“ a její podněty vyřizuje člověk; publikační právo má jen ověřený účet školy.
+- Každý údaj na webu nese původ a datum: „Potvrdila škola 3. 11. 2026“, „Opravila redakce 19. 9. 2026“, „z dat CERMATu, srpen 2026“, „neověřeno“ ([slovník pojmů](slovnik-pojmu.md), oddíl 4).
+
+**Odůvodnění.** Zásada „web se bez schválení nikdy nezmění“ vznikla pro externí datové zdroje a pro vstup od tisíce dobrovolníků. Pověřený člověk školy není ani jedno: je to jmenovitě známý člověk s ověřeným účtem, který o své škole ví víc než redakce a nese za údaj jméno. Fronta u něj nezvyšovala kvalitu, jen zdržovala — a zdržení má cenu, protože termín dne otevřených dveří má hodnotu jen do toho dne.
+
+Druhý důvod je poctivější: **fronta dávala značce „Potvrdila škola“ slib, který redakce stejně neplnila.** Moderace nemohla ověřit, jestli škola má opravdu školné 12 000 Kč; četla jen, jestli to vypadá smysluplně. Razítko „prošlo kontrolou“ tedy tvrdilo víc, než kdo doopravdy věděl. Značka proto ve slovníku pojmů dostala novou definici a přibyla vedle ní „Opravila redakce“.
+
+Cena tohohle obratu je jediná a je pojmenovaná: **chyba je na webu dřív, než ji někdo uvidí.** Proto s obratem zmizelo předvyplňování polí z InspIS (oddíl 3.4) — dokud tam bylo, největším zdrojem chyb jsme byli my sami.
+
+> **Původní znění (verze 1.0 až 1.7).** „Návrhy vrstvy 0 i 1 čekají ve frontě; publikuje je člověk. Šablona fronty a schvalování se přejímá z datové linky: úloha → schválení → PR. Automaticky projde jen kosmetika od vrstvy 1 (překlep v textu od školy), nikdy čísla, termíny a kritéria.“
 
 ## 5. Otevřené vydání
 
@@ -154,3 +172,4 @@ Podmínky, bez kterých to nejde:
 | 1.5 | Nepovinná pole „Stravování“ a „Kontakt na výchovného poradce“ (14. 9. 2026); stránka školy je zobrazuje u otázek „Jaká škola je“ a „Kde je“ ([stránka školy](stranka-skoly-2027.md), oddíl 7.3). |
 | 1.6 | Osobní účty (19. 9. 2026, [účty portálu](ucty-portalu-skol-2027.md)): kód nebo rejstříkový odkaz založí správce profilu, ten zve editory; každá změna vytváří nový záznam a starý zneplatní. Na stránce školy „Profil spravuje“ se jménem jen se souhlasem. Věta „Jména těch, kdo údaje zadali, nezveřejňujeme“ na `/pro-skoly` nahrazena. |
 | 1.7 | Review PR #111 (19. 9. 2026): GitHub issue návrhu nenese jméno, funkci ani kontaktní e-mail, ani v JSON payloadu (repozitář je veřejný); kontakt zůstává v neveřejné databázi účtů. Kódy se ukládají jako HMAC-SHA256 s pepřem `PORTAL_KOD_PEPPER`. Podrobnosti v [účtech portálu](ucty-portalu-skol-2027.md), oddíl 9.2. |
+| 1.8 | **Obrácené pořadí moderace (19. 9. 2026), oddíl 4.** Údaje od pověřených lidí školy se publikují bez předchozí moderace; pojistkou je zpětná oprava a oznámení do Telegramu. Obsah profilu se přestěhoval z těla GitHub issue do tabulky `portal_profil` (append-only, jedna platná hodnota na pole a školu, oprava i návrat jsou nový řádek). Stránka školy, předvyplnění formuláře i `/admin` čtou z databáze přes cache s tagem `portal-profil`; `public/portal_skol.json` je nově generovaný export (`npm run portal:export`) a záloha pro běh bez databáze. Do issue jde už jen nesrovnalost v datech katalogu, `scripts/portal-moderace.js` zrušen. InspIS nepředvyplňuje žádné pole (oddíl 3.4). Značka **Potvrdila škola** má novou definici a přibyla **Opravila redakce** ([slovník pojmů](slovnik-pojmu.md) 1.15). Přihlášený editor už nezadává kontaktní e-mail, bere se z účtu. |

@@ -204,6 +204,7 @@ Otázka rodiče: **jak čerstvý je posudek na tuhle školu**. Datum poslední i
 `data/inspis_school_profiles.json`, 1 180 škol, 43 polí. Vyplněnost je nerovnoměrná a `completeness_pct` ji udává. **Všechna pole používáme**, ale dvě mají past:
 
 - `dny_otevrenych_dveri` je volný text a u části škol obsahuje data z roku 2014. Bez kontroly roku se nesmí zobrazovat jako termín.
+  **Od 19. 9. 2026 se tímhle polem ani `rocni_skolne` a `pripravne_kurzy` nepředvyplňuje formulář portálu pro školy.** Škola je v pilotu odklikla jako „potvrdit beze změny“ a z termínu z roku 2022 se stal údaj se značkou „Potvrdila škola“ pro přijímací řízení 2027 (issue #115). Zobrazují se jen jako věta vedle prázdného pole, bez ročníku — stáří hodnoty neznáme, 11. 2. 2026 je datum exportu. Podrobně [portál pro školy](portal-pro-skoly-2027.md), oddíl 3.4.
 - `rocni_skolne` je vyplněné jen u 212 z 1 180 škol. Chybějící hodnota neznamená nula.
 
 Prázdná jsou pole `pripravne_kurzy`, `vyuziti_internetu_ve_vyuce`, `pristup_k_pc` a `stipendium`. Zdroj je nikdy nenaplnil.

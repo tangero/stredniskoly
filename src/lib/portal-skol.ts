@@ -207,10 +207,14 @@ export type PayloadVysledek =
   | { ok: false; error: string };
 
 /**
- * `bezKontaktu`: payload z veřejného GitHub issue kontaktní e-mail nenese
- * (osobní údaj, oddíl 7 docs/ucty-portalu-skol-2027.md); moderace ho nepotřebuje.
+ * `kontaktPovinny`: přihlášený editor má e-mail u účtu, takže ho ve formuláři
+ * nezadává znovu a server ho doplní z role. Vyžaduje se jen tam, kde účet není
+ * – u hosta, který přišel rejstříkovým odkazem.
  */
-export function validatePortalPayload(body: unknown, { bezKontaktu = false }: { bezKontaktu?: boolean } = {}): PayloadVysledek {
+export function validatePortalPayload(
+  body: unknown,
+  { kontaktPovinny = true }: { kontaktPovinny?: boolean } = {},
+): PayloadVysledek {
   if (!body || typeof body !== 'object') {
     return { ok: false, error: 'Neplatný formát dat.' };
   }
@@ -222,8 +226,9 @@ export function validatePortalPayload(body: unknown, { bezKontaktu = false }: { 
   }
 
   // Kontaktní e-mail editora (interní, nepublikujeme)
-  const kontakt_email = bezKontaktu ? '' : String(raw.kontakt_email || '').trim();
-  if (!bezKontaktu && (!kontakt_email || kontakt_email.length > 320 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(kontakt_email))) {
+  const kontakt_email = String(raw.kontakt_email || '').trim();
+  const platnyTvar = kontakt_email.length <= 320 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(kontakt_email);
+  if ((kontaktPovinny || kontakt_email) && !platnyTvar) {
     return { ok: false, error: 'Zadejte platný kontaktní e-mail (slouží jen pro dotazy redakce, nepublikujeme ho).' };
   }
 
@@ -274,12 +279,6 @@ export function validatePortalPayload(body: unknown, { bezKontaktu = false }: { 
   return { ok: true, udaje, udaje_sedi, nesrovnalost, kontakt_email };
 }
 
-/** Payload pro veřejné GitHub issue: bez kontaktního e-mailu. */
-export function verejnyPayload(payload: PortalPayload): Omit<PortalPayload, 'kontakt_email'> {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { kontakt_email, ...zbytek } = payload;
-  return zbytek;
-}
 
 // ----------------------------------------------------------------------------
 // Mapování schváleného payloadu do public/portal_skol.json

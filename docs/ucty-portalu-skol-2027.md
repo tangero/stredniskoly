@@ -1,6 +1,6 @@
 # Účty portálu pro školy: správce, editoři a pilot 20 škol
 
-Verze 1.4 · 19. 9. 2026 · Schváleno zadavatelem 19. 9. 2026, kroky 1–6 realizovány, review PR #111 vypořádáno (oddíl 9.2).
+Verze 1.5 · 19. 9. 2026 · Schváleno zadavatelem 19. 9. 2026, kroky 1–6 realizovány, review PR #111 vypořádáno (oddíl 9.2). Od verze 1.5 má obsah profilu vlastní tabulku `portal_profil` a publikuje se bez předchozí moderace.
 
 Navazuje na [portál pro školy](portal-pro-skoly-2027.md) (v1.5). Ten dnes pracuje s kódem vázaným na školu: kdo kód zná, edituje, a o osobě nevíme nic. Pilot s 20 školami potřebuje vědět, **kdo** za školu data zadává, ukázat to veřejně a umět to změnit.
 
@@ -45,7 +45,9 @@ Platí: pro jedno `redizo` smí existovat nejvýš jeden platný záznam `spravc
 
 **`portal_pozvanka`** — `id`, `redizo`, `email`, `role` (`editor`, výjimečně předání správce), `pozval_role_id`, `vytvoreno`, `plati_do` (7 dní), `prijato`, `prijal_role_id`, `zruseno`. Nevyřízená pozvánka na tutéž adresu ve škole je nejvýš jedna (částečný unikátní index); nová starou zruší.
 
-**`portal_udalost`** — provozní stopa pro `/admin` a Telegram: `redizo`, `role_id`, `typ` (`kod_uplatnen`, `prihlaseni`, `navrh_odeslan`, `pozvanka_odeslana`, `pozvanka_prijata`, `role_zmenena`, `role_zrusena`, `spravce_predan`, `spravce_dosazen`, `pozvanka_zrusena`, `odkaz_vyzadan`, `host_z_rejstriku`, `osoba_anonymizovana`), `kdy`, `detail` (jsonb bez tokenů, kódů a osobních údajů). Osobu určuje `role_id`, jméno se čte z `portal_role`; změna údajů zapíše jen názvy změněných polí. Výjimkou je `kontakt` u návrhu bez účtu, protože ten jinde uložený není; výmaz osoby ho maže.
+**`portal_udalost`** — provozní stopa pro `/admin` a Telegram: `redizo`, `role_id`, `typ` (`kod_uplatnen`, `prihlaseni`, `profil_zmenen`, `pozvanka_odeslana`, `pozvanka_prijata`, `role_zmenena`, `role_zrusena`, `spravce_predan`, `spravce_dosazen`, `pozvanka_zrusena`, `odkaz_vyzadan`, `host_z_rejstriku`, `osoba_anonymizovana`), `kdy`, `detail` (jsonb bez tokenů, kódů a osobních údajů). Osobu určuje `role_id`, jméno se čte z `portal_role`; změna údajů zapíše jen názvy změněných polí. Výjimkou je `kontakt` u návrhu bez účtu, protože ten jinde uložený není; výmaz osoby ho maže.
+
+**`portal_profil`** — obsah profilu školy, jeden řádek na jednu hodnotu jednoho pole: `redizo`, `pole`, `hodnota`, `nazev`, `verze_prijimani`, `zdroj` (`skola` | `redakce`), `role_id`, `platne_od`, `zneplatneno`, `nahrazuje_id`, `zmenu_provedl`, `duvod`. Platná hodnota je na dvojici (`redizo`, `pole`) nejvýš jedna (částečný unikátní index). Oprava i návrat k předchozí verzi jsou nový řádek a zneplatnění starého, smazané pole je zneplatnění bez následníka — historie proto zůstává celá a zpětná moderace nepotřebuje nic mazat. `nazev` a `verze_prijimani` se drží u řádku schválně: záznam nese, co škola zadala a pod jakým jménem, ne jak se škola jmenuje dnes. Osobní údaje tabulka nenese; `role_id` ukazuje na `portal_role`, odkud se jméno čte a kde se i maže.
 
 ### 2.2 Vstupy
 
@@ -184,7 +186,7 @@ Review: `docs/review-pr-111-portal-ucty.md` v hlavním pracovním stromu. Nasaze
 
 | # | Nález | Vypořádání |
 |---|---|---|
-| 1 | Osobní údaje ve veřejném GitHub issue | Issue nese jen roli autora. Z JSON payloadu v issue zmizel `kontakt_email` (`verejnyPayload`), moderace ho nevyžaduje (`validatePortalPayload(…, { bezKontaktu: true })`). Kontakt je v `portal_udalost` a v soukromém Telegramu. **Starší issue s e-mailem v repozitáři zůstávají, jejich úprava je na zadavateli.** |
+| 1 | Osobní údaje ve veřejném GitHub issue | Issue nese jen roli autora. Payload z issue od verze 1.5 zmizel celý: údaje profilu jdou do `portal_profil` a issue nese jen text nesrovnalosti. Kontakt je v `portal_udalost` a v soukromém Telegramu. **Starší issue s e-mailem v repozitáři zůstávají, jejich úprava je na zadavateli.** |
 | 2 | Neúplný výmaz osoby | Události osobní údaje nenesou (viz 2.1); `anonymizujOsobu` čistí i `portal_pozvanka.email` a `kontakt` v událostech. Test ověřuje, že po výmazu není e-mail ani příjmení v žádné tabulce portálu. |
 | 3 | Admin uděloval souhlas se jménem za druhého | Formulář administrace souhlas nenabízí; jde jen odvolat. Dosazený správce začíná bez zveřejnění. |
 | 4 | Důvod zrušení pozvánky se zahazoval | `zrusPozvanku` přijímá důvod, u admina povinný, ukládá ho do události. |
@@ -220,3 +222,4 @@ Review: `docs/review-pr-111-portal-ucty.md` v hlavním pracovním stromu. Nasaze
 | 1.2 | Kroky 1–6 realizovány (oddíl 9.1) s odchylkami: přihlášení tlačítkem kvůli skenerům pošty, kód bez databáze účtů funguje postaru, s ní jen k založení správce. |
 | 1.4 | Hlavička se školou na vstupu kódem a odkazem (oddíl 2.2): plný název, adresa, IČO, REDIZO, odkaz na profil. |
 | 1.3 | Review PR #111 vypořádáno (oddíl 9.2): issue bez osobních údajů, úplný výmaz osoby, HMAC kódů s pepřem a nové kódy pilotu, přijatá rizika. |
+| 1.5 | Obsah profilu má vlastní tabulku `portal_profil` (append-only, stejný vzor jako `portal_role`) a publikuje se bez předchozí moderace ([portál pro školy](portal-pro-skoly-2027.md), oddíl 4). GitHub issue nese už jen nesrovnalost v datech katalogu, tedy o jedno místo s osobními údaji míň. Událost `navrh_odeslan` nahrazena `profil_zmenen` (nese seznam změněných polí). Přihlášený editor nezadává kontaktní e-mail, bere se z `portal_role`; ve formuláři zůstává jen pro hosta z rejstříkové adresy. |

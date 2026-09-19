@@ -261,22 +261,25 @@ export function PortalEditForm({ auth, profil, pole, vychoziEmail = '' }: Props)
           </label>
         </div>
 
-        <div className="mb-4">
-          <label htmlFor="kontakt-email" className="block text-sm font-medium text-slate-700 mb-1">
-            Váš pracovní e-mail
-          </label>
-          <p className="text-xs text-slate-400 mb-1">
-            Slouží jen redakci pro případné dotazy k úpravám. Nikde ho nezveřejňujeme.
-          </p>
-          <input
-            id="kontakt-email"
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
-          />
-        </div>
+        {/* Přihlášený editor má e-mail u účtu; znovu ho nezadává. */}
+        {!('ucet' in auth) && (
+          <div className="mb-4">
+            <label htmlFor="kontakt-email" className="block text-sm font-medium text-slate-700 mb-1">
+              Váš pracovní e-mail
+            </label>
+            <p className="text-xs text-slate-400 mb-1">
+              Slouží jen redakci pro případné dotazy k úpravám. Nikde ho nezveřejňujeme.
+            </p>
+            <input
+              id="kontakt-email"
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+            />
+          </div>
+        )}
 
         {/* Honeypot – skryté pole pro boty */}
         <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px' }}>
