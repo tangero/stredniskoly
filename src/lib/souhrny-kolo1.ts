@@ -43,6 +43,7 @@ interface SouhrnNabidkySoubor {
   kkov: string;
   zamereni: string;
   skupina: string;
+  smo16?: string | null;
   kraj: string;
   kraj_nazev: string;
   parovani?: Record<string, 'shoda_klice' | 'jedna_ku_jedne' | 'text_zamereni' | 'overeno_rucne'>;
@@ -69,6 +70,8 @@ export interface SouhrnNabidky {
   krajNazev: string;
   redizo: string;
   kkov: string;
+  /** Skupina maturitních oborů (SMO16) ze zdroje; klíč, kterým se obor napojí na maturitu. */
+  smo16: string | null;
 }
 
 /** Pod tímto počtem nabídek ve skupině se percentil ve skupině nezobrazuje (slovník, oddíl 4). */
@@ -140,6 +143,7 @@ export async function getSouhrnNabidky(programId: string): Promise<SouhrnNabidky
     krajNazev: nabidka.kraj_nazev,
     redizo: nabidka.redizo,
     kkov: nabidka.kkov,
+    smo16: nabidka.smo16 ?? null,
   };
 }
 
@@ -170,3 +174,23 @@ export async function souhrnOboru(redizoKkov: string, rok: number): Promise<Souh
   return nalezene.length === 1 ? nalezene[0] : null;
 }
 
+
+/**
+ * Obory téže školy, které patří do stejné skupiny maturitních oborů (`SMO16`) v daném ročníku.
+ *
+ * Maturitní číslo platí za celou skupinu, ne za jeden obor. Když je v ní obor sám, smí se o něm
+ * mluvit přímo; jinak musí text říct, koho všeho se výsledek týká (návrh maturity na stránce
+ * oboru, oddíl 4). Vrací i obor, ze kterého se ptáme.
+ */
+export async function oboryVeSkupineMaturity(
+  redizo: string, smo16: string, rok: number,
+): Promise<{ klic: string; kkov: string; zamereni: string }[]> {
+  const { soubor } = await nacti();
+  const out: { klic: string; kkov: string; zamereni: string }[] = [];
+  for (const [klic, n] of Object.entries(soubor.nabidky)) {
+    if (n.redizo !== redizo || (n.smo16 ?? null) !== smo16) continue;
+    if (!n.roky[String(rok)]) continue;
+    out.push({ klic, kkov: n.kkov, zamereni: n.zamereni });
+  }
+  return out;
+}

@@ -197,3 +197,20 @@ export function letNadSlovy(s: ShrnutiMaturity): string {
   if (s.letNad === 0) return `v žádném ze ${s.letSeZarazenim} let`;
   return `${s.letNad >= 2 && s.letNad <= 4 ? 've' : 'v'} ${s.letNad} ze ${s.letSeZarazenim} let`;
 }
+
+/**
+ * Věta, koho se maturitní výsledek týká na stránce oboru.
+ *
+ * Číslo platí za skupinu maturitních oborů, ne za jeden obor. Obor, který je ve skupině sám,
+ * o sobě mluvit smí; jinak se musí říct, s kým výsledek sdílí. Do tří oborů se vyjmenují,
+ * nad tři se uvede počet — u 96 nabídek jich je ve skupině pět a víc a výčet by větu utopil.
+ * Rozhodnutí: docs/maturita-na-strance-oboru-2027.md, oddíl 4.
+ *
+ * `dalsiObory` jsou **ostatní** obory školy ve skupině, bez toho, na jehož stránce čtenář je.
+ */
+export function kohoSeTykaMaturita(m: { samotny: boolean; dalsiObory: string[] }): string {
+  if (m.samotny || m.dalsiObory.length === 0) return 'Maturanti tohoto oboru';
+  if (m.dalsiObory.length === 1) return `Maturanti tohoto oboru a oboru ${m.dalsiObory[0]}`;
+  if (m.dalsiObory.length === 2) return `Maturanti tohoto oboru a oborů ${m.dalsiObory[0]} a ${m.dalsiObory[1]}`;
+  return `Maturanti tohoto a dalších ${m.dalsiObory.length} oborů školy`;
+}

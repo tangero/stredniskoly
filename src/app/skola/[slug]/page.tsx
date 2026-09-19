@@ -346,7 +346,7 @@ export default async function SchoolDetailPage({ params }: Props) {
             </div>
           )}
 
-          <ProfilOboru data={profil} inspekceHref={extractions.length > 0 ? `/skola/${overviewSlug}/inspekce` : null} />
+          <ProfilOboru data={profil} inspekceHref={extractions.length > 0 ? `/skola/${overviewSlug}/inspekce` : null} skolaHref={`/skola/${overviewSlug}`} />
 
           <div className="mx-auto max-w-6xl space-y-6 px-4 pb-12">
             <SchoolPortalSection zaznam={portalZaznam} />
