@@ -35,9 +35,16 @@ test('modul a vygenerovaný .sql se nerozešly', () => {
 
 test('pořadí respektuje cizí klíče na portal_role', () => {
   const poradi = MIGRACE_PORTALU.map((p) => p.match(/^create table if not exists (\w+)/)?.[1]).filter(Boolean);
-  for (const t of ['portal_kod_uplatneni', 'portal_pozvanka', 'portal_udalost']) {
+  for (const t of ['portal_kod_uplatneni', 'portal_pozvanka', 'portal_udalost', 'portal_profil']) {
     assert.ok(poradi.indexOf('portal_role') < poradi.indexOf(t), t);
   }
+});
+
+test('jedna platná hodnota na pole a školu hlídá unikátní index', () => {
+  const index = MIGRACE_PORTALU.find((p) => p.includes('portal_profil_platna_hodnota'));
+  assert.ok(index);
+  assert.match(index, /unique index/);
+  assert.match(index, /on portal_profil \(redizo, pole\) where zneplatneno is null/);
 });
 
 test('jeden platný správce na školu hlídá unikátní index', () => {

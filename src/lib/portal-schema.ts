@@ -17,6 +17,7 @@ export const TABULKY_PORTALU = [
   'portal_pozvanka',
   'portal_odkaz',
   'portal_udalost',
+  'portal_profil',
 ] as const;
 
 export const MIGRACE_PORTALU: string[] = [
@@ -80,4 +81,36 @@ export const MIGRACE_PORTALU: string[] = [
   detail jsonb not null default '{}'::jsonb
 )`,
   `create index if not exists portal_udalost_skola on portal_udalost (redizo, kdy)`,
+  // Obsah profilu školy. Do 19. 9. 2026 ležel jen v těle GitHub issue a na web
+  // se dostal ručním schválením; od té doby se zapisuje sem a publikuje bez
+  // zbytečného odkladu (docs/portal-pro-skoly-2027.md, oddíl 4).
+  //
+  // Jeden řádek = jedna hodnota jednoho pole. Opravit hodnotu znamená přidat
+  // řádek a starému nastavit `zneplatneno`, takže zpětná oprava i návrat
+  // k předchozí verzi jsou jen zápis a historie zůstane celá. Smazané pole je
+  // `zneplatneno` bez následníka.
+  //
+  // `nazev` a `verze_prijimani` se drží u řádku schválně: záznam má nést, co
+  // škola zadala a pod jakým jménem, ne to, jak se jmenuje dnes. Stejně to má
+  // portal_role s jménem a e-mailem osoby.
+  `create table if not exists portal_profil (
+  id uuid primary key,
+  redizo text not null,
+  pole text not null,
+  hodnota text not null,
+  nazev text not null default '',
+  verze_prijimani text not null,
+  zdroj text not null default 'skola' check (zdroj in ('skola', 'redakce')),
+  role_id uuid references portal_role,
+  platne_od timestamptz not null default now(),
+  zneplatneno timestamptz,
+  nahrazuje_id uuid references portal_profil,
+  zmenu_provedl text not null,
+  duvod text
+)`,
+  // Jedna platná hodnota na pole a školu hlídá databáze, ne aplikace.
+  `create unique index if not exists portal_profil_platna_hodnota
+  on portal_profil (redizo, pole) where zneplatneno is null`,
+  // Časová osa profilu školy pro administraci a pro export otevřených dat.
+  `create index if not exists portal_profil_skola on portal_profil (redizo, platne_od)`,
 ];
