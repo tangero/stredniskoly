@@ -1,6 +1,6 @@
 # Maturitní výsledky a kvalita školy
 
-**Verze:** 1.4
+**Verze:** 1.5
 **Datum:** 18. 9. 2026
 **Stav:** schválený návrh, **vrstvy 1 a 2 jsou od 14. 9. 2026 v provozu na stránce školy** (sada `cermat-maturita`, jaro 2026, `public/maturita_skoly.json`). Vrstva 3 zůstává nepublikovaná podle §5.3. Co ještě chybí, je v oddílu 10. Verze 1.1 tvrdila, že implementace nezačala; to přestalo platit týž týden a hlavička se neopravila.
 
@@ -124,7 +124,7 @@ Inspekční zpráva, školné, dojezd, podpora a uplatnění mají zůstat oddě
 | Odpad mezi nástupem a maturitou (kolik přijatých dojde k maturitě jako prvomaturant) | Uchazečská data CERMAT s přijetím od 2024; první čistý pár vznikne s maturitou 2028 u čtyřletých oborů. Pro starší roky výkonové výkazy MŠMT (počty žáků v 1. ročníku podle školy), pokud jsou po školách veřejné. | Neověřeno. Nejcennější chybějící číslo: bez něj nelze odlišit vysokou úspěšnost od tvrdého výběru během studia. |
 | Uplatnění absolventů podle školy | Infoabsolvent dříve zveřejňoval nezaměstnanost absolventů po jednotlivých školách, nikoli jen po skupinách oborů. | Neověřeno, zda řada pokračuje a v jakém rozsahu. |
 | Přechod na VŠ podle střední školy | Veřejná řada po školách podle dostupných informací v ČR neexistuje. | Do plánu nepočítat; případný nález doložit. |
-| Mapa `KKOV` → `SMO16` | List `vysvětlivky` CERMAT a číselníky MŠMT. | Bez ní obor na webu maturitu nezobrazí; musí vzniknout v datovém profilu. |
+| ~~Mapa `KKOV` → `SMO16`~~ | — | **Položka zrušena 19. 9. 2026: mapa není potřeba.** Souhrny 1. kola nesou u každé nabídky sloupec `SKUPINA OBORŮ (16)` s týmiž kódy, jakými jsou klíčovaná maturitní data; generátor souhrnů ho jen zahazoval. Viz [maturita na stránce oboru](maturita-na-strance-oboru-2027.md), oddíl 2. |
 
 ## 4. Navržený datový kontrakt
 
@@ -401,6 +401,7 @@ Je to jediná otevřená položka oddílu 10.
 - Bylo odmítnuto tvrzení, že samotné propojení přes REDIZO dokládá stejnou kohortu nebo přidanou hodnotu školy.
 - 12. 9. 2026 byl návrh zpřesněn: profil výsledků ano, známka kvality ne; veřejné srovnání až po kontrole granularity, populace a velikosti vzorku.
 - 14. 9. 2026: import vrstvy 1 a 2 do runtime zahájen: `scripts/build-maturita-skoly.py` a zpracovatel datové linky vytvářejí `public/maturita_skoly.json` (jaro od 2021, společná část, čeština a matematika, zařazení proti mediánu skupiny ze škol s aspoň 10 konajícími). Reference ze škol s aspoň 10 konajícími odpovídá `MIN_N_REFERENCE` prototypu. Web soubor čte až po přepnutí období; zobrazení určuje [stránka školy](stranka-skoly-2027.md).
+- 19. 9. 2026 (v1.5): §3.6 tvrdil, že mapa `KKOV` → `SMO16` chybí a musí vzniknout; je to omyl. Kód skupiny oborů nese zdroj u každé nabídky ve sloupci `SKUPINA OBORŮ (16)` a soupis zdrojů to v oddílu 2.11 říká výslovně — jen ho generátor souhrnů nepřebíral. Doloženo napojením 2 782 z 3 091 nabídek, což jsou přesně čísla zkoušky z 13. 9. 2026.
 - 18. 9. 2026 (v1.4): čistá neúspěšnost zamítnuta a metrika 1 v §5.1 opravena. Není to mezera v datech: `failed / took` reprodukuje sloupec CERMATu přesně a identita `přihlášení = úspěšní + neúspěšní + nekonající` platí ve všech 3 375 záznamech. Zamítnutý je rozpad na češtinu a matematiku, protože 164 z 1 673 škol se neúspěšnými neuspělo ani v jednom z nich, nýbrž v cizím jazyce, jehož bloky jsou zavržené. Survivorship, kvůli kterému metrika vznikla, hlídá sloupec „ke zkoušce nešlo“. Oddíl 10 má nadále jedinou otevřenou položku, směrodatnou odchylku slovně.
 - 18. 9. 2026 (v1.3): ze zbývajících pěti položek oddílu 10 jsou tři hotové (neúčast jako podíl, ověření mapy sloupců, testy organizačních změn), jedna zamítnutá měřením (delší řada) a jedna vědomě odložená (odchylka slovně). Nově popsaná šestá: čistá neúspěšnost se neimportuje, ač ji §5.1 jmenuje. Ověření mapy sloupců nenašlo v souborech MZ žádnou záměnu; zároveň ukázalo, že skriptu chyběla kontrola duplicit ze přejímací podmínky 3, která se doplnila. Měření délky řady vyvrátilo předpoklad, se kterým položka „ročníky 2015–2022“ vznikla: delší okno zařazení nezpevní ani u malých škol.
 - 18. 9. 2026 (v1.2): hlavička a oddíly 3.5 a 10 srovnány se skutečností. Dokument od 14. 9. 2026 tvrdil dvě protichůdné věci: hlavička „implementace nezačala“ proti historii „import vrstvy 1 a 2 zahájen“. Platí historie; kontrola kódu 18. 9. 2026 doložila datovou linku, registr, výstup i zobrazení na stránce školy. Nově vypsáno pět konkrétních zbývajících položek (odchylka slovně, neúčast, běh prototypu nad skutečnými soubory, testy organizačních změn, ročníky před 2023) místo staré věty, že není hotové nic.

@@ -10,6 +10,15 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '2.14.0',
+    date: '19. 9. 2026',
+    title: 'Maturita i na stránce oboru',
+    changes: [
+      { type: 'new', text: 'Stránka oboru ukazuje maturitu: kolik maturantů ji udělalo, jak dopadli v češtině proti podobným školám a kolik z nich volilo matematiku. Dosud to bylo jen na stránce školy' },
+      { type: 'new', text: 'U oboru, který je ve své skupině sám, text mluví přímo o něm; když skupinu sdílí s dalšími obory školy, je vidět, kterých se výsledek týká. Obor bez maturantů to řekne rovnou' },
+    ],
+  },
+  {
     version: '2.13.0',
     date: '19. 9. 2026',
     title: 'Každý obor má vlastní stránku a jeden průvodce místo dvou',

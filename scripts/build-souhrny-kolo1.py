@@ -116,7 +116,12 @@ def nacti_rocnik(soubor: Path, rok: int) -> dict[str, dict]:
         z = zaznam(r)
         nabidky[klic] = {
             "redizo": str(r["REDIZO"]), "kkov": r["KKOV"], "zamereni": r.get("ZAMĚŘENÍ OBORU") or "",
-            "skupina": f"{r['TYP ŠKOLY']}_{r['DÉLKA STUDIA']}", "kraj": r["KRAJ"], "kraj_nazev": r["KRAJ - NÁZEV"], **z,
+            "skupina": f"{r['TYP ŠKOLY']}_{r['DÉLKA STUDIA']}",
+            # Skupina maturitních oborů (SMO16) přímo ze zdroje. Je to týž kód, jakým jsou
+            # klíčovaná maturitní data (docs/zdroje-dat.md, 2.11), takže obor lze napojit na
+            # maturitu bez jakékoli mapy KKOV → SMO16; ta se dosud vedla jako chybějící zdroj.
+            "smo16": (r.get("SKUPINA OBORŮ (16)") or "").strip() or None,
+            "kraj": r["KRAJ"], "kraj_nazev": r["KRAJ - NÁZEV"], **z,
             "podil_prijatych_ze_soutezicich": round(z["prijati"] / (z["prijati"] + z["capacity_rejected"]), 3)
             if z["prijati"] is not None and z["capacity_rejected"] is not None and z["prijati"] + z["capacity_rejected"] > 0 else None,
             "zarazeni_obtiznosti": zarazeni_obtiznosti(z),
@@ -291,6 +296,14 @@ def main() -> None:
     for rok in roky:
         soubor = a.zdroj_dir / f"PZ{rok}_kolo1_skolobory_vysledky.xlsx"
         rocniky[rok] = nacti_rocnik(soubor, rok)
+        # Pojistka proti tichému výpadku: sloupec se čte přes .get(), takže jeho přejmenování
+        # v dalším ročníku by nespadlo — jen by všechny nabídky dostaly smo16 = None a maturitní
+        # karta na stránce oboru by zmizela beze stopy.
+        bez_smo16 = [k for k, v in rocniky[rok].items() if not v.get("smo16")]
+        if bez_smo16:
+            raise ValueError(
+                f"{soubor.name}: {len(bez_smo16)} nabídek nemá skupinu oborů (SMO16); "
+                f"zkontroluj sloupec „SKUPINA OBORŮ (16)“, například {bez_smo16[0]}")
         zdroje[str(rok)] = {
             "soubor": soubor.name, "url": ZDROJ_URL + soubor.name,
             "sha256": hashlib.sha256(soubor.read_bytes()).hexdigest(), "nabidek": len(rocniky[rok]),
@@ -356,9 +369,11 @@ def main() -> None:
         posledni = v[roky_nabidky[-1]]
         kompaktni[k] = {
             "redizo": posledni["redizo"], "kkov": posledni["kkov"], "zamereni": posledni["zamereni"],
-            "skupina": posledni["skupina"], "kraj": posledni["kraj"], "kraj_nazev": posledni["kraj_nazev"],
+            "skupina": posledni["skupina"], "smo16": posledni.get("smo16"),
+            "kraj": posledni["kraj"], "kraj_nazev": posledni["kraj_nazev"],
             **({"parovani": v["parovani"]} if "parovani" in v else {}),
-            "roky": {r: {x: y for x, y in v[r].items() if x not in ("redizo", "kkov", "zamereni", "kraj", "kraj_nazev") and y is not None}
+            # smo16 je vlastnost nabídky, ne ročníku; drží se nahoře jako skupina.
+            "roky": {r: {x: y for x, y in v[r].items() if x not in ("redizo", "kkov", "zamereni", "kraj", "kraj_nazev", "smo16") and y is not None}
                      | ({"skupina": v[r]["skupina"]} if v[r]["skupina"] != posledni["skupina"] else {})
                      for r in roky_nabidky},
         }

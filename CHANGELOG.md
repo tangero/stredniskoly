@@ -8,6 +8,12 @@ z historie commitů.
 
 ## [Unreleased]
 
+## [2.14.0] - 2026-09-19
+
+### Přidáno
+- **Maturitní karta na stránce oboru** (`src/lib/obor-maturita.ts`, návrh `docs/maturita-na-strance-oboru-2027.md`) — tři čísla v oddílu „Jak se tu studuje“: úspěšnost s jmenovatelem, čeština proti středu podobných škol a dvojice „podíl volby matematiky a výsledek“; plný rozpad zůstává na stránce školy. Napojení přes `SMO16`: 2 782 z 3 091 nabídek dostane výsledek, 240 větu „obor zatím nemá maturanty“, 69 škol maturitní data nemá. Text rozlišuje obor, který je ve skupině sám (1 590), od oboru sdílené skupiny (1 192), kde vyjmenuje ostatní obory a nad tři uvede počet
+- **Pole `smo16` v `souhrny_kolo1.json`** — skupina maturitních oborů ze sloupce `SKUPINA OBORŮ (16)`, který generátor dosud zahazoval. **Mapa `KKOV` → `SMO16` tím přestává být chybějícím zdrojem**: maturitní návrh ji vedl v §3.6 jako nutnou k dohledání, přitom ji zdroj nese u každé nabídky a soupis zdrojů to v oddílu 2.11 říká výslovně. Ověřeno, že doplnění pole nezměnilo ani jednu z ostatních hodnot u 3 216 nabídek
+
 ## [2.13.0] - 2026-09-19
 
 ### Přidáno

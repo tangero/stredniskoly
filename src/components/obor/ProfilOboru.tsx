@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { ProfilOboruData, PoradiVKraji } from '@/lib/obor-profil-data';
+import { koho, type MaturitaOboru } from '@/lib/obor-maturita';
 import { MIN_PRIJATYCH_PRO_HRANICI } from '@/lib/pasma-prijeti';
 import { vetyDruhehoKola, VYSVETLENI_DRUHEHO_KOLA } from '@/lib/druhe-kolo-vyklad';
 import {
@@ -17,6 +18,8 @@ import {
 interface ProfilOboruProps {
   data: ProfilOboruData;
   inspekceHref: string | null;
+  /** Odkaz na přehled školy; maturitní karta z něj míří na oddíl „Jak si škola vede“. */
+  skolaHref: string;
 }
 
 const VYSVETLENI_SOUTEZICICH = 'tedy těch, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš';
@@ -211,7 +214,90 @@ function VetaPoradi({ p, rok, predchoziRok, podle, skupina, kraj, vysvetleni }: 
   );
 }
 
-export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
+/**
+ * Maturita: tři čísla a věta, koho se týkají.
+ *
+ * Číslo platí za skupinu maturitních oborů, ne za jeden obor, proto `koho()` rozliší obor,
+ * který je ve skupině sám, od oboru, který ji sdílí. Plný rozpad po letech i graf podobných
+ * škol zůstávají na stránce školy; tady je odkaz (docs/maturita-na-strance-oboru-2027.md).
+ */
+function Maturita({ m, skolaHref }: { m: MaturitaOboru; skolaHref: string }) {
+  const odkaz = (
+    <p className="mt-3 text-[15px]">
+      <Link href={`${skolaHref}#vede`} className="font-semibold text-[#0074e4] hover:underline">Jak si škola vede →</Link>
+      <span className="ml-2 text-slate-500">rozpad po letech a srovnání s podobnými školami</span>
+    </p>
+  );
+
+  // Bez maturantů a nezveřejněné výsledky jsou dva různé stavy a čtenář je musí rozeznat:
+  // v prvním o výsledku nevíme nic, ve druhém ho známe, ale malý ročník ho nesmí odhalit.
+  if (m.bezMaturantu || m.nezverejneno) {
+    return (
+      <div className="rounded-2xl border border-slate-200 bg-white p-5">
+        <p className="text-[15px] font-bold uppercase tracking-wide text-slate-500">Maturita</p>
+        <p className="mt-2 max-w-[62ch] text-[17px] leading-relaxed text-slate-800">
+          {m.bezMaturantu
+            ? 'Obor zatím nemá maturanty, takže o jeho výsledcích u maturity nevíme nic.'
+            : `Výsledky maturity ${m.rok} tu nezveřejňujeme, protože maturantů bylo méně než deset.`}
+        </p>
+        {odkaz}
+      </div>
+    );
+  }
+
+  const sc = m.spolecnaCast;
+  const cj = m.cestina;
+  const ma = m.matematika;
+  // Malý ročník se pozná z obou předmětů: u 571 záznamů je čeština úplná, ale matematika
+  // z malého vzorku, a bez téhle podmínky by se ukázala bez upozornění.
+  const malyRocnik = cj?.quality === 'small_sample' || ma?.quality === 'small_sample';
+
+  return (
+    <div className="rounded-2xl border border-slate-200 bg-white p-5">
+      <p className="text-[15px] font-bold uppercase tracking-wide text-slate-500">
+        Maturita · jaro {m.rok}{m.starsiNezObdobi ? ' · poslední ročník s maturanty' : ''}
+      </p>
+      <dl className="mt-3 grid gap-x-6 gap-y-2 sm:grid-cols-[13rem_1fr]">
+        {sc?.passed !== undefined && sc.registered ? (
+          <>
+            <dt className="text-[16px] text-slate-600">Udělalo ji</dt>
+            <dd className="text-[17px] font-semibold text-[#16325c] tabular-nums">
+              {cislo(sc.passed)} {zOd(sc.registered)} {cislo(sc.registered)} přihlášených
+            </dd>
+          </>
+        ) : null}
+        {cj?.averagePercentScore !== undefined ? (
+          <>
+            <dt className="text-[16px] text-slate-600">Čeština</dt>
+            <dd className="text-[17px] text-[#16325c] tabular-nums">
+              <b>{cislo(cj.averagePercentScore, 1)} % bodů</b>
+              {m.stredPodobnychSkol !== null && (
+                <span className="text-slate-600"> · střed podobných škol {cislo(m.stredPodobnychSkol, 1)} %</span>
+              )}
+            </dd>
+          </>
+        ) : null}
+        {ma?.subjectChoiceShare !== undefined ? (
+          <>
+            <dt className="text-[16px] text-slate-600">Matematiku</dt>
+            <dd className="text-[17px] text-[#16325c] tabular-nums">
+              volilo <b>{cislo(ma.subjectChoiceShare)} %</b>
+              {ma.averagePercentScore !== undefined && <>, {cislo(ma.averagePercentScore, 1)} % bodů</>}
+            </dd>
+          </>
+        ) : null}
+      </dl>
+      <p className="mt-3 max-w-[62ch] text-[15px] leading-relaxed text-slate-600">
+        {koho(m)} skládali maturitu v uvedeném roce. Čísla popisují úroveň maturitního ročníku,
+        ne kvalitu výuky: promítá se do nich hlavně to, koho škola přijala.
+        {malyRocnik && <> Ročník byl malý, takže se s výsledkem nedá počítat jako s pravidlem.</>}
+      </p>
+      {odkaz}
+    </div>
+  );
+}
+
+export function ProfilOboru({ data, inspekceHref, skolaHref }: ProfilOboruProps) {
   const { rok, predchoziRok, aktualni: r, predchozi: p, stav, zarazeni, skupinaNazev, krajNazev } = data;
   const soutezici = soutezicichUchazecu(r) ?? 0;
   const soutezicichDriv = p ? soutezicichUchazecu(p) : null;
@@ -472,6 +558,12 @@ export function ProfilOboru({ data, inspekceHref }: ProfilOboruProps) {
             )}
             <Zdroj>Popisuje, s jakými výsledky sem přicházejí spolužáci, ne náročnost studia ani kvalitu výuky. Inspekce a podpora žáků platí pro celou školu.{pasma?.median_prijatych !== undefined && ` Průměr je z dat CERMATu za tuto nabídku, prostřední hodnota z dat o uchazečích za celý obor školy bez zaměření (1. kolo ${data.pasma?.rok}); u šikmého rozdělení leží pod průměrem.${verzeUchazecu}`}</Zdroj>
           </Odpoved>
+
+          {data.maturita && (
+            <div className="mt-4">
+              <Maturita m={data.maturita} skolaHref={skolaHref} />
+            </div>
+          )}
 
           <div className="space-y-3">
             {data.poradiVysledky && (
