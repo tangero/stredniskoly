@@ -4,6 +4,8 @@ import { PortalEditace, PortalObalka, PortalSkolaNenalezena } from '@/components
 import { PortalHlaska } from '@/components/portal/PortalHlaska';
 import { PortalMagicForm } from '@/components/portal/PortalMagicForm';
 import { PortalZalozeni } from '@/components/portal/PortalZalozeni';
+import { PortalHlavickaSkoly } from '@/components/portal/PortalHlavickaSkoly';
+import { getIdentifikaceSkoly } from '@/lib/portal-identifikace';
 import { getNazevSkoly, validateKod } from '@/lib/portal-skol';
 import { jeDbNastavena } from '@/lib/novinky-db';
 import { prihlasenyZCookies, stavKodu } from '@/lib/portal-relace';
@@ -41,7 +43,7 @@ export default async function PortalKodPage({ params }: Props) {
   if (stav === 'volny') {
     return (
       <PortalObalka>
-        <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">{nazev}</h1>
+        <PortalHlavickaSkoly skola={await getIdentifikaceSkoly(redizo, nazev)} vstup="kód" />
         <PortalZalozeni nazevSkoly={nazev} auth={{ kod }} />
       </PortalObalka>
     );

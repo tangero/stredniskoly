@@ -59,6 +59,7 @@ const PORTAL_DATA = [
   './data/portal/emaily.json',
   './data/portal/pilot.json',
   './data/inspis_school_profiles.json',
+  './data/msmt_rejstrik/nazvy-oboru.json',
 ];
 
 const nextConfig: NextConfig = {

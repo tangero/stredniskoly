@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.11 · 18. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.12 · 19. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -149,7 +149,7 @@ Rozdělení výsledků všech uchazečů o obor tenhle soubor **není** jediný 
 
 Dvě podoby téhož. **JSON-LD snímky** (`data/msmt_rejstrik/rssz-*.jsonld`, čtvrtletní, v gitu ignorované kvůli velikosti) se používají na návaznost oborů mezi roky a na doplnění názvů oborů bez jednotné zkoušky. **CSV export** (`data/Rejstrik_skol/`) je jednorázový.
 
-**Index názvů** `data/msmt_rejstrik/nazvy-oboru.json` (v gitu, asi 0,6 MB) vzniká skriptem `scripts/build-nazvy-oboru-rejstrik.py` ze snímku, který určuje registr (`msmt-rejstrik-snimky`, `zobrazeno.soubor`), a nese celý záznam `zobrazeno` z registru a otisk sha256 snímku. Obsahuje jen `redIzo` s názvem školy (`zkracenyNazev`, jinak `uplnyNazev`) a obcí sídla, a kódy a názvy oborů (`skolyAZarizeni[].obory[].kod`, `.nazev`). Čtou ho generátory souběžných přihlášek a kontextu přihlášek (`scripts/nazvy_oboru.py`), takže je má i datová linka v CI, kde snímky nejsou. Otisk snímku zapisuje do registru příkaz `stav-datovych-sad.py prepni` u každého lokálního souboru; generátor indexu odmítne snímek s jiným otiskem. Po každém přepnutí snímku, i po převzetí revize téhož čtvrtletí, se index musí přegenerovat; generátory index, jehož záznam `zobrazeno` včetně otisku neodpovídá registru, odmítnou.
+**Index názvů** `data/msmt_rejstrik/nazvy-oboru.json` (v gitu, asi 0,9 MB) vzniká skriptem `scripts/build-nazvy-oboru-rejstrik.py` ze snímku, který určuje registr (`msmt-rejstrik-snimky`, `zobrazeno.soubor`), a nese celý záznam `zobrazeno` z registru a otisk sha256 snímku. Obsahuje jen `redIzo` s názvem školy (`zkracenyNazev`, jinak `uplnyNazev`) a obcí sídla, a kódy a názvy oborů (`skolyAZarizeni[].obory[].kod`, `.nazev`). Od verze 1.12 nese i oddíl `identifikace`: u středních škol a konzervatoří (`skolyAZarizeni[].druh` C00, D00) `uplnyNazev`, `ico` a adresu sídla. Ten čte portál pro školy, aby ten, kdo uplatňuje kód, poznal, ke které škole se hlásí (`src/lib/portal-identifikace.ts`). Index dál čtou generátory souběžných přihlášek a kontextu přihlášek (`scripts/nazvy_oboru.py`), takže je má i datová linka v CI, kde snímky nejsou. Otisk snímku zapisuje do registru příkaz `stav-datovych-sad.py prepni` u každého lokálního souboru; generátor indexu odmítne snímek s jiným otiskem. Po každém přepnutí snímku, i po převzetí revize téhož čtvrtletí, se index musí přegenerovat; generátory index, jehož záznam `zobrazeno` včetně otisku neodpovídá registru, odmítnou.
 
 Zajímavé sloupce JSON-LD, mimo adresu a názvy:
 
@@ -527,6 +527,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.12 | Index názvů z rejstříku nese oddíl `identifikace` (plný název, IČO, adresa sídla středních škol a konzervatoří) pro hlavičku vstupu do portálu pro školy. Zváženo a zamítnuto: `reditel` a `emaily` (osobní údaje, k poznání školy nejsou potřeba), `mistaVyuky` (pro identifikaci stačí sídlo), ID datové schránky z CSV (nic nepřidá k IČO a REDIZO). |
 | 1.11 | Příznak `dobihajiciObor` se poprvé používá na webu: `build-dobihajici-obory.py` vyrábí `public/dobihajici_obory.json` a stránka školy jím v bloku „Obory z dřívějších let“ odlišuje obor, který se už nenabírá, od oboru, který škola v tomto roce jen nevypsala. Párování REDIZO + KKOV + denní forma + délka; nula dobíhajících mezi vypsanými nabídkami tím zůstává respektovaná. Soubor doplněn do výstupů sady `msmt-rejstrik-snimky`. |
 | 1.10 | Zapsán **záporný nález o absolventech** (oddíl 3): na otázku, jak si vedou absolventi konkrétní školy, nemá odpověď žádný z šesti prověřených veřejných zdrojů. Soubor MPSV nese IZO, ale chybí mu jmenovatel a ten sám MŠMT označuje za nevěrohodný; krajová míra nezaměstnanosti za skupinu oborů zamítnuta, protože popisuje trh práce v kraji, ne školu. Rešerše ze 17. 9. 2026 tím přestává žít jen v návrhu. |
 | 1.9 | Harmonogram přijímacího řízení MŠMT (`src/data/admissions-2027.json`) zapsaný jako zdroj, protože z něj od 17. 9. 2026 čerpá i hlavní stránka, a jako sada `msmt-harmonogram` v registru; termíny se opisují z webu MŠMT ručně, detekce nového ročníku dotazem HEAD nejde. |
