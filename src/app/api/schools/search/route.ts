@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
-import { adresaNabidkyVeSkole } from '@/lib/adresa-oboru.mjs';
+import { adresaNabidkyVeSkole, adresaPrehledu, nabidkySeStrankou } from '@/lib/adresa-oboru.mjs';
 import { normalizeSchoolKey, uniqueSchoolIndex } from '@/lib/school-key';
 import { getResultsForYear, getSchoolAnalysis, getSchools2026Data } from '@/lib/data';
 import { readSchoolIds } from '@/lib/simulator-state';
@@ -98,18 +98,29 @@ export async function GET(request: NextRequest) {
     // Název školy pro adresu bere stejný zdroj jako data.ts, tedy school_analysis.json;
     // jinak by vyhledávání složilo adresu, kterou aplikace nerozpozná.
     const nabidkyPodleRedizo = adresySkolPodleRedizo(schools);
+    const proModul = (s: School) => ({
+      id: s.id, obor: s.obor || '', delka_studia: s.delka_studia,
+      zamereni: normalizeZamereni(s.zamereni) || undefined,
+    });
+
+    // Které nabídky vůbec mají stránku oboru, rozhoduje sdílený modul: pravidlo je jedno
+    // a platí i pro generátor sitemapy, takže odkaz nikdy nemíří na adresu, která se přesměruje.
+    const znaZakladniKlic = (zaklad: string) => canonicalById.has(zaklad);
+    const seStrankou = new Map<string, Set<string>>();
+    for (const [redizo, nabidky] of nabidkyPodleRedizo) {
+      seStrankou.set(redizo, new Set(nabidkySeStrankou(nabidky.map(proModul), znaZakladniKlic).map(n => String(n.id))));
+    }
+
     const adresaPro = (school: School): string => {
       const redizo = school.id.split('_')[0];
       const nazev = canonicalNames.get(redizo) ?? canonicalById.get(school.id)?.nazev ?? school.nazev;
-      return adresaNabidkyVeSkole(redizo, nazev, {
-        obor: school.obor || '',
-        zamereni: normalizeZamereni(school.zamereni) || undefined,
-        delka_studia: school.delka_studia,
-      }, (nabidkyPodleRedizo.get(redizo) ?? []).map(n => ({
-        obor: n.obor || '',
-        zamereni: normalizeZamereni(n.zamereni) || undefined,
-        delka_studia: n.delka_studia,
-      })));
+      const prehled = adresaPrehledu(redizo, nazev);
+      const povolene = seStrankou.get(redizo);
+      if (!povolene?.has(school.id)) return prehled;
+      const nabidky = (nabidkyPodleRedizo.get(redizo) ?? []).map(proModul).filter(n => povolene.has(String(n.id)));
+      const moje = nabidky.find(n => n.id === school.id);
+      if (!moje) return prehled;
+      return adresaNabidkyVeSkole(redizo, nazev, moje, nabidky) ?? prehled;
     };
     if (!krajeCache) {
       const krajMap = new Map<string, string>();

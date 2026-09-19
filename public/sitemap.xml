@@ -1621,6 +1621,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://prijimackynaskolu.cz/skola/600005178-gymnazium-evolution-sazavska-gymnazium-4lete-vseobecne-gymnazium</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600005178-gymnazium-evolution-sazavska-gymnazium-4lete-vseobecne-gymnazium/inspekce</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://prijimackynaskolu.cz/skola/600005178-gymnazium-evolution-sazavska-gymnazium-6lete-vseobecne-gymnazium</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -1640,18 +1652,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600005178-gymnazium-evolution-sazavska-gymnazium-8lete-vseobecne-gymnazium/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600005178-gymnazium-evolution-sazavska-gymnazium-vseobecne-gymnazium</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600005178-gymnazium-evolution-sazavska-gymnazium-vseobecne-gymnazium/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1705,18 +1705,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600005216-ss-gastronomicka-a-hotelova-sro-vrbova-cestovni-ruch</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600005216-ss-gastronomicka-a-hotelova-sro-vrbova-cestovni-ruch/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600005216-ss-gastronomicka-a-hotelova-sro-vrbova-cestovni-ruch-denni</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -1760,18 +1748,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600005216-ss-gastronomicka-a-hotelova-sro-vrbova-gymnazium/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600005216-ss-gastronomicka-a-hotelova-sro-vrbova-hotelnictvi</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600005216-ss-gastronomicka-a-hotelova-sro-vrbova-hotelnictvi/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1837,13 +1813,25 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600005267-klasicke-gymnazium-modrany-a-zs-rakovskeho-gymnazium-skola-je-dilna-lidskosti</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600005267-klasicke-gymnazium-modrany-a-zs-rakovskeho-gymnazium-4lete-skola-je-dilna-lidskosti</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600005267-klasicke-gymnazium-modrany-a-zs-rakovskeho-gymnazium-skola-je-dilna-lidskosti/inspekce</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600005267-klasicke-gymnazium-modrany-a-zs-rakovskeho-gymnazium-4lete-skola-je-dilna-lidskosti/inspekce</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600005267-klasicke-gymnazium-modrany-a-zs-rakovskeho-gymnazium-6lete-skola-je-dilna-lidskosti</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600005267-klasicke-gymnazium-modrany-a-zs-rakovskeho-gymnazium-6lete-skola-je-dilna-lidskosti/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -3241,18 +3229,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600005836-obch-akademie-praha-vinorska-lyceum-rezim-pokusneho-overovani</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600005836-obch-akademie-praha-vinorska-lyceum-rezim-pokusneho-overovani/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600005836-obch-akademie-praha-vinorska-lyceum-rezim-pokusneho-overovani-business-satalice</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -3272,18 +3248,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600005836-obch-akademie-praha-vinorska-lyceum-rezim-pokusneho-overovani-business-vinohrady/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600005836-obch-akademie-praha-vinorska-obchodni-akademie-4lete</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600005836-obch-akademie-praha-vinorska-obchodni-akademie-4lete/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -3368,18 +3332,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600005861-vos-odevniho-navrharstvi-a-sps-odevni-jablonskeho/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600005861-vos-odevniho-navrharstvi-a-sps-odevni-jablonskeho-odevnictvi-4lete</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600005861-vos-odevniho-navrharstvi-a-sps-odevni-jablonskeho-odevnictvi-4lete/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -3493,6 +3445,30 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://prijimackynaskolu.cz/skola/600005950-gymnazium-fostra-international-sro-rohacova-gymnazium-4lete-international-rozvijime-v-globalnich</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600005950-gymnazium-fostra-international-sro-rohacova-gymnazium-4lete-international-rozvijime-v-globalnich/inspekce</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600005950-gymnazium-fostra-international-sro-rohacova-gymnazium-4lete-international-rozvijime-v-globalnich-2</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600005950-gymnazium-fostra-international-sro-rohacova-gymnazium-4lete-international-rozvijime-v-globalnich-2/inspekce</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://prijimackynaskolu.cz/skola/600005950-gymnazium-fostra-international-sro-rohacova-gymnazium-aspira-rozvijime-a-podporujeme</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -3500,18 +3476,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600005950-gymnazium-fostra-international-sro-rohacova-gymnazium-aspira-rozvijime-a-podporujeme/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600005950-gymnazium-fostra-international-sro-rohacova-gymnazium-international-rozvijime-v-globalnich</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600005950-gymnazium-fostra-international-sro-rohacova-gymnazium-international-rozvijime-v-globalnich/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -3805,18 +3769,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600006026-kralovska-stredni-skola-svidnicka-obchodni-akademie</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600006026-kralovska-stredni-skola-svidnicka-obchodni-akademie/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600006026-kralovska-stredni-skola-svidnicka-obchodni-akademie-business-academy-cjaj</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -4093,25 +4045,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600006131-gymnazium-cakovice-namesti-25-brezna-gymnazium-4lete</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600006131-gymnazium-cakovice-namesti-25-brezna-gymnazium</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600006131-gymnazium-cakovice-namesti-25-brezna-gymnazium-4lete/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600006131-gymnazium-cakovice-namesti-25-brezna-gymnazium-6lete</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600006131-gymnazium-cakovice-namesti-25-brezna-gymnazium-6lete/inspekce</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600006131-gymnazium-cakovice-namesti-25-brezna-gymnazium/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -4652,18 +4592,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600006328-soukr-sos-a-soukr-sou-bean-ceskobrodska-predskolni-a-mimoskolni-pedagogika/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600006328-soukr-sos-a-soukr-sou-bean-ceskobrodska-zahradnictvi</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600006328-soukr-sos-a-soukr-sou-bean-ceskobrodska-zahradnictvi/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -5749,18 +5677,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600006697-stredni-prumyslova-skola-komenskeho-mechanik-serizovac</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600006697-stredni-prumyslova-skola-komenskeho-mechanik-serizovac/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600006697-stredni-prumyslova-skola-komenskeho-mechanik-serizovac-mechatronik-23-56-h01-obrabec-kovu</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -6181,18 +6097,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600006832-oa-u-stadionu-predskolni-a-mimoskolni-pedagogika</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600006832-oa-u-stadionu-predskolni-a-mimoskolni-pedagogika/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600006832-oa-u-stadionu-predskolni-a-mimoskolni-pedagogika-delka-studia-4-roky</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -6373,13 +6277,25 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600006905-sps-a-vos-jana-palacha-elektrotechnika-aplikace-elektrotechniky-zamereni</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600006905-sps-a-vos-jana-palacha-elektrotechnika-4lete-aplikace-elektrotechniky-zamereni</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600006905-sps-a-vos-jana-palacha-elektrotechnika-aplikace-elektrotechniky-zamereni/inspekce</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600006905-sps-a-vos-jana-palacha-elektrotechnika-4lete-aplikace-elektrotechniky-zamereni/inspekce</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600006905-sps-a-vos-jana-palacha-elektrotechnika-4lete-aplikace-elektrotechniky-zamereni-2</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600006905-sps-a-vos-jana-palacha-elektrotechnika-4lete-aplikace-elektrotechniky-zamereni-2/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -7681,25 +7597,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600007332-dvorakovo-gymnazium-dvorakovo-nam-gymnazium-4lete</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600007332-dvorakovo-gymnazium-dvorakovo-nam-gymnazium</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600007332-dvorakovo-gymnazium-dvorakovo-nam-gymnazium-4lete/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600007332-dvorakovo-gymnazium-dvorakovo-nam-gymnazium-8lete</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600007332-dvorakovo-gymnazium-dvorakovo-nam-gymnazium-8lete/inspekce</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600007332-dvorakovo-gymnazium-dvorakovo-nam-gymnazium/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -7964,6 +7868,18 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600007472-ss-spektrum-mlada-boleslav-steckerova-obchodni-akademie-4lete/inspekce</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600007472-ss-spektrum-mlada-boleslav-steckerova-obchodni-akademie-4lete-2</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600007472-ss-spektrum-mlada-boleslav-steckerova-obchodni-akademie-4lete-2/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -9433,18 +9349,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600007987-masarykova-obchodni-akademie-prazska-obchodni-akademie</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600007987-masarykova-obchodni-akademie-prazska-obchodni-akademie/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600007987-masarykova-obchodni-akademie-prazska-obchodni-akademie-sportovni-management</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -9469,13 +9373,25 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600007995-gymnazium-j-v-jirsika-frani-sramka-gymnazium-vseobecne</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600007995-gymnazium-j-v-jirsika-frani-sramka-gymnazium-4lete-vseobecne</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600007995-gymnazium-j-v-jirsika-frani-sramka-gymnazium-vseobecne/inspekce</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600007995-gymnazium-j-v-jirsika-frani-sramka-gymnazium-4lete-vseobecne/inspekce</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600007995-gymnazium-j-v-jirsika-frani-sramka-gymnazium-8lete-vseobecne</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600007995-gymnazium-j-v-jirsika-frani-sramka-gymnazium-8lete-vseobecne/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -11941,18 +11857,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600008941-stredni-odborne-uciliste-prokopa-velikeho-mechanik-serizovac</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600008941-stredni-odborne-uciliste-prokopa-velikeho-mechanik-serizovac/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600008941-stredni-odborne-uciliste-prokopa-velikeho-mechanik-serizovac-se-zamerenim-technologie-zpracovani</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -13129,13 +13033,25 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600009467-ss-informatiky-a-financnich-sluzeb-klatovska-trida-informacni-technologie-informacni-technologie-se-specializaci</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600009467-ss-informatiky-a-financnich-sluzeb-klatovska-trida-informacni-technologie-4lete-informacni-technologie-se-specializaci</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600009467-ss-informatiky-a-financnich-sluzeb-klatovska-trida-informacni-technologie-informacni-technologie-se-specializaci/inspekce</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600009467-ss-informatiky-a-financnich-sluzeb-klatovska-trida-informacni-technologie-4lete-informacni-technologie-se-specializaci/inspekce</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600009467-ss-informatiky-a-financnich-sluzeb-klatovska-trida-informacni-technologie-4lete-informacni-technologie-se-specializaci-2</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600009467-ss-informatiky-a-financnich-sluzeb-klatovska-trida-informacni-technologie-4lete-informacni-technologie-se-specializaci-2/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -14240,18 +14156,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600009904-soukr-obchodni-akademie-sokolov-sro-hornicka/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600009904-soukr-obchodni-akademie-sokolov-sro-hornicka-obchodni-akademie</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600009904-soukr-obchodni-akademie-sokolov-sro-hornicka-obchodni-akademie/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -16201,6 +16105,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://prijimackynaskolu.cz/skola/600010783-soukroma-sos-1-kspa-machovy-schody-ekonomika-a-podnikani-4lete-management-sportu-2</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600010783-soukroma-sos-1-kspa-machovy-schody-ekonomika-a-podnikani-4lete-management-sportu-2/inspekce</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://prijimackynaskolu.cz/skola/600010783-soukroma-sos-1-kspa-machovy-schody-informacni-technologie</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -16741,18 +16657,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600011020-soukroma-obchodni-akademie-svatovaclavska-obchodni-akademie</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600011020-soukroma-obchodni-akademie-svatovaclavska-obchodni-akademie/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600011020-soukroma-obchodni-akademie-svatovaclavska-obchodni-akademie-propagacni-grafika-a-media</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -16849,13 +16753,25 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600011054-podkrusnohorske-gymnazium-csl-armady-gymnazium-necht-je-cilem-studia-moudrost</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600011054-podkrusnohorske-gymnazium-csl-armady-gymnazium-8lete-necht-je-cilem-studia-moudrost</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600011054-podkrusnohorske-gymnazium-csl-armady-gymnazium-necht-je-cilem-studia-moudrost/inspekce</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600011054-podkrusnohorske-gymnazium-csl-armady-gymnazium-8lete-necht-je-cilem-studia-moudrost/inspekce</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600011054-podkrusnohorske-gymnazium-csl-armady-gymnazium-8lete-necht-je-cilem-studia-moudrost-2</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600011054-podkrusnohorske-gymnazium-csl-armady-gymnazium-8lete-necht-je-cilem-studia-moudrost-2/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -17876,18 +17792,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600011534-gymnazium-husovo-namesti-gymnazium-8lete/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600011534-gymnazium-husovo-namesti-informacni-technologie</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600011534-gymnazium-husovo-namesti-informacni-technologie/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -19453,18 +19357,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600012271-academia-mercurii-soukroma-ss-smirickych-ekonomicke-lyceum</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600012271-academia-mercurii-soukroma-ss-smirickych-ekonomicke-lyceum/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600012271-academia-mercurii-soukroma-ss-smirickych-ekonomicke-lyceum-ekonomicke-lyceum-s-rozsirenou-vyukou</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -20869,18 +20761,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600012891-krkonosske-gymnazium-a-sos-komenskeho-gymnazium</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600012891-krkonosske-gymnazium-a-sos-komenskeho-gymnazium/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600012891-krkonosske-gymnazium-a-sos-komenskeho-gymnazium-4lete-svp-hostinne</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -21572,18 +21452,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600013197-ss-automobilni-usti-nad-orlici-dukelska/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600013197-ss-automobilni-usti-nad-orlici-dukelska-autotronik</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600013197-ss-automobilni-usti-nad-orlici-dukelska-autotronik/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -22465,18 +22333,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600013511-ss-knih-bzenecka-knihkupecke-a-nakladatelske-cinnosti</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600013511-ss-knih-bzenecka-knihkupecke-a-nakladatelske-cinnosti/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600013511-ss-knih-bzenecka-knihkupecke-a-nakladatelske-cinnosti-4lete-poznavat-obdivovat-a-sirit-knihu</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -22484,6 +22340,18 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600013511-ss-knih-bzenecka-knihkupecke-a-nakladatelske-cinnosti-4lete-poznavat-obdivovat-a-sirit-knihu/inspekce</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600013511-ss-knih-bzenecka-knihkupecke-a-nakladatelske-cinnosti-4lete-poznavat-obdivovat-a-sirit-knihu-2</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600013511-ss-knih-bzenecka-knihkupecke-a-nakladatelske-cinnosti-4lete-poznavat-obdivovat-a-sirit-knihu-2/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -22525,13 +22393,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600013537-gymnazium-globe-bzenecka-gymnazium-zive-jazyky</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600013537-gymnazium-globe-bzenecka-gymnazium-8lete-zive-jazyky</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600013537-gymnazium-globe-bzenecka-gymnazium-zive-jazyky/inspekce</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600013537-gymnazium-globe-bzenecka-gymnazium-8lete-zive-jazyky/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -22645,13 +22513,25 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600013634-sportovni-gymnazium-ludvika-danka-botanicka-gymnazium-se-sportovni-pripravou-gymnazium-se-sportovni-pripravou</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600013634-sportovni-gymnazium-ludvika-danka-botanicka-gymnazium-se-sportovni-pripravou-4lete-gymnazium-se-sportovni-pripravou</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600013634-sportovni-gymnazium-ludvika-danka-botanicka-gymnazium-se-sportovni-pripravou-gymnazium-se-sportovni-pripravou/inspekce</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600013634-sportovni-gymnazium-ludvika-danka-botanicka-gymnazium-se-sportovni-pripravou-4lete-gymnazium-se-sportovni-pripravou/inspekce</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600013634-sportovni-gymnazium-ludvika-danka-botanicka-gymnazium-se-sportovni-pripravou-6lete-gymnazium-se-sportovni-pripravou</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600013634-sportovni-gymnazium-ludvika-danka-botanicka-gymnazium-se-sportovni-pripravou-6lete-gymnazium-se-sportovni-pripravou/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -22868,18 +22748,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600013731-sos-morava-ops-rehorova/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600013731-sos-morava-ops-rehorova-obchodni-akademie</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600013731-sos-morava-ops-rehorova-obchodni-akademie/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -23408,18 +23276,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600013839-obchodni-akademie-eldo-stredni-ekonomicke-lyceum-marketinkova-komunikace/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600013839-obchodni-akademie-eldo-stredni-obchodni-akademie</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600013839-obchodni-akademie-eldo-stredni-obchodni-akademie/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -27961,18 +27817,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600015556-stredni-odborna-skola-a-gymnazium-velehradska-gymnazium</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600015556-stredni-odborna-skola-a-gymnazium-velehradska-gymnazium/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600015556-stredni-odborna-skola-a-gymnazium-velehradska-gymnazium-informatika-a-robotika</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -28465,25 +28309,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600015726-gymnazium-smetanova-gymnazium-4lete</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600015726-gymnazium-smetanova-gymnazium</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600015726-gymnazium-smetanova-gymnazium-4lete/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600015726-gymnazium-smetanova-gymnazium-6lete</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600015726-gymnazium-smetanova-gymnazium-6lete/inspekce</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600015726-gymnazium-smetanova-gymnazium/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -30277,25 +30109,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600016447-lek-a-prir-gymnazium-prigo-mojmirovcu-gymnazium-4lete</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600016447-lek-a-prir-gymnazium-prigo-mojmirovcu-gymnazium</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600016447-lek-a-prir-gymnazium-prigo-mojmirovcu-gymnazium-4lete/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600016447-lek-a-prir-gymnazium-prigo-mojmirovcu-gymnazium-8lete</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600016447-lek-a-prir-gymnazium-prigo-mojmirovcu-gymnazium-8lete/inspekce</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600016447-lek-a-prir-gymnazium-prigo-mojmirovcu-gymnazium/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -30517,6 +30337,30 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://prijimackynaskolu.cz/skola/600016510-stredni-skola-polytechnicka-sykorova-mechanik-elektrotechnik-4lete-pocitacove-systemy-a-site-elektrikar</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600016510-stredni-skola-polytechnicka-sykorova-mechanik-elektrotechnik-4lete-pocitacove-systemy-a-site-elektrikar/inspekce</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600016510-stredni-skola-polytechnicka-sykorova-mechanik-elektrotechnik-4lete-pocitacove-systemy-a-site-elektrikar-2</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600016510-stredni-skola-polytechnicka-sykorova-mechanik-elektrotechnik-4lete-pocitacove-systemy-a-site-elektrikar-2/inspekce</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://prijimackynaskolu.cz/skola/600016510-stredni-skola-polytechnicka-sykorova-mechanik-elektrotechnik-digitalni-technika-a-mechatronika</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -30524,18 +30368,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600016510-stredni-skola-polytechnicka-sykorova-mechanik-elektrotechnik-digitalni-technika-a-mechatronika/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600016510-stredni-skola-polytechnicka-sykorova-mechanik-elektrotechnik-pocitacove-systemy-a-site-elektrikar</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600016510-stredni-skola-polytechnicka-sykorova-mechanik-elektrotechnik-pocitacove-systemy-a-site-elektrikar/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -30865,18 +30697,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600016625-vos-dakol-a-stredni-skola-dakol-ops-hotelnictvi</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600016625-vos-dakol-a-stredni-skola-dakol-ops-hotelnictvi/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600016625-vos-dakol-a-stredni-skola-dakol-ops-hotelnictvi-hotelnictvi</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -30920,18 +30740,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600016625-vos-dakol-a-stredni-skola-dakol-ops-predskolni-a-mimoskolni-pedagogika/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600016625-vos-dakol-a-stredni-skola-dakol-ops-socialni-cinnost</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600016625-vos-dakol-a-stredni-skola-dakol-ops-socialni-cinnost/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -32036,18 +31844,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600016986-stredni-skola-logistiky-a-chemie-u-hradiska-aplikovana-chemie/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600016986-stredni-skola-logistiky-a-chemie-u-hradiska-logisticke-a-financni-sluzby</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600016986-stredni-skola-logistiky-a-chemie-u-hradiska-logisticke-a-financni-sluzby/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -34081,18 +33877,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600017672-oa-a-vos-socialne-pravni-karasova-obchodni-akademie</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600017672-oa-a-vos-socialne-pravni-karasova-obchodni-akademie/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600017672-oa-a-vos-socialne-pravni-karasova-obchodni-akademie-zahranicni-obchod</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -34196,18 +33980,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600017699-stredni-prumyslova-skola-zengrova-mechanik-serizovac-mechanik-serizovac-mechatronik/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600017699-stredni-prumyslova-skola-zengrova-strojirenstvi</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600017699-stredni-prumyslova-skola-zengrova-strojirenstvi/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -34717,18 +34489,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600017869-sps-stavebni-komenskeho-sady-stavebnictvi</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600017869-sps-stavebni-komenskeho-sady-stavebnictvi/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600017869-sps-stavebni-komenskeho-sady-stavebnictvi-architektura-a-pozemni-stavitelstvi-arc</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -35185,18 +34945,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600018067-stredni-skola-socialni-pece-a-sluzeb-namesti-8-kvetna-socialni-cinnost</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600018067-stredni-skola-socialni-pece-a-sluzeb-namesti-8-kvetna-socialni-cinnost/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600018067-stredni-skola-socialni-pece-a-sluzeb-namesti-8-kvetna-socialni-cinnost-socialne-spravni-cinnost</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -35240,18 +34988,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600018075-stredni-odborna-skola-zemedelska-agropodnikani/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600018075-stredni-odborna-skola-zemedelska-cestovni-ruch</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600018075-stredni-odborna-skola-zemedelska-cestovni-ruch/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -35545,13 +35281,37 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600018164-stredni-prumyslova-skola-stavebni-machova-stavebnictvi-stavebnictvi-zamereni-pozemni</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600018164-stredni-prumyslova-skola-stavebni-machova-stavebnictvi-4lete-stavebnictvi-zamereni-pozemni</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600018164-stredni-prumyslova-skola-stavebni-machova-stavebnictvi-stavebnictvi-zamereni-pozemni/inspekce</loc>
+    <loc>https://prijimackynaskolu.cz/skola/600018164-stredni-prumyslova-skola-stavebni-machova-stavebnictvi-4lete-stavebnictvi-zamereni-pozemni/inspekce</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600018164-stredni-prumyslova-skola-stavebni-machova-stavebnictvi-4lete-stavebnictvi-zamereni-pozemni-2</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600018164-stredni-prumyslova-skola-stavebni-machova-stavebnictvi-4lete-stavebnictvi-zamereni-pozemni-2/inspekce</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600018164-stredni-prumyslova-skola-stavebni-machova-stavebnictvi-4lete-stavebnictvi-zamereni-pozemni-3</loc>
+    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prijimackynaskolu.cz/skola/600018164-stredni-prumyslova-skola-stavebni-machova-stavebnictvi-4lete-stavebnictvi-zamereni-pozemni-3/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -39853,18 +39613,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600025047-ss-zs-a-ms-pro-zdravotne-znevyhodnene-maser-sportovni-a-rekondicni</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600025047-ss-zs-a-ms-pro-zdravotne-znevyhodnene-maser-sportovni-a-rekondicni/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600025047-ss-zs-a-ms-pro-zdravotne-znevyhodnene-obchodni-akademie</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -40772,18 +40520,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600170080-sos-automobilni-weilova-gymnazium-multimedii/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600170080-sos-automobilni-weilova-informacni-technologie</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600170080-sos-automobilni-weilova-informacni-technologie/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -43177,18 +42913,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/600170748-obchodni-akademie-a-hotelova-skola-bratriku-obchodni-akademie</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600170748-obchodni-akademie-a-hotelova-skola-bratriku-obchodni-akademie/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/600170748-obchodni-akademie-a-hotelova-skola-bratriku-obchodni-akademie-ekonomika-sportu</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -45020,18 +44744,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/600171361-stredni-skola-gastronomie-a-sluzeb-sirava-hotelnictvi/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600171361-stredni-skola-gastronomie-a-sluzeb-sirava-kosmeticke-sluzby</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/600171361-stredni-skola-gastronomie-a-sluzeb-sirava-kosmeticke-sluzby/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -48805,18 +48517,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/691000107-vos-a-sps-u-stadionu-strojirenstvi</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/691000107-vos-a-sps-u-stadionu-strojirenstvi/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/691000107-vos-a-sps-u-stadionu-strojirenstvi-strojirenstvi</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -50341,18 +50041,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/691010366-agel-szdzrs-a-vos-zdravotnicka-sro-antosovicka-zdravotnicke-lyceum</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/691010366-agel-szdzrs-a-vos-zdravotnicka-sro-antosovicka-zdravotnicke-lyceum/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/691010366-agel-szdzrs-a-vos-zdravotnicka-sro-antosovicka-zdravotnicke-lyceum-cesky-tesin</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -50576,18 +50264,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/691012431-stredni-prum-skola-otty-wichterleho-hostovskeho-strojirenstvi-cnc-technika-a-robotika-ve-vyrobnich/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/691012431-stredni-prum-skola-otty-wichterleho-hostovskeho-tiskar-na-polygrafickych-strojich-operator-tisku</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/691012431-stredni-prum-skola-otty-wichterleho-hostovskeho-tiskar-na-polygrafickych-strojich-operator-tisku/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -50953,18 +50629,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prijimackynaskolu.cz/skola/691015163-scioskola-brno-medlanky-ss-hudcova-gymnazium</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/691015163-scioskola-brno-medlanky-ss-hudcova-gymnazium/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://prijimackynaskolu.cz/skola/691015163-scioskola-brno-medlanky-ss-hudcova-gymnazium-bosonohy-pro-svet-ktery-prijde</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -51116,18 +50780,6 @@
   </url>
   <url>
     <loc>https://prijimackynaskolu.cz/skola/691015805-stredni-skola-a-zakladni-skola-arktur/inspekce</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/691015805-stredni-skola-a-zakladni-skola-arktur-gymnazium</loc>
-    <lastmod>2026-09-18T06:25:51.340Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://prijimackynaskolu.cz/skola/691015805-stredni-skola-a-zakladni-skola-arktur-gymnazium/inspekce</loc>
     <lastmod>2026-09-18T06:25:51.340Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>

@@ -14,7 +14,9 @@
     "sitemap:build": "node scripts/generate-sitemap.mjs",
     "test:novinky": "node --experimental-strip-types --test tests/novinky-*.test.mjs",
     "novinky:migrace": "node scripts/novinky-migrace.mjs",
-    "novinky:migrace-kontrola": "node scripts/novinky-migrace.mjs --kontrola"
+    "novinky:migrace-kontrola": "node scripts/novinky-migrace.mjs --kontrola",
+    "test:js": "node --experimental-strip-types --test tests/*.test.mjs",
+    "test:integrace": "node --experimental-strip-types --test tests/catalog-2026.integration.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.96.0",

@@ -2,7 +2,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import { adresySkoly } from '../src/lib/adresa-oboru.mjs';
+import { adresySkoly, nabidkySeStrankou } from '../src/lib/adresa-oboru.mjs';
 
 const BASE_URL = process.env.SITE_URL || 'https://prijimackynaskolu.cz';
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
@@ -35,28 +35,6 @@ function slugify(text, maxLength) {
   return slug;
 }
 
-function createSlug(name, obor, zamereni, delkaStudia) {
-  let slug = slugify(name, 60);
-
-  if (obor) {
-    let oborSlug = slugify(obor, 40);
-    if (delkaStudia) {
-      oborSlug = `${oborSlug}-${delkaStudia}lete`;
-    }
-    slug = `${slug}-${oborSlug}`;
-  }
-  if (zamereni) {
-    slug = `${slug}-${slugify(zamereni, 40)}`;
-  }
-
-  if (slug.length > 150) {
-    slug = slug.substring(0, 150);
-    const lastDash = slug.lastIndexOf('-');
-    if (lastDash > 100) slug = slug.substring(0, lastDash);
-  }
-  return slug;
-}
-
 function xmlEscape(value) {
   return String(value)
     .replace(/&/g, '&amp;')
@@ -79,9 +57,11 @@ function buildSchoolSlugs(analysisData, schoolsData, rocnik) {
   }
 
   const nazvy = new Map();
+  const zakladniKlice = new Set();
   for (const school of schools) {
     const redizo = (school.id || '').split('_')[0];
     if (redizo && !nazvy.has(redizo)) nazvy.set(redizo, school.nazev);
+    zakladniKlice.add(school.id);
   }
 
   const podleRedizo = new Map();
@@ -97,7 +77,9 @@ function buildSchoolSlugs(analysisData, schoolsData, rocnik) {
     // jinak by adresa vyšla jinak, než jakou aplikace rozpozná.
     const nazev = nazvy.get(redizo);
     if (!nazev) continue;
-    for (const adresa of adresySkoly(redizo, nazev, nabidky)) slugs.add(adresa);
+    // Jen nabídky, pro které stránka oboru vznikne; ostatní by se jen přesměrovaly.
+    const sestrankou = nabidkySeStrankou(nabidky, k => zakladniKlice.has(k));
+    for (const adresa of adresySkoly(redizo, nazev, sestrankou)) slugs.add(adresa);
   }
 
   return Array.from(slugs).sort((a, b) => a.localeCompare(b, 'cs'));

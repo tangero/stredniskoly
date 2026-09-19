@@ -44,7 +44,10 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          # Node 22: testy importují moduly v TypeScriptu a odstraňování typů
+          # (--experimental-strip-types) přibylo až ve 22.6. Na Node 20 by JS testy
+          # nešlo spustit vůbec, proto v CI dosud neběžely.
+          node-version: "22"
           cache: npm
 
       - name: Závislosti
@@ -52,3 +55,52 @@ jobs:
 
       - name: Typy
         run: npx tsc --noEmit
+
+      - name: JS testy
+        run: npm run test:js
+
+  integrace:
+    name: Integrace katalogu
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      # Adresa se předává výslovně; jednotlivé integrační testy mají různé výchozí porty.
+      BASE_URL: http://localhost:3228
+    # Hlídá invariant, na kterém stojí adresy: každá nabídka ročníku má vlastní
+    # stránku. Než tenhle test 19. 9. 2026 začal běžet v CI, prošla změna, po které
+    # dvě nabídky sdílely adresu a jedna ukazovala čísla té druhé.
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Závislosti
+        run: npm ci
+
+      - name: Spustit web
+        # Vývojový server stačí: test sahá na pár stránek a na API, a build všech
+        # 1 175 stránek by v CI trval řádově dýl než samotná kontrola.
+        run: npm run dev -- --port 3228 > /tmp/dev.log 2>&1 &
+
+      - name: Počkat, až web naběhne
+        run: |
+          for i in $(seq 1 120); do
+            if curl -sf -o /dev/null "$BASE_URL/api/schools/search?krajeOnly=1"; then
+              echo "web běží po ${i} s"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "web nenaběhl do 120 s; výpis serveru:"
+          cat /tmp/dev.log
+          exit 1
+
+      - name: Test katalogu
+        run: npm run test:integrace
+
+      - name: Výpis serveru při selhání
+        if: failure()
+        run: cat /tmp/dev.log
