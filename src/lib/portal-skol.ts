@@ -178,7 +178,9 @@ export async function nactiKody(): Promise<PortalKodZaznam[]> {
   try {
     const obsah = await fs.readFile(path.join(process.cwd(), 'data', 'portal', 'kody.json'), 'utf-8');
     return (JSON.parse(obsah).kody || []) as PortalKodZaznam[];
-  } catch {
+  } catch (e) {
+    // Chybějící soubor není „žádné kódy“: v nasazení znamená chybu přibalení.
+    console.error('❌ Portál: data/portal/kody.json nejde načíst', e);
     return [];
   }
 }

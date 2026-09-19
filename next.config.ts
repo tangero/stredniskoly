@@ -54,12 +54,26 @@ const cacheHeaders = [
   }
 ];
 
+const PORTAL_DATA = [
+  './data/portal/kody.json',
+  './data/portal/emaily.json',
+  './data/portal/pilot.json',
+  './data/inspis_school_profiles.json',
+];
+
 const nextConfig: NextConfig = {
   // Include data files in serverless function bundles (Vercel)
   outputFileTracingIncludes: {
     '/api/dostupnost': ['./data/transit_graph.json', './data/school_locations.json'],
     '/api/dostupnost/stop-suggest': ['./data/transit_graph.json'],
     '/admin': ['./data/portal/pilot.json'],
+    // Portál čte data/ za běhu (fs.readFile), Next je sám nepřibalí. Bez nich
+    // se každý kód tváří jako neplatný a rejstříková adresa jako neznámá.
+    '/pro-skoly/**': PORTAL_DATA,
+    '/api/portal/**': PORTAL_DATA,
+    '/api/portal-skoly': PORTAL_DATA,
+    '/api/portal-magic': PORTAL_DATA,
+    '/admin/**': PORTAL_DATA,
   },
 
   // Security a cache headers
