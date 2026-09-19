@@ -128,7 +128,7 @@ export async function najdiRedizoPodleEmailu(
 // Společné rozresolvování autorizace pro /api/portal-skoly: kód NEBO magic token
 // ----------------------------------------------------------------------------
 
-export type PortalKanal = 'kod' | 'magic-link';
+export type PortalKanal = 'kod' | 'magic-link' | 'ucet';
 
 /**
  * Přijme buď přihlašovací kód, nebo magic token; vrátí REDIZO a kanál,

@@ -4,8 +4,11 @@ import { Footer } from '@/components/Footer';
 import { PortalEditForm } from '@/components/portal/PortalEditForm';
 import { getPredvyplnenyProfil, PORTAL_POLE } from '@/lib/portal-skol';
 
-/** Autorizace pro odeslání formuláře: přihlašovací kód nebo magic token. */
-export type PortalAuth = { kod: string } | { magic: string };
+/**
+ * Autorizace pro odeslání formuláře: přihlašovací kód, rejstříkový odkaz, nebo
+ * relace účtu (`ucet` nese REDIZO, oprávnění ověří server podle cookie).
+ */
+export type PortalAuth = { kod: string } | { magic: string } | { ucet: string };
 
 export function PortalObalka({ children }: { children: React.ReactNode }) {
   return (

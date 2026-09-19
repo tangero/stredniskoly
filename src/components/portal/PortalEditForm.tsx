@@ -10,9 +10,11 @@ interface Props {
   auth: PortalAuth;
   profil: PredvyplnenyProfil;
   pole: PortalPoleDef[];
+  /** Přihlášený editor: kontaktní e-mail známe z účtu. */
+  vychoziEmail?: string;
 }
 
-export function PortalEditForm({ auth, profil, pole }: Props) {
+export function PortalEditForm({ auth, profil, pole, vychoziEmail = '' }: Props) {
   const [hodnoty, setHodnoty] = useState<Record<string, string>>(() => {
     const init: Record<string, string> = { ubytovani: '' };
     for (const p of pole) init[p.key] = '';
@@ -22,7 +24,7 @@ export function PortalEditForm({ auth, profil, pole }: Props) {
   const [udajeSedi, setUdajeSedi] = useState<boolean | null>(null);
   const [nesrovnalost, setNesrovnalost] = useState('');
   const [souhlas, setSouhlas] = useState(false);
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState(vychoziEmail);
   const [website, setWebsite] = useState(''); // honeypot
   const [stav, setStav] = useState<StavOdesilani>('formular');
   const [chyba, setChyba] = useState('');
