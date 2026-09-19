@@ -62,7 +62,8 @@ Identifikace a popis nabídky, sloupce 0 až 30:
 | `ROČNÍK` | z které třídy se hlásí | může se hlásit moje dítě | ano |
 | `MATURITNÍ STATUS` | maturitní nebo výuční | co tím dítě získá | ano |
 | `POVINNOST JPZ` | koná se jednotná zkouška | bude psát testy | ano |
-| `TYP ŠKOLY`, `SKUPINA OBORŮ (16)` | GY8, LYC, SOS a další | s čím to srovnávat | ano, je to srovnatelná skupina |
+| `TYP ŠKOLY` | GYM, LYC, SOS a další | s čím to srovnávat | ano, se zkrácenou délkou tvoří srovnatelnou skupinu |
+| `SKUPINA OBORŮ (16)` | GY8, GY6, GY4, LYC, ST1, ST2, SEK, SHP, SHU, SZE, SZD, SUM, UTE, UOS, NTE, NOS | jak si tu vedou u maturity | **ano od 19. 9. 2026** jako pole `smo16` v `souhrny_kolo1.json`; je to týž kód, jakým jsou klíčovaná maturitní data, takže obor se na maturitu napojí bez jakékoli mapy `KKOV` → `SMO16`. Do té doby se sloupec zahazoval a mapa se vedla jako chybějící zdroj |
 | `KKOV`, `OBOR - NÁZEV`, `ZAMĚŘENÍ OBORU` | obor a jeho zaměření | co se tam učí | ano |
 | `FORMA VZDĚLÁVÁNÍ`, `DÉLKA STUDIA`, `ZKRÁCENÉ STUDIUM`, `JAZYK STUDIA` | denní či dálkové, počet let | jak dlouho a jak | ano |
 | `KAPACITA` | vypsaná místa | kolik jich berou | ano |
