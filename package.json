@@ -4,14 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/generate-sitemap.js && next build",
+    "build": "node scripts/generate-sitemap.mjs && next build",
     "start": "next start",
     "lint": "eslint",
     "test": "python3 -m unittest discover -s tests",
     "kontroly": "python3 scripts/stav-datovych-sad.py kontrola && python3 scripts/kontrola-letopoctu.py && npx tsc --noEmit",
     "update:csi": "node scripts/process-csi-data.js",
     "inspis:build-data": "node scripts/import-inspis-data.js",
-    "sitemap:build": "node scripts/generate-sitemap.js",
+    "sitemap:build": "node scripts/generate-sitemap.mjs",
     "test:novinky": "node --experimental-strip-types --test tests/novinky-*.test.mjs",
     "novinky:migrace": "node scripts/novinky-migrace.mjs",
     "novinky:migrace-kontrola": "node scripts/novinky-migrace.mjs --kontrola"

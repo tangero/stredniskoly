@@ -8,6 +8,7 @@ import path from 'path';
 import { School, SchoolAnalysis, SchoolData, SchoolsData, SchoolDetail, krajNames, CSIDataset, CSISchoolData, InspectionExtraction } from '@/types/school';
 import { InspisDataset, SchoolInspisData } from '@/types/inspis';
 import { createSlug, createKrajSlug, extractRedizo } from './utils';
+import { adresaNabidky, adresaPrehledu, pocetStejnychAdres } from './adresa-oboru.mjs';
 import { sortSchoolsByPopularity } from './popularity';
 
 const dataDir = path.join(process.cwd(), 'public');
@@ -183,8 +184,7 @@ export async function getSchoolPageType(slug: string): Promise<{
   }
 
   const firstSchool = schoolsWithRedizo[0];
-  const schoolNameSlug = createSlug(firstSchool.nazev);
-  const overviewSlug = `${redizo}-${schoolNameSlug}`;
+  const overviewSlug = adresaPrehledu(redizo, firstSchool.nazev);
 
   // Je to přehled školy (krátký slug bez oboru)?
   if (slug === overviewSlug) {
@@ -209,14 +209,9 @@ export async function getSchoolPageType(slug: string): Promise<{
     }
   }
 
-  /**
-   * Kanonická adresa nabídky se zaměřením. Stejné pravidlo, jakým se adresa níž rozpoznává:
-   * délka studia je v ní jen tehdy, když tutéž dvojici obor+zaměření nese víc nabídek.
-   */
-  const slugNabidky = (program: SchoolProgram) => {
-    const sDelkou = (zamereniCounts.get(`${program.obor}|${program.zamereni}`) || 0) > 1;
-    return `${redizo}-${createSlug(firstSchool.nazev, program.obor, program.zamereni, sDelkou ? program.delka_studia : undefined)}`;
-  };
+  // Adresu skládá sdílený modul, tentýž, kterým ji staví generátor sitemapy.
+  const poctyZamereni = pocetStejnychAdres(programs.filter(p => p.zamereni));
+  const slugNabidky = (program: SchoolProgram) => adresaNabidky(redizo, firstSchool.nazev, program, poctyZamereni);
 
   /** Základní adresa oboru bez zaměření: kam patří, když nabídka bez zaměření neexistuje. */
   const misto = (kandidati: SchoolProgram[]) => kandidati.length === 1

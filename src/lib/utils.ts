@@ -6,67 +6,10 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 /**
- * Helper pro slugifikaci textu
+ * Skládání adresy školy a oboru žije ve sdíleném modulu, protože ho vedle aplikace
+ * používá i generátor sitemapy spouštěný Nodem. Viz src/lib/adresa-oboru.mjs.
  */
-function slugify(text: string, maxLength?: number): string {
-  let slug = text
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '') // odstranit diakritiku
-    .replace(/[^a-z0-9\s-]/g, '') // pouze alfanumerické znaky
-    .replace(/\s+/g, '-') // mezery na pomlčky
-    .replace(/-+/g, '-') // odstranit duplicitní pomlčky
-    .replace(/^-|-$/g, ''); // odstranit pomlčky na začátku/konci
-
-  // Zkrátit na maxLength, pokud je zadáno (zaříznout na poslední pomlčce)
-  if (maxLength && slug.length > maxLength) {
-    slug = slug.substring(0, maxLength);
-    const lastDash = slug.lastIndexOf('-');
-    if (lastDash > maxLength * 0.6) {
-      slug = slug.substring(0, lastDash);
-    }
-  }
-
-  return slug;
-}
-
-/**
- * Vytvoří SEO-friendly slug z názvu školy, oboru a zaměření
- * Maximální délka slugu je omezena kvůli souborovému systému
- *
- * @param name - Název školy
- * @param obor - Název oboru (volitelné)
- * @param zamereni - Název zaměření (volitelné)
- * @param delkaStudia - Délka studia v letech (volitelné, přidá se do slugu pokud je zadáno)
- */
-export function createSlug(name: string, obor?: string, zamereni?: string, delkaStudia?: number): string {
-  // Omezit délku jednotlivých částí
-  let slug = slugify(name, 60);
-
-  if (obor) {
-    let oborSlug = slugify(obor, 40);
-    // Pokud je zadána délka studia, přidat ji k názvu oboru
-    if (delkaStudia) {
-      oborSlug = `${oborSlug}-${delkaStudia}lete`;
-    }
-    slug = `${slug}-${oborSlug}`;
-  }
-
-  if (zamereni) {
-    slug = `${slug}-${slugify(zamereni, 40)}`;
-  }
-
-  // Celkový slug max 150 znaků (+ 10 znaků pro redizo = 160 celkem, bezpečné pro FS)
-  if (slug.length > 150) {
-    slug = slug.substring(0, 150);
-    const lastDash = slug.lastIndexOf('-');
-    if (lastDash > 100) {
-      slug = slug.substring(0, lastDash);
-    }
-  }
-
-  return slug;
-}
+export { createSlug } from './adresa-oboru.mjs';
 
 /**
  * Vytvoří SEO-friendly slug pro kraj

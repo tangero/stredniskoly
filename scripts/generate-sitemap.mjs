@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { adresySkoly } from '../src/lib/adresa-oboru.mjs';
 
 const BASE_URL = process.env.SITE_URL || 'https://prijimackynaskolu.cz';
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
@@ -65,58 +66,38 @@ function xmlEscape(value) {
     .replace(/'/g, '&apos;');
 }
 
-function buildSchoolSlugs(analysisData, schoolsData) {
+/**
+ * Adresy škol a oborů pro sitemapu. Skládá je sdílený modul `src/lib/adresa-oboru.ts`,
+ * tentýž, kterým je rozpoznává `src/lib/data.ts` — sitemapa tak nemůže ukazovat na adresu,
+ * která se přesměrovává. Ročník se bere z registru stavu datových sad, ne napevno.
+ */
+function buildSchoolSlugs(analysisData, schoolsData, rocnik) {
   const schools = Object.values(analysisData || {});
-  const slugs = new Set();
-
-  const years = schoolsData || {};
-  const detailed = years['2025'] || years['2024'] || [];
-
-  const byRedizo = new Map();
-  for (const school of schools) {
-    const redizo = (school.id || '').split('_')[0];
-    if (!redizo) continue;
-    if (!byRedizo.has(redizo)) byRedizo.set(redizo, []);
-    byRedizo.get(redizo).push(school);
+  const nabidkyRocniku = (schoolsData || {})[rocnik] || [];
+  if (!nabidkyRocniku.length) {
+    throw new Error(`schools_data.json nemá ročník ${rocnik}; registr zobrazuje období, pro které nejsou data`);
   }
 
-  for (const [redizo, schoolList] of byRedizo) {
-    const firstSchool = schoolList[0];
-    const schoolNameSlug = createSlug(firstSchool.nazev);
+  const nazvy = new Map();
+  for (const school of schools) {
+    const redizo = (school.id || '').split('_')[0];
+    if (redizo && !nazvy.has(redizo)) nazvy.set(redizo, school.nazev);
+  }
 
-    slugs.add(`${redizo}-${schoolNameSlug}`);
+  const podleRedizo = new Map();
+  for (const row of nabidkyRocniku) {
+    if (!row.redizo) continue;
+    if (!podleRedizo.has(row.redizo)) podleRedizo.set(row.redizo, []);
+    podleRedizo.get(row.redizo).push(row);
+  }
 
-    const oborCounts = new Map();
-    for (const school of schoolList) {
-      oborCounts.set(school.obor, (oborCounts.get(school.obor) || 0) + 1);
-    }
-
-    for (const school of schoolList) {
-      const hasDuplicate = (oborCounts.get(school.obor) || 0) > 1;
-      const oborSlug = hasDuplicate
-        ? createSlug(school.nazev, school.obor, undefined, school.delka_studia)
-        : createSlug(school.nazev, school.obor);
-      slugs.add(`${redizo}-${oborSlug}`);
-    }
-
-    const detailedRecords = detailed.filter((row) => row.redizo === redizo);
-    const zamereniCounts = new Map();
-
-    for (const row of detailedRecords) {
-      if (!row.zamereni) continue;
-      const key = `${row.obor}|${row.zamereni}`;
-      zamereniCounts.set(key, (zamereniCounts.get(key) || 0) + 1);
-    }
-
-    for (const row of detailedRecords) {
-      if (!row.zamereni) continue;
-      const key = `${row.obor}|${row.zamereni}`;
-      const hasDuplicate = (zamereniCounts.get(key) || 0) > 1;
-      const zamereniSlug = hasDuplicate
-        ? createSlug(firstSchool.nazev, row.obor, row.zamereni, row.delka_studia)
-        : createSlug(firstSchool.nazev, row.obor, row.zamereni);
-      slugs.add(`${redizo}-${zamereniSlug}`);
-    }
+  const slugs = new Set();
+  for (const [redizo, nabidky] of podleRedizo) {
+    // Název školy bere `data.ts` ze school_analysis.json; sitemapa musí brát týž,
+    // jinak by adresa vyšla jinak, než jakou aplikace rozpozná.
+    const nazev = nazvy.get(redizo);
+    if (!nazev) continue;
+    for (const adresa of adresySkoly(redizo, nazev, nabidky)) slugs.add(adresa);
   }
 
   return Array.from(slugs).sort((a, b) => a.localeCompare(b, 'cs'));
@@ -175,7 +156,14 @@ function main() {
   const analysisData = readJson(SCHOOL_ANALYSIS_PATH);
   const schoolsData = readJson(SCHOOLS_DATA_PATH);
 
-  const schoolSlugs = buildSchoolSlugs(analysisData, schoolsData);
+  // Zobrazený ročník určuje registr stavu datových sad, nikdy ne letopočet v kódu.
+  const registr = readJson(path.join(PUBLIC_DIR, 'stav_datovych_sad.json'));
+  const rocnik = registr?.sady?.['cermat-prihlasky']?.zobrazeno?.obdobi;
+  if (!rocnik) {
+    throw new Error('registr neuvádí zobrazené období sady cermat-prihlasky');
+  }
+
+  const schoolSlugs = buildSchoolSlugs(analysisData, schoolsData, rocnik);
   const krajSlugs = buildKrajSlugs(analysisData);
 
   const mtimeAnalysis = fs.statSync(SCHOOL_ANALYSIS_PATH).mtime;
