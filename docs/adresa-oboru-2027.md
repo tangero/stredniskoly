@@ -1,8 +1,8 @@
 # Adresa stránky oboru
 
-**Verze:** 1.0
+**Verze:** 1.1
 **Datum:** 19. 9. 2026
-**Stav:** návrh ke schválení. Tři rozhodnutí zadavatele z 19. 9. 2026 jsou v oddílu 4.
+**Stav:** **realizováno 19. 9. 2026**, všech šest kroků oddílu 5. Tři rozhodnutí zadavatele jsou v oddílu 4, průběh a odchylky od plánu v oddílu 9.
 
 Zadavatel nahlásil, že tentýž obor má na webu tři různé podoby, a odhadl, že správná je jen jedna z nich. Odhad byl správný a příčina leží hlouběji, než v podobě stránky.
 
@@ -91,3 +91,24 @@ Zvážené a nepoužité: **`ID_SOF`** jako veřejná adresa (dnes ji nese `/nab
 | Verze | Změna |
 |---|---|
 | 1.0 | Nález tří implementací adresy oboru, měření dopadu (945 stránek ve starší podobě, 402 mrtvých adres v sitemapě, 1 004 odkazů vyhledávání mimo stránku oboru) a tři rozhodnutí zadavatele: souhrnnou adresu přesměrovat a nedržet, vyhledávání posílat na stránku oboru, `/skola/[slug]/detail` zrušit. |
+
+## 9. Jak to dopadlo
+
+Provedeno 19. 9. 2026 v pořadí C → D → F → E po krocích A a B.
+
+| Krok | Commit | Výsledek |
+|---|---|---|
+| A, B | `f071b60` | základní adresa oboru se trvale přesměrovává; navíc adresa, která nepatří žádné nabídce, se přesměruje místo aby vykreslila přehled školy s kódem 200 |
+| C | `0bcdb7b` | adresu skládá `src/lib/adresa-oboru.mjs`, berou z něj `data.ts` i generátor sitemapy; sitemapa bere ročník z registru |
+| D | `e55e9f7` | vyhledávání posílá vždy na stránku oboru, `/nabidka/2026/…` je jen přesměrování |
+| F, E | `ccc6f7b` | starší podoba nepíše ročník napevno; `/skola/[slug]/detail` a pět jejích komponent smazáno |
+
+**Měřený dopad na sitemapu:** adres `/skola` ubylo z 5 189 na 4 329. Odebráno 1 641 (přesměrovávají se nebo na obor nevedou), přibylo 781 chybějících kanonických — mezi nimi správná stránka oboru Gymnázia prof. Jana Patočky, kterou sitemapa neměla, přestože existovala. Ověřeno, že 25 náhodných adres ze sitemapy vrací 200 bez přesměrování a že osm různých dotazů do vyhledávání vrátilo 42 odkazů, všechny na `/skola/` a všechny s kódem 200.
+
+**Tři odchylky od návrhu, které stojí za zápis.**
+
+1. **Rozdělení 814 ku 212 neplatí tak, jak ho oddíl 3 spočítal.** Pravidlo v kódu se řídí **názvem oboru**, ne kódem `KKOV`, a u gymnázií spadne čtyřleté i osmileté pod jeden název „Gymnázium“. Víc adres proto míří na přehled školy a míň na konkrétní obor, než návrh čekal. Na výsledku to nic nemění (čtenář skončí u seznamu oborů školy), ale číslo v oddílu 3 popisuje klíče `REDIZO + KKOV`, kdežto kód pracuje s názvem oboru.
+2. **Sdílený modul je v čistém JavaScriptu, ne v TypeScriptu.** Používá ho generátor sitemapy spouštěný při buildu pod `node`, a odstraňování typů umí až Node 22.6; workflow projektu běží na Node 20. Ze stejného důvodu je generátor přejmenovaný na `.mjs` — ESM syntaxe v souboru `.js` by na Node 20 spadla. Typy nese JSDoc. Bez toho by opravená sitemapa rozbila produkční build.
+3. **Ročník sitemapy se bere ze sady `cermat-prihlasky`**, protože o tom, které nabídky existují, rozhoduje nabídka oborů. Dnes je shodný se sadou `cermat-vysledky`; kdyby se rozešly, je tohle místo, kde se to projeví.
+
+**Co zůstalo nedotčené.** V `data.ts` jsou další dvě místa, která skládají adresu přehledu školy vlastním výrazem (funkce mimo rozpoznávání adres). Nejsou v cestě příchozího požadavku, takže nepůsobí rozpor, ale patří do téhož modulu.
