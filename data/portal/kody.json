@@ -1,24 +1,132 @@
 {
-  "verze": 1,
-  "poznamka": "Portál pro školy – ukládají se pouze SHA-256 hashe kódů. Plaintext kódy generuje scripts/portal-generate-codes.js a do gitu nepatří.",
+  "verze": 2,
+  "poznamka": "Portál pro školy – ukládají se pouze HMAC-SHA256 kódů s pepřem PORTAL_KOD_PEPPER. Plaintext kódy generuje scripts/portal-generate-codes.js a do gitu nepatří.",
   "kody": [
     {
-      "hash": "fd05889dd9438f4ff35edce2a67091c9008a3622427546ca862a9e3d0fd3b5cc",
-      "redizo": "600171701",
-      "vytvoreno": "2026-09-13",
-      "revokovano": true
+      "hash": "ed0964fcf5dc39fceae0a52fbb51d4c13e0a2cca86c4e8c51a0c896ee0e11636",
+      "redizo": "600006247",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
     },
     {
-      "hash": "568f78839429d63acc4512d15789d50c589820944cae4f57eee5d33e558acdd6",
-      "redizo": "600007774",
-      "vytvoreno": "2026-09-13",
-      "revokovano": true
+      "hash": "9c58d5f9f111453e5028c8519456169bbd0e2d490897ef12aab903d3cce71020",
+      "redizo": "600005721",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
     },
     {
-      "hash": "43f9c76192170a6b8003768beb128e1f60cfda1c9bcfda034400bbe1a5563b61",
+      "hash": "66a67ee0a139e88e3f3deb05be35d7f6651df0a4edfe0691b9534117d679f465",
+      "redizo": "600005976",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "00a04870a06dc342c51926e5636d0e91d87228e02c4417749f69499fd1339ade",
+      "redizo": "600005071",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "7b8ce50926355c7d4df2988f6d10933182d2cfcd9ebef30316d0321f11f1161f",
+      "redizo": "600004643",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "16669c9e043710d7baa6125a99e7c373d3055264c33d44cc4aeb00933ca78737",
+      "redizo": "600013448",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "d93ded76e6cdb3f17fd00450cd5a4fbdd524b37a614832d8358903c1eca59298",
+      "redizo": "600019861",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "5628f706060bd4db91aa0bfecd384565c27cf1f852bed5cdd3efd3443c291f17",
+      "redizo": "600013502",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "33d3829b980c3caa03562cc8ba9903d66c0fb40203ffd51a40df855526d7f655",
+      "redizo": "600017648",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "aadb8f75770788442b8f29427aef0f1b9499947a51a20d4c5bbf009971b013c4",
+      "redizo": "600017460",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "0f7ddb65e5a75541b4e5d6e0009d6a83762a5ac1d41fb8214aa3b4adf6ed464f",
+      "redizo": "600009602",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "67a263d47356a150a7500bbe10fb3a9d5191613256b8f13569e26fc8c3a0e1bd",
+      "redizo": "600010589",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "0eb4e03edb4c3909e82aa90618d540fc3bee5eea38c1c977eb39693d023c1752",
+      "redizo": "600016927",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "9a6b2bed9c3bd7defa6b85052381ff5279fcd93ecea091ff7128f1f19381df37",
+      "redizo": "600007995",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "5e117ab9e1209e2d43a3d41415246d3d2f349a04c89a7eb7bf40b76bdbe4930c",
+      "redizo": "600011658",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "2e6639ba3e3321cba46333e75a9e22bb36e20e8e4ea1f1de7763762d2ee3915a",
+      "redizo": "600011453",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "29bc0f48696d7e047e739e6c598682ec08ce7bab4b2e835b73f5e841b2f18461",
+      "redizo": "600012310",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "8a4f768c7ccf7667b7588caf9a7e80a7786f0b24d78af0f676d7e0f60e3f1862",
+      "redizo": "600171051",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "d170930b625aac1c348430a7e08d0233daa6daa12ebae477d5e4f88d486bc5c5",
+      "redizo": "600171230",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "b131a64fc803d5d7be9171395fa0cd1917ed8937f8f7789faa4537aa5070f1f4",
+      "redizo": "600007065",
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
+    },
+    {
+      "hash": "b3c3fac3fbba17a6f319877b92faa311dc57d0c169e1ff5f5c15ff0e134f8b5c",
       "redizo": "600171701",
-      "vytvoreno": "2026-09-13",
-      "revokovano": true
+      "vytvoreno": "2026-09-19",
+      "revokovano": false
     }
   ]
 }

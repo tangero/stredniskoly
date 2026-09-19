@@ -4,6 +4,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { PortalKodForm } from '@/components/portal/PortalKodForm';
 import { PortalMagicForm } from '@/components/portal/PortalMagicForm';
+import { PortalHledaniSkoly } from '@/components/portal/PortalHledaniSkoly';
 import { ProfilUkazka } from '@/components/portal/ProfilUkazka';
 import { PORTAL_POLE } from '@/lib/portal-skol';
 
@@ -21,7 +22,7 @@ const PRINOSY: Array<{ nadpis: string; text: string; pripravujeme?: boolean }> =
   },
   {
     nadpis: 'Zdarma a bez hesla',
-    text: 'Za profil ani za úpravy nic neplatíte. Přihlásíte se kódem, nebo odkazem, který pošleme na e-mail školy z rejstříku MŠMT.',
+    text: 'Za profil ani za úpravy nic neplatíte. Poprvé se přihlásíte kódem, nebo odkazem na e-mail školy z rejstříku MŠMT. Potom vám odkaz pro přihlášení posíláme na váš vlastní e-mail.',
   },
   {
     nadpis: 'Odkaz na úplné informace',
@@ -29,7 +30,7 @@ const PRINOSY: Array<{ nadpis: string; text: string; pripravujeme?: boolean }> =
   },
   {
     nadpis: 'Otevřená data pro další služby',
-    text: 'Údaje, které škola potvrdí, uvolníme pod licencí CC BY 4.0 jako strojově čitelná data. U každého bude datum a to, že ho potvrdila škola. Jména těch, kdo údaje zadali, nezveřejňujeme.',
+    text: 'Údaje, které škola potvrdí, uvolníme pod licencí CC BY 4.0 jako strojově čitelná data. U každého bude datum a to, že ho potvrdila škola. Otevřená data jména nenesou.',
   },
   {
     nadpis: 'Jak si stojíte proti školám v okolí',
@@ -41,7 +42,7 @@ const PRINOSY: Array<{ nadpis: string; text: string; pripravujeme?: boolean }> =
 const KROKY: Array<{ nadpis: string; text: string }> = [
   {
     nadpis: 'Přihlaste se',
-    text: 'Kódem, který jsme škole poslali, nebo odkazem na e-mail školy uvedený v rejstříku MŠMT.',
+    text: 'Kódem, který jsme škole poslali, nebo odkazem na e-mail školy uvedený v rejstříku MŠMT. Kdo se přihlásí první, stane se správcem profilu a pozve kolegy.',
   },
   {
     nadpis: 'Zkontrolujte a doplňte',
@@ -79,6 +80,16 @@ const OTAZKY: Array<{ otazka: string; odpoved: string }> = [
       'Přebíráme je z oficiálních dat CERMATu a rejstříku MŠMT a na webu mají mít stejnou hodnotu jako u zdroje. Když nesedí, dejte vědět ve formuláři a ověříme je.',
   },
   {
+    otazka: 'Může profil upravovat víc lidí?',
+    odpoved:
+      'Ano. Kdo použije kód nebo odkaz jako první, stane se správcem profilu. Kolegy pozve e-mailem a každý se pak přihlašuje svou adresou. U každé změny vedeme, kdo ji provedl a kdy. Kdo zaslal návrh, o tom redakce ví.',
+  },
+  {
+    otazka: 'Zveřejníte, kdo profil spravuje?',
+    odpoved:
+      'Jméno a funkci správce uvedeme na stránce školy, jen když k tomu dá souhlas. Souhlas odvolá jedním kliknutím v profilu. Bez souhlasu uvádíme „Profil spravuje škola“. Jména dalších editorů ani e-maily nezveřejňujeme. Osobní údaje zpracovává Patrick Zandl jako jejich správce, jen pro přihlašování a vedení historie změn.',
+  },
+  {
     otazka: 'Kdo za webem stojí?',
     odpoved:
       'Web Přijímačky na školu provozuje Patrick Zandl s Hlídačem státu. Data o přijímacím řízení přebírá z otevřených dat CERMATu, rejstříku MŠMT a České školní inspekce.',
@@ -89,6 +100,29 @@ const OTAZKY: Array<{ otazka: string; odpoved: string }> = [
 function bezRoku(label: string): string {
   return label.replace(/\s+\d{4}$/, '');
 }
+
+const CHYBY_ODKAZU: Record<string, string> = {
+  odkaz: 'Odkaz je neplatný, nebo mu vypršela platnost. Požádejte si o nový.',
+  pouzity: 'Tento odkaz už byl použitý. Každý odkaz pro přihlášení platí jednou; požádejte si o nový.',
+  'bez-role': 'K této adrese už nepatří žádný profil školy. Pokud jde o omyl, napište na patrick@zandl.cz.',
+  nenastaveno: 'Přihlašování je dočasně mimo provoz. Zkuste to prosím později.',
+};
+
+/** Hláška po nepovedeném přihlášení (?chyba=…); stránka zůstává statická, čte se v prohlížeči. */
+const ChybaOdkazu = () => (
+  <>
+    {Object.entries(CHYBY_ODKAZU).map(([klic, text]) => (
+      <p key={klic} data-chyba={klic} className="portal-chyba mt-6 hidden rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+        {text}
+      </p>
+    ))}
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `(function(){var k=new URLSearchParams(location.search).get('chyba');if(!k)return;var e=document.querySelector('.portal-chyba[data-chyba="'+k.replace(/[^a-z-]/g,'')+'"]');if(e)e.classList.remove('hidden');})();`,
+      }}
+    />
+  </>
+);
 
 export default function ProSkolyPage() {
   const pole = PORTAL_POLE.filter((p) => !p.prezentacni).map((p) => bezRoku(p.label));
@@ -212,12 +246,23 @@ export default function ProSkolyPage() {
           </div>
         </section>
 
+        {/* Kdo spravuje profil školy */}
+        <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:py-20">
+          <h2 className="text-3xl font-bold leading-tight text-[#16325c]">Kdo spravuje profil vaší školy</h2>
+          <p className="mb-6 mt-3 leading-relaxed text-[#3c4b5c]">
+            Vyhledejte školu. Uvidíte, jestli už profil někdo spravuje, nebo jestli se škola zatím
+            nepřihlásila.
+          </p>
+          <PortalHledaniSkoly />
+        </section>
+
         {/* Vstup do úpravy */}
         <section id="vstup" className="scroll-mt-6 border-y border-[#e3e9f1] bg-[#f4f7fb]">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
             <h2 className="text-3xl font-bold leading-tight text-[#16325c]">Upravit profil školy</h2>
             <p className="mt-3 max-w-2xl leading-relaxed text-[#3c4b5c]">
               Jedna z cest stačí. Úprava se vždy týká jen školy, ke které kód nebo e-mail patří.
+              Kdo už účet má, zadá do pole vpravo svůj e-mail.
             </p>
 
             <div className="mt-10 grid gap-6 lg:grid-cols-2">
@@ -230,14 +275,15 @@ export default function ProSkolyPage() {
               </div>
 
               <div className="rounded-lg bg-white p-6 ring-1 ring-[#d5deea] sm:p-8">
-                <h3 className="text-xl font-bold text-[#16325c]">Pošlete odkaz na e-mail školy</h3>
+                <h3 className="text-xl font-bold text-[#16325c]">Pošlete odkaz na e-mail</h3>
                 <p className="mb-5 mt-2 text-[#5b6877]">
-                  Zadejte e-mail školy, jak je uvedený v rejstříku MŠMT. Pošleme na něj odkaz, který
-                  otevře úpravu profilu a platí 72 hodin.
+                  Zadejte e-mail školy, jak je uvedený v rejstříku MŠMT, nebo svůj e-mail, pokud už
+                  účet máte. Pošleme na něj odkaz, který platí 72 hodin.
                 </p>
                 <PortalMagicForm />
               </div>
             </div>
+            <ChybaOdkazu />
 
             <p className="mt-6 max-w-3xl text-sm leading-relaxed text-[#5b6877]">
               Portál je v pilotním provozu. Když odkaz nedorazí nebo škola v rejstříku e-mail nemá,

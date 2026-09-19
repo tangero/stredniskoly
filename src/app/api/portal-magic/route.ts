@@ -1,12 +1,18 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { after, NextRequest, NextResponse } from 'next/server';
 import {
-  najdiRedizoPodleEmailu,
+  najdiVsechnaRedizoPodleEmailu,
   magicOdkaz,
   normalizeEmail,
+  vytvorToken,
+  portalBaseUrl,
   MAGIC_NEUTRALNI_ODPOVED,
 } from '@/lib/portal-magic';
 import { getNazevSkoly } from '@/lib/portal-skol';
-import { posliMagicLinkEmail } from '@/lib/portal-email';
+import { posliOdkazyEmail, type OdkazSkoly } from '@/lib/portal-email';
+import { jeDbNastavena } from '@/lib/novinky-db';
+import { cteni } from '@/lib/portal-relace';
+import { ipZPozadavku } from '@/lib/portal-api';
+import { osobyPodleEmailu, platneRoleOsoby, spravceSkoly, zapisUdalost } from '@/lib/portal-ucty';
 
 // In-memory rate limiting: 5 požadavků za 15 minut na IP, 3 na e-mail
 // (stejný vzor jako src/app/api/bug-report/route.ts)
@@ -38,8 +44,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const forwarded = request.headers.get('x-forwarded-for');
-  const ip = forwarded?.split(',')[0]?.trim() || 'unknown';
+  const ip = ipZPozadavku(request.headers);
 
   if (isRateLimited(ip)) {
     return NextResponse.json(
@@ -67,17 +72,58 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Odpověď je vždy stejná, ať adresu známe, nebo ne (žádná enumerace)
-  const redizo = await najdiRedizoPodleEmailu(email);
-  if (redizo) {
-    const nazev = await getNazevSkoly(redizo);
-    const odeslano = await posliMagicLinkEmail({
-      email,
-      nazevSkoly: nazev || 'vaší školy',
-      odkaz: magicOdkaz(redizo),
-    });
-    console.log(`✉️ Magic link pro REDIZO z rejstříku: ${odeslano ? 'odeslán' : 'selhalo'}`);
-  }
+  // Odpověď je vždy stejná a odchází hned, ať adresu známe, nebo ne: dohledání
+  // a odeslání běží až po ní, takže ani doba odpovědi nic neprozradí.
+  after(async () => {
+    try {
+      const polozky = await odkazyProEmail(email);
+      if (polozky.length > 0) {
+        const odeslano = await posliOdkazyEmail(email, polozky);
+        console.log(`✉️ Odkazy do portálu (${polozky.length}): ${odeslano ? 'odeslány' : 'selhalo'}`);
+      }
+    } catch (e) {
+      console.error('❌ Portál: sestavení odkazů selhalo:', e);
+    }
+  });
 
   return NextResponse.json(MAGIC_NEUTRALNI_ODPOVED);
+}
+
+/**
+ * Co pošleme na zadanou adresu (docs/ucty-portalu-skol-2027.md, oddíl 2.2):
+ * osobě s účtem přihlašovací odkaz, rejstříkové adrese vstup za každou její
+ * školu (sdílená adresa = víc škol), kromě škol, kde už tatáž osoba roli má.
+ */
+async function odkazyProEmail(email: string): Promise<OdkazSkoly[]> {
+  const polozky: OdkazSkoly[] = [];
+  const skolyOsoby = new Set<string>();
+  const base = portalBaseUrl();
+
+  if (jeDbNastavena()) {
+    for (const osobaId of await osobyPodleEmailu(cteni, email)) {
+      const role = await platneRoleOsoby(cteni, osobaId);
+      if (role.length === 0) continue;
+      role.forEach((r) => skolyOsoby.add(r.redizo));
+      const nazvy = await Promise.all(role.map((r) => getNazevSkoly(r.redizo)));
+      polozky.push({
+        nazevSkoly: nazvy.map((n, i) => n || role[i].redizo).join(', '),
+        odkaz: `${base}/pro-skoly/prihlaseni/${vytvorToken('prihlaseni', { osoba_id: osobaId })}`,
+        popis: 'Přihlášení do profilu, který spravujete',
+      });
+    }
+  }
+
+  for (const redizo of await najdiVsechnaRedizoPodleEmailu(email)) {
+    if (skolyOsoby.has(redizo)) continue;
+    const spravce = jeDbNastavena() ? await spravceSkoly(cteni, redizo) : null;
+    polozky.push({
+      nazevSkoly: (await getNazevSkoly(redizo)) || 'vaše škola',
+      odkaz: magicOdkaz(redizo),
+      popis: spravce
+        ? 'Profil školy už má správce; návrh úprav můžete poslat i tak'
+        : 'Založení profilu školy, kterou budete spravovat',
+    });
+    if (jeDbNastavena()) await zapisUdalost(cteni, redizo, null, 'odkaz_vyzadan', { rejstrik: true });
+  }
+  return polozky;
 }

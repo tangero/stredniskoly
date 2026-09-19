@@ -81,6 +81,8 @@ export function overMagicToken(token: string, secret = process.env.PORTAL_MAGIC_
   if (!payload || typeof payload.redizo !== 'string' || typeof payload.exp !== 'number') {
     return null;
   }
+  // Typované tokeny účtů (přihlášení, pozvánka…) nejsou rejstříkový odkaz.
+  if ('typ' in payload) return null;
   if (payload.exp <= Date.now()) return null; // expirovaný
   return payload.redizo;
 }
@@ -126,7 +128,7 @@ export async function najdiRedizoPodleEmailu(
 // Společné rozresolvování autorizace pro /api/portal-skoly: kód NEBO magic token
 // ----------------------------------------------------------------------------
 
-export type PortalKanal = 'kod' | 'magic-link';
+export type PortalKanal = 'kod' | 'magic-link' | 'ucet';
 
 /**
  * Přijme buď přihlašovací kód, nebo magic token; vrátí REDIZO a kanál,
@@ -145,4 +147,80 @@ export async function resolvePortalAuth(
     return redizo ? { redizo, kanal: 'magic-link' } : null;
   }
   return null;
+}
+
+// ----------------------------------------------------------------------------
+// Typované tokeny účtů (docs/ucty-portalu-skol-2027.md, oddíl 2.2)
+//
+// Stejný podpis jako rejstříkový odkaz, ale payload nese `typ`, takže token
+// jednoho účelu nejde použít jinde (odkaz na změnu e-mailu nepřihlásí).
+// Rejstříkový token `typ` nemá; overMagicToken odmítne tokeny, které ho mají.
+// ----------------------------------------------------------------------------
+
+export type TypTokenu = 'prihlaseni' | 'relace' | 'pozvanka' | 'email';
+
+export const PLATNOST_TOKENU_MS: Record<TypTokenu, number> = {
+  prihlaseni: 72 * 60 * 60 * 1000,
+  relace: 30 * 24 * 60 * 60 * 1000,
+  pozvanka: 7 * 24 * 60 * 60 * 1000,
+  email: 72 * 60 * 60 * 1000,
+};
+
+export interface TypovanyToken {
+  typ: TypTokenu;
+  exp: number;
+  nonce: string;
+  [klic: string]: unknown;
+}
+
+export function vytvorToken(
+  typ: TypTokenu,
+  data: Record<string, string>,
+  secret = process.env.PORTAL_MAGIC_SECRET,
+  ted = Date.now(),
+): string {
+  if (!secret) throw new Error('Chybí PORTAL_MAGIC_SECRET.');
+  const payload: TypovanyToken = { ...data, typ, exp: ted + PLATNOST_TOKENU_MS[typ], nonce: randomBytes(16).toString('hex') };
+  const payloadB64 = base64url(JSON.stringify(payload));
+  return `${payloadB64}.${podepis(payloadB64, secret).toString('base64url')}`;
+}
+
+/** Ověří podpis, expiraci a typ; vrátí payload, nebo null. */
+export function overToken(
+  token: string,
+  typ: TypTokenu,
+  secret = process.env.PORTAL_MAGIC_SECRET,
+): TypovanyToken | null {
+  if (!secret || typeof token !== 'string') return null;
+  const [payloadB64, podpisB64] = token.split('.');
+  if (!payloadB64 || !podpisB64) return null;
+  const podpis = Buffer.from(podpisB64, 'base64url');
+  const ocekavany = podepis(payloadB64, secret);
+  if (podpis.length !== ocekavany.length || !timingSafeEqual(podpis, ocekavany)) return null;
+  let payload: TypovanyToken;
+  try {
+    payload = JSON.parse(Buffer.from(payloadB64, 'base64url').toString('utf-8'));
+  } catch {
+    return null;
+  }
+  if (!payload || payload.typ !== typ || typeof payload.exp !== 'number' || payload.exp <= Date.now()) return null;
+  return payload;
+}
+
+export function portalBaseUrl(): string {
+  return (process.env.PORTAL_BASE_URL || PORTAL_PRODUKCNI_BASE_URL).replace(/\/$/, '');
+}
+
+/** Všechny školy, jejichž rejstříková adresa odpovídá e-mailu (61 adres je sdílených). */
+export async function najdiVsechnaRedizoPodleEmailu(
+  email: string,
+  mapa?: Record<string, string[]>,
+): Promise<string[]> {
+  const norm = normalizeEmail(email);
+  if (!norm) return [];
+  const data = mapa ?? (await nactiEmaily());
+  return Object.entries(data)
+    .filter(([, emaily]) => emaily.includes(norm))
+    .map(([redizo]) => redizo)
+    .sort();
 }

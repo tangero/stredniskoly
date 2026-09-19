@@ -9,6 +9,7 @@ import { ProgramTabs } from '@/components/ProgramTabs';
 import { InspectionSummary } from '@/components/InspectionSummary';
 import { SchoolPortalSection } from '@/components/school-profile/SchoolPortalSection';
 import { getPortalZaznam } from '@/lib/portal-skol';
+import { spravceProfilu } from '@/lib/portal-verejne';
 import { getSchoolPageType, getSchoolOverview, getExtendedStatsForProgram, getProgramsByRedizo, SchoolProgram, getCSIDataByRedizo, getExtractionsByRedizo, get2026DataByRedizo, type School2026Data, getSchoolResultsByRedizo } from '@/lib/data';
 import { Applications2026Banner } from '@/components/Applications2026Banner';
 import { SchoolResults2026 } from '@/components/SchoolResults2026';
@@ -214,7 +215,7 @@ export default async function SchoolDetailPage({ params }: Props) {
   const data2026ForDetail = await get2026DataByRedizo(redizo);
   const program2026 = match2026ToProgram(data2026ForDetail, program);
 
-  const [detailedPrograms, extendedStats, csiData, extractions, programNote, schoolNote, results2026, portalZaznam] = await Promise.all([
+  const [detailedPrograms, extendedStats, csiData, extractions, programNote, schoolNote, results2026, portalZaznam, spravceProfiluSkoly] = await Promise.all([
     getProgramsByRedizo(redizo),
     getExtendedStatsForProgram(program.id),
     getCSIDataByRedizo(redizo),
@@ -223,6 +224,7 @@ export default async function SchoolDetailPage({ params }: Props) {
     getNoteForSchool(school.id),    // fallback: poznámka pro celý obor (bez zaměření)
     getSchoolResultsByRedizo(redizo),
     getPortalZaznam(redizo),
+    spravceProfilu(redizo),
   ]);
   // Použít zaměření-specifickou poznámku, nebo fallback na obecnou
   const schoolNoteToShow = programNote || schoolNote;
@@ -349,7 +351,7 @@ export default async function SchoolDetailPage({ params }: Props) {
           <ProfilOboru data={profil} inspekceHref={extractions.length > 0 ? `/skola/${overviewSlug}/inspekce` : null} />
 
           <div className="mx-auto max-w-6xl space-y-6 px-4 pb-12">
-            <SchoolPortalSection zaznam={portalZaznam} />
+            <SchoolPortalSection zaznam={portalZaznam} spravce={spravceProfiluSkoly} />
 
             <section className="grid gap-6 rounded-2xl bg-white p-6 shadow-[0_1px_0_#dbe3ec] md:grid-cols-2">
               <div>
@@ -562,7 +564,7 @@ export default async function SchoolDetailPage({ params }: Props) {
           />
 
           {/* Údaje potvrzené školou (Portál pro školy) */}
-          <SchoolPortalSection zaznam={portalZaznam} />
+          <SchoolPortalSection zaznam={portalZaznam} spravce={spravceProfiluSkoly} />
 
           {/* Adresa */}
           <div className="bg-white p-6 rounded-xl shadow-sm mb-8">

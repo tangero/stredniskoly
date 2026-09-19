@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.13 · 18. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.14 · 19. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -75,6 +75,8 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **souběžní uchazeči**, **kam se hlásí stejní uchazeči** | uchazeči, kteří měli na přihlášce tento obor i obor jiné školy | „uchazeči, kteří měli na přihlášce i tento obor“ | konkurence, konkurenční škola |
 | **vzdušnou čarou** | vzdálenost bez ohledu na dopravu | vždy u vzdálenosti; dojezd je jiný údaj | daleko, blízko (bez čísla) |
 | **Potvrdila škola · datum** | údaj zadala škola v portálu pro školy a prošel kontrolou | značka u údaje, v patičce vysvětlení | ověřeno, oficiální |
+| **Profil spravuje *jméno, funkce*** / **Profil spravuje škola** | kdo za školu v portálu vede profil (správce profilu); jméno a funkce jen se souhlasem správce, jinak druhá podoba ([účty portálu](ucty-portalu-skol-2027.md), oddíl 3) | není potřeba; na `/pro-skoly` u školy bez správce: „Škola se zatím nepřihlásila.“ | ověřeno, garant, odpovědná osoba; jména dalších editorů se neuvádějí vůbec |
+| **správce profilu**, **editor** | v portálu pro školy: kdo použil kód nebo odkaz první a zve kolegy; pozvaný kolega | jen v portálu, ne na stránce školy | administrátor, vlastník, uživatel školy |
 | **text školy** | popis školy vlastními slovy, neověřujeme | „text školy, neověřujeme“ | informace o škole, fakta |
 | **shrnutí vytvořené automaticky ze zprávy ČŠI** | strojová extrakce z inspekční zprávy | značka s datem zprávy | hodnocení inspekce (když jde o shrnutí) |
 | **zvažované obory** | obory, které si rodina uložila tlačítkem „Uložit mezi zvažované“; ukládá se nabídka, ne škola, a jen v tomto prohlížeči | „uloženo v tomto prohlížeči“ u tlačítka; v horní liště stačí počet v závorce | zvažované školy (ukládá se obor), oblíbené, uložené školy, můj výběr škol |
@@ -95,6 +97,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.14 | Pojmy **Profil spravuje** a **správce profilu / editor** pro účty portálu škol ([účty portálu](ucty-portalu-skol-2027.md)). Jméno správce se na stránce školy uvádí jen s jeho souhlasem, jinak „Profil spravuje škola“; slova *ověřeno* a *garant* se nepoužívají, protože správce údaje navrhuje, schvaluje je redakce. |
 | 1.13 | Pojem **zvažované obory** pro uložený výběr. Vznikl s položkou „Zvažované obory (X)“ v horní liště: ukládá se nabídka, ne škola ([stránka školy](stranka-skoly-2027.md), oddíl 3), takže i počet v závorce je v oborech. Slovo *zvažované školy* se nepoužívá — kdo uloží tři obory jednoho gymnázia, viděl by v liště jedničku a v simulátoru tři řádky, což zakazuje pravidlo 3. |
 | 1.12 | Věta pod tabulkou oborů výš a níž končí „a nemají u nás vlastní stránku“ místo „uvádíme u nich jen název“: u oboru mimo přehled, který má i obtížnost přijetí, se ukazuje víc než název (obtížnost a pod ní značka), takže dřívější znění neplatilo. |
 | 1.11 | Věta pod tabulkou oborů výš a níž vysvětluje obě značky, tedy i obory mimo přehled („a několik dalších oborů“); dosud slovník předepisoval znění jen o oborech bez jednotné zkoušky, zatímco stránka správně mluvila o obojím. Doplněn čtvrtý stav sloupce obtížnosti: **bez údajů** pro obor, který nevede katalog ani soupis oborů mimo přehled — bez něj slovník popisoval tři stavy ze čtyř a chybějící stav se dal zaměnit za „mimo přehled“. |

@@ -5,11 +5,15 @@ import {
   hashKod,
   validateKod,
   validatePortalPayload,
+  verejnyPayload,
   buildPortalZaznam,
   zaznamMaObsah,
   formatDatumCz,
   PORTAL_POLE,
 } from '../src/lib/portal-skol.ts';
+
+// Pepř kódů (v produkci env PORTAL_KOD_PEPPER); hashKod ho čte při volání.
+process.env.PORTAL_KOD_PEPPER ??= 'testovaci-pepr';
 
 // Fixture kódů – stejný tvar jako data/portal/kody.json (jen hashe, plaintext nikdy)
 const KODY = [
@@ -183,4 +187,27 @@ test('nová nepovinná pole stravování a kontakt na výchovného poradce', () 
   assert.equal(prazdne.ok, true);
   const dlouhe = validatePortalPayload({ ...PAYLOAD, udaje: { kontakt_vychovny_poradce: 'x'.repeat(301) } });
   assert.equal(dlouhe.ok, false);
+});
+
+test('hash kódu: HMAC s pepřem, bez pepře kód neověří', async () => {
+  assert.notEqual(hashKod('ABCD-EFGH-JKMN', 'jiny-pepr'), hashKod('ABCD-EFGH-JKMN'));
+  assert.throws(() => hashKod('ABCD-EFGH-JKMN', ''), /PORTAL_KOD_PEPPER/);
+  const puvodni = process.env.PORTAL_KOD_PEPPER;
+  delete process.env.PORTAL_KOD_PEPPER;
+  const chyby = console.error;
+  console.error = () => {};
+  try {
+    assert.equal(await validateKod('ABCD-EFGH-JKMN', KODY), null);
+  } finally {
+    console.error = chyby;
+    process.env.PORTAL_KOD_PEPPER = puvodni;
+  }
+});
+
+test('payload do veřejného issue nenese kontaktní e-mail a moderace ho nevyžaduje', () => {
+  const payload = { ...VALID_BASE, redizo: '600171701', nazev: 'X', verze_prijimani: '2027' };
+  const verejny = verejnyPayload(payload);
+  assert.equal('kontakt_email' in verejny, false);
+  assert.equal(validatePortalPayload(verejny).ok, false);
+  assert.equal(validatePortalPayload(verejny, { bezKontaktu: true }).ok, true);
 });

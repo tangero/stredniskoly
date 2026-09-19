@@ -110,7 +110,7 @@ async function apply(issueNumber, dryRun) {
   }
 
   // Znovu zvalidujeme payload proti stejným pravidlům jako API (délky, povolená pole, souhlas)
-  const vysledek = validatePortalPayload(rawPayload);
+  const vysledek = validatePortalPayload(rawPayload, { bezKontaktu: true });
   if (!vysledek.ok) {
     throw new Error(`Payload neprošel validací: ${vysledek.error}`);
   }
@@ -130,7 +130,7 @@ async function apply(issueNumber, dryRun) {
       udaje_sedi: vysledek.udaje_sedi,
       nesrovnalost: vysledek.nesrovnalost,
       souhlas_cc_by: true,
-      kontakt_email: vysledek.kontakt_email,
+      kontakt_email: '',
     },
     dnes,
   );
