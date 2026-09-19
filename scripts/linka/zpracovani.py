@@ -97,12 +97,17 @@ def srovnej_pasma(novy: Path, stavajici: Path) -> dict:
 
 
 def dopad_uchazeci(rok: int, zobrazene_obdobi: str | None) -> str:
-    """Věta pro oznámení a popis PR. Web čte jen pásma zobrazeného roku; souběžné přihlášky nezobrazuje."""
-    soubeh = f"public/soubeh_prihlasek_{rok}.json web nezobrazuje."
-    soubeh += f" Stránka oboru čte public/kontext_prihlasek_{rok}.json podle zobrazeného období."
+    """Věta pro oznámení a popis PR. Web čte všechny tři výstupy, ale jen za zobrazené období.
+
+    Stránka oboru čte pásma a kontext přihlášek, stránka školy souběžné přihlášky
+    (src/lib/skola-profil-data.ts), vždy za rok sady cermat-uchazeci-kolo1 z registru.
+    """
+    soubeh = (f"Stránka oboru čte public/pasma_prijeti_{rok}.json a public/kontext_prihlasek_{rok}.json, "
+              f"stránka školy public/soubeh_prihlasek_{rok}.json, vždy podle zobrazeného období.")
     if str(rok) == str(zobrazene_obdobi):
         return (
-            f"Přepíše public/pasma_prijeti_{rok}.json, který čte stránka oboru; po sloučení se tam změní čísla. "
+            f"Přepíše public/pasma_prijeti_{rok}.json, public/kontext_prihlasek_{rok}.json a "
+            f"public/soubeh_prihlasek_{rok}.json, které web čte; po sloučení se změní čísla na stránkách oboru i školy. "
             f"{soubeh} Doklady v docs/podklady a čísla ve slovníku přepočítej nad týmž souborem."
         )
     return (

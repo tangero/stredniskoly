@@ -45,12 +45,14 @@ Fronta je v `data/linka/fronta.json`. Pracovní soubory ve `data/linka/prace/<K�
 
 | Sada | Zpracování | Předání po schválení |
 |---|---|---|
-| `cermat-uchazeci-kolo1` | kontrola povinných sloupců, `build-pasma-prijeti.py` a `build-soubeh-prihlasek.py` do pracovního adresáře, srovnání s tím, co je na webu | větev s novými soubory `public/pasma_prijeti_<rok>.json` a `public/soubeh_prihlasek_<rok>.json` a pull request |
+| `cermat-uchazeci-kolo1` | kontrola povinných sloupců, `build-pasma-prijeti.py`, `build-soubeh-prihlasek.py` a `build-kontext-prihlasek.py` do pracovního adresáře, srovnání s tím, co je na webu. **Poslední dva berou názvy oborů mimo katalog z indexu rejstříku škol** (viz níže) | větev s novými soubory `public/pasma_prijeti_<rok>.json`, `public/soubeh_prihlasek_<rok>.json` a `public/kontext_prihlasek_<rok>.json` a pull request |
 | `cermat-maturita` | k jarnímu souboru stažení tří předchozích jarních ročníků, `build-maturita-skoly.py` s doplněním do stávajícího výstupu, kontrola povinných sloupců češtiny (včetně pasti směrodatné odchylky a percentilu), pojistka proti poklesu počtu škol; stav po podzimu se nezpracuje | větev s `public/maturita_skoly.json` a pull request; web ho čte až po přepnutí období v registru |
 | `cermat-kolo2-agregaty` | stažení výsledků 1. kola téhož roku, `build-druhe-kolo.py` s doplněním ročníku do stávajícího výstupu, pojistka proti nabídkám bez 2. kola | větev s `public/druhe_kolo.json` a pull request; web nový rok ukáže až po přepnutí období v registru |
 | ostatní | stažení, sha256, listy, hlavička, počet řádků, změny struktury proti předchozímu souboru | záznam rozhodnutí ve frontě a doporučený ruční krok |
 
 Změna struktury, například přejmenovaný list nebo chybějící sloupec, úlohu nezastaví, ale v oznámení je uvedena jako první věc. Chybějící povinný sloupec zpracování zastaví a úloha skončí ve stavu `selhalo` s vysvětlením.
+
+**Zpracování uchazečů bere názvy oborů mimo katalog z indexu** `data/msmt_rejstrik/nazvy-oboru.json`, který je v gitu, takže ho linka má i v CI bez třicetimegabajtového snímku. Chybějící, prázdný nebo zastaralý index (jiný záznam `zobrazeno` včetně otisku než v registru) úlohu **zastaví** s návodem, protože výstup bez názvů by z webu odebral víc než tisíc názvů, aniž by to bylo na první pohled poznat. Postup obnovy indexu je níže v odstavci o zastaralém indexu a v `docs/zdroje-dat.md`, oddíl 5.
 
 ## 4. Oznámení a schválení
 

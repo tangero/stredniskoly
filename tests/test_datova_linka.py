@@ -237,7 +237,10 @@ class TestDatovaLinka(unittest.TestCase):
     def test_dopad_rozlisi_soubory_ktere_web_cte(self):
         revize = zpracovani.dopad_uchazeci(2025, "2025")
         self.assertIn("Přepíše public/pasma_prijeti_2025.json", revize)
-        self.assertIn("public/soubeh_prihlasek_2025.json web nezobrazuje", revize)
+        # Souběžné přihlášky čte stránka školy; revize zobrazeného roku ji změní.
+        self.assertIn("public/soubeh_prihlasek_2025.json, které web čte", revize)
+        self.assertIn("stránka školy public/soubeh_prihlasek_2025.json", revize)
+        self.assertNotIn("nezobrazuje", revize)
         nove = zpracovani.dopad_uchazeci(2026, "2025")
         self.assertIn("web je nečte", nove)
         self.assertNotIn("Přepíše", nove)

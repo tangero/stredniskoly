@@ -28,16 +28,17 @@ def bez_jednotne_zkousky(klic: str) -> bool:
 
 
 def poradi_rocniku(rocniky, zobrazeny: str) -> list[str]:
-    """Předchozí a zobrazený ročník katalogu (registr, sada cermat-vysledky), v tomto pořadí.
+    """Ročníky katalogu od zobrazeného (registr, sada cermat-vysledky) ke starším.
 
-    Předchozí ročník nese identifikátory stránek, které mapa nabídek zachovává; zobrazený
-    doplní nabídky, které jsou nové. Starší ročníky se nečtou, jejich identifikátory
-    už stránky nemusí mít.
+    Novější zápis vyhrává, stejně jako `nazvyOboru()` na stránce oboru: souběh přihlášek
+    a kontext pak mluví o škole stejně jako stránka. Ročník, který je v katalogu, ale
+    registr ho ještě nepřepnul (import předchází `prepni`), se nečte.
     """
-    return [r for r in (str(int(zobrazeny) - 1), str(zobrazeny)) if r in rocniky]
+    return sorted((r for r in rocniky if int(r) <= int(zobrazeny)), key=int, reverse=True)
 
 
-def nacti_index(cesta: Path = INDEX, registr: Path = REGISTR) -> dict:
+def nacti_index(cesta: Path | None = None, registr: Path | None = None) -> dict:
+    cesta, registr = cesta or INDEX, registr or REGISTR
     if not cesta.exists():
         raise SystemExit(f"{cesta.name} chybí; vytvořte ho scripts/build-nazvy-oboru-rejstrik.py")
     index = json.loads(cesta.read_text(encoding="utf-8"))
@@ -47,6 +48,9 @@ def nacti_index(cesta: Path = INDEX, registr: Path = REGISTR) -> dict:
     if not zobrazeno.get("sha256") or index["meta"].get("registr") != zobrazeno:
         raise SystemExit(f"{cesta.name} vznikl ze snímku {index['meta'].get('registr')}, registr zobrazuje "
                          f"{zobrazeno}; přegenerujte ho scripts/build-nazvy-oboru-rejstrik.py")
+    # Použitelnost, ne jen existence: prázdný index by z webu tiše odebral názvy oborů mimo katalog.
+    if not index.get("nabidky"):
+        raise SystemExit(f"{cesta.name} neobsahuje žádný obor; přegenerujte ho scripts/build-nazvy-oboru-rejstrik.py")
     return index
 
 
@@ -59,12 +63,28 @@ def nazvy_oboru(index: dict | None = None, katalog: dict | None = None, zobrazen
     if index is None:
         index = nacti_index()
 
+    # Uvnitř ročníku vyhrává první záznam v pořadí souboru, stejně jako na webu. Klíč REDIZO_KKOV
+    # nenese zaměření, takže ho může mít víc nabídek téže školy (PORG: Praha, Brno, Ostrava).
+    # Řazení podle `id` bylo zavrženo: u PORG by vybralo Brno jen kvůli diakritice v `id`
+    # a změnilo obec bez dokladu (docs/podklady/dopad-precedence-nazvu-2026-09-18.md).
     mapa: dict[str, dict] = {}
+    varianty: dict[str, set[tuple]] = {}
     for rok in poradi_rocniku(katalog, str(zobrazeny)):
         for z in katalog[rok]:
-            klic = f"{z['redizo']}_{z.get('kkov') or z['id'].split('_')[1]}"
-            mapa.setdefault(klic, {"skola": z.get("nazev_display") or z.get("nazev"), "obec": z.get("obec"),
-                                   "obor": z.get("obor"), "id": z["id"], "jpz": True})
+            kkov = z.get("kkov") or (str(z.get("id") or "").split("_") + ["", ""])[1]
+            if not kkov:
+                print(f"varování: záznam bez kkov i použitelného id: {z.get('redizo')}")
+                continue
+            klic = f"{z['redizo']}_{kkov}"
+            popis = (z.get("nazev_display") or z.get("nazev"), z.get("obec"), z.get("obor"))
+            varianty.setdefault(f"{rok}|{klic}", set()).add(popis)
+            mapa.setdefault(klic, {"skola": popis[0], "obec": popis[1], "obor": popis[2], "id": z["id"], "jpz": True})
+    sporne = sum(1 for v in varianty.values() if len(v) > 1)
+    if sporne:
+        # Tichý arbitrární výběr je horší než viditelná nejednoznačnost; z dat ji rozhodnout nejde.
+        print(f"poznámka: {sporne} klíčů má v jednom ročníku víc nabídek s rozdílným popisem; "
+              f"vyhrává první v pořadí souboru, stejně jako na webu")
+
     for redizo, kody in index["nabidky"].items():
         nazev, obec = index["skoly"][redizo]
         for kod in kody:

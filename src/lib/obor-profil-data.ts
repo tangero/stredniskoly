@@ -3,7 +3,8 @@ import { getSouhrnNabidky, nabidkyVeSkupineKraje, souhrnOboru, type SouhrnRocnik
 import { getKontextPrihlasek, type KontextPrihlasek } from '@/lib/kontext-prihlasek';
 import { getPasmaPrijeti, getPasmaPrijetiZaRok, celostatniMedianUchazecu, rokPasemPrijeti, type PasmaPrijetiObor } from '@/lib/pasma-prijeti';
 import { getDruheKolo, type DruheKoloNabidky } from '@/lib/druhe-kolo';
-import { verzeObdobi } from '@/lib/stav-datovych-sad';
+import { verzeObdobi, zobrazeneObdobi } from '@/lib/stav-datovych-sad';
+import { klicOboru, rocnikyKatalogu } from '@/lib/school-key';
 import { getWebSkoly } from '@/lib/skoly-web';
 import { createSlug } from '@/lib/utils';
 import {
@@ -83,14 +84,15 @@ export interface ProfilOboruData {
 
 let nazvyCache: Map<string, { skola: string; nazev: string; obec: string; obor: string; delka?: number }> | null = null;
 
+/** Popis oboru školy podle klíče REDIZO_KKOV; pravidlo výběru sdílí se scripts/nazvy_oboru.py. */
 async function nazvyOboru() {
   if (nazvyCache) return nazvyCache;
   const data = await getSchoolsData() as unknown as Record<string, Array<Record<string, unknown>>>;
   const mapa = new Map<string, { skola: string; nazev: string; obec: string; obor: string; delka?: number }>();
-  for (const rok of Object.keys(data).sort().reverse()) {
+  for (const rok of rocnikyKatalogu(Object.keys(data), await zobrazeneObdobi('cermat-vysledky'))) {
     for (const z of data[rok] ?? []) {
-      const klic = `${z.redizo}_${z.kkov}`;
-      if (mapa.has(klic)) continue;
+      const klic = klicOboru(z);
+      if (!klic || mapa.has(klic)) continue;
       mapa.set(klic, {
         skola: String(z.nazev_display ?? z.nazev ?? ''),
         nazev: String(z.nazev ?? ''),

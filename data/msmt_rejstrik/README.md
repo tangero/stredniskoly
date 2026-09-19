@@ -65,6 +65,7 @@ přihlášek a kontextu přihlášek potřebují jen názvy škol a oborů, a ty
 `nazvy-oboru.json`, který v gitu je. Vzniká ze snímku, který určuje registr:
 
 ```sh
+python3 scripts/stahni-rejstrik.py            # snímek podle registru, ověří otisk
 python3 scripts/build-nazvy-oboru-rejstrik.py
 ```
 

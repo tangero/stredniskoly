@@ -53,3 +53,20 @@ export function klicZdrojeProStranku(
     .map(k => (k ? indexZdroje.get(k) : undefined))
     .find((k): k is string => k !== undefined && maRocnik(k));
 }
+
+/**
+ * Ročníky katalogu od zobrazeného (registr, sada cermat-vysledky) ke starším. Ročník, který
+ * je v katalogu, ale registr ho ještě nepřepnul (import předchází přepnutí), se nečte.
+ * Stejné pravidlo má scripts/nazvy_oboru.py; bez zobrazeného období se berou všechny.
+ */
+export function rocnikyKatalogu(rocniky: string[], zobrazeny: string | null): string[] {
+  return rocniky
+    .filter(r => zobrazeny === null || Number(r) <= Number(zobrazeny))
+    .sort((a, b) => Number(b) - Number(a));
+}
+
+/** Klíč REDIZO_KKOV záznamu katalogu; kód oboru z `kkov`, jinak z `id`. Stejně jako scripts/nazvy_oboru.py. */
+export function klicOboru(z: { redizo?: unknown; kkov?: unknown; id?: unknown }): string | null {
+  const kkov = z.kkov ? String(z.kkov) : String(z.id ?? '').split('_')[1] ?? '';
+  return kkov ? `${z.redizo}_${kkov}` : null;
+}
