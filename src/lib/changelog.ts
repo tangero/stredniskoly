@@ -10,6 +10,14 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '2.12.1',
+    date: '19. 9. 2026',
+    title: 'Stejný popis školy na všech stránkách',
+    changes: [
+      { type: 'fix', text: 'Souběžné přihlášky na stránce školy popisují školy stejně jako stránka oboru; u 32 škol se zobrazuje úplnější název, obvykle s číslem popisným' },
+    ],
+  },
+  {
     version: '2.12.0',
     date: '18. 9. 2026',
     title: 'Kolik bodů je potřeba a data z přijímaček 2026',
@@ -22,7 +30,8 @@ export const changelog: ChangelogEntry[] = [
       { type: 'improve', text: 'Přihlášky, pásma přijetí, souběžné přihlášky i kontext přihlášky přepnuté na 1. kolo 2026 — stránka oboru už nemíchá dva ročníky; nový ukazatel: prostřední (mediánový) výsledek přijatých' },
       { type: 'improve', text: 'Název školy v hlavičce stránky školy nese i obec, když ji samotný název neobsahuje' },
       { type: 'fix', text: 'Obory bez jednotné zkoušky a obory mimo přehled se ukazují se jménem a vysvětlující značkou místo kódu; obor, o kterém přehled nic neví, se nově pozná a neříká u něj „mimo přehled“' },
-      { type: 'fix', text: 'Patnáct oborů s přepsaným zaměřením mělo dvě stránky — sloučeno do jedné s celou historií a souhrn 1. kola je u všech stránek, u kterých má být' },
+      { type: 'fix', text: 'Patnáct oborů s přepsaným zaměřením mělo dvě stránky: jedna hlásila „letos nevypsáno“, druhá neměla historii. Sloučeno do jedné stránky s letošními čísly i srovnáním s předchozím rokem' },
+      { type: 'fix', text: 'Souhrn 1. kola a srovnání s předchozím rokem se vrátily na 373 stránek oborů, u kterých škola mezi ročníky přejmenovala zaměření; dosud jim zůstávala starší podoba stránky' },
     ],
   },
   {
