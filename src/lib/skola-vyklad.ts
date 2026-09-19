@@ -203,7 +203,8 @@ export function letNadSlovy(s: ShrnutiMaturity): string {
  *
  * Číslo platí za skupinu maturitních oborů, ne za jeden obor. Obor, který je ve skupině sám,
  * o sobě mluvit smí; jinak se musí říct, s kým výsledek sdílí. Do tří oborů se vyjmenují,
- * nad tři se uvede počet — u 96 nabídek jich je ve skupině pět a víc a výčet by větu utopil.
+ * nad tři se uvede počet — u 80 napojených nabídek jich je ve skupině pět a víc a výčet by
+ * větu utopil.
  * Rozhodnutí: docs/maturita-na-strance-oboru-2027.md, oddíl 4.
  *
  * `dalsiObory` jsou **ostatní** obory školy ve skupině, bez toho, na jehož stránce čtenář je.
@@ -211,6 +212,35 @@ export function letNadSlovy(s: ShrnutiMaturity): string {
 export function kohoSeTykaMaturita(m: { samotny: boolean; dalsiObory: string[] }): string {
   if (m.samotny || m.dalsiObory.length === 0) return 'Maturanti tohoto oboru';
   if (m.dalsiObory.length === 1) return `Maturanti tohoto oboru a oboru ${m.dalsiObory[0]}`;
-  if (m.dalsiObory.length === 2) return `Maturanti tohoto oboru a oborů ${m.dalsiObory[0]} a ${m.dalsiObory[1]}`;
+  if (m.dalsiObory.length <= 3) {
+    const bezPosledniho = m.dalsiObory.slice(0, -1).join(', ');
+    return `Maturanti tohoto oboru a oborů ${bezPosledniho} a ${m.dalsiObory.at(-1)}`;
+  }
   return `Maturanti tohoto a dalších ${m.dalsiObory.length} oborů školy`;
+}
+
+/**
+ * Ze kterého roku vzít maturitní výsledek skupiny oborů a co se o něm dá říct.
+ *
+ * Bere **poslední rok se záznamem**, ne zobrazené období: obor, ve kterém letos nikdo
+ * nematuroval, jinak tvrdí „nemá maturanty“, zatímco stránka školy u téhož píše „poslední
+ * maturita 2025“. Nález 1 review PR #112, 31 nabídek.
+ *
+ * `nezverejneno` znamená, že maturanti byli, ale pod deseti konajícími se podíly nezveřejňují
+ * (maturitní návrh §7); karta pak nesmí vzniknout prázdná, musí říct proč.
+ */
+export function rokMaturityOboru(
+  roky: Record<string, Record<string, MaturitaSkupinaRoku>>,
+  smo16: string,
+  obdobiRok: number,
+): { rok: number | null; nezverejneno: boolean } {
+  const rok = Object.keys(roky)
+    .map(Number).filter(r => r <= obdobiRok && roky[String(r)]?.[smo16])
+    .sort((a, b) => b - a)[0];
+  if (rok === undefined) return { rok: null, nezverejneno: false };
+  const z = roky[String(rok)][smo16];
+  const maCislo = (z.spolecna_cast?.passed !== undefined && z.spolecna_cast?.registered !== undefined)
+    || z.cj?.averagePercentScore !== undefined
+    || z.ma?.subjectChoiceShare !== undefined;
+  return { rok, nezverejneno: !maCislo };
 }

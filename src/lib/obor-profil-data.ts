@@ -199,11 +199,12 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
 
   // Popisky ostatních oborů školy ve skupině. Název oboru je v katalogu pod klíčem bez
   // zaměření, ale rozlišuje je právě zaměření, takže se do popisku přidává.
-  const maturita = await getMaturitaOboru(redizo, souhrn.smo16, nabidky => nabidky
+  const maturita = await getMaturitaOboru(redizo, souhrn.smo16, souhrn.rok, nabidky => nabidky
     .filter(n => n.klic !== souhrn.klic)
     .map(n => {
       const nazev = nazvy.get(`${redizo}_${n.kkov}`)?.obor ?? n.kkov;
-      return n.zamereni ? `${nazev} · ${n.zamereni}` : nazev;
+      // „Gymnázium · Gymnázium“ vypadá jako chyba; u 124 nabídek se zaměření rovná názvu oboru.
+      return n.zamereni && n.zamereni.toLowerCase() !== nazev.toLowerCase() ? `${nazev} · ${n.zamereni}` : nazev;
     }));
 
   return {

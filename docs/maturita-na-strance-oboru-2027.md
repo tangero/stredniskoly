@@ -1,6 +1,6 @@
 # Maturita na stránce oboru
 
-**Verze:** 1.0
+**Verze:** 1.1
 **Datum:** 19. 9. 2026
 **Stav:** návrh, rozhodnutí zadavatele z 19. 9. 2026 jsou v oddílu 4.
 
@@ -18,7 +18,7 @@ Druhé rozhodnutí platí dál a tenhle návrh ho neruší: [vrstvy](vrstvy-stra
 
 Maturitní návrh vede v §3.6 mezi kandidátními zdroji k dohledání **mapu `KKOV` → `SMO16`** s poznámkou „bez ní obor na webu maturitu nezobrazí; musí vzniknout v datovém profilu“. To je **nepravdivé** a tenhle návrh to opravuje.
 
-Zdrojový soubor `PZ{rok}_kolo1_skolobory_vysledky.xlsx` nese u **každé nabídky** sloupec **`SKUPINA OBORŮ (16)`** s kódy `GY8, GY6, GY4, LYC, ST1, ST2, SEK, SHP, SHU, SZE, SZD, SUM, UTE, UOS, NTE, NOS` (plus `KON`, `UBV`, `UVL` mimo náš filtr). Je to týž kód, jakým jsou klíčovaná maturitní data — [soupis zdrojů](zdroje-dat.md), oddíl 2.11, to říká výslovně: „Kódy `SMO16` jsou tytéž, jaké nese sloupec `SKUPINA OBORŮ (16)` v agregátech JPZ.“
+Zdrojový soubor `PZ{rok}_kolo1_skolobory_vysledky.xlsx` nese u **každé nabídky** sloupec **`SKUPINA OBORŮ (16)`** s kódy `GY8, GY6, GY4, LYC, ST1, ST2, SEK, SHP, SHU, SZE, SZD, SUM, UTE, UOS, NTE, NOS` (plus `KON`, `UBV`, `UVL` mimo náš filtr). Kód `SUM` (umělecké obory) ve zdroji je, ale po filtru na denní nezkrácené studium s povinnou jednotnou zkouškou z něj nezbude žádný řádek, takže katalog má 15 hodnot, ne 16. Je to týž kód, jakým jsou klíčovaná maturitní data — [soupis zdrojů](zdroje-dat.md), oddíl 2.11, to říká výslovně: „Kódy `SMO16` jsou tytéž, jaké nese sloupec `SKUPINA OBORŮ (16)` v agregátech JPZ.“
 
 `scripts/build-souhrny-kolo1.py` ze stejného řádku čte `TYP ŠKOLY`, ale `SKUPINA OBORŮ (16)` ne. Proto měl katalog jen sedm hodnot (`GY4, GY6, GY8, LYC, SOS, SOU, NAS`) místo šestnácti a napojení vypadalo nemožně.
 
@@ -98,4 +98,5 @@ Zvážené a nepoužité:
 
 | Verze | Změna |
 |---|---|
+| 1.1 | Vypořádání review PR #112. Opraven vysoký nález: rok se bere z posledního ročníku se záznamem, ne ze zobrazeného období — jinak obor, ve kterém letos nikdo nematuroval, tvrdil „nemá maturanty“, zatímco stránka školy u téhož psala „poslední maturita 2025“ (31 nabídek). Dál: vyjmenování oborů srovnáno s dokumentací na tři, záznam bez zveřejnitelného čísla nevyrobí prázdnou kartu (15 nabídek), popisek nezdvojuje název oboru se shodným zaměřením (124 nabídek), generátor má pojistku proti přejmenování sloupce, malý ročník se pozná i z matematiky (571 záznamů), členství ve skupině se počítá proti ročníku souhrnů. |
 | 1.0 | Nález, že mapa `KKOV` → `SMO16` nechybí — je to sloupec `SKUPINA OBORŮ (16)`, který generátor souhrnů zahazoval; §3.6 maturitního návrhu se tím opravuje. Změřeno pokrytí (2 782 z 3 091) i to, u kolika nabídek je skupina fakticky oborem (1 590). Tři rozhodnutí zadavatele: karta se třemi čísly, rozlišit obor od sdílené skupiny, u oboru bez maturantů to říct větou. |

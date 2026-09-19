@@ -229,12 +229,16 @@ function Maturita({ m, skolaHref }: { m: MaturitaOboru; skolaHref: string }) {
     </p>
   );
 
-  if (m.bezMaturantu) {
+  // Bez maturantů a nezveřejněné výsledky jsou dva různé stavy a čtenář je musí rozeznat:
+  // v prvním o výsledku nevíme nic, ve druhém ho známe, ale malý ročník ho nesmí odhalit.
+  if (m.bezMaturantu || m.nezverejneno) {
     return (
       <div className="rounded-2xl border border-slate-200 bg-white p-5">
         <p className="text-[15px] font-bold uppercase tracking-wide text-slate-500">Maturita</p>
         <p className="mt-2 max-w-[62ch] text-[17px] leading-relaxed text-slate-800">
-          Obor zatím nemá maturanty, takže o jeho výsledcích u maturity nevíme nic.
+          {m.bezMaturantu
+            ? 'Obor zatím nemá maturanty, takže o jeho výsledcích u maturity nevíme nic.'
+            : `Výsledky maturity ${m.rok} tu nezveřejňujeme, protože maturantů bylo méně než deset.`}
         </p>
         {odkaz}
       </div>
@@ -244,11 +248,15 @@ function Maturita({ m, skolaHref }: { m: MaturitaOboru; skolaHref: string }) {
   const sc = m.spolecnaCast;
   const cj = m.cestina;
   const ma = m.matematika;
-  const malyRocnik = cj?.quality === 'small_sample';
+  // Malý ročník se pozná z obou předmětů: u 571 záznamů je čeština úplná, ale matematika
+  // z malého vzorku, a bez téhle podmínky by se ukázala bez upozornění.
+  const malyRocnik = cj?.quality === 'small_sample' || ma?.quality === 'small_sample';
 
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-5">
-      <p className="text-[15px] font-bold uppercase tracking-wide text-slate-500">Maturita · jaro {m.rok}</p>
+      <p className="text-[15px] font-bold uppercase tracking-wide text-slate-500">
+        Maturita · jaro {m.rok}{m.starsiNezObdobi ? ' · poslední ročník s maturanty' : ''}
+      </p>
       <dl className="mt-3 grid gap-x-6 gap-y-2 sm:grid-cols-[13rem_1fr]">
         {sc?.passed !== undefined && sc.registered ? (
           <>
@@ -264,7 +272,7 @@ function Maturita({ m, skolaHref }: { m: MaturitaOboru; skolaHref: string }) {
             <dd className="text-[17px] text-[#16325c] tabular-nums">
               <b>{cislo(cj.averagePercentScore, 1)} % bodů</b>
               {m.stredPodobnychSkol !== null && (
-                <span className="text-slate-600"> · střed podobných škol {cislo(m.stredPodobnychSkol, 1)}</span>
+                <span className="text-slate-600"> · střed podobných škol {cislo(m.stredPodobnychSkol, 1)} %</span>
               )}
             </dd>
           </>

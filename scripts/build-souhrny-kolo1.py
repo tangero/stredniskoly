@@ -296,6 +296,14 @@ def main() -> None:
     for rok in roky:
         soubor = a.zdroj_dir / f"PZ{rok}_kolo1_skolobory_vysledky.xlsx"
         rocniky[rok] = nacti_rocnik(soubor, rok)
+        # Pojistka proti tichému výpadku: sloupec se čte přes .get(), takže jeho přejmenování
+        # v dalším ročníku by nespadlo — jen by všechny nabídky dostaly smo16 = None a maturitní
+        # karta na stránce oboru by zmizela beze stopy.
+        bez_smo16 = [k for k, v in rocniky[rok].items() if not v.get("smo16")]
+        if bez_smo16:
+            raise ValueError(
+                f"{soubor.name}: {len(bez_smo16)} nabídek nemá skupinu oborů (SMO16); "
+                f"zkontroluj sloupec „SKUPINA OBORŮ (16)“, například {bez_smo16[0]}")
         zdroje[str(rok)] = {
             "soubor": soubor.name, "url": ZDROJ_URL + soubor.name,
             "sha256": hashlib.sha256(soubor.read_bytes()).hexdigest(), "nabidek": len(rocniky[rok]),

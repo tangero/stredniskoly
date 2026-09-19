@@ -12,7 +12,7 @@ import path from 'path';
 import { promises as fs } from 'fs';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { oboryVeSkupineMaturity } from '@/lib/souhrny-kolo1';
-import { nazevSkupinyMaturity, type MaturitaPredmet, type MaturitaSkupinaRoku } from '@/lib/skola-vyklad';
+import { nazevSkupinyMaturity, rokMaturityOboru, type MaturitaPredmet, type MaturitaSkupinaRoku } from '@/lib/skola-vyklad';
 
 export { kohoSeTykaMaturita as koho } from '@/lib/skola-vyklad';
 
@@ -23,7 +23,12 @@ interface MaturitaSoubor {
 }
 
 export interface MaturitaOboru {
+  /** Rok, ze kterého jsou čísla: poslední, ve kterém skupina maturanty měla. */
   rok: number;
+  /** Rok je starší než zobrazené období, protože ve skupině letos nikdo nematuroval. */
+  starsiNezObdobi: boolean;
+  /** Maturanti ve skupině byli, ale výsledky se nezveřejňují (malý počet konajících). */
+  nezverejneno: boolean;
   /** Název skupiny oborů slovy, například „čtyřleté gymnázium“. */
   skupina: string;
   /** Obor je ve skupině sám, takže výsledek je fakticky jeho. */
@@ -62,6 +67,7 @@ async function soubor(): Promise<MaturitaSoubor | null> {
 export async function getMaturitaOboru(
   redizo: string,
   smo16: string | null,
+  rokSouhrnu: number,
   popisky: (nabidky: { klic: string; kkov: string; zamereni: string }[]) => string[],
 ): Promise<MaturitaOboru | null> {
   const obdobi = await zobrazeneObdobi('cermat-maturita');
@@ -70,33 +76,41 @@ export async function getMaturitaOboru(
   const skola = data?.skoly[redizo];
   if (!data || !skola) return null;
 
-  const rok = Number(obdobi);
-  const rocnik = skola.roky[obdobi];
-  const zaznam = rocnik?.[smo16];
+  const obdobiRok = Number(obdobi);
 
-  const klice = await oboryVeSkupineMaturity(redizo, smo16, rok);
+  // Výběr roku i posouzení, jestli je co zveřejnit, jsou čistá funkce — testovatelná bez dat.
+  const { rok: rokSeZaznamem, nezverejneno } = rokMaturityOboru(skola.roky, smo16, obdobiRok);
+
+  // Členství ve skupině se posuzuje proti ročníku souhrnů, ne maturity: až se ročníky rozejdou,
+  // obor by z výběru vypadl a karta by chybně tvrdila, že je ve skupině sám.
+  const klice = await oboryVeSkupineMaturity(redizo, smo16, rokSouhrnu);
   const dalsi = popisky(klice);
   const nazevSkupiny = nazevSkupinyMaturity(smo16, data.skupiny[obdobi]?.[smo16]?.nazev);
+  const spolecne = { skupina: nazevSkupiny, samotny: klice.length <= 1, dalsiObory: dalsi };
 
-  // Obor do skupiny patří, ale škola v ní maturanty nemá: typicky nový obor. Říct to větou
-  // je lepší než mlčet, protože čtenář jinak nepozná, jestli data nemáme, nebo je tajíme.
-  if (!zaznam) {
+  // Obor do skupiny patří, ale škola v ní maturanty neměla v žádném roce: typicky nový obor.
+  // Říct to větou je lepší než mlčet, protože čtenář jinak nepozná, jestli data nemáme.
+  if (rokSeZaznamem === null) {
     return {
-      rok, skupina: nazevSkupiny, samotny: klice.length <= 1, dalsiObory: dalsi,
-      spolecnaCast: null, cestina: null, matematika: null, stredPodobnychSkol: null, bezMaturantu: true,
+      ...spolecne, rok: obdobiRok, starsiNezObdobi: false, nezverejneno: false, bezMaturantu: true,
+      spolecnaCast: null, cestina: null, matematika: null, stredPodobnychSkol: null,
     };
   }
 
+  const klicRoku = String(rokSeZaznamem);
+  const zaznam = skola.roky[klicRoku][smo16];
+  const spolecnaCast = zaznam.spolecna_cast ?? null;
+  const cestina = zaznam.cj ?? null;
+  const matematika = zaznam.ma ?? null;
+
   return {
-    rok,
-    skupina: nazevSkupiny,
-    samotny: klice.length <= 1,
-    dalsiObory: dalsi,
-    spolecnaCast: zaznam.spolecna_cast ?? null,
-    cestina: zaznam.cj ?? null,
-    matematika: zaznam.ma ?? null,
-    stredPodobnychSkol: zaznam.cj?.groupComparison?.medianPercentScore
-      ?? data.skupiny[obdobi]?.[smo16]?.medianPercentScore ?? null,
+    ...spolecne,
+    rok: rokSeZaznamem,
+    starsiNezObdobi: rokSeZaznamem < obdobiRok,
+    nezverejneno,
+    spolecnaCast, cestina, matematika,
+    stredPodobnychSkol: cestina?.groupComparison?.medianPercentScore
+      ?? data.skupiny[klicRoku]?.[smo16]?.medianPercentScore ?? null,
     bezMaturantu: false,
   };
 }
