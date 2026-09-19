@@ -81,3 +81,4 @@ data/msmt_rejstrik/*.jsonld
 # Vygenerované zprávy odběru: vznikají skriptem scripts/novinky.py a schvalují
 # se samostatným pull requestem, ne spolu s kódem odběru.
 public/novinky/
+/data/portal/pilot-kontakty.json

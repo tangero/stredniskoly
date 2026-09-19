@@ -1,12 +1,16 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
-import { PortalEditace } from '@/components/portal/PortalEditace';
+import { redirect } from 'next/navigation';
+import { PortalEditace, PortalObalka, PortalSkolaNenalezena } from '@/components/portal/PortalEditace';
+import { PortalHlaska } from '@/components/portal/PortalHlaska';
+import { PortalZalozeni } from '@/components/portal/PortalZalozeni';
 import { overMagicToken } from '@/lib/portal-magic';
+import { getNazevSkoly } from '@/lib/portal-skol';
+import { jeDbNastavena } from '@/lib/novinky-db';
+import { cteni, prihlasenyZCookies } from '@/lib/portal-relace';
+import { spravceSkoly } from '@/lib/portal-ucty';
 
 export const metadata: Metadata = {
-  title: 'Editace profilu školy',
+  title: 'Profil školy',
   robots: { index: false, follow: false },
 };
 
@@ -14,30 +18,40 @@ interface Props {
   params: Promise<{ token: string }>;
 }
 
+// Odkaz na e-mail školy z rejstříku (docs/ucty-portalu-skol-2027.md, 2.2):
+// škola bez správce → založení správce; škola se správcem → jednorázový návrh
+// jako host, o kterém se správce dozví.
 export default async function PortalMagicLinkPage({ params }: Props) {
-  const { token } = await params;
-  const redizo = overMagicToken(decodeURIComponent(token));
+  const token = decodeURIComponent((await params).token);
+  const redizo = overMagicToken(token);
 
   if (!redizo) {
     return (
-      <div className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1">
-          <div className="max-w-xl mx-auto px-4 py-16 text-center">
-            <h1 className="text-2xl font-bold text-slate-900 mb-3">Odkaz nefunguje</h1>
-            <p className="text-slate-600 mb-6">
-              Tento odkaz je neplatný, nebo mu vypršela platnost (72 hodin od odeslání). Požádejte
-              si o nový – stačí zadat školní e-mail.
-            </p>
-            <Link href="/pro-skoly" className="text-blue-600 font-medium hover:underline">
-              ← Požádat o nový odkaz
-            </Link>
-          </div>
-        </main>
-        <Footer />
-      </div>
+      <PortalHlaska nadpis="Odkaz nefunguje">
+        <p>
+          Tento odkaz je neplatný, nebo mu vypršela platnost (72 hodin od odeslání). Požádejte si o
+          nový, stačí zadat školní e-mail.
+        </p>
+      </PortalHlaska>
     );
   }
 
-  return <PortalEditace redizo={redizo} auth={{ magic: decodeURIComponent(token) }} />;
+  if (!jeDbNastavena()) return <PortalEditace redizo={redizo} auth={{ magic: token }} />;
+
+  const prihlaseny = await prihlasenyZCookies();
+  if (prihlaseny?.role.some((r) => r.redizo === redizo)) redirect(`/pro-skoly/profil?skola=${redizo}`);
+
+  const nazev = await getNazevSkoly(redizo);
+  if (!nazev) return <PortalSkolaNenalezena redizo={redizo} />;
+
+  if (!(await spravceSkoly(cteni, redizo))) {
+    return (
+      <PortalObalka>
+        <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">{nazev}</h1>
+        <PortalZalozeni nazevSkoly={nazev} auth={{ magic: token }} />
+      </PortalObalka>
+    );
+  }
+
+  return <PortalEditace redizo={redizo} auth={{ magic: token }} host />;
 }

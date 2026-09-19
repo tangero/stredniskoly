@@ -79,12 +79,9 @@ Přístup zůstává přes `ADMIN_TOKEN`. Akce, které zapisují, jdou metodou P
 
 ### 2.5 Kdo se ozve, když kód uplatní nesprávný člověk
 
-Uplatnění kódu okamžitě pošle zprávu na Telegram (škola, jméno, funkce, e-mail, doména e-mailu proti doméně z rejstříku). V přehledu se u správce ukáže varování, když:
+Uplatnění kódu okamžitě pošle zprávu na Telegram (škola, jméno, funkce, e-mail a zda doména e-mailu sedí s doménou školy z rejstříku, tedy `Email 1` nebo `WWW`). V administraci se u správce ukáže varování, když doména nesedí. Freemailové domény nesedí nikdy, protože shoda na nich nic nedokazuje.
 
-- doména jeho e-mailu nesedí s doménou školy v rejstříku (`Email 1`, `WWW`), nebo
-- jméno nesedí se jménem ředitele v rejstříku a funkce není vyplněná.
-
-Varování nic neblokuje, jen upozorní člověka. Rejstříkový sloupec `Ředitel` se tím začne používat interně, na web se nedostane (viz oddíl 6).
+Varování nic neblokuje, jen upozorní člověka. Porovnání jména s ředitelem z rejstříku za běhu **nejde**: `Adresar.csv` se nenasazuje (je v `.gitignore`) a jména ředitelů do repozitáře nepatří. Jméno ředitele se proto použije jen offline k oslovení v pozvánce, z negitovaného `data/portal/pilot-kontakty.json`.
 
 ## 3. Co uvidí veřejnost
 
@@ -128,7 +125,7 @@ Prošel jsem [zdroje dat](zdroje-dat.md) včetně oddílu 3. Pro účty jsou rel
 |---|---|
 | `Email 1` | **používáno** (vstup odkazem, porovnání domény správce) |
 | `WWW` | **používáno** (porovnání domény správce; později ověření odznaku) |
-| `Ředitel` | **nově interně**: oslovení v pozvánce a varování v administraci, když se správce jmenuje jinak a nemá funkci; na web ne, důvod z oddílu 3 platí |
+| `Ředitel` | **nově interně, offline**: oslovení v pozvánce z negitovaného `data/portal/pilot-kontakty.json`; na web ani do repozitáře ne, důvod z oddílu 3 platí |
 | `ID datové schránky` | **nepoužito v pilotu**; vrstva 2 ([portál §2.3](portal-pro-skoly-2027.md)) pro spor o správce po pilotu |
 | `Telefon` | **nepoužito**; ověřování telefonem nepřidává důvěru nad rejstříkový e-mail a vyžaduje člověka |
 

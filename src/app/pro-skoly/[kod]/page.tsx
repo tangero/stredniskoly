@@ -1,12 +1,15 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
-import { PortalEditace } from '@/components/portal/PortalEditace';
-import { validateKod } from '@/lib/portal-skol';
+import { redirect } from 'next/navigation';
+import { PortalEditace, PortalObalka, PortalSkolaNenalezena } from '@/components/portal/PortalEditace';
+import { PortalHlaska } from '@/components/portal/PortalHlaska';
+import { PortalMagicForm } from '@/components/portal/PortalMagicForm';
+import { PortalZalozeni } from '@/components/portal/PortalZalozeni';
+import { getNazevSkoly, validateKod } from '@/lib/portal-skol';
+import { jeDbNastavena } from '@/lib/novinky-db';
+import { prihlasenyZCookies, stavKodu } from '@/lib/portal-relace';
 
 export const metadata: Metadata = {
-  title: 'Editace profilu školy',
+  title: 'Profil školy',
   robots: { index: false, follow: false },
 };
 
@@ -14,34 +17,56 @@ interface Props {
   params: Promise<{ kod: string }>;
 }
 
-export default async function PortalEditaceKodPage({ params }: Props) {
-  const { kod } = await params;
-  const redizo = await validateKod(decodeURIComponent(kod));
+// Adresa s kódem zůstává kvůli starším odkazům. Nový vstup je formulář na /pro-skoly,
+// který kód posílá v těle požadavku (docs/ucty-portalu-skol-2027.md, 2.2).
+export default async function PortalKodPage({ params }: Props) {
+  const kod = decodeURIComponent((await params).kod);
 
-  if (!redizo) {
+  // Bez databáze účtů funguje portál postaru: kód rovnou otevírá formulář.
+  if (!jeDbNastavena()) {
+    const redizo = await validateKod(kod);
+    if (redizo) return <PortalEditace redizo={redizo} auth={{ kod }} />;
+    return <NeplatnyKod />;
+  }
+
+  const { stav, redizo } = await stavKodu(kod);
+  if (stav === 'neplatny' || !redizo) return <NeplatnyKod />;
+
+  const prihlaseny = await prihlasenyZCookies();
+  if (prihlaseny?.role.some((r) => r.redizo === redizo)) redirect(`/pro-skoly/profil?skola=${redizo}`);
+
+  const nazev = await getNazevSkoly(redizo);
+  if (!nazev) return <PortalSkolaNenalezena redizo={redizo} />;
+
+  if (stav === 'volny') {
     return (
-      <div className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1">
-          <div className="max-w-xl mx-auto px-4 py-16 text-center">
-            <h1 className="text-2xl font-bold text-slate-900 mb-3">Neplatný kód</h1>
-            <p className="text-slate-600 mb-6">
-              Tento přihlašovací kód neznáme, nebo byl zrušený. Zkontrolujte překlepy – kód má tvar
-              XXXX-XXXX-XXXX. Pokud problém trvá, napište nám na{' '}
-              <a href="mailto:patrick@zandl.cz" className="text-blue-600 hover:underline">
-                patrick@zandl.cz
-              </a>
-              .
-            </p>
-            <Link href="/pro-skoly" className="text-blue-600 font-medium hover:underline">
-              ← Zpět na zadání kódu
-            </Link>
-          </div>
-        </main>
-        <Footer />
-      </div>
+      <PortalObalka>
+        <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">{nazev}</h1>
+        <PortalZalozeni nazevSkoly={nazev} auth={{ kod }} />
+      </PortalObalka>
     );
   }
 
-  return <PortalEditace redizo={redizo} auth={{ kod: decodeURIComponent(kod) }} />;
+  return (
+    <PortalHlaska nadpis="Profil školy už má správce">
+      <p>
+        Kód pro {nazev} už byl použit. Pokud jste správce vy, pošleme vám odkaz pro přihlášení. Kolegy
+        do profilu zve správce z nastavení účtu.
+      </p>
+      <PortalMagicForm />
+    </PortalHlaska>
+  );
 }
+
+const NeplatnyKod = () => (
+  <PortalHlaska nadpis="Neplatný kód">
+    <p>
+      Tento přihlašovací kód neznáme, nebo byl zrušený. Zkontrolujte překlepy, kód má tvar
+      XXXX-XXXX-XXXX. Pokud problém trvá, napište nám na{' '}
+      <a href="mailto:patrick@zandl.cz" className="text-blue-600 hover:underline">
+        patrick@zandl.cz
+      </a>
+      .
+    </p>
+  </PortalHlaska>
+);
