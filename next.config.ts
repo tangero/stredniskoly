@@ -59,6 +59,7 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     '/api/dostupnost': ['./data/transit_graph.json', './data/school_locations.json'],
     '/api/dostupnost/stop-suggest': ['./data/transit_graph.json'],
+    '/admin': ['./data/portal/pilot.json'],
   },
 
   // Security a cache headers

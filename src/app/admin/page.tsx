@@ -16,6 +16,9 @@ import {
   stariSlovy,
   StavSady,
 } from '@/lib/admin';
+import { jeDbNastavena } from '@/lib/novinky-db';
+import { nactiPilot, stavSkolPortalu, type PilotSkola, type StavSkolyPortalu } from '@/lib/portal-admin';
+import { cteni } from '@/lib/portal-relace';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -48,6 +51,20 @@ function Sekce({ titulek, children }: { titulek: string; children: React.ReactNo
       {children}
     </section>
   );
+}
+
+/** Pilot účtů portálu (docs/ucty-portalu-skol-2027.md, oddíl 4): 20 škol a jejich aktivita. */
+async function getPilot(): Promise<{ skola: PilotSkola; stav: StavSkolyPortalu | null }[] | null> {
+  const pilot = await nactiPilot();
+  if (pilot.length === 0) return [];
+  if (!jeDbNastavena()) return null;
+  try {
+    const stav = new Map((await stavSkolPortalu(cteni, pilot.map((p) => p.redizo))).map((s) => [s.redizo, s]));
+    return pilot.map((skola) => ({ skola, stav: stav.get(skola.redizo) ?? null }));
+  } catch (e) {
+    console.error('❌ Admin: stav pilotu', e);
+    return null;
+  }
 }
 
 function Poznamka({ children }: { children: React.ReactNode }) {
@@ -85,6 +102,7 @@ export default async function AdminPage({ searchParams }: Props) {
     getBehyActions(),
     getNovinkyPrehled(),
   ]);
+  const pilot = await getPilot();
 
   const sadyPoTerminu = sady.filter((s) => s.stav !== 'OK').length;
   const pocetNavrhu = navrhy?.length ?? null;
@@ -111,6 +129,56 @@ export default async function AdminPage({ searchParams }: Props) {
                 : `poslední běh automatizací ${posledniBehOk ? 'OK' : 'selhal'}`}
             </p>
           </div>
+
+          {/* 0. Pilot účtů portálu */}
+          <Sekce titulek="Pilot účtů portálu">
+            {pilot === null ? (
+              <Poznamka>Databáze účtů není nastavena nebo neodpovídá.</Poznamka>
+            ) : pilot.length === 0 ? (
+              <Poznamka>Pilotní výběr (data/portal/pilot.json) není k dispozici.</Poznamka>
+            ) : (
+              <div className="overflow-x-auto">
+                <p className="text-sm text-slate-500 mb-3">
+                  {pilot.filter((p) => p.stav?.spravce).length} z {pilot.length} škol má správce ·{' '}
+                  {pilot.filter((p) => (p.stav?.navrhy ?? 0) > 0).length} poslalo návrh ·{' '}
+                  <a href="/admin/portal" className="underline">všechny účty</a>
+                </p>
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-left text-slate-500 border-b border-slate-100">
+                      <th className="py-2 pr-4 font-medium">Škola</th>
+                      <th className="py-2 pr-4 font-medium">Pozvánka</th>
+                      <th className="py-2 pr-4 font-medium">Správce</th>
+                      <th className="py-2 pr-4 font-medium">Editoři</th>
+                      <th className="py-2 pr-4 font-medium">Poslední přihlášení</th>
+                      <th className="py-2 font-medium">Návrhy</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {pilot.map(({ skola, stav }) => (
+                      <tr key={skola.redizo} className="border-b border-slate-50">
+                        <td className="py-2 pr-4">
+                          <a href={`/admin/portal?redizo=${skola.redizo}`} className="text-blue-600 hover:underline">
+                            {skola.nazev}
+                          </a>
+                          <span className="block text-xs text-slate-500">
+                            {skola.mesto} · {skola.typ}
+                          </span>
+                        </td>
+                        <td className="py-2 pr-4">{skola.pozvanka_odeslana ? formatDatumCz(skola.pozvanka_odeslana) : '–'}</td>
+                        <td className="py-2 pr-4">{stav?.spravce ?? '–'}</td>
+                        <td className="py-2 pr-4">{stav?.editori ?? 0}</td>
+                        <td className="py-2 pr-4">
+                          {stav?.posledni_prihlaseni ? formatDatumCasCz(new Date(stav.posledni_prihlaseni).toISOString()) : '–'}
+                        </td>
+                        <td className="py-2">{stav?.navrhy ?? 0}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </Sekce>
 
           {/* 1. Portál pro školy – moderace */}
           <Sekce titulek="Portál pro školy – moderace">
