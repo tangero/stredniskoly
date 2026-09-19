@@ -105,7 +105,8 @@ export async function nactiEmaily(): Promise<Record<string, string[]>> {
   try {
     const obsah = await fs.readFile(path.join(process.cwd(), 'data', 'portal', 'emaily.json'), 'utf-8');
     return JSON.parse(obsah) as Record<string, string[]>;
-  } catch {
+  } catch (e) {
+    console.error('❌ Portál: data/portal/emaily.json nejde načíst', e);
     return {};
   }
 }
