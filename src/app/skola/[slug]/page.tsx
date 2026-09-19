@@ -8,7 +8,7 @@ import { Footer } from '@/components/Footer';
 import { ProgramTabs } from '@/components/ProgramTabs';
 import { InspectionSummary } from '@/components/InspectionSummary';
 import { SchoolPortalSection } from '@/components/school-profile/SchoolPortalSection';
-import { getPortalZaznam } from '@/lib/portal-skol';
+import { potvrzenyProfil } from '@/lib/portal-profil-verejne';
 import { spravceProfilu } from '@/lib/portal-verejne';
 import { getSchoolPageType, getSchoolOverview, getExtendedStatsForProgram, getProgramsByRedizo, SchoolProgram, getCSIDataByRedizo, getExtractionsByRedizo, get2026DataByRedizo, type School2026Data, getSchoolResultsByRedizo } from '@/lib/data';
 import { Applications2026Banner } from '@/components/Applications2026Banner';
@@ -223,7 +223,7 @@ export default async function SchoolDetailPage({ params }: Props) {
     getNoteForSchool(program.id),   // poznámka specifická pro zaměření/obor
     getNoteForSchool(school.id),    // fallback: poznámka pro celý obor (bez zaměření)
     getSchoolResultsByRedizo(redizo),
-    getPortalZaznam(redizo),
+    potvrzenyProfil(redizo),
     spravceProfilu(redizo),
   ]);
   // Použít zaměření-specifickou poznámku, nebo fallback na obecnou

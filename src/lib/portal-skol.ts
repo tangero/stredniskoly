@@ -347,7 +347,7 @@ export interface PortalOborKatalog {
 
 export interface PredvyplnenaHodnota {
   hodnota: string;
-  zdroj: 'portal' | 'inspis';
+  zdroj: 'portal';
 }
 
 export interface PredvyplnenyProfil {
@@ -357,7 +357,13 @@ export interface PredvyplnenyProfil {
   kraj: string;
   obory: PortalOborKatalog[];
   hodnoty: Record<string, PredvyplnenaHodnota>;
-  inspisPoznamka: string;
+  /**
+   * Věty ke starším údajům z InspIS u polí, která zůstávají prázdná. Hodnotou
+   * pole nejsou schválně: kdyby se předvyplnily, stačilo by kliknout na
+   * „potvrdit beze změny“ a ze čtyři roky starého termínu by se stal údaj se
+   * značkou „potvrdila škola“ (docs/zdroje-dat.md, oddíl 2.8).
+   */
+  kontext: Record<string, string>;
 }
 
 function formatSkolneInspis(rocniSkolne: number | null): string | null {
@@ -367,11 +373,16 @@ function formatSkolneInspis(rocniSkolne: number | null): string | null {
 }
 
 /**
- * Předvyplnění editovatelných polí: nejdřív poslední schválená verze
- * (public/portal_skol.json), pak starý snapshot InspIS tam, kde mapování existuje
- * (dny otevřených dveří, přípravné kurzy, školné).
+ * Předvyplnění editovatelných polí. Vyplňuje se **jen** to, co škola sama
+ * potvrdila (`zaznam`); InspIS jde do `kontext` vedle prázdného pole.
+ *
+ * Záznam si obstará volající, protože čtení z databáze je za `unstable_cache`
+ * a tenhle modul musí zůstat bez `next/cache` (běží i pod strip-types).
  */
-export async function getPredvyplnenyProfil(redizo: string): Promise<PredvyplnenyProfil | null> {
+export async function getPredvyplnenyProfil(
+  redizo: string,
+  zaznam: PortalZaznam | null,
+): Promise<PredvyplnenyProfil | null> {
   // Katalog 2026
   const schoolsRaw = JSON.parse(
     await fs.readFile(path.join(process.cwd(), 'public', 'schools_data.json'), 'utf-8'),
@@ -389,16 +400,19 @@ export async function getPredvyplnenyProfil(redizo: string): Promise<Predvyplnen
   }));
 
   const hodnoty: Record<string, PredvyplnenaHodnota> = {};
+  const kontext: Record<string, string> = {};
 
-  // 1. poslední schválená verze z portálu
-  const zaznam = await getPortalZaznam(redizo);
+  // 1. poslední potvrzená verze z portálu; jediné, čím se pole předvyplňují
   if (zaznam) {
     for (const [key, v] of Object.entries(zaznam.udaje)) {
       if (v && v.hodnota) hodnoty[key] = { hodnota: v.hodnota, zdroj: 'portal' };
     }
   }
 
-  // 2. InspIS snapshot tam, kde portál hodnotu ještě nemá
+  // 2. InspIS jen jako kontext u prázdného pole. Termíny dnů otevřených dveří
+  // jsou tam u části škol z roku 2014, školné má vyplněných 212 z 1 180 škol
+  // (chybějící neznamená zdarma) a stáří samotné hodnoty neznáme – proto se
+  // nikde nepíše ročník, jen že jde o starší údaj.
   try {
     const inspisRaw = JSON.parse(
       await fs.readFile(path.join(process.cwd(), 'data', 'inspis_school_profiles.json'), 'utf-8'),
@@ -407,19 +421,19 @@ export async function getPredvyplnenyProfil(redizo: string): Promise<Predvyplnen
     if (inspis) {
       const dod = inspis.dny_otevrenych_dveri;
       if (!hodnoty.dny_otevrenych_dveri && typeof dod === 'string' && dod.trim()) {
-        hodnoty.dny_otevrenych_dveri = { hodnota: dod.trim(), zdroj: 'inspis' };
+        kontext.dny_otevrenych_dveri = `Podle staršího profilu InspIS: „${dod.trim()}“. Zkontrolujte rok, termín může být několik let starý.`;
       }
       const kurzy = inspis.pripravne_kurzy;
       if (!hodnoty.pripravne_kurzy && typeof kurzy === 'boolean') {
-        hodnoty.pripravne_kurzy = { hodnota: kurzy ? 'Ano' : 'Ne', zdroj: 'inspis' };
+        kontext.pripravne_kurzy = `Podle staršího profilu InspIS škola přípravné kurzy ${kurzy ? 'nabízela' : 'nenabízela'}.`;
       }
       const skolne = formatSkolneInspis(inspis.rocni_skolne as number | null);
       if (!hodnoty.skolne && skolne) {
-        hodnoty.skolne = { hodnota: skolne, zdroj: 'inspis' };
+        kontext.skolne = `Podle staršího profilu InspIS: ${skolne}.`;
       }
     }
   } catch {
-    // InspIS snapshot není povinný – bez něj se profil předvyplní jen z portálu
+    // InspIS snapshot není povinný – bez něj se jen nezobrazí kontext
   }
 
   return {
@@ -429,7 +443,7 @@ export async function getPredvyplnenyProfil(redizo: string): Promise<Predvyplnen
     kraj: String(prvni.kraj || ''),
     obory,
     hodnoty,
-    inspisPoznamka: INSPIS_EXPORT_LABEL,
+    kontext,
   };
 }
 

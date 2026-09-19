@@ -2,7 +2,8 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { getSchoolsData, getCSIDataByRedizo, getExtractionsByRedizo, getInspisDataByRedizo, type SchoolProgram } from '@/lib/data';
 import { getSouhrnNabidky, souhrnOboru, type SouhrnRocniku } from '@/lib/souhrny-kolo1';
-import { getPortalZaznam, type PortalZaznam } from '@/lib/portal-skol';
+import { type PortalZaznam } from '@/lib/portal-skol';
+import { potvrzenyProfil } from '@/lib/portal-profil-verejne';
 import { getWebSkoly } from '@/lib/skoly-web';
 import { nenabiraSe } from '@/lib/dobihajici-obory';
 import { getDruheKolo, type DruheKoloNabidky } from '@/lib/druhe-kolo';
@@ -246,7 +247,7 @@ export async function getProfilSkoly(
 ): Promise<ProfilSkolyData> {
   const [nazvy, extrakce, csi, inspis, portal, web, lok, obdobiVysledku, platnost, obdobiUchazecu, maturita] = await Promise.all([
     nazvySkol(), getExtractionsByRedizo(redizo), getCSIDataByRedizo(redizo), getInspisDataByRedizo(redizo),
-    getPortalZaznam(redizo), getWebSkoly(redizo), lokace(), zobrazeneObdobi('cermat-vysledky'),
+    potvrzenyProfil(redizo), getWebSkoly(redizo), lokace(), zobrazeneObdobi('cermat-vysledky'),
     platnostObdobi('cermat-vysledky'), zobrazeneObdobi('cermat-uchazeci-kolo1'), maturitaSkoly(redizo),
   ]);
   const rok = obdobiVysledku ? Number(obdobiVysledku) : null;

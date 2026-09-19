@@ -46,7 +46,8 @@ export type KodChyby =
   | 'uz_ma_roli'
   | 'posledni_spravce'
   | 'email_obsazen'
-  | 'neplatne_udaje';
+  | 'neplatne_udaje'
+  | 'profil_zmenen';
 
 /** Chyba s hláškou pro uživatele. Bez parameter properties: testy běží přes strip-types. */
 export class PortalChyba extends Error {
@@ -163,6 +164,7 @@ export async function historieSkoly(s: Spojeni, redizo: string): Promise<PortalR
 // ----------------------------------------------------------------------------
 
 export type TypUdalosti =
+  | 'profil_zmenen'
   | 'kod_uplatnen'
   | 'spravce_z_rejstriku'
   | 'prihlaseni'

@@ -5,7 +5,8 @@ import { PortalEditForm } from '@/components/portal/PortalEditForm';
 import { PortalHlaska } from '@/components/portal/PortalHlaska';
 import { PortalMagicForm } from '@/components/portal/PortalMagicForm';
 import { PortalUcet } from '@/components/portal/PortalUcet';
-import { getNazevSkoly, getPortalZaznam, getPredvyplnenyProfil, PORTAL_POLE } from '@/lib/portal-skol';
+import { getNazevSkoly, getPredvyplnenyProfil, PORTAL_POLE } from '@/lib/portal-skol';
+import { potvrzenyProfil } from '@/lib/portal-profil-verejne';
 import { cteni, prihlasenyZCookies } from '@/lib/portal-relace';
 import { otevrenePozvanky, platneRoleSkoly } from '@/lib/portal-ucty';
 
@@ -25,19 +26,26 @@ const ZPRAVY: Record<string, string> = {
   'email-neplatny': 'Adresu se nepodařilo změnit. Zkuste to prosím znovu z nastavení účtu.',
 };
 
-/** Poslední návrh, který redakce ještě nepromítla do schválených údajů školy. */
-async function cekajiciNavrh(redizo: string): Promise<{ kdy: string; kdo: string } | null> {
-  const r = await cteni.dotaz<{ kdy: string; jmeno: string | null }>(
-    `select u.kdy, r.jmeno from portal_udalost u left join portal_role r on r.id = u.role_id
-      where u.redizo = $1 and u.typ = 'navrh_odeslan' order by u.kdy desc limit 1`,
+/**
+ * Poslední změna profilu. Nic už nečeká na schválení – údaje jsou na webu –,
+ * takže se ukazuje, kdy a kdo je naposledy měnil, a jestli šlo o opravu redakcí.
+ */
+async function posledniZmena(
+  redizo: string,
+): Promise<{ kdy: string; kdo: string; redakce: boolean } | null> {
+  const r = await cteni.dotaz<{ kdy: string; jmeno: string | null; zdroj: string }>(
+    `select p.platne_od as kdy, r.jmeno, p.zdroj
+       from portal_profil p left join portal_role r on r.id = p.role_id
+      where p.redizo = $1 order by p.platne_od desc limit 1`,
     [redizo],
   );
   const posledni = r.rows[0];
   if (!posledni) return null;
-  const schvaleno = (await getPortalZaznam(redizo))?.aktualizovano;
-  const kdy = new Date(posledni.kdy).toISOString().slice(0, 10);
-  if (schvaleno && schvaleno >= kdy) return null;
-  return { kdy, kdo: posledni.jmeno ?? 'z e-mailu školy z rejstříku' };
+  return {
+    kdy: new Date(posledni.kdy).toISOString().slice(0, 10),
+    kdo: posledni.jmeno ?? (posledni.zdroj === 'redakce' ? 'redakce' : 'z e-mailu školy z rejstříku'),
+    redakce: posledni.zdroj === 'redakce',
+  };
 }
 
 export default async function PortalProfilPage({ searchParams }: Props) {
@@ -54,13 +62,13 @@ export default async function PortalProfilPage({ searchParams }: Props) {
   }
 
   const ja = prihlaseny.role.find((r) => r.redizo === skola) ?? prihlaseny.role[0];
-  const profil = await getPredvyplnenyProfil(ja.redizo);
+  const profil = await getPredvyplnenyProfil(ja.redizo, await potvrzenyProfil(ja.redizo));
   if (!profil) return <PortalSkolaNenalezena redizo={ja.redizo} />;
 
-  const [tym, pozvanky, navrh, nazvySkol] = await Promise.all([
+  const [tym, pozvanky, zmena, nazvySkol] = await Promise.all([
     platneRoleSkoly(cteni, ja.redizo),
     ja.role === 'spravce' ? otevrenePozvanky(cteni, ja.redizo) : Promise.resolve([]),
-    cekajiciNavrh(ja.redizo),
+    posledniZmena(ja.redizo),
     Promise.all(prihlaseny.role.map(async (r) => ({ redizo: r.redizo, nazev: (await getNazevSkoly(r.redizo)) || r.redizo }))),
   ]);
   const clen = (r: (typeof tym)[number]) => ({
@@ -114,15 +122,17 @@ export default async function PortalProfilPage({ searchParams }: Props) {
       </p>
 
       <h2 className="text-lg font-semibold text-slate-900 mb-2">Údaje o škole</h2>
-      {navrh && (
-        <div className="mb-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-          Na schválení redakcí čeká návrh z {new Date(navrh.kdy).toLocaleDateString('cs-CZ')} ({navrh.kdo}). Nový
-          návrh ho nahradí.
+      {zmena && (
+        <div
+          className={`mb-4 rounded-lg border px-4 py-3 text-sm ${zmena.redakce ? 'border-amber-200 bg-amber-50 text-amber-900' : 'border-[#c9d4e1] bg-slate-50 text-slate-700'}`}
+        >
+          {zmena.redakce ? 'Naposledy opravila redakce' : 'Naposledy upraveno'}{' '}
+          {new Date(zmena.kdy).toLocaleDateString('cs-CZ')} ({zmena.kdo}).
         </div>
       )}
       <p className="text-sm text-slate-500 mb-4">
-        Po odeslání údaje zkontroluje redakce a schválené se zobrazí na stránce školy se značkou
-        „potvrzeno školou“.
+        Odeslané údaje se objeví na stránce školy se značkou „potvrdila škola“, obvykle do hodiny.
+        Nečekají na schválení. Když v nich najdeme chybu, opravíme ji a dáme vám vědět.
       </p>
       <PortalEditForm auth={{ ucet: ja.redizo }} profil={profil} pole={PORTAL_POLE} vychoziEmail={ja.email} />
 

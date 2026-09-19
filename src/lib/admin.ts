@@ -1,8 +1,8 @@
 import { timingSafeEqual } from 'crypto';
 import { promises as fs } from 'fs';
 import path from 'path';
-import type { PortalSkolData } from './portal-skol';
-import { formatDatumCz } from './portal-skol.ts';
+import { potvrzeneUdaje } from './portal-profil.ts';
+import { formatDatumCz, type PortalSkolData } from './portal-skol.ts';
 import { dotaz, jeDbNastavena } from './novinky-db.ts';
 
 // ============================================================================
@@ -98,7 +98,7 @@ export async function getStavDatovychSad(dnes: Date): Promise<AdminSada[]> {
 }
 
 // ----------------------------------------------------------------------------
-// Portál pro školy: schválené profily (public/portal_skol.json)
+// Portál pro školy: profily škol (tabulka portal_profil)
 // ----------------------------------------------------------------------------
 
 export interface AdminPortalZaznam {
@@ -110,11 +110,11 @@ export interface AdminPortalZaznam {
 
 export async function getPortalPrehled(): Promise<{ pocet: number; posledni: AdminPortalZaznam[] }> {
   try {
-    const obsah = await fs.readFile(
-      path.join(process.cwd(), 'public', 'portal_skol.json'),
-      'utf-8',
-    );
-    const data = JSON.parse(obsah) as PortalSkolData;
+    // Zdrojem je databáze; bez ní (lokální vývoj) poslední vyexportovaný JSON.
+    // Čte se přímo, bez cache: /admin je force-dynamic a chce vidět aktuální stav.
+    const data: PortalSkolData = jeDbNastavena()
+      ? await potvrzeneUdaje({ dotaz })
+      : JSON.parse(await fs.readFile(path.join(process.cwd(), 'public', 'portal_skol.json'), 'utf-8'));
     const posledni = Object.values(data)
       .map((z) => {
         const hodnoty = Object.values(z.udaje || {}).filter(
@@ -150,9 +150,12 @@ export interface AdminNavrh {
   stariDni: number;
 }
 
-/** Titulek „[Portál škol] Název (REDIZO)“ → název školy. */
+/**
+ * Titulek „[Nesrovnalost v datech] Název (REDIZO)“ → název školy. Starý tvar
+ * „[Portál škol] …“ nesou issue z doby, kdy tudy chodily i údaje profilu.
+ */
 export function extrahujNazevZTitulku(titulek: string): string {
-  const m = /^\[Portál škol\]\s*(.+?)\s*\(\d{9,10}\)\s*$/.exec(titulek || '');
+  const m = /^\[(?:Nesrovnalost v datech|Portál škol)\]\s*(.+?)\s*\(\d{9,10}\)\s*$/.exec(titulek || '');
   return m ? m[1] : titulek;
 }
 

@@ -118,7 +118,7 @@ export default async function AdminPage({ searchParams }: Props) {
           <div>
             <h1 className="text-3xl font-bold text-slate-900 mb-2">Administrace</h1>
             <p className="text-sm text-slate-500">
-              {pocetNavrhu === null ? 'moderace nenakonfigurována' : `${pocetNavrhu} ${pocetNavrhu === 1 ? 'návrh čeká' : pocetNavrhu < 5 ? 'návrhy čekají' : 'návrhů čeká'}`}
+              {pocetNavrhu === null ? 'hlášení nenakonfigurováno' : `${pocetNavrhu} ${pocetNavrhu === 1 ? 'nesrovnalost čeká' : pocetNavrhu < 5 ? 'nesrovnalosti čekají' : 'nesrovnalostí čeká'}`}
               {' · '}
               {sadyPoTerminu === 0 ? 'všechny sady v pořádku' : `${sadyPoTerminu} ${sadyPoTerminu === 1 ? 'sada' : sadyPoTerminu < 5 ? 'sady' : 'sad'} po termínu`}
               {' · '}
@@ -180,12 +180,12 @@ export default async function AdminPage({ searchParams }: Props) {
             )}
           </Sekce>
 
-          {/* 1. Portál pro školy – moderace */}
-          <Sekce titulek="Portál pro školy – moderace">
+          {/* 1. Portál pro školy – nesrovnalosti v datech katalogu */}
+          <Sekce titulek="Portál pro školy – nesrovnalosti v datech">
             {navrhy === null ? (
-              <Poznamka>Moderace není nakonfigurována (chybí GITHUB_TOKEN).</Poznamka>
+              <Poznamka>Hlášení nesrovnalostí není nakonfigurováno (chybí GITHUB_TOKEN).</Poznamka>
             ) : navrhy.length === 0 ? (
-              <Poznamka>Žádné otevřené návrhy – fronta je prázdná.</Poznamka>
+              <Poznamka>Žádná otevřená nesrovnalost. Údaje profilu sem nechodí – jdou rovnou na web.</Poznamka>
             ) : (
               <div className="overflow-x-auto mb-6">
                 <table className="w-full text-sm">
@@ -229,7 +229,7 @@ export default async function AdminPage({ searchParams }: Props) {
             )}
 
             <h3 className="text-sm font-semibold text-slate-700 mb-2">
-              Schválené profily na webu: {portal.pocet}
+              Profily škol na webu: {portal.pocet}
             </h3>
             {portal.posledni.length === 0 ? (
               <Poznamka>Zatím žádný školou potvrzený profil.</Poznamka>
