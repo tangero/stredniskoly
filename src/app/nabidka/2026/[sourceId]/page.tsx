@@ -1,9 +1,9 @@
-import { notFound, permanentRedirect } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { getSchools2026Data, getSchoolAnalysis } from '@/lib/data';
-import { adresaNabidkyVeSkole } from '@/lib/adresa-oboru.mjs';
+import { adresaNabidkyVeSkole, adresaPrehledu } from '@/lib/adresa-oboru.mjs';
 
 /**
- * Stránka nabídky se od 19. 9. 2026 jen **trvale přesměrovává na stránku oboru**.
+ * Stránka nabídky se od 19. 9. 2026 jen **přesměrovává na stránku oboru**.
  *
  * Vznikla podle docs/adr/0002 v době, kdy se adresa oboru skládala z loňského katalogu
  * a pro nabídku bez protějšku v něm žádná nebyla. Od chvíle, kdy adresu skládá jedno místo
@@ -25,5 +25,8 @@ export default async function NabidkaPage({ params }: { params: Promise<{ source
   const nazev = Object.values(analyza).find(s => s.id.split('_')[0] === nabidka.redizo)?.nazev ?? nabidka.nazev;
   const nabidkySkoly = vsechny.filter(row => row.redizo === nabidka.redizo);
 
-  permanentRedirect(`/skola/${adresaNabidkyVeSkole(nabidka.redizo, nazev, nabidka, nabidkySkoly)}`);
+  // Ne trvale: cíl závisí na datech ročníku (při změně katalogu se adresa může posunout),
+  // a trvalé přesměrování si prohlížeč pamatuje déle, než platí jeho důvod.
+  const adresa = adresaNabidkyVeSkole(nabidka.redizo, nazev, nabidka, nabidkySkoly);
+  redirect(adresa ? `/skola/${adresa}` : `/skola/${adresaPrehledu(nabidka.redizo, nazev)}`);
 }

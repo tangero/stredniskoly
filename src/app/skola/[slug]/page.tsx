@@ -541,14 +541,14 @@ export default async function SchoolDetailPage({ params }: Props) {
           <DruheKoloCard data={await getDruheKolo(program.id, program.zamereni)} />
           <div className="my-6 rounded-xl bg-white p-6">
             <h2 className="font-semibold">Přijetí a kapacita{program.rok ? ` · ${program.rok}` : ''}</h2>
-            <p className="mt-2">Přijatí v roce {program.rok ?? 2025}: {program.prijati}. Kapacita: {program.kapacita} míst.</p>
+            <p className="mt-2">Přijatí{program.rok ? ` v roce ${program.rok}` : ''}: {program.prijati}. Kapacita: {program.kapacita} míst.</p>
           </div>
 
           {/* Interpretace */}
           <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl mb-8">
             <h3 className="font-semibold text-blue-800 mb-2">Co to znamená?</h3>
             <p className="text-blue-700">
-              V roce {program.rok ?? 2025} bylo na tento obor podáno {program.prihlasky} přihlášek při kapacitě {program.kapacita} míst.
+              {program.rok ? `V roce ${program.rok} bylo` : 'Bylo'} na tento obor podáno {program.prihlasky} přihlášek při kapacitě {program.kapacita} míst.
               Počet přihlášek zahrnuje všechny priority. Popisuje poptávku v daném ročníku, nikoli osobní pravděpodobnost přijetí.
               Kritéria pro rok 2027 ověřte u školy.
             </p>

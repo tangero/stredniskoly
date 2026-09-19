@@ -29,7 +29,10 @@ test('chybějící historická shoda nezabrání detailu ani přesnému načten�
     assert.equal(r.status, 200);
     const html = await r.text();
     assert.ok(html.includes(offer.nazev));
-    assert.match(html, /2027 zatím nejsou potvrzené/);
+    // Věta „2027 zatím nejsou potvrzené“ žila jen na stránce /nabidka, která se od 19. 9. 2026
+    // přesměrovává na stránku oboru (docs/adresa-oboru-2027.md). Místo ní se ověřuje, že
+    // odkaz vede na stránku toho oboru, ne na jiný obor téže školy ani na přehled školy.
+    assert.ok(html.includes(offer.obor), `${id}: stránka neuvádí obor ${offer.obor}`);
     const lookup = await fetch(`${base}/api/schools/search?${new URLSearchParams({ ids: JSON.stringify([id]) })}`).then(r => r.json());
     assert.equal(lookup.schools[0].id, id);
   }

@@ -8,7 +8,7 @@ import path from 'path';
 import { School, SchoolAnalysis, SchoolData, SchoolsData, SchoolDetail, krajNames, CSIDataset, CSISchoolData, InspectionExtraction } from '@/types/school';
 import { InspisDataset, SchoolInspisData } from '@/types/inspis';
 import { createSlug, createKrajSlug, extractRedizo } from './utils';
-import { adresaNabidky, adresaPrehledu, pocetStejnychAdres } from './adresa-oboru.mjs';
+import { adresaPrehledu, adresySkolyMapa } from './adresa-oboru.mjs';
 import { sortSchoolsByPopularity } from './popularity';
 
 const dataDir = path.join(process.cwd(), 'public');
@@ -209,9 +209,18 @@ export async function getSchoolPageType(slug: string): Promise<{
     }
   }
 
-  // Adresu skládá sdílený modul, tentýž, kterým ji staví generátor sitemapy.
-  const poctyZamereni = pocetStejnychAdres(programs.filter(p => p.zamereni));
-  const slugNabidky = (program: SchoolProgram) => adresaNabidky(redizo, firstSchool.nazev, program, poctyZamereni);
+  // Adresy nabídek skládá sdílený modul, tentýž, kterým je staví generátor sitemapy
+  // i vyhledávání. Rozpoznání je pak prosté vyhledání v mapě, ne skládání podle vzorců:
+  // dokud si obě strany vzorce opisovaly, mohly se rozejít a rozešly se.
+  const adresyNabidek = adresySkolyMapa(redizo, firstSchool.nazev, programs);
+  const nabidkaNaAdrese = adresyNabidek.get(slug) as SchoolProgram | undefined;
+  if (nabidkaNaAdrese) {
+    return { type: nabidkaNaAdrese.zamereni ? 'zamereni' : 'program', redizo, school: firstSchool, program: nabidkaNaAdrese };
+  }
+  const slugNabidky = (program: SchoolProgram) => {
+    for (const [adresa, n] of adresyNabidek) if (n === program) return adresa;
+    return overviewSlug;
+  };
 
   /** Základní adresa oboru bez zaměření: kam patří, když nabídka bez zaměření neexistuje. */
   const misto = (kandidati: SchoolProgram[]) => kandidati.length === 1

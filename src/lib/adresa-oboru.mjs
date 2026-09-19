@@ -9,7 +9,7 @@
  * pod `node` při buildu. Import TypeScriptu by vyžadoval odstraňování typů, které umí až
  * Node 22.6 a novější; workflow projektu běží na Node 20. Typy proto nese JSDoc.
  *
- * @typedef {{ obor: string, zamereni?: string, delka_studia?: number }} NabidkaProAdresu
+ * @typedef {{ obor: string, zamereni?: string, delka_studia?: number, id?: string }} NabidkaProAdresu
  */
 
 /**
@@ -78,6 +78,16 @@ function klic(nabidka) {
 }
 
 /**
+ * Zaměření, jak s ním pracuje adresa. Zdrojová data nesou u 53 nabídek koncovou mezeru
+ * („všeobecné “ vedle „všeobecné“); bez sjednocení posoudí každá strana jednoznačnost jinak
+ * a vznikne adresa, kterou druhá strana nerozpozná.
+ */
+export function zamereniProAdresu(zamereni) {
+  const text = String(zamereni ?? '').trim();
+  return text || undefined;
+}
+
+/**
  * @param {NabidkaProAdresu[]} nabidky
  * @returns {Map<string, number>}
  */
@@ -102,18 +112,98 @@ export function adresaPrehledu(redizo, nazevSkoly) {
 }
 
 /**
- * Kanonická adresa nabídky. `pocty` je výsledek `pocetStejnychAdres` nad množinou,
- * vůči které se posuzuje jednoznačnost.
+ * Adresa nabídky bez ohledu na jednoznačnost. Slouží jako výchozí tvar, který
+ * `adresySkolyMapa` podle potřeby doplní o rozlišení.
  *
  * @param {string} redizo
  * @param {string} nazevSkoly
  * @param {NabidkaProAdresu} nabidka
- * @param {Map<string, number>} pocty
+ * @param {boolean} sDelkou
  * @returns {string}
  */
-export function adresaNabidky(redizo, nazevSkoly, nabidka, pocty) {
-  const sDelkou = (pocty.get(klic(nabidka)) ?? 0) > 1;
-  return `${redizo}-${createSlug(nazevSkoly, nabidka.obor, nabidka.zamereni, sDelkou ? nabidka.delka_studia : undefined)}`;
+function zakladniAdresa(redizo, nazevSkoly, nabidka, sDelkou) {
+  const zamereni = zamereniProAdresu(nabidka.zamereni);
+  return `${redizo}-${createSlug(nazevSkoly, nabidka.obor, zamereni, sDelkou ? nabidka.delka_studia : undefined)}`;
+}
+
+/**
+ * Adresy všech nabídek školy jako mapa adresa → nabídka.
+ *
+ * **Jednoznačnost se posuzuje na hotové adrese, ne na dvojici obor + zaměření.** Adresa vzniká
+ * až po odstranění diakritiky, sjednocení velikosti písmen a oříznutí na 40 a 150 znaků, takže
+ * dvě různá zaměření mohou skončit na tomtéž textu: „Živé jazyky“ a „živé jazyky“, nebo dvě
+ * dlouhá zaměření, která se oříznou na stejném místě. Do 19. 9. 2026 se počítaly surové dvojice,
+ * takže takové nabídky nedostaly rozlišení a sdílely jednu stránku — jedna z nich pak ukazovala
+ * čísla té druhé. Postup je proto třístupňový: základní tvar, při shodě délka studia, a když ani
+ * ta nestačí, pořadí nabídky. Třetí stupeň je ošklivý, ale je to jediné, co zaručí, že **každá
+ * nabídka má vlastní adresu**; invariant hlídá tests/catalog-2026.integration.mjs.
+ *
+ * @param {string} redizo
+ * @param {string} nazevSkoly
+ * @param {NabidkaProAdresu[]} nabidky
+ * @returns {Map<string, NabidkaProAdresu>}
+ */
+export function adresySkolyMapa(redizo, nazevSkoly, nabidky) {
+  /** @type {Map<string, NabidkaProAdresu[]>} */
+  const podleAdresy = new Map();
+  for (const n of nabidky) {
+    const a = zakladniAdresa(redizo, nazevSkoly, n, false);
+    if (!podleAdresy.has(a)) podleAdresy.set(a, []);
+    podleAdresy.get(a).push(n);
+  }
+
+  /** @type {Map<string, NabidkaProAdresu>} */
+  const vysledek = new Map();
+  for (const [adresa, skupina] of podleAdresy) {
+    if (skupina.length === 1) {
+      vysledek.set(adresa, skupina[0]);
+      continue;
+    }
+    // Druhý stupeň: délka studia.
+    /** @type {Map<string, NabidkaProAdresu[]>} */
+    const sDelkou = new Map();
+    for (const n of skupina) {
+      const a = zakladniAdresa(redizo, nazevSkoly, n, true);
+      if (!sDelkou.has(a)) sDelkou.set(a, []);
+      sDelkou.get(a).push(n);
+    }
+    for (const [a, podskupina] of sDelkou) {
+      if (podskupina.length === 1) {
+        vysledek.set(a, podskupina[0]);
+        continue;
+      }
+      // Třetí stupeň: pořadí v rámci shodné adresy, aby na sebe nabídky nepřepsaly.
+      // Řadí se podle surových hodnot, ne podle pořadí v souboru: jinak by přegenerování
+      // týchž dat mohlo obě adresy prohodit a stránka by se odkazovala na jinou nabídku.
+      const stabilni = [...podskupina].sort((x, y) =>
+        (x.obor || '').localeCompare(y.obor || '', 'cs')
+        || (x.zamereni || '').localeCompare(y.zamereni || '', 'cs')
+        || (x.delka_studia ?? 0) - (y.delka_studia ?? 0)
+        // Poslední záchrana: dvě nabídky se mohou shodovat i v oboru, zaměření a délce
+        // (liší se jen identifikátorem). Bez něj by o pořadí rozhodlo pořadí v souboru.
+        || (x.id || '').localeCompare(y.id || ''));
+      stabilni.forEach((n, i) => {
+        vysledek.set(i === 0 ? a : `${a}-${i + 1}`, n);
+      });
+    }
+  }
+  return vysledek;
+}
+
+/**
+ * Kanonická adresa jedné nabídky mezi nabídkami téže školy.
+ *
+ * @param {string} redizo
+ * @param {string} nazevSkoly
+ * @param {NabidkaProAdresu} nabidka
+ * @param {NabidkaProAdresu[]} nabidkySkoly
+ * @returns {string|null}
+ */
+export function adresaNabidkyVeSkole(redizo, nazevSkoly, nabidka, nabidkySkoly) {
+  for (const [adresa, n] of adresySkolyMapa(redizo, nazevSkoly, nabidkySkoly)) {
+    if (n === nabidka) return adresa;
+  }
+  return null;
 }
 
 /**
@@ -127,28 +217,28 @@ export function adresaNabidky(redizo, nazevSkoly, nabidka, pocty) {
  * @returns {string[]}
  */
 export function adresySkoly(redizo, nazevSkoly, nabidky) {
-  const adresy = new Set([adresaPrehledu(redizo, nazevSkoly)]);
-  const seZamerenim = nabidky.filter(n => n.zamereni);
-  const bezZamereni = nabidky.filter(n => !n.zamereni);
-  const poctyZamereni = pocetStejnychAdres(seZamerenim);
-  const poctyBez = pocetStejnychAdres(bezZamereni);
-  for (const n of seZamerenim) adresy.add(adresaNabidky(redizo, nazevSkoly, n, poctyZamereni));
-  for (const n of bezZamereni) adresy.add(adresaNabidky(redizo, nazevSkoly, n, poctyBez));
-  return [...adresy];
+  return [adresaPrehledu(redizo, nazevSkoly), ...adresySkolyMapa(redizo, nazevSkoly, nabidky).keys()];
 }
 
 /**
- * Kanonická adresa jedné nabídky, když máme po ruce všechny nabídky té školy.
- * Jednoznačnost se posuzuje jen vůči nabídkám téhož druhu: nabídka se zaměřením proti
- * ostatním se zaměřením, nabídka bez něj proti ostatním bez něj.
+ * Nabídky, pro které stránka oboru skutečně vznikne.
  *
- * @param {string} redizo
- * @param {string} nazevSkoly
- * @param {NabidkaProAdresu} nabidka
- * @param {NabidkaProAdresu[]} nabidkySkoly
- * @returns {string}
+ * Stránku staví `getProgramsByRedizo`, a ta nabídku **vynechá** ve dvou případech: když její
+ * základní klíč (`REDIZO_KKOV`) nezná `school_analysis.json`, a když pod týmž základním klíčem
+ * existuje nabídka se zaměřením — pak se holá nabídka bez zaměření zahodí. Kdo to pravidlo
+ * neuplatní, vyrobí adresu, která se jen přesměruje: přesně to dělala sitemapa u 43 adres
+ * a vyhledávání u části odkazů.
+ *
+ * @param {NabidkaProAdresu[]} nabidky
+ * @param {(zakladniKlic: string) => boolean} znaZakladniKlic
+ * @returns {NabidkaProAdresu[]}
  */
-export function adresaNabidkyVeSkole(redizo, nazevSkoly, nabidka, nabidkySkoly) {
-  const stejnyDruh = nabidkySkoly.filter(n => Boolean(n.zamereni) === Boolean(nabidka.zamereni));
-  return adresaNabidky(redizo, nazevSkoly, nabidka, pocetStejnychAdres(stejnyDruh));
+export function nabidkySeStrankou(nabidky, znaZakladniKlic) {
+  const zaklad = n => String(n.id ?? '').split('_').slice(0, 2).join('_');
+  const seZamerenim = new Set(nabidky.filter(n => zamereniProAdresu(n.zamereni)).map(zaklad));
+  return nabidky.filter(n => {
+    const k = zaklad(n);
+    if (!k || !znaZakladniKlic(k)) return false;
+    return zamereniProAdresu(n.zamereni) ? true : !seZamerenim.has(k);
+  });
 }
