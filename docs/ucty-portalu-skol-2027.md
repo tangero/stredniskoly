@@ -1,6 +1,6 @@
 # Účty portálu pro školy: správce, editoři a pilot 20 škol
 
-Verze 1.2 · 19. 9. 2026 · Schváleno zadavatelem 19. 9. 2026, kroky 1–6 realizovány.
+Verze 1.3 · 19. 9. 2026 · Schváleno zadavatelem 19. 9. 2026, kroky 1–6 realizovány, review PR #111 vypořádáno (oddíl 9.2).
 
 Navazuje na [portál pro školy](portal-pro-skoly-2027.md) (v1.5). Ten dnes pracuje s kódem vázaným na školu: kdo kód zná, edituje, a o osobě nevíme nic. Pilot s 20 školami potřebuje vědět, **kdo** za školu data zadává, ukázat to veřejně a umět to změnit.
 
@@ -41,11 +41,11 @@ Požadavek: založení nebo úprava vždy přidá nový záznam s tím, kdo a kd
 
 Platí: pro jedno `redizo` smí existovat nejvýš jeden platný záznam `spravce` (částečný unikátní index `where role='spravce' and zneplatneno is null`). Změna e-mailu, jména nebo funkce = nový řádek se stejným `osoba_id` a `nahrazuje_id`, starý dostane `zneplatneno`. Obojí v jedné transakci. Co se změnilo, se čte porovnáním dvojice řádků, nic se neodvozuje z logu.
 
-**`portal_kod_uplatneni`** — kódy dál žijí v `data/portal/kody.json` (v gitu jen hash), jejich spotřebování ale v databázi, protože repozitář se za běhu nezapisuje. Kód platí, když není zrušený v JSON **a** nemá uplatnění. Sloupce: `kod_hash`, `redizo`, `role_id`, `uplatneno`.
+**`portal_kod_uplatneni`** — kódy dál žijí v `data/portal/kody.json` (v gitu jen HMAC-SHA256 s tajným pepřem `PORTAL_KOD_PEPPER`; repozitář je veřejný a holý hash 12znakového kódu by šel dohledat hrubou silou), jejich spotřebování ale v databázi, protože repozitář se za běhu nezapisuje. Kód platí, když není zrušený v JSON **a** nemá uplatnění. Sloupce: `kod_hash`, `redizo`, `role_id`, `uplatneno`.
 
-**`portal_pozvanka`** — `id`, `redizo`, `email`, `role` (`editor`, výjimečně předání správce), `pozval_role_id`, `vytvoreno`, `plati_do` (7 dní), `prijato`, `zruseno`.
+**`portal_pozvanka`** — `id`, `redizo`, `email`, `role` (`editor`, výjimečně předání správce), `pozval_role_id`, `vytvoreno`, `plati_do` (7 dní), `prijato`, `prijal_role_id`, `zruseno`. Nevyřízená pozvánka na tutéž adresu ve škole je nejvýš jedna (částečný unikátní index); nová starou zruší.
 
-**`portal_udalost`** — provozní stopa pro `/admin` a Telegram: `redizo`, `role_id`, `typ` (`kod_uplatnen`, `prihlaseni`, `navrh_odeslan`, `pozvanka_odeslana`, `pozvanka_prijata`, `role_zmenena`, `role_zrusena`, `odkaz_vyzadan`), `kdy`, `detail` (jsonb bez tokenů a kódů).
+**`portal_udalost`** — provozní stopa pro `/admin` a Telegram: `redizo`, `role_id`, `typ` (`kod_uplatnen`, `prihlaseni`, `navrh_odeslan`, `pozvanka_odeslana`, `pozvanka_prijata`, `role_zmenena`, `role_zrusena`, `spravce_predan`, `spravce_dosazen`, `pozvanka_zrusena`, `odkaz_vyzadan`, `host_z_rejstriku`, `osoba_anonymizovana`), `kdy`, `detail` (jsonb bez tokenů, kódů a osobních údajů). Osobu určuje `role_id`, jméno se čte z `portal_role`; změna údajů zapíše jen názvy změněných polí. Výjimkou je `kontakt` u návrhu bez účtu, protože ten jinde uložený není; výmaz osoby ho maže.
 
 ### 2.2 Vstupy
 
@@ -145,7 +145,7 @@ Nový pojem na webu „profil spravuje“ se zapíše do [slovníku pojmů](slov
 | Neschválený návrh a odchod editora | návrh zůstává v issue, moderace posuzuje obsah, ne osobu |
 | Pozvánka na adresu, která už roli ve škole má | nový záznam jen při změně role; jinak hláška |
 | Ztráta přístupu k e-mailu | admin změní e-mail s důvodem |
-| Žádost o smazání osobních údajů | platné záznamy se zneplatní, v historii se jméno a e-mail nahradí otiskem; stopa „kdo změnil údaj školy“ zůstane jako „editor školy“ |
+| Žádost o smazání osobních údajů | platné záznamy se zneplatní, v historii se jméno a e-mail nahradí zástupným textem ve všech školách osoby; pozvánky na její adresy ztratí adresu (nevyřízené se zruší); z událostí zmizí `kontakt` s její adresou. Stopa „kdo změnil údaj školy“ zůstane jako „editor školy“. GitHub issue osobní údaje nenesou, takže se výmaz jich netýká |
 
 ## 8. Facebooková skupina: odloženo
 
@@ -158,7 +158,7 @@ Kdyby se k ní později přistoupilo, otevře druhý vstup (odkaz na e-mail z re
 1. Migrace tabulek (oddíl 2.1), knihovna rolí a relace, testy invariantu jednoho správce a zneplatňování.
 2. Uplatnění kódu a rejstříkového odkazu jako správce, odkaz na vlastní e-mail, cookie.
 3. Profil osoby: úprava údajů, souhlas, pozvánky, předání správcovství.
-4. Návrh (GitHub issue) nese `role_id`, jméno a funkci editora (interně), formulář ukazuje čekající návrh.
+4. Návrh (GitHub issue) nese roli autora bez jména a kontaktu (repozitář je veřejný), formulář ukazuje čekající návrh.
 5. `/admin/portal`: časová osa školy a akce z oddílu 2.4; tabulka pilotu; Telegram.
 6. Veřejné „profil spravuje“ na stránce školy a vyhledání na `/pro-skoly`; přepis textu o jménech; slovník pojmů.
 7. Běh celé cesty naostro na testovací škole, pak kódy pro 20 škol a text pozvánky.
@@ -170,11 +170,41 @@ Kdyby se k ní později přistoupilo, otevře druhý vstup (odkaz na e-mail z re
 | 1 | `src/lib/portal-schema.ts`, `src/lib/portal-ucty.ts`, `tests/portal-ucty.test.mjs` | Testy nad PGlite (skutečný Postgres v paměti), invariant jednoho správce hlídá částečný unikátní index. |
 | 2 | `/api/portal/kod`, `/api/portal/uplatnit`, `/api/portal/prihlasit`, `/pro-skoly/prihlaseni/[token]` | Kód jde v těle POST, ne v adrese. Odkaz pro přihlášení se spotřebuje až tlačítkem (POST), protože skenery školní pošty otevírají odkazy GET. |
 | 3 | `/pro-skoly/profil`, `/api/portal/ucet`, `/pro-skoly/pozvanka/[token]`, `/pro-skoly/email/[token]` | Změna e-mailu platí pro osobu, tedy ve všech jejích školách. |
-| 4 | `/api/portal-skoly` | S databází účtů kód formulář přímo neotevírá (musí se nejdřív uplatnit), jinak by ho mohl používat kdokoli, komu byl přeposlán. Issue nese „Zadal: jméno, funkce (role)“. |
+| 4 | `/api/portal-skoly` | S databází účtů kód formulář přímo neotevírá (musí se nejdřív uplatnit), jinak by ho mohl používat kdokoli, komu byl přeposlán. Issue nese jen roli autora („Zadal: správce profilu“); jméno a kontakt jsou v administraci a v Telegramu (oddíl 9.2). |
 | 5 | `/admin/portal`, `/admin/portal/akce`, tabulka pilotu v `/admin` | Akce leží pod `/admin`, protože cookie `admin_token` má `path=/admin`. Sloupce „Kód uplatněn“ a „Schváleno“ z oddílu 4 tabulka zatím nemá: uplatnění je vidět podle správce, schválení v moderaci výše na stránce. |
 | 6 | `src/lib/portal-verejne.ts`, `SchoolPortalSection`, `/api/portal/skoly`, `/pro-skoly` | Cache s tagem `portal-spravci` se zneplatní hned (`expire: 0`), jinak nejpozději za hodinu. |
 
 **Odchylky od návrhu:** formulář v profilu předvyplňuje schválené údaje, ne čekající návrh; kdo návrh opravuje, musí změny zadat znovu. Pozvaný editor souhlas se zveřejněním nedává, protože se jméno editora nezveřejňuje nikdy.
+
+### 9.2 Vypořádání review PR #111 (19. 9. 2026)
+
+Review: `docs/review-pr-111-portal-ucty.md` v hlavním pracovním stromu. Nasazení náhledu na Vercelu spadlo na „Resource provisioning failed“ za 1,3 s bez jediného kroku buildu; ve stejnou dobu stejně spadl náhled jiné větve a produkce z main prošla. Chyba infrastruktury, ne kódu.
+
+| # | Nález | Vypořádání |
+|---|---|---|
+| 1 | Osobní údaje ve veřejném GitHub issue | Issue nese jen roli autora. Z JSON payloadu v issue zmizel `kontakt_email` (`verejnyPayload`), moderace ho nevyžaduje (`validatePortalPayload(…, { bezKontaktu: true })`). Kontakt je v `portal_udalost` a v soukromém Telegramu. **Starší issue s e-mailem v repozitáři zůstávají, jejich úprava je na zadavateli.** |
+| 2 | Neúplný výmaz osoby | Události osobní údaje nenesou (viz 2.1); `anonymizujOsobu` čistí i `portal_pozvanka.email` a `kontakt` v událostech. Test ověřuje, že po výmazu není e-mail ani příjmení v žádné tabulce portálu. |
+| 3 | Admin uděloval souhlas se jménem za druhého | Formulář administrace souhlas nenabízí; jde jen odvolat. Dosazený správce začíná bez zveřejnění. |
+| 4 | Důvod zrušení pozvánky se zahazoval | `zrusPozvanku` přijímá důvod, u admina povinný, ukládá ho do události. |
+| 5, 13 | `dosadSpravce` nechytal 23505 | Kolize z unikátního indexu → „Správce mezitím změnil někdo jiný“. Test souběhu. |
+| 6 | Nonce spotřebovaný mimo transakci | `prihlasit` i `email` spotřebují odkaz ve stejné transakci jako zápis; při selhání odkaz platí dál. |
+| 7 | Zavádějící hláška u `uplatniKod` | Kolize `portal_role_osoba_skola` má vlastní hlášku. |
+| 8 | Nesolené hashe kódů | HMAC s `PORTAL_KOD_PEPPER`. Všech 20 kódů pilotu vydáno znovu (pozvánky ještě neodešly); starý `kody.json` s revokovanými testovacími kódy nahrazen. Bez pepře se kód neověří a do logu jde chyba. |
+| 9 | Podvrhnutelné `x-forwarded-for` | `x-real-ip` (nastavuje Vercel), jinak poslední položka `x-forwarded-for`. |
+| 10 | Chybějící kontrola původu | Doplněna u `prihlasit`, `email`, `odhlasit`, `pozvanka`. |
+| 11 | Enumerace podle doby odpovědi | `/api/portal-magic` odpoví hned, dohledání a e-mail běží v `after()`. |
+| 12 | Duplicitní pozvánky | Částečný unikátní index `portal_pozvanka_otevrena`; nová pozvánka starou zruší. |
+| 15 | Osobní údaje v logu | Bez Telegramu jde do logu jen druh zprávy. |
+| 16 | Nereprodukovatelný výběr pilotu | `scripts/portal-vyber-pilotu.py`; ověřeno, že vybere tytéž školy ve stejném pořadí. Vada kritéria `min_body` je popsaná v hlavičce skriptu. |
+| 17 | `--out` mimo `.gitignore` | Uvnitř repozitáře jen do `data/portal/kody-plaintext.json`. |
+| drobnosti | | Úklid mapy omezení četnosti; `PortalUcet` maže pole pozvánky jen po úspěchu; změna e-mailu u osoby bez rolí vrací srozumitelnou hlášku; popisky a `role="status"` v administraci; oprava komentáře u rejstříkového odkazu; pozvánka neslibuje „jedním kliknutím“; sloupec `prijal_role_id` v 2.1. Změna e-mailu na adresu jiné osoby se odmítne (`email_obsazen`). |
+
+**Vědomě přijatá rizika:**
+
+- *Relace bez stavu na 30 dní.* Cookie nese jen podepsané `osoba_id`; role se čtou při každém požadavku, takže zrušení role v administraci platí okamžitě. Ukradenou cookie osoby, která roli dál má, jde zneplatnit jen změnou `PORTAL_MAGIC_SECRET` (odhlásí všechny). Pro 20 škol přijatelné.
+- *Rejstříkový odkaz není jednorázový.* Platí do vypršení; u školy se správcem vede jen k návrhu jako host a správce dostane upozornění. Jednorázový by rozbil sdílenou rejstříkovou schránku, ze které odkaz otevírá víc lidí.
+- *Souběžná migrace.* `/api/portal/migrace` se spouští jednou ručně; příkazy jsou `if not exists`, souběh by skončil chybou jednoho z běhů, ne poškozením.
+- *Tabulka `portal_odkaz` roste.* Řádek na přihlášení, v pilotu stovky. Úklid (řádky starší než platnost tokenu) až při rozšíření.
 
 ## Historie
 
@@ -183,3 +213,4 @@ Kdyby se k ní později přistoupilo, otevře druhý vstup (odkaz na e-mail z re
 | 1.0 | První návrh po rozhodnutích zadavatele 19. 9. 2026. |
 | 1.1 | Schváleno. Správcem osobních údajů je Patrick Zandl (obchodní název Zandl AI Therapy Company). Facebooková skupina odložena. |
 | 1.2 | Kroky 1–6 realizovány (oddíl 9.1) s odchylkami: přihlášení tlačítkem kvůli skenerům pošty, kód bez databáze účtů funguje postaru, s ní jen k založení správce. |
+| 1.3 | Review PR #111 vypořádáno (oddíl 9.2): issue bez osobních údajů, úplný výmaz osoby, HMAC kódů s pepřem a nové kódy pilotu, přijatá rizika. |

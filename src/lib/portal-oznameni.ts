@@ -10,7 +10,8 @@ export async function posliTelegram(text: string): Promise<boolean> {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chat = process.env.TELEGRAM_CHAT_ID;
   if (!token || !chat) {
-    console.log(`📨 Telegram není nastaven, zpráva: ${text.split('\n')[0]}`);
+    // Do logu jen druh zprávy (první znak), text nese jména a e-maily.
+    console.log(`📨 Telegram není nastaven, zpráva ${[...text][0] ?? ''} zahozena.`);
     return false;
   }
   try {

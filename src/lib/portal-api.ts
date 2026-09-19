@@ -25,8 +25,13 @@ export function obnovVerejneSpravce(): void {
 // In-memory omezení četnosti, stejný vzor jako /api/portal-magic. Na Vercelu
 // platí jen v rámci jedné instance; proti hádání kódů stačí délka kódu.
 const casy = new Map<string, number[]>();
+const MAX_KLICU = 5000;
 export function jeOmezeno(klic: string, max = 10, oknoMs = 15 * 60 * 1000): boolean {
   const ted = Date.now();
+  // Úklid, ať mapa na dlouho žijící instanci neroste bez konce.
+  if (casy.size > MAX_KLICU) {
+    for (const [k, t] of casy) if (!t.some((x) => ted - x < oknoMs)) casy.delete(k);
+  }
   const nedavne = (casy.get(klic) || []).filter((t) => ted - t < oknoMs);
   if (nedavne.length >= max) {
     casy.set(klic, nedavne);
@@ -37,8 +42,14 @@ export function jeOmezeno(klic: string, max = 10, oknoMs = 15 * 60 * 1000): bool
   return false;
 }
 
+/**
+ * IP klienta. x-real-ip nastavuje Vercel sám; v x-forwarded-for může první
+ * položky podvrhnout klient, spolehlivá je poslední (přidaná proxy).
+ */
 export function ipZPozadavku(headers: Headers): string {
-  return headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+  const realIp = headers.get('x-real-ip')?.trim();
+  if (realIp) return realIp;
+  return headers.get('x-forwarded-for')?.split(',').pop()?.trim() || 'unknown';
 }
 
 export function chyba(zprava: string, status: number): NextResponse {

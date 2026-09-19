@@ -62,6 +62,9 @@ export const MIGRACE_PORTALU: string[] = [
   zruseno timestamptz
 )`,
   `create index if not exists portal_pozvanka_skola on portal_pozvanka (redizo)`,
+  // Nejvýš jedna nevyřízená pozvánka na adresu ve škole; novou předchází zrušení staré.
+  `create unique index if not exists portal_pozvanka_otevrena
+  on portal_pozvanka (redizo, lower(email)) where prijato is null and zruseno is null`,
   // Jednorázové odkazy (přihlášení, změna e-mailu): spotřebování podle nonce.
   `create table if not exists portal_odkaz (
   nonce text primary key,

@@ -1,4 +1,4 @@
-import { createHash } from 'crypto';
+import { createHmac } from 'crypto';
 import { promises as fs } from 'fs';
 import path from 'path';
 
@@ -147,8 +147,14 @@ export function normalizeKod(kod: string): string {
   return String(kod || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
 }
 
-export function hashKod(kod: string): string {
-  return createHash('sha256').update(normalizeKod(kod), 'utf8').digest('hex');
+/**
+ * HMAC-SHA256 kódu s tajným pepřem z env PORTAL_KOD_PEPPER. Hashe leží ve
+ * veřejném repozitáři; bez pepře by šel 12znakový kód dohledat hrubou silou.
+ * Bez pepře hodí výjimku.
+ */
+export function hashKod(kod: string, pepper = process.env.PORTAL_KOD_PEPPER): string {
+  if (!pepper) throw new Error('Chybí PORTAL_KOD_PEPPER.');
+  return createHmac('sha256', pepper).update(normalizeKod(kod), 'utf8').digest('hex');
 }
 
 /**
@@ -156,9 +162,12 @@ export function hashKod(kod: string): string {
  * Vrací REDIZO nebo null. Volitelně přijímá dataset (testy), jinak čte data/portal/kody.json.
  */
 export async function validateKod(kod: string, kody?: PortalKodZaznam[]): Promise<string | null> {
-  const normalized = normalizeKod(kod);
-  if (normalized.length === 0) return null;
-  const hash = createHash('sha256').update(normalized, 'utf8').digest('hex');
+  if (normalizeKod(kod).length === 0) return null;
+  if (!process.env.PORTAL_KOD_PEPPER) {
+    console.error('❌ Portál: chybí PORTAL_KOD_PEPPER, přihlašovací kódy nejde ověřit.');
+    return null;
+  }
+  const hash = hashKod(kod);
   const seznam = kody ?? (await nactiKody());
   const zaznam = seznam.find((k) => k.hash === hash);
   if (!zaznam || zaznam.revokovano) return null;
@@ -193,7 +202,11 @@ export type PayloadVysledek =
   | { ok: true; udaje: Record<string, string>; udaje_sedi: boolean; nesrovnalost: string; kontakt_email: string }
   | { ok: false; error: string };
 
-export function validatePortalPayload(body: unknown): PayloadVysledek {
+/**
+ * `bezKontaktu`: payload z veřejného GitHub issue kontaktní e-mail nenese
+ * (osobní údaj, oddíl 7 docs/ucty-portalu-skol-2027.md); moderace ho nepotřebuje.
+ */
+export function validatePortalPayload(body: unknown, { bezKontaktu = false }: { bezKontaktu?: boolean } = {}): PayloadVysledek {
   if (!body || typeof body !== 'object') {
     return { ok: false, error: 'Neplatný formát dat.' };
   }
@@ -205,8 +218,8 @@ export function validatePortalPayload(body: unknown): PayloadVysledek {
   }
 
   // Kontaktní e-mail editora (interní, nepublikujeme)
-  const kontakt_email = String(raw.kontakt_email || '').trim();
-  if (!kontakt_email || kontakt_email.length > 320 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(kontakt_email)) {
+  const kontakt_email = bezKontaktu ? '' : String(raw.kontakt_email || '').trim();
+  if (!bezKontaktu && (!kontakt_email || kontakt_email.length > 320 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(kontakt_email))) {
     return { ok: false, error: 'Zadejte platný kontaktní e-mail (slouží jen pro dotazy redakce, nepublikujeme ho).' };
   }
 
@@ -255,6 +268,13 @@ export function validatePortalPayload(body: unknown): PayloadVysledek {
   }
 
   return { ok: true, udaje, udaje_sedi, nesrovnalost, kontakt_email };
+}
+
+/** Payload pro veřejné GitHub issue: bez kontaktního e-mailu. */
+export function verejnyPayload(payload: PortalPayload): Omit<PortalPayload, 'kontakt_email'> {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { kontakt_email, ...zbytek } = payload;
+  return zbytek;
 }
 
 // ----------------------------------------------------------------------------

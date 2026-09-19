@@ -19,7 +19,7 @@ interface Props {
 }
 
 // Odkaz na e-mail školy z rejstříku (docs/ucty-portalu-skol-2027.md, 2.2):
-// škola bez správce → založení správce; škola se správcem → jednorázový návrh
+// škola bez správce → založení správce; škola se správcem → návrh jako host (odkaz platí do vypršení, správce dostane upozornění)
 // jako host, o kterém se správce dozví.
 export default async function PortalMagicLinkPage({ params }: Props) {
   const token = decodeURIComponent((await params).token);

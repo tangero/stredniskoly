@@ -19,6 +19,9 @@ import {
   verejniSpravci,
   anonymizujOsobu,
   overUdajeOsoby,
+  zrusPozvanku,
+  zapisUdalost,
+  otevrenePozvanky,
 } from '../src/lib/portal-ucty.ts';
 
 // Skutečný Postgres v procesu (PGlite): unikátní částečné indexy, `for update`
@@ -210,4 +213,108 @@ test('anonymizace: nejdřív jiný správce, pak zmizí jméno i e-mail z histor
   const historie = await historieSkoly(s, '600000013');
   assert.ok(historie.every((h) => h.jmeno !== JANA.jmeno && h.email !== JANA.email));
   assert.deepEqual((await platneRoleSkoly(s, '600000013')).map((h) => h.jmeno), [PETR.jmeno]);
+});
+
+test('anonymizace: čistí i pozvánky a události, napříč školami', async () => {
+  const { db, s, tx } = await novaDb();
+  const a = await tx((t) => uplatniKod(t, 'a', '600000020', JANA));
+  const b = await tx((t) => zalozSpravceZRejstriku(t, '600000021', JANA, 'info@skola.cz'));
+  const petr = await tx((t) => uplatniKod(t, 'c', '600000022', PETR));
+  const pozvanka = await tx((t) => vytvorPozvanku(t, petr, JANA.email));
+  await zapisUdalost(s, '600000022', null, 'navrh_odeslan', { issue: 1, kanal: 'magic', kontakt: JANA.email });
+  await tx((t) => zmenRoli(t, a.id, { jmeno: 'Jana Nováková-Malá' }, 'sam'));
+  await tx((t) => dosadSpravce(t, '600000020', { ...PETR, email: 'x@gyms.cz' }, 'patrick', 'odchod', false));
+  await tx((t) => dosadSpravce(t, '600000021', { ...PETR, email: 'y@gyms.cz' }, 'patrick', 'odchod', false));
+  await tx((t) => anonymizujOsobu(t, b.osoba_id, 'patrick', 'žádost GDPR'));
+
+  const vse = async (sql) => JSON.stringify((await db.query(sql)).rows);
+  for (const tabulka of ['portal_role', 'portal_pozvanka', 'portal_udalost']) {
+    const obsah = await vse(`select * from ${tabulka}`);
+    assert.ok(!obsah.includes(JANA.email), `${tabulka} drží e-mail`);
+    assert.ok(!obsah.includes('Nováková'), `${tabulka} drží jméno`);
+  }
+  // Nevyřízená pozvánka na její adresu se zrušila.
+  assert.equal((await otevrenePozvanky(s, '600000022')).some((p) => p.id === pozvanka.id), false);
+});
+
+test('události nekopírují jméno ani e-mail, jen odkaz na záznam', async () => {
+  const { db, tx } = await novaDb();
+  const r = await tx((t) => uplatniKod(t, 'a', '600000023', JANA));
+  await tx((t) => zmenRoli(t, r.id, { jmeno: 'Jana Malá', email: 'jana.mala@gyms.cz' }, 'sam'));
+  const detaily = JSON.stringify((await db.query(`select detail from portal_udalost`)).rows);
+  assert.ok(!detaily.includes('Jana'));
+  assert.ok(!detaily.includes('@'));
+  assert.ok(detaily.includes('"pole":["email","jmeno"]'));
+});
+
+test('dosazení správce: souběh s jiným dosazením skončí srozumitelnou chybou', async () => {
+  const { s } = await novaDb();
+  await uplatniKod(s, 'a', '600000024', JANA);
+  // Simulace souběhu: první čtení správce ještě nic nevidí.
+  let prvni = true;
+  const zastarale = {
+    dotaz: async (sql, hodnoty) => {
+      if (prvni && sql.includes("role = 'spravce'")) {
+        prvni = false;
+        return { rows: [], rowCount: 0 };
+      }
+      return s.dotaz(sql, hodnoty);
+    },
+  };
+  await assert.rejects(
+    dosadSpravce(zastarale, '600000024', PETR, 'patrick', 'omyl', false),
+    (e) => e instanceof PortalChyba && e.kod === 'skola_ma_spravce',
+  );
+});
+
+test('pozvánky: zrušení adminem chce důvod a uloží ho, nová pozvánka nahradí starou, prošlá neplatí', async () => {
+  const { db, s, tx } = await novaDb();
+  const spravce = await tx((t) => uplatniKod(t, 'a', '600000025', JANA));
+  const prvni = await tx((t) => vytvorPozvanku(t, spravce, PETR.email));
+  const druha = await tx((t) => vytvorPozvanku(t, spravce, PETR.email));
+  assert.deepEqual((await otevrenePozvanky(s, '600000025')).map((p) => p.id), [druha.id]);
+  await assert.rejects(prijmiPozvanku(s, prvni.id, PETR.jmeno, ''), (e) => e.kod === 'pozvanka_neplatna');
+
+  await assert.rejects(zrusPozvanku(s, druha.id, '600000025', 'admin:patrick'), (e) => e.kod === 'neplatne_udaje');
+  assert.equal(await zrusPozvanku(s, druha.id, '600000025', 'admin:patrick', 'překlep v adrese'), true);
+  assert.equal(await zrusPozvanku(s, druha.id, '600000025', 'admin:patrick', 'podruhé'), false);
+  const u = await db.query(`select detail from portal_udalost where typ = 'pozvanka_zrusena'`);
+  assert.equal(u.rows.length, 1);
+  assert.equal(u.rows[0].detail.duvod, 'překlep v adrese');
+
+  const prosla = await tx((t) => vytvorPozvanku(t, spravce, 'dalsi@gyms.cz'));
+  await db.query(`update portal_pozvanka set plati_do = now() - interval '1 day' where id = $1`, [prosla.id]);
+  await assert.rejects(prijmiPozvanku(s, prosla.id, 'Karel Dvořák', ''), (e) => e.kod === 'pozvanka_neplatna');
+});
+
+test('předání správcovství jen editorovi téže školy', async () => {
+  const { tx } = await novaDb();
+  const a = await tx((t) => uplatniKod(t, 'a', '600000026', JANA));
+  const b = await tx((t) => uplatniKod(t, 'b', '600000027', PETR));
+  const poz = await tx((t) => vytvorPozvanku(t, b, 'karel@gyms.cz'));
+  const editorB = await tx((t) => prijmiPozvanku(t, poz.id, 'Karel Dvořák', ''));
+  await assert.rejects(tx((t) => predejSpravcovstvi(t, a.id, editorB.id, 'sam')), (e) => e.kod === 'neplatne_udaje');
+  await assert.rejects(tx((t) => predejSpravcovstvi(t, a.id, b.id, 'sam')), (e) => e.kod === 'neplatne_udaje');
+});
+
+test('změna e-mailu na adresu jiné osoby neprojde', async () => {
+  const { tx } = await novaDb();
+  const jana = await tx((t) => uplatniKod(t, 'a', '600000028', JANA));
+  await tx((t) => uplatniKod(t, 'b', '600000029', PETR));
+  await assert.rejects(tx((t) => zmenRoli(t, jana.id, { email: PETR.email }, 'sam')), (e) => e.kod === 'email_obsazen');
+  // Vlastní adresa jen jinak napsaná projde.
+  await tx((t) => zmenRoli(t, jana.id, { email: JANA.email.toUpperCase() }, 'sam'));
+});
+
+test('odkaz spotřebovaný v transakci, která selhala, jde použít znovu', async () => {
+  const { s, tx } = await novaDb();
+  await assert.rejects(
+    tx(async (t) => {
+      assert.equal(await spotrebujOdkaz(t, 'nonce-x', 'prihlaseni'), true);
+      throw new Error('zápis selhal');
+    }),
+    /zápis selhal/,
+  );
+  assert.equal(await spotrebujOdkaz(s, 'nonce-x', 'prihlaseni'), true);
+  assert.equal(await spotrebujOdkaz(s, 'nonce-x', 'prihlaseni'), false);
 });

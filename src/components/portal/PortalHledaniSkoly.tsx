@@ -14,13 +14,12 @@ export const PortalHledaniSkoly = () => {
   const [dotaz, setDotaz] = useState('');
   const [skoly, setSkoly] = useState<NalezenaSkola[]>([]);
   const [hledam, setHledam] = useState(false);
+  // Pod tři znaky se nehledá a starý výsledek se neukazuje.
+  const zobrazene = dotaz.trim().length >= 3 ? skoly : [];
 
   useEffect(() => {
     const cisty = dotaz.trim();
-    if (cisty.length < 3) {
-      setSkoly([]);
-      return;
-    }
+    if (cisty.length < 3) return;
     const zruseni = new AbortController();
     const casovac = setTimeout(async () => {
       setHledam(true);
@@ -53,9 +52,9 @@ export const PortalHledaniSkoly = () => {
         className="w-full rounded-lg border border-[#c9d4e1] px-4 py-3 focus:border-[#0074e4] focus:outline-none focus:ring-2 focus:ring-blue-200"
       />
       {hledam && <p className="text-sm text-slate-500">Hledám…</p>}
-      {skoly.length > 0 && (
+      {zobrazene.length > 0 && (
         <ul className="divide-y divide-[#e3e9f1] rounded-lg border border-[#e3e9f1] bg-white">
-          {skoly.map((s) => (
+          {zobrazene.map((s) => (
             <li key={s.redizo} className="px-4 py-3 text-sm">
               <span className="font-medium text-slate-900">{s.nazev}</span>
               <span className="text-slate-500"> · {s.obec}</span>

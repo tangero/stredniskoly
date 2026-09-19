@@ -45,6 +45,7 @@ export type KodChyby =
   | 'pozvanka_neplatna'
   | 'uz_ma_roli'
   | 'posledni_spravce'
+  | 'email_obsazen'
   | 'neplatne_udaje';
 
 /** Chyba s hláškou pro uživatele. Bez parameter properties: testy běží přes strip-types. */
@@ -275,12 +276,15 @@ export async function uplatniKod(
     if (jeKolize(chyba, 'portal_kod_uplatneni_pkey')) {
       throw new PortalChyba('kod_uplatnen', 'Tento kód už byl uplatněn.');
     }
+    if (jeKolize(chyba, 'portal_role_osoba_skola')) {
+      throw new PortalChyba('uz_ma_roli', 'K profilu této školy už s touto adresou přístup máte. Přihlaste se e-mailem.');
+    }
     if (jeKolize(chyba)) {
       throw new PortalChyba('skola_ma_spravce', 'Škola už správce profilu má. Požádejte ho o pozvání.');
     }
     throw chyba;
   }
-  await zapisUdalost(s, redizo, role.id, 'kod_uplatnen', { jmeno: role.jmeno, funkce: role.funkce, email: role.email });
+  await zapisUdalost(s, redizo, role.id, 'kod_uplatnen');
   return role;
 }
 
@@ -305,16 +309,15 @@ export async function zalozSpravceZRejstriku(
       duvod: `odkaz na ${normalizujEmail(rejstrikovyEmail)}`,
     });
   } catch (chyba) {
+    if (jeKolize(chyba, 'portal_role_osoba_skola')) {
+      throw new PortalChyba('uz_ma_roli', 'K profilu této školy už s touto adresou přístup máte. Přihlaste se e-mailem.');
+    }
     if (jeKolize(chyba)) {
       throw new PortalChyba('skola_ma_spravce', 'Škola už správce profilu má. Požádejte ho o pozvání.');
     }
     throw chyba;
   }
-  await zapisUdalost(s, redizo, role.id, 'spravce_z_rejstriku', {
-    jmeno: role.jmeno,
-    funkce: role.funkce,
-    email: role.email,
-  });
+  await zapisUdalost(s, redizo, role.id, 'spravce_z_rejstriku');
   return role;
 }
 
@@ -336,7 +339,7 @@ async function zneplatni(s: Spojeni, roleId: string): Promise<void> {
   await s.dotaz(`update portal_role set zneplatneno = now() where id = $1 and zneplatneno is null`, [roleId]);
 }
 
-/** Které údaje se mezi dvěma záznamy liší (pro časovou osu a Telegram). */
+/** Které údaje se mezi dvěma záznamy liší (hodnoty včetně osobních údajů, jen pro paměť). */
 export function rozdilRoli(stary: PortalRole, novy: PortalRole): Record<string, [unknown, unknown]> {
   const pole = ['role', 'email', 'jmeno', 'funkce', 'zverejnit_jmeno'] as const;
   const rozdil: Record<string, [unknown, unknown]> = {};
@@ -344,6 +347,18 @@ export function rozdilRoli(stary: PortalRole, novy: PortalRole): Record<string, 
     if (stary[p] !== novy[p]) rozdil[p] = [stary[p], novy[p]];
   }
   return rozdil;
+}
+
+/**
+ * Změna pro záznam události: jen názvy změněných polí. Hodnoty jména a e-mailu
+ * zůstávají v portal_role, kde je smaže výmaz osoby (oddíl 7); událost je nekopíruje.
+ */
+export function popisZmeny(stary: PortalRole, novy: PortalRole): { pole: string[]; zverejnit_jmeno?: boolean } {
+  const rozdil = rozdilRoli(stary, novy);
+  return {
+    pole: Object.keys(rozdil),
+    ...('zverejnit_jmeno' in rozdil ? { zverejnit_jmeno: novy.zverejnit_jmeno } : {}),
+  };
 }
 
 /**
@@ -361,6 +376,16 @@ export async function zmenRoli(
     throw new PortalChyba('neplatne_udaje', 'Změna v administraci musí mít důvod.');
   }
   const stara = await zamkniPlatnou(s, roleId);
+  // Adresa určuje osobu při přihlášení; dvě osoby se stejnou adresou by se slily.
+  if (zmeny.email !== undefined && normalizujEmail(zmeny.email) !== normalizujEmail(stara.email)) {
+    const obsazeno = await s.dotaz(
+      `select 1 from portal_role where lower(email) = $1 and osoba_id <> $2 and zneplatneno is null limit 1`,
+      [normalizujEmail(zmeny.email), stara.osoba_id],
+    );
+    if (obsazeno.rowCount > 0) {
+      throw new PortalChyba('email_obsazen', 'Tuto adresu už u portálu používá jiná osoba.');
+    }
+  }
   const udaje: UdajeOsoby = {
     email: zmeny.email !== undefined ? normalizujEmail(zmeny.email) : stara.email,
     jmeno: zmeny.jmeno ?? stara.jmeno,
@@ -380,7 +405,7 @@ export async function zmenRoli(
   await zapisUdalost(s, nova.redizo, nova.id, 'role_zmenena', {
     provedl: zmenuProvedl,
     duvod,
-    zmeny: rozdilRoli(stara, nova),
+    zmeny: popisZmeny(stara, nova),
   });
   return nova;
 }
@@ -400,7 +425,7 @@ export async function zrusRoli(
     throw new PortalChyba('posledni_spravce', 'Správce nejde zrušit, jen předat nebo nahradit.');
   }
   await zneplatni(s, role.id);
-  await zapisUdalost(s, role.redizo, role.id, 'role_zrusena', { provedl: zmenuProvedl, duvod, jmeno: role.jmeno });
+  await zapisUdalost(s, role.redizo, role.id, 'role_zrusena', { provedl: zmenuProvedl, duvod });
 }
 
 /**
@@ -444,8 +469,7 @@ export async function predejSpravcovstvi(
   await zapisUdalost(s, novy.redizo, novy.id, 'spravce_predan', {
     provedl: zmenuProvedl,
     duvod,
-    od: spravce.jmeno,
-    na: novy.jmeno,
+    od_role: spravce.id,
   });
   return novy;
 }
@@ -484,20 +508,28 @@ export async function dosadSpravce(
   const osobaId = await osobaProEmail(s, udaje.email);
   const dosavadni = await roleProOsobuVeSkole(s, osobaId, redizo);
   if (dosavadni) await zneplatni(s, dosavadni.id);
-  const novy = await vlozRoli(s, {
-    redizo,
-    osobaId,
-    role: 'spravce',
-    udaje,
-    zmenuProvedl,
-    duvod,
-    nahrazujeId: dosavadni?.id ?? puvodni?.id ?? null,
-  });
+  let novy: PortalRole;
+  try {
+    novy = await vlozRoli(s, {
+      redizo,
+      osobaId,
+      role: 'spravce',
+      udaje,
+      zmenuProvedl,
+      duvod,
+      nahrazujeId: dosavadni?.id ?? puvodni?.id ?? null,
+    });
+  } catch (chyba) {
+    // Souběh: mezi čtením a vložením dosadil správce někdo jiný.
+    if (jeKolize(chyba)) {
+      throw new PortalChyba('skola_ma_spravce', 'Správce mezitím změnil někdo jiný. Načtěte stránku znovu.');
+    }
+    throw chyba;
+  }
   await zapisUdalost(s, redizo, novy.id, 'spravce_dosazen', {
     provedl: zmenuProvedl,
     duvod,
-    puvodni: puvodni?.jmeno ?? null,
-    novy: novy.jmeno,
+    puvodni_role: puvodni?.id ?? null,
   });
   return novy;
 }
@@ -535,6 +567,12 @@ export async function vytvorPozvanku(
     [pozval.redizo, cisty],
   );
   if (maRoli.rowCount > 0) throw new PortalChyba('uz_ma_roli', 'Tato adresa už k profilu školy přístup má.');
+  // Stará nevyřízená pozvánka na stejnou adresu se nahradí novou (index portal_pozvanka_otevrena).
+  await s.dotaz(
+    `update portal_pozvanka set zruseno = now()
+      where redizo = $1 and lower(email) = $2 and prijato is null and zruseno is null`,
+    [pozval.redizo, cisty],
+  );
   const r = await s.dotaz<PortalPozvanka>(
     `insert into portal_pozvanka (id, redizo, email, role, pozval_role_id, plati_do)
      values ($1, $2, $3, 'editor', $4, now() + ($5 || ' days')::interval)
@@ -542,7 +580,7 @@ export async function vytvorPozvanku(
     [randomUUID(), pozval.redizo, cisty, pozval.id, String(POZVANKA_PLATNOST_DNI)],
   );
   const pozvanka = r.rows[0];
-  await zapisUdalost(s, pozval.redizo, pozval.id, 'pozvanka_odeslana', { email: cisty, pozvanka: pozvanka.id });
+  await zapisUdalost(s, pozval.redizo, pozval.id, 'pozvanka_odeslana', { pozvanka: pozvanka.id });
   return pozvanka;
 }
 
@@ -602,11 +640,20 @@ export async function prijmiPozvanku(
     pozvanka.id,
     role.id,
   ]);
-  await zapisUdalost(s, pozvanka.redizo, role.id, 'pozvanka_prijata', { jmeno: role.jmeno, pozvanka: pozvanka.id });
+  await zapisUdalost(s, pozvanka.redizo, role.id, 'pozvanka_prijata', { pozvanka: pozvanka.id });
   return role;
 }
 
-export async function zrusPozvanku(s: Spojeni, pozvankaId: string, redizo: string, kdo: PortalRole | string) {
+export async function zrusPozvanku(
+  s: Spojeni,
+  pozvankaId: string,
+  redizo: string,
+  kdo: PortalRole | string,
+  duvod: string | null = null,
+): Promise<boolean> {
+  if (typeof kdo === 'string' && kdo.startsWith('admin') && !duvod?.trim()) {
+    throw new PortalChyba('neplatne_udaje', 'Zrušení v administraci musí mít důvod.');
+  }
   const r = await s.dotaz(
     `update portal_pozvanka set zruseno = now() where id = $1 and redizo = $2 and prijato is null and zruseno is null`,
     [pozvankaId, redizo],
@@ -615,8 +662,10 @@ export async function zrusPozvanku(s: Spojeni, pozvankaId: string, redizo: strin
     await zapisUdalost(s, redizo, typeof kdo === 'string' ? null : kdo.id, 'pozvanka_zrusena', {
       pozvanka: pozvankaId,
       provedl: typeof kdo === 'string' ? kdo : 'spravce',
+      duvod,
     });
   }
+  return r.rowCount > 0;
 }
 
 // ----------------------------------------------------------------------------
@@ -643,6 +692,8 @@ export async function anonymizujOsobu(s: Spojeni, osobaId: string, kdo: string, 
   if (role.rows.some((r) => r.role === 'spravce' && r.zneplatneno === null)) {
     throw new PortalChyba('posledni_spravce', 'Nejdřív dosaďte škole jiného správce.');
   }
+  const emaily = [...new Set(role.rows.map((r) => normalizujEmail(r.email)))];
+  const roleIds = role.rows.map((r) => r.id);
   await s.dotaz(
     `update portal_role
         set zneplatneno = coalesce(zneplatneno, now()),
@@ -650,6 +701,24 @@ export async function anonymizujOsobu(s: Spojeni, osobaId: string, kdo: string, 
             jmeno = 'editor školy', funkce = '', zverejnit_jmeno = false
       where osoba_id = $1`,
     [osobaId],
+  );
+  // Pozvánky na adresy osoby: adresa pryč, nevyřízené se zruší.
+  await s.dotaz(
+    `update portal_pozvanka
+        set email = 'vymazano+' || left(id::text, 8) || '@invalid',
+            zruseno = case when prijato is null then coalesce(zruseno, now()) else zruseno end
+      where lower(email) = any($1::text[])`,
+    [emaily],
+  );
+  // Události nové osobní údaje nenesou; tohle čistí kontakt u návrhů bez účtu
+  // (navrh_odeslan, host_z_rejstriku) a případné starší záznamy.
+  await s.dotaz(
+    `update portal_udalost
+        set detail = detail - array['jmeno', 'funkce', 'email', 'kontakt']
+      where role_id = any($1::uuid[])
+         or lower(detail->>'kontakt') = any($2::text[])
+         or lower(detail->>'email') = any($2::text[])`,
+    [roleIds, emaily],
   );
   for (const redizo of new Set(role.rows.map((r) => r.redizo))) {
     await zapisUdalost(s, redizo, null, 'osoba_anonymizovana', { provedl: `admin:${kdo}`, duvod });

@@ -6,7 +6,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { formatDatumCasCz, overAdminToken } from '@/lib/admin';
 import { jeDbNastavena } from '@/lib/novinky-db';
-import { nactiPilot, stavSkolPortalu, udalostiSkoly } from '@/lib/portal-admin';
+import { stavSkolPortalu, udalostiSkoly } from '@/lib/portal-admin';
 import { getNazevSkoly } from '@/lib/portal-skol';
 import { cteni } from '@/lib/portal-relace';
 import { historieSkoly, otevrenePozvanky, type PortalRole } from '@/lib/portal-ucty';
@@ -28,7 +28,7 @@ const TLACITKO = 'rounded bg-slate-800 px-3 py-1 text-sm font-medium text-white 
 const cas = (iso: string | null) => (iso ? formatDatumCasCz(new Date(iso).toISOString()) : '–');
 
 function Duvod() {
-  return <input name="duvod" required placeholder="důvod (povinný)" className={`${VSTUP} w-64`} />;
+  return <input name="duvod" required aria-label="Důvod zásahu" placeholder="důvod (povinný)" className={`${VSTUP} w-64`} />;
 }
 
 function Formular({ redizo, akce, children }: { redizo: string; akce: string; children: React.ReactNode }) {
@@ -41,15 +41,21 @@ function Formular({ redizo, akce, children }: { redizo: string; akce: string; ch
   );
 }
 
+/**
+ * Souhlas se zveřejněním jména dává jen osoba sama (oddíl 2.3). Administrace
+ * ho může na žádost odvolat, udělit ne.
+ */
 function UdajeOsoby({ role }: { role?: PortalRole }) {
   return (
     <>
-      <input name="jmeno" required defaultValue={role?.jmeno} placeholder="jméno a příjmení" className={VSTUP} />
-      <input name="funkce" defaultValue={role?.funkce} placeholder="funkce" className={VSTUP} />
-      <input name="email" type="email" required defaultValue={role?.email} placeholder="e-mail" className={VSTUP} />
-      <label className="text-sm">
-        <input type="checkbox" name="zverejnit_jmeno" defaultChecked={role?.zverejnit_jmeno} /> jméno veřejně
-      </label>
+      <input name="jmeno" required aria-label="Jméno a příjmení" defaultValue={role?.jmeno} placeholder="jméno a příjmení" className={VSTUP} />
+      <input name="funkce" aria-label="Funkce" defaultValue={role?.funkce} placeholder="funkce" className={VSTUP} />
+      <input name="email" type="email" required aria-label="E-mail" defaultValue={role?.email} placeholder="e-mail" className={VSTUP} />
+      {role?.zverejnit_jmeno && (
+        <label className="text-sm">
+          <input type="checkbox" name="odvolat_souhlas" /> odvolat souhlas se zveřejněním jména
+        </label>
+      )}
     </>
   );
 }
@@ -74,8 +80,8 @@ export default async function AdminPortalPage({ searchParams }: Props) {
               <button className={TLACITKO}>Otevřít školu</button>
             </form>
           </div>
-          {ok && <p className="rounded bg-green-50 px-4 py-2 text-green-800">{ok}</p>}
-          {chyba && <p className="rounded bg-red-50 px-4 py-2 text-red-700">{chyba}</p>}
+          {ok && <p role="status" className="rounded bg-green-50 px-4 py-2 text-green-800">{ok}</p>}
+          {chyba && <p role="alert" className="rounded bg-red-50 px-4 py-2 text-red-700">{chyba}</p>}
           {redizo ? <DetailSkoly redizo={redizo} /> : <PrehledSkol />}
         </div>
       </main>

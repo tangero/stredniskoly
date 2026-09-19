@@ -21,7 +21,7 @@ Zveme vaši školu mezi dvacet škol, které jako první vyzkouší, jak si ško
 3. Správce může pozvat kolegy. Každý se pak přihlašuje svým e-mailem, bez hesla.
 4. Každý návrh před zveřejněním přečte člověk z redakce.
 
-Na stránce školy uvedeme „Profil spravuje škola“. Jméno a funkci správce tam uvedeme, jen když k tomu dá ve formuláři souhlas; odvolat ho jde jedním kliknutím. Osobní údaje zpracovávám já jako jejich správce, jen pro přihlašování a pro vedení historie změn.
+Na stránce školy uvedeme „Profil spravuje škola“. Jméno a funkci správce tam uvedeme, jen když k tomu dá ve formuláři souhlas; odvolat ho jde kdykoli v profilu. Osobní údaje zpracovávám já jako jejich správce, jen pro přihlašování a pro vedení historie změn.
 
 Chystáme ještě dvě věci, zatím bez termínu: otevřená data s údaji potvrzenými školami a odznak pro web školy. O obojím vám dáme vědět.
 

@@ -52,6 +52,9 @@ create table if not exists portal_pozvanka (
 
 create index if not exists portal_pozvanka_skola on portal_pozvanka (redizo);
 
+create unique index if not exists portal_pozvanka_otevrena
+  on portal_pozvanka (redizo, lower(email)) where prijato is null and zruseno is null;
+
 create table if not exists portal_odkaz (
   nonce text primary key,
   ucel text not null,

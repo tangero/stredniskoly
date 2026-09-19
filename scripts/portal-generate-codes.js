@@ -8,9 +8,10 @@
  *   node scripts/portal-generate-codes.js --out data/portal/kody-plaintext.json 600171701
  *   node scripts/portal-generate-codes.js --force 600171701       # revokuje staré kódy školy a vydá nový
  *
- * Do repozitáře se ukládá POUZE SHA-256 hash kódu (data/portal/kody.json).
+ * Do repozitáře se ukládá POUZE HMAC-SHA256 kódu s pepřem z env PORTAL_KOD_PEPPER
+ * (data/portal/kody.json). Pepř musí být stejný jako na Vercelu, jinak kódy neplatí.
  * Plaintext kódy se vypíšou na stdout, případně do souboru přes --out
- * (výchozí data/portal/kody-plaintext.json je v .gitignore — nikdy necommitovat!).
+ * (jen do data/portal/kody-plaintext.json nebo mimo repozitář — nikdy necommitovat!).
  */
 import crypto from 'crypto';
 import fs from 'fs';
@@ -41,8 +42,21 @@ function normalizeKod(kod) {
   return String(kod).toUpperCase().replace(/[^A-Z0-9]/g, '');
 }
 
+const PEPPER = process.env.PORTAL_KOD_PEPPER;
+
 function hashKod(kod) {
-  return crypto.createHash('sha256').update(normalizeKod(kod), 'utf8').digest('hex');
+  return crypto.createHmac('sha256', PEPPER).update(normalizeKod(kod), 'utf8').digest('hex');
+}
+
+/** Plaintext smí jen do gitignorovaného souboru, nebo úplně mimo repozitář. */
+function overCestuOut(out) {
+  const cil = path.resolve(out);
+  const vRepu = !path.relative(ROOT, cil).startsWith('..') && !path.isAbsolute(path.relative(ROOT, cil));
+  if (vRepu && cil !== DEFAULT_PLAINTEXT_OUT) {
+    console.error(`--out uvnitř repozitáře smí jen do ${path.relative(ROOT, DEFAULT_PLAINTEXT_OUT)} (gitignorováno).`);
+    process.exit(1);
+  }
+  return cil;
 }
 
 function parseArgs(argv) {
@@ -56,7 +70,7 @@ function parseArgs(argv) {
     else if (arg === '--out') out = argv[++i];
     else if (arg === '--force') force = true;
     else if (arg === '--help' || arg === '-h') {
-      console.log(fs.readFileSync(fileURLToPath(import.meta.url), 'utf8').split('\n').slice(1, 14).join('\n').replace(/^ \* ?/gm, ''));
+      console.log(fs.readFileSync(fileURLToPath(import.meta.url), 'utf8').split('\n').slice(1, 15).join('\n').replace(/^ \* ?/gm, ''));
       process.exit(0);
     } else if (/^\d{9,10}$/.test(arg)) rediza.push(arg);
     else {
@@ -83,7 +97,7 @@ function nactiKody() {
   if (!fs.existsSync(KODY_PATH)) {
     return {
       verze: 1,
-      poznamka: 'Portál pro školy – ukládají se pouze SHA-256 hashe kódů. Plaintext kódy generuje scripts/portal-generate-codes.js a do gitu nepatří.',
+      poznamka: 'Portál pro školy – ukládají se pouze HMAC-SHA256 kódů s pepřem PORTAL_KOD_PEPPER. Plaintext kódy generuje scripts/portal-generate-codes.js a do gitu nepatří.',
       kody: [],
     };
   }
@@ -91,7 +105,12 @@ function nactiKody() {
 }
 
 function main() {
-  const { rediza, out, force } = parseArgs(process.argv.slice(2));
+  const { rediza, out: outArg, force } = parseArgs(process.argv.slice(2));
+  const out = outArg ? overCestuOut(outArg) : null;
+  if (!PEPPER) {
+    console.error('Chybí PORTAL_KOD_PEPPER v prostředí (stejná hodnota jako na Vercelu).');
+    process.exit(1);
+  }
   if (rediza.length === 0) {
     console.error('Zadejte alespoň jedno REDIZO (argument nebo --soubor). Viz --help.');
     process.exit(1);

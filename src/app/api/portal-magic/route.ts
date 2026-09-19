@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { after, NextRequest, NextResponse } from 'next/server';
 import {
   najdiVsechnaRedizoPodleEmailu,
   magicOdkaz,
@@ -11,6 +11,7 @@ import { getNazevSkoly } from '@/lib/portal-skol';
 import { posliOdkazyEmail, type OdkazSkoly } from '@/lib/portal-email';
 import { jeDbNastavena } from '@/lib/novinky-db';
 import { cteni } from '@/lib/portal-relace';
+import { ipZPozadavku } from '@/lib/portal-api';
 import { osobyPodleEmailu, platneRoleOsoby, spravceSkoly, zapisUdalost } from '@/lib/portal-ucty';
 
 // In-memory rate limiting: 5 požadavků za 15 minut na IP, 3 na e-mail
@@ -43,8 +44,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const forwarded = request.headers.get('x-forwarded-for');
-  const ip = forwarded?.split(',')[0]?.trim() || 'unknown';
+  const ip = ipZPozadavku(request.headers);
 
   if (isRateLimited(ip)) {
     return NextResponse.json(
@@ -72,17 +72,19 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Odpověď je vždy stejná, ať adresu známe, nebo ne (žádná enumerace)
-  try {
-    const polozky = await odkazyProEmail(email);
-    if (polozky.length > 0) {
-      const odeslano = await posliOdkazyEmail(email, polozky);
-      console.log(`✉️ Odkazy do portálu (${polozky.length}): ${odeslano ? 'odeslány' : 'selhalo'}`);
+  // Odpověď je vždy stejná a odchází hned, ať adresu známe, nebo ne: dohledání
+  // a odeslání běží až po ní, takže ani doba odpovědi nic neprozradí.
+  after(async () => {
+    try {
+      const polozky = await odkazyProEmail(email);
+      if (polozky.length > 0) {
+        const odeslano = await posliOdkazyEmail(email, polozky);
+        console.log(`✉️ Odkazy do portálu (${polozky.length}): ${odeslano ? 'odeslány' : 'selhalo'}`);
+      }
+    } catch (e) {
+      console.error('❌ Portál: sestavení odkazů selhalo:', e);
     }
-  } catch (e) {
-    // Chyba databáze nesmí prozradit, zda adresu známe.
-    console.error('❌ Portál: sestavení odkazů selhalo:', e);
-  }
+  });
 
   return NextResponse.json(MAGIC_NEUTRALNI_ODPOVED);
 }

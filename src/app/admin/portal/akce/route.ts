@@ -43,23 +43,17 @@ export async function POST(request: NextRequest) {
   try {
     switch (pole('akce')) {
       case 'zmenit': {
-        const overeno = overUdajeOsoby({
-          email: pole('email'),
-          jmeno: pole('jmeno'),
-          funkce: pole('funkce'),
-          zverejnit_jmeno: f.get('zverejnit_jmeno') === 'on',
-        });
+        // Souhlas se zveřejněním jména administrace neuděluje, jen na žádost odvolá.
+        const overeno = overUdajeOsoby({ email: pole('email'), jmeno: pole('jmeno'), funkce: pole('funkce') });
         if (!overeno.ok) return zpet('chyba', overeno.chyba);
-        await vTransakci((s) => zmenRoli(s, pole('role_id'), overeno.udaje, `admin:${KDO}`, duvod));
+        const { email, jmeno, funkce } = overeno.udaje;
+        const zmeny = f.get('odvolat_souhlas') === 'on' ? { email, jmeno, funkce, zverejnit_jmeno: false } : { email, jmeno, funkce };
+        await vTransakci((s) => zmenRoli(s, pole('role_id'), zmeny, `admin:${KDO}`, duvod));
         break;
       }
       case 'dosadit': {
-        const overeno = overUdajeOsoby({
-          email: pole('email'),
-          jmeno: pole('jmeno'),
-          funkce: pole('funkce'),
-          zverejnit_jmeno: f.get('zverejnit_jmeno') === 'on',
-        });
+        // Dosazený správce začíná bez zveřejněného jména; souhlas dá sám v profilu.
+        const overeno = overUdajeOsoby({ email: pole('email'), jmeno: pole('jmeno'), funkce: pole('funkce') });
         if (!overeno.ok) return zpet('chyba', overeno.chyba);
         await vTransakci((s) => dosadSpravce(s, redizo, overeno.udaje, KDO, duvod, f.get('puvodni_editorem') === 'on'));
         break;
@@ -68,7 +62,7 @@ export async function POST(request: NextRequest) {
         await vTransakci((s) => zrusRoli(s, pole('role_id'), `admin:${KDO}`, duvod));
         break;
       case 'zrusit_pozvanku':
-        await vTransakci((s) => zrusPozvanku(s, pole('pozvanka_id'), redizo, `admin:${KDO}`));
+        await vTransakci((s) => zrusPozvanku(s, pole('pozvanka_id'), redizo, `admin:${KDO}`, duvod));
         break;
       case 'anonymizovat':
         await vTransakci((s) => anonymizujOsobu(s, pole('osoba_id'), KDO, duvod));

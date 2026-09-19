@@ -12,6 +12,9 @@ import {
 } from '../src/lib/portal-magic.ts';
 import { hashKod } from '../src/lib/portal-skol.ts';
 
+// Pepř kódů (v produkci env PORTAL_KOD_PEPPER); hashKod ho čte při volání.
+process.env.PORTAL_KOD_PEPPER ??= 'testovaci-pepr';
+
 const SECRET = 'test-secret-pro-magic-token';
 const KODY = [
   { hash: hashKod('ABCD-EFGH-JKMN'), redizo: '600171701', vytvoreno: '2026-09-13', revokovano: false },

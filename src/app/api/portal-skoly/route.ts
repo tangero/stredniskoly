@@ -5,6 +5,7 @@ import {
   PORTAL_POLE,
   PORTAL_VERZE_PRJIMANI,
   PortalPayload,
+  verejnyPayload,
 } from '@/lib/portal-skol';
 import { resolvePortalAuth, PortalKanal, PORTAL_PRODUKCNI_BASE_URL } from '@/lib/portal-magic';
 import { posliPotvrzovaciEmail, posliUpozorneniSpravci } from '@/lib/portal-email';
@@ -13,6 +14,7 @@ import { jeDbNastavena } from '@/lib/novinky-db';
 import { cteni, jeNasPuvod, prihlasenyZPozadavku } from '@/lib/portal-relace';
 import { spravceSkoly, zapisUdalost, type PortalRole } from '@/lib/portal-ucty';
 import { posliTelegram } from '@/lib/portal-oznameni';
+import { ipZPozadavku } from '@/lib/portal-api';
 
 // In-memory rate limiting: 5 požadavků za 15 minut na IP (stejný vzor jako bug-report)
 const rateLimitMap = new Map<string, number[]>();
@@ -93,11 +95,21 @@ async function urciAutora(request: NextRequest, body: Record<string, unknown>): 
   return { ...auth, role: null, spravceHosta: await spravceSkoly(cteni, auth.redizo) };
 }
 
-function popisAutora(autor: Autor): string {
+/** Kdo návrh poslal, s osobními údaji: jen do soukromého Telegramu. */
+function popisAutora(autor: Autor, kontakt: string): string {
   if (autor.role) {
     const r = autor.role;
     return `${r.jmeno}${r.funkce ? `, ${r.funkce}` : ''} (${r.role === 'spravce' ? 'správce' : 'editor'} profilu)`;
   }
+  return `${roleAutora(autor)}, kontakt ${kontakt}`;
+}
+
+/**
+ * Kdo návrh poslal, bez osobních údajů. Repozitář je veřejný, takže do issue
+ * nejde jméno, funkce ani e-mail; kontakt je v administraci portálu.
+ */
+function roleAutora(autor: Autor): string {
+  if (autor.role) return `${autor.role.role === 'spravce' ? 'správce' : 'editor'} profilu`;
   if (autor.spravceHosta) return 'host z rejstříkové adresy školy, profil má správce';
   return autor.kanal === 'kod' ? 'přihlašovací kód' : 'rejstříková adresa školy';
 }
@@ -108,8 +120,7 @@ function buildIssueBody(payload: PortalPayload, autor: Autor): string {
     `**REDIZO:** ${payload.redizo}`,
     `**Verze přijímání:** ${payload.verze_prijimani}`,
     `**Kanál:** ${autor.kanal}`,
-    `**Zadal (interní, nepublikovat):** ${popisAutora(autor)}`,
-    `**Kontakt editora (interní, nepublikovat):** ${payload.kontakt_email}`,
+    `**Zadal:** ${roleAutora(autor)} (jméno a kontakt v administraci portálu)`,
     ``,
     `## Shrnutí změn`,
     ``,
@@ -142,7 +153,7 @@ function buildIssueBody(payload: PortalPayload, autor: Autor): string {
     `## Kompletní payload (pro scripts/portal-moderace.js)`,
     ``,
     '```json',
-    JSON.stringify(payload, null, 2),
+    JSON.stringify(verejnyPayload(payload), null, 2),
     '```',
   );
 
@@ -158,9 +169,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Rate limiting – IP z x-forwarded-for
-  const forwarded = request.headers.get('x-forwarded-for');
-  const ip = forwarded?.split(',')[0]?.trim() || 'unknown';
+  const ip = ipZPozadavku(request.headers);
 
   if (isRateLimited(ip)) {
     return NextResponse.json(
@@ -237,7 +246,7 @@ export async function POST(request: NextRequest) {
         }
       }
       await posliTelegram(
-        `📝 Návrh k profilu: ${nazev || redizo} (${redizo})\n${popisAutora(autor)}\nhttps://github.com/${GITHUB_REPO}/issues/${issueNumber}`,
+        `📝 Návrh k profilu: ${nazev || redizo} (${redizo})\n${popisAutora(autor, payload.kontakt_email)}\nhttps://github.com/${GITHUB_REPO}/issues/${issueNumber}`,
       );
     } catch (e) {
       console.error('❌ Portál: záznam po odeslání návrhu selhal', e);

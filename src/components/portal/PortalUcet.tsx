@@ -46,8 +46,10 @@ export const PortalUcet = ({ redizo, ja, tym, pozvanky }: PortalUcetProps) => {
   const [zprava, setZprava] = useState<{ ok: boolean; text: string } | null>(null);
   const jeSpravce = ja.role === 'spravce';
 
-  const akce = async (data: Record<string, unknown>, uspech: string, potvrzeni?: string) => {
-    if (potvrzeni && !window.confirm(potvrzeni)) return;
+  /** Vrací true, když změna prošla. */
+  const akce = async (data: Record<string, unknown>, uspech: string, potvrzeni?: string): Promise<boolean> => {
+    if (potvrzeni && !window.confirm(potvrzeni)) return false;
+    let povedlo = false;
     setPracuji(true);
     setZprava(null);
     try {
@@ -61,15 +63,17 @@ export const PortalUcet = ({ redizo, ja, tym, pozvanky }: PortalUcetProps) => {
         setZprava({ ok: false, text: odpoved.error || 'Změna se nepovedla. Zkuste to prosím znovu.' });
       } else if (odpoved.presmerovat) {
         window.location.assign(odpoved.presmerovat);
-        return;
+        return true;
       } else {
         setZprava({ ok: true, text: odpoved.zprava || uspech });
         router.refresh();
+        povedlo = true;
       }
     } catch {
       setZprava({ ok: false, text: 'Chyba připojení. Zkuste to prosím znovu.' });
     }
     setPracuji(false);
+    return povedlo;
   };
 
   return (
@@ -194,7 +198,7 @@ export const PortalUcet = ({ redizo, ja, tym, pozvanky }: PortalUcetProps) => {
             className="flex flex-col gap-2 sm:flex-row sm:items-end"
             onSubmit={(e) => {
               e.preventDefault();
-              akce({ akce: 'pozvat', email: pozvat }, 'Pozvánku jsme poslali.').then(() => setPozvat(''));
+              akce({ akce: 'pozvat', email: pozvat }, 'Pozvánku jsme poslali.').then((ok) => ok && setPozvat(''));
             }}
           >
             <label className="block flex-1 text-sm">
