@@ -119,7 +119,9 @@ export type UbytovaniHodnota = (typeof UBYTOVANI_HODNOTY)[number];
 export interface PortalHodnota {
   hodnota: string;
   potvrzeno_dne: string; // YYYY-MM-DD
-  zdroj: 'skola';
+  // `redakce` je zpětná oprava chyby v údaji od školy. Značka u takové hodnoty
+  // nesmí tvrdit, že ji potvrdila škola (docs/slovnik-pojmu.md).
+  zdroj: 'skola' | 'redakce';
 }
 
 export interface PortalZaznam {
