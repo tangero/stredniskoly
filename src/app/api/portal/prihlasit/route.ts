@@ -3,7 +3,7 @@ import { overToken } from '@/lib/portal-magic';
 import { jeDbNastavena, vTransakci } from '@/lib/novinky-db';
 import { jeNasPuvod, nastavRelaci } from '@/lib/portal-relace';
 import { platneRoleOsoby, spotrebujOdkaz, zapisUdalost } from '@/lib/portal-ucty';
-import { getNazevSkoly } from '@/lib/portal-skol';
+import { getNazevSAdresou } from '@/lib/portal-skol';
 import { posliTelegram } from '@/lib/portal-oznameni';
 
 // ============================================================================
@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
 
   const { role } = vysledek;
   if (vysledek.prvni) {
-    const nazvy = await Promise.all(role.map((r) => getNazevSkoly(r.redizo)));
+    const nazvy = await Promise.all(role.map((r) => getNazevSAdresou(r.redizo)));
     await posliTelegram(`🔑 První přihlášení: ${role[0].jmeno} (${role[0].role}) – ${nazvy.join(', ')}`);
   }
 

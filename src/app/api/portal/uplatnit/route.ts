@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { hashKod, validateKod, getNazevSkoly } from '@/lib/portal-skol';
+import { hashKod, validateKod, getNazevSkoly, getNazevSAdresou } from '@/lib/portal-skol';
 import { overMagicToken, portalBaseUrl } from '@/lib/portal-magic';
 import { jeDbNastavena, vTransakci } from '@/lib/novinky-db';
 import { nastavRelaci } from '@/lib/portal-relace';
@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
     obnovVerejneSpravce();
     const nazev = (await getNazevSkoly(role.redizo)) || role.redizo;
     await Promise.all([
-      oznamNovehoSpravce(role, nazev, vstup),
+      oznamNovehoSpravce(role, (await getNazevSAdresou(role.redizo)) || nazev, vstup),
       posliVitejteEmail({
         email: role.email,
         nazevSkoly: nazev,

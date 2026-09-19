@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import {
   validatePortalPayload,
   getNazevSkoly,
+  getNazevSAdresou,
   PORTAL_POLE,
   PORTAL_VERZE_PRJIMANI,
   PortalPayload,
@@ -114,9 +115,9 @@ function roleAutora(autor: Autor): string {
   return autor.kanal === 'kod' ? 'přihlašovací kód' : 'rejstříková adresa školy';
 }
 
-function buildIssueBody(payload: PortalPayload, autor: Autor): string {
+function buildIssueBody(payload: PortalPayload, autor: Autor, nazevPopis: string): string {
   const parts = [
-    `**Škola:** ${payload.nazev}`,
+    `**Škola:** ${nazevPopis || payload.nazev}`,
     `**REDIZO:** ${payload.redizo}`,
     `**Verze přijímání:** ${payload.verze_prijimani}`,
     `**Kanál:** ${autor.kanal}`,
@@ -217,8 +218,10 @@ export async function POST(request: NextRequest) {
     kontakt_email: vysledek.kontakt_email,
   };
 
-  const issueTitle = `[Portál škol] ${nazev || redizo} (${redizo})`;
-  const issueBody = buildIssueBody(payload, autor);
+  // Zkrácený název („Gymnázium“) školu neurčí; do issue a Telegramu jde s ulicí a obcí.
+  const nazevPopis = (await getNazevSAdresou(redizo)) || nazev;
+  const issueTitle = `[Portál škol] ${nazevPopis || redizo} (${redizo})`;
+  const issueBody = buildIssueBody(payload, autor, nazevPopis);
 
   // Potvrzovací e-mail editorovi je best-effort: selhání nesmí shodit odeslání
   const base = (process.env.PORTAL_BASE_URL || PORTAL_PRODUKCNI_BASE_URL).replace(/\/$/, '');
@@ -246,7 +249,7 @@ export async function POST(request: NextRequest) {
         }
       }
       await posliTelegram(
-        `📝 Návrh k profilu: ${nazev || redizo} (${redizo})\n${popisAutora(autor, payload.kontakt_email)}\nhttps://github.com/${GITHUB_REPO}/issues/${issueNumber}`,
+        `📝 Návrh k profilu: ${nazevPopis || redizo} (${redizo})\n${popisAutora(autor, payload.kontakt_email)}\nhttps://github.com/${GITHUB_REPO}/issues/${issueNumber}`,
       );
     } catch (e) {
       console.error('❌ Portál: záznam po odeslání návrhu selhal', e);
