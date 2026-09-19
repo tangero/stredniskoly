@@ -40,23 +40,26 @@ export default async function PortalKodPage({ params }: Props) {
   const nazev = await getNazevSkoly(redizo);
   if (!nazev) return <PortalSkolaNenalezena redizo={redizo} />;
 
+  const skola = await getIdentifikaceSkoly(redizo, nazev);
   if (stav === 'volny') {
     return (
       <PortalObalka>
-        <PortalHlavickaSkoly skola={await getIdentifikaceSkoly(redizo, nazev)} vstup="kód" />
+        <PortalHlavickaSkoly skola={skola} vstup="kód" />
         <PortalZalozeni nazevSkoly={nazev} auth={{ kod }} />
       </PortalObalka>
     );
   }
 
   return (
-    <PortalHlaska nadpis="Profil školy už má správce">
-      <p>
-        Kód pro {nazev} už byl použit. Pokud jste správce vy, pošleme vám odkaz pro přihlášení. Kolegy
-        do profilu zve správce z nastavení účtu.
+    <PortalObalka>
+      <PortalHlavickaSkoly skola={skola} vstup="kód" />
+      <h2 className="text-xl font-bold text-slate-900 mb-3">Profil školy už má správce</h2>
+      <p className="text-slate-700 mb-6">
+        Kód už byl použit. Pokud jste správce vy, pošleme vám odkaz pro přihlášení. Kolegy do profilu
+        zve správce z nastavení účtu.
       </p>
       <PortalMagicForm />
-    </PortalHlaska>
+    </PortalObalka>
   );
 }
 
