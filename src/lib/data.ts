@@ -160,6 +160,14 @@ export async function getSchoolPageType(slug: string): Promise<{
   redizo: string;
   school: School | null;
   program: SchoolProgram | null;
+  /**
+   * Kanonická adresa, na kterou se má trvale přesměrovat. Vzniká u **základní adresy oboru
+   * bez zaměření**, kterou nikdo nenavrhl — dřív se pro ni syntetizoval program s klíčem
+   * bez přípony zaměření, ten nesedl na souhrn 1. kola a stránka spadla do starší podoby
+   * s loňskými čísly. Má-li obor v ročníku jedinou nabídku, míří sem její úplná adresa;
+   * u víc nabídek přehled školy. Návrh: docs/adresa-oboru-2027.md, kroky A a B.
+   */
+  presmerovatNa?: string;
 }> {
   const schools = await getAllSchools();
   const redizo = slug.split('-')[0];
@@ -201,6 +209,20 @@ export async function getSchoolPageType(slug: string): Promise<{
     }
   }
 
+  /**
+   * Kanonická adresa nabídky se zaměřením. Stejné pravidlo, jakým se adresa níž rozpoznává:
+   * délka studia je v ní jen tehdy, když tutéž dvojici obor+zaměření nese víc nabídek.
+   */
+  const slugNabidky = (program: SchoolProgram) => {
+    const sDelkou = (zamereniCounts.get(`${program.obor}|${program.zamereni}`) || 0) > 1;
+    return `${redizo}-${createSlug(firstSchool.nazev, program.obor, program.zamereni, sDelkou ? program.delka_studia : undefined)}`;
+  };
+
+  /** Základní adresa oboru bez zaměření: kam patří, když nabídka bez zaměření neexistuje. */
+  const misto = (kandidati: SchoolProgram[]) => kandidati.length === 1
+    ? { type: 'program' as const, redizo, school: firstSchool, program: null, presmerovatNa: `/skola/${slugNabidky(kandidati[0])}` }
+    : { type: 'overview' as const, redizo, school: firstSchool, program: null, presmerovatNa: `/skola/${overviewSlug}#obory` };
+
   // Zkusit najít zaměření (nejdelší slug) - s i bez délky studia
   for (const program of programs) {
     if (program.zamereni) {
@@ -233,26 +255,8 @@ export async function getSchoolPageType(slug: string): Promise<{
       if (slug === oborSlugWithLength) {
         // Najít odpovídající program (bez zaměření, se stejnou délkou studia)
         const program = programs.find(p => !p.zamereni && p.obor === school.obor && p.delka_studia === school.delka_studia);
-        return {
-          type: 'program',
-          redizo,
-          school,
-          program: program || {
-            id: school.id,
-            redizo,
-            nazev: school.nazev,
-            obor: school.obor,
-            zamereni: undefined,
-            typ: school.typ,
-            delka_studia: school.delka_studia,
-            kapacita: school.kapacita,
-            prihlasky: school.prihlasky,
-            prijati: school.prijati,
-            min_body: school.min_body,
-            index_poptavky: school.index_poptavky,
-            obec: school.obec,
-          }
-        };
+        if (program) return { type: 'program', redizo, school, program };
+        return misto(programs.filter(p => p.obor === school.obor && p.delka_studia === school.delka_studia));
       }
     }
 
@@ -261,26 +265,8 @@ export async function getSchoolPageType(slug: string): Promise<{
     if (slug === oborSlug) {
       // Najít odpovídající program (bez zaměření)
       const program = programs.find(p => !p.zamereni && p.obor === school.obor);
-      return {
-        type: 'program',
-        redizo,
-        school,
-        program: program || {
-          id: school.id,
-          redizo,
-          nazev: school.nazev,
-          obor: school.obor,
-          zamereni: undefined,
-          typ: school.typ,
-          delka_studia: school.delka_studia,
-          kapacita: school.kapacita,
-          prihlasky: school.prihlasky,
-          prijati: school.prijati,
-          min_body: school.min_body,
-          index_poptavky: school.index_poptavky,
-          obec: school.obec,
-        }
-      };
+      if (program) return { type: 'program', redizo, school, program };
+      return misto(programs.filter(p => p.obor === school.obor));
     }
   }
 
@@ -299,7 +285,12 @@ export async function getSchoolPageType(slug: string): Promise<{
     }
   }
 
-  // Fallback - vrátit první školu jako přehled
+  // Adresa nepatří žádné nabídce ročníku. Dřív se pod ní vykreslil přehled školy s kódem 200,
+  // takže tentýž obsah měl dvě adresy; nově se na přehled trvale přesměruje. Týká se i adres ze
+  // starší sitemapy, které po přepnutí ročníku na žádnou nabídku nevedou.
+  if (slug !== overviewSlug) {
+    return { type: 'overview', redizo, school: firstSchool, program: null, presmerovatNa: `/skola/${overviewSlug}` };
+  }
   return { type: 'overview', redizo, school: firstSchool, program: null };
 }
 

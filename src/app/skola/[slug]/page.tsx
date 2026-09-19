@@ -2,7 +2,7 @@ import { StatsTab } from '@/components/school/detail/tabs/StatsTab';
 import { normalizeSchoolKey, uniqueSchoolIndex } from '@/lib/school-key';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ProgramTabs } from '@/components/ProgramTabs';
@@ -154,6 +154,12 @@ export default async function SchoolDetailPage({ params }: Props) {
 
   if (!pageInfo.school) {
     notFound();
+  }
+
+  // Základní adresa oboru bez zaměření nemá vlastní stránku: obor má jedinou kanonickou
+  // adresu (docs/adresa-oboru-2027.md, kroky A a B). Trvale, protože adresy jsou indexované.
+  if (pageInfo.presmerovatNa) {
+    permanentRedirect(pageInfo.presmerovatNa);
   }
 
   const school = pageInfo.school;
