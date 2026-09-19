@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
-import { createSlug } from '@/lib/utils';
+import { adresaNabidkyVeSkole } from '@/lib/adresa-oboru.mjs';
 import { normalizeSchoolKey, uniqueSchoolIndex } from '@/lib/school-key';
 import { getResultsForYear, getSchoolAnalysis, getSchools2026Data } from '@/lib/data';
 import { readSchoolIds } from '@/lib/simulator-state';
@@ -53,63 +53,20 @@ function normalizeZamereni(zamereni?: string): string | undefined {
   return value.length > 0 ? value : undefined;
 }
 
-function buildSlugContext(schools: School[], canonicalSchools: School[]) {
-  const oborCountsByRedizo = new Map<string, Map<string, number>>();
-  const zamereniCountsByRedizo = new Map<string, Map<string, number>>();
-
-  for (const school of canonicalSchools) {
-    const redizo = school.id.split('_')[0];
-    const obor = school.obor || '';
-    if (!oborCountsByRedizo.has(redizo)) {
-      oborCountsByRedizo.set(redizo, new Map<string, number>());
-    }
-    const oborCounts = oborCountsByRedizo.get(redizo)!;
-    oborCounts.set(obor, (oborCounts.get(obor) || 0) + 1);
-
+/**
+ * Adresu nabídky skládá sdílený modul (src/lib/adresa-oboru.mjs), tentýž, kterým ji
+ * rozpoznává data.ts a staví generátor sitemapy. Do 19. 9. 2026 měl tenhle soubor
+ * vlastní kopii pravidla, navíc nad loňským ročníkem, takže vyhledávání posílalo jinam
+ * než odkazy na webu. Rozbor: docs/adresa-oboru-2027.md, krok D.
+ */
+function adresySkolPodleRedizo(nabidky: School[]) {
+  const podleRedizo = new Map<string, School[]>();
+  for (const n of nabidky) {
+    const redizo = n.id.split('_')[0];
+    if (!podleRedizo.has(redizo)) podleRedizo.set(redizo, []);
+    podleRedizo.get(redizo)!.push(n);
   }
-  for (const school of schools) {
-    const redizo = school.id.split('_')[0];
-    const obor = school.obor || '';
-    const zamereni = normalizeZamereni(school.zamereni);
-    if (zamereni) {
-      if (!zamereniCountsByRedizo.has(redizo)) {
-        zamereniCountsByRedizo.set(redizo, new Map<string, number>());
-      }
-      const zamereniCounts = zamereniCountsByRedizo.get(redizo)!;
-      const key = `${obor}|${zamereni}`;
-      zamereniCounts.set(key, (zamereniCounts.get(key) || 0) + 1);
-    }
-  }
-
-  return { oborCountsByRedizo, zamereniCountsByRedizo };
-}
-
-function getSchoolSlug(
-  school: School,
-  slugContext: ReturnType<typeof buildSlugContext>
-): string {
-  const redizo = school.id.split('_')[0];
-  const zamereni = normalizeZamereni(school.zamereni);
-  const obor = school.obor || '';
-  const schoolName = school.nazev || '';
-  const delkaStudia = school.delka_studia;
-
-  if (zamereni) {
-    const zamereniCounts = slugContext.zamereniCountsByRedizo.get(redizo);
-    const zamereniKey = `${obor}|${zamereni}`;
-    const hasDuplicateZamereni = (zamereniCounts?.get(zamereniKey) || 0) > 1;
-    const zamereniSlug = hasDuplicateZamereni
-      ? createSlug(schoolName, obor, zamereni, delkaStudia)
-      : createSlug(schoolName, obor, zamereni);
-    return `${redizo}-${zamereniSlug}`;
-  }
-
-  const oborCounts = slugContext.oborCountsByRedizo.get(redizo);
-  const hasDuplicateOborName = (oborCounts?.get(obor) || 0) > 1;
-  const oborSlug = hasDuplicateOborName
-    ? createSlug(schoolName, obor, undefined, delkaStudia)
-    : createSlug(schoolName, obor);
-  return `${redizo}-${oborSlug}`;
+  return podleRedizo;
 }
 
 export async function GET(request: NextRequest) {
@@ -132,28 +89,28 @@ export async function GET(request: NextRequest) {
     }));
     const index = uniqueSchoolIndex(schools, s => s.id);
     const canonicalSchools = Object.values(await getSchoolAnalysis());
-    const slugContext = buildSlugContext(data['2025'] || [], canonicalSchools);
     const canonicalById = new Map(canonicalSchools.map(s => [s.id, s]));
     const canonicalNames = new Map<string, string>();
     for (const school of canonicalSchools) {
       const redizo = school.id.split('_')[0];
       if (!canonicalNames.has(redizo)) canonicalNames.set(redizo, school.nazev);
     }
-    // Jen názvy pro existující adresy profilů. Historická fakta se tímto
-    // základním klíčem nikdy nepárují, používají úplné ID níže.
-    const routeSchool = (school: School): School => {
-      const legacy = legacyIndex.get(normalizeSchoolKey(school.id));
-      const route = legacy ?? school;
-      return ({ ...route, nazev: route.zamereni
-      ? canonicalNames.get(route.id.split('_')[0]) ?? route.nazev
-      : canonicalById.get(route.id)?.nazev ?? route.nazev });
+    // Název školy pro adresu bere stejný zdroj jako data.ts, tedy school_analysis.json;
+    // jinak by vyhledávání složilo adresu, kterou aplikace nerozpozná.
+    const nabidkyPodleRedizo = adresySkolPodleRedizo(schools);
+    const adresaPro = (school: School): string => {
+      const redizo = school.id.split('_')[0];
+      const nazev = canonicalNames.get(redizo) ?? canonicalById.get(school.id)?.nazev ?? school.nazev;
+      return adresaNabidkyVeSkole(redizo, nazev, {
+        obor: school.obor || '',
+        zamereni: normalizeZamereni(school.zamereni) || undefined,
+        delka_studia: school.delka_studia,
+      }, (nabidkyPodleRedizo.get(redizo) ?? []).map(n => ({
+        obor: n.obor || '',
+        zamereni: normalizeZamereni(n.zamereni) || undefined,
+        delka_studia: n.delka_studia,
+      })));
     };
-    const profileCounts = new Map<string, number>();
-    for (const school of schools) {
-      if (!legacyIndex.has(normalizeSchoolKey(school.id))) continue;
-      const slug = getSchoolSlug(routeSchool(school), slugContext);
-      profileCounts.set(slug, (profileCounts.get(slug) ?? 0) + 1);
-    }
     if (!krajeCache) {
       const krajMap = new Map<string, string>();
       schools.forEach(s => { if (s.kraj_kod && s.kraj) krajMap.set(s.kraj_kod, s.kraj.trim()); });
@@ -174,8 +131,9 @@ export async function GET(request: NextRequest) {
         id: requestedId, nazev: s.nazev, nazev_display: s.nazev_display, obor: s.obor,
         zamereni: normalizeZamereni(s.zamereni), obec: s.obec, ulice: s.ulice, adresa: s.adresa,
         kraj: s.kraj, kraj_kod: s.kraj_kod, typ: s.typ, delka_studia: s.delka_studia,
-        slug: getSchoolSlug(routeSchool(s), slugContext),
-        href: s.source_id && (!legacyIndex.has(normalizeSchoolKey(s.id)) || profileCounts.get(getSchoolSlug(routeSchool(s), slugContext)) !== 1) ? `/nabidka/2026/${s.source_id}` : `/skola/${getSchoolSlug(routeSchool(s), slugContext)}`,
+        slug: adresaPro(s),
+        // Odkaz míří vždy na stránku oboru: /nabidka/2026/… je od 19. 9. 2026 jen přesměrování.
+        href: `/skola/${adresaPro(s)}`,
         catalog_year: s.catalog_year ?? 2025,
         offer_2027_status: 'unverified',
         history: result ? {

@@ -136,3 +136,19 @@ export function adresySkoly(redizo, nazevSkoly, nabidky) {
   for (const n of bezZamereni) adresy.add(adresaNabidky(redizo, nazevSkoly, n, poctyBez));
   return [...adresy];
 }
+
+/**
+ * Kanonická adresa jedné nabídky, když máme po ruce všechny nabídky té školy.
+ * Jednoznačnost se posuzuje jen vůči nabídkám téhož druhu: nabídka se zaměřením proti
+ * ostatním se zaměřením, nabídka bez něj proti ostatním bez něj.
+ *
+ * @param {string} redizo
+ * @param {string} nazevSkoly
+ * @param {NabidkaProAdresu} nabidka
+ * @param {NabidkaProAdresu[]} nabidkySkoly
+ * @returns {string}
+ */
+export function adresaNabidkyVeSkole(redizo, nazevSkoly, nabidka, nabidkySkoly) {
+  const stejnyDruh = nabidkySkoly.filter(n => Boolean(n.zamereni) === Boolean(nabidka.zamereni));
+  return adresaNabidky(redizo, nazevSkoly, nabidka, pocetStejnychAdres(stejnyDruh));
+}
