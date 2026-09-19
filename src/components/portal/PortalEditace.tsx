@@ -70,10 +70,9 @@ export async function PortalEditace({
         <span className="text-slate-900">Kontrola údajů</span>
       </nav>
 
-      <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">{profil.nazev}</h1>
+      <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">{profil.nazev_s_adresou}</h1>
       <p className="text-slate-500 mb-2">
         REDIZO {profil.redizo}
-        {profil.obec && <> · {profil.obec}</>}
         {profil.kraj && <> · {profil.kraj} kraj</>}
       </p>
       <p className="text-sm text-slate-500 mb-8">

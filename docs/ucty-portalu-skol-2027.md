@@ -1,6 +1,6 @@
 # Účty portálu pro školy: správce, editoři a pilot 20 škol
 
-Verze 1.4 · 19. 9. 2026 · Schváleno zadavatelem 19. 9. 2026, kroky 1–6 realizovány, review PR #111 vypořádáno (oddíl 9.2).
+Verze 1.5 · 19. 9. 2026 · Schváleno zadavatelem 19. 9. 2026, kroky 1–6 realizovány, review PR #111 vypořádáno (oddíl 9.2).
 
 Navazuje na [portál pro školy](portal-pro-skoly-2027.md) (v1.5). Ten dnes pracuje s kódem vázaným na školu: kdo kód zná, edituje, a o osobě nevíme nic. Pilot s 20 školami potřebuje vědět, **kdo** za školu data zadává, ukázat to veřejně a umět to změnit.
 
@@ -58,6 +58,8 @@ Platí: pro jedno `redizo` smí existovat nejvýš jeden platný záznam `spravc
 | Odkaz na vlastní e-mail | osoba s platnou rolí | přihlášení; odkaz platí 72 h a jednou, session 30 dní v podepsané cookie |
 
 Stránka kódu i odkazu z rejstříku začíná hlavičkou, ze které je zřejmé, ke které škole se uživatel hlásí: plný název z rejstříku, adresa sídla, IČO, REDIZO a odkaz na profil školy na webu. Katalog nese jen zkrácený název („Gymnázium“), podle kterého se škola poznat nedá. Zdroj je oddíl `identifikace` indexu `data/msmt_rejstrik/nazvy-oboru.json` ([zdroje dat, 2.4](zdroje-dat.md)).
+
+V profilu a v přepínači škol se škola jmenuje názvem z katalogu s ulicí bez čísla popisného a obcí, například „Gymnázium Nad Štolou, Praha“ (`nazevSAdresou` v `src/lib/portal-skol.ts`). Ulice ani obec se neopakují, když je název už obsahuje.
 
 Každý požadavek s cookie znovu ověří, že role je platná (`zneplatneno is null`). Zrušení v administraci tedy platí okamžitě, ne až po vypršení cookie.
 
@@ -218,5 +220,6 @@ Review: `docs/review-pr-111-portal-ucty.md` v hlavním pracovním stromu. Nasaze
 | 1.0 | První návrh po rozhodnutích zadavatele 19. 9. 2026. |
 | 1.1 | Schváleno. Správcem osobních údajů je Patrick Zandl (obchodní název Zandl AI Therapy Company). Facebooková skupina odložena. |
 | 1.2 | Kroky 1–6 realizovány (oddíl 9.1) s odchylkami: přihlášení tlačítkem kvůli skenerům pošty, kód bez databáze účtů funguje postaru, s ní jen k založení správce. |
+| 1.5 | Profil a přepínač škol ukazují název s ulicí a obcí (oddíl 2.2). |
 | 1.4 | Hlavička se školou na vstupu kódem a odkazem (oddíl 2.2): plný název, adresa, IČO, REDIZO, odkaz na profil. |
 | 1.3 | Review PR #111 vypořádáno (oddíl 9.2): issue bez osobních údajů, úplný výmaz osoby, HMAC kódů s pepřem a nové kódy pilotu, přijatá rizika. |

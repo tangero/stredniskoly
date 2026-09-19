@@ -9,6 +9,7 @@ import {
   buildPortalZaznam,
   zaznamMaObsah,
   formatDatumCz,
+  nazevSAdresou,
   PORTAL_POLE,
 } from '../src/lib/portal-skol.ts';
 
@@ -210,4 +211,12 @@ test('payload do veřejného issue nenese kontaktní e-mail a moderace ho nevyž
   assert.equal('kontakt_email' in verejny, false);
   assert.equal(validatePortalPayload(verejny).ok, false);
   assert.equal(validatePortalPayload(verejny, { bezKontaktu: true }).ok, true);
+});
+
+test('nazevSAdresou: název, ulice bez čísel a obec, bez opakování', () => {
+  assert.equal(nazevSAdresou('Gymnázium', 'Nad Štolou 1510', 'Praha'), 'Gymnázium Nad Štolou, Praha');
+  assert.equal(nazevSAdresou('Střední vinařská škola', 'Sobotní 116', 'Valtice'), 'Střední vinařská škola Sobotní, Valtice');
+  assert.equal(nazevSAdresou('Gymnázium BMA, s.r.o.', 'Dvořákova 1269', 'Frýdlant'), 'Gymnázium BMA, s.r.o., Dvořákova, Frýdlant');
+  assert.equal(nazevSAdresou('Gymnázium Brno', 'Brno 12', 'Brno'), 'Gymnázium Brno');
+  assert.equal(nazevSAdresou('Gymnázium', 'č. p. 12', 'Nové Město'), 'Gymnázium, Nové Město');
 });
