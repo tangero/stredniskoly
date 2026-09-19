@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getAllSchools } from '@/lib/data';
+import { extractRedizo } from '@/lib/utils';
 import { profilSpravujeText, vsichniVerejniSpravci } from '@/lib/portal-verejne';
 
 // ============================================================================
@@ -16,12 +17,14 @@ async function skoly() {
   if (!rejstrik) {
     const podleRedizo = new Map<string, { redizo: string; nazev: string; obec: string; hledat: string }>();
     for (const s of await getAllSchools()) {
-      if (podleRedizo.has(s.redizo)) continue;
-      podleRedizo.set(s.redizo, {
-        redizo: s.redizo,
+      // Záznamy school_analysis.json pole redizo nenesou, jen id REDIZO_KKOV.
+      const redizo = extractRedizo(s.id);
+      if (!redizo || podleRedizo.has(redizo)) continue;
+      podleRedizo.set(redizo, {
+        redizo,
         nazev: s.nazev,
         obec: s.obec,
-        hledat: bezDiakritiky(`${s.nazev} ${s.obec} ${s.redizo}`),
+        hledat: bezDiakritiky(`${s.nazev} ${s.obec} ${redizo}`),
       });
     }
     rejstrik = [...podleRedizo.values()];
