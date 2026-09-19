@@ -92,3 +92,19 @@ create unique index if not exists portal_profil_platna_hodnota
   on portal_profil (redizo, pole) where zneplatneno is null;
 
 create index if not exists portal_profil_skola on portal_profil (redizo, platne_od);
+
+create table if not exists hlaseni_chyby (
+  id uuid primary key,
+  vytvoreno timestamptz not null default now(),
+  email text not null,
+  popis text not null,
+  url text not null default '',
+  redizo text,
+  issue integer,
+  vyrizeno timestamptz,
+  poznamka text
+);
+
+create index if not exists hlaseni_chyby_cas on hlaseni_chyby (vytvoreno desc);
+
+create index if not exists hlaseni_chyby_email on hlaseni_chyby (lower(email));

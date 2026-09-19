@@ -2,6 +2,7 @@ import { timingSafeEqual } from 'crypto';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { potvrzeneUdaje } from './portal-profil.ts';
+import { otevrenaHlaseni, type Hlaseni } from './hlaseni.ts';
 import { formatDatumCz, type PortalSkolData } from './portal-skol.ts';
 import { dotaz, jeDbNastavena } from './novinky-db.ts';
 
@@ -133,6 +134,21 @@ export async function getPortalPrehled(): Promise<{ pocet: number; posledni: Adm
     return { pocet: Object.keys(data).length, posledni };
   } catch {
     return { pocet: 0, posledni: [] };
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Hlášení chyb od návštěvníků: kontakt je v databázi, ne ve veřejném issue,
+// takže fronta k vyřízení musí být tady – na GitHubu adresa oznamovatele není.
+// ----------------------------------------------------------------------------
+
+export async function getHlaseni(): Promise<Hlaseni[] | null> {
+  if (!jeDbNastavena()) return null;
+  try {
+    return await otevrenaHlaseni({ dotaz });
+  } catch (e) {
+    console.error('❌ Admin: hlášení chyb nejdou načíst', e);
+    return null;
   }
 }
 

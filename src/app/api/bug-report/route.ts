@@ -1,8 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { jeDbNastavena, vTransakci } from '@/lib/novinky-db';
+import { zapisHlaseni } from '@/lib/hlaseni';
+import { ipZPozadavku } from '@/lib/portal-api';
 
 interface BugReportBody {
   description: string;
-  email?: string;
+  /** Povinný: bez adresy se nedá oznamovateli odpovědět. Do issue nejde. */
+  email: string;
   url?: string;
   userAgent?: string;
   viewport?: string;
@@ -115,9 +119,9 @@ async function sendEmailNotification(email: string, issueUrl: string, issueNumbe
                 <p>Vaše hlášení chyby bylo úspěšně přijato a zaznamenáno jako <strong>issue #${issueNumber}</strong>.</p>
 
                 <div class="info-box">
-                  <strong>🤖 Automatická oprava</strong><br>
-                  Pokud je problém jednoduchý, náš AI bot se pokusí o automatickou opravu během několika minut.
-                  V opačném případě se na to podíváme ručně.
+                  <strong>Co bude dál</strong><br>
+                  Hlášení si přečteme a chybu opravíme. Když bude něco nejasné, ozveme se vám na tuhle
+                  adresu; nikde ji nezveřejňujeme.
                 </div>
 
                 <p>Můžete sledovat průběh opravy na GitHubu:</p>
@@ -164,10 +168,17 @@ export async function POST(request: NextRequest) {
       { status: 503 }
     );
   }
+  // Bez databáze není kam uložit kontakt, a do veřejného issue nesmí.
+  if (!jeDbNastavena()) {
+    return NextResponse.json(
+      { error: 'Hlášení chyb není nakonfigurováno.' },
+      { status: 503 }
+    );
+  }
 
-  // Rate limiting - zkontrolovat IP
-  const forwarded = request.headers.get('x-forwarded-for');
-  const ip = forwarded?.split(',')[0]?.trim() || 'unknown';
+  // Rate limiting – IP podle stejného pravidla jako portál (x-forwarded-for
+  // může klient na začátku podvrhnout, spolehlivá je poslední položka).
+  const ip = ipZPozadavku(request.headers);
 
   if (isRateLimited(ip)) {
     return NextResponse.json(
@@ -213,17 +224,17 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Validate optional email
+  // E-mail je povinný: bez adresy se nedá zeptat na podrobnosti ani dát vědět,
+  // jak to dopadlo. Ukládá se do databáze, ne do veřejného issue.
   const email = (body.email || '').trim();
-  if (email && (email.length > 320 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) {
+  if (!email || email.length > 320 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json(
-      { error: 'Neplatný e-mail.' },
+      { error: 'Zadejte prosím platný e-mail, ať se vám můžeme ozvat. Nikde ho nezveřejňujeme.' },
       { status: 400 }
     );
   }
 
-  // Rate limiting - zkontrolovat také email pokud je zadaný
-  if (email && isRateLimited(`email:${email}`)) {
+  if (isRateLimited(`email:${email}`)) {
     return NextResponse.json(
       { error: 'Příliš mnoho hlášení z tohoto e-mailu. Zkuste to prosím později.' },
       { status: 429 }
@@ -247,9 +258,9 @@ export async function POST(request: NextRequest) {
     ``,
   ];
 
-  if (email) {
-    issueBodyParts.push(`**Kontakt:** ${email}`, ``);
-  }
+  // Kontakt do veřejného issue nepatří (repozitář je veřejný); leží v databázi
+  // a v administraci, stejně jako u portálu pro školy.
+  issueBodyParts.push(`**Kontakt:** v administraci`, ``);
 
   issueBodyParts.push(
     `<details>`,
@@ -297,10 +308,15 @@ export async function POST(request: NextRequest) {
     const issueNumber = issueData.number;
     const issueUrl = issueData.html_url;
 
-    // Odeslat email notifikaci pokud je email zadaný
-    if (email) {
-      await sendEmailNotification(email, issueUrl, issueNumber);
+    // Kontakt a podnět do databáze; odtud je vidí administrace. Selhání zápisu
+    // nesmí shodit odpověď – issue už existuje, jen bychom přišli o adresu.
+    try {
+      await vTransakci((s) => zapisHlaseni(s, { email, popis: description, url, issue: issueNumber }));
+    } catch (e) {
+      console.error('❌ Hlášení: kontakt se nepodařilo uložit', e);
     }
+
+    await sendEmailNotification(email, issueUrl, issueNumber);
 
     console.log(`✅ Bug report #${issueNumber} created successfully`);
 

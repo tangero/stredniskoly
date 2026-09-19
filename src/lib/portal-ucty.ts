@@ -717,10 +717,15 @@ export async function vymazKontakt(s: Spojeni, email: string, kdo: string, duvod
       returning redizo`,
     [cisty],
   );
+  // Hlášení chyb od návštěvníků nesou adresu taky; podnět zůstane, adresa ne.
+  const hlaseni = await s.dotaz(
+    `update hlaseni_chyby set email = 'smazáno na žádost' where lower(email) = $1`,
+    [cisty],
+  );
   for (const redizo of new Set([...udalosti.rows, ...pozvanky.rows].map((r) => r.redizo))) {
     await zapisUdalost(s, redizo, null, 'osoba_anonymizovana', { provedl: `admin:${kdo}`, duvod, bez_uctu: true });
   }
-  return udalosti.rows.length + pozvanky.rows.length;
+  return udalosti.rows.length + pozvanky.rows.length + hlaseni.rowCount;
 }
 
 // ----------------------------------------------------------------------------

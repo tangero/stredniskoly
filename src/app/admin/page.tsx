@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer';
 import {
   overAdminToken,
   getStavDatovychSad,
+  getHlaseni,
   getPortalPrehled,
   getOtevreneNavrhy,
   getLinkaFronta,
@@ -94,10 +95,11 @@ export default async function AdminPage({ searchParams }: Props) {
   }
 
   const dnes = new Date();
-  const [sady, portal, navrhy, linka, behyActions, novinky] = await Promise.all([
+  const [sady, portal, navrhy, hlaseni, linka, behyActions, novinky] = await Promise.all([
     getStavDatovychSad(dnes),
     getPortalPrehled(),
     getOtevreneNavrhy(dnes),
+    getHlaseni(),
     getLinkaFronta(),
     getBehyActions(),
     getNovinkyPrehled(),
@@ -180,7 +182,58 @@ export default async function AdminPage({ searchParams }: Props) {
             )}
           </Sekce>
 
-          {/* 1. Portál pro školy – nesrovnalosti v datech katalogu */}
+          {/* 1. Hlášení chyb od návštěvníků: kontakt je jen tady, na GitHubu není */}
+          <Sekce titulek="Hlášení chyb od návštěvníků">
+            {hlaseni === null ? (
+              <Poznamka>Hlášení nejsou nakonfigurována (chybí DATABASE_URL).</Poznamka>
+            ) : hlaseni.length === 0 ? (
+              <Poznamka>Žádné nevyřízené hlášení.</Poznamka>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-left text-slate-500 border-b border-slate-100">
+                      <th className="py-2 pr-4 font-medium">Přišlo</th>
+                      <th className="py-2 pr-4 font-medium">Co hlásí</th>
+                      <th className="py-2 pr-4 font-medium">Kontakt</th>
+                      <th className="py-2 pr-4 font-medium">Stránka</th>
+                      <th className="py-2 font-medium">Issue</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {hlaseni.map((h) => (
+                      <tr key={h.id} className="border-b border-slate-50 align-top">
+                        <td className="py-2 pr-4 text-slate-600 whitespace-nowrap">{formatDatumCz(h.vytvoreno)}</td>
+                        <td className="py-2 pr-4 text-slate-900 max-w-md">{h.popis}</td>
+                        <td className="py-2 pr-4 text-slate-600">
+                          <a href={`mailto:${h.email}`} className="text-blue-600 hover:underline">
+                            {h.email}
+                          </a>
+                        </td>
+                        <td className="py-2 pr-4 text-slate-600 break-all">{h.url || '—'}</td>
+                        <td className="py-2">
+                          {h.issue ? (
+                            <a
+                              href={`https://github.com/tangero/stredniskoly/issues/${h.issue}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:underline"
+                            >
+                              #{h.issue}
+                            </a>
+                          ) : (
+                            '—'
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </Sekce>
+
+          {/* 2. Portál pro školy – nesrovnalosti v datech katalogu */}
           <Sekce titulek="Portál pro školy – nesrovnalosti v datech">
             {navrhy === null ? (
               <Poznamka>Hlášení nesrovnalostí není nakonfigurováno (chybí GITHUB_TOKEN).</Poznamka>

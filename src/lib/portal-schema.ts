@@ -18,6 +18,7 @@ export const TABULKY_PORTALU = [
   'portal_odkaz',
   'portal_udalost',
   'portal_profil',
+  'hlaseni_chyby',
 ] as const;
 
 export const MIGRACE_PORTALU: string[] = [
@@ -113,4 +114,24 @@ export const MIGRACE_PORTALU: string[] = [
   on portal_profil (redizo, pole) where zneplatneno is null`,
   // Časová osa profilu školy pro administraci a pro export otevřených dat.
   `create index if not exists portal_profil_skola on portal_profil (redizo, platne_od)`,
+  // Hlášení chyby od návštěvníka (tlačítko „Nahlásit chybu“). Není to portál
+  // škol, ale jede ve stejné migraci, protože je to jedna databáze a jeden
+  // spouštěč (/api/portal/migrace).
+  //
+  // Existuje kvůli jediné věci: kontaktní e-mail oznamovatele nesmí do
+  // veřejného GitHub issue (repozitář je veřejný). V issue zůstane popis
+  // chyby, adresa kontaktu je tady a maže se stejně jako ostatní kontakty.
+  `create table if not exists hlaseni_chyby (
+  id uuid primary key,
+  vytvoreno timestamptz not null default now(),
+  email text not null,
+  popis text not null,
+  url text not null default '',
+  redizo text,
+  issue integer,
+  vyrizeno timestamptz,
+  poznamka text
+)`,
+  `create index if not exists hlaseni_chyby_cas on hlaseni_chyby (vytvoreno desc)`,
+  `create index if not exists hlaseni_chyby_email on hlaseni_chyby (lower(email))`,
 ];
