@@ -8,6 +8,33 @@ z historie commitů.
 
 ## [Unreleased]
 
+## [2.13.0] - 2026-09-19
+
+### Přidáno
+- **Sdílený modul adresy oboru `src/lib/adresa-oboru.mjs`** — adresu skládalo trojí různé místo, z toho dvě nad loňským katalogem: `data.ts` ji rozpoznávalo z ročníku podle registru, vyhledávací API i generátor sitemapy ji stavěly z roku 2025. Nově ji skládá jeden modul a rozpoznávání v `data.ts` je vyhledání v mapě, ne skládání podle vzorců. Modul je v čistém JavaScriptu s typy v JSDoc, protože ho při buildu používá generátor sitemapy pod `node`, a odstraňování typů umí až Node 22.6 (workflow běží na Node 20); ze stejného důvodu je generátor přejmenovaný na `.mjs`. Návrh a měření: `docs/adresa-oboru-2027.md`
+- **Jeden průvodce místo dvou** (`docs/pruvodce-vyberem-skoly-2027.md`) — `/jak-vybrat-skolu` je návod v osmi krocích, `/jak-funguje-prijimani` na něj trvale přesměrovává na kotvu `#jak-se-rozhoduje`. Sloučení opravilo dvě věcné vady: stránky pracovaly se dvěma neslučitelnými bodovými škálami (0–100 proti ~200, past 3 soupisu zdrojů) a zrušená stránka měla `bg-white text-white` u hlavičky i u shrnutí. Ročník se bere z registru, termíny z harmonogramu MŠMT
+- **Ukazatel Neúčast u maturity** (slovník 1.27) — sloupec „ke zkoušce nešlo“ v tabulce po letech, počet a podíl z přihlášených; vzorec ověřen dopočtem z počtů ve všech řádcích ročníků 2021–2026
+- **Položka „Zvažované obory (X)“ v horní liště**, počet se mění bez obnovení stránky; čtení výběru sjednoceno do `src/lib/vyber-zvazovanych.ts`. „Nahlášené chyby“ přesunuty do patičky
+- **Ověření mapy sloupců maturitních souborů** (`scripts/overeni-sloupcu-maturity.py`) — neporovnává jen názvy, ale dopočítává podíly z počtů, takže odhalí i sloupec, který se jmenuje správně a nese něco jiného. Bez nálezu na ročnících 2021–2026; doklad `docs/podklady/overeni-sloupcu-maturity.json`
+- **Měření délky maturitní řady** (`scripts/delka-rady-maturity.py`) — podklad pro zamítnutí delší řady
+- **Kontrola duplicit** v `build-maturita-skoly.py` (přejímací podmínka 3), která ve skriptu chyběla
+- **Integrační test katalogu a JS testy v CI** — `tests/catalog-2026.integration.mjs` hlídá invariant „každá nabídka má vlastní stránku“, který 19. 9. 2026 porušila změna, jež se dostala na produkci. Job spustí vývojový server a test pustí; JS testy (183) v CI dosud neběžely vůbec, protože job měl Node 20
+
+### Opraveno
+- **Dvě nabídky téže školy mohly sdílet jednu adresu** — jednoznačnost se posuzovala na surové dvojici obor+zaměření, kdežto adresa vzniká po odstranění diakritiky, sjednocení velikosti písmen a oříznutí na 40 a 150 znaků. Naměřeno 14 kolizních adres v katalogu 2026; jedna nabídka pak ukazovala čísla druhé. Nově se jednoznačnost počítá z hotové adresy ve třech stupních (základní tvar, délka studia, pořadí) a pořadí je stabilní vůči pořadí v souboru. Ověřeno: 3 224 nabídek = 3 224 adres
+- **Základní adresa oboru bez zaměření** vyráběla syntetický program s klíčem bez přípony, ten nesedl na souhrn 1. kola a stránka spadla do starší podoby s loňskými čísly (838 adres, čtvrtina stránek oborů). Nově se trvale přesměrovává na jedinou nabídku oboru, nebo na přehled školy. Adresa, která nepatří žádné nabídce, se také přesměrovává místo aby vykreslila přehled s kódem 200
+- **Vyhledávání posílalo 1 004 z 3 091 nabídek na `/nabidka/2026/…`** místo na stránku oboru; odkaz nově míří vždy na stránku oboru, a když pro nabídku stránka nevzniká (pravidlo `nabidkySeStrankou`), na přehled školy. `/nabidka/2026/<source_id>` zůstává jako dočasné přesměrování, protože cíl závisí na datech ročníku
+- **Sitemapa se stavěla z ročníku 2025** — 402 adres už na obor nevedlo a chyběly kanonické adresy, které existovaly. Nově z registru a jen adresy, které vracejí 200; z 5 189 na 4 300
+- **Délka studia v názvu nabídky** (`nazevNabidky`) — v Mém výběru vypadaly dva uložené obory téže školy identicky, protože víceletá gymnázia mají shodný obor i zaměření
+- **Karty oborů na stránce školy se po uložení rozjížděly** — každá karta je vlastní mřížka, takže sloupec `auto` vycházel jinak podle obsahu; poslední sloupec má pevnou míru a `UlozitObor` kompaktní podobu
+- **Upoutávka Vibecodingu** neznala část kontraktu endpointu: u reklamního slotu vypisovala pole `date` (dnešek) místo termínu z `bannerDescription` a ignorovala `imageUrl`, `badgeLabel`, `ctaLabel`, `highlight`, `talkTitle`, `impressionUrl` i `isInternal`
+- **Pevné letopočty 2025** ve starší podobě stránky oboru (nadpis i dvě věty pod ním); dluh hlídače klesl z 90 na 82 výskytů
+- **`docs/zdroje-dat.md`, oddíl 2.11** vedl všech deset maturitních sloupců jako nepoužívané, ačkoli se zpracovávají od 14. 9. 2026
+
+### Odstraněno
+- **Route `/skola/[slug]/detail`** a pět komponent, které používala jen ona — osiřelá, neodkazovalo na ni nic ve zdrojích ani v sitemapě
+- **Stránka `/jak-funguje-prijimani`** (sloučena do průvodce, adresa přesměrovává)
+
 ## [2.12.1] - 2026-09-19
 
 ### Přidáno

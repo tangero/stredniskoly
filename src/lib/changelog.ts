@@ -10,6 +10,23 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '2.13.0',
+    date: '19. 9. 2026',
+    title: 'Každý obor má vlastní stránku a jeden průvodce místo dvou',
+    changes: [
+      { type: 'new', text: 'Jeden návod „Jak vybrat střední školu“ v osmi krocích místo dvou stránek, které si místy protiřečily; u každého kroku odkaz na místo, kde si to na webu ověříte daty. Dosavadní „Jak funguje přijímání“ na něj vede dál' },
+      { type: 'new', text: 'V horní liště „Zvažované obory“ s počtem uložených oborů; výběr tak jde otevřít odkudkoli' },
+      { type: 'new', text: 'U maturity přibyl v tabulce po letech sloupec „ke zkoušce nešlo“ — počet přihlášených, kteří zkoušku nekonali, a jejich podíl' },
+      { type: 'fix', text: 'Dvě nabídky téže školy mohly sdílet jednu stránku a jedna z nich pak ukazovala čísla té druhé; týkalo se 14 adres, například čtyřletého a osmiletého gymnázia se stejně psaným zaměřením. Každá nabídka má nově vlastní adresu' },
+      { type: 'fix', text: 'Stránka oboru bez zaměření ukazovala čísla z loňského přijímacího řízení, aniž to řekla; šlo o čtvrtinu stránek oborů. Adresa nově vede na konkrétní obor, nebo na přehled školy' },
+      { type: 'fix', text: 'Vyhledávání posílá na stránku oboru se všemi údaji místo na stručný výpis nabídky' },
+      { type: 'fix', text: 'V Mém výběru vypadaly dva uložené obory téže školy stejně; název nese délku studia, takže je poznat čtyřleté od osmiletého' },
+      { type: 'fix', text: 'Karty oborů na stránce školy se po uložení mezi zvažované přestaly rozjíždět; sloupce drží na místě v obou stavech' },
+      { type: 'improve', text: 'Upoutávka na akce Vibecodingu umí obrázek a u reklamy neukazuje nesprávné datum; dosud se u ní objevoval dnešek místo termínu akce' },
+      { type: 'improve', text: 'V patičce je podpora a kontakt na jedné adrese: eduarda@prijimackynaskolu.cz' },
+    ],
+  },
+  {
     version: '2.12.1',
     date: '19. 9. 2026',
     title: 'Stejný popis školy na všech stránkách',
