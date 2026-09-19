@@ -12,6 +12,9 @@ Výstup: data/msmt_rejstrik/nazvy-oboru.json
   skoly:   REDIZO → [název školy, obec]   (jen školy s aspoň jedním oborem)
   obory:   kód oboru → název               (v rejstříku má každý kód jediný název)
   nabidky: REDIZO → [kódy oborů]
+  identifikace: REDIZO → {uplny_nazev, ico, adresa}   (jen střední školy a konzervatoře)
+
+Identifikaci čte portál pro školy: kdo uplatňuje kód, musí poznat, ke které škole se hlásí.
 
     python3 scripts/build-nazvy-oboru-rejstrik.py
     python3 scripts/build-nazvy-oboru-rejstrik.py --snimek /jinde/rssz-RRRR-MM-DD.jsonld
@@ -27,14 +30,29 @@ KOREN = Path(__file__).resolve().parent.parent
 REGISTR = KOREN / "public" / "stav_datovych_sad.json"
 SADA = "msmt-rejstrik-snimky"
 VYSTUP = KOREN / "data" / "msmt_rejstrik" / "nazvy-oboru.json"
+# Druh školy v rejstříku: C00 střední škola, D00 konzervatoř.
+DRUHY_IDENTIFIKACE = {"C00", "D00"}
 
 
 def zobrazeno_v_registru() -> dict:
     return json.loads(REGISTR.read_text(encoding="utf-8"))["sady"][SADA]["zobrazeno"]
 
 
+def formatuj_adresu(a: dict) -> str:
+    """„Nad Štolou 1510/1, 170 00 Praha 7 – Holešovice“ podle zápisu v rejstříku."""
+    cislo = str(a.get("cisloDomovni") or "")
+    if a.get("cisloOrientacni"):
+        cislo += f"/{a['cisloOrientacni']}{a.get('dodatekOrientacnihoCisla') or ''}"
+    ulice = " ".join(x for x in (a.get("ulice") or a.get("castObce") or "", cislo) if x)
+    obec = a.get("cisloObvoduPrahy") or a.get("obec") or ""
+    if a.get("castObce") and a.get("castObce") != a.get("obec"):
+        obec = f"{obec} – {a['castObce']}"
+    return ", ".join(x for x in (ulice, " ".join(x for x in (a.get("psc") or "", obec) if x)) if x)
+
+
 def sestav_index(rejstrik: list[dict]) -> dict:
     skoly: dict[str, list] = {}
+    identifikace: dict[str, dict] = {}
     obory: dict[str, str] = {}
     nabidky: dict[str, set] = {}
     for zaznam in rejstrik:
@@ -42,6 +60,10 @@ def sestav_index(rejstrik: list[dict]) -> dict:
         if not redizo:
             continue
         for skola in zaznam.get("skolyAZarizeni", []):
+            if skola.get("druh") in DRUHY_IDENTIFIKACE:
+                identifikace[redizo] = {"uplny_nazev": zaznam.get("uplnyNazev") or "",
+                                        "ico": str(zaznam.get("ico") or ""),
+                                        "adresa": formatuj_adresu(zaznam.get("adresa") or {})}
             for obor in skola.get("obory", []):
                 kod = obor.get("kod")
                 if not kod:
@@ -52,7 +74,8 @@ def sestav_index(rejstrik: list[dict]) -> dict:
                 skoly[redizo] = [zaznam.get("zkracenyNazev") or zaznam.get("uplnyNazev"),
                                  (zaznam.get("adresa") or {}).get("obec")]
     return {"skoly": dict(sorted(skoly.items())), "obory": dict(sorted(obory.items())),
-            "nabidky": {r: sorted(k) for r, k in sorted(nabidky.items())}}
+            "nabidky": {r: sorted(k) for r, k in sorted(nabidky.items())},
+            "identifikace": dict(sorted(identifikace.items()))}
 
 
 def main() -> None:

@@ -3,7 +3,9 @@ import { redirect } from 'next/navigation';
 import { PortalEditace, PortalObalka, PortalSkolaNenalezena } from '@/components/portal/PortalEditace';
 import { PortalHlaska } from '@/components/portal/PortalHlaska';
 import { PortalZalozeni } from '@/components/portal/PortalZalozeni';
+import { PortalHlavickaSkoly } from '@/components/portal/PortalHlavickaSkoly';
 import { overMagicToken } from '@/lib/portal-magic';
+import { getIdentifikaceSkoly } from '@/lib/portal-identifikace';
 import { getNazevSkoly } from '@/lib/portal-skol';
 import { jeDbNastavena } from '@/lib/novinky-db';
 import { cteni, prihlasenyZCookies } from '@/lib/portal-relace';
@@ -47,7 +49,7 @@ export default async function PortalMagicLinkPage({ params }: Props) {
   if (!(await spravceSkoly(cteni, redizo))) {
     return (
       <PortalObalka>
-        <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">{nazev}</h1>
+        <PortalHlavickaSkoly skola={await getIdentifikaceSkoly(redizo, nazev)} vstup="odkaz" />
         <PortalZalozeni nazevSkoly={nazev} auth={{ magic: token }} />
       </PortalObalka>
     );
