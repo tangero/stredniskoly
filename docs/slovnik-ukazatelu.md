@@ -523,7 +523,32 @@ Pole `ma.subjectChoiceShare`: podíl maturantů, kteří si ve společné část
 ### Meze zveřejnění
 Při počtu maturantů pod 10 se zveřejňují jen počty, mezi 10 a 29 s upozorněním, od 30 běžně. U malých skupin se nedopočítávají podíly, které by rekonstruovaly skryté údaje. V `public/maturita_skoly.json` pole `quality`: `complete` (aspoň 30 konajících), `small_sample` (10 až 29), `counts_only` (pod 10, jen počty a podíl volby předmětu), `unavailable`.
 
-## 6. Ukazatele bez doloženého výpočtu
+## 6. Údaje sklizené z novinek škol
+
+Údaje, které nevznikají výpočtem z datové sady, ale **čtením toho, co škola sama napsala** na svůj web. Zdroj: [RSS/Atom feedy školních webů](zdroje-dat.md#214-rssatom-feedy-školních-webů). Pravidla: `scripts/novinky_klasifikace.py`, verze pravidel se ukládá ke každé položce.
+
+### Termín dne otevřených dveří ze zprávy školy
+**Definice.** Datum, které zpráva školy uvádí jako den konání dne otevřených dveří.
+
+**Jak vzniká.** Rozhodnutí `rozhodni_publikaci()` vyžaduje **pozitivní vazbu událost–termín–konání**, ne pouhou nepřítomnost zákazu. Všech pět podmínek zároveň: téma s vysokou jistotou, stav sdělení `oznameno`, datum v roli akce (ne registrace či uzávěrky), klauzule, kterou text neruší ani neoznačuje za nepotvrzenou, a datum ne starší než článek a ne starší než den zobrazení. Chybí-li kterákoli, zobrazí se původní titulek a odkaz bez data.
+
+**Jednotka.** Datum. **Zdroj.** Zpráva školy, odkaz je vždy vidět. **Platnost.** Do konce dne termínu; pak se z karty ztratí, článek zůstane novinkou do posledního termínu + 3 dny.
+
+**Co neříká.** Neříká, že se akce koná — to tvrdí škola, ne my; proto je u karty odkaz na původní zprávu a věta, ať si rodina termín ověří u školy. Neříká ani, že škola jiný termín nemá: čte se jen to, co škola zveřejnila v kanálu novinek, a 51 % škol kanál nemá vůbec.
+
+### Třída zprávy, jistota a stav sdělení
+**Definice.** Tři vlastnosti zprávy, kterými se rozhoduje, jak se zobrazí. **Třída** je téma (`dod`, `vysledky_prijm`, `kriteria`, `prijimaci_rizeni`, `volna_mista`, `talentove_zkousky`, `nahradni_termin`). **Jistota** (`vysoka`, `stredni`, `zadna`) říká, jak jednoznačně zpráva k třídě patří. **Stav sdělení** (`oznameno`, `zmeneno`, `zruseno`, `nejiste`) se rozhoduje po klauzulích, ne za celý článek.
+
+**Jednotka.** Kategorie. **Zdroj.** Titulek, perex a rubriky zprávy.
+
+**Co neříkají.** Nejsou to hodnocení školy ani zprávy. Vysoká jistota znamená jednoznačný přijímací kontext, ne ověřený obsah. Měřená přesnost 102/109 párů třída×zásah platí pro vzorek 80 feedů z 19. 9. 2026, ze kterého pravidla vznikla; **úplnost, tedy kolik relevantních zpráv pravidla přehlédla, měřená není**.
+
+### Hlášený stav volných míst
+**Definice.** To, co škola k danému dni o volných místech napsala.
+
+**Co neříká.** **Neříká, že škola volná místa má.** Karta zní „škola {datum} hlásila volná místa", nikdy „škola má volná místa"; platnost je 7 dní od vydání zprávy a je to limit stáří sdělení, ne potvrzení dostupnosti. „Zdroj naposledy ověřen" znamená, že se podařilo přečíst kanál novinek, ne že škola dostupnost potvrdila.
+
+## 7. Ukazatele bez doloženého výpočtu
 
 ### Index obtížnosti (`obtiznost`)
 Hodnota 0–100 v `public/school_analysis.json` u 2 901 oborů.
@@ -549,7 +574,7 @@ Dokud nemá doložený výpočet, nemá se používat k řazení ani k průměro
 ### Kategorie oboru (`category_code`, `category_name`)
 Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí totéž co výše.
 
-## 7. Jak zavést nový ukazatel
+## 8. Jak zavést nový ukazatel
 
 1. Zapsat jej sem: název, definice jednou větou, vzorec, zdroj, jednotka, rozsah platnosti.
 2. Uvést, co ukazatel **neříká**. U většiny čísel je to důležitější než definice.
@@ -557,7 +582,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 4. Přiřadit ho v registru `public/stav_datovych_sad.json` datové sadě, ze které vzniká, nebo do `ukazatele_z_vice_sad`, když vzniká z více sad. Registr určuje, z jakého období se ukazatel zobrazí; `python3 scripts/stav-datovych-sad.py kontrola` selže, když ukazatel žádné sadě nepatří.
 5. Teprve potom jej zobrazit na webu, vždy s větou, co znamená, a s rokem, ze kterého pochází.
 
-## 8. Historie
+## 9. Historie
 
 | Verze | Změna |
 |---|---|

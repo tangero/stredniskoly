@@ -42,6 +42,7 @@ next-env.d.ts
 /data/*
 # Datová linka: fronta úloh patří do gitu, pracovní soubory a oznámení ne.
 !/data/linka/
+!/data/sondy/
 /data/linka/prace/
 /data/linka/oznameni/
 !/data/transit_graph.json

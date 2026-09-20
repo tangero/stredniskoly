@@ -82,6 +82,10 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **shrnutí vytvořené automaticky ze zprávy ČŠI** | strojová extrakce z inspekční zprávy | značka s datem zprávy | hodnocení inspekce (když jde o shrnutí) |
 | **zvažované obory** | obory, které si rodina uložila tlačítkem „Uložit mezi zvažované“; ukládá se nabídka, ne škola, a jen v tomto prohlížeči | „uloženo v tomto prohlížeči“ u tlačítka; v horní liště stačí počet v závorce | zvažované školy (ukládá se obor), oblíbené, uložené školy, můj výběr škol |
 | **starší údaj z InspIS** | údaj ze starého profilu InspIS, export 11. 2. 2026 | značka u údaje | aktuální, potvrzeno |
+| **z webu školy, automaticky** | značka u novinky sklizené z kanálu novinek školy; nikdo ji ručně nečetl | značka u karty i u seznamu; v patičce bloku „Sbíráme je automaticky z kanálu novinek školy, naposledy ověřeno …“ | potvrzeno školou (to je jiná značka), ověřeno, oficiální |
+| **den otevřených dveří** | termín, kdy škola zve uchazeče do budovy; přebírá se doslova z oznámení školy | „termín ověřte u školy: pořadatelem akce je škola, ne tento web“ | DOD (zkratka jen v datech a kódu), prohlídka školy |
+| **novinky z webu školy** | nadpis doplňkového seznamu položek z kanálu novinek školy | odkazy vedou na web školy | aktuality (nadpis), zprávy ze školy |
+| **zdroj naposledy ověřen *datum*** | kdy se naposled podařilo přečíst kanál novinek školy | vždy u sklizeného údaje | aktualizováno (nejde o aktualizaci údaje), ověřeno školou |
 
 ## 5. Slova, která se nepoužívají vůbec
 
@@ -93,6 +97,8 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | žebříček, nejlepší škola | web neřadí školy podle kvality; řadí jen obory stejného typu v kraji podle zájmu nebo výsledků přijatých | pořadí v kraji podle zájmu, pořadí v kraji podle výsledků přijatých |
 | obtížnost studia, kvalita školy (z přijímacích dat) | přijímací data popisují vstup, ne studium | spolužáci přicházejí s výsledky kolem …; inspekce |
 | kvalitní škola, nejlepší škola (z maturity) | maturita popisuje úroveň ročníku, ne kvalitu výuky (maturitní návrh §8, podmínka 9) | nad školami stejné skupiny oborů ve … ze 4 let |
+| škola nemá novinky, žádné novinky | nevíme to: může být výpadek zdroje nebo databáze. Blok se v takovém případě nezobrazí vůbec | nic – blok chybí |
+| škola pořádá, zveme vás | pořadatelem je škola, ne web; větu píšeme jako převzatou | škola oznámila …; termín ověřte u školy |
 
 ## Historie
 

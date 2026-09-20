@@ -1,0 +1,78 @@
+name: Sklízeč školních novinek
+
+# Sklízí novinky z RSS/Atom feedů školních webů a zapisuje je do databáze.
+# Návrh: docs/skolske-novinky-rss-2027.md, oddíly 3.1–3.3.
+#
+# Běh je autonomní: nic nečeká na schválení. Nejisté položky končí u neutrálního
+# odkazu, ne ve frontě k moderaci.
+#
+# Actions nezaručují čas spuštění – každý běh se proto zapisuje do tabulky
+# `sklizen_beh` a vynechaný běh se pozná z ní, ne z domněnky, že cron proběhl.
+
+on:
+  schedule:
+    - cron: "10 4 * * *"    # 04:10 UTC
+    - cron: "10 14 * * *"   # 14:10 UTC
+  workflow_dispatch:
+    inputs:
+      jen:
+        description: "omezit počet škol (zkouška); prázdné = všechny"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sklizec-novinek
+  cancel-in-progress: false
+
+jobs:
+  sklizen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Bez databáze nemá běh smysl
+        run: |
+          # Fail-closed: chybějící konfigurace je jiný stav než výpadek, ale ani
+          # v jednom případě se nesmí tvářit jako úspěšná sklizeň s nulou položek.
+          if [ -z "$DATABASE_URL" ]; then
+            echo "DATABASE_URL není nastavený – sklizeň se nespouští."
+            exit 1
+          fi
+
+      - run: npm ci
+      - run: pip install requests
+
+      - name: Stav zdrojů z databáze
+        run: node --experimental-strip-types scripts/skolni-novinky-zapis.mjs --export-stav /tmp/stav.json
+
+      - name: Sklidit feedy
+        run: |
+          python3 scripts/sklizec-novinek.py \
+            --stav /tmp/stav.json \
+            --vystup /tmp/davka.json \
+            ${{ inputs.jen && format('--jen {0}', inputs.jen) || '' }}
+
+      - name: Zapsat dávku
+        run: node --experimental-strip-types scripts/skolni-novinky-zapis.mjs --davka /tmp/davka.json
+
+      - name: Uložit dávku k nahlédnutí
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: davka-${{ github.run_id }}
+          path: /tmp/davka.json
+          retention-days: 7
