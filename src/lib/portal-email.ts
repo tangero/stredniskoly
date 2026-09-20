@@ -4,9 +4,11 @@
 // Bez RESEND_API_KEY jen zalogují a vrátí false.
 // ============================================================================
 
-const ODESILATEL = 'Přijímačky na školu <noreply@prijimackynaskolu.cz>';
-// Odpovědi škol míří na podporu (Eduarda, AI asistentka), ne do noreply.
+// Od 20. 9. 2026 odchází e-maily portálu rovnou z adresy podpory, ne z noreply:
+// škola odpovídá tomu, od koho jí zpráva přišla, a nemusí hledat jinou adresu.
+// Odpovědi vyřizuje Eduarda (AI asistentka), u pozvánky je to v textu vysvětlené.
 export const PODPORA_EMAIL = 'eda@prijimackynaskolu.cz';
+const ODESILATEL = `Přijímačky na školu <${PODPORA_EMAIL}>`;
 
 /** Textová verze vedle HTML: e-mail jen v HTML hodnotí spamové filtry hůř. */
 export function htmlNaText(html: string): string {
@@ -64,7 +66,11 @@ async function odesliEmail(para: { to: string; subject: string; html: string }):
   }
 }
 
-const OBALKA = (obsah: string) => `
+const PATICKA_AUTOMAT = `
+        Tento e-mail byl odeslán automaticky. Na odpověď reaguje Eduarda, AI asistentka podpory;
+        změny účtů a sporné věci řeší Patrick Zandl (patrick@zandl.cz).<br>`;
+
+const OBALKA = (obsah: string, paticka: string = PATICKA_AUTOMAT) => `
   <!DOCTYPE html>
   <html>
   <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
@@ -72,8 +78,7 @@ const OBALKA = (obsah: string) => `
     <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
       ${obsah}
       <p style="color: #818c99; font-size: 13px; margin-top: 32px;">
-        Tento e-mail byl odeslán automaticky. Na odpověď reaguje Eduarda, AI asistentka podpory;
-        změny účtů a sporné věci řeší Patrick Zandl (patrick@zandl.cz).<br>
+        ${paticka}
         <a href="https://www.prijimackynaskolu.cz" style="color: #0074e4;">prijimackynaskolu.cz</a>
       </p>
     </div>
@@ -164,6 +169,69 @@ export async function posliVitejteEmail(para: { email: string; nazevSkoly: strin
       <p>Příště se přihlásíte na stránce Pro školy zadáním této e-mailové adresy; pošleme vám na ni odkaz. Heslo nepotřebujete.</p>
       <p>Pokud jste profil nezakládali vy, napište prosím na patrick@zandl.cz.</p>
     `),
+  });
+}
+
+/**
+ * Pozvánka do pilotu účtů pro 20 vybraných škol.
+ * Text je schválený a jeho zdrojem pravdy je `docs/podklady/pozvanka-pilot-uctu-portalu.md`;
+ * když se změní tam, musí se změnit i tady.
+ *
+ * Odchází z `eda@`, ale **podepisuje ji člověk**: kód podepsaný umělou
+ * inteligencí ředitel snadno vyhodnotí jako podvod ([účty portálu], oddíl 5).
+ * Proto má vlastní patičku bez věty „odesláno automaticky“ a v textu je
+ * vysvětlené, kdo na adrese odpovídá.
+ */
+export async function posliPozvankuDoPilotu(para: {
+  email: string;
+  nazevSkoly: string;
+  /** „Vážená paní ředitelko“ / „Vážený pane řediteli“ / „Dobrý den“ */
+  osloveni: string;
+  kod: string;
+}): Promise<boolean> {
+  const skola = esc(para.nazevSkoly);
+  return odesliEmail({
+    to: para.email,
+    subject: `Profil ${para.nazevSkoly} na Přijímačky na školu: pozvánka do pilotu`,
+    html: OBALKA(
+      `
+      <p>${esc(para.osloveni)},</p>
+      <p>na webu Přijímačky na školu (<a href="https://www.prijimackynaskolu.cz" style="color: #0074e4;">www.prijimackynaskolu.cz</a>)
+         hledají rodiče a uchazeči střední školu podle výsledků přijímacího řízení. Stránku má i <strong>${skola}</strong>.
+         Obory, kapacity a výsledky na ní přebíráme z otevřených dat CERMATu, rejstříku MŠMT a České školní inspekce.</p>
+      <p>Zveme vaši školu mezi dvacet škol, které jako první vyzkouší, jak si škola svůj profil spravuje sama.
+         Doplníte, co v úředních datech chybí: dny otevřených dveří, odkaz na vyhlášená kritéria přijetí, přípravné
+         kurzy, ubytování nebo kontakt na výchovného poradce. Údaje se na stránce školy zobrazí se značkou
+         „potvrdila škola“ a s datem. Je to zdarma a nic není povinné.</p>
+      <p><strong>Jak na to</strong></p>
+      <ol>
+        <li>Otevřete <a href="https://www.prijimackynaskolu.cz/pro-skoly" style="color: #0074e4;">www.prijimackynaskolu.cz/pro-skoly</a>
+            a zadejte kód <strong style="font-size: 18px; letter-spacing: 1px;">${esc(para.kod)}</strong>.</li>
+        <li>Vyplňte své jméno, funkci a pracovní e-mail. Kdo kód použije první, stane se správcem profilu školy
+            a kód tím přestane platit. Proto ho prosím předejte jen tomu, kdo bude profil spravovat.</li>
+        <li>Správce může pozvat kolegy. Každý se pak přihlašuje svým e-mailem, bez hesla.</li>
+        <li>Co vyplníte, se na stránce školy objeví obvykle do hodiny. Na schválení nic nečeká — věříme tomu,
+            kdo za školu údaje zadává. Když v nich najdeme chybu, opravíme ji a dáme vám vědět; u opraveného
+            údaje je pak místo „potvrdila škola“ uvedeno „opravila redakce“.</li>
+      </ol>
+      <p>Na stránce školy uvedeme „Profil spravuje škola“. Jméno a funkci správce tam uvedeme, jen když k tomu dá
+         ve formuláři souhlas; odvolat ho jde kdykoli v profilu. Osobní údaje zpracovávám já jako jejich správce,
+         jen pro přihlašování a pro vedení historie změn.</p>
+      <p>Chystáme ještě dvě věci, zatím bez termínu: otevřená data s údaji potvrzenými školami a odznak pro web
+         školy. O obojím vám dáme vědět.</p>
+      <p>Tenhle e-mail přišel z adresy ${PODPORA_EMAIL} a odpovídá na ní Eduarda, naše asistentka s umělou
+         inteligencí; v podpisu to vždy uvádí. Kód ani přístup k účtu vám Eduarda nevydá ani nezmění, to dělám
+         jen já osobně. Změnu správce, ztracený přístup nebo cokoli, co má řešit člověk, pište prosím rovnou na
+         <a href="mailto:patrick@zandl.cz" style="color: #0074e4;">patrick@zandl.cz</a>.</p>
+      <p>Děkuji a budu rád za každou zpětnou vazbu, i kritickou.</p>
+      <p>S pozdravem<br><br>
+         Patrick Zandl<br>
+         provozovatel projektu Přijímačky na školu<br>
+         <a href="mailto:patrick@zandl.cz" style="color: #0074e4;">patrick@zandl.cz</a></p>
+      `,
+      `Pozvánku posílá Patrick Zandl, provozovatel projektu. Na odpovědi na této adrese reaguje Eduarda,
+       asistentka s umělou inteligencí; změny účtů a sporné věci řeší Patrick Zandl (patrick@zandl.cz).<br>`,
+    ),
   });
 }
 
