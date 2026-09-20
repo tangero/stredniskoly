@@ -290,6 +290,40 @@ Co z toho plyne: „zdroj neodpovídá" je sběrná kategorie, která míchá **
 
 Zvažováno a zavrženo i: **vlastní runner na stroji zadavatele** (spravil by všech osm vad prostředí, ale plán závislý na zapnutém počítači je horší než chybějící čtyři zdroje z 533) a **malý VPS v Česku** (spravil by je také; drží se v záloze pro případ, že těch `403` bude přibývat).
 
+**Blokuje adresa, ne požadavek – doloženo (20. 9. 2026).** Z Railway vrací `403` i **titulní stránka** `https://www.sokolska.cz/`, nejen feed, a to s plnou sadou hlaviček prohlížeče (`Accept-Language: cs-CZ`, `Sec-Fetch-*`, `Sec-CH-UA`, `Upgrade-Insecure-Requests`). Není tedy co doplnit do požadavku. Tím padá i zbytek podezření na hlavičku.
+
+IPv6 jako obchvat reputačního seznamu (ty bývají vedené jen pro IPv4) na Railway vyzkoušet nešlo: kontejnery tam **nemají IPv6 egress** (`Network is unreachable`), ačkoli `sokolska.cz`, `spspzlin.cz` i `alej.cz` mají `AAAA` záznam. Zůstává to jako laciný pokus pro jakýkoli budoucí stroj, který IPv6 ven má.
+
+**Kolik na tom vlastně visí.** Z jedenácti zdrojů po přesunu na Railway zbývá:
+
+| zdroj | stav na Railway | spraví česká adresa? |
+|---|---|---|
+| `gfxs.cz`, `lsg.cz`, `teleinformatika.eu` | **spraveno**, platné RSS | – |
+| `sokolska.cz`, `spspzlin.cz` | `403` | **ano** |
+| `isste.cz` | `403`; v registru je navíc feed komentářů | **ano**, po opravě registru |
+| `alej.cz` | `403`; z české sítě `200`, ale **nula položek** | ne – web nemá jediný WordPress post |
+| `bisgymbb.cz` | ladicí výpis Drupalu před `<?xml` | ne – spraví se tolerancí v parseru, odkudkoli |
+| `sgagy.cz` | vypršel limit; v registru špatná adresa | ne – spraví se registrem, odkudkoli |
+| `nosch.cz`, `ssgh.cz` | proof-of-work brána (Anubis) | ne – vědomé odmítnutí, respektuje se |
+
+Adresa v české síti tedy koupí **tři školy z 533** (0,6 %). Parser a registr koupí další dvě, zadarmo a odkudkoli.
+
+**Zvažované služby a proč se nepoužijí (20. 9. 2026).**
+
+| varianta | plán běhu | délka běhu | odchozí adresa | závěr |
+|---|---|---|---|---|
+| **Railway** (použito) | `cronSchedule` v `railway.json` | bez stropu | Amsterdam, AS400940 | spraví 3 z 11, plán běží |
+| **e2b.dev** | **žádný** – sandbox se musí odněkud zavolat | dlouhý běh zvládne | E2B Cloud stojí na AWS/GCP; pevná odchozí adresa vyžaduje vlastní bránu | zavrženo |
+| **rock8.cloud** | ve veřejné dokumentaci není; {Z}workflows{K} jsou reakce na události, ne plán | Docker, tedy bez stropu | **německá** datacentra (firma je z Ostravy, data nejsou) | zavrženo |
+| **VPS v Česku** | systemd timer | bez stropu | **česká** | drží se v záloze |
+| stroj zadavatele | cron | bez stropu | česká | zavrženo – plán závislý na zapnutém počítači |
+
+`e2b.dev` neřeší ani jednu ze dvou věcí, kvůli kterým se stěhuje: nemá plánovač (ten je přesně to, co v Actions selhalo) a jeho adresa je z AWS/GCP, tedy z téže třídy, kterou ty weby odmítají. Přidal by třetí součástku mezi plán a běh.
+
+`rock8.cloud` je česká firma, ale data hostuje v Německu – z hlediska těch reputačních seznamů je německé datacentrum stejně cizí jako nizozemské a rozsahy německých hosterů na nich bývají spíš častěji. Plánovač veřejně nedokládá. Nic z toho se nedá ověřit bez placeného účtu, a ověřovat je potřeba právě ta jediná věc, kterou Railway neumí.
+
+**Pravidlo pro návrat k otázce:** jestli počet zdrojů odmítajících `403` z Railway přeroste **deset**, vyplatí se VPS v Česku. Do té doby ne – tři školy z 533 nestojí za další stroj k údržbě.
+
 **Opatření z toho plynoucí (v sklízeči od 20. 9. 2026):** po hlavním průchodu následuje **druhý pokus o zdroje, které selhaly na úrovni sítě** – souběžnost 4 místo 12 a limit 45 s místo 20 s. Opakují se jen síťové chyby (`SITOVE_CHYBY`); `HTTP 403` a vadný feed se neopakují, protože podruhé dopadnou stejně a jen by zdržely běh. Dávka nese `zdroju_opakovano` a `zdroju_spraveno_opakovanim`, aby bylo vidět, jestli se opakování vyplácí.
 
 ## 7. Provozní cíle a měření (přejato z oponentur §6, cíl přepracován)
@@ -418,7 +452,7 @@ Oponentura: [verze 1.4](oponentura-skolske-novinky-rss-2027-v1.4.md). **Zadavate
 | Verze | Změna |
 | --- | --- |
 | 1.6 | Provozní opravy z prvních běhů: karta s termínem se vybírá z okna 30 posledních položek, ne z pěti nejnovějších; síťové chyby se v běhu jednou opakují; sklízeč se představuje hlavičkou běžného prohlížeče; datum vydání, které předbíhá sklizeň, se zahazuje; zapisovač přepočítá uloženou položku i při pouhé změně verze pravidel. Admin přehled `/admin/skolni-novinky`. Novinky rozděleny na dvě rubriky: zprávy k přijímačkám u oborů, **Ze života školy** nad patičkou; bez data vydání se píše den objevení. Rozbor jedenácti trvale nefunkčních zdrojů: pět různých příčin, a tvrzení, že za `HTTP 403` mohla botí hlavička, **zrušeno jako nedoložené**. Verze pravidel 2026-09-20.6; měření beze změny. |
-| 1.7 | Naplánovaná sklizeň přesunuta z GitHub Actions na **Railway** (`Dockerfile.sklizec`, `scripts/sklizec-beh.sh`, `railway.json`), workflow zůstává bez plánu jako ruční záloha. Důvody: obě naplánovaná spuštění 20. 9. se nekonala a z Actions padá jedenáct zdrojů. Závěr, že za `403` může adresa **GitHub Actions**, upřesněn měřením z Railway: blokuje se víc datacentrových rozsahů, spolehlivě to spraví jen česká adresa; Railway spraví 3 z 11. Provoz na Vercelu zamítnut (plná sklizeň 26 min proti stropu 800 s, dvě runtime v jednom běhu). Beze změny pravidel i ukazatelů. |
+| 1.7 | Naplánovaná sklizeň přesunuta z GitHub Actions na **Railway** (`Dockerfile.sklizec`, `scripts/sklizec-beh.sh`, `railway.json`), workflow zůstává bez plánu jako ruční záloha. Důvody: obě naplánovaná spuštění 20. 9. se nekonala a z Actions padá jedenáct zdrojů. Závěr, že za `403` může adresa **GitHub Actions**, upřesněn měřením z Railway: blokuje se víc datacentrových rozsahů, spolehlivě to spraví jen česká adresa; Railway spraví 3 z 11. Provoz na Vercelu zamítnut (plná sklizeň 26 min proti stropu 800 s, dvě runtime v jednom běhu), stejně jako **e2b.dev** (nemá plánovač, adresa z AWS/GCP) a **rock8.cloud** (německá datacentra, plánovač nedoložen). Doloženo, že blokuje adresa, ne požadavek: z Railway vrací `403` i titulní stránka `sokolska.cz` s plnou sadou hlaviček prohlížeče. Beze změny pravidel i ukazatelů. |
 | 1.5 | Vypořádání páté oponentury: stav klauzule `nepotvrzeno`, dědění role akce jen u holého časového údaje, den zobrazení v konečném rozhodnutí (proběhlý termín nevytvoří pozvánku), smíšená zpráva jako dokumentovaný konzervativní odkaz s testem konečné funkce, kontrakt cache zúžen na nová načtení, opravený výklad metrik. Zadavatel zastavil další ověřování: úplnost se zjistí z provozu. Verze pravidel 2026-09-20.5; 52 regresních testů. |
 | 1.4 | Vypořádání čtvrté oponentury: stav sdělení i role data se rozhodují po klauzulích (popřené zrušení, zrušená registrace, „nekoná se", popisek za datem), vylučovače ustupují jednoznačnému přijímacímu kontextu, smíšená zpráva SŠ+VOŠ zůstává neutrálním odkazem, jediné publikační rozhodnutí `rozhodni_publikaci` a měření konečného zobrazení proti ruční referenci, identita referencí přes odkaz, offline příkaz bez `requests`, velikost přejímacího vzorku ≥29 místo ≥10, kontrakt cache bloku novinek mimo ISR, sjednocení 3.2/3.3/3.6/3.7 a aritmetiky. Verze pravidel 2026-09-20.4; 76 zásahů, téma 102/109, vysoká jistota 60/60, 47 regresních testů. |
 | 1.3 | Vypořádání třetí oponentury: reference na jednotce položka×třída s cílovou skupinou SŠ (VOŠ vyloučena z vysoké jistoty pravidlem), stav sdělení (zrušeno/změněno), role registrace vs. akce, ISO datum s časem a pásmem, parser (XML entity, HTML≠prázdný feed), přenositelnost do čistého CI (requests až při stahování, data/sondy verzována, exit 1 při chybějících referencích), sjednocení rozporných instrukcí (registr, fáze 1, explicitní rok, oddíl 8 jako historie), invalidace atomicky s transakcí, A→B→A vůči doručenému stavu příjemce, benchmark za třídu pro e-maily, oprava aritmetiky. Vysoká jistota nově 60/60 párů = 51 položek; 25 regresních testů. |
