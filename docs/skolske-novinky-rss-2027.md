@@ -258,6 +258,14 @@ Pravidlo pro výklad běhu ve 14:10, ať se nedá vyložit zpětně:
 - **zůstanou-li `403`** → příčinou je odchozí adresa GitHub Actions. Řešením není další hlavička, ale sklízet odjinud (vlastní runner nebo malý server, ideálně v Česku);
 - **vrátí-li `200`** → hlavička hrála roli **jen v kombinaci** s tou adresou: na datacentrový provoz mají ty weby přísnější pravidlo než na běžného návštěvníka.
 
+**Výsledek (běh 20. 9. 15:25 UTC, hlavička prohlížeče, pravidla 2026-09-20.6): `403` zůstaly.** Splatných bylo 13 zdrojů, z toho 11 selhalo – týchž jedenáct. Podle zapsaného pravidla je tedy příčinou **odchozí adresa GitHub Actions**. Dvě věci to potvrzují nad rámec pravidla: běh zkoušel 13 zdrojů, ne 533, takže o přetížení nešlo; a `teleinformatika.eu`, který z české sítě posílá 48 kB platného RSS s deseti položkami, hlásí z Actions „feed se nepodařilo rozparsovat" – dostává blokační **stránku**, ne feed. Táž příčina, jiný symptom.
+
+Rozsah je tím větší, než vypadal: z jedenácti zdrojů je **osm** vada prostředí (5× `403`, 1× blokační stránka místo feedu, 2× `ConnectTimeout` u zdrojů, které odsud odpovídají do vteřiny). Vlastní vadu mají jen tři: `nosch.cz` a `ssgh.cz` (proof-of-work brána, staví ji na každého) a `bisgymbb.cz` (ladicí výpis Drupalu). `alej.cz` a `isste.cz` mají obojí – z Actions `403`, z české sítě prázdný feed a feed komentářů.
+
+**Důsledek: sklízet z GitHub Actions nejde.** Nejde o hlavičku ani o chování sklízeče, takže se to nespraví v kódu. Potřebuje to běh z jiné sítě.
+
+**Plánované běhy 20. 9. nevyšly ani jednou.** Cron `04:10` i `14:10` UTC byl bez náhrady vynechán, ačkoli workflow leželo na `main` od 08:50 UTC; oba dnešní běhy jsou ruční. Je to druhý, nezávislý důvod přesunout sklizeň jinam: i kdyby adresa procházela, plán, který neběží, nesklidí nic. Dohled z oddílu 3.8 (cron z Vercelu kontrolující záznam běhu) tím dostal první doložený případ, na který měl zabrat.
+
 Co z toho plyne: „zdroj neodpovídá" je sběrná kategorie, která míchá **vadu prostředí** (odchozí adresa), **vadu registru** (špatná adresa feedu), **vadu zdroje** (ladicí výpis před XML) a **vědomé odmítnutí** (bot wall). Bez rozlišení se první tři dají spravit a nespraví se, protože se schovají za čtvrtou.
 
 **Opatření z toho plynoucí (v sklízeči od 20. 9. 2026):** po hlavním průchodu následuje **druhý pokus o zdroje, které selhaly na úrovni sítě** – souběžnost 4 místo 12 a limit 45 s místo 20 s. Opakují se jen síťové chyby (`SITOVE_CHYBY`); `HTTP 403` a vadný feed se neopakují, protože podruhé dopadnou stejně a jen by zdržely běh. Dávka nese `zdroju_opakovano` a `zdroju_spraveno_opakovanim`, aby bylo vidět, jestli se opakování vyplácí.
