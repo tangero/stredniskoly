@@ -173,6 +173,30 @@ test('obnova nepřeskočí verzi, která vznikla mezi čtením a zápisem', asyn
   assert.equal((await udajeSkoly(s, ZAKLAD.redizo)).udaje.skolne.hodnota, '300 Kč');
 });
 
+test('pořadí verzí neurčuje čas začátku transakce', async () => {
+  const { s, tx } = await novaDb();
+
+  // Pořadí z review: transakce A začala dřív (starší now()), ale zapsala až po
+  // transakci B. Kdyby se poslední verze určovala podle času, dostal by řádek A
+  // starší razítko než zneplatněný řádek B a další zápis by vybral B, vyhodnotil
+  // pole jako prázdné a zůstal navždy viset na unikátním indexu.
+  await tx((t) => zapisUdaje(t, { ...ZAKLAD, udaje: { skolne: '200 Kč' }, zmenuProvedl: 'ucet' }));
+  const b = await s.dotaz(`select id from portal_profil where pole = 'skolne'`);
+  await tx((t) => zapisUdaje(t, { ...ZAKLAD, udaje: { skolne: '300 Kč' }, zmenuProvedl: 'ucet' }));
+  // Ručně dosadíme čas, který by vznikl z now() transakce zahájené dřív.
+  await s.dotaz(
+    `update portal_profil set platne_od = (select platne_od - interval '1 minute' from portal_profil where id = $1)
+      where pole = 'skolne' and id <> $1`,
+    [b.rows[0].id],
+  );
+
+  // Veřejné čtení i další běžný zápis musí fungovat dál.
+  assert.equal((await udajeSkoly(s, ZAKLAD.redizo)).udaje.skolne.hodnota, '300 Kč');
+  const zmeny = await tx((t) => zapisUdaje(t, { ...ZAKLAD, udaje: { skolne: '400 Kč' }, zmenuProvedl: 'ucet' }));
+  assert.deepEqual(zmeny, ['skolne']);
+  assert.equal((await udajeSkoly(s, ZAKLAD.redizo)).udaje.skolne.hodnota, '400 Kč');
+});
+
 test('obnova po nerušeném průběhu vrátí přesně předchozí verzi', async () => {
   const { s, tx } = await novaDb();
   await tx((t) => zapisUdaje(t, { ...ZAKLAD, udaje: { skolne: '100 Kč' }, zmenuProvedl: 'ucet' }));

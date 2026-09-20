@@ -36,7 +36,7 @@ async function posledniZmena(
   const r = await cteni.dotaz<{ kdy: string; jmeno: string | null; zdroj: string }>(
     `select p.platne_od as kdy, r.jmeno, p.zdroj
        from portal_profil p left join portal_role r on r.id = p.role_id
-      where p.redizo = $1 order by p.platne_od desc limit 1`,
+      where p.redizo = $1 order by p.poradi desc limit 1`,
     [redizo],
   );
   const posledni = r.rows[0];

@@ -74,6 +74,7 @@ create index if not exists portal_udalost_skola on portal_udalost (redizo, kdy);
 
 create table if not exists portal_profil (
   id uuid primary key,
+  poradi bigserial not null,
   redizo text not null,
   pole text not null,
   hodnota text not null,
@@ -81,7 +82,7 @@ create table if not exists portal_profil (
   verze_prijimani text not null,
   zdroj text not null default 'skola' check (zdroj in ('skola', 'redakce')),
   role_id uuid references portal_role,
-  platne_od timestamptz not null default now(),
+  platne_od timestamptz not null default clock_timestamp(),
   zneplatneno timestamptz,
   nahrazuje_id uuid references portal_profil,
   zmenu_provedl text not null,
@@ -91,7 +92,9 @@ create table if not exists portal_profil (
 create unique index if not exists portal_profil_platna_hodnota
   on portal_profil (redizo, pole) where zneplatneno is null;
 
-create index if not exists portal_profil_skola on portal_profil (redizo, platne_od);
+create index if not exists portal_profil_pole on portal_profil (redizo, pole, poradi desc);
+
+create index if not exists portal_profil_skola on portal_profil (redizo, poradi);
 
 create table if not exists hlaseni_chyby (
   id uuid primary key,

@@ -67,7 +67,7 @@ function slozZaznamy(rows: RadekProfilu[]): PortalSkolData {
  */
 export async function potvrzeneUdaje(s: Spojeni): Promise<PortalSkolData> {
   const r = await s.dotaz<RadekProfilu>(
-    `select ${SLOUPCE} from portal_profil where zneplatneno is null order by redizo, platne_od`,
+    `select ${SLOUPCE} from portal_profil where zneplatneno is null order by redizo, poradi`,
   );
   return slozZaznamy(r.rows);
 }
@@ -75,7 +75,7 @@ export async function potvrzeneUdaje(s: Spojeni): Promise<PortalSkolData> {
 /** Jedna škola. Pro administraci a testy; web čte mapu za celý web najednou. */
 export async function udajeSkoly(s: Spojeni, redizo: string): Promise<PortalZaznam | null> {
   const r = await s.dotaz<RadekProfilu>(
-    `select ${SLOUPCE} from portal_profil where redizo = $1 and zneplatneno is null order by platne_od`,
+    `select ${SLOUPCE} from portal_profil where redizo = $1 and zneplatneno is null order by poradi`,
     [redizo],
   );
   return slozZaznamy(r.rows)[redizo] ?? null;
@@ -90,12 +90,15 @@ const UNIKATNI_PORUSENI = '23505';
 /**
  * Serializuje operace nad jedním polem jedné školy po dobu transakce.
  *
- * `select … order by platne_od desc limit 1 for update` sám nestačí: v režimu
+ * `select … order by poradi desc limit 1 for update` sám nestačí: v režimu
  * READ COMMITTED Postgres po uvolnění zámku přečte novou verzi **uzamčeného
  * řádku**, ale `limit 1` znovu nevyhodnotí. Souběžná operace by tak mohla
  * pracovat s řádkem, který už nejnovější není — a obnova předchozí verze by
  * přeskočila hodnotu, která mezitím vznikla. Poradní zámek tenhle závod ruší
  * dřív, než se první řádek vůbec vybere; drží se do konce transakce.
+ *
+ * Zámek je zároveň důvod, proč `poradi` (bigserial) odpovídá skutečnému pořadí
+ * zápisů: číslo se přiděluje při vložení, tedy až pod tímhle zámkem.
  */
 async function zamkniPole(s: Spojeni, redizo: string, pole: string): Promise<void> {
   await s.dotaz(`select pg_advisory_xact_lock(hashtext($1)::bigint)`, [`portal_profil:${redizo}:${pole}`]);
@@ -150,7 +153,7 @@ export async function zapisUdaje(s: Spojeni, z: ZmenaProfilu): Promise<string[]>
     // `zneplatneno` a zároveň je to řádek, který nový zápis nahrazuje.
     const stav = await s.dotaz<{ id: string; hodnota: string; zneplatneno: string | null }>(
       `select id, hodnota, zneplatneno from portal_profil
-        where redizo = $1 and pole = $2 order by platne_od desc limit 1`,
+        where redizo = $1 and pole = $2 order by poradi desc limit 1`,
       [z.redizo, pole],
     );
     const posledni = stav.rows[0] ?? null;
@@ -236,7 +239,7 @@ export async function historieProfilu(s: Spojeni, redizo: string): Promise<Histo
   const r = await s.dotaz<HistorieHodnoty>(
     `select p.id, p.pole, p.hodnota, p.zdroj, p.platne_od, p.zneplatneno, p.zmenu_provedl, p.duvod, r.jmeno
        from portal_profil p left join portal_role r on r.id = p.role_id
-      where p.redizo = $1 order by p.platne_od desc, p.pole`,
+      where p.redizo = $1 order by p.poradi desc`,
     [redizo],
   );
   return r.rows;
@@ -261,7 +264,7 @@ export async function vratPredchozi(
   const r = await s.dotaz<{ id: string; predchozi: string | null }>(
     `select p.id, s.hodnota as predchozi
        from (select id, nahrazuje_id from portal_profil
-              where redizo = $1 and pole = $2 order by platne_od desc limit 1) p
+              where redizo = $1 and pole = $2 order by poradi desc limit 1) p
        left join portal_profil s on s.id = p.nahrazuje_id`,
     [z.redizo, z.pole],
   );

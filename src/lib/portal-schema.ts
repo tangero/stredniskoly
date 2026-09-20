@@ -96,6 +96,7 @@ export const MIGRACE_PORTALU: string[] = [
   // portal_role s jménem a e-mailem osoby.
   `create table if not exists portal_profil (
   id uuid primary key,
+  poradi bigserial not null,
   redizo text not null,
   pole text not null,
   hodnota text not null,
@@ -103,7 +104,7 @@ export const MIGRACE_PORTALU: string[] = [
   verze_prijimani text not null,
   zdroj text not null default 'skola' check (zdroj in ('skola', 'redakce')),
   role_id uuid references portal_role,
-  platne_od timestamptz not null default now(),
+  platne_od timestamptz not null default clock_timestamp(),
   zneplatneno timestamptz,
   nahrazuje_id uuid references portal_profil,
   zmenu_provedl text not null,
@@ -112,8 +113,16 @@ export const MIGRACE_PORTALU: string[] = [
   // Jedna platná hodnota na pole a školu hlídá databáze, ne aplikace.
   `create unique index if not exists portal_profil_platna_hodnota
   on portal_profil (redizo, pole) where zneplatneno is null`,
+  // Pořadí verzí pole. Řadí se podle `poradi`, ne podle času: `platne_od` mělo
+  // původně default now(), což je čas **začátku transakce**, takže transakce
+  // zahájená dřív a zapsaná později dostala starší razítko než řádek, který
+  // nahradila. Další zápis pak vybral zneplatněný řádek jako poslední, pole
+  // vyhodnotil jako prázdné a skončil na unikátním indexu — a už se to
+  // neodblokovalo. `bigserial` přiděluje číslo až při vložení, tedy pod
+  // poradním zámkem, takže odpovídá skutečnému pořadí zápisů.
+  `create index if not exists portal_profil_pole on portal_profil (redizo, pole, poradi desc)`,
   // Časová osa profilu školy pro administraci a pro export otevřených dat.
-  `create index if not exists portal_profil_skola on portal_profil (redizo, platne_od)`,
+  `create index if not exists portal_profil_skola on portal_profil (redizo, poradi)`,
   // Hlášení chyby od návštěvníka (tlačítko „Nahlásit chybu“). Není to portál
   // škol, ale jede ve stejné migraci, protože je to jedna databáze a jeden
   // spouštěč (/api/portal/migrace).
