@@ -527,17 +527,26 @@ Při počtu maturantů pod 10 se zveřejňují jen počty, mezi 10 a 29 s upozor
 
 Údaje, které nevznikají výpočtem z datové sady, ale **čtením toho, co škola sama napsala** na svůj web. Zdroj: [RSS/Atom feedy školních webů](zdroje-dat.md#214-rssatom-feedy-školních-webů). Pravidla: `scripts/novinky_klasifikace.py`, verze pravidel se ukládá ke každé položce.
 
-### Termín dne otevřených dveří ze zprávy školy
-**Definice.** Datum, které zpráva školy uvádí jako den konání dne otevřených dveří.
+### Důležitost zprávy z webu školy
+**Definice.** Zda je zpráva z kanálu novinek školy pro rozhodování o přijímačkách důležitá (`karta`), souvisí s nimi okrajově (`odkaz`), nebo se jich netýká (`seznam`).
 
-**Jak vzniká.** Rozhodnutí `rozhodni_publikaci()` vyžaduje **pozitivní vazbu událost–termín–konání**, ne pouhou nepřítomnost zákazu. Všech pět podmínek zároveň: téma s vysokou jistotou, stav sdělení `oznameno`, datum v roli akce (ne registrace či uzávěrky), klauzule, kterou text neruší ani neoznačuje za nepotvrzenou, a datum ne starší než článek a ne starší než den zobrazení. Chybí-li kterákoli, zobrazí se původní titulek a odkaz bez data.
+**Jak vzniká.** Rozhodnutí `rozhodni_publikaci()` v `scripts/novinky_klasifikace.py`. `karta` vyžaduje obojí zároveň: aspoň jednu třídu s **vysokou jistotou** a stav sdělení `oznameno` — zrušená, změněná ani nejistá zpráva se nezvýrazňuje. Pozvánka na akci, jejíž všechny přečtené termíny už proběhly, klesá na `odkaz`.
 
-**Jednotka.** Datum. **Zdroj.** Zpráva školy, odkaz je vždy vidět. **Platnost.** Do konce dne termínu; pak se z karty ztratí, článek zůstane novinkou do posledního termínu + 3 dny.
+**Jednotka.** Kategorie. **Zdroj.** Titulek, perex a rubriky zprávy. **Platnost.** Podle třídy, oddíl 3.4 [návrhu](skolske-novinky-rss-2027.md).
 
-**Co neříká.** Neříká, že se akce koná — to tvrdí škola, ne my; proto je u karty odkaz na původní zprávu a věta, ať si rodina termín ověří u školy. Neříká ani, že škola jiný termín nemá: čte se jen to, co škola zveřejnila v kanálu novinek, a 51 % škol kanál nemá vůbec.
+**Co neříká.** Neříká, že je zpráva pravdivá nebo aktuální — to tvrdí škola, ne my. Neříká ani, že škola nic dalšího neoznámila: čte se jen kanál novinek, a 51 % škol ho nemá vůbec.
+
+### Termín akce ze zprávy školy (nezobrazuje se)
+**Definice.** Datum v roli akce, které se podařilo přečíst v textu zprávy.
+
+**Jak vzniká.** `extrahuj_data_akce()` sbírá z textu kalendářně platná data s rokem, každému podle jeho klauzule přisoudí roli (akce / registrace / neurčená) a stav (koná se / zrušeno / nepotvrzeno). Do `terminy` projdou jen data v roli akce, v klauzuli, kterou text neruší, a ne starší než článek.
+
+**Kde se používá.** Jen uvnitř: konec platnosti položky (poslední termín + 3 dny), sestup pozvánky na proběhlou akci mezi ostatní zprávy a dohled v administraci `/admin/skolni-novinky`. **Do odpovědi API ani na stránku školy nejde.**
+
+**Proč se nezobrazuje (rozhodnutí 20. 9. 2026).** Přesnost tříd je změřená (102/109 párů), vazba mezi datem a událostí ne. Data se sbírají z celého článku a nenesou štítek, čeho se týkají, takže se v jednom seznamu sešly termíny se lhůtami: u školy 600005399 stálo pod nadpisem „termín oznámený školou“ osm dat, z toho tři lhůty (konec podávání přihlášek na konzervatoře, uzávěrka přihlášek, informační schůzka pro rodiče) a šest termínů MŠMT, které škola jen opsala; jeden skutečný termín JPZ naopak chyběl. Karta proto říká, **o čem zpráva je**, a vede na článek školy — datum si čtenář přečte tam, kde ho napsala škola. Vrátit datum na stránku má smysl až s klasifikací po jednotlivých datech (P6 v [překonaných rozhodnutích](prehodnoceni-rozhodnuti-rss-2027.md)).
 
 ### Třída zprávy, jistota a stav sdělení
-**Definice.** Tři vlastnosti zprávy, kterými se rozhoduje, jak se zobrazí. **Třída** je téma (`dod`, `vysledky_prijm`, `kriteria`, `prijimaci_rizeni`, `volna_mista`, `talentove_zkousky`, `nahradni_termin`). **Jistota** (`vysoka`, `stredni`, `zadna`) říká, jak jednoznačně zpráva k třídě patří. **Stav sdělení** (`oznameno`, `zmeneno`, `zruseno`, `nejiste`) se rozhoduje po klauzulích, ne za celý článek.
+**Definice.** Tři vlastnosti zprávy, kterými se rozhoduje, jak se zobrazí. **Třída** je téma (`dod`, `prijimacky_nanecisto`, `setkani_uchazecu`, `pripravny_kurz`, `vysledky_prijm`, `kriteria`, `prijimaci_rizeni`, `volna_mista`, `talentove_zkousky`, `nahradni_termin`, `terminy_jpz`, `prihlaska`); na stránce z ní vzniká **štítek** karty podle slovníku pojmů. **Jistota** (`vysoka`, `stredni`, `zadna`) říká, jak jednoznačně zpráva k třídě patří. **Stav sdělení** (`oznameno`, `zmeneno`, `zruseno`, `nejiste`) se rozhoduje po klauzulích, ne za celý článek.
 
 **Jednotka.** Kategorie. **Zdroj.** Titulek, perex a rubriky zprávy.
 

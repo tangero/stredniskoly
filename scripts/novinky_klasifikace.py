@@ -19,7 +19,7 @@ from email.utils import parsedate_to_datetime
 from xml.etree import ElementTree as ET
 
 
-VERZE_PRAVIDEL = "2026-09-20.6"
+VERZE_PRAVIDEL = "2026-09-20.7"
 
 
 def strip(t: str) -> str:
@@ -35,6 +35,27 @@ PRAVIDLA_TEMA = [
      []),
     ("talentove_zkousky", [r"talentov(e|ou|ych|a) zkousk", r"talentovk"],
      []),
+    # Akce, které škola pořádá pro uchazeče. To jsou zprávy, kvůli kterým rodina
+    # na stránku přišla (rozhodnutí zadavatele 20. 9. 2026).
+    #
+    # „Nanečisto" samo o sobě nestačí: gymnázium Příbram vydává „Cvičné testy
+    # B2 First a C1 Advanced" pro vlastní žáky. Vzor proto musí spojit cvičení
+    # s přijímačkami, ne jen najít slovo „cvičný".
+    ("prijimacky_nanecisto",
+     [r"prijimac\w*\s+nanecisto", r"(zkousk|test|testovani)\w*\s+nanecisto",
+      r"nanecisto\w*\s+(prijimac|jednotn|jpz)",
+      r"cvicn\w*\s+(prijimac\w*|test\w*\s+(k|na)\s+prijimac)",
+      r"zkusebn\w*\s+prijimac"],
+     [r"maturit", r"certifikat", r"cambridge"]),
+    ("setkani_uchazecu",
+     [r"(schuzk|setkan|konzultac|besed|prohlidk|dilna|dilnic)\w*\s+(pro|s|se)\s+"
+      r"(uchazec|zajemc|budouc)",
+      r"setkani s uchazec"],
+     [r"vysok\w* skol", r"univerzit", r"maturit"]),
+    ("pripravny_kurz",
+     [r"pripravn\w*\s+kurz", r"kurz\w*\s+(k|na|ke)\s+prijimac",
+      r"kurz\w*\s+(pro|s)\s+(uchazec|zajemc)"],
+     [r"maturit", r"vysok\w* skol", r"univerzit", r"lyzarsk", r"tanecn", r"plesov"]),
     ("nahradni_termin", [r"nahradni termin"],
      []),
     ("kriteria", [r"kriteria (pro )?prijeti", r"podminky (pro )?prijeti",
@@ -215,6 +236,12 @@ def rozhodni_jistotu(pol: dict, trida: str) -> str:
         # Pouhé „rocnik" nestačí – „volná místa do 7., 8. a 9. tříd" je základní škola.
         return "vysoka" if RE_UCHAZEC.search(text) else "stredni"
     if trida == "nahradni_termin":
+        return "vysoka" if RE_UCHAZEC.search(text) else "stredni"
+    if trida in ("prijimacky_nanecisto", "setkani_uchazecu", "pripravny_kurz"):
+        # Akci může pořádat i někdo jiný („přijímačky nanečisto pořádá kraj"):
+        # cizí pořadatel sráží na střední jistotu stejně jako u dne otevřených dveří.
+        if RE_CIZI_POORADATEL.search(text):
+            return "stredni"
         return "vysoka" if RE_UCHAZEC.search(text) else "stredni"
     if trida == "talentove_zkousky":
         if RE_ZUS.search(text):
@@ -444,7 +471,15 @@ def parse_datum(raw: str):
 # --- Jediné publikační rozhodnutí -------------------------------------------------
 # Klasifikace je mezikrok; čtenář vidí až výsledek této funkce. Testuje a měří se
 # proto ona, ne jen počet vysokých jistot (F5 čtvrté oponentury).
-TRIDY_S_POZVANKOU = ("dod", "talentove_zkousky", "nahradni_termin")
+# Třídy, u kterých má smysl hledat v textu datum. Datum se **nezobrazuje**
+# (rozhodnutí zadavatele 20. 9. 2026, viz `rozhodni_publikaci`); slouží jen
+# k tomu, aby článek o proběhlé akci přestal být zvýrazněný a aby se mu
+# spočítal konec platnosti.
+TRIDY_AKCI = ("dod", "prijimacky_nanecisto", "setkani_uchazecu", "pripravny_kurz",
+              "talentove_zkousky", "nahradni_termin")
+
+# Zpětná kompatibilita pro volající, kteří jméno ještě používají.
+TRIDY_S_POZVANKOU = TRIDY_AKCI
 # Třídy s doloženým přejímacím benchmarkem (oddíl 4 návrhu). Talentové zkoušky a
 # náhradní termín ve vzorku zásahy nemají, e-mailem tedy zatím nejdou.
 TRIDY_POVOLENE_EMAILEM = ("dod", "vysledky_prijm", "kriteria", "prijimaci_rizeni", "volna_mista")
@@ -454,17 +489,26 @@ STAVY_BLOKUJICI_TERMIN = ("zruseno", "zmeneno", "popreno", "registrace_zrusena",
 
 def rozhodni_publikaci(pol: dict, publikovano: datetime | None = None,
                        dnes: date | None = None) -> dict:
-    """Co se o položce smí zveřejnit: `karta_terminu` | `karta` | `odkaz` | `seznam`.
+    """Co se o položce smí zveřejnit: `karta` | `odkaz` | `seznam`.
 
-    Termínová karta vzniká jen při pozitivní vazbě událost–termín–konání: vysoká
-    jistota tématu, stav sdělení `oznameno`, datum v roli akce, v klauzuli, kterou
-    text neruší ani neoznačuje za nepotvrzenou, a ne dříve než publikace. Jinak se
-    zobrazí původní titulek a odkaz. Nic z toho nečeká na člověka – nejistota končí
-    u neutrálního odkazu.
+    **Datum akce se nezobrazuje** (rozhodnutí zadavatele 20. 9. 2026). Karta
+    říká, *o čem zpráva je* – „den otevřených dveří", „přijímačky nanečisto",
+    „setkání s uchazeči", „kritéria přijetí" – a vede na článek školy; přesné
+    datum si čtenář přečte tam, kde ho škola napsala. Důvod je naměřený:
+    přesnost tříd je ověřená (102/109 párů), ale vazba datum–událost ne, a
+    plochý seznam dat sebraných z celého článku smíchal termíny se lhůtami
+    (600005399: osm dat, z toho tři lhůty a šest termínů MŠMT).
 
-    `dnes` je den zobrazení: proběhlý termín se nesmí ukázat jako pozvánka (H1 páté
-    oponentury). V provozu ho volající předává vždy; měření ho drží zmrazený, aby
-    `--offline` dávalo stejný výsledek i zítra."""
+    Hodnota pro čtenáře je v **rozlišení důležitého od ostatního**, ne v tom,
+    že za školu tvrdíme datum. Co zůstává: vysoká jistota tématu a stav
+    `oznameno` – zrušená nebo nejistá zpráva se nezvýrazňuje.
+
+    `terminy` se dál počítají, ale **jen pro vnitřní potřebu**: článek, jehož
+    všechny termíny už proběhly, spadne mezi ostatní zprávy, a zapisovač z nich
+    počítá `konec_platnosti`. Do zobrazení se nedostanou.
+
+    `dnes` je den zobrazení. V provozu ho volající předává vždy; měření ho drží
+    zmrazený, aby `--offline` dávalo stejný výsledek i zítra."""
     tridy = pol.get("tridy")
     if tridy is None:
         tridy, _ = klasifikuj_temu(pol)
@@ -482,9 +526,9 @@ def rozhodni_publikaci(pol: dict, publikovano: datetime | None = None,
     if stav != "oznameno":
         return {**zaklad, "zobrazeni": "odkaz", "email": False,
                 "duvod": f"stav sdělení: {stav}"}
-    if not any(t in TRIDY_S_POZVANKOU for t in vysoke):
+    if not any(t in TRIDY_AKCI for t in vysoke):
         return {**zaklad, "zobrazeni": "karta", "email": email,
-                "duvod": "karta bez odvozeného termínu"}
+                "duvod": "důležitá zpráva k přijímačkám"}
     data = pol.get("data_akce") or extrahuj_data_akce(
         pol.get("titulek", "") + " " + pol.get("popis", ""))
     publikovano = publikovano or pol.get("datum")
@@ -493,17 +537,13 @@ def rozhodni_publikaci(pol: dict, publikovano: datetime | None = None,
                      if d["role"] == "akce"
                      and d["stav_klauzule"] not in STAVY_BLOKUJICI_TERMIN
                      and (den_publikace is None or iso >= den_publikace))
-    if not terminy:
-        duvod = "termín bez doložené role akce, zrušený, nebo starší než článek"
-        return {**zaklad, "zobrazeni": "odkaz", "email": False, "duvod": duvod}
-    if dnes is not None:
-        budouci = [iso for iso in terminy if iso >= dnes.isoformat()]
-        if not budouci:
-            return {**zaklad, "terminy": terminy, "zobrazeni": "odkaz", "email": False,
-                    "duvod": "termín už proběhl"}
-        terminy = budouci
-    return {**zaklad, "zobrazeni": "karta_terminu", "terminy": terminy, "email": email,
-            "duvod": "vazba událost–termín–konání doložena"}
+    # Pozvánka na akci bez čitelného termínu je pořád pozvánka: čtenáře pošleme
+    # na článek školy. Termín chybí jen nám, ne jemu.
+    if terminy and dnes is not None and not any(iso >= dnes.isoformat() for iso in terminy):
+        return {**zaklad, "terminy": terminy, "zobrazeni": "odkaz", "email": False,
+                "duvod": "akce už proběhla"}
+    return {**zaklad, "terminy": terminy, "zobrazeni": "karta", "email": email,
+            "duvod": "pozvánka na akci školy pro uchazeče"}
 
 
 def _normalizuj_text(t: str) -> str:
@@ -522,7 +562,7 @@ def oklasifikuj_polozky(polozky: list[dict]) -> list[dict]:
         p["tridy"], p["vylouceno"] = klasifikuj_temu(p)
         p["jistota"] = {t: rozhodni_jistotu(p, t) for t in p["tridy"]}
         p["stav"] = urci_stav(p) if p["tridy"] else None
-        if set(p["tridy"]) & set(TRIDY_S_POZVANKOU):
+        if set(p["tridy"]) & set(TRIDY_AKCI):
             p["data_akce"] = extrahuj_data_akce(p.get("titulek", "") + " " + p.get("popis", ""))
         p["publikace"] = rozhodni_publikaci(p)
     return polozky

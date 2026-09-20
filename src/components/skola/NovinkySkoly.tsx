@@ -7,10 +7,16 @@ import { useEffect, useState } from 'react';
  *
  * Návrh: docs/skolske-novinky-rss-2027.md, oddíl 3.6; pojmy: docs/slovnik-pojmu.md.
  *
- * Dělení je záměr, ne technikálie. Termín dne otevřených dveří a kritéria
- * přijetí jsou to, kvůli čemu rodina na stránku přišla; zpráva o seznamováku
- * primy dokresluje, čím škola žije, a patří proto na konec stránky, ne nad ni.
+ * Dělení je záměr, ne technikálie. Den otevřených dveří a kritéria přijetí
+ * jsou to, kvůli čemu rodina na stránku přišla; zpráva o seznamováku primy
+ * dokresluje, čím škola žije, a patří proto na konec stránky, ne nad ni.
  * Obojí se bere z téhož zdroje, jen se nemíchá do jednoho seznamu.
+ *
+ * **Karta netvrdí datum.** Říká, o čem zpráva je („den otevřených dveří"), a
+ * vede na článek školy; datum si čtenář přečte tam, kde ho napsala škola.
+ * Hodnota bloku je v tom, že oddělí důležité od ostatního – ne v tom, že za
+ * školu tvrdíme termín, který jsme z textu vyluštili jen možná správně
+ * (rozhodnutí zadavatele 20. 9. 2026, `scripts/novinky_klasifikace.py`).
  *
  * Blok se **nenačítá se stránkou**, ale z `/api/skoly/[redizo]/novinky`. Důvod je
  * v tom, co má umět: vypnutí vadné položky přepínačem se musí projevit do minuty,
@@ -31,7 +37,6 @@ interface Novinka {
   objevenoAt: string | null;
   zobrazeni: 'karta_terminu' | 'karta' | 'odkaz' | 'seznam';
   tridy: string[];
-  terminy: string[];
 }
 
 interface Odpoved {
@@ -78,13 +83,6 @@ function useNovinky(redizo: string): Odpoved | null {
   return data;
 }
 
-const DNY = ['neděle', 'pondělí', 'úterý', 'středa', 'čtvrtek', 'pátek', 'sobota'];
-
-function datumCesky(iso: string): string {
-  const d = new Date(`${iso}T00:00:00`);
-  return `${DNY[d.getDay()]} ${d.getDate()}. ${d.getMonth() + 1}. ${d.getFullYear()}`;
-}
-
 function datumKratce(iso: string | null): string | null {
   if (!iso) return null;
   const d = new Date(iso);
@@ -101,13 +99,50 @@ function kdy(p: Novinka): string | null {
   return objeveno ? `objevilo se ${objeveno}` : null;
 }
 
+/**
+ * Čím zpráva je. Názvy se drží slovníku pojmů (docs/slovnik-pojmu.md).
+ *
+ * Štítek je jediné, co o obsahu tvrdíme my; všechno ostatní je titulek školy
+ * a odkaz na její článek.
+ */
+const STITKY: Record<string, string> = {
+  dod: 'Den otevřených dveří',
+  prijimacky_nanecisto: 'Přijímačky nanečisto',
+  setkani_uchazecu: 'Setkání s uchazeči',
+  pripravny_kurz: 'Přípravný kurz k přijímačkám',
+  kriteria: 'Kritéria přijetí',
+  volna_mista: 'Hlášená volná místa',
+  vysledky_prijm: 'Výsledky přijímacího řízení',
+  talentove_zkousky: 'Talentová zkouška',
+  nahradni_termin: 'Náhradní termín',
+  terminy_jpz: 'Termíny jednotné přijímací zkoušky',
+  prijimaci_rizeni: 'Přijímací řízení',
+  prihlaska: 'Přihláška',
+};
+
+/** Od nejkonkrétnějšího k nejobecnějšímu: štítek nese první nalezená třída. */
+const PORADI_STITKU = [
+  'dod', 'prijimacky_nanecisto', 'setkani_uchazecu', 'pripravny_kurz', 'kriteria', 'volna_mista',
+  'vysledky_prijm', 'talentove_zkousky', 'nahradni_termin', 'terminy_jpz',
+  'prijimaci_rizeni', 'prihlaska',
+];
+
+function stitek(tridy: string[]): string {
+  // Přehledový článek („co všechno letos platí") se chytá na víc témat naráz.
+  // Konkrétní štítek by z něj udělal zprávu o jedné věci – ověřeno na škole
+  // 600005399, kde se článek o jednotné přijímací zkoušce chytil zároveň na
+  // talentové zkoušky, výsledky i termíny. Takový článek dostane obecný štítek.
+  if (tridy.length >= 3) return STITKY.prijimaci_rizeni;
+  return STITKY[PORADI_STITKU.find((t) => tridy.includes(t)) ?? ''] ?? STITKY.prijimaci_rizeni;
+}
+
 export function NovinkySkoly({ redizo }: { redizo: string }) {
   const data = useNovinky(redizo);
 
   const polozky = data?.stav === 'ok' ? data.polozky ?? [] : [];
   if (polozky.length === 0) return null;
 
-  const karty = polozky.filter((p) => p.zobrazeni === 'karta_terminu' && p.terminy.length > 0);
+  const karty = polozky.filter((p) => p.zobrazeni === 'karta' || p.zobrazeni === 'karta_terminu');
   const ostatni = polozky.filter((p) => !karty.includes(p));
   const overeno = datumKratce(data?.zdrojOverenAt ?? null);
 
@@ -116,26 +151,20 @@ export function NovinkySkoly({ redizo }: { redizo: string }) {
       {karty.map((p) => (
         <div key={p.id} className="space-y-2 rounded-2xl border border-[#b5e0d4] bg-white p-5">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h3 className="text-[18px] font-bold text-[#0b7a65]">
-              {p.tridy.includes('dod') ? 'Den otevřených dveří' : 'Termín oznámený školou'}
-            </h3>
+            <h3 className="text-[18px] font-bold text-[#0b7a65]">{stitek(p.tridy)}</h3>
             <span className="inline-flex items-center whitespace-nowrap rounded-full bg-slate-100 px-2.5 py-0.5 text-[12px] font-bold text-slate-500">
               z webu školy, automaticky
             </span>
           </div>
-          <ul className="space-y-1 text-[16px] font-semibold text-slate-900">
-            {p.terminy.map((t) => (
-              <li key={t}>{datumCesky(t)}</li>
-            ))}
-          </ul>
-          <p className="text-[15px] text-slate-700">
+          <p className="text-[16px]">
             <a href={p.url} rel="noopener noreferrer" className="font-semibold text-[#0b7a65] underline">
               {p.titulek}
             </a>
+            {kdy(p) ? <span className="ml-2 text-[13px] font-normal text-slate-500">{kdy(p)}</span> : null}
           </p>
           <p className="text-[12px] text-slate-500">
-            Převzato z webu školy{overeno ? `, zdroj naposledy ověřen ${overeno}` : ''}. Termín ověřte
-            u školy: pořadatelem akce je škola, ne tento web.
+            Převzato z webu školy{overeno ? `, zdroj naposledy ověřen ${overeno}` : ''}. Datum konání
+            a podmínky najdete v článku školy: pořadatelem je škola, ne tento web.
           </p>
         </div>
       ))}
