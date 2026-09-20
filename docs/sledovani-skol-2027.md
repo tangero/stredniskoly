@@ -1,6 +1,6 @@
 # Sledování škol a hromadná upozornění na změny
 
-Verze 1.0 · 14. 9. 2026 · Návrh k rozhodnutí, nic není implementované.
+Verze 1.1 · 14. 9. 2026, revize 20. 9. 2026 · Návrh k rozhodnutí, nic není implementované.
 
 Rodina zadá e-mail a dostane upozornění, když se změní údaje škol, které sleduje. Navazuje na [stránku školy](stranka-skoly-2027.md), [registr stavu datových sad](../public/stav_datovych_sad.json), [datovou linku](datova-linka.md) a [portál pro školy](portal-pro-skoly-2027.md).
 
@@ -102,7 +102,7 @@ Stavy tlačítka: „Sledovat školu“ → po odeslání „Potvrďte v e-mailu
 
 - **Bez účtu a hesla.** Odběratele identifikuje e-mail. Přihlášení k odběru se potvrzuje odkazem v e-mailu (double opt-in); stejný princip jako magic link portálu (`src/lib/portal-email.ts`, podepsaný token s platností).
 - **Správa odběru** přes podepsaný odkaz v každém e-mailu: seznam sledovaných škol, odebrání, odhlášení všeho.
-- **Seznam odběratelů nesmí do repozitáře.** Jsou to osobní údaje. Potřebuje serverové úložiště; dnes web žádné nemá (portál používá GitHub issues a soubory). Varianty jsou v oddílu 7.
+- **Seznam odběratelů nesmí do repozitáře.** Jsou to osobní údaje. Potřebuje serverové úložiště. **Od 18. 9. 2026 ho projekt má** a věta „dnes web žádné nemá“ už neplatí: Postgres u Neonu (`db/migrace/001-novinky.sql`, `002-portal.sql`, `@neondatabase/serverless`) s tabulkami odběratelů, potvrzení, dokladů souhlasu, dávek, rozpočtu a webhooků v `src/lib/novinky-schema.ts`. Chybí jen vazba `odber_skoly(odberatel_id, redizo)`. Rozbor v [překonaných rozhodnutích](prehodnoceni-rozhodnuti-rss-2027.md), P3.
 - **E-maily** přes Resend, který portál už používá. Hromadné odeslání po dávkách, s hlavičkou `List-Unsubscribe`.
 
 ## 6. Proč to není příliš složité
@@ -117,7 +117,7 @@ Doporučené pořadí: nejdřív rozdílový skript a záznam událostí (užite
 
 ## 7. Otevřené otázky
 
-1. **Úložiště odběrů:** databáze u hostingu (například Vercel Postgres nebo KV), nebo seznam kontaktů přímo u poskytovatele e-mailů s vlastními poli pro sledované školy?
+1. ~~**Úložiště odběrů:**~~ **uzavřeno 20. 9. 2026** – Postgres u Neonu, který už provozuje portál i plošné novinky (viz oddíl 5). Zbývá vazební tabulka, ne volba technologie.
 2. **Frekvence:** denní souhrn (navrženo), nebo okamžitě u událostí jedné školy a denně u hromadných?
 3. **Zásady ochrany osobních údajů:** web potřebuje doplnit text o zpracování e-mailů pro upozornění.
 4. **Sledování z portálu:** má škola dostat upozornění, když se změní její vlastní údaje z oficiálních zdrojů? Pro redakci by to bylo levné ověřování dat.
@@ -127,3 +127,4 @@ Doporučené pořadí: nejdřív rozdílový skript a záznam událostí (užite
 | Verze | Změna |
 |---|---|
 | 1.0 | Návrh: upozornění na události místo úprav, denní souhrn seskupený podle události, zdroje událostí, umístění tlačítka, identita bez účtu, pořadí realizace. |
+| 1.1 | 20. 9. 2026: úložiště odběrů uzavřeno (Postgres u Neonu už běží), otevřená otázka 1 zrušena. Otevřeno zůstává sjednocení modelu události s novinkami z webů škol – viz [překonaná rozhodnutí](prehodnoceni-rozhodnuti-rss-2027.md), P4. |

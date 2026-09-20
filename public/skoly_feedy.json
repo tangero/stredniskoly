@@ -1,0 +1,3210 @@
+{
+ "meta": {
+  "zdroj": "data/sondy/rss-webu-skol-20260919.json",
+  "vygenerovano": "2026-09-20",
+  "skript": "scripts/build-skoly-feedy.py",
+  "poznamka": "Auditní export registru; provozní stav zdrojů je v tabulce skola_feed.",
+  "skol_se_zdrojem": 533,
+  "skol_v_sonde": 1093
+ },
+ "skoly": {
+  "600001431": {
+   "feed_url": "https://bgbzs.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://bgbzs.cz/"
+  },
+  "600001661": {
+   "feed_url": "https://academicschool.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://academicschool.cz/"
+  },
+  "600004520": {
+   "feed_url": "https://www.oadusni.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.oadusni.cz/"
+  },
+  "600004546": {
+   "feed_url": "https://www.truhla.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.truhla.cz/"
+  },
+  "600004554": {
+   "feed_url": "https://www.panska.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.panska.cz/"
+  },
+  "600004562": {
+   "feed_url": "https://www.hellichovka.cz/feed",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.hellichovka.cz/"
+  },
+  "600004589": {
+   "feed_url": "https://www.gjn.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gjn.cz/"
+  },
+  "600004619": {
+   "feed_url": "http://www.spsdusni.cz/index.php?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://www.spsdusni.cz/"
+  },
+  "600004635": {
+   "feed_url": "https://www.gjp1.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://www.gjp1.cz/"
+  },
+  "600004694": {
+   "feed_url": "https://www.gpjp.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gpjp.cz/"
+  },
+  "600004724": {
+   "feed_url": "https://www.gybot.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.gybot.cz/"
+  },
+  "600004759": {
+   "feed_url": "https://cao8.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://cao8.cz/"
+  },
+  "600004775": {
+   "feed_url": "https://www.oavin.cz/rss",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.oavin.cz/"
+  },
+  "600004783": {
+   "feed_url": "https://spsejecna.cz/event/rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://www.spsejecna.cz/"
+  },
+  "600004791": {
+   "feed_url": "https://www.arcig.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.arcig.cz/"
+  },
+  "600004848": {
+   "feed_url": "https://skolasportek.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://skolasportek.cz"
+  },
+  "600004929": {
+   "feed_url": "https://www.oa-kubelikova.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.oa-kubelikova.cz/"
+  },
+  "600004945": {
+   "feed_url": "https://www.sups.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sups.cz/"
+  },
+  "600004961": {
+   "feed_url": "http://www.gymnazium-prazacka.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "http://www.gymnazium-prazacka.cz/"
+  },
+  "600005071": {
+   "feed_url": "https://spsgocar.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://spsgocar.cz/"
+  },
+  "600005160": {
+   "feed_url": "https://altis.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://altis.cz/"
+  },
+  "600005208": {
+   "feed_url": "https://www.gymnazium-opatov.cz/index.php?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymnazium-opatov.cz/"
+  },
+  "600005216": {
+   "feed_url": "https://www.ssgh.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.ssgh.cz/"
+  },
+  "600005259": {
+   "feed_url": "https://www.ohradni.cz/index.php?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ohradni.cz/"
+  },
+  "600005267": {
+   "feed_url": "https://kgm.cz/zkusebni-stranka/feed",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://kgm.cz/"
+  },
+  "600005305": {
+   "feed_url": "https://praha.educanet.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://praha.educanet.cz/"
+  },
+  "600005321": {
+   "feed_url": "https://www.mouss.cz/Akce-skoly?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.mouss.cz/"
+  },
+  "600005356": {
+   "feed_url": "https://www.podnikakademie.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.podnikakademie.cz/"
+  },
+  "600005364": {
+   "feed_url": "https://www.skolamichael.cz/cs/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.skolamichael.cz/cs/"
+  },
+  "600005381": {
+   "feed_url": "https://zelenypruh.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://zelenypruh.cz/"
+  },
+  "600005399": {
+   "feed_url": "https://www.ksidlisti.cz/remote/rss.php?tp=4&id=-1",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ksidlisti.cz"
+  },
+  "600005429": {
+   "feed_url": "http://eapraha.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://eapraha.cz/"
+  },
+  "600005500": {
+   "feed_url": "https://gop.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gop.cz/"
+  },
+  "600005518": {
+   "feed_url": "https://www.gchd.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gchd.cz/"
+  },
+  "600005534": {
+   "feed_url": "https://www.gymjh.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymjh.cz/"
+  },
+  "600005542": {
+   "feed_url": "https://ssps.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://ssps.cz/"
+  },
+  "600005551": {
+   "feed_url": "https://www.oegp.cz/cs/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.oegp.cz/cs/"
+  },
+  "600005593": {
+   "feed_url": "https://mensagymnazium.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://mensagymnazium.cz/"
+  },
+  "600005631": {
+   "feed_url": "https://ssps.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://ssps.cz"
+  },
+  "600005658": {
+   "feed_url": "https://www.sps-dopravni.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sps-dopravni.cz/"
+  },
+  "600005674": {
+   "feed_url": "https://stredniskoladrtinova.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://stredniskoladrtinova.cz/"
+  },
+  "600005691": {
+   "feed_url": "https://gjk.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gjk.cz/"
+  },
+  "600005721": {
+   "feed_url": "https://www.oabubenec.cz/dokumenty?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.oabubenec.cz/"
+  },
+  "600005771": {
+   "feed_url": "https://www.alej.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.alej.cz/"
+  },
+  "600005798": {
+   "feed_url": "https://www.bean.cz/projekty-eu?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.bean.cz/"
+  },
+  "600005844": {
+   "feed_url": "https://www.pedevropska.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.pedevropska.cz/"
+  },
+  "600005861": {
+   "feed_url": "https://www.vosonspso.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.vosonspso.cz/"
+  },
+  "600005895": {
+   "feed_url": "https://gymnazium.euroskola.cz/uvod2020-2/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gymnazium.euroskola.cz/"
+  },
+  "600005968": {
+   "feed_url": "https://www.gyperner.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gyperner.cz/"
+  },
+  "600005976": {
+   "feed_url": "https://www.kollarovka.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.kollarovka.cz/"
+  },
+  "600005984": {
+   "feed_url": "http://www.prirodniskola.cz/rss",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "http://www.prirodniskola.cz/"
+  },
+  "600006018": {
+   "feed_url": "https://www.porg.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.porg.cz/"
+  },
+  "600006026": {
+   "feed_url": "https://www.skolabohnice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.skolabohnice.cz/"
+  },
+  "600006034": {
+   "feed_url": "https://skolagastronomie.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://skolagastronomie.cz/"
+  },
+  "600006042": {
+   "feed_url": "https://artecon.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://artecon.cz/"
+  },
+  "600006051": {
+   "feed_url": "https://www.trivis.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.trivis.cz/"
+  },
+  "600006077": {
+   "feed_url": "https://www.cssjb.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.cssjb.cz/"
+  },
+  "600006107": {
+   "feed_url": "https://www.gymjs.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymjs.cz/"
+  },
+  "600006131": {
+   "feed_url": "https://gymcak.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gymcak.cz/"
+  },
+  "600006140": {
+   "feed_url": "https://www.englishcollege.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.englishcollege.cz/"
+  },
+  "600006166": {
+   "feed_url": "https://gymnchod.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gymnchod.cz/"
+  },
+  "600006174": {
+   "feed_url": "https://www.ssemi.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ssemi.cz/"
+  },
+  "600006247": {
+   "feed_url": "https://www.gymlit.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymlit.cz/"
+  },
+  "600006280": {
+   "feed_url": "https://skolajarov.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://skolajarov.cz/"
+  },
+  "600006301": {
+   "feed_url": "https://www.sos-start.cz/aktualne?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.sos-start.cz/"
+  },
+  "600006328": {
+   "feed_url": "https://www.bean.cz/projekty-eu?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.bean.cz/"
+  },
+  "600006409": {
+   "feed_url": "https://praha.euroskola.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://praha.euroskola.cz/"
+  },
+  "600006433": {
+   "feed_url": "https://www.sou-cakovice.cz/?feed=rss2&page_id=28",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sou-cakovice.cz/"
+  },
+  "600006476": {
+   "feed_url": "https://krestgym.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://krestgym.cz"
+  },
+  "600006531": {
+   "feed_url": "https://www.gbc-pcssou.cz/rss/news",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gbc-pcssou.cz/"
+  },
+  "600006565": {
+   "feed_url": "https://www.trebesin.cz/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.trebesin.cz/"
+  },
+  "600006581": {
+   "feed_url": "https://ssgukrbu.cz/rss/all.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ssgukrbu.cz/"
+  },
+  "600006603": {
+   "feed_url": "https://www.gymvod.cz/rss",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.gymvod.cz/aktualni-informace/"
+  },
+  "600006646": {
+   "feed_url": "https://www.omska.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.omska.cz/"
+  },
+  "600006662": {
+   "feed_url": "https://spgsfuturum.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://spgsfuturum.cz/"
+  },
+  "600006689": {
+   "feed_url": "https://www.zemsbn.cz/aktuality-archiv?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.zemsbn.cz/"
+  },
+  "600006727": {
+   "feed_url": "https://sosbn.cz/index.php/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sosbn.cz/"
+  },
+  "600006751": {
+   "feed_url": "https://www.gymvla.cz/?feed=rss2",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://www.gymvla.cz/"
+  },
+  "600006760": {
+   "feed_url": "https://www.sosasou-vlasim.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.sosasou-vlasim.cz/"
+  },
+  "600006778": {
+   "feed_url": "https://www.oaneveklov.cz/rss/news",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.oaneveklov.cz/"
+  },
+  "600006832": {
+   "feed_url": "https://www.oaspgsberoun.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.oaspgsberoun.cz/"
+  },
+  "600006913": {
+   "feed_url": "https://www.gymnaziumslany.cz/index.php?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymnaziumslany.cz/"
+  },
+  "600006964": {
+   "feed_url": "https://www.sosik.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sosik.cz/"
+  },
+  "600006972": {
+   "feed_url": "https://www.gymnasiumkladno.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymnasiumkladno.cz/"
+  },
+  "600007081": {
+   "feed_url": "https://gkolin.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gkolin.cz/"
+  },
+  "600007090": {
+   "feed_url": "https://oakolin.eu/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://oakolin.eu/"
+  },
+  "600007146": {
+   "feed_url": "https://www.ossp.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ossp.cz/"
+  },
+  "600007171": {
+   "feed_url": "https://www.sps-ko.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sps-ko.cz/"
+  },
+  "600007189": {
+   "feed_url": "http://soskolin.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://soskolin.cz/"
+  },
+  "600007219": {
+   "feed_url": "https://www.gymkh.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymkh.cz/"
+  },
+  "600007243": {
+   "feed_url": "https://www.gymcaslav.cz/blog-feed.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymcaslav.cz/"
+  },
+  "600007251": {
+   "feed_url": "https://sps-caslav.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sps-caslav.cz/"
+  },
+  "600007278": {
+   "feed_url": "https://szescaslav.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://szescaslav.cz/"
+  },
+  "600007294": {
+   "feed_url": "https://soskh.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://soskh.cz/"
+  },
+  "600007316": {
+   "feed_url": "https://www.gjp-me.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gjp-me.cz/"
+  },
+  "600007421": {
+   "feed_url": "https://gmh.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://gmh.cz/"
+  },
+  "600007481": {
+   "feed_url": "https://www.hermes-mb.cz/index.php?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.hermes-mb.cz/"
+  },
+  "600007499": {
+   "feed_url": "https://www.hermes-mb.cz/index.php?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.hermes-mb.cz/"
+  },
+  "600007529": {
+   "feed_url": "https://oamb.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://oamb.cz/"
+  },
+  "600007642": {
+   "feed_url": "https://www.sossoumk.cz/dokumenty-skoly?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.sossoumk.cz/"
+  },
+  "600007651": {
+   "feed_url": "https://www.ssdlysa.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.ssdlysa.cz/"
+  },
+  "600007669": {
+   "feed_url": "https://oalysa.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://oalysa.cz/"
+  },
+  "600007685": {
+   "feed_url": "https://soupdy.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://soupdy.cz/"
+  },
+  "600007693": {
+   "feed_url": "https://www.gcelakovice.cz/_new/index.php/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gcelakovice.cz/_new/"
+  },
+  "600007766": {
+   "feed_url": "https://www.gyri.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gyri.cz/"
+  },
+  "600007774": {
+   "feed_url": "https://gbl.cz/index.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gbl.cz/"
+  },
+  "600007782": {
+   "feed_url": "https://soscelakovice.cz/rss/all.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.soscelakovice.cz/"
+  },
+  "600007791": {
+   "feed_url": "http://www.sosjilove.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://www.sosjilove.cz/"
+  },
+  "600007839": {
+   "feed_url": "https://www.oapb.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.oapb.cz/"
+  },
+  "600007847": {
+   "feed_url": "https://gympb.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gympb.cz/"
+  },
+  "600007871": {
+   "feed_url": "https://sbrez.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sbrez.cz/"
+  },
+  "600007880": {
+   "feed_url": "https://www.souhlubos.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.souhlubos.cz/"
+  },
+  "600007928": {
+   "feed_url": "https://www.dubno.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.dubno.cz/"
+  },
+  "600007944": {
+   "feed_url": "https://www.souzns.cz/projekty?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.souzns.cz/"
+  },
+  "600007979": {
+   "feed_url": "https://www.sls-krivoklat.cz/rss.xml",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.sls-krivoklat.cz/"
+  },
+  "600008045": {
+   "feed_url": "https://www.oacb.cz/projekty?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.oacb.cz/"
+  },
+  "600008100": {
+   "feed_url": "https://www.crg.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.crg.cz/"
+  },
+  "600008118": {
+   "feed_url": "https://stredniskola.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://stredniskola.cz/"
+  },
+  "600008215": {
+   "feed_url": "https://www.skolacb.cz/blog-feed.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.skolacb.cz/"
+  },
+  "600008266": {
+   "feed_url": "https://ceskebudejovice.educanet.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://ceskebudejovice.educanet.cz/"
+  },
+  "600008347": {
+   "feed_url": "https://www.gymn-dacice.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymn-dacice.cz/cz"
+  },
+  "600008479": {
+   "feed_url": "https://www.cza-hu.cz/rss.php",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.cza-hu.cz/"
+  },
+  "600008509": {
+   "feed_url": "https://www.stredniskola.com/index.php/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.stredniskola.com/"
+  },
+  "600008533": {
+   "feed_url": "https://www.gymnazium-milevsko.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymnazium-milevsko.cz/"
+  },
+  "600008541": {
+   "feed_url": "http://www.gymna-pi.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://www.gymna-pi.cz/"
+  },
+  "600008550": {
+   "feed_url": "https://www.szespisek.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.szespisek.cz/cs"
+  },
+  "600008584": {
+   "feed_url": "https://oa-pisek.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://oa-pisek.cz/"
+  },
+  "600008592": {
+   "feed_url": "https://www.sou-pi.cz/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sou-pi.cz/"
+  },
+  "600008703": {
+   "feed_url": "http://www.blek.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "http://www.blek.cz/"
+  },
+  "600008711": {
+   "feed_url": "https://www.trivisvodnany.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.trivisvodnany.cz/"
+  },
+  "600008754": {
+   "feed_url": "https://soublatna.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://soublatna.cz/"
+  },
+  "600008797": {
+   "feed_url": "https://www.sps-tabor.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sps-tabor.cz/"
+  },
+  "600008835": {
+   "feed_url": "https://tabsg.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://tabsg.cz/"
+  },
+  "600008886": {
+   "feed_url": "https://sssi.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sssi.cz/"
+  },
+  "600008932": {
+   "feed_url": "https://oadomazlice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://oadomazlice.cz/"
+  },
+  "600008975": {
+   "feed_url": "https://www.gymas.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.gymas.cz/cs"
+  },
+  "600008991": {
+   "feed_url": "https://www.goaml.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.goaml.cz/"
+  },
+  "600009076": {
+   "feed_url": "http://www.schs.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://www.schs.cz/"
+  },
+  "600009084": {
+   "feed_url": "https://spsostrov.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://spsostrov.cz/"
+  },
+  "600009106": {
+   "feed_url": "https://www.ssstravovani.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ssstravovani.cz/"
+  },
+  "600009122": {
+   "feed_url": "https://www.pedgym-kv.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.pedgym-kv.cz/cs"
+  },
+  "600009190": {
+   "feed_url": "https://www.oakv.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.oakv.cz/"
+  },
+  "600009203": {
+   "feed_url": "https://supskv.cz/index.php/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://supskv.cz/"
+  },
+  "600009262": {
+   "feed_url": "https://www.gymkvary.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.gymkvary.cz/cs"
+  },
+  "600009271": {
+   "feed_url": "http://www.slszlutice.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "http://www.slszlutice.cz/"
+  },
+  "600009297": {
+   "feed_url": "https://www.gymostrov.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.gymostrov.cz/cs"
+  },
+  "600009301": {
+   "feed_url": "https://www.logistickaskola.cz/aktuality-ze-skoly?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.logistickaskola.cz/"
+  },
+  "600009360": {
+   "feed_url": "https://www.gymsusice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymsusice.cz/"
+  },
+  "600009459": {
+   "feed_url": "https://www.sgpilsen.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.sgpilsen.cz/"
+  },
+  "600009467": {
+   "feed_url": "https://infis.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://infis.cz/"
+  },
+  "600009491": {
+   "feed_url": "https://www.spseplzen.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spseplzen.cz/"
+  },
+  "600009530": {
+   "feed_url": "https://www.mgplzen.cz/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.mgplzen.cz/"
+  },
+  "600009556": {
+   "feed_url": "https://www.mikulasske.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.mikulasske.cz/"
+  },
+  "600009564": {
+   "feed_url": "https://www.bpaplzen.cz/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.bpaplzen.cz/"
+  },
+  "600009599": {
+   "feed_url": "https://oaplzen.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://oaplzen.cz/"
+  },
+  "600009661": {
+   "feed_url": "https://poaplzen.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://poaplzen.cz/"
+  },
+  "600009700": {
+   "feed_url": "https://www.hsplzen.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.hsplzen.cz/"
+  },
+  "600009734": {
+   "feed_url": "https://www.spsstav.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spsstav.cz/"
+  },
+  "600009785": {
+   "feed_url": "https://www.cisplzen.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.cisplzen.cz/"
+  },
+  "600009793": {
+   "feed_url": "https://gsplasy.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gsplasy.cz/"
+  },
+  "600009831": {
+   "feed_url": "https://www.gasos.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gasos.cz/"
+  },
+  "600009882": {
+   "feed_url": "https://www.gymso.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.gymso.cz/"
+  },
+  "600009947": {
+   "feed_url": "https://www.goas.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.goas.cz/"
+  },
+  "600009955": {
+   "feed_url": "https://gymnazium-tachov.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gymnazium-tachov.cz/"
+  },
+  "600009980": {
+   "feed_url": "https://www.sosstribro.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sosstribro.cz/"
+  },
+  "600010007": {
+   "feed_url": "https://gymi.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gymi.cz/"
+  },
+  "600010015": {
+   "feed_url": "https://www.oacl.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.oacl.cz/"
+  },
+  "600010040": {
+   "feed_url": "http://www.sps-cl.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://www.sps-cl.cz/"
+  },
+  "600010104": {
+   "feed_url": "https://www.skolalipa.cz/index.php?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.skolalipa.cz/"
+  },
+  "600010171": {
+   "feed_url": "https://www.oadc.cz/index.php/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.oadc.cz/"
+  },
+  "600010287": {
+   "feed_url": "https://www.gymcv.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymcv.cz/"
+  },
+  "600010295": {
+   "feed_url": "https://www.gymka.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymka.cz/"
+  },
+  "600010309": {
+   "feed_url": "https://www.sps-kadan.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sps-kadan.cz/"
+  },
+  "600010368": {
+   "feed_url": "https://www.tgacv.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.tgacv.cz/"
+  },
+  "600010422": {
+   "feed_url": "https://www.supss.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.supss.cz/"
+  },
+  "600010449": {
+   "feed_url": "https://www.gymjbc.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymjbc.cz/"
+  },
+  "600010481": {
+   "feed_url": "https://sosjbc.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sosjbc.cz/"
+  },
+  "600010490": {
+   "feed_url": "https://spstjbc.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://spstjbc.cz/"
+  },
+  "600010511": {
+   "feed_url": "https://www.gymfry.net/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymfry.net"
+  },
+  "600010538": {
+   "feed_url": "https://gdoctrina.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gdoctrina.cz/"
+  },
+  "600010554": {
+   "feed_url": "https://www.gfxs.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gfxs.cz/"
+  },
+  "600010562": {
+   "feed_url": "https://www.stavlib.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.stavlib.cz/"
+  },
+  "600010589": {
+   "feed_url": "https://www.jergym.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.jergym.cz/"
+  },
+  "600010678": {
+   "feed_url": "https://stredni-skola-frydlant.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://stredni-skola-frydlant.cz/"
+  },
+  "600010996": {
+   "feed_url": "https://www.skolazatec.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.skolazatec.cz/"
+  },
+  "600011003": {
+   "feed_url": "https://www.gsospodborany.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gsospodborany.cz/"
+  },
+  "600011011": {
+   "feed_url": "https://www.oazszatec.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.oazszatec.cz/"
+  },
+  "600011054": {
+   "feed_url": "https://www.gymmost.cz/rss",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.gymmost.cz/"
+  },
+  "600011089": {
+   "feed_url": "https://podnikac.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://podnikac.cz/"
+  },
+  "600011119": {
+   "feed_url": "https://educhem.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://educhem.cz/"
+  },
+  "600011127": {
+   "feed_url": "https://www.interdact.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.interdact.cz/"
+  },
+  "600011143": {
+   "feed_url": "https://www.spsasosgsmost.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spsasosgsmost.cz/"
+  },
+  "600011178": {
+   "feed_url": "https://www.bukaschool.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://www.bukaschool.cz/"
+  },
+  "600011232": {
+   "feed_url": "https://www.gymdubi.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymdubi.cz/"
+  },
+  "600011283": {
+   "feed_url": "https://www.ssstp.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ssstp.cz/"
+  },
+  "600011291": {
+   "feed_url": "https://www.ststeplice.cz/feed",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ststeplice.cz/"
+  },
+  "600011305": {
+   "feed_url": "https://www.skola-agc.cz/neprehlednete?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.skola-agc.cz/"
+  },
+  "600011348": {
+   "feed_url": "https://spsul.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://spsul.cz/"
+  },
+  "600011488": {
+   "feed_url": "https://www.trivisusti.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.trivisusti.cz/"
+  },
+  "600011500": {
+   "feed_url": "https://www.ghb.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ghb.cz/"
+  },
+  "600011526": {
+   "feed_url": "https://www.gch.cz/rss.php",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gch.cz/"
+  },
+  "600011534": {
+   "feed_url": "https://www.gvi.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gvi.cz/"
+  },
+  "600011551": {
+   "feed_url": "https://www.stavskola.cz/rss.php",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.stavskola.cz/"
+  },
+  "600011615": {
+   "feed_url": "https://1sjg.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://1sjg.cz/"
+  },
+  "600011666": {
+   "feed_url": "http://www.gybon.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "http://www.gybon.cz/"
+  },
+  "600011674": {
+   "feed_url": "https://www.gjkt.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gjkt.cz/"
+  },
+  "600011798": {
+   "feed_url": "https://soavoshk.cz/zkusebni-stranka/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://soavoshk.cz/"
+  },
+  "600011801": {
+   "feed_url": "https://www.sosvet.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sosvet.cz/"
+  },
+  "600011828": {
+   "feed_url": "https://www.hradebni.cz/aktivity1?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.hradebni.cz/"
+  },
+  "600011879": {
+   "feed_url": "https://oa.chrudim.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://oa.chrudim.cz/"
+  },
+  "600011887": {
+   "feed_url": "https://www.gjr.cz/aktivity?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.gjr.cz/"
+  },
+  "600011941": {
+   "feed_url": "https://sos-tremosnice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sos-tremosnice.cz/"
+  },
+  "600011984": {
+   "feed_url": "https://www.sps-chrudim.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.sps-chrudim.cz/"
+  },
+  "600011992": {
+   "feed_url": "https://gymjc.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gymjc.cz/"
+  },
+  "600012018": {
+   "feed_url": "http://www.zahradnicka-skola-kopidlno.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://www.zahradnicka-skola-kopidlno.cz/"
+  },
+  "600012026": {
+   "feed_url": "https://gymnp.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gymnp.cz/"
+  },
+  "600012069": {
+   "feed_url": "https://prumyslovkajicin.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://prumyslovkajicin.cz/"
+  },
+  "600012115": {
+   "feed_url": "https://www.gymnachod.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymnachod.cz/"
+  },
+  "600012310": {
+   "feed_url": "https://www.gypce.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.gypce.cz/"
+  },
+  "600012450": {
+   "feed_url": "https://www.souzchvaletice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.souzchvaletice.cz/"
+  },
+  "600012484": {
+   "feed_url": "https://www.souplyn.cz/dokumenty?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.souplyn.cz/"
+  },
+  "600012514": {
+   "feed_url": "https://labskaskola.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://labskaskola.cz/"
+  },
+  "600012522": {
+   "feed_url": "https://www.educapardubice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.educapardubice.cz/"
+  },
+  "600012573": {
+   "feed_url": "https://www.szeskostelec.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.szeskostelec.cz/"
+  },
+  "600012701": {
+   "feed_url": "https://www.glit.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.glit.cz/"
+  },
+  "600012794": {
+   "feed_url": "https://www.vospspgs.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.vospspgs.cz/"
+  },
+  "600012816": {
+   "feed_url": "https://www.issmt.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://www.issmt.cz/"
+  },
+  "600012859": {
+   "feed_url": "https://www.gympolicka.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gympolicka.cz/"
+  },
+  "600012867": {
+   "feed_url": "https://www.gym-dk.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gym-dk.cz/"
+  },
+  "600013006": {
+   "feed_url": "https://sposdk.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sposdk.cz/"
+  },
+  "600013022": {
+   "feed_url": "https://www.gymnct.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.gymnct.cz/"
+  },
+  "600013031": {
+   "feed_url": "https://www.oa-chocen.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.oa-chocen.cz/"
+  },
+  "600013103": {
+   "feed_url": "https://sspo.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sspo.cz/"
+  },
+  "600013120": {
+   "feed_url": "https://www.lsg.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.lsg.cz/"
+  },
+  "600013138": {
+   "feed_url": "https://www.ssup.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ssup.cz/"
+  },
+  "600013146": {
+   "feed_url": "http://www.szes-la.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "http://www.szes-la.cz/"
+  },
+  "600013162": {
+   "feed_url": "https://www.vda.cz/uredni-deska?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.vda.cz/"
+  },
+  "600013171": {
+   "feed_url": "https://www.skola-zamberk.cz/rodice-a-zaci?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.skola-zamberk.cz/"
+  },
+  "600013197": {
+   "feed_url": "https://www.skola-auto.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.skola-auto.cz/"
+  },
+  "600013201": {
+   "feed_url": "https://www.pssletohrad.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.pssletohrad.cz/"
+  },
+  "600013243": {
+   "feed_url": "https://www.skolablansko.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.skolablansko.cz/"
+  },
+  "600013286": {
+   "feed_url": "http://fortika.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://fortika.cz/"
+  },
+  "600013367": {
+   "feed_url": "https://www.spgs-bce.cz/dokumenty?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.spgs-bce.cz/"
+  },
+  "600013448": {
+   "feed_url": "https://www.gvid.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gvid.cz/"
+  },
+  "600013481": {
+   "feed_url": "https://www.jaroska.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://www.jaroska.cz/"
+  },
+  "600013511": {
+   "feed_url": "https://www.ssknih.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ssknih.cz/"
+  },
+  "600013600": {
+   "feed_url": "https://www.trivisbrno.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.trivisbrno.cz/"
+  },
+  "600013634": {
+   "feed_url": "https://www.sgldbrno.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.sgldbrno.cz/"
+  },
+  "600013651": {
+   "feed_url": "https://gymum.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gymum.cz/"
+  },
+  "600013669": {
+   "feed_url": "https://brno.educanet.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://brno.educanet.cz/"
+  },
+  "600013677": {
+   "feed_url": "https://www.mgbrno.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.mgbrno.cz/"
+  },
+  "600013685": {
+   "feed_url": "https://ssum.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://ssum.cz/"
+  },
+  "600013693": {
+   "feed_url": "https://www.mojmirak.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.mojmirak.cz/"
+  },
+  "600013740": {
+   "feed_url": "https://www.cmgp.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.cmgp.cz/"
+  },
+  "600013774": {
+   "feed_url": "https://www.trivisveterinabrno.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.trivisveterinabrno.cz/"
+  },
+  "600013804": {
+   "feed_url": "http://www.spsstavbrno.cz/index.php/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://www.spsstavbrno.cz/"
+  },
+  "600013855": {
+   "feed_url": "https://sssebrno.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sssebrno.cz/"
+  },
+  "600013863": {
+   "feed_url": "https://gyby.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gyby.cz/"
+  },
+  "600013898": {
+   "feed_url": "https://skolskykomplex.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://skolskykomplex.cz/"
+  },
+  "600013910": {
+   "feed_url": "https://ssgbrno.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://ssgbrno.cz/"
+  },
+  "600013936": {
+   "feed_url": "https://sokolska.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sokolska.cz/"
+  },
+  "600013979": {
+   "feed_url": "https://www.ssremesel-brno.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ssremesel-brno.cz"
+  },
+  "600013987": {
+   "feed_url": "https://www.gzastavka.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gzastavka.cz/"
+  },
+  "600014011": {
+   "feed_url": "https://skolatisnov.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://skolatisnov.cz/"
+  },
+  "600014053": {
+   "feed_url": "https://www.gjbi.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gjbi.cz/"
+  },
+  "600014070": {
+   "feed_url": "https://www.gym-tisnov.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.gym-tisnov.cz/"
+  },
+  "600014096": {
+   "feed_url": "https://www.skolarajhrad.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.skolarajhrad.cz/"
+  },
+  "600014100": {
+   "feed_url": "https://gymnzidlo.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://gymnzidlo.cz/"
+  },
+  "600014134": {
+   "feed_url": "http://www.gymhust.cz/rss",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "http://www.gymhust.cz/"
+  },
+  "600014151": {
+   "feed_url": "https://gssmikulov.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://gssmikulov.cz/"
+  },
+  "600014231": {
+   "feed_url": "https://www.sseb.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sseb.cz/"
+  },
+  "600014258": {
+   "feed_url": "https://www.gbv.cz/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gbv.cz/"
+  },
+  "600014266": {
+   "feed_url": "https://www.mzbv.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.mzbv.cz/"
+  },
+  "600014291": {
+   "feed_url": "https://www.ssp-hustopece.cz/rss",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.ssp-hustopece.cz/"
+  },
+  "600014321": {
+   "feed_url": "https://www.gjpsosslavicin.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gjpsosslavicin.cz/"
+  },
+  "600014355": {
+   "feed_url": "https://www.spszl.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spszl.cz/"
+  },
+  "600014363": {
+   "feed_url": "https://www.gymzl.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymzl.cz/"
+  },
+  "600014410": {
+   "feed_url": "https://www.oazlin.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.oazlin.cz/"
+  },
+  "600014436": {
+   "feed_url": "https://www.sspgs-zlin.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sspgs-zlin.cz/"
+  },
+  "600014461": {
+   "feed_url": "https://www.gaozl.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gaozl.cz/"
+  },
+  "600014479": {
+   "feed_url": "https://www.orbiszlin.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.orbiszlin.cz/"
+  },
+  "600014495": {
+   "feed_url": "https://www.spsotrokovice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spsotrokovice.cz/"
+  },
+  "600014614": {
+   "feed_url": "https://www.sosbzenec.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sosbzenec.cz/"
+  },
+  "600014649": {
+   "feed_url": "http://sspkyjov.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://sspkyjov.cz/"
+  },
+  "600014665": {
+   "feed_url": "https://www.hs-straznice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.hs-straznice.cz/"
+  },
+  "600014690": {
+   "feed_url": "https://www.stredniskolastraznice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.stredniskolastraznice.cz/"
+  },
+  "600014746": {
+   "feed_url": "https://www.gymnaziumjihlava.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.gymnaziumjihlava.cz/"
+  },
+  "600014754": {
+   "feed_url": "https://www.gstelc.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.gstelc.cz"
+  },
+  "600014827": {
+   "feed_url": "https://www.mg-akademie.cz/index.php?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.mg-akademie.cz/"
+  },
+  "600014860": {
+   "feed_url": "https://www.secr.cz/aktualne?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.secr.cz/"
+  },
+  "600014894": {
+   "feed_url": "https://www.ozs-ji.cz/rss.php",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ozs-ji.cz/"
+  },
+  "600014908": {
+   "feed_url": "https://www.sskola-trest.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sskola-trest.cz/"
+  },
+  "600015033": {
+   "feed_url": "https://www.cmgpv.cz/aktuality-2.html?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.agkm.cz/"
+  },
+  "600015149": {
+   "feed_url": "https://gymnazium-konice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gymnazium-konice.cz/"
+  },
+  "600015173": {
+   "feed_url": "https://www.oapv.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.oapv.cz/"
+  },
+  "600015211": {
+   "feed_url": "https://www.cmgpv.cz/aktuality-2.html?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.cmgpv.cz/"
+  },
+  "600015289": {
+   "feed_url": "http://www.sosprostejov.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://www.sosprostejov.cz/"
+  },
+  "600015297": {
+   "feed_url": "https://artecon.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://artecon.cz/"
+  },
+  "600015343": {
+   "feed_url": "https://www.gtr.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gtr.cz/"
+  },
+  "600015378": {
+   "feed_url": "https://www.szstrebic.eu/blog-feed.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.szstrebic.eu/"
+  },
+  "600015459": {
+   "feed_url": "https://www.ssphzuh.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.ssphzuh.cz/"
+  },
+  "600015467": {
+   "feed_url": "https://www.guh.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.guh.cz/"
+  },
+  "600015483": {
+   "feed_url": "https://www.ssuhbrod.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ssuhbrod.cz/"
+  },
+  "600015530": {
+   "feed_url": "https://gjak.cz/feed",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gjak.cz/"
+  },
+  "600015548": {
+   "feed_url": "https://www.spsoa-ub.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spsoa-ub.cz/"
+  },
+  "600015581": {
+   "feed_url": "https://www.sossluzeb.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sossluzeb.cz/"
+  },
+  "600015629": {
+   "feed_url": "https://www.gykovy.cz/en/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gykovy.cz/en/"
+  },
+  "600015637": {
+   "feed_url": "https://goabuc.edupage.org/rss/news",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://goabuc.edupage.org"
+  },
+  "600015670": {
+   "feed_url": "http://ssp-vyskov.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://ssp-vyskov.cz/"
+  },
+  "600015718": {
+   "feed_url": "https://uhlarka.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://uhlarka.cz/"
+  },
+  "600015751": {
+   "feed_url": "https://www.sos-znojmo.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sos-znojmo.cz/"
+  },
+  "600015785": {
+   "feed_url": "https://gpoa.cz/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gpoa.cz"
+  },
+  "600015815": {
+   "feed_url": "https://www.sousoszn.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sousoszn.cz/"
+  },
+  "600015891": {
+   "feed_url": "https://www.agts.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.agts.cz/"
+  },
+  "600015971": {
+   "feed_url": "https://www.spszr.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.spszr.cz/"
+  },
+  "600016064": {
+   "feed_url": "https://gymbru.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gymbru.cz/"
+  },
+  "600016099": {
+   "feed_url": "https://www.spgs-szs.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spgs-szs.cz/"
+  },
+  "600016170": {
+   "feed_url": "https://www.spsoa.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spsoa.cz/"
+  },
+  "600016234": {
+   "feed_url": "https://www.gcfm.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gcfm.cz/"
+  },
+  "600016242": {
+   "feed_url": "https://www.ssgos.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ssgos.cz/"
+  },
+  "600016269": {
+   "feed_url": "https://www.gymtri.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.gymtri.cz/"
+  },
+  "600016315": {
+   "feed_url": "https://www.gpbfm.cz/dokumenty?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.gpbfm.cz/"
+  },
+  "600016340": {
+   "feed_url": "https://www.tria-tr.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.tria-tr.cz/"
+  },
+  "600016366": {
+   "feed_url": "https://ostrava.educanet.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://ostrava.educanet.cz/"
+  },
+  "600016447": {
+   "feed_url": "https://www.prigo.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.prigo.cz/"
+  },
+  "600016480": {
+   "feed_url": "https://www.gym-karvina.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gym-karvina.cz/"
+  },
+  "600016510": {
+   "feed_url": "https://www.ssph.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ssph.cz/"
+  },
+  "600016536": {
+   "feed_url": "https://www.goa-orlova.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.goa-orlova.cz/"
+  },
+  "600016579": {
+   "feed_url": "https://spsehavirov.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://spsehavirov.cz/"
+  },
+  "600016587": {
+   "feed_url": "https://nosch.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://nosch.cz/"
+  },
+  "600016595": {
+   "feed_url": "https://www.msoa.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.msoa.cz/"
+  },
+  "600016609": {
+   "feed_url": "https://www.oact.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.oact.cz/"
+  },
+  "600016684": {
+   "feed_url": "https://www.gsh.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gsh.cz/"
+  },
+  "600016803": {
+   "feed_url": "https://www.sepsstud.cz/absolventi-skoly?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.sepsstud.cz/"
+  },
+  "600016854": {
+   "feed_url": "https://ssodry.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://ssodry.cz/"
+  },
+  "600016927": {
+   "feed_url": "https://www.gytool.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.gytool.cz/"
+  },
+  "600016935": {
+   "feed_url": "https://gcajkol.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gcajkol.cz/"
+  },
+  "600016951": {
+   "feed_url": "https://gymst.edupage.org/rss/news",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gymst.edupage.org/"
+  },
+  "600016960": {
+   "feed_url": "https://www.gymun.cz/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymun.cz/"
+  },
+  "600017010": {
+   "feed_url": "https://www.spssol.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spssol.cz/"
+  },
+  "600017095": {
+   "feed_url": "https://www.ssprool.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.ssprool.cz/"
+  },
+  "600017117": {
+   "feed_url": "https://www.gjo.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gjo.cz/"
+  },
+  "600017133": {
+   "feed_url": "https://www.kosinka.com/kosinka/feed",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.kosinka.com/"
+  },
+  "600017168": {
+   "feed_url": "https://sgmo.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sgmo.cz/"
+  },
+  "600017176": {
+   "feed_url": "https://www.spseol.cz/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spseol.cz/"
+  },
+  "600017192": {
+   "feed_url": "https://sigmundovaskola.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sigmundovaskola.cz/"
+  },
+  "600017249": {
+   "feed_url": "https://www.ghlucin.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.ghlucin.cz/"
+  },
+  "600017265": {
+   "feed_url": "https://www.sgopava.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sgopava.cz/"
+  },
+  "600017311": {
+   "feed_url": "https://www.zemedelka-opava.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.zemedelka-opava.cz/"
+  },
+  "600017320": {
+   "feed_url": "https://www.mgopava.cz/dokumenty-ke-stazeni?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.mgopava.cz/"
+  },
+  "600017346": {
+   "feed_url": "https://www.hssilherovice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.hssilherovice.cz/"
+  },
+  "600017419": {
+   "feed_url": "https://soustop.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://soustop.cz/"
+  },
+  "600017443": {
+   "feed_url": "https://www.jazgym.cz/rss/rss-cz.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.jazgym.cz/"
+  },
+  "600017460": {
+   "feed_url": "https://www.oa-poruba.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.oa-poruba.cz/"
+  },
+  "600017478": {
+   "feed_url": "https://www.gyohavl.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.gyohavl.cz/"
+  },
+  "600017486": {
+   "feed_url": "https://www.gvoz.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.gvoz.cz/"
+  },
+  "600017508": {
+   "feed_url": "https://mgo.cz/jj/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://mgo.cz/jj/"
+  },
+  "600017516": {
+   "feed_url": "https://www.sportgym-ostrava.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.sportgym-ostrava.cz/"
+  },
+  "600017567": {
+   "feed_url": "https://www.ssp-prigo.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ssp-prigo.cz/"
+  },
+  "600017583": {
+   "feed_url": "https://www.spseiostrava.cz/cs/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spseiostrava.cz//cs"
+  },
+  "600017591": {
+   "feed_url": "https://www.prigo.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.prigo.cz/"
+  },
+  "600017648": {
+   "feed_url": "https://www.wigym.cz/dokumenty?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.wigym.cz/"
+  },
+  "600017656": {
+   "feed_url": "https://www.teleinformatika.eu/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.teleinformatika.eu/"
+  },
+  "600017681": {
+   "feed_url": "https://stav-ova.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://stav-ova.cz/"
+  },
+  "600017699": {
+   "feed_url": "https://www.spszengrova.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spszengrova.cz/"
+  },
+  "600017702": {
+   "feed_url": "https://soustav-ostrava.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://soustav-ostrava.cz/"
+  },
+  "600017729": {
+   "feed_url": "https://www.bpa-ostrava.cz/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.bpa-ostrava.cz/"
+  },
+  "600017737": {
+   "feed_url": "https://szas-ostrava.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://szas-ostrava.cz/"
+  },
+  "600017753": {
+   "feed_url": "https://spsch.edupage.org/rss/news",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://spsch.edupage.org/"
+  },
+  "600017761": {
+   "feed_url": "https://www.souauto.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.souauto.cz/"
+  },
+  "600017788": {
+   "feed_url": "https://gymnaziumhranice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gymnaziumhranice.cz/"
+  },
+  "600017796": {
+   "feed_url": "https://www.oaprerov.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.oaprerov.cz/"
+  },
+  "600017818": {
+   "feed_url": "https://sps-prerov.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sps-prerov.cz/"
+  },
+  "600017834": {
+   "feed_url": "https://www.sszeprerov.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.sszeprerov.cz/"
+  },
+  "600017923": {
+   "feed_url": "https://www.glnb.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.glnb.cz/"
+  },
+  "600017966": {
+   "feed_url": "https://waldorf-olomouc.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://waldorf-olomouc.cz/"
+  },
+  "600017974": {
+   "feed_url": "https://gkj.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gkj.cz/"
+  },
+  "600018008": {
+   "feed_url": "https://gyza.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gyza.cz/"
+  },
+  "600018016": {
+   "feed_url": "https://www.gymspk.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.gymspk.cz/"
+  },
+  "600018041": {
+   "feed_url": "https://www.oa-sumperk.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.oa-sumperk.cz/"
+  },
+  "600018075": {
+   "feed_url": "https://www.edusum.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.edusum.cz/"
+  },
+  "600018211": {
+   "feed_url": "https://gymroznov.cz/feed",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gymroznov.cz/"
+  },
+  "600018253": {
+   "feed_url": "https://sosvsetin.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sosvsetin.cz/"
+  },
+  "600018270": {
+   "feed_url": "https://www.oavm.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.oavm.cz/"
+  },
+  "600018342": {
+   "feed_url": "https://www.hotelovkajes.cz/blog-feed.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.hotelovkajes.cz/"
+  },
+  "600019349": {
+   "feed_url": "https://www.moravskastredni.cz/blog-feed.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.moravskastredni.cz/"
+  },
+  "600019454": {
+   "feed_url": "https://mojezdravka.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://mojezdravka.cz/"
+  },
+  "600019497": {
+   "feed_url": "https://www.szsberoun.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.szsberoun.cz/"
+  },
+  "600019535": {
+   "feed_url": "https://zdravka.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://zdravka.cz/"
+  },
+  "600019543": {
+   "feed_url": "https://www.szsmb.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.szsmb.cz/cs"
+  },
+  "600019641": {
+   "feed_url": "https://www.zdravkakv.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.zdravkakv.cz/"
+  },
+  "600019675": {
+   "feed_url": "https://www.zdravka-plzen.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.zdravka-plzen.cz/"
+  },
+  "600019683": {
+   "feed_url": "https://szsdecin.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://szsdecin.cz/"
+  },
+  "600019713": {
+   "feed_url": "https://www.libereckazdravka.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.libereckazdravka.cz/"
+  },
+  "600019748": {
+   "feed_url": "https://www.szsvzs.cz/aktuality-pro-uchazece?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.szsvzs.cz/"
+  },
+  "600019756": {
+   "feed_url": "https://www.zdravskolhb.cz/rss.php",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.zdravskolhb.cz/"
+  },
+  "600019772": {
+   "feed_url": "https://www.zshk.cz/zkusebni-stranka/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.zshk.cz/"
+  },
+  "600019802": {
+   "feed_url": "https://www.szsturnov.cz/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.szsturnov.cz/"
+  },
+  "600019811": {
+   "feed_url": "https://www.szs.svitavy.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.szs.svitavy.cz/"
+  },
+  "600019837": {
+   "feed_url": "https://www.szsuo.cz/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.szsuo.cz/"
+  },
+  "600019861": {
+   "feed_url": "https://www.szsbrno.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.szsbrno.cz/"
+  },
+  "600019896": {
+   "feed_url": "https://www.szs-jaselska.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.szs-jaselska.cz/"
+  },
+  "600019900": {
+   "feed_url": "https://grohova.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://grohova.cz/"
+  },
+  "600019918": {
+   "feed_url": "https://www.szszlin.cz/news/rss/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.szszlin.cz/"
+  },
+  "600019942": {
+   "feed_url": "https://www.szskm.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.szskm.cz/"
+  },
+  "600019951": {
+   "feed_url": "https://www.szdravpv.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.szdravpv.cz/"
+  },
+  "600019985": {
+   "feed_url": "https://www.szsz.cz/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.szsz.cz/"
+  },
+  "600019993": {
+   "feed_url": "https://www.szszr.cz/aktivity-skoly?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.szszr.cz/"
+  },
+  "600020037": {
+   "feed_url": "https://www.mendelova-stredni.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.mendelova-stredni.cz/"
+  },
+  "600020061": {
+   "feed_url": "https://www.szsopava.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.szsopava.cz/"
+  },
+  "600020088": {
+   "feed_url": "https://www.szs-hranice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.szs-hranice.cz/"
+  },
+  "600020096": {
+   "feed_url": "https://szssumperk.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://szssumperk.cz/"
+  },
+  "600020363": {
+   "feed_url": "https://www.spscv.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spscv.cz/"
+  },
+  "600020398": {
+   "feed_url": "https://www.prumyslovkaliberec.cz/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.prumyslovkaliberec.cz/"
+  },
+  "600020401": {
+   "feed_url": "https://www.vosasos.cz/rss/news",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.vosasos.cz/"
+  },
+  "600020410": {
+   "feed_url": "https://www.odbornaskola.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.odbornaskola.cz/"
+  },
+  "600020428": {
+   "feed_url": "https://www.vos-sosmost.cz/index.php/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.vos-sosmost.cz/"
+  },
+  "600020525": {
+   "feed_url": "https://www.spos.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spos.cz/"
+  },
+  "600020665": {
+   "feed_url": "https://www.szspraha1.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.szspraha1.cz/"
+  },
+  "600020959": {
+   "feed_url": "https://aklar.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://aklar.cz/"
+  },
+  "600024016": {
+   "feed_url": "https://neslhk.com/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://neslhk.com/"
+  },
+  "600024211": {
+   "feed_url": "http://www.skolynome.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://www.skolynome.cz/"
+  },
+  "600024938": {
+   "feed_url": "https://www.akademy.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.akademy.cz/"
+  },
+  "600025021": {
+   "feed_url": "https://www.geminibrno.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.geminibrno.cz/"
+  },
+  "600026957": {
+   "feed_url": "https://www.sszm.cz/uredni-deska?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.sszm.cz/"
+  },
+  "600052257": {
+   "feed_url": "https://www.zsmnichovice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.zsmnichovice.cz/"
+  },
+  "600073017": {
+   "feed_url": "https://www.skolakraslice.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.skolakraslice.cz/"
+  },
+  "600076431": {
+   "feed_url": "https://www.zs-gymnazium.cz/rss",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.zs-gymnazium.cz/"
+  },
+  "600143074": {
+   "feed_url": "https://www.zsgvitkov.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.zsgvitkov.cz/"
+  },
+  "600144933": {
+   "feed_url": "https://waldorfostravaporuba.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://waldorfostravaporuba.cz/"
+  },
+  "600170012": {
+   "feed_url": "https://www.oaholesovice.cz/skolni-casopis?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.oaholesovice.cz/"
+  },
+  "600170021": {
+   "feed_url": "https://www.ssnahorni.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ssnahorni.cz/"
+  },
+  "600170047": {
+   "feed_url": "https://www.skolaeupraha.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.skolaeupraha.cz/"
+  },
+  "600170063": {
+   "feed_url": "https://www.copag.cz/oznameni?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.copag.cz/"
+  },
+  "600170080": {
+   "feed_url": "https://skolahostivar.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://skolahostivar.cz/"
+  },
+  "600170098": {
+   "feed_url": "https://www.isstbn.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.isstbn.cz/"
+  },
+  "600170110": {
+   "feed_url": "https://sosasouslany.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sosasouslany.cz"
+  },
+  "600170136": {
+   "feed_url": "https://www.stavebkakolin.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.stavebkakolin.cz/"
+  },
+  "600170161": {
+   "feed_url": "https://www.isstechn.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.isstechn.cz/"
+  },
+  "600170179": {
+   "feed_url": "https://www.spgsmb.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spgsmb.cz/"
+  },
+  "600170233": {
+   "feed_url": "https://isspb.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://isspb.cz/"
+  },
+  "600170284": {
+   "feed_url": "https://www.isshnevkovice.cz/www/souhnevkovice/fs/wrs-rss/rss_vychozi.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.isshnevkovice.cz/"
+  },
+  "600170306": {
+   "feed_url": "https://www.sspcb.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sspcb.cz/"
+  },
+  "600170331": {
+   "feed_url": "https://www.skolacrcb.cz/rss/news",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.skolacrcb.cz/"
+  },
+  "600170349": {
+   "feed_url": "https://www.sosvel.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.sosvel.cz/"
+  },
+  "600170357": {
+   "feed_url": "https://www.skolatrochujinak.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.skolatrochujinak.cz/"
+  },
+  "600170381": {
+   "feed_url": "https://issou-milevsko.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://issou-milevsko.cz/"
+  },
+  "600170403": {
+   "feed_url": "https://www.ssvolyne.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ssvolyne.cz/"
+  },
+  "600170438": {
+   "feed_url": "https://sezimackastredni.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sezimackastredni.cz/"
+  },
+  "600170454": {
+   "feed_url": "https://sos-souhtyn.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sos-souhtyn.cz/"
+  },
+  "600170462": {
+   "feed_url": "https://www.isscheb.eu/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.isscheb.eu/"
+  },
+  "600170501": {
+   "feed_url": "https://www.issziv.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.issziv.cz/"
+  },
+  "600170527": {
+   "feed_url": "https://www.isste.cz/isste-sokolov/feed",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.isste.cz/"
+  },
+  "600170535": {
+   "feed_url": "https://sps-tachov.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sps-tachov.cz/"
+  },
+  "600170586": {
+   "feed_url": "https://www.esoz.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.esoz.cz/"
+  },
+  "600170594": {
+   "feed_url": "https://ssams.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ssams.cz/"
+  },
+  "600170632": {
+   "feed_url": "https://oasoslouny.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://oasoslouny.cz/"
+  },
+  "600170667": {
+   "feed_url": "https://www.skolahamr.cz/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.skolahamr.cz/"
+  },
+  "600170730": {
+   "feed_url": "https://akademie-svetla.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://akademie-svetla.cz/"
+  },
+  "600170772": {
+   "feed_url": "https://sos-sou.chrudim.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://sos-sou.chrudim.cz/"
+  },
+  "600170853": {
+   "feed_url": "https://www.spsstavebni.cz/dokumenty150?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.spsstavebni.cz/"
+  },
+  "600170896": {
+   "feed_url": "https://skolasemily.cz/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://skolasemily.cz/"
+  },
+  "600170918": {
+   "feed_url": "https://skola-lomnice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://skola-lomnice.cz/"
+  },
+  "600170977": {
+   "feed_url": "https://stavebniskola.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://stavebniskola.cz/"
+  },
+  "600171035": {
+   "feed_url": "https://www.ssee-sokolnice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ssee-sokolnice.cz/"
+  },
+  "600171051": {
+   "feed_url": "https://www.spspzlin.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spspzlin.cz/"
+  },
+  "600171078": {
+   "feed_url": "https://www.sosluhac.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sosluhac.cz/"
+  },
+  "600171167": {
+   "feed_url": "https://sos-dcr.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sos-dcr.cz/"
+  },
+  "600171213": {
+   "feed_url": "https://www.albrechtovastredni.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.albrechtovastredni.cz/"
+  },
+  "600171230": {
+   "feed_url": "https://www.stredniskola-sucha.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.stredniskola-sucha.cz/"
+  },
+  "600171299": {
+   "feed_url": "https://www.ss-pricna.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ss-pricna.cz/"
+  },
+  "600171311": {
+   "feed_url": "https://sstd.cz/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sstd.cz/"
+  },
+  "600171361": {
+   "feed_url": "https://www.sirava.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sirava.cz/"
+  },
+  "600171370": {
+   "feed_url": "https://kourilkova8.eu/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://kourilkova8.eu/"
+  },
+  "600171396": {
+   "feed_url": "https://www.sstzmoh.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.sstzmoh.cz/"
+  },
+  "600171728": {
+   "feed_url": "https://sgagy.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://sgagy.cz/"
+  },
+  "600171744": {
+   "feed_url": "https://randovka.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://randovka.cz/"
+  },
+  "600171752": {
+   "feed_url": "https://www.gymjil.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymjil.cz/"
+  },
+  "600171779": {
+   "feed_url": "https://www.vosassboskovice.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.vosassboskovice.cz/"
+  },
+  "600171841": {
+   "feed_url": "https://www.spsjedovnice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spsjedovnice.cz/"
+  },
+  "600171850": {
+   "feed_url": "https://issabrno.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://issabrno.cz/"
+  },
+  "610100530": {
+   "feed_url": "https://www.spsdplzen.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spsdplzen.cz/"
+  },
+  "610250574": {
+   "feed_url": "https://www.spst.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.spst.cz/"
+  },
+  "610250833": {
+   "feed_url": "https://www.sosbites.cz/uredni-deska?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.sosbites.cz/"
+  },
+  "610300580": {
+   "feed_url": "https://spsasoupv.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://spsasoupv.cz/"
+  },
+  "610451251": {
+   "feed_url": "https://waldorf.pb.cz/?feed=rss2",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://waldorf.pb.cz/"
+  },
+  "650003578": {
+   "feed_url": "https://www.trivisprostejov.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.trivisprostejov.cz/"
+  },
+  "650003969": {
+   "feed_url": "https://www.trivis-kv.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.trivis-kv.cz/"
+  },
+  "650007557": {
+   "feed_url": "https://gymnaziumbma.edupage.org/rss/news",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gymnaziumbma.edupage.org/"
+  },
+  "650008006": {
+   "feed_url": "https://www.ssletecka.com/?feed=rss2",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.ssletecka.com/"
+  },
+  "650069021": {
+   "feed_url": "https://www.vitkovickastredni.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.vitkovickastredni.cz/"
+  },
+  "650071409": {
+   "feed_url": "https://mesos.cz/domovska-stranka-mesos/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://mesos.cz/"
+  },
+  "650075684": {
+   "feed_url": "https://wlyceum.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://wlyceum.cz/"
+  },
+  "650076991": {
+   "feed_url": "https://www.is-ostrava.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.is-ostrava.cz/"
+  },
+  "651011434": {
+   "feed_url": "https://www.jezdeckaakademie.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.jezdeckaakademie.cz/"
+  },
+  "651012988": {
+   "feed_url": "https://www.zivnostenska-sokolov.cz/projekty?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.zivnostenska-sokolov.cz/"
+  },
+  "651014271": {
+   "feed_url": "http://www.bpa-praha.cz/?format=feed&type=rss",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://www.bpa-praha.cz/"
+  },
+  "651014646": {
+   "feed_url": "https://www.trivistreb.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.trivistreb.cz/"
+  },
+  "651017459": {
+   "feed_url": "https://www.sspvc.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.sspvc.cz/"
+  },
+  "651036232": {
+   "feed_url": "https://www.trivisjihlava.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.trivisjihlava.cz/"
+  },
+  "651040370": {
+   "feed_url": "https://www.kralovskaskola.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.kralovskaskola.cz/"
+  },
+  "690000014": {
+   "feed_url": "https://www.vsmt.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.vsmt.cz/"
+  },
+  "691000107": {
+   "feed_url": "https://www.spsrychnov.cz/feed",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spsrychnov.cz/"
+  },
+  "691000549": {
+   "feed_url": "https://parentes.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://parentes.cz/"
+  },
+  "691000565": {
+   "feed_url": "https://www.helloskola.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.helloskola.cz/"
+  },
+  "691000662": {
+   "feed_url": "https://www.spstz.cz/blog-feed.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spstz.cz/"
+  },
+  "691000794": {
+   "feed_url": "https://www.bisgymbb.cz/rss.xml",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.bisgymbb.cz/"
+  },
+  "691002932": {
+   "feed_url": "https://sshsopava.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://sshsopava.cz/"
+  },
+  "691003050": {
+   "feed_url": "https://skolasvatehoaugustina.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://skolasvatehoaugustina.cz/"
+  },
+  "691003921": {
+   "feed_url": "https://www.sosricany.cz/aktuality?action=atom",
+   "typ": "atom",
+   "zdroj": "deklarovany",
+   "web": "https://www.sosricany.cz/"
+  },
+  "691005648": {
+   "feed_url": "https://www.skoladobromysl.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.skoladobromysl.cz/"
+  },
+  "691006474": {
+   "feed_url": "https://www.skolajednaradost.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.skolajednaradost.cz/"
+  },
+  "691006521": {
+   "feed_url": "https://www.gymhorice.cz/?feed=rss2",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gymhorice.cz/"
+  },
+  "691006989": {
+   "feed_url": "https://zahradnickaskola.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://zahradnickaskola.cz/"
+  },
+  "691007039": {
+   "feed_url": "https://zslivingston.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://zslivingston.cz/"
+  },
+  "691007144": {
+   "feed_url": "https://www.zsmsvste.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.zsmsvste.cz/"
+  },
+  "691007551": {
+   "feed_url": "https://www.gpacov.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.gpacov.cz/"
+  },
+  "691008167": {
+   "feed_url": "https://www.donumfelix.cz/uvodni-strana/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.donumfelix.cz/"
+  },
+  "691009201": {
+   "feed_url": "https://www.zssulice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.zssulice.cz/"
+  },
+  "691012164": {
+   "feed_url": "https://filipka.edupage.org/rss/news",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://filipka.edupage.org/"
+  },
+  "691012458": {
+   "feed_url": "https://www.zaghorice.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.zaghorice.cz/"
+  },
+  "691013489": {
+   "feed_url": "https://www.itg.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.itg.cz/"
+  },
+  "691013802": {
+   "feed_url": "https://www.skolacolibri.cz/index.php/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.skolacolibri.cz/"
+  },
+  "691014566": {
+   "feed_url": "https://viaberoun.cz/cs/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://viaberoun.cz/cs/"
+  },
+  "691014604": {
+   "feed_url": "https://gymnazium.pametnaroda.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://gymnazium.pametnaroda.cz/"
+  },
+  "691014612": {
+   "feed_url": "https://www.spslitvinov.cz/rss/news",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.spslitvinov.cz/"
+  },
+  "691015228": {
+   "feed_url": "https://www.hgcb.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "http://www.hgcb.cz/"
+  },
+  "691015856": {
+   "feed_url": "https://www.perrotthillprague.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.perrotthillprague.cz/cs/ceska-skola"
+  },
+  "691016640": {
+   "feed_url": "https://www.dahora.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.dahora.cz/"
+  },
+  "691016836": {
+   "feed_url": "http://www.gymnaziumkudykampus.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "http://www.gymnaziumkudykampus.cz/"
+  },
+  "691017271": {
+   "feed_url": "https://www.victoria-school.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://www.victoria-school.cz/gymnazium/"
+  },
+  "691017832": {
+   "feed_url": "https://www.schoolforfuture.cz/feed",
+   "typ": "rss",
+   "zdroj": "fallback",
+   "web": "https://www.schoolforfuture.cz/"
+  },
+  "691017981": {
+   "feed_url": "https://gaely.cz/feed/",
+   "typ": "rss",
+   "zdroj": "deklarovany",
+   "web": "https://gaely.cz/"
+  }
+ }
+}

@@ -36,6 +36,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | CERMAT, agregáty 2. kola | data.cermat.cz, XLSX | kapacity, přihlášky, výsledky od 2024 | REDIZO + KKOV + zaměření | ročně, výsledky v září |
 | Dopravní data | PID, GTFS ČR, jízdní řády | celá ČR | zastávka a spoj | podle vydání |
 | Harmonogram přijímacího řízení MŠMT | opis termínů z metodiky MŠMT do `src/data/admissions-2027.json` | jedno přijímací řízení, 3 skupiny a 20 událostí | identifikátor události | ručně, jednou ročně |
+| RSS/Atom feedy školních webů | weby škol, sklízeč `scripts/sklizec-novinek.py` | 533 z 1 093 škol s feedem | REDIZO + GUID položky | automaticky 2× denně |
 
 **Co v repozitáři není.** Zdroj patří do soupisu i tehdy, když jeho soubor na disku neleží. Takových je několik:
 
@@ -204,9 +205,21 @@ Otázka rodiče: **jak čerstvý je posudek na tuhle školu**. Datum poslední i
 `data/inspis_school_profiles.json`, 1 180 škol, 43 polí. Vyplněnost je nerovnoměrná a `completeness_pct` ji udává. **Všechna pole používáme**, ale dvě mají past:
 
 - `dny_otevrenych_dveri` je volný text a u části škol obsahuje data z roku 2014. Bez kontroly roku se nesmí zobrazovat jako termín.
-- `rocni_skolne` je vyplněné jen u 212 z 1 180 škol. Chybějící hodnota neznamená nula.
+- `rocni_skolne` je nenulové jen u 212 z 1 180 škol; 694 škol má nulu a 274 nemá hodnotu vůbec. Chybějící hodnota neznamená nula.
 
-Prázdná jsou pole `pripravne_kurzy`, `vyuziti_internetu_ve_vyuce`, `pristup_k_pc` a `stipendium`. Zdroj je nikdy nenaplnil.
+**Sada zmizela, ale profil žije na portálu — pole přesto stárne.** Sada 70 z otevřených dat ČŠI zmizela, obnova padá od 10. 8. 2026 a registr drží období na 11. 2. 2026 (sada `csi-inspis`). Profil ale zůstal na `https://portal.csicr.cz/School/{REDIZO}` (sonda 20. 9. 2026: **60/60 stránek staženo bez přihlášení**), takže obnovitelnost sady se dá vrátit sběračem portálu. Čerstvost to ale nespraví: proti našemu snímku je `dny_otevrenych_dveri` shodné u **50 z 60** škol a na portálu nese rok 2026 jediná z 60. Pole je staré proto, že ho školy přestaly udržovat. Měření z 20. 9. 2026: `dny_otevrenych_dveri` je vyplněné u 998 z 1 180 škol, ale **704 z nich (71 %) nese ročník 2024 a starší nebo žádný** (2026: 57, 2025: 237, 2024: 162, 2023: 147, 2022 a starší: 231, bez letopočtu: 164). Proto stránka u těchto polí píše „Pro rok 2027 neověřeno“ (`src/components/ArchivedAdmissionText.tsx`). Náhradu mají přinést [profil v portálu školy](portal-pro-skoly-2027.md) a [novinky z webu školy](skolske-novinky-rss-2027.md); souvislosti v [překonaných rozhodnutích](prehodnoceni-rozhodnuti-rss-2027.md), P1.
+
+V našem snímku jsou prázdná pole `pripravne_kurzy`, `vyuziti_internetu_ve_vyuce`, `pristup_k_pc` a `stipendium`. Dřívější vysvětlení „zdroj je nikdy nenaplnil“ **neplatí, opraveno 20. 9. 2026: zdroj je naplněné má a ztratil je až CSV export.** Sonda 60 profilů na InspIS PORTÁLu (`scripts/sonda-inspis-portal.py`, data `data/sondy/inspis-portal-20260920.json`):
+
+| pole | vyplněno na portálu | v našem snímku |
+|---|---:|---:|
+| `pristup_k_pc` | 54/60 | 0/60 |
+| `vyuziti_internetu_ve_vyuce` | 48/60 | 0/60 |
+| `stipendium` | 32/60 | 0/60 |
+| `pripravne_kurzy` | 19/60 | 0/60 |
+| `rocni_skolne` (kontrola) | 45/60 | 44/60 — žádný zisk |
+
+Portál nese i popisky, které snímek nezná vůbec, například „Počet přijatých studentů v aktuálním školním roce“ (6/60). Použít se smí až po zápisu do tohoto soupisu a do registru.
 
 ### 2.9 Dopravní data
 
@@ -320,6 +333,36 @@ Používá ho stránka [přijímačky 2027](../src/app/prijimacky-2027/page.tsx)
 V registru je jako sada `msmt-harmonogram`, období 2027, obnova nejpozději do 30. 9. 2027. Termíny se opisují ručně z harmonogramu a ze sdělení o termínech na webu MŠMT; adresy obou souborů nesou ročník i měsíc vydání, takže se při novém přijímacím řízení mění celé a dotazem HEAD na starou adresu se nová data nepoznají. Kontrola proto hlídá termín obnovy, ne zdroj.
 
 Soubor nese rok v názvu: nový ročník znamená nový soubor a přepnutí období v registru.
+
+### 2.14 RSS/Atom feedy školních webů
+
+Jediný zdroj, který si projekt **odebírá průběžně a automaticky**: novinky, které školy samy vydávají na svém webu. Registr zdrojů je `public/skoly_feedy.json` (auditní export sondy `data/sondy/rss-webu-skol-20260919.json`), sklízeč je `scripts/sklizec-novinek.py`, pravidla klasifikace `scripts/novinky_klasifikace.py`, zápis do databáze `scripts/skolni-novinky-zapis.mjs`. Návrh: [školní novinky z RSS](skolske-novinky-rss-2027.md).
+
+Pokrytí: **533 z 1 093 škol = 48,8 %**, což je 50,5 % přihlášek 1. kola 2026. Zbytek škol tímto zdrojem pokrytý není a obslouží ho až pozdější kroky (`sitemap.xml` jako spouštěč, čtení výpisu aktualit).
+
+| Pole položky | Obsah | Otázka rodiče | Používáme |
+|---|---|---|---|
+| `title` | titulek článku | co škola oznámila | ano, zobrazuje se doslova |
+| `link` | adresa článku | kde si to přečtu celé | ano, jediné, kam karta vede |
+| `pubDate` / `published` | datum vydání | je to aktuální | ano, řadí a určuje platnost |
+| `guid` / `id` | identifikátor v rozsahu zdroje | žádná, technické | ano, identita položky proti duplicitám |
+| `description` / `summary` | perex | z čeho se pozná téma a termín | ano, ale **jen ke klasifikaci** – nezobrazuje se |
+| `category` | rubrika článku | žádná přímo | ano, vstup klasifikace |
+| `content:encoded` / `content` | plný text článku | — | **ne**, viz níže |
+| `author`, `dc:creator` | autor | žádná | ne |
+| `comments`, `slash:comments` | diskuse | žádná | ne |
+| `enclosure`, `media:*` | obrázek či příloha | — | ne, cizí obsah bychom hostovali |
+
+**Co z položky nebereme a proč:**
+
+- **plný text článku** (`content:encoded`) – je to autorské dílo školy. Přebíráme titulek, odkaz a datum; kdo chce víc, jde na web školy. Perex se čte kvůli termínu a tématu, ale nezobrazuje se;
+- **autor** – u školních novinek to bývá jméno konkrétního zaměstnance; rodiči nic neříká a zveřejňovat ho nemusíme;
+- **obrázky a přílohy** – hostovali bychom cizí obsah bez souhlasu a bez záruky, že nezmizí;
+- **feedy komentářů** (`…/comments/feed/`) – nejsou to novinky školy.
+
+Z položky se počítají údaje zapsané ve [slovníku ukazatelů](slovnik-ukazatelu.md): třída zprávy, jistota, stav sdělení a termíny v roli akce. **Zmizení položky z feedu není zrušení události** – feedy jsou kluzné okno (medián 10 položek), takže se nic nemaže.
+
+Sada zatím **není v registru stavu datových sad**: registr vede období, které se zobrazuje, a tenhle zdroj žádné období nemá – nese průběžné zprávy s vlastním datem vydání a vlastní platností podle druhu zprávy. Zapíše se do něj, až na něm bude stát ukazatel vázaný na přijímací ročník.
 
 ## 3. Sloupce, které nepoužíváme
 

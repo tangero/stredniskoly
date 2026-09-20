@@ -1,0 +1,497 @@
+{
+ "meta": {
+  "kdy": "2026-09-20",
+  "popis": "Sonda: mají školy bez RSS jinou strojově čitelnou cestu k novinkám?",
+  "vzorek": "80 z 450 škol se živou titulkou a bez platného feedu, seed 20260920",
+  "skript": "scripts/sonda-cest-k-novinkam.py"
+ },
+ "souhrn": {
+  "vzorek": 80,
+  "sitemap_xml": 38,
+  "sitemap_se_zminkou_o_novinkach": 31,
+  "odkaz_na_novinky_z_titulky": 66,
+  "sitemap_i_odkaz": 33
+ },
+ "skoly": [
+  {
+   "redizo": "600018091",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.spsa-za.cz/aktuality"
+  },
+  {
+   "redizo": "600019691",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.szds-oa.cz/cz/skola-aktuality.html"
+  },
+  {
+   "redizo": "600170802",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "http://www.ssgs.cz/kategorie/aktuality"
+  },
+  {
+   "redizo": "600011062",
+   "sitemap": "ano",
+   "sitemap_novinky": false,
+   "odkaz_novinky": null
+  },
+  {
+   "redizo": "600007731",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.szesbrandys.cz/aktuality/"
+  },
+  {
+   "redizo": "600015246",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": null
+  },
+  {
+   "redizo": "691003009",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://gyasos.bakalari.cz/next/kalendar.aspx"
+  },
+  {
+   "redizo": "600013880",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.hotskolabrno.cz/aktuality/"
+  },
+  {
+   "redizo": "600012557",
+   "sitemap": "http_200",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.grk.cz/aktuality"
+  },
+  {
+   "redizo": "600010198",
+   "sitemap": null,
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.gymnaziumdc.cz/udalosti"
+  },
+  {
+   "redizo": "600014991",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.ped-km.cz/aktuality"
+  },
+  {
+   "redizo": "600005054",
+   "sitemap": "ano",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.gekom.cz/domu-aktuality/uspechy-nasich-zaku.html"
+  },
+  {
+   "redizo": "600007375",
+   "sitemap": "http_200",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.spss-mel.cz/aktuality/aktuality_1"
+  },
+  {
+   "redizo": "600171256",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.hotelovkafren.cz/aktualne"
+  },
+  {
+   "redizo": "600011453",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.gym-ul.cz/vyuka/kalendar/burza-ucebnic.466"
+  },
+  {
+   "redizo": "600016412",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.ssosfm.cz/aktuality-a-fotogalerie/"
+  },
+  {
+   "redizo": "600015556",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.sosgsm.cz/aktuality"
+  },
+  {
+   "redizo": "691002207",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.skoly-navis.cz/cs/aktuality"
+  },
+  {
+   "redizo": "691017972",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.esportovnigympl.cz/cs/aktualne.php"
+  },
+  {
+   "redizo": "600013537",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": null
+  },
+  {
+   "redizo": "600007553",
+   "sitemap": "http_200",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "http://www.gjp.cz/archiv-aktualit"
+  },
+  {
+   "redizo": "600006352",
+   "sitemap": "http_200",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.gymspit.cz/kalendar-akci"
+  },
+  {
+   "redizo": "600008924",
+   "sitemap": "http_200",
+   "sitemap_novinky": false,
+   "odkaz_novinky": null
+  },
+  {
+   "redizo": "600010112",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": null
+  },
+  {
+   "redizo": "600014533",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.gymkyjov.cz/novinky"
+  },
+  {
+   "redizo": "691012342",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://scioskola.cz/blog-ze-zivota-scioskol/mapa-skoly-2024/"
+  },
+  {
+   "redizo": "600008789",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.gymstr.cz/cz/nastenka_23"
+  },
+  {
+   "redizo": "600013359",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.stredni-skola.cz/cs/aktuality"
+  },
+  {
+   "redizo": "600016013",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.obchodskolazr.cz/kalendar"
+  },
+  {
+   "redizo": "600015793",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.ssmk.eu/udalosti"
+  },
+  {
+   "redizo": "600017036",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.cgnr.cz/nastenka"
+  },
+  {
+   "redizo": "600009751",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.gblovice.cz/aktuality.php"
+  },
+  {
+   "redizo": "600012107",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.gybroumov.cz/archiv-aktualit"
+  },
+  {
+   "redizo": "600170195",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.copnb.cz/vyhledavani/?tags=17939"
+  },
+  {
+   "redizo": "600020070",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.zdrav-ova.cz/aktuality/vysledky-do-2-rocniku-diplomovaneho-nutricniho-terapeuta-denni-forma-166/"
+  },
+  {
+   "redizo": "680000011",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.skolamv.cz/o-skole/aktuality.html"
+  },
+  {
+   "redizo": "600016668",
+   "sitemap": "http_200",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "http://www.sosboh.cz/cz/aktuality/"
+  },
+  {
+   "redizo": "600016218",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.souzma.cz/aktuality-zs"
+  },
+  {
+   "redizo": "600012891",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": null
+  },
+  {
+   "redizo": "600015513",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.oauh.cz/novinka/slavnostni-predavani-diplomu-absolventum-vos"
+  },
+  {
+   "redizo": "600009904",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.e-soas.cz/#Aktuality"
+  },
+  {
+   "redizo": "600016820",
+   "sitemap": "http_200",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.gnj.cz/"
+  },
+  {
+   "redizo": "600014177",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": null
+  },
+  {
+   "redizo": "600019578",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.szscb.cz/#aktuality"
+  },
+  {
+   "redizo": "600009611",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.cirkevni-gymnazium.cz/rubrika/aktuality/"
+  },
+  {
+   "redizo": "600005569",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.dostihovaskola.cz/aktuality"
+  },
+  {
+   "redizo": "600008088",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": null
+  },
+  {
+   "redizo": "600015050",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.gymhol.cz/aktuality/"
+  },
+  {
+   "redizo": "600017401",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "http://www.podnikatelskaskola.cz/sites/news.php"
+  },
+  {
+   "redizo": "600063861",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.zsgvodnany.cz/stranky/aktuality-zsa"
+  },
+  {
+   "redizo": "600016749",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.frengp.cz/aktuality/prumyslovka/20242025/uspech-zaku-v-soutezi-nxp-cup/"
+  },
+  {
+   "redizo": "651015995",
+   "sitemap": "http_200",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.eduso.cz/Events?mid=14"
+  },
+  {
+   "redizo": "600019471",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://szsvinohrady.cz/o-skole/aktuality"
+  },
+  {
+   "redizo": "600006654",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.medialnigrafika.cz/aktuality"
+  },
+  {
+   "redizo": "600077594",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": null
+  },
+  {
+   "redizo": "600011216",
+   "sitemap": "ano",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.gymtce.cz/cs/kalendar"
+  },
+  {
+   "redizo": "600010929",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.glouny.cz/?s=506"
+  },
+  {
+   "redizo": "600008690",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.gvimperk.cz/aktuality/495-mas-na-to"
+  },
+  {
+   "redizo": "600008801",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.gymta.cz/cz/novinky-a-akce"
+  },
+  {
+   "redizo": "600011267",
+   "sitemap": "http_200",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "http://www.gspsd.cz/maturita/kalendar-terminu/jaro-2026"
+  },
+  {
+   "redizo": "600020151",
+   "sitemap": "ano",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.skolakrizik.cz/kalendar/"
+  },
+  {
+   "redizo": "600010325",
+   "sitemap": "ano",
+   "sitemap_novinky": false,
+   "odkaz_novinky": null
+  },
+  {
+   "redizo": "600006808",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.gymberoun.cz/uploads/web_files/dokumenty/terminovy_kalendar.pdf"
+  },
+  {
+   "redizo": "691019193",
+   "sitemap": "ano",
+   "sitemap_novinky": false,
+   "odkaz_novinky": null
+  },
+  {
+   "redizo": "600020355",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.prumkadc.cz/welcome/kalendar-roku"
+  },
+  {
+   "redizo": "600005623",
+   "sitemap": "http_500",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.instagram.com/gnk_kavalirka/"
+  },
+  {
+   "redizo": "600021050",
+   "sitemap": "http_200",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.vymolova.cz/blog?nazev=logopedicke-oddeleni&id=198"
+  },
+  {
+   "redizo": "600026612",
+   "sitemap": "ano",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://vejdovskeho.cz/#aktuality"
+  },
+  {
+   "redizo": "600006573",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://heroldovysady.cz/aktuality"
+  },
+  {
+   "redizo": "600004856",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": null
+  },
+  {
+   "redizo": "600015882",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.ssgak.cz/aktuality"
+  },
+  {
+   "redizo": "600010848",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.gym-rce.cz/skola/aktuality/"
+  },
+  {
+   "redizo": "600014681",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.prumyslovka.cz/novinky"
+  },
+  {
+   "redizo": "600015068",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.ssno.cz/aktuality"
+  },
+  {
+   "redizo": "600027210",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": null
+  },
+  {
+   "redizo": "600017541",
+   "sitemap": "ano",
+   "sitemap_novinky": true,
+   "odkaz_novinky": "https://www.b-g.cz/zivot-na-bigy/novinky/"
+  },
+  {
+   "redizo": "600170071",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": null
+  },
+  {
+   "redizo": "600014924",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.helenin.cz/skola/udalosti/"
+  },
+  {
+   "redizo": "600016714",
+   "sitemap": "http_200",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.gypri.cz/clanek?nazev=kalendar&id=37"
+  },
+  {
+   "redizo": "600013278",
+   "sitemap": "http_404",
+   "sitemap_novinky": false,
+   "odkaz_novinky": "https://www.skolaac.cz/aktuality"
+  }
+ ]
+}

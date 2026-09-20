@@ -8,6 +8,7 @@ import { SkupinaVKraji } from '@/components/obor/grafy';
 import { UlozitObor } from '@/components/obor/UlozitObor';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { SchemaOkoli } from '@/components/skola/SchemaOkoli';
+import { NovinkySkoly } from '@/components/skola/NovinkySkoly';
 import { vetyDruhehoKola } from '@/lib/druhe-kolo-vyklad';
 
 /**
@@ -312,6 +313,8 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
             <Zdroj>Jste z vedení školy? Doplňte je zdarma, uvidí je rodiny na této stránce. <Link href={EDITACE} className="font-semibold text-[#0074e4] hover:underline">Editujte: pro vedení školy</Link></Zdroj>
           </div>
         )}
+
+        <NovinkySkoly redizo={data.redizo} />
 
         {nevypsane.length > 0 && (
           <Dukaz nadpis="Obory z dřívějších let" stitek={`${nevypsane.length}`}>

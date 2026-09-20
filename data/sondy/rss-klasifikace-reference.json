@@ -1,0 +1,1035 @@
+{
+ "meta": {
+  "kdy": "2026-09-20",
+  "verze_pravidel": "2026-09-20.4",
+  "popis": "Ruční referenční štítky zásahů na jednotce položka×třída. Identita položky je REDIZO + odkaz (URL) + třída – titulek není identita článku (F4 čtvrté oponentury). Pole: spravne_tema (jde o přijímací téma), spravne_vysoka (smí na kartu/e-mail pro uchazeče o SŠ; cílová skupina je SŠ, VOŠ vysokou jistotu nedostane) a u tříd s pozvánkou navíc spravny_stav, spravne_zobrazeni a spravne_terminy – tedy to, co má nakonec vidět čtenář (F5). Úplnost se neměří."
+ },
+ "reference": [
+  {
+   "redizo": "600017818",
+   "odkaz": "https://sps-prerov.cz/2026/09/03/spolecnost-ssi-schafer-slavi-30-let/",
+   "titulek": "Společnost SSI Schäfer slaví 30 let",
+   "trida": "dod",
+   "spravne_tema": false,
+   "spravne_vysoka": false,
+   "duvod": "firemní DOD, cizí pořadatel",
+   "spravny_stav": "oznameno",
+   "spravne_zobrazeni": "odkaz",
+   "spravne_terminy": []
+  },
+  {
+   "redizo": "600009564",
+   "odkaz": "https://www.bpaplzen.cz/aktuality/290-vysledky-prijimaciho-rizeni-2026-2-kolo",
+   "titulek": "Výsledky příjímacího řízení 2026 - 2. kolo",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600009564",
+   "odkaz": "https://www.bpaplzen.cz/aktuality/290-vysledky-prijimaciho-rizeni-2026-2-kolo",
+   "titulek": "Výsledky příjímacího řízení 2026 - 2. kolo",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600024016",
+   "odkaz": "https://neslhk.com/vysledky-prijimaciho-rizeni-do-ucebnich-oboru-stred/",
+   "titulek": "Výsledky přijímacího řízení do učebních oborů Střední školy",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600024016",
+   "odkaz": "https://neslhk.com/vysledky-prijimaciho-rizeni-do-ucebnich-oboru-stred/",
+   "titulek": "Výsledky přijímacího řízení do učebních oborů Střední školy",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno při doplnění pravidel 19. 9. 2026"
+  },
+  {
+   "redizo": "600024016",
+   "odkaz": "https://neslhk.com/stredni-skola-vysledky-prijimaciho-rizeni-do-maturitnich-oboru/",
+   "titulek": "Výsledky přijímacího řízení do maturitních oborů Střední školy",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600024016",
+   "odkaz": "https://neslhk.com/stredni-skola-vysledky-prijimaciho-rizeni-do-maturitnich-oboru/",
+   "titulek": "Výsledky přijímacího řízení do maturitních oborů Střední školy",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "výsledky 2. kola SŠ; zásah odkryla až normalizace pevné mezery"
+  },
+  {
+   "redizo": "600006581",
+   "odkaz": "https://www.ssgukrbu.cz/news/volna-mista/",
+   "titulek": "Volná místa pro žáky do 1. ročníků nemáme",
+   "trida": "volna_mista",
+   "spravne_tema": true,
+   "spravne_vysoka": false,
+   "duvod": "negace – škola místa NEMÁ; nesmí tvrdit dostupnost"
+  },
+  {
+   "redizo": "600006581",
+   "odkaz": "https://www.ssgukrbu.cz/news/volna-mista/",
+   "titulek": "Volná místa pro žáky do 1. ročníků nemáme",
+   "trida": "prihlaska",
+   "spravne_tema": true,
+   "spravne_vysoka": false,
+   "duvod": "negace – škola místa NEMÁ; nesmí tvrdit dostupnost"
+  },
+  {
+   "redizo": "600170381",
+   "odkaz": "https://issou-milevsko.cz/2026/08/03/vysledky-3-kola-prijimaciho-rizeni-2026-2027/",
+   "titulek": "Výsledky 3. kola přijímacího řízení 2026-2027",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600170381",
+   "odkaz": "https://issou-milevsko.cz/2026/08/03/vysledky-3-kola-prijimaciho-rizeni-2026-2027/",
+   "titulek": "Výsledky 3. kola přijímacího řízení 2026-2027",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600170381",
+   "odkaz": "https://issou-milevsko.cz/2026/06/24/3-kolo-prijimaciho-rizeni-pro-skolni-rok-2026-2027/",
+   "titulek": "3. kolo přijímacího řízení pro školní rok 2026-2027",
+   "trida": "volna_mista",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600170381",
+   "odkaz": "https://issou-milevsko.cz/2026/06/24/3-kolo-prijimaciho-rizeni-pro-skolni-rok-2026-2027/",
+   "titulek": "3. kolo přijímacího řízení pro školní rok 2026-2027",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600170381",
+   "odkaz": "https://issou-milevsko.cz/2026/06/23/vysledky-2-kola-prijimaciho-rizeni-2026-2027/",
+   "titulek": "Výsledky 2. kola přijímacího řízení 2026-2027",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600170381",
+   "odkaz": "https://issou-milevsko.cz/2026/06/23/vysledky-2-kola-prijimaciho-rizeni-2026-2027/",
+   "titulek": "Výsledky 2. kola přijímacího řízení 2026-2027",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno při doplnění pravidel 19. 9. 2026"
+  },
+  {
+   "redizo": "600005364",
+   "odkaz": "https://www.skolamichael.cz/cs/aktualne/ochutnej-michael/",
+   "titulek": "Michael jinýma očima – den otevřených dveří",
+   "trida": "dod",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026",
+   "spravny_stav": "oznameno",
+   "spravne_zobrazeni": "odkaz",
+   "spravne_terminy": []
+  },
+  {
+   "redizo": "600005364",
+   "odkaz": "https://www.skolamichael.cz/cs/aktualne/mate-zajem-studovat-na-nasi-skole/",
+   "titulek": "Máte zájem studovat na naší škole?",
+   "trida": "prihlaska",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600005364",
+   "odkaz": "https://www.skolamichael.cz/cs/aktualne/vysledky-prijimaciho-rizeni-z-2-kola/",
+   "titulek": "Výsledky přijímacího řízení z 2. kola",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600005364",
+   "odkaz": "https://www.skolamichael.cz/cs/aktualne/vysledky-prijimaciho-rizeni-z-2-kola/",
+   "titulek": "Výsledky přijímacího řízení z 2. kola",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno při doplnění pravidel 19. 9. 2026"
+  },
+  {
+   "redizo": "600019918",
+   "odkaz": "https://www.szszlin.cz/news/detail/1407/",
+   "titulek": "Vyhlášení výsledků 2. kola PŘ na VOŠ",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": false,
+   "duvod": "přijímání na VOŠ (terciární), ne obsah pro uchazeče o SŠ (N1)"
+  },
+  {
+   "redizo": "600019918",
+   "odkaz": "https://www.szszlin.cz/news/detail/1407/",
+   "titulek": "Vyhlášení výsledků 2. kola PŘ na VOŠ",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": false,
+   "duvod": "přijímání na VOŠ, ne obsah pro uchazeče o SŠ (N1)"
+  },
+  {
+   "redizo": "600019918",
+   "odkaz": "https://www.szszlin.cz/news/detail/1406/",
+   "titulek": "Vyhlášení 2. kola přijímacího řízení na VOŠ",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": false,
+   "duvod": "přijímání na VOŠ, ne obsah pro uchazeče o SŠ (N1)"
+  },
+  {
+   "redizo": "691017981",
+   "odkaz": "https://gaely.cz/novinky/duben-na-gaely/?utm_source=rss&utm_medium=rss&utm_campaign=duben-na-gaely",
+   "titulek": "Duben na GAELY – vítáme uchazeče",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600014665",
+   "odkaz": "https://www.hs-straznice.cz/vysledky-3-kolo-prijimaciho-rizeni/",
+   "titulek": "Výsledky 3. kolo přijímacího řízení",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600014665",
+   "odkaz": "https://www.hs-straznice.cz/vysledky-3-kolo-prijimaciho-rizeni/",
+   "titulek": "Výsledky 3. kolo přijímacího řízení",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600014665",
+   "odkaz": "https://www.hs-straznice.cz/vyhlaseni-3-kola-prijimaciho-rizeni-pro-skolni-rok-2026-2027/",
+   "titulek": "Vyhlášení 3. kola přijímacího řízení pro školní rok 2026/2027",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno při doplnění pravidel 19. 9. 2026"
+  },
+  {
+   "redizo": "600014665",
+   "odkaz": "https://www.hs-straznice.cz/vysledkova-listina-prijimacich-zkousek-2-kolo-prijimaciho-rizeni-2/",
+   "titulek": "Výsledková listina přijímacích zkoušek 2. kolo přijímacího řízení",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600014665",
+   "odkaz": "https://www.hs-straznice.cz/vysledkova-listina-prijimacich-zkousek-2-kolo-prijimaciho-rizeni-2/",
+   "titulek": "Výsledková listina přijímacích zkoušek 2. kolo přijímacího řízení",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600014665",
+   "odkaz": "https://www.hs-straznice.cz/vyhlaseni-2-kola-prijimaciho-rizeni-pro-skolni-rok-2026-2027-2/",
+   "titulek": "Vyhlášení 2. kola přijímacího řízení pro školní rok 2026/2027",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno při doplnění pravidel 19. 9. 2026"
+  },
+  {
+   "redizo": "600014665",
+   "odkaz": "https://www.hs-straznice.cz/vyhlaseni-2-kola-prijimaciho-rizeni-pro-skolni-rok-2026-2027/",
+   "titulek": "2. kolo přijímacího řízení pro školní rok 2026/2027",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600014665",
+   "odkaz": "https://www.hs-straznice.cz/vysledkova-listina-prijimacich-zkousek-1-kolo-prijimaciho-rizeni-2/",
+   "titulek": "Výsledková listina přijímacích zkoušek 1. kolo přijímacího řízení",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600008975",
+   "odkaz": "https://www.gymas.cz/cs/aktuality/uspesni-absolventi-anglicke-jazykove-zkousky",
+   "titulek": "Úspěšní absolventi anglické jazykové zkoušky",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600017311",
+   "odkaz": "https://www.zemedelka-opava.cz/2026/06/vyhlasujeme-3-kolo-prijimaciho-rizeni/",
+   "titulek": "VYHLAŠUJEME 3. KOLO PŘIJÍMACÍHO ŘÍZENÍ!",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "691000107",
+   "odkaz": "https://www.spsrychnov.cz/vysledky-2-kolo-prijimaciho-rizeni",
+   "titulek": "Výsledky 2. kolo přijímacího řízení",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "691000107",
+   "odkaz": "https://www.spsrychnov.cz/vysledky-2-kolo-prijimaciho-rizeni",
+   "titulek": "Výsledky 2. kolo přijímacího řízení",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "výsledky 2. kola SŠ; zásah odkryla až normalizace pevné mezery"
+  },
+  {
+   "redizo": "691000107",
+   "odkaz": "https://www.spsrychnov.cz/prijimaci-rizeni-do-domova-mladeze",
+   "titulek": "Přijímací řízení do Domova mládeže",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "691000107",
+   "odkaz": "https://www.spsrychnov.cz/2-kolo-prijimaciho-rizeni-pro-skolni-rok-2026-2027",
+   "titulek": "2. kolo přijímacího řízení pro školní rok 2026/2027",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "vyhlášení 2. kola SŠ; zásah odkryla až normalizace pevné mezery"
+  },
+  {
+   "redizo": "691000107",
+   "odkaz": "https://www.spsrychnov.cz/vysledky-prijimaciho-rizeni-pro-skolni-rok-2026-2027",
+   "titulek": "Výsledky přijímacího řízení pro školní rok 2026/2027",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007791",
+   "odkaz": "http://www.sosjilove.cz/den-otevrenych-dveri/",
+   "titulek": "Dny otevřených dveří 26-27",
+   "trida": "dod",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026",
+   "spravny_stav": "oznameno",
+   "spravne_zobrazeni": "karta_terminu",
+   "spravne_terminy": [
+    "2026-12-09",
+    "2027-01-07",
+    "2027-02-09"
+   ]
+  },
+  {
+   "redizo": "600007847",
+   "odkaz": "https://gympb.cz/3-kolo-prijimaciho-rizeni-osmilete-studium-vysledky/",
+   "titulek": "3. kolo přijímacího řízení, osmileté studium: výsledky",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007847",
+   "odkaz": "https://gympb.cz/3-kolo-prijimaciho-rizeni-osmilete-studium-vysledky/",
+   "titulek": "3. kolo přijímacího řízení, osmileté studium: výsledky",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007847",
+   "odkaz": "https://gympb.cz/3-kolo-prijimaciho-rizeni-osmilete-studium-2/",
+   "titulek": "3. kolo přijímacího řízení, osmileté studium",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007847",
+   "odkaz": "https://gympb.cz/3-kolo-prijimaciho-rizeni-osmilete-studium-2/",
+   "titulek": "3. kolo přijímacího řízení, osmileté studium",
+   "trida": "prihlaska",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600004520",
+   "odkaz": "https://www.oadusni.cz/volnocasove-aktivity-2026-2027/",
+   "titulek": "Volnočasové aktivity 2026/2027",
+   "trida": "prihlaska",
+   "spravne_tema": false,
+   "spravne_vysoka": false,
+   "duvod": "přihlášky na kroužky"
+  },
+  {
+   "redizo": "600004520",
+   "odkaz": "https://www.oadusni.cz/klub-mladych-divaku-2/",
+   "titulek": "KLUB MLADÝCH DIVÁKŮ",
+   "trida": "prihlaska",
+   "spravne_tema": false,
+   "spravne_vysoka": false,
+   "duvod": "přihláška do divadelního klubu, ne přijímačky (oprava N1)"
+  },
+  {
+   "redizo": "600014461",
+   "odkaz": "https://www.gaozl.cz/article/vysledky-2.-kola-prijimaciho-rizeni-2026-2027",
+   "titulek": "Výsledky 2. kola přijímacího řízení 2026/2027",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600014461",
+   "odkaz": "https://www.gaozl.cz/article/vysledky-2.-kola-prijimaciho-rizeni-2026-2027",
+   "titulek": "Výsledky 2. kola přijímacího řízení 2026/2027",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno při doplnění pravidel 19. 9. 2026"
+  },
+  {
+   "redizo": "600014461",
+   "odkaz": "https://www.gaozl.cz/article/vyhlaseni-2.-kola-prijimaciho-rizeni-pro-skolni-rok-2026-2027",
+   "titulek": "Vyhlášení 2. kola přijímacího řízení pro školní rok 2026/2027",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno při doplnění pravidel 19. 9. 2026"
+  },
+  {
+   "redizo": "600014461",
+   "odkaz": "https://www.gaozl.cz/article/vysledky-1.-kola-prijimaciho-rizeni-2026-2027",
+   "titulek": "Výsledky 1. kola přijímacího řízení 2026/2027",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "691015228",
+   "odkaz": "https://www.hgcb.cz/2984-2/",
+   "titulek": "Výsledky II. kola přijímacího řízení 2026",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "691015228",
+   "odkaz": "https://www.hgcb.cz/prijimaci-rizeni-pro-skolni-rok-2026-2027/",
+   "titulek": "Druhé kolo – Přijímací řízení pro školní rok 2026/2027",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "691015228",
+   "odkaz": "https://www.hgcb.cz/vysledky-i-kola-prijimaciho-rizeni-2025/",
+   "titulek": "Výsledky I. kola přijímacího řízení 2026",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600019535",
+   "odkaz": "https://zdravka.cz/aktuality/vysledkova-listina-prijimacich-zkousek-2026/",
+   "titulek": "Výsledková listina přijímacích zkoušek 2026",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600019535",
+   "odkaz": "https://zdravka.cz/aktuality/veletrh-vzdelavani/",
+   "titulek": "Pozvánka na schůzku rodičů a informace o zveřejnění výsledků přijímacího řízení",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600001661",
+   "odkaz": "https://academicschool.cz/prihlasky-na-zajmove-aktivity/",
+   "titulek": "Přihlášky na zájmové aktivity",
+   "trida": "prihlaska",
+   "spravne_tema": false,
+   "spravne_vysoka": false,
+   "duvod": "přihlášky na kroužky"
+  },
+  {
+   "redizo": "600170462",
+   "odkaz": "https://www.isscheb.eu/pohneme-krajem-2026/#new_tab",
+   "titulek": "Den otevřených dveří “Pohneme krajem”",
+   "trida": "dod",
+   "spravne_tema": false,
+   "spravne_vysoka": false,
+   "duvod": "DOD krajského úřadu, škola jen catering",
+   "spravny_stav": "oznameno",
+   "spravne_zobrazeni": "odkaz",
+   "spravne_terminy": []
+  },
+  {
+   "redizo": "600007871",
+   "odkaz": "https://sbrez.cz/2026/08/27/8650/",
+   "titulek": "Přijímací řízení VOŠ – Kritéria pro 3. kolo přijímacího řízení",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": false,
+   "duvod": "přijímání na VOŠ, ne obsah pro uchazeče o SŠ (N1)"
+  },
+  {
+   "redizo": "600006026",
+   "odkaz": "https://www.skolabohnice.cz/vysledky-1-kola-prijimaciho-rizeni-a-informace-k-2-kolu/",
+   "titulek": "Výsledky 1. kola přijímacího řízení a informace k 2. kolu 2026/2027",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600006026",
+   "odkaz": "https://www.skolabohnice.cz/vysledky-1-kola-prijimaciho-rizeni-a-informace-k-2-kolu/",
+   "titulek": "Výsledky 1. kola přijímacího řízení a informace k 2. kolu 2026/2027",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "691000549",
+   "odkaz": "https://parentes.cz/%f0%9f%98%8a-mame-volna-mista-pro-nove-zaky-do-7-8-a-9-trid/",
+   "titulek": "???? MÁME VOLNÁ MÍSTA PRO DO 7., 8. A 9. TŘÍDY",
+   "trida": "volna_mista",
+   "spravne_tema": true,
+   "spravne_vysoka": false,
+   "duvod": "volná místa do vyšších ročníků (ZŠ kontext), ne nabídka pro uchazeče o SŠ"
+  },
+  {
+   "redizo": "600171078",
+   "odkaz": "https://www.sosluhac.cz/2026/06/2-kolo-prijimaciho-rizeni-vysledky/",
+   "titulek": "2. kolo přijímacího řízení – výsledky",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600011801",
+   "odkaz": "https://www.sosvet.cz/2026/08/28/den-otevrenych-dveri-2026-10-01/",
+   "titulek": "Den otevřených dveří – 1. 10. 2026",
+   "trida": "dod",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026",
+   "spravny_stav": "oznameno",
+   "spravne_zobrazeni": "karta_terminu",
+   "spravne_terminy": [
+    "2026-10-01"
+   ]
+  },
+  {
+   "redizo": "600008550",
+   "odkaz": "https://www.szespisek.cz/cs/aktuality/den-otevrenych-dveri-2026",
+   "titulek": "Den otevřených dveří 2026",
+   "trida": "dod",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026",
+   "spravny_stav": "oznameno",
+   "spravne_zobrazeni": "karta_terminu",
+   "spravne_terminy": [
+    "2026-09-18"
+   ]
+  },
+  {
+   "redizo": "600008550",
+   "odkaz": "https://www.szespisek.cz/cs/aktuality/den-zemedelky-2025",
+   "titulek": "Den zemědělky 2025",
+   "trida": "dod",
+   "spravne_tema": false,
+   "spravne_vysoka": false,
+   "duvod": "akce školního statku, ne DOD pro uchazeče",
+   "spravny_stav": "oznameno",
+   "spravne_zobrazeni": "odkaz",
+   "spravne_terminy": []
+  },
+  {
+   "redizo": "600007251",
+   "odkaz": "https://sps-caslav.cz/dny-otevrenych-dveri/pozvanka-na-dny-otevrenych-dveri/",
+   "titulek": "Pozvánka na Dny otevřených dveří",
+   "trida": "dod",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026",
+   "spravny_stav": "oznameno",
+   "spravne_zobrazeni": "karta_terminu",
+   "spravne_terminy": [
+    "2026-11-07",
+    "2026-12-09",
+    "2027-01-13"
+   ]
+  },
+  {
+   "redizo": "600007171",
+   "odkaz": "https://www.sps-ko.cz/vysledky-2-kola-prijimaciho-rizeni-2026/",
+   "titulek": "VÝSLEDKY 2. KOLA PŘIJÍMACÍHO ŘÍZENÍ 2026",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007171",
+   "odkaz": "https://www.sps-ko.cz/vysledky-2-kola-prijimaciho-rizeni-2026/",
+   "titulek": "VÝSLEDKY 2. KOLA PŘIJÍMACÍHO ŘÍZENÍ 2026",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno při doplnění pravidel 19. 9. 2026"
+  },
+  {
+   "redizo": "600007171",
+   "odkaz": "https://www.sps-ko.cz/2-kolo-prijimaciho-rizeni-2026/",
+   "titulek": "2. KOLO PŘIJÍMACÍHO ŘÍZENÍ 2026",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007171",
+   "odkaz": "https://www.sps-ko.cz/vysledky-1-kola-prijimaciho-rizeni-2026/",
+   "titulek": "VÝSLEDKY 1. KOLA PŘIJÍMACÍHO ŘÍZENÍ 2026",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600019675",
+   "odkaz": "https://www.zdravka-plzen.cz/vyssi-odborna-skola-zdravotnicka-prijimaci-rizeni-5/",
+   "titulek": "Vyšší odborná škola zdravotnická – přijímací řízení",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": false,
+   "duvod": "přijímání na VOŠ, ne obsah pro uchazeče o SŠ (N1)"
+  },
+  {
+   "redizo": "600019675",
+   "odkaz": "https://www.zdravka-plzen.cz/prijimaci-rizeni-vosz-18/",
+   "titulek": "Přijímací řízení VOŠZ",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": false,
+   "duvod": "přijímání na VOŠ, ne obsah pro uchazeče o SŠ (N1)"
+  },
+  {
+   "redizo": "600019675",
+   "odkaz": "https://www.zdravka-plzen.cz/prijimaci-rizeni-vosz-18/",
+   "titulek": "Přijímací řízení VOŠZ",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": false,
+   "duvod": "přijímání na VOŠ, ne obsah pro uchazeče o SŠ (N1)"
+  },
+  {
+   "redizo": "600019675",
+   "odkaz": "https://www.zdravka-plzen.cz/prijimaci-rizeni-vosz-17/",
+   "titulek": "Přijímací řízení VOŠZ",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": false,
+   "duvod": "přijímání na VOŠ, ne obsah pro uchazeče o SŠ (N1)"
+  },
+  {
+   "redizo": "600010040",
+   "odkaz": "http://www.sps-cl.cz/article/2026-prijimaci-rizeni-20262027-vysledky-2-kola",
+   "titulek": "Přijímací řízení 2026/2027 - Výsledky 2. kola",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600010040",
+   "odkaz": "http://www.sps-cl.cz/article/2026-prijimaci-rizeni-20262027-vysledky-2-kola",
+   "titulek": "Přijímací řízení 2026/2027 - Výsledky 2. kola",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600011887",
+   "odkaz": "https://www.gjr.cz/aktivity/uspech-studentu-na-celostatnim-kole-geologicke-olympiady?utm_source=aktivity&utm_medium=rss&utm_campaign=1167630",
+   "titulek": "Úspěch studentů na celostátním kole Geologické olympiády",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600011887",
+   "odkaz": "https://www.gjr.cz/aktivity/zverejneni-vysledku-prijimacich-zkousek-na-ctyrlete-a-osmilete-gymnazium?utm_source=aktivity&utm_medium=rss&utm_campaign=1165744",
+   "titulek": "Zveřejnění výsledků přijímacích zkoušek na čtyřleté a osmileté gymnázium",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600010481",
+   "odkaz": "https://sosjbc.cz/den-otevrenych-dveri/den-otevrenych-dveri-budovy-podhorska-17-10-2026/",
+   "titulek": "Den otevřených dveří budovy Podhorská",
+   "trida": "dod",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026",
+   "spravny_stav": "oznameno",
+   "spravne_zobrazeni": "odkaz",
+   "spravne_terminy": []
+  },
+  {
+   "redizo": "600010481",
+   "odkaz": "https://sosjbc.cz/akce-skoly/dny-otevrenych-dveri-2026-27/",
+   "titulek": "Dny otevřených dveří ve školním roce 2026/27",
+   "trida": "dod",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026",
+   "spravny_stav": "oznameno",
+   "spravne_zobrazeni": "odkaz",
+   "spravne_terminy": []
+  },
+  {
+   "redizo": "600010481",
+   "odkaz": "https://sosjbc.cz/prijimacky/vysledky-2-kola-prijimaciho-rizeni-pro-sk-rok-2026-2027/",
+   "titulek": "Výsledky 2. kola přijímacího řízení pro šk. rok 2026/ 2027",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600010481",
+   "odkaz": "https://sosjbc.cz/prijimacky/vysledky-2-kola-prijimaciho-rizeni-pro-sk-rok-2026-2027/",
+   "titulek": "Výsledky 2. kola přijímacího řízení pro šk. rok 2026/ 2027",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno při doplnění pravidel 19. 9. 2026"
+  },
+  {
+   "redizo": "600017486",
+   "odkaz": "https://www.gvoz.cz/vysledky-1-kola-prijimaciho-rizeni-5/",
+   "titulek": "Výsledky 1. kola přijímacího řízení",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007774",
+   "odkaz": "https://gbl.cz/news/2026/07/v%C3%BDsledky-3kola-tl/",
+   "titulek": "Výsledky 3. kola přijímacího řízení",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007774",
+   "odkaz": "https://gbl.cz/news/2026/07/v%C3%BDsledky-3kola-tl/",
+   "titulek": "Výsledky 3. kola přijímacího řízení",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007774",
+   "odkaz": "https://gbl.cz/news/2026/06/vyhl%C3%A1%C5%A1en%C3%AD-3kolotl_2026/",
+   "titulek": "Vyhlášení 3. kola přijímacího řízení pro obor Technické lyceum",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007774",
+   "odkaz": "https://gbl.cz/news/2026/06/vyhl%C3%A1%C5%A1en%C3%AD-3kolotl_2026/",
+   "titulek": "Vyhlášení 3. kola přijímacího řízení pro obor Technické lyceum",
+   "trida": "prihlaska",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007774",
+   "odkaz": "https://gbl.cz/news/2026/06/v%C3%BDsledky-2kolo-tl_2026/",
+   "titulek": "Výsledky 2. kola přijímacího řízení",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007774",
+   "odkaz": "https://gbl.cz/news/2026/06/v%C3%BDsledky-2kolo-tl_2026/",
+   "titulek": "Výsledky 2. kola přijímacího řízení",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007774",
+   "odkaz": "https://gbl.cz/news/2026/05/p%C5%99ij%C3%ADmac%C3%AD-%C5%99%C3%ADzen%C3%AD-druh%C3%A9-kolo-tl/",
+   "titulek": "VYHLÁŠENÍ 2. KOLA PŘIJÍMACÍHO ŘÍZENÍ PRO OBOR TECHNICKÉ LYCEUM",
+   "trida": "kriteria",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007774",
+   "odkaz": "https://gbl.cz/news/2026/05/p%C5%99ij%C3%ADmac%C3%AD-%C5%99%C3%ADzen%C3%AD-druh%C3%A9-kolo-tl/",
+   "titulek": "VYHLÁŠENÍ 2. KOLA PŘIJÍMACÍHO ŘÍZENÍ PRO OBOR TECHNICKÉ LYCEUM",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007774",
+   "odkaz": "https://gbl.cz/news/2026/05/p%C5%99ij%C3%ADmac%C3%AD-%C5%99%C3%ADzen%C3%AD-druh%C3%A9-kolo-tl/",
+   "titulek": "VYHLÁŠENÍ 2. KOLA PŘIJÍMACÍHO ŘÍZENÍ PRO OBOR TECHNICKÉ LYCEUM",
+   "trida": "prihlaska",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007774",
+   "odkaz": "https://gbl.cz/news/2026/05/v%C3%BDsledky-jpz-2026/",
+   "titulek": "Přijímací řízení pro školní rok 2026/2027",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007774",
+   "odkaz": "https://gbl.cz/news/2026/05/v%C3%BDsledky-jpz-2026/",
+   "titulek": "Přijímací řízení pro školní rok 2026/2027",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600007774",
+   "odkaz": "https://gbl.cz/news/2026/05/kvarta_libice_2026/",
+   "titulek": "Kvarta našla svého Karla!",
+   "trida": "dod",
+   "spravne_tema": false,
+   "spravne_vysoka": false,
+   "duvod": "reportáž z exkurze, token v perexu",
+   "spravny_stav": "oznameno",
+   "spravne_zobrazeni": "odkaz",
+   "spravne_terminy": []
+  },
+  {
+   "redizo": "600011941",
+   "odkaz": "https://sos-tremosnice.cz/2026/08/18/vysledky-3-kola-prijimaciho-rizeni/",
+   "titulek": "Výsledky 3. kola přijímacího řízení",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600011941",
+   "odkaz": "https://sos-tremosnice.cz/2026/08/18/vysledky-3-kola-prijimaciho-rizeni/",
+   "titulek": "Výsledky 3. kola přijímacího řízení",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno při doplnění pravidel 19. 9. 2026"
+  },
+  {
+   "redizo": "600011941",
+   "odkaz": "https://sos-tremosnice.cz/2026/06/23/vysledky-prijimaciho-rizeni-2-kolo/",
+   "titulek": "Výsledky přijímacího řízení – 2. kolo",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600011941",
+   "odkaz": "https://sos-tremosnice.cz/2026/06/23/vysledky-prijimaciho-rizeni-2-kolo/",
+   "titulek": "Výsledky přijímacího řízení – 2. kolo",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600011941",
+   "odkaz": "https://sos-tremosnice.cz/2026/05/15/vysledky-prijimaciho-rizeni/",
+   "titulek": "Výsledky přijímacího řízení",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600016579",
+   "odkaz": "https://spsehavirov.cz/aktuality/2026/06/vysledky-2-kola-prijimaciho-rizeni-2026/",
+   "titulek": "Výsledky 2. kola přijímacího řízení 2026",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600016579",
+   "odkaz": "https://spsehavirov.cz/aktuality/2026/06/vysledky-2-kola-prijimaciho-rizeni-2026/",
+   "titulek": "Výsledky 2. kola přijímacího řízení 2026",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno při doplnění pravidel 19. 9. 2026"
+  },
+  {
+   "redizo": "600016579",
+   "odkaz": "https://spsehavirov.cz/aktuality/2026/05/vyhlaseni-2-kola-prijimaciho-rizeni-pro-skolni-rok-2026-2027/",
+   "titulek": "Vyhlášení 2. kola přijímacího řízení pro školní rok 2026/2027",
+   "trida": "volna_mista",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600016579",
+   "odkaz": "https://spsehavirov.cz/aktuality/2026/05/vyhlaseni-2-kola-prijimaciho-rizeni-pro-skolni-rok-2026-2027/",
+   "titulek": "Vyhlášení 2. kola přijímacího řízení pro školní rok 2026/2027",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600016579",
+   "odkaz": "https://spsehavirov.cz/aktuality/2026/05/vyhlaseni-2-kola-prijimaciho-rizeni-pro-skolni-rok-2026-2027/",
+   "titulek": "Vyhlášení 2. kola přijímacího řízení pro školní rok 2026/2027",
+   "trida": "prihlaska",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600016579",
+   "odkaz": "https://spsehavirov.cz/aktuality/2026/05/vysledky-prijimaciho-rizeni-2026-jsou-zverejneny/",
+   "titulek": "Výsledky přijímacího řízení 2026 jsou zveřejněny",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600013103",
+   "odkaz": "https://sspo.cz/oznameni/prijimaci-rizeni-2026/",
+   "titulek": "Přijímací řízení 2026",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600013103",
+   "odkaz": "https://sspo.cz/oznameni/prijimaci-rizeni-2026/",
+   "titulek": "Přijímací řízení 2026",
+   "trida": "prihlaska",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600019896",
+   "odkaz": "https://www.szs-jaselska.cz/vysledky-prijimaciho-rizeni-vecerni-studium-3-kolo/",
+   "titulek": "Výsledky přijímacího řízení – večerní studium (3. kolo)",
+   "trida": "vysledky_prijm",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  },
+  {
+   "redizo": "600019896",
+   "odkaz": "https://www.szs-jaselska.cz/vysledky-prijimaciho-rizeni-vecerni-studium-3-kolo/",
+   "titulek": "Výsledky přijímacího řízení – večerní studium (3. kolo)",
+   "trida": "prijimaci_rizeni",
+   "spravne_tema": true,
+   "spravne_vysoka": true,
+   "duvod": "ručně ověřeno v inspekci 19. 9. 2026"
+  }
+ ]
+}
