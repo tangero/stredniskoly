@@ -124,6 +124,21 @@ const nextConfig: NextConfig = {
         destination: '/vysledky/2026',
         permanent: true,
       },
+      // /moje-sance zrušena. Přesměrování musí být trvalé (308): dřív ho dělala
+      // stránka přes `redirect()`, což je 307, a vyhledávač dočasné přesměrování
+      // nebere jako přestěhování – starou adresu drží v indexu a nepřenese na ni
+      // navázané odkazy. Parametr výběru (?skoly=…) i ostatní dotazy přenese Next sám,
+      // protože cíl žádné vlastní nemá.
+      {
+        source: '/moje-sance',
+        destination: '/simulator',
+        permanent: true,
+      },
+      {
+        source: '/moje-sance/:path*',
+        destination: '/simulator',
+        permanent: true,
+      },
       // Průvodci sloučeni do jednoho návodu (docs/pruvodce-vyberem-skoly-2027.md).
       // Kotva míří na krok, který nese obsah zrušené stránky.
       {

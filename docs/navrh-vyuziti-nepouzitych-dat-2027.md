@@ -243,14 +243,14 @@ Odstraní míchání ročníků na stránce oboru a zaktualizuje pásma, souběh
 
    | Místo | Co dělá | Vidí to uživatel |
    |---|---|---|
-   | `MojeSanceClient.tsx:355, 425, 435` | vypíše hodnotu s popiskem „Minimum 2025 · škála JPZ 0–100“ | **ne** — `/moje-sance` je od commitu `5911793` jen 307 přesměrování na `/simulator`, komponenta není nikde importovaná ani v buildu |
+   | `MojeSanceClient.tsx:355, 425, 435` | vypíše hodnotu s popiskem „Minimum 2025 · škála JPZ 0–100“ | **ne** — `/moje-sance` už jako stránka neexistuje; od 20. 9. 2026 je to trvalé přesměrování (308) na `/simulator` v `next.config.ts` a komponenta je smazaná. Do 20. 9. to bylo dočasné 307 ze stránky, což vyhledávač nebere jako přestěhování |
    | `SchoolDetailClient.tsx:387–395` | vážený průměr podobných škol | **ne** — funkce nemá volajícího, jediný možný konzument vrací `null` |
    | `guided/BodySimulator.tsx`, `guided/PersonalizedResults.tsx` | „Máte výrazně více bodů než minimum“ | **ne** — mrtvý adresář |
    | `cityData.ts:195–199` | nese do dat měst | **ne** — nikdo to nečte |
    | `page.v1_original.tsx` | výpis | **ne** — není route |
    | `/api/chances`, `/api/school-details` | vracejí `min_body: null` | — |
 
-   **Nikde na veřejné adrese se `min_body` dnes nezobrazuje**, takže formulace „renderuje se na `/moje-sance`“ neplatí; obě API ho navíc nulují, takže by kód na `null.toFixed()` spadl dřív, než by něco vypsal. Riziko je ale skutečné a je horší, než kdyby šlo o prostý údaj: **kdyby někdo zrušil přesměrování, stránka začne zobrazovat loňská zkopírovaná čísla** (2 808 z 2 812 hodnot 2026 je identických s rokem 2025) **s rozsahem až 168 pod popiskem „škála JPZ 0–100“ a bez dělení dvěma**, které zbytek kódu dělá. Navíc `min_body` pochází ze `school_analysis.json`, tedy ze sady `school-analysis-legacy`, kterou registr vede s použitím **`nezobrazovat`**.
+   **Nikde na veřejné adrese se `min_body` dnes nezobrazuje**, takže formulace „renderuje se na `/moje-sance`“ neplatí; obě API ho navíc nulují, takže by kód na `null.toFixed()` spadl dřív, než by něco vypsal. Riziko, že **zrušení přesměrování vrátí na web loňská zkopírovaná čísla**, zaniklo spolu se stránkou: komponenta i route jsou smazané, takže není co oživit. Kdyby ta čísla někdo vzkřísil jinde, past platí dál — (2 808 z 2 812 hodnot 2026 je identických s rokem 2025) **s rozsahem až 168 pod popiskem „škála JPZ 0–100“ a bez dělení dvěma**, které zbytek kódu dělá. Navíc `min_body` pochází ze `school_analysis.json`, tedy ze sady `school-analysis-legacy`, kterou registr vede s použitím **`nezobrazovat`**.
 
    **Rozhodnutí:** `min_body` jako ukazatel nezavádět (nemá doložený výpočet) a **odstranit mrtvé konzumenty**, ne je jen popsat ve slovníku. Zápis do slovníku mezi ukazatele bez doloženého výpočtu sám nestačí — pravidlo projektu říká, že nedoložený údaj se nezobrazuje, a kód, který ho zobrazit umí, je jen jedním smazaným řádkem od toho, aby to udělal.
 4. Rozšířit `scripts/validate-pasma-prijeti.py` o dvojici ročníků jako parametr a vyrobit doklad `docs/podklady/overeni-pasem-prijeti-2025-2026.json`.
