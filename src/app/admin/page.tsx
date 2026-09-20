@@ -313,7 +313,18 @@ export default async function AdminPage({ searchParams }: Props) {
             )}
           </Sekce>
 
-          {/* 2. Odběr novinek */}
+          {/* 2. Školní novinky z RSS */}
+          <Sekce titulek="Školní novinky z RSS">
+            <p className="text-sm text-slate-600">
+              Co jsme sklidili ze školních webů a co jsme z toho odvodili – třída zprávy,
+              jistota, stav sdělení, termíny a důvod publikačního rozhodnutí.{' '}
+              <a href="/admin/skolni-novinky" className="text-blue-600 hover:underline">
+                otevřít přehled
+              </a>
+            </p>
+          </Sekce>
+
+          {/* 3. Odběr novinek */}
           <Sekce titulek="Odběr novinek">
             {novinky === null ? (
               <Poznamka>

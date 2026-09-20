@@ -125,6 +125,32 @@ Extrakce data akce (zpřísněná podle R3): jen kalendářně platná data s ex
 - **Výpadek DB – rozhodnutí fail-closed (N8):** chybějící konfigurace = blok se nerenderuje; výpadek po nasazení = blok se také nerenderuje (bezpečně omezené zobrazení). Perzistentní snapshot mimo DB by vyžadoval pravidla atomické obnovy a zákaz znovuzveřejnění skrytých položek – dokud není definován a ověřen, neslibovat současně dostupnost posledních dat a okamžité vypnutí. Stáří poslední úspěšné kontroly se zobrazuje u dat za normálního provozu.
 - **Metrika autonomie:** počet položek čekajících na člověka – cílová hodnota pro běžný provoz je **nula**.
 
+### 3.7a Přehled v administraci (`/admin/skolni-novinky`, 20. 9. 2026)
+
+Neveřejná stránka, která odpovídá na jedinou otázku: **co jsme ze zdrojů vyčetli a co jsme z toho odvodili.** Veřejný blok na stránce školy ukazuje schválně jen výsledek – rodič nemá číst, co si systém o zprávě myslí. Administrace potřebuje pravý opak, včetně položek, které se nikde nezobrazují, a včetně důvodu, proč se nezobrazují. Přístup je stejný jako u zbytku administrace: bez platného `admin_token` vrací 404, `robots: noindex`.
+
+Stránka ukazuje souhrn (zdroje, uložené a platné položky, poslední sklizeň), tři rozpady (publikační rozhodnutí, třída zprávy, stav sdělení), posledních deset běhů sklízeče, zdroje, které neodpovídají, zapnuté přepínače a seznam položek. U položky je vidět titulek s odkazem, škola, datum vydání a **co jsme vydedukovali**: třídy, jistota, stav sdělení, termíny v roli akce, publikační rozhodnutí, způsobilost pro e-mail, počet verzí obsahu, konec platnosti, verze pravidel a slovní důvod rozhodnutí. Rozpady i štítky jsou odkazy, takže se z čísla dá projít na položky, které ho tvoří.
+
+Dvě rozhodnutí, která stojí za zopakování:
+
+- **Neplatné a zneplatněné položky se nevynechávají**, jen se označí. Kdyby zmizely, zakryla by administrace právě ten případ, kvůli kterému se do ní člověk dívá.
+- **Zapnuté přepínače mají vlastní oddíl.** Vypnutý zdroj, skrytá položka ani vypnuté zvýrazňování třídy nejsou na položce vidět, takže bez toho výpisu nejde odpovědět na otázku „proč se tohle nezobrazuje".
+
+**Sloupce, které stránka nepoužívá, a proč** (povinná inventura podle `docs/zdroje-dat.md`, oddíl 2.14 a oddíl 3):
+
+| Co leží v datech | Kde | Proč to na stránce není |
+|---|---|---|
+| `identita` | `skola_novinka` | je to GUID zdroje, nebo normalizovaná URL – obojí je vidět v odkazu; význam má jen při ladění duplicit, a to se dělá dotazem do databáze |
+| `otisk_obsahu` | `skola_novinka` | hash člověku neřekne nic; odvozený počet verzí obsahu odpovídá na tutéž otázku srozumitelně |
+| `prijimaci_obdobi` | `skola_novinka` | sklízeč ho zatím nevyplňuje, je vždy prázdné; vykreslit prázdný sloupec by tvrdilo, že ho neumíme určit, místo že ho zatím neurčujeme |
+| `zobrazovana_pole`, `extrahovana_tvrzeni` | `skola_novinka_verze` | úplná historie jedné položky patří na detail položky, ne do seznamu; seznam nese jen počet verzí, aby bylo poznat, že se obsah měnil |
+| `etag`, `modified_since`, `naposledy_zkouseno`, `dalsi_kontrola_at` | `skola_feed` | technika podmíněného požadavku a plánu; k otázce „co jsme vydedukovali" nemluví. `zdroj` adresy feedu zobrazený je, protože rozlišuje chybu deklarované adresy od chyby odhadnuté |
+| `skola_invalidace` | tabulka | fronta změn je auditní stopa pro e-maily, ne dedukce o zprávě; vlastní oddíl dostane, až poběží fáze 2 |
+| `content:encoded` (plný text) | feed | nepřebíráme ho vůbec, viz `zdroje-dat.md` 2.14 – autorské dílo školy |
+| `author`, `enclosure`, `media:*` | feed | nesklízí se, takže je nelze zobrazit; důvody tamtéž |
+
+**Hlavička `User-Agent` sklízeče (rozhodnutí zadavatele 20. 9. 2026).** Do 20. 9. se sklízeč představoval jako `PrijimackyNaSkoluBot/1.0` s odkazem na stránku o projektu. Pět zdrojů na to odpovídalo `HTTP 403`. Od 20. 9. se čte hlavičkou běžného prohlížeče; ověřeno, že všech pět odmítajících zdrojů pak vrátí `200`. Chování vůči zdroji se tím nemění – pořád se stahuje jen feed, dvakrát denně, podmíněným požadavkem podle `ETag`.
+
 ### 3.8 Datová sada v registru
 
 Nová sada (např. `skoly-weby-rss`) v `public/stav_datovych_sad.json` přes `scripts/stav-datovych-sad.py`, cyklus `prubezne`. Výstupy: `skoly_feedy.json` (git) + DB tabulky (živá data). Čtení na webu přes `src/lib/skoly-novinky.ts` (DB, krátká cache v řádu minut, ne modulová bez expirace).

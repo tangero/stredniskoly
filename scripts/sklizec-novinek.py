@@ -58,8 +58,13 @@ SITOVE_CHYBY = frozenset({
     "ConnectionError", "ConnectTimeout", "ReadTimeout", "Timeout",
     "SSLError", "ChunkedEncodingError", "ProxyError",
 })
-UA = ("Mozilla/5.0 (compatible; PrijimackyNaSkoluBot/1.0; "
-      "+https://www.prijimackynaskolu.cz/o-projektu)")
+# Hlavička běžného prohlížeče. Do 20. 9. 2026 se sklízeč představoval jako bot
+# s odkazem na stránku o projektu; pět zdrojů na to odpovídalo `HTTP 403`.
+# Rozhodnutí zadavatele: číst feedy tak, jak je čte návštěvník webu. Chování
+# vůči zdroji se tím nemění – pořád se stahuje jen feed, dvakrát denně,
+# podmíněným požadavkem podle ETag.
+UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36")
 
 # Platnost podle stavu události, ne jeden limit (návrh 3.4). Dny od publikace;
 # u tříd s termínem má přednost poslední termín + 3 dny.

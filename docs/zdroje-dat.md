@@ -361,6 +361,8 @@ Pokrytí: **533 z 1 093 škol = 48,8 %**, což je 50,5 % přihlášek 1. kola 20
 - **obrázky a přílohy** – hostovali bychom cizí obsah bez souhlasu a bez záruky, že nezmizí;
 - **feedy komentářů** (`…/comments/feed/`) – nejsou to novinky školy.
 
+**Sklízeč se od 20. 9. 2026 představuje hlavičkou běžného prohlížeče**, ne jako `PrijimackyNaSkoluBot`. Pět zdrojů na botí hlavičku odpovídalo `HTTP 403` a po změně vrací `200`. Co se sklidilo a co se z toho odvodilo, je vidět v administraci na `/admin/skolni-novinky`; rozhodnutí a inventura nepoužitých polí jsou v [návrhu](skolske-novinky-rss-2027.md), oddíl 3.7a.
+
 Z položky se počítají údaje zapsané ve [slovníku ukazatelů](slovnik-ukazatelu.md): třída zprávy, jistota, stav sdělení a termíny v roli akce. **Zmizení položky z feedu není zrušení události** – feedy jsou kluzné okno (medián 10 položek), takže se nic nemaže.
 
 Sada zatím **není v registru stavu datových sad**: registr vede období, které se zobrazuje, a tenhle zdroj žádné období nemá – nese průběžné zprávy s vlastním datem vydání a vlastní platností podle druhu zprávy. Zapíše se do něj, až na něm bude stát ukazatel vázaný na přijímací ročník.
