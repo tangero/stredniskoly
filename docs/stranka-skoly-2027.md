@@ -105,6 +105,8 @@ Jediné slovo „velmi těžké“ za celou školu by lhalo dvěma oborům ze t�
 | Součet přihlášek a přihlášky na místo za školu | **zavrhnout** | sčítá různé konkurzy, P3 v grafech |
 | Tlačítko „Uložit mezi zvažované“ u každého oboru | **použít** | ukládá se nabídka, ne škola (grafy, oddíl 4.3) |
 | Nabídka oborů po letech (obor × rok) | **použít jako důkaz** | Technické lyceum je v datech přijímaček od roku 2025; souhrny 1. kola jsou za 2025 a 2026, katalog od 2024 |
+| Rubrika „Ze života školy“ nad patičkou | **použít** (20. 9. 2026) | zprávy z webu školy, které se přijímacího řízení netýkají, dokreslují, čím škola žije, ale nesmí soutěžit o místo se zprávou o kritériích nebo o dni otevřených dveří. Zprávy k přijímačkám zůstávají u oborů; podrobnosti a pravidla jsou v [návrhu novinek](skolske-novinky-rss-2027.md), oddíl 3.6 |
+| Zprávy z webu školy v jednom společném seznamu | **zavrhnout** | seznam vede datum, ne důležitost; výlet primy je skoro vždycky čerstvější než pozvánka na den otevřených dveří |
 | Upozornění na dobíhající obor z rejstříku | **použít jen u nabídky, která v ročníku chybí** | není to varování před přihláškou: mezi vypsanými nabídkami je dobíhajících nula. Rozlišuje „obor se už nenabírá“ od „obor škola letos nevypsala“ (opraveno 17. 9. 2026, viz oddíl 10) |
 
 ## 4. Kolo 3: „Jak dobrá škola je“ bez známky

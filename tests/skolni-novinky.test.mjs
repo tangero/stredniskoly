@@ -6,9 +6,12 @@ import { nastavPoolProTesty } from '../src/lib/novinky-db.ts';
 /**
  * Čtecí vrstva školních novinek: testuje se to, co uvidí rodič, ne mezikrok.
  *
- * Falešný pool odpovídá podle pořadí dotazů (přepínače → položky → zdroj),
- * takže testy ověřují **kontrakt** modulu: platnost k času dotazu, přepínače
- * při čtení a fail-closed při výpadku.
+ * Falešný pool odpovídá podle pořadí dotazů (přepínače → zprávy k přijímačkám →
+ * zprávy ze života školy → zdroj), takže testy ověřují **kontrakt** modulu:
+ * platnost k času dotazu, přepínače při čtení a fail-closed při výpadku.
+ *
+ * Pořadí je v testech vidět schválně: kdyby modul dotazy prohodil nebo jeden
+ * vynechal, testy to mají odhalit, ne mlčky přejít.
  */
 function pool(odpovedi) {
   let i = 0;
@@ -34,6 +37,7 @@ function radek(prepis = {}) {
   };
 }
 
+const PRAZDNO = { rows: [], rowCount: 0 };
 const ZDROJ = { rows: [{ feed_url: 'https://skola.cz/feed/', naposledy_ok: '2026-09-20T04:10:00.000Z', chyby_v_rade: 0 }], rowCount: 1 };
 
 test.afterEach(() => {
@@ -57,7 +61,7 @@ test('výpadek databáze se propaguje jako chyba, ne jako nula novinek', async (
 
 test('termínová karta se ukáže, dokud termín nenastal', async () => {
   process.env.DATABASE_URL = 'postgres://test';
-  nastavPoolProTesty(pool([{ rows: [], rowCount: 0 }, { rows: [radek()], rowCount: 1 }, ZDROJ]));
+  nastavPoolProTesty(pool([{ rows: [], rowCount: 0 }, { rows: [radek()], rowCount: 1 }, PRAZDNO, ZDROJ]));
   const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
   assert.equal(v.polozky[0].zobrazeni, 'karta_terminu');
   assert.deepEqual(v.polozky[0].terminy, ['2026-12-09']);
@@ -68,7 +72,7 @@ test('proběhlý termín přestane být pozvánkou, i když sklízeč zatím neb
   // Platnost se počítá k času dotazu. Sklízeč běží dvakrát denně, takže
   // „budoucí při sklizni" by nechalo včerejší termín viset jako pozvánku.
   process.env.DATABASE_URL = 'postgres://test';
-  nastavPoolProTesty(pool([{ rows: [], rowCount: 0 }, { rows: [radek()], rowCount: 1 }, ZDROJ]));
+  nastavPoolProTesty(pool([{ rows: [], rowCount: 0 }, { rows: [radek()], rowCount: 1 }, PRAZDNO, ZDROJ]));
   const v = await novinkySkoly('600001111', new Date('2026-12-10T08:00:00Z'));
   assert.equal(v.polozky[0].zobrazeni, 'odkaz');
   assert.deepEqual(v.polozky[0].terminy, []);
@@ -79,6 +83,7 @@ test('přepínač skryje jednu položku, ostatní zůstanou', async () => {
   nastavPoolProTesty(pool([
     { rows: [{ klic: 'polozka:n1', hodnota: { zapnuto: false } }], rowCount: 1 },
     { rows: [radek(), radek({ id: 'n2', titulek: 'Kritéria přijetí', zobrazeni: 'karta', tridy: ['kriteria'], terminy: [] })], rowCount: 2 },
+    PRAZDNO,
     ZDROJ,
   ]));
   const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
@@ -91,6 +96,7 @@ test('vypnuté zvýrazňování třídy sníží kartu na odkaz, ale zprávu nes
   nastavPoolProTesty(pool([
     { rows: [{ klic: 'trida:dod', hodnota: { zapnuto: false } }], rowCount: 1 },
     { rows: [radek()], rowCount: 1 },
+    PRAZDNO,
     ZDROJ,
   ]));
   const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
@@ -104,6 +110,7 @@ test('výpadek zdroje neskryje dříve uložené položky', async () => {
   nastavPoolProTesty(pool([
     { rows: [], rowCount: 0 },
     { rows: [radek()], rowCount: 1 },
+    PRAZDNO,
     { rows: [{ feed_url: 'https://skola.cz/feed/', naposledy_ok: '2026-09-18T04:10:00.000Z', chyby_v_rade: 3 }], rowCount: 1 },
   ]));
   const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
@@ -119,10 +126,10 @@ test('karta s termínem se dostane na stránku, i když ji přebilo pět nověj�
   const novejsi = Array.from({ length: 5 }, (_, i) =>
     radek({
       id: `z${i}`,
-      titulek: `Zpráva ze života školy ${i}`,
+      titulek: `Vyhlášení ${i}. kola přijímacího řízení`,
       publikovano: `2026-09-1${i}T00:00:00.000Z`,
-      zobrazeni: 'seznam',
-      tridy: [],
+      zobrazeni: 'odkaz',
+      tridy: ['prijimaci_rizeni'],
       terminy: [],
       konec_platnosti: null,
     }),
@@ -131,6 +138,7 @@ test('karta s termínem se dostane na stránku, i když ji přebilo pět nověj�
   nastavPoolProTesty(pool([
     { rows: [], rowCount: 0 },
     { rows: [...novejsi.reverse(), dod], rowCount: 6 },
+    PRAZDNO,
     ZDROJ,
   ]));
   const v = await novinkySkoly('600011801', new Date('2026-09-20T10:00:00Z'));
@@ -147,13 +155,66 @@ test('bez karty s termínem zůstává pořadí podle data a bere se prvních p�
     radek({
       id: `z${i}`,
       publikovano: `2026-09-0${6 - i}T00:00:00.000Z`,
+      zobrazeni: 'odkaz',
+      tridy: ['prijimaci_rizeni'],
+      terminy: [],
+      konec_platnosti: null,
+    }),
+  );
+  nastavPoolProTesty(pool([{ rows: [], rowCount: 0 }, { rows: zpravy, rowCount: 6 }, PRAZDNO, ZDROJ]));
+  const v = await novinkySkoly('600011801', new Date('2026-09-20T10:00:00Z'));
+  assert.deepEqual(v.polozky.map((p) => p.id), ['z0', 'z1', 'z2', 'z3', 'z4']);
+});
+
+test('zprávy ze života školy se vedou zvlášť a neberou místo přijímačkám', async () => {
+  // Výlet primy je pro rodiče zajímavý, ale nesmí vytlačit termín dne
+  // otevřených dveří. Proto dva dotazy a dva seznamy, ne jeden společný.
+  process.env.DATABASE_URL = 'postgres://test';
+  const zivot = Array.from({ length: 3 }, (_, i) =>
+    radek({
+      id: `s${i}`,
+      titulek: `Prima na seznamovacím kurzu ${i}`,
+      publikovano: `2026-09-1${i}T00:00:00.000Z`,
       zobrazeni: 'seznam',
       tridy: [],
       terminy: [],
       konec_platnosti: null,
     }),
   );
-  nastavPoolProTesty(pool([{ rows: [], rowCount: 0 }, { rows: zpravy, rowCount: 6 }, ZDROJ]));
-  const v = await novinkySkoly('600011801', new Date('2026-09-20T10:00:00Z'));
-  assert.deepEqual(v.polozky.map((p) => p.id), ['z0', 'z1', 'z2', 'z3', 'z4']);
+  nastavPoolProTesty(pool([
+    PRAZDNO,
+    { rows: [radek()], rowCount: 1 },
+    { rows: zivot, rowCount: 3 },
+    ZDROJ,
+  ]));
+  const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
+  assert.deepEqual(v.polozky.map((p) => p.id), ['n1']);
+  assert.deepEqual(v.zeZivota.map((p) => p.id), ['s0', 's1', 's2']);
+});
+
+test('bez data vydání se pošle den, kdy jsme zprávu poprvé viděli', async () => {
+  // Feed datum neuvedl, nebo uvedl nesmysl v budoucnosti a sklízeč ho zahodil.
+  // „Nevíme kdy" je horší odpověď než „objevilo se mezi dvěma sklizněmi".
+  process.env.DATABASE_URL = 'postgres://test';
+  nastavPoolProTesty(pool([
+    PRAZDNO,
+    { rows: [radek({ publikovano: null, vytvoreno: '2026-09-19T04:10:00.000Z' })], rowCount: 1 },
+    PRAZDNO,
+    ZDROJ,
+  ]));
+  const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
+  assert.equal(v.polozky[0].publikovano, null);
+  assert.equal(v.polozky[0].objevenoAt, '2026-09-19T04:10:00.000Z');
+});
+
+test('s datem vydání se datum objevení neposílá, aby stránka neměla dvě data', async () => {
+  process.env.DATABASE_URL = 'postgres://test';
+  nastavPoolProTesty(pool([
+    PRAZDNO,
+    { rows: [radek({ vytvoreno: '2026-09-19T04:10:00.000Z' })], rowCount: 1 },
+    PRAZDNO,
+    ZDROJ,
+  ]));
+  const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
+  assert.equal(v.polozky[0].objevenoAt, null);
 });

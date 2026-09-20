@@ -8,7 +8,7 @@ import { SkupinaVKraji } from '@/components/obor/grafy';
 import { UlozitObor } from '@/components/obor/UlozitObor';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { SchemaOkoli } from '@/components/skola/SchemaOkoli';
-import { NovinkySkoly } from '@/components/skola/NovinkySkoly';
+import { NovinkySkoly, ZeZivotaSkoly } from '@/components/skola/NovinkySkoly';
 import { vetyDruhehoKola } from '@/lib/druhe-kolo-vyklad';
 
 /**
@@ -735,6 +735,9 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
 
       {/* Patička */}
       <div className="mx-auto max-w-6xl space-y-4 px-4 pb-12">
+        {/* Ze života školy až tady: dokresluje, čím škola žije, ale není to
+            odpověď na otázku, kvůli které rodina stránku otevřela. */}
+        <ZeZivotaSkoly redizo={data.redizo} />
         <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-white p-5 shadow-[0_1px_0_#dbe3ec]">
           <p className="text-[15px] text-slate-700"><b className="text-[#16325c]">Jste z vedení školy?</b> Doplňte kritéria přijetí, dny otevřených dveří a popis školy. Je to zdarma a údaje uvidí rodiny na této stránce.</p>
           <Link href={EDITACE} className="font-bold text-[#0074e4] underline underline-offset-4">Editujte: pro vedení školy</Link>
