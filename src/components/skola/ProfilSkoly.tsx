@@ -9,6 +9,7 @@ import { UlozitObor } from '@/components/obor/UlozitObor';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { SchemaOkoli } from '@/components/skola/SchemaOkoli';
 import { NovinkySkoly, ZeZivotaSkoly } from '@/components/skola/NovinkySkoly';
+import { OdberBlok } from '@/components/novinky/OdberBlok';
 import { vetyDruhehoKola } from '@/lib/druhe-kolo-vyklad';
 
 /**
@@ -738,6 +739,18 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
         {/* Ze života školy až tady: dokresluje, čím škola žije, ale není to
             odpověď na otázku, kvůli které rodina stránku otevřela. */}
         <ZeZivotaSkoly redizo={data.redizo} />
+        {/* Odběr novinek. Stránka školy je hlavní vstup z vyhledávání, takže
+            tady nabídku potká i ten, kdo na titulní stránku nikdy nepřijde.
+            Tmavá karta na světlém pozadí, aby byla vidět; stojí až za odpovědí
+            na otázky rodiny, ne mezi nimi.
+
+            Až za rubrikou „ze života školy“ schválně: ta mluví o zprávách
+            z webu školy a tenhle blok o e-mailu od nás. Nad sebou by si dvě
+            různé věci říkaly „novinky“. Blok se schová sám, když je odběr
+            vypnutý nebo když ročník nemá budoucí událost. */}
+        <div className="rounded-2xl bg-[#16325c] p-5">
+          <OdberBlok zdroj="skola" varianta="karta" nadpis="Vše nové o přijímačkách e-mailem?" />
+        </div>
         <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-white p-5 shadow-[0_1px_0_#dbe3ec]">
           <p className="text-[15px] text-slate-700"><b className="text-[#16325c]">Jste z vedení školy?</b> Doplňte kritéria přijetí, dny otevřených dveří a popis školy. Je to zdarma a údaje uvidí rodiny na této stránce.</p>
           <Link href={EDITACE} className="font-bold text-[#0074e4] underline underline-offset-4">Editujte: pro vedení školy</Link>
