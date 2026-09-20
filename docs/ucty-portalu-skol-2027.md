@@ -1,6 +1,6 @@
 # Účty portálu pro školy: správce, editoři a pilot 20 škol
 
-Verze 1.5 · 19. 9. 2026 · Schváleno zadavatelem 19. 9. 2026, kroky 1–6 realizovány, review PR #111 vypořádáno (oddíl 9.2). Od verze 1.5 má obsah profilu vlastní tabulku `portal_profil` a publikuje se bez předchozí moderace.
+Verze 1.7 · 20. 9. 2026 · Schváleno zadavatelem 19. 9. 2026, kroky 1–6 realizovány, review PR #111 vypořádáno (oddíl 9.2). Od verze 1.7 má obsah profilu vlastní tabulku `portal_profil` a publikuje se bez předchozí moderace.
 
 Navazuje na [portál pro školy](portal-pro-skoly-2027.md) (v1.5). Ten dnes pracuje s kódem vázaným na školu: kdo kód zná, edituje, a o osobě nevíme nic. Pilot s 20 školami potřebuje vědět, **kdo** za školu data zadává, ukázat to veřejně a umět to změnit.
 
@@ -62,6 +62,8 @@ Platí: pro jedno `redizo` smí existovat nejvýš jeden platný záznam `spravc
 | Odkaz na vlastní e-mail | osoba s platnou rolí | přihlášení; odkaz platí 72 h a jednou, session 30 dní v podepsané cookie |
 
 Stránka kódu i odkazu z rejstříku začíná hlavičkou, ze které je zřejmé, ke které škole se uživatel hlásí: plný název z rejstříku, adresa sídla, IČO, REDIZO a odkaz na profil školy na webu. Katalog nese jen zkrácený název („Gymnázium“), podle kterého se škola poznat nedá. Zdroj je oddíl `identifikace` indexu `data/msmt_rejstrik/nazvy-oboru.json` ([zdroje dat, 2.4](zdroje-dat.md)).
+
+V profilu a v přepínači škol se škola jmenuje názvem z katalogu s ulicí bez čísla popisného a obcí, například „Gymnázium Nad Štolou, Praha“ (`nazevSAdresou` v `src/lib/portal-skol.ts`). Ulice ani obec se neopakují, když je název už obsahuje. Stejný tvar nese titulek a tělo GitHub issue s návrhem, všechny zprávy na Telegram a e-maily s pozvánkou a předáním správcovství. Zveřejněný záznam (`public/portal_skol.json`) dál ukládá název z katalogu.
 
 Každý požadavek s cookie znovu ověří, že role je platná (`zneplatneno is null`). Zrušení v administraci tedy platí okamžitě, ne až po vypršení cookie.
 
@@ -222,6 +224,8 @@ Review: `docs/review-pr-111-portal-ucty.md` v hlavním pracovním stromu. Nasaze
 | 1.0 | První návrh po rozhodnutích zadavatele 19. 9. 2026. |
 | 1.1 | Schváleno. Správcem osobních údajů je Patrick Zandl (obchodní název Zandl AI Therapy Company). Facebooková skupina odložena. |
 | 1.2 | Kroky 1–6 realizovány (oddíl 9.1) s odchylkami: přihlášení tlačítkem kvůli skenerům pošty, kód bez databáze účtů funguje postaru, s ní jen k založení správce. |
+| 1.7 | Obsah profilu má vlastní tabulku `portal_profil`, hlášení chyb od veřejnosti tabulku `hlaseni_chyby` (kontakt oznamovatele přestal chodit do veřejného issue). Zápis profilu porovnává hodnoty proti stavu, který měl odesílatel před sebou, aby zastaralý formulář nepřepsal novější opravu; operace nad jedním polem serializuje poradní zámek (`pg_advisory_xact_lock`), protože `for update` s `limit 1` závod o nejnovější verzi neřeší. Nesrovnalost v datech katalogu se ukládá v téže transakci jako profil, takže škola nedostane „přijato“ u podnětu, který nikde není (append-only, stejný vzor jako `portal_role`) a publikuje se bez předchozí moderace ([portál pro školy](portal-pro-skoly-2027.md), oddíl 4). GitHub issue nese už jen nesrovnalost v datech katalogu, tedy o jedno místo s osobními údaji míň. Událost `navrh_odeslan` nahrazena `profil_zmenen` (nese seznam změněných polí). Přihlášený editor nezadává kontaktní e-mail, bere se z `portal_role`; ve formuláři zůstává jen pro hosta z rejstříkové adresy. |
+| 1.6 | Název s ulicí a obcí i v issue, na Telegramu a v e-mailech z nastavení účtu. |
+| 1.5 | Profil a přepínač škol ukazují název s ulicí a obcí (oddíl 2.2). |
 | 1.4 | Hlavička se školou na vstupu kódem a odkazem (oddíl 2.2): plný název, adresa, IČO, REDIZO, odkaz na profil. |
 | 1.3 | Review PR #111 vypořádáno (oddíl 9.2): issue bez osobních údajů, úplný výmaz osoby, HMAC kódů s pepřem a nové kódy pilotu, přijatá rizika. |
-| 1.5 | Obsah profilu má vlastní tabulku `portal_profil`, hlášení chyb od veřejnosti tabulku `hlaseni_chyby` (kontakt oznamovatele přestal chodit do veřejného issue). Zápis profilu porovnává hodnoty proti stavu, který měl odesílatel před sebou, aby zastaralý formulář nepřepsal novější opravu; operace nad jedním polem serializuje poradní zámek (`pg_advisory_xact_lock`), protože `for update` s `limit 1` závod o nejnovější verzi neřeší. Nesrovnalost v datech katalogu se ukládá v téže transakci jako profil, takže škola nedostane „přijato“ u podnětu, který nikde není (append-only, stejný vzor jako `portal_role`) a publikuje se bez předchozí moderace ([portál pro školy](portal-pro-skoly-2027.md), oddíl 4). GitHub issue nese už jen nesrovnalost v datech katalogu, tedy o jedno místo s osobními údaji míň. Událost `navrh_odeslan` nahrazena `profil_zmenen` (nese seznam změněných polí). Přihlášený editor nezadává kontaktní e-mail, bere se z `portal_role`; ve formuláři zůstává jen pro hosta z rejstříkové adresy. |

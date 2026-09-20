@@ -352,6 +352,7 @@ export interface PredvyplnenaHodnota {
 export interface PredvyplnenyProfil {
   redizo: string;
   nazev: string;
+  nazev_s_adresou: string;
   obec: string;
   kraj: string;
   obory: PortalOborKatalog[];
@@ -438,12 +439,49 @@ export async function getPredvyplnenyProfil(
   return {
     redizo,
     nazev: String(prvni.nazev),
+    nazev_s_adresou: nazevSAdresou(String(prvni.nazev), String(prvni.ulice || ''), String(prvni.obec || '')),
     obec: String(prvni.obec || ''),
     kraj: String(prvni.kraj || ''),
     obory,
     hodnoty,
     kontext,
   };
+}
+
+/**
+ * Název k rozlišení školy v portálu: „Gymnázium Nad Štolou, Praha“. Katalog nese zkrácený
+ * název („Gymnázium“), který sám školu neurčí; ulice jde bez čísel popisných.
+ * Ulici ani obec neopakuje, když je název už obsahuje.
+ */
+export function nazevSAdresou(nazev: string, ulice: string, obec: string): string {
+  const n = nazev.trim();
+  const u = ulice
+    .replace(/č\.\s*(p|ev)\.\s*/g, '')
+    .split(/\s+/)
+    .filter((t) => t && !/\d/.test(t))
+    .join(' ')
+    .replace(/[\s,]+$/, '');
+  const o = obec.trim();
+  const maly = n.toLocaleLowerCase('cs');
+  let vysledek = n;
+  if (u && !maly.includes(u.toLocaleLowerCase('cs')) && u !== o) {
+    vysledek += (n.includes(',') || n.endsWith('.') ? ', ' : ' ') + u;
+  }
+  if (o && !maly.includes(o.toLocaleLowerCase('cs'))) vysledek += `, ${o}`;
+  return vysledek;
+}
+
+/** Název s ulicí a obcí z katalogu 2026 (seznam škol v profilu); prázdný, když škola v katalogu není. */
+export async function getNazevSAdresou(redizo: string): Promise<string> {
+  try {
+    const schoolsRaw = JSON.parse(
+      await fs.readFile(path.join(process.cwd(), 'public', 'schools_data.json'), 'utf-8'),
+    ) as Record<string, Array<Record<string, unknown>>>;
+    const radek = (schoolsRaw['2026'] || []).find((s) => String(s.redizo) === redizo);
+    return radek ? nazevSAdresou(String(radek.nazev), String(radek.ulice || ''), String(radek.obec || '')) : '';
+  } catch {
+    return '';
+  }
 }
 
 /** Název školy z katalogu 2026 (pro čitelný titulek GitHub issue). */

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import {
   validatePortalPayload,
   getNazevSkoly,
+  getNazevSAdresou,
   PORTAL_VERZE_PRJIMANI,
   PortalPayload,
 } from '@/lib/portal-skol';
@@ -119,10 +120,13 @@ function roleAutora(autor: Autor): string {
  * nechodí — ty jdou rovnou do portal_profil. Issue zbylo jen na to, co musí
  * vyřešit člověk v datech katalogu, a nese proto jen text školy a odkaz.
  * Repozitář je veřejný: žádné jméno, funkce ani e-mail (PR #111, nález 1).
+ *
+ * Zkrácený název z katalogu („Gymnázium“) školu neurčí, proto jde do issue
+ * název s ulicí a obcí (PR #119).
  */
-function buildNesrovnalostBody(payload: PortalPayload, autor: Autor, skolaUrl: string): string {
+function buildNesrovnalostBody(payload: PortalPayload, autor: Autor, skolaUrl: string, nazevPopis: string): string {
   return [
-    `**Škola:** ${payload.nazev}`,
+    `**Škola:** ${nazevPopis || payload.nazev}`,
     `**REDIZO:** ${payload.redizo}`,
     `**Verze přijímání:** ${payload.verze_prijimani}`,
     `**Kanál:** ${autor.kanal}`,
@@ -144,8 +148,9 @@ async function zapisNesrovnalost(
   payload: PortalPayload,
   autor: Autor,
   skolaUrl: string,
+  nazevPopis: string,
 ): Promise<number | null> {
-  const telo = buildNesrovnalostBody(payload, autor, skolaUrl);
+  const telo = buildNesrovnalostBody(payload, autor, skolaUrl, nazevPopis);
   const otevrene = await findOpenIssueForRedizo(token, payload.redizo);
 
   if (otevrene !== null) {
@@ -158,7 +163,7 @@ async function zapisNesrovnalost(
     return otevrene;
   }
 
-  const titulek = `[Nesrovnalost v datech] ${payload.nazev || payload.redizo} (${payload.redizo})`;
+  const titulek = `[Nesrovnalost v datech] ${nazevPopis || payload.nazev || payload.redizo} (${payload.redizo})`;
   let odpoved = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/issues`, {
     method: 'POST',
     headers: githubHeaders(token),
@@ -254,6 +259,8 @@ export async function POST(request: NextRequest) {
 
   const base = (process.env.PORTAL_BASE_URL || PORTAL_PRODUKCNI_BASE_URL).replace(/\/$/, '');
   const skolaUrl = nazev ? `${base}/skola/${redizo}-${createSlug(nazev)}` : base;
+  // Zkrácený název („Gymnázium“) školu neurčí; do issue a Telegramu jde s ulicí a obcí.
+  const nazevPopis = (await getNazevSAdresou(redizo)) || nazev;
 
   // 1. Zápis profilu. Údaje od školy jdou na web bez předchozí moderace: zadává
   // je ověřený editor školy. Pojistkou není fronta ke schválení, ale zpětná
@@ -299,7 +306,7 @@ export async function POST(request: NextRequest) {
   const token = process.env.GITHUB_TOKEN;
   if (payload.nesrovnalost && token) {
     try {
-      issueNumber = await zapisNesrovnalost(token, payload, autor, skolaUrl);
+      issueNumber = await zapisNesrovnalost(token, payload, autor, skolaUrl, nazevPopis);
       if (hlaseniId && issueNumber) {
         const id = hlaseniId;
         const cislo = issueNumber;
@@ -334,7 +341,7 @@ export async function POST(request: NextRequest) {
     }
     await posliTelegram(
       [
-        `📝 Profil upraven: ${nazev || redizo} (${redizo})`,
+        `📝 Profil upraven: ${nazevPopis || redizo} (${redizo})`,
         popisAutora(autor, payload.kontakt_email),
         zmenena.length ? `Pole: ${zmenena.join(', ')}` : 'Beze změny v polích',
         skolaUrl,

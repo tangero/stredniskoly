@@ -8,6 +8,7 @@ import {
   buildPortalZaznam,
   zaznamMaObsah,
   formatDatumCz,
+  nazevSAdresou,
   PORTAL_POLE,
 } from '../src/lib/portal-skol.ts';
 
@@ -216,4 +217,12 @@ test('přihlášený editor kontakt nezadává, host z rejstříku ano', () => {
     validatePortalPayload({ ...bezKontaktu, kontakt_email: 'neni-email' }, { kontaktPovinny: false }).ok,
     false,
   );
+});
+
+test('nazevSAdresou: název, ulice bez čísel a obec, bez opakování', () => {
+  assert.equal(nazevSAdresou('Gymnázium', 'Nad Štolou 1510', 'Praha'), 'Gymnázium Nad Štolou, Praha');
+  assert.equal(nazevSAdresou('Střední vinařská škola', 'Sobotní 116', 'Valtice'), 'Střední vinařská škola Sobotní, Valtice');
+  assert.equal(nazevSAdresou('Gymnázium BMA, s.r.o.', 'Dvořákova 1269', 'Frýdlant'), 'Gymnázium BMA, s.r.o., Dvořákova, Frýdlant');
+  assert.equal(nazevSAdresou('Gymnázium Brno', 'Brno 12', 'Brno'), 'Gymnázium Brno');
+  assert.equal(nazevSAdresou('Gymnázium', 'č. p. 12', 'Nové Město'), 'Gymnázium, Nové Město');
 });

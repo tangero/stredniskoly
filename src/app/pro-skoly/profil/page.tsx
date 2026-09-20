@@ -5,7 +5,7 @@ import { PortalEditForm } from '@/components/portal/PortalEditForm';
 import { PortalHlaska } from '@/components/portal/PortalHlaska';
 import { PortalMagicForm } from '@/components/portal/PortalMagicForm';
 import { PortalUcet } from '@/components/portal/PortalUcet';
-import { getNazevSkoly, getPredvyplnenyProfil, PORTAL_POLE } from '@/lib/portal-skol';
+import { getNazevSAdresou, getPredvyplnenyProfil, PORTAL_POLE } from '@/lib/portal-skol';
 import { potvrzenyProfil } from '@/lib/portal-profil-verejne';
 import { cteni, prihlasenyZCookies } from '@/lib/portal-relace';
 import { otevrenePozvanky, platneRoleSkoly } from '@/lib/portal-ucty';
@@ -69,7 +69,7 @@ export default async function PortalProfilPage({ searchParams }: Props) {
     platneRoleSkoly(cteni, ja.redizo),
     ja.role === 'spravce' ? otevrenePozvanky(cteni, ja.redizo) : Promise.resolve([]),
     posledniZmena(ja.redizo),
-    Promise.all(prihlaseny.role.map(async (r) => ({ redizo: r.redizo, nazev: (await getNazevSkoly(r.redizo)) || r.redizo }))),
+    Promise.all(prihlaseny.role.map(async (r) => ({ redizo: r.redizo, nazev: (await getNazevSAdresou(r.redizo)) || r.redizo }))),
   ]);
   const clen = (r: (typeof tym)[number]) => ({
     id: r.id,
@@ -115,10 +115,9 @@ export default async function PortalProfilPage({ searchParams }: Props) {
         </nav>
       )}
 
-      <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">{profil.nazev}</h1>
+      <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">{profil.nazev_s_adresou}</h1>
       <p className="text-slate-500 mb-8">
-        REDIZO {profil.redizo}
-        {profil.obec && <> · {profil.obec}</>} · jste {ja.role === 'spravce' ? 'správce' : 'editor'} profilu
+        REDIZO {profil.redizo} · jste {ja.role === 'spravce' ? 'správce' : 'editor'} profilu
       </p>
 
       <h2 className="text-lg font-semibold text-slate-900 mb-2">Údaje o škole</h2>
