@@ -251,6 +251,13 @@ Zbylých 11 zdrojů selhává trvale: 5× `HTTP 403`, 4× feed, který se nepoda
 | bisgymbb.cz | `200`, ale před `<?xml` je HTML `<!-- THEME DEBUG -->` | Drupal s puštěným laděním šablon; parser to právem odmítne |
 | nosch.cz, ssgh.cz | `200` a HTML „Making sure you're not a bot!" | proof-of-work brána (Anubis). Provozovatel automatický přístup odmítá – respektuje se, zdroj se vyřadí |
 
+**Rozlišovací pokus k pěti `403` (zapsáno 20. 9. ve 13:40 UTC, tedy před měřicím během ve 14:10).** Dosud padly dvě domněnky: z české sítě vrací `200` i **botí** hlavička, takže hlavička to nebyla, a čtyři z těch pěti zdrojů vrátily `200` s obsahem i z **cizí datacentrové adresy** (infrastruktura Anthropicu, USA), takže to není ani „cizí adresa" obecně. Zbývá něco, co má jen běh z GitHub Actions – nejpravděpodobněji blokování rozsahů Azure, které čeští hosteři nasazují proti scraperům.
+
+Pravidlo pro výklad běhu ve 14:10, ať se nedá vyložit zpětně:
+
+- **zůstanou-li `403`** → příčinou je odchozí adresa GitHub Actions. Řešením není další hlavička, ale sklízet odjinud (vlastní runner nebo malý server, ideálně v Česku);
+- **vrátí-li `200`** → hlavička hrála roli **jen v kombinaci** s tou adresou: na datacentrový provoz mají ty weby přísnější pravidlo než na běžného návštěvníka.
+
 Co z toho plyne: „zdroj neodpovídá" je sběrná kategorie, která míchá **vadu prostředí** (odchozí adresa), **vadu registru** (špatná adresa feedu), **vadu zdroje** (ladicí výpis před XML) a **vědomé odmítnutí** (bot wall). Bez rozlišení se první tři dají spravit a nespraví se, protože se schovají za čtvrtou.
 
 **Opatření z toho plynoucí (v sklízeči od 20. 9. 2026):** po hlavním průchodu následuje **druhý pokus o zdroje, které selhaly na úrovni sítě** – souběžnost 4 místo 12 a limit 45 s místo 20 s. Opakují se jen síťové chyby (`SITOVE_CHYBY`); `HTTP 403` a vadný feed se neopakují, protože podruhé dopadnou stejně a jen by zdržely běh. Dávka nese `zdroju_opakovano` a `zdroju_spraveno_opakovanim`, aby bylo vidět, jestli se opakování vyplácí.
