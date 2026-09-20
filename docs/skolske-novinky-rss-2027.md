@@ -87,6 +87,10 @@ Oddělit **stáří článku**, **stav informace** a **jednotlivé termíny**:
 | výsledky / kola / kritéria | do uzávěrky daného kola (ne do konce celého přijímacího období, když uzávěrka uplynula); kolo bez data uzávěrky = novinka s `konec_platnosti` dle `prijimaci_obdobi` z registru. |
 | ostatní | publikování + 60 dní |
 
+**Datum vydání v budoucnosti se nebere vážně (nález z provozu 20. 9. 2026).** Pravidla výše hlídala data *akce*, ale ne datum *vydání* samotné položky. V prvním ostrém běhu přišel článek „Operační program Jan Amos Komenský" s `pubDate` **11. 11. 2031**. Dvě škody najednou: rodiči se u zprávy ukazuje rok 2031, což je nepravda, a položka by se řadila na začátek seznamu a trvale držela jedno z pěti míst v bloku — až do roku 2032. Od 20. 9. 2026 platí: datum vydání, které předbíhá sklizeň o víc než `TOLERANCE_BUDOUCIHO_DATA_DNU` (1 den, kryje časové zóny), **se zahodí a položka se tváří jako bez data**. Zprávu nezahazujeme, jen o ní přestaneme tvrdit, kdy vyšla.
+
+S tím souvisí druhá oprava: `konec_platnosti` se u položky bez data vydání počítá **ode dne sklizně**, ne jako „bez konce". Dřív vracel `None`, tedy nesmrtelnou zprávu — a byly to právě ty položky, u kterých si datem nejsme jistí. Týká se to jednotek položek (2 z 3 859 v prvním běhu) a zároveň všech, kterým datum zahodíme nově.
+
 Extrakce data akce (zpřísněná podle R3): jen kalendářně platná data s explicitním rokem (extraktor validuje den/měsíc – „31. 2." se zahodí); data bez roku se na kartu nedávají; datum musí být ≥ datum publikace; u nejasného termínu nebo období karta ukáže původní titulek a odkaz.
 
 ### 3.5 Klasifikace – dvoustupňová podle měření
