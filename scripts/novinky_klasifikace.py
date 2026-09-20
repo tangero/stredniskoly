@@ -19,7 +19,7 @@ from email.utils import parsedate_to_datetime
 from xml.etree import ElementTree as ET
 
 
-VERZE_PRAVIDEL = "2026-09-20.5"
+VERZE_PRAVIDEL = "2026-09-20.6"
 
 
 def strip(t: str) -> str:
