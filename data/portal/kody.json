@@ -146,7 +146,8 @@
       "hash": "b3c3fac3fbba17a6f319877b92faa311dc57d0c169e1ff5f5c15ff0e134f8b5c",
       "redizo": "600171701",
       "vytvoreno": "2026-09-19",
-      "revokovano": false
+      "revokovano": true,
+      "revokovano_dne": "2026-09-20"
     },
     {
       "hash": "b29fa247f8c1bc1c1a9060a77c1eb63f6e2c776c0cf9a03894f78849b4ba07f5",
@@ -265,6 +266,12 @@
     {
       "hash": "d34fcff74d860a67c4d8ad2189720c7083aecb6994bb1381d51d487621cfaa73",
       "redizo": "600007065",
+      "vytvoreno": "2026-09-20",
+      "revokovano": false
+    },
+    {
+      "hash": "c7abdbdd715b94a454311ba0137196105bc9764db14b1c7d1f4f88b50d498b66",
+      "redizo": "600171701",
       "vytvoreno": "2026-09-20",
       "revokovano": false
     }
