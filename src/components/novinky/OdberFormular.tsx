@@ -85,8 +85,10 @@ export function OdberFormular({ rocnik, zdroj, varianta }: OdberFormularProps) {
     : 'w-full rounded-lg border border-slate-300 px-3 py-2';
 
   if (stav === 'poslano') {
+    // Barva textu je explicitní schválně: pokyn k potvrzení je nutný krok odběru
+    // a nesmí záviset na tom, jakou barvu mu dá rodičovský blok.
     return (
-      <div className={naTmavem ? 'rounded-lg bg-white/10 p-4 text-sm' : 'rounded-lg bg-slate-50 p-4 text-sm'}>
+      <div className={naTmavem ? 'rounded-lg bg-white/10 p-4 text-sm text-white' : 'rounded-lg bg-slate-50 p-4 text-sm text-slate-900'}>
         <p className="font-semibold">Potvrď odběr v e-mailu.</p>
         <p className={stitek}>
           Poslali jsme ti odkaz. Odběr začne, až na něj klikneš; bez potvrzení ti nic dalšího
