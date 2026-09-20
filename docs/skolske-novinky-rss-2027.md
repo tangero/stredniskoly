@@ -104,6 +104,12 @@ Extrakce data akce (zpřísněná podle R3): jen kalendářně platná data s ex
 ### 3.6 Zobrazení na stránce školy
 
 - **Výrazná karta** v oddílu `#obory`, těsně před/za blok „Přijímací řízení podle školy" (`src/components/skola/ProfilSkoly.tsx:272, 282`): „Den otevřených dveří 9. 12. {rok}" (+ další termíny), odkaz na článek školy, **údaj o původu a poslední kontrole zdroje**. Bez dat karta neexistuje.
+- **Dvě rubriky, ne jeden seznam (rozhodnutí zadavatele 20. 9. 2026).** Všechno z feedu je k něčemu dobré, ale ne stejně: „podmínky přijímacího řízení" a „den otevřených dveří" jsou to, kvůli čemu rodina na stránku přišla, zatímco „prima jela na seznamovák" nebo „naši žáci byli na olympiádě" dokreslují, čím škola žije. Proto:
+  - **k přijímačkám** (`karta_terminu`, `karta`, `odkaz`) – u oborů, na prominentním místě, doplňkový seznam pod nadpisem „Další zprávy k přijímačkám";
+  - **ze života školy** (`seznam`, tedy položky bez přijímacího tématu) – zavřená rubrika **na konci stránky**, nad patičkou, pod nadpisem „Ze života školy".
+  - Čtou se **dvěma dotazy s vlastním limitem**, ne jedním společným oknem. Zprávy ze života jsou v datech drtivá většina (4 108 z 4 554 uložených položek k 20. 9. 2026); jedno okno by u sdílné školy vyplnily a zpráva k přijímačkám by se do bloku nedostala – táž vada, kterou už jednou způsobil `limit 5` podle data.
+  - Obojí se načítá **jedním požadavkem**: komponenty sdílejí slib podle REDIZO, ačkoli stojí v rozvržení daleko od sebe.
+- **Bez data vydání se píše den objevení.** Když feed datum neuvedl nebo uvedl datum v budoucnosti a sklízeč ho zahodil (3.4), zobrazí se „objevilo se 19. 9. 2026" – den, kdy položku poprvé viděla sklizeň. Je to slabší údaj než datum vydání, ale pravdivý: zpráva vyšla někdy mezi předchozí a touhle sklizní. Prázdné místo by čtenáři neřeklo nic a datum objevení se **nikdy nevydává za datum vydání** ani se podle něj neřadí a nepočítá platnost.
 - **Konflikty bez moderace (autonomní provoz):** žádná schvalovací fronta. Pravidla:
   - Nová položka z ověřeného zdroje → po kontrole URL/formátu/identity rovnou titulek+datum+odkaz.
   - Spolehlivá třída + platný termín → výrazná karta automaticky.
@@ -153,7 +159,9 @@ Dvě rozhodnutí, která stojí za zopakování:
 | `content:encoded` (plný text) | feed | nepřebíráme ho vůbec, viz `zdroje-dat.md` 2.14 – autorské dílo školy |
 | `author`, `enclosure`, `media:*` | feed | nesklízí se, takže je nelze zobrazit; důvody tamtéž |
 
-**Hlavička `User-Agent` sklízeče (rozhodnutí zadavatele 20. 9. 2026).** Do 20. 9. se sklízeč představoval jako `PrijimackyNaSkoluBot/1.0` s odkazem na stránku o projektu. Pět zdrojů na to odpovídalo `HTTP 403`. Od 20. 9. se čte hlavičkou běžného prohlížeče; ověřeno, že všech pět odmítajících zdrojů pak vrátí `200`. Chování vůči zdroji se tím nemění – pořád se stahuje jen feed, dvakrát denně, podmíněným požadavkem podle `ETag`.
+**Hlavička `User-Agent` sklízeče (rozhodnutí zadavatele 20. 9. 2026).** Do 20. 9. se sklízeč představoval jako `PrijimackyNaSkoluBot/1.0` s odkazem na stránku o projektu; pět zdrojů na to odpovídalo `HTTP 403`. Od 20. 9. se čte hlavičkou běžného prohlížeče. Chování vůči zdroji se tím nemění – pořád se stahuje jen feed, dvakrát denně, podmíněným požadavkem podle `ETag`.
+
+**Že hlavička byla příčinou těch 403, ale doloženo není.** Původně tu stálo „ověřeno, že všech pět odmítajících zdrojů pak vrátí `200`" – jenže ověřeno to bylo ze stroje v Česku, a tam vrací `200` i **botí** hlavička (změřeno 20. 9. na všech pěti). Tím ten pokus mezi hlavičkou a adresou nerozlišuje a příčinu nedokládá. Rozlišit to umí jen běh z GitHub Actions s novou hlavičkou: zůstanou-li `403`, příčinou je odchozí adresa, ne hlavička.
 
 ### 3.8 Datová sada v registru
 
@@ -232,7 +240,18 @@ Zadavatel rozhodl nasadit a výsledky zjišťovat z provozu. Fáze 1 a 2 jsou ho
 
 Druhý běh (10:29 UTC, táž pravidla `2026-09-20.5`) zkoušel přesně těch 94 splatných zdrojů a **83 z nich odpovědělo bez problému, opět z GitHub Actions**. Nově nespadl ani jeden. Průnik obou množin je 11 zdrojů, tedy 12 % sjednocení. Hypotéza o blokování cizích adres je tím **vyvrácená**: kdyby weby odmítaly americké adresy, odmítnou je i o 88 minut později. Šlo o přechodné selhání pod náporem prvního běhu, kdy se poprvé stahovalo všech 533 zdrojů najednou.
 
-Zbylých 11 zdrojů selhává trvale a z jiných důvodů: 5× `HTTP 403` (server požadavek odmítá, nejspíš podle hlavičky `User-Agent`), 4× feed, který se nepodařilo rozparsovat, 2× `ConnectTimeout`. Ty se opakováním nespraví a řeší se samostatně.
+Zbylých 11 zdrojů selhává trvale: 5× `HTTP 403`, 4× feed, který se nepodařilo rozparsovat, 2× `ConnectTimeout`. Opakováním se nespraví. Prošel jsem je 20. 9. jeden po druhém z české sítě, botí i prohlížečovou hlavičkou, a **je to pět různých příčin, ne jedna**:
+
+| zdroj | z české sítě | co to doopravdy je |
+|---|---|---|
+| gfxs.cz, sokolska.cz, spspzlin.cz, teleinformatika.eu, lsg.cz | `200`, 10 položek, **i botí hlavičkou** | selhání je vázané na prostředí běhu, ne na zdroj ani na hlavičku |
+| sgagy.cz | `200` a 10 položek **po přesměrování** na `/feed/` | `ConnectTimeout` byl přechodný; v registru má být cílová adresa |
+| alej.cz | `200`, ale **nula položek** | web nemá jediný WordPress post – aktuality jsou stránky. RSS tuhle školu nepokryje nikdy |
+| isste.cz | `200`, ale titulek kanálu je „Komentáře: ISŠTE Sokolov" | v registru je **feed komentářů**, který tenhle oddíl sám vylučuje |
+| bisgymbb.cz | `200`, ale před `<?xml` je HTML `<!-- THEME DEBUG -->` | Drupal s puštěným laděním šablon; parser to právem odmítne |
+| nosch.cz, ssgh.cz | `200` a HTML „Making sure you're not a bot!" | proof-of-work brána (Anubis). Provozovatel automatický přístup odmítá – respektuje se, zdroj se vyřadí |
+
+Co z toho plyne: „zdroj neodpovídá" je sběrná kategorie, která míchá **vadu prostředí** (odchozí adresa), **vadu registru** (špatná adresa feedu), **vadu zdroje** (ladicí výpis před XML) a **vědomé odmítnutí** (bot wall). Bez rozlišení se první tři dají spravit a nespraví se, protože se schovají za čtvrtou.
 
 **Opatření z toho plynoucí (v sklízeči od 20. 9. 2026):** po hlavním průchodu následuje **druhý pokus o zdroje, které selhaly na úrovni sítě** – souběžnost 4 místo 12 a limit 45 s místo 20 s. Opakují se jen síťové chyby (`SITOVE_CHYBY`); `HTTP 403` a vadný feed se neopakují, protože podruhé dopadnou stejně a jen by zdržely běh. Dávka nese `zdroju_opakovano` a `zdroju_spraveno_opakovanim`, aby bylo vidět, jestli se opakování vyplácí.
 
@@ -361,7 +380,7 @@ Oponentura: [verze 1.4](oponentura-skolske-novinky-rss-2027-v1.4.md). **Zadavate
 
 | Verze | Změna |
 | --- | --- |
-| 1.6 | Provozní opravy z prvních běhů: karta s termínem se vybírá z okna 30 posledních položek, ne z pěti nejnovějších; síťové chyby se v běhu jednou opakují; sklízeč se představuje hlavičkou běžného prohlížeče; datum vydání, které předbíhá sklizeň, se zahazuje; zapisovač přepočítá uloženou položku i při pouhé změně verze pravidel. Admin přehled `/admin/skolni-novinky`. Verze pravidel 2026-09-20.6; měření beze změny. |
+| 1.6 | Provozní opravy z prvních běhů: karta s termínem se vybírá z okna 30 posledních položek, ne z pěti nejnovějších; síťové chyby se v běhu jednou opakují; sklízeč se představuje hlavičkou běžného prohlížeče; datum vydání, které předbíhá sklizeň, se zahazuje; zapisovač přepočítá uloženou položku i při pouhé změně verze pravidel. Admin přehled `/admin/skolni-novinky`. Novinky rozděleny na dvě rubriky: zprávy k přijímačkám u oborů, **Ze života školy** nad patičkou; bez data vydání se píše den objevení. Rozbor jedenácti trvale nefunkčních zdrojů: pět různých příčin, a tvrzení, že za `HTTP 403` mohla botí hlavička, **zrušeno jako nedoložené**. Verze pravidel 2026-09-20.6; měření beze změny. |
 | 1.5 | Vypořádání páté oponentury: stav klauzule `nepotvrzeno`, dědění role akce jen u holého časového údaje, den zobrazení v konečném rozhodnutí (proběhlý termín nevytvoří pozvánku), smíšená zpráva jako dokumentovaný konzervativní odkaz s testem konečné funkce, kontrakt cache zúžen na nová načtení, opravený výklad metrik. Zadavatel zastavil další ověřování: úplnost se zjistí z provozu. Verze pravidel 2026-09-20.5; 52 regresních testů. |
 | 1.4 | Vypořádání čtvrté oponentury: stav sdělení i role data se rozhodují po klauzulích (popřené zrušení, zrušená registrace, „nekoná se", popisek za datem), vylučovače ustupují jednoznačnému přijímacímu kontextu, smíšená zpráva SŠ+VOŠ zůstává neutrálním odkazem, jediné publikační rozhodnutí `rozhodni_publikaci` a měření konečného zobrazení proti ruční referenci, identita referencí přes odkaz, offline příkaz bez `requests`, velikost přejímacího vzorku ≥29 místo ≥10, kontrakt cache bloku novinek mimo ISR, sjednocení 3.2/3.3/3.6/3.7 a aritmetiky. Verze pravidel 2026-09-20.4; 76 zásahů, téma 102/109, vysoká jistota 60/60, 47 regresních testů. |
 | 1.3 | Vypořádání třetí oponentury: reference na jednotce položka×třída s cílovou skupinou SŠ (VOŠ vyloučena z vysoké jistoty pravidlem), stav sdělení (zrušeno/změněno), role registrace vs. akce, ISO datum s časem a pásmem, parser (XML entity, HTML≠prázdný feed), přenositelnost do čistého CI (requests až při stahování, data/sondy verzována, exit 1 při chybějících referencích), sjednocení rozporných instrukcí (registr, fáze 1, explicitní rok, oddíl 8 jako historie), invalidace atomicky s transakcí, A→B→A vůči doručenému stavu příjemce, benchmark za třídu pro e-maily, oprava aritmetiky. Vysoká jistota nově 60/60 párů = 51 položek; 25 regresních testů. |
