@@ -1,0 +1,24 @@
+# Obraz pro sklízeč školních novinek běžící na Railway.
+#
+# Proč vlastní obraz: jeden běh potřebuje Python (stahování a klasifikace feedů)
+# i Node (zápis dávky do Neonu) a dávka mezi nimi teče jako soubor. Nixpacks by
+# z repozitáře odvodil jen jednu z těch dvou runtime.
+#
+# Proč Railway místo GitHub Actions: změřeno 20. 9. 2026 – naplánované běhy se
+# v Actions nespouštěly a část českých webů odtamtud odpovídá HTTP 403.
+# Rozbor v docs/skolske-novinky-rss-2027.md, oddíl 3.3.
+FROM node:22-slim
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends python3 python3-requests ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
+
+COPY scripts ./scripts
+COPY public/skoly_feedy.json ./public/skoly_feedy.json
+
+CMD ["bash", "scripts/sklizec-beh.sh"]

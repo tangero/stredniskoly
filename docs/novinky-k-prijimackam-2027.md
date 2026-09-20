@@ -81,7 +81,8 @@ Nejvíc návštěv měl web v únoru a květnu (4 969 a 4 435 identifikovaných 
 | **Titulní stránka, modrý pás „Vyzkoušej zdarma“** na konci | **zavrhnout pro první verzi** (rozhodnutí 18. 9. 2026) | tři místa stačí na ověření; každé další je plocha na chyby |
 | **Patička na všech stránkách** | **zavrhnout pro první verzi**, zůstane jen odkaz na `/novinky` | formulář v patičce se vykresloval na 1 179 stránkách škol a build narážel na časový limit; odkaz stojí nic |
 | **Kalendář `/prijimacky-2027`**, vedle „Ulož si termíny“ | **použít, výrazně** | stránka dnes píše, že se stažená kopie sama neaktualizuje, a odběr je přesně odpověď na to |
-| **Stránka školy a oboru** | **malý odkaz pod hlavičkou**; společný panel se sledováním až podle rozhodnutí 1 | sledování zakazuje tlačítko dřív, než funguje odesílač |
+| **Stránka školy** | **formulář na konci stránky** (rozhodnutí zadavatele 20. 9. 2026), tmavá karta s nadpisem „Vše nové o přijímačkách e-mailem?“ | stránka školy je hlavní vstup z vyhledávání: kdo přijde na konkrétní školu, titulní stránku ani kalendář neuvidí, takže tam nabídku nikdy nepotká. Dřívější rozhodnutí bylo „malý odkaz pod hlavičkou“; akvizice z organického vyhledávání ho převážila. Blok stojí **až za odpovědí na otázky rodiny**, ne mezi nimi, a **až za rubrikou „ze života školy“** — nad ní by si dvě různé věci říkaly „novinky“ |
+| **Stránka oboru** | **zatím ne** | stránka školy se ověří první; každé další místo je plocha na chyby (totéž zdůvodnění jako u modrého pásu) |
 | **Simulátor a zvažované obory** | **použít** jako větu pod seznamem: „Připomeneme ti termín přihlášek“ | rodině se zvažovanými obory se termín přihlášek hodí nejvíc |
 | **Konec průvodců** `/jak-vybrat-skolu`, `/jak-funguje-prijimani`, `/vysledky/…`, `/mesto/…` | **použít** jako kartu na konci článku | kdo dočte průvodce, zajímá se o celý postup |
 | **Hlavička webu**, odkaz se zvonkem „Termíny e-mailem“ | **použít** | vede na stránku `/novinky` |

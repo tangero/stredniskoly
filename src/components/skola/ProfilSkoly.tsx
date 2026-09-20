@@ -8,7 +8,8 @@ import { SkupinaVKraji } from '@/components/obor/grafy';
 import { UlozitObor } from '@/components/obor/UlozitObor';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { SchemaOkoli } from '@/components/skola/SchemaOkoli';
-import { NovinkySkoly } from '@/components/skola/NovinkySkoly';
+import { NovinkySkoly, ZeZivotaSkoly } from '@/components/skola/NovinkySkoly';
+import { OdberBlok, OdkazNaOdber } from '@/components/novinky/OdberBlok';
 import { vetyDruhehoKola } from '@/lib/druhe-kolo-vyklad';
 
 /**
@@ -227,12 +228,18 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
           {posledniPotvrzeni ? (
             <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl bg-[#e6f5f1] px-4 py-2.5 text-[15px] text-[#0b7a65]">
               <span><Puvod typ={znacka(...Object.keys(u))} /> <b>Údaje od školy</b> potvrzené {formatDatumCz(posledniPotvrzeni)}</span>
-              <Link href={EDITACE} className="font-bold underline underline-offset-4">Editujte: pro vedení školy</Link>
+              <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
+                <OdkazNaOdber className="font-bold underline underline-offset-4" />
+                <Link href={EDITACE} className="font-bold underline underline-offset-4">Editujte: pro vedení školy</Link>
+              </span>
             </div>
           ) : (
             <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl bg-slate-100 px-4 py-2.5 text-[15px] text-slate-600">
               <span>Škola zatím nic nedoplnila. Údaje na stránce jsou z oficiálních zdrojů.</span>
-              <Link href={EDITACE} className="font-bold text-[#0074e4] underline underline-offset-4">Editujte: pro vedení školy</Link>
+              <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
+                <OdkazNaOdber className="font-bold text-[#0074e4] underline underline-offset-4" />
+                <Link href={EDITACE} className="font-bold text-[#0074e4] underline underline-offset-4">Editujte: pro vedení školy</Link>
+              </span>
             </div>
           )}
 
@@ -735,6 +742,19 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
 
       {/* Patička */}
       <div className="mx-auto max-w-6xl space-y-4 px-4 pb-12">
+        {/* Ze života školy až tady: dokresluje, čím škola žije, ale není to
+            odpověď na otázku, kvůli které rodina stránku otevřela. */}
+        <ZeZivotaSkoly redizo={data.redizo} />
+        {/* Odběr novinek. Stránka školy je hlavní vstup z vyhledávání, takže
+            tady nabídku potká i ten, kdo na titulní stránku nikdy nepřijde.
+            Tmavá karta na světlém pozadí, aby byla vidět; stojí až za odpovědí
+            na otázky rodiny, ne mezi nimi.
+
+            Až za rubrikou „ze života školy“ schválně: ta mluví o zprávách
+            z webu školy a tenhle blok o e-mailu od nás. Nad sebou by si dvě
+            různé věci říkaly „novinky“. Blok se schová sám, když je odběr
+            vypnutý nebo když ročník nemá budoucí událost. */}
+        <OdberBlok id="odber-novinek" zdroj="skola" varianta="karta" nadpis="Vše nové o přijímačkách e-mailem?" samostatna />
         <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-white p-5 shadow-[0_1px_0_#dbe3ec]">
           <p className="text-[15px] text-slate-700"><b className="text-[#16325c]">Jste z vedení školy?</b> Doplňte kritéria přijetí, dny otevřených dveří a popis školy. Je to zdarma a údaje uvidí rodiny na této stránce.</p>
           <Link href={EDITACE} className="font-bold text-[#0074e4] underline underline-offset-4">Editujte: pro vedení školy</Link>

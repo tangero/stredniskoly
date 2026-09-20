@@ -78,6 +78,21 @@ export function normalizujEmail(email: string): string {
   return String(email || '').trim().toLowerCase();
 }
 
+/**
+ * Testovací účty zadavatele (docs/ucty-portalu-skol-2027.md, 2.4). Zkouška celé cesty
+ * potřebuje školu vrátit do stavu „nemá správce“, což u skutečného správce nejde:
+ * ten se smí jen předat nebo nahradit. U těchhle adres administrace tu podmínku obejde.
+ * Adresy s příznakem („patrick+editor@zandl.cz“) se počítají taky.
+ */
+const TESTOVACI_ADRESY = ['patrick.zandl@marigold.cz', 'patrick@zandl.cz'];
+
+export function jeTestovaciUcet(email: string): boolean {
+  const e = normalizujEmail(email);
+  const [mistni, domena] = e.split('@');
+  if (!domena) return false;
+  return TESTOVACI_ADRESY.includes(`${mistni.split('+')[0]}@${domena}`);
+}
+
 export function jePlatnyEmail(email: string): boolean {
   return email.length <= 320 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -423,7 +438,7 @@ export async function zrusRoli(
     throw new PortalChyba('neplatne_udaje', 'Zrušení v administraci musí mít důvod.');
   }
   const role = await zamkniPlatnou(s, roleId);
-  if (role.role === 'spravce') {
+  if (role.role === 'spravce' && !jeTestovaciUcet(role.email)) {
     throw new PortalChyba('posledni_spravce', 'Správce nejde zrušit, jen předat nebo nahradit.');
   }
   await zneplatni(s, role.id);
@@ -736,7 +751,7 @@ export async function vymazKontakt(s: Spojeni, email: string, kdo: string, duvod
 export async function anonymizujOsobu(s: Spojeni, osobaId: string, kdo: string, duvod: string): Promise<number> {
   if (!duvod.trim()) throw new PortalChyba('neplatne_udaje', 'Výmaz musí mít důvod.');
   const role = await s.dotaz<PortalRole>(`select ${SLOUPCE} from portal_role where osoba_id = $1`, [osobaId]);
-  if (role.rows.some((r) => r.role === 'spravce' && r.zneplatneno === null)) {
+  if (role.rows.some((r) => r.role === 'spravce' && r.zneplatneno === null && !jeTestovaciUcet(r.email))) {
     throw new PortalChyba('posledni_spravce', 'Nejdřív dosaďte škole jiného správce.');
   }
   const emaily = [...new Set(role.rows.map((r) => normalizujEmail(r.email)))];
