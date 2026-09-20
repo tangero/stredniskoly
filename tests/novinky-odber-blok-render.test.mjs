@@ -27,8 +27,8 @@ function zavadec(reactModul) {
     const { outputText } = ts.transpileModule(fs.readFileSync(filename, 'utf8'), {
       compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX, esModuleInterop: true },
     });
-    const module = { exports: {} };
-    cache.set(filename, module.exports);
+    const modul = { exports: {} };
+    cache.set(filename, modul.exports);
     new Function('require', 'module', 'exports', outputText)((specifier) => {
       if (specifier === 'react' && reactModul) return reactModul;
       // `@/…` míří do src/, `./…` vedle importujícího souboru, zbytek je balíček.
@@ -43,11 +43,18 @@ function zavadec(reactModul) {
         if (fs.existsSync(kandidat) && !fs.statSync(kandidat).isDirectory()) return load(kandidat);
       }
       throw new Error(`nenalezeno: ${specifier}`);
-    }, module, module.exports);
-    cache.set(filename, module.exports);
-    return module.exports;
+    }, modul, modul.exports);
+    cache.set(filename, modul.exports);
+    return modul.exports;
   };
 }
+
+/**
+ * Náhrada `useState` pro statický render: vrátí počáteční hodnotu a prázdný
+ * setter, jen stav formuláře přepne na `poslano`. Skutečný hook se nevolá —
+ * podmíněné volání by porušilo pravidla hooků a neprošlo lintem.
+ */
+const stavPoslano = (init) => [init === 'formular' ? 'poslano' : init, () => {}];
 
 async function vykresliBlok(vlastnosti) {
   const { OdberBlok } = zavadec()('src/components/novinky/OdberBlok.tsx');
@@ -98,10 +105,7 @@ test('zapnutý odběr vykreslí samostatnou tmavou kartu i nadpis', async () => 
 test('pokyn k potvrzení odběru má na tmavém pozadí světlý text', () => {
   // Stav `poslano` se nasadí podstrčeným useState; jinak by se na něj nedalo
   // dosáhnout bez odeslání formuláře.
-  const reactSPoslano = {
-    ...React,
-    useState: (init) => (init === 'formular' ? ['poslano', () => {}] : React.useState(init)),
-  };
+  const reactSPoslano = { ...React, useState: stavPoslano };
   const { OdberFormular } = zavadec(reactSPoslano)('src/components/novinky/OdberFormular.tsx');
   const html = renderToStaticMarkup(
     React.createElement(OdberFormular, { rocnik: '2027', zdroj: 'skola', varianta: 'karta' }),
@@ -116,10 +120,7 @@ test('pokyn k potvrzení odběru má na tmavém pozadí světlý text', () => {
 });
 
 test('na světlém pozadí má pokyn k potvrzení naopak tmavý text', () => {
-  const reactSPoslano = {
-    ...React,
-    useState: (init) => (init === 'formular' ? ['poslano', () => {}] : React.useState(init)),
-  };
+  const reactSPoslano = { ...React, useState: stavPoslano };
   const { OdberFormular } = zavadec(reactSPoslano)('src/components/novinky/OdberFormular.tsx');
   const html = renderToStaticMarkup(
     React.createElement(OdberFormular, { rocnik: '2027', zdroj: 'novinky', varianta: 'stranka' }),
