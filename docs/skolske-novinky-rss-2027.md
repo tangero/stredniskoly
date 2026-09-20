@@ -193,7 +193,11 @@ Zadavatel rozhodl nasadit a výsledky zjišťovat z provozu. Fáze 1 a 2 jsou ho
 2. **Fronta změn místo invalidace cest.** Blok se bere z vlastního API, ne ze staticky generované stránky, takže `revalidatePath` není co volat. Tabulka `skola_invalidace` přesto vzniká hned: je auditní stopou změn a vstupem pro e-maily, a doplnit ji zpětně by znamenalo ztratit změny, které mezitím proběhly.
 3. **Platnost se počítá při čtení, ne při sklizni.** Sklízeč běží dvakrát denně; „budoucí termín při sklizni" by nechal včerejší termín viset jako pozvánku až do dalšího běhu. Filtr budoucích termínů je proto i v čtecí vrstvě a má vlastní test.
 
-**Co zbývá k zapnutí:** spustit migraci na produkční databázi (`POST /api/skoly/novinky/migrace` s `CRON_SECRET`), nastavit `DATABASE_URL` jako tajemství pro workflow a nechat proběhnout první sklizeň. Do té doby se blok na stránce školy nevykresluje – API vrátí `nenakonfigurovano` a komponenta nic nezobrazí.
+**Zapnuto 20. 9. 2026.** Migrace 003 proběhla na produkční databázi (šest tabulek, opakované spuštění je bez účinku, bez `CRON_SECRET` vrací 401), `DATABASE_URL` je tajemstvím repozitáře a první sklizeň je zapsaná. Blok na stránce školy se od té chvíle vykresluje u škol, které nějakou položku mají.
+
+**První běh (20. 9. 2026, 09:01–09:27 UTC):** 439 z 533 zdrojů ok, 94 chyb, 3 859 položek, 6 karet s termínem dne otevřených dveří. Zápis trval 22 minut; databáze je ve Frankfurtu, kdežto běh v USA, takže každý z tisíců dotazů letí přes Atlantik.
+
+**Zjištění, které první běh přinesl: 90 školních webů odpovídá z Česka a neodpovídá z GitHub Actions.** Táž sklizeň ze stroje v Česku o hodinu dřív: 528 zdrojů ok, 5 chyb, 4 607 položek, 7 karet. Z runneru navíc padlo 44× `ConnectionError` a 39× `ConnectTimeout`, tedy odmítnuté a nenavázané spojení, ne chyby formátu. Vypadá to na blokování cizích adres na straně školních webů nebo jejich hostingu. Cena je 17 % zdrojů a jedna karta s termínem. Než se pro to něco udělá, potvrdí druhý běh, zda padá **táž** devadesátka: stálá množina znamená blokování a řešení je sklízet z evropské adresy, kolísavá množina znamená přetížení a řešení je jen delší limit a opakování.
 
 ## 7. Provozní cíle a měření (přejato z oponentur §6, cíl přepracován)
 
