@@ -25,7 +25,7 @@
 // ============================================================================
 
 import { readFileSync, writeFileSync } from 'fs';
-import { dirname, join } from 'path';
+import { dirname, join, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { randomUUID } from 'crypto';
 import { Pool } from '@neondatabase/serverless';
@@ -83,10 +83,30 @@ function dalsiKontrola(zdroj, polozky) {
   return new Date(Date.now() + hodin * 3600_000);
 }
 
+/**
+ * Co se s uloženou položkou stalo proti tomu, co přinesla sklizeň.
+ *
+ * Otisk obsahu nestačí: pravidla klasifikace se mění častěji než články škol
+ * (oddíl 3.7, nález N8). Kdyby se porovnával jen otisk, oprava pravidel by se
+ * projevila až u položek, které škola sama přepíše – a protože feed je klouzavé
+ * okno o pár položkách, u většiny už nikdy. Rozdílná verze pravidel je proto
+ * sama o sobě důvod k přepsání řádku, i když se text článku nezměnil.
+ *
+ * `prepocitana` se od `zmenena` liší jen původem: obsah je tentýž, změnilo se
+ * jen to, co jsme z něj vyvodili. Běh si obojí počítá zvlášť, aby se v přehledu
+ * nedalo splést „školy vydaly opravy" s „přepnuli jsme verzi pravidel".
+ */
+export function zmenaProtiUlozene(stara, p) {
+  if (stara.otisk_obsahu !== p.otisk_obsahu) return 'zmenena';
+  if (stara.verze_pravidel !== p.verze_pravidel) return 'prepocitana';
+  return 'beze_zmeny';
+}
+
 /** Jedna položka: nová, změněná, nebo beze změny. Vrací, co se stalo. */
 async function ulozPolozku(klient, redizo, p) {
   const { rows } = await klient.query(
-    `select id, otisk_obsahu from skola_novinka where redizo = $1 and identita = $2`,
+    `select id, otisk_obsahu, verze_pravidel from skola_novinka
+      where redizo = $1 and identita = $2`,
     [redizo, p.identita],
   );
   const stara = rows[0];
@@ -108,7 +128,7 @@ async function ulozPolozku(klient, redizo, p) {
       [id, redizo, p.identita, ...spolecne],
     );
     zmena = 'nova';
-  } else if (stara.otisk_obsahu === p.otisk_obsahu) {
+  } else if (zmenaProtiUlozene(stara, p) === 'beze_zmeny') {
     return { zmena: 'beze_zmeny' };
   } else {
     id = stara.id;
@@ -119,7 +139,7 @@ async function ulozPolozku(klient, redizo, p) {
        where id = $1`,
       [id, ...spolecne],
     );
-    zmena = 'zmenena';
+    zmena = zmenaProtiUlozene(stara, p);
   }
 
   await klient.query(
@@ -135,6 +155,7 @@ async function zapisDavku(klient, davka) {
   const behId = randomUUID();
   let novych = 0;
   let zmenenych = 0;
+  let prepoctenych = 0;
   let zdrojuOk = 0;
 
   await klient.query(
@@ -155,6 +176,7 @@ async function zapisDavku(klient, davka) {
           const { zmena } = await ulozPolozku(klient, zdroj.redizo, p);
           if (zmena === 'nova') novych += 1;
           if (zmena === 'zmenena') zmenenych += 1;
+          if (zmena === 'prepocitana') prepoctenych += 1;
           if (zmena !== 'beze_zmeny') dotcena.add(zdroj.redizo);
         }
       }
@@ -204,7 +226,13 @@ async function zapisDavku(klient, davka) {
        polozek_novych = $3, polozek_zmenenych = $4 where id = $1`,
     [behId, zdrojuOk, novych, zmenenych],
   );
-  console.log(`Zapsáno: ${novych} nových, ${zmenenych} změněných položek, ${zdrojuOk} zdrojů ok.`);
+  // Do běhu se ukládají jen změny obsahu: `polozek_zmenenych` má v přehledu
+  // znamenat „tolik článků školy přepsaly", ne „tolik řádků jsme přepsali my".
+  // Přepočty po změně verze pravidel proto jdou jen do výpisu běhu.
+  console.log(
+    `Zapsáno: ${novych} nových, ${zmenenych} změněných položek, `
+    + `${prepoctenych} přepočtených po změně pravidel, ${zdrojuOk} zdrojů ok.`,
+  );
 }
 
 async function main() {
@@ -230,8 +258,12 @@ async function main() {
   }
 }
 
-main().catch((chyba) => {
-  // Chybu vypisujeme bez připojovacího řetězce.
-  console.error('Zápis selhal:', chyba instanceof Error ? chyba.message : chyba);
-  process.exitCode = 1;
-});
+// Jen při spuštění z příkazové řádky: test si sem sahá pro `zmenaProtiUlozene`
+// a nesmí přitom otevřít databázi.
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch((chyba) => {
+    // Chybu vypisujeme bez připojovacího řetězce.
+    console.error('Zápis selhal:', chyba instanceof Error ? chyba.message : chyba);
+    process.exitCode = 1;
+  });
+}
