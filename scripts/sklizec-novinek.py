@@ -77,6 +77,9 @@ PLATNOST_DNU = {
 }
 PLATNOST_VYCHOZI = 60
 PO_TERMINU_DNU = 3
+# O kolik smí datum vydání předběhnout sklizeň, než ho přestaneme brát vážně.
+# Jeden den kryje časové zóny a hodiny; víc už je chyba feedu, ne předstih.
+TOLERANCE_BUDOUCIHO_DATA_DNU = 1
 
 
 def normalizuj_url(url: str) -> str:
@@ -118,17 +121,21 @@ def stahni_feed(url: str, etag: str | None, modified: str | None, timeout: int =
     }
 
 
-def konec_platnosti(pol: dict, publikovano: datetime | None) -> str | None:
-    """Do kdy je položka aktuální zprávou. Termínová karta žije podle termínů."""
+def konec_platnosti(pol: dict, publikovano: datetime | None, dnes: date) -> str:
+    """Do kdy je položka aktuální zprávou. Termínová karta žije podle termínů.
+
+    Bez data vydání se počítá ode dne sklizně. Vracet `None`, tedy platnost bez
+    konce, by z položky s nečitelným nebo nesmyslným datem udělalo nesmrtelnou
+    zprávu – a takové položky jsou právě ty, u kterých si nejsme jistí.
+    """
     terminy = [t for t in (pol.get("publikace", {}).get("terminy") or [])]
     if terminy:
         posledni = date.fromisoformat(max(terminy))
         return (posledni + timedelta(days=PO_TERMINU_DNU)).isoformat()
-    if publikovano is None:
-        return None
     dnu = min((PLATNOST_DNU.get(t, PLATNOST_VYCHOZI) for t in pol.get("tridy", [])),
               default=PLATNOST_VYCHOZI)
-    return (publikovano.date() + timedelta(days=dnu)).isoformat()
+    zaklad = publikovano.date() if publikovano else dnes
+    return (zaklad + timedelta(days=dnu)).isoformat()
 
 
 def zpracuj_skolu(redizo: str, zaznam: dict, stav: dict, dnes: date, timeout: int = TIMEOUT) -> dict:
@@ -154,6 +161,12 @@ def zpracuj_skolu(redizo: str, zaznam: dict, stav: dict, dnes: date, timeout: in
         publikovano = p.get("datum")
         if publikovano and publikovano < od:
             continue
+        # Datum vydání v budoucnosti je chyba feedu nebo překlep školy, ne
+        # předstih. Zobrazit ho rodiči znamená tvrdit nepravdu („11. 11. 2031"),
+        # a navíc by taková položka trvale držela místo v pětici na stránce.
+        # Zprávu nezahazujeme – jen o ní přestaneme tvrdit, kdy vyšla.
+        if publikovano and publikovano.date() > dnes + timedelta(days=TOLERANCE_BUDOUCIHO_DATA_DNU):
+            publikovano = None
         # Publikační rozhodnutí se dělá znovu se **dnem zobrazení**: proběhlý
         # termín nesmí vzniknout jako pozvánka ani v dávce.
         pub = rozhodni_publikaci(p, publikovano, dnes)
@@ -170,7 +183,7 @@ def zpracuj_skolu(redizo: str, zaznam: dict, stav: dict, dnes: date, timeout: in
             "zpusobily_email": bool(pub["email"]),
             "duvod": pub.get("duvod"),
             "terminy": pub.get("terminy") or [],
-            "konec_platnosti": konec_platnosti({**p, "publikace": pub}, publikovano),
+            "konec_platnosti": konec_platnosti({**p, "publikace": pub}, publikovano, dnes),
             "verze_pravidel": VERZE_PRAVIDEL,
             # Co bylo čtenáři sděleno – pro porovnání významu opravy (3.2).
             "zobrazovana_pole": {"titulek": titulek, "url": url, "zobrazeni": pub["zobrazeni"]},
