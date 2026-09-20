@@ -1,6 +1,6 @@
 # Účty portálu pro školy: správce, editoři a pilot 20 škol
 
-Verze 1.7 · 20. 9. 2026 · Schváleno zadavatelem 19. 9. 2026, kroky 1–6 realizovány, review PR #111 vypořádáno (oddíl 9.2). Od verze 1.7 má obsah profilu vlastní tabulku `portal_profil` a publikuje se bez předchozí moderace.
+Verze 1.8 · 20. 9. 2026 · Schváleno zadavatelem 19. 9. 2026, kroky 1–6 realizovány, review PR #111 vypořádáno (oddíl 9.2). Od verze 1.7 má obsah profilu vlastní tabulku `portal_profil` a publikuje se bez předchozí moderace.
 
 Navazuje na [portál pro školy](portal-pro-skoly-2027.md) (v1.5). Ten dnes pracuje s kódem vázaným na školu: kdo kód zná, edituje, a o osobě nevíme nic. Pilot s 20 školami potřebuje vědět, **kdo** za školu data zadává, ukázat to veřejně a umět to změnit.
 
@@ -91,6 +91,9 @@ Přístup zůstává přes `ADMIN_TOKEN`. Akce, které zapisují, jdou metodou P
 Uplatnění kódu okamžitě pošle zprávu na Telegram (škola, jméno, funkce, e-mail a zda doména e-mailu sedí s doménou školy z rejstříku, tedy `Email 1` nebo `WWW`). V administraci se u správce ukáže varování, když doména nesedí. Freemailové domény nesedí nikdy, protože shoda na nich nic nedokazuje.
 
 Varování nic neblokuje, jen upozorní člověka. Porovnání jména s ředitelem z rejstříku za běhu **nejde**: `Adresar.csv` se nenasazuje (je v `.gitignore`) a jména ředitelů do repozitáře nepatří. Jméno ředitele se proto použije jen offline k oslovení v pozvánce, z negitovaného `data/portal/pilot-kontakty.json`.
+
+
+**Testovací účty zadavatele.** Zkouška celé cesty potřebuje školu vrátit do stavu „nemá správce“, což u skutečného správce nejde: ten se smí jen předat nebo nahradit. U adres `patrick@zandl.cz` a `patrick.zandl@marigold.cz` (včetně tvarů s příznakem, třeba `patrick+editor@zandl.cz`) proto administrace tuhle podmínku obejde: správce jde odebrat i anonymizovat bez náhrady. Seznam adres je v `src/lib/portal-ucty.ts` (`jeTestovaciUcet`).
 
 ## 3. Co uvidí veřejnost
 
@@ -226,6 +229,7 @@ Review: `docs/review-pr-111-portal-ucty.md` v hlavním pracovním stromu. Nasaze
 | 1.0 | První návrh po rozhodnutích zadavatele 19. 9. 2026. |
 | 1.1 | Schváleno. Správcem osobních údajů je Patrick Zandl (obchodní název Zandl AI Therapy Company). Facebooková skupina odložena. |
 | 1.2 | Kroky 1–6 realizovány (oddíl 9.1) s odchylkami: přihlášení tlačítkem kvůli skenerům pošty, kód bez databáze účtů funguje postaru, s ní jen k založení správce. |
+| 1.8 | Testovací účty zadavatele jdou v administraci odebrat i jako správce (oddíl 2.4). |
 | 1.7 | Obsah profilu má vlastní tabulku `portal_profil`, hlášení chyb od veřejnosti tabulku `hlaseni_chyby` (kontakt oznamovatele přestal chodit do veřejného issue). Zápis profilu porovnává hodnoty proti stavu, který měl odesílatel před sebou, aby zastaralý formulář nepřepsal novější opravu; operace nad jedním polem serializuje poradní zámek (`pg_advisory_xact_lock`), protože `for update` s `limit 1` závod o nejnovější verzi neřeší. Nesrovnalost v datech katalogu se ukládá v téže transakci jako profil, takže škola nedostane „přijato“ u podnětu, který nikde není (append-only, stejný vzor jako `portal_role`) a publikuje se bez předchozí moderace ([portál pro školy](portal-pro-skoly-2027.md), oddíl 4). GitHub issue nese už jen nesrovnalost v datech katalogu, tedy o jedno místo s osobními údaji míň. Událost `navrh_odeslan` nahrazena `profil_zmenen` (nese seznam změněných polí). Přihlášený editor nezadává kontaktní e-mail, bere se z `portal_role`; ve formuláři zůstává jen pro hosta z rejstříkové adresy. |
 | 1.6 | Název s ulicí a obcí i v issue, na Telegramu a v e-mailech z nastavení účtu. |
 | 1.5 | Profil a přepínač škol ukazují název s ulicí a obcí (oddíl 2.2). |

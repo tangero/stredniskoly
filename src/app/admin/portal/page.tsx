@@ -10,7 +10,7 @@ import { stavSkolPortalu, udalostiSkoly } from '@/lib/portal-admin';
 import { getNazevSkoly, PORTAL_POLE } from '@/lib/portal-skol';
 import { historieProfilu } from '@/lib/portal-profil';
 import { cteni } from '@/lib/portal-relace';
-import { historieSkoly, otevrenePozvanky, type PortalRole } from '@/lib/portal-ucty';
+import { historieSkoly, jeTestovaciUcet, otevrenePozvanky, type PortalRole } from '@/lib/portal-ucty';
 
 export const dynamic = 'force-dynamic';
 
@@ -256,11 +256,13 @@ async function DetailSkoly({ redizo }: { redizo: string }) {
               <Duvod />
               <button className={TLACITKO}>Změnit údaje</button>
             </Formular>
-            {r.role === 'editor' && (
+            {(r.role === 'editor' || jeTestovaciUcet(r.email)) && (
               <Formular redizo={redizo} akce="odebrat">
                 <input type="hidden" name="role_id" value={r.id} />
                 <Duvod />
-                <button className={TLACITKO}>Odebrat editora</button>
+                <button className={TLACITKO}>
+                  {r.role === 'editor' ? 'Odebrat editora' : 'Odebrat testovacího správce'}
+                </button>
               </Formular>
             )}
           </div>
