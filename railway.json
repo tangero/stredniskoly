@@ -3,9 +3,5 @@
   "build": {
     "builder": "DOCKERFILE",
     "dockerfilePath": "Dockerfile.sklizec"
-  },
-  "deploy": {
-    "cronSchedule": "10 4,14 * * *",
-    "restartPolicyType": "NEVER"
   }
 }

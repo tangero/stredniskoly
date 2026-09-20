@@ -11,17 +11,19 @@ name: Sklízeč školních novinek
 # navíc část českých webů odtamtud odpovídá HTTP 403. Rozbor v
 # docs/skolske-novinky-rss-2027.md, oddíl 3.3.
 #
-# PLÁN TADY ZATÍM ZŮSTÁVÁ. Službě na Railway chybí `DATABASE_URL`, takže by běh
-# skončil hned návratovým kódem 1 a nesklidil nic. Kdyby se plán vypnul dřív,
-# nesklízelo by ani jedno místo a poznalo by se to až z chybějících řádků
-# v `sklizen_beh`. Odstranit až po prvním doloženém úspěšném běhu na Railway se
-# zápisem do `sklizen_beh`; do té doby jsou obě místa neškodná, protože Railway
-# bez připojení nic nedělá.
+# Podmínka z review PR #133 zněla: plán tady nechat, dokud nebude doložený
+# úspěšný běh na Railway se zápisem do `sklizen_beh`. Splněno 20. 9. v 18:29 UTC
+# (`zdroju_zkouseno` 1, `zdroju_ok` 1, `verze_pravidel` 2026-09-20.6, bez chyby),
+# `DATABASE_URL` je na službě nastavená. Plán se proto ruší.
+#
+# Dva plány naráz by navíc škodily: obě místa míří na 04:10 UTC a to, které
+# doběhne první, posune `dalsi_kontrola_at` u zdrojů, takže by se nedalo říct,
+# ze které sítě výsledek pochází.
+#
+# Zůstává ruční záloha. Zapisuje do `sklizen_beh` stejně jako běh na Railway,
+# takže se dvojí sklizeň pozná.
 
 on:
-  schedule:
-    - cron: "10 4 * * *"    # 04:10 UTC
-    - cron: "10 14 * * *"   # 14:10 UTC
   workflow_dispatch:
     inputs:
       jen:
