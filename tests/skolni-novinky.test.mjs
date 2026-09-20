@@ -110,3 +110,50 @@ test('výpadek zdroje neskryje dříve uložené položky', async () => {
   assert.equal(v.polozky.length, 1);
   assert.equal(v.zdrojVypadek, true);
 });
+
+test('karta s termínem se dostane na stránku, i když ji přebilo pět novějších zpráv', async () => {
+  // Nález z provozu (škola 600011801, 20. 9. 2026): pozvánku na den otevřených
+  // dveří vytlačila nabídka práce pro dojiče, protože výběr pěti položek
+  // probíhal podle data dřív, než se vědělo, co je co.
+  process.env.DATABASE_URL = 'postgres://test';
+  const novejsi = Array.from({ length: 5 }, (_, i) =>
+    radek({
+      id: `z${i}`,
+      titulek: `Zpráva ze života školy ${i}`,
+      publikovano: `2026-09-1${i}T00:00:00.000Z`,
+      zobrazeni: 'seznam',
+      tridy: [],
+      terminy: [],
+      konec_platnosti: null,
+    }),
+  );
+  const dod = radek({ id: 'dod', publikovano: '2026-09-02T00:00:00.000Z', terminy: ['2026-10-01'] });
+  nastavPoolProTesty(pool([
+    { rows: [], rowCount: 0 },
+    { rows: [...novejsi.reverse(), dod], rowCount: 6 },
+    ZDROJ,
+  ]));
+  const v = await novinkySkoly('600011801', new Date('2026-09-20T10:00:00Z'));
+  assert.equal(v.polozky.length, 5);
+  assert.equal(v.polozky[0].id, 'dod');
+  assert.deepEqual(v.polozky[0].terminy, ['2026-10-01']);
+  // Vypadne nejstarší z běžných zpráv, ne pozvánka.
+  assert.deepEqual(v.polozky.slice(1).map((p) => p.id), ['z4', 'z3', 'z2', 'z1']);
+});
+
+test('bez karty s termínem zůstává pořadí podle data a bere se prvních pět', async () => {
+  process.env.DATABASE_URL = 'postgres://test';
+  const zpravy = Array.from({ length: 6 }, (_, i) =>
+    radek({
+      id: `z${i}`,
+      publikovano: `2026-09-0${6 - i}T00:00:00.000Z`,
+      zobrazeni: 'seznam',
+      tridy: [],
+      terminy: [],
+      konec_platnosti: null,
+    }),
+  );
+  nastavPoolProTesty(pool([{ rows: [], rowCount: 0 }, { rows: zpravy, rowCount: 6 }, ZDROJ]));
+  const v = await novinkySkoly('600011801', new Date('2026-09-20T10:00:00Z'));
+  assert.deepEqual(v.polozky.map((p) => p.id), ['z0', 'z1', 'z2', 'z3', 'z4']);
+});

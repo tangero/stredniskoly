@@ -42,7 +42,18 @@ export interface NovinkySkoly {
   zdrojVypadek: boolean;
 }
 
+/** Kolik položek se vejde do bloku na stránce školy. */
 const POCET_POLOZEK = 5;
+/**
+ * Z kolika posledních položek se těch pět vybírá.
+ *
+ * Řazení podle data samo o sobě nestačí: pozvánka na den otevřených dveří je
+ * často starší než běžné zprávy ze života školy, takže ji pět novějších
+ * článků vytlačí ze stránky – a právě termín dne otevřených dveří je jediný
+ * údaj, po kterém je poptávka. Okno je proto širší a výběr z něj dává přednost
+ * kartám s platným termínem (viz `serad`).
+ */
+const OKNO_POLOZEK = 30;
 
 interface RadekNovinky {
   id: string;
@@ -91,6 +102,19 @@ function jeVypnuto(prepinace: Map<string, unknown>, klic: string): boolean {
 }
 
 /**
+ * Karty s platným termínem napřed, zbytek v pořadí podle data.
+ *
+ * Obojí si uvnitř drží původní pořadí (dotaz vrací od nejnovější), takže mezi
+ * kartami ani mezi ostatními zprávami se nic nepřeskupuje – mění se jen to,
+ * která skupina má přednost, když se do bloku všechno nevejde.
+ */
+function serad(polozky: SkolniNovinka[]): SkolniNovinka[] {
+  const sTerminem = polozky.filter((p) => p.zobrazeni === 'karta_terminu');
+  const ostatni = polozky.filter((p) => p.zobrazeni !== 'karta_terminu');
+  return [...sTerminem, ...ostatni];
+}
+
+/**
  * Novinky jedné školy k danému okamžiku.
  *
  * Vrací `null`, když databáze není nakonfigurovaná – to je jiný **stav** než
@@ -114,7 +138,7 @@ export async function novinkySkoly(
         and (konec_platnosti is null or konec_platnosti > $2)
       order by publikovano desc nulls last, vytvoreno desc
       limit $3`,
-    [redizo, ted.toISOString(), POCET_POLOZEK],
+    [redizo, ted.toISOString(), OKNO_POLOZEK],
   );
 
   const dnes = ted.toISOString().slice(0, 10);
@@ -149,7 +173,7 @@ export async function novinkySkoly(
   const f = feed.rows[0];
 
   return {
-    polozky,
+    polozky: serad(polozky).slice(0, POCET_POLOZEK),
     zdrojOverenAt: naIso(f?.naposledy_ok ?? null),
     zdrojUrl: f?.feed_url ?? null,
     zdrojVypadek: (f?.chyby_v_rade ?? 0) > 0,
