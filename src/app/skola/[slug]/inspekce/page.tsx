@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
+import { adresaPrehledu } from '@/lib/adresa-oboru.mjs';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { getSchoolPageType, getExtractionsByRedizo } from '@/lib/data';
@@ -24,17 +25,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const school = pageInfo.school;
+  const overviewSlug = adresaPrehledu(pageInfo.redizo, school.nazev);
   const title = `Inspekce ČŠI - ${school.nazev}`;
   const description = `Podrobné shrnutí inspekční zprávy ČŠI pro ${school.nazev}, ${school.obec}. AI analýza silných stránek, rizik a doporučení.`;
 
   return {
     title,
     description,
+    alternates: { canonical: `/skola/${overviewSlug}/inspekce` },
     openGraph: {
       title: `${title} | Přijímačky na střední školy`,
       description,
       type: 'article',
-      url: `/skola/${slug}/inspekce`,
+      url: `/skola/${overviewSlug}/inspekce`,
     },
   };
 }
@@ -259,7 +262,10 @@ export default async function InspectionPage({ params }: Props) {
     notFound();
   }
 
-  const overviewSlug = `${redizo}-${createSlug(school.nazev)}`;
+  const overviewSlug = adresaPrehledu(redizo, school.nazev);
+  if (slug !== overviewSlug) {
+    permanentRedirect(`/skola/${overviewSlug}/inspekce`);
+  }
   const krajSlug = createSlug(krajNames[school.kraj_kod] || school.kraj);
 
   return (

@@ -2,9 +2,14 @@
 
 import fs from 'fs';
 import path from 'path';
-import { adresySkoly, nabidkySeStrankou } from '../src/lib/adresa-oboru.mjs';
+import { pathToFileURL } from 'node:url';
+import { SITE_URL } from '../src/lib/site.mjs';
+import { MESTA } from '../src/lib/mesta.mjs';
+import { krajNames } from '../src/lib/kraje.mjs';
+import { hasInspectionSummary } from '../src/lib/inspection-availability.mjs';
+import { adresySkoly, adresaPrehledu, nabidkySeStrankou } from '../src/lib/adresa-oboru.mjs';
 
-const BASE_URL = process.env.SITE_URL || 'https://prijimackynaskolu.cz';
+const BASE_URL = SITE_URL;
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
 const SCHOOL_ANALYSIS_PATH = path.join(PUBLIC_DIR, 'school_analysis.json');
 const SCHOOLS_DATA_PATH = path.join(PUBLIC_DIR, 'schools_data.json');
@@ -45,7 +50,7 @@ function xmlEscape(value) {
 }
 
 /**
- * Adresy škol a oborů pro sitemapu. Skládá je sdílený modul `src/lib/adresa-oboru.ts`,
+ * Adresy škol a oborů pro sitemapu. Skládá je sdílený modul `src/lib/adresa-oboru.mjs`,
  * tentýž, kterým je rozpoznává `src/lib/data.ts` — sitemapa tak nemůže ukazovat na adresu,
  * která se přesměrovává. Ročník se bere z registru stavu datových sad, ne napevno.
  */
@@ -85,24 +90,6 @@ function buildSchoolSlugs(analysisData, schoolsData, rocnik) {
   return Array.from(slugs).sort((a, b) => a.localeCompare(b, 'cs'));
 }
 
-// Must match krajNames in src/types/school.ts
-const krajNames = {
-  'CZ010': 'Praha',
-  'CZ020': 'Středočeský',
-  'CZ031': 'Jihočeský',
-  'CZ032': 'Plzeňský',
-  'CZ041': 'Karlovarský',
-  'CZ042': 'Ústecký',
-  'CZ051': 'Liberecký',
-  'CZ052': 'Královéhradecký',
-  'CZ053': 'Pardubický',
-  'CZ063': 'Vysočina',
-  'CZ064': 'Jihomoravský',
-  'CZ071': 'Olomoucký',
-  'CZ072': 'Zlínský',
-  'CZ080': 'Moravskoslezský'
-};
-
 function buildKrajSlugs(analysisData) {
   const schools = Object.values(analysisData || {});
   const krajKods = new Set();
@@ -116,80 +103,61 @@ function buildKrajSlugs(analysisData) {
     .sort((a, b) => a.localeCompare(b, 'cs'));
 }
 
-function urlEntry(url, lastmod, changefreq, priority) {
+/**
+ * Jen kanonické cesty. Lastmod záměrně vynecháváme: mtime dat při buildu
+ * neříká, kdy se významně změnila konkrétní stránka.
+ */
+export function buildSitemapPaths(analysisData, schoolsData, rocnik, inspections, resultYears) {
+  const schoolSlugs = buildSchoolSlugs(analysisData, schoolsData, rocnik);
+  const schoolSet = new Set(schoolSlugs);
+  const paths = new Set([
+    '/', '/prijimacky-2027', '/simulator', '/skoly', '/regiony', '/mesto',
+    '/dostupnost', '/jak-vybrat-skolu', '/changelog', '/novinky',
+    '/pro-skoly', '/ochrana-osobnich-udaju',
+  ]);
+  for (const year of resultYears) paths.add(`/vysledky/${year}`);
+  for (const kraj of buildKrajSlugs(analysisData)) paths.add(`/regiony/${kraj}`);
+  for (const mesto of MESTA) paths.add(`/mesto/${mesto.slug}`);
+  for (const slug of schoolSlugs) paths.add(`/skola/${slug}`);
+
+  // Stejný název a podmínka publikace jako v data.ts. Jedna inspekce za školu,
+  // nikoli kopie pro každý obor; bez shrnutí stránka vrací 404.
+  const seen = new Set();
+  for (const school of Object.values(analysisData)) {
+    const redizo = school.id.split('_')[0];
+    if (seen.has(redizo)) continue;
+    seen.add(redizo);
+    const overview = adresaPrehledu(redizo, school.nazev);
+    if (schoolSet.has(overview) && (inspections.schools?.[redizo] ?? []).some(hasInspectionSummary)) {
+      paths.add(`/skola/${overview}/inspekce`);
+    }
+  }
+  return [...paths];
+}
+
+export function renderSitemap(paths) {
   return [
-    '  <url>',
-    `    <loc>${xmlEscape(url)}</loc>`,
-    `    <lastmod>${lastmod}</lastmod>`,
-    `    <changefreq>${changefreq}</changefreq>`,
-    `    <priority>${priority}</priority>`,
-    '  </url>',
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...paths.map(route => `  <url><loc>${xmlEscape(`${BASE_URL}${route}`)}</loc></url>`),
+    '</urlset>',
+    '',
   ].join('\n');
 }
 
 function main() {
-  if (!fs.existsSync(SCHOOL_ANALYSIS_PATH)) {
-    throw new Error(`Missing required file: ${SCHOOL_ANALYSIS_PATH}`);
-  }
-  if (!fs.existsSync(SCHOOLS_DATA_PATH)) {
-    throw new Error(`Missing required file: ${SCHOOLS_DATA_PATH}`);
-  }
-
   const analysisData = readJson(SCHOOL_ANALYSIS_PATH);
   const schoolsData = readJson(SCHOOLS_DATA_PATH);
-
-  // Zobrazený ročník určuje registr stavu datových sad, nikdy ne letopočet v kódu.
+  const inspections = readJson(path.join(process.cwd(), 'data', 'inspection_extractions.json'));
+  const results = readJson(path.join(PUBLIC_DIR, 'cermat_results_meta.json'));
   const registr = readJson(path.join(PUBLIC_DIR, 'stav_datovych_sad.json'));
   const rocnik = registr?.sady?.['cermat-prihlasky']?.zobrazeno?.obdobi;
-  if (!rocnik) {
-    throw new Error('registr neuvádí zobrazené období sady cermat-prihlasky');
-  }
+  if (!rocnik) throw new Error('registr neuvádí zobrazené období sady cermat-prihlasky');
 
-  const schoolSlugs = buildSchoolSlugs(analysisData, schoolsData, rocnik);
-  const krajSlugs = buildKrajSlugs(analysisData);
-
-  const mtimeAnalysis = fs.statSync(SCHOOL_ANALYSIS_PATH).mtime;
-  const mtimeSchools = fs.statSync(SCHOOLS_DATA_PATH).mtime;
-  const lastmod = new Date(Math.max(mtimeAnalysis.getTime(), mtimeSchools.getTime())).toISOString();
-
-  const urls = [];
-  const staticRoutes = [
-    ['/', 'weekly', '1.0'],
-    ['/prijimacky-2027', 'weekly', '0.9'],
-    ['/vysledky/2026', 'monthly', '0.8'],
-    ['/simulator', 'weekly', '0.9'],
-    ['/skoly', 'weekly', '0.9'],
-    ['/regiony', 'weekly', '0.8'],
-    ['/dostupnost', 'weekly', '0.8'],
-    ['/praha-dostupnost', 'weekly', '0.7'],
-    ['/jak-vybrat-skolu', 'monthly', '0.7'],
-    ['/changelog', 'weekly', '0.6'],
-  ];
-
-  for (const [route, freq, priority] of staticRoutes) {
-    urls.push(urlEntry(`${BASE_URL}${route}`, lastmod, freq, priority));
-  }
-
-  for (const krajSlug of krajSlugs) {
-    urls.push(urlEntry(`${BASE_URL}/regiony/${krajSlug}`, lastmod, 'weekly', '0.7'));
-  }
-
-  for (const slug of schoolSlugs) {
-    urls.push(urlEntry(`${BASE_URL}/skola/${slug}`, lastmod, 'weekly', '0.7'));
-    urls.push(urlEntry(`${BASE_URL}/skola/${slug}/inspekce`, lastmod, 'weekly', '0.6'));
-  }
-
-  const xml = [
-    '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    ...urls,
-    '</urlset>',
-    '',
-  ].join('\n');
-
-  fs.writeFileSync(OUTPUT_PATH, xml, 'utf8');
+  const paths = buildSitemapPaths(analysisData, schoolsData, rocnik, inspections, results.available_years);
+  fs.writeFileSync(OUTPUT_PATH, renderSitemap(paths), 'utf8');
   console.log(`Generated sitemap: ${OUTPUT_PATH}`);
-  console.log(`Total URLs: ${urls.length}`);
+  console.log(`Total URLs: ${paths.length}`);
 }
 
-main();
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) main();

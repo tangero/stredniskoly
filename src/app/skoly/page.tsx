@@ -9,6 +9,7 @@ import { SchoolsPageTabs } from '@/components/SchoolsPageTabs';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/skoly' },
   title: 'Nejžádanější studijní obory',
   description: 'Žebříček nejžádanějších středoškolských oborů v ČR. Převis poptávky 2026 a statistiky podle měst. Historická data nejsou odhadem osobního přijetí.',
   openGraph: {

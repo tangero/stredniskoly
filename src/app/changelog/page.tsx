@@ -4,6 +4,7 @@ import { Footer } from '@/components/Footer';
 import { changelog, AKTUALNI_VERZE } from '@/lib/changelog';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/changelog' },
   title: 'Changelog - Historie verzí',
   description: 'Historie všech změn a verzí aplikace Přijímačky na střední školy.',
 };

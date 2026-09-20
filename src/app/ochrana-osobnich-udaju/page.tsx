@@ -16,6 +16,7 @@ import { Footer } from '@/components/Footer';
 // ============================================================================
 
 export const metadata = {
+  alternates: { canonical: '/ochrana-osobnich-udaju' },
   title: 'Ochrana osobních údajů',
   description:
     'Jaké údaje web Přijímačky na školu zpracovává, proč, jak dlouho je drží a jak svá práva uplatnit.',

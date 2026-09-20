@@ -5,6 +5,7 @@ import { DostupnostClient } from "./DostupnostClient";
 import { VibecordingPromo } from '@/components/VibecordingPromo';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/dostupnost' },
   title: "Dopravní dostupnost škol v celé ČR",
   description:
     "Najděte střední školy dostupné veřejnou dopravou z libovolné zastávky v ČR. Transfer-aware Dijkstra routing na celostátním GTFS grafu.",

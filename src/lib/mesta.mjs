@@ -1,0 +1,23 @@
+// Sdílený seznam měst pro stránky i sitemapu.
+export const MESTA = /** @type {const} */ ([
+  { nazev: 'Praha', slug: 'praha', kraj: 'Hlavní město Praha' },
+  { nazev: 'Brno', slug: 'brno', kraj: 'Jihomoravský kraj' },
+  { nazev: 'Ostrava', slug: 'ostrava', kraj: 'Moravskoslezský kraj' },
+  { nazev: 'Plzeň', slug: 'plzen', kraj: 'Plzeňský kraj' },
+  { nazev: 'Liberec', slug: 'liberec', kraj: 'Liberecký kraj' },
+  { nazev: 'Olomouc', slug: 'olomouc', kraj: 'Olomoucký kraj' },
+  { nazev: 'Ústí nad Labem', slug: 'usti-nad-labem', kraj: 'Ústecký kraj' },
+  { nazev: 'České Budějovice', slug: 'ceske-budejovice', kraj: 'Jihočeský kraj' },
+  { nazev: 'Hradec Králové', slug: 'hradec-kralove', kraj: 'Královéhradecký kraj' },
+  { nazev: 'Pardubice', slug: 'pardubice', kraj: 'Pardubický kraj' },
+  { nazev: 'Havířov', slug: 'havirov', kraj: 'Moravskoslezský kraj' },
+  { nazev: 'Zlín', slug: 'zlin', kraj: 'Zlínský kraj' },
+  { nazev: 'Kladno', slug: 'kladno', kraj: 'Středočeský kraj' },
+  { nazev: 'Most', slug: 'most', kraj: 'Ústecký kraj' },
+  { nazev: 'Opava', slug: 'opava', kraj: 'Moravskoslezský kraj' },
+  { nazev: 'Frýdek-Místek', slug: 'frydek-mistek', kraj: 'Moravskoslezský kraj' },
+  { nazev: 'Karviná', slug: 'karvina', kraj: 'Moravskoslezský kraj' },
+  { nazev: 'Jihlava', slug: 'jihlava', kraj: 'Kraj Vysočina' },
+  { nazev: 'Děčín', slug: 'decin', kraj: 'Ústecký kraj' },
+  { nazev: 'Teplice', slug: 'teplice', kraj: 'Ústecký kraj' },
+]);

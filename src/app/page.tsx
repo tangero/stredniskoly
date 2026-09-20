@@ -9,6 +9,7 @@ import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import calendar from '@/data/admissions-2027.json';
 
 export const metadata = {
+  alternates: { canonical: '/' },
   title: 'Výběr střední školy a kalendář přijímaček 2027',
   description: 'Termíny přijímaček 2027 podle MŠMT a historické výsledky škol 2024–2026. Prozkoumej obory, porovnej výsledky a naplánuj přihlášky.',
 };

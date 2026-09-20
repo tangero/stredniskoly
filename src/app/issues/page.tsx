@@ -4,6 +4,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/issues' },
   title: 'Nahlášené chyby a jejich zpracování',
   description: 'Přehled nahlášených chyb a informace o tom, jak je zpracováváme.',
 };

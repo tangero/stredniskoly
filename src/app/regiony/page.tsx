@@ -7,6 +7,7 @@ import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { getAllKraje, getAllSchools, getAllSchoolsForSearch, getSchoolsByKraj, getRegionStats, getExtendedSchoolStatsForSchools } from '@/lib/data';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/regiony' },
   title: 'Přehled regionů',
   description: 'Přehled středních škol podle krajů ČR. Statistiky přijímacích zkoušek pro jednotlivé regiony.',
   openGraph: {

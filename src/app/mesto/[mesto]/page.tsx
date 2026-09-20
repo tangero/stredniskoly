@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const meta = MESTA.find(m => m.slug === mestoSlug);
   if (!meta) return { title: 'Město nenalezeno' };
   return {
+    alternates: { canonical: `/mesto/${meta.slug}` },
     title: `Střední školy ${meta.nazev} — přijímačky 2026`,
     description: `Přehled středních škol v ${meta.nazev}. Výsledky přijímacích zkoušek 2026, kapacity, zájem uchazečů a srovnání s ČR.`,
     openGraph: {

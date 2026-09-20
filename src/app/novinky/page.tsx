@@ -11,6 +11,7 @@ import calendar from '@/data/admissions-2027.json';
 // ============================================================================
 
 export const metadata = {
+  alternates: { canonical: '/novinky' },
   title: 'Novinky k přijímačkám e-mailem',
   description:
     'Pošleme ti termíny přijímacího řízení s předstihem, napíšeme, co je potřeba připravit, a dáme vědět, když na web přibudou nová data o školách a oborech.',

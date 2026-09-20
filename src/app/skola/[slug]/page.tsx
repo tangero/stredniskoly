@@ -79,6 +79,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         url: `/skola/${slug}`,
       },
       alternates: {
+        canonical: pageInfo.presmerovatNa?.split('#')[0] ?? `/skola/${slug}`,
         types: {
           'text/markdown': `/skola/${slug}.md`,
           'application/json': `/skola/${slug}.json`,
@@ -105,6 +106,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `/skola/${slug}`,
     },
     alternates: {
+      canonical: pageInfo.presmerovatNa?.split('#')[0] ?? `/skola/${slug}`,
       types: {
         'text/markdown': `/skola/${overviewSlugMeta}.md`,
         'application/json': `/skola/${overviewSlugMeta}.json`,

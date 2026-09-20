@@ -5,6 +5,7 @@ import { Footer } from '@/components/Footer';
 import { SimulatorClient } from './SimulatorClient';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/simulator' },
   title: 'Simulátor výběru školy 2027',
   description: 'Vyberte obor a nastavte orientační dojezd veřejnou dopravou. Uložte si školy a prohlédněte si jejich historické výsledky.',
   openGraph: {

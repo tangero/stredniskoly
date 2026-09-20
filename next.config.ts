@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { SITE_URL } from "./src/lib/site.mjs";
 
 // Security headers pro ochranu aplikace
 const securityHeaders = [
@@ -80,6 +81,12 @@ const nextConfig: NextConfig = {
   // Security a cache headers
   async headers() {
     return [
+      // Vercel preview zůstává funkční, ale nesmí se indexovat (ani JSON/PDF).
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: '.*\\.vercel\\.app' }],
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],
+      },
       // Security headers pro všechny stránky
       {
         source: '/:path*',
@@ -104,6 +111,14 @@ const nextConfig: NextConfig = {
   // Permanent redirects
   async redirects() {
     return [
+      // Pouze známý veřejný alias, ne všechny vývojové deploymenty.
+      // Next zachová cestu i query string; 308 zachovává i HTTP metodu.
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'stredniskoly\\.vercel\\.app' }],
+        destination: `${SITE_URL}/:path*`,
+        permanent: true,
+      },
       {
         source: '/praha-dostupnost',
         destination: '/dostupnost',

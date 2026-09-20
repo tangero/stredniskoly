@@ -4,7 +4,14 @@ import { getSchoolPageType } from '@/lib/data';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
-export const metadata = { title: 'Je tento obor pro mě?', description: 'Co zvážit při výběru oboru a kde porovnat historické výsledky.' };
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  return {
+    title: 'Je tento obor pro mě?',
+    description: 'Co zvážit při výběru oboru a kde porovnat historické výsledky.',
+    alternates: { canonical: `/skola/${slug}/pro-me` },
+  };
+}
 export default async function GuidedJourneyPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const { school, program } = await getSchoolPageType(slug);

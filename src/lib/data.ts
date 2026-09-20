@@ -1,3 +1,4 @@
+import { hasInspectionSummary } from './inspection-availability.mjs';
 import { canPublishAcceptedResult } from './result-quality';
 import { historicalSubjectAverage, type AdmissionScore } from './admission-metric';
 import type { AdmissionContext } from './admission-summary';
@@ -1504,7 +1505,7 @@ export async function getInspectionExtractions(): Promise<Record<string, Inspect
 
       // Mapovat na InspectionExtraction
       const mapped: (InspectionExtraction & { model_id: string })[] = inspList
-        .filter(insp => insp.parsed_output?.for_parents?.plain_czech_summary)
+        .filter(hasInspectionSummary)
         .map(insp => {
           const fp = insp.parsed_output.for_parents!;
           return {

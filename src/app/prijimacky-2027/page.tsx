@@ -8,7 +8,7 @@ import calendar from '@/data/admissions-2027.json';
 export const metadata: Metadata = {
   title: 'Kalendář přijímaček 2027: přihlášky, JPZ a výsledky',
   description: 'Ověřené termíny přijímacího řízení pro nástup v září 2027. Střední školy, konzervatoře, první i druhé kolo a kalendář ke stažení.',
-  alternates: { canonical: 'https://www.prijimackynaskolu.cz/prijimacky-2027' },
+  alternates: { canonical: '/prijimacky-2027' },
 };
 
 export default function Admissions2027Page() {

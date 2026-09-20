@@ -5,6 +5,7 @@ import { Footer } from '@/components/Footer';
 import { MESTA, getCityStats } from '@/lib/cityData';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/mesto' },
   title: 'Střední školy podle měst — přijímačky 2026',
   description: 'Přehled středních škol ve 20 největších českých městech. Data přijímacích zkoušek 2026, kapacity a zájem uchazečů.',
   openGraph: {

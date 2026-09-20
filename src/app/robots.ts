@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/site.mjs';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -17,8 +18,8 @@ export default function robots(): MetadataRoute.Robots {
       ],
       // Zbytek API je buď zápisový (bug-report), nebo jde o interní
       // dotazovací rozhraní stránek bez samostatné informační hodnoty.
-      disallow: ['/api/', '/_next/'],
+      disallow: ['/api/'],
     },
-    sitemap: 'https://prijimackynaskolu.cz/sitemap.xml',
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
+    alternates: { canonical: `/regiony/${kraj.slug}` },
     title: `${krajLabel(kraj.nazev)} - Přehled škol`,
     description: `Přehled středních škol ${krajLabelV(kraj.nazev)}. ${kraj.count} škol a oborů, statistiky přijímacích zkoušek.`,
     openGraph: {

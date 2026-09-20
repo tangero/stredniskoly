@@ -99,22 +99,7 @@ export const categoryColors: Record<CategoryCode, { bg: string; text: string }> 
   backup: { bg: 'bg-red-100', text: 'text-red-800' }
 };
 
-export const krajNames: Record<string, string> = {
-  'CZ010': 'Hlavní město Praha',
-  'CZ020': 'Středočeský',
-  'CZ031': 'Jihočeský',
-  'CZ032': 'Plzeňský',
-  'CZ041': 'Karlovarský',
-  'CZ042': 'Ústecký',
-  'CZ051': 'Liberecký',
-  'CZ052': 'Královéhradecký',
-  'CZ053': 'Pardubický',
-  'CZ063': 'Vysočina',
-  'CZ064': 'Jihomoravský',
-  'CZ071': 'Olomoucký',
-  'CZ072': 'Zlínský',
-  'CZ080': 'Moravskoslezský'
-};
+export { krajNames } from '../lib/kraje.mjs';
 
 // Délka studia - mapování typu na popis
 export const studyLengthLabels: Record<string, string> = {

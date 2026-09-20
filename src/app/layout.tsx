@@ -4,6 +4,7 @@ import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import BugReportButton from '@/components/BugReportButton';
 import './globals.css';
+import { SITE_URL } from '@/lib/site.mjs';
 
 const cabin = Cabin({
   subsets: ['latin', 'latin-ext'],
@@ -18,7 +19,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://prijimackynaskolu.cz'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Najdi si svou střední školu | Přijímačky na střední školy',
     template: '%s | Přijímačky na střední školy',
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'cs_CZ',
-    url: 'https://prijimackynaskolu.cz',
+    url: SITE_URL,
     siteName: 'Přijímačky na školu',
     title: 'Vyhledávání středních škol, přijímačky a dojíždění',
     description:
@@ -64,9 +65,6 @@ export const metadata: Metadata = {
     title: 'Vyhledávání středních škol, přijímačky a dojíždění',
     description:
       'Najděte si střední školu a ověřte dojíždění. Kalendář přijímání 2027 a historické výsledky škol do roku 2026.',
-  },
-  alternates: {
-    canonical: 'https://prijimackynaskolu.cz',
   },
   icons: {
     icon: '/icon.svg',

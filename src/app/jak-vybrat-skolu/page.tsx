@@ -20,6 +20,7 @@ import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
  */
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/jak-vybrat-skolu' },
   title: 'Jak vybrat střední školu a jak funguje přijímací řízení',
   description:
     'Návod krok za krokem: kdy co podat, jak se rozhoduje o přijetí, jak najít a posoudit školu '
