@@ -12,7 +12,8 @@ Navazuje na [portál pro školy](portal-pro-skoly-2027.md) (v1.5). Ten dnes prac
 | Kolik editorů | víc; první, kdo uplatní kód, je **správce** a zve kolegy; kód se tím spotřebuje |
 | Změny správce a sporné případy | administrace; každá změna je **nový záznam**, který zneplatní starší, s časem a autorem změny |
 | Odpovědi školám | Eduarda (AI asistentka, přiznává to v podpisu) odpovídá sama; kódy nezná, změny účtů dělá jen člověk (Patrick Zandl) |
-| Rozeslání | ručně z `eda@prijimackynaskolu.cz`, kód v textu, 20 škol ze seznamu zadavatele |
+| Rozeslání | z `eda@prijimackynaskolu.cz`, kód v textu, 20 škol ze seznamu zadavatele. **Od 20. 9. 2026 programově** skriptem `scripts/portal-posli-pozvanky.mjs` přes Resend, ne ručně; podpis zůstává lidský (oddíl 5) |
+| Právní posouzení oslovení | **externí souhlas zadavatele 20. 9. 2026.** [Návrh portálu](portal-pro-skoly-2027.md) žádal před rozesílkou posouzení obchodního sdělení podle zákona 480/2004 Sb.; zadavatel je vyřešil mimo projekt a rozesílku schválil. Platí pro pilot 20 škol, ne pro plošné oslovení |
 | Sledování | přehled 20 škol v `/admin` a upozornění na Telegram |
 | Otevřená data a odznak | v pilotu se nestaví, v e-mailu jen „připravujeme“ |
 | Termín rozeslání | do dvou týdnů, cíl začátek října (školy vypisují dny otevřených dveří) |
@@ -123,7 +124,7 @@ Osobnost je v souboru zadavatele (`eda-osobnost.md`). Pro komunikaci se školami
 6. **Umí stručně** co portál dělá a nedělá (text `/pro-skoly`), že odznak a otevřená data připravujeme bez termínu.
 7. **Správcem osobních údajů je Patrick Zandl.** „Zandl AI Therapy Company“ v podpisu Eduardy je obchodní název jeho podnikání, ne jiná osoba. Souhlas se zveřejněním jména, stránka `/pro-skoly` i podpis proto uvádějí téhož správce; v souhlasu stojí jméno, obchodní název je doplněk.
 
-Pozvánku samotnou podepisuje člověk (Patrick Zandl), ne Eduarda. Ředitel, kterému přijde přístupový kód podepsaný AI, to snadno vyhodnotí jako podvod; Eduarda se v pozvánce uvádí jako podpora pro dotazy.
+Pozvánku samotnou podepisuje člověk — **Patrick Zandl, provozovatel projektu** —, ne Eduarda, i když odchází z adresy `eda@` a odpovědi vyřizuje Eduarda. Že to tak je, e-mail sám vysvětluje. Ředitel, kterému přijde přístupový kód podepsaný AI, to snadno vyhodnotí jako podvod; Eduarda se v pozvánce uvádí jako podpora pro dotazy.
 
 ## 6. Inventura zdrojů
 

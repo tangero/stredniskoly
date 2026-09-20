@@ -156,7 +156,7 @@ Podmínky, bez kterých to nejde:
 | Odezva škol na oslovení — celý model stojí na dobrovolnosti | pilot 50–100 škol podle [návrhu rozvoje §6](navrh-rozvoje-2027.md) dřív, než se staví portál; odezva se měří dokončenými kontrolami, ne otevřeními |
 | Rejstříkové e-maily jsou funkční adresy (sekretariát), ne osoba s rozhodováním | přijmout — sekretariát je správný vstupní bod; delegace v oddíle 2.4 to pokrývá |
 | Zneužití rejstříkové adresy přeposíláním | moderace všech změn; spor řeší vrstva 2 (datová schránka) |
-| Právní rámec oslovení (obchodní sdělení) | před rozesílkou posoudit dle ÚOOÚ, jak §6 návrhu rozvoje vyžaduje; pilot oslovuje s žádostí o spolupráci, ne s nabídkou služby |
+| Právní rámec oslovení (obchodní sdělení) | **vyřešeno externím posouzením zadavatele 20. 9. 2026** pro pilot 20 škol ([účty portálu](ucty-portalu-skol-2027.md), oddíl 1). Pilot oslovuje s žádostí o spolupráci, ne s nabídkou služby. Pro plošné oslovení 1 100 škol posouzení **neplatí** a musí se udělat znovu, včetně evidence odhlášení podle [návrhu rozvoje §6](navrh-rozvoje-2027.md) |
 | Stav sezóny: kritéria 2027 školy vyhlásí v listopadu–lednu | kalendář sběru navázat na vyhlášení kritérií, ne na školní rok |
 | Co s daty škol, které mezitím zaniknou nebo se sloučí | párování na stabilní identifikátory, jak řeší [matice změn](matice-zmen-skol-a-oboru-2025-2026.md); profil zaniklé školy se archivuje |
 
