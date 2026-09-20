@@ -8,6 +8,7 @@ import {
   zalozSpravceZRejstriku,
   zmenRoli,
   zrusRoli,
+  jeTestovaciUcet,
   predejSpravcovstvi,
   dosadSpravce,
   vytvorPozvanku,
@@ -152,6 +153,17 @@ test('správce nejde zrušit, editora ano', async () => {
   const editor = await tx((t) => prijmiPozvanku(t, pozvanka.id, PETR.jmeno, ''));
   await tx((t) => zrusRoli(t, editor.id, 'sam'));
   assert.equal((await platneRoleSkoly(s, '600000007')).length, 1);
+});
+
+test('testovací účet zadavatele jde zrušit i jako správce a anonymizovat', async () => {
+  const { s, tx } = await novaDb();
+  const test1 = { ...JANA, email: 'patrick+editor@zandl.cz' };
+  const spravce = await tx((t) => uplatniKod(t, 'h', '600000020', test1));
+  await tx((t) => zrusRoli(t, spravce.id, 'admin:patrick', 'konec testu'));
+  assert.equal((await platneRoleSkoly(s, '600000020')).length, 0);
+  const druhy = await tx((t) => uplatniKod(t, 'h2', '600000021', { ...PETR, email: 'patrick.zandl@marigold.cz' }));
+  await tx((t) => anonymizujOsobu(t, druhy.osoba_id, 'patrick', 'konec testu'));
+  assert.equal((await platneRoleSkoly(s, '600000021')).length, 0);
 });
 
 test('dosazení správce adminem: původní se zneplatní nebo zůstane editorem', async () => {
@@ -330,4 +342,13 @@ test('výmaz kontaktu bez účtu: zmizí z událostí, osobu s účtem odmítne'
   const obsah = JSON.stringify((await db.query(`select detail from portal_udalost`)).rows);
   assert.ok(!obsah.toLowerCase().includes('host@skola.cz'));
   assert.ok(obsah.includes('"issue":7'));
+});
+
+test('jeTestovaciUcet: jen adresy zadavatele, i s příznakem', () => {
+  assert.equal(jeTestovaciUcet('Patrick@Zandl.cz '), true);
+  assert.equal(jeTestovaciUcet('patrick+editor@zandl.cz'), true);
+  assert.equal(jeTestovaciUcet('patrick.zandl@marigold.cz'), true);
+  assert.equal(jeTestovaciUcet('reditel@gymstola.cz'), false);
+  assert.equal(jeTestovaciUcet('patrick@zandl.cz.evil.cz'), false);
+  assert.equal(jeTestovaciUcet(''), false);
 });
