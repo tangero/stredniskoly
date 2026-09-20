@@ -1,6 +1,6 @@
 # Sledování škol a hromadná upozornění na změny
 
-Verze 1.1 · 14. 9. 2026, revize 20. 9. 2026 · Návrh k rozhodnutí, nic není implementované.
+Verze 1.2 · 14. 9. 2026, revize 20. 9. 2026 · Návrh; model události rozhodnut a schéma založeno (`db/migrace/004-udalosti.sql`), odesílač ani tlačítko postavené nejsou.
 
 Rodina zadá e-mail a dostane upozornění, když se změní údaje škol, které sleduje. Navazuje na [stránku školy](stranka-skoly-2027.md), [registr stavu datových sad](../public/stav_datovych_sad.json), [datovou linku](datova-linka.md) a [portál pro školy](portal-pro-skoly-2027.md).
 
@@ -30,24 +30,40 @@ Událost vzniká jen při **publikaci**, tedy tam, kde se web opravdu mění:
 | Přepnutí datové sady (`stav-datovych-sad.py prepni`) | po schválení a sloučení PR datové linky | školy, jejichž údaje se mezi starým a novým obdobím liší; spočítá rozdílový skript nad výstupními soubory, ne všechny školy v sadě |
 | Schválení příspěvku z portálu pro školy | při zápisu do `public/portal_skol.json` | jedna škola, pole, která se změnila |
 | Nová inspekční zpráva | při převzetí snímku ČŠI | školy s novou inspekcí |
+| **Novinka z webu školy** (RSS) | při zápisu položky s publikačním rozhodnutím `karta_terminu` nebo `karta` | jedna škola |
 
-Co událost **není**: oprava překlepu v textu stránky, přepočet bez změny hodnoty, změna vzhledu, nová verze slovníku. Rozdílový skript porovnává **zobrazené hodnoty**, ne soubory, takže technická regenerace nic nepošle.
+Co událost **není**: oprava překlepu v textu stránky, přepočet bez změny hodnoty, změna vzhledu, nová verze slovníku. Rozdílový skript porovnává **zobrazené hodnoty**, ne soubory, takže technická regenerace nic nepošle. U novinek z webu školy událost nevzniká z každé položky: `odkaz` a `seznam` jsou zprávy ze života školy, ne důvod psát rodině.
 
-Záznam události, například `data/sledovani/udalosti/2027-02-15-cermat-prihlasky.json`:
+### 2.1 Jedna tabulka událostí pro všechny zdroje (rozhodnuto 20. 9. 2026, P4)
 
-```json
-{
-  "id": "2027-02-15-cermat-prihlasky-2027",
-  "typ": "sada_prepnuta",
-  "sada": "cermat-prihlasky",
-  "obdobi": "2027",
-  "publikovano": "2027-02-15",
-  "veta": "Zveřejnili jsme nabídku oborů pro přijímací řízení 2027",
-  "skoly": ["600007774", "600007693"]
-}
-```
+Do 20. 9. 2026 tu stálo, že událost je soubor v gitu (`data/sledovani/udalosti/2027-02-15-cermat-prihlasky.json`), zatímco návrh novinek z RSS si zapsal vlastní potrubí v Postgresu. Obojí bylo správné ve svém kontextu a dohromady to nešlo: rodina sledující jednu školu by dostala dva nesouvisející e-maily. **Rozhodnuto: jedna tabulka událostí v Postgresu, novinky z webu školy jako čtvrtý zdroj, jeden denní souhrn.** Sjednocení bylo v tu chvíli zadarmo, protože postavené nebylo ani jedno; po první postavené variantě by z něj byl přepis.
 
-Soubor událostí neobsahuje žádné osobní údaje, takže smí být v repozitáři a projít stejným schválením jako data.
+Schéma je `src/lib/udalosti-schema.ts` → `db/migrace/004-udalosti.sql` (tabulky `udalost` a `udalost_skola`), stejným postupem jako novinky a účty portálu: zdrojem pravdy je modul, `.sql` se z něj generuje a test hlídá, že se nerozešly.
+
+Tři rozhodnutí uvnitř schématu, která nejsou samozřejmá:
+
+- **Věta souhrnu se ukládá hotová** (`veta`). Tvoří se v okamžiku publikace, kdy je známo období a platná verze slovníku pojmů. Kdyby ji odesílač skládal znovu, popisoval by e-mail stav, který se mezitím přepnul.
+- **Dotčené školy jsou ve vlastní tabulce**, ne polem v události. Souhrn se skládá dotazem „události pro školy tohoto odběratele" a přepnutí sady se týká stovek škol; pole v `jsonb` by z indexovaného spojení udělalo průchod tabulkou.
+- **`klic` je unikátní.** Rozdílový skript se může spustit dvakrát nad týmž přepnutím a nesmí vyrobit druhou událost, tedy druhý e-mail.
+
+**Git zůstává auditním exportem, ne úložištěm.** Přesně v té podobě, na které se dohodl návrh novinek u registru zdrojů: „git je auditní export, ne podmínka". Původní věta „soubor událostí neobsahuje osobní údaje, takže smí být v repozitáři" platí dál — jen z ní neplyne, že tam události *mají* žít.
+
+**Novinka z webu školy je jediný zdroj, u kterého událost nevzniká naší publikací**, ale převzetím cizího sdělení. Proto nese odkaz do `skola_novinka` a v souhrnu se formuluje jako „škola oznámila", ne „zveřejnili jsme". Rozdíl není kosmetický: za termín dne otevřených dveří odpovídá škola, ne tenhle web, a e-mail to musí říct týmž způsobem jako karta na stránce.
+
+### 2.2 Co se jako zdroj události zvažovalo a zavrhlo
+
+Povinná inventura podle `docs/zdroje-dat.md`, oddíl 3 — sloupce, které projekt má a nepoužívá, prošly otázkou „šla by z toho událost pro rodinu?":
+
+| Nepoužitý sloupec | Šlo by z toho | Rozhodnutí |
+|---|---|---|
+| **Dobíhající obor** (rejstřík, `dobihajiciObor`) | „Škola přestala nabírat obor, který sledujete" | **zavrhnout pro první verzi.** Změna se pozná až porovnáním dvou snímků rejstříku a projeví se v bloku „Obory z dřívějších let", který už na stránce je. Událost by tvrdila okamžik („škola právě přestala"), který ze snímku nevyčteme — víme jen, že mezi dvěma snímky se stav změnil |
+| **Ředitel a délka funkce** (rejstřík, `reditel`) | „Škola má nového ředitele" | **zavrhnout.** Oddíl 3 zdroje dat ho zamítá pro spornou vypovídací hodnotu a událostí by se stal až čtvrtletním rozdílem rejstříku. Rodině to k rozhodování o přihlášce nepomůže |
+| **Platnost oboru v číselníku** (AKKO, `platnostDo`) | „Obor se ruší celostátně" | **zavrhnout.** Je to celostátní změna číselníku, ne změna téhle školy; rodině sledující školu by se četla jako rozhodnutí školy |
+| **Web školy** (rejstřík, `WWW`) | změna adresy webu | **zavrhnout jako událost pro rodinu**, ponechat jako provozní signál: změna adresy webu nejspíš znamená rozbitý feed a patří do administrace, ne do e-mailu |
+| **Maturitní výsledky**, **přijatí podle priority**, **výsledky všech uchazečů** | nové ročníky čísel | **není potřeba samostatný zdroj** — přijdou s přepnutím datové sady a událost už mají |
+| **`hard_facts.support_services`**, **`hard_facts.absence`** | školní psycholog, absence | **zavrhnout.** Nezobrazují se na stránce, a událost oznamuje změnu **zobrazené** hodnoty. Až se zobrazí, přijdou s inspekční událostí |
+| **`jpz_prumer_actual`**, **`jpz_median`** | medián místo průměru | totéž — spočítané, nikdy nezobrazené |
+| Pole položky RSS: `content:encoded`, `author`, `enclosure` | bohatší e-mail | **zavrhnout**, sklízeč je vůbec nepřebírá (autorské dílo školy, `zdroje-dat.md` 2.14) |
 
 ## 3. Souhrnný e-mail
 
@@ -128,3 +144,4 @@ Doporučené pořadí: nejdřív rozdílový skript a záznam událostí (užite
 |---|---|
 | 1.0 | Návrh: upozornění na události místo úprav, denní souhrn seskupený podle události, zdroje událostí, umístění tlačítka, identita bez účtu, pořadí realizace. |
 | 1.1 | 20. 9. 2026: úložiště odběrů uzavřeno (Postgres u Neonu už běží), otevřená otázka 1 zrušena. Otevřeno zůstává sjednocení modelu události s novinkami z webů škol – viz [překonaná rozhodnutí](prehodnoceni-rozhodnuti-rss-2027.md), P4. |
+| 1.2 | 20. 9. 2026: **P4 rozhodnut** – jedna tabulka událostí v Postgresu (`udalost`, `udalost_skola`), novinky z webu školy jako čtvrtý zdroj, git jako auditní export. Schéma a migrace 004 založeny, hotová věta souhrnu, vazební tabulka škol, unikátní klíč proti dvojímu odeslání. Doplněn oddíl 2.2 s inventurou nepoužitých sloupců jako možných zdrojů události. |

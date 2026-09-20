@@ -143,6 +143,8 @@ Seřazeno podle toho, kolik škol to přidá na jednotku práce. První tři se 
 
 **Návrh.** Jedna tabulka událostí v Postgresu, **novinky z webu školy jako čtvrtý zdroj událostí** vedle přepnutí sady, schválení v portálu a nové inspekce. Git zůstane auditním exportem, přesně v té podobě, na které se návrh novinek už dohodl u registru zdrojů („Git je auditní export, ne podmínka“). Jeden denní souhrn, seskupený podle události.
 
+**Rozhodnuto 20. 9. 2026: schváleno a zapsáno.** Model události je v `src/lib/udalosti-schema.ts` → `db/migrace/004-udalosti.sql` (tabulky `udalost`, `udalost_skola`), podrobnosti a inventura zavržených zdrojů události v [sledování škol](sledovani-skol-2027.md), oddíly 2.1 a 2.2. Událost z novinky vzniká jen u publikačního rozhodnutí `karta_terminu` nebo `karta`; `odkaz` a `seznam` jsou zprávy ze života školy, ne důvod psát rodině. Zbývá postavit rozdílový skript, vazbu `odber_skoly` a denní odesílač — ty už P4 neblokuje.
+
 ### P5. Portál se školy neptá na adresu novinek
 
 **Původní rozhodnutí.** `docs/portal-pro-skoly-2027.md` §3 sbírá dny otevřených dveří, odkaz na vyhlášená kritéria, přípravné kurzy a další; pole pro adresu novinek ani feedu tam není. Pravidlo zní: *„Nikdy nežádáme údaj, za který máme autoritativní zdroj.“*
@@ -229,7 +231,7 @@ Zamítnutí je platný závěr, mlčení není. Tohle jsem prověřoval a nechá
 | **P6** | **Klasifikace modelem Jev** (rozhodovací model, ne generativní) | Jev dodává jev, vylučovače, stav sdělení a roli data; `rozhodni_publikaci()` a pravidla zůstávají v kódu, šest podmínek v P6 |
 | **P7** | **Dodělat co nejdříve** | fáze 1–2 před začátkem října, jinak se přijde o sezónu DOD i o sezónní přejímku |
 
-**Zbývá rozhodnout jediná věc: P4, model události.** Sledování škol si zapsalo události jako soubory v gitu, novinky jako řádky v Postgresu. Postavené není ani jedno, takže sjednocení je dnes zadarmo; po první postavené variantě se z něj stane přepis. Návrh je jedna tabulka událostí v Postgresu s novinkami jako čtvrtým zdrojem události a jedním denním souhrnem.
+**~~Zbývá rozhodnout jediná věc: P4, model události.~~ Rozhodnuto 20. 9. 2026.** Sledování škol si zapsalo události jako soubory v gitu, novinky jako řádky v Postgresu. Postavené není ani jedno, takže sjednocení je dnes zadarmo; po první postavené variantě se z něj stane přepis. Návrh je jedna tabulka událostí v Postgresu s novinkami jako čtvrtým zdrojem události a jedním denním souhrnem.
 
 **P3** rozhodnutí nepotřebuje: jde o opravu odhadu v dokumentaci, spouštěcí kritérium e-mailu se nemění.
 
@@ -245,7 +247,7 @@ Podle rozhodnutí z oddílu 5, seřazeno podle toho, jak rychle to přiblíží 
 2. **Souběžně: pole pro adresu aktualit v portálu** (P5) — jeden formulářový řádek, stihne se do pilotu, a je to první zdroj v rozhodnutém pořadí.
 3. **Jev do klasifikace** (P6) — kalibrace na 109 párech ruční reference, práh podle `confidence`, pravidla zůstávají jako záchytná i regresní síť. Týmž průchodem vznikne dosud chybějící měření úplnosti.
 4. **Sitemap jako spouštěč + čtečka výpisu aktualit** (P2, kroky 3 a 4) — dosah 49 % → ~90 % škol.
-5. **Sjednotit model události** (P4) — musí padnout dřív, než se postaví cokoli e-mailového.
+5. ~~**Sjednotit model události** (P4)~~ — **hotovo 20. 9. 2026**, schéma v migraci 004.
 6. **N4 sledování škol** (P3) — po přepsání odhadu; kritérium přesnosti beze změny.
 7. **Sběrač profilů z InspIS PORTÁLu** (P1) — poslední. Termíny DOD nezlepší, vrátil by hlavně pole, po kterých poptávka není; jediné, co z něj stojí za pozornost, jsou **přípravné kurzy pro uchazeče** (19/60), na které se portál škol ptá ručně.
 
