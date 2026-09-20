@@ -6,13 +6,13 @@ name: Sklízeč školních novinek
 # Běh je autonomní: nic nečeká na schválení. Nejisté položky končí u neutrálního
 # odkazu, ne ve frontě k moderaci.
 #
-# Actions nezaručují čas spuštění – každý běh se proto zapisuje do tabulky
-# `sklizen_beh` a vynechaný běh se pozná z ní, ne z domněnky, že cron proběhl.
+# Naplánovaný běh je od 20. 9. 2026 na Railway (railway.json, Dockerfile.sklizec).
+# Actions čas spuštění nezaručují a obě naplánovaná spuštění 20. 9. se nekonala;
+# navíc část českých webů odtamtud odpovídá HTTP 403. Rozbor v
+# docs/skolske-novinky-rss-2027.md, oddíl 3.3. Tady zůstává ruční záloha pro
+# případ, že Railway vypadne – proto se běh pořád zapisuje do `sklizen_beh`.
 
 on:
-  schedule:
-    - cron: "10 4 * * *"    # 04:10 UTC
-    - cron: "10 14 * * *"   # 14:10 UTC
   workflow_dispatch:
     inputs:
       jen:
