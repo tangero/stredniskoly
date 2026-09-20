@@ -53,7 +53,7 @@ export function SchoolPortalSection({ zaznam, spravce = null }: SchoolPortalSect
       if (f.key === 'ubytovani') {
         const poznamka = z.udaje.ubytovani_poznamka;
         if (poznamka && poznamka.hodnota.trim()) {
-          return [{ ...f, hodnota: poznamka.hodnota, potvrzeno_dne: poznamka.potvrzeno_dne }];
+          return [{ ...f, hodnota: poznamka.hodnota, potvrzeno_dne: poznamka.potvrzeno_dne, zdroj: poznamka.zdroj }];
         }
       }
       return [];
@@ -61,9 +61,9 @@ export function SchoolPortalSection({ zaznam, spravce = null }: SchoolPortalSect
     if (f.typ === 'ubytovani') {
       const zaklad = entry.hodnota === 'ano' ? 'Ano' : 'Ne';
       const poznamka = z.udaje.ubytovani_poznamka?.hodnota?.trim();
-      return [{ ...f, hodnota: poznamka ? `${zaklad} – ${poznamka}` : zaklad, potvrzeno_dne: entry.potvrzeno_dne }];
+      return [{ ...f, hodnota: poznamka ? `${zaklad} – ${poznamka}` : zaklad, potvrzeno_dne: entry.potvrzeno_dne, zdroj: entry.zdroj }];
     }
-    return [{ ...f, hodnota: entry.hodnota, potvrzeno_dne: entry.potvrzeno_dne }];
+    return [{ ...f, hodnota: entry.hodnota, potvrzeno_dne: entry.potvrzeno_dne, zdroj: entry.zdroj }];
   });
 
   if (radky.length === 0 && !popis) return null;
@@ -74,7 +74,7 @@ export function SchoolPortalSection({ zaznam, spravce = null }: SchoolPortalSect
         <h2 className="text-2xl font-semibold text-slate-900">Údaje potvrzené školou</h2>
         {nejnovejsi && (
           <span className="text-xs px-2 py-1 rounded bg-green-50 text-green-700 border border-green-200">
-            potvrzeno školou {formatDatumCz(nejnovejsi)}
+            potvrdila škola {formatDatumCz(nejnovejsi)}
           </span>
         )}
       </div>
@@ -103,7 +103,7 @@ export function SchoolPortalSection({ zaznam, spravce = null }: SchoolPortalSect
                   <span className="whitespace-pre-line">{r.hodnota}</span>
                 )}
                 <span className="block text-xs text-slate-400 mt-0.5">
-                  potvrzeno školou {formatDatumCz(r.potvrzeno_dne)}
+                  {r.zdroj === 'redakce' ? 'opravila redakce' : 'potvrdila škola'} {formatDatumCz(r.potvrzeno_dne)}
                 </span>
               </dd>
             </div>
@@ -119,7 +119,8 @@ export function SchoolPortalSection({ zaznam, spravce = null }: SchoolPortalSect
           </div>
           <p className="text-sm text-slate-700 whitespace-pre-line">{popis}</p>
           <p className="text-xs text-slate-400 mt-2">
-            potvrzeno školou {formatDatumCz(z.udaje.popis_skoly!.potvrzeno_dne)}
+            {z.udaje.popis_skoly!.zdroj === 'redakce' ? 'opravila redakce' : 'potvrdila škola'}{' '}
+            {formatDatumCz(z.udaje.popis_skoly!.potvrzeno_dne)}
           </p>
         </div>
       )}

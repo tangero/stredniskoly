@@ -108,14 +108,14 @@ export async function posliPotvrzovaciEmail(para: {
 }): Promise<boolean> {
   return odesliEmail({
     to: para.email,
-    subject: '✅ Změny profilu školy byly přijaty',
+    subject: '✅ Změny profilu školy jsou na webu',
     html: OBALKA(`
       <p>Dobrý den,</p>
-      <p>úpravy profilu školy <strong>${esc(para.nazevSkoly)}</strong> jsme přijali. Teď je zkontroluje redakce a po schválení se zobrazí na stránce školy se značkou „potvrzeno školou“:</p>
+      <p>úpravy profilu školy <strong>${esc(para.nazevSkoly)}</strong> jsme zapsali. Na stránce školy se objeví se značkou „potvrdila škola“, obvykle do hodiny:</p>
       <p style="text-align: center; margin: 24px 0;">
         <a href="${para.skolaUrl}" style="display: inline-block; background: #0074e4; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600;">Stránka vaší školy</a>
       </p>
-      <p>Pokud redakce bude mít k úpravám dotaz, ozve se na tento e-mail.</p>
+      <p>Na schválení nic nečeká. Když v údajích najdeme chybu, opravíme ji a napíšeme vám na tento e-mail. Opravit je můžete i sami kdykoli znovu v profilu školy.</p>
     `),
   });
 }

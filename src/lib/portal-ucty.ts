@@ -46,7 +46,8 @@ export type KodChyby =
   | 'uz_ma_roli'
   | 'posledni_spravce'
   | 'email_obsazen'
-  | 'neplatne_udaje';
+  | 'neplatne_udaje'
+  | 'profil_zmenen';
 
 /** Chyba s hláškou pro uživatele. Bez parameter properties: testy běží přes strip-types. */
 export class PortalChyba extends Error {
@@ -163,6 +164,7 @@ export async function historieSkoly(s: Spojeni, redizo: string): Promise<PortalR
 // ----------------------------------------------------------------------------
 
 export type TypUdalosti =
+  | 'profil_zmenen'
   | 'kod_uplatnen'
   | 'spravce_z_rejstriku'
   | 'prihlaseni'
@@ -715,10 +717,15 @@ export async function vymazKontakt(s: Spojeni, email: string, kdo: string, duvod
       returning redizo`,
     [cisty],
   );
+  // Hlášení chyb od návštěvníků nesou adresu taky; podnět zůstane, adresa ne.
+  const hlaseni = await s.dotaz(
+    `update hlaseni_chyby set email = 'smazáno na žádost' where lower(email) = $1`,
+    [cisty],
+  );
   for (const redizo of new Set([...udalosti.rows, ...pozvanky.rows].map((r) => r.redizo))) {
     await zapisUdalost(s, redizo, null, 'osoba_anonymizovana', { provedl: `admin:${kdo}`, duvod, bez_uctu: true });
   }
-  return udalosti.rows.length + pozvanky.rows.length;
+  return udalosti.rows.length + pozvanky.rows.length + hlaseni.rowCount;
 }
 
 // ----------------------------------------------------------------------------

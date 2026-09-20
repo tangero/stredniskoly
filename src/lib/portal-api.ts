@@ -22,6 +22,17 @@ export function obnovVerejneSpravce(): void {
   }
 }
 
+/** Tag cache potvrzených údajů profilu; zneplatní ho zápis školy i oprava redakce. */
+export const TAG_PROFIL = 'portal-profil';
+
+export function obnovProfily(): void {
+  try {
+    revalidateTag(TAG_PROFIL, { expire: 0 });
+  } catch {
+    // Mimo požadavek Next.js (testy) není co obnovovat.
+  }
+}
+
 // In-memory omezení četnosti, stejný vzor jako /api/portal-magic. Na Vercelu
 // platí jen v rámci jedné instance; proti hádání kódů stačí délka kódu.
 const casy = new Map<string, number[]>();

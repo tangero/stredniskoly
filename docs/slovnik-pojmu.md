@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.14 · 19. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.15 · 19. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -74,7 +74,8 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **jak si škola vede** | nadpis oddílu s maturitou a inspekcí | není potřeba | kvalita školy, hodnocení školy |
 | **souběžní uchazeči**, **kam se hlásí stejní uchazeči** | uchazeči, kteří měli na přihlášce tento obor i obor jiné školy | „uchazeči, kteří měli na přihlášce i tento obor“ | konkurence, konkurenční škola |
 | **vzdušnou čarou** | vzdálenost bez ohledu na dopravu | vždy u vzdálenosti; dojezd je jiný údaj | daleko, blízko (bez čísla) |
-| **Potvrdila škola · datum** | údaj zadala škola v portálu pro školy a prošel kontrolou | značka u údaje, v patičce vysvětlení | ověřeno, oficiální |
+| **Potvrdila škola · datum** | údaj zadal pověřený člověk školy v portálu pro školy; nekontrolujeme ho předem, chybu opravujeme zpětně | značka u údaje, v patičce vysvětlení „údaj zadal pověřený člověk školy, nekontrolujeme ho předem“ | ověřeno, oficiální, schváleno, prošlo kontrolou |
+| **Opravila redakce · datum** | údaj od školy, ve kterém jsme našli a opravili chybu; v té podobě, v jaké je na stránce, ho škola nepotvrdila | značka u opravené hodnoty místo „Potvrdila škola“; v patičce „údaj od školy, ve kterém jsme opravili chybu“ | potvrdila škola (u opravené hodnoty), ověřeno, upraveno |
 | **Profil spravuje *jméno, funkce*** / **Profil spravuje škola** | kdo za školu v portálu vede profil (správce profilu); jméno a funkce jen se souhlasem správce, jinak druhá podoba ([účty portálu](ucty-portalu-skol-2027.md), oddíl 3) | není potřeba; na `/pro-skoly` u školy bez správce: „Škola se zatím nepřihlásila.“ | ověřeno, garant, odpovědná osoba; jména dalších editorů se neuvádějí vůbec |
 | **správce profilu**, **editor** | v portálu pro školy: kdo použil kód nebo odkaz první a zve kolegy; pozvaný kolega | jen v portálu, ne na stránce školy | administrátor, vlastník, uživatel školy |
 | **text školy** | popis školy vlastními slovy, neověřujeme | „text školy, neověřujeme“ | informace o škole, fakta |
@@ -97,6 +98,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.15 | Značka **Potvrdila škola** přestala znamenat „prošlo kontrolou“: údaje od pověřených lidí školy se publikují bez předchozí moderace a chyba se opravuje zpětně ([portál pro školy](portal-pro-skoly-2027.md), oddíl 4). Nová značka **Opravila redakce** pro hodnotu, kterou jsme po zveřejnění opravili — bez ní by oprava nesla cizí razítko a tvrdila o škole něco, co neřekla. Mezi zakázaná slova u obou přibylo *schváleno* a *prošlo kontrolou*. |
 | 1.14 | Pojmy **Profil spravuje** a **správce profilu / editor** pro účty portálu škol ([účty portálu](ucty-portalu-skol-2027.md)). Jméno správce se na stránce školy uvádí jen s jeho souhlasem, jinak „Profil spravuje škola“; slova *ověřeno* a *garant* se nepoužívají, protože správce údaje navrhuje, schvaluje je redakce. |
 | 1.13 | Pojem **zvažované obory** pro uložený výběr. Vznikl s položkou „Zvažované obory (X)“ v horní liště: ukládá se nabídka, ne škola ([stránka školy](stranka-skoly-2027.md), oddíl 3), takže i počet v závorce je v oborech. Slovo *zvažované školy* se nepoužívá — kdo uloží tři obory jednoho gymnázia, viděl by v liště jedničku a v simulátoru tři řádky, což zakazuje pravidlo 3. |
 | 1.12 | Věta pod tabulkou oborů výš a níž končí „a nemají u nás vlastní stránku“ místo „uvádíme u nich jen název“: u oboru mimo přehled, který má i obtížnost přijetí, se ukazuje víc než název (obtížnost a pod ní značka), takže dřívější znění neplatilo. |

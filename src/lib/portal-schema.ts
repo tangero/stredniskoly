@@ -17,6 +17,8 @@ export const TABULKY_PORTALU = [
   'portal_pozvanka',
   'portal_odkaz',
   'portal_udalost',
+  'portal_profil',
+  'hlaseni_chyby',
 ] as const;
 
 export const MIGRACE_PORTALU: string[] = [
@@ -80,4 +82,65 @@ export const MIGRACE_PORTALU: string[] = [
   detail jsonb not null default '{}'::jsonb
 )`,
   `create index if not exists portal_udalost_skola on portal_udalost (redizo, kdy)`,
+  // Obsah profilu školy. Do 19. 9. 2026 ležel jen v těle GitHub issue a na web
+  // se dostal ručním schválením; od té doby se zapisuje sem a publikuje bez
+  // zbytečného odkladu (docs/portal-pro-skoly-2027.md, oddíl 4).
+  //
+  // Jeden řádek = jedna hodnota jednoho pole. Opravit hodnotu znamená přidat
+  // řádek a starému nastavit `zneplatneno`, takže zpětná oprava i návrat
+  // k předchozí verzi jsou jen zápis a historie zůstane celá. Smazané pole je
+  // `zneplatneno` bez následníka.
+  //
+  // `nazev` a `verze_prijimani` se drží u řádku schválně: záznam má nést, co
+  // škola zadala a pod jakým jménem, ne to, jak se jmenuje dnes. Stejně to má
+  // portal_role s jménem a e-mailem osoby.
+  `create table if not exists portal_profil (
+  id uuid primary key,
+  poradi bigserial not null,
+  redizo text not null,
+  pole text not null,
+  hodnota text not null,
+  nazev text not null default '',
+  verze_prijimani text not null,
+  zdroj text not null default 'skola' check (zdroj in ('skola', 'redakce')),
+  role_id uuid references portal_role,
+  platne_od timestamptz not null default clock_timestamp(),
+  zneplatneno timestamptz,
+  nahrazuje_id uuid references portal_profil,
+  zmenu_provedl text not null,
+  duvod text
+)`,
+  // Jedna platná hodnota na pole a školu hlídá databáze, ne aplikace.
+  `create unique index if not exists portal_profil_platna_hodnota
+  on portal_profil (redizo, pole) where zneplatneno is null`,
+  // Pořadí verzí pole. Řadí se podle `poradi`, ne podle času: `platne_od` mělo
+  // původně default now(), což je čas **začátku transakce**, takže transakce
+  // zahájená dřív a zapsaná později dostala starší razítko než řádek, který
+  // nahradila. Další zápis pak vybral zneplatněný řádek jako poslední, pole
+  // vyhodnotil jako prázdné a skončil na unikátním indexu — a už se to
+  // neodblokovalo. `bigserial` přiděluje číslo až při vložení, tedy pod
+  // poradním zámkem, takže odpovídá skutečnému pořadí zápisů.
+  `create index if not exists portal_profil_pole on portal_profil (redizo, pole, poradi desc)`,
+  // Časová osa profilu školy pro administraci a pro export otevřených dat.
+  `create index if not exists portal_profil_skola on portal_profil (redizo, poradi)`,
+  // Hlášení chyby od návštěvníka (tlačítko „Nahlásit chybu“). Není to portál
+  // škol, ale jede ve stejné migraci, protože je to jedna databáze a jeden
+  // spouštěč (/api/portal/migrace).
+  //
+  // Existuje kvůli jediné věci: kontaktní e-mail oznamovatele nesmí do
+  // veřejného GitHub issue (repozitář je veřejný). V issue zůstane popis
+  // chyby, adresa kontaktu je tady a maže se stejně jako ostatní kontakty.
+  `create table if not exists hlaseni_chyby (
+  id uuid primary key,
+  vytvoreno timestamptz not null default now(),
+  email text not null,
+  popis text not null,
+  url text not null default '',
+  redizo text,
+  issue integer,
+  vyrizeno timestamptz,
+  poznamka text
+)`,
+  `create index if not exists hlaseni_chyby_cas on hlaseni_chyby (vytvoreno desc)`,
+  `create index if not exists hlaseni_chyby_email on hlaseni_chyby (lower(email))`,
 ];

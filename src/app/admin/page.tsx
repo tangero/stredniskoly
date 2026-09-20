@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer';
 import {
   overAdminToken,
   getStavDatovychSad,
+  getHlaseni,
   getPortalPrehled,
   getOtevreneNavrhy,
   getLinkaFronta,
@@ -94,10 +95,11 @@ export default async function AdminPage({ searchParams }: Props) {
   }
 
   const dnes = new Date();
-  const [sady, portal, navrhy, linka, behyActions, novinky] = await Promise.all([
+  const [sady, portal, navrhy, hlaseni, linka, behyActions, novinky] = await Promise.all([
     getStavDatovychSad(dnes),
     getPortalPrehled(),
     getOtevreneNavrhy(dnes),
+    getHlaseni(),
     getLinkaFronta(),
     getBehyActions(),
     getNovinkyPrehled(),
@@ -118,7 +120,7 @@ export default async function AdminPage({ searchParams }: Props) {
           <div>
             <h1 className="text-3xl font-bold text-slate-900 mb-2">Administrace</h1>
             <p className="text-sm text-slate-500">
-              {pocetNavrhu === null ? 'moderace nenakonfigurována' : `${pocetNavrhu} ${pocetNavrhu === 1 ? 'návrh čeká' : pocetNavrhu < 5 ? 'návrhy čekají' : 'návrhů čeká'}`}
+              {pocetNavrhu === null ? 'hlášení nenakonfigurováno' : `${pocetNavrhu} ${pocetNavrhu === 1 ? 'nesrovnalost čeká' : pocetNavrhu < 5 ? 'nesrovnalosti čekají' : 'nesrovnalostí čeká'}`}
               {' · '}
               {sadyPoTerminu === 0 ? 'všechny sady v pořádku' : `${sadyPoTerminu} ${sadyPoTerminu === 1 ? 'sada' : sadyPoTerminu < 5 ? 'sady' : 'sad'} po termínu`}
               {' · '}
@@ -180,12 +182,63 @@ export default async function AdminPage({ searchParams }: Props) {
             )}
           </Sekce>
 
-          {/* 1. Portál pro školy – moderace */}
-          <Sekce titulek="Portál pro školy – moderace">
+          {/* 1. Hlášení chyb od návštěvníků: kontakt je jen tady, na GitHubu není */}
+          <Sekce titulek="Hlášení chyb od návštěvníků">
+            {hlaseni === null ? (
+              <Poznamka>Hlášení nejsou nakonfigurována (chybí DATABASE_URL).</Poznamka>
+            ) : hlaseni.length === 0 ? (
+              <Poznamka>Žádné nevyřízené hlášení.</Poznamka>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-left text-slate-500 border-b border-slate-100">
+                      <th className="py-2 pr-4 font-medium">Přišlo</th>
+                      <th className="py-2 pr-4 font-medium">Co hlásí</th>
+                      <th className="py-2 pr-4 font-medium">Kontakt</th>
+                      <th className="py-2 pr-4 font-medium">Stránka</th>
+                      <th className="py-2 font-medium">Issue</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {hlaseni.map((h) => (
+                      <tr key={h.id} className="border-b border-slate-50 align-top">
+                        <td className="py-2 pr-4 text-slate-600 whitespace-nowrap">{formatDatumCasCz(h.vytvoreno)}</td>
+                        <td className="py-2 pr-4 text-slate-900 max-w-md">{h.popis}</td>
+                        <td className="py-2 pr-4 text-slate-600">
+                          <a href={`mailto:${h.email}`} className="text-blue-600 hover:underline">
+                            {h.email}
+                          </a>
+                        </td>
+                        <td className="py-2 pr-4 text-slate-600 break-all">{h.url || '—'}</td>
+                        <td className="py-2">
+                          {h.issue ? (
+                            <a
+                              href={`https://github.com/tangero/stredniskoly/issues/${h.issue}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:underline"
+                            >
+                              #{h.issue}
+                            </a>
+                          ) : (
+                            '—'
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </Sekce>
+
+          {/* 2. Portál pro školy – nesrovnalosti v datech katalogu */}
+          <Sekce titulek="Portál pro školy – nesrovnalosti v datech">
             {navrhy === null ? (
-              <Poznamka>Moderace není nakonfigurována (chybí GITHUB_TOKEN).</Poznamka>
+              <Poznamka>Hlášení nesrovnalostí není nakonfigurováno (chybí GITHUB_TOKEN).</Poznamka>
             ) : navrhy.length === 0 ? (
-              <Poznamka>Žádné otevřené návrhy – fronta je prázdná.</Poznamka>
+              <Poznamka>Žádná otevřená nesrovnalost. Údaje profilu sem nechodí – jdou rovnou na web.</Poznamka>
             ) : (
               <div className="overflow-x-auto mb-6">
                 <table className="w-full text-sm">
@@ -229,7 +282,7 @@ export default async function AdminPage({ searchParams }: Props) {
             )}
 
             <h3 className="text-sm font-semibold text-slate-700 mb-2">
-              Schválené profily na webu: {portal.pocet}
+              Profily škol na webu: {portal.pocet}
             </h3>
             {portal.posledni.length === 0 ? (
               <Poznamka>Zatím žádný školou potvrzený profil.</Poznamka>

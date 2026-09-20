@@ -5,7 +5,6 @@ import {
   hashKod,
   validateKod,
   validatePortalPayload,
-  verejnyPayload,
   buildPortalZaznam,
   zaznamMaObsah,
   formatDatumCz,
@@ -205,12 +204,19 @@ test('hash kódu: HMAC s pepřem, bez pepře kód neověří', async () => {
   }
 });
 
-test('payload do veřejného issue nenese kontaktní e-mail a moderace ho nevyžaduje', () => {
-  const payload = { ...VALID_BASE, redizo: '600171701', nazev: 'X', verze_prijimani: '2027' };
-  const verejny = verejnyPayload(payload);
-  assert.equal('kontakt_email' in verejny, false);
-  assert.equal(validatePortalPayload(verejny).ok, false);
-  assert.equal(validatePortalPayload(verejny, { bezKontaktu: true }).ok, true);
+test('přihlášený editor kontakt nezadává, host z rejstříku ano', () => {
+  const bezKontaktu = { ...VALID_BASE };
+  delete bezKontaktu.kontakt_email;
+
+  // Host bez účtu: kontakt je jediná cesta, jak se mu ozvat.
+  assert.equal(validatePortalPayload(bezKontaktu).ok, false);
+  // Přihlášený editor: e-mail má u účtu, server ho doplní z role.
+  assert.equal(validatePortalPayload(bezKontaktu, { kontaktPovinny: false }).ok, true);
+  // Nesmysl místo adresy se neschová ani tam, kde kontakt povinný není.
+  assert.equal(
+    validatePortalPayload({ ...bezKontaktu, kontakt_email: 'neni-email' }, { kontaktPovinny: false }).ok,
+    false,
+  );
 });
 
 test('nazevSAdresou: název, ulice bez čísel a obec, bez opakování', () => {

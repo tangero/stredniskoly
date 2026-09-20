@@ -12,7 +12,9 @@ import {
   zrusPozvanku,
   zrusRoli,
 } from '@/lib/portal-ucty';
-import { obnovVerejneSpravce } from '@/lib/portal-api';
+import { opravRedakce, vratPredchozi } from '@/lib/portal-profil';
+import { getNazevSkoly, PORTAL_VERZE_PRJIMANI } from '@/lib/portal-skol';
+import { obnovProfily, obnovVerejneSpravce } from '@/lib/portal-api';
 import { posliTelegram } from '@/lib/portal-oznameni';
 
 // ============================================================================
@@ -72,6 +74,24 @@ export async function POST(request: NextRequest) {
         const pocet = await vTransakci((s) => vymazKontakt(s, pole('email'), KDO, duvod));
         if (pocet === 0) return zpet('chyba', 'Adresa se v portálu nenašla.');
         break;
+      }
+      // Zpětná moderace údajů profilu: web se nezastaví, chyba se opraví potom.
+      case 'opravit_udaj': {
+        const zaklad = { redizo, nazev: (await getNazevSkoly(redizo)) || '', verze_prijimani: PORTAL_VERZE_PRJIMANI };
+        await vTransakci((s) =>
+          opravRedakce(s, { ...zaklad, pole: pole('pole'), hodnota: pole('hodnota'), kdo: KDO, duvod }),
+        );
+        obnovProfily();
+        break;
+      }
+      case 'vratit_udaj': {
+        const zaklad = { redizo, nazev: (await getNazevSkoly(redizo)) || '', verze_prijimani: PORTAL_VERZE_PRJIMANI };
+        const obnoveno = await vTransakci((s) => vratPredchozi(s, { ...zaklad, pole: pole('pole'), kdo: KDO, duvod }));
+        obnovProfily();
+        await posliTelegram(
+          `🛠 Admin: vrácen údaj ${pole('pole')} u ${redizo} na ${obnoveno ? `„${obnoveno}“` : 'prázdno (předchozí verze nebyla)'} – ${duvod}`,
+        );
+        return zpet('ok', 'Hotovo.');
       }
       default:
         return zpet('chyba', 'Neznámá akce.');

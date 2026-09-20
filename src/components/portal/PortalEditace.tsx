@@ -3,6 +3,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { PortalEditForm } from '@/components/portal/PortalEditForm';
 import { getPredvyplnenyProfil, PORTAL_POLE } from '@/lib/portal-skol';
+import { potvrzenyProfil } from '@/lib/portal-profil-verejne';
 
 /**
  * Autorizace pro odeslání formuláře: přihlašovací kód, rejstříkový odkaz, nebo
@@ -54,7 +55,7 @@ export async function PortalEditace({
   /** Odkaz z rejstříku u školy, která už má správce: návrh jde a správce se o něm dozví. */
   host?: boolean;
 }) {
-  const profil = await getPredvyplnenyProfil(redizo);
+  const profil = await getPredvyplnenyProfil(redizo, await potvrzenyProfil(redizo));
 
   if (!profil) {
     return <PortalSkolaNenalezena redizo={redizo} />;
