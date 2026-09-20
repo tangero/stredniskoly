@@ -2,8 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { PGlite } from '@electric-sql/pglite';
 import { MIGRACE_PORTALU } from '../src/lib/portal-schema.ts';
-import { zapisHlaseni, otevrenaHlaseni, vyridHlaseni, redizoZUrl } from '../src/lib/hlaseni.ts';
+import { zapisHlaseni, propojIssue, otevrenaHlaseni, vyridHlaseni, redizoZUrl } from '../src/lib/hlaseni.ts';
 import { vymazKontakt } from '../src/lib/portal-ucty.ts';
+import { formatDatumCasCz } from '../src/lib/admin.ts';
 
 async function novaDb() {
   const db = new PGlite();
@@ -21,7 +22,6 @@ const HLASENI = {
   email: 'rodic@example.cz',
   popis: 'U oboru 79-41-K/41 je špatně počet míst.',
   url: 'https://www.prijimackynaskolu.cz/skola/600171701-gymnazium-nad-stolou',
-  issue: 42,
 };
 
 test('REDIZO se pozná z adresy stránky školy, jinde ne', () => {
@@ -30,17 +30,43 @@ test('REDIZO se pozná z adresy stránky školy, jinde ne', () => {
   assert.equal(redizoZUrl(''), null);
 });
 
-test('hlášení se uloží i s kontaktem a přiřadí se ke škole', async () => {
+test('hlášení se uloží i s kontaktem a přiřadí se ke škole ještě bez issue', async () => {
   const { s, tx } = await novaDb();
-  await tx((t) => zapisHlaseni(t, HLASENI));
+  const id = await tx((t) => zapisHlaseni(t, HLASENI));
 
-  const fronta = await otevrenaHlaseni(s);
+  // Nejdřív je uložený podnět s kontaktem, teprve pak vzniká issue: kdyby
+  // GitHub selhal, kontakt se ztratit nesmí.
+  let fronta = await otevrenaHlaseni(s);
   assert.equal(fronta.length, 1);
   assert.equal(fronta[0].email, 'rodic@example.cz');
   assert.equal(fronta[0].redizo, '600171701');
+  assert.equal(fronta[0].issue, null, 'hlášení je ve frontě i bez issue');
+
+  await tx((t) => propojIssue(t, id, 42));
+  fronta = await otevrenaHlaseni(s);
   assert.equal(fronta[0].issue, 42);
-  assert.equal(fronta[0].vyrizeno, null);
 });
+
+test('datum z databáze se vrací jako řetězec, který jde vykreslit', async () => {
+  const { s, tx } = await novaDb();
+  await tx((t) => zapisHlaseni(t, HLASENI));
+
+  const [h] = await otevrenaHlaseni(s);
+  // Neon vrací timestamptz jako Date; kdyby prošel do JSX, React spadne na
+  // „Objects are not valid as a React child“ a /admin by padal po prvním hlášení.
+  assert.equal(typeof h.vytvoreno, 'string');
+  assert.match(h.vytvoreno, /^\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}/);
+  assert.notEqual(formatDatumCasCz(h.vytvoreno), h.vytvoreno, 'formatter datum rozpozná');
+  assert.equal(h.vyrizeno, null);
+
+  // Totéž po ručním vložení hodnoty typu Date (chování ovladače Neonu).
+  assert.equal(typeof normalizujProTest(new Date()), 'string');
+});
+
+/** Průchod stejnou normalizací, jakou dělá otevrenaHlaseni. */
+function normalizujProTest(hodnota) {
+  return hodnota instanceof Date ? hodnota.toISOString() : String(hodnota);
+}
 
 test('vyřízené hlášení z fronty zmizí a nese poznámku', async () => {
   const { s, tx } = await novaDb();

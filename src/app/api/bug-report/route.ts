@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { jeDbNastavena, vTransakci } from '@/lib/novinky-db';
-import { zapisHlaseni } from '@/lib/hlaseni';
+import { zapisHlaseni, propojIssue } from '@/lib/hlaseni';
 import { ipZPozadavku } from '@/lib/portal-api';
 
 interface BugReportBody {
@@ -276,6 +276,21 @@ export async function POST(request: NextRequest) {
 
   const issueBody = issueBodyParts.join('\n');
 
+  // Hlášení i s kontaktem se ukládá PŘED založením issue: po odstranění adresy
+  // z veřejného issue je databáze jejím jediným trvalým místem. Kdyby se
+  // zapisovalo až potom, selhání zápisu by kontakt ztratilo a oznamovatel by
+  // přesto dostal potvrzení, že hlášení přijímáme.
+  let hlaseniId: string;
+  try {
+    hlaseniId = await vTransakci((s) => zapisHlaseni(s, { email, popis: description, url }));
+  } catch (e) {
+    console.error('❌ Hlášení: uložení selhalo', e);
+    return NextResponse.json(
+      { error: 'Hlášení se nepodařilo uložit. Zkuste to prosím znovu.' },
+      { status: 503 }
+    );
+  }
+
   try {
     const response = await fetch(
       'https://api.github.com/repos/tangero/stredniskoly/issues',
@@ -308,12 +323,11 @@ export async function POST(request: NextRequest) {
     const issueNumber = issueData.number;
     const issueUrl = issueData.html_url;
 
-    // Kontakt a podnět do databáze; odtud je vidí administrace. Selhání zápisu
-    // nesmí shodit odpověď – issue už existuje, jen bychom přišli o adresu.
+    // Propojení s issue je doplněk; hlášení je uložené a ve frontě i bez něj.
     try {
-      await vTransakci((s) => zapisHlaseni(s, { email, popis: description, url, issue: issueNumber }));
+      await vTransakci((s) => propojIssue(s, hlaseniId, issueNumber));
     } catch (e) {
-      console.error('❌ Hlášení: kontakt se nepodařilo uložit', e);
+      console.error('❌ Hlášení: číslo issue se nepodařilo doplnit', e);
     }
 
     await sendEmailNotification(email, issueUrl, issueNumber);

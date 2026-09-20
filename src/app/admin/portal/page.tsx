@@ -149,6 +149,11 @@ async function DetailSkoly({ redizo }: { redizo: string }) {
   ]);
   const platne = historie.filter((r) => !r.zneplatneno);
   const platneUdaje = profil.filter((p) => !p.zneplatneno);
+  // Pole, jehož poslední verzí je smazání. Historie ho zná, na webu není –
+  // a právě u něj je návrat k předchozí verzi nejvíc potřeba.
+  const nejnovejsiPoPoli = new Map<string, (typeof profil)[number]>();
+  for (const u of profil) if (!nejnovejsiPoPoli.has(u.pole)) nejnovejsiPoPoli.set(u.pole, u);
+  const smazana = [...nejnovejsiPoPoli.values()].filter((u) => !u.hodnota.trim());
   const popisky = new Map(PORTAL_POLE.map((p) => [p.key, p.label]));
   popisky.set('ubytovani', 'Ubytování');
 
@@ -197,14 +202,36 @@ async function DetailSkoly({ redizo }: { redizo: string }) {
           ))
         )}
 
+        {smazana.length > 0 && (
+          <>
+            <h3 className="text-lg font-semibold">Smazaná pole</h3>
+            {smazana.map((u) => (
+              <div key={u.id} className="space-y-2 border-b border-slate-100 pb-4">
+                <p className="text-sm">
+                  <strong>{popisky.get(u.pole) || u.pole}</strong> — smazáno {cas(u.platne_od)}{' '}
+                  <span className="text-slate-500">
+                    · {u.zmenu_provedl}
+                    {u.duvod ? ` · ${u.duvod}` : ''}
+                  </span>
+                </p>
+                <Formular redizo={redizo} akce="vratit_udaj">
+                  <input type="hidden" name="pole" value={u.pole} />
+                  <Duvod />
+                  <button className={TLACITKO}>Vrátit poslední hodnotu</button>
+                </Formular>
+              </div>
+            ))}
+          </>
+        )}
+
         {profil.length > platneUdaje.length && (
           <details className="text-sm">
             <summary className="cursor-pointer text-slate-600">Historie údajů ({profil.length})</summary>
             <ul className="mt-2 space-y-1 text-slate-600">
               {profil.map((u) => (
                 <li key={u.id}>
-                  {cas(u.platne_od)} · <strong>{popisky.get(u.pole) || u.pole}</strong>: {u.hodnota} ·{' '}
-                  {u.zmenu_provedl}
+                  {cas(u.platne_od)} · <strong>{popisky.get(u.pole) || u.pole}</strong>:{' '}
+                  {u.hodnota.trim() ? u.hodnota : <em>smazáno</em>} · {u.zmenu_provedl}
                   {u.zneplatneno ? ` · zneplatněno ${cas(u.zneplatneno)}` : ' · platí'}
                   {u.duvod ? ` · ${u.duvod}` : ''}
                 </li>

@@ -15,12 +15,15 @@ interface Props {
 }
 
 export function PortalEditForm({ auth, profil, pole, vychoziEmail = '' }: Props) {
-  const [hodnoty, setHodnoty] = useState<Record<string, string>>(() => {
+  // Stav, ve kterém byl profil při otevření formuláře. Posílá se s odesláním,
+  // aby zastaralý formulář nepřepsal opravu, která mezitím vznikla jinde.
+  const [puvodni] = useState<Record<string, string>>(() => {
     const init: Record<string, string> = { ubytovani: '' };
     for (const p of pole) init[p.key] = '';
     for (const [key, v] of Object.entries(profil.hodnoty)) init[key] = v.hodnota;
     return init;
   });
+  const [hodnoty, setHodnoty] = useState<Record<string, string>>(() => ({ ...puvodni }));
   const [udajeSedi, setUdajeSedi] = useState<boolean | null>(null);
   const [nesrovnalost, setNesrovnalost] = useState('');
   const [souhlas, setSouhlas] = useState(false);
@@ -47,6 +50,7 @@ export function PortalEditForm({ auth, profil, pole, vychoziEmail = '' }: Props)
         body: JSON.stringify({
           ...auth,
           udaje: hodnoty,
+          puvodni,
           udaje_sedi: udajeSedi === true,
           nesrovnalost: udajeSedi === false ? nesrovnalost : '',
           souhlas_cc_by: souhlas,

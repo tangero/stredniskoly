@@ -203,7 +203,7 @@ export default async function AdminPage({ searchParams }: Props) {
                   <tbody>
                     {hlaseni.map((h) => (
                       <tr key={h.id} className="border-b border-slate-50 align-top">
-                        <td className="py-2 pr-4 text-slate-600 whitespace-nowrap">{formatDatumCz(h.vytvoreno)}</td>
+                        <td className="py-2 pr-4 text-slate-600 whitespace-nowrap">{formatDatumCasCz(h.vytvoreno)}</td>
                         <td className="py-2 pr-4 text-slate-900 max-w-md">{h.popis}</td>
                         <td className="py-2 pr-4 text-slate-600">
                           <a href={`mailto:${h.email}`} className="text-blue-600 hover:underline">

@@ -12,6 +12,7 @@ import { jeDbNastavena, vTransakci } from '@/lib/novinky-db';
 import { cteni, jeNasPuvod, prihlasenyZPozadavku } from '@/lib/portal-relace';
 import { spravceSkoly, zapisUdalost, type PortalRole } from '@/lib/portal-ucty';
 import { zapisUdaje } from '@/lib/portal-profil';
+import { propojIssue, zapisHlaseni } from '@/lib/hlaseni';
 import { posliTelegram } from '@/lib/portal-oznameni';
 import { ipZPozadavku, obnovProfily, odpovedNaChybu } from '@/lib/portal-api';
 
@@ -175,6 +176,27 @@ async function zapisNesrovnalost(
   return (await odpoved.json()).number as number;
 }
 
+/**
+ * Stav profilu, jak ho formulář ukázal odesílateli (`puvodni`). Bere se jen pro
+ * pole, která odeslání opravdu nese, a jen jako řetězce — slouží k porovnání
+ * s databází, ne k zápisu. Starší klient bez `puvodni` pošle prázdno a zápis se
+ * chová jako dřív.
+ */
+function ocekavaneHodnoty(
+  body: Record<string, unknown>,
+  udaje: Record<string, string>,
+): Record<string, string> | undefined {
+  const raw = body.puvodni;
+  if (!raw || typeof raw !== 'object') return undefined;
+  const zdroj = raw as Record<string, unknown>;
+  const ocekavane: Record<string, string> = {};
+  for (const pole of Object.keys(udaje)) {
+    const v = zdroj[pole];
+    if (typeof v === 'string') ocekavane[pole] = v.trim();
+  }
+  return Object.keys(ocekavane).length > 0 ? ocekavane : undefined;
+}
+
 export async function POST(request: NextRequest) {
   const ip = ipZPozadavku(request.headers);
 
@@ -244,6 +266,7 @@ export async function POST(request: NextRequest) {
         nazev,
         verze_prijimani: payload.verze_prijimani,
         udaje: payload.udaje,
+        ocekavane: ocekavaneHodnoty(body, payload.udaje),
         roleId: autor.role?.id ?? null,
         zmenuProvedl: autor.kanal,
       }),
@@ -253,16 +276,38 @@ export async function POST(request: NextRequest) {
   }
   obnovProfily();
 
-  // 2. Nesrovnalost v datech katalogu je jediné, co dál míří do issue: opravit
-  // ji musí člověk v datech, ne škola ve svém profilu. Selhání GitHubu už
-  // zápis profilu neshodí – podnět zůstane v události a v Telegramu.
+  // 2. Nesrovnalost v datech katalogu musí opravit člověk v datech, ne škola ve
+  // svém profilu. Text se ukládá do fronty hlášení **dřív**, než se zakládá
+  // issue: bez toho by ho výpadek GitHubu (nebo chybějící token) ztratil, zatímco
+  // škola by dostala potvrzení. Issue je pak jen veřejná stopa nad uloženým
+  // podnětem a jeho číslo se doplňuje dodatečně.
   let issueNumber: number | null = null;
+  let hlaseniId: string | null = null;
   const token = process.env.GITHUB_TOKEN;
-  if (payload.nesrovnalost && token) {
+  if (payload.nesrovnalost) {
     try {
-      issueNumber = await zapisNesrovnalost(token, payload, autor, skolaUrl);
+      hlaseniId = await vTransakci((s) =>
+        zapisHlaseni(s, {
+          email: payload.kontakt_email,
+          popis: `Nesrovnalost v datech katalogu od školy ${nazev || redizo}:\n\n${payload.nesrovnalost}`,
+          url: skolaUrl,
+          redizo,
+        }),
+      );
     } catch (e) {
-      console.error('❌ Portál: nesrovnalost se nepodařilo zapsat do issue', e);
+      console.error('❌ Portál: nesrovnalost se nepodařilo uložit', e);
+    }
+    if (token) {
+      try {
+        issueNumber = await zapisNesrovnalost(token, payload, autor, skolaUrl);
+        if (hlaseniId && issueNumber) {
+          const id = hlaseniId;
+          const cislo = issueNumber;
+          await vTransakci((s) => propojIssue(s, id, cislo));
+        }
+      } catch (e) {
+        console.error('❌ Portál: nesrovnalost se nepodařilo zapsat do issue', e);
+      }
     }
   }
 
@@ -294,7 +339,13 @@ export async function POST(request: NextRequest) {
         popisAutora(autor, payload.kontakt_email),
         zmenena.length ? `Pole: ${zmenena.join(', ')}` : 'Beze změny v polích',
         skolaUrl,
-        ...(issueNumber ? [`⚠️ Nesrovnalost: https://github.com/${GITHUB_REPO}/issues/${issueNumber}`] : []),
+        ...(payload.nesrovnalost
+          ? [
+              issueNumber
+                ? `⚠️ Nesrovnalost: https://github.com/${GITHUB_REPO}/issues/${issueNumber}`
+                : '⚠️ Nesrovnalost ve frontě hlášení v /admin (issue se nepodařilo založit)',
+            ]
+          : []),
       ].join('\n'),
     );
   } catch (e) {

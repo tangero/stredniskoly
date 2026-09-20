@@ -93,6 +93,13 @@ export interface ZmenaProfilu {
   verze_prijimani: string;
   /** Hodnoty polí; prázdný řetězec pole maže. Pole, která tu nejsou, se nemění. */
   udaje: Record<string, string>;
+  /**
+   * Hodnoty, které měl odesílatel před sebou, když formulář otevřel. Chrání
+   * novější opravu před přepsáním ze zastaralého formuláře: pole, kterého se
+   * odesílatel nedotkl, se nechá být, a pole, které změnil na základě staré
+   * hodnoty, skončí chybou místo tichého přepisu.
+   */
+  ocekavane?: Record<string, string>;
   zdroj?: PortalHodnota['zdroj'];
   /** Role editora školy, u opravy redakcí null. */
   roleId?: string | null;
@@ -117,46 +124,62 @@ export async function zapisUdaje(s: Spojeni, z: ZmenaProfilu): Promise<string[]>
 
   const zmenena: string[] = [];
   for (const [pole, nova] of Object.entries(z.udaje)) {
-    // Zámek na platném řádku pole; dva souběžné zápisy se tak seřadí za sebe.
-    const stav = await s.dotaz<{ id: string; hodnota: string }>(
-      `select id, hodnota from portal_profil
-        where redizo = $1 and pole = $2 and zneplatneno is null for update`,
+    // Nejnovější řádek pole, i zneplatněný: platná hodnota se z něj pozná podle
+    // `zneplatneno` a zároveň je to řádek, který nový zápis nahrazuje. Zámek
+    // seřadí dva souběžné zápisy za sebe.
+    const stav = await s.dotaz<{ id: string; hodnota: string; zneplatneno: string | null }>(
+      `select id, hodnota, zneplatneno from portal_profil
+        where redizo = $1 and pole = $2 order by platne_od desc limit 1 for update`,
       [z.redizo, pole],
     );
-    const stary = stav.rows[0] ?? null;
+    const posledni = stav.rows[0] ?? null;
+    const platny = posledni && !posledni.zneplatneno ? posledni : null;
+    const soucasna = platny?.hodnota ?? '';
 
-    if (stary && stary.hodnota === nova) continue;
-    if (!stary && !nova.trim()) continue;
-
-    if (stary) {
-      await s.dotaz(`update portal_profil set zneplatneno = now() where id = $1`, [stary.id]);
+    const ocekavana = z.ocekavane?.[pole];
+    if (ocekavana !== undefined && soucasna !== ocekavana) {
+      // Pole se mezitím změnilo. Když ho odesílatel nechal tak, jak ho viděl,
+      // novější hodnotu mu nepřepíšeme; když ho měnil, ať to vidí.
+      if (nova === ocekavana) continue;
+      throw new PortalChyba(
+        'profil_zmenen',
+        'Někdo mezitím údaje profilu změnil. Načtěte prosím stránku znovu a zadejte změnu ještě jednou.',
+      );
     }
-    if (nova.trim()) {
-      try {
-        await s.dotaz(
-          `insert into portal_profil
-             (id, redizo, pole, hodnota, nazev, verze_prijimani, zdroj, role_id, nahrazuje_id, zmenu_provedl, duvod)
-           values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`,
-          [
-            randomUUID(),
-            z.redizo,
-            pole,
-            nova,
-            z.nazev,
-            z.verze_prijimani,
-            z.zdroj ?? 'skola',
-            z.roleId ?? null,
-            stary?.id ?? null,
-            z.zmenuProvedl,
-            z.duvod ?? null,
-          ],
-        );
-      } catch (e) {
-        if ((e as { code?: string }).code === UNIKATNI_PORUSENI) {
-          throw new PortalChyba('profil_zmenen', 'Údaj mezitím změnil někdo jiný. Načtěte prosím profil znovu.');
-        }
-        throw e;
+
+    if (platny && platny.hodnota === nova) continue;
+    if (!platny && !nova.trim()) continue;
+
+    if (platny) {
+      await s.dotaz(`update portal_profil set zneplatneno = now() where id = $1`, [platny.id]);
+    }
+    // I smazání zakládá řádek (prázdná hodnota, rovnou zneplatněná), jinak by se
+    // ztratilo, kdo pole smazal a proč, a nebylo by co vracet zpět.
+    try {
+      await s.dotaz(
+        `insert into portal_profil
+           (id, redizo, pole, hodnota, nazev, verze_prijimani, zdroj, role_id, nahrazuje_id, zmenu_provedl, duvod, zneplatneno)
+         values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
+        [
+          randomUUID(),
+          z.redizo,
+          pole,
+          nova,
+          z.nazev,
+          z.verze_prijimani,
+          z.zdroj ?? 'skola',
+          z.roleId ?? null,
+          posledni?.id ?? null,
+          z.zmenuProvedl,
+          z.duvod ?? null,
+          nova.trim() ? null : new Date().toISOString(),
+        ],
+      );
+    } catch (e) {
+      if ((e as { code?: string }).code === UNIKATNI_PORUSENI) {
+        throw new PortalChyba('profil_zmenen', 'Údaj mezitím změnil někdo jiný. Načtěte prosím profil znovu.');
       }
+      throw e;
     }
     zmenena.push(pole);
   }
@@ -187,9 +210,10 @@ export async function historieProfilu(s: Spojeni, redizo: string): Promise<Histo
 }
 
 /**
- * Vrátí pole na hodnotu, kterou ta současná nahradila. Historie se nepřepisuje:
- * platná hodnota se zneplatní a předchozí se vloží jako nový řádek. Když
- * předchůdce není, pole se jen smaže. Vrací obnovenou hodnotu, nebo null.
+ * Vrátí pole na hodnotu, kterou ta poslední nahradila. Historie se nepřepisuje:
+ * poslední verze se zneplatní a předchozí se vloží jako nový řádek. Funguje
+ * i pro smazané pole — smazání je taky verze, takže jde vrátit zpátky.
+ * Vrací obnovenou hodnotu, nebo null, když předchůdce neexistoval.
  */
 export async function vratPredchozi(
   s: Spojeni,
@@ -198,12 +222,13 @@ export async function vratPredchozi(
   if (!z.duvod.trim()) throw new PortalChyba('neplatne_udaje', 'Návrat k předchozí verzi musí nést důvod.');
 
   const r = await s.dotaz<{ predchozi: string | null }>(
-    `select s.hodnota as predchozi from portal_profil p
-       left join portal_profil s on s.id = p.nahrazuje_id
-      where p.redizo = $1 and p.pole = $2 and p.zneplatneno is null for update of p`,
+    `select s.hodnota as predchozi
+       from (select nahrazuje_id from portal_profil
+              where redizo = $1 and pole = $2 order by platne_od desc limit 1) p
+       left join portal_profil s on s.id = p.nahrazuje_id`,
     [z.redizo, z.pole],
   );
-  if (r.rows.length === 0) throw new PortalChyba('profil_zmenen', 'Pole už platnou hodnotu nemá.');
+  if (r.rows.length === 0) throw new PortalChyba('profil_zmenen', 'Pole nemá žádnou historii, není co vracet.');
 
   const predchozi = r.rows[0].predchozi ?? '';
   await zapisUdaje(s, {
