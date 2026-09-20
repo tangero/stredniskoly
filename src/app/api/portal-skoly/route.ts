@@ -258,10 +258,15 @@ export async function POST(request: NextRequest) {
   // 1. Zápis profilu. Údaje od školy jdou na web bez předchozí moderace: zadává
   // je ověřený editor školy. Pojistkou není fronta ke schválení, ale zpětná
   // oprava (portal_profil nic nepřepisuje) a oznámení do Telegramu.
+  // Nesrovnalost v datech katalogu se ukládá **v téže transakci** jako profil.
+  // Opravit ji musí člověk v datech, ne škola ve svém profilu, takže potřebuje
+  // frontu; a kdyby se ukládala zvlášť, mohl by její neúspěch skončit odpovědí
+  // „přijato“ u podnětu, který nikde není. Buď projde obojí, nebo nic.
   let zmenena: string[];
+  let hlaseniId: string | null = null;
   try {
-    zmenena = await vTransakci((s) =>
-      zapisUdaje(s, {
+    const vysledekZapisu = await vTransakci(async (s) => {
+      const zmeny = await zapisUdaje(s, {
         redizo,
         nazev,
         verze_prijimani: payload.verze_prijimani,
@@ -269,45 +274,39 @@ export async function POST(request: NextRequest) {
         ocekavane: ocekavaneHodnoty(body, payload.udaje),
         roleId: autor.role?.id ?? null,
         zmenuProvedl: autor.kanal,
-      }),
-    );
+      });
+      const podnet = payload.nesrovnalost
+        ? await zapisHlaseni(s, {
+            email: payload.kontakt_email,
+            popis: `Nesrovnalost v datech katalogu od školy ${nazev || redizo}:\n\n${payload.nesrovnalost}`,
+            url: skolaUrl,
+            redizo,
+          })
+        : null;
+      return { zmeny, podnet };
+    });
+    zmenena = vysledekZapisu.zmeny;
+    hlaseniId = vysledekZapisu.podnet;
   } catch (e) {
     return odpovedNaChybu(e, 'zápis profilu');
   }
   obnovProfily();
 
-  // 2. Nesrovnalost v datech katalogu musí opravit člověk v datech, ne škola ve
-  // svém profilu. Text se ukládá do fronty hlášení **dřív**, než se zakládá
-  // issue: bez toho by ho výpadek GitHubu (nebo chybějící token) ztratil, zatímco
-  // škola by dostala potvrzení. Issue je pak jen veřejná stopa nad uloženým
-  // podnětem a jeho číslo se doplňuje dodatečně.
+  // 2. Issue k nesrovnalosti je jen veřejná stopa nad podnětem, který je už
+  // uložený ve frontě. Jeho selhání proto podnět neztratí a odpověď škole
+  // nemění; číslo issue se k hlášení doplní dodatečně.
   let issueNumber: number | null = null;
-  let hlaseniId: string | null = null;
   const token = process.env.GITHUB_TOKEN;
-  if (payload.nesrovnalost) {
+  if (payload.nesrovnalost && token) {
     try {
-      hlaseniId = await vTransakci((s) =>
-        zapisHlaseni(s, {
-          email: payload.kontakt_email,
-          popis: `Nesrovnalost v datech katalogu od školy ${nazev || redizo}:\n\n${payload.nesrovnalost}`,
-          url: skolaUrl,
-          redizo,
-        }),
-      );
-    } catch (e) {
-      console.error('❌ Portál: nesrovnalost se nepodařilo uložit', e);
-    }
-    if (token) {
-      try {
-        issueNumber = await zapisNesrovnalost(token, payload, autor, skolaUrl);
-        if (hlaseniId && issueNumber) {
-          const id = hlaseniId;
-          const cislo = issueNumber;
-          await vTransakci((s) => propojIssue(s, id, cislo));
-        }
-      } catch (e) {
-        console.error('❌ Portál: nesrovnalost se nepodařilo zapsat do issue', e);
+      issueNumber = await zapisNesrovnalost(token, payload, autor, skolaUrl);
+      if (hlaseniId && issueNumber) {
+        const id = hlaseniId;
+        const cislo = issueNumber;
+        await vTransakci((s) => propojIssue(s, id, cislo));
       }
+    } catch (e) {
+      console.error('❌ Portál: nesrovnalost se nepodařilo zapsat do issue', e);
     }
   }
 

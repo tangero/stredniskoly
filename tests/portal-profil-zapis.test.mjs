@@ -141,6 +141,50 @@ test('mazání pole, které škola nikdy nevyplnila, není změna', async () => 
   assert.deepEqual(zmeny, []);
 });
 
+test('obnova nepřeskočí verzi, která vznikla mezi čtením a zápisem', async () => {
+  const { s, tx } = await novaDb();
+  await tx((t) => zapisUdaje(t, { ...ZAKLAD, udaje: { skolne: '100 Kč' }, zmenuProvedl: 'ucet' }));
+  await tx((t) => zapisUdaje(t, { ...ZAKLAD, udaje: { skolne: '200 Kč' }, zmenuProvedl: 'ucet' }));
+
+  // Proložení z review: obnova si přečte předchůdce (100 Kč), ale než stihne
+  // zapsat, vznikne verze 300 Kč. Kdyby obnova pokračovala, výsledek 100 Kč by
+  // přeskočil 200 Kč i 300 Kč a neodpovídal by žádnému sériovému pořadí.
+  const posledni = await s.dotaz(
+    `select id from portal_profil where redizo = $1 and pole = 'skolne' order by platne_od desc limit 1`,
+    [ZAKLAD.redizo],
+  );
+  await tx((t) => zapisUdaje(t, { ...ZAKLAD, udaje: { skolne: '300 Kč' }, zmenuProvedl: 'ucet' }));
+
+  await assert.rejects(
+    () =>
+      tx((t) =>
+        zapisUdaje(t, {
+          ...ZAKLAD,
+          udaje: { skolne: '100 Kč' },
+          ocekavanePosledni: { skolne: posledni.rows[0].id },
+          zdroj: 'redakce',
+          zmenuProvedl: 'admin:patrick',
+          duvod: 'vrácení',
+        }),
+      ),
+    (e) => e instanceof PortalChyba && e.kod === 'profil_zmenen',
+  );
+
+  assert.equal((await udajeSkoly(s, ZAKLAD.redizo)).udaje.skolne.hodnota, '300 Kč');
+});
+
+test('obnova po nerušeném průběhu vrátí přesně předchozí verzi', async () => {
+  const { s, tx } = await novaDb();
+  await tx((t) => zapisUdaje(t, { ...ZAKLAD, udaje: { skolne: '100 Kč' }, zmenuProvedl: 'ucet' }));
+  await tx((t) => zapisUdaje(t, { ...ZAKLAD, udaje: { skolne: '200 Kč' }, zmenuProvedl: 'ucet' }));
+
+  const obnoveno = await tx((t) =>
+    vratPredchozi(t, { ...ZAKLAD, pole: 'skolne', kdo: 'patrick', duvod: 'chybná oprava' }),
+  );
+  assert.equal(obnoveno, '100 Kč');
+  assert.equal((await udajeSkoly(s, ZAKLAD.redizo)).udaje.skolne.hodnota, '100 Kč');
+});
+
 test('oprava redakcí nese zdroj i důvod, bez důvodu neprojde', async () => {
   const { s, tx } = await novaDb();
   await tx((t) => zapisUdaje(t, { ...ZAKLAD, udaje: { dny_otevrenych_dveri: '24. 11. 2022' }, zmenuProvedl: 'ucet' }));

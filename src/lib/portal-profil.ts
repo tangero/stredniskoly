@@ -87,6 +87,20 @@ export async function udajeSkoly(s: Spojeni, redizo: string): Promise<PortalZazn
 
 const UNIKATNI_PORUSENI = '23505';
 
+/**
+ * Serializuje operace nad jedním polem jedné školy po dobu transakce.
+ *
+ * `select … order by platne_od desc limit 1 for update` sám nestačí: v režimu
+ * READ COMMITTED Postgres po uvolnění zámku přečte novou verzi **uzamčeného
+ * řádku**, ale `limit 1` znovu nevyhodnotí. Souběžná operace by tak mohla
+ * pracovat s řádkem, který už nejnovější není — a obnova předchozí verze by
+ * přeskočila hodnotu, která mezitím vznikla. Poradní zámek tenhle závod ruší
+ * dřív, než se první řádek vůbec vybere; drží se do konce transakce.
+ */
+async function zamkniPole(s: Spojeni, redizo: string, pole: string): Promise<void> {
+  await s.dotaz(`select pg_advisory_xact_lock(hashtext($1)::bigint)`, [`portal_profil:${redizo}:${pole}`]);
+}
+
 export interface ZmenaProfilu {
   redizo: string;
   nazev: string;
@@ -100,6 +114,12 @@ export interface ZmenaProfilu {
    * hodnoty, skončí chybou místo tichého přepisu.
    */
   ocekavane?: Record<string, string>;
+  /**
+   * Id poslední verze pole, na kterou má zápis navazovat. Používá obnova
+   * předchozí hodnoty: mezi jejím čtením a zápisem nesmí vzniknout další verze,
+   * jinak by ji obnova přeskočila.
+   */
+  ocekavanePosledni?: Record<string, string | null>;
   zdroj?: PortalHodnota['zdroj'];
   /** Role editora školy, u opravy redakcí null. */
   roleId?: string | null;
@@ -124,17 +144,33 @@ export async function zapisUdaje(s: Spojeni, z: ZmenaProfilu): Promise<string[]>
 
   const zmenena: string[] = [];
   for (const [pole, nova] of Object.entries(z.udaje)) {
+    await zamkniPole(s, z.redizo, pole);
+
     // Nejnovější řádek pole, i zneplatněný: platná hodnota se z něj pozná podle
-    // `zneplatneno` a zároveň je to řádek, který nový zápis nahrazuje. Zámek
-    // seřadí dva souběžné zápisy za sebe.
+    // `zneplatneno` a zároveň je to řádek, který nový zápis nahrazuje.
     const stav = await s.dotaz<{ id: string; hodnota: string; zneplatneno: string | null }>(
       `select id, hodnota, zneplatneno from portal_profil
-        where redizo = $1 and pole = $2 order by platne_od desc limit 1 for update`,
+        where redizo = $1 and pole = $2 order by platne_od desc limit 1`,
       [z.redizo, pole],
     );
     const posledni = stav.rows[0] ?? null;
     const platny = posledni && !posledni.zneplatneno ? posledni : null;
     const soucasna = platny?.hodnota ?? '';
+
+    // Volající očekává, že pole navazuje na konkrétní verzi (obnova předchozí
+    // hodnoty). Když se poslední verze mezitím změnila, zápis se neprovede.
+    const ocekavanePosledni = z.ocekavanePosledni?.[pole];
+    if (ocekavanePosledni !== undefined && (posledni?.id ?? null) !== ocekavanePosledni) {
+      throw new PortalChyba(
+        'profil_zmenen',
+        'Údaj se mezitím změnil. Otevřete prosím profil znovu a zopakujte to.',
+      );
+    }
+
+    // Hodnota, kterou chceme zapsat, už v databázi je: není co dělat, a není
+    // to ani konflikt (typicky opakované odeslání téhož formuláře).
+    if (soucasna === nova) continue;
+    if (!platny && !nova.trim()) continue;
 
     const ocekavana = z.ocekavane?.[pole];
     if (ocekavana !== undefined && soucasna !== ocekavana) {
@@ -146,9 +182,6 @@ export async function zapisUdaje(s: Spojeni, z: ZmenaProfilu): Promise<string[]>
         'Někdo mezitím údaje profilu změnil. Načtěte prosím stránku znovu a zadejte změnu ještě jednou.',
       );
     }
-
-    if (platny && platny.hodnota === nova) continue;
-    if (!platny && !nova.trim()) continue;
 
     if (platny) {
       await s.dotaz(`update portal_profil set zneplatneno = now() where id = $1`, [platny.id]);
@@ -221,9 +254,13 @@ export async function vratPredchozi(
 ): Promise<string | null> {
   if (!z.duvod.trim()) throw new PortalChyba('neplatne_udaje', 'Návrat k předchozí verzi musí nést důvod.');
 
-  const r = await s.dotaz<{ predchozi: string | null }>(
-    `select s.hodnota as predchozi
-       from (select nahrazuje_id from portal_profil
+  // Zámek drží celé čtení i zápis: bez něj by mezi zjištěním předchozí hodnoty
+  // a jejím zápisem mohla vzniknout další verze, kterou by obnova přeskočila.
+  await zamkniPole(s, z.redizo, z.pole);
+
+  const r = await s.dotaz<{ id: string; predchozi: string | null }>(
+    `select p.id, s.hodnota as predchozi
+       from (select id, nahrazuje_id from portal_profil
               where redizo = $1 and pole = $2 order by platne_od desc limit 1) p
        left join portal_profil s on s.id = p.nahrazuje_id`,
     [z.redizo, z.pole],
@@ -236,6 +273,8 @@ export async function vratPredchozi(
     nazev: z.nazev,
     verze_prijimani: z.verze_prijimani,
     udaje: { [z.pole]: predchozi },
+    // Zápis musí navázat právě na verzi, ze které se předchozí hodnota četla.
+    ocekavanePosledni: { [z.pole]: r.rows[0].id },
     zdroj: 'redakce',
     zmenuProvedl: `admin:${z.kdo}`,
     duvod: z.duvod,

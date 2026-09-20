@@ -5,6 +5,7 @@ import { MIGRACE_PORTALU } from '../src/lib/portal-schema.ts';
 import { zapisHlaseni, propojIssue, otevrenaHlaseni, vyridHlaseni, redizoZUrl } from '../src/lib/hlaseni.ts';
 import { vymazKontakt } from '../src/lib/portal-ucty.ts';
 import { formatDatumCasCz } from '../src/lib/admin.ts';
+import { zapisUdaje, udajeSkoly } from '../src/lib/portal-profil.ts';
 
 async function novaDb() {
   const db = new PGlite();
@@ -76,6 +77,30 @@ test('vyřízené hlášení z fronty zmizí a nese poznámku', async () => {
   assert.deepEqual(await otevrenaHlaseni(s), []);
   const r = await s.dotaz(`select poznamka from hlaseni_chyby where id = $1`, [id]);
   assert.equal(r.rows[0].poznamka, 'opraveno, škola měla 30 míst');
+});
+
+test('podnět a profil se ukládají společně: selhání podnětu zruší i zápis profilu', async () => {
+  const { s, tx } = await novaDb();
+
+  // Tak, jak to dělá /api/portal-skoly: údaje profilu a nesrovnalost v jedné
+  // transakci. Kdyby se ukládaly zvlášť, mohla by škola dostat „přijato“
+  // u podnětu, který nikde není.
+  await assert.rejects(() =>
+    tx(async (t) => {
+      await zapisUdaje(t, {
+        redizo: '600171701',
+        nazev: 'Gymnázium',
+        verze_prijimani: '2027',
+        udaje: { skolne: 'Zdarma' },
+        zmenuProvedl: 'ucet',
+      });
+      // Podnět bez adresy porušuje `not null`; zastupuje jakékoli selhání zápisu.
+      await zapisHlaseni(t, { email: null, popis: HLASENI.popis, url: HLASENI.url });
+    }),
+  );
+
+  assert.equal(await udajeSkoly(s, '600171701'), null, 'profil se nezapsal ani zčásti');
+  assert.deepEqual(await otevrenaHlaseni(s), []);
 });
 
 test('výmaz kontaktu na žádost smaže adresu i z hlášení, podnět nechá', async () => {
