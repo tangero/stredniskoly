@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 /**
- * Rozeslání pozvánek do pilotu účtů portálu (20 škol).
+ * Rozeslání pozvánek do pilotu účtů portálu (20 škol) z příkazové řádky.
+ *
+ * Náhled e-mailu a potvrzené odeslání má administrace (/admin/portal/pozvanky);
+ * tenhle skript je pro rychlou kontrolu v terminálu a sdílí s ní logiku
+ * (`src/lib/portal-pozvanky.ts`), aby obojí počítalo totéž.
  *
  * Text pozvánky je schválený v `docs/podklady/pozvanka-pilot-uctu-portalu.md`,
  * šablona v `src/lib/portal-email.ts` (`posliPozvankuDoPilotu`). Odchází
@@ -29,6 +33,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
 import { posliPozvankuDoPilotu } from '../src/lib/portal-email.ts';
+import { osloveni } from '../src/lib/portal-pozvanky.ts';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PILOT = path.join(ROOT, 'data', 'portal', 'pilot.json');
@@ -49,20 +54,6 @@ function nactiNebo(cesta, co) {
   return JSON.parse(fs.readFileSync(cesta, 'utf-8'));
 }
 
-/**
- * Oslovení z ředitelova jména. Rod se pozná spolehlivě jen u příjmení na -ová;
- * jinde se hádat nebude, protože špatně oslovená ředitelka je horší než „Dobrý den“.
- */
-export function osloveni(reditel) {
-  const casti = String(reditel || '')
-    .split(/[\s,]+/)
-    // Tituly nesou tečku („Mgr.“, „Ph.D.“, „CSc.“) a o rodu nic neříkají.
-    .filter((c) => c && !c.includes('.'));
-  const prijmeni = casti.pop() || '';
-  if (/ová$/i.test(prijmeni)) return 'Vážená paní ředitelko';
-  if (/(ý|ec|ek|er|an|il|al|ar|ur|us|in|on)$/i.test(prijmeni)) return 'Vážený pane řediteli';
-  return 'Dobrý den';
-}
 
 async function main() {
   const pilot = nactiNebo(PILOT, 'seznam pilotu, spusťte scripts/portal-vyber-pilotu.py');

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { osloveni } from '../scripts/portal-posli-pozvanky.mjs';
+import { osloveni } from '../src/lib/portal-pozvanky.ts';
 
 // Oslovení se hádá z ředitelova jména. Špatně oslovená ředitelka je horší než
 // neutrální „Dobrý den“, takže se rod odvozuje jen tam, kde je jistý.

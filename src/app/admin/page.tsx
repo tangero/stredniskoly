@@ -143,7 +143,8 @@ export default async function AdminPage({ searchParams }: Props) {
                 <p className="text-sm text-slate-500 mb-3">
                   {pilot.filter((p) => p.stav?.spravce).length} z {pilot.length} škol má správce ·{' '}
                   {pilot.filter((p) => (p.stav?.navrhy ?? 0) > 0).length} poslalo návrh ·{' '}
-                  <a href="/admin/portal" className="underline">všechny účty</a>
+                  <a href="/admin/portal" className="underline">všechny účty</a>{' '}·{' '}
+                  <a href="/admin/portal/pozvanky" className="underline">pozvánky do pilotu</a>
                 </p>
                 <table className="w-full text-sm">
                   <thead>

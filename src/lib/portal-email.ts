@@ -182,16 +182,17 @@ export async function posliVitejteEmail(para: { email: string; nazevSkoly: strin
  * Proto má vlastní patičku bez věty „odesláno automaticky“ a v textu je
  * vysvětlené, kdo na adrese odpovídá.
  */
-export async function posliPozvankuDoPilotu(para: {
-  email: string;
+export interface PozvankaPara {
   nazevSkoly: string;
   /** „Vážená paní ředitelko“ / „Vážený pane řediteli“ / „Dobrý den“ */
   osloveni: string;
   kod: string;
-}): Promise<boolean> {
+}
+
+/** Předmět a HTML pozvánky bez odeslání – kvůli náhledu v administraci. */
+export function pozvankaDoPilotu(para: PozvankaPara): { subject: string; html: string } {
   const skola = esc(para.nazevSkoly);
-  return odesliEmail({
-    to: para.email,
+  return {
     subject: `Profil ${para.nazevSkoly} na Přijímačky na školu: pozvánka do pilotu`,
     html: OBALKA(
       `
@@ -232,7 +233,12 @@ export async function posliPozvankuDoPilotu(para: {
       `Pozvánku posílá Patrick Zandl, provozovatel projektu. Na odpovědi na této adrese reaguje Eduarda,
        asistentka s umělou inteligencí; změny účtů a sporné věci řeší Patrick Zandl (patrick@zandl.cz).<br>`,
     ),
-  });
+  };
+}
+
+export async function posliPozvankuDoPilotu(para: PozvankaPara & { email: string }): Promise<boolean> {
+  const { subject, html } = pozvankaDoPilotu(para);
+  return odesliEmail({ to: para.email, subject, html });
 }
 
 export async function posliPozvankuEmail(para: { email: string; nazevSkoly: string; pozval: string; odkaz: string }) {

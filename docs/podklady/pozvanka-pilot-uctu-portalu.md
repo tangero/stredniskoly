@@ -2,9 +2,11 @@
 
 Text e-mailu pro 20 škol z `data/portal/pilot.json` ([účty portálu](../ucty-portalu-skol-2027.md), oddíly 5 a 9).
 
-**Rozeslání (rozhodnutí zadavatele 20. 9. 2026):** programově přes Resend skriptem `scripts/portal-posli-pozvanky.mjs`, z adresy `eda@prijimackynaskolu.cz`, na rejstříkový e-mail školy (`data/portal/pilot-kontakty.json`). Odpovědi míří na tutéž adresu, kde je vyřizuje Eduarda; v textu je to vysvětlené. **Podepsaný je člověk — Patrick Zandl, provozovatel projektu** (oddíl 5 účtů portálu: kód podepsaný umělou inteligencí ředitel snadno vyhodnotí jako podvod). Kód se doplní z `data/portal/kody-plaintext.json`; ten i soubor kontaktů jsou gitignorované a do repozitáře ani do jiného kanálu se nekopírují.
+**Rozeslání (rozhodnutí zadavatele 20. 9. 2026):** z administrace `/admin/portal/pozvanky` — náhled e-mailu, počet oslovených škol, zkouška na vlastní adresu a ostrá rozesílka potvrzená opsáním počtu. Totéž z příkazové řádky umí `scripts/portal-posli-pozvanky.mjs`; obojí sdílí `src/lib/portal-pozvanky.ts`. Odesílá se z adresy `eda@prijimackynaskolu.cz`, na rejstříkový e-mail školy (`data/portal/pilot-kontakty.json`). Odpovědi míří na tutéž adresu, kde je vyřizuje Eduarda; v textu je to vysvětlené. **Podepsaný je člověk — Patrick Zandl, provozovatel projektu** (oddíl 5 účtů portálu: kód podepsaný umělou inteligencí ředitel snadno vyhodnotí jako podvod). Kód se doplní z `data/portal/kody-plaintext.json`; ten i soubor kontaktů jsou gitignorované a do repozitáře ani do jiného kanálu se nekopírují.
 
-Doplňuje se: `{osloveni}` (z ředitele v kontaktech: „Vážená paní ředitelko“ / „Vážený pane řediteli“, bez jistoty rodu „Dobrý den“), `{nazev_skoly}`, `{kod}`. Datum odeslání zapíše skript do `pozvanka_odeslana` v `data/portal/pilot.json`.
+Doplňuje se: `{osloveni}` (z ředitele v kontaktech: „Vážená paní ředitelko“ / „Vážený pane řediteli“, bez jistoty rodu „Dobrý den“), `{nazev_skoly}`, `{kod}`. Datum odeslání zapíše administrace i skript do `pozvanka_odeslana` v `data/portal/pilot.json`; soubor patří do gitu, změnu je potřeba commitnout.
+
+**Administrace pozvánek běží jen lokálně** (`npm run dev`). Kódy v plaintextu a jména ředitelů se schválně nenasazují, takže na produkci stránka vypíše, co chybí, a neodešle nic. Kdyby plaintext kódů ležel na serveru, hashování s pepřem ztrácí smysl.
 
 ---
 
