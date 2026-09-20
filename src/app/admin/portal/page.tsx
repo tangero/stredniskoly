@@ -7,7 +7,8 @@ import { Footer } from '@/components/Footer';
 import { formatDatumCasCz, overAdminToken } from '@/lib/admin';
 import { jeDbNastavena } from '@/lib/novinky-db';
 import { stavSkolPortalu, udalostiSkoly } from '@/lib/portal-admin';
-import { getNazevSkoly } from '@/lib/portal-skol';
+import { getNazevSkoly, PORTAL_POLE } from '@/lib/portal-skol';
+import { historieProfilu } from '@/lib/portal-profil';
 import { cteni } from '@/lib/portal-relace';
 import { historieSkoly, otevrenePozvanky, type PortalRole } from '@/lib/portal-ucty';
 
@@ -139,19 +140,106 @@ async function PrehledSkol() {
 }
 
 async function DetailSkoly({ redizo }: { redizo: string }) {
-  const [nazev, historie, udalosti, pozvanky] = await Promise.all([
+  const [nazev, historie, udalosti, pozvanky, profil] = await Promise.all([
     getNazevSkoly(redizo),
     historieSkoly(cteni, redizo),
     udalostiSkoly(cteni, redizo),
     otevrenePozvanky(cteni, redizo),
+    historieProfilu(cteni, redizo),
   ]);
   const platne = historie.filter((r) => !r.zneplatneno);
+  const platneUdaje = profil.filter((p) => !p.zneplatneno);
+  // Pole, jehož poslední verzí je smazání. Historie ho zná, na webu není –
+  // a právě u něj je návrat k předchozí verzi nejvíc potřeba.
+  const nejnovejsiPoPoli = new Map<string, (typeof profil)[number]>();
+  for (const u of profil) if (!nejnovejsiPoPoli.has(u.pole)) nejnovejsiPoPoli.set(u.pole, u);
+  const smazana = [...nejnovejsiPoPoli.values()].filter((u) => !u.hodnota.trim());
+  const popisky = new Map(PORTAL_POLE.map((p) => [p.key, p.label]));
+  popisky.set('ubytovani', 'Ubytování');
 
   return (
     <>
       <h2 className="text-2xl font-semibold">
         {nazev || 'Škola mimo katalog'} <span className="text-slate-500">({redizo})</span>
       </h2>
+
+      {/*
+        Zpětná moderace údajů profilu. Web na schválení nečeká, chyba se opravuje
+        až tady; oprava i návrat jsou nový řádek, historie zůstává celá.
+      */}
+      <section className="bg-white rounded-xl border border-slate-100 p-6 space-y-4">
+        <h3 className="text-lg font-semibold">Údaje profilu na webu</h3>
+        {platneUdaje.length === 0 ? (
+          <p className="text-sm text-slate-500">Škola zatím žádný údaj nepotvrdila.</p>
+        ) : (
+          platneUdaje.map((u) => (
+            <div key={u.id} className="space-y-2 border-b border-slate-100 pb-4">
+              <p className="text-sm">
+                <strong>{popisky.get(u.pole) || u.pole}:</strong> {u.hodnota}{' '}
+                <span className="text-slate-500">
+                  · {u.zdroj === 'redakce' ? 'opravila redakce' : 'potvrdila škola'} {cas(u.platne_od)}
+                  {u.jmeno ? ` · ${u.jmeno}` : ''}
+                  {u.duvod ? ` · ${u.duvod}` : ''}
+                </span>
+              </p>
+              <Formular redizo={redizo} akce="opravit_udaj">
+                <input type="hidden" name="pole" value={u.pole} />
+                <input
+                  name="hodnota"
+                  defaultValue={u.hodnota}
+                  aria-label={`Opravená hodnota pole ${popisky.get(u.pole) || u.pole}`}
+                  className={`${VSTUP} w-96`}
+                />
+                <Duvod />
+                <button className={TLACITKO}>Opravit</button>
+              </Formular>
+              <Formular redizo={redizo} akce="vratit_udaj">
+                <input type="hidden" name="pole" value={u.pole} />
+                <Duvod />
+                <button className={TLACITKO}>Vrátit předchozí verzi</button>
+              </Formular>
+            </div>
+          ))
+        )}
+
+        {smazana.length > 0 && (
+          <>
+            <h3 className="text-lg font-semibold">Smazaná pole</h3>
+            {smazana.map((u) => (
+              <div key={u.id} className="space-y-2 border-b border-slate-100 pb-4">
+                <p className="text-sm">
+                  <strong>{popisky.get(u.pole) || u.pole}</strong> — smazáno {cas(u.platne_od)}{' '}
+                  <span className="text-slate-500">
+                    · {u.zmenu_provedl}
+                    {u.duvod ? ` · ${u.duvod}` : ''}
+                  </span>
+                </p>
+                <Formular redizo={redizo} akce="vratit_udaj">
+                  <input type="hidden" name="pole" value={u.pole} />
+                  <Duvod />
+                  <button className={TLACITKO}>Vrátit poslední hodnotu</button>
+                </Formular>
+              </div>
+            ))}
+          </>
+        )}
+
+        {profil.length > platneUdaje.length && (
+          <details className="text-sm">
+            <summary className="cursor-pointer text-slate-600">Historie údajů ({profil.length})</summary>
+            <ul className="mt-2 space-y-1 text-slate-600">
+              {profil.map((u) => (
+                <li key={u.id}>
+                  {cas(u.platne_od)} · <strong>{popisky.get(u.pole) || u.pole}</strong>:{' '}
+                  {u.hodnota.trim() ? u.hodnota : <em>smazáno</em>} · {u.zmenu_provedl}
+                  {u.zneplatneno ? ` · zneplatněno ${cas(u.zneplatneno)}` : ' · platí'}
+                  {u.duvod ? ` · ${u.duvod}` : ''}
+                </li>
+              ))}
+            </ul>
+          </details>
+        )}
+      </section>
 
       <section className="bg-white rounded-xl border border-slate-100 p-6 space-y-4">
         <h3 className="text-lg font-semibold">Platné role</h3>

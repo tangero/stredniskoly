@@ -15,6 +15,8 @@
     "test:novinky": "node --experimental-strip-types --test tests/novinky-*.test.mjs",
     "novinky:migrace": "node scripts/novinky-migrace.mjs",
     "novinky:migrace-kontrola": "node scripts/novinky-migrace.mjs --kontrola",
+    "portal:export": "node --experimental-strip-types scripts/portal-export.mjs",
+    "portal:export-kontrola": "node --experimental-strip-types scripts/portal-export.mjs --kontrola",
     "test:js": "node --experimental-strip-types --test tests/*.test.mjs",
     "test:integrace": "node --experimental-strip-types --test tests/catalog-2026.integration.mjs"
   },

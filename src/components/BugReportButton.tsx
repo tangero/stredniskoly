@@ -74,7 +74,7 @@ export default function BugReportButton() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           description: trimmed,
-          email: email.trim() || undefined,
+          email: email.trim(),
           website: website, // Honeypot field
           url: window.location.href,
           userAgent: navigator.userAgent,
@@ -153,12 +153,9 @@ export default function BugReportButton() {
                   Děkujeme za hlášení!
                 </p>
                 <p className="text-sm text-green-700">
-                  Chybu se pokusíme co nejdříve opravit. Pokud jste zadali e-mail, budeme vás informovat o průběhu opravy.
+                  Chybu se pokusíme co nejdříve opravit. Na zadaný e-mail vám dáme vědět, jak to
+                  dopadlo, nebo se zeptáme, když bude něco nejasné.
                 </p>
-                <div className="text-xs text-green-600 bg-green-100 rounded px-3 py-2">
-                  <p className="font-medium mb-1">🤖 Automatická oprava</p>
-                  <p>Pokud je problém jednoduchý, náš AI bot se pokusí o automatickou opravu během několika minut.</p>
-                </div>
                 {issueUrl && (
                   <a
                     href={issueUrl}
@@ -253,11 +250,15 @@ export default function BugReportButton() {
                 />
 
                 <label className="mb-1 block text-sm font-medium text-gray-700" htmlFor="bug-email">
-                  E-mail <span className="text-gray-400">(volitelné)</span>
+                  E-mail
                 </label>
+                <p className="mb-1 text-xs text-gray-500">
+                  Ať se vám můžeme ozvat, když bude něco potřeba doplnit. Nikde ho nezveřejňujeme.
+                </p>
                 <input
                   id="bug-email"
                   type="email"
+                  required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="vas@email.cz"

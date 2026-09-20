@@ -2,19 +2,20 @@ import { NextRequest, NextResponse } from 'next/server';
 import {
   validatePortalPayload,
   getNazevSkoly,
-  PORTAL_POLE,
+  getNazevSAdresou,
   PORTAL_VERZE_PRJIMANI,
   PortalPayload,
-  verejnyPayload,
 } from '@/lib/portal-skol';
 import { resolvePortalAuth, PortalKanal, PORTAL_PRODUKCNI_BASE_URL } from '@/lib/portal-magic';
 import { posliPotvrzovaciEmail, posliUpozorneniSpravci } from '@/lib/portal-email';
 import { createSlug } from '@/lib/utils';
-import { jeDbNastavena } from '@/lib/novinky-db';
+import { jeDbNastavena, vTransakci } from '@/lib/novinky-db';
 import { cteni, jeNasPuvod, prihlasenyZPozadavku } from '@/lib/portal-relace';
 import { spravceSkoly, zapisUdalost, type PortalRole } from '@/lib/portal-ucty';
+import { zapisUdaje } from '@/lib/portal-profil';
+import { propojIssue, zapisHlaseni } from '@/lib/hlaseni';
 import { posliTelegram } from '@/lib/portal-oznameni';
-import { ipZPozadavku } from '@/lib/portal-api';
+import { ipZPozadavku, obnovProfily, odpovedNaChybu } from '@/lib/portal-api';
 
 // In-memory rate limiting: 5 požadavků za 15 minut na IP (stejný vzor jako bug-report)
 const rateLimitMap = new Map<string, number[]>();
@@ -114,61 +115,94 @@ function roleAutora(autor: Autor): string {
   return autor.kanal === 'kod' ? 'přihlašovací kód' : 'rejstříková adresa školy';
 }
 
-function buildIssueBody(payload: PortalPayload, autor: Autor): string {
-  const parts = [
-    `**Škola:** ${payload.nazev}`,
+/**
+ * Tělo issue k nesrovnalosti v katalogu. Údaje profilu tudy od 19. 9. 2026
+ * nechodí — ty jdou rovnou do portal_profil. Issue zbylo jen na to, co musí
+ * vyřešit člověk v datech katalogu, a nese proto jen text školy a odkaz.
+ * Repozitář je veřejný: žádné jméno, funkce ani e-mail (PR #111, nález 1).
+ *
+ * Zkrácený název z katalogu („Gymnázium“) školu neurčí, proto jde do issue
+ * název s ulicí a obcí (PR #119).
+ */
+function buildNesrovnalostBody(payload: PortalPayload, autor: Autor, skolaUrl: string, nazevPopis: string): string {
+  return [
+    `**Škola:** ${nazevPopis || payload.nazev}`,
     `**REDIZO:** ${payload.redizo}`,
     `**Verze přijímání:** ${payload.verze_prijimani}`,
     `**Kanál:** ${autor.kanal}`,
     `**Zadal:** ${roleAutora(autor)} (jméno a kontakt v administraci portálu)`,
+    `**Stránka školy:** ${skolaUrl}`,
     ``,
-    `## Shrnutí změn`,
+    `## Co škola hlásí`,
     ``,
-  ];
+    payload.nesrovnalost,
+  ].join('\n');
+}
 
-  const labels = new Map(PORTAL_POLE.map((p) => [p.key, p.label]));
-  labels.set('ubytovani', 'Ubytování');
+/**
+ * Založí issue k nesrovnalosti, nebo ji přidá komentářem k té otevřené, aby
+ * jedna škola neměla deset vláken o témže. Vrací číslo issue.
+ */
+async function zapisNesrovnalost(
+  token: string,
+  payload: PortalPayload,
+  autor: Autor,
+  skolaUrl: string,
+  nazevPopis: string,
+): Promise<number | null> {
+  const telo = buildNesrovnalostBody(payload, autor, skolaUrl, nazevPopis);
+  const otevrene = await findOpenIssueForRedizo(token, payload.redizo);
 
-  let nejakaZmena = false;
-  for (const [key, hodnota] of Object.entries(payload.udaje)) {
-    if (!hodnota) continue;
-    nejakaZmena = true;
-    const label = labels.get(key) || key;
-    const zobrazena = key === 'ubytovani' ? (hodnota === 'ano' ? 'Ano' : 'Ne') : hodnota;
-    parts.push(`- **${label}:** ${zobrazena}`);
+  if (otevrene !== null) {
+    const odpoved = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/issues/${otevrene}/comments`, {
+      method: 'POST',
+      headers: githubHeaders(token),
+      body: JSON.stringify({ body: `Další hlášení ze dne ${new Date().toISOString().slice(0, 10)}:\n\n${telo}` }),
+    });
+    if (!odpoved.ok) throw new Error(`GitHub ${odpoved.status}: ${await odpoved.text()}`);
+    return otevrene;
   }
-  if (payload.udaje_sedi) {
-    parts.push(`- **Údaje z datových zdrojů (obory/kapacity 2026):** škola potvrdila, že sedí`);
-  }
-  if (!nejakaZmena && !payload.udaje_sedi) {
-    parts.push(`- (beze změn v polích)`);
-  }
 
-  if (payload.nesrovnalost) {
-    parts.push(``, `## Nesrovnalost v datech katalogu`, ``, payload.nesrovnalost);
+  const titulek = `[Nesrovnalost v datech] ${nazevPopis || payload.nazev || payload.redizo} (${payload.redizo})`;
+  let odpoved = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/issues`, {
+    method: 'POST',
+    headers: githubHeaders(token),
+    body: JSON.stringify({ title: titulek, body: telo, labels: [ISSUE_LABEL] }),
+  });
+  // Label nemusí v repozitáři existovat (422) – zkusíme bez něj.
+  if (odpoved.status === 422) {
+    odpoved = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/issues`, {
+      method: 'POST',
+      headers: githubHeaders(token),
+      body: JSON.stringify({ title: titulek, body: telo }),
+    });
   }
+  if (!odpoved.ok) throw new Error(`GitHub ${odpoved.status}: ${await odpoved.text()}`);
+  return (await odpoved.json()).number as number;
+}
 
-  parts.push(
-    ``,
-    `## Kompletní payload (pro scripts/portal-moderace.js)`,
-    ``,
-    '```json',
-    JSON.stringify(verejnyPayload(payload), null, 2),
-    '```',
-  );
-
-  return parts.join('\n');
+/**
+ * Stav profilu, jak ho formulář ukázal odesílateli (`puvodni`). Bere se jen pro
+ * pole, která odeslání opravdu nese, a jen jako řetězce — slouží k porovnání
+ * s databází, ne k zápisu. Starší klient bez `puvodni` pošle prázdno a zápis se
+ * chová jako dřív.
+ */
+function ocekavaneHodnoty(
+  body: Record<string, unknown>,
+  udaje: Record<string, string>,
+): Record<string, string> | undefined {
+  const raw = body.puvodni;
+  if (!raw || typeof raw !== 'object') return undefined;
+  const zdroj = raw as Record<string, unknown>;
+  const ocekavane: Record<string, string> = {};
+  for (const pole of Object.keys(udaje)) {
+    const v = zdroj[pole];
+    if (typeof v === 'string') ocekavane[pole] = v.trim();
+  }
+  return Object.keys(ocekavane).length > 0 ? ocekavane : undefined;
 }
 
 export async function POST(request: NextRequest) {
-  const token = process.env.GITHUB_TOKEN;
-  if (!token) {
-    return NextResponse.json(
-      { error: 'Portál pro školy není nakonfigurován.' },
-      { status: 503 },
-    );
-  }
-
   const ip = ipZPozadavku(request.headers);
 
   if (isRateLimited(ip)) {
@@ -191,6 +225,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Spam detected.' }, { status: 400 });
   }
 
+  // Profil se zapisuje do databáze; bez ní není kam, a formulář nesmí nic slibovat.
+  if (!jeDbNastavena()) {
+    return NextResponse.json({ error: 'Portál pro školy není nakonfigurován.' }, { status: 503 });
+  }
+
   // Autorizace se rozresolvuje na REDIZO; kód ani token nepíšeme do issue ani do logů
   const autor = await urciAutora(request, body);
   if ('chyba' in autor) {
@@ -198,8 +237,9 @@ export async function POST(request: NextRequest) {
   }
   const redizo = autor.redizo;
 
-  // Validace payloadu (povolená pole, délky, URL, souhlas, e-mail)
-  const vysledek = validatePortalPayload(body);
+  // Validace payloadu (povolená pole, délky, URL, souhlas, e-mail). Přihlášený
+  // editor kontakt nezadává, bere se z jeho účtu.
+  const vysledek = validatePortalPayload(body, { kontaktPovinny: !autor.role });
   if (!vysledek.ok) {
     return NextResponse.json({ error: vysledek.error }, { status: 400 });
   }
@@ -214,98 +254,115 @@ export async function POST(request: NextRequest) {
     udaje_sedi: vysledek.udaje_sedi,
     nesrovnalost: vysledek.nesrovnalost,
     souhlas_cc_by: true,
-    kontakt_email: vysledek.kontakt_email,
+    kontakt_email: vysledek.kontakt_email || autor.role?.email || '',
   };
 
-  const issueTitle = `[Portál škol] ${nazev || redizo} (${redizo})`;
-  const issueBody = buildIssueBody(payload, autor);
-
-  // Potvrzovací e-mail editorovi je best-effort: selhání nesmí shodit odeslání
   const base = (process.env.PORTAL_BASE_URL || PORTAL_PRODUKCNI_BASE_URL).replace(/\/$/, '');
   const skolaUrl = nazev ? `${base}/skola/${redizo}-${createSlug(nazev)}` : base;
-  const potvrdEmail = () =>
-    posliPotvrzovaciEmail({ email: payload.kontakt_email, nazevSkoly: nazev || redizo, skolaUrl });
+  // Zkrácený název („Gymnázium“) školu neurčí; do issue a Telegramu jde s ulicí a obcí.
+  const nazevPopis = (await getNazevSAdresou(redizo)) || nazev;
 
-  // Záznam do historie školy, Telegram a u hosta upozornění správci. Best-effort:
-  // issue už existuje, selhání tady nesmí vrátit chybu škole.
-  const poOdeslani = async (issueNumber: number) => {
-    try {
-      if (jeDbNastavena()) {
-        await zapisUdalost(cteni, redizo, autor.role?.id ?? null, 'navrh_odeslan', {
-          issue: issueNumber,
-          kanal: autor.kanal,
-          kontakt: autor.role ? undefined : payload.kontakt_email,
-        });
-        if (autor.spravceHosta) {
-          await zapisUdalost(cteni, redizo, null, 'host_z_rejstriku', { issue: issueNumber, kontakt: payload.kontakt_email });
-          await posliUpozorneniSpravci({
-            email: autor.spravceHosta.email,
-            nazevSkoly: nazev || redizo,
-            profilUrl: `${base}/pro-skoly/profil?skola=${redizo}`,
-          });
-        }
-      }
-      await posliTelegram(
-        `📝 Návrh k profilu: ${nazev || redizo} (${redizo})\n${popisAutora(autor, payload.kontakt_email)}\nhttps://github.com/${GITHUB_REPO}/issues/${issueNumber}`,
-      );
-    } catch (e) {
-      console.error('❌ Portál: záznam po odeslání návrhu selhal', e);
-    }
-  };
-
+  // 1. Zápis profilu. Údaje od školy jdou na web bez předchozí moderace: zadává
+  // je ověřený editor školy. Pojistkou není fronta ke schválení, ale zpětná
+  // oprava (portal_profil nic nepřepisuje) a oznámení do Telegramu.
+  // Nesrovnalost v datech katalogu se ukládá **v téže transakci** jako profil.
+  // Opravit ji musí člověk v datech, ne škola ve svém profilu, takže potřebuje
+  // frontu; a kdyby se ukládala zvlášť, mohl by její neúspěch skončit odpovědí
+  // „přijato“ u podnětu, který nikde není. Buď projde obojí, nebo nic.
+  let zmenena: string[];
+  let hlaseniId: string | null = null;
   try {
-    // Pokud už pro REDIZO existuje otevřené issue, přidáme komentář místo duplicity
-    const existingIssue = await findOpenIssueForRedizo(token, redizo);
-
-    if (existingIssue !== null) {
-      const commentResponse = await fetch(
-        `https://api.github.com/repos/${GITHUB_REPO}/issues/${existingIssue}/comments`,
-        {
-          method: 'POST',
-          headers: githubHeaders(token),
-          body: JSON.stringify({ body: `Nová verze návrhu ze dne ${new Date().toISOString().slice(0, 10)}:\n\n${issueBody}` }),
-        },
-      );
-      if (!commentResponse.ok) {
-        const errorText = await commentResponse.text();
-        console.error('GitHub API error (comment):', commentResponse.status, errorText);
-        return NextResponse.json({ error: 'Nepodařilo se odeslat změny.' }, { status: 502 });
-      }
-      console.log(`✅ Portal submission added as comment to issue #${existingIssue}`);
-      await poOdeslani(existingIssue);
-      const email_odeslan = await potvrdEmail();
-      return NextResponse.json({ success: true, issueNumber: existingIssue, email_odeslan });
-    }
-
-    let response = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/issues`, {
-      method: 'POST',
-      headers: githubHeaders(token),
-      body: JSON.stringify({ title: issueTitle, body: issueBody, labels: [ISSUE_LABEL] }),
+    const vysledekZapisu = await vTransakci(async (s) => {
+      const zmeny = await zapisUdaje(s, {
+        redizo,
+        nazev,
+        verze_prijimani: payload.verze_prijimani,
+        udaje: payload.udaje,
+        ocekavane: ocekavaneHodnoty(body, payload.udaje),
+        roleId: autor.role?.id ?? null,
+        zmenuProvedl: autor.kanal,
+      });
+      const podnet = payload.nesrovnalost
+        ? await zapisHlaseni(s, {
+            email: payload.kontakt_email,
+            popis: `Nesrovnalost v datech katalogu od školy ${nazev || redizo}:\n\n${payload.nesrovnalost}`,
+            url: skolaUrl,
+            redizo,
+          })
+        : null;
+      return { zmeny, podnet };
     });
+    zmenena = vysledekZapisu.zmeny;
+    hlaseniId = vysledekZapisu.podnet;
+  } catch (e) {
+    return odpovedNaChybu(e, 'zápis profilu');
+  }
+  obnovProfily();
 
-    // Label nemusí v repozitáři existovat (422) – zkusíme bez něj
-    if (response.status === 422) {
-      response = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/issues`, {
-        method: 'POST',
-        headers: githubHeaders(token),
-        body: JSON.stringify({ title: issueTitle, body: issueBody }),
+  // 2. Issue k nesrovnalosti je jen veřejná stopa nad podnětem, který je už
+  // uložený ve frontě. Jeho selhání proto podnět neztratí a odpověď škole
+  // nemění; číslo issue se k hlášení doplní dodatečně.
+  let issueNumber: number | null = null;
+  const token = process.env.GITHUB_TOKEN;
+  if (payload.nesrovnalost && token) {
+    try {
+      issueNumber = await zapisNesrovnalost(token, payload, autor, skolaUrl, nazevPopis);
+      if (hlaseniId && issueNumber) {
+        const id = hlaseniId;
+        const cislo = issueNumber;
+        await vTransakci((s) => propojIssue(s, id, cislo));
+      }
+    } catch (e) {
+      console.error('❌ Portál: nesrovnalost se nepodařilo zapsat do issue', e);
+    }
+  }
+
+  // 3. Stopa, oznámení a potvrzení. Best-effort: profil je zapsaný, selhání
+  // tady nesmí vrátit chybu škole.
+  try {
+    await zapisUdalost(cteni, redizo, autor.role?.id ?? null, 'profil_zmenen', {
+      pole: zmenena,
+      kanal: autor.kanal,
+      udaje_sedi: payload.udaje_sedi,
+      issue: issueNumber ?? undefined,
+      nesrovnalost: payload.nesrovnalost ? true : undefined,
+      kontakt: autor.role ? undefined : payload.kontakt_email,
+    });
+    if (autor.spravceHosta) {
+      await zapisUdalost(cteni, redizo, null, 'host_z_rejstriku', {
+        issue: issueNumber ?? undefined,
+        kontakt: payload.kontakt_email,
+      });
+      await posliUpozorneniSpravci({
+        email: autor.spravceHosta.email,
+        nazevSkoly: nazev || redizo,
+        profilUrl: `${base}/pro-skoly/profil?skola=${redizo}`,
       });
     }
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('GitHub API error:', response.status, errorText);
-      return NextResponse.json({ error: 'Nepodařilo se odeslat změny.' }, { status: 502 });
-    }
-
-    const issueData = await response.json();
-    console.log(`✅ Portal submission issue #${issueData.number} created`);
-    await poOdeslani(issueData.number);
-
-    const email_odeslan = await potvrdEmail();
-    return NextResponse.json({ success: true, issueNumber: issueData.number, email_odeslan });
-  } catch (error) {
-    console.error('Error creating GitHub issue:', error);
-    return NextResponse.json({ error: 'Nepodařilo se odeslat změny.' }, { status: 500 });
+    await posliTelegram(
+      [
+        `📝 Profil upraven: ${nazevPopis || redizo} (${redizo})`,
+        popisAutora(autor, payload.kontakt_email),
+        zmenena.length ? `Pole: ${zmenena.join(', ')}` : 'Beze změny v polích',
+        skolaUrl,
+        ...(payload.nesrovnalost
+          ? [
+              issueNumber
+                ? `⚠️ Nesrovnalost: https://github.com/${GITHUB_REPO}/issues/${issueNumber}`
+                : '⚠️ Nesrovnalost ve frontě hlášení v /admin (issue se nepodařilo založit)',
+            ]
+          : []),
+      ].join('\n'),
+    );
+  } catch (e) {
+    console.error('❌ Portál: záznam po změně profilu selhal', e);
   }
+
+  // Potvrzovací e-mail je best-effort: selhání nesmí shodit odeslání.
+  const email_odeslan = await posliPotvrzovaciEmail({
+    email: payload.kontakt_email,
+    nazevSkoly: nazev || redizo,
+    skolaUrl,
+  });
+  return NextResponse.json({ success: true, zmenena, issueNumber, email_odeslan });
 }

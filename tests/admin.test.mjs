@@ -66,6 +66,10 @@ test('stav sady: zastaralá má přednost před po termínu', () => {
 });
 
 test('titulek issue → název školy', () => {
+  assert.equal(
+    extrahujNazevZTitulku('[Nesrovnalost v datech] Gymnázium J. S. Machara (600007774)'),
+    'Gymnázium J. S. Machara',
+  );
   assert.equal(extrahujNazevZTitulku('[Portál škol] Gymnázium J. S. Machara (600007774)'), 'Gymnázium J. S. Machara');
   assert.equal(extrahujNazevZTitulku('[Portál škol] 600007774 (600007774)'), '600007774');
   assert.equal(extrahujNazevZTitulku('Jiný titulek'), 'Jiný titulek');

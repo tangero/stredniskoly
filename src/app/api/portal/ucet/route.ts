@@ -13,7 +13,7 @@ import {
   zrusPozvanku,
   zrusRoli,
 } from '@/lib/portal-ucty';
-import { getNazevSkoly } from '@/lib/portal-skol';
+import { getNazevSAdresou } from '@/lib/portal-skol';
 import { posliPotvrzeniEmailu, posliPozvankuEmail } from '@/lib/portal-email';
 import { posliTelegram } from '@/lib/portal-oznameni';
 import { chyba, domenaSedi, ipZPozadavku, jeOmezeno, obnovVerejneSpravce, odpovedNaChybu } from '@/lib/portal-api';
@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
   const ja = prihlaseny.role.find((r) => r.redizo === body.redizo);
   if (!ja) return chyba('K profilu této školy nemáte přístup.', 403);
   const jeSpravce = ja.role === 'spravce';
-  const nazev = (await getNazevSkoly(ja.redizo)) || ja.redizo;
+  const nazev = (await getNazevSAdresou(ja.redizo)) || ja.redizo;
   const kdo = `${ja.role}:${ja.id}`;
 
   /** Role jiné osoby téže školy; cizí ID nepustí. */

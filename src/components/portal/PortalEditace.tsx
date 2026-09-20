@@ -3,6 +3,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { PortalEditForm } from '@/components/portal/PortalEditForm';
 import { getPredvyplnenyProfil, PORTAL_POLE } from '@/lib/portal-skol';
+import { potvrzenyProfil } from '@/lib/portal-profil-verejne';
 
 /**
  * Autorizace pro odeslání formuláře: přihlašovací kód, rejstříkový odkaz, nebo
@@ -54,7 +55,7 @@ export async function PortalEditace({
   /** Odkaz z rejstříku u školy, která už má správce: návrh jde a správce se o něm dozví. */
   host?: boolean;
 }) {
-  const profil = await getPredvyplnenyProfil(redizo);
+  const profil = await getPredvyplnenyProfil(redizo, await potvrzenyProfil(redizo));
 
   if (!profil) {
     return <PortalSkolaNenalezena redizo={redizo} />;
@@ -70,10 +71,9 @@ export async function PortalEditace({
         <span className="text-slate-900">Kontrola údajů</span>
       </nav>
 
-      <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">{profil.nazev}</h1>
+      <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">{profil.nazev_s_adresou}</h1>
       <p className="text-slate-500 mb-2">
         REDIZO {profil.redizo}
-        {profil.obec && <> · {profil.obec}</>}
         {profil.kraj && <> · {profil.kraj} kraj</>}
       </p>
       <p className="text-sm text-slate-500 mb-8">

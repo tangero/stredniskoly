@@ -5,10 +5,10 @@ import {
   hashKod,
   validateKod,
   validatePortalPayload,
-  verejnyPayload,
   buildPortalZaznam,
   zaznamMaObsah,
   formatDatumCz,
+  nazevSAdresou,
   PORTAL_POLE,
 } from '../src/lib/portal-skol.ts';
 
@@ -204,10 +204,25 @@ test('hash kódu: HMAC s pepřem, bez pepře kód neověří', async () => {
   }
 });
 
-test('payload do veřejného issue nenese kontaktní e-mail a moderace ho nevyžaduje', () => {
-  const payload = { ...VALID_BASE, redizo: '600171701', nazev: 'X', verze_prijimani: '2027' };
-  const verejny = verejnyPayload(payload);
-  assert.equal('kontakt_email' in verejny, false);
-  assert.equal(validatePortalPayload(verejny).ok, false);
-  assert.equal(validatePortalPayload(verejny, { bezKontaktu: true }).ok, true);
+test('přihlášený editor kontakt nezadává, host z rejstříku ano', () => {
+  const bezKontaktu = { ...VALID_BASE };
+  delete bezKontaktu.kontakt_email;
+
+  // Host bez účtu: kontakt je jediná cesta, jak se mu ozvat.
+  assert.equal(validatePortalPayload(bezKontaktu).ok, false);
+  // Přihlášený editor: e-mail má u účtu, server ho doplní z role.
+  assert.equal(validatePortalPayload(bezKontaktu, { kontaktPovinny: false }).ok, true);
+  // Nesmysl místo adresy se neschová ani tam, kde kontakt povinný není.
+  assert.equal(
+    validatePortalPayload({ ...bezKontaktu, kontakt_email: 'neni-email' }, { kontaktPovinny: false }).ok,
+    false,
+  );
+});
+
+test('nazevSAdresou: název, ulice bez čísel a obec, bez opakování', () => {
+  assert.equal(nazevSAdresou('Gymnázium', 'Nad Štolou 1510', 'Praha'), 'Gymnázium Nad Štolou, Praha');
+  assert.equal(nazevSAdresou('Střední vinařská škola', 'Sobotní 116', 'Valtice'), 'Střední vinařská škola Sobotní, Valtice');
+  assert.equal(nazevSAdresou('Gymnázium BMA, s.r.o.', 'Dvořákova 1269', 'Frýdlant'), 'Gymnázium BMA, s.r.o., Dvořákova, Frýdlant');
+  assert.equal(nazevSAdresou('Gymnázium Brno', 'Brno 12', 'Brno'), 'Gymnázium Brno');
+  assert.equal(nazevSAdresou('Gymnázium', 'č. p. 12', 'Nové Město'), 'Gymnázium, Nové Město');
 });
