@@ -236,7 +236,9 @@ export async function polozkyProAdmin(filtr: FiltrPolozek = {}): Promise<Polozka
   }
   if (filtr.trida) {
     parametry.push(filtr.trida);
-    podminky.push(`n.tridy ? $${parametry.length}`);
+    // `jsonb_exists(...)` místo operátoru `?`: otazník je v řadě ovladačů
+    // zástupný znak parametru, zatímco tenhle dotaz čísluje parametry `$n`.
+    podminky.push(`jsonb_exists(n.tridy, $${parametry.length})`);
   }
   if (filtr.redizo) {
     parametry.push(filtr.redizo);
