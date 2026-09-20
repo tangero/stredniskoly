@@ -198,7 +198,13 @@ Zadavatel rozhodl nasadit a výsledky zjišťovat z provozu. Fáze 1 a 2 jsou ho
 
 **První běh (20. 9. 2026, 09:01–09:27 UTC):** 439 z 533 zdrojů ok, 94 chyb, 3 859 položek, 6 karet s termínem dne otevřených dveří. Zápis trval 22 minut; databáze je ve Frankfurtu, kdežto běh v USA, takže každý z tisíců dotazů letí přes Atlantik.
 
-**Zjištění, které první běh přinesl: 90 školních webů odpovídá z Česka a neodpovídá z GitHub Actions.** Táž sklizeň ze stroje v Česku o hodinu dřív: 528 zdrojů ok, 5 chyb, 4 607 položek, 7 karet. Z runneru navíc padlo 44× `ConnectionError` a 39× `ConnectTimeout`, tedy odmítnuté a nenavázané spojení, ne chyby formátu. Vypadá to na blokování cizích adres na straně školních webů nebo jejich hostingu. Cena je 17 % zdrojů a jedna karta s termínem. Než se pro to něco udělá, potvrdí druhý běh, zda padá **táž** devadesátka: stálá množina znamená blokování a řešení je sklízet z evropské adresy, kolísavá množina znamená přetížení a řešení je jen delší limit a opakování.
+**Zjištění prvního běhu a jeho vyvrácení druhým.** První běh z GitHub Actions selhal u 94 zdrojů (44× `ConnectionError`, 39× `ConnectTimeout`, 6× `HTTP 403`, 4× nerozparsovaný feed, 1× `ReadTimeout`), zatímco táž sklizeň ze stroje v Česku o hodinu dřív dala 528 ok a jen 5 chyb. Hypotéza zněla, že školní weby nebo jejich hosting blokují cizí adresy, a rozhodovací pravidlo bylo: **stálá** množina padajících zdrojů = blokování a řešení je sklízet z evropské adresy, **kolísavá** množina = přetížení a řešení je delší limit a opakování.
+
+Druhý běh (10:29 UTC, táž pravidla `2026-09-20.5`) zkoušel přesně těch 94 splatných zdrojů a **83 z nich odpovědělo bez problému, opět z GitHub Actions**. Nově nespadl ani jeden. Průnik obou množin je 11 zdrojů, tedy 12 % sjednocení. Hypotéza o blokování cizích adres je tím **vyvrácená**: kdyby weby odmítaly americké adresy, odmítnou je i o 88 minut později. Šlo o přechodné selhání pod náporem prvního běhu, kdy se poprvé stahovalo všech 533 zdrojů najednou.
+
+Zbylých 11 zdrojů selhává trvale a z jiných důvodů: 5× `HTTP 403` (server požadavek odmítá, nejspíš podle hlavičky `User-Agent`), 4× feed, který se nepodařilo rozparsovat, 2× `ConnectTimeout`. Ty se opakováním nespraví a řeší se samostatně.
+
+**Opatření z toho plynoucí (v sklízeči od 20. 9. 2026):** po hlavním průchodu následuje **druhý pokus o zdroje, které selhaly na úrovni sítě** – souběžnost 4 místo 12 a limit 45 s místo 20 s. Opakují se jen síťové chyby (`SITOVE_CHYBY`); `HTTP 403` a vadný feed se neopakují, protože podruhé dopadnou stejně a jen by zdržely běh. Dávka nese `zdroju_opakovano` a `zdroju_spraveno_opakovanim`, aby bylo vidět, jestli se opakování vyplácí.
 
 ## 7. Provozní cíle a měření (přejato z oponentur §6, cíl přepracován)
 
