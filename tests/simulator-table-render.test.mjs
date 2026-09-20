@@ -15,14 +15,14 @@ function load(relative) {
   const { outputText } = ts.transpileModule(source, { compilerOptions: {
     module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX,
   }});
-  const module = { exports: {} };
+  const modul = { exports: {} };
   new Function('require', 'module', 'exports', outputText)(specifier => {
     if (specifier === 'next/link') return { __esModule: true, default: ({ children }) => children };
     if (!specifier.startsWith('@/')) return require(specifier);
     const target = specifier.replace('@/', 'src/');
     return load(fs.existsSync(`${target}.tsx`) ? `${target}.tsx` : `${target}.ts`);
-  }, module, module.exports);
-  return module.exports;
+  }, modul, modul.exports);
+  return modul.exports;
 }
 const { OfferComparisonTable } = load('src/components/simulator/OfferComparisonTable.tsx');
 
