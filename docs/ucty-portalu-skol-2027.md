@@ -122,7 +122,8 @@ Osobnost je v souboru zadavatele (`eda-osobnost.md`). Pro komunikaci se školami
 4. **Neprozrazuje**, kdo je editorem školy nad rámec veřejného „profil spravuje“, ani e-maily editorů.
 5. **Neodpovídá automatům:** `mailer-daemon`, `postmaster`, hlavičky `Auto-Submitted` (jiná hodnota než `no`), `X-Autoreply`, `Precedence: bulk|auto_reply`, odrazy a zprávy na `dmarc@`.
 6. **Umí stručně** co portál dělá a nedělá (text `/pro-skoly`), že odznak a otevřená data připravujeme bez termínu.
-7. **Správcem osobních údajů je Patrick Zandl.** „Zandl AI Therapy Company“ v podpisu Eduardy je obchodní název jeho podnikání, ne jiná osoba. Souhlas se zveřejněním jména, stránka `/pro-skoly` i podpis proto uvádějí téhož správce; v souhlasu stojí jméno, obchodní název je doplněk.
+7. **Data o škole čte z otevřených dat**, ne z paměti: `https://www.prijimackynaskolu.cz/api/skola/<REDIZO>/md`. Dokument je veřejný a nenese kódy ani jména editorů, takže z něj smí citovat celý; prompt je v [podkladu](podklady/prompt-eduarda-otevrena-data.md). Vlastní API pro Eduardu se zatím nestaví — až budou známé skutečné dotazy škol z pilotu.
+8. **Správcem osobních údajů je Patrick Zandl.** „Zandl AI Therapy Company“ v podpisu Eduardy je obchodní název jeho podnikání, ne jiná osoba. Souhlas se zveřejněním jména, stránka `/pro-skoly` i podpis proto uvádějí téhož správce; v souhlasu stojí jméno, obchodní název je doplněk.
 
 Pozvánku samotnou podepisuje člověk — **Patrick Zandl, provozovatel projektu** —, ne Eduarda, i když odchází z adresy `eda@` a odpovědi vyřizuje Eduarda. Že to tak je, e-mail sám vysvětluje. Ředitel, kterému přijde přístupový kód podepsaný AI, to snadno vyhodnotí jako podvod; Eduarda se v pozvánce uvádí jako podpora pro dotazy.
 
