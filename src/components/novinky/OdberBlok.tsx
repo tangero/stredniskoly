@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { OdberFormular } from './OdberFormular';
 import type { Varianta } from './OdberFormular';
@@ -26,6 +27,8 @@ export interface OdberBlokProps {
    * tmavý pruh.
    */
   samostatna?: boolean;
+  /** Kotva pro odkazy na blok z jiného místa stránky (`OdkazNaOdber`). */
+  id?: string;
 }
 
 /** Má kalendář daného období ještě budoucí událost? */
@@ -33,11 +36,25 @@ function maBudouciUdalost(dnes = new Date().toISOString().slice(0, 10)): boolean
   return calendar.groups.some((g) => g.events.some((e) => (e.end ?? e.start) >= dnes));
 }
 
-export async function OdberBlok({ zdroj, varianta = 'karta', nadpis, samostatna = false }: OdberBlokProps) {
+/**
+ * Ročník, pro který se odběr nabízí, nebo `null`, když se nenabízí vůbec.
+ *
+ * Jediné místo, kde ty tři podmínky žijí. Blok i odkaz na něj se ptají téhož:
+ * kdyby si podmínky psal každý sám, vedl by odkaz na kotvu, která na stránce
+ * není.
+ */
+export async function nabizenyRocnik(): Promise<string | null> {
   if (process.env.NOVINKY_ZAPNUTO !== '1') return null;
 
   const rocnik = await zobrazeneObdobi('msmt-harmonogram');
   if (!rocnik || !maBudouciUdalost()) return null;
+
+  return rocnik;
+}
+
+export async function OdberBlok({ zdroj, varianta = 'karta', nadpis, samostatna = false, id }: OdberBlokProps) {
+  const rocnik = await nabizenyRocnik();
+  if (!rocnik) return null;
 
   const naTmavem = varianta === 'karta';
   const obal = samostatna
@@ -47,11 +64,28 @@ export async function OdberBlok({ zdroj, varianta = 'karta', nadpis, samostatna 
       : 'rounded-xl border border-slate-200 bg-white p-4';
 
   return (
-    <div className={obal}>
+    // scroll-mt kvůli odkazu z pruhu pod hlavičkou: bez něj by kotva
+    // skončila těsně pod horním okrajem a nadpis by byl uříznutý.
+    <div id={id} className={`${obal} scroll-mt-24`}>
       {nadpis && (
         <h3 className={`mb-2 font-bold ${naTmavem ? 'text-white' : 'text-slate-900'}`}>{nadpis}</h3>
       )}
       <OdberFormular rocnik={rocnik} zdroj={zdroj} varianta={varianta} />
     </div>
+  );
+}
+
+/**
+ * Odkaz na blok odběru z jiného místa stránky.
+ *
+ * Zmizí za týchž podmínek jako samotný blok, protože se ptá téže funkce.
+ */
+export async function OdkazNaOdber({ className }: { className?: string }) {
+  if (!(await nabizenyRocnik())) return null;
+
+  return (
+    <Link href="#odber-novinek" className={className}>
+      Emailem: zprávy k přijímačkám
+    </Link>
   );
 }

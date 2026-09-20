@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.16 · 20. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.17 · 20. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -85,6 +85,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **z webu školy, automaticky** | značka u novinky sklizené z kanálu novinek školy; nikdo ji ručně nečetl | značka u karty i u seznamu; v patičce bloku „Sbíráme je automaticky z kanálu novinek školy, naposledy ověřeno …“ | potvrzeno školou (to je jiná značka), ověřeno, oficiální |
 | **den otevřených dveří** | termín, kdy škola zve uchazeče do budovy; přebírá se doslova z oznámení školy | „termín ověřte u školy: pořadatelem akce je škola, ne tento web“ | DOD (zkratka jen v datech a kódu), prohlídka školy |
 | **další zprávy k přijímačkám** | nadpis doplňkového seznamu u bloku novinek: zprávy z webu školy, které se přijímacího řízení týkají, ale nedostaly kartu | odkazy vedou na web školy | aktuality (nadpis), zprávy ze školy, novinky |
+| **Emailem: zprávy k přijímačkám** | odkaz v pruhu pod hlavičkou stránky školy na blok odběru v patičce; míří na **e-mail od nás** s termíny a pokyny k přijímacímu řízení, ne na zprávy z webu školy | odkaz vede na kotvu bloku „Vše nové o přijímačkách e-mailem?“, kde je odběr vysvětlený | novinky (to jsou na téže stránce zprávy z webu školy), newsletter, odběr novinek |
 | **ze života školy** | nadpis rubriky na konci stránky: zprávy z webu školy, které se přijímacího řízení **netýkají** – výlet, olympiáda, projektový den | při prvním výskytu větou „Zprávy z webu školy, které se přijímacího řízení netýkají.“ | aktuality, ostatní novinky, nezařazené; nikdy ne jako nadpis nad zprávami k přijímačkám |
 | **objevilo se *datum*** | den, kdy jsme zprávu poprvé viděli v kanálu novinek; píše se **jen** tehdy, když feed neuvedl použitelné datum vydání | u zprávy místo data vydání; v patičce bloku vysvětleno | vydáno, publikováno, zveřejněno (to bychom tvrdili něco, co nevíme) |
 | **zdroj naposledy ověřen *datum*** | kdy se naposled podařilo přečíst kanál novinek školy | vždy u sklizeného údaje | aktualizováno (nejde o aktualizaci údaje), ověřeno školou |
@@ -106,6 +107,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.17 | Pojem **Emailem: zprávy k přijímačkám** pro odkaz z pruhu pod hlavičkou stránky školy na blok odběru v patičce. Slovo *novinky* v něm být nesmí: na téže stránce už označuje zprávy sklizené z webu školy (**další zprávy k přijímačkám**, **ze života školy**), takže odkaz nahoře by sliboval e-mailem něco jiného, než by pak přišlo. |
 | 1.16 | Novinky z webu školy se rozdělily na dvě rubriky, a tím i pojmy: **další zprávy k přijímačkám** (doplňkový seznam u bloku novinek) a **ze života školy** (rubrika na konci stránky pro zprávy, které se přijímacího řízení netýkají). Dosavadní nadpis *novinky z webu školy* zastřešoval obojí, takže výlet primy stál pod stejným nadpisem jako den otevřených dveří. Nový pojem **objevilo se *datum*** pro zprávu, u které feed neuvedl použitelné datum vydání: říká, kdy jsme ji poprvé viděli, a nesmí se psát jako *vydáno* — to bychom tvrdili něco, co nevíme. |
 | 1.15 | Značka **Potvrdila škola** přestala znamenat „prošlo kontrolou“: údaje od pověřených lidí školy se publikují bez předchozí moderace a chyba se opravuje zpětně ([portál pro školy](portal-pro-skoly-2027.md), oddíl 4). Nová značka **Opravila redakce** pro hodnotu, kterou jsme po zveřejnění opravili — bez ní by oprava nesla cizí razítko a tvrdila o škole něco, co neřekla. Mezi zakázaná slova u obou přibylo *schváleno* a *prošlo kontrolou*. |
 | 1.14 | Pojmy **Profil spravuje** a **správce profilu / editor** pro účty portálu škol ([účty portálu](ucty-portalu-skol-2027.md)). Jméno správce se na stránce školy uvádí jen s jeho souhlasem, jinak „Profil spravuje škola“; slova *ověřeno* a *garant* se nepoužívají, protože správce údaje navrhuje, schvaluje je redakce. |
