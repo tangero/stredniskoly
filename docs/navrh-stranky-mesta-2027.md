@@ -1,6 +1,6 @@
 # Návrh stránky města: jaké školy se u nás nabízejí
 
-Verze 1.3 · 21. 9. 2026 · Stav: **zrealizováno, oponentura vypořádána** (oddíly 9 a 10)
+Verze 1.4 · 21. 9. 2026 · Stav: **zrealizováno, dvě kola oponentury vypořádána** (oddíly 9 až 11)
 
 Zadání zadavatele z 21. 9. 2026: „[/mesto/pardubice] je starý design přehledu škol pro města. Projdi jej a navrhni zlepšení, která umožní lidem lépe vidět, jaké školy se v jejich městech nabízejí. Ukazuj u škol viditelné hodnocení náročnosti přijetí, které u nich máme — aby si lidé udělali přehled, co jsou méně náročné a více náročné školy.“
 
@@ -304,10 +304,41 @@ ne těchto testů; proto samostatný `npm run test:mesto` nad `tsx`.
 
 ---
 
+## 11. Druhé kolo oponentury: testy nechránily opravy
+
+Druhé kolo potvrdilo opravu všech pěti nálezů a nenašlo blokující chybu v chování.
+Vzneslo ale oprávněnou výhradu k testům, kterou jsem si ověřil a přijal:
+**`tests/mesto-prehled.test.mjs` kontroloval jen datovou vrstvu.** Nálezy 2, 3 a 5 byly
+přitom chyby ve vykreslení nad daty, která už tehdy byla správná — testy by je tedy
+nezachytily a proti původní datové vrstvě prošly.
+
+**Co se doplnilo.** Testy nad skutečně vykresleným výstupem: komponenta se vykreslí přes
+`react-dom/server` (bez nové závislosti) a čte se text i `href`, které uvidí čtenář. Pro
+hlavičku vznikl `tests/vyhledavani-mesta.test.mjs`, který volá přímo `GET` z API a kontroluje,
+že hlavička odpověď čte, vykresluje, ukládá do mezipaměti a bere města v potaz v prázdném
+stavu. Vykreslit `Header.tsx` by znamenalo obsluhovat `useRouter` a klientské háky, což se
+pro tuhle kontrolu nevyplatí.
+
+**Každý test je ověřen mutací**: chyba se vrátila do kódu a test musel spadnout. To odhalilo
+dvě slabá místa v mých vlastních testech, která by jinak zůstala:
+
+| Mutace | První verze testu | Po zpřesnění |
+|---|---|---|
+| předčasný `return` u „místa pro všechny“ | **prošla** — text „v roce 2025“ nese i 264 jiných pražských nabídek | vykresluje se jedna nabídka zvlášť a hledá se `v roce {rok} {zařazení}` |
+| odstranění věty o nesplněných podmínkách | prošla ze stejného důvodu | vykresluje se jedna nabídka zvlášť |
+| `slug` první nabídky místo `slugSkoly` | zachycena | zachycena; kontrola „adresa neobsahuje název oboru“ ale **hlásila planý poplach** u AGYS — Anglického gymnázia a SOŠ, kde je „gymnázium“ součástí názvu školy. Nahrazena silnější: škola vykreslená s jednou nabídkou musí mít stejnou adresu jako s ostatními |
+| hlavička přestane předávat města do stavu | **prošla** — `setSearchMesta` se v souboru vyskytuje i u mezipaměti | hledá se `setSearchMesta(mesta)` nad čerstvou odpovědí |
+| API přestane vracet `mesta` | zachycena (3 testy) | zachycena |
+
+Celkem 18 kontrol v obou souborech, `npm run test:mesto`.
+
+---
+
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.4 | Druhé kolo oponentury (21. 9. 2026), oddíl 11: potvrzena oprava všech pěti nálezů, přijata výhrada, že testy chránily jen datovou vrstvu. Doplněny testy vykresleného výstupu a vyhledávání, každý ověřen mutací. Mutační ověření odhalilo dvě slabá místa v nových testech a jeden planý poplach. |
 | 1.3 | Vypořádána oponentura PR #139 (21. 9. 2026), oddíl 10: pět nálezů ověřeno proti datům, všechny platné, opraveny. Nejzávažnější označoval 462 vypsaných oborů za nevypsané, protože vypsanost se odvozovala z jiného párování než obtížnost. Přidány regresní testy. |
 | 1.2 | Zrealizováno (21. 9. 2026), oddíl 9 s pěti odchylkami od návrhu. |
 | 1.1 | Doplněno vyhledávání města (oddíl 6) po doplnění zadání z 21. 9. 2026 a nálezy dvou rešerší (oddíl 7). **Opraven chybný závěr 2.5**: narativ na městské stránce nevolá jazykový model, generování bylo odstraněno 11. 9. 2026; závada je v tom, že blok „Analýza situace“ nese čtyři odstavce metodických výhrad. Zjištěno, že krajský přehled řadí podle zakázaného indexu `obtiznost` (oddíl 3.8), a že tvrzení pasti 5 v `docs/zdroje-dat.md` o datech uchazečů za rok 2025 už neplatí. |
