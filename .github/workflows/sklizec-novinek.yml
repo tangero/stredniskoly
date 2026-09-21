@@ -6,7 +6,7 @@ name: Sklízeč školních novinek
 # Běh je autonomní: nic nečeká na schválení. Nejisté položky končí u neutrálního
 # odkazu, ne ve frontě k moderaci.
 #
-# Naplánovaný běh se stěhuje na Railway (railway.json, Dockerfile.sklizec).
+# Naplánovaný běh se stěhuje na Railway (Dockerfile.sklizec; nastavení drží služba).
 # Actions čas spuštění nezaručují a obě naplánovaná spuštění 20. 9. se nekonala;
 # navíc část českých webů odtamtud odpovídá HTTP 403. Rozbor v
 # docs/skolske-novinky-rss-2027.md, oddíl 3.3.
