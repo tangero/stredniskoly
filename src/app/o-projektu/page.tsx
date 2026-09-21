@@ -3,7 +3,13 @@ import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { changelog } from '@/lib/changelog';
-import { casovaOsa, pokryti, prehledDatovychSad, type Pouziti } from '@/lib/o-projektu';
+import {
+  casovaOsa,
+  mesicuVyvoje,
+  pokryti,
+  prehledDatovychSad,
+  type Pouziti,
+} from '@/lib/o-projektu';
 import {
   BLOKY,
   CLOVEKODNU_CELKEM,
@@ -13,10 +19,12 @@ import {
   HODIN_ZA_DEN,
   MERENO,
   BEHU_CI,
+  COMMITU,
   RADKU_CELKEM,
   REZIE_RIZENI,
   SAZBY,
   TESTU,
+  VLASTNI_CAS_HODIN,
   VYHRADY,
   cenaZaSazbu,
 } from '@/lib/naklady-vyvoje';
@@ -120,6 +128,7 @@ function Cislo({ hodnota, popis }: { hodnota: string; popis: string }) {
 export default async function OProjektuPage() {
   const [sady, kryti] = await Promise.all([prehledDatovychSad(), pokryti()]);
   const osa = casovaOsa(changelog);
+  const mesicu = mesicuVyvoje(osa);
   const rocnikuKatalogu = kryti.rocnikyKatalogu.length;
   const strednihoProudu = SAZBY.find((s) => s.nazev === 'Střed') ?? SAZBY[1];
   const nejnizsi = Math.min(...SAZBY.map((s) => cenaZaSazbu(s.kcZaHodinu)));
@@ -512,18 +521,26 @@ export default async function OProjektuPage() {
               kód funguje, ale proč se něco počítá tak a ne jinak, a co se zamítlo.
             </p>
 
-            <div className="mt-6 p-5 rounded-lg border border-dashed border-slate-400 bg-slate-50">
-              <div className="font-semibold text-slate-800 mb-2">Skutečné náklady</div>
-              <ul className="text-sm text-slate-700 space-y-1.5">
-                <li>Nástroje a předplatné modelu: <span className="text-slate-400">doplnit</span></li>
-                <li>Doba vývoje: 8 měsíců, od {changelog[changelog.length - 1]?.date}</li>
-                <li>Odpracováno lidského času: <span className="text-slate-400">doplnit</span></li>
-              </ul>
-              <p className="text-xs text-slate-500 mt-3">
-                Tahle čísla doplní autor. Do té doby se stránka nesnaží podíl vyčíslit, protože
-                odhad cizích nákladů by byl jen dojem.
-              </p>
+            <div className="mt-6 p-5 rounded-lg border-l-4" style={{ backgroundColor: '#f1f7ff', borderColor: '#0074e4' }}>
+              <div className="text-sm text-slate-600 mb-1">Odpracovaný čas autora</div>
+              <div className="text-2xl md:text-3xl font-bold" style={{ color: '#28313b' }}>
+                zhruba {cislo(VLASTNI_CAS_HODIN)} hodin
+              </div>
+              <div className="text-sm text-slate-700 mt-2">
+                Za {mesicu} {tvar(mesicu, 'měsíc', 'měsíce', 'měsíců')}, od{' '}
+                {changelog[changelog.length - 1]?.date}. Nikdo si
+                hodiny nevykazoval; číslo vychází z časových odstupů mezi {cislo(COMMITU)}{' '}
+                commity. <strong>Není to čistý čas nad tímto webem</strong> - v týchž hodinách
+                vznikal i jiný projekt.
+              </div>
             </div>
+            <p className="text-slate-700 mt-4">
+              Vedle sebe to tedy stojí takhle: zhruba {cislo(VLASTNI_CAS_HODIN)} hodin proti{' '}
+              {cislo(CLOVEKODNU_CELKEM * HODIN_ZA_DEN)} hodinám, které by na týž rozsah potřeboval
+              dodavatelský tým. Dělit jedno druhým a vydávat výsledek za míru úspory by ale bylo
+              přehnané: obě čísla jsou odhady, ne měření, a každé se může mýlit o desítky procent.
+              Řádový rozdíl ta dvojice ukazuje spolehlivě, přesný násobek ne.
+            </p>
 
             {/* ------------------------------------------------------------ */}
             <Nadpis id="provoz" cislo={9}>Co stojí provoz</Nadpis>

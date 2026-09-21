@@ -209,3 +209,16 @@ export function casovaOsa(
   for (const mesic of podleMesice.values()) mesic.hlavni.reverse();
   return [...podleMesice.values()].sort((a, b) => a.klic.localeCompare(b.klic));
 }
+
+/**
+ * Kolik měsíců uplynulo mezi prvním a posledním vydáním.
+ *
+ * Počítá se z rozsahu osy, ne z počtu jejích položek: měsíce bez vydání
+ * (červenec a srpen 2026) v ose nejsou, ale do doby vývoje patří.
+ */
+export function mesicuVyvoje(osa: MesicVyvoje[]): number {
+  if (osa.length === 0) return 0;
+  const [r1, m1] = osa[0].klic.split('-').map(Number);
+  const [r2, m2] = osa[osa.length - 1].klic.split('-').map(Number);
+  return (r2 - r1) * 12 + (m2 - m1) + 1;
+}

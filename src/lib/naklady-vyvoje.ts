@@ -34,6 +34,25 @@ export const TESTU = 59;
 /** Pravidelných běhů v průběžné kontrole (`.github/workflows`) k datu MERENO. */
 export const BEHU_CI = 8;
 
+/** Commitů v historii projektu k datu MERENO (`git rev-list --count main`). */
+export const COMMITU = 596;
+
+/**
+ * Odpracovaný vlastní čas autora, v hodinách.
+ *
+ * Nikdo ho nevykazoval. Číslo vychází z časových odstupů mezi commity: commity
+ * se seskupí do sezení (mezera delší než hodina a půl začíná nové) a jejich
+ * délky se sečtou. Dvě varianty výpočtu daly 153 a 281 hodin podle toho, zda
+ * se počítají i delší pauzy uvnitř pracovního dne; 200 je střed.
+ *
+ * **Není to čistý čas nad tímto webem.** V týchž hodinách vznikal i jiný
+ * projekt, takže skutečný podíl je nižší. Opačným směrem působí to, že práce
+ * bez commitu (rozhodování, čtení dat, zamítnuté varianty) se v odstupech
+ * neprojeví vůbec. Obě odchylky jdou proti sobě a jejich velikost nikdo nezná,
+ * proto tu stojí jedno zaokrouhlené číslo a ne rozpětí s falešnou přesností.
+ */
+export const VLASTNI_CAS_HODIN = 200;
+
 export interface Blok {
   nazev: string;
   /** Co blok obsahuje, jednou větou. */
