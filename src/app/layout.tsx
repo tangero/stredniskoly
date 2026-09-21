@@ -101,6 +101,28 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Google Ads (gtag.js). Jen měření konverzí placených kampaní, analytika
+            zůstává v Matomu. Konverze se hlásí událostí z místa, kde nastaly
+            (viz OdberFormular), ne pageview: odběr nemá vlastní URL.
+            Domény musí být v CSP `script-src` a `connect-src` (next.config.ts),
+            jinak se skript zablokuje bez chybové hlášky. */}
+        <Script
+          id="google-ads-gtag"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-1069638808"
+        />
+        <Script
+          id="google-ads-gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-1069638808');
+            `,
+          }}
+        />
       </body>
     </html>
   );

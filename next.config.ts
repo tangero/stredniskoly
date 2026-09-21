@@ -35,11 +35,13 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://ma.hlidacstatu.cz",
+      // googletagmanager/googleadservices kvůli měření konverzí Google Ads:
+      // bez nich se gtag.js zablokuje tiše, tag vypadá nasazený a neposílá nic.
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://ma.hlidacstatu.cz https://www.googletagmanager.com https://www.googleadservices.com",
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https:",
       "font-src 'self' data:",
-      "connect-src 'self' https://vitals.vercel-insights.com https://ma.hlidacstatu.cz https://www.vibecoding.cz",
+      "connect-src 'self' https://vitals.vercel-insights.com https://ma.hlidacstatu.cz https://www.vibecoding.cz https://www.googletagmanager.com https://www.googleadservices.com https://www.google.com",
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "form-action 'self'"

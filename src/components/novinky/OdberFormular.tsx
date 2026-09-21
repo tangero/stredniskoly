@@ -66,6 +66,12 @@ export function OdberFormular({ rocnik, zdroj, varianta }: OdberFormularProps) {
       if (typeof window !== 'undefined') {
         const paq = (window as unknown as { _paq?: unknown[][] })._paq;
         paq?.push(['trackEvent', 'Novinky', 'formular_odeslan', zdroj]);
+        // Google Ads: konverze placených kampaní. Hlásí se tady, protože odběr
+        // nemá vlastní URL a potvrzovací stránku otevírá až klik v e-mailu, kam
+        // se gclid nepřenese. Volitelné: když gtag chybí (blokovaný skript,
+        // odmítnuté cookies), odběr proběhne normálně, jen se nezapíše konverze.
+        const gtag = (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag;
+        gtag?.('event', 'conversion', { send_to: 'AW-1069638808/Ph0aCM7FoYAdEJjJhf4D' });
       }
       setStav('poslano');
       try {
