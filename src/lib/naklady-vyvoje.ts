@@ -14,9 +14,9 @@
  *     nic použitelného.
  *  3. Sazby jsou běžné české fakturované ceny dodavatele, ne mzdové náklady.
  *
- * Kontrola střízlivosti: 66 471 řádků / 342 člověkodnů vychází na 194 řádků
- * denně. To je na horní hranici běžné produktivity, takže odhad spíš
- * podhodnocuje, než aby nafukoval.
+ * Kontrola střízlivosti: RADKU_NA_CLOVEKODEN dělí rozsah kódu počtem dnů práce.
+ * Vyjde-li přes dvě stě, je odhad podezřele štědrý k produktivitě a spíš
+ * podhodnocuje cenu; pod sto by naopak znamenal nafouknutý rozpočet.
  */
 
 /** Datum, ke kterému se měřil rozsah repozitáře. */
@@ -79,9 +79,9 @@ export const BLOKY: Blok[] = [
     popis:
       'Import tří zdrojů CERMAT za tři ročníky, spárování nabídek mezi ročníky, výpočet souhrnů za obor a skupinu srovnatelných škol.',
     radku: 12_000,
-    clovekodnu: 45,
+    clovekodnu: 60,
     zduvodneni:
-      'Nejtěžší datová část. Obory se mezi ročníky přejmenovávají, slučují a ruší, takže párování má vlastní skript, ruční přepisy a doklady o chybovosti. Odhad počítá i s tím, že tohle se napoprvé neudělá správně.',
+      'Nejtěžší datová část a jediná, ke které se práce vrací pořád. Obory se mezi ročníky přejmenovávají, slučují a ruší, takže párování má vlastní skript, ruční přepisy a doklady o chybovosti. Odhad byl původně 45 dnů a zvedl se poté, co rozbor commitů ukázal, že katalog má nejvíc změn ze všech oblastí, rozložených do 41 různých dnů napříč celým projektem, a že třetina z nich jsou opravy. Opakovaný návrat do téhož místa je dražší než práce v jednom kuse, a pro tým spíš víc než pro jednoho člověka.',
   },
   {
     nazev: 'Školní novinky z webů škol',
@@ -146,12 +146,21 @@ export const BLOKY: Blok[] = [
       'Kódu je málo, ale rozhodnutí, co se smí a nesmí tvrdit, stálo víc než jeho napsání. Web záměrně nepředpovídá přijetí konkrétního dítěte; odhad zahrnuje i zamítnuté varianty výpočtu.',
   },
   {
-    nazev: 'Testy, průběžná kontrola a nasazení',
-    popis: '59 testů, osm automatických běhů v CI, nasazení webu a sklízeče.',
+    nazev: 'Testy a průběžná kontrola',
+    popis: '59 testů a osm automatických běhů, které je spouštějí nad každou změnou.',
     radku: 6_991,
-    clovekodnu: 20,
+    clovekodnu: 15,
     zduvodneni:
-      'Součet testů napříč bloky. Část z nich spouští celou datovou linku proti falešnému zdroji, což je dražší než běžné testy jednotek.',
+      'Součet testů napříč bloky. Část z nich spouští celou datovou linku proti falešnému zdroji, což je dražší než běžné testy jednotek. Odhad se snížil z 20 dnů, protože nasazení a konfigurace odešly do vlastního bloku níže.',
+  },
+  {
+    nazev: 'Provoz, konfigurace a nasazení',
+    popis:
+      'Nasazení webu a odděleně běžícího sklízeče, databáze, bezpečnostní hlavičky, správa závislostí, obsluha vygenerovaných souborů.',
+    radku: null,
+    clovekodnu: 15,
+    zduvodneni:
+      'V první podobě odhadu tenhle blok chyběl úplně, protože se v žádném adresáři nesoustředí a při inventuře podle složek se přehlédne. Rozbor commitů ho našel: 85 změn ve 27 různých dnech, tedy víc rozptýlených dnů než u většiny funkcí. Patří sem i práce, kterou nikdo neplánuje, například vygenerovaný soubor, který se rozejde se zdrojem a musí se srovnat.',
   },
   {
     nazev: 'Datová linka',
@@ -203,6 +212,14 @@ export const SAZBY: Sazba[] = [
 export const HODIN_ZA_DEN = 8;
 
 export const CLOVEKODNU_PRACE = BLOKY.reduce((s, b) => s + b.clovekodnu, 0);
+
+/**
+ * Kolik řádků kódu vychází na jeden člověkoden práce.
+ *
+ * Kontrola, jestli odhad nesedí mimo realitu. Počítá se, aby se změnou
+ * kteréhokoli bloku nezůstalo v textu staré číslo.
+ */
+export const RADKU_NA_CLOVEKODEN = Math.round(RADKU_CELKEM / CLOVEKODNU_PRACE);
 export const CLOVEKODNU_RIZENI = Math.round(CLOVEKODNU_PRACE * REZIE_RIZENI);
 export const CLOVEKODNU_CELKEM = CLOVEKODNU_PRACE + CLOVEKODNU_RIZENI;
 
@@ -213,8 +230,9 @@ export function cenaZaSazbu(kcZaHodinu: number): number {
 /** Co odhad nezahrnuje nebo kde se může mýlit. Patří na stránku, ne do poznámky pod čarou. */
 export const VYHRADY: string[] = [
   'Člověkodny jsou odhad z rozsahu a obtížnosti, ne záznam odpracovaného času. Nikdo takový záznam nevede, protože projekt tímto způsobem nevznikal.',
-  'Poměr 194 řádků kódu na člověkoden je na horní hranici běžné produktivity. Odhad proto spíš podhodnocuje; tým, který stejná data vidí poprvé, by strávil víc času rozborem zdrojů než psaním.',
+  `Poměr ${RADKU_NA_CLOVEKODEN} řádků kódu na člověkoden je na horní hranici běžné produktivity. Odhad proto spíš podhodnocuje; tým, který stejná data vidí poprvé, by strávil víc času rozborem zdrojů než psaním.`,
   'Cena nezahrnuje průzkum mezi uživateli, testování s rodiči a žáky, právní posouzení ani provoz po spuštění.',
   'Sazba dodavatele obsahuje marži a nefakturovaný čas. Vlastní zaměstnanecký tým by týž rozsah zvládl levněji, veřejná zakázka na obdobný portál bývá dražší.',
   'Odhad říká, co by stál tento výsledek. Neříká, že by ho tým v tomto tvaru navrhl; část rozhodnutí vznikla až z toho, co se v datech našlo.',
+  'Dva bloky se opravily poté, co rozbor 514 commitů ukázal, kam čas opravdu šel: katalog dostal o patnáct dnů víc a provoz s konfigurací přibyl jako blok, který v první podobě chyběl. Ostatní bloky se nepřepisovaly, protože naměřený čas říká, jak rychle práci odbyl model, ne jak dlouho by trvala týmu. Dopravní dostupnost je toho případ: šest procent naměřeného času a přitom algoritmicky nejtěžší kus webu.',
 ];
