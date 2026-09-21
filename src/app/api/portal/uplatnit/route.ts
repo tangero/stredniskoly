@@ -32,18 +32,32 @@ export async function POST(request: NextRequest) {
   if (!overeno.ok) return chyba(overeno.chyba, 400);
   const udaje = overeno.udaje;
 
+  // Škola bez záznamu v zobrazovaném ročníku katalogu nemá profil k editaci:
+  // `getPredvyplnenyProfil` vrátí null a /pro-skoly/profil skončí na „školu
+  // neznáme“. Uplatnění je nevratné — kód by shořel na účtu, se kterým se nedá
+  // nic dělat, a druhý už škola nedostane. Kontrola musí stát tady, ne jen ve
+  // formuláři: /api/portal/kod se dá obejít a rovnou poslat POST sem.
+  const maProfil = async (redizo: string) => Boolean(await getNazevSkoly(redizo));
+  // Ujištění o platnosti smí dostat jen ten, kdo kód opravdu drží. Kdo přišel
+  // odkazem z rejstříkového e-mailu, žádný nemá a hledal by ho marně.
+  const neniProfil = (drziKod: boolean) =>
+    'Profil této školy zatím nemůžeme otevřít k úpravám. Napište prosím na patrick@zandl.cz' +
+    (drziKod ? ' — váš kód zůstává platný.' : '.');
+
   try {
     let role;
     let vstup: string;
     if (typeof body.kod === 'string' && body.kod.trim()) {
       const redizo = await validateKod(body.kod);
       if (!redizo) return chyba('Neplatný nebo zrušený kód.', 403);
+      if (!(await maProfil(redizo))) return chyba(neniProfil(true), 409);
       const kodHash = hashKod(body.kod);
       role = await vTransakci((s) => uplatniKod(s, kodHash, redizo, udaje));
       vstup = 'kód';
     } else if (typeof body.magic === 'string' && body.magic.trim()) {
       const redizo = overMagicToken(body.magic);
       if (!redizo) return chyba('Odkaz vypršel. Požádejte si o nový na stránce Pro školy.', 403);
+      if (!(await maProfil(redizo))) return chyba(neniProfil(false), 409);
       const rejstrikovy = (await nactiEmaily())[redizo]?.[0] ?? '';
       role = await vTransakci((s) => zalozSpravceZRejstriku(s, redizo, udaje, rejstrikovy));
       vstup = 'odkaz z rejstříku';

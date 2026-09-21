@@ -2,9 +2,9 @@
 
 Text e-mailu pro 20 škol z `data/portal/pilot.json` ([účty portálu](../ucty-portalu-skol-2027.md), oddíly 5 a 9).
 
-**Rozeslání (rozhodnutí zadavatele 20. 9. 2026):** z administrace `/admin/portal/pozvanky` — náhled e-mailu, počet oslovených škol, zkouška na vlastní adresu a ostrá rozesílka potvrzená opsáním počtu. Totéž z příkazové řádky umí `scripts/portal-posli-pozvanky.mjs`; obojí sdílí `src/lib/portal-pozvanky.ts`. Odesílá se z adresy `eda@prijimackynaskolu.cz`, na rejstříkový e-mail školy (`data/portal/pilot-kontakty.json`). Odpovědi míří na tutéž adresu, kde je vyřizuje Eduarda; v textu je to vysvětlené. **Podepsaný je člověk — Patrick Zandl, provozovatel projektu** (oddíl 5 účtů portálu: kód podepsaný umělou inteligencí ředitel snadno vyhodnotí jako podvod). Kód se doplní z `data/portal/kody-plaintext.json`; ten i soubor kontaktů jsou gitignorované a do repozitáře ani do jiného kanálu se nekopírují.
+**Rozeslání (rozhodnutí zadavatele 20. 9. 2026):** z administrace `/admin/portal/pozvanky` — náhled e-mailu, počet oslovených škol, zkouška na vlastní adresu a ostrá rozesílka potvrzená opsáním počtu. Totéž z příkazové řádky umí `scripts/portal-posli-pozvanky.mjs`; obojí sdílí `src/lib/portal-pozvanky.ts`. Odesílá se z adresy `eda@prijimackynaskolu.cz` se jménem odesílatele **Patrick Zandl – Přijímačky na školu** (rozhodnutí 21. 9. 2026). Ostatní e-maily portálu chodí z téže adresy jako **Eduarda z Přijímačky na školu**; u pozvánky musí v řádku „Od“ stát člověk, protože ho ředitel uvidí dřív než podpis. Posílá se **na rejstříkový e-mail školy** (`data/portal/pilot-kontakty.json`). Odesílací adresa musí zůstat na ověřené doméně: `zandl.cz` v Resendu ověřená není, takže z ní odeslat nejde a rozpadl by se DKIM i SPF. Odpovědi míří na tutéž adresu, kde je vyřizuje Eduarda; v textu je to vysvětlené. **Podepsaný je člověk — Patrick Zandl, provozovatel projektu** (oddíl 5 účtů portálu: kód podepsaný umělou inteligencí ředitel snadno vyhodnotí jako podvod). Kód se doplní z `data/portal/kody-plaintext.json`; ten i soubor kontaktů jsou gitignorované a do repozitáře ani do jiného kanálu se nekopírují.
 
-Doplňuje se: `{osloveni}` (z ředitele v kontaktech: „Vážená paní ředitelko“ / „Vážený pane řediteli“, bez jistoty rodu „Dobrý den“), `{nazev_skoly}`, `{kod}`. Datum odeslání zapíše administrace i skript do `pozvanka_odeslana` v `data/portal/pilot.json`; soubor patří do gitu, změnu je potřeba commitnout.
+Doplňuje se: `{osloveni}` (z ředitele v kontaktech: „Vážená paní ředitelko“ / „Vážený pane řediteli“, bez jistoty rodu „Dobrý den“), `{nazev_skoly}`, `{kod}`. Kód stojí sám na konci řádku, aby se dal snadno přečíst a vybrat myší; na ověření to vliv nemá, protože `normalizeKod` zahodí všechno mimo `[A-Z0-9]`, takže zkopírovaná tečka ani mezera přihlášení nerozbijí. **Do šablony nepatří HTML komentáře** — `html` jde rovnou do Resendu a příjemce si je přečte přes „zobrazit originál“. Datum odeslání zapíše administrace i skript do `pozvanka_odeslana` v `data/portal/pilot.json`; soubor patří do gitu, změnu je potřeba commitnout.
 
 **Administrace pozvánek běží jen lokálně** (`npm run dev`). Kódy v plaintextu a jména ředitelů se schválně nenasazují, takže na produkci stránka vypíše, co chybí, a neodešle nic. Kdyby plaintext kódů ležel na serveru, hashování s pepřem ztrácí smysl.
 
@@ -20,7 +20,8 @@ Zveme vaši školu mezi dvacet škol, které jako první vyzkouší, jak si ško
 
 **Jak na to**
 
-1. Otevřete www.prijimackynaskolu.cz/pro-skoly a zadejte kód **{kod}**.
+1. Otevřete www.prijimackynaskolu.cz/pro-skoly a zadejte kód:
+   **{kod}**
 2. Vyplňte své jméno, funkci a pracovní e-mail. Kdo kód použije první, stane se správcem profilu školy a kód tím přestane platit. Proto ho prosím předejte jen tomu, kdo bude profil spravovat.
 3. Správce může pozvat kolegy. Každý se pak přihlašuje svým e-mailem, bez hesla.
 4. Co vyplníte, se na stránce školy objeví obvykle do hodiny. Na schválení nic nečeká — věříme tomu, kdo za školu údaje zadává. Když v nich najdeme chybu, opravíme ji a dáme vám vědět; u opraveného údaje je pak místo „potvrdila škola“ uvedeno „opravila redakce“.

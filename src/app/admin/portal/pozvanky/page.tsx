@@ -80,6 +80,10 @@ export default async function AdminPozvankyPage({ searchParams }: Props) {
             <p className="text-sm text-slate-600">
               Škola <strong>{proNahled.nazev}</strong> · adresát {proNahled.email || '—'} · oslovení „{proNahled.osloveni}“
             </p>
+            {/* Řádek „Od“ ředitel uvidí dřív než podpis, takže je to ta část
+                pozvánky, kterou je před nevratnou rozesílkou potřeba zkontrolovat
+                nejvíc. Chodí ze šablony, ne z odesílací funkce. */}
+            <p className="text-sm text-slate-500">Od: <strong>{email.odesilatel}</strong></p>
             <p className="text-sm text-slate-500">Předmět: <strong>{email.subject}</strong></p>
             <iframe
               title="Náhled pozvánky"

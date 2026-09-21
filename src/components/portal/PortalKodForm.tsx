@@ -2,21 +2,30 @@
 
 import { useState } from 'react';
 import { PortalZalozeni } from '@/components/portal/PortalZalozeni';
+import type { IdentifikaceSkoly } from '@/lib/portal-identifikace';
 
 // Kód se ověřuje přes POST /api/portal/kod, aby nezůstal v adrese stránky,
 // historii prohlížeče ani v lozích.
 
+type Hlaskovy = 'uplatnen' | 'skola_ma_spravce' | 'skola_nenalezena';
+
 type Vysledek =
-  | { stav: 'volny'; nazev: string; kod: string }
-  | { stav: 'uplatnen' | 'skola_ma_spravce'; nazev: string }
+  | { stav: 'volny'; nazev: string; kod: string; skola: IdentifikaceSkoly | null }
+  | { stav: Hlaskovy; nazev: string }
   | { stav: 'neplatny' };
 
-const HLASKY: Record<'uplatnen' | 'skola_ma_spravce', string> = {
+const HLASKY: Record<Hlaskovy, string> = {
   uplatnen:
     'Tento kód už byl použit a profil školy má správce. Pokud jste to vy, přihlaste se odkazem na svůj e-mail níže.',
   skola_ma_spravce:
     'Profil této školy už má správce. Požádejte ho o pozvánku, nebo se přihlaste odkazem na svůj e-mail níže.',
+  // Kód je platný, ale škola nemá profil k editaci. Nesmí se spotřebovat.
+  skola_nenalezena:
+    'Profil této školy zatím nemůžeme otevřít k úpravám. Napište nám prosím na patrick@zandl.cz — váš kód zůstává platný.',
 };
+
+/** Stavy s hláškou v ambrové kartě; `in` samo TypeScriptu k zúžení nestačí. */
+const jeHlaskovy = (v: Vysledek): v is { stav: Hlaskovy; nazev: string } => Object.hasOwn(HLASKY, v.stav);
 
 export const PortalKodForm = () => {
   const [kod, setKod] = useState('');
@@ -39,8 +48,14 @@ export const PortalKodForm = () => {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) setChyba(data.error || 'Kód se nepodařilo ověřit. Zkuste to prosím znovu.');
-      else if (data.stav === 'volny') setVysledek({ stav: 'volny', nazev: data.nazev, kod: cisty });
-      else setVysledek(data);
+      // `nazev` chodí ze sítě: chybějící pole by o kus dál shodilo `.trim()`.
+      else if (data.stav === 'volny') setVysledek({ stav: 'volny', nazev: data.nazev ?? '', kod: cisty, skola: data.skola ?? null });
+      else if (Object.hasOwn(HLASKY, data.stav)) setVysledek({ stav: data.stav as Hlaskovy, nazev: data.nazev ?? '' });
+      else if (data.stav === 'neplatny') setVysledek({ stav: 'neplatny' });
+      // Odpověď, kterou neumíme přečíst (prázdné tělo z edge, useknutý proud):
+      // bez tohohle by se uložil stav, na který nesedí žádná větev vykreslení,
+      // tlačítko by se vrátilo do klidu a neobjevilo by se vůbec nic.
+      else setChyba('Kód se nepodařilo ověřit. Zkuste to prosím znovu.');
     } catch {
       setChyba('Chyba připojení. Zkuste to prosím znovu.');
     }
@@ -48,7 +63,8 @@ export const PortalKodForm = () => {
   };
 
   if (vysledek?.stav === 'volny') {
-    return <PortalZalozeni nazevSkoly={vysledek.nazev} auth={{ kod: vysledek.kod }} />;
+    // Karta visí pod h2 „Upravit profil školy“ a h3 „Máme přihlašovací kód“.
+    return <PortalZalozeni nazevSkoly={vysledek.nazev} skola={vysledek.skola} auth={{ kod: vysledek.kod }} uroven="h4" />;
   }
 
   return (
@@ -79,9 +95,12 @@ export const PortalKodForm = () => {
           Tento kód neznáme, nebo byl zrušený. Zkontrolujte překlepy, kód má tvar XXXX-XXXX-XXXX.
         </div>
       )}
-      {vysledek && (vysledek.stav === 'uplatnen' || vysledek.stav === 'skola_ma_spravce') && (
+      {vysledek && jeHlaskovy(vysledek) && (
         <div className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-          <strong>{vysledek.nazev}:</strong> {HLASKY[vysledek.stav]}
+          {/* Bez názvu by zbyla holá dvojtečka; getNazevSkoly ho u školy mimo
+              zobrazovaný ročník katalogu vrátí prázdný. */}
+          {vysledek.nazev && <strong>{vysledek.nazev}: </strong>}
+          {HLASKY[vysledek.stav]}
         </div>
       )}
       {chyba && (

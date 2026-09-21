@@ -23,20 +23,47 @@ interface ZaznamRejstriku {
   adresa: string;
 }
 
+// Index má skoro megabajt a `JSON.parse` je synchronní, takže každé čtení na tu
+// dobu zastaví celou instanci — a visí na veřejném neautentizovaném
+// /api/portal/kod. Cachuje se příslib, ne hodnota, aby souběžné požadavky
+// nespustily tolik čtení, kolik jich přijde, než první dobehne.
+let rejstrikCache: Promise<Record<string, ZaznamRejstriku>> | null = null;
+
+function nactiRejstrik(): Promise<Record<string, ZaznamRejstriku>> {
+  if (!rejstrikCache) {
+    rejstrikCache = fs
+      .readFile(path.join(process.cwd(), 'data', 'msmt_rejstrik', 'nazvy-oboru.json'), 'utf-8')
+      .then((obsah) => (JSON.parse(obsah) as { identifikace?: Record<string, ZaznamRejstriku> }).identifikace ?? {})
+      .catch((e) => {
+        rejstrikCache = null; // ať se po výpadku dá zkusit znovu
+        throw e;
+      });
+  }
+  return rejstrikCache;
+}
+
 async function nactiZRejstriku(redizo: string): Promise<ZaznamRejstriku | null> {
   try {
-    const obsah = await fs.readFile(path.join(process.cwd(), 'data', 'msmt_rejstrik', 'nazvy-oboru.json'), 'utf-8');
-    const index = JSON.parse(obsah) as { identifikace?: Record<string, ZaznamRejstriku> };
-    return index.identifikace?.[redizo] ?? null;
+    return (await nactiRejstrik())[redizo] ?? null;
   } catch (e) {
     console.error('❌ Portál: data/msmt_rejstrik/nazvy-oboru.json nejde načíst', e);
     return null;
   }
 }
 
+/** Nabídky školy z katalogu; chybějící nebo poškozený katalog není důvod selhat. */
+async function nactiNabidky(redizo: string) {
+  try {
+    return await getSchoolsByRedizo(redizo);
+  } catch (e) {
+    console.error('❌ Portál: katalog škol nejde načíst', e);
+    return [];
+  }
+}
+
 /** Plný název, IČO a adresa z rejstříku; bez záznamu v rejstříku název a adresa z katalogu. */
 export async function getIdentifikaceSkoly(redizo: string, nazevKatalog: string): Promise<IdentifikaceSkoly> {
-  const [rejstrik, nabidky] = await Promise.all([nactiZRejstriku(redizo), getSchoolsByRedizo(redizo)]);
+  const [rejstrik, nabidky] = await Promise.all([nactiZRejstriku(redizo), nactiNabidky(redizo)]);
   const prvni = nabidky[0];
   return {
     redizo,

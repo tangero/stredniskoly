@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import type { PortalAuth } from '@/components/portal/PortalEditace';
+import type { IdentifikaceSkoly } from '@/lib/portal-identifikace';
+import { PortalHlavickaSkoly } from '@/components/portal/PortalHlavickaSkoly';
 
 // ============================================================================
 // Založení správce profilu školy (docs/ucty-portalu-skol-2027.md, 2.2).
@@ -11,13 +13,35 @@ import type { PortalAuth } from '@/components/portal/PortalEditace';
 
 interface PortalZalozeniProps {
   nazevSkoly: string;
-  auth: PortalAuth;
+  /**
+   * Jen kód nebo odkaz z e-mailu. Varianta `{ucet}` z `PortalAuth` sem nepatří:
+   * kdo účet má, správce už nezakládá — a hlavička by mu psala o kódu, který
+   * nedostal. Zúžení tu drží text hlavičky a skutečnost pohromadě.
+   */
+  auth: Extract<PortalAuth, { kod: string } | { magic: string }>;
   predvyplnenyEmail?: string;
+  /**
+   * Plný název, adresa a IČO z rejstříku. Bez nich by tu stál jen zkrácený
+   * název z katalogu („Gymnázium“), podle kterého škola poznat nejde — a člověk
+   * se chystá stát jejím správcem. Null, když se identifikace nepodařila načíst.
+   */
+  skola?: IdentifikaceSkoly | null;
+  /**
+   * Úroveň nadpisů. Na samostatné stránce /pro-skoly/<kód> je formulář hned pod
+   * h1 hlavičky, takže h2. V kartě na /pro-skoly visí pod h2 „Upravit profil
+   * školy“ a h3 „Máme přihlašovací kód“, takže h4.
+   */
+  uroven?: 'h2' | 'h3' | 'h4';
 }
 
 const POLE = 'w-full rounded-lg border border-[#c9d4e1] px-4 py-3 focus:border-[#0074e4] focus:outline-none focus:ring-2 focus:ring-blue-200';
 
-export const PortalZalozeni = ({ nazevSkoly, auth, predvyplnenyEmail = '' }: PortalZalozeniProps) => {
+export const PortalZalozeni = ({ nazevSkoly, auth, predvyplnenyEmail = '', skola = null, uroven = 'h2' }: PortalZalozeniProps) => {
+  const Nadpis = uroven;
+  // Kdo přišel odkazem z rejstříkového e-mailu, žádný kód nedostal. Mluvit na
+  // něj o kódu ho pošle hledat něco, co neexistuje.
+  const vstup = 'magic' in auth ? 'odkaz' : 'kód';
+  const vstupVelky = vstup === 'odkaz' ? 'Odkaz' : 'Kód';
   const [jmeno, setJmeno] = useState('');
   const [funkce, setFunkce] = useState('');
   const [email, setEmail] = useState(predvyplnenyEmail);
@@ -49,11 +73,16 @@ export const PortalZalozeni = ({ nazevSkoly, auth, predvyplnenyEmail = '' }: Por
 
   return (
     <form onSubmit={odeslat} className="space-y-4 rounded-xl border border-[#e3e9f1] bg-white p-5">
+      {/* Chybí-li název, hlavička pořád nese REDIZO, adresu a větu pro případ cizí
+          školy — zahodit ji celou kvůli prázdnému nadpisu by sebralo i je. */}
+      {skola && <PortalHlavickaSkoly skola={skola} vstup={vstup} uroven={uroven} />}
       <div>
-        <h2 className="text-lg font-semibold text-slate-900">Staňte se správcem profilu</h2>
+        <Nadpis className="text-lg font-semibold text-slate-900">Staňte se správcem profilu</Nadpis>
         <p className="mt-1 text-sm text-slate-600">
-          {nazevSkoly} zatím správce nemá. Kdo kód použije první, stane se správcem profilu a může
-          pozvat kolegy. Kód tím přestane platit.
+          {/* S hlavičkou nad sebou nemá smysl školu jmenovat podruhé, navíc jinak:
+              hlavička nese plný název z rejstříku, tohle jen zkratku z katalogu. */}
+          {(skola ? '' : nazevSkoly.trim()) || 'Tato škola'} zatím správce nemá. Kdo {vstup} použije první, stane se
+          správcem profilu a může pozvat kolegy. {vstupVelky} tím přestane platit.
         </p>
       </div>
 

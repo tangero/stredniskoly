@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import {
   normalizeKod,
   hashKod,
@@ -225,4 +226,24 @@ test('nazevSAdresou: název, ulice bez čísel a obec, bez opakování', () => {
   assert.equal(nazevSAdresou('Gymnázium BMA, s.r.o.', 'Dvořákova 1269', 'Frýdlant'), 'Gymnázium BMA, s.r.o., Dvořákova, Frýdlant');
   assert.equal(nazevSAdresou('Gymnázium Brno', 'Brno 12', 'Brno'), 'Gymnázium Brno');
   assert.equal(nazevSAdresou('Gymnázium', 'č. p. 12', 'Nové Město'), 'Gymnázium, Nové Město');
+});
+
+// ---------------------------------------------------------------------------
+// Zobrazované období katalogu
+// ---------------------------------------------------------------------------
+
+test('katalog se klíčuje stejnou sadou jako stránka školy', async () => {
+  // Na výběru období visí i brána uplatnění kódu. Překlep v názvu sady nespadne
+  // — tiše se přepne na zálohu „nejnovější ročník“ a portál by pak po příštím
+  // přepnutí ukazoval jiný ročník než veřejný web.
+  const zdroj = await readFile('src/lib/portal-skol.ts', 'utf8');
+  assert.match(zdroj, /zobrazeneObdobi\('cermat-prihlasky'\)/, 'portál klíčuje katalog jinou sadou');
+
+  const registr = JSON.parse(await readFile('public/stav_datovych_sad.json', 'utf8'));
+  const sada = registr.sady['cermat-prihlasky'];
+  assert.ok(sada, 'sada cermat-prihlasky v registru není');
+  assert.ok(
+    JSON.stringify(sada).includes('schools_data.json'),
+    'sada cermat-prihlasky už nevydává schools_data.json',
+  );
 });

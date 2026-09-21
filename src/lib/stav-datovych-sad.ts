@@ -12,13 +12,22 @@ interface ZaznamSady {
   zobrazeno: { obdobi: string | null; platne_k?: string; stazeno?: string; verze?: string };
 }
 
-let cache: Record<string, ZaznamSady> | null = null;
+// Cachuje se příslib, ne hodnota: souběžné požadavky by jinak spustily tolik
+// čtení a `JSON.parse`, kolik jich přijde, než první dobehne.
+let cache: Promise<Record<string, ZaznamSady>> | null = null;
 
-async function sady(): Promise<Record<string, ZaznamSady>> {
-  if (cache) return cache;
-  const soubor = path.join(process.cwd(), 'public', 'stav_datovych_sad.json');
-  cache = JSON.parse(await fs.readFile(soubor, 'utf-8')).sady ?? {};
-  return cache!;
+function sady(): Promise<Record<string, ZaznamSady>> {
+  if (!cache) {
+    const soubor = path.join(process.cwd(), 'public', 'stav_datovych_sad.json');
+    cache = fs
+      .readFile(soubor, 'utf-8')
+      .then((o) => JSON.parse(o).sady ?? {})
+      .catch((e) => {
+        cache = null; // ať se po výpadku disku dá zkusit znovu
+        throw e;
+      });
+  }
+  return cache;
 }
 
 /** Zobrazené období sady, například „2026“; null, když sada nic nezobrazuje. */

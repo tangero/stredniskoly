@@ -44,13 +44,15 @@ export default async function PortalMagicLinkPage({ params }: Props) {
   if (prihlaseny?.role.some((r) => r.redizo === redizo)) redirect(`/pro-skoly/profil?skola=${redizo}`);
 
   const nazev = await getNazevSkoly(redizo);
-  if (!nazev) return <PortalSkolaNenalezena redizo={redizo} />;
+  if (!nazev) return <PortalSkolaNenalezena redizo={redizo} vstup="odkaz" />;
 
   if (!(await spravceSkoly(cteni, redizo))) {
     return (
       <PortalObalka>
         <PortalHlavickaSkoly skola={await getIdentifikaceSkoly(redizo, nazev)} vstup="odkaz" />
-        <PortalZalozeni nazevSkoly={nazev} auth={{ magic: token }} />
+        {/* Hlavička nad formulářem školu jmenuje plným názvem z rejstříku;
+            věta ve formuláři by pod ní zopakovala zkratku z katalogu. */}
+        <PortalZalozeni nazevSkoly="" auth={{ magic: token }} />
       </PortalObalka>
     );
   }

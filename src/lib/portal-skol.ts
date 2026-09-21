@@ -1,6 +1,9 @@
 import { createHmac } from 'crypto';
 import { promises as fs } from 'fs';
 import path from 'path';
+// Relativně s příponou: tenhle modul běží i pod `node --experimental-strip-types`
+// v testech, kde se alias `@/` nerozřeší (stejně jako v admin.ts).
+import { zobrazeneObdobi } from './stav-datovych-sad.ts';
 
 // ============================================================================
 // Portál pro školy (pilot 2027) – typy, validace kódů, validace payloadu
@@ -372,6 +375,65 @@ function formatSkolneInspis(rocniSkolne: number | null): string | null {
   return `${rocniSkolne.toLocaleString('cs-CZ')} Kč/rok`;
 }
 
+// ----------------------------------------------------------------------------
+// Katalog škol
+// ----------------------------------------------------------------------------
+
+/**
+ * `public/schools_data.json` má skoro 9 MB a `JSON.parse` je synchronní, takže
+ * každé čtení na tu dobu zastaví celou instanci. `getNazevSkoly` přitom visí na
+ * veřejném neautentizovaném `/api/portal/kod`, kde je povoleno 20 dotazů na IP.
+ * Držíme ho proto v paměti modulu, stejně jako to dělá `schoolAnalysisCache`
+ * v src/lib/data.ts. Nová data se projeví po nasazení, což je u katalogu, který
+ * obnovuje datová linka, v pořádku.
+ */
+// Cachuje se příslib, ne hodnota: souběžné požadavky by jinak spustily tolik
+// čtení a `JSON.parse`, kolik jich přijde, než první dobehne.
+let katalogCache: Promise<Record<string, Array<Record<string, unknown>>>> | null = null;
+
+function nactiKatalog(): Promise<Record<string, Array<Record<string, unknown>>>> {
+  if (!katalogCache) {
+    katalogCache = fs
+      .readFile(path.join(process.cwd(), 'public', 'schools_data.json'), 'utf-8')
+      .then((o) => JSON.parse(o) as Record<string, Array<Record<string, unknown>>>)
+      .catch((e) => {
+        katalogCache = null; // ať se po výpadku disku dá zkusit znovu
+        throw e;
+      });
+  }
+  return katalogCache;
+}
+
+/**
+ * Řádky katalogu za zobrazované období. Letopočet se nesmí psát napevno
+ * (.claude/CLAUDE.md, pravidlo 3): na tomhle výběru teď visí i to, jestli jde
+ * vůbec uplatnit přihlašovací kód, takže zapsaný ročník by po přepnutí katalogu
+ * zablokoval celý portál.
+ *
+ * Období bere ze stejné sady jako stránka školy (`cermat-prihlasky`), aby portál
+ * neklíčoval katalog na jiný ročník než web. Když registr chybí nebo je rozbitý,
+ * sáhne po nejnovějším ročníku, který v katalogu skutečně je.
+ */
+async function katalogZobrazenehoObdobi(): Promise<Array<Record<string, unknown>>> {
+  const katalog = await nactiKatalog();
+  let obdobi: string | null = null;
+  try {
+    obdobi = await zobrazeneObdobi('cermat-prihlasky');
+  } catch (e) {
+    console.error('❌ Portál: stav_datovych_sad.json nejde přečíst', e);
+  }
+  if (obdobi && Array.isArray(katalog[obdobi])) return katalog[obdobi];
+  // Zálohou je nejnovější ročník. Klíče se filtrují na čtyřmístné letopočty:
+  // kdyby soubor dostal třeba `_meta`, seřadilo by se navrch a místo pole řádků
+  // by se vrátil objekt — `getNazevSkoly` by pak mlčky vracel prázdno a odmítlo
+  // by se každé uplatnění kódu.
+  const rocniky = Object.keys(katalog)
+    .filter((k) => /^\d{4}$/.test(k) && Array.isArray(katalog[k]))
+    .sort();
+  const nejnovejsi = rocniky.at(-1);
+  return nejnovejsi ? katalog[nejnovejsi] : [];
+}
+
 /**
  * Předvyplnění editovatelných polí. Vyplňuje se **jen** to, co škola sama
  * potvrdila (`zaznam`); InspIS jde do `kontext` vedle prázdného pole.
@@ -383,11 +445,7 @@ export async function getPredvyplnenyProfil(
   redizo: string,
   zaznam: PortalZaznam | null,
 ): Promise<PredvyplnenyProfil | null> {
-  // Katalog 2026
-  const schoolsRaw = JSON.parse(
-    await fs.readFile(path.join(process.cwd(), 'public', 'schools_data.json'), 'utf-8'),
-  ) as Record<string, Array<Record<string, unknown>>>;
-  const radky = (schoolsRaw['2026'] || []).filter((s) => String(s.redizo) === redizo);
+  const radky = (await katalogZobrazenehoObdobi()).filter((s) => String(s.redizo) === redizo);
   if (radky.length === 0) return null;
 
   const prvni = radky[0];
@@ -471,26 +529,25 @@ export function nazevSAdresou(nazev: string, ulice: string, obec: string): strin
   return vysledek;
 }
 
-/** Název s ulicí a obcí z katalogu 2026 (seznam škol v profilu); prázdný, když škola v katalogu není. */
+/** Název s ulicí a obcí z katalogu za zobrazované období; prázdný, když škola v katalogu není. */
 export async function getNazevSAdresou(redizo: string): Promise<string> {
   try {
-    const schoolsRaw = JSON.parse(
-      await fs.readFile(path.join(process.cwd(), 'public', 'schools_data.json'), 'utf-8'),
-    ) as Record<string, Array<Record<string, unknown>>>;
-    const radek = (schoolsRaw['2026'] || []).find((s) => String(s.redizo) === redizo);
+    const radek = (await katalogZobrazenehoObdobi()).find((s) => String(s.redizo) === redizo);
     return radek ? nazevSAdresou(String(radek.nazev), String(radek.ulice || ''), String(radek.obec || '')) : '';
   } catch {
     return '';
   }
 }
 
-/** Název školy z katalogu 2026 (pro čitelný titulek GitHub issue). */
+/**
+ * Název školy z katalogu za zobrazované období; prázdný, když tam škola není.
+ * Pozor: na prázdné návratové hodnotě visí i brána uplatnění kódu
+ * (/api/portal/kod, /api/portal/uplatnit) — škola bez záznamu v katalogu nemá
+ * profil k editaci, takže se jí kód nesmí nabídnout ke spotřebování.
+ */
 export async function getNazevSkoly(redizo: string): Promise<string> {
   try {
-    const schoolsRaw = JSON.parse(
-      await fs.readFile(path.join(process.cwd(), 'public', 'schools_data.json'), 'utf-8'),
-    ) as Record<string, Array<Record<string, unknown>>>;
-    const radek = (schoolsRaw['2026'] || []).find((s) => String(s.redizo) === redizo);
+    const radek = (await katalogZobrazenehoObdobi()).find((s) => String(s.redizo) === redizo);
     return radek ? String(radek.nazev) : '';
   } catch {
     return '';
