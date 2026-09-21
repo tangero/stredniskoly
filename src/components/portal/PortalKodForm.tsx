@@ -83,7 +83,10 @@ export const PortalKodForm = () => {
       )}
       {vysledek && (vysledek.stav === 'uplatnen' || vysledek.stav === 'skola_ma_spravce') && (
         <div className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-          <strong>{vysledek.nazev}:</strong> {HLASKY[vysledek.stav]}
+          {/* Bez názvu by zbyla holá dvojtečka; getNazevSkoly ho u školy mimo
+              zobrazovaný ročník katalogu vrátí prázdný. */}
+          {vysledek.nazev && <strong>{vysledek.nazev}: </strong>}
+          {HLASKY[vysledek.stav]}
         </div>
       )}
       {chyba && (

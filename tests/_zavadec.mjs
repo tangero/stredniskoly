@@ -21,9 +21,27 @@ export function zavadec(reactModul, nahrady = {}) {
       cache.set(filename, data);
       return data;
     }
-    const { outputText } = ts.transpileModule(fs.readFileSync(filename, 'utf8'), {
-      compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX, esModuleInterop: true },
+    const { outputText, diagnostics } = ts.transpileModule(fs.readFileSync(filename, 'utf8'), {
+      // `fileName` se schválně nepředává: podle přípony by TypeScript u `.mjs`
+      // emitoval ESM bez ohledu na `module`, a `export` by spadl v `new Function`.
+      reportDiagnostics: true,
+      compilerOptions: {
+        module: ts.ModuleKind.CommonJS,
+        // Bez `target` překládá TypeScript do ES5: `for…of` nad Map nebo Set se
+        // přepíše na indexaci polem a tiše iteruje naprázdno. Test by pak prošel
+        // nad kódem, který v Node i v prohlížeči funguje jinak.
+        target: ts.ScriptTarget.ES2022,
+        jsx: ts.JsxEmit.ReactJSX,
+        esModuleInterop: true,
+      },
     });
+    // Syntaktickou chybu jinak spolkne a soubor se vykreslí jako prázdný modul.
+    if (diagnostics?.length) {
+      const vypis = diagnostics
+        .map((d) => ts.flattenDiagnosticMessageText(d.messageText, ' '))
+        .join('; ');
+      throw new Error(`${relative}: ${vypis}`);
+    }
     const modul = { exports: {} };
     cache.set(filename, modul.exports);
     new Function('require', 'module', 'exports', outputText)((specifier) => {

@@ -64,6 +64,29 @@ test('škola mimo katalog nevyrobí větu začínající mezerou ani prázdný n
   const html = vykresli({ ...SKOLA, nazev: '' }, 'h4', { nazevSkoly: '' });
   assert.match(html, /Tato škola zatím správce nemá/);
   assert.doesNotMatch(html, /<h4[^>]*><\/h4>/, 'prázdný nadpis v hlavičce');
+  // Chybějící název nesmí zahodit zbytek hlavičky: REDIZO je jediný údaj, který
+  // má škola vždycky, a právě podle něj se kód páruje.
+  assert.match(html, /600006247/, 's prázdným názvem zmizelo i REDIZO');
+  assert.match(html, /61387061/, 's prázdným názvem zmizelo i IČO');
+  assert.match(html, /Pokud to není vaše škola/, 'zmizela věta pro případ cizí školy');
+});
+
+test('škola se nejmenuje dvakrát jinak', () => {
+  // Rejstřík nese „Gymnázium, Praha 9, Litoměřická 726“, katalog jen „Gymnázium“.
+  // Dva názvy nad sebou vypadají jako dvě různé školy; týká se většiny škol.
+  const html = vykresli(SKOLA, 'h4');
+  assert.match(html, /Tato škola zatím správce nemá/, 'věta jmenuje školu podruhé');
+});
+
+test('nadpis hlavičky není větší než nadpis, pod kterým visí', () => {
+  // V kartě na /pro-skoly stojí h3 „Máme přihlašovací kód“ v text-xl. Hlavička
+  // s text-2xl by pořadí nadpisů opticky převrátila.
+  const vKarte = vykresli(SKOLA, 'h4');
+  assert.match(vKarte, /<h4[^>]*\btext-lg\b/, 'h4 v kartě má být text-lg');
+  assert.doesNotMatch(vKarte, /<h4[^>]*\btext-(?:xl|2xl|3xl|4xl)\b/, 'h4 přerostl rodičovské h3');
+
+  // Na samostatné stránce je hlavička h1 a nese hlavní velikost.
+  assert.match(vykresli(SKOLA, 'h2'), /<h2[^>]*\btext-2xl\b/);
 });
 
 test('kdo přišel odkazem, nečte výzvu o kódu', () => {
