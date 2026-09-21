@@ -16,13 +16,13 @@ function load(relative) {
   const { outputText } = ts.transpileModule(source, { compilerOptions: {
     module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX,
   }});
-  const module = { exports: {} };
+  const modul = { exports: {} };
   new Function('require', 'module', 'exports', outputText)(specifier => {
     if (!specifier.startsWith('@/')) return require(specifier);
     const target = specifier.replace('@/', 'src/');
     return load(fs.existsSync(`${target}.tsx`) ? `${target}.tsx` : `${target}.ts`);
-  }, module, module.exports);
-  return module.exports;
+  }, modul, modul.exports);
+  return modul.exports;
 }
 const { StatsTab } = load('src/components/school/detail/tabs/StatsTab.tsx');
 const score = (value, field) => historicalSubjectAverage({ value, field, unit: 'percent_0_100', offerId: '600007774_78-42-M/01' });
