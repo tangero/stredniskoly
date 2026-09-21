@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { osloveni } from '../src/lib/portal-pozvanky.ts';
 import { pozvankaDoPilotu, htmlNaText } from '../src/lib/portal-email.ts';
+import { normalizeKod } from '../src/lib/portal-skol.ts';
 
 // Oslovení se hádá z ředitelova jména. Špatně oslovená ředitelka je horší než
 // neutrální „Dobrý den“, takže se rod odvozuje jen tam, kde je jistý.
@@ -34,28 +35,34 @@ test('tituly se do odvození rodu nepočítají', () => {
 });
 
 // ---------------------------------------------------------------------------
-// Podoba kódu v pozvánce. Rozesílka je jednorázová a neopakovatelná: kdo kód
-// opíše špatně, narazí na „tento kód neznáme“ a na další pokus už nedojde.
+// Podoba pozvánky. Rozesílka je jednorázová a neopakovatelná: co odejde
+// špatně, už se nevrátí.
 // ---------------------------------------------------------------------------
 
 const KOD = 'ABCD-EFGH-JKMN';
 const pozvanka = () =>
   pozvankaDoPilotu({ osloveni: 'Vážený pane řediteli', nazevSkoly: 'Gymnázium Testovací', kod: KOD });
 
-test('za kódem nestojí interpunkce, kterou by ředitel zkopíroval s ním', () => {
-  // Výběr myší zabere znak hned za kódem. Tečka nebo čárka pak doputuje do
-  // pole a přihlášení selže, aniž by bylo poznat proč.
-  const { html } = pozvanka();
-  const zaKodem = html.slice(html.indexOf(KOD) + KOD.length);
-  assert.doesNotMatch(
-    zaKodem.replace(/<\/?[a-z][^>]*>/gi, '').trimStart().slice(0, 1),
-    /[.,;:!?]/,
-    'hned za kódem je interpunkce',
-  );
+test('v odchozím e-mailu nejsou HTML komentáře', () => {
+  // `html` jde rovnou do Resendu. Vývojářská poznámka v šabloně by dorazila
+  // dvaceti ředitelům, kteří si ji přečtou přes „zobrazit originál“ — ve
+  // studeném e-mailu, jehož celý smysl je nevypadat jako podvod.
+  assert.doesNotMatch(pozvanka().html, /<!--/, 'v šabloně zůstal HTML komentář');
 });
 
-test('kód se v textové verzi nelepí na okolní slova', () => {
-  // Textovou verzi čtou klienti bez HTML; kód tam musí zůstat vybratelný sám.
+test('kód je v textu vybratelný samostatně', () => {
+  // Nejde o ověřování: normalizeKod zahodí všechno mimo [A-Z0-9], takže
+  // zkopírovaná tečka přihlášení nerozbije. Jde o čitelnost — kód na vlastním
+  // řádku se opisuje líp než kód uprostřed věty.
+  assert.equal(normalizeKod(`${KOD}.`), normalizeKod(KOD), 'předpoklad testu přestal platit');
   const text = htmlNaText(pozvanka().html);
-  assert.match(text, new RegExp(`(^|\\n|\\s)${KOD}(\\s|\\n|$)`), 'kód není samostatně oddělený');
+  assert.match(text, new RegExp(`(^|\\n)\\s*${KOD}\\s*($|\\n)`), 'kód nestojí na vlastním řádku');
+});
+
+test('šablona pozvánky nese vlastní řádek Od', () => {
+  // Odesílatel patřil jen do odesílací funkce, takže ho náhled v administraci —
+  // jediná kontrola před nevratnou rozesílkou dvaceti ředitelům — neuměl ukázat.
+  // Kdyby se jméno kdykoli ztratilo, odešly by kódy jménem AI asistentky, což je
+  // přesně ten dojem podvodu, kvůli kterému se pozvánka podepisuje člověkem.
+  assert.equal(pozvanka().odesilatel, 'Patrick Zandl – Přijímačky na školu <eda@prijimackynaskolu.cz>');
 });

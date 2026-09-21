@@ -21,9 +21,20 @@ export function zavadec(reactModul, nahrady = {}) {
       cache.set(filename, data);
       return data;
     }
-    const { outputText, diagnostics } = ts.transpileModule(fs.readFileSync(filename, 'utf8'), {
-      // `fileName` se schválně nepředává: podle přípony by TypeScript u `.mjs`
-      // emitoval ESM bez ohledu na `module`, a `export` by spadl v `new Function`.
+    const zdroj = fs.readFileSync(filename, 'utf8');
+    // `import.meta` v CommonJS výstupu projde překladem bez chyby a spadne až
+    // v `new Function` hláškou bez jména souboru. Radši to říct rovnou.
+    if (/\bimport\s*\.\s*meta\b/.test(zdroj)) {
+      throw new Error(`${relative}: obsahuje import.meta, které zavaděč testů neumí přeložit do CommonJS`);
+    }
+    // Přípona rozhoduje dvakrát. Pro `.tsx` je potřeba `jsx`; jenže se zapnutým
+    // `jsx` a bez `fileName` bere TypeScript jako TSX i obyčejné `.ts`, kde pak
+    // generikum `<T>(x: T) => x` skončí jako „JSX element 'T' has no closing tag“.
+    // A `fileName` s příponou `.mjs` by zase vynutilo ESM bez ohledu na `module`,
+    // takže `export` spadne v `new Function`. Syntetické jméno řeší obojí.
+    const jeTsx = filename.endsWith('.tsx');
+    const { outputText, diagnostics } = ts.transpileModule(zdroj, {
+      fileName: jeTsx ? 'modul.tsx' : 'modul.ts',
       reportDiagnostics: true,
       compilerOptions: {
         module: ts.ModuleKind.CommonJS,
@@ -31,8 +42,8 @@ export function zavadec(reactModul, nahrady = {}) {
         // přepíše na indexaci polem a tiše iteruje naprázdno. Test by pak prošel
         // nad kódem, který v Node i v prohlížeči funguje jinak.
         target: ts.ScriptTarget.ES2022,
-        jsx: ts.JsxEmit.ReactJSX,
         esModuleInterop: true,
+        ...(jeTsx ? { jsx: ts.JsxEmit.ReactJSX } : {}),
       },
     });
     // Syntaktickou chybu jinak spolkne a soubor se vykreslí jako prázdný modul.

@@ -372,6 +372,29 @@ function formatSkolneInspis(rocniSkolne: number | null): string | null {
   return `${rocniSkolne.toLocaleString('cs-CZ')} Kč/rok`;
 }
 
+// ----------------------------------------------------------------------------
+// Katalog škol
+// ----------------------------------------------------------------------------
+
+/**
+ * `public/schools_data.json` má skoro 9 MB a `JSON.parse` je synchronní, takže
+ * každé čtení na tu dobu zastaví celou instanci. `getNazevSkoly` přitom visí na
+ * veřejném neautentizovaném `/api/portal/kod`, kde je povoleno 20 dotazů na IP.
+ * Držíme ho proto v paměti modulu, stejně jako to dělá `schoolAnalysisCache`
+ * v src/lib/data.ts. Nová data se projeví po nasazení, což je u katalogu, který
+ * obnovuje datová linka, v pořádku.
+ */
+let katalogCache: Record<string, Array<Record<string, unknown>>> | null = null;
+
+async function nactiKatalog(): Promise<Record<string, Array<Record<string, unknown>>>> {
+  if (!katalogCache) {
+    katalogCache = JSON.parse(
+      await fs.readFile(path.join(process.cwd(), 'public', 'schools_data.json'), 'utf-8'),
+    ) as Record<string, Array<Record<string, unknown>>>;
+  }
+  return katalogCache;
+}
+
 /**
  * Předvyplnění editovatelných polí. Vyplňuje se **jen** to, co škola sama
  * potvrdila (`zaznam`); InspIS jde do `kontext` vedle prázdného pole.
@@ -384,9 +407,7 @@ export async function getPredvyplnenyProfil(
   zaznam: PortalZaznam | null,
 ): Promise<PredvyplnenyProfil | null> {
   // Katalog 2026
-  const schoolsRaw = JSON.parse(
-    await fs.readFile(path.join(process.cwd(), 'public', 'schools_data.json'), 'utf-8'),
-  ) as Record<string, Array<Record<string, unknown>>>;
+  const schoolsRaw = await nactiKatalog();
   const radky = (schoolsRaw['2026'] || []).filter((s) => String(s.redizo) === redizo);
   if (radky.length === 0) return null;
 
@@ -474,9 +495,7 @@ export function nazevSAdresou(nazev: string, ulice: string, obec: string): strin
 /** Název s ulicí a obcí z katalogu 2026 (seznam škol v profilu); prázdný, když škola v katalogu není. */
 export async function getNazevSAdresou(redizo: string): Promise<string> {
   try {
-    const schoolsRaw = JSON.parse(
-      await fs.readFile(path.join(process.cwd(), 'public', 'schools_data.json'), 'utf-8'),
-    ) as Record<string, Array<Record<string, unknown>>>;
+    const schoolsRaw = await nactiKatalog();
     const radek = (schoolsRaw['2026'] || []).find((s) => String(s.redizo) === redizo);
     return radek ? nazevSAdresou(String(radek.nazev), String(radek.ulice || ''), String(radek.obec || '')) : '';
   } catch {
@@ -487,9 +506,7 @@ export async function getNazevSAdresou(redizo: string): Promise<string> {
 /** Název školy z katalogu 2026 (pro čitelný titulek GitHub issue). */
 export async function getNazevSkoly(redizo: string): Promise<string> {
   try {
-    const schoolsRaw = JSON.parse(
-      await fs.readFile(path.join(process.cwd(), 'public', 'schools_data.json'), 'utf-8'),
-    ) as Record<string, Array<Record<string, unknown>>>;
+    const schoolsRaw = await nactiKatalog();
     const radek = (schoolsRaw['2026'] || []).find((s) => String(s.redizo) === redizo);
     return radek ? String(radek.nazev) : '';
   } catch {

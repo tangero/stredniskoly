@@ -61,7 +61,7 @@ test('bez identifikace se formulář vykreslí dál, jen bez hlavičky', () => {
 
 test('škola mimo katalog nevyrobí větu začínající mezerou ani prázdný nadpis', () => {
   // getNazevSkoly hledá v ročníku 2026; po přepnutí katalogu může vrátit prázdno.
-  const html = vykresli({ ...SKOLA, nazev: '' }, 'h4', { nazevSkoly: '' });
+  const html = vykresli({ ...SKOLA, nazev: '' }, 'h4');
   assert.match(html, /Tato škola zatím správce nemá/);
   assert.doesNotMatch(html, /<h4[^>]*><\/h4>/, 'prázdný nadpis v hlavičce');
   // Chybějící název nesmí zahodit zbytek hlavičky: REDIZO je jediný údaj, který
@@ -90,6 +90,16 @@ test('nadpis hlavičky není větší než nadpis, pod kterým visí', () => {
 });
 
 test('kdo přišel odkazem, nečte výzvu o kódu', () => {
+  // Odkaz chodí na rejstříkový e-mail školy; ten člověk žádný kód nedostal.
+  // Zmínka o kódu ho pošle hledat něco, co neexistuje.
   const html = vykresli(SKOLA, 'h4', { auth: { magic: 'token' } });
   assert.match(html, /Pokud to není vaše škola, odkaz nepoužívejte/);
+  assert.match(html, /Kdo odkaz použije první/, 'tělo formuláře mluví o kódu');
+  assert.doesNotMatch(html, /kód/i, 'slovo „kód“ se k příchozímu odkazem nedostane');
+});
+
+test('kdo přišel s kódem, čte o kódu', () => {
+  const html = vykresli(SKOLA, 'h4');
+  assert.match(html, /Kdo kód použije první/);
+  assert.match(html, /Kód tím přestane platit/);
 });

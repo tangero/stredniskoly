@@ -20,9 +20,16 @@ const { getIdentifikaceSkoly: sRozbitymKatalogem } = zavadec(null, {
 // Očekávané hodnoty pocházejí z téhož záznamu, takže test pořád pozná, když se
 // rejstřík vůbec nepoužije — jen nestojí na konkrétní škole.
 const index = JSON.parse(readFileSync('data/msmt_rejstrik/nazvy-oboru.json', 'utf8'));
-const [REDIZO, ZAZNAM] = Object.entries(index.identifikace).find(
-  ([, z]) => z.uplny_nazev && z.ico && z.adresa,
-);
+const zaznamy = Object.entries(index.identifikace ?? {});
+const nalez = zaznamy.find(([, z]) => z.uplny_nazev && z.ico && z.adresa);
+// Bez téhle kontroly by změna tvaru dat shodila celý soubor při importu hláškou
+// „undefined is not iterable“, která nepojmenuje ani soubor, ani chybějící pole.
+if (!nalez) {
+  throw new Error(
+    `data/msmt_rejstrik/nazvy-oboru.json: mezi ${zaznamy.length} záznamy není žádný s uplny_nazev, ico i adresa`,
+  );
+}
+const [REDIZO, ZAZNAM] = nalez;
 
 // Identifikace školy je ozdoba, uplatnění kódu je podstata. Když chybí katalog
 // nebo rejstříkový index, nesmí to shodit ověření platného kódu — škola by se

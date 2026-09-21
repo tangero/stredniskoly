@@ -50,7 +50,9 @@ export default async function PortalMagicLinkPage({ params }: Props) {
     return (
       <PortalObalka>
         <PortalHlavickaSkoly skola={await getIdentifikaceSkoly(redizo, nazev)} vstup="odkaz" />
-        <PortalZalozeni nazevSkoly={nazev} auth={{ magic: token }} />
+        {/* Hlavička nad formulářem školu jmenuje plným názvem z rejstříku;
+            věta ve formuláři by pod ní zopakovala zkratku z katalogu. */}
+        <PortalZalozeni nazevSkoly="" auth={{ magic: token }} />
       </PortalObalka>
     );
   }

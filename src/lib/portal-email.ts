@@ -45,7 +45,8 @@ export function esc(text: string): string {
     .replace(/"/g, '&quot;');
 }
 
-async function odesliEmail(para: { to: string; subject: string; html: string; jmenoOdesilatele?: string }): Promise<boolean> {
+/** `odesilatel` je hotový řádek „Od“ včetně adresy; bez něj píše Eduarda. */
+async function odesliEmail(para: { to: string; subject: string; html: string; odesilatel?: string }): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     console.log(`📧 E-mail by šel na adresu příjemce (RESEND_API_KEY není nastaven) – předmět: ${para.subject}`);
@@ -59,7 +60,7 @@ async function odesliEmail(para: { to: string; subject: string; html: string; jm
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: odesilatel(para.jmenoOdesilatele ?? JMENO_EDUARDA),
+        from: para.odesilatel ?? odesilatel(JMENO_EDUARDA),
         to: para.to,
         reply_to: PODPORA_EMAIL,
         subject: para.subject,
@@ -202,9 +203,19 @@ export interface PozvankaPara {
 }
 
 /** Předmět a HTML pozvánky bez odeslání – kvůli náhledu v administraci. */
-export function pozvankaDoPilotu(para: PozvankaPara): { subject: string; html: string } {
+// Kód stojí sám na konci řádku kvůli čitelnosti a snadnému výběru myší, ne
+// kvůli ověřování: `normalizeKod` z portal-skol.ts zahazuje všechno mimo [A-Z0-9],
+// takže zkopírovaná tečka, čárka ani mezera přihlášení rozbít nemůžou.
+//
+// Do šablony nepatří HTML komentáře: `html` jde rovnou do Resendu a příjemce si
+// je přečte přes „zobrazit originál“.
+export function pozvankaDoPilotu(para: PozvankaPara): { subject: string; html: string; odesilatel: string } {
   const skola = esc(para.nazevSkoly);
   return {
+    // Odesílatel patří k šabloně, ne k odesílací funkci: jediná kontrola před
+    // nevratnou rozesílkou je náhled v administraci, a ten musí ukázat i řádek
+    // „Od“. Právě ten ředitel uvidí dřív než podpis.
+    odesilatel: odesilatel(JMENO_CLOVEK),
     subject: `Profil ${para.nazevSkoly} na Přijímačky na školu: pozvánka do pilotu`,
     html: OBALKA(
       `
@@ -220,8 +231,6 @@ export function pozvankaDoPilotu(para: PozvankaPara): { subject: string; html: s
       <ol>
         <li>Otevřete <a href="https://www.prijimackynaskolu.cz/pro-skoly" style="color: #0074e4;">www.prijimackynaskolu.cz/pro-skoly</a>
             a zadejte kód:<br>
-            <!-- Kód stojí na konci řádku a bez tečky: za ním by ji ředitel při
-                 výběru myší zkopíroval s kódem a přihlášení by selhalo. -->
             <strong style="font-size: 18px; letter-spacing: 1px;">${esc(para.kod)}</strong></li>
         <li>Vyplňte své jméno, funkci a pracovní e-mail. Kdo kód použije první, stane se správcem profilu školy
             a kód tím přestane platit. Proto ho prosím předejte jen tomu, kdo bude profil spravovat.</li>
@@ -252,8 +261,8 @@ export function pozvankaDoPilotu(para: PozvankaPara): { subject: string; html: s
 }
 
 export async function posliPozvankuDoPilotu(para: PozvankaPara & { email: string }): Promise<boolean> {
-  const { subject, html } = pozvankaDoPilotu(para);
-  return odesliEmail({ to: para.email, subject, html, jmenoOdesilatele: JMENO_CLOVEK });
+  const { subject, html, odesilatel: od } = pozvankaDoPilotu(para);
+  return odesliEmail({ to: para.email, subject, html, odesilatel: od });
 }
 
 export async function posliPozvankuEmail(para: { email: string; nazevSkoly: string; pozval: string; odkaz: string }) {

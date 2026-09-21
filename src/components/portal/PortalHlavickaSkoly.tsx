@@ -23,7 +23,11 @@ export const PortalHlavickaSkoly = ({ skola, vstup, uroven = 'h1' }: PortalHlavi
   const odsazeni = uroven === 'h1' ? 'mb-8' : '';
   return (
   <header className={`${odsazeni} rounded-xl border border-[#c9d4e1] bg-slate-50 p-6`}>
-    <p className="text-sm font-medium text-slate-500 mb-2">Správa profilu školy na Přijímačky na školu</p>
+    {/* Nadtitulek zastupuje název stránky. V kartě na /pro-skoly by stál pod
+        nadpisy, které totéž už řekly, takže tam nepatří. */}
+    {uroven === 'h1' && (
+      <p className="text-sm font-medium text-slate-500 mb-2">Správa profilu školy na Přijímačky na školu</p>
+    )}
     {/* Katalog název mít nemusí; prázdný nadpis by zbyl jako mezera. Škola je pak
         určená řádky níž — REDIZO má vždycky a právě podle něj se kód páruje. */}
     {skola.nazev && (

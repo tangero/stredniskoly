@@ -45,7 +45,9 @@ export default async function PortalKodPage({ params }: Props) {
     return (
       <PortalObalka>
         <PortalHlavickaSkoly skola={skola} vstup="kód" />
-        <PortalZalozeni nazevSkoly={nazev} auth={{ kod }} />
+        {/* Hlavička nad formulářem školu jmenuje plným názvem z rejstříku;
+            věta ve formuláři by pod ní zopakovala zkratku z katalogu. */}
+        <PortalZalozeni nazevSkoly="" auth={{ kod }} />
       </PortalObalka>
     );
   }

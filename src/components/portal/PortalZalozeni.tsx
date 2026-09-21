@@ -38,6 +38,10 @@ const POLE = 'w-full rounded-lg border border-[#c9d4e1] px-4 py-3 focus:border-[
 
 export const PortalZalozeni = ({ nazevSkoly, auth, predvyplnenyEmail = '', skola = null, uroven = 'h2' }: PortalZalozeniProps) => {
   const Nadpis = uroven;
+  // Kdo přišel odkazem z rejstříkového e-mailu, žádný kód nedostal. Mluvit na
+  // něj o kódu ho pošle hledat něco, co neexistuje.
+  const vstup = 'magic' in auth ? 'odkaz' : 'kód';
+  const vstupVelky = vstup === 'odkaz' ? 'Odkaz' : 'Kód';
   const [jmeno, setJmeno] = useState('');
   const [funkce, setFunkce] = useState('');
   const [email, setEmail] = useState(predvyplnenyEmail);
@@ -71,14 +75,14 @@ export const PortalZalozeni = ({ nazevSkoly, auth, predvyplnenyEmail = '', skola
     <form onSubmit={odeslat} className="space-y-4 rounded-xl border border-[#e3e9f1] bg-white p-5">
       {/* Chybí-li název, hlavička pořád nese REDIZO, adresu a větu pro případ cizí
           školy — zahodit ji celou kvůli prázdnému nadpisu by sebralo i je. */}
-      {skola && <PortalHlavickaSkoly skola={skola} vstup={'magic' in auth ? 'odkaz' : 'kód'} uroven={uroven} />}
+      {skola && <PortalHlavickaSkoly skola={skola} vstup={vstup} uroven={uroven} />}
       <div>
         <Nadpis className="text-lg font-semibold text-slate-900">Staňte se správcem profilu</Nadpis>
         <p className="mt-1 text-sm text-slate-600">
           {/* S hlavičkou nad sebou nemá smysl školu jmenovat podruhé, navíc jinak:
               hlavička nese plný název z rejstříku, tohle jen zkratku z katalogu. */}
-          {(skola ? '' : nazevSkoly.trim()) || 'Tato škola'} zatím správce nemá. Kdo kód použije první, stane se
-          správcem profilu a může pozvat kolegy. Kód tím přestane platit.
+          {(skola ? '' : nazevSkoly.trim()) || 'Tato škola'} zatím správce nemá. Kdo {vstup} použije první, stane se
+          správcem profilu a může pozvat kolegy. {vstupVelky} tím přestane platit.
         </p>
       </div>
 
