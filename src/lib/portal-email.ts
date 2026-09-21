@@ -30,7 +30,15 @@ export function htmlNaText(html: string): string {
     .replace(/<\/(p|li|h\d)>/gi, '\n\n')
     .replace(/<li>/gi, '- ')
     .replace(/<[^>]+>/g, '')
+    // Entity se musí rozkódovat, jinak se `esc()` z HTML propíše do textové
+    // verze: jméno „Nováková & spol.“ by v ní stálo jako „Nováková &amp; spol.“.
+    // `&amp;` až nakonec, ať se `&amp;lt;` nerozpadne na `<`.
     .replace(/&nbsp;/g, ' ')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
     .replace(/[ \t]+/g, ' ')
     .replace(/\n\s*\n\s*(\n\s*)+/g, '\n\n')
     .trim();

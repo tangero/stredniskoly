@@ -23,8 +23,21 @@ export function PortalObalka({ children }: { children: React.ReactNode }) {
   );
 }
 
-/** Stav „přístup je platný, ale škola není v zobrazovaném období katalogu“. */
-export function PortalSkolaNenalezena({ redizo }: { redizo: string }) {
+/**
+ * Stav „přístup je platný, ale škola není v zobrazovaném období katalogu“.
+ *
+ * `vstup` říká, čím se člověk dostal dovnitř. Ujištění „váš kód zůstává platný“
+ * smí padnout jen tomu, kdo kód opravdu drží: přihlášenému správci by lhalo
+ * o kódu, který je už spotřebovaný, a příchozímu odkazem z rejstříkového
+ * e-mailu by ho poslalo hledat kód, jaký nikdy nedostal.
+ */
+export function PortalSkolaNenalezena({
+  redizo,
+  vstup = 'ucet',
+}: {
+  redizo: string;
+  vstup?: 'kod' | 'odkaz' | 'ucet';
+}) {
   return (
     <PortalObalka>
       <div className="max-w-xl mx-auto py-6 text-center">
@@ -34,8 +47,8 @@ export function PortalSkolaNenalezena({ redizo }: { redizo: string }) {
           upravovat. Napište nám prosím na{' '}
           <a href="mailto:patrick@zandl.cz" className="text-blue-600 hover:underline">
             patrick@zandl.cz
-          </a>{' '}
-          — váš kód zůstává platný.
+          </a>
+          {vstup === 'kod' ? ' — váš kód zůstává platný.' : '.'}
         </p>
         <Link href="/pro-skoly" className="text-blue-600 font-medium hover:underline">
           ← Zpět na Portál pro školy
@@ -59,7 +72,8 @@ export async function PortalEditace({
   const profil = await getPredvyplnenyProfil(redizo, await potvrzenyProfil(redizo));
 
   if (!profil) {
-    return <PortalSkolaNenalezena redizo={redizo} />;
+    // Čím se sem člověk dostal, rozhoduje o tom, jestli mu smíme psát o kódu.
+    return <PortalSkolaNenalezena redizo={redizo} vstup={'kod' in auth ? 'kod' : 'magic' in auth ? 'odkaz' : 'ucet'} />;
   }
 
   return (

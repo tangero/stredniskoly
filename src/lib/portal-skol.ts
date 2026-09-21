@@ -1,6 +1,9 @@
 import { createHmac } from 'crypto';
 import { promises as fs } from 'fs';
 import path from 'path';
+// Relativně s příponou: tenhle modul běží i pod `node --experimental-strip-types`
+// v testech, kde se alias `@/` nerozřeší (stejně jako v admin.ts).
+import { zobrazeneObdobi } from './stav-datovych-sad.ts';
 
 // ============================================================================
 // Portál pro školy (pilot 2027) – typy, validace kódů, validace payloadu
@@ -405,22 +408,29 @@ function nactiKatalog(): Promise<Record<string, Array<Record<string, unknown>>>>
  * Řádky katalogu za zobrazované období. Letopočet se nesmí psát napevno
  * (.claude/CLAUDE.md, pravidlo 3): na tomhle výběru teď visí i to, jestli jde
  * vůbec uplatnit přihlašovací kód, takže zapsaný ročník by po přepnutí katalogu
- * zablokoval celý portál. Období bere z registru datových sad; když ho tam
- * nenajde, sáhne po nejnovějším ročníku, který v katalogu skutečně je.
+ * zablokoval celý portál.
+ *
+ * Období bere ze stejné sady jako stránka školy (`cermat-prihlasky`), aby portál
+ * neklíčoval katalog na jiný ročník než web. Když registr chybí nebo je rozbitý,
+ * sáhne po nejnovějším ročníku, který v katalogu skutečně je.
  */
 async function katalogZobrazenehoObdobi(): Promise<Array<Record<string, unknown>>> {
   const katalog = await nactiKatalog();
-  let obdobi = '';
+  let obdobi: string | null = null;
   try {
-    const registr = JSON.parse(
-      await fs.readFile(path.join(process.cwd(), 'public', 'stav_datovych_sad.json'), 'utf-8'),
-    ) as { sady?: Record<string, { zobrazeno?: { obdobi?: string } }> };
-    obdobi = registr.sady?.['cermat-kapacity']?.zobrazeno?.obdobi ?? '';
+    obdobi = await zobrazeneObdobi('cermat-prihlasky');
   } catch (e) {
     console.error('❌ Portál: stav_datovych_sad.json nejde přečíst', e);
   }
-  if (obdobi && katalog[obdobi]) return katalog[obdobi];
-  const nejnovejsi = Object.keys(katalog).sort().at(-1);
+  if (obdobi && Array.isArray(katalog[obdobi])) return katalog[obdobi];
+  // Zálohou je nejnovější ročník. Klíče se filtrují na čtyřmístné letopočty:
+  // kdyby soubor dostal třeba `_meta`, seřadilo by se navrch a místo pole řádků
+  // by se vrátil objekt — `getNazevSkoly` by pak mlčky vracel prázdno a odmítlo
+  // by se každé uplatnění kódu.
+  const rocniky = Object.keys(katalog)
+    .filter((k) => /^\d{4}$/.test(k) && Array.isArray(katalog[k]))
+    .sort();
+  const nejnovejsi = rocniky.at(-1);
   return nejnovejsi ? katalog[nejnovejsi] : [];
 }
 

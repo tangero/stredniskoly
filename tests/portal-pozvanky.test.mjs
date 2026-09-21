@@ -66,3 +66,10 @@ test('šablona pozvánky nese vlastní řádek Od', () => {
   // přesně ten dojem podvodu, kvůli kterému se pozvánka podepisuje člověkem.
   assert.equal(pozvanka().odesilatel, 'Patrick Zandl – Přijímačky na školu <eda@prijimackynaskolu.cz>');
 });
+
+test('textová verze e-mailu nenechá HTML entity na očích', () => {
+  // Jména správců zadávají lidé sami a `esc()` je pro HTML uvozuje. Bez
+  // rozkódování by v textové části stálo „Nováková &amp; spol.“.
+  const text = htmlNaText('<p>Nováková &amp; spol. &lt;pozor&gt; &quot;citace&quot;</p>');
+  assert.equal(text, 'Nováková & spol. <pozor> "citace"');
+});

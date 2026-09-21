@@ -74,13 +74,75 @@ test('neplatný kód nabídne opravu překlepu, ne kontakt na podporu', () => {
   const html = vykresli({ stav: 'neplatny' });
   assert.match(html, /Tento kód neznáme/);
   assert.doesNotMatch(html, /Staňte se správcem profilu/);
+  // Bez typové stráže by se u stavu mimo HLASKY vykreslila prázdná ambrová karta.
+  assert.doesNotMatch(html, /bg-amber-50/, 'prázdná ambrová karta u neplatného kódu');
 });
 
-test('neznámý stav nevykreslí prázdnou obrazovku', () => {
+test('neznámý stav nevykreslí prázdnou obrazovku ani prázdnou kartu', () => {
   // Odpověď, kterou se nepodařilo přečíst (prázdné tělo z edge, useknutý proud),
   // dřív uložila stav, na který nesedí žádná větev — formulář se vrátil do klidu
   // a neobjevilo se vůbec nic. Renderu musí zbýt aspoň samotný formulář.
   const html = vykresli({});
   assert.match(html, /Použít kód/, 'zmizel i formulář');
   assert.doesNotMatch(html, /Staňte se správcem profilu/);
+  assert.doesNotMatch(html, /bg-amber-50/, 'prázdná ambrová karta u neznámého stavu');
+});
+
+// ---------------------------------------------------------------------------
+// Odeslání formuláře. Render sám o sobě nepokryje to, jak se odpověď API
+// překládá do stavu — a právě tam se rozhoduje, jestli škola uvidí aspoň chybu,
+// nebo obrazovku, na které se po kliknutí nestalo vůbec nic.
+// ---------------------------------------------------------------------------
+
+/** Vrátí `onSubmit` formuláře i seznam stavů, které komponenta nastavila. */
+function pripravOdeslani() {
+  const nastaveno = [];
+  let poradi = 0;
+  const react = {
+    ...React,
+    useState: (init) => {
+      poradi += 1;
+      const i = poradi;
+      // 1 = kód v poli, 2 = ověřuji, 3 = výsledek, 4 = chyba
+      return [i === 1 ? 'ABCD-EFGH-JKMN' : init, (v) => nastaveno.push({ i, v })];
+    },
+  };
+  const { PortalKodForm } = zavadec(react)('src/components/portal/PortalKodForm.tsx');
+  const strom = PortalKodForm({});
+  const najdiForm = (uzel) => {
+    if (!uzel || typeof uzel !== 'object') return null;
+    if (Array.isArray(uzel)) return uzel.map(najdiForm).find(Boolean) ?? null;
+    if (uzel.type === 'form') return uzel;
+    return najdiForm(uzel.props?.children);
+  };
+  const form = najdiForm(strom.props.children);
+  assert.ok(form, 'formulář se ve stromu nenašel');
+  return { odeslat: form.props.onSubmit, nastaveno };
+}
+
+test('nečitelná odpověď skončí hláškou, ne tichou obrazovkou', async () => {
+  // HTTP 200 s tělem, které není JSON (mezistránka CDN, useknutý proud) dá `{}`.
+  // Bez ošetření by se uložil stav, na který nesedí žádná větev vykreslení.
+  const { odeslat, nastaveno } = pripravOdeslani();
+  global.fetch = async () => ({ ok: true, json: async () => { throw new Error('není JSON'); } });
+  try {
+    await odeslat({ preventDefault() {} });
+  } finally {
+    delete global.fetch;
+  }
+  const chyby = nastaveno.filter((z) => z.i === 4 && z.v);
+  assert.equal(chyby.length, 1, 'chybová hláška se nenastavila');
+  assert.match(chyby[0].v, /nepodařilo ověřit/i);
+  assert.equal(nastaveno.filter((z) => z.i === 3 && z.v).length, 0, 'uložil se nepoužitelný výsledek');
+});
+
+test('výpadek sítě škola pozná', async () => {
+  const { odeslat, nastaveno } = pripravOdeslani();
+  global.fetch = async () => { throw new Error('ECONNREFUSED'); };
+  try {
+    await odeslat({ preventDefault() {} });
+  } finally {
+    delete global.fetch;
+  }
+  assert.match(nastaveno.find((z) => z.i === 4 && z.v)?.v ?? '', /připojení/i);
 });

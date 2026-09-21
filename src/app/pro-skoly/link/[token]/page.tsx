@@ -44,7 +44,7 @@ export default async function PortalMagicLinkPage({ params }: Props) {
   if (prihlaseny?.role.some((r) => r.redizo === redizo)) redirect(`/pro-skoly/profil?skola=${redizo}`);
 
   const nazev = await getNazevSkoly(redizo);
-  if (!nazev) return <PortalSkolaNenalezena redizo={redizo} />;
+  if (!nazev) return <PortalSkolaNenalezena redizo={redizo} vstup="odkaz" />;
 
   if (!(await spravceSkoly(cteni, redizo))) {
     return (
