@@ -8,6 +8,11 @@ z historie commitů.
 
 ## [Unreleased]
 
+### Přidáno
+- **Manažerské shrnutí na `/o-projektu`** (`src/lib/o-projektu.ts`, `src/lib/naklady-vyvoje.ts`) — neodkazovaná stránka pro školy, úřady a novináře: co web dělá, jakých 20 datových sad používá a s jakou automatizací, jak se data dostanou na web, jak je web postavený, časová osa vývoje a odhad ceny vývoje u dodavatele. Stránka má `robots: noindex`, není v mapě webu (statické adresy staví generátor výčtem) a nevede na ni odkaz z navigace ani z patičky; ke zveřejnění stačí odebrat `robots` a doplnit adresu do `buildSitemapPaths`
+- **Čísla se čtou z týchž souborů jako zbytek webu**, ne napevno: počty škol, nabídek a ročníků z katalogu, přehled zdrojů z registru datových sad, časová osa z veřejného changelogu. Napevno zůstává jen rozsah kódu a odhad ceny, obojí s datem měření, protože repozitář v nasazení není
+- **Odhad ceny vývoje jako rozepsaný model**, ne jedno číslo: dvanáct funkčních bloků s odhadem člověkodnů a zdůvodněním, režie vedení projektu, tři sazby a vypsané výhrady včetně té, že poměr 194 řádků na člověkoden je na horní hranici produktivity a odhad tedy spíš podhodnocuje. Vychází 397 člověkodnů a 3,8 až 5,7 mil. Kč. Skutečné náklady mají na stránce označená místa k doplnění, protože je nikdo neměřil
+
 ## [2.14.0] - 2026-09-19
 
 ### Přidáno
