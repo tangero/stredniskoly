@@ -119,6 +119,181 @@
    "type": "choice"
   }
  },
+ "086c2914f5234d6833fbc56432fd6078": {
+  "_cena": 9.2904e-05,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.97,
+   "probabilities": {
+    "dod": 0.02,
+    "jine": 0.98,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "jine",
+   "confidence": 0.97,
+   "probabilities": {
+    "dod": 0.02,
+    "jine": 0.98,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.82,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "088028eabf5552559cc5b6ca76ebb262": {
+  "_cena": 0.000175644,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.45,
+   "probabilities": {
+    "dod": 0.41,
+    "jine": 0.59,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_4": {
+   "choice": "dod",
+   "confidence": 0.99,
+   "probabilities": {
+    "dod": 1,
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_5": {
+   "choice": "jine",
+   "confidence": 0.7,
+   "probabilities": {
+    "dod": 0.13,
+    "jine": 0.78,
+    "lhuta": 0.09,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_6": {
+   "choice": "jine",
+   "confidence": 0.85,
+   "probabilities": {
+    "dod": 0.1,
+    "jine": 0.88,
+    "lhuta": 0.01,
+    "registrace": 0.01
+   },
+   "type": "choice"
+  },
+  "datum_7": {
+   "choice": "jine",
+   "confidence": 0.59,
+   "probabilities": {
+    "dod": 0.21,
+    "jine": 0.7,
+    "lhuta": 0.07,
+    "registrace": 0.02
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.88,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
  "0abb08f1e35203181e8ef971ca287ad7": {
   "_cena": 7.2576e-05,
   "datum_1": {
@@ -332,6 +507,104 @@
    "type": "choice"
   }
  },
+ "1b5e4bf2bdf29a7bebf210f6c7cc436c": {
+  "_cena": 7.707e-05,
+  "datum_1": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.81,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 0.98,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 0.99,
+    "zmeneno": 0.01,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "2389e4cb264cdd41ad3876bd1c6c975d": {
+  "_cena": 7.8792e-05,
+  "datum_1": {
+   "choice": "talentove_zkousky",
+   "confidence": 1,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0,
+    "talentove_zkousky": 1
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.82,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "talentove_zkousky",
+   "confidence": 0.97,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0.98,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0.02
+   },
+   "type": "choice"
+  }
+ },
  "25cf568bfe32a33a61a3a2cca1c8c5f8": {
   "_cena": 6.2034e-05,
   "pro_uchazece": {
@@ -432,6 +705,55 @@
     "prijimaci_rizeni": 0,
     "prijimacky_nanecisto": 0,
     "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "2af798f3909e7f6aa0ff3f1b36e14ac0": {
+  "_cena": 6.6822e-05,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.96,
+   "probabilities": {
+    "jine": 0.97,
+    "lhuta": 0.01,
+    "pripravny_kurz": 0.02,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.65,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 0.98,
+   "probabilities": {
+    "nejasne": 0.01,
+    "oznameno": 0.99,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.99,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 1,
     "setkani_uchazecu": 0,
     "talentove_zkousky": 0,
     "terminy_jpz": 0,
@@ -676,6 +998,1175 @@
    "type": "choice"
   }
  },
+ "2eedcd9a2cbc2a08db7a285b0666365a": {
+  "_cena": 0.000128982,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.68,
+   "probabilities": {
+    "jine": 0.76,
+    "lhuta": 0.01,
+    "prijimacky_nanecisto": 0.23,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "jine",
+   "confidence": 0.7,
+   "probabilities": {
+    "jine": 0.77,
+    "lhuta": 0.01,
+    "prijimacky_nanecisto": 0.21,
+    "registrace": 0.01
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "jine",
+   "confidence": 0.98,
+   "probabilities": {
+    "jine": 0.99,
+    "lhuta": 0,
+    "prijimacky_nanecisto": 0.01,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_4": {
+   "choice": "jine",
+   "confidence": 0.88,
+   "probabilities": {
+    "jine": 0.91,
+    "lhuta": 0.02,
+    "prijimacky_nanecisto": 0.06,
+    "registrace": 0.01
+   },
+   "type": "choice"
+  },
+  "datum_5": {
+   "choice": "jine",
+   "confidence": 0.82,
+   "probabilities": {
+    "jine": 0.85,
+    "lhuta": 0.01,
+    "prijimacky_nanecisto": 0.13,
+    "registrace": 0.01
+   },
+   "type": "choice"
+  },
+  "datum_6": {
+   "choice": "jine",
+   "confidence": 0.91,
+   "probabilities": {
+    "jine": 0.94,
+    "lhuta": 0.01,
+    "prijimacky_nanecisto": 0.05,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.73,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "prijimacky_nanecisto",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 1,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "2fe1eef3f77a6689f3446850851c48ef": {
+  "_cena": 6.8838e-05,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.92,
+   "probabilities": {
+    "jine": 0.94,
+    "lhuta": 0.01,
+    "pripravny_kurz": 0.04,
+    "registrace": 0.01
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.65,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 0.98,
+   "probabilities": {
+    "nejasne": 0.01,
+    "oznameno": 0.99,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.99,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0.01,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0.99,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "31c65b7cab9c70d041077637ac8e3e14": {
+  "_cena": 7.3542e-05,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 1,
+   "probabilities": {
+    "jine": 1,
+    "lhuta": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.93,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "zruseno",
+   "confidence": 0.53,
+   "probabilities": {
+    "nejasne": 0.01,
+    "oznameno": 0.34,
+    "zmeneno": 0.01,
+    "zruseno": 0.64
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.57,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0.04,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0.04,
+    "prijimacky_nanecisto": 0.31,
+    "pripravny_kurz": 0.61,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "38c95d24c82e0682e1c06999becba018": {
+  "_cena": 0.000106722,
+  "datum_1": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.77,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 0.99,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "3a31e36ac75bcd5b3c0857091647494a": {
+  "_cena": 0.00046368,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.96,
+   "probabilities": {
+    "jine": 0.98,
+    "lhuta": 0,
+    "pripravny_kurz": 0.01,
+    "registrace": 0.01
+   },
+   "type": "choice"
+  },
+  "datum_10": {
+   "choice": "jine",
+   "confidence": 0.85,
+   "probabilities": {
+    "jine": 0.89,
+    "lhuta": 0.02,
+    "pripravny_kurz": 0.07,
+    "registrace": 0.02
+   },
+   "type": "choice"
+  },
+  "datum_11": {
+   "choice": "jine",
+   "confidence": 0.79,
+   "probabilities": {
+    "jine": 0.85,
+    "lhuta": 0.03,
+    "pripravny_kurz": 0.09,
+    "registrace": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_12": {
+   "choice": "jine",
+   "confidence": 0.81,
+   "probabilities": {
+    "jine": 0.86,
+    "lhuta": 0.02,
+    "pripravny_kurz": 0.07,
+    "registrace": 0.05
+   },
+   "type": "choice"
+  },
+  "datum_13": {
+   "choice": "jine",
+   "confidence": 0.88,
+   "probabilities": {
+    "jine": 0.9,
+    "lhuta": 0.02,
+    "pripravny_kurz": 0.04,
+    "registrace": 0.04
+   },
+   "type": "choice"
+  },
+  "datum_14": {
+   "choice": "jine",
+   "confidence": 0.87,
+   "probabilities": {
+    "jine": 0.9,
+    "lhuta": 0.02,
+    "pripravny_kurz": 0.05,
+    "registrace": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_15": {
+   "choice": "jine",
+   "confidence": 0.83,
+   "probabilities": {
+    "jine": 0.88,
+    "lhuta": 0.02,
+    "pripravny_kurz": 0.07,
+    "registrace": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_16": {
+   "choice": "jine",
+   "confidence": 0.81,
+   "probabilities": {
+    "jine": 0.86,
+    "lhuta": 0.04,
+    "pripravny_kurz": 0.05,
+    "registrace": 0.05
+   },
+   "type": "choice"
+  },
+  "datum_17": {
+   "choice": "jine",
+   "confidence": 0.86,
+   "probabilities": {
+    "jine": 0.9,
+    "lhuta": 0.02,
+    "pripravny_kurz": 0.05,
+    "registrace": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_18": {
+   "choice": "jine",
+   "confidence": 0.78,
+   "probabilities": {
+    "jine": 0.84,
+    "lhuta": 0.05,
+    "pripravny_kurz": 0.08,
+    "registrace": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_19": {
+   "choice": "jine",
+   "confidence": 0.85,
+   "probabilities": {
+    "jine": 0.88,
+    "lhuta": 0.03,
+    "pripravny_kurz": 0.05,
+    "registrace": 0.04
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "jine",
+   "confidence": 0.82,
+   "probabilities": {
+    "jine": 0.86,
+    "lhuta": 0.02,
+    "pripravny_kurz": 0.06,
+    "registrace": 0.06
+   },
+   "type": "choice"
+  },
+  "datum_20": {
+   "choice": "jine",
+   "confidence": 0.86,
+   "probabilities": {
+    "jine": 0.9,
+    "lhuta": 0.02,
+    "pripravny_kurz": 0.05,
+    "registrace": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_21": {
+   "choice": "jine",
+   "confidence": 0.8,
+   "probabilities": {
+    "jine": 0.84,
+    "lhuta": 0.05,
+    "pripravny_kurz": 0.03,
+    "registrace": 0.08
+   },
+   "type": "choice"
+  },
+  "datum_22": {
+   "choice": "jine",
+   "confidence": 0.83,
+   "probabilities": {
+    "jine": 0.87,
+    "lhuta": 0.02,
+    "pripravny_kurz": 0.05,
+    "registrace": 0.06
+   },
+   "type": "choice"
+  },
+  "datum_23": {
+   "choice": "jine",
+   "confidence": 0.89,
+   "probabilities": {
+    "jine": 0.92,
+    "lhuta": 0.02,
+    "pripravny_kurz": 0.03,
+    "registrace": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_24": {
+   "choice": "jine",
+   "confidence": 0.83,
+   "probabilities": {
+    "jine": 0.88,
+    "lhuta": 0.02,
+    "pripravny_kurz": 0.06,
+    "registrace": 0.04
+   },
+   "type": "choice"
+  },
+  "datum_25": {
+   "choice": "jine",
+   "confidence": 0.77,
+   "probabilities": {
+    "jine": 0.83,
+    "lhuta": 0.03,
+    "pripravny_kurz": 0.1,
+    "registrace": 0.04
+   },
+   "type": "choice"
+  },
+  "datum_26": {
+   "choice": "jine",
+   "confidence": 0.83,
+   "probabilities": {
+    "jine": 0.88,
+    "lhuta": 0.02,
+    "pripravny_kurz": 0.06,
+    "registrace": 0.04
+   },
+   "type": "choice"
+  },
+  "datum_27": {
+   "choice": "jine",
+   "confidence": 0.82,
+   "probabilities": {
+    "jine": 0.87,
+    "lhuta": 0.03,
+    "pripravny_kurz": 0.07,
+    "registrace": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_28": {
+   "choice": "jine",
+   "confidence": 0.82,
+   "probabilities": {
+    "jine": 0.87,
+    "lhuta": 0.04,
+    "pripravny_kurz": 0.06,
+    "registrace": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_29": {
+   "choice": "jine",
+   "confidence": 0.83,
+   "probabilities": {
+    "jine": 0.87,
+    "lhuta": 0.03,
+    "pripravny_kurz": 0.07,
+    "registrace": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "jine",
+   "confidence": 0.78,
+   "probabilities": {
+    "jine": 0.84,
+    "lhuta": 0.03,
+    "pripravny_kurz": 0.06,
+    "registrace": 0.07
+   },
+   "type": "choice"
+  },
+  "datum_30": {
+   "choice": "jine",
+   "confidence": 0.86,
+   "probabilities": {
+    "jine": 0.9,
+    "lhuta": 0.02,
+    "pripravny_kurz": 0.05,
+    "registrace": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_31": {
+   "choice": "jine",
+   "confidence": 0.75,
+   "probabilities": {
+    "jine": 0.8,
+    "lhuta": 0.06,
+    "pripravny_kurz": 0.05,
+    "registrace": 0.09
+   },
+   "type": "choice"
+  },
+  "datum_32": {
+   "choice": "registrace",
+   "confidence": 1,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0,
+    "pripravny_kurz": 0,
+    "registrace": 1
+   },
+   "type": "choice"
+  },
+  "datum_33": {
+   "choice": "jine",
+   "confidence": 0.77,
+   "probabilities": {
+    "jine": 0.83,
+    "lhuta": 0.01,
+    "pripravny_kurz": 0.09,
+    "registrace": 0.07
+   },
+   "type": "choice"
+  },
+  "datum_34": {
+   "choice": "jine",
+   "confidence": 0.86,
+   "probabilities": {
+    "jine": 0.89,
+    "lhuta": 0.01,
+    "pripravny_kurz": 0.05,
+    "registrace": 0.05
+   },
+   "type": "choice"
+  },
+  "datum_35": {
+   "choice": "jine",
+   "confidence": 0.8,
+   "probabilities": {
+    "jine": 0.86,
+    "lhuta": 0.01,
+    "pripravny_kurz": 0.08,
+    "registrace": 0.05
+   },
+   "type": "choice"
+  },
+  "datum_4": {
+   "choice": "jine",
+   "confidence": 0.82,
+   "probabilities": {
+    "jine": 0.87,
+    "lhuta": 0.03,
+    "pripravny_kurz": 0.07,
+    "registrace": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_5": {
+   "choice": "jine",
+   "confidence": 0.78,
+   "probabilities": {
+    "jine": 0.83,
+    "lhuta": 0.03,
+    "pripravny_kurz": 0.1,
+    "registrace": 0.04
+   },
+   "type": "choice"
+  },
+  "datum_6": {
+   "choice": "jine",
+   "confidence": 0.76,
+   "probabilities": {
+    "jine": 0.82,
+    "lhuta": 0.03,
+    "pripravny_kurz": 0.06,
+    "registrace": 0.09
+   },
+   "type": "choice"
+  },
+  "datum_7": {
+   "choice": "jine",
+   "confidence": 0.83,
+   "probabilities": {
+    "jine": 0.87,
+    "lhuta": 0.03,
+    "pripravny_kurz": 0.07,
+    "registrace": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_8": {
+   "choice": "jine",
+   "confidence": 0.85,
+   "probabilities": {
+    "jine": 0.89,
+    "lhuta": 0.04,
+    "pripravny_kurz": 0.05,
+    "registrace": 0.02
+   },
+   "type": "choice"
+  },
+  "datum_9": {
+   "choice": "jine",
+   "confidence": 0.78,
+   "probabilities": {
+    "jine": 0.84,
+    "lhuta": 0.04,
+    "pripravny_kurz": 0.04,
+    "registrace": 0.08
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.81,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 0.97,
+   "probabilities": {
+    "nejasne": 0.02,
+    "oznameno": 0.98,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "pripravny_kurz",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 1,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "3c21f84c98ab858dd2c8b9c7404092cb": {
+  "_cena": 7.8792e-05,
+  "datum_1": {
+   "choice": "pripravny_kurz",
+   "confidence": 1,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0,
+    "pripravny_kurz": 1,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.57,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "pripravny_kurz",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 1,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "44a812c0cd7e90bbd8ef365615fb4fe1": {
+  "_cena": 0.000749406,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.95,
+   "probabilities": {
+    "jine": 0.96,
+    "lhuta": 0,
+    "pripravny_kurz": 0.01,
+    "registrace": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_10": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.98,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0,
+    "pripravny_kurz": 0.99,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_11": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.99,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0,
+    "pripravny_kurz": 0.99,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_12": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.97,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0,
+    "pripravny_kurz": 0.99,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_13": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.98,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0,
+    "pripravny_kurz": 0.99,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_14": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.97,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0,
+    "pripravny_kurz": 0.98,
+    "registrace": 0.01
+   },
+   "type": "choice"
+  },
+  "datum_15": {
+   "choice": "pripravny_kurz",
+   "confidence": 1,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0,
+    "pripravny_kurz": 1,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_16": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.99,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0,
+    "pripravny_kurz": 0.99,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_17": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.98,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0,
+    "pripravny_kurz": 0.99,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_18": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.97,
+   "probabilities": {
+    "jine": 0.02,
+    "lhuta": 0,
+    "pripravny_kurz": 0.98,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_19": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.91,
+   "probabilities": {
+    "jine": 0.06,
+    "lhuta": 0,
+    "pripravny_kurz": 0.9400000000000001,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.97,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0,
+    "pripravny_kurz": 0.98,
+    "registrace": 0.01
+   },
+   "type": "choice"
+  },
+  "datum_20": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.97,
+   "probabilities": {
+    "jine": 0.02,
+    "lhuta": 0,
+    "pripravny_kurz": 0.98,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_21": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.96,
+   "probabilities": {
+    "jine": 0.02,
+    "lhuta": 0,
+    "pripravny_kurz": 0.97,
+    "registrace": 0.01
+   },
+   "type": "choice"
+  },
+  "datum_22": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.95,
+   "probabilities": {
+    "jine": 0.02,
+    "lhuta": 0,
+    "pripravny_kurz": 0.97,
+    "registrace": 0.01
+   },
+   "type": "choice"
+  },
+  "datum_23": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.96,
+   "probabilities": {
+    "jine": 0.03,
+    "lhuta": 0,
+    "pripravny_kurz": 0.97,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_24": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.96,
+   "probabilities": {
+    "jine": 0.03,
+    "lhuta": 0,
+    "pripravny_kurz": 0.97,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_25": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.95,
+   "probabilities": {
+    "jine": 0.04,
+    "lhuta": 0,
+    "pripravny_kurz": 0.96,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_26": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.95,
+   "probabilities": {
+    "jine": 0.04,
+    "lhuta": 0,
+    "pripravny_kurz": 0.96,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_27": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.96,
+   "probabilities": {
+    "jine": 0.03,
+    "lhuta": 0,
+    "pripravny_kurz": 0.97,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_28": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.96,
+   "probabilities": {
+    "jine": 0.03,
+    "lhuta": 0,
+    "pripravny_kurz": 0.97,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_29": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.96,
+   "probabilities": {
+    "jine": 0.03,
+    "lhuta": 0,
+    "pripravny_kurz": 0.97,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.96,
+   "probabilities": {
+    "jine": 0.02,
+    "lhuta": 0.01,
+    "pripravny_kurz": 0.97,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_30": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.98,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0,
+    "pripravny_kurz": 0.99,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_31": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.96,
+   "probabilities": {
+    "jine": 0.02,
+    "lhuta": 0,
+    "pripravny_kurz": 0.97,
+    "registrace": 0.01
+   },
+   "type": "choice"
+  },
+  "datum_32": {
+   "choice": "registrace",
+   "confidence": 0.97,
+   "probabilities": {
+    "jine": 0.02,
+    "lhuta": 0,
+    "pripravny_kurz": 0,
+    "registrace": 0.98
+   },
+   "type": "choice"
+  },
+  "datum_33": {
+   "choice": "jine",
+   "confidence": 0.76,
+   "probabilities": {
+    "jine": 0.82,
+    "lhuta": 0.01,
+    "pripravny_kurz": 0.1,
+    "registrace": 0.07
+   },
+   "type": "choice"
+  },
+  "datum_34": {
+   "choice": "jine",
+   "confidence": 0.71,
+   "probabilities": {
+    "jine": 0.79,
+    "lhuta": 0.02,
+    "pripravny_kurz": 0.13,
+    "registrace": 0.06
+   },
+   "type": "choice"
+  },
+  "datum_35": {
+   "choice": "jine",
+   "confidence": 0.73,
+   "probabilities": {
+    "jine": 0.79,
+    "lhuta": 0.04,
+    "pripravny_kurz": 0.06,
+    "registrace": 0.11
+   },
+   "type": "choice"
+  },
+  "datum_4": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.98,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0,
+    "pripravny_kurz": 0.99,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_5": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.97,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0.01,
+    "pripravny_kurz": 0.98,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_6": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.99,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0,
+    "pripravny_kurz": 0.99,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_7": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.99,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0,
+    "pripravny_kurz": 0.99,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_8": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.99,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0,
+    "pripravny_kurz": 0.99,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_9": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.98,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0,
+    "pripravny_kurz": 0.99,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.81,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 0.98,
+   "probabilities": {
+    "nejasne": 0.01,
+    "oznameno": 0.99,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "pripravny_kurz",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 1,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
  "4f126ad124df16d88bdbd5d7d588a695": {
   "_cena": 7.6188e-05,
   "datum_1": {
@@ -725,6 +2216,1026 @@
    "type": "choice"
   }
  },
+ "555a0ba51be38502c3679ed3f481dffa": {
+  "_cena": 7.7616e-05,
+  "datum_1": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.78,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "zmeneno",
+   "confidence": 0.55,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 0.33,
+    "zmeneno": 0.67,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "5803ede526a8cb24d929b088c12f118f": {
+  "_cena": 9.8952e-05,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.82,
+   "probabilities": {
+    "dod": 0.13,
+    "jine": 0.87,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "jine",
+   "confidence": 0.87,
+   "probabilities": {
+    "dod": 0.08,
+    "jine": 0.91,
+    "lhuta": 0,
+    "registrace": 0.01
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.82,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "5c80e91ed2080a6909d029077e1208f4": {
+  "_cena": 0.000159558,
+  "datum_1": {
+   "choice": "prijimacky_nanecisto",
+   "confidence": 0.95,
+   "probabilities": {
+    "jine": 0.02,
+    "lhuta": 0.02,
+    "prijimacky_nanecisto": 0.96,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "prijimacky_nanecisto",
+   "confidence": 1,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0,
+    "prijimacky_nanecisto": 1,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "jine",
+   "confidence": 0.56,
+   "probabilities": {
+    "jine": 0.67,
+    "lhuta": 0,
+    "prijimacky_nanecisto": 0.32,
+    "registrace": 0.01
+   },
+   "type": "choice"
+  },
+  "datum_4": {
+   "choice": "jine",
+   "confidence": 0.93,
+   "probabilities": {
+    "jine": 0.95,
+    "lhuta": 0.02,
+    "prijimacky_nanecisto": 0.03,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_5": {
+   "choice": "jine",
+   "confidence": 0.94,
+   "probabilities": {
+    "jine": 0.95,
+    "lhuta": 0.01,
+    "prijimacky_nanecisto": 0.03,
+    "registrace": 0.01
+   },
+   "type": "choice"
+  },
+  "datum_6": {
+   "choice": "lhuta",
+   "confidence": 0.77,
+   "probabilities": {
+    "jine": 0.14,
+    "lhuta": 0.83,
+    "prijimacky_nanecisto": 0.03,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.73,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "prijimacky_nanecisto",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 1,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "5cda01d9e9e72df8d0812b1a4f12bd01": {
+  "_cena": 0.000138726,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.76,
+   "probabilities": {
+    "dod": 0.18,
+    "jine": 0.82,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "dod",
+   "confidence": 0.4,
+   "probabilities": {
+    "dod": 0.55,
+    "jine": 0.45,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "jine",
+   "confidence": 0.39,
+   "probabilities": {
+    "dod": 0.45,
+    "jine": 0.55,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_4": {
+   "choice": "jine",
+   "confidence": 0.57,
+   "probabilities": {
+    "dod": 0.32,
+    "jine": 0.67,
+    "lhuta": 0.01,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_5": {
+   "choice": "jine",
+   "confidence": 0.79,
+   "probabilities": {
+    "dod": 0.14,
+    "jine": 0.85,
+    "lhuta": 0.01,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_6": {
+   "choice": "jine",
+   "confidence": 0.62,
+   "probabilities": {
+    "dod": 0.28,
+    "jine": 0.71,
+    "lhuta": 0.01,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_7": {
+   "choice": "jine",
+   "confidence": 0.7,
+   "probabilities": {
+    "dod": 0.21,
+    "jine": 0.78,
+    "lhuta": 0.01,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.87,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "5e070114f388de36bee9c49fd20d3a61": {
+  "_cena": 0.000261786,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.95,
+   "probabilities": {
+    "jine": 0.97,
+    "lhuta": 0.03,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_10": {
+   "choice": "lhuta",
+   "confidence": 0.99,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0.99,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_11": {
+   "choice": "jine",
+   "confidence": 0.54,
+   "probabilities": {
+    "jine": 0.65,
+    "lhuta": 0.35,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "lhuta",
+   "confidence": 0.99,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0.99,
+    "registrace": 0.01,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "lhuta",
+   "confidence": 0.99,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0.99,
+    "registrace": 0.01,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_4": {
+   "choice": "lhuta",
+   "confidence": 0.98,
+   "probabilities": {
+    "jine": 0.02,
+    "lhuta": 0.98,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_5": {
+   "choice": "lhuta",
+   "confidence": 0.94,
+   "probabilities": {
+    "jine": 0.04,
+    "lhuta": 0.96,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_6": {
+   "choice": "lhuta",
+   "confidence": 0.98,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0.99,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_7": {
+   "choice": "lhuta",
+   "confidence": 0.92,
+   "probabilities": {
+    "jine": 0.06,
+    "lhuta": 0.94,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_8": {
+   "choice": "lhuta",
+   "confidence": 0.97,
+   "probabilities": {
+    "jine": 0.02,
+    "lhuta": 0.98,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_9": {
+   "choice": "lhuta",
+   "confidence": 0.69,
+   "probabilities": {
+    "jine": 0.23,
+    "lhuta": 0.77,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.61,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "prijimaci_rizeni",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 1,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "608c9b10ec0ff544223ef5bd74a96ee5": {
+  "_cena": 0.000166236,
+  "datum_1": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.98,
+   "probabilities": {
+    "jine": 0.02,
+    "lhuta": 0,
+    "pripravny_kurz": 0.98,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.97,
+   "probabilities": {
+    "jine": 0.02,
+    "lhuta": 0,
+    "pripravny_kurz": 0.98,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.99,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0,
+    "pripravny_kurz": 0.99,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_4": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.99,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0,
+    "pripravny_kurz": 0.99,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_5": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.95,
+   "probabilities": {
+    "jine": 0.04,
+    "lhuta": 0,
+    "pripravny_kurz": 0.96,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_6": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.98,
+   "probabilities": {
+    "jine": 0.02,
+    "lhuta": 0,
+    "pripravny_kurz": 0.98,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.57,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.76,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0.06,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0.79,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0.15,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "60d67e38829639bbddc46157ab4c7d9e": {
+  "_cena": 0.000474642,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.56,
+   "probabilities": {
+    "jine": 0.67,
+    "lhuta": 0.01,
+    "pripravny_kurz": 0.2,
+    "registrace": 0.11
+   },
+   "type": "choice"
+  },
+  "datum_10": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.34,
+   "probabilities": {
+    "jine": 0.29,
+    "lhuta": 0.15,
+    "pripravny_kurz": 0.5,
+    "registrace": 0.06
+   },
+   "type": "choice"
+  },
+  "datum_11": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.27,
+   "probabilities": {
+    "jine": 0.32,
+    "lhuta": 0.17,
+    "pripravny_kurz": 0.44,
+    "registrace": 0.07
+   },
+   "type": "choice"
+  },
+  "datum_12": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.48,
+   "probabilities": {
+    "jine": 0.24,
+    "lhuta": 0.08,
+    "pripravny_kurz": 0.61,
+    "registrace": 0.07
+   },
+   "type": "choice"
+  },
+  "datum_13": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.45,
+   "probabilities": {
+    "jine": 0.26,
+    "lhuta": 0.09,
+    "pripravny_kurz": 0.6,
+    "registrace": 0.05
+   },
+   "type": "choice"
+  },
+  "datum_14": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.48,
+   "probabilities": {
+    "jine": 0.25,
+    "lhuta": 0.1,
+    "pripravny_kurz": 0.61,
+    "registrace": 0.04
+   },
+   "type": "choice"
+  },
+  "datum_15": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.39,
+   "probabilities": {
+    "jine": 0.27,
+    "lhuta": 0.13,
+    "pripravny_kurz": 0.54,
+    "registrace": 0.06
+   },
+   "type": "choice"
+  },
+  "datum_16": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.27,
+   "probabilities": {
+    "jine": 0.36,
+    "lhuta": 0.12,
+    "pripravny_kurz": 0.45,
+    "registrace": 0.07
+   },
+   "type": "choice"
+  },
+  "datum_17": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.32,
+   "probabilities": {
+    "jine": 0.33,
+    "lhuta": 0.12,
+    "pripravny_kurz": 0.48,
+    "registrace": 0.07
+   },
+   "type": "choice"
+  },
+  "datum_18": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.16,
+   "probabilities": {
+    "jine": 0.36,
+    "lhuta": 0.22,
+    "pripravny_kurz": 0.37,
+    "registrace": 0.05
+   },
+   "type": "choice"
+  },
+  "datum_19": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.37,
+   "probabilities": {
+    "jine": 0.31,
+    "lhuta": 0.11,
+    "pripravny_kurz": 0.52,
+    "registrace": 0.06
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.43,
+   "probabilities": {
+    "jine": 0.29,
+    "lhuta": 0.06,
+    "pripravny_kurz": 0.58,
+    "registrace": 0.07
+   },
+   "type": "choice"
+  },
+  "datum_20": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.33,
+   "probabilities": {
+    "jine": 0.3,
+    "lhuta": 0.14,
+    "pripravny_kurz": 0.5,
+    "registrace": 0.06
+   },
+   "type": "choice"
+  },
+  "datum_21": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.19,
+   "probabilities": {
+    "jine": 0.31,
+    "lhuta": 0.19,
+    "pripravny_kurz": 0.39,
+    "registrace": 0.11
+   },
+   "type": "choice"
+  },
+  "datum_22": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.39,
+   "probabilities": {
+    "jine": 0.31,
+    "lhuta": 0.07,
+    "pripravny_kurz": 0.54,
+    "registrace": 0.08
+   },
+   "type": "choice"
+  },
+  "datum_23": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.41,
+   "probabilities": {
+    "jine": 0.28,
+    "lhuta": 0.11,
+    "pripravny_kurz": 0.56,
+    "registrace": 0.05
+   },
+   "type": "choice"
+  },
+  "datum_24": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.43,
+   "probabilities": {
+    "jine": 0.28,
+    "lhuta": 0.1,
+    "pripravny_kurz": 0.57,
+    "registrace": 0.05
+   },
+   "type": "choice"
+  },
+  "datum_25": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.33,
+   "probabilities": {
+    "jine": 0.31,
+    "lhuta": 0.14,
+    "pripravny_kurz": 0.49,
+    "registrace": 0.06
+   },
+   "type": "choice"
+  },
+  "datum_26": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.36,
+   "probabilities": {
+    "jine": 0.31,
+    "lhuta": 0.1,
+    "pripravny_kurz": 0.52,
+    "registrace": 0.07
+   },
+   "type": "choice"
+  },
+  "datum_27": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.29,
+   "probabilities": {
+    "jine": 0.31,
+    "lhuta": 0.15,
+    "pripravny_kurz": 0.47,
+    "registrace": 0.07
+   },
+   "type": "choice"
+  },
+  "datum_28": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.28,
+   "probabilities": {
+    "jine": 0.32,
+    "lhuta": 0.16,
+    "pripravny_kurz": 0.45,
+    "registrace": 0.07
+   },
+   "type": "choice"
+  },
+  "datum_29": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.34,
+   "probabilities": {
+    "jine": 0.31,
+    "lhuta": 0.13,
+    "pripravny_kurz": 0.51,
+    "registrace": 0.05
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.49,
+   "probabilities": {
+    "jine": 0.25,
+    "lhuta": 0.09,
+    "pripravny_kurz": 0.62,
+    "registrace": 0.04
+   },
+   "type": "choice"
+  },
+  "datum_30": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.43,
+   "probabilities": {
+    "jine": 0.3,
+    "lhuta": 0.08,
+    "pripravny_kurz": 0.57,
+    "registrace": 0.05
+   },
+   "type": "choice"
+  },
+  "datum_31": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.32,
+   "probabilities": {
+    "jine": 0.3,
+    "lhuta": 0.08,
+    "pripravny_kurz": 0.49,
+    "registrace": 0.13
+   },
+   "type": "choice"
+  },
+  "datum_32": {
+   "choice": "registrace",
+   "confidence": 1,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0,
+    "pripravny_kurz": 0,
+    "registrace": 1
+   },
+   "type": "choice"
+  },
+  "datum_33": {
+   "choice": "jine",
+   "confidence": 0.8,
+   "probabilities": {
+    "jine": 0.85,
+    "lhuta": 0.01,
+    "pripravny_kurz": 0.13,
+    "registrace": 0.01
+   },
+   "type": "choice"
+  },
+  "datum_34": {
+   "choice": "jine",
+   "confidence": 0.87,
+   "probabilities": {
+    "jine": 0.91,
+    "lhuta": 0,
+    "pripravny_kurz": 0.09,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_35": {
+   "choice": "jine",
+   "confidence": 0.76,
+   "probabilities": {
+    "jine": 0.8099999999999999,
+    "lhuta": 0.01,
+    "pripravny_kurz": 0.17,
+    "registrace": 0.01
+   },
+   "type": "choice"
+  },
+  "datum_4": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.39,
+   "probabilities": {
+    "jine": 0.27,
+    "lhuta": 0.14,
+    "pripravny_kurz": 0.54,
+    "registrace": 0.05
+   },
+   "type": "choice"
+  },
+  "datum_5": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.37,
+   "probabilities": {
+    "jine": 0.29,
+    "lhuta": 0.12,
+    "pripravny_kurz": 0.53,
+    "registrace": 0.06
+   },
+   "type": "choice"
+  },
+  "datum_6": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.41,
+   "probabilities": {
+    "jine": 0.31,
+    "lhuta": 0.07,
+    "pripravny_kurz": 0.56,
+    "registrace": 0.06
+   },
+   "type": "choice"
+  },
+  "datum_7": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.45,
+   "probabilities": {
+    "jine": 0.27,
+    "lhuta": 0.09,
+    "pripravny_kurz": 0.6,
+    "registrace": 0.04
+   },
+   "type": "choice"
+  },
+  "datum_8": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.23,
+   "probabilities": {
+    "jine": 0.32,
+    "lhuta": 0.19,
+    "pripravny_kurz": 0.42,
+    "registrace": 0.07
+   },
+   "type": "choice"
+  },
+  "datum_9": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.36,
+   "probabilities": {
+    "jine": 0.28,
+    "lhuta": 0.09,
+    "pripravny_kurz": 0.52,
+    "registrace": 0.11
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.81,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 0.98,
+   "probabilities": {
+    "nejasne": 0.01,
+    "oznameno": 0.99,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "pripravny_kurz",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 1,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
  "65cb1c47e67acaa99922ccc1c6f851cb": {
   "_cena": 6.3798e-05,
   "pro_uchazece": {
@@ -754,6 +3265,55 @@
     "prijimaci_rizeni": 0,
     "prijimacky_nanecisto": 0,
     "pripravny_kurz": 1,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "6a289a3594898aac3c68d2abb50cd6cd": {
+  "_cena": 7.539e-05,
+  "datum_1": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.8,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 0.97,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 0.98,
+    "zmeneno": 0.02,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
     "setkani_uchazecu": 0,
     "talentove_zkousky": 0,
     "terminy_jpz": 0,
@@ -839,6 +3399,214 @@
    "type": "choice"
   }
  },
+ "6ee771601bc71a738ca28a6681e0e1fa": {
+  "_cena": 0.000235116,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.99,
+   "probabilities": {
+    "jine": 1,
+    "lhuta": 0,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_10": {
+   "choice": "lhuta",
+   "confidence": 0.98,
+   "probabilities": {
+    "jine": 0.02,
+    "lhuta": 0.98,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_11": {
+   "choice": "jine",
+   "confidence": 0.78,
+   "probabilities": {
+    "jine": 0.84,
+    "lhuta": 0.16,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "lhuta",
+   "confidence": 0.99,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0.99,
+    "registrace": 0.01,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "lhuta",
+   "confidence": 0.98,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0.99,
+    "registrace": 0.01,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_4": {
+   "choice": "lhuta",
+   "confidence": 0.99,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0.99,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_5": {
+   "choice": "lhuta",
+   "confidence": 0.91,
+   "probabilities": {
+    "jine": 0.07,
+    "lhuta": 0.93,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_6": {
+   "choice": "lhuta",
+   "confidence": 0.99,
+   "probabilities": {
+    "jine": 0.01,
+    "lhuta": 0.99,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_7": {
+   "choice": "lhuta",
+   "confidence": 0.89,
+   "probabilities": {
+    "jine": 0.08,
+    "lhuta": 0.92,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_8": {
+   "choice": "lhuta",
+   "confidence": 0.98,
+   "probabilities": {
+    "jine": 0.02,
+    "lhuta": 0.98,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_9": {
+   "choice": "lhuta",
+   "confidence": 0.73,
+   "probabilities": {
+    "jine": 0.2,
+    "lhuta": 0.8,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.67,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "prijimaci_rizeni",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 1,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "6f4220d861313322a76f5e0e3dd123d4": {
+  "_cena": 6.6486e-05,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.98,
+   "probabilities": {
+    "jine": 0.99,
+    "lhuta": 0,
+    "pripravny_kurz": 0.01,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.66,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 0.98,
+   "probabilities": {
+    "nejasne": 0.01,
+    "oznameno": 0.99,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.99,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0.01,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0.99,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
  "711bee35bde226250ae7038fd39b9703": {
   "_cena": 7.7112e-05,
   "datum_1": {
@@ -888,6 +3656,104 @@
    "type": "choice"
   }
  },
+ "829dd764b627e65ff2ed5233482e8132": {
+  "_cena": 7.8666e-05,
+  "datum_1": {
+   "choice": "pripravny_kurz",
+   "confidence": 1,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0,
+    "pripravny_kurz": 1,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.71,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "pripravny_kurz",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 1,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "8a39df4c53838038b824c9794e1d2f04": {
+  "_cena": 8.0934e-05,
+  "datum_1": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.8,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "zmeneno",
+   "confidence": 0.55,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 0.33,
+    "zmeneno": 0.67,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
  "9302f5ec15379070d4b00c49a20885e3": {
   "_cena": 6.9174e-05,
   "pro_uchazece": {
@@ -901,6 +3767,77 @@
     "nejasne": 0,
     "oznameno": 1,
     "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "9346f52a35507d77500a6593185e6306": {
+  "_cena": 0.000102984,
+  "datum_1": {
+   "choice": "dod",
+   "confidence": 0.98,
+   "probabilities": {
+    "dod": 0.99,
+    "jine": 0.01,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.84,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 0.9,
+   "probabilities": {
+    "nejasne": 0.06,
+    "oznameno": 0.93,
+    "zmeneno": 0.01,
     "zruseno": 0
    },
    "type": "choice"
@@ -1040,6 +3977,170 @@
    "type": "choice"
   }
  },
+ "ab9b57cf1fb501b098f749f7bd6166d3": {
+  "_cena": 0.0001323,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.47,
+   "probabilities": {
+    "jine": 0.6,
+    "lhuta": 0.05,
+    "prijimacky_nanecisto": 0.32,
+    "registrace": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "jine",
+   "confidence": 0.47,
+   "probabilities": {
+    "jine": 0.6,
+    "lhuta": 0.06,
+    "prijimacky_nanecisto": 0.32,
+    "registrace": 0.02
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "jine",
+   "confidence": 0.34,
+   "probabilities": {
+    "jine": 0.5,
+    "lhuta": 0.04,
+    "prijimacky_nanecisto": 0.43,
+    "registrace": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_4": {
+   "choice": "jine",
+   "confidence": 0.62,
+   "probabilities": {
+    "jine": 0.72,
+    "lhuta": 0.18,
+    "prijimacky_nanecisto": 0.07,
+    "registrace": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_5": {
+   "choice": "jine",
+   "confidence": 0.95,
+   "probabilities": {
+    "jine": 0.97,
+    "lhuta": 0.02,
+    "prijimacky_nanecisto": 0.01,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_6": {
+   "choice": "lhuta",
+   "confidence": 0.75,
+   "probabilities": {
+    "jine": 0.19,
+    "lhuta": 0.81,
+    "prijimacky_nanecisto": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.74,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "prijimacky_nanecisto",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 1,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "ad3c4f4b3b4460d77b50f5b876dd1b81": {
+  "_cena": 9.177e-05,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.98,
+   "probabilities": {
+    "dod": 0.02,
+    "jine": 0.98,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "jine",
+   "confidence": 0.88,
+   "probabilities": {
+    "dod": 0.09,
+    "jine": 0.91,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.82,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
  "b01d0511a12a1365cb3c3b4248ab6035": {
   "_cena": 7.6986e-05,
   "datum_1": {
@@ -1082,6 +4183,242 @@
     "pripravny_kurz": 1,
     "setkani_uchazecu": 0,
     "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "b09298c6984ddda7d71d06af63d5ac84": {
+  "_cena": 0.00021294,
+  "datum_1": {
+   "choice": "prijimacky_nanecisto",
+   "confidence": 1,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0,
+    "prijimacky_nanecisto": 1,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "prijimacky_nanecisto",
+   "confidence": 1,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0,
+    "prijimacky_nanecisto": 1,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "prijimacky_nanecisto",
+   "confidence": 1,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0,
+    "prijimacky_nanecisto": 1,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_4": {
+   "choice": "prijimacky_nanecisto",
+   "confidence": 1,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0,
+    "prijimacky_nanecisto": 1,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_5": {
+   "choice": "prijimacky_nanecisto",
+   "confidence": 1,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0,
+    "prijimacky_nanecisto": 1,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_6": {
+   "choice": "prijimacky_nanecisto",
+   "confidence": 1,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0,
+    "prijimacky_nanecisto": 1,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_7": {
+   "choice": "prijimacky_nanecisto",
+   "confidence": 1,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0,
+    "prijimacky_nanecisto": 1,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_8": {
+   "choice": "prijimacky_nanecisto",
+   "confidence": 1,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0,
+    "prijimacky_nanecisto": 1,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.64,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "prijimacky_nanecisto",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 1,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "b46099c79512142534e5d90e5fe6c439": {
+  "_cena": 0.000138852,
+  "datum_1": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.95,
+   "probabilities": {
+    "jine": 0.03,
+    "lhuta": 0,
+    "pripravny_kurz": 0.97,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.96,
+   "probabilities": {
+    "jine": 0.03,
+    "lhuta": 0,
+    "pripravny_kurz": 0.97,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.96,
+   "probabilities": {
+    "jine": 0.03,
+    "lhuta": 0,
+    "pripravny_kurz": 0.97,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_4": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.96,
+   "probabilities": {
+    "jine": 0.03,
+    "lhuta": 0,
+    "pripravny_kurz": 0.97,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_5": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.94,
+   "probabilities": {
+    "jine": 0.04,
+    "lhuta": 0,
+    "pripravny_kurz": 0.96,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "datum_6": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.96,
+   "probabilities": {
+    "jine": 0.03,
+    "lhuta": 0,
+    "pripravny_kurz": 0.97,
+    "registrace": 0,
+    "talentove_zkousky": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.58,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.76,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0.05,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0.79,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0.16,
     "terminy_jpz": 0,
     "volna_mista": 0,
     "vysledky_prijm": 0
@@ -1165,6 +4502,121 @@
    "type": "choice"
   }
  },
+ "dc731e6d9039d61eedeb797fe2bf134d": {
+  "_cena": 0.0001428,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.53,
+   "probabilities": {
+    "dod": 0.35,
+    "jine": 0.65,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_4": {
+   "choice": "dod",
+   "confidence": 0.99,
+   "probabilities": {
+    "dod": 0.99,
+    "jine": 0.01,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_5": {
+   "choice": "lhuta",
+   "confidence": 0.47,
+   "probabilities": {
+    "dod": 0.05,
+    "jine": 0.34,
+    "lhuta": 0.6,
+    "registrace": 0.01
+   },
+   "type": "choice"
+  },
+  "datum_6": {
+   "choice": "jine",
+   "confidence": 0.8,
+   "probabilities": {
+    "dod": 0.14,
+    "jine": 0.85,
+    "lhuta": 0.01,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_7": {
+   "choice": "jine",
+   "confidence": 0.48,
+   "probabilities": {
+    "dod": 0.36,
+    "jine": 0.61,
+    "lhuta": 0.03,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.88,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
  "e096923f5400f2ed58baf464d892801f": {
   "_cena": 5.8926e-05,
   "pro_uchazece": {
@@ -1197,6 +4649,116 @@
     "setkani_uchazecu": 0,
     "talentove_zkousky": 0,
     "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "e7df409431e3a6e1b5770a4caec38391": {
+  "_cena": 7.5222e-05,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.99,
+   "probabilities": {
+    "jine": 1,
+    "lhuta": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.92,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "zruseno",
+   "confidence": 0.52,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 0.35,
+    "zmeneno": 0.01,
+    "zruseno": 0.64
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.53,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0.02,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0.05,
+    "prijimacky_nanecisto": 0.36,
+    "pripravny_kurz": 0.57,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "e96c5581e08e826523939defa1cf513f": {
+  "_cena": 8.7528e-05,
+  "datum_1": {
+   "choice": "nahradni_termin",
+   "confidence": 1,
+   "probabilities": {
+    "jine": 0,
+    "lhuta": 0,
+    "nahradni_termin": 1,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "registrace",
+   "confidence": 0.4,
+   "probabilities": {
+    "jine": 0.05,
+    "lhuta": 0.39,
+    "nahradni_termin": 0,
+    "registrace": 0.55
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.73,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "zmeneno",
+   "confidence": 0.48,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 0.39,
+    "zmeneno": 0.61,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "nahradni_termin",
+   "confidence": 0.94,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0.95,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0.03,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0.02,
     "volna_mista": 0,
     "vysledky_prijm": 0
    },
@@ -1257,6 +4819,187 @@
     "setkani_uchazecu": 0,
     "talentove_zkousky": 0,
     "terminy_jpz": 0.01,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "f6646c7daf2b0b0aefa04d09b830c389": {
+  "_cena": 0.000131796,
+  "datum_1": {
+   "choice": "jine",
+   "confidence": 0.9,
+   "probabilities": {
+    "jine": 0.93,
+    "lhuta": 0,
+    "pripravny_kurz": 0.04,
+    "registrace": 0,
+    "talentove_zkousky": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "jine",
+   "confidence": 0.88,
+   "probabilities": {
+    "jine": 0.91,
+    "lhuta": 0,
+    "pripravny_kurz": 0.04,
+    "registrace": 0.01,
+    "talentove_zkousky": 0.04
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "jine",
+   "confidence": 0.91,
+   "probabilities": {
+    "jine": 0.9400000000000001,
+    "lhuta": 0,
+    "pripravny_kurz": 0.03,
+    "registrace": 0,
+    "talentove_zkousky": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_4": {
+   "choice": "jine",
+   "confidence": 0.91,
+   "probabilities": {
+    "jine": 0.93,
+    "lhuta": 0,
+    "pripravny_kurz": 0.03,
+    "registrace": 0.01,
+    "talentove_zkousky": 0.03
+   },
+   "type": "choice"
+  },
+  "datum_5": {
+   "choice": "jine",
+   "confidence": 0.94,
+   "probabilities": {
+    "jine": 0.95,
+    "lhuta": 0.01,
+    "pripravny_kurz": 0.02,
+    "registrace": 0.01,
+    "talentove_zkousky": 0.01
+   },
+   "type": "choice"
+  },
+  "datum_6": {
+   "choice": "jine",
+   "confidence": 0.93,
+   "probabilities": {
+    "jine": 0.95,
+    "lhuta": 0,
+    "pripravny_kurz": 0.03,
+    "registrace": 0,
+    "talentove_zkousky": 0.02
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.6,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 1,
+   "probabilities": {
+    "nejasne": 0,
+    "oznameno": 1,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "pripravny_kurz",
+   "confidence": 0.85,
+   "probabilities": {
+    "dod": 0,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0.04,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0.86,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0.1,
+    "terminy_jpz": 0,
+    "volna_mista": 0,
+    "vysledky_prijm": 0
+   },
+   "type": "choice"
+  }
+ },
+ "f7e785f8dfa2c99cf0e39ff3d2b473ac": {
+  "_cena": 0.000120918,
+  "datum_1": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_2": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "datum_3": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "jine": 0,
+    "lhuta": 0,
+    "registrace": 0
+   },
+   "type": "choice"
+  },
+  "pro_uchazece": {
+   "noul": 0.77,
+   "type": "noul"
+  },
+  "stav": {
+   "choice": "oznameno",
+   "confidence": 0.99,
+   "probabilities": {
+    "nejasne": 0.01,
+    "oznameno": 0.99,
+    "zmeneno": 0,
+    "zruseno": 0
+   },
+   "type": "choice"
+  },
+  "tema": {
+   "choice": "dod",
+   "confidence": 1,
+   "probabilities": {
+    "dod": 1,
+    "kriteria": 0,
+    "nahradni_termin": 0,
+    "nic_z_toho": 0,
+    "prihlaska": 0,
+    "prijimaci_rizeni": 0,
+    "prijimacky_nanecisto": 0,
+    "pripravny_kurz": 0,
+    "setkani_uchazecu": 0,
+    "talentove_zkousky": 0,
+    "terminy_jpz": 0,
     "volna_mista": 0,
     "vysledky_prijm": 0
    },

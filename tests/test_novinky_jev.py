@@ -13,8 +13,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
 import novinky_jev as jev  # noqa: E402
 from novinky_klasifikace import (formatuj_datum, najdi_cas, pozice_dat,  # noqa: E402
-                                 slozeni_souhrnu, text_k_rozboru,
-                                 vyber_terminy_akce)
+                                 rozdel_klauzule, slozeni_souhrnu, strip,
+                                 text_k_rozboru, vyber_terminy_akce)
 
 
 def odpoved(**volby):
@@ -113,6 +113,25 @@ class SestaveniOtazek(unittest.TestCase):
         self.assertEqual(text_k_rozboru({"titulek": "Dny otevřených dveří 26-27",
                                          "popis": "Zveme vás."}),
                          "Dny otevřených dveří 26-27. Zveme vás.")
+
+    def test_datum_v_odrazce_dostane_kontext_z_predchoziho_textu(self):
+        # Na stránkách škol stojí termíny ve výčtu pod nadpisem. Samotná
+        # odrážka modelu nic neřekne (naměřeno: „jiné" s jistotou až 0,92),
+        # takže holý časový údaj dostane před sebe okno předchozího textu.
+        pol = {"titulek": "Přijímačky nanečisto",
+               "popis": "Zveme zájemce na zkoušky nanečisto. Termíny. 23. 1. 2027."}
+        text = text_k_rozboru(pol)
+        otazky = jev.postav_otazky(text, ["prijimacky_nanecisto"], pozice_dat(text))
+        zadani = otazky["datum_1"]["instructions"]
+        self.assertIn("zkousky nanecisto", zadani)
+
+    def test_nadpis_vyctu_se_nepreskoci_jako_casove_slovo(self):
+        # „Termíny" je časové slovo, takže dřívější hledání „první věty, která
+        # něco říká" ten nadpis přeskočilo a kontextem se stala věta o dvě dál.
+        text = strip("Zveme vas. Terminy. 23. 1. 2027.")
+        useky = rozdel_klauzule(text)
+        zacatek = pozice_dat(text)[0][1]
+        self.assertIn("terminy", jev.kontext_klauzule(useky, text, zacatek))
 
     def test_datum_bez_roku_se_modelu_nepredklada(self):
         # Rok se nedohaduje: „7. ledna" může být letos i napřesrok.

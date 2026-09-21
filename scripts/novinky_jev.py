@@ -40,8 +40,8 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-from novinky_klasifikace import (NAZVY_AKCI, TRIDY_AKCI, formatuj_datum,
-                                 rozdel_klauzule, strip)
+from novinky_klasifikace import (NAZVY_AKCI, TRIDY_AKCI, _holy_casovy_udaj,
+                                 formatuj_datum, rozdel_klauzule, strip)
 
 # Pinovaná verze; `~typesafe/jev-latest` by měnil výsledky bez změny našeho kódu.
 MODEL = "typesafe/jev-1.13"
@@ -144,8 +144,9 @@ def otazka_role_data(klauzule: str, datum: str, tridy: list[str]) -> dict:
     })
     return {
         "type": "choice",
-        "instructions": f"Ve větě „{klauzule}“ je datum {datum}. "
-                        f"Co to datum ve zprávě znamená?",
+        "instructions": f"Ve zprávě ze školního webu, kterou máš ve state, stojí "
+                        f"„{klauzule}“. Co v té zprávě znamená datum {datum}? "
+                        f"Ber v úvahu i titulek zprávy: celá zpráva je o jedné věci.",
         "criteria": moznosti,
     }
 
@@ -257,14 +258,45 @@ def postav_otazky(text: str, tridy: list[str], pozice_dat: list[tuple[str, int]]
     každého nalezeného data. Víc otázek v jednom volání je výrazně levnější
     i rychlejší než víc volání."""
     otazky = {"tema": OTAZKA_TEMA, "pro_uchazece": OTAZKA_PRO_UCHAZECE, "stav": OTAZKA_STAV}
-    useky = rozdel_klauzule(strip(text))
+    normalizovany = strip(text)
+    useky = rozdel_klauzule(normalizovany)
     nabidka = [t for t in tridy if t in TRIDY_AKCI] or list(TRIDY_AKCI)
     for poradi, (iso, zacatek) in enumerate(pozice_dat, start=1):
-        klauzule = next((v.strip() for a, b, v in useky if a <= zacatek < b), "")
+        klauzule = kontext_klauzule(useky, normalizovany, zacatek)
         if klauzule:
             otazky[f"datum_{poradi}"] = otazka_role_data(
                 klauzule, formatuj_datum(iso), nabidka)
     return otazky
+
+
+# Kolik znaků před datem se modelu ukáže, když samo datum stojí v textu holé.
+# Krátké okno, ne celý článek: `state` zůstává kartou položky (podmínka z P6).
+OKNO_KONTEXTU = 220
+
+
+def kontext_klauzule(useky: list[tuple[int, int, str]], text: str, zacatek: int) -> str:
+    """Věta, kterou dostane model k jednomu datu – i když je datum holé.
+
+    Na stránce článku bývají termíny ve výčtu: „📅 TERMÍNY" a pod tím „23. ledna
+    2027", „6. února 2027". Samotná odrážka neříká nic a model ji označí za
+    „jiné" (naměřeno na spgsmb.cz: všech sedm dat skončilo jako „jiné"
+    s jistotou až 0,92).
+
+    Holý časový údaj proto dostane před sebe okno předchozího textu. Skákat po
+    klauzulích zpátky na „první větu, která něco říká" nestačí: nadpis výčtu
+    bývá sám časové slovo („TERMÍNY", „Další termíny"), takže se přeskočí a
+    kontextem se stane věta o dvě dál – naměřeno na stredniskola.cz."""
+    vlastni = next((i for i, (a, b, _) in enumerate(useky) if a <= zacatek < b), None)
+    if vlastni is None:
+        return ""
+    a, _, veta = useky[vlastni]
+    veta = veta.strip()
+    if not _holy_casovy_udaj(veta):
+        return veta
+    pred = text[max(0, a - OKNO_KONTEXTU):a].strip()
+    if " " in pred:
+        pred = pred.split(" ", 1)[1]  # neuříznuté slovo na začátku okna zahodit
+    return f"{pred} {veta}".strip() if pred else veta
 
 
 def _vybrana(odpoved: dict | None, prah: float) -> str | None:
@@ -296,11 +328,17 @@ def _ano(odpoved: dict | None, pasmo: float = PASMO_NOUL) -> bool | None:
 # --- Sloučení s pravidly ----------------------------------------------------------
 
 def rozbor_polozky(pol: dict, skola: dict | None = None, mezipamet: dict | None = None,
-                   offline: bool = False) -> dict | None:
+                   offline: bool = False, stahovat: bool = False) -> dict | None:
     """Odpovědi modelu k jedné položce, přeložené do polí, se kterými pracuje kód.
 
     Vrací ``None``, když se model nezeptal nebo neodpověděl. To **není** totéž co
     „model nic nenašel": volající v takovém případě použije pravidla beze změny.
+
+    ``stahovat=True`` dovolí sáhnout na stránku článku, když v titulku ani perexu
+    žádné datum není. Text článku se použije jen k tomu, aby kód našel data a
+    věty, ve kterých leží; **do modelu jde pořád jen karta položky a jedna věta**
+    (podmínka z P6: Jev s délkou kontextu ztrácí kvalitu). Na vzorku 300 feedů
+    nemá datum v tom, co dává feed, 13 z 22 pozvánek.
 
     Vrácená struktura::
 
@@ -309,9 +347,13 @@ def rozbor_polozky(pol: dict, skola: dict | None = None, mezipamet: dict | None 
          "stav": "oznameno" | ... | None,
          "terminy": [{"datum", "cas", "akce"}],   # jen data v roli akce
          "lhuty": ["2027-02-22"],                 # data, která akcí nejsou
+         "zdroj_textu": "perex" | "clanek",
+         "otisk_textu": "…",
          "model": "typesafe/jev-1.13",
          "odpovedi": {...}}               # syrové odpovědi pro audit
     """
+    import hashlib as _hashlib
+
     from novinky_klasifikace import klasifikuj_temu, najdi_cas, pozice_dat, text_k_rozboru
 
     text = text_k_rozboru(pol)
@@ -319,6 +361,14 @@ def rozbor_polozky(pol: dict, skola: dict | None = None, mezipamet: dict | None 
     if tridy is None:
         tridy, _ = klasifikuj_temu(pol)
     pozice = pozice_dat(text)
+    zdroj_textu = "perex"
+    if not pozice and stahovat and not offline:
+        from novinky_clanek import stahni_clanek
+        clanek = stahni_clanek(pol.get("odkaz") or pol.get("url") or "",
+                               pol.get("titulek", ""))
+        if clanek and (nalezy := pozice_dat(clanek["text"])):
+            text, pozice, zdroj_textu = clanek["text"], nalezy, "clanek"
+
     odpovedi = zeptej_se(postav_stav(pol, skola), postav_otazky(text, tridy, pozice),
                          mezipamet=mezipamet, offline=offline)
     if odpovedi is None:
@@ -333,7 +383,7 @@ def rozbor_polozky(pol: dict, skola: dict | None = None, mezipamet: dict | None 
         if role in TRIDY_AKCI:
             klauzule = next((v for a, b, v in useky if a <= zacatek < b), "")
             terminy.append({"datum": iso, "cas": najdi_cas(klauzule), "akce": role})
-        elif role is not None:
+        elif role in ("registrace", "lhuta"):
             lhuty.append(iso)
     return {
         "tema": None if tema == "nic_z_toho" else tema,
@@ -341,6 +391,8 @@ def rozbor_polozky(pol: dict, skola: dict | None = None, mezipamet: dict | None 
         "stav": stav,
         "terminy": terminy,
         "lhuty": lhuty,
+        "zdroj_textu": zdroj_textu,
+        "otisk_textu": _hashlib.sha256(text.encode()).hexdigest()[:32],
         "model": MODEL,
         "odpovedi": {k: v for k, v in odpovedi.items() if k != "_cena"},
         "cena": odpovedi.get("_cena"),

@@ -24,6 +24,7 @@ import concurrent.futures
 import importlib.util
 import json
 import random
+import re
 import sys
 from collections import Counter
 from datetime import datetime, timedelta, timezone
@@ -110,7 +111,8 @@ def pozvanky(zaznamy: list[dict], od: datetime) -> list[dict]:
     return vybrane
 
 
-def zmer(offline: bool, siroky: int = 0) -> None:
+def zmer(offline: bool, siroky: int = 0, stahovat: bool = False,
+         diagnostika: bool = False) -> None:
     zaznamy = stahni_siroky(siroky) if siroky else nacti_vzorek()
     dnes = datetime.now(timezone.utc) if siroky else DEN_VZORKU
     od = dnes - timedelta(days=OKNO_DNU)
@@ -127,7 +129,8 @@ def zmer(offline: bool, siroky: int = 0) -> None:
     for p in kandidati:
         text = text_k_rozboru(p)
         ma_datum_v_textu = bool(pozice_dat(text))
-        rozbor = jev.rozbor_polozky(p, mezipamet=mezipamet, offline=offline)
+        rozbor = jev.rozbor_polozky(p, mezipamet=mezipamet, offline=offline,
+                                    stahovat=stahovat)
         if rozbor is None:
             stavy["model neodpověděl"] += 1
             continue
@@ -142,7 +145,7 @@ def zmer(offline: bool, siroky: int = 0) -> None:
         # Táž strážní podmínka jako v publikačním rozhodnutí: co je starší než
         # článek nebo už celé proběhlo, není pozvánka a větu nedostane.
         podle_akce = {a: v for a, v in
-                      ((a, vyber_terminy_akce(ts, p.get("datum"), DNES.date()))
+                      ((a, vyber_terminy_akce(ts, p.get("datum"), dnes.date()))
                        for a, ts in podle_akce.items()) if v}
         if not podle_akce:
             stavy["termín v textu není" if not ma_datum_v_textu
@@ -151,7 +154,8 @@ def zmer(offline: bool, siroky: int = 0) -> None:
             continue
         akce, terminy = max(podle_akce.items(), key=lambda kv: len(kv[1]))
         veta = slozeni_souhrnu(akce, terminy)
-        stavy["věta s termínem"] += 1
+        stavy["věta s termínem" if rozbor["zdroj_textu"] == "perex"
+              else "věta s termínem až ze staženého článku"] += 1
         if len(ukazky) < 12:
             ukazky.append((p["redizo"], p.get("titulek", ""), veta,
                            rozbor["lhuty"], p.get("odkaz", "")))
@@ -168,13 +172,17 @@ def zmer(offline: bool, siroky: int = 0) -> None:
         print(f"  {stav:42s} {kolik:4d}  {podil:5.1f} %")
     print(f"\nNových volání modelu: {len(mezipamet) - pocet_pred}, cena ${cena:.4f}")
     if kandidati:
-        zisk = stavy["věta s termínem"]
-        strop = zisk + stavy["termín v textu není"]
+        z_perexu = stavy["věta s termínem"]
+        z_clanku = stavy["věta s termínem až ze staženého článku"]
+        zisk = z_perexu + z_clanku
         print(f"\nTermín máme u {zisk} z {len(kandidati)} pozvánek "
-              f"({100 * zisk / len(kandidati):.0f} %).")
-        print(f"Stažení článku může pomoct nejvýš u {stavy['termín v textu není']} položek, "
-              f"kde v titulku ani perexu žádné datum není "
-              f"(strop by byl {100 * strop / len(kandidati):.0f} %).")
+              f"({100 * zisk / len(kandidati):.0f} %)"
+              + (f", z toho {z_clanku} až ze staženého článku." if z_clanku else "."))
+        if not stahovat:
+            strop = zisk + stavy["termín v textu není"]
+            print(f"Stažení článku může pomoct nejvýš u {stavy['termín v textu není']} "
+                  f"položek, kde v titulku ani perexu žádné datum není "
+                  f"(strop by byl {100 * strop / len(kandidati):.0f} %).")
     if ukazky:
         print("\nUkázky vět, jak je uvidí čtenář:")
         for redizo, titulek, veta, lhuty, odkaz in ukazky:
@@ -185,9 +193,42 @@ def zmer(offline: bool, siroky: int = 0) -> None:
             print(f"    {odkaz}")
     if bez_data:
         print(f"\nPozvánky bez data v textu ({len(bez_data)}) – kandidáti na stažení článku:")
-        for p in bez_data[:10]:
+        for p in bez_data:
             print(f"  {p['redizo']}  {p.get('titulek', '')[:70]}")
             print(f"    {p.get('odkaz', '')}")
+            if diagnostika:
+                print(f"    {_proc_chybi(p.get('odkaz', ''))}")
+
+
+# Vzory data v syrovém HTML. Slouží jen diagnostice: odlišit „na stránce datum
+# není" od „datum tam je, ale náš převod HTML na text ho zahodil". První je fakt
+# o školním webu, druhé je naše chyba a spraví se kódem.
+RE_DATUM_V_HTML = re.compile(
+    r"\d{1,2}\.\s*\d{1,2}\.\s*20\d{2}|\d{1,2}\.\s*(?:ledna|února|března|dubna|května|"
+    r"června|července|srpna|září|října|listopadu|prosince)")
+
+
+def _proc_chybi(url: str) -> str:
+    """Proč u té položky termín nemáme: stránka ho nemá, nebo jsme ho ztratili?"""
+    import urllib.request
+
+    from novinky_clanek import UA, na_text
+    if not url:
+        return "(bez odkazu)"
+    try:
+        zadost = urllib.request.Request(url, headers={"User-Agent": UA,
+                                                      "Accept": "text/html"})
+        with urllib.request.urlopen(zadost, timeout=20) as odpoved:
+            syrove = odpoved.read(1_000_000).decode("utf-8", "replace")
+    except Exception as e:  # noqa: BLE001 – diagnostika nesmí shodit měření
+        return f"stránka nestažena ({type(e).__name__})"
+    v_html = RE_DATUM_V_HTML.findall(syrove)
+    v_textu = pozice_dat(na_text(syrove))
+    if v_textu:
+        return f"na stránce datum JE a čteme ho: {[i for i, _ in v_textu][:4]}"
+    if v_html:
+        return f"datum je v HTML, ale z textu vypadlo: {v_html[:4]}"
+    return "na stránce datum není vůbec"
 
 
 def main() -> None:
@@ -196,8 +237,12 @@ def main() -> None:
                    help="bez sítě: jen z uložených odpovědí modelu")
     p.add_argument("--siroky", type=int, default=0, metavar="N",
                    help="místo zmrazeného vzorku stáhne N feedů z registru")
+    p.add_argument("--stahovat", action="store_true",
+                   help="u pozvánky bez data v textu sáhne i na stránku článku")
+    p.add_argument("--diagnostika", action="store_true",
+                   help="u pozvánek bez termínu zjistí, jestli datum na stránce je")
     a = p.parse_args()
-    zmer(a.offline, a.siroky)
+    zmer(a.offline, a.siroky, a.stahovat, a.diagnostika)
 
 
 if __name__ == "__main__":
