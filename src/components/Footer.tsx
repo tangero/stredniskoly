@@ -20,8 +20,8 @@ export function Footer() {
             </p>
             <p className="text-sm mt-2" style={{ color: '#818c99' }}>
               <strong style={{ color: '#28313b' }}>Podpora a kontakt:</strong>{' '}
-              <a href="mailto:eduarda@prijimackynaskolu.cz" className="no-underline" style={{ color: '#0074e4' }}>
-                eduarda@prijimackynaskolu.cz
+              <a href="mailto:eda@prijimackynaskolu.cz" className="no-underline" style={{ color: '#0074e4' }}>
+                eda@prijimackynaskolu.cz
               </a>
             </p>
             <a href='https://www.vibecoding.cz' className="text-sm no-underline mt-1 inline-block" style={{ color: '#0074e4' }}>Vibecoding.cz</a>

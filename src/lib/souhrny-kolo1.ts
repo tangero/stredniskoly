@@ -165,6 +165,49 @@ export async function nabidkyVeSkupineKraje(rok: number, kraj: string, skupina: 
   return out;
 }
 
+export interface SouhrnProKatalog {
+  /** Zobrazený ročník a spárovaný předchozí, stejná pravidla jako getSouhrnNabidky. */
+  aktualni: SouhrnRocniku;
+  predchozi: SouhrnRocniku | null;
+  predchoziRok: number | null;
+  kkov: string;
+  zamereni: string;
+}
+
+/**
+ * Souhrny všech nabídek daných škol v zobrazeném ročníku, klíčované `REDIZO_KKOV_zaměření`.
+ *
+ * Pro přehledy nad více školami (město, kraj), kde se nabídky nepárují po jedné se stránkou
+ * oboru, ale spojují s katalogem podle REDIZO. Nabídku, která v ročníku není, nevrací —
+ * chybějící údaj není nula (docs/zdroje-dat.md, oddíl 4, past 4).
+ */
+export async function souhrnyPodleRedizo(
+  redizoMnozina: Set<string>,
+): Promise<Map<string, SouhrnProKatalog[]>> {
+  const obdobi = await zobrazeneObdobi('cermat-vysledky');
+  const out = new Map<string, SouhrnProKatalog[]>();
+  if (!obdobi) return out;
+  const { soubor } = await nacti();
+  const rok = Number(obdobi);
+  for (const n of Object.values(soubor.nabidky)) {
+    if (!redizoMnozina.has(n.redizo)) continue;
+    const aktualni = n.roky[obdobi];
+    if (!aktualni) continue;
+    const starsi = Object.keys(n.roky).map(Number).filter(r => r < rok).sort((a, b) => b - a)[0];
+    const sparovano = starsi !== undefined && n.parovani?.[`${starsi}-${rok}`] !== undefined;
+    const seznam = out.get(n.redizo) ?? [];
+    seznam.push({
+      aktualni,
+      predchozi: sparovano ? n.roky[String(starsi)] : null,
+      predchoziRok: sparovano ? starsi : null,
+      kkov: n.kkov,
+      zamereni: n.zamereni,
+    });
+    out.set(n.redizo, seznam);
+  }
+  return out;
+}
+
 /** Ročník souhrnu pro obor školy (REDIZO_KKOV), jen když má obor v ročníku jedinou nabídku. */
 export async function souhrnOboru(redizoKkov: string, rok: number): Promise<SouhrnRocniku | null> {
   const { soubor } = await nacti();

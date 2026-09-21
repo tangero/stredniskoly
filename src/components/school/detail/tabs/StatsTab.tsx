@@ -78,8 +78,8 @@ export function StatsTab({ program, extendedStats, data2026, result2026, souhrn 
             <dd className="mt-1 text-2xl font-bold text-slate-900">{count(program.prihlasky)}</dd>
           </div>
           <div>
-            <dt className="text-sm text-slate-600">Hranice přijetí</dt>
-            <dd className="mt-1 text-sm text-slate-700">Nemáme ověřené minimum pro přijetí.</dd>
+            <dt className="text-sm text-slate-600">Nejnižší výsledek přijatých</dt>
+            <dd className="mt-1 text-sm text-slate-700">U tohoto oboru ho nemáme doložený.</dd>
           </div>
         </dl>
         <p className="mt-4 text-sm text-slate-600">

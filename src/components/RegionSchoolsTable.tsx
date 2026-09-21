@@ -107,7 +107,7 @@ function getZrizovatelBadge(zrizovatel: string): { label: string; class: string 
 }
 
 // Typ pro třídění
-type SortKey = 'nazev' | 'jpz' | 'skore' | 'kapacita' | 'konkurence' | 'p1' | 'obtiznost' | 'trend';
+type SortKey = 'nazev' | 'jpz' | 'skore' | 'kapacita' | 'konkurence' | 'p1' | 'trend';
 type SortDir = 'asc' | 'desc';
 
 // Ikona pro třídění
@@ -251,10 +251,6 @@ export function RegionSchoolsTable({ schools, allSchools, extendedStatsMap, tren
           valA = a.priority_pcts[0] || 0;
           valB = b.priority_pcts[0] || 0;
           break;
-        case 'obtiznost':
-          valA = a.obtiznost;
-          valB = b.obtiznost;
-          break;
         case 'trend':
           valA = trendA?.prihlaskyChange || 0;
           valB = trendB?.prihlaskyChange || 0;
@@ -339,7 +335,7 @@ export function RegionSchoolsTable({ schools, allSchools, extendedStatsMap, tren
                   </InfoTooltip>
                 </div>
               </th>
-              <th className="px-3 py-2">Hranice přijetí<br /><span className="text-xs font-normal">neověřeno</span></th>
+              <th className="px-3 py-2">Nejnižší výsledek přijatých<br /><span className="text-xs font-normal">z dat uchazečů, ne hranice školy</span></th>
               <SortableHeader
                 label="Body průměr"
                 sortKeyName="skore"

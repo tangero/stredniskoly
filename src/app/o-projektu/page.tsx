@@ -571,8 +571,8 @@ export default async function OProjektuPage() {
             <div className="mt-14 pt-6 border-t border-slate-200">
               <p className="text-sm text-slate-600">
                 Otázky k tomuto shrnutí, k metodice výpočtů nebo k datům:{' '}
-                <a href="mailto:eduarda@prijimackynaskolu.cz" className="underline" style={{ color: '#0074e4' }}>
-                  eduarda@prijimackynaskolu.cz
+                <a href="mailto:eda@prijimackynaskolu.cz" className="underline" style={{ color: '#0074e4' }}>
+                  eda@prijimackynaskolu.cz
                 </a>. Zdrojový kód a všechny rozbory jsou na{' '}
                 <a
                   href="https://github.com/tangero/stredniskoly"

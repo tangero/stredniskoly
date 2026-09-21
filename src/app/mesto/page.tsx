@@ -1,42 +1,62 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { promises as fs } from 'fs';
+import path from 'path';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { MESTA, getCityStats } from '@/lib/cityData';
+import { MESTA } from '@/lib/mesta.mjs';
+import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
+import { MestaSeznam, type MestoKarta } from './MestaSeznam';
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/mesto' },
-  title: 'Střední školy podle měst — přijímačky 2026',
-  description: 'Přehled středních škol ve 20 největších českých městech. Data přijímacích zkoušek 2026, kapacity a zájem uchazečů.',
-  openGraph: {
-    title: 'Střední školy podle měst | Přijímačky 2026',
-    description: 'Srovnání středních škol ve 20 největších českých městech.',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const rok = await zobrazeneObdobi('cermat-prihlasky');
+  const zaRok = rok ? ` v 1. kole ${rok}` : '';
+  return {
+    alternates: { canonical: '/mesto' },
+    title: 'Střední školy podle měst — kompletní přehledy',
+    description: `Přehled středních škol v ${MESTA.length} městech: které školy tam jsou a jak těžké bylo se na ně dostat${zaRok}.`,
+    openGraph: {
+      title: 'Střední školy podle měst',
+      description: `Které střední školy jsou ve tvém městě a jak těžké bylo se na ně dostat${zaRok}.`,
+    },
+  };
+}
 
-function fmt(n: number, dec = 0) {
-  return n.toLocaleString('cs-CZ', { maximumFractionDigits: dec, minimumFractionDigits: dec });
+/**
+ * Počty škol a nabídek za města z jednoho průchodu katalogem.
+ *
+ * Dřív se pro každé město volalo getCityStats, které projde celý katalog;
+ * u víc než stovky měst by to build zdržovalo bez užitku, protože karta
+ * potřebuje jen dva počty.
+ */
+async function kartyMest(): Promise<MestoKarta[]> {
+  const obdobi = await zobrazeneObdobi('cermat-prihlasky');
+  const katalog = JSON.parse(
+    await fs.readFile(path.join(process.cwd(), 'public', 'schools_data.json'), 'utf-8'),
+  ) as Record<string, { obec?: string; redizo?: string | number }[]>;
+  const rocnik = (obdobi && katalog[obdobi]) || katalog['2025'] || [];
+
+  const skoly = new Map<string, Set<string>>();
+  const nabidky = new Map<string, number>();
+  for (const radek of rocnik) {
+    if (!radek.obec) continue;
+    if (!skoly.has(radek.obec)) skoly.set(radek.obec, new Set());
+    skoly.get(radek.obec)!.add(String(radek.redizo));
+    nabidky.set(radek.obec, (nabidky.get(radek.obec) ?? 0) + 1);
+  }
+
+  return MESTA.map(m => ({
+    nazev: m.nazev,
+    slug: m.slug,
+    kraj: m.kraj,
+    skol: skoly.get(m.nazev)?.size ?? 0,
+    nabidek: nabidky.get(m.nazev) ?? 0,
+  })).filter(m => m.skol > 0);
 }
 
 export default async function MestaPage() {
-  const mestaData = await Promise.all(
-    MESTA.map(async m => {
-      const stats = await getCityStats(m.nazev);
-      if (!stats) return null;
-      const { totals } = stats;
-      const idx = totals.kapacita2026 > 0 ? totals.prihlasky2026 / totals.kapacita2026 : null;
-      return {
-        ...m,
-        totalSchools: stats.schools.length,
-        kapacita: totals.kapacita2026 || totals.kapacita2025,
-        prihlasky: totals.prihlasky2026 || totals.prihlasky2025,
-        index: idx,
-        nationalIndex: totals.nationalIndex2026,
-      };
-    })
-  );
-
-  const valid = mestaData.filter(Boolean) as NonNullable<typeof mestaData[0]>[];
+  const mesta = await kartyMest();
+  const rok = await zobrazeneObdobi('cermat-prihlasky');
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -51,69 +71,17 @@ export default async function MestaPage() {
               <span className="text-white">Města</span>
             </nav>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Střední školy ve 20 největších městech ČR
+              Střední školy podle měst
             </h1>
             <p className="text-blue-200 text-lg">
-              Kapacity, zájem uchazečů a výsledky přijímacích zkoušek 2026
+              Které školy ve městě jsou a jak těžké bylo se na ně dostat
+              {rok ? ` v 1. kole ${rok}` : ''}
             </p>
           </div>
         </div>
 
         <div className="max-w-6xl mx-auto px-4 py-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {valid.map(m => {
-              const vsNat = m.index !== null
-                ? m.index < m.nationalIndex ? 'snazší' : 'těžší'
-                : null;
-              const idxColor = m.index === null ? 'text-slate-500'
-                : m.index >= 3 ? 'text-red-600' : m.index >= 2 ? 'text-orange-600' : 'text-green-700';
-
-              return (
-                <Link
-                  key={m.slug}
-                  href={`/mesto/${m.slug}`}
-                  className="bg-white rounded-xl border border-slate-200 p-5 hover:shadow-md hover:border-blue-300 transition-all group"
-                >
-                  <h2 className="text-lg font-bold group-hover:text-blue-600 transition-colors mb-1">
-                    {m.nazev}
-                  </h2>
-                  <p className="text-xs text-slate-400 mb-4">{m.kraj}</p>
-
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-slate-500">Oborů / škol</span>
-                      <span className="font-semibold">{m.totalSchools}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-500">Kapacita</span>
-                      <span className="font-semibold">{fmt(m.kapacita)}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-500">Přihlášek 2026</span>
-                      <span className="font-semibold">{fmt(m.prihlasky)}</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-slate-500">Index zájmu</span>
-                      <div className="text-right">
-                        <span className={`font-bold ${idxColor}`}>
-                          {m.index !== null ? `${m.index.toFixed(1)}×` : '—'}
-                        </span>
-                        {vsNat && (
-                          <span className={`block text-xs ${vsNat === 'snazší' ? 'text-green-600' : 'text-red-600'}`}>
-                            {vsNat} než ČR
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 text-blue-600 text-sm font-medium group-hover:underline">
-                    Zobrazit detail →
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
+          <MestaSeznam mesta={mesta} />
         </div>
       </main>
 

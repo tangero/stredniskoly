@@ -1,6 +1,10 @@
 import { normalizeSchoolKey, uniqueSchoolIndex } from './school-key';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { souhrnyPodleRedizo, type SouhrnProKatalog } from './souhrny-kolo1';
+import { adresaPrehledu } from './adresa-oboru.mjs';
+import { getSchoolAnalysis } from './data';
+import { zarazeniObtiznosti, soutezicichUchazecu, type ZarazeniObtiznosti } from './obor-profil';
 
 function slugify(text: string): string {
   return text
@@ -79,6 +83,34 @@ export interface CitySchoolRow {
   delta2026: number | null;
   rankInType2026: number | null;
   typeTotal2026: number | null;
+  /** Ulice sídla školy; rodina podle ní pozná, kde ve městě to je. */
+  ulice: string;
+  /**
+   * Kanonická adresa přehledu školy ze sdíleného modulu (`adresaPrehledu`).
+   * Karta školy míří sem, ne na slug jedné nabídky — jinak by cíl odkazu
+   * závisel na tom, jak je zrovna vyfiltrováno.
+   */
+  slugSkoly: string;
+  /**
+   * Obtížnost přijetí slovy za zobrazený ročník, se všemi prahy zobrazení
+   * uplatněnými (`zarazeniObtiznosti`). `null` znamená, že se nezobrazuje —
+   * ne že by bylo snadné se dostat.
+   */
+  zarazeni: ZarazeniObtiznosti | null;
+  /** Zařazení v předchozím ročníku; slovník vyžaduje uvést ho vedle. */
+  zarazeniPredchozi: ZarazeniObtiznosti | null;
+  predchoziRok: number | null;
+  /** Soutěžící uchazeči a přijatí ze souhrnů, pro větu „přijato X ze Y“. */
+  soutezici: number | null;
+  prijatiZeSoutezicich: number | null;
+  /** Nesplnili podmínky školy; uvádí se vedle, když je jich hodně (slovník). */
+  nesplniliPodminky: number | null;
+  /**
+   * `true`, jen když nabídka v zobrazeném ročníku **skutečně chybí** — tedy nemá
+   * ani souhrn 1. kola. Chybějící shoda se starým exportem přihlášek sem nepatří:
+   * obor s doloženým výsledkem je vypsaný, i když se klíče nespárovaly.
+   */
+  chybiVRocniku: boolean;
 }
 
 export interface NationalTypeStats {
@@ -145,6 +177,34 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
 
   const map2024 = new Map<string, RawSchool>(city2024.map(s => [s.id, s]));
 
+  // Název školy pro adresu bere stejný zdroj jako data.ts a vyhledávání, tedy
+  // school_analysis.json. Katalogový název adresu nesloží stejně (u Dašické chybí
+  // ulice), takže odkaz by mířil na neexistující stránku.
+  const kanonickeNazvy = new Map<string, string>();
+  for (const skola of Object.values(await getSchoolAnalysis())) {
+    const redizo = skola.id.split('_')[0];
+    if (!kanonickeNazvy.has(redizo)) kanonickeNazvy.set(redizo, skola.nazev);
+  }
+
+  // Obtížnost přijetí ze souhrnů 1. kola. Páruje se REDIZO + KKOV + zaměření;
+  // na hrubším klíči by se nabídky téhož oboru s různým zaměřením slily.
+  const souhrny = await souhrnyPodleRedizo(new Set(city2025.map(s => String(s.redizo))));
+  const klicZamereni = (kkov: string, zamereni: string) =>
+    `${kkov}|${normalizeSchoolKey(zamereni || '')}`;
+  const souhrnProRadek = new Map<string, SouhrnProKatalog>();
+  for (const [redizo, nabidky] of souhrny) {
+    // Zaměření, které se v jednom REDIZO a KKOV vyskytuje víc než jednou, vynecháme:
+    // nešlo by určit, který řádek katalogu k němu patří.
+    const podleKlice = new Map<string, typeof nabidky[number][]>();
+    for (const n of nabidky) {
+      const k = klicZamereni(n.kkov, n.zamereni);
+      podleKlice.set(k, [...(podleKlice.get(k) ?? []), n]);
+    }
+    for (const [k, seznam] of podleKlice) {
+      if (seznam.length === 1) souhrnProRadek.set(`${redizo}|${k}`, seznam[0]);
+    }
+  }
+
   // Build per-school rows (based on 2025 as primary)
   const rows: CitySchoolRow[] = city2025.map(s25 => {
     const s24 = map2024.get(s25.id);
@@ -155,6 +215,13 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
     const cer26 = canMatch ? cermatIndex.get(key)?.[1] : undefined;
 
     const slug = `${s25.redizo}-${slugify(s25.nazev)}-${slugify(s25.obor)}`;
+
+    const souhrn = souhrnProRadek.get(
+      `${s25.redizo}|${klicZamereni(String(s25.kkov ?? ''), String(s25.zamereni ?? ''))}`,
+    );
+    // Práh deseti soutěžících uplatňuje zarazeniObtiznosti, ne tento soubor.
+    const zarazeni = souhrn ? zarazeniObtiznosti(souhrn.aktualni) : null;
+    const soutezici = souhrn ? soutezicichUchazecu(souhrn.aktualni) : null;
 
     return {
       id: s25.id,
@@ -173,9 +240,11 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
       kapacita2025: s25.kapacita ?? null,
       prihlasky2025: s25.prihlasky ?? null,
       index2025: s25.index_poptavky ?? null,
-      kapacita2026: app26?.kapacita ?? null,
-      prihlasky2026: app26?.prihlasky ?? null,
-      index2026: app26?.idx ?? null,
+      // Souhrn 1. kola je spolehlivejsi nez shoda se starym exportem prihlasek:
+      // kdyz se klice nespáruji, údaj přesto známe ze souhrnu.
+      kapacita2026: app26?.kapacita ?? souhrn?.aktualni.kapacita ?? null,
+      prihlasky2026: app26?.prihlasky ?? souhrn?.aktualni.prihlasky ?? null,
+      index2026: app26?.idx ?? souhrn?.aktualni.index_poptavky ?? null,
       prijati2026: cer26?.prijati ?? null,
       avgCjMa2026: cer26?.cj_ma_prijati ?? null,
       avgCj2026: cer26?.cj_prijati ?? null,
@@ -184,6 +253,19 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
       delta2026: cer26?.delta_cj_ma ?? null,
       rankInType2026: cer26?.rank_in_type ?? null,
       typeTotal2026: cer26?.type_total ?? null,
+      ulice: s25.ulice || '',
+      slugSkoly: adresaPrehledu(
+        String(s25.redizo),
+        kanonickeNazvy.get(String(s25.redizo)) ?? s25.nazev,
+      ),
+      zarazeni,
+      zarazeniPredchozi: souhrn?.predchozi ? zarazeniObtiznosti(souhrn.predchozi) : null,
+      predchoziRok: souhrn?.predchoziRok ?? null,
+      soutezici,
+      prijatiZeSoutezicich: souhrn?.aktualni.prijati ?? null,
+      nesplniliPodminky: souhrn?.aktualni.conditions_not_met ?? null,
+      // Bez souhrnu nabídka v ročníku není; s ním je vypsaná, i kdyby chyběla shoda.
+      chybiVRocniku: souhrn === undefined,
     };
   });
 

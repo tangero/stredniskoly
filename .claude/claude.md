@@ -244,6 +244,7 @@ Podrobná dokumentace jednotlivých oblastí projektu:
 - [Grafy na stránce školy a oboru](../docs/grafy-skoly-a-oboru-2027.md) — schválený návrh grafů, časové řady, pravidla, předpoklady a uložení mezi zvažované
 - [Vrstvy stránky oboru](../docs/vrstvy-stranky-oboru-2027.md) — pět kol návrhu: odpověď na tři otázky uchazeče nad důkazy, stavy nabídky, rozhodnutí použít a zavrhnout
 - [Stránka školy](../docs/stranka-skoly-2027.md) — pět otázek rodiny: obory, jak si škola vede (maturita proti skupině oborů, inspekce), jaká škola je, kde je a okolí podle souběžných přihlášek
+- [Stránka města](../docs/navrh-stranky-mesta-2027.md) — přehled škol ve městě: obtížnost přijetí jako odznak a filtr (neřadí se podle ní), karty škol místo řádků nabídek, 102 měst generovaných z katalogu, město ve vyhledávači
 - [Sledování škol](../docs/sledovani-skol-2027.md) — upozornění e-mailem na změny sledovaných škol: události z přepnutí sad a portálu, denní souhrn seskupený podle události
 - [Využití nepoužitých dat](../docs/navrh-vyuziti-nepouzitych-dat-2027.md) — data uchazečů 2026 (přepnuto 17. 9. 2026), dobíhající obor jako rozlišení „obor se už nenabírá“ od nevypsaného ročníku, přijatí podle priority jako složení třídy (čeká na test srozumitelnosti); proč o absolventech data nemáme
 - [Předání práce 18. 9. 2026](../docs/predani-prace-2026-09-18.md) — stav po nasazení dat 2026 a úklidu: co je otevřené, v jakém pořadí na to jít, osm pastí a co se rozhodlo nedělat

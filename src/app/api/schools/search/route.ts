@@ -5,6 +5,7 @@ import { adresaNabidkyVeSkole, adresaPrehledu, nabidkySeStrankou } from '@/lib/a
 import { normalizeSchoolKey, uniqueSchoolIndex } from '@/lib/school-key';
 import { getResultsForYear, getSchoolAnalysis, getSchools2026Data } from '@/lib/data';
 import { readSchoolIds } from '@/lib/simulator-state';
+import { MESTA } from '@/lib/mesta.mjs';
 
 type SchoolsData = Record<string, School[]>;
 
@@ -26,6 +27,59 @@ function normalizeText(text: string): string {
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '');
+}
+
+export interface NalezeneMesto {
+  nazev: string;
+  slug: string;
+  kraj: string;
+  skol: number;
+  nabidek: number;
+}
+
+let mestaCache: NalezeneMesto[] | null = null;
+
+/**
+ * M\u011bsta s vlastn\u00ed str\u00e1nkou p\u0159ehledu, s po\u010dtem \u0161kol a nab\u00eddek.
+ *
+ * Kdo nap\u00ed\u0161e \u201ePardubice\u201c, hled\u00e1 nej\u010dast\u011bji p\u0159ehled \u0161kol ve m\u011bst\u011b, ne jednu
+ * \u0161kolu; bez tohohle by dostal jen seznam nab\u00eddek.
+ */
+async function getMesta(schools: School[]): Promise<NalezeneMesto[]> {
+  if (mestaCache) return mestaCache;
+  const skoly = new Map<string, Set<string>>();
+  const nabidky = new Map<string, number>();
+  for (const s of schools) {
+    if (!s.obec) continue;
+    if (!skoly.has(s.obec)) skoly.set(s.obec, new Set());
+    skoly.get(s.obec)!.add(s.id.split('_')[0]);
+    nabidky.set(s.obec, (nabidky.get(s.obec) ?? 0) + 1);
+  }
+  mestaCache = MESTA.map(m => ({
+    nazev: m.nazev,
+    slug: m.slug,
+    kraj: m.kraj,
+    skol: skoly.get(m.nazev)?.size ?? 0,
+    nabidek: nabidky.get(m.nazev) ?? 0,
+  })).filter(m => m.skol > 0);
+  return mestaCache;
+}
+
+/** M\u011bsta shoduj\u00edc\u00ed se s dotazem. Shoda od za\u010d\u00e1tku slova, aby \u201epardub\u201c na\u0161lo Pardubice. */
+function najdiMesta(mesta: NalezeneMesto[], query: string): NalezeneMesto[] {
+  if (!query) return [];
+  return mesta
+    .filter(m => {
+      const n = normalizeText(m.nazev);
+      return n.startsWith(query) || n.split(/[\s-]+/).some(slovo => slovo.startsWith(query));
+    })
+    // P\u0159esn\u00e1 shoda prvn\u00ed, pak podle nab\u00eddky \u0161kol.
+    .sort((a, b) => {
+      const pa = normalizeText(a.nazev) === query ? 0 : 1;
+      const pb = normalizeText(b.nazev) === query ? 0 : 1;
+      return pa - pb || b.skol - a.skol;
+    })
+    .slice(0, 5);
 }
 
 interface School {
@@ -175,8 +229,9 @@ export async function GET(request: NextRequest) {
       return !query || [s.nazev, s.nazev_display, s.obor, s.zamereni, s.obec, s.ulice, s.adresa]
         .some(value => normalizeText(value || '').includes(query));
     }).sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs') || a.id.localeCompare(b.id, 'cs'));
+    const mesta = najdiMesta(await getMesta(schools), query);
     return NextResponse.json({ schools: (params.get('simulatorCatalog') === '1' ? filtered : filtered.slice(offset, offset + limit)).map(s => serialize(s)),
-      kraje: krajeCache, total: filtered.length, catalogYear: 2026 });
+      mesta, kraje: krajeCache, total: filtered.length, catalogYear: 2026 });
   } catch (error) {
     console.error('Error searching schools:', error);
     return NextResponse.json({ error: 'Školy se nepodařilo načíst.' }, { status: 500 });

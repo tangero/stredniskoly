@@ -59,6 +59,12 @@ jobs:
       - name: JS testy
         run: npm run test:js
 
+      # Testy přehledu města vykreslují komponenty a volají API, takže importují
+      # přes alias `@/` a bez přípony; to `node --experimental-strip-types` neumí.
+      # Běží proto přes tsx, ne v kroku výše.
+      - name: Testy přehledu města
+        run: npm run test:mesto
+
   integrace:
     name: Integrace katalogu
     runs-on: ubuntu-latest

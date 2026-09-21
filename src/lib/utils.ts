@@ -36,23 +36,6 @@ export function formatNumber(num: number, decimals = 0): string {
 }
 
 /**
- * Získá třídu obtížnosti
- */
-export function getDifficultyClass(obtiznost: number): {
-  label: string;
-  colorClass: string;
-  bgClass: string;
-} {
-  if (obtiznost >= 70) {
-    return { label: 'Vysoká', colorClass: 'text-red-600', bgClass: 'bg-red-100' };
-  }
-  if (obtiznost >= 45) {
-    return { label: 'Střední', colorClass: 'text-yellow-600', bgClass: 'bg-yellow-100' };
-  }
-  return { label: 'Nízká', colorClass: 'text-green-600', bgClass: 'bg-green-100' };
-}
-
-/**
  * Získá třídu pro index poptávky
  */
 export function getDemandClass(index: number): {
