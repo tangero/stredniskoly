@@ -347,7 +347,7 @@ Pokrytí: **533 z 1 093 škol = 48,8 %**, což je 50,5 % přihlášek 1. kola 20
 | `link` | adresa článku | kde si to přečtu celé | ano, jediné, kam karta vede |
 | `pubDate` / `published` | datum vydání | je to aktuální | ano, řadí a určuje platnost |
 | `guid` / `id` | identifikátor v rozsahu zdroje | žádná, technické | ano, identita položky proti duplicitám |
-| `description` / `summary` | perex | z čeho se pozná téma a termín | ano, ale **jen ke klasifikaci** – nezobrazuje se |
+| `description` / `summary` | perex | z čeho se pozná téma a termín | ano, ale **jen ke klasifikaci** – nezobrazuje se (je to autorský text školy, viz níže) |
 | `category` | rubrika článku | žádná přímo | ano, vstup klasifikace |
 | `content:encoded` / `content` | plný text článku | — | **ne**, viz níže |
 | `author`, `dc:creator` | autor | žádná | ne |
@@ -363,7 +363,7 @@ Pokrytí: **533 z 1 093 škol = 48,8 %**, což je 50,5 % přihlášek 1. kola 20
 
 **Sklízeč se od 20. 9. 2026 představuje hlavičkou běžného prohlížeče**, ne jako `PrijimackyNaSkoluBot`. Pět zdrojů na botí hlavičku odpovídalo `HTTP 403`; že za to mohla hlavička, ale **doloženo není** – z české sítě vrací `200` i botí hlavička. Rozbor jedenácti trvale nefunkčních zdrojů (pět různých příčin, od odchozí adresy přes feed komentářů v registru po proof-of-work bránu) je v návrhu, oddíl 3.3. Co se sklidilo a co se z toho odvodilo, je vidět v administraci na `/admin/skolni-novinky`; rozhodnutí a inventura nepoužitých polí jsou v [návrhu](skolske-novinky-rss-2027.md), oddíl 3.7a.
 
-Z položky se počítají údaje zapsané ve [slovníku ukazatelů](slovnik-ukazatelu.md): třída zprávy, jistota, stav sdělení a termíny v roli akce. **Zmizení položky z feedu není zrušení události** – feedy jsou kluzné okno (medián 10 položek), takže se nic nemaže.
+Z položky se počítají údaje zapsané ve [slovníku ukazatelů](slovnik-ukazatelu.md): třída zprávy, jistota, stav sdělení, důležitost zprávy a termíny v roli akce. **Termín se čtenáři nezobrazuje** – karta nese štítek podle třídy a odkaz na článek školy, datum si rodina přečte tam (rozhodnutí 20. 9. 2026, návrh oddíl 3.5). **Zmizení položky z feedu není zrušení události** – feedy jsou kluzné okno (medián 10 položek), takže se nic nemaže.
 
 Sada zatím **není v registru stavu datových sad**: registr vede období, které se zobrazuje, a tenhle zdroj žádné období nemá – nese průběžné zprávy s vlastním datem vydání a vlastní platností podle druhu zprávy. Zapíše se do něj, až na něm bude stát ukazatel vázaný na přijímací ročník.
 

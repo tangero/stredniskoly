@@ -15,7 +15,7 @@ Vstupy (vše v repozitáři):
   (správný/falešný + důvod), rekonstruované z dokumentované inspekce z 19. 9. 2026.
 
 Výstup: počty položek, zásahy podle tříd a jistoty, přesnost proti referenci a
-**publikační rozhodnutí** (co uvidí čtenář: karta s termínem / karta / neutrální odkaz).
+**publikační rozhodnutí** (co uvidí čtenář: karta / neutrální odkaz / seznam).
 Úplnost (kolik relevantních zpráv pravidla přehlédla) se zde neměří – k tomu je
 potřeba ručně označit všechny položky vzorku, ne jen zásahy.
 
@@ -50,7 +50,7 @@ OD = DNES - timedelta(days=OKNO_DNU)
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from novinky_klasifikace import (  # noqa: E402  (až po sys.path)
-    VERZE_PRAVIDEL, PRAVIDLA_TEMA, TRIDY_S_POZVANKOU, TRIDY_POVOLENE_EMAILEM,
+    VERZE_PRAVIDEL, PRAVIDLA_TEMA, TRIDY_AKCI, TRIDY_POVOLENE_EMAILEM,
     STAVY_BLOKUJICI_TERMIN, strip, rozdel_klauzule, urci_stav, klasifikuj_temu,
     rozhodni_jistotu, extrahuj_data_akce, parse_feed, parse_datum,
     rozhodni_publikaci, oklasifikuj_polozky,
@@ -162,15 +162,15 @@ def ohodnot(zaznamy: list[dict]) -> None:
     # --- Publikační rozhodnutí: co uvidí čtenář, ne jen mezikrok klasifikace (F5) ---
     print("\n=== PUBLIKAČNÍ ROZHODNUTÍ (co uvidí čtenář) ===")
     zobrazeni = Counter(p["publikace"]["zobrazeni"] for _, p in hity)
-    print(f"karta s termínem: {zobrazeni['karta_terminu']}, karta bez termínu: {zobrazeni['karta']},"
-          f" neutrální odkaz: {zobrazeni['odkaz']}")
+    print(f"karta: {zobrazeni['karta']}, neutrální odkaz: {zobrazeni['odkaz']}")
     duvody = Counter(p["publikace"]["duvod"] for _, p in hity
                      if p["publikace"]["zobrazeni"] == "odkaz")
     for d, n in duvody.most_common():
         print(f"  odkaz místo karty – {d}: {n}×")
-    # Ruční reference konečného zobrazení existuje jen u tříd s pozvánkou (dod,
-    # talentové zkoušky, náhradní termín); jinde se karta nese jen vysokou jistotou.
-    ozn = [(r, p, t) for r, p in hity for t in p["tridy"] if t in TRIDY_S_POZVANKOU
+    # Ruční reference konečného zobrazení existuje jen u tříd akcí školy; jinde
+    # se karta nese jen vysokou jistotou. `spravne_terminy` je od 20. 9. 2026
+    # referencí pro vnitřní použití (platnost, řazení) – čtenář termín nevidí.
+    ozn = [(r, p, t) for r, p in hity for t in p["tridy"] if t in TRIDY_AKCI
            and (st := najdi_stitek(r, p.get("odkaz", ""), t)) and "spravne_zobrazeni" in st]
     spravne_zobr = spravne_term = spravne_stav = 0
     for r, p, t in ozn:
@@ -180,10 +180,10 @@ def ohodnot(zaznamy: list[dict]) -> None:
         spravne_term += sorted(pub["terminy"]) == sorted(st.get("spravne_terminy", []))
         spravne_stav += p["stav"] == st.get("spravny_stav")
     if ozn:
-        print(f"třídy s pozvánkou proti ruční referenci ({len(ozn)} párů):"
+        print(f"třídy akcí školy proti ruční referenci ({len(ozn)} párů):"
               f" zobrazení {spravne_zobr}/{len(ozn)},"
               f" termíny {spravne_term}/{len(ozn)}, stav sdělení {spravne_stav}/{len(ozn)}")
-    print("NEMĚŘENO: u tříd bez pozvánky nemá konečné zobrazení vlastní ruční referenci –"
+    print("NEMĚŘENO: u ostatních tříd nemá konečné zobrazení vlastní ruční referenci –"
           " shoduje se s hodnocením vysoké jistoty; úplnost se neměří vůbec.")
 
     dod = [p for _, p in hity if "dod" in p["tridy"]]

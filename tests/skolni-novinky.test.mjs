@@ -59,13 +59,27 @@ test('výpadek databáze se propaguje jako chyba, ne jako nula novinek', async (
   await assert.rejects(() => novinkySkoly('600001111'));
 });
 
-test('termínová karta se ukáže, dokud termín nenastal', async () => {
+test('pozvánka se ukáže jako karta, ale termín do odpovědi nejde', async () => {
+  // Karta říká, o čem zpráva je, a vede na článek školy; datum si čtenář
+  // přečte tam. Sloupec `terminy` zůstává v databázi pro dohled a platnost.
   process.env.DATABASE_URL = 'postgres://test';
   nastavPoolProTesty(pool([{ rows: [], rowCount: 0 }, { rows: [radek()], rowCount: 1 }, PRAZDNO, ZDROJ]));
   const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
-  assert.equal(v.polozky[0].zobrazeni, 'karta_terminu');
-  assert.deepEqual(v.polozky[0].terminy, ['2026-12-09']);
+  assert.equal(v.polozky[0].zobrazeni, 'karta');
+  assert.equal('terminy' in v.polozky[0], false);
   assert.equal(v.zdrojOverenAt, '2026-09-20T04:10:00.000Z');
+});
+
+test('položka uložená starými pravidly se přečte jako karta', async () => {
+  // V databázi leží `karta_terminu`, dokud ji nepřepočítá další sklizeň.
+  process.env.DATABASE_URL = 'postgres://test';
+  nastavPoolProTesty(pool([
+    { rows: [], rowCount: 0 },
+    { rows: [radek({ zobrazeni: 'karta_terminu' })], rowCount: 1 },
+    PRAZDNO, ZDROJ,
+  ]));
+  const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
+  assert.equal(v.polozky[0].zobrazeni, 'karta');
 });
 
 test('proběhlý termín přestane být pozvánkou, i když sklízeč zatím neběžel', async () => {
@@ -75,7 +89,6 @@ test('proběhlý termín přestane být pozvánkou, i když sklízeč zatím neb
   nastavPoolProTesty(pool([{ rows: [], rowCount: 0 }, { rows: [radek()], rowCount: 1 }, PRAZDNO, ZDROJ]));
   const v = await novinkySkoly('600001111', new Date('2026-12-10T08:00:00Z'));
   assert.equal(v.polozky[0].zobrazeni, 'odkaz');
-  assert.deepEqual(v.polozky[0].terminy, []);
 });
 
 test('přepínač skryje jednu položku, ostatní zůstanou', async () => {
@@ -118,7 +131,7 @@ test('výpadek zdroje neskryje dříve uložené položky', async () => {
   assert.equal(v.zdrojVypadek, true);
 });
 
-test('karta s termínem se dostane na stránku, i když ji přebilo pět novějších zpráv', async () => {
+test('důležitá zpráva se dostane na stránku, i když ji přebilo pět novějších', async () => {
   // Nález z provozu (škola 600011801, 20. 9. 2026): pozvánku na den otevřených
   // dveří vytlačila nabídka práce pro dojiče, protože výběr pěti položek
   // probíhal podle data dřív, než se vědělo, co je co.
@@ -144,7 +157,7 @@ test('karta s termínem se dostane na stránku, i když ji přebilo pět nověj�
   const v = await novinkySkoly('600011801', new Date('2026-09-20T10:00:00Z'));
   assert.equal(v.polozky.length, 5);
   assert.equal(v.polozky[0].id, 'dod');
-  assert.deepEqual(v.polozky[0].terminy, ['2026-10-01']);
+  assert.equal(v.polozky[0].zobrazeni, 'karta');
   // Vypadne nejstarší z běžných zpráv, ne pozvánka.
   assert.deepEqual(v.polozky.slice(1).map((p) => p.id), ['z4', 'z3', 'z2', 'z1']);
 });

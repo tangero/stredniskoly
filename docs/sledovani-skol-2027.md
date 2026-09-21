@@ -30,7 +30,7 @@ Událost vzniká jen při **publikaci**, tedy tam, kde se web opravdu mění:
 | Přepnutí datové sady (`stav-datovych-sad.py prepni`) | po schválení a sloučení PR datové linky | školy, jejichž údaje se mezi starým a novým obdobím liší; spočítá rozdílový skript nad výstupními soubory, ne všechny školy v sadě |
 | Schválení příspěvku z portálu pro školy | při zápisu do `public/portal_skol.json` | jedna škola, pole, která se změnila |
 | Nová inspekční zpráva | při převzetí snímku ČŠI | školy s novou inspekcí |
-| **Novinka z webu školy** (RSS) | při zápisu položky s publikačním rozhodnutím `karta_terminu` nebo `karta` | jedna škola |
+| **Novinka z webu školy** (RSS) | při zápisu položky s publikačním rozhodnutím `karta` | jedna škola |
 
 Co událost **není**: oprava překlepu v textu stránky, přepočet bez změny hodnoty, změna vzhledu, nová verze slovníku. Rozdílový skript porovnává **zobrazené hodnoty**, ne soubory, takže technická regenerace nic nepošle. U novinek z webu školy událost nevzniká z každé položky: `odkaz` a `seznam` jsou zprávy ze života školy, ne důvod psát rodině.
 

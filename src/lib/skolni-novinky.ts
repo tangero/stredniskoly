@@ -18,7 +18,14 @@
 
 import { dotaz, jeDbNastavena } from './novinky-db.ts';
 
-/** Co publikační rozhodnutí sklízeče o položce řeklo. */
+/**
+ * Co publikační rozhodnutí sklízeče o položce řeklo.
+ *
+ * `karta_terminu` je historická hodnota: do 20. 9. 2026 znamenala kartu, která
+ * čtenáři tvrdila datum akce. Datum se už nezobrazuje, takže se při čtení
+ * překládá na `karta`. V databázi zůstane, dokud položku nepřepočítá další
+ * sklizeň (změna `verze_pravidel` přepočet vyvolá).
+ */
 export type Zobrazeni = 'karta_terminu' | 'karta' | 'odkaz' | 'seznam';
 
 export interface SkolniNovinka {
@@ -37,8 +44,6 @@ export interface SkolniNovinka {
   objevenoAt: string | null;
   zobrazeni: Zobrazeni;
   tridy: string[];
-  /** Jen budoucí termíny v roli akce; proběhlé se do karty nedostanou. */
-  terminy: string[];
   duvod: string | null;
 }
 
@@ -69,9 +74,9 @@ const POCET_ZE_ZIVOTA = 6;
  *
  * Řazení podle data samo o sobě nestačí: pozvánka na den otevřených dveří je
  * často starší než běžné zprávy ze života školy, takže ji pět novějších
- * článků vytlačí ze stránky – a právě termín dne otevřených dveří je jediný
- * údaj, po kterém je poptávka. Okno je proto širší a výběr z něj dává přednost
- * kartám s platným termínem (viz `serad`).
+ * článků vytlačí ze stránky – a právě ta je to, kvůli čemu rodina na stránku
+ * přišla. Okno je proto širší a výběr z něj dává přednost důležitým zprávám
+ * k přijímačkám (viz `serad`).
  */
 const OKNO_POLOZEK = 30;
 
@@ -140,11 +145,20 @@ function naPolozku(
 ): SkolniNovinka | null {
   if (jeVypnuto(prepinace, `polozka:${r.id}`)) return null;
   const tridy = naPole(r.tridy);
-  // Budoucí termíny se počítají k času dotazu. Sklízeč běží dvakrát denně,
-  // takže „budoucí při sklizni" nestačí – včerejší termín by zůstal pozvánkou.
-  const terminy = naPole(r.terminy).filter((t) => t >= dnes);
+  // Termíny **ven nejdou**: karta o datu netvrdí nic (rozhodnutí 20. 9. 2026,
+  // `rozhodni_publikaci` v scripts/novinky_klasifikace.py). Čtou se jen proto,
+  // aby pozvánka na proběhlou akci přestala být zvýrazněná. Budoucnost se
+  // počítá k času dotazu: sklízeč běží dvakrát denně, takže „budoucí při
+  // sklizni" nestačí – včerejší termín by zůstal pozvánkou.
+  const terminy = naPole(r.terminy);
+  const jesteBude = terminy.some((t) => t >= dnes);
   let zobrazeni = r.zobrazeni as Zobrazeni;
-  if (zobrazeni === 'karta_terminu' && terminy.length === 0) zobrazeni = 'odkaz';
+  // Položka uložená starými pravidly: karta s termínem je dnes prostě karta.
+  if (zobrazeni === 'karta_terminu') zobrazeni = 'karta';
+  // Pozvánka na akci, jejíž termín jsme přečetli a už proběhl, zvýrazněná
+  // nezůstane. Zpráva, u které jsme žádný termín nepřečetli, kartou zůstává:
+  // termín v ní být může, jen my ho neumíme vyluštit.
+  if (zobrazeni === 'karta' && terminy.length > 0 && !jesteBude) zobrazeni = 'odkaz';
   if (tridy.some((t) => jeVypnuto(prepinace, `trida:${t}`))) {
     zobrazeni = zobrazeni === 'seznam' ? 'seznam' : 'odkaz';
   }
@@ -157,22 +171,23 @@ function naPolozku(
     objevenoAt: publikovano ? null : naIso(r.vytvoreno),
     zobrazeni,
     tridy,
-    terminy,
     duvod: r.duvod,
   };
 }
 
 /**
- * Karty s platným termínem napřed, zbytek v pořadí podle data.
+ * Důležité zprávy napřed, zbytek v pořadí podle data.
  *
  * Obojí si uvnitř drží původní pořadí (dotaz vrací od nejnovější), takže mezi
  * kartami ani mezi ostatními zprávami se nic nepřeskupuje – mění se jen to,
- * která skupina má přednost, když se do bloku všechno nevejde.
+ * která skupina má přednost, když se do bloku všechno nevejde. Důvod je
+ * naměřený: u školy 600011801 přebilo pozvánku na den otevřených dveří pět
+ * novějších zpráv ze života školy včetně nabídky práce pro dojiče.
  */
 function serad(polozky: SkolniNovinka[]): SkolniNovinka[] {
-  const sTerminem = polozky.filter((p) => p.zobrazeni === 'karta_terminu');
-  const ostatni = polozky.filter((p) => p.zobrazeni !== 'karta_terminu');
-  return [...sTerminem, ...ostatni];
+  const dulezite = polozky.filter((p) => p.zobrazeni === 'karta');
+  const ostatni = polozky.filter((p) => p.zobrazeni !== 'karta');
+  return [...dulezite, ...ostatni];
 }
 
 /**

@@ -838,7 +838,8 @@
     "public/skoly_feedy.json"
    ],
    "ukazatele": [
-    "Termín dne otevřených dveří ze zprávy školy",
+    "Důležitost zprávy z webu školy",
+    "Termín akce ze zprávy školy (nezobrazuje se)",
     "Třída zprávy, jistota a stav sdělení",
     "Hlášený stav volných míst"
    ],

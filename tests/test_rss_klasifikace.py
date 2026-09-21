@@ -260,10 +260,19 @@ class TestPublikacniRozhodnuti(unittest.TestCase):
     def zobrazeni(self, titulek: str, popis: str = "") -> dict:
         return m.rozhodni_publikaci(polozka(titulek, popis))
 
-    def test_pozvanka_s_doloženym_terminem_je_karta(self):
+    def test_pozvanka_je_karta_ale_datum_netvrdi(self):
         v = self.zobrazeni("Zveme uchazeče na den otevřených dveří 9. 12. 2026")
-        self.assertEqual(v["zobrazeni"], "karta_terminu")
+        self.assertEqual(v["zobrazeni"], "karta")
+        # Termín se dál čte, ale jen pro platnost a řazení – ven nejde.
         self.assertEqual(v["terminy"], ["2026-12-09"])
+
+    def test_pozvanka_bez_citelneho_terminu_zustane_kartou(self):
+        # Datum v článku být může; že ho neumíme přečíst, není důvod zprávu
+        # schovat mezi ostatní – čtenář si ho přečte u školy.
+        v = self.zobrazeni("Zveme uchazeče na den otevřených dveří",
+                           "Termín najdete v pozvánce na našem webu.")
+        self.assertEqual(v["zobrazeni"], "karta")
+        self.assertEqual(v["terminy"], [])
 
     def test_zrusena_akce_nevytvori_pozvanku(self):
         v = self.zobrazeni("DOD pro uchazeče 9. 12. 2026 se nekoná")
@@ -300,10 +309,47 @@ class TestPublikacniRozhodnuti(unittest.TestCase):
         self.assertEqual(v["zobrazeni"], "odkaz")
         self.assertFalse(v["email"])
 
+    def test_prijimacky_nanecisto_jsou_karta(self):
+        v = self.zobrazeni("Přijímačky nanečisto pro uchazeče 5. 11. 2026")
+        self.assertIn("prijimacky_nanecisto", v["tridy"])
+        self.assertEqual(v["zobrazeni"], "karta")
+
+    def test_maturita_nanecisto_neni_akce_pro_uchazece(self):
+        # Generálka pro vlastní čtvrťáky, ne pozvánka pro uchazeče.
+        v = self.zobrazeni("Maturita nanečisto pro čtvrťáky")
+        self.assertNotIn("prijimacky_nanecisto", v["tridy"])
+
+    def test_cvicny_jazykovy_certifikat_neni_prijimacky_nanecisto(self):
+        # Gymnázium Příbram: „Cvičné testy B2 First a C1 Advanced" jsou
+        # jazykový certifikát pro vlastní žáky, ne zkoušky nanečisto.
+        v = self.zobrazeni("Certifikáty ANJ (cvičný test): termín & přihlašování",
+                           "Cvičné testy B2 First a C1 Advanced se konají 2. 10.")
+        self.assertNotIn("prijimacky_nanecisto", v["tridy"])
+
+    def test_pripravny_kurz_je_vlastni_trida(self):
+        v = self.zobrazeni("Přípravné kurzy na SŠ",
+                           "Škola pořádá přípravné kurzy k přijímacím zkouškám na SŠ.")
+        self.assertIn("pripravny_kurz", v["tridy"])
+        self.assertNotIn("setkani_uchazecu", v["tridy"])
+        self.assertEqual(v["zobrazeni"], "karta")
+
+    def test_lyzarsky_kurz_neni_pripravny_kurz(self):
+        v = self.zobrazeni("Lyžařský kurz pro sekundu")
+        self.assertNotIn("pripravny_kurz", v["tridy"])
+
+    def test_setkani_s_uchazeci_je_karta(self):
+        v = self.zobrazeni("Setkání s uchazeči o studium 10. 12. 2026")
+        self.assertIn("setkani_uchazecu", v["tridy"])
+        self.assertEqual(v["zobrazeni"], "karta")
+
+    def test_tridni_schuzky_nejsou_setkani_s_uchazeci(self):
+        v = self.zobrazeni("Třídní schůzky 12. 11. 2026")
+        self.assertEqual(v["zobrazeni"], "seznam")
+
     def test_talentove_zkousky_zatim_nejdou_emailem(self):
         v = self.zobrazeni("Talentové zkoušky pro uchazeče o obor konzervatoře 15. 1. 2027",
                            "Zveme uchazeče, zkoušky se konají 15. 1. 2027.")
-        self.assertEqual(v["zobrazeni"], "karta_terminu")
+        self.assertEqual(v["zobrazeni"], "karta")
         self.assertFalse(v["email"])  # třída bez přejímacího benchmarku
 
 
