@@ -18,6 +18,7 @@ export const TABULKY_SKOLNICH_NOVINEK = [
   'skola_feed',
   'skola_novinka',
   'skola_novinka_verze',
+  'skola_novinka_rozbor',
   'skola_prepinac',
   'skola_invalidace',
   'sklizen_beh',
@@ -86,6 +87,31 @@ export const MIGRACE_SKOLNICH_NOVINEK: string[] = [
   zaznamenano timestamptz not null default now()
 )`,
   `create index if not exists skola_novinka_verze_polozka on skola_novinka_verze (novinka_id, zaznamenano desc)`,
+  // Rozbor článku: co se dozvíme z textu, který škola napsala, a co z toho složíme
+  // do věty. Vede se **odděleně od položky**, protože má jiný původ i jiný životní
+  // cyklus: položka pochází z feedu a mění se s ním, rozbor pochází z textu článku
+  // a z rozhodovacího modelu a přepočítá se, když se změní text, model nebo šablona.
+  //
+  // `terminy` nese termín **s popiskem** – ke které akci patří a v kolik hodin.
+  // Plochý seznam dat bez popisku byl přesně ta chyba, kvůli které se zobrazování
+  // termínů 20. 9. 2026 vyplo (600005399: osm dat, z toho tři lhůty a šest termínů
+  // MŠMT v jedné kartě). Bez popisku se termín nezobrazuje.
+  //
+  // `souhrn` je **náš text**, ne text školy: kód ho skládá ze šablony a z polí
+  // níže. Text článku se čte, ale nepřebírá (docs/zdroje-dat.md 2.14).
+  `create table if not exists skola_novinka_rozbor (
+  novinka_id uuid primary key references skola_novinka on delete cascade,
+  zdroj_textu text not null,
+  otisk_textu text not null,
+  terminy jsonb not null default '[]'::jsonb,
+  souhrn text,
+  model text,
+  odpovedi jsonb not null default '{}'::jsonb,
+  verze_pravidel text not null,
+  vytvoreno timestamptz not null default now(),
+  zmeneno timestamptz not null default now()
+)`,
+  `create index if not exists skola_novinka_rozbor_otisk on skola_novinka_rozbor (otisk_textu)`,
   // Provozní přepínač: vypnout zdroj, skrýt jednu položku nebo vypnout
   // zvýrazňování třídy. Musí jít bez nasazení – vypnutí sklízení samo o sobě
   // neskryje chybnou kartu, která už v databázi je (oddíl 3.7).

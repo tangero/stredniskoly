@@ -62,3 +62,24 @@ test('položka nese verzi pravidel, kterou byla rozhodnuta', () => {
   assert.match(tabulka, /verze_pravidel text not null/);
   assert.match(tabulka, /zobrazeni text not null/);
 });
+
+test('rozbor článku visí na položce a zmizí s ní', () => {
+  // Rozbor bez položky by na stránce nebyl k čemu připojit a v databázi by zbyl
+  // jako sirotek s termínem, který už nikdo nezobrazí.
+  const tabulka = MIGRACE_SKOLNICH_NOVINEK.find((p) =>
+    p.startsWith('create table if not exists skola_novinka_rozbor ('),
+  );
+  assert.ok(tabulka);
+  assert.match(tabulka, /references skola_novinka on delete cascade/);
+});
+
+test('rozbor nese původ textu i verzi pravidel, kterými vznikl', () => {
+  // Bez `zdroj_textu` by nešlo odlišit termín vyčtený z perexu od termínu ze
+  // staženého článku, a bez verze pravidel by nešel spustit přepočet.
+  const tabulka = MIGRACE_SKOLNICH_NOVINEK.find((p) =>
+    p.startsWith('create table if not exists skola_novinka_rozbor ('),
+  );
+  assert.match(tabulka, /zdroj_textu text not null/);
+  assert.match(tabulka, /otisk_textu text not null/);
+  assert.match(tabulka, /verze_pravidel text not null/);
+});
