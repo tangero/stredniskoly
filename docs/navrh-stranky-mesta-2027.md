@@ -1,6 +1,6 @@
 # Návrh stránky města: jaké školy se u nás nabízejí
 
-Verze 1.4 · 21. 9. 2026 · Stav: **zrealizováno, dvě kola oponentury vypořádána** (oddíly 9 až 11)
+Verze 1.5 · 21. 9. 2026 · Stav: **zrealizováno včetně dalších oborů a 2. kola** (oddíly 9 až 12)
 
 Zadání zadavatele z 21. 9. 2026: „[/mesto/pardubice] je starý design přehledu škol pro města. Projdi jej a navrhni zlepšení, která umožní lidem lépe vidět, jaké školy se v jejich městech nabízejí. Ukazuj u škol viditelné hodnocení náročnosti přijetí, které u nich máme — aby si lidé udělali přehled, co jsou méně náročné a více náročné školy.“
 
@@ -345,10 +345,65 @@ další chyby v závislostech `cityData`.
 
 ---
 
+## 12. Další obory ve městě a 2. kolo
+
+Rozhodnutí zadavatele z 21. 9. 2026 ke dvěma ze tří otevřených otázek oddílu 8.
+
+### 12.1 Obory, které hlavní přehled nevede
+
+**Proč.** Přehled stojí na denním nezkráceném studiu s povinnou jednotnou zkouškou.
+Naměřeno, kolik tím ve městech vypadne: **798 oborů**, u velkých měst 17–22 % nabídky
+(Praha 94, Brno 47, Ostrava 33), ale **v Chomutově 55 % a v České Lípě 52 %**. Rodina
+tam viděla méně než polovinu toho, co se dá studovat. Dosavadní přiznání větou to
+říkalo, ale nabídku neukázalo.
+
+**Dvě skupiny, ne jedna.** Ze 1 022 oborů v `kontext_prihlasek_{rok}.json` je
+**950 bez jednotné zkoušky** (učební obory s výučním listem, konzervatoře) a **72 ji má**,
+jen je katalog nevede — bývají to umělecké obory s talentovou zkouškou. Každá chybí
+z jiného důvodu, takže oddíl je dělí a u každé říká proč. Slít je do jedné věty by
+tvrdilo nepravdu o jedné z nich.
+
+**Co se zobrazuje.** Jen škola a názvy oborů, seskupené po školách. **Žádná obtížnost
+přijetí a žádný počet přijatých** — u oborů bez jednotné zkoušky výsledky neexistují
+a obor bez dat se nesmí tvářit jako snadný (past 4 zdrojů dat; přesně tak se u starého
+indexu 386 oborů ukázalo jako nejsnazší). Nad přehledem zůstává upozornění, ale odkazuje
+na oddíl a uvádí počet.
+
+### 12.2 Značka 2. kola
+
+**Co.** U nabídky, která v zobrazeném ročníku 2. kola vypsala 2. kolo, značka
+„v roce {rok} tu bylo i 2. kolo“. Ve městech se to týká **633 nabídek**: Praha 76,
+Brno 46, Ostrava 31, v Jeseníku 12 z 15.
+
+**Formulace je záměrně v minulém čase.** Že škola 2. kolo vypsala v jednom roce,
+o dalším neříká nic; „ještě jsou místa“ by byl slib, který data nekryjí. Ročník se bere
+z registru sady `cermat-kolo2-agregaty`, která má **vlastní období** a může se lišit
+od 1. kola (výsledky vycházejí v září). Bez ročníku z registru se značka nezobrazí
+vůbec, aby netvrdila rok, který není doložený.
+
+**Zobrazují se jen vypsaná 2. kola.** Stavy `nenaplneno_bez_2_kola` (768 nabídek)
+a `bez_2_kola` (1 437) říkají, že se nekonalo, a na přehledu města nemají co dodat.
+
+### 12.3 Jazyková poznámka
+
+První verze nadpisu zněla „Další obory v {město}“ a na Chomutově vyšlo **„Další obory
+v Chomutov“**. Šestý pád českých názvů měst nejde spolehlivě odvodit algoritmem („v Ústí
+nad Labem“, „v Hradci Králové“, „v Karlových Varech“), a ručně by to znamenalo 102
+tvarů k udržování. Nadpis proto pád nepotřebuje: **„Další obory ve městě“**.
+
+### 12.4 Ověření
+
+Pět nových testů v `tests/mesto-prehled.test.mjs` (celkem 23), **každý ověřen mutací**:
+značka u všech nabídek, značka ignorující registr a odznak obtížnosti v oddílu dalších
+oborů — všechny tři mutace zachyceny. Build 1269 stránek, 225 Python testů.
+
+---
+
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.5 | Doplněny další obory ve městě (798 oborů, které přehled nevedl) a značka 2. kola u 633 nabídek (21. 9. 2026), oddíl 12. Obory bez jednotné zkoušky a obory mimo katalog se zobrazují odděleně, protože chybí z jiného důvodu; bez obtížnosti přijetí, protože u nich výsledky neexistují. |
 | 1.4 | Druhé kolo oponentury (21. 9. 2026), oddíl 11: potvrzena oprava všech pěti nálezů, přijata výhrada, že testy chránily jen datovou vrstvu. Doplněny testy vykresleného výstupu a vyhledávání, každý ověřen mutací. Mutační ověření odhalilo dvě slabá místa v nových testech a jeden planý poplach. |
 | 1.3 | Vypořádána oponentura PR #139 (21. 9. 2026), oddíl 10: pět nálezů ověřeno proti datům, všechny platné, opraveny. Nejzávažnější označoval 462 vypsaných oborů za nevypsané, protože vypsanost se odvozovala z jiného párování než obtížnost. Přidány regresní testy. |
 | 1.2 | Zrealizováno (21. 9. 2026), oddíl 9 s pěti odchylkami od návrhu. |

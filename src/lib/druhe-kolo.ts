@@ -63,3 +63,53 @@ export async function getDruheKolo(programId: string, zamereni?: string): Promis
   const rok = Number(obdobi);
   return { rok, zaznam, predchozi: data.roky[String(rok - 1)]?.[k] ?? null };
 }
+
+/** Nabídka, která v zobrazeném ročníku měla 2. kolo. */
+export interface VypsaneDruheKolo {
+  /** Klíč `REDIZO_KKOV` nebo `REDIZO_KKOV_zaměření`, stejný jako v souboru. */
+  klic: string;
+  redizo: string;
+  kkov: string;
+  kapacita: number;
+  prijati: number;
+}
+
+/**
+ * Nabídky daných škol, které v zobrazeném ročníku vypsaly 2. kolo.
+ *
+ * Pro přehledy nad více školami; jednotlivá nabídka se ptá přes `getDruheKolo`.
+ * Vrací **jen vypsané 2. kolo** — stavy `nenaplneno_bez_2_kola` a `bez_2_kola`
+ * říkají, že se nekonalo, a na přehledu města nemají co dodat.
+ *
+ * Je to **historie zobrazeného ročníku, ne nabídka na příští rok**: že škola
+ * 2. kolo vypsala v jednom roce, o dalším neříká nic.
+ */
+export async function druheKoloPodleRedizo(
+  redizoMnozina: Set<string>,
+): Promise<Map<string, VypsaneDruheKolo[]>> {
+  const out = new Map<string, VypsaneDruheKolo[]>();
+  const obdobi = await zobrazeneObdobi(SADA);
+  if (!obdobi) return out;
+  const data = await nacti();
+  for (const [k, zaznam] of Object.entries(data.roky[obdobi] ?? {})) {
+    if (zaznam.stav !== 'vypsano') continue;
+    const redizo = k.split('_')[0];
+    if (!redizoMnozina.has(redizo)) continue;
+    const seznam = out.get(redizo) ?? [];
+    seznam.push({
+      klic: k,
+      redizo,
+      kkov: k.split('_')[1] ?? '',
+      kapacita: zaznam.kapacita,
+      prijati: zaznam.prijati,
+    });
+    out.set(redizo, seznam);
+  }
+  return out;
+}
+
+/** Rok, za který se 2. kolo zobrazuje; z registru, nikdy z letopočtu v kódu. */
+export async function rokDruhehoKola(): Promise<number | null> {
+  const obdobi = await zobrazeneObdobi(SADA);
+  return obdobi ? Number(obdobi) : null;
+}
