@@ -332,6 +332,17 @@ dvě slabá místa v mých vlastních testech, která by jinak zůstala:
 
 Celkem 18 kontrol v obou souborech, `npm run test:mesto`.
 
+**Oprava v CI (nález mimo obě kola oponentury).** Po druhém kole hlásil PR stav `UNSTABLE`:
+úloha „TypeScript“ padala na kroku `npm run test:js`, a to **právě na těchto dvou nových
+souborech** (`fail 2` z 293 testů). Mé dřívější tvrzení, že jde o existující omezení
+skriptu společné s `hlaseni` a `portal-*`, neplatilo: ty soubory v CI procházejí a lokálně
+padají jen kvůli chybějící dev závislosti `@electric-sql/pglite`. Řešení: `test:js` oba
+soubory vynechává vzorem `tests/!(mesto-prehled|vyhledavani-mesta).test.mjs` (41 → 39
+souborů) a CI má nový krok „Testy přehledu města“ nad `npm run test:mesto`, kde `tsx`
+alias `@/` a importy bez přípony zvládá. Pokus napsat vlastní zavaděč přes
+`typescript.transpileModule` jsem zavrhl: ruční obsluha aliasů a `.mjs` modulů plodila
+další chyby v závislostech `cityData`.
+
 ---
 
 ## Historie
