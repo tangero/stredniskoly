@@ -106,7 +106,7 @@ export function zmenaProtiUlozene(stara, p) {
 }
 
 /** Jedna položka: nová, změněná, nebo beze změny. Vrací, co se stalo. */
-async function ulozPolozku(klient, redizo, p) {
+export async function ulozPolozku(klient, redizo, p) {
   const { rows } = await klient.query(
     `select id, otisk_obsahu, verze_pravidel from skola_novinka
       where redizo = $1 and identita = $2`,
@@ -132,6 +132,11 @@ async function ulozPolozku(klient, redizo, p) {
     );
     zmena = 'nova';
   } else if (zmenaProtiUlozene(stara, p) === 'beze_zmeny') {
+    // Rozbor se uloží i tak. Sklízeč se modelu ptá dřív, než se tady zjistí, že
+    // se položka nezměnila, takže odpověď je už zaplacená; zahodit ji znamená
+    // platit za ni znovu každý běh a nikdy neobnovit větu u položky, které se
+    // text nemění. Řádek novinky se nepřepisuje, mění se jen jeho rozbor.
+    await ulozRozbor(klient, stara.id, p);
     return { zmena: 'beze_zmeny' };
   } else {
     id = stara.id;

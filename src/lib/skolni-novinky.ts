@@ -259,7 +259,7 @@ export async function novinkySkoly(
         and zneplatneno is null
         and zobrazeni <> 'seznam'
         and (konec_platnosti is null or konec_platnosti > $2)
-      order by publikovano desc nulls last, vytvoreno desc
+      order by n.publikovano desc nulls last, n.vytvoreno desc
       limit $3`,
     [redizo, ted.toISOString(), OKNO_POLOZEK],
   );
@@ -269,7 +269,7 @@ export async function novinkySkoly(
         and zneplatneno is null
         and zobrazeni = 'seznam'
         and (konec_platnosti is null or konec_platnosti > $2)
-      order by publikovano desc nulls last, vytvoreno desc
+      order by n.publikovano desc nulls last, n.vytvoreno desc
       limit $3`,
     [redizo, ted.toISOString(), POCET_ZE_ZIVOTA],
   );

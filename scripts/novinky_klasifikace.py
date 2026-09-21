@@ -23,7 +23,7 @@ from xml.etree import ElementTree as ET
 # verzí se při další sklizni přepíše, i když se článek nezměnil. Součástí je
 # i verze rozhodovacího modelu (`novinky_jev.MODEL`) – kdyby se měnila potichu,
 # nešlo by poznat, čím věta s termíny vznikla.
-VERZE_PRAVIDEL = "2026-09-21.1"
+VERZE_PRAVIDEL = "2026-09-21.2"
 
 
 def strip(t: str) -> str:
@@ -555,23 +555,42 @@ def _spoj(casti: list[str]) -> str:
     return ", ".join(casti[:-1]) + " a " + casti[-1]
 
 
+# Kolik termínů věta vyjmenuje. Přípravný kurz o dvanácti středách není
+# patologie, ale běžný případ, a sedm termínů dá větu na 145 znaků, kterou na
+# kartě nikdo nepřečte. Nad strop se vyjmenují první tři a zbytek se shrne
+# koncovým datem: věta pak pořád říká, kdy akce začíná a do kdy běží, jen
+# přestane být seznamem.
+STROP_TERMINU_VE_VETE = 4
+VYJMENOVANYCH_TERMINU = 3
+
+
 def slozeni_souhrnu(trida: str, terminy: list[dict]) -> str | None:
     """Věta na kartu z termínů s popiskem. `None`, když není co složit.
 
     `terminy` jsou položky `{"datum": "2026-10-23", "cas": "17:00" | None}`
     **jedné** třídy akce. Čas se vytýká za všechny termíny jen tehdy, když je
     u všech stejný; jinak jde ke svému datu, aby věta netvrdila společný začátek
-    tam, kde ho škola neuvedla."""
+    tam, kde ho škola neuvedla.
+
+    Termínů nad `STROP_TERMINU_VE_VETE` se vyjmenují první tři a za ně jde
+    „další termíny do <poslední datum>". Zamlčené termíny zůstávají v rozboru;
+    věta o nich nelže, jen je nevypisuje."""
     sablony = SABLONY_SOUHRNU.get(trida)
     if not sablony or not terminy:
         return None
     serazene = sorted(terminy, key=lambda t: t["datum"])
-    casy = {t.get("cas") for t in serazene}
-    if len(casy) == 1 and (spolecny := serazene[0].get("cas")):
-        text = _spoj([formatuj_datum(t["datum"]) for t in serazene]) + f" od {spolecny}"
+    zkraceno = len(serazene) > STROP_TERMINU_VE_VETE
+    ukazane = serazene[:VYJMENOVANYCH_TERMINU] if zkraceno else serazene
+    # Čas se vytýká podle vypsaných termínů, ne podle všech: věta mluví jen
+    # o nich, takže společný začátek musí platit pro ně.
+    casy = {t.get("cas") for t in ukazane}
+    if len(casy) == 1 and (spolecny := ukazane[0].get("cas")):
+        text = _spoj([formatuj_datum(t["datum"]) for t in ukazane]) + f" od {spolecny}"
     else:
         text = _spoj([formatuj_datum(t["datum"]) + (f" od {t['cas']}" if t.get("cas") else "")
-                      for t in serazene])
+                      for t in ukazane])
+    if zkraceno:
+        text += f", další termíny do {formatuj_datum(serazene[-1]['datum'])}"
     return sablony[0 if len(serazene) == 1 else 1].format(terminy=text)
 
 

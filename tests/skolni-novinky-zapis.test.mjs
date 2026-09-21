@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { ulozRozbor, zmenaProtiUlozene } from '../scripts/skolni-novinky-zapis.mjs';
+import { ulozPolozku, ulozRozbor, zmenaProtiUlozene } from '../scripts/skolni-novinky-zapis.mjs';
 
 const ulozena = { otisk_obsahu: 'abc', verze_pravidel: '2026-09-20.5' };
 
@@ -64,4 +64,43 @@ test('rozbor bez věty přepíše starou větu, místo aby ji nechal viset', asy
   assert.match(k.dotazy[0].sql, /on conflict \(novinka_id\) do update/);
   assert.match(k.dotazy[0].sql, /souhrn = excluded\.souhrn/);
   assert.equal(k.dotazy[0].args[6], null);
+});
+
+test('rozbor se uloží i u položky beze změny', async () => {
+  // Sklízeč se modelu ptá dřív, než se tady zjistí, že se článek nezměnil,
+  // takže odpověď je už zaplacená. Kdyby se zahodila, platilo by se za ni
+  // každý běh znovu a věta u položky se stálým textem by se nikdy neobnovila.
+  const dotazy = [];
+  const klient = {
+    query: async (sql, args) => {
+      dotazy.push({ sql, args });
+      return { rows: /select id, otisk_obsahu/.test(sql)
+        ? [{ id: 'n1', otisk_obsahu: 'abc', verze_pravidel: 'v1' }] : [] };
+    },
+  };
+  const vysledek = await ulozPolozku(klient, '600001111', {
+    identita: 'i1', otisk_obsahu: 'abc', verze_pravidel: 'v1',
+    rozbor: { zdroj_textu: 'perex', otisk_textu: 'aa', souhrn: 'Škola pořádá den otevřených dveří 5. 1. 2027.',
+              terminy: [{ datum: '2027-01-05', cas: null, akce: 'dod' }], akce: 'dod',
+              lhuty: [], model: 'typesafe/jev-1.13', odpovedi: {}, verze_pravidel: 'v1' },
+  });
+  assert.equal(vysledek.zmena, 'beze_zmeny');
+  // Řádek novinky se nepřepisuje, nová verze nevzniká — jen rozbor.
+  assert.equal(dotazy.filter((d) => /^\s*update skola_novinka set/.test(d.sql)).length, 0);
+  assert.equal(dotazy.filter((d) => /insert into skola_novinka_verze/.test(d.sql)).length, 0);
+  assert.equal(dotazy.filter((d) => /insert into skola_novinka_rozbor/.test(d.sql)).length, 1);
+});
+
+test('položka beze změny a bez rozboru nesahá do databáze podruhé', async () => {
+  const dotazy = [];
+  const klient = {
+    query: async (sql, args) => {
+      dotazy.push({ sql, args });
+      return { rows: /select id, otisk_obsahu/.test(sql)
+        ? [{ id: 'n1', otisk_obsahu: 'abc', verze_pravidel: 'v1' }] : [] };
+    },
+  };
+  await ulozPolozku(klient, '600001111',
+    { identita: 'i1', otisk_obsahu: 'abc', verze_pravidel: 'v1' });
+  assert.equal(dotazy.length, 1);
 });

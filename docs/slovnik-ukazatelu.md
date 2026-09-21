@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.28 · 21. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.29 · 21. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -542,8 +542,8 @@ Při počtu maturantů pod 10 se zveřejňují jen počty, mezi 10 a 29 s upozor
 **Jak vzniká.** Ve třech krocích, které se nesmějí zaměnit:
 
 1. **Kód najde data.** `pozice_dat()` sbírá z textu kalendářně platná data **s rokem** (rok se nikdy nedohaduje) a zapamatuje si, kde v textu leží. Chybí-li datum v titulku i perexu, stáhne se stránka článku (`scripts/novinky_clanek.py`).
-2. **Model odpoví, co datum znamená.** Pro každé datum zvlášť dostane [rozhodovací model](skolske-novinky-rss-2027.md) kartu položky a jednu větu, ve které datum leží, a vybírá z předložených možností: která akce, nebo lhůta, nebo registrace, nebo nic z toho. Model **negeneruje text**; vrací volbu s pravděpodobností, bere se od 0,5.
-3. **Kód složí větu.** `slozeni_souhrnu()` vyplní šablonu podle druhu akce a počtu termínů („Škola pořádá dny otevřených dveří {termíny}."). Společný čas se vytkne („9. 12. 2026 a 7. 1. 2027 od 17:00"), různé časy zůstanou u svých dat.
+2. **Model odpoví, co datum znamená.** Pro každé datum zvlášť (nejvýš dvanáct na položku, aby stažená stránka s kalendářem nenafoukla volání) dostane [rozhodovací model](skolske-novinky-rss-2027.md) kartu položky a jednu větu, ve které datum leží, a vybírá z předložených možností: která akce, nebo lhůta, nebo registrace, nebo nic z toho. Model **negeneruje text**; vrací volbu s pravděpodobností, bere se od 0,5.
+3. **Kód složí větu.** `slozeni_souhrnu()` vyplní šablonu podle druhu akce a počtu termínů („Škola pořádá dny otevřených dveří {termíny}."). Společný čas se vytkne („9. 12. 2026 a 7. 1. 2027 od 17:00"), různé časy zůstanou u svých dat. **Nad čtyři termíny** se vyjmenují první tři a za ně jde „další termíny do <poslední datum>": přípravný kurz o dvanácti středách by jinak dal větu, kterou na kartě nikdo nepřečte.
 
 **Strážní podmínky.** Termín starší než článek není pozvánka. Aspoň jeden termín musí být v budoucnu — jinak věta nevznikne. Platnost se počítá **znovu při každém čtení stránky**, ne jen při sklizni: uložená věta zmizí i s kartou, jakmile poslední jmenovaný termín proběhne.
 
@@ -551,7 +551,7 @@ Při počtu maturantů pod 10 se zveřejňují jen počty, mezi 10 a 29 s upozor
 
 **Kde se používá.** Věta na kartě novinky na stránce školy (`souhrn` v odpovědi API), konec platnosti položky (poslední termín + 3 dny), sestup pozvánky na proběhlou akci mezi ostatní zprávy a dohled v administraci `/admin/skolni-novinky`.
 
-**Co neříká.** **Neříká, že škola pořádá jen tyhle termíny**, ani že se nezměnily — vyjmenovává data, která škola k té akci uvedla v jednom článku. U série termínů může jmenovat i ten, který už proběhl, dokud aspoň jeden další platí; podrobnosti, čas začátku a případné přihlášení jsou v článku školy, na který karta odkazuje. Neříká nic o akcích škol, které kanál novinek nemají (51 %), ani o akcích, které škola v kanálu neoznámila. **Neříká, že termín ověřil někdo jiný než škola.**
+**Co neříká.** **Neříká, že škola pořádá jen tyhle termíny**, ani že se nezměnily — vyjmenovává data, která škola k té akci uvedla v jednom článku. U série termínů může jmenovat i ten, který už proběhl, dokud aspoň jeden další platí, a u série delší než čtyři termíny **nejmenuje všechny** — vypíše první tři a datum posledního; podrobnosti, čas začátku a případné přihlášení jsou v článku školy, na který karta odkazuje. Neříká nic o akcích škol, které kanál novinek nemají (51 %), ani o akcích, které škola v kanálu neoznámila. **Neříká, že termín ověřil někdo jiný než škola.**
 
 **Pokrytí (měřeno 21. 9. 2026 na 300 živých feedech).** Z 23 pozvánek na akci školy dostalo větu 11 (48 %), z toho 4 až po stažení stránky článku. Ze zbylých dvanácti čtyři stránky termín opravdu neuvádějí, jedna oznamuje, že se kurzy **nekonají**, u tří jde jen o datum vydání v hlavičce a jedna stránka byla nedostupná.
 
@@ -607,6 +607,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.29 | **Věta s termíny dostala strop** (21. 9. 2026). Nad čtyři termíny vypíše první tři a datum posledního: sedm termínů přípravného kurzu dávalo větu na 145 znaků. Modelu se zároveň předkládá nejvýš dvanáct dat na položku — po stažení stránky článku vyšly v měření tři položky po 35 otázkách v jediném volání, což je proti podmínce P6 o délce kontextu. Strop je nad naměřeným rozložením bez ocasu (0, 1, 2, 3, 6, 7, 8, 11 dat), takže o reálný termín nepřipraví. |
 | 1.28 | **Termín akce ze zprávy školy se začal zobrazovat** (21. 9. 2026). Dosud byl ukazatel veden jako „nezobrazuje se“, protože vazba mezi datem a událostí doložená nebyla. Teď doložená je: kód najde data s rokem, rozhodovací model odpoví **datum po datu** nad jednou větou, co v článku znamenají, a větu složí kód ze šablony — model text negeneruje. Lhůty se vedou zvlášť a do věty nejdou. Platnost se počítá při čtení stránky, ne při sklizni. Pokrytí změřeno na 300 živých feedech: věta u 11 z 23 pozvánek (48 %), z toho 4 až po stažení stránky článku. Tím se naplnila podmínka, kterou si rozhodnutí z 20. 9. 2026 samo uložilo (P6). |
 | 1.27 | **Neúčast u maturity zavedena jako ukazatel** (18. 9. 2026): `nonParticipationRate` se zobrazuje jako sloupec „ke zkoušce nešlo“ v tabulce po letech, počet a podíl z přihlášených. Vzorec ověřen dopočtem z počtů ve všech řádcích ročníků 2021 až 2026. U hesla Frekvence let nad středem podobných škol zapsáno, že okno jsou čtyři roky a proč se neprodlužuje: předpovědní schopnost je od druhého roku plochá (62,1 → 65,6 → 65,7 → 64,8 → 66,2 %), a to i u malých škol, zatímco šestileté okno by změnilo znění u 403 z 1 627 škol ve skupině oborů. |
 | 1.26 | **Rozbor výsledků přijatých po předmětech** (18. 9. 2026): tři nové ukazatele odpovídají na otázku, jestli jde slabší předmět dohnat tím druhým. Nejslabší přijatý v předmětu se uvádí **s oběma svými výsledky**, takže popisuje skutečnou kombinaci, ne dvojici minim ze dvou lidí zamítnutou ve verzi 1.22. Podlaha slabšího předmětu roste s obtížností přijetí (medián 23 bodů u velmi těžkých oborů proti 7 tam, kde kapacita nerozhodovala). Nevyrovnaní přijatí jsou jediný údaj z trojice se jmenovatelem, a proto jediný, který snese slovní výklad a srovnání. |

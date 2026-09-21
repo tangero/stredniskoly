@@ -253,6 +253,16 @@ def postav_stav(pol: dict, skola: dict | None = None) -> dict:
     return {"zprava_ze_skolniho_webu": karta}
 
 
+# Kolik dat se v jednom volání předloží modelu. Ve feedu jsou data nejvýš dvě
+# tři, ale po stažení článku jich na stránce leží libovolně mnoho: v mezipaměti
+# měření vyšly tři položky po 35 otázkách v jediném volání. Strop drží velikost
+# volání (podmínka z P6: Jev ztrácí s délkou kontextu kvalitu) i cenu. Je
+# nastavený nad naměřené rozložení bez ocasu (0, 1, 2, 3, 6, 7, 8, 11 dat),
+# takže o žádný reálný termín nepřijde. Datum nad strop se chová jako
+# „model neví": do věty nevstoupí, protože roli mu nikdo nepřiřadil.
+STROP_DAT = 12
+
+
 def postav_otazky(text: str, tridy: list[str], pozice_dat: list[tuple[str, int]]) -> dict:
     """Čtyři druhy otázek v jednom volání: téma, cílová skupina, stav a role
     každého nalezeného data. Víc otázek v jednom volání je výrazně levnější
@@ -261,7 +271,7 @@ def postav_otazky(text: str, tridy: list[str], pozice_dat: list[tuple[str, int]]
     normalizovany = strip(text)
     useky = rozdel_klauzule(normalizovany)
     nabidka = [t for t in tridy if t in TRIDY_AKCI] or list(TRIDY_AKCI)
-    for poradi, (iso, zacatek) in enumerate(pozice_dat, start=1):
+    for poradi, (iso, zacatek) in enumerate(pozice_dat[:STROP_DAT], start=1):
         klauzule = kontext_klauzule(useky, normalizovany, zacatek)
         if klauzule:
             otazky[f"datum_{poradi}"] = otazka_role_data(

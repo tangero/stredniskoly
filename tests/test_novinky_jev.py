@@ -53,6 +53,34 @@ class SkladaniVety(unittest.TestCase):
         # Kritéria přijetí nejsou akce; věta „Škola pořádá kritéria" nedává smysl.
         self.assertIsNone(slozeni_souhrnu("kriteria", [{"datum": "2027-01-05", "cas": None}]))
 
+    def test_dlouha_serie_se_zkrati_na_prvni_tri_a_konec(self):
+        # Přípravný kurz o sedmi středách dával větu na 145 znaků. Na kartě se
+        # nečte; vyjmenují se tři termíny a řekne se, do kdy série běží.
+        terminy = [{"datum": d, "cas": "16:00"} for d in
+                   ("2026-10-07", "2026-10-14", "2026-11-04",
+                    "2026-11-11", "2026-11-18", "2026-12-02", "2026-12-09")]
+        veta = slozeni_souhrnu("pripravny_kurz", terminy)
+        self.assertEqual(veta, "Škola pořádá přípravný kurz k přijímačkám "
+                               "7. 10. 2026, 14. 10. 2026 a 4. 11. 2026 od 16:00, "
+                               "další termíny do 9. 12. 2026.")
+
+    def test_ctyri_terminy_se_jeste_vyjmenuji_vsechny(self):
+        # Strop nesmí zamlčovat termín tam, kde se věta ještě přečíst dá.
+        terminy = [{"datum": d, "cas": None} for d in
+                   ("2026-10-07", "2026-10-14", "2026-11-04", "2026-11-11")]
+        veta = slozeni_souhrnu("dod", terminy)
+        self.assertIn("11. 11. 2026", veta)
+        self.assertNotIn("další termíny", veta)
+
+    def test_vytknuty_cas_plati_pro_vypsane_terminy(self):
+        # Zkrácená věta mluví jen o třech termínech, takže společný čas se bere
+        # z nich; jinak by tvrdila začátek, který u nich neplatí.
+        terminy = [{"datum": d, "cas": "16:00"} for d in
+                   ("2026-10-07", "2026-10-14", "2026-11-04", "2026-11-11", "2026-11-18")]
+        terminy[4]["cas"] = "18:00"
+        self.assertIn("a 4. 11. 2026 od 16:00, další termíny do 18. 11. 2026",
+                      slozeni_souhrnu("dod", terminy))
+
     def test_datum_se_pise_cesky_bez_nul(self):
         self.assertEqual(formatuj_datum("2027-01-05"), "5. 1. 2027")
 
@@ -145,6 +173,17 @@ class SestaveniOtazek(unittest.TestCase):
         useky = rozdel_klauzule(text)
         zacatek = pozice_dat(text)[0][1]
         self.assertIn("terminy", jev.kontext_klauzule(useky, text, zacatek))
+
+    def test_pocet_otazek_na_data_ma_strop(self):
+        # Stažená stránka s kalendářem dala v měření 35 otázek v jediném volání.
+        # Jev ztrácí s délkou kontextu kvalitu (P6), takže se data nad strop
+        # nepředkládají; chovají se pak jako „model neví".
+        popis = " ".join(f"Beh {i}. {i % 28 + 1}. 3. 2027." for i in range(1, 31))
+        pol = {"titulek": "Přípravný kurz", "popis": popis}
+        text = text_k_rozboru(pol)
+        self.assertGreater(len(pozice_dat(text)), jev.STROP_DAT)
+        otazky = jev.postav_otazky(text, ["pripravny_kurz"], pozice_dat(text))
+        self.assertLessEqual(sum(1 for k in otazky if k.startswith("datum_")), jev.STROP_DAT)
 
     def test_datum_bez_roku_se_modelu_nepredklada(self):
         # Rok se nedohaduje: „7. ledna" může být letos i napřesrok.
