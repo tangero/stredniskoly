@@ -8,7 +8,19 @@
 // škola odpovídá tomu, od koho jí zpráva přišla, a nemusí hledat jinou adresu.
 // Odpovědi vyřizuje Eduarda (AI asistentka), u pozvánky je to v textu vysvětlené.
 export const PODPORA_EMAIL = 'eda@prijimackynaskolu.cz';
-const ODESILATEL = `Přijímačky na školu <${PODPORA_EMAIL}>`;
+
+// Jméno odesílatele. Adresa je u všech e-mailů portálu stejná a musí zůstat na
+// ověřené doméně: `zandl.cz` v Resendu ověřená není, takže z ní odeslat nejde
+// a rozpadl by se DKIM i SPF.
+//
+// Provozní e-maily posílá Eduarda, protože na té adrese skutečně odpovídá.
+// Pozvánka do pilotu je výjimka: nese přístupový kód a je podepsaná člověkem
+// (docs/ucty-portalu-skol-2027.md, oddíl 5). Řádek „Od“ ředitel uvidí dřív než
+// podpis, takže i tam musí stát člověk – jinak obrana proti dojmu podvodu
+// padne přesně tam, kde má fungovat.
+const JMENO_EDUARDA = 'Eduarda z Přijímačky na školu';
+const JMENO_CLOVEK = 'Patrick Zandl – Přijímačky na školu';
+const odesilatel = (jmeno: string) => `${jmeno} <${PODPORA_EMAIL}>`;
 
 /** Textová verze vedle HTML: e-mail jen v HTML hodnotí spamové filtry hůř. */
 export function htmlNaText(html: string): string {
@@ -33,7 +45,7 @@ export function esc(text: string): string {
     .replace(/"/g, '&quot;');
 }
 
-async function odesliEmail(para: { to: string; subject: string; html: string }): Promise<boolean> {
+async function odesliEmail(para: { to: string; subject: string; html: string; jmenoOdesilatele?: string }): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     console.log(`📧 E-mail by šel na adresu příjemce (RESEND_API_KEY není nastaven) – předmět: ${para.subject}`);
@@ -47,7 +59,7 @@ async function odesliEmail(para: { to: string; subject: string; html: string }):
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: ODESILATEL,
+        from: odesilatel(para.jmenoOdesilatele ?? JMENO_EDUARDA),
         to: para.to,
         reply_to: PODPORA_EMAIL,
         subject: para.subject,
@@ -238,7 +250,7 @@ export function pozvankaDoPilotu(para: PozvankaPara): { subject: string; html: s
 
 export async function posliPozvankuDoPilotu(para: PozvankaPara & { email: string }): Promise<boolean> {
   const { subject, html } = pozvankaDoPilotu(para);
-  return odesliEmail({ to: para.email, subject, html });
+  return odesliEmail({ to: para.email, subject, html, jmenoOdesilatele: JMENO_CLOVEK });
 }
 
 export async function posliPozvankuEmail(para: { email: string; nazevSkoly: string; pozval: string; odkaz: string }) {
