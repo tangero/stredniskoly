@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.18 · 20. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.19 · 21. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -110,6 +110,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.19 | Pojem **kompletní přehled škol** pro městskou stránku ve vyhledávání („Pardubice — kompletní přehled škol“): kdo napíše město, hledá nejčastěji nabídku ve svém okolí, ne jednu školu. Přehled města dostal pojmy **obtížnost přijetí** a **soutěžící uchazeči**, dosud jen na stránce školy a oboru. Věta u bodů přijatých zní **„spolužáci sem přišli s výsledky kolem … bodů“**; dosavadní „dostupnější / náročnější“ vydávalo průměr bodů za obtížnost, což zakazuje oddíl 5. Zjištěno a opraveno, že zákaz slova *hranice přijetí* z verze 1.0 dvě místa v kódu nedodržovala (krajský přehled, karta oboru), přestože pod nadpisem byl nejnižší výsledek přijatých. |
 | 1.18 | Karta novinky přestala psát datum akce a nese místo něj **štítek**, čím zpráva je. Tři nové pojmy pro štítky: **přijímačky nanečisto**, **setkání s uchazeči** a **přípravný kurz k přijímačkám**. Pojem **den otevřených dveří** se přepsal ze „termínu“ na „akci“ a ztratil větu o ověření termínu — datum na kartě žádné není. Důvod je v tom, co se dalo naměřit: třídu zprávy poznáváme doloženě, vazbu mezi datem a událostí ne, takže plochý seznam dat z celého článku smíchal termíny se lhůtami (škola 600005399: osm dat pod nadpisem *termín oznámený školou*, z toho tři lhůty a šest termínů MŠMT). Zrušený pojem: **termín oznámený školou**. |
 | 1.17 | Pojem **Emailem: zprávy k přijímačkám** pro odkaz z pruhu pod hlavičkou stránky školy na blok odběru v patičce. Slovo *novinky* v něm být nesmí: na téže stránce už označuje zprávy sklizené z webu školy (**další zprávy k přijímačkám**, **ze života školy**), takže odkaz nahoře by sliboval e-mailem něco jiného, než by pak přišlo. |
 | 1.16 | Novinky z webu školy se rozdělily na dvě rubriky, a tím i pojmy: **další zprávy k přijímačkám** (doplňkový seznam u bloku novinek) a **ze života školy** (rubrika na konci stránky pro zprávy, které se přijímacího řízení netýkají). Dosavadní nadpis *novinky z webu školy* zastřešoval obojí, takže výlet primy stál pod stejným nadpisem jako den otevřených dveří. Nový pojem **objevilo se *datum*** pro zprávu, u které feed neuvedl použitelné datum vydání: říká, kdy jsme ji poprvé viděli, a nesmí se psát jako *vydáno* — to bychom tvrdili něco, co nevíme. |

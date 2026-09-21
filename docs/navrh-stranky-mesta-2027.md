@@ -1,6 +1,6 @@
 # Návrh stránky města: jaké školy se u nás nabízejí
 
-Verze 1.1 · 21. 9. 2026 · Stav: **návrh k oponentuře**
+Verze 1.2 · 21. 9. 2026 · Stav: **zrealizováno** (oddíl 9)
 
 Zadání zadavatele z 21. 9. 2026: „[/mesto/pardubice] je starý design přehledu škol pro města. Projdi jej a navrhni zlepšení, která umožní lidem lépe vidět, jaké školy se v jejich městech nabízejí. Ukazuj u škol viditelné hodnocení náročnosti přijetí, které u nich máme — aby si lidé udělali přehled, co jsou méně náročné a více náročné školy.“
 
@@ -241,9 +241,47 @@ Rešerše `docs/zdroje-dat.md` (oddíl 3 a 5) přinesla čtyři věci, které v�
 
 ---
 
+## 9. Co se nakonec udělalo
+
+Zadavatel návrh schválil 21. 9. 2026 se čtyřmi rozhodnutími: přiznat chybějící učební
+obory, práh **3 školy** (102 měst místo 20), opravit i krajský přehled, commit do větve
+s pull requestem.
+
+**Odchylky od návrhu, které vznikly při realizaci:**
+
+1. **Sekce „Obce“ ve vyhledávání už existovala**, jen vedla na `/regiony/{kraj}?obec=…`,
+   tedy krajský filtr, ne na městský přehled. Oddíl 6.1 tvrdil, že město jako typ výsledku
+   neexistuje; to platilo jen pro API, ne pro komponentu. Řešení: města s vlastní stránkou
+   se zobrazí ve vlastní skupině nad školami, obce bez stránky zůstávají tam, kde byly.
+2. **Řazení podle indexu `obtiznost` v krajském přehledu byl mrtvý kód** — řadicí klíč
+   existoval, ale žádná hlavička ho nespouštěla. Oddíl 3.8 z rešerše to nadhodnotil.
+   Odstraněn i s nepoužívanou funkcí `getDifficultyClass` (semafor Vysoká/Střední/Nízká).
+3. **Nalezeno porušení zákazu slova „hranice přijetí“** ze slovníku pojmů verze 1.0 na dvou
+   místech kódu (krajský přehled, karta oboru), přestože pod nadpisem byl nejnižší výsledek
+   přijatých z dat uchazečů. Opraveno.
+4. **Rozcestník `/mesto` se musel přepsat kvůli výkonu**: volal `getCityStats` pro každé
+   město, což u 102 měst znamená 102 průchodů katalogem. Karta potřebuje dva počty, takže
+   se počítají jedním průchodem.
+5. **Seznam měst se negeneroval, ale udržoval ručně** a nebyl postaven na nabídce škol:
+   Teplice s 5 školami stránku měly, Mladá Boleslav s 12, Prostějov s 12 a Karlovy Vary
+   s 10 (krajské město) ne. Nově generuje `scripts/build-mesta.py` z katalogu podle
+   registru; dvacítka zveřejněných měst v seznamu zůstává bez ohledu na práh, aby se
+   nerozbily odkazy.
+
+**Ověřeno:** build 1269 stránek, 102 městských stránek, 225 testů (9 nových v
+`tests/test_mesta.py`), `kontrola-letopoctu.py` hlásí o 27 napevno zapsaných letopočtů
+méně, žádný zakázaný výraz ve vygenerovaném HTML. Rozložení obtížnosti v Pardubicích
+(14 / 8 / 11 / 3 / 0) ověřeno nezávisle proti zdroji.
+
+**Neuděláno, čeká na rozhodnutí:** obory bez jednotné zkoušky se pouze přiznávají větou,
+2. kolo zůstává mimo přehled, dopravní dostupnost na kartě školy není.
+
+---
+
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.2 | Zrealizováno (21. 9. 2026), oddíl 9 s pěti odchylkami od návrhu. |
 | 1.1 | Doplněno vyhledávání města (oddíl 6) po doplnění zadání z 21. 9. 2026 a nálezy dvou rešerší (oddíl 7). **Opraven chybný závěr 2.5**: narativ na městské stránce nevolá jazykový model, generování bylo odstraněno 11. 9. 2026; závada je v tom, že blok „Analýza situace“ nese čtyři odstavce metodických výhrad. Zjištěno, že krajský přehled řadí podle zakázaného indexu `obtiznost` (oddíl 3.8), a že tvrzení pasti 5 v `docs/zdroje-dat.md` o datech uchazečů za rok 2025 už neplatí. |
 | 1.0 | Založení (21. 9. 2026): rozbor šesti závad stránky města, obtížnost přijetí jako odznak a filtr místo řazení, seskupení po školách, období z registru, rozhodnutí o nepoužitých sloupcích. |

@@ -195,7 +195,7 @@ export function CitySchoolsTable({ schools, rok }: Props) {
           <p className="mt-3 text-xs text-slate-500">
             {sZarazenim === schools.length
               ? `Ze všech ${cislo(schools.length)} nabídek ve městě.`
-              : `Z ${cislo(sZarazenim)} nabídek ${zOd(schools.length)} ${cislo(schools.length)}; u ostatních údaj nemáme. Chybějící údaj neznamená, že se tam dostal každý.`}
+              : `Údaj máme u ${cislo(sZarazenim)} nabídek ${zOd(schools.length)} ${cislo(schools.length)}. Chybějící údaj neznamená, že se tam dostal každý.`}
             {filtrObtiznosti !== 'vse' && ' Klikem na stupeň filtr zrušíš.'}
           </p>
         </div>

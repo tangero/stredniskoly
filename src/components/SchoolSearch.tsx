@@ -3,6 +3,7 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { School } from '@/types/school';
+import { MESTA } from '@/lib/mesta.mjs';
 
 interface SchoolSearchProps {
   schools: School[];
@@ -91,7 +92,7 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
 
   // Vyhledávání
   const results = useMemo(() => {
-    if (!query || query.length < 2) return { schools: [], aliases: [], kraje: [], obce: [], okresy: [] };
+    if (!query || query.length < 2) return { schools: [], aliases: [], mesta: [], kraje: [], obce: [], okresy: [] };
 
     const q = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
@@ -102,6 +103,23 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
         return termNorm.includes(q) || q.includes(termNorm);
       })
     );
+
+    // Města s vlastní stránkou přehledu. Kdo napíše „Pardubice“, hledá nejčastěji
+    // přehled škol ve městě; bez tohohle by dostal jen jednotlivé nabídky.
+    const matchedMesta = MESTA
+      .filter(m => {
+        const norm = m.nazev.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        // Od začátku slova, aby „pardub“ našlo Pardubice a „brno“ nenašlo Dobronín.
+        return norm.startsWith(q) || norm.split(/[\s-]+/).some(slovo => slovo.startsWith(q));
+      })
+      .map(m => ({ ...m, skol: new Set(schools.filter(sk => sk.obec === m.nazev).map(sk => sk.id.split('_')[0])).size }))
+      .filter(m => m.skol > 0)
+      .sort((a, b) => {
+        const norm = (t: string) => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        return (norm(a.nazev) === q ? 0 : 1) - (norm(b.nazev) === q ? 0 : 1) || b.skol - a.skol;
+      })
+      .slice(0, 3);
+    const mestaSPrehledem = new Set<string>(matchedMesta.map(m => m.nazev));
 
     // Hledat školy
     const matchedSchools = schools
@@ -124,9 +142,10 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
       })
       .slice(0, 3);
 
-    // Hledat obce
+    // Obce bez vlastní stránky přehledu; ty s přehledem jsou výš jako města.
     const matchedObce = locations.obce
       .filter(o => {
+        if (mestaSPrehledem.has(o)) return false;
         const norm = o.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         return norm.includes(q);
       })
@@ -143,6 +162,7 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
     return {
       schools: matchedSchools,
       aliases: matchedAliases,
+      mesta: matchedMesta,
       kraje: matchedKraje,
       obce: matchedObce,
       okresy: matchedOkresy
@@ -150,7 +170,8 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
   }, [query, schools, kraje, locations]);
 
   // Celkový počet výsledků
-  const totalResults = results.schools.length + results.aliases.length + results.kraje.length + results.obce.length + results.okresy.length;
+  const totalResults = results.schools.length + results.aliases.length + results.mesta.length
+    + results.kraje.length + results.obce.length + results.okresy.length;
 
   // Zavřít dropdown při kliknutí mimo
   useEffect(() => {
@@ -232,6 +253,31 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
           ref={dropdownRef}
           className="absolute z-50 w-full mt-2 bg-white rounded-lg shadow-xl border border-slate-200 overflow-hidden max-h-[400px] overflow-y-auto"
         >
+          {/* Města s přehledem škol. Nahoře záměrně: „Pardubice“ nejčastěji
+              znamená „co je u nás za školy“, ne jednu konkrétní nabídku. */}
+          {results.mesta.length > 0 && (
+            <div>
+              <div className="px-4 py-2 text-xs font-semibold text-slate-500 bg-slate-50 uppercase tracking-wide">
+                Města
+              </div>
+              {results.mesta.map((mesto, idx) => (
+                <Link
+                  key={mesto.slug}
+                  href={`/mesto/${mesto.slug}`}
+                  className={`block px-4 py-3 hover:bg-blue-50 ${selectedIndex === idx ? 'bg-blue-50' : ''}`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  <div className="font-medium text-slate-900">
+                    {highlightMatch(mesto.nazev, query)} — kompletní přehled škol
+                  </div>
+                  <div className="text-xs text-slate-400">
+                    {mesto.skol} {mesto.skol === 1 ? 'škola' : mesto.skol < 5 ? 'školy' : 'škol'} · {mesto.kraj}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
+
           {/* Aliasy (PORG pobočky) */}
           {results.aliases.length > 0 && (
             <div>
@@ -242,7 +288,7 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
                 <Link
                   key={alias.slug}
                   href={`/skola/${alias.slug}`}
-                  className={`block px-4 py-3 hover:bg-blue-50 ${selectedIndex === idx ? 'bg-blue-50' : ''}`}
+                  className={`block px-4 py-3 hover:bg-blue-50 ${selectedIndex === idx + results.mesta.length ? 'bg-blue-50' : ''}`}
                   onClick={() => setIsOpen(false)}
                 >
                   <div className="font-medium text-slate-900">{highlightMatch(alias.displayName, query)}</div>
@@ -263,7 +309,7 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
                 const slug = school.zamereni
                   ? `${school.id.split('_')[0]}-${createSlug(displayNazev, school.obor, school.zamereni)}`
                   : `${school.id.split('_')[0]}-${createSlug(displayNazev, school.obor)}`;
-                const adjustedIdx = idx + results.aliases.length;
+                const adjustedIdx = idx + results.mesta.length + results.aliases.length;
                 return (
                   <Link
                     key={school.id}
