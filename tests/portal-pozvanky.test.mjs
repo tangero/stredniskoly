@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { osloveni } from '../src/lib/portal-pozvanky.ts';
+import { pozvankaDoPilotu, htmlNaText } from '../src/lib/portal-email.ts';
 
 // Oslovení se hádá z ředitelova jména. Špatně oslovená ředitelka je horší než
 // neutrální „Dobrý den“, takže se rod odvozuje jen tam, kde je jistý.
@@ -30,4 +31,31 @@ test('tituly se do odvození rodu nepočítají', () => {
   // Bez odfiltrování titulů by se rozhodovalo podle „Ph.D.“ místo příjmení.
   assert.equal(osloveni('Mgr. Jana Nováková, Ph.D.'), 'Vážená paní ředitelko');
   assert.equal(osloveni('doc. Ing. Petr Novotný, CSc.'), 'Vážený pane řediteli');
+});
+
+// ---------------------------------------------------------------------------
+// Podoba kódu v pozvánce. Rozesílka je jednorázová a neopakovatelná: kdo kód
+// opíše špatně, narazí na „tento kód neznáme“ a na další pokus už nedojde.
+// ---------------------------------------------------------------------------
+
+const KOD = 'ABCD-EFGH-JKMN';
+const pozvanka = () =>
+  pozvankaDoPilotu({ osloveni: 'Vážený pane řediteli', nazevSkoly: 'Gymnázium Testovací', kod: KOD });
+
+test('za kódem nestojí interpunkce, kterou by ředitel zkopíroval s ním', () => {
+  // Výběr myší zabere znak hned za kódem. Tečka nebo čárka pak doputuje do
+  // pole a přihlášení selže, aniž by bylo poznat proč.
+  const { html } = pozvanka();
+  const zaKodem = html.slice(html.indexOf(KOD) + KOD.length);
+  assert.doesNotMatch(
+    zaKodem.replace(/<\/?[a-z][^>]*>/gi, '').trimStart().slice(0, 1),
+    /[.,;:!?]/,
+    'hned za kódem je interpunkce',
+  );
+});
+
+test('kód se v textové verzi nelepí na okolní slova', () => {
+  // Textovou verzi čtou klienti bez HTML; kód tam musí zůstat vybratelný sám.
+  const text = htmlNaText(pozvanka().html);
+  assert.match(text, new RegExp(`(^|\\n|\\s)${KOD}(\\s|\\n|$)`), 'kód není samostatně oddělený');
 });

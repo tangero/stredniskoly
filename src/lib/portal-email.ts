@@ -219,7 +219,10 @@ export function pozvankaDoPilotu(para: PozvankaPara): { subject: string; html: s
       <p><strong>Jak na to</strong></p>
       <ol>
         <li>Otevřete <a href="https://www.prijimackynaskolu.cz/pro-skoly" style="color: #0074e4;">www.prijimackynaskolu.cz/pro-skoly</a>
-            a zadejte kód <strong style="font-size: 18px; letter-spacing: 1px;">${esc(para.kod)}</strong>.</li>
+            a zadejte kód:<br>
+            <!-- Kód stojí na konci řádku a bez tečky: za ním by ji ředitel při
+                 výběru myší zkopíroval s kódem a přihlášení by selhalo. -->
+            <strong style="font-size: 18px; letter-spacing: 1px;">${esc(para.kod)}</strong></li>
         <li>Vyplňte své jméno, funkci a pracovní e-mail. Kdo kód použije první, stane se správcem profilu školy
             a kód tím přestane platit. Proto ho prosím předejte jen tomu, kdo bude profil spravovat.</li>
         <li>Správce může pozvat kolegy. Každý se pak přihlašuje svým e-mailem, bez hesla.</li>
