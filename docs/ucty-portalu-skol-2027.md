@@ -12,7 +12,7 @@ Navazuje na [portál pro školy](portal-pro-skoly-2027.md) (v1.5). Ten dnes prac
 | Kolik editorů | víc; první, kdo uplatní kód, je **správce** a zve kolegy; kód se tím spotřebuje |
 | Změny správce a sporné případy | administrace; každá změna je **nový záznam**, který zneplatní starší, s časem a autorem změny |
 | Odpovědi školám | Eduarda (AI asistentka, přiznává to v podpisu) odpovídá sama; kódy nezná, změny účtů dělá jen člověk (Patrick Zandl) |
-| Rozeslání | z `eda@prijimackynaskolu.cz`, kód v textu, 20 škol ze seznamu zadavatele. **Od 20. 9. 2026 programově** skriptem `scripts/portal-posli-pozvanky.mjs` přes Resend, ne ručně; podpis zůstává lidský (oddíl 5) |
+| Rozeslání | z `eda@prijimackynaskolu.cz`, kód v textu, 20 škol ze seznamu zadavatele. **Od 20. 9. 2026 programově** skriptem `scripts/portal-posli-pozvanky.mjs` přes Resend, ne ručně; podpis zůstává lidský (oddíl 5). Postup i to, co musí být na počítači, ze kterého se odesílá, je v [pozvánce](podklady/pozvanka-pilot-uctu-portalu.md) |
 | Právní posouzení oslovení | **externí souhlas zadavatele 20. 9. 2026.** [Návrh portálu](portal-pro-skoly-2027.md) žádal před rozesílkou posouzení obchodního sdělení podle zákona 480/2004 Sb.; zadavatel je vyřešil mimo projekt a rozesílku schválil. Platí pro pilot 20 škol, ne pro plošné oslovení |
 | Sledování | přehled 20 škol v `/admin` a upozornění na Telegram |
 | Otevřená data a odznak | v pilotu se nestaví, v e-mailu jen „připravujeme“ |

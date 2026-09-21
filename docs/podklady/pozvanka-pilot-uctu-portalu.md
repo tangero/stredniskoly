@@ -41,6 +41,62 @@ patrick@zandl.cz
 
 ---
 
+## Postup rozeslání a jak to vyzkoušet na ostrém
+
+**Odesílá se z počítače, ne ze serveru, a je to záměr.** Administrace `/admin/portal/pozvanky` na produkci vždy napíše „Odeslat nejde, chybí vstupy“ — plaintextové kódy a jména ředitelů se tam nenasazují. Kdyby ležely na serveru, hashování kódů s pepřem ztrácí smysl.
+
+Přesunout odesílání na produkci by nepomohlo: e-mail odchází odtamtud, kde běží skript, ne odtamtud, kde je tlačítko. **Zkouška z počítače je přesto zkouškou na ostrém**, protože všechno, na čem záleží, je produkční:
+
+| Běží na produkci | Běží lokálně |
+|---|---|
+| Resend, tedy skutečně odeslaný e-mail | odesílací skript |
+| ověření kódu (`data/portal/kody.json` je nasazený) | plaintext kódů |
+| založení správce a celý portál | kontakty na ředitele |
+
+### Co musí být na počítači, ze kterého se odesílá
+
+1. **Repozitář na aktuálním `main`.**
+2. **`.env.local`** s `RESEND_API_KEY` a `PORTAL_KOD_PEPPER`. Pepř musí být **týž jako na Vercelu**, jinak kódy z pozvánek na produkci neprojdou a školám přijde nefunkční kód. Ověří se to bez spotřebování kódu: `POST /api/portal/kod` na produkci vrátí `stav: volny`.
+3. **`data/portal/kody-plaintext.json`** — gitignorovaný. **Z hashů ho zpátky nedostanete**, existuje jen tam, kde se generoval. Buď ho přenést bezpečným kanálem (ne přes git, ne e-mailem), nebo kódy vydat znovu:
+   ```
+   node scripts/portal-generate-codes.js --force --out data/portal/kody-plaintext.json <20 REDIZO ze seznamu pilotu>
+   ```
+   Přegenerování **mění `data/portal/kody.json`**, takže se musí commitnout a nasadit; do té doby na produkci platí staré kódy. Stalo se to 20. 9. 2026: plaintext z předchozího běhu se nezachoval a všech dvacet kódů se muselo vydat znovu.
+4. **`data/portal/pilot-kontakty.json`** — taky gitignorovaný (jména ředitelů jsou osobní údaj). Generuje se z CSV rejstříku:
+   ```
+   python3 scripts/portal-vyber-pilotu.py --adresar data/Rejstrik_skol/Adresar.csv --out data/portal/pilot-kontakty.json
+   ```
+   **Pozor: `data/Rejstrik_skol/` v gitu taky není** (`/data/*` v `.gitignore`), takže na čerstvě naklonovaném repozitáři chybí i vstup pro tenhle krok. Přenést je proto potřeba buď CSV, nebo rovnou hotový `pilot-kontakty.json`.
+
+### Postup
+
+Administrace ani vývojový server nejsou potřeba; skript používá tutéž knihovnu (`src/lib/portal-pozvanky.ts`), takže počítá totéž.
+
+```bash
+set -a && . ./.env.local && set +a
+
+# 1. nanečisto: nic neodešle, jen vypíše komu a s jakým oslovením
+node --experimental-strip-types scripts/portal-posli-pozvanky.mjs --nanecisto
+
+# 2. zkouška na vlastní adresu: skutečný e-mail přes produkční Resend
+node --experimental-strip-types scripts/portal-posli-pozvanky.mjs --jen <REDIZO> --na <vlastni@adresa>
+
+# 3. ostrá rozesílka
+node --experimental-strip-types scripts/portal-posli-pozvanky.mjs --opravdu
+```
+
+Krok 2 **nezapisuje datum odeslání** — škola by se jinak tvářila jako oslovená, aniž by co dostala. Po kroku 3 se datum zapíše do `data/portal/pilot.json`; ten patří do gitu, takže se musí commitnout, jinak se stav nepropíše do administrace na produkci.
+
+### Ověření kódu na produkci, aniž se spotřebuje
+
+Kód z došlé zkušební pozvánky zadejte na produkčním `/pro-skoly`. Formulář ho ověří a ukáže školu; **registraci nedokončujte** — dokončením se kód spotřebuje a ta škola ho už nepoužije. Samotné ověření kód nespotřebovává (`/api/portal/kod` jen čte, spotřebování dělá až `/api/portal/uplatnit`).
+
+Chcete-li projít i založení správce, vydejte si zvlášť kód pro testovací školu, nasaďte jeho hash a projděte celý řetěz s ním. Kód pilotní školy se tím nespálí.
+
+### Kdyby měla administrace fungovat i na produkci
+
+Šlo by to — plaintext kódů a kontakty by musely být v tajemstvích Vercelu nebo v databázi místo v souborech. **Nedoporučuje se:** nepřidá to nic (odesílá se stejně odjinud) a přidá to místo, odkud můžou kódy uniknout. Rozhodnutí z 20. 9. 2026.
+
 ## Co v e-mailu záměrně není
 
 - **Facebooková skupina.** Odložena (oddíl 8); pilot má zůstat kontrolovaný vzorek.
