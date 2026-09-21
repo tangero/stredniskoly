@@ -27,10 +27,9 @@ export function DalsiOboryVeMeste({ obory }: { obory: DalsiOborVeMeste[] }) {
     <section>
       <h2 className="text-2xl font-bold mb-2">Další obory ve městě</h2>
       <p className="text-slate-600 mb-6 text-sm">
-        Obory, u kterých se nekoná jednotná přijímací zkouška, nebo které náš přehled
-        nevede. <b>Víme o nich jen název</b> — jak těžké bylo se na ně dostat, z dat
-        zjistit nejde. Co škola opravdu otevírá a co k přijetí potřebuje, stojí
-        v jejích kritériích.
+        Obory, které náš přehled výsledků nevede. <b>Víme o nich jen název</b> — jak
+        těžké bylo se na ně dostat, z dat zjistit nejde. Co škola otevírá a co k přijetí
+        potřebuje, stojí v jejích kritériích.
       </p>
 
       {bezZkousky.length > 0 && (
@@ -52,8 +51,9 @@ export function DalsiOboryVeMeste({ obory }: { obory: DalsiOborVeMeste[] }) {
             Mimo náš přehled ({jine.length})
           </h3>
           <p className="mb-3 text-sm text-slate-500">
-            Jednotná zkouška se u nich koná, ale v našich datech o oborech nejsou —
-            bývají to umělecké obory s talentovou zkouškou.
+            Nepatří do kategorií bez jednotné zkoušky, ale v našem přehledu oborů
+            nejsou — většinou jsou to umělecké obory, kde se koná talentová zkouška.
+            Jak se u nich přijímá, stojí v kritériích školy.
           </p>
           <SeznamSkol skupiny={podleSkoly(jine)} />
         </div>

@@ -198,7 +198,12 @@ export default async function MestoPage({ params }: Props) {
   // u složeného ukazatele se bere nejstarší ze zobrazených období.
   const rok = Number(await zobrazeneObdobi('cermat-vysledky')) || null;
   const rok2Kolo = await rokDruhehoKola();
-  const dalsiObory = await dalsiOboryVeMeste(mestoMeta.nazev);
+  // Obory, které hlavní přehled nevede. Klíče z přehledu se předají, aby se
+  // nabídka nezdvojila; podkladem je soupis oborů ročníku, ne souběžné volby.
+  const dalsiObory = await dalsiOboryVeMeste(
+    mestoMeta.nazev,
+    new Set(schools.map(s => `${s.redizo}_${s.id.split('_')[1] ?? ''}`)),
+  );
   const pocetSkol = new Set(schools.map(s => s.redizo)).size;
 
   return (

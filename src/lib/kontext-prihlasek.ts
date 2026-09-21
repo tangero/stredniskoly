@@ -78,6 +78,40 @@ export interface DalsiOborVeMeste {
   duvod: ZnackaMimoPrehled;
 }
 
+/** Kategorie oborů, u kterých se jednotná zkouška nekoná; shodné se `scripts/nazvy_oboru.py`. */
+const KATEGORIE_BEZ_JPZ = new Set(['C', 'E', 'H', 'J', 'P']);
+
+/** Písmeno kategorie v kódu oboru, například `65-51-H/01` → `H`. */
+function kategorieOboru(kkov: string): string {
+  return kkov.length > 6 ? kkov[6].toUpperCase() : '';
+}
+
+interface IndexRejstriku {
+  /** REDIZO → [název školy, obec]. */
+  skoly: Record<string, [string, string]>;
+  /** KKOV → název oboru. */
+  obory: Record<string, string>;
+  /** REDIZO → seznam KKOV, které škola v rejstříku má. */
+  nabidky: Record<string, string[]>;
+}
+
+let indexRejstriku: IndexRejstriku | null = null;
+
+/** Index z rejstříku škol MŠMT; tentýž soubor čte portál (`portal-identifikace.ts`). */
+async function nactiIndexRejstriku(): Promise<IndexRejstriku> {
+  if (indexRejstriku) return indexRejstriku;
+  try {
+    const obsah = await fs.readFile(
+      path.join(process.cwd(), 'data', 'msmt_rejstrik', 'nazvy-oboru.json'), 'utf-8',
+    );
+    const json = JSON.parse(obsah);
+    indexRejstriku = { skoly: json.skoly ?? {}, obory: json.obory ?? {}, nabidky: json.nabidky ?? {} };
+  } catch {
+    indexRejstriku = { skoly: {}, obory: {}, nabidky: {} };
+  }
+  return indexRejstriku;
+}
+
 /**
  * Obory ve městě, které hlavní přehled nezahrnuje.
  *
@@ -85,23 +119,43 @@ export interface DalsiOborVeMeste {
  * v některých městech vypadne většina nabídky — v Chomutově 55 %, v České Lípě 52 %.
  * Rodina by jinak nevěděla, že se tam dá studovat i něco dalšího.
  *
- * Jsou to **jen názvy**: u oborů bez jednotné zkoušky žádné výsledky neexistují,
+ * **Podkladem je soupis oborů ročníku** (`data` téhož souboru), ne pole `mimo_prehled`.
+ * To vzniká jen z prvních šesti souběžných voleb s aspoň deseti společnými uchazeči,
+ * takže je to statistický výběr, ne nabídka města: oddíl by vynechal 704 oborů, které
+ * data doloženě nesou, například Konzervatoř Jaroslava Ježka s 36 uchazeči. Platí
+ * pravidlo projektu „nikdy neinventarizuj data podle toho, co web zobrazuje“.
+ *
+ * Vrací se **jen názvy**: u oborů bez jednotné zkoušky žádné výsledky neexistují,
  * takže se u nich nesmí zobrazit obtížnost přijetí ani se počítat do jejího
  * rozložení (`docs/zdroje-dat.md`, oddíl 4, past 4 — chybějící údaj není nula).
+ *
+ * @param obec název obce, jak ho nese rejstřík
+ * @param vKatalogu klíče `REDIZO_KKOV`, které hlavní přehled už vede
  */
-export async function dalsiOboryVeMeste(obec: string): Promise<DalsiOborVeMeste[]> {
+export async function dalsiOboryVeMeste(
+  obec: string, vKatalogu: Set<string>,
+): Promise<DalsiOborVeMeste[]> {
   const rok = await rokKontextu();
   if (!rok) return [];
-  const { mimo } = await nactiSoubor(rok);
+  const { data } = await nactiSoubor(rok);
+  const { skoly, obory } = await nactiIndexRejstriku();
+
   const out: DalsiOborVeMeste[] = [];
-  for (const [klic, zaznam] of Object.entries(mimo)) {
-    if (zaznam.obec !== obec || !zaznam.skola || !zaznam.obor) continue;
+  const videne = new Set<string>();
+  for (const klic of Object.keys(data)) {
+    if (vKatalogu.has(klic) || videne.has(klic)) continue;
+    const [redizo, kkov] = klic.split('_');
+    const skola = skoly[redizo];
+    if (!skola || skola[1] !== obec) continue;
+    const nazevOboru = obory[kkov];
+    if (!nazevOboru) continue;
+    videne.add(klic);
     out.push({
       klic,
-      redizo: klic.split('_')[0],
-      skola: zaznam.skola,
-      obor: zaznam.obor,
-      duvod: zaznam.bez_jednotne_zkousky ? 'bez_zkousky' : 'jiny',
+      redizo,
+      skola: skola[0],
+      obor: nazevOboru,
+      duvod: KATEGORIE_BEZ_JPZ.has(kategorieOboru(kkov)) ? 'bez_zkousky' : 'jiny',
     });
   }
   return out.sort((a, b) =>

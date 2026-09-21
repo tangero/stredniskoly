@@ -135,6 +135,13 @@ async function vykresliPrehled(mesto) {
   };
 }
 
+/** Klíče `REDIZO_KKOV`, které hlavní přehled města vede. */
+async function klaceVPrehledu(mesto) {
+  const stats = await getCityStats(mesto);
+  assert.ok(stats, `${mesto}: getCityStats nic nevrátil`);
+  return new Set(stats.schools.map(r => `${r.redizo}_${r.id.split('_')[1] ?? ''}`));
+}
+
 /** HTML na čistý text, aby se dalo hledat ve větách přes značky. */
 function text(html) {
   return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
@@ -281,7 +288,7 @@ test('vykreslení: rozložení obtížnosti odpovídá datům', async () => {
 test('další obory: nenesou obtížnost přijetí', async () => {
   // Obor bez jednotné zkoušky žádný výsledek nemá. Kdyby dostal odznak, tvářil
   // by se jako snadný — přesně tím se rozbil starý index u 386 oborů.
-  const obory = await dalsiOboryVeMeste('Chomutov');
+  const obory = await dalsiOboryVeMeste('Chomutov', await klaceVPrehledu('Chomutov'));
   assert.ok(obory.length > 0, 'v Chomutově nejsou žádné další obory');
   const html = renderToStaticMarkup(
     React.createElement(DalsiOboryVeMeste, { obory }),
@@ -303,7 +310,7 @@ test('další obory: nenesou obtížnost přijetí', async () => {
 });
 
 test('další obory: každý obor je v textu a skupiny se nemíchají', async () => {
-  const obory = await dalsiOboryVeMeste('Pardubice');
+  const obory = await dalsiOboryVeMeste('Pardubice', await klaceVPrehledu('Pardubice'));
   assert.ok(obory.length > 0, 'v Pardubicích nejsou další obory');
   const vykresleny = text(renderToStaticMarkup(
     React.createElement(DalsiOboryVeMeste, { obory }),
@@ -361,4 +368,49 @@ test('značka 2. kola se bez ročníku z registru nevykreslí', async () => {
     React.createElement(CitySchoolsTable, { schools: [s2], rok: 2026, rokDruhehoKola: null }),
   ));
   assert.ok(!vykresleny.includes('2. kolo'), 'značka se ukázala i bez ročníku z registru');
+});
+
+test('další obory: netvrdí, že se u nich jednotná zkouška koná', async () => {
+  // Příznak `bez_jednotne_zkousky: false` znamená jen „není v kategoriích
+  // C/E/H/J/P“, ne že se zkouška koná: 53 ze 64 oborů skupiny „jiný“ jsou
+  // umělecké obory (KKOV 82-…), kde se JPZ nekoná a rozhoduje talentová zkouška.
+  const obory = await dalsiOboryVeMeste('Praha', await klaceVPrehledu('Praha'));
+  const jine = obory.filter(o => o.duvod === 'jiny');
+  assert.ok(jine.length > 0, 'v Praze není žádný obor ve skupině „jiný“');
+  const vykresleny = text(renderToStaticMarkup(
+    React.createElement(DalsiOboryVeMeste, { obory }),
+  ));
+  assert.ok(
+    !/Jednotná zkouška se u nich koná/.test(vykresleny),
+    'oddíl tvrdí, že se jednotná zkouška koná, což z příznaku kategorie nevyplývá',
+  );
+  // Většina skupiny jsou umělecké obory; text to musí připustit, ne popřít.
+  const umelecke = jine.filter(o => o.klic.split('_')[1]?.startsWith('82-')).length;
+  assert.ok(umelecke > 0, 've skupině „jiný“ nejsou umělecké obory, předpoklad textu neplatí');
+});
+
+test('další obory: podklad je soupis oborů, ne výběr souběžných voleb', async () => {
+  // Pole `mimo_prehled` vzniká jen z prvních šesti souběžných voleb s aspoň
+  // deseti společnými uchazeči. Kdyby oddíl stál na něm, vynechal by 704 oborů,
+  // které data doloženě nesou — například Hudbu a Zpěv na konzervatoři v Pardubicích.
+  const obory = await dalsiOboryVeMeste('Pardubice', await klaceVPrehledu('Pardubice'));
+  const konzervator = obory.filter(o => /onzervato/.test(o.skola)).map(o => o.obor);
+  assert.ok(
+    konzervator.includes('Hudba') && konzervator.includes('Zpěv'),
+    `konzervatoř v Pardubicích chybí nebo nemá Hudbu a Zpěv: ${konzervator.join(', ') || 'nic'}`,
+  );
+  assert.ok(obory.length >= 20, `Pardubice mají jen ${obory.length} dalších oborů, čekáno aspoň 20`);
+});
+
+test('další obory: nezdvojují nabídku z hlavního přehledu', async () => {
+  for (const mesto of ['Pardubice', 'Chomutov', 'Karlovy Vary']) {
+    const vPrehledu = await klaceVPrehledu(mesto);
+    const obory = await dalsiOboryVeMeste(mesto, vPrehledu);
+    for (const o of obory) {
+      assert.ok(
+        !vPrehledu.has(o.klic),
+        `${mesto}: obor ${o.klic} („${o.obor}“) je v hlavním přehledu i mezi dalšími`,
+      );
+    }
+  }
 });
