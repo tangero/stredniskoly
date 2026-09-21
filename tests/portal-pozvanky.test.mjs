@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { osloveni } from '../src/lib/portal-pozvanky.ts';
-import { pozvankaDoPilotu, htmlNaText } from '../src/lib/portal-email.ts';
+import { pozvankaDoPilotu, posliPozvankuDoPilotu, posliVitejteEmail, htmlNaText } from '../src/lib/portal-email.ts';
 import { normalizeKod } from '../src/lib/portal-skol.ts';
 
 // Oslovení se hádá z ředitelova jména. Špatně oslovená ředitelka je horší než
@@ -79,4 +79,54 @@ test('dekódování entit nerozpadne uvozený text na značky', () => {
   // by v textové části e-mailu vznikl `<script>` — tedy pravý opak toho, proč
   // `esc()` existuje.
   assert.equal(htmlNaText('<p>a &amp;lt;script&amp;gt; b</p>'), 'a &lt;script&gt; b');
+});
+
+// ---------------------------------------------------------------------------
+// Co skutečně odejde do Resendu. Test výš kontroluje jen návratovou hodnotu
+// šablony; kdyby se odesílací cesta odpojila, náhled v administraci by to
+// neukázal — ukazuje totiž tutéž šablonu — a dvacet ředitelů by kódy dostalo
+// jménem AI asistentky. Právě tomu má podpis člověkem zabránit.
+// ---------------------------------------------------------------------------
+
+/** Zachytí tělo požadavku, který by šel na Resend. */
+async function zachytOdeslani(posli) {
+  const puvodniFetch = global.fetch;
+  const puvodniKlic = process.env.RESEND_API_KEY;
+  process.env.RESEND_API_KEY = 'test';
+  let telo = null;
+  global.fetch = async (_url, init) => {
+    telo = JSON.parse(init.body);
+    return { ok: true, text: async () => '' };
+  };
+  try {
+    await posli();
+  } finally {
+    global.fetch = puvodniFetch;
+    if (puvodniKlic === undefined) delete process.env.RESEND_API_KEY;
+    else process.env.RESEND_API_KEY = puvodniKlic;
+  }
+  return telo;
+}
+
+test('pozvánka odchází jménem člověka, ne asistentky', async () => {
+  const telo = await zachytOdeslani(() =>
+    posliPozvankuDoPilotu({
+      email: 'reditel@skola.cz',
+      osloveni: 'Vážený pane řediteli',
+      nazevSkoly: 'Gymnázium Testovací',
+      kod: KOD,
+    }),
+  );
+  assert.equal(telo.from, 'Patrick Zandl – Přijímačky na školu <eda@prijimackynaskolu.cz>');
+  assert.equal(telo.reply_to, 'eda@prijimackynaskolu.cz', 'odpovědi nemíří na adresu podpory');
+  assert.ok(telo.text?.includes(KOD), 'kód chybí v textové verzi');
+});
+
+test('provozní e-mail naopak odchází jménem asistentky', async () => {
+  // Kdyby se jméno bralo natvrdo z pozvánky, chodilo by jméno člověka i tam,
+  // kde ve skutečnosti odpovídá Eduarda.
+  const telo = await zachytOdeslani(() =>
+    posliVitejteEmail({ email: 'a@b.cz', nazevSkoly: 'G', jmeno: 'Jana', profilUrl: 'https://x.test' }),
+  );
+  assert.equal(telo.from, 'Eduarda z Přijímačky na školu <eda@prijimackynaskolu.cz>');
 });
