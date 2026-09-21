@@ -40,7 +40,9 @@ export const PortalKodForm = () => {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) setChyba(data.error || 'Kód se nepodařilo ověřit. Zkuste to prosím znovu.');
-      else if (data.stav === 'volny') setVysledek({ stav: 'volny', nazev: data.nazev, kod: cisty, skola: data.skola ?? null });
+      // `nazev` chodí ze sítě: chybějící pole by o kus dál shodilo `.trim()`.
+      else if (data.stav === 'volny') setVysledek({ stav: 'volny', nazev: data.nazev ?? '', kod: cisty, skola: data.skola ?? null });
+      else if (data.stav === 'uplatnen' || data.stav === 'skola_ma_spravce') setVysledek({ stav: data.stav, nazev: data.nazev ?? '' });
       else setVysledek(data);
     } catch {
       setChyba('Chyba připojení. Zkuste to prosím znovu.');
