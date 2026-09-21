@@ -6,6 +6,9 @@ import { Footer } from '@/components/Footer';
 import { CitySchoolsTable } from '@/components/CitySchoolsTable';
 import { MESTA, getCityStats } from '@/lib/cityData';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
+import { rokDruhehoKola } from '@/lib/druhe-kolo';
+import { dalsiOboryVeMeste } from '@/lib/kontext-prihlasek';
+import { DalsiOboryVeMeste } from '@/components/DalsiOboryVeMeste';
 import type { CityStats, SchoolTypeStats, NationalTypeStats } from '@/lib/cityData';
 
 interface Props {
@@ -194,6 +197,13 @@ export default async function MestoPage({ params }: Props) {
   // Ročník z registru; sady kapacit, přihlášek a výsledků jedou společně,
   // u složeného ukazatele se bere nejstarší ze zobrazených období.
   const rok = Number(await zobrazeneObdobi('cermat-vysledky')) || null;
+  const rok2Kolo = await rokDruhehoKola();
+  // Obory, které hlavní přehled nevede. Klíče z přehledu se předají, aby se
+  // nabídka nezdvojila; podkladem je soupis oborů ročníku, ne souběžné volby.
+  const dalsi = await dalsiOboryVeMeste(
+    mestoMeta.nazev,
+    new Set(schools.map(s => `${s.redizo}_${s.id.split('_')[1] ?? ''}`)),
+  );
   const pocetSkol = new Set(schools.map(s => s.redizo)).size;
 
   return (
@@ -253,14 +263,24 @@ export default async function MestoPage({ params }: Props) {
               Jedna karta je jedna škola, uvnitř jsou její obory. U každého oboru je obtížnost
               přijetí za 1. kolo{rok ? ` ${rok}` : ''}: kolik soutěžících uchazečů se na něj dostalo.
             </p>
-            <p className="mb-6 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-              <b>Učební obory bez jednotné zkoušky tu nejsou.</b> Přehled stojí na datech
-              o denním nezkráceném studiu s povinnou jednotnou zkouškou, takže obory kategorií
-              C, E, H a J v něm chybí, i když je škola nabízí. Co škola opravdu otevírá, stojí
-              v jejích kritériích.
-            </p>
-            <CitySchoolsTable schools={schools} rok={rok ?? 0} />
+            {dalsi.obory.length > 0 && (
+              <p className="mb-6 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+                <b>Obory bez jednotné zkoušky tady nejsou.</b> Přehled stojí na datech
+                o denním nezkráceném studiu s povinnou jednotnou zkouškou. Dalších{' '}
+                {fmt(dalsi.obory.length)}{' '}
+                {dalsi.obory.length === 1 ? 'obor' : dalsi.obory.length < 5 ? 'obory' : 'oborů'}{' '}
+                ve městě najdeš{' '}
+                <a href="#dalsi-obory" className="underline">o kus níž</a>, ale víme o nich
+                jen název.
+              </p>
+            )}
+            <CitySchoolsTable schools={schools} rok={rok ?? 0} rokDruhehoKola={rok2Kolo} />
           </section>
+
+          {/* Obory, které hlavní přehled nevede */}
+          <div id="dalsi-obory" className="scroll-mt-24">
+            <DalsiOboryVeMeste obory={dalsi.obory} minUchazecu={dalsi.minUchazecu} />
+          </div>
 
           {/* Přehled podle typu školy */}
           <section>

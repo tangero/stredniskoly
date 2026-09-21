@@ -3,6 +3,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { souhrnyPodleRedizo, type SouhrnProKatalog } from './souhrny-kolo1';
 import { adresaPrehledu } from './adresa-oboru.mjs';
+import { druheKoloPodleRedizo } from './druhe-kolo';
 import { getSchoolAnalysis } from './data';
 import { zarazeniObtiznosti, soutezicichUchazecu, type ZarazeniObtiznosti } from './obor-profil';
 
@@ -111,6 +112,12 @@ export interface CitySchoolRow {
    * obor s doloženým výsledkem je vypsaný, i když se klíče nespárovaly.
    */
   chybiVRocniku: boolean;
+  /**
+   * `true`, když nabídka v zobrazeném ročníku 2. kola vypsala 2. kolo.
+   * Je to **historie**, ne nabídka na příští rok; období 2. kola je vlastní
+   * sada registru a může se lišit od 1. kola.
+   */
+  meloDruheKolo: boolean;
 }
 
 export interface NationalTypeStats {
@@ -186,9 +193,23 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
     if (!kanonickeNazvy.has(redizo)) kanonickeNazvy.set(redizo, skola.nazev);
   }
 
+  const redizoMesta = new Set(city2025.map(s => String(s.redizo)));
+
   // Obtížnost přijetí ze souhrnů 1. kola. Páruje se REDIZO + KKOV + zaměření;
   // na hrubším klíči by se nabídky téhož oboru s různým zaměřením slily.
-  const souhrny = await souhrnyPodleRedizo(new Set(city2025.map(s => String(s.redizo))));
+  const souhrny = await souhrnyPodleRedizo(redizoMesta);
+
+  // Nabídky, které v zobrazeném ročníku vypsaly 2. kolo. Klíče nesou zaměření
+  // ve stejné normalizaci jako scripts/build-druhe-kolo.py.
+  const druheKolo = await druheKoloPodleRedizo(redizoMesta);
+  const klicDruhehoKola = new Set(
+    [...druheKolo.values()].flat().map(n => n.klic),
+  );
+  const klicSeZamerenim = (redizo: string, kkov: string, zamereni: string) => {
+    const z = (zamereni ?? '').normalize('NFKD').replace(/[̀-ͯ]/g, '')
+      .replace(/[^a-zA-Z0-9]+/g, '_').replace(/^_+|_+$/g, '').toLowerCase();
+    return z ? `${redizo}_${kkov}_${z}` : `${redizo}_${kkov}`;
+  };
   const klicZamereni = (kkov: string, zamereni: string) =>
     `${kkov}|${normalizeSchoolKey(zamereni || '')}`;
   const souhrnProRadek = new Map<string, SouhrnProKatalog>();
@@ -266,6 +287,9 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
       nesplniliPodminky: souhrn?.aktualni.conditions_not_met ?? null,
       // Bez souhrnu nabídka v ročníku není; s ním je vypsaná, i kdyby chyběla shoda.
       chybiVRocniku: souhrn === undefined,
+      meloDruheKolo: klicDruhehoKola.has(
+        klicSeZamerenim(String(s25.redizo), String(s25.kkov ?? ''), String(s25.zamereni ?? '')),
+      ),
     };
   });
 

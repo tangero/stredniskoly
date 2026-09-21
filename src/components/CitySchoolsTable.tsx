@@ -79,6 +79,8 @@ interface Props {
   schools: CitySchoolRow[];
   /** Zobrazený ročník z registru; nikdy se nepíše napevno. */
   rok: number;
+  /** Ročník 2. kola; vlastní sada registru, může se lišit od 1. kola. */
+  rokDruhehoKola: number | null;
 }
 
 type SortKey = 'nazev' | 'kapacita' | 'prihlasky' | 'index';
@@ -92,7 +94,7 @@ interface SkolaSkupina {
   nabidky: CitySchoolRow[];
 }
 
-export function CitySchoolsTable({ schools, rok }: Props) {
+export function CitySchoolsTable({ schools, rok, rokDruhehoKola }: Props) {
   const [filtrTypu, setFiltrTypu] = useState<string>('vse');
   const [filtrObtiznosti, setFiltrObtiznosti] = useState<ZarazeniObtiznosti | 'vse'>('vse');
   const [sort, setSort] = useState<SortKey>('nazev');
@@ -287,6 +289,11 @@ export function CitySchoolsTable({ schools, rok }: Props) {
                     </div>
                     <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1.5">
                       <OdznakObtiznosti zarazeni={r.zarazeni} />
+                      {r.meloDruheKolo && rokDruhehoKola && (
+                        <span className="whitespace-nowrap rounded-full border border-slate-300 px-2 py-0.5 text-[12px] text-slate-600">
+                          v roce {rokDruhehoKola} tu bylo i 2. kolo
+                        </span>
+                      )}
                       <PodilPrijatych row={r} />
                     </div>
                     <div className="mt-1 text-[13px] text-slate-600">
