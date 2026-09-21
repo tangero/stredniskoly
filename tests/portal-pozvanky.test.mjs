@@ -73,3 +73,10 @@ test('textová verze e-mailu nenechá HTML entity na očích', () => {
   const text = htmlNaText('<p>Nováková &amp; spol. &lt;pozor&gt; &quot;citace&quot;</p>');
   assert.equal(text, 'Nováková & spol. <pozor> "citace"');
 });
+
+test('dekódování entit nerozpadne uvozený text na značky', () => {
+  // `&amp;` se musí nahrazovat až nakonec. Kdyby šlo první, z `&amp;lt;script&amp;gt;`
+  // by v textové části e-mailu vznikl `<script>` — tedy pravý opak toho, proč
+  // `esc()` existuje.
+  assert.equal(htmlNaText('<p>a &amp;lt;script&amp;gt; b</p>'), 'a &lt;script&gt; b');
+});

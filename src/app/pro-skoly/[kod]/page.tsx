@@ -38,12 +38,15 @@ export default async function PortalKodPage({ params }: Props) {
   if (prihlaseny?.role.some((r) => r.redizo === redizo)) redirect(`/pro-skoly/profil?skola=${redizo}`);
 
   const nazev = await getNazevSkoly(redizo);
+  // Chybějící záznam v katalogu brání jen zakládání správce: profil by nebyl co
+  // editovat a kód by shořel nadarmo. U spotřebovaného kódu se tahle větev
+  // přeskakuje schválně — jinak by dostal hlášku „váš kód zůstává platný“.
+  if (stav === 'volny' && !nazev) return <PortalSkolaNenalezena redizo={redizo} vstup="kod" />;
+
+  // Až za stráží: ve slepé uličce by se skoro megabajtový rejstřík četl pro
+  // výsledek, který stejně zahodíme.
   const skola = await getIdentifikaceSkoly(redizo, nazev);
   if (stav === 'volny') {
-    // Chybějící záznam v katalogu brání jen zakládání správce: profil by nebyl
-    // co editovat a kód by shořel nadarmo. U spotřebovaného kódu se tahle větev
-    // přeskakuje schválně — jinak by dostal hlášku „váš kód zůstává platný“.
-    if (!nazev) return <PortalSkolaNenalezena redizo={redizo} vstup="kod" />;
     return (
       <PortalObalka>
         <PortalHlavickaSkoly skola={skola} vstup="kód" />

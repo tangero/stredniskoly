@@ -94,7 +94,13 @@ test('neznámý stav nevykreslí prázdnou obrazovku ani prázdnou kartu', () =>
 // nebo obrazovku, na které se po kliknutí nestalo vůbec nic.
 // ---------------------------------------------------------------------------
 
-/** Vrátí `onSubmit` formuláře i seznam stavů, které komponenta nastavila. */
+/**
+ * Vrátí `onSubmit` formuláře i seznam stavů, které komponenta nastavila.
+ *
+ * Stavy se rozlišují podle POŘADÍ volání `useState`. Je to křehké vůči
+ * přeházení deklarací v komponentě — ale ne tiše: po přehození padnou všechny
+ * testy tohoto souboru naráz, ne jeden nenápadně.
+ */
 function pripravOdeslani() {
   const nastaveno = [];
   let poradi = 0;
@@ -145,4 +151,36 @@ test('výpadek sítě škola pozná', async () => {
     delete global.fetch;
   }
   assert.match(nastaveno.find((z) => z.i === 4 && z.v)?.v ?? '', /připojení/i);
+});
+
+test('volný kód pošle do formuláře kód i identifikaci školy', async () => {
+  // Šťastná cesta, kterou projde všech dvacet ředitelů. Dokud ji nic nehlídalo,
+  // prošlo i to, kdyby se větev `volny` nikdy netrefila nebo se kód ztratil.
+  const { odeslat, nastaveno } = pripravOdeslani();
+  const skola = { ...SKOLA };
+  global.fetch = async () => ({ ok: true, json: async () => ({ stav: 'volny', nazev: 'Gymnázium', skola }) });
+  try {
+    await odeslat({ preventDefault() {} });
+  } finally {
+    delete global.fetch;
+  }
+  const vysledek = nastaveno.find((z) => z.i === 3 && z.v)?.v;
+  assert.equal(vysledek?.stav, 'volny', 'větev volného kódu se netrefila');
+  assert.equal(vysledek.kod, 'ABCD-EFGH-JKMN', 'kód se do formuláře nedostal');
+  assert.equal(vysledek.skola?.redizo, SKOLA.redizo, 'identifikace se zahodila');
+  assert.equal(nastaveno.filter((z) => z.i === 4 && z.v).length, 0, 'nastavila se chyba');
+});
+
+test('chybová odpověď API se škole ukáže', async () => {
+  // Přes tuhle větev chodí i hláška o překročeném limitu pokusů. Bez ní by po
+  // kliknutí nenastalo vůbec nic.
+  const { odeslat, nastaveno } = pripravOdeslani();
+  global.fetch = async () => ({ ok: false, json: async () => ({ error: 'Příliš mnoho pokusů.' }) });
+  try {
+    await odeslat({ preventDefault() {} });
+  } finally {
+    delete global.fetch;
+  }
+  assert.equal(nastaveno.find((z) => z.i === 4 && z.v)?.v, 'Příliš mnoho pokusů.');
+  assert.equal(nastaveno.filter((z) => z.i === 3 && z.v).length, 0);
 });

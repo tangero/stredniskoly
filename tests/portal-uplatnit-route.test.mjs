@@ -61,9 +61,9 @@ function nactiRoute({ nazev = 'Gymnázium', redizo = '600006247' } = {}) {
   return { zavolej, dohled };
 }
 
-for (const [jak, telo] of [
-  ['kódem', { kod: 'ABCD-EFGH-JKMN' }],
-  ['odkazem z rejstříku', { magic: 'token' }],
+for (const [jak, telo, drziKod] of [
+  ['kódem', { kod: 'ABCD-EFGH-JKMN' }, true],
+  ['odkazem z rejstříku', { magic: 'token' }, false],
 ]) {
   test(`škola bez profilu se nedá převzít ${jak}`, async () => {
     // Prázdný `getNazevSkoly` znamená, že škola není v zobrazovaném období
@@ -72,7 +72,10 @@ for (const [jak, telo] of [
     const { zavolej, dohled } = nactiRoute({ nazev: '' });
     const { status, telo: odpoved } = await zavolej(telo);
     assert.equal(status, 409);
-    assert.match(odpoved.error, /kód zůstává platný/, 'chybí ujištění, že kód nepropadl');
+    // Ujištění o platnosti kódu patří jen tomu, kdo kód drží. Komu přišel odkaz
+    // z rejstříkového e-mailu, žádný nedostal a hledal by ho marně.
+    if (drziKod) assert.match(odpoved.error, /kód zůstává platný/, 'chybí ujištění, že kód nepropadl');
+    else assert.doesNotMatch(odpoved.error, /kód/i, 'slibuje kód tomu, kdo žádný nedostal');
     assert.equal(dohled.transakci, 0, 'transakce se spustila, kód mohl shořet');
     assert.equal(dohled.uplatnenoKodu, 0);
     assert.equal(dohled.zalozenoZRejstriku, 0);
