@@ -34,7 +34,6 @@ async function nactiZRejstriku(redizo: string): Promise<ZaznamRejstriku | null> 
   }
 }
 
-/** Plný název, IČO a adresa z rejstříku; bez záznamu v rejstříku název a adresa z katalogu. */
 /** Nabídky školy z katalogu; chybějící nebo poškozený katalog není důvod selhat. */
 async function nactiNabidky(redizo: string) {
   try {
@@ -45,6 +44,7 @@ async function nactiNabidky(redizo: string) {
   }
 }
 
+/** Plný název, IČO a adresa z rejstříku; bez záznamu v rejstříku název a adresa z katalogu. */
 export async function getIdentifikaceSkoly(redizo: string, nazevKatalog: string): Promise<IdentifikaceSkoly> {
   const [rejstrik, nabidky] = await Promise.all([nactiZRejstriku(redizo), nactiNabidky(redizo)]);
   const prvni = nabidky[0];

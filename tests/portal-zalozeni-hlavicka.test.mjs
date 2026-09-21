@@ -19,9 +19,15 @@ const SKOLA = {
   profil: '/skola/600006247-gymnazium',
 };
 
-const vykresli = (skola, uroven) =>
+const vykresli = (skola, uroven, dalsi = {}) =>
   renderToStaticMarkup(
-    React.createElement(PortalZalozeni, { nazevSkoly: 'Gymnázium', auth: { kod: 'ABCD-EFGH-JKMN' }, skola, uroven }),
+    React.createElement(PortalZalozeni, {
+      nazevSkoly: 'Gymnázium',
+      auth: { kod: 'ABCD-EFGH-JKMN' },
+      skola,
+      uroven,
+      ...dalsi,
+    }),
   );
 
 test('založení správce ukáže, ke které škole se člověk hlásí', () => {
@@ -51,4 +57,16 @@ test('bez identifikace se formulář vykreslí dál, jen bez hlavičky', () => {
   const html = vykresli(null, 'h4');
   assert.match(html, /Staňte se správcem profilu/);
   assert.doesNotMatch(html, /IČO/);
+});
+
+test('škola mimo katalog nevyrobí větu začínající mezerou ani prázdný nadpis', () => {
+  // getNazevSkoly hledá v ročníku 2026; po přepnutí katalogu může vrátit prázdno.
+  const html = vykresli({ ...SKOLA, nazev: '' }, 'h4', { nazevSkoly: '' });
+  assert.match(html, /Tato škola zatím správce nemá/);
+  assert.doesNotMatch(html, /<h4[^>]*><\/h4>/, 'prázdný nadpis v hlavičce');
+});
+
+test('kdo přišel odkazem, nečte výzvu o kódu', () => {
+  const html = vykresli(SKOLA, 'h4', { auth: { magic: 'token' } });
+  assert.match(html, /Pokud to není vaše škola, odkaz nepoužívejte/);
 });

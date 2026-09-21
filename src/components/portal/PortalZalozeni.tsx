@@ -64,11 +64,14 @@ export const PortalZalozeni = ({ nazevSkoly, auth, predvyplnenyEmail = '', skola
 
   return (
     <form onSubmit={odeslat} className="space-y-4 rounded-xl border border-[#e3e9f1] bg-white p-5">
-      {skola && <PortalHlavickaSkoly skola={skola} vstup="kód" uroven={uroven} />}
+      {/* Bez názvu by hlavička ukázala prázdný nadpis; radši ji vynechat. */}
+      {skola?.nazev && (
+        <PortalHlavickaSkoly skola={skola} vstup={'magic' in auth ? 'odkaz' : 'kód'} uroven={uroven} />
+      )}
       <div>
         <Nadpis className="text-lg font-semibold text-slate-900">Staňte se správcem profilu</Nadpis>
         <p className="mt-1 text-sm text-slate-600">
-          {nazevSkoly} zatím správce nemá. Kdo kód použije první, stane se správcem profilu a může
+          {nazevSkoly.trim() || 'Tato škola'} zatím správce nemá. Kdo kód použije první, stane se správcem profilu a může
           pozvat kolegy. Kód tím přestane platit.
         </p>
       </div>

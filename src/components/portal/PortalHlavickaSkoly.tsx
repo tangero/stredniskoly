@@ -10,10 +10,12 @@ interface PortalHlavickaSkolyProps {
 // Kdo uplatňuje kód, musí na první pohled poznat, ke které škole se hlásí.
 export const PortalHlavickaSkoly = ({ skola, vstup, uroven = 'h1' }: PortalHlavickaSkolyProps) => {
   const Nadpis = uroven;
+  // Na samostatné stránce je to hlavní nadpis, v kartě jen část formuláře.
+  const velikost = uroven === 'h1' ? 'text-3xl md:text-4xl' : 'text-2xl md:text-3xl';
   return (
   <header className="mb-8 rounded-xl border border-[#c9d4e1] bg-slate-50 p-6">
     <p className="text-sm font-medium text-slate-500 mb-2">Správa profilu školy na Přijímačky na školu</p>
-    <Nadpis className="text-2xl md:text-3xl font-bold leading-tight text-slate-900 mb-4">{skola.nazev}</Nadpis>
+    <Nadpis className={`${velikost} font-bold leading-tight text-slate-900 mb-4`}>{skola.nazev}</Nadpis>
     <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-slate-700">
       {skola.adresa && (
         <>
