@@ -13,6 +13,9 @@
 // Co tenhle skript dělá a co zásadně nedělá:
 //
 //  * **nic nemaže.** Zmizení položky z krátkého feedu není zrušení události.
+//  * **rozbor pozvánky ukládá vedle položky** (`skola_novinka_rozbor`): věta
+//    s termíny, akce, ke které patří, a syrové odpovědi modelu. Bez nich by
+//    věta na stránce byla tvrzením bez dokladu a nešlo by ji přepočítat.
 //  * **změnu ukládá jako novou verzi**, ne přepisem: bez zobrazovaných polí
 //    a extrahovaných tvrzení nejde poznat význam opravy (překlep vs. zrušený
 //    termín) ani rekonstruovat, co už bylo čtenářům sděleno.
@@ -103,7 +106,7 @@ export function zmenaProtiUlozene(stara, p) {
 }
 
 /** Jedna položka: nová, změněná, nebo beze změny. Vrací, co se stalo. */
-async function ulozPolozku(klient, redizo, p) {
+export async function ulozPolozku(klient, redizo, p) {
   const { rows } = await klient.query(
     `select id, otisk_obsahu, verze_pravidel from skola_novinka
       where redizo = $1 and identita = $2`,
@@ -129,6 +132,11 @@ async function ulozPolozku(klient, redizo, p) {
     );
     zmena = 'nova';
   } else if (zmenaProtiUlozene(stara, p) === 'beze_zmeny') {
+    // Rozbor se uloží i tak. Sklízeč se modelu ptá dřív, než se tady zjistí, že
+    // se položka nezměnila, takže odpověď je už zaplacená; zahodit ji znamená
+    // platit za ni znovu každý běh a nikdy neobnovit větu u položky, které se
+    // text nemění. Řádek novinky se nepřepisuje, mění se jen jeho rozbor.
+    await ulozRozbor(klient, stara.id, p);
     return { zmena: 'beze_zmeny' };
   } else {
     id = stara.id;
@@ -148,7 +156,35 @@ async function ulozPolozku(klient, redizo, p) {
     [randomUUID(), id, p.otisk_obsahu, JSON.stringify(p.zobrazovana_pole ?? {}),
      JSON.stringify(p.extrahovana_tvrzeni ?? {}), p.verze_pravidel],
   );
+  await ulozRozbor(klient, id, p);
   return { zmena };
+}
+
+/**
+ * Rozbor pozvánky: věta s termíny a doklad, ze kterého vznikla.
+ *
+ * Chybějící `rozbor` v dávce **nemaže uložený**. Znamená jedno ze dvou: buď
+ * položka na rozbor vůbec nešla (není to pozvánka na akci), nebo se model
+ * neozval – a výpadek cizí služby není zjištění, že termín neplatí. Když se
+ * naopak model ozval a věta nevyšla (akce proběhla, data v textu nejsou),
+ * přijde `rozbor` se `souhrn: null` a starou větu přepíše.
+ */
+export async function ulozRozbor(klient, novinkaId, p) {
+  const r = p.rozbor;
+  if (!r) return;
+  await klient.query(
+    `insert into skola_novinka_rozbor (novinka_id, zdroj_textu, otisk_textu, terminy, akce,
+       lhuty, souhrn, model, odpovedi, verze_pravidel)
+     values ($1, $2, $3, $4::jsonb, $5, $6::jsonb, $7, $8, $9::jsonb, $10)
+     on conflict (novinka_id) do update set
+       zdroj_textu = excluded.zdroj_textu, otisk_textu = excluded.otisk_textu,
+       terminy = excluded.terminy, akce = excluded.akce, lhuty = excluded.lhuty,
+       souhrn = excluded.souhrn, model = excluded.model, odpovedi = excluded.odpovedi,
+       verze_pravidel = excluded.verze_pravidel, zmeneno = now()`,
+    [novinkaId, r.zdroj_textu, r.otisk_textu, JSON.stringify(r.terminy ?? []), r.akce ?? null,
+     JSON.stringify(r.lhuty ?? []), r.souhrn ?? null, r.model ?? null,
+     JSON.stringify(r.odpovedi ?? {}), r.verze_pravidel],
+  );
 }
 
 async function zapisDavku(klient, davka) {

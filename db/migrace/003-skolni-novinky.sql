@@ -62,6 +62,23 @@ create table if not exists skola_novinka_verze (
 
 create index if not exists skola_novinka_verze_polozka on skola_novinka_verze (novinka_id, zaznamenano desc);
 
+create table if not exists skola_novinka_rozbor (
+  novinka_id uuid primary key references skola_novinka on delete cascade,
+  zdroj_textu text not null,
+  otisk_textu text not null,
+  terminy jsonb not null default '[]'::jsonb,
+  akce text,
+  lhuty jsonb not null default '[]'::jsonb,
+  souhrn text,
+  model text,
+  odpovedi jsonb not null default '{}'::jsonb,
+  verze_pravidel text not null,
+  vytvoreno timestamptz not null default now(),
+  zmeneno timestamptz not null default now()
+);
+
+create index if not exists skola_novinka_rozbor_otisk on skola_novinka_rozbor (otisk_textu);
+
 create table if not exists skola_prepinac (
   klic text primary key,
   hodnota jsonb not null,

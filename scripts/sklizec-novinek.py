@@ -13,9 +13,16 @@ Pravidla klasifikace a jediné publikační rozhodnutí žijí ve sdíleném mod
 ``scripts/novinky_klasifikace.py``; měření (``rss-klasifikace-mereni.py``)
 i testy používají týž kód, takže se provoz a měření nemohou rozejít.
 
+U pozvánky na akci školy se navíc doptá rozhodovacího modelu, co v textu
+znamenají nalezená data, a složí z nich **vlastní** větu („Škola pořádá dny
+otevřených dveří 9. 12. 2026 a 7. 1. 2027.") – viz ``scripts/novinky_jev.py``.
+Chybí-li datum v titulku i perexu, stáhne se k tomu stránka článku.
+
 Co sklízeč neposílá dál:
 
-* **plný text článku** – přebírá se titulek, odkaz a datum (autorská práva);
+* **plný text článku** – stažený text slouží jen k nalezení dat a vět, ve
+  kterých leží; do dávky jde titulek, odkaz, datum a naše věta s termíny
+  (autorská práva);
 * položky bez použitelného odkazu nebo titulku;
 * položky starší než ``OKNO_DNU``.
 
@@ -37,7 +44,8 @@ KOREN = Path(__file__).resolve().parent.parent
 REGISTR = KOREN / "public" / "skoly_feedy.json"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from novinky_klasifikace import (  # noqa: E402  (až po sys.path)
+import novinky_jev as jev  # noqa: E402  (až po sys.path)
+from novinky_klasifikace import (  # noqa: E402
     VERZE_PRAVIDEL, TRIDY_S_POZVANKOU, oklasifikuj_polozky, parse_feed, rozhodni_publikaci,
 )
 
@@ -138,7 +146,43 @@ def konec_platnosti(pol: dict, publikovano: datetime | None, dnes: date) -> str:
     return (zaklad + timedelta(days=dnu)).isoformat()
 
 
-def zpracuj_skolu(redizo: str, zaznam: dict, stav: dict, dnes: date, timeout: int = TIMEOUT) -> dict:
+def rozeber(pol: dict, publikovano: datetime | None, dnes: date) -> dict | None:
+    """Rozbor jedné pozvánky modelem. Selhání sklizeň neshodí.
+
+    Model je cizí služba a stránka článku cizí web; ani jedno nesmí být důvod,
+    proč z běhu nevyjdou ostatní položky. Výpadek se chová jako mlčení: vrátí
+    se ``None`` a položka zůstane tím, co z ní udělala pravidla."""
+    try:
+        return jev.rozbor_polozky({**pol, "datum": publikovano}, stahovat=True)
+    except Exception as e:  # noqa: BLE001 – cizí služba, ne chyba běhu
+        print(f"  rozbor selhal ({type(e).__name__}): {pol.get('odkaz', '')}",
+              file=sys.stderr)
+        return None
+
+
+def slozka_rozboru(rozbor: dict | None, souhrn: dict | None) -> dict | None:
+    """Co z rozboru jde do dávky: doložitelný původ věty, ne text článku.
+
+    Syrové odpovědi modelu se vezou s sebou schválně – bez nich by nešlo po
+    změně prahů ani modelu rozhodnout, jestli se věta má přepočítat, a věta
+    na stránce by byla tvrzením bez dokladu."""
+    if rozbor is None:
+        return None
+    return {
+        "zdroj_textu": rozbor["zdroj_textu"],
+        "otisk_textu": rozbor["otisk_textu"],
+        "souhrn": (souhrn or {}).get("souhrn"),
+        "akce": (souhrn or {}).get("akce"),
+        "terminy": (souhrn or {}).get("terminy") or [],
+        "lhuty": rozbor["lhuty"],
+        "model": rozbor["model"],
+        "odpovedi": rozbor["odpovedi"],
+        "verze_pravidel": VERZE_PRAVIDEL,
+    }
+
+
+def zpracuj_skolu(redizo: str, zaznam: dict, stav: dict, dnes: date, timeout: int = TIMEOUT,
+                  rozebirat: bool = False) -> dict:
     odpoved = stahni_feed(zaznam["feed_url"], stav.get("etag"), stav.get("modified_since"), timeout)
     vysledek = {"redizo": redizo, "feed_url": zaznam["feed_url"], "zdroj": zaznam.get("zdroj")}
     if odpoved.get("chyba"):
@@ -170,6 +214,22 @@ def zpracuj_skolu(redizo: str, zaznam: dict, stav: dict, dnes: date, timeout: in
         # Publikační rozhodnutí se dělá znovu se **dnem zobrazení**: proběhlý
         # termín nesmí vzniknout jako pozvánka ani v dávce.
         pub = rozhodni_publikaci(p, publikovano, dnes)
+        # Model se ptá jen u pozvánek na akci – jinde není co datovat. Může
+        # doplnit třídu, kterou pravidla neznají, takže se publikační
+        # rozhodnutí poté dělá znovu; výpadek modelu nechává pravidla beze změny.
+        rozbor = souhrn = None
+        if rozebirat and jev.je_kandidat_na_rozbor(p, pub):
+            rozbor = rozeber(p, publikovano, dnes)
+            zmeny = jev.slouc_s_pravidly(p, rozbor)
+            if zmeny:
+                p.update(zmeny)
+                pub = rozhodni_publikaci(p, publikovano, dnes)
+            # Věta se skládá až po druhém rozhodnutí. Model umí položku sám
+            # shodit na neutrální odkaz („není to pro uchazeče o tuhle školu");
+            # napsat pak vedle odkazu „Škola pořádá…" by to rozhodnutí zrušilo.
+            # Termíny v rozboru zůstávají, aby bylo z čeho přepočítat.
+            if pub["zobrazeni"] == "karta":
+                souhrn = jev.souhrn_z_rozboru({**p, "datum": publikovano}, rozbor, dnes)
         vystup.append({
             "identita": (p.get("guid") or "").strip() or normalizuj_url(url),
             "otisk_obsahu": otisk({**p, "url": url}),
@@ -185,8 +245,10 @@ def zpracuj_skolu(redizo: str, zaznam: dict, stav: dict, dnes: date, timeout: in
             "terminy": pub.get("terminy") or [],
             "konec_platnosti": konec_platnosti({**p, "publikace": pub}, publikovano, dnes),
             "verze_pravidel": VERZE_PRAVIDEL,
+            "rozbor": slozka_rozboru(rozbor, souhrn),
             # Co bylo čtenáři sděleno – pro porovnání významu opravy (3.2).
-            "zobrazovana_pole": {"titulek": titulek, "url": url, "zobrazeni": pub["zobrazeni"]},
+            "zobrazovana_pole": {"titulek": titulek, "url": url, "zobrazeni": pub["zobrazeni"],
+                                 "souhrn": (souhrn or {}).get("souhrn")},
             "extrahovana_tvrzeni": {
                 "tridy": p.get("tridy") or [],
                 "terminy": pub.get("terminy") or [],
@@ -210,7 +272,17 @@ def main() -> None:
     p.add_argument("--vystup", required=True, help="kam zapsat dávku")
     p.add_argument("--jen", type=int, help="omezit počet škol (zkouška)")
     p.add_argument("--registr", default=str(REGISTR))
+    p.add_argument("--bez-rozboru", action="store_true",
+                   help="nedoptávat se modelu na význam dat v pozvánkách")
     args = p.parse_args()
+
+    # Bez klíče se model ptát nedá. Mlčky pokračovat je správně: sklizeň má
+    # smysl i bez vět s termíny, jen jich bude míň. Píše se to ale do výpisu,
+    # ať nevznikne dojem, že žádná škola termín neuvádí.
+    rozebirat = not args.bez_rozboru and jev._api_klic() is not None
+    if not args.bez_rozboru and not rozebirat:
+        print("Bez OPENROUTER_API_KEY: pozvánky nedostanou větu s termínem.",
+              file=sys.stderr)
 
     registr = json.loads(Path(args.registr).read_text())["skoly"]
     stavy = {}
@@ -230,7 +302,8 @@ def main() -> None:
     def prober_skoly(davka: list, soubezne: int, timeout: int) -> list:
         vysl = []
         with concurrent.futures.ThreadPoolExecutor(max_workers=soubezne) as exe:
-            budouci = [exe.submit(zpracuj_skolu, r, z, stavy.get(r, {}), dnes, timeout) for r, z in davka]
+            budouci = [exe.submit(zpracuj_skolu, r, z, stavy.get(r, {}), dnes, timeout, rozebirat)
+                       for r, z in davka]
             for b in concurrent.futures.as_completed(budouci):
                 vysl.append(b.result())
         return vysl
@@ -263,6 +336,10 @@ def main() -> None:
             "zdroju_opakovano": len(k_opakovani),
             "zdroju_spraveno_opakovanim": spraveno,
             "polozek": sum(len(v.get("polozky") or []) for v in vysledky),
+            "rozebrano": sum(1 for v in vysledky for p in v.get("polozky") or []
+                             if p.get("rozbor")),
+            "s_terminem": sum(1 for v in vysledky for p in v.get("polozky") or []
+                              if (p.get("rozbor") or {}).get("souhrn")),
         },
         "zdroje": sorted(vysledky, key=lambda v: v["redizo"]),
     }
@@ -270,7 +347,8 @@ def main() -> None:
     m = davka["meta"]
     print(f"Sklizeň: {m['zdroju_ok']} ok, {m['zdroju_beze_zmeny']} beze změny, "
           f"{m['zdroju_chyba']} chyb, {m['polozek']} položek "
-          f"(opakováno {m['zdroju_opakovano']}, z toho spraveno {m['zdroju_spraveno_opakovanim']}) "
+          f"(opakováno {m['zdroju_opakovano']}, z toho spraveno {m['zdroju_spraveno_opakovanim']}); "
+          f"rozebráno {m['rozebrano']} pozvánek, věta s termínem u {m['s_terminem']} "
           f"→ {args.vystup}")
 
 

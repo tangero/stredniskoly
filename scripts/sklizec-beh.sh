@@ -32,6 +32,10 @@ if [ -z "${SKLIZEC_HLIDAC:-}" ]; then
   echo "Varování: timeout ani gtimeout nejsou k dispozici, běh nemá celkový limit." >&2
 fi
 
+# OPENROUTER_API_KEY se bere z prostředí služby. Chybí-li, běh pokračuje a jen
+# pozvánky nedostanou větu s termínem – sklízeč to napíše na stderr. Fail-closed
+# je tu na místě jen u databáze: bez ní by sklizeň nikam nedošla, bez modelu
+# dojde, jen chudší.
 if [ -z "${DATABASE_URL:-}" ]; then
   echo "DATABASE_URL není nastavený – sklizeň se nespouští." >&2
   exit 1

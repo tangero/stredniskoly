@@ -70,6 +70,60 @@ test('pozvánka se ukáže jako karta, ale termín do odpovědi nejde', async ()
   assert.equal(v.zdrojOverenAt, '2026-09-20T04:10:00.000Z');
 });
 
+test('věta s termíny se pošle jen ke kartě a jen dokud některý termín platí', async () => {
+  // Věta se skládá při sklizni, čte se ale dnes. Kdyby se jen vytáhla
+  // z databáze, zvala by karta na akci, která už proběhla.
+  process.env.DATABASE_URL = 'postgres://test';
+  const r = radek({
+    souhrn: 'Škola pořádá dny otevřených dveří 9. 12. 2026 a 7. 1. 2027.',
+    terminy_akce: [{ datum: '2026-12-09', cas: null, akce: 'dod' },
+                   { datum: '2027-01-07', cas: null, akce: 'dod' }],
+  });
+  nastavPoolProTesty(pool([{ rows: [], rowCount: 0 }, { rows: [r], rowCount: 1 }, PRAZDNO, ZDROJ]));
+  const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
+  assert.equal(v.polozky[0].zobrazeni, 'karta');
+  assert.match(v.polozky[0].souhrn, /9\. 12\. 2026 a 7\. 1\. 2027/);
+});
+
+test('po posledním termínu věta zmizí i s kartou', async () => {
+  process.env.DATABASE_URL = 'postgres://test';
+  const r = radek({
+    souhrn: 'Škola pořádá dny otevřených dveří 9. 12. 2026 a 7. 1. 2027.',
+    terminy_akce: [{ datum: '2026-12-09', cas: null, akce: 'dod' },
+                   { datum: '2027-01-07', cas: null, akce: 'dod' }],
+  });
+  nastavPoolProTesty(pool([{ rows: [], rowCount: 0 }, { rows: [r], rowCount: 1 }, PRAZDNO, ZDROJ]));
+  const v = await novinkySkoly('600001111', new Date('2027-01-08T08:00:00Z'));
+  assert.equal(v.polozky[0].zobrazeni, 'odkaz');
+  assert.equal(v.polozky[0].souhrn, null);
+});
+
+test('u zprávy bez rozboru se věta nevymýšlí', async () => {
+  // Polovina pozvánek termín neuvádí nikde. Karta tam zůstává, jen mlčí.
+  process.env.DATABASE_URL = 'postgres://test';
+  nastavPoolProTesty(pool([{ rows: [], rowCount: 0 }, { rows: [radek()], rowCount: 1 }, PRAZDNO, ZDROJ]));
+  const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
+  assert.equal(v.polozky[0].zobrazeni, 'karta');
+  assert.equal(v.polozky[0].souhrn, null);
+});
+
+test('věta se neposílá k položce sesazené přepínačem na odkaz', async () => {
+  // Vypnuté zvýrazňování třídy je rozhodnutí redakce; věta „Škola pořádá…"
+  // vedle neutrálního odkazu by ho obešla.
+  process.env.DATABASE_URL = 'postgres://test';
+  const r = radek({
+    souhrn: 'Škola pořádá dny otevřených dveří 9. 12. 2026.',
+    terminy_akce: [{ datum: '2026-12-09', cas: null, akce: 'dod' }],
+  });
+  nastavPoolProTesty(pool([
+    { rows: [{ klic: 'trida:dod', hodnota: { zapnuto: false } }], rowCount: 1 },
+    { rows: [r], rowCount: 1 }, PRAZDNO, ZDROJ,
+  ]));
+  const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
+  assert.equal(v.polozky[0].zobrazeni, 'odkaz');
+  assert.equal(v.polozky[0].souhrn, null);
+});
+
 test('položka uložená starými pravidly se přečte jako karta', async () => {
   // V databázi leží `karta_terminu`, dokud ji nepřepočítá další sklizeň.
   process.env.DATABASE_URL = 'postgres://test';
