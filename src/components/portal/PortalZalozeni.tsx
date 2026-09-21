@@ -21,11 +21,18 @@ interface PortalZalozeniProps {
    * se chystá stát jejím správcem. Null, když se identifikace nepodařila načíst.
    */
   skola?: IdentifikaceSkoly | null;
+  /**
+   * Úroveň nadpisů. Na samostatné stránce /pro-skoly/<kód> je formulář hned pod
+   * h1 hlavičky, takže h2. V kartě na /pro-skoly visí pod h2 „Upravit profil
+   * školy“ a h3 „Máme přihlašovací kód“, takže h4.
+   */
+  uroven?: 'h2' | 'h3' | 'h4';
 }
 
 const POLE = 'w-full rounded-lg border border-[#c9d4e1] px-4 py-3 focus:border-[#0074e4] focus:outline-none focus:ring-2 focus:ring-blue-200';
 
-export const PortalZalozeni = ({ nazevSkoly, auth, predvyplnenyEmail = '', skola = null }: PortalZalozeniProps) => {
+export const PortalZalozeni = ({ nazevSkoly, auth, predvyplnenyEmail = '', skola = null, uroven = 'h2' }: PortalZalozeniProps) => {
+  const Nadpis = uroven;
   const [jmeno, setJmeno] = useState('');
   const [funkce, setFunkce] = useState('');
   const [email, setEmail] = useState(predvyplnenyEmail);
@@ -57,9 +64,9 @@ export const PortalZalozeni = ({ nazevSkoly, auth, predvyplnenyEmail = '', skola
 
   return (
     <form onSubmit={odeslat} className="space-y-4 rounded-xl border border-[#e3e9f1] bg-white p-5">
-      {skola && <PortalHlavickaSkoly skola={skola} vstup="kód" uroven="h2" />}
+      {skola && <PortalHlavickaSkoly skola={skola} vstup="kód" uroven={uroven} />}
       <div>
-        <h2 className="text-lg font-semibold text-slate-900">Staňte se správcem profilu</h2>
+        <Nadpis className="text-lg font-semibold text-slate-900">Staňte se správcem profilu</Nadpis>
         <p className="mt-1 text-sm text-slate-600">
           {nazevSkoly} zatím správce nemá. Kdo kód použije první, stane se správcem profilu a může
           pozvat kolegy. Kód tím přestane platit.

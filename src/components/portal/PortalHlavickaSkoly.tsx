@@ -3,8 +3,8 @@ import type { IdentifikaceSkoly } from '@/lib/portal-identifikace';
 interface PortalHlavickaSkolyProps {
   skola: IdentifikaceSkoly;
   vstup: 'kód' | 'odkaz';
-  /** Na stránce, která už vlastní h1 má (formulář na /pro-skoly), použij h2. */
-  uroven?: 'h1' | 'h2';
+  /** Úroveň nadpisu podle místa: samostatná stránka h1, karta na /pro-skoly h4. */
+  uroven?: 'h1' | 'h2' | 'h3' | 'h4';
 }
 
 // Kdo uplatňuje kód, musí na první pohled poznat, ke které škole se hlásí.

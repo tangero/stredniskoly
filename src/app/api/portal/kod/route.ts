@@ -24,5 +24,13 @@ export async function POST(request: NextRequest) {
   // Katalog nese jen zkrácený název („Gymnázium“), podle kterého se škola poznat
   // nedá. Kdo se chystá stát správcem, musí vidět plný název, adresu a IČO.
   const nazev = await getNazevSkoly(redizo);
-  return NextResponse.json({ stav, nazev, skola: await getIdentifikaceSkoly(redizo, nazev) });
+  // Identifikace je ozdoba, uplatnění kódu je podstata: kdyby se nepodařila,
+  // formulář se vykreslí bez ní. Škola s platným kódem se nesmí zaseknout na 500.
+  let skola = null;
+  try {
+    skola = await getIdentifikaceSkoly(redizo, nazev);
+  } catch (e) {
+    console.error('❌ Portál: identifikaci školy nejde sestavit', e);
+  }
+  return NextResponse.json({ stav, nazev, skola });
 }

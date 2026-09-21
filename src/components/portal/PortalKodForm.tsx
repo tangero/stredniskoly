@@ -49,7 +49,8 @@ export const PortalKodForm = () => {
   };
 
   if (vysledek?.stav === 'volny') {
-    return <PortalZalozeni nazevSkoly={vysledek.nazev} skola={vysledek.skola} auth={{ kod: vysledek.kod }} />;
+    // Karta visí pod h2 „Upravit profil školy“ a h3 „Máme přihlašovací kód“.
+    return <PortalZalozeni nazevSkoly={vysledek.nazev} skola={vysledek.skola} auth={{ kod: vysledek.kod }} uroven="h4" />;
   }
 
   return (

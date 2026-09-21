@@ -1,42 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import fs from 'node:fs';
-import path from 'node:path';
-import { createRequire } from 'node:module';
-import ts from 'typescript';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
+import { zavadec } from './_zavadec.mjs';
 
 // Kdo uplatňuje kód, se stává správcem profilu školy a musí poznat, které.
 // Katalog nese jen zkrácený název („Gymnázium“), podle kterého to poznat nejde.
 // Hlavička s plným názvem byla jen na /pro-skoly/<kód>, kdežto pozvánka posílá
 // lidi na formulář na /pro-skoly — tam chyběla.
 
-const require = createRequire(import.meta.url);
-
-function load(relative) {
-  const filename = path.resolve(relative);
-  const { outputText } = ts.transpileModule(fs.readFileSync(filename, 'utf8'), {
-    compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX, esModuleInterop: true },
-  });
-  const modul = { exports: {} };
-  new Function('require', 'module', 'exports', outputText)((specifier) => {
-    const target = specifier.startsWith('@/')
-      ? specifier.replace('@/', 'src/')
-      : specifier.startsWith('.')
-        ? path.join(path.dirname(filename), specifier)
-        : null;
-    if (target === null) return require(specifier);
-    for (const pripona of ['', '.tsx', '.ts']) {
-      const kandidat = `${target}${pripona}`;
-      if (fs.existsSync(kandidat) && !fs.statSync(kandidat).isDirectory()) return load(kandidat);
-    }
-    throw new Error(`nenalezeno: ${specifier}`);
-  }, modul, modul.exports);
-  return modul.exports;
-}
-
-const { PortalZalozeni } = load('src/components/portal/PortalZalozeni.tsx');
+const { PortalZalozeni } = zavadec()('src/components/portal/PortalZalozeni.tsx');
 
 const SKOLA = {
   redizo: '600006247',
@@ -46,13 +19,13 @@ const SKOLA = {
   profil: '/skola/600006247-gymnazium',
 };
 
-const vykresli = (skola) =>
+const vykresli = (skola, uroven) =>
   renderToStaticMarkup(
-    React.createElement(PortalZalozeni, { nazevSkoly: 'Gymnázium', auth: { kod: 'ABCD-EFGH-JKMN' }, skola }),
+    React.createElement(PortalZalozeni, { nazevSkoly: 'Gymnázium', auth: { kod: 'ABCD-EFGH-JKMN' }, skola, uroven }),
   );
 
 test('založení správce ukáže, ke které škole se člověk hlásí', () => {
-  const html = vykresli(SKOLA);
+  const html = vykresli(SKOLA, 'h4');
   assert.match(html, /Gymnázium, Praha 9, Litoměřická 726/, 'chybí plný název z rejstříku');
   assert.match(html, /Litoměřická 726\/17/, 'chybí adresa');
   assert.match(html, /61387061/, 'chybí IČO');
@@ -60,16 +33,22 @@ test('založení správce ukáže, ke které škole se člověk hlásí', () => 
   assert.match(html, /Pokud to není vaše škola/, 'chybí věta pro případ cizí školy');
 });
 
-test('hlavička nepřebíjí nadpis stránky', () => {
-  // Formulář žije na /pro-skoly, kde h1 („Upravit profil školy“) už je.
-  const html = vykresli(SKOLA);
-  assert.doesNotMatch(html, /<h1/, 'druhý h1 na stránce');
-  assert.match(html, /<h2[^>]*>Gymnázium, Praha 9/);
+test('úroveň nadpisů se řídí místem, kde formulář stojí', () => {
+  // V kartě na /pro-skoly visí pod h2 „Upravit profil školy“ a h3 „Máme
+  // přihlašovací kód“, takže identifikace i nadpis formuláře patří na h4.
+  const vKarte = vykresli(SKOLA, 'h4');
+  assert.doesNotMatch(vKarte, /<h1|<h2|<h3/, 'přeskočená úroveň nadpisu');
+  assert.match(vKarte, /<h4[^>]*>Gymnázium, Praha 9/);
+  assert.match(vKarte, /<h4[^>]*>Staňte se správcem profilu<\/h4>/);
+
+  // Na samostatné stránce /pro-skoly/<kód> je formulář hned pod h1 hlavičky.
+  const samostatne = vykresli(null, 'h2');
+  assert.match(samostatne, /<h2[^>]*>Staňte se správcem profilu<\/h2>/);
 });
 
 test('bez identifikace se formulář vykreslí dál, jen bez hlavičky', () => {
   // Rejstříkový index může chybět; to nesmí shodit založení správce.
-  const html = vykresli(null);
+  const html = vykresli(null, 'h4');
   assert.match(html, /Staňte se správcem profilu/);
   assert.doesNotMatch(html, /IČO/);
 });
