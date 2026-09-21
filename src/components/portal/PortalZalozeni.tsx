@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import type { PortalAuth } from '@/components/portal/PortalEditace';
+import type { IdentifikaceSkoly } from '@/lib/portal-identifikace';
+import { PortalHlavickaSkoly } from '@/components/portal/PortalHlavickaSkoly';
 
 // ============================================================================
 // Založení správce profilu školy (docs/ucty-portalu-skol-2027.md, 2.2).
@@ -13,11 +15,17 @@ interface PortalZalozeniProps {
   nazevSkoly: string;
   auth: PortalAuth;
   predvyplnenyEmail?: string;
+  /**
+   * Plný název, adresa a IČO z rejstříku. Bez nich by tu stál jen zkrácený
+   * název z katalogu („Gymnázium“), podle kterého škola poznat nejde — a člověk
+   * se chystá stát jejím správcem. Null, když se identifikace nepodařila načíst.
+   */
+  skola?: IdentifikaceSkoly | null;
 }
 
 const POLE = 'w-full rounded-lg border border-[#c9d4e1] px-4 py-3 focus:border-[#0074e4] focus:outline-none focus:ring-2 focus:ring-blue-200';
 
-export const PortalZalozeni = ({ nazevSkoly, auth, predvyplnenyEmail = '' }: PortalZalozeniProps) => {
+export const PortalZalozeni = ({ nazevSkoly, auth, predvyplnenyEmail = '', skola = null }: PortalZalozeniProps) => {
   const [jmeno, setJmeno] = useState('');
   const [funkce, setFunkce] = useState('');
   const [email, setEmail] = useState(predvyplnenyEmail);
@@ -49,6 +57,7 @@ export const PortalZalozeni = ({ nazevSkoly, auth, predvyplnenyEmail = '' }: Por
 
   return (
     <form onSubmit={odeslat} className="space-y-4 rounded-xl border border-[#e3e9f1] bg-white p-5">
+      {skola && <PortalHlavickaSkoly skola={skola} vstup="kód" uroven="h2" />}
       <div>
         <h2 className="text-lg font-semibold text-slate-900">Staňte se správcem profilu</h2>
         <p className="mt-1 text-sm text-slate-600">

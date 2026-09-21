@@ -3,13 +3,17 @@ import type { IdentifikaceSkoly } from '@/lib/portal-identifikace';
 interface PortalHlavickaSkolyProps {
   skola: IdentifikaceSkoly;
   vstup: 'kód' | 'odkaz';
+  /** Na stránce, která už vlastní h1 má (formulář na /pro-skoly), použij h2. */
+  uroven?: 'h1' | 'h2';
 }
 
 // Kdo uplatňuje kód, musí na první pohled poznat, ke které škole se hlásí.
-export const PortalHlavickaSkoly = ({ skola, vstup }: PortalHlavickaSkolyProps) => (
+export const PortalHlavickaSkoly = ({ skola, vstup, uroven = 'h1' }: PortalHlavickaSkolyProps) => {
+  const Nadpis = uroven;
+  return (
   <header className="mb-8 rounded-xl border border-[#c9d4e1] bg-slate-50 p-6">
     <p className="text-sm font-medium text-slate-500 mb-2">Správa profilu školy na Přijímačky na školu</p>
-    <h1 className="text-3xl md:text-4xl font-bold leading-tight text-slate-900 mb-4">{skola.nazev}</h1>
+    <Nadpis className="text-2xl md:text-3xl font-bold leading-tight text-slate-900 mb-4">{skola.nazev}</Nadpis>
     <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-slate-700">
       {skola.adresa && (
         <>
@@ -41,4 +45,5 @@ export const PortalHlavickaSkoly = ({ skola, vstup }: PortalHlavickaSkolyProps) 
       .
     </p>
   </header>
-);
+  );
+};

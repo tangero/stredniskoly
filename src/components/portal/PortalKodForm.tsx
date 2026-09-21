@@ -2,12 +2,13 @@
 
 import { useState } from 'react';
 import { PortalZalozeni } from '@/components/portal/PortalZalozeni';
+import type { IdentifikaceSkoly } from '@/lib/portal-identifikace';
 
 // Kód se ověřuje přes POST /api/portal/kod, aby nezůstal v adrese stránky,
 // historii prohlížeče ani v lozích.
 
 type Vysledek =
-  | { stav: 'volny'; nazev: string; kod: string }
+  | { stav: 'volny'; nazev: string; kod: string; skola: IdentifikaceSkoly | null }
   | { stav: 'uplatnen' | 'skola_ma_spravce'; nazev: string }
   | { stav: 'neplatny' };
 
@@ -39,7 +40,7 @@ export const PortalKodForm = () => {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) setChyba(data.error || 'Kód se nepodařilo ověřit. Zkuste to prosím znovu.');
-      else if (data.stav === 'volny') setVysledek({ stav: 'volny', nazev: data.nazev, kod: cisty });
+      else if (data.stav === 'volny') setVysledek({ stav: 'volny', nazev: data.nazev, kod: cisty, skola: data.skola ?? null });
       else setVysledek(data);
     } catch {
       setChyba('Chyba připojení. Zkuste to prosím znovu.');
@@ -48,7 +49,7 @@ export const PortalKodForm = () => {
   };
 
   if (vysledek?.stav === 'volny') {
-    return <PortalZalozeni nazevSkoly={vysledek.nazev} auth={{ kod: vysledek.kod }} />;
+    return <PortalZalozeni nazevSkoly={vysledek.nazev} skola={vysledek.skola} auth={{ kod: vysledek.kod }} />;
   }
 
   return (

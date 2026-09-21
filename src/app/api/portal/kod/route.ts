@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getNazevSkoly } from '@/lib/portal-skol';
+import { getIdentifikaceSkoly } from '@/lib/portal-identifikace';
 import { jeDbNastavena } from '@/lib/novinky-db';
 import { stavKodu } from '@/lib/portal-relace';
 import { chyba, ipZPozadavku, jeOmezeno } from '@/lib/portal-api';
@@ -19,5 +20,9 @@ export async function POST(request: NextRequest) {
 
   const { stav, redizo } = await stavKodu(body.kod);
   if (stav === 'neplatny') return NextResponse.json({ stav });
-  return NextResponse.json({ stav, nazev: redizo ? await getNazevSkoly(redizo) : '' });
+  if (!redizo) return NextResponse.json({ stav, nazev: '', skola: null });
+  // Katalog nese jen zkrácený název („Gymnázium“), podle kterého se škola poznat
+  // nedá. Kdo se chystá stát správcem, musí vidět plný název, adresu a IČO.
+  const nazev = await getNazevSkoly(redizo);
+  return NextResponse.json({ stav, nazev, skola: await getIdentifikaceSkoly(redizo, nazev) });
 }
