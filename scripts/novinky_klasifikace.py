@@ -480,6 +480,119 @@ TRIDY_AKCI = ("dod", "prijimacky_nanecisto", "setkani_uchazecu", "pripravny_kurz
 
 # Zpětná kompatibilita pro volající, kteří jméno ještě používají.
 TRIDY_S_POZVANKOU = TRIDY_AKCI
+
+# Jak se akce jmenuje v textu na stránce. Názvy jsou ze `docs/slovnik-pojmu.md`
+# – veličina má jméno ve slovníku ukazatelů, ale k rodičům se o ní mluví slovy
+# odtud. Používá je jak otázka pro rozhodovací model, tak věta na kartě.
+NAZVY_AKCI = {
+    "dod": "den otevřených dveří",
+    "prijimacky_nanecisto": "přijímačky nanečisto",
+    "setkani_uchazecu": "setkání s uchazeči",
+    "pripravny_kurz": "přípravný kurz k přijímačkám",
+    "talentove_zkousky": "talentová zkouška",
+    "nahradni_termin": "náhradní termín zkoušky",
+}
+
+# Šablony věty, kterou karta ukáže: `(jeden termín, více termínů)`.
+#
+# **Větu skládá kód, ne model** (rozhodnutí zadavatele 21. 9. 2026). Model vybírá
+# z možností, které mu kód předloží, a doplňuje pole; text na stránce je náš.
+# Kdyby větu psal model, mluvila by každá karta trochu jinak, nešlo by ji
+# přepočítat po změně šablony a text článku školy by mohl ovlivnit, co o škole
+# tvrdíme. Fakta jsou ze článku, formulace je ze slovníku pojmů.
+SABLONY_SOUHRNU = {
+    "dod": ("Škola pořádá den otevřených dveří {terminy}.",
+            "Škola pořádá dny otevřených dveří {terminy}."),
+    "prijimacky_nanecisto": ("Škola pořádá přijímačky nanečisto {terminy}.",
+                             "Škola pořádá přijímačky nanečisto {terminy}."),
+    "setkani_uchazecu": ("Škola pořádá setkání s uchazeči {terminy}.",
+                         "Škola pořádá setkání s uchazeči {terminy}."),
+    "pripravny_kurz": ("Škola pořádá přípravný kurz k přijímačkám {terminy}.",
+                       "Škola pořádá přípravný kurz k přijímačkám {terminy}."),
+    "talentove_zkousky": ("Talentová zkouška se koná {terminy}.",
+                          "Talentové zkoušky se konají {terminy}."),
+    "nahradni_termin": ("Náhradní termín zkoušky je {terminy}.",
+                        "Náhradní termíny zkoušky jsou {terminy}."),
+}
+
+
+def formatuj_datum(iso: str) -> str:
+    """`2026-10-23` na `23. 10. 2026`. Bez nul na začátku, jak se česky píše."""
+    r, m, d = iso.split("-")
+    return f"{int(d)}. {int(m)}. {r}"
+
+
+def _spoj(casti: list[str]) -> str:
+    """`a` před posledním, čárky mezi ostatními."""
+    if len(casti) == 1:
+        return casti[0]
+    return ", ".join(casti[:-1]) + " a " + casti[-1]
+
+
+def slozeni_souhrnu(trida: str, terminy: list[dict]) -> str | None:
+    """Věta na kartu z termínů s popiskem. `None`, když není co složit.
+
+    `terminy` jsou položky `{"datum": "2026-10-23", "cas": "17:00" | None}`
+    **jedné** třídy akce. Čas se vytýká za všechny termíny jen tehdy, když je
+    u všech stejný; jinak jde ke svému datu, aby věta netvrdila společný začátek
+    tam, kde ho škola neuvedla."""
+    sablony = SABLONY_SOUHRNU.get(trida)
+    if not sablony or not terminy:
+        return None
+    serazene = sorted(terminy, key=lambda t: t["datum"])
+    casy = {t.get("cas") for t in serazene}
+    if len(casy) == 1 and (spolecny := serazene[0].get("cas")):
+        text = _spoj([formatuj_datum(t["datum"]) for t in serazene]) + f" od {spolecny}"
+    else:
+        text = _spoj([formatuj_datum(t["datum"]) + (f" od {t['cas']}" if t.get("cas") else "")
+                      for t in serazene])
+    return sablony[0 if len(serazene) == 1 else 1].format(terminy=text)
+
+
+# Čas u data: „od 17:00", „v 17.00", „9:00-12:00". Bere se první čas v téže
+# klauzuli; rozsah („9:00–12:00") se zkracuje na začátek, konec akce nikdo nehledá.
+RE_CAS = re.compile(r"\b(\d{1,2})[:.](\d{2})\b")
+
+
+def najdi_cas(klauzule: str) -> str | None:
+    """Čas z klauzule, ve které datum leží. `None`, když žádný není.
+
+    Nesmí spolknout datum: „9. 12." má tečku, ale není to čas, protože minuty
+    musí být dvouciferné a hodina nejvýš 23."""
+    for m in RE_CAS.finditer(klauzule):
+        h, mi = int(m.group(1)), int(m.group(2))
+        if 0 <= h <= 23 and 0 <= mi <= 59:
+            return f"{h}:{mi:02d}"
+    return None
+
+
+def text_k_rozboru(pol: dict) -> str:
+    """Titulek a popis jako jeden text pro rozbor termínů, oddělené tečkou.
+
+    Mezera nestačí: titulek „Dny otevřených dveří 26-27" nekončí interpunkcí,
+    takže by se slil s první větou popisu do jedné klauzule a otázka na roli
+    data by se ptala nad odstavcem místo nad větou."""
+    return ". ".join(c for c in (pol.get("titulek", ""), pol.get("popis", "")) if c)
+
+
+def pozice_dat(text: str) -> list[tuple[str, int]]:
+    """Kalendářně platná data s rokem a jejich pozicí v normalizovaném textu.
+
+    Slouží k tomu, aby se rozhodovacího modelu šlo zeptat na **každé datum
+    zvlášť v jeho vlastní větě**. Data bez roku se nevrací: rok se nedohaduje."""
+    s = strip(text)
+    nalezy: dict[str, int] = {}
+    for m in re.finditer(r"\b(\d{1,2})\.\s*(\d{1,2})\.\s*(20\d{2})", s):
+        iso = _platne_datum(int(m.group(1)), int(m.group(2)), int(m.group(3)))
+        if iso and iso not in nalezy:
+            nalezy[iso] = m.start()
+    for m in re.finditer(r"\b(\d{1,2})\.\s*([a-z]+)\s+(20\d{2})", s):
+        mo = MESECE.get(m.group(2))
+        if mo:
+            iso = _platne_datum(int(m.group(1)), mo, int(m.group(3)))
+            if iso and iso not in nalezy:
+                nalezy[iso] = m.start()
+    return sorted(nalezy.items(), key=lambda p: p[1])
 # Třídy s doloženým přejímacím benchmarkem (oddíl 4 návrhu). Talentové zkoušky a
 # náhradní termín ve vzorku zásahy nemají, e-mailem tedy zatím nejdou.
 TRIDY_POVOLENE_EMAILEM = ("dod", "vysledky_prijm", "kriteria", "prijimaci_rizeni", "volna_mista")
