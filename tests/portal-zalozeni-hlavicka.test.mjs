@@ -60,7 +60,7 @@ test('bez identifikace se formulář vykreslí dál, jen bez hlavičky', () => {
 });
 
 test('škola mimo katalog nevyrobí větu začínající mezerou ani prázdný nadpis', () => {
-  // getNazevSkoly hledá v ročníku 2026; po přepnutí katalogu může vrátit prázdno.
+  // getNazevSkoly hledá jen v zobrazovaném období katalogu a jinak vrátí prázdno.
   const html = vykresli({ ...SKOLA, nazev: '' }, 'h4');
   assert.match(html, /Tato škola zatím správce nemá/);
   assert.doesNotMatch(html, /<h4[^>]*><\/h4>/, 'prázdný nadpis v hlavičce');
@@ -69,6 +69,13 @@ test('škola mimo katalog nevyrobí větu začínající mezerou ani prázdný n
   assert.match(html, /600006247/, 's prázdným názvem zmizelo i REDIZO');
   assert.match(html, /61387061/, 's prázdným názvem zmizelo i IČO');
   assert.match(html, /Pokud to není vaše škola/, 'zmizela věta pro případ cizí školy');
+});
+
+test('samostatná stránka posílá prázdný název a formulář z toho neudělá mezeru', () => {
+  // Přesně to, co dělá /pro-skoly/<kód> i /pro-skoly/link/<token>: hlavičku
+  // vykreslí stránka sama, takže formulář dostane `nazevSkoly=""` a `skola=null`.
+  const html = vykresli(null, 'h2', { nazevSkoly: '' });
+  assert.match(html, /Tato škola zatím správce nemá/, 'věta začíná mezerou nebo je bez podmětu');
 });
 
 test('škola se nejmenuje dvakrát jinak', () => {

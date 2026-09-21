@@ -28,16 +28,20 @@ export async function POST(request: NextRequest) {
     // Katalog nese jen zkrácený název („Gymnázium“), podle kterého se škola poznat
     // nedá. Kdo se chystá stát správcem, musí vidět plný název, adresu a IČO.
     const nazev = await getNazevSkoly(redizo);
+    // Stav kódu se posuzuje první. Spotřebovaný kód je spotřebovaný bez ohledu
+    // na katalog, a hláška „škola nemá profil, váš kód zůstává platný“ by o něm
+    // lhala — člověk by ho pak marně zkoušel znovu.
+    //
+    // Identifikaci potřebuje jen zakládací formulář. U spotřebovaného kódu nebo
+    // školy, která už správce má, by se zbytečně četl skoro megabajtový rejstřík
+    // a v odpovědi by putovala adresa a IČO ke kódu, se kterým už nikdo nic nesvede.
+    if (stav !== 'volny') return NextResponse.json({ stav, nazev, skola: null });
     // Škola bez záznamu v zobrazovaném ročníku katalogu nemá profil k editaci:
     // `getPredvyplnenyProfil` vrátí null a /pro-skoly/profil skončí na „školu
     // neznáme“. Nabídnout založení by znamenalo spálit jednorázový kód na účtu,
     // se kterým se nedá nic dělat a který už nikdo nevrátí. Obě samostatné
     // stránky portálu to takhle odmítají už dřív, tahle cesta na to zapomněla.
     if (!nazev) return NextResponse.json({ stav: 'skola_nenalezena', nazev: '', skola: null });
-    // Identifikaci potřebuje jen zakládací formulář. U spotřebovaného kódu nebo
-    // školy, která už správce má, by se zbytečně četl skoro megabajtový rejstřík
-    // a v odpovědi by putovala adresa a IČO ke kódu, se kterým už nikdo nic nesvede.
-    if (stav !== 'volny') return NextResponse.json({ stav, nazev, skola: null });
     const skola = await getIdentifikaceSkoly(redizo, nazev);
     return NextResponse.json({ stav, nazev, skola });
   } catch (e) {

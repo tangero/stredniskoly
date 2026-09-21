@@ -104,6 +104,17 @@ test('škola bez profilu kód nespálí', () => {
   })();
 });
 
+test('spotřebovaný kód netvrdí, že platí, ani u školy mimo katalog', async () => {
+  // Stav kódu se posuzuje dřív než katalog. Kdyby to bylo obráceně, dostal by
+  // člověk hlášku „škola nemá profil, váš kód zůstává platný“ ke kódu, který je
+  // nenávratně spotřebovaný — a zkoušel by ho znovu.
+  for (const stav of ['uplatnen', 'skola_ma_spravce']) {
+    const { zavolej } = nactiRoute({ stav, nazev: '' });
+    const { telo } = await zavolej();
+    assert.equal(telo.stav, stav, `stav ${stav} přebil katalog`);
+  }
+});
+
 test('výpadek databáze skončí hláškou, ne neošetřenou výjimkou', () => {
   // `stavKodu` sahá do Neonu. Bez obalu by odmítnutý slib probublal ven jako
   // neošetřených 500; sousední routy portálu se všechny opírají o odpovedNaChybu.

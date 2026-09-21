@@ -23,18 +23,19 @@ export function PortalObalka({ children }: { children: React.ReactNode }) {
   );
 }
 
-/** Stav „kód je platný, ale škola není v katalogu 2026“. */
+/** Stav „přístup je platný, ale škola není v zobrazovaném období katalogu“. */
 export function PortalSkolaNenalezena({ redizo }: { redizo: string }) {
   return (
     <PortalObalka>
       <div className="max-w-xl mx-auto py-6 text-center">
         <h1 className="text-2xl font-bold text-slate-900 mb-3">Školu jsme nenašli</h1>
         <p className="text-slate-600 mb-6">
-          Přístup je platný, ale školu s REDIZO {redizo} nemáme v katalogu 2026. Napište nám na{' '}
+          Přístup je platný, ale školu s REDIZO {redizo} zatím nemáme v katalogu, takže není co
+          upravovat. Napište nám prosím na{' '}
           <a href="mailto:patrick@zandl.cz" className="text-blue-600 hover:underline">
             patrick@zandl.cz
-          </a>
-          .
+          </a>{' '}
+          — váš kód zůstává platný.
         </p>
         <Link href="/pro-skoly" className="text-blue-600 font-medium hover:underline">
           ← Zpět na Portál pro školy

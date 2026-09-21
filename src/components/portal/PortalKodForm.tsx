@@ -25,7 +25,7 @@ const HLASKY: Record<Hlaskovy, string> = {
 };
 
 /** Stavy s hláškou v ambrové kartě; `in` samo TypeScriptu k zúžení nestačí. */
-const jeHlaskovy = (v: Vysledek): v is { stav: Hlaskovy; nazev: string } => v.stav in HLASKY;
+const jeHlaskovy = (v: Vysledek): v is { stav: Hlaskovy; nazev: string } => Object.hasOwn(HLASKY, v.stav);
 
 export const PortalKodForm = () => {
   const [kod, setKod] = useState('');
@@ -50,7 +50,7 @@ export const PortalKodForm = () => {
       if (!res.ok) setChyba(data.error || 'Kód se nepodařilo ověřit. Zkuste to prosím znovu.');
       // `nazev` chodí ze sítě: chybějící pole by o kus dál shodilo `.trim()`.
       else if (data.stav === 'volny') setVysledek({ stav: 'volny', nazev: data.nazev ?? '', kod: cisty, skola: data.skola ?? null });
-      else if (data.stav in HLASKY) setVysledek({ stav: data.stav as Hlaskovy, nazev: data.nazev ?? '' });
+      else if (Object.hasOwn(HLASKY, data.stav)) setVysledek({ stav: data.stav as Hlaskovy, nazev: data.nazev ?? '' });
       else if (data.stav === 'neplatny') setVysledek({ stav: 'neplatny' });
       // Odpověď, kterou neumíme přečíst (prázdné tělo z edge, useknutý proud):
       // bez tohohle by se uložil stav, na který nesedí žádná větev vykreslení,

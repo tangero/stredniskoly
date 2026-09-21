@@ -384,15 +384,44 @@ function formatSkolneInspis(rocniSkolne: number | null): string | null {
  * v src/lib/data.ts. Nová data se projeví po nasazení, což je u katalogu, který
  * obnovuje datová linka, v pořádku.
  */
-let katalogCache: Record<string, Array<Record<string, unknown>>> | null = null;
+// Cachuje se příslib, ne hodnota: souběžné požadavky by jinak spustily tolik
+// čtení a `JSON.parse`, kolik jich přijde, než první dobehne.
+let katalogCache: Promise<Record<string, Array<Record<string, unknown>>>> | null = null;
 
-async function nactiKatalog(): Promise<Record<string, Array<Record<string, unknown>>>> {
+function nactiKatalog(): Promise<Record<string, Array<Record<string, unknown>>>> {
   if (!katalogCache) {
-    katalogCache = JSON.parse(
-      await fs.readFile(path.join(process.cwd(), 'public', 'schools_data.json'), 'utf-8'),
-    ) as Record<string, Array<Record<string, unknown>>>;
+    katalogCache = fs
+      .readFile(path.join(process.cwd(), 'public', 'schools_data.json'), 'utf-8')
+      .then((o) => JSON.parse(o) as Record<string, Array<Record<string, unknown>>>)
+      .catch((e) => {
+        katalogCache = null; // ať se po výpadku disku dá zkusit znovu
+        throw e;
+      });
   }
   return katalogCache;
+}
+
+/**
+ * Řádky katalogu za zobrazované období. Letopočet se nesmí psát napevno
+ * (.claude/CLAUDE.md, pravidlo 3): na tomhle výběru teď visí i to, jestli jde
+ * vůbec uplatnit přihlašovací kód, takže zapsaný ročník by po přepnutí katalogu
+ * zablokoval celý portál. Období bere z registru datových sad; když ho tam
+ * nenajde, sáhne po nejnovějším ročníku, který v katalogu skutečně je.
+ */
+async function katalogZobrazenehoObdobi(): Promise<Array<Record<string, unknown>>> {
+  const katalog = await nactiKatalog();
+  let obdobi = '';
+  try {
+    const registr = JSON.parse(
+      await fs.readFile(path.join(process.cwd(), 'public', 'stav_datovych_sad.json'), 'utf-8'),
+    ) as { sady?: Record<string, { zobrazeno?: { obdobi?: string } }> };
+    obdobi = registr.sady?.['cermat-kapacity']?.zobrazeno?.obdobi ?? '';
+  } catch (e) {
+    console.error('❌ Portál: stav_datovych_sad.json nejde přečíst', e);
+  }
+  if (obdobi && katalog[obdobi]) return katalog[obdobi];
+  const nejnovejsi = Object.keys(katalog).sort().at(-1);
+  return nejnovejsi ? katalog[nejnovejsi] : [];
 }
 
 /**
@@ -406,9 +435,7 @@ export async function getPredvyplnenyProfil(
   redizo: string,
   zaznam: PortalZaznam | null,
 ): Promise<PredvyplnenyProfil | null> {
-  // Katalog 2026
-  const schoolsRaw = await nactiKatalog();
-  const radky = (schoolsRaw['2026'] || []).filter((s) => String(s.redizo) === redizo);
+  const radky = (await katalogZobrazenehoObdobi()).filter((s) => String(s.redizo) === redizo);
   if (radky.length === 0) return null;
 
   const prvni = radky[0];
@@ -492,22 +519,25 @@ export function nazevSAdresou(nazev: string, ulice: string, obec: string): strin
   return vysledek;
 }
 
-/** Název s ulicí a obcí z katalogu 2026 (seznam škol v profilu); prázdný, když škola v katalogu není. */
+/** Název s ulicí a obcí z katalogu za zobrazované období; prázdný, když škola v katalogu není. */
 export async function getNazevSAdresou(redizo: string): Promise<string> {
   try {
-    const schoolsRaw = await nactiKatalog();
-    const radek = (schoolsRaw['2026'] || []).find((s) => String(s.redizo) === redizo);
+    const radek = (await katalogZobrazenehoObdobi()).find((s) => String(s.redizo) === redizo);
     return radek ? nazevSAdresou(String(radek.nazev), String(radek.ulice || ''), String(radek.obec || '')) : '';
   } catch {
     return '';
   }
 }
 
-/** Název školy z katalogu 2026 (pro čitelný titulek GitHub issue). */
+/**
+ * Název školy z katalogu za zobrazované období; prázdný, když tam škola není.
+ * Pozor: na prázdné návratové hodnotě visí i brána uplatnění kódu
+ * (/api/portal/kod, /api/portal/uplatnit) — škola bez záznamu v katalogu nemá
+ * profil k editaci, takže se jí kód nesmí nabídnout ke spotřebování.
+ */
 export async function getNazevSkoly(redizo: string): Promise<string> {
   try {
-    const schoolsRaw = await nactiKatalog();
-    const radek = (schoolsRaw['2026'] || []).find((s) => String(s.redizo) === redizo);
+    const radek = (await katalogZobrazenehoObdobi()).find((s) => String(s.redizo) === redizo);
     return radek ? String(radek.nazev) : '';
   } catch {
     return '';
