@@ -288,10 +288,10 @@ test('vykreslení: rozložení obtížnosti odpovídá datům', async () => {
 test('další obory: nenesou obtížnost přijetí', async () => {
   // Obor bez jednotné zkoušky žádný výsledek nemá. Kdyby dostal odznak, tvářil
   // by se jako snadný — přesně tím se rozbil starý index u 386 oborů.
-  const obory = await dalsiOboryVeMeste('Chomutov', await klaceVPrehledu('Chomutov'));
+  const { obory } = await dalsiOboryVeMeste('Chomutov', await klaceVPrehledu('Chomutov'));
   assert.ok(obory.length > 0, 'v Chomutově nejsou žádné další obory');
   const html = renderToStaticMarkup(
-    React.createElement(DalsiOboryVeMeste, { obory }),
+    React.createElement(DalsiOboryVeMeste, { obory, minUchazecu: 10 }),
   );
   const vykresleny = text(html);
   // Hledá se odznak, ne slovo: „těžké“ je podřetězcem vysvětlující věty
@@ -310,10 +310,10 @@ test('další obory: nenesou obtížnost přijetí', async () => {
 });
 
 test('další obory: každý obor je v textu a skupiny se nemíchají', async () => {
-  const obory = await dalsiOboryVeMeste('Pardubice', await klaceVPrehledu('Pardubice'));
+  const { obory } = await dalsiOboryVeMeste('Pardubice', await klaceVPrehledu('Pardubice'));
   assert.ok(obory.length > 0, 'v Pardubicích nejsou další obory');
   const vykresleny = text(renderToStaticMarkup(
-    React.createElement(DalsiOboryVeMeste, { obory }),
+    React.createElement(DalsiOboryVeMeste, { obory, minUchazecu: 10 }),
   ));
   for (const o of obory) {
     assert.ok(vykresleny.includes(o.obor), `obor „${o.obor}“ se nevykreslil`);
@@ -327,7 +327,7 @@ test('další obory: každý obor je v textu a skupiny se nemíchají', async ()
 
 test('další obory: prázdný seznam nevykreslí nic', () => {
   const html = renderToStaticMarkup(
-    React.createElement(DalsiOboryVeMeste, { obory: [] }),
+    React.createElement(DalsiOboryVeMeste, { obory: [], minUchazecu: 10 }),
   );
   assert.equal(html, '', 'oddíl se zobrazuje i bez oborů');
 });
@@ -374,11 +374,11 @@ test('další obory: netvrdí, že se u nich jednotná zkouška koná', async ()
   // Příznak `bez_jednotne_zkousky: false` znamená jen „není v kategoriích
   // C/E/H/J/P“, ne že se zkouška koná: 53 ze 64 oborů skupiny „jiný“ jsou
   // umělecké obory (KKOV 82-…), kde se JPZ nekoná a rozhoduje talentová zkouška.
-  const obory = await dalsiOboryVeMeste('Praha', await klaceVPrehledu('Praha'));
+  const { obory } = await dalsiOboryVeMeste('Praha', await klaceVPrehledu('Praha'));
   const jine = obory.filter(o => o.duvod === 'jiny');
   assert.ok(jine.length > 0, 'v Praze není žádný obor ve skupině „jiný“');
   const vykresleny = text(renderToStaticMarkup(
-    React.createElement(DalsiOboryVeMeste, { obory }),
+    React.createElement(DalsiOboryVeMeste, { obory, minUchazecu: 10 }),
   ));
   assert.ok(
     !/Jednotná zkouška se u nich koná/.test(vykresleny),
@@ -393,7 +393,7 @@ test('další obory: podklad je soupis oborů, ne výběr souběžných voleb', 
   // Pole `mimo_prehled` vzniká jen z prvních šesti souběžných voleb s aspoň
   // deseti společnými uchazeči. Kdyby oddíl stál na něm, vynechal by 704 oborů,
   // které data doloženě nesou — například Hudbu a Zpěv na konzervatoři v Pardubicích.
-  const obory = await dalsiOboryVeMeste('Pardubice', await klaceVPrehledu('Pardubice'));
+  const { obory } = await dalsiOboryVeMeste('Pardubice', await klaceVPrehledu('Pardubice'));
   const konzervator = obory.filter(o => /onzervato/.test(o.skola)).map(o => o.obor);
   assert.ok(
     konzervator.includes('Hudba') && konzervator.includes('Zpěv'),
@@ -405,7 +405,7 @@ test('další obory: podklad je soupis oborů, ne výběr souběžných voleb', 
 test('další obory: nezdvojují nabídku z hlavního přehledu', async () => {
   for (const mesto of ['Pardubice', 'Chomutov', 'Karlovy Vary']) {
     const vPrehledu = await klaceVPrehledu(mesto);
-    const obory = await dalsiOboryVeMeste(mesto, vPrehledu);
+    const { obory } = await dalsiOboryVeMeste(mesto, vPrehledu);
     for (const o of obory) {
       assert.ok(
         !vPrehledu.has(o.klic),
@@ -413,4 +413,48 @@ test('další obory: nezdvojují nabídku z hlavního přehledu', async () => {
       );
     }
   }
+});
+
+test('další obory: přiznávají práh, pod kterým obory v seznamu nejsou', async () => {
+  // Zdroj vyřazuje obory s méně než `meze.min_uchazecu` uchazeči, takže seznam
+  // není úplný soupis nabídky. Doložený případ: Praktická škola jednoletá
+  // SVÍTÁNÍ v Pardubicích (600024270_78-62-C/01) v něm není, zatímco dvouletá
+  // se 13 uchazeči ano. Čtenář to musí vědět, jinak seznam vypadá jako úplný.
+  const { obory, minUchazecu } = await dalsiOboryVeMeste(
+    'Pardubice', await klaceVPrehledu('Pardubice'),
+  );
+  assert.equal(typeof minUchazecu, 'number', 'práh ze zdroje se nečte');
+
+  const klice = new Set(obory.map(o => o.klic));
+  assert.ok(
+    !klice.has('600024270_78-62-C/01'),
+    'obor pod prahem je v seznamu — zdroj se změnil, přiznání prahu přehodnoť',
+  );
+  assert.ok(
+    klice.has('600024270_78-62-C/02'),
+    'dvouletá varianta nad prahem chybí, i když ji zdroj nese',
+  );
+
+  const vykresleny = text(renderToStaticMarkup(
+    React.createElement(DalsiOboryVeMeste, { obory, minUchazecu }),
+  ));
+  assert.ok(
+    vykresleny.includes('není úplný'),
+    'oddíl netvrdí, že seznam je neúplný, přestože pod prahem obory chybí',
+  );
+  assert.ok(
+    vykresleny.includes(String(minUchazecu)),
+    `oddíl neuvádí práh ${minUchazecu}`,
+  );
+});
+
+test('další obory: bez prahu ze zdroje se věta o neúplnosti neukáže', () => {
+  // Kdyby zdroj práh přestal deklarovat, nesmí se tvrdit konkrétní číslo.
+  const vykresleny = text(renderToStaticMarkup(
+    React.createElement(DalsiOboryVeMeste, {
+      obory: [{ klic: 'X_1', redizo: 'X', skola: 'Škola', obor: 'Obor', duvod: 'bez_zkousky' }],
+      minUchazecu: null,
+    }),
+  ));
+  assert.ok(!vykresleny.includes('není úplný'), 'věta o prahu se ukázala bez čísla ze zdroje');
 });

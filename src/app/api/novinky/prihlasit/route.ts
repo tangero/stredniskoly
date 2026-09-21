@@ -25,6 +25,9 @@ const POVOLENE_ZDROJE = [
   'simulator',
   'pruvodce',
   'skola',
+  // Profil školy s kontextovým nadpisem („Termíny a novinky…“). Vlastní zdroj,
+  // aby šlo srovnat s původním „skola“; ten zůstává kvůli dřívějším odběrům.
+  'skola-kontext',
 ];
 
 export async function POST(request: NextRequest) {

@@ -1,6 +1,6 @@
 # Návrh stránky města: jaké školy se u nás nabízejí
 
-Verze 1.6 · 21. 9. 2026 · Stav: **zrealizováno, tři kola oponentury vypořádána** (oddíly 9 až 13)
+Verze 1.7 · 21. 9. 2026 · Stav: **zrealizováno, čtyři kola oponentury vypořádána** (oddíly 9 až 13)
 
 Zadání zadavatele z 21. 9. 2026: „[/mesto/pardubice] je starý design přehledu škol pro města. Projdi jej a navrhni zlepšení, která umožní lidem lépe vidět, jaké školy se v jejich městech nabízejí. Ukazuj u škol viditelné hodnocení náročnosti přijetí, které u nich máme — aby si lidé udělali přehled, co jsou méně náročné a více náročné školy.“
 
@@ -437,11 +437,41 @@ Klíče z hlavního přehledu se předávají jako parametr, aby se nabídka nez
 Praha 94 → 212. Ověřeno, že kolize s hlavním přehledem je nulová a že v hlavním přehledu
 není žádný obor kategorie bez jednotné zkoušky.
 
-### 13.3 Ověření
+### 13.3 Druhé kolo k P2: zbýval ještě jeden filtr
 
-Tři nové testy (26 celkem). **Oba nálezy ověřeny mutací**: vrácení nepodloženého tvrzení
-i vrácení podkladu na `mimo_prehled` testy zachytí. Značky 2. kola oponentura ověřila
-proti zdroji bez nálezu.
+Oponentura správně doplnila, že oprava 13.2 byla poloviční: `data` **samo** vyřazuje
+obory s méně než deseti uchazeči (`MIN_UCHAZECU`, `build-kontext-prihlasek.py:125`).
+Doložený případ: Praktická škola jednoletá SVÍTÁNÍ v Pardubicích
+(`600024270_78-62-C/01`) v seznamu není, zatímco dvouletá se 13 uchazeči ano.
+
+**Doporučenou opravu — vyexportovat seznam identifikátorů před prahy — provést nešlo:**
+zdrojový `PZ2026_kolo1_uchazeci…xlsx` v repozitáři není, takže generátor nejde spustit.
+
+Jediný náhradní zdroj je rejstřík škol, ten ale vede **všechny obory školy**, ne nabídku
+ročníku:
+
+| Podklad | Oborů ve městech | Co je špatně |
+|---|---:|---|
+| `data` s prahem 10 (dnes) | 1 621 | chybí obory pod prahem |
+| rejstřík, vše | 4 290 | neplatné kódy a zaměření |
+| rejstřík, platný KKOV | 3 098 | obsahuje **B** (základní) a **N** (vyšší odborné) vzdělání |
+| rejstřík, jen střední kategorie | 2 526 | pořád obsahuje „Základní škola“ pod kategorií C |
+
+Rejstřík navíc **neříká, co škola v ročníku vypsala** — je to soupis oprávnění. U dobíhajících
+oborů projekt tenhle rozdíl výslovně řeší a varuje před hrubým párováním.
+
+**Rozhodnutí zadavatele z 21. 9. 2026: práh ponechat a přiznat ho čtenáři.** Oddíl proto
+nese větu „Ani tenhle seznam není úplný: zdroj nese jen obory, o které se hlásilo aspoň
+10 uchazečů, takže nejmenší obory v něm chybí.“ Číslo se čte z `meze.min_uchazecu`
+v datech, ne napevno; bez něj se věta nezobrazí.
+
+### 13.4 Ověření
+
+Pět nových testů (28 celkem). **Všechny nálezy ověřeny mutací**: vrácení nepodloženého
+tvrzení, vrácení podkladu na `mimo_prehled`, odstranění přiznání prahu i přestání čtení
+prahu ze zdroje — každá mutace testy spadne. Regresní případ oboru pod prahem
+(`600024270_78-62-C/01`) hlídá i to, že se rozhodnutí přehodnotí, kdyby zdroj práh
+přestal uplatňovat. Značky 2. kola oponentura ověřila proti zdroji bez nálezu.
 
 ---
 
@@ -449,6 +479,7 @@ proti zdroji bez nálezu.
 
 | Verze | Změna |
 |---|---|
+| 1.7 | Druhé kolo k P2 (21. 9. 2026), oddíl 13.3: `data` sama uplatňují práh deseti uchazečů, takže seznam není úplný soupis. Rejstřík jako náhrada nejde použít bez zavedení základního a vyššího odborného vzdělání. Rozhodnutí zadavatele: práh ponechat a přiznat ho čtenáři, číslo čtené z `meze` v datech. |
 | 1.6 | Vypořádána oponentura PR #140 (21. 9. 2026), oddíl 13. Odstraněno nepodložené tvrzení, že se u oborů skupiny „jiný“ koná jednotná zkouška — příznak testuje jen kategorii a 53 ze 64 jsou umělecké obory s talentovou zkouškou. Podklad seznamu přesunut ze statistického výběru `mimo_prehled` na soupis oborů ročníku: 798 → 1 621 oborů. |
 | 1.5 | Doplněny další obory ve městě (798 oborů, které přehled nevedl) a značka 2. kola u 633 nabídek (21. 9. 2026), oddíl 12. Obory bez jednotné zkoušky a obory mimo katalog se zobrazují odděleně, protože chybí z jiného důvodu; bez obtížnosti přijetí, protože u nich výsledky neexistují. |
 | 1.4 | Druhé kolo oponentury (21. 9. 2026), oddíl 11: potvrzena oprava všech pěti nálezů, přijata výhrada, že testy chránily jen datovou vrstvu. Doplněny testy vykresleného výstupu a vyhledávání, každý ověřen mutací. Mutační ověření odhalilo dvě slabá místa v nových testech a jeden planý poplach. |

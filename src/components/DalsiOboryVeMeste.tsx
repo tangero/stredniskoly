@@ -11,7 +11,9 @@ import type { DalsiOborVeMeste } from '@/lib/kontext-prihlasek';
  * takže tu není a nesmí být obtížnost přijetí: obor bez dat se nesmí tvářit jako
  * snadný (`docs/zdroje-dat.md`, oddíl 4, past 4).
  */
-export function DalsiOboryVeMeste({ obory }: { obory: DalsiOborVeMeste[] }) {
+export function DalsiOboryVeMeste(
+  { obory, minUchazecu }: { obory: DalsiOborVeMeste[]; minUchazecu: number | null },
+) {
   if (obory.length === 0) return null;
 
   const bezZkousky = obory.filter(o => o.duvod === 'bez_zkousky');
@@ -31,6 +33,12 @@ export function DalsiOboryVeMeste({ obory }: { obory: DalsiOborVeMeste[] }) {
         těžké bylo se na ně dostat, z dat zjistit nejde. Co škola otevírá a co k přijetí
         potřebuje, stojí v jejích kritériích.
       </p>
+      {minUchazecu !== null && (
+        <p className="mb-6 text-sm text-slate-500">
+          Ani tenhle seznam není úplný: zdroj nese jen obory, o které se hlásilo aspoň{' '}
+          {minUchazecu} uchazečů, takže nejmenší obory v něm chybí.
+        </p>
+      )}
 
       {bezZkousky.length > 0 && (
         <div className="mb-6">

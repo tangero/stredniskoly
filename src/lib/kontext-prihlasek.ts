@@ -27,6 +27,8 @@ export interface OborMimoPrehled {
 interface KontextSoubor {
   data: Record<string, KontextPrihlasek>;
   mimo: Record<string, OborMimoPrehled>;
+  /** Prahy, se kterými soubor vznikl; čtou se z něj, nepíšou se napevno. */
+  meze: { min_uchazecu?: number };
 }
 
 const SADA = 'cermat-uchazeci-kolo1';
@@ -41,10 +43,10 @@ async function nactiSoubor(rok: number): Promise<KontextSoubor> {
   const klic = String(rok);
   const hotovy = cache.get(klic);
   if (hotovy) return hotovy;
-  let soubor: KontextSoubor = { data: {}, mimo: {} };
+  let soubor: KontextSoubor = { data: {}, mimo: {}, meze: {} };
   try {
     const json = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public', `kontext_prihlasek_${klic}.json`), 'utf-8'));
-    soubor = { data: json.data ?? {}, mimo: json.mimo_prehled ?? {} };
+    soubor = { data: json.data ?? {}, mimo: json.mimo_prehled ?? {}, meze: json.meze ?? {} };
   } catch {
     // chybějící soubor není chyba, oddíl se nezobrazí
   }
@@ -112,6 +114,17 @@ async function nactiIndexRejstriku(): Promise<IndexRejstriku> {
   return indexRejstriku;
 }
 
+/** Výsledek `dalsiOboryVeMeste`: obory a práh, se kterým podklad vznikl. */
+export interface DalsiObory {
+  obory: DalsiOborVeMeste[];
+  /**
+   * Nejmenší počet uchazečů, při kterém obor podklad nese (`meze.min_uchazecu`).
+   * Obory pod prahem v seznamu nejsou a oddíl to musí říct; `null`, když soubor
+   * práh nedeklaruje.
+   */
+  minUchazecu: number | null;
+}
+
 /**
  * Obory ve městě, které hlavní přehled nezahrnuje.
  *
@@ -125,6 +138,13 @@ async function nactiIndexRejstriku(): Promise<IndexRejstriku> {
  * data doloženě nesou, například Konzervatoř Jaroslava Ježka s 36 uchazeči. Platí
  * pravidlo projektu „nikdy neinventarizuj data podle toho, co web zobrazuje“.
  *
+ * **Zbývá jeden filtr, který zdroj nese:** generátor vyřazuje obory s méně než
+ * `meze.min_uchazecu` uchazeči, takže seznam není úplný soupis nabídky. Praktická
+ * škola jednoletá v Pardubicích (`600024270_78-62-C/01`) v něm proto není, zatímco
+ * dvouletá se 13 uchazeči ano. Obejít to jde jen rejstříkem škol, ten ale vede
+ * i základní a vyšší odborné vzdělání a neříká, co škola v ročníku vypsala.
+ * Rozhodnutí zadavatele z 21. 9. 2026: práh ponechat a **říct ho čtenáři**.
+ *
  * Vrací se **jen názvy**: u oborů bez jednotné zkoušky žádné výsledky neexistují,
  * takže se u nich nesmí zobrazit obtížnost přijetí ani se počítat do jejího
  * rozložení (`docs/zdroje-dat.md`, oddíl 4, past 4 — chybějící údaj není nula).
@@ -134,10 +154,10 @@ async function nactiIndexRejstriku(): Promise<IndexRejstriku> {
  */
 export async function dalsiOboryVeMeste(
   obec: string, vKatalogu: Set<string>,
-): Promise<DalsiOborVeMeste[]> {
+): Promise<DalsiObory> {
   const rok = await rokKontextu();
-  if (!rok) return [];
-  const { data } = await nactiSoubor(rok);
+  if (!rok) return { obory: [], minUchazecu: null };
+  const { data, meze } = await nactiSoubor(rok);
   const { skoly, obory } = await nactiIndexRejstriku();
 
   const out: DalsiOborVeMeste[] = [];
@@ -158,6 +178,7 @@ export async function dalsiOboryVeMeste(
       duvod: KATEGORIE_BEZ_JPZ.has(kategorieOboru(kkov)) ? 'bez_zkousky' : 'jiny',
     });
   }
-  return out.sort((a, b) =>
+  out.sort((a, b) =>
     a.skola.localeCompare(b.skola, 'cs') || a.obor.localeCompare(b.obor, 'cs'));
+  return { obory: out, minUchazecu: meze.min_uchazecu ?? null };
 }
