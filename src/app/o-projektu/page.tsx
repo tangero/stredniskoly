@@ -542,6 +542,23 @@ export default async function OProjektuPage() {
               Řádový rozdíl ta dvojice ukazuje spolehlivě, přesný násobek ne.
             </p>
 
+            <div className="mt-6 p-5 rounded-lg border border-slate-300">
+              <div className="font-semibold text-slate-800 mb-1">
+                Proč by zakázkový web vypadal jinak
+              </div>
+              <p className="text-sm text-slate-700">
+                Rozdíl mezi oběma způsoby vedení projektu není hlavně v ceně, ale v tom, kdy se
+                rozhoduje, co web bude umět. Samostatná stránka staví vedle sebe sedm fází veřejné
+                zakázky a pětikrokovou smyčku, kterou vznikal tenhle web, a dokládá to pěti
+                případy, kdy se rozhodnutí ukázalo jako špatné až po tom, co padlo.
+              </p>
+              <p className="text-sm mt-2">
+                <Link href="/o-projektu/jak-vznikal" className="underline font-medium" style={{ color: '#0074e4' }}>
+                  Jak projekt vznikal: zakázka proti rozhodování za pochodu
+                </Link>
+              </p>
+            </div>
+
             {/* ------------------------------------------------------------ */}
             <Nadpis id="provoz" cislo={9}>Co stojí provoz</Nadpis>
             <p className="text-slate-700">
