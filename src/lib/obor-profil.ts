@@ -38,6 +38,30 @@ export const ZARAZENI_POPISEK: Record<ZarazeniObtiznosti, string> = {
 };
 
 /**
+ * Celé fráze pro nadpisy. Slovník pojmů zakazuje samotné „Velmi těžké“ jako
+ * nadpis, proto se v té roli nesmí použít `ZARAZENI_POPISEK`.
+ */
+export const NADPIS_OBTIZNOSTI: Record<ZarazeniObtiznosti, string> = {
+  velmi_tezke: 'Velmi těžké se dostat',
+  tezke: 'Těžké se dostat',
+  stredne_tezke: 'Středně těžké se dostat',
+  vetsina_uspela: 'Dostala se většina',
+  kapacita_nerozhodovala: 'Místo pro všechny',
+};
+
+/** Od nejtěžšího. Slouží k výběru a seskupení, **nikdy k řazení škol** (slovník, pořadí v kraji). */
+export const PORADI_OBTIZNOSTI: ZarazeniObtiznosti[] = [
+  'velmi_tezke', 'tezke', 'stredne_tezke', 'vetsina_uspela', 'kapacita_nerozhodovala',
+];
+
+/**
+ * Vysvětlení pojmu „soutěžící uchazeči“ pro první výskyt v každém bloku.
+ * Vyžaduje slovník pojmů, pravidlo 2.
+ */
+export const VYSVETLENI_SOUTEZICICH =
+  'tedy těch, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš';
+
+/**
  * Proč obor výš nebo níž na přihlášce přehled nezahrnuje. `null` znamená, že se
  * o něm nedá říct nic — ani v soupisu oborů mimo přehled není.
  */

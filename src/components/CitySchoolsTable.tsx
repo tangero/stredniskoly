@@ -1,215 +1,295 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import type { CitySchoolRow } from '@/lib/cityData';
+import {
+  cislo, zOd, ZARAZENI_POPISEK, PORADI_OBTIZNOSTI, VYSVETLENI_SOUTEZICICH,
+  type ZarazeniObtiznosti,
+} from '@/lib/obor-profil';
 
 const TYPE_LABELS: Record<string, string> = {
   GY4: 'GY 4-leté', GY6: 'GY 6-leté', GY8: 'GY 8-leté',
   LYC: 'Lyceum', SOS: 'SOŠ', SOU: 'SOU', NAS: 'Nástavba',
 };
 
-function RankPct({ rank, total }: { rank: number; total: number }) {
-  const pct = Math.round((1 - (rank - 1) / total) * 100);
-  const color = pct >= 70 ? 'text-red-600' : pct >= 40 ? 'text-orange-600' : 'text-green-700';
+/**
+ * Odstíny jedné barvy od nejtěžšího po nejsnazší. Záměrně **není semafor**:
+ * obor, kam se dostal každý, není horší škola, jen jiná poptávka. Stupeň nese
+ * slovo, odstín jen napovídá pořadí.
+ */
+const ODSTIN_OBTIZNOSTI: Record<ZarazeniObtiznosti, string> = {
+  velmi_tezke: 'bg-slate-800 text-white',
+  tezke: 'bg-slate-600 text-white',
+  stredne_tezke: 'bg-slate-400 text-white',
+  vetsina_uspela: 'bg-slate-200 text-slate-800',
+  kapacita_nerozhodovala: 'bg-slate-100 text-slate-700',
+};
+
+/** Odznak obtížnosti přijetí. V tabulce stačí krátký popisek (slovník pojmů). */
+function OdznakObtiznosti({ zarazeni }: { zarazeni: ZarazeniObtiznosti | null }) {
+  if (!zarazeni) {
+    return <span className="text-[12px] text-slate-500">bez údaje</span>;
+  }
   return (
-    <span className={`font-semibold ${color}`} title={`${rank}. z ${total} škol tohoto typu v ČR`}>
-      top {100 - pct + 1}%
+    <span
+      className={`inline-block whitespace-nowrap rounded-full px-2.5 py-0.5 text-[13px] font-semibold ${ODSTIN_OBTIZNOSTI[zarazeni]}`}
+    >
+      {ZARAZENI_POPISEK[zarazeni]}
     </span>
   );
 }
 
-function Delta({ val }: { val: number | null }) {
-  if (val === null) return <span className="text-slate-300">—</span>;
-  if (Math.abs(val) < 0.5) return <span className="text-slate-400 text-xs">≈ stejné</span>;
-  const up = val > 0;
+/** Věta „přijato X ze Y soutěžících uchazečů“ a předchozí ročník, jak žádá slovník. */
+function PodilPrijatych({ row }: { row: CitySchoolRow }) {
+  if (row.soutezici === null || row.prijatiZeSoutezicich === null) return null;
+  if (row.zarazeni === 'kapacita_nerozhodovala') return null;
+  const loni = row.zarazeniPredchozi && row.predchoziRok
+    ? ` · v roce ${row.predchoziRok} ${ZARAZENI_POPISEK[row.zarazeniPredchozi]}`
+    : '';
   return (
-    <span className={`text-xs font-medium ${up ? 'text-red-600' : 'text-green-700'}`}>
-      {up ? '↑' : '↓'}{up ? '+' : ''}{val.toFixed(1)}
+    <span className="text-[12px] text-slate-500">
+      přijato {cislo(row.prijatiZeSoutezicich)} {zOd(row.soutezici)} {cislo(row.soutezici)}
+      {loni}
     </span>
   );
 }
 
 interface Props {
   schools: CitySchoolRow[];
+  /** Zobrazený ročník z registru; nikdy se nepíše napevno. */
+  rok: number;
 }
 
-type SortKey = 'nazev' | 'prihlasky2026' | 'index2026' | 'avgCjMa2026' | 'delta2026';
+type SortKey = 'nazev' | 'kapacita' | 'prihlasky' | 'index';
 
-export function CitySchoolsTable({ schools }: Props) {
-  const [filter, setFilter] = useState<string>('vse');
-  const [sort, setSort] = useState<SortKey>('prihlasky2026');
-  const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc');
+interface SkolaSkupina {
+  redizo: string;
+  nazev: string;
+  ulice: string;
+  zrizovatel: string;
+  slug: string;
+  nabidky: CitySchoolRow[];
+}
 
-  const types = [...new Set(schools.map(s => s.typ))].filter(Boolean).sort();
+export function CitySchoolsTable({ schools, rok }: Props) {
+  const [filtrTypu, setFiltrTypu] = useState<string>('vse');
+  const [filtrObtiznosti, setFiltrObtiznosti] = useState<ZarazeniObtiznosti | 'vse'>('vse');
+  const [sort, setSort] = useState<SortKey>('nazev');
 
-  const filtered = schools.filter(s => filter === 'vse' || s.typ === filter);
-
-  const sorted = [...filtered].sort((a, b) => {
-    let va: number | string | null = null;
-    let vb: number | string | null = null;
-    if (sort === 'nazev') { va = a.nazev_display; vb = b.nazev_display; }
-    else if (sort === 'prihlasky2026') { va = a.prihlasky2026 ?? a.prihlasky2025 ?? 0; vb = b.prihlasky2026 ?? b.prihlasky2025 ?? 0; }
-    else if (sort === 'index2026') { va = a.index2026 ?? a.index2025 ?? 0; vb = b.index2026 ?? b.index2025 ?? 0; }
-    else if (sort === 'avgCjMa2026') { va = a.avgCjMa2026 ?? -1; vb = b.avgCjMa2026 ?? -1; }
-    else if (sort === 'delta2026') { va = a.delta2026 ?? -999; vb = b.delta2026 ?? -999; }
-
-    if (typeof va === 'string' && typeof vb === 'string') {
-      return sortDir === 'asc' ? va.localeCompare(vb, 'cs') : vb.localeCompare(va, 'cs');
-    }
-    const na = (va as number) ?? 0;
-    const nb = (vb as number) ?? 0;
-    return sortDir === 'asc' ? na - nb : nb - na;
-  });
-
-  const toggleSort = (key: SortKey) => {
-    if (sort === key) setSortDir(d => d === 'asc' ? 'desc' : 'asc');
-    else { setSort(key); setSortDir('desc'); }
-  };
-
-  const SortTh = ({ k, children }: { k: SortKey; children: React.ReactNode }) => (
-    <th
-      className="text-right px-3 py-2 font-medium text-slate-600 cursor-pointer hover:text-blue-600 select-none whitespace-nowrap"
-      onClick={() => toggleSort(k)}
-    >
-      {children}{sort === k ? (sortDir === 'desc' ? ' ↓' : ' ↑') : ''}
-    </th>
+  const typy = useMemo(
+    () => [...new Set(schools.map(s => s.typ))].filter(Boolean).sort(),
+    [schools],
   );
+
+  /** Počty nabídek po stupních obtížnosti. Nabídky bez údaje se nepočítají nikam. */
+  const rozlozeni = useMemo(() => {
+    const m = new Map<ZarazeniObtiznosti, number>();
+    for (const s of schools) {
+      if (s.zarazeni) m.set(s.zarazeni, (m.get(s.zarazeni) ?? 0) + 1);
+    }
+    return m;
+  }, [schools]);
+
+  const sZarazenim = [...rozlozeni.values()].reduce((a, b) => a + b, 0);
+
+  const filtrovane = useMemo(() => schools.filter(s =>
+    (filtrTypu === 'vse' || s.typ === filtrTypu)
+    && (filtrObtiznosti === 'vse' || s.zarazeni === filtrObtiznosti),
+  ), [schools, filtrTypu, filtrObtiznosti]);
+
+  /** Jedna karta = jedna škola. Rodina hledá školu, ne řádek nabídky. */
+  const skoly = useMemo(() => {
+    const m = new Map<string, SkolaSkupina>();
+    for (const r of filtrovane) {
+      const s = m.get(r.redizo) ?? {
+        redizo: r.redizo,
+        nazev: r.nazev_display,
+        ulice: r.ulice,
+        zrizovatel: r.zrizovatel,
+        slug: r.slug,
+        nabidky: [],
+      };
+      s.nabidky.push(r);
+      m.set(r.redizo, s);
+    }
+    const seznam = [...m.values()];
+    for (const s of seznam) {
+      // V kartě nejtěžší nabídka první, aby bylo vidět, co škola nabízí nahoře.
+      s.nabidky.sort((a, b) => {
+        const ia = a.zarazeni ? PORADI_OBTIZNOSTI.indexOf(a.zarazeni) : 99;
+        const ib = b.zarazeni ? PORADI_OBTIZNOSTI.indexOf(b.zarazeni) : 99;
+        return ia - ib || a.obor.localeCompare(b.obor, 'cs');
+      });
+    }
+    // Řadí se jen tím, co je na to doložené. Podle obtížnosti přijetí se neřadí:
+    // pořadí se mezi ročníky přehazuje (slovník ukazatelů, pořadí v kraji).
+    const soucet = (s: SkolaSkupina, vyber: (r: CitySchoolRow) => number | null) =>
+      s.nabidky.reduce((a, r) => a + (vyber(r) ?? 0), 0);
+    seznam.sort((a, b) => {
+      if (sort === 'nazev') return a.nazev.localeCompare(b.nazev, 'cs');
+      if (sort === 'kapacita') {
+        return soucet(b, r => r.kapacita2026 ?? r.kapacita2025) - soucet(a, r => r.kapacita2026 ?? r.kapacita2025);
+      }
+      if (sort === 'prihlasky') {
+        return soucet(b, r => r.prihlasky2026 ?? r.prihlasky2025) - soucet(a, r => r.prihlasky2026 ?? r.prihlasky2025);
+      }
+      const nejvyssi = (s: SkolaSkupina) => Math.max(
+        ...s.nabidky.map(r => r.index2026 ?? r.index2025 ?? 0),
+      );
+      return nejvyssi(b) - nejvyssi(a);
+    });
+    return seznam;
+  }, [filtrovane, sort]);
+
+  const tlacitkoFiltru = (aktivni: boolean) =>
+    `rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
+      aktivni ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+    }`;
 
   return (
     <div>
-      {/* Filter */}
-      <div className="flex flex-wrap gap-2 mb-4">
-        <button
-          onClick={() => setFilter('vse')}
-          className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${filter === 'vse' ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
-        >
-          Vše ({schools.length})
-        </button>
-        {types.map(t => (
-          <button
-            key={t}
-            onClick={() => setFilter(t)}
-            className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${filter === t ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
-          >
-            {TYPE_LABELS[t] || t} ({schools.filter(s => s.typ === t).length})
+      {/* Rozložení obtížnosti: odpověď na „kam je snadné se dostat a kam těžké“. */}
+      {sZarazenim > 0 && (
+        <div className="mb-6 rounded-xl border border-slate-200 bg-white p-5">
+          <h3 className="mb-1 font-semibold text-slate-900">
+            Jak se sem uchazeči dostali v 1. kole {rok}
+          </h3>
+          <p className="mb-4 text-sm text-slate-600">
+            Obtížnost přijetí říká, kolik <b>soutěžících uchazečů</b> se na obor dostalo,{' '}
+            {VYSVETLENI_SOUTEZICICH}. Popisuje jeden ročník, ne kvalitu školy ani obtížnost studia.
+          </p>
+          <ul className="space-y-1.5">
+            {PORADI_OBTIZNOSTI.map(z => {
+              const pocet = rozlozeni.get(z) ?? 0;
+              const podil = sZarazenim > 0 ? (pocet / sZarazenim) * 100 : 0;
+              const aktivni = filtrObtiznosti === z;
+              return (
+                <li key={z}>
+                  <button
+                    type="button"
+                    onClick={() => setFiltrObtiznosti(aktivni ? 'vse' : z)}
+                    disabled={pocet === 0}
+                    aria-pressed={aktivni}
+                    className={`flex w-full items-center gap-3 rounded-lg px-2 py-1.5 text-left transition-colors ${
+                      pocet === 0 ? 'cursor-default opacity-50' : 'hover:bg-slate-50'
+                    } ${aktivni ? 'bg-blue-50 ring-1 ring-blue-200' : ''}`}
+                  >
+                    <span className="w-28 shrink-0 text-sm text-slate-700">
+                      {ZARAZENI_POPISEK[z]}
+                    </span>
+                    <span className="h-2.5 flex-1 overflow-hidden rounded bg-[#e3e9f1]">
+                      <span
+                        className="block h-full rounded bg-[#0074e4]"
+                        style={{ width: `${podil}%` }}
+                      />
+                    </span>
+                    <span className="w-10 shrink-0 text-right text-sm font-semibold tabular-nums text-slate-900">
+                      {pocet}
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+          <p className="mt-3 text-xs text-slate-500">
+            {sZarazenim === schools.length
+              ? `Ze všech ${cislo(schools.length)} nabídek ve městě.`
+              : `Z ${cislo(sZarazenim)} nabídek ${zOd(schools.length)} ${cislo(schools.length)}; u ostatních údaj nemáme. Chybějící údaj neznamená, že se tam dostal každý.`}
+            {filtrObtiznosti !== 'vse' && ' Klikem na stupeň filtr zrušíš.'}
+          </p>
+        </div>
+      )}
+
+      {/* Filtry a řazení */}
+      <div className="mb-5 space-y-3">
+        <div className="flex flex-wrap gap-2">
+          <button type="button" onClick={() => setFiltrTypu('vse')} className={tlacitkoFiltru(filtrTypu === 'vse')}>
+            Všechny typy ({schools.length})
           </button>
+          {typy.map(t => (
+            <button key={t} type="button" onClick={() => setFiltrTypu(t)} className={tlacitkoFiltru(filtrTypu === t)}>
+              {TYPE_LABELS[t] || t} ({schools.filter(s => s.typ === t).length})
+            </button>
+          ))}
+        </div>
+        <div className="flex flex-wrap items-center gap-2 text-sm">
+          <span className="text-slate-500">Řadit školy:</span>
+          {([['nazev', 'podle názvu'], ['kapacita', 'podle počtu míst'], ['prihlasky', 'podle přihlášek'], ['index', 'podle přihlášek na místo']] as [SortKey, string][]).map(([k, label]) => (
+            <button
+              key={k}
+              type="button"
+              onClick={() => setSort(k)}
+              className={`rounded-full px-2.5 py-1 transition-colors ${
+                sort === k ? 'bg-slate-800 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Karty škol */}
+      <div className="space-y-3">
+        {skoly.map(s => (
+          <div key={s.redizo} className="rounded-xl border border-slate-200 bg-white p-4 md:p-5">
+            <div className="mb-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <h3 className="text-[17px] font-bold leading-snug text-[#16325c]">
+                <Link href={`/skola/${s.slug}`} className="hover:underline">
+                  {s.nazev}
+                </Link>
+              </h3>
+              <span className="text-xs text-slate-500">
+                {s.nabidky.length === 1 ? '1 nabídka' : `${s.nabidky.length} nabídky`}
+              </span>
+            </div>
+            {(s.ulice || s.zrizovatel) && (
+              <p className="mb-3 text-[13px] text-slate-500">
+                {[s.ulice, s.zrizovatel && `zřizovatel: ${s.zrizovatel}`].filter(Boolean).join(' · ')}
+              </p>
+            )}
+            <ul className="divide-y divide-slate-100">
+              {s.nabidky.map(r => {
+                const kapacita = r.kapacita2026 ?? r.kapacita2025;
+                const idx = r.index2026 ?? r.index2025;
+                const chybi2026 = r.prihlasky2026 === null;
+                return (
+                  <li key={r.id} className="py-2.5 first:pt-0 last:pb-0">
+                    <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                      <span className="text-[15px] font-medium text-slate-900">
+                        {r.obor}{r.zamereni ? ` — ${r.zamereni}` : ''}
+                      </span>
+                      <span className="rounded bg-slate-100 px-1.5 py-0.5 text-[11px] text-slate-600">
+                        {TYPE_LABELS[r.typ] || r.typ}
+                      </span>
+                    </div>
+                    <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+                      <OdznakObtiznosti zarazeni={r.zarazeni} />
+                      <PodilPrijatych row={r} />
+                    </div>
+                    <div className="mt-1 text-[13px] text-slate-600">
+                      {kapacita !== null && <>{cislo(kapacita)} míst</>}
+                      {idx !== null && <> · {cislo(idx, 1)} přihlášky na místo</>}
+                      {r.avgCjMa2026 !== null && (
+                        <> · spolužáci sem přišli s výsledky kolem {cislo(r.avgCjMa2026, 1)} bodů ze 100</>
+                      )}
+                      {chybi2026 && (
+                        <span className="text-amber-700"> · obor v 1. kole {rok} nevypsán, údaje jsou starší</span>
+                      )}
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         ))}
       </div>
 
-      {/* Desktop table */}
-      <div className="hidden lg:block overflow-x-auto rounded-xl border border-slate-200">
-        <table className="w-full text-sm">
-          <thead className="bg-slate-50 border-b border-slate-200">
-            <tr>
-              <th
-                className="text-left px-3 py-2 font-medium text-slate-600 cursor-pointer hover:text-blue-600 select-none"
-                onClick={() => toggleSort('nazev')}
-              >
-                Škola / obor{sort === 'nazev' ? (sortDir === 'desc' ? ' ↓' : ' ↑') : ''}
-              </th>
-              <th className="text-center px-3 py-2 font-medium text-slate-600 whitespace-nowrap">Typ</th>
-              <th className="text-right px-3 py-2 font-medium text-slate-600 whitespace-nowrap">Kapacita 2026</th>
-              <SortTh k="prihlasky2026">Přihlášky 2026</SortTh>
-              <SortTh k="index2026">Index</SortTh>
-              <SortTh k="avgCjMa2026">ČJ+MA průměr b. (max 100)</SortTh>
-              <SortTh k="delta2026">Δ vs 2025</SortTh>
-              <th className="text-right px-3 py-2 font-medium text-slate-600 whitespace-nowrap">Pořadí v ČR</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate-100">
-            {sorted.map(row => {
-              const schoolSlug = `${row.redizo}-${row.nazev_display.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
-              const has2026 = row.prihlasky2026 !== null;
-              return (
-                <tr key={row.id} className={`hover:bg-slate-50 ${!has2026 ? 'opacity-60' : ''}`}>
-                  <td className="px-3 py-2">
-                    <Link href={`/skola/${schoolSlug}`} className="font-medium text-blue-600 hover:underline">
-                      {row.nazev_display}
-                    </Link>
-                    <div className="text-xs text-slate-500">{row.obor}{row.zamereni ? ` — ${row.zamereni}` : ''}</div>
-                    {!has2026 && <span className="text-xs text-amber-600">data 2025</span>}
-                  </td>
-                  <td className="px-3 py-2 text-center">
-                    <span className="text-xs bg-slate-100 text-slate-700 rounded px-1.5 py-0.5">{TYPE_LABELS[row.typ] || row.typ}</span>
-                  </td>
-                  <td className="px-3 py-2 text-right text-slate-700">
-                    {row.kapacita2026 ?? row.kapacita2025 ?? '—'}
-                  </td>
-                  <td className="px-3 py-2 text-right font-semibold">
-                    {row.prihlasky2026 ?? row.prihlasky2025 ?? '—'}
-                  </td>
-                  <td className="px-3 py-2 text-right">
-                    {(() => {
-                      const idx = row.index2026 ?? row.index2025;
-                      if (idx === null) return <span className="text-slate-300">—</span>;
-                      const color = idx >= 3 ? 'text-red-600' : idx >= 2 ? 'text-orange-600' : 'text-green-700';
-                      return <span className={`font-semibold ${color}`}>{idx.toFixed(1)}×</span>;
-                    })()}
-                  </td>
-                  <td className="px-3 py-2 text-right">
-                    {row.avgCjMa2026 !== null
-                      ? <span className="font-semibold">{row.avgCjMa2026.toFixed(1)}</span>
-                      : <span className="text-slate-300">—</span>}
-                  </td>
-                  <td className="px-3 py-2 text-right">
-                    <Delta val={row.delta2026} />
-                  </td>
-                  <td className="px-3 py-2 text-right">
-                    {row.rankInType2026 && row.typeTotal2026
-                      ? <RankPct rank={row.rankInType2026} total={row.typeTotal2026} />
-                      : <span className="text-slate-300">—</span>}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
-
-      {/* Mobile cards */}
-      <div className="lg:hidden space-y-3">
-        {sorted.map(row => {
-          const schoolSlug = `${row.redizo}-${row.nazev_display.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
-          const has2026 = row.prihlasky2026 !== null;
-          const idx = row.index2026 ?? row.index2025;
-          return (
-            <div key={row.id} className={`bg-white rounded-xl border border-slate-200 p-4 ${!has2026 ? 'opacity-70' : ''}`}>
-              <div className="flex items-start justify-between gap-2 mb-2">
-                <div className="min-w-0">
-                  <Link href={`/skola/${schoolSlug}`} className="font-semibold text-blue-600 hover:underline text-sm">
-                    {row.nazev_display}
-                  </Link>
-                  <div className="text-xs text-slate-500 mt-0.5">{row.obor}{row.zamereni ? ` — ${row.zamereni}` : ''}</div>
-                </div>
-                <span className="text-xs bg-slate-100 text-slate-700 rounded px-1.5 py-0.5 shrink-0">{TYPE_LABELS[row.typ] || row.typ}</span>
-              </div>
-              <div className="grid grid-cols-3 gap-2 text-xs">
-                <div className="text-center bg-slate-50 rounded p-2">
-                  <div className="font-bold text-slate-900">{row.prihlasky2026 ?? row.prihlasky2025 ?? '—'}</div>
-                  <div className="text-slate-500">přihlášek</div>
-                </div>
-                <div className="text-center bg-slate-50 rounded p-2">
-                  <div className={`font-bold ${idx !== null && idx >= 3 ? 'text-red-600' : idx !== null && idx >= 2 ? 'text-orange-600' : 'text-green-700'}`}>
-                    {idx !== null ? `${idx.toFixed(1)}×` : '—'}
-                  </div>
-                  <div className="text-slate-500">index</div>
-                </div>
-                <div className="text-center bg-slate-50 rounded p-2">
-                  <div className="font-bold text-slate-900">
-                    {row.avgCjMa2026 !== null ? row.avgCjMa2026.toFixed(1) : '—'}
-                  </div>
-                  <div className="text-slate-500">ČJ+MA b. (max 100)</div>
-                </div>
-              </div>
-              {!has2026 && <div className="mt-2 text-xs text-amber-600">Zobrazena data 2025 (2026 nedostupná)</div>}
-            </div>
-          );
-        })}
-      </div>
-
-      {sorted.length === 0 && (
-        <div className="text-center text-slate-500 py-8">Žádné školy pro vybraný filtr.</div>
+      {skoly.length === 0 && (
+        <p className="rounded-xl border border-slate-200 bg-white p-6 text-center text-sm text-slate-500">
+          Pro zvolený filtr tu není žádná škola.
+        </p>
       )}
     </div>
   );

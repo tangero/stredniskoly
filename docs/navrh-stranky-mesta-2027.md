@@ -1,0 +1,249 @@
+# Návrh stránky města: jaké školy se u nás nabízejí
+
+Verze 1.1 · 21. 9. 2026 · Stav: **návrh k oponentuře**
+
+Zadání zadavatele z 21. 9. 2026: „[/mesto/pardubice] je starý design přehledu škol pro města. Projdi jej a navrhni zlepšení, která umožní lidem lépe vidět, jaké školy se v jejich městech nabízejí. Ukazuj u škol viditelné hodnocení náročnosti přijetí, které u nich máme — aby si lidé udělali přehled, co jsou méně náročné a více náročné školy.“
+
+Doplnění zadání z 21. 9. 2026: „Plus to chce přidat na [/mesto] možnost vyhledávat podle města a obecně do vyhledávače v horní liště dát možnost vyhledat město, když tam člověk zadá Pardubice, tak aby mu to nabídlo ‚Pardubice - kompletní přehled škol‘ a dovedlo ho to na link [/mesto/pardubice] — ne jen aby to našlo školy, které jsou v pardubicích.“ Řeší oddíl 6.
+
+Posuzované stránky: [Pardubice](https://www.prijimackynaskolu.cz/mesto/pardubice), kód `src/app/mesto/[mesto]/page.tsx` (341 řádků), `src/components/CitySchoolsTable.tsx`, rozcestník `src/app/mesto/page.tsx` a vyhledávání `src/components/SchoolSearch.tsx` + `src/app/api/schools/search/route.ts`.
+
+---
+
+## 1. Dvě poznámky k zadání, které mění jeho provedení
+
+**Slovo „náročnost“ se použít nesmí.** Slovník pojmů, oddíl 5, vede *náročnost školy* mezi zakázanými slovy u hesla obtížnost přijetí, a *obtížnost studia, kvalita školy (z přijímacích dat)* mezi slovy nepoužívanými vůbec, s důvodem „přijímací data popisují vstup, ne studium“. Zadavatelův význam je ale zachytitelný přesně: slovník pro tentýž údaj předepisuje název **obtížnost přijetí** a pro tabulku výslovně povoluje sloupec „Obtížnost přijetí“ s hodnotou „velmi těžké“. Návrh proto plní zadání pod tímto názvem.
+
+**Řadit podle obtížnosti se nesmí.** Slovník ukazatelů u pořadí v kraji uvádí: „**Podle obtížnosti přijetí se neřadí**: pořadí podle podílu přijatých ze soutěžících uchazečů se mezi roky přehazuje, u osmiletého gymnázia J. S. Machara ze 7. na 17. místo z 32.“ Zadání „aby si lidé udělali přehled, co jsou méně náročné a více náročné školy“ se proto plní **filtrem a odznakem u každé nabídky**, ne novým řadicím sloupcem a ne žebříčkem. Rozdíl je podstatný: odznak popisuje jeden ročník a dá se ověřit ze zdroje, pořadí by tvrdilo trvalou vlastnost školy.
+
+---
+
+## 2. Co je na dnešní stránce špatně
+
+Sešel jsem šest závad; první tři jsou porušení závazných pravidel projektu.
+
+**2.1 Obtížnost přijetí na stránce vůbec není.** Hlavní věc ze zadání chybí. Data přitom existují a jsou hotová: pole `zarazeni_obtiznosti` v `public/souhrny_kolo1.json`, veličinu počítá `scripts/build-souhrny-kolo1.py`, práh zobrazení uplatňuje `zarazeniObtiznosti()` v `src/lib/obor-profil.ts`, popisky drží `ZARAZENI_POPISEK`. Stránka města tento soubor nečte — `src/lib/cityData.ts:126-128` načítá jen `schools_data.json`, `applications_2026.json` a `cermat_results_2026.json`.
+
+**2.2 Letopočet 2026 je v kódu napevno, na 444 místech vykreslené stránky.** Pravidlo projektu zní: „Nikdy nepiš letopočet dat napevno do kódu ani do textu stránky. Období se bere z registru.“ Dnes je v `page.tsx` zadrátované v titulku, v popisu, v nadpisech sloupců („Kapacita 2026“, „Přihlášky 2026“, „Δ vs 2025“) i v názvech polí. Registr `public/stav_datovych_sad.json` přitom u sad `cermat-vysledky`, `cermat-prihlasky` a `cermat-kapacity` vede zobrazené období `2026` s `platne_k: 2026-08-17` — hodnota je tedy věcně správná, ale při přepnutí na ročník 2027 se stránka rozejde se skutečností na desítkách míst.
+
+**2.3 Tři formulace porušují slovník pojmů.**
+
+| Dnes na stránce | Proč je to závada | Místo toho |
+|---|---|---|
+| „o 1,3 méně → **dostupnější**“ / „o 1,3 více → **náročnější**“ (`page.tsx:140-141`) | průměr bodů přijatých vydává za dostupnost; slovník: „Neříká nic o náročnosti studia ani o kvalitě výuky. Popisuje, s jakými výsledky přicházejí spolužáci.“ | „spolužáci sem přicházejí s výsledky kolem … bodů“ |
+| „**index zájmu**“, „**index poptávky**“ (hero, vysvětlivky) | ve slovníku ukazatelů se veličina jmenuje **přihlášky na místo** | „přihlášek na místo“ |
+| „Pořadí v ČR“, „horní třetina / dolní třetina“ (`page.tsx:144-149`) | pořadí je definované **v kraji ve srovnatelné skupině**, ne v celé ČR napříč typy; „dolní třetina“ navíc čte jako známka | „pořadí v kraji podle výsledků přijatých“, vždy se skupinou, krajem a rokem |
+
+**2.4 Přehled je oborový, ale tváří se jako školní.** Zadání mluví o školách („jaké školy se v jejich městech nabízejí“). Tabulka má 36 řádků nabídek za 13 škol v Pardubicích, takže jedna škola se opakuje až osmkrát a rodina nevidí, že jde o jeden dům. Hero přitom hlásí „31 historických oborů“ — číslo z jiné populace než tabulka, bez vysvětlení rozdílu.
+
+**2.5 Blok „Analýza situace“ je pět odstavců výhrad, ne analýza.** `src/lib/cityNarrative.ts` vrací pevné věty s interpolovanými čísly — **žádný jazykový model se nevolá** (generování přes OpenRouter bylo odstraněno 11. 9. 2026, commit `c9ae452`). Zbyl ale zastaralý komentář „Generovat narativní text přes Claude API“ a `try`/`catch` na `page.tsx:204-210`, přestože funkce nemůže vyhodit. Věcná závada je jiná: ze pěti odstavců jsou čtyři metodické výhrady („Počet přihlášek není počtem unikátních dětí“, „Průměr přijatých není minimem nutným k přijetí“), tedy text, který patří do vysvětlivek pod tabulkou, ne do bloku nazvaného „Analýza situace“ na začátku stránky. Rodina dostane na prvním místě pět odstavců o tom, co čísla neříkají, a nikde větu o tom, co říkají.
+
+**2.6 Hero nabízí čtyři čísla, z nichž tři rodina nepotřebuje.** „Historických oborů“, „míst celkem“, „přihlášek“ a „index zájmu“ jsou součty za město. Rodina nevybírá město — to už má —, vybírá v něm školu.
+
+---
+
+## 3. Co navrhuji
+
+Pořadí bloků odpovídá otázkám, které rodina na městské stránce má: *Co tu vůbec je? Kam je snadné se dostat a kam těžké? Jak se sem chodí?*
+
+### 3.1 Hero: jedna věta a rozložení obtížnosti
+
+Místo čtyř součtů jeden pruh, který rovnou odpovídá na zadání. Pro Pardubice ze skutečných dat 1. kola 2026:
+
+```
+Střední školy — Pardubice
+Pardubický kraj · 13 škol, 36 nabídek v 1. kole 2026
+
+Jak se sem lidé dostali (1. kolo 2026, 36 nabídek):
+■■■■■■■■■■■■■■ 14  místo bylo pro všechny, kdo splnili podmínky školy
+■■■■■■■■         8  dostala se většina soutěžících
+■■■■■■■■■■■     11  středně těžké
+■■■              3  těžké
+                 0  velmi těžké
+```
+
+Pruh je vodorovný, klikací a je to zároveň filtr tabulky. Rodina na jeden pohled vidí, že v Pardubicích je nejvíc nabídek, kam se dostal každý, kdo splnil podmínky, a že nic není „velmi těžké“ — to je ta informace, kterou zadání chce.
+
+**Vysvětlení při prvním výskytu v bloku** (povinné podle slovníku pojmů, pravidlo 2), pod pruhem jednou větou: „Obtížnost přijetí říká, kolik *soutěžících uchazečů* se na obor dostalo — tedy těch, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš. Popisuje jeden ročník, ne kvalitu školy ani obtížnost studia.“
+
+### 3.2 Seskupení po školách místo 36 řádků nabídek
+
+Jedna karta = jedna škola, v ní její nabídky. Škola nese souhrn, nabídka detail:
+
+```
+┌────────────────────────────────────────────────────────────┐
+│ Gymnázium Pardubice, Dašická 1083            [GY4] [GY8]   │
+│ Dašická 1083, Pardubice · zřizovatel: kraj                 │
+│                                                            │
+│  Gymnázium — všeobecné, 4leté                              │
+│    ● středně těžké   68 míst · 3,1 přihlášky na místo      │
+│  Gymnázium — všeobecné, 8leté                              │
+│    ● těžké           30 míst · 4,8 přihlášky na místo      │
+└────────────────────────────────────────────────────────────┘
+```
+
+Tím se odpovídá na „jaké školy se nabízejí“: 13 karet místo 36 řádků, a je vidět, že jde o jeden dům se dvěma nabídkami různé obtížnosti.
+
+### 3.3 Odznak obtížnosti u každé nabídky
+
+Pět stupňů, názvy a věty **přesně ze slovníku** (nic nového se nezavádí):
+
+| Hodnota v datech | Odznak v tabulce | Věta u nabídky |
+|---|---|---|
+| `kapacita_nerozhodovala` | místo pro všechny | Místo bylo pro všechny, kdo splnili podmínky školy |
+| `vetsina_uspela` | dostala se většina | Dostala se většina soutěžících |
+| `stredne_tezke` | středně těžké | Dostat se sem je středně těžké |
+| `tezke` | těžké | Dostat se sem je těžké |
+| `velmi_tezke` | velmi těžké | Dostat se sem je velmi těžké |
+
+**Vždy s podílem a rokem**, jak slovník vyžaduje, protože zařazení zůstalo mezi roky 2025 a 2026 stejné jen u 48,9 % nabídek: „dostat se sem je středně těžké: ze 112 soutěžících uchazečů se v 1. kole 2026 dostalo 61; v roce 2025 se dostala většina“. Podíl slovy dává hotová `slovniPodil()`.
+
+**Barva:** neutrální stupnice (šedá → tmavší), **ne červená/zelená**. Dnešní tabulka barví přihlášky na místo červeně nad 3× (`CitySchoolsTable.tsx`), což čte jako „špatná škola“. Obor, kam se dostal každý, není horší škola; je to jiná poptávka.
+
+**Kde se odznak nezobrazí:** pod 10 soutěžícími uchazeči (jeden uchazeč by přehodil stupeň) a u oborů, které v zobrazeném ročníku nemají data. Pak se místo odznaku píše, proč chybí. V Pardubicích **nepadá pod práh ani jedna z 36 nabídek**, takže se ukáže u všech; u menších měst to tak být nemusí a chybějící údaj není nula. U oborů s talentovou zkouškou se doplňuje věta, že rozhodovala i ona.
+
+### 3.4 Filtry, kterými rodina zúží nabídku
+
+Nad kartami tři řady, kombinovatelné: **obtížnost přijetí** (pět stupňů, z pruhu v hero), **typ školy** (dnes už je) a **zřizovatel**. Filtr podle obtížnosti plní zadání „aby si lidé udělali přehled, co jsou méně náročné a více náročné školy“, aniž by cokoli řadil.
+
+### 3.5 Řazení: jen tím, co je na to doložené
+
+Ponechat řazení podle názvu, počtu míst a přihlášek na místo. **Nepřidávat řazení podle obtížnosti** (oddíl 1). Výchozí řazení podle názvu školy, ne podle žádného ukazatele — jinak vzniká žebříček, i když ho tak nepojmenujeme.
+
+### 3.6 Letopočet z registru
+
+Zavést `zobrazeneObdobi('cermat-vysledky')` čtené z `public/stav_datovych_sad.json` a použít je v titulku, popisu, nadpisech sloupců i ve větách. Žádný letopočet v JSX.
+
+### 3.7 „Analýzu situace“ rozpustit
+
+Čtyři z pěti odstavců jsou metodické výhrady — patří do rozklikávacích vysvětlivek pod tabulkou, kde už podobné jsou. Na začátku stránky zůstane **jedna věta odvozená z rozložení obtížnosti**, například: „Z 36 nabídek v 1. kole 2026 bylo u 14 místo pro všechny, kdo splnili podmínky školy, a u 3 bylo těžké se dostat.“ Zastaralý komentář o Claude API a zbytečný `try`/`catch` na `page.tsx:204-210` odstranit.
+
+### 3.8 Nekopírovat vzor z krajského přehledu
+
+`src/components/RegionSchoolsTable.tsx:254` **řadí podle starého indexu `obtiznost`** a `getDifficultyClass()` v `src/lib/utils.ts:46-53` ho barví semaforem „Vysoká/Střední/Nízká“ na ručních hranicích 45 a 70. To je ten ukazatel bez doloženého výpočtu, jehož hodnota se nezměnila ani po přidání dat 2026. Audit `docs/audit-obtiznost-prijeti-2027.md` ve vypořádání výslovně uvádí, že „regionální řazení a přehled škol vyžadují následný společný audit definice“. **Je to existující dluh, ne předloha** — městská stránka musí vzít vzor ze stránky školy, ne z kraje. Stojí za samostatnou dávku.
+
+---
+
+## 4. Nepoužité sloupce, které jsem zvážil
+
+Povinný krok podle CLAUDE.md: níže je rozhodnutí o údajích, které ve zdrojích leží a které na této stránce **nepoužiji**. Zamítnutí je platný závěr, mlčení není.
+
+| Údaj | Kde je | Rozhodnutí |
+|---|---|---|
+| `obtiznost` (index) | `school-analysis-legacy`, `src/lib/priorities/calculations.ts` | **Nepoužít.** Slovník, oddíl 6: „Definice ani vzorec nejsou dohledané“, hodnota se nezměnila ani po přidání dat 2026. Je to ten ukazatel, který se jménem nabízí jako první — a je zakázaný. Zadání plní `zarazeni_obtiznosti`. |
+| `prumerne_umisteni_prijatych` | `souhrny_kolo1.json` | **Nepoužít v přehledu**, jen na stránce oboru. Popisuje, s jakými výsledky přicházejí spolužáci; v městském srovnání by se čtlo jako známka školy. |
+| `tlak_prvnich_voleb` | `souhrny_kolo1.json` | **Nepoužít jako sloupec.** Je ověřený pro předpověď, ale rodina ho nečte; přihlášky na místo stačí. |
+| `cj_ma_prijati`, `cj_prijati`, `ma_prijati` | `souhrny_kolo1.json` | **Nepoužít jako hlavní sloupec** (dnes jím je). Body se nesmí srovnávat mezi ročníky a průměr přijatých není hranice přijetí. Patří na stránku oboru k pásmům. |
+| `conditions_not_met` | `souhrny_kolo1.json` | **Použít**, ale jen jako doplněk u nabídky, kde dosáhne počtu přijatých nebo 20 % přihlášek — tak to slovník vyžaduje, protože podmínky školy mohou být hlavní překážkou i tam, kde kapacita nerozhodovala. |
+| 2. kolo (`cermat-kolo2-agregaty`) | registr sad | **Nepoužít v této dávce.** Pro městský přehled by bylo cenné („kde ještě byla místa“), ale má vlastní návrh `docs/druhe-kolo.md` a vlastní období. Samostatná dávka. |
+| Obory bez JPZ | CERMAT | **Nepoužít, ale přiznat.** Populace souhrnů je „denní nezkrácené studium s povinnou jednotnou zkouškou“. Učební obory bez JPZ tedy v přehledu chybí, což je u městské stránky velká výseč. Dnešní stránka to zmiňuje jen ve složené vysvětlivce; návrh to má napsat nad tabulku. |
+| Městská část, ulice, PSČ | `schools_data.json` (`mestska_cast`, `ulice`, `psc`) | **Použít ulici** v kartě školy (rodina pozná, kde to je). Městskou část u Pardubic nepoužít — je prázdná; u Prahy a Brna má smysl jako filtr, ale to je jiná dávka. |
+| Doprava (`doprava-gtfs`) | registr sad | **Nepoužít teď.** „Jak se tam dostanu“ je na městské stránce silná otázka, ale je to samostatná funkce s vlastním zdrojem. |
+| Inspekce (`csi-inspekce`) | registr sad | **Nepoužít v přehledu.** Do karty školy by se vešlo, ale míchat inspekci s přijímacími daty v jednom pohledu svádí ke čtení „dobrá/špatná škola“. |
+
+Sloupce, které dokument `docs/zdroje-dat.md` vede jako nepoužité v oddílu 3, prochází samostatná rešerše; její výsledek doplním do tohoto oddílu, než se začne programovat.
+
+---
+
+## 5. Co se tím pro rodinu změní
+
+| Dnes | Po změně |
+|---|---|
+| 36 řádků nabídek, škola se opakuje | 13 karet škol, nabídky uvnitř |
+| obtížnost přijetí nikde | rozložení v hero + odznak u každé nabídky + filtr |
+| hlavní sloupec jsou body přijatých | hlavní údaj je, kolik soutěžících se dostalo |
+| „dostupnější / náročnější“ podle bodů | věty ze slovníku s podílem a rokem |
+| červená nad 3 přihlášky na místo | neutrální stupnice bez hodnocení |
+| letopočet napevno na 444 místech | období z registru |
+| stránka začíná pěti odstavci výhrad | jedna věta o rozložení obtížnosti, výhrady do vysvětlivek |
+| „Pardubice“ ve vyhledávači najde jen školy | první výsledek je „Pardubice — kompletní přehled škol“ |
+| `/mesto` je 20 karet bez hledání | filtrační pole a seskupení podle kraje |
+
+---
+
+## 6. Vyhledávání města
+
+Zadání: kdo napíše „Pardubice“, má dostat nabídku „Pardubice — kompletní přehled škol“ vedoucí na `/mesto/pardubice`, ne jen seznam škol v Pardubicích.
+
+### 6.1 Proč to dnes nefunguje
+
+`src/app/api/schools/search/route.ts:175` bere `obec` do fulltextu, takže „Pardubice“ školy najde — ale API vrací výhradně pole `schools`. **Město jako typ výsledku neexistuje**, takže cesta na městský přehled ve vyhledávání není. Je to ta nejčastější vstupní fráze rodiny („jaké jsou u nás školy“) a vede do seznamu jednotlivých oborů.
+
+### 6.2 Návrh: výsledek typu „město“ nad školami
+
+API dostane druhé pole `mesta`, komponenta je vykreslí jako první skupinu, vizuálně odlišenou:
+
+```
+┌──────────────────────────────────────────────┐
+│ pardubice                                    │
+├──────────────────────────────────────────────┤
+│ MĚSTA                                        │
+│ 🏙  Pardubice — kompletní přehled škol        │
+│     13 škol · 36 nabídek v 1. kole 2026      │
+├──────────────────────────────────────────────┤
+│ ŠKOLY                                        │
+│ Gymnázium Pardubice, Dašická 1083            │
+│ Střední průmyslová škola elektrotechnická…   │
+└──────────────────────────────────────────────┘
+```
+
+Shoda na město je **prefixová a bez diakritiky** (`pardub` → Pardubice), aby fungovalo psaní bez háčků a nedokončené slovo.
+
+### 6.3 Past: web má jen 20 měst
+
+`src/lib/mesta.mjs` vede **20 měst** (Praha, …). Kdo napíše „Chrudim“, městský výsledek nedostane, protože stránka pro Chrudim neexistuje. Dvě možná řešení:
+
+| Varianta | Co udělá | Cena |
+|---|---|---|
+| **A. Nabídnout jen existující města** | 20 měst má výsledek, ostatní ne | Nic. Ale u 21. města mlčí a člověk nepozná, že to není chyba psaní. |
+| **B. Doplnit obce z katalogu** | shoda proti `obec` ze `schools_data.json`; pro obec bez stránky vede výsledek na filtrovaný seznam škol | Nová stránka nebo parametr; víc práce |
+
+Doporučuji **A pro tuto dávku** s jasným chováním: když shoda na město není a jsou výsledky škol, ukáže se jen skupina ŠKOLY, bez prázdné hlavičky MĚSTA. Variantu B vyhodnotit podle toho, kolik dotazů na obce mimo dvacítku ve skutečnosti přichází — to je měřitelné v Matomo, ne odhadem.
+
+### 6.4 Rozcestník `/mesto`
+
+Stránka dnes vypisuje 20 karet bez vyhledávacího pole (`src/app/mesto/page.tsx`). U dvaceti položek je pole méně důležité než řazení, přidávám tedy oboje:
+
+- **filtrační pole** nad kartami (okamžité, bez odeslání) — plní zadání „možnost vyhledávat podle města“;
+- **seskupení karet podle kraje**, protože rodina hledá „něco u nás“ a kraj je nejbližší vodítko;
+- na kartě města **počet škol a nabídek** místo dnešních součtů přihlášek.
+
+### 6.5 Co se do vyhledávání nepřidá
+
+**Kraj a okres jako typ výsledku.** Web má krajové přehledy, ale míchat tři územní úrovně do jednoho seznamu výsledků ho znepřehlední. Nejdřív města, pak podle měření.
+
+---
+
+## 7. Nálezy z rešerše zdrojů, které mění návrh
+
+Rešerše `docs/zdroje-dat.md` (oddíl 3 a 5) přinesla čtyři věci, které výše uvedené opravují nebo doplňují.
+
+**7.1 Chybějící údaj není nula — a přesně na tomhle se to už jednou rozbilo.** Past 4 dokumentu: „U indexu obtížnosti se takhle **386 oborů bez dat** tvářilo jako nejsnazší.“ Pro tento návrh je to nejzávaznější věta: obory bez jednotné zkoušky nesmí v pruhu ani ve filtru spadnout do „místo pro všechny“. Řešení: obory bez JPZ do rozložení obtížnosti **nevstupují vůbec** a pruh nese větu, kolika nabídek ze celkového počtu se týká.
+
+**7.2 Ve 2. kole 2026 existuje 174 nabídek, které v 1. kole nejsou.** Městský přehled postavený na 1. kole je tedy přehlédne. Pro rodinu, která se dívá „co je u nás“, je to podstatná výseč. Nemění to rozhodnutí odložit 2. kolo do samostatné dávky, ale zvyšuje jeho prioritu a patří to do věty o tom, co přehled neobsahuje.
+
+**7.3 Dopravní dostupnost už má hotové API.** `src/app/api/dostupnost/route.ts` nad GTFS daty (sada `doprava-gtfs`, období 2026-02-07). Původní rozhodnutí „nepoužít teď“ tím zlevňuje — na kartě školy by šlo ukázat dojezd, aniž by se stavěl nový zdroj. Ponechávám mimo tuto dávku, ale jako první kandidát na navazující.
+
+**7.4 Co konkrétně chybí v kódu.** `CitySchoolRow` nenese `capacity_rejected` ani `conditions_not_met`, tedy právě pole, ze kterých `zarazeniObtiznosti()` a `soutezicichUchazecu()` počítají. `cityData.ts` musí začít číst `public/souhrny_kolo1.json` přes existující `src/lib/souhrny-kolo1.ts`. Párovací mechanismus je kompatibilní — `cityData.ts` už `normalizeSchoolKey` a `uniqueSchoolIndex` používá a `souhrny-kolo1.ts` staví na témže modulu.
+
+**7.5 Vzor k napodobení je tabulka „Kam se hlásí stejní uchazeči“.** `src/components/skola/ProfilSkoly.tsx:687-724` je seznam cizích škol s obtížností, vzdáleností a odkazem — nejbližší předloha městskému přehledu. Odznak je tam šedá pilulka `bg-slate-200/70` s krátkým popiskem a pod ní 12px „30 ze 112“. Pro nadpisy existuje druhá sada `NADPIS_OBTIZNOSTI` s celými frázemi („Velmi těžké se dostat“), protože samotné „Velmi těžké“ jako nadpis slovník zakazuje. Pro mobilní kartu platí: obtížnost nepatří do mřížky tří čísel, ale nad ni jako pilulka.
+
+**7.6 Oprava zastaralé dokumentace (nález k nahlášení).** Past 5 v `docs/zdroje-dat.md` tvrdí: „Web má přihlášky, kapacity a výsledky za rok 2026, ale **data uchazečů jen za rok 2025** … **nepřevzali jsme je**.“ To už neplatí: registr vede u `cermat-uchazeci-kolo1` zobrazené období **2026** s `prepnuto: 2026-09-17` a soubory `public/pasma_prijeti_2026.json`, `soubeh_prihlasek_2026.json` i `kontext_prihlasek_2026.json` existují. Text pasti 5 je potřeba opravit samostatnou dávkou, aby nesváděl k chybným závěrům.
+
+---
+
+## 8. Otevřené otázky pro zadavatele
+
+1. **Obory bez JPZ** — v městském přehledu chybí učební obory bez jednotné zkoušky, u města je to velká výseč nabídky. Přiznat větou nad tabulkou, nebo je samostatnou dávkou doplnit ze zdroje?
+2. **Města mimo dvacítku** (oddíl 6.3) — nechat vyhledávání u 21. města mlčet, nebo dovést na filtrovaný seznam škol?
+3. **2. kolo** — 174 nabídek 2026 existuje jen ve 2. kole. Má na městské stránce být „kde ještě byla místa“, nebo to zůstane na stránce oboru?
+4. **Krajský přehled** (oddíl 3.8) — řadí a barví podle indexu bez doloženého výpočtu. Opravit ve stejné dávce, nebo samostatně?
+
+---
+
+## Historie
+
+| Verze | Změna |
+|---|---|
+| 1.1 | Doplněno vyhledávání města (oddíl 6) po doplnění zadání z 21. 9. 2026 a nálezy dvou rešerší (oddíl 7). **Opraven chybný závěr 2.5**: narativ na městské stránce nevolá jazykový model, generování bylo odstraněno 11. 9. 2026; závada je v tom, že blok „Analýza situace“ nese čtyři odstavce metodických výhrad. Zjištěno, že krajský přehled řadí podle zakázaného indexu `obtiznost` (oddíl 3.8), a že tvrzení pasti 5 v `docs/zdroje-dat.md` o datech uchazečů za rok 2025 už neplatí. |
+| 1.0 | Založení (21. 9. 2026): rozbor šesti závad stránky města, obtížnost přijetí jako odznak a filtr místo řazení, seskupení po školách, období z registru, rozhodnutí o nepoužitých sloupcích. |

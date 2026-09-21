@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { ProfilSkolyData, OborSkoly } from '@/lib/skola-profil-data';
-import { cislo, zOd, ZARAZENI_POPISEK, type ZarazeniObtiznosti } from '@/lib/obor-profil';
+import {
+  cislo, zOd, ZARAZENI_POPISEK, NADPIS_OBTIZNOSTI, PORADI_OBTIZNOSTI,
+  type ZarazeniObtiznosti,
+} from '@/lib/obor-profil';
 import { delkaSlovy, jakCastoNadStredem, nazevSObci, oboryVetou, pocetOboru, STAV_POPISEK } from '@/lib/skola-vyklad';
 import { formatDatumCz } from '@/lib/portal-skol';
 import { SkupinaVKraji } from '@/components/obor/grafy';
@@ -24,14 +27,6 @@ interface ProfilSkolyProps {
 
 const EDITACE = '/pro-skoly';
 
-const NADPIS_OBTIZNOSTI: Record<ZarazeniObtiznosti, string> = {
-  velmi_tezke: 'Velmi těžké se dostat',
-  tezke: 'Těžké se dostat',
-  stredne_tezke: 'Středně těžké se dostat',
-  vetsina_uspela: 'Dostala se většina',
-  kapacita_nerozhodovala: 'Místo pro všechny',
-};
-const PORADI_OBTIZNOSTI: ZarazeniObtiznosti[] = ['velmi_tezke', 'tezke', 'stredne_tezke', 'vetsina_uspela', 'kapacita_nerozhodovala'];
 
 function malePismeno(text: string) {
   return text ? text.charAt(0).toLowerCase() + text.slice(1) : text;

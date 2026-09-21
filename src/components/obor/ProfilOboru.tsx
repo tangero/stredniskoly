@@ -6,6 +6,7 @@ import { MIN_PRIJATYCH_PRO_HRANICI } from '@/lib/pasma-prijeti';
 import { vetyDruhehoKola, VYSVETLENI_DRUHEHO_KOLA } from '@/lib/druhe-kolo-vyklad';
 import {
   ZARAZENI_POPISEK, cislo, popisekObtiznosti, slovniPodil, vKraji, soutezicichUchazecu, textPoradi, vetaPozadavku, zOd, zminitPozadavek,
+  VYSVETLENI_SOUTEZICICH,
 } from '@/lib/obor-profil';
 import {
   MrizkaSoutezicich, PasmaBodu, RozpadPrihlasek, SkupinaVKraji, SloupceSoutezicich, VysledekUchazecu,
@@ -22,7 +23,6 @@ interface ProfilOboruProps {
   skolaHref: string;
 }
 
-const VYSVETLENI_SOUTEZICICH = 'tedy těch, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš';
 
 function Otazka({ id, cislo: poradi, nadpis, rok, children }: { id: string; cislo: number; nadpis: string; rok?: string; children: ReactNode }) {
   return (

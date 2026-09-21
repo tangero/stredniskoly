@@ -1,6 +1,8 @@
 import { normalizeSchoolKey, uniqueSchoolIndex } from './school-key';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { souhrnyPodleRedizo, type SouhrnProKatalog } from './souhrny-kolo1';
+import { zarazeniObtiznosti, soutezicichUchazecu, type ZarazeniObtiznosti } from './obor-profil';
 
 function slugify(text: string): string {
   return text
@@ -79,6 +81,22 @@ export interface CitySchoolRow {
   delta2026: number | null;
   rankInType2026: number | null;
   typeTotal2026: number | null;
+  /** Ulice sídla školy; rodina podle ní pozná, kde ve městě to je. */
+  ulice: string;
+  /**
+   * Obtížnost přijetí slovy za zobrazený ročník, se všemi prahy zobrazení
+   * uplatněnými (`zarazeniObtiznosti`). `null` znamená, že se nezobrazuje —
+   * ne že by bylo snadné se dostat.
+   */
+  zarazeni: ZarazeniObtiznosti | null;
+  /** Zařazení v předchozím ročníku; slovník vyžaduje uvést ho vedle. */
+  zarazeniPredchozi: ZarazeniObtiznosti | null;
+  predchoziRok: number | null;
+  /** Soutěžící uchazeči a přijatí ze souhrnů, pro větu „přijato X ze Y“. */
+  soutezici: number | null;
+  prijatiZeSoutezicich: number | null;
+  /** Nesplnili podmínky školy; uvádí se vedle, když je jich hodně (slovník). */
+  nesplniliPodminky: number | null;
 }
 
 export interface NationalTypeStats {
@@ -145,6 +163,25 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
 
   const map2024 = new Map<string, RawSchool>(city2024.map(s => [s.id, s]));
 
+  // Obtížnost přijetí ze souhrnů 1. kola. Páruje se REDIZO + KKOV + zaměření;
+  // na hrubším klíči by se nabídky téhož oboru s různým zaměřením slily.
+  const souhrny = await souhrnyPodleRedizo(new Set(city2025.map(s => String(s.redizo))));
+  const klicZamereni = (kkov: string, zamereni: string) =>
+    `${kkov}|${normalizeSchoolKey(zamereni || '')}`;
+  const souhrnProRadek = new Map<string, SouhrnProKatalog>();
+  for (const [redizo, nabidky] of souhrny) {
+    // Zaměření, které se v jednom REDIZO a KKOV vyskytuje víc než jednou, vynecháme:
+    // nešlo by určit, který řádek katalogu k němu patří.
+    const podleKlice = new Map<string, typeof nabidky[number][]>();
+    for (const n of nabidky) {
+      const k = klicZamereni(n.kkov, n.zamereni);
+      podleKlice.set(k, [...(podleKlice.get(k) ?? []), n]);
+    }
+    for (const [k, seznam] of podleKlice) {
+      if (seznam.length === 1) souhrnProRadek.set(`${redizo}|${k}`, seznam[0]);
+    }
+  }
+
   // Build per-school rows (based on 2025 as primary)
   const rows: CitySchoolRow[] = city2025.map(s25 => {
     const s24 = map2024.get(s25.id);
@@ -155,6 +192,13 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
     const cer26 = canMatch ? cermatIndex.get(key)?.[1] : undefined;
 
     const slug = `${s25.redizo}-${slugify(s25.nazev)}-${slugify(s25.obor)}`;
+
+    const souhrn = souhrnProRadek.get(
+      `${s25.redizo}|${klicZamereni(String(s25.kkov ?? ''), String(s25.zamereni ?? ''))}`,
+    );
+    // Práh deseti soutěžících uplatňuje zarazeniObtiznosti, ne tento soubor.
+    const zarazeni = souhrn ? zarazeniObtiznosti(souhrn.aktualni) : null;
+    const soutezici = souhrn ? soutezicichUchazecu(souhrn.aktualni) : null;
 
     return {
       id: s25.id,
@@ -184,6 +228,13 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
       delta2026: cer26?.delta_cj_ma ?? null,
       rankInType2026: cer26?.rank_in_type ?? null,
       typeTotal2026: cer26?.type_total ?? null,
+      ulice: s25.ulice || '',
+      zarazeni,
+      zarazeniPredchozi: souhrn?.predchozi ? zarazeniObtiznosti(souhrn.predchozi) : null,
+      predchoziRok: souhrn?.predchoziRok ?? null,
+      soutezici,
+      prijatiZeSoutezicich: souhrn?.aktualni.prijati ?? null,
+      nesplniliPodminky: souhrn?.aktualni.conditions_not_met ?? null,
     };
   });
 
