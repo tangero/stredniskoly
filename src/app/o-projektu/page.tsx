@@ -86,7 +86,7 @@ function datumCesky(iso: string | null): string | null {
  * místo ročníku slovo „prubezne“, které do textu nepatří.
  */
 function obdobiCesky(obdobi: string | null): string {
-  if (!obdobi) return '—';
+  if (!obdobi) return '-';
   if (obdobi === 'prubezne') return 'průběžně';
   return datumCesky(obdobi) ?? obdobi;
 }
@@ -263,11 +263,11 @@ export default async function OProjektuPage() {
             </div>
 
             <p className="text-sm text-slate-600 mt-4">
-              Že v registru stojí i sady, které se nezobrazují, není nepořádek, ale záměr.
-              Soupis má být úplný, aby se při návrhu nové funkce hledalo mezi tím, co projekt
-              opravdu má, a ne mezi tím, co už je na webu vidět. Jedna sada je dokonce vedená
-              jako <em>zobrazovat se nesmí</em>: obsahuje starší dopočty, které se rozcházejí
-              s nynější metodikou.
+              Sady, které se nezobrazují, jsou v soupisu schválně. Má být úplný, aby se při
+              návrhu nové funkce hledalo mezi tím, co projekt opravdu má. Jinak se hledá mezi
+              tím, co už je na webu vidět, a to je past, do které jsem spadl. Jedna sada je
+              dokonce vedená jako <em>zobrazovat se nesmí</em>: obsahuje starší dopočty, které
+              se rozcházejí s nynější metodikou.
             </p>
 
             {/* ------------------------------------------------------------ */}
@@ -329,7 +329,7 @@ export default async function OProjektuPage() {
                 čtrnáct oborů sdílí jednu adresu, dřív než si toho všimne rodič.
               </li>
               <li>
-                <strong>Provoz je levný.</strong> Většina webu jsou soubory, ne výpočty.
+                <strong>Provoz je levný.</strong> Většinu webu tvoří hotové soubory.
               </li>
             </ul>
             <p className="text-slate-700 mt-4">
@@ -415,7 +415,7 @@ export default async function OProjektuPage() {
                         <div className="text-xs text-slate-500 mt-1 italic">{b.zduvodneni}</div>
                       </td>
                       <td className="py-3 pr-3 text-right text-slate-700 whitespace-nowrap">
-                        {b.radku === null ? '—' : cislo(b.radku)}
+                        {b.radku === null ? '-' : cislo(b.radku)}
                       </td>
                       <td className="py-3 text-right font-semibold text-slate-800 whitespace-nowrap">
                         {b.clovekodnu}
@@ -429,7 +429,7 @@ export default async function OProjektuPage() {
                         {Math.round(REZIE_RIZENI * 100)} % k práci výše, běžná režie u dodávky této velikosti
                       </span>
                     </td>
-                    <td className="py-2 pr-3 text-right text-slate-500">—</td>
+                    <td className="py-2 pr-3 text-right text-slate-500">-</td>
                     <td className="py-2 text-right font-semibold text-slate-800">{CLOVEKODNU_RIZENI}</td>
                   </tr>
                   <tr className="border-t-2 border-slate-400">
@@ -503,43 +503,42 @@ export default async function OProjektuPage() {
             {/* ------------------------------------------------------------ */}
             <Nadpis id="skutecnost" cislo={8}>Kolik to stálo doopravdy</Nadpis>
             <p className="text-slate-700">
-              Tým to nedělal. Web postavil jeden člověk ve spolupráci s jazykovým modelem,
-              metodou, které se říká vibecoding: člověk určuje, co se má stát a proč, rozhoduje
-              sporné otázky a dílo přebírá; model píše kód, rozbory a dokumentaci.
+              Žádný tým na tom nedělal. Web jsem postavil sám ve spolupráci s jazykovým
+              modelem: určuju, co se má stát a proč, rozhoduju sporné otázky a dílo přebírám,
+              model píše kód, rozbory a dokumentaci.
             </p>
             <p className="text-slate-700 mt-4">
-              Nejde o to, že by se práce zlevnila o pár procent. Rozdíl je řádový, a stojí za to
-              říct nahlas, čím to je. Nejdražší položka klasické dodávky bývá rozbor dat: někdo
-              musí otevřít tabulku o devadesáti jedna sloupcích a zjistit, co v nich je. Tahle
-              práce je pro model levná a rychlá, zatímco pro tým znamená týdny. Druhá věc je, že
-              oponentura vlastního návrhu tu nic nestojí. Když se ukáže, že ukazatel je
-              postavený špatně, přepíše se, místo aby se obhajoval do konce projektu.
+              Rozdíl je řádový a stojí za to říct nahlas, čím to je. Nejdražší položkou klasické
+              dodávky bývá rozbor dat. Někdo musí otevřít tabulku o devadesáti jedna sloupcích
+              a zjistit, co v nich vlastně je. Pro tým jsou to týdny, tady odpoledne. Druhá věc:
+              oponentura vlastního návrhu tu nestojí nic. Když se ukáže, že jsem ukazatel
+              postavil špatně, přepíšu ho. Nehledám argument, proč to tak stačí.
             </p>
             <p className="text-slate-700 mt-4">
-              Co to naopak nezlevnilo: rozhodování, co se smí rodičům tvrdit. Právě proto je
-              v repozitáři {cislo(DOKUMENTACE.souboru)} dokumentů. Většina z nich neříká, jak
-              kód funguje, ale proč se něco počítá tak a ne jinak, a co se zamítlo.
+              Co nezlevnilo ani o korunu: rozhodnout, co se smí rodičům tvrdit. Právě proto mám
+              v repozitáři {cislo(DOKUMENTACE.souboru)} dokumentů. Většina z nich popisuje, proč
+              se něco počítá tak a ne jinak, a co jsem zamítl. Jak kód funguje, v nich nenajdete.
             </p>
 
             <div className="mt-6 p-5 rounded-lg border-l-4" style={{ backgroundColor: '#f1f7ff', borderColor: '#0074e4' }}>
-              <div className="text-sm text-slate-600 mb-1">Odpracovaný čas autora</div>
+              <div className="text-sm text-slate-600 mb-1">Kolik času to stálo mě</div>
               <div className="text-2xl md:text-3xl font-bold" style={{ color: '#28313b' }}>
                 zhruba {cislo(VLASTNI_CAS_HODIN)} hodin
               </div>
               <div className="text-sm text-slate-700 mt-2">
                 Za {mesicu} {tvar(mesicu, 'měsíc', 'měsíce', 'měsíců')}, od{' '}
-                {changelog[changelog.length - 1]?.date}. Nikdo si
-                hodiny nevykazoval; číslo vychází z časových odstupů mezi {cislo(COMMITU)}{' '}
-                commity. <strong>Není to čistý čas nad tímto webem</strong> - v týchž hodinách
-                vznikal i jiný projekt.
+                {changelog[changelog.length - 1]?.date}. Hodiny jsem si
+                nevykazoval, číslo jsem zrekonstruoval z časových odstupů mezi {cislo(COMMITU)}{' '}
+                commity. <strong>Čistý čas nad tímto webem to není</strong> - v týchž hodinách
+                mi vznikal i druhý projekt.
               </div>
             </div>
             <p className="text-slate-700 mt-4">
               Vedle sebe to tedy stojí takhle: zhruba {cislo(VLASTNI_CAS_HODIN)} hodin proti{' '}
               {cislo(CLOVEKODNU_CELKEM * HODIN_ZA_DEN)} hodinám, které by na týž rozsah potřeboval
-              dodavatelský tým. Dělit jedno druhým a vydávat výsledek za míru úspory by ale bylo
-              přehnané: obě čísla jsou odhady, ne měření, a každé se může mýlit o desítky procent.
-              Řádový rozdíl ta dvojice ukazuje spolehlivě, přesný násobek ne.
+              dodavatelský tým. Dělit jedno druhým a vydávat výsledek za míru úspory by bylo
+              přehnané. Obě čísla jsou odhady a každé se může mýlit o desítky procent. Řádový
+              rozdíl ta dvojice ukazuje spolehlivě, přesný násobek už ne.
             </p>
 
             <div className="mt-6 p-5 rounded-lg border border-slate-300">
@@ -547,8 +546,8 @@ export default async function OProjektuPage() {
                 Proč by zakázkový web vypadal jinak
               </div>
               <p className="text-sm text-slate-700">
-                Rozdíl mezi oběma způsoby vedení projektu není hlavně v ceně, ale v tom, kdy se
-                rozhoduje, co web bude umět. Samostatná stránka staví vedle sebe sedm fází veřejné
+                Oba způsoby vedení se liší hlavně v tom, kdy se rozhoduje, co web bude umět.
+                Cena je až důsledek. Samostatná stránka staví vedle sebe sedm fází veřejné
                 zakázky a pětikrokovou smyčku, kterou vznikal tenhle web, a dokládá to pěti
                 případy, kdy se rozhodnutí ukázalo jako špatné až po tom, co padlo.
               </p>

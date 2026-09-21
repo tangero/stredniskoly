@@ -109,15 +109,15 @@ export default function JakVznikalPage() {
               Jak projekt vznikal
             </h1>
             <p className="text-lg text-slate-700">
-              Tentýž web se dá postavit dvěma způsoby. Jeden je standardní postup veřejné správy:
-              zadání, soutěž, specifikace, realizace, přejímka. Druhý je ten, který se opravdu
-              stal: o tom, co web bude umět, se rozhodovalo průběžně a podle toho, co se našlo ve
-              zdrojových datech.
+              Co by se stalo, kdyby tenhle web zadalo ministerstvo? Zadání, soutěž, specifikace,
+              realizace, přejímka. Standardní postup veřejné správy, kterým u nás vzniká skoro
+              každý státní web. Já šel jinudy: o tom, co web bude umět, jsem rozhodoval průběžně
+              a podle toho, co se zrovna našlo ve zdrojových datech.
             </p>
             <p className="text-slate-700 mt-4">
-              Tahle stránka je nestaví proti sobě jako dobrý a špatný. Staví je vedle sebe, protože
-              <strong> každý z nich chrání před jiným rizikem</strong> a za tu ochranu platí jinou
-              cenu. Kdo si má vybrat, potřebuje vědět kterou.
+              Tahle stránka nestaví jeden postup proti druhému jako dobrý proti špatnému. Staví
+              je vedle sebe, protože <strong>každý chrání před jiným rizikem</strong> a za tu
+              ochranu platí jinou cenu. Kdo si má vybrat, potřebuje vědět kterou.
             </p>
 
             {/* ------------------------------------------------------------ */}
@@ -127,8 +127,8 @@ export default function JakVznikalPage() {
                 <div className="font-bold text-slate-800 mb-2">Zakázka chrání zadavatele</div>
                 <p className="text-sm text-slate-700">
                   Ministerstvo utrácí veřejné peníze a musí doložit, že dostalo, co objednalo.
-                  Proto se zadání zafixuje na začátku a přejímka kontroluje shodu s ním. Bez toho
-                  by nešlo rozlišit dodavatele, který dodal, od dodavatele, který nedodal.
+                  Proto se zadání zafixuje na začátku a přejímka hlídá shodu s ním. Bez toho by
+                  nešlo poznat dodavatele, který dodal, od toho, který nedodal. Dává to smysl.
                 </p>
                 <p className="text-sm text-slate-700 mt-2">
                   <strong>Cena té ochrany:</strong> zadání vzniká dřív, než kdokoli otevřel
@@ -138,9 +138,9 @@ export default function JakVznikalPage() {
               <div className="p-5 rounded-lg border-t-4 bg-slate-50" style={{ borderColor: '#0074e4' }}>
                 <div className="font-bold text-slate-800 mb-2">Průběžné vedení chrání výsledek</div>
                 <p className="text-sm text-slate-700">
-                  Když oprava chybného rozhodnutí stojí hodiny, vyplatí se opravovat i to, co by
-                  se jinak obhajovalo do konce projektu. Zadání se smí měnit, protože změna nikoho
-                  nestojí smluvní spor.
+                  Když oprava chybného rozhodnutí stojí hodiny, vyplatí se opravit i to, co by
+                  se jinak obhajovalo do konce projektu. Zadání se smí měnit, protože změna
+                  nikoho nestojí smluvní spor.
                 </p>
                 <p className="text-sm text-slate-700 mt-2">
                   <strong>Cena té ochrany:</strong> nikdo nezávislý nekontroluje, že autor
@@ -176,9 +176,9 @@ export default function JakVznikalPage() {
             {/* ------------------------------------------------------------ */}
             <Nadpis id="prubezne" cislo={3}>Cesta druhá: rozhodování za pochodu</Nadpis>
             <p className="text-slate-700 mb-6">
-              Tady to nejsou fáze, ale <strong>smyčka</strong>. Každá jednotlivá funkce projde
-              těmito pěti kroky zvlášť, a projde jimi znovu, když se ukáže, že napoprvé stála na
-              špatném předpokladu. Právě to opakování je na tom postupu podstatné.
+              Tady jde o <strong>smyčku</strong>. Každá funkce projde těmito pěti kroky zvlášť
+              a projde jimi znovu, když se ukáže, že napoprvé stála na špatném předpokladu. Právě
+              to opakování je na celém postupu podstatné.
             </p>
             <div className="space-y-0">
               {FAZE_AGENTNI.map((f, i) => (
@@ -191,9 +191,8 @@ export default function JakVznikalPage() {
                 první den
               </div>
               <div className="text-sm text-slate-700 mt-2">
-                První verze byla nasazená v den, kdy projekt začal, a od té doby se mění dál.
-                Tohle není zásluha rychlosti psaní, ale důsledek toho, že nasazení nečeká na
-                přejímku.
+                První verze šla ven v den, kdy projekt začal, a od té doby se mění dál. Za to
+                nemůže rychlost psaní. Nasazení prostě nečeká na přejímku.
               </div>
             </div>
 
@@ -220,17 +219,17 @@ export default function JakVznikalPage() {
               </table>
             </div>
             <p className="text-sm text-slate-600 mt-4">
-              Poslední dva řádky jsou ty, které se v podobných srovnáních obvykle vynechávají.
-              Nezávislá kontrola a odolnost proti odchodu člověka jsou skutečné přednosti
-              zakázkového modelu, ne formality navíc.
+              Poslední dva řádky se v podobných srovnáních obvykle vynechávají. Nezávislá
+              kontrola a odolnost proti odchodu člověka jsou skutečné přednosti zakázkového
+              modelu. Formality navíc to nejsou.
             </p>
 
             {/* ------------------------------------------------------------ */}
             <Nadpis id="doklady" cislo={5}>Pět případů, kdy se rozhodnutí ukázalo jako špatné</Nadpis>
             <p className="text-slate-700">
-              Tohle je jádro celého rozdílu. V každém z těchto případů se až po rozhodnutí
-              zjistilo, že stálo na špatném předpokladu. Všechny jsou doložené v repozitáři,
-              včetně toho, co se zamítlo a proč.
+              Tohle je jádro celého rozdílu. Ve všech pěti případech jsem až po rozhodnutí
+              zjistil, že stálo na špatném předpokladu. Všechny jsou doložené v repozitáři,
+              včetně toho, co jsem zamítl a proč.
             </p>
             <div className="mt-5 space-y-5">
               {DOKLADY.map((d) => (
@@ -244,9 +243,9 @@ export default function JakVznikalPage() {
               ))}
             </div>
             <p className="text-slate-700 mt-6">
-              Souhrnně řečeno: zakázkový model by tenhle web nepostavil špatně. Postavil by ho
-              podle zadání, které vzniklo dřív, než kdokoli otevřel zdrojová data. A právě v těch
-              datech se našla podstatná část toho, co web dnes umí.
+              Zakázkový model by tenhle web nepostavil špatně. Postavil by ho podle zadání,
+              které vzniklo dřív, než kdokoli otevřel zdrojová data. A právě v těch datech se
+              našla podstatná část toho, co web dnes umí.
             </p>
 
             {/* ------------------------------------------------------------ */}
@@ -270,10 +269,10 @@ export default function JakVznikalPage() {
               {milionyKc(SMLOUVY.celkemKc)}. Průměr vychází na {milionyKc(prumerSmlouvy)}.
             </p>
             <p className="text-sm text-slate-600 mt-3">
-              Je to <strong>hrubý filtr</strong>, ne srovnatelná skupina: množina obsahuje vývoj,
-              provoz i licence a klíčová slova nerozliší web od účetního systému. Neříká, co stojí
-              postavit tenhle web. Říká jen, v jakém řádu se pohybují smlouvy, pod které by takové
-              dílo spadlo. Data k {SMLOUVY.kDatu} z{' '}
+              Je to <strong>hrubý filtr</strong>. Množina obsahuje vývoj, provoz i licence
+              dohromady a klíčová slova nerozliší web od účetního systému. Co stojí postavit
+              tenhle web, z ní nevyčtete. Říká jen, v jakém řádu se pohybují smlouvy, pod které
+              by takové dílo spadlo. Data k {SMLOUVY.kDatu} z{' '}
               <a
                 href={SMLOUVY.odkaz}
                 className="underline"
@@ -285,17 +284,17 @@ export default function JakVznikalPage() {
               </a>.
             </p>
             <p className="text-slate-700 mt-4">
-              Proti tomu stojí zhruba {cislo(VLASTNI_CAS_HODIN)} hodin vlastního času autora, ve
-              kterých navíc vznikal i jiný projekt. Dělit jedno druhým a vydávat výsledek za míru
-              úspory by bylo přehnané, protože se tu porovnává odhad s odhadem. Řádový rozdíl je
-              ale příliš velký na to, aby ho vysvětlila nepřesnost obou čísel.
+              Proti tomu stojí zhruba {cislo(VLASTNI_CAS_HODIN)} hodin mého času, ve kterých
+              navíc vznikal i druhý projekt. Dělit jedno druhým a vydávat výsledek za míru úspory
+              by bylo přehnané, protože porovnávám odhad s odhadem. Řádový rozdíl je ale příliš
+              velký na to, aby ho vysvětlila nepřesnost obou čísel.
             </p>
 
             {/* ------------------------------------------------------------ */}
             <Nadpis id="komu" cislo={7}>Pro co se který postup hodí</Nadpis>
             <p className="text-slate-700">
-              Z toho všeho neplyne, že by veřejná správa měla přestat soutěžit zakázky. Plyne
-              z toho, kdy je který postup na místě.
+              Znamená to snad, že má veřejná správa přestat soutěžit zakázky? Nic takového.
+              Plyne z toho jen, kdy je který postup na místě.
             </p>
             <div className="grid md:grid-cols-2 gap-4 mt-5">
               <div className="p-5 rounded-lg border border-slate-300">
@@ -319,8 +318,8 @@ export default function JakVznikalPage() {
             </div>
             <p className="text-slate-700 mt-5">
               Tenhle web je druhý případ. Kdyby ho měl převzít stát a provozovat jako veřejnou
-              službu, potřeboval by první: někoho, kdo za něj ručí, a kontrolu, která nezávisí na
-              jednom člověku. To je otázka, na kterou tahle stránka odpověď nedává.
+              službu, potřeboval by ten první: někoho, kdo za něj ručí, a kontrolu nezávislou na
+              jednom člověku. Odpověď na tuhle otázku tady nenajdete.
             </p>
 
             {/* ------------------------------------------------------------ */}

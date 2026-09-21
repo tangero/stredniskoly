@@ -2,8 +2,8 @@
  * Podklady pro stránku /o-projektu/jak-vznikal.
  *
  * Staví vedle sebe dva způsoby, jak tentýž web postavit: veřejnou zakázku
- * a rozhodování za pochodu. Smysl není vyhlásit vítěze, ale ukázat, že každý
- * z nich chrání před jiným rizikem a každý má cenu, kterou za to platí.
+ * a rozhodování za pochodu. Smyslem je ukázat, že každý z nich chrání před jiným
+ * rizikem a každý za tu ochranu platí jinou cenu. Vítěze tu nikdo nevyhlašuje.
  *
  * Co je tu měřené a co odhadnuté:
  *  - fáze zakázkového modelu jsou **odhad** postupu, který je v české veřejné
@@ -66,7 +66,7 @@ export const FAZE_ZAKAZKA: Faze[] = [
   {
     nazev: 'Akceptační řízení',
     popis:
-      'Zadavatel ověří, že dílo odpovídá specifikaci. Zkouší se shoda se zadáním, ne to, jestli je web pro rodiče užitečný. Vady se sepíšou a dodavatel je odstraní.',
+      'Zadavatel ověří, že dílo odpovídá specifikaci. Zkouší se shoda se zadáním. Jestli je web pro rodiče k něčemu dobrý, se v téhle fázi neřeší. Vady se sepíšou a dodavatel je odstraní.',
     rozhoduje: 'zadavatel podpisem akceptačního protokolu',
     vystup: 'protokol o převzetí',
     doba: '1 až 2 měsíce',
@@ -90,23 +90,23 @@ export const FAZE_ZAKAZKA: Faze[] = [
 ];
 
 /**
- * Agentní postup. Není to posloupnost, ale smyčka: pět kroků, kterými projde
- * každá jednotlivá funkce zvlášť, a projdou jimi i podruhé, když se ukáže,
- * že napoprvé stála na špatném předpokladu.
+ * Agentní postup jako smyčka. Pět kroků, kterými projde každá jednotlivá funkce
+ * zvlášť, a projde jimi i podruhé, když se ukáže, že napoprvé stála na špatném
+ * předpokladu. Posloupnost v čase to není.
  */
 export const FAZE_AGENTNI: Faze[] = [
   {
     nazev: 'Otevřít data a zjistit, co v nich je',
     popis:
       'Nejdřív se projdou zdrojové soubory sloupec po sloupci a sepíše se, na jakou otázku rodiče by každý z nich šel použít. Teprve pak se rozhoduje, co web ukáže.',
-    rozhoduje: 'data, ne představa o nich',
+    rozhoduje: 'zdrojová data',
     vystup: 'soupis toho, co je k dispozici',
     doba: 'hodiny',
   },
   {
     nazev: 'Postavit nejmenší použitelnou verzi',
     popis:
-      'Místo specifikace vznikne rovnou stránka, na kterou se dá kliknout. Je levnější ji zahodit než popsat.',
+      'Místo specifikace vznikne rovnou stránka, na kterou se dá kliknout. Zahodit ji vyjde levněji než ji popsat.',
     rozhoduje: 'autor',
     vystup: 'funkční stránka',
     doba: 'hodiny až dny',
@@ -114,7 +114,7 @@ export const FAZE_AGENTNI: Faze[] = [
   {
     nazev: 'Nasadit a ukázat lidem',
     popis:
-      'Web jde na veřejnou adresu hned, ne po přejímce. Zpětná vazba přichází neformálně a průběžně od pedagogů, rodičů a lidí kolem projektu; nejde o stálou skupinu ani o zápisy z jednání.',
+      'Web jde na veřejnou adresu hned, žádná přejímka se nekoná. Zpětná vazba chodí neformálně a průběžně od pedagogů, rodičů a lidí kolem projektu. Stálá skupina to není a zápisy z jednání nikdo nevede.',
     rozhoduje: 'autor po konzultaci',
     vystup: 'nasazená změna a reakce na ni',
     doba: 'tentýž den',
@@ -123,14 +123,14 @@ export const FAZE_AGENTNI: Faze[] = [
     nazev: 'Oponovat vlastní návrh',
     popis:
       'U každého ukazatele se sepíše, co tvrdí a čím se to dokládá. Co se nedá doložit, na web nesmí. Tohle je krok, kde se nejčastěji zjistí, že předchozí rozhodnutí bylo špatné.',
-    rozhoduje: 'doklad, ne autorita',
+    rozhoduje: 'doklad',
     vystup: 'rozbor se zamítnutými variantami',
     doba: 'hodiny',
   },
   {
     nazev: 'Přepsat, co neobstálo',
     popis:
-      'Chybný ukazatel se nepředělává změnovým řízením, ale smazáním a novým výpočtem. Cena opravy je řádově hodiny, takže se opravuje i to, co by se jinak obhajovalo.',
+      'Chybný ukazatel se smaže a spočítá znovu. Žádné změnové řízení. Oprava stojí hodiny, takže se opraví i to, co by se jinak obhajovalo do konce projektu.',
     rozhoduje: 'autor',
     vystup: 'oprava a záznam, proč k ní došlo',
     doba: 'hodiny',
@@ -143,7 +143,7 @@ export interface Srovnani {
   agentni: string;
 }
 
-/** Srovnání po otázkách, ne po vlastnostech. Otázka drží obě odpovědi u sebe. */
+/** Srovnání vedené otázkami: otázka drží obě odpovědi u sebe a nutí je být souměřitelné. */
 export const SROVNANI: Srovnani[] = [
   {
     otazka: 'Kdy se rozhodne, co web bude umět',
@@ -241,9 +241,9 @@ export const DOKLADY: Doklad[] = [
  * Agregát ze smluv veřejné správy, Registr smluv přes Hlídač státu, 21. 9. 2026.
  *
  * **Hrubý filtr.** Kategorie IT a klíčová slova „portál informační systém
- * vzdělávání“ v pásmu 3 až 40 milionů korun. Množina obsahuje vývoj i provoz
- * i licence, takže neříká, co stojí postavit web. Říká jen, v jakém řádu se
- * pohybují smlouvy, pod které by takový web spadl.
+ * vzdělávání“ v pásmu 3 až 40 milionů korun. Množina obsahuje vývoj, provoz
+ * i licence dohromady. Co stojí postavit web, z ní nevyčtete. Říká jen, v jakém
+ * řádu se pohybují smlouvy, pod které by takový web spadl.
  */
 export const SMLOUVY = {
   pocet: 244,

@@ -1,8 +1,8 @@
 /**
  * Model ceny vývoje pro manažerské shrnutí na /o-projektu.
  *
- * **Tohle není měření.** Je to odhad, kolik práce by stejný výsledek stál tým,
- * který ho dělá běžným způsobem. Odhad nemá jak být přesný, a proto je celý
+ * **Je to odhad**, kolik práce by stejný výsledek stál tým, který ho dělá běžným
+ * způsobem. Měření to není a nikdy nebude. Odhad nemá jak být přesný, a proto je celý
  * rozepsaný: bloky, člověkodny, sazby i výhrady stojí na stránce, aby je šlo
  * oponovat po částech místo dohadování o výsledném čísle.
  *
@@ -72,7 +72,7 @@ export const BLOKY: Blok[] = [
     radku: 15_000,
     clovekodnu: 50,
     zduvodneni:
-      'Největší blok rozsahem. Sám o sobě není obtížný, ale drží ho pravidlo „každá nabídka má vlastní stránku“, které si vynutilo vlastní systém adres oborů a jeho testy.',
+      'Největší blok rozsahem a sám o sobě přímočarý. Drží ho ale pravidlo „každá nabídka má vlastní stránku“, a to si vynutilo vlastní systém adres oborů i testy, které ho hlídají.',
   },
   {
     nazev: 'Katalog přijímacího řízení',
@@ -90,7 +90,7 @@ export const BLOKY: Blok[] = [
     radku: 10_090,
     clovekodnu: 35,
     zduvodneni:
-      'Sklízeč cizích feedů je práce s nespolehlivým vstupem: každá škola má jiný tvar, část webů odmítá spojení podle toho, odkud přichází. Odběr e-mailem k tomu přidává souhlasy, tokeny a doby uložení.',
+      'Sklízeč cizích feedů je práce s nespolehlivým vstupem. Každá škola má jiný tvar a část webů spojení rovnou odmítne podle toho, odkud přichází. Odběr e-mailem k tomu přidává souhlasy, tokeny a doby uložení.',
   },
   {
     nazev: 'Dopravní dostupnost',
@@ -117,7 +117,7 @@ export const BLOKY: Blok[] = [
     radku: 4_135,
     clovekodnu: 25,
     zduvodneni:
-      'Řádků málo, práce hodně. Rozbor zpráv psaných volným textem potřebuje vlastní ověření, jak dobře vychází, jinak se do webu dostanou nesprávná tvrzení o konkrétní škole.',
+      'Řádků málo, práce hodně. Rozbor zpráv psaných volným textem potřebuje vlastní ověření, jak dobře vychází. Bez něj se na web dostanou nesprávná tvrzení o konkrétní škole a nikdo si toho nevšimne.',
   },
   {
     nazev: 'Analýza dat a metodika',
@@ -126,7 +126,7 @@ export const BLOKY: Blok[] = [
     radku: null,
     clovekodnu: 40,
     zduvodneni:
-      'Práce datového analytika, ne programátora. Odhad odpovídá 112 dokumentům a zhruba 250 tisícům slov, které vznikly z rozboru dat, ne z popisu hotového kódu.',
+      'Tohle dělá datový analytik. Odhad odpovídá 112 dokumentům a zhruba 250 tisícům slov, které vznikly rozborem dat; popis hotového kódu v nich nehledejte.',
   },
   {
     nazev: 'Návrh a vzhled',
@@ -143,7 +143,7 @@ export const BLOKY: Blok[] = [
     radku: 2_556,
     clovekodnu: 20,
     zduvodneni:
-      'Kódu je málo, ale rozhodnutí, co se smí a nesmí tvrdit, stálo víc než jeho napsání. Web záměrně nepředpovídá přijetí konkrétního dítěte; odhad zahrnuje i zamítnuté varianty výpočtu.',
+      'Kódu je málo. Rozhodnout, co se smí tvrdit, stálo mnohonásobně víc než ho napsat. Web schválně nepředpovídá přijetí konkrétního dítěte; odhad zahrnuje i varianty výpočtu, které jsem zamítl.',
   },
   {
     nazev: 'Testy a průběžná kontrola',
@@ -169,7 +169,7 @@ export const BLOKY: Blok[] = [
     radku: 1_850,
     clovekodnu: 15,
     zduvodneni:
-      'Malá věc s velkým dopadem: bez ní je každé nové vydání dat ruční prací. Odhad je vyšší, než by rozsah napovídal, protože podstatná část je v ošetření případů, kdy zdroj změní tvar souboru.',
+      'Malá věc s velkým dopadem. Bez ní je každé nové vydání dat ruční práce. Odhad je vyšší, než by rozsah napovídal, protože podstatná část sedí v ošetření případů, kdy zdroj změní tvar souboru.',
   },
   {
     nazev: 'Maturitní výsledky',

@@ -8,6 +8,9 @@ z historie commitů.
 
 ## [Unreleased]
 
+### Změněno
+- **Texty obou stránek o projektu přepsány do autorského stylu** — odstraněn negativní paralelismus („není to A, ale B“) na 13 místech, dlouhé pomlčky včetně značky prázdné buňky v tabulkách, a bezosobní formulace tam, kde jde o rozhodnutí autora („Web postavil jeden člověk“ → „Web jsem postavil sám“). Věty rozbité tak, aby za sebou nestály tři dlouhé; úvod stránky o způsobu vedení otevírá otázkou čtenáře místo popisu. Věcná čísla, doklady ani výhrady se nezměnily
+
 ### Přidáno
 - **Stránka `/o-projektu/jak-vznikal`** (`src/lib/zpusob-vyvoje.ts`) — dva způsoby vedení téhož díla vedle sebe: sedm fází veřejné zakázky pro ministerstvo (záměr, řízení, specifikace, realizace, přejímka, předání, záruka) proti pětikrokové smyčce, kterou web vznikal. U každé fáze stojí, kdo v ní rozhoduje, co je výstup a jak dlouho trvá. Odkazovaná z manažerského shrnutí, jinak neodkazovaná a `noindex` stejně jako ono
 - **Jádro výkladu je, že každý postup chrání před jiným rizikem**: zakázka chrání zadavatele před dodavatelem, proto se zadání zafixuje dřív, než kdokoli otevřel zdrojová data; průběžné vedení chrání výsledek před špatným zadáním, proto se zadání mění. Doloženo pěti případy z repozitáře, kdy se rozhodnutí ukázalo jako špatné až po tom, co padlo (soupis zdrojů, sedmistupňová škála obtížnosti, hrubý klíč dobíhajících oborů, 14 kolizních adres, mapa `KKOV` → `SMO16`), a u každého je uvedeno, jak by se týž nález řešil v zakázce
