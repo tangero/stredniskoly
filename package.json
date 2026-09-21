@@ -18,6 +18,7 @@
     "portal:export": "node --experimental-strip-types scripts/portal-export.mjs",
     "portal:export-kontrola": "node --experimental-strip-types scripts/portal-export.mjs --kontrola",
     "test:js": "node --experimental-strip-types --test tests/*.test.mjs",
+    "test:mesto": "npx --yes tsx --test tests/mesto-prehled.test.mjs",
     "test:integrace": "node --experimental-strip-types --test tests/catalog-2026.integration.mjs"
   },
   "dependencies": {

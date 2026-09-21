@@ -40,19 +40,39 @@ function OdznakObtiznosti({ zarazeni }: { zarazeni: ZarazeniObtiznosti | null })
   );
 }
 
-/** Věta „přijato X ze Y soutěžících uchazečů“ a předchozí ročník, jak žádá slovník. */
+/**
+ * Doprovodná věta k odznaku: podíl přijatých, předchozí ročník a nesplněné
+ * podmínky školy.
+ *
+ * Předchozí ročník se vypisuje i tam, kde kapacita nerozhodovala — jinak by
+ * u 226 nabídek zmizela doložená změna obtížnosti. Nesplněné podmínky se
+ * uvádějí, kdykoli dosáhnou počtu přijatých nebo 20 % přihlášek: bez nich
+ * „místo pro všechny“ zamlčí, že hlavní překážkou byly požadavky školy
+ * (slovník ukazatelů, obtížnost přijetí slovy).
+ */
 function PodilPrijatych({ row }: { row: CitySchoolRow }) {
-  if (row.soutezici === null || row.prijatiZeSoutezicich === null) return null;
-  if (row.zarazeni === 'kapacita_nerozhodovala') return null;
-  const loni = row.zarazeniPredchozi && row.predchoziRok
-    ? ` · v roce ${row.predchoziRok} ${ZARAZENI_POPISEK[row.zarazeniPredchozi]}`
-    : '';
-  return (
-    <span className="text-[12px] text-slate-500">
-      přijato {cislo(row.prijatiZeSoutezicich)} {zOd(row.soutezici)} {cislo(row.soutezici)}
-      {loni}
-    </span>
-  );
+  const casti: string[] = [];
+
+  if (row.soutezici !== null && row.prijatiZeSoutezicich !== null
+      && row.zarazeni !== 'kapacita_nerozhodovala') {
+    casti.push(
+      `přijato ${cislo(row.prijatiZeSoutezicich)} ${zOd(row.soutezici)} ${cislo(row.soutezici)}`,
+    );
+  }
+
+  if (row.zarazeniPredchozi && row.predchoziRok) {
+    casti.push(`v roce ${row.predchoziRok} ${ZARAZENI_POPISEK[row.zarazeniPredchozi]}`);
+  }
+
+  const prihlasky = row.prihlasky2026 ?? row.prihlasky2025;
+  const nesplnili = row.nesplniliPodminky;
+  if (nesplnili !== null && nesplnili > 0 && prihlasky
+      && (nesplnili >= (row.prijatiZeSoutezicich ?? 0) || nesplnili >= 0.2 * prihlasky)) {
+    casti.push(`${cislo(nesplnili)} ${zOd(prihlasky)} ${cislo(prihlasky)} přihlášených nedosáhlo požadavků školy`);
+  }
+
+  if (casti.length === 0) return null;
+  return <span className="text-[12px] text-slate-500">{casti.join(' · ')}</span>;
 }
 
 interface Props {
@@ -107,7 +127,7 @@ export function CitySchoolsTable({ schools, rok }: Props) {
         nazev: r.nazev_display,
         ulice: r.ulice,
         zrizovatel: r.zrizovatel,
-        slug: r.slug,
+        slug: r.slugSkoly,
         nabidky: [],
       };
       s.nabidky.push(r);
@@ -253,7 +273,8 @@ export function CitySchoolsTable({ schools, rok }: Props) {
               {s.nabidky.map(r => {
                 const kapacita = r.kapacita2026 ?? r.kapacita2025;
                 const idx = r.index2026 ?? r.index2025;
-                const chybi2026 = r.prihlasky2026 === null;
+                // Vypsanost urcuje souhrn 1. kola, ne shoda se starym exportem prihlasek.
+                const chybiVRocniku = r.chybiVRocniku;
                 return (
                   <li key={r.id} className="py-2.5 first:pt-0 last:pb-0">
                     <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
@@ -274,7 +295,7 @@ export function CitySchoolsTable({ schools, rok }: Props) {
                       {r.avgCjMa2026 !== null && (
                         <> · spolužáci sem přišli s výsledky kolem {cislo(r.avgCjMa2026, 1)} bodů ze 100</>
                       )}
-                      {chybi2026 && (
+                      {chybiVRocniku && (
                         <span className="text-amber-700"> · obor v 1. kole {rok} nevypsán, údaje jsou starší</span>
                       )}
                     </div>

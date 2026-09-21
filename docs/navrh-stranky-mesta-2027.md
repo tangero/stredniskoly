@@ -1,6 +1,6 @@
 # Návrh stránky města: jaké školy se u nás nabízejí
 
-Verze 1.2 · 21. 9. 2026 · Stav: **zrealizováno** (oddíl 9)
+Verze 1.3 · 21. 9. 2026 · Stav: **zrealizováno, oponentura vypořádána** (oddíly 9 a 10)
 
 Zadání zadavatele z 21. 9. 2026: „[/mesto/pardubice] je starý design přehledu škol pro města. Projdi jej a navrhni zlepšení, která umožní lidem lépe vidět, jaké školy se v jejich městech nabízejí. Ukazuj u škol viditelné hodnocení náročnosti přijetí, které u nich máme — aby si lidé udělali přehled, co jsou méně náročné a více náročné školy.“
 
@@ -278,10 +278,37 @@ méně, žádný zakázaný výraz ve vygenerovaném HTML. Rozložení obtížno
 
 ---
 
+## 10. Vypořádání oponentury
+
+Oponentura PR #139 na commitu `7f1d59d` našla pět chyb. **Všech pět jsem ověřil proti
+skutečným datům a všechny byly skutečné**; opraveny v commitu níže. Žádná z nich neshodila
+build ani typovou kontrolu, což je důvod, proč k nim vznikly regresní testy
+(`tests/mesto-prehled.test.mjs`, běží přes `npm run test:mesto`).
+
+| # | Nález | Rozsah | Příčina | Oprava |
+|---|---|---|---|---|
+| 1 | vypsané obory označeny za nevypsané | **462 řádků** | `chybi2026` se odvozovalo z `prihlasky2026`, které pochází ze starého párování `applications_2026.json`; obtížnost jde ze souhrnů, tedy z jiného párování | nové pole `chybiVRocniku` odvozené od souhrnu 1. kola; kapacita, přihlášky a přihlášky na místo se ze souhrnu berou jako záložní zdroj. Rozpor spadl na **0**, skutečně nevypsaných je 115 |
+| 2 | „místo pro všechny“ zamlčelo hlavní překážku | **490 nabídek** | `nesplniliPodminky` se načítalo, ale nikde nezobrazovalo | věta „45 ze 61 přihlášených nedosáhlo požadavků školy“ při prahu ze slovníku (počet přijatých nebo 20 % přihlášek) |
+| 3 | u „místa pro všechny“ mizel předchozí ročník | **226 nabídek** | předčasný `return` v `PodilPrijatych` skryl i historii | věta se skládá po částech, historické zařazení je nezávislé na aktuální kategorii |
+| 4 | hlavička město nenabídla | všechny stránky | **hlavička má vlastní vyhledávání**, `SchoolSearch.tsx` (který jsem upravil) je jen na titulce, `/regiony` a `/skoly` | města doplněna do `Header.tsx` včetně mezipaměti a prázdného stavu |
+| 5 | název školy odkazoval na jeden obor | **679 škol** s víc nabídkami | použit `slug` první nabídky | nové pole `slugSkoly` ze sdíleného `adresaPrehledu()`; název školy se bere ze `school_analysis.json` jako ve zbytku webu, jinak by adresa mířila na 404 |
+
+**Ověřeno po opravě:** rozpor z nálezu 1 je nulový, cílové adresy z nálezu 5 vracejí HTTP 200,
+u Vlasové kosmetiky se zobrazuje zamlčená překážka, API vrací města i při `limit=10`, které
+hlavička používá. 232 testů (225 + 7 nových), build 1269 stránek.
+
+**Poznámka k testům:** `npm run test:js` u tohoto souboru padá na `ERR_MODULE_NOT_FOUND`,
+protože `node --experimental-strip-types` neumí importy bez přípony ani alias `@/`. Týká se
+to i pěti dosavadních souborů (`hlaseni`, `portal-*`), je to tedy existující omezení skriptu,
+ne těchto testů; proto samostatný `npm run test:mesto` nad `tsx`.
+
+---
+
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.3 | Vypořádána oponentura PR #139 (21. 9. 2026), oddíl 10: pět nálezů ověřeno proti datům, všechny platné, opraveny. Nejzávažnější označoval 462 vypsaných oborů za nevypsané, protože vypsanost se odvozovala z jiného párování než obtížnost. Přidány regresní testy. |
 | 1.2 | Zrealizováno (21. 9. 2026), oddíl 9 s pěti odchylkami od návrhu. |
 | 1.1 | Doplněno vyhledávání města (oddíl 6) po doplnění zadání z 21. 9. 2026 a nálezy dvou rešerší (oddíl 7). **Opraven chybný závěr 2.5**: narativ na městské stránce nevolá jazykový model, generování bylo odstraněno 11. 9. 2026; závada je v tom, že blok „Analýza situace“ nese čtyři odstavce metodických výhrad. Zjištěno, že krajský přehled řadí podle zakázaného indexu `obtiznost` (oddíl 3.8), a že tvrzení pasti 5 v `docs/zdroje-dat.md` o datech uchazečů za rok 2025 už neplatí. |
 | 1.0 | Založení (21. 9. 2026): rozbor šesti závad stránky města, obtížnost přijetí jako odznak a filtr místo řazení, seskupení po školách, období z registru, rozhodnutí o nepoužitých sloupcích. |

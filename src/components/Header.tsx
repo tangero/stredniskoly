@@ -25,6 +25,15 @@ interface Kraj {
   nazev: string;
 }
 
+/** Město s vlastní stránkou přehledu škol; vrací /api/schools/search. */
+interface NalezeneMesto {
+  nazev: string;
+  slug: string;
+  kraj: string;
+  skol: number;
+  nabidek: number;
+}
+
 const SEARCH_MIN_LENGTH = 3;
 const SEARCH_DEBOUNCE_MS = 450;
 const SEARCH_CACHE_TTL_MS = 5 * 60 * 1000;
@@ -41,12 +50,13 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+  const [searchMesta, setSearchMesta] = useState<NalezeneMesto[]>([]);
   const [kraje, setKraje] = useState<Kraj[]>([]);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const searchDropdownRef = useRef<HTMLDivElement>(null);
-  const searchCacheRef = useRef<Map<string, { expiresAt: number; results: SearchResult[] }>>(new Map());
+  const searchCacheRef = useRef<Map<string, { expiresAt: number; results: SearchResult[]; mesta: NalezeneMesto[] }>>(new Map());
   const router = useRouter();
   const vyber = useSyncExternalStore(odebiratVyber, ctiSurovyVyber, bezVyberu);
 
@@ -84,7 +94,8 @@ export function Header() {
     const cached = searchCacheRef.current.get(cacheKey);
     if (cached && cached.expiresAt > Date.now()) {
       setSearchResults(cached.results);
-      setIsSearchOpen(cached.results.length > 0);
+      setSearchMesta(cached.mesta);
+      setIsSearchOpen(cached.results.length > 0 || cached.mesta.length > 0);
       setIsLoading(false);
       return;
     }
@@ -97,6 +108,7 @@ export function Header() {
         .then(data => {
           if (!Array.isArray(data.schools)) return;
           const results = data.schools as SearchResult[];
+          const mesta = Array.isArray(data.mesta) ? (data.mesta as NalezeneMesto[]) : [];
           if (searchCacheRef.current.size >= SEARCH_CACHE_MAX_ITEMS) {
             const oldestKey = searchCacheRef.current.keys().next().value;
             if (oldestKey) searchCacheRef.current.delete(oldestKey);
@@ -104,9 +116,11 @@ export function Header() {
           searchCacheRef.current.set(cacheKey, {
             expiresAt: Date.now() + SEARCH_CACHE_TTL_MS,
             results,
+            mesta,
           });
           setSearchResults(results);
-          setIsSearchOpen(results.length > 0);
+          setSearchMesta(mesta);
+          setIsSearchOpen(results.length > 0 || mesta.length > 0);
         })
         .catch(err => {
           if (err instanceof Error && err.name === 'AbortError') return;
@@ -320,11 +334,39 @@ export function Header() {
           </div>
 
           {/* Dropdown s výsledky */}
-          {isSearchOpen && searchQuery.trim().length >= SEARCH_MIN_LENGTH && (searchResults.length > 0 || matchedKraje.length > 0) && (
+          {isSearchOpen && searchQuery.trim().length >= SEARCH_MIN_LENGTH && (searchResults.length > 0 || searchMesta.length > 0 || matchedKraje.length > 0) && (
             <div
               ref={searchDropdownRef}
               className="absolute z-50 w-full mt-2 bg-white rounded-lg shadow-xl border border-slate-200 overflow-hidden max-h-[400px] overflow-y-auto"
             >
+              {/* Města s přehledem škol. Nahoře záměrně: „Pardubice“ nejčastěji
+                  znamená „co je u nás za školy“, ne jednu konkrétní nabídku. */}
+              {searchMesta.length > 0 && (
+                <div>
+                  <div className="px-4 py-2 text-xs font-semibold text-slate-500 bg-slate-50 uppercase tracking-wide">
+                    Města
+                  </div>
+                  {searchMesta.map((mesto) => (
+                    <Link
+                      key={mesto.slug}
+                      href={`/mesto/${mesto.slug}`}
+                      className="block px-4 py-3 hover:bg-blue-50 no-underline"
+                      onClick={() => {
+                        setIsSearchOpen(false);
+                        setSearchQuery('');
+                      }}
+                    >
+                      <div className="font-medium text-slate-900">
+                        {highlightMatch(mesto.nazev, searchQuery)} — kompletní přehled škol
+                      </div>
+                      <div className="text-xs text-slate-400">
+                        {mesto.skol} {mesto.skol === 1 ? 'škola' : mesto.skol < 5 ? 'školy' : 'škol'} · {mesto.kraj}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              )}
+
               {/* Kraje */}
               {matchedKraje.length > 0 && (
                 <div>
@@ -403,7 +445,7 @@ export function Header() {
           )}
 
           {/* Žádné výsledky */}
-          {isSearchOpen && searchQuery.trim().length >= SEARCH_MIN_LENGTH && !isLoading && searchResults.length === 0 && matchedKraje.length === 0 && (
+          {isSearchOpen && searchQuery.trim().length >= SEARCH_MIN_LENGTH && !isLoading && searchResults.length === 0 && searchMesta.length === 0 && matchedKraje.length === 0 && (
             <div className="absolute z-50 w-full mt-2 bg-white rounded-lg shadow-xl border border-slate-200 p-6 text-center">
               <div className="text-slate-400 text-lg mb-2">Nic nenalezeno</div>
               <div className="text-sm text-slate-500">Zkuste jiný výraz nebo zkontrolujte pravopis</div>
