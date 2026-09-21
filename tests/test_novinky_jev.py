@@ -6,13 +6,15 @@ tu měří naše pravidla kolem modelu, ne model sám. Přesnost modelu měří
 """
 import sys
 import unittest
+from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
 import novinky_jev as jev  # noqa: E402
 from novinky_klasifikace import (formatuj_datum, najdi_cas, pozice_dat,  # noqa: E402
-                                 slozeni_souhrnu, text_k_rozboru)
+                                 slozeni_souhrnu, text_k_rozboru,
+                                 vyber_terminy_akce)
 
 
 def odpoved(**volby):
@@ -53,6 +55,33 @@ class SkladaniVety(unittest.TestCase):
 
     def test_datum_se_pise_cesky_bez_nul(self):
         self.assertEqual(formatuj_datum("2027-01-05"), "5. 1. 2027")
+
+
+class VyberTerminu(unittest.TestCase):
+    def test_termin_starsi_nez_clanek_neni_pozvanka(self):
+        # Nález z měření (600013685): článek „Talentová zkouška – bodový zisk
+        # uchazečů" z 16. 4. 2026 mluví o zkoušce z 28. 3. 2026. Věta
+        # „Talentová zkouška se koná 28. 3. 2026" by z ohlédnutí udělala pozvánku.
+        terminy = [{"datum": "2026-03-28", "cas": None}]
+        self.assertEqual(
+            vyber_terminy_akce(terminy, date(2026, 4, 16), date(2026, 4, 20)), [])
+
+    def test_vsechny_terminy_probehly_znamena_zadnou_vetu(self):
+        terminy = [{"datum": "2026-10-01", "cas": None}, {"datum": "2026-10-08", "cas": None}]
+        self.assertEqual(
+            vyber_terminy_akce(terminy, date(2026, 9, 1), date(2026, 10, 20)), [])
+
+    def test_jeden_budouci_termin_udrzi_i_ten_probehly(self):
+        # Škola vypsala tři termíny; dva proběhly. Věta má říct všechny, protože
+        # článek je o jedné akci a čtenář má vidět, do čeho z toho ještě může jít.
+        terminy = [{"datum": "2026-10-01", "cas": None}, {"datum": "2026-12-09", "cas": None}]
+        v = vyber_terminy_akce(terminy, date(2026, 9, 1), date(2026, 10, 20))
+        self.assertEqual([t["datum"] for t in v], ["2026-10-01", "2026-12-09"])
+
+    def test_bez_data_vydani_se_termin_nezahazuje(self):
+        # Feed datum vydání neuvedl; to není důvod termín škrtnout.
+        terminy = [{"datum": "2026-12-09", "cas": None}]
+        self.assertEqual(len(vyber_terminy_akce(terminy, None, date(2026, 10, 20))), 1)
 
 
 class CasVKlauzuli(unittest.TestCase):

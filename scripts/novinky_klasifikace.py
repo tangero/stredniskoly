@@ -516,6 +516,28 @@ SABLONY_SOUHRNU = {
 }
 
 
+def vyber_terminy_akce(terminy: list[dict], publikovano=None, dnes: date | None = None
+                       ) -> list[dict]:
+    """Termíny, které se smí objevit ve větě na kartě.
+
+    Dvě podmínky, obě naměřené na vzorku:
+
+    * **termín nesmí být starší než článek.** Zpráva „Talentová zkouška – bodový
+      zisk uchazečů" vyšla 16. 4. 2026 a mluví o zkoušce z 28. 3. 2026; věta
+      „Talentová zkouška se koná 28. 3. 2026" by z ohlédnutí udělala pozvánku;
+    * **aspoň jeden termín musí být v budoucnu.** Článek, jehož všechny termíny
+      proběhly, pozvánka není – klesne mezi ostatní zprávy a větu nedostane.
+
+    Prázdný seznam znamená „není co na kartě tvrdit", ne „akce se nekoná"."""
+    den_clanku = None
+    if publikovano is not None:
+        den_clanku = (publikovano.date() if hasattr(publikovano, "date") else publikovano).isoformat()
+    vybrane = [t for t in terminy if den_clanku is None or t["datum"] >= den_clanku]
+    if dnes is not None and not any(t["datum"] >= dnes.isoformat() for t in vybrane):
+        return []
+    return sorted(vybrane, key=lambda t: t["datum"])
+
+
 def formatuj_datum(iso: str) -> str:
     """`2026-10-23` na `23. 10. 2026`. Bez nul na začátku, jak se česky píše."""
     r, m, d = iso.split("-")
