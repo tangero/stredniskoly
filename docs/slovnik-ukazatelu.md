@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.27 · 18. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.28 · 21. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -536,14 +536,26 @@ Při počtu maturantů pod 10 se zveřejňují jen počty, mezi 10 a 29 s upozor
 
 **Co neříká.** Neříká, že je zpráva pravdivá nebo aktuální — to tvrdí škola, ne my. Neříká ani, že škola nic dalšího neoznámila: čte se jen kanál novinek, a 51 % škol ho nemá vůbec.
 
-### Termín akce ze zprávy školy (nezobrazuje se)
-**Definice.** Datum v roli akce, které se podařilo přečíst v textu zprávy.
+### Termín akce ze zprávy školy
+**Definice.** Datum, o kterém je doloženo, že v článku školy označuje konání akce školy pro uchazeče (den otevřených dveří, přijímačky nanečisto, setkání s uchazeči, přípravný kurz, talentová zkouška, náhradní termín).
 
-**Jak vzniká.** `extrahuj_data_akce()` sbírá z textu kalendářně platná data s rokem, každému podle jeho klauzule přisoudí roli (akce / registrace / neurčená) a stav (koná se / zrušeno / nepotvrzeno). Do `terminy` projdou jen data v roli akce, v klauzuli, kterou text neruší, a ne starší než článek.
+**Jak vzniká.** Ve třech krocích, které se nesmějí zaměnit:
 
-**Kde se používá.** Jen uvnitř: konec platnosti položky (poslední termín + 3 dny), sestup pozvánky na proběhlou akci mezi ostatní zprávy a dohled v administraci `/admin/skolni-novinky`. **Do odpovědi API ani na stránku školy nejde.**
+1. **Kód najde data.** `pozice_dat()` sbírá z textu kalendářně platná data **s rokem** (rok se nikdy nedohaduje) a zapamatuje si, kde v textu leží. Chybí-li datum v titulku i perexu, stáhne se stránka článku (`scripts/novinky_clanek.py`).
+2. **Model odpoví, co datum znamená.** Pro každé datum zvlášť dostane [rozhodovací model](skolske-novinky-rss-2027.md) kartu položky a jednu větu, ve které datum leží, a vybírá z předložených možností: která akce, nebo lhůta, nebo registrace, nebo nic z toho. Model **negeneruje text**; vrací volbu s pravděpodobností, bere se od 0,5.
+3. **Kód složí větu.** `slozeni_souhrnu()` vyplní šablonu podle druhu akce a počtu termínů („Škola pořádá dny otevřených dveří {termíny}."). Společný čas se vytkne („9. 12. 2026 a 7. 1. 2027 od 17:00"), různé časy zůstanou u svých dat.
 
-**Proč se nezobrazuje (rozhodnutí 20. 9. 2026).** Přesnost tříd je změřená (102/109 párů), vazba mezi datem a událostí ne. Data se sbírají z celého článku a nenesou štítek, čeho se týkají, takže se v jednom seznamu sešly termíny se lhůtami: u školy 600005399 stálo pod nadpisem „termín oznámený školou“ osm dat, z toho tři lhůty (konec podávání přihlášek na konzervatoře, uzávěrka přihlášek, informační schůzka pro rodiče) a šest termínů MŠMT, které škola jen opsala; jeden skutečný termín JPZ naopak chyběl. Karta proto říká, **o čem zpráva je**, a vede na článek školy — datum si čtenář přečte tam, kde ho napsala škola. Vrátit datum na stránku má smysl až s klasifikací po jednotlivých datech (P6 v [překonaných rozhodnutích](prehodnoceni-rozhodnuti-rss-2027.md)).
+**Strážní podmínky.** Termín starší než článek není pozvánka. Aspoň jeden termín musí být v budoucnu — jinak věta nevznikne. Platnost se počítá **znovu při každém čtení stránky**, ne jen při sklizni: uložená věta zmizí i s kartou, jakmile poslední jmenovaný termín proběhne.
+
+**Jednotka.** Datum (ISO), volitelně čas. **Zdroj.** Titulek, perex a rubriky zprávy; u pozvánky bez data v nich i text stránky článku.
+
+**Kde se používá.** Věta na kartě novinky na stránce školy (`souhrn` v odpovědi API), konec platnosti položky (poslední termín + 3 dny), sestup pozvánky na proběhlou akci mezi ostatní zprávy a dohled v administraci `/admin/skolni-novinky`.
+
+**Co neříká.** **Neříká, že škola pořádá jen tyhle termíny**, ani že se nezměnily — vyjmenovává data, která škola k té akci uvedla v jednom článku. U série termínů může jmenovat i ten, který už proběhl, dokud aspoň jeden další platí; podrobnosti, čas začátku a případné přihlášení jsou v článku školy, na který karta odkazuje. Neříká nic o akcích škol, které kanál novinek nemají (51 %), ani o akcích, které škola v kanálu neoznámila. **Neříká, že termín ověřil někdo jiný než škola.**
+
+**Pokrytí (měřeno 21. 9. 2026 na 300 živých feedech).** Z 23 pozvánek na akci školy dostalo větu 11 (48 %), z toho 4 až po stažení stránky článku. Ze zbylých dvanácti čtyři stránky termín opravdu neuvádějí, jedna oznamuje, že se kurzy **nekonají**, u tří jde jen o datum vydání v hlavičce a jedna stránka byla nedostupná.
+
+**Proč se to smí zobrazit, když se 20. 9. 2026 rozhodlo opačně.** Tehdejší rozhodnutí bylo o něčem jiném: plochý seznam dat z celého článku bez vazby na událost. U školy 600005399 v něm stálo osm dat, z toho tři lhůty a šest termínů MŠMT. Tahle vazba teď doložená je, protože se na ni model ptá **datum po datu** nad jednou větou, a lhůty se do věty nedostanou (vedou se zvlášť v `lhuty`). Původní rozhodnutí samo podmínku pojmenovalo: „vrátit datum na stránku má smysl až s klasifikací po jednotlivých datech (P6)."
 
 ### Třída zprávy, jistota a stav sdělení
 **Definice.** Tři vlastnosti zprávy, kterými se rozhoduje, jak se zobrazí. **Třída** je téma (`dod`, `prijimacky_nanecisto`, `setkani_uchazecu`, `pripravny_kurz`, `vysledky_prijm`, `kriteria`, `prijimaci_rizeni`, `volna_mista`, `talentove_zkousky`, `nahradni_termin`, `terminy_jpz`, `prihlaska`); na stránce z ní vzniká **štítek** karty podle slovníku pojmů. **Jistota** (`vysoka`, `stredni`, `zadna`) říká, jak jednoznačně zpráva k třídě patří. **Stav sdělení** (`oznameno`, `zmeneno`, `zruseno`, `nejiste`) se rozhoduje po klauzulích, ne za celý článek.
@@ -595,6 +607,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.28 | **Termín akce ze zprávy školy se začal zobrazovat** (21. 9. 2026). Dosud byl ukazatel veden jako „nezobrazuje se“, protože vazba mezi datem a událostí doložená nebyla. Teď doložená je: kód najde data s rokem, rozhodovací model odpoví **datum po datu** nad jednou větou, co v článku znamenají, a větu složí kód ze šablony — model text negeneruje. Lhůty se vedou zvlášť a do věty nejdou. Platnost se počítá při čtení stránky, ne při sklizni. Pokrytí změřeno na 300 živých feedech: věta u 11 z 23 pozvánek (48 %), z toho 4 až po stažení stránky článku. Tím se naplnila podmínka, kterou si rozhodnutí z 20. 9. 2026 samo uložilo (P6). |
 | 1.27 | **Neúčast u maturity zavedena jako ukazatel** (18. 9. 2026): `nonParticipationRate` se zobrazuje jako sloupec „ke zkoušce nešlo“ v tabulce po letech, počet a podíl z přihlášených. Vzorec ověřen dopočtem z počtů ve všech řádcích ročníků 2021 až 2026. U hesla Frekvence let nad středem podobných škol zapsáno, že okno jsou čtyři roky a proč se neprodlužuje: předpovědní schopnost je od druhého roku plochá (62,1 → 65,6 → 65,7 → 64,8 → 66,2 %), a to i u malých škol, zatímco šestileté okno by změnilo znění u 403 z 1 627 škol ve skupině oborů. |
 | 1.26 | **Rozbor výsledků přijatých po předmětech** (18. 9. 2026): tři nové ukazatele odpovídají na otázku, jestli jde slabší předmět dohnat tím druhým. Nejslabší přijatý v předmětu se uvádí **s oběma svými výsledky**, takže popisuje skutečnou kombinaci, ne dvojici minim ze dvou lidí zamítnutou ve verzi 1.22. Podlaha slabšího předmětu roste s obtížností přijetí (medián 23 bodů u velmi těžkých oborů proti 7 tam, kde kapacita nerozhodovala). Nevyrovnaní přijatí jsou jediný údaj z trojice se jmenovatelem, a proto jediný, který snese slovní výklad a srovnání. |
 | 1.25 | **Celostátní medián uchazečů zaveden jako ukazatel** (18. 9. 2026) do hlavičky `pasma_prijeti_{rok}.json`: 46,0 bodu v roce 2025 a 49,0 v roce 2026. Bez něj se bodové výsledky dvou ročníků nesmějí postavit vedle sebe, protože posun dělá obtížnost testu. Vzniklo kvůli nové sekci „S kolika body se sem lidé dostali“ na stránce oboru, která ukazuje body za dva ročníky vedle sebe a u každého i výsledek prostředního uchazeče v celé zemi. |

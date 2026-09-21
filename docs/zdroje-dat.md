@@ -350,20 +350,23 @@ Pokrytí: **533 z 1 093 škol = 48,8 %**, což je 50,5 % přihlášek 1. kola 20
 | `description` / `summary` | perex | z čeho se pozná téma a termín | ano, ale **jen ke klasifikaci** – nezobrazuje se (je to autorský text školy, viz níže) |
 | `category` | rubrika článku | žádná přímo | ano, vstup klasifikace |
 | `content:encoded` / `content` | plný text článku | — | **ne**, viz níže |
+| *stránka článku* (stahuje se z `link`) | plný text článku na webu školy | kdy se ta akce koná | ano, **jen ke čtení**, a jen když v titulku ani perexu žádné datum není; nezobrazuje se, viz níže |
 | `author`, `dc:creator` | autor | žádná | ne |
 | `comments`, `slash:comments` | diskuse | žádná | ne |
 | `enclosure`, `media:*` | obrázek či příloha | — | ne, cizí obsah bychom hostovali |
 
 **Co z položky nebereme a proč:**
 
-- **plný text článku** (`content:encoded`) – je to autorské dílo školy. Přebíráme titulek, odkaz a datum; kdo chce víc, jde na web školy. Perex se čte kvůli termínu a tématu, ale nezobrazuje se;
+- **plný text článku** (`content:encoded` i text stažené stránky) – je to autorské dílo školy. Přebíráme titulek, odkaz a datum; kdo chce víc, jde na web školy. Perex a text článku se **čtou**, aby se z nich daly přečíst termíny akce, ale nikde se nereprodukují: na kartě stojí věta složená naším kódem ze šablony („Škola pořádá dny otevřených dveří 9. 12. 2026 a 7. 1. 2027.“), ne souvětí školy;
 - **autor** – u školních novinek to bývá jméno konkrétního zaměstnance; rodiči nic neříká a zveřejňovat ho nemusíme;
 - **obrázky a přílohy** – hostovali bychom cizí obsah bez souhlasu a bez záruky, že nezmizí;
 - **feedy komentářů** (`…/comments/feed/`) – nejsou to novinky školy.
 
 **Sklízeč se od 20. 9. 2026 představuje hlavičkou běžného prohlížeče**, ne jako `PrijimackyNaSkoluBot`. Pět zdrojů na botí hlavičku odpovídalo `HTTP 403`; že za to mohla hlavička, ale **doloženo není** – z české sítě vrací `200` i botí hlavička. Rozbor jedenácti trvale nefunkčních zdrojů (pět různých příčin, od odchozí adresy přes feed komentářů v registru po proof-of-work bránu) je v návrhu, oddíl 3.3. Co se sklidilo a co se z toho odvodilo, je vidět v administraci na `/admin/skolni-novinky`; rozhodnutí a inventura nepoužitých polí jsou v [návrhu](skolske-novinky-rss-2027.md), oddíl 3.7a.
 
-Z položky se počítají údaje zapsané ve [slovníku ukazatelů](slovnik-ukazatelu.md): třída zprávy, jistota, stav sdělení, důležitost zprávy a termíny v roli akce. **Termín se čtenáři nezobrazuje** – karta nese štítek podle třídy a odkaz na článek školy, datum si rodina přečte tam (rozhodnutí 20. 9. 2026, návrh oddíl 3.5). **Zmizení položky z feedu není zrušení události** – feedy jsou kluzné okno (medián 10 položek), takže se nic nemaže.
+**Stránka článku se stahuje jen u pozvánky bez data v tom, co dal feed.** Feedy nesou plný text jen asi u třetiny škol; u zbytku je v perexu upoutávka a termín leží až v článku. Stahuje se proto adresně: z 300 živých feedů (21. 9. 2026) prošlo na rozbor 23 položek a stránka se stáhla u devíti. Respektuje se `robots.txt` a stránka se čte jednou; text se nikam neukládá, uloží se jen jeho otisk, nalezené termíny a složená věta. Zisk je změřený: **věta s termínem u 11 z 23 pozvánek (48 %), z toho 4 až ze staženého článku**; bez stahování jich je 7 (30 %).
+
+Z položky se počítají údaje zapsané ve [slovníku ukazatelů](slovnik-ukazatelu.md): třída zprávy, jistota, stav sdělení, důležitost zprávy a termíny v roli akce. **Termín akce se od 21. 9. 2026 zobrazuje** jako věta na kartě, ale jen tam, kde je doložený: kód najde data, [rozhodovací model](skolske-novinky-rss-2027.md) odpoví, co každé z nich v článku znamená, a větu složí kód ze šablony. Kde odpověď nevyjde, karta mlčí a vede na článek školy jako dosud (rozhodnutí 21. 9. 2026 nahrazuje rozhodnutí z 20. 9. 2026; návrh oddíl 3.5). **Zmizení položky z feedu není zrušení události** – feedy jsou kluzné okno (medián 10 položek), takže se nic nemaže.
 
 Sada zatím **není v registru stavu datových sad**: registr vede období, které se zobrazuje, a tenhle zdroj žádné období nemá – nese průběžné zprávy s vlastním datem vydání a vlastní platností podle druhu zprávy. Zapíše se do něj, až na něm bude stát ukazatel vázaný na přijímací ročník.
 

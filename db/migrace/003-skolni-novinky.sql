@@ -67,6 +67,8 @@ create table if not exists skola_novinka_rozbor (
   zdroj_textu text not null,
   otisk_textu text not null,
   terminy jsonb not null default '[]'::jsonb,
+  akce text,
+  lhuty jsonb not null default '[]'::jsonb,
   souhrn text,
   model text,
   odpovedi jsonb not null default '{}'::jsonb,

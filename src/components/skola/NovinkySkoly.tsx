@@ -37,6 +37,14 @@ interface Novinka {
   objevenoAt: string | null;
   zobrazeni: 'karta_terminu' | 'karta' | 'odkaz' | 'seznam';
   tridy: string[];
+  /**
+   * Věta s termíny akce, když se je podařilo v článku školy přečíst.
+   *
+   * Skládá ji kód ze šablony, ne model a ne škola (`scripts/novinky_jev.py`),
+   * takže se smí zobrazit vedle odkazu. Chybí u většiny karet — polovina
+   * pozvánek termín v kanálu novinek ani v článku neuvádí.
+   */
+  souhrn?: string | null;
 }
 
 interface Odpoved {
@@ -162,9 +170,13 @@ export function NovinkySkoly({ redizo }: { redizo: string }) {
             </a>
             {kdy(p) ? <span className="ml-2 text-[13px] font-normal text-slate-500">{kdy(p)}</span> : null}
           </p>
+          {p.souhrn ? <p className="text-[16px] font-semibold text-[#16325c]">{p.souhrn}</p> : null}
           <p className="text-[12px] text-slate-500">
-            Převzato z webu školy{overeno ? `, zdroj naposledy ověřen ${overeno}` : ''}. Datum konání
-            a podmínky najdete v článku školy: pořadatelem je škola, ne tento web.
+            Převzato z webu školy{overeno ? `, zdroj naposledy ověřen ${overeno}` : ''}.{' '}
+            {p.souhrn
+              ? 'Termíny jsme přečetli z článku školy; čas začátku, místo a přihlášení najdete v něm.'
+              : 'Datum konání a podmínky najdete v článku školy.'}{' '}
+            Pořadatelem je škola, ne tento web.
           </p>
         </div>
       ))}

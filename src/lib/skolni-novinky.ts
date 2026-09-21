@@ -45,6 +45,20 @@ export interface SkolniNovinka {
   zobrazeni: Zobrazeni;
   tridy: string[];
   duvod: string | null;
+  /**
+   * Věta s termíny akce, složená sklízečem ze šablony („Škola pořádá dny
+   * otevřených dveří 9. 12. 2026 a 7. 1. 2027.").
+   *
+   * Je naše, ne školy: model odpověděl jen na to, co které datum v článku
+   * znamená, a větu z toho složil kód (`scripts/novinky_jev.py`). Proto ji jde
+   * zobrazit vedle odkazu, aniž by se přebíral text cizího článku.
+   *
+   * Co **neříká**: že akce je jediná, ani že se nezměnila. Vyjmenovává data,
+   * která škola k té akci uvedla, a zobrazuje se, dokud je aspoň jedno z nich
+   * v budoucnu – u série dnů otevřených dveří tedy může jmenovat i termín,
+   * který už proběhl. Podrobnosti jsou v článku, na který karta odkazuje.
+   */
+  souhrn: string | null;
 }
 
 export interface NovinkySkoly {
@@ -91,6 +105,8 @@ interface RadekNovinky {
   duvod: string | null;
   konec_platnosti: Date | string | null;
   vytvoreno: Date | string | null;
+  souhrn: string | null;
+  terminy_akce: unknown;
 }
 
 function naIso(v: Date | string | null): string | null {
@@ -111,6 +127,19 @@ function naPole(v: unknown): string[] {
   return [];
 }
 
+/**
+ * Data z termínů rozboru. Řádek nese objekty `{datum, cas, akce}`, ne řetězce,
+ * takže `naPole` by z nich udělala `"[object Object]"` a porovnání s dneškem
+ * by tiše nikdy neplatilo.
+ */
+function dataAkce(v: unknown): string[] {
+  const pole = typeof v === 'string' ? JSON.parse(v || '[]') : v;
+  if (!Array.isArray(pole)) return [];
+  return pole
+    .map((t) => (t && typeof t === 'object' ? (t as { datum?: unknown }).datum : null))
+    .filter((d): d is string => typeof d === 'string');
+}
+
 /** Přepínače jako mapa klíč → hodnota; klíč `trida:dod` vypíná zvýrazňování třídy. */
 async function nactiPrepinace(): Promise<Map<string, unknown>> {
   const { rows } = await dotaz<{ klic: string; hodnota: unknown }>(
@@ -128,9 +157,11 @@ function jeVypnuto(prepinace: Map<string, unknown>, klic: string): boolean {
 }
 
 /** Společný výběr sloupců pro oba dotazy, aby se nemohly rozejít. */
-const SLOUPCE = `select id, titulek, url, publikovano, vytvoreno, zobrazeni, tridy, terminy,
-         duvod, konec_platnosti
-    from skola_novinka`;
+const SLOUPCE = `select n.id, n.titulek, n.url, n.publikovano, n.vytvoreno, n.zobrazeni,
+         n.tridy, n.terminy, n.duvod, n.konec_platnosti,
+         r.souhrn, r.terminy as terminy_akce
+    from skola_novinka n
+    left join skola_novinka_rozbor r on r.novinka_id = n.id`;
 
 /**
  * Řádek na položku pro web. `null` znamená „položka je vypnutá přepínačem".
@@ -162,6 +193,13 @@ function naPolozku(
   if (tridy.some((t) => jeVypnuto(prepinace, `trida:${t}`))) {
     zobrazeni = zobrazeni === 'seznam' ? 'seznam' : 'odkaz';
   }
+  // Věta s termíny je uložená z doby sklizně, čte se ale dnes. Platí, dokud je
+  // aspoň jedno z jmenovaných dat v budoucnu; jinak by karta zvala na akci,
+  // která proběhla. Stejná podmínka, jaká větu pustila na svět
+  // (`vyber_terminy_akce` v scripts/novinky_klasifikace.py), jen o den později.
+  const terminyAkce = dataAkce(r.terminy_akce);
+  const souhrnPlati = r.souhrn != null && terminyAkce.some((t) => t >= dnes);
+  if (zobrazeni === 'karta' && terminyAkce.length > 0 && !souhrnPlati) zobrazeni = 'odkaz';
   const publikovano = naIso(r.publikovano);
   return {
     id: r.id,
@@ -172,6 +210,9 @@ function naPolozku(
     zobrazeni,
     tridy,
     duvod: r.duvod,
+    // Věta patří ke zvýrazněné kartě. U neutrálního odkazu by tvrdila víc,
+    // než kolik jsme si o položce jistí.
+    souhrn: zobrazeni === 'karta' && souhrnPlati ? r.souhrn : null,
   };
 }
 

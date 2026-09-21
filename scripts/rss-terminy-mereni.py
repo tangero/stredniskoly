@@ -36,8 +36,7 @@ sys.path.insert(0, str(KOREN / "scripts"))
 
 import novinky_jev as jev  # noqa: E402
 from novinky_klasifikace import (  # noqa: E402
-    TRIDY_AKCI, oklasifikuj_polozky, pozice_dat, slozeni_souhrnu, text_k_rozboru,
-    vyber_terminy_akce,
+    oklasifikuj_polozky, pozice_dat, text_k_rozboru,
 )
 
 from novinky_klasifikace import parse_datum, parse_feed  # noqa: E402
@@ -104,9 +103,7 @@ def pozvanky(zaznamy: list[dict], od: datetime) -> list[dict]:
             pub = p.get("datum")
             if pub is not None and pub < od:
                 continue
-            publikace = p.get("publikace") or {}
-            vysoke = [t for t in p.get("tridy", []) if p.get("jistota", {}).get(t) == "vysoka"]
-            if publikace.get("zobrazeni") == "karta" and any(t in TRIDY_AKCI for t in vysoke):
+            if jev.je_kandidat_na_rozbor(p, p.get("publikace") or {}):
                 vybrane.append({**p, "redizo": z["redizo"]})
     return vybrane
 
@@ -138,22 +135,16 @@ def zmer(offline: bool, siroky: int = 0, stahovat: bool = False,
         if rozbor["pro_uchazece"] is False:
             stavy["model: není pro uchazeče o tuhle školu"] += 1
             continue
-        # Věta se skládá z termínů jedné akce – té, která má nejvíc termínů.
-        podle_akce: dict[str, list[dict]] = {}
-        for t in rozbor["terminy"]:
-            podle_akce.setdefault(t["akce"], []).append(t)
-        # Táž strážní podmínka jako v publikačním rozhodnutí: co je starší než
-        # článek nebo už celé proběhlo, není pozvánka a větu nedostane.
-        podle_akce = {a: v for a, v in
-                      ((a, vyber_terminy_akce(ts, p.get("datum"), dnes.date()))
-                       for a, ts in podle_akce.items()) if v}
-        if not podle_akce:
+        # Výběr akce i složení věty dělá `souhrn_z_rozboru` – týž kód, jaký
+        # použije sklízeč. Kdyby to měření počítalo po svém, měřilo by něco
+        # jiného, než co se pak zobrazí.
+        souhrn = jev.souhrn_z_rozboru(p, rozbor, dnes.date())
+        if souhrn is None:
             stavy["termín v textu není" if not ma_datum_v_textu
                   else "datum v textu je, ale budoucí akcí není"] += 1
             (bez_data if not ma_datum_v_textu else neshody).append(p)
             continue
-        akce, terminy = max(podle_akce.items(), key=lambda kv: len(kv[1]))
-        veta = slozeni_souhrnu(akce, terminy)
+        veta = souhrn["souhrn"]
         stavy["věta s termínem" if rozbor["zdroj_textu"] == "perex"
               else "věta s termínem až ze staženého článku"] += 1
         if len(ukazky) < 12:

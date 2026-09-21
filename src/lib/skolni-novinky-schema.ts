@@ -104,6 +104,8 @@ export const MIGRACE_SKOLNICH_NOVINEK: string[] = [
   zdroj_textu text not null,
   otisk_textu text not null,
   terminy jsonb not null default '[]'::jsonb,
+  akce text,
+  lhuty jsonb not null default '[]'::jsonb,
   souhrn text,
   model text,
   odpovedi jsonb not null default '{}'::jsonb,

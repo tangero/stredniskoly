@@ -19,7 +19,11 @@ from email.utils import parsedate_to_datetime
 from xml.etree import ElementTree as ET
 
 
-VERZE_PRAVIDEL = "2026-09-20.7"
+# Verze pravidel je auditní údaj i spouštěč přepočtu: uložená položka s jinou
+# verzí se při další sklizni přepíše, i když se článek nezměnil. Součástí je
+# i verze rozhodovacího modelu (`novinky_jev.MODEL`) – kdyby se měnila potichu,
+# nešlo by poznat, čím věta s termíny vznikla.
+VERZE_PRAVIDEL = "2026-09-21.1"
 
 
 def strip(t: str) -> str:
@@ -573,18 +577,24 @@ def slozeni_souhrnu(trida: str, terminy: list[dict]) -> str | None:
 
 # Čas u data: „od 17:00", „v 17.00", „9:00-12:00". Bere se první čas v téže
 # klauzuli; rozsah („9:00–12:00") se zkracuje na začátek, konec akce nikdo nehledá.
-RE_CAS = re.compile(r"\b(\d{1,2})[:.](\d{2})\b")
+RE_CAS = re.compile(r"(?<![\d.])(\d{1,2})([:.])(\d{2})")
 
 
 def najdi_cas(klauzule: str) -> str | None:
     """Čas z klauzule, ve které datum leží. `None`, když žádný není.
 
-    Nesmí spolknout datum: „9. 12." má tečku, ale není to čas, protože minuty
-    musí být dvouciferné a hodina nejvýš 23."""
+    Tečková podoba („v 17.00 hodin") se od data liší jen tím, co za ní stojí.
+    Naměřeno na mensagymnazium.cz: „DNY OTEVŘENÝCH DVEŘÍ 6.10. 2026" vyrobilo
+    větu „…6. 10. 2026 od 6:10", protože hodina i minuty vyšly v rozsahu.
+    Za časem proto nesmí následovat tečka ani další číslice; dvojtečková podoba
+    tím omezená není, aby „od 17:00." na konci věty prošla."""
     for m in RE_CAS.finditer(klauzule):
-        h, mi = int(m.group(1)), int(m.group(2))
-        if 0 <= h <= 23 and 0 <= mi <= 59:
-            return f"{h}:{mi:02d}"
+        h, oddelovac, mi = int(m.group(1)), m.group(2), int(m.group(3))
+        if not (0 <= h <= 23 and 0 <= mi <= 59):
+            continue
+        if oddelovac == "." and klauzule[m.end():m.end() + 1] in (".", *"0123456789"):
+            continue
+        return f"{h}:{mi:02d}"
     return None
 
 

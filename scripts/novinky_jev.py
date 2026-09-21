@@ -399,6 +399,58 @@ def rozbor_polozky(pol: dict, skola: dict | None = None, mezipamet: dict | None 
     }
 
 
+def je_kandidat_na_rozbor(pol: dict, publikace: dict) -> bool:
+    """Má se model ptát na tuhle položku?
+
+    Jen u pozvánek na akci školy: jinde není co datovat. U kritérií přijetí ani
+    u výsledků se žádná akce nekoná, u volných míst je zprávou samotná
+    existence sdělení. Filtr drží cenu běhu u tisícovky feedů na jednotkách
+    haléřů – na vzorku 300 feedů projde 23 položek.
+
+    Požaduje se vysoká jistota pravidel, ne jen zmínka: ``rozhodni_publikaci``
+    ze slabší jistoty kartu neudělá, takže by věta neměla kam jít."""
+    if publikace.get("zobrazeni") != "karta":
+        return False
+    jistota = pol.get("jistota") or {}
+    return any(t in TRIDY_AKCI for t in pol.get("tridy") or []
+               if jistota.get(t) == "vysoka")
+
+
+def souhrn_z_rozboru(pol: dict, rozbor: dict | None,
+                     dnes: "date | None" = None) -> dict | None:
+    """Věta s termíny jedné akce, nebo ``None``, když není co říct.
+
+    Jedna zpráva umí nést termíny víc věcí naráz (kurz i den otevřených dveří),
+    a věta na kartě je jedna. Vybírá se akce s nejvíc termíny; ostatní data
+    zůstávají v rozboru a na stránce je nahradí odkaz na článek.
+
+    Strážní podmínka je táž jako v publikačním rozhodnutí a musí tu být znovu:
+    bez ní vznikla při měření věta „Talentová zkouška se koná 28. 3. 2026"
+    z článku vydaného 16. 4. 2026 – tedy pozvánka na něco, co už proběhlo."""
+    from datetime import date as _date
+
+    from novinky_klasifikace import slozeni_souhrnu, vyber_terminy_akce
+
+    if not rozbor or not rozbor.get("terminy"):
+        return None
+    podle_akce: dict[str, list[dict]] = {}
+    for t in rozbor["terminy"]:
+        podle_akce.setdefault(t["akce"], []).append(t)
+    publikovano = pol.get("datum") or pol.get("publikovano")
+    if isinstance(publikovano, str):
+        publikovano = _date.fromisoformat(publikovano[:10])
+    zive = {a: v for a, v in
+            ((a, vyber_terminy_akce(ts, publikovano, dnes or _date.today()))
+             for a, ts in podle_akce.items()) if v}
+    if not zive:
+        return None
+    akce, terminy = max(zive.items(), key=lambda kv: len(kv[1]))
+    veta = slozeni_souhrnu(akce, terminy)
+    if not veta:
+        return None
+    return {"souhrn": veta, "akce": akce, "terminy": terminy}
+
+
 def slouc_s_pravidly(pol: dict, rozbor: dict | None) -> dict:
     """Co z rozboru smí ovlivnit klasifikaci. Vrací pole k doplnění do položky.
 

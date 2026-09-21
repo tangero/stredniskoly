@@ -92,6 +92,19 @@ class CasVKlauzuli(unittest.TestCase):
         # „9. 12." má tečku jako „17.00", ale měsíc není dvouciferné minuty.
         self.assertIsNone(najdi_cas("den otevrenych dveri 9. 12. 2026"))
 
+    def test_den_a_mesic_s_teckou_neni_cas(self):
+        # Naměřeno na mensagymnazium.cz: „DNY OTEVŘENÝCH DVEŘÍ 6.10. 2026"
+        # vyrobilo větu „…6. 10. 2026 od 6:10".
+        self.assertIsNone(najdi_cas(strip("dny otevrenych dveri 6.10. 2026")))
+        self.assertIsNone(najdi_cas(strip("kurz 8.4.2027")))
+
+    def test_teckovy_cas_bez_data_za_sebou_projde(self):
+        self.assertEqual(najdi_cas(strip("zaciname v 17.00 hodin")), "17:00")
+
+    def test_dvojteckovy_cas_prosel_i_na_konci_vety(self):
+        # Omezení „za časem nesmí být tečka" platí jen pro tečkovou podobu.
+        self.assertEqual(najdi_cas(strip("zveme vas od 17:00.")), "17:00")
+
     def test_bez_casu_se_nic_nevymysli(self):
         self.assertIsNone(najdi_cas("den otevrenych dveri v prosinci"))
 
@@ -136,6 +149,44 @@ class SestaveniOtazek(unittest.TestCase):
     def test_datum_bez_roku_se_modelu_nepredklada(self):
         # Rok se nedohaduje: „7. ledna" může být letos i napřesrok.
         self.assertEqual(pozice_dat("Den otevřených dveří 7. ledna."), [])
+
+
+class KandidatiNaRozbor(unittest.TestCase):
+    def test_pta_se_jen_na_pozvanky_na_akci(self):
+        # Kritéria přijetí ani výsledky žádnou akci nemají, takže není co datovat.
+        pol = {"tridy": ["kriteria"], "jistota": {"kriteria": "vysoka"}}
+        self.assertFalse(jev.je_kandidat_na_rozbor(pol, {"zobrazeni": "karta"}))
+
+    def test_slaba_jistota_pravidel_kartu_neudela_a_vetu_nedostane(self):
+        pol = {"tridy": ["dod"], "jistota": {"dod": "stredni"}}
+        self.assertFalse(jev.je_kandidat_na_rozbor(pol, {"zobrazeni": "karta"}))
+
+    def test_neutralni_odkaz_se_modelu_nepredklada(self):
+        pol = {"tridy": ["dod"], "jistota": {"dod": "vysoka"}}
+        self.assertFalse(jev.je_kandidat_na_rozbor(pol, {"zobrazeni": "odkaz"}))
+        self.assertTrue(jev.je_kandidat_na_rozbor(pol, {"zobrazeni": "karta"}))
+
+
+class SouhrnZRozboru(unittest.TestCase):
+    def test_vybere_akci_s_nejvic_terminy(self):
+        # Jedna zpráva nese kurz i den otevřených dveří, věta na kartě je jedna.
+        rozbor = {"terminy": [{"datum": "2026-11-10", "cas": None, "akce": "dod"},
+                              {"datum": "2026-11-12", "cas": None, "akce": "pripravny_kurz"},
+                              {"datum": "2026-11-19", "cas": None, "akce": "pripravny_kurz"}]}
+        v = jev.souhrn_z_rozboru({"datum": "2026-09-01"}, rozbor, date(2026, 9, 21))
+        self.assertEqual(v["akce"], "pripravny_kurz")
+        self.assertEqual(len(v["terminy"]), 2)
+
+    def test_probehla_akce_vetu_nedostane(self):
+        # Táž strážní podmínka jako v publikačním rozhodnutí: bez ní vznikla
+        # při měření věta „Talentová zkouška se koná 28. 3. 2026" z článku
+        # vydaného 16. 4. 2026.
+        rozbor = {"terminy": [{"datum": "2026-03-28", "cas": None, "akce": "talentove_zkousky"}]}
+        self.assertIsNone(jev.souhrn_z_rozboru({"datum": "2026-04-16"}, rozbor,
+                                               date(2026, 9, 21)))
+
+    def test_bez_odpovedi_modelu_neni_co_slozit(self):
+        self.assertIsNone(jev.souhrn_z_rozboru({}, None, date(2026, 9, 21)))
 
 
 class SlouceniSPravidly(unittest.TestCase):
