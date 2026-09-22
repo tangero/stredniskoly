@@ -1,6 +1,6 @@
 # Pásmový proužek: kde stojím proti loňským uchazečům
 
-Verze 1.0 · 22. 9. 2026 · Návrh k rozhodnutí. Prototyp běží na `/prototyp/pasma`, na web nenapojeno.
+Verze 1.1 · 22. 9. 2026 · Návrh k rozhodnutí; oddíl 4.4 doplněn po podnětu čtenáře. Prototyp běží na `/prototyp/pasma`, na web nenapojeno.
 
 Uchazeč zadá svoje body a uvidí, kam by loni u konkrétního oboru padl. Navazuje na [stránku školy](stranka-skoly-2027.md), [vrstvy stránky oboru](vrstvy-stranky-oboru-2027.md) a [využití dat JPZ](teze-vyuziti-dat-jpz-2027.md).
 
@@ -111,6 +111,18 @@ Musí to být na obrazovce, ne v dokumentaci:
 - **Body se mezi ročníky nesrovnávají.** K tomu slouží percentil, ne body.
 - **U oborů se zaměřeními platí za celý obor školy**, protože zdroj zaměření nerozlišuje.
 - Při `rozhodl_test` pod 0,85 je proužek jen orientační a musí to říct.
+
+### 4.4 Slepé místo: vážení předmětů
+
+Podnět čtenáře 22. 9. 2026: Gymnázium Christiana Dopplera má polovinu bodů „za školní kolo“. Ověřeno na webu školy — přesněji jde o **jeden z CERMAT testů × 0,5**, tedy matematika 1,5× u čtyřletého, M nebo ČJ podle oboru u osmiletého. Proužek na součtu ČJ+M to nevidí: dva uchazeči se stejnými 85 body (48/37 a 37/48) jsou na něm totožní, u Dopplera mají 103,5 a 109. A `rozhodl_test` 0,994 vypadá jako důkaz, že nic jiného nerozhoduje — protože vážení jednoho předmětu pořadí podle součtu skoro nezmění.
+
+Prověrka *předmětový sklon* (slovník ukazatelů, oddíl *Rozhodl test*): nápadné vážení u **73 z 354** měřitelných oborů, 21 %, napříč typy škol. Doppler v prototypu vystupoval jako ukázka „velmi těsného pásma“ — tedy jako ten nejčistší případ. Je to přesně ten případ, kde čistota klame.
+
+Tři důsledky pro proužek:
+
+1. **Věta o tom, co rozhodlo, mluví o pořadí podle součtu**, ne o rozhodnutí, a slepé místo pojmenuje. Změněno v `PasmaPrijetiCard`.
+2. **Kde data unesou, ukázat i slabší předmět** — `podlaha_slabsiho`, `nejslabsi_cj`, `nejslabsi_ma` už existují. Uchazeč s 48/37 musí vidět, že u Dopplera 37 v matematice je jiná situace než 37 v češtině.
+3. **Vždy odkaz na kritéria školy.** Z portálu (`odkaz_kriteria`), a kde chybí, výzva. Bez kritérií je proužek popis loňska, ne návod.
 
 ## 5. Napojení na testy nanečisto
 

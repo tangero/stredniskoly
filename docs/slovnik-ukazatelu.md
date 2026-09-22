@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.29 · 21. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.30 · 22. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -276,6 +276,12 @@ Na stránce se zobrazuje jedna ze tří vět podle hodnoty: 0,97 a výš, 0,85 a
 **Mezi ročníky je stabilní jen hrubě.** Na 1 173 oborech spárovaných mezi roky 2025 a 2026 je korelace **0,672** a medián absolutní změny 0,01. Hodnoty se drží blízko sebe, ale pořadí oborů v úzkém pásmu kolem 0,97 se mění. Proto se neřadí a nezobrazuje jako číslo, jen jako tři kategorie.
 
 Na dvojici 2024–2025 vycházela korelace 0,725 na 1 158 oborech, takže **novější dvojice ročníků vyšla hůř**. Zařazení do tří kategorií se přitom mezi roky 2025 a 2026 mění u 305 z 1 173 oborů, tedy u 26 %. Je to důvod tuto míru dál nezobrazovat jako číslo a nepoužívat k řazení, ne důvod ji zrušit: medián změny zůstává 0,01 a věta o tom, co rozhodlo, popisuje jeden ročník. Starší hodnoty: do verze 1.6 tu stála korelace 0,783, spočítaná včetně oborů bez povinné zkoušky, které ji uměle zvyšovaly; do verze 1.11 korelace 0,673 na 1 149 oborech z předběžné verze dat 2025. Doklad: `docs/podklady/overeni-pasem-prijeti-2025-2026.json`.
+
+**Slepé místo: kritéria, která test jen převažují.** Ukazatel měří shodu pořadí podle *součtu* obou testů s výsledkem přijímání. Kritérium, které jeden předmět váží víc, pořadí podle součtu skoro nezmění — a ukazatel ho neuvidí. Doložený protipříklad (22. 9. 2026, podnět čtenáře): Gymnázium Christiana Dopplera má `rozhodl_test` 0,994 (čtyřleté) a 0,981 (osmileté), a přitom počítá 125 bodů = 50 ČJ + 50 M + 25 za jeden z testů × 0,5 — matematiku u čtyřletého, u osmiletého podle oboru M nebo ČJ (zdroj: gchd.cz/pro-uchazece/prijimaci-rizeni/). Věta na kartě proto nesmí tvrdit, že „rozhodl test“; smí říct jen, že pořadí podle součtu odpovídalo výsledku, a musí slepé místo pojmenovat.
+
+Jak velké slepé místo je, měří **předmětový sklon** (`scripts/predmetovy-sklon.py`, doklad `docs/podklady/predmetovy-sklon-2026.json`): mezi soutěžícími se stejným součtem (pětibodová pásma) rozdíl průměrné matematiky přijatých a odmítnutých kvůli kapacitě. Na 354 oborech s aspoň 20 soutěžícími v překrývajících se pásmech má nápadný sklon (aspoň 2 body a |z| ≥ 2,5) **73 oborů, tedy 21 %** — 45 ve prospěch matematiky, 28 ve prospěch češtiny. **Netýká se jen výběrových gymnázií:** podíl roste s výběrovostí (14 % v dolní třetině podle mediánu přijatých, 25 % v horní) a je nejvyšší u víceletých gymnázií (37–40 %), ale nápadný sklon má i 26 oborů SOŠ, 4 SOU a 3 nástavby. Osmileté gymnázium Dopplera je nejvýraznější případ v zemi (sklon −5,1 bodu, z = −9,9). Čtyřleté do měření nevstoupilo, protože pásmo 85–87 skoro nemá překryv — **u velmi těsných pásem metoda mlčí**, což není potvrzení, že kritérium chybí.
+
+Předmětový sklon **není** ukazatel k zobrazení, je to prověrka. Neříká, jaké kritérium škola má, jen že s pořadím hýbe jeden předmět. Kritéria patří od školy; portál na ně má pole `odkaz_kriteria` a `kriteria_vlastnimi_slovy`.
 
 **Neměří kvalitu ani spravedlnost.** Nízká hodnota znamená, že škola vážila i něco jiného než test, například prospěch nebo vlastní zkoušku, což je legitimní.
 
@@ -607,6 +613,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.30 | **Rozhodl test dostal doložené slepé místo** (22. 9. 2026, podnět čtenáře). Ukazatel nevidí kritéria, která jeden test jen převažují: Gymnázium Christiana Dopplera má 0,994, a přitom váží matematiku 1,5×. Věta na kartě přestala tvrdit, že „rozhodl test“, a slepé místo pojmenovává. Nová prověrka *předmětový sklon* našla nápadné vážení u 73 z 354 měřitelných oborů (21 %) — napříč typy škol, ne jen u výběrových gymnázií. |
 | 1.29 | **Věta s termíny dostala strop** (21. 9. 2026). Nad čtyři termíny vypíše první tři a datum posledního: sedm termínů přípravného kurzu dávalo větu na 145 znaků. Modelu se zároveň předkládá nejvýš dvanáct dat na položku — po stažení stránky článku vyšly v měření tři položky po 35 otázkách v jediném volání, což je proti podmínce P6 o délce kontextu. Strop je nad naměřeným rozložením bez ocasu (0, 1, 2, 3, 6, 7, 8, 11 dat), takže o reálný termín nepřipraví. |
 | 1.28 | **Termín akce ze zprávy školy se začal zobrazovat** (21. 9. 2026). Dosud byl ukazatel veden jako „nezobrazuje se“, protože vazba mezi datem a událostí doložená nebyla. Teď doložená je: kód najde data s rokem, rozhodovací model odpoví **datum po datu** nad jednou větou, co v článku znamenají, a větu složí kód ze šablony — model text negeneruje. Lhůty se vedou zvlášť a do věty nejdou. Platnost se počítá při čtení stránky, ne při sklizni. Pokrytí změřeno na 300 živých feedech: věta u 11 z 23 pozvánek (48 %), z toho 4 až po stažení stránky článku. Tím se naplnila podmínka, kterou si rozhodnutí z 20. 9. 2026 samo uložilo (P6). |
 | 1.27 | **Neúčast u maturity zavedena jako ukazatel** (18. 9. 2026): `nonParticipationRate` se zobrazuje jako sloupec „ke zkoušce nešlo“ v tabulce po letech, počet a podíl z přihlášených. Vzorec ověřen dopočtem z počtů ve všech řádcích ročníků 2021 až 2026. U hesla Frekvence let nad středem podobných škol zapsáno, že okno jsou čtyři roky a proč se neprodlužuje: předpovědní schopnost je od druhého roku plochá (62,1 → 65,6 → 65,7 → 64,8 → 66,2 %), a to i u malých škol, zatímco šestileté okno by změnilo znění u 403 z 1 627 škol ve skupině oborů. |
