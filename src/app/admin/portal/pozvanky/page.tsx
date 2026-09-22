@@ -27,6 +27,9 @@ export default async function AdminPozvankyPage({ searchParams }: Props) {
   const { nahled, ok, chyba } = await searchParams;
 
   const { radky, chybi, pocty } = await nactiPozvanky();
+  // „Hotovo“ jen když opravdu není co poslat a všechno už odešlo. Prázdný pilot
+  // ani školy uvázlé na chybějícím kódu se za hotové vydávat nesmí.
+  const hotovo = pocty.kOdeslani === 0 && pocty.celkem > 0 && pocty.jizOdeslano === pocty.celkem;
   // Náhled se staví pro konkrétní školu, aby byl vidět skutečný kód i oslovení.
   const proNahled = radky.find((r) => r.redizo === nahled) ?? radky.find((r) => r.maKod && r.email) ?? radky[0];
   const kod = proNahled ? await kodProSkolu(proNahled.redizo) : null;
@@ -60,13 +63,29 @@ export default async function AdminPozvankyPage({ searchParams }: Props) {
           </div>
         )}
 
-        {/* Kolik škol pozvánku dostane – hlavní číslo, kvůli kterému se sem chodí. */}
+        {/* Hlavní číslo, kvůli kterému se sem chodí. Pozor na nulu: znamená buď
+            „hotovo“, nebo „není co poslat“ — velká 0 po úspěšné rozesílce
+            vypadá jako selhání, i když je to ten nejlepší možný stav. */}
         <section className="rounded-xl border border-slate-200 bg-white p-6">
-          <p className="text-4xl font-semibold text-slate-900">{pocty.kOdeslani}</p>
-          <p className="text-slate-600">
-            {pocty.kOdeslani === 1 ? 'škola dostane pozvánku' : pocty.kOdeslani < 5 ? 'školy dostanou pozvánku' : 'škol dostane pozvánku'}
-            {' '}z celkem {pocty.celkem} v pilotu.
-          </p>
+          {hotovo ? (
+            <>
+              <p className="text-4xl font-semibold text-green-700">Hotovo</p>
+              <p className="text-slate-600">
+                {pocty.celkem === 1
+                  ? 'Pozvánku dostala jediná škola pilotu.'
+                  : `Pozvánku dostalo všech ${pocty.celkem} ${pocty.celkem < 5 ? 'školy' : 'škol'} pilotu.`}{' '}
+                Zbývá 0 k odeslání.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="text-4xl font-semibold text-slate-900">{pocty.kOdeslani}</p>
+              <p className="text-slate-600">
+                {pocty.kOdeslani === 1 ? 'škola dostane pozvánku' : pocty.kOdeslani < 5 ? 'školy dostanou pozvánku' : 'škol dostane pozvánku'}
+                {' '}z celkem {pocty.celkem} v pilotu.
+              </p>
+            </>
+          )}
           <ul className="mt-3 text-sm text-slate-600 space-y-1">
             {pocty.jizOdeslano > 0 && <li>{pocty.jizOdeslano} už pozvánku dostalo, znovu se neposílá.</li>}
             {pocty.bezKodu > 0 && <li className="text-amber-800">{pocty.bezKodu} bez kódu – nelze odeslat.</li>}
