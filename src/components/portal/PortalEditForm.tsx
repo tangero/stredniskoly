@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { PortalPoleDef, PredvyplnenyProfil } from '@/lib/portal-skol';
 import type { PortalAuth } from '@/components/portal/PortalEditace';
+import { adresaPrehledu } from '@/lib/adresa-oboru.mjs';
 
 type StavOdesilani = 'formular' | 'odesilam' | 'odeslano' | 'chyba';
 
@@ -31,6 +32,22 @@ export function PortalEditForm({ auth, profil, pole, vychoziEmail = '' }: Props)
   const [website, setWebsite] = useState(''); // honeypot
   const [stav, setStav] = useState<StavOdesilani>('formular');
   const [chyba, setChyba] = useState('');
+  const potvrzeni = useRef<HTMLDivElement>(null);
+
+  // Formulář se po odeslání nahradí na místě krátkou kartou. Stránka se tím
+  // srazí, prohlížeč si ale podrží pozici posuvníku — a ta pak padne na sekci
+  // „Vaše údaje“ pod formulářem, zatímco potvrzení zůstane nad obrazovkou.
+  // Kdo dlouhý formulář vyplnil až dolů, o výsledku vlastní práce neví.
+  useEffect(() => {
+    if (stav !== 'odeslano') return;
+    const uzel = potvrzeni.current;
+    if (!uzel) return;
+    const plynule = !window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    uzel.scrollIntoView({ behavior: plynule ? 'smooth' : 'auto', block: 'start' });
+    // Fokus kvůli čtečkám a klávesnici: odesílací tlačítko zmizelo, jinak by
+    // fokus spadl na <body> a další Tab by začínal od začátku stránky.
+    uzel.focus({ preventScroll: true });
+  }, [stav]);
 
   const setHodnota = (key: string, value: string) =>
     setHodnoty((prev) => ({ ...prev, [key]: value }));
@@ -73,13 +90,35 @@ export function PortalEditForm({ auth, profil, pole, vychoziEmail = '' }: Props)
 
   if (stav === 'odeslano') {
     return (
-      <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-8 text-center">
+      <div
+        ref={potvrzeni}
+        tabIndex={-1}
+        role="status"
+        className="scroll-mt-6 rounded-xl border border-slate-100 bg-white p-8 text-center shadow-sm focus:outline-none"
+      >
         <div className="text-4xl mb-4">✅</div>
         <h2 className="text-xl font-bold text-slate-900 mb-2">Děkujeme!</h2>
         <p className="text-slate-600 max-w-md mx-auto">
           Vaše změny jsme zapsali. Na stránce školy se objeví se značkou „potvrdila škola“, obvykle
           do hodiny. Na schválení nic nečeká. Když v údajích najdeme chybu, opravíme ji a napíšeme
           vám na zadaný e-mail.
+        </p>
+        {/* Když se publikuje hned, patří sem i cesta ke kontrole výsledku —
+            jinak by se člověk k vlastním údajům musel proklikávat sám. */}
+        {profil.nazev && (
+          <p className="mt-6">
+            <a
+              href={`/skola/${adresaPrehledu(profil.redizo, profil.nazev)}`}
+              target="_blank"
+              rel="noopener"
+              className="inline-block rounded-lg bg-[#0074e4] px-5 py-2.5 font-semibold text-white transition-colors hover:bg-[#005fbd]"
+            >
+              Zkontrolovat stránku školy ↗
+            </a>
+          </p>
+        )}
+        <p className="mt-3 text-xs text-slate-400">
+          Nová karta se otevře vedle. Údaje se propisují průběžně, může to chvíli trvat.
         </p>
       </div>
     );
@@ -311,10 +350,10 @@ export function PortalEditForm({ auth, profil, pole, vychoziEmail = '' }: Props)
           disabled={stav === 'odesilam'}
           className="w-full rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700 disabled:opacity-50"
         >
-          {stav === 'odesilam' ? 'Odesílám…' : 'Odeslat ke kontrole'}
+          {stav === 'odesilam' ? 'Ukládám…' : 'Uložit údaje'}
         </button>
         <p className="text-xs text-slate-400 mt-3 text-center">
-          Změny se na webu nezobrazí hned – nejdřív je zkontroluje redakce.
+          Změny se na stránce školy objeví obvykle do hodiny. Na schválení nic nečeká.
         </p>
       </section>
     </form>
