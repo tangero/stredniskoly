@@ -10,6 +10,22 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '2.15.0',
+    date: '22. 9. 2026',
+    title: 'Stránky měst, novinky ze školních webů a odběr e-mailem',
+    changes: [
+      { type: 'new', text: 'Stránka města: školy ve městě jako karty s obtížností přijetí, odznak 2. kola u oborů, které ho vypsaly, a další obory ve městě pod přehledem. Město se dá najít i vyhledáváním' },
+      { type: 'new', text: 'Novinky ze školních webů na stránce školy. U pozvánky na akci je vidět termín, pokud ho škola v článku uvedla; zprávy bez termínu nesou štítek, čím jsou, místo vymyšleného data' },
+      { type: 'new', text: 'Rubrika „Ze života školy“ pro zprávy, které nejsou o přijímačkách, ale řeknou, jaká škola je' },
+      { type: 'new', text: 'Odběr novinek k přijímačkám i na stránce školy, ne jen na titulce — kdo hledá konkrétní školu, na titulku obvykle nepřijde' },
+      { type: 'new', text: 'Stránka „O projektu“ s tím, kdo a jak web vede, kolik práce v něm je a podle čeho se rozhoduje' },
+      { type: 'improve', text: 'Škola, která uplatňuje přihlašovací kód, vidí plný název, adresu, IČO a REDIZO — podle zkráceného názvu z katalogu („Gymnázium“) poznat nešlo, ke které škole se hlásí' },
+      { type: 'improve', text: 'Po uložení údajů v portálu je potvrzení vidět i po dlouhém formuláři a vede odkazem na stránku školy, kde si škola výsledek hned zkontroluje' },
+      { type: 'fix', text: 'Adresy stránek se sjednotily: každá stránka má jednu kanonickou adresu, sitemapa vede jen na ně a zrušená kalkulačka „Moje šance“ trvale přesměrovává na Simulátor' },
+      { type: 'fix', text: 'V dalších oborech ve městě se přiznává, že obory s méně než deseti uchazeči se v datech neuvádějí' },
+    ],
+  },
+  {
     version: '2.14.0',
     date: '19. 9. 2026',
     title: 'Maturita i na stránce oboru',
