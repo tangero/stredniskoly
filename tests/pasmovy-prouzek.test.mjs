@@ -110,3 +110,50 @@ test('nesmyslné body se neberou jako výsledek', () => {
   const html = vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] }, { cj: '80', ma: '80' });
   assert.match(html, /Zadej svoje body/);
 });
+
+// ---------------------------------------------------------------------------
+// Stránka prototypu. Je nezalistovaná, ne chráněná — a tenhle rozdíl se dá
+// snadno rozbít jedním nepozorným commitem.
+// ---------------------------------------------------------------------------
+
+test('stránka prototypu se neindexuje', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const zdroj = await readFile('src/app/prototyp/pasma/page.tsx', 'utf8');
+  assert.match(zdroj, /robots:\s*\{\s*index:\s*false/, 'chybí noindex');
+});
+
+test('prototyp není v sitemapě', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const generator = await readFile('scripts/generate-sitemap.mjs', 'utf8');
+  assert.doesNotMatch(generator, /prototyp/, 'prototyp by se dostal do sitemapy');
+});
+
+test('prototyp není zakázaný v robots.txt', async () => {
+  // Zní to obráceně: zakázané procházení by vyhledávači zabránilo `noindex`
+  // přečíst, takže adresa by se mohla objevit v indexu bez obsahu.
+  const { readFile } = await import('node:fs/promises');
+  const robots = await readFile('src/app/robots.ts', 'utf8');
+  assert.doesNotMatch(robots, /prototyp/, 'disallow by znemožnil přečíst noindex');
+});
+
+test('na prototyp nikde nevede odkaz', async () => {
+  const { readFile, readdir } = await import('node:fs/promises');
+  const { join } = await import('node:path');
+  const najdi = async (dir) => {
+    const polozky = await readdir(dir, { withFileTypes: true });
+    const soubory = [];
+    for (const p of polozky) {
+      const cesta = join(dir, p.name);
+      if (p.isDirectory()) soubory.push(...(await najdi(cesta)));
+      else if (/\.tsx?$/.test(p.name)) soubory.push(cesta);
+    }
+    return soubory;
+  };
+  const odkazujici = [];
+  for (const f of await najdi('src')) {
+    if (f.includes('prototyp')) continue; // sama stránka a komponenta
+    const obsah = await readFile(f, 'utf8');
+    if (/href=["'`]\/prototyp/.test(obsah)) odkazujici.push(f);
+  }
+  assert.deepEqual(odkazujici, [], 'prototyp má být dostupný jen přímou adresou');
+});

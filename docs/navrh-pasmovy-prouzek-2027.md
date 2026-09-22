@@ -1,6 +1,6 @@
 # Pásmový proužek: kde stojím proti loňským uchazečům
 
-Verze 1.0 · 22. 9. 2026 · Návrh k rozhodnutí. Prototyp běží na `/admin/prototyp/pasma`, na web nenapojeno.
+Verze 1.0 · 22. 9. 2026 · Návrh k rozhodnutí. Prototyp běží na `/prototyp/pasma`, na web nenapojeno.
 
 Uchazeč zadá svoje body a uvidí, kam by loni u konkrétního oboru padl. Navazuje na [stránku školy](stranka-skoly-2027.md), [vrstvy stránky oboru](vrstvy-stranky-oboru-2027.md) a [využití dat JPZ](teze-vyuziti-dat-jpz-2027.md).
 
@@ -131,6 +131,19 @@ Dvě cesty, obě přípustné:
 2. **Přiznaná orientace.** Body nepřevádět, proužek kreslit šedě a napsat, že jde o hrubé srovnání, ne o převod.
 
 Bez jedné z nich návrh nasazení testů nanečisto **nedoporučuje**.
+
+## 5b. Proč je prototyp nezalistovaný, a ne chráněný
+
+Původně běžel pod admin bránou (`/admin/prototyp/pasma`, bez cookie 404). Na produkci se tím stal nedostupným i zadavateli, protože `ADMIN_TOKEN` je jen v lokálním prostředí. Rozhodnutí 22. 9. 2026: přesunout na `/prototyp/pasma` **bez brány**.
+
+Co to znamená:
+
+- **Nezalistovaná, ne tajná.** Kdo zná adresu, otevře ji. Nikde na ni nevede odkaz a v sitemapě není (ta má pevný seznam cest, prototyp se do ní nedostane sám).
+- **`robots: noindex`** v metadatech stránky.
+- **Do `robots.txt` se zapsat nesmí.** Zakázané procházení by vyhledávači zabránilo `noindex` vůbec přečíst, takže adresa by se mohla v indexu objevit bez obsahu. Zní to obráceně, ale je to tak.
+- Na stránce stojí pruh **„Rozpracovaný prototyp“**, aby náhodný návštěvník nepokládal podobu za hotovou.
+
+Stránka zobrazuje jen veřejná data z katalogu, nic neukládá a nic neodesílá. Zadané body zůstávají v prohlížeči.
 
 ## 6. Pořadí realizace
 

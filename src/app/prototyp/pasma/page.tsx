@@ -1,10 +1,6 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { cookies } from 'next/headers';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { overAdminToken } from '@/lib/admin';
 import { getPasmaPrijetiZaRok, rokPasemPrijeti } from '@/lib/pasma-prijeti';
 import { getSchoolsByRedizo } from '@/lib/data';
 import { PasmovyProuzek, type UkazkovyObor } from '@/components/prototyp/PasmovyProuzek';
@@ -12,9 +8,12 @@ import { PasmovyProuzek, type UkazkovyObor } from '@/components/prototyp/Pasmovy
 // ============================================================================
 // Prototyp pásmového proužku (docs/navrh-pasmovy-prouzek-2027.md).
 //
-// Veřejná adresa sem nevede: bez admin cookie vrací 404, stránka se
-// neindexuje, nikde na ni není odkaz a v sitemapě není. Stejný režim jako
-// zbytek /admin.
+// Stránka je nezalistovaná, ne chráněná: kdo zná adresu, otevře ji. Nikde na
+// ni nevede odkaz, není v sitemapě (ta má pevný seznam cest) a nese
+// `robots: noindex`. Do robots.txt ji zapsat **nesmíme** — zakázané procházení
+// by vyhledávači zabránilo `noindex` vůbec přečíst.
+//
+// Zobrazuje jen veřejná data z katalogu, nic neukládá a nic neodesílá.
 // ============================================================================
 
 export const dynamic = 'force-dynamic';
@@ -69,8 +68,6 @@ async function nactiUkazky(rok: number): Promise<UkazkovyObor[]> {
 }
 
 export default async function PrototypPasmaPage() {
-  if (!overAdminToken((await cookies()).get('admin_token')?.value)) notFound();
-
   const rok = await rokPasemPrijeti();
   const obory = rok ? await nactiUkazky(rok) : [];
 
@@ -78,10 +75,9 @@ export default async function PrototypPasmaPage() {
     <>
       <Header />
       <main className="mx-auto max-w-4xl px-4 py-10 space-y-8">
-        <div className="text-sm text-slate-600">
-          <Link href="/admin" className="hover:text-blue-600">Administrace</Link>
-          <span className="mx-2">/</span>
-          <span className="text-slate-900">Prototyp: pásmový proužek</span>
+        <div className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+          <strong>Rozpracovaný prototyp.</strong> Není to součást webu — slouží k posouzení
+          návrhu. Čísla jsou skutečná, podoba se ještě změní.
         </div>
 
         <div>
