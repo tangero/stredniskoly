@@ -1,0 +1,45 @@
+{
+  "source": "GSC UI observed 2026-09-20; domain property sc-domain:prijimackynaskolu.cz",
+  "index_updated": "2026-09-18",
+  "indexed": 3242,
+  "not_indexed": 13328,
+  "reasons": {
+    "discovered_not_indexed": 10257,
+    "crawled_not_indexed": 2421,
+    "duplicate_without_user_canonical": 309,
+    "redirect": 207,
+    "alternate_correct_canonical": 99,
+    "robots_blocked": 22,
+    "not_found": 13
+  },
+  "indexed_despite_robots_block": 8,
+  "sitemap": {
+    "url": "https://www.prijimackynaskolu.cz/sitemap.xml",
+    "last_read": "2026-09-18",
+    "status": "success",
+    "discovered_pages": 10403
+  },
+  "links": {
+    "external_total": 1161,
+    "vercel_app": 1095,
+    "github_com": 25,
+    "t_co": 11,
+    "blogspot_com": 3,
+    "jihoskop_cz": 3,
+    "internal_total": 38547
+  },
+  "inspection": {
+    "url": "https://www.prijimackynaskolu.cz/mesto/praha",
+    "status": "crawled_currently_not_indexed",
+    "last_crawl": "2026-07-26 22:28:17",
+    "agent": "Googlebot smartphone",
+    "crawl_allowed": true,
+    "index_allowed": true,
+    "fetch": "success",
+    "user_canonical": "https://prijimackynaskolu.cz/",
+    "google_canonical_UI": "Inspected URL"
+  },
+  "core_web_vitals": "No data for mobile or desktop",
+  "manual_actions": "not verified",
+  "security_issues": "not verified"
+}

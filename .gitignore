@@ -32,6 +32,11 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# ...a jejich archivy: `.env*` na `env-local.zip` nesedí, protože nezačíná tečkou.
+# Repozitář je veřejný, takže jeden `git add -A` by tajemství vystavil.
+*env*.zip
+*env*.tar.gz
+*env*.tar.gz.enc
 
 # vercel
 .vercel

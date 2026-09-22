@@ -1,0 +1,29 @@
+{
+  "three_months": {
+    "from": "2026-06-19",
+    "to": "2026-09-18",
+    "days": 92,
+    "clicks": 1449,
+    "impressions": 75574,
+    "ctr": 0.019173260645195436,
+    "position_impression_weighted": 7.898111784476143
+  },
+  "latest28": {
+    "from": "2026-08-22",
+    "to": "2026-09-18",
+    "days": 28,
+    "clicks": 962,
+    "impressions": 40365,
+    "ctr": 0.02383252818035427,
+    "position_impression_weighted": 7.885450266319832
+  },
+  "previous28": {
+    "from": "2026-07-25",
+    "to": "2026-08-21",
+    "days": 28,
+    "clicks": 197,
+    "impressions": 14509,
+    "ctr": 0.01357777930939417,
+    "position_impression_weighted": 8.89696739954511
+  }
+}
