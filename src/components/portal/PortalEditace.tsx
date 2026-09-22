@@ -92,8 +92,8 @@ export async function PortalEditace({
         {profil.kraj && <> · {profil.kraj} kraj</>}
       </p>
       <p className="text-sm text-slate-500 mb-8">
-        Zkontrolujte a doplňte údaje o škole. Po odeslání je zkontroluje redakce a schválené
-        údaje se zobrazí na stránce školy se značkou „potvrzeno školou“.
+        Zkontrolujte a doplňte údaje o škole. Po uložení se zobrazí na stránce školy se značkou
+        „potvrdila škola“, obvykle do hodiny. Na schválení nic nečeká.
       </p>
 
       {host && (
