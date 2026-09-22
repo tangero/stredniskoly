@@ -101,6 +101,20 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Clicky běží vedle Matoma, ne místo něj: Matomo je dlouhodobá řada
+            návštěvnosti, Clicky dává čtení návštěv v reálném čase. Adresa je
+            zapsaná s https, ne protokolově relativní `//` — web jede jen po
+            https a relativní tvar je zbytečné dědictví.
+
+            Obě domény musí být v CSP (next.config.ts): `static.getclicky.com`
+            ve `script-src`, `in.getclicky.com` v `connect-src`. Bez toho se
+            skript zablokuje tiše — v kódu vypadá nasazený a neměří nic. */}
+        <Script
+          id="clicky-analytics"
+          src="https://static.getclicky.com/js"
+          data-id="101500959"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

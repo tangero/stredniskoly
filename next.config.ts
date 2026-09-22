@@ -35,11 +35,11 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://ma.hlidacstatu.cz",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://ma.hlidacstatu.cz https://static.getclicky.com",
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https:",
       "font-src 'self' data:",
-      "connect-src 'self' https://vitals.vercel-insights.com https://ma.hlidacstatu.cz https://www.vibecoding.cz",
+      "connect-src 'self' https://vitals.vercel-insights.com https://ma.hlidacstatu.cz https://www.vibecoding.cz https://in.getclicky.com",
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "form-action 'self'"
