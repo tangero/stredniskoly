@@ -1,0 +1,8 @@
+User-Agent: *
+Allow: /
+Allow: /api/skola/
+Allow: /api/schools/search
+Disallow: /api/
+Disallow: /_next/
+
+Sitemap: https://prijimackynaskolu.cz/sitemap.xml

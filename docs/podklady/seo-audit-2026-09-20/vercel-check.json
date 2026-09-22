@@ -1,0 +1,11 @@
+{
+  "url": "https://stredniskoly.vercel.app/",
+  "status": 200,
+  "canonical_tags": [
+    "<link rel=\"canonical\" href=\"https://prijimackynaskolu.cz\"/>"
+  ],
+  "robots_tags": [
+    "<meta name=\"robots\" content=\"index, follow\"/>",
+    "<meta name=\"googlebot\" content=\"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1\"/>"
+  ]
+}
