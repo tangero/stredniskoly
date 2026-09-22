@@ -130,7 +130,12 @@ export default function OchranaOsobnichUdajuPage() {
                 klauzulí,
               </li>
               <li>
-                <strong>Matomo</strong> na serveru Hlídače státu — měření návštěvnosti webu.
+                <strong>Matomo</strong> na serveru Hlídače státu — měření návštěvnosti webu,
+              </li>
+              <li>
+                <strong>Clicky</strong> — měření návštěvnosti webu vedle Matoma; jde o zpracovatele
+                ve Spojených státech, takže součástí zpracování je přenos do třetí země na základě
+                standardních smluvních klauzulí.
               </li>
             </ul>
             <p className="text-slate-700 mt-3">
