@@ -1,169 +1,169 @@
 {
-  "verze": 1,
-  "vybrano": "2026-09-19",
-  "seed": 20260919,
-  "kriteria": "Města podle počtu obyvatel: Praha 5, Brno 3, Ostrava 2, po 1 Plzeň, Liberec, Olomouc, České Budějovice, Hradec Králové, Ústí nad Labem, Pardubice, Zlín, Havířov, Kladno. Velikost = součet přihlášek 2026 přes nabídky školy v katalogu (období z registru cermat-vysledky). Typ školy: gymnázium, když aspoň polovina nabídek je GY*, jinak odborná. Kandidáti = horní tercil podle velikosti ve městě a typu. Úplnost: každá nabídka má kapacitu, přihlášky, přijaté a min_body; rejstřík CSV má Email 1, Ředitel, WWW a ID datové schránky; zřizovatel není soukromý (5) ani církevní (6); e-mail v data/portal/emaily.json nesdílí jiná škola; škola nemá žádný kód v data/portal/kody.json; má maturitní data 2026. Typové sloty: víceslotová města 1 gymnázium + zbytek odborné, z jednoslotových měst 4 gymnázia losem; když typ ve městě nemá kandidáta, bere se druhý typ. Výběr random.Random(seed).choice ze seřazeného seznamu REDIZO.",
-  "kontakty": "data/portal/pilot-kontakty.json (gitignorováno, osobní údaje)",
-  "skoly": [
-    {
-      "redizo": "600006247",
-      "nazev": "Gymnázium, Praha 9, Litoměřická 726",
-      "mesto": "Praha",
-      "typ": "gymnázium",
-      "velikost_ukazatel": 623,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600005721",
-      "nazev": "Obchodní akademie a Gymnázium Bubeneč",
-      "mesto": "Praha",
-      "typ": "odborná",
-      "velikost_ukazatel": 585,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600005976",
-      "nazev": "Karlínská obchodní akademie",
-      "mesto": "Praha",
-      "typ": "odborná",
-      "velikost_ukazatel": 646,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600005071",
-      "nazev": "Střední průmyslová škola stavební Josefa Gočára, Praha 4, Družstevní ochoz 3",
-      "mesto": "Praha",
-      "typ": "odborná",
-      "velikost_ukazatel": 597,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600004643",
-      "nazev": "Vyšší odborná škola a Střední průmyslová škola dopravní, Praha 1, Masná 18",
-      "mesto": "Praha",
-      "typ": "odborná",
-      "velikost_ukazatel": 554,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600013448",
-      "nazev": "Gymnázium Brno, Vídeňská, příspěvková organizace",
-      "mesto": "Brno",
-      "typ": "gymnázium",
-      "velikost_ukazatel": 685,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600019861",
-      "nazev": "Střední zdravotnická škola a Vyšší odborná škola zdravotnická Brno, Merhautova, příspěvková organizace",
-      "mesto": "Brno",
-      "typ": "odborná",
-      "velikost_ukazatel": 726,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600013502",
-      "nazev": "Obchodní akademie a vyšší odborná škola Brno, Kotlářská, příspěvková organizace",
-      "mesto": "Brno",
-      "typ": "odborná",
-      "velikost_ukazatel": 1154,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600017648",
-      "nazev": "Wichterlovo gymnázium, Ostrava-Poruba, příspěvková organizace",
-      "mesto": "Ostrava",
-      "typ": "gymnázium",
-      "velikost_ukazatel": 447,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600017460",
-      "nazev": "Obchodní akademie, Ostrava-Poruba, příspěvková organizace",
-      "mesto": "Ostrava",
-      "typ": "odborná",
-      "velikost_ukazatel": 349,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600009602",
-      "nazev": "Střední odborná škola obchodu, užitého umění a designu, Plzeň, Nerudova 33",
-      "mesto": "Plzeň",
-      "typ": "odborná",
-      "velikost_ukazatel": 654,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600010589",
-      "nazev": "Gymnázium a Střední odborná škola pedagogická, Liberec, Jeronýmova 425/27, příspěvková organizace",
-      "mesto": "Liberec",
-      "typ": "gymnázium",
-      "velikost_ukazatel": 619,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600016927",
-      "nazev": "Gymnázium, Olomouc - Hejčín, Tomkova 45",
-      "mesto": "Olomouc",
-      "typ": "gymnázium",
-      "velikost_ukazatel": 754,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600007995",
-      "nazev": "Gymnázium J. V. Jirsíka, České Budějovice, Fráni Šrámka 23",
-      "mesto": "České Budějovice",
-      "typ": "gymnázium",
-      "velikost_ukazatel": 420,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600011658",
-      "nazev": "Střední průmyslová škola stavební, Hradec Králové, Pospíšilova tř. 787",
-      "mesto": "Hradec Králové",
-      "typ": "odborná",
-      "velikost_ukazatel": 415,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600011453",
-      "nazev": "Gymnázium a Střední odborná škola dr. Václava Šmejkala, Ústí nad Labem, příspěvková organizace",
-      "mesto": "Ústí nad Labem",
-      "typ": "gymnázium",
-      "velikost_ukazatel": 430,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600012310",
-      "nazev": "Gymnázium, Pardubice, Dašická 1083",
-      "mesto": "Pardubice",
-      "typ": "gymnázium",
-      "velikost_ukazatel": 428,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600171051",
-      "nazev": "Střední průmyslová škola polytechnická - Centrum odborné přípravy Zlín",
-      "mesto": "Zlín",
-      "typ": "odborná",
-      "velikost_ukazatel": 455,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600171230",
-      "nazev": "Střední škola, Havířov-Prostřední Suchá, příspěvková organizace",
-      "mesto": "Havířov",
-      "typ": "odborná",
-      "velikost_ukazatel": 440,
-      "pozvanka_odeslana": null
-    },
-    {
-      "redizo": "600007065",
-      "nazev": "Střední pedagogická škola a Střední odborná škola Kladno, příspěvková organizace",
-      "mesto": "Kladno",
-      "typ": "odborná",
-      "velikost_ukazatel": 638,
-      "pozvanka_odeslana": null
-    }
-  ]
+ "verze": 1,
+ "vybrano": "2026-09-19",
+ "seed": 20260919,
+ "kriteria": "Města podle počtu obyvatel: Praha 5, Brno 3, Ostrava 2, po 1 Plzeň, Liberec, Olomouc, České Budějovice, Hradec Králové, Ústí nad Labem, Pardubice, Zlín, Havířov, Kladno. Velikost = součet přihlášek 2026 přes nabídky školy v katalogu (období z registru cermat-vysledky). Typ školy: gymnázium, když aspoň polovina nabídek je GY*, jinak odborná. Kandidáti = horní tercil podle velikosti ve městě a typu. Úplnost: každá nabídka má kapacitu, přihlášky, přijaté a min_body; rejstřík CSV má Email 1, Ředitel, WWW a ID datové schránky; zřizovatel není soukromý (5) ani církevní (6); e-mail v data/portal/emaily.json nesdílí jiná škola; škola nemá žádný kód v data/portal/kody.json; má maturitní data 2026. Typové sloty: víceslotová města 1 gymnázium + zbytek odborné, z jednoslotových měst 4 gymnázia losem; když typ ve městě nemá kandidáta, bere se druhý typ. Výběr random.Random(seed).choice ze seřazeného seznamu REDIZO.",
+ "kontakty": "data/portal/pilot-kontakty.json (gitignorováno, osobní údaje)",
+ "skoly": [
+  {
+   "redizo": "600006247",
+   "nazev": "Gymnázium, Praha 9, Litoměřická 726",
+   "mesto": "Praha",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 623,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600005721",
+   "nazev": "Obchodní akademie a Gymnázium Bubeneč",
+   "mesto": "Praha",
+   "typ": "odborná",
+   "velikost_ukazatel": 585,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600005976",
+   "nazev": "Karlínská obchodní akademie",
+   "mesto": "Praha",
+   "typ": "odborná",
+   "velikost_ukazatel": 646,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600005071",
+   "nazev": "Střední průmyslová škola stavební Josefa Gočára, Praha 4, Družstevní ochoz 3",
+   "mesto": "Praha",
+   "typ": "odborná",
+   "velikost_ukazatel": 597,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600004643",
+   "nazev": "Vyšší odborná škola a Střední průmyslová škola dopravní, Praha 1, Masná 18",
+   "mesto": "Praha",
+   "typ": "odborná",
+   "velikost_ukazatel": 554,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600013448",
+   "nazev": "Gymnázium Brno, Vídeňská, příspěvková organizace",
+   "mesto": "Brno",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 685,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600019861",
+   "nazev": "Střední zdravotnická škola a Vyšší odborná škola zdravotnická Brno, Merhautova, příspěvková organizace",
+   "mesto": "Brno",
+   "typ": "odborná",
+   "velikost_ukazatel": 726,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600013502",
+   "nazev": "Obchodní akademie a vyšší odborná škola Brno, Kotlářská, příspěvková organizace",
+   "mesto": "Brno",
+   "typ": "odborná",
+   "velikost_ukazatel": 1154,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600017648",
+   "nazev": "Wichterlovo gymnázium, Ostrava-Poruba, příspěvková organizace",
+   "mesto": "Ostrava",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 447,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600017460",
+   "nazev": "Obchodní akademie, Ostrava-Poruba, příspěvková organizace",
+   "mesto": "Ostrava",
+   "typ": "odborná",
+   "velikost_ukazatel": 349,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600009602",
+   "nazev": "Střední odborná škola obchodu, užitého umění a designu, Plzeň, Nerudova 33",
+   "mesto": "Plzeň",
+   "typ": "odborná",
+   "velikost_ukazatel": 654,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600010589",
+   "nazev": "Gymnázium a Střední odborná škola pedagogická, Liberec, Jeronýmova 425/27, příspěvková organizace",
+   "mesto": "Liberec",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 619,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600016927",
+   "nazev": "Gymnázium, Olomouc - Hejčín, Tomkova 45",
+   "mesto": "Olomouc",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 754,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600007995",
+   "nazev": "Gymnázium J. V. Jirsíka, České Budějovice, Fráni Šrámka 23",
+   "mesto": "České Budějovice",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 420,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600011658",
+   "nazev": "Střední průmyslová škola stavební, Hradec Králové, Pospíšilova tř. 787",
+   "mesto": "Hradec Králové",
+   "typ": "odborná",
+   "velikost_ukazatel": 415,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600011453",
+   "nazev": "Gymnázium a Střední odborná škola dr. Václava Šmejkala, Ústí nad Labem, příspěvková organizace",
+   "mesto": "Ústí nad Labem",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 430,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600012310",
+   "nazev": "Gymnázium, Pardubice, Dašická 1083",
+   "mesto": "Pardubice",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 428,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600171051",
+   "nazev": "Střední průmyslová škola polytechnická - Centrum odborné přípravy Zlín",
+   "mesto": "Zlín",
+   "typ": "odborná",
+   "velikost_ukazatel": 455,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600171230",
+   "nazev": "Střední škola, Havířov-Prostřední Suchá, příspěvková organizace",
+   "mesto": "Havířov",
+   "typ": "odborná",
+   "velikost_ukazatel": 440,
+   "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600007065",
+   "nazev": "Střední pedagogická škola a Střední odborná škola Kladno, příspěvková organizace",
+   "mesto": "Kladno",
+   "typ": "odborná",
+   "velikost_ukazatel": 638,
+   "pozvanka_odeslana": "2026-09-22"
+  }
+ ]
 }
