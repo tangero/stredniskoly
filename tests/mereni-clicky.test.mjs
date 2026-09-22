@@ -15,16 +15,25 @@ test('Clicky se načítá a zná své ID', () => {
   assert.match(layout, /data-id="101500959"/, 'bez ID se měření nespáruje s účtem');
 });
 
-test('doména skriptu je v script-src', () => {
-  const radek = config.split('\n').find((r) => r.includes('script-src'));
-  assert.ok(radek, 'script-src se nenašel');
-  assert.match(radek, /static\.getclicky\.com/, 'CSP skript zablokuje');
-});
+for (const smernice of ['script-src', 'connect-src']) {
+  test(`${smernice} povoluje celou doménu Clicky`, () => {
+    // Dokumentace Clicky žádá `*.getclicky.com` i `clicky.com`. Vyjmenovat
+    // konkrétní hostitele nestačí — skript sahá na víc domén, než je z úryvku
+    // kódu vidět, a chybějící doména se projeví jen tichou blokací v konzoli.
+    const radek = config.split('\n').find((r) => r.includes(smernice));
+    assert.ok(radek, `${smernice} se nenašel`);
+    assert.match(radek, /\*\.getclicky\.com/, `${smernice} nepovoluje *.getclicky.com`);
+    assert.match(radek, /https:\/\/clicky\.com/, `${smernice} nepovoluje clicky.com`);
+  });
+}
 
-test('doména sběru je v connect-src', () => {
-  const radek = config.split('\n').find((r) => r.includes('connect-src'));
-  assert.ok(radek, 'connect-src se nenašel');
-  assert.match(radek, /in\.getclicky\.com/, 'CSP odeslání naměřených dat zablokuje');
+test('Referrer-Policy nezahazuje původ domény', () => {
+  // Při `same-origin` nebo `no-referrer` Clicky návštěvu zahodí, protože
+  // neověří doménu. Musí projít původ, ne nutně celá adresa.
+  const radek = config.split('\n').find((r) => r.includes("'Referrer-Policy'"));
+  assert.ok(radek !== undefined || config.includes('Referrer-Policy'), 'hlavička se nenašla');
+  assert.doesNotMatch(config, /Referrer-Policy'[,\s]*\n\s*value: 'same-origin'/, 'same-origin Clicky rozbije');
+  assert.doesNotMatch(config, /Referrer-Policy'[,\s]*\n\s*value: 'no-referrer'/, 'no-referrer Clicky rozbije');
 });
 
 test('Matomo zůstává vedle Clicky, ne místo něj', () => {
