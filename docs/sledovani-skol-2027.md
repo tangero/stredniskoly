@@ -4,6 +4,8 @@ Verze 1.2 · 14. 9. 2026, revize 20. 9. 2026 · Návrh; model události rozhodnu
 
 Rodina zadá e-mail a dostane upozornění, když se změní údaje škol, které sleduje. Navazuje na [stránku školy](stranka-skoly-2027.md), [registr stavu datových sad](../public/stav_datovych_sad.json), [datovou linku](datova-linka.md) a [portál pro školy](portal-pro-skoly-2027.md).
 
+Souběžně vznikl [návrh v2.2 se sledováním oborů](navrh-sledovani-skol-a-oboru-v2.md), který se do téhle řady nesloučil. Zamítnutí sledování oboru z verze 1.0 v něm je přehodnocené; rozpor je otevřený a je potřeba ho rozhodnout dřív, než se postaví odesílač.
+
 ## 1. Hlavní rozhodnutí: upozorňujeme na události, ne na úpravy stránek
 
 Data se na webu mění dvěma způsoby a oba musí skončit ve stejném e-mailu:
