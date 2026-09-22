@@ -13,11 +13,23 @@ Podklady k přednášce o tom, jak se Přijímačky na školu provozují jako AI
 ```bash
 pip install python-pptx Pillow
 python3 docs/prezentace/ai-first-company.py
+
+# POVINNÝ druhý krok — bez něj soubor některé aplikace neotevřou:
+soffice --headless --convert-to pptx --outdir /tmp docs/prezentace/
+cp /tmp/ai-first-company.pptx docs/prezentace/
 ```
 
 Skript přepíše `ai-first-company.pptx` vedle sebe. Každý slide má poznámky pro mluvčího.
 
 Úpravy dělejte ve skriptu, ne v pptx — jinak se při dalším běhu ztratí.
+
+### Proč ten druhý krok
+
+Soubor přímo z `python-pptx` je **technicky platný** — ověřeno: všechna XML dobře utvořená, žádný vztah neukazuje na chybějící soubor, média mají správné typy, LibreOffice ho otevře. Přesto ho Keynote odmítl hláškou „soubor nelze importovat“.
+
+Průchod LibreOffice přepíše strukturu do konzervativnější podoby, kterou přijímají i přísnější aplikace. Rozvržení se nemění — ověřeno porovnáním vyrenderovaných slidů před a po.
+
+Verze v repozitáři už tím průchodem prošla.
 
 ## Osobní údaje v obrázcích
 
