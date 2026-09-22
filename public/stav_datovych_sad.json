@@ -853,6 +853,40 @@
     "lidsky_krok": "Žádný pro běžný provoz. Vadnou položku, zdroj nebo celou třídu vypne přepínač v tabulce skola_prepinac; změna pravidel klasifikace jde přes pull request.",
     "sledovat": []
    }
+  },
+  "veletrhy-skol": {
+   "nazev": "Veletrhy a přehlídky středních škol",
+   "dokumentace": "docs/zdroje-dat.md#215-veletrhy-a-přehlídky-středních-škol",
+   "cyklus": "rocni",
+   "pouziti": "web",
+   "zobrazeno": {
+    "obdobi": "2027",
+    "soubor": "src/data/veletrhy-2027.json",
+    "zdroj": "docs/prijimacky-veletrhy-poradatele-2026.xlsx",
+    "opsano": "2026-09-22",
+    "poznamka": "Vlastní rešerše pořadatelů rozepsaná na jednotlivé akce. Sezóna podzim 2026 slouží uchazečům, kteří se hlásí v roce 2027, proto soubor nese 2027. Zobrazuje se jen akce s terminPotvrzen; 6 z 47 záznamů čeká na potvrzení termínu. Počty ověřuje tests/veletrhy.test.mjs."
+   },
+   "ocekavano": {
+    "obdobi": "2028",
+    "kdy": "2027-08",
+    "jistota": "odhad",
+    "zduvodneni": "Pořadatelé vypisují termíny podzimních veletrhů obvykle v srpnu a září; v roce 2026 byla většina termínů na webech do poloviny září."
+   },
+   "obnovit_nejpozdeji": "2027-09-15",
+   "po_prepnuti": "Akce předchozí sezóny se nezobrazují; soubor zůstává jako doklad, co web ukazoval, a jako podklad pro odhad termínu další sezóny.",
+   "vystupy": [
+    "src/data/veletrhy-2027.json"
+   ],
+   "ukazatele": [],
+   "aktualizace": {
+    "zdroj": "weby pořadatelů (krajské úřady, hospodářské komory, výstaviště)",
+    "detekce": "Ruční kontrola webů pořadatelů plus nahlášení z formuláře /veletrhy/nahlasit. Jednotný celostátní kalendář veletrhů SŠ neexistuje.",
+    "revize": "Termíny se během sezóny upřesňují; každá akce nese zdrojOvereni a datum ověření.",
+    "import": "Ruční zápis do src/data/veletrhy-2027.json. Nahlášení z formuláře se zapisuje až po ověření termínu na stránce pořadatele.",
+    "automatizace": "rucni",
+    "lidsky_krok": "Před sezónou projít weby pořadatelů, doplnit potvrzené termíny a rozepsat série na jednotlivá města. Průběžně vyřizovat nahlášení z formuláře.",
+    "sledovat": []
+   }
   }
  },
  "ukazatele_z_vice_sad": {

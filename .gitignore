@@ -91,3 +91,7 @@ public/novinky/
 
 # zdrojova data CERMAT (lokalni, mimo repozitar)
 /cermat_data_2025
+
+# Kontakty na poradatele veletrhu: jmena, sluzebni e-maily a mobily.
+# Slouzi obesilani, na web nepatri (docs/zdroje-dat.md, oddil 3).
+/data/veletrhy/poradatele-kontakty.json

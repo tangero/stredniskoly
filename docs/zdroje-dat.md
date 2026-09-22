@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.12 · 19. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.14 · 22. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -36,6 +36,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | CERMAT, agregáty 2. kola | data.cermat.cz, XLSX | kapacity, přihlášky, výsledky od 2024 | REDIZO + KKOV + zaměření | ročně, výsledky v září |
 | Dopravní data | PID, GTFS ČR, jízdní řády | celá ČR | zastávka a spoj | podle vydání |
 | Harmonogram přijímacího řízení MŠMT | opis termínů z metodiky MŠMT do `src/data/admissions-2027.json` | jedno přijímací řízení, 3 skupiny a 20 událostí | identifikátor události | ručně, jednou ročně |
+| Veletrhy a přehlídky středních škol | vlastní rešerše pořadatelů, `docs/prijimacky-veletrhy-poradatele-2026.xlsx` → `src/data/veletrhy-2027.json` | 25 pořadatelů a vlastní rešerše rozepsané na 47 akcí, sezóna podzim 2026 | identifikátor akce | ručně, jednou ročně; průběžně z nahlášení |
 | RSS/Atom feedy školních webů | weby škol, sklízeč `scripts/sklizec-novinek.py` | 533 z 1 093 škol s feedem | REDIZO + GUID položky | automaticky 2× denně |
 
 **Co v repozitáři není.** Zdroj patří do soupisu i tehdy, když jeho soubor na disku neleží. Takových je několik:
@@ -370,6 +371,48 @@ Z položky se počítají údaje zapsané ve [slovníku ukazatelů](slovnik-ukaz
 
 Sada zatím **není v registru stavu datových sad**: registr vede období, které se zobrazuje, a tenhle zdroj žádné období nemá – nese průběžné zprávy s vlastním datem vydání a vlastní platností podle druhu zprávy. Zapíše se do něj, až na něm bude stát ukazatel vázaný na přijímací ročník.
 
+### 2.15 Veletrhy a přehlídky středních škol
+
+`docs/prijimacky-veletrhy-poradatele-2026.xlsx`, vlastní rešerše, list `Poradatele`, 25 řádků × 15 sloupců. Rozepsáno do `src/data/veletrhy-2027.json` na 47 jednotlivých akcí; část z nich přibyla dohledáním přímo na webech pořadatelů 22. 9. 2026. Druhý list `Top8_tyden` je pracovní pořadník pro obesílání pořadatelů, ne datový zdroj.
+
+**Jeden řádek zdroje je organizace, ne akce.** Krajská hospodářská komora Střední Čechy je jeden řádek, ale v buňce `terminy_2026` nese čtyři města a čtyři data. Stránka, která má umět „ukaž mi, co je u nás“, potřebuje zrnitost jedna akce = jedno město + jeden termín, proto se textové buňky rozepisují ručně.
+
+| Sloupec | Obsah | Otázka rodiče | Používáme |
+|---|---|---|---|
+| `organizace` | kdo akci pořádá | kdo za akci ručí | ano, jako `poradatel` |
+| `typ_poradatele` | KHK, kraj, MAS, výstaviště, soukromý agregátor, jiné | žádná | ne, rodiči nic neříká; slouží k rozlišení katalogů od pořadatelů |
+| `akce` | název akce, někdy více akcí v jednom řetězci | jak se akce jmenuje | ano, po rozpisu na jednotlivé akce |
+| `kraje` | kraj konání, u agregátorů „celá ČR“ | koná se to u nás | ano, převedeno na `krajKod` (NUTS) |
+| `terminy_2026` | volný text: data, města, poznámky „2026 TBD“ i loňské termíny | kdy to je | ano, ale jen tam, kde je termín potvrzený — viz past níže |
+| `misto` | adresa nebo popis místa konání | kam mám přijet | ano |
+| `kontaktni_osoba` | jméno kontaktní osoby u pořadatele | žádná | ne, osobní údaj bez hodnoty pro rodinu; slouží obesílání |
+| `email` | kontaktní e-mail pořadatele | žádná | ne, na web nepatří; slouží obesílání |
+| `telefon` | telefon pořadatele | žádná | ne, tamtéž |
+| `web` | adresa stránky akce nebo pořadatele | kde zjistím podrobnosti | ano, jako `url` |
+| `priorita` | 1 až 4, koho oslovit dřív | žádná | ne — je to pořadník pro obesílání, ne hodnocení akce; na webu by se spletl s řazením |
+| `nabidka_spoluprace` | text nabídky partnerství | žádná | ne, interní |
+| `poznamka` | IČ, datovka, doplňky ke kontaktům | žádná | ne, interní |
+| `zdroj` | odkud se údaj ověřil | žádná, ale nese důvěryhodnost | ano, jako `zdrojOvereni` |
+| `overeno` | ano/ne, zda je ověřený **pořadatel** | žádná | ano, ale nestačí — viz past níže |
+
+**Past: ověřenost pořadatele a ověřenost termínu jsou dvě různé věci.** Sloupec `overeno` má `ano` u 14 řádků, ale znamená „ověřili jsme, že tuhle akci tato organizace pořádá“, ne „tohle datum platí“. Královéhradecká komora má `overeno = ano` a v termínech „2026 TBD (2025: Trutnov 10.–11. 10.; …)“. Odvozený soubor proto nese vlastní příznak `terminPotvrzen` a **zobrazuje se jen akce, která ho má**. Z 47 záznamů jich je 41; zbylých 6 nese pole `cekaNa` s důvodem.
+
+**Pokrytí není úplné a netvrdí se, že je.** Agregátor Smartee vede kolem 90 akcí, náš rozpis 47. Po dohledání 22. 9. 2026 má **všech čtrnáct krajů** aspoň jednu zobrazitelnou akci, ale uvnitř krajů zůstávají mezery — v Ústeckém kraji je ověřená jedna akce z šesti, které se tam loni konaly. Stránka to říká výslovně a nabízí formulář pro nahlášení chybějící akce.
+
+**Tři stupně doloženosti termínu.** Nestačí dvouhodnotové „zobrazit/nezobrazit“, protože zdroje se liší kvalitou:
+
+| Příznak | Co znamená | Jak se zobrazí |
+|---|---|---|
+| `terminPotvrzen` | termín je na webu pořadatele | běžně |
+| `terminPribligny` | pořadatel uvádí rozsah, ne přesný harmonogram (online veletrh MSK: „~21.–30. 11. dle okresů“) | s poznámkou „termín je přibližný“ |
+| `zdrojJenAgregator` | termín máme z agregátoru, web pořadatele ho neuvádí (Schola Bohemia, Hitparáda) | s poznámkou „neověřený u pořadatele“ |
+
+Poslední dva stupně vznikly z oponentury 22. 9. 2026: přepis „~21.–30. 11. (dle okresů)“ na souvislý potvrzený termín zahodil vlnovku i rozdělení po okresech, tedy tvrdil víc, než zdroj říká.
+
+Čtyři řádky nejsou pořadatelé, ale katalogy akcí (Smartee, AtlasŠkolství.cz, stredniskoly.cz, ASPŠ). Zůstávají v datech v poli `katalogy` jako zdroj pro dohledání dalších akcí a nezobrazují se — jsou to konkurenční weby.
+
+V registru je jako sada `veletrhy-skol`, období 2027, obnova nejpozději do 15. 9. 2027. Návrh a rozhodnutí jsou v [dokumentu o veletrzích](veletrhy-skol-2027.md).
+
 ## 3. Sloupce, které nepoužíváme
 
 Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to dalo rodiči.
@@ -394,6 +437,9 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 | Důvod nepřijetí u jednotlivce | data uchazečů, `ss*_duvod_neprijeti` | rozpad už máme z agregátu | duplicitní |
 | Platnost oboru v číselníku | AKKO, `platnostDo` | obor se ruší celostátně | nezobrazeno |
 | Ředitel a délka jeho funkce | rejstřík, `reditel` | stabilita vedení | sporná vypovídací hodnota |
+| Kdo na veletrhu vystavuje | **v žádném zdroji není** | „Bude tam škola, která mě zajímá?“ Jediný podklad, podle kterého by šlo poctivě upozornit na veletrh na stránce školy | seznamy vystavovatelů zveřejňují pořadatelé nestejně, část až týden před akcí, část vůbec. Chce se získat od pořadatelů jako součást mediálního partnerství, viz [veletrhy](veletrhy-skol-2027.md) § 7 |
+| Kontakty na pořadatele veletrhů | veletrhy, `kontaktni_osoba`, `email`, `telefon`; dohledané kontakty v `data/veletrhy/poradatele-kontakty.json` | žádná | na web nepatří ze stejného důvodu jako kontakt na školu. Soubor s dohledanými kontakty (9 organizací, 15 osob) je v `.gitignore` a čte se jen lokálně při obesílání — jsou to jména, služební e-maily a mobily konkrétních lidí |
+| Nepotvrzené termíny veletrhů | veletrhy, 6 z 47 záznamů | „Koná se u nás vůbec něco?“ — všech 14 krajů má k 22. 9. 2026 zobrazitelnou akci, přehled ale není úplný | termín 2026 není potvrzený, u části jde o loňské datum. Zobrazit by znamenalo zopakovat chybu pole `dny_otevrenych_dveri` z § 2.8. Záznamy nesou `cekaNa` s tím, co chybí |
 
 **Dobíhající obor neříká, co se od něj čekalo.** Do 17. 9. 2026 tu stálo, že příznak poslouží jako varování „škola tenhle obor zavírá“ před podáním přihlášky. Měření to vyvrátilo: proti snímku rejstříku k 30. 6. 2026 je **nula z 3 091 nabídek** 1. kola 2026 vedena jako dobíhající. Hrubý join na REDIZO a KKOV dá 29 zásahů, ale **všech 29 je falešných** — pokaždé dobíhá jiná forma nebo délka téhož oboru, typicky dálková nástavba vedle denní. Závěr platí i při nejširší definici druhu školy. Reprodukuje `python3 scripts/dobihajici-obory.py`, doklad `docs/podklady/dobihajici-obory.json`.
 
@@ -536,6 +582,8 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ru�
 | `school-analysis-legacy` | nezobrazovat | 2025 | `public/school_analysis.json` | — | — | neznámo | Nepřepíná se. |
 | `cermat-kolo2-agregaty` | web | 2026 | `PZ2026_kolo2_skolobory_vysledky.xlsx` | — | 2027 | 2027-09, odhad | Předchozí rok zůstává ve výstupu a na stránce slouží k větě, zda škola 2. kolo vypsala i tehdy. |
 | `msmt-harmonogram` | web | 2027 | `src/data/admissions-2027.json` | — | 2028 | 2027-08, odhad | Termíny předchozího ročníku se nezobrazují; soubor zůstává jako doklad, co web ukazoval. |
+| `skolni-novinky-rss` | web | prubezne | `public/skoly_feedy.json` | — | prubezne | — | Nepřepíná se. Stará položka se nemaže; po konci platnosti přestane být pozvánkou a zůstane v seznamu novinek. |
+| `veletrhy-skol` | web | 2027 | `src/data/veletrhy-2027.json` | — | 2028 | 2027-08, odhad | Akce předchozí sezóny se nezobrazují; soubor zůstává jako doklad, co web ukazoval, a jako podklad pro odhad termínu další sezóny. |
 
 #### Aktualizace a automatizace
 
@@ -560,6 +608,8 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ru�
 | `school-analysis-legacy` | neaktualizuje se | — | — | Generátor není dohledaný, soubor nejde aktualizovat, jen nahradit katalogem. |
 | `cermat-kolo2-agregaty` | příprava | HTTP HEAD. | scripts/build-druhe-kolo.py; v datové lince zpracovatel cermat-kolo2-agregaty stáhne k souboru 2. kola i výsledky 1. kola téhož roku a doplní ročník do stávajícího výstupu. | Schválit úlohu, zkontrolovat počty v pull requestu a přepnout období v registru. |
 | `msmt-harmonogram` | ruční | Ruční kontrola stránky MŠMT o přijímání na střední školy. Adresy souborů nesou ročník i měsíc vydání, takže se mění celé; HTTP HEAD na starou adresu nová data neodhalí. | Ruční opis do src/data/admissions-2027.json. Čte ho stránka přijímaček a hlavní stránka (termín zveřejnění kritérií). | Po vydání harmonogramu na další přijímací řízení opsat termíny do nového souboru, přepnout období a zkontrolovat věty na hlavní stránce. |
+| `skolni-novinky-rss` | plná | Podmíněný požadavek na feed (ETag, If-Modified-Since); stav zdroje je v tabulce skola_feed. | scripts/sklizec-novinek.py vyrobí dávku, scripts/skolni-novinky-zapis.mjs ji zapíše do databáze. | Žádný pro běžný provoz. Vadnou položku, zdroj nebo celou třídu vypne přepínač v tabulce skola_prepinac; změna pravidel klasifikace jde přes pull request. |
+| `veletrhy-skol` | ruční | Ruční kontrola webů pořadatelů plus nahlášení z formuláře /veletrhy/nahlasit. Jednotný celostátní kalendář veletrhů SŠ neexistuje. | Ruční zápis do src/data/veletrhy-2027.json. Nahlášení z formuláře se zapisuje až po ověření termínu na stránce pořadatele. | Před sezónou projít weby pořadatelů, doplnit potvrzené termíny a rozepsat série na jednotlivá města. Průběžně vyřizovat nahlášení z formuláře. |
 
 <!-- stav-datovych-sad:do -->
 
@@ -576,6 +626,8 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.14 | Dohledání termínů na webech pořadatelů rozšířilo veletrhy z 39 na 47 akcí, z toho 41 zobrazitelných; pokrytí stouplo z devíti na **všech čtrnáct krajů**. Zavedeny tři stupně doloženosti termínu místo dvou: k `terminPotvrzen` přibyly `terminPribligny` (pořadatel uvádí rozsah, ne harmonogram) a `zdrojJenAgregator` (termín z agregátoru, web pořadatele ho neuvádí). Vzniklo z oponentury: přepis „~21.–30. 11. dle okresů“ na souvislý potvrzený termín tvrdil víc, než zdroj říká. |
+| 1.13 | Veletrhy a přehlídky středních škol jako nový zdroj (oddíl 2.15): 25 pořadatelů rozepsaných na 39 jednotlivých akcí. Zavedeno oddělení ověřeného pořadatele od potvrzeného termínu — sloupec `overeno` v xlsx znamená to první, ne druhé, takže odvozený soubor nese vlastní `terminPotvrzen` a zobrazuje se 29 z 39 akcí. Zváženo a zamítnuto: `priorita` (pořadník pro obesílání, na webu by se spletl s řazením akcí), `kontaktni_osoba`, `email`, `telefon` (na web nepatří stejně jako kontakt na školu), `typ_poradatele` a interní poznámky. Do oddílu 3 přibyly tři položky, z toho záporný nález o tom, že seznam vystavovatelů neexistuje v žádném zdroji. |
 | 1.12 | Index názvů z rejstříku nese oddíl `identifikace` (plný název, IČO, adresa sídla středních škol a konzervatoří) pro hlavičku vstupu do portálu pro školy. Zváženo a zamítnuto: `reditel` a `emaily` (osobní údaje, k poznání školy nejsou potřeba), `mistaVyuky` (pro identifikaci stačí sídlo), ID datové schránky z CSV (nic nepřidá k IČO a REDIZO). |
 | 1.11 | Příznak `dobihajiciObor` se poprvé používá na webu: `build-dobihajici-obory.py` vyrábí `public/dobihajici_obory.json` a stránka školy jím v bloku „Obory z dřívějších let“ odlišuje obor, který se už nenabírá, od oboru, který škola v tomto roce jen nevypsala. Párování REDIZO + KKOV + denní forma + délka; nula dobíhajících mezi vypsanými nabídkami tím zůstává respektovaná. Soubor doplněn do výstupů sady `msmt-rejstrik-snimky`. |
 | 1.10 | Zapsán **záporný nález o absolventech** (oddíl 3): na otázku, jak si vedou absolventi konkrétní školy, nemá odpověď žádný z šesti prověřených veřejných zdrojů. Soubor MPSV nese IZO, ale chybí mu jmenovatel a ten sám MŠMT označuje za nevěrohodný; krajová míra nezaměstnanosti za skupinu oborů zamítnuta, protože popisuje trh práce v kraji, ne školu. Rešerše ze 17. 9. 2026 tím přestává žít jen v návrhu. |
