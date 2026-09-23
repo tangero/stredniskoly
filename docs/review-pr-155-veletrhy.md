@@ -2,7 +2,9 @@
 
 Code review PR #155 „Veletrhy a přehlídky středních škol: přehled akcí a formulář pro nahlášení“ — commit `86f1da9145a4d40a9db9d3d56b144b38b42d9652`, větev `feat/veletrhy-skol` → `main`, 20 souborů, +3021/−4. Reviewer: Claude (session 23. 9. 2026), review ve worktree nad tímto commitem.
 
-**Nesouhlasím s merge v této podobě. Blokují dvě věci, obě mimo runtime kód:** v repozitáři leží tabulka s kontakty na konkrétní lidi (P0) a stránka ochrany údajů neví o novém formuláři, který sbírá e-maily (P1). Samotný kód přehledu a formuláře je v pořádku a po vyřešení obou bodů merge doporučím. Třetí nález (čtyři testy padají pod Node 24) je doložený jako vlastnost prostředí, ne chyba změny, a je neblokující s konkrétní nápravou.
+> **Stav po druhém kole (commit `bdf34be`): souhlasím s merge.** Viz oddíl „Druhé kolo“ na konci. Text prvního kola níže zůstává beze změny jako doklad.
+
+**První kolo: nesouhlasím s merge v této podobě. Blokují dvě věci, obě mimo runtime kód:** v repozitáři leží tabulka s kontakty na konkrétní lidi (P0) a stránka ochrany údajů neví o novém formuláři, který sbírá e-maily (P1). Samotný kód přehledu a formuláře je v pořádku a po vyřešení obou bodů merge doporučím. Třetí nález (čtyři testy padají pod Node 24) je doložený jako vlastnost prostředí, ne chyba změny, a je neblokující s konkrétní nápravou.
 
 ## Nezávislé ověření
 
@@ -72,3 +74,41 @@ CI je tedy zelené po právu a merge to nebrání. Ale za sedm měsíců (konec 
 3. Po force‑pushi provedu druhé kolo nad novým commitem: ověřím, že v historii větve xlsx s kontakty není (`git log --all --diff-filter=A -- '*.xlsx'`), a pak merge výslovně doporučím.
 
 Merge jsem neprovedl, do větve `feat/veletrhy-skol` jsem nezasahoval, produkční data ani konfiguraci jsem neměnil. Při ověřování jsem dočasně instrumentoval `src/lib/novinky-db.ts` a kopii testu; oba soubory jsou vrácené (`git status` čistý).
+
+---
+
+## Druhé kolo — commit `bdf34be`
+
+Větev dostala druhý commit `bdf34be` „vyporadani oponentury PR #155, tri nalezy“ (7 souborů, +99/−7). Zadavatel mi výsledek předal přímo; na PR komentář autora není.
+
+**Souhlasím s merge.** Oba blokující nálezy jsou vyřízené — jeden opravou, druhý rozhodnutím zadavatele, které tady zapisuji. Zbývají tři neblokující připomínky k tomu, co druhý commit přinesl.
+
+### Nezávislé ověření
+
+- **Node 22.23.2 + tsx 4.23.15, celý `test:mesto`: 63/63.** Pod Node 24 zůstávají čtyři pády z prvního kola (doložená vlastnost prostředí, viz výše); `.nvmrc`/`engines`/připnutí `tsx` autor neudělal s tím, že je to mimo rozsah PR — souhlasím, patří to do samostatného PR.
+- `src/app/veletrhy/page.tsx` má dál `revalidate = 3600`; stránka se stala `async`, statická zůstává.
+- Diff druhého commitu přečten celý: stránka ochrany údajů, `overSezonuProtiRegistru`, odkazy z patičky a z `/prijimacky-2027`, nový test, dokumentace 0.8.
+
+### P0 z prvního kola — rozhodnutí zadavatele
+
+`docs/prijimacky-veletrhy-poradatele-2026.xlsx` s kontakty na osoby **v repozitáři zůstává, rozhodnutím zadavatele.** Nález netahám zpět, ale rozhodnutí o riziku je jeho, ne moje: jde o služební kontakty pořadatelů veřejných akcí, které pořadatelé sami zveřejňují, a zadavatel je zároveň správce údajů. Zapisuji to sem, aby příští review nezačínalo znovu od P0.
+
+Jedno doporučení, aby rozhodnutí bylo čitelné i bez tohoto zápisu: do `docs/zdroje-dat.md` k oddílu 2.15 přidat větu, že tabulka v repozitáři nese i kontakty na osoby, odkud pocházejí a proč se to považuje za přijatelné. Pravidlo „na web nepatří“ z changelogu 1.13 pak nebude vypadat jako porušené, ale jako vědomě zúžené na zobrazení.
+
+### P1 z prvního kola — vyřízeno
+
+Stránka ochrany údajů má oddíl „Nahlášení akce do přehledu veletrhů“: co se zpracovává, že se e‑mail nezveřejňuje ani nepoužívá k odběru, doba držení 12 měsíců od konce sezóny s odůvodněním (dohledání rozhodnutí, rozpoznání opakovaného nahlášení) a smazání na žádost. Text je přesný a odpovídá tomu, co route a migrace dělají. Odkaz na `/veletrhy` vede z patičky a z kalendáře přijímaček.
+
+### Neblokující k druhému commitu
+
+**P2 — slib doby držení bez postupu.** Stránka slibuje smazání po 12 měsících od konce sezóny, ale nic to nedělá: migrace nemá úklid, `docs/veletrhy-skol-2027.md` nezmiňuje, kdo a kdy frontu čistí. Slib na stránce ochrany údajů je závazek; stačí jeden odstavec v dokumentaci s termínem (například při přepnutí sady na další ročník smazat záznamy sezóny předminulé) a připomínka v registru u `po_prepnuti`.
+
+**P2 — nový test nehlídá to, kvůli čemu vznikl.** `overSezonuProtiRegistru` má vracet `null` při rozchodu dat s registrem. Mutace `return obdobi === SEZONA ? obdobi : null` → `return obdobi` **prošla všemi 20 testy** v `veletrhy.test.mjs` a `veletrhy-render.test.mjs`. Test porovnává jen souhlasný stav (data i registr říkají 2027), takže nerozezná strážce od funkce, která registr slepě opíše. Potřebuje druhý případ s podstrčeným registrem, kde se období liší, a očekáváním `null`. Vzor pro podstrčení je v `pasmovy-prouzek.test.mjs` (zavaděč s náhradou modulu).
+
+**P3 — rozchod se uživateli ukáže jako „o žádné akci nevíme“.** Při `sezonaSedi = false` stránka předá seznamu prázdné pole a `VeletrhySeznam` vypíše „O žádné akci v tomto výběru nevíme. Neznamená to, že se žádná nekoná…“. To je věta o stavu rešerše, ne o tom, že web čeká na výměnu dat. Rodič se dozví nepravdu s dobrým úmyslem. Lepší je vlastní věta pro tento stav („Přehled pro nový ročník připravujeme“) — a právě ten stav by pokryl chybějící test výše.
+
+### Dřívější neblokující nálezy
+
+P1 (Node 24, připnutí verzí) a P3 (rate limit v paměti) autor vědomě odložil, P2 (vazba importu na registr) je vyřešeno jinak než jsem navrhoval — strážcem místo assertu na cestu — a dokumentace to vysvětluje dobře: registr neurčuje, *který* soubor se čte, ale *jestli* je načtený ještě platný. To je čistší než můj návrh.
+
+Merge jsem neprovedl. Při ověřování jsem dočasně zmutoval `src/lib/veletrhy.ts` a soubor vrátil (`git status` čistý).
