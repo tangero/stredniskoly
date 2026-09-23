@@ -2,9 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { vsechnyKraje } from '@/lib/kraje.mjs';
+import { cipKraje, vsechnyKraje } from '@/lib/kraje.mjs';
 
-// Číselník krajů je jeden pro celý web; formulář ho neopisuje.
+// Číselník krajů je jeden pro celý web; formulář ho neopisuje. Popisek je
+// krátký název jako na čipu, ve stejném pořadí („Praha“ pod P).
 const KRAJE = vsechnyKraje();
 
 const vstup =
@@ -104,7 +105,7 @@ export function NahlasitForm() {
             </option>
             {KRAJE.map((k) => (
               <option key={k.kod} value={k.kod}>
-                {k.nazev}
+                {cipKraje(k.kod)}
               </option>
             ))}
           </select>

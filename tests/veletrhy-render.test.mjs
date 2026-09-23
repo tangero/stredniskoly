@@ -8,8 +8,8 @@
 //
 // Od 23. 9. 2026 je osou stránky kraj: čipy s počty nahoře, oddíl na kraj,
 // uvnitř karty podle data s městem jako první řádkou. Filtr měst zmizel —
-// 39 ze 40 měst mělo jedinou akci, rozbalovací seznam se 40 položkami
-// vedl vždycky na jednu kartu.
+// 38 z 39 měst mělo jedinou akci, rozbalovací seznam se 39 položkami
+// vedl skoro vždycky na jednu kartu.
 //
 // Pravidla vykreslení se testují nad syntetickými kartami, kde to jde;
 // skutečná data slouží tam, kde jde o shodu s nimi (počty, města).
@@ -109,6 +109,9 @@ test('kraje jsou oddíly s nadpisem, počtem, kotvou a odkazem pojmenovaným kra
       continue;
     }
     assert.ok(html.includes(kotva), `Kraj ${k.nazev} musí mít oddíl s kotvou, aby na něj šlo odkázat ze stránky kraje.`);
+    // Mezera před počtem musí být v textu, ne jen v CSS: čtečka i kopírování
+    // jinak dostanou „Jihočeský kraj6 akcí“.
+    assert.ok(html.includes(`${nadpisKraje(k.kod)} <span class="ml-2`), `Nadpis oddílu ${k.nazev} bez mezery před počtem.`);
     assert.ok(text(html).includes(`${nadpisKraje(k.kod)} ${akci(pocet)}`), `Nadpis oddílu ${k.nazev} musí nést počet akcí.`);
     // Čtrnáct odkazů se stejným textem: čtečka potřebuje v názvu odkazu kraj,
     // a viditelný text v názvu zůstává (ovládání hlasem říká, co vidí).
@@ -163,7 +166,11 @@ test('řádek měst jen u více akcí, v pořadí konání; místo na kartě i v
   assert.ok(text(smisene).includes('Středočeský kraj 4 akce'));
   // Řádek s datem opakuje misto jen tam, kde ho první řádka neukázala.
   assert.ok(!smisene.includes(' — Třebíč, Havlíčkův Brod'), 'Výčet měst série by byl na kartě dvakrát.');
-  assert.ok(smisene.includes('5. října 2026 — Sál'), 'U akce s městem zůstává místo konání na řádku s datem.');
+  assert.ok(smisene.includes('5. října 2026</time> — Sál'), 'U akce s městem zůstává místo konání na řádku s datem.');
+  // Když je místo konání totéž co město, nepíše se dvakrát (Břeclav / Břeclav).
+  const stejne = vykresliKarty([karta({ mesto: 'Břeclav', misto: 'Břeclav' })]);
+  assert.ok(stejne.includes('text-gray-500">Břeclav</p>'));
+  assert.ok(!stejne.includes(' — Břeclav'), 'Místo shodné s městem se na řádku s datem neopakuje.');
 
   // Pořadí uvnitř kraje je smlouva komponenty, ne volajícího: zamíchané
   // karty se seřadí podle data, řádek měst jde v pořadí konání.
@@ -189,15 +196,16 @@ test('dlaždice: den, rozsah dnů, rozsah přes měsíc, pevná šířka, menš�
   assert.ok(jeden.includes('uppercase tracking-wide">říj</span>'));
   assert.ok(jeden.includes('dateTime="2026-10-05"'));
 
-  assert.match(jeden, /<time dateTime="2026-10-05"/);
+  // Strojové datum nese řádek s datem, u rozsahu jako jeho začátek; dlaždice
+  // je jen vizuál (aria-hidden), takže čtečka datum neslyší dvakrát.
+  assert.ok(jeden.includes('<time dateTime="2026-10-05">5. října 2026</time>'));
+  assert.ok(!jeden.includes('<time dateTime="2026-10-05" class'), 'Dlaždice není <time>.');
 
   // V průběhu třídenní akce by první den v tučné dlaždici četl jako „už bylo“.
-  const tri = vykresliKarty([karta({ start: '2026-10-15', end: '2026-10-17' })]);
+  const tri = vykresliKarty([karta({ start: '2026-10-15', end: '2026-10-17', datum: '15.–17. října 2026' })]);
   assert.ok(tri.includes('leading-none">15–17</span>'));
-  // `<time>` bez dateTime musí obsahovat platné datum; „15–17“ jím není,
-  // a dateTime se startem by tvrdil jeden den. Rozsah je proto `<span>`.
-  assert.ok(!tri.includes('<time'), 'U vícedenní akce dlaždice není <time>.');
-  assert.match(tri, /<span[^>]*title="[^"]*"[^>]*>/);
+  assert.ok(tri.includes('<time dateTime="2026-10-15">15.–17. října 2026</time>'), 'I vícedenní akce má strojové datum.');
+  assert.match(tri, /<span aria-hidden="true" class="[^"]*\bw-16\b[^"]*" title="15.–17. října 2026">/);
 
   const presMesic = vykresliKarty([karta({ start: '2026-09-30', end: '2026-10-02' })]);
   assert.ok(presMesic.includes('leading-none">30–2</span>'));
@@ -206,8 +214,7 @@ test('dlaždice: den, rozsah dnů, rozsah přes měsíc, pevná šířka, menš�
   // Šířka je pevná, aby text karet v oddílu začínal na stejné svislici;
   // delší rozsah („~21–30“) dostane menší písmo místo širší dlaždice.
   assert.ok(!tri.includes('min-w-14'), 'Dlaždice nesmí růst s délkou textu.');
-  assert.match(tri, /<span[^>]*class="[^"]*\bw-16\b/);
-  assert.match(jeden, /<time[^>]*class="[^"]*\bw-16\b/);
+  assert.match(jeden, /<span aria-hidden="true" class="[^"]*\bw-16\b/);
   const pribl = vykresliKarty([karta({ terminPribligny: true, start: '2026-11-21', end: '2026-11-30' })]);
   assert.match(pribl, /class="text-base font-bold leading-none">~21–30</);
 });
@@ -403,6 +410,11 @@ test('starý seznam po půlnoci aktualizuje karty i čipy a zachová viditelný 
   h.stavy[0] = akce[0].krajKod;
   const sVyberem = h.render(props);
   assert.match(sVyberem, new RegExp(`aria-pressed="true"[^>]*data-kraj="${akce[0].krajKod}" data-pocet="0"[^>]*>[^<]*<span[^>]*>\\(bez aktuálních akcí\\)`));
+  // Čip bez akcí zůstává na svém místě v abecedě, neskáče na začátek řady
+  // (Středočeský až za Jihočeský).
+  assert.equal(akce[0].krajKod, 'CZ020');
+  assert.equal(akce[1].krajKod, 'CZ031');
+  assert.ok(sVyberem.indexOf('data-kraj="CZ031"') < sVyberem.indexOf('data-kraj="CZ020"'), 'Čip bez akcí musí zůstat na svém místě v pořadí.');
   assert.ok(sVyberem.includes('Zrušit filtr'));
   assert.ok(!sVyberem.includes(akce[1].nazev), 'Filtr na kraj bez akcí nesmí ukázat akce jiného kraje.');
   // Prázdný stav se hlásí jednou, ne dvakrát, a čtenář má kam dál.
@@ -572,6 +584,8 @@ test('kotva na kraj, kterému akce proběhly, ukáže prázdný stav s odkazem n
   assert.equal(s.stavy[0], 'CZ051', 'Známý kraj bez akcí se musí poznat od překlepu.');
   const html = s.render(props);
   assert.ok(html.includes('Liberecký kraj: teď o žádné akci nevíme.'));
+  // Kotva posouvá i na prázdný stav: krabice nese id kraje jako by nesl oddíl.
+  assert.ok(html.includes(`<div id="${slug}"`), 'Prázdný stav musí nést kotvu kraje, jinak posun nemá kam.');
   assert.ok(html.includes(`href="/regiony/${slug}"`), 'Odkaz zpět na stránku kraje.');
   assert.ok(!html.includes('>Akce<'), 'Ostatní kraje se nezobrazí.');
   assert.match(html, /aria-pressed="true"[^>]*data-kraj="CZ051" data-pocet="0"/);

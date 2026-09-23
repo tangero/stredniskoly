@@ -114,27 +114,19 @@ export function VeletrhySeznam({ akce, den }: Props) {
   // takže efekt níže proběhne i pro kraj, který už byl vybraný, a
   // proběhne až po překreslení se zúženým seznamem.
   //
-  // Vlastní zápis adresy čipem (`replaceState` ve `vyber`) v Chromiu také
-  // vyvolá `currententrychange`; ten se pozná podle toho, že adresa už
-  // nese právě zapsanou kotvu, a neposouvá — klik na čip nemá hýbat
-  // stránkou.
+  // Zpracovaná kotva se pamatuje: Next po každé změně stavu routeru volá
+  // replaceState s nezměněnou adresou (a totéž dělají skripty třetích
+  // stran) a Chromium k tomu hlásí `currententrychange`; bez porovnání by
+  // každá taková událost znovu posunula na oddíl. Totéž kryje vlastní
+  // zápis čipem (`vyber` kotvu zapíše jako zpracovanou) — klik na čip
+  // nemá hýbat stránkou.
   const [posun, setPosun] = useState<{ slug: string } | null>(null);
-  const vlastniZapis = useRef<string | null>(null);
-  // Next po každé změně stavu routeru volá replaceState s nezměněnou
-  // adresou (a totéž dělají skripty třetích stran); bez porovnání s naposledy
-  // zpracovanou adresou by každá taková událost znovu posunula na oddíl.
   const zpracovano = useRef<string | null>(null);
   useEffect(() => {
     const predvyber = () => {
       const kotva = window.location.hash.replace(/^#/, '');
       if (kotva === zpracovano.current) return;
       zpracovano.current = kotva;
-      if (vlastniZapis.current !== null) {
-        if (kotva === vlastniZapis.current) return;
-        // První cizí změna adresy stráž ruší — zpět a znovu vpřed na tutéž
-        // kotvu už je navigace čtenáře, ne náš zápis.
-        vlastniZapis.current = null;
-      }
       const shoda = KRAJE.find((k) => k.slug === kotva);
       if (!shoda && kotva) return;
       setKraj(shoda ? shoda.kod : '');
@@ -160,10 +152,10 @@ export function VeletrhySeznam({ akce, den }: Props) {
   function vyber(kod: string) {
     setKraj(kod);
     const k = KRAJE.find((x) => x.kod === kod);
-    vlastniZapis.current = k ? k.slug : '';
-    // Kde Navigation API není, žádná událost nepřijde; adresa je přesto
-    // zpracovaná, jinak by první skutečná změna zpět na ni nezabrala.
-    zpracovano.current = vlastniZapis.current;
+    // Zapsaná kotva je zpracovaná: v Chromiu tím projde vlastní
+    // `currententrychange` bez posunu, a kde Navigation API není, nezůstane
+    // stará hodnota, na které by Zpět na prázdnou adresu vypadal jako nic.
+    zpracovano.current = k ? k.slug : '';
     window.history.replaceState(null, '', k ? `#${k.slug}` : window.location.pathname + window.location.search);
   }
 
@@ -193,12 +185,14 @@ export function VeletrhySeznam({ akce, den }: Props) {
   const vybrany = KRAJE.find((k) => k.kod === kraj);
   const vybranyBezAkci = vybrany !== undefined && vybrane.length === 0;
 
-  // Jeden seznam čipů: kraje s akcí a případně vybraný kraj, kterému akce
-  // po půlnoci došly — ten zůstává viditelný, dokud filtruje.
-  const cipy = [
-    ...(vybranyBezAkci ? [{ ...vybrany, pocet: 0 }] : []),
-    ...oddily,
-  ];
+  // Jeden seznam čipů v pořadí číselníku: kraje s akcí a případně vybraný
+  // kraj, kterému akce po půlnoci došly — ten zůstává na svém místě
+  // viditelný, dokud filtruje; nesmí skočit na začátek řady.
+  const cipy = KRAJE.flatMap((k) => {
+    const oddil = oddily.find((o) => o.kod === k.kod);
+    if (oddil) return [oddil];
+    return vybranyBezAkci && k.kod === kraj ? [{ ...k, pocet: 0 }] : [];
+  });
 
   const cip = (aktivni: boolean) =>
     cn(
@@ -257,7 +251,9 @@ export function VeletrhySeznam({ akce, den }: Props) {
       )}
 
       {vybrane.length === 0 && (
-        <div className="rounded-lg border border-gray-200 bg-gray-50 p-6 text-gray-700">
+        // Kotva i pro prázdný stav: odkaz #liberecky po skončení jediné akce
+        // má na tuhle krabici posunout stejně, jako by posunul na oddíl.
+        <div id={vybrany?.slug} className="rounded-lg border border-gray-200 bg-gray-50 p-6 text-gray-700 scroll-mt-24">
           <p className="font-medium text-gray-900">
             {vybrany ? `${vybrany.nadpis}: teď o žádné akci nevíme.` : 'O žádné akci teď nevíme.'}
           </p>
@@ -283,7 +279,7 @@ export function VeletrhySeznam({ akce, den }: Props) {
         <section key={o.kod} id={o.slug} className="scroll-mt-24">
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-gray-200 pb-2">
             <h2 className="text-xl font-semibold text-gray-900">
-              {o.nadpis}
+              {o.nadpis}{' '}
               <span className="ml-2 text-base font-normal text-gray-500">{akci(o.pocet)}</span>
             </h2>
             {/* Čtrnáct odkazů se stejným textem: čtečka potřebuje v názvu odkazu
@@ -301,25 +297,25 @@ export function VeletrhySeznam({ akce, den }: Props) {
               const dl = dlazdice(a.start, a.end);
               const denDlazdice = `${a.terminPribligny ? '~' : ''}${dl.den}`;
               const velikost = denDlazdice.length <= 2 ? 'text-xl' : denDlazdice.length <= 5 ? 'text-lg' : 'text-base';
-              // `<time>` jen u jednodenní akce: u rozsahu by buď strojově tvrdil
-              // jeden den, nebo bez `dateTime` nesl text, který datem není.
-              const Dlazdice = a.end === a.start ? 'time' : 'span';
               // Řádek s datem opakuje `misto` jen tehdy, když ho neukázala
-              // první řádka karty (série bez rozepsaných měst).
-              const mistoNaRadku = a.mesto && !a.online && a.misto ? ` — ${a.misto}` : '';
+              // první řádka karty: ta nese město, nebo u série bez měst přímo
+              // `misto`; a když je místo totéž co město, nepíše se dvakrát.
+              const mistoNaRadku = a.mesto && !a.online && a.misto && a.misto !== a.mesto ? ` — ${a.misto}` : '';
               return (
                 <li
                   key={a.id}
                   className="flex gap-4 rounded-lg border border-gray-200 bg-white p-4 hover:border-blue-300 transition-colors"
                 >
-                  <Dlazdice
-                    dateTime={a.end === a.start ? a.start : undefined}
+                  {/* Dlaždice je jen vizuál; strojové datum nese `<time>` na řádku
+                      s datem níže, u rozsahu jako jeho začátek. */}
+                  <span
+                    aria-hidden="true"
                     className="flex h-14 w-16 shrink-0 flex-col items-center justify-center rounded-md bg-blue-50 text-blue-800"
                     title={a.datum}
                   >
                     <span className={`${velikost} font-bold leading-none`}>{denDlazdice}</span>
                     <span className="text-xs uppercase tracking-wide">{dl.mesic}</span>
-                  </Dlazdice>
+                  </span>
 
                   <div className="min-w-0 flex-1">
                     <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">{mistoAkce(a)}</p>
@@ -330,7 +326,7 @@ export function VeletrhySeznam({ akce, den }: Props) {
                     </h3>
                     <p className="mt-1 text-sm text-gray-700">
                       {a.terminPribligny ? 'přibližně ' : ''}
-                      {a.datum}
+                      <time dateTime={a.start}>{a.datum}</time>
                       {a.cas ? `, ${a.cas}` : ''}
                       {mistoNaRadku}
                     </p>
