@@ -175,3 +175,20 @@ test('registr a dokumentace uvádějí počty, které v datech opravdu jsou', as
   assert.equal(Number(nepouzite[2]), vsechny.length);
   assert.equal(Number(nepouzite[3]), krajeSAkcemi(PRED_SEZONOU).length);
 });
+
+test('zobrazené období se bere z registru, ne z názvu souboru', async () => {
+  // Oponentura našla, že návrh tvrdil napojení na registr, které v kódu
+  // nebylo: modul importoval JSON napevno a registr nikdo nečetl.
+  const { overSezonuProtiRegistru, SEZONA } = await import('../src/lib/veletrhy.ts');
+  const fs = await import('node:fs/promises');
+
+  const registr = JSON.parse(await fs.readFile('public/stav_datovych_sad.json', 'utf-8'));
+  const vRegistru = registr.sady['veletrhy-skol'].zobrazeno.obdobi;
+
+  assert.equal(
+    await overSezonuProtiRegistru(),
+    vRegistru,
+    'Data a registr se rozcházejí; stránka by ukazovala jiný ročník, než registr tvrdí.',
+  );
+  assert.equal(SEZONA, vRegistru, `Soubor nese sezónu ${SEZONA}, registr ${vRegistru}.`);
+});

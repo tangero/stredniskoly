@@ -2,7 +2,15 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { zobrazitelneAkce, krajeSAkcemi, mestaSAkcemi, nazevKraje, cesskyDen, OVERENO_K } from '@/lib/veletrhy';
+import {
+  zobrazitelneAkce,
+  krajeSAkcemi,
+  mestaSAkcemi,
+  nazevKraje,
+  cesskyDen,
+  overSezonuProtiRegistru,
+  OVERENO_K,
+} from '@/lib/veletrhy';
 import { VeletrhySeznam, type VeletrhKarta } from './VeletrhySeznam';
 
 export const metadata: Metadata = {
@@ -27,10 +35,14 @@ function formatujDatum(iso: string): string {
   return `${Number(d)}. ${Number(m)}. ${r}`;
 }
 
-export default function VeletrhyPage() {
-  const akce = zobrazitelneAkce();
-  const kraje = krajeSAkcemi();
-  const mesta = mestaSAkcemi();
+export default async function VeletrhyPage() {
+  // Období bere stránka z registru datových sad, ne z názvu souboru.
+  // Když se rozejdou, seznam se nezobrazí: loňské akce vydávané za letošní
+  // jsou horší než prázdná stránka.
+  const sezonaSedi = (await overSezonuProtiRegistru()) !== null;
+  const akce = sezonaSedi ? zobrazitelneAkce() : [];
+  const kraje = sezonaSedi ? krajeSAkcemi() : [];
+  const mesta = sezonaSedi ? mestaSAkcemi() : [];
 
   const karty: VeletrhKarta[] = akce.map((a) => ({
     id: a.id,

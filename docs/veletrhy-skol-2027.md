@@ -288,7 +288,9 @@ Nová sada `veletrhy-skol` do `public/stav_datovych_sad.json` s deseti povinným
 
 `ukazatele: []` — stránka nezobrazuje žádné počítané číslo, jen opisuje termíny. Kdyby později přibyl počet akcí v kraji jako údaj, jde o ukazatel a chce zápis do slovníku.
 
-**Rok se nikde nepíše napevno.** Sezóna se čte z registru.
+**Rok se nikde nepíše napevno.** Stránka porovná sezónu souboru s obdobím v registru (`overSezonuProtiRegistru`); když se rozejdou, seznam se nezobrazí vůbec. Loňské akce vydávané za letošní jsou horší než prázdná stránka.
+
+Import souboru je pevný záměrně: soubor je jediný a nese rok v názvu, takže nový ročník znamená novou dávku, ne přepnutí za běhu. Registr tedy neurčuje, **který** soubor se čte, ale **jestli** je ten načtený ještě platný.
 
 ## 7. Bod 3 zadání: upozornění na stránkách škol
 
@@ -418,6 +420,7 @@ Zakázané slovní spojení **„škola pořádá“** (oddíl 5 slovníku) se v
 
 | Verze | Změna |
 |---|---|
+| 0.8 | Páté review nad celým PR #155: stránka ochrany osobních údajů doplněna o formulář nahlášení včetně doby držení; odkaz na `/veletrhy` z patičky a z kalendáře přijímaček, dosud byla sekce dostupná jen ze sitemapy; období se ověřuje proti registru datových sad, dřív ho návrh sliboval a kód nečetl. |
 | 0.7 | Čtvrté review: odesílání pošty dostalo strop osmi sekund (`AbortSignal`, požadavek se opravdu přeruší) včetně čtení chybového těla; pozdní chyby po vypršení limitu se logují, místo aby spadly jako neošetřené odmítnutí. Testovací pool nově ověřuje, že sloupce v INSERT odpovídají migraci — mutační test ukázal, že dřív prošlo i přejmenování sloupce. Zapsána známá omezení fronty: `Promise.race` dotaz nezruší a příznak odeslání může zůstat `false`, i když e-mail odešel. |
 | 0.6 | Třetí review: doplněna databázová fronta hlášení (`db/migrace/005-veletrhy.sql`). Záznam se ukládá dřív, než odejde e-mail, takže hlášení nezmizí, když pošta selže; přijetí se potvrzuje, když je hlášení aspoň na jednom z obou míst. |
 | 0.5 | Druhé review: opraven zbylý starý počet v soupisu zdrojů a filtrování měst po půlnoci; aktivní výběr bez zbývajících akcí zůstává viditelný v ovladači. Doplněny testy POST (produkce bez klíče, chyby pošty, neplatná těla, rate limit a obnova po uplynutí okna) a simulace aktualizace klientského dne nad skutečnou komponentou. Oddělen aktuální stav implementace od návrhu, databázová záloha zůstává otevřená. |

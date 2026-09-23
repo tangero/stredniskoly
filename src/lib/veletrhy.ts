@@ -62,8 +62,30 @@ const soubor = data as unknown as VeletrhySoubor;
 /** Datum ověření zdroje. Stránka ho ukazuje, aby čtenář věděl, jak je starý. */
 export const OVERENO_K = soubor.checkedAt;
 
-/** Sezóna z dat, ne z letopočtu v kódu. */
+/**
+ * Sezóna, kterou nese datový soubor.
+ *
+ * Zdroj pravdy o tom, které období se zobrazuje, je registr datových sad
+ * (`veletrhy-skol`), ne tahle konstanta — proto ji stránka porovnává
+ * s registrem přes `overSezonuProtiRegistru()`. Import souboru je pevný
+ * záměrně: soubor je jediný a nese rok v názvu, takže nový ročník znamená
+ * nový soubor a novou dávku, ne přepnutí za běhu.
+ */
 export const SEZONA = soubor.sezona;
+
+/**
+ * Ověří, že zobrazovaná data odpovídají období v registru.
+ *
+ * Vrací období z registru, nebo `null`, když se rozchází. Rozchod znamená,
+ * že registr přepnul na nový ročník, ale data se nevyměnila — stránka pak
+ * radši neukazuje nic než loňské akce jako letošní.
+ */
+export async function overSezonuProtiRegistru(): Promise<string | null> {
+  const { zobrazeneObdobi } = await import('./stav-datovych-sad');
+  const obdobi = await zobrazeneObdobi('veletrhy-skol');
+  if (obdobi === null) return null;
+  return obdobi === SEZONA ? obdobi : null;
+}
 
 /**
  * Dnešní datum v českém kalendáři.
