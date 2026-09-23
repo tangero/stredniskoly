@@ -168,12 +168,16 @@ export function nazevSkupinyMaturity(smo16: string, nazevCermat: string | null |
  * Jednotkou je hodnocení skupiny oborů v roce; chybějící roky se nepočítají.
  * Null, když žádné hodnocení nemá zařazení.
  */
-export function jakCastoNadStredem(skupiny: { letNad: number; letSeZarazenim: number }[]): string | null {
+export function jakCastoNadStredem(skupiny: { letNad: number; letSeZarazenim: number; roky?: { rok: number; stav: string | null }[] }[]): string | null {
   const nad = skupiny.reduce((s, x) => s + x.letNad, 0);
   const celkem = skupiny.reduce((s, x) => s + x.letSeZarazenim, 0);
   if (!celkem) return null;
   const podil = nad / celkem;
-  if (podil === 1) return celkem === 1 ? 'v jediném hodnoceném roce' : 've všech hodnoceních';
+  if (podil === 1 && celkem === 1) {
+    const rok = skupiny.flatMap(s => s.roky ?? []).find(r => r.stav)?.rok;
+    return rok ? `v roce ${rok}` : 'v jediném hodnoceném roce';
+  }
+  if (podil === 1) return 've všech hodnoceních';
   if (podil >= 0.75) return 'v téměř všech hodnoceních';
   if (podil > 0.5) return 've většině hodnocení';
   if (podil === 0.5) return 'v polovině hodnocení';

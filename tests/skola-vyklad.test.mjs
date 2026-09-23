@@ -74,6 +74,7 @@ test('jak často nad středem podobných škol a názvy skupin', () => {
   assert.equal(jakCastoNadStredem([{ letNad: 4, letSeZarazenim: 4 }, { letNad: 3, letSeZarazenim: 4 }, { letNad: 3, letSeZarazenim: 4 }]), 'v téměř všech hodnoceních');
   assert.equal(jakCastoNadStredem([{ letNad: 4, letSeZarazenim: 4 }]), 've všech hodnoceních');
   assert.equal(jakCastoNadStredem([{ letNad: 1, letSeZarazenim: 1 }]), 'v jediném hodnoceném roce');
+  assert.equal(jakCastoNadStredem([{ letNad: 1, letSeZarazenim: 1, roky: [{ rok: 2025, stav: 'above' }] }]), 'v roce 2025');
   assert.equal(jakCastoNadStredem([{ letNad: 3, letSeZarazenim: 4 }, { letNad: 2, letSeZarazenim: 4 }]), 've většině hodnocení');
   assert.equal(jakCastoNadStredem([{ letNad: 2, letSeZarazenim: 4 }]), 'v polovině hodnocení');
   assert.equal(jakCastoNadStredem([{ letNad: 1, letSeZarazenim: 4 }]), 'jen v některých hodnoceních');

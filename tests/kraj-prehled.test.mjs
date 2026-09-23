@@ -117,7 +117,7 @@ test('jediný hodnocený rok maturity se nevydává za všechny čtyři roky', a
   const p = await getKrajPrehled('CZ041');
   const skola = p.skoly.find(s => s.redizo === '651011434');
   assert.ok(skola, 'škola je v přehledu kraje');
-  assert.equal(skola.maturita?.jakCastoNadStredem, 'v jediném hodnoceném roce');
+  assert.equal(skola.maturita?.jakCastoNadStredem, 'v roce 2025');
 });
 
 test('rozcestník krajů vypíše počty všech stupňů obtížnosti také textem', async () => {
