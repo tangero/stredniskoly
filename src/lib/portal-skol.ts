@@ -46,7 +46,7 @@ export const PORTAL_POLE: PortalPoleDef[] = [
   {
     key: 'kriteria_vlastnimi_slovy',
     label: 'Kritéria přijímacího řízení vlastními slovy',
-    napoveda: 'Stručně pro rodiče: co se počítá a kolik bodů za co (testy, prospěch, talentová zkouška…).',
+    napoveda: 'Stručně pro rodiče: co se počítá a kolik bodů za co. Počítá se některý test s vyšší váhou (třeba matematika 1,5×)? Přičítá se prospěch, školní nebo talentová zkouška?',
     typ: 'textarea',
     maxLength: 2000,
   },

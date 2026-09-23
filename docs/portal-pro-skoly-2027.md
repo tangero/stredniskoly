@@ -84,7 +84,7 @@ Pole seřazená podle hodnoty pro uchazeče; u každého důvod, proč to škola
 
 | Pole | Proč to nemáme | Proč to škola ví |
 |---|---|---|
-| Kritéria PŘ pro 2027 v češtině rodiče: co se počítá a kolik bodů za co | CERMAT zná jen výsledek; míra `rozhodl_test` pozná, **že** rozhodlo něco jiného, ne **co** | škola kritéria sama vyhlásila |
+| Kritéria PŘ pro 2027 v češtině rodiče: co se počítá a kolik bodů za co, a **zda se některý test počítá s vyšší váhou** (od 23. 9. 2026 se na to nápověda ptá výslovně — je to nejčastější kritérium, které data nevidí; slovník ukazatelů, *Rozhodl test*) | CERMAT zná jen výsledek; míra `rozhodl_test` pozná, **že** rozhodlo něco jiného, ne **co** | škola kritéria sama vyhlásila |
 | Odkaz na vyhlášená kritéria (PDF na webu školy) | neexistuje centrální registr kritérií | škola je povinna je zveřejnit |
 | Dny otevřených dveří s rokem | InspIS: medián roku 2023 | škola je pořádá |
 | Přípravné kurzy a přijímačky nanečisto | v InspIS vyplněno u 0 % škol | škola je prodává |
