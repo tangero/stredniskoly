@@ -7,73 +7,12 @@ import {
   cislo, zOd, ZARAZENI_POPISEK, PORADI_OBTIZNOSTI, VYSVETLENI_SOUTEZICICH,
   type ZarazeniObtiznosti,
 } from '@/lib/obor-profil';
+import { OdznakKohorty, OdznakObtiznosti, VetaObtiznosti } from '@/components/nabidka/Odznaky';
 
 const TYPE_LABELS: Record<string, string> = {
   GY4: 'GY 4-leté', GY6: 'GY 6-leté', GY8: 'GY 8-leté',
   LYC: 'Lyceum', SOS: 'SOŠ', SOU: 'SOU', NAS: 'Nástavba',
 };
-
-/**
- * Odstíny jedné barvy od nejtěžšího po nejsnazší. Záměrně **není semafor**:
- * obor, kam se dostal každý, není horší škola, jen jiná poptávka. Stupeň nese
- * slovo, odstín jen napovídá pořadí.
- */
-const ODSTIN_OBTIZNOSTI: Record<ZarazeniObtiznosti, string> = {
-  velmi_tezke: 'bg-slate-800 text-white',
-  tezke: 'bg-slate-600 text-white',
-  stredne_tezke: 'bg-slate-400 text-white',
-  vetsina_uspela: 'bg-slate-200 text-slate-800',
-  kapacita_nerozhodovala: 'bg-slate-100 text-slate-700',
-};
-
-/** Odznak obtížnosti přijetí. V tabulce stačí krátký popisek (slovník pojmů). */
-function OdznakObtiznosti({ zarazeni }: { zarazeni: ZarazeniObtiznosti | null }) {
-  if (!zarazeni) {
-    return <span className="text-[12px] text-slate-500">bez údaje</span>;
-  }
-  return (
-    <span
-      className={`inline-block whitespace-nowrap rounded-full px-2.5 py-0.5 text-[13px] font-semibold ${ODSTIN_OBTIZNOSTI[zarazeni]}`}
-    >
-      {ZARAZENI_POPISEK[zarazeni]}
-    </span>
-  );
-}
-
-/**
- * Doprovodná věta k odznaku: podíl přijatých, předchozí ročník a nesplněné
- * podmínky školy.
- *
- * Předchozí ročník se vypisuje i tam, kde kapacita nerozhodovala — jinak by
- * u 226 nabídek zmizela doložená změna obtížnosti. Nesplněné podmínky se
- * uvádějí, kdykoli dosáhnou počtu přijatých nebo 20 % přihlášek: bez nich
- * „místo pro všechny“ zamlčí, že hlavní překážkou byly požadavky školy
- * (slovník ukazatelů, obtížnost přijetí slovy).
- */
-function PodilPrijatych({ row }: { row: CitySchoolRow }) {
-  const casti: string[] = [];
-
-  if (row.soutezici !== null && row.prijatiZeSoutezicich !== null
-      && row.zarazeni !== 'kapacita_nerozhodovala') {
-    casti.push(
-      `přijato ${cislo(row.prijatiZeSoutezicich)} ${zOd(row.soutezici)} ${cislo(row.soutezici)}`,
-    );
-  }
-
-  if (row.zarazeniPredchozi && row.predchoziRok) {
-    casti.push(`v roce ${row.predchoziRok} ${ZARAZENI_POPISEK[row.zarazeniPredchozi]}`);
-  }
-
-  const prihlasky = row.prihlasky2026 ?? row.prihlasky2025;
-  const nesplnili = row.nesplniliPodminky;
-  if (nesplnili !== null && nesplnili > 0 && prihlasky
-      && (nesplnili >= (row.prijatiZeSoutezicich ?? 0) || nesplnili >= 0.2 * prihlasky)) {
-    casti.push(`${cislo(nesplnili)} ${zOd(prihlasky)} ${cislo(prihlasky)} přihlášených nedosáhlo požadavků školy`);
-  }
-
-  if (casti.length === 0) return null;
-  return <span className="text-[12px] text-slate-500">{casti.join(' · ')}</span>;
-}
 
 interface Props {
   schools: CitySchoolRow[];
@@ -289,12 +228,21 @@ export function CitySchoolsTable({ schools, rok, rokDruhehoKola }: Props) {
                     </div>
                     <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1.5">
                       <OdznakObtiznosti zarazeni={r.zarazeni} />
+                      <OdznakKohorty kohorta={r.kohorta} />
                       {r.meloDruheKolo && rokDruhehoKola && (
                         <span className="whitespace-nowrap rounded-full border border-slate-300 px-2 py-0.5 text-[12px] text-slate-600">
                           v roce {rokDruhehoKola} tu bylo i 2. kolo
                         </span>
                       )}
-                      <PodilPrijatych row={r} />
+                      <VetaObtiznosti u={{
+                        zarazeni: r.zarazeni,
+                        zarazeniPredchozi: r.zarazeniPredchozi,
+                        predchoziRok: r.predchoziRok,
+                        soutezici: r.soutezici,
+                        prijati: r.prijatiZeSoutezicich,
+                        prihlasky: r.prihlasky2026 ?? r.prihlasky2025,
+                        nesplniliPodminky: r.nesplniliPodminky,
+                      }} />
                     </div>
                     <div className="mt-1 text-[13px] text-slate-600">
                       {kapacita !== null && <>{cislo(kapacita)} míst</>}

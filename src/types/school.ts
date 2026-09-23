@@ -85,19 +85,9 @@ export interface SchoolsData {
 
 export type CategoryCode = 'first_choice' | 'preferred' | 'balanced' | 'backup';
 
-export const categoryLabels: Record<CategoryCode, string> = {
-  first_choice: 'První volba',
-  preferred: 'Preferovaná',
-  balanced: 'Vyvážená',
-  backup: 'Záložní'
-};
-
-export const categoryColors: Record<CategoryCode, { bg: string; text: string }> = {
-  first_choice: { bg: 'bg-green-100', text: 'text-green-800' },
-  preferred: { bg: 'bg-blue-100', text: 'text-blue-800' },
-  balanced: { bg: 'bg-yellow-100', text: 'text-yellow-800' },
-  backup: { bg: 'bg-red-100', text: 'text-red-800' }
-};
+// Popisky a barvy kategorie byly odstraněny 23. 9. 2026: zařazení nemá doložený výpočet
+// (slovník ukazatelů, oddíl 7). Náhradou je kohorta podle pozice na přihlášce, `KohortaPozice`
+// v src/lib/obor-profil.ts. Pole `category_code` zůstává v datech kvůli dohledatelnosti.
 
 export { krajNames } from '../lib/kraje.mjs';
 

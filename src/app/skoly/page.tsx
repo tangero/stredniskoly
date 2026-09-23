@@ -51,7 +51,6 @@ export default async function SchoolsPage() {
       kapacita: s.kapacita,
       index_poptavky: s.index_poptavky,
       obtiznost: s.obtiznost,
-      category_code: s.category_code,
       prihlasky_2026: sa?.prihlasky_2026 || 0,
       kapacita_2026: sa?.kapacita_2026 || 0,
       index_poptavky_2026: sa?.index_poptavky_2026 || 0,

@@ -6,7 +6,7 @@ import { MIN_PRIJATYCH_PRO_HRANICI } from '@/lib/pasma-prijeti';
 import { vetyDruhehoKola, VYSVETLENI_DRUHEHO_KOLA } from '@/lib/druhe-kolo-vyklad';
 import {
   ZARAZENI_POPISEK, cislo, popisekObtiznosti, slovniPodil, vKraji, soutezicichUchazecu, textPoradi, vetaPozadavku, zOd, zminitPozadavek,
-  VYSVETLENI_SOUTEZICICH,
+  VYSVETLENI_SOUTEZICICH, KOHORTA_NENI_KVALITA, KOHORTA_POPISEK, KOHORTA_VETA,
 } from '@/lib/obor-profil';
 import {
   MrizkaSoutezicich, PasmaBodu, RozpadPrihlasek, SkupinaVKraji, SloupceSoutezicich, VysledekUchazecu,
@@ -392,6 +392,20 @@ export function ProfilOboru({ data, inspekceHref, skolaHref }: ProfilOboruProps)
                   osa={(() => { const top = Math.max(2, Math.ceil(Math.max(...data.poradiZajem!.hodnoty) * 1.05)); const krok = top > 6 ? 2 : 1; return Array.from({ length: Math.floor(top / krok) + 1 }, (_, i) => i * krok); })()}
                 />
                 <Zdroj>{textPoradi(data.poradiZajem.poradi)} {zOd(data.poradiZajem.poradi.z)} {cislo(data.poradiZajem.poradi.z)} podle zájmu. Pořadí neříká, která škola je lepší.</Zdroj>
+              </Dukaz>
+            )}
+
+            {data.kohorta && (
+              <Dukaz nadpis="Kam si obor uchazeči píší na přihlášku" rok={rozsahRoku}>
+                <Proc>
+                  <b className="text-[#16325c]">{KOHORTA_POPISEK[data.kohorta][0].toLocaleUpperCase('cs-CZ') + KOHORTA_POPISEK[data.kohorta].slice(1)}</b>: {KOHORTA_VETA[data.kohorta]}
+                  {typeof r.podil_prvnich_voleb === 'number' && <> (jako 1. volbu ho mělo {cislo(Math.round(r.podil_prvnich_voleb * 100))} % přihlášek)</>}
+                  {data.kohortaPredchozi && predchoziRok && (
+                    data.kohortaPredchozi === data.kohorta ? <>; v roce {predchoziRok} také</> : <>; v roce {predchoziRok} {KOHORTA_POPISEK[data.kohortaPredchozi]}</>
+                  )}.
+                </Proc>
+                <Proc>Srovnává se jen s obory stejného typu a délky v celé zemi ({skupinaNazev}). {KOHORTA_NENI_KVALITA} Neříká ani, jak těžké je se dostat.</Proc>
+                <Zdroj>CERMAT, souhrny 1. kola: přihlášky s prioritou 1 ku všem přihláškám, horní a dolní třetina skupiny.</Zdroj>
               </Dukaz>
             )}
 

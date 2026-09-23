@@ -1,6 +1,6 @@
 # Návrh krajské stránky: přehled škol v kraji
 
-Verze 1.0 · 23. 9. 2026 · Stav: **návrh, čeká na rozhodnutí zadavatele**
+Verze 1.1 · 23. 9. 2026 · Stav: **zrealizováno** (oddíl 8)
 
 Zadání z 23. 9. 2026: „Zamysli se jako UX a UI designer nad vzhledem regionálních přehledů škol ([/regiony/hlavni-mesto-praha](https://www.prijimackynaskolu.cz/regiony/hlavni-mesto-praha?delka=8)), chceme jej sjednotit s celým webem. Líbí se mi kategorie škol, to bych chtěl používat více. Projdi data, která zde zobrazuje, a podívej se, zda je to v souladu s naší metodikou použití dat. Navrhni vylepšení.“
 
@@ -45,7 +45,7 @@ Z toho vyplývají tři závady, každá sama o sobě důvodem štítek stáhnou
 | Smíšená pozice | 33. až 67. | obvyklý poměr první volby a pojistky |
 | Záložní volba | pod 33. | většina uchazečů si ji píše jako druhou nebo třetí |
 
-Je doložená (stabilita 66 % proti 33 % náhody), počítá se z ročníku 2026 a srovnává jen uvnitř typu. Pro Prahu (434 nabídek 1. kola 2026) vychází 109 škol první volby, 134 smíšených a 191 záložních.
+Je doložená (stabilita 64,5 % proti 33 % náhody po přepočtu v oddílu 8), počítá se z ročníku 2026 a srovnává jen uvnitř typu. Pro Prahu (434 nabídek 1. kola 2026) vychází 108 škol první volby, 135 smíšených a 191 záložních (první verze návrhu uváděla 109 a 134 z odhadu před zapracováním do generátoru).
 
 Jak se stará kategorie s kohortou potkává v Praze:
 
@@ -105,15 +105,15 @@ Střední školy - Hlavní město Praha
 183 škol · 434 nabídek v 1. kole 2026            (rok z registru)
 
 Jak se na ně lidé dostali (1. kolo 2026):
-▇▇▇▇▇▇▇▇▇▇  99  místo bylo pro všechny, kdo splnili podmínky školy
-▇▇▇▇▇▇▇▇    77  dostala se většina soutěžících
-▇▇▇▇▇▇      61  středně těžké
-▇▇▇▇▇▇▇     69  těžké
-▇▇▇▇▇▇▇     70  velmi těžké
-            58  málo soutěžících, bez zařazení
+▇▇▇▇▇▇▇▇▇▇ 156  místo bylo pro všechny, kdo splnili podmínky školy
+▇▇▇▇▇       77  dostala se většina soutěžících
+▇▇▇▇        61  středně těžké
+▇▇▇▇▇       69  těžké
+▇▇▇▇▇       70  velmi těžké
+             1  málo soutěžících, bez zařazení
 
 Kam se hlásí jako na první volbu:
-109 škol první volby · 134 smíšených · 191 záložních
+108 škol první volby · 135 smíšených · 191 záložních
 ```
 
 Oba pruhy jsou klikací a filtrují tabulku. Čísla jsou z dat 2026 pro Prahu. Pod pruhem jednou větou vysvětlení *soutěžících uchazečů* podle slovníku pojmů, stejně jako na stránce města.
@@ -225,8 +225,33 @@ Kroky 1 a 2 nejsou redesign, jsou to opravy porušených pravidel. Doporučuji j
 
 ---
 
-## 7. Otevřené otázky pro zadavatele
+## 7. Otevřené otázky pro zadavatele (rozhodnuto 23. 9. 2026)
+
+Zadavatel: „Souhlasím se všemi návrhy. Seznam řadit po školách. Maturitu zařadit hned.“ U názvu kohorty zůstaly názvy ze slovníku ukazatelů, protože alternativa „většinou jako 1. volba“ by tvrdila většinu, kterou percentil ve skupině neměří.
 
 1. **Název kohorty na stránce.** Slovník zavádí „škola první volby / smíšená pozice / záložní volba“. „Záložní volba“ i s neutrální barvou některé školy nepotěší. Alternativa pro text: „většinou jako 1. volba / jako 1. i 2. volba / většinou jako pojistka“. Rozhodnutí patří do slovníku pojmů.
 2. **Seznam po školách, nebo po nabídkách?** Po školách je čitelnější, ale filtr „jen 8letá gymnázia“ pak ukazuje školy s jedinou nabídkou. Stránka města zvolila po školách; doporučuji totéž.
 3. **Maturita v kartě školy** (oddíl 5) v první, nebo až ve druhé fázi.
+
+---
+
+## 8. Realizace (23. 9. 2026)
+
+| Krok | Co vzniklo |
+|---|---|
+| Data | `scripts/build-souhrny-kolo1.py` počítá `podil_prvnich_voleb`, `percentil_podilu_prvnich_voleb` a `kohorta_pozice` a rozdělení podílu ve skupinách. Zdrojové soubory CERMATu staženy znovu, jejich SHA-256 sedí s registrem a generátor bez změn vyrobil bajtově shodný výstup; teprve pak se výpočet přidal. Doklad stability v `docs/podklady/overeni-srovnani-rocniku.json`, klíč `kohorta_pozice`: 64,5 % z 2 933 spárovaných nabídek |
+| Knihovny | `kohortaPozice` a popisky v `src/lib/obor-profil.ts`; `nabidkyKraje` v `src/lib/souhrny-kolo1.ts`; nový `src/lib/krajData.ts`; maturita za školu přesunuta do `src/lib/maturita-skoly.ts`, aby ji sdílela stránka školy a přehled kraje |
+| Komponenty | odznaky obtížnosti a kohorty ve sdíleném `src/components/nabidka/Odznaky.tsx`, které používá město i kraj; `RegionSchoolsTable.tsx` přepsán od základu |
+| Stránky | `/regiony/[kraj]` (statická, filtry v adrese čte až prohlížeč), `/regiony` bez žebříčku „Top 10 podle přihlášek“, přehled města s odznakem kohorty, stránka oboru s blokem „Kam si obor uchazeči píší na přihlášku“, stránka oboru bez staré kategorie |
+| Úklid | `categoryLabels`, `categoryColors`, `getRegionStats`, `getExtendedSchoolStatsForSchools` a `getTrendDataForSchools` odstraněny, protože je po přestavbě nic nepoužívá |
+| Testy | `tests/kraj-prehled.test.mjs` (10 kontrol: ročník z registru, žádná vynechaná ani zdvojená nabídka ve všech 14 krajích, chybějící údaj není nula, zakázaná slova a semafor, pořadí jen ve skupině s aspoň 10 nabídkami), kohorta v `tests/test_souhrny_kolo1.py` a `tests/obor-profil.test.mjs` |
+
+**Odchylky od návrhu:**
+
+- **Filtr okresu v Praze chybí.** Katalog vede u všech pražských škol okres „Praha“; městskou část zdroj nenese a z PSČ by šla odhadnout jen nespolehlivě. Filtr se proto zobrazí jen v krajích s víc okresy.
+- **Pořadí v kraji se vypisuje jen při řazení podle pořadí**, ne pořád, aby karta nenesla třetí číslo navíc. Zapíná se až po výběru typu studia; bez něj je tlačítko neaktivní s vysvětlením.
+- **Rozcestník krajů přišel o žebříček „Top 10 oborů podle přihlášek“.** Řadil nabídky napříč typy podle ročníku 2025 a barvil přihlášky na místo semaforem (oddíl 4.6).
+- **Maturita je řádek za celou školu**, stejná věta jako v hlavičce stránky školy (úspěšní z přihlášených a jak často byla škola v češtině nad středem podobných škol). Rozpad po skupinách oborů zůstává na stránce školy.
+- **Učební obory bez maturity v přehledu nejsou**, stejně jako dosud: souhrny 1. kola nesou jen obory s jednotnou zkouškou. Stránka to říká nad seznamem.
+
+**Co zůstává otevřené:** `school_analysis.json` dál nese `category_code` a ročník 2025 a používají ho jiné části webu (žebříček `/skoly`, dostupnost). To je mimo rozsah tohoto zadání a patří do samostatného úklidu podle slovníku ukazatelů, oddíl 7.

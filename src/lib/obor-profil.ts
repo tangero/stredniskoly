@@ -55,6 +55,48 @@ export const PORADI_OBTIZNOSTI: ZarazeniObtiznosti[] = [
 ];
 
 /**
+ * Kohorta podle pozice na přihlášce (slovník ukazatelů, oddíl 1): kde si obor uchazeči
+ * píší na přihlášku ve srovnání s obory stejného typu. Nahrazuje nedoložené pole
+ * `category_code` („Vyvážený obor“ a spol.), které slovník vede v oddílu 7.
+ */
+export type KohortaPozice = 'skola_prvni_volby' | 'smisena_pozice' | 'zalozni_volba';
+
+/** Pod tímto počtem nabídek ve skupině se percentil, a tedy ani kohorta, nezobrazuje (slovník, oddíl 4). */
+export const MIN_NABIDEK_PRO_KOHORTU = 30;
+
+export const KOHORTA_POPISEK: Record<KohortaPozice, string> = {
+  skola_prvni_volby: 'škola první volby',
+  smisena_pozice: 'smíšená pozice',
+  zalozni_volba: 'záložní volba',
+};
+
+/** Věta na stránce podle slovníku ukazatelů; vždy spolu s tím, že nejde o kvalitu školy. */
+export const KOHORTA_VETA: Record<KohortaPozice, string> = {
+  skola_prvni_volby: 'uchazeči ji píší na přihlášku jako nejžádanější častěji než u dvou třetin oborů stejného typu',
+  smisena_pozice: 'obvyklý poměr první volby a pojistky mezi obory stejného typu',
+  zalozni_volba: 'uchazeči si ji častěji než u oborů stejného typu píší jako druhou nebo třetí volbu',
+};
+
+/** Od „nejžádanější“ po „pojistku“. Slouží k výběru a seskupení, ne k řazení škol. */
+export const PORADI_KOHORT: KohortaPozice[] = ['skola_prvni_volby', 'smisena_pozice', 'zalozni_volba'];
+
+export const KOHORTA_NENI_KVALITA =
+  'Neříká nic o kvalitě školy: záložní volba znamená, že si ji uchazeči píší jako pojistku, ne že je horší.';
+
+/**
+ * Kohorta, jak ji smí zobrazit stránka. Veličinu počítá `scripts/build-souhrny-kolo1.py`
+ * do pole `kohorta_pozice`; tady se uplatní jen práh velikosti skupiny, stejně jako
+ * u obtížnosti přijetí.
+ */
+export function kohortaPozice(
+  r: { kohorta_pozice?: KohortaPozice },
+  nabidekVeSkupine: number,
+): KohortaPozice | null {
+  if (nabidekVeSkupine < MIN_NABIDEK_PRO_KOHORTU) return null;
+  return r.kohorta_pozice ?? null;
+}
+
+/**
  * Vysvětlení pojmu „soutěžící uchazeči“ pro první výskyt v každém bloku.
  * Vyžaduje slovník pojmů, pravidlo 2.
  */

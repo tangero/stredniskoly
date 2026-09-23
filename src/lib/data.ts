@@ -632,38 +632,6 @@ export async function getOkresyByKraj(krajKod: string): Promise<{ nazev: string;
 }
 
 /**
- * Statistiky pro region
- */
-export interface RegionStats {
-  totalSchools: number;
-  totalKapacita: number;
-  totalPrihlasky: number;
-  avgIndexPoptavky: number;
-}
-
-export async function getRegionStats(schools: School[]): Promise<RegionStats> {
-  if (schools.length === 0) {
-    return {
-      totalSchools: 0,
-      totalKapacita: 0,
-      totalPrihlasky: 0,
-      avgIndexPoptavky: 0,
-    };
-  }
-
-  const totalKapacita = schools.reduce((sum, s) => sum + (s.kapacita || 0), 0);
-  const totalPrihlasky = schools.reduce((sum, s) => sum + (s.prihlasky || 0), 0);
-  const avgIndexPoptavky = schools.reduce((sum, s) => sum + (s.index_poptavky || 0), 0) / schools.length;
-
-  return {
-    totalSchools: schools.length,
-    totalKapacita,
-    totalPrihlasky,
-    avgIndexPoptavky,
-  };
-}
-
-/**
  * Získá všechny obory dané školy (podle REDIZO) ze school_analysis.json
  */
 export async function getSchoolsByRedizo(redizo: string): Promise<School[]> {
@@ -977,16 +945,6 @@ export async function getExtendedStatsForProgram(programId: string): Promise<Ext
   return getExtendedSchoolStats(programId);
 }
 
-export async function getExtendedSchoolStatsForSchools(schoolIds: string[]): Promise<Map<string, ExtendedSchoolStats>> {
-  const data = await getSchoolsDataById();
-  const result = new Map<string, ExtendedSchoolStats>();
-  for (const id of schoolIds) {
-    const stats = data.get(normalizeSchoolKey(id));
-    if (stats) result.set(id, stats);
-  }
-  return result;
-}
-
 /**
  * Trend data - porovnání mezi roky
  */
@@ -1004,13 +962,6 @@ export interface YearlyTrendData {
   minBodyChange: number;        // rozdíl bodů
 }
 
-
-/**
- * Získá trend data pro pole škol
- */
-export async function getTrendDataForSchools(schoolIds: string[]): Promise<Map<string, YearlyTrendData>> {
-  return getTrendDataForPrograms(schoolIds);
-}
 
 // Cache pro trend data programů (včetně zaměření)
 let trendDataByProgramCache: Map<string, YearlyTrendData> | null = null;

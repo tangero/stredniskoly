@@ -28,7 +28,7 @@ import { getProfilOboru } from '@/lib/obor-profil-data';
 import { ProfilOboru } from '@/components/obor/ProfilOboru';
 import { UlozitObor } from '@/components/obor/UlozitObor';
 import { createSlug } from '@/lib/utils';
-import { categoryLabels, categoryColors, krajNames } from '@/types/school';
+import { krajNames } from '@/types/school';
 
 
 interface Props {
@@ -209,8 +209,6 @@ export default async function SchoolDetailPage({ params }: Props) {
   // =====================
   const program = pageInfo.program;
   if (!program) notFound();
-
-  const category = categoryColors[school.category_code];
 
   // Načíst další data - pro zaměření použít specifickou funkci
   // Načíst data 2026
@@ -451,9 +449,6 @@ export default async function SchoolDetailPage({ params }: Props) {
               </Link>
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
-              <span className={`inline-block px-4 py-1 rounded-full text-sm font-medium ${category.bg} ${category.text}`}>
-                {categoryLabels[school.category_code]}
-              </span>
               {extractions.length > 0 && (
                 <Link
                   href={`/skola/${overviewSlug}/inspekce`}

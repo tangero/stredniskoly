@@ -5,6 +5,7 @@ import { getSouhrnNabidky, souhrnOboru, type SouhrnRocniku } from '@/lib/souhrny
 import { type PortalZaznam } from '@/lib/portal-skol';
 import { potvrzenyProfil } from '@/lib/portal-profil-verejne';
 import { getWebSkoly } from '@/lib/skoly-web';
+import { maturitaSkoly, type MaturitaSoubor } from '@/lib/maturita-skoly';
 import { nenabiraSe } from '@/lib/dobihajici-obory';
 import { getDruheKolo, type DruheKoloNabidky } from '@/lib/druhe-kolo';
 import { zobrazeneObdobi, platnostObdobi } from '@/lib/stav-datovych-sad';
@@ -12,7 +13,7 @@ import { createSlug } from '@/lib/utils';
 import { zarazeniObtiznosti, soutezicichUchazecu, type ZarazeniObtiznosti } from '@/lib/obor-profil';
 import {
   nazevSkupinyMaturity, proKohoObor, shrnutiMaturity, smerStupne, vzdalenostKm,
-  type MaturitaSkupinaRoku, type Poloha, type ShrnutiMaturity,
+  type Poloha, type ShrnutiMaturity,
 } from '@/lib/skola-vyklad';
 import type { CSISchoolData, InspectionExtraction } from '@/types/school';
 import type { SchoolInspisData } from '@/types/inspis';
@@ -175,12 +176,6 @@ async function skupinySkol(rok: string) {
   return skupinyCache;
 }
 
-interface MaturitaSoubor {
-  meta: { roky: number[]; nejnovejsi_rok: number };
-  skupiny: Record<string, Record<string, { nazev: string; schools: number; medianPercentScore: number | null; medianPercentile: number | null; percentiles: number[] }>>;
-  skoly: Record<string, { nazev: string; roky: Record<string, Record<string, MaturitaSkupinaRoku>> }>;
-}
-let maturitaCache: MaturitaSoubor | null | undefined;
 
 /** Práh konajících, od kterého škola vstupuje do reference skupiny (slovník: Zařazení proti skupině oborů). */
 const REFERENCE_MIN_KONALO = 10;
@@ -204,14 +199,6 @@ function skoryPodobnychSkol(soubor: MaturitaSoubor, rok: string, smo16: string):
   return skory;
 }
 
-/** Maturita se zobrazí, jen když registr sadu cermat-maturita přepnul na období a soubor existuje. */
-async function maturitaSkoly(redizo: string): Promise<MaturitaSoubor['skoly'][string] & { soubor: MaturitaSoubor } | null> {
-  const obdobi = await zobrazeneObdobi('cermat-maturita');
-  if (!obdobi) return null;
-  if (maturitaCache === undefined) maturitaCache = await ctiSoubor<MaturitaSoubor>(path.join(process.cwd(), 'public', 'maturita_skoly.json'));
-  const skola = maturitaCache?.skoly[redizo];
-  return skola && maturitaCache ? { ...skola, soubor: maturitaCache } : null;
-}
 
 type Lokace = { lat: number; lon: number; stop_name: string; distance_km: number };
 let lokaceCache: Record<string, Lokace> | null = null;

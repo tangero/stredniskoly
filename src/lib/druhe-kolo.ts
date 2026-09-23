@@ -41,7 +41,7 @@ async function nacti() {
 }
 
 /** Stejná normalizace zaměření jako normalizeSchoolKey a scripts/build-druhe-kolo.py. */
-function klic(redizo: string, kkov: string, zamereni?: string): string {
+export function klicDruhehoKola(redizo: string, kkov: string, zamereni?: string): string {
   const z = (zamereni ?? '').normalize('NFKD').replace(/[̀-ͯ]/g, '')
     .replace(/[^a-zA-Z0-9]+/g, '_').replace(/^_+|_+$/g, '').toLowerCase();
   return z ? `${redizo}_${kkov}_${z}` : `${redizo}_${kkov}`;
@@ -57,7 +57,7 @@ export async function getDruheKolo(programId: string, zamereni?: string): Promis
   const [redizo, kkov] = programId.split('_');
   if (!redizo || !kkov) return null;
   const data = await nacti();
-  const k = klic(redizo, kkov, zamereni);
+  const k = klicDruhehoKola(redizo, kkov, zamereni);
   const zaznam = data.roky[obdobi]?.[k];
   if (!zaznam) return null;
   const rok = Number(obdobi);

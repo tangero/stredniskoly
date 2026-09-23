@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { indexKlicuRocniku, klicZdrojeProStranku, normalizeSchoolKey } from '@/lib/school-key';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
-import type { ZarazeniObtiznosti } from '@/lib/obor-profil';
+import type { KohortaPozice, ZarazeniObtiznosti } from '@/lib/obor-profil';
 
 /**
  * Souhrny 1. kola za obory po ročnících, public/souhrny_kolo1.json.
@@ -23,6 +23,12 @@ export interface SouhrnRocniku {
   higher_priority?: number;
   withdrawn?: number;
   tlak_prvnich_voleb?: number;
+  /** Přihlášky s prioritou 1 ÷ přihlášky celkem (slovník ukazatelů, podíl prvních voleb). */
+  podil_prvnich_voleb?: number;
+  /** Percentil podílu prvních voleb ve srovnatelné skupině ročníku, 0–100. */
+  percentil_podilu_prvnich_voleb?: number;
+  /** Nese hodnotu i ve skupině pod prahem zobrazení; ten uplatní `kohortaPozice`. */
+  kohorta_pozice?: KohortaPozice;
   index_poptavky?: number;
   konali?: number;
   prijatych_s_vysledkem?: number;
@@ -52,7 +58,7 @@ interface SouhrnNabidkySoubor {
 
 interface SouhrnySoubor {
   meta: { rocniky: Record<string, { soubor: string; url: string; nabidek: number }> };
-  skupiny: Record<string, Record<string, { n: number; tlak_prvnich_voleb: number[] }>>;
+  skupiny: Record<string, Record<string, { n: number; tlak_prvnich_voleb: number[]; podil_prvnich_voleb?: number[] }>>;
   nabidky: Record<string, SouhrnNabidkySoubor>;
 }
 
@@ -72,6 +78,10 @@ export interface SouhrnNabidky {
   kkov: string;
   /** Skupina maturitních oborů (SMO16) ze zdroje; klíč, kterým se obor napojí na maturitu. */
   smo16: string | null;
+  /** Kolik nabídek má srovnatelná skupina ročníku v celé zemi; podklad prahu kohorty. */
+  nabidekVeSkupine: number;
+  /** Totéž za předchozí ročník; 0, když nabídka spárovaná není. */
+  nabidekVeSkupinePredchozi: number;
 }
 
 /** Pod tímto počtem nabídek ve skupině se percentil ve skupině nezobrazuje (slovník, oddíl 4). */
@@ -144,7 +154,16 @@ export async function getSouhrnNabidky(programId: string): Promise<SouhrnNabidky
     redizo: nabidka.redizo,
     kkov: nabidka.kkov,
     smo16: nabidka.smo16 ?? null,
+    nabidekVeSkupine: velikostSkupiny(soubor, obdobi, aktualni.skupina ?? nabidka.skupina),
+    nabidekVeSkupinePredchozi: sparovano
+      ? velikostSkupiny(soubor, String(starsi), nabidka.roky[String(starsi)].skupina ?? nabidka.skupina)
+      : 0,
   };
+}
+
+/** Počet nabídek s podílem prvních voleb ve srovnatelné skupině ročníku. */
+function velikostSkupiny(soubor: SouhrnySoubor, obdobi: string, skupina: string): number {
+  return soubor.skupiny[obdobi]?.[skupina]?.podil_prvnich_voleb?.length ?? 0;
 }
 
 export interface NabidkaVeSkupine {
@@ -172,6 +191,8 @@ export interface SouhrnProKatalog {
   predchoziRok: number | null;
   kkov: string;
   zamereni: string;
+  skupina: string;
+  nabidekVeSkupine: number;
 }
 
 /**
@@ -196,12 +217,15 @@ export async function souhrnyPodleRedizo(
     const starsi = Object.keys(n.roky).map(Number).filter(r => r < rok).sort((a, b) => b - a)[0];
     const sparovano = starsi !== undefined && n.parovani?.[`${starsi}-${rok}`] !== undefined;
     const seznam = out.get(n.redizo) ?? [];
+    const skupina = aktualni.skupina ?? n.skupina;
     seznam.push({
       aktualni,
       predchozi: sparovano ? n.roky[String(starsi)] : null,
       predchoziRok: sparovano ? starsi : null,
       kkov: n.kkov,
       zamereni: n.zamereni,
+      skupina,
+      nabidekVeSkupine: velikostSkupiny(soubor, obdobi, skupina),
     });
     out.set(n.redizo, seznam);
   }
@@ -236,4 +260,45 @@ export async function oboryVeSkupineMaturity(
     out.push({ klic, kkov: n.kkov, zamereni: n.zamereni });
   }
   return out;
+}
+
+
+/** Nabídka kraje v zobrazeném ročníku se vším, co přehled kraje potřebuje. */
+export interface SouhrnNabidkyKraje extends SouhrnProKatalog {
+  klic: string;
+  redizo: string;
+}
+
+/**
+ * Všechny nabídky kraje v zobrazeném ročníku souhrnů (registr, sada cermat-vysledky).
+ *
+ * Na rozdíl od `souhrnyPodleRedizo` vychází z nabídek kraje, ne ze seznamu škol: přehled kraje
+ * nesmí záviset na tom, které školy zná starší katalog. Vrací i rok, aby ho stránka nepsala napevno.
+ */
+export async function nabidkyKraje(kraj: string): Promise<{ rok: number | null; nabidky: SouhrnNabidkyKraje[] }> {
+  const obdobi = await zobrazeneObdobi('cermat-vysledky');
+  if (!obdobi) return { rok: null, nabidky: [] };
+  const { soubor } = await nacti();
+  const rok = Number(obdobi);
+  const out: SouhrnNabidkyKraje[] = [];
+  for (const [klic, n] of Object.entries(soubor.nabidky)) {
+    if (n.kraj !== kraj) continue;
+    const aktualni = n.roky[obdobi];
+    if (!aktualni) continue;
+    const starsi = Object.keys(n.roky).map(Number).filter(r => r < rok).sort((a, b) => b - a)[0];
+    const sparovano = starsi !== undefined && n.parovani?.[`${starsi}-${rok}`] !== undefined;
+    const skupina = aktualni.skupina ?? n.skupina;
+    out.push({
+      klic,
+      redizo: n.redizo,
+      kkov: n.kkov,
+      zamereni: n.zamereni,
+      skupina,
+      aktualni,
+      predchozi: sparovano ? n.roky[String(starsi)] : null,
+      predchoziRok: sparovano ? starsi : null,
+      nabidekVeSkupine: velikostSkupiny(soubor, obdobi, skupina),
+    });
+  }
+  return { rok, nabidky: out };
 }

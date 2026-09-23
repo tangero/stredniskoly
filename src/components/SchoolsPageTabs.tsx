@@ -23,7 +23,6 @@ interface SchoolEntry {
   kapacita: number;
   index_poptavky: number;
   obtiznost: number;
-  category_code: string;
   // 2026 data
   prihlasky_2026?: number;
   kapacita_2026?: number;
