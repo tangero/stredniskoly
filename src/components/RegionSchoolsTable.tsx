@@ -428,7 +428,7 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
                 <th className="px-3 py-2">Pozice na přihlášce</th>
                 <th className="px-3 py-2 text-right">Míst</th>
                 <th className="px-3 py-2">Maturita</th>
-                {poradiPole && <th className="px-3 py-2">Pořadí v kraji {filtr.razeni === 'vysledky' ? 'podle výsledků' : 'podle zájmu'}</th>}
+                {poradiPole && <th className="px-3 py-2" title={filtr.razeni === 'vysledky' ? 'Podle průměrného umístění přijatých v celostátním srovnání výsledků jednotné zkoušky, mezi obory stejného typu v kraji' : 'Podle počtu prvních voleb na jedno místo, mezi obory stejného typu v kraji'}>Pořadí v kraji {filtr.razeni === 'vysledky' ? 'podle výsledků' : 'podle zájmu'}</th>}
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -502,8 +502,18 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
       )}
       {poradiPole && (
         <p className="mt-2 text-xs text-slate-500">
-          Pořadí je pořadí nejlépe umístěného oboru školy mezi {nazevSkupiny(filtr.skupina!)} {vKraji(krajNazev)}{' '}
-          {filtr.razeni === 'vysledky' ? 'podle výsledků přijatých' : 'podle zájmu'} v roce {rok}. Neříká, která škola je lepší.
+          Pořadí nejlépe umístěného oboru školy mezi {nazevSkupiny(filtr.skupina!)} {vKraji(krajNazev)}{' '}
+          {filtr.razeni === 'vysledky'
+            ? <>podle výsledků přijatých v roce {rok}: podle průměrného umístění přijatých v celostátním srovnání výsledků jednotné zkoušky. Popisuje, s jakými výsledky sem přicházejí spolužáci, ne kvalitu školy ani kolik bodů stačí na přijetí.</>
+            : <>podle zájmu v roce {rok}: kolik uchazečů si obor zapsalo jako první volbu na jedno místo. Neříká, která škola je lepší.</>}{' '}
+          <a
+            href={filtr.razeni === 'vysledky' ? '#poradi-vysledky' : '#poradi-zajem'}
+            className="underline"
+            onClick={() => {
+              const d = document.getElementById(filtr.razeni === 'vysledky' ? 'poradi-vysledky' : 'poradi-zajem');
+              if (d instanceof HTMLDetailsElement) d.open = true;
+            }}
+          >Jak se pořadí počítá</a>
         </p>
       )}
       <p className="mt-2 text-xs text-slate-500">

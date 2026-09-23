@@ -56,9 +56,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function Vysvetlivka({ title, children }: { title: string; children: React.ReactNode }) {
+function Vysvetlivka({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) {
   return (
-    <details className="group rounded-lg border border-slate-200 bg-white">
+    <details id={id} className="group scroll-mt-24 rounded-lg border border-slate-200 bg-white">
       <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 hover:bg-slate-50">
         <span className="text-sm text-slate-400 transition-transform group-open:rotate-90">▶</span>
         <span className="text-sm font-medium text-slate-700">{title}</span>
@@ -147,15 +147,79 @@ export default async function RegionPage({ params }: Props) {
                 Počet přihlášek dělený počtem míst. Nadsazuje konkurenci: jeden uchazeč podává víc přihlášek a kdo
                 se dostal na obor výš na své přihlášce, o tohle místo už nesoutěžil. Mezi typy studia se nesrovnává.
               </Vysvetlivka>
-              <Vysvetlivka title="Jak se počítá pořadí v kraji?">
-                Pořadí se zobrazí, jen když vyberete jeden typ studia, protože obory různých typů se neporovnávají.
-                <b> Podle zájmu</b> řadí podle počtu uchazečů, kteří si obor zapsali jako první volbu, na jedno místo.
-                <b> Podle výsledků přijatých</b> řadí podle průměrného umístění přijatých v celostátním srovnání
-                výsledků jednotné zkoušky. Ani jedno neříká, která škola je lepší; druhé popisuje, s jakými výsledky
-                sem přicházejí spolužáci. Podle obtížnosti přijetí se neřadí, protože se mezi ročníky přehazuje.
+              <Vysvetlivka id="poradi-vysledky" title="Co je pořadí v kraji podle výsledků přijatých?">
+                <p>
+                  Pořadí ukazuje, s jak dobrými výsledky jednotné přijímací zkoušky přišli na obor přijatí uchazeči,
+                  ve srovnání s obory stejného typu ve stejném kraji a roce.
+                </p>
+                <p className="mt-2 font-medium text-slate-700">Jak se počítá</p>
+                <ol className="ml-5 list-decimal space-y-1">
+                  <li>
+                    U každého přijatého se vezme výsledek z češtiny a matematiky dohromady a zjistí se, kolik ze 100
+                    uchazečů v celé zemi mělo stejný nebo horší výsledek (percentil). Percentil 80 znamená lepší
+                    nebo stejný výsledek než 80 % všech uchazečů.
+                  </li>
+                  <li>Z percentilů všech přijatých na obor se udělá průměr. Zveřejňuje ho CERMAT v souhrnech 1. kola.</li>
+                  <li>
+                    Obory se podle průměru seřadí, ale jen mezi obory stejného typu a délky studia v kraji:
+                    osmiletá gymnázia mezi osmiletými, lycea mezi lycei.
+                  </li>
+                </ol>
+                <p className="mt-2">
+                  „1. ze 32“ u osmiletého gymnázia tedy znamená, že přijatí na tento obor měli v průměru nejlepší
+                  umístění v celé zemi ze všech 32 osmiletých gymnázií v kraji. Pod pořadím je předchozí rok, aby bylo
+                  vidět, jestli jde o stálý stav, nebo výkyv jednoho ročníku.
+                </p>
+                <p className="mt-2 font-medium text-slate-700">Proč percentil a ne body</p>
+                <p>
+                  Test je každý rok jinak těžký, takže body se mezi roky srovnávat nedají. Mezi dvěma posledními ročníky
+                  se průměr přijatých v bodech posunul typicky o 2,6 bodu, zatímco jejich umístění v celé zemi se skoro
+                  nezměnilo. Percentil tenhle posun odstraní, proto jde pořadí za dva roky položit vedle sebe.
+                </p>
+                <p className="mt-2 font-medium text-slate-700">Co pořadí neříká</p>
+                <ul className="ml-5 list-disc space-y-1">
+                  <li>
+                    <b>Která škola je lepší.</b> Popisuje, s jakými výsledky sem přicházejí spolužáci, ne kvalitu výuky.
+                    O studiu víc řekne sloupec maturity.
+                  </li>
+                  <li><b>Kolik bodů stačí na přijetí.</b> Je to průměr přijatých; část z nich měla výsledky pod ním.</li>
+                  <li>
+                    <b>Jak těžké je se dostat.</b> Na to je obtížnost přijetí. Obor s dobře umístěnými přijatými může mít
+                    volná místa, když se na něj hlásí málo uchazečů.
+                  </li>
+                  <li>
+                    <b>Srovnání se všemi, kam se uchazeči hlásí.</b> Hranice kraje neodpovídá skutečným přihláškám:
+                    u gymnázia J. S. Machara v Brandýse leží zhruba polovina oborů, které mají uchazeči na přihlášce vedle
+                    něj, v Praze.
+                  </li>
+                </ul>
+                <p className="mt-2 font-medium text-slate-700">Kdy se pořadí ukáže</p>
+                <ul className="ml-5 list-disc space-y-1">
+                  <li>Jen po výběru typu studia, protože obory různých typů se neporovnávají.</li>
+                  <li>Jen ve skupině s aspoň deseti obory v kraji; v menší by jeden obor pořadím zbytečně házel.</li>
+                  <li>Stejná hodnota dává stejné pořadí, proto se objevuje například „10.–11. ze 32“.</li>
+                  <li>
+                    V tabulce je u školy pořadí jejího nejlépe umístěného oboru zvoleného typu; pořadí jednotlivých
+                    oborů je v detailu školy.
+                  </li>
+                  <li>
+                    Mezi dvěma posledními ročníky zůstaly ve stejné třetině pořadí zhruba dvě třetiny oborů a typický
+                    posun byl pět míst. Údaj je poměrně stálý, jednotlivá místa ale nejsou přesné měřítko.
+                  </li>
+                </ul>
+                <p className="mt-2">
+                  Podle obtížnosti přijetí se neřadí, protože se mezi roky přehazuje příliš: gymnázium J. S. Machara
+                  bylo podle ní v jednom roce 7. a v dalším 17. z 32.
+                </p>
+              </Vysvetlivka>
+              <Vysvetlivka id="poradi-zajem" title="Co je pořadí v kraji podle zájmu?">
+                Řadí obory stejného typu a délky v kraji podle toho, kolik uchazečů si obor zapsalo jako první volbu
+                na jedno místo (tlak prvních voleb). Ze všech ukazatelů poptávky nejlépe předpovídá, zda se na obor
+                další rok někdo nevejde. Platí stejná pravidla zobrazení jako u pořadí podle výsledků přijatých
+                a stejně tak neříká, která škola je lepší.
               </Vysvetlivka>
               {rokMaturity && (
-                <Vysvetlivka title="Co znamená řádek o maturitě?">
+                <Vysvetlivka title="Co znamená sloupec Maturita?">
                   Kolik přihlášených u školy maturitu v roce {rokMaturity} udělalo a jak často byla škola v češtině
                   nad středem podobných škol za poslední čtyři roky. Podobné školy jsou školy se stejným typem oborů
                   v celé zemi. Údaj platí za celou školu, ne za jednotlivý obor.
