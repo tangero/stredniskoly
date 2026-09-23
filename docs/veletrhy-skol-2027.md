@@ -2,7 +2,7 @@
 
 Verze 0.5 · 22. 9. 2026 · **Návrh a stav rozpracované implementace.**
 
-**Stav po druhém review nekomitovaných změn:** v kódu jsou data, přehled s filtrem kraje a města, metodický blok a formulář s předáním hlášení přes Resend. Počty akcí a pokrytí jsou v [aktuálním soupisu zdrojů](zdroje-dat.md#215-veletrhy-a-přehlídky-středních-škol); číselné odhady níže zachycují původní návrh. Stránka má hodinovou revalidaci a klientskou aktualizaci dne každou minutu. Kalendářový export (§ 5.8), našeptávání a časové skupiny seznamu dosud implementované nejsou.
+**Stav po druhém review nekomitovaných změn:** v kódu jsou data, přehled po krajích s čipy (od 0.9), metodický blok a formulář s předáním hlášení přes Resend. Počty akcí a pokrytí jsou v [aktuálním soupisu zdrojů](zdroje-dat.md#215-veletrhy-a-přehlídky-středních-škol); číselné odhady níže zachycují původní návrh. Stránka má hodinovou revalidaci a klientskou aktualizaci dne každou minutu. Kalendářový export (§ 5.8), našeptávání a časové skupiny seznamu dosud implementované nejsou.
 
 **Známá omezení fronty hlášení** (z oponentury, čtvrté kolo): čekání na databázi má strop tří sekund, ale `Promise.race` samotný dotaz nezruší — spojení zůstane obsazené, dokud neskončí. Je to vědomý kompromis: lepší nechat viset spojení než ztratit hlášení. Při opakovaném výpadku databáze to může vyčerpat pool. Odesílání pošty strop má (osm sekund, `AbortSignal`), ten požadavek skutečně přeruší. Příznak `odeslano_mailem = false` proto neznamená „e-mail neodešel“, ale „nevíme o tom, že odešel“. Databázová záloha hlášení (§ 6.3) doplněna ve třetím kole: migrace `db/migrace/005-veletrhy.sql`, záznam vzniká dřív než e-mail. Při nedostupnosti pošty i databáze produkční endpoint vrací 503; potvrzení API od Resendu není důkaz doručení do schránky, proto záznam v databázi platí nezávisle na ní. Produkční nasazení toto review neověřuje.
 
@@ -143,11 +143,19 @@ Návrh **novou třídu nezavádí**. Důvod: klasifikace čte weby škol a škol
 
 **Nahoře jedna věta o tom, co veletrh je**, protože pojem se musí vysvětlit při prvním výskytu v bloku.
 
-**Filtr podle kraje a podle města.** Kraj jako rozbalovací seznam ze čtrnácti, město jako našeptávač. Bez výběru se ukáže vše, seřazené podle data.
+**Osou stránky je kraj, ne datum** (od 23. 9. 2026, verze 0.9). Rodina se ptá „co je blízko nás“ a až potom „kdy“. Data to podpírají: 41 akcí ve 14 krajích, v kraji 1–7 akcí, **39 ze 40 měst má jedinou akci**. Chronologický seznam se čtyřiceti kartami, kde je město až na druhém řádku, nutil číst všech čtyřicet; rozbalovací seznam měst se 40 položkami vedl vždy na jednu kartu.
 
-**Seznam akcí, každá jako řádek nebo karta** s názvem akce, městem, datem, místem konání, pořadatelem a odkazem na jeho web.
+**Čipy krajů s počty nahoře** („Jihočeský 6“, „Praha 1“) místo rozbalovacích seznamů: pokrytí je vidět bez kliknutí. Čip je zároveň filtr; kotva `#jihocesky` v adrese kraj předvybere, takže na oddíl jde odkázat ze stránky kraje. Filtr měst neexistuje.
 
-**Řazení podle data vzestupně**, s oddělením „tento týden“ / „tento měsíc“ / „později“. Akce, která už proběhla, ze seznamu mizí — stejné pravidlo, jaké platí pro novinky škol: platnost se počítá při čtení stránky, ne při sestavení dat.
+**Oddíl na kraj** s nadpisem a počtem („Jihočeský kraj · 6 akcí“), pod ním řádek měst v pořadí konání (jen kde je víc než jedna akce), pak karty. Kraje abecedně — pokrytí vyprávějí čísla v čipech, ne pořadí; Praha by při řazení podle počtu skončila poslední.
+
+**Karta:** datum jako dlaždice vlevo (den a měsíc, `~` u přibližného termínu), **město verzálkami jako první řádka**, název akce, plné datum s časem a místem konání, výstrahy k termínu, „Pořádá *organizace*“ a odkaz na stránku akce. Dovětek „ne tento web“ z každé karty zmizel rozhodnutím zadavatele 23. 9. 2026 — jméno pořadatele říká totéž.
+
+**Řazení uvnitř kraje podle data vzestupně.** Akce, která už proběhla, ze seznamu mizí — stejné pravidlo, jaké platí pro novinky škol: platnost se počítá při čtení stránky, ne při sestavení dat. Kraj, kterému po půlnoci nezbyla žádná akce, z čipů zmizí; už zvolený zůstane viditelný jako „(bez aktuálních akcí)“.
+
+**Výhrada neúplnosti u každého kraje** („Víme jen o těchto šesti. Chybí vám nějaká? Nahlaste nám ji“), ne jen jednou dole: rodič, který právě zjistil, že jeho město chybí, je ten, kdo akci nahlásí.
+
+Zamítnuto: přepínač „podle kraje / podle data“ (dvě zobrazení, dvojí testování, rozhodnutí přesunuté na čtenáře) a mapa jako hlavní ovládání (na mobilu 14 krajů neklikatelně malých; jako doplněk nad čipy možná později).
 
 **Dole poctivá věta o pokrytí** (§ 5.4).
 
@@ -423,6 +431,7 @@ Zakázané slovní spojení **„škola pořádá“** (oddíl 5 slovníku) se v
 | Verze | Změna |
 |---|---|
 | 0.9 | Druhé kolo pátého review: doplněn test, který hlídá rozchod dat s registrem — mutace strážní podmínky dřív prošla všemi testy. Při rozchodu stránka místo věty o nedohledaných akcích říká, že přehled připravujeme. K době držení dopsán postup: mazání adres je roční úkol po skončení sezóny, ne automatická úloha. |
+| 0.9 | Přehled dostal kraj jako osu (23. 9. 2026, § 5.2): čipy krajů s počty místo dvou rozbalovacích seznamů, oddíl na kraj s řádkem měst, datum jako dlaždice a město jako první řádka karty, výhrada neúplnosti u každého kraje, kotva `#kraj` pro odkaz ze stránky kraje. Filtr měst zrušen — 39 ze 40 měst mělo jedinou akci. Z karty vypuštěn dovětek „ne tento web“. Testy vykreslení přepsány a ověřeny mutacemi (8 mutací, každá shodí test). |
 | 0.8 | Páté review nad celým PR #155: stránka ochrany osobních údajů doplněna o formulář nahlášení včetně doby držení; odkaz na `/veletrhy` z patičky a z kalendáře přijímaček, dosud byla sekce dostupná jen ze sitemapy; období se ověřuje proti registru datových sad, dřív ho návrh sliboval a kód nečetl. |
 | 0.7 | Čtvrté review: odesílání pošty dostalo strop osmi sekund (`AbortSignal`, požadavek se opravdu přeruší) včetně čtení chybového těla; pozdní chyby po vypršení limitu se logují, místo aby spadly jako neošetřené odmítnutí. Testovací pool nově ověřuje, že sloupce v INSERT odpovídají migraci — mutační test ukázal, že dřív prošlo i přejmenování sloupce. Zapsána známá omezení fronty: `Promise.race` dotaz nezruší a příznak odeslání může zůstat `false`, i když e-mail odešel. |
 | 0.6 | Třetí review: doplněna databázová fronta hlášení (`db/migrace/005-veletrhy.sql`). Záznam se ukládá dřív, než odejde e-mail, takže hlášení nezmizí, když pošta selže; přijetí se potvrzuje, když je hlášení aspoň na jednom z obou míst. |

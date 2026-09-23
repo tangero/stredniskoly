@@ -5,7 +5,6 @@ import { Footer } from '@/components/Footer';
 import {
   zobrazitelneAkce,
   krajeSAkcemi,
-  mestaSAkcemi,
   nazevKraje,
   cesskyDen,
   overSezonuProtiRegistru,
@@ -42,7 +41,6 @@ export default async function VeletrhyPage() {
   const sezonaSedi = (await overSezonuProtiRegistru()) !== null;
   const akce = sezonaSedi ? zobrazitelneAkce() : [];
   const kraje = sezonaSedi ? krajeSAkcemi() : [];
-  const mesta = sezonaSedi ? mestaSAkcemi() : [];
 
   const karty: VeletrhKarta[] = akce.map((a) => ({
     id: a.id,
@@ -87,7 +85,7 @@ export default async function VeletrhyPage() {
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-10">
         <section>
           {sezonaSedi ? (
-            <VeletrhySeznam akce={karty} kraje={kraje} mesta={mesta} den={cesskyDen()} />
+            <VeletrhySeznam akce={karty} kraje={kraje} den={cesskyDen()} />
           ) : (
             <div className="rounded-lg border border-gray-200 bg-white p-6">
               <p className="font-medium text-gray-900">Přehled akcí právě připravujeme.</p>
@@ -137,7 +135,7 @@ export default async function VeletrhyPage() {
           </p>
           <p className="mt-3 text-sm text-gray-600">
             Údaje jsme naposledy ověřovali {formatujDatum(OVERENO_K)}. Termín a podmínky si před cestou
-            ověřte na stránce pořadatele — pořádá akci on, ne tento web.
+            ověřte na stránce pořadatele.
           </p>
         </section>
       </div>
