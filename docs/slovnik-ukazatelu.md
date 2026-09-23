@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.31 · 23. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.32 · 23. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -579,6 +579,15 @@ Při počtu maturantů pod 10 se zveřejňují jen počty, mezi 10 a 29 s upozor
 
 **Co neříká.** **Neříká, že škola volná místa má.** Karta zní „škola {datum} hlásila volná místa", nikdy „škola má volná místa"; platnost je 7 dní od vydání zprávy a je to limit stáří sdělení, ne potvrzení dostupnosti. „Zdroj naposledy ověřen" znamená, že se podařilo přečíst kanál novinek, ne že škola dostupnost potvrdila.
 
+## 6a. Veletrhy a přehlídky středních škol
+
+### Počet akcí v kraji
+Počet veletrhů a přehlídek středních škol, které se v kraji teprve budou konat nebo právě probíhají. Zdroj: `src/data/veletrhy-2027.json` (sada `veletrhy-skol`, vlastní rešerše pořadatelů). Výpočet: záznamy s `terminPotvrzen = true` a `end ≥ dnešní den` v českém čase, sečtené podle `krajKod`; `end` je inkluzivní, u jednodenní akce rovné `start`. Online akce se počítá v kraji, jehož pořadatel ji vypsal (`krajKod` záznamu). Čip „Všechny kraje“ ukazuje součet téhož ukazatele přes vykreslené kraje — není to samostatný ukazatel a v registru sad se nevede zvlášť; počítá se ze stejné množiny a se stejnými výhradami. Jednotka: akce. Platí od sezóny 2027; počítá se při čtení stránky (revalidace po hodině, klient přepočítá po půlnoci), ne při sestavení dat.
+
+Zobrazuje se na `/veletrhy` v čipech krajů, v nadpisu oddílu („Jihočeský kraj“ a vedle „6 akcí“) a ve větě „Víme jen o těchto 6 akcích s potvrzeným termínem“ — věta musí nést množinu, ze které se číslo počítá, protože soubor zná i akce bez potvrzeného termínu, které se nepočítají.
+
+Neříká, kolik akcí se v kraji koná. Říká, o kolika víme a máme u nich potvrzený termín; záznamy bez potvrzeného termínu se nepočítají a rešerše nepokrývá všechno (docs/veletrhy-skol-2027.md § 5.4). Kraj s jednou akcí není kraj s málo veletrhy, je to kraj, kde jsme jednu dohledali. Proto stojí u každého oddílu výzva k nahlášení, ne pořadí krajů podle počtu.
+
 ## 7. Ukazatele bez doloženého výpočtu
 
 ### Index obtížnosti (`obtiznost`)
@@ -619,7 +628,8 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
-| 1.31 | **Kohorta podle pozice na přihlášce se počítá a zobrazuje** (23. 9. 2026). Generátor souhrnů 1. kola nese podíl prvních voleb, jeho percentil ve skupině a kohortu, práh 30 nabídek uplatňuje knihovna. Stabilita přepočtena s mapou nabídek na 64,5 % (dříve 66 %). Nedoložená **kategorie oboru** stažena z webu a rozebrána v oddílu 7; nahrazuje ji kohorta. Přehled kraje přestavěn nad souhrny zobrazeného ročníku, viz `docs/navrh-stranky-kraje-2027.md`. |
+| 1.32 | **Kohorta podle pozice na přihlášce se počítá a zobrazuje** (23. 9. 2026). Generátor souhrnů 1. kola nese podíl prvních voleb, jeho percentil ve skupině a kohortu, práh 30 nabídek uplatňuje knihovna. Stabilita přepočtena s mapou nabídek na 64,5 % (dříve 66 %). Nedoložená **kategorie oboru** stažena z webu a rozebrána v oddílu 7; nahrazuje ji kohorta. Přehled kraje přestavěn nad souhrny zobrazeného ročníku, viz `docs/navrh-stranky-kraje-2027.md`. |
+| 1.31 | **Počet akcí v kraji** (23. 9. 2026, oddíl 6a). Přehled veletrhů dostal kraj jako osu a s ním čipy a nadpisy s počty; návrh veletrhů § 6.4 předvídal, že to bude ukazatel a bude chtít zápis. Definice: potvrzený termín, `end ≥ dnes` při čtení, online akce pod krajem pořadatele. Neříká, kolik akcí se koná, ale o kolika víme. |
 | 1.30 | **Rozhodl test dostal doložené slepé místo** (22. 9. 2026, podnět čtenáře). Ukazatel nevidí kritéria, která jeden test jen převažují: Gymnázium Christiana Dopplera má 0,994, a přitom váží matematiku 1,5×. Věta na kartě přestala tvrdit, že „rozhodl test“, a slepé místo pojmenovává. Nová prověrka *předmětový sklon* našla nápadné vážení u 73 z 354 měřitelných oborů (21 %) — napříč typy škol, ne jen u výběrových gymnázií. |
 | 1.29 | **Věta s termíny dostala strop** (21. 9. 2026). Nad čtyři termíny vypíše první tři a datum posledního: sedm termínů přípravného kurzu dávalo větu na 145 znaků. Modelu se zároveň předkládá nejvýš dvanáct dat na položku — po stažení stránky článku vyšly v měření tři položky po 35 otázkách v jediném volání, což je proti podmínce P6 o délce kontextu. Strop je nad naměřeným rozložením bez ocasu (0, 1, 2, 3, 6, 7, 8, 11 dat), takže o reálný termín nepřipraví. |
 | 1.28 | **Termín akce ze zprávy školy se začal zobrazovat** (21. 9. 2026). Dosud byl ukazatel veden jako „nezobrazuje se“, protože vazba mezi datem a událostí doložená nebyla. Teď doložená je: kód najde data s rokem, rozhodovací model odpoví **datum po datu** nad jednou větou, co v článku znamenají, a větu složí kód ze šablony — model text negeneruje. Lhůty se vedou zvlášť a do věty nejdou. Platnost se počítá při čtení stránky, ne při sklizni. Pokrytí změřeno na 300 živých feedech: věta u 11 z 23 pozvánek (48 %), z toho 4 až po stažení stránky článku. Tím se naplnila podmínka, kterou si rozhodnutí z 20. 9. 2026 samo uložilo (P6). |

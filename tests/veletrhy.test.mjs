@@ -10,12 +10,17 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import {
-  zobrazitelneAkce,
-  cekajiciAkce,
-  krajeSAkcemi,
-  mestaSAkcemi,
-} from '../src/lib/veletrhy.ts';
+import { zobrazitelneAkce, cekajiciAkce } from '../src/lib/veletrhy.ts';
+import { seskupPodleKraje } from '../src/lib/veletrhy-pocty.ts';
+import { vsechnyKraje } from '../src/lib/kraje.mjs';
+
+/** Kraje se zobrazitelnou akcí a počtem — pomocník jen pro testy dat a dokumentace. */
+function krajeSAkcemi(ke) {
+  const podleKraje = seskupPodleKraje(zobrazitelneAkce(ke));
+  return vsechnyKraje()
+    .filter((k) => podleKraje.has(k.kod))
+    .map((k) => ({ ...k, pocet: podleKraje.get(k.kod).length }));
+}
 
 const PRED_SEZONOU = new Date('2026-09-22');
 
@@ -58,21 +63,6 @@ test('vícedenní akce je vidět i v průběhu, mizí až po posledním dni', ()
   assert.ok(!vidi('2026-11-29'), 'Den po skončení už akce být vidět nesmí.');
 });
 
-test('akce v obci mimo seznam MESTA z přehledu nevypadne', async () => {
-  // MESTA mají práh tří škol; Kaplice a Boskovice jsou pod ním, ale veletrh
-  // se tam koná. Vazba filtru na MESTA by je tiše zahodila.
-  const { MESTA } = await import('../src/lib/mesta.mjs');
-  const znama = new Set(MESTA.map((m) => m.nazev));
-  const mesta = mestaSAkcemi(PRED_SEZONOU);
-
-  const podPrahem = mesta.filter((m) => !znama.has(m));
-  assert.ok(
-    podPrahem.length > 0,
-    'Očekáváme aspoň jednu obec mimo seznam MESTA; jinak test nehlídá, co má.',
-  );
-  assert.ok(mesta.includes('Kaplice'), 'Kaplice musí zůstat v nabídce měst.');
-});
-
 test('čekající akce nesou důvod, proč se nezobrazují', () => {
   const bezDuvodu = cekajiciAkce().filter((a) => !a.cekaNa);
   assert.equal(
@@ -107,7 +97,7 @@ test('identifikátory akcí jsou jedinečné', () => {
 // --- Nálezy z oponentury Codexem, 22. 9. 2026 -------------------------------
 
 test('den se počítá v českém kalendáři, ne v UTC', async () => {
-  const { cesskyDen } = await import('../src/lib/veletrhy.ts');
+  const { cesskyDen } = await import('../src/lib/veletrhy-pocty.ts');
   // Půl jedné ráno 1. 10. letního času je v UTC ještě 30. 9.; akce z 30. 9.
   // by se tou dobou tvářila jako dnešní.
   const pulnocPoPrechodu = new Date('2026-10-01T00:30:00+02:00');
@@ -214,4 +204,21 @@ test('rozchod dat s registrem seznam zhasne', async () => {
     SEZONA,
     'Když období souhlasí, seznam se zobrazit musí.',
   );
+});
+
+test('každá akce má známý kraj a datum ve tvaru YYYY-MM-DD s koncem po začátku', async () => {
+  // Soubor se po nahlášeních edituje ručně. Překlep v `krajKod` by akci
+  // započítal do čipu „Všechny kraje“, ale nikde nevykreslil; špatný tvar
+  // data by dlaždice vypsala jako „21–NaN“ a řazení podle řetězce by lhalo.
+  const { krajNames } = await import('../src/lib/kraje.mjs');
+  const { default: soubor } = await import('../src/data/veletrhy-2027.json', { with: { type: 'json' } });
+  const den = /^\d{4}-\d{2}-\d{2}$/;
+  for (const a of soubor.akce) {
+    assert.ok(a.krajKod in krajNames, `${a.id}: neznámý kraj ${a.krajKod}`);
+    if (a.start !== null) {
+      assert.match(a.start, den, `${a.id}: start ${a.start}`);
+      assert.match(a.end ?? a.start, den, `${a.id}: end ${a.end}`);
+      assert.ok((a.end ?? a.start) >= a.start, `${a.id}: end ${a.end} před start ${a.start}`);
+    }
+  }
 });
