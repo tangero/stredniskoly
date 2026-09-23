@@ -11,6 +11,7 @@ Použití: python3 scripts/portal-vyber-druhe-vlny.py
 import collections
 import csv
 import json
+import re
 import subprocess
 from pathlib import Path
 
@@ -21,6 +22,12 @@ KODY = ROOT / 'data/portal/kody.json'
 ADRESAR = ROOT / 'data/Rejstrik_skol/Adresar.csv'
 KATALOG = ROOT / 'public/schools_data.json'
 POCET = 100
+
+
+def hlavni_email(hodnota):
+    """Rejstřík někdy ukládá dvě adresy do Email 1 oddělené středníkem."""
+    email = hodnota.split(';', 1)[0].strip()
+    return email if re.fullmatch(r'[^\s@;]+@[^\s@;]+\.[^\s@;]+', email) else ''
 
 
 def nacti(cesta):
@@ -45,7 +52,7 @@ def main():
 
     adresar_radky = list(csv.DictReader(ADRESAR.open(encoding='utf-8-sig'), delimiter=';'))
     adresar = {r['RED_IZO']: r for r in adresar_radky}
-    pocty_emailu = collections.Counter(r['Email 1'].strip().casefold() for r in adresar_radky if r['Email 1'].strip())
+    pocty_emailu = collections.Counter(hlavni_email(r['Email 1']).casefold() for r in adresar_radky if hlavni_email(r['Email 1']))
     katalog = collections.defaultdict(list)
     for radek in nacti(KATALOG)['2026']:
         katalog[str(radek['redizo'])].append(radek)
@@ -60,7 +67,7 @@ def main():
             continue
         if not all(r[p].strip() for p in ('Email 1', 'Ředitel', 'WWW', 'ID dat. schránky subjektu')):
             continue
-        email = r['Email 1'].strip().casefold()
+        email = hlavni_email(r['Email 1']).casefold()
         if email in puvodni_email or pocty_emailu[email] != 1:
             continue
         # min_body je historický údaj 2025, který web nezobrazuje; pro výběr
@@ -92,7 +99,7 @@ def main():
                     'pozvanka_odeslana': None, 'vlna': 2,
                 })
                 nove_kontakty.append({
-                    'redizo': redizo, 'email_rejstrik': r['Email 1'].strip(),
+                    'redizo': redizo, 'email_rejstrik': hlavni_email(r['Email 1']),
                     'reditel': r['Ředitel'].strip(), 'www': r['WWW'].strip(),
                 })
 

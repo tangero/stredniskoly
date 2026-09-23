@@ -76,11 +76,12 @@ async function main() {
     process.exit(1);
   }
 
-  const chybi = skoly.filter((s) => !kodPodleRedizo.has(s.redizo) || !kontaktPodleRedizo.get(s.redizo)?.email_rejstrik);
+  const platnyEmail = (email) => /^[^\s@;,]+@[^\s@;,]+\.[^\s@;,]+$/.test(String(email ?? ''));
+  const chybi = skoly.filter((s) => !kodPodleRedizo.has(s.redizo) || !platnyEmail(kontaktPodleRedizo.get(s.redizo)?.email_rejstrik));
   if (chybi.length > 0) {
     console.error('❌ Bez kódu nebo bez adresy, neodesílám nic:');
     for (const s of chybi) {
-      const bez = [!kodPodleRedizo.has(s.redizo) && 'kód', !kontaktPodleRedizo.get(s.redizo)?.email_rejstrik && 'adresa']
+      const bez = [!kodPodleRedizo.has(s.redizo) && 'kód', !platnyEmail(kontaktPodleRedizo.get(s.redizo)?.email_rejstrik) && 'platná adresa']
         .filter(Boolean)
         .join(' a ');
       console.error(`   ${s.redizo}  ${s.nazev} – chybí ${bez}`);
