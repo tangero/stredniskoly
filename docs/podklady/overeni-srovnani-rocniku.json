@@ -131,5 +131,22 @@
    "stejne_zarazeni_pct": 48.9,
    "nejvys_o_stupen_pct": 90.3
   }
+ },
+ "kohorta_pozice": {
+  "2025": {
+   "zalozni_volba": 993,
+   "smisena_pozice": 1052,
+   "skola_prvni_volby": 1013,
+   "null": 1
+  },
+  "2026": {
+   "smisena_pozice": 1061,
+   "zalozni_volba": 1008,
+   "skola_prvni_volby": 1022
+  },
+  "2025-2026": {
+   "n": 2933,
+   "stejna_kohorta_pct": 64.5
+  }
  }
 }
