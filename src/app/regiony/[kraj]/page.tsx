@@ -117,9 +117,9 @@ export default async function RegionPage({ params }: Props) {
         <div className="mx-auto max-w-6xl space-y-10 px-4 py-8">
           <section>
             <p className="mb-5 max-w-3xl text-sm text-slate-600">
-              Jedna karta je jedna škola, uvnitř jsou její obory. U každého oboru je obtížnost přijetí
-              a pozice na přihlášce za 1. kolo {rok}. Přehled zahrnuje obory s jednotnou přijímací zkouškou;
-              učební obory bez maturity v něm nejsou.
+              Jeden řádek je jedna škola: obtížnost přijetí a pozice na přihlášce za 1. kolo {rok}, počet míst
+              a maturita. Jednotlivé obory najdete po kliknutí na školu. Přehled zahrnuje obory s jednotnou
+              přijímací zkouškou; učební obory bez maturity v něm nejsou.
             </p>
             <RegionSchoolsTable skoly={skoly} krajNazev={kraj.nazev === 'Vysočina' ? 'Kraj Vysočina' : kraj.nazev} rok={rok} rokDruhehoKola={rokDruhehoKola} />
           </section>

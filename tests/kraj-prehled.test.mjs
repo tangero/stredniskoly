@@ -41,7 +41,7 @@ test('přehled nevynechá ani nezdvojí žádnou nabídku ze souhrnů kraje', as
   }
 });
 
-test('jedna škola je jedna karta', async () => {
+test('jedna škola je jeden řádek', async () => {
   for (const { kod, p } of await vsechnyKraje()) {
     const redizo = p.skoly.map(s => s.redizo);
     assert.equal(new Set(redizo).size, redizo.length, `kraj ${kod}`);
@@ -103,10 +103,32 @@ test('vykreslení: bez zvoleného typu studia se pořadí v kraji nevypisuje', a
   assert.ok(!html.includes('v Praze podle výsledků přijatých'));
 });
 
-test('vykreslení: řádek o maturitě je u škol, které ji mají', async () => {
+test('vykreslení: maturita je u škol, které ji mají', async () => {
   const p = await getKrajPrehled('CZ010');
   if (!p.rokMaturity) return;
   const html = vykresli(p);
-  assert.ok(html.includes('přihlášených'));
-  assert.ok(html.includes('nad středem podobných škol'));
+  assert.ok(html.includes('udělalo'));
+  assert.ok(html.includes('ČJ nad středem:'));
+});
+
+test('vykreslení: škola zabírá jeden řádek tabulky a nejvýš dva řádky textu v buňce', async () => {
+  const p = await getKrajPrehled('CZ010');
+  const html = vykresli(p);
+  const radky = html.match(/<tr class="align-top/g) ?? [];
+  assert.equal(radky.length, Math.min(50, p.skoly.length));
+  // Každá buňka vypíše nejvýš dva řádky; u kohort se třetí stupeň připojí do druhého.
+  const bunky = html.match(/<td class="px-3 py-2[^"]*">.*?<\/td>/g) ?? [];
+  assert.ok(bunky.length >= radky.length * 5, 'kontrola musí buňky skutečně najít');
+  for (const td of bunky) {
+    const radkyTextu = (td.match(/<div/g) ?? []).length + (td.startsWith('<td class="px-3 py-2"><a') || /<span class="inline-block/.test(td) ? 1 : 0);
+    assert.ok(radkyTextu <= 2, td.slice(0, 300));
+  }
+});
+
+test('vykreslení: obory školy se v tabulce nevypisují, jen počet', async () => {
+  const p = await getKrajPrehled('CZ010');
+  const html = vykresli(p);
+  const skola = p.skoly.find(s => s.nabidky.length >= 3);
+  assert.ok(html.includes(`${skola.nabidky.length} obor`));
+  assert.ok(!html.includes('přijato '), 'věty o podílu přijatých patří do detailu');
 });

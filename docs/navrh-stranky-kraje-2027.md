@@ -1,6 +1,6 @@
 # Návrh krajské stránky: přehled škol v kraji
 
-Verze 1.1 · 23. 9. 2026 · Stav: **zrealizováno** (oddíl 8)
+Verze 1.2 · 23. 9. 2026 · Stav: **zrealizováno** (oddíly 8 a 9)
 
 Zadání z 23. 9. 2026: „Zamysli se jako UX a UI designer nad vzhledem regionálních přehledů škol ([/regiony/hlavni-mesto-praha](https://www.prijimackynaskolu.cz/regiony/hlavni-mesto-praha?delka=8)), chceme jej sjednotit s celým webem. Líbí se mi kategorie škol, to bych chtěl používat více. Projdi data, která zde zobrazuje, a podívej se, zda je to v souladu s naší metodikou použití dat. Navrhni vylepšení.“
 
@@ -255,3 +255,28 @@ Zadavatel: „Souhlasím se všemi návrhy. Seznam řadit po školách. Maturitu
 - **Učební obory bez maturity v přehledu nejsou**, stejně jako dosud: souhrny 1. kola nesou jen obory s jednotnou zkouškou. Stránka to říká nad seznamem.
 
 **Co zůstává otevřené:** `school_analysis.json` dál nese `category_code` a ročník 2025 a používají ho jiné části webu (žebříček `/skoly`, dostupnost). To je mimo rozsah tohoto zadání a patří do samostatného úklidu podle slovníku ukazatelů, oddíl 7.
+
+---
+
+## 9. Kompaktní tabulka místo karet (23. 9. 2026)
+
+Připomínka zadavatele: „Nabídka by měla být kompaktní, tabulkové vyhodnocení v zásadě vyhovovalo, nyní každá škola zabírá mnoho místa. Zkusíme školu představit v tabulce na max 2 řádky, zbytek uživatel uvidí v detailu.“
+
+Karty s obory pod sebou zabíraly u školy s devíti obory přes půl obrazovky. Seznam je teď tabulka, **jeden řádek na školu, v každé buňce nejvýš dva řádky textu** (hlídá `tests/kraj-prehled.test.mjs`):
+
+| Sloupec | 1. řádek | 2. řádek |
+|---|---|---|
+| Škola | název (odkaz na detail školy) | obec (skrytá, když je v kraji jediná, tedy v Praze), typy studia s počtem, značka 2. kola |
+| Obtížnost přijetí | odznak **nejtěžšího** oboru školy ve výběru | „až místo pro všechny“, nebo „u všech N oborů“ |
+| Pozice na přihlášce | počty oborů podle kohorty („2× škola první volby“) | druhý stupeň; třetí se připojí zkráceně |
+| Míst | součet míst oborů ve výběru | počet oborů |
+| Maturita | „udělalo 53 z 53“ | „ČJ nad středem: téměř každý rok“ (plná věta v titulku) |
+| Pořadí v kraji (jen po výběru typu a řazení podle pořadí) | pořadí nejlépe umístěného oboru | předchozí rok |
+
+Na mobilu zůstává název, odznak obtížnosti a jeden oříznutý řádek s typy, místy a pozicí. Stránkuje se po 50 školách.
+
+**Proč počty kohort, ne jeden štítek školy:** slovník ukazatelů zapisuje, že kohorta patří nabídce, ne škole. Počet oborů v každém stupni to dodrží; jeden štítek za školu by ne.
+
+**Proč nejtěžší obor ve sloupci obtížnosti:** jde o jediný stupeň, který se vejde na řádek, a zároveň nic nezamlčí. Škola s jedním velmi těžkým osmiletým gymnáziem a čtyřletým oborem pro všechny dostane „velmi těžké, až místo pro všechny“. Podle sloupce se neřadí (slovník ukazatelů, pořadí v kraji).
+
+Z přehledu odešlo do detailu školy: věta o podílu přijatých a nesplněných podmínkách, předchozí ročník obtížnosti u jednotlivého oboru, přihlášky na místo, odkaz na web školy a názvy oborů.

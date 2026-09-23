@@ -8,7 +8,7 @@ import {
   PORADI_KOHORT, PORADI_OBTIZNOSTI, VYSVETLENI_SOUTEZICICH, ZARAZENI_POPISEK,
   type KohortaPozice, type ZarazeniObtiznosti,
 } from '@/lib/obor-profil';
-import { OdznakKohorty, OdznakObtiznosti, VetaObtiznosti } from '@/components/nabidka/Odznaky';
+import { OdznakObtiznosti } from '@/components/nabidka/Odznaky';
 
 /**
  * Přehled škol v kraji: docs/navrh-stranky-kraje-2027.md, oddíl 4.
@@ -57,7 +57,7 @@ interface Filtr {
 }
 
 const PRAZDNY: Filtr = { skupina: null, obtiznost: null, kohorta: null, zrizovatel: null, okres: null, delka: null, razeni: 'nazev' };
-const PO_STRANKACH = 30;
+const PO_STRANKACH = 50;
 
 function zAdresy(search: string): Filtr {
   const p = new URLSearchParams(search);
@@ -102,20 +102,100 @@ function odpovida(n: NabidkaKraje, s: SkolaKraje, f: Filtr): boolean {
     && (!f.delka || n.delka === f.delka);
 }
 
-/** Věta o pořadí podle slovníku: „3. z 32 … (2026; v roce 2025 také 3.)“. */
-function VetaPoradi({ p, podle, skupina, krajNazev, rok, predchoziRok }: {
-  p: PoradiNabidky; podle: string; skupina: string; krajNazev: string; rok: number; predchoziRok: number | null;
-}) {
-  const drive = p.predchozi && predchoziRok
-    ? p.predchozi.od === p.poradi.od && p.predchozi.do === p.poradi.do
-      ? `; v roce ${predchoziRok} také ${textPoradi(p.predchozi)}`
-      : `; v roce ${predchoziRok} ${textPoradi(p.predchozi)} ${zOd(p.predchozi.z)} ${cislo(p.predchozi.z)}`
-    : '';
+/**
+ * Zkrácené „jak často nad středem podobných škol“ do buňky tabulky, aby se vešla na řádek.
+ * Plná věta ze `jakCastoNadStredem` zůstává v titulku a na stránce školy.
+ */
+const NAD_STREDEM_KRATCE: Record<string, string> = {
+  'každý rok': 'každý rok',
+  'téměř každý rok': 'téměř každý rok',
+  've většině let': 've většině let',
+  'zhruba v polovině let': 'v polovině let',
+  'jen v některých letech': 'jen někdy',
+  'v žádném ze sledovaných let': 'ani jednou',
+};
+
+/** Krátké popisky kohorty do tabulky; celé názvy nese titulek a vysvětlivka. */
+const KOHORTA_KRATCE: Record<KohortaPozice, string> = {
+  skola_prvni_volby: 'první volby', smisena_pozice: 'smíšená', zalozni_volba: 'záložní',
+};
+
+interface SouhrnSkoly {
+  typy: string;
+  /** Nejtěžší obor školy ve výběru; stupně jsou uspořádané, ne seřazené školy. */
+  nejtezsi: ZarazeniObtiznosti | null;
+  obtiznostDoplnek: string | null;
+  /** Počty oborů podle kohorty. Kohorta patří oboru, ne škole, proto počty, ne jeden štítek. */
+  kohorty: [KohortaPozice, number][];
+  mista: number | null;
+  druheKolo: boolean;
+  poradi: { p: PoradiNabidky; predchoziRok: number | null } | null;
+}
+
+/** Shrnutí oborů školy ve výběru pro jeden řádek tabulky. */
+function souhrnSkoly(s: SkolaKraje, poradiPole: 'poradiZajem' | 'poradiVysledky' | null): SouhrnSkoly {
+  const pocty = new Map<string, number>();
+  for (const n of s.nabidky) {
+    const k = SKUPINA_KRATCE[n.skupina] ?? n.skupina;
+    pocty.set(k, (pocty.get(k) ?? 0) + 1);
+  }
+  const typy = [...pocty].map(([k, n]) => (n > 1 ? `${k} ×${n}` : k)).join(', ');
+
+  const sZarazenim = s.nabidky.filter(n => n.zarazeni).map(n => PORADI_OBTIZNOSTI.indexOf(n.zarazeni!));
+  const nejtezsi = sZarazenim.length ? PORADI_OBTIZNOSTI[Math.min(...sZarazenim)] : null;
+  const nejsnazsi = sZarazenim.length ? PORADI_OBTIZNOSTI[Math.max(...sZarazenim)] : null;
+  let obtiznostDoplnek: string | null = null;
+  if (s.nabidky.length > 1 && nejtezsi) {
+    obtiznostDoplnek = nejsnazsi !== nejtezsi ? `až ${ZARAZENI_POPISEK[nejsnazsi!]}`
+      : sZarazenim.length === s.nabidky.length ? `u všech ${s.nabidky.length} oborů` : null;
+  }
+
+  const kohorty = PORADI_KOHORT
+    .map(k => [k, s.nabidky.filter(n => n.kohorta === k).length] as [KohortaPozice, number])
+    .filter(([, n]) => n > 0);
+
+  const mistaHodnoty = s.nabidky.map(n => n.kapacita).filter((v): v is number => v !== null);
+
+  let poradi: SouhrnSkoly['poradi'] = null;
+  if (poradiPole) {
+    for (const n of s.nabidky) {
+      const p = n[poradiPole];
+      if (p && (!poradi || p.poradi.od < poradi.p.poradi.od)) poradi = { p, predchoziRok: n.predchoziRok };
+    }
+  }
+
+  return {
+    typy, nejtezsi, obtiznostDoplnek, kohorty,
+    mista: mistaHodnoty.length ? mistaHodnoty.reduce((a, b) => a + b, 0) : null,
+    druheKolo: s.nabidky.some(n => n.meloDruheKolo),
+    poradi,
+  };
+}
+
+/**
+ * Kohorty oborů školy na nejvýš dva řádky: dva stupně každý na svém, třetí se připojí
+ * k druhému zkráceně. Počty se píší jen u školy s víc obory.
+ */
+function radkyKohort(kohorty: [KohortaPozice, number][], sPocty: boolean): string[] {
+  const text = ([k, n]: [KohortaPozice, number], kratce: boolean) =>
+    `${sPocty ? `${n}× ` : ''}${kratce ? KOHORTA_KRATCE[k] : KOHORTA_POPISEK[k]}`;
+  if (kohorty.length <= 2) return kohorty.map(k => text(k, false));
+  return [text(kohorty[0], false), `${text(kohorty[1], true)}, ${text(kohorty[2], true)}`];
+}
+
+/** Pořadí v buňce: „1. ze 32“ a pod ním předchozí rok, jak žádá slovník ukazatelů. */
+function PoradiBunka({ p, predchoziRok }: { p: PoradiNabidky; predchoziRok: number | null }) {
   return (
-    <span className="text-[12px] text-slate-600">
-      <b className="text-[#16325c]">{textPoradi(p.poradi)} {zOd(p.poradi.z)} {cislo(p.poradi.z)}</b>{' '}
-      {nazevSkupiny(skupina)} {vKraji(krajNazev)} {podle} ({rok}{drive})
-    </span>
+    <>
+      <div className="font-semibold text-[#16325c]">{textPoradi(p.poradi)} {zOd(p.poradi.z)} {cislo(p.poradi.z)}</div>
+      {p.predchozi && predchoziRok && (
+        <div className="text-slate-500">
+          {predchoziRok}: {p.predchozi.od === p.poradi.od && p.predchozi.do === p.poradi.do
+            ? `také ${textPoradi(p.predchozi)}`
+            : `${textPoradi(p.predchozi)} ${zOd(p.predchozi.z)} ${cislo(p.predchozi.z)}`}
+        </div>
+      )}
+    </>
   );
 }
 
@@ -189,6 +269,10 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
     });
   }, [skoly, filtr]);
 
+  // V Praze mají všechny školy tutéž obec; opakovat ji v každém řádku nic neříká.
+  const jednaObec = new Set(skoly.map(s => s.obec)).size === 1;
+  const poradiPole = filtr.skupina && filtr.razeni === 'zajem' ? 'poradiZajem' as const
+    : filtr.skupina && filtr.razeni === 'vysledky' ? 'poradiVysledky' as const : null;
   const pocetNabidek = vybrane.reduce((a, s) => a + s.nabidky.length, 0);
   const okresy = [...pocty.okres.keys()].sort((a, b) => a.localeCompare(b, 'cs'));
   const aktivniFiltr = filtr.skupina || filtr.obtiznost || filtr.kohorta || filtr.zrizovatel || filtr.okres || filtr.delka;
@@ -333,78 +417,99 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
         )}
       </p>
 
-      {/* Karty škol */}
-      <div className="space-y-3">
-        {vybrane.slice(0, zobrazeno).map(s => (
-          <article key={s.redizo} className="rounded-xl border border-slate-200 bg-white p-4 md:p-5">
-            <div className="mb-1 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-              <h3 className="text-[17px] font-bold leading-snug text-[#16325c]">
-                <Link href={`/skola/${s.slug}`} className="hover:underline">{s.nazev}</Link>
-              </h3>
-              <span className="text-xs text-slate-500">
-                {[
-                  s.okres && s.okres !== s.obec ? `${s.obec}, okres ${s.okres}` : s.obec,
-                  druhZrizovatele(s.zrizovatel) ? `${ZRIZOVATEL_POPISEK[druhZrizovatele(s.zrizovatel)!]} škola` : null,
-                ].filter(Boolean).join(' · ')}
-              </span>
-            </div>
-            <p className="mb-3 text-[13px] text-slate-500">
-              {s.ulice}
-              {s.web && (
-                <>{s.ulice ? ' · ' : ''}<a href={s.web} target="_blank" rel="noopener nofollow" className="underline hover:text-slate-700">web školy s kritérii přijetí</a></>
-              )}
-            </p>
-            {s.maturita && (
-              <p className="mb-3 rounded-lg bg-slate-50 px-3 py-2 text-[13px] text-slate-700">
-                {s.maturita.passed !== null && s.maturita.registered !== null ? (
-                  <>Maturitu {s.maturita.rok} udělalo <b>{cislo(s.maturita.passed)} {zOd(s.maturita.registered)} {cislo(s.maturita.registered)}</b> přihlášených</>
-                ) : <>Maturita {s.maturita.rok}</>}
-                {s.maturita.jakCastoNadStredem && (
-                  <>, v češtině <b>{s.maturita.jakCastoNadStredem} nad středem podobných škol</b></>
-                )}
-                . <span className="text-slate-500">Za celou školu; podobné školy jsou školy se stejným typem oborů v celé zemi.</span>
-              </p>
-            )}
-            <ul className="divide-y divide-slate-100">
-              {s.nabidky.map(n => (
-                <li key={n.klic} className="py-2.5 first:pt-0 last:pb-0">
-                  <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-                    <span className="text-[15px] font-medium text-slate-900">
-                      {n.obor}{n.zamereni ? ` · ${n.zamereni}` : ''}
-                    </span>
-                    <span className="rounded bg-slate-100 px-1.5 py-0.5 text-[11px] text-slate-600">
-                      {SKUPINA_KRATCE[n.skupina] ?? n.skupina}{n.skupina.startsWith('GY') ? '' : `, ${n.delka}leté`}
-                    </span>
-                    {n.novaNabidka && (
-                      <span className="rounded bg-amber-50 px-1.5 py-0.5 text-[11px] text-amber-800">nová nabídka, loňský ročník nemá</span>
+      {/* Tabulka škol: jedna škola = jeden řádek, nejvýš dva řádky textu. Obory a věty k nim jsou v detailu školy. */}
+      {vybrane.length > 0 && (
+        <div className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+          <table className="hidden w-full text-sm md:table">
+            <thead className="bg-slate-50 text-left text-xs font-medium text-slate-600">
+              <tr>
+                <th className="px-3 py-2">Škola</th>
+                <th className="px-3 py-2">Obtížnost přijetí {rok}</th>
+                <th className="px-3 py-2">Pozice na přihlášce</th>
+                <th className="px-3 py-2 text-right">Míst</th>
+                <th className="px-3 py-2">Maturita</th>
+                {poradiPole && <th className="px-3 py-2">Pořadí v kraji {filtr.razeni === 'vysledky' ? 'podle výsledků' : 'podle zájmu'}</th>}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100">
+              {vybrane.slice(0, zobrazeno).map(s => {
+                const x = souhrnSkoly(s, poradiPole);
+                return (
+                  <tr key={s.redizo} className="align-top hover:bg-slate-50">
+                    <td className="px-3 py-2">
+                      <Link href={`/skola/${s.slug}`} className="font-semibold text-[#16325c] hover:underline">{s.nazev}</Link>
+                      <div className="text-xs text-slate-500">
+                        {[jednaObec ? null : s.obec, x.typy, x.druheKolo && rokDruhehoKola ? `2. kolo ${rokDruhehoKola}` : null].filter(Boolean).join(' · ')}
+                      </div>
+                    </td>
+                    <td className="px-3 py-2">
+                      <OdznakObtiznosti zarazeni={x.nejtezsi} />
+                      {x.obtiznostDoplnek && <div className="mt-0.5 text-xs text-slate-500">{x.obtiznostDoplnek}</div>}
+                    </td>
+                    <td className="px-3 py-2 text-xs text-slate-700">
+                      {x.kohorty.length === 0 ? <span className="text-slate-400">bez údaje</span>
+                        : radkyKohort(x.kohorty, s.nabidky.length > 1).map(r => <div key={r}>{r}</div>)}
+                    </td>
+                    <td className="px-3 py-2 text-right tabular-nums">
+                      <div className="font-medium text-slate-900">{x.mista !== null ? cislo(x.mista) : '-'}</div>
+                      <div className="text-xs text-slate-500">{s.nabidky.length === 1 ? '1 obor' : `${s.nabidky.length} ${s.nabidky.length <= 4 ? 'obory' : 'oborů'}`}</div>
+                    </td>
+                    <td className="px-3 py-2 text-xs text-slate-700">
+                      {s.maturita?.passed != null && s.maturita.registered != null
+                        ? <div title={`Maturitu ${s.maturita.rok} udělalo ${s.maturita.passed} ${zOd(s.maturita.registered)} ${s.maturita.registered} přihlášených, za celou školu`}>udělalo {cislo(s.maturita.passed)} {zOd(s.maturita.registered)} {cislo(s.maturita.registered)}</div>
+                        : <span className="text-slate-400">-</span>}
+                      {s.maturita?.jakCastoNadStredem && (
+                        <div className="whitespace-nowrap text-slate-500" title={`V češtině ${s.maturita.jakCastoNadStredem} nad středem podobných škol (poslední čtyři roky)`}>
+                          ČJ nad středem: {NAD_STREDEM_KRATCE[s.maturita.jakCastoNadStredem] ?? s.maturita.jakCastoNadStredem}
+                        </div>
+                      )}
+                    </td>
+                    {poradiPole && (
+                      <td className="px-3 py-2 text-xs">
+                        {x.poradi ? <PoradiBunka p={x.poradi.p} predchoziRok={x.poradi.predchoziRok} /> : <span className="text-slate-400">-</span>}
+                      </td>
                     )}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+
+          {/* Mobil: stejné údaje na dvou řádcích */}
+          <ul className="divide-y divide-slate-100 md:hidden">
+            {vybrane.slice(0, zobrazeno).map(s => {
+              const x = souhrnSkoly(s, poradiPole);
+              return (
+                <li key={s.redizo} className="px-3 py-2.5">
+                  <div className="flex items-start justify-between gap-2">
+                    <Link href={`/skola/${s.slug}`} className="font-semibold leading-snug text-[#16325c] hover:underline">{s.nazev}</Link>
+                    <span className="shrink-0"><OdznakObtiznosti zarazeni={x.nejtezsi} /></span>
                   </div>
-                  <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1.5">
-                    <OdznakObtiznosti zarazeni={n.zarazeni} />
-                    <OdznakKohorty kohorta={n.kohorta} />
-                    {n.meloDruheKolo && rokDruhehoKola && (
-                      <span className="whitespace-nowrap rounded-full border border-slate-300 px-2 py-0.5 text-[12px] text-slate-600">
-                        v roce {rokDruhehoKola} tu bylo i 2. kolo
-                      </span>
-                    )}
-                    <VetaObtiznosti u={n} />
+                  <div className="mt-0.5 truncate text-xs text-slate-500">
+                    {[
+                      jednaObec ? null : s.obec,
+                      x.typy,
+                      x.mista !== null ? `${cislo(x.mista)} míst` : null,
+                      x.kohorty.length ? x.kohorty.map(([k, n]) => `${s.nabidky.length > 1 ? `${n}× ` : ''}${KOHORTA_KRATCE[k]}`).join(', ') : null,
+                      x.poradi ? `${textPoradi(x.poradi.p.poradi)} ${zOd(x.poradi.p.poradi.z)} ${cislo(x.poradi.p.poradi.z)} v kraji` : null,
+                    ].filter(Boolean).join(' · ')}
                   </div>
-                  <div className="mt-1 text-[13px] text-slate-600">
-                    {n.kapacita !== null && <>{cislo(n.kapacita)} míst</>}
-                    {n.prihlaskyNaMisto !== null && <> · {cislo(n.prihlaskyNaMisto, 1)} přihlášky na místo</>}
-                  </div>
-                  {filtr.skupina && filtr.razeni === 'vysledky' && n.poradiVysledky && (
-                    <div className="mt-1"><VetaPoradi p={n.poradiVysledky} podle="podle výsledků přijatých" skupina={n.skupina} krajNazev={krajNazev} rok={rok} predchoziRok={n.predchoziRok} /></div>
-                  )}
-                  {filtr.skupina && filtr.razeni !== 'vysledky' && n.poradiZajem && (
-                    <div className="mt-1"><VetaPoradi p={n.poradiZajem} podle="podle zájmu" skupina={n.skupina} krajNazev={krajNazev} rok={rok} predchoziRok={n.predchoziRok} /></div>
-                  )}
                 </li>
-              ))}
-            </ul>
-          </article>
-        ))}
-      </div>
+              );
+            })}
+          </ul>
+        </div>
+      )}
+      {poradiPole && (
+        <p className="mt-2 text-xs text-slate-500">
+          Pořadí je pořadí nejlépe umístěného oboru školy mezi {nazevSkupiny(filtr.skupina!)} {vKraji(krajNazev)}{' '}
+          {filtr.razeni === 'vysledky' ? 'podle výsledků přijatých' : 'podle zájmu'} v roce {rok}. Neříká, která škola je lepší.
+        </p>
+      )}
+      <p className="mt-2 text-xs text-slate-500">
+        U školy s více obory je ve sloupci obtížnosti obor, kam bylo nejtěžší se dostat; jednotlivé obory, podíly přijatých
+        a předchozí rok najdete v detailu školy. Maturita platí za celou školu.
+      </p>
 
       {vybrane.length > zobrazeno && (
         <div className="mt-4 text-center">
