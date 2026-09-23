@@ -40,6 +40,7 @@ export function Footer() {
                 { href: '/skoly', label: 'Analýza škol' },
                 { href: '/dostupnost', label: 'Školy dostupné MHD' },
                 { href: '/regiony', label: 'Přehled regionů' },
+                { href: '/veletrhy', label: 'Veletrhy a přehlídky škol' },
                 { href: '/jak-vybrat-skolu', label: 'Jak vybrat a uspět' },
                 { href: '/novinky', label: 'Termíny e-mailem' },
                 { href: '/ochrana-osobnich-udaju', label: 'Ochrana osobních údajů' },

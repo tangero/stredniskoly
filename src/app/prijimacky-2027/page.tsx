@@ -57,6 +57,16 @@ export default function Admissions2027Page() {
               </ol>
             </section>
           ))}
+          <section className="pt-10">
+            <h2 className="text-xl font-bold mb-2">Kde školy potkáte osobně</h2>
+            <p className="text-slate-600">
+              Na podzim se konají veletrhy a přehlídky středních škol — akce, kde se na jednom místě
+              představí školy z kraje najednou.{' '}
+              <Link href="/veletrhy" className="text-blue-700 underline underline-offset-4">
+                Přehled akcí podle krajů a měst
+              </Link>
+            </p>
+          </section>
           <section className="pt-10"><h2 className="text-xl font-bold mb-2">Třetí a další kola</h2><p className="text-slate-600">Termíny a podmínky se řídí vyhlášením konkrétní školy v DiPSy. Nemají jeden společný den pro všechny školy.</p></section>
           <section id="zdroje" className="mt-10 border-t border-slate-200 pt-8 scroll-mt-24">
             <h2 className="text-xl font-bold mb-3">Zdroje a platnost</h2>

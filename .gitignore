@@ -88,3 +88,10 @@ data/msmt_rejstrik/*.jsonld
 # se samostatným pull requestem, ne spolu s kódem odběru.
 public/novinky/
 /data/portal/pilot-kontakty.json
+
+# zdrojova data CERMAT (lokalni, mimo repozitar)
+/cermat_data_2025
+
+# Kontakty na poradatele veletrhu: jmena, sluzebni e-maily a mobily.
+# Slouzi obesilani, na web nepatri (docs/zdroje-dat.md, oddil 3).
+/data/veletrhy/poradatele-kontakty.json

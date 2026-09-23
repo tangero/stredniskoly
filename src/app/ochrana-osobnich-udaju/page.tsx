@@ -87,6 +87,27 @@ export default function OchranaOsobnichUdajuPage() {
               sama propadne do 72 hodin. Adresu, kterou vám zadal někdo jiný, tedy nikde nedržíme.
             </p>
 
+            <h2 className="text-2xl font-bold mt-8 mb-3">Nahlášení akce do přehledu veletrhů</h2>
+            <p className="text-slate-700">
+              Když nám formulářem nahlásíte veletrh nebo přehlídku středních škol, zpracováváme:
+            </p>
+            <ul className="list-disc pl-6 text-slate-700 space-y-1">
+              <li>
+                <strong>údaje o akci</strong>, tedy název, termín, adresu konání, pořadatele a odkaz
+                na stránku akce; ty po ověření zveřejníme v přehledu,
+              </li>
+              <li>
+                <strong>vaši e-mailovou adresu</strong>, abychom se mohli zeptat, když bude něco
+                nejasné. <strong>Na webu ji nezveřejňujeme</strong> a k ničemu jinému ji nepoužíváme;
+                nahlášením se nepřihlašujete k odběru.
+              </li>
+            </ul>
+            <p className="text-slate-700 mt-3">
+              Nahlášení není zveřejnění: každou akci před vystavením ověříme na stránce pořadatele.
+              Popis, který v formuláři napíšete, slouží nám při ověřování a na stránku se nedostane
+              doslova.
+            </p>
+
             <h2 className="text-2xl font-bold mt-8 mb-3">Jak dlouho údaje držíme</h2>
             <ul className="list-disc pl-6 text-slate-700 space-y-1">
               <li>
@@ -109,6 +130,12 @@ export default function OchranaOsobnichUdajuPage() {
               <li>
                 <strong>rozpracovaný e-mail:</strong> adresa v něm zůstává, dokud se odeslání
                 nedokončí, nejdéle 24 hodin; u případu, který musí rozhodnout člověk, nejdéle 30 dnů.
+              </li>
+              <li>
+                <strong>nahlášení akce:</strong> 12 měsíců od konce sezóny, které se akce týkala.
+                Držíme je i po vyřízení, aby šlo dohledat, proč jsme akci zveřejnili nebo
+                nezveřejnili, a aby se opakované nahlášení téže akce poznalo. Vaši adresu z nich
+                smažeme dřív, jakmile o to požádáte.
               </li>
             </ul>
             <p className="text-slate-700 mt-3">
