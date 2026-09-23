@@ -19,6 +19,7 @@ COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
 
 COPY scripts ./scripts
+COPY src/lib/skolni-novinky-spam.ts ./src/lib/skolni-novinky-spam.ts
 COPY public/skoly_feedy.json ./public/skoly_feedy.json
 
 CMD ["bash", "scripts/sklizec-beh.sh"]

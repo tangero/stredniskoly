@@ -32,6 +32,7 @@ import { dirname, join, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { randomUUID } from 'crypto';
 import { Pool } from '@neondatabase/serverless';
+import { podezreniNaSpam } from '../src/lib/skolni-novinky-spam.ts';
 
 const KOREN = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -137,7 +138,7 @@ export async function ulozPolozku(klient, redizo, p) {
     // platit za ni znovu každý běh a nikdy neobnovit větu u položky, které se
     // text nemění. Řádek novinky se nepřepisuje, mění se jen jeho rozbor.
     await ulozRozbor(klient, stara.id, p);
-    return { zmena: 'beze_zmeny' };
+    return { zmena: 'beze_zmeny', id: stara.id };
   } else {
     id = stara.id;
     await klient.query(
@@ -157,7 +158,7 @@ export async function ulozPolozku(klient, redizo, p) {
      JSON.stringify(p.extrahovana_tvrzeni ?? {}), p.verze_pravidel],
   );
   await ulozRozbor(klient, id, p);
-  return { zmena };
+  return { zmena, id };
 }
 
 /**
@@ -187,7 +188,7 @@ export async function ulozRozbor(klient, novinkaId, p) {
   );
 }
 
-async function zapisDavku(klient, davka) {
+export async function zapisDavku(klient, davka) {
   const behId = randomUUID();
   let novych = 0;
   let zmenenych = 0;
@@ -209,7 +210,19 @@ async function zapisDavku(klient, davka) {
       if (zdroj.stav === 'ok') {
         zdrojuOk += 1;
         for (const p of zdroj.polozky ?? []) {
-          const { zmena } = await ulozPolozku(klient, zdroj.redizo, p);
+          const { zmena, id } = await ulozPolozku(klient, zdroj.redizo, p);
+          const podezreni = podezreniNaSpam(p.titulek, p.url);
+          if (podezreni) {
+            // Při nové sklizni nesmí automat přepsat ruční rozhodnutí redakce.
+            await klient.query(
+              `insert into skola_prepinac (klic, hodnota, zdroj_zmeny, duvod)
+               values ($1, 'false'::jsonb, 'auto:spam-kasino', $2)
+               on conflict (klic) do update set hodnota = excluded.hodnota,
+                 zmeneno = now(), duvod = excluded.duvod
+               where skola_prepinac.zdroj_zmeny = 'auto:spam-kasino'`,
+              [`polozka:${id}`, podezreni],
+            );
+          }
           if (zmena === 'nova') novych += 1;
           if (zmena === 'zmenena') zmenenych += 1;
           if (zmena === 'prepocitana') prepoctenych += 1;

@@ -14,6 +14,7 @@
 // Návrh: docs/skolske-novinky-rss-2027.md, oddíl 3.7.
 // ============================================================================
 import { dotaz, jeDbNastavena } from '@/lib/novinky-db';
+import { podezreniNaSpam } from '@/lib/skolni-novinky-spam';
 
 export interface SouhrnNovinek {
   /** Zdroje v registru a jejich stav. */
@@ -81,6 +82,8 @@ export interface PolozkaProAdmin {
   zneplatneno: string | null;
   /** Kolikrát se obsah položky od prvního uložení změnil. */
   verzi: number;
+  skryto: boolean;
+  podezreni: string | null;
 }
 
 const naPole = (v: unknown): string[] => (Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string') : []);
@@ -250,13 +253,14 @@ export async function polozkyProAdmin(filtr: FiltrPolozek = {}): Promise<Polozka
     publikovano: Date | string | null; tridy: unknown; jistota: unknown; stav: string | null;
     zobrazeni: string; zpusobily_email: boolean; duvod: string | null; terminy: unknown;
     konec_platnosti: Date | string | null; verze_pravidel: string;
-    zneplatneno: Date | string | null; verzi: number;
+    zneplatneno: Date | string | null; verzi: number; prepinac_hodnota: unknown;
   }>(
     `select n.id, n.redizo, n.titulek, n.url, n.publikovano, n.tridy, n.jistota, n.stav,
             n.zobrazeni, n.zpusobily_email, n.duvod, n.terminy, n.konec_platnosti,
-            n.verze_pravidel, n.zneplatneno,
+            n.verze_pravidel, n.zneplatneno, sp.hodnota as prepinac_hodnota,
             (select count(*)::int from skola_novinka_verze v where v.novinka_id = n.id) as verzi
        from skola_novinka n
+       left join skola_prepinac sp on sp.klic = 'polozka:' || n.id::text
        ${podminky.length ? `where ${podminky.join(' and ')}` : ''}
       order by n.publikovano desc nulls last, n.vytvoreno desc
       limit $${parametry.length}`,
@@ -279,5 +283,7 @@ export async function polozkyProAdmin(filtr: FiltrPolozek = {}): Promise<Polozka
     verzePravidel: r.verze_pravidel,
     zneplatneno: naIso(r.zneplatneno),
     verzi: r.verzi,
+    skryto: r.prepinac_hodnota === false || Boolean(r.prepinac_hodnota && typeof r.prepinac_hodnota === 'object' && 'zapnuto' in r.prepinac_hodnota && !r.prepinac_hodnota.zapnuto),
+    podezreni: podezreniNaSpam(r.titulek, r.url),
   }));
 }

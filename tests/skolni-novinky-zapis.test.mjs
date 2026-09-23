@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { ulozPolozku, ulozRozbor, zmenaProtiUlozene } from '../scripts/skolni-novinky-zapis.mjs';
+import { ulozPolozku, ulozRozbor, zmenaProtiUlozene, zapisDavku } from '../scripts/skolni-novinky-zapis.mjs';
 
 const ulozena = { otisk_obsahu: 'abc', verze_pravidel: '2026-09-20.5' };
 
@@ -103,4 +103,25 @@ test('položka beze změny a bez rozboru nesahá do databáze podruhé', async (
   await ulozPolozku(klient, '600001111',
     { identita: 'i1', otisk_obsahu: 'abc', verze_pravidel: 'v1' });
   assert.equal(dotazy.length, 1);
+});
+
+test('sklízeč skryje podezřelý článek i při nezměněném obsahu a respektuje ruční zásah', async () => {
+  const dotazy = [];
+  const id = '5ace3051-58c9-4bc6-ad8e-a46e791e4647';
+  const klient = { query: async (sql, args) => {
+    dotazy.push({ sql, args });
+    if (/select id, otisk_obsahu/.test(sql)) return { rows: [{ id, otisk_obsahu: 'abc', verze_pravidel: 'v1' }] };
+    if (/select chyby_v_rade/.test(sql)) return { rows: [{ chyby_v_rade: 0 }] };
+    return { rows: [] };
+  } };
+  await zapisDavku(klient, {
+    meta: { zahajeno: '2026-09-23T10:00:00Z', zdroju_zkouseno: 1, verze_pravidel: 'v1' },
+    zdroje: [{ redizo: '600004724', stav: 'ok', feed_url: 'https://www.gybot.cz/feed',
+      polozky: [{ identita: 'spam1', otisk_obsahu: 'abc', verze_pravidel: 'v1',
+        titulek: 'Retrobet Casino Deutschland',
+        url: 'https://www.gybot.cz/nezarazene/retrobet-casino-deutschland/' }] }],
+  });
+  const skryti = dotazy.find((d) => /insert into skola_prepinac/.test(d.sql));
+  assert.equal(skryti.args[0], `polozka:${id}`);
+  assert.match(skryti.sql, /where skola_prepinac\.zdroj_zmeny = 'auto:spam-kasino'/);
 });

@@ -157,6 +157,24 @@ test('přepínač skryje jednu položku, ostatní zůstanou', async () => {
   assert.deepEqual(v.polozky.map((p) => p.id), ['n2']);
 });
 
+test('skryté položky se vyřadí v SQL před omezením počtu zpráv', async () => {
+  process.env.DATABASE_URL = 'postgres://test';
+  const dotazy = [];
+  nastavPoolProTesty({
+    connect: async () => ({ query: async (sql, args) => { dotazy.push({ sql, args });
+      if (dotazy.length === 1) return { rows: [{ klic: 'polozka:5ace3051-58c9-4bc6-ad8e-a46e791e4647', hodnota: false }] };
+      return dotazy.length === 4 ? ZDROJ : PRAZDNO;
+    }, release() {} }),
+    query: async (sql, args) => { dotazy.push({ sql, args });
+      if (dotazy.length === 1) return { rows: [{ klic: 'polozka:5ace3051-58c9-4bc6-ad8e-a46e791e4647', hodnota: false }] };
+      return dotazy.length === 4 ? ZDROJ : PRAZDNO;
+    },
+  });
+  await novinkySkoly('600004724');
+  assert.match(dotazy[2].sql, /not \(n\.id = any\(\$4::uuid\[\]\)\)/);
+  assert.deepEqual(dotazy[2].args[3], ['5ace3051-58c9-4bc6-ad8e-a46e791e4647']);
+});
+
 test('vypnuté zvýrazňování třídy sníží kartu na odkaz, ale zprávu neskryje', async () => {
   // Nejistá interpretace znamená odkaz bez karty, ne úplné skrytí zprávy.
   process.env.DATABASE_URL = 'postgres://test';

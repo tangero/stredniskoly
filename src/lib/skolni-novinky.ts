@@ -248,6 +248,12 @@ export async function novinkySkoly(
   if (jeVypnuto(prepinace, `skola:${redizo}`)) {
     return { polozky: [], zeZivota: [], zdrojOverenAt: null, zdrojUrl: null, zdrojVypadek: false };
   }
+  // Skryté položky musí vypadnout už před SQL LIMIT. Jinak šest čerstvých
+  // spamů zaplní celé okno a starší legitimní zprávy se nikdy nedostanou ven.
+  const skryteId = [...prepinace.keys()]
+    .filter((k) => k.startsWith('polozka:') && jeVypnuto(prepinace, k))
+    .map((k) => k.slice('polozka:'.length))
+    .filter((id) => /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id));
 
   // Dva dotazy, ne jeden: zprávy ze života školy jsou v datech drtivá většina
   // (4 108 z 4 554 uložených položek k 20. 9. 2026). Jedno společné okno by u
@@ -257,21 +263,23 @@ export async function novinkySkoly(
     `${SLOUPCE}
       where redizo = $1
         and zneplatneno is null
+        and not (n.id = any($4::uuid[]))
         and zobrazeni <> 'seznam'
         and (konec_platnosti is null or konec_platnosti > $2)
       order by n.publikovano desc nulls last, n.vytvoreno desc
       limit $3`,
-    [redizo, ted.toISOString(), OKNO_POLOZEK],
+    [redizo, ted.toISOString(), OKNO_POLOZEK, skryteId],
   );
   const zivot = await dotaz<RadekNovinky>(
     `${SLOUPCE}
       where redizo = $1
         and zneplatneno is null
+        and not (n.id = any($4::uuid[]))
         and zobrazeni = 'seznam'
         and (konec_platnosti is null or konec_platnosti > $2)
       order by n.publikovano desc nulls last, n.vytvoreno desc
       limit $3`,
-    [redizo, ted.toISOString(), POCET_ZE_ZIVOTA],
+    [redizo, ted.toISOString(), POCET_ZE_ZIVOTA, skryteId],
   );
 
   const dnes = ted.toISOString().slice(0, 10);

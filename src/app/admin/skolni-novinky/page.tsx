@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 };
 
 interface Props {
-  searchParams: Promise<{ zobrazeni?: string; trida?: string; redizo?: string; limit?: string }>;
+  searchParams: Promise<{ zobrazeni?: string; trida?: string; redizo?: string; limit?: string; ok?: string; chyba?: string }>;
 }
 
 /** Barvy podle publikačního rozhodnutí – karta s termínem je to, kvůli čemu blok existuje. */
@@ -141,8 +141,21 @@ function Polozka({ p, nazev }: { p: PolozkaProAdmin; nazev: string }) {
         {p.zpusobilyEmail && <Stitek text="způsobilý pro e-mail" trida="bg-violet-50 text-violet-700 border-violet-200" />}
         {p.verzi > 1 && <Stitek text={`${p.verzi} verze obsahu`} trida="bg-orange-50 text-orange-700 border-orange-200" />}
         {p.zneplatneno && <Stitek text="zneplatněno" trida="bg-red-50 text-red-700 border-red-200" />}
+        {p.skryto && <Stitek text="ručně či automaticky skryto" trida="bg-red-50 text-red-700 border-red-200" />}
+        {p.podezreni && <Stitek text={`podezření: ${p.podezreni}`} trida="bg-orange-50 text-orange-800 border-orange-200" />}
         <Jistota jistota={p.jistota} />
       </div>
+      <form method="post" action="/admin/skolni-novinky/akce" className="mt-2 flex flex-wrap items-center gap-2 text-sm">
+        <input type="hidden" name="id" value={p.id} />
+        <input type="hidden" name="akce" value={p.skryto ? 'obnovit' : 'skryt'} />
+        <label htmlFor={`duvod-${p.id}`} className="text-slate-600">Důvod zásahu:</label>
+        <input id={`duvod-${p.id}`} name="duvod" required maxLength={300}
+          defaultValue={p.skryto ? '' : p.podezreni ?? ''}
+          className="min-w-64 rounded border border-slate-300 px-2 py-1" />
+        <button className={`rounded px-3 py-1 text-white ${p.skryto ? 'bg-slate-700' : 'bg-red-700'}`}>
+          {p.skryto ? 'Obnovit článek' : 'Skrýt článek'}
+        </button>
+      </form>
       {p.duvod && <p className="mt-1 text-xs text-slate-600">důvod rozhodnutí: {p.duvod}</p>}
       <p className="mt-1 text-xs text-slate-400">
         platí do {p.konecPlatnosti ? formatDatumCz(p.konecPlatnosti.slice(0, 10)) : 'neurčeno'} · pravidla {p.verzePravidel}
@@ -205,6 +218,8 @@ export default async function Stranka({ searchParams }: Props) {
             <a href="/admin" className="text-blue-600 hover:underline">zpět na administraci</a>
           </p>
         </div>
+        {filtr.ok && <p className="rounded border border-green-200 bg-green-50 p-3 text-sm text-green-800">{filtr.ok}</p>}
+        {filtr.chyba && <p className="rounded border border-red-200 bg-red-50 p-3 text-sm text-red-800">{filtr.chyba}</p>}
 
         {souhrn && (
           <Sekce titulek="Souhrn">
