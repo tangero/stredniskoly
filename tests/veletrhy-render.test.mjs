@@ -110,8 +110,10 @@ test('kraje jsou oddíly s nadpisem, počtem, kotvou a odkazem pojmenovaným kra
     }
     assert.ok(html.includes(kotva), `Kraj ${k.nazev} musí mít oddíl s kotvou, aby na něj šlo odkázat ze stránky kraje.`);
     assert.ok(text(html).includes(`${nadpisKraje(k.kod)} ${akci(pocet)}`), `Nadpis oddílu ${k.nazev} musí nést počet akcí.`);
-    // Čtrnáct odkazů se stejným textem: čtečka potřebuje v názvu odkazu kraj.
-    assert.ok(html.includes(`aria-label="Střední školy: ${nadpisKraje(k.kod)}"`), `Odkaz na stránku kraje ${k.nazev} bez přístupného názvu.`);
+    // Čtrnáct odkazů se stejným textem: čtečka potřebuje v názvu odkazu kraj,
+    // a viditelný text v názvu zůstává (ovládání hlasem říká, co vidí).
+    assert.ok(html.includes(`Střední školy v kraji<span class="sr-only"> — ${nadpisKraje(k.kod)}</span>`), `Odkaz na stránku kraje ${k.nazev} bez kraje v přístupném názvu.`);
+    assert.ok(!html.includes('aria-label="Střední školy'), 'aria-label by přepsal viditelný text.');
     poradiCipu.push(html.indexOf(`data-kraj="${k.kod}"`));
     poradiOddilu.push(html.indexOf(kotva));
   }
@@ -120,8 +122,10 @@ test('kraje jsou oddíly s nadpisem, počtem, kotvou a odkazem pojmenovaným kra
   // a „Kraj Vysočina“ v nadpisech.
   const serazene = (p) => p.every((x, i) => i === 0 || x > p[i - 1]);
   assert.ok(serazene(poradiCipu) && serazene(poradiOddilu), 'Čipy i oddíly jdou v pořadí vsechnyKraje().');
-  const nazvy = vsechnyKraje().map((k) => k.nazev);
-  assert.deepEqual(nazvy, [...nazvy].sort((a, b) => a.localeCompare(b, 'cs')), 'Kraje jdou abecedně podle krátkého názvu.');
+  // Abecedně podle toho, co stojí na čipu: „Praha“ pod P, ne „Hlavní město“ pod H.
+  const cipyNazvy = vsechnyKraje().map((k) => cipKraje(k.kod));
+  assert.deepEqual(cipyNazvy, [...cipyNazvy].sort((a, b) => a.localeCompare(b, 'cs')), 'Kraje jdou abecedně podle krátkého názvu na čipu.');
+  assert.ok(cipyNazvy.indexOf('Praha') > cipyNazvy.indexOf('Plzeňský'), 'Praha patří mezi Plzeňský a Středočeský.');
   assert.ok(!text(html).includes('Vysočina kraj'));
   assert.ok(!text(html).includes('Praha kraj'));
   // Čip Prahy je krátký jako ostatní; plný název má až nadpis oddílu.
@@ -157,6 +161,19 @@ test('řádek měst jen u více akcí, v pořadí konání; místo na kartě i v
   assert.ok(smisene.includes('text-gray-500">místo upřesní pořadatel</p>'));
   assert.ok(!smisene.includes('online · '));
   assert.ok(text(smisene).includes('Středočeský kraj 4 akce'));
+  // Řádek s datem opakuje misto jen tam, kde ho první řádka neukázala.
+  assert.ok(!smisene.includes(' — Třebíč, Havlíčkův Brod'), 'Výčet měst série by byl na kartě dvakrát.');
+  assert.ok(smisene.includes('5. října 2026 — Sál'), 'U akce s městem zůstává místo konání na řádku s datem.');
+
+  // Pořadí uvnitř kraje je smlouva komponenty, ne volajícího: zamíchané
+  // karty se seřadí podle data, řádek měst jde v pořadí konání.
+  const zamichane = vykresliKarty([
+    karta({ id: 'c', mesto: 'Třetí', start: '2026-10-03', end: '2026-10-03' }),
+    karta({ id: 'a', mesto: 'První', start: '2026-10-01', end: '2026-10-01' }),
+    karta({ id: 'b', mesto: 'Druhé', start: '2026-10-02', end: '2026-10-02' }),
+  ]);
+  assert.ok(zamichane.includes('text-gray-600">První · Druhé · Třetí</p>'));
+  assert.ok(zamichane.indexOf('>První</p>') < zamichane.indexOf('>Druhé</p>') && zamichane.indexOf('>Druhé</p>') < zamichane.indexOf('>Třetí</p>'));
 
   // Město na kartě předchází názvu akce: čtenář hledá „Vimperk“, ne
   // „Burza škol Vimperk“.
@@ -172,11 +189,15 @@ test('dlaždice: den, rozsah dnů, rozsah přes měsíc, pevná šířka, menš�
   assert.ok(jeden.includes('uppercase tracking-wide">říj</span>'));
   assert.ok(jeden.includes('dateTime="2026-10-05"'));
 
+  assert.match(jeden, /<time dateTime="2026-10-05"/);
+
   // V průběhu třídenní akce by první den v tučné dlaždici četl jako „už bylo“.
   const tri = vykresliKarty([karta({ start: '2026-10-15', end: '2026-10-17' })]);
   assert.ok(tri.includes('leading-none">15–17</span>'));
-  // Strojová hodnota by u rozsahu tvrdila jeden den; radši žádná.
-  assert.ok(!tri.includes('dateTime='), 'U vícedenní akce dlaždice nenese dateTime.');
+  // `<time>` bez dateTime musí obsahovat platné datum; „15–17“ jím není,
+  // a dateTime se startem by tvrdil jeden den. Rozsah je proto `<span>`.
+  assert.ok(!tri.includes('<time'), 'U vícedenní akce dlaždice není <time>.');
+  assert.match(tri, /<span[^>]*title="[^"]*"[^>]*>/);
 
   const presMesic = vykresliKarty([karta({ start: '2026-09-30', end: '2026-10-02' })]);
   assert.ok(presMesic.includes('leading-none">30–2</span>'));
@@ -185,7 +206,8 @@ test('dlaždice: den, rozsah dnů, rozsah přes měsíc, pevná šířka, menš�
   // Šířka je pevná, aby text karet v oddílu začínal na stejné svislici;
   // delší rozsah („~21–30“) dostane menší písmo místo širší dlaždice.
   assert.ok(!tri.includes('min-w-14'), 'Dlaždice nesmí růst s délkou textu.');
-  assert.match(tri, /<time[^>]*class="[^"]*\bw-16\b/);
+  assert.match(tri, /<span[^>]*class="[^"]*\bw-16\b/);
+  assert.match(jeden, /<time[^>]*class="[^"]*\bw-16\b/);
   const pribl = vykresliKarty([karta({ terminPribligny: true, start: '2026-11-21', end: '2026-11-30' })]);
   assert.match(pribl, /class="text-base font-bold leading-none">~21–30</);
 });
@@ -251,7 +273,7 @@ test('počet v kraji se sníží i tehdy, když v něm další akce zůstávají
  * onClick — obsluhy se do statického HTML nedostanou. `replaceState`
  * vysílá `currententrychange` jako Chromium.
  */
-function sHooky({ ted: pocatek, hash = '' }) {
+function sHooky({ ted: pocatek, hash = '', navigationApi = true }) {
   const stavy = [];
   let index = 0;
   const refy = [];
@@ -277,12 +299,13 @@ function sHooky({ ted: pocatek, hash = '' }) {
     ...registr(posluchace),
     // Navigation API: Next při odkazu na tutéž stránku s jinou kotvou
     // volá pushState, po kterém hashchange nepřijde; a Chromium hlásí
-    // currententrychange i po vlastním replaceState.
-    navigation: registr(posluchace),
+    // currententrychange i po vlastním replaceState. Bez API (starší
+    // Firefox) nepřijde po replaceState nic.
+    ...(navigationApi ? { navigation: registr(posluchace) } : {}),
     history: {
       replaceState: (_s, _t, url) => {
         okno.location.hash = url.startsWith('#') ? url : '';
-        for (const p of posluchace.filter((x) => x.typ === 'currententrychange')) p.fn();
+        if (navigationApi) for (const p of posluchace.filter((x) => x.typ === 'currententrychange')) p.fn();
       },
     },
   };
@@ -384,7 +407,7 @@ test('starý seznam po půlnoci aktualizuje karty i čipy a zachová viditelný 
   assert.ok(!sVyberem.includes(akce[1].nazev), 'Filtr na kraj bez akcí nesmí ukázat akce jiného kraje.');
   // Prázdný stav se hlásí jednou, ne dvakrát, a čtenář má kam dál.
   assert.equal(sVyberem.split('Neznamená to, že se žádná nekoná').length - 1, 1);
-  assert.ok(sVyberem.includes(`aria-label="Střední školy: ${nadpisKraje(akce[0].krajKod)}"`), 'I bez akcí vede odkaz na stránku kraje.');
+  assert.ok(sVyberem.includes(`Střední školy v kraji<span class="sr-only"> — ${nadpisKraje(akce[0].krajKod)}</span>`), 'I bez akcí vede odkaz na stránku kraje.');
   assert.ok(sVyberem.includes(`${nadpisKraje(akce[0].krajKod)}: teď o žádné akci nevíme.`));
   h.odpoj();
   assert.ok(h.uklizeno());
@@ -491,6 +514,25 @@ test('klik na čip zapíše kotvu do adresy, ale stránkou nehýbe; zpět a vpř
   h.odpoj();
 });
 
+test('bez Navigation API: po kliku na čip a Zpět se výběr zruší', () => {
+  // Starší Firefox po vlastním replaceState nic nehlásí. Adresa je přesto
+  // zpracovaná — jinak by Zpět na prázdnou adresu vypadal jako opakování
+  // stavu, který už máme, a filtr by zůstal zapnutý.
+  const props = { akce: karty(zobrazitelneAkce(KE_DNI)), den: '2026-09-22' };
+  const h = sHooky({ ted: '2026-09-22T10:00:00Z', navigationApi: false });
+  h.render(props);
+  h.spust();
+  assert.equal(h.posluchace.filter((p) => p.typ === 'currententrychange').length, 0, 'Bez API se na něj nikdo nevěší.');
+  h.klikni(props, 'CZ031');
+  assert.equal(h.stavy[0], 'CZ031');
+  assert.equal(h.okno.location.hash, `#${slugKraje('CZ031')}`);
+  const zmena = h.listener('hashchange');
+  h.okno.location.hash = '';
+  zmena();
+  assert.equal(h.stavy[0], '', 'Zpět na adresu bez kotvy musí filtr zrušit i bez Navigation API.');
+  h.odpoj();
+});
+
 test('odkaz Next na tutéž stránku bez kotvy (pushState, bez hashchange) zruší výběr', () => {
   // Next při odkazu z patičky na /veletrhy z /veletrhy#jihocesky jen zavolá
   // pushState a komponentu nechá připojenou. Bez sledování Navigation API
@@ -501,7 +543,16 @@ test('odkaz Next na tutéž stránku bez kotvy (pushState, bez hashchange) zruš
   s.render(props);
   s.spust();
   assert.equal(s.stavy[0], 'CZ031');
+  s.render(props);
+  s.spust();
+  assert.deepEqual(s.posunuto, [slug]);
   const navigace = s.listener('currententrychange');
+  // Next po každé změně stavu routeru volá replaceState s nezměněnou adresou;
+  // stejná kotva nesmí znovu posunout ani nic měnit.
+  navigace();
+  s.render(props);
+  assert.equal(s.spust(), 0, 'Nezměněná adresa nesmí založit posun.');
+  assert.deepEqual(s.posunuto, [slug], 'Opakovaný replaceState se stejnou kotvou stránkou nehýbe.');
   s.okno.location.hash = '';
   navigace();
   assert.equal(s.stavy[0], '', 'Po pushState bez kotvy musí výběr zmizet.');

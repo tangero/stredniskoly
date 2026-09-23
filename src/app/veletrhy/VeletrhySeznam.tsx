@@ -120,9 +120,15 @@ export function VeletrhySeznam({ akce, den }: Props) {
   // stránkou.
   const [posun, setPosun] = useState<{ slug: string } | null>(null);
   const vlastniZapis = useRef<string | null>(null);
+  // Next po každé změně stavu routeru volá replaceState s nezměněnou
+  // adresou (a totéž dělají skripty třetích stran); bez porovnání s naposledy
+  // zpracovanou adresou by každá taková událost znovu posunula na oddíl.
+  const zpracovano = useRef<string | null>(null);
   useEffect(() => {
     const predvyber = () => {
       const kotva = window.location.hash.replace(/^#/, '');
+      if (kotva === zpracovano.current) return;
+      zpracovano.current = kotva;
       if (vlastniZapis.current !== null) {
         if (kotva === vlastniZapis.current) return;
         // První cizí změna adresy stráž ruší — zpět a znovu vpřed na tutéž
@@ -155,6 +161,9 @@ export function VeletrhySeznam({ akce, den }: Props) {
     setKraj(kod);
     const k = KRAJE.find((x) => x.kod === kod);
     vlastniZapis.current = k ? k.slug : '';
+    // Kde Navigation API není, žádná událost nepřijde; adresa je přesto
+    // zpracovaná, jinak by první skutečná změna zpět na ni nezabrala.
+    zpracovano.current = vlastniZapis.current;
     window.history.replaceState(null, '', k ? `#${k.slug}` : window.location.pathname + window.location.search);
   }
 
@@ -167,7 +176,9 @@ export function VeletrhySeznam({ akce, den }: Props) {
     return KRAJE
       .filter((k) => podleKraje.has(k.kod))
       .map((k) => {
-        const seznam = podleKraje.get(k.kod)!;
+        // Řazení podle data tady, ne spoléhat na volajícího: pořadí karet
+        // i řádku měst je smlouva komponenty.
+        const seznam = [...podleKraje.get(k.kod)!].sort((a, b) => a.start.localeCompare(b.start));
         // Města v pořadí, v jakém se v kraji konají — čtenář je pak
         // potká v kartách pod řádkem ve stejném sledu.
         return { ...k, pocet: seznam.length, akce: seznam, mesta: [...new Set(seznam.map(mistoAkce))] };
@@ -259,12 +270,8 @@ export function VeletrhySeznam({ akce, den }: Props) {
           </p>
           {vybrany && (
             <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm">
-              <Link
-                href={`/regiony/${vybrany.slug}`}
-                aria-label={`Střední školy: ${vybrany.nadpis}`}
-                className="text-blue-600 hover:underline"
-              >
-                Střední školy v kraji
+              <Link href={`/regiony/${vybrany.slug}`} className="text-blue-600 hover:underline">
+                Střední školy v kraji<span className="sr-only"> — {vybrany.nadpis}</span>
               </Link>
               {zrusitFiltr}
             </p>
@@ -279,13 +286,10 @@ export function VeletrhySeznam({ akce, den }: Props) {
               {o.nadpis}
               <span className="ml-2 text-base font-normal text-gray-500">{akci(o.pocet)}</span>
             </h2>
-            {/* Čtrnáct odkazů se stejným textem: čtečka potřebuje v názvu odkazu kraj. */}
-            <Link
-              href={`/regiony/${o.slug}`}
-              aria-label={`Střední školy: ${o.nadpis}`}
-              className="text-sm text-blue-600 hover:underline"
-            >
-              Střední školy v kraji
+            {/* Čtrnáct odkazů se stejným textem: čtečka potřebuje v názvu odkazu
+                kraj, a viditelný text musí v názvu zůstat (ovládání hlasem). */}
+            <Link href={`/regiony/${o.slug}`} className="text-sm text-blue-600 hover:underline">
+              Střední školy v kraji<span className="sr-only"> — {o.nadpis}</span>
             </Link>
           </div>
           {o.mesta.length > 1 && (
@@ -297,20 +301,25 @@ export function VeletrhySeznam({ akce, den }: Props) {
               const dl = dlazdice(a.start, a.end);
               const denDlazdice = `${a.terminPribligny ? '~' : ''}${dl.den}`;
               const velikost = denDlazdice.length <= 2 ? 'text-xl' : denDlazdice.length <= 5 ? 'text-lg' : 'text-base';
+              // `<time>` jen u jednodenní akce: u rozsahu by buď strojově tvrdil
+              // jeden den, nebo bez `dateTime` nesl text, který datem není.
+              const Dlazdice = a.end === a.start ? 'time' : 'span';
+              // Řádek s datem opakuje `misto` jen tehdy, když ho neukázala
+              // první řádka karty (série bez rozepsaných měst).
+              const mistoNaRadku = a.mesto && !a.online && a.misto ? ` — ${a.misto}` : '';
               return (
                 <li
                   key={a.id}
                   className="flex gap-4 rounded-lg border border-gray-200 bg-white p-4 hover:border-blue-300 transition-colors"
                 >
-                  {/* `dateTime` jen u jednodenní akce: u rozsahu by strojově tvrdil jeden den. */}
-                  <time
+                  <Dlazdice
                     dateTime={a.end === a.start ? a.start : undefined}
                     className="flex h-14 w-16 shrink-0 flex-col items-center justify-center rounded-md bg-blue-50 text-blue-800"
                     title={a.datum}
                   >
                     <span className={`${velikost} font-bold leading-none`}>{denDlazdice}</span>
                     <span className="text-xs uppercase tracking-wide">{dl.mesic}</span>
-                  </time>
+                  </Dlazdice>
 
                   <div className="min-w-0 flex-1">
                     <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">{mistoAkce(a)}</p>
@@ -323,7 +332,7 @@ export function VeletrhySeznam({ akce, den }: Props) {
                       {a.terminPribligny ? 'přibližně ' : ''}
                       {a.datum}
                       {a.cas ? `, ${a.cas}` : ''}
-                      {a.misto && !a.online ? ` — ${a.misto}` : ''}
+                      {mistoNaRadku}
                     </p>
 
                     {(a.zdrojJenAgregator || a.terminPribligny) && (

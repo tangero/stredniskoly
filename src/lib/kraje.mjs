@@ -20,14 +20,15 @@ export function cipKraje(kod) {
 }
 
 /**
- * Všech čtrnáct krajů abecedně podle krátkého názvu (Vysočina pod V, i když
- * nadpis zní „Kraj Vysočina“), aby čipy a oddíly šly ve stejném pořadí.
+ * Všech čtrnáct krajů abecedně podle krátkého názvu, jak stojí na čipu
+ * („Praha“ pod P, „Vysočina“ pod V, i když nadpis zní „Kraj Vysočina“),
+ * aby čipy a oddíly šly ve stejném pořadí, ve kterém je čtenář hledá.
  * Modul je bez dat, takže ho mohou importovat i klientské komponenty.
  */
 export function vsechnyKraje() {
   return Object.entries(krajNames)
     .map(([kod, nazev]) => ({ kod, nazev }))
-    .sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs'));
+    .sort((a, b) => cipKraje(a.kod).localeCompare(cipKraje(b.kod), 'cs'));
 }
 
 /** @type {Record<string, string>} */
