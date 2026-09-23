@@ -25,7 +25,7 @@ Termín má tři stupně a stránka je rozlišuje:
 | přibližný | pořadatel uvádí jen rozsah (online veletrh MSK) | „přibližně“ a vysvětlení |
 | neověřený u pořadatele | termín máme z agregátoru, web pořadatele ho neuvádí (Schola Bohemia, Hitparáda škol) | žlutá poznámka |
 
-**Formulář https://www.prijimackynaskolu.cz/veletrhy/nahlasit** — nahlásit akci může kdokoli. **Nahlášení není zveřejnění**: akce se na web dostane, až když někdo ověří termín na stránce pořadatele. Nahlášení se ukládá do databáze (tabulka `veletrh_nahlaseni`) a chodí e-mailem na adresu z proměnné `VELETRHY_PRIJEMCE`, výchozí je **redakce@prijimackynaskolu.cz**, ne eda@.
+**Formulář https://www.prijimackynaskolu.cz/veletrhy/nahlasit** — nahlásit akci může kdokoli. **Nahlášení není zveřejnění**: akce se na web dostane, až když někdo ověří termín na stránce pořadatele. Nahlášení se ukládá do databáze (tabulka `veletrh_nahlaseni`) a chodí e-mailem **tobě na eda@prijimackynaskolu.cz** (proměnná `VELETRHY_PRIJEMCE`, nastavená a ověřená zkušebním nahlášením 23. 9. 2026). Zkušební záznam je ve frontě jako `zamitnuto` s poznámkou; není to skutečné nahlášení.
 
 Údaje o akcích jsou v `src/data/veletrhy-2027.json`. Každá změna jde přes pull request, který schválí Patrick Zandl.
 
@@ -99,7 +99,6 @@ Vždy se podepiš jako Eduarda a uveď, že jsi asistentka s umělou inteligenc�
 ### Otevřené věci
 
 - **SŠP Olomouc.** Dopis šel řediteli (jureckaa@ssprool.cz) a na adresu ze sešitu, která neexistuje. Resend neříká, jestli ředitel dopis dostal. Patrick rozhodl 23. 9. 2026 nechat to být, znovu neposílej.
-- **Formulář.** Je potřeba ověřit, že redakce@prijimackynaskolu.cz je schránka, kterou někdo čte. Tabulka `veletrh_nahlaseni` na produkci od 23. 9. 2026 existuje, takže nahlášení zůstane uložené, i když e-mail nedojde.
 - **Co pro nás partnerství znamená na webu**, zatím nic. Kdyby se pořadatel ptal, řekni to po pravdě.
 
 ### Jak o tom mluvit

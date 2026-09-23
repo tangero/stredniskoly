@@ -198,7 +198,7 @@ Proto se ani **popis akce nezobrazuje doslova**. Slouží tomu, kdo nahlášení
 
 **Technicky.** `POST /api/veletrhy/nahlasit`, vzorem je `/api/bug-report`: honeypot, rate limit 3 požadavky za 15 minut na IP i e-mail, detekce spamu podle klíčových slov, zápis do databáze. Odpověď je neutrální a vždy stejná, jako u přihlášení k odběru — formulář nesmí prozradit, jestli akci už v seznamu máme.
 
-Doručení ke zpracování: **e-mail Edovi plus záznam v databázi.** E-mail nese všechna vyplněná pole, aby šlo ověřit rovnou z pošty; záznam v databázi je pojistka, aby nahlášení nezapadlo, když se mail ztratí. Administrace se nestaví (§ 8.4).
+Doručení ke zpracování: **e-mail Edovi plus záznam v databázi.** Adresa je v proměnné `VELETRHY_PRIJEMCE`; od 23. 9. 2026 je nastavená na eda@prijimackynaskolu.cz a ověřená zkušebním nahlášením na produkci (výchozí hodnota v kódu, redakce@, se tím nepoužívá). E-mail nese všechna vyplněná pole, aby šlo ověřit rovnou z pošty; záznam v databázi je pojistka, aby nahlášení nezapadlo, když se mail ztratí. Administrace se nestaví (§ 8.4).
 
 Zpracovat je potřeba rychle: sezóna trvá tři měsíce a akce nahlášená týden před konáním má cenu jen tehdy, když se zveřejní do dvou dnů.
 
