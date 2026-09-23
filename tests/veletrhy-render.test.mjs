@@ -186,8 +186,15 @@ test('čipy krajů nesou počty spočítané z dat a filtr měst neexistuje', ()
 test('výhrada neúplnosti stojí u každého kraje s větou, že nahlášení není zveřejnění', () => {
   const vse = zobrazitelneAkce(KE_DNI);
   const html = vykresli(vse);
-  const veta = 'Nahlaste nám ji</a> — před zveřejněním ji ověříme u pořadatele.';
+  // Věta je doslova ta ze slovníku pojmů (pojem „nahlásit akci“): „akci
+  // před zveřejněním ověříme na stránce pořadatele“.
+  const veta = 'Nahlaste nám ji</a> — před zveřejněním ji ověříme na stránce pořadatele.';
   assert.equal(html.split(veta).length - 1, pocty(vse).size, 'Každý oddíl kraje má vlastní výzvu k nahlášení i s větou ze slovníku pojmů.');
+  // Počet se počítá z akcí s potvrzeným termínem; věta musí říct, z jaké
+  // množiny je, jinak tvrdí, že o víc akcích nevíme.
+  const stredocesky = pocty(vse).get('CZ020');
+  assert.ok(html.includes(`Víme jen o těchto ${stredocesky} akcích s potvrzeným termínem.`));
+  assert.ok(html.includes('Víme jen o této akci s potvrzeným termínem.'));
 });
 
 test('skloňování: 1 akce, 3 akce, 5 akcí; Praha a Vysočina bez přívlastku', () => {
@@ -273,7 +280,7 @@ test('starý seznam po půlnoci aktualizuje karty i čipy a zachová viditelný 
   assert.notEqual(akce[0].krajKod, akce[1].krajKod, 'Test potřebuje dvě akce z různých krajů.');
   const props = { akce, den: '2026-09-30', kraje: vsechnyKraje() };
   const prvni = h.render(props);
-  assert.equal(h.efekty.length, 3, 'Komponenta má tři efekty: hodiny, kotvu a posun; další by tenhle test tiše minul.');
+  assert.equal(h.efekty.length, 4, 'Komponenta má čtyři efekty: hodiny, zrcadlo stavu, kotvu a posun; další by tenhle test tiše minul.');
   assert.ok(prvni.includes(akce[0].nazev));
   h.cas.ted = '2026-09-30T22:01:00Z';
   assert.equal(h.render(props), prvni, 'Před efektem musí i novější klientský čas zachovat serverový den.');
@@ -326,14 +333,20 @@ test('kotva předvybere kraj a posune na oddíl až po překreslení; cizí kotv
 
   const s = sHooky({ ted: '2026-09-22T10:00:00Z', hash: `#${slug}` });
   s.render(props);
-  const uklid = s.efekty[1]();
+  // Mount: React spustí všechny efekty v jednom průchodu ještě se starým
+  // stavem (kraj = ''). Posun se proto nesmí odbýt hned — měřil by plný
+  // seznam a po zúžení by čtenář skončil u patičky.
+  const uklidZrcadla = s.efekty[1]();
+  const uklid = s.efekty[2]();
+  s.efekty[3]();
   assert.equal(s.stavy[0], 'CZ031', 'Odkaz ze stránky kraje má otevřít přehled s tím krajem vybraným.');
   assert.deepEqual(s.posunuto, [], 'Posun nesmí proběhnout před překreslením — měřil by plný seznam.');
   s.render(props);
-  s.efekty[2]();
-  assert.deepEqual(s.posunuto, [slug], 'Po překreslení se posune na oddíl kraje.');
+  s.efekty[1]();
+  s.efekty[3]();
+  assert.deepEqual(s.posunuto, [slug], 'Po překreslení se zúženým seznamem se posune na oddíl kraje.');
   s.render(props);
-  s.efekty[2]();
+  s.efekty[3]();
   assert.deepEqual(s.posunuto, [slug], 'Posun je jednorázový, ne při každém překreslení.');
   assert.match(s.render(props), /aria-pressed="true"[^>]*data-kraj="CZ031"/);
 
@@ -344,16 +357,27 @@ test('kotva předvybere kraj a posune na oddíl až po překreslení; cizí kotv
   s.okno.location.hash = '#kraj-CZ031';
   zmena();
   assert.equal(s.stavy[0], 'CZ031', 'Cizí kotva nesmí smazat zvolený filtr.');
+  // Návrat na kotvu už vybraného kraje: stav se nemění, posune se rovnou
+  // a nic nezůstane nastražené na příští klik na čip.
+  s.okno.location.hash = `#${slug}`;
+  zmena();
+  assert.deepEqual(s.posunuto, [slug, slug], 'Kotva už vybraného kraje posune hned.');
+  s.stavy[0] = '';
+  s.render(props);
+  s.efekty[3]();
+  assert.deepEqual(s.posunuto, [slug, slug], 'Po zrušení výběru nesmí vystřelit starý cíl.');
+  s.stavy[0] = 'CZ031';
   // Prázdná adresa výběr ruší.
   s.okno.location.hash = '';
   zmena();
   assert.equal(s.stavy[0], '');
   uklid();
+  uklidZrcadla?.();
   assert.equal(s.posluchace.length, 0, 'Po odpojení nesmí posluchač zůstat viset.');
 
   const cizi = sHooky({ ted: '2026-09-22T10:00:00Z', hash: '#neexistuje' });
   cizi.render(props);
-  cizi.efekty[1]();
+  cizi.efekty[2]();
   assert.equal(cizi.stavy[0], '', 'Neznámá kotva při načtení nic nevybere.');
 });
 
@@ -368,7 +392,7 @@ test('kotva na kraj, kterému akce proběhly, ukáže prázdný stav s odkazem n
   const s = sHooky({ ted: '2026-09-22T10:00:00Z', hash: `#${slug}` });
   const props = { akce: karty(bezLibereckych), den: '2026-09-22', kraje };
   s.render(props);
-  s.efekty[1]();
+  s.efekty[2]();
   assert.equal(s.stavy[0], 'CZ051', 'Známý kraj bez akcí se musí poznat od překlepu.');
   const html = s.render(props);
   assert.ok(html.includes('Liberecký kraj: teď o žádné akci nevíme.'));

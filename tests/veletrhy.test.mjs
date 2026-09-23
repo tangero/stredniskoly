@@ -199,3 +199,20 @@ test('rozchod dat s registrem seznam zhasne', async () => {
     'Když období souhlasí, seznam se zobrazit musí.',
   );
 });
+
+test('každá akce má známý kraj a datum ve tvaru YYYY-MM-DD s koncem po začátku', async () => {
+  // Soubor se po nahlášeních edituje ručně. Překlep v `krajKod` by akci
+  // započítal do čipu „Všechny kraje“, ale nikde nevykreslil; špatný tvar
+  // data by dlaždice vypsala jako „21–NaN“ a řazení podle řetězce by lhalo.
+  const { krajNames } = await import('../src/lib/kraje.mjs');
+  const { default: soubor } = await import('../src/data/veletrhy-2027.json', { with: { type: 'json' } });
+  const den = /^\d{4}-\d{2}-\d{2}$/;
+  for (const a of soubor.akce) {
+    assert.ok(a.krajKod in krajNames, `${a.id}: neznámý kraj ${a.krajKod}`);
+    if (a.start !== null) {
+      assert.match(a.start, den, `${a.id}: start ${a.start}`);
+      assert.match(a.end ?? a.start, den, `${a.id}: end ${a.end}`);
+      assert.ok((a.end ?? a.start) >= a.start, `${a.id}: end ${a.end} před start ${a.start}`);
+    }
+  }
+});

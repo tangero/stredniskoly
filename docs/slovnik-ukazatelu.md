@@ -580,7 +580,7 @@ Při počtu maturantů pod 10 se zveřejňují jen počty, mezi 10 a 29 s upozor
 ### Počet akcí v kraji
 Počet veletrhů a přehlídek středních škol, které se v kraji teprve budou konat nebo právě probíhají. Zdroj: `src/data/veletrhy-2027.json` (sada `veletrhy-skol`, vlastní rešerše pořadatelů). Výpočet: záznamy s `terminPotvrzen = true` a `end ≥ dnešní den` v českém čase, sečtené podle `krajKod`; `end` je inkluzivní, u jednodenní akce rovné `start`. Online akce se počítá v kraji, jehož pořadatel ji vypsal (`krajKod` záznamu). Součet přes kraje je **počet akcí celkem** (čip „Všechny kraje“). Jednotka: akce. Platí od sezóny 2027; počítá se při čtení stránky (revalidace po hodině, klient přepočítá po půlnoci), ne při sestavení dat.
 
-Zobrazuje se na `/veletrhy` v čipech krajů, v nadpisu oddílu („Jihočeský kraj · 6 akcí“) a ve větě „Víme jen o těchto 6 akcích“.
+Zobrazuje se na `/veletrhy` v čipech krajů, v nadpisu oddílu („Jihočeský kraj“ a vedle „6 akcí“) a ve větě „Víme jen o těchto 6 akcích s potvrzeným termínem“ — věta musí nést množinu, ze které se číslo počítá, protože soubor zná i akce bez potvrzeného termínu, které se nepočítají.
 
 Neříká, kolik akcí se v kraji koná. Říká, o kolika víme a máme u nich potvrzený termín; záznamy bez potvrzeného termínu se nepočítají a rešerše nepokrývá všechno (docs/veletrhy-skol-2027.md § 5.4). Kraj s jednou akcí není kraj s málo veletrhy, je to kraj, kde jsme jednu dohledali. Proto stojí u každého oddílu výzva k nahlášení, ne pořadí krajů podle počtu.
 

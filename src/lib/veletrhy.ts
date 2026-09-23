@@ -21,7 +21,7 @@
 
 import data from '@/data/veletrhy-2027.json';
 import { krajNames } from './kraje.mjs';
-import { tvar } from './cesky-tvar.ts';
+import { seskupPodleKraje } from './veletrhy-pocty.ts';
 
 export interface Veletrh {
   id: string;
@@ -132,27 +132,11 @@ export function vsechnyKraje(): { kod: string; nazev: string }[] {
     .sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs'));
 }
 
-/**
- * Ukazatel *počet akcí v kraji* (slovník ukazatelů, oddíl 6a): akce
- * seskupené podle `krajKod`, v pořadí, v jakém přišly. Jediná definice —
- * server, klient i testy počítají tudy, aby se čísla nerozešla.
- */
-export function seskupPodleKraje<T extends { krajKod: string }>(akce: T[]): Map<string, T[]> {
-  const podleKraje = new Map<string, T[]>();
-  for (const a of akce) {
-    const seznam = podleKraje.get(a.krajKod) ?? [];
-    seznam.push(a);
-    podleKraje.set(a.krajKod, seznam);
-  }
-  return podleKraje;
-}
+// Seskupení a tvar počtu žijí v listovém modulu bez dat, aby je mohla
+// importovat klientská komponenta; tady jen pro server a testy.
+export { seskupPodleKraje, akci } from './veletrhy-pocty.ts';
 
-/** „1 akce“, „3 akce“, „5 akcí“ — tvar ukazatele *počet akcí v kraji* v textu. */
-export function akci(n: number): string {
-  return `${n} ${tvar(n, 'akce', 'akce', 'akcí')}`;
-}
-
-/** Kraje, ve kterých nějaká zobrazitelná akce je, s počtem. */
+/** Kraje, ve kterých nějaká zobrazitelná akce je, s počtem. Pro testy dat a dokumentace. */
 export function krajeSAkcemi(ke: Date = new Date()): { kod: string; nazev: string; pocet: number }[] {
   const podleKraje = seskupPodleKraje(zobrazitelneAkce(ke));
   return vsechnyKraje()

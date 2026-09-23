@@ -4,7 +4,9 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { createKrajSlug } from '@/lib/utils';
 import { nadpisKraje } from '@/lib/kraje.mjs';
-import { akci, seskupPodleKraje } from '@/lib/veletrhy';
+// Listový modul bez dat: `@/lib/veletrhy` by do prohlížeče vzal celý JSON
+// akcí a přes registr sad i `fs`, na kterém `next build` spadne.
+import { akci, seskupPodleKraje } from '@/lib/veletrhy-pocty';
 
 export interface VeletrhKarta {
   id: string;
@@ -96,13 +98,31 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
   // po připojení, na serveru kotva není. Změna kotvy za běhu (zpět/vpřed)
   // se sleduje stejně. Cizí kotva (třeba #kraj-CZ031 na nadpis) výběr
   // nechá být — jen prázdná adresa ho ruší.
-  const posunNa = useRef('');
+  //
+  // Posun na oddíl musí přijít až po překreslení se zúženým seznamem:
+  // prohlížeč skočil ještě na plný seznam a po zúžení by čtenář zůstal
+  // u patičky. Proto se cíl jen poznamená (i s kódem kraje) a posune se
+  // v efektu závislém na `kraj`, teprve když `kraj` cíli odpovídá — na
+  // mountu běží oba efekty v jednom průchodu ještě se starým stavem.
+  // Když je cílový kraj už vybraný, stav se nezmění a posune se rovnou.
+  const posunNa = useRef<{ kotva: string; kod: string } | null>(null);
+  // Zrcadlo stavu pro posluchač kotvy, který vzniká jen jednou; do refu se
+  // píše v efektu, ne při renderu.
+  const aktualniKraj = useRef(kraj);
+  useEffect(() => {
+    aktualniKraj.current = kraj;
+  }, [kraj]);
   useEffect(() => {
     const predvyber = () => {
       const kotva = window.location.hash.replace(/^#/, '');
       const shoda = kraje.find((k) => createKrajSlug(k.kod, k.nazev) === kotva);
       if (!shoda && kotva) return;
-      posunNa.current = shoda ? kotva : '';
+      if (shoda && shoda.kod === aktualniKraj.current) {
+        posunNa.current = null;
+        document.getElementById(kotva)?.scrollIntoView();
+        return;
+      }
+      posunNa.current = shoda ? { kotva, kod: shoda.kod } : null;
       setKraj(shoda ? shoda.kod : '');
     };
     predvyber();
@@ -110,18 +130,16 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
     return () => window.removeEventListener('hashchange', predvyber);
   }, [kraje]);
 
-  // Posun na oddíl až po překreslení se zúženým seznamem: prohlížeč skočil
-  // ještě na plný seznam a po zúžení by čtenář zůstal u patičky. Efekt
-  // závislý na `kraj` běží po commitu, takže měří už nový dokument.
   useEffect(() => {
     const cil = posunNa.current;
-    if (!cil) return;
-    posunNa.current = '';
-    document.getElementById(cil)?.scrollIntoView();
+    if (!cil || cil.kod !== kraj) return;
+    posunNa.current = null;
+    document.getElementById(cil.kotva)?.scrollIntoView();
   }, [kraj]);
 
   /** Výběr čipem se propíše do adresy, aby ho reload i sdílený odkaz zachovaly. */
   function vyber(kod: string) {
+    posunNa.current = null;
     setKraj(kod);
     const k = kraje.find((x) => x.kod === kod);
     const cil = k ? `#${createKrajSlug(k.kod, k.nazev)}` : window.location.pathname + window.location.search;
@@ -221,7 +239,7 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
             <Link href="/veletrhy/nahlasit" className="text-blue-600 hover:underline">
               Víte o akci, která tu chybí? Nahlaste nám ji
             </Link>
-            {' '}— před zveřejněním ji ověříme u pořadatele.
+            {' '}— před zveřejněním ji ověříme na stránce pořadatele.
           </p>
           {vybrany && (
             <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm">
@@ -317,11 +335,11 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
               Pojem „nahlásit akci“ nese v každém bloku svou větu ze slovníku:
               nahlášení není zveřejnění. */}
           <p className="mt-3 text-sm text-gray-600">
-            Víme jen o {o.pocet === 1 ? 'této akci' : `těchto ${o.pocet} akcích`}.{' '}
+            Víme jen o {o.pocet === 1 ? 'této akci' : `těchto ${o.pocet} akcích`} s potvrzeným termínem.{' '}
             <Link href="/veletrhy/nahlasit" className="text-blue-600 hover:underline">
               Chybí vám nějaká? Nahlaste nám ji
             </Link>
-            {' '}— před zveřejněním ji ověříme u pořadatele.
+            {' '}— před zveřejněním ji ověříme na stránce pořadatele.
           </p>
         </section>
       ))}
