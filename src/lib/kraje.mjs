@@ -1,13 +1,17 @@
+/** Kraje, jejichž nadpis není „<název> kraj“. Klíč je kód, ne řetězec názvu. */
+const NADPIS_VYJIMKY = {
+  CZ010: 'Hlavní město Praha',
+  CZ063: 'Kraj Vysočina',
+};
+
 /**
- * Název kraje pro nadpis: „Středočeský kraj“, „Kraj Vysočina“, „Hlavní
- * město Praha“. Používá přehled veletrhů. Stránka kraje a hlavička mají
- * zatím vlastní starší podobu („Vysočina“ bez slova kraj); sjednocení je
- * samostatná změna, protože mění titulky indexovaných stránek.
+ * Název kraje pro nadpis podle kódu: „Středočeský kraj“, „Kraj Vysočina“,
+ * „Hlavní město Praha“. Používá přehled veletrhů. Stránka kraje a hlavička
+ * mají zatím vlastní starší podobu („Vysočina“ bez slova kraj); sjednocení
+ * je samostatná změna, protože mění titulky indexovaných stránek.
  */
-export function nadpisKraje(nazev) {
-  if (nazev === 'Vysočina') return 'Kraj Vysočina';
-  if (nazev === 'Hlavní město Praha') return nazev;
-  return `${nazev} kraj`;
+export function nadpisKraje(kod) {
+  return NADPIS_VYJIMKY[kod] ?? `${krajNames[kod] ?? kod} kraj`;
 }
 
 /** @type {Record<string, string>} */

@@ -2,7 +2,7 @@
 
 Verze 1.0 · 23. 9. 2026 · **Návrh a stav rozpracované implementace.**
 
-**Stav implementace (k verzi 1.0):** v kódu jsou data, přehled po krajích s čipy (od 0.9), metodický blok a formulář s předáním hlášení přes Resend. Počty akcí a pokrytí jsou v [aktuálním soupisu zdrojů](zdroje-dat.md#215-veletrhy-a-přehlídky-středních-škol); číselné odhady níže zachycují původní návrh. Stránka má hodinovou revalidaci a klientskou aktualizaci dne každou minutu. Kalendářový export (§ 5.8), našeptávání a časové skupiny seznamu dosud implementované nejsou.
+**Stav implementace (k verzi 1.0):** v kódu jsou data, přehled po krajích s čipy (od 0.9), metodický blok a formulář s předáním hlášení přes Resend. Počty akcí a pokrytí jsou v [aktuálním soupisu zdrojů](zdroje-dat.md#215-veletrhy-a-přehlídky-středních-škol); číselné odhady níže zachycují původní návrh. Stránka má hodinovou revalidaci a klientskou aktualizaci dne každou minutu. Kalendářový export (§ 5.8) dosud implementovaný není. Zamítnuto ve verzi 1.0: našeptávání měst a časové skupiny seznamu — osou stránky je kraj a filtr měst neexistuje (§ 5.2).
 
 **Známá omezení fronty hlášení** (z oponentury, čtvrté kolo): čekání na databázi má strop tří sekund, ale `Promise.race` samotný dotaz nezruší — spojení zůstane obsazené, dokud neskončí. Je to vědomý kompromis: lepší nechat viset spojení než ztratit hlášení. Při opakovaném výpadku databáze to může vyčerpat pool. Odesílání pošty strop má (osm sekund, `AbortSignal`), ten požadavek skutečně přeruší. Příznak `odeslano_mailem = false` proto neznamená „e-mail neodešel“, ale „nevíme o tom, že odešel“. Databázová záloha hlášení (§ 6.3) doplněna ve třetím kole: migrace `db/migrace/005-veletrhy.sql`, záznam vzniká dřív než e-mail. Při nedostupnosti pošty i databáze produkční endpoint vrací 503; potvrzení API od Resendu není důkaz doručení do schránky, proto záznam v databázi platí nezávisle na ní. Produkční nasazení toto review neověřuje.
 
@@ -192,7 +192,7 @@ Druhá věta je přímé použití pasti „chybějící údaj není nula“. T�
 | Název akce | ano | bez něj nejde akci pojmenovat v seznamu |
 | Termín — od, do | ano | `end` jen u vícedenních; bez data se akce nezobrazí (§ 2.2) |
 | Adresa konání | ano | místo v textu („Kongresové centrum Zlín, náměstí…“); z něj se odvodí město |
-| Město | ano | pro filtrování; našeptávač, ale **volný zápis povolen** (§ 6.2 — obce pod prahem) |
+| Město | ano | první řádka karty a řádek měst pod nadpisem kraje (§ 5.2; filtr měst od 1.0 neexistuje); **volný zápis povolen** (§ 6.2 — obce pod prahem) |
 | Kraj | ano | rozbalovací seznam čtrnácti, žádný volný zápis |
 | Popis akce | ne | pár vět pro čtenáře; **na stránce se nezobrazí doslova** — viz níže |
 | URL stránky akce | ano | bez odkazu nelze údaj ověřit a rodina nemá kam jít pro podrobnosti |

@@ -10,6 +10,9 @@
 // uvnitř karty podle data s městem jako první řádkou. Filtr měst zmizel —
 // 39 ze 40 měst mělo jedinou akci, rozbalovací seznam se 40 položkami
 // vedl vždycky na jednu kartu.
+//
+// Pravidla vykreslení se testují nad syntetickými kartami, kde to jde;
+// skutečná data slouží tam, kde jde o shodu s nimi (počty, města).
 // ============================================================================
 
 import { test } from 'node:test';
@@ -24,6 +27,7 @@ import { createKrajSlug } from '../src/lib/utils.ts';
 import { zavadec, text } from './_zavadec.mjs';
 
 const KE_DNI = new Date('2026-09-22');
+const DEN = cesskyDen(KE_DNI);
 
 function karty(akce) {
   return akce.map((a) => ({
@@ -35,10 +39,21 @@ function karty(akce) {
   }));
 }
 
+/** Syntetická karta: jen to, co pravidlo potřebuje, zbytek neutrální. */
+function karta(prepis) {
+  return {
+    id: 'x', nazev: 'Akce', poradatel: 'Pořadatel', mesto: 'Město', krajKod: 'CZ020',
+    misto: 'Sál', start: '2026-10-05', end: '2026-10-05', datum: '5. října 2026', url: 'https://example.cz/',
+    ...prepis,
+  };
+}
+
+function vykresliKarty(karty, kraje = vsechnyKraje()) {
+  return renderToStaticMarkup(React.createElement(VeletrhySeznam, { akce: karty, kraje, den: DEN }));
+}
+
 function vykresli(akce, kraje = vsechnyKraje()) {
-  return renderToStaticMarkup(
-    React.createElement(VeletrhySeznam, { akce: karty(akce), kraje, den: cesskyDen(KE_DNI) }),
-  );
+  return vykresliKarty(karty(akce), kraje);
 }
 
 /** Počty po krajích spočítané ručně z dat — nezávislý etalon, ne funkce z lib. */
@@ -61,20 +76,9 @@ test('poznámka k termínu se zobrazí i bez příznaku nejistoty', () => {
   );
 });
 
-test('akce z agregátoru nese ve výstupu výstrahu', () => {
-  const zAgregatoru = zobrazitelneAkce(KE_DNI).filter((a) => a.zdrojJenAgregator);
-  assert.ok(zAgregatoru.length > 0, 'Očekáváme aspoň jednu akci z agregátoru.');
-
-  const html = vykresli(zAgregatoru.slice(0, 1));
-  assert.ok(html.includes('neověřený u pořadatele'), 'Výstraha o neověřeném termínu musí být ve výstupu.');
-});
-
-test('přibližný termín se ve výstupu označí slovem', () => {
-  const pribligne = zobrazitelneAkce(KE_DNI).filter((a) => a.terminPribligny);
-  assert.ok(pribligne.length > 0, 'Očekáváme aspoň jednu akci s přibližným termínem.');
-
-  const html = vykresli(pribligne.slice(0, 1));
-  assert.ok(html.includes('přibližně'), 'Přibližný termín se musí ve výstupu poznat.');
+test('akce z agregátoru nese ve výstupu výstrahu, přibližný termín slovo', () => {
+  assert.ok(vykresliKarty([karta({ zdrojJenAgregator: true, poznamkaTerminu: 'Termín z kalendáře kraje.' })]).includes('neověřený u pořadatele'));
+  assert.ok(vykresliKarty([karta({ terminPribligny: true, poznamkaTerminu: 'Pořadatel uvádí jen měsíc.' })]).includes('přibližně'));
 });
 
 test('každá vykreslená akce vede na stránku pořadatele a říká, kdo pořádá', () => {
@@ -89,13 +93,12 @@ test('každá vykreslená akce vede na stránku pořadatele a říká, kdo poř�
   assert.ok(!html.includes('ne tento web'), 'Dovětek o tom, kdo akci nepořádá, na kartu nepatří.');
 });
 
-test('kraje jsou oddíly s nadpisem, počtem a řádkem měst; město je první řádka karty', () => {
+test('kraje jsou oddíly s nadpisem, počtem, kotvou a odkazem pojmenovaným krajem', () => {
   const vse = zobrazitelneAkce(KE_DNI);
   const html = vykresli(vse);
   const etalon = pocty(vse);
-  const kraje = vsechnyKraje();
 
-  for (const k of kraje) {
+  for (const k of vsechnyKraje()) {
     const pocet = etalon.get(k.kod) ?? 0;
     const kotva = `id="${createKrajSlug(k.kod, k.nazev)}"`;
     if (pocet === 0) {
@@ -103,37 +106,38 @@ test('kraje jsou oddíly s nadpisem, počtem a řádkem měst; město je první 
       continue;
     }
     assert.ok(html.includes(kotva), `Kraj ${k.nazev} musí mít oddíl s kotvou, aby na něj šlo odkázat ze stránky kraje.`);
-    assert.ok(
-      text(html).includes(`${nadpisKraje(k.nazev)} ${akci(pocet)}`),
-      `Nadpis oddílu ${k.nazev} musí nést počet akcí.`,
-    );
+    assert.ok(text(html).includes(`${nadpisKraje(k.kod)} ${akci(pocet)}`), `Nadpis oddílu ${k.nazev} musí nést počet akcí.`);
+    // Čtrnáct odkazů se stejným textem: čtečka potřebuje v názvu odkazu kraj.
+    assert.ok(html.includes(`aria-label="Střední školy: ${nadpisKraje(k.kod)}"`), `Odkaz na stránku kraje ${k.nazev} bez přístupného názvu.`);
   }
-  // Pravidlo pro slovo „kraj“: přívlastek za jménem, Vysočina před ním,
-  // Praha bez něj. Review PR #162 našlo „Vysočina kraj“.
-  assert.ok(text(html).includes('Středočeský kraj '));
-  assert.ok(text(html).includes('Kraj Vysočina '), 'Vysočina má slovo kraj před jménem.');
   assert.ok(!text(html).includes('Vysočina kraj'));
-  assert.ok(text(html).includes('Hlavní město Praha 1 akce'));
   assert.ok(!text(html).includes('Praha kraj'));
+});
 
-  // Řádek měst jen tam, kde je co rozlišit: Jihočeský má šest měst,
-  // kraj s jedinou akcí by řádkem opakoval, co říká karta pod ním.
+test('řádek měst jen u více akcí, v pořadí konání; město je první řádka karty', () => {
+  const vse = zobrazitelneAkce(KE_DNI);
+  const html = vykresli(vse);
   const jihocesky = vse.filter((a) => a.krajKod === 'CZ031');
-  assert.ok(jihocesky.length > 1);
+  assert.ok(jihocesky.length > 1, 'Test počítá s krajem s více akcemi.');
   const mesta = [...new Set(jihocesky.map((a) => a.mesto))];
   // Řádek měst je šedý odstavec pod nadpisem; město na kartě je jiný prvek
   // (verzálky), proto se hledá i s koncem atributu class.
   assert.ok(html.includes(`text-gray-600">${mesta.join(' · ')}</p>`), 'Města v kraji mají stát v řádku pod nadpisem, v pořadí konání.');
-  const praha = vse.filter((a) => a.krajKod === 'CZ010');
-  assert.equal(praha.length, 1, 'Test počítá s jedinou pražskou akcí.');
-  assert.ok(!vykresli(praha).includes(`text-gray-600">${praha[0].mesto}</p>`), 'U jediné akce by řádek měst jen opakoval kartu.');
 
-  // Online akce se v řádku měst píše stejně jako na kartě — jedno slovo,
-  // jedna podoba v jednom bloku.
-  const msk = vse.filter((a) => a.krajKod === 'CZ080');
-  assert.ok(msk.some((a) => a.online) && msk.length > 1, 'Test počítá s online akcí v kraji, který má i další akci.');
-  assert.ok(html.includes('text-gray-600">Online · '), 'Online v řádku měst se píše s velkým O jako na kartě.');
-  assert.ok(!html.includes('online · '));
+  // U jediné akce by řádek měst jen opakoval kartu.
+  assert.ok(!vykresliKarty([karta({ mesto: 'Jediné' })]).includes('text-gray-600">Jediné</p>'));
+
+  // Online se v řádku píše stejně jako na kartě; série bez měst nese na
+  // obou místech totéž, aby nadpis, řádek a karty souhlasily.
+  const smisene = vykresliKarty([
+    karta({ id: 'a', mesto: null, online: true, start: '2026-10-01', end: '2026-10-01' }),
+    karta({ id: 'b', mesto: 'Ostrava', start: '2026-10-02', end: '2026-10-02' }),
+    karta({ id: 'c', mesto: null, start: '2026-10-03', end: '2026-10-03' }),
+  ]);
+  assert.ok(smisene.includes('text-gray-600">Online · Ostrava · místo upřesní pořadatel</p>'));
+  assert.ok(smisene.includes('text-gray-500">místo upřesní pořadatel</p>'));
+  assert.ok(!smisene.includes('online · '));
+  assert.ok(text(smisene).includes('Středočeský kraj 3 akce'));
 
   // Město na kartě předchází názvu akce: čtenář hledá „Vimperk“, ne
   // „Burza škol Vimperk“.
@@ -143,30 +147,28 @@ test('kraje jsou oddíly s nadpisem, počtem a řádkem měst; město je první 
   assert.ok(poziceMesta > -1 && poziceMesta < poziceNazvu, 'Město musí být na kartě dřív než název akce.');
 });
 
-test('dlaždice u vícedenní akce nese rozsah dnů a má pevnou šířku', () => {
-  // V průběhu třídenní akce by první den v tučné dlaždici četl jako „už bylo“.
-  const vse = zobrazitelneAkce(KE_DNI);
-  const vicedenni = vse.find((a) => a.end && a.end !== a.start && !a.terminPribligny && a.start.slice(0, 7) === a.end.slice(0, 7));
-  assert.ok(vicedenni, 'Test počítá s vícedenní akcí v jednom měsíci.');
-  const d1 = Number(vicedenni.start.slice(8));
-  const d2 = Number(vicedenni.end.slice(8));
-  const html = vykresli([vicedenni]);
-  assert.ok(html.includes(`leading-none">${d1}–${d2}</span>`), `Dlaždice má nést „${d1}–${d2}“.`);
+test('dlaždice: den, rozsah dnů, rozsah přes měsíc, pevná šířka, menší písmo u dlouhého rozsahu', () => {
+  const jeden = vykresliKarty([karta({ start: '2026-10-05', end: '2026-10-05' })]);
+  assert.ok(jeden.includes('leading-none">5</span>'));
+  assert.ok(jeden.includes('uppercase tracking-wide">říj</span>'));
 
-  const jednodenni = vse.find((a) => (!a.end || a.end === a.start) && !a.terminPribligny);
-  const d = Number(jednodenni.start.slice(8));
-  assert.ok(vykresli([jednodenni]).includes(`leading-none">${d}</span>`));
+  // V průběhu třídenní akce by první den v tučné dlaždici četl jako „už bylo“.
+  const tri = vykresliKarty([karta({ start: '2026-10-15', end: '2026-10-17' })]);
+  assert.ok(tri.includes('leading-none">15–17</span>'));
+
+  const presMesic = vykresliKarty([karta({ start: '2026-09-30', end: '2026-10-02' })]);
+  assert.ok(presMesic.includes('leading-none">30–2</span>'));
+  assert.ok(presMesic.includes('uppercase tracking-wide">zář–říj</span>'));
 
   // Šířka je pevná, aby text karet v oddílu začínal na stejné svislici;
   // delší rozsah („~21–30“) dostane menší písmo místo širší dlaždice.
-  assert.ok(!html.includes('min-w-14'), 'Dlaždice nesmí růst s délkou textu.');
-  assert.match(html, /<time[^>]*class="[^"]*\bw-16\b/);
-  const pribl = vse.find((a) => a.terminPribligny && a.end !== a.start);
-  assert.ok(pribl, 'Test počítá s přibližnou vícedenní akcí.');
-  assert.match(vykresli([pribl]), /class="text-base font-bold leading-none">~\d+–\d+</);
+  assert.ok(!tri.includes('min-w-14'), 'Dlaždice nesmí růst s délkou textu.');
+  assert.match(tri, /<time[^>]*class="[^"]*\bw-16\b/);
+  const pribl = vykresliKarty([karta({ terminPribligny: true, start: '2026-11-21', end: '2026-11-30' })]);
+  assert.match(pribl, /class="text-base font-bold leading-none">~21–30</);
 });
 
-test('čipy krajů nesou počty spočítané z dat a filtr měst neexistuje', () => {
+test('čipy krajů nesou počty spočítané z dat, součet jen z vykreslených, filtr měst neexistuje', () => {
   const vse = zobrazitelneAkce(KE_DNI);
   const html = vykresli(vse);
   const etalon = pocty(vse);
@@ -177,29 +179,33 @@ test('čipy krajů nesou počty spočítané z dat a filtr měst neexistuje', ()
   assert.ok(html.includes(`>Všechny kraje<span class="rounded-full px-1.5 text-xs font-semibold bg-white/20">${vse.length}</span>`));
   assert.ok(!html.includes('<select'), 'Rozbalovací seznamy zmizely; pokrytí má být vidět bez kliknutí.');
   assert.ok(!html.includes('Všechna města'));
+
+  // Akce s krajem mimo číselník se nesmí započítat do „Všechny kraje“,
+  // když ji žádný oddíl nevykreslí — čísla by nesouhlasila.
+  const sPreklepem = vykresliKarty([karta({ id: 'a' }), karta({ id: 'b', krajKod: 'CZ0631', nazev: 'Neviditelná' })]);
+  assert.ok(sPreklepem.includes('bg-white/20">1</span>'), 'Součet má být z vykreslených oddílů.');
+  assert.ok(!sPreklepem.includes('Neviditelná'));
 });
 
-test('výhrada neúplnosti stojí u každého kraje s větou, že nahlášení není zveřejnění', () => {
+test('výhrada neúplnosti stojí u každého kraje s množinou a větou ze slovníku', () => {
   const vse = zobrazitelneAkce(KE_DNI);
   const html = vykresli(vse);
-  // Věta je doslova ta ze slovníku pojmů (pojem „nahlásit akci“): „akci
-  // před zveřejněním ověříme na stránce pořadatele“.
+  // Věta je doslova ta ze slovníku pojmů (pojem „nahlásit akci“).
   const veta = 'Nahlaste nám ji</a> — před zveřejněním ji ověříme na stránce pořadatele.';
   assert.equal(html.split(veta).length - 1, pocty(vse).size, 'Každý oddíl kraje má vlastní výzvu k nahlášení i s větou ze slovníku pojmů.');
   // Počet se počítá z akcí s potvrzeným termínem; věta musí říct, z jaké
   // množiny je, jinak tvrdí, že o víc akcích nevíme.
-  const stredocesky = pocty(vse).get('CZ020');
-  assert.ok(html.includes(`Víme jen o těchto ${stredocesky} akcích s potvrzeným termínem.`));
-  assert.ok(html.includes('Víme jen o této akci s potvrzeným termínem.'));
+  assert.ok(vykresliKarty([karta({ id: 'a' }), karta({ id: 'b' }), karta({ id: 'c' })]).includes('Víme jen o těchto 3 akcích s potvrzeným termínem.'));
+  assert.ok(vykresliKarty([karta()]).includes('Víme jen o této akci s potvrzeným termínem.'));
 });
 
-test('skloňování: 1 akce, 3 akce, 5 akcí; Praha a Vysočina bez přívlastku', () => {
+test('skloňování: 1 akce, 3 akce, 5 akcí; nadpis kraje podle kódu', () => {
   assert.equal(akci(1), '1 akce');
   assert.equal(akci(3), '3 akce');
   assert.equal(akci(5), '5 akcí');
-  assert.equal(nadpisKraje('Středočeský'), 'Středočeský kraj');
-  assert.equal(nadpisKraje('Hlavní město Praha'), 'Hlavní město Praha');
-  assert.equal(nadpisKraje('Vysočina'), 'Kraj Vysočina');
+  assert.equal(nadpisKraje('CZ020'), 'Středočeský kraj');
+  assert.equal(nadpisKraje('CZ010'), 'Hlavní město Praha');
+  assert.equal(nadpisKraje('CZ063'), 'Kraj Vysočina');
 });
 
 test('počet v kraji se sníží i tehdy, když v něm další akce zůstávají', () => {
@@ -217,26 +223,37 @@ test('počet v kraji se sníží i tehdy, když v něm další akce zůstávají
  * Životní cyklus hooků nad skutečným zdrojem komponenty přes sdílený
  * zavaděč (ES2022, `@/` i `.mjs`). Globály `window`, `document`, `Date`
  * a časovače jsou podstrčené, takže SSR ověřuje HTML po každém efektu.
- * Efekty se sbírají v pořadí zápisu: hodiny, kotva, posun na oddíl.
+ *
+ * Efekty se spouštějí jako v Reactu: po renderu `spust()` provede ty,
+ * kterým se změnily závislosti (poprvé všechny), v pořadí zápisu a se
+ * zavřením nad stavem z toho renderu; `odpoj()` zavolá úklidy. Testy
+ * tak nestojí na pořadí ani počtu efektů v komponentě.
  */
 function sHooky({ ted: pocatek, hash = '' }) {
   const stavy = [];
-  const refy = [];
   let index = 0;
-  let refIndex = 0;
-  const efekty = [];
+  const zavislosti = [];
+  let efektIndex = 0;
+  const cekajici = [];
+  const uklidy = new Map();
   let tik;
   let uklizeno = false;
   const cas = { ted: pocatek };
   const posluchace = [];
   const posunuto = [];
+  const registr = (seznam) => ({
+    addEventListener: (typ, fn) => seznam.push({ typ, fn }),
+    removeEventListener: (typ, fn) => {
+      const i = seznam.findIndex((p) => p.typ === typ && p.fn === fn);
+      if (i > -1) seznam.splice(i, 1);
+    },
+  });
   const okno = {
     location: { hash, pathname: '/veletrhy', search: '' },
-    addEventListener: (typ, fn) => posluchace.push({ typ, fn }),
-    removeEventListener: (typ, fn) => {
-      const i = posluchace.findIndex((p) => p.typ === typ && p.fn === fn);
-      if (i > -1) posluchace.splice(i, 1);
-    },
+    ...registr(posluchace),
+    // Navigation API: Next při odkazu na tutéž stránku s jinou kotvou
+    // volá pushState, po kterém hashchange nepřijde.
+    navigation: registr(posluchace),
     history: { replaceState: (_s, _t, url) => { okno.location.hash = url.startsWith('#') ? url : ''; } },
   };
   const react = {
@@ -246,13 +263,17 @@ function sHooky({ ted: pocatek, hash = '' }) {
       if (!(i in stavy)) stavy[i] = pocatek;
       return [stavy[i], (hodnota) => { stavy[i] = typeof hodnota === 'function' ? hodnota(stavy[i]) : hodnota; }];
     },
-    useRef: (pocatek) => {
-      const i = refIndex++;
-      if (!(i in refy)) refy[i] = { current: pocatek };
-      return refy[i];
-    },
     useMemo: (vypocet) => vypocet(),
-    useEffect: (fn) => { efekty.push(fn); },
+    // Závislosti se porovnávají s posledním *spuštěním*, ne s posledním
+    // renderem: render bez `spust()` je jako render, který React ještě
+    // necommitnul.
+    useEffect: (fn, deps) => {
+      const i = efektIndex++;
+      const drive = zavislosti[i];
+      const zmena = drive === undefined || !deps || drive === null
+        || deps.length !== drive.length || deps.some((d, j) => !Object.is(d, drive[j]));
+      if (zmena) cekajici.push({ i, fn, deps: deps ?? null });
+    },
   };
   const { VeletrhySeznam: Komponenta } = zavadec(react, {}, {
     window: okno,
@@ -263,11 +284,31 @@ function sHooky({ ted: pocatek, hash = '' }) {
   })('src/app/veletrhy/VeletrhySeznam.tsx');
   const render = (props) => {
     index = 0;
-    refIndex = 0;
-    efekty.length = 0;
+    efektIndex = 0;
+    cekajici.length = 0;
     return renderToStaticMarkup(React.createElement(Komponenta, props));
   };
-  return { render, stavy, efekty, posluchace, posunuto, okno, tik: () => tik(), cas, uklizeno: () => uklizeno };
+  const spust = () => {
+    const spustene = cekajici.splice(0);
+    for (const { i, fn, deps } of spustene) {
+      zavislosti[i] = deps;
+      uklidy.get(i)?.();
+      const uklid = fn();
+      if (typeof uklid === 'function') uklidy.set(i, uklid);
+      else uklidy.delete(i);
+    }
+    return spustene.length;
+  };
+  const odpoj = () => {
+    for (const uklid of uklidy.values()) uklid();
+    uklidy.clear();
+  };
+  const listener = (typ) => {
+    const p = posluchace.filter((x) => x.typ === typ);
+    assert.equal(p.length, 1, `Očekáván jeden posluchač ${typ}, je ${p.length}.`);
+    return p[0].fn;
+  };
+  return { render, spust, odpoj, listener, stavy, posluchace, posunuto, okno, tik: () => tik(), cas, uklizeno: () => uklizeno };
 }
 
 test('starý seznam po půlnoci aktualizuje karty i čipy a zachová viditelný aktivní filtr', () => {
@@ -276,12 +317,11 @@ test('starý seznam po půlnoci aktualizuje karty i čipy a zachová viditelný 
   assert.notEqual(akce[0].krajKod, akce[1].krajKod, 'Test potřebuje dvě akce z různých krajů.');
   const props = { akce, den: '2026-09-30', kraje: vsechnyKraje() };
   const prvni = h.render(props);
-  assert.equal(h.efekty.length, 4, 'Komponenta má čtyři efekty: hodiny, zrcadlo stavu, kotvu a posun; další by tenhle test tiše minul.');
   assert.ok(prvni.includes(akce[0].nazev));
   h.cas.ted = '2026-09-30T22:01:00Z';
-  assert.equal(h.render(props), prvni, 'Před efektem musí i novější klientský čas zachovat serverový den.');
+  assert.equal(h.render(props), prvni, 'Před efekty musí i novější klientský čas zachovat serverový den.');
   h.cas.ted = '2026-09-30T21:59:00Z';
-  const uklid = h.efekty[0]();
+  h.spust();
   assert.equal(h.render(props), prvni, 'Po připojení ve stejný den musí být výstup stejný.');
   h.cas.ted = '2026-09-30T22:01:00Z'; // 1. října v Praze
   h.tik();
@@ -297,13 +337,13 @@ test('starý seznam po půlnoci aktualizuje karty i čipy a zachová viditelný 
   assert.ok(!sVyberem.includes(akce[1].nazev), 'Filtr na kraj bez akcí nesmí ukázat akce jiného kraje.');
   // Prázdný stav se hlásí jednou, ne dvakrát, a čtenář má kam dál.
   assert.equal(sVyberem.split('Neznamená to, že se žádná nekoná').length - 1, 1);
-  assert.ok(sVyberem.includes('Střední školy v kraji'), 'I bez akcí vede odkaz na stránku kraje.');
-  assert.ok(sVyberem.includes(`${nadpisKraje(vsechnyKraje().find((k) => k.kod === akce[0].krajKod).nazev)}: teď o žádné akci nevíme.`));
-  uklid();
+  assert.ok(sVyberem.includes(`aria-label="Střední školy: ${nadpisKraje(akce[0].krajKod)}"`), 'I bez akcí vede odkaz na stránku kraje.');
+  assert.ok(sVyberem.includes(`${nadpisKraje(akce[0].krajKod)}: teď o žádné akci nevíme.`));
+  h.odpoj();
   assert.ok(h.uklizeno());
 });
 
-test('výběr kraje ukáže jen jeho oddíl a čip je stisknutý', () => {
+test('výběr kraje ukáže jen jeho oddíl, čip je stisknutý, věta bez rodu', () => {
   const h = sHooky({ ted: '2026-09-22T10:00:00Z' });
   const vse = zobrazitelneAkce(KE_DNI);
   const props = { akce: karty(vse), den: '2026-09-22', kraje: vsechnyKraje() };
@@ -315,13 +355,17 @@ test('výběr kraje ukáže jen jeho oddíl a čip je stisknutý', () => {
   const ostatni = vse.filter((a) => a.krajKod !== 'CZ031');
   for (const a of jihoceske) assert.ok(html.includes(a.nazev), `Jihočeská akce ${a.id} chybí.`);
   for (const a of ostatni) assert.ok(!html.includes(`>${a.nazev}<`), `Akce jiného kraje ${a.id} se nemá zobrazit.`);
-  assert.ok(html.includes('Zobrazen jen Jihočeský kraj.'));
+  assert.ok(html.includes('Zobrazujeme jen Jihočeský kraj.'));
+  // „Zobrazen jen Hlavní město Praha“ by neseděl v rodě; věta je bez příčestí.
+  h.stavy[0] = 'CZ010';
+  assert.ok(h.render(props).includes('Zobrazujeme jen Hlavní město Praha.'));
   // Harness překládá do ES2022: řádek měst (spread nad Set) musí být i tady.
+  h.stavy[0] = 'CZ031';
   const mesta = [...new Set(jihoceske.map((a) => a.mesto))];
-  assert.ok(html.includes(`text-gray-600">${mesta.join(' · ')}</p>`), 'Řádek měst chybí — zavaděč by překládal jiný program než produkce.');
+  assert.ok(h.render(props).includes(`text-gray-600">${mesta.join(' · ')}</p>`), 'Řádek měst chybí — zavaděč by překládal jiný program než produkce.');
 });
 
-test('kotva předvybere kraj a posune na oddíl až po překreslení; cizí kotva výběr nechá být', () => {
+test('kotva předvybere kraj a posune až po překreslení; posun je na každé čtení kotvy, ne na každý render', () => {
   const vse = zobrazitelneAkce(KE_DNI);
   const kraje = vsechnyKraje();
   const props = { akce: karty(vse), den: '2026-09-22', kraje };
@@ -330,69 +374,79 @@ test('kotva předvybere kraj a posune na oddíl až po překreslení; cizí kotv
   const s = sHooky({ ted: '2026-09-22T10:00:00Z', hash: `#${slug}` });
   s.render(props);
   // Mount: React spustí všechny efekty v jednom průchodu ještě se starým
-  // stavem (kraj = ''). Posun se proto nesmí odbýt hned — měřil by plný
-  // seznam a po zúžení by čtenář skončil u patičky.
-  const uklidZrcadla = s.efekty[1]();
-  const uklid = s.efekty[2]();
-  s.efekty[3]();
+  // stavem. Posun se proto nesmí odbýt hned — měřil by plný seznam a po
+  // zúžení by čtenář skončil u patičky.
+  s.spust();
   assert.equal(s.stavy[0], 'CZ031', 'Odkaz ze stránky kraje má otevřít přehled s tím krajem vybraným.');
   assert.deepEqual(s.posunuto, [], 'Posun nesmí proběhnout před překreslením — měřil by plný seznam.');
   s.render(props);
-  s.efekty[1]();
-  s.efekty[3]();
+  s.spust();
   assert.deepEqual(s.posunuto, [slug], 'Po překreslení se zúženým seznamem se posune na oddíl kraje.');
   s.render(props);
-  s.efekty[3]();
+  assert.equal(s.spust(), 0, 'Bez změny stavu neběží žádný efekt.');
   assert.deepEqual(s.posunuto, [slug], 'Posun je jednorázový, ne při každém překreslení.');
   assert.match(s.render(props), /aria-pressed="true"[^>]*data-kraj="CZ031"/);
 
-  // Zpět/vpřed v prohlížeči mění kotvu bez nového načtení; výběr musí jít s ní.
-  assert.equal(s.posluchace.filter((p) => p.typ === 'hashchange').length, 1, 'Změna kotvy se má sledovat.');
-  const zmena = s.posluchace.find((p) => p.typ === 'hashchange').fn;
+  // Zpět/vpřed mění kotvu bez nového načtení; výběr musí jít s ní.
+  const zmena = s.listener('hashchange');
   // Cizí kotva (jiný prvek na stránce) výběr neruší.
   s.okno.location.hash = '#co-si-zjistit';
   zmena();
   assert.equal(s.stavy[0], 'CZ031', 'Cizí kotva nesmí smazat zvolený filtr.');
-  // Návrat na kotvu už vybraného kraje: stav se nemění, posune se rovnou
-  // a nic nezůstane nastražené na příští klik na čip.
+  // Návrat na kotvu už vybraného kraje: stav kraje se nemění, ale posun
+  // proběhne znovu, protože jde o nové čtení kotvy.
   s.okno.location.hash = `#${slug}`;
   zmena();
-  assert.deepEqual(s.posunuto, [slug, slug], 'Kotva už vybraného kraje posune hned.');
-  s.stavy[0] = '';
   s.render(props);
-  s.efekty[3]();
-  assert.deepEqual(s.posunuto, [slug, slug], 'Po zrušení výběru nesmí vystřelit starý cíl.');
-  s.stavy[0] = 'CZ031';
+  s.spust();
+  assert.deepEqual(s.posunuto, [slug, slug], 'Kotva už vybraného kraje posune znovu.');
   // Prázdná adresa výběr ruší.
   s.okno.location.hash = '';
   zmena();
   assert.equal(s.stavy[0], '');
-  uklid();
-  uklidZrcadla?.();
+  s.odpoj();
   assert.equal(s.posluchace.length, 0, 'Po odpojení nesmí posluchač zůstat viset.');
 
   const cizi = sHooky({ ted: '2026-09-22T10:00:00Z', hash: '#neexistuje' });
   cizi.render(props);
-  cizi.efekty[2]();
+  cizi.spust();
   assert.equal(cizi.stavy[0], '', 'Neznámá kotva při načtení nic nevybere.');
+});
+
+test('odkaz Next na tutéž stránku bez kotvy (pushState, bez hashchange) zruší výběr', () => {
+  // Next při odkazu z patičky na /veletrhy z /veletrhy#jihocesky jen zavolá
+  // pushState a komponentu nechá připojenou. Bez sledování Navigation API
+  // by stránka zůstala vyfiltrovaná, zatímco adresa už kotvu nenese.
+  const kraje = vsechnyKraje();
+  const slug = createKrajSlug('CZ031', kraje.find((k) => k.kod === 'CZ031').nazev);
+  const s = sHooky({ ted: '2026-09-22T10:00:00Z', hash: `#${slug}` });
+  const props = { akce: karty(zobrazitelneAkce(KE_DNI)), den: '2026-09-22', kraje };
+  s.render(props);
+  s.spust();
+  assert.equal(s.stavy[0], 'CZ031');
+  const navigace = s.listener('currententrychange');
+  s.okno.location.hash = '';
+  navigace();
+  assert.equal(s.stavy[0], '', 'Po pushState bez kotvy musí výběr zmizet.');
+  s.odpoj();
+  assert.equal(s.posluchace.length, 0);
 });
 
 test('kotva na kraj, kterému akce proběhly, ukáže prázdný stav s odkazem na kraj', () => {
   // Šest krajů má jedinou akci; po ní odkaz ze stránky kraje nesmí tiše
   // ukázat celý seznam s kotvou v adrese.
-  const vse = zobrazitelneAkce(KE_DNI);
   const kraje = vsechnyKraje();
   const liberecky = kraje.find((k) => k.kod === 'CZ051');
   const slug = createKrajSlug(liberecky.kod, liberecky.nazev);
-  const bezLibereckych = vse.filter((a) => a.krajKod !== 'CZ051');
+  const bezLibereckych = [karta({ id: 'a', krajKod: 'CZ020' }), karta({ id: 'b', krajKod: 'CZ031' })];
   const s = sHooky({ ted: '2026-09-22T10:00:00Z', hash: `#${slug}` });
-  const props = { akce: karty(bezLibereckych), den: '2026-09-22', kraje };
+  const props = { akce: bezLibereckych, den: '2026-09-22', kraje };
   s.render(props);
-  s.efekty[2]();
+  s.spust();
   assert.equal(s.stavy[0], 'CZ051', 'Známý kraj bez akcí se musí poznat od překlepu.');
   const html = s.render(props);
   assert.ok(html.includes('Liberecký kraj: teď o žádné akci nevíme.'));
   assert.ok(html.includes(`href="/regiony/${slug}"`), 'Odkaz zpět na stránku kraje.');
-  assert.ok(!html.includes(bezLibereckych[0].nazev), 'Ostatní kraje se nezobrazí.');
+  assert.ok(!html.includes('>Akce<'), 'Ostatní kraje se nezobrazí.');
   assert.match(html, /aria-pressed="true"[^>]*data-kraj="CZ051" data-pocet="0"/);
 });
