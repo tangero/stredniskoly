@@ -10,11 +10,17 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import {
-  zobrazitelneAkce,
-  cekajiciAkce,
-  krajeSAkcemi,
-} from '../src/lib/veletrhy.ts';
+import { zobrazitelneAkce, cekajiciAkce } from '../src/lib/veletrhy.ts';
+import { seskupPodleKraje } from '../src/lib/veletrhy-pocty.ts';
+import { vsechnyKraje } from '../src/lib/kraje.mjs';
+
+/** Kraje se zobrazitelnou akcí a počtem — pomocník jen pro testy dat a dokumentace. */
+function krajeSAkcemi(ke) {
+  const podleKraje = seskupPodleKraje(zobrazitelneAkce(ke));
+  return vsechnyKraje()
+    .filter((k) => podleKraje.has(k.kod))
+    .map((k) => ({ ...k, pocet: podleKraje.get(k.kod).length }));
+}
 
 const PRED_SEZONOU = new Date('2026-09-22');
 

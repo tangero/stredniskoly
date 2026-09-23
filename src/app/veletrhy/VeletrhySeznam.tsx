@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { cn, createKrajSlug } from '@/lib/utils';
-import { nadpisKraje } from '@/lib/kraje.mjs';
+import { cipKraje, nadpisKraje, vsechnyKraje } from '@/lib/kraje.mjs';
 // Listový modul bez dat: `@/lib/veletrhy` by do prohlížeče vzal celý JSON
 // akcí a přes registr sad i `fs`, na kterém `next build` spadne.
 import { akci, cesskyDen, seskupPodleKraje } from '@/lib/veletrhy-pocty';
@@ -29,22 +29,36 @@ export interface VeletrhKarta {
 
 interface Props {
   akce: VeletrhKarta[];
-  /**
-   * Všech čtrnáct krajů, i bez akce: kotva `#liberecky` na kraj, kterému
-   * akce už proběhly, musí ukázat „teď o žádné nevíme“ s odkazem na stránku
-   * kraje, ne tiše celý seznam. Čipy se kreslí jen krajům s akcí.
-   */
-  kraje: { kod: string; nazev: string }[];
   /** Den, se kterým stránku sestavil server. Drží první render shodný. */
   den: string;
 }
+
+/**
+ * Všech čtrnáct krajů se slugem a nadpisem, spočítané jednou. I kraje bez
+ * akce: kotva `#liberecky` na kraj, kterému akce už proběhly, musí ukázat
+ * „teď o žádné nevíme“ s odkazem na stránku kraje, ne tiše celý seznam.
+ */
+const KRAJE = vsechnyKraje().map((k) => ({
+  ...k,
+  cip: cipKraje(k.kod),
+  nadpis: nadpisKraje(k.kod),
+  slug: createKrajSlug(k.kod, k.nazev),
+}));
 
 // Totéž, co dává `Intl.DateTimeFormat('cs-CZ', { month: 'short' })`; napevno
 // proto, aby dlaždice nezávisela na ICU datech prohlížeče.
 const MESICE = ['led', 'úno', 'bře', 'dub', 'kvě', 'čvn', 'čvc', 'srp', 'zář', 'říj', 'lis', 'pro'];
 
-/** Město pro řádek i kartu; série bez rozepsaných měst nese totéž na obou místech. */
-const BEZ_MESTA = 'místo upřesní pořadatel';
+/**
+ * Místo akce pro řádek měst i první řádku karty — jedna definice, aby si
+ * obě místa neodporovala. Série bez rozepsaných měst nese výčet z `misto`
+ * (tam pořadatel uvádí města); bez něj zbývá přiznat, že místo upřesní
+ * pořadatel.
+ */
+function mistoAkce(a: VeletrhKarta): string {
+  if (a.online) return 'Online';
+  return a.mesto || a.misto || 'místo upřesní pořadatel';
+}
 
 /**
  * Dlaždice s datem: den a měsíc; u vícedenní akce rozsah dnů, aby v jejím
@@ -72,7 +86,7 @@ function dlazdice(start: string, end: string): { den: string; mesic: string } {
  * Proběhlé akce filtruje i klient, ne jen server: stránka se přestavuje
  * po hodinách, takže by akce po svém posledním dni chvíli visela dál.
  */
-export function VeletrhySeznam({ akce, kraje, den }: Props) {
+export function VeletrhySeznam({ akce, den }: Props) {
   const [kraj, setKraj] = useState('');
 
   // První render musí vyjít stejně na serveru i v prohlížeči, jinak React
@@ -99,14 +113,26 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
   // adresa ho ruší. Posun je stav: každé čtení kotvy založí nový objekt,
   // takže efekt níže proběhne i pro kraj, který už byl vybraný, a
   // proběhne až po překreslení se zúženým seznamem.
-  const [posun, setPosun] = useState<{ kod: string } | null>(null);
+  //
+  // Vlastní zápis adresy čipem (`replaceState` ve `vyber`) v Chromiu také
+  // vyvolá `currententrychange`; ten se pozná podle toho, že adresa už
+  // nese právě zapsanou kotvu, a neposouvá — klik na čip nemá hýbat
+  // stránkou.
+  const [posun, setPosun] = useState<{ slug: string } | null>(null);
+  const vlastniZapis = useRef<string | null>(null);
   useEffect(() => {
     const predvyber = () => {
       const kotva = window.location.hash.replace(/^#/, '');
-      const shoda = kraje.find((k) => createKrajSlug(k.kod, k.nazev) === kotva);
+      if (vlastniZapis.current !== null) {
+        if (kotva === vlastniZapis.current) return;
+        // První cizí změna adresy stráž ruší — zpět a znovu vpřed na tutéž
+        // kotvu už je navigace čtenáře, ne náš zápis.
+        vlastniZapis.current = null;
+      }
+      const shoda = KRAJE.find((k) => k.slug === kotva);
       if (!shoda && kotva) return;
       setKraj(shoda ? shoda.kod : '');
-      if (shoda) setPosun({ kod: shoda.kod });
+      if (shoda) setPosun({ slug: shoda.slug });
     };
     predvyber();
     // Navigation API zatím není v typech DOM; kde chybí (starší Firefox),
@@ -118,20 +144,18 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
       window.removeEventListener('hashchange', predvyber);
       navigace?.removeEventListener('currententrychange', predvyber);
     };
-  }, [kraje]);
+  }, []);
 
   useEffect(() => {
-    if (!posun) return;
-    const k = kraje.find((x) => x.kod === posun.kod);
-    if (k) document.getElementById(createKrajSlug(k.kod, k.nazev))?.scrollIntoView();
-  }, [posun, kraje]);
+    if (posun) document.getElementById(posun.slug)?.scrollIntoView();
+  }, [posun]);
 
   /** Výběr čipem se propíše do adresy, aby ho reload i sdílený odkaz zachovaly. Bez posunu. */
   function vyber(kod: string) {
     setKraj(kod);
-    const k = kraje.find((x) => x.kod === kod);
-    const cil = k ? `#${createKrajSlug(k.kod, k.nazev)}` : window.location.pathname + window.location.search;
-    window.history.replaceState(null, '', cil);
+    const k = KRAJE.find((x) => x.kod === kod);
+    vlastniZapis.current = k ? k.slug : '';
+    window.history.replaceState(null, '', k ? `#${k.slug}` : window.location.pathname + window.location.search);
   }
 
   const probihajici = useMemo(() => akce.filter((a) => a.end >= dnes), [akce, dnes]);
@@ -140,24 +164,30 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
   // seznamu — jinak by po půlnoci čip sliboval akci, která už zmizela.
   const oddily = useMemo(() => {
     const podleKraje = seskupPodleKraje(probihajici);
-    return kraje
+    return KRAJE
       .filter((k) => podleKraje.has(k.kod))
       .map((k) => {
         const seznam = podleKraje.get(k.kod)!;
         // Města v pořadí, v jakém se v kraji konají — čtenář je pak
         // potká v kartách pod řádkem ve stejném sledu.
-        const mesta = [...new Set(seznam.map((a) => (a.online ? 'Online' : a.mesto || BEZ_MESTA)))];
-        return { ...k, pocet: seznam.length, akce: seznam, mesta, slug: createKrajSlug(k.kod, k.nazev) };
+        return { ...k, pocet: seznam.length, akce: seznam, mesta: [...new Set(seznam.map(mistoAkce))] };
       });
-  }, [kraje, probihajici]);
+  }, [probihajici]);
 
   // Součet přes oddíly, ne délka seznamu: akce s krajem mimo číselník by
   // se jinak započítala, ale nikde nevykreslila.
   const celkem = oddily.reduce((s, o) => s + o.pocet, 0);
 
   const vybrane = kraj ? oddily.filter((o) => o.kod === kraj) : oddily;
-  const vybrany = kraje.find((k) => k.kod === kraj);
+  const vybrany = KRAJE.find((k) => k.kod === kraj);
   const vybranyBezAkci = vybrany !== undefined && vybrane.length === 0;
+
+  // Jeden seznam čipů: kraje s akcí a případně vybraný kraj, kterému akce
+  // po půlnoci došly — ten zůstává viditelný, dokud filtruje.
+  const cipy = [
+    ...(vybranyBezAkci ? [{ ...vybrany, pocet: 0 }] : []),
+    ...oddily,
+  ];
 
   const cip = (aktivni: boolean) =>
     cn(
@@ -188,20 +218,7 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
             Všechny kraje
             <span className={pocitadlo(kraj === '')}>{celkem}</span>
           </button>
-          {vybranyBezAkci && (
-            <button
-              type="button"
-              aria-pressed
-              onClick={() => vyber('')}
-              className={cip(true)}
-              data-kraj={kraj}
-              data-pocet={0}
-            >
-              {vybrany.nazev}
-              <span className="text-xs">(bez aktuálních akcí)</span>
-            </button>
-          )}
-          {oddily.map((o) => (
+          {cipy.map((o) => (
             <button
               key={o.kod}
               type="button"
@@ -211,8 +228,12 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
               data-kraj={o.kod}
               data-pocet={o.pocet}
             >
-              {o.nazev}
-              <span className={pocitadlo(kraj === o.kod)}>{o.pocet}</span>
+              {o.cip}
+              {o.pocet === 0 ? (
+                <span className="text-xs">(bez aktuálních akcí)</span>
+              ) : (
+                <span className={pocitadlo(kraj === o.kod)}>{o.pocet}</span>
+              )}
             </button>
           ))}
         </div>
@@ -220,14 +241,14 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
 
       {vybrany && !vybranyBezAkci && (
         <p className="text-sm text-gray-600">
-          Zobrazujeme jen {nadpisKraje(vybrany.kod)}. {zrusitFiltr}
+          Zobrazujeme jen {vybrany.nadpis}. {zrusitFiltr}
         </p>
       )}
 
       {vybrane.length === 0 && (
         <div className="rounded-lg border border-gray-200 bg-gray-50 p-6 text-gray-700">
           <p className="font-medium text-gray-900">
-            {vybrany ? `${nadpisKraje(vybrany.kod)}: teď o žádné akci nevíme.` : 'O žádné akci teď nevíme.'}
+            {vybrany ? `${vybrany.nadpis}: teď o žádné akci nevíme.` : 'O žádné akci teď nevíme.'}
           </p>
           <p className="mt-2 text-sm">
             Neznamená to, že se žádná nekoná — znamená to, že jsme ji nedohledali.{' '}
@@ -239,8 +260,8 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
           {vybrany && (
             <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm">
               <Link
-                href={`/regiony/${createKrajSlug(vybrany.kod, vybrany.nazev)}`}
-                aria-label={`Střední školy: ${nadpisKraje(vybrany.kod)}`}
+                href={`/regiony/${vybrany.slug}`}
+                aria-label={`Střední školy: ${vybrany.nadpis}`}
                 className="text-blue-600 hover:underline"
               >
                 Střední školy v kraji
@@ -255,13 +276,13 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
         <section key={o.kod} id={o.slug} className="scroll-mt-24">
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-gray-200 pb-2">
             <h2 className="text-xl font-semibold text-gray-900">
-              {nadpisKraje(o.kod)}
+              {o.nadpis}
               <span className="ml-2 text-base font-normal text-gray-500">{akci(o.pocet)}</span>
             </h2>
             {/* Čtrnáct odkazů se stejným textem: čtečka potřebuje v názvu odkazu kraj. */}
             <Link
               href={`/regiony/${o.slug}`}
-              aria-label={`Střední školy: ${nadpisKraje(o.kod)}`}
+              aria-label={`Střední školy: ${o.nadpis}`}
               className="text-sm text-blue-600 hover:underline"
             >
               Střední školy v kraji
@@ -281,8 +302,9 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
                   key={a.id}
                   className="flex gap-4 rounded-lg border border-gray-200 bg-white p-4 hover:border-blue-300 transition-colors"
                 >
+                  {/* `dateTime` jen u jednodenní akce: u rozsahu by strojově tvrdil jeden den. */}
                   <time
-                    dateTime={a.start}
+                    dateTime={a.end === a.start ? a.start : undefined}
                     className="flex h-14 w-16 shrink-0 flex-col items-center justify-center rounded-md bg-blue-50 text-blue-800"
                     title={a.datum}
                   >
@@ -291,9 +313,7 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
                   </time>
 
                   <div className="min-w-0 flex-1">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
-                      {a.online ? 'Online' : a.mesto || BEZ_MESTA}
-                    </p>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">{mistoAkce(a)}</p>
                     <h3 className="text-lg font-semibold text-gray-900">
                       <a href={a.url} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 hover:underline">
                         {a.nazev}

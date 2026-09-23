@@ -20,8 +20,7 @@
 // ============================================================================
 
 import data from '@/data/veletrhy-2027.json';
-import { krajNames } from './kraje.mjs';
-import { seskupPodleKraje, cesskyDen } from './veletrhy-pocty.ts';
+import { cesskyDen } from './veletrhy-pocty.ts';
 
 export interface Veletrh {
   id: string;
@@ -109,19 +108,4 @@ export function zobrazitelneAkce(ke: Date = new Date()): Veletrh[] {
 /** Akce, které čekají na potvrzení termínu. Na web nejdou, jsou to úkoly. */
 export function cekajiciAkce(): Veletrh[] {
   return soubor.akce.filter((a) => !a.terminPotvrzen);
-}
-
-/** Všech čtrnáct krajů abecedně, i ty bez akce — kotva v adrese musí poznat známý kraj bez akcí od překlepu. */
-export function vsechnyKraje(): { kod: string; nazev: string }[] {
-  return Object.entries(krajNames)
-    .map(([kod, nazev]) => ({ kod, nazev }))
-    .sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs'));
-}
-
-/** Kraje, ve kterých nějaká zobrazitelná akce je, s počtem. Pro testy dat a dokumentace. */
-export function krajeSAkcemi(ke: Date = new Date()): { kod: string; nazev: string; pocet: number }[] {
-  const podleKraje = seskupPodleKraje(zobrazitelneAkce(ke));
-  return vsechnyKraje()
-    .filter((k) => podleKraje.has(k.kod))
-    .map((k) => ({ ...k, pocet: podleKraje.get(k.kod)!.length }));
 }

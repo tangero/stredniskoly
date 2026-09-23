@@ -14,6 +14,22 @@ export function nadpisKraje(kod) {
   return NADPIS_VYJIMKY[kod] ?? `${krajNames[kod] ?? kod} kraj`;
 }
 
+/** Krátký název pro čip nebo štítek: „Praha“, „Vysočina“, „Středočeský“. */
+export function cipKraje(kod) {
+  return kod === 'CZ010' ? 'Praha' : (krajNames[kod] ?? kod);
+}
+
+/**
+ * Všech čtrnáct krajů abecedně podle krátkého názvu (Vysočina pod V, i když
+ * nadpis zní „Kraj Vysočina“), aby čipy a oddíly šly ve stejném pořadí.
+ * Modul je bez dat, takže ho mohou importovat i klientské komponenty.
+ */
+export function vsechnyKraje() {
+  return Object.entries(krajNames)
+    .map(([kod, nazev]) => ({ kod, nazev }))
+    .sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs'));
+}
+
 /** @type {Record<string, string>} */
 export const krajNames = {
   'CZ010': 'Hlavní město Praha',

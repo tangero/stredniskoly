@@ -2,23 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { vsechnyKraje } from '@/lib/kraje.mjs';
 
-const KRAJE: { kod: string; nazev: string }[] = [
-  { kod: 'CZ010', nazev: 'Hlavní město Praha' },
-  { kod: 'CZ020', nazev: 'Středočeský' },
-  { kod: 'CZ031', nazev: 'Jihočeský' },
-  { kod: 'CZ032', nazev: 'Plzeňský' },
-  { kod: 'CZ041', nazev: 'Karlovarský' },
-  { kod: 'CZ042', nazev: 'Ústecký' },
-  { kod: 'CZ051', nazev: 'Liberecký' },
-  { kod: 'CZ052', nazev: 'Královéhradecký' },
-  { kod: 'CZ053', nazev: 'Pardubický' },
-  { kod: 'CZ063', nazev: 'Vysočina' },
-  { kod: 'CZ064', nazev: 'Jihomoravský' },
-  { kod: 'CZ071', nazev: 'Olomoucký' },
-  { kod: 'CZ072', nazev: 'Zlínský' },
-  { kod: 'CZ080', nazev: 'Moravskoslezský' },
-];
+// Číselník krajů je jeden pro celý web; formulář ho neopisuje.
+const KRAJE = vsechnyKraje();
 
 const vstup =
   'w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500';

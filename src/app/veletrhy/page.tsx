@@ -4,7 +4,6 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import {
   zobrazitelneAkce,
-  vsechnyKraje,
   overSezonuProtiRegistru,
   OVERENO_K,
 } from '@/lib/veletrhy';
@@ -39,9 +38,6 @@ export default async function VeletrhyPage() {
   // jsou horší než prázdná stránka.
   const sezonaSedi = (await overSezonuProtiRegistru()) !== null;
   const akce = sezonaSedi ? zobrazitelneAkce() : [];
-  // Všech čtrnáct krajů, i bez akce: seznam si počty spočítá sám a kotva
-  // na kraj bez akcí musí říct „teď o žádné nevíme“, ne ukázat celý seznam.
-  const kraje = sezonaSedi ? vsechnyKraje() : [];
 
   const karty: VeletrhKarta[] = akce.map((a) => ({
     id: a.id,
@@ -85,7 +81,7 @@ export default async function VeletrhyPage() {
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-10">
         <section>
           {sezonaSedi ? (
-            <VeletrhySeznam akce={karty} kraje={kraje} den={cesskyDen()} />
+            <VeletrhySeznam akce={karty} den={cesskyDen()} />
           ) : (
             <div className="rounded-lg border border-gray-200 bg-white p-6">
               <p className="font-medium text-gray-900">Přehled akcí právě připravujeme.</p>
