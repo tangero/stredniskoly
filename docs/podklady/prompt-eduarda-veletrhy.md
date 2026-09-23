@@ -99,7 +99,7 @@ Vždy se podepiš jako Eduarda a uveď, že jsi asistentka s umělou inteligenc�
 ### Otevřené věci
 
 - **SŠP Olomouc.** Dopis šel řediteli (jureckaa@ssprool.cz) a na adresu ze sešitu, která neexistuje. Resend neříká, jestli ředitel dopis dostal. Patrick rozhodl 23. 9. 2026 nechat to být, znovu neposílej.
-- **Formulář.** Je potřeba ověřit, že redakce@prijimackynaskolu.cz je schránka, kterou někdo čte, a že na produkci existuje tabulka `veletrh_nahlaseni` (migrace `db/migrace/005-veletrhy.sql`). Jinak se nahlášení může ztratit.
+- **Formulář.** Je potřeba ověřit, že redakce@prijimackynaskolu.cz je schránka, kterou někdo čte. Tabulka `veletrh_nahlaseni` na produkci od 23. 9. 2026 existuje, takže nahlášení zůstane uložené, i když e-mail nedojde.
 - **Co pro nás partnerství znamená na webu**, zatím nic. Kdyby se pořadatel ptal, řekni to po pravdě.
 
 ### Jak o tom mluvit
