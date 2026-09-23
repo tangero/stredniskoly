@@ -247,3 +247,13 @@ test('katalog se klíčuje stejnou sadou jako stránka školy', async () => {
     'sada cermat-prihlasky už nevydává schools_data.json',
   );
 });
+
+test('nápověda ke kritériím se výslovně ptá na vážení testu', () => {
+  // Vážení jednoho testu je nejčastější kritérium, které data nevidí
+  // (předmětový sklon: 73 z 354 měřitelných oborů). Bez výslovné otázky
+  // škola s matematikou 1,5× po pravdě odpoví „testy CERMAT“ a rodič se nic
+  // nedozví — přesně případ Gymnázia Christiana Dopplera.
+  const pole = PORTAL_POLE.find((p) => p.key === 'kriteria_vlastnimi_slovy');
+  assert.ok(pole, 'pole kriteria_vlastnimi_slovy chybí');
+  assert.match(pole.napoveda, /vyšší váhou/, 'nápověda se neptá na vážení testu');
+});
