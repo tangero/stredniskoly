@@ -4,7 +4,7 @@ Verze 0.5 · 22. 9. 2026 · **Návrh a stav rozpracované implementace.**
 
 **Stav po druhém review nekomitovaných změn:** v kódu jsou data, přehled s filtrem kraje a města, metodický blok a formulář s předáním hlášení přes Resend. Počty akcí a pokrytí jsou v [aktuálním soupisu zdrojů](zdroje-dat.md#215-veletrhy-a-přehlídky-středních-škol); číselné odhady níže zachycují původní návrh. Stránka má hodinovou revalidaci a klientskou aktualizaci dne každou minutu. Kalendářový export (§ 5.8), našeptávání a časové skupiny seznamu dosud implementované nejsou.
 
-**Známá omezení fronty hlášení** (z oponentury, čtvrté kolo): čekání na databázi má strop tří sekund, ale `Promise.race` samotný dotaz nezruší — spojení zůstane obsazené, dokud neskončí. Je to vědomý kompromis: lepší nechat viset spojení než ztratit hlášení. Při opakovaném výpadku databáze to může vyčerpat pool. Odesílání pošty strop má (osm sekund, `AbortSignal`), ten požadavek skutečně přeruší. Příznak `odeslano_mailem = false` proto neznamená „e-mail neodešel“, ale „nevíme o tom, že odešel“. Databázová záloha hlášení (§ 6.3) doplněna ve třetím kole: migrace `db/migrace/005-veletrhy.sql`, záznam vzniká dřív než e-mail. Při nedostupnosti pošty i databáze produkční endpoint vrací 503; potvrzení API od Resendu není důkaz doručení do schránky, proto záznam v databázi platí nezávisle na ní. Produkční nasazení toto review neověřuje.
+**Známá omezení fronty hlášení** (z oponentury, čtvrté kolo): čekání na databázi má strop tří sekund, ale `Promise.race` samotný dotaz nezruší — spojení zůstane obsazené, dokud neskončí. Je to vědomý kompromis: lepší nechat viset spojení než ztratit hlášení. Při opakovaném výpadku databáze to může vyčerpat pool. Odesílání pošty strop má (osm sekund, `AbortSignal`), ten požadavek skutečně přeruší. Příznak `odeslano_mailem = false` proto neznamená „e-mail neodešel“, ale „nevíme o tom, že odešel“. Databázová záloha hlášení (§ 6.3) doplněna ve třetím kole: migrace `db/migrace/005-veletrhy.sql`, záznam vzniká dřív než e-mail. **Na produkci ale tabulka až do 23. 9. 2026 chyběla**: SQL vzniklo ručně a nic ho nespouštělo, takže každý zápis tiše selhal a nahlášení drželo jen e-mail (žádné do té doby nepřišlo, nic se neztratilo). Od té doby se SQL generuje z `src/lib/veletrhy-schema.ts`, spouští se `scripts/veletrhy-migrace.mjs` jako u událostí a portálu a `tests/veletrhy-schema.test.mjs` hlídá, že sloupce, do kterých formulář zapisuje, migrace zakládá. Migrace proběhla 23. 9. 2026 a zápis formuláře byl ověřen v transakci s rollbackem. Při nedostupnosti pošty i databáze produkční endpoint vrací 503; potvrzení API od Resendu není důkaz doručení do schránky, proto záznam v databázi platí nezávisle na ní. Produkční nasazení toto review neověřuje.
 
 Rodina, která vybírá střední školu, se s nabídkou seznámí ze dvou stran. Buď přijde do školy — to je den otevřených dveří, který pořádá škola sama a o kterém web píše z jejích novinek. Nebo přijde na jedno místo, kde se sejde padesát škol z kraje najednou. Tomu druhému se říká veletrh nebo přehlídka středních škol, pořádá ho kraj, hospodářská komora nebo výstaviště, a web o něm dosud nepsal vůbec.
 
@@ -198,7 +198,7 @@ Proto se ani **popis akce nezobrazuje doslova**. Slouží tomu, kdo nahlášení
 
 **Technicky.** `POST /api/veletrhy/nahlasit`, vzorem je `/api/bug-report`: honeypot, rate limit 3 požadavky za 15 minut na IP i e-mail, detekce spamu podle klíčových slov, zápis do databáze. Odpověď je neutrální a vždy stejná, jako u přihlášení k odběru — formulář nesmí prozradit, jestli akci už v seznamu máme.
 
-Doručení ke zpracování: **e-mail Edovi plus záznam v databázi.** E-mail nese všechna vyplněná pole, aby šlo ověřit rovnou z pošty; záznam v databázi je pojistka, aby nahlášení nezapadlo, když se mail ztratí. Administrace se nestaví (§ 8.4).
+Doručení ke zpracování: **e-mail Edovi plus záznam v databázi.** Adresa je v proměnné `VELETRHY_PRIJEMCE`; od 23. 9. 2026 je nastavená na eda@prijimackynaskolu.cz a ověřená zkušebním nahlášením na produkci (výchozí hodnota v kódu, redakce@, se tím nepoužívá). E-mail nese všechna vyplněná pole, aby šlo ověřit rovnou z pošty; záznam v databázi je pojistka, aby nahlášení nezapadlo, když se mail ztratí. Administrace se nestaví (§ 8.4).
 
 Zpracovat je potřeba rychle: sezóna trvá tři měsíce a akce nahlášená týden před konáním má cenu jen tehdy, když se zveřejní do dvou dnů.
 
@@ -318,7 +318,7 @@ Tohle je hlavní důvod celého záměru (§ 1.1). Znění dopisu není součás
 
 **Nabídka je výměna odkazů.** Pořadatel dá na svůj web odkaz na náš přehled, web ho vede jako online mediálního partnera akce. Ani jedna strana neplatí. **Větší plnění se zatím nenabízí** — rozhodnutí zadavatele; dohoda má být tak jednoduchá, aby ji druhá strana mohla přijmout bez porady s právníkem.
 
-Ke straně plnění patří **zmínka v pravidelném souhrnu novinek**. Ne samostatná rozesílka: odběratelé se přihlásili k termínům přijímaček, ne k pozvánkám na akce třetích stran. Odstavec „akce ve vašem kraji“ v řádném vydání je obsah, který k tomu, k čemu se přihlásili, patří. Samostatný e-mail před každou akcí by byl jiný obsah, než na jaký lidé kývli, a návrh ho nedoporučuje.
+~~Ke straně plnění patří **zmínka v pravidelném souhrnu novinek**.~~ **Neplatí pro sezónu 2026 (zjištěno 23. 9. 2026):** odběr nerozesílá pravidelný souhrn, zprávy jsou vázané na termíny přijímacího řízení a nejbližší odejde 7. 12. 2026, tedy po skončení skoro všech veletrhů. V dopise se proto neslibuje; pro příští sezónu by to chtělo zprávu načasovanou na září. Původní úvaha: Ne samostatná rozesílka: odběratelé se přihlásili k termínům přijímaček, ne k pozvánkám na akce třetích stran. Odstavec „akce ve vašem kraji“ v řádném vydání je obsah, který k tomu, k čemu se přihlásili, patří. Samostatný e-mail před každou akcí by byl jiný obsah, než na jaký lidé kývli, a návrh ho nedoporučuje.
 
 **Co chceme zpátky nad rámec odkazu**, a co stojí za to v dopise zmínit jako prosbu, ne podmínku:
 
@@ -344,7 +344,7 @@ Z hlediska odkazové autority je druhá varianta lepší — odkazy se rozloží
 
 ### 8.4 Provoz
 
-**S pořadateli jedná Eduarda přímo, e-mailem. Nahlášení z formuláře kontroluje Eda průběžně, po celý rok** — přijdou mu do schránky, ověří termín na webu pořadatele a ověřená data se zapíšou do souboru.
+**Dopis podepisuje Patrick Zandl a odchází z adresy eda@prijimackynaskolu.cz**; odpovědi vyřizuje Eduarda, což dopis přiznává, a co má řešit člověk, jde na patrick@zandl.cz (rozhodnutí 23. 9. 2026, vzor pozvánky do pilotu portálu). **Nahlášení z formuláře kontroluje Eda průběžně, po celý rok** — přijdou mu do schránky, ověří termín na webu pořadatele a ověřená data se zapíšou do souboru.
 
 Z toho plyne rozhodnutí pro implementaci: **administrace fronty se nestaví.** Stačí doručení e-mailem plus záznam v databázi, aby nic nezapadlo. Kdyby nahlášení přibývalo tolik, že se v poště ztrácejí, je čas administraci postavit — ne dřív.
 
@@ -361,11 +361,17 @@ Dvě poznámky k obesílání, které z rešerše plynou:
 
 U OHK Most a KHK Pardubického kraje se konkrétní osobu odpovědnou za akci nepodařilo doložit; obesílá se obecný kontakt.
 
-### 8.6 Pořadí obesílání
+### 8.6 Rozesláno 23. 9. 2026
+
+**22 dopisů na 51 adres, 21 pořadatelů**, skriptem `scripts/veletrhy-posli-dopisy.mjs` z eda@prijimackynaskolu.cz, podepsáno Patrickem Zandlem (text v [podkladech](podklady/dopis-poradatelum-veletrhu.md)). Každá organizace dostala jeden dopis adresovaný všem relevantním kontaktům; seznam a evidence odeslání jsou v gitignorovaném `data/veletrhy/`.
+
+Doručeno 21 z 22. Dopis SŠP Olomouc se odrazil: adresa převzatá ze zdrojového sešitu neexistuje (550 5.1.1). Adresa ředitele školy, dohledaná na stránce vedení školy, byla v témže dopise; Resend neuvádí, kterému adresátovi se dopis nedoručil. Adresa ředitele VIM se dohledala na webu VIM (článek o kampani Těžká hlava). Konkrétní adresy a jména jsou jen v gitignorovaném `data/veletrhy/obesilani.json` — repozitář je veřejný a kontakty na osoby do něj nepatří (oddíl 3 zdrojů dat).
+
+### 8.7 Pořadí obesílání
 
 Je v listu `Top8_tyden` ve zdrojovém xlsx. Nejbližší akce je **Příbram 30. 9. 2026**, tedy za osm dní. U té už má odkaz smysl jen krátce, ale vztah s MAS Podbrdsko vydrží do příští sezóny.
 
-Dopis se posílá jménem Eduardy.
+Dopis podepisuje Patrick Zandl a odchází z adresy eda@prijimackynaskolu.cz; text je v [podkladech](podklady/dopis-poradatelum-veletrhu.md). Původní záměr poslat ho jménem Eduardy by šel proti pravidlu projektu, že nabídku ven podepisuje člověk.
 
 ## 9. Co je potřeba udělat
 
@@ -422,6 +428,7 @@ Zakázané slovní spojení **„škola pořádá“** (oddíl 5 slovníku) se v
 
 | Verze | Změna |
 |---|---|
+| 0.10 | Tabulka fronty nahlášení chyběla na produkci; SQL se nově generuje ze schématu, spouští skriptem a hlídá testem. Migrace provedena 23. 9. 2026. |
 | 0.9 | Druhé kolo pátého review: doplněn test, který hlídá rozchod dat s registrem — mutace strážní podmínky dřív prošla všemi testy. Při rozchodu stránka místo věty o nedohledaných akcích říká, že přehled připravujeme. K době držení dopsán postup: mazání adres je roční úkol po skončení sezóny, ne automatická úloha. |
 | 0.8 | Páté review nad celým PR #155: stránka ochrany osobních údajů doplněna o formulář nahlášení včetně doby držení; odkaz na `/veletrhy` z patičky a z kalendáře přijímaček, dosud byla sekce dostupná jen ze sitemapy; období se ověřuje proti registru datových sad, dřív ho návrh sliboval a kód nečetl. |
 | 0.7 | Čtvrté review: odesílání pošty dostalo strop osmi sekund (`AbortSignal`, požadavek se opravdu přeruší) včetně čtení chybového těla; pozdní chyby po vypršení limitu se logují, místo aby spadly jako neošetřené odmítnutí. Testovací pool nově ověřuje, že sloupce v INSERT odpovídají migraci — mutační test ukázal, že dřív prošlo i přejmenování sloupce. Zapsána známá omezení fronty: `Promise.race` dotaz nezruší a příznak odeslání může zůstat `false`, i když e-mail odešel. |

@@ -17,8 +17,8 @@
     "novinky:migrace-kontrola": "node scripts/novinky-migrace.mjs --kontrola",
     "portal:export": "node --experimental-strip-types scripts/portal-export.mjs",
     "portal:export-kontrola": "node --experimental-strip-types scripts/portal-export.mjs --kontrola",
-    "test:js": "node --experimental-strip-types --test 'tests/!(mesto-prehled|vyhledavani-mesta|veletrhy|veletrhy-nahlasit|veletrhy-render).test.mjs'",
-    "test:mesto": "npx --yes tsx --test tests/mesto-prehled.test.mjs tests/vyhledavani-mesta.test.mjs tests/veletrhy.test.mjs tests/veletrhy-nahlasit.test.mjs tests/veletrhy-render.test.mjs",
+    "test:js": "node --experimental-strip-types --test 'tests/!(mesto-prehled|vyhledavani-mesta|veletrhy|veletrhy-nahlasit|veletrhy-render|veletrhy-dopis).test.mjs'",
+    "test:mesto": "npx --yes tsx --test tests/mesto-prehled.test.mjs tests/vyhledavani-mesta.test.mjs tests/veletrhy.test.mjs tests/veletrhy-nahlasit.test.mjs tests/veletrhy-render.test.mjs tests/veletrhy-dopis.test.mjs",
     "test:integrace": "node --experimental-strip-types --test tests/catalog-2026.integration.mjs"
   },
   "dependencies": {
