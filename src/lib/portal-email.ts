@@ -54,7 +54,7 @@ export function esc(text: string): string {
 }
 
 /** `odesilatel` je hotový řádek „Od“ včetně adresy; bez něj píše Eduarda. */
-async function odesliEmail(para: { to: string; subject: string; html: string; odesilatel?: string }): Promise<boolean> {
+export async function odesliEmail(para: { to: string | string[]; subject: string; html: string; odesilatel?: string; text?: string }): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     console.log(`📧 E-mail by šel na adresu příjemce (RESEND_API_KEY není nastaven) – předmět: ${para.subject}`);
@@ -73,7 +73,7 @@ async function odesliEmail(para: { to: string; subject: string; html: string; od
         reply_to: PODPORA_EMAIL,
         subject: para.subject,
         html: para.html,
-        text: htmlNaText(para.html),
+        text: para.text ?? htmlNaText(para.html),
       }),
     });
     if (!response.ok) {

@@ -318,7 +318,7 @@ Tohle je hlavní důvod celého záměru (§ 1.1). Znění dopisu není součás
 
 **Nabídka je výměna odkazů.** Pořadatel dá na svůj web odkaz na náš přehled, web ho vede jako online mediálního partnera akce. Ani jedna strana neplatí. **Větší plnění se zatím nenabízí** — rozhodnutí zadavatele; dohoda má být tak jednoduchá, aby ji druhá strana mohla přijmout bez porady s právníkem.
 
-Ke straně plnění patří **zmínka v pravidelném souhrnu novinek**. Ne samostatná rozesílka: odběratelé se přihlásili k termínům přijímaček, ne k pozvánkám na akce třetích stran. Odstavec „akce ve vašem kraji“ v řádném vydání je obsah, který k tomu, k čemu se přihlásili, patří. Samostatný e-mail před každou akcí by byl jiný obsah, než na jaký lidé kývli, a návrh ho nedoporučuje.
+~~Ke straně plnění patří **zmínka v pravidelném souhrnu novinek**.~~ **Neplatí pro sezónu 2026 (zjištěno 23. 9. 2026):** odběr nerozesílá pravidelný souhrn, zprávy jsou vázané na termíny přijímacího řízení a nejbližší odejde 7. 12. 2026, tedy po skončení skoro všech veletrhů. V dopise se proto neslibuje; pro příští sezónu by to chtělo zprávu načasovanou na září. Původní úvaha: Ne samostatná rozesílka: odběratelé se přihlásili k termínům přijímaček, ne k pozvánkám na akce třetích stran. Odstavec „akce ve vašem kraji“ v řádném vydání je obsah, který k tomu, k čemu se přihlásili, patří. Samostatný e-mail před každou akcí by byl jiný obsah, než na jaký lidé kývli, a návrh ho nedoporučuje.
 
 **Co chceme zpátky nad rámec odkazu**, a co stojí za to v dopise zmínit jako prosbu, ne podmínku:
 
@@ -344,7 +344,7 @@ Z hlediska odkazové autority je druhá varianta lepší — odkazy se rozloží
 
 ### 8.4 Provoz
 
-**S pořadateli jedná Eduarda přímo, e-mailem. Nahlášení z formuláře kontroluje Eda průběžně, po celý rok** — přijdou mu do schránky, ověří termín na webu pořadatele a ověřená data se zapíšou do souboru.
+**Dopis podepisuje Patrick Zandl a odchází z adresy eda@prijimackynaskolu.cz**; odpovědi vyřizuje Eduarda, což dopis přiznává, a co má řešit člověk, jde na patrick@zandl.cz (rozhodnutí 23. 9. 2026, vzor pozvánky do pilotu portálu). **Nahlášení z formuláře kontroluje Eda průběžně, po celý rok** — přijdou mu do schránky, ověří termín na webu pořadatele a ověřená data se zapíšou do souboru.
 
 Z toho plyne rozhodnutí pro implementaci: **administrace fronty se nestaví.** Stačí doručení e-mailem plus záznam v databázi, aby nic nezapadlo. Kdyby nahlášení přibývalo tolik, že se v poště ztrácejí, je čas administraci postavit — ne dřív.
 
@@ -361,11 +361,17 @@ Dvě poznámky k obesílání, které z rešerše plynou:
 
 U OHK Most a KHK Pardubického kraje se konkrétní osobu odpovědnou za akci nepodařilo doložit; obesílá se obecný kontakt.
 
-### 8.6 Pořadí obesílání
+### 8.6 Rozesláno 23. 9. 2026
+
+**22 dopisů na 51 adres, 21 pořadatelů**, skriptem `scripts/veletrhy-posli-dopisy.mjs` z eda@prijimackynaskolu.cz, podepsáno Patrickem Zandlem (text v [podkladech](podklady/dopis-poradatelum-veletrhu.md)). Každá organizace dostala jeden dopis adresovaný všem relevantním kontaktům; seznam a evidence odeslání jsou v gitignorovaném `data/veletrhy/`.
+
+Doručeno 21 z 22. Dopis SŠP Olomouc se odrazil: adresa `strepanovar@ssprool.cz` ze zdrojového sešitu neexistuje (550 5.1.1). Ověřený ředitel `jureckaa@ssprool.cz` byl v témže dopise; Resend neuvádí, kterému adresátovi se dopis nedoručil. Adresa ředitele VIM Marka Šošky se dohledala na webu VIM (`soska@vim-jmk.cz`, článek o kampani Těžká hlava), ředitele SŠP Olomouc na stránce vedení školy.
+
+### 8.7 Pořadí obesílání
 
 Je v listu `Top8_tyden` ve zdrojovém xlsx. Nejbližší akce je **Příbram 30. 9. 2026**, tedy za osm dní. U té už má odkaz smysl jen krátce, ale vztah s MAS Podbrdsko vydrží do příští sezóny.
 
-Dopis se posílá jménem Eduardy.
+Dopis podepisuje Patrick Zandl a odchází z adresy eda@prijimackynaskolu.cz; text je v [podkladech](podklady/dopis-poradatelum-veletrhu.md). Původní záměr poslat ho jménem Eduardy by šel proti pravidlu projektu, že nabídku ven podepisuje člověk.
 
 ## 9. Co je potřeba udělat
 
