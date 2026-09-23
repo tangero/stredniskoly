@@ -11,7 +11,14 @@ import ts from 'typescript';
 
 const require = createRequire(import.meta.url);
 
-export function zavadec(reactModul, nahrady = {}) {
+/**
+ * `globalni` podstrčí modulu vlastní `window`, `Date`, `setInterval` a
+ * podobně: jména se stanou parametry obalové funkce, takže zastíní skutečné
+ * globály jen uvnitř načteného modulu, ne v testu.
+ */
+export function zavadec(reactModul, nahrady = {}, globalni = {}) {
+  const jmenaGlobalu = Object.keys(globalni);
+  const hodnotyGlobalu = Object.values(globalni);
   const cache = new Map();
   return function load(relative) {
     const filename = path.resolve(relative);
@@ -55,7 +62,7 @@ export function zavadec(reactModul, nahrady = {}) {
     }
     const modul = { exports: {} };
     cache.set(filename, modul.exports);
-    new Function('require', 'module', 'exports', outputText)((specifier) => {
+    new Function('require', 'module', 'exports', ...jmenaGlobalu, outputText)((specifier) => {
       if (specifier === 'react' && reactModul) return reactModul;
       if (Object.hasOwn(nahrady, specifier)) return nahrady[specifier];
       const target = specifier.startsWith('@/')
@@ -69,7 +76,7 @@ export function zavadec(reactModul, nahrady = {}) {
         if (fs.existsSync(kandidat) && !fs.statSync(kandidat).isDirectory()) return load(kandidat);
       }
       throw new Error(`nenalezeno: ${specifier}`);
-    }, modul, modul.exports);
+    }, modul, modul.exports, ...hodnotyGlobalu);
     cache.set(filename, modul.exports);
     return modul.exports;
   };

@@ -16,13 +16,11 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { readFileSync } from 'node:fs';
-import { createRequire } from 'node:module';
-import vm from 'node:vm';
-import ts from 'typescript';
-import { VeletrhySeznam, akci, nadpisKraje } from '../src/app/veletrhy/VeletrhySeznam.tsx';
-import { zobrazitelneAkce, cesskyDen, krajeSAkcemi } from '../src/lib/veletrhy.ts';
+import { VeletrhySeznam } from '../src/app/veletrhy/VeletrhySeznam.tsx';
+import { zobrazitelneAkce, cesskyDen, krajeSAkcemi, vsechnyKraje, akci } from '../src/lib/veletrhy.ts';
+import { nadpisKraje } from '../src/lib/kraje.mjs';
 import { createKrajSlug } from '../src/lib/utils.ts';
+import { zavadec } from './_zavadec.mjs';
 
 const KE_DNI = new Date('2026-09-22');
 
@@ -36,7 +34,7 @@ function karty(akce) {
   }));
 }
 
-function vykresli(akce, kraje = krajeSAkcemi(KE_DNI)) {
+function vykresli(akce, kraje = vsechnyKraje()) {
   return renderToStaticMarkup(
     React.createElement(VeletrhySeznam, { akce: karty(akce), kraje, den: cesskyDen(KE_DNI) }),
   );
@@ -45,6 +43,13 @@ function vykresli(akce, kraje = krajeSAkcemi(KE_DNI)) {
 /** Text bez značek a atributů — na hledání vět, ne na hledání `class`. */
 function text(html) {
   return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+}
+
+/** Počty po krajích spočítané ručně z dat — nezávislý etalon, ne funkce z lib. */
+function pocty(akce) {
+  const p = new Map();
+  for (const a of akce) p.set(a.krajKod, (p.get(a.krajKod) ?? 0) + 1);
+  return p;
 }
 
 test('poznámka k termínu se zobrazí i bez příznaku nejistoty', () => {
@@ -91,21 +96,24 @@ test('každá vykreslená akce vede na stránku pořadatele a říká, kdo poř�
 test('kraje jsou oddíly s nadpisem, počtem a řádkem měst; město je první řádka karty', () => {
   const vse = zobrazitelneAkce(KE_DNI);
   const html = vykresli(vse);
-  const kraje = krajeSAkcemi(KE_DNI);
+  const etalon = pocty(vse);
+  const kraje = vsechnyKraje();
 
   for (const k of kraje) {
+    const pocet = etalon.get(k.kod) ?? 0;
+    const kotva = `id="${createKrajSlug(k.kod, k.nazev)}"`;
+    if (pocet === 0) {
+      assert.ok(!html.includes(kotva), `Kraj ${k.nazev} bez akcí nemá mít oddíl.`);
+      continue;
+    }
+    assert.ok(html.includes(kotva), `Kraj ${k.nazev} musí mít oddíl s kotvou, aby na něj šlo odkázat ze stránky kraje.`);
     assert.ok(
-      html.includes(`id="${createKrajSlug(k.kod, k.nazev)}"`),
-      `Kraj ${k.nazev} musí mít oddíl s kotvou, aby na něj šlo odkázat ze stránky kraje.`,
-    );
-    assert.ok(
-      text(html).includes(`${nadpisKraje(k.nazev)} ${akci(k.pocet)}`),
+      text(html).includes(`${nadpisKraje(k.nazev)} ${akci(pocet)}`),
       `Nadpis oddílu ${k.nazev} musí nést počet akcí.`,
     );
   }
-  // Pravidlo pro slovo „kraj“ je sdílené se stránkou kraje: přívlastek za
-  // jménem, Vysočina před ním, Praha bez něj. Review PR #162 našlo
-  // „Vysočina kraj“.
+  // Pravidlo pro slovo „kraj“: přívlastek za jménem, Vysočina před ním,
+  // Praha bez něj. Review PR #162 našlo „Vysočina kraj“.
   assert.ok(text(html).includes('Středočeský kraj '));
   assert.ok(text(html).includes('Kraj Vysočina '), 'Vysočina má slovo kraj před jménem.');
   assert.ok(!text(html).includes('Vysočina kraj'));
@@ -139,7 +147,7 @@ test('kraje jsou oddíly s nadpisem, počtem a řádkem měst; město je první 
   assert.ok(poziceMesta > -1 && poziceMesta < poziceNazvu, 'Město musí být na kartě dřív než název akce.');
 });
 
-test('dlaždice u vícedenní akce nese rozsah dnů, ne jen první den', () => {
+test('dlaždice u vícedenní akce nese rozsah dnů a má pevnou šířku', () => {
   // V průběhu třídenní akce by první den v tučné dlaždici četl jako „už bylo“.
   const vse = zobrazitelneAkce(KE_DNI);
   const vicedenni = vse.find((a) => a.end && a.end !== a.start && !a.terminPribligny && a.start.slice(0, 7) === a.end.slice(0, 7));
@@ -152,21 +160,34 @@ test('dlaždice u vícedenní akce nese rozsah dnů, ne jen první den', () => {
   const jednodenni = vse.find((a) => (!a.end || a.end === a.start) && !a.terminPribligny);
   const d = Number(jednodenni.start.slice(8));
   assert.ok(vykresli([jednodenni]).includes(`leading-none">${d}</span>`));
+
+  // Šířka je pevná, aby text karet v oddílu začínal na stejné svislici;
+  // delší rozsah („~21–30“) dostane menší písmo místo širší dlaždice.
+  assert.ok(!html.includes('min-w-14'), 'Dlaždice nesmí růst s délkou textu.');
+  assert.match(html, /<time[^>]*class="[^"]*\bw-16\b/);
+  const pribl = vse.find((a) => a.terminPribligny && a.end !== a.start);
+  assert.ok(pribl, 'Test počítá s přibližnou vícedenní akcí.');
+  assert.match(vykresli([pribl]), /class="text-base font-bold leading-none">~\d+–\d+</);
 });
 
-test('čipy krajů nesou počty a filtr měst neexistuje', () => {
-  const html = vykresli(zobrazitelneAkce(KE_DNI));
-  for (const k of krajeSAkcemi(KE_DNI)) {
-    assert.ok(html.includes(`data-kraj="${k.kod}" data-pocet="${k.pocet}"`), `Čip kraje ${k.nazev} s počtem.`);
+test('čipy krajů nesou počty spočítané z dat a filtr měst neexistuje', () => {
+  const vse = zobrazitelneAkce(KE_DNI);
+  const html = vykresli(vse);
+  const etalon = pocty(vse);
+  for (const [kod, pocet] of etalon) {
+    assert.ok(html.includes(`data-kraj="${kod}" data-pocet="${pocet}"`), `Čip kraje ${kod} s počtem ${pocet}.`);
   }
+  assert.equal((html.match(/data-kraj="/g) ?? []).length, etalon.size, 'Čipy jen pro kraje s akcí.');
+  assert.ok(html.includes(`>Všechny kraje<span class="rounded-full px-1.5 text-xs font-semibold bg-white/20">${vse.length}</span>`));
   assert.ok(!html.includes('<select'), 'Rozbalovací seznamy zmizely; pokrytí má být vidět bez kliknutí.');
   assert.ok(!html.includes('Všechna města'));
 });
 
-test('výhrada neúplnosti stojí u každého kraje, ne jen jednou dole', () => {
-  const html = vykresli(zobrazitelneAkce(KE_DNI));
-  const pocet = html.split('Chybí vám nějaká? Nahlaste nám ji.').length - 1;
-  assert.equal(pocet, krajeSAkcemi(KE_DNI).length, 'Každý oddíl kraje má vlastní výzvu k nahlášení.');
+test('výhrada neúplnosti stojí u každého kraje s větou, že nahlášení není zveřejnění', () => {
+  const vse = zobrazitelneAkce(KE_DNI);
+  const html = vykresli(vse);
+  const veta = 'Nahlaste nám ji</a> — před zveřejněním ji ověříme u pořadatele.';
+  assert.equal(html.split(veta).length - 1, pocty(vse).size, 'Každý oddíl kraje má vlastní výzvu k nahlášení i s větou ze slovníku pojmů.');
 });
 
 test('skloňování: 1 akce, 3 akce, 5 akcí; Praha a Vysočina bez přívlastku', () => {
@@ -180,30 +201,32 @@ test('skloňování: 1 akce, 3 akce, 5 akcí; Praha a Vysočina bez přívlastku
 
 test('počet v kraji se sníží i tehdy, když v něm další akce zůstávají', () => {
   const den = '2026-10-01';
-  const kraje = krajeSAkcemi(KE_DNI);
+  const vse = zobrazitelneAkce(KE_DNI);
   const html = renderToStaticMarkup(React.createElement(VeletrhySeznam, {
-    akce: karty(zobrazitelneAkce(KE_DNI)), kraje, den,
+    akce: karty(vse), kraje: vsechnyKraje(), den,
   }));
-  const kraj = kraje.find((k) => k.kod === 'CZ020');
-  assert.ok(html.includes(`data-kraj="CZ020" data-pocet="${kraj.pocet - 1}"`));
-  assert.ok(!html.includes(`data-kraj="CZ020" data-pocet="${kraj.pocet}"`));
+  const pred = pocty(vse).get('CZ020');
+  assert.ok(html.includes(`data-kraj="CZ020" data-pocet="${pred - 1}"`));
+  assert.ok(!html.includes(`data-kraj="CZ020" data-pocet="${pred}"`));
 });
 
 /**
- * Simuluje životní cyklus hooků nad skutečným zdrojem komponenty.
- * SSR níže ověřuje výsledné HTML; nejde o prohlížečový test hydratace.
- * Efekty se sbírají všechny v pořadí zápisu: první je hodiny, druhý kotva.
+ * Životní cyklus hooků nad skutečným zdrojem komponenty přes sdílený
+ * zavaděč (ES2022, `@/` i `.mjs`). Globály `window`, `document`, `Date`
+ * a časovače jsou podstrčené, takže SSR ověřuje HTML po každém efektu.
+ * Efekty se sbírají v pořadí zápisu: hodiny, kotva, posun na oddíl.
  */
 function sHooky({ ted: pocatek, hash = '' }) {
-  const cesta = new URL('../src/app/veletrhy/VeletrhySeznam.tsx', import.meta.url);
-  const require = createRequire(cesta);
   const stavy = [];
+  const refy = [];
   let index = 0;
+  let refIndex = 0;
   const efekty = [];
   let tik;
   let uklizeno = false;
   const cas = { ted: pocatek };
   const posluchace = [];
+  const posunuto = [];
   const okno = {
     location: { hash, pathname: '/veletrhy', search: '' },
     addEventListener: (typ, fn) => posluchace.push({ typ, fn }),
@@ -213,42 +236,44 @@ function sHooky({ ted: pocatek, hash = '' }) {
     },
     history: { replaceState: (_s, _t, url) => { okno.location.hash = url.startsWith('#') ? url : ''; } },
   };
-  const exports = {};
-  vm.runInNewContext(ts.transpileModule(readFileSync(cesta, 'utf8'), {
-    compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX, esModuleInterop: true },
-  }).outputText, {
-    exports,
-    require: (id) => id === 'react' ? {
-      useState: (pocatek) => {
-        const i = index++;
-        if (!(i in stavy)) stavy[i] = pocatek;
-        return [stavy[i], (hodnota) => { stavy[i] = typeof hodnota === 'function' ? hodnota(stavy[i]) : hodnota; }];
-      },
-      useMemo: (vypocet) => vypocet(),
-      useEffect: (fn) => { efekty.push(fn); },
-    } : require({
-      '@/lib/utils': '../../lib/utils.ts',
-      '@/lib/cesky-tvar': '../../lib/cesky-tvar.ts',
-      '@/lib/kraje.mjs': '../../lib/kraje.mjs',
-    }[id] ?? id),
-    Date: class extends Date { constructor() { super(cas.ted); } },
-    Intl,
+  const react = {
+    ...React,
+    useState: (pocatek) => {
+      const i = index++;
+      if (!(i in stavy)) stavy[i] = pocatek;
+      return [stavy[i], (hodnota) => { stavy[i] = typeof hodnota === 'function' ? hodnota(stavy[i]) : hodnota; }];
+    },
+    useRef: (pocatek) => {
+      const i = refIndex++;
+      if (!(i in refy)) refy[i] = { current: pocatek };
+      return refy[i];
+    },
+    useMemo: (vypocet) => vypocet(),
+    useEffect: (fn) => { efekty.push(fn); },
+  };
+  const { VeletrhySeznam: Komponenta } = zavadec(react, {}, {
     window: okno,
+    document: { getElementById: (id) => ({ scrollIntoView: () => posunuto.push(id) }) },
+    Date: class extends Date { constructor() { super(cas.ted); } },
     setInterval: (fn, ms) => { assert.equal(ms, 60_000); tik = fn; return 1; },
     clearInterval: (id) => { assert.equal(id, 1); uklizeno = true; },
-  });
-  const render = (props) => { index = 0; efekty.length = 0; return renderToStaticMarkup(exports.VeletrhySeznam(props)); };
-  return { render, stavy, efekty, posluchace, okno, tik: () => tik(), cas, uklizeno: () => uklizeno };
+  })('src/app/veletrhy/VeletrhySeznam.tsx');
+  const render = (props) => {
+    index = 0;
+    refIndex = 0;
+    efekty.length = 0;
+    return renderToStaticMarkup(React.createElement(Komponenta, props));
+  };
+  return { render, stavy, efekty, posluchace, posunuto, okno, tik: () => tik(), cas, uklizeno: () => uklizeno };
 }
 
 test('starý seznam po půlnoci aktualizuje karty i čipy a zachová viditelný aktivní filtr', () => {
   const h = sHooky({ ted: '2026-09-30T21:59:00Z' });
   const akce = karty(zobrazitelneAkce(KE_DNI).slice(0, 2));
   assert.notEqual(akce[0].krajKod, akce[1].krajKod, 'Test potřebuje dvě akce z různých krajů.');
-  const kraje = krajeSAkcemi(KE_DNI).filter((k) => akce.some((a) => a.krajKod === k.kod));
-  const props = { akce, den: '2026-09-30', kraje };
+  const props = { akce, den: '2026-09-30', kraje: vsechnyKraje() };
   const prvni = h.render(props);
-  assert.equal(h.efekty.length, 2, 'Komponenta má dva efekty: hodiny a kotvu; třetí by tenhle test tiše minul.');
+  assert.equal(h.efekty.length, 3, 'Komponenta má tři efekty: hodiny, kotvu a posun; další by tenhle test tiše minul.');
   assert.ok(prvni.includes(akce[0].nazev));
   h.cas.ted = '2026-09-30T22:01:00Z';
   assert.equal(h.render(props), prvni, 'Před efektem musí i novější klientský čas zachovat serverový den.');
@@ -270,7 +295,7 @@ test('starý seznam po půlnoci aktualizuje karty i čipy a zachová viditelný 
   // Prázdný stav se hlásí jednou, ne dvakrát, a čtenář má kam dál.
   assert.equal(sVyberem.split('Neznamená to, že se žádná nekoná').length - 1, 1);
   assert.ok(sVyberem.includes('Střední školy v kraji'), 'I bez akcí vede odkaz na stránku kraje.');
-  assert.ok(!sVyberem.includes('V kraji Hlavní město'), 'Název kraje se skloňuje přes nadpisKraje, ne surově.');
+  assert.ok(sVyberem.includes(`${nadpisKraje(vsechnyKraje().find((k) => k.kod === akce[0].krajKod).nazev)}: teď o žádné akci nevíme.`));
   uklid();
   assert.ok(h.uklizeno());
 });
@@ -278,7 +303,7 @@ test('starý seznam po půlnoci aktualizuje karty i čipy a zachová viditelný 
 test('výběr kraje ukáže jen jeho oddíl a čip je stisknutý', () => {
   const h = sHooky({ ted: '2026-09-22T10:00:00Z' });
   const vse = zobrazitelneAkce(KE_DNI);
-  const props = { akce: karty(vse), den: '2026-09-22', kraje: krajeSAkcemi(KE_DNI) };
+  const props = { akce: karty(vse), den: '2026-09-22', kraje: vsechnyKraje() };
   h.stavy[0] = 'CZ031';
   const html = h.render(props);
   assert.match(html, /aria-pressed="true"[^>]*data-kraj="CZ031"/);
@@ -288,29 +313,66 @@ test('výběr kraje ukáže jen jeho oddíl a čip je stisknutý', () => {
   for (const a of jihoceske) assert.ok(html.includes(a.nazev), `Jihočeská akce ${a.id} chybí.`);
   for (const a of ostatni) assert.ok(!html.includes(`>${a.nazev}<`), `Akce jiného kraje ${a.id} se nemá zobrazit.`);
   assert.ok(html.includes('Zobrazen jen Jihočeský kraj.'));
+  // Harness překládá do ES2022: řádek měst (spread nad Set) musí být i tady.
+  const mesta = [...new Set(jihoceske.map((a) => a.mesto))];
+  assert.ok(html.includes(`text-gray-600">${mesta.join(' · ')}</p>`), 'Řádek měst chybí — zavaděč by překládal jiný program než produkce.');
 });
 
-test('kotva v adrese předvybere kraj, neznámá nic; změna kotvy se sleduje a po odpojení ne', () => {
+test('kotva předvybere kraj a posune na oddíl až po překreslení; cizí kotva výběr nechá být', () => {
   const vse = zobrazitelneAkce(KE_DNI);
-  const kraje = krajeSAkcemi(KE_DNI);
+  const kraje = vsechnyKraje();
   const props = { akce: karty(vse), den: '2026-09-22', kraje };
-  const jihocesky = kraje.find((k) => k.kod === 'CZ031');
+  const slug = createKrajSlug('CZ031', kraje.find((k) => k.kod === 'CZ031').nazev);
 
-  const s = sHooky({ ted: '2026-09-22T10:00:00Z', hash: `#${createKrajSlug(jihocesky.kod, jihocesky.nazev)}` });
+  const s = sHooky({ ted: '2026-09-22T10:00:00Z', hash: `#${slug}` });
   s.render(props);
   const uklid = s.efekty[1]();
   assert.equal(s.stavy[0], 'CZ031', 'Odkaz ze stránky kraje má otevřít přehled s tím krajem vybraným.');
+  assert.deepEqual(s.posunuto, [], 'Posun nesmí proběhnout před překreslením — měřil by plný seznam.');
+  s.render(props);
+  s.efekty[2]();
+  assert.deepEqual(s.posunuto, [slug], 'Po překreslení se posune na oddíl kraje.');
+  s.render(props);
+  s.efekty[2]();
+  assert.deepEqual(s.posunuto, [slug], 'Posun je jednorázový, ne při každém překreslení.');
   assert.match(s.render(props), /aria-pressed="true"[^>]*data-kraj="CZ031"/);
+
   // Zpět/vpřed v prohlížeči mění kotvu bez nového načtení; výběr musí jít s ní.
   assert.equal(s.posluchace.filter((p) => p.typ === 'hashchange').length, 1, 'Změna kotvy se má sledovat.');
-  s.okno.location.hash = '#neexistuje';
-  s.posluchace.find((p) => p.typ === 'hashchange').fn();
-  assert.equal(s.stavy[0], '', 'Neznámá kotva nesmí nic vybrat.');
+  const zmena = s.posluchace.find((p) => p.typ === 'hashchange').fn;
+  // Kotva na nadpis (#kraj-CZ031) nebo jiná cizí kotva výběr neruší.
+  s.okno.location.hash = '#kraj-CZ031';
+  zmena();
+  assert.equal(s.stavy[0], 'CZ031', 'Cizí kotva nesmí smazat zvolený filtr.');
+  // Prázdná adresa výběr ruší.
+  s.okno.location.hash = '';
+  zmena();
+  assert.equal(s.stavy[0], '');
   uklid();
   assert.equal(s.posluchace.length, 0, 'Po odpojení nesmí posluchač zůstat viset.');
 
   const cizi = sHooky({ ted: '2026-09-22T10:00:00Z', hash: '#neexistuje' });
   cizi.render(props);
   cizi.efekty[1]();
-  assert.equal(cizi.stavy[0], '', 'Neznámá kotva nesmí nic vybrat.');
+  assert.equal(cizi.stavy[0], '', 'Neznámá kotva při načtení nic nevybere.');
+});
+
+test('kotva na kraj, kterému akce proběhly, ukáže prázdný stav s odkazem na kraj', () => {
+  // Šest krajů má jedinou akci; po ní odkaz ze stránky kraje nesmí tiše
+  // ukázat celý seznam s kotvou v adrese.
+  const vse = zobrazitelneAkce(KE_DNI);
+  const kraje = vsechnyKraje();
+  const liberecky = kraje.find((k) => k.kod === 'CZ051');
+  const slug = createKrajSlug(liberecky.kod, liberecky.nazev);
+  const bezLibereckych = vse.filter((a) => a.krajKod !== 'CZ051');
+  const s = sHooky({ ted: '2026-09-22T10:00:00Z', hash: `#${slug}` });
+  const props = { akce: karty(bezLibereckych), den: '2026-09-22', kraje };
+  s.render(props);
+  s.efekty[1]();
+  assert.equal(s.stavy[0], 'CZ051', 'Známý kraj bez akcí se musí poznat od překlepu.');
+  const html = s.render(props);
+  assert.ok(html.includes('Liberecký kraj: teď o žádné akci nevíme.'));
+  assert.ok(html.includes(`href="/regiony/${slug}"`), 'Odkaz zpět na stránku kraje.');
+  assert.ok(!html.includes(bezLibereckych[0].nazev), 'Ostatní kraje se nezobrazí.');
+  assert.match(html, /aria-pressed="true"[^>]*data-kraj="CZ051" data-pocet="0"/);
 });

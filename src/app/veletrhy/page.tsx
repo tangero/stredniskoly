@@ -4,7 +4,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import {
   zobrazitelneAkce,
-  krajeSAkcemi,
+  vsechnyKraje,
   cesskyDen,
   overSezonuProtiRegistru,
   OVERENO_K,
@@ -39,7 +39,9 @@ export default async function VeletrhyPage() {
   // jsou horší než prázdná stránka.
   const sezonaSedi = (await overSezonuProtiRegistru()) !== null;
   const akce = sezonaSedi ? zobrazitelneAkce() : [];
-  const kraje = sezonaSedi ? krajeSAkcemi() : [];
+  // Všech čtrnáct krajů, i bez akce: seznam si počty spočítá sám a kotva
+  // na kraj bez akcí musí říct „teď o žádné nevíme“, ne ukázat celý seznam.
+  const kraje = sezonaSedi ? vsechnyKraje() : [];
 
   const karty: VeletrhKarta[] = akce.map((a) => ({
     id: a.id,

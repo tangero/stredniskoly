@@ -1,14 +1,13 @@
-/** Kraje, jejichž název nenese slovo „kraj“ jako přívlastek za jménem. */
-const BEZ_PRIVLASTKU_KRAJ = new Set(['Hlavní město Praha', 'Vysočina']);
-
 /**
  * Název kraje pro nadpis: „Středočeský kraj“, „Kraj Vysočina“, „Hlavní
- * město Praha“. Jediné místo pro tohle pravidlo; stránka kraje i přehled
- * veletrhů ho berou odsud.
+ * město Praha“. Používá přehled veletrhů. Stránka kraje a hlavička mají
+ * zatím vlastní starší podobu („Vysočina“ bez slova kraj); sjednocení je
+ * samostatná změna, protože mění titulky indexovaných stránek.
  */
 export function nadpisKraje(nazev) {
   if (nazev === 'Vysočina') return 'Kraj Vysočina';
-  return BEZ_PRIVLASTKU_KRAJ.has(nazev) ? nazev : `${nazev} kraj`;
+  if (nazev === 'Hlavní město Praha') return nazev;
+  return `${nazev} kraj`;
 }
 
 /** @type {Record<string, string>} */

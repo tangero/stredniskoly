@@ -21,6 +21,7 @@
 
 import data from '@/data/veletrhy-2027.json';
 import { krajNames } from './kraje.mjs';
+import { tvar } from './cesky-tvar.ts';
 
 export interface Veletrh {
   id: string;
@@ -124,19 +125,37 @@ export function cekajiciAkce(): Veletrh[] {
   return soubor.akce.filter((a) => !a.terminPotvrzen);
 }
 
-/** Kraje, ve kterých nějaká zobrazitelná akce je. Pro filtr. */
-export function krajeSAkcemi(ke: Date = new Date()): { kod: string; nazev: string; pocet: number }[] {
-  const pocty = new Map<string, number>();
-  for (const a of zobrazitelneAkce(ke)) {
-    pocty.set(a.krajKod, (pocty.get(a.krajKod) ?? 0) + 1);
-  }
-  return [...pocty.entries()]
-    .map(([kod, pocet]) => ({ kod, nazev: (krajNames as Record<string, string>)[kod] ?? kod, pocet }))
+/** Všech čtrnáct krajů abecedně, i ty bez akce — kotva v adrese musí poznat známý kraj bez akcí od překlepu. */
+export function vsechnyKraje(): { kod: string; nazev: string }[] {
+  return Object.entries(krajNames)
+    .map(([kod, nazev]) => ({ kod, nazev }))
     .sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs'));
 }
 
+/**
+ * Ukazatel *počet akcí v kraji* (slovník ukazatelů, oddíl 6a): akce
+ * seskupené podle `krajKod`, v pořadí, v jakém přišly. Jediná definice —
+ * server, klient i testy počítají tudy, aby se čísla nerozešla.
+ */
+export function seskupPodleKraje<T extends { krajKod: string }>(akce: T[]): Map<string, T[]> {
+  const podleKraje = new Map<string, T[]>();
+  for (const a of akce) {
+    const seznam = podleKraje.get(a.krajKod) ?? [];
+    seznam.push(a);
+    podleKraje.set(a.krajKod, seznam);
+  }
+  return podleKraje;
+}
 
-/** Název kraje ze číselníku; kód je jediný tvar, který se neplete. */
-export function nazevKraje(kod: string): string {
-  return (krajNames as Record<string, string>)[kod] ?? kod;
+/** „1 akce“, „3 akce“, „5 akcí“ — tvar ukazatele *počet akcí v kraji* v textu. */
+export function akci(n: number): string {
+  return `${n} ${tvar(n, 'akce', 'akce', 'akcí')}`;
+}
+
+/** Kraje, ve kterých nějaká zobrazitelná akce je, s počtem. */
+export function krajeSAkcemi(ke: Date = new Date()): { kod: string; nazev: string; pocet: number }[] {
+  const podleKraje = seskupPodleKraje(zobrazitelneAkce(ke));
+  return vsechnyKraje()
+    .filter((k) => podleKraje.has(k.kod))
+    .map((k) => ({ ...k, pocet: podleKraje.get(k.kod)!.length }));
 }

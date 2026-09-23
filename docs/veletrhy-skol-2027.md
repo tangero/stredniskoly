@@ -145,15 +145,15 @@ Návrh **novou třídu nezavádí**. Důvod: klasifikace čte weby škol a škol
 
 **Osou stránky je kraj, ne datum** (od 23. 9. 2026, verze 0.9). Rodina se ptá „co je blízko nás“ a až potom „kdy“. Data to podpírají: 41 akcí ve 14 krajích, v kraji 1–7 akcí, **39 ze 40 měst má jedinou akci**. Chronologický seznam se čtyřiceti kartami, kde je město až na druhém řádku, nutil číst všech čtyřicet; rozbalovací seznam měst se 40 položkami vedl vždy na jednu kartu.
 
-**Čipy krajů s počty nahoře** („Jihočeský 6“, „Praha 1“) místo rozbalovacích seznamů: pokrytí je vidět bez kliknutí. Čip je zároveň filtr; kotva `#jihocesky` v adrese kraj předvybere, takže na oddíl jde odkázat ze stránky kraje. Filtr měst neexistuje.
+**Čipy krajů s počty nahoře** („Jihočeský 6“, „Praha 1“) místo rozbalovacích seznamů: pokrytí je vidět bez kliknutí. Čip je zároveň filtr a výběr se propisuje do adresy (`#jihocesky`), takže ho reload i sdílený odkaz zachovají; kotva při načtení kraj předvybere a po překreslení posune na oddíl. Kotva na kraj, kterému akce už proběhly, ukáže „teď o žádné akci nevíme“ s odkazem na stránku kraje — proto seznam dostává všech čtrnáct krajů, ne jen ty s akcí. Odkaz sem ze stránky kraje zatím nikde nevede; kotva je připravená, odkaz je samostatná změna stránky kraje. Filtr měst neexistuje.
 
-**Oddíl na kraj** s nadpisem a počtem („Jihočeský kraj · 6 akcí“), pod ním řádek měst v pořadí konání (jen kde je víc než jedna akce), pak karty. Kraje abecedně — pokrytí vyprávějí čísla v čipech, ne pořadí; Praha by při řazení podle počtu skončila poslední.
+**Oddíl na kraj** s nadpisem a počtem („Jihočeský kraj“ a vedle šedě „6 akcí“), pod ním řádek měst v pořadí konání (jen kde je víc než jedna akce), pak karty. Kraje abecedně — pokrytí vyprávějí čísla v čipech, ne pořadí; Praha by při řazení podle počtu skončila poslední.
 
 **Karta:** datum jako dlaždice vlevo (den a měsíc, `~` u přibližného termínu), **město verzálkami jako první řádka**, název akce, plné datum s časem a místem konání, výstrahy k termínu, „Pořádá *organizace*“ a odkaz na stránku akce. Dovětek „ne tento web“ z každé karty zmizel rozhodnutím zadavatele 23. 9. 2026 — jméno pořadatele říká totéž.
 
 **Řazení uvnitř kraje podle data vzestupně.** Akce, která už proběhla, ze seznamu mizí — stejné pravidlo, jaké platí pro novinky škol: platnost se počítá při čtení stránky, ne při sestavení dat. Kraj, kterému po půlnoci nezbyla žádná akce, z čipů zmizí; už zvolený zůstane viditelný jako „(bez aktuálních akcí)“.
 
-**Výhrada neúplnosti u každého kraje** („Víme jen o těchto šesti. Chybí vám nějaká? Nahlaste nám ji“), ne jen jednou dole: rodič, který právě zjistil, že jeho město chybí, je ten, kdo akci nahlásí.
+**Výhrada neúplnosti u každého kraje** („Víme jen o těchto 6 akcích. Chybí vám nějaká? Nahlaste nám ji — před zveřejněním ji ověříme u pořadatele.“; věta ze slovníku pojmů u pojmu *nahlásit akci*, protože každý oddíl je blok), ne jen jednou dole: rodič, který právě zjistil, že jeho město chybí, je ten, kdo akci nahlásí.
 
 Zamítnuto: přepínač „podle kraje / podle data“ (dvě zobrazení, dvojí testování, rozhodnutí přesunuté na čtenáře) a mapa jako hlavní ovládání (na mobilu 14 krajů neklikatelně malých; jako doplněk nad čipy možná později).
 
@@ -389,7 +389,7 @@ Pořadí odpovídá tomu, jak na sebe věci navazují.
 6. **Postavit formulář `/veletrhy/nahlasit` a `POST /api/veletrhy/nahlasit`**, doručení e-mailem plus záznam v databázi (§ 5.5, § 6.3, § 8.4).
 7. Kalendářový export `.ics` podle vzoru harmonogramu (§ 5.8).
 8. Přidat obě cesty do sitemapy a regenerovat `public/sitemap.xml`.
-9. Test: akce s nepotvrzeným termínem se nezobrazí; proběhlá akce se nezobrazí; akce v obci mimo seznam `MESTA` nevypadne; **nahlášená akce se sama nezveřejní**.
+9. Test: akce s nepotvrzeným termínem se nezobrazí; proběhlá akce se nezobrazí; **nahlášená akce se sama nezveřejní**. (Test na obec mimo seznam `MESTA` odešel s filtrem měst ve verzi 1.0; `mesto` zůstává prostý název bez vazby na `MESTA`.)
 
 Body 5 a 6 jdou ruku v ruce. Stránka bez formuláře je jednorázový seznam, který za rok zastará; formulář bez stránky nemá kam odkázat.
 
