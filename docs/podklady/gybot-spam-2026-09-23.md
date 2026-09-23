@@ -27,6 +27,9 @@ automat nepřepíše. V `/admin/skolni-novinky?redizo=600004724` je u každého
 článek“ vyžadují důvod. Čtení veřejného API vyřadí skryté položky před
 omezením počtu výsledků, aby spam nevytlačil legitimní starší zprávy.
 
-Po nasazení opravy lze přepínač `skola:600004724` vrátit na `true` a znovu
-ukázat sedm legitimních uložených zpráv. Samotný feed zůstává vypnutý, dokud
+Po nasazení webové opravy byl přepínač `skola:600004724` vrácen na `true`.
+Veřejné API vrací dvě z dřívějších školních zpráv, které splňují běžná
+publikační pravidla, a žádný ze skrytých článků. Dalších pět starších
+nezávadných záznamů zůstává uložených. Samotný feed zůstává vypnutý, dokud
 škola nepotvrdí odstranění napadení a dokud nebude jeho obsah znovu ověřen.
+U školy `600010368` veřejné API stále vrací prázdné seznamy.
