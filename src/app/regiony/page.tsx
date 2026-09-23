@@ -38,6 +38,28 @@ function skol(n: number): string {
   return n === 1 ? 'škola' : n >= 2 && n <= 4 ? 'školy' : 'škol';
 }
 
+/** Pruh má stejně úplný textový popis; barva nenese samostatnou informaci. */
+export function RozlozeniObtiznostiKraje({ rozlozeni }: { rozlozeni: Map<ZarazeniObtiznosti, number> }) {
+  const sUdajem = [...rozlozeni.values()].reduce((a, b) => a + b, 0);
+  return (
+    <>
+      {sUdajem > 0 && (
+        <div className="flex h-3 overflow-hidden rounded" aria-hidden="true">
+          {PORADI_OBTIZNOSTI.map(z => {
+            const n = rozlozeni.get(z) ?? 0;
+            return n > 0 ? (
+              <span key={z} className={VYPLN_PRUHU[z]} style={{ width: `${(n / sUdajem) * 100}%` }} />
+            ) : null;
+          })}
+        </div>
+      )}
+      <p className="mt-2 text-xs text-slate-500">
+        {PORADI_OBTIZNOSTI.map(z => `${ZARAZENI_POPISEK[z]}: ${cislo(rozlozeni.get(z) ?? 0)}`).join(' · ')}
+      </p>
+    </>
+  );
+}
+
 /**
  * Rozcestník krajů: docs/navrh-stranky-kraje-2027.md, oddíl 4.6.
  *
@@ -95,7 +117,6 @@ export default async function RegionsPage() {
             </ul>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {krajStats.map((kraj) => {
-                const sUdajem = [...kraj.rozlozeni.values()].reduce((a, b) => a + b, 0);
                 return (
                   <Link
                     key={kraj.kod}
@@ -106,20 +127,7 @@ export default async function RegionsPage() {
                     <p className="mb-3 text-sm text-slate-600">
                       {cislo(kraj.skol)} {skol(kraj.skol)} · {cislo(kraj.nabidek)} {tvar(kraj.nabidek, 'nabídka', 'nabídky', 'nabídek')}
                     </p>
-                    {sUdajem > 0 && (
-                      <div className="flex h-3 overflow-hidden rounded" role="img" aria-label="Rozložení obtížnosti přijetí">
-                        {PORADI_OBTIZNOSTI.map(z => {
-                          const n = kraj.rozlozeni.get(z) ?? 0;
-                          return n > 0 ? (
-                            <span key={z} className={VYPLN_PRUHU[z]} style={{ width: `${(n / sUdajem) * 100}%` }}
-                              title={`${ZARAZENI_POPISEK[z]}: ${n}`} />
-                          ) : null;
-                        })}
-                      </div>
-                    )}
-                    <p className="mt-2 text-xs text-slate-500">
-                      velmi těžké {cislo(kraj.rozlozeni.get('velmi_tezke') ?? 0)} · místo pro všechny {cislo(kraj.rozlozeni.get('kapacita_nerozhodovala') ?? 0)}
-                    </p>
+                    <RozlozeniObtiznostiKraje rozlozeni={kraj.rozlozeni} />
                   </Link>
                 );
               })}

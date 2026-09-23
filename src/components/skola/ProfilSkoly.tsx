@@ -374,8 +374,8 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                   {celkem?.passed !== undefined && celkem.registered ? (
                     <>Maturitu v roce {celkem.rok} udělalo <b className="text-[#16325c]">{cislo(celkem.passed)} {zOd(celkem.registered)} {cislo(celkem.registered)}</b> přihlášených maturantů.{' '}</>
                   ) : null}
-                  {jakCasto === 'v žádném ze sledovaných let' ? (
-                    <>V češtině nebyli maturanti nad středem podobných škol <b className="text-[#16325c]">v žádném ze sledovaných let</b>.</>
+                  {jakCasto === 'v žádném hodnocení' ? (
+                    <>V češtině nebyli maturanti nad středem podobných škol <b className="text-[#16325c]">v žádném hodnocení</b>.</>
                   ) : jakCasto ? (
                     <>V češtině byli {maturita.skupiny.length > 1 ? 'maturanti všech oborů ' : 'maturanti '}<b className="text-[#16325c]">{jakCasto} nad středem podobných škol</b>.</>
                   ) : (

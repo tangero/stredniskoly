@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.24 · 23. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.25 · 23. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -68,7 +68,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **společná část maturity** | didaktické testy z češtiny, matematiky nebo cizího jazyka, které zadává CERMAT | „testy, které píší maturanti ve všech školách stejně“ | státní maturita, celá maturita |
 | **podobné školy** | školy stejné skupiny oborů `SMO16` v celé zemi, například všechna osmiletá gymnázia; srovnává se jen uvnitř ní | „podobné školy jsou školy se stejným typem oborů v celé zemi, například všechna osmiletá gymnázia“ | skupina oborů (v textu pro rodiče), kategorie, konkurence |
 | **střed podobných škol** | medián průměrných výsledků podobných škol | „střed znamená, že polovina z nich dopadla lépe a polovina hůř“ | průměr (je to medián), norma |
-| **nad středem podobných škol**, **nerozlišitelné od středu**, **pod středem podobných škol** | zařazení proti mediánu podobných škol s ohledem na velikost ročníku | „nerozlišitelné: rozdíl je u takto velkého ročníku příliš malý“; vždy s počtem let („3 ze 4 let“) a souhrnem za školu („téměř každý rok“) | lepší škola, horší škola, nadprůměrná škola, kvalitní, nad skupinou (v textu pro rodiče) |
+| **nad středem podobných škol**, **nerozlišitelné od středu**, **pod středem podobných škol** | zařazení proti mediánu podobných škol s ohledem na velikost ročníku | „nerozlišitelné: rozdíl je u takto velkého ročníku příliš malý“; u skupiny počet hodnocených let („3 ze 4 let“), za školu dostupná hodnocení všech skupin („ve většině hodnocení“); jediný dostupný rok se neoznačuje „každý rok“ | lepší škola, horší škola, nadprůměrná škola, kvalitní, nad skupinou (v textu pro rodiče) |
 | **v celé zemi lépe než X ze 100 maturantů** | průměrný percentil maturantů školy v předmětu; srovnání se všemi maturanty v zemi, ne s podobnými školami | „maturanti školy měli v průměru stejný nebo lepší výsledek než X ze 100 maturantů v celé zemi“; slova „v celé zemi“ se nevypouštějí | percentil (v hlavním textu), pořadí, lépe než X ze 100 bez určení, proti komu |
 | **% bodů v testu**, **průměrný podíl bodů** | průměrný procentní skór z didaktického testu; veličina, ve které se porovnává se středem podobných škol | „průměrný podíl bodů, které maturanti v testu získali“ | skór, percentil (jsou to jiné veličiny), body (těmi se měří jednotná zkouška)  |
 | **maturitu udělalo X z Y přihlášených** | úspěšní ze všech přihlášených ke společné části (tak ji počítá CERMAT) | u rozdílu přihlášených a konajících: „1 ke zkoušce nešel“ | úspěšnost bez jmenovatele, X z Y konajících vedle podílu z přihlášených |
@@ -119,6 +119,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.25 | Souhrn maturity za školu mluví o dostupných hodnoceních skupin oborů; jediný hodnocený rok se neoznačuje „každý rok“ (23. 9. 2026). |
 | 1.24 | Pojem **pozice na přihlášce** se třemi stupni (škola první volby, smíšená pozice, záložní volba) pro přehled kraje, přehled města a stránku oboru (23. 9. 2026). Zadavatel chtěl „kategorie škol“ používat víc; dosavadní kategorie oboru neměla doložený výpočet, proto se zakazuje i její slovník. Do zakázaných slov přibyla konkurence jako číslo a trend ze dvou ročníků, které nesl starý přehled kraje. |
 | 1.23 | Pojem **potvrzený termín** u veletrhu (23. 9. 2026): přehled říká „víme jen o těchto N akcích s potvrzeným termínem“, protože soubor zná i akce bez potvrzeného termínu a číslo musí nést svou množinu. Dosud slovo stálo jen v zákazech u *termínů z článku školy* — tam platí dál, protože termíny z článků neověřujeme; u veletrhu ověřujeme na stránce pořadatele. |
 | 1.22 | U pojmu **pořadatel veletrhu** zkrácena věta na kartě na „Pořádá *organizace*“ (23. 9. 2026). Dovětek „ne tento web“ na každé z 41 karet byl šum; že akci nepořádáme my, plyne z toho, že říkáme, kdo ji pořádá. Totéž ve větě o ověření pod přehledem („ověřte na stránce pořadatele“). Pojem *nahlásit akci* dostal svou větu i v každém oddílu kraje na `/veletrhy`. |

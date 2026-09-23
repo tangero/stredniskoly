@@ -165,19 +165,20 @@ export function nazevSkupinyMaturity(smo16: string, nazevCermat: string | null |
 
 /**
  * Jak často byla škola v češtině nad středem podobných škol, za všechny skupiny oborů dohromady.
- * Null, když žádný rok nemá zařazení.
+ * Jednotkou je hodnocení skupiny oborů v roce; chybějící roky se nepočítají.
+ * Null, když žádné hodnocení nemá zařazení.
  */
 export function jakCastoNadStredem(skupiny: { letNad: number; letSeZarazenim: number }[]): string | null {
   const nad = skupiny.reduce((s, x) => s + x.letNad, 0);
   const celkem = skupiny.reduce((s, x) => s + x.letSeZarazenim, 0);
   if (!celkem) return null;
   const podil = nad / celkem;
-  if (podil === 1) return 'každý rok';
-  if (podil >= 0.75) return 'téměř každý rok';
-  if (podil > 0.5) return 've většině let';
-  if (podil === 0.5) return 'zhruba v polovině let';
-  if (podil > 0) return 'jen v některých letech';
-  return 'v žádném ze sledovaných let';
+  if (podil === 1) return celkem === 1 ? 'v jediném hodnoceném roce' : 've všech hodnoceních';
+  if (podil >= 0.75) return 'v téměř všech hodnoceních';
+  if (podil > 0.5) return 've většině hodnocení';
+  if (podil === 0.5) return 'v polovině hodnocení';
+  if (podil > 0) return 'jen v některých hodnoceních';
+  return 'v žádném hodnocení';
 }
 
 /** „ve 3 ze 4 let“, „ve všech 4 letech“, „v roce 2026“. */

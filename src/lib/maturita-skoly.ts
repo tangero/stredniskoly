@@ -42,7 +42,7 @@ export interface MaturitaVPrehledu {
   /** Úspěšní a přihlášení za celou školu; úspěšnost CERMAT počítá z přihlášených (slovník, úspěšnost maturity). */
   passed: number | null;
   registered: number | null;
-  /** „téměř každý rok“ a podobně; null, když žádný rok nemá zařazení proti podobným školám. */
+  /** Frekvence za dostupná hodnocení skupin oborů; null, když žádné nemá zařazení. */
   jakCastoNadStredem: string | null;
 }
 

@@ -16,6 +16,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { getKrajPrehled } from '../src/lib/krajData.ts';
 import { zobrazeneObdobi } from '../src/lib/stav-datovych-sad.ts';
 import { RegionSchoolsTable } from '../src/components/RegionSchoolsTable.tsx';
+import { RozlozeniObtiznostiKraje } from '../src/app/regiony/page.tsx';
 import { krajNames } from '../src/lib/kraje.mjs';
 import { zavadec } from './_zavadec.mjs';
 
@@ -110,6 +111,29 @@ test('vykreslení: maturita je u škol, které ji mají', async () => {
   const html = vykresli(p);
   assert.ok(html.includes('udělalo'));
   assert.ok(html.includes('ČJ nad středem:'));
+});
+
+test('jediný hodnocený rok maturity se nevydává za všechny čtyři roky', async () => {
+  const p = await getKrajPrehled('CZ041');
+  const skola = p.skoly.find(s => s.redizo === '651011434');
+  assert.ok(skola, 'škola je v přehledu kraje');
+  assert.equal(skola.maturita?.jakCastoNadStredem, 'v jediném hodnoceném roce');
+});
+
+test('rozcestník krajů vypíše počty všech stupňů obtížnosti také textem', async () => {
+  const p = await getKrajPrehled('CZ010');
+  const rozlozeni = new Map();
+  for (const n of p.skoly.flatMap(s => s.nabidky)) {
+    if (n.zarazeni) rozlozeni.set(n.zarazeni, (rozlozeni.get(n.zarazeni) ?? 0) + 1);
+  }
+  const html = renderToStaticMarkup(React.createElement(RozlozeniObtiznostiKraje, { rozlozeni }));
+  for (const [zarazeni, popisek] of [
+    ['velmi_tezke', 'velmi těžké'], ['tezke', 'těžké'], ['stredne_tezke', 'středně těžké'],
+    ['vetsina_uspela', 'dostala se většina'], ['kapacita_nerozhodovala', 'místo pro všechny'],
+  ]) {
+    const pocet = rozlozeni.get(zarazeni) ?? 0;
+    assert.ok(html.includes(`${popisek}: ${pocet}`), `${popisek}: ${pocet}`);
+  }
 });
 
 test('vykreslení: škola zabírá jeden řádek tabulky a nejvýš dva řádky textu v buňce', async () => {

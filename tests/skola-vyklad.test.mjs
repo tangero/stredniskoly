@@ -71,12 +71,13 @@ test('roky bez zařazení se nepočítají jako ne nad skupinou', () => {
 });
 
 test('jak často nad středem podobných škol a názvy skupin', () => {
-  assert.equal(jakCastoNadStredem([{ letNad: 4, letSeZarazenim: 4 }, { letNad: 3, letSeZarazenim: 4 }, { letNad: 3, letSeZarazenim: 4 }]), 'téměř každý rok');
-  assert.equal(jakCastoNadStredem([{ letNad: 4, letSeZarazenim: 4 }]), 'každý rok');
-  assert.equal(jakCastoNadStredem([{ letNad: 3, letSeZarazenim: 4 }, { letNad: 2, letSeZarazenim: 4 }]), 've většině let');
-  assert.equal(jakCastoNadStredem([{ letNad: 2, letSeZarazenim: 4 }]), 'zhruba v polovině let');
-  assert.equal(jakCastoNadStredem([{ letNad: 1, letSeZarazenim: 4 }]), 'jen v některých letech');
-  assert.equal(jakCastoNadStredem([{ letNad: 0, letSeZarazenim: 3 }]), 'v žádném ze sledovaných let');
+  assert.equal(jakCastoNadStredem([{ letNad: 4, letSeZarazenim: 4 }, { letNad: 3, letSeZarazenim: 4 }, { letNad: 3, letSeZarazenim: 4 }]), 'v téměř všech hodnoceních');
+  assert.equal(jakCastoNadStredem([{ letNad: 4, letSeZarazenim: 4 }]), 've všech hodnoceních');
+  assert.equal(jakCastoNadStredem([{ letNad: 1, letSeZarazenim: 1 }]), 'v jediném hodnoceném roce');
+  assert.equal(jakCastoNadStredem([{ letNad: 3, letSeZarazenim: 4 }, { letNad: 2, letSeZarazenim: 4 }]), 've většině hodnocení');
+  assert.equal(jakCastoNadStredem([{ letNad: 2, letSeZarazenim: 4 }]), 'v polovině hodnocení');
+  assert.equal(jakCastoNadStredem([{ letNad: 1, letSeZarazenim: 4 }]), 'jen v některých hodnoceních');
+  assert.equal(jakCastoNadStredem([{ letNad: 0, letSeZarazenim: 3 }]), 'v žádném hodnocení');
   assert.equal(jakCastoNadStredem([{ letNad: 0, letSeZarazenim: 0 }]), null);
   assert.equal(nazevSkupinyMaturity('GY8', 'GYMNÁZIUM 8LETÉ'), 'osmileté gymnázium');
   assert.equal(nazevSkupinyMaturity('SEK', 'EKONOMICKÉ OBORY'), 'ekonomické obory');

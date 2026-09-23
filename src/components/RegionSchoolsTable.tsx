@@ -107,12 +107,13 @@ function odpovida(n: NabidkaKraje, s: SkolaKraje, f: Filtr): boolean {
  * Plná věta ze `jakCastoNadStredem` zůstává v titulku a na stránce školy.
  */
 const NAD_STREDEM_KRATCE: Record<string, string> = {
-  'každý rok': 'každý rok',
-  'téměř každý rok': 'téměř každý rok',
-  've většině let': 've většině let',
-  'zhruba v polovině let': 'v polovině let',
-  'jen v některých letech': 'jen někdy',
-  'v žádném ze sledovaných let': 'ani jednou',
+  'v jediném hodnoceném roce': 'v jednom hodnoceném roce',
+  've všech hodnoceních': 've všech hodnoceních',
+  'v téměř všech hodnoceních': 'téměř vždy',
+  've většině hodnocení': 'většinou',
+  'v polovině hodnocení': 'v polovině hodnocení',
+  'jen v některých hodnoceních': 'jen někdy',
+  'v žádném hodnocení': 'ani jednou',
 };
 
 /** Krátké popisky kohorty do tabulky; celé názvy nese titulek a vysvětlivka. */
@@ -467,7 +468,7 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
                         ? <div title={`Maturitu ${s.maturita.rok} udělalo ${s.maturita.passed} ${zOd(s.maturita.registered)} ${s.maturita.registered} přihlášených, za celou školu`}>udělalo {cislo(s.maturita.passed)} {zOd(s.maturita.registered)} {cislo(s.maturita.registered)}</div>
                         : <span className="text-slate-500">-</span>}
                       {s.maturita?.jakCastoNadStredem && (
-                        <div className="whitespace-nowrap text-slate-500" title={`V češtině ${s.maturita.jakCastoNadStredem} nad středem podobných škol (poslední čtyři roky)`}>
+                        <div className="whitespace-nowrap text-slate-500" title={`V češtině ${s.maturita.jakCastoNadStredem} nad středem podobných škol (hodnocení za poslední čtyři roky)`}>
                           ČJ nad středem: {NAD_STREDEM_KRATCE[s.maturita.jakCastoNadStredem] ?? s.maturita.jakCastoNadStredem}
                         </div>
                       )}
@@ -505,13 +506,14 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
                   </div>
                   <div className="mt-0.5 text-xs text-slate-500">
                     {[
+                      // Pořadí patří na mobilu dopředu: je důvod, proč čtenář řadil.
+                      poradiPole ? (x.poradi ? `${textPoradi(x.poradi.p.poradi)} ${zOd(x.poradi.p.poradi.z)} ${cislo(x.poradi.p.poradi.z)} v kraji` : 'pořadí bez údaje') : null,
                       x.kohorty.length ? x.kohorty.map(([k, n]) => `${s.nabidky.length > 1 ? `${n}× ` : ''}${KOHORTA_KRATCE[k]}`).join(', ') : 'bez údaje',
                       x.obtiznostDoplnek,
                       s.maturita?.passed != null && s.maturita.registered != null
                         ? `maturitu udělalo ${cislo(s.maturita.passed)} ${zOd(s.maturita.registered)} ${cislo(s.maturita.registered)}`
                         : null,
                       s.maturita?.jakCastoNadStredem ? `ČJ nad středem: ${NAD_STREDEM_KRATCE[s.maturita.jakCastoNadStredem] ?? s.maturita.jakCastoNadStredem}` : null,
-                      x.poradi ? `${textPoradi(x.poradi.p.poradi)} ${zOd(x.poradi.p.poradi.z)} ${cislo(x.poradi.p.poradi.z)} v kraji` : null,
                     ].filter(Boolean).join(' · ')}
                   </div>
                 </li>
