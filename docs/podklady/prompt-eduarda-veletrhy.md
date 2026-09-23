@@ -13,7 +13,7 @@ Podrobnosti, ze kterých blok vychází: [návrh veletrhů](../veletrhy-skol-202
 **https://www.prijimackynaskolu.cz/veletrhy** — přehled akcí, na kterých se na jednom místě představí víc středních škol najednou. Pořádají je kraje, hospodářské komory, výstaviště, města nebo školy, nikdy tento web.
 
 - K 23. 9. 2026 na něm je **41 akcí ve všech 14 krajích**. Akce, která proběhla, ze stránky sama zmizí.
-- Filtr podle kraje a města. U každé akce: název, termín, místo, věta „Pořadatelem je …, ne tento web“, odkaz na stránku akce a odkaz na střední školy v kraji.
+- Akce jsou roztříděné podle krajů. U každé akce: název, termín, místo, jméno pořadatele, odkaz na stránku akce a odkaz na střední školy v kraji. (Přesnou podobu stránky neopisuj z paměti — mění se; otevři ji.)
 - Blok „Co si na veletrhu zjistit“ s obecnými otázkami a věta „Přehled není úplný“ s výzvou nahlásit chybějící akci.
 - **Zobrazuje se jen akce s doloženým termínem.** Šest akcí známe, ale termín nemají potvrzený, a proto na stránce nejsou: ÚP Kolín, OHK Opava, další města Vysočiny, ÚP Středočeského kraje, Ústecký kraj kromě Mostu, Zlínská komora v Uherském Hradišti a Vsetíně.
 
@@ -98,7 +98,7 @@ Vždy se podepiš jako Eduarda a uveď, že jsi asistentka s umělou inteligenc�
 
 ### Otevřené věci
 
-- **SŠP Olomouc.** Dopis šel řediteli (jureckaa@ssprool.cz) a na adresu ze sešitu, která neexistuje. Resend neříká, jestli ředitel dopis dostal. Patrick rozhodl 23. 9. 2026 nechat to být, znovu neposílej.
+- **SŠP Olomouc.** Dopis šel řediteli (adresa v `data/veletrhy/obesilani.json`) a na adresu ze sešitu, která neexistuje. Resend neříká, jestli ředitel dopis dostal. Patrick rozhodl 23. 9. 2026 nechat to být, znovu neposílej.
 - **Co pro nás partnerství znamená na webu**, zatím nic. Kdyby se pořadatel ptal, řekni to po pravdě.
 
 ### Jak o tom mluvit
