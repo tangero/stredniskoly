@@ -365,7 +365,7 @@ U OHK Most a KHK Pardubického kraje se konkrétní osobu odpovědnou za akci ne
 
 **22 dopisů na 51 adres, 21 pořadatelů**, skriptem `scripts/veletrhy-posli-dopisy.mjs` z eda@prijimackynaskolu.cz, podepsáno Patrickem Zandlem (text v [podkladech](podklady/dopis-poradatelum-veletrhu.md)). Každá organizace dostala jeden dopis adresovaný všem relevantním kontaktům; seznam a evidence odeslání jsou v gitignorovaném `data/veletrhy/`.
 
-Doručeno 21 z 22. Dopis SŠP Olomouc se odrazil: jedna ze dvou adres převzatých ze zdrojového sešitu neexistuje (550 5.1.1). Adresa ředitele školy, dohledaná na stránce vedení školy, byla v témže dopise; Resend neuvádí, kterému adresátovi se dopis nedoručil. Adresa ředitele VIM se dohledala na webu VIM (článek o kampani Těžká hlava). Konkrétní adresy a jména jsou jen v gitignorovaném `data/veletrhy/obesilani.json` — repozitář je veřejný a kontakty na osoby do něj nepatří (oddíl 3 zdrojů dat).
+Doručeno 21 z 22. Dopis SŠP Olomouc se odrazil: adresa převzatá ze zdrojového sešitu neexistuje (550 5.1.1). Adresa ředitele školy, dohledaná na stránce vedení školy, byla v témže dopise; Resend neuvádí, kterému adresátovi se dopis nedoručil. Adresa ředitele VIM se dohledala na webu VIM (článek o kampani Těžká hlava). Konkrétní adresy a jména jsou jen v gitignorovaném `data/veletrhy/obesilani.json` — repozitář je veřejný a kontakty na osoby do něj nepatří (oddíl 3 zdrojů dat).
 
 ### 8.7 Pořadí obesílání
 
