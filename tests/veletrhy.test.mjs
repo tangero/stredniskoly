@@ -14,7 +14,6 @@ import {
   zobrazitelneAkce,
   cekajiciAkce,
   krajeSAkcemi,
-  mestaSAkcemi,
 } from '../src/lib/veletrhy.ts';
 
 const PRED_SEZONOU = new Date('2026-09-22');
@@ -56,21 +55,6 @@ test('vícedenní akce je vidět i v průběhu, mizí až po posledním dni', ()
   assert.ok(vidi('2026-11-27'), 'Vícedenní akce musí být vidět i uprostřed svého trvání.');
   assert.ok(vidi('2026-11-28'), 'Akce musí být vidět i poslední den.');
   assert.ok(!vidi('2026-11-29'), 'Den po skončení už akce být vidět nesmí.');
-});
-
-test('akce v obci mimo seznam MESTA z přehledu nevypadne', async () => {
-  // MESTA mají práh tří škol; Kaplice a Boskovice jsou pod ním, ale veletrh
-  // se tam koná. Vazba filtru na MESTA by je tiše zahodila.
-  const { MESTA } = await import('../src/lib/mesta.mjs');
-  const znama = new Set(MESTA.map((m) => m.nazev));
-  const mesta = mestaSAkcemi(PRED_SEZONOU);
-
-  const podPrahem = mesta.filter((m) => !znama.has(m));
-  assert.ok(
-    podPrahem.length > 0,
-    'Očekáváme aspoň jednu obec mimo seznam MESTA; jinak test nehlídá, co má.',
-  );
-  assert.ok(mesta.includes('Kaplice'), 'Kaplice musí zůstat v nabídce měst.');
 });
 
 test('čekající akce nesou důvod, proč se nezobrazují', () => {

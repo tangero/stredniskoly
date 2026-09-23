@@ -877,7 +877,9 @@
    "vystupy": [
     "src/data/veletrhy-2027.json"
    ],
-   "ukazatele": [],
+   "ukazatele": [
+    "Počet akcí v kraji"
+   ],
    "aktualizace": {
     "zdroj": "weby pořadatelů (krajské úřady, hospodářské komory, výstaviště)",
     "detekce": "Ruční kontrola webů pořadatelů plus nahlášení z formuláře /veletrhy/nahlasit. Jednotný celostátní kalendář veletrhů SŠ neexistuje.",

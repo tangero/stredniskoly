@@ -4,12 +4,13 @@ import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { RegionSchoolsTable } from '@/components/RegionSchoolsTable';
+import { nadpisKraje } from '@/lib/kraje.mjs';
 import { getAllKraje, getSchoolsByKraj, getRegionStats, getExtendedSchoolStatsForSchools, getTrendDataForSchools, ExtendedSchoolStats, YearlyTrendData } from '@/lib/data';
 
+// Pravidlo pro nadpis kraje je jedno pro celý web (src/lib/kraje.mjs);
+// přehled veletrhů ho používá také.
+const krajLabel = nadpisKraje;
 const noKrajSuffix = ['Hlavní město Praha', 'Vysočina'];
-function krajLabel(nazev: string): string {
-  return noKrajSuffix.includes(nazev) ? nazev : `${nazev} kraj`;
-}
 function krajLabelV(nazev: string): string {
   return noKrajSuffix.includes(nazev) ? `v regionu ${nazev}` : `v ${nazev} kraji`;
 }

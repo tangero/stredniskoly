@@ -135,14 +135,6 @@ export function krajeSAkcemi(ke: Date = new Date()): { kod: string; nazev: strin
     .sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs'));
 }
 
-/** Města, ve kterých nějaká zobrazitelná akce je. Online akce město nemá. */
-export function mestaSAkcemi(ke: Date = new Date()): string[] {
-  const mesta = new Set<string>();
-  for (const a of zobrazitelneAkce(ke)) {
-    if (a.mesto) mesta.add(a.mesto);
-  }
-  return [...mesta].sort((a, b) => a.localeCompare(b, 'cs'));
-}
 
 /** Název kraje ze číselníku; kód je jediný tvar, který se neplete. */
 export function nazevKraje(kod: string): string {

@@ -5,7 +5,6 @@ import { Footer } from '@/components/Footer';
 import {
   zobrazitelneAkce,
   krajeSAkcemi,
-  nazevKraje,
   cesskyDen,
   overSezonuProtiRegistru,
   OVERENO_K,
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/veletrhy' },
   title: 'Veletrhy a přehlídky středních škol — přehled akcí',
   description:
-    'Kde se dá potkat víc středních škol najednou: veletrhy a přehlídky podle krajů a měst, s termíny a odkazy na pořadatele.',
+    'Kde se dá potkat víc středních škol najednou: veletrhy a přehlídky po krajích, s městy, termíny a odkazy na pořadatele.',
   openGraph: {
     title: 'Veletrhy a přehlídky středních škol',
     description: 'Přehled akcí, kde se na jednom místě představí střední školy z kraje.',
@@ -49,7 +48,6 @@ export default async function VeletrhyPage() {
     mesto: a.mesto,
     online: a.online,
     krajKod: a.krajKod,
-    krajNazev: nazevKraje(a.krajKod),
     misto: a.misto,
     start: a.start!,
     end: (a.end ?? a.start)!,

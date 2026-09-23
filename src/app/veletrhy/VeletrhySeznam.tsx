@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { createKrajSlug } from '@/lib/utils';
+import { tvar } from '@/lib/cesky-tvar';
+import { nadpisKraje } from '@/lib/kraje.mjs';
 
 export interface VeletrhKarta {
   id: string;
@@ -13,7 +15,6 @@ export interface VeletrhKarta {
   mesto: string | null;
   online?: boolean;
   krajKod: string;
-  krajNazev: string;
   misto: string;
   start: string;
   datum: string;
@@ -26,7 +27,8 @@ export interface VeletrhKarta {
 
 interface Props {
   akce: VeletrhKarta[];
-  kraje: { kod: string; nazev: string; pocet: number }[];
+  /** Kraje, které mají v datech aspoň jednu akci; počty se počítají tady, ne na serveru. */
+  kraje: { kod: string; nazev: string }[];
   /** Den, se kterým stránku sestavil server. Drží první render shodný. */
   den: string;
 }
@@ -41,18 +43,26 @@ function cesskyDen(): string {
   }).format(new Date());
 }
 
-const MESICE = ['led', 'úno', 'bře', 'dub', 'kvě', 'čer', 'čvc', 'srp', 'zář', 'říj', 'lis', 'pro'];
+const MESICE = ['led', 'úno', 'bře', 'dub', 'kvě', 'čvn', 'čvc', 'srp', 'zář', 'říj', 'lis', 'pro'];
 
-/** „1 akce“, „3 akce“, „5 akcí“. */
+/** „1 akce“, „3 akce“, „5 akcí“ — ukazatel *počet akcí v kraji* ze slovníku. */
 export function akci(n: number): string {
-  if (n === 1) return '1 akce';
-  if (n >= 2 && n <= 4) return `${n} akce`;
-  return `${n} akcí`;
+  return `${n} ${tvar(n, 'akce', 'akce', 'akcí')}`;
 }
 
-/** „Středočeský kraj“, ale „Hlavní město Praha“ beze změny. */
-export function nadpisKraje(nazev: string): string {
-  return nazev.includes('Praha') ? nazev : `${nazev} kraj`;
+export { nadpisKraje };
+
+/**
+ * Dlaždice s datem: den a měsíc; u vícedenní akce rozsah dnů, aby v jejím
+ * průběhu nesvítil první den jako něco, co už bylo. Přes hranici měsíce
+ * se ukáže i druhý měsíc.
+ */
+function dlazdice(start: string, end: string): { den: string; mesic: string } {
+  const [, m1, d1] = start.split('-');
+  const [, m2, d2] = end.split('-');
+  if (end === start) return { den: String(Number(d1)), mesic: MESICE[Number(m1) - 1] };
+  if (m1 === m2) return { den: `${Number(d1)}–${Number(d2)}`, mesic: MESICE[Number(m1) - 1] };
+  return { den: `${Number(d1)}–${Number(d2)}`, mesic: `${MESICE[Number(m1) - 1]}–${MESICE[Number(m2) - 1]}` };
 }
 
 /**
@@ -84,17 +94,31 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
     return () => clearInterval(casovac);
   }, []);
 
-  // Odkaz s kotvou (#jihocesky ze stránky kraje) předvybere kraj. Čte se
-  // až po připojení, na serveru kotva není.
+  // Kotva v adrese (#jihocesky ze stránky kraje) kraj předvybere a po
+  // překreslení na něj posune, protože prohlížeč skočil ještě na plný
+  // seznam a po zúžení by čtenář zůstal u patičky. Změna kotvy za běhu
+  // (zpět/vpřed) se sleduje stejně. Kotvu čteme až po připojení.
   useEffect(() => {
     const predvyber = () => {
       const kotva = window.location.hash.replace(/^#/, '');
-      if (!kotva) return;
       const shoda = kraje.find((k) => createKrajSlug(k.kod, k.nazev) === kotva);
-      if (shoda) setKraj(shoda.kod);
+      setKraj(shoda ? shoda.kod : '');
+      if (shoda && typeof document !== 'undefined') {
+        requestAnimationFrame(() => document.getElementById(kotva)?.scrollIntoView());
+      }
     };
     predvyber();
+    window.addEventListener?.('hashchange', predvyber);
+    return () => window.removeEventListener?.('hashchange', predvyber);
   }, [kraje]);
+
+  /** Výběr čipem se propíše do adresy, aby ho reload i sdílený odkaz zachovaly. */
+  function vyber(kod: string) {
+    setKraj(kod);
+    const k = kraje.find((x) => x.kod === kod);
+    const cil = k ? `#${createKrajSlug(k.kod, k.nazev)}` : window.location.pathname + window.location.search;
+    window.history?.replaceState(null, '', cil);
+  }
 
   const probihajici = useMemo(() => akce.filter((a) => a.end >= dnes), [akce, dnes]);
 
@@ -113,14 +137,14 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
         const seznam = podleKraje.get(k.kod)!;
         // Města v pořadí, v jakém se v kraji konají — čtenář je pak
         // potká v kartách pod řádkem ve stejném sledu.
-        const mesta = [...new Set(seznam.map((a) => (a.online ? 'online' : a.mesto)).filter(Boolean))] as string[];
+        const mesta = [...new Set(seznam.map((a) => (a.online ? 'Online' : a.mesto)).filter(Boolean))] as string[];
         return { ...k, pocet: seznam.length, akce: seznam, mesta, slug: createKrajSlug(k.kod, k.nazev) };
       });
   }, [kraje, probihajici]);
 
   const vybrane = kraj ? oddily.filter((o) => o.kod === kraj) : oddily;
-  const vybranyBezAkci = kraj !== '' && !oddily.some((o) => o.kod === kraj);
-  const nazevVybraneho = kraje.find((k) => k.kod === kraj)?.nazev ?? kraj;
+  const vybrany = kraje.find((k) => k.kod === kraj);
+  const vybranyBezAkci = vybrany !== undefined && !oddily.some((o) => o.kod === kraj);
 
   const cip = (aktivni: boolean) =>
     `inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-colors ${
@@ -139,15 +163,22 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
           <button
             type="button"
             aria-pressed={kraj === ''}
-            onClick={() => setKraj('')}
+            onClick={() => vyber('')}
             className={cip(kraj === '')}
           >
             Všechny kraje
             <span className={pocitadlo(kraj === '')}>{probihajici.length}</span>
           </button>
           {vybranyBezAkci && (
-            <button type="button" aria-pressed className={cip(true)} data-kraj={kraj} data-pocet={0}>
-              {nazevVybraneho}
+            <button
+              type="button"
+              aria-pressed
+              onClick={() => vyber('')}
+              className={cip(true)}
+              data-kraj={kraj}
+              data-pocet={0}
+            >
+              {vybrany.nazev}
               <span className="text-xs">(bez aktuálních akcí)</span>
             </button>
           )}
@@ -156,7 +187,7 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
               key={o.kod}
               type="button"
               aria-pressed={kraj === o.kod}
-              onClick={() => setKraj(kraj === o.kod ? '' : o.kod)}
+              onClick={() => vyber(kraj === o.kod ? '' : o.kod)}
               className={cip(kraj === o.kod)}
               data-kraj={o.kod}
               data-pocet={o.pocet}
@@ -168,20 +199,38 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
         </div>
       </nav>
 
-      {kraj && (
+      {vybrany && !vybranyBezAkci && (
         <p className="text-sm text-gray-600">
-          {vybranyBezAkci
-            ? `V kraji ${nazevVybraneho} teď o žádné akci nevíme.`
-            : `Zobrazen jen kraj ${nazevVybraneho}.`}{' '}
-          <button type="button" onClick={() => setKraj('')} className="text-blue-600 hover:underline">
+          Zobrazen jen {nadpisKraje(vybrany.nazev)}.{' '}
+          <button type="button" onClick={() => vyber('')} className="text-blue-600 hover:underline">
             Zrušit filtr
           </button>
         </p>
       )}
 
-      {vybrane.length === 0 ? (
+      {vybranyBezAkci && (
         <div className="rounded-lg border border-gray-200 bg-gray-50 p-6 text-gray-700">
-          <p className="font-medium text-gray-900">O žádné akci v tomto výběru nevíme.</p>
+          <p className="font-medium text-gray-900">{nadpisKraje(vybrany.nazev)}: teď o žádné akci nevíme.</p>
+          <p className="mt-2 text-sm">
+            Neznamená to, že se žádná nekoná — znamená to, že jsme ji nedohledali.{' '}
+            <Link href="/veletrhy/nahlasit" className="text-blue-600 hover:underline">
+              Víte o akci, která tu chybí?
+            </Link>
+          </p>
+          <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+            <Link href={`/regiony/${createKrajSlug(vybrany.kod, vybrany.nazev)}`} className="text-blue-600 hover:underline">
+              Střední školy v kraji
+            </Link>
+            <button type="button" onClick={() => vyber('')} className="text-blue-600 hover:underline">
+              Zrušit filtr
+            </button>
+          </p>
+        </div>
+      )}
+
+      {vybrane.length === 0 && !vybranyBezAkci && (
+        <div className="rounded-lg border border-gray-200 bg-gray-50 p-6 text-gray-700">
+          <p className="font-medium text-gray-900">O žádné akci teď nevíme.</p>
           <p className="mt-2 text-sm">
             Neznamená to, že se žádná nekoná — znamená to, že jsme ji nedohledali.{' '}
             <Link href="/veletrhy/nahlasit" className="text-blue-600 hover:underline">
@@ -189,98 +238,95 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
             </Link>
           </p>
         </div>
-      ) : (
-        vybrane.map((o) => (
-          <section key={o.kod} id={o.slug} aria-labelledby={`kraj-${o.kod}`} className="scroll-mt-24">
-            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-gray-200 pb-2">
-              <h2 id={`kraj-${o.kod}`} className="text-xl font-semibold text-gray-900">
-                {nadpisKraje(o.nazev)}
-                <span className="ml-2 text-base font-normal text-gray-500">{akci(o.pocet)}</span>
-              </h2>
-              <Link
-                href={`/regiony/${o.slug}`}
-                className="text-sm text-blue-600 hover:underline"
-              >
-                Střední školy v kraji
-              </Link>
-            </div>
-            {o.mesta.length > 1 && (
-              <p className="mt-2 text-sm text-gray-600">{o.mesta.join(' · ')}</p>
-            )}
-
-            <ol className="mt-4 space-y-3">
-              {o.akce.map((a) => {
-                const [, m, d] = a.start.split('-');
-                return (
-                  <li
-                    key={a.id}
-                    className="flex gap-4 rounded-lg border border-gray-200 bg-white p-4 hover:border-blue-300 transition-colors"
-                  >
-                    <time
-                      dateTime={a.start}
-                      className="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-md bg-blue-50 text-blue-800"
-                      title={a.datum}
-                    >
-                      <span className="text-xl font-bold leading-none">
-                        {a.terminPribligny ? '~' : ''}
-                        {Number(d)}
-                      </span>
-                      <span className="text-xs uppercase tracking-wide">{MESICE[Number(m) - 1]}</span>
-                    </time>
-
-                    <div className="min-w-0 flex-1">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
-                        {a.online ? 'Online' : a.mesto}
-                      </p>
-                      <h3 className="text-lg font-semibold text-gray-900">
-                        <a href={a.url} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 hover:underline">
-                          {a.nazev}
-                        </a>
-                      </h3>
-                      <p className="mt-1 text-sm text-gray-700">
-                        {a.terminPribligny ? 'přibližně ' : ''}
-                        {a.datum}
-                        {a.cas ? `, ${a.cas}` : ''}
-                        {a.misto && !a.online ? ` — ${a.misto}` : ''}
-                      </p>
-
-                      {(a.zdrojJenAgregator || a.terminPribligny) && (
-                        <p className="mt-2 rounded border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">
-                          <strong>{a.zdrojJenAgregator ? 'Termín neověřený u pořadatele.' : 'Termín je přibližný.'}</strong>{' '}
-                          {a.poznamkaTerminu} Před cestou si ho ověřte na stránce akce.
-                        </p>
-                      )}
-
-                      {/* Poznámka bez příznaku nejistoty nese podmínky vstupu (Plzeň:
-                          všední dny jen pro školní výpravy s registrací). Dřív se
-                          vykreslovala jen spolu s výstrahou, takže ji čtenář nevidel. */}
-                      {a.poznamkaTerminu && !a.zdrojJenAgregator && !a.terminPribligny && (
-                        <p className="mt-2 text-sm text-gray-700">{a.poznamkaTerminu}</p>
-                      )}
-
-                      <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-600">
-                        <span>Pořádá {a.poradatel}</span>
-                        <a href={a.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                          Stránka akce
-                        </a>
-                      </p>
-                    </div>
-                  </li>
-                );
-              })}
-            </ol>
-
-            {/* Výhrada neúplnosti patří ke každému kraji zvlášť: rodič, který
-                právě zjistil, že jeho město chybí, je ten, kdo akci nahlásí. */}
-            <p className="mt-3 text-sm text-gray-600">
-              Víme jen o {o.pocet === 1 ? 'této akci' : `těchto ${o.pocet} akcích`}.{' '}
-              <Link href="/veletrhy/nahlasit" className="text-blue-600 hover:underline">
-                Chybí vám nějaká? Nahlaste nám ji.
-              </Link>
-            </p>
-          </section>
-        ))
       )}
+
+      {vybrane.map((o) => (
+        <section key={o.kod} id={o.slug} aria-labelledby={`kraj-${o.kod}`} className="scroll-mt-24">
+          <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-gray-200 pb-2">
+            <h2 id={`kraj-${o.kod}`} className="text-xl font-semibold text-gray-900">
+              {nadpisKraje(o.nazev)}
+              <span className="ml-2 text-base font-normal text-gray-500">{akci(o.pocet)}</span>
+            </h2>
+            <Link href={`/regiony/${o.slug}`} className="text-sm text-blue-600 hover:underline">
+              Střední školy v kraji
+            </Link>
+          </div>
+          {o.mesta.length > 1 && (
+            <p className="mt-2 text-sm text-gray-600">{o.mesta.join(' · ')}</p>
+          )}
+
+          <ol className="mt-4 space-y-3">
+            {o.akce.map((a) => {
+              const dl = dlazdice(a.start, a.end);
+              return (
+                <li
+                  key={a.id}
+                  className="flex gap-4 rounded-lg border border-gray-200 bg-white p-4 hover:border-blue-300 transition-colors"
+                >
+                  <time
+                    dateTime={a.start}
+                    className="flex h-14 min-w-14 shrink-0 flex-col items-center justify-center rounded-md bg-blue-50 px-1 text-blue-800"
+                    title={a.datum}
+                  >
+                    <span className="text-xl font-bold leading-none">
+                      {a.terminPribligny ? '~' : ''}
+                      {dl.den}
+                    </span>
+                    <span className="text-xs uppercase tracking-wide">{dl.mesic}</span>
+                  </time>
+
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+                      {a.online ? 'Online' : a.mesto}
+                    </p>
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      <a href={a.url} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 hover:underline">
+                        {a.nazev}
+                      </a>
+                    </h3>
+                    <p className="mt-1 text-sm text-gray-700">
+                      {a.terminPribligny ? 'přibližně ' : ''}
+                      {a.datum}
+                      {a.cas ? `, ${a.cas}` : ''}
+                      {a.misto && !a.online ? ` — ${a.misto}` : ''}
+                    </p>
+
+                    {(a.zdrojJenAgregator || a.terminPribligny) && (
+                      <p className="mt-2 rounded border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">
+                        <strong>{a.zdrojJenAgregator ? 'Termín neověřený u pořadatele.' : 'Termín je přibližný.'}</strong>{' '}
+                        {a.poznamkaTerminu} Před cestou si ho ověřte na stránce akce.
+                      </p>
+                    )}
+
+                    {/* Poznámka bez příznaku nejistoty nese podmínky vstupu (Plzeň:
+                        všední dny jen pro školní výpravy s registrací). Dřív se
+                        vykreslovala jen spolu s výstrahou, takže ji čtenář nevidel. */}
+                    {a.poznamkaTerminu && !a.zdrojJenAgregator && !a.terminPribligny && (
+                      <p className="mt-2 text-sm text-gray-700">{a.poznamkaTerminu}</p>
+                    )}
+
+                    <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-600">
+                      <span>Pořádá {a.poradatel}</span>
+                      <a href={a.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                        Stránka akce
+                      </a>
+                    </p>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+
+          {/* Výhrada neúplnosti patří ke každému kraji zvlášť: rodič, který
+              právě zjistil, že jeho město chybí, je ten, kdo akci nahlásí. */}
+          <p className="mt-3 text-sm text-gray-600">
+            Víme jen o {o.pocet === 1 ? 'této akci' : `těchto ${o.pocet} akcích`}.{' '}
+            <Link href="/veletrhy/nahlasit" className="text-blue-600 hover:underline">
+              Chybí vám nějaká? Nahlaste nám ji.
+            </Link>
+          </p>
+        </section>
+      ))}
     </div>
   );
 }
