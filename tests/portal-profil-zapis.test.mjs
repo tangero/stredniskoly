@@ -4,6 +4,7 @@ import { PGlite } from '@electric-sql/pglite';
 import { MIGRACE_PORTALU } from '../src/lib/portal-schema.ts';
 import { zapisUdaje, opravRedakce, vratPredchozi, udajeSkoly } from '../src/lib/portal-profil.ts';
 import { PortalChyba } from '../src/lib/portal-ucty.ts';
+import { validatePortalPayload } from '../src/lib/portal-skol.ts';
 
 // Zápis profilu nad skutečným Postgresem (PGlite). Funkce běží uvnitř
 // transakce, stejně jako v aplikaci přes `vTransakci`.
@@ -239,4 +240,44 @@ test('oprava redakcí nese zdroj i důvod, bez důvodu neprojde', async () => {
   assert.equal(zaznam.udaje.dny_otevrenych_dveri.zdroj, 'redakce');
   const r = await s.dotaz(`select duvod, zmenu_provedl from portal_profil where zneplatneno is null`);
   assert.deepEqual(r.rows[0], { duvod: 'termín byl čtyři roky starý', zmenu_provedl: 'admin:patrick' });
+});
+
+
+// ---------------------------------------------------------------------------
+// Kritéria od školy musí dojít až do databáze. Validace neznámé klíče tiše
+// zahazuje (`if (!def) continue;`), takže překlep v názvu pole nebo pole
+// vypadlé z PORTAL_POLE by školu nechaly psát do prázdna — bez chyby, bez
+// stopy. Tenhle test prožene pole celou cestou: validace → zápis → čtení.
+// ---------------------------------------------------------------------------
+
+test('kritéria vlastními slovy projdou validací, zápisem i čtením beze ztráty', async () => {
+  const text = 'Součet testů CERMAT; matematika se počítá 1,5×. K tomu až 10 bodů za prospěch.';
+  const overeno = validatePortalPayload({
+    souhlas_cc_by: true,
+    kontakt_email: 'reditelka@skola.cz',
+    udaje_sedi: true,
+    udaje: { kriteria_vlastnimi_slovy: text, odkaz_kriteria: 'https://skola.cz/prijimacky.pdf' },
+  });
+  assert.equal(overeno.ok, true, `validace odmítla: ${overeno.ok ? '' : overeno.error}`);
+  assert.equal(overeno.udaje.kriteria_vlastnimi_slovy, text, 'validace pole zahodila nebo změnila');
+  assert.equal(overeno.udaje.odkaz_kriteria, 'https://skola.cz/prijimacky.pdf');
+
+  const { s, tx } = await novaDb();
+  const zmeny = await tx((t) => zapisUdaje(t, { ...ZAKLAD, udaje: overeno.udaje, zmenuProvedl: 'ucet' }));
+  assert.ok(zmeny.includes('kriteria_vlastnimi_slovy'), 'zápis pole nezaznamenal jako změnu');
+
+  const zaznam = await udajeSkoly(s, ZAKLAD.redizo);
+  assert.equal(zaznam?.udaje?.kriteria_vlastnimi_slovy?.hodnota, text, 'z databáze se vrátilo něco jiného');
+  assert.equal(zaznam?.udaje?.odkaz_kriteria?.hodnota, 'https://skola.cz/prijimacky.pdf');
+});
+
+test('pole nad 2 000 znaků validace odmítne nahlas, ne tichým oříznutím', () => {
+  const overeno = validatePortalPayload({
+    souhlas_cc_by: true,
+    kontakt_email: 'reditelka@skola.cz',
+    udaje_sedi: true,
+    udaje: { kriteria_vlastnimi_slovy: 'x'.repeat(2001) },
+  });
+  assert.equal(overeno.ok, false);
+  assert.match(overeno.error, /nejvýše 2000 znaků/);
 });
