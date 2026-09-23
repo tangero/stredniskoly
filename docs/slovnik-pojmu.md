@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.23 · 23. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.24 · 23. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -31,6 +31,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | Pojem na stránce | Význam | Vysvětlení při prvním výskytu v bloku | Nepoužívat |
 |---|---|---|---|
 | **pořadí na přihlášce**, **1. volba**, **2. volba** | pořadí oborů, jak je uchazeč zapsal; v datech priorita | u rad vždy doplnit: „pořadí na přihlášce šanci na přijetí nemění, škola řadí jen podle svých kritérií“ | priorita (v textu pro rodiče), preference |
+| **pozice na přihlášce**: **škola první volby**, **smíšená pozice**, **záložní volba** | kohorta podle pozice na přihlášce ze slovníku ukazatelů: jak často si obor uchazeči zapsali jako 1. volbu ve srovnání s obory stejného typu v celé zemi; platí pro nabídku, ne pro celou školu | „srovnává se jen s obory stejného typu“ a vždy v bloku: „neříká nic o kvalitě školy: záložní volba znamená, že si ji uchazeči píší jako pojistku, ne že je horší“ | kategorie oboru, vyvážený obor, preferovaný obor, oblíbenost, atraktivita |
 | **obor výš na přihlášce**, **obor níž na přihlášce** | obor zapsaný před tímto oborem, nebo za ním | není potřeba | lepší obor, horší obor, záložní škola |
 | **kritéria přijetí** | pravidla, podle kterých škola uchazeče řadí a kdy je nepřijme; vyhlašuje je škola | „kritéria, která škola vyhlašuje na svém webu“ | podmínky přijetí (vyjma citace), pravidla školy |
 | **požadavek školy** | vylučující část kritérií: hranice bodů, zdravotní způsobilost, doklady | viz nedosáhli požadavku školy | podmínky |
@@ -107,6 +108,8 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | šance (jako hodnota) | nezobrazujeme osobní šance ani predikce | „jak dopadli uchazeči v roce …“; slovo „šance“ jen v záporu: „není to šance konkrétního uchazeče“, „šanci nemění“ |
 | hranice přijetí | nikdo ji nezveřejňuje (slovník ukazatelů) | nejnižší výsledek přijatých, hranice úspěšnosti |
 | žebříček, nejlepší škola | web neřadí školy podle kvality; řadí jen obory stejného typu v kraji podle zájmu nebo výsledků přijatých | pořadí v kraji podle zájmu, pořadí v kraji podle výsledků přijatých |
+| kategorie oboru, vyvážený obor, preferovaný obor, obor 1. volby | zařazení bez doloženého výpočtu (slovník ukazatelů, oddíl 7), staženo 23. 9. 2026 | pozice na přihlášce: škola první volby, smíšená pozice, záložní volba |
+| konkurence (jako číslo), trend (ze dvou ročníků) | přihlášky na místo konkurenci nadsazují; trend slovník dovoluje až od tří doložených ročníků | přihlášky na místo; změna proti předchozímu roku |
 | obtížnost studia, kvalita školy (z přijímacích dat) | přijímací data popisují vstup, ne studium | spolužáci přicházejí s výsledky kolem …; inspekce |
 | kvalitní škola, nejlepší škola (z maturity) | maturita popisuje úroveň ročníku, ne kvalitu výuky (maturitní návrh §8, podmínka 9) | nad školami stejné skupiny oborů ve … ze 4 let |
 | škola nemá novinky, žádné novinky | nevíme to: může být výpadek zdroje nebo databáze. Blok se v takovém případě nezobrazí vůbec | nic – blok chybí |
@@ -116,6 +119,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.24 | Pojem **pozice na přihlášce** se třemi stupni (škola první volby, smíšená pozice, záložní volba) pro přehled kraje, přehled města a stránku oboru (23. 9. 2026). Zadavatel chtěl „kategorie škol“ používat víc; dosavadní kategorie oboru neměla doložený výpočet, proto se zakazuje i její slovník. Do zakázaných slov přibyla konkurence jako číslo a trend ze dvou ročníků, které nesl starý přehled kraje. |
 | 1.23 | Pojem **potvrzený termín** u veletrhu (23. 9. 2026): přehled říká „víme jen o těchto N akcích s potvrzeným termínem“, protože soubor zná i akce bez potvrzeného termínu a číslo musí nést svou množinu. Dosud slovo stálo jen v zákazech u *termínů z článku školy* — tam platí dál, protože termíny z článků neověřujeme; u veletrhu ověřujeme na stránce pořadatele. |
 | 1.22 | U pojmu **pořadatel veletrhu** zkrácena věta na kartě na „Pořádá *organizace*“ (23. 9. 2026). Dovětek „ne tento web“ na každé z 41 karet byl šum; že akci nepořádáme my, plyne z toho, že říkáme, kdo ji pořádá. Totéž ve větě o ověření pod přehledem („ověřte na stránce pořadatele“). Pojem *nahlásit akci* dostal svou větu i v každém oddílu kraje na `/veletrhy`. |
 | 1.21 | Pojmy pro veletrhy a přehlídky středních škol (22. 9. 2026). Dosud slovník znal jen akce, které pořádá škola sama, a všechny stály na větě „pořadatelem je škola, ne tento web“. U veletrhu jsou strany tři, proto nový pojem **pořadatel veletrhu** s větou, která říká, kdo za konání ručí. Pojem **nahlásit akci** má v zakázaných slovech *přidat* a *vložit*: obojí slibuje zveřejnění, které nenastane samo — nahlášení jde ke kontrole a na web se akce dostane až po ověření termínu. Zákaz spojení *škola pořádá* se veletrhu netýká, protože škola ho nepořádá; o účasti školy se ale bez seznamu vystavovatelů nepíše vůbec. |

@@ -4,19 +4,27 @@ import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { RegionSchoolsTable } from '@/components/RegionSchoolsTable';
-import { getAllKraje, getSchoolsByKraj, getRegionStats, getExtendedSchoolStatsForSchools, getTrendDataForSchools, ExtendedSchoolStats, YearlyTrendData } from '@/lib/data';
+import { getAllKraje } from '@/lib/data';
+import { getKrajPrehled } from '@/lib/krajData';
+import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
+import { MESTA } from '@/lib/cityData';
+import { cislo, KOHORTA_NENI_KVALITA, vKraji } from '@/lib/obor-profil';
+import { tvar } from '@/lib/cesky-tvar';
+
+/**
+ * Přehled škol v kraji: docs/navrh-stranky-kraje-2027.md.
+ *
+ * Rok se bere z registru stavu datových sad, nikdy napevno (CLAUDE.md, pravidlo 1).
+ * Stránka je statická; filtry čte a zapisuje až klientská komponenta.
+ */
 
 const noKrajSuffix = ['Hlavní město Praha', 'Vysočina'];
 function krajLabel(nazev: string): string {
   return noKrajSuffix.includes(nazev) ? nazev : `${nazev} kraj`;
 }
-function krajLabelV(nazev: string): string {
-  return noKrajSuffix.includes(nazev) ? `v regionu ${nazev}` : `v ${nazev} kraji`;
-}
 
 interface Props {
   params: Promise<{ kraj: string }>;
-  searchParams: Promise<{ delka?: string }>;
 }
 
 export async function generateStaticParams() {
@@ -24,239 +32,208 @@ export async function generateStaticParams() {
   return kraje.map((k) => ({ kraj: k.slug }));
 }
 
+function skol(n: number): string {
+  return n === 1 ? 'škola' : n >= 2 && n <= 4 ? 'školy' : 'škol';
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { kraj: krajSlug } = await params;
   const kraje = await getAllKraje();
   const kraj = kraje.find((k) => k.slug === krajSlug);
+  if (!kraj) return { title: 'Region nenalezen' };
 
-  if (!kraj) {
-    return { title: 'Region nenalezen' };
-  }
-
+  const prehled = await getKrajPrehled(kraj.kod);
+  const rok = await zobrazeneObdobi('cermat-vysledky');
+  const pocet = prehled?.skoly.length ?? 0;
+  const kde = vKraji(kraj.nazev === 'Vysočina' ? 'Kraj Vysočina' : kraj.nazev);
   return {
     alternates: { canonical: `/regiony/${kraj.slug}` },
-    title: `${krajLabel(kraj.nazev)} - Přehled škol`,
-    description: `Přehled středních škol ${krajLabelV(kraj.nazev)}. ${kraj.count} škol a oborů, statistiky přijímacích zkoušek.`,
+    title: `Střední školy ${kde}: jak těžké bylo se dostat`,
+    description: `${cislo(pocet)} ${skol(pocet)} ${kde}: obtížnost přijetí${rok ? ` v 1. kole ${rok}` : ''}, kam se hlásí jako na první volbu, maturita a počty míst.`,
     openGraph: {
-      title: `${krajLabel(kraj.nazev)} | Přijímačky na střední školy`,
-      description: `Přehled ${kraj.count} středních škol ${krajLabelV(kraj.nazev)}.`,
+      title: `Střední školy ${kde} | Přijímačky na střední školy`,
+      description: `Přehled ${cislo(pocet)} středních škol ${kde} po školách a oborech.`,
     },
   };
 }
 
-export default async function RegionPage({ params, searchParams }: Props) {
+function Vysvetlivka({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) {
+  return (
+    <details id={id} className="group scroll-mt-24 rounded-lg border border-slate-200 bg-white">
+      <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 hover:bg-slate-50">
+        <span className="text-sm text-slate-400 transition-transform group-open:rotate-90">▶</span>
+        <span className="text-sm font-medium text-slate-700">{title}</span>
+      </summary>
+      <div className="px-4 pb-4 text-sm leading-relaxed text-slate-600">{children}</div>
+    </details>
+  );
+}
+
+export default async function RegionPage({ params }: Props) {
   const { kraj: krajSlug } = await params;
-  const { delka: delkaParam } = await searchParams;
   const kraje = await getAllKraje();
   const kraj = kraje.find((k) => k.slug === krajSlug);
+  if (!kraj) notFound();
 
-  if (!kraj) {
-    notFound();
-  }
-
-  const allSchools = await getSchoolsByKraj(kraj.kod);
-  const stats = await getRegionStats(allSchools);
-
-  // Načíst rozšířená data a trend data pro všechny školy
-  const schoolIds = allSchools.map(s => s.id);
-  const [extendedStatsMap, trendDataMap] = await Promise.all([
-    getExtendedSchoolStatsForSchools(schoolIds),
-    getTrendDataForSchools(schoolIds)
-  ]);
-
-  // Převést Map na Record pro předání do client komponenty
-  const extendedStatsRecord: Record<string, ExtendedSchoolStats> = {};
-  extendedStatsMap.forEach((value, key) => {
-    extendedStatsRecord[key] = value;
-  });
-
-  const trendDataRecord: Record<string, YearlyTrendData> = {};
-  trendDataMap.forEach((value, key) => {
-    trendDataRecord[key] = value;
-  });
-
-  // Spočítat počty podle délky studia (před filtrováním)
-  const countByLength = {
-    8: allSchools.filter(s => s.delka_studia === 8).length,
-    6: allSchools.filter(s => s.delka_studia === 6).length,
-    4: allSchools.filter(s => s.delka_studia === 4).length,
-  };
-
-  // Filtrovat podle délky studia pokud je zadáno
-  const selectedDelka = delkaParam ? parseInt(delkaParam) : null;
-  const filteredSchools = selectedDelka
-    ? allSchools.filter(s => s.delka_studia === selectedDelka)
-    : allSchools;
+  const prehled = await getKrajPrehled(kraj.kod);
+  if (!prehled) notFound();
+  const { skoly, rok, rokDruhehoKola, rokMaturity } = prehled;
+  const pocetNabidek = skoly.reduce((a, s) => a + s.nabidky.length, 0);
+  // Seznam měst píše kraje tvarem „Jihomoravský kraj“ a „Kraj Vysočina“.
+  // U Prahy je město totéž co kraj; odkaz by vedl na stejný seznam škol.
+  const mesta = MESTA.filter(m => [krajLabel(kraj.nazev), `Kraj ${kraj.nazev}`].includes(m.kraj) && m.nazev !== 'Praha');
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col">
       <Header />
 
       <main className="flex-1">
-        {/* Breadcrumb */}
-        <div className="bg-white border-b">
-          <div className="max-w-6xl mx-auto px-4 py-3">
-            <nav className="text-sm text-slate-600">
-              <Link href="/" className="hover:text-blue-600">Domů</Link>
+        <div className="bg-gradient-to-br from-blue-600 to-blue-700 py-10 text-white">
+          <div className="mx-auto max-w-6xl px-4">
+            <nav className="mb-4 text-sm text-blue-200">
+              <Link href="/" className="hover:text-white">Domů</Link>
               <span className="mx-2">/</span>
-              <Link href="/regiony" className="hover:text-blue-600">Regiony</Link>
+              <Link href="/regiony" className="hover:text-white">Regiony</Link>
               <span className="mx-2">/</span>
-              <span className="text-slate-900">{kraj.nazev}</span>
+              <span className="text-white">{kraj.nazev}</span>
             </nav>
-          </div>
-        </div>
-
-        <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white py-12">
-          <div className="max-w-6xl mx-auto px-4">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">{krajLabel(kraj.nazev)}</h1>
-            <p className="text-lg opacity-90">
-              Přehled {stats.totalSchools} středních škol a oborů
+            <h1 className="mb-1 text-3xl font-bold md:text-4xl">Střední školy - {krajLabel(kraj.nazev)}</h1>
+            <p className="text-blue-200">
+              {cislo(skoly.length)} {skol(skoly.length)}, {cislo(pocetNabidek)} {tvar(pocetNabidek, 'nabídka', 'nabídky', 'nabídek')} v 1. kole {rok}
             </p>
-          </div>
-        </div>
-
-        <div className="max-w-6xl mx-auto px-4 py-8">
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-              <div className="text-3xl font-bold text-blue-600">{stats.totalSchools}</div>
-              <div className="text-sm text-slate-600">Škol/oborů</div>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-              <div className="text-3xl font-bold text-blue-600">
-                {Math.round(stats.totalKapacita / 100) / 10}k
-              </div>
-              <div className="text-sm text-slate-600">Kapacita 2025</div>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-              <div className="text-3xl font-bold text-blue-600">
-                {stats.avgIndexPoptavky.toFixed(1)}
-              </div>
-              <div className="text-sm text-slate-600">Prům. index poptávky 2025</div>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-              <div className="text-3xl font-bold text-blue-600">
-                {stats.totalPrihlasky.toLocaleString('cs-CZ')}
-              </div>
-              <div className="text-sm text-slate-600">Přihlášky 2025</div>
-            </div>
-          </div>
-
-          {/* Filtry podle délky studia */}
-          <div className="bg-white p-4 rounded-xl shadow-sm mb-6">
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="text-sm font-medium text-slate-700">Filtrovat podle délky:</span>
-              <Link
-                href={`/regiony/${krajSlug}`}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  !selectedDelka
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                }`}
-              >
-                Všechny ({stats.totalSchools})
-              </Link>
-              {countByLength[8] > 0 && (
-                <Link
-                  href={`/regiony/${krajSlug}?delka=8`}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    selectedDelka === 8
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-blue-100 text-blue-800 hover:bg-blue-200'
-                  }`}
-                >
-                  8leté ({countByLength[8]})
-                </Link>
-              )}
-              {countByLength[6] > 0 && (
-                <Link
-                  href={`/regiony/${krajSlug}?delka=6`}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    selectedDelka === 6
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-blue-100 text-blue-800 hover:bg-blue-200'
-                  }`}
-                >
-                  6leté ({countByLength[6]})
-                </Link>
-              )}
-              {countByLength[4] > 0 && (
-                <Link
-                  href={`/regiony/${krajSlug}?delka=4`}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    selectedDelka === 4
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-blue-100 text-blue-800 hover:bg-blue-200'
-                  }`}
-                >
-                  4leté ({countByLength[4]})
-                </Link>
-              )}
-            </div>
-            {selectedDelka && (
-              <div className="mt-3 text-sm text-slate-600">
-                Zobrazeno {filteredSchools.length} {selectedDelka}letých oborů z celkem {stats.totalSchools}
-              </div>
+            {mesta.length > 0 && (
+              <p className="mt-4 text-sm text-blue-100">
+                Přehled po městech:{' '}
+                {mesta.map((m, i) => (
+                  <span key={m.slug}>
+                    {i > 0 && ', '}
+                    <Link href={`/mesto/${m.slug}`} className="underline hover:text-white">{m.nazev}</Link>
+                  </span>
+                ))}
+              </p>
             )}
           </div>
+        </div>
 
-          {/* Legenda - kompaktní na mobilech */}
-          <div className="bg-slate-50 p-4 rounded-xl mb-6 text-sm">
-            <div className="font-medium text-slate-700 mb-2">Legenda:</div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap gap-x-4 gap-y-2 md:items-center">
-              {/* Priority */}
-              <div className="flex items-center gap-1.5">
-                <span className="w-3 h-3 rounded-full bg-green-500"></span>
-                <span className="text-slate-600">1. priorita</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="w-3 h-3 rounded-full bg-yellow-500"></span>
-                <span className="text-slate-600">2. priorita</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="w-3 h-3 rounded-full bg-red-500"></span>
-                <span className="text-slate-600">3. priorita</span>
-              </div>
-              {/* Obtížnost */}
-              <div className="flex items-center gap-1.5">
-                <span className="w-1 h-4 bg-green-500 rounded"></span>
-                <span className="text-slate-600">Snazší</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="w-1 h-4 bg-yellow-500 rounded"></span>
-                <span className="text-slate-600">Střední</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="w-1 h-4 bg-red-500 rounded"></span>
-                <span className="text-slate-600">Těžké</span>
-              </div>
-              {/* Další */}
-              <div className="flex items-center gap-1.5">
-                <span>📝</span>
-                <span className="text-slate-600">Extra kritéria</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="px-1.5 py-0.5 rounded text-xs bg-green-100 text-green-700">↓</span>
-                <span className="text-slate-600">Méně přihlášek</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="px-1.5 py-0.5 rounded text-xs bg-red-100 text-red-700">↑</span>
-                <span className="text-slate-600">Více přihlášek</span>
-              </div>
+        <div className="mx-auto max-w-6xl space-y-10 px-4 py-8">
+          <section>
+            <p className="mb-5 max-w-3xl text-sm text-slate-600">
+              Jeden řádek je jedna škola: obtížnost přijetí a pozice na přihlášce za 1. kolo {rok}, počet míst
+              a maturita. Jednotlivé obory najdete po kliknutí na školu. Přehled zahrnuje obory s jednotnou
+              přijímací zkouškou; učební obory bez maturity v něm nejsou.
+            </p>
+            <RegionSchoolsTable skoly={skoly} krajNazev={kraj.nazev === 'Vysočina' ? 'Kraj Vysočina' : kraj.nazev} rok={rok} rokDruhehoKola={rokDruhehoKola} />
+          </section>
+
+          <section>
+            <h2 className="mb-4 text-xl font-bold text-slate-700">Jak číst přehled</h2>
+            <div className="space-y-2">
+              <Vysvetlivka title="Co je obtížnost přijetí?">
+                Slovní zařazení podle toho, kolik soutěžících uchazečů se na obor dostalo, tedy těch, kdo splnili
+                požadavky školy a nedostali se na obor, který měli na přihlášce výš. Stupně jsou: místo pro všechny
+                (nikdo nebyl odmítnut kvůli kapacitě), dostala se většina (aspoň dvě třetiny), středně těžké
+                (polovina až dvě třetiny), těžké (třetina až polovina) a velmi těžké (méně než třetina). Popisuje
+                jeden ročník, ne kvalitu školy ani obtížnost studia, a neříká, jakou šanci má konkrétní uchazeč.
+                U oborů s méně než deseti soutěžícími se neuvádí. Mezi ročníky se mění, proto je u něj i předchozí rok.
+              </Vysvetlivka>
+              <Vysvetlivka title="Co je pozice na přihlášce?">
+                Porovnává podíl uchazečů, kteří si obor zapsali jako první volbu, s obory stejného typu v celé zemi
+                (osmiletá gymnázia s osmiletými, nástavby s nástavbami). <b>Škola první volby</b> je v horní třetině
+                svého typu, <b>záložní volba</b> v dolní třetině, mezi nimi je <b>smíšená pozice</b>. Srovnává se jen
+                uvnitř typu, protože podíl prvních voleb se mezi typy liší: u nástaveb je medián 57 %, u lyceí 26 %.
+                {' '}{KOHORTA_NENI_KVALITA} Neříká ani, jak těžké je se dostat: obor, který si skoro všichni dávají
+                jako první, může mít volná místa. Mezi dvěma posledními ročníky zůstaly ve stejné skupině zhruba dvě třetiny oborů.
+              </Vysvetlivka>
+              <Vysvetlivka title="Co jsou přihlášky na místo?">
+                Počet přihlášek dělený počtem míst. Nadsazuje konkurenci: jeden uchazeč podává víc přihlášek a kdo
+                se dostal na obor výš na své přihlášce, o tohle místo už nesoutěžil. Mezi typy studia se nesrovnává.
+              </Vysvetlivka>
+              <Vysvetlivka id="poradi-vysledky" title="Co je pořadí v kraji podle výsledků přijatých?">
+                <p>
+                  Pořadí ukazuje, s jak dobrými výsledky jednotné přijímací zkoušky přišli na obor přijatí uchazeči,
+                  ve srovnání s obory stejného typu ve stejném kraji a roce.
+                </p>
+                <p className="mt-2 font-medium text-slate-700">Jak se počítá</p>
+                <ol className="ml-5 list-decimal space-y-1">
+                  <li>
+                    U každého přijatého se vezme výsledek z češtiny a matematiky dohromady a zjistí se, kolik ze 100
+                    uchazečů v celé zemi mělo stejný nebo horší výsledek (percentil). Percentil 80 znamená lepší
+                    nebo stejný výsledek než 80 % všech uchazečů.
+                  </li>
+                  <li>Z percentilů všech přijatých na obor se udělá průměr. Zveřejňuje ho CERMAT v souhrnech 1. kola.</li>
+                  <li>
+                    Obory se podle průměru seřadí, ale jen mezi obory stejného typu a délky studia v kraji:
+                    osmiletá gymnázia mezi osmiletými, lycea mezi lycei.
+                  </li>
+                </ol>
+                <p className="mt-2">
+                  „1. ze 32“ u osmiletého gymnázia tedy znamená, že přijatí na tento obor měli v průměru nejlepší
+                  umístění v celé zemi ze všech 32 osmiletých gymnázií v kraji. Pod pořadím je předchozí rok, aby bylo
+                  vidět, jestli jde o stálý stav, nebo výkyv jednoho ročníku.
+                </p>
+                <p className="mt-2 font-medium text-slate-700">Proč percentil a ne body</p>
+                <p>
+                  Test je každý rok jinak těžký, takže body se mezi roky srovnávat nedají. Mezi dvěma posledními ročníky
+                  se průměr přijatých v bodech posunul typicky o 2,6 bodu, zatímco jejich umístění v celé zemi se skoro
+                  nezměnilo. Percentil tenhle posun odstraní, proto jde pořadí za dva roky položit vedle sebe.
+                </p>
+                <p className="mt-2 font-medium text-slate-700">Co pořadí neříká</p>
+                <ul className="ml-5 list-disc space-y-1">
+                  <li>
+                    <b>Která škola je lepší.</b> Popisuje, s jakými výsledky sem přicházejí spolužáci, ne kvalitu výuky.
+                    O studiu víc řekne sloupec maturity.
+                  </li>
+                  <li><b>Kolik bodů stačí na přijetí.</b> Je to průměr přijatých; část z nich měla výsledky pod ním.</li>
+                  <li>
+                    <b>Jak těžké je se dostat.</b> Na to je obtížnost přijetí. Obor s dobře umístěnými přijatými může mít
+                    volná místa, když se na něj hlásí málo uchazečů.
+                  </li>
+                  <li>
+                    <b>Srovnání se všemi, kam se uchazeči hlásí.</b> Hranice kraje neodpovídá skutečným přihláškám:
+                    u gymnázia J. S. Machara v Brandýse leží zhruba polovina oborů, které mají uchazeči na přihlášce vedle
+                    něj, v Praze.
+                  </li>
+                </ul>
+                <p className="mt-2 font-medium text-slate-700">Kdy se pořadí ukáže</p>
+                <ul className="ml-5 list-disc space-y-1">
+                  <li>Jen po výběru typu studia, protože obory různých typů se neporovnávají.</li>
+                  <li>Jen ve skupině s aspoň deseti obory v kraji; v menší by jeden obor pořadím zbytečně házel.</li>
+                  <li>Stejná hodnota dává stejné pořadí, proto se objevuje například „10.–11. ze 32“.</li>
+                  <li>
+                    V tabulce je u školy pořadí jejího nejlépe umístěného oboru zvoleného typu; pořadí jednotlivých
+                    oborů je v detailu školy.
+                  </li>
+                  <li>
+                    Mezi dvěma posledními ročníky zůstaly ve stejné třetině pořadí zhruba dvě třetiny oborů a typický
+                    posun byl pět míst. Údaj je poměrně stálý, jednotlivá místa ale nejsou přesné měřítko.
+                  </li>
+                </ul>
+                <p className="mt-2">
+                  Podle obtížnosti přijetí se neřadí, protože se mezi roky přehazuje příliš: gymnázium J. S. Machara
+                  bylo podle ní v jednom roce 7. a v dalším 17. z 32.
+                </p>
+              </Vysvetlivka>
+              <Vysvetlivka id="poradi-zajem" title="Co je pořadí v kraji podle zájmu?">
+                Řadí obory stejného typu a délky v kraji podle toho, kolik uchazečů si obor zapsalo jako první volbu
+                na jedno místo (tlak prvních voleb). Ze všech ukazatelů poptávky nejlépe předpovídá, zda se na obor
+                další rok někdo nevejde. Platí stejná pravidla zobrazení jako u pořadí podle výsledků přijatých
+                a stejně tak neříká, která škola je lepší.
+              </Vysvetlivka>
+              {rokMaturity && (
+                <Vysvetlivka title="Co znamená sloupec Maturita?">
+                  Kolik přihlášených u školy maturitu v roce {rokMaturity} udělalo a jak často byla škola v češtině
+                  nad středem podobných škol za poslední čtyři roky. Podobné školy jsou školy se stejným typem oborů
+                  v celé zemi. Údaj platí za celou školu, ne za jednotlivý obor.
+                </Vysvetlivka>
+              )}
+              {rokDruhehoKola && (
+                <Vysvetlivka title="Co znamená „bylo i 2. kolo“?">
+                  Škola v roce {rokDruhehoKola} po 1. kole vypsala na obor i 2. kolo. Je to údaj o minulém ročníku,
+                  ne příslib pro další rok.
+                </Vysvetlivka>
+              )}
             </div>
-          </div>
-
-          {/* Tabulka škol */}
-          <RegionSchoolsTable
-            schools={filteredSchools}
-            // Nefiltrovaný seznam kraje: odkaz na detail musí poznat, že se
-            // název oboru v rámci školy opakuje s jinou délkou studia.
-            // Z filtrovaných dat by to při volbě jedné délky vidět nešlo.
-            allSchools={allSchools}
-            extendedStatsMap={extendedStatsRecord}
-            trendDataMap={trendDataRecord}
-            krajName={kraj.nazev}
-          />
+          </section>
         </div>
       </main>
 

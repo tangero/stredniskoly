@@ -23,6 +23,7 @@ Párování ročníků (docs/grafy-skoly-a-oboru-2027.md, pravidlo 7):
 from __future__ import annotations
 
 import argparse
+import bisect
 import hashlib
 import json
 import math
@@ -84,6 +85,8 @@ def zaznam(r: dict) -> dict:
         "higher_priority": cislo(r, "NEPŘIJATI - PŘIJAT NA VYŠŠÍ PRIORITU", pocet=True),
         "withdrawn": cislo(r, "NEPŘIJATI - VZDAL SE PŘIJETÍ", pocet=True),
         "tlak_prvnich_voleb": round(priority[0] / kapacita, 3) if kapacita and priority[0] is not None else None,
+        # Podíl prvních voleb (slovník ukazatelů): dělí se přihláškami, ne kapacitou; měří pozici na přihlášce.
+        "podil_prvnich_voleb": round(priority[0] / prihlasky, 3) if prihlasky and priority[0] is not None else None,
         "index_poptavky": round(prihlasky / kapacita, 3) if kapacita and prihlasky is not None else None,
         "konali": konali,
         "prijatych_s_vysledkem": konali_prijati,
@@ -242,6 +245,61 @@ def zarazeni_obtiznosti(r: dict) -> str | None:
     return "velmi_tezke" if podil < 1 / 3 else "tezke" if podil < 1 / 2 else "stredne_tezke" if podil < 2 / 3 else "vetsina_uspela"
 
 
+KOHORTA_HORNI = 67  # percentil ve skupině, nad kterým je nabídka školou první volby (slovník ukazatelů)
+KOHORTA_DOLNI = 33  # percentil ve skupině, pod kterým je nabídka záložní volbou
+
+
+def percentil_ve_skupine(hodnota: float, serazene: list[float]) -> float:
+    """Podíl nabídek skupiny s hodnotou menší nebo rovnou (slovník ukazatelů, oddíl 4), v procentech."""
+    return 100 * bisect.bisect_right(serazene, hodnota) / len(serazene)
+
+
+def kohorta_pozice(percentil: float | None) -> str | None:
+    """Kohorta podle pozice na přihlášce ze slovníku ukazatelů, oddíl 1."""
+    if percentil is None:
+        return None
+    if percentil > KOHORTA_HORNI:
+        return "skola_prvni_volby"
+    if percentil < KOHORTA_DOLNI:
+        return "zalozni_volba"
+    return "smisena_pozice"
+
+
+def doplnit_kohorty(nabidky_rocniku: dict[str, dict]) -> dict[str, list[float]]:
+    """Doplní percentil podílu prvních voleb ve skupině a kohortu; vrátí rozdělení skupin.
+
+    Počítá se pro každou skupinu bez ohledu na její velikost. Práh zobrazení (30 nabídek
+    ve skupině, slovník oddíl 4) uplatňuje až knihovna, stejně jako u obtížnosti přijetí.
+    """
+    podle = defaultdict(list)
+    for v in nabidky_rocniku.values():
+        if v["podil_prvnich_voleb"] is not None:
+            podle[v["skupina"]].append(v["podil_prvnich_voleb"])
+    for h in podle.values():
+        h.sort()
+    for v in nabidky_rocniku.values():
+        x = v["podil_prvnich_voleb"]
+        pct = None if x is None else round(percentil_ve_skupine(x, podle[v["skupina"]]), 1)
+        v["percentil_podilu_prvnich_voleb"] = pct
+        v["kohorta_pozice"] = kohorta_pozice(pct)
+    return podle
+
+
+def doklad_kohort(rocniky: dict[int, dict], nabidky: dict[str, dict], roky: list[int]) -> dict:
+    """Rozdělení kohort v ročníku a podíl spárovaných nabídek, které zůstaly ve stejné kohortě."""
+    out = {}
+    for rok in roky:
+        out[str(rok)] = dict(Counter(v["kohorta_pozice"] for v in rocniky[rok].values()))
+    for i, rok in enumerate(roky[1:], start=1):
+        pred = str(roky[i - 1]); klic = f"{pred}-{rok}"
+        pary = [(v[pred]["kohorta_pozice"], v[str(rok)]["kohorta_pozice"]) for v in nabidky.values()
+                if v.get(pred) and v.get(str(rok)) and klic in v.get("parovani", {})
+                and v[pred]["kohorta_pozice"] and v[str(rok)]["kohorta_pozice"]]
+        if pary:
+            out[klic] = {"n": len(pary), "stejna_kohorta_pct": round(100 * sum(1 for a, b in pary if a == b) / len(pary), 1)}
+    return out
+
+
 def doklad_podilu(rocniky: dict[int, dict], nabidky: dict[str, dict], roky: list[int]) -> dict:
     """Rozdělení a stabilita podílu přijatých ze soutěžících a jeho slovního zařazení."""
     out = {}
@@ -292,10 +350,11 @@ def main() -> None:
     if len(roky) < 1:
         raise SystemExit("nenalezen žádný souhrn 1. kola")
 
-    rocniky, zdroje = {}, {}
+    rocniky, zdroje, rozdeleni_podilu = {}, {}, {}
     for rok in roky:
         soubor = a.zdroj_dir / f"PZ{rok}_kolo1_skolobory_vysledky.xlsx"
         rocniky[rok] = nacti_rocnik(soubor, rok)
+        rozdeleni_podilu[rok] = doplnit_kohorty(rocniky[rok])
         # Pojistka proti tichému výpadku: sloupec se čte přes .get(), takže jeho přejmenování
         # v dalším ročníku by nespadlo — jen by všechny nabídky dostaly smo16 = None a maturitní
         # karta na stránce oboru by zmizela beze stopy.
@@ -342,7 +401,9 @@ def main() -> None:
         for v in rocniky[rok].values():
             if v["tlak_prvnich_voleb"] is not None:
                 podle[v["skupina"]].append(v["tlak_prvnich_voleb"])
-        skupiny[str(rok)] = {s: {"n": len(h), "tlak_prvnich_voleb": sorted(h)} for s, h in sorted(podle.items())}
+        skupiny[str(rok)] = {s: {"n": len(h), "tlak_prvnich_voleb": sorted(h),
+                                 "podil_prvnich_voleb": rozdeleni_podilu[rok].get(s, [])}
+                             for s, h in sorted(podle.items())}
 
     # Doklady ke slovníku: jak se ukazatele mění mezi ročníky u spárovaných nabídek.
     stabilita = {}
@@ -396,7 +457,8 @@ def main() -> None:
     }
     doklad = {"zdroj_skriptu": "scripts/build-souhrny-kolo1.py", "rocniky": zdroje, "parovani": doklad_parovani,
               "stabilita": stabilita, "shoda_s_jinymi_zdroji": shoda_s_jinymi_zdroji(rocniky),
-              "podil_prijatych_ze_soutezicich": doklad_podilu(rocniky, nabidky, roky)}
+              "podil_prijatych_ze_soutezicich": doklad_podilu(rocniky, nabidky, roky),
+              "kohorta_pozice": doklad_kohort(rocniky, nabidky, roky)}
 
     text = json.dumps(vystup, ensure_ascii=False, separators=(",", ":"), allow_nan=False) + "\n"
     a.vystup.write_text(text, encoding="utf-8")

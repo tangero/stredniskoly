@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.31 · 23. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.32 · 23. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -48,7 +48,11 @@ Zařazení nabídky do tří skupin podle **percentilu podílu prvních voleb ve
 
 Absolutní prahy se nepoužívají, protože se mezi typy studia neslučují: hranice horní třetiny je u lyceí 32 %, u nástaveb 66 %.
 
-Kohorta je stabilní: mezi roky 2025 a 2026 zůstalo ve stejné třetině 66 % nabídek proti 33 %, které by dala náhoda.
+Kohorta je stabilní: mezi roky 2025 a 2026 zůstalo ve stejné třetině 64,5 % z 2 933 spárovaných nabídek proti 33 %, které by dala náhoda (`docs/podklady/overeni-srovnani-rocniku.json`, klíč `kohorta_pozice`). Dřívější údaj 66 % pocházel z párování bez mapy nabídek.
+
+**Kde se počítá.** Od 23. 9. 2026 ji počítá `scripts/build-souhrny-kolo1.py` do souhrnů 1. kola: pole `podil_prvnich_voleb`, `percentil_podilu_prvnich_voleb` a `kohorta_pozice` v každém ročníku nabídky a rozdělení `skupiny.{rok}.{skupina}.podil_prvnich_voleb`. Percentil je podíl nabídek skupiny s hodnotou menší nebo rovnou (oddíl 4), prahy jsou ostré: nad 67 a pod 33. Dělba je stejná jako u obtížnosti přijetí: generátor nese hodnotu i ve skupině pod prahem, **práh 30 nabídek ve skupině uplatňuje `kohortaPozice` v `src/lib/obor-profil.ts`**. V ročnících 2025 a 2026 práh splňují všechny skupiny (nejmenší jsou šestiletá gymnázia se 71 nabídkami). Rozdělení 2026: 1 022 škol první volby, 1 061 smíšených, 1 008 záložních.
+
+**Kde se zobrazuje:** přehled kraje a přehled města (odznak u nabídky, pruh a filtr v přehledu kraje) a stránka oboru (blok „Kam si obor uchazeči píší na přihlášku“, s předchozím ročníkem). Odznak má neutrální modrý obrys, nikdy semafor.
 
 **Neříká nic o kvalitě školy.** Záložní volba znamená, že si ji uchazeči píší jako pojistku, nikoli že je horší. Typicky jde o obory, které lidé volí podle dostupnosti.
 
@@ -610,6 +614,8 @@ Dokud nemá doložený výpočet, nemá se používat k řazení ani k průměro
 ### Kategorie oboru (`category_code`, `category_name`)
 Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí totéž co výše.
 
+**Rozbor z 23. 9. 2026** ([návrh krajské stránky](navrh-stranky-kraje-2027.md), oddíl 2): „Obor 1. volby“ a „Preferovaný obor“ odpovídají pevným prahům 70 % a 50 % podílu prvních voleb, tedy absolutním prahům napříč typy, které oddíl 1 zakazuje. „Vyvážený“ a „Záložní“ podíl prvních voleb neodliší a pravidlo mezi nimi dohledané není. Obory nové v roce 2026 dostávaly „Vyvážený“ napevno v `scripts/import_cermat_2026_real.py`, bez dat. **Z webu stažena 23. 9. 2026** (přehled kraje, stránka oboru); náhradou je kohorta podle pozice na přihlášce z oddílu 1. Pole v `school_analysis.json` zůstává kvůli dohledatelnosti.
+
 ## 8. Jak zavést nový ukazatel
 
 1. Zapsat jej sem: název, definice jednou větou, vzorec, zdroj, jednotka, rozsah platnosti.
@@ -622,6 +628,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.32 | **Kohorta podle pozice na přihlášce se počítá a zobrazuje** (23. 9. 2026). Generátor souhrnů 1. kola nese podíl prvních voleb, jeho percentil ve skupině a kohortu, práh 30 nabídek uplatňuje knihovna. Stabilita přepočtena s mapou nabídek na 64,5 % (dříve 66 %). Nedoložená **kategorie oboru** stažena z webu a rozebrána v oddílu 7; nahrazuje ji kohorta. Přehled kraje přestavěn nad souhrny zobrazeného ročníku, viz `docs/navrh-stranky-kraje-2027.md`. |
 | 1.31 | **Počet akcí v kraji** (23. 9. 2026, oddíl 6a). Přehled veletrhů dostal kraj jako osu a s ním čipy a nadpisy s počty; návrh veletrhů § 6.4 předvídal, že to bude ukazatel a bude chtít zápis. Definice: potvrzený termín, `end ≥ dnes` při čtení, online akce pod krajem pořadatele. Neříká, kolik akcí se koná, ale o kolika víme. |
 | 1.30 | **Rozhodl test dostal doložené slepé místo** (22. 9. 2026, podnět čtenáře). Ukazatel nevidí kritéria, která jeden test jen převažují: Gymnázium Christiana Dopplera má 0,994, a přitom váží matematiku 1,5×. Věta na kartě přestala tvrdit, že „rozhodl test“, a slepé místo pojmenovává. Nová prověrka *předmětový sklon* našla nápadné vážení u 73 z 354 měřitelných oborů (21 %) — napříč typy škol, ne jen u výběrových gymnázií. |
 | 1.29 | **Věta s termíny dostala strop** (21. 9. 2026). Nad čtyři termíny vypíše první tři a datum posledního: sedm termínů přípravného kurzu dávalo větu na 145 znaků. Modelu se zároveň předkládá nejvýš dvanáct dat na položku — po stažení stránky článku vyšly v měření tři položky po 35 otázkách v jediném volání, což je proti podmínce P6 o délce kontextu. Strop je nad naměřeným rozložením bez ocasu (0, 1, 2, 3, 6, 7, 8, 11 dat), takže o reálný termín nepřipraví. |
@@ -651,6 +658,6 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 | 1.5 | Překryv u hranice přijetí zrušen jako nerobustní a nahrazen mírou *rozhodl test*; krajní hodnoty zůstávají jako pásmo nejistoty bez srovnávací funkce. |
 | 1.4 | Doplněni soutěžící o obor, podíl přijatých podle bodového pásma, překryv u hranice přijetí a hustota u hranice. |
 | 1.3 | Opraveno tvrzení, že nemáme nejnižší výsledek přijatých. Doplněn nejnižší výsledek JPZ mezi přijatými, medián a průměr JPZ přijatých 2025. |
-| 1.2 | Doplněn podíl prvních voleb, kohorta podle pozice na přihlášce a souběžné přihlášky. |
+| 1.2 | Doplněn podíl prvních voleb a souběžné přihlášky. |
 | 1.1 | Doplněn tlak prvních voleb, naplněnost a přetlak. Zaznamenán neúspěšný pokus o zpětné odvození indexu obtížnosti a zjištění, že složený index nepřidává rozlišovací schopnost. |
 | 1.0 | První soupis. Podkladem je audit obtížnosti, audit dat karet, [návrh prezentace dat](navrh-prezentace-dat-skoly-2027.md) a [maturitní výsledky](maturitni-vysledky-a-kvalita-skoly-2027.md). |

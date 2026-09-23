@@ -9,8 +9,8 @@ import { getWebSkoly } from '@/lib/skoly-web';
 import { getMaturitaOboru, type MaturitaOboru } from '@/lib/obor-maturita';
 import { createSlug } from '@/lib/utils';
 import {
-  nazevSkupiny, poradiVeSkupine, stavNabidky, zarazeniObtiznosti, soutezicichUchazecu, znackaMimoPrehled,
-  type Poradi, type StavNabidky, type ZarazeniObtiznosti, type ZnackaMimoPrehled,
+  kohortaPozice, nazevSkupiny, poradiVeSkupine, stavNabidky, zarazeniObtiznosti, soutezicichUchazecu, znackaMimoPrehled,
+  type KohortaPozice, type Poradi, type StavNabidky, type ZarazeniObtiznosti, type ZnackaMimoPrehled,
 } from '@/lib/obor-profil';
 
 /**
@@ -50,6 +50,9 @@ export interface ProfilOboruData {
   stav: StavNabidky;
   zarazeni: ZarazeniObtiznosti | null;
   zarazeniPredchozi: ZarazeniObtiznosti | null;
+  /** Kohorta podle pozice na přihlášce, zobrazený a předchozí ročník (slovník ukazatelů). */
+  kohorta: KohortaPozice | null;
+  kohortaPredchozi: KohortaPozice | null;
   skupina: string;
   skupinaNazev: string;
   krajNazev: string;
@@ -109,7 +112,8 @@ async function nazvyOboru() {
   return mapa;
 }
 
-async function poradi(rok: number, kraj: string, skupina: string, klic: string, pole: 'tlak' | 'umisteni', predchoziRok: number | null): Promise<PoradiVKraji | null> {
+/** Jedna definice pořadí v kraji pro stránku oboru i přehled kraje. */
+export async function poradi(rok: number, kraj: string, skupina: string, klic: string, pole: 'tlak' | 'umisteni', predchoziRok: number | null): Promise<PoradiVKraji | null> {
   const skupinaNyni = await nabidkyVeSkupineKraje(rok, kraj, skupina);
   const hodnoty = skupinaNyni.map(n => n[pole]).filter((v): v is number => typeof v === 'number');
   const hodnota = skupinaNyni.find(n => n.klic === klic)?.[pole];
@@ -216,6 +220,8 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
     stav: stavNabidky(souhrn.aktualni),
     zarazeni: zarazeniObtiznosti(souhrn.aktualni),
     zarazeniPredchozi: souhrn.predchozi ? zarazeniObtiznosti(souhrn.predchozi) : null,
+    kohorta: kohortaPozice(souhrn.aktualni, souhrn.nabidekVeSkupine),
+    kohortaPredchozi: souhrn.predchozi ? kohortaPozice(souhrn.predchozi, souhrn.nabidekVeSkupinePredchozi) : null,
     skupina: souhrn.skupina,
     skupinaNazev: nazevSkupiny(souhrn.skupina),
     krajNazev: souhrn.krajNazev,

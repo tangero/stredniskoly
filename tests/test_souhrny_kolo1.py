@@ -133,3 +133,30 @@ class TestZarazeniObtiznosti(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestKohortaPozice(unittest.TestCase):
+    def test_prahy_jsou_ostre(self):
+        self.assertEqual(souhrny.kohorta_pozice(67.1), "skola_prvni_volby")
+        self.assertEqual(souhrny.kohorta_pozice(67.0), "smisena_pozice")
+        self.assertEqual(souhrny.kohorta_pozice(33.0), "smisena_pozice")
+        self.assertEqual(souhrny.kohorta_pozice(32.9), "zalozni_volba")
+        self.assertIsNone(souhrny.kohorta_pozice(None))
+
+    def test_percentil_se_pocita_jen_uvnitr_skupiny(self):
+        # Nástavba s 60 % prvních voleb je ve své skupině dole, lyceum s 30 % nahoře.
+        nabidky = {
+            **{f"n{i}": {"skupina": "NAS_2", "podil_prvnich_voleb": x} for i, x in enumerate([0.6, 0.7, 0.8])},
+            **{f"l{i}": {"skupina": "LYC_4", "podil_prvnich_voleb": x} for i, x in enumerate([0.1, 0.2, 0.3])},
+        }
+        souhrny.doplnit_kohorty(nabidky)
+        self.assertEqual(nabidky["n0"]["kohorta_pozice"], "smisena_pozice")  # 1 ze 3 → 33,3
+        self.assertEqual(nabidky["n2"]["kohorta_pozice"], "skola_prvni_volby")
+        self.assertEqual(nabidky["l2"]["kohorta_pozice"], "skola_prvni_volby")
+
+    def test_chybejici_podil_nedostane_kohortu(self):
+        nabidky = {"a": {"skupina": "GY4_4", "podil_prvnich_voleb": None},
+                   "b": {"skupina": "GY4_4", "podil_prvnich_voleb": 0.4}}
+        souhrny.doplnit_kohorty(nabidky)
+        self.assertIsNone(nabidky["a"]["kohorta_pozice"])
+        self.assertIsNone(nabidky["a"]["percentil_podilu_prvnich_voleb"])

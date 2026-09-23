@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
   zarazeniObtiznosti, slovniPodil, zOd, stavNabidky, zminitPozadavek, vetaPozadavku,
   poradiVeSkupine, textPoradi, nazevSkupiny, soutezicichUchazecu, vKraji, nazevNabidky,
+  kohortaPozice, MIN_NABIDEK_PRO_KOHORTU,
 } from '../src/lib/obor-profil.ts';
 
 const machar8 = { kapacita: 30, prihlasky: 233, prijati: 30, capacity_rejected: 82, conditions_not_met: 85, higher_priority: 36, zarazeni_obtiznosti: 'velmi_tezke' };
@@ -96,4 +97,12 @@ test('název nabídky odliší obory téže školy délkou studia', () => {
   assert.equal(nazevNabidky('Informační technologie', '', 4), 'Informační technologie, 4leté');
   assert.equal(nazevNabidky('Gymnázium', null, null), 'Gymnázium');
   assert.equal(nazevNabidky('Gymnázium'), 'Gymnázium');
+});
+
+// Kohortu počítá generátor souhrnů (tests/test_souhrny_kolo1.py); TypeScript uplatní jen práh skupiny.
+test('kohorta se přebírá z dat a pod třiceti nabídkami ve skupině se nezobrazuje', () => {
+  assert.equal(kohortaPozice({ kohorta_pozice: 'zalozni_volba' }, 437), 'zalozni_volba');
+  assert.equal(kohortaPozice({ kohorta_pozice: 'skola_prvni_volby' }, MIN_NABIDEK_PRO_KOHORTU), 'skola_prvni_volby');
+  assert.equal(kohortaPozice({ kohorta_pozice: 'skola_prvni_volby' }, MIN_NABIDEK_PRO_KOHORTU - 1), null);
+  assert.equal(kohortaPozice({}, 437), null);
 });
