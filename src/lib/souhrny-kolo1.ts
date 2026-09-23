@@ -84,9 +84,6 @@ export interface SouhrnNabidky {
   nabidekVeSkupinePredchozi: number;
 }
 
-/** Pod tímto počtem nabídek ve skupině se percentil ve skupině nezobrazuje (slovník, oddíl 4). */
-export const MIN_NABIDEK_VE_SKUPINE = 30;
-
 let cache: { soubor: SouhrnySoubor; index: Map<string, string> } | null = null;
 
 async function nacti() {
@@ -172,16 +169,26 @@ export interface NabidkaVeSkupine {
   umisteni?: number;
 }
 
+const skupinaKrajeCache = new Map<string, Promise<NabidkaVeSkupine[]>>();
+
 /** Nabídky téže srovnatelné skupiny ve stejném kraji a ročníku (podklad pro pořadí v kraji). */
 export async function nabidkyVeSkupineKraje(rok: number, kraj: string, skupina: string): Promise<NabidkaVeSkupine[]> {
-  const { soubor } = await nacti();
-  const out: NabidkaVeSkupine[] = [];
-  for (const [klic, n] of Object.entries(soubor.nabidky)) {
-    const r = n.roky[String(rok)];
-    if (!r || n.kraj !== kraj || (r.skupina ?? n.skupina) !== skupina) continue;
-    out.push({ klic, tlak: r.tlak_prvnich_voleb, umisteni: r.prumerne_umisteni_prijatych });
+  const k = `${rok}|${kraj}|${skupina}`;
+  let hotovo = skupinaKrajeCache.get(k);
+  if (!hotovo) {
+    hotovo = (async () => {
+      const { soubor } = await nacti();
+      const out: NabidkaVeSkupine[] = [];
+      for (const [klic, n] of Object.entries(soubor.nabidky)) {
+        const r = n.roky[String(rok)];
+        if (!r || n.kraj !== kraj || (r.skupina ?? n.skupina) !== skupina) continue;
+        out.push({ klic, tlak: r.tlak_prvnich_voleb, umisteni: r.prumerne_umisteni_prijatych });
+      }
+      return out;
+    })();
+    skupinaKrajeCache.set(k, hotovo);
   }
-  return out;
+  return hotovo;
 }
 
 export interface SouhrnProKatalog {

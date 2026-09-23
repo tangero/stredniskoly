@@ -3,7 +3,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { souhrnyPodleRedizo, type SouhrnProKatalog } from './souhrny-kolo1';
 import { adresaPrehledu } from './adresa-oboru.mjs';
-import { druheKoloPodleRedizo } from './druhe-kolo';
+import { druheKoloPodleRedizo, klicDruhehoKola } from './druhe-kolo';
 import { getSchoolAnalysis } from './data';
 import { kohortaPozice, zarazeniObtiznosti, soutezicichUchazecu, type KohortaPozice, type ZarazeniObtiznosti } from './obor-profil';
 
@@ -201,17 +201,12 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
   // na hrubším klíči by se nabídky téhož oboru s různým zaměřením slily.
   const souhrny = await souhrnyPodleRedizo(redizoMesta);
 
-  // Nabídky, které v zobrazeném ročníku vypsaly 2. kolo. Klíče nesou zaměření
-  // ve stejné normalizaci jako scripts/build-druhe-kolo.py.
+  // Nabídky, které v zobrazeném ročníku vypsaly 2. kolo. Klíče nese sdílená
+  // funkce z druhe-kolo.ts, ve stejné normalizaci jako scripts/build-druhe-kolo.py.
   const druheKolo = await druheKoloPodleRedizo(redizoMesta);
-  const klicDruhehoKola = new Set(
+  const vypsana2Kola = new Set(
     [...druheKolo.values()].flat().map(n => n.klic),
   );
-  const klicSeZamerenim = (redizo: string, kkov: string, zamereni: string) => {
-    const z = (zamereni ?? '').normalize('NFKD').replace(/[̀-ͯ]/g, '')
-      .replace(/[^a-zA-Z0-9]+/g, '_').replace(/^_+|_+$/g, '').toLowerCase();
-    return z ? `${redizo}_${kkov}_${z}` : `${redizo}_${kkov}`;
-  };
   const klicZamereni = (kkov: string, zamereni: string) =>
     `${kkov}|${normalizeSchoolKey(zamereni || '')}`;
   const souhrnProRadek = new Map<string, SouhrnProKatalog>();
@@ -290,8 +285,8 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
       nesplniliPodminky: souhrn?.aktualni.conditions_not_met ?? null,
       // Bez souhrnu nabídka v ročníku není; s ním je vypsaná, i kdyby chyběla shoda.
       chybiVRocniku: souhrn === undefined,
-      meloDruheKolo: klicDruhehoKola.has(
-        klicSeZamerenim(String(s25.redizo), String(s25.kkov ?? ''), String(s25.zamereni ?? '')),
+      meloDruheKolo: vypsana2Kola.has(
+        klicDruhehoKola(String(s25.redizo), String(s25.kkov ?? ''), String(s25.zamereni ?? '')),
       ),
     };
   });

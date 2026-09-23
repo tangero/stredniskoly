@@ -8,6 +8,7 @@ import { getAllKraje, getAllSchoolsForSearch } from '@/lib/data';
 import { getKrajPrehled } from '@/lib/krajData';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { cislo, PORADI_OBTIZNOSTI, ZARAZENI_POPISEK, type ZarazeniObtiznosti } from '@/lib/obor-profil';
+import { tvar } from '@/lib/cesky-tvar';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/regiony' },
@@ -103,10 +104,10 @@ export default async function RegionsPage() {
                   >
                     <h3 className="mb-1 text-lg font-semibold text-[#16325c] group-hover:underline">{kraj.nazev}</h3>
                     <p className="mb-3 text-sm text-slate-600">
-                      {cislo(kraj.skol)} {skol(kraj.skol)} · {cislo(kraj.nabidek)} nabídek
+                      {cislo(kraj.skol)} {skol(kraj.skol)} · {cislo(kraj.nabidek)} {tvar(kraj.nabidek, 'nabídka', 'nabídky', 'nabídek')}
                     </p>
                     {sUdajem > 0 && (
-                      <div className="flex h-3 overflow-hidden rounded" aria-label="Rozložení obtížnosti přijetí">
+                      <div className="flex h-3 overflow-hidden rounded" role="img" aria-label="Rozložení obtížnosti přijetí">
                         {PORADI_OBTIZNOSTI.map(z => {
                           const n = kraj.rozlozeni.get(z) ?? 0;
                           return n > 0 ? (

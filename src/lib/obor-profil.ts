@@ -93,7 +93,9 @@ export function kohortaPozice(
   nabidekVeSkupine: number,
 ): KohortaPozice | null {
   if (nabidekVeSkupine < MIN_NABIDEK_PRO_KOHORTU) return null;
-  return r.kohorta_pozice ?? null;
+  // Data generuje skript, ale neznámá hodnota by se bez kontroly propsala
+  // do odznaku jako prázdný text; radši ji nechat jako chybějící údaj.
+  return r.kohorta_pozice && r.kohorta_pozice in KOHORTA_POPISEK ? r.kohorta_pozice : null;
 }
 
 /**

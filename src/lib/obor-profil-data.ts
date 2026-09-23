@@ -112,7 +112,8 @@ async function nazvyOboru() {
   return mapa;
 }
 
-async function poradi(rok: number, kraj: string, skupina: string, klic: string, pole: 'tlak' | 'umisteni', predchoziRok: number | null): Promise<PoradiVKraji | null> {
+/** Jedna definice pořadí v kraji pro stránku oboru i přehled kraje. */
+export async function poradi(rok: number, kraj: string, skupina: string, klic: string, pole: 'tlak' | 'umisteni', predchoziRok: number | null): Promise<PoradiVKraji | null> {
   const skupinaNyni = await nabidkyVeSkupineKraje(rok, kraj, skupina);
   const hodnoty = skupinaNyni.map(n => n[pole]).filter((v): v is number => typeof v === 'number');
   const hodnota = skupinaNyni.find(n => n.klic === klic)?.[pole];

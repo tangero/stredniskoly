@@ -13,9 +13,9 @@ import { OdznakObtiznosti } from '@/components/nabidka/Odznaky';
 /**
  * Přehled škol v kraji: docs/navrh-stranky-kraje-2027.md, oddíl 4.
  *
- * Jedna karta je jedna škola, uvnitř její nabídky. Filtry se zapisují do adresy, aby šel
- * výběr sdílet; stránka se ale vykreslí staticky bez nich a adresu čte až v prohlížeči,
- * jinak by vyhledávače viděly jen prázdný zástupný obsah.
+ * Jeden řádek tabulky je jedna škola, uvnitř její nabídky. Filtry se zapisují do adresy,
+ * aby šel výběr sdílet; stránka se ale vykreslí staticky bez nich a adresu čte až
+ * v prohlížeči, jinak by vyhledávače viděly jen prázdný zástupný obsah.
  */
 
 /** Srovnatelné skupiny v pořadí, v jakém je rodina hledá. */
@@ -190,7 +190,7 @@ function PoradiBunka({ p, predchoziRok }: { p: PoradiNabidky; predchoziRok: numb
       <div className="font-semibold text-[#16325c]">{textPoradi(p.poradi)} {zOd(p.poradi.z)} {cislo(p.poradi.z)}</div>
       {p.predchozi && predchoziRok && (
         <div className="text-slate-500">
-          {predchoziRok}: {p.predchozi.od === p.poradi.od && p.predchozi.do === p.poradi.do
+          {predchoziRok}: {p.predchozi.od === p.poradi.od && p.predchozi.do === p.poradi.do && p.predchozi.z === p.poradi.z
             ? `také ${textPoradi(p.predchozi)}`
             : `${textPoradi(p.predchozi)} ${zOd(p.predchozi.z)} ${cislo(p.predchozi.z)}`}
         </div>
@@ -212,9 +212,14 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
   const [filtr, setFiltr] = useState<Filtr>(PRAZDNY);
   const [zobrazeno, setZobrazeno] = useState(PO_STRANKACH);
 
-  // Adresa se čte až po načtení: statické HTML je přehled bez filtru.
+  // Adresa se čte až po načtení: statické HTML je přehled bez filtru. Návrat
+  // v historii (popstate) filtr obnoví a zruší i rozbalené stránkování, aby
+  // se nad cizím výběrem neukazovala dávka, s kterou čtenář nepracoval.
   useEffect(() => {
-    const zAdresyNyni = () => setFiltr(zAdresy(window.location.search));
+    const zAdresyNyni = () => {
+      setFiltr(zAdresy(window.location.search));
+      setZobrazeno(PO_STRANKACH);
+    };
     zAdresyNyni();
     window.addEventListener('popstate', zAdresyNyni);
     return () => window.removeEventListener('popstate', zAdresyNyni);
@@ -353,9 +358,10 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
       {/* Filtry */}
       <div className="mb-5 space-y-3 rounded-xl border border-slate-200 bg-white p-4">
         <div className="flex flex-wrap gap-2">
-          <button type="button" onClick={() => zmen({ skupina: null })} className={cip(!filtr.skupina)}>Všechny typy</button>
+          <button type="button" onClick={() => zmen({ skupina: null })} className={cip(!filtr.skupina)} aria-pressed={!filtr.skupina}>Všechny typy</button>
           {SKUPINY.filter(k => pocty.skupina.has(k) || filtr.skupina === k).map(k => (
-            <button key={k} type="button" onClick={() => zmen({ skupina: filtr.skupina === k ? null : k })} className={cip(filtr.skupina === k)}>
+            <button key={k} type="button" onClick={() => zmen({ skupina: filtr.skupina === k ? null : k })} className={cip(filtr.skupina === k)}
+              aria-pressed={filtr.skupina === k} data-skupina={k}>
               {SKUPINA_POPISEK[k]} ({pocty.skupina.get(k) ?? 0})
             </button>
           ))}
@@ -364,6 +370,7 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
           <span className="text-slate-500">Zřizovatel:</span>
           {(['verejna', 'soukroma', 'cirkevni'] as Zrizovatel[]).filter(z => pocty.zrizovatel.has(z) || filtr.zrizovatel === z).map(z => (
             <button key={z} type="button" onClick={() => zmen({ zrizovatel: filtr.zrizovatel === z ? null : z })}
+              aria-pressed={filtr.zrizovatel === z} data-zrizovatel={z}
               className={`rounded-full px-2.5 py-1 transition-colors ${filtr.zrizovatel === z ? 'bg-slate-800 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}>
               {ZRIZOVATEL_POPISEK[z]} ({pocty.zrizovatel.get(z) ?? 0})
             </button>
@@ -389,9 +396,10 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
             const lze = !jenSeSkupinou || !!filtr.skupina;
             return (
               <button key={r} type="button" disabled={!lze} onClick={() => zmen({ razeni: r })}
+                aria-pressed={filtr.razeni === r} data-razeni={r}
                 title={lze ? undefined : 'Pořadí v kraji se počítá jen mezi obory stejného typu. Nejdřív vyber typ studia.'}
                 className={`rounded-full px-2.5 py-1 transition-colors ${
-                  filtr.razeni === r ? 'bg-slate-800 text-white' : lze ? 'bg-slate-100 text-slate-600 hover:bg-slate-200' : 'cursor-not-allowed bg-slate-50 text-slate-400'
+                  filtr.razeni === r ? 'bg-slate-800 text-white' : lze ? 'bg-slate-100 text-slate-600 hover:bg-slate-200' : 'cursor-not-allowed bg-slate-50 text-slate-500'
                 }`}>
                 {RAZENI_POPISEK[r]}
               </button>
@@ -447,7 +455,7 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
                       {x.obtiznostDoplnek && <div className="mt-0.5 text-xs text-slate-500">{x.obtiznostDoplnek}</div>}
                     </td>
                     <td className="px-3 py-2 text-xs text-slate-700">
-                      {x.kohorty.length === 0 ? <span className="text-slate-400">bez údaje</span>
+                      {x.kohorty.length === 0 ? <span className="text-slate-500">bez údaje</span>
                         : radkyKohort(x.kohorty, s.nabidky.length > 1).map(r => <div key={r}>{r}</div>)}
                     </td>
                     <td className="px-3 py-2 text-right tabular-nums">
@@ -457,7 +465,7 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
                     <td className="px-3 py-2 text-xs text-slate-700">
                       {s.maturita?.passed != null && s.maturita.registered != null
                         ? <div title={`Maturitu ${s.maturita.rok} udělalo ${s.maturita.passed} ${zOd(s.maturita.registered)} ${s.maturita.registered} přihlášených, za celou školu`}>udělalo {cislo(s.maturita.passed)} {zOd(s.maturita.registered)} {cislo(s.maturita.registered)}</div>
-                        : <span className="text-slate-400">-</span>}
+                        : <span className="text-slate-500">-</span>}
                       {s.maturita?.jakCastoNadStredem && (
                         <div className="whitespace-nowrap text-slate-500" title={`V češtině ${s.maturita.jakCastoNadStredem} nad středem podobných škol (poslední čtyři roky)`}>
                           ČJ nad středem: {NAD_STREDEM_KRATCE[s.maturita.jakCastoNadStredem] ?? s.maturita.jakCastoNadStredem}
@@ -466,7 +474,7 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
                     </td>
                     {poradiPole && (
                       <td className="px-3 py-2 text-xs">
-                        {x.poradi ? <PoradiBunka p={x.poradi.p} predchoziRok={x.poradi.predchoziRok} /> : <span className="text-slate-400">-</span>}
+                        {x.poradi ? <PoradiBunka p={x.poradi.p} predchoziRok={x.poradi.predchoziRok} /> : <span className="text-slate-500">-</span>}
                       </td>
                     )}
                   </tr>
@@ -475,7 +483,8 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
             </tbody>
           </table>
 
-          {/* Mobil: stejné údaje na dvou řádcích */}
+          {/* Mobil: stejné údaje jako tabulka, zalomené na tři řádky (bez titulků,
+              které na mobilu nefungují, a bez zkráceného „ČJ nad středem“). */}
           <ul className="divide-y divide-slate-100 md:hidden">
             {vybrane.slice(0, zobrazeno).map(s => {
               const x = souhrnSkoly(s, poradiPole);
@@ -485,12 +494,23 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
                     <Link href={`/skola/${s.slug}`} className="font-semibold leading-snug text-[#16325c] hover:underline">{s.nazev}</Link>
                     <span className="shrink-0"><OdznakObtiznosti zarazeni={x.nejtezsi} /></span>
                   </div>
-                  <div className="mt-0.5 truncate text-xs text-slate-500">
+                  <div className="mt-0.5 text-xs text-slate-500">
                     {[
                       jednaObec ? null : s.obec,
                       x.typy,
+                      x.druheKolo && rokDruhehoKola ? `2. kolo ${rokDruhehoKola}` : null,
                       x.mista !== null ? `${cislo(x.mista)} míst` : null,
-                      x.kohorty.length ? x.kohorty.map(([k, n]) => `${s.nabidky.length > 1 ? `${n}× ` : ''}${KOHORTA_KRATCE[k]}`).join(', ') : null,
+                      s.nabidky.length === 1 ? '1 obor' : `${s.nabidky.length} ${s.nabidky.length <= 4 ? 'obory' : 'oborů'}`,
+                    ].filter(Boolean).join(' · ')}
+                  </div>
+                  <div className="mt-0.5 text-xs text-slate-500">
+                    {[
+                      x.kohorty.length ? x.kohorty.map(([k, n]) => `${s.nabidky.length > 1 ? `${n}× ` : ''}${KOHORTA_KRATCE[k]}`).join(', ') : 'bez údaje',
+                      x.obtiznostDoplnek,
+                      s.maturita?.passed != null && s.maturita.registered != null
+                        ? `maturitu udělalo ${cislo(s.maturita.passed)} ${zOd(s.maturita.registered)} ${cislo(s.maturita.registered)}`
+                        : null,
+                      s.maturita?.jakCastoNadStredem ? `ČJ nad středem: ${NAD_STREDEM_KRATCE[s.maturita.jakCastoNadStredem] ?? s.maturita.jakCastoNadStredem}` : null,
                       x.poradi ? `${textPoradi(x.poradi.p.poradi)} ${zOd(x.poradi.p.poradi.z)} ${cislo(x.poradi.p.poradi.z)} v kraji` : null,
                     ].filter(Boolean).join(' · ')}
                   </div>

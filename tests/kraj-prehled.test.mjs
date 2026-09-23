@@ -17,6 +17,7 @@ import { getKrajPrehled } from '../src/lib/krajData.ts';
 import { zobrazeneObdobi } from '../src/lib/stav-datovych-sad.ts';
 import { RegionSchoolsTable } from '../src/components/RegionSchoolsTable.tsx';
 import { krajNames } from '../src/lib/kraje.mjs';
+import { zavadec } from './_zavadec.mjs';
 
 const souhrny = JSON.parse(readFileSync(new URL('../public/souhrny_kolo1.json', import.meta.url), 'utf-8'));
 
@@ -131,4 +132,203 @@ test('vykreslení: obory školy se v tabulce nevypisují, jen počet', async () 
   const skola = p.skoly.find(s => s.nabidky.length >= 3);
   assert.ok(html.includes(`${skola.nabidky.length} obor`));
   assert.ok(!html.includes('přijato '), 'věty o podílu přijatých patří do detailu');
+});
+
+test('katalog bez zobrazeného ročníku vrátí null, ne „0 škol“', async () => {
+  // Registr se přepne dřív, než vyjde katalog ročníku: chybějící data nejsou nula,
+  // stránka má spadnout do notFound(), ne ukázat prázdný přehled.
+  const p = await getKrajPrehled('CZ010', { katalog: async () => new Map() });
+  assert.equal(p, null);
+});
+
+// ============================================================================
+// Interaktivní vrstva: filtry, řazení, adresa a stránkování.
+//
+// Statický render efekty nespustí, takže se komponenta nabíjí přes sdílený
+// zavaděč s podstrčeným Reactem (stav, efekty se závislostmi) a `window`
+// (adresa, replaceState, popstate). Klikání hledá tlačítko ve stromu elementů
+// a zavolá jeho onClick — obsluhy se do statického HTML nedostanou.
+// ============================================================================
+
+function sHooky({ search = '' }) {
+  const stavy = [];
+  let index = 0;
+  const zavislosti = [];
+  let efektIndex = 0;
+  const cekajici = [];
+  const uklidy = new Map();
+  const posluchace = [];
+  const adresy = [];
+  const registr = (seznam) => ({
+    addEventListener: (typ, fn) => seznam.push({ typ, fn }),
+    removeEventListener: (typ, fn) => {
+      const i = seznam.findIndex((p) => p.typ === typ && p.fn === fn);
+      if (i > -1) seznam.splice(i, 1);
+    },
+  });
+  const okno = {
+    location: { pathname: '/regiony/hlavni-mesto-praha', search },
+    ...registr(posluchace),
+    history: {
+      replaceState: (_s, _t, url) => {
+        adresy.push(url);
+        okno.location.search = url.includes('?') ? url.slice(url.indexOf('?')) : '';
+      },
+    },
+  };
+  const react = {
+    ...React,
+    useState: (pocatek) => {
+      const i = index++;
+      if (!(i in stavy)) stavy[i] = pocatek;
+      return [stavy[i], (hodnota) => { stavy[i] = typeof hodnota === 'function' ? hodnota(stavy[i]) : hodnota; }];
+    },
+    useMemo: (vypocet) => vypocet(),
+    useEffect: (fn, deps) => {
+      const i = efektIndex++;
+      const drive = zavislosti[i];
+      const zmena = drive === undefined || !deps || drive === null
+        || deps.length !== drive.length || deps.some((d, j) => !Object.is(d, drive[j]));
+      if (zmena) cekajici.push({ i, fn, deps: deps ?? null });
+    },
+  };
+  const Link = (props) => React.createElement('a', { href: props.href }, props.children);
+  const { RegionSchoolsTable: Komponenta } = zavadec(react, { 'next/link': { __esModule: true, default: Link } }, { window: okno })('src/components/RegionSchoolsTable.tsx');
+  const zacniRender = () => { index = 0; efektIndex = 0; cekajici.length = 0; };
+  const render = (props) => {
+    zacniRender();
+    return renderToStaticMarkup(React.createElement(Komponenta, props));
+  };
+  const najdi = (prvek, test) => {
+    if (!prvek || typeof prvek !== 'object') return null;
+    if (Array.isArray(prvek)) { for (const p of prvek) { const n = najdi(p, test); if (n) return n; } return null; }
+    if (prvek.props && test(prvek.props)) return prvek;
+    return najdi(prvek.props?.children, test);
+  };
+  const klikni = (props, test, co) => {
+    zacniRender();
+    const strom = Komponenta(props);
+    const tlacitko = najdi(strom, test);
+    assert.ok(tlacitko, `${co} ve stromu není.`);
+    tlacitko.props.onClick();
+  };
+  const spust = () => {
+    for (const { i, fn, deps } of cekajici.splice(0)) {
+      zavislosti[i] = deps;
+      uklidy.get(i)?.();
+      const uklid = fn();
+      if (typeof uklid === 'function') uklidy.set(i, uklid);
+      else uklidy.delete(i);
+    }
+  };
+  const listener = (typ) => {
+    const p = posluchace.filter((x) => x.typ === typ);
+    assert.equal(p.length, 1, `Očekáván jeden posluchač ${typ}, je ${p.length}.`);
+    return p[0].fn;
+  };
+  return { render, klikni, spust, listener, adresy, okno };
+}
+
+/** Syntetická nabídka a škola: jen to, co pravidlo potřebuje, zbytek neutrální. */
+function nabidka(prepis) {
+  return {
+    klic: 'k', redizo: 'r', obor: 'Obor', zamereni: '', delka: 4, skupina: 'GY4_4',
+    kapacita: null, prihlasky: null, prihlaskyNaMisto: null, zarazeni: null,
+    zarazeniPredchozi: null, predchoziRok: null, soutezici: null, prijati: null,
+    nesplniliPodminky: null, kohorta: null, novaNabidka: false, meloDruheKolo: false,
+    poradiZajem: null, poradiVysledky: null,
+    ...prepis,
+  };
+}
+
+function skola(prepis) {
+  return {
+    redizo: 'r', nazev: 'Škola', obec: 'Obec', okres: '', ulice: '', zrizovatel: 'Praha',
+    slug: 'skola', web: null, maturita: null, nabidky: [],
+    ...prepis,
+  };
+}
+
+const PROPS = (skoly) => ({ skoly, krajNazev: 'Hlavní město Praha', rok: 2026, rokDruhehoKola: null });
+const radkyTabulky = (html) => (html.match(/<tr class="align-top/g) ?? []).length;
+
+test('řazení podle počtu míst seřadí školy sestupně a zapíše se do adresy', () => {
+  const skoly = [
+    skola({ redizo: 'a', nazev: 'Alfa', nabidky: [nabidka({ klic: 'a', kapacita: 10 })] }),
+    skola({ redizo: 'b', nazev: 'Beta', nabidky: [nabidka({ klic: 'b', kapacita: 30 })] }),
+    skola({ redizo: 'c', nazev: 'Gama', nabidky: [nabidka({ klic: 'c', kapacita: 20 })] }),
+  ];
+  const h = sHooky({});
+  const props = PROPS(skoly);
+  h.render(props);
+  h.spust();
+  const pred = h.render(props);
+  assert.ok(pred.indexOf('Alfa') < pred.indexOf('Beta'), 'výchozí řazení je podle názvu');
+  h.klikni(props, (p) => p['data-razeni'] === 'mista', 'Řazení podle počtu míst');
+  const po = h.render(props);
+  assert.ok(po.indexOf('Beta') < po.indexOf('Gama') && po.indexOf('Gama') < po.indexOf('Alfa'), 'sestupně podle míst');
+  assert.ok(h.adresy.at(-1).includes('razeni=mista'), 'výběr řazení se zapíše do adresy');
+});
+
+test('filtr typu studia ukáže jen svoji skupinu, odemkne pořadí a klik je přepnutý', () => {
+  const poradi = (od, z) => ({ poradi: { od, do: od, z }, predchozi: null });
+  const skoly = [
+    skola({ redizo: 'a', nazev: 'Alfa', nabidky: [nabidka({ klic: 'a', skupina: 'GY4_4', poradiVysledky: poradi(2, 5) })] }),
+    skola({ redizo: 'b', nazev: 'Beta', nabidky: [nabidka({ klic: 'b', skupina: 'GY8_8', poradiVysledky: poradi(1, 40) })] }),
+  ];
+  const h = sHooky({});
+  const props = PROPS(skoly);
+  h.render(props);
+  h.spust();
+  h.klikni(props, (p) => p['data-skupina'] === 'GY4_4', 'Čtyřleté gymnázium');
+  let po = h.render(props);
+  assert.ok(po.includes('Alfa') && !po.includes('Beta'), 'filtr ukáže jen vybraný typ studia');
+  assert.ok(h.adresy.at(-1).includes('typ=GY4_4'), 'výběr typu se zapíše do adresy');
+  assert.match(po, /aria-pressed="true"[^>]*data-skupina="GY4_4"|data-skupina="GY4_4"[^>]*aria-pressed="true"/);
+  assert.ok(!po.includes('Pořadí v kraji podle'), 'bez řazení pořadí zůstane skryté');
+  h.klikni(props, (p) => p['data-razeni'] === 'vysledky', 'Řazení pořadí podle výsledků');
+  po = h.render(props);
+  assert.ok(po.includes('Pořadí v kraji podle výsledků'), 'po výběru typu se pořadí v kraji ukáže');
+  assert.ok(po.includes('2. z 5'), 'pořadí nabídky z vybrané skupiny');
+  assert.ok(!po.includes('1. z 40'), 'pořadí jiné skupiny se nepropsalo');
+});
+
+test('pořadí v kraji z adresy bez zvoleného typu studia se zahodí', () => {
+  const h = sHooky({ search: '?razeni=vysledky' });
+  const props = PROPS([skola({ nabidky: [nabidka({ poradiVysledky: { poradi: { od: 1, do: 1, z: 10 }, predchozi: null } })] })]);
+  h.render(props);
+  h.spust();
+  const po = h.render(props);
+  assert.ok(!po.includes('Pořadí v kraji podle'), 'pořadí se bez skupiny nezobrazí');
+  assert.match(po, /aria-pressed="false"[^>]*data-razeni="vysledky"|data-razeni="vysledky"[^>]*aria-pressed="false"/);
+});
+
+test('filtr zřizovatele nechá jen školy daného druhu a klik je přepnutý', () => {
+  const skoly = [
+    skola({ redizo: 'a', nazev: 'Alfa', zrizovatel: 'soukromá společnost', nabidky: [nabidka({ klic: 'a' })] }),
+    skola({ redizo: 'b', nazev: 'Beta', zrizovatel: 'Praha', nabidky: [nabidka({ klic: 'b' })] }),
+  ];
+  const h = sHooky({});
+  const props = PROPS(skoly);
+  h.render(props);
+  h.spust();
+  h.klikni(props, (p) => p['data-zrizovatel'] === 'soukroma', 'Čip soukromá');
+  const po = h.render(props);
+  assert.ok(po.includes('Alfa') && !po.includes('Beta'));
+  assert.match(po, /data-zrizovatel="soukroma"[^>]*aria-pressed="true"|aria-pressed="true"[^>]*data-zrizovatel="soukroma"/);
+});
+
+test('stránkování přidá dávku a popstate ho zruší', async () => {
+  const p = await getKrajPrehled('CZ010');
+  assert.ok(p.skoly.length > 50, 'Praha má víc než 50 škol, jinak test nemá smysl.');
+  const h = sHooky({});
+  const props = PROPS(p.skoly);
+  h.render(props);
+  h.spust();
+  assert.equal(radkyTabulky(h.render(props)), 50, 'první dávka je 50 řádků');
+  h.klikni(props, (x) => Array.isArray(x.children) && x.children[0] === 'Zobrazit dalších ', 'Tlačítko Zobrazit dalších');
+  const rozsireno = h.render(props);
+  assert.equal(radkyTabulky(rozsireno), 100, 'další dávka přidá 50 řádků');
+  h.listener('popstate')();
+  assert.equal(radkyTabulky(h.render(props)), 50, 'popstate vrátí stránkování i filtr do stavu z adresy');
 });

@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { normalizeSchoolKey } from './school-key';
-import { nabidkyKraje, nabidkyVeSkupineKraje, type SouhrnNabidkyKraje } from './souhrny-kolo1';
+import { nabidkyKraje, type SouhrnNabidkyKraje } from './souhrny-kolo1';
 import { adresaPrehledu } from './adresa-oboru.mjs';
 import { druheKoloPodleRedizo, klicDruhehoKola, rokDruhehoKola } from './druhe-kolo';
 import { getSchoolAnalysis } from './data';
@@ -9,9 +9,10 @@ import { getWebSkoly } from './skoly-web';
 import { maturitaVPrehledu, type MaturitaVPrehledu } from './maturita-skoly';
 import { zobrazeneObdobi } from './stav-datovych-sad';
 import {
-  kohortaPozice, poradiVeSkupine, soutezicichUchazecu, zarazeniObtiznosti,
+  kohortaPozice, soutezicichUchazecu, zarazeniObtiznosti,
   type KohortaPozice, type Poradi, type ZarazeniObtiznosti,
 } from './obor-profil';
+import { poradi } from './obor-profil-data';
 
 /**
  * Přehled škol v kraji: docs/navrh-stranky-kraje-2027.md.
@@ -99,39 +100,35 @@ async function katalogRocniku(rok: string): Promise<Map<string, RawSchool>> {
   return index;
 }
 
-const skupinyKrajeCache = new Map<string, ReturnType<typeof nabidkyVeSkupineKraje>>();
-
-/** Nabídky skupiny v kraji a ročníku; přehled se ptá stokrát na tutéž skupinu. */
-function skupinaKraje(rok: number, kraj: string, skupina: string) {
-  const k = `${rok}|${kraj}|${skupina}`;
-  if (!skupinyKrajeCache.has(k)) skupinyKrajeCache.set(k, nabidkyVeSkupineKraje(rok, kraj, skupina));
-  return skupinyKrajeCache.get(k)!;
-}
-
 async function poradiVKraji(
   rok: number, kraj: string, n: SouhrnNabidkyKraje, pole: 'tlak' | 'umisteni',
 ): Promise<PoradiNabidky | null> {
-  const hodnoty = (r: number) => skupinaKraje(r, kraj, n.skupina);
-  const nyni = await hodnoty(rok);
-  const vlastni = nyni.find(x => x.klic === n.klic)?.[pole];
-  if (typeof vlastni !== 'number') return null;
-  const poradi = poradiVeSkupine(vlastni, nyni.map(x => x[pole]).filter((v): v is number => typeof v === 'number'));
-  if (!poradi) return null;
-  let predchozi: Poradi | null = null;
-  if (n.predchoziRok) {
-    const drive = await hodnoty(n.predchoziRok);
-    const hodnota = drive.find(x => x.klic === n.klic)?.[pole];
-    if (typeof hodnota === 'number') {
-      predchozi = poradiVeSkupine(hodnota, drive.map(x => x[pole]).filter((v): v is number => typeof v === 'number'));
-    }
-  }
-  return { poradi, predchozi };
+  const p = await poradi(rok, kraj, n.skupina, n.klic, pole, n.predchoziRok);
+  return p && { poradi: p.poradi, predchozi: p.predchozi };
 }
 
-export async function getKrajPrehled(krajKod: string): Promise<KrajPrehled | null> {
+const prehledCache = new Map<string, Promise<KrajPrehled | null>>();
+
+export async function getKrajPrehled(
+  krajKod: string,
+  /** Jen pro test: dovolí podstrčit katalog a vyzkoušet ročník, který katalog nemá. */
+  proTest?: { katalog?: (rok: string) => Promise<Map<string, RawSchool>> },
+): Promise<KrajPrehled | null> {
+  if (!proTest) {
+    const hotovo = prehledCache.get(krajKod);
+    if (hotovo) return hotovo;
+  }
+  const prace = spoctiKrajPrehled(krajKod, proTest?.katalog ?? katalogRocniku);
+  if (!proTest) prehledCache.set(krajKod, prace);
+  return prace;
+}
+
+async function spoctiKrajPrehled(
+  krajKod: string, katalogPro: (rok: string) => Promise<Map<string, RawSchool>>,
+): Promise<KrajPrehled | null> {
   const { rok, nabidky } = await nabidkyKraje(krajKod);
   if (!rok || nabidky.length === 0) return null;
-  const katalog = await katalogRocniku(String(rok));
+  const katalog = await katalogPro(String(rok));
 
   // Název školy pro adresu z téhož zdroje jako data.ts a vyhledávání (viz cityData.ts).
   const kanonickeNazvy = new Map<string, string>();
@@ -178,7 +175,9 @@ export async function getKrajPrehled(krajKod: string): Promise<KrajPrehled | nul
       redizo: n.redizo,
       nazev: String(k.nazev_display || k.nazev || ''),
       obec: String(k.obec ?? ''),
-      okres: String(k.okres || k.obec || ''),
+      // Katalog nemá u části škol okres; obec není okres a ve filtru by plula
+      // mezi okresy. Bez okresu škola pod filtrem okresu prostě není.
+      okres: String(k.okres ?? ''),
       ulice: String(k.ulice ?? ''),
       zrizovatel: String(k.zrizovatel ?? ''),
       slug: adresaPrehledu(n.redizo, kanonickeNazvy.get(n.redizo) ?? String(k.nazev ?? '')),
@@ -189,6 +188,10 @@ export async function getKrajPrehled(krajKod: string): Promise<KrajPrehled | nul
     skola.nabidky.push(nabidka);
     skoly.set(n.redizo, skola);
   }
+
+  // Katalog bez zobrazeného ročníku (registr přepnutý dřív, než vyšla data): rodině se
+  // nesmí ukázat „0 škol“ — chybějící data nejsou nula. Stránka udělá notFound().
+  if (skoly.size === 0) return null;
 
   const seznam = [...skoly.values()].sort((x, y) => x.nazev.localeCompare(y.nazev, 'cs'));
   for (const s of seznam) {

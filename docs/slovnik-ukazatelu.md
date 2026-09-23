@@ -658,6 +658,6 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 | 1.5 | Překryv u hranice přijetí zrušen jako nerobustní a nahrazen mírou *rozhodl test*; krajní hodnoty zůstávají jako pásmo nejistoty bez srovnávací funkce. |
 | 1.4 | Doplněni soutěžící o obor, podíl přijatých podle bodového pásma, překryv u hranice přijetí a hustota u hranice. |
 | 1.3 | Opraveno tvrzení, že nemáme nejnižší výsledek přijatých. Doplněn nejnižší výsledek JPZ mezi přijatými, medián a průměr JPZ přijatých 2025. |
-| 1.2 | Doplněn podíl prvních voleb, kohorta podle pozice na přihlášce a souběžné přihlášky. |
+| 1.2 | Doplněn podíl prvních voleb a souběžné přihlášky. |
 | 1.1 | Doplněn tlak prvních voleb, naplněnost a přetlak. Zaznamenán neúspěšný pokus o zpětné odvození indexu obtížnosti a zjištění, že složený index nepřidává rozlišovací schopnost. |
 | 1.0 | První soupis. Podkladem je audit obtížnosti, audit dat karet, [návrh prezentace dat](navrh-prezentace-dat-skoly-2027.md) a [maturitní výsledky](maturitni-vysledky-a-kvalita-skoly-2027.md). |

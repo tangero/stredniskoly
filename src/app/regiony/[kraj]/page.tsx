@@ -9,6 +9,7 @@ import { getKrajPrehled } from '@/lib/krajData';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { MESTA } from '@/lib/cityData';
 import { cislo, KOHORTA_NENI_KVALITA, vKraji } from '@/lib/obor-profil';
+import { tvar } from '@/lib/cesky-tvar';
 
 /**
  * Přehled škol v kraji: docs/navrh-stranky-kraje-2027.md.
@@ -98,7 +99,7 @@ export default async function RegionPage({ params }: Props) {
             </nav>
             <h1 className="mb-1 text-3xl font-bold md:text-4xl">Střední školy - {krajLabel(kraj.nazev)}</h1>
             <p className="text-blue-200">
-              {cislo(skoly.length)} {skol(skoly.length)}, {cislo(pocetNabidek)} {pocetNabidek >= 2 && pocetNabidek <= 4 ? 'nabídky' : 'nabídek'} v 1. kole {rok}
+              {cislo(skoly.length)} {skol(skoly.length)}, {cislo(pocetNabidek)} {tvar(pocetNabidek, 'nabídka', 'nabídky', 'nabídek')} v 1. kole {rok}
             </p>
             {mesta.length > 0 && (
               <p className="mt-4 text-sm text-blue-100">
