@@ -91,7 +91,7 @@ test('identifikátory akcí jsou jedinečné', () => {
 // --- Nálezy z oponentury Codexem, 22. 9. 2026 -------------------------------
 
 test('den se počítá v českém kalendáři, ne v UTC', async () => {
-  const { cesskyDen } = await import('../src/lib/veletrhy.ts');
+  const { cesskyDen } = await import('../src/lib/veletrhy-pocty.ts');
   // Půl jedné ráno 1. 10. letního času je v UTC ještě 30. 9.; akce z 30. 9.
   // by se tou dobou tvářila jako dnešní.
   const pulnocPoPrechodu = new Date('2026-10-01T00:30:00+02:00');

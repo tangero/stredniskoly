@@ -2,11 +2,11 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import { createKrajSlug } from '@/lib/utils';
+import { cn, createKrajSlug } from '@/lib/utils';
 import { nadpisKraje } from '@/lib/kraje.mjs';
 // Listový modul bez dat: `@/lib/veletrhy` by do prohlížeče vzal celý JSON
 // akcí a přes registr sad i `fs`, na kterém `next build` spadne.
-import { akci, seskupPodleKraje } from '@/lib/veletrhy-pocty';
+import { akci, cesskyDen, seskupPodleKraje } from '@/lib/veletrhy-pocty';
 
 export interface VeletrhKarta {
   id: string;
@@ -39,16 +39,8 @@ interface Props {
   den: string;
 }
 
-/** Dnešek v českém kalendáři; UTC by mezi půlnocí a ránem lhalo o den. */
-function cesskyDen(): string {
-  return new Intl.DateTimeFormat('en-CA', {
-    timeZone: 'Europe/Prague',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-  }).format(new Date());
-}
-
+// Totéž, co dává `Intl.DateTimeFormat('cs-CZ', { month: 'short' })`; napevno
+// proto, aby dlaždice nezávisela na ICU datech prohlížeče.
 const MESICE = ['led', 'úno', 'bře', 'dub', 'kvě', 'čvn', 'čvc', 'srp', 'zář', 'říj', 'lis', 'pro'];
 
 /**
@@ -96,8 +88,8 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
 
   // Kotva v adrese (#jihocesky ze stránky kraje) kraj předvybere. Čte se až
   // po připojení, na serveru kotva není. Změna kotvy za běhu (zpět/vpřed)
-  // se sleduje stejně. Cizí kotva (třeba #kraj-CZ031 na nadpis) výběr
-  // nechá být — jen prázdná adresa ho ruší.
+  // se sleduje stejně. Cizí kotva (jiný prvek na stránce) výběr nechá být —
+  // jen prázdná adresa ho ruší.
   //
   // Posun na oddíl musí přijít až po překreslení se zúženým seznamem:
   // prohlížeč skočil ještě na plný seznam a po zúžení by čtenář zůstal
@@ -168,13 +160,14 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
   const vybranyBezAkci = vybrany !== undefined && vybrane.length === 0;
 
   const cip = (aktivni: boolean) =>
-    `inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-colors ${
+    cn(
+      'inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-colors',
       aktivni
         ? 'border-blue-700 bg-blue-700 text-white'
-        : 'border-gray-300 bg-white text-gray-800 hover:border-blue-400 hover:text-blue-700'
-    }`;
+        : 'border-gray-300 bg-white text-gray-800 hover:border-blue-400 hover:text-blue-700',
+    );
   const pocitadlo = (aktivni: boolean) =>
-    `rounded-full px-1.5 text-xs font-semibold ${aktivni ? 'bg-white/20' : 'bg-gray-100 text-gray-600'}`;
+    cn('rounded-full px-1.5 text-xs font-semibold', aktivni ? 'bg-white/20' : 'bg-gray-100 text-gray-600');
 
   return (
     <div className="space-y-8">
@@ -255,9 +248,9 @@ export function VeletrhySeznam({ akce, kraje, den }: Props) {
       )}
 
       {vybrane.map((o) => (
-        <section key={o.kod} id={o.slug} aria-labelledby={`kraj-${o.kod}`} className="scroll-mt-24">
+        <section key={o.kod} id={o.slug} className="scroll-mt-24">
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-gray-200 pb-2">
-            <h2 id={`kraj-${o.kod}`} className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-gray-900">
               {nadpisKraje(o.nazev)}
               <span className="ml-2 text-base font-normal text-gray-500">{akci(o.pocet)}</span>
             </h2>

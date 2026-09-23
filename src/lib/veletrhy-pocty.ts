@@ -10,6 +10,20 @@
 import { tvar } from './cesky-tvar.ts';
 
 /**
+ * Den v českém kalendáři jako `YYYY-MM-DD`; UTC by mezi půlnocí a ránem
+ * lhalo o den. Jedna definice pro server (sestavení stránky) i klienta
+ * (přepočet po půlnoci), aby se serverový a klientský den nerozešly.
+ */
+export function cesskyDen(ke: Date = new Date()): string {
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Europe/Prague',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(ke);
+}
+
+/**
  * Akce seskupené podle `krajKod`, v pořadí, v jakém přišly. Jediná
  * definice seskupení pro klienta i testy, aby se čísla nerozešla.
  */

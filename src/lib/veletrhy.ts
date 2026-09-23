@@ -21,7 +21,7 @@
 
 import data from '@/data/veletrhy-2027.json';
 import { krajNames } from './kraje.mjs';
-import { seskupPodleKraje } from './veletrhy-pocty.ts';
+import { seskupPodleKraje, cesskyDen } from './veletrhy-pocty.ts';
 
 export interface Veletrh {
   id: string;
@@ -91,20 +91,6 @@ export async function overSezonuProtiRegistru(
   return obdobi === SEZONA ? obdobi : null;
 }
 
-/**
- * Dnešní datum v českém kalendáři.
- *
- * `toISOString()` by vrátilo den v UTC, takže mezi půlnocí a druhou
- * hodinou ranní letního času by se akce z včerejška tvářila jako dnešní.
- */
-export function cesskyDen(ke: Date = new Date()): string {
-  return new Intl.DateTimeFormat('en-CA', {
-    timeZone: 'Europe/Prague',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-  }).format(ke);
-}
 
 /**
  * Akce ke zobrazení: potvrzený termín a ještě neproběhla.
@@ -131,10 +117,6 @@ export function vsechnyKraje(): { kod: string; nazev: string }[] {
     .map(([kod, nazev]) => ({ kod, nazev }))
     .sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs'));
 }
-
-// Seskupení a tvar počtu žijí v listovém modulu bez dat, aby je mohla
-// importovat klientská komponenta; tady jen pro server a testy.
-export { seskupPodleKraje, akci } from './veletrhy-pocty.ts';
 
 /** Kraje, ve kterých nějaká zobrazitelná akce je, s počtem. Pro testy dat a dokumentace. */
 export function krajeSAkcemi(ke: Date = new Date()): { kod: string; nazev: string; pocet: number }[] {

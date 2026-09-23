@@ -17,10 +17,11 @@ import assert from 'node:assert/strict';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { VeletrhySeznam } from '../src/app/veletrhy/VeletrhySeznam.tsx';
-import { zobrazitelneAkce, cesskyDen, krajeSAkcemi, vsechnyKraje, akci } from '../src/lib/veletrhy.ts';
+import { zobrazitelneAkce, vsechnyKraje } from '../src/lib/veletrhy.ts';
+import { akci, cesskyDen } from '../src/lib/veletrhy-pocty.ts';
 import { nadpisKraje } from '../src/lib/kraje.mjs';
 import { createKrajSlug } from '../src/lib/utils.ts';
-import { zavadec } from './_zavadec.mjs';
+import { zavadec, text } from './_zavadec.mjs';
 
 const KE_DNI = new Date('2026-09-22');
 
@@ -38,11 +39,6 @@ function vykresli(akce, kraje = vsechnyKraje()) {
   return renderToStaticMarkup(
     React.createElement(VeletrhySeznam, { akce: karty(akce), kraje, den: cesskyDen(KE_DNI) }),
   );
-}
-
-/** Text bez značek a atributů — na hledání vět, ne na hledání `class`. */
-function text(html) {
-  return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
 }
 
 /** Počty po krajích spočítané ručně z dat — nezávislý etalon, ne funkce z lib. */
@@ -353,8 +349,8 @@ test('kotva předvybere kraj a posune na oddíl až po překreslení; cizí kotv
   // Zpět/vpřed v prohlížeči mění kotvu bez nového načtení; výběr musí jít s ní.
   assert.equal(s.posluchace.filter((p) => p.typ === 'hashchange').length, 1, 'Změna kotvy se má sledovat.');
   const zmena = s.posluchace.find((p) => p.typ === 'hashchange').fn;
-  // Kotva na nadpis (#kraj-CZ031) nebo jiná cizí kotva výběr neruší.
-  s.okno.location.hash = '#kraj-CZ031';
+  // Cizí kotva (jiný prvek na stránce) výběr neruší.
+  s.okno.location.hash = '#co-si-zjistit';
   zmena();
   assert.equal(s.stavy[0], 'CZ031', 'Cizí kotva nesmí smazat zvolený filtr.');
   // Návrat na kotvu už vybraného kraje: stav se nemění, posune se rovnou

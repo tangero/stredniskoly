@@ -81,3 +81,8 @@ export function zavadec(reactModul, nahrady = {}, globalni = {}) {
     return modul.exports;
   };
 }
+
+/** Text bez značek a atributů — na hledání vět ve vykresleném HTML, ne na hledání `class`. */
+export function text(html) {
+  return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+}

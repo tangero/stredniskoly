@@ -5,10 +5,10 @@ import { Footer } from '@/components/Footer';
 import {
   zobrazitelneAkce,
   vsechnyKraje,
-  cesskyDen,
   overSezonuProtiRegistru,
   OVERENO_K,
 } from '@/lib/veletrhy';
+import { cesskyDen } from '@/lib/veletrhy-pocty';
 import { VeletrhySeznam, type VeletrhKarta } from './VeletrhySeznam';
 
 export const metadata: Metadata = {
