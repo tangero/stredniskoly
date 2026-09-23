@@ -435,7 +435,7 @@ Při rozboru se našla i věcná chyba: úspěšnost je podíl úspěšných z *
 
 | Prvek | Rozhodnutí | Proč |
 |---|---|---|
-| Jedna souhrnná věta za školu: „Maturitu v roce 2026 udělalo 146 ze 148 přihlášených maturantů. V češtině byli maturanti všech oborů téměř každý rok nad středem podobných škol.“ | **použít** | odpověď místo výčtu; souhrn frekvence (každý rok, téměř každý rok, ve většině let, zhruba v polovině let, jen v některých letech, v žádném) přes všechny skupiny oborů |
+| Jedna souhrnná věta za školu: „Maturitu v roce 2026 udělalo 146 ze 148 přihlášených maturantů. V češtině byli maturanti všech oborů ve většině hodnocení nad středem podobných škol.“ | **použít** | odpověď místo výčtu; souhrn frekvence dostupných hodnocení za poslední čtyři roky přes všechny skupiny oborů, bez tvrzení o chybějících letech |
 | Tabulka po oborech: maturitu udělalo, čeština, nad středem po letech, matematika | **použít** | srovnání oborů školy na jeden pohled; na telefonu karta s popisky |
 | „v celé zemi lépe než 91 ze 100 maturantů“ místo „91. percentil“ | **použít** | stejný význam bez odborného slova; od 17. 9. 2026 vždy se slovy „v celé zemi“, aby se nepletlo se srovnáním s podobnými školami |
 | Srovnání s podobnými školami v jedné veličině, v % bodů z testu (karta, tabulka i graf) | **použít od 17. 9. 2026** | do té doby se ukazoval medián percentilů, ale zařazení se počítalo z mediánu skórů; ve směru si to neodporovalo ani v jednom z 8 145 srovnání, u 4 470 však stálo „nerozlišitelné“ vedle dvou viditelně různých čísel |

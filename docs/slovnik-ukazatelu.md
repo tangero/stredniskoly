@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.32 · 23. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.33 · 23. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -486,13 +486,13 @@ Průměrný percentil maturantů školy v předmětu, pole `averagePercentile`. 
 **Je to jiné srovnání než střed podobných škol**: porovnává maturanty školy se všemi maturanty v zemi, ne školu se školami téhož typu. Proto se nikdy neuvádí jako důvod zařazení a v textu se od srovnání s podobnými školami odděluje slovy „v celé zemi“.
 
 ### Frekvence let nad středem podobných škol
-Slovní souhrn toho, jak často měla škola v češtině zařazení `above`, spočítaný **přes všechny skupiny oborů školy dohromady**: podíl = součet let se zařazením `above` děleno součtem let se zařazením. Prahy: 1 „každý rok“, od 0,75 „téměř každý rok“, nad 0,5 „ve většině let“, právě 0,5 „zhruba v polovině let“, nad 0 „jen v některých letech“, 0 „v žádném ze sledovaných let“. Počítá se při zobrazení z `public/maturita_skoly.json` (`src/lib/skola-vyklad.ts`, `jakCastoNadStredem`).
+Slovní souhrn toho, jak často měla škola v češtině zařazení `above`, spočítaný **přes všechny skupiny oborů školy dohromady**: podíl = počet hodnocení skupiny oborů v roce se zařazením `above` děleno počtem všech dostupných hodnocení. Prahy: 1 při jediném hodnocení „v jediném hodnoceném roce“, 1 při více hodnoceních „ve všech hodnoceních“, od 0,75 „v téměř všech hodnoceních“, nad 0,5 „ve většině hodnocení“, právě 0,5 „v polovině hodnocení“, nad 0 „jen v některých hodnoceních“, 0 „v žádném hodnocení“. Počítá se při zobrazení z `public/maturita_skoly.json` (`src/lib/skola-vyklad.ts`, `jakCastoNadStredem`).
 
 Roky bez zařazení se do jmenovatele nepočítají, stejně jako u ukazatele Počet let nad skupinou oborů, který zůstává výchozím tvarem pro jednu skupinu oborů.
 
 **Okno jsou čtyři roky a zůstávají čtyři** (`pocet = 4` v `shrnutiMaturity`). Delší okno se 18. 9. 2026 měřilo a zamítlo: většinové zařazení z jednoho roku trefí následující ročník v 62,1 %, ze dvou v 65,6 %, ze tří v 65,7 %, ze čtyř v 64,8 % a z pěti v 66,2 %; u malých škol pod 30 konajícími 61,2 / 65,1 / 64,6 / 64,9 / 65,4 %. Přínos končí u druhého roku, zatímco šestileté okno by změnilo znění u 403 z 1 627 škol ve skupině oborů a o 156 zmenšilo pokrytí. Doklad `docs/podklady/delka-rady-maturity.json`, počítá `scripts/delka-rady-maturity.py`.
 
-**Neříká** nic o vývoji v čase: je to podíl, ne trend. U školy s více skupinami oborů míchá roky různých skupin, proto se v textu uvádí s předmětem a s tím, že jde o všechny obory („v češtině byli maturanti všech oborů téměř každý rok nad středem podobných škol“).
+**Neříká** nic o vývoji v čase: je to podíl, ne trend. U školy s více skupinami oborů sčítá hodnocení různých skupin v každém roce. Text proto mluví o hodnoceních, ne o všech čtyřech letech; jeden dostupný rok se nesmí označit „každý rok“.
 
 ### Průměrný procentní skór maturity
 Průměrný výsledek v didaktickém testu daného předmětu. Pole `averagePercentScore`, rozptyl `standardDeviation`, percentil `averagePercentile`.
@@ -628,6 +628,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.33 | **Frekvence maturity popisuje dostupná hodnocení** (23. 9. 2026). Slovní text už netvrdí „každý rok“, pokud se podařilo hodnotit jen jednu skupinu v jediném roce; u více skupin je jednotkou hodnocení skupiny oborů v roce. Výpočet podílu ani data se nemění. |
 | 1.32 | **Kohorta podle pozice na přihlášce se počítá a zobrazuje** (23. 9. 2026). Generátor souhrnů 1. kola nese podíl prvních voleb, jeho percentil ve skupině a kohortu, práh 30 nabídek uplatňuje knihovna. Stabilita přepočtena s mapou nabídek na 64,5 % (dříve 66 %). Nedoložená **kategorie oboru** stažena z webu a rozebrána v oddílu 7; nahrazuje ji kohorta. Přehled kraje přestavěn nad souhrny zobrazeného ročníku, viz `docs/navrh-stranky-kraje-2027.md`. |
 | 1.31 | **Počet akcí v kraji** (23. 9. 2026, oddíl 6a). Přehled veletrhů dostal kraj jako osu a s ním čipy a nadpisy s počty; návrh veletrhů § 6.4 předvídal, že to bude ukazatel a bude chtít zápis. Definice: potvrzený termín, `end ≥ dnes` při čtení, online akce pod krajem pořadatele. Neříká, kolik akcí se koná, ale o kolika víme. |
 | 1.30 | **Rozhodl test dostal doložené slepé místo** (22. 9. 2026, podnět čtenáře). Ukazatel nevidí kritéria, která jeden test jen převažují: Gymnázium Christiana Dopplera má 0,994, a přitom váží matematiku 1,5×. Věta na kartě přestala tvrdit, že „rozhodl test“, a slepé místo pojmenovává. Nová prověrka *předmětový sklon* našla nápadné vážení u 73 z 354 měřitelných oborů (21 %) — napříč typy škol, ne jen u výběrových gymnázií. |

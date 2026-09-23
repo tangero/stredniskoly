@@ -221,9 +221,10 @@ export default async function RegionPage({ params }: Props) {
               </Vysvetlivka>
               {rokMaturity && (
                 <Vysvetlivka title="Co znamená sloupec Maturita?">
-                  Kolik přihlášených u školy maturitu v roce {rokMaturity} udělalo a jak často byla škola v češtině
-                  nad středem podobných škol za poslední čtyři roky. Podobné školy jsou školy se stejným typem oborů
-                  v celé zemi. Údaj platí za celou školu, ne za jednotlivý obor.
+                  Kolik přihlášených u školy maturitu v roce {rokMaturity} udělalo a jak často byli její maturanti
+                  v češtině nad středem podobných škol v dostupných hodnoceních za poslední čtyři roky. Každá skupina
+                  oborů má v jednom roce vlastní hodnocení; roky bez hodnocení se nepočítají. Podobné školy jsou školy
+                  se stejným typem oborů v celé zemi. Údaj platí za celou školu, ne za jednotlivý obor.
                 </Vysvetlivka>
               )}
               {rokDruhehoKola && (
