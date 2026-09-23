@@ -1,8 +1,8 @@
 # Veletrhy a přehlídky středních škol
 
-Verze 0.5 · 22. 9. 2026 · **Návrh a stav rozpracované implementace.**
+Verze 1.0 · 23. 9. 2026 · **Návrh a stav rozpracované implementace.**
 
-**Stav po druhém review nekomitovaných změn:** v kódu jsou data, přehled s filtrem kraje a města, metodický blok a formulář s předáním hlášení přes Resend. Počty akcí a pokrytí jsou v [aktuálním soupisu zdrojů](zdroje-dat.md#215-veletrhy-a-přehlídky-středních-škol); číselné odhady níže zachycují původní návrh. Stránka má hodinovou revalidaci a klientskou aktualizaci dne každou minutu. Kalendářový export (§ 5.8), našeptávání a časové skupiny seznamu dosud implementované nejsou.
+**Stav implementace (k verzi 1.0):** v kódu jsou data, přehled po krajích s čipy (od 1.0), metodický blok a formulář s předáním hlášení přes Resend. Počty akcí a pokrytí jsou v [aktuálním soupisu zdrojů](zdroje-dat.md#215-veletrhy-a-přehlídky-středních-škol); číselné odhady níže zachycují původní návrh. Stránka má hodinovou revalidaci a klientskou aktualizaci dne každou minutu. Kalendářový export (§ 5.8) dosud implementovaný není. Zamítnuto ve verzi 1.0: našeptávání měst a časové skupiny seznamu — osou stránky je kraj a filtr měst neexistuje (§ 5.2).
 
 **Známá omezení fronty hlášení** (z oponentury, čtvrté kolo): čekání na databázi má strop tří sekund, ale `Promise.race` samotný dotaz nezruší — spojení zůstane obsazené, dokud neskončí. Je to vědomý kompromis: lepší nechat viset spojení než ztratit hlášení. Při opakovaném výpadku databáze to může vyčerpat pool. Odesílání pošty strop má (osm sekund, `AbortSignal`), ten požadavek skutečně přeruší. Příznak `odeslano_mailem = false` proto neznamená „e-mail neodešel“, ale „nevíme o tom, že odešel“. Databázová záloha hlášení (§ 6.3) doplněna ve třetím kole: migrace `db/migrace/005-veletrhy.sql`, záznam vzniká dřív než e-mail. **Na produkci ale tabulka až do 23. 9. 2026 chyběla**: SQL vzniklo ručně a nic ho nespouštělo, takže každý zápis tiše selhal a nahlášení drželo jen e-mail (žádné do té doby nepřišlo, nic se neztratilo). Od té doby se SQL generuje z `src/lib/veletrhy-schema.ts`, spouští se `scripts/veletrhy-migrace.mjs` jako u událostí a portálu a `tests/veletrhy-schema.test.mjs` hlídá, že sloupce, do kterých formulář zapisuje, migrace zakládá. Migrace proběhla 23. 9. 2026 a zápis formuláře byl ověřen v transakci s rollbackem. Při nedostupnosti pošty i databáze produkční endpoint vrací 503; potvrzení API od Resendu není důkaz doručení do schránky, proto záznam v databázi platí nezávisle na ní. Produkční nasazení toto review neověřuje.
 
@@ -143,11 +143,19 @@ Návrh **novou třídu nezavádí**. Důvod: klasifikace čte weby škol a škol
 
 **Nahoře jedna věta o tom, co veletrh je**, protože pojem se musí vysvětlit při prvním výskytu v bloku.
 
-**Filtr podle kraje a podle města.** Kraj jako rozbalovací seznam ze čtrnácti, město jako našeptávač. Bez výběru se ukáže vše, seřazené podle data.
+**Osou stránky je kraj, ne datum** (od 23. 9. 2026, verze 1.0). Rodina se ptá „co je blízko nás“ a až potom „kdy“. Data to podpírají: 41 akcí ve 14 krajích, v kraji 1–7 akcí, **38 z 39 měst má jedinou akci** (Pardubice dvě, jedna akce je online). Chronologický seznam se čtyřiceti kartami, kde je město až na druhém řádku, nutil číst všech čtyřicet; rozbalovací seznam měst se 40 položkami vedl vždy na jednu kartu.
 
-**Seznam akcí, každá jako řádek nebo karta** s názvem akce, městem, datem, místem konání, pořadatelem a odkazem na jeho web.
+**Čipy krajů s počty nahoře** („Jihočeský 6“, „Praha 1“) místo rozbalovacích seznamů: pokrytí je vidět bez kliknutí. Čip je zároveň filtr a výběr se propisuje do adresy (`#jihocesky`), takže ho reload i sdílený odkaz zachovají; kotva při načtení kraj předvybere a po překreslení posune na oddíl. Změna adresy za běhu se sleduje přes `hashchange` i `navigation.currententrychange` (Next při odkazu na tutéž stránku jen s jinou kotvou volá `pushState` bez `hashchange`); vlastní zápis čipem se pozná a stránkou nehýbe — klik na čip nesmí odsunout čipy z obrazovky; opakovaný `replaceState` s nezměněnou adresou (Next ho volá po každé změně stavu routeru) se ignoruje. Známé omezení: v prohlížeči bez Navigation API (starší Firefox) odkaz Next na `/veletrhy` bez kotvy z vyfiltrované stránky výběr nezruší, dokud čtenář stránku neobnoví. Kotva na kraj, kterému akce už proběhly, ukáže „teď o žádné akci nevíme“ s odkazem na stránku kraje — proto seznam dostává všech čtrnáct krajů, ne jen ty s akcí. Odkaz sem ze stránky kraje zatím nikde nevede; kotva je připravená, odkaz je samostatná změna stránky kraje. Filtr měst neexistuje.
 
-**Řazení podle data vzestupně**, s oddělením „tento týden“ / „tento měsíc“ / „později“. Akce, která už proběhla, ze seznamu mizí — stejné pravidlo, jaké platí pro novinky škol: platnost se počítá při čtení stránky, ne při sestavení dat.
+**Oddíl na kraj** s nadpisem a počtem („Jihočeský kraj“ a vedle šedě „6 akcí“), pod ním řádek měst v pořadí konání (jen kde je víc než jedna akce), pak karty. Kraje abecedně podle krátkého názvu — pokrytí vyprávějí čísla v čipech, ne pořadí; Praha by při řazení podle počtu skončila poslední. Čip nese krátký název („Praha“, „Vysočina“), nadpis oddílu plný („Hlavní město Praha“, „Kraj Vysočina“); pořadí čipů a oddílů je totéž, takže Kraj Vysočina stojí pod V, ne pod K. Série bez rozepsaných měst nese v řádku měst i na kartě výčet z pole `misto`; bez něj „místo upřesní pořadatel“.
+
+**Karta:** datum jako dlaždice vlevo (den a měsíc, `~` u přibližného termínu), **město verzálkami jako první řádka**, název akce, plné datum s časem a místem konání, výstrahy k termínu, „Pořádá *organizace*“ a odkaz na stránku akce. Dovětek „ne tento web“ z každé karty zmizel rozhodnutím zadavatele 23. 9. 2026 — jméno pořadatele říká totéž.
+
+**Řazení uvnitř kraje podle data vzestupně.** Akce, která už proběhla, ze seznamu mizí — stejné pravidlo, jaké platí pro novinky škol: platnost se počítá při čtení stránky, ne při sestavení dat. Kraj, kterému po půlnoci nezbyla žádná akce, z čipů zmizí; už zvolený zůstane viditelný jako „(bez aktuálních akcí)“.
+
+**Výhrada neúplnosti u každého kraje** („Víme jen o těchto 6 akcích s potvrzeným termínem. Chybí vám nějaká? Nahlaste nám ji — před zveřejněním ji ověříme na stránce pořadatele.“; věta doslova ze slovníku pojmů u pojmu *nahlásit akci*, protože každý oddíl je blok; „s potvrzeným termínem“ říká množinu, ze které se číslo počítá), ne jen jednou dole: rodič, který právě zjistil, že jeho město chybí, je ten, kdo akci nahlásí.
+
+Zamítnuto: přepínač „podle kraje / podle data“ (dvě zobrazení, dvojí testování, rozhodnutí přesunuté na čtenáře) a mapa jako hlavní ovládání (na mobilu 14 krajů neklikatelně malých; jako doplněk nad čipy možná později).
 
 **Dole poctivá věta o pokrytí** (§ 5.4).
 
@@ -184,7 +192,7 @@ Druhá věta je přímé použití pasti „chybějící údaj není nula“. T�
 | Název akce | ano | bez něj nejde akci pojmenovat v seznamu |
 | Termín — od, do | ano | `end` jen u vícedenních; bez data se akce nezobrazí (§ 2.2) |
 | Adresa konání | ano | místo v textu („Kongresové centrum Zlín, náměstí…“); z něj se odvodí město |
-| Město | ano | pro filtrování; našeptávač, ale **volný zápis povolen** (§ 6.2 — obce pod prahem) |
+| Město | ano | první řádka karty a řádek měst pod nadpisem kraje (§ 5.2; filtr měst od 1.0 neexistuje); **volný zápis povolen** (§ 6.2 — obce pod prahem) |
 | Kraj | ano | rozbalovací seznam čtrnácti, žádný volný zápis |
 | Popis akce | ne | pár vět pro čtenáře; **na stránce se nezobrazí doslova** — viz níže |
 | URL stránky akce | ano | bez odkazu nelze údaj ověřit a rodina nemá kam jít pro podrobnosti |
@@ -288,7 +296,7 @@ Zamítnutá nahlášení se nemažou. Když tentýž pořadatel nahlásí akci p
 
 Nová sada `veletrhy-skol` do `public/stav_datovych_sad.json` s deseti povinnými poli, vzorem je `msmt-harmonogram`: `cyklus: "rocni"`, `pouziti: "web"`, `automatizace: "rucni"`, `ocekavano.jistota: "odhad"` se zdůvodněním, `obnovit_nejpozdeji` na srpen 2027 (sezóna začíná koncem září, seznam musí stát dřív).
 
-`ukazatele: []` — stránka nezobrazuje žádné počítané číslo, jen opisuje termíny. Kdyby později přibyl počet akcí v kraji jako údaj, jde o ukazatel a chce zápis do slovníku.
+`ukazatele: ["Počet akcí v kraji"]` — do verze 0.9 stránka nezobrazovala žádné počítané číslo, jen opisovala termíny. Od 1.0 nese čipy krajů a nadpisy oddílů s počty; to je ukazatel a má zápis ve [slovníku ukazatelů](slovnik-ukazatelu.md) (oddíl Veletrhy), včetně toho, co neříká.
 
 **Rok se nikde nepíše napevno.** Stránka porovná sezónu souboru s obdobím v registru (`overSezonuProtiRegistru`); když se rozejdou, seznam se nezobrazí vůbec. Loňské akce vydávané za letošní jsou horší než prázdná stránka.
 
@@ -387,7 +395,7 @@ Pořadí odpovídá tomu, jak na sebe věci navazují.
 6. **Postavit formulář `/veletrhy/nahlasit` a `POST /api/veletrhy/nahlasit`**, doručení e-mailem plus záznam v databázi (§ 5.5, § 6.3, § 8.4).
 7. Kalendářový export `.ics` podle vzoru harmonogramu (§ 5.8).
 8. Přidat obě cesty do sitemapy a regenerovat `public/sitemap.xml`.
-9. Test: akce s nepotvrzeným termínem se nezobrazí; proběhlá akce se nezobrazí; akce v obci mimo seznam `MESTA` nevypadne; **nahlášená akce se sama nezveřejní**.
+9. Test: akce s nepotvrzeným termínem se nezobrazí; proběhlá akce se nezobrazí; **nahlášená akce se sama nezveřejní**. (Test na obec mimo seznam `MESTA` odešel s filtrem měst ve verzi 1.0; `mesto` zůstává prostý název bez vazby na `MESTA`.)
 
 Body 5 a 6 jdou ruku v ruce. Stránka bez formuláře je jednorázový seznam, který za rok zastará; formulář bez stránky nemá kam odkázat.
 
@@ -409,11 +417,11 @@ Zapíšou se ve stejné dávce, ve které se poprvé objeví na stránce. Sloupe
 | Pojem | Význam | Vysvětlení při prvním výskytu | Nepoužívat |
 |---|---|---|---|
 | **veletrh středních škol** | akce, na které se na jednom místě představí víc středních škol najednou | „veletrh středních škol, tedy akce, kde se na jednom místě představí školy z kraje najednou“ | burza škol, výstava škol, akce pro veřejnost, veletrh práce, Schola / Gaudeamus jako obecné označení |
-| **pořadatel veletrhu** | organizace, která akci pořádá — kraj, hospodářská komora, výstaviště nebo město; není to škola ani tento web | „pořadatelem je *organizace*, ne tento web ani vystavující školy“ | organizátor (kolísá s pořadatelem), partner akce |
+| **pořadatel veletrhu** | organizace, která akci pořádá — kraj, hospodářská komora, výstaviště nebo město; není to škola ani tento web | „Pořádá *organizace*“ (od 23. 9. 2026; dovětek „ne tento web“ vypuštěn, jméno pořadatele říká totéž) | organizátor (kolísá s pořadatelem), partner akce |
 | **online mediální partner** | role tohoto webu u akce, ke které máme dohodu o vzájemném odkazu | „web je online mediálním partnerem akce, tedy má s pořadatelem dohodu o vzájemném odkazu“ | partner (samotné), spolupořadatel, sponzor |
-| **nahlásit akci** | poslat nám formulářem údaje o akci, která v přehledu chybí; nahlášení není zveřejnění | „akci před zveřejněním ověříme u pořadatele“ | přidat akci, zveřejnit akci, vložit akci (všechno tvrdí, že to zveřejníme) |
+| **nahlásit akci** | poslat nám formulářem údaje o akci, která v přehledu chybí; nahlášení není zveřejnění | „akci před zveřejněním ověříme na stránce pořadatele“ | přidat akci, zveřejnit akci, vložit akci (všechno tvrdí, že to zveřejníme) |
 
-Vysvětlení u pojmu **pořadatel veletrhu** řeší napětí, které slovník zatím nemá ošetřené: u dne otevřených dveří platí „pořadatelem je škola, ne tento web“, protože jiná možnost nebyla. U veletrhu jsou strany tři a věta musí říct, která z nich ručí.
+Vysvětlení u pojmu **pořadatel veletrhu** řeší napětí, které slovník zatím nemá ošetřené: u dne otevřených dveří platí „pořadatelem je škola, ne tento web“, protože jiná možnost nebyla. U veletrhu jsou strany tři a věta musí říct, která z nich ručí — a stačí k tomu jméno pořadatele. Dovětek „ne tento web“ na každé z 41 karet byl šum; rozhodnutí zadavatele 23. 9. 2026, slovník pojmů 1.22.
 
 Zakázané slovní spojení **„škola pořádá“** (oddíl 5 slovníku) se veletrhu netýká — škola veletrh nepořádá, jen na něj jede. O účasti školy se ale bez seznamu vystavovatelů nepíše vůbec (§ 7).
 
@@ -430,6 +438,7 @@ Zakázané slovní spojení **„škola pořádá“** (oddíl 5 slovníku) se v
 |---|---|
 | 0.10 | Tabulka fronty nahlášení chyběla na produkci; SQL se nově generuje ze schématu, spouští skriptem a hlídá testem. Migrace provedena 23. 9. 2026. |
 | 0.9 | Druhé kolo pátého review: doplněn test, který hlídá rozchod dat s registrem — mutace strážní podmínky dřív prošla všemi testy. Při rozchodu stránka místo věty o nedohledaných akcích říká, že přehled připravujeme. K době držení dopsán postup: mazání adres je roční úkol po skončení sezóny, ne automatická úloha. |
+| 1.0 | Přehled dostal kraj jako osu (23. 9. 2026, § 5.2): čipy krajů s počty místo dvou rozbalovacích seznamů, oddíl na kraj s řádkem měst, datum jako dlaždice a město jako první řádka karty, výhrada neúplnosti u každého kraje, kotva `#kraj` pro odkaz ze stránky kraje. Filtr měst zrušen — 38 z 39 měst mělo jedinou akci. Z karty vypuštěn dovětek „ne tento web“ (§ 10 sladěn). Počet akcí v kraji zapsán jako ukazatel do slovníku (§ 6.4) a do registru. Po třech kolech review: nadpis kraje přes `nadpisKraje` v `src/lib/kraje.mjs` („Kraj Vysočina“; stránka kraje a hlavička mají zatím vlastní starší podobu „Vysočina“ — sjednocení je samostatná změna, protože mění titulky indexovaných stránek), dlaždice u vícedenní akce nese rozsah dnů a má pevnou šířku, výběr čipem se propisuje do adresy, kotva po předvýběru posune na oddíl až po překreslení, kotva na kraj bez akcí ukáže prázdný stav, čip kraje bez akcí jde odkliknout. Seskupení a tvar počtu v listovém modulu `src/lib/veletrhy-pocty.ts`, protože klientská komponenta nesmí importovat data ani registr (`next build` padal na `fs`). Testy vykreslení přes sdílený zavaděč, ověřeny mutacemi; validace `krajKod` a tvaru dat. |
 | 0.8 | Páté review nad celým PR #155: stránka ochrany osobních údajů doplněna o formulář nahlášení včetně doby držení; odkaz na `/veletrhy` z patičky a z kalendáře přijímaček, dosud byla sekce dostupná jen ze sitemapy; období se ověřuje proti registru datových sad, dřív ho návrh sliboval a kód nečetl. |
 | 0.7 | Čtvrté review: odesílání pošty dostalo strop osmi sekund (`AbortSignal`, požadavek se opravdu přeruší) včetně čtení chybového těla; pozdní chyby po vypršení limitu se logují, místo aby spadly jako neošetřené odmítnutí. Testovací pool nově ověřuje, že sloupce v INSERT odpovídají migraci — mutační test ukázal, že dřív prošlo i přejmenování sloupce. Zapsána známá omezení fronty: `Promise.race` dotaz nezruší a příznak odeslání může zůstat `false`, i když e-mail odešel. |
 | 0.6 | Třetí review: doplněna databázová fronta hlášení (`db/migrace/005-veletrhy.sql`). Záznam se ukládá dřív, než odejde e-mail, takže hlášení nezmizí, když pošta selže; přijetí se potvrzuje, když je hlášení aspoň na jednom z obou míst. |

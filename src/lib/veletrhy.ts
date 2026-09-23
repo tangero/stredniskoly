@@ -20,7 +20,7 @@
 // ============================================================================
 
 import data from '@/data/veletrhy-2027.json';
-import { krajNames } from './kraje.mjs';
+import { cesskyDen } from './veletrhy-pocty.ts';
 
 export interface Veletrh {
   id: string;
@@ -90,20 +90,6 @@ export async function overSezonuProtiRegistru(
   return obdobi === SEZONA ? obdobi : null;
 }
 
-/**
- * Dnešní datum v českém kalendáři.
- *
- * `toISOString()` by vrátilo den v UTC, takže mezi půlnocí a druhou
- * hodinou ranní letního času by se akce z včerejška tvářila jako dnešní.
- */
-export function cesskyDen(ke: Date = new Date()): string {
-  return new Intl.DateTimeFormat('en-CA', {
-    timeZone: 'Europe/Prague',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-  }).format(ke);
-}
 
 /**
  * Akce ke zobrazení: potvrzený termín a ještě neproběhla.
@@ -122,29 +108,4 @@ export function zobrazitelneAkce(ke: Date = new Date()): Veletrh[] {
 /** Akce, které čekají na potvrzení termínu. Na web nejdou, jsou to úkoly. */
 export function cekajiciAkce(): Veletrh[] {
   return soubor.akce.filter((a) => !a.terminPotvrzen);
-}
-
-/** Kraje, ve kterých nějaká zobrazitelná akce je. Pro filtr. */
-export function krajeSAkcemi(ke: Date = new Date()): { kod: string; nazev: string; pocet: number }[] {
-  const pocty = new Map<string, number>();
-  for (const a of zobrazitelneAkce(ke)) {
-    pocty.set(a.krajKod, (pocty.get(a.krajKod) ?? 0) + 1);
-  }
-  return [...pocty.entries()]
-    .map(([kod, pocet]) => ({ kod, nazev: (krajNames as Record<string, string>)[kod] ?? kod, pocet }))
-    .sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs'));
-}
-
-/** Města, ve kterých nějaká zobrazitelná akce je. Online akce město nemá. */
-export function mestaSAkcemi(ke: Date = new Date()): string[] {
-  const mesta = new Set<string>();
-  for (const a of zobrazitelneAkce(ke)) {
-    if (a.mesto) mesta.add(a.mesto);
-  }
-  return [...mesta].sort((a, b) => a.localeCompare(b, 'cs'));
-}
-
-/** Název kraje ze číselníku; kód je jediný tvar, který se neplete. */
-export function nazevKraje(kod: string): string {
-  return (krajNames as Record<string, string>)[kod] ?? kod;
 }

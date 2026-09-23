@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { jeDbNastavena, vTransakci } from '@/lib/novinky-db';
+import { krajNames } from '@/lib/kraje.mjs';
 
 // ============================================================================
 // Nahlášení veletrhu nebo přehlídky SŠ (docs/veletrhy-skol-2027.md, § 5.5).
@@ -62,10 +63,8 @@ export interface NahlaseniVstup {
   website?: unknown;
 }
 
-const KRAJE = new Set([
-  'CZ010', 'CZ020', 'CZ031', 'CZ032', 'CZ041', 'CZ042', 'CZ051',
-  'CZ052', 'CZ053', 'CZ063', 'CZ064', 'CZ071', 'CZ072', 'CZ080',
-]);
+// Číselník krajů je jeden pro celý web; formulář i ověření berou týž.
+const KRAJE = new Set(Object.keys(krajNames));
 
 /** Odpověď je vždy stejná, ať akci známe, nebo ne. */
 export const NEUTRALNI_ODPOVED = {

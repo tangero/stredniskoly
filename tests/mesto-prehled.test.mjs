@@ -10,6 +10,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import React from 'react';
+import { text } from './_zavadec.mjs';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { getCityStats, MESTA } from '../src/lib/cityData.ts';
 import { CitySchoolsTable } from '../src/components/CitySchoolsTable.tsx';
@@ -143,9 +144,6 @@ async function klaceVPrehledu(mesto) {
 }
 
 /** HTML na čistý text, aby se dalo hledat ve větách přes značky. */
-function text(html) {
-  return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
-}
 
 test('vykreslení: nesplněné podmínky školy jsou v textu u „místa pro všechny“', async () => {
   const stats = await getCityStats('Pardubice');

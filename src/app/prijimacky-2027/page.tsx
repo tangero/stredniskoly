@@ -63,7 +63,7 @@ export default function Admissions2027Page() {
               Na podzim se konají veletrhy a přehlídky středních škol — akce, kde se na jednom místě
               představí školy z kraje najednou.{' '}
               <Link href="/veletrhy" className="text-blue-700 underline underline-offset-4">
-                Přehled akcí podle krajů a měst
+                Přehled akcí podle krajů
               </Link>
             </p>
           </section>

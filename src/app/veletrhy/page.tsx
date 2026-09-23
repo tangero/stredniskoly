@@ -4,20 +4,17 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import {
   zobrazitelneAkce,
-  krajeSAkcemi,
-  mestaSAkcemi,
-  nazevKraje,
-  cesskyDen,
   overSezonuProtiRegistru,
   OVERENO_K,
 } from '@/lib/veletrhy';
+import { cesskyDen } from '@/lib/veletrhy-pocty';
 import { VeletrhySeznam, type VeletrhKarta } from './VeletrhySeznam';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/veletrhy' },
   title: 'Veletrhy a přehlídky středních škol — přehled akcí',
   description:
-    'Kde se dá potkat víc středních škol najednou: veletrhy a přehlídky podle krajů a měst, s termíny a odkazy na pořadatele.',
+    'Kde se dá potkat víc středních škol najednou: veletrhy a přehlídky po krajích, s městy, termíny a odkazy na pořadatele.',
   openGraph: {
     title: 'Veletrhy a přehlídky středních škol',
     description: 'Přehled akcí, kde se na jednom místě představí střední školy z kraje.',
@@ -41,8 +38,6 @@ export default async function VeletrhyPage() {
   // jsou horší než prázdná stránka.
   const sezonaSedi = (await overSezonuProtiRegistru()) !== null;
   const akce = sezonaSedi ? zobrazitelneAkce() : [];
-  const kraje = sezonaSedi ? krajeSAkcemi() : [];
-  const mesta = sezonaSedi ? mestaSAkcemi() : [];
 
   const karty: VeletrhKarta[] = akce.map((a) => ({
     id: a.id,
@@ -51,7 +46,6 @@ export default async function VeletrhyPage() {
     mesto: a.mesto,
     online: a.online,
     krajKod: a.krajKod,
-    krajNazev: nazevKraje(a.krajKod),
     misto: a.misto,
     start: a.start!,
     end: (a.end ?? a.start)!,
@@ -87,7 +81,7 @@ export default async function VeletrhyPage() {
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-10">
         <section>
           {sezonaSedi ? (
-            <VeletrhySeznam akce={karty} kraje={kraje} mesta={mesta} den={cesskyDen()} />
+            <VeletrhySeznam akce={karty} den={cesskyDen()} />
           ) : (
             <div className="rounded-lg border border-gray-200 bg-white p-6">
               <p className="font-medium text-gray-900">Přehled akcí právě připravujeme.</p>
@@ -137,7 +131,7 @@ export default async function VeletrhyPage() {
           </p>
           <p className="mt-3 text-sm text-gray-600">
             Údaje jsme naposledy ověřovali {formatujDatum(OVERENO_K)}. Termín a podmínky si před cestou
-            ověřte na stránce pořadatele — pořádá akci on, ne tento web.
+            ověřte na stránce pořadatele.
           </p>
         </section>
       </div>
