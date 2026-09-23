@@ -22,7 +22,10 @@ interface PasmaPrijetiCardProps {
  * popsal špatně.
  */
 function vetaOTom(rozhodl: number): string {
-  if (rozhodl >= 0.97) return 'O přijetí rozhodoval hlavně výsledek testu, pořadí podle něj odpovídalo výsledku přijímání.';
+  // Ukazatel měří shodu pořadí podle SOUČTU obou testů s výsledkem. Kritérium,
+  // které jeden předmět jen převažuje (Doppler: matematika 1,5×), pořadí skoro
+  // nezmění a ukazatel ho nevidí — proto věta nesmí tvrdit, že „rozhodl test“.
+  if (rozhodl >= 0.97) return 'Pořadí podle součtu obou testů odpovídalo tomu, kdo se dostal. Kritéria, která jeden test jen převažují — třeba matematiku 1,5× — se v tom neprojeví; ověřte je u školy.';
   if (rozhodl >= 0.85) return 'Rozhodoval hlavně výsledek testu, ale kritéria školy s pořadím znatelně hýbala.';
   return 'O přijetí rozhodlo z velké části něco jiného než test. Bez kritérií školy se odhadnout nedá nic.';
 }
