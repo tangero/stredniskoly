@@ -28,6 +28,7 @@
  *   --jen <REDIZO>     jen jedna škola (lze opakovat)
  *   --na <adresa>      přesměruje všechny e-maily sem (zkouška, nikdy na školy)
  *   --znovu            pošle i škole, která už má vyplněné pozvanka_odeslana
+ *   --vlna <číslo>     omezí odeslání na vybranou vlnu (původní pilot = 1)
  */
 import fs from 'fs';
 import path from 'path';
@@ -45,6 +46,11 @@ const opravdu = argv.includes('--opravdu');
 const znovu = argv.includes('--znovu');
 const jen = argv.flatMap((a, i) => (a === '--jen' ? [argv[i + 1]] : []));
 const na = argv.includes('--na') ? argv[argv.indexOf('--na') + 1] : null;
+const vlna = argv.includes('--vlna') ? Number(argv[argv.indexOf('--vlna') + 1]) : null;
+if (vlna !== null && (!Number.isInteger(vlna) || vlna < 1)) {
+  console.error('❌ --vlna vyžaduje kladné celé číslo.');
+  process.exit(1);
+}
 
 function nactiNebo(cesta, co) {
   if (!fs.existsSync(cesta)) {
@@ -63,7 +69,8 @@ async function main() {
   const kodPodleRedizo = new Map((kody.kody ?? []).map((k) => [String(k.redizo), k.kod]));
   const kontaktPodleRedizo = new Map((kontakty.skoly ?? []).map((s) => [String(s.redizo), s]));
 
-  const skoly = (pilot.skoly ?? []).filter((s) => (jen.length ? jen.includes(s.redizo) : true));
+  const skoly = (pilot.skoly ?? []).filter((s) =>
+    (!jen.length || jen.includes(s.redizo)) && (vlna === null || (s.vlna ?? 1) === vlna));
   if (skoly.length === 0) {
     console.error('❌ Žádná škola k odeslání (zkontrolujte --jen).');
     process.exit(1);
@@ -106,12 +113,18 @@ async function main() {
       nazevSkoly: s.nazev,
       osloveni: oslov,
       kod: kodPodleRedizo.get(s.redizo),
+      vlna: s.vlna,
+      idempotencyKey: na ? undefined : `portal-pozvanka-v${s.vlna ?? 1}-${s.redizo}`,
     });
     if (ok) {
       odeslano += 1;
       // Datum se zapisuje jen při skutečném odeslání na školu; zkouška na vlastní
       // adresu by jinak školu označila za oslovenou, aniž by cokoli dostala.
-      if (!na) s.pozvanka_odeslana = dnes;
+      if (!na) {
+        s.pozvanka_odeslana = dnes;
+        // Průběžný zápis dovolí bezpečně navázat po přerušení dlouhé dávky.
+        fs.writeFileSync(PILOT, JSON.stringify(pilot, null, 1) + '\n');
+      }
     } else {
       selhalo.push(s.redizo);
     }

@@ -54,7 +54,7 @@ export function esc(text: string): string {
 }
 
 /** `odesilatel` je hotový řádek „Od“ včetně adresy; bez něj píše Eduarda. */
-export async function odesliEmail(para: { to: string | string[]; subject: string; html: string; odesilatel?: string; text?: string }): Promise<boolean> {
+export async function odesliEmail(para: { to: string | string[]; subject: string; html: string; odesilatel?: string; text?: string; idempotencyKey?: string }): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     console.log(`📧 E-mail by šel na adresu příjemce (RESEND_API_KEY není nastaven) – předmět: ${para.subject}`);
@@ -66,6 +66,7 @@ export async function odesliEmail(para: { to: string | string[]; subject: string
       headers: {
         Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
+        ...(para.idempotencyKey ? { 'Idempotency-Key': para.idempotencyKey } : {}),
       },
       body: JSON.stringify({
         from: para.odesilatel ?? odesilatel(JMENO_EDUARDA),
@@ -208,6 +209,7 @@ export interface PozvankaPara {
   /** „Vážená paní ředitelko“ / „Vážený pane řediteli“ / „Dobrý den“ */
   osloveni: string;
   kod: string;
+  vlna?: number;
 }
 
 /** Předmět a HTML pozvánky bez odeslání – kvůli náhledu v administraci. */
@@ -224,14 +226,16 @@ export function pozvankaDoPilotu(para: PozvankaPara): { subject: string; html: s
     // nevratnou rozesílkou je náhled v administraci, a ten musí ukázat i řádek
     // „Od“. Právě ten ředitel uvidí dřív než podpis.
     odesilatel: odesilatel(JMENO_CLOVEK),
-    subject: `Profil ${para.nazevSkoly} na Přijímačky na školu: pozvánka do pilotu`,
+    subject: `Profil ${para.nazevSkoly} na Přijímačky na školu: ${para.vlna === 2 ? 'pozvánka ke správě profilu' : 'pozvánka do pilotu'}`,
     html: OBALKA(
       `
       <p>${esc(para.osloveni)},</p>
       <p>na webu Přijímačky na školu (<a href="https://www.prijimackynaskolu.cz" style="color: #0074e4;">www.prijimackynaskolu.cz</a>)
          hledají rodiče a uchazeči střední školu podle výsledků přijímacího řízení. Stránku má i <strong>${skola}</strong>.
          Obory, kapacity a výsledky na ní přebíráme z otevřených dat CERMATu, rejstříku MŠMT a České školní inspekce.</p>
-      <p>Zveme vaši školu mezi dvacet škol, které jako první vyzkouší, jak si škola svůj profil spravuje sama.
+      <p>${para.vlna === 2
+        ? 'Zveme vaši školu, aby si svůj profil na našem webu spravovala sama.'
+        : 'Zveme vaši školu mezi dvacet škol, které jako první vyzkouší, jak si škola svůj profil spravuje sama.'}
          Doplníte, co v úředních datech chybí: dny otevřených dveří, odkaz na vyhlášená kritéria přijetí, přípravné
          kurzy, ubytování nebo kontakt na výchovného poradce. Údaje se na stránce školy zobrazí se značkou
          „potvrdila škola“ a s datem. Je to zdarma a nic není povinné.</p>
@@ -268,9 +272,9 @@ export function pozvankaDoPilotu(para: PozvankaPara): { subject: string; html: s
   };
 }
 
-export async function posliPozvankuDoPilotu(para: PozvankaPara & { email: string }): Promise<boolean> {
+export async function posliPozvankuDoPilotu(para: PozvankaPara & { email: string; idempotencyKey?: string }): Promise<boolean> {
   const { subject, html, odesilatel: od } = pozvankaDoPilotu(para);
-  return odesliEmail({ to: para.email, subject, html, odesilatel: od });
+  return odesliEmail({ to: para.email, subject, html, odesilatel: od, idempotencyKey: para.idempotencyKey });
 }
 
 export async function posliPozvankuEmail(para: { email: string; nazevSkoly: string; pozval: string; odkaz: string }) {

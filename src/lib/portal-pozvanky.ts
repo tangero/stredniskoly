@@ -26,6 +26,7 @@ export interface RadekPozvanky {
   osloveni: string;
   maKod: boolean;
   pozvanka_odeslana: string | null;
+  vlna?: number;
 }
 
 export interface PrehledPozvanek {
@@ -61,7 +62,7 @@ async function ctiJson<T>(cesta: string): Promise<T | null> {
 }
 
 interface PilotSoubor {
-  skoly: Array<{ redizo: string; nazev: string; mesto: string; pozvanka_odeslana: string | null }>;
+  skoly: Array<{ redizo: string; nazev: string; mesto: string; pozvanka_odeslana: string | null; vlna?: number }>;
 }
 interface KodySoubor {
   kody: Array<{ redizo: string; kod: string }>;
@@ -95,6 +96,7 @@ export async function nactiPozvanky(): Promise<PrehledPozvanek> {
       osloveni: osloveni(kontakt?.reditel),
       maKod: kodPodle.has(s.redizo),
       pozvanka_odeslana: s.pozvanka_odeslana ?? null,
+      vlna: s.vlna,
     };
   });
 

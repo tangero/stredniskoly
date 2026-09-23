@@ -132,19 +132,19 @@ export default async function AdminPage({ searchParams }: Props) {
             </p>
           </div>
 
-          {/* 0. Pilot účtů portálu */}
-          <Sekce titulek="Pilot účtů portálu">
+          {/* 0. Oslovené školy portálu */}
+          <Sekce titulek="Oslovené školy portálu">
             {pilot === null ? (
               <Poznamka>Databáze účtů není nastavena nebo neodpovídá.</Poznamka>
             ) : pilot.length === 0 ? (
-              <Poznamka>Pilotní výběr (data/portal/pilot.json) není k dispozici.</Poznamka>
+              <Poznamka>Seznam oslovených škol (data/portal/pilot.json) není k dispozici.</Poznamka>
             ) : (
               <div className="overflow-x-auto">
                 <p className="text-sm text-slate-500 mb-3">
                   {pilot.filter((p) => p.stav?.spravce).length} z {pilot.length} škol má správce ·{' '}
                   {pilot.filter((p) => (p.stav?.navrhy ?? 0) > 0).length} poslalo návrh ·{' '}
                   <a href="/admin/portal" className="underline">všechny účty</a>{' '}·{' '}
-                  <a href="/admin/portal/pozvanky" className="underline">pozvánky do pilotu</a>
+                  <a href="/admin/portal/pozvanky" className="underline">pozvánky školám</a>
                 </p>
                 <table className="w-full text-sm">
                   <thead>

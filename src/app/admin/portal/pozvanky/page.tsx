@@ -11,7 +11,7 @@ import { pozvankaDoPilotu } from '@/lib/portal-email';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Pozvánky do pilotu',
+  title: 'Pozvánky školám',
   robots: { index: false, follow: false },
 };
 
@@ -33,7 +33,7 @@ export default async function AdminPozvankyPage({ searchParams }: Props) {
   // Náhled se staví pro konkrétní školu, aby byl vidět skutečný kód i oslovení.
   const proNahled = radky.find((r) => r.redizo === nahled) ?? radky.find((r) => r.maKod && r.email) ?? radky[0];
   const kod = proNahled ? await kodProSkolu(proNahled.redizo) : null;
-  const email = proNahled && kod ? pozvankaDoPilotu({ nazevSkoly: proNahled.nazev, osloveni: proNahled.osloveni, kod }) : null;
+  const email = proNahled && kod ? pozvankaDoPilotu({ nazevSkoly: proNahled.nazev, osloveni: proNahled.osloveni, kod, vlna: proNahled.vlna }) : null;
 
   return (
     <>
@@ -44,10 +44,10 @@ export default async function AdminPozvankyPage({ searchParams }: Props) {
           <span className="mx-2">/</span>
           <Link href="/admin/portal" className="hover:text-blue-600">Portál</Link>
           <span className="mx-2">/</span>
-          <span className="text-slate-900">Pozvánky do pilotu</span>
+          <span className="text-slate-900">Pozvánky školám</span>
         </div>
 
-        <h1 className="text-2xl font-semibold">Pozvánky do pilotu</h1>
+        <h1 className="text-2xl font-semibold">Pozvánky školám</h1>
 
         {ok && <p className="rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800">{ok}</p>}
         {chyba && <p className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">{chyba}</p>}
@@ -72,8 +72,8 @@ export default async function AdminPozvankyPage({ searchParams }: Props) {
               <p className="text-4xl font-semibold text-green-700">Hotovo</p>
               <p className="text-slate-600">
                 {pocty.celkem === 1
-                  ? 'Pozvánku dostala jediná škola pilotu.'
-                  : `Pozvánku dostalo všech ${pocty.celkem} ${pocty.celkem < 5 ? 'školy' : 'škol'} pilotu.`}{' '}
+                  ? 'Pozvánku dostala jediná škola.'
+                  : `Pozvánku dostalo všech ${pocty.celkem} ${pocty.celkem < 5 ? 'školy' : 'škol'}.`}{' '}
                 Zbývá 0 k odeslání.
               </p>
             </>
@@ -82,7 +82,7 @@ export default async function AdminPozvankyPage({ searchParams }: Props) {
               <p className="text-4xl font-semibold text-slate-900">{pocty.kOdeslani}</p>
               <p className="text-slate-600">
                 {pocty.kOdeslani === 1 ? 'škola dostane pozvánku' : pocty.kOdeslani < 5 ? 'školy dostanou pozvánku' : 'škol dostane pozvánku'}
-                {' '}z celkem {pocty.celkem} v pilotu.
+                {' '}z celkem {pocty.celkem} vybraných škol.
               </p>
             </>
           )}

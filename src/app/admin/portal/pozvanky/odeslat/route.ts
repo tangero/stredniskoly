@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     const kod = await kodProSkolu(skola.redizo);
     if (!kod) return zpet('chyba', `Škola ${skola.nazev} nemá kód.`);
 
-    const ok = await posliPozvankuDoPilotu({ email: na, nazevSkoly: skola.nazev, osloveni: skola.osloveni, kod });
+    const ok = await posliPozvankuDoPilotu({ email: na, nazevSkoly: skola.nazev, osloveni: skola.osloveni, kod, vlna: skola.vlna });
     return ok
       ? zpet('ok', `Zkouška odeslána na ${na} (${skola.nazev}). Školám nic nešlo, datum se nezapsalo.`)
       : zpet('chyba', 'Zkoušku se nepodařilo odeslat, podrobnosti jsou v logu.');
@@ -62,15 +62,16 @@ export async function POST(request: NextRequest) {
       nazevSkoly: skola.nazev,
       osloveni: skola.osloveni,
       kod,
+      vlna: skola.vlna,
+      idempotencyKey: `portal-pozvanka-v${skola.vlna ?? 1}-${skola.redizo}`,
     });
-    (ok ? odeslane : selhale).push(ok ? skola.redizo : skola.nazev);
+    if (ok) {
+      odeslane.push(skola.redizo);
+      await zapisOdeslano([skola.redizo], new Date().toISOString().slice(0, 10));
+    } else {
+      selhale.push(skola.nazev);
+    }
     await new Promise((r) => setTimeout(r, 600)); // Resend: 2 zprávy za sekundu
-  }
-
-  if (odeslane.length > 0) {
-    // Datum se zapisuje průběžně až po odeslání, aby opakované spuštění
-    // neposlalo pozvánku dvakrát ani té škole, u které to poprvé prošlo.
-    await zapisOdeslano(odeslane, new Date().toISOString().slice(0, 10));
   }
 
   const shrnuti = `Odesláno ${odeslane.length} z ${kOdeslani.length}. Datum je zapsané v data/portal/pilot.json – commitněte ho.`;

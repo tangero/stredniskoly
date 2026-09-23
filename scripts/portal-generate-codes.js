@@ -125,6 +125,13 @@ function main() {
   }
 
   const data = nactiKody();
+  const dosavadniPlaintext = out && fs.existsSync(out)
+    ? JSON.parse(fs.readFileSync(out, 'utf8'))
+    : { kody: [] };
+  if (!Array.isArray(dosavadniPlaintext.kody)) {
+    console.error('Výstupní soubor nemá pole kody; žádné kódy neměním.');
+    process.exit(1);
+  }
   const dnes = new Date().toISOString().slice(0, 10);
   const vysledky = [];
   let zmeneno = false;
@@ -168,16 +175,17 @@ function main() {
     return;
   }
 
-  const radky = vysledky.map((v) => `${v.redizo}\t${v.kod}\t${v.nazev}`);
-  console.log('\nVygenerované kódy (PLAINTEXT – necommitovat, předat jen příslušné škole):\n');
-  for (const r of radky) console.log(r);
-
   if (out) {
+    const dosavadni = new Map(dosavadniPlaintext.kody.map((v) => [String(v.redizo), v]));
+    for (const v of vysledky) dosavadni.set(v.redizo, v);
     fs.mkdirSync(path.dirname(out), { recursive: true });
-    fs.writeFileSync(out, JSON.stringify({ vytvoreno: dnes, kody: vysledky }, null, 2) + '\n');
-    console.log(`\nPlaintext uložen do ${out}`);
+    fs.writeFileSync(out, JSON.stringify({ vytvoreno: dnes, kody: [...dosavadni.values()] }, null, 2) + '\n');
+    console.log(`\n${vysledky.length} nových plaintext kódů uloženo do ${out}; ${dosavadniPlaintext.kody.length} dosavadních zachováno.`);
     if (out === DEFAULT_PLAINTEXT_OUT) console.log('(soubor je v .gitignore)');
   } else {
+    const radky = vysledky.map((v) => `${v.redizo}\t${v.kod}\t${v.nazev}`);
+    console.log('\nVygenerované kódy (PLAINTEXT – necommitovat, předat jen příslušné škole):\n');
+    for (const r of radky) console.log(r);
     console.log(`\nTip: plaintext lze uložit přes --out ${path.relative(ROOT, DEFAULT_PLAINTEXT_OUT)} (gitignorováno).`);
   }
   console.log(`\nHashe zapsány do ${path.relative(ROOT, KODY_PATH)} – tento soubor patří do gitu.`);

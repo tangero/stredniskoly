@@ -67,6 +67,13 @@ test('šablona pozvánky nese vlastní řádek Od', () => {
   assert.equal(pozvanka().odesilatel, 'Patrick Zandl – Přijímačky na školu <eda@prijimackynaskolu.cz>');
 });
 
+test('druhá vlna neslibuje místo mezi prvními dvaceti', () => {
+  const druha = pozvankaDoPilotu({ osloveni: 'Dobrý den', nazevSkoly: 'Gymnázium Testovací', kod: KOD, vlna: 2 });
+  assert.match(druha.subject, /pozvánka ke správě profilu/);
+  assert.match(druha.html, /Zveme vaši školu, aby si svůj profil/);
+  assert.doesNotMatch(druha.html, /mezi dvacet škol/);
+});
+
 test('textová verze e-mailu nenechá HTML entity na očích', () => {
   // Jména správců zadávají lidé sami a `esc()` je pro HTML uvozuje. Bez
   // rozkódování by v textové části stálo „Nováková &amp; spol.“.
@@ -120,6 +127,28 @@ test('pozvánka odchází jménem člověka, ne asistentky', async () => {
   assert.equal(telo.from, 'Patrick Zandl – Přijímačky na školu <eda@prijimackynaskolu.cz>');
   assert.equal(telo.reply_to, 'eda@prijimackynaskolu.cz', 'odpovědi nemíří na adresu podpory');
   assert.ok(telo.text?.includes(KOD), 'kód chybí v textové verzi');
+});
+
+test('pozvánka druhé vlny předá Resendu klíč proti duplicitnímu odeslání', async () => {
+  const puvodniFetch = global.fetch;
+  const puvodniKlic = process.env.RESEND_API_KEY;
+  process.env.RESEND_API_KEY = 'test';
+  let hlavicky;
+  global.fetch = async (_url, init) => {
+    hlavicky = init.headers;
+    return { ok: true, text: async () => '' };
+  };
+  try {
+    assert.equal(await posliPozvankuDoPilotu({
+      email: 'reditel@skola.cz', osloveni: 'Dobrý den', nazevSkoly: 'Gymnázium Testovací',
+      kod: KOD, vlna: 2, idempotencyKey: 'portal-pozvanka-v2-600000001',
+    }), true);
+    assert.equal(hlavicky['Idempotency-Key'], 'portal-pozvanka-v2-600000001');
+  } finally {
+    global.fetch = puvodniFetch;
+    if (puvodniKlic === undefined) delete process.env.RESEND_API_KEY;
+    else process.env.RESEND_API_KEY = puvodniKlic;
+  }
 });
 
 test('provozní e-mail naopak odchází jménem asistentky', async () => {

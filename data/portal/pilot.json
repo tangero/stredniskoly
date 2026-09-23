@@ -164,6 +164,911 @@
    "typ": "odborná",
    "velikost_ukazatel": 638,
    "pozvanka_odeslana": "2026-09-22"
+  },
+  {
+   "redizo": "600005143",
+   "nazev": "Gymnázium, Praha 4, Na Vítězné pláni 1160",
+   "mesto": "Praha",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 1763,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600006603",
+   "nazev": "Gymnázium, Praha 10, Voděradská 2",
+   "mesto": "Praha",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 1307,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600004589",
+   "nazev": "Gymnázium Jana Nerudy, škola hlavního města Prahy, Praha 1, Hellichova 3",
+   "mesto": "Praha",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 1260,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600004961",
+   "nazev": "Gymnázium Na Pražačce, Praha 3, Nad Ohradou 23",
+   "mesto": "Praha",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 1230,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600005542",
+   "nazev": "Smíchovská střední průmyslová škola, gymnázium a hotelová škola Radlická, příspěvková organizace",
+   "mesto": "Praha",
+   "typ": "odborná",
+   "velikost_ukazatel": 1397,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600019462",
+   "nazev": "Vyšší odborná škola zdravotnická a Střední zdravotnická škola, Praha 4, 5. května 51",
+   "mesto": "Praha",
+   "typ": "odborná",
+   "velikost_ukazatel": 1393,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600170063",
+   "nazev": "Střední odborná škola - Centrum odborné přípravy a Gymnázium",
+   "mesto": "Praha",
+   "typ": "odborná",
+   "velikost_ukazatel": 1277,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "680000011",
+   "nazev": "Vyšší policejní škola a Střední policejní škola Ministerstva vnitra v Praze",
+   "mesto": "Praha",
+   "typ": "odborná",
+   "velikost_ukazatel": 1057,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600006280",
+   "nazev": "Střední odborná škola Jarov",
+   "mesto": "Praha",
+   "typ": "odborná",
+   "velikost_ukazatel": 970,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600004759",
+   "nazev": "Českoslovanská akademie obchodní Dr. Edvarda Beneše, střední odborná škola, Praha 2, Resslova 8",
+   "mesto": "Praha",
+   "typ": "odborná",
+   "velikost_ukazatel": 949,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600004929",
+   "nazev": "Obchodní akademie, Praha 3, Kubelíkova 37",
+   "mesto": "Praha",
+   "typ": "odborná",
+   "velikost_ukazatel": 935,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600004856",
+   "nazev": "Střední průmyslová škola potravinářských technologií, Střední odborná škola přírodovědná a veterinární a Gymnázium, Praha 2, Podskalská 10, příspěvková organizace",
+   "mesto": "Praha",
+   "typ": "odborná",
+   "velikost_ukazatel": 909,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600171728",
+   "nazev": "Sportovní gymnázium, Kladno, Plzeňská 3103",
+   "mesto": "Kladno",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 694,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600007332",
+   "nazev": "Dvořákovo gymnázium Kralupy nad Vltavou, příspěvková organizace",
+   "mesto": "Kralupy nad Vltavou",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 573,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600006972",
+   "nazev": "Gymnázium, Kladno, nám. Edvarda Beneše 1573",
+   "mesto": "Kladno",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 501,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600007766",
+   "nazev": "Gymnázium Říčany, příspěvková organizace",
+   "mesto": "Říčany",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 491,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600006832",
+   "nazev": "Obchodní akademie, Střední pedagogická škola a Jazyková škola s právem státní jazykové zkoušky, Beroun, U Stadionu 486",
+   "mesto": "Beroun",
+   "typ": "odborná",
+   "velikost_ukazatel": 729,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600007171",
+   "nazev": "Střední průmyslová škola strojírenská a Jazyková škola s právem státní jazykové zkoušky, Kolín IV, Heverova 191",
+   "mesto": "Kolín",
+   "typ": "odborná",
+   "velikost_ukazatel": 706,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600007189",
+   "nazev": "Střední odborná škola informatiky a spojů a Střední odborné učiliště, Kolín, Jaselská 826",
+   "mesto": "Kolín",
+   "typ": "odborná",
+   "velikost_ukazatel": 604,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "610451049",
+   "nazev": "Střední odborná škola a Střední odborné učiliště, Mladá Boleslav, Jičínská 762",
+   "mesto": "Mladá Boleslav",
+   "typ": "odborná",
+   "velikost_ukazatel": 576,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600170179",
+   "nazev": "Střední pedagogická škola a Střední odborná škola služeb Mladá Boleslav, příspěvková organizace",
+   "mesto": "Mladá Boleslav",
+   "typ": "odborná",
+   "velikost_ukazatel": 571,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600170233",
+   "nazev": "Střední škola pedagogiky, cestovního ruchu a gastronomie Příbram, příspěvková organizace",
+   "mesto": "Příbram",
+   "typ": "odborná",
+   "velikost_ukazatel": 545,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600007294",
+   "nazev": "Střední odborná škola a Střední odborné učiliště řemesel, Kutná Hora, Čáslavská 202",
+   "mesto": "Kutná Hora",
+   "typ": "odborná",
+   "velikost_ukazatel": 534,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600006964",
+   "nazev": "Střední průmyslová škola stavební a Obchodní akademie, Kladno, Cyrila Boudy 2954",
+   "mesto": "Kladno",
+   "typ": "odborná",
+   "velikost_ukazatel": 515,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600008151",
+   "nazev": "Gymnázium, České Budějovice, Česká 64",
+   "mesto": "České Budějovice",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 520,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600008002",
+   "nazev": "Gymnázium, České Budějovice, Jírovcova 8",
+   "mesto": "České Budějovice",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 387,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600008801",
+   "nazev": "Gymnázium Pierra de Coubertina, Tábor, Náměstí Františka Křižíka 860",
+   "mesto": "Tábor",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 332,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600170292",
+   "nazev": "Střední škola obchodní, České Budějovice, Husova 9",
+   "mesto": "České Budějovice",
+   "typ": "odborná",
+   "velikost_ukazatel": 1171,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600008193",
+   "nazev": "Vyšší odborná škola, Střední průmyslová škola automobilní a technická, České Budějovice, Skuherského 3",
+   "mesto": "České Budějovice",
+   "typ": "odborná",
+   "velikost_ukazatel": 910,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600019578",
+   "nazev": "Střední zdravotnická škola a Vyšší odborná škola zdravotnická, České Budějovice, Husova 3",
+   "mesto": "České Budějovice",
+   "typ": "odborná",
+   "velikost_ukazatel": 870,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600170438",
+   "nazev": "Vyšší odborná škola, Střední škola, Centrum odborné přípravy, Sezimovo Ústí, Budějovická 421",
+   "mesto": "Sezimovo Ústí",
+   "typ": "odborná",
+   "velikost_ukazatel": 509,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "651023572",
+   "nazev": "Střední škola obchodu, služeb a řemesel a Jazyková škola s právem státní jazykové zkoušky, Tábor, Bydlinského 2474",
+   "mesto": "Tábor",
+   "typ": "odborná",
+   "velikost_ukazatel": 474,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600009530",
+   "nazev": "Masarykovo gymnázium, Plzeň, Petákova 2",
+   "mesto": "Plzeň",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 692,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600009556",
+   "nazev": "Gymnázium, Plzeň, Mikulášské nám. 23",
+   "mesto": "Plzeň",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 681,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "610100645",
+   "nazev": "Střední průmyslová škola strojnická a Střední odborná škola profesora Švejcara, Plzeň, Klatovská 109",
+   "mesto": "Plzeň",
+   "typ": "odborná",
+   "velikost_ukazatel": 1029,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600019675",
+   "nazev": "Střední zdravotnická škola a Vyšší odborná škola zdravotnická, Plzeň, Karlovarská 99",
+   "mesto": "Plzeň",
+   "typ": "odborná",
+   "velikost_ukazatel": 1013,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "610100530",
+   "nazev": "Střední průmyslová škola dopravní, Plzeň, Karlovarská 99",
+   "mesto": "Plzeň",
+   "typ": "odborná",
+   "velikost_ukazatel": 848,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600008991",
+   "nazev": "Gymnázium a obchodní akademie Mariánské Lázně, příspěvková organizace",
+   "mesto": "Mariánské Lázně",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 277,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600019641",
+   "nazev": "Střední zdravotnická škola a vyšší odborná škola zdravotnická Karlovy Vary, příspěvková organizace",
+   "mesto": "Karlovy Vary",
+   "typ": "odborná",
+   "velikost_ukazatel": 747,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600009084",
+   "nazev": "Střední průmyslová škola Ostrov, příspěvková organizace",
+   "mesto": "Ostrov",
+   "typ": "odborná",
+   "velikost_ukazatel": 588,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600011321",
+   "nazev": "Gymnázium, Ústí nad Labem, Jateční 22, příspěvková organizace",
+   "mesto": "Ústí nad Labem",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 419,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600011216",
+   "nazev": "Gymnázium, Teplice, Čs. dobrovolců 11, příspěvková organizace",
+   "mesto": "Teplice",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 387,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600170675",
+   "nazev": "Hotelová škola, Obchodní akademie a Střední průmyslová škola, Teplice, příspěvková organizace",
+   "mesto": "Teplice",
+   "typ": "odborná",
+   "velikost_ukazatel": 969,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600020428",
+   "nazev": "Vyšší odborná škola ekonomická, sociální a zdravotnická, Obchodní akademie, Střední pedagogická škola a Střední zdravotnická škola, Most, příspěvková organizace",
+   "mesto": "Most",
+   "typ": "odborná",
+   "velikost_ukazatel": 960,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600011348",
+   "nazev": "Střední průmyslová škola, Ústí nad Labem, Resslova 5, příspěvková organizace",
+   "mesto": "Ústí nad Labem",
+   "typ": "odborná",
+   "velikost_ukazatel": 792,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600019748",
+   "nazev": "Vyšší odborná škola zdravotnická a Střední škola zdravotnická, Ústí nad Labem, Palachova 35, příspěvková organizace",
+   "mesto": "Ústí nad Labem",
+   "typ": "odborná",
+   "velikost_ukazatel": 780,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600010759",
+   "nazev": "Střední škola pedagogická, hotelnictví a služeb, Litoměřice, příspěvková organizace",
+   "mesto": "Litoměřice",
+   "typ": "odborná",
+   "velikost_ukazatel": 721,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600010554",
+   "nazev": "Gymnázium F. X. Šaldy, Liberec 11, Partyzánská 530, příspěvková organizace",
+   "mesto": "Liberec",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 451,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600020398",
+   "nazev": "Střední průmyslová škola a Vyšší odborná škola, Liberec, příspěvková organizace",
+   "mesto": "Liberec",
+   "typ": "odborná",
+   "velikost_ukazatel": 749,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600010571",
+   "nazev": "Obchodní akademie a Jazyková škola s právem státní jazykové zkoušky, Liberec, Šamánkova 500/8, příspěvková organizace",
+   "mesto": "Liberec",
+   "typ": "odborná",
+   "velikost_ukazatel": 623,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "691000093",
+   "nazev": "Obchodní akademie, Hotelová škola a Střední odborná škola, Turnov, Zborovská 519, příspěvková organizace",
+   "mesto": "Turnov",
+   "typ": "odborná",
+   "velikost_ukazatel": 495,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600012891",
+   "nazev": "Krkonošské gymnázium a Střední odborná škola",
+   "mesto": "Vrchlabí",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 375,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600011682",
+   "nazev": "Gymnázium, Střední odborná škola a Vyšší odborná škola, Nový Bydžov",
+   "mesto": "Nový Bydžov",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 343,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600011712",
+   "nazev": "Střední škola služeb, obchodu a gastronomie",
+   "mesto": "Hradec Králové",
+   "typ": "odborná",
+   "velikost_ukazatel": 754,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600011739",
+   "nazev": "Obchodní akademie, Střední odborná škola a Jazyková škola s právem státní jazykové zkoušky, Hradec Králové",
+   "mesto": "Hradec Králové",
+   "typ": "odborná",
+   "velikost_ukazatel": 732,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600019772",
+   "nazev": "Vyšší odborná škola zdravotnická a Střední zdravotnická škola, Hradec Králové, Komenského 234",
+   "mesto": "Hradec Králové",
+   "typ": "odborná",
+   "velikost_ukazatel": 721,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600012786",
+   "nazev": "Gymnázium, obchodní akademie a jazyková škola s právem státní jazykové zkoušky Svitavy",
+   "mesto": "Svitavy",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 291,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600011887",
+   "nazev": "Gymnázium Josefa Ressela, Chrudim, Olbrachtova 291",
+   "mesto": "Chrudim",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 268,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "691005559",
+   "nazev": "Střední průmyslová škola elektrotechnická a Vyšší odborná škola Pardubice",
+   "mesto": "Pardubice",
+   "typ": "odborná",
+   "velikost_ukazatel": 601,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600012433",
+   "nazev": "Střední průmyslová škola chemická Pardubice",
+   "mesto": "Pardubice",
+   "typ": "odborná",
+   "velikost_ukazatel": 584,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600013031",
+   "nazev": "Obchodní akademie a Střední odborná škola cestovního ruchu Choceň",
+   "mesto": "Choceň",
+   "typ": "odborná",
+   "velikost_ukazatel": 563,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "690000014",
+   "nazev": "Vojenská střední škola a Vyšší odborná škola Ministerstva obrany v Moravské Třebové",
+   "mesto": "Moravská Třebová",
+   "typ": "odborná",
+   "velikost_ukazatel": 459,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600014746",
+   "nazev": "Gymnázium Jihlava",
+   "mesto": "Jihlava",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 464,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600008436",
+   "nazev": "Gymnázium a Obchodní akademie Pelhřimov",
+   "mesto": "Pelhřimov",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 403,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "610250451",
+   "nazev": "Bráfova akademie Třebíč,  střední škola a Jazyková škola s právem státní jazykové zkoušky",
+   "mesto": "Třebíč",
+   "typ": "odborná",
+   "velikost_ukazatel": 795,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600014894",
+   "nazev": "Obchodní akademie, Vyšší odborná škola zdravotnická a Střední zdravotnická škola, Střední odborná škola služeb a Jazyková škola s právem státní jazykové zkoušky Jihlava",
+   "mesto": "Jihlava",
+   "typ": "odborná",
+   "velikost_ukazatel": 669,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "610250574",
+   "nazev": "Střední průmyslová škola Třebíč",
+   "mesto": "Třebíč",
+   "typ": "odborná",
+   "velikost_ukazatel": 660,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600013863",
+   "nazev": "Gymnázium Brno-Bystrc, příspěvková organizace",
+   "mesto": "Brno",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 1229,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600013626",
+   "nazev": "Gymnázium Matyáše Lercha, Brno, Žižkova 55, příspěvková organizace",
+   "mesto": "Brno",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 1088,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600013472",
+   "nazev": "Gymnázium Brno, Slovanské náměstí, příspěvková organizace",
+   "mesto": "Brno",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 939,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600013766",
+   "nazev": "Střední škola Brno, Charbulova, příspěvková organizace",
+   "mesto": "Brno",
+   "typ": "odborná",
+   "velikost_ukazatel": 1430,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600171019",
+   "nazev": "Střední škola technická a ekonomická Brno, Olomoucká, příspěvková organizace",
+   "mesto": "Brno",
+   "typ": "odborná",
+   "velikost_ukazatel": 1303,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600171027",
+   "nazev": "Střední průmyslová škola Brno, Purkyňova, příspěvková organizace",
+   "mesto": "Brno",
+   "typ": "odborná",
+   "velikost_ukazatel": 1142,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600013782",
+   "nazev": "Střední škola informatiky, poštovnictví a finančnictví Brno, příspěvková organizace",
+   "mesto": "Brno",
+   "typ": "odborná",
+   "velikost_ukazatel": 831,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600015785",
+   "nazev": "Gymnázium, Střední pedagogická škola, Obchodní akademie a Jazyková škola s právem státní jazykové zkoušky Znojmo, příspěvková organizace",
+   "mesto": "Znojmo",
+   "typ": "odborná",
+   "velikost_ukazatel": 819,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600014231",
+   "nazev": "Střední škola Edvarda Beneše Břeclav, příspěvková organizace",
+   "mesto": "Břeclav",
+   "typ": "odborná",
+   "velikost_ukazatel": 806,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600016935",
+   "nazev": "Gymnázium, Olomouc, Čajkovského 9",
+   "mesto": "Olomouc",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 935,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600016943",
+   "nazev": "Slovanské gymnázium, Olomouc, tř. Jiřího z Poděbrad 13",
+   "mesto": "Olomouc",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 748,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600017842",
+   "nazev": "Gymnázium Jana Blahoslava a Střední pedagogická škola, Přerov, Denisova 3",
+   "mesto": "Přerov",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 554,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600020053",
+   "nazev": "Střední zdravotnická škola a Vyšší odborná škola zdravotnická Emanuela Pöttinga a Jazyková škola s právem státní jazykové zkoušky Olomouc",
+   "mesto": "Olomouc",
+   "typ": "odborná",
+   "velikost_ukazatel": 672,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600017109",
+   "nazev": "Obchodní akademie, Olomouc, tř. Spojenců 11",
+   "mesto": "Olomouc",
+   "typ": "odborná",
+   "velikost_ukazatel": 529,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600016986",
+   "nazev": "Střední škola logistiky a chemie, Olomouc, U Hradiska 29",
+   "mesto": "Olomouc",
+   "typ": "odborná",
+   "velikost_ukazatel": 490,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600018067",
+   "nazev": "Střední škola sociální péče a služeb, Zábřeh, nám. 8. května 2",
+   "mesto": "Zábřeh",
+   "typ": "odborná",
+   "velikost_ukazatel": 405,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600017010",
+   "nazev": "Střední průmyslová škola strojnická Olomouc",
+   "mesto": "Olomouc",
+   "typ": "odborná",
+   "velikost_ukazatel": 393,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600014398",
+   "nazev": "Gymnázium a Jazyková škola s právem státní jazykové zkoušky Zlín",
+   "mesto": "Zlín",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 607,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600014363",
+   "nazev": "Gymnázium Zlín - Lesní čtvrť",
+   "mesto": "Zlín",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 469,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600015459",
+   "nazev": "Střední škola průmyslová, hotelová, zdravotnická a Vyšší odborná škola Uherské Hradiště",
+   "mesto": "Uherské Hradiště",
+   "typ": "odborná",
+   "velikost_ukazatel": 737,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600014355",
+   "nazev": "Střední průmyslová škola Zlín",
+   "mesto": "Zlín",
+   "typ": "odborná",
+   "velikost_ukazatel": 713,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600018270",
+   "nazev": "Obchodní akademie a Vyšší odborná škola Valašské Meziříčí",
+   "mesto": "Valašské Meziříčí",
+   "typ": "odborná",
+   "velikost_ukazatel": 519,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600015556",
+   "nazev": "Střední odborná škola a Gymnázium Staré Město",
+   "mesto": "Staré Město",
+   "typ": "odborná",
+   "velikost_ukazatel": 493,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600016749",
+   "nazev": "Gymnázium a Střední průmyslová škola elektrotechniky a informatiky, Frenštát pod Radhoštěm, příspěvková organizace",
+   "mesto": "Frenštát pod Radhoštěm",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 407,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600017443",
+   "nazev": "Jazykové gymnázium Pavla Tigrida, Ostrava-Poruba, příspěvková organizace",
+   "mesto": "Ostrava",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 407,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600017494",
+   "nazev": "Gymnázium Hladnov a Jazyková škola s právem státní jazykové zkoušky, Ostrava, příspěvková organizace",
+   "mesto": "Ostrava",
+   "typ": "gymnázium",
+   "velikost_ukazatel": 402,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600020070",
+   "nazev": "Střední zdravotnická škola a Vyšší odborná škola zdravotnická, Ostrava, příspěvková organizace",
+   "mesto": "Ostrava",
+   "typ": "odborná",
+   "velikost_ukazatel": 843,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600016323",
+   "nazev": "Střední průmyslová škola, Obchodní akademie a Jazyková škola s právem státní jazykové zkoušky, Frýdek-Místek, příspěvková organizace",
+   "mesto": "Frýdek-Místek",
+   "typ": "odborná",
+   "velikost_ukazatel": 766,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600017257",
+   "nazev": "Obchodní akademie a Střední odborná škola logistická, Opava, příspěvková organizace",
+   "mesto": "Opava",
+   "typ": "odborná",
+   "velikost_ukazatel": 714,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600020037",
+   "nazev": "Mendelova střední škola, Nový Jičín, příspěvková organizace",
+   "mesto": "Nový Jičín",
+   "typ": "odborná",
+   "velikost_ukazatel": 703,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600171299",
+   "nazev": "Střední škola služeb a podnikání, Ostrava-Poruba, příspěvková organizace",
+   "mesto": "Ostrava",
+   "typ": "odborná",
+   "velikost_ukazatel": 663,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600017699",
+   "nazev": "Střední průmyslová škola, Ostrava-Vítkovice, příspěvková organizace",
+   "mesto": "Ostrava",
+   "typ": "odborná",
+   "velikost_ukazatel": 486,
+   "pozvanka_odeslana": null,
+   "vlna": 2
+  },
+  {
+   "redizo": "600017583",
+   "nazev": "Střední průmyslová škola elektrotechniky a informatiky, Ostrava, příspěvková organizace",
+   "mesto": "Ostrava",
+   "typ": "odborná",
+   "velikost_ukazatel": 471,
+   "pozvanka_odeslana": null,
+   "vlna": 2
   }
- ]
+ ],
+ "druha_vlna": {
+  "vybrano": "2026-09-23",
+  "pocet": 100,
+  "kriteria": "Veřejné školy (zřizovatel mimo 5 a 6), úplné výsledky PŘ 2026 bez min_body; rejstříkový e-mail, ředitel, web a datová schránka; e-mail jedinečný v rejstříku; bez předchozí pozvánky a aktivního kódu. Počty podle krajů úměrně počtu způsobilých škol, asi třetina gymnázií, v každé skupině přednost podle počtu přihlášek."
+ }
 }
