@@ -192,3 +192,26 @@ test('zobrazené období se bere z registru, ne z názvu souboru', async () => {
   );
   assert.equal(SEZONA, vRegistru, `Soubor nese sezónu ${SEZONA}, registr ${vRegistru}.`);
 });
+
+test('rozchod dat s registrem seznam zhasne', async () => {
+  // Mutační test ukázal, že předchozí test strážní podmínku nehlídal:
+  // zrušení `obdobi === SEZONA` prošlo všemi testy. Tenhle podstrčí registr
+  // s jiným ročníkem a čeká null — tedy prázdnou stránku místo loňských akcí.
+  const { overSezonuProtiRegistru, SEZONA } = await import('../src/lib/veletrhy.ts');
+
+  assert.equal(
+    await overSezonuProtiRegistru(async () => '2099'),
+    null,
+    'Registr přepnul na jiný ročník, ale data se nevyměnila — seznam se nesmí zobrazit.',
+  );
+  assert.equal(
+    await overSezonuProtiRegistru(async () => null),
+    null,
+    'Bez období v registru se seznam nezobrazuje.',
+  );
+  assert.equal(
+    await overSezonuProtiRegistru(async () => SEZONA),
+    SEZONA,
+    'Když období souhlasí, seznam se zobrazit musí.',
+  );
+});

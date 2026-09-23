@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.14 · 22. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.15 · 23. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -385,7 +385,7 @@ Sada zatím **není v registru stavu datových sad**: registr vede období, kter
 | `kraje` | kraj konání, u agregátorů „celá ČR“ | koná se to u nás | ano, převedeno na `krajKod` (NUTS) |
 | `terminy_2026` | volný text: data, města, poznámky „2026 TBD“ i loňské termíny | kdy to je | ano, ale jen tam, kde je termín potvrzený — viz past níže |
 | `misto` | adresa nebo popis místa konání | kam mám přijet | ano |
-| `kontaktni_osoba` | jméno kontaktní osoby u pořadatele | žádná | ne, osobní údaj bez hodnoty pro rodinu; slouží obesílání |
+| `kontaktni_osoba` | jméno kontaktní osoby u pořadatele | žádná | ne na web, viz poznámka pod tabulkou |
 | `email` | kontaktní e-mail pořadatele | žádná | ne, na web nepatří; slouží obesílání |
 | `telefon` | telefon pořadatele | žádná | ne, tamtéž |
 | `web` | adresa stránky akce nebo pořadatele | kde zjistím podrobnosti | ano, jako `url` |
@@ -394,6 +394,10 @@ Sada zatím **není v registru stavu datových sad**: registr vede období, kter
 | `poznamka` | IČ, datovka, doplňky ke kontaktům | žádná | ne, interní |
 | `zdroj` | odkud se údaj ověřil | žádná, ale nese důvěryhodnost | ano, jako `zdrojOvereni` |
 | `overeno` | ano/ne, zda je ověřený **pořadatel** | žádná | ano, ale nestačí — viz past níže |
+
+**Kontakty v tomto sešitu jsou v repozitáři vědomě.** Sloupce `kontaktni_osoba`, `email` a `telefon` nesou 15 jmen, 13 adres a 13 telefonů; list `Top8_tyden` je opakuje. Na web se nedostanou — stránka veletrhu ukazuje jen název pořadatele a odkaz — ale v sešitu zůstávají, protože jde o **pracovní kontakty publikované na oficiálních webech** krajských úřadů, hospodářských komor a škol (komora-khk.cz, vybiramstredni.cz, isste.cz a další). Rozhodl o tom zadavatel jako správce údajů při oponentuře 22. 9. 2026.
+
+Pravidlo „kontakty na web nepatří“ z verze 1.13 tím není zrušeno, ale zúženo: týká se **zobrazení na stránce**, ne zdrojového sešitu. Dohledané kontakty, které jsou podrobnější a zahrnují i přímé mobily, leží mimo repozitář v `data/veletrhy/poradatele-kontakty.json` (v `.gitignore`).
 
 **Past: ověřenost pořadatele a ověřenost termínu jsou dvě různé věci.** Sloupec `overeno` má `ano` u 14 řádků, ale znamená „ověřili jsme, že tuhle akci tato organizace pořádá“, ne „tohle datum platí“. Královéhradecká komora má `overeno = ano` a v termínech „2026 TBD (2025: Trutnov 10.–11. 10.; …)“. Odvozený soubor proto nese vlastní příznak `terminPotvrzen` a **zobrazuje se jen akce, která ho má**. Z 47 záznamů jich je 41; zbylých 6 nese pole `cekaNa` s důvodem.
 
@@ -626,6 +630,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.15 | Zapsáno, proč kontaktní sloupce zůstávají ve zdrojovém sešitu veletrhů: jsou to pracovní kontakty publikované na oficiálních webech pořadatelů a na stránku se nedostanou. Pravidlo z verze 1.13 se tím zúžilo na zobrazení, ne na zdroj. |
 | 1.14 | Dohledání termínů na webech pořadatelů rozšířilo veletrhy z 39 na 47 akcí, z toho 41 zobrazitelných; pokrytí stouplo z devíti na **všech čtrnáct krajů**. Zavedeny tři stupně doloženosti termínu místo dvou: k `terminPotvrzen` přibyly `terminPribligny` (pořadatel uvádí rozsah, ne harmonogram) a `zdrojJenAgregator` (termín z agregátoru, web pořadatele ho neuvádí). Vzniklo z oponentury: přepis „~21.–30. 11. dle okresů“ na souvislý potvrzený termín tvrdil víc, než zdroj říká. |
 | 1.13 | Veletrhy a přehlídky středních škol jako nový zdroj (oddíl 2.15): 25 pořadatelů rozepsaných na 39 jednotlivých akcí. Zavedeno oddělení ověřeného pořadatele od potvrzeného termínu — sloupec `overeno` v xlsx znamená to první, ne druhé, takže odvozený soubor nese vlastní `terminPotvrzen` a zobrazuje se 29 z 39 akcí. Zváženo a zamítnuto: `priorita` (pořadník pro obesílání, na webu by se spletl s řazením akcí), `kontaktni_osoba`, `email`, `telefon` (na web nepatří stejně jako kontakt na školu), `typ_poradatele` a interní poznámky. Do oddílu 3 přibyly tři položky, z toho záporný nález o tom, že seznam vystavovatelů neexistuje v žádném zdroji. |
 | 1.12 | Index názvů z rejstříku nese oddíl `identifikace` (plný název, IČO, adresa sídla středních škol a konzervatoří) pro hlavičku vstupu do portálu pro školy. Zváženo a zamítnuto: `reditel` a `emaily` (osobní údaje, k poznání školy nejsou potřeba), `mistaVyuky` (pro identifikaci stačí sídlo), ID datové schránky z CSV (nic nepřidá k IČO a REDIZO). |

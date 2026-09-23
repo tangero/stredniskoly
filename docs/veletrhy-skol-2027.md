@@ -282,6 +282,8 @@ Po ověření se záznam **přepíše ručně** do JSON se `zdrojOvereni` a date
 
 Zamítnutá nahlášení se nemažou. Když tentýž pořadatel nahlásí akci podruhé, je potřeba vidět, že se to už jednou řešilo.
 
+**Doba držení a kdo ji hlídá.** [Stránka ochrany osobních údajů](../src/app/ochrana-osobnich-udaju/page.tsx) slibuje smazání adresy oznamovatele 12 měsíců od konce sezóny. Zatím to nikdo neprovádí automaticky — je to **úkol pro Edu jednou ročně po skončení sezóny**, spolu s přípravou nového ročníku dat (§ 6.4, `obnovit_nejpozdeji` 15. 9.). Dokud běží pilotní provoz s jednotkami nahlášení, stačí ruční `update veletrh_nahlaseni set email = null where vytvoreno < now() - interval '12 months'`. Až jich bude víc, patří to do pravidelné úlohy; slib na stránce platí od začátku, takže odklad se týká způsobu, ne lhůty.
+
 ### 6.4 Registr stavu datových sad
 
 Nová sada `veletrhy-skol` do `public/stav_datovych_sad.json` s deseti povinnými poli, vzorem je `msmt-harmonogram`: `cyklus: "rocni"`, `pouziti: "web"`, `automatizace: "rucni"`, `ocekavano.jistota: "odhad"` se zdůvodněním, `obnovit_nejpozdeji` na srpen 2027 (sezóna začíná koncem září, seznam musí stát dřív).
@@ -420,6 +422,7 @@ Zakázané slovní spojení **„škola pořádá“** (oddíl 5 slovníku) se v
 
 | Verze | Změna |
 |---|---|
+| 0.9 | Druhé kolo pátého review: doplněn test, který hlídá rozchod dat s registrem — mutace strážní podmínky dřív prošla všemi testy. Při rozchodu stránka místo věty o nedohledaných akcích říká, že přehled připravujeme. K době držení dopsán postup: mazání adres je roční úkol po skončení sezóny, ne automatická úloha. |
 | 0.8 | Páté review nad celým PR #155: stránka ochrany osobních údajů doplněna o formulář nahlášení včetně doby držení; odkaz na `/veletrhy` z patičky a z kalendáře přijímaček, dosud byla sekce dostupná jen ze sitemapy; období se ověřuje proti registru datových sad, dřív ho návrh sliboval a kód nečetl. |
 | 0.7 | Čtvrté review: odesílání pošty dostalo strop osmi sekund (`AbortSignal`, požadavek se opravdu přeruší) včetně čtení chybového těla; pozdní chyby po vypršení limitu se logují, místo aby spadly jako neošetřené odmítnutí. Testovací pool nově ověřuje, že sloupce v INSERT odpovídají migraci — mutační test ukázal, že dřív prošlo i přejmenování sloupce. Zapsána známá omezení fronty: `Promise.race` dotaz nezruší a příznak odeslání může zůstat `false`, i když e-mail odešel. |
 | 0.6 | Třetí review: doplněna databázová fronta hlášení (`db/migrace/005-veletrhy.sql`). Záznam se ukládá dřív, než odejde e-mail, takže hlášení nezmizí, když pošta selže; přijetí se potvrzuje, když je hlášení aspoň na jednom z obou míst. |

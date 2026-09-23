@@ -86,7 +86,18 @@ export default async function VeletrhyPage() {
 
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-10">
         <section>
-          <VeletrhySeznam akce={karty} kraje={kraje} mesta={mesta} den={cesskyDen()} />
+          {sezonaSedi ? (
+            <VeletrhySeznam akce={karty} kraje={kraje} mesta={mesta} den={cesskyDen()} />
+          ) : (
+            <div className="rounded-lg border border-gray-200 bg-white p-6">
+              <p className="font-medium text-gray-900">Přehled akcí právě připravujeme.</p>
+              <p className="mt-2 text-gray-700">
+                Termíny na novou sezónu sbíráme a ověřujeme u pořadatelů. Než budou hotové,
+                neukazujeme tu nic — loňské akce vydávané za letošní by vás poslaly na akci, která
+                se nekoná.
+              </p>
+            </div>
+          )}
         </section>
 
         <section className="rounded-lg border border-gray-200 bg-white p-6">

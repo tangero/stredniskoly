@@ -80,9 +80,12 @@ export const SEZONA = soubor.sezona;
  * že registr přepnul na nový ročník, ale data se nevyměnila — stránka pak
  * radši neukazuje nic než loňské akce jako letošní.
  */
-export async function overSezonuProtiRegistru(): Promise<string | null> {
-  const { zobrazeneObdobi } = await import('./stav-datovych-sad');
-  const obdobi = await zobrazeneObdobi('veletrhy-skol');
+export async function overSezonuProtiRegistru(
+  /** Jen pro test: dovolí podstrčit registr a vyzkoušet rozchod. */
+  cteniRegistru?: (sada: string) => Promise<string | null>,
+): Promise<string | null> {
+  const cti = cteniRegistru ?? (await import('./stav-datovych-sad')).zobrazeneObdobi;
+  const obdobi = await cti('veletrhy-skol');
   if (obdobi === null) return null;
   return obdobi === SEZONA ? obdobi : null;
 }
