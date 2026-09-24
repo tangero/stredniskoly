@@ -864,7 +864,7 @@
     "soubor": "src/data/veletrhy-2027.json",
     "zdroj": "docs/prijimacky-veletrhy-poradatele-2026.xlsx",
     "opsano": "2026-09-22",
-    "poznamka": "Vlastní rešerše pořadatelů rozepsaná na jednotlivé akce. Sezóna podzim 2026 slouží uchazečům, kteří se hlásí v roce 2027, proto soubor nese 2027. Zobrazuje se jen akce s terminPotvrzen; 6 z 47 záznamů čeká na potvrzení termínu. Počty ověřuje tests/veletrhy.test.mjs."
+    "poznamka": "Vlastní rešerše pořadatelů rozepsaná na jednotlivé akce. Sezóna podzim 2026 slouží uchazečům, kteří se hlásí v roce 2027, proto soubor nese 2027. Zobrazuje se jen akce s terminPotvrzen; 18 z 95 záznamů čeká na potvrzení termínu. Počty ověřuje tests/veletrhy.test.mjs."
    },
    "ocekavano": {
     "obdobi": "2028",

@@ -11,6 +11,11 @@
  *   data/veletrhy/obesilani.json   seznam adresátů, tvar viz typ `Adresat`
  * Výstup:
  *   data/veletrhy/odeslano.json    { id: datum odeslání } — jen ostrá rozesílka
+ *   data/veletrhy/oslovene-adresy.json  { adresa: { datum, adresat } } — jen ostrá rozesílka
+ *
+ * Znovu se neoslovuje ani adresa, která už dopis dostala pod jiným adresátem:
+ * taková se z adresátu vyřadí, a když mu žádná nezbude, přeskočí se celý.
+ * Adresy z rozesílek před zavedením evidence se odvozují z odeslano.json.
  *
  * Použití:
  *   set -a && . ./.env.local && set +a
@@ -22,16 +27,18 @@
  *   --opravdu          odešle a zapíše datum do odeslano.json
  *   --jen <id>         jen jeden adresát (lze opakovat)
  *   --na <adresa>      přesměruje všechny e-maily sem (zkouška, nikdy na pořadatele)
- *   --znovu            pošle i adresátovi, který už dopis dostal
+ *   --znovu            pošle i adresátovi a na adresy, které už dopis dostaly
  */
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dopisPoradateli, posliDopis, ODESILATEL_DOPISU } from '../src/lib/veletrhy-dopis.ts';
+import { normalizujAdresu, osloveneZOdeslanych, rozdelAdresy } from '../src/lib/veletrhy-oslovene.ts';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SEZNAM = path.join(ROOT, 'data', 'veletrhy', 'obesilani.json');
 const ODESLANO = path.join(ROOT, 'data', 'veletrhy', 'odeslano.json');
+const OSLOVENE = path.join(ROOT, 'data', 'veletrhy', 'oslovene-adresy.json');
 
 const argv = process.argv.slice(2);
 const opravdu = argv.includes('--opravdu');
@@ -45,6 +52,10 @@ if (!fs.existsSync(SEZNAM)) {
 }
 const seznam = JSON.parse(fs.readFileSync(SEZNAM, 'utf-8'));
 const odeslano = fs.existsSync(ODESLANO) ? JSON.parse(fs.readFileSync(ODESLANO, 'utf-8')) : {};
+const oslovene = {
+  ...osloveneZOdeslanych(seznam, odeslano),
+  ...(fs.existsSync(OSLOVENE) ? JSON.parse(fs.readFileSync(OSLOVENE, 'utf-8')) : {}),
+};
 
 const neznama = jen.filter((id) => !seznam.some((a) => a.id === id));
 if (neznama.length) {
@@ -52,12 +63,31 @@ if (neznama.length) {
   process.exit(1);
 }
 
-const vyber = seznam.filter((a) => (jen.length === 0 || jen.includes(a.id)) && (znovu || !odeslano[a.id]));
+const vyber = [];
+const preskoceni = [];
+for (const a of seznam) {
+  if (jen.length && !jen.includes(a.id)) continue;
+  if (!znovu && odeslano[a.id]) continue;
+  if (znovu) {
+    vyber.push(a);
+    continue;
+  }
+  const { nove, uzOslovene } = rozdelAdresy(a.email, oslovene);
+  if (nove.length === 0) {
+    preskoceni.push(`${a.id}: všechny adresy už dopis dostaly (${uzOslovene.join(', ')})`);
+    continue;
+  }
+  if (uzOslovene.length) preskoceni.push(`${a.id}: vyřazeno ${uzOslovene.join(', ')}, už osloveno`);
+  vyber.push(uzOslovene.length ? { ...a, email: nove.length === 1 ? nove[0] : nove } : a);
+}
 const posilat = opravdu || na;
 
 console.log(`Od: ${ODESILATEL_DOPISU}`);
 console.log(`Režim: ${na ? `zkouška, vše na ${na}` : opravdu ? 'OSTRÁ ROZESÍLKA' : 'nanečisto'}`);
-console.log(`Adresátů: ${vyber.length}${Object.keys(odeslano).length ? ` (už odesláno: ${Object.keys(odeslano).length})` : ''}\n`);
+console.log(`Adresátů: ${vyber.length}${Object.keys(odeslano).length ? ` (už odesláno: ${Object.keys(odeslano).length})` : ''}`);
+console.log(`Evidovaných oslovených adres: ${Object.keys(oslovene).length}\n`);
+for (const p of preskoceni) console.log(`⏭  ${p}`);
+if (preskoceni.length) console.log('');
 
 let chyby = 0;
 for (const a of vyber) {
@@ -80,6 +110,10 @@ for (const a of vyber) {
   if (ok && opravdu && !na) {
     odeslano[a.id] = new Date().toISOString().slice(0, 10);
     fs.writeFileSync(ODESLANO, JSON.stringify(odeslano, null, 2) + '\n');
+    for (const e of [a.email].flat()) {
+      oslovene[normalizujAdresu(e)] ??= { datum: odeslano[a.id], adresat: a.id };
+    }
+    fs.writeFileSync(OSLOVENE, JSON.stringify(oslovene, null, 2) + '\n');
   }
 }
 

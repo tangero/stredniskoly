@@ -138,3 +138,30 @@ test('textová verze má odkaz jako adresu jednou, ne dvakrát, a bez značek', 
   assert.ok(text.startsWith('Vážená paní ředitelko,'), 'Text začíná oslovením, ne prázdnými řádky.');
   assert.ok(text.endsWith('patrick@zandl.cz'), 'Text končí podpisem.');
 });
+
+// Varianta bez termínu: akce bez potvrzeného termínu na webu není. Dopis
+// o termín prosí a nesmí tvrdit, že akci už vedeme nebo na ni odkazujeme.
+
+const BEZ = {
+  id: 'zkouska', email: 'x@example.cz', osloveni: 'Dobrý den', predmet: 'Mozaika středních škol',
+  akce: ['mozaika-pelhrimov-2026'], kraj: '/regiony/vysocina', varianta: 'bezTerminu',
+};
+
+test('dopis bez termínu prosí o termín a netvrdí, že akci vedeme', () => {
+  const { subject, html } = dopisPoradateli(BEZ);
+  const text = textDopisu(html);
+  assert.ok(text.includes('letošní termín jsme zatím nenašli. Pošlete mi ho prosím'));
+  assert.ok(text.includes('Zatím v něm chybí vaše akce'));
+  for (const nepravda of ['Je v něm i vaše akce', 'odkazujeme už teď', 'uvádíme vás jako pořadatele']) {
+    assert.ok(!text.includes(nepravda), `Dopis bez termínu nesmí tvrdit: „${nepravda}“`);
+  }
+  assert.ok(!subject.includes('v přehledu'), 'Předmět nesmí tvrdit, že akce v přehledu je.');
+});
+
+test('varianta bez termínu u akce s potvrzeným termínem je chyba', () => {
+  assert.throws(() => dopisPoradateli({ ...BEZ, akce: ['veletrh-pribram-2026'] }), /termín má/);
+});
+
+test('ověřená varianta u akce bez termínu je chyba, ne dopis s prázdným datem', () => {
+  assert.throws(() => dopisPoradateli({ ...BEZ, varianta: 'overeno' }), /nemá termín/);
+});
