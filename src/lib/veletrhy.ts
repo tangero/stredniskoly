@@ -109,3 +109,15 @@ export function zobrazitelneAkce(ke: Date = new Date()): Veletrh[] {
 export function cekajiciAkce(): Veletrh[] {
   return soubor.akce.filter((a) => !a.terminPotvrzen);
 }
+
+/**
+ * Nadcházející akce v daném městě — pro stránku školy a stránku oboru.
+ *
+ * Shoda je přesná (`mesto === obec` z katalogu škol): ověřeno nad všemi městy
+ * zdroje, že sedí na hodnoty `obec` v katalogu 2026. Na seznam MESTA se
+ * nahlížet nesmí (pravidlo 3 v hlavičce). Online akce město nemají a městem
+ * se nechytnou — patří na /veletrhy, ne na detail školy.
+ */
+export function akceProObec(obec: string, ke: Date = new Date()): Veletrh[] {
+  return zobrazitelneAkce(ke).filter((a) => a.mesto === obec);
+}

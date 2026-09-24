@@ -19,9 +19,11 @@ export const ODESILATEL_DOPISU = `Patrick Zandl – Přijímačky na školu <${P
 
 /**
  * Jak dopis mluví o termínu. Odpovídá stupňům doloženosti na stránce:
- * ověřený u pořadatele, převzatý z agregátoru, nebo přibližný.
+ * ověřený u pořadatele, převzatý z agregátoru, nebo přibližný. `bezTerminu`
+ * je akce, která na webu ještě není, protože letošní termín u pořadatele
+ * chybí: dopis o něj prosí a netvrdí, že akci už vedeme.
  */
-export type VariantaTerminu = 'overeno' | 'agregator' | 'pribligny';
+export type VariantaTerminu = 'overeno' | 'agregator' | 'pribligny' | 'bezTerminu';
 
 export interface Adresat {
   /** Identifikátor adresáta v seznamu obesílání. */
@@ -54,7 +56,12 @@ export function akceAdresata(a: Adresat): Veletrh[] {
   return a.akce.map((id) => {
     const nalez = VSECHNY.find((v) => v.id === id);
     if (!nalez) throw new Error(`Adresát ${a.id}: akce ${id} v datech není.`);
-    if (!nalez.datum) throw new Error(`Adresát ${a.id}: akce ${id} nemá termín, dopis by ho nemohl uvést.`);
+    if (!nalez.datum && a.varianta !== 'bezTerminu') {
+      throw new Error(`Adresát ${a.id}: akce ${id} nemá termín, dopis by ho nemohl uvést.`);
+    }
+    if (nalez.terminPotvrzen && a.varianta === 'bezTerminu') {
+      throw new Error(`Adresát ${a.id}: akce ${id} termín má, dopis by o něj prosil zbytečně.`);
+    }
     return nalez;
   });
 }
@@ -71,6 +78,8 @@ function vetaOTerminu(v: VariantaTerminu, jedna: boolean, zdrojTerminu?: string)
   switch (v) {
     case 'agregator':
       return 'Termín jsme převzali z přehledu akcí, na vašem webu jsme ho zatím nenašli. Proto ho u akce vedeme s poznámkou, že ho pořadatel nepotvrdil. Potvrdíte mi ho prosím? Poznámku pak odstraníme.';
+    case 'bezTerminu':
+      return 'Vaši akci chceme do přehledu zařadit, ale letošní termín jsme zatím nenašli. Pošlete mi ho prosím, až bude známý; doplníme ho a odkážeme na vaši stránku.';
     case 'pribligny':
       return 'Termín uvádíme jako přibližný, protože harmonogram videohovorů podle okresů jsme nenašli. Pošlete mi ho prosím, až bude hotový; doplníme ho.';
     default:
@@ -100,18 +109,22 @@ export function textDopisu(html: string): string {
 export function dopisPoradateli(a: Adresat): { subject: string; html: string; odesilatel: string } {
   const akce = akceAdresata(a);
   const jedna = akce.length === 1;
+  const bez = a.varianta === 'bezTerminu';
   const polozky = akce
     .map((v) => {
       const kde = v.online ? 'online' : [v.mesto, v.misto !== v.mesto ? v.misto : null].filter(Boolean).join(', ');
+      // Bez termínu se místo data uvádí název, aby řádek série nebyl jen město.
+      const kdy = bez ? esc(v.nazev) : esc(v.datum!);
       return jedna
-        ? `<p style="margin-left: 16px;"><strong>${esc(v.nazev)}</strong>, ${esc(v.datum!)}, ${esc(kde)}</p>`
-        : `<li>${esc(v.datum!)}, ${esc(kde)}</li>`;
+        ? `<p style="margin-left: 16px;"><strong>${esc(v.nazev)}</strong>, ${bez ? '' : `${esc(v.datum!)}, `}${esc(kde)}</p>`
+        : `<li>${kdy}, ${esc(kde)}</li>`;
     })
     .join('\n');
 
   return {
     odesilatel: ODESILATEL_DOPISU,
-    subject: `${a.predmet} v přehledu veletrhů na Přijímačky na školu`,
+    // Akce bez termínu v přehledu ještě není; předmět nesmí tvrdit opak.
+    subject: `${a.predmet} ${bez ? 'a přehled' : 'v přehledu'} veletrhů na Přijímačky na školu`,
     html: `
   <!DOCTYPE html>
   <html>
@@ -124,15 +137,17 @@ export function dopisPoradateli(a: Adresat): { subject: string; html: string; od
          CERMATu, rejstříku MŠMT a České školní inspekce. Od února 2026, kdy jsme začali měřit, zaznamenal web přes
          25 000 návštěv, nejvíc v únoru a v květnu.</p>
       <p>Nově na webu vedeme přehled veletrhů a přehlídek středních škol podle krajů a měst:
-         ${odkaz(`${WEB}/veletrhy`)}. ${jedna ? 'Je v něm i vaše akce:' : `Jsou v něm i vaše akce „${esc(a.predmet)}“:`}</p>
+         ${odkaz(`${WEB}/veletrhy`)}. ${bez ? (jedna ? 'Zatím v něm chybí vaše akce:' : `Zatím v něm chybí vaše akce „${esc(a.predmet)}“:`) : jedna ? 'Je v něm i vaše akce:' : `Jsou v něm i vaše akce „${esc(a.predmet)}“:`}</p>
       ${jedna ? polozky : `<ul>\n${polozky}\n</ul>`}
-      <p>U ${jedna ? 'akce' : 'akcí'} uvádíme vás jako pořadatele${a.zdrojTerminu ? '.' : ' a odkazujeme na vaši stránku.'} ${vetaOTerminu(a.varianta, jedna, a.zdrojTerminu)}</p>
+      <p>${bez ? '' : `U ${jedna ? 'akce' : 'akcí'} uvádíme vás jako pořadatele${a.zdrojTerminu ? '.' : ' a odkazujeme na vaši stránku.'} `}${vetaOTerminu(a.varianta, jedna, a.zdrojTerminu)}</p>
       <p>Rád bych vám nabídl, aby se náš web stal online mediálním partnerem ${jedna ? 'akce' : 'akcí'}. Znamenalo by to
          jedinou věc: na stránce ${jedna ? 'akce' : 'akcí'} byste odkázali na náš přehled, buď na veletrhy
          (${odkaz(`${WEB}/veletrhy`)}), nebo na střední školy ve vašem kraji
          (${odkaz(`${WEB}${a.kraj}`)}). Vyberte, co se k vaší stránce hodí víc.
-         My na ${jedna ? 'vaši akci' : 'vaše akce'} odkazujeme už teď a v přehledu ${jedna ? 'ji' : 'je'} necháme tak jako tak, partnerství na
-         tom nic nemění.</p>
+         ${bez
+           ? `My na ${jedna ? 'vaši akci' : 'vaše akce'} odkážeme, jakmile budeme znát termín, a partnerství na tom nic nemění.`
+           : `My na ${jedna ? 'vaši akci' : 'vaše akce'} odkazujeme už teď a v přehledu ${jedna ? 'ji' : 'je'} necháme tak jako tak, partnerství na
+         tom nic nemění.`}</p>
       <p>Proč o odkaz stojíme, řeknu rovnou: přehled je nový a bez odkazů z webů, které se veletrhům skutečně věnují,
          ho rodiny ve vyhledávači nenajdou. Vašim návštěvníkům zase ukáže, jaké další akce se v kraji konají a které
          školy v okolí jsou.</p>
