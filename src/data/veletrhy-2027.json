@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-24",
+  "checkedAt": "2026-09-25",
   "sezona": "2027",
   "zdroj": "docs/prijimacky-veletrhy-poradatele-2026.xlsx",
   "poznamka": "Rozpis pořadatelů na jednotlivé akce. Zobrazuje se jen akce s terminPotvrzen: true. Popis viz docs/veletrhy-skol-2027.md.",
@@ -209,15 +209,15 @@
     {
       "id": "prezentace-skol-kladno-2026",
       "nazev": "Prezentace škol Kladno",
-      "poradatel": "DK Poldi Kladno",
+      "poradatel": "Okresní hospodářská komora Kladno",
       "mesto": "Kladno",
       "krajKod": "CZ020",
-      "misto": "DK Poldi Kladno, velký sál",
+      "misto": "Dům kultury Poldi Kladno, velký sál, nám. Sítná 1/3127",
       "start": "2026-10-12",
       "end": "2026-10-12",
       "datum": "12. října 2026",
       "url": "https://dkpoldikladno.cz/aktualni-akce",
-      "zdrojOvereni": "dkpoldikladno.cz",
+      "zdrojOvereni": "dkpoldikladno.cz (místo konání); pořadatele upřesnil DK Poldi e-mailem 24. 9. 2026",
       "overeno": "2026-09-24",
       "terminPotvrzen": true
     },
@@ -426,8 +426,8 @@
       "datum": "15. října 2026",
       "cas": "od 9:00",
       "url": "https://www.ohktrebic.cz/akce-a-seminare/veletrh-vzdelavani-didacta-2026/",
-      "zdrojOvereni": "ohktrebic.cz",
-      "overeno": "2026-09-24",
+      "zdrojOvereni": "ohktrebic.cz; pořadatel akci nahlásil formulářem 25. 9. 2026",
+      "overeno": "2026-09-25",
       "terminPotvrzen": true
     },
     {
@@ -1131,7 +1131,7 @@
       "datum": "11. listopadu 2026",
       "cas": "9:00–17:00",
       "url": "https://www.khkzk.cz/veletrh-vzdelavani-uherske-hradiste",
-      "zdrojOvereni": "khkzk.cz",
+      "zdrojOvereni": "khkzk.cz; termín potvrdil pořadatel e-mailem 23. 9. 2026",
       "overeno": "2026-09-24",
       "terminPotvrzen": true
     },
@@ -1275,7 +1275,7 @@
       "datum": "24. listopadu 2026",
       "cas": "8:30–17:30",
       "url": "https://www.khkzk.cz/veletrh-vzdelavani-vsetin",
-      "zdrojOvereni": "khkzk.cz",
+      "zdrojOvereni": "khkzk.cz; termín potvrdil pořadatel e-mailem 23. 9. 2026",
       "overeno": "2026-09-24",
       "terminPotvrzen": true
     },
