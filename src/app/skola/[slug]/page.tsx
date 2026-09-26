@@ -26,7 +26,7 @@ import { getProfilSkoly } from '@/lib/skola-profil-data';
 import { ProfilSkoly } from '@/components/skola/ProfilSkoly';
 import { getProfilOboru } from '@/lib/obor-profil-data';
 import { ProfilOboru } from '@/components/obor/ProfilOboru';
-import { VeletrhUpoutavka } from '@/components/veletrhy/VeletrhUpoutavka';
+import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
 import { UlozitObor } from '@/components/obor/UlozitObor';
 import { createSlug } from '@/lib/utils';
 import { krajNames } from '@/types/school';
@@ -43,7 +43,7 @@ interface Props {
 // Zbytek generovat on-demand při prvním requestu (ISR)
 
 // ISR: Revalidate každou hodinu (fresh data)
-export const revalidate = 3600; // 1 hodina
+export const revalidate = 43200; // 12 hodin; veletrhy obnovuje značka `veletrhy`
 
 // SSG: Pre-generate top 200 škol (podle popularity)
 export async function generateStaticParams() {
@@ -563,7 +563,7 @@ export default async function SchoolDetailPage({ params }: Props) {
 
           {/* Veletrh ve městě školy; komponenta nevykreslí nic (ani odsazení),
               když ve městě potvrzená akce není. Fakt o městě, ne o škole. */}
-          <VeletrhUpoutavka obec={school.obec} variant="skola" className="mb-8" />
+          <VeletrhVMeste obec={school.obec} variant="skola" className="mb-8" />
 
           {/* Údaje potvrzené školou (Portál pro školy) */}
           <SchoolPortalSection zaznam={portalZaznam} spravce={spravceProfiluSkoly} />

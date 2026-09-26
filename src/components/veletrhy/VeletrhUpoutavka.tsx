@@ -59,6 +59,7 @@ export function VeletrhUpoutavka({
   variant,
   ke,
   className = '',
+  akce: zdroj,
 }: {
   obec: string;
   variant: 'skola' | 'obor';
@@ -66,12 +67,17 @@ export function VeletrhUpoutavka({
   ke?: Date;
   /** Odsazení karty od okolí; bez akce se nevykreslí ani ono. Jen varianta skola. */
   className?: string;
+  /**
+   * Akce sezóny z databáze (`VeletrhVMeste` je načte přes sdílenou cache).
+   * Bez nich se čte snímek JSON: tak volají testy a build bez databáze.
+   */
+  akce?: Veletrh[];
 }) {
-  const vse = akceProObec(obec, ke);
+  const vse = akceProObec(obec, ke, zdroj);
   if (vse.length === 0) return null;
   const akce = vse.slice(0, MAX_AKCI);
   // Skrývá se podle poslední zobrazené akce; kdyby ve městě běžela delší
-  // nezobrazená akce, do hodiny ji stejně doplní revalidace stránky.
+  // nezobrazená akce, doplní ji příští revalidace stránky.
   const doKonce = akce.map((a) => (a.end ?? a.start)!).sort().at(-1)!;
 
   if (variant === 'obor') {

@@ -11,7 +11,7 @@ import {
 import {
   MrizkaSoutezicich, PasmaBodu, RozpadPrihlasek, SkupinaVKraji, SloupceSoutezicich, VysledekUchazecu,
 } from '@/components/obor/grafy';
-import { VeletrhUpoutavka } from '@/components/veletrhy/VeletrhUpoutavka';
+import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
 
 /**
  * Stránka oboru ve třech otázkách: jak těžké bude se dostat, co pomůže, jak se tu studuje.
@@ -486,7 +486,7 @@ export function ProfilOboru({ data, inspekceHref, skolaHref, obec }: ProfilOboru
                   tohle čtení proti ostatním školám z kraje. Veletrh je fakt
                   o městě, ne o škole — komponenta nevykreslí nic, když ve
                   městě potvrzená akce není. */}
-              {obec && <VeletrhUpoutavka obec={obec} variant="obor" />}
+              {obec && <VeletrhVMeste obec={obec} variant="obor" />}
               <li>
                 Pořadí oborů na přihlášce šanci na přijetí <b>nemění</b>, škola řadí jen podle svých kritérií. Seřaďte obory podle toho, kam chcete chodit.
                 <span className="block text-[14px]"><Link href="/jak-vybrat-skolu#jak-se-rozhoduje" className="font-semibold text-[#0074e4] hover:underline">Jak rozřazení funguje</Link></span>

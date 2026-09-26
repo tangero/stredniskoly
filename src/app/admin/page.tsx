@@ -20,6 +20,19 @@ import {
 import { jeDbNastavena } from '@/lib/novinky-db';
 import { nactiPilot, stavSkolPortalu, type PilotSkola, type StavSkolyPortalu } from '@/lib/portal-admin';
 import { cteni } from '@/lib/portal-relace';
+import { dotaz } from '@/lib/novinky-db';
+import { navrhy as navrhyVeletrhu, type Navrh as NavrhVeletrhu } from '@/lib/veletrhy-sklad';
+
+/** Návrhy změn veletrhů k rozhodnutí; null = databáze není nebo neodpovídá. */
+async function getNavrhyVeletrhu(): Promise<NavrhVeletrhu[] | null> {
+  if (!jeDbNastavena()) return null;
+  try {
+    return await navrhyVeletrhu({ dotaz }, ['ceka', 'schvaleno']);
+  } catch (e) {
+    console.error('❌ Admin: návrhy veletrhů', e);
+    return null;
+  }
+}
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -105,6 +118,7 @@ export default async function AdminPage({ searchParams }: Props) {
     getNovinkyPrehled(),
   ]);
   const pilot = await getPilot();
+  const navrhyVeletrhu = await getNavrhyVeletrhu();
 
   const sadyPoTerminu = sady.filter((s) => s.stav !== 'OK').length;
   const pocetNavrhu = navrhy?.length ?? null;
@@ -184,6 +198,31 @@ export default async function AdminPage({ searchParams }: Props) {
           </Sekce>
 
           {/* 1. Hlášení chyb od návštěvníků: kontakt je jen tady, na GitHubu není */}
+          <Sekce titulek="Veletrhy: návrhy ke schválení">
+            {navrhyVeletrhu === null ? (
+              <Poznamka>Databáze není nastavena nebo neodpovídá.</Poznamka>
+            ) : navrhyVeletrhu.length === 0 ? (
+              <Poznamka>Žádný návrh nečeká.</Poznamka>
+            ) : (
+              <ul className="space-y-2 text-sm">
+                {navrhyVeletrhu.map((n) => (
+                  <li key={n.id}>
+                    <a href={`/admin/veletrhy/rozhodnuti?id=${n.id}`} className="text-blue-600 hover:underline">
+                      {(n.operace as { op?: string; id?: string; akce?: { id?: string } }[])
+                        .map((o) => `${o.op} ${o.id ?? o.akce?.id ?? ''}`)
+                        .join(', ')}
+                    </a>{' '}
+                    <span className="text-slate-500">
+                      · {n.autor} · {formatDatumCasCz(n.vytvoreno)}
+                      {n.stav === 'schvaleno' ? ' · schváleno, nešlo provést' : ''}
+                      {n.varovani.length ? ` · ${n.varovani.length} varování` : ''}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </Sekce>
+
           <Sekce titulek="Hlášení chyb od návštěvníků">
             {hlaseni === null ? (
               <Poznamka>Hlášení nejsou nakonfigurována (chybí DATABASE_URL).</Poznamka>

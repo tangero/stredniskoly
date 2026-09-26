@@ -5,9 +5,10 @@ import { Footer } from '@/components/Footer';
 import {
   zobrazitelneAkce,
   overSezonuProtiRegistru,
-  OVERENO_K,
+  overenoK,
 } from '@/lib/veletrhy';
 import { cesskyDen, formatujDen } from '@/lib/veletrhy-pocty';
+import { nactiAkce } from '@/lib/veletrhy-zdroj';
 import { VeletrhySeznam, type VeletrhKarta } from './VeletrhySeznam';
 
 export const metadata: Metadata = {
@@ -32,7 +33,9 @@ export default async function VeletrhyPage() {
   // Když se rozejdou, seznam se nezobrazí: loňské akce vydávané za letošní
   // jsou horší než prázdná stránka.
   const sezonaSedi = (await overSezonuProtiRegistru()) !== null;
-  const akce = sezonaSedi ? zobrazitelneAkce() : [];
+  // Z databáze přes sdílenou cache; bez ní ze snímku JSON (veletrhy-zdroj.ts).
+  const vsechny = await nactiAkce();
+  const akce = sezonaSedi ? zobrazitelneAkce(new Date(), vsechny) : [];
 
   const karty: VeletrhKarta[] = akce.map((a) => ({
     id: a.id,
@@ -125,7 +128,7 @@ export default async function VeletrhyPage() {
             </Link>
           </p>
           <p className="mt-3 text-sm text-gray-600">
-            Údaje jsme naposledy ověřovali {formatujDen(OVERENO_K)}. Termín a podmínky si před cestou
+            Údaje jsme naposledy ověřovali {formatujDen(overenoK(vsechny))}. Termín a podmínky si před cestou
             ověřte na stránce pořadatele.
           </p>
         </section>

@@ -12,7 +12,7 @@ import { UlozitObor } from '@/components/obor/UlozitObor';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { SchemaOkoli } from '@/components/skola/SchemaOkoli';
 import { NovinkySkoly, ZeZivotaSkoly } from '@/components/skola/NovinkySkoly';
-import { VeletrhUpoutavka } from '@/components/veletrhy/VeletrhUpoutavka';
+import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
 import { OdberBlok, OdkazNaOdber } from '@/components/novinky/OdberBlok';
 import { vetyDruhehoKola } from '@/lib/druhe-kolo-vyklad';
 
@@ -667,7 +667,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
             {/* Veletrh je fakt o městě, ne o škole — patří k adrese, ne mezi
                 výkonnostní data. Komponenta nevykreslí nic, když ve městě
                 potvrzená akce není. */}
-            <VeletrhUpoutavka obec={skola.obec} variant="skola" />
+            <VeletrhVMeste obec={skola.obec} variant="skola" />
             {poloha && okoli.length > 0 && (
               <Karta className="space-y-3" >
                 <div id="okoli" className="scroll-mt-16" />

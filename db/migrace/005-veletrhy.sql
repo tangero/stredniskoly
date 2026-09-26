@@ -27,3 +27,56 @@ create table if not exists veletrh_nahlaseni (
 
 create index if not exists veletrh_nahlaseni_stav_idx
   on veletrh_nahlaseni (stav, vytvoreno desc);
+
+create table if not exists veletrh_akce (
+  id text primary key,
+  sezona text not null,
+  data jsonb not null,
+  verze int not null default 1,
+  smazano boolean not null default false,
+  vytvoreno timestamptz not null default now(),
+  zmeneno timestamptz not null default now()
+);
+
+create index if not exists veletrh_akce_sezona_idx
+  on veletrh_akce (sezona) where not smazano;
+
+create table if not exists veletrh_navrh (
+  id uuid primary key,
+  klic text not null,
+  autor text not null,
+  operace jsonb not null,
+  zdroj_url text,
+  zdroj_email text,
+  nahlaseni_id bigint,
+  poznamka text,
+  varovani jsonb not null default '[]',
+  stav text not null default 'ceka' check (stav in ('ceka', 'schvaleno', 'provedeno', 'zamitnuto', 'stazeno')),
+  chyba text,
+  rozhodl text,
+  rozhodnuto timestamptz,
+  duvod text,
+  vytvoreno timestamptz not null default now()
+);
+
+create unique index if not exists veletrh_navrh_klic
+  on veletrh_navrh (klic);
+
+create index if not exists veletrh_navrh_stav
+  on veletrh_navrh (stav, vytvoreno desc);
+
+create table if not exists veletrh_audit (
+  id bigserial primary key,
+  cas timestamptz not null default now(),
+  kdo text not null,
+  udalost text not null,
+  navrh_id uuid,
+  akce_id text,
+  pred jsonb,
+  po jsonb,
+  zdroj_url text,
+  zdroj_email text
+);
+
+create index if not exists veletrh_audit_akce
+  on veletrh_audit (akce_id, cas desc);

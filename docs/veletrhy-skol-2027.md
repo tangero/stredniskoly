@@ -242,7 +242,9 @@ Dvě podoby: celý přehled a filtr podle kraje. Pro rodiče, jehož dítě jede
 
 ### 6.1 Kde
 
-`src/data/veletrhy-2027.json`, statický import ve stránce. Vzorem je `src/data/admissions-2027.json` (harmonogram MŠMT): ruční, malý, termínový, jednou ročně. Při ~40 položkách nedává smysl JSON v `public/` a lib modul s cache.
+**Od 26. 9. 2026 databáze**, tabulka `veletrh_akce` v Neonu, čtená přes jednu sdílenou položku cache se značkou `veletrhy` (`src/lib/veletrhy-zdroj.ts`). Změny přicházejí jako návrhy přes API a zveřejní je až schválení člověkem, bez deploye; podrobnosti v [API pro návrhy změn veletrhů](veletrhy-api-2027.md). `src/data/veletrhy-2027.json` zůstává jako **snímek**: záloha pro build bez databáze a výpadek Neonu, historie v gitu a podklad testů dat. Obnovuje se exportem (`npm run veletrhy:export`).
+
+Původně (do 25. 9. 2026) byl soubor jediným zdrojem se statickým importem ve stránce, podle vzoru `src/data/admissions-2027.json`. Přepis do souboru a deploy u každé opravy od pořadatele se ukázal jako úzké hrdlo, jakmile začaly chodit odpovědi na dopis (§ 8.6).
 
 Sezóna se v názvu souboru značí `2027`, protože akce sezóny podzim 2026 slouží uchazečům, kteří se hlásí v roce 2027. Stejná konvence jako u harmonogramu.
 
@@ -286,7 +288,7 @@ Poznámky k polím:
 
 Nahlášení z formuláře (§ 5.5) nejdou do `src/data/veletrhy-2027.json` — ten je ruční a ověřený. Jdou do databáze, tabulka `veletrh_nahlaseni`, se stavem `nove | overeno | zamitnuto | duplicita`. Vzorem je zpracování hlášení chyb.
 
-Po ověření se záznam **přepíše ručně** do JSON se `zdrojOvereni` a datem ověření. Automatický přepis z fronty do zobrazovaných dat není v návrhu záměrně: mezi nahlášením a zveřejněním musí stát člověk, který ověřil termín (§ 5.5). Tím člověkem je Eda (§ 8.4).
+Po ověření pošle Eduarda změnu jako **návrh přes API** (`POST /api/veletrhy/navrhy`) a na web ji pustí až schválení člověkem odkazem z e-mailu ([API pro návrhy změn](veletrhy-api-2027.md)). Automatický přepis z fronty do zobrazovaných dat záměrně není: mezi nahlášením a zveřejněním musí stát člověk (§ 5.5). Eduarda ověří termín a navrhne, Patrick schválí.
 
 Zamítnutá nahlášení se nemažou. Když tentýž pořadatel nahlásí akci podruhé, je potřeba vidět, že se to už jednou řešilo.
 
@@ -354,7 +356,7 @@ Z hlediska odkazové autority je druhá varianta lepší — odkazy se rozloží
 
 **Dopis podepisuje Patrick Zandl a odchází z adresy eda@prijimackynaskolu.cz**; odpovědi vyřizuje Eduarda, což dopis přiznává, a co má řešit člověk, jde na patrick@zandl.cz (rozhodnutí 23. 9. 2026, vzor pozvánky do pilotu portálu). **Nahlášení z formuláře kontroluje Eda průběžně, po celý rok** — přijdou mu do schránky, ověří termín na webu pořadatele a ověřená data se zapíšou do souboru.
 
-Z toho plyne rozhodnutí pro implementaci: **administrace fronty se nestaví.** Stačí doručení e-mailem plus záznam v databázi, aby nic nezapadlo. Kdyby nahlášení přibývalo tolik, že se v poště ztrácejí, je čas administraci postavit — ne dřív.
+Z toho plynulo rozhodnutí pro implementaci: **administrace fronty se nestaví.** Platí dál pro frontu nahlášení. Od 26. 9. 2026 ale vzniklo schvalování změn akcí: Eduarda posílá ověřené změny přes API a schvalovatel je pouští jedním klikem z e-mailu nebo v sekci „Veletrhy: návrhy ke schválení“ na `/admin` ([API pro návrhy změn](veletrhy-api-2027.md)). Důvod: po rozeslání dopisu přibylo oprav od pořadatelů tolik, že ruční přepis do JSON a deploy zdržovaly.
 
 ### 8.5 Kontakty na pořadatele
 
