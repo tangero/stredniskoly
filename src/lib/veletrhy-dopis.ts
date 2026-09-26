@@ -77,9 +77,13 @@ function vetaOTerminu(v: VariantaTerminu, jedna: boolean, zdrojTerminu?: string)
   }
   switch (v) {
     case 'agregator':
-      return 'Termín jsme převzali z přehledu akcí, na vašem webu jsme ho zatím nenašli. Proto ho u akce vedeme s poznámkou, že ho pořadatel nepotvrdil. Potvrdíte mi ho prosím? Poznámku pak odstraníme.';
+      return jedna
+        ? 'Termín jsme převzali z přehledu akcí, na vašem webu jsme ho zatím nenašli. Proto ho u akce vedeme s poznámkou, že ho pořadatel nepotvrdil. Potvrdíte mi ho prosím? Poznámku pak odstraníme.'
+        : 'Termíny jsme převzali z přehledu akcí, na vašem webu jsme je zatím nenašli. Proto je u akcí vedeme s poznámkou, že je pořadatel nepotvrdil. Potvrdíte mi je prosím? Poznámku pak odstraníme.';
     case 'bezTerminu':
-      return 'Vaši akci chceme do přehledu zařadit, ale letošní termín jsme zatím nenašli. Pošlete mi ho prosím, až bude známý; doplníme ho a odkážeme na vaši stránku.';
+      return jedna
+        ? 'Vaši akci chceme do přehledu zařadit, ale letošní termín jsme zatím nenašli. Pošlete mi ho prosím, až bude známý; doplníme ho a odkážeme na vaši stránku.'
+        : 'Vaše akce chceme do přehledu zařadit, ale letošní termíny jsme zatím nenašli. Pošlete mi je prosím, až budou známé; doplníme je a odkážeme na vaši stránku.';
     case 'pribligny':
       return 'Termín uvádíme jako přibližný, protože harmonogram videohovorů podle okresů jsme nenašli. Pošlete mi ho prosím, až bude hotový; doplníme ho.';
     default:

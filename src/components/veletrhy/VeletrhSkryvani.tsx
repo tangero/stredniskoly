@@ -1,6 +1,7 @@
 'use client';
 
 import { useSyncExternalStore, type ReactNode } from 'react';
+import { cesskyDen } from '@/lib/veletrhy-pocty';
 
 /**
  * Skryje upoutávku na veletrh, který mezi sestavením stránky a návštěvou
@@ -12,19 +13,15 @@ import { useSyncExternalStore, type ReactNode } from 'react';
  * hydrataci — pokud akce mezitím skončila, blok zmizí bez hydratační chyby,
  * protože useSyncExternalStore je přesně na tuhle situaci určený.
  *
- * Datum se počítá v českém kalendáři, ale `cesskyDen` z `@/lib/veletrhy`
- * tu záměrně není: ten modul importuje celý datový soubor akcí a client
- * komponenta by si ho stáhla do prohlížeče celý.
+ * Den se počítá stejnou funkcí jako serverový filtr (`zobrazitelneAkce`),
+ * aby se server a klient nerozešly v tom, kdy akce skončila. Bere se
+ * z listového modulu `@/lib/veletrhy-pocty`, ne z `@/lib/veletrhy`: ten
+ * importuje celý datový soubor akcí a klient by si ho stáhl do prohlížeče.
  */
 export function VeletrhSkryvani({ doKonce, children }: { doKonce: string; children: ReactNode }) {
   const skryt = useSyncExternalStore(
     () => () => {},
-    () => new Intl.DateTimeFormat('en-CA', {
-      timeZone: 'Europe/Prague',
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-    }).format(new Date()) > doKonce,
+    () => cesskyDen() > doKonce,
     () => false,
   );
   if (skryt) return null;

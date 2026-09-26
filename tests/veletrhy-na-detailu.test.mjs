@@ -36,9 +36,20 @@ test('akceProObec najde potvrzenou neproběhlou akci ve městě a jen ji', () =>
   assert.deepEqual(akceProObec('Vimperk', new Date('2026-10-02')), [], 'akce po skončení zmizí');
 });
 
+test('termín jen z agregátoru nebo přibližný na detail školy nepatří', () => {
+  // Upoutávka tvrdí „Termín ověřen … na webu pořadatele“; u těchto akcí to
+  // pravda není (docs/zdroje-dat.md, oddíl 2.15). V přehledu /veletrhy zůstávají.
+  const pardubice = akceProObec('Pardubice', KE_DNI).map((a) => a.id);
+  assert.ok(!pardubice.includes('schola-bohemia-pardubice-2026'), 'Schola Bohemia má termín jen z agregátoru');
+  assert.ok(pardubice.includes('hitparada-skol-pardubice-2026'), 'ověřená akce ve stejném městě zůstává');
+  assert.deepEqual(akceProObec('Beroun', KE_DNI), [], 'Burza škol Beroun má termín jen z agregátoru');
+  const html = render({ obec: 'Pardubice', variant: 'skola', ke: KE_DNI });
+  assert.ok(!html.includes('Web pořadatele ho zatím neuvádí'), 'karta si nesmí odporovat s větou o ověření');
+});
+
 test('školní varianta jmenuje akci, termín, místo a přizná, co neví', () => {
   const html = render({ obec: 'Příbram', variant: 'skola', ke: KE_DNI });
-  assert.ok(html.includes('Veletrh středních škol v Příbram'), 'nadpis nese město');
+  assert.ok(html.includes('Veletrh středních škol ve městě Příbram'), 'nadpis nese město v tvaru, který nepotřebuje skloňovat');
   assert.ok(html.includes('Veletrh středních škol Příbram'), 'jmenuje akci');
   assert.ok(html.includes('30. září 2026'), 'ukáže termín slovy');
   assert.ok(html.includes('9:00–16:00'), 'ukáže čas');
@@ -58,14 +69,19 @@ test('oborová varianta je položka seznamu „Co vám pomůže“', () => {
   assert.ok(!html.includes('<div'), 'žádná karta, jen položka seznamu');
 });
 
+test('odsazení karty jde s kartou, bez akce nezůstane prázdný obal', () => {
+  assert.ok(render({ obec: 'Příbram', variant: 'skola', ke: KE_DNI, className: 'mb-8' }).includes('mb-8'));
+  assert.equal(render({ obec: 'Nepomuk', variant: 'skola', ke: KE_DNI, className: 'mb-8' }), '');
+});
+
 test('město bez potvrzené akce nevykreslí nic', () => {
   assert.equal(render({ obec: 'Nepomuk', variant: 'skola', ke: KE_DNI }), '');
   assert.equal(render({ obec: 'Nepomuk', variant: 'obor', ke: KE_DNI }), '');
 });
 
 test('město se dvěma akcemi ukáže obě v množném čísle', () => {
-  const html = render({ obec: 'Pardubice', variant: 'skola', ke: KE_DNI });
-  assert.ok(html.includes('Veletrhy středních škol v Pardubice'), 'nadpis v množném čísle');
+  const html = render({ obec: 'Olomouc', variant: 'skola', ke: KE_DNI });
+  assert.ok(html.includes('Veletrhy středních škol ve městě Olomouc'), 'nadpis v množném čísle');
   assert.equal((html.match(/Stránka akce/g) ?? []).length, 2, 'každá akce má svůj odkaz');
 });
 
@@ -78,13 +94,15 @@ test('klientská pojistka skryje upoutávku po skončení akce', () => {
   let ted = '2026-09-30T10:00:00Z';
   let rezim = 'server';
   const exports = {};
+  // Den počítá sdílená cesskyDen; tady dostane podstrčený čas testu.
+  const { cesskyDen } = load('src/lib/veletrhy-pocty.ts');
   vm.runInNewContext(ts.transpileModule(readFileSync(cesta, 'utf8'), {
     compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX, esModuleInterop: true, target: ts.ScriptTarget.ES2022 },
   }).outputText, {
     exports,
     require: (id) => id === 'react' ? {
       useSyncExternalStore: (prihlasit, klientsky, serverovy) => (rezim === 'server' ? serverovy : klientsky)(),
-    } : require(id),
+    } : id === '@/lib/veletrhy-pocty' ? { cesskyDen: () => cesskyDen(new Date(ted)) } : require(id),
     Intl,
     Date: class extends Date { constructor() { super(ted); } },
   });
@@ -95,4 +113,12 @@ test('klientská pojistka skryje upoutávku po skončení akce', () => {
   assert.ok(renderuj().includes('upoutávka'), 've den konání je blok pořád vidět');
   ted = '2026-10-01T10:00:00Z'; // den po skončení, v Praze
   assert.equal(renderuj(), '', 'po skončení akce se blok skryje');
+});
+
+test('oborová varianta se po skončení akce skrývá stejně jako karta', () => {
+  // Stránka oboru se revaliduje po hodině; bez obalu by proběhlá akce
+  // visela v „Co vám pomůže“ jako nadcházející.
+  const zdroj = readFileSync(new URL('../src/components/veletrhy/VeletrhUpoutavka.tsx', import.meta.url), 'utf8');
+  const obor = zdroj.slice(zdroj.indexOf("if (variant === 'obor')"), zdroj.indexOf('return (\n    <VeletrhSkryvani doKonce={doKonce}>\n      <div'));
+  assert.ok(obor.includes('<VeletrhSkryvani doKonce={doKonce}>'), 'varianta obor je obalená VeletrhSkryvani');
 });

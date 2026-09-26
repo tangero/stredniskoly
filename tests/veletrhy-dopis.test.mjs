@@ -165,3 +165,11 @@ test('varianta bez termínu u akce s potvrzeným termínem je chyba', () => {
 test('ověřená varianta u akce bez termínu je chyba, ne dopis s prázdným datem', () => {
   assert.throws(() => dopisPoradateli({ ...BEZ, varianta: 'overeno' }), /nemá termín/);
 });
+
+test('dopis bez termínu pro sérii akcí mluví v množném čísle', () => {
+  const serie = cekajiciAkce().filter((a) => !a.online).slice(0, 2).map((a) => a.id);
+  assert.equal(serie.length, 2, 'Data mají aspoň dvě čekající akce.');
+  const text = textDopisu(dopisPoradateli({ ...BEZ, akce: serie }).html);
+  assert.ok(text.includes('Vaše akce chceme do přehledu zařadit, ale letošní termíny jsme zatím nenašli. Pošlete mi je prosím'));
+  assert.ok(!text.includes('Vaši akci'), 'Série nesmí sklouznout do jednotného čísla.');
+});

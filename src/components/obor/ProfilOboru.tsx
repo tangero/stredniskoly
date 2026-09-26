@@ -484,8 +484,8 @@ export function ProfilOboru({ data, inspekceHref, skolaHref, obec }: ProfilOboru
               </li>
               {/* Veletrh ve městě školy: nejlevnější způsob, jak si ověřit
                   tohle čtení proti ostatním školám z kraje. Veletrh je fakt
-                  o městě, ne o škole — komponenta sama zmizí, když je ve
-                  městě potvrzená akce. */}
+                  o městě, ne o škole — komponenta nevykreslí nic, když ve
+                  městě potvrzená akce není. */}
               {obec && <VeletrhUpoutavka obec={obec} variant="obor" />}
               <li>
                 Pořadí oborů na přihlášce šanci na přijetí <b>nemění</b>, škola řadí jen podle svých kritérií. Seřaďte obory podle toho, kam chcete chodit.

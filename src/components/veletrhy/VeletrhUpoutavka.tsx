@@ -1,15 +1,17 @@
 import Link from 'next/link';
 import { akceProObec, OVERENO_K, type Veletrh } from '@/lib/veletrhy';
+import { formatujDen } from '@/lib/veletrhy-pocty';
 import { VeletrhSkryvani } from './VeletrhSkryvani';
 
 /**
  * Upoutávka na veletrh ve městě školy pro stránku školy a stránku oboru.
  *
- * Veletrh je fakt o městě, ne o škole: seznam vystavovatatelů neexistuje
+ * Veletrh je fakt o městě, ne o škole: seznam vystavovatelů neexistuje
  * v žádném zdroji (docs/zdroje-dat.md, oddíl 3), takže text nikdy netvrdí,
  * že se škola akce účastní. Ukazují se jen akce s potvrzeným termínem,
- * které ještě neproběhly — stejná pravidla jako seznam na /veletrhy
- * (docs/veletrhy-skol-2027.md). Když je ve městě akce potvrzená, je to
+ * které ještě neproběhly a jejichž termín je ověřený u pořadatele — přísněji
+ * než seznam na /veletrhy, viz `akceProObec` (docs/veletrhy-skol-2027.md).
+ * Když ve městě taková akce není, komponenta nevykreslí nic, ani obal. Když je ve městě akce potvrzená, je to
  * pro rodinu nejlevnější způsob, jak si ověřit, co čte o jedné škole,
  * proti ostatním z kraje.
  */
@@ -24,11 +26,6 @@ const MAX_AKCI = 2;
  */
 function nejstarsiOvereni(akce: Veletrh[]): string {
   return akce.map((a) => a.overeno ?? OVERENO_K).sort()[0] ?? OVERENO_K;
-}
-
-function formatujOvereno(iso: string): string {
-  const [r, m, d] = iso.split('-');
-  return `${Number(d)}. ${Number(m)}. ${r}`;
 }
 
 function Odkazy({ a }: { a: Veletrh }) {
@@ -61,11 +58,14 @@ export function VeletrhUpoutavka({
   obec,
   variant,
   ke,
+  className = '',
 }: {
   obec: string;
   variant: 'skola' | 'obor';
   /** Čas čtení; předává ho test, produkce volá bez něj. */
   ke?: Date;
+  /** Odsazení karty od okolí; bez akce se nevykreslí ani ono. Jen varianta skola. */
+  className?: string;
 }) {
   const vse = akceProObec(obec, ke);
   if (vse.length === 0) return null;
@@ -76,7 +76,7 @@ export function VeletrhUpoutavka({
 
   if (variant === 'obor') {
     return (
-      <>
+      <VeletrhSkryvani doKonce={doKonce}>
         {akce.map((a) => (
           <li key={a.id}>
             <b className="text-[#16325c]">{a.nazev}</b> — {a.datum}
@@ -91,15 +91,17 @@ export function VeletrhUpoutavka({
             <VetaDalsich pocet={vse.length - MAX_AKCI} />
           </li>
         )}
-      </>
+      </VeletrhSkryvani>
     );
   }
 
   return (
     <VeletrhSkryvani doKonce={doKonce}>
-      <div className="space-y-3 rounded-2xl bg-white p-5 shadow-[0_1px_0_#dbe3ec]">
+      <div className={`space-y-3 rounded-2xl bg-white p-5 shadow-[0_1px_0_#dbe3ec] ${className}`.trim()}>
+        {/* „ve městě Příbram“: jméno města zůstává v 1. pádě, tvar
+            „v Příbrami“ by potřeboval skloňovat všech 87 měst zdroje. */}
         <h3 className="text-[19px] font-bold text-[#16325c]">
-          {akce.length === 1 ? 'Veletrh středních škol' : 'Veletrhy středních škol'} v {obec}
+          {akce.length === 1 ? 'Veletrh středních škol' : 'Veletrhy středních škol'} ve městě {obec}
         </h3>
         {akce.map((a) => (
           <div key={a.id} className="space-y-1">
@@ -120,7 +122,7 @@ export function VeletrhUpoutavka({
         </p>
         {vse.length > MAX_AKCI && <VetaDalsich pocet={vse.length - MAX_AKCI} />}
         <p className="text-[13px] leading-relaxed text-slate-500">
-          Termín ověřen {formatujOvereno(nejstarsiOvereni(akce))} na webu pořadatele — pořádá akci on,
+          Termín ověřen {formatujDen(nejstarsiOvereni(akce))} na webu pořadatele — pořádá akci on,
           ne tento web.
         </p>
       </div>

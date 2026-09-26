@@ -101,6 +101,8 @@ Pro pořadatele akcí, které na webu ještě nejsou, protože letošní termín
 
 > Vaši akci chceme do přehledu zařadit, ale letošní termín jsme zatím nenašli. Pošlete mi ho prosím, až bude známý; doplníme ho a odkážeme na vaši stránku.
 
+U série více akcí: „Vaše akce chceme do přehledu zařadit, ale letošní termíny jsme zatím nenašli. Pošlete mi je prosím, až budou známé; doplníme je a odkážeme na vaši stránku.“ Stejně se do množného čísla převádí věta varianty `agregator`.
+
 - v odstavci o partnerství místo „My na vaši akci odkazujeme už teď a v přehledu ji necháme tak jako tak“ stojí „My na vaši akci odkážeme, jakmile budeme znát termín, a partnerství na tom nic nemění.“
 
 Šablona odmítne variantu `bezTerminu` u akce s potvrzeným termínem i běžnou variantu u akce bez termínu (`tests/veletrhy-dopis.test.mjs`). Vzor odešel na patrick@zandl.cz 24. 9. 2026.

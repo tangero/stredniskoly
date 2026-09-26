@@ -561,11 +561,9 @@ export default async function SchoolDetailPage({ params }: Props) {
             schoolSlug={overviewSlug}
           />
 
-          {/* Veletrh ve městě školy; komponenta sama zmizí, když je ve městě
-              potvrzená akce. Fakt o městě, ne o škole. */}
-          <div className="mb-8">
-            <VeletrhUpoutavka obec={school.obec} variant="skola" />
-          </div>
+          {/* Veletrh ve městě školy; komponenta nevykreslí nic (ani odsazení),
+              když ve městě potvrzená akce není. Fakt o městě, ne o škole. */}
+          <VeletrhUpoutavka obec={school.obec} variant="skola" className="mb-8" />
 
           {/* Údaje potvrzené školou (Portál pro školy) */}
           <SchoolPortalSection zaznam={portalZaznam} spravce={spravceProfiluSkoly} />

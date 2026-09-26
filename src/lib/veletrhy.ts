@@ -117,7 +117,14 @@ export function cekajiciAkce(): Veletrh[] {
  * zdroje, že sedí na hodnoty `obec` v katalogu 2026. Na seznam MESTA se
  * nahlížet nesmí (pravidlo 3 v hlavičce). Online akce město nemají a městem
  * se nechytnou — patří na /veletrhy, ne na detail školy.
+ *
+ * Termín přibližný (`terminPribligny`) nebo převzatý jen z agregátoru
+ * (`zdrojJenAgregator`) na detail nepatří (docs/zdroje-dat.md, oddíl 2.15):
+ * upoutávka tvrdí, že termín ověřila na webu pořadatele, a u takové akce by
+ * to nebyla pravda. Výhrada k termínu zůstává v přehledu na /veletrhy.
  */
 export function akceProObec(obec: string, ke: Date = new Date()): Veletrh[] {
-  return zobrazitelneAkce(ke).filter((a) => a.mesto === obec);
+  return zobrazitelneAkce(ke).filter(
+    (a) => a.mesto === obec && !a.terminPribligny && !a.zdrojJenAgregator,
+  );
 }

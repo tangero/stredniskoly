@@ -665,8 +665,8 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
               </p>
             </Karta>
             {/* Veletrh je fakt o městě, ne o škole — patří k adrese, ne mezi
-                výkonnostní data. Komponenta sama zmizí, když je ve městě
-                potvrzená akce. */}
+                výkonnostní data. Komponenta nevykreslí nic, když ve městě
+                potvrzená akce není. */}
             <VeletrhUpoutavka obec={skola.obec} variant="skola" />
             {poloha && okoli.length > 0 && (
               <Karta className="space-y-3" >

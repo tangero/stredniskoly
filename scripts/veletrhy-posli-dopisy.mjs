@@ -13,9 +13,10 @@
  *   data/veletrhy/odeslano.json    { id: datum odeslání } — jen ostrá rozesílka
  *   data/veletrhy/oslovene-adresy.json  { adresa: { datum, adresat } } — jen ostrá rozesílka
  *
- * Znovu se neoslovuje ani adresa, která už dopis dostala pod jiným adresátem:
- * taková se z adresátu vyřadí, a když mu žádná nezbude, přeskočí se celý.
- * Adresy z rozesílek před zavedením evidence se odvozují z odeslano.json.
+ * Znovu se neoslovuje ani adresa, která už dopis dostala pod jiným adresátem
+ * nebo ho dostane v tomto běhu: taková se z adresátu vyřadí, a když mu žádná
+ * nezbude, přeskočí se celý. Dokud oslovene-adresy.json neexistuje, evidence
+ * se jednorázově odvodí z odeslano.json; pak platí jen uložená evidence.
  *
  * Použití:
  *   set -a && . ./.env.local && set +a
@@ -33,7 +34,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dopisPoradateli, posliDopis, ODESILATEL_DOPISU } from '../src/lib/veletrhy-dopis.ts';
-import { normalizujAdresu, osloveneZOdeslanych, rozdelAdresy } from '../src/lib/veletrhy-oslovene.ts';
+import { nactiOslovene, normalizujAdresu, vyberAdresaty } from '../src/lib/veletrhy-oslovene.ts';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SEZNAM = path.join(ROOT, 'data', 'veletrhy', 'obesilani.json');
@@ -52,10 +53,11 @@ if (!fs.existsSync(SEZNAM)) {
 }
 const seznam = JSON.parse(fs.readFileSync(SEZNAM, 'utf-8'));
 const odeslano = fs.existsSync(ODESLANO) ? JSON.parse(fs.readFileSync(ODESLANO, 'utf-8')) : {};
-const oslovene = {
-  ...osloveneZOdeslanych(seznam, odeslano),
-  ...(fs.existsSync(OSLOVENE) ? JSON.parse(fs.readFileSync(OSLOVENE, 'utf-8')) : {}),
-};
+const oslovene = nactiOslovene(
+  fs.existsSync(OSLOVENE) ? JSON.parse(fs.readFileSync(OSLOVENE, 'utf-8')) : null,
+  seznam,
+  odeslano,
+);
 
 const neznama = jen.filter((id) => !seznam.some((a) => a.id === id));
 if (neznama.length) {
@@ -63,23 +65,7 @@ if (neznama.length) {
   process.exit(1);
 }
 
-const vyber = [];
-const preskoceni = [];
-for (const a of seznam) {
-  if (jen.length && !jen.includes(a.id)) continue;
-  if (!znovu && odeslano[a.id]) continue;
-  if (znovu) {
-    vyber.push(a);
-    continue;
-  }
-  const { nove, uzOslovene } = rozdelAdresy(a.email, oslovene);
-  if (nove.length === 0) {
-    preskoceni.push(`${a.id}: všechny adresy už dopis dostaly (${uzOslovene.join(', ')})`);
-    continue;
-  }
-  if (uzOslovene.length) preskoceni.push(`${a.id}: vyřazeno ${uzOslovene.join(', ')}, už osloveno`);
-  vyber.push(uzOslovene.length ? { ...a, email: nove.length === 1 ? nove[0] : nove } : a);
-}
+const { vyber, preskoceni } = vyberAdresaty(seznam, odeslano, oslovene, { jen, znovu });
 const posilat = opravdu || na;
 
 console.log(`Od: ${ODESILATEL_DOPISU}`);

@@ -23,6 +23,12 @@ export function cesskyDen(ke: Date = new Date()): string {
   }).format(ke);
 }
 
+/** `2026-09-22` → „22. 9. 2026“: datum ověření, jak ho píše přehled i upoutávka. */
+export function formatujDen(iso: string): string {
+  const [r, m, d] = iso.split('-');
+  return `${Number(d)}. ${Number(m)}. ${r}`;
+}
+
 /**
  * Akce seskupené podle `krajKod`, v pořadí, v jakém přišly. Jediná
  * definice seskupení pro klienta i testy, aby se čísla nerozešla.
