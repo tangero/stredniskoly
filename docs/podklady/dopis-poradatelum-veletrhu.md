@@ -91,6 +91,22 @@ Pro **Online veletrh SŠ MSK** (Moravskoslezský pakt zaměstnanosti). Termín v
 
 > Termín uvádíme jako přibližný, protože harmonogram videohovorů podle okresů jsme nenašli. Pošlete mi ho prosím, až bude hotový; doplníme ho.
 
+### Akce bez termínu
+
+Pro pořadatele akcí, které na webu ještě nejsou, protože letošní termín u pořadatele chybí (varianta `bezTerminu`, schváleno zadavatelem 24. 9. 2026). Dopis nesmí tvrdit, že akci vedeme nebo na ni odkazujeme, proto se mění čtyři místa:
+
+- předmět: „{nazev_akce} a přehled veletrhů na Přijímačky na školu“ (ne „v přehledu“);
+- místo „Je v něm i vaše akce:“ stojí „Zatím v něm chybí vaše akce:“ a řádek akce je bez termínu;
+- odstavec o pořadateli a termínu nahrazuje schválená věta:
+
+> Vaši akci chceme do přehledu zařadit, ale letošní termín jsme zatím nenašli. Pošlete mi ho prosím, až bude známý; doplníme ho a odkážeme na vaši stránku.
+
+U série více akcí: „Vaše akce chceme do přehledu zařadit, ale letošní termíny jsme zatím nenašli. Pošlete mi je prosím, až budou známé; doplníme je a odkážeme na vaši stránku.“ Stejně se do množného čísla převádí věta varianty `agregator`.
+
+- v odstavci o partnerství místo „My na vaši akci odkazujeme už teď a v přehledu ji necháme tak jako tak“ stojí „My na vaši akci odkážeme, jakmile budeme znát termín, a partnerství na tom nic nemění.“
+
+Šablona odmítne variantu `bezTerminu` u akce s potvrzeným termínem i běžnou variantu u akce bez termínu (`tests/veletrhy-dopis.test.mjs`). Vzor odešel na patrick@zandl.cz 24. 9. 2026.
+
 ## Co v dopise záměrně není
 
 - **Zmínka v newsletteru.** Návrh s ní počítal jako s plněním z naší strany (§ 8.1), jenže odběr nerozesílá pravidelný souhrn: zprávy jsou vázané na termíny přijímacího řízení a nejbližší odejde **7. 12. 2026** (`python3 scripts/novinky.py plan`, zpráva `vyber-skoly`). Veletrhy jsou v říjnu a listopadu, takže zmínka by přišla po nich. Slibovat ji by znamenalo slibovat něco, co se nestane. Pro příští sezónu se to dá řešit zprávou načasovanou na září.

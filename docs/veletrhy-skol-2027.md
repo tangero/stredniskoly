@@ -369,11 +369,19 @@ Dvě poznámky k obesílání, které z rešerše plynou:
 
 U OHK Most a KHK Pardubického kraje se konkrétní osobu odpovědnou za akci nepodařilo doložit; obesílá se obecný kontakt.
 
+**Doplněno 24. 9. 2026** pro pořadatele nových akcí z rešerše: 44 organizací, IČO ověřená v ARESu u 43. Kontakty jsou jen ty, které organizace zveřejňuje na svém webu nebo u akce; jména známá jen z tisku zůstávají v poznámce. Úřad práce přešel na doménu `up.gov.cz`, starší adresy `@uradprace.cz` zatím doručují. **Organizace, které dopis dostaly 23. 9., se znovu neoslovují**, ani když mají nové akce (Jihočeská hospodářská komora, KHK Zlínského kraje, VIM). Do `obesilani.json` přibylo 27 adresátů s potvrzenou akcí, bez podatelen úřadů (dopis by se evidoval jako podání). Pořadatelé 18 akcí bez potvrzeného termínu v seznamu nejsou: šablona dopisu termín vyžaduje a varianta s žádostí o termín zatím neexistuje.
+
+**Znovu se neoslovuje adresa, ne jen adresát.** Rozesílací skript dřív hlídal jen id v `odeslano.json`, takže stejná adresa pod novým id by dopis dostala podruhé. Od 24. 9. 2026 vede evidenci `data/veletrhy/oslovene-adresy.json` (gitignorovaná) a adresy z rozesílky 23. 9. dosévá z `odeslano.json` (50 adres). Oslovená adresa se z adresáta vyřadí, adresát bez nové adresy se přeskočí; `--znovu` obojí přebije. Logika je v `src/lib/veletrhy-oslovene.ts`, test `tests/veletrhy-oslovene.test.mjs`. Adresář škol portálu (`data/portal/emaily.json`) se za oslovené nepočítá — je to číselník, ne záznam o rozesílce.
+
 ### 8.6 Rozesláno 23. 9. 2026
 
 **22 dopisů na 51 adres, 21 pořadatelů**, skriptem `scripts/veletrhy-posli-dopisy.mjs` z eda@prijimackynaskolu.cz, podepsáno Patrickem Zandlem (text v [podkladech](podklady/dopis-poradatelum-veletrhu.md)). Každá organizace dostala jeden dopis adresovaný všem relevantním kontaktům; seznam a evidence odeslání jsou v gitignorovaném `data/veletrhy/`.
 
 Doručeno 21 z 22. Dopis SŠP Olomouc se odrazil: adresa převzatá ze zdrojového sešitu neexistuje (550 5.1.1). Adresa ředitele školy, dohledaná na stránce vedení školy, byla v témže dopise; Resend neuvádí, kterému adresátovi se dopis nedoručil. Adresa ředitele VIM se dohledala na webu VIM (článek o kampani Těžká hlava). Konkrétní adresy a jména jsou jen v gitignorovaném `data/veletrhy/obesilani.json` — repozitář je veřejný a kontakty na osoby do něj nepatří (oddíl 3 zdrojů dat).
+
+**Druhá vlna 24. 9. 2026:** 27 dopisů na 45 adres novým pořadatelům z rešerše, po zkoušce na patrick@zandl.cz; všechny přijaty Resendem. Evidence oslovených adres má po ní 95 adres. Nedoručenky se sledují ve schránce eda@.
+
+**Třetí vlna 24. 9. 2026:** 17 dopisů na 23 adres pořadatelům akcí bez potvrzeného termínu, varianta `bezTerminu` (prosba o zaslání termínu, schváleno po vzoru na patrick@zandl.cz). Všechny přijaty Resendem. Celkem 66 dopisů, evidence oslovených adres má 118 adres. Když pořadatel termín pošle, Eda ho ověří na jeho webu a akce se v datech přepne na `terminPotvrzen`.
 
 ### 8.7 Pořadí obesílání
 
@@ -436,6 +444,7 @@ Zakázané slovní spojení **„škola pořádá“** (oddíl 5 slovníku) se v
 
 | Verze | Změna |
 |---|---|
+| 0.11 | Rešerše 24. 9. 2026 (Exa po krajích, Parallel FindAll): 95 záznamů, 77 zobrazitelných. Za web pořadatele se počítá i web spolupořadatele a místa konání; web vystavující školy, zpravodajství a krajská kampaň nestačí (zapsáno v zdrojích dat, 2.15). Upoutávka na detailu školy bere datum ověření z akce, ne ze souboru. |
 | 0.10 | Tabulka fronty nahlášení chyběla na produkci; SQL se nově generuje ze schématu, spouští skriptem a hlídá testem. Migrace provedena 23. 9. 2026. |
 | 0.9 | Druhé kolo pátého review: doplněn test, který hlídá rozchod dat s registrem — mutace strážní podmínky dřív prošla všemi testy. Při rozchodu stránka místo věty o nedohledaných akcích říká, že přehled připravujeme. K době držení dopsán postup: mazání adres je roční úkol po skončení sezóny, ne automatická úloha. |
 | 1.0 | Přehled dostal kraj jako osu (23. 9. 2026, § 5.2): čipy krajů s počty místo dvou rozbalovacích seznamů, oddíl na kraj s řádkem měst, datum jako dlaždice a město jako první řádka karty, výhrada neúplnosti u každého kraje, kotva `#kraj` pro odkaz ze stránky kraje. Filtr měst zrušen — 38 z 39 měst mělo jedinou akci. Z karty vypuštěn dovětek „ne tento web“ (§ 10 sladěn). Počet akcí v kraji zapsán jako ukazatel do slovníku (§ 6.4) a do registru. Po třech kolech review: nadpis kraje přes `nadpisKraje` v `src/lib/kraje.mjs` („Kraj Vysočina“; stránka kraje a hlavička mají zatím vlastní starší podobu „Vysočina“ — sjednocení je samostatná změna, protože mění titulky indexovaných stránek), dlaždice u vícedenní akce nese rozsah dnů a má pevnou šířku, výběr čipem se propisuje do adresy, kotva po předvýběru posune na oddíl až po překreslení, kotva na kraj bez akcí ukáže prázdný stav, čip kraje bez akcí jde odkliknout. Seskupení a tvar počtu v listovém modulu `src/lib/veletrhy-pocty.ts`, protože klientská komponenta nesmí importovat data ani registr (`next build` padal na `fs`). Testy vykreslení přes sdílený zavaděč, ověřeny mutacemi; validace `krajKod` a tvaru dat. |

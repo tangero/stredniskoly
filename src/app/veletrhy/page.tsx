@@ -7,7 +7,7 @@ import {
   overSezonuProtiRegistru,
   OVERENO_K,
 } from '@/lib/veletrhy';
-import { cesskyDen } from '@/lib/veletrhy-pocty';
+import { cesskyDen, formatujDen } from '@/lib/veletrhy-pocty';
 import { VeletrhySeznam, type VeletrhKarta } from './VeletrhySeznam';
 
 export const metadata: Metadata = {
@@ -26,11 +26,6 @@ export const metadata: Metadata = {
 // buildu, a proběhlá akce by na ní visela až do příštího nasazení.
 // Hodinu po půlnoci ji navíc odfiltruje klient, viz VeletrhySeznam.
 export const revalidate = 3600;
-
-function formatujDatum(iso: string): string {
-  const [r, m, d] = iso.split('-');
-  return `${Number(d)}. ${Number(m)}. ${r}`;
-}
 
 export default async function VeletrhyPage() {
   // Období bere stránka z registru datových sad, ne z názvu souboru.
@@ -130,7 +125,7 @@ export default async function VeletrhyPage() {
             </Link>
           </p>
           <p className="mt-3 text-sm text-gray-600">
-            Údaje jsme naposledy ověřovali {formatujDatum(OVERENO_K)}. Termín a podmínky si před cestou
+            Údaje jsme naposledy ověřovali {formatujDen(OVERENO_K)}. Termín a podmínky si před cestou
             ověřte na stránce pořadatele.
           </p>
         </section>

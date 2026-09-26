@@ -11,6 +11,7 @@ import {
 import {
   MrizkaSoutezicich, PasmaBodu, RozpadPrihlasek, SkupinaVKraji, SloupceSoutezicich, VysledekUchazecu,
 } from '@/components/obor/grafy';
+import { VeletrhUpoutavka } from '@/components/veletrhy/VeletrhUpoutavka';
 
 /**
  * Stránka oboru ve třech otázkách: jak těžké bude se dostat, co pomůže, jak se tu studuje.
@@ -21,6 +22,8 @@ interface ProfilOboruProps {
   inspekceHref: string | null;
   /** Odkaz na přehled školy; maturitní karta z něj míří na oddíl „Jak si škola vede“. */
   skolaHref: string;
+  /** Obec školy; veletrh ve městě patří do otázky „Co vám pomůže“. */
+  obec?: string;
 }
 
 
@@ -297,7 +300,7 @@ function Maturita({ m, skolaHref }: { m: MaturitaOboru; skolaHref: string }) {
   );
 }
 
-export function ProfilOboru({ data, inspekceHref, skolaHref }: ProfilOboruProps) {
+export function ProfilOboru({ data, inspekceHref, skolaHref, obec }: ProfilOboruProps) {
   const { rok, predchoziRok, aktualni: r, predchozi: p, stav, zarazeni, skupinaNazev, krajNazev } = data;
   const soutezici = soutezicichUchazecu(r) ?? 0;
   const soutezicichDriv = p ? soutezicichUchazecu(p) : null;
@@ -479,6 +482,11 @@ export function ProfilOboru({ data, inspekceHref, skolaHref }: ProfilOboruProps)
                 Rozhodují <b>kritéria přijetí</b>, která škola vyhlašuje na svém webu.
                 {data.web && <span className="block text-[14px]"><a href={data.web} className="font-semibold text-[#0074e4] hover:underline" rel="noopener noreferrer">Web školy</a></span>}
               </li>
+              {/* Veletrh ve městě školy: nejlevnější způsob, jak si ověřit
+                  tohle čtení proti ostatním školám z kraje. Veletrh je fakt
+                  o městě, ne o škole — komponenta nevykreslí nic, když ve
+                  městě potvrzená akce není. */}
+              {obec && <VeletrhUpoutavka obec={obec} variant="obor" />}
               <li>
                 Pořadí oborů na přihlášce šanci na přijetí <b>nemění</b>, škola řadí jen podle svých kritérií. Seřaďte obory podle toho, kam chcete chodit.
                 <span className="block text-[14px]"><Link href="/jak-vybrat-skolu#jak-se-rozhoduje" className="font-semibold text-[#0074e4] hover:underline">Jak rozřazení funguje</Link></span>

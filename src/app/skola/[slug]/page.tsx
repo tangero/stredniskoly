@@ -26,6 +26,7 @@ import { getProfilSkoly } from '@/lib/skola-profil-data';
 import { ProfilSkoly } from '@/components/skola/ProfilSkoly';
 import { getProfilOboru } from '@/lib/obor-profil-data';
 import { ProfilOboru } from '@/components/obor/ProfilOboru';
+import { VeletrhUpoutavka } from '@/components/veletrhy/VeletrhUpoutavka';
 import { UlozitObor } from '@/components/obor/UlozitObor';
 import { createSlug } from '@/lib/utils';
 import { krajNames } from '@/types/school';
@@ -348,7 +349,7 @@ export default async function SchoolDetailPage({ params }: Props) {
             </div>
           )}
 
-          <ProfilOboru data={profil} inspekceHref={extractions.length > 0 ? `/skola/${overviewSlug}/inspekce` : null} skolaHref={`/skola/${overviewSlug}`} />
+          <ProfilOboru data={profil} inspekceHref={extractions.length > 0 ? `/skola/${overviewSlug}/inspekce` : null} skolaHref={`/skola/${overviewSlug}`} obec={school.obec} />
 
           <div className="mx-auto max-w-6xl space-y-6 px-4 pb-12">
             <SchoolPortalSection zaznam={portalZaznam} spravce={spravceProfiluSkoly} />
@@ -559,6 +560,10 @@ export default async function SchoolDetailPage({ params }: Props) {
             csiData={csiData}
             schoolSlug={overviewSlug}
           />
+
+          {/* Veletrh ve městě školy; komponenta nevykreslí nic (ani odsazení),
+              když ve městě potvrzená akce není. Fakt o městě, ne o škole. */}
+          <VeletrhUpoutavka obec={school.obec} variant="skola" className="mb-8" />
 
           {/* Údaje potvrzené školou (Portál pro školy) */}
           <SchoolPortalSection zaznam={portalZaznam} spravce={spravceProfiluSkoly} />
