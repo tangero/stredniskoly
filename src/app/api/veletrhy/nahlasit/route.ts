@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { jeDbNastavena, vTransakci } from '@/lib/novinky-db';
+import { jeDatumPlatne, jeUrlPlatna } from '@/lib/veletrhy-validace';
 import { krajNames } from '@/lib/kraje.mjs';
 
 // ============================================================================
@@ -142,23 +143,8 @@ async function oznacOdeslani(id: number, odeslano: boolean): Promise<void> {
   }
 }
 
-/** Datum existuje v kalendáři: 2026-02-30 ani 2026-99-99 neprojde. */
-export function jeDatumPlatne(iso: string): boolean {
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) return false;
-  const d = new Date(`${iso}T00:00:00Z`);
-  return !Number.isNaN(d.getTime()) && d.toISOString().slice(0, 10) === iso;
-}
-
-/** Adresa musí být http(s) a rozeberatelná; „https://a b“ neprojde. */
-export function jeUrlPlatna(url: string): boolean {
-  if (url.length > 500 || /\s/.test(url)) return false;
-  try {
-    const u = new URL(url);
-    return (u.protocol === 'http:' || u.protocol === 'https:') && u.hostname.includes('.');
-  } catch {
-    return false;
-  }
-}
+// Sdílené s API návrhů změn, aby formulář i Eduarda ověřovali stejně.
+export { jeDatumPlatne, jeUrlPlatna };
 
 /** Nejdelší rozumná délka pole; delší vstup je chyba nebo útok. */
 const DELKY: Record<string, number> = {

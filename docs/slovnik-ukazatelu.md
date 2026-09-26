@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.33 · 23. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.34 · 26. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -582,7 +582,7 @@ Při počtu maturantů pod 10 se zveřejňují jen počty, mezi 10 a 29 s upozor
 ## 6a. Veletrhy a přehlídky středních škol
 
 ### Počet akcí v kraji
-Počet veletrhů a přehlídek středních škol, které se v kraji teprve budou konat nebo právě probíhají. Zdroj: `src/data/veletrhy-2027.json` (sada `veletrhy-skol`, vlastní rešerše pořadatelů). Výpočet: záznamy s `terminPotvrzen = true` a `end ≥ dnešní den` v českém čase, sečtené podle `krajKod`; `end` je inkluzivní, u jednodenní akce rovné `start`. Online akce se počítá v kraji, jehož pořadatel ji vypsal (`krajKod` záznamu). Čip „Všechny kraje“ ukazuje součet téhož ukazatele přes vykreslené kraje — není to samostatný ukazatel a v registru sad se nevede zvlášť; počítá se ze stejné množiny a se stejnými výhradami. Jednotka: akce. Platí od sezóny 2027; počítá se při čtení stránky (revalidace po hodině, klient přepočítá po půlnoci), ne při sestavení dat.
+Počet veletrhů a přehlídek středních škol, které se v kraji teprve budou konat nebo právě probíhají. Zdroj: tabulka `veletrh_akce` (sada `veletrhy-skol`, vlastní rešerše pořadatelů; od 26. 9. 2026, dříve a při výpadku databáze snímek `src/data/veletrhy-2027.json`). Výpočet: záznamy s `terminPotvrzen = true` a `end ≥ dnešní den` v českém čase, sečtené podle `krajKod`; `end` je inkluzivní, u jednodenní akce rovné `start`. Online akce se počítá v kraji, jehož pořadatel ji vypsal (`krajKod` záznamu). Čip „Všechny kraje“ ukazuje součet téhož ukazatele přes vykreslené kraje — není to samostatný ukazatel a v registru sad se nevede zvlášť; počítá se ze stejné množiny a se stejnými výhradami. Jednotka: akce. Platí od sezóny 2027; počítá se při čtení stránky (revalidace po hodině, klient přepočítá po půlnoci), ne při sestavení dat.
 
 Zobrazuje se na `/veletrhy` v čipech krajů, v nadpisu oddílu („Jihočeský kraj“ a vedle „6 akcí“) a ve větě „Víme jen o těchto 6 akcích s potvrzeným termínem“ — věta musí nést množinu, ze které se číslo počítá, protože soubor zná i akce bez potvrzeného termínu, které se nepočítají.
 
@@ -628,6 +628,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.34 | **Zdroj počtu akcí v kraji je databáze** (26. 9. 2026). Akce veletrhů se čtou z tabulky `veletrh_akce`, změny přicházejí jako schválené návrhy přes API; soubor `src/data/veletrhy-2027.json` je snímek a záloha. Výpočet ani definice se nemění. |
 | 1.33 | **Frekvence maturity popisuje dostupná hodnocení** (23. 9. 2026). Slovní text už netvrdí „každý rok“, pokud se podařilo hodnotit jen jednu skupinu v jediném roce, a uvádí konkrétní rok hodnocení; u více skupin je jednotkou hodnocení skupiny oborů v roce. Výpočet podílu ani data se nemění. |
 | 1.32 | **Kohorta podle pozice na přihlášce se počítá a zobrazuje** (23. 9. 2026). Generátor souhrnů 1. kola nese podíl prvních voleb, jeho percentil ve skupině a kohortu, práh 30 nabídek uplatňuje knihovna. Stabilita přepočtena s mapou nabídek na 64,5 % (dříve 66 %). Nedoložená **kategorie oboru** stažena z webu a rozebrána v oddílu 7; nahrazuje ji kohorta. Přehled kraje přestavěn nad souhrny zobrazeného ročníku, viz `docs/navrh-stranky-kraje-2027.md`. |
 | 1.31 | **Počet akcí v kraji** (23. 9. 2026, oddíl 6a). Přehled veletrhů dostal kraj jako osu a s ním čipy a nadpisy s počty; návrh veletrhů § 6.4 předvídal, že to bude ukazatel a bude chtít zápis. Definice: potvrzený termín, `end ≥ dnes` při čtení, online akce pod krajem pořadatele. Neříká, kolik akcí se koná, ale o kolika víme. |

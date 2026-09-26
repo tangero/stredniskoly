@@ -5,6 +5,10 @@
 //   node --experimental-strip-types scripts/veletrhy-migrace.mjs
 //   node --experimental-strip-types scripts/veletrhy-migrace.mjs --zapis-sql
 //   node --experimental-strip-types scripts/veletrhy-migrace.mjs --kontrola
+//   node --experimental-strip-types scripts/veletrhy-migrace.mjs --seed
+//
+// --seed po migraci vloží akce ze src/data/veletrhy-2027.json do veletrh_akce
+// (`on conflict do nothing`: existující akce ani schválené úpravy nepřepíše).
 //
 // Migrace je psaná jako `create table if not exists`, takže se dá pustit
 // opakovaně. Skript nic nemaže a nic nepřepisuje.
@@ -18,6 +22,7 @@ import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { Pool } from '@neondatabase/serverless';
 import { MIGRACE_VELETRHU, TABULKY_VELETRHU } from '../src/lib/veletrhy-schema.ts';
+import { seed } from '../src/lib/veletrhy-sklad.ts';
 
 const KOREN = join(dirname(fileURLToPath(import.meta.url)), '..');
 const MIGRACE = join(KOREN, 'db', 'migrace', '005-veletrhy.sql');
@@ -68,6 +73,12 @@ async function main() {
     }
     for (const prikaz of MIGRACE_VELETRHU) await pool.query(prikaz);
     console.log(`Migrace hotova: ${MIGRACE_VELETRHU.length} příkazů.`);
+    if (process.argv.includes('--seed')) {
+      const snimek = JSON.parse(readFileSync(join(KOREN, 'src', 'data', 'veletrhy-2027.json'), 'utf8'));
+      const s = { dotaz: (sql, hodnoty) => pool.query(sql, hodnoty) };
+      const vlozeno = await seed(s, snimek.akce, snimek.sezona);
+      console.log(`Seed: vloženo ${vlozeno} z ${snimek.akce.length} akcí (sezóna ${snimek.sezona}).`);
+    }
   } finally {
     await pool.end();
   }

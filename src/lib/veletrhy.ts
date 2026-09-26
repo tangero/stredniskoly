@@ -59,6 +59,27 @@ interface VeletrhySoubor {
 
 const soubor = data as unknown as VeletrhySoubor;
 
+/**
+ * Akce ze snímku `src/data/veletrhy-2027.json`. Web je čte z databáze
+ * (`nactiAkce()` ve `veletrhy-zdroj.ts`); snímek je záloha pro build bez
+ * databáze, výpadek databáze a testy dat. Všechny funkce níže berou pole
+ * akcí parametrem a bez něj pracují se snímkem.
+ */
+export function snimekAkci(): Veletrh[] {
+  return soubor.akce;
+}
+
+/**
+ * Datum „údaje jsme naposledy ověřovali“: nejnovější `overeno` mezi
+ * zobrazitelnými akcemi. Z databáze žádné kořenové `checkedAt` nevede,
+ * a posouvat ho ručně by tvrdilo ověření, které neproběhlo. Bez akce
+ * s datem ověření platí `checkedAt` snímku.
+ */
+export function overenoK(akce: Veletrh[] = soubor.akce, ke: Date = new Date()): string {
+  const data = zobrazitelneAkce(ke, akce).map((a) => a.overeno).filter((d): d is string => Boolean(d));
+  return data.sort().at(-1) ?? soubor.checkedAt;
+}
+
 /** Datum ověření zdroje. Stránka ho ukazuje, aby čtenář věděl, jak je starý. */
 export const OVERENO_K = soubor.checkedAt;
 
@@ -98,16 +119,16 @@ export async function overSezonuProtiRegistru(
  * čekání na kalendář. Akce platí do konce svého posledního dne, proto
  * se porovnává `end`, ne `start`.
  */
-export function zobrazitelneAkce(ke: Date = new Date()): Veletrh[] {
+export function zobrazitelneAkce(ke: Date = new Date(), akce: Veletrh[] = soubor.akce): Veletrh[] {
   const dnes = cesskyDen(ke);
-  return soubor.akce
+  return akce
     .filter((a) => a.terminPotvrzen && a.start !== null && (a.end ?? a.start)! >= dnes)
     .sort((a, b) => (a.start ?? '').localeCompare(b.start ?? ''));
 }
 
 /** Akce, které čekají na potvrzení termínu. Na web nejdou, jsou to úkoly. */
-export function cekajiciAkce(): Veletrh[] {
-  return soubor.akce.filter((a) => !a.terminPotvrzen);
+export function cekajiciAkce(akce: Veletrh[] = soubor.akce): Veletrh[] {
+  return akce.filter((a) => !a.terminPotvrzen);
 }
 
 /**
@@ -123,8 +144,8 @@ export function cekajiciAkce(): Veletrh[] {
  * upoutávka tvrdí, že termín ověřila na webu pořadatele, a u takové akce by
  * to nebyla pravda. Výhrada k termínu zůstává v přehledu na /veletrhy.
  */
-export function akceProObec(obec: string, ke: Date = new Date()): Veletrh[] {
-  return zobrazitelneAkce(ke).filter(
+export function akceProObec(obec: string, ke: Date = new Date(), akce?: Veletrh[]): Veletrh[] {
+  return zobrazitelneAkce(ke, akce).filter(
     (a) => a.mesto === obec && !a.terminPribligny && !a.zdrojJenAgregator,
   );
 }

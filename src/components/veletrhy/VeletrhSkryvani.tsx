@@ -5,8 +5,8 @@ import { cesskyDen } from '@/lib/veletrhy-pocty';
 
 /**
  * Skryje upoutávku na veletrh, který mezi sestavením stránky a návštěvou
- * skončil. Stránka školy se revaliduje jednou za hodinu (revalidate = 3600),
- * takže bez tohohle by proběhlá akce visela až hodinu po svém konci.
+ * skončil. Stránka školy se revaliduje jednou za 12 hodin (revalidate = 43200),
+ * takže bez tohohle by proběhlá akce visela až půl dne po svém konci.
  *
  * Serverová snapshotu je „vidět“: stránka se staví při revalidate a blok,
  * který právě sestavila, má smysl ukázat. Klientská se vyhodnotí až při
