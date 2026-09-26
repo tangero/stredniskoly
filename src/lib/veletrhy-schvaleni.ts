@@ -23,8 +23,11 @@ export function tajemstviSchvaleni(): string | null {
   return process.env.VELETRHY_SECRET || null;
 }
 
+/** Účel v podepsaném obsahu: token odkazu novinek tu neprojde ani při shodném tajemství. */
+const UCEL = 'veletrh-navrh:';
+
 export function odkazNaRozhodnuti(navrhId: string, secret: string, base = NOVINKY_BASE_URL): string {
-  const token = vytvorToken(navrhId, PLATNOST_ODKAZU_MS, secret);
+  const token = vytvorToken(`${UCEL}${navrhId}`, PLATNOST_ODKAZU_MS, secret);
   return `${base}/admin/veletrhy/rozhodnuti?t=${encodeURIComponent(token)}`;
 }
 
@@ -32,7 +35,8 @@ export function odkazNaRozhodnuti(navrhId: string, secret: string, base = NOVINK
 export function navrhZTokenu(token: string | null | undefined): string | null {
   const secret = tajemstviSchvaleni();
   if (!token || !secret) return null;
-  return overToken(token, secret);
+  const obsah = overToken(token, secret);
+  return obsah?.startsWith(UCEL) ? obsah.slice(UCEL.length) : null;
 }
 
 /**
@@ -45,9 +49,18 @@ export function schvalovatel(nastaveny = process.env.VELETRHY_SCHVALOVATEL): str
   return adresa;
 }
 
+/**
+ * Text od Eduardy do e-mailu na jeden řádek. Pochází z cizích e-mailů
+ * (prompt injection): s odřádkováním by uměl podvrhnout „Varování: žádná“
+ * nebo vlastní odkaz „Schválit“.
+ */
+function radek(v: unknown, max = 500): string {
+  const t = v === undefined || v === null ? '–' : typeof v === 'string' ? v : JSON.stringify(v);
+  return t.replace(/[\u0000-\u001f\u007f\u2028\u2029]+/g, ' ').slice(0, max);
+}
+
 function hodnota(v: unknown): string {
-  if (v === undefined) return '–';
-  return typeof v === 'string' ? v : JSON.stringify(v);
+  return radek(v);
 }
 
 /** Diff jako řádky textu: u úprav jen změněná pole „před → po“. */
@@ -58,7 +71,7 @@ export function diffTextem(diff: ZmenaAkce[]): string[] {
       radky.push(`+ PŘIDAT ${z.id}`);
       for (const [k, v] of Object.entries(z.po as Veletrh)) radky.push(`    ${k}: ${hodnota(v)}`);
     } else if (z.op === 'odebrat') {
-      radky.push(`- ODEBRAT ${z.id} (${z.pred?.nazev ?? ''}, ${z.pred?.datum ?? z.pred?.start ?? ''})`);
+      radky.push(`- ODEBRAT ${z.id} (${radek(z.pred?.nazev ?? '')}, ${radek(z.pred?.datum ?? z.pred?.start ?? '')})`);
     } else {
       radky.push(`~ UPRAVIT ${z.id}`);
       const pred = (z.pred ?? {}) as Record<string, unknown>;
@@ -75,16 +88,17 @@ export function diffTextem(diff: ZmenaAkce[]): string[] {
 
 export function textEmailu(n: Navrh, diff: ZmenaAkce[], varovani: Chyba[], odkaz: string): string {
   return [
-    `Nový návrh změny veletrhů od: ${n.autor}`,
+    `Nový návrh změny veletrhů od: ${radek(n.autor)}`,
     '',
     ...diffTextem(diff),
     '',
-    `Zdroj: ${n.zdroj_url ?? '–'}`,
-    `E-mail / reference: ${n.zdroj_email ?? '–'}`,
-    n.poznamka ? `Poznámka: ${n.poznamka}` : '',
-    varovani.length ? `\nVarování:\n${varovani.map((v) => `  ! ${v.pole}: ${v.zprava}`).join('\n')}` : '',
+    'Text od Eduardy (neověřený, jeden řádek na pole):',
+    `  Zdroj: ${radek(n.zdroj_url)}`,
+    `  E-mail / reference: ${radek(n.zdroj_email)}`,
+    n.poznamka ? `  Poznámka: ${radek(n.poznamka, 2000)}` : '',
+    varovani.length ? `\nVarování validátoru:\n${varovani.map((v) => `  ! ${radek(v.pole)}: ${radek(v.zprava)}`).join('\n')}` : '\nVarování validátoru: žádná',
     '',
-    `Schválit nebo zamítnout: ${odkaz}`,
+    `Schválit nebo zamítnout (jediný platný odkaz, vede na www.prijimackynaskolu.cz/admin): ${odkaz}`,
     'Odkaz platí 14 dní. Otevření stránky nic nemění, rozhoduje až tlačítko.',
   ].filter((r) => r !== '').join('\n');
 }
@@ -122,3 +136,18 @@ export async function posliKeSchvaleni(n: Navrh, diff: ZmenaAkce[], varovani: Ch
     return false;
   }
 }
+
+/** Výsledek rozhodnutí, jak ho trasa vrací stránce. Text je jen tady. */
+export const VYSLEDKY = {
+  provedeno: { ok: true, text: 'Provedeno. Změna je na webu do pár minut.' },
+  zamitnuto: { ok: true, text: 'Návrh zamítnut.' },
+  'uz-rozhodnuto': { ok: true, text: 'O návrhu už bylo rozhodnuto, nic se nezměnilo.' },
+  'nelze-provest': { ok: false, text: 'Návrh proti dnešnímu stavu neprošel, nic se nezměnilo. Zamítněte ho, Eduarda pošle nový.' },
+  'chybi-duvod': { ok: false, text: 'Zamítnutí musí mít důvod.' },
+  'neznama-akce': { ok: false, text: 'Neznámá akce.' },
+  nenalezen: { ok: false, text: 'Návrh neexistuje.' },
+  'bez-db': { ok: false, text: 'Databáze není nastavena.' },
+  selhalo: { ok: false, text: 'Rozhodnutí selhalo, podrobnosti jsou v logu.' },
+} as const;
+
+export type KodVysledku = keyof typeof VYSLEDKY;

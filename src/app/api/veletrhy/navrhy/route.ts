@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { dotaz, vTransakci } from '@/lib/novinky-db';
 import { overEdu, chyba } from '@/lib/veletrhy-api';
 import { navrhy, stavAkci, zalozNavrh, type StavNavrhu } from '@/lib/veletrhy-sklad';
-import { overNavrh } from '@/lib/veletrhy-validace';
+import { jeUrlPlatna, overNavrh } from '@/lib/veletrhy-validace';
 import { posliKeSchvaleni } from '@/lib/veletrhy-schvaleni';
 import { posliTelegram } from '@/lib/portal-oznameni';
 import { cesskyDen } from '@/lib/veletrhy-pocty';
@@ -17,6 +17,8 @@ import { cesskyDen } from '@/lib/veletrhy-pocty';
 
 export const dynamic = 'force-dynamic';
 
+const MAX_TELO = 64 * 1024;
+
 const STAVY: StavNavrhu[] = ['ceka', 'schvaleno', 'provedeno', 'zamitnuto', 'stazeno'];
 
 function text(h: unknown, max: number): string | null {
@@ -27,9 +29,13 @@ export async function POST(request: NextRequest) {
   const odmitnuti = overEdu(request, 'navrh');
   if (odmitnuti) return odmitnuti;
 
+  // Dvacet operací se vejde do pár desítek kB; větší tělo je chyba nebo útok.
+  if (Number(request.headers.get('content-length') ?? 0) > MAX_TELO) return chyba(413, 'Tělo je příliš velké.');
   let telo: Record<string, unknown>;
   try {
-    const r: unknown = await request.json();
+    const surove = await request.text();
+    if (surove.length > MAX_TELO) return chyba(413, 'Tělo je příliš velké.');
+    const r: unknown = JSON.parse(surove);
     if (r === null || typeof r !== 'object' || Array.isArray(r)) return chyba(400, 'Tělo musí být objekt.');
     telo = r as Record<string, unknown>;
   } catch {
@@ -37,6 +43,10 @@ export async function POST(request: NextRequest) {
   }
   const neznama = Object.keys(telo).filter((k) => !['operace', 'zdrojUrl', 'zdrojEmail', 'poznamka', 'nahlaseniId'].includes(k));
   if (neznama.length) return chyba(400, 'Neznámá pole.', { chyby: neznama.map((pole) => ({ pole, zprava: 'Neznámé pole.' })) });
+
+  if (telo.zdrojUrl !== undefined && telo.zdrojUrl !== null && (typeof telo.zdrojUrl !== 'string' || !jeUrlPlatna(telo.zdrojUrl))) {
+    return chyba(400, 'Návrh neprošel.', { chyby: [{ pole: 'zdrojUrl', zprava: 'Neplatná adresa (http/https, nejvýš 500 znaků).' }] });
+  }
 
   const dnes = cesskyDen();
   try {

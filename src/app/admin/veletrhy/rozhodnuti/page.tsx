@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { overAdminToken, formatDatumCasCz } from '@/lib/admin';
 import { dotaz, jeDbNastavena } from '@/lib/novinky-db';
 import { diffNavrhu, navrh } from '@/lib/veletrhy-sklad';
-import { diffTextem, navrhZTokenu } from '@/lib/veletrhy-schvaleni';
+import { diffTextem, navrhZTokenu, VYSLEDKY } from '@/lib/veletrhy-schvaleni';
 import { cesskyDen } from '@/lib/veletrhy-pocty';
 
 // ============================================================================
@@ -31,11 +31,12 @@ const POPIS_STAVU: Record<string, string> = {
 };
 
 interface Props {
-  searchParams: Promise<{ t?: string; id?: string; ok?: string; chyba?: string }>;
+  searchParams: Promise<{ t?: string; id?: string; v?: string }>;
 }
 
 export default async function RozhodnutiPage({ searchParams }: Props) {
-  const { t, id, ok, chyba } = await searchParams;
+  const { t, id, v: kod } = await searchParams;
+  const vysledek = kod && Object.hasOwn(VYSLEDKY, kod) ? VYSLEDKY[kod as keyof typeof VYSLEDKY] : null;
   const jar = await cookies();
   const jeAdmin = overAdminToken(jar.get('admin_token')?.value);
   const navrhId = t ? navrhZTokenu(t) : jeAdmin ? id ?? null : null;
@@ -67,8 +68,11 @@ export default async function RozhodnutiPage({ searchParams }: Props) {
         </p>
       </div>
 
-      {ok && <p className="rounded-lg border border-green-200 bg-green-50 p-3 text-green-800">{ok}</p>}
-      {chyba && <p className="rounded-lg border border-red-200 bg-red-50 p-3 text-red-800">{chyba}</p>}
+      {vysledek && (
+        <p className={`rounded-lg border p-3 ${vysledek.ok ? 'border-green-200 bg-green-50 text-green-800' : 'border-red-200 bg-red-50 text-red-800'}`}>
+          {vysledek.text}
+        </p>
+      )}
       {n.chyba && <p className="rounded-lg border border-red-200 bg-red-50 p-3 text-red-800">Provedení selhalo: {n.chyba}</p>}
       {n.duvod && <p className="text-slate-700">Důvod rozhodnutí: {n.duvod}</p>}
 

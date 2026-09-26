@@ -113,6 +113,7 @@ export function overAkci(
     }
     const max = pole === 'poznamkaTerminu' || pole === 'cekaNa' ? MAX_DLOUHY_TEXT : MAX_TEXT;
     if (h.length > max) ch(pole, `Nejvýš ${max} znaků.`);
+    if (/[\u0000-\u001f\u007f]/.test(h)) ch(pole, 'Pole nesmí obsahovat odřádkování ani řídicí znaky.');
     if (obsahujeKontakt(h)) ch(pole, 'Veřejné pole nesmí obsahovat e-mail ani telefon; patří do zdrojEmail nebo poznamka návrhu.');
   }
   for (const pole of LOGICKA_POLE) {
@@ -120,7 +121,7 @@ export function overAkci(
   }
   if (typeof a.terminPotvrzen !== 'boolean') ch('terminPotvrzen', 'Povinné pole (true/false).');
 
-  if (typeof a.krajKod !== 'string' || !(a.krajKod in (krajNames as Record<string, string>))) {
+  if (typeof a.krajKod !== 'string' || !Object.hasOwn(krajNames, a.krajKod)) {
     ch('krajKod', 'Neznámý kód kraje.');
   }
   if (a.mesto === undefined) ch('mesto', 'Povinné pole (u online akce null).');
@@ -212,6 +213,8 @@ export interface ZmenaAkce {
   id: string;
   pred: Veletrh | null;
   po: Veletrh | null;
+  /** U úpravy verze v databázi, ze které změna vychází. */
+  verze?: number;
 }
 
 export interface VysledekNavrhu extends VysledekValidace {
@@ -241,6 +244,7 @@ export function overNavrh(
   }
 
   const pracovni = new Map(stav);
+  let pocetKonfliktu = 0;
 
   vstup.forEach((o: unknown, i: number) => {
     const p = `operace[${i}]`;
@@ -267,10 +271,11 @@ export function overNavrh(
           ? 'Id patří odebrané akci a znovu se nepoužívá.'
           : 'Akce s tímto id už existuje; na změnu slouží „upravit“.');
         vysledek.konflikt = true;
+        pocetKonfliktu++;
         return;
       }
       zkontrolujDuplicity(akce, pracovni, p, vysledek);
-      pracovni.set(akce.id, { data: akce, verze: 0, smazano: false });
+      pracovni.set(akce.id, { data: akce, verze: 1, smazano: false });
       vysledek.diff.push({ op: 'pridat', id: akce.id, pred: null, po: akce });
       return;
     }
@@ -283,6 +288,7 @@ export function overNavrh(
       if (!puvodni || puvodni.smazano) {
         ch(`${p}.id`, 'Akce s tímto id neexistuje.');
         vysledek.konflikt = true;
+        pocetKonfliktu++;
         return;
       }
       if (!Number.isInteger(op.ocekavanaVerze)) {
@@ -292,6 +298,7 @@ export function overNavrh(
       if (op.ocekavanaVerze !== puvodni.verze) {
         ch(`${p}.ocekavanaVerze`, `Akce se mezitím změnila (aktuální verze ${puvodni.verze}).`);
         vysledek.konflikt = true;
+        pocetKonfliktu++;
         return;
       }
       if (op.zmeny === null || typeof op.zmeny !== 'object' || Array.isArray(op.zmeny) || !Object.keys(op.zmeny).length) {
@@ -316,7 +323,7 @@ export function overNavrh(
       ostatni.delete(id);
       zkontrolujDuplicity(po, ostatni, p, vysledek);
       pracovni.set(id, { data: po, verze: puvodni.verze + 1, smazano: false });
-      vysledek.diff.push({ op: 'upravit', id, pred: puvodni.data, po });
+      vysledek.diff.push({ op: 'upravit', id, pred: puvodni.data, po, verze: puvodni.verze });
       return;
     }
 
@@ -328,6 +335,7 @@ export function overNavrh(
       if (!puvodni || puvodni.smazano) {
         ch(`${p}.id`, 'Akce s tímto id neexistuje.');
         vysledek.konflikt = true;
+        pocetKonfliktu++;
         return;
       }
       if (typeof op.duvod !== 'string' || !op.duvod.trim()) {
@@ -342,10 +350,8 @@ export function overNavrh(
     ch(`${p}.op`, 'Operace musí být pridat, upravit, nebo odebrat.');
   });
 
-  // Konflikt je 409 jen tehdy, když jinak by návrh prošel; tvarové chyby mají přednost.
-  if (vysledek.konflikt && vysledek.chyby.some((c) => !/\.(id|ocekavanaVerze)$/.test(c.pole))) {
-    vysledek.konflikt = false;
-  }
+  // Konflikt je 409 jen tehdy, když jiné chyby nejsou: tvarová chyba má přednost.
+  if (vysledek.konflikt && vysledek.chyby.length > pocetKonfliktu) vysledek.konflikt = false;
   return vysledek;
 }
 

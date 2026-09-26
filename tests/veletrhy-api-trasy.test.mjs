@@ -15,6 +15,7 @@ import { seed } from '../src/lib/veletrhy-sklad.ts';
 import { snimekAkci, SEZONA, zobrazitelneAkce } from '../src/lib/veletrhy.ts';
 import { nactiAkce } from '../src/lib/veletrhy-zdroj.ts';
 import { odkazNaRozhodnuti } from '../src/lib/veletrhy-schvaleni.ts';
+import { vytvorToken } from '../src/lib/novinky-token.ts';
 import * as akce from '../src/app/api/veletrhy/akce/route.ts';
 import * as detailAkce from '../src/app/api/veletrhy/akce/[id]/route.ts';
 import * as navrhy from '../src/app/api/veletrhy/navrhy/route.ts';
@@ -165,14 +166,14 @@ test('schválení podepsaným odkazem provede návrh, cizí původ odmítne', as
 
   const r = await odeslat(BASE);
   assert.equal(r.status, 303);
-  assert.match(new URL(r.headers.get('location')).searchParams.get('ok'), /^Provedeno/);
+  assert.equal(new URL(r.headers.get('location')).searchParams.get('v'), 'provedeno');
   const n = await (await detailNavrhu.GET(pozadavek(`/api/veletrhy/navrhy/${id}`), params(id))).json();
   assert.equal(n.stav, 'provedeno');
   const vse = await (await akce.GET(pozadavek('/api/veletrhy/akce?vse=1'))).json();
   assert.ok(vse.akce.some((a) => a.id === NOVA.id));
 
   // Druhé kliknutí nic neprovede.
-  assert.match(new URL((await odeslat(BASE)).headers.get('location')).searchParams.get('ok'), /už bylo rozhodnuto/);
+  assert.equal(new URL((await odeslat(BASE)).headers.get('location')).searchParams.get('v'), 'uz-rozhodnuto');
 });
 
 test('stažení jde jen u čekajícího návrhu', async () => {
@@ -191,4 +192,43 @@ test('web mimo Next.js runtime i při chybě cache čte snímek, nikdy nespadne'
   delete process.env.DATABASE_URL;
   assert.deepEqual(await nactiAkce(), snimekAkci());
   process.env.DATABASE_URL = puvodni;
+});
+
+const formular = (pole, hlavicky = {}) => {
+  const form = new FormData();
+  for (const [k, v] of Object.entries(pole)) form.set(k, v);
+  return rozhodnuti.POST(new NextRequest(`${BASE}/admin/veletrhy/akce`, { method: 'POST', body: form, headers: hlavicky }));
+};
+
+async function novyNavrh(klic, id) {
+  const telo = { operace: [{ op: 'pridat', akce: { ...NOVA, id, nazev: `Akce ${klic}` } }] };
+  return (await (await navrhy.POST(pozadavek('/api/veletrhy/navrhy', { method: 'POST', telo, hlavicky: { 'idempotency-key': klic } }))).json()).id;
+}
+
+test('admin s cookie rozhoduje přes id; zamítnutí bez důvodu neprojde; bez Origin 403', async () => {
+  const id = await novyNavrh('admin-cookie', 'admin-cookie-2099');
+  const cookie = { cookie: 'admin_token=admin-token', origin: BASE };
+  assert.equal((await formular({ id, akce: 'zamitnout' }, { cookie: 'admin_token=admin-token' })).status, 403);
+  const bezDuvodu = await formular({ id, akce: 'zamitnout' }, cookie);
+  assert.equal(new URL(bezDuvodu.headers.get('location')).searchParams.get('v'), 'chybi-duvod');
+  const ok = await formular({ id, akce: 'zamitnout', duvod: 'duplicita' }, cookie);
+  const cil = new URL(ok.headers.get('location'));
+  assert.equal(cil.searchParams.get('v'), 'zamitnuto');
+  assert.equal(cil.searchParams.get('id'), id);
+  assert.equal(cil.searchParams.get('t'), null, 'token z e-mailu se do adresy nevrací');
+});
+
+test('token odkazu novinek (bez účelu) schválení neotevře ani při shodném tajemství', async () => {
+  const id = await novyNavrh('ucel-tokenu', 'ucel-tokenu-2099');
+  const cizi = vytvorToken(id, 60_000, process.env.VELETRHY_SECRET);
+  assert.equal((await formular({ t: cizi, akce: 'schvalit' }, { origin: BASE })).status, 404);
+});
+
+test('zdrojUrl musí být platná http(s) adresa a tělo má strop', async () => {
+  const telo = { operace: [{ op: 'pridat', akce: { ...NOVA, id: 'zdroj-2099' } }], zdrojUrl: 'javascript:alert(1)' };
+  const r = await navrhy.POST(pozadavek('/api/veletrhy/navrhy?nanecisto=1', { method: 'POST', telo }));
+  assert.equal(r.status, 400);
+  assert.equal((await r.json()).chyby[0].pole, 'zdrojUrl');
+  const velke = { operace: [{ op: 'pridat', akce: { ...NOVA, poznamkaTerminu: 'x'.repeat(70_000) } }] };
+  assert.equal((await navrhy.POST(pozadavek('/api/veletrhy/navrhy?nanecisto=1', { method: 'POST', telo: velke }))).status, 413);
 });

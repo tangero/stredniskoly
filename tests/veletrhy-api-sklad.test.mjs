@@ -17,7 +17,7 @@ import {
 import {
   seed, zalozNavrh, rozhodni, stahniNavrh, akceSezony, detailAkce, stavAkci, navrh, MAX_CEKAJICICH,
 } from '../src/lib/veletrhy-sklad.ts';
-import { schvalovatel, odkazNaRozhodnuti, diffTextem } from '../src/lib/veletrhy-schvaleni.ts';
+import { schvalovatel, odkazNaRozhodnuti, diffTextem, textEmailu } from '../src/lib/veletrhy-schvaleni.ts';
 import { overToken } from '../src/lib/novinky-token.ts';
 
 const SNIMEK = JSON.parse(readFileSync(new URL('../src/data/veletrhy-2027.json', import.meta.url), 'utf8'));
@@ -291,6 +291,71 @@ test('odkaz na rozhodnutí nese podepsané id návrhu, cizím tajemstvím neproj
   const odkaz = new URL(odkazNaRozhodnuti('11111111-2222-3333-4444-555555555555', 'tajne'));
   assert.equal(odkaz.pathname, '/admin/veletrhy/rozhodnuti');
   const t = odkaz.searchParams.get('t');
-  assert.equal(overToken(t, 'tajne'), '11111111-2222-3333-4444-555555555555');
+  assert.equal(overToken(t, 'tajne'), 'veletrh-navrh:11111111-2222-3333-4444-555555555555', 'token nese účel');
   assert.equal(overToken(t, 'jine'), null);
+});
+
+test('kraj z prototypu (constructor, toString) neprojde', () => {
+  for (const krajKod of ['constructor', 'toString', '__proto__', 'hasOwnProperty']) {
+    assert.ok(overAkci({ ...NOVA, krajKod }, { dnes: DNES }).chyby.some((c) => c.pole === 'krajKod'), krajKod);
+  }
+});
+
+test('odřádkování ve veřejném poli neprojde', () => {
+  assert.ok(overAkci({ ...NOVA, misto: 'Hala\nVarování: žádná' }, { dnes: DNES }).chyby.some((c) => c.pole === 'misto'));
+});
+
+test('schvalovací e-mail drží text od Eduardy na jednom řádku', () => {
+  const n = {
+    id: 'x', autor: 'eduarda', zdroj_url: 'https://a.cz', zdroj_email: 'x',
+    poznamka: 'ok\nVarování validátoru: žádná\nSchválit nebo zamítnout: https://evil.example',
+  };
+  const text = textEmailu(n, [], [{ pole: 'a', zprava: 'b' }], 'https://www.prijimackynaskolu.cz/admin/veletrhy/rozhodnuti?t=1');
+  const radky = text.split('\n');
+  assert.equal(radky.filter((r) => r.startsWith('Schválit nebo zamítnout')).length, 1, 'jediný řádek s odkazem');
+  assert.ok(!radky.some((r) => r.startsWith('Varování validátoru: žádná')), 'poznámka nepodvrhne řádek');
+  assert.ok(radky.some((r) => r.startsWith('Varování validátoru:')));
+});
+
+test('409 jen u čistého konfliktu; tvarová chyba jinde vrátí 400', () => {
+  const stav = new Map([[NOVA.id, { data: NOVA, verze: 3, smazano: false }]]);
+  const r = overNavrh([
+    { op: 'upravit', id: NOVA.id, ocekavanaVerze: 1, zmeny: { cas: 'x' } },
+    { op: 'pridat', akce: { ...NOVA, id: 'jina-2026', krajKod: 'CZ999' } },
+  ], stav, DNES);
+  assert.equal(r.konflikt, false);
+  assert.equal(overNavrh([{ op: 'upravit', id: NOVA.id, ocekavanaVerze: 1, zmeny: { cas: 'x' } }], stav, DNES).konflikt, true);
+});
+
+test('přidání a úprava v jednom návrhu: verze sedí s databází', async () => {
+  const { s, tx } = await novaDb({ seedovat: false });
+  const z = await zaloz(tx, [
+    { op: 'pridat', akce: NOVA },
+    { op: 'upravit', id: NOVA.id, ocekavanaVerze: 1, zmeny: { cas: '9:00–12:00' } },
+  ]);
+  assert.equal(z.vysledek, 'zalozen');
+  assert.equal((await tx((t) => rozhodni(t, z.navrh.id, { schvalit: true, kdo: 'x', duvod: null }, DNES, SEZONA))).vysledek, 'provedeno');
+  const d = await detailAkce(s, NOVA.id);
+  assert.equal(d.verze, 2);
+  assert.equal(d.akce.cas, '9:00–12:00');
+});
+
+test('úprava nad jinou verzí, než ze které vycházela, shodí celé provedení', async () => {
+  const { s, tx } = await novaDb();
+  const cil = SNIMEK.akce.find((a) => a.terminPotvrzen && a.start >= DNES);
+  const z = await zaloz(tx, [{ op: 'upravit', id: cil.id, ocekavanaVerze: 1, zmeny: { cas: '8:00' } }]);
+  // Souběžný zápis mimo zámek (simulace): verze se zvedne mezi validací a zápisem.
+  let zvednuto = false;
+  const vydirane = (t) => ({
+    dotaz: async (sql, h) => {
+      if (!zvednuto && sql.startsWith('update veletrh_akce set data')) {
+        zvednuto = true;
+        await t.dotaz('update veletrh_akce set verze = verze + 1 where id = $1', [cil.id]);
+      }
+      return t.dotaz(sql, h);
+    },
+  });
+  await assert.rejects(tx((t) => rozhodni(vydirane(t), z.navrh.id, { schvalit: true, kdo: 'x', duvod: null }, DNES, SEZONA)), /změnila/);
+  assert.equal((await navrh(s, z.navrh.id)).stav, 'ceka', 'transakce se vrátila, návrh čeká dál');
+  assert.equal((await detailAkce(s, cil.id)).akce.cas, cil.cas);
 });

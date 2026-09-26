@@ -18,6 +18,9 @@ import { overNavrh, type Chyba, type StavAkce, type VysledekNavrhu, type ZmenaAk
 /** Kolik návrhů smí najednou čekat na rozhodnutí. Víc znamená, že se něco zacyklilo. */
 export const MAX_CEKAJICICH = 50;
 
+/** Klíč transakčního zámku, který řadí rozhodnutí o návrzích za sebe. */
+const ZAMEK_ROZHODNUTI = 2027_0926;
+
 export type StavNavrhu = 'ceka' | 'schvaleno' | 'provedeno' | 'zamitnuto' | 'stazeno';
 
 export interface Navrh {
@@ -252,6 +255,10 @@ export async function rozhodni(
   sezona: string,
 ): Promise<VysledekRozhodnuti> {
   if (!/^[0-9a-f-]{36}$/i.test(id)) return { vysledek: 'nenalezen' };
+  // Rozhodnutí se řadí za sebe: `for update` drží jen návrh, ale dva různé
+  // návrhy nad toutéž akcí by jinak prošly validací proti stejné verzi
+  // a druhý by přepsal první. Zámek trvá do konce transakce.
+  await s.dotaz('select pg_advisory_xact_lock($1)', [ZAMEK_ROZHODNUTI]);
   const r = await s.dotaz<Navrh>(`select ${SLOUPCE_NAVRHU} from veletrh_navrh where id = $1 for update`, [id]);
   const n = r.rows[0];
   if (!n) return { vysledek: 'nenalezen' };
@@ -304,10 +311,13 @@ async function provedDiff(
         [z.id, sezona, JSON.stringify(z.po)],
       );
     } else if (z.op === 'upravit') {
-      await s.dotaz(
-        `update veletrh_akce set data = $2::jsonb, verze = verze + 1, zmeneno = now() where id = $1`,
-        [z.id, JSON.stringify(z.po)],
+      // Pojistka k zámku: úprava platí jen nad verzí, ze které vycházela.
+      const u = await s.dotaz(
+        `update veletrh_akce set data = $2::jsonb, verze = verze + 1, zmeneno = now()
+          where id = $1 and verze = $3 and not smazano`,
+        [z.id, JSON.stringify(z.po), z.verze],
       );
+      if (u.rowCount !== 1) throw new Error(`Akce ${z.id} se během schvalování změnila.`);
     } else {
       await s.dotaz(
         `update veletrh_akce set smazano = true, verze = verze + 1, zmeneno = now() where id = $1`,

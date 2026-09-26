@@ -8,6 +8,7 @@ import { navrhZTokenu } from '@/lib/veletrhy-schvaleni';
 import { obnovVeletrhy } from '@/lib/veletrhy-zdroj';
 import { SEZONA } from '@/lib/veletrhy';
 import { cesskyDen } from '@/lib/veletrhy-pocty';
+import type { KodVysledku } from '@/lib/veletrhy-schvaleni';
 
 // ============================================================================
 // Schválení nebo zamítnutí návrhu změny veletrhů (docs/veletrhy-api-2027.md,
@@ -29,19 +30,22 @@ export async function POST(request: NextRequest) {
   const navrhId = t ? navrhZTokenu(t) : jeAdmin ? pole('id') : null;
   if (!navrhId) return new NextResponse('Not found', { status: 404 });
 
-  const zpet = (parametr: 'ok' | 'chyba', text: string) => {
+  // Výsledek jde zpět jako kód, text si stránka vezme z mapy: volný text
+  // v adrese by šel podstrčit odkazem. Admin s cookie se vrací na ?id=,
+  // aby token z e-mailu nezůstával v historii prohlížeče.
+  const zpet = (kod: KodVysledku) => {
     const cil = new URL('/admin/veletrhy/rozhodnuti', request.url);
-    if (t) cil.searchParams.set('t', t);
+    if (t && !jeAdmin) cil.searchParams.set('t', t);
     else cil.searchParams.set('id', navrhId);
-    cil.searchParams.set(parametr, text);
+    cil.searchParams.set('v', kod);
     return NextResponse.redirect(cil, 303);
   };
 
-  if (!jeDbNastavena()) return zpet('chyba', 'Databáze není nastavena.');
+  if (!jeDbNastavena()) return zpet('bez-db');
   const akce = pole('akce');
   const duvod = pole('duvod').slice(0, 1000) || null;
-  if (akce !== 'schvalit' && akce !== 'zamitnout') return zpet('chyba', 'Neznámá akce.');
-  if (akce === 'zamitnout' && !duvod) return zpet('chyba', 'Zamítnutí musí mít důvod.');
+  if (akce !== 'schvalit' && akce !== 'zamitnout') return zpet('neznama-akce');
+  if (akce === 'zamitnout' && !duvod) return zpet('chybi-duvod');
 
   try {
     const v = await vTransakci((s) =>
@@ -49,21 +53,21 @@ export async function POST(request: NextRequest) {
     );
     switch (v.vysledek) {
       case 'nenalezen':
-        return zpet('chyba', 'Návrh neexistuje.');
+        return zpet('nenalezen');
       case 'uz_rozhodnuto':
-        return zpet('ok', 'O návrhu už bylo rozhodnuto, nic se nezměnilo.');
+        return zpet('uz-rozhodnuto');
       case 'nelze_provest':
         await posliTelegram(`⚠️ Návrh veletrhu schválen, ale nejde provést: ${v.navrh.chyba}`);
-        return zpet('chyba', 'Návrh proti dnešnímu stavu neprošel, nic se nezměnilo. Zamítněte ho, Eduarda pošle nový.');
+        return zpet('nelze-provest');
       case 'zamitnuto':
-        return zpet('ok', 'Návrh zamítnut.');
+        return zpet('zamitnuto');
       case 'provedeno':
         obnovVeletrhy();
         await posliTelegram(`✅ Veletrhy: provedeno ${v.diff.map((z) => `${z.op} ${z.id}`).join(', ')}`);
-        return zpet('ok', 'Provedeno. Změna je na webu do pár minut.');
+        return zpet('provedeno');
     }
   } catch (e) {
     console.error('❌ Veletrhy: rozhodnutí o návrhu', e);
-    return zpet('chyba', 'Rozhodnutí selhalo, podrobnosti jsou v logu.');
+    return zpet('selhalo');
   }
 }

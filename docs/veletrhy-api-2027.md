@@ -18,6 +18,12 @@ Implementováno 26. 9. 2026 (větev `feat/veletrhy-api`). Oddíly níže jsou p�
 - **Hodnota `null` v `zmeny`** operace `upravit` maže volitelné pole (`cas`, `poznamkaTerminu`, `cekaNa`, příznaky).
 - **Prázdná tabulka akcí** (neproběhl seed) se chová jako výpadek databáze: web čte snímek.
 - **Revalidace stránky školy je 12 hodin** (rozhodnutí 26. 9.); veletrhy na ní po schválení obnoví značka `veletrhy`.
+- **Cache akcí nemá časovou platnost** (`revalidate: false`, jen značka). Next.js propisuje číselnou platnost `unstable_cache` do ISR každé stránky, která ji čte; hodinová platnost by tak stránky škol vrátila na hodinovou revalidaci. Data se mění jen schválením, které značku zneplatní. Stav „tabulka bez seedu“ se do cache neukládá, takže seed skriptem se projeví i bez revalidace.
+- **Schválení se řadí za sebe** transakčním zámkem (`pg_advisory_xact_lock`) a úprava se zapisuje jen nad verzí, ze které vycházela. Bez toho by dva souběžně schválené návrhy nad toutéž akcí prošly validací proti stejné verzi.
+- **Odkaz ve schvalovacím e-mailu nese účel** (`veletrh-navrh:<id>`), takže token odkazu novinek tu neprojde ani při shodném tajemství. Text od Eduardy jde do e-mailu po jednom řádku na pole, aby nešlo podvrhnout řádek „Varování“ nebo vlastní odkaz. Veřejná pole akce nesmějí obsahovat odřádkování.
+- **Stránka rozhodnutí dostává výsledek jako kód** (`?v=provedeno`), text je v kódu; admin s cookie se vrací na `?id=`, aby token nezůstával v historii prohlížeče.
+- **Limit těla návrhu 64 kB** (413) a `zdrojUrl` musí být platná http(s) adresa.
+- **Přijaté riziko:** když Neon vypadne hned po schválení (cache je po `revalidateTag` prázdná), stránky postavené v tu chvíli nesou snímek JSON až do své další revalidace (u stránky školy nejvýš 12 hodin). Snímek se obnovuje ručním exportem, proto ho po sérii schválení exportujte. Rate limit v paměti platí na instanci, ne globálně; tvrdý strop je 50 čekajících návrhů v databázi.
 - **Otázky z oddílu 13** rozhodnuty takto: migrace jde skriptem i endpointem (1); schvalování e-mailem + `/admin`, Telegram jen jako upozornění, odkaz 14 dní (4); export ručně (5); `checkedAt` se počítá jako max(`overeno`) zobrazitelných akcí (6); sezóna pro varování 1. 8.–31. 7. odvozená od dneška (7); ruční validátory bez zod (9). Otevřené zůstávají 2, 3, 5 (CI), 8, 10, 11.
 
 **Neimplementováno (fáze 3):** auto-publikace, tlačítko „vrátit“, napojení `nahlaseni_id` na stav fronty nahlášení, zakládání návrhu přímo z formuláře.

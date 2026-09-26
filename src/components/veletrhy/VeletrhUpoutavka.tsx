@@ -77,7 +77,7 @@ export function VeletrhUpoutavka({
   if (vse.length === 0) return null;
   const akce = vse.slice(0, MAX_AKCI);
   // Skrývá se podle poslední zobrazené akce; kdyby ve městě běžela delší
-  // nezobrazená akce, do hodiny ji stejně doplní revalidace stránky.
+  // nezobrazená akce, doplní ji příští revalidace stránky.
   const doKonce = akce.map((a) => (a.end ?? a.start)!).sort().at(-1)!;
 
   if (variant === 'obor') {

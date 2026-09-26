@@ -18,19 +18,34 @@ import { SEZONA, snimekAkci, type Veletrh } from './veletrhy';
 
 export const TAG_VELETRHY = 'veletrhy';
 
+// Bez časové platnosti (`revalidate: false`): data se mění jen schválením
+// návrhu a to značku zneplatní. Číselná platnost by navíc zkrátila ISR
+// každé stránky, která cache čte, na tutéž hodnotu (Next ji propisuje do
+// stránky), takže stránky škol by se místo po 12 hodinách přestavovaly
+// každou hodinu. Proběhlé akce filtruje render podle data, ne cache.
+class BezSeedu extends Error {}
+
 const nactiZDb = unstable_cache(
-  async (): Promise<Veletrh[]> => akceSezony({ dotaz }, SEZONA),
+  async (): Promise<Veletrh[]> => {
+    const akce = await akceSezony({ dotaz }, SEZONA);
+    if (akce.length) return akce;
+    // Tabulka bez jediného řádku = seed neproběhl. Výjimka se do cache
+    // neuloží, takže seed skriptem (bez revalidace) se projeví hned.
+    // Když naopak schválení odebere všechny akce, platí prázdno.
+    const r = await dotaz<{ pocet: number }>('select count(*)::int as pocet from veletrh_akce');
+    if ((r.rows[0]?.pocet ?? 0) === 0) throw new BezSeedu();
+    return akce;
+  },
   ['veletrhy-akce'],
-  { tags: [TAG_VELETRHY], revalidate: 3600 },
+  { tags: [TAG_VELETRHY], revalidate: false },
 );
 
 export async function nactiAkce(): Promise<Veletrh[]> {
   if (!jeDbNastavena()) return snimekAkci();
   try {
-    const akce = await nactiZDb();
-    // Prázdná tabulka znamená, že neproběhl seed, ne že akce nejsou.
-    return akce.length ? akce : snimekAkci();
+    return await nactiZDb();
   } catch (e) {
+    if (e instanceof BezSeedu) return snimekAkci();
     console.error('❌ Veletrhy: akce nejdou načíst z databáze, čte se snímek', e);
     return snimekAkci();
   }
