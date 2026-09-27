@@ -183,7 +183,8 @@
     "public/pasma_prijeti_{obdobi}.json",
     "public/soubeh_prihlasek_{obdobi}.json",
     "public/kontext_prihlasek_{obdobi}.json",
-    "public/schools_data.json"
+    "public/schools_data.json",
+    "public/pozice_soutezicich_2026.json"
    ],
    "kontrola_obdobi": {
     "soubor": "public/pasma_prijeti_{obdobi}.json",
@@ -206,7 +207,8 @@
     "Kohorty přijatých",
     "Odvozená hranice úspěšnosti",
     "Výsledek uchazečů o obor",
-    "Obory výš a níž na přihlášce"
+    "Obory výš a níž na přihlášce",
+    "Pořadí mezi soutěžícími"
    ],
    "dostupne": [],
    "aktualizace": {
@@ -923,6 +925,41 @@
     "import": "python3 scripts/build-prevod-testu.py",
     "automatizace": "rucni",
     "lidsky_krok": "Po přepnutí cermat-uchazeci-kolo1 spustit build-prevod-testu.py; jednou ročně zkontrolovat, jestli TAU nepřidalo nový rok.",
+    "sledovat": []
+   }
+  },
+  "dipsy-kriteria": {
+   "nazev": "DiPSy, kritéria přijímacího řízení (přepis z PDF)",
+   "dokumentace": "docs/zdroje-dat.md#216-dipsy-veřejné-karty-nabídky-a-přílohy",
+   "cyklus": "rocni",
+   "pouziti": "web",
+   "zobrazeno": {
+    "obdobi": "2026",
+    "soubor": "data/dipsy-kriteria-2026/manifest.jsonl",
+    "stazeno": "2026-09-24",
+    "poznamka": "PDF kritérií 1. kola 2026 pro 3 089 nabídek; pracovní přepis (ruční a strojový) jen u 54 oborů. Přepis není ověřený, zobrazuje se s rokem 2026 a výhradou, že může obsahovat chybu. Jen v nezalistovaném prototypu /prototyp/pasma."
+   },
+   "ocekavano": {
+    "obdobi": "2027",
+    "kdy": "2027-02",
+    "jistota": "odhad",
+    "zduvodneni": "Školy zadávají kritéria 2027 do DiPSy 15.–31. 1. 2027 (harmonogram MŠMT, událost ss-kriteria); sběr a přepis po jejich zveřejnění."
+   },
+   "obnovit_nejpozdeji": "2027-03-31",
+   "po_prepnuti": "Kritéria 2026 zůstávají jen jako historie; pro rok 2027 se nesmí tiše použít.",
+   "vystupy": [
+    "public/kriteria_prijeti_2026.json"
+   ],
+   "ukazatele": [
+    "Podíl přijímaček na bodování"
+   ],
+   "aktualizace": {
+    "zdroj": "https://api.dipsy.gov.cz/v1 (karty nabídek a PDF kritérií)",
+    "detekce": "python3 scripts/dipsy-kriteria-scan.py --rok 2027 --redizo … (jen dotaz po jedné škole)",
+    "revize": "Nová verze PDF = nový podklad, starý se nepřepisuje (docs/prototyp-kriteria-prijeti.md).",
+    "import": "scripts/dipsy-kriteria-sber.py, přepis úsporným schématem, pak python3 scripts/build-kriteria-prijeti.py",
+    "automatizace": "rucni",
+    "lidsky_krok": "Před placeným přepisem ověřit rozpočet (limit 10 USD, docs/podklady/dipsy-kriteria-rozpocet-10-usd-2026.md).",
     "sledovat": []
    }
   }

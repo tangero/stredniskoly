@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.35 · 27. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.36 · 27. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -331,6 +331,13 @@ Proč: obtížnost se liší i mezi termíny téhož roku. 50 bodů z 1. řádn�
 - **Náhradní termíny** (2024: 486 a 794 řešitelů obou testů) psala malá a jiná skupina, hlavně nemocní z řádného termínu. Jejich pořadí převod zkresluje, u 40 bodů o +14 bodů proti řádným termínům. Pole `spolehlive` je u nich `false` a na webu se nenabízejí, nebo jen s výhradou.
 - Výsledek testu, který není v tabulkách (jiný rok, škola, soukromý test), převést nejde. Takové číslo se porovnává přímo s body cílového roku s výhradou, že platí jen pro stejně těžký test.
 
+### Pořadí mezi soutěžícími
+Kolik soutěžících uchazečů o obor mělo v roce pásem **vyšší** výsledek než zadaný, a kolik stejný. Soutěžící uchazeči jsou přijatí a ti, kdo se nevešli kvůli kapacitě (tatáž množina jako `soutezicich` v pásmech přijetí). Zdroj `public/pozice_soutezicich_{rok}.json` (`scripts/build-pozice-soutezicich.py`): u každého oboru počet soutěžících s každým výsledkem, načtený stejnou funkcí jako pásma; součty sedí se `soutezicich` u všech 2 841 oborů. Jednotka uchazeči. Obory s méně než deseti soutěžícími se nevedou (`MIN_PRIJATYCH`).
+
+Věta: „Mezi 88 soutěžícími uchazeči roku 2026 mělo vyšší výsledek 30.“ Vždy s počtem přijatých, ať je vidět, kolik míst bylo.
+
+**Co neříká:** Neříká, jestli by se uchazeč dostal: soutěžící jsou jen ti, kdo splnili podmínky a nedostali se výš na přihlášce, a o pořadí u škol s dalším bodováním rozhodovalo i něco jiného než test. Počítá se ze součtu testů; u školy, která váží předměty, je pořadí jiné (viz *Rozhodl test*, slepé místo). Popisuje jeden ročník.
+
 ### Nejslabší přijatý v předmětu
 Výsledky **jednoho skutečného přijatého** s nejnižším výsledkem v daném předmětu, vždy s oběma jeho předměty. Pole `nejslabsi_cj` a `nejslabsi_ma` v `public/pasma_prijeti_{rok}.json`, každé jako `{cj, ma}`. Jednotka body 0 až 50 za předmět.
 
@@ -406,6 +413,11 @@ Není to hranice přijetí; škola mohla vážit i jiná kritéria.
 Nabídka, která v 1. kole přijala méně uchazečů, než měla míst, a přesto ve 2. kole nebyla. Kombinuje souhrn výsledků 1. kola se souhrnem 2. kola téhož roku. Pole `stav` s hodnotou `nenaplneno_bez_2_kola`.
 
 V roce 2026 platí pro 47 % oborů, které se v 1. kole nenaplnily. Věta na webu proto varuje, že volná místa po 1. kole neznamenají 2. kolo.
+
+### Podíl přijímaček na bodování
+Kolik procent bodů celkového hodnocení tvořila v kritériích přijetí jednotná přijímací zkouška. Zdroj `public/kriteria_prijeti_{rok}.json` (`scripts/build-kriteria-prijeti.py`), pracovní přepis PDF kritérií z DiPSy: u strojového přepisu podíl, který PDF deklaruje, jinak maximum za JPZ po přepočtu děleno součtem maxim všech složek; u „bodují jen přijímačky“ 100. Jednotka procenta, zaokrouhleno na celá. Bez známých maxim všech složek se neuvádí.
+
+**Co neříká:** Není ověřený: přepis dělá model nebo člověk z PDF a může obsahovat chybu, i když mechanická kontrola citací nic nenašla. Platí pro rok kritérií (2026), ne pro nové přijímací řízení; školy kritéria mění. Neříká, jak moc další složky **rozhodovaly**: složka s velkým maximem, kterou všichni dostanou plnou, pořadí nemění. Nepoužívá se k řazení ani k výpočtu bodů uchazeče.
 
 ## 3. Kohorty přijatých
 
@@ -642,6 +654,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.36 | **Pořadí mezi soutěžícími** a **Podíl přijímaček na bodování** (27. 9. 2026, oddíl 2). První z rozdělení výsledků soutěžících po oborech, druhý z pracovního přepisu kritérií 2026 z PDF v DiPSy (54 oborů), jen v prototypu pásmového proužku a s výhradou, že přepis může obsahovat chybu. |
 | 1.35 | **Převedený výsledek testu** (27. 9. 2026, oddíl 2). Body z cvičného testu TAU převedené přes pořadí mezi řešiteli daného termínu na body roku zobrazených pásem. Zdroj položková data JPZ 2024, sada `cermat-prevod-testu`. Náhradní termíny označené jako nespolehlivé. |
 | 1.34 | **Zdroj počtu akcí v kraji je databáze** (26. 9. 2026). Akce veletrhů se čtou z tabulky `veletrh_akce`, změny přicházejí jako schválené návrhy přes API; soubor `src/data/veletrhy-2027.json` je snímek a záloha. Výpočet ani definice se nemění. |
 | 1.33 | **Frekvence maturity popisuje dostupná hodnocení** (23. 9. 2026). Slovní text už netvrdí „každý rok“, pokud se podařilo hodnotit jen jednu skupinu v jediném roce, a uvádí konkrétní rok hodnocení; u více skupin je jednotkou hodnocení skupiny oborů v roce. Výpočet podílu ani data se nemění. |

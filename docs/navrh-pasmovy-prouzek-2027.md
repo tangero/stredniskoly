@@ -128,6 +128,12 @@ Tři důsledky pro proužek:
 
 Prototyp přijímá výsledky **jednoho nebo více testů**. U testu z aplikace [CERMAT TAU](https://tau.cermat.cz/) z roku 2024 převede body přes pořadí mezi všemi, kdo ten test psali v ostrém termínu, na body roku zobrazených pásem (slovník ukazatelů, *Převedený výsledek testu*; `public/prevod_testu_2024.json`). Obtížnost se liší i mezi termíny téhož roku: 77 bodů z 2. řádného termínu 2024 odpovídá 72 bodům roku 2026, 73 bodů z 1. řádného termínu 74 bodům. Víc testů se ukáže jako rozsah a na proužek jde prostřední hodnota. Jiný test se porovná bez převodu s výhradou, že platí jen pro stejně těžký test. Náhradní termíny jsou označené jako méně přesné. Víceletá gymnázia píší jiné testy, převod se u nich nepoužije. Rok pásem se bere z registru, text místo „loni“ říká „v roce 2026“. Obor jde vyhledat, nejen vybrat z ukázek.
 
+## 4.6 Pořadí mezi soutěžícími a kritéria školy (27. 9. 2026)
+
+Pod větou o pásmu prototyp ukazuje **pořadí mezi soutěžícími**: „Mezi 78 soutěžícími uchazeči roku 2026 mělo vyšší výsledek 26 a stejný 5. Přijato jich bylo 30.“ (slovník ukazatelů, *Pořadí mezi soutěžícími*; `public/pozice_soutezicich_2026.json`).
+
+Pod proužkem je blok **„Co kromě přijímaček rozhodovalo v roce 2026“** z přepisu PDF kritérií v DiPSy (sada `dipsy-kriteria`, ukazatel *Podíl přijímaček na bodování*): jestli škola bodovala jen přijímačky, jakou část bodů tvořily, další složky s maximy a minima. Přepis je jen u 54 oborů; u ostatních blok řekne, že kritéria 2026 existují a kde je najít. Vždy s výhradou, že přepis může obsahovat chybu, s upozorněním na nesoulad z mechanické kontroly, a s termínem, kdy školy zveřejní kritéria nového ročníku (z harmonogramu MŠMT). Z přepisu se nepočítají body uchazeče (rozhodnutí zadavatele 27. 9. 2026). Plošný přepis zbylých nabídek čeká na kontrolu rozpočtu (docs/predani-kriteria-prijeti-2026-09-25.md).
+
 ## 5. Napojení na testy nanečisto
 
 Test nanečisto dává číslo **před** ostrou zkouškou a dá se opakovat. Místo statického verdiktu je vidět pohyb:

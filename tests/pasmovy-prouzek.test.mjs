@@ -35,9 +35,9 @@ function vykresli(data, { cj = '', ma = '' } = {}) {
     ...React,
     useState: (init) => {
       poradi += 1;
-      // 1 = vybraný obor, 2 = čeština, 3 = matematika, 4 = přepínač rozdělení
-      if (poradi === 2) return [cj, () => {}];
-      if (poradi === 3) return [ma, () => {}];
+      // 1 = vybraný obor, 2 = zadané testy, 3 = přepínač rozdělení.
+      // Test je „jiný“, tedy bez převodu: věty se tu ověřují na bodech tak, jak jsou.
+      if (poradi === 2) return [[{ test: 'jiny', cj, ma }], () => {}];
       return [init, () => {}];
     },
   };
@@ -45,13 +45,15 @@ function vykresli(data, { cj = '', ma = '' } = {}) {
   return renderToStaticMarkup(
     React.createElement(PasmovyProuzek, {
       obory: [{ id: 'x_79-41-K/81', nazev: 'Gymnázium', obec: 'Praha', obor: 'Gymnázium', data }],
+      rok: 2026,
+      prevod: null,
     }),
   );
 }
 
 test('bez zadaných bodů proužek nevyhodnocuje, jen vyzve', () => {
   const html = vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] });
-  assert.match(html, /Zadej svoje body/);
+  assert.match(html, /Zadej výsledek testu/);
   assert.doesNotMatch(html, /Chybí ti/);
 });
 
@@ -72,13 +74,13 @@ test('pod pásmem se říká, kolik bodů chybí', () => {
   // Konkrétní cíl místo verdiktu: „chybí ti 13 bodů“ unese čtrnáctiletý líp
   // než „nemáš na to“.
   const html = vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] }, { cj: '38', ma: '30' });
-  assert.match(html, /Pod 81 bodů se loni nedostal nikdo/);
+  assert.match(html, /Pod 81 bodů se v roce 2026 nedostal nikdo/);
   assert.match(html, /Chybí ti 13 bodů/);
 });
 
 test('nad pásmem se neslibuje víc, než data nesou', () => {
   const html = vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] }, { cj: '48', ma: '48' });
-  assert.match(html, /Nad 93 bodů se loni dostali všichni/);
+  assert.match(html, /Nad 93 bodů se v roce 2026 dostali všichni/);
 });
 
 test('když mezi mezemi nikdo nebyl, věta sedí s proužkem', () => {
@@ -86,9 +88,9 @@ test('když mezi mezemi nikdo nebyl, věta sedí s proužkem', () => {
   // kreslil zelenou až od 51. Dvě různá čísla o jedné věci.
   const data = { ...ZAKLAD, min_prijaty: 51, pasmo_nejistoty: [51, 44] };
   const html = vykresli(data, { cj: '42', ma: '42' });
-  assert.match(html, /Nad 51 bodů se loni dostali všichni/);
+  assert.match(html, /Nad 51 bodů se v roce 2026 dostali všichni/);
   assert.match(html, /mezi 44 a 51 body nebyl nikdo/);
-  assert.doesNotMatch(html, /Nad 44 bodů se loni dostali všichni/, 'věta odporuje proužku');
+  assert.doesNotMatch(html, /Nad 44 bodů se v roce 2026 dostali všichni/, 'věta odporuje proužku');
 });
 
 test('výhrady jsou na obrazovce, ne jen v dokumentaci', () => {
@@ -108,7 +110,7 @@ test('u oboru, kde o pořadí nerozhodl test, se to přizná', () => {
 test('nesmyslné body se neberou jako výsledek', () => {
   // Bez kontroly by 80 v češtině (maximum je 50) posunulo špendlík mimo osu.
   const html = vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] }, { cj: '80', ma: '80' });
-  assert.match(html, /Zadej svoje body/);
+  assert.match(html, /Zadej výsledek testu/);
 });
 
 // ---------------------------------------------------------------------------

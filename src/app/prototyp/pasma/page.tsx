@@ -4,6 +4,7 @@ import { Footer } from '@/components/Footer';
 import { getPasmaPrijetiZaRok, rokPasemPrijeti } from '@/lib/pasma-prijeti';
 import { getAllSchools, getSchoolsByRedizo } from '@/lib/data';
 import { nactiPrevodTestu } from '@/lib/prevod-testu';
+import { kriteriaOboru, poziceOboru } from '@/lib/pozice-kriteria';
 import { PasmovyProuzek, type UkazkovyObor } from '@/components/prototyp/PasmovyProuzek';
 
 // ============================================================================
@@ -80,8 +81,9 @@ async function nactiUkazky(rok: number, navic?: string): Promise<UkazkovyObor[]>
       let obor = id.split('_')[1] ?? '';
       try {
         const nabidky = await getSchoolsByRedizo(redizo);
+        // Obor se pozná z `id` (REDIZO_KKOV[_zaměření]); samostatné pole kódu katalog nemá.
         const kkov = id.split('_')[1];
-        const prvni = nabidky.find(n => String(n.kod_oboru) === kkov) ?? nabidky[0];
+        const prvni = nabidky.find(n => String(n.id ?? '').split('_')[1] === kkov);
         if (prvni) {
           nazev = String(prvni.nazev ?? redizo);
           obec = String(prvni.obec ?? '');
@@ -90,10 +92,12 @@ async function nactiUkazky(rok: number, navic?: string): Promise<UkazkovyObor[]>
       } catch {
         // Katalog není povinný: prototyp se má ukázat i bez názvů.
       }
-      return { id, nazev, obec, obor: `${obor} — ${popis}`, data };
+      const klic = id.split('_').slice(0, 2).join('_');
+      const [pozice, kriteria] = await Promise.all([poziceOboru(klic), kriteriaOboru(klic)]);
+      return { id, nazev, obec, obor: `${obor} — ${popis}`, data, pozice, kriteria };
     }),
   );
-  return nactene.filter((x): x is UkazkovyObor => x !== null);
+  return nactene.filter((x) => x !== null) as UkazkovyObor[];
 }
 
 export default async function PrototypPasmaPage({ searchParams }: {

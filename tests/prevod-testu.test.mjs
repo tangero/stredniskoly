@@ -31,3 +31,27 @@ test('prostřední hodnota více testů', () => {
   assert.equal(median([74, 72]), 73);
   assert.equal(median([70, 90, 72]), 72);
 });
+
+import { poradiMeziSoutezicimi } from '../src/lib/prevod-testu-vypocet.ts';
+
+test('pořadí mezi soutěžícími počítá vyšší a stejné výsledky', () => {
+  const p = poradiMeziSoutezicimi({ '60': 2, '72.5': 3, '80': 1 }, 72.5);
+  assert.deepEqual(p, { celkem: 6, vyssi: 1, stejny: 3 });
+});
+
+test('rozdělení soutěžících sedí na počty v pásmech přijetí', () => {
+  const rok = JSON.parse(readFileSync(new URL('../public/stav_datovych_sad.json', import.meta.url), 'utf8')).sady['cermat-uchazeci-kolo1'].zobrazeno.obdobi;
+  const poz = JSON.parse(readFileSync(new URL(`../public/pozice_soutezicich_${rok}.json`, import.meta.url), 'utf8')).data;
+  const pas = JSON.parse(readFileSync(new URL(`../public/pasma_prijeti_${rok}.json`, import.meta.url), 'utf8')).data;
+  for (const [k, v] of Object.entries(poz)) {
+    if (pas[k]) assert.equal(Object.values(v).reduce((a, b) => a + b, 0), pas[k].soutezicich, k);
+  }
+});
+
+test('kritéria: podíl přijímaček je 100 jen u režimu „jen přijímačky“ a nikdy nepřesáhne 100', () => {
+  const k = JSON.parse(readFileSync(new URL('../public/kriteria_prijeti_2026.json', import.meta.url), 'utf8')).data;
+  for (const o of Object.values(k)) for (const p of o.prepisy) {
+    if (p.rezim === 'pouze_jpz') assert.equal(p.podil_jpz_pct, 100);
+    if (p.podil_jpz_pct !== null) assert.ok(p.podil_jpz_pct > 0 && p.podil_jpz_pct <= 100, p.source_id);
+  }
+});

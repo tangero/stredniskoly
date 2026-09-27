@@ -1,7 +1,10 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { median, prevedBody, type PrevodTestu } from '@/lib/prevod-testu-vypocet';
+import {
+  median, poradiMeziSoutezicimi, prevedBody,
+  type KriteriaOboru, type PoziceOboru, type PrevodTestu,
+} from '@/lib/prevod-testu-vypocet';
 import type { PasmaPrijetiObor } from '@/lib/pasma-prijeti';
 
 // ============================================================================
@@ -18,6 +21,59 @@ export interface UkazkovyObor {
   obec: string;
   obor: string;
   data: PasmaPrijetiObor;
+  /** Rozdělení výsledků soutěžících; jen u vybraného oboru. */
+  pozice?: PoziceOboru | null;
+  /** Kritéria předchozího ročníku z PDF v DiPSy; jen u vybraného oboru. */
+  kriteria?: KriteriaOboru | null;
+}
+
+const NALEZ_TEXT = 'Při kontrole se přepis v něčem neshodl s PDF.';
+
+function Kriteria({ k }: { k: KriteriaOboru }) {
+  const p = k.prepisy[0];
+  return (
+    <div className="space-y-2 rounded-xl border border-slate-200 bg-white p-5 text-sm text-slate-700">
+      <h3 className="text-base font-semibold text-slate-900">Co kromě přijímaček rozhodovalo v roce {k.rok}</h3>
+      {!p ? (
+        <p>
+          {k.pdf
+            ? `Kritéria školy z roku ${k.rok} máme jako PDF, ale zatím jsme je nepřepsali.`
+            : `Kritéria školy z roku ${k.rok} nemáme.`}{' '}
+          Najdete je v <a href="https://www.dipsy.cz/" className="underline" rel="noopener noreferrer" target="_blank">DiPSy</a> u nabídky oboru.
+        </p>
+      ) : p.rezim === 'pouze_jpz' ? (
+        <p>Podle kritérií {k.rok} škola bodovala <b>jen přijímačky</b> (češtinu a matematiku).</p>
+      ) : (
+        <>
+          <p>
+            {p.podil_jpz_pct !== null
+              ? <>Přijímačky tvořily asi <b>{p.podil_jpz_pct} %</b> bodů. </>
+              : <>Kromě přijímaček škola bodovala i další věci; jejich váhu jsme z PDF nepřečetli celou. </>}
+            O pořadí proto rozhodoval i zbytek bodů, nejen test.
+          </p>
+          {p.slozky.length > 0 && (
+            <ul className="list-disc space-y-0.5 pl-5">
+              {p.slozky.filter(x => x.max !== 0).map((x, i) => (
+                <li key={i}>{x.nazev}{x.max !== null ? `: až ${x.max} bodů` : ''}</li>
+              ))}
+            </ul>
+          )}
+        </>
+      )}
+      {p && p.minima.length > 0 && <p>Minimum: {p.minima.map(m => m.replace(/\.$/, '')).join('; ')}.</p>}
+      {p && k.prepisy.length > 1 && <p className="text-slate-500">Obor má víc zaměření; ukazujeme první z nich.</p>}
+      {p && (
+        <p className="text-amber-800">
+          {p.prepis === 'strojovy' ? 'Přepsal to z PDF počítač' : 'Přepsáno ručně z PDF'} a může obsahovat chybu.
+          {p.nalezy.length > 0 && ` ${NALEZ_TEXT}`} Ověřte si to v kritériích školy.
+        </p>
+      )}
+      <p className="text-slate-500">
+        Pro nové přijímací řízení platí nová kritéria{k.noveKriteria ? `; školy je zveřejní ${k.noveKriteria}` : ''}.
+        Až budou, doplníme je.
+      </p>
+    </div>
+  );
 }
 
 const MAX_BODU = 100;
@@ -333,7 +389,19 @@ export function PasmovyProuzek({ obory, rok, prevod: prevodTestu, vybranyObor }:
 
       <div className="rounded-xl border border-slate-200 bg-white p-5">
         <Veta poloha={poloha} body={body} lo={lo} hi={hi} data={d} rok={rok} />
+        {body !== null && obor.pozice && (() => {
+          const p = poradiMeziSoutezicimi(obor.pozice, body);
+          return (
+            <p className="mt-3 text-sm text-slate-700">
+              Mezi {p.celkem} soutěžícími uchazeči roku {rok}, tedy těmi, kdo splnili požadavky školy a nedostali se
+              na obor, který měli na přihlášce výš, mělo vyšší výsledek <b>{p.vyssi}</b>
+              {p.stejny > 0 ? <> a stejný {p.stejny}</> : null}. Přijato jich bylo {d.prijatych}.
+            </p>
+          );
+        })()}
       </div>
+
+      {obor.kriteria && <Kriteria k={obor.kriteria} />}
 
       {/* Výhrady patří na obrazovku, ne do dokumentace. */}
       <ul className="space-y-1 text-sm text-slate-500">
