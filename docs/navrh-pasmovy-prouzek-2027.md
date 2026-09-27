@@ -124,6 +124,10 @@ Tři důsledky pro proužek:
 2. **Kde data unesou, ukázat i slabší předmět** — `podlaha_slabsiho`, `nejslabsi_cj`, `nejslabsi_ma` už existují. Uchazeč s 48/37 musí vidět, že u Dopplera 37 v matematice je jiná situace než 37 v češtině.
 3. **Vždy odkaz na kritéria školy.** Z portálu (`odkaz_kriteria`), a kde chybí, výzva. Bez kritérií je proužek popis loňska, ne návod.
 
+## 4.5 Výsledek cvičného testu TAU místo odhadu (27. 9. 2026)
+
+Prototyp přijímá výsledky **jednoho nebo více testů**. U testu z aplikace [CERMAT TAU](https://tau.cermat.cz/) z roku 2024 převede body přes pořadí mezi všemi, kdo ten test psali v ostrém termínu, na body roku zobrazených pásem (slovník ukazatelů, *Převedený výsledek testu*; `public/prevod_testu_2024.json`). Obtížnost se liší i mezi termíny téhož roku: 77 bodů z 2. řádného termínu 2024 odpovídá 72 bodům roku 2026, 73 bodů z 1. řádného termínu 74 bodům. Víc testů se ukáže jako rozsah a na proužek jde prostřední hodnota. Jiný test se porovná bez převodu s výhradou, že platí jen pro stejně těžký test. Náhradní termíny jsou označené jako méně přesné. Víceletá gymnázia píší jiné testy, převod se u nich nepoužije. Rok pásem se bere z registru, text místo „loni“ říká „v roce 2026“. Obor jde vyhledat, nejen vybrat z ukázek.
+
 ## 5. Napojení na testy nanečisto
 
 Test nanečisto dává číslo **před** ostrou zkouškou a dá se opakovat. Místo statického verdiktu je vidět pohyb:

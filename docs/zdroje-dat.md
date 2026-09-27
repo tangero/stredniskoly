@@ -24,7 +24,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 |---|---|---|---|---|
 | CERMAT, agregovaná data za obory | data.cermat.cz, XLSX | 1. kolo 2025 a 2026 | REDIZO + KKOV + zaměření | ročně po zveřejnění |
 | CERMAT, data uchazečů | data.cermat.cz, XLSX | 1. a 2. kolo od 2024 | řádek = uchazeč | předběžně v květnu téhož roku, finálně o rok později |
-| CERMAT, položková data JPZ | data.cermat.cz, XLSX | 2024 a 2025, 6 testů ročně | řádek = uchazeč a test | ročně |
+| CERMAT, položková data JPZ | data.cermat.cz, XLSX | 2024 a 2025, 6 testů ročně | řádek = uchazeč a test | ročně; 2024 čtyřleté testy od 27. 9. 2026 pro převod cvičných testů TAU |
 | Rejstřík škol MŠMT, JSON-LD | rejstriky.msmt.gov.cz | 4 čtvrtletní snímky | REDIZO | čtvrtletně |
 | Rejstřík škol MŠMT, CSV | rejstriky.msmt.gov.cz | jeden export | REDIZO + IZO + obor | ručně |
 | Číselník AKKO | MŠMT | kmenové obory | 5místný kód | zřídka |
@@ -131,16 +131,18 @@ Jeden řádek je jeden uchazeč. Soubor má 40 sloupců a list `legenda` s výkl
 
 ### 2.3 CERMAT, položková data JPZ
 
-Dvanáct souborů, 390 MB, dohromady **zcela nepoužité**. Jeden řádek je jeden uchazeč a jeden didaktický test. Listy jsou po termínech: A a B jsou řádné, C a D náhradní.
+Dvanáct souborů, 390 MB. Jeden řádek je jeden uchazeč a jeden didaktický test. Listy jsou po termínech: A a B jsou řádné, C a D náhradní.
+
+**Od 27. 9. 2026 se používají testy čtyřletých oborů 2024 (`JPZ2024_CJL4`, `JPZ2024_MA4`) pro převod výsledku cvičného testu z aplikace TAU** na body roku zobrazených pásem (`scripts/build-prevod-testu.py`, `public/prevod_testu_2024.json`, sada `cermat-prevod-testu`, ukazatel *Převedený výsledek testu*). TAU nabízí skutečné testy z let 2017–2024; rozdělení výsledků všech řešitelů máme jen pro 2024. Použité sloupce: `dt_body`, identifikátor uchazeče (`id_ss` v češtině, `id` v matematice) ke spojení obou testů v jednom termínu, a list jako termín. Zvažované a nepoužité: `dt_skor` (tatáž informace v procentech), volby škol `ss1_`–`ss5_` (převod se dělá proti všem řešitelům, ne proti uchazečům o obor, protože uchazeč 2027 se srovnává s celým ročníkem), body po úlohách (TAU umí jen celý test nebo skupiny úloh a skupiny se nepřevádějí). Testy pětiletých a sedmiletých (víceleté gymnázium) zatím ne: pásma přijetí je mají, ale převod se nejdřív ověří na čtyřletých.
 
 | Sloupec | Obsah | Otázka rodiče | Používáme |
 |---|---|---|---|
-| `id_ss` | identifikátor uchazeče napříč testy | spojení češtiny a matematiky | **ne** |
+| `id_ss` | identifikátor uchazeče napříč testy | spojení češtiny a matematiky | **ano** od 27. 9. 2026, 2024: spojení testů v termínu pro převod TAU (v matematice sloupec `id`) |
 | `ss1_redizo` až `ss5_redizo`, `ss1_kkov` až `ss5_` | volby uchazeče | kam se hlásili | **ne** |
 | `ss1_smo16` až `ss5_` | skupina maturitních oborů | srovnatelná skupina | **ne** |
 | `ss1_kraj` až `ss5_` | kraj každé volby | hlásí se i mimo kraj | **ne** |
-| `zkouska_zkratka` | který test a termín | liší se řádné termíny | **ne** |
-| `dt_body` | body z testu | jak si uchazeči stáli | **ne** |
+| `zkouska_zkratka` | který test a termín | liší se řádné termíny | **ano** jako list souboru (2024 nese termín v názvu listu): převod TAU po termínech |
+| `dt_body` | body z testu | jak si uchazeči stáli | **ano** od 27. 9. 2026: pořadí pro převod výsledku cvičného testu TAU |
 | `dt_uspesnost` | procento z maxima | totéž v procentech | **ne** |
 | `k1.1` až `k16.x` | odpovědi na jednotlivé položky | žádná přímá | **ne** a nemá smysl |
 | `b1` až `b16.x` | body za jednotlivé úlohy | žádná přímá | **ne** a nemá smysl |
@@ -468,7 +470,7 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 | Vstupní úroveň školy 2017 až 2023 | `JPZ{rok}_skoly-skolobory_vysledky.xlsx` | „Škola je dlouhodobě žádaná, není to výkyv jednoho roku.“ | soubory nejsou stažené |
 | Výsledek testu u **všech uchazečů**, nejen přijatých | data uchazečů, `c_m_procentni_skor`, vyplněno u 75 % řádků | „S 62 body byl loni v polovině těch, kdo se sem hlásili.“ Jediný způsob, jak dát dítěti vlastní číslo do kontextu | **zpracováno 13. 9. 2026**, na web zatím nenapojeno |
 | **Profil dovedností** uchazečů o obor | položková data, `b1` až `b16.x` | „Kdo se sem dostal, byl silný v porozumění textu.“ Jediný zdroj o tom, co obor vybírá | soubory nikdo nezpracoval |
-| Výsledky po termínech zvlášť | položková data, listy A až D | kontrola, zda jsou řádné termíny srovnatelně těžké | data uchazečů nesou jen lepší výsledek |
+| Výsledky po termínech zvlášť | položková data, listy A až D | kontrola, zda jsou řádné termíny srovnatelně těžké | 2024 už použito pro převod TAU (řádné termíny se liší až o 5 bodů); jako samostatný údaj na webu ne |
 | **Oficiální nejnižší a nejvyšší výsledek přijatých** a jejich percentily | souhrny výsledků, sloupce 72–86 | „S 65 body se sem loni někdo dostal“ po zaměřeních a za aktuální rok, bez dat uchazečů | počítáme vlastní minimum z dat uchazečů za rok 2025 bez zaměření; oficiální sloupec se shoduje u 97 % oborů |
 | **Přijatí podle priority** | souhrny výsledků, sloupce 40–44 | „Tři čtvrtiny přijatých si obor zapsaly jako první volbu“ | **zpracováno 13. 9. 2026** do `souhrny_kolo1.json`, na web zatím nenapojeno, viz `docs/grafy-skoly-a-oboru-2027.md` |
 | Výsledky zkoušky **všech uchazečů** o obor v souhrnu | souhrny výsledků, sloupce 45–65 | průměr, minimum a maximum konkurence bez zpracování dat uchazečů | průměrné percentilové umístění **zpracováno 13. 9. 2026**; minimum a maximum zamítnuto, určuje je jediný uchazeč |
@@ -629,6 +631,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ru�
 | `msmt-harmonogram` | web | 2027 | `src/data/admissions-2027.json` | — | 2028 | 2027-08, odhad | Termíny předchozího ročníku se nezobrazují; soubor zůstává jako doklad, co web ukazoval. |
 | `skolni-novinky-rss` | web | prubezne | `public/skoly_feedy.json` | — | prubezne | — | Nepřepíná se. Stará položka se nemaže; po konci platnosti přestane být pozvánkou a zůstane v seznamu novinek. |
 | `veletrhy-skol` | web | 2027 | `src/data/veletrhy-2027.json` | — | 2028 | 2027-08, odhad | Akce předchozí sezóny se nezobrazují; soubor zůstává jako doklad, co web ukazoval, a jako podklad pro odhad termínu další sezóny. |
+| `cermat-prevod-testu` | web | 2024 | `` | — | 2025 | 2027-09, odhad | Testy předchozího roku zůstávají v TAU; jejich převodní tabulka zůstává v souboru prevod_testu_{rok}.json a může se nabízet dál. |
 
 #### Aktualizace a automatizace
 
@@ -654,7 +657,8 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ru�
 | `cermat-kolo2-agregaty` | příprava | HTTP HEAD. | scripts/build-druhe-kolo.py; v datové lince zpracovatel cermat-kolo2-agregaty stáhne k souboru 2. kola i výsledky 1. kola téhož roku a doplní ročník do stávajícího výstupu. | Schválit úlohu, zkontrolovat počty v pull requestu a přepnout období v registru. |
 | `msmt-harmonogram` | ruční | Ruční kontrola stránky MŠMT o přijímání na střední školy. Adresy souborů nesou ročník i měsíc vydání, takže se mění celé; HTTP HEAD na starou adresu nová data neodhalí. | Ruční opis do src/data/admissions-2027.json. Čte ho stránka přijímaček a hlavní stránka (termín zveřejnění kritérií). | Po vydání harmonogramu na další přijímací řízení opsat termíny do nového souboru, přepnout období a zkontrolovat věty na hlavní stránce. |
 | `skolni-novinky-rss` | plná | Podmíněný požadavek na feed (ETag, If-Modified-Since); stav zdroje je v tabulce skola_feed. | scripts/sklizec-novinek.py vyrobí dávku, scripts/skolni-novinky-zapis.mjs ji zapíše do databáze. | Žádný pro běžný provoz. Vadnou položku, zdroj nebo celou třídu vypne přepínač v tabulce skola_prepinac; změna pravidel klasifikace jde přes pull request. |
-| `veletrhy-skol` | ruční | Ruční kontrola webů pořadatelů plus nahlášení z formuláře /veletrhy/nahlasit. Jednotný celostátní kalendář veletrhů SŠ neexistuje. | Od 26. 9. 2026 návrh změny přes API (`POST /api/veletrhy/navrhy`) a schválení člověkem; zapisuje se do tabulky `veletrh_akce`, snímek src/data/veletrhy-2027.json se obnovuje exportem. Nahlášení z formuláře se navrhuje až po ověření termínu na stránce pořadatele. | Před sezónou projít weby pořadatelů, doplnit potvrzené termíny a rozepsat série na jednotlivá města. Průběžně vyřizovat nahlášení z formuláře. |
+| `veletrhy-skol` | ruční | Ruční kontrola webů pořadatelů plus nahlášení z formuláře /veletrhy/nahlasit. Jednotný celostátní kalendář veletrhů SŠ neexistuje. | Ruční zápis do src/data/veletrhy-2027.json. Nahlášení z formuláře se zapisuje až po ověření termínu na stránce pořadatele. | Před sezónou projít weby pořadatelů, doplnit potvrzené termíny a rozepsat série na jednotlivá města. Průběžně vyřizovat nahlášení z formuláře. |
+| `cermat-prevod-testu` | ruční | Ručně: nabídka testů v TAU se načítá až po souhlasu s cookies, strojově ji nečteme. | python3 scripts/build-prevod-testu.py | Po přepnutí cermat-uchazeci-kolo1 spustit build-prevod-testu.py; jednou ročně zkontrolovat, jestli TAU nepřidalo nový rok. |
 
 <!-- stav-datovych-sad:do -->
 

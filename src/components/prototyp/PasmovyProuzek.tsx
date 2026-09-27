@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { median, prevedBody, type PrevodTestu } from '@/lib/prevod-testu-vypocet';
 import type { PasmaPrijetiObor } from '@/lib/pasma-prijeti';
 
 // ============================================================================
@@ -34,8 +35,8 @@ function urciPolohu(body: number | null, lo: number, hi: number | undefined): Po
 /** Procento osy; body 0–100 se mapují přímo, ale škálu držíme na jednom místě. */
 const naOsu = (body: number) => Math.max(0, Math.min(100, (body / MAX_BODU) * 100));
 
-function Veta({ poloha, body, lo, hi, data }: {
-  poloha: Poloha; body: number | null; lo: number; hi?: number; data: PasmaPrijetiObor;
+function Veta({ poloha, body, lo, hi, data, rok }: {
+  poloha: Poloha; body: number | null; lo: number; hi?: number; data: PasmaPrijetiObor; rok: number;
 }) {
   const soutezilo = data.pasmo_nejistoty_soutezilo ?? 0;
   const prijato = data.pasmo_nejistoty_prijato ?? 0;
@@ -43,7 +44,7 @@ function Veta({ poloha, body, lo, hi, data }: {
   if (poloha === 'nezadano') {
     return (
       <p className="text-slate-600">
-        Zadej svoje body a uvidíš, kam bys mezi loňské uchazeče padl.
+        Zadej výsledek testu a uvidíš, kam bys mezi uchazeče roku {rok} padl.
       </p>
     );
   }
@@ -54,17 +55,17 @@ function Veta({ poloha, body, lo, hi, data }: {
     return (
       <p className="text-lg font-semibold text-green-800">
         {mezera
-          ? `Nad ${lo} bodů se loni dostali všichni; mezi ${hi} a ${lo} body nebyl nikdo.`
+          ? `Nad ${lo} bodů se v roce ${rok} dostali všichni; mezi ${hi} a ${lo} body nebyl nikdo.`
           : hi !== undefined
-            ? `Nad ${hi} bodů se loni dostali všichni.`
-            : `Nad ${lo} bodů se loni dostali všichni.`}
+            ? `Nad ${hi} bodů se v roce ${rok} dostali všichni.`
+            : `Nad ${lo} bodů se v roce ${rok} dostali všichni.`}
       </p>
     );
   }
   if (poloha === 'pod') {
     return (
       <p className="text-lg font-semibold text-slate-900">
-        Pod {lo} bodů se loni nedostal nikdo.{' '}
+        Pod {lo} bodů se v roce {rok} nedostal nikdo.{' '}
         {/* Konkrétní cíl místo verdiktu: rozdíl mezi „nemáš na to“ a „chybí ti
             12 bodů, zbývá pět měsíců“ je u čtrnáctiletého zásadní. */}
         <span className="text-amber-800">Chybí ti {body !== null ? Math.round((lo - body) * 10) / 10 : 0} bodů.</span>
@@ -73,7 +74,7 @@ function Veta({ poloha, body, lo, hi, data }: {
   }
   return (
     <p className="text-lg font-semibold text-amber-900">
-      Jsi v rozmezí, kde se loni {soutezilo > 0 ? `ze ${soutezilo} uchazečů dostalo ${prijato}` : 'rozhodovalo i něco jiného'}.
+      Jsi v rozmezí, kde se v roce {rok} {soutezilo > 0 ? `ze ${soutezilo} uchazečů dostalo ${prijato}` : 'rozhodovalo i něco jiného'}.
       <span className="block text-sm font-normal text-slate-600 mt-1">
         O zbytku rozhodla další kritéria školy.
       </span>
@@ -81,20 +82,56 @@ function Veta({ poloha, body, lo, hi, data }: {
   );
 }
 
-export function PasmovyProuzek({ obory }: { obory: UkazkovyObor[] }) {
-  const [vybrany, setVybrany] = useState(obory[0]?.id ?? '');
-  const [cj, setCj] = useState('');
-  const [ma, setMa] = useState('');
+/** Jeden zadaný test: který termín a body z obou předmětů. */
+interface ZadanyTest { test: string; cj: string; ma: string }
+
+const JINY = 'jiny';
+
+function cislo(t: string): number | null {
+  const n = Number(t.replace(',', '.'));
+  return t.trim() && !Number.isNaN(n) && n >= 0 && n <= 50 ? n : null;
+}
+
+export function PasmovyProuzek({ obory, rok, prevod: prevodTestu, vybranyObor }: {
+  obory: UkazkovyObor[];
+  /** Rok zobrazených pásem, z registru. */
+  rok: number;
+  /** Převodní tabulky testů TAU; bez nich jen přímé body. */
+  prevod: PrevodTestu | null;
+  vybranyObor?: string;
+}) {
+  const [vybrany, setVybrany] = useState(vybranyObor ?? obory[0]?.id ?? '');
+  const [testy, setTesty] = useState<ZadanyTest[]>([
+    { test: prevodTestu?.terminy[0]?.klic ?? JINY, cj: '', ma: '' },
+  ]);
   const [ukazRozdeleni, setUkazRozdeleni] = useState(true);
 
   const obor = obory.find(o => o.id === vybrany) ?? obory[0];
-  const body = useMemo(() => {
-    const c = Number(cj.replace(',', '.'));
-    const m = Number(ma.replace(',', '.'));
-    if (!cj.trim() || !ma.trim() || Number.isNaN(c) || Number.isNaN(m)) return null;
-    if (c < 0 || c > 50 || m < 0 || m > 50) return null;
-    return c + m;
-  }, [cj, ma]);
+  // Víceletá gymnázia píší jiné testy než čtyřleté, převodní tabulky pro ně neplatí.
+  const vicelete = obor ? /-K\/(61|81)$/.test(obor.id) : false;
+  const prevod = vicelete ? null : prevodTestu;
+
+  /** Každý vyplněný test převedený na body roku pásem; jiný test bez převodu. */
+  const vysledky = useMemo(() => testy.map((t) => {
+    const c = cislo(t.cj);
+    const m = cislo(t.ma);
+    if (c === null || m === null) return null;
+    const termin = prevod?.terminy.find(x => x.klic === t.test);
+    const soucet = c + m;
+    return {
+      soucet,
+      prevedeno: termin ? prevedBody(termin.body_cil, soucet) : soucet,
+      termin: termin ?? null,
+    };
+  }), [testy, prevod]);
+
+  const platne = vysledky.filter((v): v is NonNullable<typeof v> => v !== null);
+  const body = median(platne.map(v => v.prevedeno));
+  const jenJiny = platne.length > 0 && platne.every(v => v.termin === null);
+  const nespolehlivy = platne.some(v => v.termin && !v.termin.spolehlive);
+
+  const zmen = (i: number, zmena: Partial<ZadanyTest>) =>
+    setTesty(ts => ts.map((t, j) => (j === i ? { ...t, ...zmena } : t)));
 
   if (!obor) return <p>Žádná ukázková data.</p>;
   const d = obor.data;
@@ -122,24 +159,101 @@ export function PasmovyProuzek({ obory }: { obory: UkazkovyObor[] }) {
             ))}
           </select>
         </label>
-        <label className="block text-sm">
-          <span className="mb-1 block font-medium text-slate-700">Čeština</span>
-          <input
-            value={cj} onChange={e => setCj(e.target.value)} inputMode="decimal" placeholder="z 50"
-            className="w-24 rounded-lg border border-slate-300 px-3 py-2"
-          />
-        </label>
-        <label className="block text-sm">
-          <span className="mb-1 block font-medium text-slate-700">Matematika</span>
-          <input
-            value={ma} onChange={e => setMa(e.target.value)} inputMode="decimal" placeholder="z 50"
-            className="w-24 rounded-lg border border-slate-300 px-3 py-2"
-          />
-        </label>
         <label className="flex items-center gap-2 text-sm text-slate-700">
           <input type="checkbox" checked={ukazRozdeleni} onChange={e => setUkazRozdeleni(e.target.checked)} />
           Ukázat rozdělení
         </label>
+      </div>
+
+      <div className="space-y-3 rounded-xl border border-slate-200 p-4">
+        <p className="text-sm font-medium text-slate-700">
+          Tvoje výsledky z testů
+          {prevod && (
+            <span className="block font-normal text-slate-500">
+              Nejpřesnější je test {prevod.rok_testu} z aplikace{' '}
+              <a href="https://tau.cermat.cz/vyber.php?trida=9&predmet=cj" className="underline" rel="noopener noreferrer" target="_blank">CERMAT TAU</a>
+              {' '}(řádný termín): celý test, na čas (matematika 70 minut, čeština 60 minut), bez opravování, poprvé.
+              Víc testů dá přesnější obrázek.
+            </span>
+          )}
+        </p>
+        {testy.map((t, i) => {
+          const v = vysledky[i];
+          return (
+            <div key={i} className="flex flex-wrap items-end gap-3">
+              <label className="block text-sm">
+                <span className="mb-1 block text-slate-600">Test</span>
+                <select value={t.test} onChange={e => zmen(i, { test: e.target.value })} className="w-64 rounded-lg border border-slate-300 px-3 py-2">
+                  {prevod?.terminy.map(x => (
+                    <option key={x.klic} value={x.klic}>
+                      TAU {prevod.rok_testu}, {x.nazev}{x.spolehlive ? '' : ' (méně přesné)'}
+                    </option>
+                  ))}
+                  <option value={JINY}>Jiný test</option>
+                </select>
+              </label>
+              <label className="block text-sm">
+                <span className="mb-1 block text-slate-600">Čeština</span>
+                <input value={t.cj} onChange={e => zmen(i, { cj: e.target.value })} inputMode="decimal" placeholder="z 50" className="w-20 rounded-lg border border-slate-300 px-3 py-2" />
+              </label>
+              <label className="block text-sm">
+                <span className="mb-1 block text-slate-600">Matematika</span>
+                <input value={t.ma} onChange={e => zmen(i, { ma: e.target.value })} inputMode="decimal" placeholder="z 50" className="w-20 rounded-lg border border-slate-300 px-3 py-2" />
+              </label>
+              {v && (
+                <p className="pb-2 text-sm text-slate-700">
+                  {v.soucet} bodů{v.termin ? <> → <b>{v.prevedeno}</b> bodů roku {rok}</> : ' (bez převodu)'}
+                </p>
+              )}
+              {testy.length > 1 && (
+                <button type="button" onClick={() => setTesty(ts => ts.filter((_, j) => j !== i))} className="pb-2 text-sm text-slate-500 underline">
+                  odebrat
+                </button>
+              )}
+            </div>
+          );
+        })}
+        <button
+          type="button"
+          onClick={() => setTesty(ts => [...ts, { test: prevod?.terminy[1]?.klic ?? JINY, cj: '', ma: '' }])}
+          className="text-sm font-medium text-blue-700 underline"
+        >
+          + přidat další test
+        </button>
+        {platne.length > 1 && (
+          <p className="text-sm text-slate-600">
+            Na proužku je prostřední z {platne.length} výsledků ({body} bodů).
+            {' '}Výsledky se pohybují mezi {Math.min(...platne.map(v => v.prevedeno))} a {Math.max(...platne.map(v => v.prevedeno))} body.
+          </p>
+        )}
+        {vicelete && (
+          <p className="text-sm text-amber-800">
+            Víceleté gymnázium: jeho uchazeči píší jiné testy než čtyřleté obory, a ty zatím převádět neumíme.
+            Zadej body z testu pro víceletá gymnázia; porovnají se bez převodu.
+          </p>
+        )}
+        {jenJiny && (
+          <p className="text-sm text-amber-800">
+            Jiný test neumíme převést. Srovnání platí jen tehdy, pokud je výsledek ze stejně těžkého testu,
+            jako byla jednotná zkouška v roce {rok}.
+          </p>
+        )}
+        {!jenJiny && platne.some(v => v.termin === null) && (
+          <p className="text-sm text-amber-800">
+            Výsledky z jiného testu jsou započítané bez převodu a srovnání s nimi nemusí být přesné.
+          </p>
+        )}
+        {nespolehlivy && (
+          <p className="text-sm text-amber-800">
+            Náhradní termín psala malá skupina uchazečů, převod je u něj méně přesný.
+          </p>
+        )}
+        {platne.some(v => v.termin) && (
+          <p className="text-xs text-slate-500">
+            Převod: kolik uchazečů mělo v ostrém termínu testu horší výsledek, a kolik bodů měl uchazeč na stejném místě v roce {rok}.
+            Doma a bez stresu se obvykle píše o něco lépe, převedený výsledek proto spíš nadhodnocuje.
+          </p>
+        )}
       </div>
 
       <div>
@@ -218,12 +332,12 @@ export function PasmovyProuzek({ obory }: { obory: UkazkovyObor[] }) {
       </div>
 
       <div className="rounded-xl border border-slate-200 bg-white p-5">
-        <Veta poloha={poloha} body={body} lo={lo} hi={hi} data={d} />
+        <Veta poloha={poloha} body={body} lo={lo} hi={hi} data={d} rok={rok} />
       </div>
 
       {/* Výhrady patří na obrazovku, ne do dokumentace. */}
       <ul className="space-y-1 text-sm text-slate-500">
-        <li>Popisuje 1. kolo roku, ze kterého data pocházejí. Není to hranice ani předpověď.</li>
+        <li>Popisuje 1. kolo roku {rok}. Není to hranice ani předpověď.</li>
         <li>Hranice se mezi ročníky posouvá i proto, že se mění obtížnost samotné zkoušky.</li>
         {d.vice_zamereni && <li>Údaje platí za celý obor školy, zdroj zaměření nerozlišuje.</li>}
         {d.talentova_zkouska && <li>O přijetí rozhoduje i talentová zkouška, o které data nemáme.</li>}
