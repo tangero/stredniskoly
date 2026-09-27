@@ -31,6 +31,18 @@ export function odkazNaRozhodnuti(navrhId: string, secret: string, base = NOVINK
   return `${base}/admin/veletrhy/rozhodnuti?t=${encodeURIComponent(token)}`;
 }
 
+/**
+ * Odkaz do zprávy na Telegram: podepsaný jako v e-mailu, aby šel otevřít
+ * a schválit rovnou z telefonu bez přihlášení do /admin (rozhodnutí
+ * 27. 9. 2026). Chat s botem čte jen zadavatel; kdo zprávu vidí, může
+ * návrh schválit. Bez `VELETRHY_SECRET` odkaz do /admin, který potřebuje
+ * přihlášení.
+ */
+export function odkazDoTelegramu(navrhId: string, base = NOVINKY_BASE_URL): string {
+  const secret = tajemstviSchvaleni();
+  return secret ? odkazNaRozhodnuti(navrhId, secret, base) : `${base}/admin/veletrhy/rozhodnuti?id=${navrhId}`;
+}
+
 /** Id návrhu z tokenu, nebo null (podpis, expirace, chybějící tajemství). */
 export function navrhZTokenu(token: string | null | undefined): string | null {
   const secret = tajemstviSchvaleni();
