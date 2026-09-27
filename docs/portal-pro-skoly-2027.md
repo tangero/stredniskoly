@@ -1,6 +1,6 @@
 # Portál pro školy: autorizace a sběr dat
 
-Verze 1.8 · 19. 9. 2026 · Schváleno k zpracování; od verze 1.8 se údaje od škol publikují bez předchozí moderace (oddíl 4).
+Verze 1.9 · 24. 9. 2026 · Profil školy je v provozním režimu verze 1.8; zadávání kritérií po oborech je zatím prototyp bez veřejného zobrazení.
 
 Navazuje na [návrh rozvoje 2027, oddíl 6 a 7](navrh-rozvoje-2027.md), kde je pilot ověřování profilů školami schválen koncepčně, a uzavírá jeho první otevřenou otázku: jak poznáme, že editor smí editovat profil této školy. Podklady: [zdroje dat](zdroje-dat.md), [systém poznámek ke školám](school-notes-system.md), [datová linka](datova-linka.md).
 
@@ -85,7 +85,7 @@ Pole seřazená podle hodnoty pro uchazeče; u každého důvod, proč to škola
 | Pole | Proč to nemáme | Proč to škola ví |
 |---|---|---|
 | Kritéria PŘ pro 2027 v češtině rodiče: co se počítá a kolik bodů za co, a **zda se některý test počítá s vyšší váhou** (od 23. 9. 2026 se na to nápověda ptá výslovně — je to nejčastější kritérium, které data nevidí; slovník ukazatelů, *Rozhodl test*) | CERMAT zná jen výsledek; míra `rozhodl_test` pozná, **že** rozhodlo něco jiného, ne **co** | škola kritéria sama vyhlásila |
-| Odkaz na vyhlášená kritéria (PDF na webu školy) | neexistuje centrální registr kritérií | škola je povinna je zveřejnit |
+| Odkaz na vyhlášená kritéria (PDF na webu školy) | DiPSy nese PDF, ale zatím je neimportujeme ani z něj nemáme strukturované bodování ([pilot](prototyp-kriteria-prijeti.md)) | škola je povinna kritéria vyhlásit |
 | Dny otevřených dveří s rokem | InspIS: medián roku 2023 | škola je pořádá |
 | Přípravné kurzy a přijímačky nanečisto | v InspIS vyplněno u 0 % škol | škola je prodává |
 | Váha talentové/vlastní zkoušky u oborů, kde `rozhodl_test` klesá | z dat poznáme jen anomálii (medián 0,66 u skupiny 82) | škola zná poměr |
@@ -173,3 +173,4 @@ Podmínky, bez kterých to nejde:
 | 1.6 | Osobní účty (19. 9. 2026, [účty portálu](ucty-portalu-skol-2027.md)): kód nebo rejstříkový odkaz založí správce profilu, ten zve editory; každá změna vytváří nový záznam a starý zneplatní. Na stránce školy „Profil spravuje“ se jménem jen se souhlasem. Věta „Jména těch, kdo údaje zadali, nezveřejňujeme“ na `/pro-skoly` nahrazena. |
 | 1.7 | Review PR #111 (19. 9. 2026): GitHub issue návrhu nenese jméno, funkci ani kontaktní e-mail, ani v JSON payloadu (repozitář je veřejný); kontakt zůstává v neveřejné databázi účtů. Kódy se ukládají jako HMAC-SHA256 s pepřem `PORTAL_KOD_PEPPER`. Podrobnosti v [účtech portálu](ucty-portalu-skol-2027.md), oddíl 9.2. |
 | 1.8 | **Obrácené pořadí moderace (19. 9. 2026), oddíl 4.** Údaje od pověřených lidí školy se publikují bez předchozí moderace; pojistkou je zpětná oprava a oznámení do Telegramu. Obsah profilu se přestěhoval z těla GitHub issue do tabulky `portal_profil` (append-only, jedna platná hodnota na pole a školu, oprava i návrat jsou nový řádek). Stránka školy, předvyplnění formuláře i `/admin` čtou z databáze přes cache s tagem `portal-profil`; `public/portal_skol.json` je nově generovaný export (`npm run portal:export`) a záloha pro běh bez databáze. Do issue jde už jen nesrovnalost v datech katalogu, `scripts/portal-moderace.js` zrušen. InspIS nepředvyplňuje žádné pole (oddíl 3.4). Značka **Potvrdila škola** má novou definici a přibyla **Opravila redakce** ([slovník pojmů](slovnik-pojmu.md) 1.15). Přihlášený editor už nezadává kontaktní e-mail, bere se z účtu. |
+| 1.9 | Opraveno tvrzení, že neexistuje centrální zdroj kritérií: DiPSy má PDF po nabídkách, zatím bez importu do webu. Prototyp zadávání rozlišuje obor, rok a kolo, s možností jednoho pravidla pro všechna kola a předností výjimky pro konkrétní kolo. Podrobnosti a omezení jsou v [prototypu kritérií](prototyp-kriteria-prijeti.md). |

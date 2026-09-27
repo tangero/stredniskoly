@@ -133,6 +133,13 @@ export default async function PortalProfilPage({ searchParams }: Props) {
         Odeslané údaje se objeví na stránce školy se značkou „potvrdila škola“, obvykle do hodiny.
         Nečekají na schválení. Když v nich najdeme chybu, opravíme ji a dáme vám vědět.
       </p>
+      <div className="mb-6 rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm text-slate-800">
+        Bodování se může lišit podle oboru, roku i kola.{' '}
+        <Link href={`/pro-skoly/kriteria?skola=${ja.redizo}`} className="font-semibold text-blue-700 underline">
+          Zadat bodování po oborech
+        </Link>
+        . Nový formulář je zatím pilotní; údaje v něm se uchazečům nezobrazují.
+      </div>
       <PortalEditForm auth={{ ucet: ja.redizo }} profil={profil} pole={PORTAL_POLE} vychoziEmail={ja.email} />
 
       <div className="mt-12 border-t border-[#e3e9f1] pt-8">

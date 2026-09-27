@@ -10,6 +10,17 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '2.16.0',
+    date: '24. 9. 2026',
+    title: 'Veletrhy středních škol a poctivější odpověď, jestli rozhodl test',
+    changes: [
+      { type: 'new', text: 'Přehled veletrhů a přehlídek středních škol: 47 akcí od 25 pořadatelů ve všech čtrnácti krajích, termíny dohledané přímo na webech pořadatelů. Chybějící akci může nahlásit kdokoli formulářem — nahlášení se nezveřejní rovnou, nejdřív se ověří termín' },
+      { type: 'fix', text: 'Karta „o přijetí rozhodoval hlavně výsledek testu“ přiznává slepé místo: když škola jeden předmět váží (např. matematiku 1,5×), ukazatel to nevidí, ačkoli o pořadí uvnitř pásma může rozhodnout' },
+      { type: 'improve', text: 'Nápověda portálu pro školy se u kritérií přihlášek ptá výslovně, jestli některý test váží víc — vážení jednoho předmětu je nejčastější kritérium, které data nevidí (u 73 ze 354 měřitelných oborů)' },
+      { type: 'improve', text: 'Měření návštěvnosti doplňuje Clicky vedle Matoma; zásady ochrany osobních údajů ho uvádějí jako zpracovatele s přenosem dat do USA' },
+    ],
+  },
+  {
     version: '2.15.0',
     date: '22. 9. 2026',
     title: 'Stránky měst, novinky ze školních webů a odběr e-mailem',

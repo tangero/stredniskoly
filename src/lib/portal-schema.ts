@@ -2,7 +2,7 @@
 // Schéma účtů portálu pro školy (docs/ucty-portalu-skol-2027.md, oddíl 2.1).
 //
 // Stejný vzor jako src/lib/novinky-schema.ts: modul je jediný zdroj pravdy,
-// db/migrace/002-portal.sql se z něj generuje
+// db/migrace/002-portal.sql a 006-portal-kriteria.sql se z něj generují
 // (`node --experimental-strip-types scripts/portal-migrace.mjs --zapis-sql`)
 // a migraci jde spustit i z nasazené aplikace (/api/portal/migrace).
 //
@@ -18,6 +18,8 @@ export const TABULKY_PORTALU = [
   'portal_odkaz',
   'portal_udalost',
   'portal_profil',
+  'portal_kriteria',
+  'kriteria_podklad',
   'hlaseni_chyby',
 ] as const;
 
@@ -143,4 +145,57 @@ export const MIGRACE_PORTALU: string[] = [
 )`,
   `create index if not exists hlaseni_chyby_cas on hlaseni_chyby (vytvoreno desc)`,
   `create index if not exists hlaseni_chyby_email on hlaseni_chyby (lower(email))`,
+];
+
+/** Nová migrace; původní 002 se kvůli provozovaným účtům portálu nemění. */
+export const MIGRACE_KRITERII: string[] = [
+  `create table if not exists portal_kriteria (
+  id uuid primary key,
+  poradi bigserial not null,
+  redizo text not null,
+  obor_klic text not null,
+  obor_identita jsonb,
+  rok integer not null check (rok between 2024 and 2100),
+  kolo integer check (kolo between 1 and 3),
+  rezim text not null check (rezim in ('pouze_jpz', 'jine')),
+  popis text not null default '',
+  odkaz text not null default '',
+  podklad_rok integer not null,
+  role_id uuid references portal_role,
+  platne_od timestamptz not null default clock_timestamp(),
+  zneplatneno timestamptz,
+  nahrazuje_id uuid references portal_kriteria,
+  check (podklad_rok <= rok),
+  check (obor_identita is null or jsonb_typeof(obor_identita) = 'object')
+)`,
+  `alter table portal_kriteria add column if not exists obor_identita jsonb`,
+  `create unique index if not exists portal_kriteria_platna
+  on portal_kriteria (redizo, obor_klic, rok, coalesce(kolo, 0)) where zneplatneno is null`,
+  `create index if not exists portal_kriteria_skola
+  on portal_kriteria (redizo, rok, poradi desc)`,
+  `create table if not exists kriteria_podklad (
+  id uuid primary key,
+  redizo text not null,
+  obor_klic text not null,
+  rok integer not null check (rok between 2024 and 2100),
+  kolo integer check (kolo between 1 and 3),
+  zdroj text not null check (zdroj in ('dipsy_pdf', 'web_skoly', 'rss', 'hlaseni_chyby', 'jiny')),
+  zdroj_url text not null default '',
+  zdroj_id text not null check (length(trim(zdroj_id)) > 0),
+  pozorovano_at timestamptz not null,
+  zkontrolovano_at timestamptz,
+  publikovano_at timestamptz,
+  overeno_at timestamptz,
+  obsah_sha256 text,
+  rezim text check (rezim in ('pouze_jpz', 'jine')),
+  popis text not null default '',
+  stav text not null check (stav in ('kandidat', 'overeno', 'rozpor')),
+  vytvoreno_at timestamptz not null default clock_timestamp(),
+  check (obsah_sha256 is null or obsah_sha256 ~ '^[0-9a-f]{64}$'),
+  check (stav <> 'overeno' or (overeno_at is not null and rezim is not null)),
+  check (stav <> 'kandidat' or overeno_at is null)
+)`,
+  `alter table kriteria_podklad add column if not exists zkontrolovano_at timestamptz`,
+  `create index if not exists kriteria_podklad_obor
+  on kriteria_podklad (redizo, obor_klic, rok, kolo, pozorovano_at desc)`,
 ];

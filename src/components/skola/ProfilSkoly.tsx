@@ -3,7 +3,6 @@ import type { ReactNode } from 'react';
 import type { ProfilSkolyData, OborSkoly } from '@/lib/skola-profil-data';
 import {
   cislo, zOd, ZARAZENI_POPISEK, NADPIS_OBTIZNOSTI, PORADI_OBTIZNOSTI,
-  type ZarazeniObtiznosti,
 } from '@/lib/obor-profil';
 import { delkaSlovy, jakCastoNadStredem, nazevSObci, oboryVetou, pocetOboru, STAV_POPISEK } from '@/lib/skola-vyklad';
 import { formatDatumCz } from '@/lib/portal-skol';
@@ -223,7 +222,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
           </div>
           {posledniPotvrzeni ? (
             <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl bg-[#e6f5f1] px-4 py-2.5 text-[15px] text-[#0b7a65]">
-              <span><Puvod typ={znacka(...Object.keys(u))} /> <b>Údaje od školy</b> potvrzené {formatDatumCz(posledniPotvrzeni)}</span>
+              <span><Puvod typ={znacka(...Object.keys(u))} /> <b>Údaje z portálu školy</b> aktualizované {formatDatumCz(posledniPotvrzeni)}</span>
               <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
                 <OdkazNaOdber className="font-bold underline underline-offset-4" />
                 <Link href={EDITACE} className="font-bold underline underline-offset-4">Editujte: pro vedení školy</Link>
@@ -297,7 +296,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
         {(pole('kriteria_vlastnimi_slovy') || pole('odkaz_kriteria') || pole('dny_otevrenych_dveri') || pole('pripravne_kurzy')) ? (
           <div className="space-y-3 rounded-2xl border border-[#b5e0d4] bg-[#e6f5f1] p-5">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <h3 className="text-[18px] font-bold text-[#0b7a65]">Přijímací řízení podle školy</h3>
+              <h3 className="text-[18px] font-bold text-[#0b7a65]">Informace k přijímacímu řízení {portal?.verze_prijimani}</h3>
               <Puvod typ={znacka('kriteria_vlastnimi_slovy', 'odkaz_kriteria', 'dny_otevrenych_dveri', 'pripravne_kurzy')} />
             </div>
             <dl className="divide-y divide-[#b5e0d4]">
@@ -309,13 +308,13 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                     <dt className="text-[14px] font-semibold text-slate-600">{popis}</dt>
                     <dd className="text-[15px] text-slate-900">
                       {k === 'odkaz_kriteria' ? <a href={v.hodnota} rel="noopener noreferrer" className="font-semibold text-[#0b7a65] underline">Kritéria na webu školy</a> : <span className="whitespace-pre-line">{v.hodnota}</span>}
-                      <span className="block text-[12px] text-slate-500">potvrzeno školou {formatDatumCz(v.potvrzeno_dne)}</span>
+                      <span className="block text-[12px] text-slate-500">{v.zdroj === 'redakce' ? 'opraveno redakcí' : 'zadáno školou'} {formatDatumCz(v.potvrzeno_dne)}</span>
                     </dd>
                   </div>
                 );
               })}
             </dl>
-            <Zdroj>Údaje zadala škola v portálu pro školy a před zveřejněním prošly kontrolou. <Link href={EDITACE} className="font-semibold text-[#0b7a65] underline">Editujte: pro vedení školy</Link></Zdroj>
+            <Zdroj>Údaje pocházejí z portálu pro školy pro přijímání {portal?.verze_prijimani}; případné opravy redakce jsou označené u jednotlivých položek. Datum uvádí poslední zadání nebo opravu, nikoli datum zveřejnění kritérií školou. <Link href={EDITACE} className="font-semibold text-[#0b7a65] underline">Editujte: pro vedení školy</Link></Zdroj>
           </div>
         ) : (
           <div className="space-y-2 rounded-2xl border border-dashed border-slate-300 bg-white p-5">
@@ -544,10 +543,10 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
           <figure className="space-y-2 rounded-2xl border border-[#b5e0d4] bg-white p-5">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <h3 className="text-[17px] font-bold text-[#0b7a65]">Škola o sobě</h3>
-              <Puvod typ="text">text školy · {formatDatumCz(pole('popis_skoly')!.potvrzeno_dne)}</Puvod>
+              <Puvod typ={znacka('popis_skoly')}>{pole('popis_skoly')!.zdroj === 'redakce' ? 'text školy, oprava redakce' : 'text školy'} · {formatDatumCz(pole('popis_skoly')!.potvrzeno_dne)}</Puvod>
             </div>
             <blockquote className="max-w-[68ch] whitespace-pre-line text-[17px] leading-relaxed text-slate-800">{pole('popis_skoly')!.hodnota}</blockquote>
-            <figcaption className="text-[13px] text-slate-500">{skola.nazev} vlastními slovy; text školy neověřujeme.</figcaption>
+            <figcaption className="text-[13px] text-slate-500">{skola.nazev} vlastními slovy{pole('popis_skoly')!.zdroj === 'redakce' ? '; aktuální znění redakčně opraveno' : '; text školy neověřujeme'}.</figcaption>
           </figure>
         )}
         {inspekce && (inspekce.sedi.length > 0 || inspekce.opatrne.length > 0) && (

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { timingSafeEqual } from 'crypto';
 import { dotaz, jeDbNastavena, vTransakci } from '@/lib/novinky-db';
-import { MIGRACE_PORTALU, TABULKY_PORTALU } from '@/lib/portal-schema';
+import { MIGRACE_KRITERII, MIGRACE_PORTALU, TABULKY_PORTALU } from '@/lib/portal-schema';
 
 // ============================================================================
 // Spuštění migrace účtů portálu pro školy z nasazené aplikace
@@ -73,13 +73,13 @@ export async function POST(request: NextRequest) {
   try {
     const pred = await stavTabulek();
     await vTransakci(async (s) => {
-      for (const prikaz of MIGRACE_PORTALU) {
+      for (const prikaz of [...MIGRACE_PORTALU, ...MIGRACE_KRITERII]) {
         await s.dotaz(prikaz);
       }
     });
     const po = await stavTabulek();
     console.log(`🗄️ Migrace portálu: tabulek před ${pred.existuji.length}, po ${po.existuji.length}`);
-    return NextResponse.json({ prikazu: MIGRACE_PORTALU.length, pred, po });
+    return NextResponse.json({ prikazu: MIGRACE_PORTALU.length + MIGRACE_KRITERII.length, pred, po });
   } catch (chyba) {
     console.error('❌ Migrace portálu selhala:', chyba);
     return NextResponse.json({ error: 'Migrace selhala, podrobnosti v logu.' }, { status: 500 });

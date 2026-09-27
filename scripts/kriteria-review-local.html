@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Místní kontrola kritérií přijetí</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f4f6f5; color: #19342c; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    button, input, textarea { font: inherit; }
+    button { cursor: pointer; }
+    a { color: #096c57; }
+    .top { padding: 18px 24px; background: #123d33; color: #fff; display: flex; gap: 24px; justify-content: space-between; align-items: center; }
+    .top h1 { margin: 0; font-size: 21px; letter-spacing: -.03em; }
+    .top p { margin: 5px 0 0; color: #cbe3da; font-size: 13px; }
+    .top .count { font-size: 13px; white-space: nowrap; color: #cbe3da; }
+    .layout { display: grid; grid-template-columns: 260px minmax(350px, 1.1fr) minmax(380px, 1fr); height: calc(100vh - 82px); min-height: 590px; }
+    .sidebar, .detail { overflow-y: auto; background: #fff; }
+    .sidebar { border-right: 1px solid #d8e0db; }
+    .sidehead { padding: 16px; position: sticky; top: 0; background: #fff; border-bottom: 1px solid #e2e8e4; z-index: 1; }
+    .sidehead label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 7px; }
+    .sidehead input { width: 100%; padding: 10px 11px; border: 1px solid #bfcdc5; border-radius: 8px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+    .filters[hidden] { display: none; }
+    .filters button { padding: 5px 8px; border: 1px solid #d5dfd9; border-radius: 20px; background: #fff; font-size: 12px; }
+    .filters button.active { background: #dcefe7; border-color: #76b69f; color: #124a3b; font-weight: 700; }
+    .record { width: 100%; text-align: left; border: 0; border-bottom: 1px solid #edf1ee; background: #fff; padding: 12px 16px; color: inherit; }
+    .record:hover { background: #f5faf7; }
+    .record.active { background: #e6f3ed; box-shadow: inset 4px 0 #168263; }
+    .record strong { display: block; font-size: 13px; line-height: 1.3; }
+    .record small { display: block; margin-top: 5px; color: #5c7268; line-height: 1.35; }
+    .pill { display: inline-block; padding: 2px 7px; border-radius: 20px; font-size: 11px; font-weight: 700; background: #edf1ee; color: #52645b; }
+    .pill.draft { background: #dff0e8; color: #0c674f; }
+    .pill.approved { background: #d8eee3; color: #08563e; }
+    .pill.issue { background: #fff0d8; color: #835200; }
+    .pdfpane { display: flex; flex-direction: column; background: #dfe5e1; min-width: 0; border-right: 1px solid #c9d3cc; }
+    .pdfbar { background: #f9fbf9; padding: 12px 16px; border-bottom: 1px solid #ced9d2; display: flex; justify-content: space-between; gap: 12px; align-items: center; font-size: 13px; }
+    .pdfbar strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    iframe { border: 0; width: 100%; flex: 1; background: white; }
+    .pdfpreview { flex: 1; min-height: 0; overflow: auto; padding: 16px; text-align: center; }
+    .pdfpreview img { display: block; width: 100%; height: auto; max-width: 950px; margin: 0 auto; background: white; box-shadow: 0 6px 24px #26453533; }
+    .pdfnav { background: #f9fbf9; padding: 9px 14px; display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 13px; }
+    .pdfnav button { border: 1px solid #b8ccc0; background: white; border-radius: 6px; padding: 6px 10px; }
+    .pdfnav button:disabled { opacity: .4; cursor: default; }
+    .pdfmissing { margin: auto; max-width: 310px; text-align: center; padding: 24px; line-height: 1.5; }
+    .detail { padding: 20px 24px 36px; }
+    .detail h2 { margin: 0; font-size: 23px; letter-spacing: -.03em; }
+    .sub { margin: 6px 0 16px; color: #5e7066; font-size: 13px; }
+    .card { padding: 17px; border: 1px solid #dce5df; border-radius: 11px; margin-bottom: 14px; background: #fff; }
+    .card h3 { margin: 0 0 12px; font-size: 15px; }
+    .card p { margin: 6px 0; line-height: 1.48; font-size: 13px; }
+    .card dl { margin: 0; }
+    .card dl div { display: grid; grid-template-columns: 125px minmax(0, 1fr); gap: 10px; border-top: 1px solid #edf1ee; padding: 8px 0; font-size: 13px; }
+    .card dl div:first-child { border-top: 0; }
+    dt { color: #62766b; }
+    dd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .card ul { margin: 7px 0 0; padding-left: 20px; line-height: 1.5; font-size: 13px; }
+    .warning { background: #fff8e8; border-color: #e7c97d; color: #654715; }
+    .ok { background: #eaf6ee; border-color: #a8d4b8; }
+    .muted { color: #64776c; }
+    details summary { cursor: pointer; font-size: 14px; font-weight: 700; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; line-height: 1.5; max-height: 450px; overflow-y: auto; background: #f4f7f5; padding: 12px; border-radius: 7px; }
+    .review label { display: block; font-size: 12px; font-weight: 700; margin-top: 11px; }
+    .review input, .review textarea { display: block; width: 100%; margin-top: 5px; padding: 9px 10px; border: 1px solid #becfc4; border-radius: 7px; background: white; }
+    .review textarea { min-height: 82px; resize: vertical; }
+    .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .actions button { border: 1px solid #9eb4a7; border-radius: 7px; background: white; color: #214a39; padding: 9px 12px; font-weight: 700; font-size: 12px; }
+    .actions button.primary { border-color: #0e684d; background: #0e684d; color: white; }
+    .actions button:disabled { opacity: .45; cursor: not-allowed; }
+    .status { margin-top: 11px; min-height: 1.4em; font-size: 13px; font-weight: 600; }
+    .status.error { color: #9d382b; }
+    .status.success { color: #0c694f; }
+    .scoreline { display: flex; justify-content: space-between; gap: 12px; border-top: 1px solid #edf1ee; padding: 9px 0; font-size: 13px; }
+    .scoreline:first-of-type { border-top: 0; }
+    .scoreline b { white-space: nowrap; }
+    .note { font-size: 12px; color: #64776c; }
+    @media (max-width: 1100px) { .layout { grid-template-columns: 220px minmax(0, 1fr); height: auto; } .sidebar { grid-row: span 2; } .pdfpane { height: 70vh; } .detail { grid-column: 2; } }
+    @media (max-width: 680px) { .top { display: block; } .top .count { margin-top: 6px; } .layout { display: block; } .sidebar { max-height: 245px; } .sidehead { position: static; } .pdfpane { height: 65vh; } .detail { padding: 18px 16px; } }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div><h1>Kontrola kritérií přijetí</h1><p>Lokální pracovní nástroj · rok 2026, 1. kolo · nic se nepublikuje</p></div>
+    <div class="count" id="count">Načítám podklady…</div>
+  </header>
+  <main class="layout">
+    <aside class="sidebar" aria-label="Seznam nabídek">
+      <div class="sidehead">
+        <label for="search">Najít školu nebo obor</label>
+        <input id="search" type="search" placeholder="Název, REDIZO, KKOV…">
+        <div class="filters" aria-label="Filtr podkladů">
+          <button type="button" data-filter="all" class="active">Vše</button>
+          <button type="button" data-filter="draft">S přepisem</button>
+          <button type="button" data-filter="model">Modelový návrh</button>
+          <button type="button" data-filter="issue">K řešení</button>
+        </div>
+      </div>
+      <div id="records"></div>
+    </aside>
+    <section class="pdfpane" aria-label="Původní PDF">
+      <div class="pdfbar"><strong id="pdfLabel">Vyberte nabídku</strong><a id="pdfLink" href="#" target="_blank" rel="noopener" hidden>Otevřít PDF zvlášť</a></div>
+      <iframe id="pdf" title="Původní kritéria v PDF" hidden></iframe>
+      <div class="pdfpreview" id="pdfPreview" hidden><img id="pdfImage" alt="Strana původního PDF"></div>
+      <div class="pdfnav" id="pdfNav" hidden><button type="button" id="pdfPrev">Předchozí</button><span id="pdfPageLabel"></span><button type="button" id="pdfNext">Další</button></div>
+      <div class="pdfmissing" id="pdfMissing">Vyberte nabídku v seznamu.</div>
+    </section>
+    <section class="detail" aria-label="Přepis a ostatní data">
+      <h2 id="title">Vyberte nabídku</h2>
+      <p class="sub" id="subtitle"></p>
+      <div id="content"></div>
+    </section>
+  </main>
+  <script>
+    const state = { records: [], selected: null, detail: null, filter: 'all', serial: 0, pdfPage: 1 };
+    const $ = id => document.getElementById(id);
+    const label = value => value === null || value === undefined || value === '' ? 'neuvedeno' : String(value);
+    const fmt = value => Array.isArray(value) ? value.map(v => typeof v === 'string' ? v : JSON.stringify(v, null, 2)).join('\n') : typeof value === 'object' && value !== null ? JSON.stringify(value, null, 2) : label(value);
+    function node(tag, text, className) { const element = document.createElement(tag); if (text !== undefined) element.textContent = text; if (className) element.className = className; return element; }
+    function addRows(card, rows) {
+      const dl = node('dl');
+      for (const [name, value] of rows) {
+        const row = node('div'); row.append(node('dt', name), node('dd', fmt(value))); dl.append(row);
+      }
+      card.append(dl);
+    }
+    function card(title, rows, className = '') {
+      const section = node('section', undefined, `card ${className}`);
+      section.append(node('h3', title)); if (rows) addRows(section, rows); return section;
+    }
+    function addList(parent, items) {
+      if (!items?.length) { parent.append(node('p', 'Neuvedeno.', 'muted')); return; }
+      const ul = node('ul'); for (const item of items) ul.append(node('li', fmt(item))); parent.append(ul);
+    }
+    function renderList() {
+      const query = $('search').value.trim().toLocaleLowerCase('cs-CZ');
+      const container = $('records'); container.replaceChildren();
+      const filtered = state.records.filter(r => {
+        if (state.filter === 'draft' && !r.ma_navrh) return false;
+        if (state.filter === 'model' && !r.ma_modelovy_navrh) return false;
+        if (state.filter === 'issue' && !['oprava', 'nezjisteno', 'zastarale'].includes(r.rozhodnuti)) return false;
+        return `${r.nazev} ${r.source_id} ${r.redizo} ${r.kkov} ${r.zamereni}`.toLocaleLowerCase('cs-CZ').includes(query);
+      });
+      for (const record of filtered) {
+        const button = node('button', undefined, `record${record.source_id === state.selected ? ' active' : ''}`);
+        button.type = 'button';
+        button.append(node('strong', record.nazev));
+        button.append(node('small', `${record.kkov}${record.zamereni ? ' · ' + record.zamereni : ''}`));
+        const pill = node('span', record.automaticky_pilot ? 'Automatický návrh' : record.rozhodnuti === 'schvaleno' ? 'Schváleno lokálně' : record.rozhodnuti === 'oprava' ? 'K opravě' : record.rozhodnuti === 'nezjisteno' ? 'Nezjištěno' : record.rozhodnuti === 'zastarale' ? 'Znovu posoudit' : record.ma_navrh ? 'Pracovní přepis' : 'Pouze text PDF', `pill ${record.automaticky_pilot || record.ma_navrh ? 'draft' : record.rozhodnuti === 'schvaleno' ? 'approved' : record.rozhodnuti ? 'issue' : ''}`);
+        button.append(pill); button.addEventListener('click', () => select(record.source_id)); container.append(button);
+      }
+      if (!filtered.length) container.append(node('p', 'Žádná nabídka neodpovídá filtru.', 'sub'));
+      $('count').textContent = state.records[0]?.automaticky_pilot ? `${state.records.length} PDF · automatické návrhy` : `${state.records.length} PDF · ${state.records.filter(r => r.ma_navrh).length} pracovních přepisů`;
+    }
+    function showPdf(detail) {
+      const pdf = $('pdf'), missing = $('pdfMissing'), link = $('pdfLink');
+      pdf.hidden = true; pdf.src = 'about:blank'; link.hidden = true;
+      $('pdfPreview').hidden = true; $('pdfNav').hidden = true; $('pdfImage').removeAttribute('src');
+      if (!detail.pdf_ok) { missing.hidden = false; missing.textContent = 'Místní PDF chybí nebo nesouhlasí jeho SHA-256. Schválení je zablokované.'; return; }
+      const url = `/pdf/${detail.pilot.sha256}.pdf`;
+      missing.hidden = true;
+      if (detail.automaticky_pilot && detail.pdf_pages) {
+        state.pdfPage = 1;
+        $('pdfPreview').hidden = false; $('pdfNav').hidden = false;
+        showPdfPage();
+      } else { pdf.src = url; pdf.hidden = false; }
+      link.href = url; link.hidden = false;
+    }
+    function showPdfPage() {
+      const detail = state.detail;
+      if (!detail?.automaticky_pilot || !detail.pdf_pages) return;
+      $('pdfImage').src = `/pdf-page/${detail.pilot.sha256}/${state.pdfPage}.png`;
+      $('pdfImage').alt = `Strana ${state.pdfPage} z ${detail.pdf_pages} původního PDF`;
+      $('pdfPageLabel').textContent = `Strana ${state.pdfPage} z ${detail.pdf_pages}`;
+      $('pdfPrev').disabled = state.pdfPage <= 1;
+      $('pdfNext').disabled = state.pdfPage >= detail.pdf_pages;
+      $('pdfPreview').scrollTop = 0;
+    }
+    function showDraft(content, draft) {
+      if (!draft) { content.append(card('Strukturovaný přepis', [['Stav', 'Zatím nevznikl. Níže je jen strojově získaný text PDF.']], 'warning')); return; }
+      const score = draft.bodovani;
+      content.append(card('Pracovní přepis PDF', [
+        ['Stav', 'Návrh, dosud neschválený'], ['Závěr', score.rezim === 'pouze_jpz' ? 'Bodování prostým součtem JPZ' : 'Jiné bodování'],
+        ['JPZ', `ČJL nejvýše ${score.jpz.cjl_max} bodů, MAT nejvýše ${score.jpz.mat_max} bodů${score.jpz.vaha_pct == null ? '' : `; váha ${score.jpz.vaha_pct} %`}`],
+        ['Vzorec', score.vzorec],
+        ['Úplnost vzorce', score.uplnost], ['Maximum bodů', score.max_bodu_celkem], ['Strany dokladu', draft.doklad_strany?.join(', ')],
+      ]));
+      const parts = card('Další bodované složky v pracovním přepisu');
+      if (score.dalsi_slozky?.length) {
+        for (const part of score.dalsi_slozky) {
+          parts.append(node('h4', part.typ.replaceAll('_', ' ')));
+          parts.append(node('p', `${part.max_bodu == null ? 'Maximum neurčeno' : `Nejvýše ${part.max_bodu} bodů`}${part.vaha_pct == null ? '' : ` · váha ${part.vaha_pct} %`}${part.pravidlo ? ` · ${part.pravidlo}` : ''}`));
+        }
+      } else parts.append(node('p', 'Žádné další body.', 'muted'));
+      content.append(parts);
+      const conditions = card('Další podmínky v přepisu');
+      for (const [name, values] of [['Minima', draft.minima], ['Pořadí při rovnosti', draft.rovnost], ['Ostatní podmínky', draft.dalsi_podminky], ['Nejasnosti', draft.nejasnosti]]) {
+        conditions.append(node('h4', name)); addList(conditions, values);
+      }
+      content.append(conditions);
+    }
+    function showModel(content, record) {
+      if (!record) { content.append(card('Automatický návrh chybí', [['Stav', 'Pro tuto nabídku není platný návrh ke stejnému PDF.']], 'warning')); return; }
+      const d = record.navrh;
+      content.append(card('Automatický návrh bodování · 2026, 1. kolo', [
+        ['Závěr', d.rezim === 'pouze_jpz' ? 'Pořadí jen podle součtu JPZ' : d.rezim === 'jine' ? 'Škola upravuje bodování JPZ nebo přidává další body' : 'Nezjištěno'],
+        ['Jak vzniká pořadí', d.vzorec],
+        ['Váha JPZ', d.jpz_vaha_pct == null ? 'Není uvedena samostatná váha' : `${d.jpz_vaha_pct} %`],
+        ['Celkové maximum', d.max_bodu_celkem == null ? 'Nelze bezpečně určit' : `${d.max_bodu_celkem} bodů`],
+      ], 'warning'));
+      const parts = card('Další bodované složky');
+      if (d.dalsi_bodovane_slozky?.length) {
+        for (const part of d.dalsi_bodovane_slozky) {
+          const label = `${part.nazev}${part.max_bodu == null ? '' : ` · nejvýše ${part.max_bodu} bodů`}`;
+          parts.append(node('h4', label));
+          parts.append(node('p', part.pravidlo || 'Podrobnosti neuvedeny.'));
+          if (part.strany?.length) parts.append(node('p', `PDF: strana ${part.strany.join(', ')}`, 'note'));
+        }
+      } else parts.append(node('p', 'Podle návrhu žádné další body.', 'muted'));
+      content.append(parts);
+      const conditions = card('Hranice a další pravidla');
+      for (const [name, values] of [['Minima pro přijetí', d.minima], ['Při rovnosti bodů', d.rovnost], ['Další podmínky', d.dalsi_podminky]]) {
+        conditions.append(node('h4', name)); addList(conditions, values);
+      }
+      content.append(conditions);
+      if (d.nejasnosti?.length) {
+        const unclear = card('Co zatím nelze bezpečně tvrdit', null, 'warning'); addList(unclear, d.nejasnosti); content.append(unclear);
+      }
+      const meta = node('details', undefined, 'card');
+      meta.append(node('summary', 'Původ automatického návrhu'));
+      addRows(meta, [['Model', record.model], ['Verze zadání', record.verze_zadani],
+        ['Textový podklad', record.metoda_textu], ['Cena volání', `${record.cena_usd} USD`],
+        ['SHA-256 PDF', record.sha256]]);
+      content.append(meta);
+    }
+    function showJev(content, record, model) {
+      if (!record) { content.append(card('Kontrola Jevem chybí', [['Stav', 'Pro tento návrh není platná odpověď Jevu.']], 'warning')); return; }
+      const a = record.odpovedi;
+      const section = card('Druhá kontrola původního návrhu · Jev', null, 'warning');
+      section.append(node('p', 'Jev posuzuje text PDF a modelový návrh. Níže jsou jeho odpovědi, nikoli schválení. Hodnoty „ano“ nejsou změřenou přesností tohoto postupu.'));
+      const regime = a.rezim?.choice;
+      const regimeText = regime === 'pouze_jpz' ? 'Jen součet JPZ' : regime === 'jine' ? 'Jiné bodování' : 'Nelze určit';
+      const checks = [
+        ['Režim podle PDF', `${regimeText} · ${regime === model?.navrh?.rezim ? 'shoda s návrhem' : 'neshoduje se s návrhem'}`],
+        ['Opora vzorce v PDF', `${Math.round((a.vzorec?.noul ?? 0) * 100)} % odpověď „ano“`],
+        ['Opora uvedených minim', `${Math.round((a.minima?.noul ?? 0) * 100)} % odpověď „ano“`],
+        ['Vazba PDF na obor', a.obor?.choice === 'souhlasi' ? 'Podle Jevu souhlasí' : a.obor?.choice === 'nesouhlasi' ? 'Podle Jevu nesouhlasí' : 'Podle Jevu nejasná'],
+      ];
+      for (const [name, value] of checks) {
+        const line = node('div', undefined, 'scoreline'); line.append(node('span', name), node('b', value)); section.append(line);
+      }
+      const flags = [];
+      if (regime !== model?.navrh?.rezim) flags.push('Jev určil jiný režim než přepis.');
+      if ((a.vzorec?.noul ?? 0) < .8) flags.push('Vzorec nemá v této sondě dostatečnou oporu.');
+      if ((a.minima?.noul ?? 0) < .8) flags.push('Minima nemají v této sondě dostatečnou oporu.');
+      if (a.obor?.choice !== 'souhlasi') flags.push('Vazbu pravidel na konkrétní obor je nutné dořešit.');
+      if (flags.length) { section.append(node('h4', 'Automaticky označené otázky')); addList(section, flags); }
+      else section.append(node('p', 'Tyto čtyři otázky se shodly; nejde o úplnou kontrolu všech tvrzení.', 'note'));
+      section.append(node('p', 'Práh 80 % je pracovní filtr pro tento prototyp, dosud není kalibrován na nezávislém vzorku.', 'note'));
+      content.append(section);
+    }
+    function showArithmetic(content, detail) {
+      if (detail.upresneny_vyklad?.length) {
+        const interpretation = card('Upřesněný výklad po kontrole PDF', null, 'ok');
+        interpretation.append(node('p', 'Rok 2026, 1. kolo. Výroky označené „PDF“ vycházejí z původní přílohy; „Výklad“ a „Právní postup“ jsou odvozené závěry. Nejde o potvrzení pravidel pro rok 2027.', 'note'));
+        addList(interpretation, detail.upresneny_vyklad);
+        content.append(interpretation);
+      }
+      const check = detail.kontrola_maxim;
+      if (!check) return;
+      if (check.stav !== 'spocitano') {
+        content.append(card('Kontrola bodových maxim', [['Stav', check.duvod]], 'warning'));
+        return;
+      }
+      const arithmetic = card('Aritmetická kontrola původního návrhu', [
+        ['JPZ před přepočtem', `${check.jpz_pred_vahou} bodů`],
+        ['JPZ po přepočtu', `${check.jpz_po_vaze} bodů`],
+        ['Další složky', `${check.dalsi_max} bodů`],
+        ['Součet', `${check.jpz_po_vaze} + ${check.dalsi_max} = ${check.spocitane_maximum} bodů`],
+        ['Maximum v návrhu', check.uvedene_maximum == null ? 'neuvedeno' : `${check.uvedene_maximum} bodů`],
+        ['Podíl JPZ na maximu', check.podil_jpz_pct == null ? 'nelze určit' : `${check.podil_jpz_pct} %`],
+      ], check.maximum_souhlasi === false || check.rozpor_lepsi_predmet ? 'warning' : 'ok');
+      arithmetic.append(node('p', 'Kontrola předpokládá běžnou JPZ se dvěma předměty po 50 bodech a maxima převzatá z modelového návrhu. Sama nepotvrzuje správnost přepisu ani zvláštní postup pro uchazeče s prominutou češtinou.', 'note'));
+      const flags = [];
+      if (check.maximum_souhlasi === false) flags.push('Součet maxim nesouhlasí s celkovým maximem v návrhu.');
+      if (check.rozpor_lepsi_predmet) flags.push('Modelový vzorec vybírá jen lepší z ČJL nebo MAT; to odporuje maximu 100 bodů za JPZ a je nutné jej opravit.');
+      if (check.maxima_v_minimech) flags.push('Návrh patrně zaměňuje maxima za minimální hranice.');
+      if (check.desetinna_skore_mozna) flags.push('Přepočet JPZ může vytvořit desetinné body; pravidlo zaokrouhlení nelze odvodit jen z váhy.');
+      if (flags.length) { arithmetic.append(node('h4', 'Otázky k návrhu')); addList(arithmetic, flags); }
+      content.append(arithmetic);
+    }
+    function showStructuredModel(content, record, check, heading) {
+      if (!record) return;
+      const d = record.navrh;
+      const section = card(heading, [
+        ['JPZ přepočtena?', d.jpz_prepocet === 'ano' ? 'Ano' : d.jpz_prepocet === 'ne' ? 'Ne' : 'Nelze určit'],
+        ['JPZ před přepočtem', `${label(d.jpz_cjl_max)} ČJL + ${label(d.jpz_mat_max)} MAT`],
+        ['Výslovná váha JPZ', d.jpz_vaha_pct == null ? 'neuvedena' : `${d.jpz_vaha_pct} %`],
+        ['Maximum JPZ po přepočtu', d.jpz_max_po_prepoctu == null ? 'nezjištěno' : `${d.jpz_max_po_prepoctu} bodů`],
+        ['Maximum dopočtené ze složek', check?.odvozene_maximum == null ? 'nezjištěno' : `${check.odvozene_maximum} bodů`],
+        ['Maximum výslovně v PDF podle modelu', d.max_bodu_celkem == null ? 'neuvedeno' : `${d.max_bodu_celkem} bodů`],
+        ['Cena tohoto přepisu', record.cena_usd == null ? 'neuvedena' : `${Number(record.cena_usd).toFixed(5)} USD`],
+      ], check?.nalezy?.length ? 'warning' : 'ok');
+      section.append(node('p', 'Jde o nový automatický návrh, nikoli schválené kritérium. Dopočtené maximum není tvrzením školy. Nálezy níže brání automatickému převzetí přepisu.', 'note'));
+      for (const part of d.dalsi_bodovane_slozky || []) {
+        section.append(node('h4', part.nazev));
+        section.append(node('p', `${label(part.max_bodu_pred_prepocet)} bodů před přepočtem${part.vaha_pct == null ? ', bez výslovné váhy' : ` × ${part.vaha_pct} %`} → ${label(part.max_bodu_po_prepoctu)} bodů po přepočtu`));
+      }
+      if (d.minima?.length) { section.append(node('h4', 'Hranice úspěšnosti')); addList(section, d.minima); }
+      if (d.rovnost?.length) { section.append(node('h4', 'Při rovnosti')); addList(section, d.rovnost); }
+      if (d.nejasnosti?.length) { section.append(node('h4', 'Nejasnosti modelu')); addList(section, d.nejasnosti); }
+      const flagNames = {
+        citace_neni_na_strane: 'Doslovná citace není na uvedené straně textu PDF.',
+        neplatna_citace: 'Citace je příliš krátká nebo má neplatné číslo strany.',
+        neplatny_index_dokladu: 'Doklad odkazuje na neexistující bodovanou složku.',
+        prepocteni_jpz_odporuje_vaze: 'Odpověď o přepočtu JPZ odporuje uvedené váze.',
+        prepocteni_jpz_bez_vahy: 'Model tvrdí přepočet JPZ, ale neuvádí váhu.',
+        nesedi_prepocet_jpz: 'Surové maximum JPZ po vynásobení váhou nesouhlasí.',
+        nesedi_celkove_maximum: 'Součet maxim po přepočtu nesouhlasí s maximem v PDF.',
+        rezim_odporuje_slozkam: 'Režim „jen JPZ“ odporuje uvedeným složkám nebo váze.',
+        dvojite_prepoceni_ve_vzorci: 'Slovní vzorec patrně používá váhu JPZ dvakrát.',
+        vyber_jednoho_predmetu: 'Vzorec chybně vybírá jen jeden předmět JPZ.',
+        maximum_mezi_minimy: 'Mezi hranicemi úspěšnosti je zřejmě maximum.',
+      };
+      if (check?.nalezy?.length) {
+        section.append(node('h4', 'Zjištěné rozpory a chybějící doklady'));
+        addList(section, check.nalezy.map(flag => flag.startsWith('chybi_doklad:') ? `Chybí doslovný doklad pro ${flag.split(':').slice(1).join(' / ')}.` :
+          flag.startsWith('nesedi_prepocet_slozky:') ? `Nesedí přepočet další složky ${Number(flag.split(':')[1]) + 1}.` :
+          flag.startsWith('neurcene_maximum_slozky:') ? `Neurčeno maximum další složky ${Number(flag.split(':')[1]) + 1}.` : flagNames[flag] || flag));
+      }
+      else section.append(node('p', 'Mechanická kontrola nenašla rozpor. To samo neověřuje úplnost ani správnost pravidel.', 'note'));
+      const proofs = node('details'); proofs.append(node('summary', `Doslovné doklady z PDF (${d.doklady?.length || 0})`));
+      for (const proof of d.doklady || []) proofs.append(node('p', `${proof.pole}${proof.index_slozky == null ? '' : ` #${proof.index_slozky + 1}`} · strana ${proof.strana}: „${proof.citace}“`));
+      section.append(proofs);
+      content.append(section);
+    }
+    function showNewModels(content, detail) {
+      const models = [
+        ['DeepSeek', detail.novy_modelovy_navrh, detail.kontrola_noveho_navrhu],
+        ['Opus 5.5', detail.nezavisle_navrhy?.opus?.model, detail.nezavisle_navrhy?.opus?.kontrola],
+        ['GPT-6 Luna', detail.nezavisle_navrhy?.luna?.model, detail.nezavisle_navrhy?.luna?.kontrola],
+      ];
+      const comparison = card('Srovnání tří nezávislých přepisů');
+      comparison.append(node('p', 'Všechny tři modely četly stejný text PDF bez vzájemných odpovědí. Shoda není důkazem správnosti; nálezy označují i nepřesné citace.', 'note'));
+      for (const [name, record, check] of models) {
+        if (!record) continue;
+        const d = record.navrh;
+        const line = node('div', undefined, 'scoreline');
+        line.append(node('span', `${name}: JPZ ${label(d.jpz_max_po_prepoctu)}, celkem ${label(check?.odvozene_maximum)}`),
+          node('b', `${check?.nalezy?.length || 0} nálezů`));
+        comparison.append(line);
+      }
+      content.append(comparison);
+      showStructuredModel(content, detail.novy_modelovy_navrh, detail.kontrola_noveho_navrhu,
+        'DeepSeek · zadání v4, oddělené složky a váhy');
+      for (const [kind, title] of [['opus', 'Nezávislý přepis · Opus 5.5'], ['luna', 'Nezávislý přepis · GPT-6 Luna']]) {
+        const peer = detail.nezavisle_navrhy?.[kind];
+        if (peer) showStructuredModel(content, peer.model, peer.kontrola, title);
+      }
+    }
+    function showEvidence(content, detail) {
+      const excerpts = detail.vyskyty || {};
+      const section = card('Úryvky z původního PDF');
+      section.append(node('p', 'Úryvky našel kód podle výrazů v PDF. Ukazují, co stojí ve zdroji; nejsou automatickým důkazem správnosti celého návrhu.', 'note'));
+      const names = { jpz: 'JPZ', vahy: 'Váhy', dalsi_body: 'Další body', minima: 'Bodové hranice' };
+      let count = 0;
+      for (const kind of ['jpz', 'vahy', 'dalsi_body', 'minima']) {
+        const items = (excerpts[kind] || []).filter(item => kind !== 'vahy' ||
+          (/hodnocen|započít|váh|podíl/i.test(item.text) && !/časov|prodlouž|lhůt/i.test(item.text))).slice(0, 3);
+        if (!items.length) continue;
+        section.append(node('h4', names[kind]));
+        for (const item of items) {
+          const paragraph = node('p', `„${item.text}“`);
+          const link = node('a', ` · strana ${item.strana}`);
+          link.href = `/pdf/${detail.pilot.sha256}.pdf#page=${item.strana}`;
+          link.target = '_blank'; link.rel = 'noopener noreferrer';
+          paragraph.append(link); section.append(paragraph); count++;
+        }
+      }
+      if (!count) section.append(node('p', 'Úryvky zatím nejsou připravené.', 'muted'));
+      content.append(section);
+    }
+    function showOther(content, detail) {
+      const p = detail.pilot, c = detail.katalog;
+      if (detail.vyskyty && !detail.automaticky_pilot) {
+        const signals = card('Výskyty ve strojovém textu · ke kontrole v PDF');
+        const names = { jpz: 'JPZ', vahy: 'Váhy', dalsi_body: 'Další bodované složky', minima: 'Minima', rovnost: 'Rovnost', podminky: 'Další podmínky' };
+        for (const [kind, items] of Object.entries(detail.vyskyty)) {
+          signals.append(node('h4', names[kind] || kind));
+          addList(signals, items.map(item => `str. ${item.strana}: ${item.text}`));
+        }
+        signals.append(node('p', 'Jde o výskyty slov, nikoli o potvrzený závěr o bodování.', 'muted'));
+        content.append(signals);
+      }
+      content.append(card('Původ a kontrolní list', [
+        ['Karta DiPSy', p.zdroj_url], ['ID souboru', p.file_id], ['SHA-256 PDF', p.sha256],
+        ['Způsob extrakce', p.stav_stazeni === 'ocr_text' ? 'OCR – čísla ověřit proti obrazu' : p.stav_stazeni],
+        ['Získáno', p.ziskano_at], ['Naposledy zkontrolováno', p.zkontrolovano_at],
+        ['Publikováno podle zdroje', p.publikovano_at], ['Závěr v pilotním CSV', p.zaver],
+        ['Váhy JPZ v CSV', p.vahy_jpz], ['Další body v CSV', p.dalsi_body],
+        ['Minima v CSV', p.minima], ['Rovnost v CSV', p.rovnost], ['Poznámka v CSV', p.poznamka],
+      ]));
+      if (c) content.append(card('Další známá data o nabídce · katalog 2026', [
+        ['Škola / REDIZO', `${c.nazev} / ${c.redizo}`], ['Obor', `${c.obor} (${c.kkov})`],
+        ['Zaměření', c.zamereni], ['IZO', c.izo], ['Forma a délka', `${c.forma}, ${c.delka_studia} let`],
+        ['Kraj a obec', `${c.kraj}, ${c.obec}`], ['Kapacita', c.kapacita], ['Přihlášky', c.prihlasky],
+        ['Souhrn výsledků přijímání', detail.automaticky_pilot ? 'V této sondě se nepoužívá k určení pravidel bodování.' : c.admission_context],
+      ]));
+      const others = detail.dalsi_zdroje || {};
+      const otherCard = card('Další místní zdroje', [
+        ['Web školy z rejstříku', others.web_skoly],
+        ['Export portálu školy', others.portal_skoly ? 'Záznam pro školu existuje; níže jen pole ke kritériím.' : 'Pro tuto školu není v místním exportu záznam.'],
+        ['Portál: rok přijímání', others.portal_skoly?.verze_prijimani],
+        ['Portál: odkaz na kritéria', others.portal_skoly?.udaje?.odkaz_kriteria],
+        ['Portál: kritéria vlastními slovy', others.portal_skoly?.udaje?.kriteria_vlastnimi_slovy],
+      ]);
+      if (others.web_skoly && /^https?:\/\//.test(others.web_skoly)) {
+        const link = node('a', 'Otevřít web školy'); link.href = others.web_skoly; link.target = '_blank'; link.rel = 'noopener noreferrer'; otherCard.append(link);
+      }
+      content.append(otherCard);
+      const details = node('details', undefined, 'card');
+      details.append(node('summary', `Strojově extrahovaný text PDF${p.stav_stazeni === 'ocr_text' ? ' (OCR)' : ''}`));
+      details.append(node('pre', detail.text_pdf || 'Text není k dispozici.')); content.append(details);
+    }
+    function showReview(content, detail) {
+      const section = card('Místní posouzení'); section.classList.add('review');
+      section.append(node('p', 'Rozhodnutí se uloží jen do místního žurnálu. Nezmění pracovní JSON, databázi ani veřejný web.'));
+      const previous = detail.rozhodnuti;
+      if (previous) section.append(card('Poslední rozhodnutí', [
+        ['Verdikt', previous.verdikt], ['Čas', previous.rozhodnuto_at], ['Strany', previous.strany],
+        ['Zdůvodnění', previous.poznamka], ['Platnost', previous.neplatne_pro_tuto_verzi ? 'Podklad se změnil – znovu posoudit' : 'Odpovídá této verzi'],
+      ], previous.neplatne_pro_tuto_verzi ? 'warning' : 'ok'));
+      const pageLabel = node('label', 'Zkontrolované strany PDF');
+      const pages = node('input'); pages.type = 'text'; pages.maxLength = 100; pages.placeholder = 'např. 1–2'; pages.value = previous?.strany || detail.navrh?.doklad_strany?.join(', ') || ''; pageLabel.append(pages);
+      const noteLabel = node('label', 'Zdůvodnění / co opravit');
+      const note = node('textarea'); note.maxLength = 3000; note.placeholder = 'Uveďte, co v PDF potvrzuje závěr, nebo jaká část zůstává nejasná.'; note.value = previous?.poznamka || ''; noteLabel.append(note);
+      section.append(pageLabel, noteLabel);
+      if (detail.navrh?.nejasnosti?.length) section.append(node('p', 'Přepis obsahuje nejasnosti. Při schválení napište, jak jste je vyhodnotil(a).', 'muted'));
+      const actions = node('div', undefined, 'actions');
+      const status = node('div', undefined, 'status'); status.setAttribute('role', 'status');
+      const allowed = detail.pdf_ok && detail.identita_ok && detail.navrh_ok;
+      const save = async verdict => {
+        status.textContent = 'Ukládám…'; status.className = 'status';
+        try {
+          const response = await fetch('/api/decision', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({
+            source_id: detail.pilot.source_id, pdf_sha256: detail.pilot.sha256, draft_sha256: detail.navrh_sha256,
+            verdikt: verdict, strany: pages.value, poznamka: note.value,
+          }) });
+          const result = await response.json();
+          if (!response.ok) throw new Error(result.error || 'Zápis se nepodařil.');
+          status.textContent = 'Rozhodnutí je uložené v místním žurnálu.'; status.classList.add('success');
+          detail.rozhodnuti = result;
+          const listed = state.records.find(r => r.source_id === detail.pilot.source_id);
+          if (listed) listed.rozhodnuti = verdict;
+          renderList();
+        } catch (error) { status.textContent = error.message; status.classList.add('error'); }
+      };
+      for (const [name, verdict, primary] of [['Schválit přepis', 'schvaleno', true], ['Vrátit k opravě', 'oprava', false], ['Nelze určit', 'nezjisteno', false]]) {
+        const button = node('button', name, primary ? 'primary' : ''); button.type = 'button';
+        button.disabled = !allowed || (verdict === 'schvaleno' && !detail.navrh);
+        button.addEventListener('click', () => save(verdict)); actions.append(button);
+      }
+      section.append(actions, status); content.append(section);
+    }
+    async function select(sourceId) {
+      const serial = ++state.serial; state.selected = sourceId; history.replaceState(null, '', `#${sourceId}`); renderList();
+      $('content').replaceChildren(node('p', 'Načítám podklady…'));
+      try {
+        const response = await fetch(`/api/record/${sourceId}`); const detail = await response.json();
+        if (!response.ok) throw new Error(detail.error || 'Podklady nejdou načíst.');
+        if (serial !== state.serial) return;
+        state.detail = detail;
+        const p = detail.pilot;
+        $('title').textContent = p.nazev;
+        $('subtitle').textContent = `${p.kkov}${p.zamereni ? ' · ' + p.zamereni : ''} · REDIZO ${p.redizo} · 2026 / 1. kolo`;
+        $('pdfLabel').textContent = `Původní kritéria · ${p.nazev}`;
+        showPdf(detail);
+        const content = $('content'); content.replaceChildren();
+        if (!detail.identita_ok || !detail.navrh_ok || !detail.pdf_ok) content.append(card('Vazba podkladů vyžaduje kontrolu', [
+          ['PDF', detail.pdf_ok ? 'otisk souhlasí' : 'chybí nebo jiný otisk'],
+          ['Katalog', detail.identita_ok ? 'identita souhlasí' : 'identita nesouhlasí'],
+          ['Přepis', detail.navrh_ok ? 'vazba souhlasí' : 'vazba nesouhlasí'],
+        ], 'warning'));
+        if (detail.automaticky_pilot) {
+          showArithmetic(content, detail);
+          showNewModels(content, detail);
+          showJev(content, detail.jev_kontrola, detail.modelovy_navrh);
+          showEvidence(content, detail);
+          showModel(content, detail.modelovy_navrh);
+          const ref = node('details', undefined, 'card'); ref.append(node('summary', 'Dřívější pracovní přepis pro srovnání'));
+          content.append(ref); showDraft(ref, detail.navrh);
+        } else {
+          showDraft(content, detail.navrh); showModel(content, detail.modelovy_navrh);
+          showReview(content, detail);
+        }
+        showOther(content, detail);
+      } catch (error) { $('content').replaceChildren(card('Podklady se nepodařilo načíst', [['Chyba', error.message]], 'warning')); }
+    }
+    async function boot() {
+      try {
+        const response = await fetch('/api/records');
+        if (!response.ok) throw new Error('Seznam podkladů není dostupný.');
+        state.records = await response.json(); renderList();
+        if (state.records[0]?.automaticky_pilot) {
+          document.title = 'Pět příkladů · automatický přepis kritérií';
+          document.querySelector('.top h1').textContent = 'Pět příkladů kritérií přijetí';
+          document.querySelector('.top p').textContent = 'Původní PDF · automatický návrh · kontrola Jevem · nic se nepublikuje';
+          document.querySelector('.filters').hidden = true;
+        }
+        const fromHash = location.hash.slice(1);
+        const initial = state.records.find(r => r.source_id === fromHash) || state.records.find(r => r.ma_navrh) || state.records[0];
+        if (initial) select(initial.source_id);
+      } catch (error) { $('count').textContent = error.message; }
+    }
+    $('search').addEventListener('input', renderList);
+    $('pdfPrev').addEventListener('click', () => { if (state.pdfPage > 1) { state.pdfPage--; showPdfPage(); } });
+    $('pdfNext').addEventListener('click', () => { if (state.detail && state.pdfPage < state.detail.pdf_pages) { state.pdfPage++; showPdfPage(); } });
+    document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
+      state.filter = button.dataset.filter;
+      document.querySelectorAll('[data-filter]').forEach(item => item.classList.toggle('active', item === button));
+      renderList();
+    }));
+    boot();
+  </script>
+</body>
+</html>
