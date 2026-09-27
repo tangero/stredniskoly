@@ -361,11 +361,25 @@ export type VysledekVraceni =
   | { vysledek: 'nelze_vratit'; duvod: string }
   | { vysledek: 'nenalezen' };
 
-const klicVraceni = (id: string) => `vraceni:${id}`;
+/**
+ * Klíč vrácení nese i vlastní id, takže ho nemůže předem obsadit jiný
+ * záznam. Jedinečnost vrácení hlídá zámek a kontrola `vraceniNavrhu`.
+ */
+const klicVraceni = (id: string, noveId: string) => `vraceni:${id}:${noveId}`;
 
 /** Návrh, kterým byl daný návrh vrácen, pokud už byl. */
 export async function vraceniNavrhu(s: Spojeni, id: string): Promise<Navrh | null> {
-  return navrhPodleKlice(s, klicVraceni(id));
+  const r = await s.dotaz<Navrh>(
+    `select ${SLOUPCE_NAVRHU} from veletrh_navrh
+      where klic like $1 and autor = 'admin' and stav = 'provedeno' order by vytvoreno limit 1`,
+    [`vraceni:${id}:%`],
+  );
+  return r.rows[0] ?? null;
+}
+
+/** Klíče ve jmenném prostoru vrácení si API od Eduardy nesmí přivlastnit. */
+export function jeVyhrazenyKlic(klic: string): boolean {
+  return klic.toLowerCase().startsWith('vraceni:');
 }
 
 /**
@@ -384,7 +398,7 @@ export async function vratNavrh(s: Spojeni, id: string, kdo: string, duvod: stri
   const drivejsi = await vraceniNavrhu(s, id);
   if (drivejsi) return { vysledek: 'uz_vraceno', navrh: drivejsi };
   if (puvodni.stav !== 'provedeno') return { vysledek: 'nelze_vratit', duvod: 'Vrátit jde jen provedený návrh.' };
-  if (puvodni.klic.startsWith('vraceni:')) return { vysledek: 'nelze_vratit', duvod: 'Vrácení se nevrací; pošlete nový návrh.' };
+  if (puvodni.autor === 'admin' && puvodni.klic.startsWith('vraceni:')) return { vysledek: 'nelze_vratit', duvod: 'Vrácení se nevrací; pošlete nový návrh.' };
 
   const zaznamy = await s.dotaz<{ akce_id: string; pred: Veletrh | null; po: Veletrh | null }>(
     `select akce_id, pred, po from veletrh_audit where navrh_id = $1 and udalost = 'provedeno' order by id desc`,
@@ -417,7 +431,7 @@ export async function vratNavrh(s: Spojeni, id: string, kdo: string, duvod: stri
   await s.dotaz(
     `insert into veletrh_navrh (id, klic, autor, operace, stav, rozhodl, rozhodnuto, duvod)
      values ($1, $2, 'admin', $3::jsonb, 'provedeno', $4, now(), $5)`,
-    [noveId, klicVraceni(id), JSON.stringify([{ op: 'vratit', navrh: id }]), kdo, duvod],
+    [noveId, klicVraceni(id, noveId), JSON.stringify([{ op: 'vratit', navrh: id }]), kdo, duvod],
   );
   for (const [akceId, z] of podleAkce) {
     if (z.pred === null) {
@@ -432,6 +446,10 @@ export async function vratNavrh(s: Spojeni, id: string, kdo: string, duvod: stri
       `insert into veletrh_audit (kdo, udalost, navrh_id, akce_id, pred, po) values ($1, 'vraceno', $2, $3, $4::jsonb, $5::jsonb)`,
       [kdo, noveId, akceId, z.po ? JSON.stringify(z.po) : null, z.pred ? JSON.stringify(z.pred) : null],
     );
+  }
+  // Nahlášení, které vyřídil právě tento návrh, se vrací do fronty.
+  if (puvodni.nahlaseni_id != null) {
+    await s.dotaz(`update veletrh_nahlaseni set stav = 'nove' where id = $1 and stav = 'overeno'`, [puvodni.nahlaseni_id]);
   }
   return { vysledek: 'vraceno', navrh: (await navrh(s, noveId))!, akce: [...podleAkce.keys()] };
 }

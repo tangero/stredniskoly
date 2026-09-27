@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { dotaz, vTransakci } from '@/lib/novinky-db';
 import { overEdu, chyba } from '@/lib/veletrhy-api';
-import { navrhy, rozhodni, stavAkci, zalozNavrh, type StavNavrhu } from '@/lib/veletrhy-sklad';
+import { jeVyhrazenyKlic, navrhy, rozhodni, stavAkci, zalozNavrh, type StavNavrhu } from '@/lib/veletrhy-sklad';
 import { jeAutopublikaceZapnuta, jeKAutopublikaci, jeUrlPlatna, overNavrh } from '@/lib/veletrhy-validace';
 import { obnovVeletrhy } from '@/lib/veletrhy-zdroj';
 import { SEZONA } from '@/lib/veletrhy';
@@ -60,6 +60,7 @@ export async function POST(request: NextRequest) {
 
     const klic = (request.headers.get('idempotency-key') ?? '').trim();
     if (!klic || klic.length > 200) return chyba(400, 'Chybí hlavička Idempotency-Key (nejvýš 200 znaků).');
+    if (jeVyhrazenyKlic(klic)) return chyba(400, 'Klíč s předponou „vraceni:“ je vyhrazený.');
 
     const nahlaseniId = Number.isInteger(telo.nahlaseniId) ? (telo.nahlaseniId as number) : null;
     const v = await vTransakci((s) =>
@@ -87,8 +88,14 @@ export async function POST(request: NextRequest) {
     // Automatické zveřejnění (výchozí vypnuto): jen úprava odkazu nebo času
     // potvrzené akce bez varování. Člověk dostane oznámení s odkazem na vrácení.
     if (jeAutopublikaceZapnuta() && jeKAutopublikaci(v.diff, v.navrh.varovani)) {
-      const r = await vTransakci((s) => rozhodni(s, v.navrh.id, { schvalit: true, kdo: 'auto', duvod: 'automatické zveřejnění' }, dnes, SEZONA));
-      if (r.vysledek === 'provedeno') {
+      // Selhání automatiky nesmí nechat návrh bez oznámení: pokračuje se
+      // obvyklou cestou ke schválení člověkem.
+      const r = await vTransakci((s) => rozhodni(s, v.navrh.id, { schvalit: true, kdo: 'auto', duvod: 'automatické zveřejnění' }, dnes, SEZONA))
+        .catch((e) => {
+          console.error('❌ Veletrhy: automatické zveřejnění selhalo, jde ke schválení', e);
+          return null;
+        });
+      if (r?.vysledek === 'provedeno') {
         obnovVeletrhy();
         await posliKeSchvaleni(r.navrh, r.diff, [], true);
         await posliTelegram(`⚡ Veletrhy zveřejněno automaticky: ${r.diff.map((z) => `${z.op} ${z.id}`).join(', ')}`);

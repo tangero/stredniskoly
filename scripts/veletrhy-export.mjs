@@ -79,8 +79,10 @@ const staryRegistr = fs.readFileSync(REGISTR, 'utf-8');
 const registr = JSON.parse(staryRegistr);
 const sada = registr.sady['veletrhy-skol'];
 sada.zobrazeno.poznamka = nahrad(sada.zobrazeno.poznamka, /\d+ z \d+ záznamů čeká/, `${cekajici} z ${celkem} záznamů čeká`, 'registru');
-// Registr má odsazení o jednu mezeru (zapisuje ho scripts/stav-datovych-sad.py).
-const novyRegistr = JSON.stringify(registr, null, 1) + '\n';
+// Odsazení se přebírá ze souboru: registr zapisuje i scripts/stav-datovych-sad.py
+// a přeformátování by v diffu přebilo změnu počtů.
+const odsazeni = staryRegistr.match(/^\{\n( +)"/)?.[1].length ?? 2;
+const novyRegistr = JSON.stringify(registr, null, odsazeni) + '\n';
 
 const stareZdroje = fs.readFileSync(ZDROJE, 'utf-8');
 let noveZdroje = nahrad(stareZdroje, /Z \d+ záznamů jich je \d+; zbylých \d+/, `Z ${celkem} záznamů jich je ${celkem - cekajici}; zbylých ${cekajici}`, 'docs/zdroje-dat.md');

@@ -270,3 +270,11 @@ test('vrácení bez důvodu neprojde', async () => {
   const r = await formular({ id: provedeny.id, akce: 'vratit' }, { cookie: 'admin_token=admin-token', origin: BASE });
   assert.equal(new URL(r.headers.get('location')).searchParams.get('v'), 'chybi-duvod');
 });
+
+test('API odmítne klíč z vyhrazeného jmenného prostoru vrácení', async () => {
+  const r = await navrhy.POST(pozadavek('/api/veletrhy/navrhy', {
+    method: 'POST', hlavicky: { 'idempotency-key': 'vraceni:00000000-0000-0000-0000-000000000000' },
+    telo: { operace: [{ op: 'pridat', akce: { ...NOVA, id: 'vyhrazeny-2099' } }] },
+  }));
+  assert.equal(r.status, 400);
+});

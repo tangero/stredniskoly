@@ -17,7 +17,7 @@ import {
 } from '../src/lib/veletrhy-validace.ts';
 import {
   seed, zalozNavrh, rozhodni, stahniNavrh, akceSezony, detailAkce, stavAkci, navrh, MAX_CEKAJICICH,
-  vratNavrh, vraceniNavrhu,
+  vratNavrh, vraceniNavrhu, jeVyhrazenyKlic,
 } from '../src/lib/veletrhy-sklad.ts';
 import { schvalovatel, odkazNaRozhodnuti, diffTextem, textEmailu } from '../src/lib/veletrhy-schvaleni.ts';
 import { overToken } from '../src/lib/novinky-token.ts';
@@ -464,4 +464,49 @@ test('provedený návrh vyřídí nahlášení jako ověřené, zamítnutý jako
   const c = await tx((t) => zalozNavrh(t, { klic: 'n3', autor: 'eduarda', operace: pridat({ ...NOVA, id: 'treti-2026', nazev: 'Třetí' }), nahlaseniId: 999999 }, DNES));
   assert.equal(c.vysledek, 'neplatny');
   assert.ok(c.validace.chyby.some((x) => x.pole === 'nahlaseniId'));
+});
+
+test('automaticky ne: cizí doména, http, přihlašovací údaje, volný text v čase, víc úprav najednou', () => {
+  const ok = (zmeny) => { const v = upravaDiff(zmeny); return v.chyby.length === 0 && jeKAutopublikaci(v.diff, v.varovani); };
+  assert.equal(ok({ url: 'https://evil.example/didacta' }), false, 'jiná doména');
+  assert.equal(ok({ url: 'http://www.ohktrebic.cz/akce/didacta' }), false, 'http');
+  assert.equal(ok({ url: 'https://user:pw@www.ohktrebic.cz/akce' }), false, 'přihlašovací údaje');
+  assert.equal(ok({ url: 'https://www.ohktrebic.cz:8443/akce' }), false, 'port');
+  assert.equal(ok({ url: 'https://ohktrebic.cz/jina-stranka' }), true, 'bez www je týž web');
+  assert.equal(ok({ cas: '9:00, registrace na evil.example' }), false, 'volný text v čase');
+  assert.equal(ok({ cas: 'od 10:00' }), true);
+  assert.equal(ok({ cas: '9:00', zdrojOvereni: 'https://evil.example' }), false, 'odkaz ve zdroji');
+
+  const druha = { ...NOVA, id: 'druha-2026', nazev: 'Druhá' };
+  const stav = new Map([[NOVA.id, { data: NOVA, verze: 1, smazano: false }], [druha.id, { data: druha, verze: 1, smazano: false }]]);
+  const dve = overNavrh([
+    { op: 'upravit', id: NOVA.id, ocekavanaVerze: 1, zmeny: { cas: '9:00' } },
+    { op: 'upravit', id: druha.id, ocekavanaVerze: 1, zmeny: { cas: '9:00' } },
+  ], stav, DNES);
+  assert.equal(jeKAutopublikaci(dve.diff, dve.varovani), false, 'hromadná změna jde přes člověka');
+});
+
+test('klíč vraceni: je vyhrazený a cizí návrh s ním vrácení nezablokuje', async () => {
+  assert.equal(jeVyhrazenyKlic('vraceni:abc'), true);
+  assert.equal(jeVyhrazenyKlic('VRACENI:abc'), true);
+  const { s, tx } = await novaDb();
+  const cil = SNIMEK.akce.find((a) => a.terminPotvrzen && a.start >= DNES);
+  const a = await zaloz(tx, [{ op: 'upravit', id: cil.id, ocekavanaVerze: 1, zmeny: { cas: '7:00' } }], 'a');
+  await schval(tx, a.navrh.id);
+  // I kdyby se klíč do databáze dostal jinou cestou, za vrácení se nepovažuje.
+  await zaloz(tx, pridat(), `vraceni:${a.navrh.id}`);
+  assert.equal(await vraceniNavrhu(s, a.navrh.id), null);
+  assert.equal((await tx((t) => vratNavrh(t, a.navrh.id, 'x', 'omyl'))).vysledek, 'vraceno');
+});
+
+test('vrácení vrátí nahlášení, které návrh vyřídil, do fronty', async () => {
+  const { s, tx } = await novaDb({ seedovat: false });
+  const id = (await s.dotaz(
+    `insert into veletrh_nahlaseni (nazev, start_den, konec_den, adresa, mesto, kraj_kod, url, poradatel, email)
+     values ('x', '2026-10-16', '2026-10-16', 'a', 'Třebíč', 'CZ063', 'https://a.cz/x', 'p', 'o@example.cz') returning id`,
+  )).rows[0].id;
+  const a = await tx((t) => zalozNavrh(t, { klic: 'n', autor: 'eduarda', operace: pridat(), nahlaseniId: id }, DNES));
+  await schval(tx, a.navrh.id);
+  await tx((t) => vratNavrh(t, a.navrh.id, 'x', 'omyl'));
+  assert.equal((await s.dotaz('select stav from veletrh_nahlaseni where id = $1', [id])).rows[0].stav, 'nove');
 });

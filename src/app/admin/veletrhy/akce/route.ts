@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
 
   if (akce === 'vratit') {
     try {
-      const r = await vTransakci((s) => vratNavrh(s, navrhId, t ? KDO_ODKAZ : KDO_ADMIN, duvod!));
+      const r = await vTransakci((s) => vratNavrh(s, navrhId, jeAdmin ? KDO_ADMIN : KDO_ODKAZ, duvod!));
       if (r.vysledek === 'nenalezen') return zpet('nenalezen');
       if (r.vysledek === 'uz_vraceno') return zpet('uz-vraceno');
       if (r.vysledek === 'nelze_vratit') return zpet('nelze-vratit');
@@ -64,7 +64,7 @@ export async function POST(request: NextRequest) {
 
   try {
     const v = await vTransakci((s) =>
-      rozhodni(s, navrhId, { schvalit: akce === 'schvalit', kdo: t ? KDO_ODKAZ : KDO_ADMIN, duvod }, cesskyDen(), SEZONA),
+      rozhodni(s, navrhId, { schvalit: akce === 'schvalit', kdo: jeAdmin ? KDO_ADMIN : KDO_ODKAZ, duvod }, cesskyDen(), SEZONA),
     );
     switch (v.vysledek) {
       case 'nenalezen':

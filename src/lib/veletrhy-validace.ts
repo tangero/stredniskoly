@@ -395,8 +395,34 @@ const AUTO_DOPROVODNA = ['overeno', 'zdrojOvereni'] as const;
  * ověření) a validace nevrátila žádné varování. Nikdy: přidání, odebrání,
  * termín, datum slovy, potvrzení termínu, název, město, kraj.
  */
+/** Hostitel bez „www.“; porovnává se, jestli odkaz zůstal u téhož pořadatele. */
+function hostitel(u: URL): string {
+  return u.hostname.toLowerCase().replace(/^www\./, '');
+}
+
+/**
+ * Nový odkaz smí jít na web bez člověka, jen když zůstává u téhož webu
+ * pořadatele: stejný hostitel, https, bez přihlašovacích údajů a portu.
+ * Jinak by prompt injection v e-mailu, který Eduarda zpracovává, uměla
+ * přesměrovat potvrzené akce na cizí stránku.
+ */
+function jeBezpecnaZmenaUrl(pred: unknown, po: unknown): boolean {
+  if (typeof pred !== 'string' || typeof po !== 'string') return false;
+  try {
+    const a = new URL(pred);
+    const b = new URL(po);
+    return b.protocol === 'https:' && !b.username && !b.password && !b.port && hostitel(a) === hostitel(b);
+  } catch {
+    return false;
+  }
+}
+
+/** Čas bez volného textu: „9:00“, „9:00–16:00“, „od 9:00“. */
+const RE_CAS = /^(od |do )?\d{1,2}[:.]\d{2}(\s*[–-]\s*\d{1,2}[:.]\d{2})?$/;
+
 export function jeKAutopublikaci(diff: ZmenaAkce[], varovani: Chyba[]): boolean {
-  if (diff.length === 0 || varovani.length > 0) return false;
+  // Jedna úprava najednou: hromadná změna jde vždy přes člověka.
+  if (diff.length !== 1 || varovani.length > 0) return false;
   const povolena = new Set<string>([...AUTO_POLE, ...AUTO_DOPROVODNA]);
   return diff.every((z) => {
     if (z.op !== 'upravit' || !z.pred || !z.po) return false;
@@ -405,6 +431,9 @@ export function jeKAutopublikaci(diff: ZmenaAkce[], varovani: Chyba[]): boolean 
     const po = z.po as unknown as Record<string, unknown>;
     const zmenena = [...new Set([...Object.keys(pred), ...Object.keys(po)])]
       .filter((k) => JSON.stringify(pred[k]) !== JSON.stringify(po[k]));
+    if (zmenena.includes('url') && !jeBezpecnaZmenaUrl(pred.url, po.url)) return false;
+    if (zmenena.includes('cas') && !(typeof po.cas === 'string' && RE_CAS.test(po.cas))) return false;
+    if (zmenena.includes('zdrojOvereni') && typeof po.zdrojOvereni === 'string' && /https?:|www\./i.test(po.zdrojOvereni)) return false;
     return zmenena.length > 0
       && zmenena.every((k) => povolena.has(k))
       && zmenena.some((k) => (AUTO_POLE as readonly string[]).includes(k));

@@ -26,8 +26,6 @@ jobs:
   export:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
     steps:
       - uses: actions/checkout@v4
 
@@ -36,6 +34,8 @@ jobs:
           node-version: "22"
 
       - name: Bez databáze nemá běh smysl
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
           if [ -z "$DATABASE_URL" ]; then
             echo "DATABASE_URL není nastavený – export se nespouští."
@@ -44,8 +44,11 @@ jobs:
 
       - run: npm ci
 
+      # DATABASE_URL jen tomuto kroku: install skripty závislostí ho nevidí.
       - name: Export
         id: export
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
           node --experimental-strip-types scripts/veletrhy-export.mjs | tee /tmp/export.txt
           if git diff --quiet; then
@@ -76,8 +79,11 @@ jobs:
 
             Web na snímku nezávisí, schválené změny už na webu jsou. Sloučení jen obnoví zálohu.
 
+            PR vytvořený tímto během nespouští workflow Testy (omezení GITHUB_TOKEN); testy dat veletrhů proběhly v něm.
+
       - name: Zpráva do Telegramu
         if: always()
+        continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}

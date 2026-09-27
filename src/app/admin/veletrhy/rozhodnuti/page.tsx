@@ -59,7 +59,7 @@ export default async function RozhodnutiPage({ searchParams }: Props) {
   const lzeSchvalit = n.stav === 'ceka';
   const lzeZamitnout = lzeSchvalit || (n.stav === 'schvaleno' && n.chyba !== null);
   const vraceni = n.stav === 'provedeno' ? await vraceniNavrhu({ dotaz }, n.id) : null;
-  const lzeVratit = n.stav === 'provedeno' && !vraceni && !n.klic.startsWith('vraceni:');
+  const lzeVratit = n.stav === 'provedeno' && !vraceni && !(n.autor === 'admin' && n.klic.startsWith('vraceni:'));
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-10 space-y-6">
