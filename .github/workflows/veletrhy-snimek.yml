@@ -1,0 +1,96 @@
+name: Záloha veletrhů do JSON
+
+# Zdrojem pravdy o veletrzích je tabulka veletrh_akce (docs/veletrhy-api-2027.md).
+# Snímek src/data/veletrhy-2027.json je záloha pro build bez databáze a výpadek
+# Neonu a historie změn v gitu. Tenhle běh ho jednou týdně vyexportuje, dorovná
+# počty v registru a docs/zdroje-dat.md a při změně otevře PR ke sloučení.
+#
+# Web na snímku nezávisí: schválená změna je na webu hned, PR jen dorovná zálohu.
+# Do logu nejde nic z databáze kromě počtů; osobní údaje (zdroj_email, poznamka)
+# export nečte.
+
+on:
+  schedule:
+    - cron: "30 4 * * 1" # pondělí 04:30 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: veletrhy-snimek
+  cancel-in-progress: false
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Bez databáze nemá běh smysl
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          if [ -z "$DATABASE_URL" ]; then
+            echo "DATABASE_URL není nastavený – export se nespouští."
+            exit 1
+          fi
+
+      - run: npm ci
+
+      # DATABASE_URL jen tomuto kroku: install skripty závislostí ho nevidí.
+      - name: Export
+        id: export
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          node --experimental-strip-types scripts/veletrhy-export.mjs | tee /tmp/export.txt
+          if git diff --quiet; then
+            echo "zmena=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "zmena=true" >> "$GITHUB_OUTPUT"
+          fi
+          echo "vystup=$(tail -1 /tmp/export.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Testy dat veletrhů
+        if: steps.export.outputs.zmena == 'true'
+        run: npx --yes tsx --test tests/veletrhy.test.mjs
+
+      - name: Pull request
+        id: pr
+        if: steps.export.outputs.zmena == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore(veletrhy): záloha akcí z databáze do JSON"
+          branch: "auto/veletrhy-snimek"
+          delete-branch: true
+          title: "Veletrhy: týdenní záloha akcí z databáze"
+          body: |
+            Automatický export tabulky `veletrh_akce` do `src/data/veletrhy-2027.json`
+            (`scripts/veletrhy-export.mjs`), s dorovnanými počty v registru a `docs/zdroje-dat.md`.
+
+            ${{ steps.export.outputs.vystup }}
+
+            Web na snímku nezávisí, schválené změny už na webu jsou. Sloučení jen obnoví zálohu.
+
+            PR vytvořený tímto během nespouští workflow Testy (omezení GITHUB_TOKEN); testy dat veletrhů proběhly v něm.
+
+      - name: Zpráva do Telegramu
+        if: always()
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TEXT: >-
+            ${{ job.status != 'success' && '❌ Záloha veletrhů selhala, viz GitHub Actions.' ||
+            steps.export.outputs.zmena == 'true' && format('🗂 Záloha veletrhů: {0} PR {1}', steps.export.outputs.vystup, steps.pr.outputs.pull-request-url) ||
+            '🗂 Záloha veletrhů beze změny.' }}
+        run: |
+          cd scripts
+          python3 -c "import os; from linka import komunikace; komunikace.posli_telegram([os.environ['TEXT']])"

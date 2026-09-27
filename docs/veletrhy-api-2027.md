@@ -1,6 +1,6 @@
 # API pro návrhy změn veletrhů (Eduarda → schválení → web)
 
-Verze 1.0 · 26. 9. 2026 · fáze 1 a 2 implementovány, fáze 3 ne
+Verze 1.1 · 27. 9. 2026 · fáze 1, 2 a 3 implementovány (bez zakládání návrhu z formuláře)
 
 Návazné: [Veletrhy a přehlídky SŠ](veletrhy-skol-2027.md), [zdroje dat, oddíl veletrhů](zdroje-dat.md).
 
@@ -26,7 +26,13 @@ Implementováno 26. 9. 2026 (větev `feat/veletrhy-api`). Oddíly níže jsou p�
 - **Přijaté riziko:** když Neon vypadne hned po schválení (cache je po `revalidateTag` prázdná), stránky postavené v tu chvíli nesou snímek JSON až do své další revalidace (u stránky školy nejvýš 12 hodin). Snímek se obnovuje ručním exportem, proto ho po sérii schválení exportujte. Rate limit v paměti platí na instanci, ne globálně; tvrdý strop je 50 čekajících návrhů v databázi.
 - **Otázky z oddílu 13** rozhodnuty takto: migrace jde skriptem i endpointem (1); schvalování e-mailem + `/admin`, Telegram jen jako upozornění, odkaz 14 dní (4); export ručně (5); `checkedAt` se počítá jako max(`overeno`) zobrazitelných akcí (6); sezóna pro varování 1. 8.–31. 7. odvozená od dneška (7); ruční validátory bez zod (9). Otevřené zůstávají 2, 3, 5 (CI), 8, 10, 11.
 
-**Neimplementováno (fáze 3):** auto-publikace, tlačítko „vrátit“, napojení `nahlaseni_id` na stav fronty nahlášení, zakládání návrhu přímo z formuláře.
+**Fáze 3 (27. 9. 2026):**
+- **Automatické zveřejnění** podle oddílu 8, výchozí vypnuto (`VELETRHY_AUTOPUBLIKACE=zapnuto` ho zapne). Pravidlo je `jeKAutopublikaci()` ve validátoru: jen `upravit` potvrzené akce, mění se aspoň `url` nebo `cas` a jinak nejvýš `overeno` a `zdrojOvereni`, žádné varování. Oproti zadání přísněji (code review): jen **jedna** úprava v návrhu, nový odkaz musí zůstat na **stejném webu** (hostitel bez `www.`, https, bez portu a přihlašovacích údajů), `cas` jen jako čas nebo rozsah (`9:00`, `od 9:00`, `9:00–16:00`) a `zdrojOvereni` bez odkazu. Důvod: `url` a `cas` jdou na web a Eduarda zpracovává cizí e-maily. Když automatika selže, návrh jde obvyklou cestou ke schválení. Provede se jako schválení s `kdo = 'auto'` (audit `auto_publikace`) a schvalovatel dostane e-mail „zveřejněno automaticky“ s odkazem na vrácení.
+- **Vrácení** (`vratNavrh()`, tlačítko „Vrátit změnu“ na stránce rozhodnutí, povinný důvod). Vrácení je samo návrh (autor admin, klíč `vraceni:<id>:<vlastní id>`, stav provedeno; předponu `vraceni:` API od Eduardy odmítá), takže jde jen jednou a má vlastní audit `vraceno`. Vrací se podle `pred` v auditu: úprava zpět, přidaná akce se odebere, odebraná obnoví. Když se některá akce od provedení změnila, nevrací se nic, protože by se zahodila pozdější úprava. Oproti zadání neprochází vrácení validací návrhu: obnovit odebrané id validace záměrně nedovolí.
+- **Vazba na frontu nahlášení:** `nahlaseniId` v návrhu musí existovat. Provedený návrh nastaví nahlášení na `overeno`, zamítnutý na `zamitnuto`, ale jen dokud je `nove`. Vrácení provedeného návrhu nahlášení vrátí do `nove`.
+- **Záloha do JSON automaticky:** `.github/workflows/veletrhy-snimek.yml` každé pondělí (a ručně) vyexportuje databázi, pustí testy dat a při změně otevře PR `auto/veletrhy-snimek` a pošle zprávu na Telegram. Export dorovná i počty v registru a `docs/zdroje-dat.md` a posune `checkedAt` na nejnovější `overeno`.
+
+**Neimplementováno:** zakládání návrhu přímo z formuláře (`autor='formular'`). Nahlášení nemá datum slovy, zdroj ověření ani datum ověření, takže by každé z nich, včetně spamu, poslalo schvalovací e-mail s návrhem, který nejde schválit. Eduarda nahlášení převezme e-mailem a navrhne s `nahlaseniId`.
 
 **Nasazení (pořadí):** 1. ve Vercelu nastavit `VELETRHY_EDA_TOKEN` (≥ 32 B náhodně), `VELETRHY_SECRET`, případně `VELETRHY_SCHVALOVATEL`; 2. po deployi `curl -X POST -H "Authorization: Bearer $CRON_SECRET" "$BASE/api/veletrhy/migrace?seed=1"`; 3. token předat Eduardě. Do seedu web běží ze snímku, takže nasazení samo nic nerozbije.
 

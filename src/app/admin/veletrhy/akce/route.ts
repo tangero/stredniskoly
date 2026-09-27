@@ -3,7 +3,7 @@ import { overAdminToken } from '@/lib/admin';
 import { jeDbNastavena, vTransakci } from '@/lib/novinky-db';
 import { jeNasPuvod } from '@/lib/portal-relace';
 import { posliTelegram } from '@/lib/portal-oznameni';
-import { rozhodni } from '@/lib/veletrhy-sklad';
+import { rozhodni, vratNavrh } from '@/lib/veletrhy-sklad';
 import { navrhZTokenu } from '@/lib/veletrhy-schvaleni';
 import { obnovVeletrhy } from '@/lib/veletrhy-zdroj';
 import { SEZONA } from '@/lib/veletrhy';
@@ -44,12 +44,27 @@ export async function POST(request: NextRequest) {
   if (!jeDbNastavena()) return zpet('bez-db');
   const akce = pole('akce');
   const duvod = pole('duvod').slice(0, 1000) || null;
-  if (akce !== 'schvalit' && akce !== 'zamitnout') return zpet('neznama-akce');
-  if (akce === 'zamitnout' && !duvod) return zpet('chybi-duvod');
+  if (akce !== 'schvalit' && akce !== 'zamitnout' && akce !== 'vratit') return zpet('neznama-akce');
+  if ((akce === 'zamitnout' || akce === 'vratit') && !duvod) return zpet('chybi-duvod');
+
+  if (akce === 'vratit') {
+    try {
+      const r = await vTransakci((s) => vratNavrh(s, navrhId, jeAdmin ? KDO_ADMIN : KDO_ODKAZ, duvod!));
+      if (r.vysledek === 'nenalezen') return zpet('nenalezen');
+      if (r.vysledek === 'uz_vraceno') return zpet('uz-vraceno');
+      if (r.vysledek === 'nelze_vratit') return zpet('nelze-vratit');
+      obnovVeletrhy();
+      await posliTelegram(`↩️ Veletrhy: vráceno ${r.akce.join(', ')} – ${duvod}`);
+      return zpet('vraceno');
+    } catch (e) {
+      console.error('❌ Veletrhy: vrácení návrhu', e);
+      return zpet('selhalo');
+    }
+  }
 
   try {
     const v = await vTransakci((s) =>
-      rozhodni(s, navrhId, { schvalit: akce === 'schvalit', kdo: t ? KDO_ODKAZ : KDO_ADMIN, duvod }, cesskyDen(), SEZONA),
+      rozhodni(s, navrhId, { schvalit: akce === 'schvalit', kdo: jeAdmin ? KDO_ADMIN : KDO_ODKAZ, duvod }, cesskyDen(), SEZONA),
     );
     switch (v.vysledek) {
       case 'nenalezen':

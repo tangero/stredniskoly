@@ -232,3 +232,49 @@ test('zdrojUrl musí být platná http(s) adresa a tělo má strop', async () =>
   const velke = { operace: [{ op: 'pridat', akce: { ...NOVA, poznamkaTerminu: 'x'.repeat(70_000) } }] };
   assert.equal((await navrhy.POST(pozadavek('/api/veletrhy/navrhy?nanecisto=1', { method: 'POST', telo: velke }))).status, 413);
 });
+
+test('automatické zveřejnění: vypnuté čeká na člověka, zapnuté provede úpravu času hned a jde vrátit', async () => {
+  // Akce v sezóně s odkazem na podstránku: jinak by varování automatické zveřejnění správně zablokovalo.
+  const cil = (await (await akce.GET(pozadavek('/api/veletrhy/akce'))).json()).akce
+    .find((a) => a.start <= '2027-07-31' && new URL(a.url).pathname.length > 1 && (!a.datum || !/\d[:.]\d{2}/.test(a.datum)));
+  const poslat = (klic, cas, verze) => navrhy.POST(pozadavek('/api/veletrhy/navrhy', {
+    method: 'POST', hlavicky: { 'idempotency-key': klic },
+    telo: { operace: [{ op: 'upravit', id: cil.id, ocekavanaVerze: verze, zmeny: { cas } }] },
+  }));
+
+  const vypnuto = await (await poslat('auto-vypnuto', '9:00–12:00', cil.verze)).json();
+  assert.equal(vypnuto.stav, 'ceka');
+  await stahnout.POST(pozadavek(`/api/veletrhy/navrhy/${vypnuto.id}/stahnout`, { method: 'POST' }), params(vypnuto.id));
+
+  process.env.VELETRHY_AUTOPUBLIKACE = 'zapnuto';
+  try {
+    const r = await poslat('auto-zapnuto', '9:00–13:00', cil.verze);
+    assert.equal(r.status, 201);
+    const telo = await r.json();
+    assert.equal(telo.stav, 'provedeno');
+    assert.equal(telo.automaticky, true);
+    const detail = await (await detailAkce.GET(pozadavek(`/api/veletrhy/akce/${cil.id}`), params(cil.id))).json();
+    assert.equal(detail.akce.cas, '9:00–13:00');
+
+    const vraceni = await formular({ id: telo.id, akce: 'vratit', duvod: 'test' }, { cookie: 'admin_token=admin-token', origin: BASE });
+    assert.equal(new URL(vraceni.headers.get('location')).searchParams.get('v'), 'vraceno');
+    const poVraceni = await (await detailAkce.GET(pozadavek(`/api/veletrhy/akce/${cil.id}`), params(cil.id))).json();
+    assert.equal(poVraceni.akce.cas, cil.cas);
+  } finally {
+    delete process.env.VELETRHY_AUTOPUBLIKACE;
+  }
+});
+
+test('vrácení bez důvodu neprojde', async () => {
+  const provedeny = (await (await navrhy.GET(pozadavek('/api/veletrhy/navrhy?stav=provedeno'))).json()).navrhy[0];
+  const r = await formular({ id: provedeny.id, akce: 'vratit' }, { cookie: 'admin_token=admin-token', origin: BASE });
+  assert.equal(new URL(r.headers.get('location')).searchParams.get('v'), 'chybi-duvod');
+});
+
+test('API odmítne klíč z vyhrazeného jmenného prostoru vrácení', async () => {
+  const r = await navrhy.POST(pozadavek('/api/veletrhy/navrhy', {
+    method: 'POST', hlavicky: { 'idempotency-key': 'vraceni:00000000-0000-0000-0000-000000000000' },
+    telo: { operace: [{ op: 'pridat', akce: { ...NOVA, id: 'vyhrazeny-2099' } }] },
+  }));
+  assert.equal(r.status, 400);
+});

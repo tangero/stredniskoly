@@ -86,9 +86,11 @@ export function diffTextem(diff: ZmenaAkce[]): string[] {
   return radky;
 }
 
-export function textEmailu(n: Navrh, diff: ZmenaAkce[], varovani: Chyba[], odkaz: string): string {
+export function textEmailu(n: Navrh, diff: ZmenaAkce[], varovani: Chyba[], odkaz: string, automaticky = false): string {
   return [
-    `Nový návrh změny veletrhů od: ${radek(n.autor)}`,
+    automaticky
+      ? `Změna veletrhů od ${radek(n.autor)} ZVEŘEJNĚNA AUTOMATICKY (mění jen odkaz nebo čas potvrzené akce).`
+      : `Nový návrh změny veletrhů od: ${radek(n.autor)}`,
     '',
     ...diffTextem(diff),
     '',
@@ -98,13 +100,15 @@ export function textEmailu(n: Navrh, diff: ZmenaAkce[], varovani: Chyba[], odkaz
     n.poznamka ? `  Poznámka: ${radek(n.poznamka, 2000)}` : '',
     varovani.length ? `\nVarování validátoru:\n${varovani.map((v) => `  ! ${radek(v.pole)}: ${radek(v.zprava)}`).join('\n')}` : '\nVarování validátoru: žádná',
     '',
-    `Schválit nebo zamítnout (jediný platný odkaz, vede na www.prijimackynaskolu.cz/admin): ${odkaz}`,
+    automaticky
+      ? `Vrátit změnu (jediný platný odkaz, vede na www.prijimackynaskolu.cz/admin): ${odkaz}`
+      : `Schválit nebo zamítnout (jediný platný odkaz, vede na www.prijimackynaskolu.cz/admin): ${odkaz}`,
     'Odkaz platí 14 dní. Otevření stránky nic nemění, rozhoduje až tlačítko.',
   ].filter((r) => r !== '').join('\n');
 }
 
 /** Pošle schvalovací e-mail přes Resend. Best-effort: selhání vrací false. */
-export async function posliKeSchvaleni(n: Navrh, diff: ZmenaAkce[], varovani: Chyba[]): Promise<boolean> {
+export async function posliKeSchvaleni(n: Navrh, diff: ZmenaAkce[], varovani: Chyba[], automaticky = false): Promise<boolean> {
   const secret = tajemstviSchvaleni();
   const komu = schvalovatel();
   const klic = process.env.RESEND_API_KEY;
@@ -112,7 +116,7 @@ export async function posliKeSchvaleni(n: Navrh, diff: ZmenaAkce[], varovani: Ch
     console.error('❌ Veletrhy: schvalovací e-mail nejde poslat (chybí VELETRHY_SECRET nebo platný schvalovatel).');
     return false;
   }
-  const text = textEmailu(n, diff, varovani, odkazNaRozhodnuti(n.id, secret));
+  const text = textEmailu(n, diff, varovani, odkazNaRozhodnuti(n.id, secret), automaticky);
   if (!klic) {
     console.log(`[veletrhy] návrh ${n.id} čeká na schválení (Resend není nastaven).`);
     return false;
@@ -125,7 +129,7 @@ export async function posliKeSchvaleni(n: Navrh, diff: ZmenaAkce[], varovani: Ch
       body: JSON.stringify({
         from: 'Přijímačky na školu <noreply@prijimackynaskolu.cz>',
         to: komu,
-        subject: `Veletrhy: návrh ke schválení (${diff.map((z) => z.id).join(', ').slice(0, 120)})`,
+        subject: `Veletrhy: ${automaticky ? 'zveřejněno automaticky' : 'návrh ke schválení'} (${diff.map((z) => z.id).join(', ').slice(0, 120)})`,
         text,
       }),
     });
@@ -148,6 +152,9 @@ export const VYSLEDKY = {
   nenalezen: { ok: false, text: 'Návrh neexistuje.' },
   'bez-db': { ok: false, text: 'Databáze není nastavena.' },
   selhalo: { ok: false, text: 'Rozhodnutí selhalo, podrobnosti jsou v logu.' },
+  vraceno: { ok: true, text: 'Vráceno. Akce jsou ve stavu před návrhem, web se obnoví do pár minut.' },
+  'uz-vraceno': { ok: true, text: 'Návrh už byl vrácen, nic se nezměnilo.' },
+  'nelze-vratit': { ok: false, text: 'Návrh nejde vrátit: jde jen provedený návrh a jen dokud se jeho akce od té doby nezměnily. Pošlete nový návrh.' },
 } as const;
 
 export type KodVysledku = keyof typeof VYSLEDKY;

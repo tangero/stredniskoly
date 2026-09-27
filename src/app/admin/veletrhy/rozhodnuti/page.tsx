@@ -3,7 +3,7 @@ import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { overAdminToken, formatDatumCasCz } from '@/lib/admin';
 import { dotaz, jeDbNastavena } from '@/lib/novinky-db';
-import { diffNavrhu, navrh } from '@/lib/veletrhy-sklad';
+import { diffNavrhu, navrh, vraceniNavrhu } from '@/lib/veletrhy-sklad';
 import { diffTextem, navrhZTokenu, VYSLEDKY } from '@/lib/veletrhy-schvaleni';
 import { cesskyDen } from '@/lib/veletrhy-pocty';
 
@@ -58,6 +58,8 @@ export default async function RozhodnutiPage({ searchParams }: Props) {
   const v = await diffNavrhu({ dotaz }, n, cesskyDen());
   const lzeSchvalit = n.stav === 'ceka';
   const lzeZamitnout = lzeSchvalit || (n.stav === 'schvaleno' && n.chyba !== null);
+  const vraceni = n.stav === 'provedeno' ? await vraceniNavrhu({ dotaz }, n.id) : null;
+  const lzeVratit = n.stav === 'provedeno' && !vraceni && !(n.autor === 'admin' && n.klic.startsWith('vraceni:'));
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-10 space-y-6">
@@ -65,6 +67,8 @@ export default async function RozhodnutiPage({ searchParams }: Props) {
         <h1 className="text-2xl font-bold text-slate-900">Návrh změny veletrhů</h1>
         <p className="text-sm text-slate-500">
           od {n.autor} · {formatDatumCasCz(n.vytvoreno)} · <b>{POPIS_STAVU[n.stav] ?? n.stav}</b>
+          {n.rozhodl === 'auto' && ' · zveřejněno automaticky'}
+          {vraceni && ` · vráceno ${formatDatumCasCz(vraceni.rozhodnuto ?? vraceni.vytvoreno)}`}
         </p>
       </div>
 
@@ -102,6 +106,22 @@ export default async function RozhodnutiPage({ searchParams }: Props) {
         <p>E-mail / reference: {n.zdroj_email ?? '–'}</p>
         {n.poznamka && <p>Poznámka: {n.poznamka}</p>}
       </section>
+
+      {lzeVratit && (
+        <form method="post" action="/admin/veletrhy/akce" className="space-y-3 rounded-lg border border-slate-200 p-4">
+          {t ? <input type="hidden" name="t" value={t} /> : <input type="hidden" name="id" value={n.id} />}
+          <p className="text-sm text-slate-700">
+            Vrácení nastaví akce do stavu před tímto návrhem. Jde jen tehdy, když se od té doby nezměnily.
+          </p>
+          <label className="block text-sm">
+            Důvod (povinný)
+            <input name="duvod" required className="mt-1 block w-full rounded border border-slate-300 px-2 py-1" />
+          </label>
+          <button name="akce" value="vratit" className="rounded-lg bg-amber-600 px-4 py-2 font-medium text-white hover:bg-amber-700">
+            Vrátit změnu
+          </button>
+        </form>
+      )}
 
       {lzeZamitnout && (
         <form method="post" action="/admin/veletrhy/akce" className="space-y-3 rounded-lg border border-slate-200 p-4">

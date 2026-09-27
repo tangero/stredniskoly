@@ -46,10 +46,10 @@
       "end": "2026-10-01",
       "datum": "1. října 2026",
       "cas": "9:00–17:00",
+      "terminPotvrzen": true,
       "url": "https://www.ohkkm.cz/akce/veletrh-prace-a-vzdelavani-kromeriz-2025-1",
       "zdrojOvereni": "ohkkm.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "burza-prace-jesenik-2026",
@@ -62,10 +62,10 @@
       "end": "2026-10-06",
       "datum": "6. října 2026",
       "cas": "8:00–16:00",
+      "terminPotvrzen": true,
       "url": "https://burzapav.cz/",
       "zdrojOvereni": "burzapav.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "burza-prachatice-2026",
@@ -138,10 +138,10 @@
       "end": "2026-10-08",
       "datum": "8. října 2026",
       "cas": "9:00–16:00",
+      "terminPotvrzen": true,
       "url": "https://burzapav.cz/",
       "zdrojOvereni": "burzapav.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "comenius-rumburk-2026",
@@ -154,10 +154,10 @@
       "end": "2026-10-08",
       "datum": "8. října 2026",
       "cas": "9:00–17:00",
+      "terminPotvrzen": true,
       "url": "https://www.comenius.fun/2026/",
       "zdrojOvereni": "comenius.fun",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "kam-po-zs-sokolov-2026",
@@ -169,11 +169,11 @@
       "start": "2026-10-08",
       "end": "2026-10-08",
       "datum": "8. října 2026",
+      "cas": "8:00–15:00",
       "terminPotvrzen": true,
       "url": "https://spsostrov.cz/prijdte-se-podivat",
       "zdrojOvereni": "spsostrov.cz",
-      "overeno": "2026-09-22",
-      "cas": "8:00–15:00"
+      "overeno": "2026-09-22"
     },
     {
       "id": "trh-vzdelavani-frydek-mistek-2026",
@@ -186,10 +186,10 @@
       "end": "2026-10-08",
       "datum": "8. října 2026",
       "cas": "10:00–16:00",
+      "terminPotvrzen": true,
       "url": "https://www.halapolarka.cz/",
       "zdrojOvereni": "halapolarka.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "vybiram-stredni-jicin-2026",
@@ -216,10 +216,10 @@
       "start": "2026-10-12",
       "end": "2026-10-12",
       "datum": "12. října 2026",
+      "terminPotvrzen": true,
       "url": "https://dkpoldikladno.cz/aktualni-akce",
       "zdrojOvereni": "dkpoldikladno.cz (místo konání); pořadatele upřesnil DK Poldi e-mailem 24. 9. 2026",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "up-kolin-2026",
@@ -231,11 +231,11 @@
       "start": "2026-10-12",
       "end": "2026-10-13",
       "datum": "12.–13. října 2026",
+      "cas": "od 10:00",
       "terminPotvrzen": true,
       "url": "https://www.msd-kolin.cz/akce-setkani-skol-2026-10-12",
       "zdrojOvereni": "msd-kolin.cz",
-      "overeno": "2026-09-24",
-      "cas": "od 10:00"
+      "overeno": "2026-09-24"
     },
     {
       "id": "burza-kaplice-2026",
@@ -263,10 +263,10 @@
       "end": "2026-10-13",
       "datum": "13. října 2026",
       "cas": "9:00–16:30",
+      "terminPotvrzen": true,
       "url": "https://burzapav.cz/",
       "zdrojOvereni": "burzapav.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "burza-skol-beroun-2026",
@@ -278,12 +278,12 @@
       "start": "2026-10-14",
       "end": "2026-10-14",
       "datum": "14. října 2026",
+      "terminPotvrzen": true,
       "zdrojJenAgregator": true,
+      "poznamkaTerminu": "Termín jsme převzali z agregátoru akcí. Web pořadatele ho zatím neuvádí, proto jsme ho u něj nemohli ověřit.",
       "url": "https://www.smartee.cz/veletrhy-strednich-a-vysokych-skol-brno-2022/tpost/artl00e411-stedocesk-kraj-z-listopad-2026",
       "zdrojOvereni": "smartee.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true,
-      "poznamkaTerminu": "Termín jsme převzali z agregátoru akcí. Web pořadatele ho zatím neuvádí, proto jsme ho u něj nemohli ověřit."
+      "overeno": "2026-09-24"
     },
     {
       "id": "burza-tabor-2026",
@@ -296,10 +296,10 @@
       "end": "2026-10-14",
       "datum": "14. října 2026",
       "cas": "8:00–16:00",
+      "terminPotvrzen": true,
       "url": "https://www.burzyskol.cz/planovane-akce/burza-skol-v-tabore-2026",
       "zdrojOvereni": "burzyskol.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "gemma-novy-jicin-2026",
@@ -312,10 +312,10 @@
       "end": "2026-10-15",
       "datum": "14.–15. října 2026",
       "cas": "14. 10. 12:00–17:00, 15. 10. 9:00–16:00",
+      "terminPotvrzen": true,
       "url": "https://www.kvic.cz/gemma/",
       "zdrojOvereni": "kvic.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "ohk-opava-2026",
@@ -327,11 +327,11 @@
       "start": "2026-10-14",
       "end": "2026-10-15",
       "datum": "14.–15. října 2026",
+      "cas": "14. 10. 9:00–18:00, 15. 10. 9:00–17:00",
       "terminPotvrzen": true,
       "url": "https://www.veletrhpovolani.cz/",
       "zdrojOvereni": "veletrhpovolani.cz",
-      "overeno": "2026-09-24",
-      "cas": "14. 10. 9:00–18:00, 15. 10. 9:00–17:00"
+      "overeno": "2026-09-24"
     },
     {
       "id": "prehlidka-ceska-trebova-2026",
@@ -344,10 +344,10 @@
       "end": "2026-10-14",
       "datum": "14. října 2026",
       "cas": "8:30–18:00",
+      "terminPotvrzen": false,
       "url": "https://www.lanskrounsko.cz/cz/pozvanky/11836-14-rijen-prehlidka-strednich-skol-a-zamestnavatelu-v-ceske-trebove",
       "zdrojOvereni": "lanskrounsko.cz",
       "overeno": "2026-09-24",
-      "terminPotvrzen": false,
       "cekaNa": "Termín 14. 10. 2026 zatím jen v textu pozvánky Úřadu práce na regionálním portálu lanskrounsko.cz a v plánu roku SZŠ Svitavy; chybí stránka pořadatele."
     },
     {
@@ -376,10 +376,10 @@
       "end": "2026-10-14",
       "datum": "14. října 2026",
       "cas": "9:00–15:00",
+      "terminPotvrzen": false,
       "url": "https://kutnohorskelisty.cz/oznameni/kam-na-stredni-skolu-v-kutne-hore-se-uskutecni-veletrh-ucebnich-a-studijnich-oboru-14-rijna",
       "zdrojOvereni": "kutnohorskelisty.cz",
       "overeno": "2026-09-24",
-      "terminPotvrzen": false,
       "cekaNa": "Termín 14. 10. 2026 zatím jen ve zpravodajství (kutnohorskelisty.cz, 23. 9. 2026) a na webu vystavující SPŠ Čáslav; Úřad práce ho nezveřejnil."
     },
     {
@@ -393,10 +393,10 @@
       "end": "2026-10-15",
       "datum": "15. října 2026",
       "cas": "8:30–16:00",
+      "terminPotvrzen": true,
       "url": "https://www.burzyskol.cz/planovane-akce/burza-skol-v-jindrichove-hradci-2026",
       "zdrojOvereni": "burzyskol.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "burza-prace-prostejov-2026",
@@ -409,10 +409,10 @@
       "end": "2026-10-15",
       "datum": "15. října 2026",
       "cas": "9:00–16:00",
+      "terminPotvrzen": true,
       "url": "https://burzapav.cz/",
       "zdrojOvereni": "burzapav.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "didacta-trebic-2026",
@@ -425,10 +425,10 @@
       "end": "2026-10-15",
       "datum": "15. října 2026",
       "cas": "od 9:00",
+      "terminPotvrzen": true,
       "url": "https://www.ohktrebic.cz/akce-a-seminare/veletrh-vzdelavani-didacta-2026/",
       "zdrojOvereni": "ohktrebic.cz; pořadatel akci nahlásil formulářem 25. 9. 2026",
-      "overeno": "2026-09-25",
-      "terminPotvrzen": true
+      "overeno": "2026-09-25"
     },
     {
       "id": "educa-expo-liberec-2026",
@@ -455,11 +455,11 @@
       "start": "2026-10-15",
       "end": "2026-10-15",
       "datum": "15. října 2026",
+      "cas": "8:00–16:00",
       "terminPotvrzen": true,
       "url": "https://spsostrov.cz/prijdte-se-podivat",
       "zdrojOvereni": "spsostrov.cz",
-      "overeno": "2026-09-22",
-      "cas": "8:00–16:00"
+      "overeno": "2026-09-22"
     },
     {
       "id": "prehlidka-celakovice-2026",
@@ -487,10 +487,10 @@
       "end": "2026-10-15",
       "datum": "15. října 2026",
       "cas": "9:00–17:00",
+      "terminPotvrzen": true,
       "url": "https://www.ohkkm.cz/akce/prehlidka-strednich-skol-a-pracovniho-uplatneni-holesov-2024",
       "zdrojOvereni": "ohkkm.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "prehlidka-svitavy-2026",
@@ -503,10 +503,10 @@
       "end": "2026-10-15",
       "datum": "15. října 2026",
       "cas": "9:00–17:00",
+      "terminPotvrzen": false,
       "url": "https://www.spse.cz/akce/uchazec-ss/2026-10-16-vystava-skol-schola-bohemia-ideon-pardubice",
       "zdrojOvereni": "spse.cz",
       "overeno": "2026-09-24",
-      "terminPotvrzen": false,
       "cekaNa": "Termín 15. 10. 2026 zatím jen na webech vystavujících škol (spse.cz, plán roku SZŠ Svitavy); Úřad práce ani město ho nezveřejnily, místo je z ročníku 2025."
     },
     {
@@ -520,10 +520,10 @@
       "end": "2026-10-15",
       "datum": "15. října 2026",
       "cas": "10:00–16:00",
+      "terminPotvrzen": false,
       "url": "https://sps-karvina.cz/den-otevrenych-dveri/",
       "zdrojOvereni": "sps-karvina.cz",
       "overeno": "2026-09-24",
-      "terminPotvrzen": false,
       "cekaNa": "Termín 15. 10. 2026 zatím jen na webu vystavující SPŠ Karviná a v kalendáři kampaně MSK Řemeslo má respekt; Úřad práce ani město ho nezveřejnily."
     },
     {
@@ -538,10 +538,10 @@
       "datum": "16.–17. října 2026",
       "terminPotvrzen": true,
       "zdrojJenAgregator": true,
+      "poznamkaTerminu": "Termín jsme převzali z agregátoru akcí. Web pořadatele ho zatím neuvádí, proto jsme ho u něj nemohli ověřit.",
       "url": "https://www.sluzbaskole.eu/cs/skoleni-a-vystavy",
       "zdrojOvereni": "smartee.cz (agregátor)",
-      "overeno": "2026-09-22",
-      "poznamkaTerminu": "Termín jsme převzali z agregátoru akcí. Web pořadatele ho zatím neuvádí, proto jsme ho u něj nemohli ověřit."
+      "overeno": "2026-09-22"
     },
     {
       "id": "vybiram-stredni-trutnov-2026",
@@ -569,10 +569,10 @@
       "end": "2026-10-19",
       "datum": "18.–19. října 2026",
       "cas": "ne 12:00–16:00, po 9:00–16:00",
+      "terminPotvrzen": false,
       "url": "https://www.ssstp.cz/2026/09/10/sance-2026/",
       "zdrojOvereni": "ssstp.cz",
       "overeno": "2026-09-24",
-      "terminPotvrzen": false,
       "cekaNa": "Termín 18.–19. 10. 2026 zatím jen na webu vystavující školy (ssstp.cz); u pořadatele (město Teplice) chybí."
     },
     {
@@ -586,10 +586,10 @@
       "end": "2026-10-19",
       "datum": "19. října 2026",
       "cas": "8:30–15:30",
+      "terminPotvrzen": true,
       "url": "https://www.burzyskol.cz/planovane-akce/burza-skol-v-pisku-2026",
       "zdrojOvereni": "burzyskol.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "burza-strakonice-2026",
@@ -602,10 +602,10 @@
       "end": "2026-10-20",
       "datum": "20. října 2026",
       "cas": "8:30–15:00",
+      "terminPotvrzen": true,
       "url": "https://www.burzyskol.cz/planovane-akce/burza-skol-ve-strakonicich-2026",
       "zdrojOvereni": "burzyskol.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "prehlidka-havlickuv-brod-2026",
@@ -617,11 +617,11 @@
       "start": "2026-10-20",
       "end": "2026-10-20",
       "datum": "20. října 2026",
+      "cas": "8:00–17:00",
       "terminPotvrzen": true,
       "url": "https://mdko.cz/prehlidka-strednich-skol-2/",
       "zdrojOvereni": "mdko.cz",
-      "overeno": "2026-09-24",
-      "cas": "8:00–17:00"
+      "overeno": "2026-09-24"
     },
     {
       "id": "tak-kam-boskovice-2026",
@@ -649,10 +649,10 @@
       "end": "2026-10-20",
       "datum": "20. října 2026",
       "cas": "9:00–15:00",
+      "terminPotvrzen": true,
       "url": "https://posvitsinabudoucnost.cz/regionalni-akce/stod/",
       "zdrojOvereni": "posvitsinabudoucnost.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "veletrh-skola-decin-2026",
@@ -665,10 +665,10 @@
       "end": "2026-10-20",
       "datum": "20. října 2026",
       "cas": "9:00–17:00",
+      "terminPotvrzen": true,
       "url": "https://skoladecin.cz/veletrh/",
       "zdrojOvereni": "skoladecin.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "vystava-oboru-mlada-boleslav-2026",
@@ -681,10 +681,10 @@
       "end": "2026-10-20",
       "datum": "20. října 2026",
       "cas": "od 8:30",
+      "terminPotvrzen": true,
       "url": "https://www.kulturamb.cz/kalendar-akci/vystava-studijnich-a-ucebnich-oboru-1336",
       "zdrojOvereni": "kulturamb.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "prehlidka-benesov-2026",
@@ -696,10 +696,10 @@
       "start": "2026-10-21",
       "end": "2026-10-21",
       "datum": "21. října 2026",
+      "terminPotvrzen": false,
       "url": "https://www.novinykraje.cz/stredocesky/2026/08/26/kam-po-zakladni-skole-benesov-chysta-prehlidku-ktera-devatakum-usnadni-velke-rozhodnuti/",
       "zdrojOvereni": "novinykraje.cz",
       "overeno": "2026-09-24",
-      "terminPotvrzen": false,
       "cekaNa": "Termín 21. 10. 2026 (Městské divadlo Na Poště) zatím jen ve zpravodajství (novinykraje.cz, 26. 8. 2026) a na agregátoru; chybí stránka Úřadu práce nebo města."
     },
     {
@@ -713,10 +713,10 @@
       "end": "2026-10-21",
       "datum": "21. října 2026",
       "cas": "8:00–17:00",
+      "terminPotvrzen": true,
       "url": "https://www.chrudimskabeseda.cz/akce/prehlidka-strednich-skol-odbornych-ucilist-strednich-odbornych-ucilist-a-vyssich-odbornych-skol-6/",
       "zdrojOvereni": "chrudimskabeseda.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "burza-prace-olomouc-2026",
@@ -729,10 +729,10 @@
       "end": "2026-10-22",
       "datum": "22. října 2026",
       "cas": "9:00–17:00",
+      "terminPotvrzen": true,
       "url": "https://burzapav.cz/",
       "zdrojOvereni": "burzapav.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "burza-skol-pribyslav-2026",
@@ -746,10 +746,10 @@
       "datum": "22. října 2026",
       "cas": "16:00–17:30",
       "terminPotvrzen": true,
+      "poznamkaTerminu": "Místní burza pořádaná základní školou, prezentuje se na ní přes 20 středních škol z okolí.",
       "url": "https://www.zspribyslav.cz/planovane-akce/burza-skol",
       "zdrojOvereni": "zspribyslav.cz",
-      "overeno": "2026-09-24",
-      "poznamkaTerminu": "Místní burza pořádaná základní školou, prezentuje se na ní přes 20 středních škol z okolí."
+      "overeno": "2026-09-24"
     },
     {
       "id": "kam-po-zs-cheb-2026",
@@ -837,10 +837,10 @@
       "end": "2026-11-03",
       "datum": "3. listopadu 2026",
       "cas": "9:00–17:00",
+      "terminPotvrzen": true,
       "url": "https://clburzaskol.cz/",
       "zdrojOvereni": "clburzaskol.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "kam-na-skolu-tachov-2026",
@@ -853,10 +853,10 @@
       "end": "2026-11-03",
       "datum": "3. listopadu 2026",
       "cas": "9:00–16:00",
+      "terminPotvrzen": true,
       "url": "https://www.revis-tachov.cz/kam-na-skolu-2026.html",
       "zdrojOvereni": "revis-tachov.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "scholaris-sumperk-2026",
@@ -898,10 +898,10 @@
       "start": "2026-11-03",
       "end": "2026-11-04",
       "datum": "3.–4. listopadu 2026",
+      "terminPotvrzen": true,
       "url": "https://www.ohkcv.cz/2026/06/15/krusnohorsky-byznys-day-2026-2/",
       "zdrojOvereni": "ohkcv.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "prehlidka-rakovnik-2026",
@@ -944,10 +944,10 @@
       "end": "2026-11-04",
       "datum": "4. listopadu 2026",
       "cas": "9:00–17:00",
+      "terminPotvrzen": false,
       "url": "https://gkh.cz/dod-online/",
       "zdrojOvereni": "gkh.cz",
       "overeno": "2026-09-24",
-      "terminPotvrzen": false,
       "cekaNa": "Termín 4. 11. 2026 zatím jen na webech vystavujících škol (gkh.cz, sps-karvina.cz) a v kalendáři kampaně MSK; Úřad práce ho nezveřejnil."
     },
     {
@@ -961,10 +961,10 @@
       "end": "2026-11-05",
       "datum": "5. listopadu 2026",
       "cas": "od 8:00",
+      "terminPotvrzen": true,
       "url": "https://www.dodzr.cz/den-otevrenych-dveri",
       "zdrojOvereni": "dodzr.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "posvit-si-na-budoucnost-plzen-2026",
@@ -977,10 +977,10 @@
       "end": "2026-11-07",
       "datum": "5.–7. listopadu 2026",
       "terminPotvrzen": true,
+      "poznamkaTerminu": "Čtvrtek a pátek pro školní výpravy s registrací, sobota 9:00–15:00 pro žáky a rodiče bez registrace.",
       "url": "https://posvitsinabudoucnost.cz/",
       "zdrojOvereni": "posvitsinabudoucnost.cz",
-      "overeno": "2026-09-22",
-      "poznamkaTerminu": "Čtvrtek a pátek pro školní výpravy s registrací, sobota 9:00–15:00 pro žáky a rodiče bez registrace."
+      "overeno": "2026-09-22"
     },
     {
       "id": "scholaris-prostejov-2026",
@@ -1037,10 +1037,10 @@
       "start": "2026-11-06",
       "end": "2026-11-07",
       "datum": "6.–7. listopadu 2026",
+      "terminPotvrzen": true,
       "url": "https://www.litomerice.cz/vypis-akci/details/2026-11-06/68558-techdays-a-vystava-skol",
       "zdrojOvereni": "litomerice.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "sokrates-most-2026",
@@ -1067,11 +1067,11 @@
       "start": "2026-11-10",
       "end": "2026-11-10",
       "datum": "10. listopadu 2026",
+      "cas": "8:30–17:00",
       "terminPotvrzen": true,
       "url": "https://edu-work.eu/",
       "zdrojOvereni": "edu-work.eu",
-      "overeno": "2026-09-24",
-      "cas": "8:30–17:00"
+      "overeno": "2026-09-24"
     },
     {
       "id": "scholaris-prerov-2026",
@@ -1114,10 +1114,10 @@
       "end": "2026-11-11",
       "datum": "11. listopadu 2026",
       "cas": "10:00–14:00",
+      "terminPotvrzen": true,
       "url": "https://www.burzyskol.cz/planovane-akce/burza-skol-v-blatne-2026",
       "zdrojOvereni": "burzyskol.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "veletrh-vzdelavani-uherske-hradiste-2026",
@@ -1130,10 +1130,10 @@
       "end": "2026-11-11",
       "datum": "11. listopadu 2026",
       "cas": "9:00–17:00",
+      "terminPotvrzen": true,
       "url": "https://www.khkzk.cz/veletrh-vzdelavani-uherske-hradiste",
       "zdrojOvereni": "khkzk.cz; termín potvrdil pořadatel e-mailem 23. 9. 2026",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "prehlidka-melnik-2026",
@@ -1161,11 +1161,10 @@
       "end": "2026-11-12",
       "datum": "12. listopadu 2026",
       "cas": "9:00–16:00",
+      "terminPotvrzen": true,
       "url": "https://www.oazszatec.cz/dny-otevrenych-dveri/",
-      "zdrojOvereni": "oazszatec.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": false,
-      "cekaNa": "Termín 12. 11. 2026 zatím jen na webu hostitelské školy (oazszatec.cz); pořadatel výstavy neuveden."
+      "zdrojOvereni": "oazszatec.cz; e-mail pořadatele",
+      "overeno": "2026-09-25"
     },
     {
       "id": "prehlidka-vysocina-jihlava-2026",
@@ -1207,11 +1206,11 @@
       "start": "2026-11-16",
       "end": "2026-11-16",
       "datum": "16. listopadu 2026",
+      "cas": "14:00–17:00",
       "terminPotvrzen": true,
       "url": "https://nevim-kam.cz/veletrhy/",
       "zdrojOvereni": "nevim-kam.cz",
-      "overeno": "2026-09-24",
-      "cas": "14:00–17:00"
+      "overeno": "2026-09-24"
     },
     {
       "id": "volba-povolani-karvina-2026",
@@ -1224,10 +1223,10 @@
       "end": "2026-11-18",
       "datum": "18. listopadu 2026",
       "cas": "10:00–17:00",
+      "terminPotvrzen": true,
       "url": "https://www.medk.cz/akce/volba-povolani-4585",
       "zdrojOvereni": "medk.cz",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "hitparada-skol-pardubice-2026",
@@ -1240,10 +1239,10 @@
       "end": "2026-11-20",
       "datum": "20. listopadu 2026",
       "terminPotvrzen": true,
+      "poznamkaTerminu": "Místo konání pořadatel pro letošní ročník zatím neuvedl; loni se akce konala v enteria areně.",
       "url": "https://www.khkpce.cz/clanek.php?id=421",
       "zdrojOvereni": "khkpce.cz",
-      "overeno": "2026-09-24",
-      "poznamkaTerminu": "Místo konání pořadatel pro letošní ročník zatím neuvedl; loni se akce konala v enteria areně."
+      "overeno": "2026-09-24"
     },
     {
       "id": "online-veletrh-msk-2026",
@@ -1257,11 +1256,11 @@
       "end": "2026-11-30",
       "datum": "21.–30. listopadu 2026",
       "terminPotvrzen": true,
+      "terminPribligny": true,
+      "poznamkaTerminu": "Pořadatel uvádí přibližný rozsah a videohovory rozděluje podle okresů; přesný harmonogram zveřejňuje zvlášť.",
       "url": "https://veletrh-skol.msk.cz/",
       "zdrojOvereni": "veletrh-skol.msk.cz",
-      "overeno": "2026-09-22",
-      "terminPribligny": true,
-      "poznamkaTerminu": "Pořadatel uvádí přibližný rozsah a videohovory rozděluje podle okresů; přesný harmonogram zveřejňuje zvlášť."
+      "overeno": "2026-09-22"
     },
     {
       "id": "veletrh-vzdelavani-vsetin-2026",
@@ -1274,10 +1273,10 @@
       "end": "2026-11-24",
       "datum": "24. listopadu 2026",
       "cas": "8:30–17:30",
+      "terminPotvrzen": true,
       "url": "https://www.khkzk.cz/veletrh-vzdelavani-vsetin",
       "zdrojOvereni": "khkzk.cz; termín potvrdil pořadatel e-mailem 23. 9. 2026",
-      "overeno": "2026-09-24",
-      "terminPotvrzen": true
+      "overeno": "2026-09-24"
     },
     {
       "id": "scholaris-olomouc-2026",
