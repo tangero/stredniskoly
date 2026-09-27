@@ -19,7 +19,7 @@ import {
   seed, zalozNavrh, rozhodni, stahniNavrh, akceSezony, detailAkce, stavAkci, navrh, MAX_CEKAJICICH,
   vratNavrh, vraceniNavrhu, jeVyhrazenyKlic,
 } from '../src/lib/veletrhy-sklad.ts';
-import { schvalovatel, odkazNaRozhodnuti, diffTextem, textEmailu } from '../src/lib/veletrhy-schvaleni.ts';
+import { schvalovatel, odkazNaRozhodnuti, diffTextem, textEmailu, odkazDoTelegramu, navrhZTokenu } from '../src/lib/veletrhy-schvaleni.ts';
 import { overToken } from '../src/lib/novinky-token.ts';
 
 const SNIMEK = JSON.parse(readFileSync(new URL('../src/data/veletrhy-2027.json', import.meta.url), 'utf8'));
@@ -509,4 +509,19 @@ test('vrácení vrátí nahlášení, které návrh vyřídil, do fronty', async
   await schval(tx, a.navrh.id);
   await tx((t) => vratNavrh(t, a.navrh.id, 'x', 'omyl'));
   assert.equal((await s.dotaz('select stav from veletrh_nahlaseni where id = $1', [id])).rows[0].stav, 'nove');
+});
+
+test('odkaz do Telegramu je podepsaný jako v e-mailu, bez tajemství vede do /admin', () => {
+  const id = '11111111-2222-3333-4444-555555555555';
+  const puvodni = process.env.VELETRHY_SECRET;
+  try {
+    process.env.VELETRHY_SECRET = 'tajne';
+    const odkaz = new URL(odkazDoTelegramu(id));
+    assert.equal(navrhZTokenu(odkaz.searchParams.get('t')), id, 'odkaz otevře návrh bez přihlášení');
+    delete process.env.VELETRHY_SECRET;
+    assert.equal(odkazDoTelegramu(id), `https://www.prijimackynaskolu.cz/admin/veletrhy/rozhodnuti?id=${id}`);
+  } finally {
+    if (puvodni === undefined) delete process.env.VELETRHY_SECRET;
+    else process.env.VELETRHY_SECRET = puvodni;
+  }
 });

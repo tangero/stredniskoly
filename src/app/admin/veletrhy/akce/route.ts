@@ -8,7 +8,7 @@ import { navrhZTokenu } from '@/lib/veletrhy-schvaleni';
 import { obnovVeletrhy } from '@/lib/veletrhy-zdroj';
 import { SEZONA } from '@/lib/veletrhy';
 import { cesskyDen } from '@/lib/veletrhy-pocty';
-import type { KodVysledku } from '@/lib/veletrhy-schvaleni';
+import { odkazDoTelegramu, type KodVysledku } from '@/lib/veletrhy-schvaleni';
 
 // ============================================================================
 // Schválení nebo zamítnutí návrhu změny veletrhů (docs/veletrhy-api-2027.md,
@@ -72,13 +72,13 @@ export async function POST(request: NextRequest) {
       case 'uz_rozhodnuto':
         return zpet('uz-rozhodnuto');
       case 'nelze_provest':
-        await posliTelegram(`⚠️ Návrh veletrhu schválen, ale nejde provést: ${v.navrh.chyba}`);
+        await posliTelegram(`⚠️ Návrh veletrhu schválen, ale nejde provést: ${v.navrh.chyba}\nZamítnout: ${odkazDoTelegramu(v.navrh.id)}`);
         return zpet('nelze-provest');
       case 'zamitnuto':
         return zpet('zamitnuto');
       case 'provedeno':
         obnovVeletrhy();
-        await posliTelegram(`✅ Veletrhy: provedeno ${v.diff.map((z) => `${z.op} ${z.id}`).join(', ')}`);
+        await posliTelegram(`✅ Veletrhy: provedeno ${v.diff.map((z) => `${z.op} ${z.id}`).join(', ')}\nProhlédnout nebo vrátit: ${odkazDoTelegramu(v.navrh.id)}`);
         return zpet('provedeno');
     }
   } catch (e) {

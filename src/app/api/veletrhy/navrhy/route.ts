@@ -5,7 +5,7 @@ import { jeVyhrazenyKlic, navrhy, rozhodni, stavAkci, zalozNavrh, type StavNavrh
 import { jeAutopublikaceZapnuta, jeKAutopublikaci, jeUrlPlatna, overNavrh } from '@/lib/veletrhy-validace';
 import { obnovVeletrhy } from '@/lib/veletrhy-zdroj';
 import { SEZONA } from '@/lib/veletrhy';
-import { posliKeSchvaleni } from '@/lib/veletrhy-schvaleni';
+import { odkazDoTelegramu, posliKeSchvaleni } from '@/lib/veletrhy-schvaleni';
 import { posliTelegram } from '@/lib/portal-oznameni';
 import { cesskyDen } from '@/lib/veletrhy-pocty';
 
@@ -98,13 +98,13 @@ export async function POST(request: NextRequest) {
       if (r?.vysledek === 'provedeno') {
         obnovVeletrhy();
         await posliKeSchvaleni(r.navrh, r.diff, [], true);
-        await posliTelegram(`⚡ Veletrhy zveřejněno automaticky: ${r.diff.map((z) => `${z.op} ${z.id}`).join(', ')}`);
+        await posliTelegram(`⚡ Veletrhy zveřejněno automaticky: ${r.diff.map((z) => `${z.op} ${z.id}`).join(', ')}\nProhlédnout nebo vrátit: ${odkazDoTelegramu(r.navrh.id)}`);
         return NextResponse.json({ id: r.navrh.id, stav: r.navrh.stav, varovani: [], diff: r.diff, automaticky: true }, { status: 201 });
       }
     }
 
     const odeslano = await posliKeSchvaleni(v.navrh, v.diff, v.navrh.varovani);
-    await posliTelegram(`🗓 Nový návrh veletrhu: ${v.diff.map((z) => `${z.op} ${z.id}`).join(', ')}${odeslano ? '' : ' (schvalovací e-mail neodešel, rozhodni v /admin)'}`);
+    await posliTelegram(`🗓 Nový návrh veletrhu: ${v.diff.map((z) => `${z.op} ${z.id}`).join(', ')}${odeslano ? '' : ' (schvalovací e-mail neodešel)'}${v.navrh.varovani.length ? ` · ${v.navrh.varovani.length} varování` : ''}\nProhlédnout a schválit: ${odkazDoTelegramu(v.navrh.id)}`);
     return NextResponse.json(
       { id: v.navrh.id, stav: v.navrh.stav, varovani: v.navrh.varovani, diff: v.diff },
       { status: 201 },
