@@ -379,3 +379,39 @@ function zkontrolujDuplicity(akce: Veletrh, stav: Map<string, StavAkce>, p: stri
     }
   }
 }
+
+// ----------------------------------------------------------------------------
+// Automatické zveřejnění (docs/veletrhy-api-2027.md, oddíl 8)
+// ----------------------------------------------------------------------------
+
+/** Pole, jejichž změna smí jít na web bez člověka: odkaz a čas u potvrzené akce. */
+export const AUTO_POLE = ['url', 'cas'] as const;
+/** Pole, která se smějí změnit spolu s nimi (doklad o ověření). */
+const AUTO_DOPROVODNA = ['overeno', 'zdrojOvereni'] as const;
+
+/**
+ * Smí návrh jít na web bez schválení? Jen když všechny operace upravují
+ * existující potvrzenou akci, mění jen odkaz nebo čas (plus datum a zdroj
+ * ověření) a validace nevrátila žádné varování. Nikdy: přidání, odebrání,
+ * termín, datum slovy, potvrzení termínu, název, město, kraj.
+ */
+export function jeKAutopublikaci(diff: ZmenaAkce[], varovani: Chyba[]): boolean {
+  if (diff.length === 0 || varovani.length > 0) return false;
+  const povolena = new Set<string>([...AUTO_POLE, ...AUTO_DOPROVODNA]);
+  return diff.every((z) => {
+    if (z.op !== 'upravit' || !z.pred || !z.po) return false;
+    if (z.pred.terminPotvrzen !== true || z.po.terminPotvrzen !== true) return false;
+    const pred = z.pred as unknown as Record<string, unknown>;
+    const po = z.po as unknown as Record<string, unknown>;
+    const zmenena = [...new Set([...Object.keys(pred), ...Object.keys(po)])]
+      .filter((k) => JSON.stringify(pred[k]) !== JSON.stringify(po[k]));
+    return zmenena.length > 0
+      && zmenena.every((k) => povolena.has(k))
+      && zmenena.some((k) => (AUTO_POLE as readonly string[]).includes(k));
+  });
+}
+
+/** Je automatické zveřejnění zapnuté? Chybějící nebo jiná hodnota = vypnuto. */
+export function jeAutopublikaceZapnuta(hodnota = process.env.VELETRHY_AUTOPUBLIKACE): boolean {
+  return hodnota === 'zapnuto';
+}

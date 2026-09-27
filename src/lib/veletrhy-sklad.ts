@@ -168,6 +168,10 @@ export async function zalozNavrh(
   if ((cekajici.rows[0]?.pocet ?? 0) >= MAX_CEKAJICICH) return { vysledek: 'limit' };
 
   const validace = overNavrh(vstup.operace, await stavAkci(s), dnes);
+  if (vstup.nahlaseniId != null) {
+    const n = await s.dotaz('select 1 from veletrh_nahlaseni where id = $1', [vstup.nahlaseniId]);
+    if (n.rowCount === 0) validace.chyby.push({ pole: 'nahlaseniId', zprava: 'Nahlášení s tímto id neexistuje.' });
+  }
   if (validace.chyby.length) return { vysledek: 'neplatny', validace };
 
   const id = randomUUID();
@@ -272,6 +276,7 @@ export async function rozhodni(
       [id, kdo, duvod],
     );
     await s.dotaz(`insert into veletrh_audit (kdo, udalost, navrh_id) values ($1, 'zamitnuto', $2)`, [kdo, id]);
+    await vyridNahlaseni(s, n.nahlaseni_id, 'zamitnuto');
     return { vysledek: 'zamitnuto', navrh: (await navrh(s, id))! };
   }
   if (n.stav !== 'ceka') return { vysledek: 'uz_rozhodnuto', navrh: n };
@@ -294,7 +299,8 @@ export async function rozhodni(
       where id = $1`,
     [id, kdo, duvod],
   );
-  await s.dotaz(`insert into veletrh_audit (kdo, udalost, navrh_id) values ($1, 'schvaleno', $2)`, [kdo, id]);
+  await s.dotaz(`insert into veletrh_audit (kdo, udalost, navrh_id) values ($1, $3, $2)`, [kdo, id, kdo === 'auto' ? 'auto_publikace' : 'schvaleno']);
+  await vyridNahlaseni(s, n.nahlaseni_id, 'overeno');
   return { vysledek: 'provedeno', navrh: (await navrh(s, id))!, diff: validace.diff };
 }
 
@@ -333,4 +339,99 @@ async function provedDiff(
       ],
     );
   }
+}
+
+/**
+ * Návrh s vazbou na nahlášení z formuláře ho vyřídí: provedený jako
+ * `overeno`, zamítnutý jako `zamitnuto`. Mění se jen nahlášení, které
+ * ještě nikdo nevyřídil, aby ruční rozhodnutí redakce nepřepsal.
+ */
+async function vyridNahlaseni(s: Spojeni, nahlaseniId: number | null, stav: 'overeno' | 'zamitnuto'): Promise<void> {
+  if (nahlaseniId == null) return;
+  await s.dotaz(`update veletrh_nahlaseni set stav = $2 where id = $1 and stav = 'nove'`, [nahlaseniId, stav]);
+}
+
+// ----------------------------------------------------------------------------
+// Vrácení provedeného návrhu
+// ----------------------------------------------------------------------------
+
+export type VysledekVraceni =
+  | { vysledek: 'vraceno'; navrh: Navrh; akce: string[] }
+  | { vysledek: 'uz_vraceno'; navrh: Navrh }
+  | { vysledek: 'nelze_vratit'; duvod: string }
+  | { vysledek: 'nenalezen' };
+
+const klicVraceni = (id: string) => `vraceni:${id}`;
+
+/** Návrh, kterým byl daný návrh vrácen, pokud už byl. */
+export async function vraceniNavrhu(s: Spojeni, id: string): Promise<Navrh | null> {
+  return navrhPodleKlice(s, klicVraceni(id));
+}
+
+/**
+ * Vrátí akce do stavu před provedeným návrhem, podle záznamů `pred`
+ * v auditu. Vrácení je samo návrh (autor admin, stav provedeno, klíč
+ * `vraceni:<id>`), takže jde provést jen jednou a má vlastní audit.
+ *
+ * Když se některá akce od provedení změnila, nevrací se nic: vrácení by
+ * tiše zahodilo pozdější úpravu. Volat uvnitř transakce.
+ */
+export async function vratNavrh(s: Spojeni, id: string, kdo: string, duvod: string): Promise<VysledekVraceni> {
+  if (!/^[0-9a-f-]{36}$/i.test(id)) return { vysledek: 'nenalezen' };
+  await s.dotaz('select pg_advisory_xact_lock($1)', [ZAMEK_ROZHODNUTI]);
+  const puvodni = await navrh(s, id);
+  if (!puvodni) return { vysledek: 'nenalezen' };
+  const drivejsi = await vraceniNavrhu(s, id);
+  if (drivejsi) return { vysledek: 'uz_vraceno', navrh: drivejsi };
+  if (puvodni.stav !== 'provedeno') return { vysledek: 'nelze_vratit', duvod: 'Vrátit jde jen provedený návrh.' };
+  if (puvodni.klic.startsWith('vraceni:')) return { vysledek: 'nelze_vratit', duvod: 'Vrácení se nevrací; pošlete nový návrh.' };
+
+  const zaznamy = await s.dotaz<{ akce_id: string; pred: Veletrh | null; po: Veletrh | null }>(
+    `select akce_id, pred, po from veletrh_audit where navrh_id = $1 and udalost = 'provedeno' order by id desc`,
+    [id],
+  );
+  if (zaznamy.rows.length === 0) return { vysledek: 'nelze_vratit', duvod: 'Návrh nezměnil žádnou akci.' };
+
+  // Jedna akce může mít v návrhu víc operací (přidat a hned upravit):
+  // kontroluje se proti poslednímu stavu, vrací se do stavu před první.
+  const podleAkce = new Map<string, { pred: Veletrh | null; po: Veletrh | null }>();
+  for (const z of zaznamy.rows) {
+    const znama = podleAkce.get(z.akce_id);
+    if (znama) znama.pred = z.pred;
+    else podleAkce.set(z.akce_id, { pred: z.pred, po: z.po });
+  }
+
+  for (const [akceId, z] of podleAkce) {
+    const r = await s.dotaz<{ shoda: boolean; smazano: boolean }>(
+      `select (data = $2::jsonb) as shoda, smazano from veletrh_akce where id = $1`,
+      [akceId, JSON.stringify(z.po ?? z.pred)],
+    );
+    const radek = r.rows[0];
+    const sedi = radek && (z.po === null || radek.shoda) && radek.smazano === (z.po === null);
+    if (!sedi) {
+      return { vysledek: 'nelze_vratit', duvod: `Akce ${akceId} se od provedení změnila, vrácení by zahodilo pozdější úpravu.` };
+    }
+  }
+
+  const noveId = randomUUID();
+  await s.dotaz(
+    `insert into veletrh_navrh (id, klic, autor, operace, stav, rozhodl, rozhodnuto, duvod)
+     values ($1, $2, 'admin', $3::jsonb, 'provedeno', $4, now(), $5)`,
+    [noveId, klicVraceni(id), JSON.stringify([{ op: 'vratit', navrh: id }]), kdo, duvod],
+  );
+  for (const [akceId, z] of podleAkce) {
+    if (z.pred === null) {
+      await s.dotaz(`update veletrh_akce set smazano = true, verze = verze + 1, zmeneno = now() where id = $1`, [akceId]);
+    } else {
+      await s.dotaz(
+        `update veletrh_akce set data = $2::jsonb, smazano = false, verze = verze + 1, zmeneno = now() where id = $1`,
+        [akceId, JSON.stringify(z.pred)],
+      );
+    }
+    await s.dotaz(
+      `insert into veletrh_audit (kdo, udalost, navrh_id, akce_id, pred, po) values ($1, 'vraceno', $2, $3, $4::jsonb, $5::jsonb)`,
+      [kdo, noveId, akceId, z.po ? JSON.stringify(z.po) : null, z.pred ? JSON.stringify(z.pred) : null],
+    );
+  }
+  return { vysledek: 'vraceno', navrh: (await navrh(s, noveId))!, akce: [...podleAkce.keys()] };
 }

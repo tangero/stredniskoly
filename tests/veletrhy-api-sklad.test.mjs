@@ -13,9 +13,11 @@ import { PGlite } from '@electric-sql/pglite';
 import { MIGRACE_VELETRHU } from '../src/lib/veletrhy-schema.ts';
 import {
   overAkci, overNavrh, obsahujeKontakt, hraniceSezony, jeDatumPlatne, jeUrlPlatna,
+  jeKAutopublikaci, jeAutopublikaceZapnuta,
 } from '../src/lib/veletrhy-validace.ts';
 import {
   seed, zalozNavrh, rozhodni, stahniNavrh, akceSezony, detailAkce, stavAkci, navrh, MAX_CEKAJICICH,
+  vratNavrh, vraceniNavrhu,
 } from '../src/lib/veletrhy-sklad.ts';
 import { schvalovatel, odkazNaRozhodnuti, diffTextem, textEmailu } from '../src/lib/veletrhy-schvaleni.ts';
 import { overToken } from '../src/lib/novinky-token.ts';
@@ -358,4 +360,108 @@ test('úprava nad jinou verzí, než ze které vycházela, shodí celé proveden
   await assert.rejects(tx((t) => rozhodni(vydirane(t), z.navrh.id, { schvalit: true, kdo: 'x', duvod: null }, DNES, SEZONA)), /změnila/);
   assert.equal((await navrh(s, z.navrh.id)).stav, 'ceka', 'transakce se vrátila, návrh čeká dál');
   assert.equal((await detailAkce(s, cil.id)).akce.cas, cil.cas);
+});
+
+// ---------------------------------------------------------------------------
+// Fáze 3: automatické zveřejnění, vrácení, vazba na nahlášení
+// ---------------------------------------------------------------------------
+
+const upravaDiff = (zmeny, pred = NOVA) => overNavrh(
+  [{ op: 'upravit', id: pred.id, ocekavanaVerze: 1, zmeny }],
+  new Map([[pred.id, { data: pred, verze: 1, smazano: false }]]),
+  DNES,
+);
+
+test('automaticky jde jen odkaz nebo čas potvrzené akce bez varování', () => {
+  const ok = (zmeny, pred) => { const v = upravaDiff(zmeny, pred); return v.chyby.length === 0 && jeKAutopublikaci(v.diff, v.varovani); };
+  assert.equal(ok({ cas: '9:00–15:00' }), true);
+  assert.equal(ok({ url: 'https://www.ohktrebic.cz/akce/didacta', overeno: '2026-09-26', zdrojOvereni: 'ohktrebic.cz' }), true);
+  assert.equal(ok({ overeno: '2026-09-26' }), false, 'jen doprovodné pole nestačí');
+  assert.equal(ok({ start: '2026-10-17', end: '2026-10-17', datum: '17. října 2026' }), false, 'termín nikdy');
+  assert.equal(ok({ cas: '9:00', nazev: 'Jiný' }), false, 'název nikdy');
+  assert.equal(ok({ url: 'https://www.ohktrebic.cz/' }), false, 'varování (titulní stránka) blokuje');
+  const nepotvrzena = { ...NOVA, terminPotvrzen: false, cekaNa: 'termín', url: null };
+  assert.equal(ok({ cas: '9:00' }, nepotvrzena), false, 'jen potvrzená akce');
+  const pridani = overNavrh(pridat(), new Map(), DNES);
+  assert.equal(jeKAutopublikaci(pridani.diff, pridani.varovani), false, 'přidání nikdy');
+});
+
+test('automatické zveřejnění je bez nastavení vypnuté', () => {
+  assert.equal(jeAutopublikaceZapnuta(undefined), false);
+  assert.equal(jeAutopublikaceZapnuta('ano'), false);
+  assert.equal(jeAutopublikaceZapnuta('zapnuto'), true);
+});
+
+const schval = (tx, id) => tx((t) => rozhodni(t, id, { schvalit: true, kdo: 'x', duvod: null }, DNES, SEZONA));
+
+test('vrácení úpravy obnoví předchozí data, podruhé nic neudělá', async () => {
+  const { s, tx } = await novaDb();
+  const cil = SNIMEK.akce.find((a) => a.terminPotvrzen && a.start >= DNES);
+  const z = await zaloz(tx, [{ op: 'upravit', id: cil.id, ocekavanaVerze: 1, zmeny: { cas: '7:00' } }]);
+  await schval(tx, z.navrh.id);
+  const r = await tx((t) => vratNavrh(t, z.navrh.id, 'admin:test', 'omyl'));
+  assert.equal(r.vysledek, 'vraceno');
+  const d = await detailAkce(s, cil.id);
+  assert.deepEqual(d.akce, cil);
+  assert.equal(d.verze, 3);
+  assert.equal(d.audit[0].udalost, 'vraceno');
+  assert.equal((await vraceniNavrhu(s, z.navrh.id)).stav, 'provedeno');
+  assert.equal((await tx((t) => vratNavrh(t, z.navrh.id, 'x', 'znovu'))).vysledek, 'uz_vraceno');
+  assert.equal((await tx((t) => vratNavrh(t, r.navrh.id, 'x', 'vrácení vrácení'))).vysledek, 'nelze_vratit');
+});
+
+test('vrácení přidání a úpravy v jednom návrhu akci odebere, vrácení odebrání ji obnoví', async () => {
+  const { s, tx } = await novaDb({ seedovat: false });
+  const a = await zaloz(tx, [
+    { op: 'pridat', akce: NOVA },
+    { op: 'upravit', id: NOVA.id, ocekavanaVerze: 1, zmeny: { cas: '10:00' } },
+  ], 'a');
+  await schval(tx, a.navrh.id);
+  assert.equal((await tx((t) => vratNavrh(t, a.navrh.id, 'x', 'omyl'))).vysledek, 'vraceno');
+  assert.ok((await stavAkci(s)).get(NOVA.id).smazano, 'přidaná akce je po vrácení odebraná');
+
+  const { s: s2, tx: tx2 } = await novaDb();
+  const cil = SNIMEK.akce[0];
+  const b = await zaloz(tx2, [{ op: 'odebrat', id: cil.id, duvod: 'omylem' }], 'b');
+  await schval(tx2, b.navrh.id);
+  assert.equal((await tx2((t) => vratNavrh(t, b.navrh.id, 'x', 'omyl'))).vysledek, 'vraceno');
+  const obnovena = (await stavAkci(s2)).get(cil.id);
+  assert.equal(obnovena.smazano, false);
+  assert.deepEqual(obnovena.data, cil);
+});
+
+test('vrácení odmítne, když se akce od provedení změnila, a nevyřízený návrh nevrací', async () => {
+  const { s, tx } = await novaDb();
+  const cil = SNIMEK.akce.find((a) => a.terminPotvrzen && a.start >= DNES);
+  const a = await zaloz(tx, [{ op: 'upravit', id: cil.id, ocekavanaVerze: 1, zmeny: { cas: '7:00' } }], 'a');
+  await schval(tx, a.navrh.id);
+  const b = await zaloz(tx, [{ op: 'upravit', id: cil.id, ocekavanaVerze: 2, zmeny: { cas: '8:00' } }], 'b');
+  await schval(tx, b.navrh.id);
+  assert.equal((await tx((t) => vratNavrh(t, a.navrh.id, 'x', 'omyl'))).vysledek, 'nelze_vratit');
+  assert.equal((await detailAkce(s, cil.id)).akce.cas, '8:00', 'pozdější úprava zůstala');
+  const c = await zaloz(tx, [{ op: 'upravit', id: cil.id, ocekavanaVerze: 3, zmeny: { cas: '9:00' } }], 'c');
+  assert.equal((await tx((t) => vratNavrh(t, c.navrh.id, 'x', 'čeká'))).vysledek, 'nelze_vratit');
+});
+
+test('provedený návrh vyřídí nahlášení jako ověřené, zamítnutý jako zamítnuté', async () => {
+  const { s, tx } = await novaDb({ seedovat: false });
+  const vloz = async () => (await s.dotaz(
+    `insert into veletrh_nahlaseni (nazev, start_den, konec_den, adresa, mesto, kraj_kod, url, poradatel, email)
+     values ('x', '2026-10-16', '2026-10-16', 'a', 'Třebíč', 'CZ063', 'https://a.cz/x', 'p', 'o@example.cz') returning id`,
+  )).rows[0].id;
+  const stavNahlaseni = async (id) => (await s.dotaz('select stav from veletrh_nahlaseni where id = $1', [id])).rows[0].stav;
+
+  const n1 = await vloz();
+  const a = await tx((t) => zalozNavrh(t, { klic: 'n1', autor: 'eduarda', operace: pridat(), nahlaseniId: n1 }, DNES));
+  await schval(tx, a.navrh.id);
+  assert.equal(await stavNahlaseni(n1), 'overeno');
+
+  const n2 = await vloz();
+  const b = await tx((t) => zalozNavrh(t, { klic: 'n2', autor: 'eduarda', operace: pridat({ ...NOVA, id: 'jina-2026', nazev: 'Jiná' }), nahlaseniId: n2 }, DNES));
+  await tx((t) => rozhodni(t, b.navrh.id, { schvalit: false, kdo: 'x', duvod: 'nekoná se' }, DNES, SEZONA));
+  assert.equal(await stavNahlaseni(n2), 'zamitnuto');
+
+  const c = await tx((t) => zalozNavrh(t, { klic: 'n3', autor: 'eduarda', operace: pridat({ ...NOVA, id: 'treti-2026', nazev: 'Třetí' }), nahlaseniId: 999999 }, DNES));
+  assert.equal(c.vysledek, 'neplatny');
+  assert.ok(c.validace.chyby.some((x) => x.pole === 'nahlaseniId'));
 });
