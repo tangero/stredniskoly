@@ -8,6 +8,9 @@ z historie commitů.
 
 ## [Unreleased]
 
+### Dokumentace
+- **Rozdíl soutěžících proti souhrnům 1. kola rozložen** (`scripts/shoda-soutezicich-se-souhrny.py`, `docs/podklady/shoda-soutezicich-se-souhrny-2026-09-28.md`, slovník ukazatelů 1.41): z 2 762 osob rozdílu v roce 2026 je 1 161 bez výsledku zkoušky, 908 vzdání se přijetí vedených v datech uchazečů jako přijetí, 893 vícenásobných přihlášek téhož uchazeče a 138 nesoulad souborů CERMAT. Věty u *Rozhodl test* přepočítány z pásem 2026 (1 393 oborů, 59,2 / 34,1 / 6,7 %). Data ani web beze změny.
+
 ### Přidáno
 - **Mapa krajů na přehledu veletrhů** (`/veletrhy`, `src/app/veletrhy/MapaKraju.tsx`, návrh `docs/navrh-mapa-a-odkazy-veletrhu-2027.md`): kliknutím na kraj se vybere stejně jako čipem, najetí zvýrazní kraj v mapě i čip. Všechny kraje mají stejnou výplň a počet akcí je napsaný číslem, protože počet říká, o kolika akcích víme, ne kolik se jich koná. Praha má dotykovou plochu 44 px i na mobilu. Pro čtečku a klávesnici je mapa skrytá, ovládají se čipy (od 1024 px ve dvou sloupcích vedle mapy jako legenda). Hranice z RÚIAN (ČÚZK, CC BY 4.0), zjednodušené skriptem `scripts/build-mapa-kraju.mjs` na 34 kB; nový zdroj v soupisu (oddíl 2.17) a v registru (`ruian-kraje`)
 - **Odkazy z přehledu veletrhů na města a kraje**: město na kartě akce a v řádku měst pod nadpisem vede na `/mesto/…` u 58 ze 71 měst, která stránku mají (ostatní zůstávají textem); nadpis oddílu kraje vede na `/regiony/…` a nahradil samostatný odkaz „Střední školy v kraji“

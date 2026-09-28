@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.40 · 28. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.41 · 28. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -221,6 +221,17 @@ Dvě skupiny do něj **nepatří** a při zobrazení se uvádějí zvlášť:
 
 U osmiletého gymnázia J. S. Machara bylo v roce 2025 soutěžících 67, ale nesplnilo podmínky 107 dalších uchazečů. Podíl přijatých ze soutěžících by bez této poznámky byl zavádějící.
 
+**Počet soutěžících v pásmech se od souhrnů 1. kola liší a má se lišit.** Pásma, *Pořadí mezi soutěžícími* a kontext přihlášek počítají soutěžící z dat uchazečů (`soutezicich`), *Podíl přijatých ze soutěžících* z oficiálních souhrnů CERMAT za nabídku. Po omezení na denní nezkrácené studium (verze 1.40) se shoduje 1 677 z 2 830 oborů roku 2026 a 1 454 z 2 789 roku 2025. Součet absolutních rozdílů 2 762 osob (2026) a 4 153 (2025) se rozkládá takto (`docs/podklady/shoda-soutezicich-se-souhrny-2026-09-28.md`):
+
+| Příčina | 2026 osob / oborů | 2025 osob / oborů | Povaha |
+|---|---|---|---|
+| Uchazeč bez výsledku jednotné zkoušky (`c_m_procentni_skor` prázdné) | 1 161 / 648 | 3 120 / 1 280 | definice: pásma potřebují výsledek, souhrn počítá všechny |
+| Vzdal se přijetí: souhrn 2026 ho vede ve sloupci „vzdal se“, data uchazečů 2026 důvod nemají a vedou ho jako přijatého | 908 / 541 | — | zdroj: data uchazečů 2026 vzdání se nerozlišují; v roce 2025 se vzdání se do pásem nepočítá |
+| Víc přihlášek téhož uchazeče na obor (zaměření, den a den2) | 893 / 95 | 929 / 113 | definice: pásma počítají osoby (verze 1.37), souhrn přihlášky |
+| Nevysvětlený zbytek | 138 / 65 | 104 / 58 | nesoulad dvou souborů CERMAT (například 600015629_78-42-M/08: data uchazečů 14 přijatých, souhrn 15) |
+
+Co z toho plyne: *Podíl přijatých ze soutěžících* a počty soutěžících v pásmech se na jedné stránce nesmí vydávat za tutéž veličinu. Mezi ročníky 2025 a 2026 není srovnatelný počet přijatých v pásmech u oborů, kde se někdo vzdal přijetí: v roce 2026 je v přijatých, v roce 2025 ne.
+
 ### Podíl přijatých ze soutěžících
 `přijatí ÷ (přijatí + nepřijatí kvůli kapacitě)` za nabídku a ročník. Zdroj: CERMAT, souhrny 1. kola. Pole `podil_prijatych_ze_soutezicich` v `public/souhrny_kolo1.json`.
 
@@ -273,9 +284,9 @@ Pravděpodobnost, že náhodně vybraný přijatý měl lepší výsledek jednot
 
 Hodnota 1,0 znamená, že o přijetí rozhodl výhradně výsledek testu. Hodnota 0,5 znamená, že výsledek nerozhodoval vůbec.
 
-Ukládá se zaokrouhlené na tři desetinná místa. Počítá se u oborů s aspoň deseti přijatými a pěti odmítnutými kvůli kapacitě, tedy u 1 439. Medián je 0,972, hodnotu 1,000 má 10,1 % oborů, aspoň 0,85 má 93,3 %.
+Ukládá se zaokrouhlené na tři desetinná místa. Počítá se u oborů s aspoň deseti přijatými a pěti odmítnutými kvůli kapacitě, v pásmech 2026 u 1 406. Medián je 0,980, hodnotu 1,000 má 13,6 % oborů, aspoň 0,85 má 92,8 %.
 
-Na stránce se zobrazuje jedna ze tří vět podle hodnoty: 0,97 a výš, 0,85 až 0,97, pod 0,85. U 1 427 oborů bez talentové zkoušky připadá na první 52,5 %, na druhou 41,3 % a na třetí 6,2 %.
+Na stránce se zobrazuje jedna ze tří vět podle hodnoty: 0,97 a výš, 0,85 až 0,97, pod 0,85. Z pásem přijetí 2026 (zobrazený ročník) mezi 1 393 obory s hodnotou `rozhodl_test` a bez talentové zkoušky (`talentova_zkouska` nepravdivé) připadá na první 59,2 % (825), na druhou 34,1 % (475) a na třetí 6,7 % (93). V roce 2025 to bylo 1 420 oborů a 52,6 / 41,9 / 5,5 %.
 
 **Mezi ročníky je stabilní jen hrubě.** Na 1 166 oborech spárovaných mezi roky 2025 a 2026 je korelace **0,636** a medián absolutní změny 0,01. Hodnoty se drží blízko sebe, ale pořadí oborů v úzkém pásmu kolem 0,97 se mění. Proto se neřadí a nezobrazuje jako číslo, jen jako tři kategorie.
 
@@ -660,6 +671,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.41 | **Rozdíl soutěžících proti souhrnům 1. kola rozložen** (28. 9. 2026). Heslo *Soutěžící o obor* nese tabulku příčin rozdílu mezi `soutezicich` z dat uchazečů a přijatými s nevešlými ze souhrnů: bez výsledku zkoušky, vzdání se přijetí vedené v datech uchazečů 2026 jako přijetí, víc přihlášek téhož uchazeče, nesoulad souborů CERMAT. Přepočítány věty u *Rozhodl test* z pásem 2026: 1 406 oborů s hodnotou (medián 0,980), rozdělení tří vět u 1 393 oborů 59,2 / 34,1 / 6,7 % místo neaktuálních 1 427 a 52,5 / 41,3 / 6,2 %. Výpočet beze změny. |
 | 1.40 | **Data uchazečů jen za denní nezkrácené studium** (28. 9. 2026). Pásma přijetí, pořadí mezi soutěžícími, výsledek uchazečů o obor, obory výš a níž a souběžné přihlášky počítají jen přihlášky do denní formy (`ss{k}_forma` den, den2) a nezkráceného studia (`ss{k}_zkraceno` = 2), stejně jako souhrny 1. kola (`is_valid_flat`). Dálkové, večerní, distanční, kombinované a zkrácené studium sdílí s denním oborem klíč REDIZO_KKOV a dřív padalo pod něj: například cestovní ruch SŠ gastronomické a hotelové (Praha) měl 191 soutěžících a pásmo nejistoty 6–50 bodů, po opravě 109 a 43–50. Pořadí přihlášek a přijetí se dál bere ze všech přihlášek (přijetí výš na dálkové studium je „výš“). V roce 2026 se změnilo 75 denních oborů s pásmy a vypadlo 49 oborů bez denní nabídky; přepočteny odvozená hranice, předmětový sklon a stabilita *rozhodl test*. |
 | 1.39 | **Převedený výsledek testu**, **Pořadí mezi soutěžícími** a **Podíl přijímaček na bodování** se z prototypu dostávají na stránku oboru (28. 9. 2026, [Kde stojím](navrh-kde-stojim-2027.md)). Výpočet beze změny, doplněno jen, kde se zobrazují. |
 | 1.38 | **Sloučení zaměření dotaženo** (28. 9. 2026, oponentura PR #184). Výsledek uchazeče o obor se porovnává s přihláškou, na kterou byl skutečně přijat, ne s první přihláškou na obor: uchazeč odmítnutý na A, pak na B a přijatý na A ze třetí přihlášky se u B dřív počítal jako přijatý výš (31 případů 2026, 27 v 2025). Vzdání se přijetí (jen 2025) je samostatný výsledek, vedlejší zaměření ho nepřepíše na nesplněné podmínky ani přijetí výš. Souběžné přihlášky počítají uchazeče i dvojici oborů jednou (600004961_79-41-K/61 v roce 2026: 1 052 uchazečů místo 1 230). Odvozená hranice úspěšnosti 2026: 1 151 oborů místo 1 156, nevysvětleno výsledkem zkoušky 678 místo 683. Předmětový sklon: nápadný u 71 z 345 oborů místo 73 z 354. Stabilita *rozhodl test* mezi ročníky: 1 171 spárovaných oborů, korelace 0,667, změna kategorie u 300 (dřív 1 173, 0,672, 305). Slučování je společné v `scripts/slouceni_prihlasek.py`. |
