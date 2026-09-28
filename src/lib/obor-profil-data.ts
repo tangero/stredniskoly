@@ -141,6 +141,14 @@ export async function poradi(rok: number, kraj: string, skupina: string, klic: s
   return { poradi: p, predchozi, hodnoty, hodnota, hodnotaPredchozi };
 }
 
+/** Přepis kritérií pro zaměření stránky; bez shody všechna zaměření (komponenta pak ověřuje všechna). */
+function kriteriaZamereni(k: KriteriaOboru | null, zamereni: string | undefined): KriteriaOboru | null {
+  if (!k) return null;
+  const norm = (t: string | undefined) => (t ?? '').trim().toLocaleLowerCase('cs-CZ');
+  const shoda = zamereni ? k.prepisy.filter(p => norm(p.zamereni) === norm(zamereni)) : [];
+  return shoda.length ? { ...k, prepisy: shoda } : k;
+}
+
 /** Null, když nabídka v zobrazeném ročníku souhrnů není; stránka pak použije starší podobu. */
 export async function getProfilOboru(programId: string, zamereni: string | undefined, redizo: string): Promise<ProfilOboruData | null> {
   const souhrn = await getSouhrnNabidky(programId);
@@ -159,14 +167,13 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
   // „nad minimem se dostali všichni“, což data nemusí nést; zůstane histogram.
   const kdeStojim: ProfilOboruData['kdeStojim'] = rokPasem && pasmaData?.pasmo_nejistoty
     ? await Promise.all([nactiPrevodDruhu(druh), poziceOboru(klicPasem), kriteriaOboru(klicPasem)])
-      .then(([prevod, pozice, kriteria]) => ({
-        druh,
-        prevod,
-        // Pořadí jen tam, kde sedí na počet soutěžících v pásmech; jinak by věta
-        // o pořadí mluvila o jiném celku než věta o pásmu (issue #183).
-        pozice: pozice && Object.values(pozice).reduce((a, n) => a + n, 0) === pasmaData.soutezicich ? pozice : null,
-        kriteria,
-      }))
+      .then(([prevod, pozice, kriteria]) => {
+        // Pásma, která počítají uchazeče s více zaměřeními vícekrát (issue #183),
+        // se s deduplikovaným pořadím rozcházejí; proužek pak radši vůbec ne.
+        const soucet = pozice ? Object.values(pozice).reduce((a, n) => a + n, 0) : null;
+        if (soucet !== pasmaData.soutezicich) return null;
+        return { druh, prevod, pozice, kriteria: kriteriaZamereni(kriteria, zamereni) };
+      })
     : null;
 
   // Předchozí ročník pásem se odvozuje od zobrazeného, ne z napsaného letopočtu;

@@ -21,8 +21,9 @@ const NALEZ_TEXT = 'Při kontrole se přepis v něčem neshodl s PDF.';
 
 /** Kritéria předchozího ročníku rozhodovala jen přijímačkami (prostým součtem). */
 export function jenPrijimacky(k: KriteriaOboru | null | undefined): boolean {
-  const p = k?.prepisy[0];
-  return Boolean(p && p.rezim === 'pouze_jpz' && p.jpz_navic.length === 0 && !p.chybi_slozky);
+  // Všechna zaměření: u společné stránky nesmí jedno „jen JPZ“ skrýt bodování jiného.
+  return Boolean(k && k.prepisy.length > 0
+    && k.prepisy.every(p => p.rezim === 'pouze_jpz' && p.jpz_navic.length === 0 && !p.chybi_slozky));
 }
 
 /**
@@ -30,7 +31,8 @@ export function jenPrijimacky(k: KriteriaOboru | null | undefined): boolean {
  * 28. 9. 2026). U „jen JPZ“ jedna věta, bez přepisu nic.
  */
 function Kriteria({ k }: { k: KriteriaOboru }) {
-  const p = k.prepisy[0];
+  // U víc zaměření ukázat to, které boduje i něco dalšího; jinak první.
+  const p = k.prepisy.find(x => x.rezim === 'jine' || x.jpz_navic.length > 0 || x.chybi_slozky) ?? k.prepisy[0];
   if (!p) return null;
   const noveRizeni = (
     <>Kritéria pro nové přijímací řízení se teprve vyhlásí{k.noveKriteria ? `; školy je zveřejní ${k.noveKriteria}` : ''}.</>
@@ -89,7 +91,7 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
             {p.minima.map((m, i) => <li key={i}>{m.replace(/\.$/, '')}</li>)}
           </ul>
         </div>}
-      {k.prepisy.length > 1 && <p className="text-slate-500">Obor má víc zaměření; ukazujeme první z nich.</p>}
+      {k.prepisy.length > 1 && <p className="text-slate-500">Obor má víc zaměření a kritéria se mezi nimi můžou lišit; ukazujeme {p.zamereni ? `zaměření ${p.zamereni}` : 'jedno z nich'}.</p>}
       <p className="text-amber-800">
         {p.prepis === 'strojovy' ? 'Přepsal to z PDF počítač a může obsahovat chybu: při kontrole vzorku byl podstatně chybný zhruba každý desátý přepis.' : 'Přepsáno ručně z PDF a může obsahovat chybu.'}
         {p.nalezy.length > 0 && ` ${NALEZ_TEXT}`} Ověřte si to v kritériích školy.
@@ -184,17 +186,20 @@ export interface ZadanyTest { test: string; cj: string; ma: string }
 
 const JINY = 'jiny';
 
-/** Klíč úložiště podle druhu testu: výsledek pro 9. třídu platí pro všechny čtyřleté obory. */
-const klicUlozeni = (druh: DruhTestu) => `kde-stojim:testy:v1:${druh}`;
+/**
+ * Klíč úložiště podle druhu a ročníku testu: výsledek pro 9. třídu platí pro všechny
+ * čtyřleté obory; po přepnutí tabulek na jiný ročník testu se starý nepoužije.
+ */
+const klicUlozeni = (druh: DruhTestu, rokTestu: number | undefined) => `kde-stojim:testy:v1:${druh}:${rokTestu ?? 'bez-prevodu'}`;
 
 function cislo(t: string): number | null {
   const n = Number(t.replace(',', '.'));
   return t.trim() && !Number.isNaN(n) && n >= 0 && n <= 50 ? n : null;
 }
 
-function nactiUlozene(druh: DruhTestu): ZadanyTest[] | null {
+function nactiUlozene(klic: string): ZadanyTest[] | null {
   try {
-    const surove = JSON.parse(window.localStorage.getItem(klicUlozeni(druh)) ?? 'null');
+    const surove = JSON.parse(window.localStorage.getItem(klic) ?? 'null');
     if (!Array.isArray(surove)) return null;
     const testy = surove
       .filter((t): t is ZadanyTest => t && typeof t.test === 'string' && typeof t.cj === 'string' && typeof t.ma === 'string')
@@ -232,18 +237,19 @@ export function KdeStojim({
   const [testy, setTesty] = useState<ZadanyTest[]>(() => [{ test: '1-radny', cj: '', ma: '' }]);
   const [otevreno, setOtevreno] = useState(vstupOtevreny);
   const nacteno = useRef(false);
+  const klic = klicUlozeni(druh, prevodVstup?.rok_testu);
 
   // Uložené výsledky se čtou až po hydrataci, server o nich neví.
   useEffect(() => {
     if (!pamatovat) return;
-    const ulozene = nactiUlozene(druh);
+    const ulozene = nactiUlozene(klic);
     if (ulozene) {
       // Čtení až po hydrataci je záměr: v počátečním stavu by se server a prohlížeč rozešly.
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setTesty(ulozene);
       setOtevreno(true);
     }
-  }, [pamatovat, druh]);
+  }, [pamatovat, klic]);
 
   useEffect(() => {
     if (!pamatovat) return;
@@ -254,16 +260,16 @@ export function KdeStojim({
     }
     try {
       const vyplnene = testy.filter(t => t.cj.trim() || t.ma.trim());
-      if (vyplnene.length) window.localStorage.setItem(klicUlozeni(druh), JSON.stringify(vyplnene));
-      else window.localStorage.removeItem(klicUlozeni(druh));
+      if (vyplnene.length) window.localStorage.setItem(klic, JSON.stringify(vyplnene));
+      else window.localStorage.removeItem(klic);
     } catch {
       // Úložiště může být zakázané; stránka funguje i bez paměti.
     }
-  }, [testy, pamatovat, druh]);
+  }, [testy, pamatovat, klic]);
 
   const smazat = () => {
     try {
-      window.localStorage.removeItem(klicUlozeni(druh));
+      window.localStorage.removeItem(klic);
     } catch {
       // viz výše
     }
@@ -514,7 +520,7 @@ export function KdeStojim({
 
       {otevreno && (
         <div className="rounded-xl border border-slate-200 bg-white p-5">
-          <Veta poloha={poloha} body={body} lo={lo} hi={hi} data={d} rok={rok} dalsiKriteria={kriteria?.prepisy[0]?.rezim === 'jine'} />
+          <Veta poloha={poloha} body={body} lo={lo} hi={hi} data={d} rok={rok} dalsiKriteria={Boolean(kriteria?.prepisy.some(x => x.rezim === 'jine'))} />
           {body !== null && pozice && (() => {
             const p = poradiMeziSoutezicimi(pozice, body);
             return (
