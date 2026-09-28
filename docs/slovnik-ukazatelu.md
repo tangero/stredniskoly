@@ -415,7 +415,7 @@ Nabídka, která v 1. kole přijala méně uchazečů, než měla míst, a přes
 V roce 2026 platí pro 47 % oborů, které se v 1. kole nenaplnily. Věta na webu proto varuje, že volná místa po 1. kole neznamenají 2. kolo.
 
 ### Podíl přijímaček na bodování
-Kolik procent bodů celkového hodnocení tvořila v kritériích přijetí jednotná přijímací zkouška. Zdroj `public/kriteria_prijeti_{rok}.json` (`scripts/build-kriteria-prijeti.py`), pracovní přepis PDF kritérií z DiPSy: u strojového přepisu podíl, který PDF deklaruje, jinak maximum za JPZ po přepočtu děleno součtem maxim všech složek; u „bodují jen přijímačky“ 100. Jednotka procenta, zaokrouhleno na celá. Bez známých maxim všech složek se neuvádí.
+Kolik procent bodů celkového hodnocení tvořila v kritériích přijetí jednotná přijímací zkouška. Zdroj `public/kriteria_prijeti_{rok}.json` (`scripts/build-kriteria-prijeti.py`), pracovní přepis PDF kritérií z DiPSy: u strojového přepisu podíl, který PDF deklaruje, jinak maximum za JPZ po přepočtu děleno součtem kladných maxim všech složek (srážky, například za sníženou známku z chování, se nepočítají); u „bodují jen přijímačky“ 100. Jednotka procenta, zaokrouhleno na celá. Bez známých maxim všech složek se neuvádí.
 
 **Co neříká:** Není ověřený: přepis dělá model nebo člověk z PDF a může obsahovat chybu, i když mechanická kontrola citací nic nenašla. Platí pro rok kritérií (2026), ne pro nové přijímací řízení; školy kritéria mění. Neříká, jak moc další složky **rozhodovaly**: složka s velkým maximem, kterou všichni dostanou plnou, pořadí nemění. Nepoužívá se k řazení ani k výpočtu bodů uchazeče.
 
@@ -654,7 +654,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
-| 1.36 | **Pořadí mezi soutěžícími** a **Podíl přijímaček na bodování** (27. 9. 2026, oddíl 2). První z rozdělení výsledků soutěžících po oborech, druhý z pracovního přepisu kritérií 2026 z PDF v DiPSy (54 oborů), jen v prototypu pásmového proužku a s výhradou, že přepis může obsahovat chybu. |
+| 1.36 | **Pořadí mezi soutěžícími** a **Podíl přijímaček na bodování** (27. 9. 2026, oddíl 2). První z rozdělení výsledků soutěžících po oborech, druhý z pracovního přepisu kritérií 2026 z PDF v DiPSy (2 814 oborů po plošném přepisu 28. 9. 2026), jen v prototypu pásmového proužku a s výhradou, že přepis může obsahovat chybu. |
 | 1.35 | **Převedený výsledek testu** (27. 9. 2026, oddíl 2). Body z cvičného testu TAU převedené přes pořadí mezi řešiteli daného termínu na body roku zobrazených pásem. Zdroj položková data JPZ 2024, sada `cermat-prevod-testu`. Náhradní termíny označené jako nespolehlivé. |
 | 1.34 | **Zdroj počtu akcí v kraji je databáze** (26. 9. 2026). Akce veletrhů se čtou z tabulky `veletrh_akce`, změny přicházejí jako schválené návrhy přes API; soubor `src/data/veletrhy-2027.json` je snímek a záloha. Výpočet ani definice se nemění. |
 | 1.33 | **Frekvence maturity popisuje dostupná hodnocení** (23. 9. 2026). Slovní text už netvrdí „každý rok“, pokud se podařilo hodnotit jen jednu skupinu v jediném roce, a uvádí konkrétní rok hodnocení; u více skupin je jednotkou hodnocení skupiny oborů v roce. Výpočet podílu ani data se nemění. |

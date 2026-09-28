@@ -52,7 +52,8 @@ def podil_jpz(jpz_max: float | None, slozky: list[dict]) -> float | None:
         return None
     if any(s.get("max") is None for s in slozky):
         return None
-    celkem = jpz_max + sum(s["max"] for s in slozky)
+    # Srážky (záporné maximum, např. za sníženou známku z chování) body nepřidávají.
+    celkem = jpz_max + sum(s["max"] for s in slozky if s["max"] > 0)
     return round(jpz_max / celkem * 100) if celkem else None
 
 

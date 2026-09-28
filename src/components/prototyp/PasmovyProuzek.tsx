@@ -54,7 +54,7 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
           {p.slozky.length > 0 && (
             <ul className="list-disc space-y-0.5 pl-5">
               {p.slozky.filter(x => x.max !== 0).map((x, i) => (
-                <li key={i}>{x.nazev}{x.max !== null ? `: až ${x.max} bodů` : ''}</li>
+                <li key={i}>{x.nazev}{x.max === null ? '' : x.max < 0 ? `: srážka až ${-x.max} bodů` : `: až ${x.max} bodů`}</li>
               ))}
             </ul>
           )}
