@@ -266,6 +266,7 @@ export default async function SchoolDetailPage({ params }: Props) {
       hasZamereni: !!p.zamereni,
       is_new_2026: p.is_new_2026,
       prev_zamereni_name: p.prev_zamereni_name,
+      ...(p.nevypsano_2026 ? { naposledyVypsano: p.rok ?? (true as const) } : {}),
     };
   });
 
