@@ -556,7 +556,8 @@ export default async function SchoolDetailPage({ params }: Props) {
               nova={!!program2026?.is_new}
             />
           )}
-          <DruheKoloCard data={await getDruheKolo(program.id, program.zamereni)} />
+          {/* Nevypsaná nabídka: 2. kolo zobrazeného roku se jí netýká („obor se naplnil“ by bylo nepravdivé). */}
+          {!program.nevypsano_2026 && <DruheKoloCard data={await getDruheKolo(program.id, program.zamereni)} />}
           <div className="my-6 rounded-xl bg-white p-6">
             <h2 className="font-semibold">Přijetí a kapacita{program.rok ? ` · ${program.rok}` : ''}</h2>
             <p className="mt-2">Přijatí{program.rok ? ` v roce ${program.rok}` : ''}: {program.prijati}. Kapacita: {program.kapacita} míst.</p>
