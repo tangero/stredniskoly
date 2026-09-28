@@ -44,7 +44,12 @@ skip_stale() {
 }
 
 require_current
-vercel pull --yes --environment="$target" --git-branch="${GITHUB_REF#refs/heads/}" --token="$VERCEL_TOKEN"
+pull_args=(pull --yes --environment="$target" --token="$VERCEL_TOKEN")
+# Vercel povoluje přepsání proměnných podle větve pouze u preview.
+if [[ "$target" == preview ]]; then
+  pull_args+=(--git-branch="${GITHUB_REF#refs/heads/}")
+fi
+vercel "${pull_args[@]}"
 
 build_args=(build --yes --token="$VERCEL_TOKEN")
 # Výstup projektu má přes 39 tisíc souborů; API přijímá nejvýše 15 tisíc

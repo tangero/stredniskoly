@@ -73,6 +73,7 @@ if sys.argv[1] == "deploy":
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual([c[0] for c in self.calls], ["pull", "build", "deploy", "inspect", "promote"])
         self.assertIn("--environment=production", self.calls[0])
+        self.assertFalse(any(arg.startswith("--git-branch") for arg in self.calls[0]))
         self.assertIn("--prod", self.calls[1])
         self.assertIn("--prebuilt", self.calls[2])
         self.assertIn("--archive=tgz", self.calls[2])
