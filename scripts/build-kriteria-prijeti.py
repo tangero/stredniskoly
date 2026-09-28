@@ -43,6 +43,9 @@ RE_JPZ = re.compile(r"didaktick|cermat|jednotn\w* přijímac|\bJPZ\b|test\w* z (
 RE_SKOLNI = re.compile(r"školní|školské|vlastní|talent|pohovor|ústní", re.I)
 
 
+RE_VAHA = re.compile(r"koeficient|násob|váh|vaha|[×x]\s*\d|\d\s*[×x]|\b0,\d|\bK\s*=", re.I)
+
+
 def je_jpz(nazev: str) -> bool:
     return bool(RE_JPZ.search(nazev)) and not RE_SKOLNI.search(nazev)
 
@@ -60,10 +63,15 @@ def rozdel_slozky(slozky: list[dict], jpz: dict, jpz_max: float | None) -> tuple
     opakovani = {v for v in (jpz.get("cjl_max"), jpz.get("mat_max"), jpz_max) if v}
     dalsi = [s for s in slozky if not je_jpz(s["nazev"])]
     jpz_slozky = [s for s in slozky if je_jpz(s["nazev"])]
-    stejne = len({s.get("max") for s in jpz_slozky}) == 1
-    if jpz_slozky and stejne and jpz_max and abs(sum(s.get("max") or 0 for s in jpz_slozky) - jpz_max) < 0.01:
-        return dalsi, []  # stejné části, součet = celek: jen rozpis celku
-    return dalsi, [{"nazev": s["nazev"], "max": None} for s in jpz_slozky if s.get("max") not in opakovani]
+    # Vážení v názvu se nikdy nezahazuje, i když se maximum náhodou shoduje
+    # s celkem („matematika – násobení koeficientem K=2“, maximum 100).
+    vazene = [s for s in jpz_slozky if RE_VAHA.search(s["nazev"])]
+    ostatni = [s for s in jpz_slozky if not RE_VAHA.search(s["nazev"])]
+    stejne = len({s.get("max") for s in ostatni}) == 1
+    if ostatni and stejne and jpz_max and abs(sum(s.get("max") or 0 for s in ostatni) - jpz_max) < 0.01:
+        ostatni = []  # stejné části, součet = celek: jen rozpis celku
+    ostatni = [s for s in ostatni if s.get("max") not in opakovani]
+    return dalsi, [{"nazev": s["nazev"], "max": None} for s in vazene + ostatni]
 
 
 def citelne_minimum(m) -> str:
