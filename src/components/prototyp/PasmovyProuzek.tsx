@@ -46,10 +46,10 @@ export function PasmovyProuzek({ obory, rok, prevod, vybranyObor }: {
       <div className="flex flex-wrap items-end gap-4 rounded-xl bg-slate-50 p-4">
         <label className="block text-sm">
           <span className="mb-1 block font-medium text-slate-700">Obor</span>
-          <select value={vybrany} onChange={e => setVybrany(e.target.value)} className="w-80 rounded-lg border border-slate-300 px-3 py-2">
+          <select value={vybrany} onChange={e => setVybrany(e.target.value)} className="w-full max-w-2xl rounded-lg border border-slate-300 px-3 py-2">
             {obory.map(o => (
               <option key={o.id} value={o.id}>
-                {o.nazev} · {o.obec}
+                {o.nazev} · {o.obec} · {o.obor}
               </option>
             ))}
           </select>
