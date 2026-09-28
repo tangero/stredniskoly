@@ -109,8 +109,13 @@ def main() -> None:
         }
         klic = hashlib.sha256(json.dumps({"s": stav, "o": otazky}, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
         cesta = OUTPUT / f"{sid}-v{VERZE}{'-jpz' if jen_jpz else ''}.json"
+        chyby = [json.loads(c.read_text()) for c in OUTPUT.glob(f"{sid}-v{VERZE}*.error*.json")]
         if cesta.exists() and json.loads(cesta.read_text())["zadani_sha256"] == klic:
             vysledek = json.loads(cesta.read_text())
+        elif any(c.get("zadani_sha256") == klic for c in chyby):
+            # Stejné zadání už jednou vrátilo neúplnou odpověď (účtovanou); neopakovat automaticky.
+            print(v["cislo"], "dříve neúplná odpověď, přeskočeno", flush=True)
+            continue
         else:
             if utraceno >= MAX_USD:
                 raise SystemExit("Dosažen strop pilotu.")
@@ -125,12 +130,14 @@ def main() -> None:
             if any(k not in odpoved for k in otazky):
                 utraceno += float(odpoved["_cena"])
                 # Uložit i s cenou, ať ji rozpočtový přepočet započte.
-                cesta.with_suffix(".error.json").write_text(json.dumps(
+                # Každý účtovaný pokus zvlášť, nic se nepřepisuje.
+                cesta.with_name(f"{cesta.stem}.error-{len(chyby) + 1}.json").write_text(json.dumps(
                     {"cislo": v["cislo"], "source_id": sid, "zadani_sha256": klic, "duvod": "neuplna_odpoved",
                      "cena_usd": odpoved["_cena"]}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
                 print(v["cislo"], "neúplná odpověď", flush=True)
                 continue
-            vysledek = {"cislo": v["cislo"], "obor": v["obor"], "source_id": sid, "zadani_sha256": klic, "znaku": len(text),
+            vysledek = {"cislo": v["cislo"], "obor": v["obor"], "source_id": sid, "zadani_sha256": klic,
+                        "sha256": row["sha256"], "verze_prepisu": prepis.get("verze_prepisu"), "znaku": len(text),
                         "cena_usd": odpoved.pop("_cena", None), "odpovedi": odpoved}
             cesta.write_text(json.dumps(vysledek, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             utraceno += float(vysledek["cena_usd"] or 0)

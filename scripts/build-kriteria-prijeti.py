@@ -100,7 +100,13 @@ def podil_jpz(jpz_max: float | None, slozky: list[dict]) -> float | None:
 def z_pilotu() -> dict[str, dict]:
     d = json.loads((KOREN / "src" / "data" / "kriteria-prijeti-2026-pilot.json").read_text(encoding="utf-8"))
     vystup = {}
+    manifest = kontrola.pilot.latest_manifest()
     for z in d["zaznamy"]:
+        radek = manifest.get(z["source_id"])
+        if not radek or z["zdroj"].get("sha256") != radek["sha256"] or z["rok"] != ROK or z["kolo"] != 1:
+            # Ruční přepis starého PDF nesmí přebít platný strojový přepis nového.
+            print(f"Ruční přepis {z['source_id']} neodpovídá dnešnímu PDF, vynechán.")
+            continue
         b = z["bodovani"]
         jpz = b.get("jpz") or {}
         # Váhy v ručním přepisu jsou koeficienty vzorce („0,75 × JPZ + 0,25 × prospěch“),
@@ -108,7 +114,7 @@ def z_pilotu() -> dict[str, dict]:
         def po_vaze(maximum, vaha):
             if maximum is None:
                 return None
-            return round(maximum * vaha / 100, 2) if vaha else maximum
+            return round(maximum * vaha / 100, 2) if vaha is not None else maximum
         jpz_max = po_vaze((jpz.get("cjl_max") or 0) + (jpz.get("mat_max") or 0), jpz.get("vaha_pct"))
         slozky = [{"nazev": TYPY.get(s["typ"], s["typ"].replace("_", " ")),
                    "max": po_vaze(s.get("max_bodu"), s.get("vaha_pct"))} for s in b.get("dalsi_slozky", [])]
@@ -124,6 +130,8 @@ def z_pilotu() -> dict[str, dict]:
             "nejasnosti": z.get("nejasnosti", []),
             "prepis": "rucni",
             "nalezy": [],
+            "sha256": radek["sha256"],
+            "verze_prepisu": "rucni",
         }
     return vystup
 
@@ -177,6 +185,8 @@ def ze_strojoveho_prepisu() -> dict[str, dict]:
             "nejasnosti": n.get("nejasnosti", []),
             "prepis": "strojovy",
             "nalezy": nalezy,
+            "sha256": r["sha256"],
+            "verze_prepisu": 9 if r.get("plny_text") or cesta.name.endswith("-v9.json") else VERZE,
         }
     return vystup
 
@@ -188,12 +198,17 @@ def ze_strojoveho_prepisu() -> dict[str, dict]:
 JEV_PRAH = 0.9
 
 
-def jev_oznaceni() -> set[str]:
-    oznacene = set()
+def jev_oznaceni() -> dict[str, tuple[str, int]]:
+    """source_id → (otisk PDF, verze přepisu), které Jev s jistotou označil.
+
+    Verdikt platí jen pro PDF a verzi přepisu, nad kterými vznikl; po změně
+    PDF nebo novém přepisu se nepoužije.
+    """
+    oznacene = {}
     for cesta in (BASE / "llm-pilot" / "jev-kontrola").glob("*-jpz.json"):
         r = json.loads(cesta.read_text(encoding="utf-8"))
-        if r["odpovedi"]["dalsi_body"]["probabilities"].get("ano", 0) >= JEV_PRAH:
-            oznacene.add(r["source_id"])
+        if r["odpovedi"]["dalsi_body"]["probabilities"].get("ano", 0) >= JEV_PRAH and r.get("sha256"):
+            oznacene[r["source_id"]] = (r["sha256"], r.get("verze_prepisu"))
     return oznacene
 
 
@@ -203,8 +218,15 @@ RUCNE_OVERENE = KOREN / "docs" / "podklady" / "dipsy-kriteria-rucne-overene-2026
 
 def main() -> None:
     prepisy = ze_strojoveho_prepisu()
-    rucne = set(json.loads(RUCNE_OVERENE.read_text(encoding="utf-8"))["obory"])
-    oznacene = jev_oznaceni() | {sid for sid, p in prepisy.items() if p["klic"] in rucne}
+    rucne = json.loads(RUCNE_OVERENE.read_text(encoding="utf-8"))["obory"]
+    jev = jev_oznaceni()
+    oznacene = set()
+    for sid, p in prepisy.items():
+        overeni = rucne.get(p["klic"])
+        if overeni and overeni["source_id"] == sid and overeni["sha256"] == p["sha256"]:
+            oznacene.add(sid)  # ruční ověření téhož PDF
+        elif sid in jev and jev[sid] == (p["sha256"], p["verze_prepisu"]):
+            oznacene.add(sid)  # Jev nad tímtéž PDF i přepisem
     for sid in oznacene:
         p = prepisy.get(sid)
         # Přepis, který zachytil vážení předmětu (jpz_navic), Jev často označí
@@ -223,6 +245,7 @@ def main() -> None:
         obory.setdefault(klic, {"pdf": True, "prepisy": []})
     for sid, p in prepisy.items():
         klic = p.pop("klic")
+        p.pop("sha256", None)  # otisk slouží jen k vazbě ověření, na web nejde
         obory.setdefault(klic, {"pdf": True, "prepisy": []})["prepisy"].append({"source_id": sid, **p})
     vystup = {
         "rok": ROK,

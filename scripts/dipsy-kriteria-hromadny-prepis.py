@@ -81,8 +81,15 @@ def vyber(limit: int | None, ids: list[str] | None = None) -> list[tuple[dict, d
             continue
         cil = up.OUTPUT / f"{sid}-v{verze()}.json"
         chyba = up.OUTPUT / f"{sid}-v{verze()}.error.json"
-        if cil.exists() or chyba.exists():
-            continue
+        existujici = [c for c in (cil, chyba) if c.exists()]
+        if existujici:
+            if all(json.loads(c.read_text(encoding="utf-8")).get("sha256") == row["sha256"] for c in existujici):
+                continue
+            # Výsledek ke staršímu PDF: odložit s historií ceny a přepsat znovu.
+            razitko = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
+            for c in existujici:
+                c.rename(c.with_name(f"{c.stem}.stary-{razitko}.json"))
+            print(f"{sid}: výsledek ke staršímu PDF odložen, přepíše se znovu.", flush=True)
         fronta.append((offers[sid], row))
     fronta.sort(key=lambda x: x[0]["source_id"])
     return fronta[:limit] if limit else fronta

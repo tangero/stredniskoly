@@ -42,7 +42,14 @@ def main():
     parser.add_argument("--opus-queue", action="store_true")
     parser.add_argument("--poll", action="store_true", help="získat výsledek již odeslané dávky")
     parser.add_argument("--wait", action="store_true", help="čekat na dokončení v intervalu 60 sekund")
+    parser.add_argument("--archiv", action="store_true",
+                        help="výslovně spustit archivní pilot (placená volání bez plné pojistky rozpočtu)")
     args = parser.parse_args()
+    if not args.archiv:
+        # Archivní pilot vzorku 100 (24. 9. 2026). Pro nové přepisy slouží
+        # scripts/dipsy-kriteria-hromadny-prepis.py, který má pojistku rozpočtu
+        # i při neznámém účtování; tento skript ji nemá (code review PR #182).
+        raise SystemExit("Archivní pilot. Použijte dipsy-kriteria-hromadny-prepis.py, nebo --archiv.")
     if args.opus_queue and args.model != "opus":
         parser.error("--opus-queue patří jen k modelu opus")
     sample = beh.load_sample()

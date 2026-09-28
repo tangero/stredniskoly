@@ -124,7 +124,14 @@ def main():
     parser.add_argument("--source-id", action="append", help="jedna či více nabídek ze zmrazeného vzorku")
     parser.add_argument("--opus-queue", action="store_true", help="jen výběr pro Opus ze srovnání dvojice")
     parser.add_argument("--workers", type=int, default=3)
+    parser.add_argument("--archiv", action="store_true",
+                        help="výslovně spustit archivní pilot (placená volání bez plné pojistky rozpočtu)")
     args = parser.parse_args()
+    if not args.archiv:
+        # Archivní pilot vzorku 100 (24. 9. 2026). Pro nové přepisy slouží
+        # scripts/dipsy-kriteria-hromadny-prepis.py, který má pojistku rozpočtu
+        # i při neznámém účtování; tento skript ji nemá (code review PR #182).
+        raise SystemExit("Archivní pilot. Použijte dipsy-kriteria-hromadny-prepis.py, nebo --archiv.")
     if not 1 <= args.limit <= 100 or not 1 <= args.workers <= 4:
         parser.error("--limit musí být 1–100 a --workers 1–4")
     all_sample = load_sample()

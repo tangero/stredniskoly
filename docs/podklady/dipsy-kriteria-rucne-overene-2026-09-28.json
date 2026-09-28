@@ -1,9 +1,203 @@
 {
- "popis": "Obory, u nichž ruční kontrola naslepo 28. 9. 2026 potvrdila, že škola boduje i něco jiného než prostý součet JPZ, ačkoli strojový přepis tvrdí „jen přijímačky“. Z ověření 41 oborů, které Jev označil s jistotou pod 0,9 (docs/podklady/dipsy-kriteria-jev-pilot-30-2026-09-28.md).",
+ "popis": "Obory, u nichž ruční kontrola naslepo 28. 9. 2026 potvrdila, že škola boduje i něco jiného než prostý součet JPZ, ačkoli strojový přepis tvrdil „jen přijímačky“. Platí jen pro PDF s uvedeným otiskem (sha256); po změně PDF ověření neplatí.",
  "obory": {
-  "600170560_34-56-L/01": "čeština váha 60 %, matematika 40 %, řazení koeficientem pořadí (s. 1–2)",
-  "600170560_69-41-L/01": "čeština váha 60 %, matematika 40 %, řazení koeficientem pořadí (s. 2)",
-  "600008193_64-41-L/51": "nástavba: průměrný prospěch 1. pololetí 3. ročníku SŠ 0–25 bodů a 2. pololetí 2. ročníku 0–25 bodů, max. 150 bodů (s. 1)",
-  "691020060_75-31-M/01": "po JPZ druhá část formou motivačního pohovoru, bodování neuvedeno (s. 1, OCR)"
+  "600170560_34-56-L/01": {
+   "source_id": "4b0fe2a7-b7d9-4940-90c8-b68627040206",
+   "sha256": "ba8d51d458defd931ebf8565d8f7eb12a9abb525290198ea9faa3f8146541137",
+   "dukaz": "čeština váha 60 %, matematika 40 %, řazení koeficientem pořadí (s. 1–2)",
+   "zdroj": "ověření 41 oborů s jistotou Jevu pod 0,9"
+  },
+  "600170560_69-41-L/01": {
+   "source_id": "157dc84e-b800-4925-b503-40090d1f62d3",
+   "sha256": "d96c43a1687e7b2173a4aca3b81193d1e433c6faf74530ca94409cd3550fdbe7",
+   "dukaz": "čeština váha 60 %, matematika 40 %, řazení koeficientem pořadí (s. 2)",
+   "zdroj": "ověření 41 oborů s jistotou Jevu pod 0,9"
+  },
+  "600008193_64-41-L/51": {
+   "source_id": "749a997a-52a0-46ac-a0e7-ec2646b4b566",
+   "sha256": "b692f886368868f4dfa3bb31bff0f216919d972a6955b79e111629b11a8f92cb",
+   "dukaz": "nástavba: průměrný prospěch 1. pololetí 3. ročníku SŠ 0–25 bodů a 2. pololetí 2. ročníku 0–25 bodů, max. 150 bodů (s. 1)",
+   "zdroj": "ověření 41 oborů s jistotou Jevu pod 0,9"
+  },
+  "691020060_75-31-M/01": {
+   "source_id": "6be83212-9dcf-429c-a8c6-711e294d66ae",
+   "sha256": "2bcc390db7c054c53753bacd1b8adcb7a2b59b8496a2386cc162c9c2d4735a1e",
+   "dukaz": "po JPZ druhá část formou motivačního pohovoru, bodování neuvedeno (s. 1, OCR)",
+   "zdroj": "ověření 41 oborů s jistotou Jevu pod 0,9"
+  },
+  "600017842_79-41-K/41": {
+   "source_id": "317d6f1e-474d-4f52-8daa-8cd76a93c879",
+   "sha256": "db2ad769741b5f5d759c8d3802203c0f5a91a831feaf53a560221cc62e2acd60",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600014622_63-41-M/02": {
+   "source_id": "ea8f9629-424e-4d65-aa88-17ff8d02544c",
+   "sha256": "912ac7542095c68e13900ab7bc8c77ff0a6497faaf637a0bb39bf5d63bd1ff4b",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600012433_78-42-M/08": {
+   "source_id": "14f6cf02-0ec0-48e2-8dc7-b53793dbad26",
+   "sha256": "47f9bf2de42dfeace58e1462049faf6c344f468173d448dc18fa7549f99e4fc0",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600013031_65-42-M/02": {
+   "source_id": "6a8f3681-0678-4a7c-88b3-d4f726d78f1c",
+   "sha256": "255699c209a440632f6d56659daa847a744fe9c30bd8dee93d40a4f9ca9ea22e",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600005518_79-41-K/41": {
+   "source_id": "49d20b6c-d15b-4d7a-9441-ee5006e7dbd6",
+   "sha256": "58419169c2d809bec620059d0f34e17dbfc05310e7da694e2ec90d758dace05b",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600170837_23-43-L/51": {
+   "source_id": "d87b6eb0-7e67-4546-9962-5e9a08ea2e82",
+   "sha256": "198091b96a99d3f38a13556f40092995eb7504a651afeb17277a12bbce4d0064",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600014622_78-42-M/03": {
+   "source_id": "17837052-f7ef-4a82-a47b-e8e1257d0f16",
+   "sha256": "912ac7542095c68e13900ab7bc8c77ff0a6497faaf637a0bb39bf5d63bd1ff4b",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600012433_28-44-M/01": {
+   "source_id": "e4784f67-87cf-4b15-a5e9-4033845e645c",
+   "sha256": "47f9bf2de42dfeace58e1462049faf6c344f468173d448dc18fa7549f99e4fc0",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600017842_78-42-M/03": {
+   "source_id": "3f49ce18-dcaf-405e-9200-c3b55dcf3b80",
+   "sha256": "db2ad769741b5f5d759c8d3802203c0f5a91a831feaf53a560221cc62e2acd60",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600010856_78-42-M/06": {
+   "source_id": "c00a2087-90cb-4144-bef7-2d81efc372ff",
+   "sha256": "285a3ee831a7d904302a7ddb90167c9790441753d5822eea77937ad73deb5919",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600009971_53-41-M/03": {
+   "source_id": "d9a8a09e-828a-4160-827c-92fdd39481c3",
+   "sha256": "2e088129820b7a8d2f492a98f2b631a4e95d15f2ea86393979d0a90b47e66efa",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "610100581_26-41-L/01": {
+   "source_id": "09ddd6b3-d1e1-40a2-bf48-e35e132d0b8b",
+   "sha256": "a08caa9a957f871fbb386157123c303e2aa4a23013b1b5cd0b177b32cecca8cf",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600171213_64-41-L/51": {
+   "source_id": "0c439e21-35eb-46a8-895e-ddd6c45c7612",
+   "sha256": "85fc90e19b0775b593f06267cd44783c2638d3496480480eeaca2bd139cf441b",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600013197_16-02-M/01": {
+   "source_id": "60b68055-e456-42db-9038-60db33044892",
+   "sha256": "8d8f81149690263d1059fa8ace162df0488a5a09d6bc154781794300146d3f41",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600171213_34-41-M/01": {
+   "source_id": "b7265e63-21c4-49b2-9141-e7cdeb105545",
+   "sha256": "85fc90e19b0775b593f06267cd44783c2638d3496480480eeaca2bd139cf441b",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "610100581_18-20-M/01": {
+   "source_id": "5c2e229e-dd9f-4bc0-b6d8-75743e4339b2",
+   "sha256": "8df608388dabc4343d162add53df2a548ee8c77b0fac9239554688262d563aa1",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "651040370_79-41-K/41": {
+   "source_id": "1588b8ae-d1f4-46c7-9024-b11b3494cbd0",
+   "sha256": "4d02195f30a42e373e948d77c11969a1f86a46cc7c375c13e1a0ae1ed5ca4b5e",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "610100581_26-45-M/01": {
+   "source_id": "4abe42b8-55f8-4cb6-b185-7e7572f4f458",
+   "sha256": "03689f616821e2a0d6fa66220df990ef42529eba9f8391545a1f22315127870b",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600171027_63-41-M/01": {
+   "source_id": "69a0fefe-7328-4101-84e6-e5b398d2cf82",
+   "sha256": "9e20454c835aea95b93f7a0062d1914e5bf6de86c69cd262a6cb8fa872759852",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600010856_65-42-M/02": {
+   "source_id": "0b62f856-c716-4994-b8f2-5b0d71e5cfa4",
+   "sha256": "285a3ee831a7d904302a7ddb90167c9790441753d5822eea77937ad73deb5919",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600008193_23-43-L/51": {
+   "source_id": "22e1b9cc-9f79-425a-ac56-82253a7ff928",
+   "sha256": "b692f886368868f4dfa3bb31bff0f216919d972a6955b79e111629b11a8f92cb",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600170560_64-41-L/51": {
+   "source_id": "c5742662-e44e-4508-9d04-2cf959bcc3cd",
+   "sha256": "a640490a0ddf666bf474ffb5593f0d8d2dc6fc06b9a9c4225adf5df1a8b4ae2d",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600005518_79-41-K/81": {
+   "source_id": "21cdadbb-c739-4b78-9291-19ff9e0b9ca8",
+   "sha256": "409f6f55ed1b39f63abf06b27c92d47b06b2f1da833de9e4dc83b6819d761ce5",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600015971_23-45-L/01": {
+   "source_id": "8ef92995-e70b-4fd0-bfd5-80370c55df85",
+   "sha256": "ffc50803dffeed201e9db00e2c42bfa4f49b6f8bacdf01579f22bb0f6eeef982",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600009416_75-41-M/01": {
+   "source_id": "af1bc005-93c9-4830-8476-dcbb33a178d2",
+   "sha256": "8ef5d18fd5b4660f374700c6b197f63f0f029eb849660a35668c53f72c496873",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "610451049_39-08-M/01": {
+   "source_id": "e1a5e392-547a-4f39-9055-34a8acc8f847",
+   "sha256": "66e0059ff33252fe8f76218edbb6f2a8a2cdd866dc780da6041eef21405f577e",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "610451049_64-41-L/51": {
+   "source_id": "f7634236-1d60-41c0-bdd9-f3cb551af0fd",
+   "sha256": "66e0059ff33252fe8f76218edbb6f2a8a2cdd866dc780da6041eef21405f577e",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600009858_23-45-L/01": {
+   "source_id": "199913b1-2137-4af2-acd9-d59547df343d",
+   "sha256": "1daa79e7ada3170659370ef93ca44cbfd464eb4f2ae2562898d3d2a4cbb4f0f5",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  },
+  "600006310_18-20-M/01": {
+   "source_id": "b396c8cd-981c-4141-b465-091dc5bc4188",
+   "sha256": "32069452272198751f8fd3bdd92bf5a8f032dba5fe558ba17c3281a9a111d6be",
+   "dukaz": "škola boduje i další složky (ověření naslepo proti PDF)",
+   "zdroj": "ověření 29 oborů označených Jevem s jistotou ≥ 0,9"
+  }
  }
 }

@@ -34,7 +34,7 @@ def read(path):
 def cost_of_records(folder):
     # Jen úspěšné záznamy; účtované chyby (*.error.json) sčítá samostatná položka.
     return sum(float(read(path).get("cena_usd") or 0) for path in folder.glob("*-v*.json")
-               if not path.name.endswith(".error.json"))
+               if ".error" not in path.name)
 
 
 def spent():
@@ -45,11 +45,13 @@ def spent():
                                 for kind in ("luna", "opus")),
         "jev_pet": cost_of_records(BASE / "jev-pilot"),
         "jev_kontrola": cost_of_records(BASE / "jev-kontrola"),
+        "jev_kontrola_neuplne": sum(float(read(p).get("cena_usd") or 0)
+                                    for p in (BASE / "jev-kontrola").glob("*.error*.json")),
         "jev_starsi_sondy": JEV_OLD_PROBES_USD,
         "usporny_pilot": cost_of_records(BASE / "usporny-v5"),
         "usporny_neuspesne_uctovane": sum(
             float(read(path).get("cena_usd") or 0)
-            for path in (BASE / "usporny-v5").glob("*.error.json")
+            for path in (BASE / "usporny-v5").glob("*.error*.json")
         ),
     }
     standalone = BASE / "cf80b0c9-5404-41b5-946d-a27a95ff768c.json"
