@@ -256,7 +256,13 @@ export function PasmovyProuzek({ obory, rok, prevod: prevodTestu, vybranyObor }:
           <span className="mb-1 block font-medium text-slate-700">Obor</span>
           <select
             value={vybrany}
-            onChange={e => setVybrany(e.target.value)}
+            onChange={e => {
+              const novy = e.target.value;
+              setVybrany(novy);
+              // Prázdné řádky převezmou druh testu nového oboru; vyplněné si drží svůj.
+              const novyDruh = druhTestu(novy.split('_')[1] ?? '');
+              setTesty(ts => ts.map(t => (!t.cj.trim() && !t.ma.trim() ? { ...t, druh: novyDruh } : t)));
+            }}
             className="w-80 rounded-lg border border-slate-300 px-3 py-2"
           >
             {obory.map(o => (
@@ -308,7 +314,12 @@ export function PasmovyProuzek({ obory, rok, prevod: prevodTestu, vybranyObor }:
                 <input value={t.ma} onChange={e => zmen(i, { ma: e.target.value })} inputMode="decimal" placeholder="z 50" className="w-20 rounded-lg border border-slate-300 px-3 py-2" />
               </label>
               {v && v.jinyDruh && (
-                <p className="pb-2 text-sm text-amber-800">test pro jinou třídu, nepočítá se</p>
+                <p className="pb-2 text-sm text-amber-800">
+                  test pro jinou třídu, nepočítá se{' '}
+                  <button type="button" onClick={() => zmen(i, { druh })} className="underline">
+                    psal jsem ho pro {TRIDA_TAU[druh]}. třídu
+                  </button>
+                </p>
               )}
               {v && !v.jinyDruh && (
                 <p className="pb-2 text-sm text-slate-700">

@@ -103,18 +103,21 @@ def z_pilotu() -> dict[str, dict]:
     for z in d["zaznamy"]:
         b = z["bodovani"]
         jpz = b.get("jpz") or {}
-        jpz_max = (jpz.get("cjl_max") or 0) + (jpz.get("mat_max") or 0)
-        if jpz.get("vaha_pct"):
-            jpz_max = jpz_max * jpz["vaha_pct"] / 100
-        slozky = [{"nazev": TYPY.get(s["typ"], s["typ"].replace("_", " ")), "max": s.get("max_bodu")} for s in b.get("dalsi_slozky", [])]
-        # Deklarovaná váha přijímaček má přednost: vzorec typu 0,75 × JPZ + 0,25 × prospěch
-        # z maxim složek nedopočítáme, protože složky mají vlastní přepočet.
-        podil = jpz["vaha_pct"] if jpz.get("vaha_pct") else podil_jpz(jpz_max, slozky)
+        # Váhy v ručním přepisu jsou koeficienty vzorce („0,75 × JPZ + 0,25 × prospěch“),
+        # ne podíly: maximum složky po přepočtu = surové maximum × váha.
+        def po_vaze(maximum, vaha):
+            if maximum is None:
+                return None
+            return round(maximum * vaha / 100, 2) if vaha else maximum
+        jpz_max = po_vaze((jpz.get("cjl_max") or 0) + (jpz.get("mat_max") or 0), jpz.get("vaha_pct"))
+        slozky = [{"nazev": TYPY.get(s["typ"], s["typ"].replace("_", " ")),
+                   "max": po_vaze(s.get("max_bodu"), s.get("vaha_pct"))} for s in b.get("dalsi_slozky", [])]
+        podil = 100 if b["rezim"] == "pouze_jpz" else podil_jpz(jpz_max, slozky)
         vystup[z["source_id"]] = {
             "klic": f"{z['redizo']}_{z['kkov']}",
             "zamereni": z.get("zamereni") or "",
             "rezim": b["rezim"],
-            "podil_jpz_pct": 100 if b["rezim"] == "pouze_jpz" else podil,
+            "podil_jpz_pct": podil,
             "slozky": slozky,
             "jpz_navic": [],
             "minima": [f"{CASTI.get(m['cast'], m['cast'])} alespoň {m['body']} bodů" for m in z.get("minima", [])],
@@ -133,10 +136,18 @@ def ze_strojoveho_prepisu() -> dict[str, dict]:
     # Nabídka může mít jen jednu z nich, proto sjednocení identifikátorů.
     ids = {c.name.rsplit("-v", 1)[0] for v in (VERZE, 9) for c in slozka.glob(f"*-v{v}.json")}
     for sid in sorted(ids):
-        plny, sekce = slozka / f"{sid}-v9.json", slozka / f"{sid}-v{VERZE}.json"
-        r = json.loads((plny if plny.exists() else sekce).read_text(encoding="utf-8"))
-        radek = manifest[r["source_id"]]
-        if r["sha256"] != radek["sha256"] or r["rok"] != ROK or r["kolo"] != 1:
+        radek = manifest.get(sid)
+        if radek is None:
+            continue
+        # První kandidát (9, pak 8), který odpovídá dnešnímu PDF, roku a kolu.
+        r = None
+        for cesta in (slozka / f"{sid}-v9.json", slozka / f"{sid}-v{VERZE}.json"):
+            if cesta.exists():
+                kandidat = json.loads(cesta.read_text(encoding="utf-8"))
+                if kandidat["sha256"] == radek["sha256"] and kandidat["rok"] == ROK and kandidat["kolo"] == 1:
+                    r = kandidat
+                    break
+        if r is None:
             continue
         pripona = ".ocr.txt" if radek["stav"] == "ocr_text" else ".txt"
         text = (BASE / "text" / f"{radek['sha256']}{pripona}").read_text(encoding="utf-8")

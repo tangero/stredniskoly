@@ -87,20 +87,24 @@ def main():
                 body["temperature"] = 0
             elif args.model == "luna":
                 body["reasoning"] = {"effort": "medium"}
-            pending.append({"custom_id": sid, "body": body})
+            pending.append({"custom_id": sid, "body": body,
+                            # Otisky toho, co model skutečně dostal; při převzetí se porovnají.
+                            "_odeslano": {"prompt_sha256": hashlib.sha256(prompt.encode()).hexdigest(),
+                                          "sha256": row["sha256"], "verze_zadani": beh.pilot.PROMPT_VERSION}})
         if not pending:
             print(f"{args.model}: všechny vybrané záznamy již existují.", flush=True)
             return
         payload = {"endpoint": "/v1/chat/completions", "model": beh.MODELS[args.model]}
         if args.model == "deepseek":
             payload["provider"] = {"only": ["deepinfra"]}
-        payload["requests"] = pending
+        payload["requests"] = [{"custom_id": x["custom_id"], "body": x["body"]} for x in pending]
         answer = request(ENDPOINT, key, payload)
         if not answer.get("id") or answer.get("request_counts", {}).get("total") != len(pending):
             raise RuntimeError(f"Dávka nebyla jednoznačně přijata: {str(answer)[:800]}")
         state = {"batch_id": answer["id"], "model": args.model,
                  "sample_sha256": beh.SAMPLE_SHA256,
                  "source_ids": [x["custom_id"] for x in pending],
+                 "odeslano": {x["custom_id"]: x["_odeslano"] for x in pending},
                  "vytvoreno_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
         save_json(state_path, state)
         print(f"{args.model}: odesláno {len(pending)} nabídek, dávka {answer['id']}, stav {answer['status']}", flush=True)
@@ -162,6 +166,12 @@ def main():
                 raise RuntimeError("Odpověď nemá požadovaná pole.")
             usage = response["body"].get("usage") or {}
             prompt = beh.pilot.prompt_for(offers[sid], row)
+            odeslano = (state.get("odeslano") or {}).get(sid)
+            aktualni = {"prompt_sha256": hashlib.sha256(prompt.encode()).hexdigest(),
+                        "sha256": row["sha256"], "verze_zadani": beh.pilot.PROMPT_VERSION}
+            if odeslano is None or odeslano != aktualni:
+                # Model četl jiné podklady, než jsou dnes; výsledek by nesl cizí otisky.
+                raise RuntimeError("Podklady se od odeslání dávky změnily (nebo dávka nemá otisky); výsledek je zastaralý.")
             record = {
                 "source_id": sid, "sha256": row["sha256"], "file_id": row["file_id"],
                 "rok": 2026, "kolo": 1, "vrstva": item["vrstva"], "metoda_textu": row["stav"],

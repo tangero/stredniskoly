@@ -116,13 +116,18 @@ def main() -> None:
                 raise SystemExit("Dosažen strop pilotu.")
             odpoved = jev.zeptej_se(stav, otazky, pokusu=2)
             if not odpoved:
-                print(v["cislo"], "bez odpovědi", flush=True)
-                continue
+                # Po vypršení času nevíme, jestli poskytovatel požadavek zpracoval
+                # a naúčtoval; další volání by strop nehlídal.
+                raise SystemExit(f"{v['cislo']}: bez odpovědi (neznámé účtování), běh zastaven.")
             if odpoved.get("_cena") is None:
                 # Neznámá cena = neznámé účtování; strop by jinak nic nehlídal.
                 raise SystemExit(f"{v['cislo']}: odpověď bez účtované ceny, běh zastaven.")
             if any(k not in odpoved for k in otazky):
                 utraceno += float(odpoved["_cena"])
+                # Uložit i s cenou, ať ji rozpočtový přepočet započte.
+                cesta.with_suffix(".error.json").write_text(json.dumps(
+                    {"cislo": v["cislo"], "source_id": sid, "zadani_sha256": klic, "duvod": "neuplna_odpoved",
+                     "cena_usd": odpoved["_cena"]}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
                 print(v["cislo"], "neúplná odpověď", flush=True)
                 continue
             vysledek = {"cislo": v["cislo"], "obor": v["obor"], "source_id": sid, "zadani_sha256": klic, "znaku": len(text),
