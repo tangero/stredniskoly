@@ -18,6 +18,7 @@ v scratchpadu, výsledek do data/dipsy-kriteria-2026/llm-pilot/jev-kontrola/.
 from __future__ import annotations
 
 import hashlib
+from datetime import datetime, timezone
 import importlib.util
 import json
 import sys
@@ -30,6 +31,10 @@ import novinky_jev as jev  # noqa: E402
 spec = importlib.util.spec_from_file_location("usporny", ROOT / "scripts/dipsy-kriteria-usporny-pilot.py")
 up = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(up)
+
+spec_b = importlib.util.spec_from_file_location("build_kriteria", ROOT / "scripts/build-kriteria-prijeti.py")
+build = importlib.util.module_from_spec(spec_b)
+spec_b.loader.exec_module(build)
 
 OUTPUT = ROOT / "data/dipsy-kriteria-2026/llm-pilot/jev-kontrola"
 VERZE = 1
@@ -78,23 +83,28 @@ def main() -> None:
     global MAX_USD
     jen_jpz = sys.argv[1] == "--jen-jpz"
     otazky = {"dalsi_body": OTAZKY["dalsi_body"]} if jen_jpz else OTAZKY
+    # Přepisy stejnou funkcí jako sestavení dat: vždy aktuální přepis k dnešnímu
+    # PDF (s otiskem a verzí), ne případně zastaralý veřejný JSON.
+    aktualni = build.ze_strojoveho_prepisu()
+    po_oborech: dict[str, list[dict]] = {}
+    for sid, p in aktualni.items():
+        po_oborech.setdefault(p["klic"], []).append({"source_id": sid, **p})
     if jen_jpz:
         MAX_USD = 0.30
-        data = json.loads((ROOT / "public/kriteria_prijeti_2026.json").read_text(encoding="utf-8"))["data"]
         vzorek = [{"cislo": i, "obor": k} for i, k in enumerate(
-            sorted(k for k, o in data.items() if any(p["prepis"] == "strojovy" and p["rezim"] == "pouze_jpz" for p in o["prepisy"])), 1)]
+            sorted(k for k, ps in po_oborech.items() if any(p["rezim"] == "pouze_jpz" for p in ps)), 1)]
     else:
         vzorek = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
     offers = {o["source_id"]: o for o in json.loads(up.pilot.CATALOG.read_text(encoding="utf-8"))["data"]}
     manifest = up.pilot.latest_manifest()
-    d = json.loads((ROOT / "public/kriteria_prijeti_2026.json").read_text(encoding="utf-8"))["data"]
     OUTPUT.mkdir(parents=True, exist_ok=True)
     utraceno = 0.0
     for v in vzorek:
-        prepis = next(p for p in d[v["obor"]]["prepisy"] if p["prepis"] == "strojovy"
-                      and (not jen_jpz or p["rezim"] == "pouze_jpz"))
+        prepis = next(p for p in po_oborech[v["obor"]] if not jen_jpz or p["rezim"] == "pouze_jpz")
         sid = prepis["source_id"]
         row, offer = manifest[sid], offers[sid]
+        if prepis["sha256"] != row["sha256"]:
+            raise SystemExit(f"{sid}: přepis neodpovídá dnešnímu PDF.")
         suffix = ".ocr.txt" if row["stav"] == "ocr_text" else ".txt"
         pages = (ROOT / "data/dipsy-kriteria-2026/text" / f"{row['sha256']}{suffix}").read_text(encoding="utf-8").split("\f")
         chosen, _ = up.section.select(offer["kkov"], pages)
@@ -107,7 +117,7 @@ def main() -> None:
                        "dalsi_slozky": [s["nazev"] for s in prepis["slozky"]],
                        "body_navic_z_jpz": [s["nazev"] for s in prepis["jpz_navic"]]},
         }
-        klic = hashlib.sha256(json.dumps({"s": stav, "o": otazky}, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+        klic = hashlib.sha256(json.dumps({"s": stav, "o": otazky, "pdf": row["sha256"], "verze_prepisu": prepis["verze_prepisu"]}, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
         cesta = OUTPUT / f"{sid}-v{VERZE}{'-jpz' if jen_jpz else ''}.json"
         chyby = [json.loads(c.read_text()) for c in OUTPUT.glob(f"{sid}-v{VERZE}*.error*.json")]
         if cesta.exists() and json.loads(cesta.read_text())["zadani_sha256"] == klic:
@@ -119,7 +129,8 @@ def main() -> None:
         else:
             if utraceno >= MAX_USD:
                 raise SystemExit("Dosažen strop pilotu.")
-            odpoved = jev.zeptej_se(stav, otazky, pokusu=2)
+            # Jeden pokus: opakování uvnitř klienta by po vypršení času mohlo zaplatit dvakrát.
+            odpoved = jev.zeptej_se(stav, otazky, pokusu=1)
             if not odpoved:
                 # Po vypršení času nevíme, jestli poskytovatel požadavek zpracoval
                 # a naúčtoval; další volání by strop nehlídal.
@@ -139,6 +150,10 @@ def main() -> None:
             vysledek = {"cislo": v["cislo"], "obor": v["obor"], "source_id": sid, "zadani_sha256": klic,
                         "sha256": row["sha256"], "verze_prepisu": prepis.get("verze_prepisu"), "znaku": len(text),
                         "cena_usd": odpoved.pop("_cena", None), "odpovedi": odpoved}
+            if cesta.exists():
+                # Starší placený výsledek (jiné zadání) odložit, ať ho rozpočet započte.
+                razitko = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
+                cesta.rename(cesta.with_name(f"{cesta.stem}.stary-{razitko}.json"))
             cesta.write_text(json.dumps(vysledek, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             utraceno += float(vysledek["cena_usd"] or 0)
         print(json.dumps({"cislo": v["cislo"], "prepis_jen_jpz": stav["prepis"]["boduje_jen_jpz"],
