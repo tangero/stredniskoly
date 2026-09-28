@@ -56,8 +56,11 @@ def rozdel_slozky(slozky: list[dict], jpz: dict, jpz_max: float | None) -> tuple
     opakovani = {v for v in (jpz.get("cjl_max"), jpz.get("mat_max"), jpz_max) if v}
     dalsi = [s for s in slozky if not je_jpz(s["nazev"])]
     jpz_slozky = [s for s in slozky if je_jpz(s["nazev"]) and s.get("max") is not None]
-    # Rozpis celé JPZ na části (např. 150 + 150 při JPZ 300) jen opakuje celek.
+    # Rozpis celé JPZ na části se součtem = celek: stejné části (150 + 150) jen
+    # opakují celek, různé části (čeština 60 + matematika 40) jsou vážení předmětů.
     if jpz_max and jpz_slozky and abs(sum(s["max"] for s in jpz_slozky) - jpz_max) < 0.01:
+        if len({s["max"] for s in jpz_slozky}) > 1:
+            return dalsi, [{**s, "vaha": True} for s in jpz_slozky]
         return dalsi, []
     navic = [s for s in jpz_slozky if s["max"] not in opakovani]
     return dalsi, navic

@@ -83,7 +83,8 @@ export interface PrepisKriterii {
   podil_jpz_pct: number | null;
   slozky: { nazev: string; max: number | null }[];
   /** Body navíc z přijímaček, typicky vážení jednoho předmětu (matematika × 0,5). */
-  jpz_navic: { nazev: string; max: number | null }[];
+  /** Body navíc z přijímaček, nebo s `vaha` rozpis přijímaček na části s různou vahou. */
+  jpz_navic: { nazev: string; max: number | null; vaha?: boolean }[];
   minima: string[];
   nejasnosti: string[];
   prepis: 'rucni' | 'strojovy';

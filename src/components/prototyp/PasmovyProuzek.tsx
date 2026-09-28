@@ -50,7 +50,7 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
           <p>Přijímačky ale nepočítala prostým součtem, takže pořadí se od součtu na proužku může lišit:</p>
           <ul className="list-disc space-y-0.5 pl-5">
             {p.jpz_navic.map((x, i) => (
-              <li key={i}>{x.nazev}{x.max !== null ? `: až ${x.max} bodů navíc` : ''}</li>
+              <li key={i}>{x.nazev}{x.max === null ? '' : x.vaha ? `: ${x.max} bodů z celku přijímaček` : `: až ${x.max} bodů navíc`}</li>
             ))}
           </ul>
         </>
