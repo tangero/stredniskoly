@@ -1,0 +1,9 @@
+{
+ "popis": "Obory, u nichž ruční kontrola naslepo 28. 9. 2026 potvrdila, že škola boduje i něco jiného než prostý součet JPZ, ačkoli strojový přepis tvrdí „jen přijímačky“. Z ověření 41 oborů, které Jev označil s jistotou pod 0,9 (docs/podklady/dipsy-kriteria-jev-pilot-30-2026-09-28.md).",
+ "obory": {
+  "600170560_34-56-L/01": "čeština váha 60 %, matematika 40 %, řazení koeficientem pořadí (s. 1–2)",
+  "600170560_69-41-L/01": "čeština váha 60 %, matematika 40 %, řazení koeficientem pořadí (s. 2)",
+  "600008193_64-41-L/51": "nástavba: průměrný prospěch 1. pololetí 3. ročníku SŠ 0–25 bodů a 2. pololetí 2. ročníku 0–25 bodů, max. 150 bodů (s. 1)",
+  "691020060_75-31-M/01": "po JPZ druhá část formou motivačního pohovoru, bodování neuvedeno (s. 1, OCR)"
+ }
+}

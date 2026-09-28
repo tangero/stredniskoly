@@ -124,6 +124,16 @@ Tři důsledky pro proužek:
 2. **Kde data unesou, ukázat i slabší předmět** — `podlaha_slabsiho`, `nejslabsi_cj`, `nejslabsi_ma` už existují. Uchazeč s 48/37 musí vidět, že u Dopplera 37 v matematice je jiná situace než 37 v češtině.
 3. **Vždy odkaz na kritéria školy.** Z portálu (`odkaz_kriteria`), a kde chybí, výzva. Bez kritérií je proužek popis loňska, ne návod.
 
+## 4.5 Výsledek cvičného testu TAU místo odhadu (27. 9. 2026)
+
+Prototyp přijímá výsledky **jednoho nebo více testů**. U testu z aplikace [CERMAT TAU](https://tau.cermat.cz/) z roku 2024 převede body přes pořadí mezi všemi, kdo ten test psali v ostrém termínu, na body roku zobrazených pásem (slovník ukazatelů, *Převedený výsledek testu*; `public/prevod_testu_2024.json`). Obtížnost se liší i mezi termíny téhož roku: 77 bodů z 2. řádného termínu 2024 odpovídá 72 bodům roku 2026, 73 bodů z 1. řádného termínu 74 bodům. Víc testů se ukáže jako rozsah a na proužek jde prostřední hodnota. Jiný test se porovná bez převodu s výhradou, že platí jen pro stejně těžký test. Náhradní termíny jsou označené jako méně přesné. Víceletá gymnázia píší jiné testy; od 28. 9. 2026 se převádějí jejich vlastními tabulkami (test pro 5. a 7. třídu) a prototyp odkazuje na TAU pro příslušnou třídu. Rok pásem se bere z registru, text místo „loni“ říká „v roce 2026“. Obor jde vyhledat, nejen vybrat z ukázek.
+
+## 4.6 Pořadí mezi soutěžícími a kritéria školy (27. 9. 2026)
+
+Pod větou o pásmu prototyp ukazuje **pořadí mezi soutěžícími**: „Mezi 78 soutěžícími uchazeči roku 2026 mělo vyšší výsledek 26 a stejný 5. Přijato jich bylo 30.“ (slovník ukazatelů, *Pořadí mezi soutěžícími*; `public/pozice_soutezicich_2026.json`).
+
+Pod proužkem je blok **„Co kromě přijímaček rozhodovalo v roce 2026“** z přepisu PDF kritérií v DiPSy (sada `dipsy-kriteria`, ukazatel *Podíl přijímaček na bodování*): jestli škola bodovala jen přijímačky, jakou část bodů tvořily, další složky s maximy a minima. Stav 28. 9. 2026: přepis u 2 814 z 2 836 oborů s PDF (3 064 přepisů: 5 ručních, 3 059 strojových; u 1 217 mechanická kontrola našla nesoulad, nejčastěji chybějící nebo nenalezenou citaci a neurčené maximum složky; 25 nabídek model nedopsal). Plošný přepis 27.–28. 9. 2026 stál 2,93 USD. U oborů bez přepisu blok řekne, že kritéria 2026 existují a kde je najít. Vždy s výhradou, že přepis může obsahovat chybu, s upozorněním na nesoulad z mechanické kontroly, a s termínem, kdy školy zveřejní kritéria nového ročníku (z harmonogramu MŠMT). Z přepisu se nepočítají body uchazeče (rozhodnutí zadavatele 27. 9. 2026).
+
 ## 5. Napojení na testy nanečisto
 
 Test nanečisto dává číslo **před** ostrou zkouškou a dá se opakovat. Místo statického verdiktu je vidět pohyb:

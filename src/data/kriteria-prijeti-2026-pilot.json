@@ -1,0 +1,188 @@
+{
+  "verze": 1,
+  "popis": "Pracovní strukturovaný přepis pěti PDF. Bez lidského schválení a bez veřejného zobrazení.",
+  "zaznamy": [
+    {
+      "source_id": "cf80b0c9-5404-41b5-946d-a27a95ff768c",
+      "redizo": "600009793",
+      "kkov": "79-41-K/41",
+      "zamereni": "",
+      "rok": 2026,
+      "kolo": 1,
+      "stav": "navrh",
+      "zpracovano_dne": "2026-09-24",
+      "zdroj": {
+        "typ": "dipsy_pdf",
+        "url": "https://api.dipsy.gov.cz/v1/skol-oboro-forma/cf80b0c9-5404-41b5-946d-a27a95ff768c",
+        "file_id": "dc202ea4-70a2-435f-afe3-501a95302f22",
+        "sha256": "51175dc36a280af8d930c5547dfd8f5ed648b0e62c5bea5a9b266e641cd53301",
+        "ziskano_at": null,
+        "publikovano_at": null,
+        "datum_v_dokumentu": "2026-01-29"
+      },
+      "bodovani": {
+        "rezim": "pouze_jpz",
+        "jpz": { "cjl_max": 50, "mat_max": 50, "vaha_pct": null },
+        "dalsi_slozky": [],
+        "max_bodu_celkem": 100,
+        "vzorec": "CJL + MAT",
+        "uplnost": "uplny_vzorec"
+      },
+      "minima": [
+        { "cast": "cjl", "body": 11 },
+        { "cast": "mat", "body": 11 }
+      ],
+      "rovnost": ["vyšší výsledek MAT", "otevřené úlohy CJL", "otevřené úlohy MAT", "konstrukční úlohy MAT", "úlohy CJL podle výchozího textu"],
+      "dalsi_podminky": ["kapacita 30 míst", "lékařský posudek se nepožaduje", "pro uchazeče s prominutou CJL rozhovor z češtiny"],
+      "nejasnosti": [],
+      "doklad_strany": [1, 2]
+    },
+    {
+      "source_id": "aa2287b2-20f0-4017-a7aa-235223292753",
+      "redizo": "691018791",
+      "kkov": "79-41-K/41",
+      "zamereni": "",
+      "rok": 2026,
+      "kolo": 1,
+      "stav": "navrh",
+      "zpracovano_dne": "2026-09-24",
+      "zdroj": {
+        "typ": "dipsy_pdf",
+        "url": "https://api.dipsy.gov.cz/v1/skol-oboro-forma/aa2287b2-20f0-4017-a7aa-235223292753",
+        "file_id": "4ff0c968-72a3-4199-a4a1-bed3bcc2205d",
+        "sha256": "009d6b219ad9158deab57c617beb29ba301e56891981f3826703bbecd16f7d44",
+        "ziskano_at": null,
+        "publikovano_at": null,
+        "datum_v_dokumentu": null
+      },
+      "bodovani": {
+        "rezim": "jine",
+        "jpz": { "cjl_max": 50, "mat_max": 50, "vaha_pct": 60 },
+        "dalsi_slozky": [
+          { "typ": "skolni_test_osp", "max_bodu": 30, "vaha_pct": null },
+          { "typ": "pohovor", "max_bodu": 10, "vaha_pct": null }
+        ],
+        "max_bodu_celkem": 100,
+        "vzorec": "0,6 × (CJL + MAT) + OSP + pohovor",
+        "uplnost": "castecny_vzorec"
+      },
+      "minima": [],
+      "rovnost": [],
+      "dalsi_podminky": ["PDF uvádí hranici 20 bodů z kteréhokoliv testu JPZ; výklad je nutné potvrdit"],
+      "nejasnosti": ["V PDF chybí výslovný rok přijímání; rok 2026 plyne z karty DiPSy.", "Není zřejmé, zda hranice 20 bodů znamená alespoň jeden test, nebo jiný výklad."],
+      "doklad_strany": [1]
+    },
+    {
+      "source_id": "99b859a5-9713-45a8-8de7-5562c4a8ab11",
+      "redizo": "600006808",
+      "kkov": "79-41-K/81",
+      "zamereni": "",
+      "rok": 2026,
+      "kolo": 1,
+      "stav": "navrh",
+      "zpracovano_dne": "2026-09-24",
+      "zdroj": {
+        "typ": "dipsy_pdf",
+        "url": "https://api.dipsy.gov.cz/v1/skol-oboro-forma/99b859a5-9713-45a8-8de7-5562c4a8ab11",
+        "file_id": "098e56c9-7693-4129-bffd-8838f5fbd656",
+        "sha256": "72089cd84417d67640def2382edbce8434f337a00182536ea0281f54594bf78b",
+        "ziskano_at": null,
+        "publikovano_at": null,
+        "datum_v_dokumentu": null
+      },
+      "bodovani": {
+        "rezim": "jine",
+        "jpz": { "cjl_max": 50, "mat_max": 50, "vaha_pct": null },
+        "dalsi_slozky": [
+          {
+            "typ": "znamky_cjl_mat",
+            "max_bodu": 10,
+            "vaha_pct": null,
+            "pravidlo": "10 bodů za dvě jedničky, 8 bodů za kombinaci jedničky a dvojky, jinak 0; pololetí 5. ročníku"
+          },
+          {
+            "typ": "souteze",
+            "max_bodu": 1,
+            "vaha_pct": null,
+            "pravidlo": "1 bod za 1.–3. místo v okresním kole Matematické olympiády Z5 nebo soutěže Matematický Klokan, kategorie Klokánek"
+          }
+        ],
+        "max_bodu_celkem": 111,
+        "vzorec": "CJL + MAT + body za známky + body za soutěže",
+        "uplnost": "castecny_vzorec"
+      },
+      "minima": [],
+      "rovnost": ["vyšší součet JPZ", "vyšší výsledek CJL", "vyšší preference školy", "losování"],
+      "dalsi_podminky": ["kapacita 30 míst", "školní přijímací zkouška se nekoná", "známky se hodnotí v pololetí 5. ročníku"],
+      "nejasnosti": [],
+      "doklad_strany": [1, 2, 3]
+    },
+    {
+      "source_id": "76db8f98-a31f-4383-b320-845dabb153e0",
+      "redizo": "600007251",
+      "kkov": "23-41-M/01",
+      "zamereni": "",
+      "rok": 2026,
+      "kolo": 1,
+      "stav": "navrh",
+      "zpracovano_dne": "2026-09-24",
+      "zdroj": {
+        "typ": "dipsy_pdf",
+        "url": "https://api.dipsy.gov.cz/v1/skol-oboro-forma/76db8f98-a31f-4383-b320-845dabb153e0",
+        "file_id": "edae8af3-4ac2-4194-93a2-cda6523fd29a",
+        "sha256": "aa909dd5c6fd8443e651ae6d2fc8b3831ea498be9b166df33a4915bf3ac09cf8",
+        "ziskano_at": null,
+        "publikovano_at": null,
+        "datum_v_dokumentu": "2026-01-21"
+      },
+      "bodovani": {
+        "rezim": "jine",
+        "jpz": { "cjl_max": 50, "mat_max": 50, "vaha_pct": 75 },
+        "dalsi_slozky": [{ "typ": "znamky", "max_bodu": 40, "vaha_pct": 25 }],
+        "max_bodu_celkem": null,
+        "vzorec": "0,75 × (CJL + MAT) + 0,25 × body za prospěch",
+        "uplnost": "castecny_vzorec"
+      },
+      "minima": [
+        { "cast": "cjl", "body": 10 },
+        { "cast": "mat", "body": 10 }
+      ],
+      "rovnost": ["vyšší výsledek MAT", "vyšší výsledek CJL", "lepší známka z matematiky v pololetí 9. ročníku"],
+      "dalsi_podminky": ["kapacita 30 míst", "prospěch z konce 8. třídy a pololetí 9. třídy; matematika a fyzika mohou přidat i záporné body"],
+      "nejasnosti": ["V tabulce prospěchu se překrývají pásma v hodnotě průměru 2,00.", "PDF je sken; čísla byla kontrolována proti obrazu obou stran, přepis vyžaduje lidské schválení."],
+      "doklad_strany": [1, 2]
+    },
+    {
+      "source_id": "405c434b-a371-49ac-9c50-06b2d60453b6",
+      "redizo": "610100581",
+      "kkov": "39-41-L/02",
+      "zamereni": "Uč. obor Elektrikář silnoproud",
+      "rok": 2026,
+      "kolo": 1,
+      "stav": "navrh",
+      "zpracovano_dne": "2026-09-24",
+      "zdroj": {
+        "typ": "dipsy_pdf",
+        "url": "https://api.dipsy.gov.cz/v1/skol-oboro-forma/405c434b-a371-49ac-9c50-06b2d60453b6",
+        "file_id": "ee463714-37a5-4a73-bfb3-a602057faae2",
+        "sha256": "5905519929060857375ff560d3f120a93137406f02e7fb55e802b83f903a3792",
+        "ziskano_at": null,
+        "publikovano_at": null,
+        "datum_v_dokumentu": null
+      },
+      "bodovani": {
+        "rezim": "jine",
+        "jpz": { "cjl_max": 50, "mat_max": 50, "vaha_pct": 60 },
+        "dalsi_slozky": [{ "typ": "prospech_a_chovani", "max_bodu": null, "vaha_pct": null }],
+        "max_bodu_celkem": null,
+        "vzorec": null,
+        "uplnost": "jen_popis"
+      },
+      "minima": [],
+      "rovnost": ["vyšší součet JPZ", "lepší známka z matematiky v pololetí posledního ročníku", "lepší průměr v pololetí posledního ročníku", "součet tří hodnocených průměrů"],
+      "dalsi_podminky": ["požaduje se lékařský posudek", "známka nedostatečná či snížená známka z chování vede podle PDF k nulovému počtu bodů"],
+      "nejasnosti": ["PDF neuvádí úplný převod známek a chování na body.", "Zaměření karty DiPSy zní Elektrikář silnoproud, nadpis PDF zní Mechanik instalatérských a elektrotechnických zařízení; vazba vyžaduje ověření."],
+      "doklad_strany": [1, 2]
+    }
+  ]
+}

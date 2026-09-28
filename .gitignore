@@ -95,3 +95,6 @@ public/novinky/
 # Kontakty na poradatele veletrhu: jmena, sluzebni e-maily a mobily.
 # Slouzi obesilani, na web nepatri (docs/zdroje-dat.md, oddil 3).
 /data/veletrhy/poradatele-kontakty.json
+
+# PDF kritérií a ručně hodnocený pilot DiPSy zůstávají lokálně.
+/data/dipsy-kriteria-pilot/
