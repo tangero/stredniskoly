@@ -16,6 +16,12 @@ interface Props {
   params: Promise<{ mesto: string }>;
 }
 
+// Stránka nese veletrh ve městě (VeletrhVMeste). Akce končí půlnocí, ne
+// změnou dat, takže značka `veletrhy` nestačí: bez časové revalidace by
+// proběhlá akce visela až do dalšího nasazení. Klientské skrytí schová
+// blok až po poslední zobrazené akci. Hodina jako na /veletrhy.
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
   return MESTA.map(m => ({ mesto: m.slug }));
 }

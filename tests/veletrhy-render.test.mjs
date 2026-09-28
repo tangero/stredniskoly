@@ -682,3 +682,18 @@ test('kotva ze stránky kraje sedí na oddíl přehledu veletrhů', async () => 
     assert.equal(stranky.find((s) => s.kod === k.kod)?.slug, slugKraje(k.kod), `Odkaz ze stránky kraje ${k.nazev} by minul oddíl.`);
   }
 });
+
+test('mapa umí vybrat přesně ty kraje, které mají čip', async () => {
+  // Mapa je pro klávesnici a čtečku skrytá; kdyby šel v mapě vybrat kraj
+  // bez čipu, myš by uměla víc než klávesnice.
+  const pozdeji = new Date('2026-11-20');
+  const vse = zobrazitelneAkce(pozdeji);
+  const html = renderToStaticMarkup(React.createElement(VeletrhySeznam, { akce: karty(vse), den: cesskyDen(pozdeji) }));
+  const cipy = new Set([...html.matchAll(/data-kraj="(CZ\d{3})"/g)].map((m) => m[1]));
+  const vMape = new Set([...html.matchAll(/data-mapa-kraj="(CZ\d{3})" data-lze-vybrat="ano"/g)].map((m) => m[1]));
+  assert.ok(cipy.size < 14, 'Test potřebuje den, kdy některé kraje akce nemají.');
+  assert.deepEqual([...vMape].sort(), [...cipy].sort());
+  const { lzeVybrat } = await import('../src/app/veletrhy/MapaKraju.tsx');
+  assert.equal(lzeVybrat('CZ051', new Map(), 'CZ051'), true, 'Vybraný kraj bez akcí musí jít v mapě odznačit.');
+  assert.equal(lzeVybrat('CZ051', new Map(), ''), false);
+});

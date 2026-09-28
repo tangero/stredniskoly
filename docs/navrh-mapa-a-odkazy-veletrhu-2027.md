@@ -1,6 +1,6 @@
 # Mapa krajů a odkazy na města na přehledu veletrhů
 
-Verze 0.2, 28. 9. 2026. Schváleno zadavatelem 28. 9. 2026 (§ 6) a implementováno. Navazuje na [veletrhy](veletrhy-skol-2027.md) § 5, kde byla mapa jako **hlavní ovládání** zamítnuta („na mobilu 14 krajů neklikatelně malých“) a jako **doplněk nad čipy** odložena na později. Tenhle návrh je to „později“.
+Verze 0.3, 28. 9. 2026. Schváleno zadavatelem 28. 9. 2026 (§ 6) a implementováno. Navazuje na [veletrhy](veletrhy-skol-2027.md) § 5, kde byla mapa jako **hlavní ovládání** zamítnuta („na mobilu 14 krajů neklikatelně malých“) a jako **doplněk nad čipy** odložena na později. Tenhle návrh je to „později“.
 
 ## 1. Co řešíme
 
@@ -52,7 +52,7 @@ Blok nesmí na mobilu odsunout první akci pod ohyb o víc, než dnes zabírají
 | výchozí | světle šedomodrá výplň (`#e8eef6`), bílé hranice 1,5 px, štítek s počtem | – |
 | najetí / dotyk | výplň `#dbeafe`, tmavší obrys; bublina „Olomoucký kraj: 10 akcí s potvrzeným termínem“ | zvýrazní i řádek v seznamu |
 | vybraný | plná modrá `#1d4ed8` (stejná jako aktivní čip), bílý štítek | seznam pod mapou ukáže jen tento kraj; opakovaný klik výběr zruší, stejně jako u čipu |
-| bez akcí | nejsvětlejší výplň `#f5f7fa`, štítek bez čísla | klik funguje a vede na dnešní prázdný stav s odkazem „nahlaste nám ji“ |
+| bez akcí | nejsvětlejší výplň `#f5f7fa`, bez štítku; bublina „teď o žádné akci nevíme“ | **nejde vybrat**, protože kraj bez akcí nemá čip a klávesnice ani čtečka by ho vybrat nemohly (oponentura Codex, kolo 1). Výjimkou je právě vybraný kraj, kterému akce po půlnoci došly: ten čip drží a v mapě jde výběr zrušit |
 
 Štítek s počtem stojí v „nejvzdálenějším bodě od hranice“ kraje (polylabel), spočteném předem při sestavení dat, aby u protáhlých krajů (Středočeský kolem Prahy, Vysočina) nepadl mimo plochu nebo na sousední kraj.
 
@@ -190,5 +190,6 @@ Podle pravidla o soupisu zdrojů (oddíl 3 a 2.15):
 
 | Verze | Změna |
 |---|---|
+| 0.3 | Oponentura Codex (28. 9. 2026): kraj bez akcí nejde v mapě vybrat, když ho nejde vybrat čipem; stránka města se revaliduje po hodině, jinak by proběhlá akce visela až do nasazení. |
 | 0.2 | Schváleno a implementováno (28. 9. 2026): čipy od 1024 px ve dvou sloupcích, štítek Prahy bez odkazové čárky, poloměr zásahu Prahy 65 jednotek, cesta zpět ve stejné změně, odkaz ze stránky kraje bez počtu. |
 | 0.1 | První návrh (28. 9. 2026): mapa krajů jako doplněk čipů, odkazy z karty na stránku města a z nadpisu oddílu na kraj. |

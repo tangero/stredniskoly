@@ -37,6 +37,15 @@ const BARVA = {
   vybrany: '#1d4ed8',
 };
 
+/**
+ * Vybrat jde jen kraj, který má čip: s akcemi, nebo právě vybraný (ten,
+ * kterému akce po půlnoci došly, čip drží, dokud filtruje). Mapa je pro
+ * klávesnici a čtečku skrytá; kdyby uměla víc než čipy, přišli by o to.
+ */
+export function lzeVybrat(kod: string, pocty: Map<string, number>, vybrany: string): boolean {
+  return (pocty.get(kod) ?? 0) > 0 || kod === vybrany;
+}
+
 interface Props {
   /** Počet akcí podle kódu kraje; kraj bez akcí v mapě chybí nebo má 0. */
   pocty: Map<string, number>;
@@ -73,13 +82,16 @@ export function MapaKraju({ pocty, vybrany, najety, onVyber, onNajeti }: Props) 
       data-mapa-kraju=""
       onMouseLeave={() => onNajeti('')}
     >
-      {poradi.map((k) => (
+      {poradi.map((k) => {
+        const aktivni = lzeVybrat(k.kod, pocty, vybrany);
+        return (
         <g
           key={k.kod}
           data-mapa-kraj={k.kod}
-          className="cursor-pointer"
-          onClick={() => klik(k.kod)}
-          onMouseEnter={() => onNajeti(k.kod)}
+          data-lze-vybrat={aktivni ? 'ano' : 'ne'}
+          className={aktivni ? 'cursor-pointer' : 'cursor-default'}
+          onClick={aktivni ? () => klik(k.kod) : undefined}
+          onMouseEnter={() => onNajeti(aktivni ? k.kod : '')}
         >
           <title>{bublina(k.kod)}</title>
           <path
@@ -100,7 +112,8 @@ export function MapaKraju({ pocty, vybrany, najety, onVyber, onNajeti }: Props) 
             />
           )}
         </g>
-      ))}
+        );
+      })}
       {/* Štítky až nad všemi plochami a bez zásahu myši: jinak by štítek
           Středočeského kraje zakrýval kus plochy a klik by nedošel. */}
       <g pointerEvents="none">
