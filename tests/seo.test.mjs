@@ -9,7 +9,8 @@ const analysis = {
   b: { id: '200_B', nazev: 'Škola Brno', kraj_kod: 'CZ064' },
 };
 const schools = { 2026: [
-  { id: '100_A', redizo: '100', obor: 'Gymnázium' },
+  // Loňský záznam bez zaměření, který škola v ročníku nevypsala: vedle zaměření stránku nemá.
+  { id: '100_A', redizo: '100', obor: 'Gymnázium', nevypsano_2026: true },
   { id: '100_A_z', redizo: '100', obor: 'Gymnázium', zamereni: 'Jazyky' },
   { id: '200_B', redizo: '200', obor: 'Lyceum' },
 ] };
@@ -49,4 +50,14 @@ test('produkční sitemapa neobsahuje žádnou inspekci bez publikovatelného sh
     assert.ok(urls.includes(inspections[i].replace(/\/inspekce$/, '')));
   }
   assert.ok(!urls.includes(`${SITE_URL}/skola/600013448-gymnazium-videnska/inspekce`));
+});
+
+test('vypsaná nabídka bez zaměření vedle zaměření má v sitemapě vlastní adresu', () => {
+  const vypsane = { 2026: [
+    { id: '100_A', redizo: '100', obor: 'Gymnázium' },
+    { id: '100_A_z', redizo: '100', obor: 'Gymnázium', zamereni: 'Jazyky', nevypsano_2026: true },
+  ] };
+  const paths = buildSitemapPaths(analysis, vypsane, 2026, { schools: {} }, [2026]);
+  assert.ok(paths.includes('/skola/100-skola-praha-gymnazium'));
+  assert.ok(paths.includes('/skola/100-skola-praha-gymnazium-jazyky'));
 });
