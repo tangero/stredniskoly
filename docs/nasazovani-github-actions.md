@@ -2,13 +2,20 @@
 
 Workflow `Testy` v `.github/workflows/testy.yml` nejprve ověří Python, TypeScript
 a integraci katalogu. Job `deploy` potom na GitHubu sestaví aplikaci a odešle
-hotovou `.vercel/output` pomocí `vercel deploy --prebuilt`. Vercel dál zajišťuje
+hotovou `.vercel/output` pomocí `vercel deploy --prebuilt --archive=tgz`.
+Archiv je nutný kvůli více než 39 tisícům souborů ve výstupu (limit uploadu
+jednotlivých souborů je 15 tisíc). Vercel dál zajišťuje
 funkce, statické soubory, ISR, domény a cron z `vercel.json`.
 
 ## Jednorázové zprovoznění
 
 V repository secrets nastavte `VERCEL_TOKEN`, `VERCEL_ORG_ID` a
-`VERCEL_PROJECT_ID`. Token musí mít přístup k týmu projektu. Identifikátory se
+`VERCEL_PROJECT_ID`. CLI 60.1.3 při `vercel pull` odmítá projektový token;
+pro tento postup je potřeba token týmu `tangero's projects`. Jde o známou
+[chybu CLI](https://github.com/vercel/vercel/issues/17506), reprodukovanou i při
+tomto přechodu. Týmový token umožňuje přístup i k dalším projektům týmu, proto
+jeho použití musí schválit správce. Požadovaná platnost je bez expirace.
+Identifikátory se
 ověřují proti projektu stredniskoly; skript odmítne jiný cíl. Secrets ani adresář
 `.vercel` se nezveřejňují jako artefakt nebo cache.
 
@@ -39,6 +46,9 @@ vypněte až po ověření náhrady; samotné přidání workflow ji nevypíná.
 - Push do vlastní větve: preview po kontrolách. Novější preview ruší překonané.
 - Pull request: pouze testy; nasazení vzniká z push běhu vlastní větve. Cizí
   forky ani Dependabot nedostávají deploy secrets.
+- Push nebo PR vytvořený pomocí `GITHUB_TOKEN` nespouští navazující push/PR
+  workflow. Pro náhled takové automatické větve spusťte `Testy` ručně;
+  sloučení PR uživatelem následně spustí produkční nasazení.
 - Ruční spuštění nabízí `preview`, `production-staged`, `production` a `none`.
   Produkční prostředí lze použít pouze z main. `none` provede pouze testy.
 - Job publikuje přesný testovaný commit. Při posunu větve před buildem,
