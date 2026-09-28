@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { tvar } from '@/lib/cesky-tvar';
 import {
   median, poradiMeziSoutezicimi, prevedBody,
   type KriteriaOboru, type PoziceOboru, type PrevodTestu,
@@ -91,8 +92,16 @@ function urciPolohu(body: number | null, lo: number, hi: number | undefined): Po
 /** Procento osy; body 0–100 se mapují přímo, ale škálu držíme na jednom místě. */
 const naOsu = (body: number) => Math.max(0, Math.min(100, (body / MAX_BODU) * 100));
 
-function Veta({ poloha, body, lo, hi, data, rok }: {
+/** „1 bod“, „2 body“, „5 bodů“; desetinné číslo „1,5 bodu“. */
+function bodu(n: number): string {
+  const text = n.toLocaleString('cs-CZ', { maximumFractionDigits: 1 });
+  return `${text} ${Number.isInteger(n) ? tvar(n, 'bod', 'body', 'bodů') : 'bodu'}`;
+}
+
+function Veta({ poloha, body, lo, hi, data, rok, dalsiKriteria }: {
   poloha: Poloha; body: number | null; lo: number; hi?: number; data: PasmaPrijetiObor; rok: number;
+  /** Škola podle kritérií bodovala i něco jiného než přijímačky. */
+  dalsiKriteria: boolean;
 }) {
   const soutezilo = data.pasmo_nejistoty_soutezilo ?? 0;
   const prijato = data.pasmo_nejistoty_prijato ?? 0;
@@ -119,13 +128,22 @@ function Veta({ poloha, body, lo, hi, data, rok }: {
     );
   }
   if (poloha === 'pod') {
+    const chybi = body !== null ? Math.round((lo - body) * 10) / 10 : 0;
     return (
-      <p className="text-lg font-semibold text-slate-900">
-        Pod {lo} bodů se v roce {rok} nedostal nikdo.{' '}
-        {/* Konkrétní cíl místo verdiktu: rozdíl mezi „nemáš na to“ a „chybí ti
-            12 bodů, zbývá pět měsíců“ je u čtrnáctiletého zásadní. */}
-        <span className="text-amber-800">Chybí ti {body !== null ? Math.round((lo - body) * 10) / 10 : 0} bodů.</span>
-      </p>
+      <div>
+        <p className="text-lg font-semibold text-slate-900">
+          Pod {lo} body z přijímaček se v roce {rok} nedostal nikdo.{' '}
+          {/* Konkrétní cíl místo verdiktu: rozdíl mezi „nemáš na to“ a „chybí ti
+              12 bodů, zbývá pět měsíců“ je u čtrnáctiletého zásadní. */}
+          <span className="text-amber-800">Chybí ti {bodu(chybi)} z jednotné přijímací zkoušky.</span>
+        </p>
+        {dalsiKriteria && (
+          <p className="mt-1 text-sm text-slate-600">
+            Škola bodovala i další věci, ale ani s nimi se v roce {rok} nikdo s nižším výsledkem přijímaček
+            nedostal. Tenhle rozdíl se tedy dohánět jinými body nedal, musí přijít z testu.
+          </p>
+        )}
+      </div>
     );
   }
   return (
@@ -278,8 +296,11 @@ export function PasmovyProuzek({ obory, rok, prevod: prevodTestu, vybranyObor }:
         </button>
         {platne.length > 1 && (
           <p className="text-sm text-slate-600">
-            Na proužku je prostřední z {platne.length} výsledků ({body} bodů).
-            {' '}Výsledky se pohybují mezi {Math.min(...platne.map(v => v.prevedeno))} a {Math.max(...platne.map(v => v.prevedeno))} body.
+            {platne.length === 2
+              ? <>Na proužku je průměr obou výsledků ({bodu(body!)}).</>
+              : <>Na proužku je prostřední z {platne.length} výsledků ({bodu(body!)}).</>}
+            {' '}Výsledky se pohybují mezi {Math.min(...platne.map(v => v.prevedeno))} a {Math.max(...platne.map(v => v.prevedeno))} body;
+            {' '}rozsah je na proužku vyznačený pod značkou.
           </p>
         )}
         {vicelete && (
@@ -320,6 +341,12 @@ export function PasmovyProuzek({ obory, rok, prevod: prevodTestu, vybranyObor }:
         <div className="mt-6" />
         {/* Sloupce rozdělení: kolik uchazečů v pásmu bylo a kolik se jich dostalo */}
         {ukazRozdeleni && d.pasma && (
+          <p className="text-xs text-slate-500">
+            Sloupce: kolik soutěžících uchazečů roku {rok} mělo výsledek v daném rozmezí bodů. Tmavá část jsou ti,
+            kdo se dostali. Po najetí myší uvidíš čísla.
+          </p>
+        )}
+        {ukazRozdeleni && d.pasma && (
           <div className="relative h-16">
             {d.pasma.map(p => {
               const x = naOsu(p.od);
@@ -327,7 +354,13 @@ export function PasmovyProuzek({ obory, rok, prevod: prevodTestu, vybranyObor }:
               const vyska = (p.soutezilo / maxSoutezilo) * 100;
               const podil = p.soutezilo ? p.prijato / p.soutezilo : 0;
               return (
-                <div key={`${p.od}-${p.do}`} className="absolute bottom-0" style={{ left: `${x}%`, width: `${w}%`, height: `${vyska}%` }}>
+                <div
+                  key={`${p.od}-${p.do}`}
+                  className="absolute bottom-0"
+                  style={{ left: `${x}%`, width: `${w}%`, height: `${vyska}%` }}
+                  title={`${p.od}–${p.do} bodů: ${p.soutezilo} ${tvar(p.soutezilo, 'soutěžící', 'soutěžící', 'soutěžících')}, dostalo se ${p.prijato}`}
+                  aria-label={`${p.od} až ${p.do} bodů: ${p.soutezilo} soutěžících, dostalo se ${p.prijato}`}
+                >
                   <div className="mx-[1px] h-full rounded-t bg-slate-200">
                     {/* Podíl přijatých uvnitř sloupce, aby byl vidět přechod. */}
                     <div className="w-full rounded-t bg-slate-400" style={{ height: `${podil * 100}%` }} />
@@ -350,6 +383,16 @@ export function PasmovyProuzek({ obory, rok, prevod: prevodTestu, vybranyObor }:
             className="absolute inset-y-0 bg-green-200"
             style={{ left: `${naOsu(maPasmo && hi !== undefined ? hi : lo)}%`, right: 0 }}
           />
+          {platne.length > 1 && (
+            <div
+              className="absolute bottom-1 h-1.5 rounded-full bg-slate-900/40"
+              style={{
+                left: `${naOsu(Math.min(...platne.map(v => v.prevedeno)))}%`,
+                width: `${naOsu(Math.max(...platne.map(v => v.prevedeno))) - naOsu(Math.min(...platne.map(v => v.prevedeno)))}%`,
+              }}
+              title="Rozsah tvých výsledků"
+            />
+          )}
           {body !== null && (
             <div className="absolute inset-y-0 w-0.5 bg-slate-900" style={{ left: `${naOsu(body)}%` }}>
               <span className="absolute -top-0.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-slate-900 px-2 py-0.5 text-xs font-semibold text-white">
@@ -388,7 +431,7 @@ export function PasmovyProuzek({ obory, rok, prevod: prevodTestu, vybranyObor }:
       </div>
 
       <div className="rounded-xl border border-slate-200 bg-white p-5">
-        <Veta poloha={poloha} body={body} lo={lo} hi={hi} data={d} rok={rok} />
+        <Veta poloha={poloha} body={body} lo={lo} hi={hi} data={d} rok={rok} dalsiKriteria={obor.kriteria?.prepisy[0]?.rezim === 'jine'} />
         {body !== null && obor.pozice && (() => {
           const p = poradiMeziSoutezicimi(obor.pozice, body);
           return (

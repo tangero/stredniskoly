@@ -74,8 +74,10 @@ test('pod pásmem se říká, kolik bodů chybí', () => {
   // Konkrétní cíl místo verdiktu: „chybí ti 13 bodů“ unese čtrnáctiletý líp
   // než „nemáš na to“.
   const html = vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] }, { cj: '38', ma: '30' });
-  assert.match(html, /Pod 81 bodů se v roce 2026 nedostal nikdo/);
-  assert.match(html, /Chybí ti 13 bodů/);
+  assert.match(html, /Pod 81 body z přijímaček se v roce 2026 nedostal nikdo/);
+  assert.match(html, /Chybí ti 13 bodů z jednotné přijímací zkoušky/);
+  // Doppler: jeden bod, jednotné číslo.
+  assert.match(vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] }, { cj: '40', ma: '40' }), /Chybí ti 1 bod z jednotné/);
 });
 
 test('nad pásmem se neslibuje víc, než data nesou', () => {
