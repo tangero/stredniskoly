@@ -29,7 +29,12 @@ export function jenPrijimacky(k: KriteriaOboru | null | undefined): boolean {
 /** Přepis boduje i něco jiného než jednotnou přijímací zkoušku (extra body ve slovníku pojmů). */
 const extraBody = (p: KriteriaOboru['prepisy'][number]) =>
   // Jen přičítané složky (nebo chybějící v přepisu); samotné srážky, například za chování, extra body nejsou.
-  p.rezim === 'jine' && (p.chybi_slozky || p.slozky.some(x => x.max === null || x.max > 0));
+  p.rezim === 'jine' && (p.chybi_slozky || p.slozky.some(x => !srazka(x) && (x.max === null || x.max > 0)));
+
+/** Složka jen ubírá body: záporné maximum, nebo srážka podle názvu, když výši přepis nezná. */
+const RE_SRAZKA = /odečet|odečt|srážk|srazk|penaliz|mínus/i;
+const srazka = (x: KriteriaOboru['prepisy'][number]['slozky'][number]) =>
+  (x.max !== null && x.max < 0) || (x.max === null && RE_SRAZKA.test(x.nazev));
 
 /**
  * Blok kritérií jen tam, kde nerozhodovala jen JPZ (rozhodnutí zadavatele
@@ -87,7 +92,7 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
           <p>
             {p.chybi_slozky
               ? <>Kromě přijímaček škola podle PDF bodovala i další věci (například prospěch nebo pohovor), náš přepis je ale nezachytil. </>
-              : !extraBody(p) && p.slozky.length > 0
+              : p.slozky.length > 0 && p.slozky.filter(x => x.max !== 0).every(srazka)
                 ? <>Kromě přijímaček škola podle PDF body jen strhávala, nic nepřidávala. </>
               : p.podil_jpz_pct !== null
                 ? <>Přijímačky tvořily asi <b>{p.podil_jpz_pct} %</b> bodů. </>
