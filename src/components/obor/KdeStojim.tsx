@@ -27,7 +27,9 @@ export function jenPrijimacky(k: KriteriaOboru | null | undefined): boolean {
 }
 
 /** Přepis boduje i něco jiného než jednotnou přijímací zkoušku (extra body ve slovníku pojmů). */
-const extraBody = (p: KriteriaOboru['prepisy'][number]) => p.rezim === 'jine';
+const extraBody = (p: KriteriaOboru['prepisy'][number]) =>
+  // Jen přičítané složky (nebo chybějící v přepisu); samotné srážky, například za chování, extra body nejsou.
+  p.rezim === 'jine' && (p.chybi_slozky || p.slozky.some(x => x.max === null || x.max > 0));
 
 /**
  * Blok kritérií jen tam, kde nerozhodovala jen JPZ (rozhodnutí zadavatele
@@ -85,6 +87,8 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
           <p>
             {p.chybi_slozky
               ? <>Kromě přijímaček škola podle PDF bodovala i další věci (například prospěch nebo pohovor), náš přepis je ale nezachytil. </>
+              : !extraBody(p) && p.slozky.length > 0
+                ? <>Kromě přijímaček škola podle PDF body jen strhávala, nic nepřidávala. </>
               : p.podil_jpz_pct !== null
                 ? <>Přijímačky tvořily asi <b>{p.podil_jpz_pct} %</b> bodů. </>
                 : <>Kromě přijímaček škola bodovala i další věci; jejich váhu jsme z PDF nepřečetli celou. </>}
