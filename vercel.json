@@ -2,6 +2,9 @@
   "framework": "nextjs",
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
+  "git": {
+    "deploymentEnabled": false
+  },
   "crons": [
     {
       "path": "/api/novinky/odeslat",

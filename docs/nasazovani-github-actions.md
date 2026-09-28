@@ -8,7 +8,8 @@ funkce, statické soubory, ISR, domény a cron z `vercel.json`.
 ## Jednorázové zprovoznění
 
 V repository secrets nastavte `VERCEL_TOKEN`, `VERCEL_ORG_ID` a
-`VERCEL_PROJECT_ID`. Token musí mít přístup k týmu projektu. Identifikátory se
+`VERCEL_PROJECT_ID`. Token omezte přímo na projekt `stredniskoly`. Pro tento
+projekt je na výslovné přání správce vytvořen bez expirace. Identifikátory se
 ověřují proti projektu stredniskoly; skript odmítne jiný cíl. Secrets ani adresář
 `.vercel` se nezveřejňují jako artefakt nebo cache.
 
@@ -39,6 +40,9 @@ vypněte až po ověření náhrady; samotné přidání workflow ji nevypíná.
 - Push do vlastní větve: preview po kontrolách. Novější preview ruší překonané.
 - Pull request: pouze testy; nasazení vzniká z push běhu vlastní větve. Cizí
   forky ani Dependabot nedostávají deploy secrets.
+- Push nebo PR vytvořený pomocí `GITHUB_TOKEN` nespouští navazující push/PR
+  workflow. Pro náhled takové automatické větve spusťte `Testy` ručně;
+  sloučení PR uživatelem následně spustí produkční nasazení.
 - Ruční spuštění nabízí `preview`, `production-staged`, `production` a `none`.
   Produkční prostředí lze použít pouze z main. `none` provede pouze testy.
 - Job publikuje přesný testovaný commit. Při posunu větve před buildem,
