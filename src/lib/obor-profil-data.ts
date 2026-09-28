@@ -1,3 +1,6 @@
+import { nactiPrevodDruhu } from '@/lib/prevod-testu';
+import { kriteriaOboru, poziceOboru } from '@/lib/pozice-kriteria';
+import { druhTestu, type DruhTestu, type KriteriaOboru, type PoziceOboru, type PrevodDruhu } from '@/lib/prevod-testu-vypocet';
 import { getSchoolsData, getExtractionsByRedizo, getInspisDataByRedizo } from '@/lib/data';
 import { getSouhrnNabidky, nabidkyVeSkupineKraje, souhrnOboru, type SouhrnRocniku } from '@/lib/souhrny-kolo1';
 import { getKontextPrihlasek, type KontextPrihlasek } from '@/lib/kontext-prihlasek';
@@ -59,6 +62,11 @@ export interface ProfilOboruData {
   poradiZajem: PoradiVKraji | null;
   poradiVysledky: PoradiVKraji | null;
   pasma: { rok: number; data: PasmaPrijetiObor } | null;
+  /**
+   * Podklady proužku „Kde stojím“ jen pro tento obor (docs/navrh-kde-stojim-2027.md):
+   * převod jen pro druh testu oboru, pořadí soutěžících a kritéria předchozího ročníku.
+   */
+  kdeStojim: { druh: DruhTestu; prevod: PrevodDruhu | null; pozice: PoziceOboru | null; kriteria: KriteriaOboru | null } | null;
   /**
    * Bodové výsledky předchozího ročníku vedle zobrazeného, s celostátním
    * mediánem uchazečů obou let. Bez něj by dvojice čísel tvrdila, že se změnily
@@ -144,6 +152,14 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
   ]);
   const pasmaData = rokPasem ? await getPasmaPrijeti(programId) : null;
 
+  // Pozice a kritéria mají klíč REDIZO_KKOV bez zaměření, stejně jako pásma.
+  const klicPasem = programId.split('_').slice(0, 2).join('_');
+  const druh = druhTestu(klicPasem.split('_')[1] ?? '');
+  const kdeStojim: ProfilOboruData['kdeStojim'] = rokPasem && pasmaData
+    ? await Promise.all([nactiPrevodDruhu(druh), poziceOboru(klicPasem), kriteriaOboru(klicPasem)])
+      .then(([prevod, pozice, kriteria]) => ({ druh, prevod, pozice, kriteria }))
+    : null;
+
   // Předchozí ročník pásem se odvozuje od zobrazeného, ne z napsaného letopočtu;
   // když soubor neexistuje, srovnání se prostě nezobrazí.
   let srovnaniRocniku: ProfilOboruData['srovnaniRocniku'] = null;
@@ -228,6 +244,7 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
     poradiZajem,
     poradiVysledky,
     pasma: rokPasem && pasmaData ? { rok: rokPasem, data: pasmaData } : null,
+    kdeStojim,
     srovnaniRocniku,
     verzeUchazecu,
     kontext,

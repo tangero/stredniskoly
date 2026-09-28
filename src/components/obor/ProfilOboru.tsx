@@ -12,6 +12,7 @@ import {
   MrizkaSoutezicich, PasmaBodu, RozpadPrihlasek, SkupinaVKraji, SloupceSoutezicich, VysledekUchazecu,
 } from '@/components/obor/grafy';
 import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
+import { KdeStojim } from '@/components/obor/KdeStojim';
 
 /**
  * Stránka oboru ve třech otázkách: jak těžké bude se dostat, co pomůže, jak se tu studuje.
@@ -418,13 +419,26 @@ export function ProfilOboru({ data, inspekceHref, skolaHref, obec }: ProfilOboru
             </Dukaz>
 
             {stav === 'nevesli_se' && data.pasma && pasma?.pasma && pasma.pasma.length > 0 && (
-              <Dukaz nadpis="S kolika body se kdo dostal" rok={`1. kolo ${data.pasma.rok}`}>
+              <Dukaz nadpis="S kolika body se kdo dostal a kde byste stáli vy" rok={`1. kolo ${data.pasma.rok}`} otevreny={Boolean(data.kdeStojim)}>
                 <Proc>
                   Soutěžící uchazeči v roce {data.pasma.rok}, tedy ti, kdo splnili požadavky školy a nedostali se na obor výš na přihlášce, podle bodů (součet češtiny a matematiky, každý test nejvýš 50 bodů).
                   {pasma.prijatych >= 10 && <> Pod <b>{cislo(pasma.min_prijaty)} bodů</b> se nedostal nikdo; stejně nebo méně bodů mělo {Math.round(pasma.min_prijaty_percentil)} ze 100 uchazečů v celé zemi.</>}
                 </Proc>
-                <PasmaBodu pasma={pasma.pasma} />
-                <Zdroj>Data o uchazečích 1. kola {data.pasma.rok}. Není to šance konkrétního uchazeče a platí za obor školy bez zaměření.{verzeUchazecu}</Zdroj>
+                {data.kdeStojim ? (
+                  <KdeStojim
+                    data={pasma}
+                    rok={data.pasma.rok}
+                    druh={data.kdeStojim.druh}
+                    prevod={data.kdeStojim.prevod}
+                    pozice={data.kdeStojim.pozice}
+                    kriteria={data.kdeStojim.kriteria}
+                    vstupOtevreny={false}
+                    pamatovat
+                  />
+                ) : (
+                  <PasmaBodu pasma={pasma.pasma} />
+                )}
+                <Zdroj>Data o uchazečích 1. kola {data.pasma.rok}; převod testů z položkových dat jednotné přijímací zkoušky; kritéria z PDF škol v DiPSy. Není to šance konkrétního uchazeče a platí za obor školy bez zaměření.{verzeUchazecu}</Zdroj>
               </Dukaz>
             )}
 

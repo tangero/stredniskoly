@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.25 · 23. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.26 · 28. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -58,6 +58,10 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **přihlášky na místo** | počet přihlášek děleno počtem míst; konkurenci nadsazuje | „jeden uchazeč podává víc přihlášek, proto toto číslo konkurenci nadsazuje“ | uchazečů na místo |
 | **spolužáci** | přijatí na obor, u otázky „jak se tu studuje“ | není potřeba | třída, kolektiv |
 | **pořadí v kraji podle zájmu**, **pořadí v kraji podle výsledků přijatých** | pořadí oboru mezi obory stejného typu a délky v kraji (Praha samostatně) | „2. z 32 osmiletých gymnázií ve Středočeském kraji podle výsledků přijatých“; vždy s rokem | žebříček, nejlepší, top, hodnocení školy |
+| **cvičný test** | test z minulých přijímaček v aplikaci CERMAT TAU, který si uchazeč napíše doma | „cvičný test, tedy test z minulých přijímaček v aplikaci CERMAT TAU“ | zkouška nanečisto (placená služba jinde), test (bez upřesnění) |
+| **převedený výsledek** | *Převedený výsledek testu* ze slovníku ukazatelů: body cvičného testu přepočtené přes pořadí na body roku pásem | „kolik bodů by to bylo v roce {rok}: podle toho, kolik uchazečů mělo ve stejném testu horší výsledek“; v bloku vždy i výhrada, že spíš nadhodnocuje | přepočtené body, normalizované body |
+| **rozmezí, kde rozhodovalo i něco jiného** | pásmo nejistoty ze slovníku ukazatelů: body, u kterých se část soutěžících uchazečů dostala a část ne | na proužku jako legenda; ve větě s počty: „jsi v rozmezí, kde se v roce {rok} ze 41 uchazečů dostalo 24“ | pásmo nejistoty (v textu pro rodiče), hranice přijetí |
+| **kritéria {rok}** | kritéria přijetí, podle kterých škola řadila uchazeče v daném minulém ročníku | „pravidla, podle kterých škola v roce {rok} řadila uchazeče; pro nové přijímací řízení platí nová“ | aktuální kritéria (pro minulý ročník), kritéria bez roku |
 
 ## 4. Škola, maturita a původ údajů
 
@@ -119,6 +123,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.26 | Pojmy **cvičný test**, **převedený výsledek**, **rozmezí, kde rozhodovalo i něco jiného** a **kritéria {rok}** pro proužek „Kde stojím“ na stránce oboru (28. 9. 2026, [návrh](navrh-kde-stojim-2027.md)). *Pásmo nejistoty* zůstává názvem v datech, rodičům se říká rozmezí. |
 | 1.25 | Souhrn maturity za školu mluví o dostupných hodnoceních skupin oborů; jediný hodnocený rok se neoznačuje „každý rok“ (23. 9. 2026). |
 | 1.24 | Pojem **pozice na přihlášce** se třemi stupni (škola první volby, smíšená pozice, záložní volba) pro přehled kraje, přehled města a stránku oboru (23. 9. 2026). Zadavatel chtěl „kategorie škol“ používat víc; dosavadní kategorie oboru neměla doložený výpočet, proto se zakazuje i její slovník. Do zakázaných slov přibyla konkurence jako číslo a trend ze dvou ročníků, které nesl starý přehled kraje. |
 | 1.23 | Pojem **potvrzený termín** u veletrhu (23. 9. 2026): přehled říká „víme jen o těchto N akcích s potvrzeným termínem“, protože soubor zná i akce bez potvrzeného termínu a číslo musí nést svou množinu. Dosud slovo stálo jen v zákazech u *termínů z článku školy* — tam platí dál, protože termíny z článků neověřujeme; u veletrhu ověřujeme na stránce pořadatele. |

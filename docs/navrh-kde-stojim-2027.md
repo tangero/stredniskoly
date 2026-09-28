@@ -1,6 +1,6 @@
 # Kde stojím: pásmový proužek s výsledkem cvičného testu na veřejném webu
 
-Verze 0.2 · 28. 9. 2026 · **schváleno zadavatelem 28. 9. 2026** (oddíl 6), fáze 1 v přípravě
+Verze 0.3 · 28. 9. 2026 · **schváleno zadavatelem 28. 9. 2026** (oddíl 6), fáze 1 implementována (komponenta `src/components/obor/KdeStojim.tsx`)
 
 Navazuje na [pásmový proužek](navrh-pasmovy-prouzek-2027.md) a jeho nezalistovaný prototyp `/prototyp/pasma` (PR #182), [kritéria přijetí z DiPSy](predani-kriteria-prijeti-2026-09-25.md) a rozhodnutí zadavatele z 27. 9. 2026: kritéria 2026 ukazovat neověřená s výhradou chybovosti, body mezi ročníky porovnávat s výslovnou výhradou, výsledek cvičného testu TAU převádět přes pořadí.
 
@@ -66,3 +66,10 @@ Prošel jsem [zdroje dat](zdroje-dat.md) včetně oddílu 3. Návrh **nepřidáv
 2. **Proužek je vidět i bez zadaných bodů** (jako obrázek pásem); zadání testů ho doplní o polohu.
 3. **Blok kritérií jen tam, kde nerozhoduje jen JPZ.** Kde podle kritérií rozhodovala jen JPZ, stačí věta, že škola v roce {rok} přijímala podle jednotné přijímací zkoušky a kritéria pro nové řízení se teprve vyhlásí (termín z harmonogramu MŠMT).
 4. **Výsledky testů si prohlížeč pamatuje** (jako dnes simulátor body), s možností je smazat.
+
+## 7. Fáze 1: jak je to postavené
+
+- `KdeStojim` sdílí stránka oboru i prototyp. Na stránce oboru je v důkazu „S kolika body se kdo dostal a kde byste stáli vy“, jen u oboru, kde se soutěžící uchazeči nevešli (stav A); jinde by pásma vyšla 100 % ([vrstvy stránky oboru](vrstvy-stranky-oboru-2027.md)).
+- Data jen pro obor: převodní tabulka jen druhu testu oboru, pořadí a kritéria podle klíče REDIZO_KKOV. Stránka zůstává ISR (12 h).
+- Výsledky testů v `localStorage` pod klíčem `kde-stojim:testy:v1:{druh}`: nic osobního, platí pro všechny obory se stejným testem; tlačítko „Smazat uložené výsledky“. Čtou se až po hydrataci.
+- Blok kritérií se ukáže jen tam, kde podle přepisu nerozhodovala jen JPZ (včetně vážení předmětů a přepisů, kde kontrola našla chybějící složky). Bez přepisu se neukazuje nic.
