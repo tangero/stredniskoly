@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.18 · 24. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.19 · 24. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -24,7 +24,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 |---|---|---|---|---|
 | CERMAT, agregovaná data za obory | data.cermat.cz, XLSX | 1. kolo 2025 a 2026 | REDIZO + KKOV + zaměření | ročně po zveřejnění |
 | CERMAT, data uchazečů | data.cermat.cz, XLSX | 1. a 2. kolo od 2024 | řádek = uchazeč | předběžně v květnu téhož roku, finálně o rok později |
-| CERMAT, položková data JPZ | data.cermat.cz, XLSX | 2024 a 2025, 6 testů ročně | řádek = uchazeč a test | ročně |
+| CERMAT, položková data JPZ | data.cermat.cz, XLSX | 2024 a 2025, 6 testů ročně | řádek = uchazeč a test | ročně; 2024 čtyřleté testy od 27. 9. 2026 pro převod cvičných testů TAU |
 | Rejstřík škol MŠMT, JSON-LD | rejstriky.msmt.gov.cz | 4 čtvrtletní snímky | REDIZO | čtvrtletně |
 | Rejstřík škol MŠMT, CSV | rejstriky.msmt.gov.cz | jeden export | REDIZO + IZO + obor | ručně |
 | Číselník AKKO | MŠMT | kmenové obory | 5místný kód | zřídka |
@@ -34,6 +34,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | CERMAT, maturitní výsledky | data.cermat.cz, XLSX | jaro 2015 až 2026, stav po podzimu do 2025 | REDIZO, volitelně + SMO16 | ročně |
 | CERMAT, školní agregáty JPZ 2017–2023 | data.cermat.cz, XLSX | 7 ročníků | REDIZO + oborová skupina | uzavřená řada |
 | CERMAT, agregáty 2. kola | data.cermat.cz, XLSX | kapacity, přihlášky, výsledky od 2024 | REDIZO + KKOV + zaměření | ročně, výsledky v září |
+| DiPSy, veřejné karty nabídky a přílohy | [DiPSy](https://dipsy.cz/), veřejná odpověď `api.dipsy.gov.cz/v1` | ověřené karty 1. kola 2025 a 2026; místně stažené přílohy pro katalog 2026, dostupnost dalších kol se mění | `id` nabídky (`source_id` v datech CERMATu) + `skolniRok` + `kolo` | průběžně podle zveřejnění škol; hromadný místní sběr 24. 9. 2026, bez veřejného importu pravidel |
 | Dopravní data | PID, GTFS ČR, jízdní řády | celá ČR | zastávka a spoj | podle vydání |
 | Harmonogram přijímacího řízení MŠMT | opis termínů z metodiky MŠMT do `src/data/admissions-2027.json` | jedno přijímací řízení, 3 skupiny a 20 událostí | identifikátor události | ručně, jednou ročně |
 | Veletrhy a přehlídky středních škol | vlastní rešerše pořadatelů, `docs/prijimacky-veletrhy-poradatele-2026.xlsx` → tabulka `veletrh_akce` (od 26. 9. 2026, snímek `src/data/veletrhy-2027.json`) | 25 pořadatelů a vlastní rešerše rozepsané na 95 akcí, sezóna podzim 2026 | identifikátor akce | ručně, jednou ročně; průběžně z nahlášení |
@@ -43,6 +44,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 
 - `PZ2026_kolo1_skolobory_vysledky.xlsx` a `PZ2025_kolo1_skolobory_vysledky.xlsx` se stahují ručně a předávají skriptu přes `--input-dir`. V repozitáři zůstává odvozený `public/cermat_results_2026.json` a otisk sha256 v `public/cermat_results_meta.json`.
 - **Maturitní výsledky** (oddíl 2.11) a **školní agregáty JPZ 2017–2023** (oddíl 2.12) staženy nejsou vůbec. Jejich adresy, kontrolní součty a rozměry ověřuje [podklad oponentury](podklady/oponentura-2027-r1.json) z 11. 9. 2026.
+- **Veřejné karty a PDF kritérií DiPSy** (oddíl 2.16) nejsou importované do veřejného katalogu. Prototyp portálu čte živý seznam nabídek pro výběr oboru; místní gitignorovaný sběr pokrývá 3 089 z 3 091 nabídek katalogu 2026. Existuje pět ručně připravených pracovních přepisů a sedm od nich oddělených modelových návrhů z malého vzorku; nic není schválené. Dvě nabídky vyžadují řešení chyby zdroje nebo identity. Identifikátor nabídky už z CERMATu máme; dostupnost karet 2027 zatím potvrzena není.
 
 První verze tohoto soupisu obě chybějící skupiny vynechala, protože vznikala procházením adresáře `data/`. To je táž chyba v menším: inventura podle toho, co leží po ruce, místo podle toho, jaké zdroje projekt má.
 
@@ -129,16 +131,18 @@ Jeden řádek je jeden uchazeč. Soubor má 40 sloupců a list `legenda` s výkl
 
 ### 2.3 CERMAT, položková data JPZ
 
-Dvanáct souborů, 390 MB, dohromady **zcela nepoužité**. Jeden řádek je jeden uchazeč a jeden didaktický test. Listy jsou po termínech: A a B jsou řádné, C a D náhradní.
+Dvanáct souborů, 390 MB. Jeden řádek je jeden uchazeč a jeden didaktický test. Listy jsou po termínech: A a B jsou řádné, C a D náhradní.
+
+**Od 27. 9. 2026 se používají testy čtyřletých oborů 2024 (`JPZ2024_CJL4`, `JPZ2024_MA4`) pro převod výsledku cvičného testu z aplikace TAU** na body roku zobrazených pásem (`scripts/build-prevod-testu.py`, `public/prevod_testu_2024.json`, sada `cermat-prevod-testu`, ukazatel *Převedený výsledek testu*). TAU nabízí skutečné testy z let 2017–2024; rozdělení výsledků všech řešitelů máme jen pro 2024. Použité sloupce: `dt_body`, identifikátor uchazeče (`id_ss` v češtině, `id` v matematice) ke spojení obou testů v jednom termínu, a list jako termín. Zvažované a nepoužité: `dt_skor` (tatáž informace v procentech), volby škol `ss1_`–`ss5_` (převod se dělá proti všem řešitelům, ne proti uchazečům o obor, protože uchazeč 2027 se srovnává s celým ročníkem), body po úlohách (TAU umí jen celý test nebo skupiny úloh a skupiny se nepřevádějí). Od 28. 9. 2026 i testy víceletých gymnázií 2024 (`JPZ2024_CJL6`/`MA6` pro šestiletá, `CJL8`/`MA8` pro osmiletá; identifikátor vždy `id`); cílové rozdělení roku 2026 se dělí podle druhu testu, který uchazeč psal (z oborů na přihlášce). Náhradní termíny víceletých psalo 69–340 uchazečů, jsou označené jako nespolehlivé.
 
 | Sloupec | Obsah | Otázka rodiče | Používáme |
 |---|---|---|---|
-| `id_ss` | identifikátor uchazeče napříč testy | spojení češtiny a matematiky | **ne** |
+| `id_ss` | identifikátor uchazeče napříč testy | spojení češtiny a matematiky | **ano** od 27. 9. 2026, 2024: spojení testů v termínu pro převod TAU (v matematice sloupec `id`) |
 | `ss1_redizo` až `ss5_redizo`, `ss1_kkov` až `ss5_` | volby uchazeče | kam se hlásili | **ne** |
 | `ss1_smo16` až `ss5_` | skupina maturitních oborů | srovnatelná skupina | **ne** |
 | `ss1_kraj` až `ss5_` | kraj každé volby | hlásí se i mimo kraj | **ne** |
-| `zkouska_zkratka` | který test a termín | liší se řádné termíny | **ne** |
-| `dt_body` | body z testu | jak si uchazeči stáli | **ne** |
+| `zkouska_zkratka` | který test a termín | liší se řádné termíny | **ano** jako list souboru (2024 nese termín v názvu listu): převod TAU po termínech |
+| `dt_body` | body z testu | jak si uchazeči stáli | **ano** od 27. 9. 2026: pořadí pro převod výsledku cvičného testu TAU |
 | `dt_uspesnost` | procento z maxima | totéž v procentech | **ne** |
 | `k1.1` až `k16.x` | odpovědi na jednotlivé položky | žádná přímá | **ne** a nemá smysl |
 | `b1` až `b16.x` | body za jednotlivé úlohy | žádná přímá | **ne** a nemá smysl |
@@ -423,17 +427,50 @@ Poslední dva stupně vznikly z oponentury 22. 9. 2026: přepis „~21.–30. 11
 
 V registru je jako sada `veletrhy-skol`, období 2027, obnova nejpozději do 15. 9. 2027. Návrh a rozhodnutí jsou v [dokumentu o veletrzích](veletrhy-skol-2027.md).
 
+### 2.16 DiPSy, veřejné karty nabídky a přílohy
+
+[DiPSy](https://dipsy.cz/) zveřejňuje nabídky škol a přiložená kritéria. K 24. 9. 2026 byly veřejně čitelné odpovědi `https://api.dipsy.gov.cz/v1` pro karty 1. kola let 2025 a 2026; příklad je [karta nabídky Gymnázia Christiana Dopplera](https://api.dipsy.gov.cz/v1/skol-oboro-forma/49d20b6c-d15b-4d7a-9441-ee5006e7dbd6). Jde o pozorované rozhraní webové aplikace, bez ověřené garance stability nebo licence k hromadnému přebírání; před veřejným importem je třeba znovu prověřit dostupnost, podobu odpovědí a podmínky použití. Původní průzkum 12 nabídek z obou let následoval pilot 100 PDF a místní sběr všech nabídek katalogu 2026. Tento katalog je výběrový a sám neprokazuje úplnost všech karet DiPSy.
+
+Jeden řádek veřejného vyhledávání je **nabídka oboru v daném roce a kole**, karta nabídky nese další pole. `id` je UUID nabídky a páruje se s `source_id` v `public/applications_2026.json`; identita školy je samostatně `IZO` a `REDIZO`. Karty let ani kol se nesmějí směšovat. Ve vyzkoušeném hledání `.../skol-oboro-forma/kolo/1/search/?keywords=Dopplera&skolniRok=2027` vrátil server `200`, avšak v tělech odpovědi byly záznamy s `skolniRok: 2026`. Úspěšná odpověď tedy **nedokazuje existenci ročníku 2027**; při importu se musí ověřit rok každého záznamu. Veřejný stav `/app/public-status` ukazoval aktivní rok 2026. Podle [harmonogramu MŠMT 2026/2027](https://msmt.gov.cz/media/wp-content/uploads/2026/08/Casovy-harmonogram_2026-2027.pdf) školy vyhlašují kritéria včetně zadání do DiPSy **15.–31. 1. 2027**, konzervatoře **15.–31. 10. 2026**. To je termínový rámec, ne doklad, že budou všechny karty dostupné najednou.
+
+| Pole či část odpovědi | Obsah | Otázka rodiče | Používáme |
+|---|---|---|---|
+| `id`, `skolniRok`, `kolo` | identita nabídky, ročník přijetí a kolo | pro který rok a kolo podmínky platí | `id` už máme z CERMATu jako `source_id`; prototyp portálu kontroluje rok a kolo živé karty, neimportuje je do katalogu |
+| `skolniObor`, `zamereni`, `skola`, `reditelstviSkoly`, `lokalita` | obor, zaměření, IZO/REDIZO, škola a místo | o kterou školu a obor jde | prototyp portálu používá obor, zaměření, IZO a REDIZO pro výběr a párování; katalog má obdobné údaje z CERMATu a rejstříku |
+| `kapacita`, `konaJPZ`, `maturitni`, `nastavbovy`, `talentovy`, `zkraceno`, `kategorieVzdelani` | rozsah a druh přijímání/studia | kolik je míst, zda se píše JPZ | kapacitu, povinnost JPZ a typ studia už máme z CERMATu; aktuální hodnotu DiPSy ne |
+| `skolniCast` | zda a kdy se koná školní část zkoušky | bude škola zkoušet samostatně | **ne**; sám příznak neříká, zda škola přepočítává body JPZ nebo hodnotí prospěch |
+| `podminkyProPrijeti` (`fileId`, `filename`, `filesize`) | odkaz na soubor vyhlášených kritérií; soubor se získá přes `POST /soubor/{fileId}?skolniRok={rok}` | jak přesně se počítají body, jaká jsou minima a rozhodná pravidla | místně stažené PDF a text pro katalog 2026; bodovací vzorec v API není strukturovaný ani zatím hromadně přepsaný |
+| `typyPriloh` | názvy a povinnost dokládaných příloh | co musím dodat k přihlášce | **ne**; samotný seznam příloh neprozradí jejich bodovou váhu |
+| `vysledkyPrijeti` (`fileId`, `uploadedAtDatetime` a další) | zveřejněný soubor s výsledky a časem nahrání | kde najdu výsledky této nabídky | **ne**; přijaté a nepřijaté už máme v souhrnech CERMATu, PDF je třeba posoudit zvlášť kvůli údajům o jednotlivých uchazečích |
+| `kolikatehoUchazecePrijaliMinulyRok` | pole o minulém přijímání; ve zkoušených kartách často `0` | kam až se loni dostali | **ne**; bez ověření významu a pokrytí nepoužívat jako pořadí posledního přijatého |
+| `/app/public-status` | aktivní ročník, kolo a termíny | které kolo právě běží | **ne**; roční harmonogram 2027 máme z MŠMT v `src/data/admissions-2027.json` |
+| `/app/public-stats` | agregáty uchazečů a přihlášek podle kol a typu studia, čas výpočtu `vytvorenoDatetime` | kolik se hlásí celkem | **ne**; pro nabídky používáme agregáty CERMATu, jiné řezy by vyžadovaly porovnání definic |
+| `/skol-oboro-forma/kolo/{kolo}` | seznam nabídek v daném kole, u pozdějších kol i otevřená místa | kde jsou právě vypsaná volná místa | **ne**; 2. kolo máme z CERMATu, živou nabídku 3. a dalších kol ne |
+| `/{rok}/skola-okres-kraj` | územní číselník škol | v jakém okrese škola sídlí | **ne**; územní údaje už máme z CERMATu a rejstříku |
+
+Ve vzorku 2026 měl obor Gymnázia Christiana Dopplera `skolniCast: "se nekona"`, ale v PDF bylo **násobení bodů z matematiky koeficientem 1,5**. Jinde PDF přidávalo body za školní test, známky či praktickou zkoušku. Odpověď na otázku „hodnotí škola uchazeče jinak než součtem JPZ?“ proto vyžaduje čtení **konkrétního PDF daného ročníku a nabídky**; `konaJPZ` ani `skolniCast` ji samy nedají. Odvozená pole projektu `extra_body` a `hasExtraCriteria` zůstávají bez takového ověření `null`.
+
+U `podminkyProPrijeti` není v kartě datum vytvoření ani zveřejnění; `uploadedAtDatetime` je u souboru **výsledků**, nikoli kritérií. Čas objektu v úložišti může doložit uložení konkrétní verze PDF, ne vznik karty či datum prvního zveřejnění. Dočasnou adresu staženého souboru nelze uchovávat jako trvalý odkaz. Stejný dokument se může objevit u více nabídek pod různými `fileId`; při budoucím zpracování je třeba slučovat podle obsahu a zachovat vazbu na každou nabídku.
+
+**Od 27. 9. 2026 je v registru sada `dipsy-kriteria`** (období 2026). Z přepisu PDF kritérií vzniká `public/kriteria_prijeti_2026.json` (`scripts/build-kriteria-prijeti.py`) a ukazatel *Podíl přijímaček na bodování*; čte ho jen nezalistovaný prototyp `/prototyp/pasma`. Z přepisu se používá: režim bodování (jen přijímačky / i další složky), maxima JPZ a dalších složek po přepočtu, deklarovaný podíl JPZ, minima, nejasnosti a nálezy mechanické kontroly. Nepoužívá se: rozhodování při rovnosti bodů (neodpovídá na otázku, co rozhodlo o pořadí většiny uchazečů), citace a čísla stran (slouží kontrole), `vazba_oboru` jinak než jako nález. Stav: přepis u 2 814 z 2 836 oborů s PDF (3 064 přepisů: 5 ručních, 3 059 strojových; u 1 217 mechanická kontrola našla nesoulad, nejčastěji chybějící nebo nenalezenou citaci a neurčené maximum složky; 25 nabídek model nedopsal). Plošný přepis 27.–28. 9. 2026 stál 2,93 USD; kontrola 30 vzorků našla podstatnou chybu zhruba u každého desátého přepisu (`docs/podklady/dipsy-kriteria-kontrola-30-2026-09-28.md`); u oborů bez přepisu prototyp říká jen, že kritéria 2026 existují a kde je najít. Přepis běží `scripts/dipsy-kriteria-hromadny-prepis.py` (zadání v8, strop výdajů na běh). Rozhodnutí zadavatele 27. 9. 2026: přepis se smí ukázat neověřený, s rokem 2026 a výhradou, že může obsahovat chybu; z přepisu se nepočítají body uchazeče. Dosud platilo: DiPSy není v registru, žádná sada se neimportuje ani se z ní nevypočítává ukazatel. Pilot kritérií (docs/prototyp-kriteria-prijeti.md na větvi feat/kriteria-prijeti) stáhl 24. 9. 2026 lokálně 100 PDF; navazující [hromadný sběr](hromadny-sber-kriterii-2026.md) prošel všech 3 091 nabídek katalogu 1. kola 2026. U 3 089 nabídek uložil platné PDF a text; 2 727 záznamů používá přímou textovou vrstvu a 362 OCR. Dvě neúspěšné vazby zůstávají oddělené: nulový soubor a rozdílné REDIZO mezi katalogem a kartou. Podklady v `data/dipsy-kriteria-2026/` jsou gitignorované pracovní soubory, nikoli publikovaná sada ani ověřené bodovací závěry. Při prvním veřejném importu je nutné zapsat ročník, pravidla aktualizace a použití starých kritérií do registru podle oddílu 5; tímto soupisem se sám ročník webu nepřepíná.
+
+Prototyp má připravenou oddělenou evidenci `kriteria_podklad` pro DiPSy PDF, web školy, RSS a další zdroje: rok/kolo platnosti, identitu zdroje, čas našeho pozorování, případný doložený čas zveřejnění, čas ověření a hash obsahu. Tabulka zatím není naplněna pravidly z hromadného sběru ani migrována v produkci. Prvních pět PDF je navázáno na konkrétní nabídky v pracovním souboru `src/data/kriteria-prijeti-2026-pilot.json`; [sedm modelových návrhů](podklady/dipsy-kriteria-llm-vzorek-2026-09-24.md) je jen místně. Jde o neschválené návrhy bez veřejného zobrazení. Zadání školy zůstává v `portal_kriteria` s vlastním časem uložení. Staré pravidlo 2026 je nanejvýš historický kontext pro 2027; samo nepotvrzuje aktuální bodování ani u prostého součtu JPZ. Podrobnosti v prototypu kritérií (docs/prototyp-kriteria-prijeti.md na větvi feat/kriteria-prijeti).
+
 ## 3. Sloupce, které nepoužíváme
 
 Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to dalo rodiči.
 
 | Co leží nevyužité | Kde | Na co by to bylo | Proč to zatím nepoužíváme |
 |---|---|---|---|
+| **Vyhlášená kritéria a bodovací vzorec** | DiPSy, `podminkyProPrijeti` → PDF | rozlišit prostý součet JPZ od vah předmětů, známek, školního testu, dalších bodů a minim | místní PDF 2026 jsou stažená, ale chybí ověřený strukturovaný přepis po nabídce; API samotné vzorec nevrací |
+| **Školní část zkoušky a požadované přílohy** | DiPSy, `skolniCast`, `typyPriloh` | zjistit, zda je školní zkouška a co doložit | pole se neimportují; bez PDF nejsou dostatečným dokladem bodování |
+| **Živá nabídka 3. a dalších kol** | DiPSy, `/skol-oboro-forma/kolo/{kolo}` | zjistit aktuálně volná místa po 2. kole | máme historické agregáty 2. kola, ne průběžný přehled dalších kol; nabídka se mění |
+| **Souhrnné statistiky přihlášek a výsledkové soubory** | DiPSy, `/app/public-stats`, `vysledkyPrijeti` | celostátní kontext a kontrola zveřejněných výsledků | statistiky by se musely sladit s definicemi CERMATu; výsledková PDF mohou nést údaje o jednotlivcích |
 | **Celé maturitní výsledky** | `MZ{rok}j_SC_skolobory.xlsx` | „Maturitu tu v roce 2026 udělalo 100 % žáků, v češtině jsou nad 80. percentilem.“ Jediná přímá odpověď na otázku, jaké jsou tu nároky. Spárovatelné u 2 782 z 3 091 nabídek | **zpracovává se od 14. 9. 2026** přes datovou linku do `public/maturita_skoly.json` (společná část, čeština, matematika, jaro 2023–2026); cizí jazyky, stav po podzimu a roky před 2021 zamítnuty v [návrhu stránky školy](stranka-skoly-2027.md), oddíl 10. **Ročníky 2021 a 2022 zamítnuty 18. 9. 2026 měřením** (`scripts/delka-rady-maturity.py`): delší okno zařazení nezpevní ani u malých škol |
 | Vstupní úroveň školy 2017 až 2023 | `JPZ{rok}_skoly-skolobory_vysledky.xlsx` | „Škola je dlouhodobě žádaná, není to výkyv jednoho roku.“ | soubory nejsou stažené |
 | Výsledek testu u **všech uchazečů**, nejen přijatých | data uchazečů, `c_m_procentni_skor`, vyplněno u 75 % řádků | „S 62 body byl loni v polovině těch, kdo se sem hlásili.“ Jediný způsob, jak dát dítěti vlastní číslo do kontextu | **zpracováno 13. 9. 2026**, na web zatím nenapojeno |
 | **Profil dovedností** uchazečů o obor | položková data, `b1` až `b16.x` | „Kdo se sem dostal, byl silný v porozumění textu.“ Jediný zdroj o tom, co obor vybírá | soubory nikdo nezpracoval |
-| Výsledky po termínech zvlášť | položková data, listy A až D | kontrola, zda jsou řádné termíny srovnatelně těžké | data uchazečů nesou jen lepší výsledek |
+| Výsledky po termínech zvlášť | položková data, listy A až D | kontrola, zda jsou řádné termíny srovnatelně těžké | 2024 už použito pro převod TAU (řádné termíny se liší až o 5 bodů); jako samostatný údaj na webu ne |
 | **Oficiální nejnižší a nejvyšší výsledek přijatých** a jejich percentily | souhrny výsledků, sloupce 72–86 | „S 65 body se sem loni někdo dostal“ po zaměřeních a za aktuální rok, bez dat uchazečů | počítáme vlastní minimum z dat uchazečů za rok 2025 bez zaměření; oficiální sloupec se shoduje u 97 % oborů |
 | **Přijatí podle priority** | souhrny výsledků, sloupce 40–44 | „Tři čtvrtiny přijatých si obor zapsaly jako první volbu“ | **zpracováno 13. 9. 2026** do `souhrny_kolo1.json`, na web zatím nenapojeno, viz `docs/grafy-skoly-a-oboru-2027.md` |
 | Výsledky zkoušky **všech uchazečů** o obor v souhrnu | souhrny výsledků, sloupce 45–65 | průměr, minimum a maximum konkurence bez zpracování dat uchazečů | průměrné percentilové umístění **zpracováno 13. 9. 2026**; minimum a maximum zamítnuto, určuje je jediný uchazeč |
@@ -594,6 +631,8 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ru�
 | `msmt-harmonogram` | web | 2027 | `src/data/admissions-2027.json` | — | 2028 | 2027-08, odhad | Termíny předchozího ročníku se nezobrazují; soubor zůstává jako doklad, co web ukazoval. |
 | `skolni-novinky-rss` | web | prubezne | `public/skoly_feedy.json` | — | prubezne | — | Nepřepíná se. Stará položka se nemaže; po konci platnosti přestane být pozvánkou a zůstane v seznamu novinek. |
 | `veletrhy-skol` | web | 2027 | `src/data/veletrhy-2027.json` | — | 2028 | 2027-08, odhad | Akce předchozí sezóny se nezobrazují; soubor zůstává jako doklad, co web ukazoval, a jako podklad pro odhad termínu další sezóny. |
+| `cermat-prevod-testu` | web | 2024 | `` | — | 2025 | 2027-09, odhad | Testy předchozího roku zůstávají v TAU; jejich převodní tabulka zůstává v souboru prevod_testu_{rok}.json a může se nabízet dál. |
+| `dipsy-kriteria` | web | 2026 | `data/dipsy-kriteria-2026/manifest.jsonl` | — | 2027 | 2027-02, odhad | Kritéria 2026 zůstávají jen jako historie; pro rok 2027 se nesmí tiše použít. |
 
 #### Aktualizace a automatizace
 
@@ -619,7 +658,9 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ru�
 | `cermat-kolo2-agregaty` | příprava | HTTP HEAD. | scripts/build-druhe-kolo.py; v datové lince zpracovatel cermat-kolo2-agregaty stáhne k souboru 2. kola i výsledky 1. kola téhož roku a doplní ročník do stávajícího výstupu. | Schválit úlohu, zkontrolovat počty v pull requestu a přepnout období v registru. |
 | `msmt-harmonogram` | ruční | Ruční kontrola stránky MŠMT o přijímání na střední školy. Adresy souborů nesou ročník i měsíc vydání, takže se mění celé; HTTP HEAD na starou adresu nová data neodhalí. | Ruční opis do src/data/admissions-2027.json. Čte ho stránka přijímaček a hlavní stránka (termín zveřejnění kritérií). | Po vydání harmonogramu na další přijímací řízení opsat termíny do nového souboru, přepnout období a zkontrolovat věty na hlavní stránce. |
 | `skolni-novinky-rss` | plná | Podmíněný požadavek na feed (ETag, If-Modified-Since); stav zdroje je v tabulce skola_feed. | scripts/sklizec-novinek.py vyrobí dávku, scripts/skolni-novinky-zapis.mjs ji zapíše do databáze. | Žádný pro běžný provoz. Vadnou položku, zdroj nebo celou třídu vypne přepínač v tabulce skola_prepinac; změna pravidel klasifikace jde přes pull request. |
-| `veletrhy-skol` | ruční | Ruční kontrola webů pořadatelů plus nahlášení z formuláře /veletrhy/nahlasit. Jednotný celostátní kalendář veletrhů SŠ neexistuje. | Od 26. 9. 2026 návrh změny přes API (`POST /api/veletrhy/navrhy`) a schválení člověkem; zapisuje se do tabulky `veletrh_akce`, snímek src/data/veletrhy-2027.json se obnovuje exportem. Nahlášení z formuláře se navrhuje až po ověření termínu na stránce pořadatele. | Před sezónou projít weby pořadatelů, doplnit potvrzené termíny a rozepsat série na jednotlivá města. Průběžně vyřizovat nahlášení z formuláře. |
+| `veletrhy-skol` | ruční | Ruční kontrola webů pořadatelů plus nahlášení z formuláře /veletrhy/nahlasit. Jednotný celostátní kalendář veletrhů SŠ neexistuje. | Ruční zápis do src/data/veletrhy-2027.json. Nahlášení z formuláře se zapisuje až po ověření termínu na stránce pořadatele. | Před sezónou projít weby pořadatelů, doplnit potvrzené termíny a rozepsat série na jednotlivá města. Průběžně vyřizovat nahlášení z formuláře. |
+| `cermat-prevod-testu` | ruční | Ručně: nabídka testů v TAU se načítá až po souhlasu s cookies, strojově ji nečteme. | python3 scripts/build-prevod-testu.py | Po přepnutí cermat-uchazeci-kolo1 spustit build-prevod-testu.py; jednou ročně zkontrolovat, jestli TAU nepřidalo nový rok. |
+| `dipsy-kriteria` | ruční | python3 scripts/dipsy-kriteria-scan.py --rok 2027 --redizo … (jen dotaz po jedné škole) | scripts/dipsy-kriteria-sber.py, přepis úsporným schématem, pak python3 scripts/build-kriteria-prijeti.py | Před placeným přepisem ověřit rozpočet (limit 10 USD, docs/podklady/dipsy-kriteria-rozpocet-10-usd-2026.md). |
 
 <!-- stav-datovych-sad:do -->
 
@@ -636,7 +677,10 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.19 | Místní sběr všech 3 091 nabídek katalogu 1. kola 2026: 3 089 platných PDF, dvě oddělené chyby (nulový soubor a rozpor REDIZO). Textová vrstva, OCR a sedm modelových návrhů se uchovávají mimo git; ověřený bodovací postup a veřejný import zůstávají zvláštní krok. |
 | 1.18 | Rešerše veletrhů 24. 9. 2026 (Exa po krajích, Parallel FindAll): 95 záznamů místo 47, zobrazitelných 77 místo 41. Souhrnné záznamy sérií (Úřad práce ve Středočeském kraji, Ústecký kraj, Vysočina, Uherské Hradiště a Vsetín) rozepsány na jednotlivá města. Opraveny Opava (potvrzena, dvoudenní), Kolín (potvrzen webem místa konání), Hitparáda (termín doložen u pořadatele, místo 2026 neuvedeno). Zapsáno, co se počítá za web pořadatele. |
+| 1.17 | Doplněn lokální pilot 100 PDF DiPSy 2026, z toho 91 s alespoň 100 znaky přímo extrahovaného textu a devět po OCR. Prototyp portálu čte nabídky DiPSy pro výběr oboru; nepřebírá z nich bodování do veřejného katalogu a registr datových sad se zatím nemění. |
+| 1.16 | Přidány veřejné karty a přílohy DiPSy jako dosud neimportovaný zdroj: soupis polí, vazba na `source_id`, rozdíl mezi příznakem školní zkoušky a skutečným bodováním v PDF, další veřejné statistiky a kola. Ověřeno, že dotaz na 2027 může vrátit karty 2026; samotný stav HTTP nestačí. |
 | 1.15 | Zapsáno, proč kontaktní sloupce zůstávají ve zdrojovém sešitu veletrhů: jsou to pracovní kontakty publikované na oficiálních webech pořadatelů a na stránku se nedostanou. Pravidlo z verze 1.13 se tím zúžilo na zobrazení, ne na zdroj. |
 | 1.14 | Dohledání termínů na webech pořadatelů rozšířilo veletrhy z 39 na 47 akcí, z toho 41 zobrazitelných; pokrytí stouplo z devíti na **všech čtrnáct krajů**. Zavedeny tři stupně doloženosti termínu místo dvou: k `terminPotvrzen` přibyly `terminPribligny` (pořadatel uvádí rozsah, ne harmonogram) a `zdrojJenAgregator` (termín z agregátoru, web pořadatele ho neuvádí). Vzniklo z oponentury: přepis „~21.–30. 11. dle okresů“ na souvislý potvrzený termín tvrdil víc, než zdroj říká. |
 | 1.13 | Veletrhy a přehlídky středních škol jako nový zdroj (oddíl 2.15): 25 pořadatelů rozepsaných na 39 jednotlivých akcí. Zavedeno oddělení ověřeného pořadatele od potvrzeného termínu — sloupec `overeno` v xlsx znamená to první, ne druhé, takže odvozený soubor nese vlastní `terminPotvrzen` a zobrazuje se 29 z 39 akcí. Zváženo a zamítnuto: `priorita` (pořadník pro obesílání, na webu by se spletl s řazením akcí), `kontaktni_osoba`, `email`, `telefon` (na web nepatří stejně jako kontakt na školu), `typ_poradatele` a interní poznámky. Do oddílu 3 přibyly tři položky, z toho záporný nález o tom, že seznam vystavovatelů neexistuje v žádném zdroji. |

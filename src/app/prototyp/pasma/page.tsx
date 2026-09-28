@@ -2,7 +2,9 @@ import { Metadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { getPasmaPrijetiZaRok, rokPasemPrijeti } from '@/lib/pasma-prijeti';
-import { getSchoolsByRedizo } from '@/lib/data';
+import { getAllSchools, getSchoolsByRedizo } from '@/lib/data';
+import { nactiPrevodTestu } from '@/lib/prevod-testu';
+import { kriteriaOboru, poziceOboru } from '@/lib/pozice-kriteria';
 import { PasmovyProuzek, type UkazkovyObor } from '@/components/prototyp/PasmovyProuzek';
 
 // ============================================================================
@@ -39,9 +41,34 @@ const UKAZKY: { id: string; popis: string }[] = [
   { id: '600015785_79-41-K/41', popis: 'mezi mezemi nebyl nikdo' },
 ];
 
-async function nactiUkazky(rok: number): Promise<UkazkovyObor[]> {
+/** Bez diakritiky a velkých písmen, ať „plzen“ najde Plzeň. */
+const bezDiakritiky = (t: string) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+
+async function hledej(dotaz: string, rok: number): Promise<{ id: string; text: string }[]> {
+  const slova = bezDiakritiky(dotaz).split(/\s+/).filter(Boolean);
+  if (!slova.length) return [];
+  const videno = new Set<string>();
+  const nalezeno: { id: string; text: string }[] = [];
+  for (const s of await getAllSchools()) {
+    // Záznamy katalogu nesou obor jen v `id` (REDIZO_KKOV[_zaměření]); data pásem zaměření nerozlišují.
+    const klic = s.id.split('_').slice(0, 2).join('_');
+    if (videno.has(klic)) continue;
+    const text = bezDiakritiky(`${s.nazev} ${s.obec} ${s.obor}`);
+    if (!slova.every(w => text.includes(w))) continue;
+    if (!(await getPasmaPrijetiZaRok(klic, rok))) continue;
+    videno.add(klic);
+    nalezeno.push({ id: klic, text: `${s.nazev}, ${s.obec} · ${s.obor}` });
+    if (nalezeno.length >= 30) break;
+  }
+  return nalezeno;
+}
+
+async function nactiUkazky(rok: number, navic?: string): Promise<UkazkovyObor[]> {
+  const seznam = navic && !UKAZKY.some(u => u.id === navic)
+    ? [{ id: navic, popis: 'vybraný obor' }, ...UKAZKY]
+    : UKAZKY;
   const nactene = await Promise.all(
-    UKAZKY.map(async ({ id, popis }) => {
+    seznam.map(async ({ id, popis }) => {
       const data = await getPasmaPrijetiZaRok(id, rok);
       if (!data) return null;
       const [redizo] = id.split('_');
@@ -51,8 +78,9 @@ async function nactiUkazky(rok: number): Promise<UkazkovyObor[]> {
       let obor = id.split('_')[1] ?? '';
       try {
         const nabidky = await getSchoolsByRedizo(redizo);
+        // Obor se pozná z `id` (REDIZO_KKOV[_zaměření]); samostatné pole kódu katalog nemá.
         const kkov = id.split('_')[1];
-        const prvni = nabidky.find(n => String(n.kod_oboru) === kkov) ?? nabidky[0];
+        const prvni = nabidky.find(n => String(n.id ?? '').split('_')[1] === kkov);
         if (prvni) {
           nazev = String(prvni.nazev ?? redizo);
           obec = String(prvni.obec ?? '');
@@ -61,15 +89,28 @@ async function nactiUkazky(rok: number): Promise<UkazkovyObor[]> {
       } catch {
         // Katalog není povinný: prototyp se má ukázat i bez názvů.
       }
-      return { id, nazev, obec, obor: `${obor} — ${popis}`, data };
+      const klic = id.split('_').slice(0, 2).join('_');
+      const [pozice, kriteria] = await Promise.all([poziceOboru(klic), kriteriaOboru(klic)]);
+      return { id, nazev, obec, obor: `${obor} — ${popis}`, data, pozice, kriteria };
     }),
   );
-  return nactene.filter((x): x is UkazkovyObor => x !== null);
+  return nactene.filter((x) => x !== null) as UkazkovyObor[];
 }
 
-export default async function PrototypPasmaPage() {
+export default async function PrototypPasmaPage({ searchParams }: {
+  searchParams: Promise<{ obor?: string | string[]; hledat?: string | string[] }>;
+}) {
+  const parametry = await searchParams;
+  // Opakovaný parametr (?hledat=a&hledat=b) přijde jako pole; bere se první hodnota.
+  const jeden = (h: string | string[] | undefined) => (Array.isArray(h) ? h[0] : h)?.slice(0, 200);
+  const hledat = jeden(parametry.hledat);
+  const oborParam = jeden(parametry.obor);
+  // Obor jen v tvaru REDIZO_KKOV, cokoli jiného se ignoruje.
+  const vybranyObor = oborParam && /^\d{9,10}_\d{2}-\d{2}-[A-Z]\/\d{2}$/.test(oborParam) ? oborParam : undefined;
   const rok = await rokPasemPrijeti();
-  const obory = rok ? await nactiUkazky(rok) : [];
+  const obory = rok ? await nactiUkazky(rok, vybranyObor) : [];
+  const prevod = await nactiPrevodTestu();
+  const nalezene = rok && hledat ? await hledej(hledat, rok) : [];
 
   return (
     <>
@@ -81,7 +122,7 @@ export default async function PrototypPasmaPage() {
         </div>
 
         <div>
-          <h1 className="text-2xl font-semibold">Kde stojím proti loňským uchazečům</h1>
+          <h1 className="text-2xl font-semibold">Kde stojím proti uchazečům roku {rok ?? '—'}</h1>
           <p className="mt-2 text-slate-600">
             Prototyp k návrhu <code className="text-sm">docs/navrh-pasmovy-prouzek-2027.md</code>.
             Nahrazuje dnešní porovnání s průměrem přijatých, které nezná rozptyl — dva obory
@@ -93,8 +134,28 @@ export default async function PrototypPasmaPage() {
           </p>
         </div>
 
-        {obory.length > 0 ? (
-          <PasmovyProuzek obory={obory} />
+        <form method="get" className="flex flex-wrap items-end gap-3 rounded-xl bg-slate-50 p-4">
+          <label className="block text-sm">
+            <span className="mb-1 block font-medium text-slate-700">Najít obor (škola, město nebo obor)</span>
+            <input name="hledat" defaultValue={hledat ?? ''} placeholder="např. gymnázium Plzeň" className="w-80 rounded-lg border border-slate-300 px-3 py-2" />
+          </label>
+          <button className="rounded-lg bg-slate-800 px-4 py-2 text-sm font-medium text-white">Hledat</button>
+          <span className="text-xs text-slate-500">Víceletá gymnázia mají vlastní testy; převod se vybere podle oboru.</span>
+        </form>
+        {hledat && (
+          nalezene.length ? (
+            <ul className="space-y-1 text-sm">
+              {nalezene.map(n => (
+                <li key={n.id}><a href={`?obor=${encodeURIComponent(n.id)}`} className="text-blue-700 underline">{n.text}</a></li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm text-slate-600">Nic nenalezeno, nebo obor nemá data pásem za rok {rok}.</p>
+          )
+        )}
+
+        {obory.length > 0 && rok ? (
+          <PasmovyProuzek key={vybranyObor ?? ''} obory={obory} rok={rok} prevod={prevod} vybranyObor={vybranyObor} />
         ) : (
           <p className="rounded-lg bg-amber-50 px-4 py-3 text-amber-900">
             Data pásem přijetí nejsou k dispozici. Zkontrolujte sadu

@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.34 · 26. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.36 · 27. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -317,6 +317,27 @@ Odstraňuje vliv obtížnosti testu. Mezi roky 2025 a 2026 stoupl medián výsle
 
 Souhrny CERMATu nesou oficiální variantu po nabídkách, `ČJ+MA – PERCENTIL – MIN (PŘIJATI)`, pole `min_prijaty_percentil_souhrn`, vyplněné jen při aspoň deseti přijatých s výsledkem. U oborů s jedinou nabídkou se s hodnotou z dat uchazečů shoduje do 2 bodů u 2 039 z 2 278 v roce 2025 a u 2 182 z 2 286 v roce 2026; percentilovou základnu legenda souhrnu neuvádí. Na stránce se používá jedna z nich a vždy se jménem tohoto ukazatele.
 
+### Převedený výsledek testu
+Body, které by v roce zobrazených pásem přijetí měl uchazeč na **stejném místě v pořadí**, na jakém by s výsledkem cvičného testu stál mezi všemi, kdo ten test psali v ostrém termínu. Pole `druhy.{4|6|8}.terminy[].celkem.body_cil` (součet češtiny a matematiky, 0–100) a `terminy[].cj` / `.ma` (předmět zvlášť, 0–50) v `public/prevod_testu_{rok}.json`; index pole jsou body z testu. Jednotka body cílového roku.
+
+Výpočet (ekvipercentilové převádění, `scripts/build-prevod-testu.py`): pořadí výsledku mezi řešiteli daného termínu se středním pořadím, (horších + polovina shodných) / všech; pak hodnota se stejným podílem v rozdělení cílového roku s lineární interpolací. Zdroj testu: položková data JPZ roku testu, `dt_body`, součet jen u uchazečů, kteří v tomtéž termínu psali oba testy (párování podle `id`). Zdroj cíle: data uchazečů cílového roku, `c_m_procentni_skor` / 2, tedy tatáž definice jako u pásem přijetí (lepší z pokusů), **jen uchazeči, kteří psali tentýž druh testu**. Druhy jsou tři: čtyřleté obory a nástavby (test pro 9. třídu), šestiletá gymnázia (7. třída, obory K/61) a osmiletá gymnázia (5. třída, K/81); druh uchazeče se určí z oborů na přihlášce. Do 28. 9. 2026 se čtyřletý test převáděl proti všem uchazečům včetně 25 400 uchazečů o víceletá gymnázia, kteří psali jiný test. Rok testu určuje sada `cermat-prevod-testu`, cílový rok sada `cermat-uchazeci-kolo1`.
+
+Proč: obtížnost se liší i mezi termíny téhož roku. 50 bodů z 1. řádného termínu 2024 odpovídá 53 bodům roku 2026, stejných 50 bodů z 2. řádného termínu 48 bodům; u 80 bodů je rozdíl 81 proti 75.
+
+**Co neříká:**
+- Neříká, jak by uchazeč dopadl u zkoušky. Předpokládá, že cvičný test psal celý, na čas, bez oprav a poprvé; TAU opravy dovoluje a doma se píše bez stresu, takže převedený výsledek spíš nadhodnocuje.
+- Předpokládá, že se pořadí mezi ročníky zachovává, ne že jsou testy stejně těžké. Populace uchazečů se mezi roky mění málo, ale mění.
+- Cílové rozdělení je **lepší ze dvou pokusů**, převáděný výsledek jeden pokus. Pořadí jednoho pokusu se tak mapuje na body lepšího pokusu na stejném místě; u uchazeče, kterému se jeden pokus nepovedl, to jeho skutečný lepší výsledek podhodnotí.
+- **Náhradní termíny** (2024: 486 a 794 řešitelů obou testů) psala malá a jiná skupina, hlavně nemocní z řádného termínu. Jejich pořadí převod zkresluje, u 40 bodů o +14 bodů proti řádným termínům. Pole `spolehlive` je u nich `false` a na webu se nenabízejí, nebo jen s výhradou.
+- Výsledek testu, který není v tabulkách (jiný rok, škola, soukromý test), převést nejde. Takové číslo se porovnává přímo s body cílového roku s výhradou, že platí jen pro stejně těžký test.
+
+### Pořadí mezi soutěžícími
+Kolik soutěžících uchazečů o obor mělo v roce pásem **vyšší** výsledek než zadaný, a kolik stejný. Soutěžící uchazeči jsou přijatí a ti, kdo se nevešli kvůli kapacitě (tatáž množina jako `soutezicich` v pásmech přijetí). Zdroj `public/pozice_soutezicich_{rok}.json` (`scripts/build-pozice-soutezicich.py`): u každého oboru počet soutěžících s každým výsledkem, každý uchazeč u oboru jednou, i když se hlásil do více zaměření téhož oboru. Pásma přijetí dnes takového uchazeče počítají vícekrát, proto se u 117 oborů počet liší od `soutezicich` (například 726 proti 821 u 600004961_79-41-K/61); oprava pásem je samostatná úloha. Jednotka uchazeči. Obory s méně než deseti soutěžícími se nevedou (`MIN_PRIJATYCH`).
+
+Věta: „Mezi 88 soutěžícími uchazeči roku 2026 mělo vyšší výsledek 30.“ Vždy s počtem přijatých, ať je vidět, kolik míst bylo.
+
+**Co neříká:** Neříká, jestli by se uchazeč dostal: soutěžící jsou jen ti, kdo splnili podmínky a nedostali se výš na přihlášce, a o pořadí u škol s dalším bodováním rozhodovalo i něco jiného než test. Počítá se ze součtu testů; u školy, která váží předměty, je pořadí jiné (viz *Rozhodl test*, slepé místo). Popisuje jeden ročník.
+
 ### Nejslabší přijatý v předmětu
 Výsledky **jednoho skutečného přijatého** s nejnižším výsledkem v daném předmětu, vždy s oběma jeho předměty. Pole `nejslabsi_cj` a `nejslabsi_ma` v `public/pasma_prijeti_{rok}.json`, každé jako `{cj, ma}`. Jednotka body 0 až 50 za předmět.
 
@@ -392,6 +413,11 @@ Není to hranice přijetí; škola mohla vážit i jiná kritéria.
 Nabídka, která v 1. kole přijala méně uchazečů, než měla míst, a přesto ve 2. kole nebyla. Kombinuje souhrn výsledků 1. kola se souhrnem 2. kola téhož roku. Pole `stav` s hodnotou `nenaplneno_bez_2_kola`.
 
 V roce 2026 platí pro 47 % oborů, které se v 1. kole nenaplnily. Věta na webu proto varuje, že volná místa po 1. kole neznamenají 2. kolo.
+
+### Podíl přijímaček na bodování
+Kolik procent bodů celkového hodnocení tvořila v kritériích přijetí jednotná přijímací zkouška. Zdroj `public/kriteria_prijeti_{rok}.json` (`scripts/build-kriteria-prijeti.py`), pracovní přepis PDF kritérií z DiPSy: u strojového přepisu podíl, který PDF deklaruje, jinak maximum za JPZ po přepočtu děleno součtem kladných maxim všech složek (srážky, například za sníženou známku z chování, se nepočítají); když přepis uvádí přijímačky i mezi složkami (bonus za předmět, přepočet celku, váha pořadí), podíl se z maxim nedopočítává: platí jen podíl výslovně uvedený v PDF, bez dalších kritérií 100 %, jinak se neuvádí; u „bodují jen přijímačky“ 100. Jednotka procenta, zaokrouhleno na celá. Bez známých maxim všech složek se neuvádí.
+
+**Co neříká:** Není ověřený: přepis dělá model nebo člověk z PDF a může obsahovat chybu, i když mechanická kontrola citací nic nenašla. Kontrola 30 vzorků (28. 9. 2026, `docs/podklady/dipsy-kriteria-kontrola-30-2026-09-28.md`) našla podstatnou chybu zhruba u každého desátého přepisu, nejčastěji záměnu oboru ve společném PDF. Platí pro rok kritérií (2026), ne pro nové přijímací řízení; školy kritéria mění. Neříká, jak moc další složky **rozhodovaly**: složka s velkým maximem, kterou všichni dostanou plnou, pořadí nemění. Nepoužívá se k řazení ani k výpočtu bodů uchazeče.
 
 ## 3. Kohorty přijatých
 
@@ -628,6 +654,8 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.36 | **Pořadí mezi soutěžícími** a **Podíl přijímaček na bodování** (27. 9. 2026, oddíl 2). První z rozdělení výsledků soutěžících po oborech, druhý z pracovního přepisu kritérií 2026 z PDF v DiPSy (2 814 oborů po plošném přepisu 28. 9. 2026), jen v prototypu pásmového proužku a s výhradou, že přepis může obsahovat chybu. |
+| 1.35 | **Převedený výsledek testu** (27. 9. 2026, oddíl 2). Body z cvičného testu TAU převedené přes pořadí mezi řešiteli daného termínu na body roku zobrazených pásem. Zdroj položková data JPZ 2024, sada `cermat-prevod-testu`. Náhradní termíny označené jako nespolehlivé. |
 | 1.34 | **Zdroj počtu akcí v kraji je databáze** (26. 9. 2026). Akce veletrhů se čtou z tabulky `veletrh_akce`, změny přicházejí jako schválené návrhy přes API; soubor `src/data/veletrhy-2027.json` je snímek a záloha. Výpočet ani definice se nemění. |
 | 1.33 | **Frekvence maturity popisuje dostupná hodnocení** (23. 9. 2026). Slovní text už netvrdí „každý rok“, pokud se podařilo hodnotit jen jednu skupinu v jediném roce, a uvádí konkrétní rok hodnocení; u více skupin je jednotkou hodnocení skupiny oborů v roce. Výpočet podílu ani data se nemění. |
 | 1.32 | **Kohorta podle pozice na přihlášce se počítá a zobrazuje** (23. 9. 2026). Generátor souhrnů 1. kola nese podíl prvních voleb, jeho percentil ve skupině a kohortu, práh 30 nabídek uplatňuje knihovna. Stabilita přepočtena s mapou nabídek na 64,5 % (dříve 66 %). Nedoložená **kategorie oboru** stažena z webu a rozebrána v oddílu 7; nahrazuje ji kohorta. Přehled kraje přestavěn nad souhrny zobrazeného ročníku, viz `docs/navrh-stranky-kraje-2027.md`. |

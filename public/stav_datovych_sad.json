@@ -183,7 +183,8 @@
     "public/pasma_prijeti_{obdobi}.json",
     "public/soubeh_prihlasek_{obdobi}.json",
     "public/kontext_prihlasek_{obdobi}.json",
-    "public/schools_data.json"
+    "public/schools_data.json",
+    "public/pozice_soutezicich_2026.json"
    ],
    "kontrola_obdobi": {
     "soubor": "public/pasma_prijeti_{obdobi}.json",
@@ -206,7 +207,8 @@
     "Kohorty přijatých",
     "Odvozená hranice úspěšnosti",
     "Výsledek uchazečů o obor",
-    "Obory výš a níž na přihlášce"
+    "Obory výš a níž na přihlášce",
+    "Pořadí mezi soutěžícími"
    ],
    "dostupne": [],
    "aktualizace": {
@@ -887,6 +889,77 @@
     "import": "Ruční zápis do src/data/veletrhy-2027.json. Nahlášení z formuláře se zapisuje až po ověření termínu na stránce pořadatele.",
     "automatizace": "rucni",
     "lidsky_krok": "Před sezónou projít weby pořadatelů, doplnit potvrzené termíny a rozepsat série na jednotlivá města. Průběžně vyřizovat nahlášení z formuláře.",
+    "sledovat": []
+   }
+  },
+  "cermat-prevod-testu": {
+   "nazev": "CERMAT, převod výsledků cvičných testů TAU",
+   "dokumentace": "docs/zdroje-dat.md#23-cermat-položková-data-jpz",
+   "cyklus": "rocni",
+   "pouziti": "web",
+   "zobrazeno": {
+    "obdobi": "2024",
+    "soubor": "https://data.cermat.cz/files/JPZ-polozkova-data/2024/Polozkova_data/",
+    "stazeno": "2026-09-27",
+    "poznamka": "Rok testů, které uchazeč řeší v aplikaci TAU a které umíme převést. TAU nabízí testy 2017–2024; položková data s výsledky všech řešitelů máme pro 2024: čtyřleté obory (CJL4, MA4), šestiletá (CJL6, MA6) a osmiletá gymnázia (CJL8, MA8), vždy čtyři termíny. Cílový rok převodu je období sady cermat-uchazeci-kolo1, cílové rozdělení podle druhu testu."
+   },
+   "ocekavano": {
+    "obdobi": "2025",
+    "kdy": "2027-09",
+    "jistota": "odhad",
+    "zduvodneni": "Odhad: TAU se doplňuje nepravidelně a CERMAT termín neoznamuje. Položková data 2025 už máme; přepne se, až TAU nabídne testy 2025. Termín je kontrolní, ne slíbený."
+   },
+   "obnovit_nejpozdeji": "2027-09-30",
+   "po_prepnuti": "Testy předchozího roku zůstávají v TAU; jejich převodní tabulka zůstává v souboru prevod_testu_{rok}.json a může se nabízet dál.",
+   "vystupy": [
+    "public/prevod_testu_2024.json"
+   ],
+   "ukazatele": [
+    "Převedený výsledek testu"
+   ],
+   "aktualizace": {
+    "zdroj": "https://data.cermat.cz/files/JPZ-polozkova-data/{rok}/Polozkova_data/JPZ{rok}_{test}_polozkova_data.xlsx",
+    "katalog": "https://tau.cermat.cz/vyber.php?trida=9&predmet=cj",
+    "detekce": "Ručně: nabídka testů v TAU se načítá až po souhlasu s cookies, strojově ji nečteme.",
+    "revize": "Při přepnutí cílové sady cermat-uchazeci-kolo1 se tabulky přepočítají (scripts/build-prevod-testu.py).",
+    "import": "python3 scripts/build-prevod-testu.py",
+    "automatizace": "rucni",
+    "lidsky_krok": "Po přepnutí cermat-uchazeci-kolo1 spustit build-prevod-testu.py; jednou ročně zkontrolovat, jestli TAU nepřidalo nový rok.",
+    "sledovat": []
+   }
+  },
+  "dipsy-kriteria": {
+   "nazev": "DiPSy, kritéria přijímacího řízení (přepis z PDF)",
+   "dokumentace": "docs/zdroje-dat.md#216-dipsy-veřejné-karty-nabídky-a-přílohy",
+   "cyklus": "rocni",
+   "pouziti": "web",
+   "zobrazeno": {
+    "obdobi": "2026",
+    "soubor": "data/dipsy-kriteria-2026/manifest.jsonl",
+    "stazeno": "2026-09-24",
+    "poznamka": "PDF kritérií 1. kola 2026 pro 3 089 nabídek; pracovní přepis u 2 814 z 2 836 oborů (5 ručních, zbytek strojově, zadání v8), u 1 217 přepisů mechanická kontrola našla nesoulad. Přepis není ověřený, zobrazuje se s rokem 2026 a výhradou, že může obsahovat chybu. Jen v nezalistovaném prototypu /prototyp/pasma."
+   },
+   "ocekavano": {
+    "obdobi": "2027",
+    "kdy": "2027-02",
+    "jistota": "odhad",
+    "zduvodneni": "Školy zadávají kritéria 2027 do DiPSy 15.–31. 1. 2027 (harmonogram MŠMT, událost ss-kriteria); sběr a přepis po jejich zveřejnění."
+   },
+   "obnovit_nejpozdeji": "2027-03-31",
+   "po_prepnuti": "Kritéria 2026 zůstávají jen jako historie; pro rok 2027 se nesmí tiše použít.",
+   "vystupy": [
+    "public/kriteria_prijeti_2026.json"
+   ],
+   "ukazatele": [
+    "Podíl přijímaček na bodování"
+   ],
+   "aktualizace": {
+    "zdroj": "https://api.dipsy.gov.cz/v1 (karty nabídek a PDF kritérií)",
+    "detekce": "python3 scripts/dipsy-kriteria-scan.py --rok 2027 --redizo … (jen dotaz po jedné škole)",
+    "revize": "Nová verze PDF = nový podklad, starý se nepřepisuje (docs/prototyp-kriteria-prijeti.md).",
+    "import": "scripts/dipsy-kriteria-sber.py, přepis úsporným schématem, pak python3 scripts/build-kriteria-prijeti.py",
+    "automatizace": "rucni",
+    "lidsky_krok": "Před placeným přepisem ověřit rozpočet (limit 10 USD, docs/podklady/dipsy-kriteria-rozpocet-10-usd-2026.md).",
     "sledovat": []
    }
   }
