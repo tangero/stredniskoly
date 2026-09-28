@@ -75,6 +75,7 @@ if sys.argv[1] == "deploy":
         self.assertIn("--environment=production", self.calls[0])
         self.assertIn("--prod", self.calls[1])
         self.assertIn("--prebuilt", self.calls[2])
+        self.assertIn("--archive=tgz", self.calls[2])
         self.assertIn("--prod", self.calls[2])
         self.assertIn("--skip-domain", self.calls[2])
         self.assertEqual(self.calls[4][1], URL)

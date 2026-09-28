@@ -47,7 +47,9 @@ require_current
 vercel pull --yes --environment="$target" --git-branch="${GITHUB_REF#refs/heads/}" --token="$VERCEL_TOKEN"
 
 build_args=(build --yes --token="$VERCEL_TOKEN")
-deploy_args=(deploy --prebuilt --yes --token="$VERCEL_TOKEN")
+# Výstup projektu má přes 39 tisíc souborů; API přijímá nejvýše 15 tisíc
+# jednotlivých položek. Archiv přenáší hotový build bez nového sestavení.
+deploy_args=(deploy --prebuilt --archive=tgz --yes --token="$VERCEL_TOKEN")
 if [[ "$target" == production ]]; then
   build_args+=(--prod)
   # Produkční konfigurace, ale doménu přiřadíme až po kontrole READY a SHA.

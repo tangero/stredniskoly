@@ -2,7 +2,9 @@
 
 Workflow `Testy` v `.github/workflows/testy.yml` nejprve ověří Python, TypeScript
 a integraci katalogu. Job `deploy` potom na GitHubu sestaví aplikaci a odešle
-hotovou `.vercel/output` pomocí `vercel deploy --prebuilt`. Vercel dál zajišťuje
+hotovou `.vercel/output` pomocí `vercel deploy --prebuilt --archive=tgz`.
+Archiv je nutný kvůli více než 39 tisícům souborů ve výstupu (limit uploadu
+jednotlivých souborů je 15 tisíc). Vercel dál zajišťuje
 funkce, statické soubory, ISR, domény a cron z `vercel.json`.
 
 ## Jednorázové zprovoznění
