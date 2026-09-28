@@ -91,8 +91,9 @@ def main() -> None:
         po_oborech.setdefault(p["klic"], []).append({"source_id": sid, **p})
     if jen_jpz:
         MAX_USD = 0.30
-        vzorek = [{"cislo": i, "obor": k} for i, k in enumerate(
-            sorted(k for k, ps in po_oborech.items() if any(p["rezim"] == "pouze_jpz" for p in ps)), 1)]
+        # Po přepisech (source_id), ne po oborech: obor s více zaměřeními má víc přepisů.
+        vzorek = [{"cislo": i, "obor": p["klic"], "source_id": sid} for i, (sid, p) in enumerate(
+            sorted((sid, p) for sid, p in aktualni.items() if p["rezim"] == "pouze_jpz"), 1)]
     else:
         vzorek = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
     offers = {o["source_id"]: o for o in json.loads(up.pilot.CATALOG.read_text(encoding="utf-8"))["data"]}
@@ -100,15 +101,16 @@ def main() -> None:
     OUTPUT.mkdir(parents=True, exist_ok=True)
     utraceno = 0.0
     for v in vzorek:
-        prepis = next(p for p in po_oborech[v["obor"]] if not jen_jpz or p["rezim"] == "pouze_jpz")
+        prepis = (next(p for p in po_oborech[v["obor"]] if p["source_id"] == v["source_id"]) if "source_id" in v
+                  else next(p for p in po_oborech[v["obor"]] if not jen_jpz or p["rezim"] == "pouze_jpz"))
         sid = prepis["source_id"]
         row, offer = manifest[sid], offers[sid]
         if prepis["sha256"] != row["sha256"]:
             raise SystemExit(f"{sid}: přepis neodpovídá dnešnímu PDF.")
         suffix = ".ocr.txt" if row["stav"] == "ocr_text" else ".txt"
         pages = (ROOT / "data/dipsy-kriteria-2026/text" / f"{row['sha256']}{suffix}").read_text(encoding="utf-8").split("\f")
-        chosen, _ = up.section.select(offer["kkov"], pages)
-        text = "\n\n".join(p for _, p in chosen if p.strip())[:60_000]
+        # Celý text jako u přepisu: výběr sekce u některých PDF vrátí jen úvod bez kritérií.
+        text = "\n\n".join(p for p in pages if p.strip())[:60_000]
         stav = {
             "nabidka": {"kkov": offer["kkov"], "obor": offer.get("obor"), "zamereni": offer.get("zamereni") or "",
                         "delka_studia": offer.get("delka_studia"), "skola": offer.get("nazev")},

@@ -50,7 +50,8 @@ def spent():
         "jev_starsi_sondy": JEV_OLD_PROBES_USD,
         "usporny_pilot": cost_of_records(BASE / "usporny-v5"),
         "usporny_neuspesne_uctovane": sum(
-            float(read(path).get("cena_usd") or 0)
+            # Neznámé účtování (vypršel čas) se počítá odhadem.
+            float(read(path).get("cena_usd") or read(path).get("odhad_usd") or 0)
             for path in (BASE / "usporny-v5").glob("*.error*.json")
         ),
     }

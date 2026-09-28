@@ -54,12 +54,12 @@ def rozdel_slozky(slozky: list[dict], jpz: dict, jpz_max: float | None) -> tuple
     opakuje přijímačky a vypouští se. Jiné maximum je vážení (body navíc).
     """
     opakovani = {v for v in (jpz.get("cjl_max"), jpz.get("mat_max"), jpz_max) if v}
-    dalsi, navic = [], []
-    for s in slozky:
-        if not je_jpz(s["nazev"]):
-            dalsi.append(s)
-        elif s.get("max") is not None and s["max"] not in opakovani:
-            navic.append(s)
+    dalsi = [s for s in slozky if not je_jpz(s["nazev"])]
+    jpz_slozky = [s for s in slozky if je_jpz(s["nazev"]) and s.get("max") is not None]
+    # Rozpis celé JPZ na části (např. 150 + 150 při JPZ 300) jen opakuje celek.
+    if jpz_max and jpz_slozky and abs(sum(s["max"] for s in jpz_slozky) - jpz_max) < 0.01:
+        return dalsi, []
+    navic = [s for s in jpz_slozky if s["max"] not in opakovani]
     return dalsi, navic
 
 

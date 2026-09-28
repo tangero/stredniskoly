@@ -184,6 +184,13 @@ def prepis(offer: dict, row: dict, key: str, strop: float) -> str:
             with zamek:
                 utraceno += REZERVA_NA_VOLANI
             zastavit.set()
+            # Záznam o neznámém účtování: po restartu se nabídka neodešle znovu
+            # a rozpočet započte odhad.
+            (up.OUTPUT / f"{sid}-v{verze()}.error.json").write_text(json.dumps(
+                {"source_id": sid, "sha256": row["sha256"], "rok": 2026, "kolo": 1,
+                 "duvod": "nezname_uctovani", "cena_usd": None, "odhad_usd": REZERVA_NA_VOLANI,
+                 "zpracovano_at": datetime.now(timezone.utc).isoformat(timespec="seconds")},
+                ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         raise
     finally:
         with zamek:
