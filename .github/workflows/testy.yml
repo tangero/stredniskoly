@@ -9,6 +9,20 @@ on:
     branches-ignore:
       - linka/stav
   pull_request:
+  workflow_dispatch:
+    inputs:
+      deployment:
+        description: "Nasazení po kontrolách (production pouze z main)"
+        type: choice
+        options:
+          - preview
+          - production-staged
+          - production
+          - none
+        default: preview
+
+permissions:
+  contents: read
 
 jobs:
   python:
@@ -110,3 +124,62 @@ jobs:
       - name: Výpis serveru při selhání
         if: failure()
         run: cat /tmp/dev.log
+
+  deploy:
+    name: Build na GitHubu a nasazení na Vercel
+    needs: [python, typescript, integrace]
+    # PR testy (včetně forků) nemají přístup k deploy secrets. Automatický
+    # provoz zapneme až po zkoušce přes workflow_dispatch.
+    if: >-
+      github.actor != 'dependabot[bot]' &&
+      ((github.event_name == 'push' && vars.VERCEL_ACTIONS_ENABLED == 'true') ||
+       (github.event_name == 'workflow_dispatch' && inputs.deployment != 'none'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    concurrency:
+      group: vercel-stredniskoly-${{ github.ref }}
+      # Probíhající publikaci produkce nepřerušovat. Starší SHA se navíc
+      # kontroluje před buildem i před přiřazením produkční domény.
+      cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+    env:
+      DEPLOYMENT: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/main' && 'production' || 'preview') || inputs.deployment }}
+      VERCEL_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          # Shodné s Node.js Version 24.x v projektu stredniskoly na Vercelu.
+          node-version: '24'
+          cache: npm
+
+      # Do veřejné Actions cache neukládáme .vercel (obsahuje secrets)
+      # ani Next fetch-cache. Cíl je pouze cache kompilátoru.
+      - uses: actions/cache@v4
+        with:
+          path: |
+            .next/cache/webpack
+            .next/cache/turbopack
+          key: next-build-${{ runner.os }}-node24-${{ env.DEPLOYMENT }}-${{ hashFiles('package-lock.json') }}-${{ github.sha }}
+          restore-keys: |
+            next-build-${{ runner.os }}-node24-${{ env.DEPLOYMENT }}-${{ hashFiles('package-lock.json') }}-
+
+      - name: Závislosti a pevná verze Vercel CLI
+        run: |
+          npm ci
+          npm install --global vercel@60.1.3
+
+      - name: Sestavit a nasadit hotový výstup
+        id: deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: bash scripts/vercel-deploy.sh
+
+      - name: Odstranit stažené prostředí a výstup s konfigurací
+        if: always()
+        run: rm -rf .vercel
