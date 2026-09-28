@@ -44,3 +44,11 @@ Ověření naslepo proti PDF (dva posuzovatelé, 29 označených + 10 kontrolní
 **Přesnost označení 29/29.** Chyby byly: prospěch ze ZŠ, pohovor nad portfoliem, soutěže, školní zkouška, vyšší váha jednoho předmětu, u nástaveb prospěch ze SŠ; často v dlouhém PDF na pozdější straně nebo v oddíle pro jinou skupinu oborů. Kontrolní skupina neukázala přehlédnutí, deset vzorků ale na odhad úplnosti nestačí; 41 oborů s „ano“ pod jistotou 0,9 zůstává neověřených.
 
 Výsledek je zapsán do `public/kriteria_prijeti_2026.json` (`scripts/build-kriteria-prijeti.py`, práh 0,9): 29 přepisů netvrdí „jen přijímačky“, nesou nález `jev:skola_boduje_i_dalsi` a příznak `chybi_slozky`. Prototyp u nich říká, že škola podle PDF bodovala i další věci, ale přepis je nezachytil. Kandidáti na nový přepis s celým PDF místo vybrané sekce.
+
+## Pásmo nižší jistoty a nový přepis z celého PDF (28. 9. 2026)
+
+**41 oborů s „ano“ pod jistotou 0,9**, ověřeno naslepo proti PDF: škola boduje i něco dalšího u **4** (nástavba s prospěchem ze SŠ, dva obory s vahou čeština 60 % a matematika 40 %, motivační pohovor), 2 kritéria nejasná (PDF bez bodování), **35 přepisů je správně**. Časté plané poplachy: prospěch, soutěže nebo certifikát jen **při rovnosti bodů**, pořadí skládané z pořadí v testech. Jistota v tomto pásmu chyby neodlišuje (medián 0,72 u chyb, 0,67 u správných); práh 0,9 zůstává. Čtyři potvrzené obory jsou v `dipsy-kriteria-rucne-overene-2026-09-28.json` a sestavení dat je označí stejně jako označení Jevem.
+
+**Nový přepis 29 oborů z celého PDF** (`scripts/dipsy-kriteria-hromadny-prepis.py --plny-text`, verze 9, 0,039 USD): 22 přepisů teď další složky zachytilo (například Požární ochrana: školní zkouška a prospěch), 7 dál tvrdí „jen přijímačky“ a nese varování. Sestavení dat dává verzi 9 přednost.
+
+Výsledný stav: varování „přepis další složky nezachytil“ nese 14 přepisů (7 z verze 9, 4 ručně ověřené obory, z toho některé s více zaměřeními). Celkem kontrola Jevem, ověření a nový přepis stály 0,11 USD.

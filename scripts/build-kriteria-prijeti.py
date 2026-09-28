@@ -129,7 +129,9 @@ def ze_strojoveho_prepisu() -> dict[str, dict]:
     manifest = kontrola.pilot.latest_manifest()
     vystup = {}
     for cesta in sorted((BASE / "llm-pilot" / "usporny-v5").glob(f"*-v{VERZE}.json")):
-        r = json.loads(cesta.read_text(encoding="utf-8"))
+        # Verze 9 = nový přepis z celého PDF (u přepisů, kde výběr sekce minul kritéria); má přednost.
+        plny = cesta.with_name(cesta.name.replace(f"-v{VERZE}.json", "-v9.json"))
+        r = json.loads((plny if plny.exists() else cesta).read_text(encoding="utf-8"))
         radek = manifest[r["source_id"]]
         if r["sha256"] != radek["sha256"] or r["rok"] != ROK or r["kolo"] != 1:
             continue
@@ -181,9 +183,15 @@ def jev_oznaceni() -> set[str]:
     return oznacene
 
 
+# Ručně ověřené obory, kde přepis „jen přijímačky“ je chybný (z pásma nižší jistoty Jevu).
+RUCNE_OVERENE = KOREN / "docs" / "podklady" / "dipsy-kriteria-rucne-overene-2026-09-28.json"
+
+
 def main() -> None:
     prepisy = ze_strojoveho_prepisu()
-    for sid in jev_oznaceni():
+    rucne = set(json.loads(RUCNE_OVERENE.read_text(encoding="utf-8"))["obory"])
+    oznacene = jev_oznaceni() | {sid for sid, p in prepisy.items() if p["klic"] in rucne}
+    for sid in oznacene:
         p = prepisy.get(sid)
         if p and p["rezim"] == "pouze_jpz":
             p["rezim"] = "jine"

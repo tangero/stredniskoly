@@ -15,6 +15,11 @@ Pojistky rozpočtu (limit 10 USD na celé kritérie 2026, rozhodnutí zadavatele
 
     python3 scripts/dipsy-kriteria-hromadny-prepis.py --limit 10
     python3 scripts/dipsy-kriteria-hromadny-prepis.py
+    python3 scripts/dipsy-kriteria-hromadny-prepis.py --plny-text --source-id … --source-id …
+
+`--plny-text` pošle modelu celý text PDF místo sekce oboru a uloží výsledek
+jako verzi 9 (výběr sekce minul kritéria na pozdějších stranách, kontrola
+Jevem 28. 9. 2026). Sestavení dat dá verzi 9 přednost před 8.
 """
 from __future__ import annotations
 
@@ -37,6 +42,23 @@ spec.loader.exec_module(up)
 
 # Horní odhad ceny jednoho volání pro rezervu (pilot: medián ~0,001 USD, max pod 0,004).
 REZERVA_NA_VOLANI = 0.006
+VERZE_PLNY = 9
+MAX_ZNAKU_PLNY = 80_000
+plny_text = False
+
+
+def verze() -> int:
+    return VERZE_PLNY if plny_text else up.VERSION
+
+
+def prompt_plny(offer: dict, row: dict) -> str:
+    """Totéž zadání jako úsporný pilot, ale s celým textem PDF."""
+    suffix = ".ocr.txt" if row["stav"] == "ocr_text" else ".txt"
+    pages = (up.BASE / "text" / f"{row['sha256']}{suffix}").read_text(encoding="utf-8").split("\f")
+    text = "\n\n".join(f"=== STRANA {i} ===\n{p}" for i, p in enumerate(pages, 1) if p.strip())[:MAX_ZNAKU_PLNY]
+    return (f"{up.INSTRUCTIONS}\n\nNabídka {offer['source_id']}; REDIZO {offer['redizo']}; "
+            f"KKOV {offer['kkov']}; zaměření {offer.get('zamereni') or '(bez zaměření)'}; "
+            f"otisk PDF {row['sha256']}\n\n{text}")
 
 zamek = threading.Lock()
 utraceno = 0.0
@@ -44,7 +66,7 @@ rozpracovano = 0
 zastavit = threading.Event()
 
 
-def vyber(limit: int | None) -> list[tuple[dict, dict]]:
+def vyber(limit: int | None, ids: list[str] | None = None) -> list[tuple[dict, dict]]:
     offers = {o["source_id"]: o for o in json.loads(up.pilot.CATALOG.read_text(encoding="utf-8"))["data"]}
     manifest = up.pilot.latest_manifest()
     fronta = []
@@ -53,8 +75,10 @@ def vyber(limit: int | None) -> list[tuple[dict, dict]]:
             continue
         if row.get("stav") not in ("text", "ocr_text") or not row.get("kona_jpz"):
             continue
-        cil = up.OUTPUT / f"{sid}-v{up.VERSION}.json"
-        chyba = up.OUTPUT / f"{sid}-v{up.VERSION}.error.json"
+        if ids is not None and sid not in ids:
+            continue
+        cil = up.OUTPUT / f"{sid}-v{verze()}.json"
+        chyba = up.OUTPUT / f"{sid}-v{verze()}.error.json"
         if cil.exists() or chyba.exists():
             continue
         fronta.append((offers[sid], row))
@@ -73,7 +97,7 @@ def prepis(offer: dict, row: dict, key: str, strop: float) -> str:
             return "strop"
         rozpracovano += 1
     try:
-        prompt = up.prompt_for(offer, row)
+        prompt = prompt_plny(offer, row) if plny_text else up.prompt_for(offer, row)
         digest = hashlib.sha256(prompt.encode("utf-8")).hexdigest()
         body = {
             "model": up.MODEL,
@@ -113,15 +137,15 @@ def prepis(offer: dict, row: dict, key: str, strop: float) -> str:
             chyba = {"source_id": sid, "sha256": row["sha256"], "rok": 2026, "kolo": 1,
                      "prompt_sha256": digest, "duvod": choice.get("finish_reason"),
                      "zpracovano_at": now, "spotreba": usage, "cena_usd": cena}
-            (up.OUTPUT / f"{sid}-v{up.VERSION}.error.json").write_text(
+            (up.OUTPUT / f"{sid}-v{verze()}.error.json").write_text(
                 json.dumps(chyba, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             return "nedokonceno"
         record = {"source_id": sid, "sha256": row["sha256"], "rok": 2026, "kolo": 1,
-                  "model": answer.get("model", up.MODEL), "verze_zadani": up.VERSION,
+                  "model": answer.get("model", up.MODEL), "verze_zadani": up.VERSION, "plny_text": plny_text,
                   "prompt_sha256": digest, "zpracovano_at": now, "prompt_znaku": len(prompt),
                   "spotreba": usage, "cena_usd": cena,
                   "navrh": json.loads(choice["message"]["content"])}
-        cil = up.OUTPUT / f"{sid}-v{up.VERSION}.json"
+        cil = up.OUTPUT / f"{sid}-v{verze()}.json"
         tmp = cil.with_suffix(".tmp")
         tmp.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         tmp.replace(cil)
@@ -136,8 +160,12 @@ def main() -> None:
     parser.add_argument("--limit", type=int)
     parser.add_argument("--strop", type=float, default=3.50, help="strop nových výdajů tohoto běhu v USD")
     parser.add_argument("--vlaken", type=int, default=6)
+    parser.add_argument("--plny-text", action="store_true")
+    parser.add_argument("--source-id", action="append")
     args = parser.parse_args()
-    fronta = vyber(args.limit)
+    global plny_text
+    plny_text = args.plny_text
+    fronta = vyber(args.limit, set(args.source_id) if args.source_id else None)
     print(f"Ve frontě {len(fronta)} nabídek, strop {args.strop} USD.", flush=True)
     up.OUTPUT.mkdir(parents=True, exist_ok=True)
     key = up.ds.api_key()
