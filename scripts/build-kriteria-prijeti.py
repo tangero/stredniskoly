@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import re
 from pathlib import Path
 
 KOREN = Path(__file__).resolve().parent.parent
@@ -34,6 +35,39 @@ kontrola = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(kontrola)
 
 CASTI = {"cjl": "čeština", "mat": "matematika"}
+
+# Složka, která je ve skutečnosti jednotnou zkouškou (model ji občas uvede
+# vedle JPZ znovu, nebo tak zapíše vážení předmětu, u Dopplera „matematika
+# × 0,5“). Školní zkouška, pohovor a talentovka se sem nepočítají.
+RE_JPZ = re.compile(r"didaktick|cermat|jednotn\w* přijímac|\bJPZ\b|test\w* z (matematik|česk)|přijímací zkoušk\w* z (matematik|česk)", re.I)
+RE_SKOLNI = re.compile(r"školní|školské|vlastní|talent|pohovor|ústní", re.I)
+
+
+def je_jpz(nazev: str) -> bool:
+    return bool(RE_JPZ.search(nazev)) and not RE_SKOLNI.search(nazev)
+
+
+def rozdel_slozky(slozky: list[dict], jpz: dict, jpz_max: float | None) -> tuple[list[dict], list[dict]]:
+    """Rozdělí složky na další kritéria a body navíc z přijímaček.
+
+    Složka JPZ s maximem shodným s češtinou, matematikou nebo celou JPZ jen
+    opakuje přijímačky a vypouští se. Jiné maximum je vážení (body navíc).
+    """
+    opakovani = {v for v in (jpz.get("cjl_max"), jpz.get("mat_max"), jpz_max) if v}
+    dalsi, navic = [], []
+    for s in slozky:
+        if not je_jpz(s["nazev"]):
+            dalsi.append(s)
+        elif s.get("max") is not None and s["max"] not in opakovani:
+            navic.append(s)
+    return dalsi, navic
+
+
+def citelne_minimum(m) -> str:
+    """Minimum jako věta: přepis ho nese buď jako text, nebo jako objekt s popisem."""
+    if isinstance(m, dict):
+        return str(m.get("popis") or m.get("citace") or "").strip()
+    return str(m).strip()
 
 # Názvy typů složek z ručního pilotu pro čtenáře.
 TYPY = {
@@ -76,6 +110,7 @@ def z_pilotu() -> dict[str, dict]:
             "rezim": b["rezim"],
             "podil_jpz_pct": 100 if b["rezim"] == "pouze_jpz" else podil,
             "slozky": slozky,
+            "jpz_navic": [],
             "minima": [f"{CASTI.get(m['cast'], m['cast'])} alespoň {m['body']} bodů" for m in z.get("minima", [])],
             "nejasnosti": z.get("nejasnosti", []),
             "prepis": "rucni",
@@ -100,15 +135,23 @@ def ze_strojoveho_prepisu() -> dict[str, dict]:
             nalezy.append(f"vazba_oboru:{n.get('vazba_oboru')}")
         jpz = n.get("jpz") or {}
         jpz_max = jpz.get("max_po_prepoctu") or ((jpz.get("cjl_max") or 0) + (jpz.get("mat_max") or 0)) or None
-        slozky = [{"nazev": s["nazev"], "max": s.get("max_po_prepoctu")} for s in n.get("slozky", [])]
-        podil = 100 if n["rezim"] == "pouze_jpz" else (jpz.get("deklarovany_podil_pct") or podil_jpz(jpz_max, slozky))
+        vsechny = [{"nazev": s["nazev"].replace("_", " "), "max": s.get("max_po_prepoctu")} for s in n.get("slozky", [])]
+        slozky, jpz_navic = rozdel_slozky(vsechny, jpz, jpz_max)
+        if jpz_navic or len(slozky) < len(vsechny):
+            # Deklarovaný podíl počítal i přijímačky zapsané jako složku; přepočítat.
+            jpz_celkem = (jpz_max or 0) + sum(s["max"] for s in jpz_navic if s["max"] > 0)
+            podil = 100 if not slozky else podil_jpz(jpz_celkem, slozky)
+        else:
+            podil = 100 if n["rezim"] == "pouze_jpz" else (jpz.get("deklarovany_podil_pct") or podil_jpz(jpz_max, slozky))
         vystup[r["source_id"]] = {
             "klic": f"{radek['redizo']}_{radek['kkov']}",
             "zamereni": radek.get("zamereni") or "",
-            "rezim": n["rezim"],
+            # Bez dalších složek jde o bodování jen z přijímaček (případně s vážením).
+            "rezim": "pouze_jpz" if not slozky and n["rezim"] == "jine" and (jpz_navic or vsechny) else n["rezim"],
             "podil_jpz_pct": round(podil) if podil is not None else None,
             "slozky": slozky,
-            "minima": [m if isinstance(m, str) else json.dumps(m, ensure_ascii=False) for m in n.get("minima", [])],
+            "jpz_navic": jpz_navic,
+            "minima": [t for t in (citelne_minimum(m) for m in n.get("minima", [])) if t],
             "nejasnosti": n.get("nejasnosti", []),
             "prepis": "strojovy",
             "nalezy": nalezy,

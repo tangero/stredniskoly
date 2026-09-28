@@ -44,7 +44,18 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
         </p>
       ) : p.rezim === 'pouze_jpz' ? (
         <p>Podle kritérií {k.rok} škola bodovala <b>jen přijímačky</b> (češtinu a matematiku).</p>
-      ) : (
+      ) : null}
+      {p && p.jpz_navic.length > 0 && (
+        <>
+          <p>Přijímačky ale nepočítala prostým součtem, takže pořadí se od součtu na proužku může lišit:</p>
+          <ul className="list-disc space-y-0.5 pl-5">
+            {p.jpz_navic.map((x, i) => (
+              <li key={i}>{x.nazev}{x.max !== null ? `: až ${x.max} bodů navíc` : ''}</li>
+            ))}
+          </ul>
+        </>
+      )}
+      {p && p.rezim === 'jine' && (
         <>
           <p>
             {p.podil_jpz_pct !== null
@@ -61,7 +72,12 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
           )}
         </>
       )}
-      {p && p.minima.length > 0 && <p>Minimum: {p.minima.map(m => m.replace(/\.$/, '')).join('; ')}.</p>}
+      {p && p.minima.length > 0 && <div>
+          <p>Minimální podmínky:</p>
+          <ul className="list-disc space-y-0.5 pl-5">
+            {p.minima.map((m, i) => <li key={i}>{m.replace(/\.$/, '')}</li>)}
+          </ul>
+        </div>}
       {p && k.prepisy.length > 1 && <p className="text-slate-500">Obor má víc zaměření; ukazujeme první z nich.</p>}
       {p && (
         <p className="text-amber-800">

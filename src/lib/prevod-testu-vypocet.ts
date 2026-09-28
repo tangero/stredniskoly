@@ -69,6 +69,8 @@ export interface PrepisKriterii {
   /** Podíl přijímaček na bodování, % (slovník ukazatelů). */
   podil_jpz_pct: number | null;
   slozky: { nazev: string; max: number | null }[];
+  /** Body navíc z přijímaček, typicky vážení jednoho předmětu (matematika × 0,5). */
+  jpz_navic: { nazev: string; max: number | null }[];
   minima: string[];
   nejasnosti: string[];
   prepis: 'rucni' | 'strojovy';
