@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.26 · 28. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.27 · 28. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -62,6 +62,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **převedený výsledek** | *Převedený výsledek testu* ze slovníku ukazatelů: body cvičného testu přepočtené přes pořadí na body roku pásem | „kolik bodů by to bylo v roce {rok}: podle toho, kolik uchazečů mělo ve stejném testu horší výsledek“; v bloku vždy i výhrada, že spíš nadhodnocuje | přepočtené body, normalizované body |
 | **rozmezí, kde rozhodovalo i něco jiného** | pásmo nejistoty ze slovníku ukazatelů: body, u kterých se část soutěžících uchazečů dostala a část ne | na proužku jako legenda; ve větě s počty: „jsi v rozmezí, kde se v roce {rok} ze 41 uchazečů dostalo 24“ | pásmo nejistoty (v textu pro rodiče), hranice přijetí |
 | **kritéria {rok}** | kritéria přijetí, podle kterých škola řadila uchazeče v daném minulém ročníku | „pravidla, podle kterých škola v roce {rok} řadila uchazeče; pro nové přijímací řízení platí nová“ | aktuální kritéria (pro minulý ročník), kritéria bez roku |
+| **extra body** | body, které škola při přijímání přidávala k jednotné přijímací zkoušce za něco jiného (prospěch ze základní školy, školní přijímací zkouška, pohovor, soutěže); vždy za konkrétní minulý ročník podle kritérií {rok} | „extra body, tedy body za něco jiného než jednotnou přijímací zkoušku, například za prospěch ze základní školy nebo školní přijímací zkoušku“ | bonusové body, body navíc (u vyšší váhy jednoho předmětu to extra body nejsou), extra body bez roku jako jistota pro nové řízení |
 
 ## 4. Škola, maturita a původ údajů
 
@@ -123,6 +124,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.27 | Pojem **extra body** pro zvýrazněný blok kritérií na stránce oboru („O přijetí rozhodují i extra body“, 28. 9. 2026). Štítek stojí nad podnadpisem s rokem kritérií, aby netvrdil jistotu pro nové řízení. |
 | 1.26 | Pojmy **cvičný test**, **převedený výsledek**, **rozmezí, kde rozhodovalo i něco jiného** a **kritéria {rok}** pro proužek „Kde stojím“ na stránce oboru (28. 9. 2026, [návrh](navrh-kde-stojim-2027.md)). *Pásmo nejistoty* zůstává názvem v datech, rodičům se říká rozmezí. |
 | 1.25 | Souhrn maturity za školu mluví o dostupných hodnoceních skupin oborů; jediný hodnocený rok se neoznačuje „každý rok“ (23. 9. 2026). |
 | 1.24 | Pojem **pozice na přihlášce** se třemi stupni (škola první volby, smíšená pozice, záložní volba) pro přehled kraje, přehled města a stránku oboru (23. 9. 2026). Zadavatel chtěl „kategorie škol“ používat víc; dosavadní kategorie oboru neměla doložený výpočet, proto se zakazuje i její slovník. Do zakázaných slov přibyla konkurence jako číslo a trend ze dvou ročníků, které nesl starý přehled kraje. |

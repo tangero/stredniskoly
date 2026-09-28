@@ -28,7 +28,7 @@ interface ProfilOboruProps {
 }
 
 
-function Otazka({ id, cislo: poradi, nadpis, rok, children }: { id: string; cislo: number; nadpis: string; rok?: string; children: ReactNode }) {
+function Otazka({ id, cislo: poradi, nadpis, rok, uvod, children }: { id: string; cislo: number; nadpis: string; rok?: string; uvod?: ReactNode; children: ReactNode }) {
   return (
     <section id={id} className="scroll-mt-20 border-b border-slate-200 py-10 last:border-b-0">
       <div className="mb-6 flex flex-wrap items-baseline justify-between gap-3">
@@ -38,6 +38,7 @@ function Otazka({ id, cislo: poradi, nadpis, rok, children }: { id: string; cisl
         </h2>
         {rok && <span className="rounded-full border border-slate-300 px-3 py-0.5 text-[13px] font-semibold text-slate-500">{rok}</span>}
       </div>
+      {uvod && <div className="mb-6">{uvod}</div>}
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">{children}</div>
     </section>
   );
@@ -332,6 +333,38 @@ export function ProfilOboru({ data, inspekceHref, skolaHref, obec }: ProfilOboru
     hlavni = `V 1. kole ${rok} bylo místo pro všechny, kdo splnili požadavky školy.`;
   }
 
+  const kdeStojimBox = (
+    <>
+      {stav === 'nevesli_se' && data.pasma && pasma?.pasma && pasma.pasma.length > 0 && (
+              <section aria-labelledby="kde-stojim" className="space-y-4 rounded-2xl border-2 border-[#0074e4] bg-white p-5 shadow-[0_12px_32px_-20px_rgba(0,116,228,0.45)] md:p-7">
+                <div className="flex flex-wrap items-baseline gap-3">
+                  <h3 id="kde-stojim" className="text-xl font-bold text-[#16325c] md:text-2xl">S kolika body se kdo dostal a kde byste stáli vy</h3>
+                  <span className="ml-auto whitespace-nowrap text-[13px] font-semibold text-slate-500">1. kolo {data.pasma.rok}</span>
+                </div>
+                <Proc>
+                  Soutěžící uchazeči v roce {data.pasma.rok}, tedy ti, kdo splnili požadavky školy a nedostali se na obor výš na přihlášce, podle bodů (součet češtiny a matematiky, každý test nejvýš 50 bodů).
+                  {pasma.prijatych >= 10 && <> Pod <b>{cislo(pasma.min_prijaty)} bodů</b> se nedostal nikdo; stejně nebo méně bodů mělo {Math.round(pasma.min_prijaty_percentil)} ze 100 uchazečů v celé zemi.</>}
+                </Proc>
+                {data.kdeStojim ? (
+                  <KdeStojim
+                    data={pasma}
+                    rok={data.pasma.rok}
+                    druh={data.kdeStojim.druh}
+                    prevod={data.kdeStojim.prevod}
+                    pozice={data.kdeStojim.pozice}
+                    kriteria={data.kdeStojim.kriteria}
+                    vstupOtevreny={false}
+                    pamatovat
+                  />
+                ) : (
+                  <PasmaBodu pasma={pasma.pasma} />
+                )}
+                <Zdroj>Data o uchazečích 1. kola {data.pasma.rok}; převod testů z položkových dat jednotné přijímací zkoušky; kritéria z PDF škol v DiPSy. Není to šance konkrétního uchazeče a platí za obor školy bez zaměření.{verzeUchazecu}</Zdroj>
+              </section>
+      )}
+    </>
+  );
+
   return (
     <div className="bg-[#f4f7fb]">
       <nav aria-label="Otázky na stránce" className="sticky top-0 z-20 border-b border-slate-200 bg-[#f4f7fb]/95 backdrop-blur">
@@ -347,7 +380,7 @@ export function ProfilOboru({ data, inspekceHref, skolaHref, obec }: ProfilOboru
         <BodyKPrijeti data={data} verzeUchazecu={verzeUchazecu} />
 
         {/* 1 · Jak těžké bude se dostat */}
-        <Otazka id="prijeti" cislo={1} nadpis="Jak těžké je se sem dostat" rok={`1. kolo ${rok}`}>
+        <Otazka id="prijeti" cislo={1} nadpis="Jak těžké je se sem dostat" rok={`1. kolo ${rok}`} uvod={kdeStojimBox}>
           <Odpoved>
             <p className="text-[26px] font-bold leading-tight text-[#16325c]">{hlavni}</p>
             {stav === 'nevesli_se' ? (
@@ -417,30 +450,6 @@ export function ProfilOboru({ data, inspekceHref, skolaHref, obec }: ProfilOboru
               <Proc>Všechny přihlášky na obor podle výsledku. Uchazeči, kteří nedosáhli požadavku školy nebo se dostali na obor výš na přihlášce, mezi soutěžící uchazeče nepatří.</Proc>
               <RozpadPrihlasek radky={roky.map(x => ({ rok: x.rok, prijati: x.r.prijati ?? 0, nevesli: x.r.capacity_rejected ?? 0, vyse: x.r.higher_priority ?? 0, pozadavek: x.r.conditions_not_met ?? 0, vzdali: x.r.withdrawn ?? 0 }))} />
             </Dukaz>
-
-            {stav === 'nevesli_se' && data.pasma && pasma?.pasma && pasma.pasma.length > 0 && (
-              <Dukaz nadpis="S kolika body se kdo dostal a kde byste stáli vy" rok={`1. kolo ${data.pasma.rok}`} otevreny={Boolean(data.kdeStojim)}>
-                <Proc>
-                  Soutěžící uchazeči v roce {data.pasma.rok}, tedy ti, kdo splnili požadavky školy a nedostali se na obor výš na přihlášce, podle bodů (součet češtiny a matematiky, každý test nejvýš 50 bodů).
-                  {pasma.prijatych >= 10 && <> Pod <b>{cislo(pasma.min_prijaty)} bodů</b> se nedostal nikdo; stejně nebo méně bodů mělo {Math.round(pasma.min_prijaty_percentil)} ze 100 uchazečů v celé zemi.</>}
-                </Proc>
-                {data.kdeStojim ? (
-                  <KdeStojim
-                    data={pasma}
-                    rok={data.pasma.rok}
-                    druh={data.kdeStojim.druh}
-                    prevod={data.kdeStojim.prevod}
-                    pozice={data.kdeStojim.pozice}
-                    kriteria={data.kdeStojim.kriteria}
-                    vstupOtevreny={false}
-                    pamatovat
-                  />
-                ) : (
-                  <PasmaBodu pasma={pasma.pasma} />
-                )}
-                <Zdroj>Data o uchazečích 1. kola {data.pasma.rok}; převod testů z položkových dat jednotné přijímací zkoušky; kritéria z PDF škol v DiPSy. Není to šance konkrétního uchazeče a platí za obor školy bez zaměření.{verzeUchazecu}</Zdroj>
-              </Dukaz>
-            )}
 
             <Dukaz nadpis="Údaje v číslech" rok={rozsahRoku}>
               <div className="overflow-x-auto">

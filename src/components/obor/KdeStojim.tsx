@@ -26,6 +26,9 @@ export function jenPrijimacky(k: KriteriaOboru | null | undefined): boolean {
     && k.prepisy.every(p => p.rezim === 'pouze_jpz' && p.jpz_navic.length === 0 && !p.chybi_slozky));
 }
 
+/** Přepis boduje i něco jiného než jednotnou přijímací zkoušku (extra body ve slovníku pojmů). */
+const extraBody = (p: KriteriaOboru['prepisy'][number]) => p.rezim === 'jine';
+
 /**
  * Blok kritérií jen tam, kde nerozhodovala jen JPZ (rozhodnutí zadavatele
  * 28. 9. 2026). U „jen JPZ“ jedna věta, bez přepisu nic.
@@ -50,8 +53,19 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
     );
   }
   return (
-    <div className="space-y-2 rounded-xl border border-slate-200 bg-white p-5 text-sm text-slate-700">
-      <h3 className="text-base font-semibold text-slate-900">Co kromě přijímaček rozhodovalo v roce {k.rok}</h3>
+    <div className="space-y-2 rounded-xl border-2 border-amber-300 bg-amber-50/50 p-5 text-sm text-slate-700">
+      {extraBody(p) && (
+        <p className="inline-flex items-center gap-2 rounded-full bg-amber-400 px-3 py-1 text-sm font-bold text-amber-950">
+          <span aria-hidden="true">★</span> O přijetí rozhodují i extra body
+        </p>
+      )}
+      <h3 className="text-lg font-bold text-[#16325c]">Co kromě přijímaček rozhodovalo v roce {k.rok}</h3>
+      {extraBody(p) && (
+        <p className="font-medium text-slate-800">
+          V roce {k.rok} škola k jednotné přijímací zkoušce přidávala extra body, tedy body za něco jiného než
+          jednotnou přijímací zkoušku, například za prospěch ze základní školy nebo školní přijímací zkoušku.
+        </p>
+      )}
       <p className="text-slate-500">
         Kritéria {k.rok}, tedy pravidla, podle kterých škola v roce {k.rok} řadila uchazeče; pro nové přijímací
         řízení platí nová.
@@ -98,6 +112,46 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
       </p>
       <p className="text-slate-500">{noveRizeni} Až budou, doplníme je.</p>
     </div>
+  );
+}
+
+/** Úvodní stránka přijímaček v TAU; výběr testu (vyber.php) funguje jen z ní, přímý odkaz ukáže prázdnou stránku. */
+const TAU_PRIJIMACKY = 'https://tau.cermat.cz/predmet_prijimacky.php';
+
+/**
+ * Návod krok za krokem k jedinému testu, který umíme převést: celý test roku
+ * převodních tabulek, 1. řádný termín, pro třídu podle druhu oboru.
+ */
+function NavodTau({ druh, rokTestu, termin }: { druh: DruhTestu; rokTestu: number; termin: string }) {
+  const trida = TRIDA_TAU[druh];
+  return (
+    <details className="group rounded-xl border border-blue-200 bg-blue-50/60 text-sm text-slate-700">
+      <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 font-semibold text-[#16325c] [&::-webkit-details-marker]:hidden">
+        <span aria-hidden="true" className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#0074e4] text-xs text-white">i</span>
+        Který test udělat: TAU {rokTestu}, {trida}. ročník, {termin}
+        <span aria-hidden="true" className="ml-auto text-lg leading-none text-[#0074e4] transition-transform group-open:rotate-45">+</span>
+      </summary>
+      <div className="space-y-2 px-4 pb-4">
+        <p>
+          Výsledek umíme přepočítat na body roku zobrazených pásem jen u jednoho konkrétního testu: celého testu
+          z roku {rokTestu}, {termin}. U něj víme, jak ho napsali skuteční uchazeči, a podle toho body převedeme.
+          Jiný test přepočítat a porovnat neumíme.
+        </p>
+        <ol className="list-decimal space-y-1 pl-5">
+          <li>
+            Otevřete <a href={TAU_PRIJIMACKY} className="font-medium text-blue-700 underline" rel="noopener noreferrer" target="_blank">CERMAT TAU – přijímačky</a>.
+          </li>
+          <li>Ve sloupci <b>{trida}. ročník</b> zvolte <b>český jazyk a literatura</b>.</li>
+          <li>V části <b>celý test</b> vyberte rok <b>{rokTestu}</b> a <b>{termin}</b> a spusťte ho.</li>
+          <li>Pište celý test najednou, na čas jako u skutečné zkoušky, bez opravování chyb a poprvé. Zapište si počet bodů.</li>
+          <li>Totéž udělejte pro <b>matematiku</b>: stejný ročník, rok {rokTestu}, {termin}.</li>
+          <li>Obě čísla zadejte sem a u testu nechte <b>TAU {rokTestu}, {termin}</b>.</li>
+        </ol>
+        <p className="text-slate-500">
+          Další termíny téhož roku převést umíme také, náhradní ale méně přesně. Víc testů dá přesnější obrázek.
+        </p>
+      </div>
+    </details>
   );
 }
 
@@ -410,19 +464,16 @@ export function KdeStojim({
         >
           Zadej výsledek testu a uvidíš, kde bys stál
         </button>
-      ) : (
+      ) : null}
+      {!otevreno && prevod && (
+        <NavodTau druh={druh} rokTestu={prevod.rok_testu} termin={prevod.terminy.find(x => x.klic === '1-radny')?.nazev ?? '1. řádný termín'} />
+      )}
+      {otevreno && (
         <div className="space-y-3 rounded-xl border border-slate-200 p-4">
           <p className="text-sm font-medium text-slate-700">
             Tvoje výsledky z cvičného testu, tedy testu z minulých přijímaček v aplikaci CERMAT TAU
-            {prevod && (
-              <span className="block font-normal text-slate-500">
-                Nejpřesnější je test {prevod.rok_testu} pro {TRIDA_TAU[druh]}. třídu z aplikace{' '}
-                <a href={`https://tau.cermat.cz/vyber.php?trida=${TRIDA_TAU[druh]}&predmet=cj`} className="underline" rel="noopener noreferrer" target="_blank">CERMAT TAU</a>
-                {' '}(řádný termín): celý test, na čas (matematika 70 minut, čeština 60 minut), bez opravování, poprvé.
-                Víc testů dá přesnější obrázek.
-              </span>
-            )}
           </p>
+          {prevod && <NavodTau druh={druh} rokTestu={prevod.rok_testu} termin={prevod.terminy.find(x => x.klic === '1-radny')?.nazev ?? '1. řádný termín'} />}
           {testy.map((t, i) => {
             const v = vysledky[i];
             return (
