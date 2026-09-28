@@ -23,6 +23,8 @@ interface ProgramTabsProps {
     hasZamereni?: boolean;
     is_new_2026?: boolean;
     prev_zamereni_name?: string;
+    /** Škola nabídku v zobrazeném ročníku nevypsala; hodnota je rok, kdy ji vypsala naposledy. */
+    naposledyVypsano?: number | true;
   }>;
   currentProgramId: string;
 }
@@ -60,7 +62,9 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
     (b.delka_studia >= 6 ? b.delka_studia : 0) - (a.delka_studia >= 6 ? a.delka_studia : 0)
     || nazevBezDelky(a).localeCompare(nazevBezDelky(b), 'cs')
     || b.delka_studia - a.delka_studia);
-  const totalKapacita = programs.reduce((sum, p) => sum + (p.kapacita || 0), 0);
+  // Součet popisuje nabídku ročníku: nevypsaná zaměření mají stránku, ale jejich místa jsou loňská.
+  const vypsane = programs.filter(p => !p.naposledyVypsano);
+  const totalKapacita = vypsane.reduce((sum, p) => sum + (p.kapacita || 0), 0);
 
   return (
     <div className="border-b border-slate-200 bg-slate-50">
@@ -68,7 +72,7 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <h2 className="text-xl font-bold text-slate-900">Obory školy</h2>
           <p className="text-sm text-slate-500">
-            {programs.length} {programs.length < 5 ? 'obory' : 'oborů'}{totalKapacita > 0 && `, ${totalKapacita} míst celkem`}
+            {vypsane.length} {vypsane.length === 1 ? 'obor' : vypsane.length < 5 ? 'obory' : 'oborů'}{totalKapacita > 0 && `, ${totalKapacita} míst celkem`}
           </p>
         </div>
         {spolecnyNazev && (
@@ -102,8 +106,9 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
                   {spolecnyNazev || (pocetPodleNazvu.get(nazev) ?? 0) > 1 ? '' : ` · ${delka}`}
                   {program.kapacita ? ` · ${mist(program.kapacita)}` : ''}
                 </span>
-                {(program.is_new_2026 || program.prev_zamereni_name) && (
+                {(program.naposledyVypsano || program.is_new_2026 || program.prev_zamereni_name) && (
                   <span className={`text-[12px] ${isActive ? 'text-blue-100' : 'text-slate-500'}`}>
+                    {program.naposledyVypsano && <span className={`mr-1.5 rounded px-1.5 py-0.5 ${isActive ? 'bg-white/20 text-white' : 'bg-slate-200 text-slate-600'}`}>{program.naposledyVypsano === true ? 'nevypsáno' : `naposledy ${program.naposledyVypsano}`}</span>}
                     {program.is_new_2026 && <span className={`mr-1.5 rounded px-1.5 py-0.5 font-semibold ${isActive ? 'bg-white/20 text-white' : 'bg-amber-100 text-amber-800'}`}>nový obor</span>}
                     {program.prev_zamereni_name && <>dříve „{program.prev_zamereni_name}“</>}
                   </span>

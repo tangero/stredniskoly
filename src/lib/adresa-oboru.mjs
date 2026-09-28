@@ -9,7 +9,7 @@
  * pod `node` při buildu. Import TypeScriptu by vyžadoval odstraňování typů, které umí až
  * Node 22.6 a novější; workflow projektu běží na Node 20. Typy proto nese JSDoc.
  *
- * @typedef {{ obor: string, zamereni?: string, delka_studia?: number, id?: string }} NabidkaProAdresu
+ * @typedef {{ obor: string, zamereni?: string, delka_studia?: number, id?: string, nevypsano_2026?: boolean }} NabidkaProAdresu
  */
 
 /**
@@ -225,7 +225,8 @@ export function adresySkoly(redizo, nazevSkoly, nabidky) {
  *
  * Stránku staví `getProgramsByRedizo`, a ta nabídku **vynechá** ve dvou případech: když její
  * základní klíč (`REDIZO_KKOV`) nezná `school_analysis.json`, a když pod týmž základním klíčem
- * existuje nabídka se zaměřením — pak se holá nabídka bez zaměření zahodí. Kdo to pravidlo
+ * existuje nabídka se zaměřením — pak se holá nabídka bez zaměření zahodí, pokud ji škola
+ * v ročníku nevypsala (vypsaná dostane vlastní stránku vedle zaměření). Kdo to pravidlo
  * neuplatní, vyrobí adresu, která se jen přesměruje: přesně to dělala sitemapa u 43 adres
  * a vyhledávání u části odkazů.
  *
@@ -239,6 +240,8 @@ export function nabidkySeStrankou(nabidky, znaZakladniKlic) {
   return nabidky.filter(n => {
     const k = zaklad(n);
     if (!k || !znaZakladniKlic(k)) return false;
-    return zamereniProAdresu(n.zamereni) ? true : !seZamerenim.has(k);
+    // Nabídka bez zaměření vedle zaměření má stránku, jen když ji škola v ročníku vypsala
+    // (getProgramsByRedizo, vypsanaNabidkaBezZamereni); loňský záznam bez zaměření ne.
+    return zamereniProAdresu(n.zamereni) ? true : !seZamerenim.has(k) || !n.nevypsano_2026;
   });
 }

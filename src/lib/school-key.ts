@@ -70,3 +70,16 @@ export function klicOboru(z: { redizo?: unknown; kkov?: unknown; id?: unknown })
   const kkov = z.kkov ? String(z.kkov) : String(z.id ?? '').split('_')[1] ?? '';
   return kkov ? `${z.redizo}_${kkov}` : null;
 }
+
+/**
+ * Nese katalog ročníku vypsanou nabídku oboru bez zaměření (klíč přesně REDIZO_KKOV)?
+ * Stává se to vedle loňských zaměření, která škola nevypsala a mapa nabídek je
+ * nespárovala (např. loňské „Denní“ a „Kombinovaná“, letos jedna nabídka bez zaměření).
+ * Taková nabídka potřebuje vlastní stránku, jinak by čísla ročníku nikde nebyla.
+ */
+export function vypsanaNabidkaBezZamereni(
+  zaznamy: { id: string; zamereni?: unknown; nevypsano_2026?: unknown }[],
+  klicOboru: string,
+): boolean {
+  return zaznamy.some(z => z.id === klicOboru && !z.zamereni && !z.nevypsano_2026);
+}

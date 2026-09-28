@@ -266,8 +266,16 @@ export default async function SchoolDetailPage({ params }: Props) {
       hasZamereni: !!p.zamereni,
       is_new_2026: p.is_new_2026,
       prev_zamereni_name: p.prev_zamereni_name,
+      ...(p.nevypsano_2026 ? { naposledyVypsano: p.rok ?? (true as const) } : {}),
     };
   });
+
+  // Loňské zaměření, které škola letos nevypsala, vedle letošní nabídky téhož oboru bez zaměření:
+  // rodič přišel starou adresou a letošní čísla s proužkem jsou na stránce letošní nabídky.
+  const zakladOboru = program.id.split('_').slice(0, 2).join('_');
+  const letosniNabidka = program.nevypsano_2026
+    ? programsForTabs.find(p => p.id === zakladOboru && !p.hasZamereni)
+    : undefined;
 
   // Slug pro přehled školy
   const overviewSlug = `${redizo}-${createSlug(school.nazev)}`;
@@ -464,6 +472,16 @@ export default async function SchoolDetailPage({ params }: Props) {
 
         {/* Navigace oborů */}
         <ProgramTabs programs={programsForTabs} currentProgramId={program.id} />
+
+        {letosniNabidka && (
+          <div className="max-w-6xl mx-auto px-4 pt-6">
+            <p className="rounded-lg border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-900">
+              {program.rok ? `Toto zaměření škola naposledy vypsala v roce ${program.rok}. ` : 'Toto zaměření škola v zobrazeném ročníku nevypsala. '}
+              Nabídka oboru{rokNabidky ? ` pro rok ${rokNabidky}` : ''} je na stránce{' '}
+              <Link href={`/skola/${letosniNabidka.slug}`} className="font-semibold underline">{letosniNabidka.obor}</Link>.
+            </p>
+          </div>
+        )}
 
         {/* Poznámka ke škole/oboru */}
         {schoolNoteToShow && (
