@@ -295,7 +295,7 @@ Předmětový sklon **není** ukazatel k zobrazení, je to prověrka. Neříká,
 
 Nezobrazuje se u oborů s talentovou zkouškou (`talentova_zkouska`): uměleckých oborů skupiny 82 a gymnázií se sportovní přípravou 79-42. Místo ní stojí věta, že o přijetí rozhoduje i talentová zkouška, o které údaje nemáme. U sportovních gymnázií je medián 0,78 proti 0,976 u ostatních.
 
-U záznamů sdílených víc zaměřeními nebo nabídkami (`vice_zamereni`) je medián 0,93 a nad čísly stojí upozornění. Příznak se počítá z vyššího z počtů zaměření v katalogu 2025 a nabídek téže kombinace školy a oboru v roce 2026.
+U záznamů sdílených víc zaměřeními nebo nabídkami (`vice_zamereni`) je medián 0,929 a nad čísly stojí upozornění. Příznak se počítá z vyššího z počtů zaměření v katalogu 2025 a nabídek téže kombinace školy a oboru v roce 2026.
 
 ### Pásmo nejistoty
 Rozsah od nejnižšího výsledku mezi přijatými k nejvyššímu mezi nepřijatými kvůli kapacitě. Pole `pasmo_nejistoty`, obsazenost `v_pasmu_nejistoty`, přesné počty uvnitř `pasmo_nejistoty_soutezilo` a `pasmo_nejistoty_prijato`. Věta „z N uchazečů v tomto rozmezí se dostalo M“ smí použít jen přesné počty, nikdy součet pětibodových pásem. Dolní mez se na webu neukazuje u oborů s méně než deseti přijatými, stejně jako nejnižší výsledek mezi přijatými; konstanta `MIN_PRIJATYCH_PRO_HRANICI`.
