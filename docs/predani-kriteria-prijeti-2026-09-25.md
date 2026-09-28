@@ -44,3 +44,14 @@ python3 -m py_compile scripts/dipsy-kriteria-{rozpocet-2026,usporny-pilot,usporn
 Poslední kontrola v tomto prostředí: rozpočet 5,416788 USD, 50 výsledků v8, z toho 33 bez mechanického nálezu; uvedené skripty prošly kontrolou syntaxe. Hromadná úsporná dávka **nebyla odeslána**. Veřejné zapnutí ani produkční migrace **neproběhly**.
 
 Pracovní větev při předání: `feat/veletrhy-dopis-poradatelum`, HEAD `3990769`; pracovní strom obsahuje také změny veletrhů a mnoho necommitnutých souborů kritérií. Před pokračováním znovu přečíst `git status --short`. Nepřepínat větev ani necommitovat cizí změny bez rozlišení původu.
+
+## Doplněk 28. 9. 2026: jak přepisovat další ročník
+
+Kritéria 2026 jsou přepsaná plošně (2 814 oborů, 2,93 USD) a nasazená v prototypu `/prototyp/pasma` s výhradou chybovosti; původní vstupní brána ruční kontroly všech PDF byla nahrazena přiznanou chybou (rozhodnutí zadavatele 27. 9. 2026). Postup pro kritéria 2027:
+
+1. Sběr PDF (`scripts/dipsy-kriteria-sber.py`) po zveřejnění kritérií (harmonogram MŠMT: 15.–31. 1. 2027).
+2. Přepis **celého PDF** modelem DeepSeek V4.1 Flash (`scripts/dipsy-kriteria-hromadny-prepis.py`, výchozí; strop výdajů na běh). Výběr sekce oboru se nepoužívá: minul kritéria na pozdějších stranách.
+3. Kontrola Jevem 1.13 u přepisů „jen přijímačky“ (`scripts/dipsy-kriteria-jev-kontrola.py --jen-jpz`, práh 0,9; ověřeno 29/29), znovu přepsat označené.
+4. Sestavení dat (`scripts/build-kriteria-prijeti.py`) a kontrola vzorku naslepo.
+
+Podklady: [kontrola 30 vzorků](podklady/dipsy-kriteria-kontrola-30-2026-09-28.md), [pilot Jevu](podklady/dipsy-kriteria-jev-pilot-30-2026-09-28.md).

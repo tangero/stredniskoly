@@ -15,11 +15,13 @@ Pojistky rozpočtu (limit 10 USD na celé kritérie 2026, rozhodnutí zadavatele
 
     python3 scripts/dipsy-kriteria-hromadny-prepis.py --limit 10
     python3 scripts/dipsy-kriteria-hromadny-prepis.py
-    python3 scripts/dipsy-kriteria-hromadny-prepis.py --plny-text --source-id … --source-id …
+    python3 scripts/dipsy-kriteria-hromadny-prepis.py --source-id … --source-id …
+    python3 scripts/dipsy-kriteria-hromadny-prepis.py --sekce          # stará verze 8
 
-`--plny-text` pošle modelu celý text PDF místo sekce oboru a uloží výsledek
-jako verzi 9 (výběr sekce minul kritéria na pozdějších stranách, kontrola
-Jevem 28. 9. 2026). Sestavení dat dá verzi 9 přednost před 8.
+Výchozí je celý text PDF, výsledek se ukládá jako verze 9 (výběr sekce minul
+kritéria na pozdějších stranách, kontrola Jevem 28. 9. 2026). Sestavení dat
+dá verzi 9 přednost před 8. Po přepisu pustit kontrolu Jevem:
+scripts/dipsy-kriteria-jev-kontrola.py --jen-jpz.
 """
 from __future__ import annotations
 
@@ -160,11 +162,14 @@ def main() -> None:
     parser.add_argument("--limit", type=int)
     parser.add_argument("--strop", type=float, default=3.50, help="strop nových výdajů tohoto běhu v USD")
     parser.add_argument("--vlaken", type=int, default=6)
-    parser.add_argument("--plny-text", action="store_true")
+    # Výchozí je celé PDF (rozhodnutí 28. 9. 2026): výběr sekce oboru minul
+    # kritéria na pozdějších stranách. --sekce jen pro opakování starých běhů v8.
+    parser.add_argument("--sekce", action="store_true", help="posílat jen sekci oboru (verze 8)")
+    parser.add_argument("--plny-text", action="store_true", help="zastaralé, celé PDF je výchozí")
     parser.add_argument("--source-id", action="append")
     args = parser.parse_args()
     global plny_text
-    plny_text = args.plny_text
+    plny_text = not args.sekce
     fronta = vyber(args.limit, set(args.source_id) if args.source_id else None)
     print(f"Ve frontě {len(fronta)} nabídek, strop {args.strop} USD.", flush=True)
     up.OUTPUT.mkdir(parents=True, exist_ok=True)
