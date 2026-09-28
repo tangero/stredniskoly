@@ -34,30 +34,30 @@
  },
  "meze_populace_aspon_10_prijatych_a_5_odmitnutych_v_obou_letech": {
   "dolni_mez": {
-   "n": 1173,
+   "n": 1171,
    "korelace": 0.899,
    "median_abs_zmeny": 5.0,
-   "podil_zmena_nad_10_pct": 14.7,
+   "podil_zmena_nad_10_pct": 14.8,
    "podil_zmena_nad_20_pct": 1.3
   },
   "horni_mez": {
-   "n": 1173,
-   "korelace": 0.865,
+   "n": 1171,
+   "korelace": 0.866,
    "median_abs_zmeny": 5.0,
-   "podil_zmena_nad_10_pct": 17.1,
+   "podil_zmena_nad_10_pct": 16.8,
    "podil_zmena_nad_20_pct": 1.7
   },
   "sirka_pasma": {
-   "n": 1173,
-   "korelace": 0.719,
+   "n": 1171,
+   "korelace": 0.718,
    "median_abs_zmeny": 3.0,
    "podil_zmena_nad_10_pct": 10.6,
-   "podil_zmena_nad_20_pct": 1.6
+   "podil_zmena_nad_20_pct": 1.7
   },
   "median_sirky_2026": 6.0,
   "rozhodl_test": {
-   "n": 1173,
-   "korelace": 0.672,
+   "n": 1171,
+   "korelace": 0.667,
    "median_abs_zmeny": 0.01,
    "podil_zmena_nad_10_pct": 0.0,
    "podil_zmena_nad_20_pct": 0.0

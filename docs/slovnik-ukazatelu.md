@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.36 · 27. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.38 · 28. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -66,7 +66,7 @@ Zdroj jsou údaje o jednotlivých uchazečích za rok 2025 (`PZ2025_kolo1_uchaze
 Tři meze, které se musí uvést vždy:
 
 1. **Rok 2025, finální revize.** Soubor je spočítaný z finální revize roku 2025, kterou CERMAT zveřejnil 20. 5. 2026 (PR #84); do té doby z předběžné verze s přihláškami k 13. 5. 2025. Předběžná data za rok 2026 vyšla současně a web je zatím nepřevzal; stav vede registr `public/stav_datovych_sad.json` u sady `cermat-uchazeci-kolo1`. Do 13. 9. 2026 tu stálo, že data za rok 2026 neexistují, což nebyla pravda. Souběh zatím web nezobrazuje.
-2. **Bez zaměření.** Soubor nese jen REDIZO a KKOV, takže souběh platí za obor školy jako celek, ne za jednotlivé zaměření.
+2. **Bez zaměření.** Soubor nese jen REDIZO a KKOV, takže souběh platí za obor školy jako celek, ne za jednotlivé zaměření. Uchazeč s přihláškami do více zaměření téhož oboru se u oboru i u dvojice oborů počítá jednou (od verze 1.38).
 3. **Nezveřejňuje se pod 10 uchazeči** o obor, aby nešlo dopočítat jednotlivce.
 
 Do souboru se zapisuje šest nejčastějších souběhů. Názvy oborů bez jednotné zkoušky, tedy hlavně učebních, doplňuje rejstřík škol MŠMT.
@@ -112,19 +112,19 @@ Pole `conditions_not_met`. Odlišné od předchozího: tady nerozhodovala kapaci
 
 **Co to znamená.** Podle [metodiky MŠMT k přijímacímu řízení 2026/2027](https://msmt.gov.cz/media/wp-content/uploads/2026/08/Metodika_prijimaci-rizeni_2026-2027.pdf) (oddíl o kritériích přijímání a oddíl Vyhodnocení výsledků prvního kola) smějí kritéria uchazeče vyloučit jen tam, kde to umožňuje předpis: nesplněná **hranice úspěšnosti** (v jednotné zkoušce, ve školní nebo talentové zkoušce, nebo v celkovém hodnocení), zdravotní způsobilost, doklady k pobytu, nedokončené předchozí vzdělávání. Takový uchazeč jde do seznamu bez pořadí s příznakem „nesplnil kritéria“. Kdo na jednotnou zkoušku nepřišel, dostane 0 bodů a mezi nesplněné podmínky se **nepočítá**. Nejde tedy o chybu v přihlášce; nedoložený doklad se podle metodiky projeví jen v hodnocení.
 
-Na stránce se neříká „nesplnili podmínky“, ale „nedosáhli požadavku školy“, a kde to jde, jakého (odvozená hranice úspěšnosti). V roce 2026 šlo o 41 763 ze 424 353 přihlášek, 9,8 %; u 10 859 z nich uchazeč výsledek jednotné zkoušky nemá (`docs/podklady/rozbor-podminek-a-poradi-2026.json`).
+Na stránce se neříká „nesplnili podmínky“, ale „nedosáhli požadavku školy“, a kde to jde, jakého (odvozená hranice úspěšnosti). V roce 2026 šlo o 41 763 ze 424 353 přihlášek, 9,8 %; u 10 730 oborových záznamů (přihlášky jednoho uchazeče do více zaměření téhož oboru sloučené) uchazeč výsledek jednotné zkoušky nemá (`docs/podklady/rozbor-podminek-a-poradi-2026.json`).
 
 ### Odvozená hranice úspěšnosti
 Nejnižší výsledek jednotné zkoušky, pod kterým v datech uchazečů leží všichni, kdo nesplnili podmínky, a nad kterým všichni soutěžící. Zkouší se součet bodů a slabší z obou testů. Pole `odvozena_hranice` s typem `soucet`, `slabsi_test`, nebo `nevysvetleno_vysledkem_jpz`. Počítá `scripts/rozbor-podminek-a-poradi.py`.
 
-Počítá se jen u oborů s aspoň pěti nesplněnými s výsledkem a pěti soutěžícími. V roce 2026 z 1 156 takových oborů odpovídá hranici ve slabším testu 286, v součtu 187 a výsledkem zkoušky se nevysvětlí 683 (rozhodovala školní zkouška, prospěch nebo jiné kritérium).
+Počítá se jen u oborů s aspoň pěti nesplněnými s výsledkem a pěti soutěžícími. V roce 2026 z 1 151 takových oborů odpovídá hranici ve slabším testu 286, v součtu 187 a výsledkem zkoušky se nevysvětlí 678 (rozhodovala školní zkouška, prospěch nebo jiné kritérium).
 
 Ověřeno proti kritériím školy: osmileté gymnázium J. S. Machara stanovilo pro rok 2026 minimum 20 bodů v každém testu; data dávají nejvýše 19 bodů u nesplněných a nejméně 20 u soutěžících.
 
 **Je to odhad z jednoho ročníku, ne vyhlášené kritérium.** Na stránce se uvádí slovy „podle výsledků to odpovídá minimu X bodů ve slabším testu“ a vždy s odkazem na kritéria školy. Hranice se může mezi roky změnit; nová kritéria vyhlašuje škola.
 
 ### Výsledek uchazečů o obor
-Kam se v 1. kole dostali všichni, kdo měli obor na přihlášce: sem, na obor výš na přihlášce, na obor níž, nebo nikam. Zdroj: data o uchazečích. Pole `vysledek_uchazecu`.
+Kam se v 1. kole dostali všichni, kdo měli obor na přihlášce: sem, na obor výš na přihlášce, na obor níž, nebo nikam. Zdroj: data o uchazečích. Pole `vysledek_uchazecu`. Přijetí do kteréhokoli zaměření oboru je „sem“; výš a níž se porovnává přihláška, na kterou byl uchazeč přijat, s jeho první přihláškou na tento obor.
 
 Osmileté gymnázium J. S. Machara 2026: z 233 uchazečů 30 sem, 37 výš, 25 níž, **141 nikam**. Čtyřleté gymnázium téže školy: z 94 uchazečů nikam 4.
 
@@ -258,7 +258,7 @@ Zdroj jsou data uchazečů CERMATu za 1. kolo 2025 ve finální revizi ze 20. 5.
 
 Jednotka jsou body: součet češtiny a matematiky, každý předmět nejvýš 50 bodů, lepší z obou pokusů. Zdroj nese procentní skór 0 až 200 %, který se dělí dvěma a u běžného testu se tím rovná bodům. U upravených testů se procentní výsledek s body neshoduje.
 
-Pásmo s méně než pěti soutěžícími se slučuje se sousedním, aby „1 z 1“ nevypadalo jako spolehlivých 100 %. Pásma se počítají jen u oborů s aspoň 30 soutěžícími, z nichž aspoň jeden byl odmítnut kvůli kapacitě; těch je 1 497.
+Pásmo s méně než pěti soutěžícími se slučuje se sousedním, aby „1 z 1“ nevypadalo jako spolehlivých 100 %. Pásma se počítají jen u oborů s aspoň 30 soutěžícími, z nichž aspoň jeden byl odmítnut kvůli kapacitě; těch je 1 496.
 
 Obory, kde nikdo odmítnut nebyl, pásma nemají: každé by vyšlo na 100 % a tabulka by vypadala jako záruka přijetí. Místo ní platí pole `nikdo_neodmitnut_pro_kapacitu`.
 
@@ -273,17 +273,17 @@ Pravděpodobnost, že náhodně vybraný přijatý měl lepší výsledek jednot
 
 Hodnota 1,0 znamená, že o přijetí rozhodl výhradně výsledek testu. Hodnota 0,5 znamená, že výsledek nerozhodoval vůbec.
 
-Ukládá se zaokrouhlené na tři desetinná místa. Počítá se u oborů s aspoň deseti přijatými a pěti odmítnutými kvůli kapacitě, tedy u 1 439. Medián je 0,972, hodnotu 1,000 má 10,1 % oborů, aspoň 0,85 má 93,1 %.
+Ukládá se zaokrouhlené na tři desetinná místa. Počítá se u oborů s aspoň deseti přijatými a pěti odmítnutými kvůli kapacitě, tedy u 1 439. Medián je 0,972, hodnotu 1,000 má 10,1 % oborů, aspoň 0,85 má 93,3 %.
 
-Na stránce se zobrazuje jedna ze tří vět podle hodnoty: 0,97 a výš, 0,85 až 0,97, pod 0,85. U 1 427 oborů bez talentové zkoušky připadá na první 52,4 %, na druhou 41,1 % a na třetí 6,4 %.
+Na stránce se zobrazuje jedna ze tří vět podle hodnoty: 0,97 a výš, 0,85 až 0,97, pod 0,85. U 1 427 oborů bez talentové zkoušky připadá na první 52,5 %, na druhou 41,3 % a na třetí 6,2 %.
 
-**Mezi ročníky je stabilní jen hrubě.** Na 1 173 oborech spárovaných mezi roky 2025 a 2026 je korelace **0,672** a medián absolutní změny 0,01. Hodnoty se drží blízko sebe, ale pořadí oborů v úzkém pásmu kolem 0,97 se mění. Proto se neřadí a nezobrazuje jako číslo, jen jako tři kategorie.
+**Mezi ročníky je stabilní jen hrubě.** Na 1 171 oborech spárovaných mezi roky 2025 a 2026 je korelace **0,667** a medián absolutní změny 0,01. Hodnoty se drží blízko sebe, ale pořadí oborů v úzkém pásmu kolem 0,97 se mění. Proto se neřadí a nezobrazuje jako číslo, jen jako tři kategorie.
 
-Na dvojici 2024–2025 vycházela korelace 0,725 na 1 158 oborech, takže **novější dvojice ročníků vyšla hůř**. Zařazení do tří kategorií se přitom mezi roky 2025 a 2026 mění u 305 z 1 173 oborů, tedy u 26 %. Je to důvod tuto míru dál nezobrazovat jako číslo a nepoužívat k řazení, ne důvod ji zrušit: medián změny zůstává 0,01 a věta o tom, co rozhodlo, popisuje jeden ročník. Starší hodnoty: do verze 1.6 tu stála korelace 0,783, spočítaná včetně oborů bez povinné zkoušky, které ji uměle zvyšovaly; do verze 1.11 korelace 0,673 na 1 149 oborech z předběžné verze dat 2025. Doklad: `docs/podklady/overeni-pasem-prijeti-2025-2026.json`.
+Na dvojici 2024–2025 vycházela korelace 0,725 na 1 158 oborech, takže **novější dvojice ročníků vyšla hůř**. Zařazení do tří kategorií se přitom mezi roky 2025 a 2026 mění u 300 z 1 171 oborů, tedy u 26 %. Je to důvod tuto míru dál nezobrazovat jako číslo a nepoužívat k řazení, ne důvod ji zrušit: medián změny zůstává 0,01 a věta o tom, co rozhodlo, popisuje jeden ročník. Starší hodnoty: do verze 1.6 tu stála korelace 0,783, spočítaná včetně oborů bez povinné zkoušky, které ji uměle zvyšovaly; do verze 1.11 korelace 0,673 na 1 149 oborech z předběžné verze dat 2025; do verze 1.37 korelace 0,672 na 1 173 oborech se započtenými duplicitními zaměřeními. Doklad: `docs/podklady/overeni-pasem-prijeti-2025-2026.json`.
 
 **Slepé místo: kritéria, která test jen převažují.** Ukazatel měří shodu pořadí podle *součtu* obou testů s výsledkem přijímání. Kritérium, které jeden předmět váží víc, pořadí podle součtu skoro nezmění — a ukazatel ho neuvidí. Doložený protipříklad (22. 9. 2026, podnět čtenáře): Gymnázium Christiana Dopplera má `rozhodl_test` 0,994 (čtyřleté) a 0,981 (osmileté), a přitom počítá 125 bodů = 50 ČJ + 50 M + 25 za jeden z testů × 0,5 — matematiku u čtyřletého, u osmiletého podle oboru M nebo ČJ (zdroj: gchd.cz/pro-uchazece/prijimaci-rizeni/). Věta na kartě proto nesmí tvrdit, že „rozhodl test“; smí říct jen, že pořadí podle součtu odpovídalo výsledku, a musí slepé místo pojmenovat.
 
-Jak velké slepé místo je, měří **předmětový sklon** (`scripts/predmetovy-sklon.py`, doklad `docs/podklady/predmetovy-sklon-2026.json`): mezi soutěžícími se stejným součtem (pětibodová pásma) rozdíl průměrné matematiky přijatých a odmítnutých kvůli kapacitě. Na 354 oborech s aspoň 20 soutěžícími v překrývajících se pásmech má nápadný sklon (aspoň 2 body a |z| ≥ 2,5) **73 oborů, tedy 21 %** — 45 ve prospěch matematiky, 28 ve prospěch češtiny. **Netýká se jen výběrových gymnázií:** podíl roste s výběrovostí (14 % v dolní třetině podle mediánu přijatých, 25 % v horní) a je nejvyšší u víceletých gymnázií (37–40 %), ale nápadný sklon má i 26 oborů SOŠ, 4 SOU a 3 nástavby. Osmileté gymnázium Dopplera je nejvýraznější případ v zemi (sklon −5,1 bodu, z = −9,9). Čtyřleté do měření nevstoupilo, protože pásmo 85–87 skoro nemá překryv — **u velmi těsných pásem metoda mlčí**, což není potvrzení, že kritérium chybí.
+Jak velké slepé místo je, měří **předmětový sklon** (`scripts/predmetovy-sklon.py`, doklad `docs/podklady/predmetovy-sklon-2026.json`): mezi soutěžícími se stejným součtem (pětibodová pásma) rozdíl průměrné matematiky přijatých a odmítnutých kvůli kapacitě. Na 345 oborech s aspoň 20 soutěžícími v překrývajících se pásmech má nápadný sklon (aspoň 2 body a |z| ≥ 2,5) **71 oborů, tedy 21 %** — 44 ve prospěch matematiky, 27 ve prospěch češtiny (od verze 1.38 se sloučenými zaměřeními; dřív 73 z 354). **Netýká se jen výběrových gymnázií:** podíl roste s výběrovostí (16 % v dolní třetině podle mediánu přijatých, 25 % v horní) a je nejvyšší u víceletých gymnázií (39–40 %), ale nápadný sklon má i 24 oborů SOŠ, 4 SOU a 4 nástavby. Osmileté gymnázium Dopplera je nejvýraznější případ v zemi (sklon −5,1 bodu, z = −9,7). Čtyřleté do měření nevstoupilo, protože pásmo 85–87 skoro nemá překryv — **u velmi těsných pásem metoda mlčí**, což není potvrzení, že kritérium chybí.
 
 Předmětový sklon **není** ukazatel k zobrazení, je to prověrka. Neříká, jaké kritérium škola má, jen že s pořadím hýbe jeden předmět. Kritéria patří od školy; portál na ně má pole `odkaz_kriteria` a `kriteria_vlastnimi_slovy`.
 
@@ -295,18 +295,18 @@ Předmětový sklon **není** ukazatel k zobrazení, je to prověrka. Neříká,
 
 Nezobrazuje se u oborů s talentovou zkouškou (`talentova_zkouska`): uměleckých oborů skupiny 82 a gymnázií se sportovní přípravou 79-42. Místo ní stojí věta, že o přijetí rozhoduje i talentová zkouška, o které údaje nemáme. U sportovních gymnázií je medián 0,78 proti 0,976 u ostatních.
 
-U záznamů sdílených víc zaměřeními nebo nabídkami (`vice_zamereni`) je medián 0,925 a nad čísly stojí upozornění. Příznak se počítá z vyššího z počtů zaměření v katalogu 2025 a nabídek téže kombinace školy a oboru v roce 2026.
+U záznamů sdílených víc zaměřeními nebo nabídkami (`vice_zamereni`) je medián 0,929 a nad čísly stojí upozornění. Příznak se počítá z vyššího z počtů zaměření v katalogu 2025 a nabídek téže kombinace školy a oboru v roce 2026.
 
 ### Pásmo nejistoty
 Rozsah od nejnižšího výsledku mezi přijatými k nejvyššímu mezi nepřijatými kvůli kapacitě. Pole `pasmo_nejistoty`, obsazenost `v_pasmu_nejistoty`, přesné počty uvnitř `pasmo_nejistoty_soutezilo` a `pasmo_nejistoty_prijato`. Věta „z N uchazečů v tomto rozmezí se dostalo M“ smí použít jen přesné počty, nikdy součet pětibodových pásem. Dolní mez se na webu neukazuje u oborů s méně než deseti přijatými, stejně jako nejnižší výsledek mezi přijatými; konstanta `MIN_PRIJATYCH_PRO_HRANICI`.
 
 Uvnitř tohoto rozsahu rozhodovala o přijetí i jiná kritéria než test. Pod ním se loni nedostal nikdo, nad ním se dostali všichni.
 
-Medián podílu soutěžících v pásmu je 26,7 %.
+Medián podílu soutěžících v pásmu je 26,4 %.
 
-Meze se dosazují do vět **každá zvlášť**: pod dolní mezí se nedostal nikdo, nad horní se dostali všichni. U 8,1 % z 1 439 oborů jsou obě meze shodné a platí třetí věta, že přesně s tímto výsledkem se někdo dostal a někdo ne. U 7,8 % je horní mez nižší než dolní a mezi nimi nespadl nikdo.
+Meze se dosazují do vět **každá zvlášť**: pod dolní mezí se nedostal nikdo, nad horní se dostali všichni. U 8,2 % z 1 439 oborů jsou obě meze shodné a platí třetí věta, že přesně s tímto výsledkem se někdo dostal a někdo ne. U 7,8 % je horní mez nižší než dolní a mezi nimi nespadl nikdo.
 
-**Je to popis loňska, ne míra.** Oba konce určuje jediný uchazeč, takže se **nepoužívá k porovnávání oborů ani k řazení**. Šířka pásma je navíc mezi ročníky nestabilní: na 1 173 oborech spárovaných mezi roky 2025 a 2026 korelace 0,719 a medián změny 3 body proti mediánové šířce 6 bodů (na dvojici 2024–2025 to bylo 0,692, 4 body a šířka 7 bodů). Ve verzi 1.4 tu stál ukazatel „překryv u hranice přijetí“, který z těchto dvou hodnot dělal měřítko; při záměně krajních hodnot za devadesátý a desátý percentil se u 41 % oborů obracel verdikt, a proto byl nahrazen mírou *rozhodl test*.
+**Je to popis loňska, ne míra.** Oba konce určuje jediný uchazeč, takže se **nepoužívá k porovnávání oborů ani k řazení**. Šířka pásma je navíc mezi ročníky nestabilní: na 1 171 oborech spárovaných mezi roky 2025 a 2026 korelace 0,718 a medián změny 3 body proti mediánové šířce 6 bodů (na dvojici 2024–2025 to bylo 0,692, 4 body a šířka 7 bodů). Ve verzi 1.4 tu stál ukazatel „překryv u hranice přijetí“, který z těchto dvou hodnot dělal měřítko; při záměně krajních hodnot za devadesátý a desátý percentil se u 41 % oborů obracel verdikt, a proto byl nahrazen mírou *rozhodl test*.
 
 ### Percentil nejnižšího přijatého
 Kolik ze 100 uchazečů v celé zemi mělo stejný nebo horší výsledek než nejnižší přijatý na obor. Pole `min_prijaty_percentil`.
@@ -332,7 +332,7 @@ Proč: obtížnost se liší i mezi termíny téhož roku. 50 bodů z 1. řádn�
 - Výsledek testu, který není v tabulkách (jiný rok, škola, soukromý test), převést nejde. Takové číslo se porovnává přímo s body cílového roku s výhradou, že platí jen pro stejně těžký test.
 
 ### Pořadí mezi soutěžícími
-Kolik soutěžících uchazečů o obor mělo v roce pásem **vyšší** výsledek než zadaný, a kolik stejný. Soutěžící uchazeči jsou přijatí a ti, kdo se nevešli kvůli kapacitě (tatáž množina jako `soutezicich` v pásmech přijetí). Zdroj `public/pozice_soutezicich_{rok}.json` (`scripts/build-pozice-soutezicich.py`): u každého oboru počet soutěžících s každým výsledkem, každý uchazeč u oboru jednou, i když se hlásil do více zaměření téhož oboru. Pásma přijetí dnes takového uchazeče počítají vícekrát, proto se u 117 oborů počet liší od `soutezicich` (například 726 proti 821 u 600004961_79-41-K/61); oprava pásem je samostatná úloha. Jednotka uchazeči. Obory s méně než deseti soutěžícími se nevedou (`MIN_PRIJATYCH`).
+Kolik soutěžících uchazečů o obor mělo v roce pásem **vyšší** výsledek než zadaný, a kolik stejný. Soutěžící uchazeči jsou přijatí a ti, kdo se nevešli kvůli kapacitě (tatáž množina jako `soutezicich` v pásmech přijetí). Zdroj `public/pozice_soutezicich_{rok}.json` (`scripts/build-pozice-soutezicich.py`): u každého oboru počet soutěžících s každým výsledkem, každý uchazeč u oboru jednou, i když se hlásil do více zaměření téhož oboru; součty sedí se `soutezicich` v pásmech přijetí. Jednotka uchazeči. Obory s méně než deseti soutěžícími se nevedou (`MIN_PRIJATYCH`).
 
 Věta: „Mezi 88 soutěžícími uchazeči roku 2026 mělo vyšší výsledek 30.“ Vždy s počtem přijatých, ať je vidět, kolik míst bylo.
 
@@ -375,7 +375,7 @@ Kolik bodů měl prostřední uchazeč v celé zemi v daném ročníku 1. kola. 
 ### Hustota u hranice
 Podíl soutěžících, jejichž výsledek leží do pěti bodů od nejnižšího přijatého. Pole `hustota_u_hranice`.
 
-Medián je 28,0 %, takže u poloviny oborů se kolem hranice tísní víc než čtvrtina uchazečů a rozhoduje jediný bod. Nízká hodnota znamená, že hranice leží v řídkém místě a jeden bod nic nemění.
+Medián je 27,9 %, takže u poloviny oborů se kolem hranice tísní víc než čtvrtina uchazečů a rozhoduje jediný bod. Nízká hodnota znamená, že hranice leží v řídkém místě a jeden bod nic nemění.
 
 ### Hranice přijetí
 **Nemáme a mít nebudeme.** CERMAT nezveřejňuje, kolik bodů měl poslední přijatý podle kritérií školy, a z průměru se to spočítat nedá. Nejbližší doložený údaj je nejnižší výsledek JPZ mezi přijatými výše, který je dolní mezí, ne hranicí.
@@ -654,6 +654,8 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.38 | **Sloučení zaměření dotaženo** (28. 9. 2026, oponentura PR #184). Výsledek uchazeče o obor se porovnává s přihláškou, na kterou byl skutečně přijat, ne s první přihláškou na obor: uchazeč odmítnutý na A, pak na B a přijatý na A ze třetí přihlášky se u B dřív počítal jako přijatý výš (31 případů 2026, 27 v 2025). Vzdání se přijetí (jen 2025) je samostatný výsledek, vedlejší zaměření ho nepřepíše na nesplněné podmínky ani přijetí výš. Souběžné přihlášky počítají uchazeče i dvojici oborů jednou (600004961_79-41-K/61 v roce 2026: 1 052 uchazečů místo 1 230). Odvozená hranice úspěšnosti 2026: 1 151 oborů místo 1 156, nevysvětleno výsledkem zkoušky 678 místo 683. Předmětový sklon: nápadný u 71 z 345 oborů místo 73 z 354. Stabilita *rozhodl test* mezi ročníky: 1 171 spárovaných oborů, korelace 0,667, změna kategorie u 300 (dřív 1 173, 0,672, 305). Slučování je společné v `scripts/slouceni_prihlasek.py`. |
+| 1.37 | **Pásma přijetí počítají uchazeče u oboru jednou** (28. 9. 2026, issue #183). Klíč oboru nenese zaměření, takže uchazeč s přihláškami do dvou zaměření téhož oboru se dřív započetl dvakrát: `soutezicich`, nevešli se, přijati výš na přihlášce, rozdělení po pásmech, pásmo nejistoty a *rozhodl test* byly zkreslené u 212 oborů roku 2026 a 208 roku 2025 (například 600004961_79-41-K/61: 726 soutěžících místo 821). Počty přijatých ani nejnižší přijatý se nezměnily. U více přihlášek téhož uchazeče k jednomu oboru rozhoduje nejlepší výsledek (přijat, nevešel se, přijat výš, nesplnil). |
 | 1.36 | **Pořadí mezi soutěžícími** a **Podíl přijímaček na bodování** (27. 9. 2026, oddíl 2). První z rozdělení výsledků soutěžících po oborech, druhý z pracovního přepisu kritérií 2026 z PDF v DiPSy (2 814 oborů po plošném přepisu 28. 9. 2026), jen v prototypu pásmového proužku a s výhradou, že přepis může obsahovat chybu. |
 | 1.35 | **Převedený výsledek testu** (27. 9. 2026, oddíl 2). Body z cvičného testu TAU převedené přes pořadí mezi řešiteli daného termínu na body roku zobrazených pásem. Zdroj položková data JPZ 2024, sada `cermat-prevod-testu`. Náhradní termíny označené jako nespolehlivé. |
 | 1.34 | **Zdroj počtu akcí v kraji je databáze** (26. 9. 2026). Akce veletrhů se čtou z tabulky `veletrh_akce`, změny přicházejí jako schválené návrhy přes API; soubor `src/data/veletrhy-2027.json` je snímek a záloha. Výpočet ani definice se nemění. |

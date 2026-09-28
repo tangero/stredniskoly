@@ -4,18 +4,18 @@
  "schema_2024": "od revize z 20. 5. 2026 má soubor 2024 schéma roku 2025 (REDIZO), převod IZO odpadá",
  "pasmo_nejistoty_populace_obory_s_hranici": {
   "n": 1439,
-  "shodne_meze_pct": 8.1,
-  "horni_nad_dolni_pct": 84.1,
+  "shodne_meze_pct": 8.2,
+  "horni_nad_dolni_pct": 84.0,
   "mezera_pct": 7.8,
-  "median_v_pasmu_pct": 26.7,
-  "median_hustota_u_hranice_pct": 28.0
+  "median_v_pasmu_pct": 26.4,
+  "median_hustota_u_hranice_pct": 27.9
  },
  "rozhodl_test_populace_obory_s_hranici": {
   "n": 1439,
   "median": 0.972,
   "rovno_1_pct": 10.1,
-  "aspon_0_95_pct": 65.5,
-  "aspon_0_85_pct": 93.1,
+  "aspon_0_95_pct": 65.7,
+  "aspon_0_85_pct": 93.3,
   "pod_0_70_pct": 0.5,
   "median_podle_skupiny": {
    "ostatni": {
@@ -24,7 +24,7 @@
    },
    "vice_zamereni": {
     "n": 128,
-    "median": 0.925
+    "median": 0.929
    },
    "talentova": {
     "n": 12,
@@ -66,7 +66,7 @@
   {
    "kkov": "37-41",
    "n": 10,
-   "median": 0.926
+   "median": 0.928
   },
   {
    "kkov": "68-42",
