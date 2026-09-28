@@ -32,7 +32,9 @@ def read(path):
 
 
 def cost_of_records(folder):
-    return sum(float(read(path).get("cena_usd") or 0) for path in folder.glob("*-v*.json"))
+    # Jen úspěšné záznamy; účtované chyby (*.error.json) sčítá samostatná položka.
+    return sum(float(read(path).get("cena_usd") or 0) for path in folder.glob("*-v*.json")
+               if not path.name.endswith(".error.json"))
 
 
 def spent():
@@ -42,6 +44,7 @@ def spent():
         "luna_a_opus_pet": sum(cost_of_records(BASE / "nezavisly-vzorek" / kind)
                                 for kind in ("luna", "opus")),
         "jev_pet": cost_of_records(BASE / "jev-pilot"),
+        "jev_kontrola": cost_of_records(BASE / "jev-kontrola"),
         "jev_starsi_sondy": JEV_OLD_PROBES_USD,
         "usporny_pilot": cost_of_records(BASE / "usporny-v5"),
         "usporny_neuspesne_uctovane": sum(

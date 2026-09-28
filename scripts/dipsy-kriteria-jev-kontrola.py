@@ -115,8 +115,15 @@ def main() -> None:
             if utraceno >= MAX_USD:
                 raise SystemExit("Dosažen strop pilotu.")
             odpoved = jev.zeptej_se(stav, otazky, pokusu=2)
-            if not odpoved or any(k not in odpoved for k in otazky):
+            if not odpoved:
                 print(v["cislo"], "bez odpovědi", flush=True)
+                continue
+            if odpoved.get("_cena") is None:
+                # Neznámá cena = neznámé účtování; strop by jinak nic nehlídal.
+                raise SystemExit(f"{v['cislo']}: odpověď bez účtované ceny, běh zastaven.")
+            if any(k not in odpoved for k in otazky):
+                utraceno += float(odpoved["_cena"])
+                print(v["cislo"], "neúplná odpověď", flush=True)
                 continue
             vysledek = {"cislo": v["cislo"], "obor": v["obor"], "source_id": sid, "zadani_sha256": klic, "znaku": len(text),
                         "cena_usd": odpoved.pop("_cena", None), "odpovedi": odpoved}

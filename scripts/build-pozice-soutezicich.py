@@ -8,8 +8,8 @@ ukládá, kolik z nich mělo který výsledek (body 0–100 po půlbodech). Z to
 prototyp spočítá *Pořadí mezi soutěžícími* (slovník ukazatelů): kolik
 soutěžících mělo vyšší výsledek než zadaný.
 
-Načítá uchazeče tou samou funkcí jako scripts/build-pasma-prijeti.py, takže
-množina i výsledek sedí na pásma. Rok z registru (cermat-uchazeci-kolo1).
+Čte tentýž soubor a tutéž definici výsledku jako scripts/build-pasma-prijeti.py,
+ale uchazeče s více zaměřeními téhož oboru počítá jednou. Rok z registru (cermat-uchazeci-kolo1).
 Výstup: public/pozice_soutezicich_{rok}.json.
 
     python3 scripts/build-pozice-soutezicich.py
@@ -30,11 +30,40 @@ spec.loader.exec_module(pasma)
 MIN_SOUTEZICICH = pasma.MIN_PRIJATYCH
 
 
+def soutezici_po_oborech() -> dict[str, list[float]]:
+    """Výsledky soutěžících uchazečů po oborech, **každý uchazeč jednou**.
+
+    Uchazeč přihlášený do dvou zaměření téhož oboru (stejné REDIZO_KKOV) má
+    dvě přihlášky; sdílená funkce pásem ho započte dvakrát (code review PR #182,
+    obor 600004961_79-41-K/61: 821 místo 726). Tady se přihlášky jednoho
+    uchazeče ke stejnému oboru slučují. Soutěžící = přijat, nebo nepřijat pro
+    nedostačující kapacitu.
+    """
+    import openpyxl
+    wb = openpyxl.load_workbook(pasma.ZDROJ, read_only=True)
+    it = wb.worksheets[0].iter_rows(values_only=True)
+    ix = {n: i for i, n in enumerate(next(it))}
+    obory: dict[str, list[float]] = collections.defaultdict(list)
+    for r in it:
+        skor = r[ix["c_m_procentni_skor"]]
+        if skor is None:
+            continue
+        body = float(skor) / 2
+        klice = set()
+        for k in range(1, 6):
+            redizo, kkov = r[ix[f"ss{k}_redizo"]], r[ix[f"ss{k}_kkov"]]
+            if not redizo or not kkov:
+                continue
+            if pasma.prijat(r[ix[f"ss{k}_prijat"]]) or r[ix[f"ss{k}_duvod_neprijeti"]] == "pro_nedostacujici_kapacitu":
+                klice.add(f"{redizo}_{kkov}")
+        for klic in klice:
+            obory[klic].append(body)
+    return obory
+
+
 def main() -> None:
-    obory, _ = pasma.nacti_uchazece()
     data = {}
-    for klic, o in obory.items():
-        soutezici = o["prijati"] + o["nevesli_se"]
+    for klic, soutezici in soutezici_po_oborech().items():
         if len(soutezici) < MIN_SOUTEZICICH:
             continue
         # Klíč je výsledek jako text („72.5“), hodnota počet soutěžících s ním.
@@ -43,7 +72,7 @@ def main() -> None:
     vystup = {
         "rok": pasma.ROK,
         "zdroj": pasma.ZDROJ.name,
-        "mnozina": "soutěžící uchazeči: přijatí a nepřijatí pro nedostačující kapacitu (tatáž jako soutezicich v pásmech)",
+        "mnozina": "soutěžící uchazeči: přijatí a nepřijatí pro nedostačující kapacitu, každý uchazeč u oboru jednou (i při více zaměřeních)",
         "skala": "body 0–100, procentní skór CERMAT dělený dvěma",
         "min_soutezicich": MIN_SOUTEZICICH,
         "data": data,

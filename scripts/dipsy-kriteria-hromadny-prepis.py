@@ -98,6 +98,8 @@ def prepis(offer: dict, row: dict, key: str, strop: float) -> str:
             zastavit.set()
             return "strop"
         rozpracovano += 1
+    odeslano = False
+    uctovano = False
     try:
         prompt = prompt_plny(offer, row) if plny_text else up.prompt_for(offer, row)
         digest = hashlib.sha256(prompt.encode("utf-8")).hexdigest()
@@ -115,17 +117,23 @@ def prepis(offer: dict, row: dict, key: str, strop: float) -> str:
             data=json.dumps(body, ensure_ascii=False).encode("utf-8"),
             headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
         )
-        for pokus in range(3):
-            try:
-                with urllib.request.urlopen(req, timeout=300) as response:
-                    answer = json.load(response)
-                break
-            except urllib.error.HTTPError as e:
-                # 429 a 5xx se účtují nulou; zkusit znovu s odstupem.
-                if e.code in (429, 500, 502, 503) and pokus < 2:
-                    time.sleep(10 * (pokus + 1))
-                    continue
-                raise
+        odeslano = True
+        try:
+            for pokus in range(3):
+                try:
+                    with urllib.request.urlopen(req, timeout=300) as response:
+                        answer = json.load(response)
+                    break
+                except urllib.error.HTTPError as e:
+                    # 429 a 5xx se neúčtují; zkusit znovu s odstupem.
+                    if e.code in (429, 500, 502, 503) and pokus < 2:
+                        time.sleep(10 * (pokus + 1))
+                        continue
+                    raise
+        except urllib.error.URLError as e:
+            if isinstance(getattr(e, "reason", None), OSError) and "nodename" in str(e.reason):
+                odeslano = False  # překlad adresy selhal, požadavek k poskytovateli nedošel
+            raise
         choice = answer["choices"][0]
         usage = answer.get("usage") or {}
         cena = usage.get("cost")
@@ -135,6 +143,7 @@ def prepis(offer: dict, row: dict, key: str, strop: float) -> str:
             raise RuntimeError(f"{sid}: chybí účtovaná cena, běh zastaven")
         with zamek:
             utraceno += float(cena)
+        uctovano = True
         if choice.get("finish_reason") != "stop" or not choice["message"].get("content"):
             chyba = {"source_id": sid, "sha256": row["sha256"], "rok": 2026, "kolo": 1,
                      "prompt_sha256": digest, "duvod": choice.get("finish_reason"),
@@ -145,13 +154,30 @@ def prepis(offer: dict, row: dict, key: str, strop: float) -> str:
         record = {"source_id": sid, "sha256": row["sha256"], "rok": 2026, "kolo": 1,
                   "model": answer.get("model", up.MODEL), "verze_zadani": up.VERSION, "plny_text": plny_text,
                   "prompt_sha256": digest, "zpracovano_at": now, "prompt_znaku": len(prompt),
-                  "spotreba": usage, "cena_usd": cena,
-                  "navrh": json.loads(choice["message"]["content"])}
+                  "spotreba": usage, "cena_usd": cena, "navrh": None}
+        try:
+            record["navrh"] = json.loads(choice["message"]["content"])
+        except json.JSONDecodeError:
+            # Cena je účtovaná; uložit ji k chybě, ať ji obnovený běh i rozpočet vidí.
+            chyba = {k: record[k] for k in ("source_id", "sha256", "rok", "kolo", "prompt_sha256", "spotreba", "cena_usd")}
+            chyba.update(duvod="neplatny_json", zpracovano_at=now)
+            (up.OUTPUT / f"{sid}-v{verze()}.error.json").write_text(
+                json.dumps(chyba, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            return "nedokonceno"
         cil = up.OUTPUT / f"{sid}-v{verze()}.json"
         tmp = cil.with_suffix(".tmp")
         tmp.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         tmp.replace(cil)
         return "hotovo"
+    except Exception:
+        # Požadavek odešel, ale cenu neznáme (vypršel čas, spadlo spojení):
+        # poskytovatel ho mohl zpracovat a naúčtovat. Rezerva zůstává započtená
+        # a další volání se zastaví, aby strop platil i bez známé ceny.
+        if odeslano and not uctovano:
+            with zamek:
+                utraceno += REZERVA_NA_VOLANI
+            zastavit.set()
+        raise
     finally:
         with zamek:
             rozpracovano -= 1

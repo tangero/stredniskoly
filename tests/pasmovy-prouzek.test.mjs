@@ -29,7 +29,7 @@ const ZAKLAD = {
 };
 
 /** Stav vstupů se podstrkuje přes useState; jinak se na výsledek nedá dostat. */
-function vykresli(data, { cj = '', ma = '' } = {}) {
+function vykresli(data, { cj = '', ma = '', test: druhTestuZadani = 'jiny', druh = '8', prevod = null, rok = 2026 } = {}) {
   let poradi = 0;
   const react = {
     ...React,
@@ -37,7 +37,7 @@ function vykresli(data, { cj = '', ma = '' } = {}) {
       poradi += 1;
       // 1 = vybraný obor, 2 = zadané testy, 3 = přepínač rozdělení.
       // Test je „jiný“, tedy bez převodu: věty se tu ověřují na bodech tak, jak jsou.
-      if (poradi === 2) return [[{ test: 'jiny', cj, ma }], () => {}];
+      if (poradi === 2) return [[{ test: druhTestuZadani, cj, ma, druh }], () => {}];
       return [init, () => {}];
     },
   };
@@ -45,8 +45,8 @@ function vykresli(data, { cj = '', ma = '' } = {}) {
   return renderToStaticMarkup(
     React.createElement(PasmovyProuzek, {
       obory: [{ id: 'x_79-41-K/81', nazev: 'Gymnázium', obec: 'Praha', obor: 'Gymnázium', data }],
-      rok: 2026,
-      prevod: null,
+      rok,
+      prevod,
     }),
   );
 }
@@ -160,4 +160,32 @@ test('na prototyp nikde nevede odkaz', async () => {
     if (/href=["'`]\/prototyp/.test(obsah)) odkazujici.push(f);
   }
   assert.deepEqual(odkazujici, [], 'prototyp má být dostupný jen přímou adresou');
+});
+
+// Převod: tabulka posouvá každý výsledek o +2 body, jen pro test osmiletých (druh 8).
+const PREVOD = {
+  rok_testu: 2024,
+  rok_cile: 2026,
+  druhy: { 8: [{ klic: '1-radny', nazev: '1. řádný termín', radny: true, resitelu: 1, spolehlive: true,
+    body_cil: Array.from({ length: 101 }, (_, i) => Math.min(100, i + 2)) }] },
+};
+
+test('test TAU se převede podle tabulky druhu testu oboru', () => {
+  const html = vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] },
+    { cj: '40', ma: '40', test: '1-radny', druh: '8', prevod: PREVOD });
+  assert.match(html, /80 bodů → <b>82<\/b> bodů roku 2026/);
+});
+
+test('test pro jinou třídu (po přepnutí oboru) se nepočítá a stránka to řekne', () => {
+  const html = vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] },
+    { cj: '40', ma: '40', test: '1-radny', druh: '4', prevod: PREVOD });
+  assert.match(html, /test pro jinou třídu, nepočítá se/);
+  assert.doesNotMatch(html, /Chybí ti/, 'výsledek jiného testu se nesmí vyhodnotit');
+});
+
+test('tabulky pro jiný cílový rok než pásma se nepoužijí', () => {
+  const html = vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] },
+    { cj: '40', ma: '40', test: '1-radny', druh: '8', prevod: PREVOD, rok: 2027 });
+  assert.match(html, /Převodní tabulky jsou spočítané pro rok 2026, pásma jsou z roku 2027/);
+  assert.doesNotMatch(html, /bodů roku 2027/);
 });

@@ -11,17 +11,22 @@ import calendar from '@/data/admissions-2027.json';
 // Soubory mají stovky kB, klientovi jde jen záznam vybraného oboru.
 // ============================================================================
 
-const cache = new Map<string, unknown>();
+// Cachuje se probíhající načtení, ne až výsledek: souběžné požadavky (stránka
+// načítá devět oborů naráz) by jinak každý četly a parsovaly soubor znovu.
+const cache = new Map<string, Promise<unknown>>();
 
-async function nacti<T>(soubor: string): Promise<T | null> {
-  if (cache.has(soubor)) return cache.get(soubor) as T;
-  try {
-    const d = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public', soubor), 'utf-8')) as T;
-    cache.set(soubor, d);
-    return d;
-  } catch {
-    return null;
+function nacti<T>(soubor: string): Promise<T | null> {
+  let slib = cache.get(soubor) as Promise<T | null> | undefined;
+  if (!slib) {
+    slib = fs.readFile(path.join(process.cwd(), 'public', soubor), 'utf-8')
+      .then((t) => JSON.parse(t) as T)
+      .catch(() => {
+        cache.delete(soubor); // chybějící soubor zkusit příště znovu
+        return null;
+      });
+    cache.set(soubor, slib);
   }
+  return slib;
 }
 
 /** Rozdělení výsledků soutěžících uchazečů o obor v roce pásem. */

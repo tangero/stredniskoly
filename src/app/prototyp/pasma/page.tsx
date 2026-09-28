@@ -98,9 +98,15 @@ async function nactiUkazky(rok: number, navic?: string): Promise<UkazkovyObor[]>
 }
 
 export default async function PrototypPasmaPage({ searchParams }: {
-  searchParams: Promise<{ obor?: string; hledat?: string }>;
+  searchParams: Promise<{ obor?: string | string[]; hledat?: string | string[] }>;
 }) {
-  const { obor: vybranyObor, hledat } = await searchParams;
+  const parametry = await searchParams;
+  // Opakovaný parametr (?hledat=a&hledat=b) přijde jako pole; bere se první hodnota.
+  const jeden = (h: string | string[] | undefined) => (Array.isArray(h) ? h[0] : h)?.slice(0, 200);
+  const hledat = jeden(parametry.hledat);
+  const oborParam = jeden(parametry.obor);
+  // Obor jen v tvaru REDIZO_KKOV, cokoli jiného se ignoruje.
+  const vybranyObor = oborParam && /^\d{9,10}_\d{2}-\d{2}-[A-Z]\/\d{2}$/.test(oborParam) ? oborParam : undefined;
   const rok = await rokPasemPrijeti();
   const obory = rok ? await nactiUkazky(rok, vybranyObor) : [];
   const prevod = await nactiPrevodTestu();

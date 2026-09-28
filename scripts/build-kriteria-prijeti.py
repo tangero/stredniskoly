@@ -128,10 +128,13 @@ def z_pilotu() -> dict[str, dict]:
 def ze_strojoveho_prepisu() -> dict[str, dict]:
     manifest = kontrola.pilot.latest_manifest()
     vystup = {}
-    for cesta in sorted((BASE / "llm-pilot" / "usporny-v5").glob(f"*-v{VERZE}.json")):
-        # Verze 9 = nový přepis z celého PDF (u přepisů, kde výběr sekce minul kritéria); má přednost.
-        plny = cesta.with_name(cesta.name.replace(f"-v{VERZE}.json", "-v9.json"))
-        r = json.loads((plny if plny.exists() else cesta).read_text(encoding="utf-8"))
+    slozka = BASE / "llm-pilot" / "usporny-v5"
+    # Verze 9 = přepis z celého PDF (výchozí od 28. 9. 2026), má přednost před 8.
+    # Nabídka může mít jen jednu z nich, proto sjednocení identifikátorů.
+    ids = {c.name.rsplit("-v", 1)[0] for v in (VERZE, 9) for c in slozka.glob(f"*-v{v}.json")}
+    for sid in sorted(ids):
+        plny, sekce = slozka / f"{sid}-v9.json", slozka / f"{sid}-v{VERZE}.json"
+        r = json.loads((plny if plny.exists() else sekce).read_text(encoding="utf-8"))
         radek = manifest[r["source_id"]]
         if r["sha256"] != radek["sha256"] or r["rok"] != ROK or r["kolo"] != 1:
             continue
@@ -193,7 +196,9 @@ def main() -> None:
     oznacene = jev_oznaceni() | {sid for sid, p in prepisy.items() if p["klic"] in rucne}
     for sid in oznacene:
         p = prepisy.get(sid)
-        if p and p["rezim"] == "pouze_jpz":
+        # Přepis, který zachytil vážení předmětu (jpz_navic), Jev často označí
+        # „ano“ právě kvůli vážení; to není chybějící složka.
+        if p and p["rezim"] == "pouze_jpz" and not p.get("jpz_navic"):
             p["rezim"] = "jine"
             p["podil_jpz_pct"] = None
             p["nalezy"].append("jev:skola_boduje_i_dalsi")

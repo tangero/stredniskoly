@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import { tvar } from '@/lib/cesky-tvar';
 import {
   druhTestu, median, poradiMeziSoutezicimi, prevedBody, TRIDA_TAU,
-  type KriteriaOboru, type PoziceOboru, type PrevodTestu,
+  type DruhTestu, type KriteriaOboru, type PoziceOboru, type PrevodTestu,
 } from '@/lib/prevod-testu-vypocet';
 import type { PasmaPrijetiObor } from '@/lib/pasma-prijeti';
 
@@ -158,7 +158,8 @@ function Veta({ poloha, body, lo, hi, data, rok, dalsiKriteria }: {
         {dalsiKriteria && (
           <p className="mt-1 text-sm text-slate-600">
             Škola bodovala i další věci, ale ani s nimi se v roce {rok} nikdo s nižším výsledkem přijímaček
-            nedostal. Tenhle rozdíl se tedy dohánět jinými body nedal, musí přijít z testu.
+            nedostal. Jinými body se tenhle rozdíl tehdy dohnat nepodařilo nikomu; je to popis loňska,
+            ne pravidlo školy.
           </p>
         )}
       </div>
@@ -175,7 +176,11 @@ function Veta({ poloha, body, lo, hi, data, rok, dalsiKriteria }: {
 }
 
 /** Jeden zadaný test: který termín a body z obou předmětů. */
-interface ZadanyTest { test: string; cj: string; ma: string }
+interface ZadanyTest {
+  test: string; cj: string; ma: string;
+  /** Pro kterou třídu byl test: převod platí jen pro obor se stejným druhem testu. */
+  druh: DruhTestu;
+}
 
 const JINY = 'jiny';
 
@@ -193,15 +198,17 @@ export function PasmovyProuzek({ obory, rok, prevod: prevodTestu, vybranyObor }:
   vybranyObor?: string;
 }) {
   const [vybrany, setVybrany] = useState(vybranyObor ?? obory[0]?.id ?? '');
-  const [testy, setTesty] = useState<ZadanyTest[]>([
-    { test: '1-radny', cj: '', ma: '' },
+  const [testy, setTesty] = useState<ZadanyTest[]>(() => [
+    { test: '1-radny', cj: '', ma: '', druh: druhTestu((vybranyObor ?? obory[0]?.id ?? '').split('_')[1] ?? '') },
   ]);
   const [ukazRozdeleni, setUkazRozdeleni] = useState(true);
 
   const obor = obory.find(o => o.id === vybrany) ?? obory[0];
   // Víceletá gymnázia píší jiné testy než čtyřleté obory; převod podle druhu testu.
   const druh = druhTestu(obor ? obor.id.split('_')[1] ?? '' : '');
-  const terminy = prevodTestu?.druhy[druh] ?? null;
+  // Tabulky převádějí na konkrétní rok; s pásmy jiného roku by číslo lhalo.
+  const jinyRokCile = Boolean(prevodTestu && prevodTestu.rok_cile !== rok);
+  const terminy = jinyRokCile ? null : prevodTestu?.druhy[druh] ?? null;
   const prevod = useMemo(
     () => (prevodTestu && terminy ? { ...prevodTestu, terminy } : null),
     [prevodTestu, terminy],
@@ -212,16 +219,20 @@ export function PasmovyProuzek({ obory, rok, prevod: prevodTestu, vybranyObor }:
     const c = cislo(t.cj);
     const m = cislo(t.ma);
     if (c === null || m === null) return null;
+    // Test pro jinou třídu (obor se mezitím přepnul) se nepoužije vůbec.
+    if (t.druh !== druh) return { soucet: c + m, prevedeno: c + m, termin: null, jinyDruh: true };
     const termin = prevod?.terminy.find(x => x.klic === t.test);
     const soucet = c + m;
     return {
       soucet,
       prevedeno: termin ? prevedBody(termin.body_cil, soucet) : soucet,
       termin: termin ?? null,
+      jinyDruh: false,
     };
-  }), [testy, prevod]);
+  }), [testy, prevod, druh]);
 
-  const platne = vysledky.filter((v): v is NonNullable<typeof v> => v !== null);
+  const platne = vysledky.filter((v): v is NonNullable<typeof v> => v !== null && !v.jinyDruh);
+  const jinyDruh = vysledky.some(v => v?.jinyDruh);
   const body = median(platne.map(v => v.prevedeno));
   const jenJiny = platne.length > 0 && platne.every(v => v.termin === null);
   const nespolehlivy = platne.some(v => v.termin && !v.termin.spolehlive);
@@ -296,7 +307,10 @@ export function PasmovyProuzek({ obory, rok, prevod: prevodTestu, vybranyObor }:
                 <span className="mb-1 block text-slate-600">Matematika</span>
                 <input value={t.ma} onChange={e => zmen(i, { ma: e.target.value })} inputMode="decimal" placeholder="z 50" className="w-20 rounded-lg border border-slate-300 px-3 py-2" />
               </label>
-              {v && (
+              {v && v.jinyDruh && (
+                <p className="pb-2 text-sm text-amber-800">test pro jinou třídu, nepočítá se</p>
+              )}
+              {v && !v.jinyDruh && (
                 <p className="pb-2 text-sm text-slate-700">
                   {v.soucet} bodů{v.termin ? <> → <b>{v.prevedeno}</b> bodů roku {rok}</> : ' (bez převodu)'}
                 </p>
@@ -311,7 +325,7 @@ export function PasmovyProuzek({ obory, rok, prevod: prevodTestu, vybranyObor }:
         })}
         <button
           type="button"
-          onClick={() => setTesty(ts => [...ts, { test: prevod?.terminy[1]?.klic ?? JINY, cj: '', ma: '' }])}
+          onClick={() => setTesty(ts => [...ts, { test: prevod?.terminy[1]?.klic ?? JINY, cj: '', ma: '', druh }])}
           className="text-sm font-medium text-blue-700 underline"
         >
           + přidat další test
@@ -323,6 +337,18 @@ export function PasmovyProuzek({ obory, rok, prevod: prevodTestu, vybranyObor }:
               : <>Na proužku je prostřední z {platne.length} výsledků ({bodu(body!)}).</>}
             {' '}Výsledky se pohybují mezi {Math.min(...platne.map(v => v.prevedeno))} a {Math.max(...platne.map(v => v.prevedeno))} body;
             {' '}rozsah je na proužku vyznačený pod značkou.
+          </p>
+        )}
+        {jinyDruh && (
+          <p className="text-sm text-amber-800">
+            Některý zadaný test je pro jinou třídu, než jakou píší uchazeči o tento obor. Do výsledku se nepočítá;
+            zadej test pro {TRIDA_TAU[druh]}. třídu, nebo ho odeber.
+          </p>
+        )}
+        {jinyRokCile && (
+          <p className="text-sm text-amber-800">
+            Převodní tabulky jsou spočítané pro rok {prevodTestu?.rok_cile}, pásma jsou z roku {rok}. Dokud se
+            nepřepočítají, výsledky testů se porovnávají bez převodu.
           </p>
         )}
         {jenJiny && (
