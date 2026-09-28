@@ -1,6 +1,6 @@
 # Kde stojím: pásmový proužek s výsledkem cvičného testu na veřejném webu
 
-Verze 0.1 · 28. 9. 2026 · **návrh ke schválení**, nic z toho zatím není na webu
+Verze 0.2 · 28. 9. 2026 · **schváleno zadavatelem 28. 9. 2026** (oddíl 6), fáze 1 v přípravě
 
 Navazuje na [pásmový proužek](navrh-pasmovy-prouzek-2027.md) a jeho nezalistovaný prototyp `/prototyp/pasma` (PR #182), [kritéria přijetí z DiPSy](predani-kriteria-prijeti-2026-09-25.md) a rozhodnutí zadavatele z 27. 9. 2026: kritéria 2026 ukazovat neověřená s výhradou chybovosti, body mezi ročníky porovnávat s výslovnou výhradou, výsledek cvičného testu TAU převádět přes pořadí.
 
@@ -60,9 +60,9 @@ Prošel jsem [zdroje dat](zdroje-dat.md) včetně oddílu 3. Návrh **nepřidáv
 4. **Kontrola Jevem znovu** nad všemi přepisy „jen přijímačky“ po změně na celý text a všechna zaměření (≈ 0,30 USD).
 5. **Slovník ukazatelů:** ukazatele už zapsané (verze 1.36); doplnit jen, kde se zobrazují.
 
-## 6. Otevřené otázky pro zadavatele
+## 6. Rozhodnutí zadavatele (28. 9. 2026)
 
-1. Fáze 1 jen stránka oboru, simulátor až potom — souhlas?
-2. Má proužek na stránce oboru bez zadaných bodů zůstat vidět (jako obrázek pásem), nebo se ukázat až po zadání testu?
-3. Blok kritérií ukazovat u všech oborů s přepisem, nebo jen tam, kde škola boduje i něco jiného než přijímačky (u ostatních stačí věta)?
-4. Má web připomínat, že se výsledky testů neukládají, nebo je ukládat v prohlížeči (jako dnes simulátor body)?
+1. **Fáze 1 jen stránka oboru**, simulátor až potom.
+2. **Proužek je vidět i bez zadaných bodů** (jako obrázek pásem); zadání testů ho doplní o polohu.
+3. **Blok kritérií jen tam, kde nerozhoduje jen JPZ.** Kde podle kritérií rozhodovala jen JPZ, stačí věta, že škola v roce {rok} přijímala podle jednotné přijímací zkoušky a kritéria pro nové řízení se teprve vyhlásí (termín z harmonogramu MŠMT).
+4. **Výsledky testů si prohlížeč pamatuje** (jako dnes simulátor body), s možností je smazat.
