@@ -155,7 +155,7 @@ Stav B (72 nabídek) má odpověď „V 1. kole {rok} se naplnil, nikdo nebyl od
 - *Machar, technické lyceum* (stav C): přijato 23 z 30, tlak 0,57×, 2. kolo vypsané v obou letech. Jakub se dozví, že rozhodovaly podmínky a že je tu 2. kolo, místo tří grafů konkurence.
 - *VOŠ a SPŠ dopravní v Praze, elektrotechnika se zaměřením inteligentní dopravní systémy* (stav C s podmínkami): 84 přihlášek, přijato 17 z 30, podmínky nesplnilo 17. Odpověď musí vést ke kritériím školy, ne k bodům.
 
-**Zadání vlastních bodů (odloženo v kole 2).** Zkouška: u Machara Jakub se 60 body uvidí „v pásmu 60–70 bodů se v roce 2025 dostali 4 z 9 soutěžících“. Věta je pravdivá, ale čte se jako „mám 44 %“. **Rozhodnutí: zavrhnout na stránce oboru**, tabulka pásem zůstane rozbalovací bez vstupu. Vstup s vlastními body patří do simulátoru, kde je kontext více oborů.
+**Zadání vlastních bodů (odloženo v kole 2).** Zkouška: u Machara Jakub se 60 body uvidí „v pásmu 60–70 bodů se v roce 2025 dostali 4 z 9 soutěžících“. Věta je pravdivá, ale čte se jako „mám 44 %“. **Rozhodnutí: zavrhnout na stránce oboru**, tabulka pásem zůstane rozbalovací bez vstupu. Vstup s vlastními body patří do simulátoru, kde je kontext více oborů. **Překonáno 28. 9. 2026** rozhodnutím zadavatele ([Kde stojím](navrh-kde-stojim-2027.md), oddíl 6): vstup výsledku cvičného testu TAU na stránce oboru se připouští. Riziko čtení jako osobní šance tlumí převod přes pořadí, věty v počtech soutěžících a výhrady na obrazovce.
 
 **Rozhodnutí.**
 
@@ -167,7 +167,7 @@ Stav B (72 nabídek) má odpověď „V 1. kole {rok} se naplnil, nikdo nebyl od
 | Změna mezi ročníky | **použít jen u spárované nabídky** | 2 858 z 3 091; u ostatních věta „předchozí ročník nelze jednoznačně přiřadit“ |
 | Slovo „loni“ | **zavrhnout** | 1. kolo 2026 proběhlo letos; pro uchazeče o rok 2027 je „loni“ nejednoznačné a kalendářně nesprávné. Vždy rok z registru. Týká se i dnešní karty pásem „Jak to dopadlo loni“ |
 | Rok u každého bloku | **použít jako štítek** | pásma a souběh jsou z roku 2025 (registr), souhrn z 2026; štítek „1. kolo 2025“ u bloku odstraní zmatek z kola 1 |
-| Vlastní body na stránce oboru | **zavrhnout** | viz zkouška výše |
+| Vlastní body na stránce oboru | ~~zavrhnout~~ **použít (28. 9. 2026)** | původně viz zkouška výše; překonáno návrhem [Kde stojím](navrh-kde-stojim-2027.md): výsledek cvičného testu převedený přes pořadí, s výhradami |
 
 ## 6. Kolo 5: vzhled, hierarchie a ovládání
 
