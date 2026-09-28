@@ -20,6 +20,13 @@ export interface PrevodTestu {
   druhy: Partial<Record<DruhTestu, TerminPrevodu[]>>;
 }
 
+/** Převod jednoho druhu testu; stránka oboru dostává jen ten svůj. */
+export interface PrevodDruhu {
+  rok_testu: number;
+  rok_cile: number;
+  terminy: TerminPrevodu[];
+}
+
 /** Který test psal uchazeč o obor: víceletá gymnázia mají vlastní. */
 export function druhTestu(kkov: string): DruhTestu {
   if (/K\/81$/.test(kkov)) return '8';

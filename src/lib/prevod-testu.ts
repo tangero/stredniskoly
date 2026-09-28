@@ -1,9 +1,9 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
-import type { PrevodTestu, TerminPrevodu } from '@/lib/prevod-testu-vypocet';
+import type { DruhTestu, PrevodDruhu, PrevodTestu, TerminPrevodu } from '@/lib/prevod-testu-vypocet';
 
-export type { PrevodTestu, TerminPrevodu };
+export type { PrevodDruhu, PrevodTestu, TerminPrevodu };
 
 // ============================================================================
 // Převod výsledku cvičného testu TAU na body roku zobrazených pásem
@@ -12,9 +12,24 @@ export type { PrevodTestu, TerminPrevodu };
 // sada `cermat-prevod-testu` v registru.
 // ============================================================================
 
+// Stránky oborů se generují po tisících; soubor se čte jednou na proces.
+const cache = new Map<string, Promise<PrevodTestu | null>>();
+
 export async function nactiPrevodTestu(): Promise<PrevodTestu | null> {
   const obdobi = await zobrazeneObdobi('cermat-prevod-testu');
   if (!obdobi) return null;
+  let slib = cache.get(obdobi);
+  if (!slib) {
+    slib = nacti(obdobi).then((p) => {
+      if (!p) cache.delete(obdobi);
+      return p;
+    });
+    cache.set(obdobi, slib);
+  }
+  return slib;
+}
+
+async function nacti(obdobi: string): Promise<PrevodTestu | null> {
   try {
     const soubor = path.join(process.cwd(), 'public', `prevod_testu_${obdobi}.json`);
     const d = JSON.parse(await fs.readFile(soubor, 'utf-8'));
@@ -31,4 +46,11 @@ export async function nactiPrevodTestu(): Promise<PrevodTestu | null> {
   } catch {
     return null;
   }
+}
+
+/** Tabulka jen pro jeden druh testu: stránka oboru nemá klientovi posílat ostatní. */
+export async function nactiPrevodDruhu(druh: DruhTestu): Promise<PrevodDruhu | null> {
+  const p = await nactiPrevodTestu();
+  const terminy = p?.druhy[druh];
+  return p && terminy ? { rok_testu: p.rok_testu, rok_cile: p.rok_cile, terminy } : null;
 }

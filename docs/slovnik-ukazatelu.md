@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.38 · 28. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.39 · 28. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -331,12 +331,16 @@ Proč: obtížnost se liší i mezi termíny téhož roku. 50 bodů z 1. řádn�
 - **Náhradní termíny** (2024: 486 a 794 řešitelů obou testů) psala malá a jiná skupina, hlavně nemocní z řádného termínu. Jejich pořadí převod zkresluje, u 40 bodů o +14 bodů proti řádným termínům. Pole `spolehlive` je u nich `false` a na webu se nenabízejí, nebo jen s výhradou.
 - Výsledek testu, který není v tabulkách (jiný rok, škola, soukromý test), převést nejde. Takové číslo se porovnává přímo s body cílového roku s výhradou, že platí jen pro stejně těžký test.
 
+**Kde se zobrazuje:** stránka oboru, důkaz „S kolika body se kdo dostal a kde byste stáli vy“ (komponenta `KdeStojim`, jen u oboru, kde se soutěžící uchazeči nevešli), a prototyp `/prototyp/pasma`.
+
 ### Pořadí mezi soutěžícími
 Kolik soutěžících uchazečů o obor mělo v roce pásem **vyšší** výsledek než zadaný, a kolik stejný. Soutěžící uchazeči jsou přijatí a ti, kdo se nevešli kvůli kapacitě (tatáž množina jako `soutezicich` v pásmech přijetí). Zdroj `public/pozice_soutezicich_{rok}.json` (`scripts/build-pozice-soutezicich.py`): u každého oboru počet soutěžících s každým výsledkem, každý uchazeč u oboru jednou, i když se hlásil do více zaměření téhož oboru; součty sedí se `soutezicich` v pásmech přijetí. Jednotka uchazeči. Obory s méně než deseti soutěžícími se nevedou (`MIN_PRIJATYCH`).
 
 Věta: „Mezi 88 soutěžícími uchazeči roku 2026 mělo vyšší výsledek 30.“ Vždy s počtem přijatých, ať je vidět, kolik míst bylo.
 
 **Co neříká:** Neříká, jestli by se uchazeč dostal: soutěžící jsou jen ti, kdo splnili podmínky a nedostali se výš na přihlášce, a o pořadí u škol s dalším bodováním rozhodovalo i něco jiného než test. Počítá se ze součtu testů; u školy, která váží předměty, je pořadí jiné (viz *Rozhodl test*, slepé místo). Popisuje jeden ročník.
+
+**Kde se zobrazuje:** stránka oboru, důkaz „S kolika body se kdo dostal a kde byste stáli vy“ (komponenta `KdeStojim`, jen u oboru, kde se soutěžící uchazeči nevešli), a prototyp `/prototyp/pasma`.
 
 ### Nejslabší přijatý v předmětu
 Výsledky **jednoho skutečného přijatého** s nejnižším výsledkem v daném předmětu, vždy s oběma jeho předměty. Pole `nejslabsi_cj` a `nejslabsi_ma` v `public/pasma_prijeti_{rok}.json`, každé jako `{cj, ma}`. Jednotka body 0 až 50 za předmět.
@@ -418,6 +422,8 @@ V roce 2026 platí pro 47 % oborů, které se v 1. kole nenaplnily. Věta na web
 Kolik procent bodů celkového hodnocení tvořila v kritériích přijetí jednotná přijímací zkouška. Zdroj `public/kriteria_prijeti_{rok}.json` (`scripts/build-kriteria-prijeti.py`), pracovní přepis PDF kritérií z DiPSy: u strojového přepisu podíl, který PDF deklaruje, jinak maximum za JPZ po přepočtu děleno součtem kladných maxim všech složek (srážky, například za sníženou známku z chování, se nepočítají); když přepis uvádí přijímačky i mezi složkami (bonus za předmět, přepočet celku, váha pořadí), podíl se z maxim nedopočítává: platí jen podíl výslovně uvedený v PDF, bez dalších kritérií 100 %, jinak se neuvádí; u „bodují jen přijímačky“ 100. Jednotka procenta, zaokrouhleno na celá. Bez známých maxim všech složek se neuvádí.
 
 **Co neříká:** Není ověřený: přepis dělá model nebo člověk z PDF a může obsahovat chybu, i když mechanická kontrola citací nic nenašla. Kontrola 30 vzorků (28. 9. 2026, `docs/podklady/dipsy-kriteria-kontrola-30-2026-09-28.md`) našla podstatnou chybu zhruba u každého desátého přepisu, nejčastěji záměnu oboru ve společném PDF. Platí pro rok kritérií (2026), ne pro nové přijímací řízení; školy kritéria mění. Neříká, jak moc další složky **rozhodovaly**: složka s velkým maximem, kterou všichni dostanou plnou, pořadí nemění. Nepoužívá se k řazení ani k výpočtu bodů uchazeče.
+
+**Kde se zobrazuje:** stránka oboru, důkaz „S kolika body se kdo dostal a kde byste stáli vy“ (komponenta `KdeStojim`, jen u oboru, kde se soutěžící uchazeči nevešli), a prototyp `/prototyp/pasma`. Blok kritérií jen tam, kde podle přepisu nerozhodovala jen JPZ; jinak věta, že škola přijímala podle jednotné přijímací zkoušky.
 
 ## 3. Kohorty přijatých
 
@@ -654,6 +660,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.39 | **Převedený výsledek testu**, **Pořadí mezi soutěžícími** a **Podíl přijímaček na bodování** se z prototypu dostávají na stránku oboru (28. 9. 2026, [Kde stojím](navrh-kde-stojim-2027.md)). Výpočet beze změny, doplněno jen, kde se zobrazují. |
 | 1.38 | **Sloučení zaměření dotaženo** (28. 9. 2026, oponentura PR #184). Výsledek uchazeče o obor se porovnává s přihláškou, na kterou byl skutečně přijat, ne s první přihláškou na obor: uchazeč odmítnutý na A, pak na B a přijatý na A ze třetí přihlášky se u B dřív počítal jako přijatý výš (31 případů 2026, 27 v 2025). Vzdání se přijetí (jen 2025) je samostatný výsledek, vedlejší zaměření ho nepřepíše na nesplněné podmínky ani přijetí výš. Souběžné přihlášky počítají uchazeče i dvojici oborů jednou (600004961_79-41-K/61 v roce 2026: 1 052 uchazečů místo 1 230). Odvozená hranice úspěšnosti 2026: 1 151 oborů místo 1 156, nevysvětleno výsledkem zkoušky 678 místo 683. Předmětový sklon: nápadný u 71 z 345 oborů místo 73 z 354. Stabilita *rozhodl test* mezi ročníky: 1 171 spárovaných oborů, korelace 0,667, změna kategorie u 300 (dřív 1 173, 0,672, 305). Slučování je společné v `scripts/slouceni_prihlasek.py`. |
 | 1.37 | **Pásma přijetí počítají uchazeče u oboru jednou** (28. 9. 2026, issue #183). Klíč oboru nenese zaměření, takže uchazeč s přihláškami do dvou zaměření téhož oboru se dřív započetl dvakrát: `soutezicich`, nevešli se, přijati výš na přihlášce, rozdělení po pásmech, pásmo nejistoty a *rozhodl test* byly zkreslené u 212 oborů roku 2026 a 208 roku 2025 (například 600004961_79-41-K/61: 726 soutěžících místo 821). Počty přijatých ani nejnižší přijatý se nezměnily. U více přihlášek téhož uchazeče k jednomu oboru rozhoduje nejlepší výsledek (přijat, nevešel se, přijat výš, nesplnil). |
 | 1.36 | **Pořadí mezi soutěžícími** a **Podíl přijímaček na bodování** (27. 9. 2026, oddíl 2). První z rozdělení výsledků soutěžících po oborech, druhý z pracovního přepisu kritérií 2026 z PDF v DiPSy (2 814 oborů po plošném přepisu 28. 9. 2026), jen v prototypu pásmového proužku a s výhradou, že přepis může obsahovat chybu. |

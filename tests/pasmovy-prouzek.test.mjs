@@ -29,24 +29,28 @@ const ZAKLAD = {
 };
 
 /** Stav vstupů se podstrkuje přes useState; jinak se na výsledek nedá dostat. */
-function vykresli(data, { cj = '', ma = '', test: druhTestuZadani = 'jiny', druh = '8', prevod = null, rok = 2026 } = {}) {
+function vykresli(data, { cj = '', ma = '', test: druhTestuZadani = 'jiny', druh = '8', prevod = null, rok = 2026, kriteria = null, vstupOtevreny = true } = {}) {
   let poradi = 0;
   const react = {
     ...React,
     useState: (init) => {
       poradi += 1;
-      // 1 = vybraný obor, 2 = zadané testy, 3 = přepínač rozdělení.
+      // 1 = zadané testy, 2 = rozbalené zadání.
       // Test je „jiný“, tedy bez převodu: věty se tu ověřují na bodech tak, jak jsou.
-      if (poradi === 2) return [[{ test: druhTestuZadani, cj, ma, druh }], () => {}];
-      return [init, () => {}];
+      if (poradi === 1) return [[{ test: druhTestuZadani, cj, ma }], () => {}];
+      return [typeof init === 'function' ? init() : init, () => {}];
     },
   };
-  const { PasmovyProuzek } = zavadec(react)('src/components/prototyp/PasmovyProuzek.tsx');
+  const { KdeStojim } = zavadec(react)('src/components/obor/KdeStojim.tsx');
+  const terminy = prevod?.druhy[druh];
   return renderToStaticMarkup(
-    React.createElement(PasmovyProuzek, {
-      obory: [{ id: 'x_79-41-K/81', nazev: 'Gymnázium', obec: 'Praha', obor: 'Gymnázium', data }],
+    React.createElement(KdeStojim, {
+      data,
       rok,
-      prevod,
+      druh,
+      prevod: prevod && terminy ? { rok_testu: prevod.rok_testu, rok_cile: prevod.rok_cile, terminy } : null,
+      kriteria,
+      vstupOtevreny,
     }),
   );
 }
@@ -176,11 +180,42 @@ test('test TAU se převede podle tabulky druhu testu oboru', () => {
   assert.match(html, /80 bodů → <b>82<\/b> bodů roku 2026/);
 });
 
-test('test pro jinou třídu (po přepnutí oboru) se nepočítá a stránka to řekne', () => {
+test('obor jiného druhu nedostane tabulku cizího testu', () => {
+  // Stránka posílá jen tabulku druhu testu oboru; pro čtyřletý obor tu není.
   const html = vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] },
     { cj: '40', ma: '40', test: '1-radny', druh: '4', prevod: PREVOD });
-  assert.match(html, /test pro jinou třídu, nepočítá se/);
-  assert.doesNotMatch(html, /Chybí ti/, 'výsledek jiného testu se nesmí vyhodnotit');
+  assert.match(html, /80 bodů \(bez převodu\)/);
+});
+
+test('proužek je vidět i bez zadání, zadání se rozbalí tlačítkem', () => {
+  const html = vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] }, { vstupOtevreny: false });
+  assert.match(html, /nedostal se nikdo/);
+  assert.match(html, /Zadej výsledek testu a uvidíš, kde bys stál/);
+  assert.doesNotMatch(html, /Čeština/);
+});
+
+const PREPIS = { source_id: 's', zamereni: '', prepis: 'strojovy', rezim: 'pouze_jpz', podil_jpz_pct: 100,
+  slozky: [], jpz_navic: [], minima: [], nalezy: [], chybi_slozky: false };
+
+test('kde rozhodovala jen JPZ, stačí věta místo bloku kritérií', () => {
+  const kriteria = { rok: 2026, pdf: true, prepisy: [PREPIS], noveKriteria: '31. 1. 2027' };
+  const html = vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] }, { kriteria });
+  assert.match(html, /škola přijímala\s+podle jednotné přijímací zkoušky/);
+  assert.match(html, /teprve vyhlásí; školy je zveřejní 31. 1. 2027/);
+  assert.doesNotMatch(html, /Co kromě přijímaček rozhodovalo/);
+});
+
+test('kde rozhodovalo i něco jiného, blok kritérií s výhradou', () => {
+  const kriteria = { rok: 2026, pdf: true, noveKriteria: null, prepisy: [{ ...PREPIS, rezim: 'jine', podil_jpz_pct: 60,
+    slozky: [{ nazev: 'Prospěch', max: 40 }] }] };
+  const html = vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] }, { kriteria });
+  assert.match(html, /Co kromě přijímaček rozhodovalo v roce 2026/);
+  assert.match(html, /každý desátý přepis/);
+});
+
+test('bez přepisu kritérií se nic neukazuje', () => {
+  const html = vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] }, { kriteria: { rok: 2026, pdf: true, prepisy: [], noveKriteria: null } });
+  assert.doesNotMatch(html, /kritéri/i);
 });
 
 test('tabulky pro jiný cílový rok než pásma se nepoužijí', () => {
