@@ -28,7 +28,7 @@ export function jenPrijimacky(k: KriteriaOboru | null | undefined): boolean {
 
 /** Přepis boduje i něco jiného než jednotnou přijímací zkoušku (extra body ve slovníku pojmů). */
 const extraBody = (p: KriteriaOboru['prepisy'][number]) =>
-  // Jen přičítané složky (nebo chybějící v přepisu); samotné srážky, například za chování, extra body nejsou.
+  // Složky mimo JPZ, i s neznámým směrem (odečet průměru je také extra body); jen doložené srážky, například za chování, ne.
   p.rezim === 'jine' && (p.chybi_slozky || p.slozky.some(x => !srazka(x) && (x.max === null || x.max > 0)));
 
 /** Složka jen ubírá body: záporné maximum, nebo srážka podle názvu, když výši přepis nezná. */
@@ -69,8 +69,9 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
       <h3 className="text-lg font-bold text-[#16325c]">Co kromě přijímaček rozhodovalo v roce {k.rok}</h3>
       {extraBody(p) && (
         <p className="font-medium text-slate-800">
-          V roce {k.rok} škola k jednotné přijímací zkoušce přidávala extra body, tedy body za něco jiného než
-          jednotnou přijímací zkoušku, například za prospěch ze základní školy nebo školní přijímací zkoušku.
+          V roce {k.rok} o pořadí rozhodovaly i extra body, tedy body za něco jiného než jednotnou přijímací
+          zkoušku, například za prospěch ze základní školy nebo školní přijímací zkoušku. Podle kritérií se
+          mohly přičítat i odečítat.
         </p>
       )}
       <p className="text-slate-500">
