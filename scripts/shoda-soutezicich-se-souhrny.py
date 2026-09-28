@@ -4,7 +4,7 @@
 Soutěžící v pásmech (`soutezicich`) jsou osoby z dat uchazečů, souhrn CERMAT
 počítá přihlášky za nabídku (přijatí + nepřijatí kvůli kapacitě). Skript
 rozdíl u každého oboru rozloží na čtyři příčiny:
-  B  uchazeč bez výsledku jednotné zkoušky (pásma ho nepočítají),
+  B  soutěžící přihlášky uchazeče bez výsledku jednotné zkoušky (pásma ho nepočítají),
   A  vzdání se přijetí, které data uchazečů 2026 vedou jako přijetí,
   C  víc přihlášek téhož uchazeče na obor (pásma počítají osobu jednou),
   D  zbytek, nesoulad dvou souborů CERMAT.
@@ -22,7 +22,7 @@ import openpyxl
 
 KOREN = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(KOREN / "scripts"))
-from slouceni_prihlasek import denni_nezkracene, prijat, volby_uchazece  # noqa: E402
+from slouceni_prihlasek import denni_nezkracene, prijat  # noqa: E402
 
 
 def z_dat_uchazecu(rok: str) -> tuple[dict, dict]:
@@ -32,21 +32,22 @@ def z_dat_uchazecu(rok: str) -> tuple[dict, dict]:
     bez: dict[str, int] = collections.Counter()
     navic: dict[str, int] = collections.Counter()
     for r in it:
-        if r[ix["c_m_procentni_skor"]] is None:
-            for v in volby_uchazece(r, ix):
-                if v["stav"] in (0, 1):
-                    bez[v["obor"]] += 1
-            continue
-        prihlasky = collections.defaultdict(list)
+        # Souhrn počítá přihlášky, pásma osoby s výsledkem. Soutěžící přihlášky
+        # uchazeče bez výsledku jdou celé do B, u uchazeče s výsledkem se
+        # přihlášky nad první na tentýž obor počítají do C.
+        bez_skore = r[ix["c_m_procentni_skor"]] is None
+        prihlasky = collections.Counter()
         for k in range(1, 6):
             red, kkov = r[ix[f"ss{k}_redizo"]], r[ix[f"ss{k}_kkov"]]
             if not red or not denni_nezkracene(r[ix[f"ss{k}_forma"]], r[ix[f"ss{k}_zkraceno"]]):
                 continue
-            soutezi = prijat(r[ix[f"ss{k}_prijat"]]) or r[ix[f"ss{k}_duvod_neprijeti"]] == "pro_nedostacujici_kapacitu"
-            prihlasky[f"{red}_{kkov}"].append(soutezi)
-        for obor, s in prihlasky.items():
-            if sum(s) > 1:
-                navic[obor] += sum(s) - 1
+            if prijat(r[ix[f"ss{k}_prijat"]]) or r[ix[f"ss{k}_duvod_neprijeti"]] == "pro_nedostacujici_kapacitu":
+                prihlasky[f"{red}_{kkov}"] += 1
+        for obor, n in prihlasky.items():
+            if bez_skore:
+                bez[obor] += n
+            elif n > 1:
+                navic[obor] += n - 1
     return bez, navic
 
 
@@ -73,7 +74,7 @@ def main(rok: str) -> None:
         osob["|rozdíl|"] += abs(rozdil)
         if rozdil == 0:
             oboru["shoda"] += 1
-            continue
+        # Složky i u shodných oborů: příčiny se mohou vzájemně rušit.
         casti = {"A": a["withdrawn"] if rok == "2026" else 0, "B": bez.get(obor, 0), "C": navic.get(obor, 0)}
         casti["D"] = rozdil - casti["A"] + casti["B"] + casti["C"]
         for k, n in casti.items():

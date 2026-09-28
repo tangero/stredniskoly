@@ -225,10 +225,10 @@ U osmiletého gymnázia J. S. Machara bylo v roce 2025 soutěžících 67, ale n
 
 | Příčina | 2026 osob / oborů | 2025 osob / oborů | Povaha |
 |---|---|---|---|
-| Uchazeč bez výsledku jednotné zkoušky (`c_m_procentni_skor` prázdné) | 1 161 / 648 | 3 120 / 1 280 | definice: pásma potřebují výsledek, souhrn počítá všechny |
-| Vzdal se přijetí: souhrn 2026 ho vede ve sloupci „vzdal se“, data uchazečů 2026 důvod nemají a vedou ho jako přijatého | 908 / 541 | — | zdroj: data uchazečů 2026 vzdání se nerozlišují; v roce 2025 se vzdání se do pásem nepočítá |
-| Víc přihlášek téhož uchazeče na obor (zaměření, den a den2) | 893 / 95 | 929 / 113 | definice: pásma počítají osoby (verze 1.37), souhrn přihlášky |
-| Nevysvětlený zbytek | 138 / 65 | 104 / 58 | nesoulad dvou souborů CERMAT (například 600015629_78-42-M/08: data uchazečů 14 přijatých, souhrn 15) |
+| Přihlášky uchazeče bez výsledku jednotné zkoušky (`c_m_procentni_skor` prázdné) | 1 243 / 725 | 3 133 / 1 280 | definice: pásma potřebují výsledek, souhrn počítá všechny |
+| Vzdal se přijetí: souhrn 2026 ho vede ve sloupci „vzdal se“, data uchazečů 2026 důvod nemají a vedou ho jako přijatého | 1 004 / 631 | — | zdroj: data uchazečů 2026 vzdání se nerozlišují; v roce 2025 se vzdání se do pásem nepočítá |
+| Víc přihlášek téhož uchazeče na obor (zaměření, den a den2) | 898 / 100 | 929 / 113 | definice: pásma počítají osoby (verze 1.37), souhrn přihlášky |
+| Nevysvětlený zbytek | 147 / 73 | 91 / 48 | nesoulad dvou souborů CERMAT (například 600015629_78-42-M/08: data uchazečů 14 přijatých, souhrn 15) |
 
 Co z toho plyne: *Podíl přijatých ze soutěžících* a počty soutěžících v pásmech se na jedné stránce nesmí vydávat za tutéž veličinu. Mezi ročníky 2025 a 2026 není srovnatelný počet přijatých v pásmech u oborů, kde se někdo vzdal přijetí: v roce 2026 je v přijatých, v roce 2025 ne.
 

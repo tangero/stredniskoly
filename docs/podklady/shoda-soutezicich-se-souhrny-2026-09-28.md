@@ -9,12 +9,12 @@ Porovnává `soutezicich` v pásmech (osoby, denní nezkrácené studium) se sou
 | Oborů v pásmech | 2 830 | 2 789 |
 | Shoda | 1 677 | 1 454 |
 | Součet absolutních rozdílů (osob) | 2 762 | 4 153 |
-| B: bez výsledku jednotné zkoušky | 1 161 osob, 648 oborů | 3 120 osob, 1 280 oborů |
-| A: vzdal se, v datech uchazečů jako přijatý | 908 osob, 541 oborů | — |
-| C: víc přihlášek téhož uchazeče na obor | 893 osob, 95 oborů | 929 osob, 113 oborů |
-| D: nevysvětlený zbytek | 138 osob, 65 oborů | 104 osob, 58 oborů |
+| B: přihlášky uchazečů bez výsledku jednotné zkoušky | 1 243 osob, 725 oborů | 3 133 osob, 1 280 oborů |
+| A: vzdal se, v datech uchazečů jako přijatý | 1 004 osob, 631 oborů | — |
+| C: víc přihlášek téhož uchazeče na obor | 898 osob, 100 oborů | 929 osob, 113 oborů |
+| D: nevysvětlený zbytek | 147 osob, 73 oborů | 91 osob, 48 oborů |
 
-Příčiny se u jednoho oboru mohou sčítat i rušit, řádky proto nedávají součet rozdílů.
+Příčiny se u jednoho oboru mohou sčítat i rušit, řádky proto nedávají součet rozdílů; složky se počítají i u oborů s celkovou shodou.
 
 **Závěr.** A až C jsou rozdíly definic a zdroje, ne chyba výpočtu: pásma potřebují výsledek zkoušky, počítají osoby a data uchazečů 2026 vzdání se přijetí nerozlišují. D je nesoulad mezi dvěma soubory CERMAT (příklad 600015629_78-42-M/08: data uchazečů 14 přijatých, souhrn 15).
 
