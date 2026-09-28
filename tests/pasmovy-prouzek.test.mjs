@@ -224,3 +224,13 @@ test('tabulky pro jiný cílový rok než pásma se nepoužijí', () => {
   assert.match(html, /Převodní tabulky jsou spočítané pro rok 2026, pásma jsou z roku 2027/);
   assert.doesNotMatch(html, /bodů roku 2027/);
 });
+
+test('extra body: odečet za průměr ano, samotná sankce za chování ne', () => {
+  const { extraBody } = zavadec()('src/components/obor/KdeStojim.tsx');
+  const prepis = (slozky) => ({ rezim: 'jine', chybi_slozky: false, jpz_navic: [], slozky: slozky.map(nazev => ({ nazev, max: null })) });
+  // 600170900_39-41-L/01: prospěch hodnocený odečtem
+  assert.equal(extraBody(prepis(['odečet za průměr 2. pololetí 8. třídy', 'odečet za známku chvalitebné z chování'])), true);
+  // 600012514_65-42-M/01: jediná složka je sankce za chování
+  assert.equal(extraBody(prepis(['snížený stupeň z chování'])), false);
+  assert.equal(extraBody(prepis(['studijní průměr'])), true);
+});
