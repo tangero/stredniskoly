@@ -247,6 +247,7 @@ Podrobná dokumentace jednotlivých oblastí projektu:
 - [Vrstvy stránky oboru](../docs/vrstvy-stranky-oboru-2027.md) — pět kol návrhu: odpověď na tři otázky uchazeče nad důkazy, stavy nabídky, rozhodnutí použít a zavrhnout
 - [Stránka školy](../docs/stranka-skoly-2027.md) — pět otázek rodiny: obory, jak si škola vede (maturita proti skupině oborů, inspekce), jaká škola je, kde je a okolí podle souběžných přihlášek
 - [Stránka města](../docs/navrh-stranky-mesta-2027.md) — přehled škol ve městě: obtížnost přijetí jako odznak a filtr (neřadí se podle ní), karty škol místo řádků nabídek, 102 měst generovaných z katalogu, město ve vyhledávači
+- [Mapa krajů a odkazy na veletrzích](../docs/navrh-mapa-a-odkazy-veletrhu-2027.md) — mapa krajů jako doplněk čipů (stejná výplň, počet číslem, skrytá pro čtečku), odkazy z akce na město a z nadpisu na kraj, veletrh na stránce města; hranice z RÚIAN
 - [API pro návrhy změn veletrhů](../docs/veletrhy-api-2027.md) — Eduarda navrhuje změny akcí přes API, člověk schvaluje odkazem z e-mailu, web čte z tabulky `veletrh_akce` přes sdílenou cache, JSON je snímek
 - [Sledování škol](../docs/sledovani-skol-2027.md) — upozornění e-mailem na změny sledovaných škol: události z přepnutí sad a portálu, denní souhrn seskupený podle události
 - [Návrh sledování škol a oborů v2.2](../docs/navrh-sledovani-skol-a-oboru-v2.md) — neplatný souběžný návrh uložený jako podklad: přehodnocuje zamítnutí sledování oboru, rozpor s verzí 1.2 je otevřený

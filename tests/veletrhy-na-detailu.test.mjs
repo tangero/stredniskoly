@@ -122,3 +122,14 @@ test('oborová varianta se po skončení akce skrývá stejně jako karta', () =
   const obor = zdroj.slice(zdroj.indexOf("if (variant === 'obor')"), zdroj.indexOf('return (\n    <VeletrhSkryvani doKonce={doKonce}>\n      <div'));
   assert.ok(obor.includes('<VeletrhSkryvani doKonce={doKonce}>'), 'varianta obor je obalená VeletrhSkryvani');
 });
+
+test('karta na stránce města nemluví o „této škole“ a ukáže nejvýš dvě nejbližší akce', () => {
+  const html = render({ obec: 'Olomouc', variant: 'mesto', ke: KE_DNI });
+  assert.ok(html.includes('Veletrhy středních škol ve městě Olomouc'));
+  assert.ok(!html.includes('této školy'), 'Stránka města školu nemá.');
+  assert.ok(html.includes('Které školy na akci vystavují, doložené nemáme.'));
+  const nejblizsi = akceProObec('Olomouc', KE_DNI).slice(0, 2);
+  for (const a of nejblizsi) assert.ok(html.includes(a.nazev), `Chybí nejbližší akce ${a.id}.`);
+  assert.ok((html.match(/Stránka akce/g) ?? []).length <= 2, 'Nejvýš dvě akce.');
+  assert.equal(render({ obec: 'Nepomuk', variant: 'mesto', ke: KE_DNI }), '');
+});

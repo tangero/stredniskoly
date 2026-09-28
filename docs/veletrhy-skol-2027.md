@@ -155,7 +155,7 @@ Návrh **novou třídu nezavádí**. Důvod: klasifikace čte weby škol a škol
 
 **Výhrada neúplnosti u každého kraje** („Víme jen o těchto 6 akcích s potvrzeným termínem. Chybí vám nějaká? Nahlaste nám ji — před zveřejněním ji ověříme na stránce pořadatele.“; věta doslova ze slovníku pojmů u pojmu *nahlásit akci*, protože každý oddíl je blok; „s potvrzeným termínem“ říká množinu, ze které se číslo počítá), ne jen jednou dole: rodič, který právě zjistil, že jeho město chybí, je ten, kdo akci nahlásí.
 
-Zamítnuto: přepínač „podle kraje / podle data“ (dvě zobrazení, dvojí testování, rozhodnutí přesunuté na čtenáře) a mapa jako hlavní ovládání (na mobilu 14 krajů neklikatelně malých; jako doplněk nad čipy možná později).
+Zamítnuto: přepínač „podle kraje / podle data“ (dvě zobrazení, dvojí testování, rozhodnutí přesunuté na čtenáře) a mapa jako hlavní ovládání (na mobilu 14 krajů neklikatelně malých). Jako **doplněk nad čipy** mapa od 28. 9. 2026 je, viz [mapa krajů a odkazy](navrh-mapa-a-odkazy-veletrhu-2027.md).
 
 **Dole poctivá věta o pokrytí** (§ 5.4).
 

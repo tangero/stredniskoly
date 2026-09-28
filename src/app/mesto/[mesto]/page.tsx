@@ -9,6 +9,7 @@ import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { rokDruhehoKola } from '@/lib/druhe-kolo';
 import { dalsiOboryVeMeste } from '@/lib/kontext-prihlasek';
 import { DalsiOboryVeMeste } from '@/components/DalsiOboryVeMeste';
+import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
 import type { CityStats, SchoolTypeStats, NationalTypeStats } from '@/lib/cityData';
 
 interface Props {
@@ -255,6 +256,10 @@ export default async function MestoPage({ params }: Props) {
         </div>
 
         <div className="max-w-6xl mx-auto px-4 py-8 space-y-12">
+
+          {/* Nejbližší veletrh středních škol ve městě, nejvýš dvě akce podle
+              data. Bez potvrzené akce komponenta nevykreslí nic. */}
+          <VeletrhVMeste obec={mestoMeta.nazev} variant="mesto" />
 
           {/* Školy ve městě */}
           <section>

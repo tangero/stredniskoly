@@ -30,6 +30,12 @@ const KE_DNI = new Date('2026-09-22');
 const DEN = cesskyDen(KE_DNI);
 const slugKraje = (kod) => createKrajSlug(kod, vsechnyKraje().find((k) => k.kod === kod).nazev);
 
+/** Text, jak ho vidí oko: bez skrytých dovětků pro čtečku (`sr-only`). */
+const viditelne = (html) => text(html.replace(/<span class="sr-only">[^<]*<\/span>/g, '')).trim();
+
+/** Viditelný text řádků měst pod nadpisy oddílů. */
+const radkyMest = (html) => [...html.matchAll(/<p class="mt-2 text-sm text-gray-600">(.*?)<\/p>/g)].map((m) => viditelne(m[1]));
+
 function karty(akce) {
   return akce.map((a) => ({
     id: a.id, nazev: a.nazev, poradatel: a.poradatel, mesto: a.mesto, online: a.online,
@@ -111,11 +117,11 @@ test('kraje jsou oddíly s nadpisem, počtem, kotvou a odkazem pojmenovaným kra
     assert.ok(html.includes(kotva), `Kraj ${k.nazev} musí mít oddíl s kotvou, aby na něj šlo odkázat ze stránky kraje.`);
     // Mezera před počtem musí být v textu, ne jen v CSS: čtečka i kopírování
     // jinak dostanou „Jihočeský kraj6 akcí“.
-    assert.ok(html.includes(`${nadpisKraje(k.kod)} <span class="ml-2`), `Nadpis oddílu ${k.nazev} bez mezery před počtem.`);
-    assert.ok(text(html).includes(`${nadpisKraje(k.kod)} ${akci(pocet)}`), `Nadpis oddílu ${k.nazev} musí nést počet akcí.`);
-    // Čtrnáct odkazů se stejným textem: čtečka potřebuje v názvu odkazu kraj,
-    // a viditelný text v názvu zůstává (ovládání hlasem říká, co vidí).
-    assert.ok(html.includes(`Střední školy v kraji<span class="sr-only"> — ${nadpisKraje(k.kod)}</span>`), `Odkaz na stránku kraje ${k.nazev} bez kraje v přístupném názvu.`);
+    assert.ok(html.includes(`${nadpisKraje(k.kod)}<span class="sr-only">, střední školy v kraji</span></a> <span class="ml-2`), `Nadpis oddílu ${k.nazev} bez mezery před počtem.`);
+    assert.ok(viditelne(html).includes(`${nadpisKraje(k.kod)} ${akci(pocet)}`), `Nadpis oddílu ${k.nazev} musí nést počet akcí.`);
+    // Nadpis oddílu je odkazem na stránku kraje. Viditelný text (název kraje)
+    // stojí na začátku názvu odkazu kvůli ovládání hlasem, dovětek říká kam.
+    assert.ok(html.includes(`class="hover:text-blue-700 hover:underline" href="/regiony/${slugKraje(k.kod)}">${nadpisKraje(k.kod)}<span`), `Nadpis oddílu ${k.nazev} nevede na stránku kraje.`);
     assert.ok(!html.includes('aria-label="Střední školy'), 'aria-label by přepsal viditelný text.');
     poradiCipu.push(html.indexOf(`data-kraj="${k.kod}"`));
     poradiOddilu.push(html.indexOf(kotva));
@@ -145,10 +151,10 @@ test('řádek měst jen u více akcí, v pořadí konání; místo na kartě i v
   const mesta = [...new Set(jihocesky.map((a) => a.mesto))];
   // Řádek měst je šedý odstavec pod nadpisem; město na kartě je jiný prvek
   // (verzálky), proto se hledá i s koncem atributu class.
-  assert.ok(html.includes(`text-gray-600">${mesta.join(' · ')}</p>`), 'Města v kraji mají stát v řádku pod nadpisem, v pořadí konání.');
+  assert.ok(radkyMest(html).includes(mesta.join(' · ')), 'Města v kraji mají stát v řádku pod nadpisem, v pořadí konání.');
 
   // U jediné akce by řádek měst jen opakoval kartu.
-  assert.ok(!vykresliKarty([karta({ mesto: 'Jediné' })]).includes('text-gray-600">Jediné</p>'));
+  assert.deepEqual(radkyMest(vykresliKarty([karta({ mesto: 'Jediné' })])), []);
 
   // Online se v řádku píše stejně jako na kartě. Série bez rozepsaných měst
   // nese výčet z `misto` (tam pořadatel města uvádí); bez něj přizná, že
@@ -159,17 +165,17 @@ test('řádek měst jen u více akcí, v pořadí konání; místo na kartě i v
     karta({ id: 'c', mesto: null, misto: 'Třebíč, Havlíčkův Brod', start: '2026-10-03', end: '2026-10-03' }),
     karta({ id: 'd', mesto: null, misto: '', start: '2026-10-04', end: '2026-10-04' }),
   ]);
-  assert.ok(smisene.includes('text-gray-600">Online · Ostrava · Třebíč, Havlíčkův Brod · místo upřesní pořadatel</p>'));
+  assert.ok(radkyMest(smisene).includes('Online · Ostrava · Třebíč, Havlíčkův Brod · místo upřesní pořadatel'));
   assert.ok(smisene.includes('text-gray-500">Třebíč, Havlíčkův Brod</p>'), 'Série bez měst ukáže na kartě výčet z misto.');
   assert.ok(smisene.includes('text-gray-500">místo upřesní pořadatel</p>'));
   assert.ok(!smisene.includes('online · '));
-  assert.ok(text(smisene).includes('Středočeský kraj 4 akce'));
+  assert.ok(viditelne(smisene).includes('Středočeský kraj 4 akce'));
   // Řádek s datem opakuje misto jen tam, kde ho první řádka neukázala.
   assert.ok(!smisene.includes(' — Třebíč, Havlíčkův Brod'), 'Výčet měst série by byl na kartě dvakrát.');
   assert.ok(smisene.includes('5. října 2026</time> — Sál'), 'U akce s městem zůstává místo konání na řádku s datem.');
   // Když je místo konání totéž co město, nepíše se dvakrát (Břeclav / Břeclav).
   const stejne = vykresliKarty([karta({ mesto: 'Břeclav', misto: 'Břeclav' })]);
-  assert.ok(stejne.includes('text-gray-500">Břeclav</p>'));
+  assert.ok(stejne.includes('href="/mesto/breclav">Břeclav<span class="sr-only">, střední školy ve městě</span></a></p>'));
   assert.ok(!stejne.includes(' — Břeclav'), 'Místo shodné s městem se na řádku s datem neopakuje.');
 
   // Pořadí uvnitř kraje je smlouva komponenty, ne volajícího: zamíchané
@@ -179,7 +185,7 @@ test('řádek měst jen u více akcí, v pořadí konání; místo na kartě i v
     karta({ id: 'a', mesto: 'První', start: '2026-10-01', end: '2026-10-01' }),
     karta({ id: 'b', mesto: 'Druhé', start: '2026-10-02', end: '2026-10-02' }),
   ]);
-  assert.ok(zamichane.includes('text-gray-600">První · Druhé · Třetí</p>'));
+  assert.deepEqual(radkyMest(zamichane), ['První · Druhé · Třetí']);
   assert.ok(zamichane.indexOf('>První</p>') < zamichane.indexOf('>Druhé</p>') && zamichane.indexOf('>Druhé</p>') < zamichane.indexOf('>Třetí</p>'));
 
   // Město na kartě předchází názvu akce: čtenář hledá „Vimperk“, ne
@@ -444,7 +450,7 @@ test('výběr kraje ukáže jen jeho oddíl, čip je stisknutý, věta bez rodu'
   // Harness překládá do ES2022: řádek měst (spread nad Set) musí být i tady.
   h.stavy[0] = 'CZ031';
   const mesta = [...new Set(jihoceske.map((a) => a.mesto))];
-  assert.ok(h.render(props).includes(`text-gray-600">${mesta.join(' · ')}</p>`), 'Řádek měst chybí — zavaděč by překládal jiný program než produkce.');
+  assert.ok(radkyMest(h.render(props)).includes(mesta.join(' · ')), 'Řádek měst chybí — zavaděč by překládal jiný program než produkce.');
 });
 
 test('kotva předvybere kraj a posune až po překreslení; posun je na každé čtení kotvy, ne na každý render', () => {
@@ -589,4 +595,90 @@ test('kotva na kraj, kterému akce proběhly, ukáže prázdný stav s odkazem n
   assert.ok(html.includes(`href="/regiony/${slug}"`), 'Odkaz zpět na stránku kraje.');
   assert.ok(!html.includes('>Akce<'), 'Ostatní kraje se nezobrazí.');
   assert.match(html, /aria-pressed="true"[^>]*data-kraj="CZ051" data-pocet="0"/);
+});
+
+// ----------------------------------------------------------------------------
+// Mapa krajů a odkazy na města (docs/navrh-mapa-a-odkazy-veletrhu-2027.md).
+// ----------------------------------------------------------------------------
+
+test('město na kartě vede na stránku města, jen když ji město má', () => {
+  const html = vykresliKarty([
+    karta({ id: 'a', mesto: 'Pardubice', krajKod: 'CZ053', start: '2026-10-01', end: '2026-10-01' }),
+    karta({ id: 'b', mesto: 'Vimperk', krajKod: 'CZ031', start: '2026-10-02', end: '2026-10-02' }),
+    karta({ id: 'c', mesto: null, online: true, krajKod: 'CZ080', start: '2026-10-03', end: '2026-10-03' }),
+  ]);
+  assert.ok(html.includes('href="/mesto/pardubice">Pardubice<span class="sr-only">, střední školy ve městě</span></a>'));
+  // Vimperk má méně než tři školy, stránku města nemá. Odkaz na kraj místo
+  // města by vedl jinam, než slibuje jeho text.
+  assert.ok(!html.includes('/mesto/vimperk'));
+  assert.ok(html.includes('text-gray-500">Vimperk</p>'), 'Město bez stránky zůstává prostým textem.');
+  assert.ok(html.includes('text-gray-500">Online</p>'), 'Online akce nemá město ani odkaz.');
+});
+
+test('řádek měst pod nadpisem odkazuje na stránky měst', () => {
+  const html = vykresliKarty([
+    karta({ id: 'a', mesto: 'Pardubice', krajKod: 'CZ053', start: '2026-10-01', end: '2026-10-01' }),
+    karta({ id: 'b', mesto: 'Chrudim', krajKod: 'CZ053', start: '2026-10-02', end: '2026-10-02' }),
+  ]);
+  assert.deepEqual(radkyMest(html), ['Pardubice · Chrudim']);
+  const radek = html.match(/<p class="mt-2 text-sm text-gray-600">(.*?)<\/p>/)[1];
+  assert.ok(radek.includes('href="/mesto/pardubice"') && radek.includes('href="/mesto/chrudim"'));
+});
+
+test('samostatný odkaz „Střední školy v kraji“ je jen v prázdném stavu, jinak ho nese nadpis', () => {
+  const html = vykresli(zobrazitelneAkce(KE_DNI));
+  assert.ok(!html.includes('>Střední školy v kraji<'), 'Vedle nadpisu by vedl na totéž místo podruhé.');
+});
+
+test('mapa: 14 krajů, skrytá pro čtečku, štítky se shodují s čipy', () => {
+  const vse = zobrazitelneAkce(KE_DNI);
+  const html = vykresli(vse);
+  const svg = html.match(/<svg[^>]*data-mapa-kraju[^>]*>[\s\S]*?<\/svg>/)[0];
+  assert.ok(/<svg[^>]*aria-hidden="true"/.test(svg), 'Mapa je druhá podoba čipů, čtečka ji číst nemá.');
+  assert.ok(!svg.includes('tabindex'), 'Kraje v mapě nesmí být v pořadí tabulátoru.');
+  const kody = [...svg.matchAll(/data-mapa-kraj="(CZ\d{3})"/g)].map((m) => m[1]).sort();
+  assert.deepEqual(kody, vsechnyKraje().map((k) => k.kod).sort());
+  // Štítek s počtem nese totéž číslo jako čip; kraj bez akcí štítek nemá.
+  const etalon = pocty(vse);
+  for (const k of vsechnyKraje()) {
+    const stitek = svg.match(new RegExp(`data-stitek="${k.kod}">[\\s\\S]*?<text[^>]*>(\\d+)</text>`));
+    const n = etalon.get(k.kod) ?? 0;
+    if (n === 0) assert.equal(stitek, null, `Kraj ${k.nazev} bez akcí nemá mít štítek.`);
+    else assert.equal(Number(stitek[1]), n, `Štítek kraje ${k.nazev} se liší od čipu.`);
+  }
+  // Barva kraje nesmí záviset na počtu (kartogram by tvrdil víc, než víme):
+  // kraje s akcemi mají v klidu tutéž výplň.
+  const vyplne = new Set([...svg.matchAll(/data-mapa-kraj="(CZ\d{3})"[^>]*>[\s\S]*?<path[^>]*fill="([^"]+)"/g)]
+    .filter((m) => (etalon.get(m[1]) ?? 0) > 0).map((m) => m[2]));
+  assert.equal(vyplne.size, 1, 'Kraje s akcemi mají mít stejnou výplň.');
+  assert.ok(html.includes('© ČÚZK, RÚIAN, CC BY 4.0'), 'Licence hranic vyžaduje uvedení zdroje.');
+});
+
+test('Praha má dotykovou plochu aspoň 44 px i na mobilu', async () => {
+  const { POLOMER_ZASAHU_PRAHY } = await import('../src/app/veletrhy/MapaKraju.tsx');
+  const mapa = (await import('../src/data/mapa-kraju.json', { with: { type: 'json' } })).default;
+  // Nejužší mapa: mobil 375 px mínus okraje 2 × 16 px.
+  const pxNaJednotku = 343 / mapa.viewBox[0];
+  assert.ok(2 * POLOMER_ZASAHU_PRAHY * pxNaJednotku >= 44);
+  assert.ok(vykresli(zobrazitelneAkce(KE_DNI)).includes('data-zasah-prahy'));
+});
+
+test('data mapy: kódy krajů jsou kódy číselníku, názvy nenese', async () => {
+  const mapa = (await import('../src/data/mapa-kraju.json', { with: { type: 'json' } })).default;
+  assert.deepEqual(mapa.kraje.map((k) => k.kod).sort(), vsechnyKraje().map((k) => k.kod).sort());
+  for (const k of mapa.kraje) {
+    assert.ok(k.d.startsWith('M') && k.d.endsWith('Z'), `Cesta kraje ${k.kod} není uzavřená.`);
+    assert.ok(!('nazev' in k), 'Názvy krajů bere web z kraje.mjs, druhý zdroj by se rozešel.');
+    const [x, y] = k.stitek;
+    assert.ok(x >= 0 && x <= mapa.viewBox[0] && y >= 0 && y <= mapa.viewBox[1], `Štítek kraje ${k.kod} leží mimo mapu.`);
+  }
+  assert.match(mapa.licence, /CC BY 4\.0/);
+});
+
+test('kotva ze stránky kraje sedí na oddíl přehledu veletrhů', async () => {
+  const { getAllKraje } = await import('../src/lib/data.ts');
+  const stranky = await getAllKraje();
+  for (const k of vsechnyKraje()) {
+    assert.equal(stranky.find((s) => s.kod === k.kod)?.slug, slugKraje(k.kod), `Odkaz ze stránky kraje ${k.nazev} by minul oddíl.`);
+  }
 });
