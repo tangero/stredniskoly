@@ -18,18 +18,18 @@ from __future__ import annotations
 import argparse
 import collections
 import json
+import sys
 from pathlib import Path
 
 import openpyxl
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from slouceni_prihlasek import PRIJAT, prijat, volby_uchazece, vysledek_uchazece  # noqa: E402
 
 KOREN = Path(__file__).resolve().parent.parent
 UKAZKY = ["600007774_79-41-K/81", "600007774_79-41-K/41", "600007774_78-42-M/01"]
 MIN_UCHAZECU = 10   # souběh: nezveřejňuje se pod 10 uchazeči (slovník)
 MIN_PRO_HRANICI = 5  # odvozená hranice: aspoň 5 nesplněných s výsledkem a 5 soutěžících
-
-
-def prijat(v) -> bool:
-    return str(v).strip() in ("1", "True", "true")
 
 
 def body(v):
@@ -87,35 +87,32 @@ def main() -> None:
 
     for r in radky:
         vysledek_jpz = (body(r[ix["c_m_procentni_skor"]]), body(r[ix["c_procentni_skor"]]), body(r[ix["m_procentni_skor"]]))
-        volby = []
+        # Celostátní počty jsou po přihláškách; rozdělení u oboru po uchazečích,
+        # s přihláškami do více zaměření téhož oboru sloučenými (issue #183).
         for k in range(1, 6):
-            red, kkov = r[ix[f"ss{k}_redizo"]], r[ix[f"ss{k}_kkov"]]
-            if not red or not kkov:
-                volby.append(None)
-                continue
-            obor = f"{red}_{kkov}"
-            volby.append((obor, prijat(r[ix[f"ss{k}_prijat"]])))
-            duvod = r[ix[f"ss{k}_duvod_neprijeti"]]
-            prihlasek += 1
-            if volby[-1][1] or duvod == "pro_nedostacujici_kapacitu":
-                if vysledek_jpz[0] is not None and None not in vysledek_jpz[1:]:
-                    obory[obor]["soutezici"].append(vysledek_jpz)
-            elif duvod == "pro_nesplneni_podminek":
-                nesplnilo += 1
-                if vysledek_jpz[0] is None or None in vysledek_jpz[1:]:
-                    obory[obor]["nesplnili_bez_jpz"] += 1
+            if r[ix[f"ss{k}_redizo"]] and r[ix[f"ss{k}_kkov"]]:
+                prihlasek += 1
+                nesplnilo += (not prijat(r[ix[f"ss{k}_prijat"]])
+                              and r[ix[f"ss{k}_duvod_neprijeti"]] == "pro_nesplneni_podminek")
+        ma_jpz = vysledek_jpz[0] is not None and None not in vysledek_jpz[1:]
+        volby = volby_uchazece(r, ix)
+        for v in volby:
+            if v["stav"] in (PRIJAT, 1):
+                if ma_jpz:
+                    obory[v["obor"]]["soutezici"].append(vysledek_jpz)
+            elif v["stav"] == 3:
+                if ma_jpz:
+                    obory[v["obor"]]["nesplnili"].append(vysledek_jpz)
                 else:
-                    obory[obor]["nesplnili"].append(vysledek_jpz)
-        prijat_na = next((i for i, v in enumerate(volby) if v and v[1]), None)
-        for i, v in enumerate(volby):
-            if not v or v[0] not in kontext:
+                    obory[v["obor"]]["nesplnili_bez_jpz"] += 1
+            if v["obor"] not in kontext:
                 continue
-            c = kontext[v[0]]
+            c = kontext[v["obor"]]
             c["uchazecu"] += 1
-            for j, w in enumerate(volby):
-                if w and j != i:
-                    (c["vys"] if j < i else c["niz"])[w[0]] += 1
-            c["vysledek"]["nikam" if prijat_na is None else "sem" if prijat_na == i else "vys" if prijat_na < i else "niz"] += 1
+            for w in volby:
+                if w is not v:
+                    (c["vys"] if w["pozice"] < v["pozice"] else c["niz"])[w["obor"]] += 1
+            c["vysledek"][vysledek_uchazece(volby, v)] += 1
 
     hranice = collections.Counter()
     for o in obory.values():

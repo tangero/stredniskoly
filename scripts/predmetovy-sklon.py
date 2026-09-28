@@ -13,6 +13,8 @@ definice soutěžících a stejná pásma jako scripts/build-pasma-prijeti.py.
 import openpyxl, json, collections, statistics, math, sys
 from pathlib import Path
 KOREN = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(KOREN / 'scripts'))
+from slouceni_prihlasek import PRIJAT, volby_uchazece  # noqa: E402
 # Rok se předává argumentem; letopočet napevno by po přepnutí sad mlčky měřil starý ročník.
 ROK = sys.argv[1] if len(sys.argv) > 1 else None
 if not ROK:
@@ -25,7 +27,6 @@ naz = {}
 for r in KAT:
     naz.setdefault(f"{r.get('redizo')}_{r.get('kkov')}", (r.get('nazev',''), r.get('obor',''), r.get('obec','')))
 
-def prijat(h): return str(h).strip() in ('1','True','true')
 
 wb = openpyxl.load_workbook(ZDROJ, read_only=True)
 it = wb.worksheets[0].iter_rows(values_only=True)
@@ -35,12 +36,10 @@ for radek in it:
     cj, ma = radek[ix['c_procentni_skor']], radek[ix['m_procentni_skor']]
     if cj is None or ma is None: continue
     cj, ma = float(cj)/2, float(ma)/2
-    for k in range(1,6):
-        redizo, kkov = radek[ix[f'ss{k}_redizo']], radek[ix[f'ss{k}_kkov']]
-        if not redizo or not kkov: continue
-        klic = f'{redizo}_{kkov}'
-        if prijat(radek[ix[f'ss{k}_prijat']]): obory[klic]['p'].append((cj+ma, ma))
-        elif radek[ix[f'ss{k}_duvod_neprijeti']] == 'pro_nedostacujici_kapacitu': obory[klic]['n'].append((cj+ma, ma))
+    # Přihlášky do více zaměření téhož oboru jako jeden obor (issue #183).
+    for v in volby_uchazece(radek, ix):
+        if v['stav'] == PRIJAT: obory[v['obor']]['p'].append((cj+ma, ma))
+        elif v['stav'] == 1: obory[v['obor']]['n'].append((cj+ma, ma))
 
 SIRKA = 5
 vysledky = []

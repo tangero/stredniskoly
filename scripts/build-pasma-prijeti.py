@@ -17,9 +17,13 @@ from __future__ import annotations
 import collections
 import json
 import statistics
+import sys
 from pathlib import Path
 
 import openpyxl
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from slouceni_prihlasek import VZDAL_SE, prijat, volby_uchazece  # noqa: E402,F401
 
 KOREN = Path(__file__).resolve().parent.parent
 def zobrazeny_rok() -> int:
@@ -52,9 +56,8 @@ TALENTOVE_SKUPINY = ("82-", "79-42")
 KATEGORIE_S_JPZ = ("K", "L", "M")
 
 
-def prijat(hodnota) -> bool:
-    """Příznak přijetí: 1 = přijat a zařazen. CERMAT ho zapisuje jako číslo i jako text, v roce 2024 jako True."""
-    return str(hodnota).strip() in ("1", "True", "true")
+# Výsledek oboru po sloučení přihlášek (0 = přijat) na skupinu v rozdělení.
+SKUPINA_DUVODU = {1: "nevesli_se", 2: "vyssi_priorita", 3: "nesplnili"}
 
 
 def nacti_uchazece() -> tuple[dict[str, dict[str, list[float]]], list[float]]:
@@ -82,23 +85,20 @@ def nacti_uchazece() -> tuple[dict[str, dict[str, list[float]]], list[float]]:
         # protože rozbor vyrovnanosti potřebuje oba.
         cj, ma = radek[ix["c_procentni_skor"]], radek[ix["m_procentni_skor"]]
         predmety = (float(cj) / 2, float(ma) / 2) if cj is not None and ma is not None else None
-        for k in range(1, 6):
-            redizo = radek[ix[f"ss{k}_redizo"]]
-            kkov = radek[ix[f"ss{k}_kkov"]]
-            if not redizo or not kkov:
-                continue
-            o = obory[f"{redizo}_{kkov}"]
-            duvod = radek[ix[f"ss{k}_duvod_neprijeti"]]
-            if prijat(radek[ix[f"ss{k}_prijat"]]):
+        # Klíč oboru nenese zaměření: uchazeč s přihláškami do dvou zaměření
+        # téhož oboru se u oboru počítá jednou (issue #183), sloučení je
+        # společné se souvisejícími skripty. Vzdání se přijetí a neznámý důvod
+        # se do pásem nepočítají.
+        stav_oboru = {v["obor"]: v["stav"] for v in volby_uchazece(radek, ix)
+                      if v["stav"] is not None and v["stav"] != VZDAL_SE}
+        for klic, stav in stav_oboru.items():
+            o = obory[klic]
+            if stav == 0:
                 o["prijati"].append(body)
                 if predmety is not None:
                     o["prijati_predmety"].append(predmety)
-            elif duvod == "pro_nedostacujici_kapacitu":
-                o["nevesli_se"].append(body)
-            elif duvod == "pro_nesplneni_podminek":
-                o["nesplnili"].append(body)
-            elif duvod == "prijat_na_vyssi_prioritu":
-                o["vyssi_priorita"].append(body)
+            else:
+                o[SKUPINA_DUVODU[stav]].append(body)
     return obory, sorted(uchazeci)
 
 
