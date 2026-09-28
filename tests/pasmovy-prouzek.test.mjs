@@ -233,4 +233,7 @@ test('extra body: odečet za průměr ano, samotná sankce za chování ne', () 
   // 600012514_65-42-M/01: jediná složka je sankce za chování
   assert.equal(extraBody(prepis(['snížený stupeň z chování'])), false);
   assert.equal(extraBody(prepis(['studijní průměr'])), true);
+  // 600020665_53-43-M/01: prospěch „bez známky z chování“ není sankce
+  assert.equal(extraBody(prepis(['průměrný prospěch (bez známky chování) 1. pololetí 9. ročníku'])), true);
+  assert.equal(extraBody(prepis(['odečet za chování uspokojivé', 'penalizace za sníženou známku z chování'])), false);
 });
