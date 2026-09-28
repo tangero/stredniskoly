@@ -258,7 +258,7 @@ Zdroj jsou data uchazečů CERMATu za 1. kolo 2025 ve finální revizi ze 20. 5.
 
 Jednotka jsou body: součet češtiny a matematiky, každý předmět nejvýš 50 bodů, lepší z obou pokusů. Zdroj nese procentní skór 0 až 200 %, který se dělí dvěma a u běžného testu se tím rovná bodům. U upravených testů se procentní výsledek s body neshoduje.
 
-Pásmo s méně než pěti soutěžícími se slučuje se sousedním, aby „1 z 1“ nevypadalo jako spolehlivých 100 %. Pásma se počítají jen u oborů s aspoň 30 soutěžícími, z nichž aspoň jeden byl odmítnut kvůli kapacitě; těch je 1 497.
+Pásmo s méně než pěti soutěžícími se slučuje se sousedním, aby „1 z 1“ nevypadalo jako spolehlivých 100 %. Pásma se počítají jen u oborů s aspoň 30 soutěžícími, z nichž aspoň jeden byl odmítnut kvůli kapacitě; těch je 1 496.
 
 Obory, kde nikdo odmítnut nebyl, pásma nemají: každé by vyšlo na 100 % a tabulka by vypadala jako záruka přijetí. Místo ní platí pole `nikdo_neodmitnut_pro_kapacitu`.
 
@@ -273,9 +273,9 @@ Pravděpodobnost, že náhodně vybraný přijatý měl lepší výsledek jednot
 
 Hodnota 1,0 znamená, že o přijetí rozhodl výhradně výsledek testu. Hodnota 0,5 znamená, že výsledek nerozhodoval vůbec.
 
-Ukládá se zaokrouhlené na tři desetinná místa. Počítá se u oborů s aspoň deseti přijatými a pěti odmítnutými kvůli kapacitě, tedy u 1 439. Medián je 0,972, hodnotu 1,000 má 10,1 % oborů, aspoň 0,85 má 93,1 %.
+Ukládá se zaokrouhlené na tři desetinná místa. Počítá se u oborů s aspoň deseti přijatými a pěti odmítnutými kvůli kapacitě, tedy u 1 439. Medián je 0,972, hodnotu 1,000 má 10,1 % oborů, aspoň 0,85 má 93,3 %.
 
-Na stránce se zobrazuje jedna ze tří vět podle hodnoty: 0,97 a výš, 0,85 až 0,97, pod 0,85. U 1 427 oborů bez talentové zkoušky připadá na první 52,4 %, na druhou 41,1 % a na třetí 6,4 %.
+Na stránce se zobrazuje jedna ze tří vět podle hodnoty: 0,97 a výš, 0,85 až 0,97, pod 0,85. U 1 427 oborů bez talentové zkoušky připadá na první 52,5 %, na druhou 41,3 % a na třetí 6,2 %.
 
 **Mezi ročníky je stabilní jen hrubě.** Na 1 171 oborech spárovaných mezi roky 2025 a 2026 je korelace **0,667** a medián absolutní změny 0,01. Hodnoty se drží blízko sebe, ale pořadí oborů v úzkém pásmu kolem 0,97 se mění. Proto se neřadí a nezobrazuje jako číslo, jen jako tři kategorie.
 
@@ -295,16 +295,16 @@ Předmětový sklon **není** ukazatel k zobrazení, je to prověrka. Neříká,
 
 Nezobrazuje se u oborů s talentovou zkouškou (`talentova_zkouska`): uměleckých oborů skupiny 82 a gymnázií se sportovní přípravou 79-42. Místo ní stojí věta, že o přijetí rozhoduje i talentová zkouška, o které údaje nemáme. U sportovních gymnázií je medián 0,78 proti 0,976 u ostatních.
 
-U záznamů sdílených víc zaměřeními nebo nabídkami (`vice_zamereni`) je medián 0,925 a nad čísly stojí upozornění. Příznak se počítá z vyššího z počtů zaměření v katalogu 2025 a nabídek téže kombinace školy a oboru v roce 2026.
+U záznamů sdílených víc zaměřeními nebo nabídkami (`vice_zamereni`) je medián 0,93 a nad čísly stojí upozornění. Příznak se počítá z vyššího z počtů zaměření v katalogu 2025 a nabídek téže kombinace školy a oboru v roce 2026.
 
 ### Pásmo nejistoty
 Rozsah od nejnižšího výsledku mezi přijatými k nejvyššímu mezi nepřijatými kvůli kapacitě. Pole `pasmo_nejistoty`, obsazenost `v_pasmu_nejistoty`, přesné počty uvnitř `pasmo_nejistoty_soutezilo` a `pasmo_nejistoty_prijato`. Věta „z N uchazečů v tomto rozmezí se dostalo M“ smí použít jen přesné počty, nikdy součet pětibodových pásem. Dolní mez se na webu neukazuje u oborů s méně než deseti přijatými, stejně jako nejnižší výsledek mezi přijatými; konstanta `MIN_PRIJATYCH_PRO_HRANICI`.
 
 Uvnitř tohoto rozsahu rozhodovala o přijetí i jiná kritéria než test. Pod ním se loni nedostal nikdo, nad ním se dostali všichni.
 
-Medián podílu soutěžících v pásmu je 26,7 %.
+Medián podílu soutěžících v pásmu je 26,4 %.
 
-Meze se dosazují do vět **každá zvlášť**: pod dolní mezí se nedostal nikdo, nad horní se dostali všichni. U 8,1 % z 1 439 oborů jsou obě meze shodné a platí třetí věta, že přesně s tímto výsledkem se někdo dostal a někdo ne. U 7,8 % je horní mez nižší než dolní a mezi nimi nespadl nikdo.
+Meze se dosazují do vět **každá zvlášť**: pod dolní mezí se nedostal nikdo, nad horní se dostali všichni. U 8,2 % z 1 439 oborů jsou obě meze shodné a platí třetí věta, že přesně s tímto výsledkem se někdo dostal a někdo ne. U 7,8 % je horní mez nižší než dolní a mezi nimi nespadl nikdo.
 
 **Je to popis loňska, ne míra.** Oba konce určuje jediný uchazeč, takže se **nepoužívá k porovnávání oborů ani k řazení**. Šířka pásma je navíc mezi ročníky nestabilní: na 1 171 oborech spárovaných mezi roky 2025 a 2026 korelace 0,718 a medián změny 3 body proti mediánové šířce 6 bodů (na dvojici 2024–2025 to bylo 0,692, 4 body a šířka 7 bodů). Ve verzi 1.4 tu stál ukazatel „překryv u hranice přijetí“, který z těchto dvou hodnot dělal měřítko; při záměně krajních hodnot za devadesátý a desátý percentil se u 41 % oborů obracel verdikt, a proto byl nahrazen mírou *rozhodl test*.
 
@@ -375,7 +375,7 @@ Kolik bodů měl prostřední uchazeč v celé zemi v daném ročníku 1. kola. 
 ### Hustota u hranice
 Podíl soutěžících, jejichž výsledek leží do pěti bodů od nejnižšího přijatého. Pole `hustota_u_hranice`.
 
-Medián je 28,0 %, takže u poloviny oborů se kolem hranice tísní víc než čtvrtina uchazečů a rozhoduje jediný bod. Nízká hodnota znamená, že hranice leží v řídkém místě a jeden bod nic nemění.
+Medián je 27,9 %, takže u poloviny oborů se kolem hranice tísní víc než čtvrtina uchazečů a rozhoduje jediný bod. Nízká hodnota znamená, že hranice leží v řídkém místě a jeden bod nic nemění.
 
 ### Hranice přijetí
 **Nemáme a mít nebudeme.** CERMAT nezveřejňuje, kolik bodů měl poslední přijatý podle kritérií školy, a z průměru se to spočítat nedá. Nejbližší doložený údaj je nejnižší výsledek JPZ mezi přijatými výše, který je dolní mezí, ne hranicí.
