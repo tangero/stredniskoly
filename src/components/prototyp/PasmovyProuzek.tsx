@@ -58,9 +58,11 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
       {p && p.rezim === 'jine' && (
         <>
           <p>
-            {p.podil_jpz_pct !== null
-              ? <>Přijímačky tvořily asi <b>{p.podil_jpz_pct} %</b> bodů. </>
-              : <>Kromě přijímaček škola bodovala i další věci; jejich váhu jsme z PDF nepřečetli celou. </>}
+            {p.chybi_slozky
+              ? <>Kromě přijímaček škola podle PDF bodovala i další věci (například prospěch nebo pohovor), náš přepis je ale nezachytil. </>
+              : p.podil_jpz_pct !== null
+                ? <>Přijímačky tvořily asi <b>{p.podil_jpz_pct} %</b> bodů. </>
+                : <>Kromě přijímaček škola bodovala i další věci; jejich váhu jsme z PDF nepřečetli celou. </>}
             O pořadí proto rozhodoval i zbytek bodů, nejen test.
           </p>
           {p.slozky.length > 0 && (

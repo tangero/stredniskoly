@@ -76,6 +76,8 @@ export interface PrepisKriterii {
   prepis: 'rucni' | 'strojovy';
   /** Nálezy mechanické kontroly; prázdné neznamená ověřeno. */
   nalezy: string[];
+  /** Přepis tvrdil „jen přijímačky“, kontrola Jevem našla i další bodování; složky v přepisu chybí. */
+  chybi_slozky?: boolean;
 }
 
 export interface KriteriaOboru {

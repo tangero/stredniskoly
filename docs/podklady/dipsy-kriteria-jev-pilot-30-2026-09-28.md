@@ -29,3 +29,18 @@ Odpovědi na `uplnost` se rozprostřely mezi 0,05 a 0,87 bez vztahu k verdiktu (
 - Na 30 vzorcích s jedinou chybou tohoto druhu jde o **ukázku, ne měření**. Než se tomu začne věřit, je potřeba víc případů.
 
 Doporučený další krok: pustit `dalsi_body` nad všemi 335 přepisy „jen přijímačky“ a označené (jistota ≥ 0,9) ručně prověřit. Když se potvrdí, zapsat výsledek jako nález do přepisu (prototyp pak u nich řekne, že škola možná boduje i něco dalšího).
+
+## Plošná kontrola 315 oborů „jen přijímačky“ (28. 9. 2026)
+
+Otázka `dalsi_body` nad všemi 315 obory, u nichž strojový přepis tvrdí „jen přijímačky“ (`--jen-jpz`), stála 0,063 USD. Jev odpověděl „ano, boduje i něco dalšího“ u 70 oborů, z toho s jistotou ≥ 0,9 u **29**.
+
+Ověření naslepo proti PDF (dva posuzovatelé, 29 označených + 10 kontrolních s jistotou „ano“ pod 0,1, skupina skrytá):
+
+| Skupina | Škola boduje i něco dalšího | Jen přijímačky | Nejasné |
+|---|---|---|---|
+| Označené Jevem (29) | **29** | 0 | 0 |
+| Kontrolní (10) | 0 | 9 | 1 (PDF bez čitelného textu, potřebuje OCR) |
+
+**Přesnost označení 29/29.** Chyby byly: prospěch ze ZŠ, pohovor nad portfoliem, soutěže, školní zkouška, vyšší váha jednoho předmětu, u nástaveb prospěch ze SŠ; často v dlouhém PDF na pozdější straně nebo v oddíle pro jinou skupinu oborů. Kontrolní skupina neukázala přehlédnutí, deset vzorků ale na odhad úplnosti nestačí; 41 oborů s „ano“ pod jistotou 0,9 zůstává neověřených.
+
+Výsledek je zapsán do `public/kriteria_prijeti_2026.json` (`scripts/build-kriteria-prijeti.py`, práh 0,9): 29 přepisů netvrdí „jen přijímačky“, nesou nález `jev:skola_boduje_i_dalsi` a příznak `chybi_slozky`. Prototyp u nich říká, že škola podle PDF bodovala i další věci, ale přepis je nezachytil. Kandidáti na nový přepis s celým PDF místo vybrané sekce.

@@ -165,8 +165,31 @@ def ze_strojoveho_prepisu() -> dict[str, dict]:
     return vystup
 
 
+# Kontrola Jevem (scripts/dipsy-kriteria-jev-kontrola.py --jen-jpz): u přepisu
+# „jen přijímačky“ se ptá, zda škola neboduje i něco dalšího. Při jistotě ≥ 0,9
+# bylo ručním ověřením 29 z 29 označení správných (docs/podklady/dipsy-kriteria-
+# jev-pilot-30-2026-09-28.md), proto se takový přepis označí a netvrdí „jen JPZ“.
+JEV_PRAH = 0.9
+
+
+def jev_oznaceni() -> set[str]:
+    oznacene = set()
+    for cesta in (BASE / "llm-pilot" / "jev-kontrola").glob("*-jpz.json"):
+        r = json.loads(cesta.read_text(encoding="utf-8"))
+        if r["odpovedi"]["dalsi_body"]["probabilities"].get("ano", 0) >= JEV_PRAH:
+            oznacene.add(r["source_id"])
+    return oznacene
+
+
 def main() -> None:
     prepisy = ze_strojoveho_prepisu()
+    for sid in jev_oznaceni():
+        p = prepisy.get(sid)
+        if p and p["rezim"] == "pouze_jpz":
+            p["rezim"] = "jine"
+            p["podil_jpz_pct"] = None
+            p["nalezy"].append("jev:skola_boduje_i_dalsi")
+            p["chybi_slozky"] = True
     prepisy.update(z_pilotu())  # ruční přepis má přednost
     obory: dict[str, dict] = {}
     for radek in kontrola.pilot.latest_manifest().values():
