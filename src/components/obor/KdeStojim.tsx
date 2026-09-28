@@ -39,7 +39,11 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
     return (
       <p className="text-sm text-slate-600">
         Podle kritérií {k.rok}, tedy pravidel, podle kterých škola v roce {k.rok} řadila uchazeče, škola přijímala
-        podle jednotné přijímací zkoušky. {noveRizeni}
+        podle jednotné přijímací zkoušky. {noveRizeni}{' '}
+        <span className="text-amber-800">
+          {p.prepis === 'strojovy' ? 'Přepsal to z PDF počítač a může obsahovat chybu.' : 'Přepsáno ručně z PDF a může obsahovat chybu.'}
+          {p.nalezy.length > 0 && ` ${NALEZ_TEXT}`} Ověřte si to v kritériích školy.
+        </span>
       </p>
     );
   }

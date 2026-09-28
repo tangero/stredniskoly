@@ -155,9 +155,18 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
   // Pozice a kritéria mají klíč REDIZO_KKOV bez zaměření, stejně jako pásma.
   const klicPasem = programId.split('_').slice(0, 2).join('_');
   const druh = druhTestu(klicPasem.split('_')[1] ?? '');
-  const kdeStojim: ProfilOboruData['kdeStojim'] = rokPasem && pasmaData
+  // Bez vypočteného pásma nejistoty by proužek chybějící horní mez četl jako
+  // „nad minimem se dostali všichni“, což data nemusí nést; zůstane histogram.
+  const kdeStojim: ProfilOboruData['kdeStojim'] = rokPasem && pasmaData?.pasmo_nejistoty
     ? await Promise.all([nactiPrevodDruhu(druh), poziceOboru(klicPasem), kriteriaOboru(klicPasem)])
-      .then(([prevod, pozice, kriteria]) => ({ druh, prevod, pozice, kriteria }))
+      .then(([prevod, pozice, kriteria]) => ({
+        druh,
+        prevod,
+        // Pořadí jen tam, kde sedí na počet soutěžících v pásmech; jinak by věta
+        // o pořadí mluvila o jiném celku než věta o pásmu (issue #183).
+        pozice: pozice && Object.values(pozice).reduce((a, n) => a + n, 0) === pasmaData.soutezicich ? pozice : null,
+        kriteria,
+      }))
     : null;
 
   // Předchozí ročník pásem se odvozuje od zobrazeného, ne z napsaného letopočtu;
