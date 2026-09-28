@@ -8,8 +8,12 @@ funkce, statické soubory, ISR, domény a cron z `vercel.json`.
 ## Jednorázové zprovoznění
 
 V repository secrets nastavte `VERCEL_TOKEN`, `VERCEL_ORG_ID` a
-`VERCEL_PROJECT_ID`. Token omezte přímo na projekt `stredniskoly`. Pro tento
-projekt je na výslovné přání správce vytvořen bez expirace. Identifikátory se
+`VERCEL_PROJECT_ID`. CLI 60.1.3 při `vercel pull` odmítá projektový token;
+pro tento postup je potřeba token týmu `tangero's projects`. Jde o známou
+[chybu CLI](https://github.com/vercel/vercel/issues/17506), reprodukovanou i při
+tomto přechodu. Týmový token umožňuje přístup i k dalším projektům týmu, proto
+jeho použití musí schválit správce. Požadovaná platnost je bez expirace.
+Identifikátory se
 ověřují proti projektu stredniskoly; skript odmítne jiný cíl. Secrets ani adresář
 `.vercel` se nezveřejňují jako artefakt nebo cache.
 
