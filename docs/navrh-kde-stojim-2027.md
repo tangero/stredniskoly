@@ -73,3 +73,4 @@ Prošel jsem [zdroje dat](zdroje-dat.md) včetně oddílu 3. Návrh **nepřidáv
 - Data jen pro obor: převodní tabulka jen druhu testu oboru, pořadí a kritéria podle klíče REDIZO_KKOV. Stránka zůstává ISR (12 h).
 - Výsledky testů v `localStorage` pod klíčem `kde-stojim:testy:v1:{druh}`: nic osobního, platí pro všechny obory se stejným testem; tlačítko „Smazat uložené výsledky“. Čtou se až po hydrataci.
 - Blok kritérií se ukáže jen tam, kde podle přepisu nerozhodovala jen JPZ (včetně vážení předmětů a přepisů, kde kontrola našla chybějící složky). Bez přepisu se neukazuje nic.
+- Pojistky z Codex review: proužek se nezapne u oboru bez vypočteného pásma nejistoty (zůstane histogram) ani tam, kde se součet v pořadí neshoduje se `soutezicich` v pásmech. Do sloučení PR #184 (issue #183) jde o 114 oborů. Kritéria se berou podle zaměření stránky. „Jen JPZ“ se hlásí, jen když to platí pro všechna zaměření, a i tehdy s výhradou k přepisu. Uložené testy mají v klíči ročník testu.
