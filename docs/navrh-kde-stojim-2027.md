@@ -74,3 +74,9 @@ Prošel jsem [zdroje dat](zdroje-dat.md) včetně oddílu 3. Návrh **nepřidáv
 - Výsledky testů v `localStorage` pod klíčem `kde-stojim:testy:v1:{druh}`: nic osobního, platí pro všechny obory se stejným testem; tlačítko „Smazat uložené výsledky“. Čtou se až po hydrataci.
 - Blok kritérií se ukáže jen tam, kde podle přepisu nerozhodovala jen JPZ (včetně vážení předmětů a přepisů, kde kontrola našla chybějící složky). Bez přepisu se neukazuje nic.
 - Pojistky z Codex review: proužek se nezapne u oboru bez vypočteného pásma nejistoty (zůstane histogram) ani tam, kde se součet v pořadí neshoduje se `soutezicich` v pásmech. Do sloučení PR #184 (issue #183) jde o 114 oborů. Kritéria se berou podle zaměření stránky. „Jen JPZ“ se hlásí, jen když to platí pro všechna zaměření, a i tehdy s výhradou k přepisu. Uložené testy mají v klíči ročník testu.
+
+## 7. Úpravy po nasazení (28. 9. 2026)
+
+1. **Návod k testu TAU.** Doporučený je 1. řádný termín; ostatní termíny roku převodu se převádějí také. Přímý odkaz `vyber.php?trida=…&predmet=…` bez relace prohlížeče vrací prázdnou stránku (TAU drží výběr v session). Web proto odkazuje na `https://tau.cermat.cz/predmet_prijimacky.php` a rozbalovací okno vede krok za krokem: ročník podle druhu oboru (9., 7., 5.), předmět, „celý test“, rok převodních tabulek, 1. řádný termín, pak matematika. Rok testu se bere z dat převodu.
+2. **Kde stojím na začátku otázky 1.** Box přes celou šířku stránky nad odpovědí a důkazy otázky „Jak těžké je se sem dostat“, ne jako rozbalovací důkaz; je to hlavní výhoda stránky.
+3. **Extra body.** Blok kritérií je zvýrazněný; kde škola v roce kritérií bodovala i něco jiného než jednotnou přijímací zkoušku, nese štítek „O přijetí rozhodují i extra body“ a vysvětlení pojmu (slovník pojmů 1.27). Vyšší váha jednoho předmětu extra body nejsou, má vlastní větu.

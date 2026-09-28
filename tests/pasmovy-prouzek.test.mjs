@@ -224,3 +224,16 @@ test('tabulky pro jiný cílový rok než pásma se nepoužijí', () => {
   assert.match(html, /Převodní tabulky jsou spočítané pro rok 2026, pásma jsou z roku 2027/);
   assert.doesNotMatch(html, /bodů roku 2027/);
 });
+
+test('extra body: odečet za průměr ano, samotná sankce za chování ne', () => {
+  const { extraBody } = zavadec()('src/components/obor/KdeStojim.tsx');
+  const prepis = (slozky) => ({ rezim: 'jine', chybi_slozky: false, jpz_navic: [], slozky: slozky.map(nazev => ({ nazev, max: null })) });
+  // 600170900_39-41-L/01: prospěch hodnocený odečtem
+  assert.equal(extraBody(prepis(['odečet za průměr 2. pololetí 8. třídy', 'odečet za známku chvalitebné z chování'])), true);
+  // 600012514_65-42-M/01: jediná složka je sankce za chování
+  assert.equal(extraBody(prepis(['snížený stupeň z chování'])), false);
+  assert.equal(extraBody(prepis(['studijní průměr'])), true);
+  // 600020665_53-43-M/01: prospěch „bez známky z chování“ není sankce
+  assert.equal(extraBody(prepis(['průměrný prospěch (bez známky chování) 1. pololetí 9. ročníku'])), true);
+  assert.equal(extraBody(prepis(['odečet za chování uspokojivé', 'penalizace za sníženou známku z chování'])), false);
+});
