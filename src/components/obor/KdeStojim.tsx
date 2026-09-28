@@ -137,14 +137,14 @@ function NavodTau({ druh, rokTestu, termin }: { druh: DruhTestu; rokTestu: numbe
     <details className="group rounded-xl border border-blue-200 bg-blue-50/60 text-sm text-slate-700">
       <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 font-semibold text-[#16325c] [&::-webkit-details-marker]:hidden">
         <span aria-hidden="true" className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#0074e4] text-xs text-white">i</span>
-        Který test udělat: TAU {rokTestu}, {trida}. ročník, {termin}
+        Který test udělat: doporučujeme TAU {rokTestu}, {trida}. ročník, {termin}
         <span aria-hidden="true" className="ml-auto text-lg leading-none text-[#0074e4] transition-transform group-open:rotate-45">+</span>
       </summary>
       <div className="space-y-2 px-4 pb-4">
         <p>
-          Výsledek umíme přepočítat na body roku zobrazených pásem jen u jednoho konkrétního testu: celého testu
-          z roku {rokTestu}, {termin}. U něj víme, jak ho napsali skuteční uchazeči, a podle toho body převedeme.
-          Jiný test přepočítat a porovnat neumíme.
+          Výsledek umíme přepočítat na body roku zobrazených pásem jen u celých testů z roku {rokTestu}: u nich
+          víme, jak je napsali skuteční uchazeči, a podle toho body převedeme. Testy z jiných let přepočítat
+          a porovnat neumíme. Nejpřesnější je {termin}, proto ho doporučujeme jako první.
         </p>
         <ol className="list-decimal space-y-1 pl-5">
           <li>
@@ -157,7 +157,8 @@ function NavodTau({ druh, rokTestu, termin }: { druh: DruhTestu; rokTestu: numbe
           <li>Obě čísla zadejte sem a u testu nechte <b>TAU {rokTestu}, {termin}</b>.</li>
         </ol>
         <p className="text-slate-500">
-          Další termíny téhož roku převést umíme také, náhradní ale méně přesně. Víc testů dá přesnější obrázek.
+          Převést umíme i ostatní termíny roku {rokTestu} (u testu je pak vyberte), náhradní ale méně přesně.
+          Víc testů dá přesnější obrázek.
         </p>
       </div>
     </details>
