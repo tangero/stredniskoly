@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.37 · 28. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.38 · 28. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -66,7 +66,7 @@ Zdroj jsou údaje o jednotlivých uchazečích za rok 2025 (`PZ2025_kolo1_uchaze
 Tři meze, které se musí uvést vždy:
 
 1. **Rok 2025, finální revize.** Soubor je spočítaný z finální revize roku 2025, kterou CERMAT zveřejnil 20. 5. 2026 (PR #84); do té doby z předběžné verze s přihláškami k 13. 5. 2025. Předběžná data za rok 2026 vyšla současně a web je zatím nepřevzal; stav vede registr `public/stav_datovych_sad.json` u sady `cermat-uchazeci-kolo1`. Do 13. 9. 2026 tu stálo, že data za rok 2026 neexistují, což nebyla pravda. Souběh zatím web nezobrazuje.
-2. **Bez zaměření.** Soubor nese jen REDIZO a KKOV, takže souběh platí za obor školy jako celek, ne za jednotlivé zaměření.
+2. **Bez zaměření.** Soubor nese jen REDIZO a KKOV, takže souběh platí za obor školy jako celek, ne za jednotlivé zaměření. Uchazeč s přihláškami do více zaměření téhož oboru se u oboru i u dvojice oborů počítá jednou (od verze 1.38).
 3. **Nezveřejňuje se pod 10 uchazeči** o obor, aby nešlo dopočítat jednotlivce.
 
 Do souboru se zapisuje šest nejčastějších souběhů. Názvy oborů bez jednotné zkoušky, tedy hlavně učebních, doplňuje rejstřík škol MŠMT.
@@ -112,19 +112,19 @@ Pole `conditions_not_met`. Odlišné od předchozího: tady nerozhodovala kapaci
 
 **Co to znamená.** Podle [metodiky MŠMT k přijímacímu řízení 2026/2027](https://msmt.gov.cz/media/wp-content/uploads/2026/08/Metodika_prijimaci-rizeni_2026-2027.pdf) (oddíl o kritériích přijímání a oddíl Vyhodnocení výsledků prvního kola) smějí kritéria uchazeče vyloučit jen tam, kde to umožňuje předpis: nesplněná **hranice úspěšnosti** (v jednotné zkoušce, ve školní nebo talentové zkoušce, nebo v celkovém hodnocení), zdravotní způsobilost, doklady k pobytu, nedokončené předchozí vzdělávání. Takový uchazeč jde do seznamu bez pořadí s příznakem „nesplnil kritéria“. Kdo na jednotnou zkoušku nepřišel, dostane 0 bodů a mezi nesplněné podmínky se **nepočítá**. Nejde tedy o chybu v přihlášce; nedoložený doklad se podle metodiky projeví jen v hodnocení.
 
-Na stránce se neříká „nesplnili podmínky“, ale „nedosáhli požadavku školy“, a kde to jde, jakého (odvozená hranice úspěšnosti). V roce 2026 šlo o 41 763 ze 424 353 přihlášek, 9,8 %; u 10 859 z nich uchazeč výsledek jednotné zkoušky nemá (`docs/podklady/rozbor-podminek-a-poradi-2026.json`).
+Na stránce se neříká „nesplnili podmínky“, ale „nedosáhli požadavku školy“, a kde to jde, jakého (odvozená hranice úspěšnosti). V roce 2026 šlo o 41 763 ze 424 353 přihlášek, 9,8 %; u 10 730 oborových záznamů (přihlášky jednoho uchazeče do více zaměření téhož oboru sloučené) uchazeč výsledek jednotné zkoušky nemá (`docs/podklady/rozbor-podminek-a-poradi-2026.json`).
 
 ### Odvozená hranice úspěšnosti
 Nejnižší výsledek jednotné zkoušky, pod kterým v datech uchazečů leží všichni, kdo nesplnili podmínky, a nad kterým všichni soutěžící. Zkouší se součet bodů a slabší z obou testů. Pole `odvozena_hranice` s typem `soucet`, `slabsi_test`, nebo `nevysvetleno_vysledkem_jpz`. Počítá `scripts/rozbor-podminek-a-poradi.py`.
 
-Počítá se jen u oborů s aspoň pěti nesplněnými s výsledkem a pěti soutěžícími. V roce 2026 z 1 156 takových oborů odpovídá hranici ve slabším testu 286, v součtu 187 a výsledkem zkoušky se nevysvětlí 683 (rozhodovala školní zkouška, prospěch nebo jiné kritérium).
+Počítá se jen u oborů s aspoň pěti nesplněnými s výsledkem a pěti soutěžícími. V roce 2026 z 1 151 takových oborů odpovídá hranici ve slabším testu 286, v součtu 187 a výsledkem zkoušky se nevysvětlí 678 (rozhodovala školní zkouška, prospěch nebo jiné kritérium).
 
 Ověřeno proti kritériím školy: osmileté gymnázium J. S. Machara stanovilo pro rok 2026 minimum 20 bodů v každém testu; data dávají nejvýše 19 bodů u nesplněných a nejméně 20 u soutěžících.
 
 **Je to odhad z jednoho ročníku, ne vyhlášené kritérium.** Na stránce se uvádí slovy „podle výsledků to odpovídá minimu X bodů ve slabším testu“ a vždy s odkazem na kritéria školy. Hranice se může mezi roky změnit; nová kritéria vyhlašuje škola.
 
 ### Výsledek uchazečů o obor
-Kam se v 1. kole dostali všichni, kdo měli obor na přihlášce: sem, na obor výš na přihlášce, na obor níž, nebo nikam. Zdroj: data o uchazečích. Pole `vysledek_uchazecu`.
+Kam se v 1. kole dostali všichni, kdo měli obor na přihlášce: sem, na obor výš na přihlášce, na obor níž, nebo nikam. Zdroj: data o uchazečích. Pole `vysledek_uchazecu`. Přijetí do kteréhokoli zaměření oboru je „sem“; výš a níž se porovnává přihláška, na kterou byl uchazeč přijat, s jeho první přihláškou na tento obor.
 
 Osmileté gymnázium J. S. Machara 2026: z 233 uchazečů 30 sem, 37 výš, 25 níž, **141 nikam**. Čtyřleté gymnázium téže školy: z 94 uchazečů nikam 4.
 
@@ -654,6 +654,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.38 | **Sloučení zaměření dotaženo** (28. 9. 2026, oponentura PR #184). Výsledek uchazeče o obor se porovnává s přihláškou, na kterou byl skutečně přijat, ne s první přihláškou na obor: uchazeč odmítnutý na A, pak na B a přijatý na A ze třetí přihlášky se u B dřív počítal jako přijatý výš (31 případů 2026, 27 v 2025). Vzdání se přijetí (jen 2025) je samostatný výsledek, vedlejší zaměření ho nepřepíše na nesplněné podmínky ani přijetí výš. Souběžné přihlášky počítají uchazeče i dvojici oborů jednou (600004961_79-41-K/61 v roce 2026: 1 052 uchazečů místo 1 230). Odvozená hranice úspěšnosti 2026: 1 151 oborů místo 1 156, nevysvětleno výsledkem zkoušky 678 místo 683. Slučování je společné v `scripts/slouceni_prihlasek.py`. |
 | 1.37 | **Pásma přijetí počítají uchazeče u oboru jednou** (28. 9. 2026, issue #183). Klíč oboru nenese zaměření, takže uchazeč s přihláškami do dvou zaměření téhož oboru se dřív započetl dvakrát: `soutezicich`, nevešli se, přijati výš na přihlášce, rozdělení po pásmech, pásmo nejistoty a *rozhodl test* byly zkreslené u 212 oborů roku 2026 a 208 roku 2025 (například 600004961_79-41-K/61: 726 soutěžících místo 821). Počty přijatých ani nejnižší přijatý se nezměnily. U více přihlášek téhož uchazeče k jednomu oboru rozhoduje nejlepší výsledek (přijat, nevešel se, přijat výš, nesplnil). |
 | 1.36 | **Pořadí mezi soutěžícími** a **Podíl přijímaček na bodování** (27. 9. 2026, oddíl 2). První z rozdělení výsledků soutěžících po oborech, druhý z pracovního přepisu kritérií 2026 z PDF v DiPSy (2 814 oborů po plošném přepisu 28. 9. 2026), jen v prototypu pásmového proužku a s výhradou, že přepis může obsahovat chybu. |
 | 1.35 | **Převedený výsledek testu** (27. 9. 2026, oddíl 2). Body z cvičného testu TAU převedené přes pořadí mezi řešiteli daného termínu na body roku zobrazených pásem. Zdroj položková data JPZ 2024, sada `cermat-prevod-testu`. Náhradní termíny označené jako nespolehlivé. |

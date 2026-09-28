@@ -18,6 +18,7 @@ import openpyxl
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from nazvy_oboru import nazvy_oboru  # noqa: E402
+from slouceni_prihlasek import volby_uchazece  # noqa: E402
 
 KOREN = Path(__file__).resolve().parent.parent
 def zobrazeny_rok() -> int:
@@ -47,18 +48,15 @@ def nacti_volby() -> tuple[collections.Counter, collections.Counter, dict]:
     soubeh: dict[str, collections.Counter] = collections.defaultdict(collections.Counter)
 
     for radek in it:
-        volby = []
-        for k in range(1, MAX_VOLEB + 1):
-            redizo = radek[ix[f"ss{k}_redizo"]]
-            kkov = radek[ix[f"ss{k}_kkov"]]
-            if redizo and kkov:
-                volby.append(f"{redizo}_{kkov}")
-        for poz, klic in enumerate(volby):
-            uchazecu[klic] += 1
-            poradi[klic][poz] += 1
-            for jiny in volby:
-                if jiny != klic:
-                    soubeh[klic][jiny] += 1
+        # Více zaměření téhož oboru je jeden obor: uchazeč i dvojice oborů se
+        # počítají jednou, pořadí podle první přihlášky na obor (issue #183).
+        volby = volby_uchazece(radek, ix)
+        for v in volby:
+            uchazecu[v["obor"]] += 1
+            poradi[v["obor"]][v["pozice"]] += 1
+            for w in volby:
+                if w is not v:
+                    soubeh[v["obor"]][w["obor"]] += 1
     return uchazecu, poradi, soubeh
 
 

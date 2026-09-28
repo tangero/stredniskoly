@@ -17,9 +17,13 @@ from __future__ import annotations
 import collections
 import json
 import statistics
+import sys
 from pathlib import Path
 
 import openpyxl
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from slouceni_prihlasek import VZDAL_SE, prijat, volby_uchazece  # noqa: E402,F401
 
 KOREN = Path(__file__).resolve().parent.parent
 def zobrazeny_rok() -> int:
@@ -52,13 +56,7 @@ TALENTOVE_SKUPINY = ("82-", "79-42")
 KATEGORIE_S_JPZ = ("K", "L", "M")
 
 
-def prijat(hodnota) -> bool:
-    """Příznak přijetí: 1 = přijat a zařazen. CERMAT ho zapisuje jako číslo i jako text, v roce 2024 jako True."""
-    return str(hodnota).strip() in ("1", "True", "true")
-
-
-# Pořadí výsledků u jednoho oboru: přijat (0) je nejlepší.
-PORADI_DUVODU = {"pro_nedostacujici_kapacitu": 1, "prijat_na_vyssi_prioritu": 2, "pro_nesplneni_podminek": 3}
+# Výsledek oboru po sloučení přihlášek (0 = přijat) na skupinu v rozdělení.
 SKUPINA_DUVODU = {1: "nevesli_se", 2: "vyssi_priorita", 3: "nesplnili"}
 
 
@@ -88,23 +86,11 @@ def nacti_uchazece() -> tuple[dict[str, dict[str, list[float]]], list[float]]:
         cj, ma = radek[ix["c_procentni_skor"]], radek[ix["m_procentni_skor"]]
         predmety = (float(cj) / 2, float(ma) / 2) if cj is not None and ma is not None else None
         # Klíč oboru nenese zaměření: uchazeč s přihláškami do dvou zaměření
-        # téhož oboru by se jinak započetl dvakrát (issue #183, 117 oborů
-        # v roce 2026). U oboru se počítá jednou, s nejlepším výsledkem.
-        stav_oboru: dict[str, int] = {}
-        for k in range(1, 6):
-            redizo = radek[ix[f"ss{k}_redizo"]]
-            kkov = radek[ix[f"ss{k}_kkov"]]
-            if not redizo or not kkov:
-                continue
-            duvod = radek[ix[f"ss{k}_duvod_neprijeti"]]
-            if prijat(radek[ix[f"ss{k}_prijat"]]):
-                stav = 0
-            elif duvod in PORADI_DUVODU:
-                stav = PORADI_DUVODU[duvod]
-            else:
-                continue
-            klic = f"{redizo}_{kkov}"
-            stav_oboru[klic] = min(stav, stav_oboru.get(klic, stav))
+        # téhož oboru se u oboru počítá jednou (issue #183), sloučení je
+        # společné se souvisejícími skripty. Vzdání se přijetí a neznámý důvod
+        # se do pásem nepočítají.
+        stav_oboru = {v["obor"]: v["stav"] for v in volby_uchazece(radek, ix)
+                      if v["stav"] is not None and v["stav"] != VZDAL_SE}
         for klic, stav in stav_oboru.items():
             o = obory[klic]
             if stav == 0:

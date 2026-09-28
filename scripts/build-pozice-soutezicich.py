@@ -31,34 +31,14 @@ MIN_SOUTEZICICH = pasma.MIN_PRIJATYCH
 
 
 def soutezici_po_oborech() -> dict[str, list[float]]:
-    """Výsledky soutěžících uchazečů po oborech, **každý uchazeč jednou**.
+    """Výsledky soutěžících uchazečů po oborech, každý uchazeč u oboru jednou.
 
-    Uchazeč přihlášený do dvou zaměření téhož oboru (stejné REDIZO_KKOV) má
-    dvě přihlášky; sdílená funkce pásem ho započte dvakrát (code review PR #182,
-    obor 600004961_79-41-K/61: 821 místo 726). Tady se přihlášky jednoho
-    uchazeče ke stejnému oboru slučují. Soutěžící = přijat, nebo nepřijat pro
-    nedostačující kapacitu.
+    Stejná množina jako `soutezicich` v pásmech: přijatí a nepřijatí pro
+    nedostačující kapacitu, přihlášky do více zaměření téhož oboru sloučené
+    (scripts/slouceni_prihlasek.py, issue #183).
     """
-    import openpyxl
-    wb = openpyxl.load_workbook(pasma.ZDROJ, read_only=True)
-    it = wb.worksheets[0].iter_rows(values_only=True)
-    ix = {n: i for i, n in enumerate(next(it))}
-    obory: dict[str, list[float]] = collections.defaultdict(list)
-    for r in it:
-        skor = r[ix["c_m_procentni_skor"]]
-        if skor is None:
-            continue
-        body = float(skor) / 2
-        klice = set()
-        for k in range(1, 6):
-            redizo, kkov = r[ix[f"ss{k}_redizo"]], r[ix[f"ss{k}_kkov"]]
-            if not redizo or not kkov:
-                continue
-            if pasma.prijat(r[ix[f"ss{k}_prijat"]]) or r[ix[f"ss{k}_duvod_neprijeti"]] == "pro_nedostacujici_kapacitu":
-                klice.add(f"{redizo}_{kkov}")
-        for klic in klice:
-            obory[klic].append(body)
-    return obory
+    obory, _ = pasma.nacti_uchazece()
+    return {k: o["prijati"] + o["nevesli_se"] for k, o in obory.items()}
 
 
 def main() -> None:
