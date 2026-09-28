@@ -4,6 +4,8 @@ export interface School {
   kod_oboru: string;
   nazev: string;
   nazev_display?: string;
+  /** Adresa stránky oboru (bez /skola/) ze sdílené mapy; jen ve vyhledávání. */
+  adresa_stranky?: string;
   obor: string;
   zamereni?: string;
   obec: string;

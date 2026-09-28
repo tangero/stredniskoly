@@ -130,6 +130,19 @@ export async function getAllSchoolsForSearch(): Promise<School[]> {
     }
   }
 
+  // Adresa stránky oboru ze sdílené mapy, stejně jako ji rozpoznává getSchoolPageType
+  // (kanonický název první školy s REDIZO, přípony -4lete/-8lete u shodných názvů).
+  const podleRedizo = new Map<string, School[]>();
+  for (const s of result) {
+    const redizo = s.id.split('_')[0];
+    if (!podleRedizo.has(redizo)) podleRedizo.set(redizo, []);
+    podleRedizo.get(redizo)!.push(s);
+  }
+  for (const [redizo, nabidky] of podleRedizo) {
+    const mapa = adresySkolyMapa(redizo, nabidky[0].nazev, nabidky);
+    for (const [adresa, n] of mapa) (n as School).adresa_stranky = adresa;
+  }
+
   searchSchoolsCache = result;
   return result;
 }
@@ -279,6 +292,10 @@ export async function getSchoolPageType(slug: string): Promise<{
     // Zkusit standardní slug bez délky studia
     const oborSlug = `${redizo}-${createSlug(school.nazev, school.obor)}`;
     if (slug === oborSlug) {
+      // Adresa bez délky studia u dvou nabídek téhož názvu bez zaměření nepatří žádné z nich
+      // (mapa jim dává -4lete a -8lete); dřív by vybrala první a potichu změnila význam.
+      const bezZamereni = programs.filter(p => !p.zamereni && p.obor === school.obor);
+      if (bezZamereni.length > 1) return misto(bezZamereni);
       // Najít odpovídající program (bez zaměření)
       const program = programs.find(p => !p.zamereni && p.obor === school.obor);
       if (program) return { type: 'program', redizo, school, program };
