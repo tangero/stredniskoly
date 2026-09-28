@@ -47,10 +47,10 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
       ) : null}
       {p && p.jpz_navic.length > 0 && (
         <>
-          <p>Přijímačky ale nepočítala prostým součtem, takže pořadí se od součtu na proužku může lišit:</p>
+          <p>Přijímačky ale podle PDF nepočítala prostým součtem, takže pořadí se od součtu na proužku může lišit (podrobnosti v kritériích školy):</p>
           <ul className="list-disc space-y-0.5 pl-5">
             {p.jpz_navic.map((x, i) => (
-              <li key={i}>{x.nazev}{x.max === null ? '' : x.vaha ? `: ${x.max} bodů z celku přijímaček` : `: až ${x.max} bodů navíc`}</li>
+              <li key={i}>{x.nazev}</li>
             ))}
           </ul>
         </>

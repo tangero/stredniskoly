@@ -48,22 +48,22 @@ def je_jpz(nazev: str) -> bool:
 
 
 def rozdel_slozky(slozky: list[dict], jpz: dict, jpz_max: float | None) -> tuple[list[dict], list[dict]]:
-    """Rozdělí složky na další kritéria a body navíc z přijímaček.
+    """Rozdělí složky na další kritéria a na přijímačky zapsané jako složka.
 
-    Složka JPZ s maximem shodným s češtinou, matematikou nebo celou JPZ jen
-    opakuje přijímačky a vypouští se. Jiné maximum je vážení (body navíc).
+    Přijímačky mezi složkami mohou znamenat bonus (matematika × 0,5 navíc),
+    přepočtený celek (0,7 × JPZ), rozpis na části nebo váhu pořadí (čeština
+    0,6 a matematika 0,4). Význam jejich čísel z přepisu spolehlivě neurčíme
+    (code review PR #182, kola 6 a 7), proto se jen odliší od dalších kritérií
+    a na webu se ukážou bez čísel. Vypustí se jen část, která doslova opakuje
+    maximum češtiny, matematiky nebo celé JPZ.
     """
     opakovani = {v for v in (jpz.get("cjl_max"), jpz.get("mat_max"), jpz_max) if v}
     dalsi = [s for s in slozky if not je_jpz(s["nazev"])]
-    jpz_slozky = [s for s in slozky if je_jpz(s["nazev"]) and s.get("max") is not None]
-    # Rozpis celé JPZ na části se součtem = celek: stejné části (150 + 150) jen
-    # opakují celek, různé části (čeština 60 + matematika 40) jsou vážení předmětů.
-    if jpz_max and jpz_slozky and abs(sum(s["max"] for s in jpz_slozky) - jpz_max) < 0.01:
-        if len({s["max"] for s in jpz_slozky}) > 1:
-            return dalsi, [{**s, "vaha": True} for s in jpz_slozky]
-        return dalsi, []
-    navic = [s for s in jpz_slozky if s["max"] not in opakovani]
-    return dalsi, navic
+    jpz_slozky = [s for s in slozky if je_jpz(s["nazev"])]
+    stejne = len({s.get("max") for s in jpz_slozky}) == 1
+    if jpz_slozky and stejne and jpz_max and abs(sum(s.get("max") or 0 for s in jpz_slozky) - jpz_max) < 0.01:
+        return dalsi, []  # stejné části, součet = celek: jen rozpis celku
+    return dalsi, [{"nazev": s["nazev"], "max": None} for s in jpz_slozky if s.get("max") not in opakovani]
 
 
 def citelne_minimum(m) -> str:
@@ -171,9 +171,9 @@ def ze_strojoveho_prepisu() -> dict[str, dict]:
         vsechny = [{"nazev": s["nazev"].replace("_", " "), "max": s.get("max_po_prepoctu")} for s in n.get("slozky", [])]
         slozky, jpz_navic = rozdel_slozky(vsechny, jpz, jpz_max)
         if jpz_navic or len(slozky) < len(vsechny):
-            # Deklarovaný podíl počítal i přijímačky zapsané jako složku; přepočítat.
-            jpz_celkem = (jpz_max or 0) + sum(s["max"] for s in jpz_navic if s["max"] > 0)
-            podil = 100 if not slozky else podil_jpz(jpz_celkem, slozky)
+            # Přijímačky zapsané jako složka: podíl z maxim nedopočítávat. Platí jen
+            # výslovně deklarovaný, bez dalších kritérií 100 %, jinak neznámý.
+            podil = jpz.get("deklarovany_podil_pct") or (100 if not slozky else None)
         else:
             podil = 100 if n["rezim"] == "pouze_jpz" else (jpz.get("deklarovany_podil_pct") or podil_jpz(jpz_max, slozky))
         vystup[r["source_id"]] = {
