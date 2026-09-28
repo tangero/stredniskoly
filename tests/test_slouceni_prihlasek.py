@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-from slouceni_prihlasek import PRIJAT, VZDAL_SE, volby_uchazece, vysledek_uchazece  # noqa: E402
+from slouceni_prihlasek import PRIJAT, volby_uchazece, vysledek_uchazece  # noqa: E402
 
 POLE = ("redizo", "kkov", "prijat", "duvod_neprijeti", "forma", "zkraceno")
 IX = {f"ss{k}_{p}": (k - 1) * len(POLE) + i for k in range(1, 6) for i, p in enumerate(POLE)}
@@ -38,11 +38,17 @@ class SlouceniTest(unittest.TestCase):
         self.assertEqual(vysledek_uchazece(v, o["B"]), "niz")
         self.assertEqual(o["A"]["stav"], PRIJAT)
 
-    def test_vzdani_se_neprepise_vedlejsi_zamereni(self):
+    def test_vzdani_se_je_prijeti(self):
+        # Sjednocení s daty 2026, která vzdání se nerozlišují (28. 9. 2026).
         v, o = self.volby(("A", False, "vzdal_se_prijeti"), ("A", False, "pro_nesplneni_podminek"))
-        self.assertEqual(o["A"]["stav"], VZDAL_SE)
+        self.assertEqual(o["A"]["stav"], PRIJAT)
+        self.assertEqual(vysledek_uchazece(v, o["A"]), "sem")
         v, o = self.volby(("A", False, "prijat_na_vyssi_prioritu"), ("A", False, "vzdal_se_prijeti_po_terminu"))
-        self.assertEqual(o["A"]["stav"], VZDAL_SE)
+        self.assertEqual(o["A"]["stav"], PRIJAT)
+        # Vzdání se na druhé přihlášce je přijetí výš pro obor na třetí.
+        v, o = self.volby(("A", False, "pro_nedostacujici_kapacitu"), ("B", False, "vzdal_se_prijeti"), ("C", False, "prijat_na_vyssi_prioritu"))
+        self.assertEqual(vysledek_uchazece(v, o["C"]), "vys")
+        self.assertEqual(vysledek_uchazece(v, o["A"]), "niz")
 
     def test_prijeti_prebije_vzdani_i_neznamy_duvod(self):
         _, o = self.volby(("A", False, "vzdal_se_prijeti"), ("A", True, "NULL"))

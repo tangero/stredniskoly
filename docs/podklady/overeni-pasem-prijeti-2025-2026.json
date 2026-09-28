@@ -10,23 +10,23 @@
   "2026": "PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx"
  },
  "dolni_mez_populace_aspon_10_prijatych_v_obou_letech": {
-  "n": 2311,
-  "korelace": 0.878,
+  "n": 2315,
+  "korelace": 0.879,
   "median_abs_zmeny": 5.0,
-  "podil_zmena_nad_10_pct": 16.5,
-  "podil_zmena_nad_20_pct": 1.7,
-  "prumer_posunu": 1.55,
+  "podil_zmena_nad_10_pct": 16.4,
+  "podil_zmena_nad_20_pct": 1.6,
+  "prumer_posunu": 1.59,
   "median_posunu": 1.0,
-  "posun_dolu_pct": 36.8,
-  "posun_nahoru_pct": 56.0
+  "posun_dolu_pct": 36.6,
+  "posun_nahoru_pct": 56.2
  },
  "dolni_mez_jako_percentil": {
-  "n": 2311,
-  "korelace": 0.882,
-  "median_abs_zmeny": 5.99,
-  "podil_zmena_nad_10_pct": 32.2,
-  "podil_zmena_nad_20_pct": 9.3,
-  "median_posunu_pb": -0.11
+  "n": 2315,
+  "korelace": 0.883,
+  "median_abs_zmeny": 5.98,
+  "podil_zmena_nad_10_pct": 32.1,
+  "podil_zmena_nad_20_pct": 9.2,
+  "median_posunu_pb": -0.07
  },
  "celostatni_median_uchazecu": {
   "2025": 46.0,
@@ -49,7 +49,7 @@
   },
   "sirka_pasma": {
    "n": 1166,
-   "korelace": 0.698,
+   "korelace": 0.697,
    "median_abs_zmeny": 3.0,
    "podil_zmena_nad_10_pct": 10.3,
    "podil_zmena_nad_20_pct": 1.6

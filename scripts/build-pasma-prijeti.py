@@ -23,7 +23,7 @@ from pathlib import Path
 import openpyxl
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from slouceni_prihlasek import VZDAL_SE, prijat, volby_uchazece  # noqa: E402,F401
+from slouceni_prihlasek import prijat, volby_uchazece  # noqa: E402,F401
 
 KOREN = Path(__file__).resolve().parent.parent
 def zobrazeny_rok() -> int:
@@ -87,10 +87,10 @@ def nacti_uchazece() -> tuple[dict[str, dict[str, list[float]]], list[float]]:
         predmety = (float(cj) / 2, float(ma) / 2) if cj is not None and ma is not None else None
         # Klíč oboru nenese zaměření: uchazeč s přihláškami do dvou zaměření
         # téhož oboru se u oboru počítá jednou (issue #183), sloučení je
-        # společné se souvisejícími skripty. Vzdání se přijetí a neznámý důvod
-        # se do pásem nepočítají.
+        # společné se souvisejícími skripty. Vzdání se přijetí je přijetí,
+        # neznámý důvod se do pásem nepočítá.
         stav_oboru = {v["obor"]: v["stav"] for v in volby_uchazece(radek, ix)
-                      if v["stav"] is not None and v["stav"] != VZDAL_SE}
+                      if v["stav"] is not None}
         for klic, stav in stav_oboru.items():
             o = obory[klic]
             if stav == 0:

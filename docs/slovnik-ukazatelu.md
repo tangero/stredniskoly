@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.41 · 28. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.42 · 28. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -221,16 +221,16 @@ Dvě skupiny do něj **nepatří** a při zobrazení se uvádějí zvlášť:
 
 U osmiletého gymnázia J. S. Machara bylo v roce 2025 soutěžících 67, ale nesplnilo podmínky 107 dalších uchazečů. Podíl přijatých ze soutěžících by bez této poznámky byl zavádějící.
 
-**Počet soutěžících v pásmech se od souhrnů 1. kola liší a má se lišit.** Pásma, *Pořadí mezi soutěžícími* a kontext přihlášek počítají soutěžící z dat uchazečů (`soutezicich`), *Podíl přijatých ze soutěžících* z oficiálních souhrnů CERMAT za nabídku. Po omezení na denní nezkrácené studium (verze 1.40) se shoduje 1 677 z 2 830 oborů roku 2026 a 1 454 z 2 789 roku 2025. Součet absolutních rozdílů 2 762 osob (2026) a 4 153 (2025) se rozkládá takto (`docs/podklady/shoda-soutezicich-se-souhrny-2026-09-28.md`):
+**Počet soutěžících v pásmech se od souhrnů 1. kola liší a má se lišit.** Pásma, *Pořadí mezi soutěžícími* a kontext přihlášek počítají soutěžící z dat uchazečů (`soutezicich`), *Podíl přijatých ze soutěžících* z oficiálních souhrnů CERMAT za nabídku. Po omezení na denní nezkrácené studium (verze 1.40) se shoduje 1 677 z 2 830 oborů roku 2026 a 1 287 z 2 797 roku 2025. Součet absolutních rozdílů 2 762 osob (2026) a 4 263 (2025) se rozkládá takto (`docs/podklady/shoda-soutezicich-se-souhrny-2026-09-28.md`):
 
 | Příčina | 2026 osob / oborů | 2025 osob / oborů | Povaha |
 |---|---|---|---|
-| Přihlášky uchazeče bez výsledku jednotné zkoušky (`c_m_procentni_skor` prázdné) | 1 243 / 725 | 3 133 / 1 280 | definice: pásma potřebují výsledek, souhrn počítá všechny |
-| Vzdal se přijetí: souhrn 2026 ho vede ve sloupci „vzdal se“, data uchazečů 2026 důvod nemají a vedou ho jako přijatého | 1 004 / 631 | — | zdroj: data uchazečů 2026 vzdání se nerozlišují; v roce 2025 se vzdání se do pásem nepočítá |
+| Přihlášky uchazeče bez výsledku jednotné zkoušky (`c_m_procentni_skor` prázdné) | 1 243 / 725 | 3 168 / 1 295 | definice: pásma potřebují výsledek, souhrn počítá všechny |
+| Vzdal se přijetí: souhrn ho vede ve sloupci „vzdal se“, pásma ho v obou ročnících počítají jako přijetí | 1 004 / 631 | 948 / 599 | pravidlo: data uchazečů 2026 vzdání se nerozlišují a vedou ho jako přijetí; data 2025 ho rozlišují (`vzdal_se_prijeti`, `vzdal_se_prijeti_po_terminu`) a počítá se také jako přijetí, aby ročníky byly srovnatelné (verze 1.42) |
 | Víc přihlášek téhož uchazeče na obor (zaměření, den a den2) | 898 / 100 | 929 / 113 | definice: pásma počítají osoby (verze 1.37), souhrn přihlášky |
-| Nevysvětlený zbytek | 147 / 73 | 91 / 48 | nesoulad dvou souborů CERMAT (například 600015629_78-42-M/08: data uchazečů 14 přijatých, souhrn 15) |
+| Nevysvětlený zbytek | 147 / 73 | 98 / 54 | nesoulad dvou souborů CERMAT (například 600015629_78-42-M/08: data uchazečů 14 přijatých, souhrn 15) |
 
-Co z toho plyne: *Podíl přijatých ze soutěžících* a počty soutěžících v pásmech se na jedné stránce nesmí vydávat za tutéž veličinu. Mezi ročníky 2025 a 2026 není srovnatelný počet přijatých v pásmech u oborů, kde se někdo vzdal přijetí: v roce 2026 je v přijatých, v roce 2025 ne.
+Co z toho plyne: *Podíl přijatých ze soutěžících* a počty soutěžících v pásmech se na jedné stránce nesmí vydávat za tutéž veličinu. Uchazeč, který se přijetí vzdal, je v pásmech obou ročníků mezi přijatými: v roce 2026 jinak nejde (data ho nerozlišují), v roce 2025 se tak počítá kvůli srovnatelnosti ročníků. Počet přijatých v pásmech proto neříká, kolik uchazečů na obor nakonec nastoupilo.
 
 ### Podíl přijatých ze soutěžících
 `přijatí ÷ (přijatí + nepřijatí kvůli kapacitě)` za nabídku a ročník. Zdroj: CERMAT, souhrny 1. kola. Pole `podil_prijatych_ze_soutezicich` v `public/souhrny_kolo1.json`.
@@ -286,11 +286,11 @@ Hodnota 1,0 znamená, že o přijetí rozhodl výhradně výsledek testu. Hodnot
 
 Ukládá se zaokrouhlené na tři desetinná místa. Počítá se u oborů s aspoň deseti přijatými a pěti odmítnutými kvůli kapacitě, v pásmech 2026 u 1 406. Medián je 0,980, hodnotu 1,000 má 13,6 % oborů, aspoň 0,85 má 92,8 %.
 
-Na stránce se zobrazuje jedna ze tří vět podle hodnoty: 0,97 a výš, 0,85 až 0,97, pod 0,85. Z pásem přijetí 2026 (zobrazený ročník) mezi 1 393 obory s hodnotou `rozhodl_test` a bez talentové zkoušky (`talentova_zkouska` nepravdivé) připadá na první 59,2 % (825), na druhou 34,1 % (475) a na třetí 6,7 % (93). V roce 2025 to bylo 1 420 oborů a 52,6 / 41,9 / 5,5 %.
+Na stránce se zobrazuje jedna ze tří vět podle hodnoty: 0,97 a výš, 0,85 až 0,97, pod 0,85. Z pásem přijetí 2026 (zobrazený ročník) mezi 1 393 obory s hodnotou `rozhodl_test` a bez talentové zkoušky (`talentova_zkouska` nepravdivé) připadá na první 59,2 % (825), na druhou 34,1 % (475) a na třetí 6,7 % (93). V roce 2025 to bylo 1 420 oborů a 52,3 / 42,1 / 5,6 %.
 
 **Mezi ročníky je stabilní jen hrubě.** Na 1 166 oborech spárovaných mezi roky 2025 a 2026 je korelace **0,636** a medián absolutní změny 0,01. Hodnoty se drží blízko sebe, ale pořadí oborů v úzkém pásmu kolem 0,97 se mění. Proto se neřadí a nezobrazuje jako číslo, jen jako tři kategorie.
 
-Na dvojici 2024–2025 vycházela korelace 0,725 na 1 158 oborech, takže **novější dvojice ročníků vyšla hůř**. Zařazení do tří kategorií se přitom mezi roky 2025 a 2026 mění u 306 z 1 166 oborů, tedy u 26 %. Je to důvod tuto míru dál nezobrazovat jako číslo a nepoužívat k řazení, ne důvod ji zrušit: medián změny zůstává 0,01 a věta o tom, co rozhodlo, popisuje jeden ročník. Starší hodnoty: do verze 1.6 tu stála korelace 0,783, spočítaná včetně oborů bez povinné zkoušky, které ji uměle zvyšovaly; do verze 1.11 korelace 0,673 na 1 149 oborech z předběžné verze dat 2025; do verze 1.39 korelace 0,667 na 1 171 oborech (včetně nedenních forem studia); do verze 1.37 korelace 0,672 na 1 173 oborech se započtenými duplicitními zaměřeními. Doklad: `docs/podklady/overeni-pasem-prijeti-2025-2026.json`.
+Na dvojici 2024–2025 vycházela korelace 0,725 na 1 158 oborech, takže **novější dvojice ročníků vyšla hůř**. Zařazení do tří kategorií se přitom mezi roky 2025 a 2026 mění u 307 z 1 166 oborů, tedy u 26 %. Je to důvod tuto míru dál nezobrazovat jako číslo a nepoužívat k řazení, ne důvod ji zrušit: medián změny zůstává 0,01 a věta o tom, co rozhodlo, popisuje jeden ročník. Starší hodnoty: do verze 1.6 tu stála korelace 0,783, spočítaná včetně oborů bez povinné zkoušky, které ji uměle zvyšovaly; do verze 1.11 korelace 0,673 na 1 149 oborech z předběžné verze dat 2025; do verze 1.39 korelace 0,667 na 1 171 oborech (včetně nedenních forem studia); do verze 1.37 korelace 0,672 na 1 173 oborech se započtenými duplicitními zaměřeními. Doklad: `docs/podklady/overeni-pasem-prijeti-2025-2026.json`.
 
 **Slepé místo: kritéria, která test jen převažují.** Ukazatel měří shodu pořadí podle *součtu* obou testů s výsledkem přijímání. Kritérium, které jeden předmět váží víc, pořadí podle součtu skoro nezmění — a ukazatel ho neuvidí. Doložený protipříklad (22. 9. 2026, podnět čtenáře): Gymnázium Christiana Dopplera má `rozhodl_test` 0,994 (čtyřleté) a 0,981 (osmileté), a přitom počítá 125 bodů = 50 ČJ + 50 M + 25 za jeden z testů × 0,5 — matematiku u čtyřletého, u osmiletého podle oboru M nebo ČJ (zdroj: gchd.cz/pro-uchazece/prijimaci-rizeni/). Věta na kartě proto nesmí tvrdit, že „rozhodl test“; smí říct jen, že pořadí podle součtu odpovídalo výsledku, a musí slepé místo pojmenovat.
 
@@ -317,7 +317,7 @@ Medián podílu soutěžících v pásmu je 26,4 %.
 
 Meze se dosazují do vět **každá zvlášť**: pod dolní mezí se nedostal nikdo, nad horní se dostali všichni. U 8,2 % z 1 439 oborů jsou obě meze shodné a platí třetí věta, že přesně s tímto výsledkem se někdo dostal a někdo ne. U 7,8 % je horní mez nižší než dolní a mezi nimi nespadl nikdo.
 
-**Je to popis loňska, ne míra.** Oba konce určuje jediný uchazeč, takže se **nepoužívá k porovnávání oborů ani k řazení**. Šířka pásma je navíc mezi ročníky nestabilní: na 1 166 oborech spárovaných mezi roky 2025 a 2026 korelace 0,698 a medián změny 3 body proti mediánové šířce 6 bodů (na dvojici 2024–2025 to bylo 0,692, 4 body a šířka 7 bodů). Ve verzi 1.4 tu stál ukazatel „překryv u hranice přijetí“, který z těchto dvou hodnot dělal měřítko; při záměně krajních hodnot za devadesátý a desátý percentil se u 41 % oborů obracel verdikt, a proto byl nahrazen mírou *rozhodl test*.
+**Je to popis loňska, ne míra.** Oba konce určuje jediný uchazeč, takže se **nepoužívá k porovnávání oborů ani k řazení**. Šířka pásma je navíc mezi ročníky nestabilní: na 1 166 oborech spárovaných mezi roky 2025 a 2026 korelace 0,697 a medián změny 3 body proti mediánové šířce 6 bodů (na dvojici 2024–2025 to bylo 0,692, 4 body a šířka 7 bodů). Ve verzi 1.4 tu stál ukazatel „překryv u hranice přijetí“, který z těchto dvou hodnot dělal měřítko; při záměně krajních hodnot za devadesátý a desátý percentil se u 41 % oborů obracel verdikt, a proto byl nahrazen mírou *rozhodl test*.
 
 ### Percentil nejnižšího přijatého
 Kolik ze 100 uchazečů v celé zemi mělo stejný nebo horší výsledek než nejnižší přijatý na obor. Pole `min_prijaty_percentil`.
@@ -671,6 +671,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.42 | **Vzdání se přijetí je v obou ročnících přijetí** (28. 9. 2026, rozhodnutí zadavatele). Data uchazečů 2026 vzdání se nerozlišují a vedou ho jako přijetí; v datech 2025 (`vzdal_se_prijeti`, `vzdal_se_prijeti_po_terminu`, 1 780 přihlášek) se nově počítá také jako přijetí, včetně pořadí přijaté přihlášky, aby počty přijatých a soutěžících šly mezi ročníky porovnat. Pásma 2025: změna u 580 oborů (8 nových nad prahem), pásmo nejistoty u 12, *Rozhodl test* u 195; kontext přihlášek 2025 u 2 306 oborů. Data 2026 beze změny. Přepočítány rozdělení vět *Rozhodl test* 2025 (52,3 / 42,1 / 5,6 %), stabilita mezi ročníky (307 změn kategorie, šířka pásma 0,697) a tabulka shody se souhrny. |
 | 1.41 | **Rozdíl soutěžících proti souhrnům 1. kola rozložen** (28. 9. 2026). Heslo *Soutěžící o obor* nese tabulku příčin rozdílu mezi `soutezicich` z dat uchazečů a přijatými s nevešlými ze souhrnů: bez výsledku zkoušky, vzdání se přijetí vedené v datech uchazečů 2026 jako přijetí, víc přihlášek téhož uchazeče, nesoulad souborů CERMAT. Přepočítány věty u *Rozhodl test* z pásem 2026: 1 406 oborů s hodnotou (medián 0,980), rozdělení tří vět u 1 393 oborů 59,2 / 34,1 / 6,7 % místo neaktuálních 1 427 a 52,5 / 41,3 / 6,2 %. Výpočet beze změny. |
 | 1.40 | **Data uchazečů jen za denní nezkrácené studium** (28. 9. 2026). Pásma přijetí, pořadí mezi soutěžícími, výsledek uchazečů o obor, obory výš a níž a souběžné přihlášky počítají jen přihlášky do denní formy (`ss{k}_forma` den, den2) a nezkráceného studia (`ss{k}_zkraceno` = 2), stejně jako souhrny 1. kola (`is_valid_flat`). Dálkové, večerní, distanční, kombinované a zkrácené studium sdílí s denním oborem klíč REDIZO_KKOV a dřív padalo pod něj: například cestovní ruch SŠ gastronomické a hotelové (Praha) měl 191 soutěžících a pásmo nejistoty 6–50 bodů, po opravě 109 a 43–50. Pořadí přihlášek a přijetí se dál bere ze všech přihlášek (přijetí výš na dálkové studium je „výš“). V roce 2026 se změnilo 75 denních oborů s pásmy a vypadlo 49 oborů bez denní nabídky; přepočteny odvozená hranice, předmětový sklon a stabilita *rozhodl test*. |
 | 1.39 | **Převedený výsledek testu**, **Pořadí mezi soutěžícími** a **Podíl přijímaček na bodování** se z prototypu dostávají na stránku oboru (28. 9. 2026, [Kde stojím](navrh-kde-stojim-2027.md)). Výpočet beze změny, doplněno jen, kde se zobrazují. |

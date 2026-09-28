@@ -5,7 +5,7 @@ Soutěžící v pásmech (`soutezicich`) jsou osoby z dat uchazečů, souhrn CER
 počítá přihlášky za nabídku (přijatí + nepřijatí kvůli kapacitě). Skript
 rozdíl u každého oboru rozloží na čtyři příčiny:
   B  soutěžící přihlášky uchazeče bez výsledku jednotné zkoušky (pásma ho nepočítají),
-  A  vzdání se přijetí, které data uchazečů 2026 vedou jako přijetí,
+  A  vzdání se přijetí: pásma ho v obou ročnících počítají jako přijetí, souhrn zvlášť,
   C  víc přihlášek téhož uchazeče na obor (pásma počítají osobu jednou),
   D  zbytek, nesoulad dvou souborů CERMAT.
 
@@ -22,7 +22,7 @@ import openpyxl
 
 KOREN = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(KOREN / "scripts"))
-from slouceni_prihlasek import denni_nezkracene, prijat  # noqa: E402
+from slouceni_prihlasek import byl_prijat, denni_nezkracene  # noqa: E402
 
 
 def z_dat_uchazecu(rok: str) -> tuple[dict, dict]:
@@ -41,7 +41,7 @@ def z_dat_uchazecu(rok: str) -> tuple[dict, dict]:
             red, kkov = r[ix[f"ss{k}_redizo"]], r[ix[f"ss{k}_kkov"]]
             if not red or not denni_nezkracene(r[ix[f"ss{k}_forma"]], r[ix[f"ss{k}_zkraceno"]]):
                 continue
-            if prijat(r[ix[f"ss{k}_prijat"]]) or r[ix[f"ss{k}_duvod_neprijeti"]] == "pro_nedostacujici_kapacitu":
+            if byl_prijat(r[ix[f"ss{k}_prijat"]], r[ix[f"ss{k}_duvod_neprijeti"]]) or r[ix[f"ss{k}_duvod_neprijeti"]] == "pro_nedostacujici_kapacitu":
                 prihlasky[f"{red}_{kkov}"] += 1
         for obor, n in prihlasky.items():
             if bez_skore:
@@ -75,7 +75,8 @@ def main(rok: str) -> None:
         if rozdil == 0:
             oboru["shoda"] += 1
         # Složky i u shodných oborů: příčiny se mohou vzájemně rušit.
-        casti = {"A": a["withdrawn"] if rok == "2026" else 0, "B": bez.get(obor, 0), "C": navic.get(obor, 0)}
+        # Vzdání se je v pásmech obou ročníků přijetím (slouceni_prihlasek), souhrn ho vede zvlášť.
+        casti = {"A": a["withdrawn"], "B": bez.get(obor, 0), "C": navic.get(obor, 0)}
         casti["D"] = rozdil - casti["A"] + casti["B"] + casti["C"]
         for k, n in casti.items():
             if n:

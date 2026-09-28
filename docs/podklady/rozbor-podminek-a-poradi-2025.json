@@ -7,9 +7,9 @@
   "nesplnilo_podminky": 46722,
   "nesplnilo_bez_vysledku_jpz": 10720,
   "odvozena_hranice_u_oboru_s_aspon_5_nesplnenymi_a_5_soutezicimi": {
-   "nevysvetleno_vysledkem_jpz": 609,
-   "slabsi_test": 324,
-   "soucet": 159
+   "nevysvetleno_vysledkem_jpz": 612,
+   "slabsi_test": 325,
+   "soucet": 157
   }
  },
  "ukazky": {
@@ -23,10 +23,10 @@
    "soutezicich": 67,
    "uchazecu": 222,
    "vysledek_uchazecu": {
-    "nikam": 138,
-    "sem": 29,
+    "nikam": 136,
+    "sem": 30,
     "vys": 45,
-    "niz": 10
+    "niz": 11
    },
    "odvozena_hranice": {
     "typ": "slabsi_test",
@@ -169,8 +169,8 @@
    "soutezicich": 54,
    "uchazecu": 97,
    "vysledek_uchazecu": {
-    "niz": 14,
-    "nikam": 11,
+    "niz": 16,
+    "nikam": 9,
     "sem": 30,
     "vys": 42
    },
