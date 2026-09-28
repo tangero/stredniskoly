@@ -118,8 +118,8 @@ Jeden řádek je jeden uchazeč. Soubor má 40 sloupců a list `legenda` s výkl
 | `ss1_redizo` až `ss5_redizo` | škola na každé prioritě | kam se hlásili zároveň | **ano od 13. 9. 2026**, dřív nepoužito |
 | `ss1_kkov` až `ss5_kkov` | obor na každé prioritě | jaké obory se kombinují | ano, tamtéž |
 | `ss1_zrizovatel` až `ss5_` | zřizovatel každé volby | kombinují se veřejné a soukromé | **ne** |
-| `ss1_forma` až `ss5_` | denní, dálková, večerní | žádná pro naši cílovou skupinu | **ne**, filtrujeme na denní |
-| `ss1_zkraceno` až `ss5_` | zkrácené studium | netýká se přijímaček z 9. třídy | **ne** |
+| `ss1_forma` až `ss5_` | den, den2, dal, vec, dist, komb | žádná pro naši cílovou skupinu | **ano jako filtr od 28. 9. 2026**: pásma, pozice, kontext a souběh berou jen denní přihlášky (`scripts/slouceni_prihlasek.py`, stejně jako souhrny 1. kola); dřív padalo nedenní studium pod klíč denního oboru |
+| `ss1_zkraceno` až `ss5_` | zkrácené studium (1 = ano, 2 = ne) | netýká se přijímaček z 9. třídy | **ano jako filtr od 28. 9. 2026**, jen nezkrácené (2), stejně jako souhrny 1. kola |
 | `ss1_prijat` až `ss5_` | 1 = přijat a zařazen, 2 = ne | kdo se skutečně dostal | ano, pro minimum a kohorty |
 | `ss1_duvod_neprijeti` až `ss5_` | důvod nepřijetí u každé volby | proč se nedostali | **ne**, používáme jen agregát |
 | `c_m_procentni_skor` | ČJ+MA, lepší výsledek, 0 až 200 % | kolik bodů stačilo | ano, po dělení dvěma |

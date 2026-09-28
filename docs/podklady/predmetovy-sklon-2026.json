@@ -112,20 +112,6 @@
   "kkov": "53-41-M/03"
  },
  {
-  "klic": "600012468_65-42-M/02",
-  "nazev": "SŠ cestovního ruchu a grafického designu, s.r.o.",
-  "obor": "Cestovní ruch",
-  "obec": "Pardubice",
-  "typ": "SOS",
-  "sklon": 0.9,
-  "z": 1.32,
-  "n_prekryv": 26,
-  "rozhodl_test": 0.965,
-  "median": 54.0,
-  "prijatych": 64,
-  "kkov": "65-42-M/02"
- },
- {
   "klic": "690000014_26-41-M/01",
   "nazev": "Vojenská SŠ a VOŠ Ministerstva obrany",
   "obor": "Elektrotechnika",
@@ -439,12 +425,12 @@
   "obor": "Obchodní akademie",
   "obec": "Praha",
   "typ": "SOS",
-  "sklon": -1.3,
-  "z": -1.53,
-  "n_prekryv": 47,
-  "rozhodl_test": 0.772,
-  "median": 52.0,
-  "prijatych": 53,
+  "sklon": -0.86,
+  "z": -1.05,
+  "n_prekryv": 46,
+  "rozhodl_test": 0.793,
+  "median": 53.0,
+  "prijatych": 50,
   "kkov": "63-41-M/02"
  },
  {
@@ -453,12 +439,12 @@
   "obor": "Praktická sestra",
   "obec": "Brno",
   "typ": "SOS",
-  "sklon": -0.65,
-  "z": -1.13,
-  "n_prekryv": 74,
-  "rozhodl_test": 0.863,
-  "median": 52.0,
-  "prijatych": 141,
+  "sklon": 0.85,
+  "z": 0.95,
+  "n_prekryv": 26,
+  "rozhodl_test": 0.994,
+  "median": 55.0,
+  "prijatych": 118,
   "kkov": "53-41-M/03"
  },
  {
@@ -509,12 +495,12 @@
   "obor": "Gymnázium",
   "obec": "Praha",
   "typ": "GY4",
-  "sklon": -1.24,
-  "z": -2.5,
-  "n_prekryv": 102,
-  "rozhodl_test": 0.828,
-  "median": 79.5,
-  "prijatych": 78,
+  "sklon": -0.67,
+  "z": -1.39,
+  "n_prekryv": 72,
+  "rozhodl_test": 0.934,
+  "median": 81.0,
+  "prijatych": 64,
   "kkov": "79-41-K/41"
  },
  {
@@ -614,20 +600,6 @@
   "median": 70.0,
   "prijatych": 56,
   "kkov": "78-42-M/04"
- },
- {
-  "klic": "600004759_63-41-M/02",
-  "nazev": "Českoslovanská AO Dr. E. Beneše, SOŠ",
-  "obor": "Obchodní akademie",
-  "obec": "Praha",
-  "typ": "SOS",
-  "sklon": -3.52,
-  "z": -3.71,
-  "n_prekryv": 30,
-  "rozhodl_test": 0.811,
-  "median": 65.5,
-  "prijatych": 36,
-  "kkov": "63-41-M/02"
  },
  {
   "klic": "600019594_53-41-M/03",
@@ -840,31 +812,17 @@
   "kkov": "63-41-M/02"
  },
  {
-  "klic": "600006930_63-41-M/01",
-  "nazev": "1. klad. soukr. SŠ a ZŠ (1.KŠPA), s.r.o.",
-  "obor": "Ekonomika a podnikání",
-  "obec": "Kladno",
-  "typ": "SOS",
-  "sklon": 0.91,
-  "z": 1.06,
-  "n_prekryv": 28,
-  "rozhodl_test": 0.865,
-  "median": 34.5,
-  "prijatych": 56,
-  "kkov": "63-41-M/01"
- },
- {
   "klic": "600007481_64-41-L/51",
   "nazev": "SŠ tradičních řemesel HERMÉS MB s.r.o.",
   "obor": "Podnikání",
   "obec": "Mladá Boleslav",
   "typ": "NAS",
-  "sklon": 0.15,
-  "z": 0.26,
-  "n_prekryv": 27,
-  "rozhodl_test": 0.863,
+  "sklon": -0.55,
+  "z": -0.8,
+  "n_prekryv": 21,
+  "rozhodl_test": 0.864,
   "median": 31.0,
-  "prijatych": 39,
+  "prijatych": 25,
   "kkov": "64-41-L/51"
  },
  {
@@ -964,20 +922,6 @@
   "median": 57.0,
   "prijatych": 58,
   "kkov": "65-42-M/02"
- },
- {
-  "klic": "600005305_79-41-K/41",
-  "nazev": "EDUCAnet-gymn., SOŠ a ZŠ Praha, s.r.o.",
-  "obor": "Gymnázium",
-  "obec": "Praha",
-  "typ": "GY4",
-  "sklon": -2.42,
-  "z": -2.31,
-  "n_prekryv": 22,
-  "rozhodl_test": 0.98,
-  "median": 74.0,
-  "prijatych": 91,
-  "kkov": "79-41-K/41"
  },
  {
   "klic": "600013863_79-41-K/41",
@@ -1160,20 +1104,6 @@
   "median": 44.5,
   "prijatych": 60,
   "kkov": "69-41-L/01"
- },
- {
-  "klic": "600171361_64-41-L/51",
-  "nazev": "Střední škola gastronomie a služeb",
-  "obor": "Podnikání",
-  "obec": "Přerov",
-  "typ": "NAS",
-  "sklon": 0.39,
-  "z": 1.08,
-  "n_prekryv": 66,
-  "rozhodl_test": 0.806,
-  "median": 30.5,
-  "prijatych": 58,
-  "kkov": "64-41-L/51"
  },
  {
   "klic": "600008711_68-42-M/01",
@@ -1741,12 +1671,12 @@
   "obor": "Podnikání",
   "obec": "Český Těšín",
   "typ": "NAS",
-  "sklon": -0.42,
-  "z": -0.92,
-  "n_prekryv": 37,
-  "rozhodl_test": 0.881,
-  "median": 30.0,
-  "prijatych": 59,
+  "sklon": -0.06,
+  "z": -0.12,
+  "n_prekryv": 28,
+  "rozhodl_test": 0.849,
+  "median": 29.0,
+  "prijatych": 30,
   "kkov": "64-41-L/51"
  },
  {
@@ -1874,20 +1804,6 @@
   "median": 55.0,
   "prijatych": 60,
   "kkov": "36-47-M/01"
- },
- {
-  "klic": "600170438_64-41-L/51",
-  "nazev": "VOŠ, SŠ, Centrum odborné přípravy",
-  "obor": "Podnikání",
-  "obec": "Sezimovo Ústí",
-  "typ": "NAS",
-  "sklon": -0.11,
-  "z": -0.24,
-  "n_prekryv": 38,
-  "rozhodl_test": 0.742,
-  "median": 28.0,
-  "prijatych": 43,
-  "kkov": "64-41-L/51"
  },
  {
   "klic": "600170675_64-41-L/51",
@@ -2287,12 +2203,12 @@
   "obor": "Podnikání",
   "obec": "Zábřeh",
   "typ": "NAS",
-  "sklon": 0.58,
-  "z": 1.82,
-  "n_prekryv": 45,
-  "rozhodl_test": 0.957,
-  "median": 28.0,
-  "prijatych": 80,
+  "sklon": 0.1,
+  "z": 0.24,
+  "n_prekryv": 24,
+  "rozhodl_test": 0.985,
+  "median": 29.0,
+  "prijatych": 60,
   "kkov": "64-41-L/51"
  },
  {
@@ -2322,20 +2238,6 @@
   "median": 55.0,
   "prijatych": 90,
   "kkov": "53-41-M/03"
- },
- {
-  "klic": "600005216_65-42-M/02",
-  "nazev": "SŠ gastronomická a hotelová s.r.o.",
-  "obor": "Cestovní ruch",
-  "obec": "Praha",
-  "typ": "SOS",
-  "sklon": -4.18,
-  "z": -7.78,
-  "n_prekryv": 72,
-  "rozhodl_test": 0.621,
-  "median": 44.5,
-  "prijatych": 148,
-  "kkov": "65-42-M/02"
  },
  {
   "klic": "600171850_39-41-L/51",
@@ -2707,12 +2609,12 @@
   "obor": "Podnikání",
   "obec": "Hradec Králové",
   "typ": "NAS",
-  "sklon": -0.02,
-  "z": -0.04,
-  "n_prekryv": 105,
-  "rozhodl_test": 0.806,
-  "median": 37.5,
-  "prijatych": 60,
+  "sklon": -0.53,
+  "z": -0.95,
+  "n_prekryv": 51,
+  "rozhodl_test": 0.869,
+  "median": 44.5,
+  "prijatych": 30,
   "kkov": "64-41-L/51"
  },
  {
@@ -2749,26 +2651,12 @@
   "obor": "Podnikání",
   "obec": "Rokycany",
   "typ": "NAS",
-  "sklon": 0.05,
-  "z": 0.18,
-  "n_prekryv": 88,
-  "rozhodl_test": 0.682,
-  "median": 29.0,
-  "prijatych": 59,
-  "kkov": "64-41-L/51"
- },
- {
-  "klic": "600171272_64-41-L/51",
-  "nazev": "Hotelová škola, Ostrava, příspěvková organizace",
-  "obor": "Podnikání",
-  "obec": "Ostrava",
-  "typ": "NAS",
-  "sklon": 0.17,
-  "z": 0.39,
-  "n_prekryv": 25,
-  "rozhodl_test": 0.841,
-  "median": 33.0,
-  "prijatych": 49,
+  "sklon": -0.23,
+  "z": -0.66,
+  "n_prekryv": 65,
+  "rozhodl_test": 0.851,
+  "median": 31.0,
+  "prijatych": 30,
   "kkov": "64-41-L/51"
  },
  {
@@ -3113,12 +3001,12 @@
   "obor": "Podnikání",
   "obec": "Ostrava",
   "typ": "NAS",
-  "sklon": 0.49,
-  "z": 1.31,
-  "n_prekryv": 42,
-  "rozhodl_test": 0.762,
-  "median": 32.0,
-  "prijatych": 84,
+  "sklon": 0.88,
+  "z": 1.78,
+  "n_prekryv": 29,
+  "rozhodl_test": 0.78,
+  "median": 35.0,
+  "prijatych": 59,
   "kkov": "64-41-L/51"
  },
  {
@@ -3190,20 +3078,6 @@
   "median": 55.0,
   "prijatych": 94,
   "kkov": "18-20-M/01"
- },
- {
-  "klic": "600170730_64-41-L/51",
-  "nazev": "Akademie Světlá n. S., SŠ a VOŠ",
-  "obor": "Podnikání",
-  "obec": "Světlá nad Sázavou",
-  "typ": "NAS",
-  "sklon": -1.36,
-  "z": -1.77,
-  "n_prekryv": 21,
-  "rozhodl_test": 0.989,
-  "median": 36.0,
-  "prijatych": 45,
-  "kkov": "64-41-L/51"
  },
  {
   "klic": "600171302_26-41-L/01",
@@ -3402,6 +3276,20 @@
   "kkov": "78-42-M/04"
  },
  {
+  "klic": "600171272_64-41-L/51",
+  "nazev": "Hotelová škola, Ostrava, příspěvková organizace",
+  "obor": "Podnikání",
+  "obec": "Ostrava",
+  "typ": "NAS",
+  "sklon": 0.56,
+  "z": 1.32,
+  "n_prekryv": 20,
+  "rozhodl_test": 0.831,
+  "median": 31.5,
+  "prijatych": 30,
+  "kkov": "64-41-L/51"
+ },
+ {
   "klic": "600004619_36-47-M/01",
   "nazev": "VOŠ stavební a SPŠ stavební",
   "obor": "Stavebnictví",
@@ -3438,9 +3326,9 @@
   "sklon": -2.39,
   "z": -2.59,
   "n_prekryv": 24,
-  "rozhodl_test": 0.966,
+  "rozhodl_test": 0.988,
   "median": 82.0,
-  "prijatych": 62,
+  "prijatych": 60,
   "kkov": "79-41-K/41"
  },
  {
@@ -3486,6 +3374,20 @@
   "kkov": "68-42-M/01"
  },
  {
+  "klic": "600171361_64-41-L/51",
+  "nazev": "Střední škola gastronomie a služeb",
+  "obor": "Podnikání",
+  "obec": "Přerov",
+  "typ": "NAS",
+  "sklon": 0.78,
+  "z": 1.39,
+  "n_prekryv": 29,
+  "rozhodl_test": 0.971,
+  "median": 36.5,
+  "prijatych": 30,
+  "kkov": "64-41-L/51"
+ },
+ {
   "klic": "600011682_63-41-M/01",
   "nazev": "Gymnázium, SOŠ a VOŠ",
   "obor": "Ekonomika a podnikání",
@@ -3526,6 +3428,20 @@
   "median": 56.0,
   "prijatych": 51,
   "kkov": "63-41-M/01"
+ },
+ {
+  "klic": "600004759_63-41-M/02",
+  "nazev": "Českoslovanská AO Dr. E. Beneše, SOŠ",
+  "obor": "Obchodní akademie",
+  "obec": "Praha",
+  "typ": "SOS",
+  "sklon": -3.1,
+  "z": -3.19,
+  "n_prekryv": 28,
+  "rozhodl_test": 0.921,
+  "median": 68.0,
+  "prijatych": 29,
+  "kkov": "63-41-M/02"
  },
  {
   "klic": "600006832_78-42-M/03",
@@ -3822,20 +3738,6 @@
   "kkov": "79-41-K/41"
  },
  {
-  "klic": "600010783_63-41-M/01",
-  "nazev": "Soukromá SOŠ (1. KŠPA), s.r.o.",
-  "obor": "Ekonomika a podnikání",
-  "obec": "Litoměřice",
-  "typ": "SOS",
-  "sklon": -0.35,
-  "z": -0.46,
-  "n_prekryv": 29,
-  "rozhodl_test": 0.83,
-  "median": 40.0,
-  "prijatych": 44,
-  "kkov": "63-41-M/01"
- },
- {
   "klic": "600020037_78-42-M/08",
   "nazev": "Mendelova střední škola",
   "obor": "Lyceum (režim pokusného ověřování)",
@@ -3890,20 +3792,6 @@
   "median": 35.0,
   "prijatych": 30,
   "kkov": "64-41-L/51"
- },
- {
-  "klic": "610100581_26-41-L/52",
-  "nazev": "Střední odborné učiliště elektrotech.",
-  "obor": "Provozní elektrotechnika",
-  "obec": "Plzeň",
-  "typ": "NAS",
-  "sklon": 0.01,
-  "z": 0.02,
-  "n_prekryv": 42,
-  "rozhodl_test": 0.787,
-  "median": 35.0,
-  "prijatych": 50,
-  "kkov": "26-41-L/52"
  },
  {
   "klic": "600170608_64-41-L/51",
