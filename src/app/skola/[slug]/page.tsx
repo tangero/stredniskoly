@@ -274,7 +274,7 @@ export default async function SchoolDetailPage({ params }: Props) {
   // rodič přišel starou adresou a letošní čísla s proužkem jsou na stránce letošní nabídky.
   const zakladOboru = program.id.split('_').slice(0, 2).join('_');
   const letosniNabidka = program.nevypsano_2026
-    ? programsForTabs.find(p => p.id === zakladOboru && !p.hasZamereni)
+    ? programsForTabs.find(p => p.id === zakladOboru && !p.hasZamereni && !p.naposledyVypsano && p.id !== program.id)
     : undefined;
 
   // Slug pro přehled školy
