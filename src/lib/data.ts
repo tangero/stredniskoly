@@ -3,7 +3,7 @@ import { canPublishAcceptedResult } from './result-quality';
 import { historicalSubjectAverage, type AdmissionScore } from './admission-metric';
 import type { AdmissionContext } from './admission-summary';
 import { subjectScore, unavailableAdmissionScores } from './historical-scores';
-import { normalizeSchoolKey, uniqueSchoolIndex } from './school-key';
+import { normalizeSchoolKey, uniqueSchoolIndex, vypsanaNabidkaBezZamereni } from './school-key';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { School, SchoolAnalysis, SchoolData, SchoolsData, SchoolDetail, krajNames, CSIDataset, CSISchoolData, InspectionExtraction } from '@/types/school';
@@ -97,6 +97,11 @@ export async function getAllSchoolsForSearch(): Promise<School[]> {
   for (const school of Object.values(analysis)) {
     const zamereniList = zamereniMap.get(school.id);
     if (zamereniList && zamereniList.length > 0) {
+      // Letošní nabídka bez zaměření vedle loňských nevypsaných zaměření (viz getProgramsByRedizo).
+      if (vypsanaNabidkaBezZamereni(yearData as { id: string }[], school.id)) {
+        const zaznam = yearData.find(r => r.id === school.id);
+        result.push({ ...school, nazev_display: (zaznam?.nazev_display as string) || school.nazev });
+      }
       // Rozložit na zaměření
       for (const z of zamereniList) {
         result.push({
@@ -743,7 +748,20 @@ export async function getProgramsByRedizo(redizo: string): Promise<SchoolProgram
       ...(school.match_type ? { match_type: school.match_type } : {}),
     };
 
+    // Letošní nabídka bez zaměření vedle loňských zaměření, která škola letos nevypsala
+    // (mapa nabídek je nespárovala, např. loňské „Denní“ a „Kombinovaná“): bez vlastní
+    // stránky by letošní čísla nikde nebyla a stránky zaměření by nesly jen loňská.
+    const letosBezZamereni = vypsanaNabidkaBezZamereni(detailedRecords, school.id);
+
     if (zamereniList && zamereniList.length > 0) {
+      if (letosBezZamereni) {
+        programs.push({
+          id: school.id, redizo, nazev: school.nazev, obor: school.obor, zamereni: undefined,
+          typ: school.typ, delka_studia: school.delka_studia, kapacita: school.kapacita,
+          prihlasky: school.prihlasky, prijati: school.prijati, min_body: school.min_body,
+          index_poptavky: school.index_poptavky, obec: school.obec, ...matchingMeta,
+        });
+      }
       // Škola má zaměření - rozložit na jednotlivá zaměření
       for (const z of zamereniList) {
         // Vypočítat index poptávky z dat zaměření (ne z agregovaného oboru)
