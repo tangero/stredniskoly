@@ -81,7 +81,7 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
       {p && k.prepisy.length > 1 && <p className="text-slate-500">Obor má víc zaměření; ukazujeme první z nich.</p>}
       {p && (
         <p className="text-amber-800">
-          {p.prepis === 'strojovy' ? 'Přepsal to z PDF počítač' : 'Přepsáno ručně z PDF'} a může obsahovat chybu.
+          {p.prepis === 'strojovy' ? 'Přepsal to z PDF počítač a může obsahovat chybu: při kontrole vzorku byl podstatně chybný zhruba každý desátý přepis.' : 'Přepsáno ručně z PDF a může obsahovat chybu.'}
           {p.nalezy.length > 0 && ` ${NALEZ_TEXT}`} Ověřte si to v kritériích školy.
         </p>
       )}

@@ -417,7 +417,7 @@ V roce 2026 platí pro 47 % oborů, které se v 1. kole nenaplnily. Věta na web
 ### Podíl přijímaček na bodování
 Kolik procent bodů celkového hodnocení tvořila v kritériích přijetí jednotná přijímací zkouška. Zdroj `public/kriteria_prijeti_{rok}.json` (`scripts/build-kriteria-prijeti.py`), pracovní přepis PDF kritérií z DiPSy: u strojového přepisu podíl, který PDF deklaruje, jinak maximum za JPZ po přepočtu děleno součtem kladných maxim všech složek (srážky, například za sníženou známku z chování, se nepočítají); u „bodují jen přijímačky“ 100. Jednotka procenta, zaokrouhleno na celá. Bez známých maxim všech složek se neuvádí.
 
-**Co neříká:** Není ověřený: přepis dělá model nebo člověk z PDF a může obsahovat chybu, i když mechanická kontrola citací nic nenašla. Platí pro rok kritérií (2026), ne pro nové přijímací řízení; školy kritéria mění. Neříká, jak moc další složky **rozhodovaly**: složka s velkým maximem, kterou všichni dostanou plnou, pořadí nemění. Nepoužívá se k řazení ani k výpočtu bodů uchazeče.
+**Co neříká:** Není ověřený: přepis dělá model nebo člověk z PDF a může obsahovat chybu, i když mechanická kontrola citací nic nenašla. Kontrola 30 vzorků (28. 9. 2026, `docs/podklady/dipsy-kriteria-kontrola-30-2026-09-28.md`) našla podstatnou chybu zhruba u každého desátého přepisu, nejčastěji záměnu oboru ve společném PDF. Platí pro rok kritérií (2026), ne pro nové přijímací řízení; školy kritéria mění. Neříká, jak moc další složky **rozhodovaly**: složka s velkým maximem, kterou všichni dostanou plnou, pořadí nemění. Nepoužívá se k řazení ani k výpočtu bodů uchazeče.
 
 ## 3. Kohorty přijatých
 

@@ -66,7 +66,13 @@ def rozdel_slozky(slozky: list[dict], jpz: dict, jpz_max: float | None) -> tuple
 def citelne_minimum(m) -> str:
     """Minimum jako věta: přepis ho nese buď jako text, nebo jako objekt s popisem."""
     if isinstance(m, dict):
-        return str(m.get("popis") or m.get("citace") or "").strip()
+        popis = str(m.get("popis") or "").strip()
+        citace = str((m.get("doklad") or {}).get("citace") or "").strip()
+        # Model popis často zkrátí na „celkem, matematika“ bez hodnoty, číslo
+        # zůstane jen v citaci z PDF (kontrola 30 vzorků 28. 9. 2026: 1 695 minim).
+        if not re.search(r"\d", popis) and re.search(r"\d", citace):
+            return f"„{citace}“"
+        return popis or citace
     return str(m).strip()
 
 # Názvy typů složek z ručního pilotu pro čtenáře.
