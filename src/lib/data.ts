@@ -100,7 +100,13 @@ export async function getAllSchoolsForSearch(): Promise<School[]> {
       // Letošní nabídka bez zaměření vedle loňských nevypsaných zaměření (viz getProgramsByRedizo).
       if (vypsanaNabidkaBezZamereni(yearData as { id: string }[], school.id)) {
         const zaznam = yearData.find(r => r.id === school.id);
-        result.push({ ...school, nazev_display: (zaznam?.nazev_display as string) || school.nazev });
+        result.push({
+          ...school,
+          nazev_display: (zaznam?.nazev_display as string) || school.nazev,
+          kapacita: zaznam?.kapacita as number,
+          prihlasky: zaznam?.prihlasky as number,
+          prijati: zaznam?.prijati as number,
+        });
       }
       // Rozložit na zaměření
       for (const z of zamereniList) {
@@ -751,15 +757,23 @@ export async function getProgramsByRedizo(redizo: string): Promise<SchoolProgram
     // Letošní nabídka bez zaměření vedle loňských zaměření, která škola letos nevypsala
     // (mapa nabídek je nespárovala, např. loňské „Denní“ a „Kombinovaná“): bez vlastní
     // stránky by letošní čísla nikde nebyla a stránky zaměření by nesly jen loňská.
-    const letosBezZamereni = vypsanaNabidkaBezZamereni(detailedRecords, school.id);
+    const letosBezZamereni = vypsanaNabidkaBezZamereni(detailedRecords, school.id)
+      ? detailedRecords.find((r: { id: string }) => r.id === school.id)
+      : undefined;
 
     if (zamereniList && zamereniList.length > 0) {
       if (letosBezZamereni) {
+        // Čísla z vlastního záznamu nabídky, ne agregát oboru ze school_analysis.json.
+        const r = letosBezZamereni;
         programs.push({
           id: school.id, redizo, nazev: school.nazev, obor: school.obor, zamereni: undefined,
-          typ: school.typ, delka_studia: school.delka_studia, kapacita: school.kapacita,
-          prihlasky: school.prihlasky, prijati: school.prijati, min_body: school.min_body,
-          index_poptavky: school.index_poptavky, obec: school.obec, ...matchingMeta,
+          typ: school.typ, delka_studia: school.delka_studia, kapacita: r.kapacita,
+          prihlasky: r.prihlasky, prijati: r.prijati, min_body: Math.round((r.min_body || 0) / 2),
+          index_poptavky: r.kapacita > 0 ? Math.round((r.prihlasky / r.kapacita) * 100) / 100 : school.index_poptavky,
+          obec: school.obec,
+          ...(r.rok ? { rok: r.rok } : {}),
+          ...(r.historicka_data_rok ? { historicka_data_rok: r.historicka_data_rok } : {}),
+          ...matchingMeta,
         });
       }
       // Škola má zaměření - rozložit na jednotlivá zaměření

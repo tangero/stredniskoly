@@ -306,9 +306,11 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
               </div>
               {results.schools.map((school, idx) => {
                 const displayNazev = school.nazev_display || school.nazev;
+                // Adresa z kanonického názvu (school_analysis.json), stejně jako ji skládá
+                // getSchoolPageType; zobrazovaný název se od něj může lišit číslem popisným.
                 const slug = school.zamereni
-                  ? `${school.id.split('_')[0]}-${createSlug(displayNazev, school.obor, school.zamereni)}`
-                  : `${school.id.split('_')[0]}-${createSlug(displayNazev, school.obor)}`;
+                  ? `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor, school.zamereni)}`
+                  : `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor)}`;
                 const adjustedIdx = idx + results.mesta.length + results.aliases.length;
                 return (
                   <Link
