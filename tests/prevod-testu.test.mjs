@@ -45,13 +45,12 @@ test('pořadí mezi soutěžícími počítá vyšší a stejné výsledky', () 
   assert.deepEqual(p, { celkem: 6, vyssi: 1, stejny: 3 });
 });
 
-test('rozdělení soutěžících nepřevyšuje počty v pásmech (uchazeč s více zaměřeními jednou)', () => {
+test('rozdělení soutěžících sedí na počty v pásmech (uchazeč s více zaměřeními jednou)', () => {
   const rok = JSON.parse(readFileSync(new URL('../public/stav_datovych_sad.json', import.meta.url), 'utf8')).sady['cermat-uchazeci-kolo1'].zobrazeno.obdobi;
   const poz = JSON.parse(readFileSync(new URL(`../public/pozice_soutezicich_${rok}.json`, import.meta.url), 'utf8')).data;
   const pas = JSON.parse(readFileSync(new URL(`../public/pasma_prijeti_${rok}.json`, import.meta.url), 'utf8')).data;
   for (const [k, v] of Object.entries(poz)) {
-    // Pásma dnes počítají přihlášky do více zaměření vícekrát (issue k pásmům), pořadí ne.
-    if (pas[k]) assert.ok(Object.values(v).reduce((a, b) => a + b, 0) <= pas[k].soutezicich, k);
+    if (pas[k]) assert.equal(Object.values(v).reduce((a, b) => a + b, 0), pas[k].soutezicich, k);
   }
 });
 

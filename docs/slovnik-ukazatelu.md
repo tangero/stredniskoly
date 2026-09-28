@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.36 · 27. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.37 · 28. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -332,7 +332,7 @@ Proč: obtížnost se liší i mezi termíny téhož roku. 50 bodů z 1. řádn�
 - Výsledek testu, který není v tabulkách (jiný rok, škola, soukromý test), převést nejde. Takové číslo se porovnává přímo s body cílového roku s výhradou, že platí jen pro stejně těžký test.
 
 ### Pořadí mezi soutěžícími
-Kolik soutěžících uchazečů o obor mělo v roce pásem **vyšší** výsledek než zadaný, a kolik stejný. Soutěžící uchazeči jsou přijatí a ti, kdo se nevešli kvůli kapacitě (tatáž množina jako `soutezicich` v pásmech přijetí). Zdroj `public/pozice_soutezicich_{rok}.json` (`scripts/build-pozice-soutezicich.py`): u každého oboru počet soutěžících s každým výsledkem, každý uchazeč u oboru jednou, i když se hlásil do více zaměření téhož oboru. Pásma přijetí dnes takového uchazeče počítají vícekrát, proto se u 117 oborů počet liší od `soutezicich` (například 726 proti 821 u 600004961_79-41-K/61); oprava pásem je samostatná úloha. Jednotka uchazeči. Obory s méně než deseti soutěžícími se nevedou (`MIN_PRIJATYCH`).
+Kolik soutěžících uchazečů o obor mělo v roce pásem **vyšší** výsledek než zadaný, a kolik stejný. Soutěžící uchazeči jsou přijatí a ti, kdo se nevešli kvůli kapacitě (tatáž množina jako `soutezicich` v pásmech přijetí). Zdroj `public/pozice_soutezicich_{rok}.json` (`scripts/build-pozice-soutezicich.py`): u každého oboru počet soutěžících s každým výsledkem, každý uchazeč u oboru jednou, i když se hlásil do více zaměření téhož oboru; součty sedí se `soutezicich` v pásmech přijetí. Jednotka uchazeči. Obory s méně než deseti soutěžícími se nevedou (`MIN_PRIJATYCH`).
 
 Věta: „Mezi 88 soutěžícími uchazeči roku 2026 mělo vyšší výsledek 30.“ Vždy s počtem přijatých, ať je vidět, kolik míst bylo.
 
@@ -654,6 +654,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.37 | **Pásma přijetí počítají uchazeče u oboru jednou** (28. 9. 2026, issue #183). Klíč oboru nenese zaměření, takže uchazeč s přihláškami do dvou zaměření téhož oboru se dřív započetl dvakrát: `soutezicich`, nevešli se, přijati výš na přihlášce, rozdělení po pásmech, pásmo nejistoty a *rozhodl test* byly zkreslené u 212 oborů roku 2026 a 208 roku 2025 (například 600004961_79-41-K/61: 726 soutěžících místo 821). Počty přijatých ani nejnižší přijatý se nezměnily. U více přihlášek téhož uchazeče k jednomu oboru rozhoduje nejlepší výsledek (přijat, nevešel se, přijat výš, nesplnil). |
 | 1.36 | **Pořadí mezi soutěžícími** a **Podíl přijímaček na bodování** (27. 9. 2026, oddíl 2). První z rozdělení výsledků soutěžících po oborech, druhý z pracovního přepisu kritérií 2026 z PDF v DiPSy (2 814 oborů po plošném přepisu 28. 9. 2026), jen v prototypu pásmového proužku a s výhradou, že přepis může obsahovat chybu. |
 | 1.35 | **Převedený výsledek testu** (27. 9. 2026, oddíl 2). Body z cvičného testu TAU převedené přes pořadí mezi řešiteli daného termínu na body roku zobrazených pásem. Zdroj položková data JPZ 2024, sada `cermat-prevod-testu`. Náhradní termíny označené jako nespolehlivé. |
 | 1.34 | **Zdroj počtu akcí v kraji je databáze** (26. 9. 2026). Akce veletrhů se čtou z tabulky `veletrh_akce`, změny přicházejí jako schválené návrhy přes API; soubor `src/data/veletrhy-2027.json` je snímek a záloha. Výpočet ani definice se nemění. |

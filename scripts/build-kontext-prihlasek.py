@@ -37,6 +37,9 @@ MIN_PRO_HRANICI = 5
 MAX_OBORU = 6
 
 
+
+# Pořadí důvodů nepřijetí u sloučených přihlášek téhož oboru: nejlepší vyhrává.
+PORADI_DUVODU = {"pro_nedostacujici_kapacitu": 1, "prijat_na_vyssi_prioritu": 2, "pro_nesplneni_podminek": 3}
 def zobrazeny_rok() -> int:
     registr = json.loads((KOREN / "public" / "stav_datovych_sad.json").read_text(encoding="utf-8"))
     return int(registr["sady"]["cermat-uchazeci-kolo1"]["zobrazeno"]["obdobi"])
@@ -96,20 +99,30 @@ def main() -> None:
     for r in radky:
         jpz = (body(r[ix["c_m_procentni_skor"]]), body(r[ix["c_procentni_skor"]]), body(r[ix["m_procentni_skor"]]))
         ma_jpz = None not in jpz
+        # Klíč oboru nenese zaměření: přihlášky jednoho uchazeče do více zaměření
+        # téhož oboru se sloučí na pozici první z nich (issue #183), přijetí
+        # do kteréhokoli zaměření platí pro obor, jinak rozhoduje nejlepší důvod.
         volby = []
         for k in range(1, 6):
             red, kkov = r[ix[f"ss{k}_redizo"]], r[ix[f"ss{k}_kkov"]]
-            volby.append((f"{red}_{kkov}", prijat(r[ix[f"ss{k}_prijat"]]), r[ix[f"ss{k}_duvod_neprijeti"]]) if red and kkov else None)
-        prijat_na = next((i for i, v in enumerate(volby) if v and v[1]), None)
-        for i, v in enumerate(volby):
-            if not v:
+            if not red or not kkov:
                 continue
+            obor, byl, duvod = f"{red}_{kkov}", prijat(r[ix[f"ss{k}_prijat"]]), r[ix[f"ss{k}_duvod_neprijeti"]]
+            drivejsi = next((n for n, v in enumerate(volby) if v[0] == obor), None)
+            if drivejsi is None:
+                volby.append((obor, byl, duvod))
+            else:
+                _, byl0, duvod0 = volby[drivejsi]
+                lepsi = min((duvod0, duvod), key=lambda d: PORADI_DUVODU.get(d, 9))
+                volby[drivejsi] = (obor, byl0 or byl, lepsi)
+        prijat_na = next((i for i, v in enumerate(volby) if v[1]), None)
+        for i, v in enumerate(volby):
             obor, byl_prijat, duvod = v
             o = obory[obor]
             o["uchazecu"] += 1
             o["vysledek"]["nikam" if prijat_na is None else "sem" if prijat_na == i else "vys" if prijat_na < i else "niz"] += 1
             for j, w in enumerate(volby):
-                if w and j != i and w[0] != obor:
+                if j != i and w[0] != obor:
                     (o["vys"] if j < i else o["niz"])[w[0]] += 1
             if byl_prijat or duvod == "pro_nedostacujici_kapacitu":
                 if ma_jpz:

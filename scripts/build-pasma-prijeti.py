@@ -57,6 +57,11 @@ def prijat(hodnota) -> bool:
     return str(hodnota).strip() in ("1", "True", "true")
 
 
+# Pořadí výsledků u jednoho oboru: přijat (0) je nejlepší.
+PORADI_DUVODU = {"pro_nedostacujici_kapacitu": 1, "prijat_na_vyssi_prioritu": 2, "pro_nesplneni_podminek": 3}
+SKUPINA_DUVODU = {1: "nevesli_se", 2: "vyssi_priorita", 3: "nesplnili"}
+
+
 def nacti_uchazece() -> tuple[dict[str, dict[str, list[float]]], list[float]]:
     """Výsledky uchazečů u každého oboru rozdělené podle toho, jak dopadli.
 
@@ -82,23 +87,32 @@ def nacti_uchazece() -> tuple[dict[str, dict[str, list[float]]], list[float]]:
         # protože rozbor vyrovnanosti potřebuje oba.
         cj, ma = radek[ix["c_procentni_skor"]], radek[ix["m_procentni_skor"]]
         predmety = (float(cj) / 2, float(ma) / 2) if cj is not None and ma is not None else None
+        # Klíč oboru nenese zaměření: uchazeč s přihláškami do dvou zaměření
+        # téhož oboru by se jinak započetl dvakrát (issue #183, 117 oborů
+        # v roce 2026). U oboru se počítá jednou, s nejlepším výsledkem.
+        stav_oboru: dict[str, int] = {}
         for k in range(1, 6):
             redizo = radek[ix[f"ss{k}_redizo"]]
             kkov = radek[ix[f"ss{k}_kkov"]]
             if not redizo or not kkov:
                 continue
-            o = obory[f"{redizo}_{kkov}"]
             duvod = radek[ix[f"ss{k}_duvod_neprijeti"]]
             if prijat(radek[ix[f"ss{k}_prijat"]]):
+                stav = 0
+            elif duvod in PORADI_DUVODU:
+                stav = PORADI_DUVODU[duvod]
+            else:
+                continue
+            klic = f"{redizo}_{kkov}"
+            stav_oboru[klic] = min(stav, stav_oboru.get(klic, stav))
+        for klic, stav in stav_oboru.items():
+            o = obory[klic]
+            if stav == 0:
                 o["prijati"].append(body)
                 if predmety is not None:
                     o["prijati_predmety"].append(predmety)
-            elif duvod == "pro_nedostacujici_kapacitu":
-                o["nevesli_se"].append(body)
-            elif duvod == "pro_nesplneni_podminek":
-                o["nesplnili"].append(body)
-            elif duvod == "prijat_na_vyssi_prioritu":
-                o["vyssi_priorita"].append(body)
+            else:
+                o[SKUPINA_DUVODU[stav]].append(body)
     return obory, sorted(uchazeci)
 
 
