@@ -6,16 +6,17 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 from slouceni_prihlasek import PRIJAT, VZDAL_SE, volby_uchazece, vysledek_uchazece  # noqa: E402
 
-POLE = ("redizo", "kkov", "prijat", "duvod_neprijeti")
+POLE = ("redizo", "kkov", "prijat", "duvod_neprijeti", "forma", "zkraceno")
 IX = {f"ss{k}_{p}": (k - 1) * len(POLE) + i for k in range(1, 6) for i, p in enumerate(POLE)}
 
 
 def radek(*prihlasky):
-    """Přihlášky jako (obor, prijat, duvod); obor „A“ = REDIZO 1, KKOV A."""
+    """Přihlášky jako (obor, prijat, duvod[, forma]); obor „A“ = REDIZO 1, KKOV A, výchozí forma denní."""
     r = [None] * len(IX)
-    for k, (obor, byl, duvod) in enumerate(prihlasky, 1):
+    for k, (obor, byl, duvod, *forma) in enumerate(prihlasky, 1):
         r[IX[f"ss{k}_redizo"]], r[IX[f"ss{k}_kkov"]] = "1", obor
         r[IX[f"ss{k}_prijat"]], r[IX[f"ss{k}_duvod_neprijeti"]] = (1 if byl else 2), duvod
+        r[IX[f"ss{k}_forma"]], r[IX[f"ss{k}_zkraceno"]] = (forma[0] if forma else "den"), 2
     return r
 
 
@@ -54,6 +55,18 @@ class SlouceniTest(unittest.TestCase):
     def test_nikam(self):
         v, o = self.volby(("A", False, "pro_nedostacujici_kapacitu"))
         self.assertEqual(vysledek_uchazece(v, o["A"]), "nikam")
+
+
+    def test_nedenni_forma_mimo_populaci(self):
+        # Dálkové studium téhož KKOV nepadá pod klíč denního oboru.
+        v, o = self.volby(("A", False, "pro_nedostacujici_kapacitu", "dal"), ("B", False, "pro_nedostacujici_kapacitu"))
+        self.assertEqual([x["obor"] for x in v], ["1_B"])
+        self.assertEqual(o["B"]["pozice"], 1)
+
+    def test_prijeti_na_nedenni_je_vys(self):
+        # Přijetí výš na kombinované studium: u denního oboru níž na přihlášce je „vys“.
+        v, o = self.volby(("A", True, None, "komb"), ("B", False, "prijat_na_vyssi_prioritu"))
+        self.assertEqual(vysledek_uchazece(v, o["B"]), "vys")
 
 
 if __name__ == "__main__":

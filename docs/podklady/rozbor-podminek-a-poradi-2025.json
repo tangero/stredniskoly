@@ -5,11 +5,11 @@
  "celostatne": {
   "prihlasek": 432013,
   "nesplnilo_podminky": 46722,
-  "nesplnilo_bez_vysledku_jpz": 11742,
+  "nesplnilo_bez_vysledku_jpz": 10720,
   "odvozena_hranice_u_oboru_s_aspon_5_nesplnenymi_a_5_soutezicimi": {
-   "nevysvetleno_vysledkem_jpz": 622,
-   "slabsi_test": 325,
-   "soucet": 160
+   "nevysvetleno_vysledkem_jpz": 609,
+   "slabsi_test": 324,
+   "soucet": 159
   }
  },
  "ukazky": {

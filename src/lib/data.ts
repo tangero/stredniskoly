@@ -821,7 +821,10 @@ export async function getProgramsByRedizo(redizo: string): Promise<SchoolProgram
         });
       }
     } else {
-      // Škola nemá zaměření - použít data ze school_analysis.json
+      // Škola nemá zaměření - použít data ze school_analysis.json. Příznak nevypsání
+      // z vlastního záznamu katalogu, stejně jako u zaměření.
+      const vlastni = detailedRecords.find((r: { id: string }) => r.id === school.id) as
+        { rok?: number; nevypsano_2026?: boolean } | undefined;
       programs.push({
         id: school.id,
         redizo: redizo,
@@ -836,6 +839,9 @@ export async function getProgramsByRedizo(redizo: string): Promise<SchoolProgram
         min_body: school.min_body,
         index_poptavky: school.index_poptavky,
         obec: school.obec,
+        // Jen u nevypsané nabídky: rok, kdy ji škola vypsala naposledy (štítek „naposledy {rok}“).
+        // U vypsané by rok katalogu označil čísla ze school_analysis.json cizím ročníkem.
+        ...(vlastni?.nevypsano_2026 ? { nevypsano_2026: true, ...(vlastni.rok ? { rok: vlastni.rok } : {}) } : {}),
         ...matchingMeta,
       });
     }

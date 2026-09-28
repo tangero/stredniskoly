@@ -5,9 +5,9 @@
  "celostatne": {
   "prihlasek": 424353,
   "nesplnilo_podminky": 41763,
-  "nesplnilo_bez_vysledku_jpz": 10730,
+  "nesplnilo_bez_vysledku_jpz": 9658,
   "odvozena_hranice_u_oboru_s_aspon_5_nesplnenymi_a_5_soutezicimi": {
-   "nevysvetleno_vysledkem_jpz": 678,
+   "nevysvetleno_vysledkem_jpz": 661,
    "slabsi_test": 286,
    "soucet": 187
   }

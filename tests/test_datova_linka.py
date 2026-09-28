@@ -46,6 +46,8 @@ def syntetika_uchazecu(cesta: Path, list_: str = "Sheet 1", bez_sloupce: str | N
     for i in range(40):
         radek = dict.fromkeys(hlavicka)
         radek.update(rok=2026, kolo=1, ss1_redizo=OBOR_A[0], ss1_kkov=OBOR_A[1], ss2_redizo=OBOR_B[0], ss2_kkov=OBOR_B[1])
+        # Denní nezkrácené studium, jako v datech CERMAT (filtr populace ve slouceni_prihlasek).
+        radek.update(ss1_forma="den", ss1_zkraceno=2, ss2_forma="den", ss2_zkraceno=2)
         if i < 20:
             radek.update(ss1_prijat=prijat_jako(1), c_m_procentni_skor=200 - i * 3)
         elif i < 35:
