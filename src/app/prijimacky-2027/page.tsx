@@ -36,6 +36,20 @@ export default function Admissions2027Page() {
             <div><h2 className="font-semibold">Ulož si termíny</h2><p className="text-sm text-slate-600 mt-1">Soubor obsahuje všechny tři skupiny. Po importu si ponech relevantní události; stažená kopie se sama neaktualizuje.</p></div>
             <a href="/prijimacky-2027.ics" download className="shrink-0 rounded-lg bg-blue-700 text-white px-5 py-3 font-semibold text-center hover:bg-blue-800">Stáhnout kalendář (.ics)</a>
           </div>
+          {/* Veletrhy se konají teď na podzim, termíny kalendáře přijdou až
+              v zimě; proto stojí nahoře, ne pod kalendářem. */}
+          <div className="mt-4 rounded-xl border border-blue-200 bg-blue-50 p-5 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
+            <div>
+              <h2 className="font-semibold">Kde školy potkáte osobně: veletrhy středních škol</h2>
+              <p className="text-sm text-slate-700 mt-1">
+                Na podzim se konají veletrhy středních škol, tedy akce, kde se na jednom místě představí
+                školy z kraje najednou. Za jedno odpoledne porovnáte školy, které byste jinak objížděli po jedné.
+              </p>
+            </div>
+            <Link href="/veletrhy" className="shrink-0 rounded-lg bg-blue-700 text-white px-5 py-3 font-semibold text-center no-underline hover:bg-blue-800">
+              Veletrhy podle krajů
+            </Link>
+          </div>
           {/* Stažená kopie se sama neaktualizuje, odběr je odpověď na to
               (docs/novinky-k-prijimackam-2027.md, oddíl 4). */}
           <div className="mt-4">
@@ -57,16 +71,6 @@ export default function Admissions2027Page() {
               </ol>
             </section>
           ))}
-          <section className="pt-10">
-            <h2 className="text-xl font-bold mb-2">Kde školy potkáte osobně</h2>
-            <p className="text-slate-600">
-              Na podzim se konají veletrhy a přehlídky středních škol — akce, kde se na jednom místě
-              představí školy z kraje najednou.{' '}
-              <Link href="/veletrhy" className="text-blue-700 underline underline-offset-4">
-                Přehled akcí podle krajů
-              </Link>
-            </p>
-          </section>
           <section className="pt-10"><h2 className="text-xl font-bold mb-2">Třetí a další kola</h2><p className="text-slate-600">Termíny a podmínky se řídí vyhlášením konkrétní školy v DiPSy. Nemají jeden společný den pro všechny školy.</p></section>
           <section id="zdroje" className="mt-10 border-t border-slate-200 pt-8 scroll-mt-24">
             <h2 className="text-xl font-bold mb-3">Zdroje a platnost</h2>

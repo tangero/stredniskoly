@@ -62,6 +62,7 @@ export function Header() {
 
   const navLinks = [
     { href: '/prijimacky-2027', label: 'Kalendář 2027' },
+    { href: '/veletrhy', label: 'Veletrhy škol' },
 
     { href: '/simulator', label: 'Simulátor' },
     { href: '/skoly', label: 'Analýza škol' },
