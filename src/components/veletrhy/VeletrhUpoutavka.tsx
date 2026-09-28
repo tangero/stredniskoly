@@ -62,7 +62,11 @@ export function VeletrhUpoutavka({
   akce: zdroj,
 }: {
   obec: string;
-  variant: 'skola' | 'obor';
+  /**
+   * `skola` a `mesto` jsou karta, `obor` položka seznamu „Co vám pomůže“.
+   * Karta na stránce města nemluví o „této škole“, stránka školu nemá.
+   */
+  variant: 'skola' | 'obor' | 'mesto';
   /** Čas čtení; předává ho test, produkce volá bez něj. */
   ke?: Date;
   /** Odsazení karty od okolí; bez akce se nevykreslí ani ono. Jen varianta skola. */
@@ -124,7 +128,10 @@ export function VeletrhUpoutavka({
         ))}
         <p className="text-[15px] leading-relaxed text-slate-600">
           Za jedno odpoledne tam porovnáte desítky škol z kraje, které byste jinak objížděli
-          po jedné. Účast této školy mezi vystavovateli nemáme doloženou.
+          po jedné.{' '}
+          {variant === 'mesto'
+            ? 'Které školy na akci vystavují, doložené nemáme.'
+            : 'Účast této školy mezi vystavovateli nemáme doloženou.'}
         </p>
         {vse.length > MAX_AKCI && <VetaDalsich pocet={vse.length - MAX_AKCI} />}
         <p className="text-[13px] leading-relaxed text-slate-500">

@@ -9,11 +9,18 @@ import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { rokDruhehoKola } from '@/lib/druhe-kolo';
 import { dalsiOboryVeMeste } from '@/lib/kontext-prihlasek';
 import { DalsiOboryVeMeste } from '@/components/DalsiOboryVeMeste';
+import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
 import type { CityStats, SchoolTypeStats, NationalTypeStats } from '@/lib/cityData';
 
 interface Props {
   params: Promise<{ mesto: string }>;
 }
+
+// Stránka nese veletrh ve městě (VeletrhVMeste). Akce končí půlnocí, ne
+// změnou dat, takže značka `veletrhy` nestačí: bez časové revalidace by
+// proběhlá akce visela až do dalšího nasazení. Klientské skrytí schová
+// blok až po poslední zobrazené akci. Hodina jako na /veletrhy.
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
   return MESTA.map(m => ({ mesto: m.slug }));
@@ -255,6 +262,10 @@ export default async function MestoPage({ params }: Props) {
         </div>
 
         <div className="max-w-6xl mx-auto px-4 py-8 space-y-12">
+
+          {/* Nejbližší veletrh středních škol ve městě, nejvýš dvě akce podle
+              data. Bez potvrzené akce komponenta nevykreslí nic. */}
+          <VeletrhVMeste obec={mestoMeta.nazev} variant="mesto" />
 
           {/* Školy ve městě */}
           <section>

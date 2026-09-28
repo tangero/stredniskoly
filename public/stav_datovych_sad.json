@@ -962,6 +962,35 @@
     "lidsky_krok": "Před placeným přepisem ověřit rozpočet (limit 10 USD, docs/podklady/dipsy-kriteria-rozpocet-10-usd-2026.md).",
     "sledovat": []
    }
+  },
+  "ruian-kraje": {
+   "nazev": "Hranice krajů, RÚIAN (ČÚZK)",
+   "dokumentace": "docs/zdroje-dat.md#217-hranice-krajů-z-rúian",
+   "cyklus": "rucni",
+   "pouziti": "web",
+   "zobrazeno": {
+    "obdobi": "2026-09-27",
+    "soubor": "src/data/mapa-kraju.json"
+   },
+   "ocekavano": {
+    "obdobi": null,
+    "kdy": null,
+    "jistota": "neznamo",
+    "zduvodneni": "Hranice krajů se mění jen změnou zákona; data RÚIAN se sice publikují denně, ale obrys kraje zůstává."
+   },
+   "po_prepnuti": "Nahrazuje se celý.",
+   "vystupy": [
+    "src/data/mapa-kraju.json"
+   ],
+   "ukazatele": [],
+   "aktualizace": {
+    "zdroj": "https://services.cuzk.gov.cz/shp/stat/epsg-5514/1.zip, vrstva VUSC_P",
+    "detekce": "Nesledováno: soubor se přegenerovává denně, změna hranic kraje je vzácná a přišla by zákonem.",
+    "import": "scripts/build-mapa-kraju.mjs --vstup 1/VUSC_P.shp --stazeno RRRR-MM-DD",
+    "automatizace": "rucni",
+    "lidsky_krok": "Při změně hranic krajů stáhnout zip (asi 250 MB), rozbalit VUSC_P a spustit skript.",
+    "sledovat": []
+   }
   }
  },
  "ukazatele_z_vice_sad": {

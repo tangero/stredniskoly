@@ -7,6 +7,8 @@ import { cipKraje, nadpisKraje, vsechnyKraje } from '@/lib/kraje.mjs';
 // Listový modul bez dat: `@/lib/veletrhy` by do prohlížeče vzal celý JSON
 // akcí a přes registr sad i `fs`, na kterém `next build` spadne.
 import { akci, cesskyDen, seskupPodleKraje } from '@/lib/veletrhy-pocty';
+import { MESTA } from '@/lib/mesta.mjs';
+import { MapaKraju } from './MapaKraju';
 
 export interface VeletrhKarta {
   id: string;
@@ -58,6 +60,26 @@ const MESICE = ['led', 'úno', 'bře', 'dub', 'kvě', 'čvn', 'čvc', 'srp', 'z�
 function mistoAkce(a: VeletrhKarta): string {
   if (a.online) return 'Online';
   return a.mesto || a.misto || 'místo upřesní pořadatel';
+}
+
+/**
+ * Stránka města podle názvu obce. Jen města ze seznamu MESTA (aspoň tři
+ * školy) stránku mají; u ostatních (Vimperk, Kaplice…) zůstává jméno
+ * prostým textem. Odkaz na kraj místo města by vedl jinam, než slibuje.
+ */
+const STRANKA_MESTA = new Map<string, string>(MESTA.map((m) => [m.nazev, `/mesto/${m.slug}`]));
+
+/** Jméno města jako odkaz na jeho stránku, pokud ji má; jinak text. */
+function MestoOdkaz({ nazev, className }: { nazev: string; className?: string }) {
+  const href = STRANKA_MESTA.get(nazev);
+  if (!href) return <>{nazev}</>;
+  return (
+    <Link href={href} className={className}>
+      {nazev}
+      {/* Samotné „Pardubice“ by čtečka mohla vyložit jako odkaz na akci. */}
+      <span className="sr-only">, střední školy ve městě</span>
+    </Link>
+  );
 }
 
 /**
@@ -181,6 +203,11 @@ export function VeletrhySeznam({ akce, den }: Props) {
   // se jinak započítala, ale nikde nevykreslila.
   const celkem = oddily.reduce((s, o) => s + o.pocet, 0);
 
+  const pocty = useMemo(() => new Map(oddily.map((o) => [o.kod, o.pocet])), [oddily]);
+  // Kraj pod myší v mapě nebo na čipu; zvýrazní obě podoby najednou.
+  // Deklarace za ostatními stavy drží jejich pořadí (testy je čtou podle něj).
+  const [najety, setNajety] = useState('');
+
   const vybrane = kraj ? oddily.filter((o) => o.kod === kraj) : oddily;
   const vybrany = KRAJE.find((k) => k.kod === kraj);
   const vybranyBezAkci = vybrany !== undefined && vybrane.length === 0;
@@ -194,12 +221,16 @@ export function VeletrhySeznam({ akce, den }: Props) {
     return vybranyBezAkci && k.kod === kraj ? [{ ...k, pocet: 0 }] : [];
   });
 
-  const cip = (aktivni: boolean) =>
+  // Od 1024 px stojí čipy ve dvou sloupcích vedle mapy (výškou jí odpovídají)
+  // a slouží jako její legenda.
+  const cip = (aktivni: boolean, najety = false) =>
     cn(
-      'inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-colors',
+      'inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-colors lg:justify-between',
       aktivni
         ? 'border-blue-700 bg-blue-700 text-white'
-        : 'border-gray-300 bg-white text-gray-800 hover:border-blue-400 hover:text-blue-700',
+        : najety
+          ? 'border-blue-400 bg-blue-50 text-blue-700'
+          : 'border-gray-300 bg-white text-gray-800 hover:border-blue-400 hover:text-blue-700',
     );
   const pocitadlo = (aktivni: boolean) =>
     cn('rounded-full px-1.5 text-xs font-semibold', aktivni ? 'bg-white/20' : 'bg-gray-100 text-gray-600');
@@ -213,7 +244,11 @@ export function VeletrhySeznam({ akce, den }: Props) {
     <div className="space-y-8">
       <nav aria-label="Kraje s akcemi">
         <p className="text-sm font-medium text-gray-700 mb-2">Kde se veletrh koná</p>
-        <div className="flex flex-wrap gap-2">
+        <div className="lg:grid lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-center lg:gap-8">
+        <div className="mb-4 lg:mb-0">
+          <MapaKraju pocty={pocty} vybrany={kraj} najety={najety} onVyber={vyber} onNajeti={setNajety} />
+        </div>
+        <div className="flex flex-wrap gap-2 lg:grid lg:grid-cols-2 lg:gap-1.5">
           <button
             type="button"
             aria-pressed={kraj === ''}
@@ -229,7 +264,9 @@ export function VeletrhySeznam({ akce, den }: Props) {
               type="button"
               aria-pressed={kraj === o.kod}
               onClick={() => vyber(kraj === o.kod ? '' : o.kod)}
-              className={cip(kraj === o.kod)}
+              onMouseEnter={() => setNajety(o.kod)}
+              onMouseLeave={() => setNajety('')}
+              className={cip(kraj === o.kod, najety === o.kod)}
               data-kraj={o.kod}
               data-pocet={o.pocet}
             >
@@ -242,6 +279,8 @@ export function VeletrhySeznam({ akce, den }: Props) {
             </button>
           ))}
         </div>
+        </div>
+        <p className="mt-2 text-xs text-gray-500">Hranice krajů: © ČÚZK, RÚIAN, CC BY 4.0</p>
       </nav>
 
       {vybrany && !vybranyBezAkci && (
@@ -278,18 +317,26 @@ export function VeletrhySeznam({ akce, den }: Props) {
       {vybrane.map((o) => (
         <section key={o.kod} id={o.slug} className="scroll-mt-24">
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-gray-200 pb-2">
+            {/* Nadpis je odkazem na přehled škol v kraji. Viditelný text
+                (název kraje) zůstává začátkem názvu odkazu kvůli ovládání
+                hlasem, skrytý dovětek říká, kam odkaz vede. */}
             <h2 className="text-xl font-semibold text-gray-900">
-              {o.nadpis}{' '}
+              <Link href={`/regiony/${o.slug}`} className="hover:text-blue-700 hover:underline">
+                {o.nadpis}
+                <span className="sr-only">, střední školy v kraji</span>
+              </Link>{' '}
               <span className="ml-2 text-base font-normal text-gray-500">{akci(o.pocet)}</span>
             </h2>
-            {/* Čtrnáct odkazů se stejným textem: čtečka potřebuje v názvu odkazu
-                kraj, a viditelný text musí v názvu zůstat (ovládání hlasem). */}
-            <Link href={`/regiony/${o.slug}`} className="text-sm text-blue-600 hover:underline">
-              Střední školy v kraji<span className="sr-only"> — {o.nadpis}</span>
-            </Link>
           </div>
           {o.mesta.length > 1 && (
-            <p className="mt-2 text-sm text-gray-600">{o.mesta.join(' · ')}</p>
+            <p className="mt-2 text-sm text-gray-600">
+              {o.mesta.map((m, i) => (
+                <span key={m}>
+                  {i > 0 && ' · '}
+                  <MestoOdkaz nazev={m} className="hover:text-blue-700 hover:underline" />
+                </span>
+              ))}
+            </p>
           )}
 
           <ol className="mt-4 space-y-3">
@@ -318,7 +365,16 @@ export function VeletrhySeznam({ akce, den }: Props) {
                   </span>
 
                   <div className="min-w-0 flex-1">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">{mistoAkce(a)}</p>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+                      {a.mesto && !a.online ? (
+                        <MestoOdkaz
+                          nazev={a.mesto}
+                          className="underline decoration-dotted decoration-gray-400 underline-offset-2 hover:text-blue-700 hover:decoration-blue-700"
+                        />
+                      ) : (
+                        mistoAkce(a)
+                      )}
+                    </p>
                     <h3 className="text-lg font-semibold text-gray-900">
                       <a href={a.url} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 hover:underline">
                         {a.nazev}

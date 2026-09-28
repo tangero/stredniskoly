@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.19 · 24. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.20 · 28. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -39,6 +39,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | Harmonogram přijímacího řízení MŠMT | opis termínů z metodiky MŠMT do `src/data/admissions-2027.json` | jedno přijímací řízení, 3 skupiny a 20 událostí | identifikátor události | ručně, jednou ročně |
 | Veletrhy a přehlídky středních škol | vlastní rešerše pořadatelů, `docs/prijimacky-veletrhy-poradatele-2026.xlsx` → tabulka `veletrh_akce` (od 26. 9. 2026, snímek `src/data/veletrhy-2027.json`) | 25 pořadatelů a vlastní rešerše rozepsané na 95 akcí, sezóna podzim 2026 | identifikátor akce | ručně, jednou ročně; průběžně z nahlášení |
 | RSS/Atom feedy školních webů | weby škol, sklízeč `scripts/sklizec-novinek.py` | 533 z 1 093 škol s feedem | REDIZO + GUID položky | automaticky 2× denně |
+| Hranice krajů, RÚIAN | ČÚZK, SHP za celý stát (`services.cuzk.gov.cz/shp/stat/epsg-5514/1.zip`), vrstva `VUSC_P`, CC BY 4.0 → `src/data/mapa-kraju.json` | 14 krajů | kód NUTS 3 (`CZ0xx`) | ručně, při změně hranic |
 
 **Co v repozitáři není.** Zdroj patří do soupisu i tehdy, když jeho soubor na disku neleží. Takových je několik:
 
@@ -456,6 +457,22 @@ U `podminkyProPrijeti` není v kartě datum vytvoření ani zveřejnění; `uplo
 
 Prototyp má připravenou oddělenou evidenci `kriteria_podklad` pro DiPSy PDF, web školy, RSS a další zdroje: rok/kolo platnosti, identitu zdroje, čas našeho pozorování, případný doložený čas zveřejnění, čas ověření a hash obsahu. Tabulka zatím není naplněna pravidly z hromadného sběru ani migrována v produkci. Prvních pět PDF je navázáno na konkrétní nabídky v pracovním souboru `src/data/kriteria-prijeti-2026-pilot.json`; [sedm modelových návrhů](podklady/dipsy-kriteria-llm-vzorek-2026-09-24.md) je jen místně. Jde o neschválené návrhy bez veřejného zobrazení. Zadání školy zůstává v `portal_kriteria` s vlastním časem uložení. Staré pravidlo 2026 je nanejvýš historický kontext pro 2027; samo nepotvrzuje aktuální bodování ani u prostého součtu JPZ. Podrobnosti v prototypu kritérií (docs/prototyp-kriteria-prijeti.md na větvi feat/kriteria-prijeti).
 
+### 2.17 Hranice krajů z RÚIAN
+
+`VUSC_P` ze SHP dat RÚIAN za celý stát (ČÚZK, souřadnicový systém S-JTSK Křovák, EPSG:5514), licence CC BY 4.0 s povinným uvedením zdroje. Stažení má asi 250 MB a v repozitáři neleží; skript `scripts/build-mapa-kraju.mjs` z něj zjednoduší obrysy na 1 % bodů (mapshaper, topologicky, takže sousední kraje sdílejí hranici) a zapíše `src/data/mapa-kraju.json` o velikosti asi 34 kB. Slouží mapě krajů nad čipy na `/veletrhy` ([návrh](navrh-mapa-a-odkazy-veletrhu-2027.md)); pod mapou stojí „Hranice krajů: © ČÚZK, RÚIAN, CC BY 4.0“.
+
+| Sloupec | Obsah | Otázka rodiče | Používáme |
+|---|---|---|---|
+| `NUTS3_KOD` | kód kraje NUTS 3 (`CZ063`) | žádná přímá; klíč | ano, jako `kod`, přímo na `krajKod` veletrhů bez převodníku |
+| `NAZEV` | název kraje („Kraj Vysočina“) | – | **ne**: názvy bere web z `src/lib/kraje.mjs` (`nadpisKraje`, `cipKraje`); druhý zdroj názvů by se s ním rozešel |
+| `KOD` | kód VÚSC v RÚIAN | žádná | ne, web s ním nepracuje |
+| `REGS_KOD` | kód kraje v registru ekonomických subjektů | žádná | ne, tamtéž |
+| geometrie | obrys kraje | „kde se to koná?“ | ano, zjednodušená jako cesta SVG; z ní se předem počítá bod štítku uvnitř plochy (`-points inner`) |
+
+Zváženo a zamítnuto: **barva kraje podle počtu akcí** (kartogram) a **počet akcí na obyvatele**. Počet akcí v kraji říká, o kolika víme, ne kolik se jich koná (slovník ukazatelů 6a); sytost barvy ani přepočet na obyvatele by neúplnost rešerše nevydávaly za nic jiného než skutečnost. **Přesná poloha akce** z pole `misto` veletrhů by vyžadovala geokódování cizí službou nad nejednoznačnými adresami („regionální kulturní dům“). **Tečky měst** z `data/school_locations.json` čekají na fázi 2 návrhu mapy; ten soubor zatím v soupisu chybí a před použitím se sem musí zapsat.
+
+V registru je jako sada `ruian-kraje`.
+
 ## 3. Sloupce, které nepoužíváme
 
 Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to dalo rodiči.
@@ -677,6 +694,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.20 | Hranice krajů z RÚIAN (oddíl 2.17) jako nový zdroj pro mapu krajů na `/veletrhy`: kód NUTS 3 a geometrie používané, název kraje, kód VÚSC a kód REGS ne. Zamítnut kartogram podle počtu akcí a přepočet na obyvatele. |
 | 1.19 | Místní sběr všech 3 091 nabídek katalogu 1. kola 2026: 3 089 platných PDF, dvě oddělené chyby (nulový soubor a rozpor REDIZO). Textová vrstva, OCR a sedm modelových návrhů se uchovávají mimo git; ověřený bodovací postup a veřejný import zůstávají zvláštní krok. |
 | 1.18 | Rešerše veletrhů 24. 9. 2026 (Exa po krajích, Parallel FindAll): 95 záznamů místo 47, zobrazitelných 77 místo 41. Souhrnné záznamy sérií (Úřad práce ve Středočeském kraji, Ústecký kraj, Vysočina, Uherské Hradiště a Vsetín) rozepsány na jednotlivá města. Opraveny Opava (potvrzena, dvoudenní), Kolín (potvrzen webem místa konání), Hitparáda (termín doložen u pořadatele, místo 2026 neuvedeno). Zapsáno, co se počítá za web pořadatele. |
 | 1.17 | Doplněn lokální pilot 100 PDF DiPSy 2026, z toho 91 s alespoň 100 znaky přímo extrahovaného textu a devět po OCR. Prototyp portálu čte nabídky DiPSy pro výběr oboru; nepřebírá z nich bodování do veřejného katalogu a registr datových sad se zatím nemění. |

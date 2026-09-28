@@ -101,8 +101,15 @@ export default async function RegionPage({ params }: Props) {
             <p className="text-blue-200">
               {cislo(skoly.length)} {skol(skoly.length)}, {cislo(pocetNabidek)} {tvar(pocetNabidek, 'nabídka', 'nabídky', 'nabídek')} v 1. kole {rok}
             </p>
+            {/* Bez počtu akcí: stránka je statická a počet by po skončení
+                akce lhal až do dalšího sestavení. Přehled si ho spočítá sám. */}
+            <p className="mt-4 text-sm text-blue-100">
+              <Link href={`/veletrhy#${kraj.slug}`} className="underline hover:text-white">
+                Veletrhy středních škol v kraji
+              </Link>
+            </p>
             {mesta.length > 0 && (
-              <p className="mt-4 text-sm text-blue-100">
+              <p className="mt-2 text-sm text-blue-100">
                 Přehled po městech:{' '}
                 {mesta.map((m, i) => (
                   <span key={m.slug}>
