@@ -8,11 +8,15 @@ from unittest.mock import patch
 
 
 SCRIPT = Path(__file__).resolve().parents[1] / "scripts/dipsy-kriteria-sber.py"
-spec = importlib.util.spec_from_file_location("dipsy_kriteria_sber", SCRIPT)
-sber = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(sber)
+# Skript sběru potřebuje `requests`, který CI neinstaluje (sběr běží jen místně).
+MA_REQUESTS = importlib.util.find_spec("requests") is not None
+if MA_REQUESTS:
+    spec = importlib.util.spec_from_file_location("dipsy_kriteria_sber", SCRIPT)
+    sber = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(sber)
 
 
+@unittest.skipUnless(MA_REQUESTS, "chybí knihovna requests (sběr kritérií běží jen místně)")
 class DipsyKriteriaSberTest(unittest.TestCase):
     def test_karta_musi_sedet_na_konkretni_nabidku(self):
         offer = {"source_id": "abc", "redizo": "600171701", "kkov": "79-41-K/41", "zamereni": "všeobecné", "izo": "izo_061385476"}
