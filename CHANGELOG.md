@@ -8,6 +8,9 @@ z historie commitů.
 
 ## [Unreleased]
 
+### Opraveno
+- **Vzdání se přijetí je v obou ročnících přijetí** (`scripts/slouceni_prihlasek.py`, slovník ukazatelů 1.42, rozhodnutí zadavatele 28. 9. 2026): data uchazečů 2026 vzdání se nerozlišují, v datech 2025 (1 780 přihlášek) se proto také počítá jako přijetí. Přegenerovány `public/pasma_prijeti_2025.json` (580 oborů, 8 nových nad prahem) a `public/kontext_prihlasek_2025.json` (2 306 oborů); data 2026 beze změny. Přepočítány podklady rozboru podmínek 2025, ověření ročníků 2025–2026 a shody se souhrny.
+
 ### Dokumentace
 - **Rozdíl soutěžících proti souhrnům 1. kola rozložen** (`scripts/shoda-soutezicich-se-souhrny.py`, `docs/podklady/shoda-soutezicich-se-souhrny-2026-09-28.md`, slovník ukazatelů 1.41): rozdíl 2 762 osob v roce 2026 vysvětlují přihlášky uchazečů bez výsledku zkoušky (1 243), vzdání se přijetí vedená v datech uchazečů jako přijetí (1 004), vícenásobné přihlášky téhož uchazeče (898) a nesoulad souborů CERMAT (147); příčiny se u oboru mohou rušit. Věty u *Rozhodl test* přepočítány z pásem 2026 (1 393 oborů, 59,2 / 34,1 / 6,7 %). Data ani web beze změny.
 

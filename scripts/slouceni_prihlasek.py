@@ -7,10 +7,15 @@ rozbor-podminek-a-poradi.py a predmetovy-sklon.py, aby všechny slučovaly stejn
 
 Výsledek oboru po sloučení:
   - PRIJAT, když byl přijat do kteréhokoli zaměření,
-  - VZDAL_SE, když se přijetí vzdal (jen data 2025); vedlejší zaměření ho
-    nepřepíše na horší důvod, protože uchazeč na obor ve skutečnosti přijat byl,
+    (vzdání se přijetí je přijetí, viz níže),
   - jinak nejlepší známý důvod nepřijetí (kapacita < vyšší priorita < podmínky),
   - None, když důvod není známý.
+
+Vzdání se přijetí (`vzdal_se_prijeti`, `vzdal_se_prijeti_po_terminu`, jen data
+2025) se počítá jako přijetí, včetně pořadí přijaté přihlášky. Data 2026 vzdání
+se nerozlišují a uchazeč, který se vzdal, v nich je přijatý; bez sjednocení by
+počty přijatých mezi ročníky nebyly srovnatelné (rozhodnutí zadavatele
+28. 9. 2026, slovník ukazatelů, *Soutěžící o obor*).
 
 Populace je stejná jako u souhrnů 1. kola (scripts/import_cermat_results.py,
 is_valid_flat): jen přihlášky do denní formy (den, den2) a nezkráceného
@@ -22,7 +27,6 @@ přihlášek: uchazeč přijatý výš na dálkové studium je u denního oboru 
 from __future__ import annotations
 
 PRIJAT = 0
-VZDAL_SE = "vzdal_se"
 # Pořadí důvodů nepřijetí u jednoho oboru, menší je lepší.
 PORADI_DUVODU = {"pro_nedostacujici_kapacitu": 1, "prijat_na_vyssi_prioritu": 2, "pro_nesplneni_podminek": 3}
 DUVODY_VZDANI = ("vzdal_se_prijeti", "vzdal_se_prijeti_po_terminu")
@@ -39,19 +43,19 @@ def denni_nezkracene(forma, zkraceno) -> bool:
     return "den" in str(forma or "").lower() and str(zkraceno).strip() == "2"
 
 
-def _stav(byl_prijat: bool, duvod) -> int | str | None:
-    if byl_prijat:
-        return PRIJAT
-    if duvod in DUVODY_VZDANI:
-        return VZDAL_SE
-    return PORADI_DUVODU.get(duvod)
+def byl_prijat(hodnota, duvod) -> bool:
+    """Přijetí včetně vzdání se přijetí, které data 2026 nerozlišují (viz docstring modulu)."""
+    return prijat(hodnota) or str(duvod or "").strip() in DUVODY_VZDANI
+
+
+def _stav(byl: bool, duvod) -> int | None:
+    return PRIJAT if byl else PORADI_DUVODU.get(duvod)
 
 
 def _lepsi(a, b):
-    """Lepší ze dvou výsledků téhož oboru: přijat > vzdal se > důvody podle pořadí > neznámý."""
-    for s in (PRIJAT, VZDAL_SE):
-        if s in (a, b):
-            return s
+    """Lepší ze dvou výsledků téhož oboru: přijat > důvody podle pořadí > neznámý."""
+    if PRIJAT in (a, b):
+        return PRIJAT
     znamé = [s for s in (a, b) if s is not None]
     return min(znamé) if znamé else None
 
@@ -73,13 +77,14 @@ def volby_uchazece(radek, ix: dict[str, int]) -> list[dict]:
         if not red or not kkov:
             continue
         obor = f"{red}_{kkov}"
-        byl = prijat(radek[ix[f"ss{k}_prijat"]])
+        duvod = radek[ix[f"ss{k}_duvod_neprijeti"]]
+        byl = byl_prijat(radek[ix[f"ss{k}_prijat"]], duvod)
         if byl and prijat_na is None:
             prijat_na = poz
         if not denni_nezkracene(radek[ix[f"ss{k}_forma"]], radek[ix[f"ss{k}_zkraceno"]]):
             poz += 1
             continue
-        stav = _stav(byl, radek[ix[f"ss{k}_duvod_neprijeti"]])
+        stav = _stav(byl, duvod)
         v = volby.get(obor)
         if v is None:
             volby[obor] = {"obor": obor, "pozice": poz, "pozice_prijeti": poz if byl else None, "stav": stav}

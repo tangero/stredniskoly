@@ -6,16 +6,16 @@ Porovnává `soutezicich` v pásmech (osoby, denní nezkrácené studium) se sou
 
 | | 2026 | 2025 |
 |---|---|---|
-| Oborů v pásmech | 2 830 | 2 789 |
-| Shoda | 1 677 | 1 454 |
-| Součet absolutních rozdílů (osob) | 2 762 | 4 153 |
-| B: přihlášky uchazečů bez výsledku jednotné zkoušky | 1 243 osob, 725 oborů | 3 133 osob, 1 280 oborů |
-| A: vzdal se, v datech uchazečů jako přijatý | 1 004 osob, 631 oborů | — |
+| Oborů v pásmech | 2 830 | 2 797 |
+| Shoda | 1 677 | 1 287 |
+| Součet absolutních rozdílů (osob) | 2 762 | 4 263 |
+| B: přihlášky uchazečů bez výsledku jednotné zkoušky | 1 243 osob, 725 oborů | 3 168 osob, 1 295 oborů |
+| A: vzdal se, v pásmech jako přijatý | 1 004 osob, 631 oborů | 948 osob, 599 oborů |
 | C: víc přihlášek téhož uchazeče na obor | 898 osob, 100 oborů | 929 osob, 113 oborů |
-| D: nevysvětlený zbytek | 147 osob, 73 oborů | 91 osob, 48 oborů |
+| D: nevysvětlený zbytek | 147 osob, 73 oborů | 98 osob, 54 oborů |
 
 Příčiny se u jednoho oboru mohou sčítat i rušit, řádky proto nedávají součet rozdílů; složky se počítají i u oborů s celkovou shodou.
 
-**Závěr.** A až C jsou rozdíly definic a zdroje, ne chyba výpočtu: pásma potřebují výsledek zkoušky, počítají osoby a data uchazečů 2026 vzdání se přijetí nerozlišují. D je nesoulad mezi dvěma soubory CERMAT (příklad 600015629_78-42-M/08: data uchazečů 14 přijatých, souhrn 15).
+**Závěr.** A až C jsou rozdíly definic a zdroje, ne chyba výpočtu: pásma potřebují výsledek zkoušky, počítají osoby a vzdání se přijetí počítají v obou ročnících jako přijetí (data 2026 ho nerozlišují, 2025 se sjednotilo). D je nesoulad mezi dvěma soubory CERMAT (příklad 600015629_78-42-M/08: data uchazečů 14 přijatých, souhrn 15).
 
-**Otevřené rozhodnutí.** V roce 2025 se vzdání se přijetí do pásem nepočítá (verze slovníku 1.38), v roce 2026 ho data nerozliší a uchazeč je v přijatých. Sjednotit lze jen v roce 2025 (počítat vzdání se jako přijetí); mění to pásma 2025, která slouží jako historie. Nezměněno, čeká na rozhodnutí zadavatele.
+**Rozhodnuto 28. 9. 2026.** Zadavatel schválil sjednocení: vzdání se přijetí se v datech 2025 počítá jako přijetí, stejně jako v datech 2026 (slovník ukazatelů 1.42). Sloupec 2025 je přepočítaný po této změně; shoda 2025 klesla z 1 454 na 1 287 oborů, protože souhrn 2025 vede 948 vzdání se zvlášť (řádek A).
