@@ -10,6 +10,25 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '2.16.0',
+    date: '28. 9. 2026',
+    title: 'Veletrhy středních škol a „Kde stojím“ na stránce oboru',
+    changes: [
+      { type: 'new', text: 'Přehled veletrhů středních škol, tedy akcí, kde se na jednom místě představí školy z kraje najednou. Akce jsou podle krajů a zobrazí se jen ty, jejichž termín jsme ověřili u pořadatele. Chybějící akci jde nahlásit formulářem' },
+      { type: 'new', text: 'Mapa krajů nad přehledem veletrhů: kliknutím na kraj se ukážou jeho akce. Město u akce vede na stránku města, název kraje na přehled škol v kraji' },
+      { type: 'new', text: 'Když se ve městě školy koná veletrh, ukáže se na stránce školy, oboru i města, nejvýš dvě nejbližší akce. Stránka kraje odkazuje na veletrhy v kraji' },
+      { type: 'new', text: 'Veletrhy mají vlastní položku v menu a tlačítko na titulce; v kalendáři přijímaček jsou nahoře, protože se konají teď na podzim' },
+      { type: 'new', text: '„Kde stojím“ na stránce oboru: zadáte výsledky cvičných testů, tedy testů z minulých přijímaček v aplikaci CERMAT TAU, a uvidíte, kolik bodů by to bylo v roce 2026 a kde byste stáli mezi soutěžícími uchazeči, tedy těmi, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš. Výsledky zůstávají jen ve vašem prohlížeči a jdou smazat. Přibyl návod, jak cvičný test v TAU najít' },
+      { type: 'new', text: 'Stránka oboru ukazuje, co kromě jednotné přijímací zkoušky rozhodovalo o přijetí v roce 2026, a u oborů, kde škola počítala extra body, tedy body za něco jiného než jednotnou zkoušku, to říká štítkem. Údaje jsou z kritérií, která škola vyhlásila pro minulý ročník; pro nové přijímací řízení platí nová' },
+      { type: 'new', text: 'Přehled škol v kraji je nově přehledná tabulka nad posledním ročníkem: u každé školy obtížnost přijetí, pozice na přihlášce, počet míst a maturita, s vysvětlením, jak se počítá pořadí v kraji. Rozcestník krajů ukazuje počty škol a rozložení obtížnosti' },
+      { type: 'improve', text: 'Místo kategorie oboru („Vyvážený obor“), která neměla doložený výpočet, stránky ukazují pozici na přihlášce: jestli si obor uchazeči zapisují spíš jako první, nebo jako záložní volbu. Neříká nic o kvalitě školy' },
+      { type: 'improve', text: 'Souhrn maturity za školu mluví o dostupných hodnoceních, ne o letech; škola hodnocená v jediném roce se už nevydává za „každý rok“ a u jediného hodnocení je vidět jeho rok' },
+      { type: 'improve', text: 'Novinky ze školních webů odfiltrují spam' },
+      { type: 'fix', text: 'Pásma přijetí a souběžné přihlášky počítaly uchazeče přihlášeného do dvou zaměření téhož oboru dvakrát. Týkalo se to zhruba 210 oborů v každém ročníku; počty přijatých ani nejnižší výsledek přijatého se nemění' },
+      { type: 'fix', text: 'Přehled kraje ukazoval starší ročník 2025 a u 57 pražských oborů nových v roce 2026 kapacitu 0' },
+    ],
+  },
+  {
     version: '2.15.0',
     date: '22. 9. 2026',
     title: 'Stránky měst, novinky ze školních webů a odběr e-mailem',

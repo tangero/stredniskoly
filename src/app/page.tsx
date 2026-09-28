@@ -110,11 +110,11 @@ export default async function HomePage() {
               Prozkoumat školy
             </Link>
             <Link
-              href="https://skola.prolnuto.cz"
+              href="/veletrhy"
               className="inline-block px-8 py-3.5 font-semibold text-base no-underline uppercase tracking-wide transition-all hover:opacity-80"
               style={{ color: '#0074e4', border: '2px solid #0074e4', borderRadius: '4px', letterSpacing: '1px' }}
             >
-              Letní škola AI
+              Veletrhy škol
             </Link>
           </div>
 
