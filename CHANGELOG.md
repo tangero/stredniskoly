@@ -8,6 +8,9 @@ z historie commitů.
 
 ## [Unreleased]
 
+### Přidáno
+- **Strukturované zadání kritérií v portálu pro školy** (`/pro-skoly/kriteria`, pilot bez veřejného zobrazení): maxima JPZ, přepočet a vyšší váha předmětu, tabulka dalších bodů se srážkami, dopočet celku a *Podílu přijímaček na bodování* s kontrolou proti vyhlášenému maximu, minima, seřazená pravidla při rovnosti a volný zápis „Další pravidla a výjimky“. Předvyplnění z přepisu PDF z DiPSy s povinným potvrzením kontroly, kopírování z jiného zaměření, kola nebo roku. Ročníky z registru. Nový sloupec `portal_kriteria.struktura` (migrace 006, zatím nespuštěná), nový soubor `public/kriteria_predvyplneni_2026.json`. Slovník ukazatelů 1.43, zdroje dat 1.21, portál 1.10.
+
 ### Opraveno
 - **Vzdání se přijetí je v obou ročnících přijetí** (`scripts/slouceni_prihlasek.py`, slovník ukazatelů 1.42, rozhodnutí zadavatele 28. 9. 2026): data uchazečů 2026 vzdání se nerozlišují, v datech 2025 (1 780 přihlášek) se proto také počítá jako přijetí. Přegenerovány `public/pasma_prijeti_2025.json` (580 oborů, 8 nových nad prahem) a `public/kontext_prihlasek_2025.json` (2 306 oborů); data 2026 beze změny. Přepočítány podklady rozboru podmínek 2025, ověření ročníků 2025–2026 a shody se souhrny.
 
