@@ -166,3 +166,11 @@ Platí doporučení ke všem otázkám z oddílu 11:
 
 9. Přibude volba řazení **„od nejvyšší hranice přijetí“** podle doloženého ukazatele (nejnižší výsledek přijatého, případně dolní mez pásma {rok}; název a výpočet podle slovníku ukazatelů, nový způsob použití zapsat). Věta u řazení: těžší přijetí neznamená lepší školu, kvalitu ukazuje maturita a inspekce na stránce školy. Výchozí řazení zůstává podle dojezdu. Tím se upravuje zákaz řazení v oddílu 3: neřadí se podle vzdálenosti uchazeče od hranice, ale podle hranice samotné.
 10. Uživatel s vybraným oborem si vystačí s dnešním filtrem „Co tě zajímá“, rozcestník se nepřidává.
+
+## 13. Poznámky k provedení E4
+
+- Pojmy: text stránky drží slovník pojmů, ne pracovní slova návrhu. Místo „oblíbené školy“ **zvažované obory** (slovník 1.13, ukládá se nabídka), místo „priority“ **pořadí na přihlášce** se standardní větou, že pořadí šanci na přijetí nemění. Nový pojem **pojistka** je ve slovníku pojmů 1.30.
+- Pořadí zvažovaných oborů mění šipky nahoru a dolů (`posunVPoradi`), ukládá se do stejného úložiště jako dosud.
+- Kontrola (`src/lib/strategie-prihlasek.ts`) počítá běžné a talentové obory zvlášť podle bloku `pravidla` v `admissions-2027.json`. Pojistka se hledá jen mezi obory, které se do přihlášky vejdou; pojistka za posledním místem dostane výzvu „posuň ho výš“. Talentový obor pojistkou není (je „Bez srovnání“).
+- Návrh pojistky bere nejbližší obory nad pásmem jen z hledání omezeného místem (zastávka s limitem, obec nebo kraj), přednostně se stejným oborem jako některý zvažovaný.
+- Přijatí podle priority se neukazují (rozhodnutí 6), přiřazení ani šance se nepočítá.

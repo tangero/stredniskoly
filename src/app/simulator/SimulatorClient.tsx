@@ -11,6 +11,8 @@ import { MAX_SELECTION, readSelection, selectionForShare, shareUrlFor } from '@/
 import { SeznamNabidek, type NabidkaSimulatoru } from '@/components/simulator/SeznamNabidek';
 import { hodnotaHranice, klicPasma, nactiIndexPasem, polohaVuciPasmu, seradNabidky, type IndexPasem } from '@/lib/poloha-vuci-pasmu';
 import { SavedSelectionBar } from '@/components/simulator/SavedSelectionBar';
+import { StrategiePrihlasek } from '@/components/simulator/StrategiePrihlasek';
+import { navrhniPojistku, posunVPoradi, type PravidlaPrihlasek } from '@/lib/strategie-prihlasek';
 import { useZadaneTesty, ZadaniTestu } from '@/components/obor/ZadaniTestu';
 import { TRIDA_TAU, type DruhTestu, type PrevodDruhu, type PrevodTestu } from '@/lib/prevod-testu-vypocet';
 
@@ -80,9 +82,11 @@ export interface SimulatorClientProps {
   rokPasem: number | null;
   /** Převodní tabulky testů TAU pro všechny druhy (sada cermat-prevod-testu). */
   prevod: PrevodTestu | null;
+  /** Počet přihlášek z bloku pravidla v admissions-2027.json (sada msmt-harmonogram). */
+  pravidla: PravidlaPrihlasek;
 }
 
-export function SimulatorClient({ rokPasem, prevod }: SimulatorClientProps) {
+export function SimulatorClient({ rokPasem, prevod, pravidla }: SimulatorClientProps) {
   const params = useSearchParams();
   const showingSelection = params.get('vyber') === '1' || params.get('srovnani') === '1';
   // Uložený výběr je stav aplikace, nikoli obsah adresy: odkaz už celý výběr neunese.
@@ -271,6 +275,20 @@ export function SimulatorClient({ rokPasem, prevod }: SimulatorClientProps) {
       isSaved={id => savedKeys.has(normalizeSchoolKey(id))} onToggleSave={toggle}
     />;
   }
+  const skupinaPodleId = (id: string) => poloha ? polohaVuciPasmu(bodySkupiny!, radekPasma({ id }), Number(druh), minPrijatych).skupina : null;
+  const polozkyStrategie = selectedIds.flatMap(id => {
+    const school = catalogIndex.get(normalizeSchoolKey(id));
+    if (!school) return [];
+    const n = toNabidka(school);
+    return [{ id, label: `${n.program} · ${n.nazev}`, href: n.href ?? `/skola/${n.slug}`, skupina: skupinaPodleId(id), talentova: radekPasma({ id })?.talentova ?? false }];
+  });
+  const oboryZvazovanych = new Set(polozkyStrategie.flatMap(p => { const s = catalogIndex.get(normalizeSchoolKey(p.id)); return s ? [s.obor] : []; }));
+  // Pojistku navrhujeme jen z hledání omezeného místem: obory z celé země nikomu nepomohou.
+  const kandidatiPojistky = stop ? filtered.filter(s => (minutyDojezdu(s) ?? Infinity) <= limit) : city || region ? filtered : [];
+  const navrhyPojistky = poloha ? navrhniPojistku(kandidatiPojistky, id => savedKeys.has(normalizeSchoolKey(id)), oboryZvazovanych, {
+    skupina: s => skupinaPodleId(s.id), minuty: minutyDojezdu, nazev: s => s.nazev_display || s.nazev,
+  }).map(s => { const n = toNabidka(s); return { id: s.id, label: `${n.program} · ${n.nazev}, ${n.obec}`, href: n.href ?? `/skola/${n.slug}` }; }) : [];
+  function move(id: string, smer: -1 | 1) { saveIds(posunVPoradi(selectedIds, id, smer)); }
   const savedItems = selectedIds.map(id => {
     const school = catalogIndex.get(normalizeSchoolKey(id));
     return { id, label: school ? `${school.obor} · ${school.nazev_display || school.nazev}` : 'Uložený obor se dohledává' };
@@ -300,7 +318,7 @@ export function SimulatorClient({ rokPasem, prevod }: SimulatorClientProps) {
       return;
     }
     saveIds(saved ? selectedIds.filter(value => value !== actualId) : [...selectedIds, id]);
-    setNotice(saved ? 'Obor odebrán z výběru.' : 'Obor přidán do výběru.');
+    setNotice(saved ? 'Obor odebrán ze zvažovaných.' : 'Obor přidán mezi zvažované.');
   }
   async function share() {
     const url = shareUrlFor(shareableIds, window.location.origin);
@@ -359,14 +377,18 @@ export function SimulatorClient({ rokPasem, prevod }: SimulatorClientProps) {
     <nav aria-label="Hledání a výběr" className="mb-7 flex flex-wrap gap-2">
       <Link href="/#vyhledavani" className={button}>Hledat školu nebo město</Link>
       <button className={`${button} ${!showingSelection ? 'border-blue-500 text-blue-800' : ''}`} onClick={() => updateUrl({ vyber: null, srovnani: null })}>Simulátor přijímaček</button>
-      <button className={`${button} ${showingSelection ? 'border-blue-500 text-blue-800' : ''}`} onClick={() => updateUrl({ vyber: '1' })}>Můj výběr ({selectedIds.length})</button>
+      <button className={`${button} ${showingSelection ? 'border-blue-500 text-blue-800' : ''}`} onClick={() => updateUrl({ vyber: '1' })}>Zvažované obory ({selectedIds.length})</button>
     </nav>
     <p role="status" className="text-sm text-slate-600">{notice} {storageStatus}</p>
     {showingSelection ? <section className="mt-3">
-      <h1 className="text-3xl font-bold">Můj výběr 2027</h1><p className="mt-2 text-slate-600">Uložené obory jsou kandidáti. Tento seznam není přihláška.</p>
-      {selectedIds.length > 0 && <div className="my-4"><p className="mb-3 text-sm text-slate-600">Výsledky oborů můžeš porovnat níže.</p><button className={button} onClick={share}>Sdílet výběr</button></div>}
+      <h1 className="text-3xl font-bold">Zvažované obory</h1><p className="mt-2 text-slate-600">Zvažované obory, tedy obory uložené hvězdičkou, jen v tomto prohlížeči. Tento seznam není přihláška.</p>
+      {selectedIds.length > 0 && <div className="my-4"><p className="mb-3 text-sm text-slate-600">Výsledky oborů můžeš porovnat níže.</p><button className={button} onClick={share}>Sdílet zvažované obory</button></div>}
       {!selectedIds.length && <p className="my-6">Zatím tu nic není. Přidej obor ze simulátoru.</p>}
       {krok1}
+      {rokPasem !== null && <StrategiePrihlasek
+        polozky={polozkyStrategie} pravidla={pravidla} rok={rokPasem}
+        onMove={move} navrhyPojistky={navrhyPojistky} onAdd={toggle}
+      />}
       {razeniControls}
       {seznam(selectedIds.flatMap(id => { const school = catalogIndex.get(normalizeSchoolKey(id)); return school ? [school] : []; }))}
       {selectedIds.map(id => { const school = catalogIndex.get(normalizeSchoolKey(id)); return school ? null : <div key={id} className="my-4"><p>{!catalog && !error ? 'Načítám uložený obor…' : 'Uložený obor se nepodařilo jednoznačně dohledat. Výběr zůstal zachovaný.'}</p><button className={button} onClick={() => toggle(id)}>Odebrat nedohledaný obor</button></div>; })}

@@ -5,6 +5,7 @@ import { Footer } from '@/components/Footer';
 import { SimulatorClient } from './SimulatorClient';
 import { rokPasemPrijeti } from '@/lib/pasma-prijeti';
 import { nactiPrevodTestu } from '@/lib/prevod-testu';
+import calendar from '@/data/admissions-2027.json';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/simulator' },
@@ -39,7 +40,7 @@ export default async function SimulatorPage() {
 
       <main className="flex-1">
         <Suspense fallback={<SimulatorLoading />}>
-          <SimulatorClient rokPasem={rokPasem} prevod={prevod} />
+          <SimulatorClient rokPasem={rokPasem} prevod={prevod} pravidla={calendar.pravidla} />
         </Suspense>
       </main>
 

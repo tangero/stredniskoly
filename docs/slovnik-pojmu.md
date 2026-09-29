@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.29 · 29. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.30 · 29. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -31,6 +31,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | Pojem na stránce | Význam | Vysvětlení při prvním výskytu v bloku | Nepoužívat |
 |---|---|---|---|
 | **pořadí na přihlášce**, **1. volba**, **2. volba** | pořadí oborů, jak je uchazeč zapsal; v datech priorita | u rad vždy doplnit: „pořadí na přihlášce šanci na přijetí nemění, škola řadí jen podle svých kritérií“ | priorita (v textu pro rodiče), preference |
+| **pojistka** | v Simulátoru přijímaček obor ze skupiny „Nad pásmem“ mezi obory, které se vejdou do přihlášky: v 1. kole daného roku se sem s výsledkem uchazeče dostali všichni soutěžící uchazeči | „obor, kam se v 1. kole {rok} s tvým výsledkem dostali všichni soutěžící uchazeči“; vždy s větou, že skupiny popisují 1. kolo, ne předpověď | jistota, jistá škola, záchranná škola |
 | **pozice na přihlášce**: **škola první volby**, **smíšená pozice**, **záložní volba** | kohorta podle pozice na přihlášce ze slovníku ukazatelů: jak často si obor uchazeči zapsali jako 1. volbu ve srovnání s obory stejného typu v celé zemi; platí pro nabídku, ne pro celou školu | „srovnává se jen s obory stejného typu“ a vždy v bloku: „neříká nic o kvalitě školy: záložní volba znamená, že si ji uchazeči píší jako pojistku, ne že je horší“ | kategorie oboru, vyvážený obor, preferovaný obor, oblíbenost, atraktivita |
 | **obor výš na přihlášce**, **obor níž na přihlášce** | obor zapsaný před tímto oborem, nebo za ním | není potřeba | lepší obor, horší obor, záložní škola |
 | **kritéria přijetí** | pravidla, podle kterých škola uchazeče řadí a kdy je nepřijme; vyhlašuje je škola | „kritéria, která škola vyhlašuje na svém webu“ | podmínky přijetí (vyjma citace), pravidla školy |
@@ -132,6 +133,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.30 | Pojem **pojistka** pro strategii řazení zvažovaných oborů v Simulátoru přijímaček ([návrh](navrh-simulator-prijimacek-2027.md) oddíl 4, etapa E4). Návrh mluví o „oblíbených školách“ a „prioritách“; slovník obojí zakazuje (verze 1.13 *zvažované obory*, řádek *pořadí na přihlášce*), proto text stránky používá **zvažované obory** a **pořadí na přihlášce** se standardní větou, že pořadí šanci na přijetí nemění. Horní lišta simulátoru „Můj výběr“ přejmenována na „Zvažované obory“. |
 | 1.29 | Pojmy Simulátoru přijímaček pro skupiny výsledků (29. 9. 2026, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 3 a 12): **Simulátor přijímaček**, **nad pásmem**, **v pásmu**, **pod pásmem**, **obory, kde nikoho neodmítli**, **bez srovnání**. Každá skupina má pod názvem větu, která vysvětluje soutěžící uchazeče. Popisek řazení **„od nejvyšší hranice přijetí“** je výslovné rozhodnutí zadavatele (bod 9) a jediná výjimka ze zákazu slova *hranice přijetí*; vždy s větou, že se řadí podle nejnižšího výsledku přijatých a že těžší přijetí neznamená lepší školu. |
 | 1.28 | Pojem **výsledek bez převodu** pro volbu „Jiný test nebo odhad“ ve sdíleném zadání cvičného testu (stránka oboru a krok 1 Simulátoru přijímaček, 29. 9. 2026, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 2). Výhrada je výrazná, protože srovnání stojí na neověřeném předpokladu stejně těžkého testu. |
 | 1.27 | Pojem **extra body** pro zvýrazněný blok kritérií na stránce oboru („O přijetí rozhodují i extra body“, 28. 9. 2026). Štítek stojí nad podnadpisem s rokem kritérií, aby netvrdil jistotu pro nové řízení. |
