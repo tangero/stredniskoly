@@ -1,6 +1,6 @@
 # Simulátor přijímaček: výsledek cvičného testu proti školám, oblíbené a strategie řazení
 
-Verze 0.1 · 29. 9. 2026 · **ke schválení zadavatelem**
+Verze 0.2 · 29. 9. 2026 · **schváleno zadavatelem 29. 9. 2026** (oddíl 12)
 
 Fáze 2 návrhu [Kde stojím](navrh-kde-stojim-2027.md). Fáze 1 (stránka oboru, komponenta `src/components/obor/KdeStojim.tsx`) je nasazená. Rozhodnutí zadavatele z 29. 9. 2026:
 
@@ -148,3 +148,16 @@ Etapy E1–E3 lze nasadit samostatně (simulátor ukáže skupiny), E4 a E5 nava
 6. **Přijatí podle priority** ve strategii: ukázat „většina přijatých tu měla obor jako 1. volbu“, nebo vynechat kvůli riziku taktizování?
 7. **Talentové obory**: řadit do skupin stejně (u nich rozhoduje talentová zkouška, test jen částečně), nebo je dát do „Bez srovnání“ s vysvětlením?
 8. **Název v menu a URL**: ponechat `/simulator` a v menu „Simulátor přijímaček“?
+
+## 12. Rozhodnutí zadavatele (29. 9. 2026)
+
+Platí doporučení ke všem otázkám z oddílu 11:
+
+1. Obory, kde se v 1. kole nikdo nevešel kvůli kapacitě, tvoří **samostatnou skupinu** s větou, že se přijímalo podle podmínek (minima, kritéria), ne podle pořadí.
+2. Pojistka: aspoň jedna nabídka nad pásmem, a pokud to jde, i jedna ze skupiny „nikdo se nevešel“.
+3. Nabídky s extra body v pásmu dostanou jen štítek, neupozaďují se.
+4. Při více testech se skupina počítá z **nejhoršího** výsledku.
+5. Seznam jde procházet i bez testu, bez rozdělení do skupin a s výzvou k testu.
+6. Přijatí podle priority se ve strategii zatím neukazují.
+7. Talentové obory patří do „Bez srovnání“.
+8. Adresa zůstává `/simulator`, v menu „Simulátor přijímaček“.
