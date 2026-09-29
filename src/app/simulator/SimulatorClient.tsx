@@ -281,11 +281,13 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
     />;
   }
   const skupinaPodleId = (id: string) => poloha ? polohaVuciPasmu(bodySkupiny!, radekPasma({ id }), Number(druh), minPrijatych).skupina : null;
-  const polozkyStrategie = selectedIds.flatMap(id => {
+  // Nedohledaný obor zůstává ve výběru na svém místě, jinak by se ostatní posunuly a číslovaly špatně.
+  // Druh zkoušky bereme z pásem; bez nich (nebo bez dohledaného oboru) ho neznáme a kontrola se pozastaví.
+  const polozkyStrategie = selectedIds.map(id => {
     const school = catalogIndex.get(normalizeSchoolKey(id));
-    if (!school) return [];
+    if (!school) return { id, label: 'Uložený obor se dohledává', skupina: null, talentova: null };
     const n = toNabidka(school);
-    return [{ id, label: `${n.program} · ${n.nazev}`, href: n.href ?? `/skola/${n.slug}`, skupina: skupinaPodleId(id), talentova: radekPasma({ id })?.talentova ?? false }];
+    return { id, label: `${n.program} · ${n.nazev}`, href: n.href ?? `/skola/${n.slug}`, skupina: skupinaPodleId(id), talentova: pasma ? radekPasma({ id })?.talentova ?? false : null };
   });
   const oboryZvazovanych = new Set(polozkyStrategie.flatMap(p => { const s = catalogIndex.get(normalizeSchoolKey(p.id)); return s ? [s.obor] : []; }));
   // Pojistku navrhujeme jen z hledání omezeného místem: obory z celé země nikomu nepomohou.

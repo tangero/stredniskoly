@@ -103,3 +103,32 @@ test('pořadí na přihlášce čísluje talentové i běžné obory společně'
   assert.match(beznyNahore[0], /^1\. na přihlášce/);
   assert.match(beznyNahore[1], /^2\. na přihlášce · s talentovou zkouškou/);
 });
+
+// Regrese Codex review kolo 3, nález 1: nedohledaný obor nesmí vypadnout z pořadí.
+test('nedohledaný uložený obor drží místo a pojistka se nepotvrdí', () => {
+  const polozky = [
+    { id: '600005836_63-41-M/02', label: 'Uložený obor se dohledává', skupina: null, talentova: null },
+    p('b', 'pod'), p('c', 'pod'), p('d', 'nad'),
+  ];
+  const k = zkontrolujStrategii(polozky, { ...pravidla, prihlasek_bezne: 3 });
+  assert.equal(k.pozastaveno, true);
+  assert.equal(k.maPojistku, false);
+  const html = renderToStaticMarkup(React.createElement(StrategiePrihlasek, { polozky, pravidla: { ...pravidla, prihlasek_bezne: 3 }, rok: 2026, onMove() {}, navrhyPojistky: [], onAdd() {} }));
+  assert.doesNotMatch(html, /Pojistku máš/);
+  assert.doesNotMatch(html, /\d\. na přihlášce/);
+  assert.doesNotMatch(html, /Do přihlášky se nevejde/);
+  assert.match(html, /4\. v tvém pořadí/);
+  assert.match(html, /Uložený obor se dohledává/);
+});
+
+// Regrese Codex review kolo 3, nález 2: bez indexu pásem neznáme druh zkoušky.
+test('bez načtených pásem se limit přihlášek nekontroluje', () => {
+  const polozky = ['sport', 'a', 'b', 'c'].map(id => ({ id, label: id, skupina: null, talentova: null }));
+  const k = zkontrolujStrategii(polozky, { ...pravidla, prihlasek_bezne: 3 });
+  assert.equal(k.pozastaveno, true);
+  assert.equal(k.navicBezne, 0);
+  const html = renderToStaticMarkup(React.createElement(StrategiePrihlasek, { polozky, pravidla: { ...pravidla, prihlasek_bezne: 3 }, rok: 2026, onMove() {}, navrhyPojistky: [], onAdd() {} }));
+  assert.doesNotMatch(html, /Do přihlášky se nevejde/);
+  assert.doesNotMatch(html, /Zvažuješ víc oborů/);
+  assert.match(html, /nevíme, jestli má talentovou zkoušku/);
+});

@@ -9,7 +9,8 @@ export interface PolozkaSeznamu {
   label: string;
   href?: string;
   skupina: Skupina | null;
-  talentova: boolean;
+  /** null = druh zkoušky neznáme; kontrola přihlášky se pozastaví. */
+  talentova: boolean | null;
 }
 
 interface Props {
@@ -60,7 +61,7 @@ export function StrategiePrihlasek({ polozky, pravidla, rok, onMove, navrhyPojis
 
       <ol className="mt-4 space-y-2">
         {polozky.map((p, i) => (
-          <li key={p.id} className={`flex items-center gap-2 rounded-lg border p-2 ${vejdeSe.has(p.id) ? 'border-slate-300 bg-white' : 'border-dashed border-slate-300 bg-slate-50'}`}>
+          <li key={p.id} className={`flex items-center gap-2 rounded-lg border p-2 ${k.pozastaveno || vejdeSe.has(p.id) ? 'border-slate-300 bg-white' : 'border-dashed border-slate-300 bg-slate-50'}`}>
             <div className="flex shrink-0 gap-1">
               <button type="button" className={tlacitko} disabled={i === 0} onClick={() => onMove(p.id, -1)} aria-label={`Posunout výš: ${p.label}`}><span aria-hidden="true">↑</span></button>
               <button type="button" className={tlacitko} disabled={i === polozky.length - 1} onClick={() => onMove(p.id, 1)} aria-label={`Posunout níž: ${p.label}`}><span aria-hidden="true">↓</span></button>
@@ -69,7 +70,7 @@ export function StrategiePrihlasek({ polozky, pravidla, rok, onMove, navrhyPojis
               {p.href ? <Link href={p.href} className="block truncate text-sm font-medium text-slate-900 hover:underline">{p.label}</Link>
                 : <p className="truncate text-sm font-medium text-slate-900">{p.label}</p>}
               <p className="text-xs text-slate-600">
-                {poradi.has(p.id) ? `${poradi.get(p.id)}. na přihlášce` : 'Do přihlášky se nevejde'}
+                {k.pozastaveno ? `${i + 1}. v tvém pořadí` : poradi.has(p.id) ? `${poradi.get(p.id)}. na přihlášce` : 'Do přihlášky se nevejde'}
                 {p.talentova ? ' · s talentovou zkouškou' : ''}
                 {p.skupina ? ` · ${NAZEV_SKUPINY[p.skupina]}` : ''}
               </p>
@@ -85,7 +86,12 @@ export function StrategiePrihlasek({ polozky, pravidla, rok, onMove, navrhyPojis
             prvních {pravidla.prihlasek_bezne} bez talentové zkoušky a {pravidla.prihlasek_talentove} s talentovou zkouškou.
           </p>
         )}
-        {!k.znameSkupiny ? (
+        {k.pozastaveno ? (
+          <p className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-slate-700">
+            U některého oboru zatím nevíme, jestli má talentovou zkoušku, protože se jeho údaje nenačetly.
+            Proto teď neukazujeme, které obory se vejdou do přihlášky, ani jestli v ní máš pojistku. Zkus stránku načíst znovu.
+          </p>
+        ) : !k.znameSkupiny ? (
           <p className="rounded-lg border border-blue-200 bg-blue-50 p-3 text-blue-900">
             Zadej výsledek cvičného testu v kroku 1 a ukážeme, jestli máš mezi prvními {pravidla.prihlasek_bezne} obory pojistku.
           </p>
