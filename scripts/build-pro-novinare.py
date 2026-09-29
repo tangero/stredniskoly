@@ -518,7 +518,9 @@ def balicek_uchazeci(rok: str, uchazeci: list[dict], kolo1: list[dict]) -> tuple
     b.pridej(f"uchazeci-1-kolo-{rok}-kraje", "Po krajích", hlavicka, radky)
     b.pridej(f"uchazeci-1-kolo-{rok}-cesko", "Česko", hlavicka, radky_cr)
     cr = {roc: dict(celkem[roc]) for roc in ("9", "7", "5")}
-    return b, {"rocniky": cr, "bez_rocniku": bez_rocniku, "uchazecu": sum(c["uchazecu"] for c in celkem.values())}
+    kraje_9 = {nadpis_kraje(kr): dict(c) for (kr, roc), c in tab.items() if roc == "9"}
+    return b, {"rocniky": cr, "kraje_9": kraje_9, "bez_rocniku": bez_rocniku,
+               "uchazecu": sum(c["uchazecu"] for c in celkem.values())}
 
 
 def balicek_druhe_kolo(rok: str, kolo2: list[dict]) -> tuple[Balicek, dict]:

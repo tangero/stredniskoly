@@ -271,6 +271,162 @@
      "volba3": 583
     }
    },
+   "kraje_9": {
+    "Jihomoravský kraj": {
+     "uchazecu": 14129,
+     "konali_jpz": 10156,
+     "volba2": 2223,
+     "volba1": 9362,
+     "volba3": 1197,
+     "nikam": 1347,
+     "nikam_jen_pozadavek": 372,
+     "nikam_obe": 488,
+     "nikam_jen_kapacita": 487
+    },
+    "Jihočeský kraj": {
+     "uchazecu": 7920,
+     "konali_jpz": 5594,
+     "volba1": 6050,
+     "volba2": 1014,
+     "nikam": 464,
+     "nikam_jen_kapacita": 211,
+     "volba3": 392,
+     "nikam_jen_pozadavek": 97,
+     "nikam_obe": 156
+    },
+    "Hlavní město Praha": {
+     "uchazecu": 22541,
+     "konali_jpz": 17918,
+     "volba1": 11952,
+     "nikam": 4310,
+     "nikam_obe": 1806,
+     "volba2": 3850,
+     "nikam_jen_kapacita": 1170,
+     "nikam_jen_pozadavek": 1334,
+     "volba3": 2429
+    },
+    "Zlínský kraj": {
+     "uchazecu": 7285,
+     "konali_jpz": 5599,
+     "volba2": 1111,
+     "volba1": 5224,
+     "volba3": 483,
+     "nikam": 467,
+     "nikam_obe": 105,
+     "nikam_jen_kapacita": 275,
+     "nikam_jen_pozadavek": 87
+    },
+    "Olomoucký kraj": {
+     "uchazecu": 7489,
+     "konali_jpz": 5239,
+     "volba1": 5353,
+     "nikam": 554,
+     "nikam_jen_pozadavek": 161,
+     "volba3": 523,
+     "volba2": 1059,
+     "nikam_jen_kapacita": 239,
+     "nikam_obe": 154
+    },
+    "Ústecký kraj": {
+     "uchazecu": 9672,
+     "konali_jpz": 6328,
+     "volba1": 7529,
+     "volba2": 1027,
+     "nikam": 712,
+     "nikam_jen_pozadavek": 249,
+     "nikam_jen_kapacita": 266,
+     "volba3": 404,
+     "nikam_obe": 197
+    },
+    "Moravskoslezský kraj": {
+     "uchazecu": 13093,
+     "konali_jpz": 9383,
+     "volba1": 9645,
+     "nikam": 786,
+     "nikam_obe": 179,
+     "volba2": 1850,
+     "volba3": 812,
+     "nikam_jen_kapacita": 451,
+     "nikam_jen_pozadavek": 156
+    },
+    "Středočeský kraj": {
+     "uchazecu": 12955,
+     "konali_jpz": 9357,
+     "volba2": 1884,
+     "volba1": 8585,
+     "volba3": 933,
+     "nikam": 1553,
+     "nikam_jen_pozadavek": 545,
+     "nikam_obe": 597,
+     "nikam_jen_kapacita": 411
+    },
+    "Pardubický kraj": {
+     "uchazecu": 6753,
+     "konali_jpz": 4820,
+     "volba1": 4745,
+     "nikam": 655,
+     "nikam_jen_kapacita": 267,
+     "volba2": 934,
+     "volba3": 419,
+     "nikam_jen_pozadavek": 211,
+     "nikam_obe": 177
+    },
+    "Kraj Vysočina": {
+     "uchazecu": 6133,
+     "konali_jpz": 4129,
+     "volba1": 5009,
+     "nikam": 303,
+     "nikam_jen_kapacita": 136,
+     "volba2": 593,
+     "volba3": 228,
+     "nikam_jen_pozadavek": 94,
+     "nikam_obe": 73
+    },
+    "Liberecký kraj": {
+     "uchazecu": 5422,
+     "konali_jpz": 3631,
+     "volba1": 3525,
+     "volba2": 854,
+     "nikam": 637,
+     "nikam_obe": 166,
+     "nikam_jen_kapacita": 290,
+     "nikam_jen_pozadavek": 181,
+     "volba3": 406
+    },
+    "Karlovarský kraj": {
+     "uchazecu": 2959,
+     "konali_jpz": 1958,
+     "volba1": 1974,
+     "volba3": 232,
+     "nikam": 287,
+     "nikam_jen_kapacita": 114,
+     "volba2": 466,
+     "nikam_jen_pozadavek": 104,
+     "nikam_obe": 69
+    },
+    "Královéhradecký kraj": {
+     "uchazecu": 6575,
+     "konali_jpz": 4608,
+     "volba1": 4718,
+     "volba2": 900,
+     "nikam": 588,
+     "nikam_jen_kapacita": 164,
+     "nikam_obe": 197,
+     "volba3": 369,
+     "nikam_jen_pozadavek": 227
+    },
+    "Plzeňský kraj": {
+     "uchazecu": 7281,
+     "konali_jpz": 5060,
+     "volba1": 4939,
+     "volba2": 1105,
+     "nikam": 614,
+     "nikam_jen_kapacita": 270,
+     "nikam_jen_pozadavek": 125,
+     "nikam_obe": 219,
+     "volba3": 623
+    }
+   },
    "bez_rocniku": 0,
    "uchazecu": 156210
   },
