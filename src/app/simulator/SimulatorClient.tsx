@@ -6,11 +6,12 @@ import { useSearchParams } from 'next/navigation';
 import { normalizeSchoolKey } from '@/lib/school-key';
 import { nazevNabidky } from '@/lib/obor-profil';
 import { matchesSearchLocation, splitByCommute } from '@/lib/simulator-filter';
-import { rankAdmissionOffers, rankingPages, type AdmissionContext } from '@/lib/admission-summary';
+import type { AdmissionContext } from '@/lib/admission-summary';
 import { MAX_SELECTION, readSelection, selectionForShare, shareUrlFor } from '@/lib/simulator-state';
-import { OfferComparisonTable, type ComparisonOffer } from '@/components/simulator/OfferComparisonTable';
+import { SeznamNabidek, type NabidkaSimulatoru } from '@/components/simulator/SeznamNabidek';
+import { hodnotaHranice, klicPasma, nactiIndexPasem, polohaVuciPasmu, seradNabidky, type IndexPasem } from '@/lib/poloha-vuci-pasmu';
 import { SavedSelectionBar } from '@/components/simulator/SavedSelectionBar';
-import { cislo, useZadaneTesty, ZadaniTestu } from '@/components/obor/ZadaniTestu';
+import { useZadaneTesty, ZadaniTestu } from '@/components/obor/ZadaniTestu';
 import { TRIDA_TAU, type DruhTestu, type PrevodDruhu, type PrevodTestu } from '@/lib/prevod-testu-vypocet';
 
 interface School {
@@ -62,21 +63,15 @@ function prevodDruhu(prevod: PrevodTestu | null, druh: DruhTestu): PrevodDruhu |
   return prevod && terminy ? { rok_testu: prevod.rok_testu, rok_cile: prevod.rok_cile, terminy } : null;
 }
 
-function toComparisonOffer(school: School, commuteMinutes: number | null): ComparisonOffer {
-  const context = school.admission_context;
+function toNabidka(school: School): NabidkaSimulatoru {
   return {
     id: school.id,
     slug: school.slug,
     href: school.href,
-    name: school.nazev_display || school.nazev,
+    nazev: school.nazev_display || school.nazev,
     program: nazevNabidky(school.obor, school.zamereni, school.delka_studia),
-    place: school.adresa || school.ulice || school.obec,
-    acceptedTotal: context ? context.average_accepted : school.history?.average ?? null,
-    acceptedCzech: school.history?.average_cj ?? null,
-    acceptedMaths: school.history?.average_ma ?? null,
-    applications: school.demand?.applications ?? null,
-    capacity: school.demand?.capacity ?? school.history?.capacity ?? null,
-    commuteMinutes,
+    obec: school.obec,
+    zamereni: school.zamereni || undefined,
   };
 }
 
@@ -93,7 +88,9 @@ export function SimulatorClient({ rokPasem, prevod }: SimulatorClientProps) {
   // Uložený výběr je stav aplikace, nikoli obsah adresy: odkaz už celý výběr neunese.
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [onlySaved, setOnlySaved] = useState(false);
-  const [view, setView] = useState<'table' | 'cards'>('table');
+  const [razeni, setRazeni] = useState<'dojezd' | 'hranice'>('dojezd');
+  const [pasma, setPasma] = useState<IndexPasem | null>(null);
+  const [pasmaChyba, setPasmaChyba] = useState('');
   const [legacySaved, setLegacySaved] = useState<School[]>([]);
   const [catalog, setCatalog] = useState<SearchResponse | null>(null);
   const [error, setError] = useState('');
@@ -118,8 +115,7 @@ export function SimulatorClient({ rokPasem, prevod }: SimulatorClientProps) {
   const [transitResult, setTransitResult] = useState<{ key: string; data: Transit } | null>(null);
   const [transitError, setTransitError] = useState('');
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [visible, setVisible] = useState(20);
-  const [rankingPagination, setRankingPagination] = useState({ key: '', page: 1 });
+
   const [notice, setNotice] = useState('');
   const [storageStatus, setStorageStatus] = useState('');
   const [shareUrl, setShareUrl] = useState('');
@@ -165,6 +161,17 @@ export function SimulatorClient({ rokPasem, prevod }: SimulatorClientProps) {
       .catch(() => { if (!controller.signal.aborted) setError('Katalog se nepodařilo načíst.'); });
     return () => controller.abort();
   }, [retry]);
+
+  useEffect(() => {
+    // Index pásem jen s rokem z registru; body uchazeče neodcházejí na server.
+    if (rokPasem === null) return;
+    const controller = new AbortController();
+    fetch(`/simulator_pasma_${rokPasem}.json`, { signal: controller.signal })
+      .then(async response => { if (!response.ok) throw new Error(); return response.json(); })
+      .then(data => { if (!controller.signal.aborted) { setPasma(nactiIndexPasem(data)); setPasmaChyba(''); } })
+      .catch(() => { if (!controller.signal.aborted) setPasmaChyba('Výsledky 1. kola se nepodařilo načíst, obory proto neřadíme do skupin.'); });
+    return () => controller.abort();
+  }, [rokPasem, retry]);
 
   useEffect(() => {
     if (stop || stopQuery.trim().length < 2) return;
@@ -219,11 +226,6 @@ export function SimulatorClient({ rokPasem, prevod }: SimulatorClientProps) {
     () => typeof window === 'undefined' ? selectedIds : selectionForShare(selectedIds, window.location.origin),
     [selectedIds],
   );
-  // Tabulka porovnává body po předmětech s průměry přijatých; bere první vyplněný test bez převodu.
-  const ownScore = useMemo(() => {
-    const prvni = testy.testy.find(t => cislo(t.cj) !== null && cislo(t.ma) !== null);
-    return { czech: prvni ? cislo(prvni.cj) : null, maths: prvni ? cislo(prvni.ma) : null };
-  }, [testy.testy]);
   const estimates = useMemo(() => {
     const result = new Map<string, Estimate>();
     const duplicates = new Set<string>();
@@ -237,15 +239,6 @@ export function SimulatorClient({ rokPasem, prevod }: SimulatorClientProps) {
   }, [transit]);
   const mapped = useMemo(() => new Set((transit?.mappedProgramIds ?? []).map(normalizeSchoolKey).filter(id => !estimates.duplicates.has(id))), [transit, estimates]);
   const availableSubjects = useMemo(() => Array.from(new Set(catalog?.schools.map(s => s.obor).filter(Boolean))).sort((a, b) => a.localeCompare(b, 'cs')), [catalog]);
-  const schoolPrograms = useMemo(() => {
-    const index = new Map<string, School[]>();
-    for (const school of catalog?.schools ?? []) {
-      const key = school.id.split('_')[0];
-      const programs = index.get(key) ?? [];
-      programs.push(school); index.set(key, programs);
-    }
-    return index;
-  }, [catalog]);
   const cities = useMemo(() => Array.from(new Set(catalog?.schools.map(s => s.obec.trim()).filter(Boolean))).sort((a, b) => a.localeCompare(b, 'cs')), [catalog]);
   const filtered = useMemo(() => (catalog?.schools ?? []).filter(s => {
     const duration = grade === '5' ? 8 : grade === '7' ? 6 : null;
@@ -253,27 +246,30 @@ export function SimulatorClient({ rokPasem, prevod }: SimulatorClientProps) {
     return matchesSearchLocation(s, { city, region, commute: !!stop }) && (!subjects.length || subjects.includes(s.obor)) &&
       (!query.trim() || normalize([s.obor, s.zamereni].join(' ')).includes(normalize(query.trim())));
   }), [catalog, grade, region, city, stop, subjects, query]);
-  const rankingMode = !onlySaved && !stop && !city && !region && !subjects.length && !query.trim();
-  const ranked = useMemo(() => rankAdmissionOffers(filtered), [filtered]);
-  const rankingKey = JSON.stringify([grade, city, region, stop?.stopId, subjects, query, onlySaved]);
-  const rankingPageCount = Math.ceil(ranked.length / 20);
-  const rankingPage = Math.max(1, Math.min(rankingPagination.key === rankingKey ? rankingPagination.page : 1, rankingPageCount));
-  // Změna podmínek zahodí starou stránku i při pozdějším návratu do žebříčku.
-  if (rankingPagination.key !== rankingKey) setRankingPagination({ key: rankingKey, page: 1 });
-  function goToRankingPage(page: number) {
-    setRankingPagination({ key: rankingKey, page });
-    document.getElementById('simulator-results')?.scrollIntoView({ block: 'start' });
-  }
+  // Bez zastávky, obce i kraje se celá země neukazuje: 2 800 nabídek by nikomu nepomohlo.
+  const needsPlace = !onlySaved && !stop && !city && !region;
   const resultCandidates = onlySaved ? filtered.filter(s => savedKeys.has(normalizeSchoolKey(s.id))) : filtered;
   const groups = stop ? splitByCommute(resultCandidates, limit, s => estimates.byId.get(normalizeSchoolKey(s.id))?.minutes, s => mapped.has(normalizeSchoolKey(s.id))) : { within: resultCandidates, near: [], unknown: [] };
   const pending = !!stop && !transit;
   // Filtr „jen uložené“ platí nad výsledky hledání, nikoli místo nich.
   const shownOffers = onlySaved ? groups.within.filter(s => savedKeys.has(normalizeSchoolKey(s.id))) : groups.within;
-  function comparison(offers: School[]) {
-    return <OfferComparisonTable offers={offers.map(school => ({
-      ...toComparisonOffer(school, estimates.byId.get(normalizeSchoolKey(school.id))?.minutes ?? null),
-      otherOffers: (schoolPrograms.get(school.id.split('_')[0]) ?? []).filter(other => other.id !== school.id).map(other => toComparisonOffer(other, null)),
-    }))} own={ownScore} savedIds={savedKeys} onToggleSave={toggle} view={view} />;
+  const minPrijatych = pasma?.min_prijatych_pro_hranici ?? 10;
+  const radekPasma = (n: { id: string }) => pasma?.data.get(klicPasma(n.id));
+  const minutyDojezdu = (n: { id: string }) => estimates.byId.get(normalizeSchoolKey(n.id))?.minutes;
+  // Při více testech rozhoduje nejhorší výsledek (rozhodnutí zadavatele 4).
+  const bodySkupiny = testy.nejhorsi;
+  const poloha = pasma && bodySkupiny !== null && rokPasem !== null
+    ? (n: { id: string }) => polohaVuciPasmu(bodySkupiny, radekPasma(n), Number(druh), minPrijatych)
+    : null;
+  function seznam(offers: School[], zpusob: 'dojezd' | 'hranice' = razeni) {
+    const serazene = seradNabidky(offers.map(toNabidka), zpusob, {
+      minuty: minutyDojezdu, nazev: n => `${n.nazev} ${n.program}`, hranice: n => hodnotaHranice(radekPasma(n), minPrijatych),
+    });
+    return <SeznamNabidek
+      nabidky={serazene} poloha={poloha} radek={radekPasma} minuty={minutyDojezdu}
+      rok={rokPasem ?? 0} rokKriterii={pasma?.rok_kriterii ?? null} minPrijatych={minPrijatych}
+      isSaved={id => savedKeys.has(normalizeSchoolKey(id))} onToggleSave={toggle}
+    />;
   }
   const savedItems = selectedIds.map(id => {
     const school = catalogIndex.get(normalizeSchoolKey(id));
@@ -284,7 +280,7 @@ export function SimulatorClient({ rokPasem, prevod }: SimulatorClientProps) {
     setMinuteInput(raw);
     const number = Number(raw);
     if (raw.trim() && Number.isInteger(number) && number >= 5 && number <= 180) {
-      setLimit(number); setVisible(20); setTransitError('');
+      setLimit(number); setTransitError('');
     }
   }
   function writeStorage(ids: string[]) {
@@ -323,7 +319,7 @@ export function SimulatorClient({ rokPasem, prevod }: SimulatorClientProps) {
     <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Pro který test zadáváš výsledky">
       {(['4', '6', '8'] as DruhTestu[]).map(d => (
         <button key={d} type="button" className={`${button} ${druh === d ? 'border-blue-500 bg-blue-50 text-blue-800' : ''}`} aria-pressed={druh === d}
-          onClick={() => { setDruhVolba(d); if (grade !== 'all') { setGrade(String(TRIDA_TAU[d])); setVisible(20); } }}>
+          onClick={() => { setDruhVolba(d); if (grade !== 'all') { setGrade(String(TRIDA_TAU[d])); } }}>
           Test pro {TRIDA_TAU[d]}. třídu
         </button>
       ))}
@@ -341,18 +337,23 @@ export function SimulatorClient({ rokPasem, prevod }: SimulatorClientProps) {
       />
     </div>
   </section>;
-  const scoreControls = <>
-          <div className="mb-4 mt-4 flex flex-wrap items-end justify-between gap-3">
-            <p id="own-score-help" className="max-w-2xl text-xs text-slate-600">
-              Tabulka porovnává body z prvního zadaného testu s průměrem přijatých po předmětech, a to bez převodu.
-              U cvičného testu z jiného roku je to jen orientační. Prázdné pole znamená „nevím“, nikoli nula.
-            </p>
-            <div className="flex gap-2" role="group" aria-label="Podoba výsledků">
-              <button className={`${button} ${view === 'table' ? 'border-blue-500 bg-blue-50 text-blue-800' : ''}`} aria-pressed={view === 'table'} onClick={() => setView('table')}>Tabulka</button>
-              <button className={`${button} ${view === 'cards' ? 'border-blue-500 bg-blue-50 text-blue-800' : ''}`} aria-pressed={view === 'cards'} onClick={() => setView('cards')}>Karty</button>
-            </div>
-          </div>
-  </>;
+  const razeniControls = <div className="mb-4 mt-4">
+    {bodySkupiny === null && rokPasem !== null && <p className="mb-3 rounded-lg border border-blue-200 bg-blue-50 p-3 text-sm text-blue-900">
+      Zadej výsledek cvičného testu v kroku 1 a obory se rozdělí podle toho, jak by ses s ním dostal v 1. kole {rokPasem}.
+    </p>}
+    {pasmaChyba && <p className="mb-3 text-sm text-rose-700">{pasmaChyba}</p>}
+    {bodySkupiny !== null && testy.platne.length > 1 && <p className="mb-3 text-sm text-slate-600">Máš víc testů; do skupin řadíme podle nejhoršího z nich.</p>}
+    <label className="block text-sm font-medium">Seřadit
+      <select className={`${field} sm:max-w-xs`} value={razeni} onChange={e => setRazeni(e.target.value === 'hranice' ? 'hranice' : 'dojezd')}>
+        <option value="dojezd">{stop ? 'podle dojezdu' : 'podle názvu školy'}</option>
+        <option value="hranice">od nejvyšší hranice přijetí</option>
+      </select>
+    </label>
+    {razeni === 'hranice' && <p className="mt-2 max-w-2xl text-xs text-slate-600">
+      Řadíme podle nejnižšího výsledku přijatých v 1. kole {rokPasem}; obory s méně než {minPrijatych} přijatými jsou na konci.
+      Těžší přijetí neznamená lepší školu: kvalitu ukazuje maturita a inspekce na stránce školy.
+    </p>}
+  </div>;
 
   return <div className="mx-auto max-w-[1600px] px-4 py-6 sm:py-10">
     <nav aria-label="Hledání a výběr" className="mb-7 flex flex-wrap gap-2">
@@ -366,29 +367,29 @@ export function SimulatorClient({ rokPasem, prevod }: SimulatorClientProps) {
       {selectedIds.length > 0 && <div className="my-4"><p className="mb-3 text-sm text-slate-600">Výsledky oborů můžeš porovnat níže.</p><button className={button} onClick={share}>Sdílet výběr</button></div>}
       {!selectedIds.length && <p className="my-6">Zatím tu nic není. Přidej obor ze simulátoru.</p>}
       {krok1}
-      {scoreControls}
-      {comparison(selectedIds.flatMap(id => { const school = catalogIndex.get(normalizeSchoolKey(id)); return school ? [school] : []; }))}
+      {razeniControls}
+      {seznam(selectedIds.flatMap(id => { const school = catalogIndex.get(normalizeSchoolKey(id)); return school ? [school] : []; }))}
       {selectedIds.map(id => { const school = catalogIndex.get(normalizeSchoolKey(id)); return school ? null : <div key={id} className="my-4"><p>{!catalog && !error ? 'Načítám uložený obor…' : 'Uložený obor se nepodařilo jednoznačně dohledat. Výběr zůstal zachovaný.'}</p><button className={button} onClick={() => toggle(id)}>Odebrat nedohledaný obor</button></div>; })}
       {shareUrl && <label className="mt-4 block text-sm">Odkaz obsahuje jen výběr oborů a zobrazí ho každý, komu jej předáš. Zastávka ani dojezd se nesdílejí.<input className={field} value={shareUrl} readOnly onFocus={e => e.target.select()} /></label>}
     </section> : <>
       <p className="text-sm font-semibold text-blue-700">SIMULÁTOR PŘIJÍMAČEK 2027</p>
       <h1 className="mt-1 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Které školy mi vyhovují?</h1>
       <p className="mt-3 text-slate-600">Zkus změnit obor nebo délku cesty. Uvidíš, jaké možnosti přibudou.</p>
-      <div className="mt-5 flex flex-wrap gap-2" role="group" aria-label="Po které třídě hledáš">{[['9', 'Po 9. třídě'], ['7', 'Po 7. třídě'], ['5', 'Po 5. třídě'], ['all', 'Všechny typy']].map(([id, label]) => <button key={id} className={`${button} ${grade === id ? 'border-blue-500 bg-blue-50 text-blue-800' : ''}`} aria-pressed={grade === id} onClick={() => { setGrade(id); setVisible(20); }}>{label}</button>)}</div>
+      <div className="mt-5 flex flex-wrap gap-2" role="group" aria-label="Po které třídě hledáš">{[['9', 'Po 9. třídě'], ['7', 'Po 7. třídě'], ['5', 'Po 5. třídě'], ['all', 'Všechny typy']].map(([id, label]) => <button key={id} className={`${button} ${grade === id ? 'border-blue-500 bg-blue-50 text-blue-800' : ''}`} aria-pressed={grade === id} onClick={() => { setGrade(id); }}>{label}</button>)}</div>
       {krok1}
       <button className={`${button} mt-4 w-full lg:hidden`} aria-expanded={filtersOpen} aria-controls="simulator-filters" onClick={() => setFiltersOpen(!filtersOpen)}>Upravit podmínky · {stop ? `do ${limit} min` : 'bez dojezdu'} · {subjects.length ? countLabel(subjects.length) : 'všechny obory'}</button>
       <div className="mt-6 grid gap-8 lg:grid-cols-[260px_1fr]">
         <aside id="simulator-filters" className={`${filtersOpen ? 'block' : 'hidden'} border-t-2 border-blue-600 pt-4 lg:block`}>
           <h2 className="text-lg font-semibold">Co je pro tebe důležité?</h2>
-          <label className="mt-4 block text-sm font-medium">Co tě zajímá<select className={field} value="" onChange={e => { if (e.target.value) setSubjects([...subjects, e.target.value]); setVisible(20); }}><option value="">{subjects.length ? 'Přidat další obor…' : 'Všechny obory · vyber obor'}</option>{availableSubjects.filter(s => !subjects.includes(s)).map(s => <option key={s}>{s}</option>)}</select></label>
-          {subjects.length > 0 && <div className="mt-2 flex flex-wrap gap-2">{subjects.map(s => <button className={`${button} text-left text-blue-800`} key={s} aria-label={`Zrušit filtr ${s}`} onClick={() => { setSubjects(subjects.filter(value => value !== s)); setVisible(20); }}>{s} ×</button>)}</div>}
+          <label className="mt-4 block text-sm font-medium">Co tě zajímá<select className={field} value="" onChange={e => { if (e.target.value) setSubjects([...subjects, e.target.value]); }}><option value="">{subjects.length ? 'Přidat další obor…' : 'Všechny obory · vyber obor'}</option>{availableSubjects.filter(s => !subjects.includes(s)).map(s => <option key={s}>{s}</option>)}</select></label>
+          {subjects.length > 0 && <div className="mt-2 flex flex-wrap gap-2">{subjects.map(s => <button className={`${button} text-left text-blue-800`} key={s} aria-label={`Zrušit filtr ${s}`} onClick={() => { setSubjects(subjects.filter(value => value !== s)); }}>{s} ×</button>)}</div>}
           <p className="mt-2 text-xs text-slate-500">Názvy z dostupného katalogu. Vybrané obory se kombinují jako alternativy.</p>
-          <label className="mt-4 block text-sm font-medium">Upřesnit obor nebo zaměření<input className={field} value={query} onChange={e => { setQuery(e.target.value); setVisible(20); }} placeholder="Např. jazyky" /></label>
-          <label className="mt-4 block text-sm font-medium">Kraj školy<select disabled={!!stop} className={`${field} disabled:bg-slate-100 disabled:text-slate-500`} value={region} onChange={e => { setRegion(e.target.value); setVisible(20); }}><option value="">Všechny kraje</option>{catalog?.kraje.map(kraj => <option key={kraj.kod}>{kraj.nazev}</option>)}</select></label>
-          <label className="mt-4 block text-sm font-medium">Město nebo obec školy<select disabled={!!stop} className={`${field} disabled:bg-slate-100 disabled:text-slate-500`} value={city} onChange={e => { setCity(e.target.value); setVisible(20); }}><option value="">Všechna města a obce</option>{cities.map(name => <option key={name}>{name}</option>)}</select></label>
-          {stop && <p className="mt-2 text-sm text-blue-800">Při hledání podle dojezdu město ani kraj škol neomezují výsledky. Po vypnutí dojezdu se tvé územní filtry znovu použijí.</p>}
+          <label className="mt-4 block text-sm font-medium">Upřesnit obor nebo zaměření<input className={field} value={query} onChange={e => { setQuery(e.target.value); }} placeholder="Např. jazyky" /></label>
+          <label className="mt-4 block text-sm font-medium">Kraj školy<select disabled={!!stop} className={`${field} disabled:bg-slate-100 disabled:text-slate-500`} value={region} onChange={e => { setRegion(e.target.value); }}><option value="">Všechny kraje</option>{catalog?.kraje.map(kraj => <option key={kraj.kod}>{kraj.nazev}</option>)}</select></label>
+          <label className="mt-4 block text-sm font-medium">Město nebo obec školy<select className={field} value={city} onChange={e => { setCity(e.target.value); }}><option value="">Všechna města a obce</option>{cities.map(name => <option key={name}>{name}</option>)}</select></label>
+          {stop && <p className="mt-2 text-sm text-blue-800">Při hledání podle dojezdu kraj výsledky neomezuje, město ano. Po vypnutí dojezdu se kraj znovu použije.</p>}
           <label className="mt-5 block text-sm font-medium">Výchozí zastávka<input className={field} autoComplete="off" value={stopQuery} onChange={e => { setStopQuery(e.target.value); setStop(null); setSuggestions([]); setStopStatus(e.target.value.trim().length >= 2 ? 'Hledám zastávky…' : ''); setTransitError(''); }} placeholder="Zadej zastávku nebo obec" /></label>
-          {!stop && suggestions.length > 0 && <ul className="mt-1 rounded-lg border border-slate-300 bg-white">{suggestions.map(item => <li key={item.stopId}><button className="min-h-11 w-full border-b border-slate-100 px-3 py-2 text-left text-sm hover:bg-blue-50" onClick={() => { setStop(item); setStopQuery(item.name); setSuggestions([]); setStopStatus(''); setTransitError(''); setVisible(20); }}>{item.name}<span className="block text-xs text-slate-500">{item.context}</span></button></li>)}</ul>}
+          {!stop && suggestions.length > 0 && <ul className="mt-1 rounded-lg border border-slate-300 bg-white">{suggestions.map(item => <li key={item.stopId}><button className="min-h-11 w-full border-b border-slate-100 px-3 py-2 text-left text-sm hover:bg-blue-50" onClick={() => { setStop(item); setStopQuery(item.name); setSuggestions([]); setStopStatus(''); setTransitError(''); }}>{item.name}<span className="block text-xs text-slate-500">{item.context}</span></button></li>)}</ul>}
           <p role="status" className="mt-1 text-sm text-slate-600">{stopStatus}</p>
           {stop && <button className={`${button} mt-2`} onClick={() => { setStop(null); setStopQuery(''); setTransitError(''); }}>Hledat bez dojezdu</button>}
           <label className="mt-4 block text-sm font-medium" htmlFor="commute-minutes">Čas na cestu tam v MHD</label>
@@ -399,17 +400,17 @@ export function SimulatorClient({ rokPasem, prevod }: SimulatorClientProps) {
         </aside>
         <section id="simulator-results" aria-label="Výsledky simulátoru" className="min-w-0 scroll-mt-4">
           <div className="mb-4 border-l-2 border-blue-500 pl-3 text-sm" role="status">
-            <p className="font-semibold text-blue-900">{stop ? `Hledáš podle dojezdu: do ${limit} min ze zastávky ${stop.name}` : city ? `Hledáš školy v obci: ${city}` : region ? `Hledáš školy v kraji: ${region}` : rankingMode ? 'Žebříček škol podle výsledků JPZ 2026' : 'Hledáš školy v celé ČR'}</p>
-            <p className="mt-1 text-slate-600">{stop ? 'Bez omezení městem nebo krajem. Zvolený typ studia a obory platí dál.' : rankingMode ? 'Vyber obor, město, kraj nebo dojezd a zobrazíme školy podle tvých podmínek.' : `Bez omezení dojezdem.${city && region ? ` Současně platí kraj: ${region}.` : ''}`}</p>
-            {!stop && (city || region) && <button className="mt-2 min-h-11 text-blue-700 underline" onClick={() => { setCity(''); setRegion(''); setVisible(20); }}>Zrušit územní omezení</button>}
+            <p className="font-semibold text-blue-900">{stop ? `Hledáš podle dojezdu: do ${limit} min ze zastávky ${stop.name}${city ? `, jen obec ${city}` : ''}` : city ? `Hledáš školy v obci: ${city}` : region ? `Hledáš školy v kraji: ${region}` : onlySaved ? 'Ukazuješ jen uložené obory' : 'Zvol město nebo zastávku'}</p>
+            <p className="mt-1 text-slate-600">{stop ? 'Bez omezení krajem. Zvolený typ studia a obory platí dál.' : needsPlace ? 'Vyber město, kraj nebo výchozí zastávku a ukážeme obory v okolí.' : `Bez omezení dojezdem.${city && region ? ` Současně platí kraj: ${region}.` : ''}`}</p>
+            {(city || (!stop && region)) && <button className="mt-2 min-h-11 text-blue-700 underline" onClick={() => { setCity(''); setRegion(''); }}>Zrušit územní omezení</button>}
           </div>
-          <p className="mb-4 text-xs text-slate-500">Nabídky doložené v 1. kole 2026, v rozsahu denních nezkrácených oborů s povinnou JPZ. Úplná nabídka a kritéria 2027 se doplňují.</p>
+          <p className="mb-4 text-xs text-slate-500">Nabídky doložené v 1. kole {rokPasem}, v rozsahu denních nezkrácených oborů s povinnou JPZ. Úplná nabídka a kritéria pro nové řízení se doplňují.</p>
           <div className="mb-4">
             <SavedSelectionBar
               items={savedItems}
               storageStatus={storageStatus}
               onlySaved={onlySaved}
-              onToggleOnlySaved={() => { setOnlySaved(!onlySaved); setVisible(20); }}
+              onToggleOnlySaved={() => { setOnlySaved(!onlySaved); }}
               onRemove={toggle}
               onShare={share}
               shareableCount={shareableIds.length}
@@ -417,26 +418,17 @@ export function SimulatorClient({ rokPasem, prevod }: SimulatorClientProps) {
             {shareUrl && <label className="mt-3 block text-sm">Odkaz obsahuje jen uložené obory. Zadané body ani zastávka se nesdílejí.
               <input className={field} value={shareUrl} readOnly onFocus={e => e.target.select()} /></label>}
           </div>
-          {scoreControls}
+          {razeniControls}
           {pending ? <div role="status"><p>{transitError || 'Počítám orientační dojezd…'}</p>{transitError && <button className={`${button} mt-3`} onClick={() => { setTransitError(''); setRetry(retry + 1); }}>Zkusit znovu</button>}</div> : <>
-            <div className="flex flex-wrap items-center justify-between gap-2"><h2 className="text-xl font-semibold" aria-live="polite">{rankingMode ? `${countLabel(ranked.length)} s ověřeným průměrem` : countLabel(groups.within.length)}{stop ? ` do ${limit} min` : ''}</h2><span className="text-xs text-slate-500">{stop ? 'Podle odhadu dojezdu' : rankingMode ? 'Průměr JPZ přijatých · od nejvyššího' : 'Podle názvu školy'}</span></div>
+            {needsPlace ? <p className="my-5">Zvol město, kraj nebo výchozí zastávku. Obory z celé země najednou neukazujeme.</p> : <>
+            <div className="flex flex-wrap items-center justify-between gap-2"><h2 className="text-xl font-semibold" aria-live="polite">{countLabel(shownOffers.length)}{stop ? ` do ${limit} min` : ''}</h2></div>
             {!!groups.near.length && <div className="my-5 border-l-4 border-amber-500 bg-amber-50 p-4"><h3 className="font-semibold">Ještě {countLabel(groups.near.length)} těsně za limitem</h3><p className="mt-1 text-sm">Nejbližší je o {(estimates.byId.get(normalizeSchoolKey(groups.near[0].id))?.minutes ?? limit) - limit} min dál. Tvůj limit zůstává {limit} min.</p><div className="mt-3 flex flex-wrap gap-2"><a href="#near-schools" className={button}>Prohlédnout další obory</a>{limit < 180 && <button className={button} onClick={() => changeTime(String(Math.min(180, estimates.byId.get(normalizeSchoolKey(groups.near[groups.near.length - 1].id))?.minutes ?? limit + 10)))}>Zvýšit limit na {Math.min(180, estimates.byId.get(normalizeSchoolKey(groups.near[groups.near.length - 1].id))?.minutes ?? limit + 10)} min</button>}</div></div>}
-            {catalog && !groups.within.length && <p className="my-5">V zadaných podmínkách není žádný obor. Zkus rozšířit čas, změnit kraj nebo zrušit některý filtr.</p>}
-            {rankingMode && <p className="mt-2 text-sm text-slate-600">Pořadí se týká jednotlivých oborů ve zvolené skupině studia. Výsledky přijatých nejsou hodnocením kvality školy ani šancí na přijetí.</p>}
-            {rankingMode ? <>
-              <p className="mt-3 text-sm text-slate-500">{ranked.length ? `Zobrazeno ${(rankingPage - 1) * 20 + 1}–${Math.min(rankingPage * 20, ranked.length)} z ${ranked.length} oborů` : 'Pro tuto skupinu zatím nemáme ověřené průměry.'}</p>
-              {comparison(ranked.slice((rankingPage - 1) * 20, rankingPage * 20))}
-              {rankingPageCount > 1 && <nav aria-label="Stránkování žebříčku" className="my-6 flex flex-wrap items-center gap-2">
-                <p className="w-full text-sm text-slate-600">Stránka {rankingPage} z {rankingPageCount}</p>
-                <button className={button} disabled={rankingPage === 1} onClick={() => goToRankingPage(rankingPage - 1)}>Předchozí</button>
-                {rankingPages(rankingPage, rankingPageCount).map((page, index) => typeof page === 'number' ? <button key={page} className={`${button} ${page === rankingPage ? 'border-blue-600 bg-blue-50 text-blue-800' : ''}`} aria-label={`Stránka ${page}`} aria-current={page === rankingPage ? 'page' : undefined} onClick={() => goToRankingPage(page)}>{page}</button> : <span key={`gap-${index}`} className="px-1">{page}</span>)}
-                <button className={button} disabled={rankingPage === rankingPageCount} onClick={() => goToRankingPage(rankingPage + 1)}>Další</button>
-              </nav>}
-            </> : comparison(shownOffers.slice(0, visible))}
-            {!rankingMode && shownOffers.length > visible && <button className={`${button} my-4`} onClick={() => setVisible(visible + 20)}>Dalších 20 oborů</button>}
-            {!!groups.near.length && <section id="near-schools" className="mt-8 scroll-mt-8"><h2 className="text-xl font-semibold">Těsně za limitem</h2><p className="mt-1 text-sm text-slate-600">Nejvýš o 10 minut dál, ostatní filtry platí.</p>{comparison(groups.near.slice(0, visible))}{groups.near.length > visible && <button className={`${button} mt-3`} onClick={() => setVisible(visible + 20)}>Další obory za limitem</button>}</section>}
-            {!!groups.unknown.length && <details className="mt-8"><summary className="cursor-pointer font-semibold">Dojezd zatím neověřen ({groups.unknown.length})</summary><p className="mt-2 text-sm text-slate-600">Chybí jednoznačné přiřazení místa výuky k dopravním datům. Neznamená to, že škola není dostupná.</p>{comparison(groups.unknown.slice(0, visible))}{groups.unknown.length > visible && <button className={`${button} mt-3`} onClick={() => setVisible(visible + 20)}>Další obory bez ověřeného dojezdu</button>}</details>}
+            {catalog && !shownOffers.length && <p className="my-5">V zadaných podmínkách není žádný obor. Zkus rozšířit čas, změnit město nebo zrušit některý filtr.</p>}
+            <div className="mt-4">{seznam(shownOffers)}</div>
+            {!!groups.near.length && <section id="near-schools" className="mt-8 scroll-mt-8"><h2 className="text-xl font-semibold">Těsně za limitem</h2><p className="mt-1 text-sm text-slate-600">Nejvýš o 10 minut dál, ostatní filtry platí.</p><div className="mt-3">{seznam(groups.near)}</div></section>}
+            {!!groups.unknown.length && <details className="mt-8"><summary className="cursor-pointer font-semibold">Dojezd zatím neověřen ({groups.unknown.length})</summary><p className="mt-2 text-sm text-slate-600">Chybí jednoznačné přiřazení místa výuky k dopravním datům. Neznamená to, že škola není dostupná.</p><div className="mt-3">{seznam(groups.unknown)}</div></details>}
             {stop && <p className="mt-6 text-xs text-slate-500">Nenalezená cesta může znamenat překročení rozsahu i chybějící spoj v podkladech. Pro konkrétní den ověř spojení v jízdním řádu.</p>}
+            </>}
           </>}
         </section>
       </div>
