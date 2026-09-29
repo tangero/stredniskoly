@@ -250,8 +250,9 @@ export function strukturaZPrepisu(p: PrepisProPredvyplneni): StrukturaKriterii {
   return {
     verze: 1,
     jpz: {
-      cjl_max: p.jpz?.cjl_max ?? 50,
-      mat_max: p.jpz?.mat_max ?? 50,
+      // Neznámé maximum zůstane neznámé; výchozích 50 bodů má jen ruční založení.
+      cjl_max: p.jpz?.cjl_max ?? null,
+      mat_max: p.jpz?.mat_max ?? null,
       prepoctovy_koeficient_pct: koef && koef !== 100 ? koef : null,
       vyssi_vaha: null,
     },

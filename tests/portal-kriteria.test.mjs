@@ -122,6 +122,12 @@ test('předvyplnění se páruje podle oboru a zaměření z veřejného přepis
     assert.doesNotThrow(() => overStrukturu(n.struktura));
   }
   assert.deepEqual(await predvyplneniZPrepisu(obory, 1999), {}, 'chybějící ročník přepisu nic nepředvyplní');
+  // 691000107: Strojírenství bez zaměření nesmí převzít přepis zaměření „Technická administrativa“.
+  const cizi = [{ klic: 'x', redizo: '691000107', kkov: '23-41-M/01', zamereni: '', zdrojId: '24ca8437-d099-4f28-b62b-24c5a58ebd65' }];
+  const prepis = JSON.parse(await (await import('node:fs/promises')).readFile('public/kriteria_prijeti_2026.json', 'utf8')).data['691000107_23-41-M/01'];
+  if (prepis && prepis.prepisy.every((p) => p.source_id !== cizi[0].zdrojId && p.zamereni)) {
+    assert.deepEqual(await predvyplneniZPrepisu(cizi, 2026), {});
+  }
 });
 
 test('obory 2027 jsou zatím výslovně odvozené z nabídky 2026', async () => {
@@ -199,6 +205,16 @@ test('pravidla 2026 jsou pouze historický kontext pro 2027; výjimka kola má p
   assert.equal(aktualni.stav, 'aktualni');
   assert.equal(aktualni.rok, 2027);
   assert.equal(stavKriterii(pravidla, oborKlic, 2028, 1).stav, 'nezname');
+});
+
+test('výjimka kola jednoho zdroje nevyřadí společné pravidlo jiného zdroje', () => {
+  const z = (id, zdroj, kolo, rezim) => ({ id, oborKlic: 'o', rok: 2027, kolo, rezim, popis: '', zdroj, zdrojUrl: '',
+    zjistenoAt: '2027-01-20T00:00:00Z', publikovanoAt: null, overenoAt: null });
+  const stav = stavKriterii([z('a', 'dipsy_pdf', null, 'jine'), z('b', 'skola', 1, 'pouze_jpz')], 'o', 2027, 1);
+  assert.equal(stav.stav, 'rozpor');
+  assert.equal(stav.pravidla.length, 2);
+  const stejny = stavKriterii([z('a', 'skola', null, 'jine'), z('b', 'skola', 1, 'pouze_jpz')], 'o', 2027, 1);
+  assert.equal(stejny.stav, 'aktualni', 'v rámci zdroje výjimka kola přebije společné pravidlo');
 });
 
 test('rozpor zdrojů nepředstírá potvrzené pravidlo', () => {

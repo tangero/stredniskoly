@@ -338,7 +338,8 @@ const norm = (s: string) => s.normalize('NFC').trim().replace(/\s+/g, ' ').toLoc
 
 /**
  * Předvyplnění pro obory školy z přepisu roku `rokPrepisu` (klíč oboru portálu → návrh).
- * Obor s více zaměřeními bere přepis svého zaměření; bez shody jen jediný přepis oboru.
+ * Páruje se přesná nabídka (`source_id`), jinak shoda zaměření; přepis jiného
+ * zaměření se nenabízí, ani když je u oboru jediný.
  */
 export async function predvyplneniZPrepisu(obory: OborProKriteria[], rokPrepisu: number): Promise<Record<string, Predvyplneni>> {
   const [prepis, doplnky] = await Promise.all([
@@ -349,8 +350,8 @@ export async function predvyplneniZPrepisu(obory: OborProKriteria[], rokPrepisu:
   const vysledek: Record<string, Predvyplneni> = {};
   for (const o of obory) {
     const prepisy = prepis.data[`${o.redizo}_${o.kkov}`]?.prepisy ?? [];
-    const shoda = prepisy.filter((p) => norm(p.zamereni) === norm(o.zamereni));
-    const p = shoda[0] ?? (prepisy.length === 1 ? prepisy[0] : undefined);
+    const p = prepisy.find((x) => x.source_id === o.zdrojId)
+      ?? prepisy.find((x) => norm(x.zamereni) === norm(o.zamereni));
     if (!p) continue;
     const doplnek = doplnky?.data[p.source_id];
     const zdroj = { ...p, jpz: doplnek?.jpz ?? null, rovnost: doplnek?.rovnost ?? [] };

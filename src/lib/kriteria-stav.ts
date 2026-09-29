@@ -24,11 +24,19 @@ export type StavKriterii =
   | { stav: 'rozpor'; rok: number; pravidla: DolozenePravidlo[] }
   | { stav: 'nezname'; rok: number; pravidla: [] };
 
+/**
+ * Pravidla platná pro rok a kolo. Konkrétní kolo nahrazuje společné pravidlo
+ * jen v rámci téhož zdroje; pravidla jiných zdrojů zůstanou k porovnání.
+ */
 function proRokAKolo(pravidla: DolozenePravidlo[], oborKlic: string, rok: number, kolo: number | null): DolozenePravidlo[] {
   const nalezena = pravidla.filter((p) => p.oborKlic === oborKlic && p.rok === rok);
   if (kolo === null) return nalezena.filter((p) => p.kolo === null);
-  const presne = nalezena.filter((p) => p.kolo === kolo);
-  return presne.length ? presne : nalezena.filter((p) => p.kolo === null);
+  const zdroje = [...new Set(nalezena.map((p) => p.zdroj))];
+  return zdroje.flatMap((zdroj) => {
+    const zeZdroje = nalezena.filter((p) => p.zdroj === zdroj);
+    const presne = zeZdroje.filter((p) => p.kolo === kolo);
+    return presne.length ? presne : zeZdroje.filter((p) => p.kolo === null);
+  });
 }
 
 function shodna(pravidla: DolozenePravidlo[]): boolean {
