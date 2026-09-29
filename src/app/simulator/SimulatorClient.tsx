@@ -355,7 +355,7 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
     <div className="mt-3">
       <ZadaniTestu
         stav={testy} druh={druh} rok={rokPasem} prevodVstup={prevodVybraneho} pamatovat
-        kdeJeVysledek="Ve výsledcích se počítá s"
+        kdeJeVysledek="Ve výsledcích se počítá s" slouceni="nejhorsi"
         poznamkaUlozeni="Platí i pro proužek na stránkách oborů se stejným testem."
       />
     </div>

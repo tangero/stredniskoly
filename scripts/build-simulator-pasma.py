@@ -156,16 +156,22 @@ def serializuj(index: dict) -> str:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--zmer", action="store_true", help="nic nezapisovat, jen změřit velikost")
+    ap.add_argument("--obdobi", help="ročník pásem (cermat-uchazeci-kolo1) k sestavení; výchozí je zobrazený "
+                    "podle registru. Připravovaný ročník se sestavuje před přepnutím sady.")
+    ap.add_argument("--obdobi-kriterii", help="ročník kritérií (dipsy-kriteria); výchozí podle registru")
+    ap.add_argument("--obdobi-katalogu", help="ročník katalogu (cermat-prihlasky); výchozí podle registru")
     args = ap.parse_args()
 
     reg = registr()
-    rok_pasem = obdobi(reg, "cermat-uchazeci-kolo1")
-    rok_kriterii = obdobi(reg, "dipsy-kriteria")
-    rok_katalogu = obdobi(reg, "cermat-prihlasky")
+    rok_pasem = args.obdobi or obdobi(reg, "cermat-uchazeci-kolo1")
+    rok_kriterii = args.obdobi_kriterii or obdobi(reg, "dipsy-kriteria")
+    rok_katalogu = args.obdobi_katalogu or obdobi(reg, "cermat-prihlasky")
+    if not (PUBLIC / f"pasma_prijeti_{rok_pasem}.json").exists():
+        sys.exit(f"Pásma pro ročník {rok_pasem} neexistují (public/pasma_prijeti_{rok_pasem}.json).")
 
     pasma = json.loads((PUBLIC / f"pasma_prijeti_{rok_pasem}.json").read_text(encoding="utf-8"))
     if str(pasma["rok"]) != rok_pasem:
-        sys.exit(f"Pásma mají rok {pasma['rok']}, registr {rok_pasem}.")
+        sys.exit(f"Pásma mají rok {pasma['rok']}, požadovaný ročník {rok_pasem}.")
     soubor_krit = PUBLIC / f"kriteria_prijeti_{rok_kriterii}.json"
     kriteria = json.loads(soubor_krit.read_text(encoding="utf-8")) if soubor_krit.exists() else None
     katalog = json.loads((PUBLIC / "schools_data.json").read_text(encoding="utf-8"))

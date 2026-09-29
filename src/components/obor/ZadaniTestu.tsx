@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react';
 import { tvar } from '@/lib/cesky-tvar';
+import { popisSlouceni, slouceneBody, type SlouceniTestu } from '@/lib/slouceni-testu';
 import { median, prevedBody, TRIDA_TAU, type DruhTestu, type PrevodDruhu, type TerminPrevodu } from '@/lib/prevod-testu-vypocet';
 
 // ============================================================================
@@ -240,14 +241,17 @@ export interface ZadaniTestuProps {
   poznamkaRozsahu?: string;
   /** Popisek nad formulářem; bez něj věta ze stránky oboru. */
   nadpis?: ReactNode;
+  /** Jak se víc výsledků slučuje; musí odpovídat tomu, s čím stránka počítá. */
+  slouceni?: SlouceniTestu;
 }
 
 /** Formulář výsledků cvičných testů: termín a body z obou předmětů, víc testů, výhrady. */
 export function ZadaniTestu({
   stav, druh, rok, prevodVstup, pamatovat, kdeJeVysledek = 'Na proužku je',
-  poznamkaUlozeni = 'Platí pro všechny obory se stejným testem.', poznamkaRozsahu, nadpis,
+  poznamkaUlozeni = 'Platí pro všechny obory se stejným testem.', poznamkaRozsahu, nadpis, slouceni = 'median',
 }: ZadaniTestuProps) {
-  const { testy, setTesty, prevod, vysledky, platne, body } = stav;
+  const { testy, setTesty, prevod, vysledky, platne } = stav;
+  const body = slouceneBody(slouceni, platne.map(v => v.prevedeno), median);
   const zmen = (i: number, zmena: Partial<ZadanyTest>) =>
     setTesty(ts => ts.map((t, j) => (j === i ? { ...t, ...zmena } : t)));
 
@@ -314,9 +318,7 @@ export function ZadaniTestu({
       )}
       {platne.length > 1 && body !== null && (
         <p className="text-sm text-slate-600">
-          {platne.length === 2
-            ? <>{kdeJeVysledek} průměr obou výsledků ({bodu(body)}).</>
-            : <>{kdeJeVysledek} prostřední z {platne.length} výsledků ({bodu(body)}).</>}
+          {kdeJeVysledek} {popisSlouceni(slouceni, platne.length)} ({bodu(body)}).
           {' '}Výsledky se pohybují mezi {Math.min(...platne.map(v => v.prevedeno))} a {Math.max(...platne.map(v => v.prevedeno))} body{poznamkaRozsahu ? `; ${poznamkaRozsahu}` : '.'}
         </p>
       )}

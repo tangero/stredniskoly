@@ -56,5 +56,29 @@ class TestIndex(unittest.TestCase):
         self.assertEqual(o, {"1_A": "Brno"})
 
 
+class TestPripravovanyRocnik(unittest.TestCase):
+    """Index nového ročníku musí jít sestavit před přepnutím sady (Codex review, kolo 1, nález 2)."""
+
+    def _spust(self, *argy: str):
+        import subprocess, sys as _sys
+        return subprocess.run([_sys.executable, str(KOREN / "scripts" / "build-simulator-pasma.py"), "--zmer", *argy],
+                              capture_output=True, text=True, cwd=KOREN)
+
+    def test_jiny_nez_zobrazeny_rocnik(self):
+        import json
+        reg = json.loads((KOREN / "public" / "stav_datovych_sad.json").read_text(encoding="utf-8"))
+        zobrazeno = reg["sady"]["cermat-uchazeci-kolo1"]["zobrazeno"]["obdobi"]
+        jiny = next(r for r in ("2025", "2026") if r != str(zobrazeno)
+                    and (KOREN / "public" / f"pasma_prijeti_{r}.json").exists())
+        r = self._spust("--obdobi", jiny)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertIn("oborů", r.stdout)
+
+    def test_chybejici_rocnik_hlasi_chybu(self):
+        r = self._spust("--obdobi", "1999")
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("1999", r.stderr)
+
+
 if __name__ == "__main__":
     unittest.main()
