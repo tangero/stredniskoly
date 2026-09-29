@@ -57,7 +57,8 @@ test('méně než deset přijatých je bez srovnání, nikdy pod pásmem', () =>
 test('chybějící data: obor mimo index i chybějící počty', () => {
   assert.deepEqual([p(50, undefined).skupina, p(50, undefined).duvod], ['bez_srovnani', 'chybi_data']);
   assert.equal(p(50, { soutezicich: null }).duvod, 'chybi_data');
-  assert.equal(p(50, { min_prijaty: null }).duvod, 'malo_prijatych');
+  // Chybějící minimum při dost přijatých není „méně než deset přijatých“.
+  assert.equal(p(50, { min_prijaty: null }).duvod, 'chybi_data');
 });
 
 test('rozpor počtů jde do bez srovnání', () => {

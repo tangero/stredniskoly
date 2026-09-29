@@ -133,7 +133,8 @@ export function polohaVuciPasmu(
   if (soutezicich !== prijatych + neveslo_se || (radek.nikdo_neodmitnut && neveslo_se !== 0)) return bez('rozpor');
   // Nikdo neodmítnut kvůli počtu míst je fakt o celém oboru, ne hranice: platí i při malém počtu přijatých.
   if (radek.nikdo_neodmitnut) return { skupina: 'nikdo_neodmitnut', radek };
-  if (prijatych < minPrijatych || min_prijaty === null) return bez('malo_prijatych');
+  if (prijatych < minPrijatych) return bez('malo_prijatych');
+  if (min_prijaty === null) return bez('chybi_data');
   const { dolni_mez: dolni, horni_mez: horni } = radek;
   if (dolni === null || horni === null) {
     // Bez pásma víme jen, že pod nejnižším přijatým se nedostal nikdo.

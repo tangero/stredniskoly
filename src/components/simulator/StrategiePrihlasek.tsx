@@ -54,7 +54,7 @@ export function StrategiePrihlasek({ polozky, pravidla, rok, onMove, navrhyPojis
         <p className="text-slate-600">
           Podle pravidel {pravidla.rok_pravidel} podáš v 1. kole {prihlasekText(pravidla.prihlasek_bezne, false)} a{' '}
           {prihlasekText(pravidla.prihlasek_talentove, true)}.
-          {!pravidla.overeno_pro_rizeni && ' Počet pro nové řízení ještě ověřujeme v metodice MŠMT.'}{' '}
+          {' '}
           Zvažovat můžeš víc oborů; tento seznam není přihláška.
         </p>
       </div>

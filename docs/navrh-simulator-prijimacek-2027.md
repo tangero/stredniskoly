@@ -1,4 +1,4 @@
-# Simulátor přijímaček: výsledek cvičného testu proti školám, oblíbené a strategie řazení
+# Simulátor přijímaček: výsledek cvičného testu proti školám, zvažované obory a strategie řazení
 
 Verze 0.2 · 29. 9. 2026 · **schváleno zadavatelem 29. 9. 2026** (oddíl 12)
 
@@ -7,7 +7,7 @@ Fáze 2 návrhu [Kde stojím](navrh-kde-stojim-2027.md). Fáze 1 (stránka oboru
 1. „Kde stojím“ se přejmenovává na **Simulátor přijímaček**. Rozšiřuje se stávající `/simulator` ([dodávka UX](dodavka-simulator-ux-2027.md)); nová stránka nevzniká.
 2. Postup ve třech krocích: **udělej si správný cvičný test**, **podívej se, kam by ses s ním dostal**, **přečti si výhrady**.
 3. Výsledky ve **třech skupinách podle pásma 1. kola**, filtrovatelné **dojezdem MHD** (stávající) a **městem**.
-4. **Oblíbené** = stávající uložený výběr v prohlížeči. Nad ním **strategie řazení přihlášek: vaše preference + pojistka**, s vysvětlením, jak fungují priority.
+4. **Zvažované obory** = stávající uložený výběr v prohlížeči. Nad ním **strategie řazení přihlášek: vaše preference + pojistka**, s vysvětlením, jak fungují priority.
 5. Kdo test TAU nemá, smí zadat body z jiného testu nebo odhad **bez převodu a s výraznou výhradou**.
 6. Počet přihlášek a pravidla priorit se berou **z dat webu (harmonogram a pravidla MŠMT)**, ne napevno v kódu.
 
@@ -20,8 +20,8 @@ Nově:
 | Krok | Co uchazeč udělá | Co mu ukážeme |
 |---|---|---|
 | 1. Cvičný test | napíše test TAU pro svůj ročník, celý, na čas, bez oprav; zadá body z češtiny a matematiky (i víc testů) | proč právě tento test: jen u něj umíme převést výsledek na body roku {rok pásem}; návod krok za krokem (stejný jako na stránce oboru) |
-| 2. Kam by ses dostal | nastaví obor, dojezd, město; ukládá do oblíbených | nabídky ve třech skupinách podle polohy vůči pásmu 1. kola {rok}; u každé počty, štítek „extra body“, odkaz na stránku oboru |
-| 2b. Strategie řazení | seřadí oblíbené podle toho, kam chce nejvíc | kontrola pojistky, vysvětlení priorit, počet přihlášek z pravidel MŠMT |
+| 2. Kam by ses dostal | nastaví obor, dojezd, město; ukládá mezi zvažované | nabídky ve třech skupinách podle polohy vůči pásmu 1. kola {rok}; u každé počty, štítek „extra body“, odkaz na stránku oboru |
+| 2b. Strategie řazení | seřadí zvažované obory podle toho, kam chce nejvíc | kontrola pojistky, vysvětlení priorit, počet přihlášek z pravidel MŠMT |
 | 3. Výhrady | — | stres na ostrém testu, TAU spíš nadhodnocuje, jeden ročník není předpověď, kritéria jsou přepis z PDF, nová kritéria se vyhlásí {termín} |
 
 ## 2. Krok 1: cvičný test
@@ -51,17 +51,17 @@ Zvláštní případy (rozhodnutí v otevřených otázkách, oddíl 10):
 
 Uvnitř skupiny se řadí **podle dojezdu**, pak abecedně, **ne podle vzdálenosti od hranice**: pásmo nejistoty se podle slovníku nepoužívá k řazení oborů.
 
-U každé nabídky: název, obec, dojezd, věta skupiny, štítek **„O přijetí rozhodují i extra body“** podle kritérií {rok} (stejná funkce `extraBody` jako na stránce oboru), tlačítko „Do oblíbených“, odkaz „Podrobně na stránce oboru“ (tam proužek a pořadí mezi soutěžícími).
+U každé nabídky: název, obec, dojezd, věta skupiny, štítek **„O přijetí rozhodují i extra body“** podle kritérií {rok} (stejná funkce `extraBody` jako na stránce oboru), tlačítko „Uložit mezi zvažované“, odkaz „Podrobně na stránce oboru“ (tam proužek a pořadí mezi soutěžícími).
 
 **Filtr městem**: nová roleta obcí z katalogu (stejný seznam jako [stránka města](navrh-stranky-mesta-2027.md)), kombinovatelná s dojezdem. Bez zvolené zastávky i obce se výsledky neukazují po celé zemi, ale výzva „zvol město nebo zastávku“ (2 800 nabídek by nikomu nepomohlo).
 
-## 4. Oblíbené a strategie řazení
+## 4. Zvažované obory a strategie řazení
 
-- **Oblíbené** jsou dnešní uložený výběr (`localStorage` + sdílitelná URL, `SavedSelectionBar`). Přejmenovat v textu na „oblíbené školy“ (pojem do slovníku pojmů). Nový je jen **pořadí** v oblíbených (šipky nahoru a dolů, na mobilu tlačítka, ne tažení).
+- **Zvažované obory** jsou dnešní uložený výběr (`localStorage` + sdílitelná URL, `SavedSelectionBar`). ~~Přejmenovat v textu na „oblíbené školy“~~ (překonáno oddílem 12, bod 11: pojem zůstává „zvažované obory“) (pojem do slovníku pojmů). Nový je jen **pořadí** v oblíbených (šipky nahoru a dolů, na mobilu tlačítka, ne tažení).
 - **Strategie „vaše preference + pojistka“**:
   1. Na první místa dejte obory, kam chcete nejvíc, **i když jste u nich v pásmu nebo pod ním**. Vysvětlení: škola vás řadí podle bodů, ne podle toho, na kolikátém místě ji máte; priorita rozhoduje až tehdy, když vás přijme víc škol, a pak nastoupíte na tu výš. Vyšší ambice vám tedy u školy níž neublíží.
   2. **Pojistka**: aspoň jedna nabídka ze skupiny „Nad pásmem“. Když žádná není, simulátor na to upozorní a nabídne nejbližší (podle dojezdu) nabídky nad pásmem se stejným nebo příbuzným oborem.
-  3. **Kontrola seznamu**: počet běžných a talentových přihlášek podle pravidel MŠMT; víc oblíbených než přihlášek je v pořádku (pracovní seznam), upozornění „do přihlášky se vejde prvních N běžných a M talentových“.
+  3. **Kontrola seznamu**: počet běžných a talentových přihlášek podle pravidel MŠMT; víc zvažovaných oborů než přihlášek je v pořádku (pracovní seznam), upozornění „do přihlášky se vejde prvních N běžných a M talentových“.
 - **Počet přihlášek z dat, ne z kódu**: přidat do `src/data/admissions-2027.json` blok `pravidla` (`prihlasek_bezne`, `prihlasek_talentove`, `zdroj`, `checkedAt`), opsaný z metodiky MŠMT stejně jako termíny (sada `msmt-harmonogram`). Dnešní stav podle pravidel 2026: 3 běžné + 2 talentové. Do ověření pro rok 2027 text říká „podle pravidel {rok pravidel}“.
 - **Co strategie nedělá**: nepočítá pravděpodobnost přijetí a nesimuluje přiřazení. Data jsou agregáty za obor a limit přihlášek chování rodin formuje, takže simulace pořadí nad daty z omezeného režimu by měřila něco jiného (viz projektová paměť o limitu přihlášek).
 
@@ -103,7 +103,7 @@ Prošel jsem [zdroje dat](zdroje-dat.md) celé včetně oddílu 3. Návrh **nep�
 - **Nový: *Poloha vůči pásmu*** (nad / v / pod / nikoho neodmítli / bez srovnání): definice podle tabulky v oddílu 3, zdroj pásma přijetí, jednotka kategorie, **co neříká**: není pravděpodobnost přijetí, nepoužívá se k řazení oborů, popisuje jeden ročník a obor bez zaměření.
 - **Odchází ze simulátoru: *Průměr JPZ přijatých*** jako porovnávací měřítko (`admission-gap.ts`). Ukazatel ve slovníku zůstává (používá se jinde), v simulátoru se nahradí polohou vůči pásmu. `admission-gap.ts` a jeho test se smažou, pokud je nic dalšího nepoužívá (dnes jen `OfferComparisonTable`).
 
-**Pojmy** (slovník pojmů, ve stejné dávce): **Simulátor přijímaček** (název nástroje), **oblíbené školy** (uložený výběr; nepoužívat „košík“), **pojistka** („obor, kam se v 1. kole {rok} s vaším výsledkem dostali všichni“; nepoužívat „jistota“), **nad pásmem / v pásmu / pod pásmem** (s vysvětlením při prvním výskytu v bloku), **priorita** jako synonymum „pořadí na přihlášce“ jen v textu strategie, s vysvětlením.
+**Pojmy** (slovník pojmů, ve stejné dávce): **Simulátor přijímaček** (název nástroje), **zvažované obory** (uložený výběr, pojem už ve slovníku; „oblíbené“ ani „košík“ nepoužívat), **pojistka** („obor, kam se v 1. kole {rok} s vaším výsledkem dostali všichni“; nepoužívat „jistota“), **nad pásmem / v pásmu / pod pásmem** (s vysvětlením při prvním výskytu v bloku), **priorita** jako synonymum „pořadí na přihlášce“ jen v textu strategie, s vysvětlením.
 
 **Registr**: žádná nová datová sada. Nový index (oddíl 8) patří k sadě `cermat-uchazeci-kolo1` (odvozený soubor, rok v názvu). Blok `pravidla` k sadě `msmt-harmonogram`. Po změně `python3 scripts/stav-datovych-sad.py kontrola`.
 
@@ -111,7 +111,7 @@ Prošel jsem [zdroje dat](zdroje-dat.md) celé včetně oddílu 3. Návrh **nep�
 
 Klientovi se **nenačítají celé soubory** (pásma 2026 přes 1 MB, pozice 586 kB, kritéria 1,7 MB).
 
-- **Kompaktní index** `public/simulator_pasma_{rok}.json` ze skriptu `scripts/build-simulator-pasma.py`: na obor `[nejnižší přijatý, dolní mez, horní mez, soutěžících, přijatých, nevešlo se, extra body]`. Změřeno 29. 9. 2026: **2 830 oborů, 139 kB, 28 kB po gzip**. Načte se jednou a skupiny se počítají v prohlížeči (převod je tabulka 26 kB, druh jen jeden).
+- **Kompaktní index** `public/simulator_pasma_{rok}.json` ze skriptu `scripts/build-simulator-pasma.py`: na obor `[nejnižší přijatý, dolní mez, horní mez, soutěžících, přijatých, nevešlo se, extra body]`. Změřeno 29. 9. 2026: **2 830 oborů, 184 kB, 36 kB po gzip (přeměřeno po E1; index přibral sloupce pro skupiny)**. Načte se jednou a skupiny se počítají v prohlížeči (převod je tabulka 26 kB, druh jen jeden).
 - Alternativa: rozšířit `/api/schools/search?simulatorCatalog=1` o pole skupiny počítané na serveru. Nevýhoda: body uchazeče by šly na server; index v prohlížeči drží body jen u uživatele. **Doporučeno: index.**
 - Pořadí mezi soutěžícími se v seznamu neukazuje (586 kB); je na stránce oboru.
 
@@ -122,7 +122,7 @@ Klientovi se **nenačítají celé soubory** (pásma 2026 přes 1 MB, pozice 586
 | E1 Data | skript indexu + test shody s pásmy, blok `pravidla` v harmonogramu, registr, zdroje-dat 2.13 | 1 den |
 | E2 Krok 1 | vytáhnout zadání testů a návod z `KdeStojim` do sdílené komponenty, volba „jiný test“, sdílené uložení, přejmenování stránky a metadat na Simulátor přijímaček | 1,5 dne |
 | E3 Krok 2 | výpočet skupin (čistá funkce + testy krajních případů), seznam ve skupinách, filtr městem, štítek extra body, nahrazení `admission-gap` v porovnání | 2–3 dny |
-| E4 Strategie | pořadí v oblíbených, kontrola pojistky, texty priorit, počet přihlášek z dat | 1,5 dne |
+| E4 Strategie | pořadí zvažovaných oborů, kontrola pojistky, texty priorit, počet přihlášek z dat | 1,5 dne |
 | E5 Výhrady a texty | blok výhrad, slovník pojmů a ukazatelů, test srozumitelnosti textů (klíčové věty) | 1 den |
 | E6 Ověření | Node testy, mobil, Codex review, přejímka na produkci | 1 den |
 | **Celkem** | | **8–9 dní** |
@@ -134,7 +134,7 @@ Etapy E1–E3 lze nasadit samostatně (simulátor ukáže skupiny), E4 a E5 nava
 - Čistá funkce skupiny: nad, v, pod, shodné meze, horní mez pod dolní (7,8 % oborů), nikoho neodmítli, méně než 10 přijatých, chybějící data, rozpor počtů.
 - Převod podle druhu testu a volba „jiný test“ bez převodu.
 - Index: součty sedí s `pasma_prijeti_{rok}.json` a pozicemi; velikost pod 200 kB.
-- Strategie: bez pojistky upozornění, víc oblíbených než přihlášek, talentové zvlášť.
+- Strategie: bez pojistky upozornění, víc zvažovaných oborů než přihlášek, talentové zvlášť.
 - Render: rok z registru v každé větě, žádné procento šance, výhrady vždy viditelné.
 - Stávající testy simulátoru (dojezd, uložení, staré odkazy) zůstanou zelené.
 
@@ -166,6 +166,8 @@ Platí doporučení ke všem otázkám z oddílu 11:
 
 9. Přibude volba řazení **„od nejvyšší hranice přijetí“** podle doloženého ukazatele (nejnižší výsledek přijatého, případně dolní mez pásma {rok}; název a výpočet podle slovníku ukazatelů, nový způsob použití zapsat). Věta u řazení: těžší přijetí neznamená lepší školu, kvalitu ukazuje maturita a inspekce na stránce školy. Výchozí řazení zůstává podle dojezdu. Tím se upravuje zákaz řazení v oddílu 3: neřadí se podle vzdálenosti uchazeče od hranice, ale podle hranice samotné.
 10. Uživatel s vybraným oborem si vystačí s dnešním filtrem „Co tě zajímá“, rozcestník se nepřidává.
+11. **Pojem pro uložený výběr zůstává „zvažované obory“** podle slovníku pojmů; slovo „oblíbené“ se na stránce, v kódu ani v dokumentaci nepoužívá (rozhodnutí 29. 9. 2026).
+12. **Počet přihlášek 3 běžné + 2 talentové** zůstává podle rozhodnutí zadavatele 29. 9. 2026 (očekává platnost i pro řízení 2027). V `src/data/admissions-2027.json` je zdroj „rozhodnutí zadavatele 29. 9. 2026, podle pravidel 2026“, `overeno_pro_rizeni` zůstává `false` (v metodice MŠMT pro 2027 neověřeno). Text stránky nezní jako pochybnost, říká jen „podle pravidel 2026“.
 
 ## 13. Poznámky k provedení E4
 

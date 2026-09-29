@@ -6,7 +6,7 @@ import { createRequire } from 'node:module';
 import ts from 'typescript';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { posunVPoradi, zkontrolujStrategii, navrhniPojistku } from '../src/lib/strategie-prihlasek.ts';
+import { posunVPoradi, zkontrolujStrategii, navrhniPojistku, talentovaZPasem } from '../src/lib/strategie-prihlasek.ts';
 
 const require = createRequire(import.meta.url);
 function load(relative) {
@@ -131,4 +131,17 @@ test('bez načtených pásem se limit přihlášek nekontroluje', () => {
   assert.doesNotMatch(html, /Do přihlášky se nevejde/);
   assert.doesNotMatch(html, /Zvažuješ víc oborů/);
   assert.match(html, /nevíme, jestli má talentovou zkoušku/);
+});
+
+test('obor mimo index pásem nemá doložený druh zkoušky a kontrola se pozastaví', () => {
+  // Nález review (Kimi, kolo 1): obor bez řádku v indexu se dřív počítal jako běžná přihláška.
+  assert.equal(talentovaZPasem({ data: {} }, undefined), null);
+  assert.equal(talentovaZPasem(null, { talentova: true }), null);
+  assert.equal(talentovaZPasem({ data: {} }, { talentova: true }), true);
+  const pravidla = { prihlasek_bezne: 3, prihlasek_talentove: 2, rok_pravidel: 2026, overeno_pro_rizeni: false };
+  const polozky = [
+    { id: 'a', skupina: 'nad', talentova: talentovaZPasem({}, { talentova: false }) },
+    { id: 'b', skupina: null, talentova: talentovaZPasem({}, undefined) },
+  ];
+  assert.equal(zkontrolujStrategii(polozky, pravidla).pozastaveno, true);
 });

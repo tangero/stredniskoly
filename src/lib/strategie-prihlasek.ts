@@ -103,3 +103,13 @@ export function navrhniPojistku<T extends { id: string; obor: string }>(
   const stejnyObor = nad.filter(k => oboryZvazovanych.has(k.obor)).sort(razeni);
   return (stejnyObor.length ? stejnyObor : nad.sort(razeni)).slice(0, pocet);
 }
+
+/**
+ * Druh zkoušky zvažovaného oboru z indexu pásem. Obor bez řádku v indexu (nový obor,
+ * starší uložená nabídka, obor bez JPZ) druh zkoušky nemá doložený: vrací null a
+ * kontrola strategie se pozastaví, místo aby ho tiše počítala mezi běžné přihlášky.
+ */
+export function talentovaZPasem(pasma: unknown, radek: { talentova: boolean } | undefined | null): boolean | null {
+  if (!pasma || !radek) return null;
+  return radek.talentova;
+}

@@ -13,7 +13,7 @@ import { hodnotaHranice, radekPasmaNabidky, nactiIndexPasem, polohaVuciPasmu, se
 import { SavedSelectionBar } from '@/components/simulator/SavedSelectionBar';
 import { StrategiePrihlasek } from '@/components/simulator/StrategiePrihlasek';
 import { VyhradaNahore, VyhradySimulatoru, type TerminKriterii } from '@/components/simulator/VyhradySimulatoru';
-import { navrhniPojistku, posunVPoradi, type PravidlaPrihlasek } from '@/lib/strategie-prihlasek';
+import { navrhniPojistku, posunVPoradi, talentovaZPasem, type PravidlaPrihlasek } from '@/lib/strategie-prihlasek';
 import { useZadaneTesty, ZadaniTestu } from '@/components/obor/ZadaniTestu';
 import { TRIDA_TAU, type DruhTestu, type PrevodDruhu, type PrevodTestu } from '@/lib/prevod-testu-vypocet';
 
@@ -289,7 +289,7 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
     const school = catalogIndex.get(normalizeSchoolKey(id));
     if (!school) return { id, label: 'Uložený obor se dohledává', skupina: null, talentova: null };
     const n = toNabidka(school);
-    return { id, label: `${n.program} · ${n.nazev}`, href: n.href ?? `/skola/${n.slug}`, skupina: skupinaPodleId(id), talentova: pasma ? radekPasma({ id })?.talentova ?? false : null };
+    return { id, label: `${n.program} · ${n.nazev}`, href: n.href ?? `/skola/${n.slug}`, skupina: skupinaPodleId(id), talentova: talentovaZPasem(pasma, radekPasma({ id })) };
   });
   const oboryZvazovanych = new Set(polozkyStrategie.flatMap(p => { const s = catalogIndex.get(normalizeSchoolKey(p.id)); return s ? [s.obor] : []; }));
   // Pojistku navrhujeme jen z hledání omezeného místem: obory z celé země nikomu nepomohou.
@@ -379,7 +379,7 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
       </select>
     </label>
     {razeni === 'hranice' && <p className="mt-2 max-w-2xl text-xs text-slate-600">
-      Řadíme podle nejnižšího výsledku přijatých v 1. kole {rokPasem}; obory s méně než {minPrijatych} přijatými jsou na konci.
+      Řadíme podle nejnižšího výsledku přijatých{rokPasem !== null ? ` v 1. kole ${rokPasem}` : ''}; obory s méně než {minPrijatych} přijatými jsou na konci.
       Těžší přijetí neznamená lepší školu: kvalitu ukazuje maturita a inspekce na stránce školy.
     </p>}
   </div>;
@@ -438,7 +438,7 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
             <p className="mt-1 text-slate-600">{stop ? 'Bez omezení krajem. Zvolený typ studia a obory platí dál.' : needsPlace ? 'Vyber město, kraj nebo výchozí zastávku a ukážeme obory v okolí.' : `Bez omezení dojezdem.${city && region ? ` Současně platí kraj: ${region}.` : ''}`}</p>
             {(city || (!stop && region)) && <button className="mt-2 min-h-11 text-blue-700 underline" onClick={() => { setCity(''); setRegion(''); }}>Zrušit územní omezení</button>}
           </div>
-          <p className="mb-4 text-xs text-slate-500">Nabídky doložené v 1. kole {rokPasem}, v rozsahu denních nezkrácených oborů s povinnou JPZ. Úplná nabídka a kritéria pro nové řízení se doplňují.</p>
+          <p className="mb-4 text-xs text-slate-500">Nabídky doložené{rokPasem !== null ? ` v 1. kole ${rokPasem}` : ''}, v rozsahu denních nezkrácených oborů s povinnou JPZ. Úplná nabídka a kritéria pro nové řízení se doplňují.</p>
           <div className="mb-4">
             <SavedSelectionBar
               items={savedItems}
