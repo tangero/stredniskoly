@@ -10,6 +10,7 @@ import path from 'path';
  */
 interface ZaznamSady {
   zobrazeno: { obdobi: string | null; platne_k?: string; stazeno?: string; verze?: string };
+  ocekavano?: { obdobi?: string | null };
 }
 
 // Cachuje se příslib, ne hodnota: souběžné požadavky by jinak spustily tolik
@@ -33,6 +34,11 @@ function sady(): Promise<Record<string, ZaznamSady>> {
 /** Zobrazené období sady, například „2026“; null, když sada nic nezobrazuje. */
 export async function zobrazeneObdobi(sada: string): Promise<string | null> {
   return (await sady())[sada]?.zobrazeno?.obdobi ?? null;
+}
+
+/** Období, které registr u sady očekává jako další (například „2027“); null, když ho nevede. */
+export async function ocekavaneObdobi(sada: string): Promise<string | null> {
+  return (await sady())[sada]?.ocekavano?.obdobi ?? null;
 }
 
 /**

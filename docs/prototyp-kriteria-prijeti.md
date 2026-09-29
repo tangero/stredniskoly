@@ -1,0 +1,78 @@
+# Prototyp kritérií přijetí podle oboru, roku a kola
+
+Stav 29. 9. 2026: pilot bez migrace produkční databáze a bez veřejného zobrazení. Škola zadává bodování strukturovaně (oddíl Strukturované zadání), s předvyplněním z přepisu PDF z DiPSy.
+
+## Co už lze vyzkoušet
+
+- Přihlášený správce nebo editor školy otevře `/pro-skoly/kriteria`. Vybere obor, rok 2026/2027 a buď „všechna kola“, nebo konkrétní kolo 1–3, která prototyp načítá z DiPSy. Uvede, zda body tvoří prostý součet JPZ, či jiné bodování; u druhé volby musí pravidla popsat. Může přidat odkaz na vyhlášená kritéria. Neznámé REDIZO v parametru `skola` vyvolá upozornění; portál nevybere potichu jinou školu.
+- Záznam se ukládá zvlášť pro `(REDIZO, obor, rok, kolo)`. `kolo = NULL` znamená všechna kola. Při výběru platného záznamu má konkrétní kolo přednost před společným pravidlem. Historie změn zůstává v databázi; zastaralý formulář nepřepíše pozdější úpravu.
+- Portál hledá nabídky školy v 1.–3. kole DiPSy podle REDIZO a do seznamu bere jen karty se skutečně požadovaným rokem. Dokud nejsou karty 2027 dostupné, nabízí obory z katalogu 2026 a **označuje je jako plánované**. Uložený záznam nese rok podkladové nabídky. Pravidla 2026 se do roku 2027 nekopírují. Katalogový fallback neprokazuje konání JPZ, proto u něj formulář volbu „pouze součet JPZ“ nenabízí. Obor vypsaný až ve 4. nebo dalším kole bude vyžadovat doplnění načítání.
+- Zápis je zatím dostupný jen přihlášenému účtu se správou daného REDIZO a je dobrovolný; škola jej nemusí použít. Prototyp se uchazečům nezobrazuje. Starší celostátně nečleněná pole portálu `odkaz_kriteria` a `kriteria_vlastnimi_slovy` zatím zůstávají. Při budoucím veřejném zapojení má ověřené pravidlo konkrétního oboru/roku/kola přednost; staré školní pole zůstane obecnou informací s vlastním rokem a původem, nikdy se automaticky nerozmnoží na obory. Rozpor je důvod k redakční kontrole, ne k tichému výběru jednoho textu.
+- Formulář ukazuje u zvoleného oboru, roku a kola pravidlo 2026 jako **historický podklad**, pokud ještě nemá pravidlo 2027. U zvláštního bodování upozorní na potřebu ověřit pokračování u školy; u prostého součtu JPZ přesto výslovně říká, že rok 2027 potvrzen není. U podkladu ukazuje původ a datum zadání nebo získání. Pokud si podklady téhož roku a kola odporují, nepředstírá potvrzené pravidlo. To je zatím náhled ve školním portálu, ne veřejná karta uchazeče.
+
+## Původ a aktuálnost pravidel
+
+Škola může zadat pravidlo do `portal_kriteria`; jeho `rok` je **rok, pro který pravidlo tvrdí platnost**, `platne_od` je technický čas uložení (název sloupce je historický, nejde o datum účinnosti vyhlášených kritérií). `podklad_rok` označuje rok katalogové nabídky použité k výběru oboru, **nikoli** rok platnosti kritérií. Vedle hashe `obor_klic` se ukládají surové složky identity: REDIZO, IZO, KKOV, zaměření, forma, délka studia, ID zdrojové nabídky a rok podkladu. Pravidlo 2026 se nikdy nepřepisuje ani automaticky nepovyšuje na pravidlo 2027.
+
+Nová tabulka `kriteria_podklad` odděluje pozorování z DiPSy PDF, webu školy, RSS, Hlášení chyby a dalších zdrojů. Eviduje URL či identifikátor zdroje, `pozorovano_at` (první získání této verze), `zkontrolovano_at` (poslední kontrola), případné `publikovano_at` (jen když jej zdroj dokládá), `overeno_at`, SHA-256 obsahu, rok/kolo, text pravidel a stav `kandidat`/`overeno`/`rozpor`. Z pilotního CSV se `ziskano_at` mapuje na `pozorovano_at` a `zkontrolovano_at` na stejnojmenný sloupec; starých 100 řádků s neznámým časem se do DB bez nového stažení nevkládá. Kandidát z OCR nebo RSS **není ověřené pravidlo**. Nový kandidát se stejným hashem ponechá ověření; při jiném či chybějícím hashi zůstane poslední ověřená verze dohledatelná, ale stav se označí „změna k ověření“. Původ a čas se neslévají do jedné značky „ověřeno“.
+
+Zobrazení používá pravidlo z přesného kola před pravidlem pro všechna kola. Při chybějícím ověření aktuálního roku smí nabídnout jen pravidlo předchozího roku, jasně označené jako historické; u starších let už bez dalšího nepředpokládá použitelnost. Automatický rozpor vzniká při odlišném režimu bodování; různá slovní vyjádření v rámci stejného režimu zůstávají viditelná u jednotlivých zdrojů k ručnímu posouzení. Před veřejným použitím zbývá import a ruční posouzení PDF 2026, zpracování změn podkladů, migrace tabulky v databázi a napojení na veřejnou stránku konkrétní nabídky.
+
+Shoda klíče mezi katalogem a DiPSy byla 24. 9. 2026 změřena jen **v rámci roku 2026** ([metoda a výsledek](podklady/dipsy-shoda-kliku-2026-09-24.md)). Pro přenos plánovaného oboru z roku 2026 na kartu 2027 z toho neplyne záruka. Jakmile se objeví karty 2027, plánované záznamy bez stejného aktuálního klíče zůstanou uložené a portál je označí ke kontrole; automaticky je nepřiřadí k jinému oboru. Po vydání karet spustit `node --experimental-strip-types scripts/dipsy-shoda-kliku.mjs --rok 2027 --vse` a neshody porovnat podle uložených surových složek klíče. Samotná fronta ručního párování mimo upozornění v portálu dosud nevznikla.
+
+Rozhodnutí z PR #159 ponechat strukturovaný školní formulář až po prvních odpovědích pilotních škol platí. Pět strukturovaných záznamů níže je **interní přepis zveřejněných PDF**, nikoli požadavek na školy nebo hotový model jejich editace. Binární `pouze_jpz`/`jine` v dobrovolném formuláři je provizorní upozornění, nikoli úplná struktura pravidel. Veřejné zapnutí musí umět samostatně ukázat váhy češtiny a matematiky, další body, minima i nevyřešené části; staré binární záznamy se nesmí domýšlet. Naměřený předmětový sklon (`scripts/predmetovy-sklon.py`) poslouží k vytipování nesouladů s přepisem PDF, nikoli jako důkaz pravidla konkrétní školy.
+
+Stavy `overeno` a `rozpor` zatím nelze nastavovat aplikací. Řízený redakční postup pro jejich přidělení, opravu a audit je podmínkou importu, nikoli hotová funkce prototypu. Do té doby zůstává pět záznamů ve stavu `navrh` a veřejné zapnutí je vypnuté.
+
+Před vyzkoušením u účtu školy je nutné spustit migraci portálu: `node --experimental-strip-types scripts/portal-migrace.mjs`. SQL vzniká ze `src/lib/portal-schema.ts`; nové tabulky jsou v `db/migrace/006-portal-kriteria.sql`, původní `002-portal.sql` zůstává beze změny. Oba soubory se generují příkazem s `--zapis-sql`. Prototyp nepoužívat jako důkaz, že migrace už proběhla v nasazení.
+
+## Pilot PDF 2026
+
+`python3 scripts/dipsy-kriteria-pilot.py --vyber` sestaví opakovatelný vzorek 100 nabídek 1. kola 2026 z `public/applications_2026.json`. Typy oborů a kraje jsou rozloženy napříč vzorkem; **nejde o reprezentativní odhad podílu škol s jiným bodováním**. `--stahnout` zkontroluje ID nabídky, rok a kolo proti kartě DiPSy, stáhne PDF, uloží je podle SHA-256 a spustí `pdftotext`. Výstup je v gitignorovaném `data/dipsy-kriteria-pilot/`; `hodnoceni.csv` má prázdná pole pro lidské posouzení vah JPZ, dalších bodů, minim, rozhodování při rovnosti a závěru. Do `zaver` se zapisuje jedna ze tří hodnot `pouze_jpz`, `jine`, `nezjisteno`; při `jine` se vyplní příslušná pole a v `poznamka` se uvede místo v PDF, o které se závěr opírá. `nezjisteno` je správný závěr, pokud důkaz nestačí.
+
+První běh: **100/100 PDF staženo**, **91/100 má alespoň 100 znaků přímo extrahovaného textu**. U zbývajících devíti `--ocr` vytvořilo text přes Tesseract; všech 100 tak má textový podklad ke kontrole. To **neříká**, že šlo pravidla automaticky správně klasifikovat; kontrolní sloupce zůstaly nevyplněné. OCR může zkomolit čísla a znaménka. PDF mohou obsahovat více pravidel, odkaz na jiný dokument, dodatky nebo nekonzistentní formulace. Při hodnocení je třeba doložit konkrétní pasáž a nezaměnit „školní zkouška se nekoná“ za „pouze prostý součet JPZ“.
+
+Navazující [hromadný sběr 2026](hromadny-sber-kriterii-2026.md) 24. 9. 2026 prošel všech 3 091 nabídek výběrového katalogu prvního kola a u 3 089 uložil platné PDF. Tento krok získal dokumenty, textovou vrstvu a dohledatelné úryvky; **nevytvořil ověřený strukturovaný bodovací přepis**. Dvě karty jsou oddělené jako chyba zdroje a rozpor identity. Místní prohlížeč umí zobrazit celý stažený soubor pomocí `python3 scripts/kriteria-review-local.py --vse`.
+
+[Malý modelový vzorek](podklady/dipsy-kriteria-llm-vzorek-2026-09-24.md) připravil sedm dalších, výslovně neschválených návrhů. Na pěti přílohách s pracovním přepisem lze porovnat režim a čísla, ale chyby ve výkladu podmínek a OCR brání jejich automatickému převzetí do veřejných dat.
+
+Prvních **pět příloh je přepsáno jako pracovní strukturovaný vzorek** do `src/data/kriteria-prijeti-2026-pilot.json`. Nejde o schválený import ani o výsledek všech 100 PDF: záznamy mají `stav: navrh` a nečte je veřejná stránka ani výpočet šance. Každý je spojen s konkrétním `source_id` nabídky, rokem 2026 a 1. kolem; stálou kartou DiPSy a hashem PDF. Obsahuje režim bodování, známé váhy či bodové složky, minima, pořadí při shodě, další podmínky a výslovné nejasnosti. `uplnost` hodnotí jen bodový vzorec, nikoli možnost rozhodnout celé přijetí: například shoda podle podúloh JPZ vyžaduje podrobnější výsledky. U Plas se boduje jen JPZ, přesto jsou důležitá minima a rozhodování při shodě. U Čáslavi se překrývá interval průměru 2,00 a u SOU chybí úplný převod známek na body. Tyto případy nesmějí sloužit jako přesná kalkulačka.
+
+`python3 scripts/validate_kriteria_prijeti.py` odmítne duplicitní či cizí ID nabídky a nesoulad REDIZO, oboru, zaměření, roku nebo kola s katalogem 2026. Kontroluje také tvar stálého odkazu a hashe PDF. Původní pilot nezná přesný čas získání PDF ani čas zveřejnění v DiPSy; obě pole proto zůstávají `null`. `datum_v_dokumentu` je případné datum podpisu či vyhotovení, nikoli náhrada těchto dvou časů. Škola nic vyplňovat nemusí; její pozdější zadání je další podklad pro porovnání a opravu.
+
+Další technický krok: po kontrole každého PDF člověkem převést schválený záznam do evidované verze podkladu, včetně strukturovaných polí a stránek důkazu. Při nové verzi PDF vznikne nový podklad; starý se nepřepíše. Stejná pravidla pro více nabídek lze sdílet podle hashe dokumentu, ale vazba na každé `source_id` a jeho obor/rok/kolo musí zůstat. Do veřejného profilu se promítne jen schválené pravidlo, rok 2026 se pro 2027 zobrazí výhradně jako historické s uvedeným zdrojem a datem.
+
+Kontrolní list nyní nese stálou adresu karty a oddělená pole `ziskano_at` (první pozorování daného obsahu), `zkontrolovano_at` (poslední úspěšná kontrola), `publikovano_at` (jen doložené datum zdroje) a `overeno_at` (ruční ověření závěru). Původní běh přesný čas každého stažení neukládal, proto tato časová pole u dosavadních 100 řádků zůstala prázdná; nebyla zpětně odvozena z času souboru. Další běh zapisuje i append-only `pozorovani.jsonl` s metadaty a hashem každé karty, takže lze rozlišit nové PDF od opakovaného pozorování stejného obsahu. Dočasné odkazy na blob se neukládají.
+
+Pro první kontrolu dostupnosti nového ročníku slouží `python3 scripts/dipsy-kriteria-scan.py --rok 2027 --redizo 600171701`. Skript vrací jen nabídky, které mají ve skutečné odpovědi rok 2027 a přesné REDIZO; HTTP 200 samo o sobě nestačí. Pro ověřené REDIZO v ukázce vrátil rok 2026 tři nabídky a rok 2027 žádnou. Tento dotaz po jedné škole není hromadný import ani garance pokrytí všech oborů.
+
+## Strukturované zadání
+
+Formulář `/pro-skoly/kriteria` (`src/components/portal/PortalKriteriaForm.tsx`) od 29. 9. 2026 pokrývá běžná kritéria polem, ne jen textem. Pořadí sekcí odpovídá četnosti v přepisu 2026 (3 064 nabídek):
+
+| Sekce | Pole | Četnost v přepisu 2026 |
+|---|---|---|
+| Jednotná přijímací zkouška | maximum ČJL a MAT, přepočet v %, vyšší váha jednoho předmětu s násobkem | vážení 35 oborů, přepočet 338 |
+| Další body | řádky: druh ze seznamu (prospěch, známky z předmětů, školní zkouška, talentová, pohovor, soutěže, certifikáty, bonus, den otevřených dveří, chování, jiné), název, maximum (záporné = srážka, prázdné = neznámé), poznámka | prospěch ≈ 2 000, soutěže ≈ 570, ostatní 130–300 |
+| Součet | dopočet maxima JPZ, dalších bodů, celku a *Podílu přijímaček na bodování*; kontrola proti vyhlášenému celkovému maximu | deklarovaný podíl 1 367 |
+| Minima | čeho se týká, hodnota, body nebo %, upřesnění | ≈ 2 100 |
+| Při rovnosti bodů | seřazený seznam, nabídka častých pravidel i vlastní text | ≈ 3 000 |
+| Další pravidla a výjimky | volný zápis do 3 000 znaků | vše nestandardní |
+
+Struktura má stejná jména polí jako schéma přepisu (`jpz`, `slozky`, `minima`, `rovnost`, `vyslovne_max_celkem`), uloží se do `portal_kriteria.struktura` a validuje na serveru (`overStrukturu`). Režim `pouze_jpz` se neodklikává, ale odvozuje: jen prostý součet ČJL + MAT bez přepočtu, vah a dalších bodů. Konání JPZ známe jen z karty DiPSy; u oboru z katalogu ho škola potvrzuje zadáním.
+
+**Předvyplnění:** tlačítko „Předvyplnit z kritérií {rok}“ vezme přepis PDF téhož oboru a zaměření (`kriteria_prijeti_{rok}.json` a `kriteria_predvyplneni_{rok}.json`, rok z registru `dipsy-kriteria`). Druh složky se odhadne z názvu. Uložit jde až po zaškrtnutí „Údaje jsem zkontroloval(a)“, protože přepis je zhruba u každého desátého oboru podstatně chybný. Druhou cestou je kopie z uloženého zadání jiného zaměření, kola nebo předchozího roku.
+
+**Ročníky** nabízí formulář podle registru: očekávané a zobrazené období sady `dipsy-kriteria` (dnes 2027 a 2026). API jiný rok odmítne.
+
+## Co zbývá před veřejným použitím
+
+Navržená vstupní brána pilotu: všech 100 příloh ohodnotit člověkem, u všech devíti OCR zkontrolovat číselné údaje proti obrazu a každé tvrzení `pouze_jpz` nechat potvrdit druhým hodnotitelem. Pokud druhý hodnotitel najde byť jeden případ, kde `pouze_jpz` ve skutečnosti skrývá další body nebo váhy, automatické označování `pouze_jpz` nepouštět veřejně a upravit extrakci. Nevyjasněná identita nabídky ani číselný vzorec nesmí přejít do kalkulačky. U rozporů s předmětovým sklonem provést ruční kontrolu PDF, protože samotný sklon bodovací pravidlo neprokazuje. Bez této brány zůstává pilot pouze interním podkladem; počet `nezjisteno` se vykáže, nikoli odhadne jako `pouze_jpz`.
+
+1. Ručně označit všech 100 PDF. U nejednoznačných dokumentů ponechat „nezjištěno“; devět OCR výstupů kontrolovat přímo proti obrazu PDF. Změřit shodu mezi nezávislými hodnotiteli alespoň u části vzorku a chyby automatických návrhů zvlášť pro tvrzení „pouze JPZ“.
+2. Připravit opakování místního sběru po zveřejnění nabídek 2027 a návaznost verzí PDF na schválená pravidla. Sběr 2026 kontroluje každou kartu vůči katalogu; u 2027 bude potřeba nový katalog a ověření shody klíčů mezi roky. Veřejné API není ověřený stabilní export; průběžný sběr musí respektovat jeho provozní podmínky.
+3. Zavést oddělené kandidáty zdrojů: škola v portálu, PDF DiPSy, web školy a podnět z Hlášení chyby. Zápis školy není automatické potvrzení shody s vyhlášeným PDF. Při rozporu se má zobrazit stav „nezjištěno“ do vyřešení; chybějící údaj není „pouze JPZ“.
+4. **Další krok po migraci:** na stránce oboru dát údaji školy z portálu přednost před strojovým přepisem (`KdeStojim`, `kriteriaOboru`). Vyžaduje čtení databáze v ISR stránce přes cache se značkou, jako profil školy; proto není součástí strukturovaného zadání.
+5. Připojit ověřený výsledek k veřejné stránce konkrétní nabídky. Bez ověřeného výsledku napsat, že bodování pro daný rok a kolo neznáme, odkázat na kritéria a umožnit nahlásit podklad. Pravidla 2026 lze zobrazit jen s jejich rokem.
+
+[Harmonogram MŠMT](https://msmt.gov.cz/media/wp-content/uploads/2026/08/Casovy-harmonogram_2026-2027.pdf) stanoví zadání kritérií běžných SŠ do DiPSy na 15.–31. 1. 2027; konzervatoře na 15.–31. 10. 2026. Dostupnost 2027 se proto nesmí vyvozovat z minulých karet.

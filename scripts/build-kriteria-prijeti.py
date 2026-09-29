@@ -14,7 +14,8 @@ zadavatele 27. 9. 2026, docs/predani-kriteria-prijeti-2026-09-25.md).
 K oborům bez přepisu soubor nese jen to, že PDF kritérií 2026 existuje.
 
 Ukazatel *Podíl přijímaček na bodování* (slovník ukazatelů).
-Výstup: public/kriteria_prijeti_2026.json.
+Výstup: public/kriteria_prijeti_2026.json a public/kriteria_predvyplneni_2026.json
+(maxima JPZ a pravidla při rovnosti pro předvyplnění formuláře v portálu škol).
 
     python3 scripts/build-kriteria-prijeti.py
 """
@@ -138,6 +139,10 @@ def z_pilotu() -> dict[str, dict]:
             "slozky": slozky,
             "jpz_navic": [],
             "minima": [f"{CASTI.get(m['cast'], m['cast'])} alespoň {m['body']} bodů" for m in z.get("minima", [])],
+            # Maxima JPZ a pravidla při rovnosti pro předvyplnění formuláře v portálu škol.
+            "jpz": {"cjl_max": jpz.get("cjl_max"), "mat_max": jpz.get("mat_max"),
+                    "prepoctovy_koeficient_pct": jpz.get("vaha_pct")},
+            "rovnost": [str(r) for r in z.get("rovnost", []) if r],
             "nejasnosti": z.get("nejasnosti", []),
             "prepis": "rucni",
             "nalezy": [],
@@ -193,6 +198,11 @@ def ze_strojoveho_prepisu() -> dict[str, dict]:
             "slozky": slozky,
             "jpz_navic": jpz_navic,
             "minima": [t for t in (citelne_minimum(m) for m in n.get("minima", [])) if t],
+            # Maxima JPZ a pravidla při rovnosti pro předvyplnění formuláře v portálu škol.
+            "jpz": {"cjl_max": jpz.get("cjl_max"), "mat_max": jpz.get("mat_max"),
+                    "prepoctovy_koeficient_pct": jpz.get("prepoctovy_koeficient_pct"),
+                    "max_po_prepoctu": jpz.get("max_po_prepoctu")},
+            "rovnost": [r for r in n.get("rovnost", []) if isinstance(r, str) and r.strip()],
             "nejasnosti": n.get("nejasnosti", []),
             "prepis": "strojovy",
             "nalezy": nalezy,
@@ -248,6 +258,9 @@ def main() -> None:
             p["nalezy"].append("jev:skola_boduje_i_dalsi")
             p["chybi_slozky"] = True
     prepisy.update(z_pilotu())  # ruční přepis má přednost
+    # Maxima JPZ a pravidla při rovnosti potřebuje jen formulář v portálu škol;
+    # jdou do zvláštního souboru, aby stránky oborů nenačítaly dvojnásobek dat.
+    predvyplneni = {sid: {"jpz": p.pop("jpz", None), "rovnost": p.pop("rovnost", [])} for sid, p in prepisy.items()}
     obory: dict[str, dict] = {}
     for radek in kontrola.pilot.latest_manifest().values():
         if radek.get("rok") != ROK or radek.get("stav") not in ("text", "ocr_text"):
@@ -269,6 +282,10 @@ def main() -> None:
     cesta = KOREN / "public" / f"kriteria_prijeti_{ROK}.json"
     cesta.write_text(json.dumps(vystup, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     print(f"{vystup['pokryti']} → {cesta.relative_to(KOREN)} ({cesta.stat().st_size // 1024} kB)")
+    cesta_p = KOREN / "public" / f"kriteria_predvyplneni_{ROK}.json"
+    cesta_p.write_text(json.dumps({"rok": ROK, "kolo": 1, "stav": vystup["stav"], "data": predvyplneni},
+                                  ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+    print(f"{len(predvyplneni)} přepisů → {cesta_p.relative_to(KOREN)} ({cesta_p.stat().st_size // 1024} kB)")
 
 
 if __name__ == "__main__":

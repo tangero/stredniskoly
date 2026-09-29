@@ -16,10 +16,11 @@ import { readFileSync, writeFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { Pool } from '@neondatabase/serverless';
-import { MIGRACE_PORTALU, TABULKY_PORTALU } from '../src/lib/portal-schema.ts';
+import { MIGRACE_KRITERII, MIGRACE_PORTALU, TABULKY_PORTALU } from '../src/lib/portal-schema.ts';
 
 const KOREN = join(dirname(fileURLToPath(import.meta.url)), '..');
 const MIGRACE = join(KOREN, 'db', 'migrace', '002-portal.sql');
+const MIGRACE_KRITERII_SOUBOR = join(KOREN, 'db', 'migrace', '006-portal-kriteria.sql');
 
 const TABULKY = [...TABULKY_PORTALU];
 
@@ -35,7 +36,8 @@ function zapisSql() {
     '',
   ].join('\n');
   writeFileSync(MIGRACE, `${hlavicka}${MIGRACE_PORTALU.join(';\n\n')};\n`, 'utf8');
-  console.log(`Zapsáno ${MIGRACE_PORTALU.length} příkazů do ${MIGRACE}`);
+  writeFileSync(MIGRACE_KRITERII_SOUBOR, `${hlavicka}${MIGRACE_KRITERII.join(';\n\n')};\n`, 'utf8');
+  console.log(`Zapsáno ${MIGRACE_PORTALU.length} příkazů do ${MIGRACE} a ${MIGRACE_KRITERII.length} do ${MIGRACE_KRITERII_SOUBOR}`);
 }
 
 function pripojeni() {
@@ -60,10 +62,10 @@ async function main() {
   const klient = await pool.connect();
   try {
     if (!jenKontrola) {
-      for (const prikaz of MIGRACE_PORTALU) {
+      for (const prikaz of [...MIGRACE_PORTALU, ...MIGRACE_KRITERII]) {
         await klient.query(prikaz);
       }
-      console.log(`Migrace proběhla, ${MIGRACE_PORTALU.length} příkazů.`);
+      console.log(`Migrace proběhla, ${MIGRACE_PORTALU.length + MIGRACE_KRITERII.length} příkazů.`);
     }
 
     const stav = await klient.query(
