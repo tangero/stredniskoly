@@ -44,7 +44,7 @@ Poloha převedeného výsledku *B* vůči oboru se určí z ukazatelů **Nejniž
 
 Zvláštní případy (rozhodnutí v otevřených otázkách, oddíl 10):
 
-- **Nikdo se nevešel kvůli kapacitě** (1 207 z 2 830 oborů s pásmy 2026): horní mez neexistuje. Kdo splnil požadavky školy, dostal se. Návrh: nad nejnižším přijatým → „Nad pásmem“ s větou „v 1. kole {rok} se dostal každý, kdo splnil požadavky školy“; pod ním → „Pod nejnižším přijatým“ se slabší větou (níž nikdo nesoutěžil, ne „nikdo se nedostal“).
+- **Obory, kde nikoho neodmítli** (kvůli počtu míst) (1 207 z 2 830 oborů s pásmy 2026): horní mez neexistuje. Kdo splnil požadavky školy, dostal se. Návrh: nad nejnižším přijatým → „Nad pásmem“ s větou „v 1. kole {rok} se dostal každý, kdo splnil požadavky školy“; pod ním → „Pod nejnižším přijatým“ se slabší větou (níž nikdo nesoutěžil, ne „nikdo se nedostal“).
 - **Málo dat** (méně než 10 přijatých, `MIN_PRIJATYCH_PRO_HRANICI`) nebo obor bez jednotné zkoušky: čtvrtá, sbalená skupina „Bez srovnání“ s důvodem. Nikdy se nepočítá jako „pod pásmem“ (past „chybějící údaj není nula“).
 - **Rozpor počtů** pásem a pozic: nabídka jde do „Bez srovnání“, stejně jako ve fázi 1 proužek zmizí.
 - **Zaměření**: data uchazečů zaměření neznají; skupina platí za celý obor školy (REDIZO_KKOV) a u nabídky se zaměřením se to napíše.
@@ -100,7 +100,7 @@ Prošel jsem [zdroje dat](zdroje-dat.md) celé včetně oddílu 3. Návrh **nep�
 **Ukazatele** (slovník ukazatelů, verze +1 v dávce implementace):
 
 - Použité beze změny výpočtu: *Převedený výsledek testu*, *Pásmo nejistoty*, *Nejnižší výsledek JPZ mezi přijatými*, *Soutěžící o obor*, *Podíl přijímaček na bodování* (štítek extra body); u každého doplnit „Kde se zobrazuje: simulátor“.
-- **Nový: *Poloha vůči pásmu*** (nad / v / pod / nikdo se nevešel / bez srovnání): definice podle tabulky v oddílu 3, zdroj pásma přijetí, jednotka kategorie, **co neříká**: není pravděpodobnost přijetí, nepoužívá se k řazení oborů, popisuje jeden ročník a obor bez zaměření.
+- **Nový: *Poloha vůči pásmu*** (nad / v / pod / nikoho neodmítli / bez srovnání): definice podle tabulky v oddílu 3, zdroj pásma přijetí, jednotka kategorie, **co neříká**: není pravděpodobnost přijetí, nepoužívá se k řazení oborů, popisuje jeden ročník a obor bez zaměření.
 - **Odchází ze simulátoru: *Průměr JPZ přijatých*** jako porovnávací měřítko (`admission-gap.ts`). Ukazatel ve slovníku zůstává (používá se jinde), v simulátoru se nahradí polohou vůči pásmu. `admission-gap.ts` a jeho test se smažou, pokud je nic dalšího nepoužívá (dnes jen `OfferComparisonTable`).
 
 **Pojmy** (slovník pojmů, ve stejné dávce): **Simulátor přijímaček** (název nástroje), **oblíbené školy** (uložený výběr; nepoužívat „košík“), **pojistka** („obor, kam se v 1. kole {rok} s vaším výsledkem dostali všichni“; nepoužívat „jistota“), **nad pásmem / v pásmu / pod pásmem** (s vysvětlením při prvním výskytu v bloku), **priorita** jako synonymum „pořadí na přihlášce“ jen v textu strategie, s vysvětlením.
@@ -131,7 +131,7 @@ Etapy E1–E3 lze nasadit samostatně (simulátor ukáže skupiny), E4 a E5 nava
 
 ## 10. Testy
 
-- Čistá funkce skupiny: nad, v, pod, shodné meze, horní mez pod dolní (7,8 % oborů), nikdo se nevešel, méně než 10 přijatých, chybějící data, rozpor počtů.
+- Čistá funkce skupiny: nad, v, pod, shodné meze, horní mez pod dolní (7,8 % oborů), nikoho neodmítli, méně než 10 přijatých, chybějící data, rozpor počtů.
 - Převod podle druhu testu a volba „jiný test“ bez převodu.
 - Index: součty sedí s `pasma_prijeti_{rok}.json` a pozicemi; velikost pod 200 kB.
 - Strategie: bez pojistky upozornění, víc oblíbených než přihlášek, talentové zvlášť.
@@ -153,8 +153,8 @@ Etapy E1–E3 lze nasadit samostatně (simulátor ukáže skupiny), E4 a E5 nava
 
 Platí doporučení ke všem otázkám z oddílu 11:
 
-1. Obory, kde se v 1. kole nikdo nevešel kvůli kapacitě, tvoří **samostatnou skupinu** s větou, že se přijímalo podle podmínek (minima, kritéria), ne podle pořadí.
-2. Pojistka: aspoň jedna nabídka nad pásmem, a pokud to jde, i jedna ze skupiny „nikdo se nevešel“.
+1. Obory, kde v 1. kole nikoho neodmítli kvůli počtu míst, tvoří **samostatnou skupinu „Obory, kde nikoho neodmítli“** (název zadavatele; „nikdo se nevešel“ sváděl ke čtení „nikoho nepřijali“). Věta pod názvem upřesní „kvůli počtu míst; kdo splnil podmínky, dostal se“ s větou, že se přijímalo podle podmínek (minima, kritéria), ne podle pořadí.
+2. Pojistka: aspoň jedna nabídka nad pásmem, a pokud to jde, i jedna ze skupiny „Obory, kde nikoho neodmítli“.
 3. Nabídky s extra body v pásmu dostanou jen štítek, neupozaďují se.
 4. Při více testech se skupina počítá z **nejhoršího** výsledku.
 5. Seznam jde procházet i bez testu, bez rozdělení do skupin a s výzvou k testu.
