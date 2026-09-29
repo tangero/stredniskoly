@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-25",
+  "checkedAt": "2026-09-29",
   "sezona": "2027",
   "zdroj": "docs/prijimacky-veletrhy-poradatele-2026.xlsx",
   "poznamka": "Rozpis pořadatelů na jednotlivé akce. Zobrazuje se jen akce s terminPotvrzen: true. Popis viz docs/veletrhy-skol-2027.md.",
@@ -207,21 +207,6 @@
       "overeno": "2026-09-22"
     },
     {
-      "id": "prezentace-skol-kladno-2026",
-      "nazev": "Prezentace škol Kladno",
-      "poradatel": "Okresní hospodářská komora Kladno",
-      "mesto": "Kladno",
-      "krajKod": "CZ020",
-      "misto": "Dům kultury Poldi Kladno, velký sál, nám. Sítná 1/3127",
-      "start": "2026-10-12",
-      "end": "2026-10-12",
-      "datum": "12. října 2026",
-      "terminPotvrzen": true,
-      "url": "https://dkpoldikladno.cz/aktualni-akce",
-      "zdrojOvereni": "dkpoldikladno.cz (místo konání); pořadatele upřesnil DK Poldi e-mailem 24. 9. 2026",
-      "overeno": "2026-09-24"
-    },
-    {
       "id": "up-kolin-2026",
       "nazev": "Setkání škol – přehlídka středních škol a učilišť Kolín",
       "poradatel": "Úřad práce ČR – Kolín",
@@ -267,6 +252,21 @@
       "url": "https://burzapav.cz/",
       "zdrojOvereni": "burzapav.cz",
       "overeno": "2026-09-24"
+    },
+    {
+      "id": "prezentace-skol-kladno-2026",
+      "nazev": "Prezentace škol Kladno",
+      "poradatel": "Okresní hospodářská komora Kladno",
+      "mesto": "Kladno",
+      "krajKod": "CZ020",
+      "misto": "Dům kultury Poldi Kladno, velký sál, nám. Sítná 1/3127",
+      "start": "2026-10-13",
+      "end": "2026-10-14",
+      "datum": "13.–14. října 2026",
+      "terminPotvrzen": true,
+      "url": "https://dkpoldikladno.cz/aktualni-akce",
+      "zdrojOvereni": "e-mail pořadatele (OHK Kladno) 29. 9. 2026; místo konání dkpoldikladno.cz",
+      "overeno": "2026-09-29"
     },
     {
       "id": "burza-skol-beroun-2026",
@@ -381,6 +381,23 @@
       "zdrojOvereni": "kutnohorskelisty.cz",
       "overeno": "2026-09-24",
       "cekaNa": "Termín 14. 10. 2026 zatím jen ve zpravodajství (kutnohorskelisty.cz, 23. 9. 2026) a na webu vystavující SPŠ Čáslav; Úřad práce ho nezveřejnil."
+    },
+    {
+      "id": "veletrh-strednich-skol-horni-pocernice-2026",
+      "nazev": "Veletrh středních škol Horní Počernice",
+      "poradatel": "Městská část Praha 20 – Horní Počernice",
+      "mesto": "Praha",
+      "krajKod": "CZ010",
+      "misto": "Chvalská stodola, areál Chvalské tvrze, Praha 20 – Horní Počernice",
+      "start": "2026-10-14",
+      "end": "2026-10-14",
+      "datum": "14. října 2026",
+      "cas": "8:30–13:30",
+      "terminPotvrzen": true,
+      "poznamkaTerminu": "Tradiční místní veletrh pro žáky 8. a 9. tříd, v minulých ročnících se zaměřením na řemeslné obory.",
+      "url": "https://www.pocernice.cz/akce/veletrh-strednich-skol-5/",
+      "zdrojOvereni": "pocernice.cz (kalendář akcí MČ Praha 20)",
+      "overeno": "2026-09-28"
     },
     {
       "id": "burza-jindrichuv-hradec-2026",
@@ -899,9 +916,9 @@
       "end": "2026-11-04",
       "datum": "3.–4. listopadu 2026",
       "terminPotvrzen": true,
-      "url": "https://www.ohkcv.cz/2026/06/15/krusnohorsky-byznys-day-2026-2/",
+      "url": "https://www.ohkcv.cz/podpora-podnikani/veletrhy-a-vystavy/vystava-vzdelavani/",
       "zdrojOvereni": "ohkcv.cz",
-      "overeno": "2026-09-24"
+      "overeno": "2026-09-28"
     },
     {
       "id": "prehlidka-rakovnik-2026",
@@ -1299,14 +1316,15 @@
       "poradatel": "Magistrát hlavního města Prahy",
       "mesto": "Praha",
       "krajKod": "CZ010",
-      "misto": "Kongresové centrum Praha",
+      "misto": "Kongresové centrum Praha, 5. května 1640/65, Praha 4",
       "start": "2026-11-26",
       "end": "2026-11-28",
       "datum": "26.–28. listopadu 2026",
+      "cas": "čt–pá 8:30–18:00, so 8:30–15:00",
       "terminPotvrzen": true,
       "url": "https://scholapragensis.online/o-veletrhu/",
       "zdrojOvereni": "scholapragensis.online",
-      "overeno": "2026-09-24"
+      "overeno": "2026-09-28"
     },
     {
       "id": "tak-kam-brno-2026",
