@@ -82,6 +82,15 @@ test('součet: vážení, přepočet, srážka a kontrola proti vyhlášenému m
   const nestejna = souhrnBodovani({ ...prazdnaStruktura(), jpz: { cjl_max: 50, mat_max: 100, prepoctovy_koeficient_pct: null, vyssi_vaha: null } });
   assert.equal(nestejna.jenJpz, false, 'nestejná maxima předmětů jsou vážení');
   assert.equal(souhrnBodovani(prazdnaStruktura()).jenJpz, true, 'stejná maxima bez dalších bodů jsou prostý součet');
+  const bezMaxim = souhrnBodovani({ ...prazdnaStruktura(), jpz: { cjl_max: null, mat_max: null, prepoctovy_koeficient_pct: null, vyssi_vaha: null } });
+  assert.equal(bezMaxim.jenJpz, false, 'nevyplněná maxima nejsou jen JPZ');
+  // 600001873_79-41-K/81: celkové maximum v kreditech, dílčí v bodech
+  const kredity = strukturaZPrepisu({ zamereni: '', slozky: [{ nazev: 'školní přijímací zkouška', max: 10 }], jpz_navic: [], minima: [],
+    nejasnosti: ['Výslovné celkové maximum 1000 kreditů je v jiné jednotce než body JPZ a ŠPZ.'],
+    jpz: { cjl_max: 50, mat_max: 50, prepoctovy_koeficient_pct: null } });
+  assert.equal(souhrnBodovani(kredity).celkem, null, 'nejasnost přepisu ponechá součet neznámý');
+  assert.equal(souhrnBodovani(kredity).podilJpzPct, null);
+  assert.ok(kredity.slozky.some((x) => x.nazev === 'Nejasnosti přepisu PDF' && x.poznamka.includes('kreditů')));
   const nezname = souhrnBodovani({ ...prazdnaStruktura(), slozky: [{ druh: 'pohovor', nazev: 'pohovor', max: null, poznamka: '' }] });
   assert.equal(nezname.celkem, null);
   assert.equal(nezname.podilJpzPct, null);
@@ -129,7 +138,9 @@ test('předvyplnění z přepisu: druhy, maxima JPZ, minima a rovnost', () => {
   const chybi = strukturaZPrepisu({ zamereni: '', rezim: 'jine', chybi_slozky: true, slozky: [], jpz_navic: [], minima: [], jpz: null });
   assert.equal(chybi.slozky.length, 1);
   assert.equal(souhrnBodovani(chybi).jenJpz, false);
-  assert.equal(souhrnBodovani(strukturaZPrepisu({ zamereni: '', rezim: 'pouze_jpz', slozky: [], jpz_navic: [], minima: [], jpz: null })).jenJpz, true);
+  // Přepis „jen JPZ“ bez maxim: dokud škola maxima nedoplní, režim se neodvodí.
+  assert.equal(souhrnBodovani(strukturaZPrepisu({ zamereni: '', rezim: 'pouze_jpz', slozky: [], jpz_navic: [], minima: [], jpz: null })).jenJpz, false);
+  assert.equal(souhrnBodovani(strukturaZPrepisu({ zamereni: '', rezim: 'pouze_jpz', slozky: [], jpz_navic: [], minima: [], jpz: { cjl_max: 50, mat_max: 50, prepoctovy_koeficient_pct: null } })).jenJpz, true);
 });
 
 test('předvyplnění se páruje podle oboru a zaměření z veřejného přepisu', async () => {

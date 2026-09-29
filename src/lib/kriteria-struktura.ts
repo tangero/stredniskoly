@@ -124,7 +124,9 @@ export function souhrnBodovani(s: StrukturaKriterii): SouhrnBodovani {
   const bezJpz = cjl_max === 0 && mat_max === 0;
   // Nestejná maxima předmětů (ČJL 50, MAT 100) jsou vážení, ne prostý součet.
   const nestejnaMaxima = cjl_max !== null && mat_max !== null && cjl_max !== mat_max;
-  const jenJpz = !bezJpz && !nestejnaMaxima && s.slozky.every((x) => x.max === 0)
+  // Bez obou maxim nevíme, co se boduje; neúplné zadání není „jen JPZ“.
+  const znamaMaxima = cjl_max !== null && mat_max !== null;
+  const jenJpz = znamaMaxima && !bezJpz && !nestejnaMaxima && s.slozky.every((x) => x.max === 0)
     && koef === null && vyssi_vaha === null;
   return { jpzMax, ostatniMax, celkem, podilJpzPct, rozdilProtiVyhlasenemu, jenJpz };
 }
@@ -229,6 +231,8 @@ export interface PrepisProPredvyplneni {
   slozky: { nazev: string; max: number | null }[];
   jpz_navic: { nazev: string; max: number | null }[];
   minima: string[];
+  /** Výhrady přepisu (jiné jednotky, nejasný přepočet); nesmí zmizet v předvyplnění. */
+  nejasnosti?: string[];
   jpz?: { cjl_max: number | null; mat_max: number | null; prepoctovy_koeficient_pct: number | null; max_po_prepoctu?: number | null } | null;
   rovnost?: string[];
 }
@@ -287,6 +291,12 @@ export function strukturaZPrepisu(p: PrepisProPredvyplneni): StrukturaKriterii {
         poznamka: 'Zadejte vyšší váhu předmětu nebo přepočet u JPZ výše a tento řádek smažte.',
       })),
       ...p.slozky.map((s) => ({ druh: hadejDruh(s.nazev), nazev: s.nazev.slice(0, MAX_TEXT), max: s.max, poznamka: '' })),
+      // Výhrady přepisu zůstanou jako řádek s neznámým maximem: součet a podíl se
+      // nedopočítají, dokud je editor nevyřeší (například maxima v jiných jednotkách).
+      ...((p.nejasnosti ?? []).length ? [{
+        druh: 'jine' as const, nazev: 'Nejasnosti přepisu PDF', max: null,
+        poznamka: `${(p.nejasnosti ?? []).join(' ')} Ověřte bodování podle kritérií a tento řádek smažte.`.slice(0, MAX_TEXT),
+      }] : []),
       // Známá neúplnost přepisu nesmí zmizet a vydávat se za „jen JPZ“.
       ...((p.chybi_slozky || (p.rezim === 'jine' && !p.slozky.length && !p.jpz_navic.length)) ? [{
         druh: 'jine' as const, nazev: 'Další body, které přepis PDF nezachytil', max: null,
