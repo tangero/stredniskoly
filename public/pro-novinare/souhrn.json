@@ -1,0 +1,528 @@
+{
+ "vytvoreno": "2026-09-29",
+ "generator": "scripts/build-pro-novinare.py",
+ "obdobi": {
+  "vysledky": "2026",
+  "kolo2": "2026",
+  "uchazeci": "2026",
+  "kriteria": "2026",
+  "veletrhy": "2027"
+ },
+ "zdroje": {
+  "platnost_vysledku": "2026-08-17",
+  "otisky": {
+   "PZ2026_kolo1_skolobory_vysledky.xlsx": "a003441f4beed6fb9c181aa00f9d1a59a9c206ff10f113ad807740e68d5511d5",
+   "PZ2026_kolo2_skolobory_vysledky.xlsx": "c69aca68fb2b2c1633571b1d64a4a1c25dd47d58d6d3cc969f939989a98cc926",
+   "PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx": "6e9ca63a52d26f9ae5d8c658c1d818cce12c8ef4a8c0b0d2752e6efaaa75e66f"
+  }
+ },
+ "balicky": [
+  {
+   "klic": "veletrhy",
+   "soubor": "veletrhy",
+   "nazev": "Veletrhy a přehlídky středních škol, sezóna podzim 2026",
+   "popis": "Veletrh středních škol je akce, na které se na jednom místě představí víc středních škol najednou. Pořádá ho kraj, hospodářská komora, město nebo výstaviště.",
+   "soubory": [
+    {
+     "soubor": "veletrhy.xlsx",
+     "list": null,
+     "radku": null,
+     "format": "xlsx"
+    },
+    {
+     "soubor": "veletrhy-akce.csv",
+     "list": "Akce",
+     "radku": 79,
+     "format": "csv"
+    },
+    {
+     "soubor": "veletrhy-kraje.csv",
+     "list": "Po krajích",
+     "radku": 14,
+     "format": "csv"
+    }
+   ]
+  },
+  {
+   "klic": "konzervatore",
+   "soubor": "konzervatore",
+   "nazev": "Konzervatoře: přihlášky do 30. listopadu",
+   "popis": "Konzervatoře mají samostatné 1. kolo přijímacího řízení s podzimním termínem přihlášek. Ostatní střední školy včetně talentových oborů přijímají přihlášky až v únoru.",
+   "soubory": [
+    {
+     "soubor": "konzervatore.xlsx",
+     "list": null,
+     "radku": null,
+     "format": "xlsx"
+    },
+    {
+     "soubor": "konzervatore-skoly.csv",
+     "list": "Konzervatoře",
+     "radku": 18,
+     "format": "csv"
+    },
+    {
+     "soubor": "konzervatore-terminy.csv",
+     "list": "Termíny",
+     "radku": 5,
+     "format": "csv"
+    },
+    {
+     "soubor": "konzervatore-1-kolo-2026.csv",
+     "list": "1. kolo 2026",
+     "radku": 178,
+     "format": "csv"
+    }
+   ]
+  },
+  {
+   "klic": "obory",
+   "soubor": "obory-1-kolo-2026",
+   "nazev": "Obory středních škol s jednotnou přijímací zkouškou: 1. kolo 2026",
+   "popis": "Všech 3091 nabídek denního nezkráceného studia s povinnou jednotnou přijímací zkouškou v 1. kole 2026: poptávka, výsledek přijímání a zda škola vypsala 2. kolo.",
+   "soubory": [
+    {
+     "soubor": "obory-1-kolo-2026.xlsx",
+     "list": null,
+     "radku": null,
+     "format": "xlsx"
+    },
+    {
+     "soubor": "obory-1-kolo-2026.csv",
+     "list": "Obory",
+     "radku": 3091,
+     "format": "csv"
+    }
+   ]
+  },
+  {
+   "klic": "uchazeci",
+   "soubor": "uchazeci-1-kolo-2026",
+   "nazev": "Kam se dostali uchazeči v 1. kole 2026",
+   "popis": "Uchazeči 1. kola 2026 podle toho, na kolikátou volbu z přihlášky byli přijati, nebo zda se nedostali nikam.",
+   "soubory": [
+    {
+     "soubor": "uchazeci-1-kolo-2026.xlsx",
+     "list": null,
+     "radku": null,
+     "format": "xlsx"
+    },
+    {
+     "soubor": "uchazeci-1-kolo-2026-kraje.csv",
+     "list": "Po krajích",
+     "radku": 40,
+     "format": "csv"
+    },
+    {
+     "soubor": "uchazeci-1-kolo-2026-cesko.csv",
+     "list": "Česko",
+     "radku": 3,
+     "format": "csv"
+    }
+   ]
+  },
+  {
+   "klic": "druhe_kolo",
+   "soubor": "druhe-kolo-2026",
+   "nazev": "Druhé kolo přijímacího řízení 2026",
+   "popis": "Když se obor v 1. kole nenaplní, škola může vypsat 2. kolo. Balíček obsahuje všechny nabídky 2. kola 2026 v denním nezkráceném studiu, s jednotnou zkouškou i bez ní.",
+   "soubory": [
+    {
+     "soubor": "druhe-kolo-2026.xlsx",
+     "list": null,
+     "radku": null,
+     "format": "xlsx"
+    },
+    {
+     "soubor": "druhe-kolo-2026-nabidky.csv",
+     "list": "Nabídky",
+     "radku": 2518,
+     "format": "csv"
+    },
+    {
+     "soubor": "druhe-kolo-2026-kraje.csv",
+     "list": "Po krajích",
+     "radku": 28,
+     "format": "csv"
+    },
+    {
+     "soubor": "druhe-kolo-2026-typy-skol.csv",
+     "list": "Po typech škol",
+     "radku": 10,
+     "format": "csv"
+    }
+   ]
+  },
+  {
+   "klic": "kriteria",
+   "soubor": "kriteria-2026",
+   "nazev": "Co vedle jednotné přijímací zkoušky rozhodovalo: kritéria 2026",
+   "popis": "Podle přepisu kritérií přijetí 2026 z DiPSy: u kterých oborů bodovala jen jednotná přijímací zkouška a kde škola přidávala extra body, tedy body za něco jiného, například za prospěch ze základní školy, školní přijímací zkoušku nebo pohovor.",
+   "soubory": [
+    {
+     "soubor": "kriteria-2026.xlsx",
+     "list": null,
+     "radku": null,
+     "format": "xlsx"
+    },
+    {
+     "soubor": "kriteria-2026-souhrn.csv",
+     "list": "Souhrn",
+     "radku": 22,
+     "format": "csv"
+    },
+    {
+     "soubor": "kriteria-2026-obory.csv",
+     "list": "Obory",
+     "radku": 3064,
+     "format": "csv"
+    }
+   ]
+  }
+ ],
+ "zip": "prijimacky-na-skolu-data.zip",
+ "skupiny_kriterii": {
+  "prospech": "prospěch ze základní školy",
+  "skolni_zkouska": "školní přijímací zkouška",
+  "pohovor": "pohovor",
+  "talentova_prakticka": "talentová, praktická nebo sportovní zkouška, portfolio",
+  "souteze_aktivity": "soutěže, certifikáty a další aktivity"
+ },
+ "cisla": {
+  "veletrhy": {
+   "akci_potvrzenych": 79,
+   "akci_cekajicich": 17,
+   "akci_od_dnes": 79,
+   "kraju": 14,
+   "mesicu": {
+    "2026-09": 1,
+    "2026-10": 46,
+    "2026-11": 31,
+    "2026-12": 1
+   },
+   "sezona": "2027"
+  },
+  "konzervatore": {
+   "skol": 18,
+   "rejstrik_k": "2026-06-30",
+   "terminy": {
+    "kon-kriteria": "15.–31. října 2026",
+    "kon-prihlasky": "1.–30. listopadu 2026",
+    "kon-zkousky": "4.–15. ledna 2027",
+    "kon-nahradni": "18.–29. ledna 2027",
+    "kon-vysledky": "8. února 2027 · pondělí"
+   },
+   "obory": {
+    "Hudba": 13,
+    "Zpěv": 13,
+    "Hudebně dramatické umění": 6,
+    "Tanec": 5,
+    "Současný tanec": 2
+   },
+   "kolo1_rok": "2026",
+   "kolo1_denni": {
+    "mist": 810,
+    "prihlasek": 1698,
+    "prijatych": 611,
+    "neveslo": 68,
+    "nedosahlo": 835,
+    "vys": 178
+   },
+   "shoda_se_souhrnem": true
+  },
+  "obory": {
+   "nabidek": 3091,
+   "skol": 1104,
+   "prihlasek": 302220
+  },
+  "uchazeci": {
+   "rocniky": {
+    "9": {
+     "uchazecu": 130207,
+     "konali_jpz": 93780,
+     "volba1": 88610,
+     "nikam": 13277,
+     "nikam_obe": 4583,
+     "volba2": 18870,
+     "nikam_jen_kapacita": 4751,
+     "nikam_jen_pozadavek": 3943,
+     "volba3": 9450
+    },
+    "7": {
+     "uchazecu": 6839,
+     "konali_jpz": 6705,
+     "nikam": 4408,
+     "nikam_jen_pozadavek": 815,
+     "nikam_obe": 1624,
+     "volba1": 1945,
+     "nikam_jen_kapacita": 1969,
+     "volba2": 305,
+     "volba3": 181
+    },
+    "5": {
+     "uchazecu": 19164,
+     "konali_jpz": 18721,
+     "volba1": 7368,
+     "nikam": 10062,
+     "nikam_jen_pozadavek": 1639,
+     "volba2": 1151,
+     "nikam_jen_kapacita": 6163,
+     "nikam_obe": 2260,
+     "volba3": 583
+    }
+   },
+   "bez_rocniku": 0,
+   "uchazecu": 156210
+  },
+  "druhe_kolo": {
+   "jpz": {
+    "nabidek": 1060,
+    "mist": 12034,
+    "prihlasek": 16191,
+    "prijatych": 4946,
+    "neveslo": 2113,
+    "bez_prihlasky": 47,
+    "s_nevesli": 199
+   },
+   "bez_jpz": {
+    "nabidek": 1458,
+    "mist": 10281,
+    "prihlasek": 12846,
+    "prijatych": 4045,
+    "neveslo": 1801,
+    "bez_prihlasky": 163,
+    "s_nevesli": 262
+   },
+   "kraje_jpz": {
+    "Hlavní město Praha": {
+     "nabidek": 114,
+     "mist": 2231,
+     "prihlasek": 5366,
+     "prijatych": 1215,
+     "neveslo": 1227,
+     "bez_prihlasky": 0,
+     "s_nevesli": 52
+    },
+    "Jihomoravský kraj": {
+     "nabidek": 113,
+     "mist": 1395,
+     "prihlasek": 2016,
+     "prijatych": 655,
+     "neveslo": 169,
+     "bez_prihlasky": 4,
+     "s_nevesli": 20
+    },
+    "Jihočeský kraj": {
+     "nabidek": 82,
+     "mist": 854,
+     "prihlasek": 521,
+     "prijatych": 202,
+     "neveslo": 5,
+     "bez_prihlasky": 9,
+     "s_nevesli": 4
+    },
+    "Karlovarský kraj": {
+     "nabidek": 18,
+     "mist": 173,
+     "prihlasek": 188,
+     "prijatych": 63,
+     "neveslo": 6,
+     "bez_prihlasky": 0,
+     "s_nevesli": 2
+    },
+    "Kraj Vysočina": {
+     "nabidek": 79,
+     "mist": 612,
+     "prihlasek": 355,
+     "prijatych": 134,
+     "neveslo": 29,
+     "bez_prihlasky": 13,
+     "s_nevesli": 7
+    },
+    "Královéhradecký kraj": {
+     "nabidek": 75,
+     "mist": 689,
+     "prihlasek": 655,
+     "prijatych": 226,
+     "neveslo": 32,
+     "bez_prihlasky": 4,
+     "s_nevesli": 7
+    },
+    "Liberecký kraj": {
+     "nabidek": 28,
+     "mist": 191,
+     "prihlasek": 412,
+     "prijatych": 130,
+     "neveslo": 62,
+     "bez_prihlasky": 0,
+     "s_nevesli": 9
+    },
+    "Moravskoslezský kraj": {
+     "nabidek": 120,
+     "mist": 1188,
+     "prihlasek": 1318,
+     "prijatych": 476,
+     "neveslo": 124,
+     "bez_prihlasky": 5,
+     "s_nevesli": 22
+    },
+    "Olomoucký kraj": {
+     "nabidek": 79,
+     "mist": 711,
+     "prihlasek": 660,
+     "prijatych": 242,
+     "neveslo": 42,
+     "bez_prihlasky": 2,
+     "s_nevesli": 7
+    },
+    "Pardubický kraj": {
+     "nabidek": 57,
+     "mist": 558,
+     "prihlasek": 652,
+     "prijatych": 221,
+     "neveslo": 60,
+     "bez_prihlasky": 0,
+     "s_nevesli": 11
+    },
+    "Plzeňský kraj": {
+     "nabidek": 51,
+     "mist": 627,
+     "prihlasek": 826,
+     "prijatych": 276,
+     "neveslo": 54,
+     "bez_prihlasky": 2,
+     "s_nevesli": 10
+    },
+    "Středočeský kraj": {
+     "nabidek": 108,
+     "mist": 1352,
+     "prihlasek": 1987,
+     "prijatych": 664,
+     "neveslo": 188,
+     "bez_prihlasky": 1,
+     "s_nevesli": 30
+    },
+    "Zlínský kraj": {
+     "nabidek": 61,
+     "mist": 660,
+     "prihlasek": 518,
+     "prijatych": 176,
+     "neveslo": 50,
+     "bez_prihlasky": 4,
+     "s_nevesli": 5
+    },
+    "Ústecký kraj": {
+     "nabidek": 75,
+     "mist": 793,
+     "prihlasek": 717,
+     "prijatych": 266,
+     "neveslo": 65,
+     "bez_prihlasky": 3,
+     "s_nevesli": 13
+    }
+   },
+   "typy": {
+    "Gymnázia 4letá": {
+     "nabidek": 98,
+     "mist": 1790,
+     "prihlasek": 1623,
+     "prijatych": 573,
+     "neveslo": 79,
+     "bez_prihlasky": 0,
+     "s_nevesli": 12
+    },
+    "SOU s maturitou": {
+     "nabidek": 204,
+     "mist": 1945,
+     "prihlasek": 2287,
+     "prijatych": 697,
+     "neveslo": 242,
+     "bez_prihlasky": 27,
+     "s_nevesli": 22
+    },
+    "SOU s výuč. listem": {
+     "nabidek": 1245,
+     "mist": 9179,
+     "prihlasek": 12083,
+     "prijatych": 3740,
+     "neveslo": 1780,
+     "bez_prihlasky": 102,
+     "s_nevesli": 253
+    },
+    "Nástavby": {
+     "nabidek": 64,
+     "mist": 583,
+     "prihlasek": 859,
+     "prijatych": 272,
+     "neveslo": 80,
+     "bez_prihlasky": 7,
+     "s_nevesli": 12
+    },
+    "SOU bez výuč. listu": {
+     "nabidek": 74,
+     "mist": 336,
+     "prihlasek": 121,
+     "prijatych": 80,
+     "neveslo": 6,
+     "bez_prihlasky": 31,
+     "s_nevesli": 2
+    },
+    "SOŠ": {
+     "nabidek": 635,
+     "mist": 6451,
+     "prihlasek": 8484,
+     "prijatych": 2607,
+     "neveslo": 919,
+     "bez_prihlasky": 29,
+     "s_nevesli": 100
+    },
+    "Lycea": {
+     "nabidek": 123,
+     "mist": 1612,
+     "prihlasek": 2249,
+     "prijatych": 712,
+     "neveslo": 269,
+     "bez_prihlasky": 1,
+     "s_nevesli": 24
+    },
+    "Gymnázia 6letá": {
+     "nabidek": 11,
+     "mist": 94,
+     "prihlasek": 477,
+     "prijatych": 84,
+     "neveslo": 227,
+     "bez_prihlasky": 0,
+     "s_nevesli": 10
+    },
+    "Gymnázia 8letá": {
+     "nabidek": 32,
+     "mist": 246,
+     "prihlasek": 791,
+     "prijatych": 200,
+     "neveslo": 312,
+     "bez_prihlasky": 0,
+     "s_nevesli": 26
+    },
+    "Konzervatoře": {
+     "nabidek": 32,
+     "mist": 79,
+     "prihlasek": 63,
+     "prijatych": 26,
+     "neveslo": 0,
+     "bez_prihlasky": 13,
+     "s_nevesli": 0
+    }
+   }
+  },
+  "kriteria": {
+   "nabidek": 3064,
+   "jen_jpz": 309,
+   "prospech": 2421,
+   "skolni_zkouska": 298,
+   "pohovor": 178,
+   "talentova_prakticka": 183,
+   "souteze_aktivity": 1045,
+   "jine": 316
+  }
+ }
+}

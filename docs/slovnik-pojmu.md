@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.31 · 29. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.32 · 29. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -107,6 +107,8 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **přípravný kurz k přijímačkám** | kurz, kterým škola připravuje uchazeče na přijímací nebo talentovou zkoušku; bývá placený a s omezenou kapacitou, proto se nemíchá se setkáním s uchazeči | štítek karty novinky | doučování, kroužek, kurz (samotné slovo znamená i lyžařský nebo taneční) |
 | **veletrh středních škol** | akce, na které se na jednom místě představí víc středních škol najednou; pořádá ji kraj, hospodářská komora, město nebo výstaviště, ne škola a ne tento web | „veletrh středních škol, tedy akce, kde se na jednom místě představí školy z kraje najednou“ | burza škol, výstava škol, akce pro veřejnost, veletrh práce, den otevřených dveří (to pořádá škola u sebe); Schola, Gaudeamus jako obecné označení |
 | **pořadatel veletrhu** | organizace, která veletrh pořádá a ručí za jeho konání | u každé akce „Pořádá *organizace*“; dovětek „ne tento web“ vypuštěn 23. 9. 2026 — jméno pořadatele říká totéž | organizátor (kolísá s pořadatelem), partner akce, spolupořadatel |
+| **balíček dat** | soubor ke stažení na `/pro-novinare` (CSV a XLSX s listem „O datech“), který shrnuje data webu k jednomu tématu | „balíček dat, tedy tabulky ke stažení s popisem, odkud čísla jsou a co neříkají“ | dataset, export, report |
+| **ročník, ze kterého se uchazeč hlásí** | 5., 7. nebo 9. třída základní školy; v datech sloupec `ROČNÍK` oborů na přihlášce | u čísel o víceletých gymnáziích vždy větou „kdo se nedostal, pokračuje na základní škole“ | věk, ročník uchazeče bez upřesnění |
 | **online mediální partner** | role tohoto webu u akce, ke které má s pořadatelem dohodu o vzájemném odkazu | „web je online mediálním partnerem akce, tedy má s pořadatelem dohodu o vzájemném odkazu“ | partner (samotné), spolupořadatel, sponzor, mediální zastoupení |
 | **nahlásit akci** | poslat nám formulářem údaje o veletrhu, který v přehledu chybí; nahlášení není zveřejnění | „akci před zveřejněním ověříme na stránce pořadatele“ | přidat akci, vložit akci, zveřejnit akci (všechno slibuje zveřejnění, které nenastane samo) |
 | **potvrzený termín** (u veletrhu) | termín veletrhu, který jsme ověřili na stránce pořadatele nebo jiného doloženého zdroje; jen s ním se akce zobrazuje a počítá | „víme jen o těchto 6 akcích s potvrzeným termínem“ — věta u počtu akcí v kraji; u dne otevřených dveří z článku školy se totéž slovo **nepoužívá** (termín jsme neověřovali, viz *termíny z článku školy*) | ověřený termín, oficiální termín; **potvrzený termín** u novinek škol |
@@ -135,6 +137,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.32 | Pojmy **balíček dat** a **ročník, ze kterého se uchazeč hlásí** pro sekci `/pro-novinare` ([návrh](navrh-pro-novinare-2027.md)). U 2. kola se ani pro novináře nepíše „šance“: balíček uvádí přijaté na přihlášku a vysvětluje, proč to není podíl úspěšných uchazečů. |
 | 1.31 | Pojmy **ostrý test** a **výhrady** pro krok 3 Simulátoru přijímaček (etapa E5, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 5). Výhrady stojí v samostatném bloku pod výsledky a zkráceně nad nimi, nikdy drobným písmem. |
 | 1.30 | Pojem **pojistka** pro strategii řazení zvažovaných oborů v Simulátoru přijímaček ([návrh](navrh-simulator-prijimacek-2027.md) oddíl 4, etapa E4). Návrh mluví o „oblíbených školách“ a „prioritách“; slovník obojí zakazuje (verze 1.13 *zvažované obory*, řádek *pořadí na přihlášce*), proto text stránky používá **zvažované obory** a **pořadí na přihlášce** se standardní větou, že pořadí šanci na přijetí nemění. Horní lišta simulátoru „Můj výběr“ přejmenována na „Zvažované obory“. |
 | 1.29 | Pojmy Simulátoru přijímaček pro skupiny výsledků (29. 9. 2026, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 3 a 12): **Simulátor přijímaček**, **nad pásmem**, **v pásmu**, **pod pásmem**, **obory, kde nikoho neodmítli**, **bez srovnání**. Každá skupina má pod názvem větu, která vysvětluje soutěžící uchazeče. Popisek řazení **„od nejvyšší hranice přijetí“** je výslovné rozhodnutí zadavatele (bod 9) a jediná výjimka ze zákazu slova *hranice přijetí*; vždy s větou, že se řadí podle nejnižšího výsledku přijatých a že těžší přijetí neznamená lepší školu. |

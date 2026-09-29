@@ -94,7 +94,7 @@ Soubor výsledků má **91 sloupců** a stejnou stavbu v 1. i 2. kole. Verze 1.4
 | 57–65 `PERCENTIL - PRŮMĚR`, `MIN`, `MAX` všech uchazečů | totéž jako celostátní percentil | kde je konkurence proti celé zemi | sloupec 57 **ano** jako průměrné percentilové umístění uchazečů; minimum, maximum a předměty ne, minimum a maximum určuje jediný uchazeč |
 | 66–68 `KONALI (PŘIJATI)` | kolik přijatých má výsledek zkoušky | z kolika lidí je průměr přijatých | **ne** |
 | 69–71 `% SKÓR - PRŮMĚR (PŘIJATI)` | průměr přijatých | s jakými spolužáky se dítě potká | ano |
-| 72–74 `% SKÓR - MIN (PŘIJATI)` | **oficiální nejnižší výsledek přijatých**, po nabídkách včetně zaměření | s kolika body se sem někdo dostal | **ne**, počítáme ho sami z dat uchazečů bez zaměření, viz níže |
+| 72–74 `% SKÓR - MIN (PŘIJATI)` | **oficiální nejnižší výsledek přijatých**, po nabídkách včetně zaměření | s kolika body se sem někdo dostal | na stránkách **ne**, počítáme ho sami z dat uchazečů bez zaměření, viz níže; sloupec 72 **ano od 29. 9. 2026 v balíčku oborů pro novináře** (*Oficiální nejnižší výsledek přijatých*, při aspoň deseti přijatých s výsledkem, sloupec 66) |
 | 75–77 `% SKÓR - MAX (PŘIJATI)` | nejvyšší výsledek přijatých | rozpětí třídy | **ne** |
 | 78–86 `PERCENTIL - PRŮMĚR`, `MIN`, `MAX (PŘIJATI)` | percentily přijatých | kde je hranice proti celé zemi | sloupec 78 **ano** jako průměrné percentilové umístění přijatých, sloupec 81 jako `min_prijaty_percentil_souhrn`; maximum a předměty ne |
 | 87 `NEPŘIJATI - PŘIJAT NA VYŠŠÍ PRIORITU` | nepřijati sem, protože přijati na obor uvedený výš | jak často je to náhradní volba | ano |
@@ -254,6 +254,7 @@ Otázka rodiče je jediná: **jak dlouho bude dítě dojíždět**. Odpovídáme
 | `navaznost_notes.json` | rešerše návaznosti | `build-navaznost-notes.py` | ruční poznámky v `school_notes.json` mají přednost |
 | `offer_mapping_2026.json` | párování nabídek | `build-offer-mapping-2026.py` | nabídka 2026 → loňský klíč katalogu; kromě heuristik přebírá ručně ověřené páry z `docs/podklady/overene-pary-nabidek-2026.csv` (sloupce `id_2026`, `katalog_id`, `doklad`); čte ji katalog 2026, souhrny 1. kola i hledání souhrnu na stránce |
 | `cohort_meta.json` | normalizace kohort | ruční | |
+| `pro-novinare/*.csv`, `*.xlsx`, `souhrn.json`, `prijimacky-na-skolu-data.zip` | souhrny 1. a 2. kola CERMAT (XLSX ověřené otiskem proti registru), data uchazečů 1. kola, `applications_2026.json`, `souhrny_kolo1.json`, `druhe_kolo.json`, `kriteria_prijeti_{rok}.json`, snímek veletrhů, index názvů z rejstříku, harmonogram MŠMT | `build-pro-novinare.py --vstupy ADRESAR` | balíčky ke stažení na `/pro-novinare` ([návrh](navrh-pro-novinare-2027.md)); roky z registru; ukazatele ve slovníku oddíl 6b. Nový sloupec zdroje jen jeden: oficiální minimum přijatých (oddíl 2.1, sloupec 72). Konzervatoře se berou z indexu názvů rejstříku podle kódů oborů 82-44-P až 82-47-P, kraj podle obce ze souhrnu 1. kola |
 
 **Který záznam katalogu popisuje obor.** Klíč `REDIZO_KKOV` nenese zaměření, takže ho může nést několik nabídek téže školy, a ty se mohou lišit názvem, obcí i oborem: PORG má pod jedním klíčem osmileté gymnázium v Praze, Brně i Ostravě. V katalogu 2026 je takových klíčů **43**, v ročnících 2024 a 2025 po jednom.
 

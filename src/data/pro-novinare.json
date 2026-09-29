@@ -1,0 +1,18 @@
+{
+  "popis": "Nastavení sekce /pro-novinare: jak nás citovat, pod jakou licencí jsou balíčky a kam se novináři obracejí. Čte ho stránka i generátor scripts/build-pro-novinare.py, aby citace v souborech a na stránce zněla stejně. Tři pole čekají na rozhodnutí vlastníka (rozhodnuto: false); návrh v docs/navrh-pro-novinare-2027.md, oddíl 5.",
+  "rozhodnuto": false,
+  "nazev": "Přijímačky na školu",
+  "provozovatel": "Hlídač státu",
+  "web": "https://www.prijimackynaskolu.cz",
+  "citace_kratka": "Zdroj: Přijímačky na školu (prijimackynaskolu.cz)",
+  "citace_plna": "Zdroj: Přijímačky na školu (prijimackynaskolu.cz), projekt Hlídače státu; zpracování dat CERMAT, MŠMT a vlastní rešerše",
+  "licence": {
+    "nazev": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/deed.cs",
+    "veta": "Balíčky smíte volně použít, upravit i zveřejnit, když uvedete zdroj."
+  },
+  "kontakt": {
+    "email": "eda@prijimackynaskolu.cz",
+    "poznamka": "Adresa z patičky a stránky O projektu; zda má mít média vlastní kontakt, rozhodne vlastník."
+  }
+}

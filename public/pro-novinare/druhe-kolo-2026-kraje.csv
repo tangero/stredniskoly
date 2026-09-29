@@ -1,0 +1,29 @@
+﻿kraj,jednotna_zkouska,nabidek,mista,prihlasky,prijati,naplnenost_mist,prijatych_na_prihlasku,nevesli_se_kvuli_kapacite,nabidek_kde_se_nekdo_nevesel,nabidek_bez_prihlasky
+Hlavní město Praha,ano,114,2231,5366,1215,0.54,0.23,1227,52,0
+Hlavní město Praha,ne,82,584,2498,415,0.71,0.17,695,26,14
+Jihomoravský kraj,ano,113,1395,2016,655,0.47,0.32,169,20,4
+Jihomoravský kraj,ne,133,921,1155,408,0.44,0.35,102,25,12
+Jihočeský kraj,ano,82,854,521,202,0.24,0.39,5,4,9
+Jihočeský kraj,ne,142,935,533,211,0.23,0.4,39,11,21
+Karlovarský kraj,ano,18,173,188,63,0.36,0.34,6,2,0
+Karlovarský kraj,ne,34,238,466,143,0.6,0.31,118,17,2
+Kraj Vysočina,ano,79,612,355,134,0.22,0.38,29,7,13
+Kraj Vysočina,ne,118,567,401,165,0.29,0.41,30,14,30
+Královéhradecký kraj,ano,75,689,655,226,0.33,0.35,32,7,4
+Královéhradecký kraj,ne,81,610,679,233,0.38,0.34,29,12,5
+Liberecký kraj,ano,28,191,412,130,0.68,0.32,62,9,0
+Liberecký kraj,ne,49,323,750,197,0.61,0.26,182,21,0
+Moravskoslezský kraj,ano,120,1188,1318,476,0.4,0.36,124,22,5
+Moravskoslezský kraj,ne,155,1307,990,428,0.33,0.43,81,21,19
+Olomoucký kraj,ano,79,711,660,242,0.34,0.37,42,7,2
+Olomoucký kraj,ne,118,807,590,229,0.28,0.39,38,16,14
+Pardubický kraj,ano,57,558,652,221,0.4,0.34,60,11,0
+Pardubický kraj,ne,73,557,502,187,0.34,0.37,43,11,7
+Plzeňský kraj,ano,51,627,826,276,0.44,0.33,54,10,2
+Plzeňský kraj,ne,63,602,581,193,0.32,0.33,102,13,7
+Středočeský kraj,ano,108,1352,1987,664,0.49,0.33,188,30,1
+Středočeský kraj,ne,158,1124,1996,571,0.51,0.29,236,40,9
+Zlínský kraj,ano,61,660,518,176,0.27,0.34,50,5,4
+Zlínský kraj,ne,100,613,479,183,0.3,0.38,24,6,16
+Ústecký kraj,ano,75,793,717,266,0.34,0.37,65,13,3
+Ústecký kraj,ne,152,1093,1226,482,0.44,0.39,82,29,7
