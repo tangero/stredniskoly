@@ -9,7 +9,7 @@ import { matchesSearchLocation, splitByCommute } from '@/lib/simulator-filter';
 import type { AdmissionContext } from '@/lib/admission-summary';
 import { MAX_SELECTION, readSelection, selectionForShare, shareUrlFor } from '@/lib/simulator-state';
 import { SeznamNabidek, type NabidkaSimulatoru } from '@/components/simulator/SeznamNabidek';
-import { hodnotaHranice, klicPasma, nactiIndexPasem, polohaVuciPasmu, seradNabidky, type IndexPasem } from '@/lib/poloha-vuci-pasmu';
+import { hodnotaHranice, radekPasmaNabidky, nactiIndexPasem, polohaVuciPasmu, seradNabidky, type IndexPasem } from '@/lib/poloha-vuci-pasmu';
 import { SavedSelectionBar } from '@/components/simulator/SavedSelectionBar';
 import { StrategiePrihlasek } from '@/components/simulator/StrategiePrihlasek';
 import { VyhradaNahore, VyhradySimulatoru, type TerminKriterii } from '@/components/simulator/VyhradySimulatoru';
@@ -211,6 +211,7 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
     return () => { clearTimeout(timer); controller.abort(); };
   }, [stop, limit, routeKey, retry]);
 
+  const klicePlatnych = useMemo(() => new Set((catalog?.schools ?? []).map(s => normalizeSchoolKey(s.id))), [catalog]);
   const catalogIndex = useMemo(() => new Map([...legacySaved, ...(catalog?.schools ?? [])].map(s => [normalizeSchoolKey(s.id), s])), [catalog, legacySaved]);
   useEffect(() => {
     if (!catalog) return;
@@ -263,7 +264,8 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
   // Filtr „jen uložené“ platí nad výsledky hledání, nikoli místo nich.
   const shownOffers = onlySaved ? groups.within.filter(s => savedKeys.has(normalizeSchoolKey(s.id))) : groups.within;
   const minPrijatych = pasma?.min_prijatych_pro_hranici ?? 10;
-  const radekPasma = (n: { id: string }) => pasma?.data.get(klicPasma(n.id));
+  // Pásmo jen pro nabídky aktuálního katalogu: u starších uložených nemáme doloženou shodu formy studia.
+  const radekPasma = (n: { id: string }) => radekPasmaNabidky(n.id, klicePlatnych, normalizeSchoolKey, pasma?.data);
   const minutyDojezdu = (n: { id: string }) => estimates.byId.get(normalizeSchoolKey(n.id))?.minutes;
   // Při více testech rozhoduje nejhorší výsledek (rozhodnutí zadavatele 4).
   const bodySkupiny = testy.nejhorsi;

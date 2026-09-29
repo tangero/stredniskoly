@@ -116,3 +116,20 @@ test('skutečný index: každý obor dostane skupinu a nikdo neodmítnut sedí s
     assert.equal(skupiny.get('nikdo_neodmitnut').length, nikdo);
   }
 });
+
+// Codex review kolo 4, nález 1: historicky uložená kombinovaná nabídka nesmí převzít pásmo denní.
+test('radekPasmaNabidky: uložená nabídka mimo katalog simulátoru zůstane bez srovnání', async () => {
+  const { radekPasmaNabidky } = await import('../src/lib/poloha-vuci-pasmu.ts');
+  const { normalizeSchoolKey } = await import('../src/lib/school-key.ts');
+  const data = new Map([['600005216_65-42-M/02', radek({ min_prijaty: 20, dolni_mez: 20, horni_mez: 30 })]]);
+  const denni = '600005216_65-42-M/02';
+  const kombinovana = '600005216_65-42-M/02_Kombinovaná';
+  const katalog = new Set([normalizeSchoolKey(denni)]);
+  assert.ok(radekPasmaNabidky(denni, katalog, normalizeSchoolKey, data));
+  const r = radekPasmaNabidky(kombinovana, katalog, normalizeSchoolKey, data);
+  assert.equal(r, undefined);
+  const p = polohaVuciPasmu(60, r, 4, MIN);
+  assert.equal(p.skupina, 'bez_srovnani');
+  assert.notEqual(p.skupina, 'nad');
+  assert.equal(radekPasmaNabidky(denni, katalog, normalizeSchoolKey, undefined), undefined);
+});

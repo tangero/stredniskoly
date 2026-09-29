@@ -102,6 +102,20 @@ export function klicPasma(idNabidky: string): string {
 }
 
 /**
+ * Řádek pásma pro nabídku jen tehdy, když je vazba doložená: nabídka (včetně formy
+ * studia) je v katalogu simulátoru, ze kterého index pásem vznikl. Historicky uložená
+ * nabídka dohledaná ve starším katalogu (např. kombinovaná forma) by jinak převzala
+ * pásmo jiné nabídky se stejným REDIZO_KKOV; taková zůstane bez srovnání.
+ */
+export function radekPasmaNabidky(
+  idNabidky: string, klicePlatnychNabidek: ReadonlySet<string>, normalizuj: (id: string) => string,
+  data: ReadonlyMap<string, RadekPasma> | undefined,
+): RadekPasma | undefined {
+  if (!data || !klicePlatnychNabidek.has(normalizuj(idNabidky))) return undefined;
+  return data.get(klicPasma(idNabidky));
+}
+
+/**
  * Poloha výsledku `body` (převedený výsledek, u více testů nejhorší) vůči pásmu oboru.
  * `druhTestu` je druh testu, pro který uchazeč výsledek zadal (4, 6, 8).
  *
