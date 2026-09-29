@@ -100,6 +100,9 @@ test('řazení: dojezd, pak název; hranice od nejvyšší, málo přijatých na
   assert.equal(hodnotaHranice(radek({ talentova: true }), MIN), null);
   assert.equal(hodnotaHranice(radek({ nikdo_neodmitnut: true, neveslo_se: 0, soutezicich: radek().prijatych }), MIN), null);
   assert.equal(hodnotaHranice(radek({ soutezicich: 999 }), MIN), null);
+  // Kolo 3: rozpor počtů uvnitř pásma (stejně jako skupina „Bez srovnání“).
+  assert.equal(hodnotaHranice(radek({ v_pasmu_prijato: 31 }), MIN), null);
+  assert.equal(hodnotaHranice(radek({ v_pasmu_soutezilo: null }), MIN), null);
   assert.equal(hodnotaHranice(undefined, MIN), null);
 });
 

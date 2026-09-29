@@ -215,6 +215,11 @@ export function hodnotaHranice(r: RadekPasma | undefined, minPrijatych: number):
   if (!r || r.min_prijaty === null || r.prijatych === null || r.prijatych < minPrijatych) return null;
   if (r.talentova || r.nikdo_neodmitnut) return null;
   if (r.soutezicich === null || r.neveslo_se === null || r.soutezicich !== r.prijatych + r.neveslo_se) return null;
+  // Rozpor počtů uvnitř pásma: stejná podmínka jako skupina „Bez srovnání“ v polohaVuciPasmu.
+  if (r.dolni_mez !== null && r.horni_mez !== null) {
+    const vs = r.v_pasmu_soutezilo, vp = r.v_pasmu_prijato;
+    if (vs === null || vp === null || vp > vs || vs > r.soutezicich) return null;
+  }
   return r.min_prijaty;
 }
 
