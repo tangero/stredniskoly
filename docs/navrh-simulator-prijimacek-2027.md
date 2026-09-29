@@ -161,3 +161,8 @@ Platí doporučení ke všem otázkám z oddílu 11:
 6. Přijatí podle priority se ve strategii zatím neukazují.
 7. Talentové obory patří do „Bez srovnání“.
 8. Adresa zůstává `/simulator`, v menu „Simulátor přijímaček“.
+
+**Doplnění 29. 9. 2026 (zadavatel):** uživatelé chtějí buď co nejtěžší školu, kam se dostanou, nebo mají vybraný obor.
+
+9. Přibude volba řazení **„od nejvyšší hranice přijetí“** podle doloženého ukazatele (nejnižší výsledek přijatého, případně dolní mez pásma {rok}; název a výpočet podle slovníku ukazatelů, nový způsob použití zapsat). Věta u řazení: těžší přijetí neznamená lepší školu, kvalitu ukazuje maturita a inspekce na stránce školy. Výchozí řazení zůstává podle dojezdu. Tím se upravuje zákaz řazení v oddílu 3: neřadí se podle vzdálenosti uchazeče od hranice, ale podle hranice samotné.
+10. Uživatel s vybraným oborem si vystačí s dnešním filtrem „Co tě zajímá“, rozcestník se nepřidává.
