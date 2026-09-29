@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.27 · 28. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.31 · 29. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -31,6 +31,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | Pojem na stránce | Význam | Vysvětlení při prvním výskytu v bloku | Nepoužívat |
 |---|---|---|---|
 | **pořadí na přihlášce**, **1. volba**, **2. volba** | pořadí oborů, jak je uchazeč zapsal; v datech priorita | u rad vždy doplnit: „pořadí na přihlášce šanci na přijetí nemění, škola řadí jen podle svých kritérií“ | priorita (v textu pro rodiče), preference |
+| **pojistka** | v Simulátoru přijímaček obor ze skupiny „Nad pásmem“ mezi obory, které se vejdou do přihlášky: v 1. kole daného roku se sem s výsledkem uchazeče dostali všichni soutěžící uchazeči | „obor, kam se v 1. kole {rok} s tvým výsledkem dostali všichni soutěžící uchazeči“; vždy s větou, že skupiny popisují 1. kolo, ne předpověď | jistota, jistá škola, záchranná škola |
 | **pozice na přihlášce**: **škola první volby**, **smíšená pozice**, **záložní volba** | kohorta podle pozice na přihlášce ze slovníku ukazatelů: jak často si obor uchazeči zapsali jako 1. volbu ve srovnání s obory stejného typu v celé zemi; platí pro nabídku, ne pro celou školu | „srovnává se jen s obory stejného typu“ a vždy v bloku: „neříká nic o kvalitě školy: záložní volba znamená, že si ji uchazeči píší jako pojistku, ne že je horší“ | kategorie oboru, vyvážený obor, preferovaný obor, oblíbenost, atraktivita |
 | **obor výš na přihlášce**, **obor níž na přihlášce** | obor zapsaný před tímto oborem, nebo za ním | není potřeba | lepší obor, horší obor, záložní škola |
 | **kritéria přijetí** | pravidla, podle kterých škola uchazeče řadí a kdy je nepřijme; vyhlašuje je škola | „kritéria, která škola vyhlašuje na svém webu“ | podmínky přijetí (vyjma citace), pravidla školy |
@@ -59,10 +60,20 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **spolužáci** | přijatí na obor, u otázky „jak se tu studuje“ | není potřeba | třída, kolektiv |
 | **pořadí v kraji podle zájmu**, **pořadí v kraji podle výsledků přijatých** | pořadí oboru mezi obory stejného typu a délky v kraji (Praha samostatně) | „2. z 32 osmiletých gymnázií ve Středočeském kraji podle výsledků přijatých“; vždy s rokem | žebříček, nejlepší, top, hodnocení školy |
 | **cvičný test** | test z minulých přijímaček v aplikaci CERMAT TAU, který si uchazeč napíše doma | „cvičný test, tedy test z minulých přijímaček v aplikaci CERMAT TAU“ | zkouška nanečisto (placená služba jinde), test (bez upřesnění) |
+| **ostrý test** | jednotná přijímací zkouška v řádném termínu, na rozdíl od cvičného testu doma | „ostrý test, tedy jednotná přijímací zkouška v termínu přijímaček“ | skutečný test, reálné přijímačky |
+| **výhrady** | v Simulátoru přijímaček krok 3: co výsledek simulátoru neříká (stres u zkoušky, převod, jeden ročník, přepis kritérií, jiný test, zaměření) | nadpis „Přečti si výhrady“ a věta „Výsledek z domova není výsledek zkoušky“ | upozornění pod čarou, drobné písmo, disclaimer |
 | **převedený výsledek** | *Převedený výsledek testu* ze slovníku ukazatelů: body cvičného testu přepočtené přes pořadí na body roku pásem | „kolik bodů by to bylo v roce {rok}: podle toho, kolik uchazečů mělo ve stejném testu horší výsledek“; v bloku vždy i výhrada, že spíš nadhodnocuje | přepočtené body, normalizované body |
+| **výsledek bez převodu** (volba „jiný test nebo odhad“) | body z testu mimo převodní tabulky nebo odhad; porovnávají se přímo s body roku pásem, bez převodu | výrazná výhrada v každém bloku, kde se s ním počítá: „srovnání platí jen tehdy, pokud byl test stejně těžký jako jednotná přijímací zkouška v roce {rok}; to ale nikdo neověřil“ | převedený výsledek (pro nepřevedené číslo), skutečné body, předpověď |
 | **rozmezí, kde rozhodovalo i něco jiného** | pásmo nejistoty ze slovníku ukazatelů: body, u kterých se část soutěžících uchazečů dostala a část ne | na proužku jako legenda; ve větě s počty: „jsi v rozmezí, kde se v roce {rok} ze 41 uchazečů dostalo 24“ | pásmo nejistoty (v textu pro rodiče), hranice přijetí |
 | **kritéria {rok}** | kritéria přijetí, podle kterých škola řadila uchazeče v daném minulém ročníku | „pravidla, podle kterých škola v roce {rok} řadila uchazeče; pro nové přijímací řízení platí nová“ | aktuální kritéria (pro minulý ročník), kritéria bez roku |
 | **extra body** | body, které škola při přijímání počítala vedle jednotné přijímací zkoušky za něco jiného (prospěch ze základní školy, školní přijímací zkouška, pohovor, soutěže), přičítané i odečítané (například odečet průměru); samotné srážky za chování sem nepatří; vždy za konkrétní minulý ročník podle kritérií {rok} | „extra body, tedy body za něco jiného než jednotnou přijímací zkoušku, například za prospěch ze základní školy nebo školní přijímací zkoušku“ | bonusové body, body navíc (u vyšší váhy jednoho předmětu to extra body nejsou), extra body bez roku jako jistota pro nové řízení |
+| **Simulátor přijímaček** | nástroj na /simulator: cvičný test, obory ve skupinách podle 1. kola, výhrady | není potřeba | Kde stojím (starý název), simulátor výběru školy |
+| **nad pásmem** | *Poloha vůči pásmu*: s tímto výsledkem se v 1. kole {rok} dostali všichni soutěžící uchazeči | pod názvem skupiny větou se soutěžícími uchazeči: „s tvým výsledkem se v 1. kole {rok} dostali všichni soutěžící uchazeči, tedy ti, kdo splnili požadavky školy…“ | jistota, jistě se dostaneš, šance |
+| **v pásmu** | výsledek v rozmezí, kde rozhodovalo i něco jiného | „padá do rozmezí, kde rozhodovalo i něco jiného než test“ a u oboru přesné počty | pásmo nejistoty, šance, procento |
+| **pod pásmem** | s tímto výsledkem se v 1. kole {rok} nedostal nikdo ze soutěžících uchazečů | větou se soutěžícími uchazeči a nejnižším výsledkem přijatých | nemáš šanci, nedostaneš se |
+| **obory, kde nikoho neodmítli** | obory, kde v 1. kole {rok} nikdo nezůstal venku kvůli počtu míst | „kdo splnil podmínky, dostal se; přijímalo se podle podmínek školy (minima, kritéria), ne podle pořadí“ | nikdo se nevešel, volná místa, místo pro všechny (jako záruka) |
+| **bez srovnání** | obory, u kterých výsledek s 1. kolem srovnat neumíme; důvod u každého oboru | pod názvem skupiny | pod pásmem (chybějící údaj není nula) |
+| **od nejvyšší hranice přijetí** (jen popisek řazení) | řazení podle nejnižšího výsledku přijatých v 1. kole {rok} | vždy s větou „těžší přijetí neznamená lepší školu: kvalitu ukazuje maturita a inspekce na stránce školy“ | hranice přijetí mimo tento popisek |
 
 ## 4. Škola, maturita a původ údajů
 
@@ -124,6 +135,10 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.31 | Pojmy **ostrý test** a **výhrady** pro krok 3 Simulátoru přijímaček (etapa E5, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 5). Výhrady stojí v samostatném bloku pod výsledky a zkráceně nad nimi, nikdy drobným písmem. |
+| 1.30 | Pojem **pojistka** pro strategii řazení zvažovaných oborů v Simulátoru přijímaček ([návrh](navrh-simulator-prijimacek-2027.md) oddíl 4, etapa E4). Návrh mluví o „oblíbených školách“ a „prioritách“; slovník obojí zakazuje (verze 1.13 *zvažované obory*, řádek *pořadí na přihlášce*), proto text stránky používá **zvažované obory** a **pořadí na přihlášce** se standardní větou, že pořadí šanci na přijetí nemění. Horní lišta simulátoru „Můj výběr“ přejmenována na „Zvažované obory“. |
+| 1.29 | Pojmy Simulátoru přijímaček pro skupiny výsledků (29. 9. 2026, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 3 a 12): **Simulátor přijímaček**, **nad pásmem**, **v pásmu**, **pod pásmem**, **obory, kde nikoho neodmítli**, **bez srovnání**. Každá skupina má pod názvem větu, která vysvětluje soutěžící uchazeče. Popisek řazení **„od nejvyšší hranice přijetí“** je výslovné rozhodnutí zadavatele (bod 9) a jediná výjimka ze zákazu slova *hranice přijetí*; vždy s větou, že se řadí podle nejnižšího výsledku přijatých a že těžší přijetí neznamená lepší školu. |
+| 1.28 | Pojem **výsledek bez převodu** pro volbu „Jiný test nebo odhad“ ve sdíleném zadání cvičného testu (stránka oboru a krok 1 Simulátoru přijímaček, 29. 9. 2026, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 2). Výhrada je výrazná, protože srovnání stojí na neověřeném předpokladu stejně těžkého testu. |
 | 1.27 | Pojem **extra body** pro zvýrazněný blok kritérií na stránce oboru („O přijetí rozhodují i extra body“, 28. 9. 2026). Štítek stojí nad podnadpisem s rokem kritérií, aby netvrdil jistotu pro nové řízení. |
 | 1.26 | Pojmy **cvičný test**, **převedený výsledek**, **rozmezí, kde rozhodovalo i něco jiného** a **kritéria {rok}** pro proužek „Kde stojím“ na stránce oboru (28. 9. 2026, [návrh](navrh-kde-stojim-2027.md)). *Pásmo nejistoty* zůstává názvem v datech, rodičům se říká rozmezí. |
 | 1.25 | Souhrn maturity za školu mluví o dostupných hodnoceních skupin oborů; jediný hodnocený rok se neoznačuje „každý rok“ (23. 9. 2026). |

@@ -1,12 +1,14 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useState } from 'react';
 import { tvar } from '@/lib/cesky-tvar';
 import {
-  median, poradiMeziSoutezicimi, prevedBody, TRIDA_TAU,
+  poradiMeziSoutezicimi,
   type DruhTestu, type KriteriaOboru, type PoziceOboru, type PrevodDruhu,
 } from '@/lib/prevod-testu-vypocet';
+import { bodu, NavodTau, nazevDoporucenehoTerminu, useZadaneTesty, ZadaniTestu } from './ZadaniTestu';
 import type { PasmaPrijetiObor } from '@/lib/pasma-prijeti';
+import { extraBody, srazka } from '@/lib/extra-body';
 
 // ============================================================================
 // Kde stojím: pásmový proužek jednoho oboru s výsledkem cvičného testu
@@ -26,21 +28,8 @@ export function jenPrijimacky(k: KriteriaOboru | null | undefined): boolean {
     && k.prepisy.every(p => p.rezim === 'pouze_jpz' && p.jpz_navic.length === 0 && !p.chybi_slozky));
 }
 
-/** Přepis boduje i něco jiného než jednotnou přijímací zkoušku (extra body ve slovníku pojmů). */
-export const extraBody = (p: KriteriaOboru['prepisy'][number]) =>
-  // Složky mimo JPZ, i s neznámým směrem (odečet průměru je také extra body); jen doložené srážky, například za chování, ne.
-  p.rezim === 'jine' && (p.chybi_slozky || p.slozky.some(x => x.max !== 0 && !srazka(x)));
-
-/**
- * Sankce za chování: název mluví o chování a o snížení bodů, ne o prospěchu. Směr bodování
- * o extra bodech nerozhoduje (odečet za průměr je hodnocení prospěchu); „průměr bez známky
- * z chování“ sankce není, stejně jako bonus za chování.
- */
-const RE_CHOVANI = /chování|chovani|kázeň|kazen|důtk|dutk/i;
-const RE_SNIZENI = /odeč|odpoč|sníž|sniz|penaliz|záporn|srážk|srazk|uspokoj/i;
-const RE_PROSPECH = /prospěch|prospech|průměr|prumer|vzdělávání|výsledk|bonus/i;
-export const srazka = (x: KriteriaOboru['prepisy'][number]['slozky'][number]) =>
-  RE_CHOVANI.test(x.nazev) && RE_SNIZENI.test(x.nazev) && !RE_PROSPECH.test(x.nazev);
+export { extraBody, srazka } from '@/lib/extra-body';
+export type { ZadanyTest } from './ZadaniTestu';
 
 /**
  * Blok kritérií jen tam, kde nerozhodovala jen JPZ (rozhodnutí zadavatele
@@ -131,47 +120,6 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
   );
 }
 
-/** Úvodní stránka přijímaček v TAU; výběr testu (vyber.php) funguje jen z ní, přímý odkaz ukáže prázdnou stránku. */
-const TAU_PRIJIMACKY = 'https://tau.cermat.cz/predmet_prijimacky.php';
-
-/**
- * Návod krok za krokem k jedinému testu, který umíme převést: celý test roku
- * převodních tabulek, 1. řádný termín, pro třídu podle druhu oboru.
- */
-function NavodTau({ druh, rokTestu, termin }: { druh: DruhTestu; rokTestu: number; termin: string }) {
-  const trida = TRIDA_TAU[druh];
-  return (
-    <details className="group rounded-xl border border-blue-200 bg-blue-50/60 text-sm text-slate-700">
-      <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 font-semibold text-[#16325c] [&::-webkit-details-marker]:hidden">
-        <span aria-hidden="true" className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#0074e4] text-xs text-white">i</span>
-        Který test udělat: doporučujeme TAU {rokTestu}, {trida}. ročník, {termin}
-        <span aria-hidden="true" className="ml-auto text-lg leading-none text-[#0074e4] transition-transform group-open:rotate-45">+</span>
-      </summary>
-      <div className="space-y-2 px-4 pb-4">
-        <p>
-          Výsledek umíme přepočítat na body roku zobrazených pásem jen u celých testů z roku {rokTestu}: u nich
-          víme, jak je napsali skuteční uchazeči, a podle toho body převedeme. Testy z jiných let přepočítat
-          a porovnat neumíme. Nejpřesnější je {termin}, proto ho doporučujeme jako první.
-        </p>
-        <ol className="list-decimal space-y-1 pl-5">
-          <li>
-            Otevřete <a href={TAU_PRIJIMACKY} className="font-medium text-blue-700 underline" rel="noopener noreferrer" target="_blank">CERMAT TAU – přijímačky</a>.
-          </li>
-          <li>Ve sloupci <b>{trida}. ročník</b> zvolte <b>český jazyk a literatura</b>.</li>
-          <li>V části <b>celý test</b> vyberte rok <b>{rokTestu}</b> a <b>{termin}</b> a spusťte ho.</li>
-          <li>Pište celý test najednou, na čas jako u skutečné zkoušky, bez opravování chyb a poprvé. Zapište si počet bodů.</li>
-          <li>Totéž udělejte pro <b>matematiku</b>: stejný ročník, rok {rokTestu}, {termin}.</li>
-          <li>Obě čísla zadejte sem a u testu nechte <b>TAU {rokTestu}, {termin}</b>.</li>
-        </ol>
-        <p className="text-slate-500">
-          Převést umíme i ostatní termíny roku {rokTestu} (u testu je pak vyberte), náhradní ale méně přesně.
-          Víc testů dá přesnější obrázek.
-        </p>
-      </div>
-    </details>
-  );
-}
-
 const MAX_BODU = 100;
 
 /** Poloha vlastního výsledku vůči pásmu nejistoty. */
@@ -186,12 +134,6 @@ function urciPolohu(body: number | null, lo: number, hi: number | undefined): Po
 
 /** Procento osy; body 0–100 se mapují přímo, ale škálu držíme na jednom místě. */
 const naOsu = (body: number) => Math.max(0, Math.min(100, (body / MAX_BODU) * 100));
-
-/** „1 bod“, „2 body“, „5 bodů“; desetinné číslo „1,5 bodu“. */
-function bodu(n: number): string {
-  const text = n.toLocaleString('cs-CZ', { maximumFractionDigits: 1 });
-  return `${text} ${Number.isInteger(n) ? tvar(n, 'bod', 'body', 'bodů') : 'bodu'}`;
-}
 
 function Veta({ poloha, body, lo, hi, data, rok, dalsiKriteria }: {
   poloha: Poloha; body: number | null; lo: number; hi?: number; data: PasmaPrijetiObor; rok: number;
@@ -252,36 +194,6 @@ function Veta({ poloha, body, lo, hi, data, rok, dalsiKriteria }: {
   );
 }
 
-/** Jeden zadaný test: který termín a body z obou předmětů. */
-export interface ZadanyTest { test: string; cj: string; ma: string }
-
-const JINY = 'jiny';
-
-/**
- * Klíč úložiště podle druhu a ročníku testu: výsledek pro 9. třídu platí pro všechny
- * čtyřleté obory; po přepnutí tabulek na jiný ročník testu se starý nepoužije.
- */
-const klicUlozeni = (druh: DruhTestu, rokTestu: number | undefined) => `kde-stojim:testy:v1:${druh}:${rokTestu ?? 'bez-prevodu'}`;
-
-function cislo(t: string): number | null {
-  const n = Number(t.replace(',', '.'));
-  return t.trim() && !Number.isNaN(n) && n >= 0 && n <= 50 ? n : null;
-}
-
-function nactiUlozene(klic: string): ZadanyTest[] | null {
-  try {
-    const surove = JSON.parse(window.localStorage.getItem(klic) ?? 'null');
-    if (!Array.isArray(surove)) return null;
-    const testy = surove
-      .filter((t): t is ZadanyTest => t && typeof t.test === 'string' && typeof t.cj === 'string' && typeof t.ma === 'string')
-      .slice(0, 10)
-      .map(t => ({ test: t.test.slice(0, 40), cj: t.cj.slice(0, 6), ma: t.ma.slice(0, 6) }));
-    return testy.length ? testy : null;
-  } catch {
-    return null;
-  }
-}
-
 export interface KdeStojimProps {
   data: PasmaPrijetiObor;
   /** Rok zobrazených pásem, z registru. */
@@ -304,75 +216,12 @@ export function KdeStojim({
   data: d, rok, druh, prevod: prevodVstup, pozice, kriteria,
   ukazRozdeleni = true, vstupOtevreny = true, pamatovat = false,
 }: KdeStojimProps) {
-  // Pořadí useState drží test (tests/pasmovy-prouzek.test.mjs): 1 = testy, 2 = rozbalené zadání.
-  const [testy, setTesty] = useState<ZadanyTest[]>(() => [{ test: '1-radny', cj: '', ma: '' }]);
-  const [otevreno, setOtevreno] = useState(vstupOtevreny);
-  const nacteno = useRef(false);
-  const klic = klicUlozeni(druh, prevodVstup?.rok_testu);
-
-  // Uložené výsledky se čtou až po hydrataci, server o nich neví.
-  useEffect(() => {
-    if (!pamatovat) return;
-    const ulozene = nactiUlozene(klic);
-    if (ulozene) {
-      // Čtení až po hydrataci je záměr: v počátečním stavu by se server a prohlížeč rozešly.
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setTesty(ulozene);
-      setOtevreno(true);
-    }
-  }, [pamatovat, klic]);
-
-  useEffect(() => {
-    if (!pamatovat) return;
-    // První běh má ještě počáteční prázdné testy; zápis by smazal uložené dřív, než se načtou.
-    if (!nacteno.current) {
-      nacteno.current = true;
-      return;
-    }
-    try {
-      const vyplnene = testy.filter(t => t.cj.trim() || t.ma.trim());
-      if (vyplnene.length) window.localStorage.setItem(klic, JSON.stringify(vyplnene));
-      else window.localStorage.removeItem(klic);
-    } catch {
-      // Úložiště může být zakázané; stránka funguje i bez paměti.
-    }
-  }, [testy, pamatovat, klic]);
-
-  const smazat = () => {
-    try {
-      window.localStorage.removeItem(klic);
-    } catch {
-      // viz výše
-    }
-    setTesty([{ test: prevod?.terminy[0]?.klic ?? JINY, cj: '', ma: '' }]);
-  };
-
-  // Tabulky převádějí na konkrétní rok; s pásmy jiného roku by číslo lhalo.
-  const jinyRokCile = Boolean(prevodVstup && prevodVstup.rok_cile !== rok);
-  const prevod = jinyRokCile ? null : prevodVstup;
-
-  /** Každý vyplněný test převedený na body roku pásem; jiný test bez převodu. */
-  const vysledky = useMemo(() => testy.map((t) => {
-    const c = cislo(t.cj);
-    const m = cislo(t.ma);
-    if (c === null || m === null) return null;
-    const termin = prevod?.terminy.find(x => x.klic === t.test);
-    const soucet = c + m;
-    return {
-      soucet,
-      prevedeno: termin ? prevedBody(termin.body_cil, soucet) : soucet,
-      termin: termin ?? null,
-    };
-  }), [testy, prevod]);
-
-  const platne = vysledky.filter((v): v is NonNullable<typeof v> => v !== null);
-  const body = median(platne.map(v => v.prevedeno));
-  const jenJiny = platne.length > 0 && platne.every(v => v.termin === null);
-  const nespolehlivy = platne.some(v => v.termin && !v.termin.spolehlive);
-  const ulozenoNeco = testy.some(t => t.cj.trim() || t.ma.trim());
-
-  const zmen = (i: number, zmena: Partial<ZadanyTest>) =>
-    setTesty(ts => ts.map((t, j) => (j === i ? { ...t, ...zmena } : t)));
+  // Pořadí useState drží test (tests/pasmovy-prouzek.test.mjs): 1 = testy (v hooku), 2 = rozbalené zadání.
+  const stav = useZadaneTesty({ druh, prevod: prevodVstup, rok, pamatovat });
+  const [rozbaleno, setOtevreno] = useState(vstupOtevreny);
+  // Uložené výsledky zadání rozbalí samy.
+  const otevreno = rozbaleno || stav.nactenoZUlozeni;
+  const { prevod, platne, body } = stav;
 
   const lo = d.pasmo_nejistoty?.[0] ?? d.min_prijaty;
   const hi = d.pasmo_nejistoty?.[1];
@@ -483,107 +332,13 @@ export function KdeStojim({
         </button>
       ) : null}
       {!otevreno && prevod && (
-        <NavodTau druh={druh} rokTestu={prevod.rok_testu} termin={prevod.terminy.find(x => x.klic === '1-radny')?.nazev ?? '1. řádný termín'} />
+        <NavodTau druh={druh} rokTestu={prevod.rok_testu} termin={nazevDoporucenehoTerminu(prevod)} />
       )}
       {otevreno && (
-        <div className="space-y-3 rounded-xl border border-slate-200 p-4">
-          <p className="text-sm font-medium text-slate-700">
-            Tvoje výsledky z cvičného testu, tedy testu z minulých přijímaček v aplikaci CERMAT TAU
-          </p>
-          {prevod && <NavodTau druh={druh} rokTestu={prevod.rok_testu} termin={prevod.terminy.find(x => x.klic === '1-radny')?.nazev ?? '1. řádný termín'} />}
-          {testy.map((t, i) => {
-            const v = vysledky[i];
-            return (
-              <div key={i} className="flex flex-wrap items-end gap-3">
-                <label className="block text-sm">
-                  <span className="mb-1 block text-slate-600">Test</span>
-                  <select value={t.test} onChange={e => zmen(i, { test: e.target.value })} className="w-64 max-w-full rounded-lg border border-slate-300 px-3 py-2">
-                    {prevod?.terminy.map(x => (
-                      <option key={x.klic} value={x.klic}>
-                        TAU {prevod.rok_testu}, {x.nazev}{x.spolehlive ? '' : ' (méně přesné)'}
-                      </option>
-                    ))}
-                    <option value={JINY}>Jiný test</option>
-                  </select>
-                </label>
-                <label className="block text-sm">
-                  <span className="mb-1 block text-slate-600">Čeština</span>
-                  <input value={t.cj} onChange={e => zmen(i, { cj: e.target.value })} inputMode="decimal" placeholder="z 50" className="w-20 rounded-lg border border-slate-300 px-3 py-2" />
-                </label>
-                <label className="block text-sm">
-                  <span className="mb-1 block text-slate-600">Matematika</span>
-                  <input value={t.ma} onChange={e => zmen(i, { ma: e.target.value })} inputMode="decimal" placeholder="z 50" className="w-20 rounded-lg border border-slate-300 px-3 py-2" />
-                </label>
-                {v && (
-                  <p className="pb-2 text-sm text-slate-700">
-                    {v.soucet} bodů{v.termin ? <> → <b>{v.prevedeno}</b> bodů roku {rok}</> : ' (bez převodu)'}
-                  </p>
-                )}
-                {testy.length > 1 && (
-                  <button type="button" onClick={() => setTesty(ts => ts.filter((_, j) => j !== i))} className="pb-2 text-sm text-slate-500 underline">
-                    odebrat
-                  </button>
-                )}
-              </div>
-            );
-          })}
-          <div className="flex flex-wrap gap-x-5 gap-y-1">
-            <button
-              type="button"
-              onClick={() => setTesty(ts => [...ts, { test: prevod?.terminy[1]?.klic ?? JINY, cj: '', ma: '' }])}
-              className="text-sm font-medium text-blue-700 underline"
-            >
-              + přidat další test
-            </button>
-            {pamatovat && ulozenoNeco && (
-              <button type="button" onClick={smazat} className="text-sm text-slate-500 underline">
-                Smazat uložené výsledky
-              </button>
-            )}
-          </div>
-          {pamatovat && (
-            <p className="text-xs text-slate-500">
-              Výsledky si pamatuje jen tenhle prohlížeč, nikam je neposíláme. Platí pro všechny obory se stejným testem.
-            </p>
-          )}
-          {platne.length > 1 && (
-            <p className="text-sm text-slate-600">
-              {platne.length === 2
-                ? <>Na proužku je průměr obou výsledků ({bodu(body!)}).</>
-                : <>Na proužku je prostřední z {platne.length} výsledků ({bodu(body!)}).</>}
-              {' '}Výsledky se pohybují mezi {Math.min(...platne.map(v => v.prevedeno))} a {Math.max(...platne.map(v => v.prevedeno))} body;
-              {' '}rozsah je na proužku vyznačený pod značkou.
-            </p>
-          )}
-          {jinyRokCile && (
-            <p className="text-sm text-amber-800">
-              Převodní tabulky jsou spočítané pro rok {prevodVstup?.rok_cile}, pásma jsou z roku {rok}. Dokud se
-              nepřepočítají, výsledky testů se porovnávají bez převodu.
-            </p>
-          )}
-          {jenJiny && (
-            <p className="text-sm text-amber-800">
-              Jiný test neumíme převést. Srovnání platí jen tehdy, pokud je výsledek ze stejně těžkého testu,
-              jako byla jednotná zkouška v roce {rok}.
-            </p>
-          )}
-          {!jenJiny && platne.some(v => v.termin === null) && (
-            <p className="text-sm text-amber-800">
-              Výsledky z jiného testu jsou započítané bez převodu a srovnání s nimi nemusí být přesné.
-            </p>
-          )}
-          {nespolehlivy && (
-            <p className="text-sm text-amber-800">
-              Náhradní termín psala malá skupina uchazečů, převod je u něj méně přesný.
-            </p>
-          )}
-          {platne.some(v => v.termin) && (
-            <p className="text-xs text-slate-500">
-              Převedený výsledek je, kolik bodů by to bylo v roce {rok}: podle toho, kolik uchazečů mělo ve stejném
-              testu horší výsledek. Doma a bez stresu se obvykle píše o něco lépe, převedený výsledek proto spíš nadhodnocuje.
-            </p>
-          )}
-        </div>
+        <ZadaniTestu
+          stav={stav} druh={druh} rok={rok} prevodVstup={prevodVstup} pamatovat={pamatovat}
+          poznamkaRozsahu="rozsah je na proužku vyznačený pod značkou."
+        />
       )}
 
       {otevreno && (

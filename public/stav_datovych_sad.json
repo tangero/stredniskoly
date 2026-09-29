@@ -184,7 +184,8 @@
     "public/soubeh_prihlasek_{obdobi}.json",
     "public/kontext_prihlasek_{obdobi}.json",
     "public/schools_data.json",
-    "public/pozice_soutezicich_2026.json"
+    "public/pozice_soutezicich_2026.json",
+    "public/simulator_pasma_{obdobi}.json"
    ],
    "kontrola_obdobi": {
     "soubor": "public/pasma_prijeti_{obdobi}.json",
@@ -198,6 +199,7 @@
     "Podíl přijatých podle bodového pásma",
     "Rozhodl test",
     "Pásmo nejistoty",
+    "Poloha vůči pásmu",
     "Percentil nejnižšího přijatého",
     "Celostátní medián uchazečů",
     "Nejslabší přijatý v předmětu",
@@ -216,7 +218,7 @@
     "katalog": "https://data.cermat.cz/data-a-analyticke-vystupy-jednotna-prijimaci-zkouska/datove-soubory.html",
     "detekce": "HTTP HEAD a katalogová stránka Datové soubory.",
     "revize": "Dvě verze: předběžná v květnu téhož roku, finální o rok později. Revize mění názvy listů, proto skripty čtou první list.",
-    "import": "scripts/build-pasma-prijeti.py, scripts/build-soubeh-prihlasek.py, scripts/build-kontext-prihlasek.py; doklad stability mezi ročníky scripts/validate-pasma-prijeti.py --rocniky STARY-NOVY. Výstupy nesou rok v názvu, registr ho drží zástupným {obdobi}, ne napevno. Pozor: scripts/enrich_schools_data.py čte sloupce podle pozice a s textovým příznakem přijetí by počítal chybně; datová linka ho nespouští a katalogové minimum se na webu nezobrazuje.",
+    "import": "scripts/build-pasma-prijeti.py, scripts/build-soubeh-prihlasek.py, scripts/build-kontext-prihlasek.py, po pásmech scripts/build-simulator-pasma.py (index simulátoru, čte i kritéria a katalog); doklad stability mezi ročníky scripts/validate-pasma-prijeti.py --rocniky STARY-NOVY. Výstupy nesou rok v názvu, registr ho drží zástupným {obdobi}, ne napevno. Pozor: scripts/enrich_schools_data.py čte sloupce podle pozice a s textovým příznakem přijetí by počítal chybně; datová linka ho nespouští a katalogové minimum se na webu nezobrazuje.",
     "automatizace": "priprava",
     "lidsky_krok": "Převzetí mění čísla v dokladech tezí a na webu, proto revize výsledků validace před přepnutím.",
     "sledovat": [
@@ -793,7 +795,7 @@
     "soubor": "src/data/admissions-2027.json",
     "zdroj": "https://msmt.gov.cz/media/wp-content/uploads/2026/08/Casovy-harmonogram_2026-2027.pdf",
     "opsano": "2026-09-11",
-    "poznamka": "Ruční opis termínů z harmonogramu a sdělení o termínech na webu MŠMT. Soubor nese rok v názvu, proto se při novém ročníku zakládá nový."
+    "poznamka": "Ruční opis termínů z harmonogramu a sdělení o termínech na webu MŠMT. Soubor nese rok v názvu, proto se při novém ročníku zakládá nový. Od 29. 9. 2026 nese i blok pravidla (počet běžných a talentových přihlášek), který čte Simulátor přijímaček."
    },
    "ocekavano": {
     "obdobi": "2028",

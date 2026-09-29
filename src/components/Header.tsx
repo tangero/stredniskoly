@@ -64,7 +64,7 @@ export function Header() {
     { href: '/prijimacky-2027', label: 'Kalendář 2027' },
     { href: '/veletrhy', label: 'Veletrhy škol' },
 
-    { href: '/simulator', label: 'Simulátor' },
+    { href: '/simulator', label: 'Simulátor přijímaček' },
     { href: '/skoly', label: 'Analýza škol' },
     { href: '/dostupnost', label: 'Dojezdovost MHD' },
     { href: '/regiony', label: 'Regiony' },

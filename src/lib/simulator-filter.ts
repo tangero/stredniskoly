@@ -18,12 +18,12 @@ export function splitByCommute<T extends { id: string }>(
   return { within: within.sort(byTime), near: near.sort(byTime), unknown };
 }
 
-/** Dojezd překračuje administrativní hranice; město/kraj platí jen bez něj. */
+/** Dojezd překračuje hranice krajů, kraj proto platí jen bez něj; město se s dojezdem kombinuje. */
 export function matchesSearchLocation(
   school: { obec: string; kraj: string },
   scope: { city: string; region: string; commute: boolean },
 ): boolean {
-  if (scope.commute) return true;
+  if (scope.commute) return !scope.city || school.obec.trim() === scope.city;
   return (!scope.city || school.obec.trim() === scope.city) &&
     (!scope.region || school.kraj.trim() === scope.region);
 }

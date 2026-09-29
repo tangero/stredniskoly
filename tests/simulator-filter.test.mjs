@@ -17,11 +17,13 @@ test('rozšíření limitu přesune nadlimitní obor, nikoli ostatní nevyhovuj�
   assert.equal(splitByCommute(relevant, 52, s => s.minutes, () => true).within.length, 1);
 });
 
-test('aktivní dojezd neztratí školu za hranicí obce ani kraje; vypnutí obnoví územní filtr', () => {
+test('aktivní dojezd neztratí školu za hranicí kraje; město se s dojezdem kombinuje; vypnutí obnoví územní filtr', () => {
  const school = { obec: 'Kladno', kraj: 'Středočeský kraj' };
- const scope = { city: 'Praha', region: 'Hlavní město Praha', commute: true };
+ const scope = { city: '', region: 'Hlavní město Praha', commute: true };
  assert.equal(matchesSearchLocation(school, scope), true);
- assert.equal(matchesSearchLocation(school, {...scope, commute:false}), false);
+ assert.equal(matchesSearchLocation(school, {...scope, city:'Praha'}), false);
+ assert.equal(matchesSearchLocation(school, {...scope, city:'Kladno'}), true);
+ assert.equal(matchesSearchLocation(school, {...scope, city:'Praha', commute:false}), false);
  assert.equal(matchesSearchLocation(school, {city:'Kladno',region:'',commute:false}), true);
  assert.equal(matchesSearchLocation(school, {city:'',region:'',commute:false}), true);
 });

@@ -234,7 +234,11 @@ class TestDatovaLinka(unittest.TestCase):
         self.assertEqual(obor["neveslo_se"], 15)
         self.assertEqual(obor["prijato_na_vyssi_prioritu"], 5)
         self.assertIn("pasma", obor)
-        self.assertEqual(set(p["zpracovani"]["predani"].values()), {"public/pasma_prijeti_2026.json", "public/soubeh_prihlasek_2026.json", "public/kontext_prihlasek_2026.json"})
+        self.assertEqual(set(p["zpracovani"]["predani"].values()), {"public/pasma_prijeti_2026.json", "public/soubeh_prihlasek_2026.json", "public/kontext_prihlasek_2026.json", "public/simulator_pasma_2026.json"})
+        # Index simulátoru se sestaví z nových pásem téhož schválení, ne z pásem na webu.
+        index = json.loads(Path(next(k for k, v in p["zpracovani"]["predani"].items() if "simulator" in v)).read_text())
+        self.assertEqual(index["rok"], 2026)
+        self.assertEqual(index["data"]["_".join(OBOR_A)][index["sloupce"].index("prijatych")], 20)
 
     def test_dopad_rozlisi_soubory_ktere_web_cte(self):
         revize = zpracovani.dopad_uchazeci(2025, "2025")

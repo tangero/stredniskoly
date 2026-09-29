@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.43 · 29. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.47 · 29. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -192,6 +192,10 @@ Zdroj jsou data uchazečů CERMATu za 1. kolo 2025, kde je u každé volby pří
 3. **Malé počty.** 1 586 ze 4 350 oborů má méně než deset přijatých. Minimum je tam jednotlivý uchazeč, ne stabilní vlastnost oboru, a nezobrazuje se.
 4. **Nepředpovídá příští rok.** Popisuje jeden ročník, nikoli požadavek školy.
 
+**Řazení v Simulátoru přijímaček** (rozhodnutí zadavatele 29. 9. 2026, návrh simulátoru oddíl 12, bod 9): volba „od nejvyšší hranice přijetí“ řadí nabídky sestupně podle nejnižšího výsledku mezi přijatými z pásem přijetí roku podle registru (`min_prijaty`, index `public/simulator_pasma_{rok}.json`). Obory s méně než deseti přijatými (`MIN_PRIJATYCH_PRO_HRANICI`) a bez hodnoty se neřadí mezi ostatní, ale na konec, protože chybějící hodnota není nula. Na konec jdou i obory, kde hranice soutěže nevznikla nebo o ní nerozhodoval test: obory s talentovou zkouškou, obory, kde nikoho neodmítli kvůli počtu míst, a obory s rozporem počtů. U řazení stojí věta, že těžší přijetí neznamená lepší školu. Neřadí se podle vzdálenosti uchazečova výsledku od hranice ani podle pásma nejistoty.
+
+
+**Meziroční posun** (doklad `docs/podklady/overeni-pasem-prijeti-2025-2026.json`, 2 315 oborů s aspoň deseti přijatými v obou ročnících 2025 a 2026): medián absolutní změny 5 bodů, změna o víc než 10 bodů u 16,4 % oborů, korelace 0,879. Tuto větu používá výhrada Simulátoru přijímaček „skupiny popisují 1. kolo, ne předpověď“ (slovy „typicky o 5 bodů, u šestiny oborů o víc než 10“). Návrh simulátoru uváděl 3 body; to je medián změny **šířky** pásma nejistoty, ne posunu hranice.
 ### Medián JPZ přijatých
 Prostřední výsledek jednotné zkoušky mezi přijatými: polovina přijatých měla stejně nebo míň, polovina stejně nebo víc. Rozsah 0 až 100 bodů. Pole `median_prijatych` v `public/pasma_prijeti_{rok}.json`, generuje `scripts/build-pasma-prijeti.py`.
 
@@ -232,6 +236,8 @@ U osmiletého gymnázia J. S. Machara bylo v roce 2025 soutěžících 67, ale n
 
 Co z toho plyne: *Podíl přijatých ze soutěžících* a počty soutěžících v pásmech se na jedné stránce nesmí vydávat za tutéž veličinu. Uchazeč, který se přijetí vzdal, je v pásmech obou ročníků mezi přijatými: v roce 2026 jinak nejde (data ho nerozlišují), v roce 2025 se tak počítá kvůli srovnatelnosti ročníků. Počet přijatých v pásmech proto neříká, kolik uchazečů na obor nakonec nastoupilo.
 
+
+**Kde se zobrazuje: Simulátor přijímaček** jako podmínka skupin (rozpor počtů soutěžících, přijatých a nevešlých vede do „bez srovnání“).
 ### Podíl přijatých ze soutěžících
 `přijatí ÷ (přijatí + nepřijatí kvůli kapacitě)` za nabídku a ročník. Zdroj: CERMAT, souhrny 1. kola. Pole `podil_prijatych_ze_soutezicich` v `public/souhrny_kolo1.json`.
 
@@ -319,6 +325,27 @@ Meze se dosazují do vět **každá zvlášť**: pod dolní mezí se nedostal ni
 
 **Je to popis loňska, ne míra.** Oba konce určuje jediný uchazeč, takže se **nepoužívá k porovnávání oborů ani k řazení**. Šířka pásma je navíc mezi ročníky nestabilní: na 1 166 oborech spárovaných mezi roky 2025 a 2026 korelace 0,697 a medián změny 3 body proti mediánové šířce 6 bodů (na dvojici 2024–2025 to bylo 0,692, 4 body a šířka 7 bodů). Ve verzi 1.4 tu stál ukazatel „překryv u hranice přijetí“, který z těchto dvou hodnot dělal měřítko; při záměně krajních hodnot za devadesátý a desátý percentil se u 41 % oborů obracel verdikt, a proto byl nahrazen mírou *rozhodl test*.
 
+
+**Kde se zobrazuje: Simulátor přijímaček** jako meze skupin *Poloha vůči pásmu*; samotné meze se v seznamu nevypisují a neřadí se podle nich.
+### Poloha vůči pásmu
+Kam padá výsledek uchazeče (převedený výsledek testu, u více testů **nejhorší** z nich) proti pásmu 1. kola jednoho oboru. Kategorie, ne číslo. Funkce `polohaVuciPasmu` v `src/lib/poloha-vuci-pasmu.ts`, data z indexu `public/simulator_pasma_{rok}.json` (pásma přijetí, sada `cermat-uchazeci-kolo1`). Zobrazuje se jen v Simulátoru přijímaček.
+
+| Kategorie | Podmínka (B = výsledek uchazeče) |
+|---|---|
+| nad pásmem | B nad horní mezí *Pásma nejistoty* |
+| v pásmu | dolní mez ≤ B ≤ horní mez; při shodných mezích jen B rovno mezi |
+| pod pásmem | B pod dolní mezí, tedy pod *Nejnižším výsledkem JPZ mezi přijatými*; u oboru bez pásma (málo nevešlých) B pod nejnižším přijatým |
+| obory, kde nikoho neodmítli | `nikdo_neodmitnut_pro_kapacitu`; bez ohledu na B a počet přijatých |
+| bez srovnání | talentový obor, obor přijímající podle jiného druhu testu, méně než `MIN_PRIJATYCH_PRO_HRANICI` přijatých, obor bez pásma s B nad nejnižším přijatým, chybějící údaj, rozpor počtů (soutěžící ≠ přijatí + nevešlí, v pásmu přijato > soutěžilo) |
+
+Horní mez pod dolní (7,8 % oborů s pásmem): B od dolní meze nad pásmem, B do horní meze pod pásmem, mezi nimi v pásmu s větou, že hranice ležela právě tady a s takovým výsledkem nesoutěžil nikdo. Chybějící údaj se nikdy nepočítá jako „pod pásmem“.
+
+**Co neříká:**
+- Není pravděpodobnost přijetí ani předpověď; popisuje jedno 1. kolo.
+- Nepoužívá se k řazení oborů (řadí se podle dojezdu nebo podle *Nejnižšího výsledku JPZ mezi přijatými*, nikdy podle vzdálenosti B od hranice).
+- Platí za obor školy bez zaměření (REDIZO_KKOV).
+- U výsledku bez převodu platí jen pro stejně těžký test jako ostrý test roku pásem.
+
 ### Percentil nejnižšího přijatého
 Kolik ze 100 uchazečů v celé zemi mělo stejný nebo horší výsledek než nejnižší přijatý na obor. Pole `min_prijaty_percentil`.
 
@@ -342,7 +369,7 @@ Proč: obtížnost se liší i mezi termíny téhož roku. 50 bodů z 1. řádn�
 - **Náhradní termíny** (2024: 486 a 794 řešitelů obou testů) psala malá a jiná skupina, hlavně nemocní z řádného termínu. Jejich pořadí převod zkresluje, u 40 bodů o +14 bodů proti řádným termínům. Pole `spolehlive` je u nich `false` a na webu se nenabízejí, nebo jen s výhradou.
 - Výsledek testu, který není v tabulkách (jiný rok, škola, soukromý test), převést nejde. Takové číslo se porovnává přímo s body cílového roku s výhradou, že platí jen pro stejně těžký test.
 
-**Kde se zobrazuje:** stránka oboru, důkaz „S kolika body se kdo dostal a kde byste stáli vy“ (komponenta `KdeStojim`, jen u oboru, kde se soutěžící uchazeči nevešli), a prototyp `/prototyp/pasma`.
+**Kde se zobrazuje:** stránka oboru, důkaz „S kolika body se kdo dostal a kde byste stáli vy“ (komponenta `KdeStojim`, jen u oboru, kde se soutěžící uchazeči nevešli), a prototyp `/prototyp/pasma`; Simulátor přijímaček (`/simulator`: krok 1, skupiny a výhrady v kroku 3).
 
 **Údaj od školy (portál, pilot):** formulář `/pro-skoly/kriteria` počítá týž ukazatel ze strukturovaného zadání školy (`src/lib/kriteria-struktura.ts`, `souhrnBodovani`): maximum JPZ = (max ČJL × váha ČJL + max MAT × váha MAT) × přepočet / 100, podíl = maximum JPZ / (maximum JPZ + součet kladných maxim dalších bodů). Srážky (záporné maximum) se do celku nepočítají; chybí-li u některé složky maximum, podíl je neznámý. Zobrazuje se jen škole ve formuláři jako kontrola součtu, uchazečům zatím ne.
 
@@ -353,7 +380,7 @@ Věta: „Mezi 88 soutěžícími uchazeči roku 2026 mělo vyšší výsledek 3
 
 **Co neříká:** Neříká, jestli by se uchazeč dostal: soutěžící jsou jen ti, kdo splnili podmínky a nedostali se výš na přihlášce, a o pořadí u škol s dalším bodováním rozhodovalo i něco jiného než test. Počítá se ze součtu testů; u školy, která váží předměty, je pořadí jiné (viz *Rozhodl test*, slepé místo). Popisuje jeden ročník.
 
-**Kde se zobrazuje:** stránka oboru, důkaz „S kolika body se kdo dostal a kde byste stáli vy“ (komponenta `KdeStojim`, jen u oboru, kde se soutěžící uchazeči nevešli), a prototyp `/prototyp/pasma`.
+**Kde se zobrazuje:** stránka oboru, důkaz „S kolika body se kdo dostal a kde byste stáli vy“ (komponenta `KdeStojim`, jen u oboru, kde se soutěžící uchazeči nevešli), a prototyp `/prototyp/pasma`. V Simulátoru přijímaček se neukazuje (návrh simulátoru oddíl 8).
 
 ### Nejslabší přijatý v předmětu
 Výsledky **jednoho skutečného přijatého** s nejnižším výsledkem v daném předmětu, vždy s oběma jeho předměty. Pole `nejslabsi_cj` a `nejslabsi_ma` v `public/pasma_prijeti_{rok}.json`, každé jako `{cj, ma}`. Jednotka body 0 až 50 za předmět.
@@ -436,7 +463,7 @@ Kolik procent bodů celkového hodnocení tvořila v kritériích přijetí jedn
 
 **Co neříká:** Není ověřený: přepis dělá model nebo člověk z PDF a může obsahovat chybu, i když mechanická kontrola citací nic nenašla. Kontrola 30 vzorků (28. 9. 2026, `docs/podklady/dipsy-kriteria-kontrola-30-2026-09-28.md`) našla podstatnou chybu zhruba u každého desátého přepisu, nejčastěji záměnu oboru ve společném PDF. Platí pro rok kritérií (2026), ne pro nové přijímací řízení; školy kritéria mění. Neříká, jak moc další složky **rozhodovaly**: složka s velkým maximem, kterou všichni dostanou plnou, pořadí nemění. Nepoužívá se k řazení ani k výpočtu bodů uchazeče.
 
-**Kde se zobrazuje:** stránka oboru, důkaz „S kolika body se kdo dostal a kde byste stáli vy“ (komponenta `KdeStojim`, jen u oboru, kde se soutěžící uchazeči nevešli), a prototyp `/prototyp/pasma`. Blok kritérií jen tam, kde podle přepisu nerozhodovala jen JPZ; jinak věta, že škola přijímala podle jednotné přijímací zkoušky.
+**Kde se zobrazuje:** stránka oboru, důkaz „S kolika body se kdo dostal a kde byste stáli vy“ (komponenta `KdeStojim`, jen u oboru, kde se soutěžící uchazeči nevešli), a prototyp `/prototyp/pasma`; Simulátor přijímaček (`/simulator`: krok 1, skupiny a výhrady v kroku 3). Blok kritérií jen tam, kde podle přepisu nerozhodovala jen JPZ; jinak věta, že škola přijímala podle jednotné přijímací zkoušky.
 
 ## 3. Kohorty přijatých
 
@@ -673,6 +700,10 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.47 | Řazení „od nejvyšší hranice přijetí“ v Simulátoru přijímaček dává na konec i obory s talentovou zkouškou, obory, kde nikoho neodmítli kvůli počtu míst, a obory s rozporem počtů (29. 9. 2026, nález review): jejich nejnižší přijatý výsledek není hranicí soutěže. |
+| 1.46 | Simulátor přijímaček, etapa E5 (výhrady v kroku 3): u *Převedeného výsledku testu*, *Podílu přijímaček na bodování*, *Pásma nejistoty* a *Soutěžících o obor* doplněno, kde se v simulátoru zobrazují; u *Pořadí mezi soutěžícími*, že se tam neukazuje. U *Nejnižšího výsledku JPZ mezi přijatými* zapsán doložený meziroční posun (medián 5 bodů), ze kterého stojí výhrada o jednom ročníku; oprava čísla 3 body z návrhu. Výpočty beze změny. |
+| 1.45 | Nový ukazatel **Poloha vůči pásmu** pro skupiny Simulátoru přijímaček (nad pásmem, v pásmu, pod pásmem, obory, kde nikoho neodmítli, bez srovnání; 29. 9. 2026, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 3 a 12). *Průměr JPZ přijatých* ze simulátoru odchází jako porovnávací měřítko (`admission-gap.ts` smazán); ukazatel zůstává pro jiné stránky. |
+| 1.44 | *Nejnižší výsledek JPZ mezi přijatými* smí řadit nabídky v Simulátoru přijímaček (volba „od nejvyšší hranice přijetí“, rozhodnutí zadavatele 29. 9. 2026); obory pod prahem deseti přijatých a bez hodnoty jdou na konec. Hodnota pro simulátor se bere z pásem přijetí přes index `public/simulator_pasma_{rok}.json`. Výpočet beze změny. |
 | 1.43 | **Podíl přijímaček na bodování ze zadání školy** (29. 9. 2026). Formulář kritérií v portálu pro školy počítá ukazatel ze strukturovaného zadání stejnou definicí jako přepis PDF; jen jako kontrola součtu pro školu, veřejně se nezobrazuje. |
 | 1.42 | **Vzdání se přijetí je v obou ročnících přijetí** (28. 9. 2026, rozhodnutí zadavatele). Data uchazečů 2026 vzdání se nerozlišují a vedou ho jako přijetí; v datech 2025 (`vzdal_se_prijeti`, `vzdal_se_prijeti_po_terminu`, 1 780 přihlášek) se nově počítá také jako přijetí, včetně pořadí přijaté přihlášky, aby počty přijatých a soutěžících šly mezi ročníky porovnat. Pásma 2025: změna u 580 oborů (8 nových nad prahem), pásmo nejistoty u 12, *Rozhodl test* u 195; kontext přihlášek 2025 u 2 306 oborů. Data 2026 beze změny. Přepočítány rozdělení vět *Rozhodl test* 2025 (52,3 / 42,1 / 5,6 %), stabilita mezi ročníky (307 změn kategorie, šířka pásma 0,697) a tabulka shody se souhrny. |
 | 1.41 | **Rozdíl soutěžících proti souhrnům 1. kola rozložen** (28. 9. 2026). Heslo *Soutěžící o obor* nese tabulku příčin rozdílu mezi `soutezicich` z dat uchazečů a přijatými s nevešlými ze souhrnů: bez výsledku zkoušky, vzdání se přijetí vedené v datech uchazečů 2026 jako přijetí, víc přihlášek téhož uchazeče, nesoulad souborů CERMAT. Přepočítány věty u *Rozhodl test* z pásem 2026: 1 406 oborů s hodnotou (medián 0,980), rozdělení tří vět u 1 393 oborů 59,2 / 34,1 / 6,7 % místo neaktuálních 1 427 a 52,5 / 41,3 / 6,2 %. Výpočet beze změny. |

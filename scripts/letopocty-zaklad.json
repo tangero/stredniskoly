@@ -59,15 +59,12 @@
   "Přihlášky 2025"
  ],
  "src/app/simulator/SimulatorClient.tsx": [
-  "JPZ. Úplná nabídka a kritéria 2027 se doplňují.",
   "Můj výběr 2027",
-  "Nabídky doložené v 1. kole 2026, v rozsahu denních nezkrácený",
-  "SIMULÁTOR 2027",
-  "říček škol podle výsledků JPZ 2026"
+  "SIMULÁTOR PŘIJÍMAČEK 2027"
  ],
  "src/app/simulator/page.tsx": [
-  "Simulátor výběru školy 2027",
-  "Simulátor výběru školy 2027 | Přijímačky na střední školy"
+  "Simulátor přijímaček 2027",
+  "Simulátor přijímaček 2027 | Přijímačky na střední školy"
  ],
  "src/app/skola/[slug]/page.tsx": [
   "Data z přijímacího řízení 2025"
@@ -126,9 +123,6 @@
  ],
  "src/components/school-profile/SchoolPortalSection.tsx": [
   "Kritéria přijímacího řízení 2027"
- ],
- "src/components/simulator/OfferComparisonTable.tsx": [
-  "odle průměrů přijatých v roce 2026 a tvého výsledku"
  ],
  "src/components/skola/ProfilSkoly.tsx": [
   "export 11. 2. 2026 · bez značky: oficiální data",
