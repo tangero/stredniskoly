@@ -232,7 +232,6 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
           </div>
           {!vsechnaKola && !soucasny && spolecny && <p className="mt-2 rounded-lg bg-blue-50 p-3 text-sm text-blue-900">Pro {kolo}. kolo teď platí pravidla pro všechna kola. Uložením vytvoříte výjimku pro toto kolo.</p>}
         </fieldset>
-        </fieldset>
         {obor && obor.podkladRok !== rok && <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">Tento obor známe z nabídky {obor.podkladRok}. Pro rok {rok} jde zatím o plánované údaje; nabídku v DiPSy ještě nemáme potvrzenou.</p>}
         {obor && stavPravidel.stav !== 'nezname' && <details className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm text-slate-800">
           <summary className="cursor-pointer font-medium">Co o bodování tohoto oboru už víme</summary>
@@ -380,6 +379,7 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
           <button type="submit" disabled={!dostupne || !obor || stav === 'odesilam' || Boolean(chybaStruktury) || (zPrepisu && !zkontrolovano)} className="rounded-lg bg-blue-700 px-4 py-2 text-sm font-semibold text-white disabled:opacity-50">{stav === 'odesilam' ? 'Ukládám…' : 'Uložit pravidla'}</button>
           {zPrepisu && !zkontrolovano && <span className="text-sm text-amber-900">Nejdřív potvrďte kontrolu předvyplněných údajů.</span>}
         </div>}
+        </fieldset>
         {zprava && <p role="status" className={`text-sm ${stav === 'chyba' ? 'text-red-700' : 'text-green-800'}`}>{zprava}</p>}
       </form>
     </section>

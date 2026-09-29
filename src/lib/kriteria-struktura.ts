@@ -217,6 +217,9 @@ export function overStrukturu(raw: unknown): StrukturaKriterii {
 /** Záznam z public/kriteria_prijeti_{rok}.json doplněný o kriteria_predvyplneni_{rok}.json. */
 export interface PrepisProPredvyplneni {
   zamereni: string;
+  rezim?: 'pouze_jpz' | 'jine';
+  /** Přepis ví, že škola boduje i něco dalšího, ale složky nezachytil (kontrola Jevem, ruční ověření). */
+  chybi_slozky?: boolean | null;
   slozky: { nazev: string; max: number | null }[];
   jpz_navic: { nazev: string; max: number | null }[];
   minima: string[];
@@ -261,6 +264,11 @@ export function strukturaZPrepisu(p: PrepisProPredvyplneni): StrukturaKriterii {
         poznamka: 'Zadejte vyšší váhu předmětu nebo přepočet u JPZ výše a tento řádek smažte.',
       })),
       ...p.slozky.map((s) => ({ druh: hadejDruh(s.nazev), nazev: s.nazev.slice(0, MAX_TEXT), max: s.max, poznamka: '' })),
+      // Známá neúplnost přepisu nesmí zmizet a vydávat se za „jen JPZ“.
+      ...((p.chybi_slozky || (p.rezim === 'jine' && !p.slozky.length && !p.jpz_navic.length)) ? [{
+        druh: 'jine' as const, nazev: 'Další body, které přepis PDF nezachytil', max: null,
+        poznamka: 'Podle kontroly škola bodovala i něco dalšího. Doplňte skutečné složky a tento řádek smažte.',
+      }] : []),
     ].slice(0, MAX_RADKU),
     minima: p.minima.slice(0, MAX_RADKU).map((m) => ({ na_co: 'jine', hodnota: null, jednotka: 'body', popis: m.slice(0, MAX_TEXT) })),
     rovnost: (p.rovnost ?? []).slice(0, 12).map((r) => r.slice(0, 200)),

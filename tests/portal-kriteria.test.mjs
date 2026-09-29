@@ -105,6 +105,11 @@ test('předvyplnění z přepisu: druhy, maxima JPZ, minima a rovnost', () => {
   assert.equal(souhrnBodovani(vazeni).jenJpz, false);
   assert.equal(souhrnBodovani(vazeni).celkem, null);
   assert.equal(overZadani({ oborKlic: 'o', rok: 2027, kolo: null, struktura: vazeni, popis: '', odkaz: '', ocekavaneId: null }, [2027]).value.rezim, 'jine');
+  // 600009971_53-41-M/03: přepis ví o chybějících složkách, předvyplnění to nesmí zahodit.
+  const chybi = strukturaZPrepisu({ zamereni: '', rezim: 'jine', chybi_slozky: true, slozky: [], jpz_navic: [], minima: [], jpz: null });
+  assert.equal(chybi.slozky.length, 1);
+  assert.equal(souhrnBodovani(chybi).jenJpz, false);
+  assert.equal(souhrnBodovani(strukturaZPrepisu({ zamereni: '', rezim: 'pouze_jpz', slozky: [], jpz_navic: [], minima: [], jpz: null })).jenJpz, true);
 });
 
 test('předvyplnění se páruje podle oboru a zaměření z veřejného přepisu', async () => {
