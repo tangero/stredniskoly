@@ -189,7 +189,7 @@ Platí doporučení ke všem otázkám z oddílu 11:
 Poznámky k E5:
 
 - Výhrady jsou komponenta `VyhradySimulatoru` v kroku 3 pod výsledky a pod zvažovanými obory, zkrácená verze nad seznamem odkazuje na `#vyhrady`. Blok se ukazuje vždy, i bez zadaného testu a bez zvoleného místa.
-- **Oprava čísla z oddílu 5, bod 3:** „medián změny pásma 3 body“ je změna **šířky** pásma. Posun samotné hranice (nejnižší výsledek přijatých, 2 315 oborů) má medián 5 bodů a u 16,4 % oborů přes 10 bodů; text stránky používá tato čísla, zapsaná ve slovníku ukazatelů 1.45.
+- **Oprava čísla z oddílu 5, bod 3:** „medián změny pásma 3 body“ je změna **šířky** pásma. Posun samotné hranice (nejnižší výsledek přijatých, 2 315 oborů) má medián 5 bodů a u 16,4 % oborů přes 10 bodů; text stránky používá tato čísla, zapsaná ve slovníku ukazatelů 1.46.
 - Rok kritérií bere stránka ze sady `dipsy-kriteria`, termín nových kritérií z události `ss-kriteria` v `admissions-2027.json`; bez přepisu se bod o kritériích vynechá.
 - Bod o jiném testu platí vždy; když uchazeč takový výsledek zadal, věta to řekne.
 - Pojmy **ostrý test** a **výhrady** ve slovníku pojmů 1.31; ostrý test se vysvětluje při prvním výskytu v bloku.
