@@ -174,3 +174,25 @@ Platí doporučení ke všem otázkám z oddílu 11:
 - Kontrola (`src/lib/strategie-prihlasek.ts`) počítá běžné a talentové obory zvlášť podle bloku `pravidla` v `admissions-2027.json`. Pojistka se hledá jen mezi obory, které se do přihlášky vejdou; pojistka za posledním místem dostane výzvu „posuň ho výš“. Talentový obor pojistkou není (je „Bez srovnání“).
 - Návrh pojistky bere nejbližší obory nad pásmem jen z hledání omezeného místem (zastávka s limitem, obec nebo kraj), přednostně se stejným oborem jako některý zvažovaný.
 - Přijatí podle priority se neukazují (rozhodnutí 6), přiřazení ani šance se nepočítá.
+
+## 14. Stav implementace (E1–E5, 29. 9. 2026)
+
+| Etapa | Stav | Commit |
+|---|---|---|
+| E1 Data | hotovo (index pásem, blok `pravidla`, registr) | větev `feat/simulator-prijimacek` |
+| E2 Krok 1 | hotovo (sdílené zadání testů, název Simulátor přijímaček) | `3b529ec` |
+| E3 Krok 2 | hotovo (skupiny, řazení od nejvyšší hranice přijetí, `admission-gap` odstraněn) | `4001160` |
+| E4 Strategie | hotovo (pořadí zvažovaných oborů, pojistka, počet přihlášek z dat) | `b1336e7` |
+| E5 Výhrady a texty | hotovo (krok 3, slovníky, changelog) | tato dávka |
+| E6 Ověření | čeká (Codex review, prohlížeč, přejímka na produkci) | |
+
+Poznámky k E5:
+
+- Výhrady jsou komponenta `VyhradySimulatoru` v kroku 3 pod výsledky a pod zvažovanými obory, zkrácená verze nad seznamem odkazuje na `#vyhrady`. Blok se ukazuje vždy, i bez zadaného testu a bez zvoleného místa.
+- **Oprava čísla z oddílu 5, bod 3:** „medián změny pásma 3 body“ je změna **šířky** pásma. Posun samotné hranice (nejnižší výsledek přijatých, 2 315 oborů) má medián 5 bodů a u 16,4 % oborů přes 10 bodů; text stránky používá tato čísla, zapsaná ve slovníku ukazatelů 1.45.
+- Rok kritérií bere stránka ze sady `dipsy-kriteria`, termín nových kritérií z události `ss-kriteria` v `admissions-2027.json`; bez přepisu se bod o kritériích vynechá.
+- Bod o jiném testu platí vždy; když uchazeč takový výsledek zadal, věta to řekne.
+- Pojmy **ostrý test** a **výhrady** ve slovníku pojmů 1.31; ostrý test se vysvětluje při prvním výskytu v bloku.
+- Test srozumitelnosti klíčových vět s rodiči (etapa E5 v oddílu 9) neproběhl; patří do E6 nebo před nasazení.
+- Revize mobilu a klávesnice (kódem, ne v prohlížeči): blok je jeden sloupec s `max-w-3xl`, bez pevných šířek, takže na 320–390 px nepřetéká; odkaz na výhrady a šipky pořadí jsou nativní `a` a `button` s viditelným `focus-visible` obrysem, šipky mají 44 px. Nadpisy kroků 1–3 jsou `h2` s `aria-labelledby`.
+- Zbývá z E4: popisky „uložený obor“, „Sdílet výběr“ v `SavedSelectionBar` a „Uložit do výběru“ u hvězdičky; nabídka jiného druhu testu u volby „Všechny typy“. Stávající lint chyba `react-hooks/set-state-in-effect` v `SimulatorClient.tsx` (načtení úložiště) je starší než E5.

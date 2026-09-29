@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.30 · 29. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.31 · 29. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -60,6 +60,8 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **spolužáci** | přijatí na obor, u otázky „jak se tu studuje“ | není potřeba | třída, kolektiv |
 | **pořadí v kraji podle zájmu**, **pořadí v kraji podle výsledků přijatých** | pořadí oboru mezi obory stejného typu a délky v kraji (Praha samostatně) | „2. z 32 osmiletých gymnázií ve Středočeském kraji podle výsledků přijatých“; vždy s rokem | žebříček, nejlepší, top, hodnocení školy |
 | **cvičný test** | test z minulých přijímaček v aplikaci CERMAT TAU, který si uchazeč napíše doma | „cvičný test, tedy test z minulých přijímaček v aplikaci CERMAT TAU“ | zkouška nanečisto (placená služba jinde), test (bez upřesnění) |
+| **ostrý test** | jednotná přijímací zkouška v řádném termínu, na rozdíl od cvičného testu doma | „ostrý test, tedy jednotná přijímací zkouška v termínu přijímaček“ | skutečný test, reálné přijímačky |
+| **výhrady** | v Simulátoru přijímaček krok 3: co výsledek simulátoru neříká (stres u zkoušky, převod, jeden ročník, přepis kritérií, jiný test, zaměření) | nadpis „Přečti si výhrady“ a věta „Výsledek z domova není výsledek zkoušky“ | upozornění pod čarou, drobné písmo, disclaimer |
 | **převedený výsledek** | *Převedený výsledek testu* ze slovníku ukazatelů: body cvičného testu přepočtené přes pořadí na body roku pásem | „kolik bodů by to bylo v roce {rok}: podle toho, kolik uchazečů mělo ve stejném testu horší výsledek“; v bloku vždy i výhrada, že spíš nadhodnocuje | přepočtené body, normalizované body |
 | **výsledek bez převodu** (volba „jiný test nebo odhad“) | body z testu mimo převodní tabulky nebo odhad; porovnávají se přímo s body roku pásem, bez převodu | výrazná výhrada v každém bloku, kde se s ním počítá: „srovnání platí jen tehdy, pokud byl test stejně těžký jako jednotná přijímací zkouška v roce {rok}; to ale nikdo neověřil“ | převedený výsledek (pro nepřevedené číslo), skutečné body, předpověď |
 | **rozmezí, kde rozhodovalo i něco jiného** | pásmo nejistoty ze slovníku ukazatelů: body, u kterých se část soutěžících uchazečů dostala a část ne | na proužku jako legenda; ve větě s počty: „jsi v rozmezí, kde se v roce {rok} ze 41 uchazečů dostalo 24“ | pásmo nejistoty (v textu pro rodiče), hranice přijetí |
@@ -133,6 +135,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.31 | Pojmy **ostrý test** a **výhrady** pro krok 3 Simulátoru přijímaček (etapa E5, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 5). Výhrady stojí v samostatném bloku pod výsledky a zkráceně nad nimi, nikdy drobným písmem. |
 | 1.30 | Pojem **pojistka** pro strategii řazení zvažovaných oborů v Simulátoru přijímaček ([návrh](navrh-simulator-prijimacek-2027.md) oddíl 4, etapa E4). Návrh mluví o „oblíbených školách“ a „prioritách“; slovník obojí zakazuje (verze 1.13 *zvažované obory*, řádek *pořadí na přihlášce*), proto text stránky používá **zvažované obory** a **pořadí na přihlášce** se standardní větou, že pořadí šanci na přijetí nemění. Horní lišta simulátoru „Můj výběr“ přejmenována na „Zvažované obory“. |
 | 1.29 | Pojmy Simulátoru přijímaček pro skupiny výsledků (29. 9. 2026, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 3 a 12): **Simulátor přijímaček**, **nad pásmem**, **v pásmu**, **pod pásmem**, **obory, kde nikoho neodmítli**, **bez srovnání**. Každá skupina má pod názvem větu, která vysvětluje soutěžící uchazeče. Popisek řazení **„od nejvyšší hranice přijetí“** je výslovné rozhodnutí zadavatele (bod 9) a jediná výjimka ze zákazu slova *hranice přijetí*; vždy s větou, že se řadí podle nejnižšího výsledku přijatých a že těžší přijetí neznamená lepší školu. |
 | 1.28 | Pojem **výsledek bez převodu** pro volbu „Jiný test nebo odhad“ ve sdíleném zadání cvičného testu (stránka oboru a krok 1 Simulátoru přijímaček, 29. 9. 2026, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 2). Výhrada je výrazná, protože srovnání stojí na neověřeném předpokladu stejně těžkého testu. |

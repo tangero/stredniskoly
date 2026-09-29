@@ -6,6 +6,14 @@ import { SimulatorClient } from './SimulatorClient';
 import { rokPasemPrijeti } from '@/lib/pasma-prijeti';
 import { nactiPrevodTestu } from '@/lib/prevod-testu';
 import calendar from '@/data/admissions-2027.json';
+import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
+import type { TerminKriterii } from '@/components/simulator/VyhradySimulatoru';
+
+/** Termín zveřejnění kritérií nového řízení z harmonogramu MŠMT (událost ss-kriteria). */
+function terminKriterii(): TerminKriterii | null {
+  const e = calendar.groups.flatMap(g => g.events).find(x => x.id === 'ss-kriteria');
+  return e?.date && e.start ? { datum: e.date, rok: Number(e.start.slice(0, 4)) } : null;
+}
 
 export const metadata: Metadata = {
   alternates: { canonical: '/simulator' },
@@ -33,14 +41,16 @@ function SimulatorLoading() {
 
 export default async function SimulatorPage() {
   // Roky z registru: pásma ze sady cermat-uchazeci-kolo1, převod ze sady cermat-prevod-testu.
-  const [rokPasem, prevod] = await Promise.all([rokPasemPrijeti(), nactiPrevodTestu()]);
+  const [rokPasem, prevod, obdobiKriterii] = await Promise.all([rokPasemPrijeti(), nactiPrevodTestu(), zobrazeneObdobi('dipsy-kriteria')]);
+  const rokKriterii = obdobiKriterii && /^\d{4}$/.test(obdobiKriterii) ? Number(obdobiKriterii) : null;
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
       <Header />
 
       <main className="flex-1">
         <Suspense fallback={<SimulatorLoading />}>
-          <SimulatorClient rokPasem={rokPasem} prevod={prevod} pravidla={calendar.pravidla} />
+          <SimulatorClient rokPasem={rokPasem} prevod={prevod} pravidla={calendar.pravidla}
+            rokKriterii={rokKriterii} terminKriterii={terminKriterii()} />
         </Suspense>
       </main>
 

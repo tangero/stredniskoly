@@ -12,6 +12,7 @@ import { SeznamNabidek, type NabidkaSimulatoru } from '@/components/simulator/Se
 import { hodnotaHranice, klicPasma, nactiIndexPasem, polohaVuciPasmu, seradNabidky, type IndexPasem } from '@/lib/poloha-vuci-pasmu';
 import { SavedSelectionBar } from '@/components/simulator/SavedSelectionBar';
 import { StrategiePrihlasek } from '@/components/simulator/StrategiePrihlasek';
+import { VyhradaNahore, VyhradySimulatoru, type TerminKriterii } from '@/components/simulator/VyhradySimulatoru';
 import { navrhniPojistku, posunVPoradi, type PravidlaPrihlasek } from '@/lib/strategie-prihlasek';
 import { useZadaneTesty, ZadaniTestu } from '@/components/obor/ZadaniTestu';
 import { TRIDA_TAU, type DruhTestu, type PrevodDruhu, type PrevodTestu } from '@/lib/prevod-testu-vypocet';
@@ -84,9 +85,13 @@ export interface SimulatorClientProps {
   prevod: PrevodTestu | null;
   /** Počet přihlášek z bloku pravidla v admissions-2027.json (sada msmt-harmonogram). */
   pravidla: PravidlaPrihlasek;
+  /** Rok přepsaných kritérií (sada dipsy-kriteria). */
+  rokKriterii: number | null;
+  /** Kdy školy zveřejní kritéria nového řízení (harmonogram, ss-kriteria). */
+  terminKriterii: TerminKriterii | null;
 }
 
-export function SimulatorClient({ rokPasem, prevod, pravidla }: SimulatorClientProps) {
+export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, terminKriterii }: SimulatorClientProps) {
   const params = useSearchParams();
   const showingSelection = params.get('vyber') === '1' || params.get('srovnani') === '1';
   // Uložený výběr je stav aplikace, nikoli obsah adresy: odkaz už celý výběr neunese.
@@ -355,7 +360,9 @@ export function SimulatorClient({ rokPasem, prevod, pravidla }: SimulatorClientP
       />
     </div>
   </section>;
+  const vyhrady = rokPasem === null ? null : <VyhradySimulatoru rokPasem={rokPasem} rokKriterii={rokKriterii} terminKriterii={terminKriterii} jinyTest={testy.platne.some(v => v.termin === null)} />;
   const razeniControls = <div className="mb-4 mt-4">
+    {rokPasem !== null && <VyhradaNahore rokPasem={rokPasem} />}
     {bodySkupiny === null && rokPasem !== null && <p className="mb-3 rounded-lg border border-blue-200 bg-blue-50 p-3 text-sm text-blue-900">
       Zadej výsledek cvičného testu v kroku 1 a obory se rozdělí podle toho, jak by ses s ním dostal v 1. kole {rokPasem}.
     </p>}
@@ -392,6 +399,7 @@ export function SimulatorClient({ rokPasem, prevod, pravidla }: SimulatorClientP
       {razeniControls}
       {seznam(selectedIds.flatMap(id => { const school = catalogIndex.get(normalizeSchoolKey(id)); return school ? [school] : []; }))}
       {selectedIds.map(id => { const school = catalogIndex.get(normalizeSchoolKey(id)); return school ? null : <div key={id} className="my-4"><p>{!catalog && !error ? 'Načítám uložený obor…' : 'Uložený obor se nepodařilo jednoznačně dohledat. Výběr zůstal zachovaný.'}</p><button className={button} onClick={() => toggle(id)}>Odebrat nedohledaný obor</button></div>; })}
+      {vyhrady}
       {shareUrl && <label className="mt-4 block text-sm">Odkaz obsahuje jen výběr oborů a zobrazí ho každý, komu jej předáš. Zastávka ani dojezd se nesdílejí.<input className={field} value={shareUrl} readOnly onFocus={e => e.target.select()} /></label>}
     </section> : <>
       <p className="text-sm font-semibold text-blue-700">SIMULÁTOR PŘIJÍMAČEK 2027</p>
@@ -452,6 +460,7 @@ export function SimulatorClient({ rokPasem, prevod, pravidla }: SimulatorClientP
             {stop && <p className="mt-6 text-xs text-slate-500">Nenalezená cesta může znamenat překročení rozsahu i chybějící spoj v podkladech. Pro konkrétní den ověř spojení v jízdním řádu.</p>}
             </>}
           </>}
+          {vyhrady}
         </section>
       </div>
     </>}
