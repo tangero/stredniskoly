@@ -97,6 +97,14 @@ test('předvyplnění z přepisu: druhy, maxima JPZ, minima a rovnost', () => {
   assert.equal(s.minima[0].popis, 'JPZ celkem alespoň 30 bodů');
   assert.deepEqual(s.rovnost, ['lepší matematika']);
   assert.doesNotThrow(() => overStrukturu(s));
+  // 600005518_79-41-K/41: matematika × 0,5 zapsaná jen jako jpz_navic nesmí vyjít jako „jen JPZ“.
+  const vazeni = strukturaZPrepisu({ zamereni: '', slozky: [], minima: [], jpz: null,
+    jpz_navic: [{ nazev: 'matematika násobená koeficientem 0,5', max: null }] });
+  assert.equal(vazeni.slozky[0].max, null);
+  assert.match(vazeni.slozky[0].nazev, /jinak než prostým součtem/);
+  assert.equal(souhrnBodovani(vazeni).jenJpz, false);
+  assert.equal(souhrnBodovani(vazeni).celkem, null);
+  assert.equal(overZadani({ oborKlic: 'o', rok: 2027, kolo: null, struktura: vazeni, popis: '', odkaz: '', ocekavaneId: null }, [2027]).value.rezim, 'jine');
 });
 
 test('předvyplnění se páruje podle oboru a zaměření z veřejného přepisu', async () => {

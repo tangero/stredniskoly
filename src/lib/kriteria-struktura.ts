@@ -252,18 +252,19 @@ export function strukturaZPrepisu(p: PrepisProPredvyplneni): StrukturaKriterii {
       prepoctovy_koeficient_pct: koef && koef !== 100 ? koef : null,
       vyssi_vaha: null,
     },
-    slozky: p.slozky.slice(0, MAX_RADKU).map((s) => ({
-      druh: hadejDruh(s.nazev), nazev: s.nazev.slice(0, MAX_TEXT), max: s.max, poznamka: '',
-    })),
+    slozky: [
+      // Přijímačky zapsané jinak než prostým součtem (vážení, přepočet) přepis neumí
+      // převést na pole JPZ. Zůstanou jako řádek s neznámým maximem, takže součet ani
+      // „jen JPZ“ se nedopočítá, dokud je editor nevyřeší.
+      ...p.jpz_navic.map((s) => ({
+        druh: 'jine' as const, nazev: `Přijímačky jinak než prostým součtem: ${s.nazev}`.slice(0, MAX_TEXT), max: null,
+        poznamka: 'Zadejte vyšší váhu předmětu nebo přepočet u JPZ výše a tento řádek smažte.',
+      })),
+      ...p.slozky.map((s) => ({ druh: hadejDruh(s.nazev), nazev: s.nazev.slice(0, MAX_TEXT), max: s.max, poznamka: '' })),
+    ].slice(0, MAX_RADKU),
     minima: p.minima.slice(0, MAX_RADKU).map((m) => ({ na_co: 'jine', hodnota: null, jednotka: 'body', popis: m.slice(0, MAX_TEXT) })),
     rovnost: (p.rovnost ?? []).slice(0, 12).map((r) => r.slice(0, 200)),
     vyslovne_max_celkem: null,
   };
 }
 
-/** Věta do „Další pravidla a výjimky“ pro to, co struktura neumí (přijímačky zapsané jinak). */
-export function poznamkaZPrepisu(p: PrepisProPredvyplneni): string {
-  return p.jpz_navic.length
-    ? `Přijímačky se podle přepisu nepočítají prostým součtem: ${p.jpz_navic.map((x) => x.nazev).join('; ')}.`
-    : '';
-}

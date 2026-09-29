@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { KriteriaSkoly, OborProKriteria, Predvyplneni } from '@/lib/portal-kriteria';
 import { nazevZdrojeKriterii, odkazNaPodklad, stavKriterii, type DolozenePravidlo } from '@/lib/kriteria-stav';
 import {
@@ -43,9 +43,12 @@ function CisloPole({ label, value, onChange, napoveda, min, placeholder }: {
   if (value !== videno) { setVideno(value); setText(naText(value)); }
   const n = cisloZPole(text);
   const chyba = text.trim() !== '' && (n === null || (min !== undefined && n < min));
+  // Neplatný text nesmí projít jako „neznámé maximum“: nativní validita zablokuje odeslání.
+  const pole = useRef<HTMLInputElement>(null);
+  useEffect(() => { pole.current?.setCustomValidity(chyba ? `${label}: zadejte číslo.` : ''); }, [chyba, label]);
   return (
     <label className="block text-sm font-medium text-slate-700">{label}
-      <input inputMode="decimal" value={text} placeholder={placeholder} aria-invalid={chyba}
+      <input ref={pole} inputMode="decimal" value={text} placeholder={placeholder} aria-invalid={chyba}
         onChange={(e) => { setText(e.target.value); const m = cisloZPole(e.target.value); setVideno(m); onChange(m); }}
         className={`${POLE} ${chyba ? 'border-red-500' : ''}`} />
       {chyba && <span className="mt-1 block text-xs text-red-700">Zadejte číslo{min !== undefined ? ` od ${naText(min)}` : ''}.</span>}
@@ -124,16 +127,15 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
   };
 
   const pouzijNavrh = () => {
-    if (!navrh) return;
+    if (!navrh || stav === 'odesilam') return;
     setStruktura(structuredClone(navrh.struktura));
-    if (navrh.popis && !popis.includes(navrh.popis)) setPopis(popis ? `${popis}\n${navrh.popis}` : navrh.popis);
     setZPrepisu(true);
     setZkontrolovano(false);
   };
 
   const zkopiruj = (id: string) => {
     const z = zaznamy.find((x) => x.id === id);
-    if (!z?.struktura) return;
+    if (!z?.struktura || stav === 'odesilam') return;
     setStruktura(structuredClone(z.struktura));
     setPopis(z.popis);
     setOdkaz(z.odkaz);
@@ -154,6 +156,7 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
   const odesli = async (event: React.FormEvent) => {
     event.preventDefault();
     if (!s) return;
+    const vyber = `${rok}|${oborKlic}|${koloHodnota}`;
     setStav('odesilam');
     setZprava('');
     try {
@@ -168,6 +171,8 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
       if (!response.ok) throw new Error(data.error || 'Zápis se nepodařil.');
       const saved = data.kriterium as KriteriaSkoly;
       setZaznamy((old) => [...old.filter((z) => !(z.obor_klic === saved.obor_klic && z.rok === saved.rok && z.kolo === saved.kolo)), saved]);
+      // Výběr je během ukládání zamčený; kontrola jen pojistka, ať odpověď nepatří jinam.
+      if (`${saved.rok}|${saved.obor_klic}|${saved.kolo}` !== vyber) return;
       setZPrepisu(false);
       setStav('ulozeno');
       setZprava('Pravidla jsme uložili k vybranému oboru, ročníku a rozsahu kol.');
@@ -203,6 +208,7 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
       </div>}
       {!dostupne && <p role="alert" className="mt-4 rounded-lg bg-amber-50 p-3 text-sm text-amber-900">Databázová část pilotu zatím není připravená. Formulář nyní nelze uložit.</p>}
       <form onSubmit={odesli} className="mt-5 space-y-6">
+        <fieldset disabled={stav === 'odesilam'} className="space-y-6">
         <div className="grid gap-4 sm:grid-cols-[10rem_1fr]">
           <label className="block text-sm font-medium text-slate-700">Rok přijímání
             <select value={rok} onChange={(e) => zmenRok(Number(e.target.value))} className={POLE}>
@@ -226,6 +232,7 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
           </div>
           {!vsechnaKola && !soucasny && spolecny && <p className="mt-2 rounded-lg bg-blue-50 p-3 text-sm text-blue-900">Pro {kolo}. kolo teď platí pravidla pro všechna kola. Uložením vytvoříte výjimku pro toto kolo.</p>}
         </fieldset>
+        </fieldset>
         {obor && obor.podkladRok !== rok && <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">Tento obor známe z nabídky {obor.podkladRok}. Pro rok {rok} jde zatím o plánované údaje; nabídku v DiPSy ještě nemáme potvrzenou.</p>}
         {obor && stavPravidel.stav !== 'nezname' && <details className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm text-slate-800">
           <summary className="cursor-pointer font-medium">Co o bodování tohoto oboru už víme</summary>
@@ -236,6 +243,7 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
             {stavPravidel.pravidla.map((p) => <li key={p.id}>
               Zdroj: {nazevZdrojeKriterii(p.zdroj)}; {p.zdroj === 'skola' ? 'zadáno' : 'získáno'} {datum(p.zjistenoAt)}{p.overenoAt ? `; ověřeno ${datum(p.overenoAt)}` : ''}{p.novaVerzeAt ? `; nová verze ${datum(p.novaVerzeAt)} čeká na kontrolu` : ''}.
               {odkazNaPodklad(p.zdrojUrl) && <> <a href={odkazNaPodklad(p.zdrojUrl) ?? undefined} target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Podklad</a></>}
+              {p.popis && <p className="mt-1 whitespace-pre-wrap text-slate-800">{p.popis}</p>}
             </li>)}
           </ul>
         </details>}

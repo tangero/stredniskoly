@@ -5,7 +5,7 @@ import type { Spojeni } from './novinky-db.ts';
 import { ocekavaneObdobi, zobrazeneObdobi } from './stav-datovych-sad.ts';
 import type { DolozenePravidlo } from './kriteria-stav.ts';
 import {
-  overStrukturu, poznamkaZPrepisu, souhrnBodovani, strukturaZPrepisu,
+  overStrukturu, souhrnBodovani, strukturaZPrepisu,
   type PrepisProPredvyplneni, type StrukturaKriterii,
 } from './kriteria-struktura.ts';
 
@@ -321,7 +321,6 @@ export interface Predvyplneni {
   /** Rok kritérií, ze kterých přepis vznikl (registr, sada dipsy-kriteria). */
   rok: number;
   struktura: StrukturaKriterii;
-  popis: string;
 }
 
 interface SouborPrepisu { rok: number; data: Record<string, { prepisy: (PrepisProPredvyplneni & { source_id: string })[] }> }
@@ -355,7 +354,7 @@ export async function predvyplneniZPrepisu(obory: OborProKriteria[], rokPrepisu:
     if (!p) continue;
     const doplnek = doplnky?.data[p.source_id];
     const zdroj = { ...p, jpz: doplnek?.jpz ?? null, rovnost: doplnek?.rovnost ?? [] };
-    vysledek[o.klic] = { rok: prepis.rok, struktura: strukturaZPrepisu(zdroj), popis: poznamkaZPrepisu(zdroj) };
+    vysledek[o.klic] = { rok: prepis.rok, struktura: strukturaZPrepisu(zdroj) };
   }
   return vysledek;
 }
