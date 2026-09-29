@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.46 · 29. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.47 · 29. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -192,7 +192,7 @@ Zdroj jsou data uchazečů CERMATu za 1. kolo 2025, kde je u každé volby pří
 3. **Malé počty.** 1 586 ze 4 350 oborů má méně než deset přijatých. Minimum je tam jednotlivý uchazeč, ne stabilní vlastnost oboru, a nezobrazuje se.
 4. **Nepředpovídá příští rok.** Popisuje jeden ročník, nikoli požadavek školy.
 
-**Řazení v Simulátoru přijímaček** (rozhodnutí zadavatele 29. 9. 2026, návrh simulátoru oddíl 12, bod 9): volba „od nejvyšší hranice přijetí“ řadí nabídky sestupně podle nejnižšího výsledku mezi přijatými z pásem přijetí roku podle registru (`min_prijaty`, index `public/simulator_pasma_{rok}.json`). Obory s méně než deseti přijatými (`MIN_PRIJATYCH_PRO_HRANICI`) a bez hodnoty se neřadí mezi ostatní, ale na konec, protože chybějící hodnota není nula. U řazení stojí věta, že těžší přijetí neznamená lepší školu. Neřadí se podle vzdálenosti uchazečova výsledku od hranice ani podle pásma nejistoty.
+**Řazení v Simulátoru přijímaček** (rozhodnutí zadavatele 29. 9. 2026, návrh simulátoru oddíl 12, bod 9): volba „od nejvyšší hranice přijetí“ řadí nabídky sestupně podle nejnižšího výsledku mezi přijatými z pásem přijetí roku podle registru (`min_prijaty`, index `public/simulator_pasma_{rok}.json`). Obory s méně než deseti přijatými (`MIN_PRIJATYCH_PRO_HRANICI`) a bez hodnoty se neřadí mezi ostatní, ale na konec, protože chybějící hodnota není nula. Na konec jdou i obory, kde hranice soutěže nevznikla nebo o ní nerozhodoval test: obory s talentovou zkouškou, obory, kde nikoho neodmítli kvůli počtu míst, a obory s rozporem počtů. U řazení stojí věta, že těžší přijetí neznamená lepší školu. Neřadí se podle vzdálenosti uchazečova výsledku od hranice ani podle pásma nejistoty.
 
 
 **Meziroční posun** (doklad `docs/podklady/overeni-pasem-prijeti-2025-2026.json`, 2 315 oborů s aspoň deseti přijatými v obou ročnících 2025 a 2026): medián absolutní změny 5 bodů, změna o víc než 10 bodů u 16,4 % oborů, korelace 0,879. Tuto větu používá výhrada Simulátoru přijímaček „skupiny popisují 1. kolo, ne předpověď“ (slovy „typicky o 5 bodů, u šestiny oborů o víc než 10“). Návrh simulátoru uváděl 3 body; to je medián změny **šířky** pásma nejistoty, ne posunu hranice.
@@ -700,6 +700,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.47 | Řazení „od nejvyšší hranice přijetí“ v Simulátoru přijímaček dává na konec i obory s talentovou zkouškou, obory, kde nikoho neodmítli kvůli počtu míst, a obory s rozporem počtů (29. 9. 2026, nález review): jejich nejnižší přijatý výsledek není hranicí soutěže. |
 | 1.46 | Simulátor přijímaček, etapa E5 (výhrady v kroku 3): u *Převedeného výsledku testu*, *Podílu přijímaček na bodování*, *Pásma nejistoty* a *Soutěžících o obor* doplněno, kde se v simulátoru zobrazují; u *Pořadí mezi soutěžícími*, že se tam neukazuje. U *Nejnižšího výsledku JPZ mezi přijatými* zapsán doložený meziroční posun (medián 5 bodů), ze kterého stojí výhrada o jednom ročníku; oprava čísla 3 body z návrhu. Výpočty beze změny. |
 | 1.45 | Nový ukazatel **Poloha vůči pásmu** pro skupiny Simulátoru přijímaček (nad pásmem, v pásmu, pod pásmem, obory, kde nikoho neodmítli, bez srovnání; 29. 9. 2026, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 3 a 12). *Průměr JPZ přijatých* ze simulátoru odchází jako porovnávací měřítko (`admission-gap.ts` smazán); ukazatel zůstává pro jiné stránky. |
 | 1.44 | *Nejnižší výsledek JPZ mezi přijatými* smí řadit nabídky v Simulátoru přijímaček (volba „od nejvyšší hranice přijetí“, rozhodnutí zadavatele 29. 9. 2026); obory pod prahem deseti přijatých a bez hodnoty jdou na konec. Hodnota pro simulátor se bere z pásem přijetí přes index `public/simulator_pasma_{rok}.json`. Výpočet beze změny. |

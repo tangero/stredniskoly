@@ -88,8 +88,9 @@ export function StrategiePrihlasek({ polozky, pravidla, rok, onMove, navrhyPojis
         )}
         {k.pozastaveno ? (
           <p className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-slate-700">
-            U některého oboru zatím nevíme, jestli má talentovou zkoušku, protože se jeho údaje nenačetly.
-            Proto teď neukazujeme, které obory se vejdou do přihlášky, ani jestli v ní máš pojistku. Zkus stránku načíst znovu.
+            U některého zvažovaného oboru nevíme, jestli má talentovou zkoušku: buď se jeho údaje nenačetly, nebo obor
+            v datech 1. kola není (například se už nenabízí). Proto teď neukazujeme, které obory se vejdou do přihlášky,
+            ani jestli v ní máš pojistku. Zkus stránku načíst znovu; pokud to nepomůže, odeber obor, který se už nenabízí.
           </p>
         ) : !k.znameSkupiny ? (
           <p className="rounded-lg border border-blue-200 bg-blue-50 p-3 text-blue-900">

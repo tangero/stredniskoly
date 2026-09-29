@@ -96,6 +96,10 @@ test('řazení: dojezd, pak název; hranice od nejvyšší, málo přijatých na
   assert.deepEqual(seradNabidky(n, 'hranice', o).map(x => x.id), ['c', 'd', 'a', 'b']);
   assert.equal(hodnotaHranice(radek({ prijatych: 9 }), MIN), null);
   assert.equal(hodnotaHranice(radek(), MIN), 40);
+  // Nález review (Kimi, kolo 2): talentové obory, obory bez odmítnutých a rozpor počtů hranici nemají.
+  assert.equal(hodnotaHranice(radek({ talentova: true }), MIN), null);
+  assert.equal(hodnotaHranice(radek({ nikdo_neodmitnut: true, neveslo_se: 0, soutezicich: radek().prijatych }), MIN), null);
+  assert.equal(hodnotaHranice(radek({ soutezicich: 999 }), MIN), null);
   assert.equal(hodnotaHranice(undefined, MIN), null);
 });
 

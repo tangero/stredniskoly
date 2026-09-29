@@ -438,7 +438,7 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
             <p className="mt-1 text-slate-600">{stop ? 'Bez omezení krajem. Zvolený typ studia a obory platí dál.' : needsPlace ? 'Vyber město, kraj nebo výchozí zastávku a ukážeme obory v okolí.' : `Bez omezení dojezdem.${city && region ? ` Současně platí kraj: ${region}.` : ''}`}</p>
             {(city || (!stop && region)) && <button className="mt-2 min-h-11 text-blue-700 underline" onClick={() => { setCity(''); setRegion(''); }}>Zrušit územní omezení</button>}
           </div>
-          <p className="mb-4 text-xs text-slate-500">Nabídky doložené{rokPasem !== null ? ` v 1. kole ${rokPasem}` : ''}, v rozsahu denních nezkrácených oborů s povinnou JPZ. Úplná nabídka a kritéria pro nové řízení se doplňují.</p>
+          <p className="mb-4 text-xs text-slate-500">{rokPasem !== null ? `Nabídky doložené v 1. kole ${rokPasem}, v rozsahu` : 'Nabídky v rozsahu'} denních nezkrácených oborů s povinnou JPZ. Úplná nabídka a kritéria pro nové řízení se doplňují.</p>
           <div className="mb-4">
             <SavedSelectionBar
               items={savedItems}

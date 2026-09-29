@@ -206,9 +206,15 @@ export function popisSkupiny(s: Skupina, rok: number): string {
   }
 }
 
-/** Hodnota pro řazení „od nejvyšší hranice přijetí“; null = patří na konec. */
+/**
+ * Hodnota pro řazení „od nejvyšší hranice přijetí“; null = patří na konec.
+ * Hranici nemají obory, kde o přijetí nerozhodoval test (talentová zkouška), kde nikoho
+ * neodmítli kvůli počtu míst (nesoutěžilo se) a obory s rozporem počtů.
+ */
 export function hodnotaHranice(r: RadekPasma | undefined, minPrijatych: number): number | null {
   if (!r || r.min_prijaty === null || r.prijatych === null || r.prijatych < minPrijatych) return null;
+  if (r.talentova || r.nikdo_neodmitnut) return null;
+  if (r.soutezicich === null || r.neveslo_se === null || r.soutezicich !== r.prijatych + r.neveslo_se) return null;
   return r.min_prijaty;
 }
 
