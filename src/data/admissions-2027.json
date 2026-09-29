@@ -2,6 +2,15 @@
   "checkedAt": "2026-09-11",
   "source": "https://msmt.gov.cz/media/wp-content/uploads/2026/08/Casovy-harmonogram_2026-2027.pdf",
   "jpzSource": "https://msmt.gov.cz/media/wp-content/uploads/2026/08/Sdeleni-o-terminech_2026-2027.pdf",
+  "pravidla": {
+    "prihlasek_bezne": 3,
+    "prihlasek_talentove": 2,
+    "rok_pravidel": 2026,
+    "overeno_pro_rizeni": false,
+    "zdroj": "https://msmt.gov.cz/media/wp-content/uploads/2026/08/Metodika_prijimaci-rizeni_2026-2027.pdf",
+    "checkedAt": "2026-09-29",
+    "poznamka": "Školský zákon, § 60b: v 1. kole až tři přihlášky na obory bez talentové zkoušky a dvě na obory s talentovou zkouškou. Opsáno podle pravidel 2026; dokud není ověřeno v metodice pro řízení 2027, text říká „podle pravidel {rok_pravidel}“."
+  },
   "groups": [
     {
       "id": "stredni-skoly",

@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.20 · 28. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.21 · 29. 9. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -127,6 +127,8 @@ Jeden řádek je jeden uchazeč. Soubor má 40 sloupců a list `legenda` s výkl
 | `m_procentni_skor` | matematika, 0 až 100 % | jak těžká je tu matematika | částečně |
 
 **Klíčové omezení:** soubor nese REDIZO a KKOV, ale **ne zaměření**. Vše z něj počítané platí za obor školy jako celek. U 213 z 2 558 kombinací REDIZO a KKOV to znamená, že několik zaměření sdílí jednu hodnotu.
+
+**Index simulátoru** `public/simulator_pasma_{rok}.json` (skript `scripts/build-simulator-pasma.py`, rok pásem z registru) je výtah z pásem přijetí pro Simulátor přijímaček: na obor nejnižší přijatý, meze pásma nejistoty, soutěžící, přijatí, nevešlí, přesné počty uvnitř pásma, příznak „nikoho neodmítli kvůli počtu míst“, talentová zkouška, druh testu (4, 6, 8 let podle KKOV), štítek extra body z přepisu kritérií (2.16; bez přepisu `null`, ne nula) a obec z katalogu (ročník podle sady `cermat-prihlasky`). Nové sloupce zdroje nepoužívá; percentily, předmětový rozbor, kohorty a pětibodová pásma vynechává, protože skupiny v seznamu je nepotřebují a jsou na stránce oboru. 29. 9. 2026: 2 830 oborů, 287 obcí, 184 kB, 36 kB po gzip.
 
 **Soubory druhého kola** (`PZ2024_kolo2`, `PZ2025_kolo2`) mají stejnou strukturu a **nepoužíváme je nikde na webu**. Sahá na ně jen `scripts/offer-history.py`.
 
@@ -340,6 +342,8 @@ Používá ho stránka [přijímačky 2027](../src/app/prijimacky-2027/page.tsx)
 V registru je jako sada `msmt-harmonogram`, období 2027, obnova nejpozději do 30. 9. 2027. Termíny se opisují ručně z harmonogramu a ze sdělení o termínech na webu MŠMT; adresy obou souborů nesou ročník i měsíc vydání, takže se při novém přijímacím řízení mění celé a dotazem HEAD na starou adresu se nová data nepoznají. Kontrola proto hlídá termín obnovy, ne zdroj.
 
 Soubor nese rok v názvu: nový ročník znamená nový soubor a přepnutí období v registru.
+
+**Blok `pravidla`** (od 29. 9. 2026, návrh simulátoru oddíl 4): `prihlasek_bezne` a `prihlasek_talentove` (počet přihlášek v 1. kole na obory bez talentové a s talentovou zkouškou, dnes 3 a 2 podle školského zákona, § 60b), `rok_pravidel` (ročník, podle kterého je počet opsán), `overeno_pro_rizeni` (false, dokud se počet neověří v metodice pro nové řízení; text pak říká „podle pravidel {rok_pravidel}“), `zdroj`, `checkedAt`, `poznamka`. Otázka rodiče: kolik oborů se vejde na přihlášku. Používá ho Simulátor přijímaček (kontrola seznamu oblíbených); počet se nepíše do kódu.
 
 ### 2.14 RSS/Atom feedy školních webů
 
@@ -694,6 +698,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.21 | Index simulátoru `public/simulator_pasma_{rok}.json` jako odvozený výstup dat uchazečů (2.2) a blok `pravidla` (počet přihlášek) v harmonogramu MŠMT (2.13). Žádný nový zdroj ani sloupec. |
 | 1.20 | Hranice krajů z RÚIAN (oddíl 2.17) jako nový zdroj pro mapu krajů na `/veletrhy`: kód NUTS 3 a geometrie používané, název kraje, kód VÚSC a kód REGS ne. Zamítnut kartogram podle počtu akcí a přepočet na obyvatele. |
 | 1.19 | Místní sběr všech 3 091 nabídek katalogu 1. kola 2026: 3 089 platných PDF, dvě oddělené chyby (nulový soubor a rozpor REDIZO). Textová vrstva, OCR a sedm modelových návrhů se uchovávají mimo git; ověřený bodovací postup a veřejný import zůstávají zvláštní krok. |
 | 1.18 | Rešerše veletrhů 24. 9. 2026 (Exa po krajích, Parallel FindAll): 95 záznamů místo 47, zobrazitelných 77 místo 41. Souhrnné záznamy sérií (Úřad práce ve Středočeském kraji, Ústecký kraj, Vysočina, Uherské Hradiště a Vsetín) rozepsány na jednotlivá města. Opraveny Opava (potvrzena, dvoudenní), Kolín (potvrzen webem místa konání), Hitparáda (termín doložen u pořadatele, místo 2026 neuvedeno). Zapsáno, co se počítá za web pořadatele. |

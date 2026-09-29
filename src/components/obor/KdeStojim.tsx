@@ -7,6 +7,7 @@ import {
   type DruhTestu, type KriteriaOboru, type PoziceOboru, type PrevodDruhu,
 } from '@/lib/prevod-testu-vypocet';
 import type { PasmaPrijetiObor } from '@/lib/pasma-prijeti';
+import { extraBody, srazka } from '@/lib/extra-body';
 
 // ============================================================================
 // Kde stojím: pásmový proužek jednoho oboru s výsledkem cvičného testu
@@ -26,21 +27,7 @@ export function jenPrijimacky(k: KriteriaOboru | null | undefined): boolean {
     && k.prepisy.every(p => p.rezim === 'pouze_jpz' && p.jpz_navic.length === 0 && !p.chybi_slozky));
 }
 
-/** Přepis boduje i něco jiného než jednotnou přijímací zkoušku (extra body ve slovníku pojmů). */
-export const extraBody = (p: KriteriaOboru['prepisy'][number]) =>
-  // Složky mimo JPZ, i s neznámým směrem (odečet průměru je také extra body); jen doložené srážky, například za chování, ne.
-  p.rezim === 'jine' && (p.chybi_slozky || p.slozky.some(x => x.max !== 0 && !srazka(x)));
-
-/**
- * Sankce za chování: název mluví o chování a o snížení bodů, ne o prospěchu. Směr bodování
- * o extra bodech nerozhoduje (odečet za průměr je hodnocení prospěchu); „průměr bez známky
- * z chování“ sankce není, stejně jako bonus za chování.
- */
-const RE_CHOVANI = /chování|chovani|kázeň|kazen|důtk|dutk/i;
-const RE_SNIZENI = /odeč|odpoč|sníž|sniz|penaliz|záporn|srážk|srazk|uspokoj/i;
-const RE_PROSPECH = /prospěch|prospech|průměr|prumer|vzdělávání|výsledk|bonus/i;
-export const srazka = (x: KriteriaOboru['prepisy'][number]['slozky'][number]) =>
-  RE_CHOVANI.test(x.nazev) && RE_SNIZENI.test(x.nazev) && !RE_PROSPECH.test(x.nazev);
+export { extraBody, srazka } from '@/lib/extra-body';
 
 /**
  * Blok kritérií jen tam, kde nerozhodovala jen JPZ (rozhodnutí zadavatele

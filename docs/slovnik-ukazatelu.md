@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.42 · 28. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.43 · 29. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -191,6 +191,8 @@ Zdroj jsou data uchazečů CERMATu za 1. kolo 2025, kde je u každé volby pří
 2. **Bez zaměření.** Zdroj nese jen REDIZO a KKOV. U 213 z 2 558 kombinací sdílí několik zaměření jednu hodnotu.
 3. **Malé počty.** 1 586 ze 4 350 oborů má méně než deset přijatých. Minimum je tam jednotlivý uchazeč, ne stabilní vlastnost oboru, a nezobrazuje se.
 4. **Nepředpovídá příští rok.** Popisuje jeden ročník, nikoli požadavek školy.
+
+**Řazení v Simulátoru přijímaček** (rozhodnutí zadavatele 29. 9. 2026, návrh simulátoru oddíl 12, bod 9): volba „od nejvyšší hranice přijetí“ řadí nabídky sestupně podle nejnižšího výsledku mezi přijatými z pásem přijetí roku podle registru (`min_prijaty`, index `public/simulator_pasma_{rok}.json`). Obory s méně než deseti přijatými (`MIN_PRIJATYCH_PRO_HRANICI`) a bez hodnoty se neřadí mezi ostatní, ale na konec, protože chybějící hodnota není nula. U řazení stojí věta, že těžší přijetí neznamená lepší školu. Neřadí se podle vzdálenosti uchazečova výsledku od hranice ani podle pásma nejistoty.
 
 ### Medián JPZ přijatých
 Prostřední výsledek jednotné zkoušky mezi přijatými: polovina přijatých měla stejně nebo míň, polovina stejně nebo víc. Rozsah 0 až 100 bodů. Pole `median_prijatych` v `public/pasma_prijeti_{rok}.json`, generuje `scripts/build-pasma-prijeti.py`.
@@ -671,6 +673,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.43 | *Nejnižší výsledek JPZ mezi přijatými* smí řadit nabídky v Simulátoru přijímaček (volba „od nejvyšší hranice přijetí“, rozhodnutí zadavatele 29. 9. 2026); obory pod prahem deseti přijatých a bez hodnoty jdou na konec. Hodnota pro simulátor se bere z pásem přijetí přes index `public/simulator_pasma_{rok}.json`. Výpočet beze změny. |
 | 1.42 | **Vzdání se přijetí je v obou ročnících přijetí** (28. 9. 2026, rozhodnutí zadavatele). Data uchazečů 2026 vzdání se nerozlišují a vedou ho jako přijetí; v datech 2025 (`vzdal_se_prijeti`, `vzdal_se_prijeti_po_terminu`, 1 780 přihlášek) se nově počítá také jako přijetí, včetně pořadí přijaté přihlášky, aby počty přijatých a soutěžících šly mezi ročníky porovnat. Pásma 2025: změna u 580 oborů (8 nových nad prahem), pásmo nejistoty u 12, *Rozhodl test* u 195; kontext přihlášek 2025 u 2 306 oborů. Data 2026 beze změny. Přepočítány rozdělení vět *Rozhodl test* 2025 (52,3 / 42,1 / 5,6 %), stabilita mezi ročníky (307 změn kategorie, šířka pásma 0,697) a tabulka shody se souhrny. |
 | 1.41 | **Rozdíl soutěžících proti souhrnům 1. kola rozložen** (28. 9. 2026). Heslo *Soutěžící o obor* nese tabulku příčin rozdílu mezi `soutezicich` z dat uchazečů a přijatými s nevešlými ze souhrnů: bez výsledku zkoušky, vzdání se přijetí vedené v datech uchazečů 2026 jako přijetí, víc přihlášek téhož uchazeče, nesoulad souborů CERMAT. Přepočítány věty u *Rozhodl test* z pásem 2026: 1 406 oborů s hodnotou (medián 0,980), rozdělení tří vět u 1 393 oborů 59,2 / 34,1 / 6,7 % místo neaktuálních 1 427 a 52,5 / 41,3 / 6,2 %. Výpočet beze změny. |
 | 1.40 | **Data uchazečů jen za denní nezkrácené studium** (28. 9. 2026). Pásma přijetí, pořadí mezi soutěžícími, výsledek uchazečů o obor, obory výš a níž a souběžné přihlášky počítají jen přihlášky do denní formy (`ss{k}_forma` den, den2) a nezkráceného studia (`ss{k}_zkraceno` = 2), stejně jako souhrny 1. kola (`is_valid_flat`). Dálkové, večerní, distanční, kombinované a zkrácené studium sdílí s denním oborem klíč REDIZO_KKOV a dřív padalo pod něj: například cestovní ruch SŠ gastronomické a hotelové (Praha) měl 191 soutěžících a pásmo nejistoty 6–50 bodů, po opravě 109 a 43–50. Pořadí přihlášek a přijetí se dál bere ze všech přihlášek (přijetí výš na dálkové studium je „výš“). V roce 2026 se změnilo 75 denních oborů s pásmy a vypadlo 49 oborů bez denní nabídky; přepočteny odvozená hranice, předmětový sklon a stabilita *rozhodl test*. |
