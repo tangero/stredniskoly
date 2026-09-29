@@ -241,6 +241,7 @@ Podrobná dokumentace jednotlivých oblastí projektu:
 - [Využití dat o uchazečích](../docs/teze-vyuziti-dat-jpz-2027.md) — pásma přijetí a co o přijetí rozhodlo, s oponenturami
 - [Pásmový proužek](../docs/navrh-pasmovy-prouzek-2027.md) — kde uchazeč stojí proti loňským: převis vysvětluje jen čtvrtinu rozdílů v prahu, simulátor dnes porovnává s průměrem, který nezná rozptyl; prototyp na /prototyp/pasma (nezalistovaná stránka)
 - [Kde stojím](../docs/navrh-kde-stojim-2027.md) — návrh ke schválení: proužek s převedeným výsledkem cvičného testu TAU a kritérii na stránce oboru, pak v simulátoru; před nasazením oprava pásem (#183)
+- [Simulátor přijímaček](../docs/navrh-simulator-prijimacek-2027.md) — fáze 2 Kde stojím, ke schválení: cvičný test TAU, nabídky ve třech skupinách podle pásma 1. kola s filtrem dojezdu a města, oblíbené se strategií řazení (preference + pojistka, počet přihlášek z pravidel MŠMT), výhrady; kompaktní index pásem 28 kB
 - [Kritéria přijetí z DiPSy](../docs/predani-kriteria-prijeti-2026-09-25.md) — přepis PDF kritérií 2026 (DeepSeek, celé PDF), kontrola Jevem a vzorků naslepo, chybovost zhruba každý desátý přepis, postup pro ročník 2027 (issue #181)
 - [Aktuální ročník dat](../docs/navrh-aktualniho-rocniku-dat.md) — návrh opravy zobrazení roku 2025 místo 2026
 - [Prezentace dat na stránce školy](../docs/navrh-prezentace-dat-skoly-2027.md) — co a jak ukazovat rodičům
