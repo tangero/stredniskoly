@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.27 · 28. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.28 · 29. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -60,6 +60,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **pořadí v kraji podle zájmu**, **pořadí v kraji podle výsledků přijatých** | pořadí oboru mezi obory stejného typu a délky v kraji (Praha samostatně) | „2. z 32 osmiletých gymnázií ve Středočeském kraji podle výsledků přijatých“; vždy s rokem | žebříček, nejlepší, top, hodnocení školy |
 | **cvičný test** | test z minulých přijímaček v aplikaci CERMAT TAU, který si uchazeč napíše doma | „cvičný test, tedy test z minulých přijímaček v aplikaci CERMAT TAU“ | zkouška nanečisto (placená služba jinde), test (bez upřesnění) |
 | **převedený výsledek** | *Převedený výsledek testu* ze slovníku ukazatelů: body cvičného testu přepočtené přes pořadí na body roku pásem | „kolik bodů by to bylo v roce {rok}: podle toho, kolik uchazečů mělo ve stejném testu horší výsledek“; v bloku vždy i výhrada, že spíš nadhodnocuje | přepočtené body, normalizované body |
+| **výsledek bez převodu** (volba „jiný test nebo odhad“) | body z testu mimo převodní tabulky nebo odhad; porovnávají se přímo s body roku pásem, bez převodu | výrazná výhrada v každém bloku, kde se s ním počítá: „srovnání platí jen tehdy, pokud byl test stejně těžký jako jednotná přijímací zkouška v roce {rok}; to ale nikdo neověřil“ | převedený výsledek (pro nepřevedené číslo), skutečné body, předpověď |
 | **rozmezí, kde rozhodovalo i něco jiného** | pásmo nejistoty ze slovníku ukazatelů: body, u kterých se část soutěžících uchazečů dostala a část ne | na proužku jako legenda; ve větě s počty: „jsi v rozmezí, kde se v roce {rok} ze 41 uchazečů dostalo 24“ | pásmo nejistoty (v textu pro rodiče), hranice přijetí |
 | **kritéria {rok}** | kritéria přijetí, podle kterých škola řadila uchazeče v daném minulém ročníku | „pravidla, podle kterých škola v roce {rok} řadila uchazeče; pro nové přijímací řízení platí nová“ | aktuální kritéria (pro minulý ročník), kritéria bez roku |
 | **extra body** | body, které škola při přijímání počítala vedle jednotné přijímací zkoušky za něco jiného (prospěch ze základní školy, školní přijímací zkouška, pohovor, soutěže), přičítané i odečítané (například odečet průměru); samotné srážky za chování sem nepatří; vždy za konkrétní minulý ročník podle kritérií {rok} | „extra body, tedy body za něco jiného než jednotnou přijímací zkoušku, například za prospěch ze základní školy nebo školní přijímací zkoušku“ | bonusové body, body navíc (u vyšší váhy jednoho předmětu to extra body nejsou), extra body bez roku jako jistota pro nové řízení |
@@ -124,6 +125,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.28 | Pojem **výsledek bez převodu** pro volbu „Jiný test nebo odhad“ ve sdíleném zadání cvičného testu (stránka oboru a krok 1 Simulátoru přijímaček, 29. 9. 2026, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 2). Výhrada je výrazná, protože srovnání stojí na neověřeném předpokladu stejně těžkého testu. |
 | 1.27 | Pojem **extra body** pro zvýrazněný blok kritérií na stránce oboru („O přijetí rozhodují i extra body“, 28. 9. 2026). Štítek stojí nad podnadpisem s rokem kritérií, aby netvrdil jistotu pro nové řízení. |
 | 1.26 | Pojmy **cvičný test**, **převedený výsledek**, **rozmezí, kde rozhodovalo i něco jiného** a **kritéria {rok}** pro proužek „Kde stojím“ na stránce oboru (28. 9. 2026, [návrh](navrh-kde-stojim-2027.md)). *Pásmo nejistoty* zůstává názvem v datech, rodičům se říká rozmezí. |
 | 1.25 | Souhrn maturity za školu mluví o dostupných hodnoceních skupin oborů; jediný hodnocený rok se neoznačuje „každý rok“ (23. 9. 2026). |

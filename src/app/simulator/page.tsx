@@ -3,19 +3,21 @@ import { Suspense } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SimulatorClient } from './SimulatorClient';
+import { rokPasemPrijeti } from '@/lib/pasma-prijeti';
+import { nactiPrevodTestu } from '@/lib/prevod-testu';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/simulator' },
-  title: 'Simulátor výběru školy 2027',
-  description: 'Vyberte obor a nastavte orientační dojezd veřejnou dopravou. Uložte si školy a prohlédněte si jejich historické výsledky.',
+  title: 'Simulátor přijímaček 2027',
+  description: 'Zadejte výsledek cvičného testu, vyberte obor a nastavte orientační dojezd veřejnou dopravou. Uložte si obory a prohlédněte si jejich výsledky přijímacího řízení.',
   openGraph: {
-    title: 'Simulátor výběru školy 2027 | Přijímačky na střední školy',
-    description: 'Obory, orientační dojezd veřejnou dopravou a vlastní výběr škol pro rok 2027.',
+    title: 'Simulátor přijímaček 2027 | Přijímačky na střední školy',
+    description: 'Výsledek cvičného testu, obory, orientační dojezd veřejnou dopravou a vlastní výběr oborů pro rok 2027.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Simulátor výběru školy 2027',
-    description: 'Obory, orientační dojezd veřejnou dopravou a vlastní výběr škol pro rok 2027.',
+    title: 'Simulátor přijímaček 2027',
+    description: 'Výsledek cvičného testu, obory, orientační dojezd veřejnou dopravou a vlastní výběr oborů pro rok 2027.',
   },
 };
 
@@ -28,14 +30,16 @@ function SimulatorLoading() {
   );
 }
 
-export default function SimulatorPage() {
+export default async function SimulatorPage() {
+  // Roky z registru: pásma ze sady cermat-uchazeci-kolo1, převod ze sady cermat-prevod-testu.
+  const [rokPasem, prevod] = await Promise.all([rokPasemPrijeti(), nactiPrevodTestu()]);
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
       <Header />
 
       <main className="flex-1">
         <Suspense fallback={<SimulatorLoading />}>
-          <SimulatorClient />
+          <SimulatorClient rokPasem={rokPasem} prevod={prevod} />
         </Suspense>
       </main>
 

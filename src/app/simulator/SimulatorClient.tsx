@@ -10,6 +10,8 @@ import { rankAdmissionOffers, rankingPages, type AdmissionContext } from '@/lib/
 import { MAX_SELECTION, readSelection, selectionForShare, shareUrlFor } from '@/lib/simulator-state';
 import { OfferComparisonTable, type ComparisonOffer } from '@/components/simulator/OfferComparisonTable';
 import { SavedSelectionBar } from '@/components/simulator/SavedSelectionBar';
+import { cislo, useZadaneTesty, ZadaniTestu } from '@/components/obor/ZadaniTestu';
+import { TRIDA_TAU, type DruhTestu, type PrevodDruhu, type PrevodTestu } from '@/lib/prevod-testu-vypocet';
 
 interface School {
   id: string;
@@ -52,11 +54,12 @@ const field = 'mt-1 min-h-11 w-full rounded-lg border border-slate-300 bg-white 
 const normalize = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 const countLabel = (n: number) => `${n} ${n === 1 ? 'obor' : n >= 2 && n <= 4 ? 'obory' : 'oborů'}`;
 
-/** Prázdné pole znamená „nevím“, nikoli nula bodů. */
-function readOwnScore(raw: string): number | null {
-  if (!raw.trim()) return null;
-  const number = Number(raw.replace(',', '.'));
-  return Number.isFinite(number) && number >= 0 && number <= 50 ? number : null;
+/** Druh testu podle toho, po které třídě uchazeč hledá; „všechny typy“ nemají jeden. */
+const DRUH_PODLE_TRIDY: Record<string, DruhTestu | undefined> = { '9': '4', '7': '6', '5': '8' };
+
+function prevodDruhu(prevod: PrevodTestu | null, druh: DruhTestu): PrevodDruhu | null {
+  const terminy = prevod?.druhy[druh];
+  return prevod && terminy ? { rok_testu: prevod.rok_testu, rok_cile: prevod.rok_cile, terminy } : null;
 }
 
 function toComparisonOffer(school: School, commuteMinutes: number | null): ComparisonOffer {
@@ -77,13 +80,18 @@ function toComparisonOffer(school: School, commuteMinutes: number | null): Compa
   };
 }
 
-export function SimulatorClient() {
+export interface SimulatorClientProps {
+  /** Rok zobrazených pásem 1. kola z registru (sada cermat-uchazeci-kolo1). */
+  rokPasem: number | null;
+  /** Převodní tabulky testů TAU pro všechny druhy (sada cermat-prevod-testu). */
+  prevod: PrevodTestu | null;
+}
+
+export function SimulatorClient({ rokPasem, prevod }: SimulatorClientProps) {
   const params = useSearchParams();
   const showingSelection = params.get('vyber') === '1' || params.get('srovnani') === '1';
   // Uložený výběr je stav aplikace, nikoli obsah adresy: odkaz už celý výběr neunese.
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
-  const [ownCzech, setOwnCzech] = useState('');
-  const [ownMaths, setOwnMaths] = useState('');
   const [onlySaved, setOnlySaved] = useState(false);
   const [view, setView] = useState<'table' | 'cards'>('table');
   const [legacySaved, setLegacySaved] = useState<School[]>([]);
@@ -91,6 +99,12 @@ export function SimulatorClient() {
   const [error, setError] = useState('');
   const [retry, setRetry] = useState(0);
   const [grade, setGrade] = useState('9');
+  // Druh testu jen pro „všechny typy“; jinak ho určuje třída.
+  const [druhVolba, setDruhVolba] = useState<DruhTestu>('4');
+  const druh = DRUH_PODLE_TRIDY[grade] ?? druhVolba;
+  const prevodVybraneho = useMemo(() => prevodDruhu(prevod, druh), [prevod, druh]);
+  // Stejný klíč úložiště jako proužek na stránce oboru: co uchazeč zadal tam, platí i tady.
+  const testy = useZadaneTesty({ druh, prevod: prevodVybraneho, rok: rokPasem ?? 0, pamatovat: rokPasem !== null });
   const [query, setQuery] = useState('');
   const [region, setRegion] = useState('');
   const [city, setCity] = useState('');
@@ -205,10 +219,11 @@ export function SimulatorClient() {
     () => typeof window === 'undefined' ? selectedIds : selectionForShare(selectedIds, window.location.origin),
     [selectedIds],
   );
-  const ownScore = useMemo(() => ({
-    czech: readOwnScore(ownCzech),
-    maths: readOwnScore(ownMaths),
-  }), [ownCzech, ownMaths]);
+  // Tabulka porovnává body po předmětech s průměry přijatých; bere první vyplněný test bez převodu.
+  const ownScore = useMemo(() => {
+    const prvni = testy.testy.find(t => cislo(t.cj) !== null && cislo(t.ma) !== null);
+    return { czech: prvni ? cislo(prvni.cj) : null, maths: prvni ? cislo(prvni.ma) : null };
+  }, [testy.testy]);
   const estimates = useMemo(() => {
     const result = new Map<string, Estimate>();
     const duplicates = new Set<string>();
@@ -299,31 +314,50 @@ export function SimulatorClient() {
     try { await navigator.clipboard.writeText(url); setNotice(`Odkaz zkopírován.${note}`); }
     catch { setNotice(`Odkaz označ a zkopíruj ručně.${note}`); }
   }
+  const krok1 = rokPasem === null ? null : <section aria-labelledby="krok-1" className="mt-6 rounded-xl border border-slate-200 bg-white p-4 sm:p-5">
+    <h2 id="krok-1" className="text-xl font-bold text-slate-900">1. Udělej si cvičný test</h2>
+    <p className="mt-1 text-sm text-slate-600">
+      Cvičný test, tedy test z minulých přijímaček v aplikaci CERMAT TAU. Jen u testů, které umíme převést,
+      poznáš, kolik bodů by to bylo v roce {rokPasem}.
+    </p>
+    <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Pro který test zadáváš výsledky">
+      {(['4', '6', '8'] as DruhTestu[]).map(d => (
+        <button key={d} type="button" className={`${button} ${druh === d ? 'border-blue-500 bg-blue-50 text-blue-800' : ''}`} aria-pressed={druh === d}
+          onClick={() => { setDruhVolba(d); if (grade !== 'all') { setGrade(String(TRIDA_TAU[d])); setVisible(20); } }}>
+          Test pro {TRIDA_TAU[d]}. třídu
+        </button>
+      ))}
+    </div>
+    <p className="mt-2 text-sm text-slate-600">
+      {druh === '4' ? 'Čtyřleté obory' : druh === '6' ? 'Šestiletá gymnázia' : 'Osmiletá gymnázia'} přijímají podle
+      testu pro {TRIDA_TAU[druh]}. třídu. Hlásíš-li se i na jiný typ školy, přepni test a zadej jeho výsledek zvlášť;
+      oba zůstanou uložené.
+    </p>
+    <div className="mt-3">
+      <ZadaniTestu
+        stav={testy} druh={druh} rok={rokPasem} prevodVstup={prevodVybraneho} pamatovat
+        kdeJeVysledek="Ve výsledcích se počítá s"
+        poznamkaUlozeni="Platí i pro proužek na stránkách oborů se stejným testem."
+      />
+    </div>
+  </section>;
   const scoreControls = <>
-          <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
-            <div className="flex flex-wrap items-end gap-3">
-              <label className="text-sm font-medium">Moje čeština
-                <input className={`${field} w-28`} inputMode="decimal" value={ownCzech} onChange={e => setOwnCzech(e.target.value)} placeholder="z 50" aria-describedby="own-score-help" />
-              </label>
-              <label className="text-sm font-medium">Moje matematika
-                <input className={`${field} w-28`} inputMode="decimal" value={ownMaths} onChange={e => setOwnMaths(e.target.value)} placeholder="z 50" aria-describedby="own-score-help" />
-              </label>
-            </div>
+          <div className="mb-4 mt-4 flex flex-wrap items-end justify-between gap-3">
+            <p id="own-score-help" className="max-w-2xl text-xs text-slate-600">
+              Tabulka porovnává body z prvního zadaného testu s průměrem přijatých po předmětech, a to bez převodu.
+              U cvičného testu z jiného roku je to jen orientační. Prázdné pole znamená „nevím“, nikoli nula.
+            </p>
             <div className="flex gap-2" role="group" aria-label="Podoba výsledků">
               <button className={`${button} ${view === 'table' ? 'border-blue-500 bg-blue-50 text-blue-800' : ''}`} aria-pressed={view === 'table'} onClick={() => setView('table')}>Tabulka</button>
               <button className={`${button} ${view === 'cards' ? 'border-blue-500 bg-blue-50 text-blue-800' : ''}`} aria-pressed={view === 'cards'} onClick={() => setView('cards')}>Karty</button>
             </div>
           </div>
-          <p id="own-score-help" className="mb-4 text-xs text-slate-600">
-            Body zadej za každý test zvlášť, každý je na škále 0–50. Slouží jen k porovnání s průměry z roku 2026 v tomto prohlížeči;
-            nikam se neodesílají a do sdíleného odkazu nepatří. Prázdné pole znamená „nevím“, nikoli nula.
-          </p>
   </>;
 
   return <div className="mx-auto max-w-[1600px] px-4 py-6 sm:py-10">
     <nav aria-label="Hledání a výběr" className="mb-7 flex flex-wrap gap-2">
       <Link href="/#vyhledavani" className={button}>Hledat školu nebo město</Link>
-      <button className={`${button} ${!showingSelection ? 'border-blue-500 text-blue-800' : ''}`} onClick={() => updateUrl({ vyber: null, srovnani: null })}>Simulátor</button>
+      <button className={`${button} ${!showingSelection ? 'border-blue-500 text-blue-800' : ''}`} onClick={() => updateUrl({ vyber: null, srovnani: null })}>Simulátor přijímaček</button>
       <button className={`${button} ${showingSelection ? 'border-blue-500 text-blue-800' : ''}`} onClick={() => updateUrl({ vyber: '1' })}>Můj výběr ({selectedIds.length})</button>
     </nav>
     <p role="status" className="text-sm text-slate-600">{notice} {storageStatus}</p>
@@ -331,15 +365,17 @@ export function SimulatorClient() {
       <h1 className="text-3xl font-bold">Můj výběr 2027</h1><p className="mt-2 text-slate-600">Uložené obory jsou kandidáti. Tento seznam není přihláška.</p>
       {selectedIds.length > 0 && <div className="my-4"><p className="mb-3 text-sm text-slate-600">Výsledky oborů můžeš porovnat níže.</p><button className={button} onClick={share}>Sdílet výběr</button></div>}
       {!selectedIds.length && <p className="my-6">Zatím tu nic není. Přidej obor ze simulátoru.</p>}
+      {krok1}
       {scoreControls}
       {comparison(selectedIds.flatMap(id => { const school = catalogIndex.get(normalizeSchoolKey(id)); return school ? [school] : []; }))}
       {selectedIds.map(id => { const school = catalogIndex.get(normalizeSchoolKey(id)); return school ? null : <div key={id} className="my-4"><p>{!catalog && !error ? 'Načítám uložený obor…' : 'Uložený obor se nepodařilo jednoznačně dohledat. Výběr zůstal zachovaný.'}</p><button className={button} onClick={() => toggle(id)}>Odebrat nedohledaný obor</button></div>; })}
       {shareUrl && <label className="mt-4 block text-sm">Odkaz obsahuje jen výběr oborů a zobrazí ho každý, komu jej předáš. Zastávka ani dojezd se nesdílejí.<input className={field} value={shareUrl} readOnly onFocus={e => e.target.select()} /></label>}
     </section> : <>
-      <p className="text-sm font-semibold text-blue-700">SIMULÁTOR 2027</p>
+      <p className="text-sm font-semibold text-blue-700">SIMULÁTOR PŘIJÍMAČEK 2027</p>
       <h1 className="mt-1 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Které školy mi vyhovují?</h1>
       <p className="mt-3 text-slate-600">Zkus změnit obor nebo délku cesty. Uvidíš, jaké možnosti přibudou.</p>
       <div className="mt-5 flex flex-wrap gap-2" role="group" aria-label="Po které třídě hledáš">{[['9', 'Po 9. třídě'], ['7', 'Po 7. třídě'], ['5', 'Po 5. třídě'], ['all', 'Všechny typy']].map(([id, label]) => <button key={id} className={`${button} ${grade === id ? 'border-blue-500 bg-blue-50 text-blue-800' : ''}`} aria-pressed={grade === id} onClick={() => { setGrade(id); setVisible(20); }}>{label}</button>)}</div>
+      {krok1}
       <button className={`${button} mt-4 w-full lg:hidden`} aria-expanded={filtersOpen} aria-controls="simulator-filters" onClick={() => setFiltersOpen(!filtersOpen)}>Upravit podmínky · {stop ? `do ${limit} min` : 'bez dojezdu'} · {subjects.length ? countLabel(subjects.length) : 'všechny obory'}</button>
       <div className="mt-6 grid gap-8 lg:grid-cols-[260px_1fr]">
         <aside id="simulator-filters" className={`${filtersOpen ? 'block' : 'hidden'} border-t-2 border-blue-600 pt-4 lg:block`}>
