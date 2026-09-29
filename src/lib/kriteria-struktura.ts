@@ -122,7 +122,10 @@ export function souhrnBodovani(s: StrukturaKriterii): SouhrnBodovani {
     ? zaokrouhli(s.vyslovne_max_celkem - celkem) : null;
   // Nulová maxima JPZ (obor bez zkoušky, podmínky slovně) nejsou „jen JPZ“.
   const bezJpz = cjl_max === 0 && mat_max === 0;
-  const jenJpz = !bezJpz && s.slozky.every((x) => x.max === 0) && koef === null && vyssi_vaha === null;
+  // Nestejná maxima předmětů (ČJL 50, MAT 100) jsou vážení, ne prostý součet.
+  const nestejnaMaxima = cjl_max !== null && mat_max !== null && cjl_max !== mat_max;
+  const jenJpz = !bezJpz && !nestejnaMaxima && s.slozky.every((x) => x.max === 0)
+    && koef === null && vyssi_vaha === null;
   return { jpzMax, ostatniMax, celkem, podilJpzPct, rozdilProtiVyhlasenemu, jenJpz };
 }
 

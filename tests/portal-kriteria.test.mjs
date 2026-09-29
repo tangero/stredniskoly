@@ -79,6 +79,9 @@ test('součet: vážení, přepočet, srážka a kontrola proti vyhlášenému m
   const prepocet = souhrnBodovani({ ...prazdnaStruktura(), jpz: { cjl_max: 50, mat_max: 50, prepoctovy_koeficient_pct: 60, vyssi_vaha: null } });
   assert.equal(prepocet.jpzMax, 60);
   assert.equal(prepocet.jenJpz, false, 'přepočet není prostý součet');
+  const nestejna = souhrnBodovani({ ...prazdnaStruktura(), jpz: { cjl_max: 50, mat_max: 100, prepoctovy_koeficient_pct: null, vyssi_vaha: null } });
+  assert.equal(nestejna.jenJpz, false, 'nestejná maxima předmětů jsou vážení');
+  assert.equal(souhrnBodovani(prazdnaStruktura()).jenJpz, true, 'stejná maxima bez dalších bodů jsou prostý součet');
   const nezname = souhrnBodovani({ ...prazdnaStruktura(), slozky: [{ druh: 'pohovor', nazev: 'pohovor', max: null, poznamka: '' }] });
   assert.equal(nezname.celkem, null);
   assert.equal(nezname.podilJpzPct, null);
