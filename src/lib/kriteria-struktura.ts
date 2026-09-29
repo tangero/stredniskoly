@@ -120,7 +120,9 @@ export function souhrnBodovani(s: StrukturaKriterii): SouhrnBodovani {
   const podilJpzPct = jpzMax !== null && celkem ? Math.round(jpzMax / celkem * 100) : null;
   const rozdilProtiVyhlasenemu = celkem !== null && s.vyslovne_max_celkem !== null
     ? zaokrouhli(s.vyslovne_max_celkem - celkem) : null;
-  const jenJpz = s.slozky.every((x) => x.max === 0) && koef === null && vyssi_vaha === null;
+  // Nulová maxima JPZ (obor bez zkoušky, podmínky slovně) nejsou „jen JPZ“.
+  const bezJpz = cjl_max === 0 && mat_max === 0;
+  const jenJpz = !bezJpz && s.slozky.every((x) => x.max === 0) && koef === null && vyssi_vaha === null;
   return { jpzMax, ostatniMax, celkem, podilJpzPct, rozdilProtiVyhlasenemu, jenJpz };
 }
 

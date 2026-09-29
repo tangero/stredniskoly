@@ -101,6 +101,10 @@ test('předvyplnění z přepisu: druhy, maxima JPZ, minima a rovnost', () => {
   const krat18 = strukturaZPrepisu({ zamereni: '', slozky: [], jpz_navic: [], minima: [], jpz: { cjl_max: 50, mat_max: 50, prepoctovy_koeficient_pct: 1800 } });
   assert.doesNotThrow(() => overStrukturu(krat18));
   assert.equal(souhrnBodovani(krat18).jpzMax, 1800);
+  // Obor bez JPZ a bez bodů (podmínky slovně) není „jen JPZ“ a jde uložit.
+  const bezJpz = { ...prazdnaStruktura(), jpz: { cjl_max: 0, mat_max: 0, prepoctovy_koeficient_pct: null, vyssi_vaha: null } };
+  assert.equal(souhrnBodovani(bezJpz).jenJpz, false);
+  assert.equal(overZadani({ oborKlic: 'o', rok: 2027, kolo: null, struktura: bezJpz, popis: 'Talentová zkouška bez bodů', odkaz: '', ocekavaneId: null }, [2027]).value.rezim, 'jine');
   // 600006662_75-31-M/01: maxima už po přepočtu a k nim koeficient nesmí násobit dvakrát.
   const dvakrat = strukturaZPrepisu({ zamereni: '', slozky: [{ nazev: 'průměr', max: 100 }], jpz_navic: [], minima: [],
     jpz: { cjl_max: 75, mat_max: 75, prepoctovy_koeficient_pct: 150, max_po_prepoctu: 150 } });
