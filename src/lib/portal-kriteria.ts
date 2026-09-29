@@ -334,12 +334,12 @@ async function nactiJson<T>(soubor: string): Promise<T | null> {
   }
 }
 
-const norm = (s: string) => s.normalize('NFC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('cs-CZ');
 
 /**
  * Předvyplnění pro obory školy z přepisu roku `rokPrepisu` (klíč oboru portálu → návrh).
- * Páruje se přesná nabídka (`source_id`), jinak shoda zaměření; přepis jiného
- * zaměření se nenabízí, ani když je u oboru jediný.
+ * Páruje se přesná nabídka (`source_id`), jinak celá identita oboru (REDIZO, IZO,
+ * KKOV, zaměření, forma, délka) přes katalog roku přepisu. Bez prokázané shody
+ * se předvyplnění nenabízí, ani když je u oboru jediný přepis.
  */
 export async function predvyplneniZPrepisu(obory: OborProKriteria[], rokPrepisu: number): Promise<Record<string, Predvyplneni>> {
   const [prepis, doplnky] = await Promise.all([
@@ -347,11 +347,14 @@ export async function predvyplneniZPrepisu(obory: OborProKriteria[], rokPrepisu:
     nactiJson<SouborPredvyplneni>(`kriteria_predvyplneni_${rokPrepisu}.json`),
   ]);
   if (!prepis) return {};
+  const katalog = await nactiNabidky(rokPrepisu);
+  const klicNabidky = new Map((katalog?.data ?? []).map((r) =>
+    [r.source_id, klicOboru(r.redizo, r.izo, r.kkov, r.zamereni ?? '', r.forma, r.delka_studia)]));
   const vysledek: Record<string, Predvyplneni> = {};
   for (const o of obory) {
     const prepisy = prepis.data[`${o.redizo}_${o.kkov}`]?.prepisy ?? [];
     const p = prepisy.find((x) => x.source_id === o.zdrojId)
-      ?? prepisy.find((x) => norm(x.zamereni) === norm(o.zamereni));
+      ?? prepisy.find((x) => klicNabidky.get(x.source_id) === o.klic);
     if (!p) continue;
     const doplnek = doplnky?.data[p.source_id];
     const zdroj = { ...p, jpz: doplnek?.jpz ?? null, rovnost: doplnek?.rovnost ?? [] };

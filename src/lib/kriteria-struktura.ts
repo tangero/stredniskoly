@@ -172,7 +172,8 @@ export function overStrukturu(raw: unknown): StrukturaKriterii {
   const jpz = {
     cjl_max: cislo(j.cjl_max, { min: 0, max: 1000, pole: 'Maximum z češtiny' }),
     mat_max: cislo(j.mat_max, { min: 0, max: 1000, pole: 'Maximum z matematiky' }),
-    prepoctovy_koeficient_pct: cislo(j.prepoctovy_koeficient_pct, { min: 1, max: 1000, pole: 'Přepočet JPZ' }),
+    // Doložené vzorce násobí JPZ až 18× (např. „(ČJL + MAT) × 18“ = 1 800 %).
+    prepoctovy_koeficient_pct: cislo(j.prepoctovy_koeficient_pct, { min: 1, max: 10000, pole: 'Přepočet JPZ' }),
     vyssi_vaha,
   };
   const slozky = pole(r.slozky, 'Další body').map((x, i) => {

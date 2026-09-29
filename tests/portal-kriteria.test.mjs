@@ -97,6 +97,10 @@ test('předvyplnění z přepisu: druhy, maxima JPZ, minima a rovnost', () => {
   assert.equal(s.minima[0].popis, 'JPZ celkem alespoň 30 bodů');
   assert.deepEqual(s.rovnost, ['lepší matematika']);
   assert.doesNotThrow(() => overStrukturu(s));
+  // 600006239_18-20-M/01: „(JZ CJL + JZ MAT) × 18“ je doložený přepočet 1 800 %.
+  const krat18 = strukturaZPrepisu({ zamereni: '', slozky: [], jpz_navic: [], minima: [], jpz: { cjl_max: 50, mat_max: 50, prepoctovy_koeficient_pct: 1800 } });
+  assert.doesNotThrow(() => overStrukturu(krat18));
+  assert.equal(souhrnBodovani(krat18).jpzMax, 1800);
   // 600005518_79-41-K/41: matematika × 0,5 zapsaná jen jako jpz_navic nesmí vyjít jako „jen JPZ“.
   const vazeni = strukturaZPrepisu({ zamereni: '', slozky: [], minima: [], jpz: null,
     jpz_navic: [{ nazev: 'matematika násobená koeficientem 0,5', max: null }] });
@@ -123,6 +127,9 @@ test('předvyplnění se páruje podle oboru a zaměření z veřejného přepis
   }
   assert.deepEqual(await predvyplneniZPrepisu(obory, 1999), {}, 'chybějící ročník přepisu nic nepředvyplní');
   // 691000107: Strojírenství bez zaměření nesmí převzít přepis zaměření „Technická administrativa“.
+  // Jiná forma nebo délka téhož oboru má jiný klíč a přepis nedostane.
+  const jinaForma = { ...obory[0], klic: 'jiny-klic', zdrojId: 'jina-nabidka' };
+  assert.deepEqual(await predvyplneniZPrepisu([jinaForma], 2026), {});
   const cizi = [{ klic: 'x', redizo: '691000107', kkov: '23-41-M/01', zamereni: '', zdrojId: '24ca8437-d099-4f28-b62b-24c5a58ebd65' }];
   const prepis = JSON.parse(await (await import('node:fs/promises')).readFile('public/kriteria_prijeti_2026.json', 'utf8')).data['691000107_23-41-M/01'];
   if (prepis && prepis.prepisy.every((p) => p.source_id !== cizi[0].zdrojId && p.zamereni)) {
