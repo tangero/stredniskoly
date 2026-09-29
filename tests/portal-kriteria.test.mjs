@@ -101,6 +101,15 @@ test('předvyplnění z přepisu: druhy, maxima JPZ, minima a rovnost', () => {
   const krat18 = strukturaZPrepisu({ zamereni: '', slozky: [], jpz_navic: [], minima: [], jpz: { cjl_max: 50, mat_max: 50, prepoctovy_koeficient_pct: 1800 } });
   assert.doesNotThrow(() => overStrukturu(krat18));
   assert.equal(souhrnBodovani(krat18).jpzMax, 1800);
+  // 600006662_75-31-M/01: maxima už po přepočtu a k nim koeficient nesmí násobit dvakrát.
+  const dvakrat = strukturaZPrepisu({ zamereni: '', slozky: [{ nazev: 'průměr', max: 100 }], jpz_navic: [], minima: [],
+    jpz: { cjl_max: 75, mat_max: 75, prepoctovy_koeficient_pct: 150, max_po_prepoctu: 150 } });
+  assert.equal(dvakrat.jpz.cjl_max, null);
+  assert.match(dvakrat.slozky[0].nazev, /nesouhlasí/);
+  assert.equal(souhrnBodovani(dvakrat).celkem, null);
+  const souhlasi = strukturaZPrepisu({ zamereni: '', slozky: [], jpz_navic: [], minima: [],
+    jpz: { cjl_max: 50, mat_max: 50, prepoctovy_koeficient_pct: 150, max_po_prepoctu: 150 } });
+  assert.equal(souhrnBodovani(souhlasi).jpzMax, 150);
   // 600005518_79-41-K/41: matematika × 0,5 zapsaná jen jako jpz_navic nesmí vyjít jako „jen JPZ“.
   const vazeni = strukturaZPrepisu({ zamereni: '', slozky: [], minima: [], jpz: null,
     jpz_navic: [{ nazev: 'matematika násobená koeficientem 0,5', max: null }] });

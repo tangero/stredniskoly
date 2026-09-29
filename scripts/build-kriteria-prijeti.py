@@ -200,7 +200,8 @@ def ze_strojoveho_prepisu() -> dict[str, dict]:
             "minima": [t for t in (citelne_minimum(m) for m in n.get("minima", [])) if t],
             # Maxima JPZ a pravidla při rovnosti pro předvyplnění formuláře v portálu škol.
             "jpz": {"cjl_max": jpz.get("cjl_max"), "mat_max": jpz.get("mat_max"),
-                    "prepoctovy_koeficient_pct": jpz.get("prepoctovy_koeficient_pct")},
+                    "prepoctovy_koeficient_pct": jpz.get("prepoctovy_koeficient_pct"),
+                    "max_po_prepoctu": jpz.get("max_po_prepoctu")},
             "rovnost": [r for r in n.get("rovnost", []) if isinstance(r, str) and r.strip()],
             "nejasnosti": n.get("nejasnosti", []),
             "prepis": "strojovy",

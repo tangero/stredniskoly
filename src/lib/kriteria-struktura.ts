@@ -224,7 +224,7 @@ export interface PrepisProPredvyplneni {
   slozky: { nazev: string; max: number | null }[];
   jpz_navic: { nazev: string; max: number | null }[];
   minima: string[];
-  jpz?: { cjl_max: number | null; mat_max: number | null; prepoctovy_koeficient_pct: number | null } | null;
+  jpz?: { cjl_max: number | null; mat_max: number | null; prepoctovy_koeficient_pct: number | null; max_po_prepoctu?: number | null } | null;
   rovnost?: string[];
 }
 
@@ -245,19 +245,35 @@ export function hadejDruh(nazev: string): DruhSlozky {
   return HADANI.find(([re]) => re.test(nazev))?.[1] ?? 'jine';
 }
 
+/**
+ * Maxima a přepočet JPZ z přepisu, jen když spolu souhlasí. Přepis občas uvádí
+ * maxima už po přepočtu a k nim i koeficient; převzít obojí by body násobilo dvakrát.
+ */
+function jpzZPrepisu(j: PrepisProPredvyplneni['jpz']): { jpz: StrukturaKriterii['jpz']; nesoulad: string | null } {
+  const koef = j?.prepoctovy_koeficient_pct && j.prepoctovy_koeficient_pct !== 100 ? j.prepoctovy_koeficient_pct : null;
+  const jpz = { cjl_max: j?.cjl_max ?? null, mat_max: j?.mat_max ?? null, prepoctovy_koeficient_pct: koef, vyssi_vaha: null };
+  const po = j?.max_po_prepoctu ?? null;
+  if (po === null || jpz.cjl_max === null || jpz.mat_max === null) return { jpz, nesoulad: null };
+  if (Math.abs((jpz.cjl_max + jpz.mat_max) * (koef ?? 100) / 100 - po) < 0.5) return { jpz, nesoulad: null };
+  return {
+    // Neznámé maximum: součet se nedopočítá, dokud škola údaje nesjednotí.
+    jpz: { cjl_max: null, mat_max: null, prepoctovy_koeficient_pct: null, vyssi_vaha: null },
+    nesoulad: `Přepis uvádí ČJL ${jpz.cjl_max}, MAT ${jpz.mat_max}${koef ? `, přepočet ${koef} %` : ''} a po přepočtu ${po} bodů; to spolu nesouhlasí.`,
+  };
+}
+
 /** Struktura předvyplněná z přepisu; škola ji musí zkontrolovat. */
 export function strukturaZPrepisu(p: PrepisProPredvyplneni): StrukturaKriterii {
-  const koef = p.jpz?.prepoctovy_koeficient_pct ?? null;
+  const { jpz, nesoulad } = jpzZPrepisu(p.jpz);
   return {
     verze: 1,
-    jpz: {
-      // Neznámé maximum zůstane neznámé; výchozích 50 bodů má jen ruční založení.
-      cjl_max: p.jpz?.cjl_max ?? null,
-      mat_max: p.jpz?.mat_max ?? null,
-      prepoctovy_koeficient_pct: koef && koef !== 100 ? koef : null,
-      vyssi_vaha: null,
-    },
+    // Neznámé maximum zůstane neznámé; výchozích 50 bodů má jen ruční založení.
+    jpz,
     slozky: [
+      ...(nesoulad ? [{
+        druh: 'jine' as const, nazev: 'Maxima JPZ z přepisu nesouhlasí', max: null,
+        poznamka: `${nesoulad} Zadejte maxima a přepočet u JPZ výše a tento řádek smažte.`.slice(0, MAX_TEXT),
+      }] : []),
       // Přijímačky zapsané jinak než prostým součtem (vážení, přepočet) přepis neumí
       // převést na pole JPZ. Zůstanou jako řádek s neznámým maximem, takže součet ani
       // „jen JPZ“ se nedopočítá, dokud je editor nevyřeší.

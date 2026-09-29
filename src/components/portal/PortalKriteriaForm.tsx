@@ -251,7 +251,7 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
           <p className="font-medium">Jak chcete začít?</p>
           <div className="flex flex-wrap gap-2">
             {navrh && <button type="button" onClick={pouzijNavrh} className="rounded-lg bg-blue-700 px-3 py-2 font-semibold text-white">Předvyplnit z kritérií {navrh.rok}</button>}
-            <button type="button" onClick={() => zmen(() => undefined)} className="rounded-lg border border-slate-300 bg-white px-3 py-2 font-semibold text-slate-800">Začít od prázdného</button>
+            <button type="button" onClick={() => zmen((x) => { if (obor.konaJPZ === false) { x.jpz.cjl_max = 0; x.jpz.mat_max = 0; } })} className="rounded-lg border border-slate-300 bg-white px-3 py-2 font-semibold text-slate-800">Začít od prázdného</button>
           </div>
           {navrh && <p className="text-slate-600">Předvyplnění vychází z kritérií {navrh.rok}, která škola vložila do DiPSy; převedl je počítač.</p>}
           {vyberKopie}

@@ -33,8 +33,8 @@ export async function POST(request: NextRequest) {
       : undefined;
   if (!obor) return NextResponse.json({ error: 'Obor není v nabídce školy pro tento ročník.' }, { status: 400 });
   // Konání JPZ známe jen z karty DiPSy; u oboru z katalogu je neznámé a škola ho potvrzuje zadáním.
-  if (obor.konaJPZ === false && z.rezim === 'pouze_jpz')
-    return NextResponse.json({ error: 'U tohoto oboru se jednotná přijímací zkouška nekoná. Zadejte, co se boduje, do dalších bodů.' }, { status: 400 });
+  if (obor.konaJPZ === false && (z.rezim === 'pouze_jpz' || (z.struktura.jpz.cjl_max ?? 0) > 0 || (z.struktura.jpz.mat_max ?? 0) > 0))
+    return NextResponse.json({ error: 'U tohoto oboru se jednotná přijímací zkouška nekoná. Maxima JPZ nastavte na 0 a zadejte, co se boduje, do dalších bodů.' }, { status: 400 });
   try {
     const saved = await vTransakci((s) => zapisKriteria(s, {
       ...z,
