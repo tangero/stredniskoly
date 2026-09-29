@@ -90,3 +90,16 @@ test('návrh pojistky: nejbližší nad pásmem se stejným oborem, bez už zva�
   const jine = navrhniPojistku(k, () => false, new Set(['Zdravotnický asistent']), { skupina: x => x.s, minuty: x => x.m, nazev: x => x.id });
   assert.deepEqual(jine.map(x => x.id), ['5', '3', '2']);
 });
+
+test('pořadí na přihlášce čísluje talentové i běžné obory společně', () => {
+  const vykresli = polozky => renderToStaticMarkup(React.createElement(StrategiePrihlasek, {
+    polozky, pravidla, rok: 2026, onMove: () => {}, navrhyPojistky: [], onAdd: () => {},
+  }));
+  const popisky = html => [...html.matchAll(/<p class="text-xs text-slate-600">([^<]*)<\/p>/g)].map(m => m[1]);
+  const talentovyNahore = popisky(vykresli([p('sport', null, true), p('gym', null)]));
+  assert.match(talentovyNahore[0], /^1\. na přihlášce · s talentovou zkouškou/);
+  assert.match(talentovyNahore[1], /^2\. na přihlášce/);
+  const beznyNahore = popisky(vykresli([p('gym', null), p('sport', null, true)]));
+  assert.match(beznyNahore[0], /^1\. na přihlášce/);
+  assert.match(beznyNahore[1], /^2\. na přihlášce · s talentovou zkouškou/);
+});

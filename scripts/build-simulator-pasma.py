@@ -160,16 +160,20 @@ def main() -> None:
                     "podle registru. Připravovaný ročník se sestavuje před přepnutím sady.")
     ap.add_argument("--obdobi-kriterii", help="ročník kritérií (dipsy-kriteria); výchozí podle registru")
     ap.add_argument("--obdobi-katalogu", help="ročník katalogu (cermat-prihlasky); výchozí podle registru")
+    ap.add_argument("--pasma", help="soubor pásem k sestavení místo public/pasma_prijeti_{obdobi}.json "
+                    "(datová linka ho sestavuje z pracovního adresáře úlohy)")
+    ap.add_argument("--vystup", help="kam zapsat index; výchozí public/simulator_pasma_{obdobi}.json")
     args = ap.parse_args()
 
     reg = registr()
     rok_pasem = args.obdobi or obdobi(reg, "cermat-uchazeci-kolo1")
     rok_kriterii = args.obdobi_kriterii or obdobi(reg, "dipsy-kriteria")
     rok_katalogu = args.obdobi_katalogu or obdobi(reg, "cermat-prihlasky")
-    if not (PUBLIC / f"pasma_prijeti_{rok_pasem}.json").exists():
-        sys.exit(f"Pásma pro ročník {rok_pasem} neexistují (public/pasma_prijeti_{rok_pasem}.json).")
+    soubor_pasem = Path(args.pasma) if args.pasma else PUBLIC / f"pasma_prijeti_{rok_pasem}.json"
+    if not soubor_pasem.exists():
+        sys.exit(f"Pásma pro ročník {rok_pasem} neexistují ({soubor_pasem}).")
 
-    pasma = json.loads((PUBLIC / f"pasma_prijeti_{rok_pasem}.json").read_text(encoding="utf-8"))
+    pasma = json.loads(soubor_pasem.read_text(encoding="utf-8"))
     if str(pasma["rok"]) != rok_pasem:
         sys.exit(f"Pásma mají rok {pasma['rok']}, požadovaný ročník {rok_pasem}.")
     soubor_krit = PUBLIC / f"kriteria_prijeti_{rok_kriterii}.json"
@@ -189,9 +193,9 @@ def main() -> None:
     gz = len(gzip.compress(text.encode("utf-8"), 9))
     print(f"{len(index['data'])} oborů, {len(index['obce'])} obcí, {b / 1000:.0f} kB, {gz / 1000:.0f} kB po gzip")
     if not args.zmer:
-        cil = PUBLIC / f"simulator_pasma_{rok_pasem}.json"
+        cil = Path(args.vystup) if args.vystup else PUBLIC / f"simulator_pasma_{rok_pasem}.json"
         cil.write_text(text + "\n", encoding="utf-8")
-        print(f"Zapsáno {cil.relative_to(KOREN)}")
+        print(f"Zapsáno {cil}")
 
 
 if __name__ == "__main__":

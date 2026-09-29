@@ -31,7 +31,9 @@ export function StrategiePrihlasek({ polozky, pravidla, rok, onMove, navrhyPojis
   if (!polozky.length) return null;
   const k = zkontrolujStrategii(polozky, pravidla);
   const vejdeSe = new Set([...k.vejdeSeBezne, ...k.vejdeSeTalentove]);
-  const poradiBezne = new Map(k.vejdeSeBezne.map((id, i) => [id, i + 1]));
+  // Pořadí na přihlášce je společné pro běžné i talentové obory: číslujeme v pořadí seznamu
+  // jen ty, které se do přihlášky vejdou (talentový obor nahoře je 1. volba, běžný pod ním 2.).
+  const poradi = new Map(polozky.filter(p => vejdeSe.has(p.id)).map((p, i) => [p.id, i + 1]));
 
   return (
     <section aria-labelledby="strategie" className="mt-6 rounded-xl border border-slate-200 bg-white p-4 sm:p-5">
@@ -67,8 +69,8 @@ export function StrategiePrihlasek({ polozky, pravidla, rok, onMove, navrhyPojis
               {p.href ? <Link href={p.href} className="block truncate text-sm font-medium text-slate-900 hover:underline">{p.label}</Link>
                 : <p className="truncate text-sm font-medium text-slate-900">{p.label}</p>}
               <p className="text-xs text-slate-600">
-                {p.talentova ? 'S talentovou zkouškou' : poradiBezne.has(p.id) ? `${poradiBezne.get(p.id)}. na přihlášce` : 'Do přihlášky se nevejde'}
-                {p.talentova && !vejdeSe.has(p.id) ? ' · do přihlášky se nevejde' : ''}
+                {poradi.has(p.id) ? `${poradi.get(p.id)}. na přihlášce` : 'Do přihlášky se nevejde'}
+                {p.talentova ? ' · s talentovou zkouškou' : ''}
                 {p.skupina ? ` · ${NAZEV_SKUPINY[p.skupina]}` : ''}
               </p>
             </div>

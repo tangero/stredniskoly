@@ -127,6 +127,9 @@ def zpracuj_uchazeci(uloha: dict, soubor: Path, prace: Path, struktura: dict) ->
     vystup_pasma = spust("build-pasma-prijeti.py", "--zdroj", str(soubor), "--vystup", str(pasma), "--rok", str(rok))
     vystup_soubeh = spust("build-soubeh-prihlasek.py", "--zdroj", str(soubor), "--vystup", str(soubeh), "--rok", str(rok))
     vystup_kontext = spust("build-kontext-prihlasek.py", "--zdroj", str(soubor), "--vystup", str(kontext), "--rok", str(rok))
+    # Index simulátoru stojí na týchž pásmech; bez něj by simulátor po převzetí revize radil podle starých hranic.
+    simulator = prace / f"simulator_pasma_{rok}.json"
+    vystup_simulator = spust("build-simulator-pasma.py", "--obdobi", str(rok), "--pasma", str(pasma), "--vystup", str(simulator))
     srovnani = srovnej_pasma(pasma, jadro.KOREN / "public" / f"pasma_prijeti_{uloha['zobrazene_obdobi']}.json")
     # Pojistka proti tichému selhání: v září 2026 změnil CERMAT příznak přijetí z čísla na text
     # a zpracování vrátilo nula oborů, aniž by skončilo chybou.
@@ -139,12 +142,13 @@ def zpracuj_uchazeci(uloha: dict, soubor: Path, prace: Path, struktura: dict) ->
         )
     return {
         "zpracovatel": "cermat-uchazeci-kolo1",
-        "vystupy_skriptu": [vystup_pasma, vystup_soubeh, vystup_kontext],
+        "vystupy_skriptu": [vystup_pasma, vystup_soubeh, vystup_kontext, vystup_simulator],
         "srovnani": srovnani,
         "predani": {
             str(pasma): f"public/pasma_prijeti_{rok}.json",
             str(soubeh): f"public/soubeh_prihlasek_{rok}.json",
             str(kontext): f"public/kontext_prihlasek_{rok}.json",
+            str(simulator): f"public/simulator_pasma_{rok}.json",
         },
         "dopad": dopad_uchazeci(rok, uloha.get("zobrazene_obdobi")),
     }
