@@ -51,3 +51,22 @@ export function matchesZrizovatel(school: { zrizovatel?: string | null }, vybran
   const druh = druhZrizovatele(school.zrizovatel);
   return druh !== null && vybrane.includes(druh);
 }
+
+/**
+ * Zřizovatel patří škole, ne nabídce: nabídky 2026 (applications_2026.json) ho nenesou
+ * a podle id nabídky se s katalogem páruje jen část, proto se bere podle RED IZO
+ * z katalogu, od nejnovějšího ročníku.
+ */
+export function zrizovatelPodleRedizo(katalog: Record<string, unknown>): Map<string, string> {
+  const vysledek = new Map<string, string>();
+  const rocniky = Object.keys(katalog).filter(k => /^\d{4}$/.test(k)).sort().reverse();
+  for (const rok of rocniky) {
+    const radky = katalog[rok];
+    if (!Array.isArray(radky)) continue;
+    for (const r of radky as { redizo?: unknown; id?: string; zrizovatel?: string | null }[]) {
+      const redizo = String(r.redizo ?? String(r.id ?? '').split('_')[0]);
+      if (r.zrizovatel && redizo && !vysledek.has(redizo)) vysledek.set(redizo, r.zrizovatel);
+    }
+  }
+  return vysledek;
+}

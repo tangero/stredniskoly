@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { druhZrizovatele, matchesSearchLocation, matchesZrizovatel, splitByCommute } from '../src/lib/simulator-filter.ts';
+import { druhZrizovatele, matchesSearchLocation, matchesZrizovatel, splitByCommute, zrizovatelPodleRedizo } from '../src/lib/simulator-filter.ts';
 
 test('dojezd zachová hranice, neznámá data i pořadí podle času', () => {
   const schools = [55, 56, 45, 46, 0, null, undefined].map((minutes, i) => ({ id: String(i), minutes }));
@@ -53,4 +53,15 @@ test('zřizovatel: všechny hodnoty katalogu mají druh, kromě chybějících',
     if (s.zrizovatel && druhZrizovatele(s.zrizovatel) === null) nerozpoznane.add(s.zrizovatel);
   }
   assert.deepEqual([...nerozpoznane], []);
+});
+
+test('zřizovatel podle RED IZO: nejnovější ročník vyhrává, ostatní klíče se ignorují', () => {
+  const mapa = zrizovatelPodleRedizo({
+    _meta: [{ redizo: '1', zrizovatel: 'soukromé' }],
+    2024: [{ redizo: '1', zrizovatel: 'veřejné / státní' }, { id: '2_79-41-K/41', zrizovatel: 'církevní' }],
+    2025: [{ redizo: '1', zrizovatel: 'soukromé' }, { redizo: '3', zrizovatel: null }],
+  });
+  assert.equal(mapa.get('1'), 'soukromé');
+  assert.equal(mapa.get('2'), 'církevní');
+  assert.equal(mapa.has('3'), false);
 });

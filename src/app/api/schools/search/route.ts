@@ -6,6 +6,7 @@ import { normalizeSchoolKey, uniqueSchoolIndex } from '@/lib/school-key';
 import { getResultsForYear, getSchoolAnalysis, getSchools2026Data } from '@/lib/data';
 import { readSchoolIds } from '@/lib/simulator-state';
 import { MESTA } from '@/lib/mesta.mjs';
+import { zrizovatelPodleRedizo } from '@/lib/simulator-filter';
 
 type SchoolsData = Record<string, School[]>;
 
@@ -187,6 +188,7 @@ export async function GET(request: NextRequest) {
 
     const results = uniqueSchoolIndex(Array.from(await getResultsForYear(2026)), ([id]) => id);
     const applications = uniqueSchoolIndex(await getSchools2026Data(), s => s.id);
+    const zrizovatele = zrizovatelPodleRedizo(data);
     const finite = (v: unknown, max = Infinity) => typeof v === 'number' && Number.isFinite(v) && v >= 0 && v <= max ? v : null;
     const serialize = (s: School, requestedId = s.id) => {
       const result = results.get(normalizeSchoolKey(s.id))?.[1];
@@ -196,7 +198,7 @@ export async function GET(request: NextRequest) {
         demand: application ? { year: 2026, round: 1, applications: finite(application.prihlasky), first_priority: finite(application.prihlasky_priority?.[0]), capacity: finite(application.kapacita) } : null,
         id: requestedId, nazev: s.nazev, nazev_display: s.nazev_display, obor: s.obor,
         zamereni: normalizeZamereni(s.zamereni), obec: s.obec, ulice: s.ulice, adresa: s.adresa,
-        kraj: s.kraj, kraj_kod: s.kraj_kod, typ: s.typ, zrizovatel: s.zrizovatel ?? null, delka_studia: s.delka_studia,
+        kraj: s.kraj, kraj_kod: s.kraj_kod, typ: s.typ, zrizovatel: s.zrizovatel ?? zrizovatele.get(s.id.split('_')[0]) ?? null, delka_studia: s.delka_studia,
         slug: adresaPro(s),
         // Odkaz míří vždy na stránku oboru: /nabidka/2026/… je od 19. 9. 2026 jen přesměrování.
         href: `/skola/${adresaPro(s)}`,
