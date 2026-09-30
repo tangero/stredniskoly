@@ -23,7 +23,9 @@ export function sPrednostiSkoly(
   if (vRoce) {
     const odSkoly = new Map(vRoce.prepisy.map(p => [norm(p.zamereni), p]));
     const znama = new Set(zaklad.prepisy.map(p => norm(p.zamereni)));
-    prepisy = zaklad.prepisy.map(p => odSkoly.get(norm(p.zamereni)) ?? p);
+    // Na stránce zaměření se údajem školy nahrazuje jen totéž zaměření; náhradní přepis
+    // jiného zaměření zůstává přepisem i s výhradou.
+    prepisy = zaklad.prepisy.map(p => (naStrance(p) ? odSkoly.get(norm(p.zamereni)) ?? p : p));
     // Zaměření, které přepis nezná: přidat, na stránce konkrétního zaměření jen to její.
     for (const [z, p] of odSkoly) if (!znama.has(z) && naStrance(p)) prepisy.push(p);
     if (zamereni && prepisy.some(naStrance)) prepisy = prepisy.filter(naStrance);

@@ -150,3 +150,12 @@ test('novější zápis jiného zaměření neschová kritéria zaměření str�
   assert.equal(k.nove.rok, 2027);
   assert.equal(k.nove.prepisy[0].zamereni, 'Jazyky');
 });
+
+test('stránka zaměření nepovýší náhradní přepis jiného zaměření na údaje školy', async () => {
+  const { sPrednostiSkoly } = await import('../src/lib/kriteria-skoly-sloucit.ts');
+  const pdf = { source_id: 'x', zamereni: 'Jazyky', rezim: 'jine', podil_jpz_pct: null, slozky: [{ nazev: 'Prospěch', max: null }], jpz_navic: [], minima: [], nejasnosti: [], prepis: 'strojovy', nalezy: [] };
+  const jazyky = zaznam({ rok: 2026, rezim: 'pouze_jpz', struktura: struktura({ slozky: [] }), obor_identita: { redizo: '600001431', kkov: '79-41-K/41', zamereni: 'Jazyky', forma: 'den', delkaStudia: 4 } });
+  const k = sPrednostiSkoly({ rok: 2026, pdf: true, noveKriteria: null, prepisy: [pdf] }, [jazyky], '600001431_79-41-K/41', 'Přírodní vědy', 2026);
+  assert.equal(k.prepisy[0].prepis, 'strojovy');
+  assert.equal(k.prepisy[0].rezim, 'jine');
+});
