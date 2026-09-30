@@ -38,6 +38,8 @@ export interface SouhrnProNovinare {
       rocniky: Record<'9' | '7' | '5', Pocty>;
       kraje_9: Record<string, Pocty>;
       uchazecu: number;
+      /** Vzdali se přijetí v 1. kole, obory pro 9. třídu (souhrn CERMAT, přihlášky). */
+      vzdali_se_9: Record<string, number>;
       /** null, když data uchazečů 2. kola roku `uchazeci` ještě nejsou převzatá. */
       kolo2: { rocniky: Record<'9' | '7' | '5', Pocty>; kraje_9: Record<string, Pocty>; volno_9: Record<string, Pocty> } | null;
     };

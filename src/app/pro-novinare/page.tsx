@@ -83,6 +83,7 @@ export default function ProNovinarePage() {
   const k2u = uchazeci.kolo2;
   const k9 = k2u?.rocniky['9'];
   const v9 = k2u?.volno_9 ?? {};
+  const vzdali9 = Object.values(uchazeci.vzdali_se_9 ?? {}).reduce((a, b) => a + b, 0);
   const kraje9 = Object.entries(uchazeci.kraje_9).sort((a, b) => b[1].nikam / b[1].uchazecu - a[1].nikam / a[1].uchazecu);
   const kraje2 = Object.entries(k2.kraje_jpz).sort((a, b) => b[1].mist - a[1].mist);
   const kd = konzervatore.kolo1_denni;
@@ -214,10 +215,13 @@ export default function ProNovinarePage() {
               <>
             <p className="text-sm text-slate-600 mt-3">
               * Uchazečů 2. kola: kdo podal přihlášku do 2. kola. Hlásit se mohou děti, kterým nevyšlo 1. kolo, ale také ti,
-              kdo v 1. kole přihlášku nepodali nebo se přijetí vzdali. Soubory 1. a 2. kola nemají společný identifikátor
-              uchazeče, proto konkrétní dítě z 1. kola ve 2. kole nedohledáme a porovnávat jde jen počty. Deváťáků s výsledkem
-              jednotné zkoušky, kterou šlo psát jen v 1. kole, zůstalo po 1. kole bez místa {cislo(d9.nikam_s_jpz)} a ve 2. kole
-              jich bylo {cislo(k9.s_vysledkem_jpz)}. Kolik z nich jsou tytéž děti, z dat určit nejde.
+              kdo se přijetí z 1. kola vzdali (u oborů pro 9. třídu {cislo(vzdali9)} přihlášek; data uchazečů je vedou jako
+              přijaté), nebo ti, kdo v 1. kole přihlášku nepodali. Proto je deváťáků ve 2. kole víc ({cislo(k9.uchazecu)}) než
+              těch, kdo v 1. kole zůstali bez místa ({cislo(d9.nikam)}). Celý rozdíl připadá na uchazeče bez výsledku jednotné
+              zkoušky, kterou šlo psát jen v 1. kole: s výsledkem zůstalo po 1. kole bez místa {cislo(d9.nikam_s_jpz)} deváťáků
+              a ve 2. kole jich bylo {cislo(k9.s_vysledkem_jpz)}, bez výsledku {cislo(d9.nikam - d9.nikam_s_jpz)} a{' '}
+              {cislo(k9.uchazecu - k9.s_vysledkem_jpz)}. Soubory 1. a 2. kola nemají společný identifikátor uchazeče, proto
+              konkrétní dítě z 1. kola ve 2. kole nedohledáme a kolik z nich jsou tytéž děti, určit nejde.
             </p>
 
             <div className="mt-6 bg-white border border-slate-200 rounded-xl p-5">
@@ -258,10 +262,12 @@ export default function ProNovinarePage() {
               </p>
             )}
 
-            <details className="mt-4 bg-white border border-slate-200 rounded-xl p-4">
-              <summary className="cursor-pointer font-semibold">Deváťáci bez místa podle krajů</summary>
+            <details open className="mt-4 bg-white border border-slate-200 rounded-xl p-4">
+              <summary className="cursor-pointer font-semibold">Deváťáci podle krajů: 1. a 2. kolo</summary>
               <p className="text-sm text-slate-600 mt-2">
-                Kraj je kraj školy, kterou měl uchazeč na přihlášce jako první; bydliště uchazeče zdroj neuvádí.
+                Kraj je kraj školy, kterou měl uchazeč na přihlášce jako první, a to v každém kole zvlášť; bydliště uchazeče
+                zdroj neuvádí. Kdo se v 1. kole nedostal v Praze, může ve 2. kole zkusit školu ve Středočeském kraji a započte se
+                tam. Počty obou kol v jednom kraji proto nejde od sebe odečítat.
               </p>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm mt-3">
@@ -269,7 +275,13 @@ export default function ProNovinarePage() {
                     <tr>
                       <th className="py-1.5 font-normal">Kraj</th>
                       <th className="py-1.5 font-normal text-right">Nepřijati v 1. kole</th>
-                      {k2u && <th className="py-1.5 font-normal text-right">Nepřijati ani ve 2. kole</th>}
+                      {k2u && (
+                        <>
+                          <th className="py-1.5 font-normal text-right">Uchazečů 2. kola</th>
+                          <th className="py-1.5 font-normal text-right">Přijati ve 2. kole</th>
+                          <th className="py-1.5 font-normal text-right">Nepřijati ani ve 2. kole</th>
+                        </>
+                      )}
                     </tr>
                   </thead>
                   <tbody>
@@ -282,9 +294,13 @@ export default function ProNovinarePage() {
                             {cislo(c.nikam)} z {cislo(c.uchazecu)} ({procenta(c.nikam, c.uchazecu)})
                           </td>
                           {k2u && (
-                            <td className="py-1.5 text-right">
-                              {c2 ? `${cislo(c2.neprijati)} z ${cislo(c2.uchazecu)} (${procenta(c2.neprijati, c2.uchazecu)})` : ''}
-                            </td>
+                            <>
+                              <td className="py-1.5 text-right">{c2 ? cislo(c2.uchazecu) : ''}</td>
+                              <td className="py-1.5 text-right">{c2 ? cislo(c2.prijati) : ''}</td>
+                              <td className="py-1.5 text-right">
+                                {c2 ? `${cislo(c2.neprijati)} (${procenta(c2.neprijati, c2.uchazecu)})` : ''}
+                              </td>
+                            </>
                           )}
                         </tr>
                       );

@@ -660,7 +660,9 @@ def druhe_kolo_uchazecu(b: Balicek, rok: str, uchazeci2: list[dict], kolo2: list
         f"Listy „2. kolo“: CERMAT, data uchazečů 2. kola {rok}, předběžná verze: platné přihlášky ke dni 23. 6. {rok}; "
         "stejná populace a stejné počítání přijetí jako u 1. kola.",
         "Soubory 1. a 2. kola nemají společný identifikátor uchazeče: konkrétní dítě z 1. kola ve 2. kole nedohledáme. "
-        "Do 2. kola se navíc mohou přihlásit i ti, kdo v 1. kole přihlášku nepodali nebo se přijetí vzdali. "
+        "Do 2. kola se navíc mohou přihlásit i ti, kdo v 1. kole přihlášku nepodali nebo se přijetí vzdali "
+        "(data uchazečů je vedou jako přijaté); proto může být uchazečů 2. kola víc než nepřijatých v 1. kole. "
+        "Kraj je kraj první volby v daném kole, krajské počty kol se proto nedají odečítat. "
         "Porovnávat jde jen počty, ne říct „z nepřijatých v 1. kole se ve 2. kole dostalo tolik“.",
         "Neprijati ani ve 2. kole: kam nastoupili, žádná zveřejněná data neříkají. Po 2. kole mohou školy vypisovat další kola "
         "na volná místa; data o nich CERMAT nezveřejňuje.",
@@ -889,6 +891,13 @@ def main() -> None:
         ("kriteria", balicek_kriteria(rok_kr)),
     ]:
         if nazev == "uchazeci":
+            # Vzdali se přijetí v 1. kole (souhrn CERMAT, přihlášky): data uchazečů 2026 je vedou jako přijaté,
+            # a přitom se mohli hlásit do 2. kola. Vysvětluje, proč je uchazečů 2. kola víc než nepřijatých v 1. kole.
+            vzdali = Counter()
+            for r in kolo1:
+                if denni_nezkracene_radek(r) and str(r["ROČNÍK"]) == "9" and not NASTAVBA.match(str(r["KKOV"])):
+                    vzdali["bez maturity" if UCEBNI.search(str(r["KKOV"])) else "s maturitou"] += cele(r.get("NEPŘIJATI - VZDAL SE PŘIJETÍ"))
+            s["vzdali_se_9"] = dict(vzdali)
             # 2. kolo patří k 1. kolu téhož roku. V květnu a červnu je 1. kolo nového roku
             # převzaté dřív než 2. kolo; pak se 2. kolo vynechá, ne pod cizím rokem.
             s["kolo2"] = druhe_kolo_uchazecu(b, rok_u2, uchazeci2, kolo2) if rok_u2 == rok_u else None
