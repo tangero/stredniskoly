@@ -20,7 +20,7 @@ schvaluje je Patrick. Stav issue vyjadřují štítky:
 | štítek | význam |
 |---|---|
 | `navrh` | čeká na schválení Patrickem, **nerealizovat** |
-| `schvaleno` | Claude Code může realizovat |
+| `schvaleno` | Claude Code může realizovat; štítek přidává jen Patrick |
 | `zamitnuto` | nerealizovat |
 | `k-overeni` | hotovo v PR, čeká na kontrolu na Vercel preview |
 
@@ -39,8 +39,11 @@ schvaluje je Patrick. Stav issue vyjadřují štítky:
    a uchazečů nahraď rolí nebo RED IZO; v testech použij smyšlená data (`skola@example.cz`).
 5. **Produkční data v Neonu neměň**, ledaže zadání výslovně uvádí migraci. Pak ji přidej jako nový
    soubor `db/migrace/NNN-nazev.sql` (idempotentní, `if not exists`), popiš ji v PR a sám ji proti
-   produkci nespouštěj. Proti produkční databázi nepouštěj ani zápisové skripty (`novinky:migrace`,
-   `portal:export`, `veletrhy:export` bez `--kontrola` apod.).
+   produkci nespouštěj. Nepouštěj ani skripty, které do produkční databáze zapisují (`npm run novinky:migrace`
+   a ostatní `scripts/*-migrace.mjs`), ani exporty, které z ní převádějí data do repozitáře (`npm run portal:export`,
+   `npm run veletrhy:export`: z produkce jen čtou, ale přepisují `public/portal_skol.json`, snímek
+   `src/data/veletrhy-2027.json` a počty v registru; to má na starosti týdenní workflow). Režim `--kontrola`
+   (`npm run veletrhy:export-kontrola`) nic nezapisuje.
 6. **Drobné zásahy.** Měň jen to, co zadání vyžaduje. Žádné refaktory, přejmenování, přeformátování
    ani aktualizace závislostí mimo zadání. Když narazíš na jiný problém, zapiš ho do PR jako poznámku, neopravuj ho.
 7. **Nedotazuj se cizích serverů.** Během práce ani v testech nevolej externí API a weby (školní weby,
@@ -54,13 +57,17 @@ schvaluje je Patrick. Stav issue vyjadřují štítky:
 
 ```bash
 npm ci                     # jen poprvé nebo po změně package-lock.json
-npm run lint               # ESLint
+git diff --name-only --diff-filter=d origin/main... -- '*.ts' '*.tsx' '*.mjs' '*.js' | xargs -r npx eslint  # ESLint jen nad změněnými soubory
 npx tsc --noEmit           # typy
 npm test                   # Python testy: python3 -m unittest discover -s tests
 npm run test:js            # Node testy (node --experimental-strip-types, Node ≥ 22)
 npm run test:mesto         # testy přehledu města a veletrhů přes tsx
 npm run build              # sitemap + next build
 ```
+
+`npm run lint` nad celým repozitářem dnes neprojde kvůli starším chybám v souborech mimo zadání
+(stav 30. 9. 2026: 10 chyb, 15 varování). Neopravuj je v rámci zadání (pravidlo 6); stačí, když projdou
+soubory, které měníš. Jejich oprava je samostatné zadání.
 
 Doplňkově podle zásahu:
 - `npm run kontroly`: stav datových sad, letopočty napevno a typy (při změně dat nebo textů s rokem).
@@ -84,7 +91,7 @@ Closes #N
 2. Očekávaný výsledek: …
 
 ## Kontroly
-- [x] npm run lint
+- [x] ESLint nad změněnými soubory
 - [x] npx tsc --noEmit
 - [x] npm test, npm run test:js, npm run test:mesto
 - [x] npm run build
