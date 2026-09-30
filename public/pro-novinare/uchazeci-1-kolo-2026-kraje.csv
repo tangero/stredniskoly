@@ -1,41 +1,41 @@
 ﻿kraj_skoly_1_volby,rocnik,uchazecu,konali_jednotnou_zkousku,prijati_na_1_volbu,prijati_na_2_volbu,prijati_na_3_a_dalsi_volbu,neprijati_nikam,podil_neprijatych_nikam,z_toho_vsude_nevesli_kvuli_kapacite,z_toho_vsude_nedosahli_pozadavku,z_toho_obe_duvody,z_toho_jiny_duvod
-Hlavní město Praha,9. třída (čtyřleté obory a obory bez maturity),22541,17918,11952,3850,2429,4310,0.191,1170,1334,1806,0
+Hlavní město Praha,9. třída (čtyřleté obory a obory bez maturity),19910,16178,10512,3661,2371,3366,0.169,964,816,1586,0
 Hlavní město Praha,7. třída (šestiletá gymnázia),2981,2922,487,121,119,2254,0.756,783,358,1113,0
 Hlavní město Praha,5. třída (osmiletá gymnázia),4593,4478,1067,359,262,2905,0.632,1508,292,1105,0
-Jihomoravský kraj,9. třída (čtyřleté obory a obory bez maturity),14129,10156,9362,2223,1197,1347,0.095,487,372,488,0
+Jihomoravský kraj,9. třída (čtyřleté obory a obory bez maturity),12549,9319,8258,2099,1155,1037,0.083,366,242,429,0
 Jihomoravský kraj,7. třída (šestiletá gymnázia),1327,1302,289,63,33,942,0.71,502,94,346,0
 Jihomoravský kraj,5. třída (osmiletá gymnázia),2709,2623,880,175,84,1570,0.58,801,274,495,0
-Jihočeský kraj,9. třída (čtyřleté obory a obory bez maturity),7920,5594,6050,1014,392,464,0.059,211,97,156,0
+Jihočeský kraj,9. třída (čtyřleté obory a obory bez maturity),6990,4907,5397,949,372,272,0.039,121,52,99,0
 Jihočeský kraj,7. třída (šestiletá gymnázia),341,335,188,18,2,133,0.39,98,28,7,0
 Jihočeský kraj,5. třída (osmiletá gymnázia),1055,1038,442,60,47,506,0.48,458,18,30,0
-Karlovarský kraj,9. třída (čtyřleté obory a obory bez maturity),2959,1958,1974,466,232,287,0.097,114,104,69,0
+Karlovarský kraj,9. třída (čtyřleté obory a obory bez maturity),2801,1836,1879,467,232,223,0.08,96,59,68,0
 Karlovarský kraj,7. třída (šestiletá gymnázia),49,47,30,0,0,19,0.388,19,0,0,0
 Karlovarský kraj,5. třída (osmiletá gymnázia),466,462,266,21,1,178,0.382,176,0,2,0
-Kraj Vysočina,9. třída (čtyřleté obory a obory bez maturity),6133,4129,5009,593,228,303,0.049,136,94,73,0
+Kraj Vysočina,9. třída (čtyřleté obory a obory bez maturity),5254,3693,4305,565,216,168,0.032,70,42,56,0
 Kraj Vysočina,7. třída (šestiletá gymnázia),149,148,83,3,0,63,0.423,32,30,1,0
 Kraj Vysočina,5. třída (osmiletá gymnázia),733,725,390,45,4,294,0.401,237,30,27,0
-Královéhradecký kraj,9. třída (čtyřleté obory a obory bez maturity),6575,4608,4718,900,369,588,0.089,164,227,197,0
+Královéhradecký kraj,9. třída (čtyřleté obory a obory bez maturity),6065,4259,4428,862,357,418,0.069,103,145,170,0
 Královéhradecký kraj,7. třída (šestiletá gymnázia),478,471,197,18,3,260,0.544,119,78,63,0
 Královéhradecký kraj,5. třída (osmiletá gymnázia),686,670,298,31,1,356,0.519,166,156,34,0
-Liberecký kraj,9. třída (čtyřleté obory a obory bez maturity),5422,3631,3525,854,406,637,0.117,290,181,166,0
+Liberecký kraj,9. třída (čtyřleté obory a obory bez maturity),5002,3256,3299,835,400,468,0.094,206,121,141,0
 Liberecký kraj,7. třída (šestiletá gymnázia),76,74,29,2,1,44,0.579,18,22,4,0
 Liberecký kraj,5. třída (osmiletá gymnázia),569,555,273,29,12,255,0.448,178,59,18,0
-Moravskoslezský kraj,9. třída (čtyřleté obory a obory bez maturity),13093,9383,9645,1850,812,786,0.06,451,156,179,0
+Moravskoslezský kraj,9. třída (čtyřleté obory a obory bez maturity),11908,8487,8732,1802,794,580,0.049,333,89,158,0
 Moravskoslezský kraj,7. třída (šestiletá gymnázia),500,488,245,20,8,227,0.454,163,34,30,0
 Moravskoslezský kraj,5. třída (osmiletá gymnázia),1396,1363,741,110,31,514,0.368,392,72,50,0
-Olomoucký kraj,9. třída (čtyřleté obory a obory bez maturity),7489,5239,5353,1059,523,554,0.074,239,161,154,0
+Olomoucký kraj,9. třída (čtyřleté obory a obory bez maturity),6687,4633,4845,987,506,349,0.052,181,65,103,0
 Olomoucký kraj,7. třída (šestiletá gymnázia),431,424,159,40,7,225,0.522,117,55,53,0
 Olomoucký kraj,5. třída (osmiletá gymnázia),1082,1063,494,60,33,495,0.457,273,153,69,0
-Pardubický kraj,9. třída (čtyřleté obory a obory bez maturity),6753,4820,4745,934,419,655,0.097,267,211,177,0
+Pardubický kraj,9. třída (čtyřleté obory a obory bez maturity),6089,4449,4368,911,408,402,0.066,136,125,141,0
 Pardubický kraj,5. třída (osmiletá gymnázia),753,735,419,17,13,304,0.404,154,144,6,0
-Plzeňský kraj,9. třída (čtyřleté obory a obory bez maturity),7281,5060,4939,1105,623,614,0.084,270,125,219,0
+Plzeňský kraj,9. třída (čtyřleté obory a obory bez maturity),6450,4438,4376,1046,602,426,0.066,188,77,161,0
 Plzeňský kraj,7. třída (šestiletá gymnázia),312,306,137,17,6,152,0.487,59,88,5,0
 Plzeňský kraj,5. třída (osmiletá gymnázia),904,893,411,40,30,423,0.468,144,196,83,0
-Středočeský kraj,9. třída (čtyřleté obory a obory bez maturity),12955,9357,8585,1884,933,1553,0.12,411,545,597,0
+Středočeský kraj,9. třída (čtyřleté obory a obory bez maturity),11662,8396,7807,1819,915,1121,0.096,297,343,481,0
 Středočeský kraj,5. třída (osmiletá gymnázia),2576,2525,828,132,47,1569,0.609,1070,175,324,0
-Zlínský kraj,9. třída (čtyřleté obory a obory bez maturity),7285,5599,5224,1111,483,467,0.064,275,87,105,0
+Zlínský kraj,9. třída (čtyřleté obory a obory bez maturity),6526,5000,4715,1043,465,303,0.046,191,31,81,0
 Zlínský kraj,7. třída (šestiletá gymnázia),132,125,71,3,2,56,0.424,47,7,2,0
 Zlínský kraj,5. třída (osmiletá gymnázia),726,708,341,31,5,349,0.481,316,25,8,0
-Ústecký kraj,9. třída (čtyřleté obory a obory bez maturity),9672,6328,7529,1027,404,712,0.074,266,249,197,0
+Ústecký kraj,9. třída (čtyřleté obory a obory bez maturity),8800,5700,6997,989,397,417,0.047,96,156,165,0
 Ústecký kraj,7. třída (šestiletá gymnázia),63,63,30,0,0,33,0.524,12,21,0,0
 Ústecký kraj,5. třída (osmiletá gymnázia),916,883,518,41,13,344,0.376,290,45,9,0

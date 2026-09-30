@@ -46,11 +46,14 @@ from openpyxl.utils import get_column_letter
 
 KOREN = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(KOREN / "scripts"))
-from slouceni_prihlasek import byl_prijat  # noqa: E402
+from slouceni_prihlasek import byl_prijat, denni_nezkracene  # noqa: E402
 
 VYSTUP = KOREN / "public" / "pro-novinare"
 REGISTR = KOREN / "public" / "stav_datovych_sad.json"
 NASTAVENI = KOREN / "src" / "data" / "pro-novinare.json"
+
+# Nástavbové studium (kategorie L5, například 64-41-L/51) je pro vyučené, ne pro žáky základní školy.
+NASTAVBA = re.compile(r"^\d\d-\d\d-L/5")
 
 # Stejné prahy jako na webu (docs/slovnik-ukazatelu.md): nejnižší výsledek
 # přijatých se uvádí jen při aspoň deseti přijatých s výsledkem zkoušky.
@@ -149,6 +152,19 @@ def nadpis_kraje(nazev: str) -> str:
     return f"{nazev} kraj"
 
 
+def bez_relativniho_roku(text: str, rok_sezony: int) -> str:
+    """„loni“ a „letos“ ze zdrojové poznámky nahradí rokem (slovník pojmů, pravidlo 4).
+
+    Sezóna veletrhů je podzim roku `rok_sezony`; „loni“ je tedy rok před ním.
+    """
+    text = re.sub(r"\bloni\b", f"v roce {rok_sezony - 1}", text)
+    text = re.sub(r"\bLoni\b", f"V roce {rok_sezony - 1}", text)
+    text = re.sub(r"\bletošní ročník\b", f"ročník {rok_sezony}", text)
+    text = re.sub(r"\bletošn(í|ího|ím)\b", f"z roku {rok_sezony}", text)
+    text = re.sub(r"\b[Ll]etos\b", f"v roce {rok_sezony}", text)
+    return text
+
+
 def nacti_xlsx(cesta: Path) -> list[dict]:
     wb = openpyxl.load_workbook(cesta, read_only=True)
     it = wb.worksheets[0].iter_rows(values_only=True)
@@ -223,11 +239,11 @@ class Balicek:
 # Balíčky
 
 
-def balicek_veletrhy(dnes: dt.date) -> tuple[Balicek, dict]:
+def balicek_veletrhy(dnes: dt.date, rok_katalogu: str) -> tuple[Balicek, dict]:
     snimek = nacti_json(KOREN / "src" / "data" / "veletrhy-2027.json")
     potvrzene = [a for a in snimek["akce"] if a.get("terminPotvrzen") and a.get("start")]
     potvrzene.sort(key=lambda a: (a["start"], a.get("mesto") or "", a["id"]))
-    kraje_nazvy = nacti_kraje()
+    kraje_nazvy = nacti_kraje(rok_katalogu)
     radky = []
     for a in potvrzene:
         konec = a.get("end") or a["start"]
@@ -237,7 +253,7 @@ def balicek_veletrhy(dnes: dt.date) -> tuple[Balicek, dict]:
         if a.get("zdrojJenAgregator"):
             poznamka.append("termín neověřený u pořadatele")
         if a.get("poznamkaTerminu"):
-            poznamka.append(a["poznamkaTerminu"])
+            poznamka.append(bez_relativniho_roku(a["poznamkaTerminu"], int(snimek["sezona"]) - 1))
         radky.append([
             nadpis_kraje(kraje_nazvy.get(a.get("krajKod"), a.get("krajKod") or "")),
             a.get("mesto") or ("online" if a.get("online") else ""),
@@ -286,9 +302,18 @@ def balicek_veletrhy(dnes: dt.date) -> tuple[Balicek, dict]:
     return b, vysledek
 
 
-def nacti_kraje() -> dict[str, str]:
-    """Kód NUTS → název kraje z katalogu 2026 (tentýž číselník jako CERMAT)."""
-    data = nacti_json(KOREN / "public" / "applications_2026.json")["data"]
+def katalog_nabidek(rok: str) -> dict:
+    """Katalog nabídek 1. kola zobrazeného ročníku; název souboru nese rok z registru."""
+    cesta = KOREN / "public" / f"applications_{rok}.json"
+    katalog = nacti_json(cesta)
+    if str(katalog["meta"]["rok"]) != rok:
+        raise SystemExit(f"{cesta.name} nese rok {katalog['meta']['rok']}, registr {rok}")
+    return katalog
+
+
+def nacti_kraje(rok: str) -> dict[str, str]:
+    """Kód NUTS → název kraje z katalogu nabídek (tentýž číselník jako CERMAT)."""
+    data = katalog_nabidek(rok)["data"]
     return {r["kraj_kod"]: r["kraj"] for r in data if r.get("kraj_kod")}
 
 
@@ -364,9 +389,7 @@ def balicek_konzervatore(obec_kraj: dict[str, str], rok: str, kolo1: list[dict])
 
 
 def balicek_obory(rok: str, kolo1: list[dict], dk) -> tuple[Balicek, dict]:
-    katalog = nacti_json(KOREN / "public" / "applications_2026.json")
-    if str(katalog["meta"]["rok"]) != rok:
-        raise SystemExit(f"applications_2026.json nese rok {katalog['meta']['rok']}, registr {rok}")
+    katalog = katalog_nabidek(rok)
     souhrny = nacti_json(KOREN / "public" / "souhrny_kolo1.json")["nabidky"]
     druhe = nacti_json(KOREN / "public" / "druhe_kolo.json")["roky"].get(rok, {})
     typy = {str(r.get("TYP ŠKOLY")): str(r.get("TYP ŠKOLY - NÁZEV")) for r in kolo1}
@@ -420,7 +443,7 @@ def balicek_obory(rok: str, kolo1: list[dict], dk) -> tuple[Balicek, dict]:
             "Tlak prvních voleb: kolik uchazečů chtělo obor jako 1. volbu na jedno místo.",
             "Soutěžící uchazeči jsou ti, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš; "
             "podíl přijatých ze soutěžících říká, kolik z nich se dostalo. Není to šance konkrétního uchazeče.",
-            "Body: součet bodů z češtiny a matematiky, každý test nejvýš 50 bodů. Průměr bodů přijatých není hranice přijetí. "
+            "Body: součet bodů z češtiny a matematiky, každý test nejvýš 50 bodů. Průměr bodů přijatých neříká, s kolika body se dalo dostat. "
             f"Nejnižší výsledek přijatých je oficiální údaj CERMAT a uvádí se jen při aspoň {MIN_PRIJATYCH_PRO_MINIMUM} přijatých s výsledkem zkoušky; "
             "škola mohla vážit i jiná kritéria než test.",
             "Prázdná buňka znamená, že údaj zdroj nenese, ne nulu.",
@@ -437,12 +460,18 @@ def balicek_obory(rok: str, kolo1: list[dict], dk) -> tuple[Balicek, dict]:
 
 
 def balicek_uchazeci(rok: str, uchazeci: list[dict], kolo1: list[dict]) -> tuple[Balicek, dict]:
-    """Kam se uchazeči 1. kola dostali. Řádek zdroje je uchazeč; počítají se všechny jeho přihlášky.
+    """Kam se uchazeči 1. kola dostali. Řádek zdroje je uchazeč.
 
-    Ročník, ze kterého se hlásí (5., 7. nebo 9. třída), se bere z oborů na přihlášce podle
-    sloupce ROČNÍK souhrnu 1. kola. Kraj je kraj školy, kterou měl uchazeč na přihlášce
-    jako první (bydliště uchazeče zdroj nenese). Pořadí volby je pořadí mezi vyplněnými
-    přihláškami, stejně jako v scripts/slouceni_prihlasek.py.
+    Populace: uchazeč s aspoň jednou přihláškou do denního nezkráceného studia mimo nástavbu
+    (denni_nezkracene() ze scripts/slouceni_prihlasek.py). Kdo se hlásí jen na dálkové,
+    kombinované či zkrácené studium nebo jen na nástavbu, není žák základní školy a počítá
+    se zvlášť jako vyřazený. Přijetí se bere ze všech přihlášek uchazeče: přijetí na dálkové
+    studium je také přijetí.
+
+    Ročník, ze kterého se hlásí (5., 7. nebo 9. třída), se bere z přihlášek v populaci podle
+    sloupce ROČNÍK souhrnu 1. kola. Kraj je kraj školy první takové přihlášky (bydliště
+    uchazeče zdroj nenese). Pořadí volby je pořadí mezi všemi vyplněnými přihláškami,
+    stejně jako v scripts/slouceni_prihlasek.py.
     """
     rocnik = {}
     kraj = {}
@@ -451,17 +480,23 @@ def balicek_uchazeci(rok: str, uchazeci: list[dict], kolo1: list[dict]) -> tuple
         kraj[str(r["REDIZO"])] = str(r["KRAJ - NÁZEV"])
     tab: dict[tuple[str, str], Counter] = defaultdict(Counter)
     bez_rocniku = 0
+    vyrazeno = Counter()
     for u in uchazeci:
         prihlasky = [k for k in range(1, 6) if u.get(f"ss{k}_redizo")]
         if not prihlasky:
             continue
-        rocniky = {rocnik.get((str(u[f"ss{k}_redizo"]), str(u[f"ss{k}_kkov"]))) for k in prihlasky} - {None}
+        denni = [k for k in prihlasky if denni_nezkracene(u.get(f"ss{k}_forma"), u.get(f"ss{k}_zkraceno"))]
+        v_populaci = [k for k in denni if not NASTAVBA.match(str(u[f"ss{k}_kkov"]))]
+        if not v_populaci:
+            vyrazeno["jen_nastavby" if denni else "jen_nedenni_nebo_zkracene"] += 1
+            continue
+        rocniky = {rocnik.get((str(u[f"ss{k}_redizo"]), str(u[f"ss{k}_kkov"]))) for k in v_populaci} - {None}
         if not rocniky:
             bez_rocniku += 1
             continue
-        # Smíšené přihlášky (4 uchazeči v roce 2026) se řadí k nejvyššímu ročníku.
+        # Smíšené přihlášky (jednotky uchazečů) se řadí k nejvyššímu ročníku.
         roc = max(rocniky, key=int)
-        kr = kraj.get(str(u[f"ss{prihlasky[0]}_redizo"]), "")
+        kr = kraj.get(str(u[f"ss{v_populaci[0]}_redizo"]), "")
         prijat_na = next((i for i, k in enumerate(prihlasky) if byl_prijat(u[f"ss{k}_prijat"], u[f"ss{k}_duvod_neprijeti"])), None)
         c = tab[(kr, roc)]
         c["uchazecu"] += 1
@@ -519,7 +554,12 @@ def balicek_uchazeci(rok: str, uchazeci: list[dict], kolo1: list[dict]) -> tuple
     b.pridej(f"uchazeci-1-kolo-{rok}-cesko", "Česko", hlavicka, radky_cr)
     cr = {roc: dict(celkem[roc]) for roc in ("9", "7", "5")}
     kraje_9 = {nadpis_kraje(kr): dict(c) for (kr, roc), c in tab.items() if roc == "9"}
-    return b, {"rocniky": cr, "kraje_9": kraje_9, "bez_rocniku": bez_rocniku,
+    b.o_datech.insert(1,
+        f"Počítají se uchazeči s aspoň jednou přihláškou do denního nezkráceného studia mimo nástavbu. "
+        f"Vyřazeno: {vyrazeno['jen_nedenni_nebo_zkracene']} uchazečů jen s přihláškami na dálkové, kombinované, "
+        f"distanční, večerní nebo zkrácené studium a {vyrazeno['jen_nastavby']} jen s přihláškami na nástavbu; "
+        "nejsou to žáci základní školy.")
+    return b, {"rocniky": cr, "kraje_9": kraje_9, "bez_rocniku": bez_rocniku, "vyrazeno": dict(vyrazeno),
                "uchazecu": sum(c["uchazecu"] for c in celkem.values())}
 
 
@@ -574,7 +614,7 @@ def balicek_druhe_kolo(rok: str, kolo2: list[dict]) -> tuple[Balicek, dict]:
             "tento balíček neříká (data uchazečů 2. kola web zatím nepřevzal).",
             "Naplněnost míst: přijatí děleno místy 2. kola.",
             f"Nejnižší výsledek přijatých (body z češtiny a matematiky, 0–100) jen u oborů s jednotnou zkouškou a aspoň "
-            f"{MIN_PRIJATYCH_PRO_MINIMUM} přijatými s výsledkem zkoušky. Není to hranice přijetí.",
+            f"{MIN_PRIJATYCH_PRO_MINIMUM} přijatými s výsledkem zkoušky. Neříká, s kolika body se dalo dostat.",
             "Vypsané 2. kolo neznamená, že ho škola vypíše znovu; obory, které se v 1. kole nenaplnily, ho vypsaly jen asi v polovině případů.",
         ],
     )
@@ -596,7 +636,7 @@ def skupiny_slozky(nazev: str) -> set[str]:
 
 def balicek_kriteria(rok: str) -> tuple[Balicek, dict]:
     kriteria = nacti_json(KOREN / "public" / f"kriteria_prijeti_{rok}.json")
-    katalog = {n["source_id"]: n for n in nacti_json(KOREN / "public" / "applications_2026.json")["data"]}
+    katalog = {n["source_id"]: n for n in katalog_nabidek(rok)["data"]}
     vyhrada = VYHRADA_KRITERII.format(rok=rok)
     radky = []
     tab_typ: dict[str, Counter] = defaultdict(Counter)
@@ -724,7 +764,7 @@ def main() -> None:
     balicky = []
     souhrn: dict = {}
     for nazev, (b, s) in [
-        ("veletrhy", balicek_veletrhy(args.dnes)),
+        ("veletrhy", balicek_veletrhy(args.dnes, rok)),
         ("konzervatore", balicek_konzervatore(obec_kraj, rok, kolo1)),
         ("obory", balicek_obory(rok, kolo1, dk)),
         ("uchazeci", balicek_uchazeci(rok_u, uchazeci, kolo1)),

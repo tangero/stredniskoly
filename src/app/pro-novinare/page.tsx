@@ -156,7 +156,8 @@ export default function ProNovinarePage() {
             <h2 id="uchazeci" className="text-2xl font-bold mb-2">Kolik uchazečů se v 1. kole {r.uchazeci} nedostalo nikam</h2>
             <p className="text-slate-700">
               Počítáme uchazeče, které v 1. kole nepřijal žádný obor z přihlášky. Každý uchazeč se počítá jednou, se všemi
-              svými přihláškami včetně učebních oborů. <strong>Ročníky se nesčítají:</strong> kdo se nedostal na víceleté
+              svými přihláškami včetně učebních oborů. Nepočítají se ti, kdo se hlásili jen na dálkové nebo zkrácené studium
+              či na nástavbu, protože to nejsou žáci základní školy. <strong>Ročníky se nesčítají:</strong> kdo se nedostal na víceleté
               gymnázium, pokračuje na základní škole.
             </p>
             <div className="overflow-x-auto mt-4">
@@ -312,15 +313,16 @@ export default function ProNovinarePage() {
                 za různé obory nesčítají a počet přihlášek na místo konkurenci nadsazuje.
               </li>
               <li>
-                <strong>Průměr bodů přijatých není hranice přijetí.</strong> Nejnižší výsledek přijatých je dolní mez: škola mohla
-                vážit i jiná kritéria než test. Hranici přijetí nikdo nezveřejňuje.
+                <strong>Průměr bodů přijatých neříká, s kolika body se dalo dostat.</strong> Ani nejnižší výsledek přijatých to
+                neříká přesně: škola mohla vážit i jiná kritéria než test a bodovou hranici, pod kterou by nikoho nepřijala,
+                nikdo nezveřejňuje.
               </li>
               <li>
                 <strong>Uveďte rok a kolo.</strong> Čísla popisují minulý přijímací ročník; nabídku oborů pro nové řízení zveřejní
                 školy spolu s kritérii přijetí v lednu.
               </li>
               <li>
-                <strong>Nejde o šanci konkrétního uchazeče.</strong> Podíl přijatých ze soutěžících uchazečů, tedy těch, kdo splnili
+                <strong>Není to šance konkrétního uchazeče.</strong> Podíl přijatých ze soutěžících uchazečů, tedy těch, kdo splnili
                 požadavky školy a nedostali se na obor, který měli na přihlášce výš, popisuje minulý ročník.
               </li>
               <li>

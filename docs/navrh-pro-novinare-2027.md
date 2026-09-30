@@ -54,7 +54,8 @@ Povinný krok podle [zdrojů dat](zdroje-dat.md), oddíl 3. Balíčky jsou jiné
 ## 4. Co čísla neříkají a jak to balíčky hlídají
 
 - **Rok u každého čísla**, rok z registru. Stránka nepíše „loni“ ani „letos“.
-- **Ročníky se nesčítají.** Uchazeči 5. a 7. třídy, kteří se nedostali, zůstávají na základní škole. Rok 2026: nepřijato nikam 10 % deváťáků, ale 53 % uchazečů o osmiletá a 64 % o šestiletá gymnázia. Sečíst to do jednoho čísla („27 747 dětí se nikam nedostalo“) by byl nejhorší možný titulek.
+- **Ročníky se nesčítají.** Uchazeči 5. a 7. třídy, kteří se nedostali, zůstávají na základní škole. Rok 2026: nepřijato nikam 8 % deváťáků, ale 53 % uchazečů o osmiletá a 64 % o šestiletá gymnázia. Sečíst to do jednoho čísla by byl nejhorší možný titulek.
+- **Deváťáci jsou jen žáci základní školy.** Kdo se hlásí jen na dálkové či zkrácené studium nebo jen na nástavbu, do balíčku uchazečů nepatří (2026: 13 514 lidí). První verze je počítala mezi deváťáky a podíl nepřijatých nadsadila z 8,2 na 10,2 % (nález review Codexu, kolo 1).
 - **Slovo „šance“ se nepoužívá** ani pro 2. kolo (slovník pojmů, oddíl 5). Balíček uvádí přijaté na přihlášku a vysvětluje, proč to není podíl úspěšných uchazečů.
 - **Kritéria jen souhrnně na stránce.** Jmenovitý seznam je v balíčku s výhradou v každém řádku, protože novinář převezme řádek, ne list „O datech“.
 - **Kraj uchazeče je kraj školy první volby**, ne bydliště.
