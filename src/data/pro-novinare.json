@@ -1,6 +1,7 @@
 {
-  "popis": "Nastavení sekce /pro-novinare: jak nás citovat, pod jakou licencí jsou balíčky a kam se novináři obracejí. Čte ho stránka i generátor scripts/build-pro-novinare.py, aby citace v souborech a na stránce zněla stejně. Tři pole čekají na rozhodnutí vlastníka (rozhodnuto: false); návrh v docs/navrh-pro-novinare-2027.md, oddíl 5.",
-  "rozhodnuto": false,
+  "popis": "Nastavení sekce /pro-novinare: jak nás citovat, pod jakou licencí jsou balíčky a kam se novináři obracejí. Čte ho stránka i generátor scripts/build-pro-novinare.py, aby citace v souborech a na stránce zněla stejně. Značku, licenci a kontakt schválil vlastník 30. 9. 2026 (docs/navrh-pro-novinare-2027.md, oddíl 5).",
+  "rozhodnuto": true,
+  "rozhodnuto_kdy": "2026-09-30, vlastník přijal navržené hodnoty pokynem ke sloučení PR #198",
   "nazev": "Přijímačky na školu",
   "provozovatel": "Hlídač státu",
   "web": "https://www.prijimackynaskolu.cz",

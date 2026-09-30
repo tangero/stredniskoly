@@ -1,6 +1,6 @@
 # Sekce pro novináře a balíčky dat
 
-Verze 1.0 · 29. 9. 2026 · **Návrh a realizace, čeká na tři rozhodnutí vlastníka (oddíl 5).**
+Verze 1.1 · 30. 9. 2026 · **Realizováno; rozhodnutí vlastníka z oddílu 5 přijata 30. 9. 2026.**
 
 ## 1. Proč
 
@@ -67,7 +67,7 @@ Velikost souboru a počet řádků u odkazů ke stažení jsou technické údaje
 
 ## 5. Rozhodnutí vlastníka
 
-Nastavení je na jednom místě, `src/data/pro-novinare.json` (`rozhodnuto: false`). Stránka i generátor ho čtou, takže změna se projeví v obou po přegenerování.
+Nastavení je na jednom místě, `src/data/pro-novinare.json`. **30. 9. 2026 vlastník přijal všechny tři navržené hodnoty** pokynem ke sloučení PR #198; změna se dělá úpravou souboru a přegenerováním balíčků. Stránka i generátor ho čtou, takže změna se projeví v obou po přegenerování.
 
 1. **Pod jakou značkou citovat.** Návrh: „Přijímačky na školu (prijimackynaskolu.cz)“, v plné citaci „projekt Hlídače státu“. `llms.txt` vede Hlídač státu jako provozovatele.
 2. **Licence balíčků.** Návrh: CC BY 4.0, tedy volné použití s uvedením zdroje. Podmínka „uveďte zdroj“ je jádrem cíle z oddílu 1. Zdrojová data CERMAT jsou otevřená data; ověřit, že jejich podmínky odvozené dílo pod CC BY nevylučují.
@@ -94,4 +94,5 @@ Kdy: po exportu veletrhů (týdně v sezóně), po přepnutí kterékoli sady v 
 
 | Verze | Změna |
 |---|---|
+| 1.1 | Vypořádání čtyř kol review Codexu (populace uchazečů, okres po nabídkách, hesla slovníku); rozhodnutí vlastníka o značce, licenci a kontaktu. |
 | 1.0 | Návrh, generátor, balíčky a stránka `/pro-novinare`. |
