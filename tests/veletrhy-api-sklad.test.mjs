@@ -72,8 +72,11 @@ test('reálná akce z patche projde bez chyb', () => {
 });
 
 test('všechny akce snímku projdou tvarovou validací (seed nepustí nic, co by API odmítlo)', () => {
+  // Snímek se posuzuje ke dni svého exportu (checkedAt = nejnovější `overeno`),
+  // ne k pevnému DNES: týdenní export s akcí ověřenou po DNES by jinak test shodil.
+  const denSnimku = SNIMEK.checkedAt > DNES ? SNIMEK.checkedAt : DNES;
   for (const a of SNIMEK.akce) {
-    const r = overAkci(a, { dnes: DNES, povolitMinulou: true });
+    const r = overAkci(a, { dnes: denSnimku, povolitMinulou: true });
     assert.deepEqual(r.chyby, [], `${a.id}: ${JSON.stringify(r.chyby)}`);
   }
 });

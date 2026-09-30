@@ -9,7 +9,7 @@ z historie commitů.
 ## [Unreleased]
 
 ### Přidáno
-- **Kritéria od školy na stránce oboru**: když škola zadala kritéria v portálu, blok „Co kromě přijímaček rozhodovalo“ a štítek extra body stojí na jejích údajích („podle údajů školy“, bez výhrady o přepisu PDF); kritéria pro nový ročník v přítomném čase. Čtení v cache se značkou, zápis ji obnoví. Slovník pojmů 1.32, ukazatelů 1.48.
+- **Kritéria od školy na stránce oboru**: když škola zadala kritéria v portálu, blok „Co kromě přijímaček rozhodovalo“ a štítek extra body stojí na jejích údajích („podle údajů školy“, bez výhrady o přepisu PDF); kritéria pro nový ročník v přítomném čase. Čtení v cache se značkou, zápis ji obnoví. Slovník pojmů 1.33, ukazatelů 1.49.
 - **Simulátor přijímaček, drobnosti z oponentury**: zvažované obory v pořadí nastaveném šipkami, „posuň výš“ u oboru za limitem přihlášky, jednotné popisky, desetinné meze s čárkou, práh přijatých z indexu, test TAU při jiném roku převodu bez výhrady „jiný test“, nedohledaný uložený obor s konečným popiskem.
 - **Strukturované zadání kritérií v portálu pro školy** (`/pro-skoly/kriteria`, pilot bez veřejného zobrazení): maxima JPZ, přepočet a vyšší váha předmětu, tabulka dalších bodů se srážkami, dopočet celku a *Podílu přijímaček na bodování* s kontrolou proti vyhlášenému maximu, minima, seřazená pravidla při rovnosti a volný zápis „Další pravidla a výjimky“. Předvyplnění z přepisu PDF z DiPSy s povinným potvrzením kontroly, kopírování z jiného zaměření, kola nebo roku. Ročníky z registru. Nový sloupec `portal_kriteria.struktura` (migrace 006, zatím nespuštěná), nový soubor `public/kriteria_predvyplneni_2026.json`. Slovník ukazatelů 1.43, zdroje dat 1.21, portál 1.10.
 

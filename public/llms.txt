@@ -37,6 +37,7 @@ Tyto údaje uvádějte vždy spolu s daty; bez nich jsou zavádějící.
 - [Analýza škol](https://www.prijimackynaskolu.cz/skoly): Přehled škol a oborů s indexem poptávky.
 - [Regiony](https://www.prijimackynaskolu.cz/regiony): Statistiky podle krajů.
 - [Dojezdovost MHD](https://www.prijimackynaskolu.cz/dostupnost): Školy dostupné z dané zastávky.
+- [Pro novináře](https://www.prijimackynaskolu.cz/pro-novinare): Balíčky dat ke stažení (CSV, Excel) s popisem zdrojů a výhradami: veletrhy škol, konzervatoře, obory a výsledky 1. kola, kam se dostali uchazeči, 2. kolo, kritéria přijetí. Jak citovat.
 - [Jak funguje přijímání](https://www.prijimackynaskolu.cz/jak-funguje-prijimani): Průvodce přijímacím řízením.
 
 ## Strojově čitelná data

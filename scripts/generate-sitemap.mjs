@@ -113,7 +113,7 @@ export function buildSitemapPaths(analysisData, schoolsData, rocnik, inspections
   const paths = new Set([
     '/', '/prijimacky-2027', '/simulator', '/skoly', '/regiony', '/mesto',
     '/dostupnost', '/jak-vybrat-skolu', '/changelog', '/novinky',
-    '/veletrhy', '/veletrhy/nahlasit',
+    '/veletrhy', '/veletrhy/nahlasit', '/pro-novinare',
     '/pro-skoly', '/ochrana-osobnich-udaju',
   ]);
   for (const year of resultYears) paths.add(`/vysledky/${year}`);
