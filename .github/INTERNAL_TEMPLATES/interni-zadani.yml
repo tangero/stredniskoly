@@ -1,0 +1,81 @@
+# Interní zadání pro Claude Code (Eduarda → Patrick → Claude Code).
+#
+# POZOR: soubor je záměrně v .github/INTERNAL_TEMPLATES/, ne v .github/ISSUE_TEMPLATE/,
+# takže ho GitHub v nabídce „New issue“ nezobrazuje. Veřejné hlášení chyb (tlačítko
+# „Nahlásit chybu“ na webu → štítek bug-report) a portál škol (štítek portal-skoly)
+# tím zůstávají beze změny.
+# Issues se zakládají přes API / gh s tělem podle interni-zadani.md (stejná pole).
+# Pokud by se jednou měl formulář zobrazit v GitHub UI, stačí soubor přesunout
+# do .github/ISSUE_TEMPLATE/ (viz alternativa B).
+name: Interní zadání (jen pro tým)
+description: Interní zadání pro Claude Code. Nepoužívejte pro hlášení chyb, na to slouží tlačítko „Nahlásit chybu“ na webu.
+title: "[Zadání] "
+labels: ["interni", "navrh"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!WARNING]
+        > **Repozitář je veřejný, issue uvidí kdokoli.** Do zadání nepatří jména, e-maily, telefony ani jiné osobní údaje zákazníků, škol, rodičů ani uchazečů. Nepatří sem ani přístupové kódy, tokeny nebo výpisy z produkční databáze. Školu označte RED IZO, osobu rolí („ředitel školy“, „rodič“).
+        >
+        > Tento formulář je interní. Chcete-li nahlásit chybu na webu, použijte tlačítko **Nahlásit chybu** na prijimackynaskolu.cz.
+  - type: textarea
+    id: proc
+    attributes:
+      label: Proč / pro koho
+      description: Jaký problém řešíme, koho se týká (rodiče, uchazeči, školy, redakce) a odkud požadavek přišel. Bez osobních údajů.
+    validations:
+      required: true
+  - type: textarea
+    id: co
+    attributes:
+      label: Co přesně změnit
+      description: Konkrétní změna. Pokud víte, uveďte soubory, stránky nebo komponenty.
+    validations:
+      required: true
+  - type: textarea
+    id: hotovo
+    attributes:
+      label: Hotovo když
+      description: Akceptační kritéria jako checklist, každé ověřitelné na Vercel preview.
+      value: |
+        - [ ] 
+        - [ ] 
+        - [ ] Lint, testy a build prošly
+    validations:
+      required: true
+  - type: textarea
+    id: omezeni
+    attributes:
+      label: Nesmí se dotknout / omezení
+      description: Co se nesmí změnit (stránky, data, API, SEO adresy…). Změna produkčních dat v Neonu je dovolená jen s migrací, která je výslovně uvedená tady.
+      value: |
+        - Žádné refaktory mimo zadání.
+        - Produkční data v Neonu beze změny (migrace: žádná).
+    validations:
+      required: true
+  - type: textarea
+    id: test
+    attributes:
+      label: Jak otestovat
+      description: Postup ověření na Vercel preview (adresa stránky, kroky, očekávaný výsledek) a případné automatické testy.
+    validations:
+      required: true
+  - type: dropdown
+    id: velikost
+    attributes:
+      label: Velikost
+      description: "S = do hodiny, jeden soubor; M = pár souborů, do dne; L = víc dní nebo zásah do dat (zvažte rozdělení)."
+      options:
+        - S
+        - M
+        - L
+    validations:
+      required: true
+  - type: textarea
+    id: odkazy
+    attributes:
+      label: Související odkazy
+      description: Související issues (#N), dokumenty v docs/, stránky webu. Žádné odkazy na soukromou poštu ani sdílené dokumenty s osobními údaji.
+    validations:
+      required: false
