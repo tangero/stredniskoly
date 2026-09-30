@@ -20,7 +20,7 @@ export interface ZaznamKriteriiSkoly {
   struktura: StrukturaKriterii | null;
 }
 
-const norm = (t: string | undefined | null) => (t ?? '').normalize('NFC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('cs-CZ');
+export const norm = (t: string | undefined | null) => (t ?? '').normalize('NFC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('cs-CZ');
 /** Stránky oborů jsou jen pro denní studium (katalog „den“, DiPSy „…/denni“). */
 const jeDenni = (forma: string) => /(^|\/)den/.test(norm(forma));
 
@@ -72,12 +72,12 @@ export function prepisZeZaznamu(z: ZaznamKriteriiSkoly): PrepisKriterii {
  * Nejnovější ročník vyhrává, v něm 1. kolo před záznamem „pro všechna kola“.
  */
 export function kriteriaOdSkoly(
-  zaznamy: ZaznamKriteriiSkoly[], klic: string, zamereni?: string,
+  zaznamy: ZaznamKriteriiSkoly[], klic: string, zamereni?: string, jenRok?: number,
 ): { rok: number; prepisy: PrepisKriterii[] } | null {
   const [redizo, kkov] = klic.split('_');
   const oboru = zaznamy.filter(z => z.redizo === redizo && z.obor_identita
     && norm(z.obor_identita.kkov) === norm(kkov) && jeDenni(z.obor_identita.forma)
-    && (z.kolo === null || z.kolo === 1));
+    && (z.kolo === null || z.kolo === 1) && (jenRok === undefined || z.rok === jenRok));
   if (!oboru.length) return null;
   const shoda = zamereni ? oboru.filter(z => norm(z.obor_identita!.zamereni) === norm(zamereni)) : [];
   const kandidati = shoda.length ? shoda : oboru;

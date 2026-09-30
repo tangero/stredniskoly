@@ -87,3 +87,27 @@ test('kritéria nového ročníku od školy nepřepíší kritéria roku pásem'
   assert.equal(stejny.prepisy[0].prepis, 'skola');
   assert.equal(stejny.nove, undefined);
 });
+
+test('oprava školy za rok přepisu platí i vedle kritérií nového ročníku', async () => {
+  const { sPrednostiSkoly } = await import('../src/lib/kriteria-skoly-sloucit.ts');
+  const pdf = { source_id: 'x', zamereni: '', rezim: 'jine', podil_jpz_pct: null, slozky: [{ nazev: 'Prospěch', max: null }], jpz_navic: [], minima: [], nejasnosti: [], prepis: 'strojovy', nalezy: [] };
+  const prepis = { rok: 2026, pdf: true, noveKriteria: null, prepisy: [pdf] };
+  const jenJpz = struktura({ slozky: [] });
+  const k = sPrednostiSkoly(prepis, [zaznam({ rok: 2026, rezim: 'pouze_jpz', struktura: jenJpz }), zaznam({ rok: 2027 })], '600001431_79-41-K/41', undefined);
+  assert.equal(k.prepisy[0].prepis, 'skola');
+  assert.equal(k.prepisy[0].rezim, 'pouze_jpz');
+  assert.equal(k.nove.rok, 2027);
+});
+
+test('škola potvrdila jen jedno zaměření: ostatní zůstanou z přepisu, nové řízení se neukáže za celý obor', async () => {
+  const { sPrednostiSkoly } = await import('../src/lib/kriteria-skoly-sloucit.ts');
+  const pdf = (zamereni, rezim) => ({ source_id: zamereni, zamereni, rezim, podil_jpz_pct: rezim === 'pouze_jpz' ? 100 : null, slozky: rezim === 'jine' ? [{ nazev: 'Prospěch', max: null }] : [], jpz_navic: [], minima: [], nejasnosti: [], prepis: 'strojovy', nalezy: [] });
+  const prepis = { rok: 2026, pdf: true, noveKriteria: null, prepisy: [pdf('Jazyky', 'jine'), pdf('Vědy', 'jine')] };
+  const jazyky = (rok, over = {}) => zaznam({ rok, rezim: 'pouze_jpz', struktura: struktura({ slozky: [] }), obor_identita: { redizo: '600001431', kkov: '79-41-K/41', zamereni: 'Jazyky', forma: 'den', delkaStudia: 4 }, ...over });
+  const k = sPrednostiSkoly(prepis, [jazyky(2026), jazyky(2027)], '600001431_79-41-K/41', undefined);
+  assert.deepEqual(k.prepisy.map(p => [p.zamereni, p.prepis, p.rezim]), [['Jazyky', 'skola', 'pouze_jpz'], ['Vědy', 'strojovy', 'jine']]);
+  assert.equal(k.nove, undefined);
+  const strankaJazyku = sPrednostiSkoly({ ...prepis, prepisy: [pdf('Jazyky', 'jine')] }, [jazyky(2026), jazyky(2027)], '600001431_79-41-K/41', 'Jazyky');
+  assert.equal(strankaJazyku.prepisy.length, 1);
+  assert.equal(strankaJazyku.nove.rok, 2027);
+});
