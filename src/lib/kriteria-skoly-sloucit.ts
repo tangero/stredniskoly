@@ -29,7 +29,12 @@ export function sPrednostiSkoly(
     if (zamereni && prepisy.some(naStrance)) prepisy = prepisy.filter(naStrance);
   }
   const vysledek: KriteriaOboru = { ...zaklad, prepisy };
-  const nove = kriteriaOdSkoly(odSkol, klic, undefined);
+  // Na stránce zaměření se nejnovější ročník hledá jen mezi záznamy téhož zaměření:
+  // novější zápis jiného zaměření nesmí schovat jeho kritéria.
+  const kandidati = zamereni
+    ? odSkol.filter(z => norm(z.obor_identita?.zamereni) === norm(zamereni))
+    : odSkol;
+  const nove = kriteriaOdSkoly(kandidati, klic, undefined);
   if (nove && nove.rok > zaklad.rok) {
     const vhodne = nove.prepisy.filter(naStrance);
     const zadana = new Set(vhodne.map(p => norm(p.zamereni)));

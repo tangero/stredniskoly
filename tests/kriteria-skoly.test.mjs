@@ -142,3 +142,11 @@ test('složka bez názvu dostane popisek svého druhu', () => {
   const p = prepisZeZaznamu(zaznam({ struktura: struktura({ slozky: [{ druh: 'pohovor', nazev: '  ', max: 20, poznamka: '' }] }) }));
   assert.equal(p.slozky[0].nazev, 'Pohovor nebo motivační dopis');
 });
+
+test('novější zápis jiného zaměření neschová kritéria zaměření stránky', async () => {
+  const { sPrednostiSkoly } = await import('../src/lib/kriteria-skoly-sloucit.ts');
+  const id = zamereni => ({ redizo: '600001431', kkov: '79-41-K/41', zamereni, forma: 'den', delkaStudia: 4 });
+  const k = sPrednostiSkoly(null, [zaznam({ rok: 2027, obor_identita: id('Jazyky') }), zaznam({ rok: 2028, obor_identita: id('Vědy') })], '600001431_79-41-K/41', 'Jazyky', 2026);
+  assert.equal(k.nove.rok, 2027);
+  assert.equal(k.nove.prepisy[0].zamereni, 'Jazyky');
+});
