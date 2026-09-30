@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { normalizeSchoolKey } from '@/lib/school-key';
 import { nazevNabidky } from '@/lib/obor-profil';
-import { matchesSearchLocation, splitByCommute } from '@/lib/simulator-filter';
+import { DRUHY_ZRIZOVATELE, matchesSearchLocation, matchesZrizovatel, splitByCommute, type DruhZrizovatele } from '@/lib/simulator-filter';
 import type { AdmissionContext } from '@/lib/admission-summary';
 import { MAX_SELECTION, readSelection, selectionForShare, shareUrlFor } from '@/lib/simulator-state';
 import { SeznamNabidek, type NabidkaSimulatoru } from '@/components/simulator/SeznamNabidek';
@@ -30,6 +30,7 @@ interface School {
   adresa?: string;
   ulice?: string;
   kraj: string;
+  zrizovatel?: string | null;
   admission_context: AdmissionContext | null;
   demand: { first_priority: number | null; year: number; round: number; applications: number | null; capacity: number | null } | null;
   history: {
@@ -130,6 +131,7 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
   const [region, setRegion] = useState('');
   const [city, setCity] = useState('');
   const [subjects, setSubjects] = useState<string[]>([]);
+  const [zrizovatele, setZrizovatele] = useState<DruhZrizovatele[]>([]);
   const [stopQuery, setStopQuery] = useState('');
   const [stop, setStop] = useState<Stop | null>(null);
   const [suggestions, setSuggestions] = useState<Stop[]>([]);
@@ -277,8 +279,9 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
     const duration = grade === '5' ? 8 : grade === '7' ? 6 : null;
     if (duration ? s.delka_studia !== duration : grade === '9' && s.delka_studia !== 4 && s.delka_studia !== 5) return false;
     return matchesSearchLocation(s, { city, region, commute: !!stop }) && (!subjects.length || subjects.includes(s.obor)) &&
+      matchesZrizovatel(s, zrizovatele) &&
       (!query.trim() || normalize([s.obor, s.zamereni].join(' ')).includes(normalize(query.trim())));
-  }), [catalog, grade, region, city, stop, subjects, query]);
+  }), [catalog, grade, region, city, stop, subjects, zrizovatele, query]);
   // Bez zastávky, obce i kraje se celá země neukazuje: 2 800 nabídek by nikomu nepomohlo.
   const needsPlace = !onlySaved && !stop && !city && !region;
   const resultCandidates = onlySaved ? filtered.filter(s => savedKeys.has(normalizeSchoolKey(s.id))) : filtered;
@@ -447,6 +450,11 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
           {subjects.length > 0 && <div className="mt-2 flex flex-wrap gap-2">{subjects.map(s => <button className={`${button} text-left text-blue-800`} key={s} aria-label={`Zrušit filtr ${s}`} onClick={() => { setSubjects(subjects.filter(value => value !== s)); }}>{s} ×</button>)}</div>}
           <p className="mt-2 text-xs text-slate-500">Názvy z dostupného katalogu. Vybrané obory se kombinují jako alternativy.</p>
           <label className="mt-4 block text-sm font-medium">Upřesnit obor nebo zaměření<input className={field} value={query} onChange={e => { setQuery(e.target.value); }} placeholder="Např. jazyky" /></label>
+          <fieldset className="mt-4">
+            <legend className="text-sm font-medium">Zřizovatel školy</legend>
+            <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1">{DRUHY_ZRIZOVATELE.map(d => <label key={d.id} className="flex min-h-11 items-center gap-2 text-sm"><input type="checkbox" className="h-4 w-4 accent-blue-700" checked={zrizovatele.includes(d.id)} onChange={e => { setZrizovatele(e.target.checked ? [...zrizovatele, d.id] : zrizovatele.filter(z => z !== d.id)); }} />{d.label}</label>)}</div>
+            <p className="mt-1 text-xs text-slate-500">Zřizovatel je ten, kdo školu založil a odpovídá za ni. Soukromé a církevní školy mohou vybírat školné. {zrizovatele.length ? 'Obory, u kterých zřizovatele neznáme, se teď nezobrazují.' : 'Bez výběru ukazujeme všechny.'}</p>
+          </fieldset>
           <label className="mt-4 block text-sm font-medium">Kraj školy<select disabled={!!stop} className={`${field} disabled:bg-slate-100 disabled:text-slate-500`} value={region} onChange={e => { setRegion(e.target.value); }}><option value="">Všechny kraje</option>{catalog?.kraje.map(kraj => <option key={kraj.kod}>{kraj.nazev}</option>)}</select></label>
           <label className="mt-4 block text-sm font-medium">Město nebo obec školy<select className={field} value={city} onChange={e => { setCity(e.target.value); }}><option value="">Všechna města a obce</option>{cities.map(name => <option key={name}>{name}</option>)}</select></label>
           {stop && <p className="mt-2 text-sm text-blue-800">Při hledání podle dojezdu kraj výsledky neomezuje, město ano. Po vypnutí dojezdu se kraj znovu použije.</p>}

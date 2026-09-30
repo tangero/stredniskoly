@@ -27,3 +27,27 @@ export function matchesSearchLocation(
   return (!scope.city || school.obec.trim() === scope.city) &&
     (!scope.region || school.kraj.trim() === scope.region);
 }
+
+export type DruhZrizovatele = 'verejna' | 'soukroma' | 'cirkevni';
+
+export const DRUHY_ZRIZOVATELE: { id: DruhZrizovatele; label: string }[] = [
+  { id: 'verejna', label: 'veřejná' },
+  { id: 'soukroma', label: 'soukromá' },
+  { id: 'cirkevni', label: 'církevní' },
+];
+
+/** Katalog nese zřizovatele slovy z CERMATu („veřejné / státní“, „soukromé“, „církevní“); neznámý je null. */
+export function druhZrizovatele(zrizovatel: string | null | undefined): DruhZrizovatele | null {
+  const z = (zrizovatel ?? '').toLowerCase();
+  if (z.includes('soukrom')) return 'soukroma';
+  if (z.includes('církev')) return 'cirkevni';
+  if (z.includes('veřejn') || z.includes('státn')) return 'verejna';
+  return null;
+}
+
+/** Bez výběru projde vše; s výběrem jen známý zřizovatel z výběru, neznámý se nepočítá jako shoda. */
+export function matchesZrizovatel(school: { zrizovatel?: string | null }, vybrane: DruhZrizovatele[]): boolean {
+  if (!vybrane.length) return true;
+  const druh = druhZrizovatele(school.zrizovatel);
+  return druh !== null && vybrane.includes(druh);
+}

@@ -190,6 +190,36 @@ test('nová nepovinná pole stravování a kontakt na výchovného poradce', () 
   assert.equal(dlouhe.ok, false);
 });
 
+test('podnadpis pod názvem školy: jeden řádek, nejvýš 160 znaků, prázdný je povolený', () => {
+  const def = PORTAL_POLE.find((p) => p.key === 'podnadpis');
+  assert.ok(def, 'pole podnadpis chybí v PORTAL_POLE');
+  assert.equal(def.maxLength, 160);
+  assert.equal(def.typ, 'text');
+
+  const v = validatePortalPayload({ ...PAYLOAD, udaje: { podnadpis: '  Čtyřleté gymnázium\r\n se zaměřením\nna jazyky  ' } });
+  assert.equal(v.ok, true);
+  assert.equal(v.udaje.podnadpis, 'Čtyřleté gymnázium se zaměřením na jazyky');
+
+  const html = validatePortalPayload({ ...PAYLOAD, udaje: { podnadpis: 'Škola <b>jazyků</b>' } });
+  assert.equal(html.ok, true);
+  assert.equal(html.udaje.podnadpis, 'Škola <b>jazyků</b>', 'hodnota se ukládá doslova, na stránce se vykreslí jako text');
+
+  assert.equal(validatePortalPayload({ ...PAYLOAD, udaje: { podnadpis: 'x'.repeat(160) } }).ok, true);
+  const dlouhy = validatePortalPayload({ ...PAYLOAD, udaje: { podnadpis: 'x'.repeat(161) } });
+  assert.equal(dlouhy.ok, false);
+  assert.match(dlouhy.error, /Podnadpis pod názvem školy.*160/);
+
+  const prazdny = validatePortalPayload({ ...PAYLOAD, udaje: { podnadpis: '   ' } });
+  assert.equal(prazdny.ok, true);
+  assert.equal(prazdny.udaje.podnadpis, '');
+});
+
+test('ostatní textová pole si zalomení řádku ponechají', () => {
+  const v = validatePortalPayload({ ...PAYLOAD, udaje: { kriteria_vlastnimi_slovy: 'řádek 1\nřádek 2' } });
+  assert.equal(v.ok, true);
+  assert.equal(v.udaje.kriteria_vlastnimi_slovy, 'řádek 1\nřádek 2');
+});
+
 test('hash kódu: HMAC s pepřem, bez pepře kód neověří', async () => {
   assert.notEqual(hashKod('ABCD-EFGH-JKMN', 'jiny-pepr'), hashKod('ABCD-EFGH-JKMN'));
   assert.throws(() => hashKod('ABCD-EFGH-JKMN', ''), /PORTAL_KOD_PEPPER/);
