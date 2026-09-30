@@ -94,11 +94,16 @@ export interface PrepisKriterii {
   jpz_navic: { nazev: string; max: number | null }[];
   minima: string[];
   nejasnosti: string[];
-  prepis: 'rucni' | 'strojovy';
+  /** `skola`: kritéria zadala škola v portálu; mají přednost před přepisem PDF. */
+  prepis: 'rucni' | 'strojovy' | 'skola';
   /** Nálezy mechanické kontroly; prázdné neznamená ověřeno. */
   nalezy: string[];
   /** Přepis tvrdil „jen přijímačky“, kontrola Jevem našla i další bodování; složky v přepisu chybí. */
   chybi_slozky?: boolean;
+  /** Další pravidla a výjimky slovy (jen údaje školy). */
+  popis?: string;
+  /** Odkaz na vyhlášená kritéria (jen údaje školy). */
+  odkaz?: string;
 }
 
 export interface KriteriaOboru {
@@ -108,4 +113,6 @@ export interface KriteriaOboru {
   prepisy: PrepisKriterii[];
   /** Kdy školy zveřejní kritéria nového ročníku, z harmonogramu MŠMT. */
   noveKriteria: string | null;
+  /** Kritéria zadala škola pro ročník novější, než je zobrazený přepis: platí pro nové řízení. */
+  noveRizeni?: boolean;
 }

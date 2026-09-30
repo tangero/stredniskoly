@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.47 · 29. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.48 · 30. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -700,6 +700,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.48 | **Podíl přijímaček na bodování ze zadání školy se zobrazuje** na stránce oboru (30. 9. 2026): když škola zadala kritéria v portálu, blok kritérií počítá podíl z jejího strukturovaného zadání stejnou definicí a přepis PDF nepoužije. Index simulátoru (štítek extra body) zůstává z přepisu, dokud se nepřegeneruje s údaji škol. |
 | 1.47 | Řazení „od nejvyšší hranice přijetí“ v Simulátoru přijímaček dává na konec i obory s talentovou zkouškou, obory, kde nikoho neodmítli kvůli počtu míst, a obory s rozporem počtů (29. 9. 2026, nález review): jejich nejnižší přijatý výsledek není hranicí soutěže. |
 | 1.46 | Simulátor přijímaček, etapa E5 (výhrady v kroku 3): u *Převedeného výsledku testu*, *Podílu přijímaček na bodování*, *Pásma nejistoty* a *Soutěžících o obor* doplněno, kde se v simulátoru zobrazují; u *Pořadí mezi soutěžícími*, že se tam neukazuje. U *Nejnižšího výsledku JPZ mezi přijatými* zapsán doložený meziroční posun (medián 5 bodů), ze kterého stojí výhrada o jednom ročníku; oprava čísla 3 body z návrhu. Výpočty beze změny. |
 | 1.45 | Nový ukazatel **Poloha vůči pásmu** pro skupiny Simulátoru přijímaček (nad pásmem, v pásmu, pod pásmem, obory, kde nikoho neodmítli, bez srovnání; 29. 9. 2026, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 3 a 12). *Průměr JPZ přijatých* ze simulátoru odchází jako porovnávací měřítko (`admission-gap.ts` smazán); ukazatel zůstává pro jiné stránky. |

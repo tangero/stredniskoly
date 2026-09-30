@@ -39,18 +39,37 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
   // U víc zaměření ukázat to, které boduje i něco dalšího; jinak první.
   const p = k.prepisy.find(x => x.rezim === 'jine' || x.jpz_navic.length > 0 || x.chybi_slozky) ?? k.prepisy[0];
   if (!p) return null;
-  const noveRizeni = (
+  const odSkoly = p.prepis === 'skola';
+  // Škola zadala kritéria pro nové řízení: nic se „teprve nevyhlásí“ a mluví se v přítomném čase.
+  const nove = Boolean(k.noveRizeni);
+  const noveRizeni = nove ? null : (
     <>Kritéria pro nové přijímací řízení se teprve vyhlásí{k.noveKriteria ? `; školy je zveřejní ${k.noveKriteria}` : ''}.</>
+  );
+  const zdroj = odSkoly ? 'podle údajů školy' : 'podle PDF';
+  const puvod = odSkoly ? (
+    <p className="text-slate-600">
+      Podle údajů školy, které škola sama zadala a potvrdila.
+      {p.odkaz && /^https?:\/\//i.test(p.odkaz) && <> <a href={p.odkaz} className="text-blue-700 underline" rel="noopener noreferrer" target="_blank">Kritéria na webu školy</a>.</>}
+    </p>
+  ) : (
+    <p className="text-amber-800">
+      {p.prepis === 'strojovy' ? 'Přepsal to z PDF počítač a může obsahovat chybu: při kontrole vzorku byl podstatně chybný zhruba každý desátý přepis.' : 'Přepsáno ručně z PDF a může obsahovat chybu.'}
+      {p.nalezy.length > 0 && ` ${NALEZ_TEXT}`} Ověřte si to v kritériích školy.
+    </p>
   );
   if (jenPrijimacky(k)) {
     return (
       <p className="text-sm text-slate-600">
-        Podle kritérií {k.rok}, tedy pravidel, podle kterých škola v roce {k.rok} řadila uchazeče, škola přijímala
-        podle jednotné přijímací zkoušky. {noveRizeni}{' '}
-        <span className="text-amber-800">
-          {p.prepis === 'strojovy' ? 'Přepsal to z PDF počítač a může obsahovat chybu.' : 'Přepsáno ručně z PDF a může obsahovat chybu.'}
-          {p.nalezy.length > 0 && ` ${NALEZ_TEXT}`} Ověřte si to v kritériích školy.
-        </span>
+        {nove
+          ? <>Podle kritérií {k.rok}, tedy pravidel, podle kterých škola v roce {k.rok} řadí uchazeče, přijímá škola podle jednotné přijímací zkoušky.</>
+          : <>Podle kritérií {k.rok}, tedy pravidel, podle kterých škola v roce {k.rok} řadila uchazeče, škola přijímala podle jednotné přijímací zkoušky.</>}
+        {' '}{noveRizeni}{' '}
+        {odSkoly
+          ? <span>Podle údajů školy.</span>
+          : <span className="text-amber-800">
+              {p.prepis === 'strojovy' ? 'Přepsal to z PDF počítač a může obsahovat chybu.' : 'Přepsáno ručně z PDF a může obsahovat chybu.'}
+              {p.nalezy.length > 0 && ` ${NALEZ_TEXT}`} Ověřte si to v kritériích školy.
+            </span>}
       </p>
     );
   }
@@ -61,21 +80,22 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
           <span aria-hidden="true">★</span> O přijetí rozhodují i extra body
         </p>
       )}
-      <h3 className="text-lg font-bold text-[#16325c]">Co kromě přijímaček rozhodovalo v roce {k.rok}</h3>
+      <h3 className="text-lg font-bold text-[#16325c]">{nove ? `Co kromě přijímaček rozhoduje v roce ${k.rok}` : `Co kromě přijímaček rozhodovalo v roce ${k.rok}`}</h3>
       {extraBody(p) && (
         <p className="font-medium text-slate-800">
-          V roce {k.rok} o pořadí rozhodovaly i extra body, tedy body za něco jiného než jednotnou přijímací
+          V roce {k.rok} o pořadí {nove ? 'rozhodují' : 'rozhodovaly'} i extra body, tedy body za něco jiného než jednotnou přijímací
           zkoušku, například za prospěch ze základní školy nebo školní přijímací zkoušku. Podle kritérií se
           mohly přičítat i odečítat.
         </p>
       )}
       <p className="text-slate-500">
-        Kritéria {k.rok}, tedy pravidla, podle kterých škola v roce {k.rok} řadila uchazeče; pro nové přijímací
-        řízení platí nová.
+        {nove
+          ? <>Kritéria {k.rok}, tedy pravidla, podle kterých škola v roce {k.rok} řadí uchazeče.</>
+          : <>Kritéria {k.rok}, tedy pravidla, podle kterých škola v roce {k.rok} řadila uchazeče; pro nové přijímací řízení platí nová.</>}
       </p>
       {p.jpz_navic.length > 0 && (
         <>
-          <p>Přijímačky ale podle PDF nepočítala prostým součtem, takže pořadí se od součtu na proužku může lišit (podrobnosti v kritériích školy):</p>
+          <p>Přijímačky ale {zdroj} {nove ? 'nepočítá' : 'nepočítala'} prostým součtem, takže pořadí se od součtu na proužku může lišit (podrobnosti v kritériích školy):</p>
           <ul className="list-disc space-y-0.5 pl-5">
             {p.jpz_navic.map((x, i) => (
               <li key={i}>{x.nazev}</li>
@@ -87,12 +107,14 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
         <>
           <p>
             {p.chybi_slozky
-              ? <>Kromě přijímaček škola podle PDF bodovala i další věci (například prospěch nebo pohovor), náš přepis je ale nezachytil. </>
+              ? (odSkoly
+                ? <>Kromě přijímaček škola boduje i další věci{p.popis ? "; popsala je slovně níže" : ", podrobnosti neuvedla"}. </>
+                : <>Kromě přijímaček škola podle PDF bodovala i další věci (například prospěch nebo pohovor), náš přepis je ale nezachytil. </>)
               : p.slozky.length > 0 && p.slozky.filter(x => x.max !== 0).every(srazka)
-                ? <>Kromě přijímaček škola podle PDF strhávala body jen za chování. </>
+                ? <>Kromě přijímaček škola {zdroj} strhávala body jen za chování. </>
               : p.podil_jpz_pct !== null
                 ? <>Přijímačky tvořily asi <b>{p.podil_jpz_pct} %</b> bodů. </>
-                : <>Kromě přijímaček škola bodovala i další věci; jejich váhu jsme z PDF nepřečetli celou. </>}
+                : <>Kromě přijímaček škola bodovala i další věci; {odSkoly ? 'jejich maxima škola neuvedla všechna' : 'jejich váhu jsme z PDF nepřečetli celou'}. </>}
             O pořadí proto rozhodoval i zbytek bodů, nejen test.
           </p>
           {p.slozky.length > 0 && (
@@ -110,12 +132,10 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
             {p.minima.map((m, i) => <li key={i}>{m.replace(/\.$/, '')}</li>)}
           </ul>
         </div>}
+      {odSkoly && p.popis && <p className="whitespace-pre-line">{p.popis}</p>}
       {k.prepisy.length > 1 && <p className="text-slate-500">Obor má víc zaměření a kritéria se mezi nimi můžou lišit; ukazujeme {p.zamereni ? `zaměření ${p.zamereni}` : 'jedno z nich'}.</p>}
-      <p className="text-amber-800">
-        {p.prepis === 'strojovy' ? 'Přepsal to z PDF počítač a může obsahovat chybu: při kontrole vzorku byl podstatně chybný zhruba každý desátý přepis.' : 'Přepsáno ručně z PDF a může obsahovat chybu.'}
-        {p.nalezy.length > 0 && ` ${NALEZ_TEXT}`} Ověřte si to v kritériích školy.
-      </p>
-      <p className="text-slate-500">{noveRizeni} Až budou, doplníme je.</p>
+      {puvod}
+      {noveRizeni && <p className="text-slate-500">{noveRizeni} Až budou, doplníme je.</p>}
     </div>
   );
 }

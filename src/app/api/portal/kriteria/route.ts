@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { jeDbNastavena, vTransakci } from '@/lib/novinky-db';
 import { jeNasPuvod, prihlasenyZPozadavku } from '@/lib/portal-relace';
+import { obnovKriteria } from '@/lib/portal-api';
 import { oboryProKriteria, overZadani, rokyKriterii, zapisKriteria } from '@/lib/portal-kriteria';
 
 export async function POST(request: NextRequest) {
@@ -46,6 +47,8 @@ export async function POST(request: NextRequest) {
       },
       roleId: role.id,
     }));
+    // Stránka oboru ukazuje údaje školy přednostně; bez obnovy by čekala až hodinu.
+    obnovKriteria();
     return NextResponse.json({ ok: true, kriterium: saved });
   } catch (error) {
     if (error instanceof Error && error.message.startsWith('Údaj se mezitím změnil'))

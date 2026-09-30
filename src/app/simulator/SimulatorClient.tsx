@@ -115,7 +115,7 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
   const [pasmaChyba, setPasmaChyba] = useState('');
   const [legacySaved, setLegacySaved] = useState<School[]>([]);
   // Stav dohledání uložených oborů mimo aktuální katalog: po skončení (i neúspěšném) už „dohledává se“ neplatí.
-  const [dohledani, setDohledani] = useState<'probiha' | 'hotovo' | 'selhalo'>('probiha');
+  const [vysledekDohledani, setVysledekDohledani] = useState<{ klic: string; stav: 'hotovo' | 'selhalo' } | null>(null);
   const [catalog, setCatalog] = useState<SearchResponse | null>(null);
   const [error, setError] = useState('');
   const [retry, setRetry] = useState(0);
@@ -232,8 +232,8 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
     if (!catalog) return;
     const keys = new Set(catalog.schools.map(s => normalizeSchoolKey(s.id)));
     const missing = selectedIds.filter(id => !keys.has(normalizeSchoolKey(id)));
-    if (!missing.length) { setDohledani('hotovo'); return; }
-    setDohledani('probiha');
+    if (!missing.length) return;
+    const klicDohledani = JSON.stringify(missing);
     const controller = new AbortController();
     Promise.all(Array.from({ length: Math.ceil(missing.length / 100) }, (_, i) => {
       const params = new URLSearchParams({ ids: JSON.stringify(missing.slice(i * 100, (i + 1) * 100)) });
@@ -241,14 +241,18 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
         if (!r.ok) throw new Error('lookup');
         return r.json() as Promise<SearchResponse>;
       });
-    })).then(parts => { setLegacySaved(parts.flatMap(p => p.schools)); setDohledani('hotovo'); }).catch(error => {
+    })).then(parts => { setLegacySaved(parts.flatMap(p => p.schools)); setVysledekDohledani({ klic: klicDohledani, stav: 'hotovo' }); }).catch(error => {
       if (error.name !== 'AbortError') {
-        setDohledani('selhalo');
+        setVysledekDohledani({ klic: klicDohledani, stav: 'selhalo' });
         setNotice('Část staršího výběru se nepodařilo načíst. Uložené položky zůstávají zachované.');
       }
     });
     return () => controller.abort();
   }, [catalog, selectedIds]);
+  // Stav dohledání patří k právě chybějícím oborům; po změně výběru se dohledává znovu.
+  const chybejici = catalog ? selectedIds.filter(id => !catalog.schools.some(s => normalizeSchoolKey(s.id) === normalizeSchoolKey(id))) : selectedIds;
+  const dohledani: 'probiha' | 'hotovo' | 'selhalo' = vysledekDohledani && vysledekDohledani.klic === JSON.stringify(chybejici)
+    ? vysledekDohledani.stav : 'probiha';
   const savedKeys = useMemo(() => new Set(selectedIds.map(normalizeSchoolKey)), [selectedIds]);
   // Odkaz měříme podle hotové adresy, protože identifikátory mají různou délku.
   const shareableIds = useMemo(

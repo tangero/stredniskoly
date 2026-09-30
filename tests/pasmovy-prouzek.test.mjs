@@ -237,3 +237,18 @@ test('extra body: odečet za průměr ano, samotná sankce za chování ne', () 
   assert.equal(extraBody(prepis(['průměrný prospěch (bez známky chování) 1. pololetí 9. ročníku'])), true);
   assert.equal(extraBody(prepis(['odečet za chování uspokojivé', 'penalizace za sníženou známku z chování'])), false);
 });
+
+test('kritéria od školy: bez výhrady o přepisu, s původem „podle údajů školy“', () => {
+  const prepis = {
+    source_id: '', zamereni: '', rezim: 'jine', podil_jpz_pct: 80, slozky: [{ nazev: 'Prospěch ze ZŠ', max: 25 }],
+    jpz_navic: [], minima: [], nejasnosti: [], prepis: 'skola', nalezy: [], chybi_slozky: false, odkaz: 'https://skola.cz/k',
+  };
+  const html = vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] }, { kriteria: { rok: 2026, pdf: true, prepisy: [prepis], noveKriteria: '2027-01-31' } });
+  assert.match(html, /Podle údajů školy/);
+  assert.doesNotMatch(html, /Přepsal to z PDF počítač/);
+  assert.match(html, /O přijetí rozhodují i extra body/);
+  assert.match(html, /Kritéria pro nové přijímací řízení se teprve vyhlásí/);
+  const nove = vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] }, { kriteria: { rok: 2027, pdf: true, prepisy: [prepis], noveKriteria: '2027-01-31', noveRizeni: true } });
+  assert.match(nove, /Co kromě přijímaček rozhoduje v roce 2027/);
+  assert.doesNotMatch(nove, /teprve vyhlásí/);
+});

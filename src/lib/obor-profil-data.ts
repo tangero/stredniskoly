@@ -1,5 +1,6 @@
 import { nactiPrevodDruhu } from '@/lib/prevod-testu';
 import { kriteriaOboru, poziceOboru } from '@/lib/pozice-kriteria';
+import { kriteriaOdSkoly, vsechnaKriteriaSkol } from '@/lib/kriteria-skoly-verejne';
 import { druhTestu, type DruhTestu, type KriteriaOboru, type PoziceOboru, type PrevodDruhu } from '@/lib/prevod-testu-vypocet';
 import { getSchoolsData, getExtractionsByRedizo, getInspisDataByRedizo } from '@/lib/data';
 import { getSouhrnNabidky, nabidkyVeSkupineKraje, souhrnOboru, type SouhrnRocniku } from '@/lib/souhrny-kolo1';
@@ -149,6 +150,25 @@ function kriteriaZamereni(k: KriteriaOboru | null, zamereni: string | undefined)
   return shoda.length ? { ...k, prepisy: shoda } : k;
 }
 
+/**
+ * Údaje, které škola zadala v portálu, mají přednost před přepisem PDF
+ * (docs/prototyp-kriteria-prijeti.md, bod 4). Ročník novější než přepis
+ * jsou kritéria pro nové řízení.
+ */
+export function sPrednostiSkoly(
+  prepis: KriteriaOboru | null, odSkol: Parameters<typeof kriteriaOdSkoly>[0], klic: string, zamereni: string | undefined,
+): KriteriaOboru | null {
+  const skola = kriteriaOdSkoly(odSkol, klic, zamereni);
+  if (!skola) return prepis;
+  return {
+    rok: skola.rok,
+    pdf: prepis?.pdf ?? false,
+    prepisy: skola.prepisy,
+    noveKriteria: prepis?.noveKriteria ?? null,
+    noveRizeni: prepis ? skola.rok > prepis.rok : false,
+  };
+}
+
 /** Null, když nabídka v zobrazeném ročníku souhrnů není; stránka pak použije starší podobu. */
 export async function getProfilOboru(programId: string, zamereni: string | undefined, redizo: string): Promise<ProfilOboruData | null> {
   const souhrn = await getSouhrnNabidky(programId);
@@ -166,13 +186,13 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
   // Bez vypočteného pásma nejistoty by proužek chybějící horní mez četl jako
   // „nad minimem se dostali všichni“, což data nemusí nést; zůstane histogram.
   const kdeStojim: ProfilOboruData['kdeStojim'] = rokPasem && pasmaData?.pasmo_nejistoty
-    ? await Promise.all([nactiPrevodDruhu(druh), poziceOboru(klicPasem), kriteriaOboru(klicPasem)])
-      .then(([prevod, pozice, kriteria]) => {
+    ? await Promise.all([nactiPrevodDruhu(druh), poziceOboru(klicPasem), kriteriaOboru(klicPasem), vsechnaKriteriaSkol()])
+      .then(([prevod, pozice, kriteria, odSkol]) => {
         // Pásma, která počítají uchazeče s více zaměřeními vícekrát (issue #183),
         // se s deduplikovaným pořadím rozcházejí; proužek pak radši vůbec ne.
         const soucet = pozice ? Object.values(pozice).reduce((a, n) => a + n, 0) : null;
         if (soucet !== pasmaData.soutezicich) return null;
-        return { druh, prevod, pozice, kriteria: kriteriaZamereni(kriteria, zamereni) };
+        return { druh, prevod, pozice, kriteria: sPrednostiSkoly(kriteriaZamereni(kriteria, zamereni), odSkol, klicPasem, zamereni) };
       })
     : null;
 
