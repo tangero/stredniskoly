@@ -216,12 +216,12 @@ export default function ProNovinarePage() {
             <p className="text-sm text-slate-600 mt-3">
               * Uchazečů 2. kola: kdo podal přihlášku do 2. kola. Hlásit se mohou děti, kterým nevyšlo 1. kolo, ale také ti,
               kdo se přijetí z 1. kola vzdali (u oborů pro 9. třídu {cislo(vzdali9)} přihlášek; data uchazečů je vedou jako
-              přijaté), nebo ti, kdo v 1. kole přihlášku nepodali. Proto je deváťáků ve 2. kole víc ({cislo(k9.uchazecu)}) než
-              těch, kdo v 1. kole zůstali bez místa ({cislo(d9.nikam)}). Celý rozdíl připadá na uchazeče bez výsledku jednotné
-              zkoušky, kterou šlo psát jen v 1. kole: s výsledkem zůstalo po 1. kole bez místa {cislo(d9.nikam_s_jpz)} deváťáků
-              a ve 2. kole jich bylo {cislo(k9.s_vysledkem_jpz)}, bez výsledku {cislo(d9.nikam - d9.nikam_s_jpz)} a{' '}
-              {cislo(k9.uchazecu - k9.s_vysledkem_jpz)}. Soubory 1. a 2. kola nemají společný identifikátor uchazeče, proto
-              konkrétní dítě z 1. kola ve 2. kole nedohledáme a kolik z nich jsou tytéž děti, určit nejde.
+              přijaté), nebo ti, kdo v 1. kole přihlášku nepodali. Deváťáků ve 2. kole je proto víc ({cislo(k9.uchazecu)}) než
+              těch, kdo v 1. kole zůstali bez místa ({cislo(d9.nikam)}). Podle výsledku jednotné zkoušky, kterou šlo psát jen
+              v 1. kole: bez výsledku jich bylo po 1. kole bez místa {cislo(d9.nikam - d9.nikam_s_jpz)} a ve 2. kole{' '}
+              {cislo(k9.uchazecu - k9.s_vysledkem_jpz)}, s výsledkem {cislo(d9.nikam_s_jpz)} a {cislo(k9.s_vysledkem_jpz)}.
+              Soubory 1. a 2. kola nemají společný identifikátor uchazeče, proto konkrétní dítě z 1. kola ve 2. kole nedohledáme
+              a kolik z nich jsou tytéž děti, ani odkud přesně rozdíl pochází, určit nejde.
             </p>
 
             <div className="mt-6 bg-white border border-slate-200 rounded-xl p-5">
