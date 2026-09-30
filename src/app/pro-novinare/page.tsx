@@ -319,7 +319,8 @@ export default function ProNovinarePage() {
             </div>
             <p className="text-sm text-slate-600 mt-3">
               * Přihlášky: jeden uchazeč podává víc přihlášek, proto počet přihlášek není počet uchazečů a přijatí vydělení
-              přihláškami nejsou podíl úspěšných uchazečů. Kolik uchazečů se do 2. kola hlásilo, tato data neříkají.
+              přihláškami nejsou podíl úspěšných uchazečů. Kolik uchazečů se do 2. kola hlásilo a kolik jich bylo přijato,
+              ukazuje <a href="#uchazeci" style={{ color: '#0074e4' }}>tabulka uchazečů výše</a>.
             </p>
             <p className="text-sm text-slate-600 mt-1">
               ** Nevešli se: přihlášky uchazečů, kteří splnili požadavky školy, ale na místo se nedostali, protože jiní měli

@@ -25,7 +25,7 @@ Generuje `scripts/build-pro-novinare.py` do `public/pro-novinare/`. Každý bal�
 | 2. kolo | všechny nabídky 2. kola s jednotnou zkouškou i bez ní, souhrny po krajích a typech | souhrn 2. kola CERMAT | `cermat-kolo2-agregaty` |
 | Kritéria | co vedle jednotné zkoušky bodovalo, souhrn a obory s výhradou v každém řádku | `kriteria_prijeti_{rok}.json` | `dipsy-kriteria` |
 
-Zdrojové XLSX CERMAT nejsou v gitu. Generátor je dostane adresářem `--vstupy` a ověří otisk sha256 proti registru (2. kolo) nebo metadatům výsledků (1. kolo); data uchazečů otisk v registru nemají, ověřuje se počet řádků z poznámky registru (156 210). **Nestahuje se nic, co by web nepřevzal**: soubory 1. a 2. kola jsou tytéž, ze kterých vznikly `applications_2026.json` a `druhe_kolo.json`.
+Zdrojové XLSX CERMAT nejsou v gitu. Generátor je dostane adresářem `--vstupy` a ověří otisk sha256 proti registru (souhrn 2. kola, od verze 1.2 i data uchazečů 2. kola) nebo metadatům výsledků (1. kolo); data uchazečů 1. kola otisk v registru nemají, ověřuje se počet řádků z poznámky registru (156 210). **Nestahuje se nic, co by web nepřevzal**: soubory 1. a 2. kola jsou tytéž, ze kterých vznikly `applications_2026.json` a `druhe_kolo.json`.
 
 ### Proč konzervatoře a ne „obory s přihláškou ještě letos“
 

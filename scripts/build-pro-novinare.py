@@ -704,8 +704,8 @@ def balicek_druhe_kolo(rok: str, kolo2: list[dict]) -> tuple[Balicek, dict]:
             f"Zdroj: CERMAT, agregovaná data škol a oborů, 2. kolo {rok}.",
             "Ve 2. kole se nová jednotná zkouška nepíše; škola bere výsledek z 1. kola nebo vlastní kritéria.",
             "Přihlášky 2. kola se nesčítají s přihláškami 1. kola a jeden uchazeč mohl podat víc přihlášek, "
-            "proto přijatí na přihlášku nejsou podíl úspěšných uchazečů. Kolik uchazečů se do 2. kola hlásilo, "
-            "tento balíček neříká (data uchazečů 2. kola web zatím nepřevzal).",
+            "proto přijatí na přihlášku nejsou podíl úspěšných uchazečů. Počty uchazečů 2. kola (lidí, ne přihlášek) "
+            f"jsou v balíčku uchazeci-{rok}.",
             "Naplněnost míst: přijatí děleno místy 2. kola.",
             f"Nejnižší výsledek přijatých (body z češtiny a matematiky, 0–100) jen u oborů s jednotnou zkouškou a aspoň "
             f"{MIN_PRIJATYCH_PRO_MINIMUM} přijatými s výsledkem zkoušky. Neříká, s kolika body se dalo dostat.",
