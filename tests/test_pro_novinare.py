@@ -126,6 +126,13 @@ class DruheKoloUchazecu(unittest.TestCase):
         self.assertEqual(self.s["volno_9"]["s maturitou"]["volnych_mist"], 6)
         self.assertEqual(self.s["volno_9"]["bez maturity"]["volnych_mist"], 0)
 
+    def test_rozklad_duvodu_sedi_na_soucet(self):
+        _, _, hl, radky = next(t for t in self.b.tabulky if t[1] == "2. kolo Česko")
+        for r in radky:
+            z = dict(zip(hl, r))
+            self.assertEqual(z["neprijati_ani_ve_2_kole"], z["z_toho_vsude_nevesli_kvuli_kapacite"]
+                             + z["z_toho_vsude_nedosahli_pozadavku"] + z["z_toho_obe_duvody"] + z["z_toho_jiny_duvod"])
+
     def test_vyhrada_o_parovani_v_o_datech(self):
         self.assertTrue(any("společný identifikátor" in v for v in self.b.o_datech))
 

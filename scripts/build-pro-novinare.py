@@ -617,12 +617,12 @@ def druhe_kolo_uchazecu(b: Balicek, rok: str, uchazeci2: list[dict], kolo2: list
     popis = {"9": "9. třída", "7": "7. třída (šestiletá gymnázia)", "5": "5. třída (osmiletá gymnázia)"}
     hl = ["kraj_skoly_1_volby", "rocnik", "uchazecu_2_kola", "prijati_ve_2_kole", "neprijati_ani_ve_2_kole",
           "podil_neprijatych", "z_toho_vsude_nevesli_kvuli_kapacite", "z_toho_vsude_nedosahli_pozadavku", "z_toho_obe_duvody",
-          "z_toho_hlasili_se_jen_na_obory_bez_maturity", "z_toho_jen_na_maturitni", "z_toho_na_oboje",
+          "z_toho_jiny_duvod", "z_toho_hlasili_se_jen_na_obory_bez_maturity", "z_toho_jen_na_maturitni", "z_toho_na_oboje",
           "z_toho_bez_vysledku_jednotne_zkousky", "z_toho_s_jedinou_prihlaskou"]
 
     def radek(nazev: str, roc: str, c: Counter) -> list:
         return [nazev, popis[roc], c["uchazecu"], c["prijati"], c["neprijati"], podil(c["neprijati"], c["uchazecu"]),
-                c["jen_kapacita"], c["jen_pozadavek"], c["obe"], c["jen_ucebni"], c["jen_maturitni"], c["ucebni_i_maturitni"],
+                c["jen_kapacita"], c["jen_pozadavek"], c["obe"], c["jiny_duvod"], c["jen_ucebni"], c["jen_maturitni"], c["ucebni_i_maturitni"],
                 c["bez_vysledku_jpz"], c["jedna_prihlaska"]]
 
     celkem: dict[str, Counter] = defaultdict(Counter)

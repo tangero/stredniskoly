@@ -202,12 +202,11 @@ export default function ProNovinarePage() {
               </table>
             </div>
             <p className="text-sm text-slate-600 mt-3">
-              * Uchazečů 2. kola: kdo podal přihlášku do 2. kola. Jsou to převážně děti, kterým nevyšlo 1. kolo, ale ne jen ony:
-              přihlásit se mohou i ti, kdo v 1. kole přihlášku nepodali nebo se přijetí vzdali. Soubory 1. a 2. kola nemají
-              společný identifikátor uchazeče, proto konkrétní dítě z 1. kola ve 2. kole nedohledáme a porovnávat jde jen počty.
-              Deváťáků s výsledkem jednotné zkoušky, kterou šlo psát jen v 1. kole, zůstalo po 1. kole bez místa{' '}
-              {cislo(d9.nikam_s_jpz)} a do 2. kola se jich přihlásilo {cislo(k9.s_vysledkem_jpz)}:
-              počty jsou skoro stejné, takže 2. kolo zřejmě zkusila velká většina z nich.
+              * Uchazečů 2. kola: kdo podal přihlášku do 2. kola. Hlásit se mohou děti, kterým nevyšlo 1. kolo, ale také ti,
+              kdo v 1. kole přihlášku nepodali nebo se přijetí vzdali. Soubory 1. a 2. kola nemají společný identifikátor
+              uchazeče, proto konkrétní dítě z 1. kola ve 2. kole nedohledáme a porovnávat jde jen počty. Deváťáků s výsledkem
+              jednotné zkoušky, kterou šlo psát jen v 1. kole, zůstalo po 1. kole bez místa {cislo(d9.nikam_s_jpz)} a ve 2. kole
+              jich bylo {cislo(k9.s_vysledkem_jpz)}. Kolik z nich jsou tytéž děti, z dat určit nejde.
             </p>
 
             <div className="mt-6 bg-white border border-slate-200 rounded-xl p-5">
