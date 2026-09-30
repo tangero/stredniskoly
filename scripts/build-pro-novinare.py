@@ -206,7 +206,7 @@ class Balicek:
         for soubor, list_, hlavicka, radky in self.tabulky:
             cesta = adresar / f"{soubor}.csv"
             with cesta.open("w", encoding="utf-8-sig", newline="") as f:
-                w = csv.writer(f)
+                w = csv.writer(f, lineterminator="\n")
                 w.writerow(hlavicka)
                 w.writerows(radky)
             soubory.append({"soubor": cesta.name, "list": list_, "radku": len(radky), "format": "csv"})

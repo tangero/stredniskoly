@@ -453,7 +453,9 @@
     "data/msmt_rejstrik/nazvy-oboru.json",
     "public/pro-novinare/konzervatore.xlsx"
    ],
-   "ukazatele": [],
+   "ukazatele": [
+    "Konzervatoře v rejstříku"
+   ],
    "dostupne": [
     {
      "obdobi": "2025-06-30",

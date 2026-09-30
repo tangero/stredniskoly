@@ -696,7 +696,16 @@ Pro nabídku s přepisem kritérií (zdroj jako *Podíl přijímaček na bodová
 ### Počet akcí sezóny s potvrzeným termínem
 Jako *Počet akcí v kraji*, ale za celou sezónu včetně proběhlých akcí: záznamy s `terminPotvrzen = true` sečtené podle `krajKod`. Balíček veletrhů ho uvádí vedle počtu akcí od data vytvoření balíčku, který odpovídá *Počtu akcí v kraji*. Stav snímku `src/data/veletrhy-2027.json`, ne živé databáze.
 
-**Neříká,** kolik akcí se koná; výhrady jsou stejné jako u *Počtu akcí v kraji*.
+Ze stejné množiny se na `/pro-novinare` uvádí i **rozpad po měsících** (podle měsíce `start`), **počet krajů** s aspoň jednou takovou akcí a vedle nich **počet záznamů čekajících na potvrzení termínu** (`terminPotvrzen = false`, s důvodem v `cekaNa`); čekající záznamy se do počtu akcí nikdy nepřičítají. Rok 2026: 79 akcí, 17 čekajících, 14 krajů.
+
+**Neříká,** kolik akcí se koná; výhrady jsou stejné jako u *Počtu akcí v kraji*. Kraj bez akce by znamenal kraj, kde jsme žádnou nedohledali.
+
+### Konzervatoře v rejstříku
+Počet škol, které mají v indexu názvů rejstříku škol MŠMT (`data/msmt_rejstrik/nazvy-oboru.json`, snímek podle registru, sada `msmt-rejstrik-snimky`) zapsaný aspoň jeden obor konzervatoře: kódy 82-44-P (hudba), 82-45-P (zpěv), 82-46-P (tanec, současný tanec), 82-47-P (hudebně dramatické umění). Generátor kontroluje, že se množina shoduje s konzervatořemi v souhrnu 1. kola CERMAT; rok 2026: 18 = 18.
+
+Výsledky 1. kola konzervatoří v balíčku a na stránce jsou ukazatele z oddílu 2 (*Kapacita míst*, *Přihlášky celkem*, *Přijatí*, *Nepřijatí kvůli kapacitě*, *Nepřijatí pro nesplnění podmínek*, *Přijati na vyšší prioritu*) nad souhrnem CERMAT, ale mimo populaci webu: obory konzervatoře nemají jednotnou zkoušku. Součty na stránce jsou za denní studium.
+
+**Neříká,** které obory konzervatoř pro nové přijímací řízení otevře ani kolik přijme; rejstřík říká, co škola smí učit.
 
 ## 7. Ukazatele bez doloženého výpočtu
 
@@ -738,7 +747,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
-| 1.48 | Oddíl **6b. Balíčky dat pro novináře** (29. 9. 2026, [návrh](navrh-pro-novinare-2027.md)): *Výsledek uchazeče v 1. kole* (jednotkou uchazeč, po ročnících a krajích první volby), *Oficiální nejnižší výsledek přijatých* (sloupec 72 souhrnu CERMAT, jen v balíčku), *Naplněnost míst ve 2. kole*, *Přijatí na přihlášku ve 2. kole*, *Skupiny složek kritérií* a *Počet akcí sezóny s potvrzeným termínem*. Na webu se zobrazují jen na `/pro-novinare`. |
+| 1.48 | Oddíl **6b. Balíčky dat pro novináře** (29. 9. 2026, [návrh](navrh-pro-novinare-2027.md)): *Výsledek uchazeče v 1. kole* (jednotkou uchazeč, po ročnících a krajích první volby), *Oficiální nejnižší výsledek přijatých* (sloupec 72 souhrnu CERMAT, jen v balíčku), *Naplněnost míst ve 2. kole*, *Přijatí na přihlášku ve 2. kole*, *Skupiny složek kritérií*, *Počet akcí sezóny s potvrzeným termínem* (s rozpadem po měsících a krajích) a *Konzervatoře v rejstříku*. Na webu se zobrazují jen na `/pro-novinare`. |
 | 1.47 | Řazení „od nejvyšší hranice přijetí“ v Simulátoru přijímaček dává na konec i obory s talentovou zkouškou, obory, kde nikoho neodmítli kvůli počtu míst, a obory s rozporem počtů (29. 9. 2026, nález review): jejich nejnižší přijatý výsledek není hranicí soutěže. |
 | 1.46 | Simulátor přijímaček, etapa E5 (výhrady v kroku 3): u *Převedeného výsledku testu*, *Podílu přijímaček na bodování*, *Pásma nejistoty* a *Soutěžících o obor* doplněno, kde se v simulátoru zobrazují; u *Pořadí mezi soutěžícími*, že se tam neukazuje. U *Nejnižšího výsledku JPZ mezi přijatými* zapsán doložený meziroční posun (medián 5 bodů), ze kterého stojí výhrada o jednom ročníku; oprava čísla 3 body z návrhu. Výpočty beze změny. |
 | 1.45 | Nový ukazatel **Poloha vůči pásmu** pro skupiny Simulátoru přijímaček (nad pásmem, v pásmu, pod pásmem, obory, kde nikoho neodmítli, bez srovnání; 29. 9. 2026, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 3 a 12). *Průměr JPZ přijatých* ze simulátoru odchází jako porovnávací měřítko (`admission-gap.ts` smazán); ukazatel zůstává pro jiné stránky. |
