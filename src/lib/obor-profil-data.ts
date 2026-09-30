@@ -1,7 +1,7 @@
 import { nactiPrevodDruhu } from '@/lib/prevod-testu';
 import { kriteriaOboru, poziceOboru } from '@/lib/pozice-kriteria';
 import { vsechnaKriteriaSkol } from '@/lib/kriteria-skoly-verejne';
-import { sPrednostiSkoly } from '@/lib/kriteria-skoly-sloucit';
+import { maUdajeSkoly, sPrednostiSkoly } from '@/lib/kriteria-skoly-sloucit';
 import { druhTestu, type DruhTestu, type KriteriaOboru, type PoziceOboru, type PrevodDruhu } from '@/lib/prevod-testu-vypocet';
 import { getSchoolsData, getExtractionsByRedizo, getInspisDataByRedizo } from '@/lib/data';
 import { getSouhrnNabidky, nabidkyVeSkupineKraje, souhrnOboru, type SouhrnRocniku } from '@/lib/souhrny-kolo1';
@@ -69,6 +69,11 @@ export interface ProfilOboruData {
    * převod jen pro druh testu oboru, pořadí soutěžících a kritéria předchozího ročníku.
    */
   kdeStojim: { druh: DruhTestu; prevod: PrevodDruhu | null; pozice: PoziceOboru | null; kriteria: KriteriaOboru | null } | null;
+  /**
+   * Kritéria zadaná školou v portálu u oboru bez proužku (nikoho neodmítli, málo
+   * přijatých, rozpor počtů). Zveřejnění pravidel školy nezávisí na historickém pásmu.
+   */
+  kriteriaSkoly: KriteriaOboru | null;
   /**
    * Bodové výsledky předchozího ročníku vedle zobrazeného, s celostátním
    * mediánem uchazečů obou let. Bez něj by dvojice čísel tvrdila, že se změnily
@@ -178,6 +183,16 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
       })
     : null;
 
+  let kriteriaSkoly: KriteriaOboru | null = null;
+  if (!kdeStojim) {
+    const [kriteria, odSkol] = await Promise.all([kriteriaOboru(klicPasem), vsechnaKriteriaSkol()]);
+    const rokKriterii = rokPasem ?? kriteria?.rok ?? null;
+    if (rokKriterii !== null) {
+      const k = sPrednostiSkoly(kriteriaZamereni(kriteria, zamereni), odSkol, klicPasem, zamereni, rokKriterii);
+      kriteriaSkoly = maUdajeSkoly(k) ? k : null;
+    }
+  }
+
   // Předchozí ročník pásem se odvozuje od zobrazeného, ne z napsaného letopočtu;
   // když soubor neexistuje, srovnání se prostě nezobrazí.
   let srovnaniRocniku: ProfilOboruData['srovnaniRocniku'] = null;
@@ -263,6 +278,7 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
     poradiVysledky,
     pasma: rokPasem && pasmaData ? { rok: rokPasem, data: pasmaData } : null,
     kdeStojim,
+    kriteriaSkoly,
     srovnaniRocniku,
     verzeUchazecu,
     kontext,

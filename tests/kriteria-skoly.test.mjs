@@ -159,3 +159,16 @@ test('stránka zaměření nepovýší náhradní přepis jiného zaměření na
   assert.equal(k.prepisy[0].prepis, 'strojovy');
   assert.equal(k.prepisy[0].rezim, 'jine');
 });
+
+test('kritéria školy se najdou i u oboru bez proužku a bez přepisu (Codex review #200)', async () => {
+  const { sPrednostiSkoly, maUdajeSkoly } = await import('../src/lib/kriteria-skoly-sloucit.ts');
+  // Obor, kde nikoho neodmítli: žádné pásmo, žádný přepis PDF, škola zadala kritéria roku pásem.
+  const k = sPrednostiSkoly(null, [zaznam({ rok: 2026 })], '600001431_79-41-K/41', undefined, 2026);
+  assert.equal(maUdajeSkoly(k), true);
+  // Kritéria jen pro nové řízení se počítají taky.
+  assert.equal(maUdajeSkoly(sPrednostiSkoly(null, [zaznam({ rok: 2027 })], '600001431_79-41-K/41', undefined, 2026)), true);
+  // Samotný přepis PDF bez údajů školy se mimo proužek neukazuje.
+  const jenPdf = { rok: 2026, pdf: true, noveKriteria: null, prepisy: [{ prepis: 'strojovy', rezim: 'jine', zamereni: '', slozky: [], jpz_navic: [], nalezy: [] }] };
+  assert.equal(maUdajeSkoly(sPrednostiSkoly(jenPdf, [], '600001431_79-41-K/41', undefined, 2026)), false);
+  assert.equal(maUdajeSkoly(null), false);
+});
