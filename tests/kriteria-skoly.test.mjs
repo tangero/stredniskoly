@@ -128,3 +128,17 @@ test('stránka zaměření nedostane nová kritéria jiného zaměření', async
   const prazdny = { rok: 2026, pdf: true, noveKriteria: null, prepisy: [] };
   assert.equal(sPrednostiSkoly(prazdny, [jazyky], '600001431_79-41-K/41', 'Přírodní vědy', 2026)?.nove, undefined);
 });
+
+test('stránka zaměření: nová kritéria téhož zaměření i když přepis má jiná zaměření', async () => {
+  const { sPrednostiSkoly } = await import('../src/lib/kriteria-skoly-sloucit.ts');
+  const pdf = { source_id: 'x', zamereni: 'Hudba', rezim: 'jine', podil_jpz_pct: null, slozky: [], jpz_navic: [], minima: [], nejasnosti: [], prepis: 'strojovy', nalezy: [], chybi_slozky: true };
+  const vytvarna = zaznam({ rok: 2027, obor_identita: { redizo: '600001431', kkov: '79-41-K/41', zamereni: 'Výtvarná výchova', forma: 'den', delkaStudia: 4 } });
+  const k = sPrednostiSkoly({ rok: 2026, pdf: true, noveKriteria: null, prepisy: [pdf] }, [vytvarna], '600001431_79-41-K/41', 'Výtvarná výchova', 2026);
+  assert.equal(k.nove.rok, 2027);
+  assert.equal(k.nove.prepisy[0].zamereni, 'Výtvarná výchova');
+});
+
+test('složka bez názvu dostane popisek svého druhu', () => {
+  const p = prepisZeZaznamu(zaznam({ struktura: struktura({ slozky: [{ druh: 'pohovor', nazev: '  ', max: 20, poznamka: '' }] }) }));
+  assert.equal(p.slozky[0].nazev, 'Pohovor nebo motivační dopis');
+});

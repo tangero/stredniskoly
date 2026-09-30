@@ -33,7 +33,9 @@ export function sPrednostiSkoly(
   if (nove && nove.rok > zaklad.rok) {
     const vhodne = nove.prepisy.filter(naStrance);
     const zadana = new Set(vhodne.map(p => norm(p.zamereni)));
-    if (vhodne.length && prepisy.every(p => zadana.has(norm(p.zamereni)))) vysledek.nove = { rok: nove.rok, prepisy: vhodne };
+    // Úplnost se hlídá jen na společné stránce; na stránce zaměření stačí záznam téhož zaměření.
+    const uplne = zamereni ? true : prepisy.every(p => zadana.has(norm(p.zamereni)));
+    if (vhodne.length && uplne) vysledek.nove = { rok: nove.rok, prepisy: vhodne };
   }
   return vysledek.prepisy.length || vysledek.nove ? vysledek : null;
 }

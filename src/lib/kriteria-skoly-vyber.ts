@@ -1,4 +1,4 @@
-import { souhrnBodovani, type StrukturaKriterii } from './kriteria-struktura.ts';
+import { DRUHY_SLOZEK, souhrnBodovani, type StrukturaKriterii } from './kriteria-struktura.ts';
 import type { PrepisKriterii } from './prevod-testu-vypocet.ts';
 
 // ============================================================================
@@ -8,6 +8,8 @@ import type { PrepisKriterii } from './prevod-testu-vypocet.ts';
 // Údaje školy mají přednost před strojovým přepisem PDF: škola je autorem
 // kritérií a sama je v portálu potvrdila.
 // ============================================================================
+
+const popisDruhu = (druh: string) => (DRUHY_SLOZEK.find(([k]) => k === druh)?.[1] as string | undefined) ?? 'Další body';
 
 export interface ZaznamKriteriiSkoly {
   redizo: string;
@@ -47,7 +49,8 @@ export function prepisZeZaznamu(z: ZaznamKriteriiSkoly): PrepisKriterii {
     zamereni: z.obor_identita?.zamereni ?? '',
     rezim: z.rezim,
     podil_jpz_pct: z.rezim === 'jine' ? souhrn?.podilJpzPct ?? null : 100,
-    slozky: s ? s.slozky.map(x => ({ nazev: x.nazev, max: x.max, druh: x.druh })) : [],
+    // Prázdný název doplní popisek druhu, ať je vidět, za co škola body dává.
+    slozky: s ? s.slozky.map(x => ({ nazev: x.nazev.trim() || popisDruhu(x.druh), max: x.max, druh: x.druh })) : [],
     jpz_navic: [
       // Nestejná maxima předmětů jsou vážení, ne prostý součet (souhrnBodovani to bere jako „jine“).
       ...(s && s.jpz.cjl_max !== null && s.jpz.mat_max !== null && s.jpz.cjl_max !== s.jpz.mat_max
