@@ -294,9 +294,18 @@ export default function ProNovinarePage() {
               </div>
             </details>
             <p className="text-xs text-slate-500 mt-3">
-              Zdroj: CERMAT, data uchazečů 1. a 2. kola {r.uchazeci}, předběžné verze: platné přihlášky k 13. květnu (1. kolo)
-              a 23. červnu {r.uchazeci} (2. kolo). Přijetí zahrnuje i ty, kdo se ho později vzdali. Volná místa: kapacita 2. kola
-              minus přijatí, bez nástaveb.
+              {k2u ? (
+                <>
+                  Zdroj: CERMAT, data uchazečů 1. kola {r.uchazeci} a 2. kola {r.uchazeci_kolo2}, předběžné verze: platné přihlášky
+                  k 13. květnu (1. kolo) a 23. červnu (2. kolo). Přijetí zahrnuje i ty, kdo se ho později vzdali. Volná místa:
+                  kapacita 2. kola minus přijatí, bez nástaveb.
+                </>
+              ) : (
+                <>
+                  Zdroj: CERMAT, data uchazečů 1. kola {r.uchazeci}, předběžná verze: platné přihlášky k 13. květnu. Přijetí
+                  zahrnuje i ty, kdo se ho později vzdali.
+                </>
+              )}
             </p>
           </section>
 
