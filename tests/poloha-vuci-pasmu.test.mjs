@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {
-  hodnotaHranice, klicPasma, nactiIndexPasem, polohaVuciPasmu, rozdelDoSkupin, seradNabidky, vetaPolohy, PORADI_SKUPIN,
+  b, duvodText, hodnotaHranice, klicPasma, popisSkupiny, nactiIndexPasem, polohaVuciPasmu, rozdelDoSkupin, seradNabidky, vetaPolohy, PORADI_SKUPIN,
 } from '../src/lib/poloha-vuci-pasmu.ts';
 
 // Návrh simulátoru, oddíl 10: čistá funkce skupiny na všech krajních případech.
@@ -140,4 +140,40 @@ test('radekPasmaNabidky: uložená nabídka mimo katalog simulátoru zůstane be
   assert.equal(p.skupina, 'bez_srovnani');
   assert.notEqual(p.skupina, 'nad');
   assert.equal(radekPasmaNabidky(denni, katalog, normalizeSchoolKey, undefined), undefined);
+});
+
+test('desetinné meze: čárka a „bodu“', () => {
+  assert.equal(b(72.5), '72,5 bodu');
+  assert.equal(b(1), '1 bod');
+  assert.equal(b(3), '3 body');
+  assert.equal(b(5), '5 bodů');
+  const veta = vetaPolohy(p(45, { dolni_mez: 40.5, horni_mez: 50.5 }), 2026, MIN);
+  assert.match(veta, /40,5–50,5 bodu/);
+  assert.doesNotMatch(veta, /40\.5/);
+});
+
+test('práh počtu přijatých v textu z indexu, ne napevno', () => {
+  assert.match(duvodText('malo_prijatych', 12), /méně než 12/);
+  assert.doesNotMatch(duvodText('malo_prijatych', 12), /deset/);
+});
+
+test('málo odmítnutých: věta platí i pro výsledek rovný nejnižšímu přijatému', () => {
+  const poloha = p(40, { dolni_mez: null, horni_mez: null });
+  assert.equal(poloha.duvod, 'malo_odmitnutych');
+  assert.match(vetaPolohy(poloha, 2026, MIN), /stejný jako nejnižší výsledek přijatých, nebo vyšší/);
+});
+
+test('skupina „V pásmu“ netvrdí, že se část dostala, když mezi mezemi nikdo nesoutěžil', () => {
+  const mezera = p(45, { dolni_mez: 48, horni_mez: 42 });
+  assert.equal(mezera.skupina, 'v');
+  assert.equal(mezera.tvar, 'mezera');
+  assert.doesNotMatch(popisSkupiny('v', 2026), /část se dostala a část ne/);
+  assert.match(popisSkupiny('v', 2026), /hranice ležela přímo u tvého výsledku/);
+});
+
+test('pohled zvažovaných řadí podle pořadí výběru, ne podle dojezdu ani hranice', () => {
+  const n = [{ id: 'a', m: 5, h: 30 }, { id: 'b', m: 50, h: 80 }, { id: 'c', m: 20, h: 50 }];
+  const poradi = new Map([['c', 0], ['a', 1], ['b', 2]]);
+  const o = { minuty: x => x.m, nazev: x => x.id, hranice: x => x.h, poradiVyberu: x => poradi.get(x.id) };
+  assert.deepEqual(seradNabidky(n, 'dojezd', o).map(x => x.id), ['c', 'a', 'b']);
 });

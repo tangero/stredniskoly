@@ -16,7 +16,10 @@ const RE_CHOVANI = /chování|chovani|kázeň|kazen|důtk|dutk/i;
 const RE_SNIZENI = /odeč|odpoč|sníž|sniz|penaliz|záporn|srážk|srazk|uspokoj/i;
 const RE_PROSPECH = /prospěch|prospech|průměr|prumer|vzdělávání|výsledk|bonus/i;
 export const srazka = (x: KriteriaOboru['prepisy'][number]['slozky'][number]) =>
-  RE_CHOVANI.test(x.nazev) && RE_SNIZENI.test(x.nazev) && !RE_PROSPECH.test(x.nazev);
+  // Údaje školy nesou druh složky výslovně; odhad z názvu jen u přepisu PDF.
+  x.druh !== undefined
+    ? x.druh === 'chovani' && (x.max === null || x.max < 0)
+    : RE_CHOVANI.test(x.nazev) && RE_SNIZENI.test(x.nazev) && !RE_PROSPECH.test(x.nazev);
 
 /** Přepis boduje i něco jiného než jednotnou přijímací zkoušku (extra body ve slovníku pojmů). */
 export const extraBody = (p: KriteriaOboru['prepisy'][number]) =>

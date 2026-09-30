@@ -161,7 +161,11 @@ export const NAZEV_SKUPINY: Record<Skupina, string> = {
   bez_srovnani: 'Bez srovnání',
 };
 
-const b = (n: number) => `${n.toLocaleString('cs-CZ')} ${n === 1 ? 'bod' : n >= 2 && n <= 4 ? 'body' : 'bodů'}`;
+/** Číslo po česku (desetinná čárka). */
+export const cislo = (n: number) => n.toLocaleString('cs-CZ');
+/** Body se skloněním; desetinné číslo má 2. pád jednotného čísla („72,5 bodu“). */
+export const b = (n: number) =>
+  `${cislo(n)} ${!Number.isInteger(n) ? 'bodu' : n === 1 ? 'bod' : n >= 2 && n <= 4 ? 'body' : 'bodů'}`;
 
 /** Věta u nabídky. Rok je rok pásem z indexu, tedy z registru. */
 export function vetaPolohy(p: Poloha, rok: number, minPrijatych: number): string {
@@ -173,7 +177,7 @@ export function vetaPolohy(p: Poloha, rok: number, minPrijatych: number): string
     case 'v':
       if (p.tvar === 'mezera') return `Hranice v 1. kole ${rok} ležela právě tady: všichni soutěžící uchazeči od ${b(r!.dolni_mez!)} výš se dostali, s ${b(r!.horni_mez!)} a méně nikdo. S výsledkem mezi tím nesoutěžil nikdo.`;
       if (p.tvar === 'shodne_meze') return `Přesně s tímto výsledkem (${b(r!.dolni_mez!)}) se v 1. kole ${rok} někdo dostal a někdo ne.`;
-      return `Rozhodovalo i něco jiného než test: z ${r!.v_pasmu_soutezilo} soutěžících uchazečů v rozmezí ${r!.dolni_mez}–${b(r!.horni_mez!)} se v 1. kole ${rok} dostalo ${r!.v_pasmu_prijato}.`;
+      return `Rozhodovalo i něco jiného než test: z ${r!.v_pasmu_soutezilo} soutěžících uchazečů v rozmezí ${cislo(r!.dolni_mez!)}–${b(r!.horni_mez!)} se v 1. kole ${rok} dostalo ${r!.v_pasmu_prijato}.`;
     case 'pod':
       return `V 1. kole ${rok} se sem s takovým výsledkem nedostal nikdo (nejnižší výsledek přijatých: ${b(r!.min_prijaty!)}).`;
     case 'nikdo_neodmitnut': {
@@ -182,24 +186,29 @@ export function vetaPolohy(p: Poloha, rok: number, minPrijatych: number): string
         (dost ? ` Nejnižší výsledek přijatých byl ${b(r!.min_prijaty!)}.` : '');
     }
     case 'bez_srovnani':
-      return DUVOD_TEXT[p.duvod ?? 'chybi_data'];
+      return duvodText(p.duvod ?? 'chybi_data', minPrijatych);
   }
 }
 
-export const DUVOD_TEXT: Record<DuvodBezSrovnani, string> = {
-  chybi_data: 'Pro tento obor nemáme výsledky 1. kola s jednotnou přijímací zkouškou.',
-  talentova: 'O přijetí rozhoduje hlavně talentová zkouška, test tu řekne málo.',
-  jiny_test: 'Obor přijímá podle jiného testu, než pro který máš zadaný výsledek.',
-  rozpor: 'Počty v datech si odporují, proto obor neřadíme.',
-  malo_prijatych: 'Přijatých bylo méně než deset; z tak malého počtu hranici neukazujeme.',
-  malo_odmitnutych: 'Nevešlo se jen pár uchazečů, rozmezí, kde rozhodovalo i něco jiného, proto nepočítáme. Tvůj výsledek je nad nejnižším výsledkem přijatých.',
-};
+/** Důvod skupiny „Bez srovnání“. Práh počtu přijatých je z indexu pásem, ne napevno. */
+export function duvodText(d: DuvodBezSrovnani, minPrijatych: number): string {
+  switch (d) {
+    case 'chybi_data': return 'Pro tento obor nemáme výsledky 1. kola s jednotnou přijímací zkouškou.';
+    case 'talentova': return 'O přijetí rozhoduje hlavně talentová zkouška, test tu řekne málo.';
+    case 'jiny_test': return 'Obor přijímá podle jiného testu, než pro který máš zadaný výsledek.';
+    case 'rozpor': return 'Počty v datech si odporují, proto obor neřadíme.';
+    case 'malo_prijatych': return `Přijatých bylo méně než ${minPrijatych}; z tak malého počtu hranici neukazujeme.`;
+    // Do této skupiny padá výsledek od nejnižšího přijatého výš, tedy i přesně rovný.
+    case 'malo_odmitnutych': return 'Nevešlo se jen pár uchazečů, rozmezí, kde rozhodovalo i něco jiného, proto nepočítáme. Tvůj výsledek je stejný jako nejnižší výsledek přijatých, nebo vyšší.';
+  }
+}
 
 /** Věta pod názvem skupiny; vysvětluje pojem při prvním výskytu v bloku (slovník pojmů). */
 export function popisSkupiny(s: Skupina, rok: number): string {
   switch (s) {
     case 'nad': return `S tvým výsledkem se v 1. kole ${rok} dostali všichni soutěžící uchazeči, tedy ti, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš.`;
-    case 'v': return `Tvůj výsledek padá do rozmezí, kde v 1. kole ${rok} rozhodovalo i něco jiného než test: část soutěžících uchazečů (splnili požadavky školy a nedostali se na obor výš na přihlášce) se dostala a část ne.`;
+    // Skupina zahrnuje i obory, kde mezi mezemi nikdo nesoutěžil (tvar „mezera“); věta u oboru to upřesní.
+    case 'v': return `Tvůj výsledek padá tam, kde se v 1. kole ${rok} lámalo přijetí soutěžících uchazečů (splnili požadavky školy a nedostali se na obor výš na přihlášce): buď rozhodovalo i něco jiného než test, nebo hranice ležela přímo u tvého výsledku. Podrobnost je u každého oboru.`;
     case 'pod': return `S tvým výsledkem se v 1. kole ${rok} nedostal nikdo ze soutěžících uchazečů, tedy z těch, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš.`;
     case 'nikdo_neodmitnut': return `V 1. kole ${rok} tu nikoho neodmítli kvůli počtu míst; kdo splnil podmínky, dostal se. Přijímalo se podle podmínek školy (minima, kritéria), ne podle pořadí.`;
     case 'bez_srovnani': return 'U těchto oborů tvůj výsledek s 1. kolem srovnat neumíme. Důvod je u každého oboru.';
@@ -230,9 +239,18 @@ export function hodnotaHranice(r: RadekPasma | undefined, minPrijatych: number):
  */
 export function seradNabidky<T>(
   nabidky: T[], zpusob: 'dojezd' | 'hranice',
-  o: { minuty: (x: T) => number | undefined; nazev: (x: T) => string; hranice: (x: T) => number | null },
+  o: {
+    minuty: (x: T) => number | undefined; nazev: (x: T) => string; hranice: (x: T) => number | null;
+    /** Pohled „jen zvažované“: pořadí, které si uchazeč nastavil šipkami, má přednost. */
+    poradiVyberu?: (x: T) => number | undefined;
+  },
 ): T[] {
   const cas = (x: T) => o.minuty(x) ?? Infinity;
+  const vyber = o.poradiVyberu;
+  if (vyber) {
+    const i = (x: T) => vyber(x) ?? Infinity;
+    return [...nabidky].sort((a, c) => (i(a) - i(c)) || o.nazev(a).localeCompare(o.nazev(c), 'cs'));
+  }
   return [...nabidky].sort((a, c) => {
     if (zpusob === 'hranice') {
       const ha = o.hranice(a), hc = o.hranice(c);

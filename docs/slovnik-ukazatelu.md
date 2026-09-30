@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.49 · 30. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.50 · 30. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -757,7 +757,8 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
-| 1.49 | *Výsledek uchazeče ve 2. kole* a *Volná místa po 2. kole* (30. 9. 2026): převzata data uchazečů 2. kola 2026 (sada `cermat-uchazeci-kolo2`, dosud nepoužito) pro balíček a stránku `/pro-novinare`. |
+| 1.50 | *Výsledek uchazeče ve 2. kole* a *Volná místa po 2. kole* (30. 9. 2026): převzata data uchazečů 2. kola 2026 (sada `cermat-uchazeci-kolo2`, dosud nepoužito) pro balíček a stránku `/pro-novinare`. |
+| 1.49 | **Podíl přijímaček na bodování ze zadání školy se zobrazuje** na stránce oboru (30. 9. 2026): když škola zadala kritéria v portálu, blok kritérií počítá podíl z jejího strukturovaného zadání stejnou definicí a přepis PDF nepoužije. Index simulátoru (štítek extra body) zůstává z přepisu, dokud se nepřegeneruje s údaji škol. |
 | 1.48 | Oddíl **6b. Balíčky dat pro novináře** (29. 9. 2026, [návrh](navrh-pro-novinare-2027.md)): *Výsledek uchazeče v 1. kole* (jednotkou uchazeč, po ročnících a krajích první volby), *Oficiální nejnižší výsledek přijatých* (sloupec 72 souhrnu CERMAT, jen v balíčku), *Naplněnost míst ve 2. kole*, *Přijatí na přihlášku ve 2. kole*, *Skupiny složek kritérií*, *Počet akcí sezóny s potvrzeným termínem* (s rozpadem po měsících a krajích) a *Konzervatoře v rejstříku*. Na webu se zobrazují jen na `/pro-novinare`. |
 | 1.47 | Řazení „od nejvyšší hranice přijetí“ v Simulátoru přijímaček dává na konec i obory s talentovou zkouškou, obory, kde nikoho neodmítli kvůli počtu míst, a obory s rozporem počtů (29. 9. 2026, nález review): jejich nejnižší přijatý výsledek není hranicí soutěže. |
 | 1.46 | Simulátor přijímaček, etapa E5 (výhrady v kroku 3): u *Převedeného výsledku testu*, *Podílu přijímaček na bodování*, *Pásma nejistoty* a *Soutěžících o obor* doplněno, kde se v simulátoru zobrazují; u *Pořadí mezi soutěžícími*, že se tam neukazuje. U *Nejnižšího výsledku JPZ mezi přijatými* zapsán doložený meziroční posun (medián 5 bodů), ze kterého stojí výhrada o jednom ročníku; oprava čísla 3 body z návrhu. Výpočty beze změny. |

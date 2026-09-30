@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.32 · 29. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.33 · 30. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -66,6 +66,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **výsledek bez převodu** (volba „jiný test nebo odhad“) | body z testu mimo převodní tabulky nebo odhad; porovnávají se přímo s body roku pásem, bez převodu | výrazná výhrada v každém bloku, kde se s ním počítá: „srovnání platí jen tehdy, pokud byl test stejně těžký jako jednotná přijímací zkouška v roce {rok}; to ale nikdo neověřil“ | převedený výsledek (pro nepřevedené číslo), skutečné body, předpověď |
 | **rozmezí, kde rozhodovalo i něco jiného** | pásmo nejistoty ze slovníku ukazatelů: body, u kterých se část soutěžících uchazečů dostala a část ne | na proužku jako legenda; ve větě s počty: „jsi v rozmezí, kde se v roce {rok} ze 41 uchazečů dostalo 24“ | pásmo nejistoty (v textu pro rodiče), hranice přijetí |
 | **kritéria {rok}** | kritéria přijetí, podle kterých škola řadila uchazeče v daném minulém ročníku | „pravidla, podle kterých škola v roce {rok} řadila uchazeče; pro nové přijímací řízení platí nová“ | aktuální kritéria (pro minulý ročník), kritéria bez roku |
+| **podle údajů školy** | kritéria přijetí, která škola sama zadala a potvrdila v portálu pro školy; na stránce oboru mají přednost před přepisem PDF a nenesou výhradu o chybovosti přepisu | „Podle údajů školy, které škola sama zadala a potvrdila.“ | ověřeno (neověřujeme obsah, jen původ), oficiální kritéria |
 | **extra body** | body, které škola při přijímání počítala vedle jednotné přijímací zkoušky za něco jiného (prospěch ze základní školy, školní přijímací zkouška, pohovor, soutěže), přičítané i odečítané (například odečet průměru); samotné srážky za chování sem nepatří; vždy za konkrétní minulý ročník podle kritérií {rok} | „extra body, tedy body za něco jiného než jednotnou přijímací zkoušku, například za prospěch ze základní školy nebo školní přijímací zkoušku“ | bonusové body, body navíc (u vyšší váhy jednoho předmětu to extra body nejsou), extra body bez roku jako jistota pro nové řízení |
 | **Simulátor přijímaček** | nástroj na /simulator: cvičný test, obory ve skupinách podle 1. kola, výhrady | není potřeba | Kde stojím (starý název), simulátor výběru školy |
 | **nad pásmem** | *Poloha vůči pásmu*: s tímto výsledkem se v 1. kole {rok} dostali všichni soutěžící uchazeči | pod názvem skupiny větou se soutěžícími uchazeči: „s tvým výsledkem se v 1. kole {rok} dostali všichni soutěžící uchazeči, tedy ti, kdo splnili požadavky školy…“ | jistota, jistě se dostaneš, šance |
@@ -137,6 +138,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.33 | Pojem **podle údajů školy** pro kritéria zadaná školou v portálu (30. 9. 2026, [prototyp kritérií](prototyp-kriteria-prijeti.md) bod 4). Blok kritérií na stránce oboru u nich nemá výhradu o přepisu PDF; kritéria pro ročník novější než přepis se píšou v přítomném čase a věta „teprve se vyhlásí“ odpadá. |
 | 1.32 | Pojmy **balíček dat** a **ročník, ze kterého se uchazeč hlásí** pro sekci `/pro-novinare` ([návrh](navrh-pro-novinare-2027.md)). U 2. kola se ani pro novináře nepíše „šance“: balíček uvádí přijaté na přihlášku a vysvětluje, proč to není podíl úspěšných uchazečů. |
 | 1.31 | Pojmy **ostrý test** a **výhrady** pro krok 3 Simulátoru přijímaček (etapa E5, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 5). Výhrady stojí v samostatném bloku pod výsledky a zkráceně nad nimi, nikdy drobným písmem. |
 | 1.30 | Pojem **pojistka** pro strategii řazení zvažovaných oborů v Simulátoru přijímaček ([návrh](navrh-simulator-prijimacek-2027.md) oddíl 4, etapa E4). Návrh mluví o „oblíbených školách“ a „prioritách“; slovník obojí zakazuje (verze 1.13 *zvažované obory*, řádek *pořadí na přihlášce*), proto text stránky používá **zvažované obory** a **pořadí na přihlášce** se standardní větou, že pořadí šanci na přijetí nemění. Horní lišta simulátoru „Můj výběr“ přejmenována na „Zvažované obory“. |
