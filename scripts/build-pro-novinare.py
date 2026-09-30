@@ -393,7 +393,10 @@ def balicek_obory(rok: str, kolo1: list[dict], dk) -> tuple[Balicek, dict]:
     souhrny = nacti_json(KOREN / "public" / "souhrny_kolo1.json")["nabidky"]
     druhe = nacti_json(KOREN / "public" / "druhe_kolo.json")["roky"].get(rok, {})
     typy = {str(r.get("TYP ŠKOLY")): str(r.get("TYP ŠKOLY - NÁZEV")) for r in kolo1}
-    okresy = {(str(r["REDIZO"]), str(r["KKOV"])): r.get("OKRES - NÁZEV") for r in kolo1}
+    # Okres po nabídkách včetně zaměření: jedna škola může mít obor ve více městech
+    # (PORG, 79-41-K/81: Praha, Brno, Ostrava pod jedním REDIZO a KKOV).
+    okresy = {dk.klic_webu(str(r["REDIZO"]), str(r["KKOV"]), str(r.get("ZAMĚŘENÍ OBORU") or "")): r.get("OKRES - NÁZEV")
+              for r in kolo1 if str(r["POVINNOST JPZ"]).strip() == "1" and denni_nezkracene_radek(r)}
     obtiznost = {
         "kapacita_nerozhodovala": "místo bylo pro všechny, kdo splnili požadavky školy",
         "vetsina_uspela": "dostala se většina soutěžících uchazečů",
@@ -420,7 +423,7 @@ def balicek_obory(rok: str, kolo1: list[dict], dk) -> tuple[Balicek, dict]:
         d = druhe.get(klic, {})
         minimum = minima.get(klic)
         radky.append([
-            nadpis_kraje(n["kraj"]), okresy.get((n["redizo"], n["kkov"])) or "", n["obec"], n["nazev"], n["redizo"],
+            nadpis_kraje(n["kraj"]), okresy.get(klic) or "", n["obec"], n["nazev"], n["redizo"],
             n["obor"], n["kkov"], n["zamereni"], typy.get(n["typ"], n["typ"]), n.get("delka_studia"),
             n.get("kapacita"), s.get("prihlasky", n.get("prihlasky")),
             (s.get("prihlasky_priority") or [None])[0], s.get("index_poptavky"), s.get("tlak_prvnich_voleb"),
@@ -696,6 +699,8 @@ def balicek_kriteria(rok: str) -> tuple[Balicek, dict]:
             "Jiné složky jsou ty, které se podle názvu zařadit nepodařilo.",
             "Podíl přijímaček: kolik procent bodů celkového hodnocení tvořila jednotná zkouška podle přepisu. "
             "Neříká, jak moc další složky rozhodovaly: složka, kterou všichni dostanou plnou, pořadí nemění.",
+            "Sloupce končící „_text_prepisu“ nesou slova z kritérií školy, jak je přepis převzal (například „minimální hranice přijetí“); "
+            "nejsou to naše pojmy ani ověřené údaje.",
             "Jmenovité údaje o škole před zveřejněním ověřte v kritériích školy; výhrada je proto v každém řádku.",
             "Kritéria pro nové přijímací řízení zveřejní školy v DiPSy 15.–31. ledna.",
         ],
@@ -706,7 +711,7 @@ def balicek_kriteria(rok: str) -> tuple[Balicek, dict]:
              + [souhrn(k, c) for k, c in sorted(tab_kraj.items())])
     b.pridej(f"kriteria-{rok}-obory", "Obory", [
         "kraj", "obec", "skola", "redizo", "obor", "kkov", "zamereni", "typ_skoly", "bodovala_jen_jednotna_zkouska",
-        "podil_jednotne_zkousky_pct", *hl_skupiny, "jine_slozky", "slozky_podle_prepisu", "minima_podle_prepisu",
+        "podil_jednotne_zkousky_pct", *hl_skupiny, "jine_slozky", "slozky_text_prepisu", "minima_text_prepisu",
         "prepis", "mechanicka_kontrola_nasla_nesoulad", "vyhrada",
     ], radky)
     return b, {"nabidek": celkem["nabidek"], "jen_jpz": celkem["jen_jpz"], **{k: celkem[k] for k in SKUPINY_SLOZEK},

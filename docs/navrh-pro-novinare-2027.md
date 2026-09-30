@@ -61,6 +61,10 @@ Povinný krok podle [zdrojů dat](zdroje-dat.md), oddíl 3. Balíčky jsou jiné
 - **Kraj uchazeče je kraj školy první volby**, ne bydliště.
 - **Veletrhy: „víme o“, ne „koná se“.**
 
+### Co se za ukazatel nepovažuje
+
+Velikost souboru a počet řádků u odkazů ke stažení jsou technické údaje o souboru, ne čísla o přijímacím řízení; heslo ve slovníku ukazatelů nemají (review Codexu, kolo 3, nález odmítnut). Texty ve sloupcích `*_text_prepisu` balíčku kritérií jsou slova školy z přepisu, proto v nich mohou stát i výrazy, které slovník pojmů pro naše texty zakazuje (citace výjimku mají).
+
 ## 5. Rozhodnutí vlastníka
 
 Nastavení je na jednom místě, `src/data/pro-novinare.json` (`rozhodnuto: false`). Stránka i generátor ho čtou, takže změna se projeví v obou po přegenerování.

@@ -87,6 +87,23 @@ class Uchazeci(unittest.TestCase):
         self.assertNotIn("Jihočeský kraj", self.souhrn["kraje_9"])
 
 
+class VygenerovaneBalicky(unittest.TestCase):
+    """Kontroly nad commitnutými balíčky v public/pro-novinare/."""
+
+    def test_okres_patri_k_nabidce_ne_ke_skole(self):
+        # PORG má pod jedním REDIZO a KKOV osmiletá gymnázia v Praze, Brně a Ostravě;
+        # okres se dřív bral z první nabídky školy (Praha dostala Brno-město).
+        import csv
+        cesta = KOREN / "public" / "pro-novinare" / "obory-1-kolo-2026.csv"
+        if not cesta.exists():
+            self.skipTest("balíček není vygenerovaný")
+        radky = list(csv.DictReader(cesta.open(encoding="utf-8-sig")))
+        praha = [r for r in radky if r["obec"] == "Praha"]
+        self.assertTrue(praha)
+        self.assertEqual({r["okres"] for r in praha}, {"Praha"})
+        self.assertFalse([r for r in radky if not r["okres"]])
+
+
 class Nadpisy(unittest.TestCase):
     def test_nadpis_kraje(self):
         self.assertEqual(pn.nadpis_kraje("Jihočeský"), "Jihočeský kraj")
