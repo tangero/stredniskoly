@@ -97,7 +97,8 @@ class VygenerovaneBalicky(unittest.TestCase):
         cesta = KOREN / "public" / "pro-novinare" / "obory-1-kolo-2026.csv"
         if not cesta.exists():
             self.skipTest("balíček není vygenerovaný")
-        radky = list(csv.DictReader(cesta.open(encoding="utf-8-sig")))
+        with cesta.open(encoding="utf-8-sig") as f:
+            radky = list(csv.DictReader(f))
         praha = [r for r in radky if r["obec"] == "Praha"]
         self.assertTrue(praha)
         self.assertEqual({r["okres"] for r in praha}, {"Praha"})
