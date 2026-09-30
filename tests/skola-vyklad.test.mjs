@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   vzdalenostKm, smerStupne, proKohoObor, delkaSlovy, oboryVetou, pocetOboru, shrnutiMaturity, letNadSlovy, jakCastoNadStredem, nazevSkupinyMaturity,
-  nazevSObci,
+  nazevSObci, podnadpisSkoly,
 } from '../src/lib/skola-vyklad.ts';
 
 const machar = { lat: 50.184405, lon: 14.6701023 };
@@ -95,4 +95,15 @@ test('název školy s obcí v hlavičce', () => {
   assert.equal(nazevSObci('Gymnázium Vlašim', 'Aš'), 'Gymnázium Vlašim, Aš');
   assert.equal(nazevSObci('Střední škola, Plzeňská 231', 'Bor'), 'Střední škola, Plzeňská 231, Bor');
   assert.equal(nazevSObci('Střední škola', ''), 'Střední škola');
+});
+
+test('podnadpis: věta od školy má přednost, prázdná hodnota vrací automatický', () => {
+  const auto = 'Gymnázium osmileté a čtyřleté';
+  assert.deepEqual(podnadpisSkoly('Čtyřleté gymnázium se zaměřením na němčinu', auto), { text: 'Čtyřleté gymnázium se zaměřením na němčinu', odSkoly: true });
+  assert.deepEqual(podnadpisSkoly('', auto), { text: auto, odSkoly: false });
+  assert.deepEqual(podnadpisSkoly('   ', auto), { text: auto, odSkoly: false });
+  assert.deepEqual(podnadpisSkoly(undefined, auto), { text: auto, odSkoly: false });
+  assert.deepEqual(podnadpisSkoly(null, ''), { text: '', odSkoly: false });
+  // Zalomení z dřívějšího uložení se nezobrazí, HTML zůstane textem (React ho escapuje).
+  assert.equal(podnadpisSkoly('Škola\n <b>jazyků</b>', auto).text, 'Škola <b>jazyků</b>');
 });

@@ -26,6 +26,8 @@ export interface PortalPoleDef {
   maxLength: number;
   /** Prezentační pole (§3.3) – na webu se zobrazuje odděleně se značkou „od školy“. */
   prezentacni?: boolean;
+  /** Jednořádkový text: zalomení řádku se při validaci nahradí mezerou. */
+  jedenRadek?: boolean;
 }
 
 export const PORTAL_POLE: PortalPoleDef[] = [
@@ -98,6 +100,15 @@ export const PORTAL_POLE: PortalPoleDef[] = [
     napoveda: 'Zda a za jakých podmínek škola přijímá přestupující žáky.',
     typ: 'text',
     maxLength: 500,
+  },
+  {
+    key: 'podnadpis',
+    label: 'Podnadpis pod názvem školy',
+    napoveda: 'Jedna věta o tom, co škola nabízí, např. „Čtyřleté gymnázium se zaměřením na němčinu a francouzštinu“. Když pole necháte prázdné, podnadpis se složí z oborů.',
+    typ: 'text',
+    maxLength: 160,
+    prezentacni: true,
+    jedenRadek: true,
   },
   {
     key: 'popis_skoly',
@@ -249,7 +260,8 @@ export function validatePortalPayload(
     }
     const def = POLE_MAP.get(key);
     if (!def) continue; // neznámá pole ignorujeme
-    const v = String(value ?? '').trim();
+    const surova = String(value ?? '');
+    const v = (def.jedenRadek ? surova.replace(/\s*[\r\n]+\s*/g, ' ') : surova).trim();
     if (v.length > def.maxLength) {
       return { ok: false, error: `Pole „${def.label}“ může mít nejvýše ${def.maxLength} znaků.` };
     }

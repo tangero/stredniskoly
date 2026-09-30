@@ -78,6 +78,15 @@ export function oboryVetou(obory: { obor: string; delka: number }[], nejvic = 4)
   return zobrazene.length > 1 ? `${zobrazene.slice(0, -1).join(', ')}${spojka}${zobrazene.at(-1)}` : zobrazene[0] ?? '';
 }
 
+/**
+ * Podnadpis pod názvem školy: věta, kterou škola zadala v portálu, jinak automatická
+ * věta z oborů. Prázdná hodnota nebo samé mezery znamenají automatický podnadpis.
+ */
+export function podnadpisSkoly(odSkoly: string | null | undefined, automaticky: string): { text: string; odSkoly: boolean } {
+  const vlastni = (odSkoly ?? '').replace(/\s+/g, ' ').trim();
+  return vlastni ? { text: vlastni, odSkoly: true } : { text: automaticky, odSkoly: false };
+}
+
 export function pocetOboru(n: number): string {
   return `${n} ${n === 1 ? 'obor' : n >= 2 && n <= 4 ? 'obory' : 'oborů'}`;
 }

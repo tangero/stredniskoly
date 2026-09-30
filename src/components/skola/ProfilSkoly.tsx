@@ -5,7 +5,7 @@ import {
   cislo, zOd, ZARAZENI_POPISEK, NADPIS_OBTIZNOSTI, PORADI_OBTIZNOSTI,
   type ZarazeniObtiznosti,
 } from '@/lib/obor-profil';
-import { delkaSlovy, jakCastoNadStredem, nazevSObci, oboryVetou, pocetOboru, STAV_POPISEK } from '@/lib/skola-vyklad';
+import { delkaSlovy, jakCastoNadStredem, nazevSObci, oboryVetou, pocetOboru, podnadpisSkoly, STAV_POPISEK } from '@/lib/skola-vyklad';
 import { formatDatumCz } from '@/lib/portal-skol';
 import { SkupinaVKraji } from '@/components/obor/grafy';
 import { UlozitObor } from '@/components/obor/UlozitObor';
@@ -178,6 +178,10 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
   const nenabirane = nevypsane.filter(o => o.nenabira);
   const nejiste = nevypsane.filter(o => !o.nenabira);
   const mist = vypsane.reduce((s, o) => s + (o.kapacita ?? 0), 0);
+  const podnadpis = podnadpisSkoly(
+    pole('podnadpis')?.hodnota,
+    obory.length > 0 ? oboryVetou((vypsane.length ? vypsane : obory).map(o => ({ obor: o.nazev, delka: o.delka }))) : '',
+  );
   const nejtezsi = PORADI_OBTIZNOSTI.map(z => vypsane.find(o => o.zarazeni === z)).find(Boolean);
   const verejna = /veřejn|státní/i.test(skola.zrizovatel);
 
@@ -210,7 +214,12 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
           </nav>
           <div>
             <h1 className="text-[32px] font-bold leading-[1.1] text-[#16325c] [text-wrap:balance] md:text-[44px]">{nazevSObci(skola.nazev, skola.obec)}</h1>
-            {obory.length > 0 && <p className="mt-1 text-[18px] text-slate-600">{oboryVetou(vypsane.length ? vypsane.map(o => ({ obor: o.nazev, delka: o.delka })) : obory.map(o => ({ obor: o.nazev, delka: o.delka })))}</p>}
+            {podnadpis.text && (
+              <p className="mt-1 text-[18px] text-slate-600">
+                {podnadpis.text}
+                {podnadpis.odSkoly && <> <Puvod typ={u.podnadpis?.zdroj === 'redakce' ? 'redakce' : 'text'} /></>}
+              </p>
+            )}
           </div>
           <ul className="flex flex-wrap gap-2 text-[14px] text-slate-700">
             <li className="rounded-full bg-slate-100 px-3 py-1">{skola.adresa}</li>

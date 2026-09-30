@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.33 · 30. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.34 · 30. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -97,6 +97,8 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **Profil spravuje *jméno, funkce*** / **Profil spravuje škola** | kdo za školu v portálu vede profil (správce profilu); jméno a funkce jen se souhlasem správce, jinak druhá podoba ([účty portálu](ucty-portalu-skol-2027.md), oddíl 3) | není potřeba; na `/pro-skoly` u školy bez správce: „Škola se zatím nepřihlásila.“ | ověřeno, garant, odpovědná osoba; jména dalších editorů se neuvádějí vůbec |
 | **správce profilu**, **editor** | v portálu pro školy: kdo použil kód nebo odkaz první a zve kolegy; pozvaný kolega | jen v portálu, ne na stránce školy | administrátor, vlastník, uživatel školy |
 | **text školy** | popis školy vlastními slovy, neověřujeme | „text školy, neověřujeme“ | informace o škole, fakta |
+| **zřizovatel**: **veřejná**, **soukromá**, **církevní** škola | kdo školu založil a odpovídá za ni; v datech `zrizovatel` z CERMATu („veřejné / státní“, „soukromé“, „církevní“) | „zřizovatel je ten, kdo školu založil a odpovídá za ni; soukromé a církevní školy mohou vybírat školné“ | státní škola (veřejné jsou i krajské a obecní), placená škola, škola zdarma (výši školného z katalogu neznáme) |
+| **podnadpis pod názvem školy** | věta pod názvem na stránce školy; buď ji zadala škola v portálu (se značkou **text školy**), nebo se složí z oborů | jen v portálu, na stránce se nevysvětluje | slogan, motto |
 | **shrnutí vytvořené automaticky ze zprávy ČŠI** | strojová extrakce z inspekční zprávy | značka s datem zprávy | hodnocení inspekce (když jde o shrnutí) |
 | **zvažované obory** | obory, které si rodina uložila tlačítkem „Uložit mezi zvažované“; ukládá se nabídka, ne škola, a jen v tomto prohlížeči | „uloženo v tomto prohlížeči“ u tlačítka; v horní liště stačí počet v závorce | zvažované školy (ukládá se obor), oblíbené, uložené školy, můj výběr škol |
 | **starší údaj z InspIS** | údaj ze starého profilu InspIS, export 11. 2. 2026 | značka u údaje | aktuální, potvrzeno |
@@ -138,6 +140,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.34 | Pojem **zřizovatel** (veřejná, soukromá, církevní škola) pro filtr v Simulátoru přijímaček (#210, podnět #172); školné se u něj jen zmiňuje jako možnost, výši v katalogu nemáme. Pojem **podnadpis pod názvem školy** pro pole portálu (#197); věta od školy nese značku **text školy**, jinak se skládá z oborů. |
 | 1.33 | Pojem **podle údajů školy** pro kritéria zadaná školou v portálu (30. 9. 2026, [prototyp kritérií](prototyp-kriteria-prijeti.md) bod 4). Blok kritérií na stránce oboru u nich nemá výhradu o přepisu PDF; kritéria pro ročník novější než přepis se píšou v přítomném čase a věta „teprve se vyhlásí“ odpadá. |
 | 1.32 | Pojmy **balíček dat** a **ročník, ze kterého se uchazeč hlásí** pro sekci `/pro-novinare` ([návrh](navrh-pro-novinare-2027.md)). U 2. kola se ani pro novináře nepíše „šance“: balíček uvádí přijaté na přihlášku a vysvětluje, proč to není podíl úspěšných uchazečů. |
 | 1.31 | Pojmy **ostrý test** a **výhrady** pro krok 3 Simulátoru přijímaček (etapa E5, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 5). Výhrady stojí v samostatném bloku pod výsledky a zkráceně nad nimi, nikdy drobným písmem. |
