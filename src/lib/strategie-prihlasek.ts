@@ -38,6 +38,8 @@ export interface KontrolaStrategie {
   maNikdoNeodmitnut: boolean;
   /** Pojistka je v seznamu, ale až za posledním místem přihlášky. */
   pojistkaMimoPrihlasku: boolean;
+  /** Obor „kde nikoho neodmítli“ je v seznamu, ale až za posledním místem přihlášky. */
+  nikdoNeodmitnutMimoPrihlasku: boolean;
   /** Id běžných oborů, které se vejdou do přihlášky (prvních N v pořadí). */
   vejdeSeBezne: string[];
   vejdeSeTalentove: string[];
@@ -65,7 +67,7 @@ export function zkontrolujStrategii(polozky: PolozkaStrategie[], pravidla: Pravi
   const znameSkupiny = polozky.some(p => p.skupina !== null);
   if (polozky.some(p => p.talentova === null)) {
     return {
-      znameSkupiny, pozastaveno: true, maPojistku: false, maNikdoNeodmitnut: false, pojistkaMimoPrihlasku: false,
+      znameSkupiny, pozastaveno: true, maPojistku: false, maNikdoNeodmitnut: false, pojistkaMimoPrihlasku: false, nikdoNeodmitnutMimoPrihlasku: false,
       vejdeSeBezne: [], vejdeSeTalentove: [], navicBezne: 0, navicTalentove: 0,
     };
   }
@@ -74,12 +76,14 @@ export function zkontrolujStrategii(polozky: PolozkaStrategie[], pravidla: Pravi
   const vejdeSe = bezne.slice(0, pravidla.prihlasek_bezne);
   const zbytek = bezne.slice(pravidla.prihlasek_bezne);
   const maPojistku = vejdeSe.some(p => p.skupina === 'nad');
+  const maNikdoNeodmitnut = vejdeSe.some(p => p.skupina === 'nikdo_neodmitnut');
   return {
     znameSkupiny,
     pozastaveno: false,
     maPojistku,
-    maNikdoNeodmitnut: vejdeSe.some(p => p.skupina === 'nikdo_neodmitnut'),
+    maNikdoNeodmitnut,
     pojistkaMimoPrihlasku: !maPojistku && zbytek.some(p => p.skupina === 'nad'),
+    nikdoNeodmitnutMimoPrihlasku: !maNikdoNeodmitnut && zbytek.some(p => p.skupina === 'nikdo_neodmitnut'),
     vejdeSeBezne: vejdeSe.map(p => p.id),
     vejdeSeTalentove: talentove.slice(0, pravidla.prihlasek_talentove).map(p => p.id),
     navicBezne: zbytek.length,

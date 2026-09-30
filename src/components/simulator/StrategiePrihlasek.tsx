@@ -99,7 +99,9 @@ export function StrategiePrihlasek({ polozky, pravidla, rok, onMove, navrhyPojis
         ) : k.maPojistku ? (
           <p className="rounded-lg border border-emerald-300 bg-emerald-50 p-3 text-emerald-900">
             Pojistku máš: aspoň jeden obor v přihlášce je nad pásmem 1. kola {rok}.
-            {!k.maNikdoNeodmitnut && ' Obor ze skupiny „Obory, kde nikoho neodmítli“ v přihlášce nemáš; přidej ho, pokud nějaký takový zvažuješ.'}
+            {!k.maNikdoNeodmitnut && (k.nikdoNeodmitnutMimoPrihlasku
+              ? ` Obor ze skupiny „Obory, kde nikoho neodmítli“ zvažuješ, ale stojí až za ${pravidla.prihlasek_bezne}. místem; posuň ho výš, pokud ho chceš v přihlášce.`
+              : ' Obor ze skupiny „Obory, kde nikoho neodmítli“ v přihlášce nemáš; přidej ho, pokud nějaký takový zvažuješ.')}
           </p>
         ) : (
           <div role="alert" className="rounded-lg border border-amber-400 bg-amber-50 p-3 text-amber-950">

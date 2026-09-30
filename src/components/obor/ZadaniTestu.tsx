@@ -97,7 +97,8 @@ export function NavodTau({ druh, rokTestu, termin }: { druh: DruhTestu; rokTestu
 }
 
 /** Jeden vyplněný test po převodu na body roku pásem; `termin` null = bez převodu. */
-export interface VysledekTestu { soucet: number; prevedeno: number; termin: TerminPrevodu | null }
+/** `jiny`: uchazeč zvolil „Jiný test nebo odhad“; test TAU bez převodu (jiný rok tabulek) jiný test není. */
+export interface VysledekTestu { soucet: number; prevedeno: number; termin: TerminPrevodu | null; jiny: boolean }
 
 export interface StavTestu {
   testy: ZadanyTest[];
@@ -180,7 +181,7 @@ export function useZadaneTesty({ druh, prevod: prevodVstup, rok, pamatovat }: {
     if (c === null || m === null) return null;
     const termin = prevod?.terminy.find(x => x.klic === t.test);
     const soucet = c + m;
-    return { soucet, prevedeno: termin ? prevedBody(termin.body_cil, soucet) : soucet, termin: termin ?? null };
+    return { soucet, prevedeno: termin ? prevedBody(termin.body_cil, soucet) : soucet, termin: termin ?? null, jiny: t.test === JINY };
   }), [testy, prevod]);
 
   const platne = vysledky.filter((v): v is VysledekTestu => v !== null);
@@ -197,8 +198,10 @@ export function useZadaneTesty({ druh, prevod: prevodVstup, rok, pamatovat }: {
     testy, setTesty, prevod, jinyRokCile, vysledky, platne,
     body: median(platne.map(v => v.prevedeno)),
     nejhorsi: platne.length ? Math.min(...platne.map(v => v.prevedeno)) : null,
-    jenJiny: platne.length > 0 && platne.every(v => v.termin === null),
-    nektereJiny: platne.some(v => v.termin === null),
+    // Výhrada „jiný test“ patří jen k testům, které uchazeč jako jiný zvolil; nesoulad roku
+    // převodních tabulek má vlastní větu (jinyRokCile).
+    jenJiny: platne.length > 0 && platne.every(v => v.jiny),
+    nektereJiny: platne.some(v => v.jiny),
     nespolehlivy: platne.some(v => v.termin && !v.termin.spolehlive),
     ulozenoNeco: testy.some(t => t.cj.trim() || t.ma.trim()),
     nactenoZUlozeni: nactenoPro === klic,

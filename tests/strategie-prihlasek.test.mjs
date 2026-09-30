@@ -145,3 +145,15 @@ test('obor mimo index pásem nemá doložený druh zkoušky a kontrola se pozast
   ];
   assert.equal(zkontrolujStrategii(polozky, pravidla).pozastaveno, true);
 });
+
+test('obor „kde nikoho neodmítli“ za limitem: posuň výš, ne přidej', () => {
+  const pr = { prihlasek_bezne: 3, prihlasek_talentove: 2, rok_pravidel: 2026, overeno_pro_rizeni: false };
+  const k = zkontrolujStrategii([
+    { id: 'a', skupina: 'nad', talentova: false }, { id: 'b', skupina: 'v', talentova: false },
+    { id: 'c', skupina: 'pod', talentova: false }, { id: 'd', skupina: 'nikdo_neodmitnut', talentova: false },
+  ], pr);
+  assert.equal(k.maNikdoNeodmitnut, false);
+  assert.equal(k.nikdoNeodmitnutMimoPrihlasku, true);
+  const bez = zkontrolujStrategii([{ id: 'a', skupina: 'nad', talentova: false }], pr);
+  assert.equal(bez.nikdoNeodmitnutMimoPrihlasku, false);
+});

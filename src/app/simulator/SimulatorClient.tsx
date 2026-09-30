@@ -66,6 +66,19 @@ function prevodDruhu(prevod: PrevodTestu | null, druh: DruhTestu): PrevodDruhu |
   return prevod && terminy ? { rok_testu: prevod.rok_testu, rok_cile: prevod.rok_cile, terminy } : null;
 }
 
+/** Popisek uloženého oboru, který v katalogu není: dohledávání běží, nebo skončilo bez výsledku. */
+export function popisekNedohledaneho(stav: 'probiha' | 'hotovo' | 'selhalo'): string {
+  if (stav === 'probiha') return 'Uložený obor se dohledává';
+  if (stav === 'selhalo') return 'Uložený obor se nepodařilo načíst';
+  return 'Uložený obor se už nenabízí nebo ho nenacházíme';
+}
+
+/** Jeden popisek oboru pro výběr i strategii, ať se tentýž obor nejmenuje na dvou místech jinak. */
+function popisekOboru(school: School): string {
+  const n = toNabidka(school);
+  return `${n.program} · ${n.nazev}`;
+}
+
 function toNabidka(school: School): NabidkaSimulatoru {
   return {
     id: school.id,
@@ -101,6 +114,8 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
   const [pasma, setPasma] = useState<IndexPasem | null>(null);
   const [pasmaChyba, setPasmaChyba] = useState('');
   const [legacySaved, setLegacySaved] = useState<School[]>([]);
+  // Stav dohledání uložených oborů mimo aktuální katalog: po skončení (i neúspěšném) už „dohledává se“ neplatí.
+  const [dohledani, setDohledani] = useState<'probiha' | 'hotovo' | 'selhalo'>('probiha');
   const [catalog, setCatalog] = useState<SearchResponse | null>(null);
   const [error, setError] = useState('');
   const [retry, setRetry] = useState(0);
@@ -217,7 +232,8 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
     if (!catalog) return;
     const keys = new Set(catalog.schools.map(s => normalizeSchoolKey(s.id)));
     const missing = selectedIds.filter(id => !keys.has(normalizeSchoolKey(id)));
-    if (!missing.length) return;
+    if (!missing.length) { setDohledani('hotovo'); return; }
+    setDohledani('probiha');
     const controller = new AbortController();
     Promise.all(Array.from({ length: Math.ceil(missing.length / 100) }, (_, i) => {
       const params = new URLSearchParams({ ids: JSON.stringify(missing.slice(i * 100, (i + 1) * 100)) });
@@ -225,8 +241,11 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
         if (!r.ok) throw new Error('lookup');
         return r.json() as Promise<SearchResponse>;
       });
-    })).then(parts => setLegacySaved(parts.flatMap(p => p.schools))).catch(error => {
-      if (error.name !== 'AbortError') setNotice('Část staršího výběru se nepodařilo načíst. Uložené položky zůstávají zachované.');
+    })).then(parts => { setLegacySaved(parts.flatMap(p => p.schools)); setDohledani('hotovo'); }).catch(error => {
+      if (error.name !== 'AbortError') {
+        setDohledani('selhalo');
+        setNotice('Část staršího výběru se nepodařilo načíst. Uložené položky zůstávají zachované.');
+      }
     });
     return () => controller.abort();
   }, [catalog, selectedIds]);
@@ -272,9 +291,14 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
   const poloha = pasma && bodySkupiny !== null && rokPasem !== null
     ? (n: { id: string }) => polohaVuciPasmu(bodySkupiny, radekPasma(n), Number(druh), minPrijatych)
     : null;
-  function seznam(offers: School[], zpusob: 'dojezd' | 'hranice' = razeni) {
+  const poradiVyberu = new Map(selectedIds.map((id, i) => [normalizeSchoolKey(id), i]));
+  function seznam(offers: School[], zpusob: 'dojezd' | 'hranice' = razeni, vyber = onlySaved) {
+    // Mezi zvažovanými znamená výchozí řazení pořadí nastavené šipkami ve strategii.
+    const podleVyberu = vyber && zpusob === 'dojezd';
     const serazene = seradNabidky(offers.map(toNabidka), zpusob, {
       minuty: minutyDojezdu, nazev: n => `${n.nazev} ${n.program}`, hranice: n => hodnotaHranice(radekPasma(n), minPrijatych),
+      // V pohledu „jen zvažované“ platí pořadí nastavené šipkami ve strategii.
+      poradiVyberu: podleVyberu ? n => poradiVyberu.get(normalizeSchoolKey(n.id)) : undefined,
     });
     return <SeznamNabidek
       nabidky={serazene} poloha={poloha} radek={radekPasma} minuty={minutyDojezdu}
@@ -287,9 +311,9 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
   // Druh zkoušky bereme z pásem; bez nich (nebo bez dohledaného oboru) ho neznáme a kontrola se pozastaví.
   const polozkyStrategie = selectedIds.map(id => {
     const school = catalogIndex.get(normalizeSchoolKey(id));
-    if (!school) return { id, label: 'Uložený obor se dohledává', skupina: null, talentova: null };
+    if (!school) return { id, label: popisekNedohledaneho(dohledani), skupina: null, talentova: null };
     const n = toNabidka(school);
-    return { id, label: `${n.program} · ${n.nazev}`, href: n.href ?? `/skola/${n.slug}`, skupina: skupinaPodleId(id), talentova: talentovaZPasem(pasma, radekPasma({ id })) };
+    return { id, label: popisekOboru(school), href: n.href ?? `/skola/${n.slug}`, skupina: skupinaPodleId(id), talentova: talentovaZPasem(pasma, radekPasma({ id })) };
   });
   const oboryZvazovanych = new Set(polozkyStrategie.flatMap(p => { const s = catalogIndex.get(normalizeSchoolKey(p.id)); return s ? [s.obor] : []; }));
   // Pojistku navrhujeme jen z hledání omezeného místem: obory z celé země nikomu nepomohou.
@@ -300,7 +324,7 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
   function move(id: string, smer: -1 | 1) { saveIds(posunVPoradi(selectedIds, id, smer)); }
   const savedItems = selectedIds.map(id => {
     const school = catalogIndex.get(normalizeSchoolKey(id));
-    return { id, label: school ? `${school.obor} · ${school.nazev_display || school.nazev}` : 'Uložený obor se dohledává' };
+    return { id, label: school ? popisekOboru(school) : popisekNedohledaneho(dohledani) };
   });
 
   function changeTime(raw: string) {
@@ -364,8 +388,8 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
       />
     </div>
   </section>;
-  const vyhrady = rokPasem === null ? null : <VyhradySimulatoru rokPasem={rokPasem} rokKriterii={rokKriterii} terminKriterii={terminKriterii} jinyTest={testy.platne.some(v => v.termin === null)} />;
-  const razeniControls = <div className="mb-4 mt-4">
+  const vyhrady = rokPasem === null ? null : <VyhradySimulatoru rokPasem={rokPasem} rokKriterii={rokKriterii} terminKriterii={terminKriterii} jinyTest={testy.nektereJiny} />;
+  const razeniControls = (vyber = onlySaved) => <div className="mb-4 mt-4">
     {rokPasem !== null && <VyhradaNahore rokPasem={rokPasem} />}
     {bodySkupiny === null && rokPasem !== null && <p className="mb-3 rounded-lg border border-blue-200 bg-blue-50 p-3 text-sm text-blue-900">
       Zadej výsledek cvičného testu v kroku 1 a obory se rozdělí podle toho, jak by ses s ním dostal v 1. kole {rokPasem}.
@@ -374,7 +398,7 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
     {bodySkupiny !== null && testy.platne.length > 1 && <p className="mb-3 text-sm text-slate-600">Máš víc testů; do skupin řadíme podle nejhoršího z nich.</p>}
     <label className="block text-sm font-medium">Seřadit
       <select className={`${field} sm:max-w-xs`} value={razeni} onChange={e => setRazeni(e.target.value === 'hranice' ? 'hranice' : 'dojezd')}>
-        <option value="dojezd">{stop ? 'podle dojezdu' : 'podle názvu školy'}</option>
+        <option value="dojezd">{vyber ? 'podle tvého pořadí' : stop ? 'podle dojezdu' : 'podle názvu školy'}</option>
         <option value="hranice">od nejvyšší hranice přijetí</option>
       </select>
     </label>
@@ -400,8 +424,8 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
         polozky={polozkyStrategie} pravidla={pravidla} rok={rokPasem}
         onMove={move} navrhyPojistky={navrhyPojistky} onAdd={toggle}
       />}
-      {razeniControls}
-      {seznam(selectedIds.flatMap(id => { const school = catalogIndex.get(normalizeSchoolKey(id)); return school ? [school] : []; }))}
+      {razeniControls(true)}
+      {seznam(selectedIds.flatMap(id => { const school = catalogIndex.get(normalizeSchoolKey(id)); return school ? [school] : []; }), razeni, true)}
       {selectedIds.map(id => { const school = catalogIndex.get(normalizeSchoolKey(id)); return school ? null : <div key={id} className="my-4"><p>{!catalog && !error ? 'Načítám uložený obor…' : 'Uložený obor se nepodařilo jednoznačně dohledat. Výběr zůstal zachovaný.'}</p><button className={button} onClick={() => toggle(id)}>Odebrat nedohledaný obor</button></div>; })}
       {vyhrady}
       {shareUrl && <label className="mt-4 block text-sm">Odkaz obsahuje jen výběr oborů a zobrazí ho každý, komu jej předáš. Zastávka ani dojezd se nesdílejí.<input className={field} value={shareUrl} readOnly onFocus={e => e.target.select()} /></label>}
@@ -452,7 +476,7 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
             {shareUrl && <label className="mt-3 block text-sm">Odkaz obsahuje jen uložené obory. Zadané body ani zastávka se nesdílejí.
               <input className={field} value={shareUrl} readOnly onFocus={e => e.target.select()} /></label>}
           </div>
-          {razeniControls}
+          {razeniControls()}
           {pending ? <div role="status"><p>{transitError || 'Počítám orientační dojezd…'}</p>{transitError && <button className={`${button} mt-3`} onClick={() => { setTransitError(''); setRetry(retry + 1); }}>Zkusit znovu</button>}</div> : <>
             {needsPlace ? <p className="my-5">Zvol město, kraj nebo výchozí zastávku. Obory z celé země najednou neukazujeme.</p> : <>
             <div className="flex flex-wrap items-center justify-between gap-2"><h2 className="text-xl font-semibold" aria-live="polite">{countLabel(shownOffers.length)}{stop ? ` do ${limit} min` : ''}</h2></div>
