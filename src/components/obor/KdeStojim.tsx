@@ -45,21 +45,30 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
   const p = k.prepisy.find(x => x.rezim === 'jine' || x.jpz_navic.length > 0 || x.chybi_slozky) ?? k.prepisy[0];
   if (!p) return null;
   const odSkoly = p.prepis === 'skola';
+  // Původ se posuzuje přes všechna zaměření: jedno potvrzené nesmí zakrýt přepis ostatních.
+  const vsechnySkola = k.prepisy.every(x => x.prepis === 'skola');
+  const zamereniSkoly = k.prepisy.filter(x => x.prepis === 'skola').map(x => x.zamereni || 'bez zaměření');
+  const smiseny = zamereniSkoly.length > 0 && !vsechnySkola;
+  const vyhradaPrepisu = k.prepisy.find(x => x.prepis !== 'skola');
+  const smisenyText = smiseny
+    ? <>Podle údajů školy je zaměření {zamereniSkoly.join(', ')}; ostatní zaměření jsou z přepisu PDF. </>
+    : null;
   // Škola zadala kritéria pro nové řízení: nic se „teprve nevyhlásí“ a mluví se v přítomném čase.
   const nove = Boolean(k.noveRizeni);
   const noveRizeni = nove ? null : (
     <>Kritéria pro nové přijímací řízení se teprve vyhlásí{k.noveKriteria ? `; školy je zveřejní ${k.noveKriteria}` : ''}.</>
   );
   const zdroj = odSkoly ? 'podle údajů školy' : 'podle PDF';
-  const puvod = odSkoly ? (
+  const puvod = vsechnySkola ? (
     <p className="text-slate-600">
       Podle údajů školy, které škola sama zadala a potvrdila.
       {p.odkaz && /^https?:\/\//i.test(p.odkaz) && <> <a href={p.odkaz} className="text-blue-700 underline" rel="noopener noreferrer" target="_blank">Kritéria na webu školy</a>.</>}
     </p>
   ) : (
     <p className="text-amber-800">
-      {p.prepis === 'strojovy' ? 'Přepsal to z PDF počítač a může obsahovat chybu: při kontrole vzorku byl podstatně chybný zhruba každý desátý přepis.' : 'Přepsáno ručně z PDF a může obsahovat chybu.'}
-      {p.nalezy.length > 0 && ` ${NALEZ_TEXT}`} Ověřte si to v kritériích školy.
+      {smisenyText}
+      {vyhradaPrepisu?.prepis === 'strojovy' ? 'Přepsal to z PDF počítač a může obsahovat chybu: při kontrole vzorku byl podstatně chybný zhruba každý desátý přepis.' : 'Přepsáno ručně z PDF a může obsahovat chybu.'}
+      {k.prepisy.some(x => x.prepis !== 'skola' && x.nalezy.length > 0) && ` ${NALEZ_TEXT}`} Ověřte si to v kritériích školy.
     </p>
   );
   if (jenPrijimacky(k)) {
@@ -69,11 +78,12 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
           ? <>Podle kritérií {k.rok}, tedy pravidel, podle kterých škola v roce {k.rok} řadí uchazeče, přijímá škola podle jednotné přijímací zkoušky.</>
           : <>Podle kritérií {k.rok}, tedy pravidel, podle kterých škola v roce {k.rok} řadila uchazeče, škola přijímala podle jednotné přijímací zkoušky.</>}
         {' '}{noveRizeni}{' '}
-        {odSkoly
+        {vsechnySkola
           ? <span>Podle údajů školy.</span>
           : <span className="text-amber-800">
-              {p.prepis === 'strojovy' ? 'Přepsal to z PDF počítač a může obsahovat chybu.' : 'Přepsáno ručně z PDF a může obsahovat chybu.'}
-              {p.nalezy.length > 0 && ` ${NALEZ_TEXT}`} Ověřte si to v kritériích školy.
+              {smisenyText}
+              {vyhradaPrepisu?.prepis === 'strojovy' ? 'Přepsal to z PDF počítač a může obsahovat chybu.' : 'Přepsáno ručně z PDF a může obsahovat chybu.'}
+              {k.prepisy.some(x => x.prepis !== 'skola' && x.nalezy.length > 0) && ` ${NALEZ_TEXT}`} Ověřte si to v kritériích školy.
             </span>}
       </p>
     );

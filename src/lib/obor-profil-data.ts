@@ -174,7 +174,7 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
         // se s deduplikovaným pořadím rozcházejí; proužek pak radši vůbec ne.
         const soucet = pozice ? Object.values(pozice).reduce((a, n) => a + n, 0) : null;
         if (soucet !== pasmaData.soutezicich) return null;
-        return { druh, prevod, pozice, kriteria: sPrednostiSkoly(kriteriaZamereni(kriteria, zamereni), odSkol, klicPasem, zamereni) };
+        return { druh, prevod, pozice, kriteria: sPrednostiSkoly(kriteriaZamereni(kriteria, zamereni), odSkol, klicPasem, zamereni, rokPasem) };
       })
     : null;
 

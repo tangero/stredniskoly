@@ -252,3 +252,12 @@ test('kritéria od školy: bez výhrady o přepisu, s původem „podle údajů 
   assert.match(nove, /Co kromě přijímaček rozhoduje v roce 2027/);
   assert.doesNotMatch(nove, /teprve vyhlásí/);
 });
+
+test('smíšený původ: jedno zaměření od školy nezakryje výhradu přepisu ostatních', () => {
+  const zaklad = { source_id: '', rezim: 'pouze_jpz', podil_jpz_pct: 100, slozky: [], jpz_navic: [], minima: [], nejasnosti: [], nalezy: [], chybi_slozky: false };
+  const html = vykresli({ ...ZAKLAD, pasmo_nejistoty: [81, 93] }, { kriteria: { rok: 2026, pdf: true, noveKriteria: null, prepisy: [
+    { ...zaklad, zamereni: 'Jazyky', prepis: 'skola' }, { ...zaklad, zamereni: 'Vědy', prepis: 'strojovy' },
+  ] } });
+  assert.match(html, /Podle údajů školy je zaměření Jazyky; ostatní zaměření jsou z přepisu PDF/);
+  assert.match(html, /Přepsal to z PDF počítač/);
+});
