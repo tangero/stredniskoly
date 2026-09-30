@@ -62,3 +62,11 @@ test('převedený test výhradu bez převodu nemá, smíšené zadání ano', ()
   assert.match(smes, /Část tvých výsledků je bez převodu/);
   assert.match(smes, /průměr obou výsledků/);
 });
+
+test('TAU při nesouladu roku převodu nemá výhradu „jiný test“, jen vlastní větu', () => {
+  const jinyRok = { ...PREVOD, rok_cile: 2025 };
+  const html = vykresli([{ test: '1-radny', cj: '30', ma: '25' }], jinyRok);
+  assert.match(html, /Převodní tabulky jsou spočítané pro rok 2025/);
+  assert.doesNotMatch(html, /Tvůj výsledek je bez převodu/);
+  assert.doesNotMatch(html, /Jiný test nebo odhad neumíme převést/);
+});

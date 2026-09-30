@@ -33,6 +33,17 @@ export function obnovProfily(): void {
   }
 }
 
+/** Tag cache kritérií zadaných školou (stránka oboru); zneplatní ho zápis kritérií. */
+export const TAG_KRITERIA = 'portal-kriteria';
+
+export function obnovKriteria(): void {
+  try {
+    revalidateTag(TAG_KRITERIA, { expire: 0 });
+  } catch {
+    // Mimo požadavek Next.js (testy) není co obnovovat.
+  }
+}
+
 // In-memory omezení četnosti, stejný vzor jako /api/portal-magic. Na Vercelu
 // platí jen v rámci jedné instance; proti hádání kódů stačí délka kódu.
 const casy = new Map<string, number[]>();

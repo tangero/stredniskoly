@@ -1,5 +1,7 @@
 import { nactiPrevodDruhu } from '@/lib/prevod-testu';
 import { kriteriaOboru, poziceOboru } from '@/lib/pozice-kriteria';
+import { vsechnaKriteriaSkol } from '@/lib/kriteria-skoly-verejne';
+import { sPrednostiSkoly } from '@/lib/kriteria-skoly-sloucit';
 import { druhTestu, type DruhTestu, type KriteriaOboru, type PoziceOboru, type PrevodDruhu } from '@/lib/prevod-testu-vypocet';
 import { getSchoolsData, getExtractionsByRedizo, getInspisDataByRedizo } from '@/lib/data';
 import { getSouhrnNabidky, nabidkyVeSkupineKraje, souhrnOboru, type SouhrnRocniku } from '@/lib/souhrny-kolo1';
@@ -166,13 +168,13 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
   // Bez vypočteného pásma nejistoty by proužek chybějící horní mez četl jako
   // „nad minimem se dostali všichni“, což data nemusí nést; zůstane histogram.
   const kdeStojim: ProfilOboruData['kdeStojim'] = rokPasem && pasmaData?.pasmo_nejistoty
-    ? await Promise.all([nactiPrevodDruhu(druh), poziceOboru(klicPasem), kriteriaOboru(klicPasem)])
-      .then(([prevod, pozice, kriteria]) => {
+    ? await Promise.all([nactiPrevodDruhu(druh), poziceOboru(klicPasem), kriteriaOboru(klicPasem), vsechnaKriteriaSkol()])
+      .then(([prevod, pozice, kriteria, odSkol]) => {
         // Pásma, která počítají uchazeče s více zaměřeními vícekrát (issue #183),
         // se s deduplikovaným pořadím rozcházejí; proužek pak radši vůbec ne.
         const soucet = pozice ? Object.values(pozice).reduce((a, n) => a + n, 0) : null;
         if (soucet !== pasmaData.soutezicich) return null;
-        return { druh, prevod, pozice, kriteria: kriteriaZamereni(kriteria, zamereni) };
+        return { druh, prevod, pozice, kriteria: sPrednostiSkoly(kriteriaZamereni(kriteria, zamereni), odSkol, klicPasem, zamereni, rokPasem) };
       })
     : null;
 

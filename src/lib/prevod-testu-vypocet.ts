@@ -88,17 +88,23 @@ export interface PrepisKriterii {
   rezim: 'pouze_jpz' | 'jine';
   /** Podíl přijímaček na bodování, % (slovník ukazatelů). */
   podil_jpz_pct: number | null;
-  slozky: { nazev: string; max: number | null }[];
+  /** `druh` jen u údajů školy (formulář portálu); u přepisu PDF se druh odhaduje z názvu. */
+  slozky: { nazev: string; max: number | null; druh?: string }[];
   /** Body navíc z přijímaček, typicky vážení jednoho předmětu (matematika × 0,5). */
   /** Přijímačky zapsané v PDF jinak než prostým součtem (bonus, přepočet, váha pořadí); jen názvy. */
   jpz_navic: { nazev: string; max: number | null }[];
   minima: string[];
   nejasnosti: string[];
-  prepis: 'rucni' | 'strojovy';
+  /** `skola`: kritéria zadala škola v portálu; mají přednost před přepisem PDF. */
+  prepis: 'rucni' | 'strojovy' | 'skola';
   /** Nálezy mechanické kontroly; prázdné neznamená ověřeno. */
   nalezy: string[];
   /** Přepis tvrdil „jen přijímačky“, kontrola Jevem našla i další bodování; složky v přepisu chybí. */
   chybi_slozky?: boolean;
+  /** Další pravidla a výjimky slovy (jen údaje školy). */
+  popis?: string;
+  /** Odkaz na vyhlášená kritéria (jen údaje školy). */
+  odkaz?: string;
 }
 
 export interface KriteriaOboru {
@@ -108,4 +114,11 @@ export interface KriteriaOboru {
   prepisy: PrepisKriterii[];
   /** Kdy školy zveřejní kritéria nového ročníku, z harmonogramu MŠMT. */
   noveKriteria: string | null;
+  /** Kritéria jsou pro ročník novější než pásma (nové řízení); jen pro blok kritérií. */
+  noveRizeni?: boolean;
+  /**
+   * Kritéria nového řízení zadaná školou. Historické věty pod proužkem dál stojí
+   * na kritériích roku pásem (`prepisy`), blok kritérií ukáže tato.
+   */
+  nove?: { rok: number; prepisy: PrepisKriterii[] };
 }
