@@ -889,7 +889,11 @@ def main() -> None:
         ("kriteria", balicek_kriteria(rok_kr)),
     ]:
         if nazev == "uchazeci":
-            s["kolo2"] = druhe_kolo_uchazecu(b, rok_u2, uchazeci2, kolo2)
+            # 2. kolo patří k 1. kolu téhož roku. V květnu a červnu je 1. kolo nového roku
+            # převzaté dřív než 2. kolo; pak se 2. kolo vynechá, ne pod cizím rokem.
+            s["kolo2"] = druhe_kolo_uchazecu(b, rok_u2, uchazeci2, kolo2) if rok_u2 == rok_u else None
+            if s["kolo2"] is None:
+                b.o_datech.append(f"Data uchazečů 2. kola {rok_u} zatím nejsou převzatá; balíček nese jen 1. kolo.")
         balicky.append((nazev, b))
         souhrn[nazev] = s
 
@@ -913,7 +917,7 @@ def main() -> None:
     vystup = {
         "vytvoreno": args.dnes.isoformat(),
         "generator": "scripts/build-pro-novinare.py",
-        "obdobi": {"vysledky": rok, "kolo2": rok_k2, "uchazeci": rok_u, "kriteria": rok_kr,
+        "obdobi": {"vysledky": rok, "kolo2": rok_k2, "uchazeci": rok_u, "uchazeci_kolo2": rok_u2, "kriteria": rok_kr,
                    "veletrhy": souhrn["veletrhy"]["sezona"]},
         "zdroje": {"platnost_vysledku": meta_vysledku.get("valid_at"), "otisky": otisky},
         "balicky": katalog,

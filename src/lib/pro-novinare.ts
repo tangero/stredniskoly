@@ -25,7 +25,7 @@ export interface Balicek {
 
 export interface SouhrnProNovinare {
   vytvoreno: string;
-  obdobi: { vysledky: string; kolo2: string; uchazeci: string; kriteria: string; veletrhy: string };
+  obdobi: { vysledky: string; kolo2: string; uchazeci: string; uchazeci_kolo2: string; kriteria: string; veletrhy: string };
   zdroje: { platnost_vysledku: string };
   balicky: Balicek[];
   zip: string;
@@ -38,7 +38,8 @@ export interface SouhrnProNovinare {
       rocniky: Record<'9' | '7' | '5', Pocty>;
       kraje_9: Record<string, Pocty>;
       uchazecu: number;
-      kolo2: { rocniky: Record<'9' | '7' | '5', Pocty>; kraje_9: Record<string, Pocty>; volno_9: Record<string, Pocty> };
+      /** null, když data uchazečů 2. kola roku `uchazeci` ještě nejsou převzatá. */
+      kolo2: { rocniky: Record<'9' | '7' | '5', Pocty>; kraje_9: Record<string, Pocty>; volno_9: Record<string, Pocty> } | null;
     };
     druhe_kolo: { jpz: Pocty; bez_jpz: Pocty; kraje_jpz: Record<string, Pocty>; typy: Record<string, Pocty> };
     kriteria: Pocty;

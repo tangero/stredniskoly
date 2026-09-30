@@ -79,9 +79,10 @@ export default function ProNovinarePage() {
   const { veletrhy, konzervatore, uchazeci, druhe_kolo: k2, kriteria } = s.cisla;
   const r = s.obdobi;
   const d9 = uchazeci.rocniky['9'];
+  // 2. kolo uchazečů chybí, dokud data 2. kola téhož roku nejsou převzatá (květen až červen).
   const k2u = uchazeci.kolo2;
-  const k9 = k2u.rocniky['9'];
-  const v9 = k2u.volno_9;
+  const k9 = k2u?.rocniky['9'];
+  const v9 = k2u?.volno_9 ?? {};
   const kraje9 = Object.entries(uchazeci.kraje_9).sort((a, b) => b[1].nikam / b[1].uchazecu - a[1].nikam / a[1].uchazecu);
   const kraje2 = Object.entries(k2.kraje_jpz).sort((a, b) => b[1].mist - a[1].mist);
   const kd = konzervatore.kolo1_denni;
@@ -155,7 +156,7 @@ export default function ProNovinarePage() {
           {/* ------------------------------------------------------------ */}
           <section aria-labelledby="uchazeci">
             <h2 id="uchazeci" className="text-2xl font-bold mb-2">
-              Kolik uchazečů se v 1. a 2. kole {r.uchazeci} nedostalo nikam
+              Kolik uchazečů se v {k2u ? '1. a 2. kole' : '1. kole'} {r.uchazeci} nedostalo nikam
             </h2>
             <p className="text-slate-700">
               Počítáme uchazeče, které v daném kole nepřijal žádný obor z přihlášky. Každý uchazeč se počítá jednou, se všemi
@@ -170,9 +171,13 @@ export default function ProNovinarePage() {
                     <th className="p-3">Hlásí se z</th>
                     <th className="p-3 text-right">Uchazečů 1. kola</th>
                     <th className="p-3 text-right">Nepřijati v 1. kole</th>
-                    <th className="p-3 text-right">Uchazečů 2. kola*</th>
-                    <th className="p-3 text-right">Přijati ve 2. kole</th>
-                    <th className="p-3 text-right">Nepřijati ani ve 2. kole</th>
+                    {k2u && (
+                      <>
+                        <th className="p-3 text-right">Uchazečů 2. kola*</th>
+                        <th className="p-3 text-right">Přijati ve 2. kole</th>
+                        <th className="p-3 text-right">Nepřijati ani ve 2. kole</th>
+                      </>
+                    )}
                   </tr>
                 </thead>
                 <tbody>
@@ -184,7 +189,7 @@ export default function ProNovinarePage() {
                     ] as const
                   ).map(([popis, roc]) => {
                     const p1 = uchazeci.rocniky[roc];
-                    const p2 = k2u.rocniky[roc];
+                    const p2 = k2u?.rocniky[roc];
                     return (
                       <tr key={roc} className="border-t border-slate-200">
                         <td className="p-3">{popis}</td>
@@ -192,15 +197,21 @@ export default function ProNovinarePage() {
                         <td className="p-3 text-right">
                           {cislo(p1.nikam)} ({procenta(p1.nikam, p1.uchazecu)})
                         </td>
-                        <td className="p-3 text-right">{cislo(p2.uchazecu)}</td>
-                        <td className="p-3 text-right">{cislo(p2.prijati)}</td>
-                        <td className="p-3 text-right font-semibold">{cislo(p2.neprijati)}</td>
+                        {p2 && (
+                          <>
+                            <td className="p-3 text-right">{cislo(p2.uchazecu)}</td>
+                            <td className="p-3 text-right">{cislo(p2.prijati)}</td>
+                            <td className="p-3 text-right font-semibold">{cislo(p2.neprijati)}</td>
+                          </>
+                        )}
                       </tr>
                     );
                   })}
                 </tbody>
               </table>
             </div>
+            {k2u && k9 ? (
+              <>
             <p className="text-sm text-slate-600 mt-3">
               * Uchazečů 2. kola: kdo podal přihlášku do 2. kola. Hlásit se mohou děti, kterým nevyšlo 1. kolo, ale také ti,
               kdo v 1. kole přihlášku nepodali nebo se přijetí vzdali. Soubory 1. a 2. kola nemají společný identifikátor
@@ -240,6 +251,12 @@ export default function ProNovinarePage() {
                 ze zveřejněných dat zjistit nelze.
               </p>
             </div>
+              </>
+            ) : (
+              <p className="text-sm text-slate-600 mt-3">
+                Data uchazečů 2. kola {r.uchazeci} zatím nejsou převzatá; CERMAT je zveřejňuje v červnu.
+              </p>
+            )}
 
             <details className="mt-4 bg-white border border-slate-200 rounded-xl p-4">
               <summary className="cursor-pointer font-semibold">Deváťáci bez místa podle krajů</summary>
@@ -252,21 +269,23 @@ export default function ProNovinarePage() {
                     <tr>
                       <th className="py-1.5 font-normal">Kraj</th>
                       <th className="py-1.5 font-normal text-right">Nepřijati v 1. kole</th>
-                      <th className="py-1.5 font-normal text-right">Nepřijati ani ve 2. kole</th>
+                      {k2u && <th className="py-1.5 font-normal text-right">Nepřijati ani ve 2. kole</th>}
                     </tr>
                   </thead>
                   <tbody>
                     {kraje9.map(([kraj, c]) => {
-                      const c2 = k2u.kraje_9[kraj];
+                      const c2 = k2u?.kraje_9[kraj];
                       return (
                         <tr key={kraj} className="border-t border-slate-100">
                           <td className="py-1.5">{kraj}</td>
                           <td className="py-1.5 text-right">
                             {cislo(c.nikam)} z {cislo(c.uchazecu)} ({procenta(c.nikam, c.uchazecu)})
                           </td>
-                          <td className="py-1.5 text-right">
-                            {c2 ? `${cislo(c2.neprijati)} z ${cislo(c2.uchazecu)} (${procenta(c2.neprijati, c2.uchazecu)})` : ''}
-                          </td>
+                          {k2u && (
+                            <td className="py-1.5 text-right">
+                              {c2 ? `${cislo(c2.neprijati)} z ${cislo(c2.uchazecu)} (${procenta(c2.neprijati, c2.uchazecu)})` : ''}
+                            </td>
+                          )}
                         </tr>
                       );
                     })}
