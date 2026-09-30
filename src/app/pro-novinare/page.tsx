@@ -236,10 +236,10 @@ export default function ProNovinarePage() {
                   <tr>
                     <th className="p-3">Kraj (obory s jednotnou zkouškou)</th>
                     <th className="p-3 text-right">Místa</th>
-                    <th className="p-3 text-right hidden sm:table-cell">Přihlášky</th>
+                    <th className="p-3 text-right hidden sm:table-cell">Přihlášky*</th>
                     <th className="p-3 text-right">Přijatí</th>
                     <th className="p-3 text-right">Obsazeno</th>
-                    <th className="p-3 text-right">Nevešli se</th>
+                    <th className="p-3 text-right">Nevešli se**</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -257,10 +257,16 @@ export default function ProNovinarePage() {
               </table>
             </div>
             <p className="text-sm text-slate-600 mt-3">
-              Nevešli se: přihlášky uchazečů, kteří splnili požadavky školy, ale na místo se nedostali, protože jiní měli
-              lepší výsledek. Jeden uchazeč podává víc přihlášek, proto podíl přijatých na přihlášku není podíl úspěšných
-              uchazečů; kolik uchazečů se do 2. kola hlásilo, tato data neříkají. Vypsané 2. kolo neznamená, že ho škola
-              vypíše znovu: obory, které se v 1. kole nenaplnily, ho v roce {r.kolo2} vypsaly jen asi v polovině případů.
+              * Přihlášky: jeden uchazeč podává víc přihlášek, proto počet přihlášek není počet uchazečů a přijatí vydělení
+              přihláškami nejsou podíl úspěšných uchazečů. Kolik uchazečů se do 2. kola hlásilo, tato data neříkají.
+            </p>
+            <p className="text-sm text-slate-600 mt-1">
+              ** Nevešli se: přihlášky uchazečů, kteří splnili požadavky školy, ale na místo se nedostali, protože jiní měli
+              lepší výsledek.
+            </p>
+            <p className="text-sm text-slate-600 mt-3">
+              Vypsané 2. kolo neznamená, že ho škola vypíše znovu: obory, které se v 1. kole nenaplnily, ho v roce{' '}
+              {r.kolo2} vypsaly jen asi v polovině případů.
             </p>
             <p className="text-xs text-slate-500 mt-2">Zdroj: CERMAT, agregovaná data škol a oborů, 2. kolo {r.kolo2}; denní nezkrácené studium.</p>
           </section>
