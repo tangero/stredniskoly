@@ -155,6 +155,19 @@ class VygenerovaneBalicky(unittest.TestCase):
         self.assertFalse([r for r in radky if not r["okres"]])
 
 
+class MapaKraju(unittest.TestCase):
+    def test_skola_s_obory_ve_vice_krajich(self):
+        souhrn = [
+            {"REDIZO": "600006018", "KKOV": "75-31-M/01", "KRAJ - NÁZEV": "Jihomoravský"},
+            {"REDIZO": "600006018", "KKOV": "79-41-K/81", "KRAJ - NÁZEV": "Hlavní město Praha"},
+            {"REDIZO": "600006018", "KKOV": "79-41-K/81", "KRAJ - NÁZEV": "Moravskoslezský"},
+        ]
+        m = pn.mapa_kraju(souhrn)
+        self.assertEqual(m[("600006018", "75-31-M/01")], "Jihomoravský")
+        self.assertEqual(m[("600006018", "79-41-K/81")], pn.KRAJ_NEURCEN)
+        self.assertEqual(pn.nadpis_kraje(pn.KRAJ_NEURCEN), pn.KRAJ_NEURCEN)
+
+
 class Nadpisy(unittest.TestCase):
     def test_nadpis_kraje(self):
         self.assertEqual(pn.nadpis_kraje("Jihočeský"), "Jihočeský kraj")

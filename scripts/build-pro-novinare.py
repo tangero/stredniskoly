@@ -148,7 +148,7 @@ def podil(citatel: float, jmenovatel: float, mista: int = 3) -> float | None:
 def nadpis_kraje(nazev: str) -> str:
     """Jako nadpisKraje() v src/lib/kraje.mjs: „Středočeský kraj“, výjimky beze slova kraj."""
     nazev = (nazev or "").strip()
-    if nazev in ("Hlavní město Praha", "Kraj Vysočina") or not nazev:
+    if nazev in ("Hlavní město Praha", "Kraj Vysočina", KRAJ_NEURCEN) or not nazev:
         return nazev
     return f"{nazev} kraj"
 
@@ -164,6 +164,22 @@ def bez_relativniho_roku(text: str, rok_sezony: int) -> str:
     text = re.sub(r"\bletošn(í|ího|ím)\b", f"z roku {rok_sezony}", text)
     text = re.sub(r"\b[Ll]etos\b", f"v roce {rok_sezony}", text)
     return text
+
+
+KRAJ_NEURCEN = "kraj neurčen (škola má obor ve více krajích)"
+
+
+def mapa_kraju(souhrn: list[dict]) -> dict[tuple[str, str], str]:
+    """(REDIZO, KKOV) → název kraje ze souhrnu CERMAT.
+
+    Data uchazečů nesou jen REDIZO a KKOV, ne zaměření ani místo. Škola může mít obory
+    v různých krajích (PORG: 75-31-M/01 v Brně, 79-41-K/81 v Praze, Brně i Ostravě),
+    proto se kraj bere podle dvojice; když ani ta není jednoznačná, vrací KRAJ_NEURCEN.
+    """
+    kraje: dict[tuple[str, str], set[str]] = defaultdict(set)
+    for r in souhrn:
+        kraje[(str(r["REDIZO"]), str(r["KKOV"]))].add(str(r["KRAJ - NÁZEV"]))
+    return {k: (next(iter(v)) if len(v) == 1 else KRAJ_NEURCEN) for k, v in kraje.items()}
 
 
 def nacti_xlsx(cesta: Path) -> list[dict]:
@@ -477,11 +493,8 @@ def balicek_uchazeci(rok: str, uchazeci: list[dict], kolo1: list[dict]) -> tuple
     uchazeče zdroj nenese). Pořadí volby je pořadí mezi všemi vyplněnými přihláškami,
     stejně jako v scripts/slouceni_prihlasek.py.
     """
-    rocnik = {}
-    kraj = {}
-    for r in kolo1:
-        rocnik[(str(r["REDIZO"]), str(r["KKOV"]))] = str(r["ROČNÍK"])
-        kraj[str(r["REDIZO"])] = str(r["KRAJ - NÁZEV"])
+    rocnik = {(str(r["REDIZO"]), str(r["KKOV"])): str(r["ROČNÍK"]) for r in kolo1}
+    kraj = mapa_kraju(kolo1)
     tab: dict[tuple[str, str], Counter] = defaultdict(Counter)
     bez_rocniku = 0
     vyrazeno = Counter()
@@ -500,7 +513,8 @@ def balicek_uchazeci(rok: str, uchazeci: list[dict], kolo1: list[dict]) -> tuple
             continue
         # Smíšené přihlášky (jednotky uchazečů) se řadí k nejvyššímu ročníku.
         roc = max(rocniky, key=int)
-        kr = kraj.get(str(u[f"ss{v_populaci[0]}_redizo"]), "")
+        prvni = v_populaci[0]
+        kr = kraj.get((str(u[f"ss{prvni}_redizo"]), str(u[f"ss{prvni}_kkov"])), "")
         prijat_na = next((i for i, k in enumerate(prihlasky) if byl_prijat(u[f"ss{k}_prijat"], u[f"ss{k}_duvod_neprijeti"])), None)
         c = tab[(kr, roc)]
         c["uchazecu"] += 1
@@ -579,7 +593,7 @@ def druhe_kolo_uchazecu(b: Balicek, rok: str, uchazeci2: list[dict], kolo2: list
     společný identifikátor uchazeče, takže konkrétní dítě z 1. kola ve 2. kole nedohledáme;
     porovnávat jde jen počty.
     """
-    kraj = {str(r["REDIZO"]): str(r["KRAJ - NÁZEV"]) for r in kolo2}
+    kraj = mapa_kraju(kolo2)
     tab: dict[tuple[str, str], Counter] = defaultdict(Counter)
     for u in uchazeci2:
         prihlasky = [k for k in range(1, 6) if u.get(f"ss{k}_redizo")]
@@ -588,7 +602,8 @@ def druhe_kolo_uchazecu(b: Balicek, rok: str, uchazeci2: list[dict], kolo2: list
         roc = str(u.get("rocnik") or "")
         if not v_populaci or roc not in ("5", "7", "9"):
             continue
-        c = tab[(kraj.get(str(u[f"ss{v_populaci[0]}_redizo"]), ""), roc)]
+        prvni = v_populaci[0]
+        c = tab[(kraj.get((str(u[f"ss{prvni}_redizo"]), str(u[f"ss{prvni}_kkov"])), ""), roc)]
         c["uchazecu"] += 1
         c["s_vysledkem_jpz"] += 1 if u.get("c_m_procentni_skor") not in (None, "") else 0
         if any(byl_prijat(u[f"ss{k}_prijat"], u[f"ss{k}_duvod_neprijeti"]) for k in prihlasky):

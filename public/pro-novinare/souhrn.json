@@ -111,7 +111,7 @@
     {
      "soubor": "uchazeci-1-kolo-2026-kraje.csv",
      "list": "Po krajích",
-     "radku": 40,
+     "radku": 41,
      "format": "csv"
     },
     {
@@ -295,16 +295,16 @@
    },
    "kraje_9": {
     "Jihomoravský kraj": {
-     "uchazecu": 12549,
-     "konali_jpz": 9319,
-     "volba2": 2099,
-     "volba1": 8258,
-     "volba3": 1155,
-     "nikam": 1037,
-     "nikam_s_jpz": 731,
-     "nikam_jen_pozadavek": 242,
-     "nikam_obe": 429,
-     "nikam_jen_kapacita": 366
+     "uchazecu": 12484,
+     "konali_jpz": 9257,
+     "volba2": 2069,
+     "volba1": 8234,
+     "volba3": 1149,
+     "nikam": 1032,
+     "nikam_s_jpz": 728,
+     "nikam_jen_pozadavek": 241,
+     "nikam_obe": 428,
+     "nikam_jen_kapacita": 363
     },
     "Jihočeský kraj": {
      "uchazecu": 6990,
@@ -319,16 +319,16 @@
      "nikam_obe": 99
     },
     "Hlavní město Praha": {
-     "uchazecu": 19910,
-     "konali_jpz": 16178,
-     "volba1": 10512,
-     "volba2": 3661,
-     "nikam": 3366,
-     "nikam_s_jpz": 2380,
-     "nikam_obe": 1586,
-     "nikam_jen_pozadavek": 816,
-     "volba3": 2371,
-     "nikam_jen_kapacita": 964
+     "uchazecu": 19975,
+     "konali_jpz": 16240,
+     "volba1": 10536,
+     "volba2": 3691,
+     "nikam": 3371,
+     "nikam_s_jpz": 2383,
+     "nikam_obe": 1587,
+     "nikam_jen_pozadavek": 817,
+     "volba3": 2377,
+     "nikam_jen_kapacita": 967
     },
     "Olomoucký kraj": {
      "uchazecu": 6687,
@@ -513,9 +513,9 @@
     },
     "kraje_9": {
      "Jihomoravský kraj": {
-      "uchazecu": 1154,
-      "s_vysledkem_jpz": 744,
-      "prijati": 1043,
+      "uchazecu": 1158,
+      "s_vysledkem_jpz": 748,
+      "prijati": 1047,
       "neprijati": 111,
       "jen_pozadavek": 65,
       "jen_ucebni": 46,
@@ -679,14 +679,14 @@
       "ucebni_i_maturitni": 2
      },
      "Moravskoslezský kraj": {
-      "uchazecu": 877,
-      "s_vysledkem_jpz": 415,
+      "uchazecu": 873,
+      "s_vysledkem_jpz": 411,
       "neprijati": 48,
       "jen_pozadavek": 17,
       "jen_maturitni": 15,
       "bez_vysledku_jpz": 41,
       "jedna_prihlaska": 28,
-      "prijati": 829,
+      "prijati": 825,
       "obe": 8,
       "jen_kapacita": 23,
       "jen_ucebni": 30,
