@@ -12,7 +12,7 @@ import {
   MrizkaSoutezicich, PasmaBodu, RozpadPrihlasek, SkupinaVKraji, SloupceSoutezicich, VysledekUchazecu,
 } from '@/components/obor/grafy';
 import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
-import { KdeStojim } from '@/components/obor/KdeStojim';
+import { BlokKriterii, KdeStojim } from '@/components/obor/KdeStojim';
 
 /**
  * Stránka oboru ve třech otázkách: jak těžké bude se dostat, co pomůže, jak se tu studuje.
@@ -361,6 +361,12 @@ export function ProfilOboru({ data, inspekceHref, skolaHref, obec }: ProfilOboru
                 )}
                 <Zdroj>Data o uchazečích 1. kola {data.pasma.rok}; převod testů z položkových dat jednotné přijímací zkoušky; kritéria z PDF škol v DiPSy. Není to šance konkrétního uchazeče a platí za obor školy bez zaměření.{verzeUchazecu}</Zdroj>
               </section>
+      )}
+      {/* Kritéria od školy platí i bez proužku (nikoho neodmítli, málo přijatých). */}
+      {data.kriteriaSkoly && (
+        <section aria-label="Kritéria přijetí podle údajů školy" className="space-y-3 rounded-2xl border border-slate-200 bg-white p-5 md:p-7">
+          <BlokKriterii kriteria={data.kriteriaSkoly} />
+        </section>
       )}
     </>
   );

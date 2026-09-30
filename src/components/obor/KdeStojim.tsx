@@ -40,6 +40,11 @@ function jenVazeniJpz(p: KriteriaOboru['prepisy'][number]): boolean {
  * Blok kritérií jen tam, kde nerozhodovala jen JPZ (rozhodnutí zadavatele
  * 28. 9. 2026). U „jen JPZ“ jedna věta, bez přepisu nic.
  */
+/** Blok kritérií; u zadání školy pro nové řízení ukazuje to (i mimo proužek, například na oboru bez pásma). */
+export function BlokKriterii({ kriteria }: { kriteria: KriteriaOboru }) {
+  return <Kriteria k={kriteria.nove ? { rok: kriteria.nove.rok, pdf: kriteria.pdf, prepisy: kriteria.nove.prepisy, noveKriteria: null, noveRizeni: true } : kriteria} />;
+}
+
 function Kriteria({ k }: { k: KriteriaOboru }) {
   // U víc zaměření ukázat to, které boduje i něco dalšího; jinak první.
   const p = k.prepisy.find(x => x.rezim === 'jine' || x.jpz_navic.length > 0 || x.chybi_slozky) ?? k.prepisy[0];
@@ -392,7 +397,7 @@ export function KdeStojim({
         </div>
       )}
 
-      {kriteria && <Kriteria k={kriteria.nove ? { rok: kriteria.nove.rok, pdf: kriteria.pdf, prepisy: kriteria.nove.prepisy, noveKriteria: null, noveRizeni: true } : kriteria} />}
+      {kriteria && <BlokKriterii kriteria={kriteria} />}
 
       {/* Výhrady patří na obrazovku, ne do dokumentace. */}
       <ul className="space-y-1 text-sm text-slate-500">

@@ -46,3 +46,9 @@ export function sPrednostiSkoly(
   }
   return vysledek.prepisy.length || vysledek.nove ? vysledek : null;
 }
+
+/** Kritéria nesou údaj od školy (za rok pásem, nebo pro nové řízení). */
+export function maUdajeSkoly(k: KriteriaOboru | null): boolean {
+  if (!k) return false;
+  return k.prepisy.some(p => p.prepis === 'skola') || Boolean(k.nove?.prepisy.some(p => p.prepis === 'skola'));
+}
