@@ -22,7 +22,7 @@ test('převod záznamu školy: podíl přijímaček, složky, minima, původ „
   const p = prepisZeZaznamu(zaznam());
   assert.equal(p.prepis, 'skola');
   assert.equal(p.podil_jpz_pct, 80);
-  assert.deepEqual(p.slozky, [{ nazev: 'Prospěch ze ZŠ', max: 25 }]);
+  assert.deepEqual(p.slozky, [{ nazev: 'Prospěch ze ZŠ', max: 25, druh: 'prospech' }]);
   assert.match(p.minima[0], /alespoň 30 bodů z jednotné přijímací zkoušky celkem/);
   assert.equal(p.chybi_slozky, false);
 });
@@ -60,4 +60,30 @@ test('výběr: zaměření stránky má přednost, jiný obor ani jiná škola s
   assert.equal(kriteriaOdSkoly([a, b], '600001431_79-41-K/41').prepisy.length, 2);
   assert.equal(kriteriaOdSkoly([a], '600001431_79-41-K/81'), null);
   assert.equal(kriteriaOdSkoly([a], '600009999_79-41-K/41'), null);
+});
+
+test('nestejná maxima předmětů se přenesou jako odlišné bodování přijímaček', () => {
+  const p = prepisZeZaznamu(zaznam({ struktura: struktura({ slozky: [], jpz: { cjl_max: 50, mat_max: 100, prepoctovy_koeficient_pct: null, vyssi_vaha: null } }) }));
+  assert.match(p.jpz_navic[0].nazev, /Čeština až 50 bodů, matematika až 100 bodů/);
+});
+
+test('druh složky „chování“ od školy je srážka, i když název chování nezmiňuje', async () => {
+  const { extraBody, srazka } = await import('../src/lib/extra-body.ts');
+  const p = prepisZeZaznamu(zaznam({ struktura: struktura({ slozky: [{ druh: 'chovani', nazev: 'Druhý stupeň', max: -10, poznamka: '' }] }) }));
+  assert.equal(srazka(p.slozky[0]), true);
+  assert.equal(extraBody(p), false);
+  const prospech = prepisZeZaznamu(zaznam());
+  assert.equal(extraBody(prospech), true);
+});
+
+test('kritéria nového ročníku od školy nepřepíší kritéria roku pásem', async () => {
+  const { sPrednostiSkoly } = await import('../src/lib/kriteria-skoly-sloucit.ts');
+  const prepis = { rok: 2026, pdf: true, noveKriteria: '2027-01-31', prepisy: [{ source_id: 'x', zamereni: '', rezim: 'pouze_jpz', podil_jpz_pct: 100, slozky: [], jpz_navic: [], minima: [], nejasnosti: [], prepis: 'strojovy', nalezy: [] }] };
+  const k = sPrednostiSkoly(prepis, [zaznam({ rok: 2027 })], '600001431_79-41-K/41', undefined);
+  assert.equal(k.rok, 2026);
+  assert.equal(k.prepisy[0].rezim, 'pouze_jpz');
+  assert.equal(k.nove.rok, 2027);
+  const stejny = sPrednostiSkoly(prepis, [zaznam({ rok: 2026 })], '600001431_79-41-K/41', undefined);
+  assert.equal(stejny.prepisy[0].prepis, 'skola');
+  assert.equal(stejny.nove, undefined);
 });

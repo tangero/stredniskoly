@@ -1,6 +1,7 @@
 import { nactiPrevodDruhu } from '@/lib/prevod-testu';
 import { kriteriaOboru, poziceOboru } from '@/lib/pozice-kriteria';
-import { kriteriaOdSkoly, vsechnaKriteriaSkol } from '@/lib/kriteria-skoly-verejne';
+import { vsechnaKriteriaSkol } from '@/lib/kriteria-skoly-verejne';
+import { sPrednostiSkoly } from '@/lib/kriteria-skoly-sloucit';
 import { druhTestu, type DruhTestu, type KriteriaOboru, type PoziceOboru, type PrevodDruhu } from '@/lib/prevod-testu-vypocet';
 import { getSchoolsData, getExtractionsByRedizo, getInspisDataByRedizo } from '@/lib/data';
 import { getSouhrnNabidky, nabidkyVeSkupineKraje, souhrnOboru, type SouhrnRocniku } from '@/lib/souhrny-kolo1';
@@ -148,25 +149,6 @@ function kriteriaZamereni(k: KriteriaOboru | null, zamereni: string | undefined)
   const norm = (t: string | undefined) => (t ?? '').trim().toLocaleLowerCase('cs-CZ');
   const shoda = zamereni ? k.prepisy.filter(p => norm(p.zamereni) === norm(zamereni)) : [];
   return shoda.length ? { ...k, prepisy: shoda } : k;
-}
-
-/**
- * Údaje, které škola zadala v portálu, mají přednost před přepisem PDF
- * (docs/prototyp-kriteria-prijeti.md, bod 4). Ročník novější než přepis
- * jsou kritéria pro nové řízení.
- */
-export function sPrednostiSkoly(
-  prepis: KriteriaOboru | null, odSkol: Parameters<typeof kriteriaOdSkoly>[0], klic: string, zamereni: string | undefined,
-): KriteriaOboru | null {
-  const skola = kriteriaOdSkoly(odSkol, klic, zamereni);
-  if (!skola) return prepis;
-  return {
-    rok: skola.rok,
-    pdf: prepis?.pdf ?? false,
-    prepisy: skola.prepisy,
-    noveKriteria: prepis?.noveKriteria ?? null,
-    noveRizeni: prepis ? skola.rok > prepis.rok : false,
-  };
 }
 
 /** Null, když nabídka v zobrazeném ročníku souhrnů není; stránka pak použije starší podobu. */

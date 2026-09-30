@@ -47,8 +47,11 @@ export function prepisZeZaznamu(z: ZaznamKriteriiSkoly): PrepisKriterii {
     zamereni: z.obor_identita?.zamereni ?? '',
     rezim: z.rezim,
     podil_jpz_pct: z.rezim === 'jine' ? souhrn?.podilJpzPct ?? null : 100,
-    slozky: s ? s.slozky.map(x => ({ nazev: x.nazev, max: x.max })) : [],
+    slozky: s ? s.slozky.map(x => ({ nazev: x.nazev, max: x.max, druh: x.druh })) : [],
     jpz_navic: [
+      // Nestejná maxima předmětů jsou vážení, ne prostý součet (souhrnBodovani to bere jako „jine“).
+      ...(s && s.jpz.cjl_max !== null && s.jpz.mat_max !== null && s.jpz.cjl_max !== s.jpz.mat_max
+        ? [{ nazev: `Čeština až ${s.jpz.cjl_max} bodů, matematika až ${s.jpz.mat_max} bodů`, max: null }] : []),
       ...(vaha ? [{ nazev: `${vaha.predmet === 'mat' ? 'Matematika' : 'Čeština'} se počítá ${vaha.nasobek.toLocaleString('cs-CZ')}×`, max: null }] : []),
       ...(s?.jpz.prepoctovy_koeficient_pct != null ? [{ nazev: `Body z přijímaček se přepočítávají na ${s.jpz.prepoctovy_koeficient_pct} %`, max: null }] : []),
     ],

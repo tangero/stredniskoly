@@ -31,6 +31,11 @@ export function jenPrijimacky(k: KriteriaOboru | null | undefined): boolean {
 export { extraBody, srazka } from '@/lib/extra-body';
 export type { ZadanyTest } from './ZadaniTestu';
 
+/** Jediná odlišnost od prostého součtu je bodování přijímaček (váha, maxima); jiné body nejsou. */
+function jenVazeniJpz(p: KriteriaOboru['prepisy'][number]): boolean {
+  return p.jpz_navic.length > 0 && !p.chybi_slozky && p.slozky.every(x => x.max === 0);
+}
+
 /**
  * Blok kritérií jen tam, kde nerozhodovala jen JPZ (rozhodnutí zadavatele
  * 28. 9. 2026). U „jen JPZ“ jedna věta, bez přepisu nic.
@@ -103,7 +108,7 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
           </ul>
         </>
       )}
-      {p.rezim === 'jine' && (
+      {p.rezim === 'jine' && !jenVazeniJpz(p) && (
         <>
           <p>
             {p.chybi_slozky
@@ -377,7 +382,7 @@ export function KdeStojim({
         </div>
       )}
 
-      {kriteria && <Kriteria k={kriteria} />}
+      {kriteria && <Kriteria k={kriteria.nove ? { rok: kriteria.nove.rok, pdf: kriteria.pdf, prepisy: kriteria.nove.prepisy, noveKriteria: null, noveRizeni: true } : kriteria} />}
 
       {/* Výhrady patří na obrazovku, ne do dokumentace. */}
       <ul className="space-y-1 text-sm text-slate-500">
