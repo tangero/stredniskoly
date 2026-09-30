@@ -138,7 +138,8 @@ test('kraje jsou oddíly s nadpisem, počtem, kotvou a odkazem pojmenovaným kra
   assert.ok(!text(html).includes('Vysočina kraj'));
   assert.ok(!text(html).includes('Praha kraj'));
   // Čip Prahy je krátký jako ostatní; plný název má až nadpis oddílu.
-  assert.ok(html.includes('data-pocet="1">Praha<span'), 'Čip Prahy má nést „Praha“, ne „Hlavní město Praha“.');
+  // Počet akcí se mění s exportem z databáze; kontroluje se text čipu, ne číslo.
+  assert.match(html, /data-pocet="\d+">Praha<span/, 'Čip Prahy má nést „Praha“, ne „Hlavní město Praha“.');
   assert.equal(cipKraje('CZ010'), 'Praha');
   assert.equal(cipKraje('CZ063'), 'Vysočina');
 });

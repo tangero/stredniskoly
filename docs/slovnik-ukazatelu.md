@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.47 · 29. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.48 · 29. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -660,6 +660,53 @@ Zobrazuje se na `/veletrhy` v čipech krajů, ve štítcích mapy krajů (stejn�
 
 Neříká, kolik akcí se v kraji koná. Říká, o kolika víme a máme u nich potvrzený termín; záznamy bez potvrzeného termínu se nepočítají a rešerše nepokrývá všechno (docs/veletrhy-skol-2027.md § 5.4). Kraj s jednou akcí není kraj s málo veletrhy, je to kraj, kde jsme jednu dohledali. Proto stojí u každého oddílu výzva k nahlášení, ne pořadí krajů podle počtu.
 
+## 6b. Balíčky dat pro novináře
+
+Ukazatele, které vznikly pro balíčky ke stažení na `/pro-novinare` (`scripts/build-pro-novinare.py`, výstup `public/pro-novinare/`, [návrh](navrh-pro-novinare-2027.md)). Balíčky používají i ukazatele z oddílů 1, 2 a 6a pod jejich jmény; tady jsou jen ty, které jinde nejsou.
+
+### Výsledek uchazeče v 1. kole
+Kam se uchazeč v 1. kole dostal: přijat na 1., 2., nebo 3. a další volbu z přihlášky, nebo **nepřijat nikam**. Jednotkou je **uchazeč**, ne přihláška: řádek dat uchazečů CERMAT (`PZ{rok}_kolo1_uchazeci_prihlasky_vysledky.xlsx`). Počítá se uchazeč s aspoň jednou přihláškou do denního nezkráceného studia mimo nástavbu (kategorie L5); kdo se hlásí jen na dálkové, kombinované, distanční, večerní či zkrácené studium nebo jen na nástavbu, není žák základní školy a uvádí se zvlášť (2026: 5 468 a 8 046). Přijetí se bere ze všech jeho přihlášek včetně oborů bez jednotné zkoušky a nedenních forem. Volba je pořadí mezi vyplněnými přihláškami (`ss1_` až `ss5_`), přijetí podle `byl_prijat()` ve `scripts/slouceni_prihlasek.py`, tedy včetně vzdání se přijetí, které data 2026 nerozlišují. U nepřijatých se rozlišuje, zda se všude nevešli kvůli kapacitě, všude nedosáhli požadavku školy, nebo obojí.
+
+Třídí se **podle ročníku, ze kterého se uchazeč hlásí** (sloupec `ROČNÍK` souhrnu 1. kola u oborů na přihlášce: 5., 7., 9. třída; uchazeči se smíšenými přihláškami, jednotky v roce 2026, jdou k vyššímu ročníku) a **podle kraje školy, kterou měl na přihlášce jako první**. Rok 2026: 9. třída 116 693 uchazečů, nepřijato nikam 9 550 (8,2 %); 5. třída 19 164 a 10 062 (52,5 %); 7. třída 6 839 a 4 408 (64,5 %).
+
+**Neříká:** kolik z nepřijatých se hlásilo do 2. kola a jak dopadli (data uchazečů 2. kola web nepřevzal), ani kde uchazeč bydlí. Ročníky se nesčítají: kdo se nedostal na víceleté gymnázium, pokračuje na základní škole, takže „nepřijat nikam“ u páťáka neznamená totéž co u deváťáka. Kraj první volby není kraj bydliště. Data jsou předběžná: platné přihlášky ke dni, který uvádí zdroj (v roce 2026 k 13. 5.).
+
+### Oficiální nejnižší výsledek přijatých
+Nejnižší součet bodů z češtiny a matematiky mezi přijatými na nabídku v 1. kole podle souhrnu CERMAT: sloupec `ČJ+MA - % SKÓR - MIN (PŘIJATI)` dělený dvěma, škála 0 až 100 bodů. Po nabídkách včetně zaměření. Uvádí se jen při aspoň deseti přijatých s výsledkem zkoušky (`ČJ+MA - KONALI (PŘIJATI)`), stejně jako *Nejnižší výsledek JPZ mezi přijatými* a *Nejnižší výsledek přijatých ve 2. kole*. Rok 2026: 2 622 z 3 091 nabídek.
+
+Jen v balíčku oborů. Stránka oboru dál ukazuje *Nejnižší výsledek JPZ mezi přijatými* z dat uchazečů; oba se shodují u 97 % oborů (zdroje dat, oddíl 2.1). Rozdíl: tento je po zaměřeních a počítá přihlášky, vlastní výpočet je za obor a počítá osoby. Proto balíček nebere minimum z pásem: u nabídky s víc zaměřeními by stálo vedle cizího počtu přijatých.
+
+**Neříká,** kolik bodů bylo potřeba: škola mohla vážit i jiná kritéria než test, takže to není hranice přijetí.
+
+### Naplněnost míst ve 2. kole
+`přijatí ve 2. kole ÷ kapacita 2. kola`, za nabídku nebo součtem za kraj či typ školy. Zdroj souhrn 2. kola CERMAT. V balíčku za denní nezkrácené studium s jednotnou zkouškou i bez ní, rozlišené sloupcem. Rok 2026, obory s jednotnou zkouškou: 4 946 z 12 034 míst (0,41), v krajích od 0,22 (Kraj Vysočina) po 0,68 (Liberecký kraj).
+
+**Neříká,** zda místa zůstala volná pro další kola, ani proč: nízká naplněnost může znamenat malý zájem i přísná kritéria.
+
+### Přijatí na přihlášku ve 2. kole
+`přijatí ve 2. kole ÷ přihlášky ve 2. kole`. Zdroj souhrn 2. kola CERMAT.
+
+**Neříká, jakou šanci měl uchazeč.** Jeden uchazeč podává víc přihlášek a přijatý výš na přihlášce se počítá jako nepřijatý níž, takže podíl úspěšných uchazečů je vyšší. Na stránce se nepíše „šance“.
+
+### Skupiny složek kritérií
+Pro nabídku s přepisem kritérií (zdroj jako *Podíl přijímaček na bodování*): zda podle přepisu bodovala jen jednotná zkouška (`rezim = pouze_jpz`), a pokud ne, do kterých skupin patří složky extra bodů: prospěch ze základní školy, školní přijímací zkouška, pohovor, talentová, praktická nebo sportovní zkouška a portfolio, soutěže a další aktivity, jiné. Skupinu přiřazuje `scripts/build-pro-novinare.py` regulárním výrazem nad názvem složky; jedna složka může patřit do víc skupin. Jednotná zkouška uvedená mezi složkami, součtové řádky a chování se nepočítají. Rok 2026, 3 064 přepisů: jen jednotná zkouška 309, prospěch 2 421, soutěže a aktivity 1 045, školní zkouška 298, talentová, praktická nebo sportovní zkouška a portfolio 183, pohovor 178, jiné 316.
+
+**Neříká** nic ověřeného o konkrétní škole: přepis je neověřený (podstatná chyba zhruba u každého desátého) a třídění podle názvu přidává vlastní chybu; při kontrole namátkou padly například psychologické testy mezi školní zkoušky. Proto balíček nese výhradu v každém řádku a stránka ukazuje jen souhrny. Platí pro rok kritérií, ne pro nové přijímací řízení. Neříká, jak moc složka rozhodovala.
+
+### Počet akcí sezóny s potvrzeným termínem
+Jako *Počet akcí v kraji*, ale za celou sezónu včetně proběhlých akcí: záznamy s `terminPotvrzen = true` sečtené podle `krajKod`. Balíček veletrhů ho uvádí vedle počtu akcí od data vytvoření balíčku, který odpovídá *Počtu akcí v kraji*. Stav snímku `src/data/veletrhy-2027.json`, ne živé databáze.
+
+Ze stejné množiny se na `/pro-novinare` uvádí i **rozpad po měsících** (podle měsíce `start`), **počet krajů** s aspoň jednou takovou akcí a vedle nich **počet záznamů čekajících na potvrzení termínu** (`terminPotvrzen = false`, s důvodem v `cekaNa`); čekající záznamy se do počtu akcí nikdy nepřičítají. Rok 2026: 79 akcí, 17 čekajících, 14 krajů.
+
+**Neříká,** kolik akcí se koná; výhrady jsou stejné jako u *Počtu akcí v kraji*. Kraj bez akce by znamenal kraj, kde jsme žádnou nedohledali.
+
+### Konzervatoře v rejstříku
+Počet škol, které mají v indexu názvů rejstříku škol MŠMT (`data/msmt_rejstrik/nazvy-oboru.json`, snímek podle registru, sada `msmt-rejstrik-snimky`) zapsaný aspoň jeden obor konzervatoře: kódy 82-44-P (hudba), 82-45-P (zpěv), 82-46-P (tanec, současný tanec), 82-47-P (hudebně dramatické umění). Generátor kontroluje, že se množina shoduje s konzervatořemi v souhrnu 1. kola CERMAT; rok 2026: 18 = 18.
+
+Výsledky 1. kola konzervatoří v balíčku a na stránce jsou ukazatele z oddílu 2 (*Kapacita míst*, *Přihlášky celkem*, *Přijatí*, *Nepřijatí kvůli kapacitě*, *Nepřijatí pro nesplnění podmínek*, *Přijati na vyšší prioritu*) nad souhrnem CERMAT, ale mimo populaci webu: obory konzervatoře nemají jednotnou zkoušku. Součty na stránce jsou za denní studium.
+
+**Neříká,** které obory konzervatoř pro nové přijímací řízení otevře ani kolik přijme; rejstřík říká, co škola smí učit.
+
 ## 7. Ukazatele bez doloženého výpočtu
 
 ### Index obtížnosti (`obtiznost`)
@@ -700,6 +747,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.48 | Oddíl **6b. Balíčky dat pro novináře** (29. 9. 2026, [návrh](navrh-pro-novinare-2027.md)): *Výsledek uchazeče v 1. kole* (jednotkou uchazeč, po ročnících a krajích první volby), *Oficiální nejnižší výsledek přijatých* (sloupec 72 souhrnu CERMAT, jen v balíčku), *Naplněnost míst ve 2. kole*, *Přijatí na přihlášku ve 2. kole*, *Skupiny složek kritérií*, *Počet akcí sezóny s potvrzeným termínem* (s rozpadem po měsících a krajích) a *Konzervatoře v rejstříku*. Na webu se zobrazují jen na `/pro-novinare`. |
 | 1.47 | Řazení „od nejvyšší hranice přijetí“ v Simulátoru přijímaček dává na konec i obory s talentovou zkouškou, obory, kde nikoho neodmítli kvůli počtu míst, a obory s rozporem počtů (29. 9. 2026, nález review): jejich nejnižší přijatý výsledek není hranicí soutěže. |
 | 1.46 | Simulátor přijímaček, etapa E5 (výhrady v kroku 3): u *Převedeného výsledku testu*, *Podílu přijímaček na bodování*, *Pásma nejistoty* a *Soutěžících o obor* doplněno, kde se v simulátoru zobrazují; u *Pořadí mezi soutěžícími*, že se tam neukazuje. U *Nejnižšího výsledku JPZ mezi přijatými* zapsán doložený meziroční posun (medián 5 bodů), ze kterého stojí výhrada o jednom ročníku; oprava čísla 3 body z návrhu. Výpočty beze změny. |
 | 1.45 | Nový ukazatel **Poloha vůči pásmu** pro skupiny Simulátoru přijímaček (nad pásmem, v pásmu, pod pásmem, obory, kde nikoho neodmítli, bez srovnání; 29. 9. 2026, [návrh](navrh-simulator-prijimacek-2027.md) oddíl 3 a 12). *Průměr JPZ přijatých* ze simulátoru odchází jako porovnávací měřítko (`admission-gap.ts` smazán); ukazatel zůstává pro jiné stránky. |

@@ -121,7 +121,8 @@
     "public/cermat_results_meta.json",
     "public/applications_2026.json",
     "public/schools_data.json",
-    "public/souhrny_kolo1.json"
+    "public/souhrny_kolo1.json",
+    "public/pro-novinare/obory-1-kolo-{obdobi}.xlsx"
    ],
    "kontrola_obdobi": {
     "soubor": "public/cermat_results_meta.json",
@@ -138,7 +139,8 @@
     "Průměrné percentilové umístění přijatých",
     "Průměrné percentilové umístění uchazečů",
     "Podíl přijatých ze soutěžících",
-    "Obtížnost přijetí slovy"
+    "Obtížnost přijetí slovy",
+    "Oficiální nejnižší výsledek přijatých"
    ],
    "aktualizace": {
     "zdroj": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ{rok}_kolo1_skolobory_vysledky.xlsx",
@@ -185,7 +187,8 @@
     "public/kontext_prihlasek_{obdobi}.json",
     "public/schools_data.json",
     "public/pozice_soutezicich_2026.json",
-    "public/simulator_pasma_{obdobi}.json"
+    "public/simulator_pasma_{obdobi}.json",
+    "public/pro-novinare/uchazeci-1-kolo-{obdobi}.xlsx"
    ],
    "kontrola_obdobi": {
     "soubor": "public/pasma_prijeti_{obdobi}.json",
@@ -210,7 +213,8 @@
     "Odvozená hranice úspěšnosti",
     "Výsledek uchazečů o obor",
     "Obory výš a níž na přihlášce",
-    "Pořadí mezi soutěžícími"
+    "Pořadí mezi soutěžícími",
+    "Výsledek uchazeče v 1. kole"
    ],
    "dostupne": [],
    "aktualizace": {
@@ -446,9 +450,12 @@
     "public/navaznost_notes.json",
     "public/soubeh_prihlasek_2025.json",
     "public/dobihajici_obory.json",
-    "data/msmt_rejstrik/nazvy-oboru.json"
+    "data/msmt_rejstrik/nazvy-oboru.json",
+    "public/pro-novinare/konzervatore.xlsx"
    ],
-   "ukazatele": [],
+   "ukazatele": [
+    "Konzervatoře v rejstříku"
+   ],
    "dostupne": [
     {
      "obdobi": "2025-06-30",
@@ -760,14 +767,17 @@
    },
    "po_prepnuti": "Předchozí rok zůstává ve výstupu a na stránce slouží k větě, zda škola 2. kolo vypsala i tehdy.",
    "vystupy": [
-    "public/druhe_kolo.json"
+    "public/druhe_kolo.json",
+    "public/pro-novinare/druhe-kolo-{obdobi}.xlsx"
    ],
    "ukazatele": [
     "Kapacita 2. kola",
     "Přihlášky ve 2. kole",
     "Přijatí ve 2. kole",
     "Nepřijatí kvůli kapacitě ve 2. kole",
-    "Nejnižší výsledek přijatých ve 2. kole"
+    "Nejnižší výsledek přijatých ve 2. kole",
+    "Naplněnost míst ve 2. kole",
+    "Přijatí na přihlášku ve 2. kole"
    ],
    "aktualizace": {
     "zdroj": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ{rok}_kolo2_skolobory_{kapacity|prihlasky|vysledky}.xlsx",
@@ -868,7 +878,7 @@
     "soubor": "src/data/veletrhy-2027.json",
     "zdroj": "docs/prijimacky-veletrhy-poradatele-2026.xlsx",
     "opsano": "2026-09-22",
-    "poznamka": "Vlastní rešerše pořadatelů rozepsaná na jednotlivé akce. Sezóna podzim 2026 slouží uchazečům, kteří se hlásí v roce 2027, proto soubor nese 2027. Zobrazuje se jen akce s terminPotvrzen; 17 z 95 záznamů čeká na potvrzení termínu. Počty ověřuje tests/veletrhy.test.mjs."
+    "poznamka": "Vlastní rešerše pořadatelů rozepsaná na jednotlivé akce. Sezóna podzim 2026 slouží uchazečům, kteří se hlásí v roce 2027, proto soubor nese 2027. Zobrazuje se jen akce s terminPotvrzen; 17 z 96 záznamů čeká na potvrzení termínu. Počty ověřuje tests/veletrhy.test.mjs."
    },
    "ocekavano": {
     "obdobi": "2028",
@@ -879,10 +889,12 @@
    "obnovit_nejpozdeji": "2027-09-15",
    "po_prepnuti": "Akce předchozí sezóny se nezobrazují; soubor zůstává jako doklad, co web ukazoval, a jako podklad pro odhad termínu další sezóny.",
    "vystupy": [
-    "src/data/veletrhy-2027.json"
+    "src/data/veletrhy-2027.json",
+    "public/pro-novinare/veletrhy.xlsx"
    ],
    "ukazatele": [
-    "Počet akcí v kraji"
+    "Počet akcí v kraji",
+    "Počet akcí sezóny s potvrzeným termínem"
    ],
    "aktualizace": {
     "zdroj": "weby pořadatelů (krajské úřady, hospodářské komory, výstaviště)",
@@ -950,10 +962,12 @@
    "obnovit_nejpozdeji": "2027-03-31",
    "po_prepnuti": "Kritéria 2026 zůstávají jen jako historie; pro rok 2027 se nesmí tiše použít.",
    "vystupy": [
-    "public/kriteria_prijeti_2026.json"
+    "public/kriteria_prijeti_2026.json",
+    "public/pro-novinare/kriteria-{obdobi}.xlsx"
    ],
    "ukazatele": [
-    "Podíl přijímaček na bodování"
+    "Podíl přijímaček na bodování",
+    "Skupiny složek kritérií"
    ],
    "aktualizace": {
     "zdroj": "https://api.dipsy.gov.cz/v1 (karty nabídek a PDF kritérií)",

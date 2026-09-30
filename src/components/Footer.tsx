@@ -43,6 +43,7 @@ export function Footer() {
                 { href: '/veletrhy', label: 'Veletrhy a přehlídky škol' },
                 { href: '/jak-vybrat-skolu', label: 'Jak vybrat a uspět' },
                 { href: '/novinky', label: 'Termíny e-mailem' },
+                { href: '/pro-novinare', label: 'Pro novináře: data ke stažení' },
                 { href: '/ochrana-osobnich-udaju', label: 'Ochrana osobních údajů' },
               ].map((link) => (
                 <li key={link.href}>
