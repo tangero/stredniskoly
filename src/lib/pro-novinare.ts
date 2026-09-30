@@ -34,7 +34,12 @@ export interface SouhrnProNovinare {
     veletrhy: { akci_potvrzenych: number; akci_cekajicich: number; akci_od_dnes: number; kraju: number; mesicu: Record<string, number> };
     konzervatore: { skol: number; rejstrik_k: string; terminy: Record<string, string>; kolo1_rok: string; kolo1_denni: Pocty };
     obory: { nabidek: number; skol: number; prihlasek: number };
-    uchazeci: { rocniky: Record<'9' | '7' | '5', Pocty>; kraje_9: Record<string, Pocty>; uchazecu: number };
+    uchazeci: {
+      rocniky: Record<'9' | '7' | '5', Pocty>;
+      kraje_9: Record<string, Pocty>;
+      uchazecu: number;
+      kolo2: { rocniky: Record<'9' | '7' | '5', Pocty>; kraje_9: Record<string, Pocty>; volno_9: Record<string, Pocty> };
+    };
     druhe_kolo: { jpz: Pocty; bez_jpz: Pocty; kraje_jpz: Record<string, Pocty>; typy: Record<string, Pocty> };
     kriteria: Pocty;
   };

@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.48 · 29. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.49 · 30. 9. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -669,7 +669,17 @@ Kam se uchazeč v 1. kole dostal: přijat na 1., 2., nebo 3. a další volbu z p
 
 Třídí se **podle ročníku, ze kterého se uchazeč hlásí** (sloupec `ROČNÍK` souhrnu 1. kola u oborů na přihlášce: 5., 7., 9. třída; uchazeči se smíšenými přihláškami, jednotky v roce 2026, jdou k vyššímu ročníku) a **podle kraje školy, kterou měl na přihlášce jako první**. Rok 2026: 9. třída 116 693 uchazečů, nepřijato nikam 9 550 (8,2 %); 5. třída 19 164 a 10 062 (52,5 %); 7. třída 6 839 a 4 408 (64,5 %).
 
-**Neříká:** kolik z nepřijatých se hlásilo do 2. kola a jak dopadli (data uchazečů 2. kola web nepřevzal), ani kde uchazeč bydlí. Ročníky se nesčítají: kdo se nedostal na víceleté gymnázium, pokračuje na základní škole, takže „nepřijat nikam“ u páťáka neznamená totéž co u deváťáka. Kraj první volby není kraj bydliště. Data jsou předběžná: platné přihlášky ke dni, který uvádí zdroj (v roce 2026 k 13. 5.).
+**Neříká:** kolik z nepřijatých se hlásilo do 2. kola a jak dopadli (soubory kol nemají společný identifikátor uchazeče, viz *Výsledek uchazeče ve 2. kole*), ani kde uchazeč bydlí. Ročníky se nesčítají: kdo se nedostal na víceleté gymnázium, pokračuje na základní škole, takže „nepřijat nikam“ u páťáka neznamená totéž co u deváťáka. Kraj první volby není kraj bydliště. Data jsou předběžná: platné přihlášky ke dni, který uvádí zdroj (v roce 2026 k 13. 5.).
+
+### Výsledek uchazeče ve 2. kole
+Jako *Výsledek uchazeče v 1. kole*, ale nad daty uchazečů 2. kola (`PZ{rok}_kolo2_uchazeci_prihlasky_vysledky.xlsx`, sada `cermat-uchazeci-kolo2`): uchazečů 2. kola, **přijati ve 2. kole**, **nepřijati ani ve 2. kole**. Stejná populace (aspoň jedna přihláška do denního nezkráceného studia mimo nástavbu) a stejné počítání přijetí; ročník je v souboru 2. kola přímo ve sloupci `rocnik`. U nepřijatých se navíc rozlišuje, zda se hlásili jen na obory bez maturity (kategorie C, E, H, J), jen na maturitní, nebo na oboje, zda mají výsledek jednotné zkoušky a zda podali jedinou přihlášku. Rok 2026, 9. třída: 10 564 uchazečů 2. kola, přijato 8 793, nepřijato 1 771 (z nich 976 se hlásilo jen na obory bez maturity, 1 046 bez výsledku jednotné zkoušky, 407 s jedinou přihláškou).
+
+**Neříká, kolik z nepřijatých v 1. kole se dostalo ve 2. kole.** Soubory 1. a 2. kola nemají společný identifikátor uchazeče a do 2. kola se hlásí i ti, kdo v 1. kole přihlášku nepodali nebo se přijetí vzdali; deváťáků ve 2. kole (10 564) je víc než nepřijatých v 1. kole (9 550). Porovnávají se jen počty. Neříká ani, kam nepřijatí ve 2. kole nastoupili: o dalších kolech CERMAT data nezveřejňuje. Data jsou předběžná, platné přihlášky k 23. 6. {rok}.
+
+### Volná místa po 2. kole
+`max(kapacita 2. kola − přijatí ve 2. kole, 0)` sečtené po nabídkách, které 2. kolo vypsaly; denní nezkrácené studium bez nástaveb, po krajích, ročnících (sloupec `ROČNÍK` souhrnu 2. kola) a oborech s maturitou a bez ní. Zdroj souhrn 2. kola CERMAT. Rok 2026, obory pro 9. třídu: 7 249 míst na oborech s maturitou (907 nabídek s aspoň jedním volným místem), 5 696 na oborech bez maturity (997 nabídek).
+
+**Neříká,** zda škola místa nabídla v dalším kole, ani zda byla pro konkrétní dítě dosažitelná (kraj, obor, požadavky školy). Nezahrnuje obory, které 2. kolo nevypsaly, i když jim místa zbyla (*Nevypsané 2. kolo u nenaplněného oboru*), takže volných míst po 2. kole bylo spíš víc.
 
 ### Oficiální nejnižší výsledek přijatých
 Nejnižší součet bodů z češtiny a matematiky mezi přijatými na nabídku v 1. kole podle souhrnu CERMAT: sloupec `ČJ+MA - % SKÓR - MIN (PŘIJATI)` dělený dvěma, škála 0 až 100 bodů. Po nabídkách včetně zaměření. Uvádí se jen při aspoň deseti přijatých s výsledkem zkoušky (`ČJ+MA - KONALI (PŘIJATI)`), stejně jako *Nejnižší výsledek JPZ mezi přijatými* a *Nejnižší výsledek přijatých ve 2. kole*. Rok 2026: 2 622 z 3 091 nabídek.
@@ -747,6 +757,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.49 | *Výsledek uchazeče ve 2. kole* a *Volná místa po 2. kole* (30. 9. 2026): převzata data uchazečů 2. kola 2026 (sada `cermat-uchazeci-kolo2`, dosud nepoužito) pro balíček a stránku `/pro-novinare`. |
 | 1.48 | Oddíl **6b. Balíčky dat pro novináře** (29. 9. 2026, [návrh](navrh-pro-novinare-2027.md)): *Výsledek uchazeče v 1. kole* (jednotkou uchazeč, po ročnících a krajích první volby), *Oficiální nejnižší výsledek přijatých* (sloupec 72 souhrnu CERMAT, jen v balíčku), *Naplněnost míst ve 2. kole*, *Přijatí na přihlášku ve 2. kole*, *Skupiny složek kritérií*, *Počet akcí sezóny s potvrzeným termínem* (s rozpadem po měsících a krajích) a *Konzervatoře v rejstříku*. Na webu se zobrazují jen na `/pro-novinare`. |
 | 1.47 | Řazení „od nejvyšší hranice přijetí“ v Simulátoru přijímaček dává na konec i obory s talentovou zkouškou, obory, kde nikoho neodmítli kvůli počtu míst, a obory s rozporem počtů (29. 9. 2026, nález review): jejich nejnižší přijatý výsledek není hranicí soutěže. |
 | 1.46 | Simulátor přijímaček, etapa E5 (výhrady v kroku 3): u *Převedeného výsledku testu*, *Podílu přijímaček na bodování*, *Pásma nejistoty* a *Soutěžících o obor* doplněno, kde se v simulátoru zobrazují; u *Pořadí mezi soutěžícími*, že se tam neukazuje. U *Nejnižšího výsledku JPZ mezi přijatými* zapsán doložený meziroční posun (medián 5 bodů), ze kterého stojí výhrada o jednom ročníku; oprava čísla 3 body z návrhu. Výpočty beze změny. |
