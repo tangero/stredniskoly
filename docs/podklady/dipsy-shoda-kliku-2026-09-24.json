@@ -1,0 +1,467 @@
+{
+ "merenoAt": "2026-09-24T09:17:09.613Z",
+ "skript": "scripts/dipsy-shoda-kliku.mjs",
+ "rok": 2026,
+ "vzorek": "10 největších + 40 náhodných (seed 42)",
+ "zdrojPravdy": "public/applications_2026.json",
+ "poznamka": "Klíč počítá klicOboru ze src/lib/portal-kriteria.ts. Cross-year stabilita (katalog 2026 vs. karty 2027) se měří až po vydání karet 2027.",
+ "souhrn": {
+  "skolCelkem": 50,
+  "skolBezKaret": 1,
+  "skolSeShodouVsechNabidek": 49,
+  "skolSCastiShodou": 0,
+  "truncations": []
+ },
+ "vysledky": [
+  {
+   "redizo": "600008193",
+   "nabidek": 12,
+   "karet": 27,
+   "shoda": 12,
+   "shodaBezZamereni": 8,
+   "jenKatalog": 0,
+   "jenDipsy": 8
+  },
+  {
+   "redizo": "600170063",
+   "nabidek": 11,
+   "karet": 25,
+   "shoda": 11,
+   "shodaBezZamereni": 9,
+   "jenKatalog": 0,
+   "jenDipsy": 8
+  },
+  {
+   "redizo": "600015971",
+   "nabidek": 10,
+   "karet": 40,
+   "shoda": 10,
+   "shodaBezZamereni": 10,
+   "jenKatalog": 0,
+   "jenDipsy": 9
+  },
+  {
+   "redizo": "600171744",
+   "nabidek": 10,
+   "karet": 13,
+   "shoda": 10,
+   "shodaBezZamereni": 3,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600005381",
+   "nabidek": 9,
+   "karet": 50,
+   "shoda": 9,
+   "shodaBezZamereni": 8,
+   "jenKatalog": 0,
+   "jenDipsy": 28
+  },
+  {
+   "redizo": "600006280",
+   "nabidek": 9,
+   "karet": 34,
+   "shoda": 9,
+   "shodaBezZamereni": 9,
+   "jenKatalog": 0,
+   "jenDipsy": 25
+  },
+  {
+   "redizo": "600006689",
+   "nabidek": 9,
+   "karet": 23,
+   "shoda": 9,
+   "shodaBezZamereni": 5,
+   "jenKatalog": 0,
+   "jenDipsy": 3
+  },
+  {
+   "redizo": "600013782",
+   "nabidek": 9,
+   "karet": 14,
+   "shoda": 9,
+   "shodaBezZamereni": 7,
+   "jenKatalog": 0,
+   "jenDipsy": 4
+  },
+  {
+   "redizo": "600014231",
+   "nabidek": 9,
+   "karet": 34,
+   "shoda": 9,
+   "shodaBezZamereni": 9,
+   "jenKatalog": 0,
+   "jenDipsy": 8
+  },
+  {
+   "redizo": "600014843",
+   "nabidek": 9,
+   "karet": 30,
+   "shoda": 9,
+   "shodaBezZamereni": 9,
+   "jenKatalog": 0,
+   "jenDipsy": 9
+  },
+  {
+   "redizo": "600012549",
+   "nabidek": 2,
+   "karet": 2,
+   "shoda": 2,
+   "shodaBezZamereni": 2,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600008363",
+   "nabidek": 2,
+   "karet": 4,
+   "shoda": 2,
+   "shodaBezZamereni": 2,
+   "jenKatalog": 0,
+   "jenDipsy": 1
+  },
+  {
+   "redizo": "600024962",
+   "nabidek": 1,
+   "karet": 6,
+   "shoda": 1,
+   "shodaBezZamereni": 1,
+   "jenKatalog": 0,
+   "jenDipsy": 2
+  },
+  {
+   "redizo": "600019543",
+   "nabidek": 2,
+   "karet": 4,
+   "shoda": 2,
+   "shodaBezZamereni": 2,
+   "jenKatalog": 0,
+   "jenDipsy": 1
+  },
+  {
+   "redizo": "691000794",
+   "nabidek": 2,
+   "karet": 0,
+   "shoda": 0,
+   "shodaBezZamereni": 0,
+   "jenKatalog": 2,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600017982",
+   "nabidek": 2,
+   "karet": 3,
+   "shoda": 2,
+   "shodaBezZamereni": 2,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600008304",
+   "nabidek": 2,
+   "karet": 4,
+   "shoda": 2,
+   "shodaBezZamereni": 2,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600005666",
+   "nabidek": 4,
+   "karet": 10,
+   "shoda": 4,
+   "shodaBezZamereni": 3,
+   "jenKatalog": 0,
+   "jenDipsy": 1
+  },
+  {
+   "redizo": "600015629",
+   "nabidek": 6,
+   "karet": 6,
+   "shoda": 6,
+   "shodaBezZamereni": 5,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600018253",
+   "nabidek": 4,
+   "karet": 22,
+   "shoda": 4,
+   "shodaBezZamereni": 4,
+   "jenKatalog": 0,
+   "jenDipsy": 11
+  },
+  {
+   "redizo": "600007855",
+   "nabidek": 3,
+   "karet": 5,
+   "shoda": 3,
+   "shodaBezZamereni": 3,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "691019088",
+   "nabidek": 1,
+   "karet": 2,
+   "shoda": 1,
+   "shodaBezZamereni": 1,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600020011",
+   "nabidek": 2,
+   "karet": 2,
+   "shoda": 2,
+   "shodaBezZamereni": 2,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600017176",
+   "nabidek": 2,
+   "karet": 3,
+   "shoda": 2,
+   "shodaBezZamereni": 2,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600014291",
+   "nabidek": 3,
+   "karet": 17,
+   "shoda": 3,
+   "shodaBezZamereni": 3,
+   "jenKatalog": 0,
+   "jenDipsy": 6
+  },
+  {
+   "redizo": "600004589",
+   "nabidek": 3,
+   "karet": 3,
+   "shoda": 3,
+   "shodaBezZamereni": 3,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600014673",
+   "nabidek": 5,
+   "karet": 6,
+   "shoda": 5,
+   "shodaBezZamereni": 4,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600017770",
+   "nabidek": 1,
+   "karet": 1,
+   "shoda": 1,
+   "shodaBezZamereni": 1,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600011631",
+   "nabidek": 1,
+   "karet": 6,
+   "shoda": 1,
+   "shodaBezZamereni": 1,
+   "jenKatalog": 0,
+   "jenDipsy": 2
+  },
+  {
+   "redizo": "600010449",
+   "nabidek": 1,
+   "karet": 1,
+   "shoda": 1,
+   "shodaBezZamereni": 1,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600004830",
+   "nabidek": 2,
+   "karet": 3,
+   "shoda": 2,
+   "shodaBezZamereni": 2,
+   "jenKatalog": 0,
+   "jenDipsy": 1
+  },
+  {
+   "redizo": "600007260",
+   "nabidek": 3,
+   "karet": 13,
+   "shoda": 3,
+   "shodaBezZamereni": 3,
+   "jenKatalog": 0,
+   "jenDipsy": 3
+  },
+  {
+   "redizo": "600010546",
+   "nabidek": 1,
+   "karet": 1,
+   "shoda": 1,
+   "shodaBezZamereni": 1,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600014894",
+   "nabidek": 6,
+   "karet": 14,
+   "shoda": 6,
+   "shodaBezZamereni": 6,
+   "jenKatalog": 0,
+   "jenDipsy": 4
+  },
+  {
+   "redizo": "691015554",
+   "nabidek": 2,
+   "karet": 4,
+   "shoda": 2,
+   "shodaBezZamereni": 2,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "691006521",
+   "nabidek": 1,
+   "karet": 1,
+   "shoda": 1,
+   "shodaBezZamereni": 1,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600006301",
+   "nabidek": 1,
+   "karet": 1,
+   "shoda": 1,
+   "shodaBezZamereni": 1,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600017346",
+   "nabidek": 5,
+   "karet": 15,
+   "shoda": 5,
+   "shodaBezZamereni": 5,
+   "jenKatalog": 0,
+   "jenDipsy": 3
+  },
+  {
+   "redizo": "600012026",
+   "nabidek": 3,
+   "karet": 6,
+   "shoda": 3,
+   "shodaBezZamereni": 3,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600016005",
+   "nabidek": 2,
+   "karet": 4,
+   "shoda": 2,
+   "shodaBezZamereni": 2,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600024211",
+   "nabidek": 6,
+   "karet": 44,
+   "shoda": 6,
+   "shodaBezZamereni": 4,
+   "jenKatalog": 0,
+   "jenDipsy": 12
+  },
+  {
+   "redizo": "600005721",
+   "nabidek": 3,
+   "karet": 3,
+   "shoda": 3,
+   "shodaBezZamereni": 3,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600007812",
+   "nabidek": 2,
+   "karet": 3,
+   "shoda": 2,
+   "shodaBezZamereni": 2,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "691017972",
+   "nabidek": 2,
+   "karet": 6,
+   "shoda": 2,
+   "shodaBezZamereni": 2,
+   "jenKatalog": 0,
+   "jenDipsy": 1
+  },
+  {
+   "redizo": "600006042",
+   "nabidek": 3,
+   "karet": 7,
+   "shoda": 3,
+   "shodaBezZamereni": 3,
+   "jenKatalog": 0,
+   "jenDipsy": 3
+  },
+  {
+   "redizo": "600008266",
+   "nabidek": 2,
+   "karet": 5,
+   "shoda": 2,
+   "shodaBezZamereni": 2,
+   "jenKatalog": 0,
+   "jenDipsy": 1
+  },
+  {
+   "redizo": "610100530",
+   "nabidek": 9,
+   "karet": 17,
+   "shoda": 9,
+   "shodaBezZamereni": 5,
+   "jenKatalog": 0,
+   "jenDipsy": 4
+  },
+  {
+   "redizo": "600012123",
+   "nabidek": 2,
+   "karet": 3,
+   "shoda": 2,
+   "shodaBezZamereni": 2,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  },
+  {
+   "redizo": "600010813",
+   "nabidek": 2,
+   "karet": 26,
+   "shoda": 2,
+   "shodaBezZamereni": 2,
+   "jenKatalog": 0,
+   "jenDipsy": 7
+  },
+  {
+   "redizo": "600016366",
+   "nabidek": 2,
+   "karet": 6,
+   "shoda": 2,
+   "shodaBezZamereni": 1,
+   "jenKatalog": 0,
+   "jenDipsy": 0
+  }
+ ]
+}
