@@ -10,7 +10,7 @@ zpracování) a XLSX (s listem „O datech“, pro Excel):
   veletrhy             akce s potvrzeným termínem a počty po krajích
   konzervatore         konzervatoře z rejstříku MŠMT a termíny, přihlášky do 30. 11.
   obory-1-kolo-{rok}   nabídky 1. kola s poptávkou, výsledkem a stavem 2. kola
-  uchazeci-1-kolo-{rok} kam se uchazeči dostali, po krajích a ročnících
+  uchazeci-{rok}        kam se uchazeči dostali v 1. a 2. kole, volná místa po 2. kole
   druhe-kolo-{rok}     všechny nabídky 2. kola a souhrny po krajích a typech škol
   kriteria-{rok}       co vedle jednotné zkoušky bodovalo, podle přepisu kritérií
 
@@ -22,7 +22,8 @@ jiný soubor, než jaký web převzal, generátor odmítne.
     python3 scripts/build-pro-novinare.py --vstupy ADRESAR --dnes 2026-09-29
 
 ADRESAR obsahuje PZ{rok}_kolo1_skolobory_vysledky.xlsx,
-PZ{rok}_kolo2_skolobory_vysledky.xlsx a PZ{rok}_kolo1_uchazeci_prihlasky_vysledky.xlsx
+PZ{rok}_kolo2_skolobory_vysledky.xlsx, PZ{rok}_kolo1_uchazeci_prihlasky_vysledky.xlsx
+a PZ{rok}_kolo2_uchazeci_prihlasky_vysledky.xlsx
 (zdrojové soubory nejsou v gitu, adresy jsou v registru).
 """
 from __future__ import annotations
@@ -147,7 +148,7 @@ def podil(citatel: float, jmenovatel: float, mista: int = 3) -> float | None:
 def nadpis_kraje(nazev: str) -> str:
     """Jako nadpisKraje() v src/lib/kraje.mjs: „Středočeský kraj“, výjimky beze slova kraj."""
     nazev = (nazev or "").strip()
-    if nazev in ("Hlavní město Praha", "Kraj Vysočina") or not nazev:
+    if nazev in ("Hlavní město Praha", "Kraj Vysočina", KRAJ_NEURCEN) or not nazev:
         return nazev
     return f"{nazev} kraj"
 
@@ -163,6 +164,22 @@ def bez_relativniho_roku(text: str, rok_sezony: int) -> str:
     text = re.sub(r"\bletošn(í|ího|ím)\b", f"z roku {rok_sezony}", text)
     text = re.sub(r"\b[Ll]etos\b", f"v roce {rok_sezony}", text)
     return text
+
+
+KRAJ_NEURCEN = "kraj neurčen (škola má obor ve více krajích)"
+
+
+def mapa_kraju(souhrn: list[dict]) -> dict[tuple[str, str], str]:
+    """(REDIZO, KKOV) → název kraje ze souhrnu CERMAT.
+
+    Data uchazečů nesou jen REDIZO a KKOV, ne zaměření ani místo. Škola může mít obory
+    v různých krajích (PORG: 75-31-M/01 v Brně, 79-41-K/81 v Praze, Brně i Ostravě),
+    proto se kraj bere podle dvojice; když ani ta není jednoznačná, vrací KRAJ_NEURCEN.
+    """
+    kraje: dict[tuple[str, str], set[str]] = defaultdict(set)
+    for r in souhrn:
+        kraje[(str(r["REDIZO"]), str(r["KKOV"]))].add(str(r["KRAJ - NÁZEV"]))
+    return {k: (next(iter(v)) if len(v) == 1 else KRAJ_NEURCEN) for k, v in kraje.items()}
 
 
 def nacti_xlsx(cesta: Path) -> list[dict]:
@@ -476,11 +493,8 @@ def balicek_uchazeci(rok: str, uchazeci: list[dict], kolo1: list[dict]) -> tuple
     uchazeče zdroj nenese). Pořadí volby je pořadí mezi všemi vyplněnými přihláškami,
     stejně jako v scripts/slouceni_prihlasek.py.
     """
-    rocnik = {}
-    kraj = {}
-    for r in kolo1:
-        rocnik[(str(r["REDIZO"]), str(r["KKOV"]))] = str(r["ROČNÍK"])
-        kraj[str(r["REDIZO"])] = str(r["KRAJ - NÁZEV"])
+    rocnik = {(str(r["REDIZO"]), str(r["KKOV"])): str(r["ROČNÍK"]) for r in kolo1}
+    kraj = mapa_kraju(kolo1)
     tab: dict[tuple[str, str], Counter] = defaultdict(Counter)
     bez_rocniku = 0
     vyrazeno = Counter()
@@ -499,7 +513,8 @@ def balicek_uchazeci(rok: str, uchazeci: list[dict], kolo1: list[dict]) -> tuple
             continue
         # Smíšené přihlášky (jednotky uchazečů) se řadí k nejvyššímu ročníku.
         roc = max(rocniky, key=int)
-        kr = kraj.get(str(u[f"ss{v_populaci[0]}_redizo"]), "")
+        prvni = v_populaci[0]
+        kr = kraj.get((str(u[f"ss{prvni}_redizo"]), str(u[f"ss{prvni}_kkov"])), "")
         prijat_na = next((i for i, k in enumerate(prihlasky) if byl_prijat(u[f"ss{k}_prijat"], u[f"ss{k}_duvod_neprijeti"])), None)
         c = tab[(kr, roc)]
         c["uchazecu"] += 1
@@ -507,6 +522,7 @@ def balicek_uchazeci(rok: str, uchazeci: list[dict], kolo1: list[dict]) -> tuple
         if prijat_na is None:
             duvody = {u[f"ss{k}_duvod_neprijeti"] for k in prihlasky}
             c["nikam"] += 1
+            c["nikam_s_jpz"] += 1 if u.get("c_m_procentni_skor") not in (None, "") else 0
             if duvody == {"pro_nedostacujici_kapacitu"}:
                 c["nikam_jen_kapacita"] += 1
             elif duvody == {"pro_nesplneni_podminek"}:
@@ -536,9 +552,10 @@ def balicek_uchazeci(rok: str, uchazeci: list[dict], kolo1: list[dict]) -> tuple
         celkem[roc].update(c)
     radky_cr = [radek("Česko celkem", roc, celkem[roc]) for roc in ("9", "7", "5")]
     b = Balicek(
-        f"uchazeci-1-kolo-{rok}",
-        f"Kam se dostali uchazeči v 1. kole {rok}",
-        f"Uchazeči 1. kola {rok} podle toho, na kolikátou volbu z přihlášky byli přijati, nebo zda se nedostali nikam.",
+        f"uchazeci-{rok}",
+        f"Kam se dostali uchazeči v 1. a 2. kole {rok}",
+        f"Uchazeči 1. kola {rok} podle toho, na kolikátou volbu z přihlášky byli přijati, nebo zda se nedostali nikam; "
+        "uchazeči 2. kola a co víme o těch, kdo se nedostali ani ve 2. kole.",
         [
             f"Zdroj: CERMAT, data uchazečů 1. kola {rok}, předběžná verze: platné přihlášky ke dni 13. 5. {rok}. "
             "Jeden řádek zdroje je jeden uchazeč; zahrnuti jsou i uchazeči o obory bez jednotné zkoušky.",
@@ -547,8 +564,7 @@ def balicek_uchazeci(rok: str, uchazeci: list[dict], kolo1: list[dict]) -> tuple
             "Kraj je kraj školy, kterou měl uchazeč na přihlášce jako první. Bydliště uchazeče zdroj neuvádí.",
             "Volba: pořadí oboru na přihlášce. Pořadí na přihlášce šanci na přijetí nemění, škola řadí jen podle svých kritérií.",
             "Přijetí zahrnuje i uchazeče, kteří se přijetí později vzdali: data roku {rok} je nerozlišují.".format(rok=rok),
-            "Nepřijati nikam: v 1. kole se nedostali na žádný obor z přihlášky. Mohli se hlásit do 2. kola; "
-            "kolik z nich to udělalo, tento balíček neříká.",
+            "Nepřijati nikam: v 1. kole se nedostali na žádný obor z přihlášky. Mohli se hlásit do 2. kola (listy „2. kolo“).",
             "Důvody nepřijetí: nevešli se kvůli kapacitě (splnili požadavky školy, ale jiní měli lepší výsledek), "
             "nedosáhli požadavku školy (například minima bodů).",
         ],
@@ -564,6 +580,98 @@ def balicek_uchazeci(rok: str, uchazeci: list[dict], kolo1: list[dict]) -> tuple
         "nejsou to žáci základní školy.")
     return b, {"rocniky": cr, "kraje_9": kraje_9, "bez_rocniku": bez_rocniku, "vyrazeno": dict(vyrazeno),
                "uchazecu": sum(c["uchazecu"] for c in celkem.values())}
+
+
+UCEBNI = re.compile(r"-[CEHJ]/")  # kategorie bez maturity: učební obory a praktické školy
+
+
+def druhe_kolo_uchazecu(b: Balicek, rok: str, uchazeci2: list[dict], kolo2: list[dict]) -> dict:
+    """Doplní do balíčku uchazečů 2. kolo: kolik uchazečů se hlásilo a dostalo, kdo zůstal bez místa, volná místa.
+
+    Zdroj je soubor uchazečů 2. kola (řádek = uchazeč, sloupec `rocnik` nese ročník přímo).
+    Populace i počítání přijetí jsou stejné jako u 1. kola. Soubory 1. a 2. kola nemají
+    společný identifikátor uchazeče, takže konkrétní dítě z 1. kola ve 2. kole nedohledáme;
+    porovnávat jde jen počty.
+    """
+    kraj = mapa_kraju(kolo2)
+    tab: dict[tuple[str, str], Counter] = defaultdict(Counter)
+    for u in uchazeci2:
+        prihlasky = [k for k in range(1, 6) if u.get(f"ss{k}_redizo")]
+        v_populaci = [k for k in prihlasky if denni_nezkracene(u.get(f"ss{k}_forma"), u.get(f"ss{k}_zkraceno"))
+                      and not NASTAVBA.match(str(u[f"ss{k}_kkov"]))]
+        roc = str(u.get("rocnik") or "")
+        if not v_populaci or roc not in ("5", "7", "9"):
+            continue
+        prvni = v_populaci[0]
+        c = tab[(kraj.get((str(u[f"ss{prvni}_redizo"]), str(u[f"ss{prvni}_kkov"])), ""), roc)]
+        c["uchazecu"] += 1
+        c["s_vysledkem_jpz"] += 1 if u.get("c_m_procentni_skor") not in (None, "") else 0
+        if any(byl_prijat(u[f"ss{k}_prijat"], u[f"ss{k}_duvod_neprijeti"]) for k in prihlasky):
+            c["prijati"] += 1
+            continue
+        c["neprijati"] += 1
+        duvody = {u[f"ss{k}_duvod_neprijeti"] for k in prihlasky}
+        c["jen_kapacita" if duvody == {"pro_nedostacujici_kapacitu"} else "jen_pozadavek" if duvody == {"pro_nesplneni_podminek"}
+          else "obe" if duvody == {"pro_nedostacujici_kapacitu", "pro_nesplneni_podminek"} else "jiny_duvod"] += 1
+        ucebni = [bool(UCEBNI.search(str(u[f"ss{k}_kkov"]))) for k in v_populaci]
+        c["jen_ucebni" if all(ucebni) else "jen_maturitni" if not any(ucebni) else "ucebni_i_maturitni"] += 1
+        c["bez_vysledku_jpz"] += 1 if u.get("c_m_procentni_skor") in (None, "") else 0
+        c["jedna_prihlaska"] += 1 if len(prihlasky) == 1 else 0
+
+    # Volná místa po 2. kole: kapacita 2. kola bez přijatých, jen nabídky, které 2. kolo vypsaly.
+    volno: dict[tuple[str, str, str], Counter] = defaultdict(Counter)
+    for r in kolo2:
+        if not denni_nezkracene_radek(r) or NASTAVBA.match(str(r["KKOV"])):
+            continue
+        zbylo = max(cele(r["KAPACITA"]) - cele(r["PŘIJATÍ"]), 0)
+        c = volno[(nadpis_kraje(r["KRAJ - NÁZEV"]), str(r["ROČNÍK"]), "bez maturity" if UCEBNI.search(str(r["KKOV"])) else "s maturitou")]
+        c["nabidek"] += 1
+        c["volnych_mist"] += zbylo
+        c["nabidek_s_volnym_mistem"] += 1 if zbylo else 0
+
+    popis = {"9": "9. třída", "7": "7. třída (šestiletá gymnázia)", "5": "5. třída (osmiletá gymnázia)"}
+    hl = ["kraj_skoly_1_volby", "rocnik", "uchazecu_2_kola", "prijati_ve_2_kole", "neprijati_ani_ve_2_kole",
+          "podil_neprijatych", "z_toho_vsude_nevesli_kvuli_kapacite", "z_toho_vsude_nedosahli_pozadavku", "z_toho_obe_duvody",
+          "z_toho_jiny_duvod", "z_toho_hlasili_se_jen_na_obory_bez_maturity", "z_toho_jen_na_maturitni", "z_toho_na_oboje",
+          "z_toho_bez_vysledku_jednotne_zkousky", "z_toho_s_jedinou_prihlaskou"]
+
+    def radek(nazev: str, roc: str, c: Counter) -> list:
+        return [nazev, popis[roc], c["uchazecu"], c["prijati"], c["neprijati"], podil(c["neprijati"], c["uchazecu"]),
+                c["jen_kapacita"], c["jen_pozadavek"], c["obe"], c["jiny_duvod"], c["jen_ucebni"], c["jen_maturitni"], c["ucebni_i_maturitni"],
+                c["bez_vysledku_jpz"], c["jedna_prihlaska"]]
+
+    celkem: dict[str, Counter] = defaultdict(Counter)
+    radky = []
+    for (kr, roc), c in sorted(tab.items(), key=lambda x: (x[0][0], -int(x[0][1]))):
+        radky.append(radek(nadpis_kraje(kr), roc, c))
+        celkem[roc].update(c)
+    b.pridej(f"uchazeci-2-kolo-{rok}-kraje", "2. kolo po krajích", hl, radky)
+    b.pridej(f"uchazeci-2-kolo-{rok}-cesko", "2. kolo Česko", hl, [radek("Česko celkem", r, celkem[r]) for r in ("9", "7", "5")])
+    volno_celkem: dict[tuple[str, str], Counter] = defaultdict(Counter)
+    for (_, roc, typ), c in volno.items():
+        volno_celkem[(roc, typ)].update(c)
+    b.pridej(f"volna-mista-po-2-kole-{rok}", "Volná místa po 2. kole",
+             ["kraj", "rocnik", "obory", "nabidek_ve_2_kole", "nabidek_s_volnym_mistem", "volnych_mist"],
+             [[k, popis.get(r, r), t, c["nabidek"], c["nabidek_s_volnym_mistem"], c["volnych_mist"]]
+              for (k, r, t), c in sorted(volno.items())]
+             + [["Česko celkem", popis.get(r, r), t, c["nabidek"], c["nabidek_s_volnym_mistem"], c["volnych_mist"]]
+                for (r, t), c in sorted(volno_celkem.items())])
+    b.o_datech.extend([
+        f"Listy „2. kolo“: CERMAT, data uchazečů 2. kola {rok}, předběžná verze: platné přihlášky ke dni 23. 6. {rok}; "
+        "stejná populace a stejné počítání přijetí jako u 1. kola.",
+        "Soubory 1. a 2. kola nemají společný identifikátor uchazeče: konkrétní dítě z 1. kola ve 2. kole nedohledáme. "
+        "Do 2. kola se navíc mohou přihlásit i ti, kdo v 1. kole přihlášku nepodali nebo se přijetí vzdali "
+        "(data uchazečů je vedou jako přijaté); proto může být uchazečů 2. kola víc než nepřijatých v 1. kole. "
+        "Kraj je kraj první volby v daném kole, krajské počty kol se proto nedají odečítat. "
+        "Porovnávat jde jen počty, ne říct „z nepřijatých v 1. kole se ve 2. kole dostalo tolik“.",
+        "Neprijati ani ve 2. kole: kam nastoupili, žádná zveřejněná data neříkají. Po 2. kole mohou školy vypisovat další kola "
+        "na volná místa; data o nich CERMAT nezveřejňuje.",
+        "Volná místa po 2. kole: kapacita 2. kola minus přijatí, jen u nabídek, které 2. kolo vypsaly (bez nástaveb). "
+        "Neříká, zda škola místa nabídla v dalším kole, ani zda byla dostupná pro konkrétní dítě (kraj, obor, požadavky).",
+    ])
+    return {"rocniky": {r: dict(celkem[r]) for r in ("9", "7", "5")},
+            "kraje_9": {nadpis_kraje(k): dict(c) for (k, r), c in tab.items() if r == "9"},
+            "volno_9": {t: dict(c) for (r, t), c in volno_celkem.items() if r == "9"}}
 
 
 def balicek_druhe_kolo(rok: str, kolo2: list[dict]) -> tuple[Balicek, dict]:
@@ -613,8 +721,8 @@ def balicek_druhe_kolo(rok: str, kolo2: list[dict]) -> tuple[Balicek, dict]:
             f"Zdroj: CERMAT, agregovaná data škol a oborů, 2. kolo {rok}.",
             "Ve 2. kole se nová jednotná zkouška nepíše; škola bere výsledek z 1. kola nebo vlastní kritéria.",
             "Přihlášky 2. kola se nesčítají s přihláškami 1. kola a jeden uchazeč mohl podat víc přihlášek, "
-            "proto přijatí na přihlášku nejsou podíl úspěšných uchazečů. Kolik uchazečů se do 2. kola hlásilo, "
-            "tento balíček neříká (data uchazečů 2. kola web zatím nepřevzal).",
+            "proto přijatí na přihlášku nejsou podíl úspěšných uchazečů. Počty uchazečů 2. kola (lidí, ne přihlášek) "
+            f"jsou v balíčku uchazeci-{rok}.",
             "Naplněnost míst: přijatí děleno místy 2. kola.",
             f"Nejnižší výsledek přijatých (body z češtiny a matematiky, 0–100) jen u oborů s jednotnou zkouškou a aspoň "
             f"{MIN_PRIJATYCH_PRO_MINIMUM} přijatými s výsledkem zkoušky. Neříká, s kolika body se dalo dostat.",
@@ -747,16 +855,22 @@ def main() -> None:
     kolo1_cesta = args.vstupy / f"PZ{rok}_kolo1_skolobory_vysledky.xlsx"
     kolo2_cesta = args.vstupy / f"PZ{rok_k2}_kolo2_skolobory_vysledky.xlsx"
     uch_cesta = args.vstupy / f"PZ{rok_u}_kolo1_uchazeci_prihlasky_vysledky.xlsx"
+    rok_u2 = registr["cermat-uchazeci-kolo2"]["zobrazeno"]["obdobi"]
+    uch2_cesta = args.vstupy / f"PZ{rok_u2}_kolo2_uchazeci_prihlasky_vysledky.xlsx"
+    if rok_u2 != rok_k2:
+        raise SystemExit(f"Uchazeči 2. kola ({rok_u2}) a souhrn 2. kola ({rok_k2}) musí být z téhož roku")
     otisky = {
         kolo1_cesta.name: over_vstup(kolo1_cesta, meta_vysledku.get("sha256"), "výsledky 1. kola"),
         kolo2_cesta.name: over_vstup(kolo2_cesta, registr["cermat-kolo2-agregaty"]["zobrazeno"].get("sha256"), "výsledky 2. kola"),
         # Data uchazečů nemají otisk v registru; ověřuje se počet řádků z poznámky registru a otisk se zapíše.
         uch_cesta.name: over_vstup(uch_cesta, None, "data uchazečů 1. kola"),
+        uch2_cesta.name: over_vstup(uch2_cesta, registr["cermat-uchazeci-kolo2"]["zobrazeno"].get("sha256"), "data uchazečů 2. kola"),
     }
 
     kolo1 = nacti_xlsx(kolo1_cesta)
     kolo2 = nacti_xlsx(kolo2_cesta)
     uchazeci = nacti_xlsx(uch_cesta)
+    uchazeci2 = nacti_xlsx(uch2_cesta)
     poznamka_u = registr["cermat-uchazeci-kolo1"]["zobrazeno"].get("z_dostupne", {}).get("poznamka", "")
     ocekavano_radku = int(re.sub(r"\D", "", poznamka_u.split("řádků")[0])) if "řádků" in poznamka_u else None
     if ocekavano_radku and len(uchazeci) != ocekavano_radku:
@@ -776,6 +890,19 @@ def main() -> None:
         ("druhe_kolo", balicek_druhe_kolo(rok_k2, kolo2)),
         ("kriteria", balicek_kriteria(rok_kr)),
     ]:
+        if nazev == "uchazeci":
+            # Vzdali se přijetí v 1. kole (souhrn CERMAT, přihlášky): data uchazečů 2026 je vedou jako přijaté,
+            # a přitom se mohli hlásit do 2. kola. Vysvětluje, proč je uchazečů 2. kola víc než nepřijatých v 1. kole.
+            vzdali = Counter()
+            for r in kolo1:
+                if denni_nezkracene_radek(r) and str(r["ROČNÍK"]) == "9" and not NASTAVBA.match(str(r["KKOV"])):
+                    vzdali["bez maturity" if UCEBNI.search(str(r["KKOV"])) else "s maturitou"] += cele(r.get("NEPŘIJATI - VZDAL SE PŘIJETÍ"))
+            s["vzdali_se_9"] = dict(vzdali)
+            # 2. kolo patří k 1. kolu téhož roku. V květnu a červnu je 1. kolo nového roku
+            # převzaté dřív než 2. kolo; pak se 2. kolo vynechá, ne pod cizím rokem.
+            s["kolo2"] = druhe_kolo_uchazecu(b, rok_u2, uchazeci2, kolo2) if rok_u2 == rok_u else None
+            if s["kolo2"] is None:
+                b.o_datech.append(f"Data uchazečů 2. kola {rok_u} zatím nejsou převzatá; balíček nese jen 1. kolo.")
         balicky.append((nazev, b))
         souhrn[nazev] = s
 
@@ -799,7 +926,7 @@ def main() -> None:
     vystup = {
         "vytvoreno": args.dnes.isoformat(),
         "generator": "scripts/build-pro-novinare.py",
-        "obdobi": {"vysledky": rok, "kolo2": rok_k2, "uchazeci": rok_u, "kriteria": rok_kr,
+        "obdobi": {"vysledky": rok, "kolo2": rok_k2, "uchazeci": rok_u, "uchazeci_kolo2": rok_u2, "kriteria": rok_kr,
                    "veletrhy": souhrn["veletrhy"]["sezona"]},
         "zdroje": {"platnost_vysledku": meta_vysledku.get("valid_at"), "otisky": otisky},
         "balicky": katalog,

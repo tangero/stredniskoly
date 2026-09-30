@@ -1,6 +1,6 @@
 # Sekce pro novináře a balíčky dat
 
-Verze 1.1 · 30. 9. 2026 · **Realizováno; rozhodnutí vlastníka z oddílu 5 přijata 30. 9. 2026.**
+Verze 1.2 · 30. 9. 2026 · **Realizováno; rozhodnutí vlastníka z oddílu 5 přijata 30. 9. 2026.**
 
 ## 1. Proč
 
@@ -21,11 +21,11 @@ Generuje `scripts/build-pro-novinare.py` do `public/pro-novinare/`. Každý bal�
 | Veletrhy | akce s potvrzeným termínem, počty po krajích | snímek `src/data/veletrhy-2027.json` (export z databáze před generováním) | `veletrhy-skol` |
 | Konzervatoře | 18 konzervatoří s obory, termíny řízení, výsledky 1. kola po oborech | index názvů rejstříku, harmonogram MŠMT, souhrn 1. kola CERMAT | `msmt-rejstrik-snimky`, `msmt-harmonogram`, `cermat-vysledky` |
 | Obory 1. kola | 3 091 nabídek s jednotnou zkouškou: poptávka, výsledek, 2. kolo | `applications_2026.json`, `souhrny_kolo1.json`, `druhe_kolo.json`, souhrn 1. kola | `cermat-vysledky`, `cermat-kolo2-agregaty` |
-| Uchazeči 1. kola | kam se uchazeči dostali, po krajích a ročnících | data uchazečů 1. kola | `cermat-uchazeci-kolo1` |
+| Uchazeči 1. a 2. kola | kam se uchazeči dostali v 1. a 2. kole, po krajích a ročnících; kdo zůstal bez místa ani po 2. kole; volná místa po 2. kole | data uchazečů 1. a 2. kola, souhrn 2. kola | `cermat-uchazeci-kolo1`, `cermat-uchazeci-kolo2`, `cermat-kolo2-agregaty` |
 | 2. kolo | všechny nabídky 2. kola s jednotnou zkouškou i bez ní, souhrny po krajích a typech | souhrn 2. kola CERMAT | `cermat-kolo2-agregaty` |
 | Kritéria | co vedle jednotné zkoušky bodovalo, souhrn a obory s výhradou v každém řádku | `kriteria_prijeti_{rok}.json` | `dipsy-kriteria` |
 
-Zdrojové XLSX CERMAT nejsou v gitu. Generátor je dostane adresářem `--vstupy` a ověří otisk sha256 proti registru (2. kolo) nebo metadatům výsledků (1. kolo); data uchazečů otisk v registru nemají, ověřuje se počet řádků z poznámky registru (156 210). **Nestahuje se nic, co by web nepřevzal**: soubory 1. a 2. kola jsou tytéž, ze kterých vznikly `applications_2026.json` a `druhe_kolo.json`.
+Zdrojové XLSX CERMAT nejsou v gitu. Generátor je dostane adresářem `--vstupy` a ověří otisk sha256 proti registru (souhrn 2. kola, od verze 1.2 i data uchazečů 2. kola) nebo metadatům výsledků (1. kolo); data uchazečů 1. kola otisk v registru nemají, ověřuje se počet řádků z poznámky registru (156 210). **Nestahuje se nic, co by web nepřevzal**: soubory 1. a 2. kola jsou tytéž, ze kterých vznikly `applications_2026.json` a `druhe_kolo.json`.
 
 ### Proč konzervatoře a ne „obory s přihláškou ještě letos“
 
@@ -42,7 +42,7 @@ Povinný krok podle [zdrojů dat](zdroje-dat.md), oddíl 3. Balíčky jsou jiné
 | Oficiální nejnižší výsledek přijatých (souhrn, sloupec 72) | **Použit** v balíčku oborů. Balíček potřebuje hodnotu po nabídkách; minimum z pásem je za obor bez zaměření a u nabídky s víc zaměřeními stálo vedle cizího počtu přijatých (v prvním běhu 5 nabídek s méně než deseti přijatými). Heslo *Oficiální nejnižší výsledek přijatých*. |
 | Přijatí podle priority (sloupce 40–44) | Nepoužito po oborech. Otázku „dostávají se sem ti, kdo chtěli nejvíc“ balíček uchazečů zodpoví celostátně jako *Výsledek uchazeče v 1. kole* (na kolikátou volbu), což je pro novináře srozumitelnější. |
 | Výsledky zkoušky všech uchazečů (sloupce 45–65) | Nepoužito: minimum a maximum určuje jediný uchazeč; průměrné umístění uchazečů by vedle průměru přijatých svádělo ke srovnání, které slovník nedefinuje. |
-| Data uchazečů 2. kola | **Nepoužito, ale je to nejdůležitější další krok.** Otázka „kolik dětí se dostalo ve 2. kole“ se z agregátů zodpovědět nedá (*Přijatí na přihlášku ve 2. kole* není podíl uchazečů). Soubor 2026 CERMAT zveřejnil, registr ho vede jako nepřevzatý; převzetí patří přes datovou linku a přepnutí sady `cermat-uchazeci-kolo2`, ne ručním stažením do balíčku. |
+| Data uchazečů 2. kola | **Použito od verze 1.2** (30. 9. 2026): sada `cermat-uchazeci-kolo2` přepnuta na „web“ a období 2026 příkazem `prepni` s otiskem souboru. Balíček uchazečů a stránka ukazují uchazeče 2. kola, přijaté a nepřijaté a složení těch, kdo se nedostali ani ve 2. kole. Soubory kol nemají společný identifikátor uchazeče, proto se porovnávají jen počty. |
 | DiPSy `/app/public-stats` | Nepoužito: celostátní počty uchazečů by se musely sladit s definicemi CERMAT. |
 | `skolniCast`, `typyPriloh` z DiPSy | Nepoužito: kritéria balíček bere z přepisu PDF, příznak školní části bodování nevysvětlí (Dopplerovo gymnázium, zdroje § 2.16). |
 | Profil dovedností (položková data) | Nepoužito: soubory nezpracované, mimo rozsah. |
@@ -86,7 +86,7 @@ Kdy: po exportu veletrhů (týdně v sezóně), po přepnutí kterékoli sady v 
 
 ## 7. Další kroky
 
-1. Převzít data uchazečů 2. kola 2026 přes datovou linku a doplnit balíček 2. kola o počet uchazečů a kolik z nepřijatých v 1. kole se ve 2. kole dostalo.
+1. ~~Převzít data uchazečů 2. kola~~ hotovo ve verzi 1.2. Kolik z nepřijatých v 1. kole se dostalo ve 2. kole, zjistit nejde: soubory nemají společný identifikátor uchazeče. Dotaz na CERMAT, zda by identifikátor (i pseudonymní) mohl přidat, by to umožnil.
 2. Maturitní balíček (škola proti podobným školám).
 3. Obnova balíčků v CI po exportu veletrhů.
 
@@ -94,5 +94,6 @@ Kdy: po exportu veletrhů (týdně v sezóně), po přepnutí kterékoli sady v 
 
 | Verze | Změna |
 |---|---|
+| 1.2 | Data uchazečů 2. kola na webu: sada `cermat-uchazeci-kolo2` přepnuta na „web“, 2026; balíček uchazečů přejmenován na `uchazeci-{rok}.xlsx` (dřív `uchazeci-1-kolo-{rok}.xlsx`), CSV 1. kola beze změny názvu; volná místa po 2. kole. |
 | 1.1 | Vypořádání čtyř kol review Codexu (populace uchazečů, okres po nabídkách, hesla slovníku); rozhodnutí vlastníka o značce, licenci a kontaktu. |
 | 1.0 | Návrh, generátor, balíčky a stránka `/pro-novinare`. |

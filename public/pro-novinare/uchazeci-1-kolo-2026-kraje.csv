@@ -1,10 +1,10 @@
 ﻿kraj_skoly_1_volby,rocnik,uchazecu,konali_jednotnou_zkousku,prijati_na_1_volbu,prijati_na_2_volbu,prijati_na_3_a_dalsi_volbu,neprijati_nikam,podil_neprijatych_nikam,z_toho_vsude_nevesli_kvuli_kapacite,z_toho_vsude_nedosahli_pozadavku,z_toho_obe_duvody,z_toho_jiny_duvod
-Hlavní město Praha,9. třída (čtyřleté obory a obory bez maturity),19910,16178,10512,3661,2371,3366,0.169,964,816,1586,0
+Hlavní město Praha,9. třída (čtyřleté obory a obory bez maturity),19975,16240,10536,3691,2377,3371,0.169,967,817,1587,0
 Hlavní město Praha,7. třída (šestiletá gymnázia),2981,2922,487,121,119,2254,0.756,783,358,1113,0
 Hlavní město Praha,5. třída (osmiletá gymnázia),4593,4478,1067,359,262,2905,0.632,1508,292,1105,0
-Jihomoravský kraj,9. třída (čtyřleté obory a obory bez maturity),12549,9319,8258,2099,1155,1037,0.083,366,242,429,0
+Jihomoravský kraj,9. třída (čtyřleté obory a obory bez maturity),12484,9257,8234,2069,1149,1032,0.083,363,241,428,0
 Jihomoravský kraj,7. třída (šestiletá gymnázia),1327,1302,289,63,33,942,0.71,502,94,346,0
-Jihomoravský kraj,5. třída (osmiletá gymnázia),2709,2623,880,175,84,1570,0.58,801,274,495,0
+Jihomoravský kraj,5. třída (osmiletá gymnázia),2452,2370,763,143,63,1483,0.605,757,256,470,0
 Jihočeský kraj,9. třída (čtyřleté obory a obory bez maturity),6990,4907,5397,949,372,272,0.039,121,52,99,0
 Jihočeský kraj,7. třída (šestiletá gymnázia),341,335,188,18,2,133,0.39,98,28,7,0
 Jihočeský kraj,5. třída (osmiletá gymnázia),1055,1038,442,60,47,506,0.48,458,18,30,0
@@ -36,6 +36,7 @@ Středočeský kraj,5. třída (osmiletá gymnázia),2576,2525,828,132,47,1569,0
 Zlínský kraj,9. třída (čtyřleté obory a obory bez maturity),6526,5000,4715,1043,465,303,0.046,191,31,81,0
 Zlínský kraj,7. třída (šestiletá gymnázia),132,125,71,3,2,56,0.424,47,7,2,0
 Zlínský kraj,5. třída (osmiletá gymnázia),726,708,341,31,5,349,0.481,316,25,8,0
+kraj neurčen (škola má obor ve více krajích),5. třída (osmiletá gymnázia),257,253,117,32,21,87,0.339,44,18,25,0
 Ústecký kraj,9. třída (čtyřleté obory a obory bez maturity),8800,5700,6997,989,397,417,0.047,96,156,165,0
 Ústecký kraj,7. třída (šestiletá gymnázia),63,63,30,0,0,33,0.524,12,21,0,0
 Ústecký kraj,5. třída (osmiletá gymnázia),916,883,518,41,13,344,0.376,290,45,9,0

@@ -130,7 +130,7 @@ Jeden řádek je jeden uchazeč. Soubor má 40 sloupců a list `legenda` s výkl
 
 **Index simulátoru** `public/simulator_pasma_{rok}.json` (skript `scripts/build-simulator-pasma.py`, rok pásem z registru; připravovaný ročník před přepnutím sady `cermat-uchazeci-kolo1` se sestaví parametrem `--obdobi`) je výtah z pásem přijetí pro Simulátor přijímaček: na obor nejnižší přijatý, meze pásma nejistoty, soutěžící, přijatí, nevešlí, přesné počty uvnitř pásma, příznak „nikoho neodmítli kvůli počtu míst“, talentová zkouška, druh testu (4, 6, 8 let podle KKOV), štítek extra body z přepisu kritérií (2.16; bez přepisu `null`, ne nula) a obec z katalogu (ročník podle sady `cermat-prihlasky`). Nové sloupce zdroje nepoužívá; percentily, předmětový rozbor, kohorty a pětibodová pásma vynechává, protože skupiny v seznamu je nepotřebují a jsou na stránce oboru. 29. 9. 2026: 2 830 oborů, 287 obcí, 184 kB, 36 kB po gzip.
 
-**Soubory druhého kola** (`PZ2024_kolo2`, `PZ2025_kolo2`) mají stejnou strukturu a **nepoužíváme je nikde na webu**. Sahá na ně jen `scripts/offer-history.py`.
+**Soubory druhého kola** (`PZ2024_kolo2`, `PZ2025_kolo2`, `PZ2026_kolo2`) mají stejnou strukturu; soubor 2026 má navíc sloupec **`rocnik`** (5, 7, 9: ze které třídy se uchazeč hlásí), který data 1. kola nemají, a list `legenda` s platností přihlášek k 23. 6. 2026. **Od 30. 9. 2026 se 2026 používá** v balíčku uchazečů na `/pro-novinare` (*Výsledek uchazeče ve 2. kole*, `scripts/build-pro-novinare.py`), sada `cermat-uchazeci-kolo2` přepnuta z „nepoužito“ na „web“. Použité sloupce: `rocnik`, `ss*_redizo`, `ss*_kkov`, `ss*_forma`, `ss*_zkraceno`, `ss*_prijat`, `ss*_duvod_neprijeti`, `c_m_procentni_skor` (jen zda je vyplněn). Zvážené a nepoužité: bodové výsledky ve 2. kole (pásma zamítnuta, viz oddíl 3), `ss*_zrizovatel` (neodpovídá na otázku, kam děti směřovaly). **Soubory 1. a 2. kola nemají společný identifikátor uchazeče**, takže se dají porovnávat jen počty. Starší ročníky dál čte jen `scripts/offer-history.py`.
 
 ### 2.3 CERMAT, položková data JPZ
 
@@ -501,7 +501,7 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 | **Přijatí podle priority** | souhrny výsledků, sloupce 40–44 | „Tři čtvrtiny přijatých si obor zapsaly jako první volbu“ | **zpracováno 13. 9. 2026** do `souhrny_kolo1.json`, na web zatím nenapojeno, viz `docs/grafy-skoly-a-oboru-2027.md` |
 | Výsledky zkoušky **všech uchazečů** o obor v souhrnu | souhrny výsledků, sloupce 45–65 | průměr, minimum a maximum konkurence bez zpracování dat uchazečů | průměrné percentilové umístění **zpracováno 13. 9. 2026**; minimum a maximum zamítnuto, určuje je jediný uchazeč |
 | **Agregáty 2. kola** za obory | `PZ{rok}_kolo2_skolobory_*.xlsx` | „Loni tu bylo 2. kolo s 12 místy“ | **zapracovává se od 13. 9. 2026**, viz `docs/druhe-kolo.md` |
-| **Data uchazečů 2. kola** | `PZ{rok}_kolo2_uchazeci_prihlasky_vysledky.xlsx` | pásma přijetí ve 2. kole | zamítnuto pro 2. kolo: jen 133 oborů má ve 2. kole aspoň deset přijatých s výsledkem zkoušky |
+| **Data uchazečů 2. kola** | `PZ{rok}_kolo2_uchazeci_prihlasky_vysledky.xlsx` | pásma přijetí ve 2. kole | pro pásma zamítnuto: jen 133 oborů má ve 2. kole aspoň deset přijatých s výsledkem zkoušky. **Celostátní a krajské souhrny uchazečů se od 30. 9. 2026 používají** na `/pro-novinare` (oddíl 2.2) |
 | **Dobíhající obor** | rejstřík, `dobihajiciObor` | **ne varování před přihláškou**, ale rozlišení „obor se už nenabírá“ od „obor škola letos nevypsala“ u chybějící nabídky | **používá se od 18. 9. 2026** v bloku „Obory z dřívějších let“ na stránce školy; `scripts/build-dobihajici-obory.py` → `public/dobihajici_obory.json` (602 denních oborů ze snímku 30. 6. 2026), z toho se v zobrazeném ročníku trefí **jediná** nabídka a ta vypsaná není. Ze 602 klíčů nese 404 starý trojmístný kód oboru, který katalog nepoužívá; **normalizovat se nesmí**, protože u 180 oborů ve 92 školách je nový kód téhož oboru vypsaný v 1. kole 2026 |
 | **Web a kontakt školy** | rejstřík CSV, `WWW`, `Email 1`, `Telefon` | kam jít pro kritéria přijetí a termíny | `WWW` **používáno od 13. 9. 2026** (`skoly_web.json`); telefon a e-mail na web nepatří |
 | `jpz_prumer_actual`, `jpz_median` | katalog 2025 | medián říká víc než průměr, když je rozdělení šikmé | spočítané, nikdy nezobrazené |
@@ -632,7 +632,7 @@ Plné převzetí bez člověka se nedoporučuje: CERMAT soubory přepisuje i mě
 
 <!-- stav-datovych-sad:od -->
 
-_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ručně._
+_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-30. Neupravovat ručně._
 
 | Sada | Použití | Zobrazujeme | Odkud | Zveřejněno, nepřevzato | Čekáme | Kdy | Po přepnutí |
 |---|---|---|---|---|---|---|---|
@@ -640,7 +640,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ru�
 | `cermat-prihlasky` | web | 2026 | `PZ2026_kolo1_skolobory_vysledky.xlsx` | — | 2027 | 2027-03, odhad | Srovnání ročníků na stránce oboru. |
 | `cermat-vysledky` | web | 2026 | `PZ2026_kolo1_skolobory_vysledky.xlsx` | — | 2027 | 2027-08, odhad | Srovnání ročníků na stránce oboru; výsledky 2025 slouží jako srovnávací zdroj v public/cermat_results_meta.json. |
 | `cermat-uchazeci-kolo1` | web | 2026 | `PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx` | — | — | 2027-05, odhad | Rok 2025 zůstává pro ověření stability mezi ročníky ve scripts/validate-pasma-prijeti.py a pro vývoj hranice přijetí. |
-| `cermat-uchazeci-kolo2` | nepoužito | 2025 | `data/PZ2025_kolo2_uchazeci_prihlasky_vysledky.xlsx` | 2026 | 2027 | 2027-06, odhad | Není na webu. |
+| `cermat-uchazeci-kolo2` | web | 2026 | `data/PZ2026_kolo2_uchazeci_prihlasky_vysledky.xlsx` | — | — | 2027-06, odhad | Předchozí ročník se nezobrazuje; soubor zůstává v data/ jako doklad. |
 | `cermat-polozkova-jpz` | analýza | 2025 | `data/JPZ2025_M6_polozkova_data.xlsx` | 2026 | 2027 | 2027-05, odhad | Není na webu; slouží dokladu teze 4. |
 | `cermat-maturita` | web | 2026 | `MZ2026j_SC_skolobory.xlsx` | — | — | 2027-08, odhad | Předchozí jarní ročníky zůstávají ve výstupu; stránka školy z nich počítá počet let nad skupinou oborů. |
 | `cermat-jpz-skoly-2017-2023` | nepoužito | nic | `Uzavřená řada, soubory nejsou stažené.` | — | — | neznámo | Nepřepíná se. |
@@ -659,6 +659,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ru�
 | `veletrhy-skol` | web | 2027 | `src/data/veletrhy-2027.json` | — | 2028 | 2027-08, odhad | Akce předchozí sezóny se nezobrazují; soubor zůstává jako doklad, co web ukazoval, a jako podklad pro odhad termínu další sezóny. |
 | `cermat-prevod-testu` | web | 2024 | `` | — | 2025 | 2027-09, odhad | Testy předchozího roku zůstávají v TAU; jejich převodní tabulka zůstává v souboru prevod_testu_{rok}.json a může se nabízet dál. |
 | `dipsy-kriteria` | web | 2026 | `data/dipsy-kriteria-2026/manifest.jsonl` | — | 2027 | 2027-02, odhad | Kritéria 2026 zůstávají jen jako historie; pro rok 2027 se nesmí tiše použít. |
+| `ruian-kraje` | web | 2026-09-27 | `src/data/mapa-kraju.json` | — | — | neznámo | Nahrazuje se celý. |
 
 #### Aktualizace a automatizace
 
@@ -667,8 +668,8 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ru�
 | `cermat-kapacity` | jen detekce | HTTP HEAD: před zveřejněním 404, po revizi nové Last-Modified; katalogová stránka vypisuje dostupné roky. | Chybí udržovaný importér pro fázi před výsledky. scripts/import_cermat_2026_real.py je podle docs/aktualizace-kalendar-data-2027.md zastaralý; scripts/refresh_cermat_data.py čte až soubor výsledků. | Napsat importér kapacit a přihlášek pro jarní fázi, pak revize importu a přepnutí. |
 | `cermat-prihlasky` | jen detekce | HTTP HEAD: před zveřejněním 404, po revizi nové Last-Modified; katalogová stránka vypisuje dostupné roky. | Chybí udržovaný importér pro fázi před výsledky. scripts/import_cermat_2026_real.py je podle docs/aktualizace-kalendar-data-2027.md zastaralý; scripts/refresh_cermat_data.py čte až soubor výsledků. | Napsat importér kapacit a přihlášek pro jarní fázi, pak revize importu a přepnutí. |
 | `cermat-vysledky` | příprava | HTTP HEAD a katalogová stránka, stejně jako u kapacit. | scripts/refresh_cermat_data.py --input-dir s výsledky aktuálního a předchozího roku; kontroluje hlavičky, kolize, rozsah skóre a součet priorit a ukládá sha256 a datum platnosti. | Stáhnout oba soubory, spustit import a testy, zrevidovat rozdíly počtů a přepnout. |
-| `cermat-uchazeci-kolo1` | příprava | HTTP HEAD a katalogová stránka Datové soubory. | scripts/build-pasma-prijeti.py, scripts/build-soubeh-prihlasek.py, scripts/build-kontext-prihlasek.py; doklad stability mezi ročníky scripts/validate-pasma-prijeti.py --rocniky STARY-NOVY. Výstupy nesou rok v názvu, registr ho drží zástupným {obdobi}, ne napevno. Pozor: scripts/enrich_schools_data.py čte sloupce podle pozice a s textovým příznakem přijetí by počítal chybně; datová linka ho nespouští a katalogové minimum se na webu nezobrazuje. | Převzetí mění čísla v dokladech tezí a na webu, proto revize výsledků validace před přepnutím. |
-| `cermat-uchazeci-kolo2` | jen detekce | HTTP HEAD. | Neexistuje. | Rozhodnout o zpracování druhého kola. |
+| `cermat-uchazeci-kolo1` | příprava | HTTP HEAD a katalogová stránka Datové soubory. | scripts/build-pasma-prijeti.py, scripts/build-soubeh-prihlasek.py, scripts/build-kontext-prihlasek.py, po pásmech scripts/build-simulator-pasma.py (index simulátoru, čte i kritéria a katalog); doklad stability mezi ročníky scripts/validate-pasma-prijeti.py --rocniky STARY-NOVY. Výstupy nesou rok v názvu, registr ho drží zástupným {obdobi}, ne napevno. Pozor: scripts/enrich_schools_data.py čte sloupce podle pozice a s textovým příznakem přijetí by počítal chybně; datová linka ho nespouští a katalogové minimum se na webu nezobrazuje. | Převzetí mění čísla v dokladech tezí a na webu, proto revize výsledků validace před přepnutím. |
+| `cermat-uchazeci-kolo2` | jen detekce | HTTP HEAD. | scripts/build-pro-novinare.py (balíček uchazečů a souhrn pro /pro-novinare); vstup se ověřuje otiskem proti zobrazenému období. | Stáhnout soubor do data/, přepnout období příkazem prepni se --soubor (zapíše otisk), přegenerovat balíčky pro novináře a zkontrolovat čísla na /pro-novinare. |
 | `cermat-polozkova-jpz` | jen detekce | HTTP HEAD pro šest testů. | Jen dokladový výpočet v scripts/validate-pasma-prijeti.py. | Není na webu, převzetí podle potřeby analýzy. |
 | `cermat-maturita` | příprava | HTTP HEAD a katalogová stránka. | scripts/build-maturita-skoly.py; v datové lince zpracovatel cermat-maturita stáhne k jarnímu souboru tři předchozí jarní ročníky a doplní je do stávajícího výstupu. Stav po podzimu (jap) se nepřebírá. | Schválit úlohu, zkontrolovat počty v pull requestu, přepnout období v registru. |
 | `cermat-jpz-skoly-2017-2023` | neaktualizuje se | — | — | Uzavřená řada. |
@@ -687,6 +688,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-18. Neupravovat ru�
 | `veletrhy-skol` | ruční | Ruční kontrola webů pořadatelů plus nahlášení z formuláře /veletrhy/nahlasit. Jednotný celostátní kalendář veletrhů SŠ neexistuje. | Ruční zápis do src/data/veletrhy-2027.json. Nahlášení z formuláře se zapisuje až po ověření termínu na stránce pořadatele. | Před sezónou projít weby pořadatelů, doplnit potvrzené termíny a rozepsat série na jednotlivá města. Průběžně vyřizovat nahlášení z formuláře. |
 | `cermat-prevod-testu` | ruční | Ručně: nabídka testů v TAU se načítá až po souhlasu s cookies, strojově ji nečteme. | python3 scripts/build-prevod-testu.py | Po přepnutí cermat-uchazeci-kolo1 spustit build-prevod-testu.py; jednou ročně zkontrolovat, jestli TAU nepřidalo nový rok. |
 | `dipsy-kriteria` | ruční | python3 scripts/dipsy-kriteria-scan.py --rok 2027 --redizo … (jen dotaz po jedné škole) | scripts/dipsy-kriteria-sber.py, přepis úsporným schématem, pak python3 scripts/build-kriteria-prijeti.py | Před placeným přepisem ověřit rozpočet (limit 10 USD, docs/podklady/dipsy-kriteria-rozpocet-10-usd-2026.md). |
+| `ruian-kraje` | ruční | Nesledováno: soubor se přegenerovává denně, změna hranic kraje je vzácná a přišla by zákonem. | scripts/build-mapa-kraju.mjs --vstup 1/VUSC_P.shp --stazeno RRRR-MM-DD | Při změně hranic krajů stáhnout zip (asi 250 MB), rozbalit VUSC_P a spustit skript. |
 
 <!-- stav-datovych-sad:do -->
 

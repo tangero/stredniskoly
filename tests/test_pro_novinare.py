@@ -87,6 +87,56 @@ class Uchazeci(unittest.TestCase):
         self.assertNotIn("Jihočeský kraj", self.souhrn["kraje_9"])
 
 
+class DruheKoloUchazecu(unittest.TestCase):
+    def setUp(self):
+        kolo2 = [
+            {"REDIZO": "1", "KKOV": "79-41-K/41", "ROČNÍK": "9", "KRAJ - NÁZEV": "Hlavní město Praha", "KAPACITA": "10",
+             "PŘIJATÍ": "4", "FORMA VZDĚLÁVÁNÍ": "den", "ZKRÁCENÉ STUDIUM": "ne"},
+            {"REDIZO": "2", "KKOV": "23-68-H/01", "ROČNÍK": "9", "KRAJ - NÁZEV": "Jihočeský", "KAPACITA": "5",
+             "PŘIJATÍ": "7", "FORMA VZDĚLÁVÁNÍ": "den", "ZKRÁCENÉ STUDIUM": "ne"},
+            {"REDIZO": "2", "KKOV": "64-41-L/51", "ROČNÍK": "9", "KRAJ - NÁZEV": "Jihočeský", "KAPACITA": "30",
+             "PŘIJATÍ": "0", "FORMA VZDĚLÁVÁNÍ": "den", "ZKRÁCENÉ STUDIUM": "ne"},
+        ]
+
+        def u2(rocnik, *prihlasky, skor="80"):
+            r = uchazec(*prihlasky, skor=skor)
+            r["rocnik"] = rocnik
+            return r
+
+        data = [
+            u2("9", ("1", "79-41-K/41", "1", None)),
+            u2("9", ("2", "23-68-H/01", "2", "pro_nesplneni_podminek"), skor=None),   # jen učební, bez zkoušky
+            u2("9", ("1", "79-41-K/41", "2", "pro_nedostacujici_kapacitu"), ("2", "23-68-H/01", "2", "pro_nesplneni_podminek")),
+            u2("9", ("2", "64-41-L/51", "2", "pro_nedostacujici_kapacitu")),        # jen nástavba: mimo
+            u2("5", ("1", "79-41-K/41", "2", "pro_nedostacujici_kapacitu")),
+        ]
+        self.b = pn.Balicek("x", "x", "x", [])
+        self.s = pn.druhe_kolo_uchazecu(self.b, "2026", data, kolo2)
+
+    def test_pocty_a_slozeni_neprijatych(self):
+        r = self.s["rocniky"]["9"]
+        self.assertEqual((r["uchazecu"], r["prijati"], r["neprijati"]), (3, 1, 2))
+        self.assertEqual((r["jen_ucebni"], r["ucebni_i_maturitni"]), (1, 1))
+        self.assertEqual((r["jen_pozadavek"], r["obe"]), (1, 1))
+        self.assertEqual((r["bez_vysledku_jpz"], r["jedna_prihlaska"]), (1, 1))
+        self.assertEqual(r["s_vysledkem_jpz"], 2)
+        self.assertEqual(self.s["rocniky"]["5"]["neprijati"], 1)
+
+    def test_volna_mista_bez_nastaveb_a_bez_zapornych(self):
+        self.assertEqual(self.s["volno_9"]["s maturitou"]["volnych_mist"], 6)
+        self.assertEqual(self.s["volno_9"]["bez maturity"]["volnych_mist"], 0)
+
+    def test_rozklad_duvodu_sedi_na_soucet(self):
+        _, _, hl, radky = next(t for t in self.b.tabulky if t[1] == "2. kolo Česko")
+        for r in radky:
+            z = dict(zip(hl, r))
+            self.assertEqual(z["neprijati_ani_ve_2_kole"], z["z_toho_vsude_nevesli_kvuli_kapacite"]
+                             + z["z_toho_vsude_nedosahli_pozadavku"] + z["z_toho_obe_duvody"] + z["z_toho_jiny_duvod"])
+
+    def test_vyhrada_o_parovani_v_o_datech(self):
+        self.assertTrue(any("společný identifikátor" in v for v in self.b.o_datech))
+
+
 class VygenerovaneBalicky(unittest.TestCase):
     """Kontroly nad commitnutými balíčky v public/pro-novinare/."""
 
@@ -103,6 +153,19 @@ class VygenerovaneBalicky(unittest.TestCase):
         self.assertTrue(praha)
         self.assertEqual({r["okres"] for r in praha}, {"Praha"})
         self.assertFalse([r for r in radky if not r["okres"]])
+
+
+class MapaKraju(unittest.TestCase):
+    def test_skola_s_obory_ve_vice_krajich(self):
+        souhrn = [
+            {"REDIZO": "600006018", "KKOV": "75-31-M/01", "KRAJ - NÁZEV": "Jihomoravský"},
+            {"REDIZO": "600006018", "KKOV": "79-41-K/81", "KRAJ - NÁZEV": "Hlavní město Praha"},
+            {"REDIZO": "600006018", "KKOV": "79-41-K/81", "KRAJ - NÁZEV": "Moravskoslezský"},
+        ]
+        m = pn.mapa_kraju(souhrn)
+        self.assertEqual(m[("600006018", "75-31-M/01")], "Jihomoravský")
+        self.assertEqual(m[("600006018", "79-41-K/81")], pn.KRAJ_NEURCEN)
+        self.assertEqual(pn.nadpis_kraje(pn.KRAJ_NEURCEN), pn.KRAJ_NEURCEN)
 
 
 class Nadpisy(unittest.TestCase):

@@ -1,10 +1,11 @@
 {
- "vytvoreno": "2026-09-29",
+ "vytvoreno": "2026-09-30",
  "generator": "scripts/build-pro-novinare.py",
  "obdobi": {
   "vysledky": "2026",
   "kolo2": "2026",
   "uchazeci": "2026",
+  "uchazeci_kolo2": "2026",
   "kriteria": "2026",
   "veletrhy": "2027"
  },
@@ -13,7 +14,8 @@
   "otisky": {
    "PZ2026_kolo1_skolobory_vysledky.xlsx": "a003441f4beed6fb9c181aa00f9d1a59a9c206ff10f113ad807740e68d5511d5",
    "PZ2026_kolo2_skolobory_vysledky.xlsx": "c69aca68fb2b2c1633571b1d64a4a1c25dd47d58d6d3cc969f939989a98cc926",
-   "PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx": "6e9ca63a52d26f9ae5d8c658c1d818cce12c8ef4a8c0b0d2752e6efaaa75e66f"
+   "PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx": "6e9ca63a52d26f9ae5d8c658c1d818cce12c8ef4a8c0b0d2752e6efaaa75e66f",
+   "PZ2026_kolo2_uchazeci_prihlasky_vysledky.xlsx": "88e15796185a1faf40b308aa8e7c75bc5e8a07fe664ee15ec87de66378a8ec32"
   }
  },
  "balicky": [
@@ -97,12 +99,12 @@
   },
   {
    "klic": "uchazeci",
-   "soubor": "uchazeci-1-kolo-2026",
-   "nazev": "Kam se dostali uchazeči v 1. kole 2026",
-   "popis": "Uchazeči 1. kola 2026 podle toho, na kolikátou volbu z přihlášky byli přijati, nebo zda se nedostali nikam.",
+   "soubor": "uchazeci-2026",
+   "nazev": "Kam se dostali uchazeči v 1. a 2. kole 2026",
+   "popis": "Uchazeči 1. kola 2026 podle toho, na kolikátou volbu z přihlášky byli přijati, nebo zda se nedostali nikam; uchazeči 2. kola a co víme o těch, kdo se nedostali ani ve 2. kole.",
    "soubory": [
     {
-     "soubor": "uchazeci-1-kolo-2026.xlsx",
+     "soubor": "uchazeci-2026.xlsx",
      "list": null,
      "radku": null,
      "format": "xlsx"
@@ -110,13 +112,31 @@
     {
      "soubor": "uchazeci-1-kolo-2026-kraje.csv",
      "list": "Po krajích",
-     "radku": 40,
+     "radku": 41,
      "format": "csv"
     },
     {
      "soubor": "uchazeci-1-kolo-2026-cesko.csv",
      "list": "Česko",
      "radku": 3,
+     "format": "csv"
+    },
+    {
+     "soubor": "uchazeci-2-kolo-2026-kraje.csv",
+     "list": "2. kolo po krajích",
+     "radku": 31,
+     "format": "csv"
+    },
+    {
+     "soubor": "uchazeci-2-kolo-2026-cesko.csv",
+     "list": "2. kolo Česko",
+     "radku": 3,
+     "format": "csv"
+    },
+    {
+     "soubor": "volna-mista-po-2-kole-2026.csv",
+     "list": "Volná místa po 2. kole",
+     "radku": 49,
      "format": "csv"
     }
    ]
@@ -243,6 +263,7 @@
      "volba1": 79918,
      "volba2": 18035,
      "nikam": 9550,
+     "nikam_s_jpz": 6284,
      "nikam_obe": 3839,
      "nikam_jen_pozadavek": 2363,
      "volba3": 9190,
@@ -252,6 +273,7 @@
      "uchazecu": 6839,
      "konali_jpz": 6705,
      "nikam": 4408,
+     "nikam_s_jpz": 4283,
      "nikam_jen_pozadavek": 815,
      "nikam_obe": 1624,
      "volba1": 1945,
@@ -264,6 +286,7 @@
      "konali_jpz": 18721,
      "volba1": 7368,
      "nikam": 10062,
+     "nikam_s_jpz": 9700,
      "nikam_jen_pozadavek": 1639,
      "volba2": 1151,
      "nikam_jen_kapacita": 6163,
@@ -273,15 +296,16 @@
    },
    "kraje_9": {
     "Jihomoravský kraj": {
-     "uchazecu": 12549,
-     "konali_jpz": 9319,
-     "volba2": 2099,
-     "volba1": 8258,
-     "volba3": 1155,
-     "nikam": 1037,
-     "nikam_jen_pozadavek": 242,
-     "nikam_obe": 429,
-     "nikam_jen_kapacita": 366
+     "uchazecu": 12484,
+     "konali_jpz": 9257,
+     "volba2": 2069,
+     "volba1": 8234,
+     "volba3": 1149,
+     "nikam": 1032,
+     "nikam_s_jpz": 728,
+     "nikam_jen_pozadavek": 241,
+     "nikam_obe": 428,
+     "nikam_jen_kapacita": 363
     },
     "Jihočeský kraj": {
      "uchazecu": 6990,
@@ -290,26 +314,29 @@
      "volba2": 949,
      "volba3": 372,
      "nikam": 272,
+     "nikam_s_jpz": 205,
      "nikam_jen_kapacita": 121,
      "nikam_jen_pozadavek": 52,
      "nikam_obe": 99
     },
     "Hlavní město Praha": {
-     "uchazecu": 19910,
-     "konali_jpz": 16178,
-     "volba1": 10512,
-     "volba2": 3661,
-     "nikam": 3366,
-     "nikam_obe": 1586,
-     "nikam_jen_pozadavek": 816,
-     "volba3": 2371,
-     "nikam_jen_kapacita": 964
+     "uchazecu": 19975,
+     "konali_jpz": 16240,
+     "volba1": 10536,
+     "volba2": 3691,
+     "nikam": 3371,
+     "nikam_s_jpz": 2383,
+     "nikam_obe": 1587,
+     "nikam_jen_pozadavek": 817,
+     "volba3": 2377,
+     "nikam_jen_kapacita": 967
     },
     "Olomoucký kraj": {
      "uchazecu": 6687,
      "konali_jpz": 4633,
      "volba1": 4845,
      "nikam": 349,
+     "nikam_s_jpz": 222,
      "nikam_jen_pozadavek": 65,
      "volba3": 506,
      "volba2": 987,
@@ -322,6 +349,7 @@
      "volba1": 6997,
      "volba2": 989,
      "nikam": 417,
+     "nikam_s_jpz": 222,
      "nikam_jen_pozadavek": 156,
      "nikam_jen_kapacita": 96,
      "volba3": 397,
@@ -332,6 +360,7 @@
      "konali_jpz": 8487,
      "volba1": 8732,
      "nikam": 580,
+     "nikam_s_jpz": 373,
      "nikam_obe": 158,
      "volba2": 1802,
      "volba3": 794,
@@ -345,6 +374,7 @@
      "volba1": 7807,
      "volba3": 915,
      "nikam": 1121,
+     "nikam_s_jpz": 704,
      "nikam_obe": 481,
      "nikam_jen_pozadavek": 343,
      "nikam_jen_kapacita": 297
@@ -355,6 +385,7 @@
      "volba1": 4368,
      "volba2": 911,
      "nikam": 402,
+     "nikam_s_jpz": 288,
      "nikam_jen_kapacita": 136,
      "volba3": 408,
      "nikam_jen_pozadavek": 125,
@@ -367,6 +398,7 @@
      "volba2": 1043,
      "volba3": 465,
      "nikam": 303,
+     "nikam_s_jpz": 200,
      "nikam_obe": 81,
      "nikam_jen_kapacita": 191,
      "nikam_jen_pozadavek": 31
@@ -377,6 +409,7 @@
      "volba1": 3299,
      "volba2": 835,
      "nikam": 468,
+     "nikam_s_jpz": 216,
      "nikam_obe": 141,
      "nikam_jen_kapacita": 206,
      "nikam_jen_pozadavek": 121,
@@ -388,6 +421,7 @@
      "volba1": 1879,
      "volba3": 232,
      "nikam": 223,
+     "nikam_s_jpz": 115,
      "nikam_jen_kapacita": 96,
      "volba2": 467,
      "nikam_jen_pozadavek": 59,
@@ -399,6 +433,7 @@
      "volba1": 4376,
      "volba2": 1046,
      "nikam": 426,
+     "nikam_s_jpz": 289,
      "nikam_jen_kapacita": 188,
      "nikam_jen_pozadavek": 77,
      "nikam_obe": 161,
@@ -410,6 +445,7 @@
      "volba2": 862,
      "volba1": 4428,
      "nikam": 418,
+     "nikam_s_jpz": 246,
      "nikam_jen_kapacita": 103,
      "volba3": 357,
      "nikam_obe": 170,
@@ -420,6 +456,7 @@
      "konali_jpz": 3693,
      "volba1": 4305,
      "nikam": 168,
+     "nikam_s_jpz": 93,
      "nikam_jen_kapacita": 70,
      "volba2": 565,
      "volba3": 216,
@@ -432,7 +469,263 @@
     "jen_nedenni_nebo_zkracene": 5468,
     "jen_nastavby": 8046
    },
-   "uchazecu": 142696
+   "uchazecu": 142696,
+   "vzdali_se_9": {
+    "s maturitou": 624,
+    "bez maturity": 800
+   },
+   "kolo2": {
+    "rocniky": {
+     "9": {
+      "uchazecu": 10564,
+      "s_vysledkem_jpz": 6180,
+      "prijati": 8793,
+      "neprijati": 1771,
+      "obe": 573,
+      "jen_maturitni": 545,
+      "bez_vysledku_jpz": 1046,
+      "jedna_prihlaska": 407,
+      "jen_kapacita": 491,
+      "ucebni_i_maturitni": 250,
+      "jen_pozadavek": 706,
+      "jen_ucebni": 976,
+      "jiny_duvod": 1
+     },
+     "7": {
+      "uchazecu": 283,
+      "s_vysledkem_jpz": 281,
+      "prijati": 92,
+      "neprijati": 191,
+      "obe": 35,
+      "jen_maturitni": 191,
+      "bez_vysledku_jpz": 1,
+      "jedna_prihlaska": 123,
+      "jen_kapacita": 132,
+      "jen_pozadavek": 24
+     },
+     "5": {
+      "uchazecu": 503,
+      "s_vysledkem_jpz": 483,
+      "prijati": 218,
+      "neprijati": 285,
+      "jen_pozadavek": 51,
+      "jen_maturitni": 285,
+      "bez_vysledku_jpz": 12,
+      "jedna_prihlaska": 216,
+      "obe": 31,
+      "jen_kapacita": 203
+     }
+    },
+    "kraje_9": {
+     "Jihomoravský kraj": {
+      "uchazecu": 1158,
+      "s_vysledkem_jpz": 748,
+      "prijati": 1047,
+      "neprijati": 111,
+      "jen_pozadavek": 65,
+      "jen_ucebni": 46,
+      "bez_vysledku_jpz": 65,
+      "jedna_prihlaska": 35,
+      "jen_maturitni": 55,
+      "ucebni_i_maturitni": 10,
+      "jen_kapacita": 24,
+      "obe": 22
+     },
+     "Olomoucký kraj": {
+      "uchazecu": 481,
+      "s_vysledkem_jpz": 241,
+      "prijati": 438,
+      "neprijati": 43,
+      "jen_pozadavek": 23,
+      "ucebni_i_maturitni": 4,
+      "bez_vysledku_jpz": 38,
+      "jedna_prihlaska": 24,
+      "obe": 4,
+      "jen_ucebni": 28,
+      "jen_kapacita": 16,
+      "jen_maturitni": 11
+     },
+     "Zlínský kraj": {
+      "uchazecu": 360,
+      "s_vysledkem_jpz": 183,
+      "prijati": 346,
+      "neprijati": 14,
+      "jen_kapacita": 5,
+      "jen_ucebni": 11,
+      "bez_vysledku_jpz": 11,
+      "jedna_prihlaska": 5,
+      "jen_pozadavek": 9,
+      "jen_maturitni": 3
+     },
+     "Liberecký kraj": {
+      "uchazecu": 462,
+      "s_vysledkem_jpz": 204,
+      "prijati": 326,
+      "neprijati": 136,
+      "obe": 37,
+      "ucebni_i_maturitni": 15,
+      "bez_vysledku_jpz": 106,
+      "jedna_prihlaska": 53,
+      "jen_pozadavek": 35,
+      "jen_maturitni": 15,
+      "jen_kapacita": 64,
+      "jen_ucebni": 106
+     },
+     "Středočeský kraj": {
+      "uchazecu": 1457,
+      "s_vysledkem_jpz": 893,
+      "prijati": 1177,
+      "neprijati": 280,
+      "jen_pozadavek": 145,
+      "jen_maturitni": 73,
+      "bez_vysledku_jpz": 163,
+      "jedna_prihlaska": 52,
+      "jen_ucebni": 164,
+      "obe": 93,
+      "ucebni_i_maturitni": 43,
+      "jen_kapacita": 42
+     },
+     "Kraj Vysočina": {
+      "uchazecu": 290,
+      "s_vysledkem_jpz": 149,
+      "prijati": 278,
+      "neprijati": 12,
+      "jen_pozadavek": 3,
+      "jen_ucebni": 7,
+      "bez_vysledku_jpz": 7,
+      "jedna_prihlaska": 6,
+      "obe": 3,
+      "jen_maturitni": 3,
+      "jen_kapacita": 6,
+      "ucebni_i_maturitni": 2
+     },
+     "Hlavní město Praha": {
+      "uchazecu": 2580,
+      "s_vysledkem_jpz": 1914,
+      "prijati": 1795,
+      "neprijati": 785,
+      "obe": 336,
+      "jen_maturitni": 279,
+      "bez_vysledku_jpz": 368,
+      "jedna_prihlaska": 75,
+      "jen_kapacita": 205,
+      "ucebni_i_maturitni": 140,
+      "jen_pozadavek": 244,
+      "jen_ucebni": 366
+     },
+     "Pardubický kraj": {
+      "uchazecu": 416,
+      "s_vysledkem_jpz": 254,
+      "prijati": 374,
+      "neprijati": 42,
+      "jen_pozadavek": 22,
+      "jen_maturitni": 16,
+      "bez_vysledku_jpz": 22,
+      "jedna_prihlaska": 17,
+      "obe": 7,
+      "ucebni_i_maturitni": 5,
+      "jen_ucebni": 21,
+      "jen_kapacita": 13
+     },
+     "Královéhradecký kraj": {
+      "uchazecu": 504,
+      "s_vysledkem_jpz": 269,
+      "prijati": 439,
+      "neprijati": 65,
+      "jen_pozadavek": 46,
+      "jen_ucebni": 42,
+      "bez_vysledku_jpz": 50,
+      "jedna_prihlaska": 19,
+      "obe": 11,
+      "ucebni_i_maturitni": 5,
+      "jen_maturitni": 18,
+      "jen_kapacita": 8
+     },
+     "Karlovarský kraj": {
+      "uchazecu": 272,
+      "s_vysledkem_jpz": 112,
+      "prijati": 211,
+      "neprijati": 61,
+      "jen_kapacita": 30,
+      "jen_maturitni": 10,
+      "bez_vysledku_jpz": 45,
+      "jedna_prihlaska": 24,
+      "jen_pozadavek": 20,
+      "ucebni_i_maturitni": 6,
+      "obe": 11,
+      "jen_ucebni": 45
+     },
+     "Ústecký kraj": {
+      "uchazecu": 797,
+      "s_vysledkem_jpz": 287,
+      "prijati": 704,
+      "neprijati": 93,
+      "obe": 17,
+      "jen_ucebni": 69,
+      "bez_vysledku_jpz": 81,
+      "jedna_prihlaska": 42,
+      "jen_pozadavek": 54,
+      "jen_maturitni": 20,
+      "ucebni_i_maturitni": 4,
+      "jen_kapacita": 22
+     },
+     "Jihočeský kraj": {
+      "uchazecu": 407,
+      "s_vysledkem_jpz": 207,
+      "prijati": 389,
+      "neprijati": 18,
+      "jen_kapacita": 9,
+      "jen_ucebni": 12,
+      "bez_vysledku_jpz": 10,
+      "jedna_prihlaska": 8,
+      "jen_pozadavek": 7,
+      "jen_maturitni": 4,
+      "obe": 2,
+      "ucebni_i_maturitni": 2
+     },
+     "Moravskoslezský kraj": {
+      "uchazecu": 873,
+      "s_vysledkem_jpz": 411,
+      "neprijati": 48,
+      "jen_pozadavek": 17,
+      "jen_maturitni": 15,
+      "bez_vysledku_jpz": 41,
+      "jedna_prihlaska": 28,
+      "prijati": 825,
+      "obe": 8,
+      "jen_kapacita": 23,
+      "jen_ucebni": 30,
+      "ucebni_i_maturitni": 3
+     },
+     "Plzeňský kraj": {
+      "uchazecu": 507,
+      "s_vysledkem_jpz": 308,
+      "prijati": 444,
+      "neprijati": 63,
+      "jen_kapacita": 24,
+      "jen_ucebni": 29,
+      "bez_vysledku_jpz": 39,
+      "jedna_prihlaska": 19,
+      "jen_pozadavek": 16,
+      "jen_maturitni": 23,
+      "obe": 22,
+      "ucebni_i_maturitni": 11,
+      "jiny_duvod": 1
+     }
+    },
+    "volno_9": {
+     "s maturitou": {
+      "nabidek": 1088,
+      "volnych_mist": 7249,
+      "nabidek_s_volnym_mistem": 907
+     },
+     "bez maturity": {
+      "nabidek": 1319,
+      "volnych_mist": 5696,
+      "nabidek_s_volnym_mistem": 997
+     }
+    }
+   }
   },
   "druhe_kolo": {
    "jpz": {

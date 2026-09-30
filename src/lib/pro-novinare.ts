@@ -25,7 +25,7 @@ export interface Balicek {
 
 export interface SouhrnProNovinare {
   vytvoreno: string;
-  obdobi: { vysledky: string; kolo2: string; uchazeci: string; kriteria: string; veletrhy: string };
+  obdobi: { vysledky: string; kolo2: string; uchazeci: string; uchazeci_kolo2: string; kriteria: string; veletrhy: string };
   zdroje: { platnost_vysledku: string };
   balicky: Balicek[];
   zip: string;
@@ -34,7 +34,15 @@ export interface SouhrnProNovinare {
     veletrhy: { akci_potvrzenych: number; akci_cekajicich: number; akci_od_dnes: number; kraju: number; mesicu: Record<string, number> };
     konzervatore: { skol: number; rejstrik_k: string; terminy: Record<string, string>; kolo1_rok: string; kolo1_denni: Pocty };
     obory: { nabidek: number; skol: number; prihlasek: number };
-    uchazeci: { rocniky: Record<'9' | '7' | '5', Pocty>; kraje_9: Record<string, Pocty>; uchazecu: number };
+    uchazeci: {
+      rocniky: Record<'9' | '7' | '5', Pocty>;
+      kraje_9: Record<string, Pocty>;
+      uchazecu: number;
+      /** Vzdali se přijetí v 1. kole, obory pro 9. třídu (souhrn CERMAT, přihlášky). */
+      vzdali_se_9: Record<string, number>;
+      /** null, když data uchazečů 2. kola roku `uchazeci` ještě nejsou převzatá. */
+      kolo2: { rocniky: Record<'9' | '7' | '5', Pocty>; kraje_9: Record<string, Pocty>; volno_9: Record<string, Pocty> } | null;
+    };
     druhe_kolo: { jpz: Pocty; bez_jpz: Pocty; kraje_jpz: Record<string, Pocty>; typy: Record<string, Pocty> };
     kriteria: Pocty;
   };

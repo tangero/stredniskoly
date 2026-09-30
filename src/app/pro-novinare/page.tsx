@@ -32,7 +32,7 @@ const POPIS_BALICKU: Record<string, string> = {
   veletrhy: 'Pro články o sezóně veletrhů v kraji: kde a kdy se koná, kdo akci pořádá.',
   konzervatore: 'Pro články o přihláškách, které se podávají už v listopadu.',
   obory: 'Pro srovnání škol a oborů v kraji: zájem, přijatí, body přijatých, 2. kolo.',
-  uchazeci: 'Pro články o tom, kolik dětí se v 1. kole nedostalo nikam, po krajích.',
+  uchazeci: 'Pro články o tom, kolik dětí se v 1. a 2. kole nedostalo nikam, po krajích, a kolik míst zbylo.',
   druhe_kolo: 'Pro články o 2. kole: kde byla místa a kde se nevešli ani ve 2. kole.',
   kriteria: 'Pro články o tom, co vedle jednotné zkoušky rozhoduje. Jmenovitě jen s ověřením u školy.',
 };
@@ -79,8 +79,11 @@ export default function ProNovinarePage() {
   const { veletrhy, konzervatore, uchazeci, druhe_kolo: k2, kriteria } = s.cisla;
   const r = s.obdobi;
   const d9 = uchazeci.rocniky['9'];
-  const d7 = uchazeci.rocniky['7'];
-  const d5 = uchazeci.rocniky['5'];
+  // 2. kolo uchazečů chybí, dokud data 2. kola téhož roku nejsou převzatá (květen až červen).
+  const k2u = uchazeci.kolo2;
+  const k9 = k2u?.rocniky['9'];
+  const v9 = k2u?.volno_9 ?? {};
+  const vzdali9 = Object.values(uchazeci.vzdali_se_9 ?? {}).reduce((a, b) => a + b, 0);
   const kraje9 = Object.entries(uchazeci.kraje_9).sort((a, b) => b[1].nikam / b[1].uchazecu - a[1].nikam / a[1].uchazecu);
   const kraje2 = Object.entries(k2.kraje_jpz).sort((a, b) => b[1].mist - a[1].mist);
   const kd = konzervatore.kolo1_denni;
@@ -153,9 +156,11 @@ export default function ProNovinarePage() {
 
           {/* ------------------------------------------------------------ */}
           <section aria-labelledby="uchazeci">
-            <h2 id="uchazeci" className="text-2xl font-bold mb-2">Kolik uchazečů se v 1. kole {r.uchazeci} nedostalo nikam</h2>
+            <h2 id="uchazeci" className="text-2xl font-bold mb-2">
+              Kolik uchazečů se v {k2u ? '1. a 2. kole' : '1. kole'} {r.uchazeci} nedostalo nikam
+            </h2>
             <p className="text-slate-700">
-              Počítáme uchazeče, které v 1. kole nepřijal žádný obor z přihlášky. Každý uchazeč se počítá jednou, se všemi
+              Počítáme uchazeče, které v daném kole nepřijal žádný obor z přihlášky. Každý uchazeč se počítá jednou, se všemi
               svými přihláškami včetně učebních oborů. Nepočítají se ti, kdo se hlásili jen na dálkové nebo zkrácené studium
               či na nástavbu, protože to nejsou žáci základní školy. <strong>Ročníky se nesčítají:</strong> kdo se nedostal na víceleté
               gymnázium, pokračuje na základní škole.
@@ -165,58 +170,158 @@ export default function ProNovinarePage() {
                 <thead className="bg-slate-100 text-left">
                   <tr>
                     <th className="p-3">Hlásí se z</th>
-                    <th className="p-3 text-right">Uchazečů</th>
-                    <th className="p-3 text-right">Přijati na 1. volbu</th>
-                    <th className="p-3 text-right">Nepřijati nikam</th>
+                    <th className="p-3 text-right">Uchazečů 1. kola</th>
+                    <th className="p-3 text-right">Nepřijati v 1. kole</th>
+                    {k2u && (
+                      <>
+                        <th className="p-3 text-right">Uchazečů 2. kola*</th>
+                        <th className="p-3 text-right">Přijati ve 2. kole</th>
+                        <th className="p-3 text-right">Nepřijati ani ve 2. kole</th>
+                      </>
+                    )}
                   </tr>
                 </thead>
                 <tbody>
-                  {[
-                    ['9. třídy (čtyřleté obory a obory bez maturity)', d9],
-                    ['5. třídy (osmiletá gymnázia)', d5],
-                    ['7. třídy (šestiletá gymnázia)', d7],
-                  ].map(([popis, c]) => {
-                    const p = c as Record<string, number>;
+                  {(
+                    [
+                      ['9. třídy', '9'],
+                      ['5. třídy (osmiletá gymnázia)', '5'],
+                      ['7. třídy (šestiletá gymnázia)', '7'],
+                    ] as const
+                  ).map(([popis, roc]) => {
+                    const p1 = uchazeci.rocniky[roc];
+                    const p2 = k2u?.rocniky[roc];
                     return (
-                      <tr key={popis as string} className="border-t border-slate-200">
-                        <td className="p-3">{popis as string}</td>
-                        <td className="p-3 text-right">{cislo(p.uchazecu)}</td>
-                        <td className="p-3 text-right">{procenta(p.volba1, p.uchazecu)}</td>
-                        <td className="p-3 text-right font-semibold">
-                          {cislo(p.nikam)} ({procenta(p.nikam, p.uchazecu)})
+                      <tr key={roc} className="border-t border-slate-200">
+                        <td className="p-3">{popis}</td>
+                        <td className="p-3 text-right">{cislo(p1.uchazecu)}</td>
+                        <td className="p-3 text-right">
+                          {cislo(p1.nikam)} ({procenta(p1.nikam, p1.uchazecu)})
                         </td>
+                        {p2 && (
+                          <>
+                            <td className="p-3 text-right">{cislo(p2.uchazecu)}</td>
+                            <td className="p-3 text-right">{cislo(p2.prijati)}</td>
+                            <td className="p-3 text-right font-semibold">{cislo(p2.neprijati)}</td>
+                          </>
+                        )}
                       </tr>
                     );
                   })}
                 </tbody>
               </table>
             </div>
+            {k2u && k9 ? (
+              <>
             <p className="text-sm text-slate-600 mt-3">
-              Z {cislo(d9.nikam)} deváťáků, které v 1. kole {r.uchazeci} nepřijal žádný obor, se {cislo(d9.nikam_jen_kapacita)}{' '}
-              všude nevešlo kvůli kapacitě, tedy splnili požadavky školy, ale jiní měli lepší výsledek. {cislo(d9.nikam_jen_pozadavek)}{' '}
-              všude nedosáhlo požadavku školy, například minima bodů, a u {cislo(d9.nikam_obe)} se stalo obojí. Pořadí na
-              přihlášce šanci na přijetí nemění, škola řadí jen podle svých kritérií.
+              * Uchazečů 2. kola: kdo podal přihlášku do 2. kola. Hlásit se mohou děti, kterým nevyšlo 1. kolo, ale také ti,
+              kdo se přijetí z 1. kola vzdali (u oborů pro 9. třídu {cislo(vzdali9)} přihlášek; data uchazečů je vedou jako
+              přijaté), nebo ti, kdo v 1. kole přihlášku nepodali. Deváťáků ve 2. kole je proto víc ({cislo(k9.uchazecu)}) než
+              těch, kdo v 1. kole zůstali bez místa ({cislo(d9.nikam)}). Podle výsledku jednotné zkoušky, kterou šlo psát jen
+              v 1. kole: bez výsledku jich bylo po 1. kole bez místa {cislo(d9.nikam - d9.nikam_s_jpz)} a ve 2. kole{' '}
+              {cislo(k9.uchazecu - k9.s_vysledkem_jpz)}, s výsledkem {cislo(d9.nikam_s_jpz)} a {cislo(k9.s_vysledkem_jpz)}.
+              Soubory 1. a 2. kola nemají společný identifikátor uchazeče, proto konkrétní dítě z 1. kola ve 2. kole nedohledáme
+              a kolik z nich jsou tytéž děti, ani odkud přesně rozdíl pochází, určit nejde.
             </p>
-            <details className="mt-4 bg-white border border-slate-200 rounded-xl p-4">
-              <summary className="cursor-pointer font-semibold">Deváťáci nepřijatí nikam podle krajů</summary>
-              <p className="text-sm text-slate-600 mt-2">
-                Kraj je kraj školy, kterou měl uchazeč na přihlášce jako první; bydliště uchazeče zdroj neuvádí.
+
+            <div className="mt-6 bg-white border border-slate-200 rounded-xl p-5">
+              <h3 className="font-semibold text-lg">
+                {cislo(k9.neprijati)} deváťáků bez místa ani po 2. kole: co o nich víme
+              </h3>
+              <ul className="list-disc pl-5 mt-3 space-y-2 text-sm text-slate-700">
+                <li>
+                  <strong>{cislo(k9.jen_ucebni)}</strong> z nich se ve 2. kole hlásilo jen na obory bez maturity, například učební
+                  obory s výučním listem; {cislo(k9.jen_maturitni)} jen na maturitní obory a {cislo(k9.ucebni_i_maturitni)} na oboje.
+                </li>
+                <li>
+                  <strong>{cislo(k9.jen_pozadavek)}</strong> všude nedosáhlo požadavku školy, například minima bodů,{' '}
+                  {cislo(k9.jen_kapacita)} se všude nevešlo kvůli kapacitě a u {cislo(k9.obe)} se stalo obojí.
+                </li>
+                <li>
+                  <strong>{cislo(k9.bez_vysledku_jpz)}</strong> nemá výsledek jednotné přijímací zkoušky, tedy ji v 1. kole nepsali
+                  nebo se na ni nepřihlásili. <strong>{cislo(k9.jedna_prihlaska)}</strong> podalo do 2. kola jedinou přihlášku.
+                </li>
+                <li>
+                  Volná místa existovala: po 2. kole zůstalo na oborech pro deváťáky{' '}
+                  <strong>{cislo(v9['s maturitou']?.volnych_mist)} volných míst na maturitních oborech</strong> a{' '}
+                  <strong>{cislo(v9['bez maturity']?.volnych_mist)} na oborech bez maturity</strong>, počítáno jen u oborů, které
+                  2. kolo vypsaly. Nemusela ale být tam, kde je děti potřebovaly: v jiném kraji, jiném oboru nebo s požadavky,
+                  které nesplnily.
+                </li>
+              </ul>
+              <p className="text-sm text-slate-700 mt-3">
+                <strong>Co nevíme:</strong> kam tyto děti nakonec nastoupily. Po 2. kole mohou školy vypisovat další kola na
+                volná místa, o nich ale CERMAT data nezveřejňuje. Kolik dětí zůstalo po přijímacím řízení bez střední školy, proto
+                ze zveřejněných dat zjistit nelze.
               </p>
-              <table className="w-full text-sm mt-3">
-                <tbody>
-                  {kraje9.map(([kraj, c]) => (
-                    <tr key={kraj} className="border-t border-slate-100">
-                      <td className="py-1.5">{kraj}</td>
-                      <td className="py-1.5 text-right">{cislo(c.nikam)} z {cislo(c.uchazecu)}</td>
-                      <td className="py-1.5 text-right w-16">{procenta(c.nikam, c.uchazecu)}</td>
+            </div>
+              </>
+            ) : (
+              <p className="text-sm text-slate-600 mt-3">
+                Data uchazečů 2. kola {r.uchazeci} zatím nejsou převzatá; CERMAT je zveřejňuje v červnu.
+              </p>
+            )}
+
+            <details open className="mt-4 bg-white border border-slate-200 rounded-xl p-4">
+              <summary className="cursor-pointer font-semibold">Deváťáci podle krajů: 1. a 2. kolo</summary>
+              <p className="text-sm text-slate-600 mt-2">
+                Kraj je kraj školy, kterou měl uchazeč na přihlášce jako první, a to v každém kole zvlášť; bydliště uchazeče
+                zdroj neuvádí. Kdo se v 1. kole nedostal v Praze, může ve 2. kole zkusit školu ve Středočeském kraji a započte se
+                tam. Počty obou kol v jednom kraji proto nejde od sebe odečítat.
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm mt-3">
+                  <thead className="text-left text-slate-600">
+                    <tr>
+                      <th className="py-1.5 font-normal">Kraj</th>
+                      <th className="py-1.5 font-normal text-right">Nepřijati v 1. kole</th>
+                      {k2u && (
+                        <>
+                          <th className="py-1.5 font-normal text-right">Uchazečů 2. kola</th>
+                          <th className="py-1.5 font-normal text-right">Přijati ve 2. kole</th>
+                          <th className="py-1.5 font-normal text-right">Nepřijati ani ve 2. kole</th>
+                        </>
+                      )}
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {kraje9.map(([kraj, c]) => {
+                      const c2 = k2u?.kraje_9[kraj];
+                      return (
+                        <tr key={kraj} className="border-t border-slate-100">
+                          <td className="py-1.5">{kraj}</td>
+                          <td className="py-1.5 text-right">
+                            {cislo(c.nikam)} z {cislo(c.uchazecu)} ({procenta(c.nikam, c.uchazecu)})
+                          </td>
+                          {k2u && (
+                            <>
+                              <td className="py-1.5 text-right">{c2 ? cislo(c2.uchazecu) : ''}</td>
+                              <td className="py-1.5 text-right">{c2 ? cislo(c2.prijati) : ''}</td>
+                              <td className="py-1.5 text-right">
+                                {c2 ? `${cislo(c2.neprijati)} (${procenta(c2.neprijati, c2.uchazecu)})` : ''}
+                              </td>
+                            </>
+                          )}
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
             </details>
             <p className="text-xs text-slate-500 mt-3">
-              Zdroj: CERMAT, data uchazečů 1. kola {r.uchazeci}, předběžná verze: platné přihlášky k 13. květnu {r.uchazeci}.
-              Přijetí zahrnuje i ty, kdo se ho později vzdali.
+              {k2u ? (
+                <>
+                  Zdroj: CERMAT, data uchazečů 1. kola {r.uchazeci} a 2. kola {r.uchazeci_kolo2}, předběžné verze: platné přihlášky
+                  k 13. květnu (1. kolo) a 23. červnu (2. kolo). Přijetí zahrnuje i ty, kdo se ho později vzdali. Volná místa:
+                  kapacita 2. kola minus přijatí, bez nástaveb.
+                </>
+              ) : (
+                <>
+                  Zdroj: CERMAT, data uchazečů 1. kola {r.uchazeci}, předběžná verze: platné přihlášky k 13. květnu. Přijetí
+                  zahrnuje i ty, kdo se ho později vzdali.
+                </>
+              )}
             </p>
           </section>
 
@@ -236,10 +341,10 @@ export default function ProNovinarePage() {
                   <tr>
                     <th className="p-3">Kraj (obory s jednotnou zkouškou)</th>
                     <th className="p-3 text-right">Místa</th>
-                    <th className="p-3 text-right hidden sm:table-cell">Přihlášky</th>
+                    <th className="p-3 text-right hidden sm:table-cell">Přihlášky*</th>
                     <th className="p-3 text-right">Přijatí</th>
                     <th className="p-3 text-right">Obsazeno</th>
-                    <th className="p-3 text-right">Nevešli se</th>
+                    <th className="p-3 text-right">Nevešli se**</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -257,10 +362,17 @@ export default function ProNovinarePage() {
               </table>
             </div>
             <p className="text-sm text-slate-600 mt-3">
-              Nevešli se: přihlášky uchazečů, kteří splnili požadavky školy, ale na místo se nedostali, protože jiní měli
-              lepší výsledek. Jeden uchazeč podává víc přihlášek, proto podíl přijatých na přihlášku není podíl úspěšných
-              uchazečů; kolik uchazečů se do 2. kola hlásilo, tato data neříkají. Vypsané 2. kolo neznamená, že ho škola
-              vypíše znovu: obory, které se v 1. kole nenaplnily, ho v roce {r.kolo2} vypsaly jen asi v polovině případů.
+              * Přihlášky: jeden uchazeč podává víc přihlášek, proto počet přihlášek není počet uchazečů a přijatí vydělení
+              přihláškami nejsou podíl úspěšných uchazečů. Kolik uchazečů se do 2. kola hlásilo a kolik jich bylo přijato,
+              ukazuje <a href="#uchazeci" style={{ color: '#0074e4' }}>tabulka uchazečů výše</a>.
+            </p>
+            <p className="text-sm text-slate-600 mt-1">
+              ** Nevešli se: přihlášky uchazečů, kteří splnili požadavky školy, ale na místo se nedostali, protože jiní měli
+              lepší výsledek.
+            </p>
+            <p className="text-sm text-slate-600 mt-3">
+              Vypsané 2. kolo neznamená, že ho škola vypíše znovu: obory, které se v 1. kole nenaplnily, ho v roce{' '}
+              {r.kolo2} vypsaly jen asi v polovině případů.
             </p>
             <p className="text-xs text-slate-500 mt-2">Zdroj: CERMAT, agregovaná data škol a oborů, 2. kolo {r.kolo2}; denní nezkrácené studium.</p>
           </section>
