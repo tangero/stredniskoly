@@ -29,6 +29,8 @@ import { ProfilOboru } from '@/components/obor/ProfilOboru';
 import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
 import { UlozitObor } from '@/components/obor/UlozitObor';
 import { createSlug } from '@/lib/utils';
+import { uplnyNazevZRejstriku } from '@/lib/rejstrik-nazev-skoly';
+import { nazevSkolyNadpis } from '@/lib/skola-vyklad';
 import { krajNames } from '@/types/school';
 
 
@@ -67,8 +69,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   // Různé meta tagy pro přehled vs detail
   if (pageInfo.type === 'overview') {
-    const title = `${school.nazev} - přehled oborů`;
-    const description = `Přehled všech oborů a zaměření školy ${school.nazev}. ${school.obec}, ${krajNames[school.kraj_kod] || school.kraj}`;
+    // Stejný název jako nadpis stránky: plný název z rejstříku MŠMT, jinak zkrácený s obcí.
+    const nazev = nazevSkolyNadpis(await uplnyNazevZRejstriku(pageInfo.redizo), school.nazev, school.obec);
+    const title = `${nazev} - přehled oborů`;
+    const description = `Přehled všech oborů a zaměření školy ${nazev}. ${krajNames[school.kraj_kod] || school.kraj}`;
 
     return {
       title,
@@ -182,7 +186,10 @@ export default async function SchoolDetailPage({ params }: Props) {
       const programy = [...overview.programs].sort((a, b) => a.obor.localeCompare(b.obor, 'cs') || b.delka_studia - a.delka_studia || a.id.localeCompare(b.id));
       const vypsane = new Set(programy.filter(p => match2026ToProgram(nabidky2026, p)).map(p => p.id));
       const prehled = `/skola/${redizo}-${createSlug(overview.nazev)}`;
-      const profil = await getProfilSkoly(redizo, overview.nazev, programy, vypsane);
+      const [profil, uplnyNazev] = await Promise.all([
+        getProfilSkoly(redizo, overview.nazev, programy, vypsane),
+        uplnyNazevZRejstriku(redizo),
+      ]);
       return (
         <div className="min-h-screen flex flex-col">
           <Header />
@@ -191,6 +198,7 @@ export default async function SchoolDetailPage({ params }: Props) {
               data={profil}
               skola={{
                 nazev: overview.nazev,
+                nadpis: nazevSkolyNadpis(uplnyNazev, overview.nazev, overview.obec),
                 adresa: overview.adresa_plna || overview.adresa,
                 obec: overview.obec,
                 okres: overview.okres,

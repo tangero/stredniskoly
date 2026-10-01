@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.35 · 1. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.36 · 1. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -92,8 +92,10 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **jak si škola vede** | nadpis oddílu s maturitou a inspekcí | není potřeba | kvalita školy, hodnocení školy |
 | **souběžní uchazeči**, **kam se hlásí stejní uchazeči** | uchazeči, kteří měli na přihlášce tento obor i obor jiné školy | „uchazeči, kteří měli na přihlášce i tento obor“ | konkurence, konkurenční škola |
 | **vzdušnou čarou** | vzdálenost bez ohledu na dopravu | vždy u vzdálenosti; dojezd je jiný údaj | daleko, blízko (bez čísla) |
-| **Potvrdila škola · datum** | údaj zadal pověřený člověk školy v portálu pro školy; nekontrolujeme ho předem, chybu opravujeme zpětně | značka u údaje, v patičce vysvětlení „údaj zadal pověřený člověk školy, nekontrolujeme ho předem“ | ověřeno, oficiální, schváleno, prošlo kontrolou |
-| **Opravila redakce · datum** | údaj od školy, ve kterém jsme našli a opravili chybu; v té podobě, v jaké je na stránce, ho škola nepotvrdila | značka u opravené hodnoty místo „Potvrdila škola“; v patičce „údaj od školy, ve kterém jsme opravili chybu“ | potvrdila škola (u opravené hodnoty), ověřeno, upraveno |
+| **Doplnila škola · datum** | údaj zadal pověřený člověk školy v portálu pro školy; nekontrolujeme ho předem, chybu opravujeme zpětně; netýká se dat CERMAT, MŠMT a ČŠI na téže stránce | značka u údaje nebo bloku („Škola doplnila údaje (naposledy 1. 10. 2026)“), v patičce vysvětlení „údaj doplnil pověřený člověk školy v portálu, nekontrolujeme ho předem“; nikdy v hlavičce stránky ani v rozcestníku | potvrdila škola (u údaje z portálu), ověřeno, oficiální, schváleno, prošlo kontrolou |
+| **Potvrdila škola · datum** | konkrétní údaj z oficiálních dat nebo z InspIS, jehož správnost nám škola výslovně potvrdila nebo opravila mimo portál (ruční oprava v `data/inspis_opravy.json`) | jen u toho jednoho údaje | u čehokoli jiného než u potvrzeného údaje |
+| **cizí jazyky** | živé jazyky z profilu školy v InspIS; latina a starořečtina se nepočítají a stojí zvlášť jako **klasické jazyky** | „1 cizí jazyk“, „2–4 cizí jazyky“, „5 cizích jazyků“ | jazyky (bez určení), cizí jazyky včetně latiny |
+| **Opravila redakce · datum** | údaj od školy, ve kterém jsme našli a opravili chybu; v té podobě, v jaké je na stránce, ho škola nepotvrdila | značka u opravené hodnoty místo „Doplnila škola“; v patičce „údaj od školy, ve kterém jsme opravili chybu“ | potvrdila škola (u opravené hodnoty), ověřeno, upraveno |
 | **Profil spravuje *jméno, funkce*** / **Profil spravuje škola** | kdo za školu v portálu vede profil (správce profilu); jméno a funkce jen se souhlasem správce, jinak druhá podoba ([účty portálu](ucty-portalu-skol-2027.md), oddíl 3) | není potřeba; na `/pro-skoly` u školy bez správce: „Škola se zatím nepřihlásila.“ | ověřeno, garant, odpovědná osoba; jména dalších editorů se neuvádějí vůbec |
 | **správce profilu**, **editor** | v portálu pro školy: kdo použil kód nebo odkaz první a zve kolegy; pozvaný kolega | jen v portálu, ne na stránce školy | administrátor, vlastník, uživatel školy |
 | **text školy** | popis školy vlastními slovy, neověřujeme | „text školy, neověřujeme“ | informace o škole, fakta |
@@ -142,6 +144,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.36 | Značka u údajů z portálu se jmenuje **Doplnila škola** místo **Potvrdila škola** (1. 10. 2026). Vedení jedné školy upozornilo, že „Potvrdila škola“ v hlavičce a v rozcestníku stránky školy působí, jako by škola potvrdila data CERMAT a InspIS, na které vůbec nesahala. Značka se proto z hlavičky i z věty rozcestníku stěhuje k blokům, které škola vyplnila, a hlavička říká, odkud jsou ostatní údaje. **Potvrdila škola** zůstává jen pro jednotlivý údaj, který nám škola výslovně potvrdila (ruční opravy, PR #220). Nový pojem **cizí jazyky** bez latiny a starořečtiny, se shodou číslovky. |
 | 1.35 | Pojmy **Čím školy žijí** a **výpis aktualit** pro nezalistovaný prototyp přehledu zpráv z webů škol podle oblasti (1. 10. 2026, [sonda mimo RSS](sonda-mimo-rss-2026.md)). Stránka vždy říká, u kolika škol zprávy čteme, aby chybějící školy nevypadaly jako školy, kde se nic neděje. |
 | 1.34 | Pojem **zřizovatel** (veřejná, soukromá, církevní škola) pro filtr v Simulátoru přijímaček (#210, podnět #172); školné se u něj jen zmiňuje jako možnost, výši v katalogu nemáme. Pojem **podnadpis pod názvem školy** pro pole portálu (#197); věta od školy nese značku **text školy**, jinak se skládá z oborů. |
 | 1.33 | Pojem **podle údajů školy** pro kritéria zadaná školou v portálu (30. 9. 2026, [prototyp kritérií](prototyp-kriteria-prijeti.md) bod 4). Blok kritérií na stránce oboru u nich nemá výhradu o přepisu PDF; kritéria pro ročník novější než přepis se píšou v přítomném čase a věta „teprve se vyhlásí“ odpadá. |
