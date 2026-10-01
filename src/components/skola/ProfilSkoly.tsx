@@ -574,8 +574,9 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
             <Karta className="space-y-1">
               <p className="text-[13px] font-semibold text-slate-500">Velikost</p>
               <p className="text-[18px] font-bold text-[#16325c]">{cislo(inspis.aktualni_pocet_zaku)} žáků</p>
+              {inspis.opravy?.aktualni_pocet_zaku ? <Puvod typ="skola">Potvrdila škola {formatDatumCz(inspis.opravy.aktualni_pocet_zaku.datum)}</Puvod> : null}
               {inspis.nejvyssi_povoleny_pocet_zaku ? <p className="text-[14px] text-slate-600">nejvýš povoleno {cislo(inspis.nejvyssi_povoleny_pocet_zaku)}</p> : null}
-              <Puvod typ="archiv" />
+              {!inspis.opravy?.aktualni_pocet_zaku || inspis.nejvyssi_povoleny_pocet_zaku ? <Puvod typ="archiv" /> : null}
             </Karta>
           ) : null}
           <Karta className="space-y-1">

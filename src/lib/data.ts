@@ -1144,11 +1144,37 @@ export async function getInspisDataset(): Promise<InspisDataset | null> {
   try {
     const filePath = path.join(process.cwd(), 'data', 'inspis_school_profiles.json');
     const data = await fs.readFile(filePath, 'utf-8');
-    inspisDataCache = JSON.parse(data) as InspisDataset;
+    const dataset = JSON.parse(data) as InspisDataset;
+    await pouzijInspisOpravy(dataset);
+    inspisDataCache = dataset;
     return inspisDataCache;
   } catch (error) {
     console.error('Chyba při načítání InspIS datasetu:', error);
     return null;
+  }
+}
+
+/**
+ * Přičte ruční opravy z data/inspis_opravy.json (např. počet žáků, který škola
+ * opravila e-mailem). Import InspIS přepisuje celý datový soubor, proto opravy
+ * žijí zvlášť a import je nepřepíše.
+ */
+async function pouzijInspisOpravy(dataset: InspisDataset): Promise<void> {
+  let opravy: Record<string, Record<string, { hodnota: unknown; zdroj: string; datum: string }>>;
+  try {
+    const filePath = path.join(process.cwd(), 'data', 'inspis_opravy.json');
+    opravy = (JSON.parse(await fs.readFile(filePath, 'utf-8')) as { skoly?: typeof opravy }).skoly ?? {};
+  } catch {
+    return;
+  }
+  for (const [redizo, pole] of Object.entries(opravy)) {
+    const skola = dataset.schools[redizo] as (SchoolInspisData & Record<string, unknown>) | undefined;
+    if (!skola) continue;
+    for (const [klic, o] of Object.entries(pole)) {
+      if (!(klic in skola)) continue;
+      skola[klic] = o.hodnota;
+      skola.opravy = { ...skola.opravy, [klic]: { zdroj: o.zdroj, datum: o.datum } };
+    }
   }
 }
 

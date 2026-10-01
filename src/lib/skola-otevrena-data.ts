@@ -129,6 +129,7 @@ export function sestavOtevrenaData(skola: SkolaZakladni, d: ProfilSkolyData, obd
     inspekcni_zpravy: (d.inspekceSeznam?.inspections ?? []).map(z => ({ od: z.dateFrom.slice(0, 10), do: z.dateTo.slice(0, 10), zprava: z.reportUrl })),
     profil_inspis: i ? {
       puvod: 'starsi_udaj_inspis_export_2026-02-11',
+      ...(i.opravy ? { opravy_od_skoly: i.opravy } : {}),
       ...bezNull({
         pocet_zaku: i.aktualni_pocet_zaku,
         nejvyssi_povoleny_pocet_zaku: i.nejvyssi_povoleny_pocet_zaku,
@@ -226,7 +227,7 @@ export function otevrenaDataMarkdown(o: OtevrenaDataSkoly): string {
   if (o.profil_inspis) {
     const p = o.profil_inspis;
     r.push('## Profil školy (starší údaj z InspIS, export 11. 2. 2026)', '');
-    if (p.pocet_zaku) r.push(`- **Žáků:** ${cislo(p.pocet_zaku)}${p.nejvyssi_povoleny_pocet_zaku ? ` (nejvýš ${cislo(p.nejvyssi_povoleny_pocet_zaku)})` : ''}`);
+    if (p.pocet_zaku) r.push(`- **Žáků:** ${cislo(p.pocet_zaku)}${p.nejvyssi_povoleny_pocet_zaku ? ` (nejvýš ${cislo(p.nejvyssi_povoleny_pocet_zaku)})` : ''}${p.opravy_od_skoly?.aktualni_pocet_zaku ? `; počet žáků opravila ${p.opravy_od_skoly.aktualni_pocet_zaku.zdroj}` : ''}`);
     if (p.specialiste?.length) r.push(`- **Specialisté:** ${p.specialiste.join(', ')}`);
     if (p.cizi_jazyky?.length) r.push(`- **Cizí jazyky:** ${p.cizi_jazyky.join(', ')}`);
     if (p.bezbarierovy_pristup) r.push(`- **Bezbariérový přístup:** ${p.bezbarierovy_pristup}`);

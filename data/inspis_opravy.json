@@ -1,0 +1,12 @@
+{
+  "_popis": "Ruční opravy polí z data/inspis_school_profiles.json. Import InspIS soubor nahrazuje celý, opravy se proto drží tady a přičítají se při načtení (src/lib/data.ts). Klíč je RED IZO, uvnitř název pole, nová hodnota, zdroj a datum.",
+  "skoly": {
+    "600004708": {
+      "aktualni_pocet_zaku": {
+        "hodnota": 493,
+        "zdroj": "škola (zástupce ředitele), e-mail 1. 10. 2026",
+        "datum": "2026-10-01"
+      }
+    }
+  }
+}

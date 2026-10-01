@@ -54,6 +54,7 @@ next-env.d.ts
 !/data/school_locations.json
 !/data/inspection_extractions.json
 !/data/inspis_school_profiles.json
+!/data/inspis_opravy.json
 !/data/inspis_coverage_summary.json
 !/data/csi_manifest.json
 !/data/csi_diff_latest.json

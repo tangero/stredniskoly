@@ -52,6 +52,14 @@ export interface SchoolInspisData {
   nabidka_dalsiho_vzdelavani: string[] | null;
 
   completeness_pct: number;
+
+  /** Pole přepsaná ručními opravami z data/inspis_opravy.json (údaj od školy). */
+  opravy?: Record<string, InspisOprava>;
+}
+
+export interface InspisOprava {
+  zdroj: string;
+  datum: string; // YYYY-MM-DD
 }
 
 export interface InspisDataset {
