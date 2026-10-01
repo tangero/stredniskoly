@@ -190,6 +190,17 @@ class ZdrojVypisu(unittest.TestCase):
             v, _, _ = self.zpracuj({"typ": "html"}, primo=ok(VYPIS))
         self.assertEqual((v["stav"], v["chyba"]), ("chyba", "čtečka výpisu: ValueError"))
 
+    def test_validatory_stare_adresy_se_neposilaji(self):
+        stav = {"feed_url": "https://skola.example.cz/feed/", "etag": '"stary"', "modified_since": "Tue, 01 Sep 2026 00:00:00 GMT"}
+        with mock.patch.object(sklizec, "stahni_feed", return_value=ok(VYPIS)) as sf, \
+                mock.patch.object(sklizec.vypis, "tinyfish_klic", return_value=None):
+            sklizec.zpracuj_skolu("600000001", {"feed_url": STRANKA, "typ": "html"}, stav, DNES)
+        self.assertEqual(sf.call_args.args[1:3], (None, None))
+        with mock.patch.object(sklizec, "stahni_feed", return_value=ok(VYPIS)) as sf, \
+                mock.patch.object(sklizec.vypis, "tinyfish_klic", return_value=None):
+            sklizec.zpracuj_skolu("600000001", {"feed_url": STRANKA, "typ": "html"}, {**stav, "feed_url": STRANKA}, DNES)
+        self.assertEqual(sf.call_args.args[1], '"stary"')
+
     def test_beze_zmeny_podle_etag(self):
         v, _, st = self.zpracuj({"typ": "html"}, primo={"beze_zmeny": True})
         self.assertEqual(v["stav"], "beze_zmeny")

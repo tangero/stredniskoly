@@ -261,6 +261,10 @@ def precti_zdroj_vypisu(zaznam: dict, stav: dict, dnes: date, timeout: int = TIM
 def zpracuj_skolu(redizo: str, zaznam: dict, stav: dict, dnes: date, timeout: int = TIMEOUT,
                   rozebirat: bool = False) -> dict:
     typ = zaznam.get("typ") or "rss"
+    if stav.get("feed_url") and stav["feed_url"] != zaznam["feed_url"]:
+        # Validátory (ETag, Last-Modified) patří staré adrese; s nimi by nový
+        # zdroj mohl odpovědět 304 a nikdy se nepřečíst.
+        stav = {**stav, "etag": None, "modified_since": None}
     vysledek = {"redizo": redizo, "feed_url": zaznam["feed_url"], "zdroj": zaznam.get("zdroj"), "typ": typ}
     if typ in TYPY_VYPISU:
         odpoved = precti_zdroj_vypisu(zaznam, stav, dnes, timeout)

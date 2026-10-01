@@ -161,16 +161,33 @@ test('přechod z výpisu aktualit na kanál zneplatní dřívější zprávy z v
   assert.ok(d.some((x) => /insert into skola_invalidace/.test(x.sql)));
 });
 
-test('chyba nového kanálu nezneplatní nic a typ zdroje nepřepne', async () => {
-  // Výpadek není zjištění: zprávy zůstávají a typ se přepne až úspěšným čtením.
-  const d = await zapisZdroj('html', { typ: 'rss', stav: 'chyba', chyba: 'HTTP 503', polozky: [] });
-  assert.equal(d.some((x) => /update skola_novinka set zneplatneno/.test(x.sql)), false);
+test('chyba ani 304 nového zdroje nic nezneplatní a typ nepřepnou', async () => {
+  // Výpadek ani „beze změny“ není přečtení: typ se přepne až skutečným čtením.
+  for (const zdroj of [{ stav: 'chyba', chyba: 'HTTP 503' }, { stav: 'beze_zmeny' }]) {
+    const d = await zapisZdroj('html', { typ: 'rss', polozky: [], ...zdroj });
+    assert.equal(d.some((x) => /update skola_novinka set zneplatneno/.test(x.sql)), false, zdroj.stav);
+    const upsert = d.find((x) => /insert into skola_feed/.test(x.sql));
+    assert.match(upsert.sql, /typ = case when \$11::boolean then excluded\.typ else skola_feed\.typ end/);
+    assert.equal(upsert.args[10], false, zdroj.stav);
+  }
+});
+
+test('přechod z kanálu na výpis zneplatní zprávy z kanálu', async () => {
+  // Jinak by přehled počítal staré zprávy z RSS jako čerstvý výpis aktualit.
+  const d = await zapisZdroj('rss', { typ: 'html', polozky: [{ identita: 'a1', otisk_obsahu: 'x', verze_pravidel: 'v1',
+    titulek: 'Sportovní den', url: 'https://skola.example.cz/aktuality/sportovni-den/' }] });
+  const z = d.find((x) => /update skola_novinka set zneplatneno/.test(x.sql));
+  assert.deepEqual(z.args, ['600000001', ['a1']]);
+});
+
+test('po změně adresy zdroje se staré validátory nepřenášejí', async () => {
+  const d = await zapisZdroj('rss', { typ: 'rss' });
   assert.match(d.find((x) => /insert into skola_feed/.test(x.sql)).sql,
-    /typ = case when excluded\.naposledy_ok is not null then excluded\.typ else skola_feed\.typ end/);
+    /etag = case when excluded\.feed_url is distinct from skola_feed\.feed_url then excluded\.etag/);
 });
 
 test('výpis zůstává výpisem a kanál kanálem: nic se nezneplatňuje', async () => {
-  for (const [pred, po] of [['html', 'tinyfish'], ['rss', 'rss'], ['rss', 'html'], [null, 'rss']]) {
+  for (const [pred, po] of [['html', 'tinyfish'], ['rss', 'rss'], ['atom', 'rss'], [null, 'rss'], [null, 'html']]) {
     const d = await zapisZdroj(pred, { typ: po });
     assert.equal(d.some((x) => /update skola_novinka set zneplatneno/.test(x.sql)), false, `${pred} → ${po}`);
   }
