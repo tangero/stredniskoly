@@ -1,0 +1,2029 @@
+{
+ "meta": {
+  "zdroj": [
+   "data/sondy/mimo-rss-20261001.json",
+   "data/sondy/mimo-rss-tinyfish-20261001.json"
+  ],
+  "vygenerovano": "2026-10-01",
+  "skript": "scripts/build-skoly-vypisy.py",
+  "poznamka": "Auditní export registru výpisů aktualit; provozní stav zdrojů je v tabulce skola_feed.",
+  "skol_html": 276,
+  "skol_tinyfish": 59,
+  "vyrazeno": {
+   "ma_feed": 0,
+   "stary_vypis": 8
+  }
+ },
+ "skoly": {
+  "600001873": {
+   "feed_url": "https://gmhs.cz/o-nas/aktuality.html",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gmhs.cz/"
+  },
+  "600004643": {
+   "feed_url": "https://www.spsdmasna.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.spsdmasna.cz/"
+  },
+  "600004678": {
+   "feed_url": "https://www.mssch.cz/aktualne/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.mssch.cz/"
+  },
+  "600004686": {
+   "feed_url": "https://www.betlemska.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.betlemska.cz/"
+  },
+  "600004741": {
+   "feed_url": "https://www.shs.cz/blog/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.shs.cz/"
+  },
+  "600004911": {
+   "feed_url": "https://www.gykas.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gykas.cz/"
+  },
+  "600005046": {
+   "feed_url": "https://www.gpisnicka.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gpisnicka.cz/"
+  },
+  "600005054": {
+   "feed_url": "https://www.gekom.cz/skola/aktualne.html",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gekom.cz/"
+  },
+  "600005178": {
+   "feed_url": "https://www.gevo.cz/jizni-mesto-novinky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gevo.cz/"
+  },
+  "600005402": {
+   "feed_url": "https://smvv.cz/novinky/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://smvv.cz/"
+  },
+  "600005496": {
+   "feed_url": "https://www.zatlanka.cz/skola/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.zatlanka.cz/"
+  },
+  "600005569": {
+   "feed_url": "https://www.dostihovaskola.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.dostihovaskola.cz/"
+  },
+  "600005640": {
+   "feed_url": "https://www.ssuar.cz/#",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ssuar.cz/"
+  },
+  "600005682": {
+   "feed_url": "https://www.gyarab.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gyarab.cz/"
+  },
+  "600005933": {
+   "feed_url": "https://www.gulz.cz/category/aktuality/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.gulz.cz"
+  },
+  "600005941": {
+   "feed_url": "https://www.oahovorcovicka.cz/pro-rodice-verejnost-a-media/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.oahovorcovicka.cz/"
+  },
+  "600005992": {
+   "feed_url": "https://www.ggg.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ggg.cz/"
+  },
+  "600006115": {
+   "feed_url": "https://www.ceskolipska.cz/novinky-106",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ceskolipska.cz/"
+  },
+  "600006123": {
+   "feed_url": "https://www.spszem.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.spszem.cz/"
+  },
+  "600006239": {
+   "feed_url": "https://www.sssvt.cz/informace/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sssvt.cz/"
+  },
+  "600006379": {
+   "feed_url": "https://www.umeleckoremeslna.cz/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.umeleckoremeslna.cz/"
+  },
+  "600006387": {
+   "feed_url": "https://www.sougastro.cz/novinky/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sougastro.cz/"
+  },
+  "600006441": {
+   "feed_url": "https://arcus9.cz/blog/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://arcus9.cz/"
+  },
+  "600006450": {
+   "feed_url": "https://arcus9.cz/blog/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://arcus9.cz/"
+  },
+  "600006514": {
+   "feed_url": "https://www.uzlabina.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.uzlabina.cz/"
+  },
+  "600006638": {
+   "feed_url": "https://www.ssesp10.cz/category/novinky/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.ssesp10.cz"
+  },
+  "600006654": {
+   "feed_url": "https://www.medialnigrafika.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.medialnigrafika.cz/"
+  },
+  "600006671": {
+   "feed_url": "https://www.gbn.cz/úvod/aktuality-2026-2027",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gbn.cz/"
+  },
+  "600006701": {
+   "feed_url": "https://www.vlasimoa.cz/novinky/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.vlasimoa.cz/"
+  },
+  "600006816": {
+   "feed_url": "https://gvh.cz/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.gvh.cz/"
+  },
+  "600006859": {
+   "feed_url": "https://www.soshlinky.cz/#",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.soshlinky.cz/"
+  },
+  "600006930": {
+   "feed_url": "https://1kspa-kladno.cz/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://1kspa-kladno.cz/"
+  },
+  "600007065": {
+   "feed_url": "https://www.spgsasoskladno.cz/aktuality-54",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.spgsasoskladno.cz/"
+  },
+  "600007120": {
+   "feed_url": "https://gcbrod.cz/aktuality/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.gcbrod.cz/"
+  },
+  "600007286": {
+   "feed_url": "https://voskh.cz/index.php/skola/stalo-se",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://voskh.cz/"
+  },
+  "600007308": {
+   "feed_url": "https://www.gfp.cz/category/inform/vyronci-zpravy/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.gfp.cz/"
+  },
+  "600007332": {
+   "feed_url": "https://www.dgkralupy.cz/aktualne/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.dgkralupy.cz/"
+  },
+  "600007383": {
+   "feed_url": "https://www.zas-me.cz/category/novinky/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.zas-me.cz"
+  },
+  "600007413": {
+   "feed_url": "https://www.g8mb.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.g8mb.cz/"
+  },
+  "600007448": {
+   "feed_url": "https://www.spsmb.cz/aktuality/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.spsmb.cz/"
+  },
+  "600007502": {
+   "feed_url": "https://www.pekargmb.cz/archiv",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.pekargmb.cz/"
+  },
+  "600007511": {
+   "feed_url": "https://www.souhorky.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.souhorky.cz/"
+  },
+  "600007537": {
+   "feed_url": "https://www.souhubalov.cz/zaci-a-rodice/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.souhubalov.cz/"
+  },
+  "600007545": {
+   "feed_url": "https://www.sou-skoda.cz/novinky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sou-skoda.cz/"
+  },
+  "600007570": {
+   "feed_url": "https://www.ekopodebrady.cz/ekogymnazium/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ekopodebrady.cz/ekogymnazium/"
+  },
+  "600007600": {
+   "feed_url": "https://www.szes.cz/category/aktuality/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.szes.cz"
+  },
+  "600007634": {
+   "feed_url": "http://www.gym-nymburk.cz/cs/incoming-events/2026-10-01/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "http://www.gym-nymburk.cz/skola/"
+  },
+  "600007707": {
+   "feed_url": "https://www.sslvt.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sslvt.cz/"
+  },
+  "600007731": {
+   "feed_url": "https://www.szesbrandys.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.szesbrandys.cz/"
+  },
+  "600007812": {
+   "feed_url": "https://www.gymkc.cz/clanky.html",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.gymkc.cz/"
+  },
+  "600007901": {
+   "feed_url": "https://www.sousedlcany.cz/?page_id=55",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sousedlcany.cz/"
+  },
+  "600007952": {
+   "feed_url": "https://gzw.cz/clanky/kategorie/35-skolni-knihovna",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://gzw.cz"
+  },
+  "600007961": {
+   "feed_url": "https://www.gym-ns.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gym-ns.cz/"
+  },
+  "600007987": {
+   "feed_url": "https://mozarako.cz",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://mozarako.cz"
+  },
+  "600007995": {
+   "feed_url": "https://www.gjvj.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gjvj.cz/"
+  },
+  "600008029": {
+   "feed_url": "https://www.gtnv.cz/domains/gtnv.cz/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.gtnv.cz/domains/gtnv.cz/"
+  },
+  "600008151": {
+   "feed_url": "https://www.gymceska.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymceska.cz/"
+  },
+  "600008185": {
+   "feed_url": "https://www.stavarna.com/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.stavarna.com/"
+  },
+  "600008193": {
+   "feed_url": "https://spsautocb.cz/ze-skoly/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://spsautocb.cz/"
+  },
+  "600008207": {
+   "feed_url": "https://www.spssecb.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.spssecb.cz/"
+  },
+  "600008274": {
+   "feed_url": "https://www.sos-jh.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sos-jh.cz/"
+  },
+  "600008291": {
+   "feed_url": "https://www.gymtrebon.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymtrebon.cz/"
+  },
+  "600008304": {
+   "feed_url": "http://www.oa-jhradec.cz/novinky-a-akce.html",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "http://www.oa-jhradec.cz/"
+  },
+  "600008410": {
+   "feed_url": "https://www.gymhu.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymhu.cz/"
+  },
+  "600008461": {
+   "feed_url": "https://www.hs-pe.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.hs-pe.cz/"
+  },
+  "600008487": {
+   "feed_url": "https://www.prumpe.cz/aktuality/?p=1",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.prumpe.cz"
+  },
+  "600008649": {
+   "feed_url": "https://www.gympt.cz/category/news/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.gympt.cz/"
+  },
+  "600008681": {
+   "feed_url": "https://stredni-skola.eu/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.stredni-skola.eu/"
+  },
+  "600008690": {
+   "feed_url": "https://www.gvimperk.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gvimperk.cz/"
+  },
+  "600008789": {
+   "feed_url": "https://www.gymstr.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymstr.cz/"
+  },
+  "600008801": {
+   "feed_url": "https://www.gymta.cz/cz/novinky-a-akce",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymta.cz/"
+  },
+  "600008819": {
+   "feed_url": "https://www.gym-so.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gym-so.cz/"
+  },
+  "600008851": {
+   "feed_url": "https://sos-veseli.cz/aktuality/cesty-za-poznanim-slovinsko-skryty-poklad-mezi-alpami-a-morem/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://sos-veseli.cz/"
+  },
+  "600008908": {
+   "feed_url": "https://gjsb.cz/clanky/aktivity/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://gymdom.cz/"
+  },
+  "600009327": {
+   "feed_url": "https://www.klatovynet.cz/gymkt/aktuality.asp",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.klatovynet.cz/gymkt/"
+  },
+  "600009416": {
+   "feed_url": "https://www.sossusice.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sossusice.cz/"
+  },
+  "600009424": {
+   "feed_url": "https://www.sszp.kt.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sszp.kt.cz/"
+  },
+  "600009548": {
+   "feed_url": "https://www.glp.cz",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.glp.cz"
+  },
+  "600009611": {
+   "feed_url": "https://www.cirkevni-gymnazium.cz/rubrika/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.cirkevni-gymnazium.cz/"
+  },
+  "600009637": {
+   "feed_url": "https://gfk.school/o-skole/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://gfk.school/"
+  },
+  "600009726": {
+   "feed_url": "https://www.sapss-plzen.cz/aktualni-skolni-rok/aktuality/novinky/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sapss-plzen.cz/"
+  },
+  "600009815": {
+   "feed_url": "https://www.sskralovice.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sskralovice.cz/"
+  },
+  "600009858": {
+   "feed_url": "https://skola-rokycany.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://skola-rokycany.cz/"
+  },
+  "600009904": {
+   "feed_url": "https://www.e-soas.cz/ostatni/blog",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.e-soas.cz/"
+  },
+  "600009963": {
+   "feed_url": "https://www.ssbor.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ssbor.cz/"
+  },
+  "600010082": {
+   "feed_url": "https://stredni.skolaklic.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://stredni.skolaklic.cz/"
+  },
+  "600010155": {
+   "feed_url": "https://www.lesnicka-skola.cz/category/aktuality/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.lesnicka-skola.cz"
+  },
+  "600010210": {
+   "feed_url": "http://www.skolavdf.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "http://www.skolavdf.cz/"
+  },
+  "600010228": {
+   "feed_url": "https://www.libverdadc.cz/category/aktualne/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.libverdadc.cz"
+  },
+  "600010279": {
+   "feed_url": "https://gymrumburk.cz/aktuality/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://gymrumburk.cz/"
+  },
+  "600010325": {
+   "feed_url": "https://www.gymkl.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymkl.cz/"
+  },
+  "600010767": {
+   "feed_url": "https://www.skolaekonom.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.skolaekonom.cz/"
+  },
+  "600010830": {
+   "feed_url": "https://www.gjj.cz/aktuality/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.gjj.cz/"
+  },
+  "600010848": {
+   "feed_url": "https://www.gym-rce.cz/skola/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gym-rce.cz/"
+  },
+  "600010856": {
+   "feed_url": "https://www.podripskaskola.cz/novinky/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.podripskaskola.cz/"
+  },
+  "600010911": {
+   "feed_url": "http://www.gymlovo.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "http://www.gymlovo.cz/"
+  },
+  "600010929": {
+   "feed_url": "https://www.glouny.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.glouny.cz/"
+  },
+  "600011020": {
+   "feed_url": "https://www.soazatec.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.soazatec.cz/"
+  },
+  "600011038": {
+   "feed_url": "https://www.spsezatec.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.spsezatec.cz/"
+  },
+  "600011216": {
+   "feed_url": "https://www.gymtce.cz/cs/zpravy",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymtce.cz/"
+  },
+  "600011453": {
+   "feed_url": "https://www.gym-ul.cz/skola/archiv-aktualit-na-webu",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gym-ul.cz/"
+  },
+  "600011577": {
+   "feed_url": "https://www.sste.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sste.cz/"
+  },
+  "600011658": {
+   "feed_url": "https://www.spsstavhk.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.spsstavhk.cz/"
+  },
+  "600011682": {
+   "feed_url": "https://www.gnb.cz/dp/vybery=3",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gnb.cz/"
+  },
+  "600011712": {
+   "feed_url": "https://www.sssoghk.cz/category/aktualne/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.sssoghk.cz"
+  },
+  "600011763": {
+   "feed_url": "https://www.sstrnb.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sstrnb.cz/"
+  },
+  "600012000": {
+   "feed_url": "https://www.moa-jc.cz/aktuality2",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.moa-jc.cz/"
+  },
+  "600012077": {
+   "feed_url": "https://www.spsks.cz/cs/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.spsks.cz/"
+  },
+  "600012093": {
+   "feed_url": "https://www.sposka.cz/denni-studium-ve-skole/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sposka.cz/"
+  },
+  "600012107": {
+   "feed_url": "https://www.gybroumov.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gybroumov.cz/"
+  },
+  "600012123": {
+   "feed_url": "https://gjz.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://gjz.cz/"
+  },
+  "600012247": {
+   "feed_url": "https://www.zdravkanachod.cz/skola/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.zdravkanachod.cz/"
+  },
+  "600012328": {
+   "feed_url": "https://oapce.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://oapce.cz/"
+  },
+  "600012352": {
+   "feed_url": "https://www.spspas.cz/novinky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.spspas.cz/"
+  },
+  "600012409": {
+   "feed_url": "https://www.sgpce.cz/novinky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sgpce.cz/"
+  },
+  "600012417": {
+   "feed_url": "https://www.delta-skola.cz/aktuality-blog",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.delta-skola.cz/"
+  },
+  "600012549": {
+   "feed_url": "https://www.gympldka.cz/index.php",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.gympldka.cz/"
+  },
+  "600012557": {
+   "feed_url": "https://www.grk.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.grk.cz/"
+  },
+  "600012581": {
+   "feed_url": "https://www.oakostelec.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.oakostelec.cz/"
+  },
+  "600012590": {
+   "feed_url": "https://spselitdobruska.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://spselitdobruska.cz/"
+  },
+  "600012638": {
+   "feed_url": "https://www.gytu.cz/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.gytu.cz/"
+  },
+  "600012735": {
+   "feed_url": "https://www.soupolicka.cz/aktualne-2/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.soupolicka.cz"
+  },
+  "600012808": {
+   "feed_url": "https://www.ssospolicka.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ssospolicka.cz/"
+  },
+  "600012824": {
+   "feed_url": "https://www.technikasvitavy.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.technikasvitavy.cz/"
+  },
+  "600012841": {
+   "feed_url": "https://www.tradingcentre.cz/novinky/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.tradingcentre.cz/"
+  },
+  "600012891": {
+   "feed_url": "https://www.krgym.cz/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.gymvr.cz/"
+  },
+  "600012905": {
+   "feed_url": "https://www.clatrutnov.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.clatrutnov.cz/"
+  },
+  "600013065": {
+   "feed_url": "https://www.gymuo.cz/seznam-vsech-aktualit/stalo-se",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymuo.cz/"
+  },
+  "600013081": {
+   "feed_url": "https://gyz.cz/blog/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.gyz.cz/"
+  },
+  "600013090": {
+   "feed_url": "https://www.skolalipka.cz/category/aktuality/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.soukraliky.orlicko.cz"
+  },
+  "600013260": {
+   "feed_url": "https://www.gymnaziumrajec.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymnaziumrajec.cz/"
+  },
+  "600013278": {
+   "feed_url": "https://www.skolaac.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.skolaac.cz/"
+  },
+  "600013359": {
+   "feed_url": "https://www.stredni-skola.cz/cs/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.stredni-skola.cz/"
+  },
+  "600013391": {
+   "feed_url": "https://sosblansko.cz/blog/viewcategory/1",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://sosblansko.cz/"
+  },
+  "600013405": {
+   "feed_url": "https://www.bigy.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.bigy.cz/"
+  },
+  "600013413": {
+   "feed_url": "https://www.gyrec.cz/Home/Articles/78",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gyrec.cz/"
+  },
+  "600013626": {
+   "feed_url": "https://www.gml.cz/vsechny-clanky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gml.cz/"
+  },
+  "600013715": {
+   "feed_url": "https://www.bpa-brno.cz/aktuality/116-cyklobranny-kurz",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.bpa-brno.cz/"
+  },
+  "600013731": {
+   "feed_url": "https://www.sos-morava.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sos-morava.cz/"
+  },
+  "600013758": {
+   "feed_url": "https://www.eko-g.cz/novinky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.eko-g.cz/"
+  },
+  "600013766": {
+   "feed_url": "https://www.charbulova.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.charbulova.cz/"
+  },
+  "600013782": {
+   "feed_url": "https://www.cichnovabrno.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.cichnovabrno.cz/"
+  },
+  "600013821": {
+   "feed_url": "https://www.jilova.cz/#",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.jilova.cz"
+  },
+  "600013847": {
+   "feed_url": "https://www.soubosonohy.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.soubosonohy.cz/"
+  },
+  "600013928": {
+   "feed_url": "https://spschg.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://spschg.cz/"
+  },
+  "600014118": {
+   "feed_url": "https://www.gymklob.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymklob.cz/"
+  },
+  "600014312": {
+   "feed_url": "https://gyotr.cz/clanky/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://gyotr.cz/"
+  },
+  "600014339": {
+   "feed_url": "https://www.gymnazium-vk.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymnazium-vk.cz/"
+  },
+  "600014398": {
+   "feed_url": "http://www.gjszlin.cz/gztgm/#",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "http://www.gjszlin.cz/gztgm/"
+  },
+  "600014452": {
+   "feed_url": "https://skolaaxis.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://skolaaxis.cz/"
+  },
+  "600014487": {
+   "feed_url": "https://www.souviz.cz/aktualne",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.souviz.cz/"
+  },
+  "600014517": {
+   "feed_url": "https://www.souvk.cz/#k01",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.souvk.cz/"
+  },
+  "600014533": {
+   "feed_url": "https://www.gymkyjov.cz/novinky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymkyjov.cz/"
+  },
+  "600014541": {
+   "feed_url": "https://www.gys.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gys.cz/"
+  },
+  "600014622": {
+   "feed_url": "https://www.oaveseli.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.oaveseli.cz/"
+  },
+  "600014681": {
+   "feed_url": "https://www.prumyslovka.cz/novinky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.prumyslovka.cz/"
+  },
+  "600014843": {
+   "feed_url": "https://www.prumyslovkajihlava.cz/category/aktualne/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.ssptaji.cz"
+  },
+  "600014932": {
+   "feed_url": "https://adfontes.cz/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.adfontes.cz/"
+  },
+  "600014941": {
+   "feed_url": "https://www.gymkrom.cz/aktualne",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymkrom.cz/"
+  },
+  "600014991": {
+   "feed_url": "https://www.ped-km.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ped-km.cz/"
+  },
+  "600015068": {
+   "feed_url": "https://www.ssno.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ssno.cz/"
+  },
+  "600015076": {
+   "feed_url": "https://www.vetkm.cz/novinky/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.vetkm.cz"
+  },
+  "600015157": {
+   "feed_url": "https://www.gjwprostejov.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gjwprostejov.cz/"
+  },
+  "600015165": {
+   "feed_url": "https://www.svehlova.cz/category/aktuality/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.svehlova.cz"
+  },
+  "600015301": {
+   "feed_url": "https://www.rg.prostejov.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.rg.prostejov.cz/"
+  },
+  "600015319": {
+   "feed_url": "https://ssaprostejov.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://ssaprostejov.cz/"
+  },
+  "600015327": {
+   "feed_url": "https://www.kgtrebic.cz/category/novinky/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.kgtrebic.cz"
+  },
+  "600015335": {
+   "feed_url": "https://www.gymsosmb.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymsosmb.cz/"
+  },
+  "600015408": {
+   "feed_url": "https://www.ssrs.cz/uvod/novinky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ssrs.cz/"
+  },
+  "600015441": {
+   "feed_url": "https://stavtr.cz/vypis-clanku/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://stavtr.cz/"
+  },
+  "600015491": {
+   "feed_url": "https://www.cirkevka-bojkovice.cz/index.php/cs/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.cirkevka-bojkovice.cz/index.php/cs/"
+  },
+  "600015513": {
+   "feed_url": "https://www.oauh.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.oauh.cz/"
+  },
+  "600015556": {
+   "feed_url": "https://www.sosgsm.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sosgsm.cz/"
+  },
+  "600015700": {
+   "feed_url": "https://www.gymzn.cz/clanky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymzn.cz"
+  },
+  "600015726": {
+   "feed_url": "https://www.mkgym.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.mkgym.cz/"
+  },
+  "600015793": {
+   "feed_url": "https://www.ssmk.eu/aktualne",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ssmk.eu/"
+  },
+  "600015831": {
+   "feed_url": "https://www.bigyzr.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.bigyzr.cz"
+  },
+  "600015874": {
+   "feed_url": "https://www.ga-te.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ga-te.cz/"
+  },
+  "600015882": {
+   "feed_url": "https://www.ssgak.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ssgak.cz"
+  },
+  "600015904": {
+   "feed_url": "https://www.gynome.cz/studium1/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gynome.cz/"
+  },
+  "600015955": {
+   "feed_url": "https://www.gymzr.cz/archiv/stranka-2",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymzr.cz/"
+  },
+  "600016005": {
+   "feed_url": "https://www.gybnp.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gybnp.cz/"
+  },
+  "600016013": {
+   "feed_url": "https://www.obchodskolazr.cz/aktualne",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.obchodskolazr.cz/"
+  },
+  "600016056": {
+   "feed_url": "https://www.gymnaziumkrnov.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymnaziumkrnov.cz/"
+  },
+  "600016188": {
+   "feed_url": "https://www.gymsosrym.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymsosrym.cz/"
+  },
+  "600016218": {
+   "feed_url": "https://www.souzma.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.souzma.cz/"
+  },
+  "600016251": {
+   "feed_url": "https://www.gymfrydl.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymfrydl.cz/"
+  },
+  "600016307": {
+   "feed_url": "https://www.ssremesel.cz/aktualne",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ssremesel.cz/"
+  },
+  "600016323": {
+   "feed_url": "https://pojfm.cz/skola/o-skole/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://pojfm.cz/"
+  },
+  "600016358": {
+   "feed_url": "https://www.primmat.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.primmat.cz/"
+  },
+  "600016374": {
+   "feed_url": "https://www.ssinfotech.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ssinfotech.cz/"
+  },
+  "600016412": {
+   "feed_url": "https://www.ssosfm.cz/aktuality-a-fotogalerie/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ssosfm.cz/"
+  },
+  "600016455": {
+   "feed_url": "https://www.gym-bohumin.cz/cz/aktualne/aktuality/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.gym-bohumin.cz/"
+  },
+  "600016463": {
+   "feed_url": "http://www.gmct.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "http://www.gmct.cz/"
+  },
+  "600016501": {
+   "feed_url": "https://www.gympol.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gympol.cz/"
+  },
+  "600016552": {
+   "feed_url": "https://www.stavha.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.stavha.cz/"
+  },
+  "600016617": {
+   "feed_url": "https://www.obaka-karvina.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.obaka-karvina.cz/"
+  },
+  "600016625": {
+   "feed_url": "https://www.dakol-karvina.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.dakol-karvina.cz/"
+  },
+  "600016633": {
+   "feed_url": "https://www.dakol-karvina.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.dakol-karvina.cz/"
+  },
+  "600016668": {
+   "feed_url": "http://www.sosboh.cz/cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "http://www.sosboh.cz/"
+  },
+  "600016749": {
+   "feed_url": "https://www.frengp.cz/skola/aktualne/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.frengp.cz/"
+  },
+  "600016773": {
+   "feed_url": "https://www.gmk.cz/c/aktuality/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.gmk.cz/"
+  },
+  "600016781": {
+   "feed_url": "https://www.voskop.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.voskop.cz/"
+  },
+  "600016820": {
+   "feed_url": "https://www.gnj.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gnj.cz/"
+  },
+  "600016838": {
+   "feed_url": "https://www.cssodry.cz/aktuality.aspx",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.cssodry.cz/"
+  },
+  "600016846": {
+   "feed_url": "https://www.tznj.cz/blog/sport",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.tznj.cz/"
+  },
+  "600016943": {
+   "feed_url": "http://www.sgo.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "http://www.sgo.cz/"
+  },
+  "600016994": {
+   "feed_url": "https://www.sou-stbk.cz/#aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sou-stbk.cz/"
+  },
+  "600017028": {
+   "feed_url": "https://www.soss.cz/website/mainmenu/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.soss.cz/website/mainmenu/aktuality/"
+  },
+  "600017036": {
+   "feed_url": "https://www.cgnr.cz/nastenka/aktualita-1t",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.cgnr.cz/"
+  },
+  "600017061": {
+   "feed_url": "https://www.stursovka.cz/skola/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.stursovka.cz/"
+  },
+  "600017079": {
+   "feed_url": "http://www.unicprum.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "http://www.unicprum.cz/"
+  },
+  "600017141": {
+   "feed_url": "https://skolaodborna.cz/pro-verejnost/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://skolaodborna.cz/"
+  },
+  "600017214": {
+   "feed_url": "https://www.sosunicov.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sosunicov.cz/"
+  },
+  "600017257": {
+   "feed_url": "https://www.oa-opava.cz/index.php/skola/zpravy-z-webu",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.oa-opava.cz/"
+  },
+  "600017389": {
+   "feed_url": "https://www.spsopava.cz/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.spsopava.cz/"
+  },
+  "600017401": {
+   "feed_url": "http://www.podnikatelskaskola.cz/sites/news.php",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "http://www.podnikatelskaskola.cz/"
+  },
+  "600017451": {
+   "feed_url": "https://www.ghrabuvka.cz/all",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ghrabuvka.cz/"
+  },
+  "600017541": {
+   "feed_url": "https://www.b-g.cz/zivot-na-bigy/novinky/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.b-g.cz/"
+  },
+  "600017842": {
+   "feed_url": "https://www.gjb-spgs.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gjb-spgs.cz/"
+  },
+  "600017869": {
+   "feed_url": "https://www.spsslipnik.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.spsslipnik.cz/"
+  },
+  "600017907": {
+   "feed_url": "https://spshranice.cz/aktualne/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://spshranice.cz/"
+  },
+  "600017915": {
+   "feed_url": "https://www.gjs.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gjs.cz/"
+  },
+  "600018083": {
+   "feed_url": "https://www.vsps-su.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.vsps-su.cz/"
+  },
+  "600018091": {
+   "feed_url": "https://www.spsa-za.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.spsa-za.cz/"
+  },
+  "600018113": {
+   "feed_url": "https://www.mgvsetin.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.mgvsetin.cz/"
+  },
+  "600018148": {
+   "feed_url": "https://www.gfpvm.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gfpvm.cz/"
+  },
+  "600018164": {
+   "feed_url": "https://stavebkavalmez.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://stavebkavalmez.cz/?ref="
+  },
+  "600018181": {
+   "feed_url": "https://sscrroznov.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://sscrroznov.cz/"
+  },
+  "600018199": {
+   "feed_url": "http://www.kostka-skola.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "http://www.kostka-skola.cz/"
+  },
+  "600018318": {
+   "feed_url": "https://www.sosjesenik.cz/category/novinky/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.sosjesenik.cz"
+  },
+  "600018334": {
+   "feed_url": "https://www.emkojesenik.cz/./aktualne/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.soje.cz"
+  },
+  "600018351": {
+   "feed_url": "https://www.gymjes.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymjes.cz/"
+  },
+  "600019462": {
+   "feed_url": "https://www.zdravotnickaskola5kvetna.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.zdravotnickaskola5kvetna.cz/"
+  },
+  "600019519": {
+   "feed_url": "https://www.svzskladno.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.svzskladno.cz/"
+  },
+  "600019527": {
+   "feed_url": "https://www.zdravotka.cz/o-skole/aktuality/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.zdravotka.cz/"
+  },
+  "600019551": {
+   "feed_url": "https://www.zdravkanbk.cz/cs/Aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.zdravkanbk.cz/cs/Tituln%C3%AD+str%C3%A1nka/"
+  },
+  "600019594": {
+   "feed_url": "https://www.zdravkack.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.zdravkack.cz/"
+  },
+  "600019608": {
+   "feed_url": "https://szsjh.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://szsjh.cz/"
+  },
+  "600019624": {
+   "feed_url": "http://www.szs-tabor.cz/category/skolni-novinky/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "http://www.szs-tabor.cz/"
+  },
+  "600019691": {
+   "feed_url": "https://www.szds-oa.cz/cz/o-skole-aktuality.html",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.szds-oa.cz/"
+  },
+  "600019829": {
+   "feed_url": "https://www.szstrutnov.cz/novinky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.szstrutnov.cz/"
+  },
+  "600020011": {
+   "feed_url": "https://www.zdrskolafm.cz/aktualne/aktuality.php",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.zdrskolafm.cz/"
+  },
+  "600020029": {
+   "feed_url": "https://www.sszdra-karvina.cz/novinky",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.sszdra-karvina.cz/"
+  },
+  "600020053": {
+   "feed_url": "https://www.epol.cz/o-skole/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.epol.cz/"
+  },
+  "600020151": {
+   "feed_url": "https://www.skolakrizik.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.skolakrizik.cz/"
+  },
+  "600020266": {
+   "feed_url": "https://www.sps-pi.cz/index.php?type=Blog&id=89&ids=8",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sps-pi.cz/index.php?type=Blog&id=89&ids=8"
+  },
+  "600020274": {
+   "feed_url": "https://www.lespi.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.lespi.cz/"
+  },
+  "600020282": {
+   "feed_url": "https://www.spgspt.cz/index.html#news",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.spgspt.cz/"
+  },
+  "600020291": {
+   "feed_url": "https://www.srs-vodnany.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.srs-vodnany.cz/"
+  },
+  "600020321": {
+   "feed_url": "https://www.oatabor.cz/skola/aktualne/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.oatabor.cz/"
+  },
+  "600020339": {
+   "feed_url": "https://www.szestabor.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.szestabor.cz/"
+  },
+  "600020347": {
+   "feed_url": "https://www.glassschool.cz/index.asp?p1=51",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.glassschool.cz/"
+  },
+  "600020355": {
+   "feed_url": "https://www.prumkadc.cz/ke-stazeni/dokumenty-skoly/vyrocni-zpravy",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.prumkadc.cz/"
+  },
+  "600020797": {
+   "feed_url": "https://www.jecna27.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.jecna27.cz/"
+  },
+  "600021050": {
+   "feed_url": "https://www.vymolova.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.vymolova.cz/"
+  },
+  "600025047": {
+   "feed_url": "https://www.kamenomlynska.cz/aktuality",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.kamenomlynska.cz"
+  },
+  "600077594": {
+   "feed_url": "https://www.mgzsjirkov.cz/zakladni-skola/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.mgzsjirkov.cz/"
+  },
+  "600170039": {
+   "feed_url": "https://www.sps-prosek.cz/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.sps-prosek.cz/"
+  },
+  "600170071": {
+   "feed_url": "https://www.soslp.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.soslp.cz/"
+  },
+  "600170128": {
+   "feed_url": "https://www.sou-dubska.cz/?module=news",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sou-dubska.cz/?module=news"
+  },
+  "600170195": {
+   "feed_url": "https://www.copnb.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.copnb.cz/"
+  },
+  "600170276": {
+   "feed_url": "https://www.sosehl.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sosehl.cz/"
+  },
+  "600170292": {
+   "feed_url": "http://www.sso.cz/44/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "http://www.sso.cz/"
+  },
+  "600170560": {
+   "feed_url": "https://sosruska.cz/novinky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://sosruska.cz/"
+  },
+  "600170675": {
+   "feed_url": "https://www.sostp.cz/aktuality-hotelova-skola-aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sostp.cz/"
+  },
+  "600170764": {
+   "feed_url": "https://www.sosasou-vocelova.cz/novinky/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.sosasou-vocelova.cz/"
+  },
+  "600170802": {
+   "feed_url": "http://www.ssgs.cz/kategorie/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "http://www.ssgs.cz/"
+  },
+  "600170837": {
+   "feed_url": "https://www.spsauto.cz/o-skole/novinky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.spsauto.cz/"
+  },
+  "600170900": {
+   "feed_url": "https://www.iss-vysokenj.cz/studenti/domov-mladeze/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.iss-vysokenj.cz/"
+  },
+  "600170993": {
+   "feed_url": "https://www.technickavm.cz/category/novinky/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.technickavm.cz"
+  },
+  "600171027": {
+   "feed_url": "https://www.purkynka.cz/category/aktualne/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.purkynka.cz"
+  },
+  "600171086": {
+   "feed_url": "https://www.issho.cz/novinky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.issho.cz/"
+  },
+  "600171116": {
+   "feed_url": "https://www.ssstavji.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ssstavji.cz/"
+  },
+  "600171132": {
+   "feed_url": "https://www.copt.cz/category/aktualne/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.copt.cz"
+  },
+  "600171205": {
+   "feed_url": "https://ssto-havirov.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://ssto-havirov.cz/"
+  },
+  "600171248": {
+   "feed_url": "https://www.sstas-karvina.cz/cz/skola/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sstas-karvina.cz/"
+  },
+  "600171256": {
+   "feed_url": "https://www.hotelovkafren.cz/aktualne",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.hotelovkafren.cz/"
+  },
+  "600171302": {
+   "feed_url": "https://www.sse-najizdarne.cz/dokumenty-web/vyrocni-zpravy/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sse-najizdarne.cz/"
+  },
+  "600171337": {
+   "feed_url": "https://www.sse-lipniknb.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sse-lipniknb.cz/"
+  },
+  "600171388": {
+   "feed_url": "https://www.skolasumperk.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.skolasumperk.cz/"
+  },
+  "600171400": {
+   "feed_url": "https://www.issvm.cz/novinky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.issvm.cz/"
+  },
+  "600171418": {
+   "feed_url": "https://www.goapraha.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.goapraha.cz/"
+  },
+  "600171531": {
+   "feed_url": "https://www.ssfdr.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ssfdr.cz/"
+  },
+  "600171795": {
+   "feed_url": "https://www.farmeko.cz/aktuality#article__heading",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.farmeko.cz/"
+  },
+  "600171833": {
+   "feed_url": "https://www.spslan.cz/uvod/clanky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.spslan.cz/"
+  },
+  "600171868": {
+   "feed_url": "https://www.kolofikopava.cz/category/aktualne/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.kolofikopava.cz"
+  },
+  "610100581": {
+   "feed_url": "https://souepl.cz/clanky/kategorie/2-zak",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://souepl.cz"
+  },
+  "610100645": {
+   "feed_url": "https://www.spstrplz.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.spstrplz.cz/"
+  },
+  "610100718": {
+   "feed_url": "http://www.skolamanesova.cz/#aktuality",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.skolamanesova.cz/"
+  },
+  "610150375": {
+   "feed_url": "https://www.sosasource.cz/novinky/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sosasource.cz/"
+  },
+  "610200381": {
+   "feed_url": "https://www.spstrutnov.cz/novinky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.spstrutnov.cz/"
+  },
+  "610250523": {
+   "feed_url": "https://www.belisko.cz/category/aktualne/novinky/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.sos-nmor.cz"
+  },
+  "610380061": {
+   "feed_url": "https://www.lauder.cz/lauderovy-skoly/novinky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.lauder.cz/"
+  },
+  "610450620": {
+   "feed_url": "https://www.sosasou.cz/index.php/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.sosasou.cz/"
+  },
+  "610451049": {
+   "feed_url": "https://www.odbskmb.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.odbskmb.cz/"
+  },
+  "650004639": {
+   "feed_url": "https://www.dsp-praha.org/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.dsp-praha.org/"
+  },
+  "650067231": {
+   "feed_url": "https://sgv.cz/vsechny-aktuality/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://sgv.cz/"
+  },
+  "650068955": {
+   "feed_url": "https://www.opengate.cz/novinky",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.opengate.cz/"
+  },
+  "650071484": {
+   "feed_url": "https://www.gymnvp.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymnvp.cz/"
+  },
+  "650075277": {
+   "feed_url": "https://www.hotelovkamb.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.hotelovkamb.cz/"
+  },
+  "650077393": {
+   "feed_url": "https://iuventas.cz/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://iuventas.cz/"
+  },
+  "651015995": {
+   "feed_url": "https://www.eduso.cz/Events?mid=14",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.eduso.cz/"
+  },
+  "651016029": {
+   "feed_url": "https://www.geukaplice.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.geukaplice.cz/"
+  },
+  "651023572": {
+   "feed_url": "https://www.ssjs-tabor.cz/category/aktualne/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.ssjs-tabor.cz"
+  },
+  "651027888": {
+   "feed_url": "https://www.maberoun.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.maberoun.cz/"
+  },
+  "651028922": {
+   "feed_url": "https://slovgym.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://slovgym.cz/"
+  },
+  "651033772": {
+   "feed_url": "https://www.szes-chrudim.cz/category/aktuality-ze-skoly/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "http://www.szes-chrudim.cz"
+  },
+  "651040001": {
+   "feed_url": "https://www.elijas.cz/web/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.elijas.cz/"
+  },
+  "651040621": {
+   "feed_url": "https://www.waldorfcb.cz/cs/aktualne/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.waldorfcb.cz/cs/uvod/"
+  },
+  "680000011": {
+   "feed_url": "https://www.skolamv.cz/o-skole/aktuality.html",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.skolamv.cz/"
+  },
+  "691000093": {
+   "feed_url": "https://www.ohsturnov.cz/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ohsturnov.cz/index.php"
+  },
+  "691000212": {
+   "feed_url": "https://www.gmvv.cz/school-life/school-life/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gmvv.cz/"
+  },
+  "691000468": {
+   "feed_url": "http://www.gymh.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "http://www.gymh.cz/"
+  },
+  "691000522": {
+   "feed_url": "https://www.ssdvs.cz/cz/aktuality/cambridge-zkousky-v-moste/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ssdvs.cz/cz/o-skole/rozcestnik/"
+  },
+  "691000719": {
+   "feed_url": "https://www.gymskutec.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymskutec.cz/"
+  },
+  "691002142": {
+   "feed_url": "https://www.gymsos-upice.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymsos-upice.cz/"
+  },
+  "691002207": {
+   "feed_url": "https://www.skoly-navis.cz/cs/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.skoly-navis.cz/"
+  },
+  "691002797": {
+   "feed_url": "https://www.szat.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.szat.cz/"
+  },
+  "691003807": {
+   "feed_url": "https://www.ssst.cz/aktuality-a-fotogalerie",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.ssst.cz"
+  },
+  "691005265": {
+   "feed_url": "https://zsvzahradach.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://zsvzahradach.cz/"
+  },
+  "691005559": {
+   "feed_url": "https://www.spse.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.spse.cz/"
+  },
+  "691006199": {
+   "feed_url": "https://www.cgym-kh.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.cgym-kh.cz/"
+  },
+  "691008914": {
+   "feed_url": "https://www.spstosvarnsdorf.cz/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.spstosvarnsdorf.cz/"
+  },
+  "691009619": {
+   "feed_url": "https://www.gymnaziumkodanska.cz/?id=117-zpravy",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.gymnaziumkodanska.cz/"
+  },
+  "691009627": {
+   "feed_url": "https://labyrinthschool.cz/aktuality",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://labyrinthschool.cz/"
+  },
+  "691012342": {
+   "feed_url": "https://www.scioskola.cz/nas-blog",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.scioskola.cz/"
+  },
+  "691012415": {
+   "feed_url": "https://www.soanachod.cz/udalosti/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.soanachod.cz/"
+  },
+  "691012431": {
+   "feed_url": "https://spsow.cz/aktuality/",
+   "typ": "tinyfish",
+   "zdroj": "vypis",
+   "web": "https://www.spsow.cz/"
+  },
+  "691012440": {
+   "feed_url": "https://www.horegas.cz/domov-mladeze/aktuality",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.horegas.cz/"
+  },
+  "691013357": {
+   "feed_url": "https://www.montessoripolna.cz/aktuality/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.montessoripolna.cz/"
+  },
+  "691015805": {
+   "feed_url": "https://www.arktur.cz/novinky/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.arktur.cz/"
+  },
+  "691015881": {
+   "feed_url": "https://www.artion.cz/blog",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.artion.cz/"
+  },
+  "691017972": {
+   "feed_url": "https://www.esportovnigympl.cz/cs/",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://www.esportovnigympl.cz/cs/"
+  },
+  "691018146": {
+   "feed_url": "https://minehava.school/aktuality.php",
+   "typ": "html",
+   "zdroj": "vypis",
+   "web": "https://minehava.school/"
+  }
+ }
+}

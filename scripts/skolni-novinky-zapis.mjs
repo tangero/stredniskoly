@@ -239,10 +239,11 @@ export async function zapisDavku(klient, davka) {
 
       await klient.query(
         `insert into skola_feed (redizo, feed_url, zdroj, naposledy_ok, naposledy_zkouseno,
-           etag, modified_since, chyby_v_rade, dalsi_kontrola_at, posledni_chyba)
-         values ($1, $2, $3, $4, now(), $5, $6, $7, $8, $9)
+           etag, modified_since, chyby_v_rade, dalsi_kontrola_at, posledni_chyba, typ)
+         values ($1, $2, $3, $4, now(), $5, $6, $7, $8, $9, $10)
          on conflict (redizo) do update set
            feed_url = excluded.feed_url,
+           typ = excluded.typ,
            naposledy_ok = coalesce(excluded.naposledy_ok, skola_feed.naposledy_ok),
            naposledy_zkouseno = excluded.naposledy_zkouseno,
            etag = coalesce(excluded.etag, skola_feed.etag),
@@ -253,7 +254,10 @@ export async function zapisDavku(klient, davka) {
         [zdroj.redizo, zdroj.feed_url, zdroj.zdroj ?? 'sonda',
          chyba ? null : new Date().toISOString(), zdroj.etag ?? null,
          zdroj.modified_since ?? null, chybyVRade, dalsi.toISOString(),
-         chyba ? String(zdroj.chyba).slice(0, 200) : null],
+         chyba ? String(zdroj.chyba).slice(0, 200) : null,
+         // Typ zdroje: rss/atom, nebo výpis aktualit (html, tinyfish). Stránka
+         // školy podle něj pozná, odkud zprávy jsou.
+         zdroj.typ ?? 'rss'],
       );
 
       // Fronta změn v téže transakci jako změna, ne po commitu.

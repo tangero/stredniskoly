@@ -35,6 +35,7 @@ import argparse
 import concurrent.futures
 import hashlib
 import json
+import re
 import sys
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -42,9 +43,14 @@ from urllib.parse import urlsplit, urlunsplit
 
 KOREN = Path(__file__).resolve().parent.parent
 REGISTR = KOREN / "public" / "skoly_feedy.json"
+# Školy bez kanálu novinek: stránka aktualit čtená obecnou čtečkou výpisu
+# (``scripts/novinky_vypis.py``, měření ``docs/sonda-mimo-rss-2026.md``).
+REGISTR_VYPISY = KOREN / "public" / "skoly_vypisy.json"
+TYPY_VYPISU = frozenset({"html", "tinyfish"})
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import novinky_jev as jev  # noqa: E402  (až po sys.path)
+import novinky_vypis as vypis  # noqa: E402
 from novinky_klasifikace import (  # noqa: E402
     VERZE_PRAVIDEL, TRIDY_S_POZVANKOU, oklasifikuj_polozky, parse_feed, rozhodni_publikaci,
 )
@@ -66,6 +72,10 @@ SITOVE_CHYBY = frozenset({
     "ConnectionError", "ConnectTimeout", "ReadTimeout", "Timeout",
     "SSLError", "ChunkedEncodingError", "ProxyError",
 })
+# Kdy má u výpisu aktualit smysl zkusit TinyFish: web odmítá skript (WEDOS.protection
+# vrací 401 s výpočetní úlohou pro prohlížeč) nebo neodpovídá. 404 ani 500 ne –
+# ty TinyFish neobejde, jen by zdržel běh.
+CHYBY_PRO_TINYFISH = SITOVE_CHYBY | {"HTTP 401", "HTTP 403", "429"}
 # Hlavička běžného prohlížeče. Do 20. 9. 2026 se sklízeč představoval jako bot
 # s odkazem na stránku o projektu; pět zdrojů na to odpovídalo `HTTP 403`.
 # Rozhodnutí zadavatele: číst feedy tak, jak je čte návštěvník webu. Chování
@@ -103,7 +113,8 @@ def otisk(pol: dict) -> str:
     return hashlib.sha256(zaklad.encode("utf-8")).hexdigest()
 
 
-def stahni_feed(url: str, etag: str | None, modified: str | None, timeout: int = TIMEOUT) -> dict:
+def stahni_feed(url: str, etag: str | None, modified: str | None, timeout: int = TIMEOUT,
+                html: bool = False) -> dict:
     """Podmíněný požadavek; 304 znamená beze změny, ne chybu."""
     import requests
     requests.packages.urllib3.disable_warnings()  # type: ignore[attr-defined]
@@ -122,8 +133,18 @@ def stahni_feed(url: str, etag: str | None, modified: str | None, timeout: int =
         return {"chyba": "429", "retry_after": r.headers.get("Retry-After")}
     if r.status_code != 200:
         return {"chyba": f"HTTP {r.status_code}"}
+    text = r.text
+    if html and (r.encoding or "").lower() in ("", "iso-8859-1"):
+        # HTML bez charsetu v hlavičce: requests by zvolilo ISO-8859-1 a české
+        # znaky rozbilo. Platí <meta charset>, jinak UTF-8.
+        m = re.search(rb"""<meta[^>]+charset=["']?([\w-]+)""", r.content[:4096], re.I)
+        try:
+            text = r.content.decode(m.group(1).decode() if m else "utf-8", errors="replace")
+        except LookupError:
+            text = r.content.decode("utf-8", errors="replace")
     return {
-        "text": r.text,
+        "text": text,
+        "url": r.url,
         "etag": r.headers.get("ETag"),
         "modified": r.headers.get("Last-Modified"),
     }
@@ -181,16 +202,69 @@ def slozka_rozboru(rozbor: dict | None, souhrn: dict | None) -> dict | None:
     }
 
 
+def precti_zdroj_vypisu(zaznam: dict, stav: dict, dnes: date, timeout: int = TIMEOUT) -> dict:
+    """Stránka aktualit místo feedu: stáhnout (přímo, nebo přes TinyFish) a přečíst.
+
+    ``typ: html`` se stahuje přímo, podmíněně podle ETag jako feed; když ho web
+    odmítne (HTTP 401/403 od ochrany hostingu, síťová chyba) a je klíč, zkusí se
+    TinyFish. ``typ: tinyfish`` jsou weby, které přímo nejdou nikdy (sonda 1. 10.).
+    Vrací totéž co ``stahni_feed`` a navíc ``polozky`` ve tvaru ``parse_feed``.
+    """
+    url = zaznam["feed_url"]
+    klic = vypis.tinyfish_klic()
+    odpoved: dict = {"chyba": "TINYFISH_API_KEY chybí"}
+    if zaznam.get("typ") != "tinyfish":
+        odpoved = stahni_feed(url, stav.get("etag"), stav.get("modified_since"), timeout, html=True)
+        if odpoved.get("beze_zmeny"):
+            return odpoved
+        odpoved["cesta"] = "primo"
+    if odpoved.get("chyba") and klic and (
+            zaznam.get("typ") == "tinyfish" or odpoved["chyba"] in CHYBY_PRO_TINYFISH):
+        tf = vypis.stahni_tinyfish(url, klic)
+        odpoved = {**tf, "cesta": "tinyfish"} if "text" in tf else {"chyba": tf["chyba"], "cesta": "tinyfish"}
+    if odpoved.get("chyba"):
+        return odpoved
+    polozky, videne = [], set()
+    for p in vypis.precti_vypis(odpoved["text"], odpoved.get("url") or url, dnes):
+        # Výpis bez odkazu na článek dává všem položkám adresu výpisu (s kotvou
+        # nebo bez); identitou je pak adresa + titulek, jinak by splynuly.
+        bez_clanku = normalizuj_url(p["url"]) == normalizuj_url(odpoved.get("url") or url)
+        polozky.append({"titulek": p["titulek"], "odkaz": p["url"],
+                        "guid": f"{normalizuj_url(p['url'])}#{otisk({'titulek': p['titulek']})[:16]}"
+                        if bez_clanku else "",
+                        "datum_raw": p["datum"], "popis": "", "kategorie": []})
+        # Týž článek bývá ve výpisu dvakrát (zvýrazněný nahoře a v seznamu);
+        # čtečka řadí od nejnovějšího, platí první výskyt.
+        identita = polozky[-1]["guid"] or normalizuj_url(p["url"])
+        if identita in videne:
+            polozky.pop()
+        videne.add(identita)
+    return {**odpoved, "text": None, "polozky": polozky}
+
+
 def zpracuj_skolu(redizo: str, zaznam: dict, stav: dict, dnes: date, timeout: int = TIMEOUT,
                   rozebirat: bool = False) -> dict:
-    odpoved = stahni_feed(zaznam["feed_url"], stav.get("etag"), stav.get("modified_since"), timeout)
-    vysledek = {"redizo": redizo, "feed_url": zaznam["feed_url"], "zdroj": zaznam.get("zdroj")}
+    typ = zaznam.get("typ") or "rss"
+    vysledek = {"redizo": redizo, "feed_url": zaznam["feed_url"], "zdroj": zaznam.get("zdroj"), "typ": typ}
+    if typ in TYPY_VYPISU:
+        odpoved = precti_zdroj_vypisu(zaznam, stav, dnes, timeout)
+        if odpoved.get("cesta"):
+            vysledek["cesta"] = odpoved["cesta"]
+    else:
+        odpoved = stahni_feed(zaznam["feed_url"], stav.get("etag"), stav.get("modified_since"), timeout)
     if odpoved.get("chyba"):
         return {**vysledek, "stav": "chyba", "chyba": odpoved["chyba"]}
     if odpoved.get("beze_zmeny"):
         return {**vysledek, "stav": "beze_zmeny"}
 
-    polozky = parse_feed(odpoved["text"])
+    if typ in TYPY_VYPISU:
+        polozky = odpoved["polozky"]
+        # Výpis, ze kterého čtečka nic nevzala, je změna webu (nová šablona),
+        # ne klidná škola: hlásí se jako chyba, aby to bylo vidět v dohledu.
+        if not polozky:
+            return {**vysledek, "stav": "chyba", "chyba": "výpis nerozpoznán"}
+    else:
+        polozky = parse_feed(odpoved["text"])
     if polozky is None:
         return {**vysledek, "stav": "chyba", "chyba": "feed se nepodařilo rozparsovat"}
 
@@ -266,12 +340,31 @@ def zpracuj_skolu(redizo: str, zaznam: dict, stav: dict, dnes: date, timeout: in
     }
 
 
+def nacti_registr(feedy: Path, vypisy: Path, tinyfish_klic: str | None) -> dict:
+    """Zdroje sklizně: kanály novinek a výpisy aktualit škol, které kanál nemají.
+
+    Kanál novinek má přednost (ručí za něj škola). Výpisy přes TinyFish se bez
+    klíče přeskakují a nezapisují jako chybné zdroje: chybějící klíč je stav
+    konfigurace, ne výpadek webu školy.
+    """
+    registr = json.loads(feedy.read_text())["skoly"]
+    zvypisu = json.loads(vypisy.read_text())["skoly"] if vypisy.exists() else {}
+    if not tinyfish_klic:
+        bez = [r for r, z in zvypisu.items() if z.get("typ") == "tinyfish"]
+        if bez:
+            print(f"Bez TINYFISH_API_KEY: {len(bez)} výpisů přes TinyFish se přeskakuje.",
+                  file=sys.stderr)
+            zvypisu = {r: z for r, z in zvypisu.items() if z.get("typ") != "tinyfish"}
+    return {**zvypisu, **registr}
+
+
 def main() -> None:
     p = argparse.ArgumentParser(description="Sklizeň školních novinek do dávky.")
     p.add_argument("--stav", help="JSON se stavem zdrojů z databáze (etagy, splatnost)")
     p.add_argument("--vystup", required=True, help="kam zapsat dávku")
     p.add_argument("--jen", type=int, help="omezit počet škol (zkouška)")
     p.add_argument("--registr", default=str(REGISTR))
+    p.add_argument("--registr-vypisy", default=str(REGISTR_VYPISY))
     p.add_argument("--bez-rozboru", action="store_true",
                    help="nedoptávat se modelu na význam dat v pozvánkách")
     args = p.parse_args()
@@ -284,7 +377,7 @@ def main() -> None:
         print("Bez OPENROUTER_API_KEY: pozvánky nedostanou větu s termínem.",
               file=sys.stderr)
 
-    registr = json.loads(Path(args.registr).read_text())["skoly"]
+    registr = nacti_registr(Path(args.registr), Path(args.registr_vypisy), vypis.tinyfish_klic())
     stavy = {}
     if args.stav:
         stavy = {s["redizo"]: s for s in json.loads(Path(args.stav).read_text()).get("zdroje", [])}
@@ -335,6 +428,9 @@ def main() -> None:
             "zdroju_chyba": sum(1 for v in vysledky if v["stav"] == "chyba"),
             "zdroju_opakovano": len(k_opakovani),
             "zdroju_spraveno_opakovanim": spraveno,
+            "vypisu": sum(1 for v in vysledky if v.get("typ") in TYPY_VYPISU),
+            "vypisu_ok": sum(1 for v in vysledky if v.get("typ") in TYPY_VYPISU and v["stav"] == "ok"),
+            "vypisu_pres_tinyfish": sum(1 for v in vysledky if v.get("cesta") == "tinyfish"),
             "polozek": sum(len(v.get("polozky") or []) for v in vysledky),
             "rozebrano": sum(1 for v in vysledky for p in v.get("polozky") or []
                              if p.get("rozbor")),
@@ -348,6 +444,7 @@ def main() -> None:
     print(f"Sklizeň: {m['zdroju_ok']} ok, {m['zdroju_beze_zmeny']} beze změny, "
           f"{m['zdroju_chyba']} chyb, {m['polozek']} položek "
           f"(opakováno {m['zdroju_opakovano']}, z toho spraveno {m['zdroju_spraveno_opakovanim']}); "
+          f"výpisů aktualit {m['vypisu_ok']}/{m['vypisu']} ok, přes TinyFish {m['vypisu_pres_tinyfish']}; "
           f"rozebráno {m['rozebrano']} pozvánek, věta s termínem u {m['s_terminem']} "
           f"→ {args.vystup}")
 

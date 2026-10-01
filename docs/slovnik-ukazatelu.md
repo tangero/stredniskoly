@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.51 · 1. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.52 · 1. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -619,11 +619,11 @@ Při počtu maturantů pod 10 se zveřejňují jen počty, mezi 10 a 29 s upozor
 **Co neříká.** Neříká, že je zpráva pravdivá nebo aktuální — to tvrdí škola, ne my. Neříká ani, že škola nic dalšího neoznámila: čte se jen kanál novinek, a 51 % škol ho nemá vůbec.
 
 ### Pokrytí zpráv z webů škol
-**Definice.** Kolik škol ve vybrané oblasti (kraj, obec, celá země) má ve sběru zprávu vydanou za posledních 30 dní, rozděleno podle zdroje: kanál novinek (RSS/Atom, průběžná sklizeň) a výpis aktualit (jednorázová sonda).
+**Definice.** Kolik škol ve vybrané oblasti (kraj, obec, celá země) má ve sběru zprávu vydanou za posledních 30 dní, rozděleno podle zdroje: kanál novinek (RSS/Atom, průběžná sklizeň) a výpis aktualit (průběžná sklizeň, jinak jednorázová sonda).
 
-**Jak vzniká.** Jmenovatel: školy katalogu (unikátní REDIZO z `school_analysis.json`) s obcí a krajem z katalogu. Kanál novinek: škola s aktivním záznamem v `skola_feed` a aspoň jednou nezneplatněnou zprávou s `publikovano` za posledních 30 dní k času dotazu; školy vypnuté přepínačem se nepočítají (`stavSkol()` v `src/lib/cim-skoly-ziji.ts`). Výpis aktualit: škola bez kanálu, u které sonda `scripts/sonda-mimo-rss.py` přečetla aspoň tři položky, a z nich aspoň jednu s datem do 30 dní před dnem sondy.
+**Jak vzniká.** Jmenovatel: školy katalogu (unikátní REDIZO z `school_analysis.json`) s obcí a krajem z katalogu. Kanál novinek: škola s aktivním záznamem v `skola_feed` typu `rss`/`atom` a aspoň jednou nezneplatněnou zprávou s `publikovano` za posledních 30 dní k času dotazu; školy vypnuté přepínačem se nepočítají (`stavSkol()` v `src/lib/cim-skoly-ziji.ts`). Výpis aktualit: škola s aktivním záznamem v `skola_feed` typu `html` nebo `tinyfish` a zprávou za 30 dní stejně jako u kanálu; dokud ji sklizeň nezapsala, škola bez kanálu, u které sonda `scripts/sonda-mimo-rss.py` přečetla aspoň tři položky, a z nich aspoň jednu s datem do 30 dní před dnem sondy.
 
-**Jednotka.** Počet škol, podíl ze všech škol oblasti v %. **Zdroj.** `skola_feed`, `skola_novinka`; `data/sondy/mimo-rss-20261001.json`. **Platnost.** Kanál novinek k okamžiku zobrazení; výpis aktualit ke dni sondy (1. 10. 2026), neobnovuje se.
+**Jednotka.** Počet škol, podíl ze všech škol oblasti v %. **Zdroj.** `skola_feed`, `skola_novinka`; `data/sondy/mimo-rss-20261001.json`. **Platnost.** Ze sklizně k okamžiku zobrazení; ze sondy ke dni sondy (1. 10. 2026), neobnovuje se.
 
 **Kde se používá.** Jen nezalistovaný prototyp `/prototyp/cim-skoly-ziji`.
 
@@ -768,6 +768,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.52 | **Pokrytí zpráv z webů škol**: výpis aktualit se počítá ze sklizně (`skola_feed.typ` html/tinyfish), snímek sondy jen u škol, které sklizeň ještě nezapsala; kanál novinek jen typ rss/atom. |
 | 1.51 | Nový ukazatel **pokrytí zpráv z webů škol** (oddíl 6) pro prototyp „Čím školy žijí“: počet škol se zprávou za 30 dní podle zdroje, kanál novinek k okamžiku zobrazení, výpis aktualit ke dni sondy 1. 10. 2026. |
 | 1.50 | *Výsledek uchazeče ve 2. kole* a *Volná místa po 2. kole* (30. 9. 2026): převzata data uchazečů 2. kola 2026 (sada `cermat-uchazeci-kolo2`, dosud nepoužito) pro balíček a stránku `/pro-novinare`. |
 | 1.49 | **Podíl přijímaček na bodování ze zadání školy se zobrazuje** na stránce oboru (30. 9. 2026): když škola zadala kritéria v portálu, blok kritérií počítá podíl z jejího strukturovaného zadání stejnou definicí a přepis PDF nepoužije. Index simulátoru (štítek extra body) zůstává z přepisu, dokud se nepřegeneruje s údaji škol. |

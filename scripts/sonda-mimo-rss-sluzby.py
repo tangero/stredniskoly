@@ -15,7 +15,12 @@ Tvary požadavků jsou podle dokumentace k 1. 10. 2026 a **nebyly vyzkoušené**
 odpověď se proto čte obecně (nejdelší textové pole u záznamu s `url`) a celá
 syrová odpověď prvního volání se uloží pro kontrolu.
 
-    .venv/bin/python scripts/sonda-mimo-rss-sluzby.py [--jen 50] [--kontrola 15] [--sluzby tinyfish,exa,parallel]
+TinyFish vyzkoušen 1. 10. 2026: markdown ani výchozí html neobsahují odkazy
+na články, sonda z něj nepřečte nic. Funguje html s `include_selectors: ["body"]`
+čtené vlastní čtečkou; to dělá `scripts/sonda-mimo-rss-tinyfish.py` a sklízeč
+(`scripts/novinky_vypis.py`). Pro TinyFish tuhle sondu nepoužívej.
+
+    .venv/bin/python scripts/sonda-mimo-rss-sluzby.py [--jen 50] [--kontrola 15] [--sluzby exa,parallel]
 """
 import datetime as dt
 import importlib.util

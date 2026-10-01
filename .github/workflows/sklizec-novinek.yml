@@ -48,6 +48,8 @@ jobs:
       # (sklízeč to napíše do výpisu). Není to fail-closed jako u databáze:
       # zprávy z webů škol mají smysl i bez termínů.
       OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      # Bez klíče se výpisy aktualit čtené přes TinyFish přeskočí, zbytek běží.
+      TINYFISH_API_KEY: ${{ secrets.TINYFISH_API_KEY }}
     steps:
       - uses: actions/checkout@v4
 
