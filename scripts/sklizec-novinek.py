@@ -224,20 +224,14 @@ def precti_zdroj_vypisu(zaznam: dict, stav: dict, dnes: date, timeout: int = TIM
         odpoved = {**tf, "cesta": "tinyfish"} if "text" in tf else {"chyba": tf["chyba"], "cesta": "tinyfish"}
     if odpoved.get("chyba"):
         return odpoved
-    precteno = vypis.precti_vypis(odpoved["text"], odpoved.get("url") or url, dnes)
-    titulky_adresy: dict[str, set] = {}
-    for p in precteno:
-        titulky_adresy.setdefault(normalizuj_url(p["url"]), set()).add(p["titulek"])
     polozky, videne = [], set()
-    for p in precteno:
-        # Výpis bez odkazu na článek dává všem položkám adresu výpisu (s kotvou
-        # nebo bez); identitou je pak adresa + titulek, jinak by splynuly. Totéž,
-        # když tutéž adresu nesou různé titulky (odkaz na rubriku místo článku).
-        bez_clanku = normalizuj_url(p["url"]) == normalizuj_url(odpoved.get("url") or url) \
-            or len(titulky_adresy[normalizuj_url(p["url"])]) > 1
+    for p in vypis.precti_vypis(odpoved["text"], odpoved.get("url") or url, dnes):
+        # Identita položky výpisu je vždy adresa + otisk titulku. Adresa sama
+        # nestačí: výpis bez odkazu na článek dává všem položkám adresu výpisu
+        # a karta může vést na rubriku. Rozhodovat podle sousedních položek nejde,
+        # identita by se měnila, jak se výpis posouvá, a zpráva by se zdvojila.
         polozky.append({"titulek": p["titulek"], "odkaz": p["url"],
-                        "guid": f"{normalizuj_url(p['url'])}#{otisk({'titulek': p['titulek']})[:16]}"
-                        if bez_clanku else "",
+                        "guid": f"{normalizuj_url(p['url'])}#{otisk({'titulek': p['titulek']})[:16]}",
                         "datum_raw": p["datum"], "popis": "", "kategorie": []})
         # Týž článek bývá ve výpisu dvakrát (zvýrazněný nahoře a v seznamu);
         # čtečka řadí od nejnovějšího, platí první výskyt.

@@ -122,6 +122,17 @@ class ZdrojVypisu(unittest.TestCase):
             v, _, _ = self.zpracuj({"typ": "html"}, primo=ok(VYPIS))
         self.assertEqual(len({p["identita"] for p in v["polozky"]}), 3)
 
+    def test_identita_nezavisi_na_sousednich_polozkach(self):
+        # Když z výpisu odejdou ostatní zprávy se sdílenou adresou, zbylá musí
+        # mít tutéž identitu jako dřív, jinak ji zapisovač uloží podruhé.
+        polozky = [{"titulek": t, "url": "https://skola.example.cz/rubrika/skola/", "datum": d, "druh": "odkaz"}
+                   for t, d in (("Exkurze do elektrárny", "2026-09-24"), ("Sportovní den", "2026-09-17"))]
+        with mock.patch.object(sklizec.vypis, "precti_vypis", return_value=polozky):
+            obe, _, _ = self.zpracuj({"typ": "html"}, primo=ok(VYPIS))
+        with mock.patch.object(sklizec.vypis, "precti_vypis", return_value=polozky[:1]):
+            jedna, _, _ = self.zpracuj({"typ": "html"}, primo=ok(VYPIS))
+        self.assertEqual(jedna["polozky"][0]["identita"], obe["polozky"][0]["identita"])
+
     def test_odmitnuti_ochranou_hostingu_zkusi_tinyfish(self):
         v, _, st = self.zpracuj({"typ": "html"}, primo={"chyba": "HTTP 401"}, tinyfish={"text": VYPIS, "url": STRANKA})
         st.assert_called_once()
