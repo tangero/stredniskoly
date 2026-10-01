@@ -134,6 +134,13 @@ class ZdrojVypisu(unittest.TestCase):
             self.assertEqual(a[t], b[t])
         self.assertEqual(len(set(a) & set(b)), 2)
 
+    def test_stejny_titulek_s_ruznou_kotvou_nesplyne(self):
+        polozky = [{"titulek": "Ze života školy", "url": f"{STRANKA}#{k}", "datum": d, "druh": "nadpis"}
+                   for k, d in (("zprava-12", "2026-09-24"), ("zprava-11", "2026-09-17"), ("zprava-10", "2026-09-03"))]
+        with mock.patch.object(sklizec.vypis, "precti_vypis", return_value=polozky):
+            v, _, _ = self.zpracuj({"typ": "html"}, primo=ok(VYPIS))
+        self.assertEqual(len({p["identita"] for p in v["polozky"]}), 3)
+
     def test_odmitnuti_ochranou_hostingu_zkusi_tinyfish(self):
         v, _, st = self.zpracuj({"typ": "html"}, primo={"chyba": "HTTP 401"}, tinyfish={"text": VYPIS, "url": STRANKA})
         st.assert_called_once()
