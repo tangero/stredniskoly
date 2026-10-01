@@ -1,0 +1,46 @@
+# Připomínka s termínem pro Claude Code (pravidlo v CLAUDE.md, štítek pripominka).
+# Claude Code ji vypíše při každém zpracování issues a od termínu ji připomene;
+# realizuje ji až se štítkem schvaleno. Pole termin GitHub vypíše jako nadpis
+# „### Termín“ s datem na dalším řádku; dotaz v CLAUDE.md čte i tuto podobu.
+name: Připomínka s termínem (jen pro tým)
+description: Úkol, ke kterému se máme vrátit k danému datu (vyhodnocení, kontrola, sezónní práce).
+title: "[Připomínka] "
+labels: ["interni", "pripominka"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!WARNING]
+        > **Repozitář je veřejný.** Žádné osobní údaje, přístupové kódy ani výpisy z produkční databáze.
+  - type: input
+    id: termin
+    attributes:
+      label: Termín
+      description: Datum ve tvaru RRRR-MM-DD. Před ním Claude Code úkol nerealizuje.
+      placeholder: "2026-10-08"
+    validations:
+      required: true
+  - type: textarea
+    id: co
+    attributes:
+      label: Co udělat
+      description: Co zkontrolovat nebo vyhodnotit, ideálně jako checklist.
+      value: |
+        - [ ] 
+    validations:
+      required: true
+  - type: textarea
+    id: vystup
+    attributes:
+      label: Výstup a kdo rozhoduje
+      description: Co má vzniknout (komentář se zjištěními, PR…) a které rozhodnutí z toho dělá Patrick.
+      value: Komentář v tomto issue se zjištěními a doporučením. Rozhoduje Patrick.
+    validations:
+      required: true
+  - type: textarea
+    id: podklady
+    attributes:
+      label: Podklady
+      description: Související issues (#N), PR, dokumenty v docs/.
+    validations:
+      required: false

@@ -1,5 +1,5 @@
 <!--
-Tělo interního zadání pro zakládání přes API / gh (stejná pole jako interni-zadani.yml).
+Tělo interního zadání pro zakládání přes API / gh (stejná pole jako formulář .github/ISSUE_TEMPLATE/interni-zadani.yml).
 Štítky: interni, navrh. Titulek: „[Zadání] …“.
 
 POZOR: repozitář je veřejný, issue uvidí kdokoli. Do zadání nepatří jména, e-maily,

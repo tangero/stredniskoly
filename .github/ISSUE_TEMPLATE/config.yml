@@ -1,0 +1,6 @@
+# Prázdné issue zůstává povolené: komunita zakládá hlášení i bez formuláře.
+blank_issues_enabled: true
+contact_links:
+  - name: Nahlásit chybu na webu
+    url: https://www.prijimackynaskolu.cz
+    about: Chybu v údajích o škole nebo oboru nahlaste tlačítkem „Nahlásit chybu“ přímo na stránce školy.

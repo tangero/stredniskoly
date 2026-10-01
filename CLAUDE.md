@@ -14,7 +14,7 @@ Pokyny o `~/github/patrick-knowledgebase/` v tom souboru platí jen tam, kde ta 
 
 ## Práce na interních zadáních (GitHub issues)
 
-Zadání píše Eduarda jako issue se štítkem `interni` (šablona `.github/INTERNAL_TEMPLATES/`),
+Zadání píše Eduarda jako issue se štítkem `interni` (formulář `.github/ISSUE_TEMPLATE/interni-zadani.yml`, pro `gh` tělo `.github/INTERNAL_TEMPLATES/interni-zadani.md`),
 schvaluje je Patrick. Stav issue vyjadřují štítky:
 
 | štítek | význam |
@@ -23,7 +23,7 @@ schvaluje je Patrick. Stav issue vyjadřují štítky:
 | `schvaleno` | Claude Code může realizovat; štítek přidává jen Patrick |
 | `zamitnuto` | nerealizovat |
 | `k-overeni` | hotovo v PR, čeká na kontrolu na Vercel preview |
-| `pripominka` | úkol s termínem (řádek `Termín: RRRR-MM-DD` v těle issue); před termínem se nerealizuje |
+| `pripominka` | úkol s termínem (řádek `Termín: RRRR-MM-DD` v těle issue nebo pole Termín formuláře); před termínem se nerealizuje |
 
 ### Pravidla
 
@@ -35,7 +35,7 @@ schvaluje je Patrick. Stav issue vyjadřují štítky:
    splatné dej uživateli na vědomí, i když ještě nemají `schvaleno`:
    ```bash
    gh issue list -R tangero/stredniskoly --label pripominka --state open --json number,title,body \
-     --jq '.[] | (.body | capture("Termín: (?<d>[0-9]{4}-[0-9]{2}-[0-9]{2})").d // "bez termínu") as $t
+     --jq '.[] | (.body | capture("Termín:?\\s*(?<d>[0-9]{4}-[0-9]{2}-[0-9]{2})").d // "bez termínu") as $t
        | "#\(.number) termín \($t)\(if $t <= (now|strftime("%Y-%m-%d")) then " – SPLATNÉ" else "" end)  \(.title)"'
    ```
    Připomínku před termínem nerealizuj ani se `schvaleno`. Od termínu platí pravidla jako pro jiná
