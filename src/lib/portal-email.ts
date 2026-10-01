@@ -221,21 +221,23 @@ export interface PozvankaPara {
 // je přečte přes „zobrazit originál“.
 export function pozvankaDoPilotu(para: PozvankaPara): { subject: string; html: string; odesilatel: string } {
   const skola = esc(para.nazevSkoly);
+  // Pilotní text („mezi dvaceti školami“) patří jen první vlně, všechny další dostávají obecnou pozvánku.
+  const pilot = (para.vlna ?? 1) === 1;
   return {
     // Odesílatel patří k šabloně, ne k odesílací funkci: jediná kontrola před
     // nevratnou rozesílkou je náhled v administraci, a ten musí ukázat i řádek
     // „Od“. Právě ten ředitel uvidí dřív než podpis.
     odesilatel: odesilatel(JMENO_CLOVEK),
-    subject: `Profil ${para.nazevSkoly} na Přijímačky na školu: ${para.vlna === 2 ? 'pozvánka ke správě profilu' : 'pozvánka do pilotu'}`,
+    subject: `Profil ${para.nazevSkoly} na Přijímačky na školu: ${pilot ? 'pozvánka do pilotu' : 'pozvánka ke správě profilu'}`,
     html: OBALKA(
       `
       <p>${esc(para.osloveni)},</p>
       <p>na webu Přijímačky na školu (<a href="https://www.prijimackynaskolu.cz" style="color: #0074e4;">www.prijimackynaskolu.cz</a>)
          hledají rodiče a uchazeči střední školu podle výsledků přijímacího řízení. Stránku má i <strong>${skola}</strong>.
          Obory, kapacity a výsledky na ní přebíráme z otevřených dat CERMATu, rejstříku MŠMT a České školní inspekce.</p>
-      <p>${para.vlna === 2
-        ? 'Zveme vaši školu, aby si svůj profil na našem webu spravovala sama.'
-        : 'Zveme vaši školu mezi dvacet škol, které jako první vyzkouší, jak si škola svůj profil spravuje sama.'}
+      <p>${pilot
+        ? 'Zveme vaši školu mezi dvacet škol, které jako první vyzkouší, jak si škola svůj profil spravuje sama.'
+        : 'Zveme vaši školu, aby si svůj profil na našem webu spravovala sama.'}
          Doplníte, co v úředních datech chybí: dny otevřených dveří, odkaz na vyhlášená kritéria přijetí, přípravné
          kurzy, ubytování nebo kontakt na výchovného poradce. Údaje se na stránce školy zobrazí se značkou
          „potvrdila škola“ a s datem. Je to zdarma a nic není povinné.</p>
