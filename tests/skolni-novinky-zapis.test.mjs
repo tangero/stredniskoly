@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { ulozPolozku, ulozRozbor, zmenaProtiUlozene, zapisDavku } from '../scripts/skolni-novinky-zapis.mjs';
+import { ulozPolozku, ulozRozbor, zmenaProtiUlozene, zapisDavku, TYPY_VYPISU } from '../scripts/skolni-novinky-zapis.mjs';
+import { TYPY_VYPISU as TYPY_VYPISU_WEBU } from '../src/lib/skolni-novinky.ts';
 
 const ulozena = { otisk_obsahu: 'abc', verze_pravidel: '2026-09-20.5' };
 
@@ -125,3 +126,74 @@ test('sklízeč skryje podezřelý článek i při nezměněném obsahu a respek
   assert.equal(skryti.args[0], `polozka:${id}`);
   assert.match(skryti.sql, /where skola_prepinac\.zdroj_zmeny = 'auto:spam-kasino'/);
 });
+
+/** Zapisovač nad jedním zdrojem: vrací uložený typ zdroje a zachytí dotazy. */
+async function zapisZdroj(predchoziTyp, zdroj) {
+  const dotazy = [];
+  const klient = { query: async (sql, args) => {
+    dotazy.push({ sql, args });
+    if (/select chyby_v_rade/.test(sql)) return { rows: predchoziTyp ? [{ chyby_v_rade: 0, typ: predchoziTyp }] : [] };
+    if (/update skola_novinka set zneplatneno/.test(sql)) return { rows: [], rowCount: 4 };
+    return { rows: [] };
+  } };
+  await zapisDavku(klient, {
+    meta: { zahajeno: '2026-10-01T04:10:00Z', zdroju_zkouseno: 1, verze_pravidel: 'v1' },
+    zdroje: [{ redizo: '600000001', stav: 'ok', feed_url: 'https://skola.example.cz/feed', polozky: [], ...zdroj }],
+  });
+  return dotazy;
+}
+
+test('typ zdroje se zapíše do skola_feed, výchozí je rss', async () => {
+  const vypis = await zapisZdroj(null, { typ: 'tinyfish' });
+  const feed = await zapisZdroj(null, {});
+  const typ = (d) => d.find((x) => /insert into skola_feed/.test(x.sql)).args[9];
+  assert.equal(typ(vypis), 'tinyfish');
+  assert.equal(typ(feed), 'rss');
+});
+
+test('přechod z výpisu aktualit na kanál zneplatní dřívější zprávy z výpisu', async () => {
+  // Stránka školy skrývá zprávy podle typu zdroje; po přepnutí na RSS by jinak
+  // ukázala i zprávy z výpisu, které se zatím zobrazovat nemají.
+  const d = await zapisZdroj('html', { typ: 'rss', polozky: [] });
+  const z = d.find((x) => /update skola_novinka set zneplatneno/.test(x.sql));
+  assert.ok(z);
+  assert.deepEqual(z.args, ['600000001', []]);
+  assert.ok(d.some((x) => /insert into skola_invalidace/.test(x.sql)));
+});
+
+test('chyba ani 304 nového zdroje nic nezneplatní a typ nepřepnou', async () => {
+  // Výpadek ani „beze změny“ není přečtení: typ se přepne až skutečným čtením.
+  for (const zdroj of [{ stav: 'chyba', chyba: 'HTTP 503' }, { stav: 'beze_zmeny' }]) {
+    const d = await zapisZdroj('html', { typ: 'rss', polozky: [], ...zdroj });
+    assert.equal(d.some((x) => /update skola_novinka set zneplatneno/.test(x.sql)), false, zdroj.stav);
+    const upsert = d.find((x) => /insert into skola_feed/.test(x.sql));
+    assert.match(upsert.sql, /typ = case when \$11::boolean then excluded\.typ else skola_feed\.typ end/);
+    assert.equal(upsert.args[10], false, zdroj.stav);
+  }
+});
+
+test('přechod z kanálu na výpis zneplatní zprávy z kanálu', async () => {
+  // Jinak by přehled počítal staré zprávy z RSS jako čerstvý výpis aktualit.
+  const d = await zapisZdroj('rss', { typ: 'html', polozky: [{ identita: 'a1', otisk_obsahu: 'x', verze_pravidel: 'v1',
+    titulek: 'Sportovní den', url: 'https://skola.example.cz/aktuality/sportovni-den/' }] });
+  const z = d.find((x) => /update skola_novinka set zneplatneno/.test(x.sql));
+  assert.deepEqual(z.args, ['600000001', ['a1']]);
+});
+
+test('po změně adresy zdroje se staré validátory nepřenášejí', async () => {
+  const d = await zapisZdroj('rss', { typ: 'rss' });
+  assert.match(d.find((x) => /insert into skola_feed/.test(x.sql)).sql,
+    /etag = case when excluded\.feed_url is distinct from skola_feed\.feed_url then excluded\.etag/);
+});
+
+test('výpis zůstává výpisem a kanál kanálem: nic se nezneplatňuje', async () => {
+  for (const [pred, po] of [['html', 'tinyfish'], ['rss', 'rss'], ['atom', 'rss'], [null, 'rss'], [null, 'html']]) {
+    const d = await zapisZdroj(pred, { typ: po });
+    assert.equal(d.some((x) => /update skola_novinka set zneplatneno/.test(x.sql)), false, `${pred} → ${po}`);
+  }
+});
+
+test('zapisovač a stránka školy znají tytéž typy výpisu', () => {
+  assert.deepEqual([...TYPY_VYPISU].sort(), [...TYPY_VYPISU_WEBU].sort());
+});
+

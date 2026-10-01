@@ -58,11 +58,13 @@ function pripojeni() {
 /** Stav zdrojů pro sklízeč: co poslat v podmíněném požadavku a co je splatné. */
 async function exportStav(klient, kam) {
   const { rows } = await klient.query(
-    `select redizo, etag, modified_since, dalsi_kontrola_at
+    `select redizo, feed_url, etag, modified_since, dalsi_kontrola_at
        from skola_feed where aktivni order by redizo`,
   );
   const zdroje = rows.map((r) => ({
     redizo: r.redizo,
+    // Sklízeč podle adresy pozná, že validátory patří jinému zdroji.
+    feed_url: r.feed_url,
     etag: r.etag,
     modified_since: r.modified_since,
     dalsi_kontrola_at: r.dalsi_kontrola_at ? new Date(r.dalsi_kontrola_at).toISOString() : null,
@@ -188,6 +190,9 @@ export async function ulozRozbor(klient, novinkaId, p) {
   );
 }
 
+/** Typy zdroje, které nejsou kanál novinek (stejná množina jako v src/lib/skolni-novinky.ts). */
+export const TYPY_VYPISU = new Set(['html', 'tinyfish']);
+
 export async function zapisDavku(klient, davka) {
   const behId = randomUUID();
   let novych = 0;
@@ -232,29 +237,55 @@ export async function zapisDavku(klient, davka) {
 
       const chyba = zdroj.stav === 'chyba';
       const { rows } = await klient.query(
-        `select chyby_v_rade from skola_feed where redizo = $1`, [zdroj.redizo],
+        `select chyby_v_rade, typ from skola_feed where redizo = $1`, [zdroj.redizo],
       );
       const chybyVRade = chyba ? (rows[0]?.chyby_v_rade ?? 0) + 1 : 0;
+      // Typ zdroje: rss/atom, nebo výpis aktualit (html, tinyfish).
+      const typ = zdroj.typ ?? 'rss';
+      const precteno = zdroj.stav === 'ok';
       const dalsi = dalsiKontrola({ ...zdroj, chybyVRade }, zdroj.polozky);
 
       await klient.query(
         `insert into skola_feed (redizo, feed_url, zdroj, naposledy_ok, naposledy_zkouseno,
-           etag, modified_since, chyby_v_rade, dalsi_kontrola_at, posledni_chyba)
-         values ($1, $2, $3, $4, now(), $5, $6, $7, $8, $9)
+           etag, modified_since, chyby_v_rade, dalsi_kontrola_at, posledni_chyba, typ)
+         values ($1, $2, $3, $4, now(), $5, $6, $7, $8, $9, $10)
          on conflict (redizo) do update set
            feed_url = excluded.feed_url,
+           -- Typ se přepne až skutečným přečtením nového zdroje (ne chybou ani
+           -- odpovědí 304): jinak by stránka školy i přehled vydávaly nepřečtený
+           -- zdroj za ten, odkud uložené zprávy pocházejí.
+           typ = case when $11::boolean then excluded.typ else skola_feed.typ end,
            naposledy_ok = coalesce(excluded.naposledy_ok, skola_feed.naposledy_ok),
            naposledy_zkouseno = excluded.naposledy_zkouseno,
-           etag = coalesce(excluded.etag, skola_feed.etag),
-           modified_since = coalesce(excluded.modified_since, skola_feed.modified_since),
+           -- Validátory patří adrese: po změně zdroje se staré nepřenášejí.
+           etag = case when excluded.feed_url is distinct from skola_feed.feed_url then excluded.etag
+                       else coalesce(excluded.etag, skola_feed.etag) end,
+           modified_since = case when excluded.feed_url is distinct from skola_feed.feed_url then excluded.modified_since
+                                 else coalesce(excluded.modified_since, skola_feed.modified_since) end,
            chyby_v_rade = excluded.chyby_v_rade,
            dalsi_kontrola_at = excluded.dalsi_kontrola_at,
            posledni_chyba = excluded.posledni_chyba`,
         [zdroj.redizo, zdroj.feed_url, zdroj.zdroj ?? 'sonda',
          chyba ? null : new Date().toISOString(), zdroj.etag ?? null,
          zdroj.modified_since ?? null, chybyVRade, dalsi.toISOString(),
-         chyba ? String(zdroj.chyba).slice(0, 200) : null],
+         chyba ? String(zdroj.chyba).slice(0, 200) : null,
+         typ, precteno],
       );
+
+      // Škola přešla mezi výpisem aktualit a kanálem novinek a nový zdroj se
+      // přečetl: stránka školy i přehled se řídí typem zdroje, takže by zprávy
+      // starého zdroje vydávaly za zprávy nového (z výpisu by se ukázaly
+      // zprávy, které se zatím zobrazovat nemají, ZOBRAZIT_VYPISY). Zprávy
+      // starého zdroje se zneplatní; zprávy z této dávky ne, tentýž článek
+      // mohl přijít z obou. Při chybě nebo 304 se nic nemění, typ zůstává.
+      if (precteno && rows[0] && TYPY_VYPISU.has(rows[0].typ) !== TYPY_VYPISU.has(typ)) {
+        const { rowCount } = await klient.query(
+          `update skola_novinka set zneplatneno = now(), zmeneno = now()
+            where redizo = $1 and zneplatneno is null and not (identita = any($2::text[]))`,
+          [zdroj.redizo, (zdroj.polozky ?? []).map((p) => p.identita)],
+        );
+        if (rowCount) dotcena.add(zdroj.redizo);
+      }
 
       // Fronta změn v téže transakci jako změna, ne po commitu.
       for (const redizo of dotcena) {

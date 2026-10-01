@@ -3,7 +3,8 @@
 **Datum:** 1. 10. 2026
 **Otázka:** kolik škol, které nemají kanál novinek (RSS/Atom), se dá číst jinak, a jestli k tomu pomůže `sitemap.xml` nebo služby Parallel, Exa a TinyFish.
 **Navazuje na:** [sondu feedů](rss-webu-skol-sonda-2026.md) z 19. 9. 2026 a [překonaná rozhodnutí kolem novinek](prehodnoceni-rozhodnuti-rss-2027.md), P2 (žebříček zdrojů: hlášení školy → RSS → sitemap → snímky webu).
-**Reprodukce:** `.venv/bin/python scripts/sonda-mimo-rss.py` (data `data/sondy/mimo-rss-20261001.json`); placené služby `scripts/sonda-mimo-rss-sluzby.py` (zatím nespuštěno, chybí klíče).
+**Reprodukce:** `.venv/bin/python scripts/sonda-mimo-rss.py` (data `data/sondy/mimo-rss-20261001.json`); TinyFish `scripts/sonda-mimo-rss-tinyfish.py` (data `data/sondy/mimo-rss-tinyfish-20261001.json`); Exa a Parallel `scripts/sonda-mimo-rss-sluzby.py` (nespuštěno).
+**V provozu:** výpis aktualit sklízí sklízeč novinek od 1. 10. 2026 (oddíl 4a), na stránce školy zatím skrytý.
 **Ukázka v provozu:** nezalistovaná stránka `/prototyp/cim-skoly-ziji`.
 
 ## 1. Výchozí stav z produkční databáze (1. 10. 2026)
@@ -90,15 +91,31 @@ Rešerše oficiální dokumentace, ceníků a podmínek k 1. 10. 2026. Žádné 
 **Doporučení:**
 
 1. **Vlastní čtečku výpisu dát do provozu** (zdroj `typ = 'html'` vedle RSS, tatáž klasifikace a publikační rozhodnutí). Pokryje 230 škol navíc, zdarma, bez závislosti a bez právní nejistoty.
-2. **TinyFish Fetch** vyzkoušet na zbytek (výpis nerozpoznán, JavaScript): je zdarma a jeho markdown s odkazy se dá číst týmž kódem jako vlastní výpis.
+2. **TinyFish Fetch** vyzkoušet na zbytek (výpis nerozpoznán, JavaScript): je zdarma a jeho markdown s odkazy se dá číst týmž kódem jako vlastní výpis. *(Vyzkoušeno, oddíl 4a: markdown nejde, html celého těla ano; pomáhá u nedostupných webů, ne u nerozpoznaných výpisů.)*
 3. **Exa** jako druhá volba pro to, co Fetch nepřečte; levné, ale podmínky pro zveřejnění je třeba vyjasnit.
 4. **Parallel pro tenhle účel ne**, dokud dodavatel písemně nepotvrdí, že smíme výstupy ukládat a zveřejňovat titulky s odkazy. Na jednorázové rešerše (jako u veletrhů) je dál v pořádku.
 5. Weby za 401/403 nevyřeší žádná ze služeb v levném režimu; projít je ručně jednou (94 škol) a zbytek nechat na poli „adresa aktualit“ v portálu (P5).
 
 Hodnocení placených služeb je zatím jen z dokumentace. Platí až po běhu porovnávací sondy.
 
+## 4a. TinyFish naměřený a napojení do sklízeče (1. 10. 2026)
+
+Exa zatím nepoužíváme (rozhodnutí zadavatele 1. 10. 2026), Parallel ze stejných důvodů jako výše.
+
+**Co z TinyFish Fetch jde číst.** Markdown ani výchozí `html` (služba z něj vybere „hlavní obsah“) neobsahují odkazy na články a čtečka z nich nepřečte nic. Pokus číst bloky z formátu `json` dával špatné titulky (perex, jména autorů) a byl zahozen. Funguje `format: html` s `include_selectors: ["body"]`: služba vrátí celé vykreslené tělo stránky i s odkazy a třídami a čte se **touž čtečkou** jako přímé stažení. Služba projde i WEDOS.protection: brána vrací skriptům `HTTP 401` a chce automatický výpočet (proof-of-work), žádnou CAPTCHA pro člověka.
+
+| Skupina | Škol | titulka přes TinyFish | stránka aktualit | **výpis přečten** | zpráva za 30 dní |
+|---|---:|---:|---:|---:|---:|
+| přímo nedostupné (19. 9. titulka ≠ 200) | 110 | 80 | 75 | **57** | 49 |
+| odpověděly, výpis nepřečten | 162 | — | — | **3** | — |
+
+TinyFish tedy pomáhá tam, kde selhává **stažení**, ne tam, kde selhává **čtečka**: vykreslení JavaScriptu u nerozpoznaných výpisů skoro nic nepřidá. Chyby služby: `selector_not_matched` 20, `target_http_error` 17, `invalid_url` 8, `page_not_found` 5, `proxy_error` 4, `bot_blocked` 2.
+
+**Napojení.** Registr `public/skoly_vypisy.json` (`scripts/build-skoly-vypisy.py`): 276 škol se stahuje přímo, 59 přes TinyFish; vyřazeno 8 výpisů s nejnovější položkou starší než rok. Sklízeč při přímém stažení, které skončí `401/403`, `429` nebo síťovou chybou, zkusí ještě TinyFish. Zkušební běh bez databáze: 335/335 zdrojů, 3 055 položek, 284 škol se zprávou za 30 dní, 39 s. Zprávy z výpisu jdou do `skola_novinka` jako ze feedu, ale stránka školy je zatím **neukazuje**; vidět jsou na `/prototyp/cim-skoly-ziji` s označením „výpis aktualit“. Popis: [návrh sklízeče](skolske-novinky-rss-2027.md), oddíl 3.1.
+
 ## 5. Co dál
 
-- Spustit `scripts/sonda-mimo-rss-sluzby.py` s klíči a doplnit sem oddíl 4 o naměřené výsledky.
-- Rozhodnout o provozní čtečce výpisu: kam zapisovat (`skola_feed.typ = 'html'`, `feed_url` = stránka aktualit) a jak měřit úplnost.
+- Rozhodnout, zda zprávy z výpisu aktualit ukazovat na stránce školy (`ZOBRAZIT_VYPISY` v `src/lib/skolni-novinky.ts`). Podklad: ruční kontrola 30 škol (oddíl 2) a první týden sklizně na prototypu.
+- Změřit úplnost a stabilitu čtečky při opakovaném čtení (sklizeň 2× denně to dává zadarmo: zmizelé a znovu objevené položky).
+- Registr výpisů obnovit novou sondou, až přibude škol s kanálem novinek nebo s adresou aktualit z portálu (P5).
 - Před zveřejněním stránky „Čím školy žijí“ rozhodnout o filtru zpráv se jménem osoby v titulku (ve sklizni jsou například parte).

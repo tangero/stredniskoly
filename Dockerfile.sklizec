@@ -21,5 +21,7 @@ RUN npm ci --omit=dev
 COPY scripts ./scripts
 COPY src/lib/skolni-novinky-spam.ts ./src/lib/skolni-novinky-spam.ts
 COPY public/skoly_feedy.json ./public/skoly_feedy.json
+# Výpisy aktualit škol bez kanálu novinek (scripts/build-skoly-vypisy.py).
+COPY public/skoly_vypisy.json ./public/skoly_vypisy.json
 
 CMD ["bash", "scripts/sklizec-beh.sh"]

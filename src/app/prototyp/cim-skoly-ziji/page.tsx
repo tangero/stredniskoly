@@ -19,9 +19,11 @@ import sondaMimoRss from '../../../../data/sondy/mimo-rss-20261001.json';
 // Dva zdroje, které se nemíchají:
 //  1. kanál novinek (RSS/Atom) – průběžná sklizeň v databázi, `skola_feed`
 //     a `skola_novinka`; čte se při každém požadavku (přepínače platí hned);
-//  2. výpis aktualit u škol bez kanálu – **jednorázová sonda** z 1. 10. 2026
-//     (`scripts/sonda-mimo-rss.py`), snímek v data/sondy/. Ukazuje, co by
-//     přinesla čtečka výpisu, kdyby běžela v provozu. Neobnovuje se.
+//  2. výpis aktualit u škol bez kanálu – sklízeč ho čte stejně jako kanál
+//     (`skola_feed.typ` html/tinyfish, `scripts/novinky_vypis.py`). Dokud ho
+//     sklizeň nezapíše, ukazuje se **jednorázová sonda** z 1. 10. 2026
+//     (`scripts/sonda-mimo-rss.py`, snímek v data/sondy/). Na stránce školy
+//     se zprávy z výpisu zatím neukazují (`ZOBRAZIT_VYPISY` v skolni-novinky.ts).
 //
 // Titulky jsou školní, nikdo je ručně nečetl. Perex se nepřebírá (autorská práva).
 // ============================================================================
@@ -99,8 +101,15 @@ async function nactiSkoly(): Promise<Skola[]> {
 /** Do které skupiny škola patří z pohledu sběru zpráv. */
 function skupina(s: Skola, stav: Map<string, StavSkoly>): 'kanal' | 'vypis' | 'necteme' {
   if (stav.get(s.redizo)?.kanal) return 'kanal';
-  if ((sonda.get(s.redizo)?.vypis.polozek ?? 0) > 0) return 'vypis';
+  if (stav.get(s.redizo)?.vypis || (sonda.get(s.redizo)?.vypis.polozek ?? 0) > 0) return 'vypis';
   return 'necteme';
+}
+
+/** Zpráva z výpisu za 30 dní: ze sklizně, jinak ze snímku sondy. */
+function vypisCerstvy(s: Skola, stav: Map<string, StavSkoly>): boolean {
+  const st = stav.get(s.redizo);
+  if (st?.vypis) return st.zprav30 > 0;
+  return (sonda.get(s.redizo)?.vypis.polozek_30d ?? 0) > 0;
 }
 
 interface PageProps {
@@ -181,13 +190,14 @@ export default async function CimSkolyZijiPage({ searchParams }: PageProps) {
         {zpravy && (
           <section className="mt-10">
             <h2 className="text-xl font-semibold text-[#16325c]">
-              {kraj ? 'Nejnovější zprávy z kanálů novinek' : 'Nejnovější zprávy z celé země'}
+              {kraj ? 'Nejnovější zprávy z webů škol' : 'Nejnovější zprávy z celé země'}
             </h2>
             <p className="mt-1 text-sm text-slate-500">
-              Z webu školy, automaticky. Sbíráme je z kanálu novinek školy (RSS) dvakrát denně.
+              Z webu školy, automaticky, dvakrát denně: z kanálu novinek školy (RSS), a kde ho škola nemá, z výpisu
+              aktualit. U zpráv s označením „výpis aktualit“ mohou být titulky i data přečtené chybně.
             </p>
             {zpravy.length === 0 ? (
-              <p className="mt-4 text-slate-600">Z kanálů novinek škol v této oblasti zatím nemáme žádnou zprávu.</p>
+              <p className="mt-4 text-slate-600">Z webů škol v této oblasti zatím nemáme žádnou zprávu.</p>
             ) : (
               <ul className="mt-4 divide-y divide-slate-200 rounded-lg border border-slate-200 bg-white">
                 {zpravy.map((z) => {
@@ -207,6 +217,9 @@ export default async function CimSkolyZijiPage({ searchParams }: PageProps) {
                           </>
                         )}
                         {st && <span className="ml-2 rounded bg-blue-50 px-1.5 py-0.5 text-blue-800">{st}</span>}
+                        {stav?.get(z.redizo)?.vypis && (
+                          <span className="ml-2 rounded bg-slate-100 px-1.5 py-0.5 text-slate-600">výpis aktualit</span>
+                        )}
                       </div>
                       <a href={z.url} target="_blank" rel="noopener noreferrer nofollow" className="mt-0.5 block font-medium text-slate-900 hover:underline">
                         {z.titulek}
@@ -239,7 +252,9 @@ function Pokryti({ skoly, stav }: { skoly: Skola[]; stav: Map<string, StavSkoly>
   const n = skoly.length;
   const kanal = skoly.filter((s) => skupina(s, stav) === 'kanal');
   const cerstve = kanal.filter((s) => (stav.get(s.redizo)?.zprav30 ?? 0) > 0).length;
-  const vypis = skoly.filter((s) => skupina(s, stav) === 'vypis').length;
+  const vypisy = skoly.filter((s) => skupina(s, stav) === 'vypis');
+  const vypis = vypisy.length;
+  const zive = vypisy.filter((s) => stav.get(s.redizo)?.vypis).length;
   return (
     <section className="mt-8 rounded-lg border border-slate-200 bg-white p-4 text-sm text-slate-700">
       <p>
@@ -247,7 +262,8 @@ function Pokryti({ skoly, stav }: { skoly: Skola[]; stav: Map<string, StavSkoly>
         ({procento(kanal.length, n)}), zprávu za posledních 30 dní z něj máme u <strong>{cerstve}</strong>.
       </p>
       <p className="mt-1">
-        U dalších <strong>{vypis}</strong> škol bez kanálu jsme {DATUM_SONDY} jednorázově přečetli výpis aktualit na jejich webu.
+        {zive > 0 && <>U dalších <strong>{zive}</strong> škol bez kanálu čteme výpis aktualit, tedy stránku se seznamem zpráv na jejich webu. </>}
+        {vypis - zive > 0 && <>U {zive > 0 ? 'dalších ' : ''}<strong>{vypis - zive}</strong> škol bez kanálu jsme {DATUM_SONDY} jednorázově přečetli výpis aktualit na jejich webu. </>}
         Zbylých <strong>{n - kanal.length - vypis}</strong> webů zatím nečteme. Že o nich nic nevíme, neznamená, že se tam nic neděje.
       </p>
     </section>
@@ -265,7 +281,7 @@ function PrehledKraju({ skoly, kraje, stav }: { skoly: Skola[]; kraje: [string, 
       kanal: kanal.length,
       cerstve: kanal.filter((s) => (stav.get(s.redizo)?.zprav30 ?? 0) > 0).length,
       vypis: v.filter((s) => skupina(s, stav) === 'vypis').length,
-      vypisCerstve: v.filter((s) => skupina(s, stav) === 'vypis' && (sonda.get(s.redizo)?.vypis.polozek_30d ?? 0) > 0).length,
+      vypisCerstve: v.filter((s) => skupina(s, stav) === 'vypis' && vypisCerstvy(s, stav)).length,
     };
   });
   return (
@@ -278,7 +294,7 @@ function PrehledKraju({ skoly, kraje, stav }: { skoly: Skola[]; kraje: [string, 
             <th className="px-2 text-right font-medium">Škol</th>
             <th className="px-2 text-right font-medium">Kanál novinek</th>
             <th className="px-2 text-right font-medium">z toho zpráva za 30 dní</th>
-            <th className="px-2 text-right font-medium">Výpis aktualit (sonda)</th>
+            <th className="px-2 text-right font-medium">Výpis aktualit</th>
             <th className="px-2 text-right font-medium">z toho zpráva za 30 dní</th>
           </tr>
         </thead>
@@ -298,15 +314,17 @@ function PrehledKraju({ skoly, kraje, stav }: { skoly: Skola[]; kraje: [string, 
         </tbody>
       </table>
       <p className="mt-2 text-xs text-slate-500">
-        Procenta jsou ze všech škol kraje. Výpis aktualit je jednorázová sonda z {DATUM_SONDY}, v provozu zatím neběží.
+        Procenta jsou ze všech škol kraje. Výpis aktualit je stránka se seznamem zpráv na webu školy; u škol, které
+        sklizeň ještě nepřečetla, platí jednorázová sonda z {DATUM_SONDY}.
       </p>
     </section>
   );
 }
 
 function ZeSondy({ skoly, stav }: { skoly: Skola[]; stav: Map<string, StavSkoly> }) {
+  // Školy, jejichž výpis už čte sklizeň, mají zprávy v hlavním seznamu.
   const vypis = skoly
-    .filter((s) => skupina(s, stav) === 'vypis')
+    .filter((s) => skupina(s, stav) === 'vypis' && !stav.get(s.redizo)?.vypis)
     .map((s) => ({ s, z: sonda.get(s.redizo)! }))
     .sort((a, b) => (b.z.vypis.ukazka[0]?.datum ?? '').localeCompare(a.z.vypis.ukazka[0]?.datum ?? ''));
   if (vypis.length === 0) return null;

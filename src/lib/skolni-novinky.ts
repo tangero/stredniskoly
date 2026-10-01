@@ -156,6 +156,11 @@ export function jeVypnuto(prepinace: Map<string, unknown>, klic: string): boolea
   return false;
 }
 
+/** Typy zdroje `skola_feed.typ`, které nejsou kanál novinek, ale výpis aktualit. */
+export const TYPY_VYPISU = new Set(['html', 'tinyfish']);
+/** Zprávy z výpisu aktualit na stránce školy: vypnuto do rozhodnutí o kvalitě. */
+const ZOBRAZIT_VYPISY = false;
+
 /** Společný výběr sloupců pro oba dotazy, aby se nemohly rozejít. */
 export const SLOUPCE = `select n.id, n.titulek, n.url, n.publikovano, n.vytvoreno, n.zobrazeni,
          n.tridy, n.terminy, n.duvod, n.konec_platnosti,
@@ -287,11 +292,18 @@ export async function novinkySkoly(
   const polozky = kPrijimackam.rows.map(prevod).filter((p): p is SkolniNovinka => p !== null);
   const zeZivota = zivot.rows.map(prevod).filter((p): p is SkolniNovinka => p !== null);
 
-  const feed = await dotaz<{ feed_url: string; naposledy_ok: Date | string | null; chyby_v_rade: number }>(
-    `select feed_url, naposledy_ok, chyby_v_rade from skola_feed where redizo = $1`,
+  const feed = await dotaz<{ feed_url: string; naposledy_ok: Date | string | null; chyby_v_rade: number; typ?: string }>(
+    `select feed_url, naposledy_ok, chyby_v_rade, typ from skola_feed where redizo = $1`,
     [redizo],
   );
   const f = feed.rows[0];
+  // Zprávy přečtené z výpisu aktualit (ne z kanálu novinek) se sbírají, ale na
+  // stránce školy se zatím neukazují: čtečka výpisu bere titulek a datum ze
+  // šablony webu a chybovost je změřená jen na vzorku (docs/sonda-mimo-rss-2026.md).
+  // Do rozhodnutí se škola chová jako škola bez zdroje, tedy jako dosud.
+  if (f?.typ && TYPY_VYPISU.has(f.typ) && !ZOBRAZIT_VYPISY) {
+    return { polozky: [], zeZivota: [], zdrojOverenAt: null, zdrojUrl: null, zdrojVypadek: false };
+  }
 
   return {
     polozky: serad(polozky).slice(0, POCET_POLOZEK),

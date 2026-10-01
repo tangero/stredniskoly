@@ -1,0 +1,5055 @@
+{
+ "meta": {
+  "kdy": "2026-10-01",
+  "popis": "Sonda: přečte TinyFish výpis aktualit tam, kde přímé stažení nebo čtení selhalo?",
+  "skript": "scripts/sonda-mimo-rss-tinyfish.py",
+  "souhrn": {
+   "nedostupne": {
+    "skol": 110,
+    "titulka_ok": 80,
+    "stranka_aktualit": 75,
+    "precteno": 57,
+    "do_30d": 49,
+    "stavy": {
+     "titulka_nedostupna": 30,
+     "precteno": 48,
+     "z_titulky": 9,
+     "nerozpoznano": 18,
+     "bez_odkazu": 5
+    }
+   },
+   "necteno": {
+    "skol": 162,
+    "titulka_ok": 131,
+    "stranka_aktualit": 87,
+    "precteno": 3,
+    "do_30d": 3,
+    "stavy": {
+     "bez_odkazu": 44,
+     "nerozpoznano": 84,
+     "titulka_nedostupna": 31,
+     "z_titulky": 1,
+     "precteno": 2
+    }
+   }
+  }
+ },
+ "skoly": [
+  {
+   "redizo": "600004856",
+   "skupina": "necteno",
+   "web": "https://www.podskalska.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600004821",
+   "skupina": "necteno",
+   "web": "https://www.duhovkagymnazium.cz/osmilete-gymnazium-praha",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.duhovkagymnazium.cz/article/list",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600004902",
+   "skupina": "necteno",
+   "web": "https://sossjecna.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://sossjecna.cz/zaci-a-rodice/aktuality",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600004830",
+   "skupina": "necteno",
+   "web": "https://www.cao.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.cao.cz/zajemce-o-studium/aktuality-prijimaci-rizeni/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600004864",
+   "skupina": "necteno",
+   "web": "https://www.ssob.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.ssob.cz/#",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600004708",
+   "skupina": "necteno",
+   "web": "https://www.agstepanska.cz/site/uvod",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.agstepanska.cz/site/aktuality",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600005089",
+   "skupina": "nedostupne",
+   "web": "https://www.postupicka.cz/",
+   "titulka": "TinyFish target_http_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600005143",
+   "skupina": "necteno",
+   "web": "http://www.gvp.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "http://www.gvp.cz/zivot/clanky",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600005275",
+   "skupina": "necteno",
+   "web": "https://www.sousos.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.sousos.cz/novinky",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600005402",
+   "skupina": "nedostupne",
+   "web": "https://smvv.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://smvv.cz/novinky/",
+   "stav": "precteno",
+   "polozek": 10,
+   "polozek_30d": 0,
+   "nejnovejsi": "2026-08-21",
+   "ukazka": [
+    {
+     "titulek": "Zahájení školního roku",
+     "url": "https://smvv.cz/novinky/zahajeni-skolniho-roku-4/",
+     "datum": "2026-08-21",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Provoz školy o letních prázdninách",
+     "url": "https://smvv.cz/novinky/provoz-skoly-o-letnich-prazdninach/",
+     "datum": "2026-06-30",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Zájezd do Malé Fatry",
+     "url": "https://smvv.cz/novinky/zajezd-do-male-fatry/",
+     "datum": "2026-06-23",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Vyhlášení výsledků 2. kola přij. řízení na Gymnázium",
+     "url": "https://smvv.cz/novinky/vyhlaseni-vysledku-2-kola-prij-rizeni-na-gymnazium/",
+     "datum": "2026-06-23",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Simulace v terénu (2026)",
+     "url": "https://smvv.cz/novinky/simulace-v-terenu-2026/",
+     "datum": "2026-06-12",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600005348",
+   "skupina": "necteno",
+   "web": "https://www.gybu.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gybu.cz/gybu-udalosti/duke-of-edinburgh-award",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600005623",
+   "skupina": "necteno",
+   "web": "https://kavalirka.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600005810",
+   "skupina": "necteno",
+   "web": "http://www.soscl-ruzyne.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600005836",
+   "skupina": "necteno",
+   "web": "https://www.oapraha.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.oapraha.cz/novinky/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600005666",
+   "skupina": "necteno",
+   "web": "https://www.ptksos.cz/",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600005950",
+   "skupina": "necteno",
+   "web": "https://www.fostra.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.fostra.cz/en/chci-odebirat-novinky",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600006298",
+   "skupina": "necteno",
+   "web": "http://www.hotelova-skola.cz/",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600004597",
+   "skupina": "nedostupne",
+   "web": "http://www.malgym.cz",
+   "titulka": "TinyFish target_http_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600006310",
+   "skupina": "necteno",
+   "web": "https://www.1kspa.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600006379",
+   "skupina": "nedostupne",
+   "web": "https://www.umeleckoremeslna.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.umeleckoremeslna.cz/",
+   "stav": "z_titulky",
+   "polozek": 6,
+   "polozek_30d": 1,
+   "nejnovejsi": "2026-09-01",
+   "ukazka": [
+    {
+     "titulek": "Náš kovář zazářil na setkání uměleckých kovářů v Podbradci",
+     "url": "https://www.umeleckoremeslna.cz/",
+     "datum": "2026-09-01",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Zahájení školního roku 2026/2027 a organizace prvního týdne",
+     "url": "https://www.umeleckoremeslna.cz/",
+     "datum": "2026-08-27",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Bakaláři mají novou adresu — změna od",
+     "url": "https://www.umeleckoremeslna.cz/",
+     "datum": "2026-07-31",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Zlatnický workshop v rámci programu Erasmus+",
+     "url": "https://www.umeleckoremeslna.cz/",
+     "datum": "2026-06-11",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Bronz v soutěži Dobřívský cvoček na 33. Hamernickém dni",
+     "url": "https://www.umeleckoremeslna.cz/",
+     "datum": "2026-06-03",
+     "druh": "nadpis"
+    }
+   ]
+  },
+  {
+   "redizo": "600006352",
+   "skupina": "necteno",
+   "web": "https://www.gymspit.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600006573",
+   "skupina": "necteno",
+   "web": "https://heroldovysady.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://heroldovysady.cz/aktuality",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600006549",
+   "skupina": "necteno",
+   "web": "https://phgymnazium.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://phgymnazium.cz/novinky/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600006816",
+   "skupina": "nedostupne",
+   "web": "https://www.gvh.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://gvh.cz/",
+   "stav": "z_titulky",
+   "polozek": 6,
+   "polozek_30d": 2,
+   "nejnovejsi": "2026-09-29",
+   "ukazka": [
+    {
+     "titulek": "Příspěvky SRPG",
+     "url": "https://gvh.cz/uncategorized/prispevky-srpg/",
+     "datum": "2026-09-29",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Zlaté hrábě 2026",
+     "url": "https://gvh.cz/uncategorized/zlate-hrabe-2026/",
+     "datum": "2026-09-08",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Zahájení školního roku 2026/27",
+     "url": "https://gvh.cz/uncategorized/zahajeni-skolniho-roku-2026-27/",
+     "datum": "2026-08-31",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Maturitní zkoušky – podzimní termín",
+     "url": "https://gvh.cz/uncategorized/maturitni-zkousky-podzimni-termin/",
+     "datum": "2026-08-12",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Rozvrh hodin pro nastupující třídy",
+     "url": "https://gvh.cz/uncategorized/rozvrh-hodin-pro-nastupujici-tridy/",
+     "datum": "2026-08-03",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600006425",
+   "skupina": "necteno",
+   "web": "https://www.skola-profit.cz/aktualne",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600006841",
+   "skupina": "nedostupne",
+   "web": "https://www.soshorovice.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://soshorovice.cz/aktuality/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600006808",
+   "skupina": "necteno",
+   "web": "https://www.gymberoun.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gymberoun.cz/inspekcni-zpravy",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600006930",
+   "skupina": "nedostupne",
+   "web": "https://1kspa-kladno.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://1kspa-kladno.cz/",
+   "stav": "z_titulky",
+   "polozek": 4,
+   "polozek_30d": 1,
+   "nejnovejsi": "2026-09-01",
+   "ukazka": [
+    {
+     "titulek": "Informace pro budoucí 1. ročníky – 2026/2027",
+     "url": "https://1kspa-kladno.cz/blog/2026/06/23/informace-pro-budouci-1-rocniky-2026-2027/",
+     "datum": "2026-09-01",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Uzavření školy",
+     "url": "https://1kspa-kladno.cz/blog/2026/08/27/uzavreni-skoly/",
+     "datum": "2026-08-31",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Předávání maturitních vysvědčení",
+     "url": "https://1kspa-kladno.cz/blog/2026/06/03/predavani-maturitnich-vysvedceni/",
+     "datum": "2026-06-09",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Volby do školské rady",
+     "url": "https://1kspa-kladno.cz/blog/2026/05/28/volby-do-skolske-rady/",
+     "datum": "2026-05-22",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600006905",
+   "skupina": "necteno",
+   "web": "https://www.spskladno.cz/",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600006697",
+   "skupina": "necteno",
+   "web": "https://www.sps-vlasim.cz/",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600007022",
+   "skupina": "necteno",
+   "web": "https://www.ssars.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.ssars.cz/cz/aktualne",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600007308",
+   "skupina": "nedostupne",
+   "web": "https://www.gfp.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gfp.cz/category/inform/vyronci-zpravy/",
+   "stav": "precteno",
+   "polozek": 3,
+   "polozek_30d": 0,
+   "nejnovejsi": "2025-11-05",
+   "ukazka": [
+    {
+     "titulek": "Výroční zpráva za rok 2024/2025",
+     "url": "https://www.gfp.cz/category/inform/vyronci-zpravy/",
+     "datum": "2025-11-05",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Výroční zpráva za rok 2023/2024",
+     "url": "https://www.gfp.cz/category/inform/vyronci-zpravy/",
+     "datum": "2024-11-10",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Výroční zpráva za rok 2022/2023",
+     "url": "https://www.gfp.cz/category/inform/vyronci-zpravy/",
+     "datum": "2023-11-01",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600006921",
+   "skupina": "necteno",
+   "web": "https://www.oaslany.cz/",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600007120",
+   "skupina": "nedostupne",
+   "web": "https://www.gcbrod.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://gcbrod.cz/aktuality/",
+   "stav": "precteno",
+   "polozek": 6,
+   "polozek_30d": 1,
+   "nejnovejsi": "2026-09-18",
+   "ukazka": [
+    {
+     "titulek": "Studentské volby",
+     "url": "https://gcbrod.cz/novinky/studentske-volby/",
+     "datum": "2026-09-18",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Schůzka budoucích prvních ročníků",
+     "url": "https://gcbrod.cz/novinky/schuzka-budoucich-prvnich-rocniku/",
+     "datum": "2026-06-16",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Vítězství naší fiktivní firmy",
+     "url": "https://gcbrod.cz/novinky/vitezstvi-nasi-fiktivni-firmy/",
+     "datum": "2026-06-10",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Ředitelské volno",
+     "url": "https://gcbrod.cz/novinky/reditelske-volno-7/",
+     "datum": "2026-04-15",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Školní Merch",
+     "url": "https://gcbrod.cz/novinky/skolni-merch/",
+     "datum": "2025-12-08",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600007073",
+   "skupina": "necteno",
+   "web": "http://www.ssdr.cz/cs",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600007448",
+   "skupina": "nedostupne",
+   "web": "https://www.spsmb.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.spsmb.cz/aktuality/",
+   "stav": "precteno",
+   "polozek": 3,
+   "polozek_30d": 1,
+   "nejnovejsi": "2026-09-25",
+   "ukazka": [
+    {
+     "titulek": "Organizace výuky od středy 23.9. do pátku",
+     "url": "https://www.spsmb.cz/sdeleni/organizace-vyuky-od-stredy-23-9-do-patku-25-9-2026/",
+     "datum": "2026-09-25",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "První rok ECDL na naší škole",
+     "url": "https://www.spsmb.cz/sdeleni/prvni-rok-ecdl-na-nasi-skole/",
+     "datum": "2026-08-26",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "🤓NABÍDKA PRO ŽÁKY ZÁKLADNÍCH ŠKOL VE ŠKOLNÍM ROCE 2026/2027🤓",
+     "url": "https://www.spsmb.cz/sdeleni/%f0%9f%a4%93nabidka-tri-krouzku-pro-zaky-zakladnich-skol-ve-skolnim-roce-2026-2027%f0%9f%a4%93/",
+     "datum": "2026-06-24",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600005933",
+   "skupina": "nedostupne",
+   "web": "http://www.gulz.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gulz.cz/category/aktuality/",
+   "stav": "precteno",
+   "polozek": 10,
+   "polozek_30d": 4,
+   "nejnovejsi": "2026-09-28",
+   "ukazka": [
+    {
+     "titulek": "2.A navštívila Poslaneckou sněmovnu",
+     "url": "https://www.gulz.cz/aktuality/2-a-navstivila-poslaneckou-snemovnu/",
+     "datum": "2026-09-28",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Medailový úspěch volejbalového týmu GULZ",
+     "url": "https://www.gulz.cz/aktuality/medailovy-uspech-volejbaloveho-tymu-gulz/",
+     "datum": "2026-09-28",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Bronzový úspěch našich atletů",
+     "url": "https://www.gulz.cz/aktuality/bronzovy-uspech-nasich-atletu/",
+     "datum": "2026-09-11",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Soutěž „Naši nejlepší“",
+     "url": "https://www.gulz.cz/aktuality/soutez-nasi-nejlepsi-4/",
+     "datum": "2026-09-02",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Slavnostní zahájení školního roku",
+     "url": "https://www.gulz.cz/aktuality/14884/",
+     "datum": "2026-08-31",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600007561",
+   "skupina": "necteno",
+   "web": "https://hotelovkapodebrady.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://hotelovkapodebrady.cz/rubriky",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600007464",
+   "skupina": "necteno",
+   "web": "https://www.bossmb.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600007553",
+   "skupina": "necteno",
+   "web": "http://www.gjp.cz/o-skole/blog-skoly",
+   "titulka": "ok",
+   "stranka_aktualit": "http://www.gjp.cz/o-skole/blog-skoly",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600007375",
+   "skupina": "necteno",
+   "web": "https://www.spss-mel.cz/",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600007812",
+   "skupina": "nedostupne",
+   "web": "https://www.gymkc.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gymkc.cz/clanky.html",
+   "stav": "precteno",
+   "polozek": 20,
+   "polozek_30d": 13,
+   "nejnovejsi": "2026-09-30",
+   "ukazka": [
+    {
+     "titulek": "Ředitelské volno v týdnu podzimních prázdnin",
+     "url": "https://www.gymkc.cz/clanek/reditelske-volno-v-tydnu-podzimnich-prazdnin/990?from=articles",
+     "datum": "2026-09-30",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Návštěva HistoryParku v Ledčicích",
+     "url": "https://www.gymkc.cz/clanek/navsteva-historyparku-v-ledcicich/989?from=articles",
+     "datum": "2026-09-29",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Mechanismy v NTM",
+     "url": "https://www.gymkc.cz/clanek/mechanismy-v-ntm/988?from=articles",
+     "datum": "2026-09-24",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Závody v přespolním běhu",
+     "url": "https://www.gymkc.cz/clanek/zavody-v-prespolnim-behu/987?from=articles",
+     "datum": "2026-09-24",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Noc Literatury 2026",
+     "url": "https://www.gymkc.cz/clanek/noc-literatury-2026/985?from=articles",
+     "datum": "2026-09-18",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600007821",
+   "skupina": "nedostupne",
+   "web": "https://www.spspb.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.spspb.cz/aktuality-ze-skoly/",
+   "stav": "precteno",
+   "polozek": 93,
+   "polozek_30d": 0,
+   "nejnovejsi": "2024-12-20",
+   "ukazka": [
+    {
+     "titulek": "Výstava Tutanchamon",
+     "url": "https://www.spspb.cz/2024/12/20/vystava-tutanchamon/",
+     "datum": "2024-12-20",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Výstava modelů občanských staveb studentů 4. ročníku",
+     "url": "https://www.spspb.cz/2024/12/20/vystava-modelu-obcanskych-staveb-studentu-4-rocniku/",
+     "datum": "2024-12-20",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Exkurze žáků oborů IT a Elektrotechnika do firmy Škoda Auto",
+     "url": "https://www.spspb.cz/2024/12/20/exkurze-zaku-oboru-it-a-elektrotechnika-do-firmy-skoda-auto/",
+     "datum": "2024-12-20",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Vánoční ping-pongový turnaj",
+     "url": "https://www.spspb.cz/2024/12/20/vanocni-ping-pongovy-turnaj-3/",
+     "datum": "2024-12-20",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "PŘEDVÁNOČNÍ STAVAŘSKÁ SOUTĚŽ",
+     "url": "https://www.spspb.cz/2024/12/20/predvanocni-stavarska-soutez-2/",
+     "datum": "2024-12-20",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600007855",
+   "skupina": "necteno",
+   "web": "https://www.goasedlcany.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.goasedlcany.cz/novinky",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600008002",
+   "skupina": "necteno",
+   "web": "http://www.gymji.cz/",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600008029",
+   "skupina": "nedostupne",
+   "web": "https://www.gtnv.cz/domains/gtnv.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gtnv.cz/domains/gtnv.cz/",
+   "stav": "z_titulky",
+   "polozek": 10,
+   "polozek_30d": 1,
+   "nejnovejsi": "2026-09-02",
+   "ukazka": [
+    {
+     "titulek": "Stezka Česka - Jeseníky",
+     "url": "https://www.gtnv.cz/co-se-u-nas-deje/exkurze-jeseniky.html",
+     "datum": "2026-09-02",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Sjíždění Vltavy",
+     "url": "https://www.gtnv.cz/co-se-u-nas-deje/rafty-sjizdeni-vltavy.html",
+     "datum": "2026-06-17",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Exkurze Bosna a Hercegovina",
+     "url": "https://www.gtnv.cz/co-se-u-nas-deje/exkurze-bosna.html",
+     "datum": "2026-06-15",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Výlet tercie do Mozolova",
+     "url": "https://www.gtnv.cz/co-se-u-nas-deje/vylet-tercie-do-mozolova.html",
+     "datum": "2026-06-09",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Cyklák septima 2026",
+     "url": "https://www.gtnv.cz/co-se-u-nas-deje/cyklak-septima2026.html",
+     "datum": "2026-05-25",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600008037",
+   "skupina": "necteno",
+   "web": "http://www.gymtrhovesviny.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "http://www.gymtrhovesviny.cz/aktuality-uvod.html#uvod",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600006638",
+   "skupina": "nedostupne",
+   "web": "https://www.ssesp10.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.ssesp10.cz/category/novinky/",
+   "stav": "precteno",
+   "polozek": 10,
+   "polozek_30d": 8,
+   "nejnovejsi": "2026-09-30",
+   "ukazka": [
+    {
+     "titulek": "NOVÝ KROUŽEK ROZVOJE MYŠLENÍ",
+     "url": "https://www.ssesp10.cz/novinky/novy-krouzek-rozvoje-mysleni-2/",
+     "datum": "2026-09-30",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Setkání žáků s OMJ prvních ročníků",
+     "url": "https://www.ssesp10.cz/novinky/setkani-zaku-s-omj-prvnich-rocniku/",
+     "datum": "2026-09-30",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Muzeum komunikačních technologií CETIN",
+     "url": "https://www.ssesp10.cz/novinky/muzeum-komunikacnich-technologii-cetin/",
+     "datum": "2026-09-24",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Exkurze v showroomu optických technologií",
+     "url": "https://www.ssesp10.cz/novinky/exkurze-v-showroomu-optickych-technologii/",
+     "datum": "2026-09-21",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Hledá se dárce kostní dřeně pro nemocného Jindřicha",
+     "url": "https://www.ssesp10.cz/novinky/hleda-se-darce-kostni-drene-pro-nemocneho-jindricha/",
+     "datum": "2026-09-17",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600008088",
+   "skupina": "necteno",
+   "web": "http://www.bigy-cb.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600008169",
+   "skupina": "nedostupne",
+   "web": "http://www.soscb.cz/",
+   "titulka": "TinyFish page_not_found",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600008096",
+   "skupina": "necteno",
+   "web": "https://www.cag.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.cag.cz/aktuality",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600008231",
+   "skupina": "necteno",
+   "web": "https://www.gymck.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600008282",
+   "skupina": "necteno",
+   "web": "https://gvn.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600008363",
+   "skupina": "necteno",
+   "web": "https://www.ssrv.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600008371",
+   "skupina": "necteno",
+   "web": "https://www.sostrebon.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600008436",
+   "skupina": "necteno",
+   "web": "https://www.gyoa.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gyoa.cz/skola/aktuality/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600008681",
+   "skupina": "nedostupne",
+   "web": "https://www.stredni-skola.eu/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://stredni-skola.eu/",
+   "stav": "z_titulky",
+   "polozek": 5,
+   "polozek_30d": 5,
+   "nejnovejsi": "2026-09-23",
+   "ukazka": [
+    {
+     "titulek": "Adaptační den prvních ročníků ☀️🍄‍🟫🍄",
+     "url": "https://stredni-skola.eu/2026/09/23/adaptacni-den-prvnich-rocniku-%e2%98%80%ef%b8%8f%f0%9f%8d%84%e2%80%8d%f0%9f%9f%ab%f0%9f%8d%84/",
+     "datum": "2026-09-23",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Výsledky 4. kola přijímacího řízení pro školní rok 2026/2027",
+     "url": "https://stredni-skola.eu/2026/09/21/vysledky-4-kola-prijimaciho-rizeni-pro-skolni-rok-2026-2027/",
+     "datum": "2026-09-21",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Adaptační kurzy",
+     "url": "https://stredni-skola.eu/2026/09/16/adaptacni-kurzy-3/",
+     "datum": "2026-09-16",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Máme osm nových maturantů!",
+     "url": "https://stredni-skola.eu/2026/09/11/mame-osm-novych-maturantu/",
+     "datum": "2026-09-11",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Přání do nového školního roku",
+     "url": "https://stredni-skola.eu/2026/09/02/prani-do-noveho-skolniho-roku/",
+     "datum": "2026-09-02",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600008649",
+   "skupina": "nedostupne",
+   "web": "https://www.gympt.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gympt.cz/category/news/",
+   "stav": "precteno",
+   "polozek": 5,
+   "polozek_30d": 1,
+   "nejnovejsi": "2026-09-21",
+   "ukazka": [
+    {
+     "titulek": "Kvalifikační expedice DofE: Po stopách zaniklých osad",
+     "url": "https://www.gympt.cz/kvalifikacni-expedice-dofe-po-stopach-zaniklych-osad/",
+     "datum": "2026-09-21",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Animárium a Kamenný most v Písku",
+     "url": "https://www.gympt.cz/animarium-a-kamenny-most-v-pisku/",
+     "datum": "2026-06-27",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Medvědí stezka",
+     "url": "https://www.gympt.cz/medvedi-stezka/",
+     "datum": "2026-06-24",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Úspěch v celostátním kole soutěže z anglického jazyka",
+     "url": "https://www.gympt.cz/uspech-v-celostatnim-kole-souteze-z-anglickeho-jazyka/",
+     "datum": "2026-06-22",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Demo Day programu The Challenge",
+     "url": "https://www.gympt.cz/demo-day-programu-the-challenge/",
+     "datum": "2026-06-10",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600008908",
+   "skupina": "nedostupne",
+   "web": "https://gymdom.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://gjsb.cz/clanky/aktivity/",
+   "stav": "precteno",
+   "polozek": 10,
+   "polozek_30d": 7,
+   "nejnovejsi": "2026-09-28",
+   "ukazka": [
+    {
+     "titulek": "Exkurze třídy 2.8 na vlakové nádraží",
+     "url": "https://gjsb.cz/exkurze-tridy-2-8-na-vlakove-nadrazi/",
+     "datum": "2026-09-28",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Česko-německé setkání na Čerchově",
+     "url": "https://gjsb.cz/cesko-nemecke-setkani-na-cerchove/",
+     "datum": "2026-09-27",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Návštěva francouzské školy a domu dvou kreativních umělců",
+     "url": "https://gjsb.cz/navsteva-francouzske-skoly-a-domu-dvou-kreativnich-umelcu/",
+     "datum": "2026-09-22",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Hurá do Francie!",
+     "url": "https://gjsb.cz/hura-do-francie/",
+     "datum": "2026-09-22",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Náš žák byl přijat ministrem školství",
+     "url": "https://gjsb.cz/nas-zak-byl-prijat-ministrem-skolstvi/",
+     "datum": "2026-09-22",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600008941",
+   "skupina": "nedostupne",
+   "web": "https://soudom.cz;https://soudom-stod.cz",
+   "titulka": "TinyFish invalid_url",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600008924",
+   "skupina": "necteno",
+   "web": "http://oa.ssbean.cz/",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600009033",
+   "skupina": "necteno",
+   "web": "http://www.hotelovaskola.cz/",
+   "titulka": "TinyFish target_http_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600007383",
+   "skupina": "nedostupne",
+   "web": "http://www.zas-me.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.zas-me.cz/category/novinky/",
+   "stav": "precteno",
+   "polozek": 10,
+   "polozek_30d": 1,
+   "nejnovejsi": "2026-09-21",
+   "ukazka": [
+    {
+     "titulek": "Navštivte dny otevřených dveří v ČZA Mělník 9. a",
+     "url": "https://www.zas-me.cz/aktualne/navstivte-dny-otevrenych-dveri-v-cza-melnik-9-a-10-rijna-2026/",
+     "datum": "2026-09-21",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Otevíráme třetí kolo přijímacího řízení ke studiu do denní VOŠ",
+     "url": "https://www.zas-me.cz/novinky/otevirame-treti-kolo-prijimaciho-rizeni-ke-studium-do-denni-vos/",
+     "datum": "2026-08-17",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Přijímací řízení VOŠ 2026",
+     "url": "https://www.zas-me.cz/aktualne/prijimaci-rizeni-vos-2026/",
+     "datum": "2026-06-25",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Vyhlášení druhého kola přijímacího řízení do denní formy VOŠ",
+     "url": "https://www.zas-me.cz/aktualne/vyhlaseni-druheho-kola-prijimaciho-rizeni-do-denni-formy-vos/",
+     "datum": "2026-06-24",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Připojte se k online dni otevřených dveří ve středu",
+     "url": "https://www.zas-me.cz/aktualne/pripojte-se-k-online-dni-otevrenych-dveri-ve-stredu-13-kvetna-2026/",
+     "datum": "2026-04-30",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600007600",
+   "skupina": "nedostupne",
+   "web": "http://www.szes.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.szes.cz/category/aktuality/",
+   "stav": "precteno",
+   "polozek": 3,
+   "polozek_30d": 2,
+   "nejnovejsi": "2026-09-17",
+   "ukazka": [
+    {
+     "titulek": "Kurz pro uchazeče o první lovecký lístek",
+     "url": "https://www.szes.cz/aktuality/kurz-pro-uchazece-o-prvni-lovecky-listek/",
+     "datum": "2026-09-17",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Inseminační kurzy – podzim 2026",
+     "url": "https://www.szes.cz/aktuality/inseminacni-kurzy-podzim-2026/",
+     "datum": "2026-09-07",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Podzimní maturitní zkoušky",
+     "url": "https://www.szes.cz/aktuality/podzimni-maturitni-zkousky-2/",
+     "datum": "2026-08-25",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600009211",
+   "skupina": "nedostupne",
+   "web": "https://soapodnikatel.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://soapodnikatel.cz/cat/aktuality/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600009408",
+   "skupina": "nedostupne",
+   "web": "https://www.sskola.horazdovice.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://sskola.horazdovice.cz/aktuality/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600009319",
+   "skupina": "nedostupne",
+   "web": "https://www.stavebniskolakv.cz/new/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.stavebniskolakv.cz/new/index.php",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600009238",
+   "skupina": "necteno",
+   "web": "https://soskv.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://soskv.cz/aktuality",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600008738",
+   "skupina": "necteno",
+   "web": "https://www.euroskola.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600009335",
+   "skupina": "necteno",
+   "web": "https://www.spskt.cz/spskt/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.spskt.cz/spskt/aktuality.asp",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600009696",
+   "skupina": "necteno",
+   "web": "https://www.hotelova-skola-plzen.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.hotelova-skola-plzen.cz/#aktuality",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600009751",
+   "skupina": "necteno",
+   "web": "https://www.gblovice.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gblovice.cz/aktuality.php",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600009718",
+   "skupina": "necteno",
+   "web": "https://www.souplzen.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600009998",
+   "skupina": "nedostupne",
+   "web": "http://www.gymcl.cz",
+   "titulka": "TinyFish invalid_url",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600009971",
+   "skupina": "necteno",
+   "web": "https://www.sszplana.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.sszplana.cz/novinky.html",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600010163",
+   "skupina": "necteno",
+   "web": "https://www.bgv.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.bgv.cz/aktuality.html",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600010180",
+   "skupina": "necteno",
+   "web": "https://www.sosmgp.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.sosmgp.cz/index.php#aktuality",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600009602",
+   "skupina": "necteno",
+   "web": "https://www.nerudovka.cz/",
+   "titulka": "TinyFish target_http_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600010279",
+   "skupina": "nedostupne",
+   "web": "https://gymrumburk.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://gymrumburk.cz/aktuality/",
+   "stav": "precteno",
+   "polozek": 11,
+   "polozek_30d": 1,
+   "nejnovejsi": "2026-09-02",
+   "ukazka": [
+    {
+     "titulek": "Oslavy 120 let školy",
+     "url": "https://gymrumburk.cz/2026/09/oslavy-120-let-skoly/",
+     "datum": "2026-09-02",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Gymnaziální sportovky v žáru slunce",
+     "url": "https://gymrumburk.cz/2026/06/gymnazialni-sportovky-v-zaru-slunce/",
+     "datum": "2026-06-29",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Student roku",
+     "url": "https://gymrumburk.cz/2026/06/student-roku/",
+     "datum": "2026-06-26",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Kvinta zamířila k nebi",
+     "url": "https://gymrumburk.cz/2026/06/kvinta-zamirila-k-nebi/",
+     "datum": "2026-06-18",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Středoškolák Ústeckého kraje",
+     "url": "https://gymrumburk.cz/2026/06/stredoskolak-usteckeho-kraje/",
+     "datum": "2026-06-18",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600010520",
+   "skupina": "necteno",
+   "web": "https://soso.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://soso.cz/aktuality/vysledky-prijimaciho-rizeni-n461875.htm",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600010112",
+   "skupina": "necteno",
+   "web": "https://www.euroskola.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600010414",
+   "skupina": "necteno",
+   "web": "https://www.gymtan.cz/",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600010601",
+   "skupina": "necteno",
+   "web": "https://skolakaterinky.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://skolakaterinky.cz/aktuality/cela-skola",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600010546",
+   "skupina": "necteno",
+   "web": "https://www.prak.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.prak.cz/aktuality-a-kalendar-akci",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600010783",
+   "skupina": "nedostupne",
+   "web": "https://www.1kspa.cz/litomerice",
+   "titulka": "TinyFish page_not_found",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600010759",
+   "skupina": "necteno",
+   "web": "https://sslitomerice.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://sslitomerice.cz/index.php/vyrocni-zpravy",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600009009",
+   "skupina": "nedostupne",
+   "web": "http://www.gymcheb.cz",
+   "titulka": "TinyFish target_http_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600010864",
+   "skupina": "necteno",
+   "web": "http://www.ssouindustria.eu/",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600010813",
+   "skupina": "necteno",
+   "web": "http://www.soslovo.cz/",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600010830",
+   "skupina": "nedostupne",
+   "web": "https://www.gjj.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gjj.cz/aktuality/",
+   "stav": "precteno",
+   "polozek": 558,
+   "polozek_30d": 2,
+   "nejnovejsi": "2026-09-22",
+   "ukazka": [
+    {
+     "titulek": "Návštěva partnerského gymnázia z Fuldy",
+     "url": "https://www.gjj.cz/2026/09/22/",
+     "datum": "2026-09-22",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Burza učebnic pátek 11.9.",
+     "url": "https://www.gjj.cz/2026/09/05/",
+     "datum": "2026-09-05",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Začátek školního roku 2026-2027",
+     "url": "https://www.gjj.cz/2026/08/27/",
+     "datum": "2026-08-27",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Maturitní a komisionální zkoušky termíny",
+     "url": "https://www.gjj.cz/2026/07/07/",
+     "datum": "2026-07-07",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Fulda meets Europe",
+     "url": "https://www.gjj.cz/2026/06/24/",
+     "datum": "2026-06-24",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600011046",
+   "skupina": "necteno",
+   "web": "http://www.humanitas.cz/wp/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600011151",
+   "skupina": "nedostupne",
+   "web": "http://www.sssmep.cz/",
+   "titulka": "TinyFish bot_blocked",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600010571",
+   "skupina": "necteno",
+   "web": "https://www.oalib.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.oalib.cz/aktuality/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600011372",
+   "skupina": "necteno",
+   "web": "https://www.severoceska.cz/index.php?type=Homepage&id=6",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.severoceska.cz/index.php?type=Blog&id=20",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600011445",
+   "skupina": "necteno",
+   "web": "https://www.oaulpar.cz/",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600011429",
+   "skupina": "necteno",
+   "web": "https://www.obchodniskola.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600011267",
+   "skupina": "necteno",
+   "web": "http://www.gspsd.cz/",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600010155",
+   "skupina": "nedostupne",
+   "web": "http://www.lesnicka-skola.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.lesnicka-skola.cz/category/aktuality/",
+   "stav": "precteno",
+   "polozek": 10,
+   "polozek_30d": 2,
+   "nejnovejsi": "2026-09-28",
+   "ukazka": [
+    {
+     "titulek": "Den české státnosti",
+     "url": "https://www.lesnicka-skola.cz/aktuality/den-ceske-statnosti/",
+     "datum": "2026-09-28",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "První seznámení s pilami",
+     "url": "https://www.lesnicka-skola.cz/aktuality/prvni-seznameni-s-pilami/",
+     "datum": "2026-09-24",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Lesnický den se blíží",
+     "url": "https://www.lesnicka-skola.cz/aktuality/lesnicky-den-se-blizi-3/",
+     "datum": "2026-08-27",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Půlka prázdnin je za námi",
+     "url": "https://www.lesnicka-skola.cz/aktuality/pulka-prazdnin-je-za-nami/",
+     "datum": "2026-08-01",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Letní trubačský tábor – pozvánka na koncert",
+     "url": "https://www.lesnicka-skola.cz/aktuality/pozvanka-na-koncert-trubacu/",
+     "datum": "2026-07-01",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600011631",
+   "skupina": "necteno",
+   "web": "https://kyberna.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://kyberna.cz/aktuality",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600011747",
+   "skupina": "necteno",
+   "web": "https://www.hnn.cz/informace-pro-uchazece-o-studium-na-sups-hnn/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.hnn.cz/sups-hnn-v-tisku-a-na-internetu/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600010686",
+   "skupina": "necteno",
+   "web": "http://www.sos-gs.cz/",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600010228",
+   "skupina": "nedostupne",
+   "web": "http://www.libverdadc.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.libverdadc.cz/category/aktualne/",
+   "stav": "precteno",
+   "polozek": 6,
+   "polozek_30d": 0,
+   "nejnovejsi": "2025-12-19",
+   "ukazka": [
+    {
+     "titulek": "Výstava Libverda 2025 + 175 let od založení školy",
+     "url": "https://www.libverdadc.cz/aktualne/vystava-libverda-2025/",
+     "datum": "2025-12-19",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Vedoucí parku a zámeckého zahradnictví Lány",
+     "url": "https://www.libverdadc.cz/aktualne/vedouci-parku-a-zameckeho-zahradnictvi-lany/",
+     "datum": "2025-12-11",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "O studium Libverdy je velký zájem",
+     "url": "https://www.libverdadc.cz/aktualne/o-studium-libverdy-je-velky-zajem/",
+     "datum": "2025-11-19",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Zahájení školního roku 2025/2026 + harmonogram",
+     "url": "https://www.libverdadc.cz/aktualne/zahajeni-skolniho-roku-2025-2026-harmonogram/",
+     "datum": "2025-08-25",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Volná pracovní pozice – Statek Kravaře",
+     "url": "https://www.libverdadc.cz/aktualne/volna-pracovni-pozice-statek-kravare/",
+     "datum": "2025-07-02",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600011771",
+   "skupina": "necteno",
+   "web": "https://www.hotelovka.cz/",
+   "titulka": "TinyFish target_unreachable",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600011925",
+   "skupina": "nedostupne",
+   "web": "https://stredniskola.bohemia-chrudim.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://stredniskola.bohemia-chrudim.cz/aktuality",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600011321",
+   "skupina": "necteno",
+   "web": "https://www.gymjat.cz/dulezita-sdeleni",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600012271",
+   "skupina": "necteno",
+   "web": "http://www.amnachod.cz/index.php/cs",
+   "titulka": "ok",
+   "stranka_aktualit": "http://www.amnachod.cz/index.php/cs/cs-blog-skoly",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600012425",
+   "skupina": "necteno",
+   "web": "https://www.gymozart.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gymozart.cz/obsah/novinky.html",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600012433",
+   "skupina": "necteno",
+   "web": "https://www.spsch.cz/",
+   "titulka": "TinyFish empty_content",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600012549",
+   "skupina": "nedostupne",
+   "web": "https://www.gympldka.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gympldka.cz/index.php",
+   "stav": "precteno",
+   "polozek": 6,
+   "polozek_30d": 5,
+   "nejnovejsi": "2026-09-30",
+   "ukazka": [
+    {
+     "titulek": "Přednáška od Běžícího češtináře",
+     "url": "https://www.gympldka.cz/index.php/aktuality/1714-prednaska-od-beziciho-cestinare",
+     "datum": "2026-09-30",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Slavnostní setkání vítězů soutěží na KÚ v Hradci Králové",
+     "url": "https://www.gympldka.cz/index.php/aktuality/1713-slavnostni-setkani-vitezu-soutezi-na-ku-v-hradci-kralove",
+     "datum": "2026-09-24",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Chemicko-biologická exkurze v Contipru",
+     "url": "https://www.gympldka.cz/index.php/aktuality/1711-chemicko-biologicka-exkurze-v-contipru",
+     "datum": "2026-09-17",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Biologický kroužek",
+     "url": "https://www.gympldka.cz/index.php/aktuality/1710-biologicky-krouzek",
+     "datum": "2026-09-16",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Studuj na střední škole v USA nebo Velké Británii",
+     "url": "https://www.gympldka.cz/index.php/aktuality/1709-studuj-na-stredni-skole-v-usa-nebo-velke-britanii",
+     "datum": "2026-09-16",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600012638",
+   "skupina": "nedostupne",
+   "web": "https://www.gytu.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gytu.cz/",
+   "stav": "z_titulky",
+   "polozek": 3,
+   "polozek_30d": 1,
+   "nejnovejsi": "2026-09-01",
+   "ukazka": [
+    {
+     "titulek": "Uchazeči o studium",
+     "url": "https://www.gytu.cz/",
+     "datum": "2026-09-01",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Klub mladých diváků",
+     "url": "https://www.gytu.cz/",
+     "datum": "2026-06-11",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Školní parlament",
+     "url": "https://www.gytu.cz/",
+     "datum": "2025-09-17",
+     "druh": "nadpis"
+    }
+   ]
+  },
+  {
+   "redizo": "600012654",
+   "skupina": "necteno",
+   "web": "https://www.giosm.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600011852",
+   "skupina": "nedostupne",
+   "web": "https://www.gymhlinsko.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gymhlinsko.cz/actual-for-study/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600012468",
+   "skupina": "nedostupne",
+   "web": "https://www.sscg.cz/",
+   "titulka": "TinyFish target_http_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600012760",
+   "skupina": "necteno",
+   "web": "https://www.gmt.cz/",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600012786",
+   "skupina": "necteno",
+   "web": "https://www.gyoa.svitavy.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gyoa.svitavy.cz/aktuality-3/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600012891",
+   "skupina": "necteno",
+   "web": "https://www.gymvr.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.krgym.cz/",
+   "stav": "z_titulky",
+   "polozek": 5,
+   "polozek_30d": 1,
+   "nejnovejsi": "2026-09-15",
+   "ukazka": [
+    {
+     "titulek": "Návštěva mezinárodního studentského semináře v St. Marienthalu",
+     "url": "https://www.krgym.cz/2026/09/15/navsteva-mezinarodniho-studentskeho-seminare-v-st-marienthalu/",
+     "datum": "2026-09-15",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Celostní finále přeboru škol v orientačním běhu 2026",
+     "url": "https://www.krgym.cz/2026/06/24/celostni-finale-preboru-skol-v-orientacnim-behu-2026/",
+     "datum": "2026-06-24",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Kariérní stáže našich studentů",
+     "url": "https://www.krgym.cz/2026/06/20/karierni-staze-nasich-studentu/",
+     "datum": "2026-06-20",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Krajské kolo Přeboru škol v orientačním běhu 2026",
+     "url": "https://www.krgym.cz/2026/06/17/krajske-kolo-preboru-skol-v-orientacnim-behu-2026/",
+     "datum": "2026-06-17",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Student panel – konference mimořádně nadaných",
+     "url": "https://www.krgym.cz/2026/06/08/student-panel-konference-mimoradne-nadanych/",
+     "datum": "2026-06-08",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600012875",
+   "skupina": "necteno",
+   "web": "https://www.gymnaziumtu.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gymnaziumtu.cz/stranka/vyrocni-zpravy",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600013073",
+   "skupina": "necteno",
+   "web": "http://www.gvmyto.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://gvmyto.edupage.org/a/aktuality-26-27",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600013057",
+   "skupina": "necteno",
+   "web": "https://www.gymla.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gymla.cz/aktuality",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600011712",
+   "skupina": "nedostupne",
+   "web": "http://www.sssoghk.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.sssoghk.cz/category/aktualne/",
+   "stav": "precteno",
+   "polozek": 8,
+   "polozek_30d": 0,
+   "nejnovejsi": "2026-08-24",
+   "ukazka": [
+    {
+     "titulek": "Workshop Kam po základce",
+     "url": "https://www.sssoghk.cz/aktualne/workshop-kam-po-zakladce/",
+     "datum": "2026-08-24",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Komplexní závěrečná zkouška",
+     "url": "https://www.sssoghk.cz/aktualne/kombinovane-vzdelavani/",
+     "datum": "2026-08-21",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Termíny opravných zkoušek – srpen 2026",
+     "url": "https://www.sssoghk.cz/aktualne/terminy-opravnych-zkousek-srpen-2026/",
+     "datum": "2026-06-28",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Zahájení školního roku 2026/27",
+     "url": "https://www.sssoghk.cz/aktualne/zahajeni-skolniho-roku-2026-27/",
+     "datum": "2026-06-28",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Rozpis konzultací pro dálkové studium 2026/27",
+     "url": "https://www.sssoghk.cz/aktualne/rozpis-konzultaci-pro-dalkove-studium-2026-27/",
+     "datum": "2026-06-28",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600013081",
+   "skupina": "nedostupne",
+   "web": "https://www.gyz.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://gyz.cz/blog/",
+   "stav": "precteno",
+   "polozek": 4,
+   "polozek_30d": 2,
+   "nejnovejsi": "2026-09-16",
+   "ukazka": [
+    {
+     "titulek": "Beseda pro rodiče – současné změny ve školním řádu",
+     "url": "https://gyz.cz/2026/09/08/beseda-pro-rodice-soucasne-zmeny-ve-skolnim-radu/",
+     "datum": "2026-09-16",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Nový školní rok 2026/2027 je oficiálně zahájen!",
+     "url": "https://gyz.cz/2026/09/02/novy-skolni-rok-2026-2027-je-oficialne-zahajen/",
+     "datum": "2026-09-01",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Žáci Gymnázia Žamberk navštívili poslaneckou sněmovnu",
+     "url": "https://gyz.cz/2026/06/11/zaci-gymnazia-zamberk-navstivili-poslaneckou-snemovnu/",
+     "datum": "2026-06-10",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Slavnostní předávání maturitních vysvědčení",
+     "url": "https://gyz.cz/2026/06/17/slavnostni-predavani-maturitnich-vysvedceni-2/",
+     "datum": "2026-06-02",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600013235",
+   "skupina": "necteno",
+   "web": "https://www.gymbk.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gymbk.cz/verejnost/aktualne.html",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600013294",
+   "skupina": "nedostupne",
+   "web": "https://www.gymbos.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600013421",
+   "skupina": "necteno",
+   "web": "https://www.gymelg.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gymelg.cz/aktuality",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600013472",
+   "skupina": "necteno",
+   "web": "http://www.gymnaslo.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600013502",
+   "skupina": "necteno",
+   "web": "https://www.oabrno.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600013537",
+   "skupina": "necteno",
+   "web": "https://gymglobe.cz/",
+   "titulka": "TinyFish empty_content",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600013383",
+   "skupina": "necteno",
+   "web": "https://www.cergas-bk.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600012298",
+   "skupina": "nedostupne",
+   "web": "http://www.agys.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.agys.cz/aktuality/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600013839",
+   "skupina": "necteno",
+   "web": "http://www.skolyjh.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600012735",
+   "skupina": "nedostupne",
+   "web": "http://www.soupolicka.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.soupolicka.cz/aktualne-2/",
+   "stav": "precteno",
+   "polozek": 230,
+   "polozek_30d": 5,
+   "nejnovejsi": "2026-09-20",
+   "ukazka": [
+    {
+     "titulek": "Erasmus+",
+     "url": "https://www.soupolicka.cz/aktualne-2/",
+     "datum": "2026-09-20",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Zářijový triumf",
+     "url": "https://www.soupolicka.cz/aktualne-2/",
+     "datum": "2026-09-17",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Naši žáci opět v Cesenaticu 17.9.",
+     "url": "https://www.soupolicka.cz/aktualne-2/",
+     "datum": "2026-09-17",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Burza učebnic",
+     "url": "https://www.soupolicka.cz/aktualne-2/",
+     "datum": "2026-09-13",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Akce školy v září",
+     "url": "https://www.soupolicka.cz/aktualne-2/",
+     "datum": "2026-09-11",
+     "druh": "nadpis"
+    }
+   ]
+  },
+  {
+   "redizo": "600013880",
+   "skupina": "necteno",
+   "web": "https://www.hotskolabrno.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.hotskolabrno.cz/vyrocni-zpravy/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600012751",
+   "skupina": "nedostupne",
+   "web": "http://www.gymjev.cz",
+   "titulka": "TinyFish target_http_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600014061",
+   "skupina": "necteno",
+   "web": "https://www.gslapanice.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600014177",
+   "skupina": "necteno",
+   "web": "https://www.svisv.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.svisv.cz/o-nas/aktualne-ze-skoly",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600013090",
+   "skupina": "nedostupne",
+   "web": "http://www.soukraliky.orlicko.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.skolalipka.cz/category/aktuality/",
+   "stav": "precteno",
+   "polozek": 9,
+   "polozek_30d": 2,
+   "nejnovejsi": "2026-09-16",
+   "ukazka": [
+    {
+     "titulek": "TECHNOhrátky v Králíkách už potřinácté – a přece tentokrát i premiérově",
+     "url": "https://www.skolalipka.cz/aktuality/technohratky-v-kralikach-uz-potrinacte-a-prece-tentokrat-i-premierove/",
+     "datum": "2026-09-16",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "„Ukažte, co jste sami vyrobili“",
+     "url": "https://www.skolalipka.cz/aktuality/ukazte-co-jste-sami-vyrobili/",
+     "datum": "2026-09-16",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Schůzky rodičů a žáků budoucích prvních ročníků",
+     "url": "https://www.skolalipka.cz/aktuality/schuzky-rodicu-a-zaku-budoucich-prvnich-rocniku/",
+     "datum": "2026-06-18",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Střední škola technická a sociální Králíky otevírá nový přednáškový sál pro školu a region",
+     "url": "https://www.skolalipka.cz/aktuality/stredni-skola-technicka-a-socialni-kraliky-otevira-novy-prednaskovy-sal-pro-skolu-a-region/",
+     "datum": "2026-06-12",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Po svářečích je mezi zaměstnavateli hlad. Mají i svou soutěž",
+     "url": "https://www.skolalipka.cz/aktuality/po-svarecich-je-mezi-zamestnavateli-hlad-maji-i-svou-soutez/",
+     "datum": "2026-05-19",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600014312",
+   "skupina": "nedostupne",
+   "web": "https://gyotr.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://gyotr.cz/clanky/",
+   "stav": "precteno",
+   "polozek": 3,
+   "polozek_30d": 3,
+   "nejnovejsi": "2026-09-17",
+   "ukazka": [
+    {
+     "titulek": "Atletický úspěch našich žákyň a žáků",
+     "url": "https://gyotr.cz/blog/2026/09/21/11407/",
+     "datum": "2026-09-17",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Soutěžní den s IZS",
+     "url": "https://gyotr.cz/blog/2026/09/22/soutezni-den-s-izs-2/",
+     "datum": "2026-09-16",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Za světlem fyziky: naše studentky na soustředění",
+     "url": "https://gyotr.cz/blog/2026/09/14/za-svetlem-fyziky-nase-studentky-na-soustredeni/",
+     "datum": "2026-09-12",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600014673",
+   "skupina": "nedostupne",
+   "web": "https://goah.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://goah.cz/aktualne/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600014932",
+   "skupina": "nedostupne",
+   "web": "https://www.adfontes.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://adfontes.cz/",
+   "stav": "precteno",
+   "polozek": 6,
+   "polozek_30d": 6,
+   "nejnovejsi": "2026-10-01",
+   "ukazka": [
+    {
+     "titulek": "Parádní úspěch na okresním kole v přespolním běhu!",
+     "url": "https://adfontes.cz/",
+     "datum": "2026-10-01",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Knihlava",
+     "url": "https://adfontes.cz/",
+     "datum": "2026-10-01",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Národní technické muzeum v Praze",
+     "url": "https://adfontes.cz/",
+     "datum": "2026-10-01",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Cambridge English na AD FONTES",
+     "url": "https://adfontes.cz/",
+     "datum": "2026-09-24",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Národní technické muzeum Praha",
+     "url": "https://adfontes.cz/",
+     "datum": "2026-09-24",
+     "druh": "nadpis"
+    }
+   ]
+  },
+  {
+   "redizo": "600015050",
+   "skupina": "necteno",
+   "web": "https://www.gymhol.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gymhol.cz/aktuality/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600015092",
+   "skupina": "necteno",
+   "web": "https://www.hskm.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.hskm.cz/o-skole/novinky",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600013821",
+   "skupina": "nedostupne",
+   "web": "http://www.jilova.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.jilova.cz/#",
+   "stav": "precteno",
+   "polozek": 4,
+   "polozek_30d": 4,
+   "nejnovejsi": "2026-09-19",
+   "ukazka": [
+    {
+     "titulek": "Adaptační kurz třídy DV1",
+     "url": "https://www.jilova.cz/#",
+     "datum": "2026-09-19",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Promítání filmu Civilizace: Dobrá zpráva o konci světa a beseda s Petrem Horkým",
+     "url": "https://www.jilova.cz/#",
+     "datum": "2026-09-19",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Letní technická škola MENDELU",
+     "url": "https://www.jilova.cz/#",
+     "datum": "2026-09-18",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "LANOVÉ CENTRUM PROUD",
+     "url": "https://www.jilova.cz/#",
+     "datum": "2026-09-18",
+     "druh": "nadpis"
+    }
+   ]
+  },
+  {
+   "redizo": "600015246",
+   "skupina": "necteno",
+   "web": "https://www.sospo.eu/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600014029",
+   "skupina": "nedostupne",
+   "web": "http://www.zamekkurim.cz",
+   "titulka": "TinyFish target_http_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600015360",
+   "skupina": "necteno",
+   "web": "https://appptrebic.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://appptrebic.cz/dokumenty/vyrocni-zpravy",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600015572",
+   "skupina": "nedostupne",
+   "web": "https://stredni.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://stredni.cz/novinky/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600014843",
+   "skupina": "nedostupne",
+   "web": "http://www.ssptaji.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.prumyslovkajihlava.cz/category/aktualne/",
+   "stav": "precteno",
+   "polozek": 10,
+   "polozek_30d": 1,
+   "nejnovejsi": "2026-09-10",
+   "ukazka": [
+    {
+     "titulek": "Noc vědy na Průmyslovce Jihlava: Technika mluví. Rozumíte jí?",
+     "url": "https://www.prumyslovkajihlava.cz/aktualne/noc-vedy-na-prumyslovce-jihlava-technika-mluvi-rozumite-ji/",
+     "datum": "2026-09-10",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Zlatá špona už posedmé",
+     "url": "https://www.prumyslovkajihlava.cz/aktualne/zlata-spona-uz-posedme/",
+     "datum": "2026-07-08",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Talent Vysočiny",
+     "url": "https://www.prumyslovkajihlava.cz/aktualne/talent-vysociny/",
+     "datum": "2026-07-03",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Výuční listy předány, školní rok uzavřen",
+     "url": "https://www.prumyslovkajihlava.cz/aktualne/vyucni-listy-predany-skolni-rok-uzavren/",
+     "datum": "2026-07-02",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Termíny opravných zkoušek a zkoušek k doplnění klasifikace",
+     "url": "https://www.prumyslovkajihlava.cz/aktualne/terminy-opravnych-zkousek-a-zkousek-k-doplneni-klasifikace-2/",
+     "datum": "2026-06-30",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600014959",
+   "skupina": "nedostupne",
+   "web": "http://www.oakm.cz",
+   "titulka": "TinyFish target_http_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600015076",
+   "skupina": "nedostupne",
+   "web": "http://www.vetkm.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.vetkm.cz/novinky/",
+   "stav": "precteno",
+   "polozek": 9,
+   "polozek_30d": 3,
+   "nejnovejsi": "2026-09-30",
+   "ukazka": [
+    {
+     "titulek": "Přespolní běh v Bystřici pod Hostýnem",
+     "url": "https://www.vetkm.cz/prespolni-beh-v-bystrici-pod-hostynem/",
+     "datum": "2026-09-30",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Sedláčkův memoriál",
+     "url": "https://www.vetkm.cz/sedlackuv-memorial/",
+     "datum": "2026-09-25",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "XXXII. valné shromáždění Sítě ASPnet v České republice",
+     "url": "https://www.vetkm.cz/xxxii-valne-shromazdeni-site-aspnet-v-ceske-republice/",
+     "datum": "2026-09-24",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Oznámení o termínu konání profilové části maturitní zkoušky",
+     "url": "https://www.vetkm.cz/oznameni-o-terminu-konani-profilove-casti-maturitni-zkousky/",
+     "datum": "2026-08-20",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Informace na prázdniny",
+     "url": "https://www.vetkm.cz/informace-na-prazdniny-4/",
+     "datum": "2026-06-25",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600015866",
+   "skupina": "necteno",
+   "web": "https://www.gvm.cz/cs/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gvm.cz/cs/o-skole/vyrocni-zpravy",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600015106",
+   "skupina": "nedostupne",
+   "web": "http://www.potravinarska-skola.cz",
+   "titulka": "TinyFish target_http_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600015165",
+   "skupina": "nedostupne",
+   "web": "http://www.svehlova.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.svehlova.cz/category/aktuality/",
+   "stav": "precteno",
+   "polozek": 9,
+   "polozek_30d": 3,
+   "nejnovejsi": "2026-09-18",
+   "ukazka": [
+    {
+     "titulek": "Erasmus+ v Budapešti",
+     "url": "https://www.svehlova.cz/aktuality/erasmus-v-budapesti/",
+     "datum": "2026-09-18",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Festool Roadshow přiblížila žákům moderní profesionální nářadí",
+     "url": "https://www.svehlova.cz/aktuality/festool-roadshow-priblizila-zakum-moderni-profesionalni-naradi/",
+     "datum": "2026-09-18",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Dožínky Olomouckého kraje",
+     "url": "https://www.svehlova.cz/aktuality/dozinky-olomouckeho-kraje/",
+     "datum": "2026-09-16",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "KORADO – exkurze",
+     "url": "https://www.svehlova.cz/aktuality/korado-exkurze/",
+     "datum": "2026-06-26",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "„Soumrak doby plastové?“",
+     "url": "https://www.svehlova.cz/aktuality/soumrak-doby-plastove/",
+     "datum": "2026-06-25",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600016145",
+   "skupina": "necteno",
+   "web": "https://www.sspkrnov.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.sspkrnov.cz/aktuality",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600015327",
+   "skupina": "nedostupne",
+   "web": "http://www.kgtrebic.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.kgtrebic.cz/category/novinky/",
+   "stav": "precteno",
+   "polozek": 6,
+   "polozek_30d": 3,
+   "nejnovejsi": "2026-09-10",
+   "ukazka": [
+    {
+     "titulek": "Na přijímačky s jistotou",
+     "url": "https://www.kgtrebic.cz/novinky/priprava-na-prijimaci-zkousky/",
+     "datum": "2026-09-10",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Výstava připomíná hrdiny československého odboje",
+     "url": "https://www.kgtrebic.cz/novinky/vystava-pripomina-hrdiny-ceskoslovenskeho-odboje/",
+     "datum": "2026-09-08",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Vykročili jsme do nového školního roku",
+     "url": "https://www.kgtrebic.cz/novinky/hura-prazdniny-jsou-tady/",
+     "datum": "2026-09-01",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Vodácký kurz na Vltavě přinesl nezapomenutelné zážitky",
+     "url": "https://www.kgtrebic.cz/novinky/vodacky-kurz-na-vltave-prinesl-nezapomenutelne-zazitky/",
+     "datum": "2026-06-19",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Tři naši studenti reprezentovali školu v celostátním kole SOČ",
+     "url": "https://www.kgtrebic.cz/novinky/tri-nasi-studenti-reprezentovali-skolu-v-celostatnim-kole-soc-v-olomouci/",
+     "datum": "2026-06-14",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600016455",
+   "skupina": "nedostupne",
+   "web": "https://www.gym-bohumin.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gym-bohumin.cz/cz/aktualne/aktuality/",
+   "stav": "precteno",
+   "polozek": 113,
+   "polozek_30d": 1,
+   "nejnovejsi": "2026-09-16",
+   "ukazka": [
+    {
+     "titulek": "Na den gymplákem – EXPEDICE GFŽ",
+     "url": "https://www.gym-bohumin.cz/cz/aktualne/aktuality/cz/aktualne/aktuality/134-na-den-gymplakem-expedice-gfz.html",
+     "datum": "2026-09-16",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Deváté číslo Géčka!",
+     "url": "https://www.gym-bohumin.cz/cz/aktualne/aktuality/cz/aktualne/aktuality/133-devate-cislo-gecka.html",
+     "datum": "2026-06-23",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Video ze sportovního kurzu",
+     "url": "https://www.gym-bohumin.cz/cz/aktualne/aktuality/cz/aktualne/aktuality/132-video-ze-sportovniho-kurzu.html",
+     "datum": "2026-06-23",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Obhájili jsme: Jsme Školou udržitelného rozvoje!",
+     "url": "https://www.gym-bohumin.cz/cz/aktualne/aktuality/cz/aktualne/aktuality/131-obhajili-jsme-jsme-skolou-udrzitelneho-rozvoje.html",
+     "datum": "2026-06-09",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Nové číslo Géčka! Již osmé!",
+     "url": "https://www.gym-bohumin.cz/cz/aktualne/aktuality/cz/aktualne/aktuality/130-nove-cislo-gecka-jiz-osme.html",
+     "datum": "2026-03-17",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600016471",
+   "skupina": "nedostupne",
+   "web": "https://www.gkh.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://gkh.cz/aktuality-4/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600016641",
+   "skupina": "necteno",
+   "web": "https://www.obaka-havirov.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600016862",
+   "skupina": "nedostupne",
+   "web": "http://www.ssp-bilovec.cz",
+   "titulka": "TinyFish invalid_url",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600016706",
+   "skupina": "necteno",
+   "web": "https://www.sosoom.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600016773",
+   "skupina": "nedostupne",
+   "web": "https://www.gmk.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gmk.cz/c/aktuality/",
+   "stav": "precteno",
+   "polozek": 10,
+   "polozek_30d": 2,
+   "nejnovejsi": "2026-09-08",
+   "ukazka": [
+    {
+     "titulek": "Expedice Mars – projekt pro nadané studenty",
+     "url": "https://www.gmk.cz/expedice-mars-projekt-pro-nadane-studenty/",
+     "datum": "2026-09-08",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Lyžařský kurz v rakouských Alpách",
+     "url": "https://www.gmk.cz/lyzarsky-kurz-v-rakouskych-alpach/",
+     "datum": "2026-09-02",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Pozvánka na lekce Akrobatické šály",
+     "url": "https://www.gmk.cz/pozvanka-na-lekce-akrobaticke-saly/",
+     "datum": "2026-08-19",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Ani o prázdninách nezahálíme",
+     "url": "https://www.gmk.cz/ani-o-prazdninach-nezahalime/",
+     "datum": "2026-08-04",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Návštěva Lékařské fakulty v Olomouci",
+     "url": "https://www.gmk.cz/navsteva-lekarske-fakulty-v-olomouci/",
+     "datum": "2026-07-03",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600016901",
+   "skupina": "nedostupne",
+   "web": "https://www.educa-sos.eu/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.educa-sos.eu/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600016676",
+   "skupina": "nedostupne",
+   "web": "https://sps-karvina.cz/www/",
+   "titulka": "TinyFish page_not_found",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600016986",
+   "skupina": "necteno",
+   "web": "https://sslch.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600016714",
+   "skupina": "necteno",
+   "web": "https://www.gypri.cz/",
+   "titulka": "TinyFish proxy_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600017109",
+   "skupina": "necteno",
+   "web": "https://www.oaol.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.oaol.cz/aktuality-uredni-desky",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600017087",
+   "skupina": "necteno",
+   "web": "https://warning.joindns4.eu:443/passthrough?data=eyJNZXRob2QiOiJHRVQiLCJTY2hlbWUiOiJodHRwIiwiSG9zdCI6Ind3dy5zb3NsaXRvdmVsLmN6IiwiUG9ydCI6IjgwIiwiUG9zdERhdGEiOiIiLCJQYXRoIjoiLyIsIlF1ZXJ5Ijoie30iLCJTaW5raG9sZUlEIjo2MDAwMDYzLCJOdW1iZXJPZlJlZGlyZWN0cyI6MH0",
+   "titulka": "TinyFish invalid_url",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600017338",
+   "skupina": "nedostupne",
+   "web": "http://www.sspu-opava.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.sspu-opava.cz/cs/aktuality/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600017389",
+   "skupina": "nedostupne",
+   "web": "https://www.spsopava.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.spsopava.cz/",
+   "stav": "z_titulky",
+   "polozek": 4,
+   "polozek_30d": 4,
+   "nejnovejsi": "2026-09-25",
+   "ukazka": [
+    {
+     "titulek": "Výzva a Zadávací dokumentace k podání nabídky na veřejnou zakázku s názvem „Obnova zpevněných a sportovních ploch“",
+     "url": "https://www.spsopava.cz/vyzva-a-zadavaci-dokumentace-k-podani-nabidky-na-verejnou-zakazku-s-nazvem-obnova-zpevnenych-a-sportovnich-ploch/",
+     "datum": "2026-09-25",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Týdenní terestrické geodetické měření na Gruni",
+     "url": "https://www.spsopava.cz/tydenni-terestricke-geodeticke-mereni-na-gruni-2/",
+     "datum": "2026-09-23",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Středoškolský atletický pohár – okresní finále",
+     "url": "https://www.spsopava.cz/stredoskolsky-atleticky-pohar-okresni-finale/",
+     "datum": "2026-09-23",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Odborný výjezd 4.B",
+     "url": "https://www.spsopava.cz/odborny-vyjezd-4-b/",
+     "datum": "2026-09-23",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600017290",
+   "skupina": "necteno",
+   "web": "https://www.soukroma-oa-opava.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.soukroma-oa-opava.cz/aktuality/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600017257",
+   "skupina": "nedostupne",
+   "web": "https://www.oa-opava.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.oa-opava.cz/index.php/skola/zpravy-z-webu",
+   "stav": "precteno",
+   "polozek": 103,
+   "polozek_30d": 4,
+   "nejnovejsi": "2026-10-01",
+   "ukazka": [
+    {
+     "titulek": "Ekonom roku 2026",
+     "url": "https://www.oa-opava.cz/index.php/skola/589-ekonom-roku-2026",
+     "datum": "2026-10-01",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Výzva od TQM",
+     "url": "https://www.oa-opava.cz/index.php/skola/588-zaci-resili-vyzvu-od-tqm",
+     "datum": "2026-09-24",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "2 medaile z atletiky",
+     "url": "https://www.oa-opava.cz/index.php/skola/587-dve-medaile-z-atletiky",
+     "datum": "2026-09-23",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Volejbalové stříbro",
+     "url": "https://www.oa-opava.cz/index.php/skola/586-stribro-z-memorialu-jana-martinka-ve-volejbale",
+     "datum": "2026-09-23",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Vyhlášení voleb do školské rady 2026",
+     "url": "https://www.oa-opava.cz/index.php/skola/585-vyhlaseni-doplnujicich-voleb-do-skolske-rady-2026",
+     "datum": "2026-08-26",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600017672",
+   "skupina": "necteno",
+   "web": "https://www.oa-vos.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.oa-vos.cz/aktuality",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600017664",
+   "skupina": "nedostupne",
+   "web": "https://www.ahol.cz/",
+   "titulka": "TinyFish target_http_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600017907",
+   "skupina": "nedostupne",
+   "web": "https://spshranice.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://spshranice.cz/aktualne/",
+   "stav": "precteno",
+   "polozek": 3,
+   "polozek_30d": 0,
+   "nejnovejsi": "2026-06-30",
+   "ukazka": [
+    {
+     "titulek": "Informace pro nastupující první ročníky",
+     "url": "https://spshranice.cz/aktuality/informace-pro-nastupujici-prvni-rocniky-2/",
+     "datum": "2026-06-30",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Slavnostní dokončení rekonstrukce budovy SPŠ Hranice",
+     "url": "https://spshranice.cz/aktuality/slavnostni-dokonceni-rekonstrukce-budovy-sps-hranice/",
+     "datum": "2026-06-18",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Ekologický projektový den",
+     "url": "https://spshranice.cz/aktuality/ekologicky-projektovy-den/",
+     "datum": "2026-06-10",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600017931",
+   "skupina": "necteno",
+   "web": "https://www.ssos.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.ssos.cz/aktuality-sos-hranice",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600017982",
+   "skupina": "necteno",
+   "web": "https://www.spsemoh.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.spsemoh.cz/show-news.php?zprava=5048",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600018067",
+   "skupina": "necteno",
+   "web": "http://www.ssspzabreh.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "http://www.ssspzabreh.cz/novinky",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600018156",
+   "skupina": "nedostupne",
+   "web": "http://www.roznovskastredni.cz",
+   "titulka": "TinyFish invalid_redirect_url",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600017494",
+   "skupina": "necteno",
+   "web": "https://www.hladnov.cz/cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.hladnov.cz/cz/dele/aktuality-dele",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600018245",
+   "skupina": "necteno",
+   "web": "https://www.spssvsetin.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.spssvsetin.cz/výroční-zprávy",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600017125",
+   "skupina": "nedostupne",
+   "web": "http://www.zemedelkaolomouc.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.zemedelkaolomouc.cz/category/stalo-se/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600019471",
+   "skupina": "necteno",
+   "web": "https://szsvinohrady.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://szsvinohrady.cz/o-skole/aktuality",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600018202",
+   "skupina": "necteno",
+   "web": "https://ze-ro.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600019527",
+   "skupina": "nedostupne",
+   "web": "https://www.zdravotka.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.zdravotka.cz/o-skole/aktuality/",
+   "stav": "precteno",
+   "polozek": 8,
+   "polozek_30d": 4,
+   "nejnovejsi": "2026-10-01",
+   "ukazka": [
+    {
+     "titulek": "Výsledky voleb do školské rady",
+     "url": "https://www.zdravotka.cz/2026/10/01/vysledky-voleb-do-skolske-rady/",
+     "datum": "2026-10-01",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Oznámení o konání voleb do školské rady",
+     "url": "https://www.zdravotka.cz/2026/09/09/oznameni-o-konani-voleb-do-skolske-rady-2/",
+     "datum": "2026-09-09",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Exkurze ve Fakultní nemocnici Hradec Králové",
+     "url": "https://www.zdravotka.cz/2026/09/07/exkurze-ve-fakultni-nemocnici-hradec-kralove/",
+     "datum": "2026-09-07",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Nástup žáků 1. ročníků",
+     "url": "https://www.zdravotka.cz/2026/08/27/nastup-zaku-1-rocniku-1-zari-2026/",
+     "datum": "2026-09-01",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Zápis do 1. ročníku VOŠZ – studijní skupina 1.DVS",
+     "url": "https://www.zdravotka.cz/2026/08/25/zapis-do-1-rocniku-vosz-studijni-skupina-1-dvs/",
+     "datum": "2026-08-25",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600019560",
+   "skupina": "necteno",
+   "web": "https://szspb.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://szspb.cz/aktuality/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600019578",
+   "skupina": "necteno",
+   "web": "https://www.szscb.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.szscb.cz/#aktuality",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600019616",
+   "skupina": "necteno",
+   "web": "https://www.szs-pi.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.szs-pi.cz/#top",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600019632",
+   "skupina": "necteno",
+   "web": "https://www.szsavoscheb.cz/",
+   "titulka": "TinyFish proxy_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600019799",
+   "skupina": "necteno",
+   "web": "https://www.szs-pardubice.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600019781",
+   "skupina": "necteno",
+   "web": "https://szs.chrudim.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://szs.chrudim.cz/dokumenty/vyrocni-zpravy",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600017770",
+   "skupina": "nedostupne",
+   "web": "http://www.slshranice.cz",
+   "titulka": "TinyFish target_http_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600020231",
+   "skupina": "nedostupne",
+   "web": "https://www.vakantis.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.vakantis.cz/aktuality/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600020029",
+   "skupina": "necteno",
+   "web": "https://www.sszdra-karvina.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.sszdra-karvina.cz/novinky",
+   "stav": "precteno",
+   "polozek": 9,
+   "polozek_30d": 5,
+   "nejnovejsi": "2026-09-29",
+   "ukazka": [
+    {
+     "titulek": "Erasmus+ pokračuje",
+     "url": "https://www.sszdra-karvina.cz/novinky/54f2f749-399e-4e20-91fd-9f5b8610e146",
+     "datum": "2026-09-29",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Otevřme společně svá srdce",
+     "url": "https://www.sszdra-karvina.cz/novinky/64ffe398-5a9d-48df-bba7-b364f66c2ec5",
+     "datum": "2026-09-21",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Jsme oficiálně certifikovaným přípravným centrem Cambridge English",
+     "url": "https://www.sszdra-karvina.cz/novinky/2740f8cd-00df-4be9-8e13-468e48d4bffa",
+     "datum": "2026-09-14",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Slavnostní zahájení studia VOŠ v Karviné",
+     "url": "https://www.sszdra-karvina.cz/novinky/8b4471d1-0d29-4a61-9314-3ecb58335f91",
+     "datum": "2026-09-05",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Než jsme přivítali naše žáky, věnovali jsme čas sami sobě",
+     "url": "https://www.sszdra-karvina.cz/novinky/abf5ada1-ef6c-4358-a260-8cedef72d730",
+     "datum": "2026-09-05",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600020207",
+   "skupina": "necteno",
+   "web": "https://shskladno.cz",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600020312",
+   "skupina": "nedostupne",
+   "web": "http://www.sps.volyne.cz,www.vos.volyne.cz",
+   "titulka": "TinyFish invalid_url",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600019853",
+   "skupina": "necteno",
+   "web": "https://www.eabrno.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600020070",
+   "skupina": "necteno",
+   "web": "https://www.zdrav-ova.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.zdrav-ova.cz/aktuality/vysledky-2-kola-prijimaciho-rizeni-do-1-rocniku-168/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600024687",
+   "skupina": "necteno",
+   "web": "https://www.ssoh.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.ssoh.cz/info/novinky/5001/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600024962",
+   "skupina": "nedostupne",
+   "web": "https://www.gellnerka.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600018318",
+   "skupina": "nedostupne",
+   "web": "http://www.sosjesenik.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.sosjesenik.cz/category/novinky/",
+   "stav": "precteno",
+   "polozek": 8,
+   "polozek_30d": 4,
+   "nejnovejsi": "2026-09-30",
+   "ukazka": [
+    {
+     "titulek": "Burzu práce a vzdělávání Jeseník 2026",
+     "url": "https://www.sosjesenik.cz/novinky/burzu-prace-a-vzdelavani-jesenik-2026/",
+     "datum": "2026-09-30",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Termíny ZZ 2025-2026-prosinec",
+     "url": "https://www.sosjesenik.cz/novinky/terminy-zz-2025-2026-prosinec/",
+     "datum": "2026-09-25",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Den otevřených dveří",
+     "url": "https://www.sosjesenik.cz/novinky/den-otevrenych-dveri-3/",
+     "datum": "2026-09-14",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Hubertova jízda",
+     "url": "https://www.sosjesenik.cz/novinky/hubertova-jizda-3/",
+     "datum": "2026-09-14",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "VYHLÁŠENÍ PROGRAMU “PŘÍSPĚVKY NA OBĚDY DO ŠKOL V OLOMOUCKÉM KRAJI – 2026/2027″",
+     "url": "https://www.sosjesenik.cz/novinky/vyhlaseni-programu-prispevky-na-obedy-do-skol-v-olomouckem-kraji-2026-2027/",
+     "datum": "2026-07-28",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600018334",
+   "skupina": "nedostupne",
+   "web": "http://www.soje.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.emkojesenik.cz/./aktualne/",
+   "stav": "precteno",
+   "polozek": 10,
+   "polozek_30d": 0,
+   "nejnovejsi": "2026-07-03",
+   "ukazka": [
+    {
+     "titulek": "🚀 Budoucnost je tady: Na naší škole startuje 5G dronové centrum!",
+     "url": "https://www.emkojesenik.cz/aktualne/5g-dronove-centrum-sps-jesenik-2/",
+     "datum": "2026-07-03",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Den otevřených dveří na eMku: Technologie, praxe a skvělá atmosféra!",
+     "url": "https://www.emkojesenik.cz/aktualne/den-otevrenych-dveri-na-emku-technologie-praxe-a-skvela-atmosfera/",
+     "datum": "2026-01-26",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Studenti EMKA se učí létat s drony",
+     "url": "https://www.emkojesenik.cz/aktualne/studenti-emka-se-uci-letat-s-drony/",
+     "datum": "2025-10-20",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Odlož mobil a vyhraj – soutěž pro všechny žáky eMka!",
+     "url": "https://www.emkojesenik.cz/aktualne/odloz-mobil-a-vyhraj-soutez-pro-vsechny-zaky-emka/",
+     "datum": "2025-10-06",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Burza práce a vzdělání v Jeseníku!",
+     "url": "https://www.emkojesenik.cz/aktualne/burza-prace-a-vzdelani-v-jeseniku/",
+     "datum": "2025-10-06",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600027341",
+   "skupina": "necteno",
+   "web": "http://www.jus.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "http://www.jus.cz/jedlickuv-ustav-a-skoly/aktuality",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600020380",
+   "skupina": "necteno",
+   "web": "https://www.vosmoa.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.vosmoa.cz/aktuality/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600027210",
+   "skupina": "necteno",
+   "web": "https://www.val-mez.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600170039",
+   "skupina": "nedostupne",
+   "web": "https://www.sps-prosek.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.sps-prosek.cz/",
+   "stav": "z_titulky",
+   "polozek": 6,
+   "polozek_30d": 2,
+   "nejnovejsi": "2026-09-04",
+   "ukazka": [
+    {
+     "titulek": "Termíny maturitních zkoušek ve zkušebním období podzim 2026",
+     "url": "https://www.sps-prosek.cz/terminy-maturitnich-zkousek-ve-zkusebnim-obdobi-podzim-2026/",
+     "datum": "2026-09-04",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Volby do školské rady – informace a kandidáti – aktualizováno",
+     "url": "https://www.sps-prosek.cz/volby-do-skolske-rady-informace-a-kandidati/",
+     "datum": "2026-09-01",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Přijímačky nanečisto",
+     "url": "https://www.sps-prosek.cz/prijimacky-nanecisto/",
+     "datum": "2026-08-31",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Provoz školy v době letních práznin",
+     "url": "https://www.sps-prosek.cz/provoz-skoly-v-dobe-letnich-praznin/",
+     "datum": "2026-07-07",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Přihlašování k náhradnímu a opravnému termínu maturitních zkoušek – podzim 2026",
+     "url": "https://www.sps-prosek.cz/prihlasovani-k-nahradnimu-a-opravnemu-terminu-maturitnich-zkousek-podzim-2020/",
+     "datum": "2026-06-25",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600063861",
+   "skupina": "necteno",
+   "web": "https://www.zsgvodnany.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.zsgvodnany.cz/stranky/inspekcni-zpravy",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600099296",
+   "skupina": "necteno",
+   "web": "https://walsem.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://walsem.cz/zpravy",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600170241",
+   "skupina": "necteno",
+   "web": "https://spsrakovnik.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://spsrakovnik.cz/32-vyrocni-zpravy",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600026612",
+   "skupina": "necteno",
+   "web": "https://vejdovskeho.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "http://vejdovskeho.cz/tomkova/aktuality/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600170373",
+   "skupina": "necteno",
+   "web": "https://www.sscv.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600170608",
+   "skupina": "necteno",
+   "web": "https://www.sslbc.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.sslbc.cz/dokumenty/vyrocni-zpravy",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600170748",
+   "skupina": "nedostupne",
+   "web": "https://www.oahshb.cz/",
+   "titulka": "TinyFish target_http_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600170551",
+   "skupina": "necteno",
+   "web": "https://www.dorado.cz/",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600170764",
+   "skupina": "nedostupne",
+   "web": "https://www.sosasou-vocelova.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.sosasou-vocelova.cz/novinky/",
+   "stav": "precteno",
+   "polozek": 9,
+   "polozek_30d": 1,
+   "nejnovejsi": "2026-09-07",
+   "ukazka": [
+    {
+     "titulek": "CESTUJEŠ S IREDO? UŠETŘÍ SI CESTU NA KONTAKTNÍ MÍSTO!",
+     "url": "https://www.sosasou-vocelova.cz/cestujes-s-iredo-usetri-si-cestu-na-kontaktni-misto/",
+     "datum": "2026-09-07",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Zahájení školního roku 2026/2027",
+     "url": "https://www.sosasou-vocelova.cz/zahajeni-skolniho-roku-2026-2027/",
+     "datum": "2026-08-28",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Den pro Vás 2026 v pátek 18.září INFORMACE",
+     "url": "https://www.sosasou-vocelova.cz/den-pro-vas-2026/",
+     "datum": "2026-08-27",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Zahájení školního roku pro 1. ročníky",
+     "url": "https://www.sosasou-vocelova.cz/zahajeni-skolniho-roku-pro-1-rocniky/",
+     "datum": "2026-08-26",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Termín nástupu k ubytování na DM pro školní rok 2026/27",
+     "url": "https://www.sosasou-vocelova.cz/termin-nastupu-k-ubytovani-na-dm-pro-skolni-rok-2023-24/",
+     "datum": "2026-08-24",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600170641",
+   "skupina": "necteno",
+   "web": "http://www.sstmost.cz/cs/",
+   "titulka": "ok",
+   "stranka_aktualit": "http://www.sstmost.cz/cs/maturitni-zkousky-skolni-rok-2025-2026/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600171019",
+   "skupina": "nedostupne",
+   "web": "http://www.sstebrno.cz/",
+   "titulka": "TinyFish bot_blocked",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600171141",
+   "skupina": "nedostupne",
+   "web": "http://www.stredni-slavkov.eu",
+   "titulka": "TinyFish invalid_url",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600171183",
+   "skupina": "nedostupne",
+   "web": "http://www.sos.jablunkov.cz/",
+   "titulka": "TinyFish page_not_found",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600170691",
+   "skupina": "necteno",
+   "web": "https://www.stsul.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.stsul.cz/o-skole/vyrocni-zpravy",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600025047",
+   "skupina": "nedostupne",
+   "web": "https://www.kamenomlynska.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.kamenomlynska.cz/aktuality",
+   "stav": "precteno",
+   "polozek": 6,
+   "polozek_30d": 4,
+   "nejnovejsi": "2026-09-29",
+   "ukazka": [
+    {
+     "titulek": "Vystoupení skupiny V rytmu",
+     "url": "https://www.kamenomlynska.cz/aktuality/1547-vystoupeni-skupiny-v-rytmu",
+     "datum": "2026-09-29",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Přerušení provozu ŠD a ŠK 26.10.",
+     "url": "https://www.kamenomlynska.cz/aktuality/1546-preruseni-provozu-sd-a-sk-26-10-30-10-2026",
+     "datum": "2026-09-25",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Přerušení provozu MŠ",
+     "url": "https://www.kamenomlynska.cz/aktuality/1155-preruseni-provozu-ms",
+     "datum": "2026-09-22",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Výlet do Jihlavy",
+     "url": "https://www.kamenomlynska.cz/aktuality/1544-vylet-do-jihlavy",
+     "datum": "2026-09-21",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Školní řád",
+     "url": "https://www.kamenomlynska.cz/aktuality/1542-skolni-rad",
+     "datum": "2026-08-28",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600171272",
+   "skupina": "nedostupne",
+   "web": "http://https//:",
+   "titulka": "TinyFish invalid_url",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600171701",
+   "skupina": "necteno",
+   "web": "https://www.gymstola.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gymstola.cz/#novinky",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600171710",
+   "skupina": "necteno",
+   "web": "https://www.gsgpraha.cz/",
+   "titulka": "TinyFish proxy_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600171426",
+   "skupina": "necteno",
+   "web": "https://www.skolaholeckova.cz/o-skole/aktuality",
+   "titulka": "TinyFish selector_not_matched",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600171027",
+   "skupina": "nedostupne",
+   "web": "http://www.purkynka.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.purkynka.cz/category/aktualne/",
+   "stav": "precteno",
+   "polozek": 10,
+   "polozek_30d": 1,
+   "nejnovejsi": "2026-09-23",
+   "ukazka": [
+    {
+     "titulek": "Prváci zahájili školní rok adaptačním kurzem",
+     "url": "https://www.purkynka.cz/aktualne/prvaci-zahajili-skolni-rok-adaptacnim-kurzem/",
+     "datum": "2026-09-23",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Od nápadu k hotovému projektu: studenti informatiky ukázali sílu týmové práce",
+     "url": "https://www.purkynka.cz/aktualne/od-napadu-k-hotovemu-projektu-studenti-informatiky-ukazali-silu-tymove-prace/",
+     "datum": "2026-06-26",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Dva dny plné poznávání v německé metropoli",
+     "url": "https://www.purkynka.cz/aktualne/dva-dny-plne-poznavani-v-nemecke-metropoli/",
+     "datum": "2026-06-18",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Trojitý úspěch: naše učitelky ovládly krajské kolo soutěže Učitel podnikavosti 2026",
+     "url": "https://www.purkynka.cz/aktualne/trojity-uspech-nase-ucitelky-ovladly-krajske-kolo-souteze-ucitel-podnikavosti-2026/",
+     "datum": "2026-06-16",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Získali jsme 2. místo v soutěži Nachytej AI",
+     "url": "https://www.purkynka.cz/aktualne/ziskali-jsme-2-misto-v-soutezi-nachytej-ai/",
+     "datum": "2026-06-09",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600170993",
+   "skupina": "nedostupne",
+   "web": "http://www.technickavm.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.technickavm.cz/category/novinky/",
+   "stav": "precteno",
+   "polozek": 10,
+   "polozek_30d": 4,
+   "nejnovejsi": "2026-09-14",
+   "ukazka": [
+    {
+     "titulek": "Výzvy k podání nabídky",
+     "url": "https://www.technickavm.cz/novinky/vyzvy-k-podani-nabidky-3/",
+     "datum": "2026-09-14",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "25. ročník Autosalonu + DOD",
+     "url": "https://www.technickavm.cz/novinky/25-rocnik-autosalonu-dod/",
+     "datum": "2026-09-13",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Zájezdy na Technické 26-27",
+     "url": "https://www.technickavm.cz/novinky/zajezdy-na-technicke-26-27/",
+     "datum": "2026-09-10",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Výsledky přijímacího řízení pro 2026/2027",
+     "url": "https://www.technickavm.cz/novinky/vysledky-prijimaciho-rizeni-pro-2026-2027/",
+     "datum": "2026-09-07",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Zahájení školního roku 2026/2027",
+     "url": "https://www.technickavm.cz/novinky/zahajeni-skolniho-roku-2026-2027/",
+     "datum": "2026-08-20",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "610100718",
+   "skupina": "necteno",
+   "web": "http://www.skolamanesova.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "http://www.skolamanesova.cz/#aktuality",
+   "stav": "precteno",
+   "polozek": 7,
+   "polozek_30d": 5,
+   "nejnovejsi": "2026-09-04",
+   "ukazka": [
+    {
+     "titulek": "Školská rada",
+     "url": "http://www.skolamanesova.cz/#aktuality",
+     "datum": "2026-09-04",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Organizace školního roku 2026/2027",
+     "url": "http://www.skolamanesova.cz/#aktuality#organizace-skolniho-roku",
+     "datum": "2026-09-03",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Příručka pro rodiče 2026/2027",
+     "url": "http://www.skolamanesova.cz/#aktuality",
+     "datum": "2026-09-03",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Školní dokumentace",
+     "url": "http://www.skolamanesova.cz/#aktuality",
+     "datum": "2026-09-01",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Jídelní lístek",
+     "url": "http://www.skolamanesova.cz/#aktuality",
+     "datum": "2026-09-01",
+     "druh": "nadpis"
+    }
+   ]
+  },
+  {
+   "redizo": "610250451",
+   "skupina": "nedostupne",
+   "web": "https://www.oahstrebic.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600171124",
+   "skupina": "nedostupne",
+   "web": "http://www.coptkm.cz",
+   "titulka": "TinyFish target_http_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600171132",
+   "skupina": "nedostupne",
+   "web": "http://www.copt.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.copt.cz/category/aktualne/",
+   "stav": "precteno",
+   "polozek": 10,
+   "polozek_30d": 8,
+   "nejnovejsi": "2026-09-24",
+   "ukazka": [
+    {
+     "titulek": "Technologie neznají hranice – další výměnná stáž v rámci Interreg Slovensko – Česko",
+     "url": "https://www.copt.cz/aktualne/25742/",
+     "datum": "2026-09-24",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "TECH-MISSION – Kroužek pro žáky 2. stupně ZŠ",
+     "url": "https://www.copt.cz/aktualne/tech-mission-krouzek-pro-zaky-2-stupne-zs/",
+     "datum": "2026-09-18",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Adaptační kurz pomohl nastartovat nové třídní kolektivy",
+     "url": "https://www.copt.cz/aktualne/adaptacni-kurz-pomohl-nastartovat-nove-tridni-kolektivy/",
+     "datum": "2026-09-17",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "WORLD OF MACHINING 2026 – Naše škola byla u toho",
+     "url": "https://www.copt.cz/aktualne/world-of-machining-2026-nase-skola-byla-u-toho/",
+     "datum": "2026-09-17",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Studenti Informačních technologií pronikli do světa průmyslové robotiky",
+     "url": "https://www.copt.cz/aktualne/studenti-informacnich-technologii-pronikli-do-sveta-prumyslove-robotiky/",
+     "datum": "2026-09-11",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "600171191",
+   "skupina": "nedostupne",
+   "web": "http://www.sosfm.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.sosfm.cz/category/novinky/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "610450671",
+   "skupina": "necteno",
+   "web": "https://www.akademie-sos.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.akademie-sos.cz/novinky",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "610451219",
+   "skupina": "necteno",
+   "web": "https://mkg.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://mkg.cz/category/aktuality/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "650067231",
+   "skupina": "nedostupne",
+   "web": "https://sgv.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://sgv.cz/vsechny-aktuality/",
+   "stav": "precteno",
+   "polozek": 4,
+   "polozek_30d": 4,
+   "nejnovejsi": "2026-09-25",
+   "ukazka": [
+    {
+     "titulek": "Okresní kolo v přespolním běhu",
+     "url": "https://sgv.cz/2026/09/29/okresni-kolo-v-prespolnim-behu/",
+     "datum": "2026-09-25",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Evropský parlament mládeže na SGV",
+     "url": "https://sgv.cz/2026/09/24/den-s-evropskym-parlamentem-mladeze-na-sgv/",
+     "datum": "2026-09-14",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Středoškolský atletický pohár",
+     "url": "https://sgv.cz/2026/09/15/stredoskolsky-atleticky-pohar-3/",
+     "datum": "2026-09-10",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Zahájili jsme nový školní rok",
+     "url": "https://sgv.cz/2026/09/07/zahajili-jsme-novy-skolni-rok-3/",
+     "datum": "2026-09-01",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "650077393",
+   "skupina": "nedostupne",
+   "web": "https://iuventas.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://iuventas.cz/",
+   "stav": "z_titulky",
+   "polozek": 8,
+   "polozek_30d": 1,
+   "nejnovejsi": "2026-09-24",
+   "ukazka": [
+    {
+     "titulek": "Cestou do Iuventas – a ještě dál!",
+     "url": "https://iuventas.cz/category/akce-skoly/",
+     "datum": "2026-09-24",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "🎓Klasické „bichle“ střídá úspěšný formát posterů. Pilotní ročník Iuventas ukázal obrovský posun našich žáků!",
+     "url": "https://iuventas.cz/category/akce-skoly/",
+     "datum": "2026-06-18",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "🚁Žáci zdravotnického lycea Iuventas v akci: Exkurze na základně Letecké záchranné služby Ostrava",
+     "url": "https://iuventas.cz/category/akce-skoly/",
+     "datum": "2026-06-14",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Informace pro žáky prvních ročníků školního roku 2026/2027",
+     "url": "https://iuventas.cz/category/akce-skoly/",
+     "datum": "2026-05-27",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "🏐 Iuventas házenkářky vezou z okresního kola krásné 5. místo!",
+     "url": "https://iuventas.cz/category/akce-skoly/",
+     "datum": "2026-05-05",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "651023572",
+   "skupina": "nedostupne",
+   "web": "http://www.ssjs-tabor.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.ssjs-tabor.cz/category/aktualne/",
+   "stav": "precteno",
+   "polozek": 10,
+   "polozek_30d": 10,
+   "nejnovejsi": "2026-09-29",
+   "ukazka": [
+    {
+     "titulek": "Podzimní výzva Ukliďme Česko",
+     "url": "https://www.ssjs-tabor.cz/aktualne/podzimni-vyzva-uklidme-cesko/",
+     "datum": "2026-09-29",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Zero – G 2027!",
+     "url": "https://www.ssjs-tabor.cz/aktualne/zero-g-2027/",
+     "datum": "2026-09-26",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "The new Cambridge English Preparation Centre",
+     "url": "https://www.ssjs-tabor.cz/aktualne/cambridge-english-preparation-centre/",
+     "datum": "2026-09-19",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Talent roku 2026",
+     "url": "https://www.ssjs-tabor.cz/aktualne/talent-roku-2026/",
+     "datum": "2026-09-19",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Knihovny bez hranic: jak jsme byli v Kostnici – předávání zkušeností",
+     "url": "https://www.ssjs-tabor.cz/aktualne/knihovny-bez-hranic-jak-jsme-byli-v-kostnici-predavani-zkusenosti/",
+     "datum": "2026-09-15",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "651024617",
+   "skupina": "necteno",
+   "web": "https://www.sunnycanadian.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.sunnycanadian.cz/cs/sunny/o-nas/vyrocni-zpravy",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "651035741",
+   "skupina": "necteno",
+   "web": "https://www.stavebniskolahorstav.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.stavebniskolahorstav.cz/clanky/profil-skoly/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "651035759",
+   "skupina": "nedostupne",
+   "web": "https://www.ahol.cz/",
+   "titulka": "TinyFish target_http_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "680000054",
+   "skupina": "nedostupne",
+   "web": "https://www.spshol.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.spshol.cz/home/aktivity-skoly-oddelovac/foto-a-clanky-2026",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "680000062",
+   "skupina": "necteno",
+   "web": "https://hzscr.gov.cz/sos-po-a-vos-po",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "671100769",
+   "skupina": "necteno",
+   "web": "https://warning.joindns4.eu:443/passthrough?data=eyJNZXRob2QiOiJHRVQiLCJTY2hlbWUiOiJodHRwcyIsIkhvc3QiOiJ3d3cubW9udGVzc29yaS1wZXJsaWNrYS5jeiIsIlBvcnQiOiI0NDMiLCJQb3N0RGF0YSI6IiIsIlBhdGgiOiIvIiwiUXVlcnkiOiJ7fSIsIlNpbmtob2xlSUQiOjYwMDAwNjMsIk51bWJlck9mUmVkaXJlY3RzIjowfQ",
+   "titulka": "TinyFish invalid_url",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "600171868",
+   "skupina": "nedostupne",
+   "web": "http://www.kolofikopava.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.kolofikopava.cz/category/aktualne/",
+   "stav": "precteno",
+   "polozek": 9,
+   "polozek_30d": 6,
+   "nejnovejsi": "2026-09-18",
+   "ukazka": [
+    {
+     "titulek": "Memoriál Jana Martínka ve volejbalu",
+     "url": "https://www.kolofikopava.cz/aktualne/memorial-jana-martinka-ve-volejbalu/",
+     "datum": "2026-09-18",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Návštěva firmy Brixton v Opavě",
+     "url": "https://www.kolofikopava.cz/aktualne/23292/",
+     "datum": "2026-09-17",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Látky, které čekají na svůj nový příběh",
+     "url": "https://www.kolofikopava.cz/aktualne/latky-ktere-cekaji-na-svuj-novy-pribeh/",
+     "datum": "2026-09-17",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Tři staré Jawy, pár brašen a chuť podívat se za vlastní horizont",
+     "url": "https://www.kolofikopava.cz/aktualne/tri-stare-jawy-par-brasen-a-chut-podivat-se-za-vlastni-horizont/",
+     "datum": "2026-09-17",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Třídní schůzky pro rodiče žáků 1. ročníku",
+     "url": "https://www.kolofikopava.cz/aktualne/tridni-schuzky-pro-rodice-zaku-1-rocniku-2/",
+     "datum": "2026-09-08",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "691000735",
+   "skupina": "nedostupne",
+   "web": "https://www.waldorf-brno.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://waldorf-brno.cz/aktualni-informace/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "610250523",
+   "skupina": "nedostupne",
+   "web": "http://www.sos-nmor.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.belisko.cz/category/aktualne/novinky/",
+   "stav": "precteno",
+   "polozek": 4,
+   "polozek_30d": 0,
+   "nejnovejsi": "2026-08-28",
+   "ukazka": [
+    {
+     "titulek": "Zažij Bělisko",
+     "url": "https://www.belisko.cz/aktualne/zazij-belisko/",
+     "datum": "2026-08-28",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Kroužky pro žáky začínají…",
+     "url": "https://www.belisko.cz/aktualne/krouzky-pro-zaky-zacinaji/",
+     "datum": "2026-08-27",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Opravné závěrečné zkoušky – podzim 2026",
+     "url": "https://www.belisko.cz/aktualne/opravne-zaverecne-zkousky-podzim-2026/",
+     "datum": "2026-07-21",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Výsledky 2. kola přijímacího řízení pro školní rok 2026/2027",
+     "url": "https://www.belisko.cz/aktualne/vysledky-2-kola-prijimaciho-rizeni-pro-skolni-rok-2026-2027/",
+     "datum": "2026-06-23",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "691001111",
+   "skupina": "necteno",
+   "web": "http://www.anoa.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "http://www.anoa.cz/skola/vyrocni-zpravy",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691003009",
+   "skupina": "necteno",
+   "web": "https://www.gygr.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gygr.cz/aktuality",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691004048",
+   "skupina": "nedostupne",
+   "web": "https://www.sion.cz/stredni-skola/",
+   "titulka": "TinyFish target_http_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691001529",
+   "skupina": "necteno",
+   "web": "https://www.skoladavinci.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691008426",
+   "skupina": "necteno",
+   "web": "https://www.skolahermanek.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691009627",
+   "skupina": "nedostupne",
+   "web": "https://labyrinthschool.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://labyrinthschool.cz/aktuality",
+   "stav": "precteno",
+   "polozek": 8,
+   "polozek_30d": 1,
+   "nejnovejsi": "2026-09-25",
+   "ukazka": [
+    {
+     "titulek": "Vojtěch Hlavenka v Labyrinthu",
+     "url": "https://labyrinthschool.cz/aktuality",
+     "datum": "2026-09-25",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Neformální setkání rodičů a přátel naší školy 2025",
+     "url": "https://labyrinthschool.cz/aktuality",
+     "datum": "2026-01-10",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Neformální setkání rodičů a přátel naší školy 2024",
+     "url": "https://labyrinthschool.cz/aktuality",
+     "datum": "2025-10-19",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Úřední hodiny",
+     "url": "https://labyrinthschool.cz/aktuality",
+     "datum": "2024-07-01",
+     "druh": "nadpis"
+    },
+    {
+     "titulek": "Vernisáž Hrdinové_Viliam Slaminka,14. 11. 2022,16h",
+     "url": "https://labyrinthschool.cz/aktuality",
+     "datum": "2022-11-14",
+     "druh": "nadpis"
+    }
+   ]
+  },
+  {
+   "redizo": "691012105",
+   "skupina": "necteno",
+   "web": "http://www.sosbosko.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691010366",
+   "skupina": "necteno",
+   "web": "https://szs.agel.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691012431",
+   "skupina": "nedostupne",
+   "web": "https://www.spsow.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://spsow.cz/aktuality/",
+   "stav": "precteno",
+   "polozek": 10,
+   "polozek_30d": 6,
+   "nejnovejsi": "2026-09-30",
+   "ukazka": [
+    {
+     "titulek": "WICHTERLE DAY 2026",
+     "url": "https://spsow.cz/author/machovam/",
+     "datum": "2026-09-30",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "T-profi 2026",
+     "url": "https://spsow.cz/2026/09/24/t-profi-2026/",
+     "datum": "2026-09-24",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "PAVLIŠOV A SIGNÁL – OBLÍBENÁ MÍSTA PRO NAŠE ADAPŤÁKY",
+     "url": "https://spsow.cz/author/machovam/",
+     "datum": "2026-09-24",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "ZAČÍNÁ VÝSTAVA STUDENTSKÝCH PRACÍ 2026",
+     "url": "https://spsow.cz/author/machovam/",
+     "datum": "2026-09-22",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Talent, kreativita a potlesk: Naši oděvní designéři na Kuronských slavnostech",
+     "url": "https://spsow.cz/author/machovam/",
+     "datum": "2026-09-07",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "691012415",
+   "skupina": "nedostupne",
+   "web": "https://www.soanachod.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.soanachod.cz/udalosti/",
+   "stav": "precteno",
+   "polozek": 17,
+   "polozek_30d": 17,
+   "nejnovejsi": "2026-09-21",
+   "ukazka": [
+    {
+     "titulek": "Geodetický kurz 3.S",
+     "url": "https://www.soanachod.cz/events/geodeticky-kurz-3-s/",
+     "datum": "2026-09-21",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Závěrečné zkoušky učni – ústní část",
+     "url": "https://www.soanachod.cz/events/zaverecne-zkousky-ucni-ustni-cast/",
+     "datum": "2026-09-21",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Adaptační kurz 1.SI",
+     "url": "https://www.soanachod.cz/events/adaptacni-kurz-1-si-2/",
+     "datum": "2026-09-14",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Geodetický kurz 4.S",
+     "url": "https://www.soanachod.cz/events/geodeticky-kurz-4s/",
+     "datum": "2026-09-14",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Sportovní kurz 3.A, 3.B, 3.S, 3.SI",
+     "url": "https://www.soanachod.cz/events/sportovni-kurz-3-a-3-b-3-s-3-si-2/",
+     "datum": "2026-09-14",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "691009341",
+   "skupina": "necteno",
+   "web": "https://www.skolyavida.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691013560",
+   "skupina": "nedostupne",
+   "web": "http://www.naselyceum.cz/",
+   "titulka": "TinyFish page_not_found",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691009465",
+   "skupina": "necteno",
+   "web": "https://www.agroskola.eu/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691009724",
+   "skupina": "necteno",
+   "web": "https://skola-otevreno.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "651033772",
+   "skupina": "nedostupne",
+   "web": "http://www.szes-chrudim.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.szes-chrudim.cz/category/aktuality-ze-skoly/",
+   "stav": "precteno",
+   "polozek": 10,
+   "polozek_30d": 10,
+   "nejnovejsi": "2026-09-30",
+   "ukazka": [
+    {
+     "titulek": "Dožínky Pardubického kraje",
+     "url": "https://www.szes-chrudim.cz/ze-zivota-skoly/dozinky-pardubickeho-kraje/",
+     "datum": "2026-09-30",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Setkání na Velvyslanectví USA",
+     "url": "https://www.szes-chrudim.cz/ze-zivota-skoly/setkani-na-velvyslanectvi-usa/",
+     "datum": "2026-09-29",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Národní výstava v Radešínské Svratce",
+     "url": "https://www.szes-chrudim.cz/ze-zivota-skoly/narodni-vystava-v-radesinske-svratce/",
+     "datum": "2026-09-29",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Exkurze – Vzdělávací centrum Sféra",
+     "url": "https://www.szes-chrudim.cz/ze-zivota-skoly/exkurze-vzdelavaci-centrum-sfera/",
+     "datum": "2026-09-29",
+     "druh": "odkaz"
+    },
+    {
+     "titulek": "Bezpilotní technologie v zemědělství",
+     "url": "https://www.szes-chrudim.cz/ze-zivota-skoly/bezpilotni-technologie-v-zemedelstvi/",
+     "datum": "2026-09-25",
+     "druh": "odkaz"
+    }
+   ]
+  },
+  {
+   "redizo": "691015163",
+   "skupina": "necteno",
+   "web": "https://strednibrno.scioskola.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691015601",
+   "skupina": "necteno",
+   "web": "https://www.sosceskybrod.cz/",
+   "titulka": "TinyFish target_unreachable",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691014701",
+   "skupina": "necteno",
+   "web": "http://www.ssjb.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "http://www.ssjb.cz/index.php/detail-clanku/zpravy-ze-skolni-jidelny",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691016551",
+   "skupina": "nedostupne",
+   "web": "http://www.akademiesg.cz/",
+   "titulka": "TinyFish target_http_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691016976",
+   "skupina": "necteno",
+   "web": "https://www.scio.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.scio.cz/aktualne",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691015937",
+   "skupina": "necteno",
+   "web": "https://www.lvacademy.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691019088",
+   "skupina": "nedostupne",
+   "web": "https://www.gymnaziumkudykampus.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691018197",
+   "skupina": "nedostupne",
+   "web": "https://www.montessori-plzen.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "651040060",
+   "skupina": "necteno",
+   "web": "https://montyskola.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": "https://montyskola.cz/novinky/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691019193",
+   "skupina": "necteno",
+   "web": "https://gybassi.cz/",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691018791",
+   "skupina": "necteno",
+   "web": "https://www.pedacademy.cz/nase-skola-540",
+   "titulka": "ok",
+   "stranka_aktualit": null,
+   "stav": "bez_odkazu",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691007080",
+   "skupina": "nedostupne",
+   "web": "https://www.skolahotelnictvi.cz/",
+   "titulka": "TinyFish proxy_error",
+   "stranka_aktualit": null,
+   "stav": "titulka_nedostupna",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  },
+  {
+   "redizo": "691015554",
+   "skupina": "nedostupne",
+   "web": "http://www.gymnaziumtm.cz",
+   "titulka": "ok",
+   "stranka_aktualit": "https://www.gymnaziumtm.cz/category/novinky/",
+   "stav": "nerozpoznano",
+   "polozek": 0,
+   "polozek_30d": 0,
+   "nejnovejsi": null,
+   "ukazka": []
+  }
+ ]
+}

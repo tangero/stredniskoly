@@ -303,3 +303,17 @@ test('s datem vydání se datum objevení neposílá, aby stránka neměla dvě 
   const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
   assert.equal(v.polozky[0].objevenoAt, null);
 });
+
+test('zprávy z výpisu aktualit se na stránce školy zatím neukazují', async () => {
+  // Výpis aktualit čte obecná čtečka z šablony webu; do rozhodnutí o kvalitě
+  // se škola chová jako škola bez zdroje (docs/sonda-mimo-rss-2026.md).
+  process.env.DATABASE_URL = 'postgres://test';
+  nastavPoolProTesty(pool([
+    PRAZDNO,
+    { rows: [radek()], rowCount: 1 },
+    { rows: [radek({ id: 'n2', zobrazeni: 'seznam', tridy: [] })], rowCount: 1 },
+    { rows: [{ feed_url: 'https://skola.cz/aktuality/', naposledy_ok: '2026-10-01T04:10:00.000Z', chyby_v_rade: 0, typ: 'html' }], rowCount: 1 },
+  ]));
+  const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
+  assert.deepEqual(v, { polozky: [], zeZivota: [], zdrojOverenAt: null, zdrojUrl: null, zdrojVypadek: false });
+});
