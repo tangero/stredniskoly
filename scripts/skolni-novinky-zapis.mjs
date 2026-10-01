@@ -188,6 +188,9 @@ export async function ulozRozbor(klient, novinkaId, p) {
   );
 }
 
+/** Typy zdroje, které nejsou kanál novinek (stejná množina jako v src/lib/skolni-novinky.ts). */
+export const TYPY_VYPISU = new Set(['html', 'tinyfish']);
+
 export async function zapisDavku(klient, davka) {
   const behId = randomUUID();
   let novych = 0;
@@ -232,9 +235,11 @@ export async function zapisDavku(klient, davka) {
 
       const chyba = zdroj.stav === 'chyba';
       const { rows } = await klient.query(
-        `select chyby_v_rade from skola_feed where redizo = $1`, [zdroj.redizo],
+        `select chyby_v_rade, typ from skola_feed where redizo = $1`, [zdroj.redizo],
       );
       const chybyVRade = chyba ? (rows[0]?.chyby_v_rade ?? 0) + 1 : 0;
+      // Typ zdroje: rss/atom, nebo výpis aktualit (html, tinyfish).
+      const typ = zdroj.typ ?? 'rss';
       const dalsi = dalsiKontrola({ ...zdroj, chybyVRade }, zdroj.polozky);
 
       await klient.query(
@@ -255,10 +260,21 @@ export async function zapisDavku(klient, davka) {
          chyba ? null : new Date().toISOString(), zdroj.etag ?? null,
          zdroj.modified_since ?? null, chybyVRade, dalsi.toISOString(),
          chyba ? String(zdroj.chyba).slice(0, 200) : null,
-         // Typ zdroje: rss/atom, nebo výpis aktualit (html, tinyfish). Stránka
-         // školy podle něj pozná, odkud zprávy jsou.
-         zdroj.typ ?? 'rss'],
+         typ],
       );
+
+      // Škola přešla z výpisu aktualit na kanál novinek: stránka školy se řídí
+      // typem zdroje, takže by po přepnutí ukázala i dřívější zprávy z výpisu,
+      // které se zatím zobrazovat nemají (ZOBRAZIT_VYPISY). Zneplatní se; zprávy
+      // z této dávky ne, tentýž článek mohl přijít i z kanálu.
+      if (TYPY_VYPISU.has(rows[0]?.typ) && !TYPY_VYPISU.has(typ)) {
+        const { rowCount } = await klient.query(
+          `update skola_novinka set zneplatneno = now(), zmeneno = now()
+            where redizo = $1 and zneplatneno is null and not (identita = any($2::text[]))`,
+          [zdroj.redizo, (zdroj.polozky ?? []).map((p) => p.identita)],
+        );
+        if (rowCount) dotcena.add(zdroj.redizo);
+      }
 
       // Fronta změn v téže transakci jako změna, ne po commitu.
       for (const redizo of dotcena) {
