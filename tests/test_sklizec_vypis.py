@@ -85,6 +85,13 @@ class CteckaVypisu(unittest.TestCase):
         self.assertEqual(nv.najdi_datum("25. září", DNES), date(2026, 9, 25))
         self.assertEqual(nv.najdi_datum("25. prosince", DNES), date(2025, 12, 25))
 
+    def test_29_unor_bez_roku(self):
+        # V lednu přestupného roku: letos je v budoucnu, loni neexistuje.
+        self.assertIsNone(nv.najdi_datum("29. února", date(2028, 1, 15)))
+        # Rok po přestupném: letos neexistuje, loni ano.
+        self.assertEqual(nv.najdi_datum("29. února", date(2029, 1, 15)), date(2028, 2, 29))
+        self.assertEqual(nv.najdi_datum("29. února", date(2028, 3, 1)), date(2028, 2, 29))
+
     def test_datum_v_budoucnu_se_nebere(self):
         self.assertIsNone(nv.najdi_datum("9. 12. 2026", DNES))
 
@@ -177,6 +184,11 @@ class ZdrojVypisu(unittest.TestCase):
     def test_nerozpoznany_vypis_je_chyba_ne_klidna_skola(self):
         v, _, _ = self.zpracuj({"typ": "html"}, primo=ok("<html><body><p>Nic tu není.</p></body></html>"))
         self.assertEqual((v["stav"], v["chyba"]), ("chyba", "výpis nerozpoznán"))
+
+    def test_vyjimka_ctecky_je_chyba_zdroje(self):
+        with mock.patch.object(sklizec.vypis, "precti_vypis", side_effect=ValueError("rozbité HTML")):
+            v, _, _ = self.zpracuj({"typ": "html"}, primo=ok(VYPIS))
+        self.assertEqual((v["stav"], v["chyba"]), ("chyba", "čtečka výpisu: ValueError"))
 
     def test_beze_zmeny_podle_etag(self):
         v, _, st = self.zpracuj({"typ": "html"}, primo={"beze_zmeny": True})

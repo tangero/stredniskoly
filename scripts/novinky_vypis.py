@@ -60,13 +60,15 @@ def najdi_datum(text, dnes):
         if dt.date(2015, 1, 1) <= d <= dnes + dt.timedelta(days=1):
             return d
     for m in RE_DATUM_BEZ_ROKU.finditer(text or ""):
-        try:
-            d = dt.date(dnes.year, MESICE[m.group(2).lower()], int(m.group(1)))
-        except ValueError:
-            continue
-        if d > dnes + dt.timedelta(days=1):
-            d = d.replace(year=dnes.year - 1)
-        return d
+        # Letos, a je-li to v budoucnu nebo takové datum letos není (29. února),
+        # loni. Neplatné v obou letech se přeskočí.
+        for rok in (dnes.year, dnes.year - 1):
+            try:
+                d = dt.date(rok, MESICE[m.group(2).lower()], int(m.group(1)))
+            except ValueError:
+                continue
+            if d <= dnes + dt.timedelta(days=1):
+                return d
     return None
 
 

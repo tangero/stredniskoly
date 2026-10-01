@@ -224,8 +224,12 @@ def precti_zdroj_vypisu(zaznam: dict, stav: dict, dnes: date, timeout: int = TIM
         odpoved = {**tf, "cesta": "tinyfish"} if "text" in tf else {"chyba": tf["chyba"], "cesta": "tinyfish"}
     if odpoved.get("chyba"):
         return odpoved
+    try:
+        precteno = vypis.precti_vypis(odpoved["text"], odpoved.get("url") or url, dnes)
+    except Exception as e:  # noqa: BLE001 – cizí HTML nesmí shodit celou sklizeň
+        return {"chyba": f"čtečka výpisu: {type(e).__name__}", "cesta": odpoved.get("cesta")}
     polozky, videne = [], set()
-    for p in vypis.precti_vypis(odpoved["text"], odpoved.get("url") or url, dnes):
+    for p in precteno:
         # Identita závisí jen na položce samé, ne na sousedech (jinak by se
         # měnila, jak se výpis posouvá, a zpráva by se uložila podruhé):
         # * vede-li položka na vlastní článek, identitou je jeho adresa, takže
