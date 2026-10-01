@@ -140,7 +140,10 @@ neodmítli*). *Soutěžící uchazeči* se vysvětlují při prvním výskytu v 
 - **Zaměření.** Agregáty 1. kola jsou po nabídkách včetně zaměření; pojistka platí pro konkrétní
   nabídku, ne pro celý obor školy.
 - **Druh studia.** Učební obory přijímají po 9. třídě; při volbě „po 5. / 7. třídě“ se blok
-  neukazuje.
+  neukazuje. Filtr „po 9. třídě“ dnes pouští jen délku studia 4 a 5 (`SimulatorClient.tsx`,
+  podmínka `grade === '9'`), takže dvou- a tříleté učební obory by do výsledků nepronikly.
+  Podmínka se změní tak, že po 9. třídě projdou i učební obory (kategorie H a E) bez ohledu
+  na délku; výběr konkrétní délky studia dál filtruje přesně podle délky.
 - **Uložené starší výběry.** Učební obor uložený dřív (bez řádku v indexu) se po nasazení
   vyhodnotí podle nových dat; kontrola se kvůli němu už nepozastaví.
 
@@ -180,6 +183,8 @@ nevzniká. Body uchazeče dál neopouštějí prohlížeč.
 - [ ] Umělecké M/L a P zůstávají „Bez srovnání“ s důvodem `talentova` (mají řádek v indexu
       s `talentova` = 1, kontrola se kvůli nim nepozastaví); C (a J, pokud jsou na webu)
       pojistkou nejsou.
+- [ ] Při volbě „po 9. třídě“ se ve výsledcích objeví dvou- i tříleté učební obory; při volbě
+      „po 5. / 7. třídě“ ne (test filtru).
 - [ ] Patička rozsahu výsledků odpovídá kategoriím ve výsledcích, včetně nabídek bez jednotné
       zkoušky mimo blok učebních oborů.
 - [ ] Příznak pojistky se čte po celém id nabídky; dvě zaměření téhož oboru na jedné škole
@@ -223,5 +228,5 @@ nevzniká. Body uchazeče dál neopouštějí prohlížeč.
 
 | Verze | Změna |
 |---|---|
-| 0.2 | Review (1. 10. 2026): věty podle slovníku pojmů (*nedosáhli požadavku školy* místo „nesplnili podmínky“, bez „místo pro všechny“), vysvětlení soutěžících uchazečů v úvodu bloku; návrh učební pojistky jako samostatná funkce (`navrhniUcebniPojistku`) místo rozporu s `navrhniPojistku`; řádky indexu pro všechny kategorie bez zkoušky (umělecké M/L a P s `talentova` = 1), `talentova` jako `boolean | null`, pojistka po celém id nabídky (ne `klicPasma`); patička rozsahu výsledků podle všech kategorií ve výsledcích; kontrola „rozporu počtů“ nahrazena chybějícím polem, protože soutěžící jsou z definice přijatí + nepřijatí kvůli kapacitě. |
+| 0.2 | Review (1. 10. 2026): věty podle slovníku pojmů (*nedosáhli požadavku školy* místo „nesplnili podmínky“, bez „místo pro všechny“), vysvětlení soutěžících uchazečů v úvodu bloku; návrh učební pojistky jako samostatná funkce (`navrhniUcebniPojistku`) místo rozporu s `navrhniPojistku`; řádky indexu pro všechny kategorie bez zkoušky (umělecké M/L a P s `talentova` = 1), `talentova` jako `boolean | null`, pojistka po celém id nabídky (ne `klicPasma`); patička rozsahu výsledků podle všech kategorií ve výsledcích; filtr „po 9. třídě“ pouští učební obory bez ohledu na délku studia; kontrola „rozporu počtů“ nahrazena chybějícím polem, protože soutěžící jsou z definice přijatí + nepřijatí kvůli kapacitě. |
 | 0.1 | První návrh doplňku (#244, etapa 5; návrh učebních oborů oddíl 16 ot. 6, oddíl 17 O4). |
