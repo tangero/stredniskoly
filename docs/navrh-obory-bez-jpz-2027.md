@@ -423,10 +423,11 @@ mají existující stránky a adresy a rušení by byla jiná dávka.
 
 - **Stránka školy.** Přibudou učební obory s plnými čísly (oddíl 10.1) a bez
   bodových bloků. Vznikne 227 nových stránek škol, které dnes na webu nejsou;
-  jejich obsah: obory s čísly, inspekce (seznam a extrakce, kde jsou), „jaká
-  škola je“ (INSPIS, kde je), kde je a dojezd, veletrhy, novinky, údaje z portálu
-  a domov mládeže (kde je). Oddíl „jak si škola vede“ bez maturity stojí na
-  inspekci a říká to otevřeně. Podnadpis pod názvem školy se skládá ze všech
+  jejich obsah: obory s čísly, seznam inspekcí (226 z 227; extrakci inspekční
+  zprávy dnes nemá žádná z nich, doklad `nove_skoly`), „jaká škola je“ (INSPIS,
+  167 z 227), kde je a dojezd, veletrhy, novinky, údaje z portálu a domov mládeže
+  (kde je). Oddíl „jak si škola vede“ bez maturity stojí na seznamu inspekcí
+  a říká to otevřeně. Podnadpis pod názvem školy se skládá ze všech
   oborů včetně nových.
 - **Stránka učebního oboru.** Staví se na pěti otázkách rodiny: je tam místo
   (zbylá místa po 1. kole, výsledek 2. kola), stojí o obor někdo (podíl prvních
