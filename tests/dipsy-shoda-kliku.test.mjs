@@ -10,7 +10,7 @@ import assert from 'node:assert/strict';
 // Import skriptu nesmí sahat na síť (hlavní běh se spouští jen přímo).
 let dotazu = 0;
 globalThis.fetch = () => { dotazu++; throw new Error('test nesmí volat DiPSy'); };
-const { porovnejSkolu, rozborOdpovedi } = await import('../scripts/dipsy-shoda-kliku.mjs');
+const { porovnejSkolu, rozborOdpovedi, poctyShody } = await import('../scripts/dipsy-shoda-kliku.mjs');
 
 const REDIZO = '600000001';
 test('import skriptu nespustí měření', () => {
@@ -43,10 +43,14 @@ test('plná shoda nechá seznamy nespárovaných prázdné', () => {
   assert.deepEqual([v.shoda, v.nesparovaneKatalog, v.nesparovaneDipsy], [1, [], []]);
 });
 
-test('neúplná karta měření neshodí a do žádného porovnání nevstoupí', () => {
-  const neupln = { zamereni: '', skola: { izo: '100000001' }, skolniObor: { kod: '65-51-H/01' } };
+test('neúplná karta měření neshodí, vypíše se zvlášť a ruší plnou shodu školy', () => {
+  const neupln = { id: 'k1', zamereni: '', skola: { izo: '100000001' }, skolniObor: { kod: '65-51-H/01' } };
   const v = porovnejSkolu(REDIZO, [nabidka('79-41-K/41')], [karta('79-41-K/41', ''), neupln]);
   assert.deepEqual([v.shoda, v.shodaBezZamereni, v.jenDipsy], [1, 1, 0]);
+  assert.deepEqual(v.neuplneKarty, [{ id: 'k1', izo: '100000001', kkov: '65-51-H/01', forma: null, delka: null }]);
+
+  const cista = porovnejSkolu(REDIZO, [nabidka('79-41-K/41')], [karta('79-41-K/41', '')]);
+  assert.deepEqual(poctyShody([v, cista]), { skolSeShodouVsechNabidek: 1, skolSCastiShodou: 0, skolSNeuplnymiKartami: 1 });
 });
 
 test('odpověď bez pole data je chyba API, ne škola bez karet', () => {

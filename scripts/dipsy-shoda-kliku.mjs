@@ -34,8 +34,10 @@ const PRODUCTOVKA_MS = 120;
  * poznat, zda se změnilo IZO, kód, zaměření, forma, nebo délka.
  */
 export function porovnejSkolu(redizo, skolniNabidky, karty) {
-  // Neúplnou kartu vynechají obě porovnání; jinak by klíč bez zaměření spadl na chybějící formě.
-  const uplne = karty.filter((c) => c.skolniObor?.kod && c.skola?.izo && typeof c.skolniObor.formaStudia === 'string' && Number.isInteger(c.skolniObor.delkaStudia));
+  // Neúplnou kartu porovnat nejde (klíč by spadl nebo lhal). Vynechá se z obou porovnání,
+  // ale vypíše se zvlášť a škola s ní se nepočítá do plné shody.
+  const jeUplna = (c) => c.skolniObor?.kod && c.skola?.izo && typeof c.skolniObor.formaStudia === 'string' && Number.isInteger(c.skolniObor.delkaStudia);
+  const uplne = karty.filter(jeUplna);
   const katKlice = new Map(skolniNabidky.map((r) => [klicOboru(redizo, r.izo, r.kkov, r.zamereni ?? '', r.forma, r.delka_studia), r]));
   const dipKlice = new Map(uplne
     .map((c) => [klicOboru(redizo, c.skola.izo, c.skolniObor.kod, c.zamereni ?? '', c.skolniObor.formaStudia, c.skolniObor.delkaStudia), c]));
@@ -59,6 +61,8 @@ export function porovnejSkolu(redizo, skolniNabidky, karty) {
     jenDipsy: dipKlice.size - spolecne.length,
     nesparovaneKatalog: [...katKlice].filter(([k]) => !dipKlice.has(k))
       .map(([, r]) => ({ id: r.id ?? null, izo: r.izo, kkov: r.kkov, zamereni: r.zamereni ?? '', forma: r.forma, delka: r.delka_studia })),
+    neuplneKarty: karty.filter((c) => !jeUplna(c))
+      .map((c) => ({ id: c.id ?? null, izo: c.skola?.izo ?? null, kkov: c.skolniObor?.kod ?? null, forma: c.skolniObor?.formaStudia ?? null, delka: c.skolniObor?.delkaStudia ?? null })),
     nesparovaneDipsy: [...dipKlice].filter(([k]) => !katKlice.has(k))
       .map(([, c]) => ({ izo: c.skola.izo, kkov: c.skolniObor.kod, zamereni: c.zamereni ?? '', forma: c.skolniObor.formaStudia, delka: c.skolniObor.delkaStudia })),
   };
@@ -71,6 +75,16 @@ export function porovnejSkolu(redizo, skolniNabidky, karty) {
 export function rozborOdpovedi(body) {
   if (!Array.isArray(body?.data)) return { chyba: 'odpověď bez pole data', karty: [], totalCount: null };
   return { karty: body.data, totalCount: body.meta?.totalCount ?? null };
+}
+
+/** Plná shoda platí jen u školy, jejíž karty šlo porovnat všechny. */
+export function poctyShody(vysledky) {
+  const neuplne = (v) => (v.neuplneKarty?.length ?? 0) > 0;
+  return {
+    skolSeShodouVsechNabidek: vysledky.filter((v) => v.shoda === v.nabidek && !neuplne(v)).length,
+    skolSCastiShodou: vysledky.filter((v) => v.shoda > 0 && v.shoda < v.nabidek).length,
+    skolSNeuplnymiKartami: vysledky.filter(neuplne).length,
+  };
 }
 
 function argument(nazev, vychozi) {
@@ -160,8 +174,7 @@ async function hlavni() {
     skolCelkem: vzorek.length,
     skolBezKaret,
     skolSChybouApi: chybyApi.length ? new Set(chybyApi.map((x) => x.redizo)).size : 0,
-    skolSeShodouVsechNabidek: vysledky.filter((v) => v.shoda === v.nabidek).length,
-    skolSCastiShodou: vysledky.filter((v) => v.shoda > 0 && v.shoda < v.nabidek).length,
+    ...poctyShody(vysledky),
     truncations,
     chybyApi,
     bezTotalCount,
