@@ -321,17 +321,26 @@ test('zprávy z výpisu aktualit se ukazují a blok ví, že jsou z výpisu', as
   assert.equal(v.zdrojUrl, 'https://skola.cz/aktuality/');
 });
 
-test('u zprávy z výpisu se věta s termíny nezobrazí', async () => {
+test('u položky výpisu bez článku se věta s termíny nezobrazí, u článku ano', async () => {
   // Položka bez článku vede na výpis sám; rozbor z něj mohl vzít termín jiné akce.
   process.env.DATABASE_URL = 'postgres://test';
+  const clanek = radek({
+    id: 'n2',
+    identita: 'https://skola.cz/aktuality/dod',
+    url: 'https://skola.cz/aktuality/dod',
+    souhrn: 'Škola pořádá den otevřených dveří 9. 12. 2026.',
+    terminy_akce: [{ datum: '2026-12-09', cas: null, akce: 'dod' }],
+  });
   const r = radek({
+    identita: 'https://skola.cz/aktuality/#0123456789abcdef',
     url: 'https://skola.cz/aktuality/',
     souhrn: 'Škola pořádá dny otevřených dveří 9. 12. 2026 a 7. 1. 2027.',
     terminy_akce: [{ datum: '2026-12-09', cas: null, akce: 'dod' }],
   });
-  nastavPoolProTesty(pool([PRAZDNO, { rows: [r], rowCount: 1 }, PRAZDNO,
+  nastavPoolProTesty(pool([PRAZDNO, { rows: [r, clanek], rowCount: 2 }, PRAZDNO,
     { rows: [{ feed_url: 'https://skola.cz/aktuality/', naposledy_ok: '2026-10-01T04:10:00.000Z', chyby_v_rade: 0, typ: 'tinyfish' }], rowCount: 1 }]));
   const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
-  assert.equal(v.polozky.length, 1);
-  assert.equal(v.polozky[0].souhrn, null);
+  const podleId = Object.fromEntries(v.polozky.map((p) => [p.id, p]));
+  assert.equal(podleId.n1.souhrn, null);
+  assert.match(podleId.n2.souhrn, /9\. 12\. 2026/);
 });

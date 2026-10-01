@@ -102,6 +102,7 @@ const OKNO_POLOZEK = 30;
 
 export interface RadekNovinky {
   id: string;
+  identita?: string;
   titulek: string;
   url: string;
   publikovano: Date | string | null;
@@ -171,7 +172,7 @@ export const TYPY_VYPISU = new Set(['html', 'tinyfish']);
 const ZOBRAZIT_VYPISY = true;
 
 /** Společný výběr sloupců pro oba dotazy, aby se nemohly rozejít. */
-export const SLOUPCE = `select n.id, n.titulek, n.url, n.publikovano, n.vytvoreno, n.zobrazeni,
+export const SLOUPCE = `select n.id, n.identita, n.titulek, n.url, n.publikovano, n.vytvoreno, n.zobrazeni,
          n.tridy, n.terminy, n.duvod, n.konec_platnosti,
          r.souhrn, r.terminy as terminy_akce
     from skola_novinka n
@@ -314,10 +315,15 @@ export async function novinkySkoly(
   }
 
   const zVypisu = Boolean(f?.typ && TYPY_VYPISU.has(f.typ));
-  // Věta s termíny u zprávy z výpisu: položka bez vlastního článku vede na výpis
-  // sám a rozbor z něj mohl vzít termín jiné akce (stalo se u jedné karty před
-  // opravou sklízeče). Bez věty platí „podmínky najdete na webu školy“.
-  const bezSouhrnu = (p: SkolniNovinka) => (zVypisu && p.souhrn ? { ...p, souhrn: null } : p);
+  // Věta s termíny u položky výpisu bez vlastního článku: vede na výpis sám a
+  // rozbor z něj mohl vzít termín jiné akce (stalo se u jedné karty před opravou
+  // sklízeče). Takovou položku pozná identita „adresa výpisu#otisk titulku“
+  // (scripts/sklizec-novinek.py, precti_zdroj_vypisu), ne adresa: ta se může
+  // od adresy zdroje lišit přesměrováním. Položky s článkem větu mají.
+  const bezClanku = new Set(
+    [...kPrijimackam.rows, ...zivot.rows].filter((r) => /#[0-9a-f]{16}$/.test(r.identita ?? '')).map((r) => r.id),
+  );
+  const bezSouhrnu = (p: SkolniNovinka) => (zVypisu && p.souhrn && bezClanku.has(p.id) ? { ...p, souhrn: null } : p);
 
   return {
     polozky: serad(polozky).slice(0, POCET_POLOZEK).map(bezSouhrnu),

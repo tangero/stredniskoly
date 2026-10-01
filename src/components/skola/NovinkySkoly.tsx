@@ -189,11 +189,12 @@ export function NovinkySkoly({ redizo }: { redizo: string }) {
             {data?.zVypisu
               ? `Převzato z výpisu aktualit na webu školy${overeno ? `, naposledy přečteno ${overeno}` : ''}; titulek a datum mohou být přečtené chybně.`
               : `Převzato z webu školy${overeno ? `, zdroj naposledy ověřen ${overeno}` : ''}.`}{' '}
-            {/* Odkaz z výpisu aktualit nemusí vést na článek: bez něj vede na výpis sám. */}
-            {data?.zVypisu
-              ? 'Datum konání a podmínky najdete na webu školy.'
-              : p.souhrn
-                ? 'Termíny jsme přečetli z článku školy; čas začátku, místo a přihlášení najdete v něm.'
+            {/* Odkaz z výpisu aktualit nemusí vést na článek: bez něj vede na výpis
+                sám. Věta s termíny vzniká jen z článku, takže se souhrnem článek je. */}
+            {p.souhrn
+              ? 'Termíny jsme přečetli z článku školy; čas začátku, místo a přihlášení najdete v něm.'
+              : data?.zVypisu
+                ? 'Datum konání a podmínky najdete na webu školy.'
                 : 'Datum konání a podmínky najdete v článku školy.'}{' '}
             Pořadatelem je škola, ne tento web.
           </p>
