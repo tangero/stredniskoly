@@ -86,6 +86,8 @@ export function poctyShody(vysledky) {
   return {
     skolSeShodouVsechNabidek: vysledky.filter((v) => v.shoda === v.nabidek && !neuplne(v)).length,
     skolSCastiShodou: vysledky.filter((v) => v.shoda > 0 && v.shoda < v.nabidek).length,
+    // Karty má, ale žádný klíč nesedí: u měření mezi ročníky nejzávažnější rozpor.
+    skolBezShody: vysledky.filter((v) => v.karet > 0 && v.shoda === 0 && v.nabidek > 0).length,
     skolSNeuplnymiKartami: vysledky.filter(neuplne).length,
   };
 }

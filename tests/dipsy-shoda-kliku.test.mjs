@@ -50,7 +50,9 @@ test('neúplná karta měření neshodí, vypíše se zvlášť a ruší plnou s
   assert.deepEqual(v.neuplneKarty, [{ id: 'k1', izo: '100000001', kkov: '65-51-H/01', forma: null, delka: null }]);
 
   const cista = porovnejSkolu(REDIZO, [nabidka('79-41-K/41')], [karta('79-41-K/41', '')]);
-  assert.deepEqual(poctyShody([v, cista]), { skolSeShodouVsechNabidek: 1, skolSCastiShodou: 0, skolSNeuplnymiKartami: 1 });
+  const bezShody = porovnejSkolu(REDIZO, [nabidka('79-41-K/41')], [karta('79-41-K/41', 'Jiné zaměření')]);
+  const chyba = { redizo: REDIZO, nabidek: 1, karet: null, shoda: null, chyba: 'neúplná odpověď DiPSy' };
+  assert.deepEqual(poctyShody([v, cista, bezShody, chyba]), { skolSeShodouVsechNabidek: 1, skolSCastiShodou: 0, skolBezShody: 1, skolSNeuplnymiKartami: 1 });
 });
 
 test('odpověď bez pole data je chyba API, ne škola bez karet', () => {
