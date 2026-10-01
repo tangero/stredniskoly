@@ -31,6 +31,7 @@ Založení:
 
 - Žádné refaktory mimo zadání.
 - Produkční data v Neonu beze změny (migrace: žádná).
+- Cizí servery: žádné (jinak uvést server, endpointy, rychlost, data a důvod; před použitím ohlásit v issue a počkat na schválení, CLAUDE.md pravidlo 7).
 
 ### Jak otestovat
 

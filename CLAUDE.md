@@ -46,6 +46,9 @@ Nastavení GitHubu (formuláře, tabule projektu, ochrana `main`) popisuje `docs
    data), dělá Patrick.
 2. **Jedno issue = jedna větev = jeden PR.** Větev `zadani/<N>-<kratky-popis>` z aktuální `main`.
    Popis PR obsahuje `Closes #N`. Po otevření PR přidej issue štítek `k-overeni`.
+   Výjimka: když issue nebo vlastník projektu určí dodávku **po etapách**, má každá etapa vlastní větev
+   (`zadani/<N>-etapa-<M>-<kratky-popis>`) a PR, který na issue odkazuje („Souvisí s #N“); `Closes #N` nese
+   jen PR poslední etapy. Titulek PR podle issue (například „Fáze 2 / etapa M: …“).
 3. **Nikdy nepushuj do `main` a nic nemerguj** (ani vlastní PR, ani cizí). Žádný force-push do cizích větví.
    Merge dělá Patrick.
 4. **Žádné osobní údaje** v kódu, testech, fixtures, commitech, názvech větví, popisech PR ani
@@ -60,9 +63,23 @@ Nastavení GitHubu (formuláře, tabule projektu, ochrana `main`) popisuje `docs
    (`npm run veletrhy:export-kontrola`) nic nezapisuje.
 6. **Drobné zásahy.** Měň jen to, co zadání vyžaduje. Žádné refaktory, přejmenování, přeformátování
    ani aktualizace závislostí mimo zadání. Když narazíš na jiný problém, zapiš ho do PR jako poznámku, neopravuj ho.
-7. **Nedotazuj se cizích serverů.** Během práce ani v testech nevolej externí API a weby (školní weby,
-   ČŠI, CERMAT, Resend, GitHub API mimo `gh` pro tento repozitář…). Nové síťové volání v kódu přidej, jen když
-   je v zadání, a v testech ho nahraď mockem. Instalace balíčků přes `npm ci` je v pořádku.
+7. **Cizí servery jen po ohlášení a schválení způsobu.** Dotazy na servery a API třetích stran (školní weby,
+   ČŠI, CERMAT, DiPSy, Resend, GitHub API mimo `gh` pro tento repozitář…) jsou dovolené, ale vždy až po
+   ohlášení a schválení konkrétního způsobu:
+   1. **Ohlas způsob** komentářem v issue, ke kterému práce patří: který server, které endpointy nebo adresy,
+      kolik dotazů a jakou rychlostí (prodleva mezi dotazy, souběh), jaká data se stáhnou, kam se uloží
+      a zda se commitují, proč je to potřeba a proč nestačí místní data.
+   2. **Počkej na výslovné schválení** vlastníka projektu: komentář v issue, který ohlášený způsob schvaluje.
+      Stačí i štítek `schvaleno`, pokud byl způsob popsaný už v těle issue před jeho přidáním. Mlčení
+      ani obecné schválení zadání bez popsaného způsobu souhlas nejsou. Do schválení nedělej ani zkušební dotaz.
+   3. **Drž se schváleného způsobu.** Jiný server, další endpoint, víc dotazů nebo jiná data znamenají
+      nové ohlášení.
+
+   Vždy platí: neobcházej přihlášení ani jiné ochrany přístupu, nestahuj nic za loginem a nepoužívej cizí
+   přístupové údaje; respektuj `robots.txt`, podmínky užití a limity serveru (při odpovědi 429 nebo opakovaných
+   chybách přestaň a napiš do issue); osobní údaje nestahuj ani neukládej (pravidlo 4). V testech se cizí
+   servery nevolají nikdy, síťové volání nahraď mockem. Nové síťové volání v kódu webu nebo skriptů přidej, jen
+   když je v zadání. Instalace balíčků přes `npm ci` a `gh` pro tento repozitář ohlášení nepotřebují.
 8. **Když je zadání nejasné nebo v rozporu s pravidly**, nic neimplementuj a napiš do issue komentář s dotazem.
 9. Pravidla z `.claude/claude.md` (období dat z `public/stav_datovych_sad.json`, slovník ukazatelů
    a pojmů, `docs/zdroje-dat.md`) platí i pro zadání.
