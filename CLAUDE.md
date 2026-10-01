@@ -25,6 +25,8 @@ schvaluje je Patrick. Stav issue vyjadřují štítky:
 | `k-overeni` | hotovo v PR, čeká na kontrolu na Vercel preview |
 | `pripominka` | úkol s termínem (řádek `Termín: RRRR-MM-DD` v těle issue nebo pole Termín formuláře); před termínem se nerealizuje |
 
+Nastavení GitHubu (formuláře, tabule projektu, ochrana `main`) popisuje `docs/spoluprace-na-githubu.md`.
+
 ### Pravidla
 
 1. **Pracuj jen na issues, která mají zároveň štítky `interni` a `schvaleno`.** Issue bez nich
