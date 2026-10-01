@@ -144,7 +144,7 @@ const PORADI_STITKU = [
 function puvod(data: Odpoved | null, overeno: string | null): string {
   if (data?.zVypisu) {
     return `Sbíráme je automaticky z výpisu aktualit na webu školy${overeno ? `, naposledy přečteno ${overeno}` : ''}. `
-      + 'Titulky a data čteme ze stránky školy a mohou být přečtené chybně; platí to, co je v článku školy.';
+      + 'Titulky a data čteme ze stránky školy a mohou být přečtené chybně; platí to, co je na webu školy.';
   }
   return `Sbíráme je automaticky z kanálu novinek školy${overeno ? `, naposledy ověřeno ${overeno}` : ''}.`;
 }
@@ -189,9 +189,12 @@ export function NovinkySkoly({ redizo }: { redizo: string }) {
             {data?.zVypisu
               ? `Převzato z výpisu aktualit na webu školy${overeno ? `, naposledy přečteno ${overeno}` : ''}; titulek a datum mohou být přečtené chybně.`
               : `Převzato z webu školy${overeno ? `, zdroj naposledy ověřen ${overeno}` : ''}.`}{' '}
-            {p.souhrn
-              ? 'Termíny jsme přečetli z článku školy; čas začátku, místo a přihlášení najdete v něm.'
-              : 'Datum konání a podmínky najdete v článku školy.'}{' '}
+            {/* Odkaz z výpisu aktualit nemusí vést na článek: bez něj vede na výpis sám. */}
+            {data?.zVypisu
+              ? 'Datum konání a podmínky najdete na webu školy.'
+              : p.souhrn
+                ? 'Termíny jsme přečetli z článku školy; čas začátku, místo a přihlášení najdete v něm.'
+                : 'Datum konání a podmínky najdete v článku školy.'}{' '}
             Pořadatelem je škola, ne tento web.
           </p>
         </div>

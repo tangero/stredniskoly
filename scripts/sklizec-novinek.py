@@ -312,7 +312,10 @@ def zpracuj_skolu(redizo: str, zaznam: dict, stav: dict, dnes: date, timeout: in
         # doplnit třídu, kterou pravidla neznají, takže se publikační
         # rozhodnutí poté dělá znovu; výpadek modelu nechává pravidla beze změny.
         rozbor = souhrn = None
-        if rozebirat and jev.je_kandidat_na_rozbor(p, pub):
+        # Položka výpisu bez vlastního článku vede na výpis sám: rozbor by četl
+        # celou stránku a kartě přisoudil termín jiné akce. Zůstane bez věty.
+        bez_clanku = typ in TYPY_VYPISU and bool(p.get("guid"))
+        if rozebirat and not bez_clanku and jev.je_kandidat_na_rozbor(p, pub):
             rozbor = rozeber(p, publikovano, dnes)
             zmeny = jev.slouc_s_pravidly(p, rozbor)
             if zmeny:

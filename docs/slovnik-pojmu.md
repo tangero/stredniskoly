@@ -123,7 +123,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **objevilo se *datum*** | den, kdy jsme zprávu poprvé viděli v kanálu novinek; píše se **jen** tehdy, když feed neuvedl použitelné datum vydání | u zprávy místo data vydání; v patičce bloku vysvětleno | vydáno, publikováno, zveřejněno (to bychom tvrdili něco, co nevíme) |
 | **zdroj naposledy ověřen *datum*** | kdy se naposled podařilo přečíst kanál novinek školy | vždy u sklizeného údaje | aktualizováno (nejde o aktualizaci údaje), ověřeno školou |
 | **Čím školy žijí** | název přehledu zpráv z webů škol podle kraje a obce (zatím jen nezalistovaný prototyp) | nadpis stránky s názvem oblasti; pod ním vždy věta o pokrytí: u kolika škol zprávy čteme a že o ostatních nic nevíme | novinky ze škol, aktuality škol, život škol (zní jako úplný přehled) |
-| **výpis aktualit** | stránka na webu školy se seznamem jejích zpráv, ze které je čteme u škol bez kanálu novinek | u zpráv z tohoto zdroje vždy s datem čtení („naposledy přečteno …“) a větou, že titulky i data mohou být přečtené chybně; platí to, co je v článku školy | RSS, kanál (to je jiný zdroj), oficiální zprávy |
+| **výpis aktualit** | stránka na webu školy se seznamem jejích zpráv, ze které je čteme u škol bez kanálu novinek | u zpráv z tohoto zdroje vždy s datem čtení („naposledy přečteno …“) a větou, že titulky i data mohou být přečtené chybně; platí to, co je na webu školy (odkaz nemusí vést na článek, u výpisu bez odkazů vede na výpis sám) | RSS, kanál (to je jiný zdroj), oficiální zprávy |
 
 ## 5. Slova, která se nepoužívají vůbec
 

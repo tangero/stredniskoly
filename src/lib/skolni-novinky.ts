@@ -313,12 +313,18 @@ export async function novinkySkoly(
     return { polozky: [], zeZivota: [], zdrojOverenAt: null, zdrojUrl: null, zdrojVypadek: false, zVypisu: false };
   }
 
+  const zVypisu = Boolean(f?.typ && TYPY_VYPISU.has(f.typ));
+  // Věta s termíny u zprávy z výpisu: položka bez vlastního článku vede na výpis
+  // sám a rozbor z něj mohl vzít termín jiné akce (stalo se u jedné karty před
+  // opravou sklízeče). Bez věty platí „podmínky najdete na webu školy“.
+  const bezSouhrnu = (p: SkolniNovinka) => (zVypisu && p.souhrn ? { ...p, souhrn: null } : p);
+
   return {
-    polozky: serad(polozky).slice(0, POCET_POLOZEK),
-    zeZivota,
+    polozky: serad(polozky).slice(0, POCET_POLOZEK).map(bezSouhrnu),
+    zeZivota: zeZivota.map(bezSouhrnu),
     zdrojOverenAt: naIso(f?.naposledy_ok ?? null),
     zdrojUrl: f?.feed_url ?? null,
     zdrojVypadek: (f?.chyby_v_rade ?? 0) > 0,
-    zVypisu: Boolean(f?.typ && TYPY_VYPISU.has(f.typ)),
+    zVypisu,
   };
 }
