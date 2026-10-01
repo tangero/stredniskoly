@@ -46,6 +46,9 @@ Nastavení GitHubu (formuláře, tabule projektu, ochrana `main`) popisuje `docs
    data), dělá Patrick.
 2. **Jedno issue = jedna větev = jeden PR.** Větev `zadani/<N>-<kratky-popis>` z aktuální `main`.
    Popis PR obsahuje `Closes #N`. Po otevření PR přidej issue štítek `k-overeni`.
+   Výjimka: když issue nebo vlastník projektu určí dodávku **po etapách**, má každá etapa vlastní větev
+   (`zadani/<N>-etapa-<M>-<kratky-popis>`) a PR, který na issue odkazuje („Souvisí s #N“); `Closes #N` nese
+   jen PR poslední etapy. Titulek PR podle issue (například „Fáze 2 / etapa M: …“).
 3. **Nikdy nepushuj do `main` a nic nemerguj** (ani vlastní PR, ani cizí). Žádný force-push do cizích větví.
    Merge dělá Patrick.
 4. **Žádné osobní údaje** v kódu, testech, fixtures, commitech, názvech větví, popisech PR ani
