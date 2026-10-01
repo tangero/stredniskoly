@@ -65,7 +65,9 @@ export async function stavSkol(redizos: string[], ted: Date = new Date()): Promi
     const vypis = TYPY_VYPISU.has(f.typ);
     out.set(f.redizo, {
       // Výpis přebírá místo snímku sondy až po prvním úspěšném čtení: záznam
-      // vzniká i při chybě, a pak by škola ze sondy zmizela bez náhrady.
+      // vzniká i při chybě, a pak by škola ze sondy zmizela bez náhrady. Typ
+      // zapisovač přepíná jen úspěšným čtením, takže `naposledy_ok` u typu
+      // výpisu patří výpisu, ne dřívějšímu kanálu.
       kanal: f.aktivni && !vypis, vypis: f.aktivni && vypis && f.naposledy_ok !== null, zprav30: 0, posledni: null, vypadek: f.chyby_v_rade > 0,
     });
   }

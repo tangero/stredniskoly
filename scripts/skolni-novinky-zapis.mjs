@@ -248,7 +248,10 @@ export async function zapisDavku(klient, davka) {
          values ($1, $2, $3, $4, now(), $5, $6, $7, $8, $9, $10)
          on conflict (redizo) do update set
            feed_url = excluded.feed_url,
-           typ = excluded.typ,
+           -- Typ se přepne až úspěšným čtením nového zdroje: při chybě by
+           -- stránka školy i přehled vydávaly nepřečtený zdroj za ten, odkud
+           -- uložené zprávy pocházejí.
+           typ = case when excluded.naposledy_ok is not null then excluded.typ else skola_feed.typ end,
            naposledy_ok = coalesce(excluded.naposledy_ok, skola_feed.naposledy_ok),
            naposledy_zkouseno = excluded.naposledy_zkouseno,
            etag = coalesce(excluded.etag, skola_feed.etag),
@@ -263,11 +266,12 @@ export async function zapisDavku(klient, davka) {
          typ],
       );
 
-      // Škola přešla z výpisu aktualit na kanál novinek: stránka školy se řídí
-      // typem zdroje, takže by po přepnutí ukázala i dřívější zprávy z výpisu,
-      // které se zatím zobrazovat nemají (ZOBRAZIT_VYPISY). Zneplatní se; zprávy
-      // z této dávky ne, tentýž článek mohl přijít i z kanálu.
-      if (TYPY_VYPISU.has(rows[0]?.typ) && !TYPY_VYPISU.has(typ)) {
+      // Škola přešla z výpisu aktualit na kanál novinek a kanál se přečetl:
+      // stránka školy se řídí typem zdroje, takže by po přepnutí ukázala i
+      // dřívější zprávy z výpisu, které se zatím zobrazovat nemají
+      // (ZOBRAZIT_VYPISY). Zneplatní se; zprávy z této dávky ne, tentýž článek
+      // mohl přijít i z kanálu. Při chybě kanálu se nic nemění, typ zůstává.
+      if (!chyba && TYPY_VYPISU.has(rows[0]?.typ) && !TYPY_VYPISU.has(typ)) {
         const { rowCount } = await klient.query(
           `update skola_novinka set zneplatneno = now(), zmeneno = now()
             where redizo = $1 and zneplatneno is null and not (identita = any($2::text[]))`,

@@ -161,6 +161,14 @@ test('přechod z výpisu aktualit na kanál zneplatní dřívější zprávy z v
   assert.ok(d.some((x) => /insert into skola_invalidace/.test(x.sql)));
 });
 
+test('chyba nového kanálu nezneplatní nic a typ zdroje nepřepne', async () => {
+  // Výpadek není zjištění: zprávy zůstávají a typ se přepne až úspěšným čtením.
+  const d = await zapisZdroj('html', { typ: 'rss', stav: 'chyba', chyba: 'HTTP 503', polozky: [] });
+  assert.equal(d.some((x) => /update skola_novinka set zneplatneno/.test(x.sql)), false);
+  assert.match(d.find((x) => /insert into skola_feed/.test(x.sql)).sql,
+    /typ = case when excluded\.naposledy_ok is not null then excluded\.typ else skola_feed\.typ end/);
+});
+
 test('výpis zůstává výpisem a kanál kanálem: nic se nezneplatňuje', async () => {
   for (const [pred, po] of [['html', 'tinyfish'], ['rss', 'rss'], ['rss', 'html'], [null, 'rss']]) {
     const d = await zapisZdroj(pred, { typ: po });
