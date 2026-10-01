@@ -48,13 +48,15 @@ test('portálové cache nemají časovou platnost a nesou značku', () => {
   }
 });
 
-test('otevřená data školy mají stejnou obnovu jako stránka školy, na serveru i v CDN', () => {
+test('otevřená data školy mají stejnou obnovu jako stránka školy na serveru i v CDN, v prohlížeči žádnou', () => {
   const cislo = (soubor, vzor) => Number(readFileSync(soubor, 'utf8').match(vzor)?.[1]);
   const stranka = cislo('src/app/skola/[slug]/page.tsx', /export const revalidate = (\d+)/);
   assert.ok(stranka >= 3600, 'stránka školy má číselnou platnost');
   for (const trasa of ['json', 'md']) {
     const soubor = `src/app/api/skola/[slug]/${trasa}/route.ts`;
     assert.equal(cislo(soubor, /export const revalidate = (\d+)/), stranka, `${trasa}: revalidate`);
-    assert.equal(cislo(soubor, /max-age=(\d+)/), stranka, `${trasa}: Cache-Control max-age`);
+    assert.equal(cislo(soubor, /s-maxage=(\d+)/), stranka, `${trasa}: Cache-Control s-maxage pro CDN`);
+    // Prohlížeč by starý profil držel i po zápisu v portálu, značka zneplatní jen server.
+    assert.equal(cislo(soubor, /[^-]max-age=(\d+)/), 0, `${trasa}: Cache-Control max-age pro prohlížeč`);
   }
 });
