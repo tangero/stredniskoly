@@ -1213,6 +1213,9 @@ export async function POST(request: NextRequest) {
     const cachedPayload = readCachedSearchResponse(cacheKey);
     if (cachedPayload) {
       const payloadCopy = structuredClone(cachedPayload);
+      // Klíč adresu normalizuje; ozvěna vstupu má být tohoto dotazu, ne prvního.
+      const input = payloadCopy.input as Record<string, unknown> | undefined;
+      if (input && typeof input === 'object') input.address = address;
       const diagnostics = payloadCopy.diagnostics as Record<string, unknown> | undefined;
       if (diagnostics && typeof diagnostics === 'object') {
         diagnostics.responseCache = {
