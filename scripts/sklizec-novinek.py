@@ -226,12 +226,19 @@ def precti_zdroj_vypisu(zaznam: dict, stav: dict, dnes: date, timeout: int = TIM
         return odpoved
     polozky, videne = [], set()
     for p in vypis.precti_vypis(odpoved["text"], odpoved.get("url") or url, dnes):
-        # Identita položky výpisu je vždy adresa + otisk titulku. Adresa sama
-        # nestačí: výpis bez odkazu na článek dává všem položkám adresu výpisu
-        # a karta může vést na rubriku. Rozhodovat podle sousedních položek nejde,
-        # identita by se měnila, jak se výpis posouvá, a zpráva by se zdvojila.
+        # Identita závisí jen na položce samé, ne na sousedech (jinak by se
+        # měnila, jak se výpis posouvá, a zpráva by se uložila podruhé):
+        # * vede-li položka na vlastní článek, identitou je jeho adresa, takže
+        #   úprava titulku zprávu nezdvojí;
+        # * vede-li na stránku výpisu (výpis bez odkazů na články), sdílí adresu
+        #   se všemi, identitou je adresa + otisk titulku.
+        # Karta, jejíž nadpis nemá odkaz a jediný odkaz vede na rubriku, se
+        # s ostatními na téže rubrice sloučí (platí nejnovější); čtečka bere
+        # přednostně odkaz z nadpisu, takže jde o vzácný případ.
+        bez_clanku = normalizuj_url(p["url"]) == normalizuj_url(odpoved.get("url") or url)
         polozky.append({"titulek": p["titulek"], "odkaz": p["url"],
-                        "guid": f"{normalizuj_url(p['url'])}#{otisk({'titulek': p['titulek']})[:16]}",
+                        "guid": f"{normalizuj_url(p['url'])}#{otisk({'titulek': p['titulek']})[:16]}"
+                        if bez_clanku else "",
                         "datum_raw": p["datum"], "popis": "", "kategorie": []})
         # Týž článek bývá ve výpisu dvakrát (zvýrazněný nahoře a v seznamu);
         # čtečka řadí od nejnovějšího, platí první výskyt.

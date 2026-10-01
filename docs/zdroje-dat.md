@@ -388,7 +388,7 @@ Sada zatím **není v registru stavu datových sad**: registr vede období, kter
 | Pole z výpisu | Obsah | Používáme |
 |---|---|---|
 | text odkazu nebo nadpis bloku | titulek zprávy | ano, jako titulek položky |
-| `href` odkazu v bloku | adresa článku | ano; bez odkazu je odkazem stránka výpisu. Identitu položky tvoří vždy adresa s otiskem titulku (adresa sama nestačí: výpis bez odkazů i odkaz na rubriku ji sdílí) |
+| `href` odkazu v bloku | adresa článku | ano; identitou položky je adresa článku. Bez odkazu na článek je odkazem stránka výpisu a identitou adresa výpisu s otiskem titulku. Identita nezávisí na sousedních položkách, aby se zpráva při posunu výpisu nezdvojila |
 | datum v bloku | datum vydání | ano; data bez roku dostanou nejbližší minulý rok |
 | perex, text bloku | autorský text | **ne**, ani ke klasifikaci (nedá se spolehlivě oddělit od sousedních zpráv) |
 | obrázky, autor, rubrika | — | ne, ze stejných důvodů jako u feedu |

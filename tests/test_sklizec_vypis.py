@@ -113,25 +113,26 @@ class ZdrojVypisu(unittest.TestCase):
         self.assertEqual(len({p["identita"] for p in v["polozky"]}), 3)
         self.assertTrue(all(p["url"].startswith(STRANKA) for p in v["polozky"]))
 
-    def test_ruzne_titulky_na_stejne_adrese_nesplynou(self):
-        # Pojistka ve sklízeči, kdyby čtečka přece jen vzala odkaz na rubriku.
-        polozky = [{"titulek": t, "url": "https://skola.example.cz/rubrika/skola/", "datum": d, "druh": "odkaz"}
-                   for t, d in (("Exkurze do elektrárny", "2026-09-24"), ("Sportovní den", "2026-09-17"),
-                                ("Adaptační kurz", "2026-09-03"))]
-        with mock.patch.object(sklizec.vypis, "precti_vypis", return_value=polozky):
-            v, _, _ = self.zpracuj({"typ": "html"}, primo=ok(VYPIS))
-        self.assertEqual(len({p["identita"] for p in v["polozky"]}), 3)
+    def test_uprava_titulku_clanku_nezmeni_identitu(self):
+        # Článek s vlastní adresou: škola opraví titulek, zpráva se nezdvojí.
+        pred, _, _ = self.zpracuj({"typ": "html"}, primo=ok(VYPIS))
+        upraveny = VYPIS.replace("Okresní kolo ve florbale", "Okresní kolo ve florbale: postup do kraje")
+        po, _, _ = self.zpracuj({"typ": "html"}, primo=ok(upraveny))
+        self.assertEqual({p["identita"] for p in pred["polozky"]}, {p["identita"] for p in po["polozky"]})
 
-    def test_identita_nezavisi_na_sousednich_polozkach(self):
-        # Když z výpisu odejdou ostatní zprávy se sdílenou adresou, zbylá musí
-        # mít tutéž identitu jako dřív, jinak ji zapisovač uloží podruhé.
-        polozky = [{"titulek": t, "url": "https://skola.example.cz/rubrika/skola/", "datum": d, "druh": "odkaz"}
-                   for t, d in (("Exkurze do elektrárny", "2026-09-24"), ("Sportovní den", "2026-09-17"))]
-        with mock.patch.object(sklizec.vypis, "precti_vypis", return_value=polozky):
-            obe, _, _ = self.zpracuj({"typ": "html"}, primo=ok(VYPIS))
-        with mock.patch.object(sklizec.vypis, "precti_vypis", return_value=polozky[:1]):
-            jedna, _, _ = self.zpracuj({"typ": "html"}, primo=ok(VYPIS))
-        self.assertEqual(jedna["polozky"][0]["identita"], obe["polozky"][0]["identita"])
+    def test_identita_polozky_bez_clanku_nezavisi_na_sousedech(self):
+        # Výpis bez odkazů: když starší zprávy z výpisu odejdou, zbylá má
+        # tutéž identitu jako dřív, jinak by ji zapisovač uložil podruhé.
+        cely, _, _ = self.zpracuj({"typ": "html"}, primo=ok(VYPIS_BEZ_ODKAZU))
+        zkraceny = VYPIS_BEZ_ODKAZU.replace(
+            '<div class="zprava"><h3>Adaptační kurz prvních ročníků</h3><p>3. 9. 2026</p><p>Text zprávy.</p></div>',
+            '<div class="zprava"><h3>Burza učebnic pro první ročníky</h3><p>1. 9. 2026</p><p>Text zprávy.</p></div>')
+        po, _, _ = self.zpracuj({"typ": "html"}, primo=ok(zkraceny))
+        spolecne = lambda v: {p["titulek"]: p["identita"] for p in v["polozky"]}
+        a, b = spolecne(cely), spolecne(po)
+        for t in set(a) & set(b):
+            self.assertEqual(a[t], b[t])
+        self.assertEqual(len(set(a) & set(b)), 2)
 
     def test_odmitnuti_ochranou_hostingu_zkusi_tinyfish(self):
         v, _, st = self.zpracuj({"typ": "html"}, primo={"chyba": "HTTP 401"}, tinyfish={"text": VYPIS, "url": STRANKA})
