@@ -344,3 +344,20 @@ test('u položky výpisu bez článku se věta s termíny nezobrazí, u článku
   assert.equal(podleId.n1.souhrn, null);
   assert.match(podleId.n2.souhrn, /9\. 12\. 2026/);
 });
+
+test('starý rozbor položky výpisu bez článku nerozhoduje o kartě', async () => {
+  // Proběhlý termín jiné akce z výpisu by jinak kartu shodil na odkaz.
+  process.env.DATABASE_URL = 'postgres://test';
+  const r = radek({
+    zobrazeni: 'karta',
+    identita: 'https://skola.cz/aktuality/#0123456789abcdef',
+    url: 'https://skola.cz/aktuality/',
+    souhrn: 'Škola pořádá den otevřených dveří 15. 10. 2026.',
+    terminy_akce: [{ datum: '2026-10-15', cas: null, akce: 'dod' }],
+  });
+  nastavPoolProTesty(pool([PRAZDNO, { rows: [r], rowCount: 1 }, PRAZDNO,
+    { rows: [{ feed_url: 'https://skola.cz/aktuality/', naposledy_ok: '2026-10-01T04:10:00.000Z', chyby_v_rade: 0, typ: 'html' }], rowCount: 1 }]));
+  const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
+  assert.equal(v.polozky[0].zobrazeni, 'karta');
+  assert.equal(v.polozky[0].souhrn, null);
+});

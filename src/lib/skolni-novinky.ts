@@ -297,11 +297,6 @@ export async function novinkySkoly(
     [redizo, ted.toISOString(), POCET_ZE_ZIVOTA, skryteId],
   );
 
-  const dnes = ted.toISOString().slice(0, 10);
-  const prevod = (r: RadekNovinky) => naPolozku(r, prepinace, dnes);
-  const polozky = kPrijimackam.rows.map(prevod).filter((p): p is SkolniNovinka => p !== null);
-  const zeZivota = zivot.rows.map(prevod).filter((p): p is SkolniNovinka => p !== null);
-
   const feed = await dotaz<{ feed_url: string; naposledy_ok: Date | string | null; chyby_v_rade: number; typ?: string }>(
     `select feed_url, naposledy_ok, chyby_v_rade, typ from skola_feed where redizo = $1`,
     [redizo],
@@ -315,19 +310,23 @@ export async function novinkySkoly(
   }
 
   const zVypisu = Boolean(f?.typ && TYPY_VYPISU.has(f.typ));
-  // Věta s termíny u položky výpisu bez vlastního článku: vede na výpis sám a
-  // rozbor z něj mohl vzít termín jiné akce (stalo se u jedné karty před opravou
-  // sklízeče). Takovou položku pozná identita „adresa výpisu#otisk titulku“
+  // Rozbor u položky výpisu bez vlastního článku se nepoužije: položka vede na
+  // výpis sám a rozbor z něj mohl vzít termín jiné akce (stalo se u jedné karty
+  // před opravou sklízeče). Zahodí se celý ještě před rozhodnutím o kartě, ne
+  // jen věta. Takovou položku pozná identita „adresa výpisu#otisk titulku“
   // (scripts/sklizec-novinek.py, precti_zdroj_vypisu), ne adresa: ta se může
-  // od adresy zdroje lišit přesměrováním. Položky s článkem větu mají.
-  const bezClanku = new Set(
-    [...kPrijimackam.rows, ...zivot.rows].filter((r) => /#[0-9a-f]{16}$/.test(r.identita ?? '')).map((r) => r.id),
-  );
-  const bezSouhrnu = (p: SkolniNovinka) => (zVypisu && p.souhrn && bezClanku.has(p.id) ? { ...p, souhrn: null } : p);
+  // od adresy zdroje lišit přesměrováním. Položky s článkem rozbor mají.
+  const bezRozboru = (r: RadekNovinky): RadekNovinky =>
+    zVypisu && /#[0-9a-f]{16}$/.test(r.identita ?? '') ? { ...r, souhrn: null, terminy_akce: null } : r;
+
+  const dnes = ted.toISOString().slice(0, 10);
+  const prevod = (r: RadekNovinky) => naPolozku(bezRozboru(r), prepinace, dnes);
+  const polozky = kPrijimackam.rows.map(prevod).filter((p): p is SkolniNovinka => p !== null);
+  const zeZivota = zivot.rows.map(prevod).filter((p): p is SkolniNovinka => p !== null);
 
   return {
-    polozky: serad(polozky).slice(0, POCET_POLOZEK).map(bezSouhrnu),
-    zeZivota: zeZivota.map(bezSouhrnu),
+    polozky: serad(polozky).slice(0, POCET_POLOZEK),
+    zeZivota,
     zdrojOverenAt: naIso(f?.naposledy_ok ?? null),
     zdrojUrl: f?.feed_url ?? null,
     zdrojVypadek: (f?.chyby_v_rade ?? 0) > 0,
