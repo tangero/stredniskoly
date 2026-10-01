@@ -56,9 +56,11 @@ skupinami. Nedenní nástavby se v simulátoru nezobrazují (jsou jen „kam dá
 ## 3. Jak se to ukáže
 
 **Rozsah výsledků.** Patička výsledků dnes říká „v rozsahu denních nezkrácených oborů s povinnou
-JPZ“ (`SimulatorClient.tsx`). S blokem učebních oborů by to nebyla pravda; patička se přepíše na
-„denních nezkrácených oborů s jednotnou zkouškou a učebních oborů (bez ní)“, jen když blok
-učebních oborů něco ukazuje.
+JPZ“ (`SimulatorClient.tsx`). Jakmile výsledky obsahují kteroukoli nabídku bez jednotné zkoušky
+(učební obor, umělecký obor, konzervatoř, C, J), nebyla by to pravda. Patička se proto odvodí
+z kategorií, které výsledky skutečně obsahují: „denních nezkrácených oborů s jednotnou zkouškou“
+a podle potřeby „…, učebních oborů“ a „…, oborů s talentovou zkouškou bez jednotné zkoušky“;
+C a J se zmíní, jen když jsou na webu a ve výsledcích.
 
 Žádné body, pásmo, poloha vůči pásmu, nejnižší přijatý ani odznak obtížnosti; u učebních oborů
 nejsou (návrh učebních oborů, oddíl 10.2). Rok je vždy rok pásem z registru, jako u ostatních vět.
@@ -158,7 +160,16 @@ implementaci, velikost se změří a zapíše. Bez řádku by obor dostal `chybi
 | C (a J, pokud jsou na webu) | `talentova` = 0, bez pásem a bez příznaku pojistky |
 
 Druh zkoušky (talentová ano/ne) se bere ze stejného zdroje jako dnes u oborů se zkouškou;
-když ho zdroj u nabídky nenese, řádek vznikne bez něj a kontrola se pozastaví jako dosud. Nová datová sada
+když ho zdroj u nabídky nenese, řádek vznikne bez něj a kontrola se pozastaví jako dosud. To
+vyžaduje úpravu načítání: `nactiIndexPasem` (`src/lib/poloha-vuci-pasmu.ts`) dnes chybějící
+`talentova` převede na `false` (`hod('talentova') === 1`). Pole se proto změní na `boolean | null`
+(chybějící hodnota = `null`) a `talentovaZPasem` vrátí `null` i pro řádek s neznámým druhem zkoušky.
+
+**Klíč.** Index pásem je po oborech: `klicPasma` zkrátí id nabídky na `REDIZO_KKOV`. Pojistka ale
+platí pro konkrétní nabídku včetně zaměření (oddíl 4), takže příznak pojistky a počty pro věty
+se **nesmějí** ukládat pod klíč `klicPasma`. Ukládají se po celém id nabídky
+(`REDIZO_KKOV_zaměření`, jako klíč v `souhrny_kolo1.json`); jinak by počty jednoho zaměření
+rozhodly o pojistce jiného. Druh zkoušky může zůstat po oborech jako dosud. Nová datová sada
 nevzniká. Body uchazeče dál neopouštějí prohlížeč.
 
 ## 6. Kritéria přijetí (etapa 5)
@@ -169,7 +180,11 @@ nevzniká. Body uchazeče dál neopouštějí prohlížeč.
 - [ ] Umělecké M/L a P zůstávají „Bez srovnání“ s důvodem `talentova` (mají řádek v indexu
       s `talentova` = 1, kontrola se kvůli nim nepozastaví); C (a J, pokud jsou na webu)
       pojistkou nejsou.
-- [ ] Patička rozsahu výsledků zmiňuje učební obory, když je blok učebních oborů vidět.
+- [ ] Patička rozsahu výsledků odpovídá kategoriím ve výsledcích, včetně nabídek bez jednotné
+      zkoušky mimo blok učebních oborů.
+- [ ] Příznak pojistky se čte po celém id nabídky; dvě zaměření téhož oboru na jedné škole
+      s různými počty dostanou každé svůj výsledek (test).
+- [ ] Řádek indexu bez `talentova` se načte jako `null` a kontrola se pozastaví (test).
 - [ ] Učební obor bez dat, s rozporem počtů, pod prahem 10 soutěžících nebo s odmítnutými kvůli
       kapacitě pojistkou není a má větu z oddílu 3.
 - [ ] Kontrola přihlášky se kvůli učebnímu oboru nepozastaví; učební obory se počítají mezi běžné
@@ -208,5 +223,5 @@ nevzniká. Body uchazeče dál neopouštějí prohlížeč.
 
 | Verze | Změna |
 |---|---|
-| 0.2 | Review (1. 10. 2026): věty podle slovníku pojmů (*nedosáhli požadavku školy* místo „nesplnili podmínky“, bez „místo pro všechny“), vysvětlení soutěžících uchazečů v úvodu bloku; návrh učební pojistky jako samostatná funkce (`navrhniUcebniPojistku`) místo rozporu s `navrhniPojistku`; řádky indexu pro všechny kategorie bez zkoušky (umělecké M/L a P s `talentova` = 1); patička rozsahu výsledků; kontrola „rozporu počtů“ nahrazena chybějícím polem, protože soutěžící jsou z definice přijatí + nepřijatí kvůli kapacitě. |
+| 0.2 | Review (1. 10. 2026): věty podle slovníku pojmů (*nedosáhli požadavku školy* místo „nesplnili podmínky“, bez „místo pro všechny“), vysvětlení soutěžících uchazečů v úvodu bloku; návrh učební pojistky jako samostatná funkce (`navrhniUcebniPojistku`) místo rozporu s `navrhniPojistku`; řádky indexu pro všechny kategorie bez zkoušky (umělecké M/L a P s `talentova` = 1), `talentova` jako `boolean | null`, pojistka po celém id nabídky (ne `klicPasma`); patička rozsahu výsledků podle všech kategorií ve výsledcích; kontrola „rozporu počtů“ nahrazena chybějícím polem, protože soutěžící jsou z definice přijatí + nepřijatí kvůli kapacitě. |
 | 0.1 | První návrh doplňku (#244, etapa 5; návrh učebních oborů oddíl 16 ot. 6, oddíl 17 O4). |
