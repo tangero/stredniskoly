@@ -55,6 +55,11 @@ skupinami. Nedenní nástavby se v simulátoru nezobrazují (jsou jen „kam dá
 
 ## 3. Jak se to ukáže
 
+**Rozsah výsledků.** Patička výsledků dnes říká „v rozsahu denních nezkrácených oborů s povinnou
+JPZ“ (`SimulatorClient.tsx`). S blokem učebních oborů by to nebyla pravda; patička se přepíše na
+„denních nezkrácených oborů s jednotnou zkouškou a učebních oborů (bez ní)“, jen když blok
+učebních oborů něco ukazuje.
+
 Žádné body, pásmo, poloha vůči pásmu, nejnižší přijatý ani odznak obtížnosti; u učebních oborů
 nejsou (návrh učebních oborů, oddíl 10.2). Rok je vždy rok pásem z registru, jako u ostatních vět.
 
@@ -141,9 +146,19 @@ neodmítli*). *Soutěžící uchazeči* se vysvětlují při prvním výskytu v 
 
 Zdrojem jsou pole `capacity_rejected`, `prijati`, `conditions_not_met`, `prihlasky` a
 `zarazeni_obtiznosti` v `public/souhrny_kolo1.json` poté, co je etapa 1 (#244) doplní o nabídky bez zkoušky. Simulátor
-nenačítá celé soubory (návrh simulátoru, oddíl 8): kompaktní index se rozšíří o řádky učebních
-oborů (příznak učebního oboru, `talentova` = 0, příznak pojistky a počty pro věty), nebo vznikne
-vedlejší malý index; volba je na implementaci, velikost se změří a zapíše. Nová datová sada
+nenačítá celé soubory (návrh simulátoru, oddíl 8): kompaktní index se rozšíří o řádky **všech
+nabídek bez jednotné zkoušky, které jsou na webu**, nebo vznikne vedlejší malý index; volba je na
+implementaci, velikost se změří a zapíše. Bez řádku by obor dostal `chybi_data` a
+`talentovaZPasem` by kontrolu pozastavil, takže řádek potřebuje každá kategorie z oddílu 2.1:
+
+| Kategorie | Řádek v indexu |
+|---|---|
+| H, E | příznak učebního oboru, `talentova` = 0, příznak pojistky a počty pro věty |
+| umělecké M a L, P | `talentova` = 1, bez pásem; v kontrole se počítají mezi talentové přihlášky |
+| C (a J, pokud jsou na webu) | `talentova` = 0, bez pásem a bez příznaku pojistky |
+
+Druh zkoušky (talentová ano/ne) se bere ze stejného zdroje jako dnes u oborů se zkouškou;
+když ho zdroj u nabídky nenese, řádek vznikne bez něj a kontrola se pozastaví jako dosud. Nová datová sada
 nevzniká. Body uchazeče dál neopouštějí prohlížeč.
 
 ## 6. Kritéria přijetí (etapa 5)
@@ -151,8 +166,10 @@ nevzniká. Body uchazeče dál neopouštějí prohlížeč.
 - [ ] Učební obor H/E splňující pravidlo z oddílu 2 je v kontrole strategie pojistkou; počet
       takových nabídek H za rok 2026 je 574 a sedí s dokladem, počet E se zapíše do dokladu.
 - [ ] Bodové skupiny a jejich věty se nezměnily (stávající testy `poloha-vuci-pasmu` zelené).
-- [ ] Umělecké M/L a P zůstávají „Bez srovnání“ s důvodem `talentova`; C (a J, pokud jsou
-      na webu) pojistkou nejsou.
+- [ ] Umělecké M/L a P zůstávají „Bez srovnání“ s důvodem `talentova` (mají řádek v indexu
+      s `talentova` = 1, kontrola se kvůli nim nepozastaví); C (a J, pokud jsou na webu)
+      pojistkou nejsou.
+- [ ] Patička rozsahu výsledků zmiňuje učební obory, když je blok učebních oborů vidět.
 - [ ] Učební obor bez dat, s rozporem počtů, pod prahem 10 soutěžících nebo s odmítnutými kvůli
       kapacitě pojistkou není a má větu z oddílu 3.
 - [ ] Kontrola přihlášky se kvůli učebnímu oboru nepozastaví; učební obory se počítají mezi běžné
@@ -191,5 +208,5 @@ nevzniká. Body uchazeče dál neopouštějí prohlížeč.
 
 | Verze | Změna |
 |---|---|
-| 0.2 | Review (1. 10. 2026): věty podle slovníku pojmů (*nedosáhli požadavku školy* místo „nesplnili podmínky“, bez „místo pro všechny“), vysvětlení soutěžících uchazečů v úvodu bloku; návrh učební pojistky jako samostatná funkce (`navrhniUcebniPojistku`) místo rozporu s `navrhniPojistku`; kontrola „rozporu počtů“ nahrazena chybějícím polem, protože soutěžící jsou z definice přijatí + nepřijatí kvůli kapacitě. |
+| 0.2 | Review (1. 10. 2026): věty podle slovníku pojmů (*nedosáhli požadavku školy* místo „nesplnili podmínky“, bez „místo pro všechny“), vysvětlení soutěžících uchazečů v úvodu bloku; návrh učební pojistky jako samostatná funkce (`navrhniUcebniPojistku`) místo rozporu s `navrhniPojistku`; řádky indexu pro všechny kategorie bez zkoušky (umělecké M/L a P s `talentova` = 1); patička rozsahu výsledků; kontrola „rozporu počtů“ nahrazena chybějícím polem, protože soutěžící jsou z definice přijatí + nepřijatí kvůli kapacitě. |
 | 0.1 | První návrh doplňku (#244, etapa 5; návrh učebních oborů oddíl 16 ot. 6, oddíl 17 O4). |
