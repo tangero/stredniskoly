@@ -80,14 +80,18 @@ export function rozborOdpovedi(body) {
   return { karty: body.data, totalCount: body.meta?.totalCount ?? null };
 }
 
-/** Plná shoda platí jen u školy, jejíž karty šlo porovnat všechny. */
+/**
+ * Kategorie se nepřekrývají. Škola s neúplnou kartou je jen mezi neúplnými:
+ * její shodu změřit nejde, takže nepatří ani do plné, částečné, ani nulové shody.
+ */
 export function poctyShody(vysledky) {
   const neuplne = (v) => (v.neuplneKarty?.length ?? 0) > 0;
+  const zmerene = vysledky.filter((v) => v.shoda !== null && v.shoda !== undefined && !neuplne(v));
   return {
-    skolSeShodouVsechNabidek: vysledky.filter((v) => v.shoda === v.nabidek && !neuplne(v)).length,
-    skolSCastiShodou: vysledky.filter((v) => v.shoda > 0 && v.shoda < v.nabidek).length,
+    skolSeShodouVsechNabidek: zmerene.filter((v) => v.shoda === v.nabidek).length,
+    skolSCastiShodou: zmerene.filter((v) => v.shoda > 0 && v.shoda < v.nabidek).length,
     // Karty má, ale žádný klíč nesedí: u měření mezi ročníky nejzávažnější rozpor.
-    skolBezShody: vysledky.filter((v) => v.karet > 0 && v.shoda === 0 && v.nabidek > 0).length,
+    skolBezShody: zmerene.filter((v) => v.karet > 0 && v.shoda === 0 && v.nabidek > 0).length,
     skolSNeuplnymiKartami: vysledky.filter(neuplne).length,
   };
 }
