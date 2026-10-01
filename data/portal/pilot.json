@@ -11,7 +11,8 @@
    "mesto": "Praha",
    "typ": "gymnázium",
    "velikost_ukazatel": 623,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600005721",
@@ -19,7 +20,8 @@
    "mesto": "Praha",
    "typ": "odborná",
    "velikost_ukazatel": 585,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600005976",
@@ -27,7 +29,8 @@
    "mesto": "Praha",
    "typ": "odborná",
    "velikost_ukazatel": 646,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600005071",
@@ -35,7 +38,8 @@
    "mesto": "Praha",
    "typ": "odborná",
    "velikost_ukazatel": 597,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600004643",
@@ -43,7 +47,8 @@
    "mesto": "Praha",
    "typ": "odborná",
    "velikost_ukazatel": 554,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600013448",
@@ -51,7 +56,8 @@
    "mesto": "Brno",
    "typ": "gymnázium",
    "velikost_ukazatel": 685,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600019861",
@@ -59,7 +65,8 @@
    "mesto": "Brno",
    "typ": "odborná",
    "velikost_ukazatel": 726,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600013502",
@@ -67,7 +74,8 @@
    "mesto": "Brno",
    "typ": "odborná",
    "velikost_ukazatel": 1154,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600017648",
@@ -75,7 +83,8 @@
    "mesto": "Ostrava",
    "typ": "gymnázium",
    "velikost_ukazatel": 447,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600017460",
@@ -83,7 +92,8 @@
    "mesto": "Ostrava",
    "typ": "odborná",
    "velikost_ukazatel": 349,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600009602",
@@ -91,7 +101,8 @@
    "mesto": "Plzeň",
    "typ": "odborná",
    "velikost_ukazatel": 654,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600010589",
@@ -99,7 +110,8 @@
    "mesto": "Liberec",
    "typ": "gymnázium",
    "velikost_ukazatel": 619,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600016927",
@@ -107,7 +119,8 @@
    "mesto": "Olomouc",
    "typ": "gymnázium",
    "velikost_ukazatel": 754,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600007995",
@@ -115,7 +128,8 @@
    "mesto": "České Budějovice",
    "typ": "gymnázium",
    "velikost_ukazatel": 420,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600011658",
@@ -123,7 +137,8 @@
    "mesto": "Hradec Králové",
    "typ": "odborná",
    "velikost_ukazatel": 415,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600011453",
@@ -131,7 +146,8 @@
    "mesto": "Ústí nad Labem",
    "typ": "gymnázium",
    "velikost_ukazatel": 430,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600012310",
@@ -139,7 +155,8 @@
    "mesto": "Pardubice",
    "typ": "gymnázium",
    "velikost_ukazatel": 428,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600171051",
@@ -147,7 +164,8 @@
    "mesto": "Zlín",
    "typ": "odborná",
    "velikost_ukazatel": 455,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600171230",
@@ -155,7 +173,8 @@
    "mesto": "Havířov",
    "typ": "odborná",
    "velikost_ukazatel": 440,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600007065",
@@ -163,7 +182,8 @@
    "mesto": "Kladno",
    "typ": "odborná",
    "velikost_ukazatel": 638,
-   "pozvanka_odeslana": "2026-09-22"
+   "pozvanka_odeslana": "2026-09-22",
+   "vlna": 1
   },
   {
    "redizo": "600005143",
@@ -7051,12 +7071,12 @@
    "vlna": 3
   }
  ],
- "druha_vlna": {
-  "vybrano": "2026-09-23",
-  "pocet": 100,
-  "kriteria": "Veřejné školy (zřizovatel mimo 5 a 6), úplné výsledky PŘ 2026 bez min_body; rejstříkový e-mail, ředitel, web a datová schránka; e-mail jedinečný v rejstříku; bez předchozí pozvánky a aktivního kódu. Počty podle krajů úměrně počtu způsobilých škol, asi třetina gymnázií, v každé skupině přednost podle počtu přihlášek."
- },
  "vlny": {
+  "2": {
+   "vybrano": "2026-09-23",
+   "pocet": 100,
+   "kriteria": "Veřejné školy (zřizovatel mimo 5 a 6), úplné výsledky PŘ 2026 bez min_body; rejstříkový e-mail, ředitel, web a datová schránka; e-mail jedinečný v rejstříku; bez předchozí pozvánky a aktivního kódu. Počty podle krajů úměrně počtu způsobilých škol, asi třetina gymnázií, v každé skupině přednost podle počtu přihlášek."
+  },
   "3": {
    "vybrano": "2026-10-01",
    "pocet": 665,

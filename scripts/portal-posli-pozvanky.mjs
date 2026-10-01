@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Rozeslání pozvánek do pilotu účtů portálu (20 škol) z příkazové řádky.
+ * Rozeslání pozvánek do portálu z příkazové řádky, po vlnách (pilot 20 škol = vlna 1).
  *
  * Náhled e-mailu a potvrzené odeslání má administrace (/admin/portal/pozvanky);
  * tenhle skript je pro rychlou kontrolu v terminálu a sdílí s ní logiku
@@ -12,6 +12,9 @@
  *
  * Skript **nic nedomýšlí**: školu pošle jen tehdy, když má její kód v plaintextu
  * i kontaktní adresu. Chybějící vstup je chyba, ne důvod školu přeskočit potichu.
+ * Před odesláním ověří každý kód stejnou funkcí jako přihlášení (`validateKod`)
+ * proti data/portal/kody.json; potřebuje proto PORTAL_KOD_PEPPER. Jestli jsou
+ * hashe už nasazené na produkci, skript nepozná – to se hlídá ručně.
  *
  * Vstupy (oba gitignorované, obsahují tajemství a osobní údaje):
  *   data/portal/kody-plaintext.json   ← scripts/portal-generate-codes.js --out …
@@ -35,11 +38,13 @@ import path from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
 import { posliPozvankuDoPilotu } from '../src/lib/portal-email.ts';
 import { osloveni } from '../src/lib/portal-pozvanky.ts';
+import { validateKod } from '../src/lib/portal-skol.ts';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PILOT = path.join(ROOT, 'data', 'portal', 'pilot.json');
 const KODY = path.join(ROOT, 'data', 'portal', 'kody-plaintext.json');
 const KONTAKTY = path.join(ROOT, 'data', 'portal', 'pilot-kontakty.json');
+const HASHE = path.join(ROOT, 'data', 'portal', 'kody.json');
 
 const argv = process.argv.slice(2);
 const opravdu = argv.includes('--opravdu');
@@ -90,6 +95,23 @@ async function main() {
   }
 
   const kOdeslani = skoly.filter((s) => znovu || !s.pozvanka_odeslana);
+
+  // Plaintext a hashe vznikají v různých krocích a mohou se rozejít (přegenerování,
+  // jiný pepř). Kód, který přihlášení nepřijme, by škola dostala nevratně.
+  if (!process.env.PORTAL_KOD_PEPPER) {
+    console.error('❌ Chybí PORTAL_KOD_PEPPER, kódy nejde ověřit; neodesílám nic.');
+    process.exit(1);
+  }
+  const hashe = nactiNebo(HASHE, 'hashe kódů, spusťte scripts/portal-generate-codes.js').kody ?? [];
+  const neplatne = [];
+  for (const s of kOdeslani) {
+    if ((await validateKod(kodPodleRedizo.get(s.redizo), hashe)) !== s.redizo) neplatne.push(s);
+  }
+  if (neplatne.length > 0) {
+    console.error('❌ Kód neodpovídá aktivnímu hashi v data/portal/kody.json, neodesílám nic:');
+    for (const s of neplatne) console.error(`   ${s.redizo}  ${s.nazev}`);
+    process.exit(1);
+  }
   const preskocene = skoly.length - kOdeslani.length;
 
   console.log(`${opravdu ? '📧 ODESÍLÁM' : '🔍 NANEČISTO'}: ${kOdeslani.length} škol` +

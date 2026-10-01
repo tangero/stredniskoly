@@ -209,6 +209,7 @@ export interface PozvankaPara {
   /** „Vážená paní ředitelko“ / „Vážený pane řediteli“ / „Dobrý den“ */
   osloveni: string;
   kod: string;
+  /** Vlna pozvánek; pilotní text dostane jen výslovná 1. */
   vlna?: number;
 }
 
@@ -221,8 +222,10 @@ export interface PozvankaPara {
 // je přečte přes „zobrazit originál“.
 export function pozvankaDoPilotu(para: PozvankaPara): { subject: string; html: string; odesilatel: string } {
   const skola = esc(para.nazevSkoly);
-  // Pilotní text („mezi dvaceti školami“) patří jen první vlně, všechny další dostávají obecnou pozvánku.
-  const pilot = (para.vlna ?? 1) === 1;
+  // Pilotní text („mezi dvaceti školami“) patří jen první vlně. Výchozí je obecná
+  // pozvánka: škole z pozdější vlny, které se číslo vlny cestou ztratí, se
+  // nesmí slíbit místo mezi prvními dvaceti.
+  const pilot = para.vlna === 1;
   return {
     // Odesílatel patří k šabloně, ne k odesílací funkci: jediná kontrola před
     // nevratnou rozesílkou je náhled v administraci, a ten musí ukázat i řádek

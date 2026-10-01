@@ -106,6 +106,8 @@ def main():
     pocty = {k: sum(map(len, typy.values())) for k, typy in kandidati.items()}
     zpusobile = sum(pocty.values())
     celkem = zpusobile if args.pocet == 'vse' else int(args.pocet)
+    if celkem == 0:
+        raise SystemExit('Žádná způsobilá škola nezbývá, vlna by byla prázdná.')
     if celkem > zpusobile:
         raise SystemExit(f'Způsobilých škol je jen {zpusobile}, požadováno {celkem}.')
     sloty = rozdel_sloty(pocty, celkem)
@@ -138,7 +140,6 @@ def main():
         print('Nanečisto, nic se nezapsalo.')
         return
     pilot['skoly'].extend(nove)
-    # Druhá vlna má vlastní klíč `druha_vlna` z doby před zobecněním skriptu.
     pilot.setdefault('vlny', {})[str(args.vlna)] = {
         'vybrano': datetime.date.today().isoformat(), 'pocet': celkem, 'kriteria': KRITERIA}
     kontakty['skoly'].extend(nove_kontakty)

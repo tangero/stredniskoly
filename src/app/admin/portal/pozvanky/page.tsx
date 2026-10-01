@@ -5,7 +5,7 @@ import { cookies } from 'next/headers';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { formatDatumCz, overAdminToken } from '@/lib/admin';
-import { nactiPozvanky, kodProSkolu } from '@/lib/portal-pozvanky';
+import { ADMIN_DAVKA, nactiPozvanky, kodProSkolu } from '@/lib/portal-pozvanky';
 import { pozvankaDoPilotu } from '@/lib/portal-email';
 
 export const dynamic = 'force-dynamic';
@@ -31,7 +31,10 @@ export default async function AdminPozvankyPage({ searchParams }: Props) {
   // ani školy uvázlé na chybějícím kódu se za hotové vydávat nesmí.
   const hotovo = pocty.kOdeslani === 0 && pocty.celkem > 0 && pocty.jizOdeslano === pocty.celkem;
   // Náhled se staví pro konkrétní školu, aby byl vidět skutečný kód i oslovení.
-  const proNahled = radky.find((r) => r.redizo === nahled) ?? radky.find((r) => r.maKod && r.email) ?? radky[0];
+  const proNahled = radky.find((r) => r.redizo === nahled)
+    ?? radky.find((r) => !r.pozvanka_odeslana && r.maKod && r.email)
+    ?? radky.find((r) => r.maKod && r.email)
+    ?? radky[0];
   const kod = proNahled ? await kodProSkolu(proNahled.redizo) : null;
   const email = proNahled && kod ? pozvankaDoPilotu({ nazevSkoly: proNahled.nazev, osloveni: proNahled.osloveni, kod, vlna: proNahled.vlna }) : null;
 
@@ -143,16 +146,22 @@ export default async function AdminPozvankyPage({ searchParams }: Props) {
           <form method="post" action="/admin/portal/pozvanky/odeslat" className="space-y-3 rounded-xl border border-red-200 bg-red-50 p-4">
             <input type="hidden" name="akce" value="ostra" />
             <p className="text-sm text-red-900">
-              Ostrá rozesílka <strong>{pocty.kOdeslani}</strong>{' '}
-              {pocty.kOdeslani === 1 ? 'škole' : 'školám'} na jejich rejstříkové adresy. Nejde vzít zpět.
+              Ostrá rozesílka <strong>{pocty.vDavce}</strong>{' '}
+              {pocty.vDavce === 1 ? 'škole' : 'školám'} na jejich rejstříkové adresy. Nejde vzít zpět.
             </p>
+            {pocty.kOdeslani > pocty.vDavce && (
+              <p className="text-sm text-red-900">
+                Čeká {pocty.kOdeslani} škol; administrace jich odešle nejvýš {ADMIN_DAVKA} najednou. Velkou vlnu
+                pošlete skriptem <code>scripts/portal-posli-pozvanky.mjs</code>.
+              </p>
+            )}
             <label className="block text-sm text-red-900">
               Pro potvrzení opište počet škol:{' '}
               <input name="potvrzeni" required inputMode="numeric" className={`${VSTUP} w-20`} />
             </label>
             <button
               className="rounded bg-red-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-red-800 disabled:opacity-50"
-              disabled={pocty.kOdeslani === 0 || chybi.length > 0}
+              disabled={pocty.vDavce === 0 || chybi.length > 0}
             >
               Odeslat pozvánky
             </button>

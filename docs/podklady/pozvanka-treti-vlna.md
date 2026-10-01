@@ -26,13 +26,23 @@ v rejstříku, bez předchozí pozvánky a aktivního kódu): 214 gymnázií a 4
 odborných škol ze všech 14 krajů. Školy jsou v `data/portal/pilot.json`
 s `vlna: 3`, kontakty v gitignorovaném `data/portal/pilot-kontakty.json`.
 
-Mimo třetí vlnu zůstává 335 škol katalogu 2026: 283 soukromých a 36
-církevních (kritéria je vylučují), dále školy se sdíleným nebo chybějícím
-e-mailem a školy, které v rejstříku nejsou.
+Mimo všechny tři vlny zůstává 335 škol katalogu 2026, každá je započtená jednou:
+
+| důvod | škol |
+|---|---|
+| soukromý zřizovatel (kritéria vylučují) | 283 |
+| církevní zřizovatel (kritéria vylučují) | 36 |
+| škola není v rejstříkovém adresáři | 10 |
+| v rejstříku chybí ředitel, web nebo datová schránka | 4 |
+| e-mail sdílí jiná škola | 1 |
+| zkušební škola s aktivním kódem | 1 |
+
+Školy první vlny mají v `pilot.json` výslovně `vlna: 1`; metadata výběru
+druhé a třetí vlny jsou pod klíčem `vlny`.
 
 Text pozvánky je stejný jako u druhé vlny. Šablona dřív rozlišovala jen
-`vlna === 2`, takže třetí vlna by dostala pilotní text „mezi dvacet škol“;
-pilotní text má nyní jen vlna 1.
+`vlna === 2`, takže třetí vlna by dostala pilotní text „mezi dvacet škol“.
+Pilotní text má nyní jen výslovná `vlna: 1`; bez čísla vlny jde obecný text.
 
 ## Odeslání
 
@@ -46,7 +56,14 @@ node --experimental-strip-types scripts/portal-posli-pozvanky.mjs --vlna 3 --jen
 node --experimental-strip-types scripts/portal-posli-pozvanky.mjs --vlna 3 --opravdu
 ```
 
+Před odesláním skript ověří každý kód funkcí `validateKod`, kterou používá
+přihlášení, proti `data/portal/kody.json`; když některý nesedí, neodešle nic.
+Potřebuje k tomu `PORTAL_KOD_PEPPER` z `.env.local`. Jestli jsou hashe už na
+produkci, nepozná: před ostrým odesláním ověřte zkušebním kódem na
+`/pro-skoly`, že ho web přijme (zadání kódu ho nespotřebuje).
+
 Skript posílá zhruba 1,7 zprávy za sekundu, 665 škol trvá asi 7 minut. Úspěšná
 odeslání zapisuje průběžně do `pilot.json`; po přerušení stačí spustit stejný
-příkaz znovu. Hromadné odeslání z administrace (`/admin/portal/pozvanky`) na
-takovou dávku nepoužívejte, běží jako jedna serverová funkce.
+příkaz znovu. Administrace (`/admin/portal/pozvanky`) odešle jedním
+potvrzením nejvýš 20 škol; skript a administraci nespouštějte současně,
+oba přepisují `pilot.json`.

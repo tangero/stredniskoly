@@ -9,7 +9,7 @@ import { kodProSkolu, nactiPozvanky, zapisOdeslano } from '@/lib/portal-pozvanky
 // cookie `admin_token` (path /admin).
 //
 // Ostrá rozesílka se potvrzuje opsáním počtu škol: tlačítko „ano“ se dá
-// odkliknout omylem, číslo ne. Zkouška na vlastní adresu datum nezapisuje,
+// odkliknout omylem, číslo ne. Jedno potvrzení odešle nejvýš ADMIN_DAVKA škol. Zkouška na vlastní adresu datum nezapisuje,
 // protože škola by se pak tvářila jako oslovená, aniž by cokoli dostala.
 // ============================================================================
 
@@ -43,11 +43,11 @@ export async function POST(request: NextRequest) {
   if (pole('akce') !== 'ostra') return zpet('chyba', 'Neznámá akce.');
 
   // Potvrzení opsáním počtu: kdyby se mezitím počet změnil, neodešle se nic.
-  if (pole('potvrzeni') !== String(pocty.kOdeslani)) {
-    return zpet('chyba', `Potvrzení nesedí. Opište ${pocty.kOdeslani}, ať je jisté, kolika školám to jde.`);
+  if (pole('potvrzeni') !== String(pocty.vDavce)) {
+    return zpet('chyba', `Potvrzení nesedí. Opište ${pocty.vDavce}, ať je jisté, kolika školám to jde.`);
   }
 
-  const kOdeslani = radky.filter((r) => !r.pozvanka_odeslana && r.maKod && r.email);
+  const kOdeslani = radky.filter((r) => !r.pozvanka_odeslana && r.maKod && r.email).slice(0, pocty.vDavce);
   const odeslane: string[] = [];
   const selhale: string[] = [];
 
@@ -74,7 +74,9 @@ export async function POST(request: NextRequest) {
     await new Promise((r) => setTimeout(r, 600)); // Resend: 2 zprávy za sekundu
   }
 
-  const shrnuti = `Odesláno ${odeslane.length} z ${kOdeslani.length}. Datum je zapsané v data/portal/pilot.json – commitněte ho.`;
+  const zbyva = pocty.kOdeslani - odeslane.length;
+  const shrnuti = `Odesláno ${odeslane.length} z ${kOdeslani.length}. Datum je zapsané v data/portal/pilot.json – commitněte ho.`
+    + (zbyva > 0 ? ` Zbývá ${zbyva} škol.` : '');
   return selhale.length > 0
     ? zpet('chyba', `${shrnuti} Neodesláno: ${selhale.join(', ')}.`)
     : zpet('ok', shrnuti);
