@@ -69,6 +69,11 @@ const nextConfig: NextConfig = {
     '/api/dostupnost': ['./data/transit_graph.json', './data/school_locations.json'],
     '/api/dostupnost/stop-suggest': ['./data/transit_graph.json'],
     '/admin': ['./data/portal/pilot.json'],
+    // Ruční opravy profilů InspIS (src/lib/data.ts) se čtou za běhu i při revalidaci.
+    '/skola/[slug]': ['./data/inspis_school_profiles.json', './data/inspis_opravy.json'],
+    // Otevřená data školy čtou týž profil ve vlastních funkcích, ne ve funkci stránky.
+    '/api/skola/[slug]/json': ['./data/inspis_school_profiles.json', './data/inspis_opravy.json'],
+    '/api/skola/[slug]/md': ['./data/inspis_school_profiles.json', './data/inspis_opravy.json'],
     // Portál čte data/ za běhu (fs.readFile), Next je sám nepřibalí. Bez nich
     // se každý kód tváří jako neplatný a rejstříková adresa jako neznámá.
     '/pro-skoly/**': PORTAL_DATA,
