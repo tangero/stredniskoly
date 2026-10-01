@@ -85,9 +85,20 @@ kvůli počtu míst někoho odmítli.“ U nespárované nabídky se nepíše ni
 věta, že pořadí na přihlášce šanci na přijetí nemění, zůstává. Výhrada 3 („skupiny popisují
 1. kolo {rok}, ne předpověď“) platí i pro učební obory a v textu výhrad se o ně rozšíří.
 
-Simulátor **sám učební obor nenavrhuje** (`navrhniPojistku` dál nabízí jen obory nad pásmem).
-Učební pojistku navrhne jen tehdy, když rodina už nějaký učební obor zvažuje, a to se stejným
-oborem. Důvod: nevytvářet hierarchii „maturita nahoře, učební obor dole“ (#244, omezení).
+Simulátor **sám učební obor nenavrhuje**: `navrhniPojistku` se nemění a dál nabízí jen obory
+nad pásmem. Učební pojistku navrhne jen tehdy, když rodina už nějaký učební obor zvažuje, a to
+se stejným oborem. Dělá to **samostatná funkce** (pracovně `navrhniUcebniPojistku` v
+`src/lib/strategie-prihlasek.ts`), ne rozšíření `navrhniPojistku`:
+
+- volá se jen tehdy, když strategie nemá pojistku a mezi zvažovanými je aspoň jeden učební obor;
+- kandidáti jsou výsledky hledání (už omezené místem a filtrem), které nejsou mezi zvažovanými,
+  jsou učební pojistkou podle oddílu 2 a mají kód oboru (KKOV) shodný s některým zvažovaným
+  učebním oborem;
+- řazení jako u `navrhniPojistku` (dojezd, bez dojezdu podle názvu), nejvýš 3 návrhy;
+- když `navrhniPojistku` i nová funkce něco vrátí, ukážou se oba návrhy, každý se svou větou;
+  pořadí bloků nevyjadřuje, která pojistka je lepší.
+
+Důvod: nevytvářet hierarchii „maturita nahoře, učební obor dole“ (#244, omezení).
 Viz otevřená otázka 3.
 
 **Pojem.** Ve slovníku pojmů se *pojistka* rozšíří o učební obor (v dávce s implementací):
@@ -148,7 +159,9 @@ nevzniká. Body uchazeče dál neopouštějí prohlížeč.
       přihlášky; učební pojistka za posledním místem přihlášky dostane výzvu „posuň ho výš“.
 - [ ] Učební pojistka funguje i bez zadaného testu.
 - [ ] U učebních oborů se v simulátoru nezobrazí žádný bodový údaj ani odznak obtížnosti.
-- [ ] `navrhniPojistku` nenabízí učební obor, pokud žádný učební obor není mezi zvažovanými.
+- [ ] `navrhniPojistku` se nemění a učební obor nenabízí; `navrhniUcebniPojistku` nabídne jen
+      učební pojistku se stejným KKOV jako zvažovaný učební obor, a když žádný učební obor
+      zvažovaný není, nevrátí nic.
 - [ ] Každá věta nese rok z registru; výhrady se zobrazují i u bloku učebních oborů.
 - [ ] Věty používají pojmy ze slovníku (*požadavek školy*, ne „podmínky“; bez „místo pro všechny“)
       a *soutěžící uchazeče* vysvětlují při prvním výskytu v bloku.
@@ -178,5 +191,5 @@ nevzniká. Body uchazeče dál neopouštějí prohlížeč.
 
 | Verze | Změna |
 |---|---|
-| 0.2 | Review (1. 10. 2026): věty podle slovníku pojmů (*nedosáhli požadavku školy* místo „nesplnili podmínky“, bez „místo pro všechny“), vysvětlení soutěžících uchazečů v úvodu bloku; kontrola „rozporu počtů“ nahrazena chybějícím polem, protože soutěžící jsou z definice přijatí + nepřijatí kvůli kapacitě. |
+| 0.2 | Review (1. 10. 2026): věty podle slovníku pojmů (*nedosáhli požadavku školy* místo „nesplnili podmínky“, bez „místo pro všechny“), vysvětlení soutěžících uchazečů v úvodu bloku; návrh učební pojistky jako samostatná funkce (`navrhniUcebniPojistku`) místo rozporu s `navrhniPojistku`; kontrola „rozporu počtů“ nahrazena chybějícím polem, protože soutěžící jsou z definice přijatí + nepřijatí kvůli kapacitě. |
 | 0.1 | První návrh doplňku (#244, etapa 5; návrh učebních oborů oddíl 16 ot. 6, oddíl 17 O4). |
