@@ -20,6 +20,7 @@ import openpyxl
 
 ROOT = Path(__file__).resolve().parent.parent
 AGREGATY = ROOT / "data/PZ2026_kolo1_skolobory_vysledky.xlsx"
+AGREGATY_2025 = ROOT / "data/PZ2025_kolo1_skolobory_vysledky.xlsx"
 UCHAZECI = ROOT / "data/PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx"
 REJSTRIK = ROOT / "data/msmt_rejstrik/rssz-2026-06-30.jsonld"
 KATALOG = ROOT / "public/schools_data.json"
@@ -43,9 +44,9 @@ def kategorie(kkov: str) -> str:
     return m.group(1) if m else "?"
 
 
-def nacti_agregaty() -> tuple[list[str], list[tuple]]:
-    wb = openpyxl.load_workbook(AGREGATY, read_only=True, data_only=True)
-    ws = wb.active
+def nacti_agregaty(soubor: Path = AGREGATY) -> tuple[list[str], list[tuple]]:
+    wb = openpyxl.load_workbook(soubor, read_only=True, data_only=True)
+    ws = wb["PZ2025_kolo1"] if "PZ2025_kolo1" in wb.sheetnames else wb.active
     it = ws.iter_rows(values_only=True)
     hlavicky = [str(h) if h else "" for h in next(it)]
     radky = [r for r in it if r[0] is not None]
@@ -340,6 +341,285 @@ def mer_dipsy() -> dict:
     }
 
 
+def je_cislo(v) -> bool:
+    return isinstance(v, (int, float))
+
+
+def mer_obsazenost() -> dict:
+    """Obsazenost po 1. kole 2026: součet PŘIJATÍ / součet KAPACITA.
+
+    Jen denní nezkrácené nabídky s číselnou kapacitou, přihláškami a přijatými.
+    Metoda oponentury (námitka 2).
+    """
+    hlavicky, radky = nacti_agregaty()
+    i = {h: n for n, h in enumerate(hlavicky)}
+    skupiny: dict[str, dict[str, float]] = {}
+    for r in radky:
+        forma = str(r[i["FORMA VZDĚLÁVÁNÍ"]] or "")
+        zkr = str(r[i["ZKRÁCENÉ STUDIUM"]] or "")
+        if "den" not in forma.lower() or zkr.lower() != "ne":
+            continue
+        kap, pri, pjt = r[i["KAPACITA"]], r[i["PŘIHLÁŠKY CELKEM"]], r[i["PŘIJATÍ"]]
+        if not (je_cislo(kap) and je_cislo(pri) and je_cislo(pjt)):
+            continue
+        kat = kategorie(str(r[i["KKOV"]] or ""))
+        klic = "se_zkouskou" if r[i["POVINNOST JPZ"]] == 1 else kat
+        s = skupiny.setdefault(klic, Counter())
+        s["nabidek"] += 1
+        s["kapacita"] += kap
+        s["prijati"] += pjt
+        if pjt < kap:
+            s["s_volnymi_misty"] += 1
+    return {
+        skupina: {
+            "nabidek": v["nabidek"],
+            "obsazenost": round(v["prijati"] / v["kapacita"], 4) if v["kapacita"] else None,
+            "s_volnymi_misty": v["s_volnymi_misty"],
+        }
+        for skupina, v in sorted(skupiny.items())
+    }
+
+
+def mer_soutezici_prahy() -> dict:
+    """Kolik nabídek bez zkoušky je pod prahem 10 soutěžících a v pásmech obtížnosti.
+
+    Soutěžící = PŘIJATÍ + NEPŘIJATI - NEDOSTATEČNÁ KAPACITA (slovník ukazatelů).
+    Pásma podle podílu přijatých ze soutěžících: 2/3, 1/2, 1/3.
+    Metoda oponentury (námitka 3).
+    """
+    hlavicky, radky = nacti_agregaty()
+    i = {h: n for n, h in enumerate(hlavicky)}
+    ined = i["NEPŘIJATI - NEDOSTATEČNÁ KAPACITA"]
+    pod_prahem: dict[str, Counter] = {}
+    pasma_H = Counter()
+    for r in radky:
+        forma = str(r[i["FORMA VZDĚLÁVÁNÍ"]] or "")
+        zkr = str(r[i["ZKRÁCENÉ STUDIUM"]] or "")
+        if "den" not in forma.lower() or zkr.lower() != "ne":
+            continue
+        if r[i["POVINNOST JPZ"]] == 1:
+            continue
+        kat = kategorie(str(r[i["KKOV"]] or ""))
+        pjt, ned = r[i["PŘIJATÍ"]], r[ined]
+        if not (je_cislo(pjt) and je_cislo(ned)):
+            continue
+        c = pod_prahem.setdefault(kat, Counter())
+        c["nabidek"] += 1
+        soutezici = pjt + ned
+        if soutezici < 10:
+            c["pod_prahem_10"] += 1
+        if kat == "H" and soutezici >= 10:
+            podil = pjt / soutezici
+            if ned == 0:
+                pasma_H["kapacita_nerozhodovala"] += 1
+            elif podil >= 2 / 3:
+                pasma_H["vetsina_uspela"] += 1
+            elif podil >= 1 / 2:
+                pasma_H["stredne_tezke"] += 1
+            elif podil >= 1 / 3:
+                pasma_H["tezke"] += 1
+            else:
+                pasma_H["velmi_tezke"] += 1
+    return {
+        "pod_prahem_10_soutezicich": {
+            kat: {"nabidek": v["nabidek"], "pod_prahem": v["pod_prahem_10"],
+                    "podil": round(v["pod_prahem_10"] / v["nabidek"], 4)}
+            for kat, v in sorted(pod_prahem.items())
+        },
+        "pasma_H_nad_prahem": dict(pasma_H),
+    }
+
+
+def mer_pojistky() -> dict:
+    """Učební obory jako pojistka na přihláškách 2026. Metoda oponentury (námitka 4).
+
+    Pojistka = první volba M, K nebo L a některá další volba H nebo E.
+    """
+    wb = openpyxl.load_workbook(UCHAZECI, read_only=True, data_only=True)
+    ws = wb[wb.sheetnames[0]]
+    it = ws.iter_rows(values_only=True)
+    hlavicky = [str(h) if h else "" for h in next(it)]
+    idx = {h: n for n, h in enumerate(hlavicky)}
+    s_H_E = 0
+    s_H_E_a_maturitnim = 0
+    pojistka = 0
+    pojistka_prvni_neprazdna = 0
+    for r in it:
+        if r[0] is None:
+            continue
+        kkovy = [r[idx[f"ss{s}_kkov"]] for s in range(1, 6)]
+        katy = [kategorie(str(k)) for k in kkovy if k not in (None, "")]
+        ma_uebni = any(k in ("H", "E") for k in katy)
+        if not ma_uebni:
+            continue
+        s_H_E += 1
+        if any(k in ("M", "K", "L") for k in katy):
+            s_H_E_a_maturitnim += 1
+        prvni = kategorie(str(r[idx["ss1_kkov"]] or ""))
+        dalsi = [kategorie(str(r[idx[f"ss{s}_kkov"]] or "")) for s in range(2, 6)]
+        if prvni in ("M", "K", "L") and any(k in ("H", "E") for k in dalsi):
+            pojistka += 1
+        neprazdne = [kategorie(str(k)) for k in kkovy if k not in (None, "")]
+        if (neprazdne and neprazdne[0] in ("M", "K", "L")
+                and any(k in ("H", "E") for k in neprazdne[1:])):
+            pojistka_prvni_neprazdna += 1
+    wb.close()
+    return {
+        "deti_s_H_nebo_E": s_H_E,
+        "z_nich_kombinuje_s_M_K_L": s_H_E_a_maturitnim,
+        "maturitni_prvni_a_H_E_pojistka": pojistka,
+        "maturitni_prvni_a_H_E_pojistka_prvni_neprazdna": pojistka_prvni_neprazdna,
+    }
+
+
+def mer_agregaty_2025() -> dict:
+    """Základní počty nabídek bez zkoušky v agregátech 2025. Námitka 8."""
+    hlavicky, radky = nacti_agregaty(AGREGATY_2025)
+    assert len(hlavicky) == 91, f"cekano 91 sloupcu, je {len(hlavicky)}"
+    i = {h: n for n, h in enumerate(hlavicky)}
+    bez_jpz = Counter()
+    n = 0
+    for r in radky:
+        n += 1
+        if r[i["POVINNOST JPZ"]] == 2:
+            kat = kategorie(str(r[i["KKOV"]] or ""))
+            forma = str(r[i["FORMA VZDĚLÁVÁNÍ"]] or "")
+            zkr = str(r[i["ZKRÁCENÉ STUDIUM"]] or "")
+            denni_nezkr = "den" in forma.lower() and zkr.lower() == "ne"
+            bez_jpz[(kat, denni_nezkr)] += 1
+    return {
+        "soubor": AGREGATY_2025.name,
+        "radku_celkem": n,
+        "bez_jpz_celkem": sum(bez_jpz.values()),
+        "bez_jpz_denni_nezkr_celkem": sum(v for (k, d), v in bez_jpz.items() if d),
+        "bez_jpz_po_kategorii": [
+            {"kategorie": k, "denni_nezkr": d, "nabidek": v}
+            for (k, d), v in sorted(bez_jpz.items(), key=lambda x: (-x[1], str(x[0])))
+        ],
+    }
+
+
+def mer_nastavby() -> dict:
+    """Rozpad nástaveb L/51 podle formy, zkrácení a JPZ. Námitka 7."""
+    hlavicky, radky = nacti_agregaty()
+    i = {h: n for n, h in enumerate(hlavicky)}
+    rozpad = Counter()
+    for r in radky:
+        if not NASTAVBA.search(str(r[i["KKOV"]] or "")):
+            continue
+        forma = str(r[i["FORMA VZDĚLÁVÁNÍ"]] or "")
+        rozpad[(
+            "denni" if "den" in forma.lower() else forma,
+            str(r[i["ZKRÁCENÉ STUDIUM"]] or ""),
+            "s_jpz" if r[i["POVINNOST JPZ"]] == 1 else "bez_jpz",
+        )] += 1
+    return {"celkem": sum(rozpad.values()), "rozpad": [
+        {"forma": f, "zkracene": z, "jpz": j, "nabidek": n}
+        for (f, z, j), n in sorted(rozpad.items(), key=lambda x: (-x[1], str(x[0])))
+    ]}
+
+
+def mer_druhe_kolo() -> dict:
+    """Nabídky bez zkoušky v agregátech 2. kola 2026. Námitka 2.
+
+    Jen úrovně za 2. kolo; párování s 1. kolem zůstává práci fáze 2.
+    """
+    hlavicky, radky = nacti_agregaty(ROOT / "data/PZ2026_kolo2_skolobory_vysledky.xlsx")
+    assert len(hlavicky) == 91, f"cekano 91 sloupcu, je {len(hlavicky)}"
+    i = {h: n for n, h in enumerate(hlavicky)}
+    po_kategorii: dict[str, Counter] = {}
+    n = 0
+    for r in radky:
+        n += 1
+        if r[i["POVINNOST JPZ"]] == 1:
+            continue
+        kat = kategorie(str(r[i["KKOV"]] or ""))
+        s = po_kategorii.setdefault(kat, Counter())
+        s["nabidek"] += 1
+        for klic, idx in (("kapacita", i["KAPACITA"]),
+                          ("prihlasky", i["PŘIHLÁŠKY CELKEM"]),
+                          ("prijati", i["PŘIJATÍ"]]):
+            v = r[idx]
+            if je_cislo(v):
+                s[klic] += v
+    return {
+        "radku_celkem": n,
+        "bez_jpz_celkem": sum(v["nabidek"] for v in po_kategorii.values()),
+        "po_kategorii": {k: dict(v) for k, v in sorted(po_kategorii.items())},
+    }
+
+
+def mer_skupiny_oboru() -> dict:
+    """Denní nezkrácené nabídky H podle prvních dvou číslic KKOV. Námitka 6."""
+    hlavicky, radky = nacti_agregaty()
+    i = {h: n for n, h in enumerate(hlavicky)}
+    skupiny = Counter()
+    for r in radky:
+        if r[i["POVINNOST JPZ"]] == 1:
+            continue
+        forma = str(r[i["FORMA VZDĚLÁVÁNÍ"]] or "")
+        zkr = str(r[i["ZKRÁCENÉ STUDIUM"]] or "")
+        if "den" not in forma.lower() or zkr.lower() != "ne":
+            continue
+        m = re.match(r"^(\d{2})-\d{2}-([A-Z])/", str(r[i["KKOV"]] or ""))
+        if m and m.group(2) == "H":
+            skupiny[m.group(1)] += 1
+    return {
+        "skupin": len(skupiny),
+        "nad_prahem_30": sum(1 for v in skupiny.values() if v >= 30),
+        "po_skupinach": dict(sorted(skupiny.items())),
+    }
+
+
+def mer_domovy() -> dict:
+    """Domovy mládeže a internáty v rejstříku. Námitka 10. Jen počty."""
+    data = json.loads(REJSTRIK.read_text(encoding="utf-8"))
+    druhy = Counter()
+    ss = set()
+    dm = set()
+    for zaznam in data["list"]:
+        redizo = zaznam.get("redIzo")
+        for skola in zaznam.get("skolyAZarizeni") or []:
+            druh = skola.get("druh")
+            druhy[druh] += 1
+            if druh in ("C00", "D00"):
+                ss.add(redizo)
+            if druh in ("H21", "H22"):
+                dm.add(redizo)
+    return {
+        "domovu_mladeze_H22": druhy.get("H22", 0),
+        "internatu_H21": druhy.get("H21", 0),
+        "redizo_se_ss": len(ss),
+        "redizo_s_domovem_nebo_internatem": len(dm),
+        "ss_s_domovem_nebo_internatem": len(ss & dm),
+        "pole_zaznamu": ["izo", "uplnyNazev", "druh", "kapacity[].nejvyssiPovolenyPocet",
+                         "mistaVyuky[].adresa"],
+    }
+
+
+def mer_nove_skoly() -> dict:
+    """Pokrytí škol jen s nabídkami bez zkoušky daty pro stránku školy. Námitka 12."""
+    hlavicky, radky = nacti_agregaty()
+    i = {h: n for n, h in enumerate(hlavicky)}
+    s_jpz = set()
+    s_bez = set()
+    for r in radky:
+        red = str(r[i["REDIZO"]])
+        (s_jpz if r[i["POVINNOST JPZ"]] == 1 else s_bez).add(red)
+    jen_bez = s_bez - s_jpz
+    inspis = set(json.loads((ROOT / "data/inspis_school_profiles.json").read_text(
+        encoding="utf-8"))["schools"])
+    csi = set(json.loads((ROOT / "public/csi_inspections.json").read_text(encoding="utf-8")))
+    extrakce = set(json.loads((ROOT / "data/inspection_extractions.json").read_text(
+        encoding="utf-8"))["schools"])
+    return {
+        "skol_jen_bez_jpz": len(jen_bez),
+        "z_nich_s_inspis_profilem": len(jen_bez & inspis),
+        "z_nich_se_seznamem_inspekci": len(jen_bez & csi),
+        "z_nich_s_extrakci_zpravy": len(jen_bez & extrakce),
+    }
+
+
 def main() -> None:
     skoly_rejstrik = nacti_rejstrik()
     doklad = {
@@ -350,6 +630,15 @@ def main() -> None:
         "rejstrik": mer_rejstrik(skoly_rejstrik),
         "srovnani_skol": mer_srovnani(skoly_rejstrik),
         "dipsy": mer_dipsy(),
+        "obsazenost": mer_obsazenost(),
+        "soutezici_prahy": mer_soutezici_prahy(),
+        "pojistky": mer_pojistky(),
+        "agregaty_2025": mer_agregaty_2025(),
+        "nastavby": mer_nastavby(),
+        "druhe_kolo": mer_druhe_kolo(),
+        "skupiny_oboru": mer_skupiny_oboru(),
+        "domovy": mer_domovy(),
+        "nove_skoly": mer_nove_skoly(),
     }
     DOKLAD.write_text(json.dumps(doklad, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -374,6 +663,19 @@ def main() -> None:
     print("Hlášené školy:", json.dumps(s["hlasene_skoly"], ensure_ascii=False)[:600])
     print("Vzorek 30:", s["vzorek"]["souhrn"])
     print("DiPSy:", json.dumps(doklad["dipsy"], ensure_ascii=False)[:400])
+    print("Obsazenost:", json.dumps(doklad["obsazenost"], ensure_ascii=False)[:500])
+    print("Prahy:", json.dumps(doklad["soutezici_prahy"], ensure_ascii=False)[:600])
+    print("Pojistky:", json.dumps(doklad["pojistky"], ensure_ascii=False))
+    a25 = doklad["agregaty_2025"]
+    print(f"2025: {a25['radku_celkem']} řádků, bez JPZ {a25['bez_jpz_celkem']}, "
+          f"z toho denních nezkrácených {a25['bez_jpz_denni_nezkr_celkem']}")
+    print("Nástavby:", json.dumps(doklad["nastavby"], ensure_ascii=False)[:400])
+    dk = doklad["druhe_kolo"]
+    print(f"2. kolo: {dk['radku_celkem']} řádků, bez JPZ {dk['bez_jpz_celkem']}")
+    print("2. kolo H/E:", {k: v for k, v in dk["po_kategorii"].items() if k in ("H", "E")})
+    print("Skupiny H:", json.dumps(doklad["skupiny_oboru"], ensure_ascii=False)[:300])
+    print("Domovy:", json.dumps(doklad["domovy"], ensure_ascii=False)[:300])
+    print("Nové školy:", json.dumps(doklad["nove_skoly"], ensure_ascii=False))
     print(f"Doklad: {DOKLAD}")
 
 

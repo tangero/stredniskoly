@@ -1,7 +1,9 @@
 # Obory bez jednotné zkoušky a nedenní formy: průzkum zdrojů a návrh
 
-Verze 1.0 · 1. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
+Verze 1.1 · 1. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
 Fáze 2 (implementace) vznikne jako samostatné zadání po schválení návrhu.
+Verze 1.1 vypořádává oponenturu (`docs/podklady/oponentura-obory-bez-jpz-2026-10-01.md`);
+vypořádání je v oddílu 17, oddíly 10 a 11 jsou přepsané.
 
 ## 1. Shrnutí a doporučení
 
@@ -15,16 +17,22 @@ Doporučení:
 
 1. **Fáze 2 přidá na web denní nezkrácené nabídky bez jednotné zkoušky: 2 902 nabídek**
    (H 1 777, E 524, umělecké M 216, C 200, konzervatoře P 146, umělecké L 31, J 8),
-   s 52 685 místy a 112 667 přihláškami v 1. kole 2026.
-2. **Nedenní formy se na web nepřidají.** Cílová skupina jsou uchazeči z 9. třídy;
-   dálkové, kombinované, večerní a distanční studium (253 nabídek, 1,7 % přihlášek)
-   míří převážně na dospělé: 72 nabídek jsou nástavby a zbytek zkrácená nebo dálková
-   studia vedle zaměstnání. Stejně se nepřidá zkrácené studium (167 nabídek).
-3. **Nástavby L/51 se neřeší: všech 323 má jednotnou zkoušku** a v katalogu už jsou.
-4. U nabídek bez zkoušky se ukáže vše, co agregáty nesou (místa, přihlášky, přijatí,
-   pořadí na přihlášce, důvody nepřijetí, odvozené podíly včetně obtížnosti slovy).
+   s 52 685 místy a 112 667 přihláškami v 1. kole 2026. Mluví se o nich jako
+   o **učebních oborech**, „bez jednotné zkoušky“ je jen vysvětlení (oddíl 13).
+2. **Nedenní formy se plošně nepřidají, výjimkou jsou nedenní nástavby L/51.**
+   Dálkové, kombinované, večerní a distanční studium (253 nabídek, 1,7 % přihlášek)
+   míří převážně na dospělé; zkrácené studium (167 nabídek) také. Výjimka: 72
+   nedenních nástaveb se ukáže jako pokračování učebního oboru („kam dál“),
+   ne jako nabídka pro deváťáky (oddíl 10.6).
+3. **Nástavby L/51: všech 323 má jednotnou zkoušku; v katalogu je 251 denních.**
+   Zbývajících 72 nedenních filtr formy vyhazuje (oprava chyby verze 1.0, oddíl 3.2).
+   Denní nástavby se z katalogu nevyřazují (existující stránky a adresy).
+4. U nabídek bez zkoušky se ukáže vše, co agregáty nesou, v čele se **zbylými místy
+   po 1. kole, výsledkem 2. kola, tlakem prvních voleb a vývojem 2025–2026**.
+   Obtížnost slovy jen tam, kde je aspoň 10 soutěžících (u E, P a C většinou není).
    **Body, percentily, pásma ani předpověď dalšího roku u nich nebudou** — výsledkové
-   sloupce jsou u všech 3 131 nabídek prázdné.
+   sloupce jsou u všech 3 131 nabídek prázdné. U C a E se nezobrazuje odznak
+   obtížnosti ani filtr podle ní (oddíl 10.1).
 5. Pokrytí karet DiPSy u nabídek bez zkoušky se z místních souborů změřit nedá
    (oddíl 6); změří se v přípravě fáze 2. Do té doby se neslibuje zobrazení kritérií
    ani bodování u těchto oborů.
@@ -49,6 +57,7 @@ Zdroje měření (vše místní, období z registru `public/stav_datovych_sad.js
 | Zdroj | Soubor | Období |
 |---|---|---|
 | CERMAT agregáty 1. kola | `data/PZ2026_kolo1_skolobory_vysledky.xlsx` | 2026 |
+| CERMAT agregáty 1. kola | `data/PZ2025_kolo1_skolobory_vysledky.xlsx` | 2025 |
 | CERMAT agregáty 2. kola | `data/PZ2026_kolo2_skolobory_vysledky.xlsx` | 2026 |
 | CERMAT data uchazečů | `data/PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx` | 2026 |
 | Rejstřík MŠMT | `data/msmt_rejstrik/rssz-2026-06-30.jsonld` | 2026-06-30 |
@@ -92,8 +101,11 @@ zkrácená Kosmetická služba 69-41-L/01 bez čísel. M bez zkoušky je 216 um�
 nabídek běžných M oborů (z toho 16× Předškolní a mimoškolní pedagogika 75-31-M/01).
 
 **Nástavby L/51 (kódy `-L/5x`) mají jednotnou zkoušku všechny: 323 nabídek.**
-Samostatný problém „L5“ z titulku zadání tedy neexistuje; nástavby denní i dálkové
-s povinnou zkouškou katalog už vede. Bez zkoušky jsou jen umělecké L s talentovkou.
+Rozpad: 251 denních nezkrácených, 55 dálkových, 12 kombinovaných, 5 distančních.
+Samostatný problém „L5“ z titulku zadání tedy neexistuje. **Oprava proti verzi 1.0:**
+katalog vede jen 251 denních nástaveb; 72 nedenních vyhazuje filtr formy
+(`is_valid_flat` vyžaduje „den“ ve formě), přestože zkoušku mají. Bez zkoušky
+jsou jen umělecké L s talentovkou.
 
 ### 3.3 Populace „chybějícího katalogu“: denní, nezkrácené, bez zkoušky
 
@@ -132,12 +144,73 @@ Typ školy u nabídek bez zkoušky: SOU s výučním listem 2 471, SOU bez výu�
 UVL 2 471, UBV 211, KON 178, UOS 32 a umělecké skupiny ST2/SUM/SHU/ST1/SZD. Skupiny
 UVL, UBV a KON nemají protějšek v maturitních datech (oddíl 10); umělecké skupiny ano.
 
+### 3.5 Obsazenost po 1. kole 2026
+
+Jen denní nezkrácené nabídky s číselnou kapacitou, přihláškami a přijatými.
+Obsazenost = součet `PŘIJATÍ` / součet `KAPACITA`; volná místa = `PŘIJATÍ` < `KAPACITA`.
+
+| | Obsazenost | Nabídek s volnými místy |
+|---|---:|---:|
+| Obory se zkouškou | 84 % | 1 646 z 3 091 |
+| H | 69 % | 1 372 z 1 776 |
+| E | 58 % | 413 z 519 |
+| M (umělecké) | 78 % | 115 z 215 |
+| C | 60 % | 124 z 181 |
+| P (konzervatoře) | 81 % | 59 ze 120 |
+| L (umělecké) | 56 % | 25 ze 30 |
+| J | 66 % | 5 z 8 |
+
+U H tedy zbyla místa ve čtyřech nabídkách z pěti. Zbylá místa po 1. kole jsou
+proto první údaj stránky učebního oboru (oddíl 11).
+
+### 3.6 Práh 10 soutěžících a pásma obtížnosti u H
+
+Soutěžící = `PŘIJATÍ` + `NEPŘIJATI - NEDOSTATEČNÁ KAPACITA`. Pod prahem
+10 soutěžících, pod kterým se zařazení obtížnosti nezobrazuje:
+
+| Kategorie | Nabídek | Pod prahem | Podíl |
+|---|---:|---:|---:|
+| H | 1 776 | 641 | 36 % |
+| E | 519 | 379 | 73 % |
+| M (umělecké) | 215 | 70 | 33 % |
+| C | 181 | 164 | 91 % |
+| P (konzervatoře) | 120 | 99 | 83 % |
+| L (umělecké) | 30 | 24 | 80 % |
+| J | 8 | 6 | 75 % |
+
+Rozdělení 1 135 nabídek H nad prahem do stupňů obtížnosti: kapacita nerozhodovala
+574, dostala se většina 302, středně těžké 164, **těžké 78, velmi těžké 17**.
+Učebních oborů, kam je těžké se dostat, je tedy 95 (všechny nad prahem).
+Oponentura uváděla 109; číslo se nepodařilo zopakovat (ani se započtením všech
+forem, kde vychází 108) a návrh používá 95 — viz vypořádání O3 v oddílu 17.
+
+### 3.7 Srovnávací ročník 2025
+
+Soubor `data/PZ2025_kolo1_skolobory_vysledky.xlsx` má stejných 91 sloupců se
+stejnými názvy (ověřeno: 0 rozdílů v hlavičkách) a 6 351 řádků, z toho **3 146
+bez jednotné zkoušky** a 2 916 denních nezkrácených bez zkoušky. Vývoj zájmu
+(2025 → 2026) se proto u nabídek bez zkoušky ukáže stejným mechanismem jako
+u oborů se zkouškou; párování nabídek mezi roky zůstává práci fáze 2 (oddíl 16).
+
 ## 4. CERMAT agregáty 2. kola 2026
 
-Soubor 2. kola má 2 707 řádků, z toho **1 556 bez jednotné zkoušky**
-(H 1 024, E 304, M 98, C 70, L 23, P 32, J 5). I pro 2. kolo tedy existují stejná
-data jako pro 1. kolo a fáze 2 je zobrazí stejným mechanismem jako u oborů se zkouškou
-(`docs/druhe-kolo.md`). Podrobné měření 2. kola není součástí fáze 1.
+Soubor 2. kola má 2 707 řádků, z toho **1 556 bez jednotné zkoušky**:
+
+| Kategorie | Nabídek ve 2. kole |
+|---|---:|
+| H | 1 024 |
+| E | 304 |
+| M | 98 |
+| C | 70 |
+| L | 23 |
+| P | 32 |
+| J | 5 |
+
+I pro 2. kolo tedy existují stejná data jako pro 1. kolo a fáze 2 je zobrazí
+stejným mechanismem jako u oborů se zkouškou (`docs/druhe-kolo.md`). Pro učební
+obory je 2. kolo podstatné: po 1. kole zbyla místa v 1 372 z 1 776 nabídek H
+a ve 413 z 519 nabídek E (oddíl 3.5). Párování nabídek 2. kola s 1. kolem zůstává
+práci fáze 2 (stejný klíč jako u oborů se zkouškou).
 
 ## 5. CERMAT data uchazečů 2026: obory H na přihláškách jsou
 
@@ -153,6 +226,15 @@ Soubor má 156 210 uchazečů a 424 353 voleb. Forma voleb: denní 416 537, dál
 
 Sloupec `ss*_zrizovatel` na otázku, kam se děti hlásí, neodpovídá, a proto se
 nepoužije (stejný závěr jako u oborů se zkouškou).
+
+### 5.1 Učební obor jako pojistka
+
+V datech uchazečů 2026 má **50 749 dětí** na přihlášce obor H nebo E. Z nich
+**20 588 (41 %)** je kombinuje s maturitním oborem (M, K, L) a **18 627** má
+maturitní obor na prvním místě a učební jako pojistku (první neprázdná volba;
+při doslovném čtení sloupce `ss1_kkov` 18 611 — rozdíl 16 dětí se zpětvzatou
+první prioritou). Učební obor je tedy nejčastější pojistka a simulátor ho musí
+umět zapojit do strategie (oddíl 11).
 
 ## 6. Rejstřík MŠMT: říká, co škola smí učit, ne co vypsala
 
@@ -249,13 +331,18 @@ Rozšíření katalogu o denní nezkrácené nabídky bez zkoušky přidá obory
 **654 školách**. Z 1 337 škol v agregátech jich má 660 jen nabídky se zkouškou,
 **227 jen nabídky bez zkoušky** (ty dnes na webu nejsou vůbec) a 450 obojí.
 
-## 10. Co se u oboru bez zkoušky ukáže a co ne
+## 10. Co se u učebního oboru ukáže a co ne
+
+Oddíl je postavený na otázkách rodiny, která zvažuje učební obor: je tam místo,
+stojí o obor někdo, kam se hlásí ostatní, co přijde potom a jak se tam dostat.
+Mluví se o **učebních oborech**, „bez jednotné zkoušky“ je jen vysvětlení,
+proč u nich nejsou body (oddíl 13).
 
 ### 10.1 Ukazatele, které fungují beze změny výpočtu
 
 Všechny stojí na sloupcích, které jsou u nabídek bez zkoušky vyplněné (oddíl 3.4).
 Název, vzorec ani jednotka se nemění; ve slovníku ukazatelů se u nich jen rozšíří
-rozsah platnosti na nabídky bez zkoušky (oddíl 13):
+rozsah platnosti na nabídky bez zkoušky (oddíl 14):
 
 Kapacita míst, Přihlášky celkem, Přihlášky podle priority, První priority, Podíl
 prvních voleb, Přihlášky na místo, Tlak prvních voleb, Naplněnost, Přetlak, Přijatí,
@@ -265,21 +352,30 @@ přijatých ze soutěžících, Obtížnost přijetí slovy.
 
 Poznámky k jednotlivým:
 
-- **Obtížnost přijetí slovy** se počítá z podílu přijatých ze soutěžících, který
-  body nepotřebuje. Prahy (třetina, polovina, dvě třetiny) i práh 10 soutěžících
-  platí stejně; rozdělení do stupňů se po přepočtu zapíše do slovníku.
-- **Kohorta podle pozice na přihlášce** vyžaduje srovnatelnou skupinu. Nabídky bez
-  zkoušky tvoří vlastní skupiny podle `TYP ŠKOLY` (SOU s výučním listem, SOU bez
-  výučního listu, konzervatoře) a umělecké M/L se řadí ke svým skupinám ST/SH/SUM;
-  práh 30 nabídek ve skupině platí stejně.
+- **Zbylá místa po 1. kole** (`KAPACITA` − `PŘIJATÍ`) jsou první údaj stránky
+  učebního oboru: po 1. kole 2026 zbyla místa v 1 372 z 1 776 nabídek H (oddíl 3.5).
+  Nový ukazatel, návrh v oddílu 14.
+- **Obtížnost přijetí slovy** se počítá stejně (prahy třetina, polovina, dvě
+  třetiny; práh 10 soutěžících), ale **není hlavní náhradou bodů**: pod prahem
+  je 36 % nabídek H, 73 % E, 83 % P a 91 % C (oddíl 3.6). Zobrazuje se jen tam,
+  kde práh platí; rozdělení H do stupňů (574/302/164/78/17) se zapíše do slovníku.
+  **U kategorií C a E se odznak obtížnosti ani filtr podle ní nezobrazují vůbec**
+  (citlivá skupina, oddíl 17, O9); čísla (místa, přihlášky, přijatí, tlak) ano.
+- **Kohorta podle pozice na přihlášce** vyžaduje srovnatelnou skupinu. Skupinou
+  je kategorie × první dvojčíslí KKOV (23 strojírenství, 65 gastronomie a tak dál),
+  ne typ školy — Kadeřník se nesrovnává se Zedníkem. U H tak vzniká 18 skupin,
+  práh 30 nabídek splňuje 11 z nich; pod prahem se kohorta nezobrazuje stejně
+  jako u oborů se zkouškou. Umělecké M/L se řadí ke svým skupinám ST/SH/SUM.
 - **Pořadí v kraji** se počítá jen podle zájmu, ne podle výsledků přijatých
-  (ty nejsou).
+  (ty nejsou). Podle obtížnosti se neřadí nikde (stejné pravidlo jako u JPZ).
 - **Odvozená hranice úspěšnosti** se nepočítá: zkouší součet bodů a slabší test,
   obojí chybí.
 - U **nepřijatých pro nesplnění podmínek** se nepíše věta o minimech bodů; odkaz
   na kritéria školy zůstává.
+- **Vývoj 2025 → 2026** (přihlášky, přijatí, podíl prvních voleb) se ukazuje
+  stejným mechanismem jako u oborů se zkouškou; data 2025 existují (oddíl 3.7).
 
-### 10.2 Ukazatele, které u oborů bez zkoušky nebudou
+### 10.2 Ukazatele, které u učebních oborů nebudou
 
 Vše postavené na bodech jednotné zkoušky: Průměr JPZ přijatých, Historický průměr
 JPZ, Nejnižší výsledek JPZ mezi přijatými, Medián JPZ přijatých, Průměrná
@@ -295,7 +391,9 @@ Souběžné přihlášky, Výsledek uchazečů o obor a Obory výš a níž stoj
 `ss*_redizo`, `ss*_kkov`, `ss*_prijat` a `ss*_duvod_neprijeti`, které volby
 H oborů nesou stejně jako volby se zkouškou. Generátory dnes berou jen denní
 přihlášky (což H volby splňují), ale klíče H oborů nevydávají. Fáze 2 je vydá;
-mez 10 uchazečů platí stejně.
+mez 10 uchazečů platí stejně. Souběh H ↔ M je pro rodinu klíčový: 20 588 dětí
+kombinuje H/E s maturitním oborem a 18 627 má maturitní obor první a učební jako
+pojistku (oddíl 5.1).
 
 ### 10.4 Maturita
 
@@ -307,29 +405,54 @@ u uměleckých M/L je stejný jako u oborů se zkouškou.
 
 ### 10.5 Druhé kolo
 
-Data 2. kola pro nabídky bez zkoušky existují (oddíl 4); zobrazí se stejným
-mechanismem jako u oborů se zkouškou.
+Data 2. kola pro nabídky bez zkoušky existují (1 556 nabídek, oddíl 4); zobrazí
+se stejným mechanismem jako u oborů se zkouškou. U učebních oborů je 2. kolo
+první odpovědí na otázku „je tam místo“ spolu se zbylými místy po 1. kole.
+
+### 10.6 Kam dál: nástavba po výučním listu
+
+Cesta „výuční list → nástavba → maturita“ se na stránce učebního oboru propojí:
+nástavby L/51 se stejnou školou (případně stejným oborovým dvojčíslím v kraji),
+denní i nedenní. Denních nástaveb je 251 a v katalogu už jsou; 72 nedenních
+(55 dálkových, 12 kombinovaných, 5 distančních) filtr formy vyhazuje, a proto
+se přidají jako pokračování, ne jako nabídka pro deváťáky (oddíl 1, bod 2).
+Denní nástavby se z katalogu nevyřazují, přestože nejsou pro uchazeče z 9. třídy:
+mají existující stránky a adresy a rušení by byla jiná dávka.
 
 ## 11. Dopad na stránky
 
-- **Stránka školy.** Přibudou obory bez zkoušky s plnými čísly (oddíl 10.1) a bez
-  bodových bloků. Vznikne 227 nových stránek škol, které dnes na webu nejsou.
-  Podnadpis pod názvem školy se skládá ze všech oborů včetně nových.
-- **Stránka oboru.** Tři otázky zůstávají, důkazy se liší: místo bodů a pásem
-  nastoupí tlak prvních voleb, obtížnost slovy a rozpad výsledku (přijatí,
-  nevešli se, nedosáhli požadavku školy). Chybějící body se vysvětlí větou
-  z oddílu 13, nikdy prázdným blokem.
+- **Stránka školy.** Přibudou učební obory s plnými čísly (oddíl 10.1) a bez
+  bodových bloků. Vznikne 227 nových stránek škol, které dnes na webu nejsou;
+  jejich obsah: obory s čísly, inspekce (seznam a extrakce, kde jsou), „jaká
+  škola je“ (INSPIS, kde je), kde je a dojezd, veletrhy, novinky, údaje z portálu
+  a domov mládeže (kde je). Oddíl „jak si škola vede“ bez maturity stojí na
+  inspekci a říká to otevřeně. Podnadpis pod názvem školy se skládá ze všech
+  oborů včetně nových.
+- **Stránka učebního oboru.** Staví se na pěti otázkách rodiny: je tam místo
+  (zbylá místa po 1. kole, výsledek 2. kola), stojí o obor někdo (podíl prvních
+  voleb, tlak, vývoj 2025–2026), kam se hlásí ostatní (souběh H ↔ M, obory výš
+  a níž), co přijde potom (nástavba, oddíl 10.6) a jak se tam dostat (dojezd,
+  domov mládeže). Obtížnost slovy jen nad prahem 10 soutěžících; proč tu nejsou
+  body, vysvětlí věta z oddílu 13, nikdy prázdný blok.
 - **Stránka města a přehled kraje.** Nové nabídky vstupují do karet a filtrů;
-  filtr podle obtížnosti funguje (obtížnost slovy existuje), řazení podle bodů
-  nové nabídky vynechává na konec, stejně jako dnes obory bez hodnoty.
-- **Vyhledávání.** Nabídky bez zkoušky se vyhledávají stejně; značka „bez jednotné
+  filtr podle obtížnosti funguje tam, kde obtížnost je (mimo C a E).
+  **Řazení se nemění a hierarchii nevytváří:** městský návrh řazení podle bodů
+  ani podle obtížnosti nezná — výchozí je název školy, dále místa a přihlášky
+  na místo (`docs/navrh-stranky-mesta-2027.md`, oddíl 3.5). Učební obory se řadí
+  stejně jako ostatní. Navíc souhrn, jak se ve městě a kraji dělí místa mezi
+  gymnázia, maturitní obory, učební obory a obory E (návrh ukazatele v oddílu 14).
+- **Vyhledávání.** Učební obory se vyhledávají stejně; značka „bez jednotné
   zkoušky“ zůstává jako filtr i vysvětlení.
-- **Simulátor přijímaček.** Nabídky bez zkoušky do skupin podle výsledku
-  nepatří (není s čím srovnávat) a do simulátoru se nepřidají. Výjimka se
-  nedělá ani pro umělecké obory s talentovkou: cvičný test TAU s ní nesouvisí.
+- **Simulátor přijímaček.** Učební obor do bodových skupin nepatří (není s čím
+  srovnávat), ale do strategie ano: zvažovaný učební obor se započítá jako
+  **pojistka**, když v 1. kole nikoho neodmítli kvůli počtu míst
+  (`kapacita_nerozhodovala`, 574 nabídek H). Mechanismus vyžaduje doplněk návrhu
+  simulátoru ve fázi 2 (dnes je pojistka definovaná body). Výjimka pro umělecké
+  obory s talentovkou se nedělá: cvičný test TAU s ní nesouvisí.
 - **Značky „bez jednotné zkoušky“ a „mimo přehled“.** První zůstává a nově vede
   na vlastní stránku oboru; význam „přehled je zatím nezahrnuje“ se přepíše
-  (oddíl 13). Druhá zůstává pro nedenní formy a ostatní nezahrnuté obory.
+  (oddíl 13). Druhá zůstává pro nedenní formy (mimo nástavby) a ostatní
+  nezahrnuté obory.
 
 ## 12. Zvážené nepoužité sloupce
 
@@ -350,7 +473,12 @@ nebo pole, které by mohlo nabídky bez zkoušky živit, je verdikt a důvod:
 | Rejstřík `dobihajiciObor` | **použít** | „obor se už nenabírá“ i u H/E, stejná pravidla (forma + délka, jen u nevypsané nabídky) |
 | Rejstřík `formaVzdelavani`, `delkaVzdelavani` | **použít** | jen k párování dobíhajícího příznaku; nabídky určuje CERMAT |
 | Rejstřík `reditel`, `emaily`, CSV telefon/e-mail | nepoužít | osobní údaje bez vypovídací hodnoty (zákaz zadání) |
+| Rejstřík domovy mládeže a internáty (druh H22, H21) | **použít** | 382 domovů a 68 internátů s adresou a kapacitou lůžek; 391 z 1 362 středních škol je má pod svým REDIZO; blok „Ubytování“ na stránce školy |
 | AKKO `platnostOd`, `platnostDo` | nepoužít | celostátní platnost kódu, ne informace o škole |
+| Agregáty 1. kola 2025 | **použít** | stejných 91 sloupců, 3 146 nabídek bez zkoušky; vývoj 2025 → 2026 (oddíl 3.7) |
+| Infoabsolvent (NPI): nezaměstnanost absolventů obor × kraj | nepoužít | členění by sedělo na stránku oboru, ale sada není v otevřených datech a tabulky jsou obrázky v PDF (doloženo v `docs/zdroje-dat.md`, oddíl 3) |
+| MPSV: absolventi v evidenci ÚP (IZO × obor) | nepoužít | chybí jmenovatel a MŠMT samo označuje počty absolventů škol za nevěrohodné (doloženo tamtéž); proto ani agregace na obor |
+| Odborný výcvik u firem, krajská stipendia pro učně | zdroj neexistuje | v soupisu zdrojů nic takového není; rešerše je úkol přípravy fáze 2, do té doby se o nich mlčí (stejně jako u absolventů) |
 | DiPSy `podminkyProPrijeti` (PDF kritérií) | zatím nepoužít | jediný možný zdroj bodování u H; pokrytí nezměřeno, změří příprava fáze 2 (oddíl 7) |
 | DiPSy `skolniCast`, `typyPriloh` | nepoužít bez PDF | samy neříkají, jak škola řadí (stejný závěr jako u JPZ) |
 | DiPSy `kapacita`, `konaJPZ`, `kategorieVzdelani` | nepoužít | duplicitní s CERMATem; aktuální hodnota DiPSy se nepřebírá |
@@ -368,33 +496,48 @@ nebo pole, které by mohlo nabídky bez zkoušky živit, je verdikt a důvod:
 Nové ani měněné pojmy se ve fázi 1 do slovníku nezapisují; fáze 2 je zapíše
 v dávce, ve které se poprvé objeví na stránce. Návrh znění:
 
-- **obor bez jednotné zkoušky** (úprava): „obor, u kterého se jednotná přijímací
-  zkouška nekoná: kategorie C, E, H, J a P, například učební obory s výučním
-  listem“. Věta pod tabulkou se přepíše, protože obory už mají vlastní stránku:
-  „Obory bez jednotné zkoušky, například učební obory s výučním listem, mají
-  vlastní stránku; body u nich nejsou, protože se jednotná zkouška nekoná.“
-- **body tu nejsou** (nový pojem pro stránku oboru bez zkoušky): „body tu nejsou,
-  protože se jednotná zkouška nekoná; škola řadí podle svých kritérií“.
-  Nepoužívat: „bez bodů“, „nehodnoceno“.
+- **učební obor** (nový pojem, hlavní): „učební obor, tedy obor s výučním
+  listem (kategorie H, případně E)“. Nepoužívat: „učňák“, „učňovský obor“.
+- **obor bez jednotné zkoušky** (úprava, vysvětlující): „obor, u kterého se
+  jednotná přijímací zkouška nekoná“. Věta pod tabulkou se přepíše, protože obory
+  už mají vlastní stránku: „Učební obory mají vlastní stránku; body u nich nejsou,
+  protože se jednotná zkouška nekoná.“
 - **výuční list** (nový pojem): „výuční list, tedy doklad o vyučení v oboru“.
   Nepoužívat: „učňák“, „výučák“.
+- **zbylá místa po 1. kole** (nový pojem): „po 1. kole zbylo X míst z Y“.
+  Nepoužívat: „volná místa“ bez kola (to slovo patří 2. kolu).
+- **kam dál po výučním listu** (nový pojem): „nástavba, po které se skládá
+  maturita“. Nepoužívat: „pokračování“, „navazující studium“ (obecné).
 
 ## 14. Návrh ukazatelů (podklad pro slovník ukazatelů)
 
-Nový ukazatel není potřeba žádný: vše, co se u nabídek bez zkoušky ukáže,
-počítají existující ukazatele z oddílu 10.1. Ve fázi 2 se u každého z nich
-doplní rozsah platnosti („platí i pro nabídky bez jednotné zkoušky“),
-u Obtížnosti přijetí slovy a Podílu prvních voleb nové rozdělení ročníku
-a u Kohorty podle pozice na přihlášce nové srovnatelné skupiny. Zápis vznikne
-v dávce s implementací, ne dřív — údaj bez hotového výpočtu se nezavádí.
+Existující ukazatele z oddílu 10.1 se nemění; ve fázi 2 se u každého doplní
+rozsah platnosti („platí i pro nabídky bez jednotné zkoušky“), u Obtížnosti
+přijetí slovy a Podílu prvních voleb nové rozdělení ročníku a u Kohorty podle
+pozice na přihlášce nové srovnatelné skupiny (kategorie × dvojčíslí KKOV).
+Dva nové ukazatele (návrh znění pro slovník):
+
+- **Zbylá místa po 1. kole**: `kapacita míst − přijatí` za nabídku a ročník.
+  Zdroj: CERMAT, sloupce `KAPACITA` a `PŘIJATÍ`. Jednotka: místa. Platí jen
+  tam, kde jsou oba sloupce vyplněné (u 53 nabídek bez čísel se neukazuje).
+  Neříká, zda škola vypíše 2. kolo — to říká až oddíl 2. kola.
+- **Místa podle druhu studia**: rozdělení součtu `KAPACITA` za město a kraj
+  na gymnázia, maturitní obory, učební obory a obory E. Zdroj: CERMAT 1. kolo.
+  Jednotka: místa a podíly. Součet míst za území se smí, na rozdíl od přihlášek;
+  jeden uchazeč se v něm nepočítá víckrát, protože místa nejsou přihlášky.
+
+Zápis vznikne v dávce s implementací, ne dřív — údaj bez hotového výpočtu
+se nezavádí.
 
 ## 15. Návrh zápisu do registru datových sad
 
 Nová sada není potřeba žádná: nabídky bez zkoušky nesou tytéž soubory CERMATu
 jako nabídky se zkouškou (`cermat-kapacity`, `cermat-prihlasky`, `cermat-vysledky`,
-`cermat-uchazeci-kolo1`, `cermat-kolo2-agregaty`). Ve fázi 2 se u těchto sad
-doplní výstupy o rozšířené soubory a ukazatele zůstanou tytéž. Registr se ve
-fázi 1 nemění (omezení zadání); přepnutí období se řídí stávajícími sadami.
+`cermat-uchazeci-kolo1`, `cermat-kolo2-agregaty`), rok 2025 se převezme stejným
+mechanismem jako u oborů se zkouškou. Ve fázi 2 se u těchto sad doplní výstupy
+o rozšířené soubory a dva nové ukazatele z oddílu 14; u sady
+`msmt-rejstrik-snimky` přibude výstup s domovy mládeže. Registr se ve fázi 1
+nemění (omezení zadání); přepnutí období se řídí stávajícími sadami.
 
 ## 16. Otevřené otázky pro fázi 2
 
@@ -403,17 +546,92 @@ fázi 1 nemění (omezení zadání); přepnutí období se řídí stávající
 2. Konzervatoře (P): 43 ze 178 nabídek nenese ani počty přihlášek a přijímají
    i z 5. třídy; talentové řízení běží mimo jednotný harmonogram. Ukázat s výhradou,
    nebo až s kritérii z DiPSy?
-3. Kategorie C a J (208 nabídek): praktické školy a střední vzdělání bez maturity
-   i výučního listu; ověřit v přípravě fáze 2, zda patří stejné cílové skupině.
+3. Kategorie J (8 nabídek): střední vzdělání bez maturity i výučního listu;
+   v přípravě fáze 2 rozhodnout, zda zahrnout, nebo vynechat. (C a E rozhodnuty
+   v oddílu 10.1: stránky s čísly, bez odznaku obtížnosti a filtru.)
 4. Stabilita klíče nabídky mezi roky u H oborů pro párování ročníků a dvouletý
-   cyklus (`docs/dvoulety-cyklus-nabidky-oboru.md`).
+   cyklus (`docs/dvoulety-cyklus-nabidky-oboru.md`). Data 2025 existují (oddíl 3.7).
 5. Generátory souběhu a kontextu: vydat klíče H/E oborů; ověřit nulový rozdíl
    popisů jako u oborů se zkouškou.
+6. Doplněk návrhu simulátoru: pojistka bez bodů (`kapacita_nerozhodovala`, oddíl 11).
+7. Rešerše zdrojů o odborném výcviku u firem a krajských stipendiích v přípravě
+   fáze 2 (oddíl 12: zdroj zatím neexistuje).
 
-## 17. Historie
+## 17. Vypořádání oponentury
+
+Oponentura: `docs/podklady/oponentura-obory-bez-jpz-2026-10-01.md` (1. 10. 2026).
+Její čísla jsou od verze 1.1 součástí `scripts/mereni-obory-bez-jpz.py`
+(klíče dokladu `obsazenost`, `soutezici_prahy`, `pojistky`, `agregaty_2025`,
+`nastavby`, `druhe_kolo`, `skupiny_oboru`, `domovy`, `nove_skoly`), takže jdou
+zopakovat jedním příkazem. Níže verdikt ke každé námitce s důkazem:
+
+- **O1 (obory popsané tím, co jim chybí) — přijato.** Oddíly 10 a 11 přepsané:
+  mluví se o učebních oborech a pěti otázkách rodiny, „bez jednotné zkoušky“ je
+  jen vysvětlení; pojmy v oddílu 13 upravené (hlavní pojem „učební obor“).
+- **O2 (2. kolo odloženo) — přijato.** Čísla oponentury zopakována přesně
+  (H 69 %, 1 372 z 1 776; E 58 %, 413 z 519; se zkouškou 84 %, 1 646 z 3 091;
+  doklad `obsazenost`). Oddíl 4 doplněn o úrovně 2. kola (1 556 nabídek);
+  zbylá místa a 2. kolo jsou první údaj stránky (oddíly 10.1, 10.5, 11).
+  Párování 1. ↔ 2. kolo zůstává fázi 2.
+- **O3 (práh obtížnosti) — přijato s opravou čísla.** Podíly pod prahem
+  zopakovány přesně (H 36 %, E 73 %, P 83 %, C 91 %; doklad `soutezici_prahy`).
+  Těžkých H ale vychází **95** (78 + 17, všechny nad prahem), ne 109; ani při
+  započtení všech forem (108) se 109 zopakovat nepodařilo — rozdíl nejspíš
+  okrajový případ ve skriptu oponentury. Návrh používá 95 (oddíl 3.6) a obtížnost
+  už nestaví jako hlavní náhradu bodů (oddíl 10.1).
+- **O4 (simulátor bez učebních oborů) — přijato s mechanismem.** Čísla zopakována
+  (50 749; 20 588; 18 627 při definici „první neprázdná volba“, 18 611 při
+  doslovném `ss1_kkov` — rozdíl 16 dětí se zpětvzatou první prioritou; doklad
+  `pojistky`). Mechanismus: zvažovaný učební obor je pojistkou, když v 1. kole
+  nikoho neodmítli kvůli počtu míst (574 nabídek H); bodové skupiny se nemění.
+  Vyžaduje doplněk návrhu simulátoru (oddíl 11, otevřená otázka 6).
+- **O5 (řazení odsune učební obory) — přijato opravou věty.** Věta verze 1.0
+  o „řazení podle bodů“ byla chybná: městský návrh řazení podle bodů ani podle
+  obtížnosti nezná (výchozí název školy; `docs/navrh-stranky-mesta-2027.md`,
+  oddíl 3.5). Učební obory se řadí stejně jako ostatní; hierarchie nevzniká.
+  Oddíl 11 opraven, přidán souhrn míst podle druhu studia.
+- **O6 (skupiny kohorty) — přijato.** Skupinou je kategorie × první dvojčíslí
+  KKOV. U H vzniká 18 skupin, práh 30 splňuje 11 z nich (doklad `skupiny_oboru`);
+  pod prahem se kohorta nezobrazuje. Oddíl 10.1 přepsán.
+- **O7 (nástavby a nedenní formy) — přijato částečně.** (a) Chyba verze 1.0
+  opravena: v katalogu je 251 denních nástaveb, 72 nedenních filtr formy vyhazuje
+  (doklad `nastavby`; `is_valid_flat` vyžaduje „den“). (b) Cesta „výuční list →
+  nástavba → maturita“ se propojí (oddíl 10.6); 72 nedenních nástaveb se přidá
+  jako pokračování. (c) Ostatní nedenní formy (181 nabídek) a zkrácené studium
+  zůstávají mimo web — míří na dospělé a oponentura pro ně jiný mechanismus
+  nenavrhuje. Denní nástavby se z katalogu nevyřazují (existující stránky).
+- **O8 (jen jeden ročník) — přijato.** Soubor 2025 má stejných 91 sloupců
+  (0 rozdílů v hlavičkách), 3 146 nabídek bez zkoušky, 2 916 denních nezkrácených
+  (doklad `agregaty_2025`). Vývoj 2025 → 2026 se ukáže stejným mechanismem jako
+  u JPZ (oddíl 3.7); párování nabídek mezi roky zůstává fázi 2 (oddíl 16).
+- **O9 (citlivá skupina C/E) — přijato rozhodnutím v návrhu.** U C a E se
+  nezobrazuje odznak obtížnosti ani filtr podle ní; čísla ano (oddíl 10.1).
+  Odznak by se ostatně zobrazil málokdy (pod prahem 91 % C a 73 % E).
+- **O10 (nezvážené zdroje) — přijato.** Infoabsolvent a MPSV doplněny do oddílu 12
+  s doloženými důvody zamítnutí (`docs/zdroje-dat.md`, oddíl 3). Domovy mládeže
+  a internáty ověřeny (382 + 68 záznamů s adresou a lůžky; 391 z 1 362 středních
+  škol; doklad `domovy`) a navrženy jako blok „Ubytování“ (oddíly 11, 12).
+  Výcvik u firem a stipendia zapsány jako neexistující zdroj s úkolem rešerše
+  (oddíl 12, otevřená otázka 7).
+- **O11 (hlášení #167) — přijato s návrhem textu.** Kombinovaná forma v datech
+  je (kapacita 90, 46 přihlášek, 36 přijatých), ale na web nepatří (nedenní
+  forma pro dospělé); dálkovou škola v roce 2026 nevypsala (oddíl 8.1). Návrh
+  odpovědi do issue (píše Patrick, veřejné issue):
+  > Kombinovanou Předškolní pedagogiku v datech CERMATu za 1. kolo 2026 vidíme
+  > (kapacita 90, 46 přihlášek, 36 přijatých), dálkovou jste v roce 2026
+  > nevypsali. Na web dáváme jen denní studium, protože míří na uchazeče
+  > z 9. tříd — proto kombinovaná forma na stránce školy není. Až rozšíříme
+  > přehled o další formy (návrh #209), dáme vědět.
+- **O12 (prázdné stránky 227 škol) — přijato.** Obsah stránek vypsán v oddílu 11
+  (obory, inspekce, INSPIS, poloha, veletrhy, novinky, portál, domov mládeže);
+  „jak si škola vede“ stojí na inspekci a říká to. Pokrytí daty změřeno
+  (doklad `nove_skoly`).
+
+## 18. Historie
 
 | Verze | Změna |
 |---|---|
+| 1.1 | Vypořádání oponentury (oddíl 17): přepsané oddíly 10 a 11, nová měření 3.5–3.7 a 5.1, oprava chyby o nástavbách, rozhodnutí o C/E, dva nové ukazatele, domovy mládeže. |
 | 1.0 | První návrh (fáze 1, issue #209). |
 
 

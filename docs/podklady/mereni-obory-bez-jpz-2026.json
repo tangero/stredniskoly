@@ -1415,5 +1415,205 @@
     "nabidek_bez_jpz_v_cermatu": 3131,
     "z_nich_v_prepisu_kriterii": 0,
     "poznamka": "Místní sběr karet DiPSy (data/dipsy-kriteria-2026/) v tomto checkoutu není; pokrytí karet u nabídek bez JPZ by vyžadovalo dotaz na api.dipsy.gov.cz, který je mimo povolený rozsah."
+  },
+  "obsazenost": {
+    "C": {
+      "nabidek": 181,
+      "obsazenost": 0.6003,
+      "s_volnymi_misty": 124
+    },
+    "E": {
+      "nabidek": 519,
+      "obsazenost": 0.5818,
+      "s_volnymi_misty": 413
+    },
+    "H": {
+      "nabidek": 1776,
+      "obsazenost": 0.6879,
+      "s_volnymi_misty": 1372
+    },
+    "J": {
+      "nabidek": 8,
+      "obsazenost": 0.6604,
+      "s_volnymi_misty": 5
+    },
+    "L": {
+      "nabidek": 30,
+      "obsazenost": 0.5591,
+      "s_volnymi_misty": 25
+    },
+    "M": {
+      "nabidek": 215,
+      "obsazenost": 0.7844,
+      "s_volnymi_misty": 115
+    },
+    "P": {
+      "nabidek": 120,
+      "obsazenost": 0.805,
+      "s_volnymi_misty": 59
+    },
+    "se_zkouskou": {
+      "nabidek": 3091,
+      "obsazenost": 0.8368,
+      "s_volnymi_misty": 1646
+    }
+  },
+  "soutezici_prahy": {
+    "pod_prahem_10_soutezicich": {
+      "C": {
+        "nabidek": 181,
+        "pod_prahem": 164,
+        "podil": 0.9061
+      },
+      "E": {
+        "nabidek": 519,
+        "pod_prahem": 379,
+        "podil": 0.7303
+      },
+      "H": {
+        "nabidek": 1776,
+        "pod_prahem": 641,
+        "podil": 0.3609
+      },
+      "J": {
+        "nabidek": 8,
+        "pod_prahem": 6,
+        "podil": 0.75
+      },
+      "L": {
+        "nabidek": 30,
+        "pod_prahem": 24,
+        "podil": 0.8
+      },
+      "M": {
+        "nabidek": 215,
+        "pod_prahem": 70,
+        "podil": 0.3256
+      },
+      "P": {
+        "nabidek": 120,
+        "pod_prahem": 99,
+        "podil": 0.825
+      }
+    },
+    "pasma_H_nad_prahem": {
+      "kapacita_nerozhodovala": 574,
+      "vetsina_uspela": 302,
+      "stredne_tezke": 164,
+      "tezke": 78,
+      "velmi_tezke": 17
+    }
+  },
+  "pojistky": {
+    "deti_s_H_nebo_E": 50749,
+    "z_nich_kombinuje_s_M_K_L": 20588,
+    "maturitni_prvni_a_H_E_pojistka": 18611
+  },
+  "agregaty_2025": {
+    "soubor": "PZ2025_kolo1_skolobory_vysledky.xlsx",
+    "radku_celkem": 6351,
+    "bez_jpz_celkem": 3146,
+    "bez_jpz_denni_nezkr_celkem": 2916,
+    "bez_jpz_po_kategorii": [
+      {
+        "kategorie": "H",
+        "denni_nezkr": true,
+        "nabidek": 1795
+      },
+      {
+        "kategorie": "E",
+        "denni_nezkr": true,
+        "nabidek": 527
+      },
+      {
+        "kategorie": "M",
+        "denni_nezkr": true,
+        "nabidek": 218
+      },
+      {
+        "kategorie": "C",
+        "denni_nezkr": true,
+        "nabidek": 190
+      },
+      {
+        "kategorie": "H",
+        "denni_nezkr": false,
+        "nabidek": 164
+      },
+      {
+        "kategorie": "P",
+        "denni_nezkr": true,
+        "nabidek": 146
+      },
+      {
+        "kategorie": "P",
+        "denni_nezkr": false,
+        "nabidek": 32
+      },
+      {
+        "kategorie": "L",
+        "denni_nezkr": true,
+        "nabidek": 31
+      },
+      {
+        "kategorie": "M",
+        "denni_nezkr": false,
+        "nabidek": 23
+      },
+      {
+        "kategorie": "J",
+        "denni_nezkr": true,
+        "nabidek": 9
+      },
+      {
+        "kategorie": "C",
+        "denni_nezkr": false,
+        "nabidek": 7
+      },
+      {
+        "kategorie": "E",
+        "denni_nezkr": false,
+        "nabidek": 2
+      },
+      {
+        "kategorie": "J",
+        "denni_nezkr": false,
+        "nabidek": 1
+      },
+      {
+        "kategorie": "L",
+        "denni_nezkr": false,
+        "nabidek": 1
+      }
+    ]
+  },
+  "nastavby": {
+    "celkem": 323,
+    "rozpad": [
+      {
+        "forma": "denni",
+        "zkracene": "ne",
+        "jpz": "s_jpz",
+        "nabidek": 251
+      },
+      {
+        "forma": "dal",
+        "zkracene": "ne",
+        "jpz": "s_jpz",
+        "nabidek": 55
+      },
+      {
+        "forma": "komb",
+        "zkracene": "ne",
+        "jpz": "s_jpz",
+        "nabidek": 12
+      },
+      {
+        "forma": "dist",
+        "zkracene": "ne",
+        "jpz": "s_jpz",
+        "nabidek": 5
+      }
+    ]
   }
 }
