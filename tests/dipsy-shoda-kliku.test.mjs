@@ -59,3 +59,13 @@ test('odpověď bez pole data je chyba API, ne škola bez karet', () => {
   }
   assert.deepEqual(rozborOdpovedi({ data: [], meta: { totalCount: 0 } }), { karty: [], totalCount: 0 });
 });
+
+test('karta s polem jiného typu měření neshodí a skončí mezi neúplnými', () => {
+  const zla = [
+    { ...karta('65-51-H/01', ''), skola: { izo: 100000001 } },
+    { ...karta('65-51-H/01', ''), skolniObor: { kod: 6551, formaStudia: 'formaStudia/den', delkaStudia: 3 } },
+    { ...karta('65-51-H/01', ''), zamereni: { nazev: 'x' } },
+  ];
+  const v = porovnejSkolu(REDIZO, [nabidka('79-41-K/41')], [karta('79-41-K/41', ''), ...zla]);
+  assert.deepEqual([v.shoda, v.jenDipsy, v.neuplneKarty.length], [1, 0, 3]);
+});

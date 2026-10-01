@@ -36,7 +36,10 @@ const PRODUCTOVKA_MS = 120;
 export function porovnejSkolu(redizo, skolniNabidky, karty) {
   // Neúplnou kartu porovnat nejde (klíč by spadl nebo lhal). Vynechá se z obou porovnání,
   // ale vypíše se zvlášť a škola s ní se nepočítá do plné shody.
-  const jeUplna = (c) => c.skolniObor?.kod && c.skola?.izo && typeof c.skolniObor.formaStudia === 'string' && Number.isInteger(c.skolniObor.delkaStudia);
+  const jeUplna = (c) => typeof c.skolniObor?.kod === 'string' && c.skolniObor.kod !== ''
+    && typeof c.skola?.izo === 'string' && c.skola.izo !== ''
+    && (c.zamereni == null || typeof c.zamereni === 'string')
+    && typeof c.skolniObor.formaStudia === 'string' && Number.isInteger(c.skolniObor.delkaStudia);
   const uplne = karty.filter(jeUplna);
   const katKlice = new Map(skolniNabidky.map((r) => [klicOboru(redizo, r.izo, r.kkov, r.zamereni ?? '', r.forma, r.delka_studia), r]));
   const dipKlice = new Map(uplne
