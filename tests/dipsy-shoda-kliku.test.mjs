@@ -67,7 +67,8 @@ test('karta s polem jiného typu měření neshodí a skončí mezi neúplnými'
     { ...karta('65-51-H/01', ''), skola: { izo: 100000001 } },
     { ...karta('65-51-H/01', ''), skolniObor: { kod: 6551, formaStudia: 'formaStudia/den', delkaStudia: 3 } },
     { ...karta('65-51-H/01', ''), zamereni: { nazev: 'x' } },
+    null,
   ];
   const v = porovnejSkolu(REDIZO, [nabidka('79-41-K/41')], [karta('79-41-K/41', ''), ...zla]);
-  assert.deepEqual([v.shoda, v.jenDipsy, v.neuplneKarty.length], [1, 0, 3]);
+  assert.deepEqual([v.shoda, v.jenDipsy, v.neuplneKarty.length], [1, 0, 4]);
 });

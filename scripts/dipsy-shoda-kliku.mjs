@@ -36,7 +36,7 @@ const PRODUCTOVKA_MS = 120;
 export function porovnejSkolu(redizo, skolniNabidky, karty) {
   // Neúplnou kartu porovnat nejde (klíč by spadl nebo lhal). Vynechá se z obou porovnání,
   // ale vypíše se zvlášť a škola s ní se nepočítá do plné shody.
-  const jeUplna = (c) => typeof c.skolniObor?.kod === 'string' && c.skolniObor.kod !== ''
+  const jeUplna = (c) => typeof c?.skolniObor?.kod === 'string' && c.skolniObor.kod !== ''
     && typeof c.skola?.izo === 'string' && c.skola.izo !== ''
     && (c.zamereni == null || typeof c.zamereni === 'string')
     && typeof c.skolniObor.formaStudia === 'string' && Number.isInteger(c.skolniObor.delkaStudia);
@@ -65,7 +65,7 @@ export function porovnejSkolu(redizo, skolniNabidky, karty) {
     nesparovaneKatalog: [...katKlice].filter(([k]) => !dipKlice.has(k))
       .map(([, r]) => ({ id: r.id ?? null, izo: r.izo, kkov: r.kkov, zamereni: r.zamereni ?? '', forma: r.forma, delka: r.delka_studia })),
     neuplneKarty: karty.filter((c) => !jeUplna(c))
-      .map((c) => ({ id: c.id ?? null, izo: c.skola?.izo ?? null, kkov: c.skolniObor?.kod ?? null, forma: c.skolniObor?.formaStudia ?? null, delka: c.skolniObor?.delkaStudia ?? null })),
+      .map((c) => ({ id: c?.id ?? null, izo: c?.skola?.izo ?? null, kkov: c?.skolniObor?.kod ?? null, forma: c?.skolniObor?.formaStudia ?? null, delka: c?.skolniObor?.delkaStudia ?? null })),
     nesparovaneDipsy: [...dipKlice].filter(([k]) => !katKlice.has(k))
       .map(([, c]) => ({ izo: c.skola.izo, kkov: c.skolniObor.kod, zamereni: c.zamereni ?? '', forma: c.skolniObor.formaStudia, delka: c.skolniObor.delkaStudia })),
   };
