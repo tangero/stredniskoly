@@ -218,18 +218,18 @@ RE_OBECNY_ODKAZ = re.compile(r"^(více|vice|číst|cist|celý článek|pokračov
 RE_JEN_MESIC = re.compile(r"^(" + "|".join(MESICE) + r")\s*20\d{2}$", re.I)
 
 
-def _titulek_bloku(blok, odkazy):
+def _titulek_bloku(blok, odkazy, adresy=None):
     """Titulek položky: nadpis v bloku, jinak nejvhodnější text odkazu.
 
     Odkaz často obaluje celou kartu (datum, autor, perex) nebo zní „Více informací“;
     nadpis je spolehlivější. Adresa zůstává z odkazu.
     """
     href = odkazy[0][1]
-    stack, nadpis = [blok], None
+    stack, nadpis, uzel_nadpisu = [blok], None, None
     while stack and nadpis is None:
         u = stack.pop(0)
         if u.tag in ("h1", "h2", "h3", "h4", "h5", "h6") and u.cely_text():
-            nadpis = u.cely_text()
+            nadpis, uzel_nadpisu = u.cely_text(), u
         stack.extend(u.deti)
     vhodne = [(a.cely_text(), h) for a, h in odkazy
               if a.cely_text() and not RE_OBECNY_ODKAZ.match(a.cely_text())]
@@ -240,6 +240,13 @@ def _titulek_bloku(blok, odkazy):
     else:
         text = ""
     if nadpis:
+        # Adresa článku je odkaz v nadpisu; jinak by karta s odkazem na rubriku
+        # („Škola“) dostala adresu rubriky. Odkaz z nadpisu nemusí být mezi
+        # `odkazy` bloku (skupinu může tvořit právě odkaz na rubriku), proto se
+        # hledá v uzlu nadpisu mezi všemi kandidáty stránky.
+        for a in _odkazy(uzel_nadpisu, []):
+            if adresy and id(a) in adresy:
+                return nadpis, adresy[id(a)]
         return nadpis, href
     if len(text) > 160:
         text = text[:160].rsplit(" ", 1)[0] + "…"
@@ -248,6 +255,7 @@ def _titulek_bloku(blok, odkazy):
 
 def _nejlepsi_skupina(kandidati, koren, dnes):
     nejlepsi = []
+    adresy = {id(a): href for a, href in kandidati if a.tag == "a"}
     for uroven in range(1, 6):
         skupiny = {}
         for a, href in kandidati:
@@ -265,7 +273,7 @@ def _nejlepsi_skupina(kandidati, koren, dnes):
                 d = _datum_uzlu(blok, dnes)
                 if not d:
                     continue
-                titulek, href = _titulek_bloku(blok, odkazy)
+                titulek, href = _titulek_bloku(blok, odkazy, adresy)
                 # Datum se odstraní jen na začátku nebo konci titulku, ne uprostřed věty.
                 titulek = re.sub(r"\s+", " ", titulek).strip()
                 titulek = re.sub(r"^\(?(?:" + RE_DATUM.pattern + r")\)?\s*[-–|·:]?\s*", "", titulek, flags=re.I)

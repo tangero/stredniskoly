@@ -46,6 +46,17 @@ VYPIS_BEZ_ODKAZU = """<html><body><div class="obsah">
 </div></body></html>"""
 
 
+# Karta s odkazem na rubriku vedle odkazu na článek: rubrika má kratší text.
+VYPIS_S_RUBRIKOU = """<html><body><div class="clanky">
+  <div class="clanek"><a href="/rubrika/skola/">Škola</a><h3><a href="/aktuality/exkurze-do-elektrarny/">Exkurze do elektrárny</a></h3>
+    <span class="datum">24. 9. 2026</span></div>
+  <div class="clanek"><a href="/rubrika/skola/">Škola</a><h3><a href="/aktuality/sportovni-den/">Sportovní den školy</a></h3>
+    <span class="datum">17. 9. 2026</span></div>
+  <div class="clanek"><a href="/rubrika/skola/">Škola</a><h3><a href="/aktuality/adaptacni-kurz/">Adaptační kurz prvních ročníků</a></h3>
+    <span class="datum">3. 9. 2026</span></div>
+</div></body></html>"""
+
+
 def ok(text, url=STRANKA):
     return {"text": text, "url": url, "etag": None, "modified": None}
 
@@ -56,6 +67,14 @@ class CteckaVypisu(unittest.TestCase):
         self.assertEqual(p[0], {"titulek": "Den otevřených dveří", "datum": "2026-09-25", "druh": "odkaz",
                                 "url": "https://skola.example.cz/aktuality/den-otevrenych-dveri/"})
         self.assertNotIn("https://skola.example.cz/kontakt/", [x["url"] for x in p])
+
+    def test_adresa_je_z_nadpisu_ne_z_odkazu_na_rubriku(self):
+        p = nv.precti_vypis(VYPIS_S_RUBRIKOU, STRANKA, DNES)
+        self.assertEqual([x["url"] for x in p], [
+            "https://skola.example.cz/aktuality/exkurze-do-elektrarny/",
+            "https://skola.example.cz/aktuality/sportovni-den/",
+            "https://skola.example.cz/aktuality/adaptacni-kurz/",
+        ])
 
     def test_datum_bez_roku_dostane_nejblizsi_minuly_rok(self):
         self.assertEqual(nv.najdi_datum("25. září", DNES), date(2026, 9, 25))
@@ -93,6 +112,15 @@ class ZdrojVypisu(unittest.TestCase):
         self.assertEqual(v["stav"], "ok")
         self.assertEqual(len({p["identita"] for p in v["polozky"]}), 3)
         self.assertTrue(all(p["url"].startswith(STRANKA) for p in v["polozky"]))
+
+    def test_ruzne_titulky_na_stejne_adrese_nesplynou(self):
+        # Pojistka ve sklízeči, kdyby čtečka přece jen vzala odkaz na rubriku.
+        polozky = [{"titulek": t, "url": "https://skola.example.cz/rubrika/skola/", "datum": d, "druh": "odkaz"}
+                   for t, d in (("Exkurze do elektrárny", "2026-09-24"), ("Sportovní den", "2026-09-17"),
+                                ("Adaptační kurz", "2026-09-03"))]
+        with mock.patch.object(sklizec.vypis, "precti_vypis", return_value=polozky):
+            v, _, _ = self.zpracuj({"typ": "html"}, primo=ok(VYPIS))
+        self.assertEqual(len({p["identita"] for p in v["polozky"]}), 3)
 
     def test_odmitnuti_ochranou_hostingu_zkusi_tinyfish(self):
         v, _, st = self.zpracuj({"typ": "html"}, primo={"chyba": "HTTP 401"}, tinyfish={"text": VYPIS, "url": STRANKA})
