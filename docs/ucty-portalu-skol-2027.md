@@ -185,7 +185,7 @@ Kdyby se k ní později přistoupilo, otevře druhý vstup (odkaz na e-mail z re
 | 3 | `/pro-skoly/profil`, `/api/portal/ucet`, `/pro-skoly/pozvanka/[token]`, `/pro-skoly/email/[token]` | Změna e-mailu platí pro osobu, tedy ve všech jejích školách. |
 | 4 | `/api/portal-skoly` | S databází účtů kód formulář přímo neotevírá (musí se nejdřív uplatnit), jinak by ho mohl používat kdokoli, komu byl přeposlán. Issue nese jen roli autora („Zadal: správce profilu“); jméno a kontakt jsou v administraci a v Telegramu (oddíl 9.2). |
 | 5 | `/admin/portal`, `/admin/portal/akce`, tabulka pilotu v `/admin` | Akce leží pod `/admin`, protože cookie `admin_token` má `path=/admin`. Sloupce „Kód uplatněn“ a „Schváleno“ z oddílu 4 tabulka zatím nemá: uplatnění je vidět podle správce, schválení v moderaci výše na stránce. |
-| 6 | `src/lib/portal-verejne.ts`, `SchoolPortalSection`, `/api/portal/skoly`, `/pro-skoly` | Cache s tagem `portal-spravci` se zneplatní hned (`expire: 0`), jinak nejpozději za hodinu. |
+| 6 | `src/lib/portal-verejne.ts`, `SchoolPortalSection`, `/api/portal/skoly`, `/pro-skoly` | Cache s tagem `portal-spravci` se zneplatní hned (`expire: 0`); kdyby zneplatnění selhalo, nejpozději za 12 hodin, stejně jako ISR stránky školy (#231). |
 
 **Odchylky od návrhu:** formulář v profilu předvyplňuje schválené údaje, ne čekající návrh; kdo návrh opravuje, musí změny zadat znovu. Pozvaný editor souhlas se zveřejněním nedává, protože se jméno editora nezveřejňuje nikdy.
 

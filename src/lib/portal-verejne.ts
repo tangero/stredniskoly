@@ -6,7 +6,7 @@ import { TAG_SPRAVCI } from './portal-api';
 // ============================================================================
 // Veřejné „Profil spravuje“ (docs/ucty-portalu-skol-2027.md, oddíl 3).
 // Jeden dotaz pro celý web v cache s tagem; změna správce nebo odvolání
-// souhlasu cache zneplatní, jinak se obnoví nejpozději za hodinu.
+// souhlasu cache zneplatní. Platnost 12 hodin, viz portal-profil-verejne.ts.
 // Bez databáze (build, náhled) se nic nezobrazí a nic nespadne.
 // ============================================================================
 
@@ -16,7 +16,7 @@ const nactiSpravce = unstable_cache(
     return Object.fromEntries(seznam.map((s) => [s.redizo, s]));
   },
   ['portal-verejni-spravci'],
-  { tags: [TAG_SPRAVCI], revalidate: 3600 },
+  { tags: [TAG_SPRAVCI], revalidate: 43200 },
 );
 
 export async function vsichniVerejniSpravci(): Promise<Record<string, VerejnySpravce>> {
