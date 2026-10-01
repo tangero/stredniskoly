@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.24 · 1. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.25 · 1. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -383,7 +383,7 @@ Sada zatím **není v registru stavu datových sad**: registr vede období, kter
 
 **Výpis aktualit a sitemap u škol bez kanálu novinek (sonda 1. 10. 2026).** U 450 škol bez feedu se živým webem: stránku aktualit najdeme z titulky u 370, obecná čtečka z ní přečte titulek, odkaz a datum položek u 283 (čerstvou zprávu za 30 dní u 230); sitemap má 232 webů, adresy článků 95, čerstvé `lastmod` 48 a samostatně přidá čerstvou zprávu jen 8 školám. Z výpisu se bere titulek, odkaz a datum, nic víc (perex ani text zprávy ne, ze stejného důvodu jako u feedu). Rozbor: [sonda mimo RSS](sonda-mimo-rss-2026.md).
 
-**Výpis aktualit ve sklizni (od 1. 10. 2026).** Registr `public/skoly_vypisy.json` (`scripts/build-skoly-vypisy.py` ze sond `data/sondy/mimo-rss-20261001.json` a `mimo-rss-tinyfish-20261001.json`) vede 335 škol bez kanálu: 276 se stahuje přímo (`skola_feed.typ = 'html'`), 59 webů, které přímo neodpovídají (WEDOS.protection, HTTP 401), přes službu TinyFish Fetch (`typ = 'tinyfish'`, zdarma, klíč `TINYFISH_API_KEY`). Vyřazené: výpisy pod tři položky a výpisy, jejichž nejnovější položka je starší než rok. Kanál novinek má vždy přednost. Čtečka je jediná, `scripts/novinky_vypis.py`, sdílená sklízečem i sondami. Položky jdou stejnou klasifikací a publikačním rozhodnutím jako zprávy z feedu, perex je prázdný. Zkušební běh: 335/335 zdrojů, 3 055 položek, 284 škol se zprávou za 30 dní. **Na stránce školy se zatím nezobrazují** (`ZOBRAZIT_VYPISY` v `src/lib/skolni-novinky.ts`), dokud se nerozhodne o kvalitě čtečky; ukazuje je jen nezalistovaný prototyp `/prototyp/cim-skoly-ziji`.
+**Výpis aktualit ve sklizni (od 1. 10. 2026).** Registr `public/skoly_vypisy.json` (`scripts/build-skoly-vypisy.py` ze sond `data/sondy/mimo-rss-20261001.json` a `mimo-rss-tinyfish-20261001.json`) vede 335 škol bez kanálu: 276 se stahuje přímo (`skola_feed.typ = 'html'`), 59 webů, které přímo neodpovídají (WEDOS.protection, HTTP 401), přes službu TinyFish Fetch (`typ = 'tinyfish'`, zdarma, klíč `TINYFISH_API_KEY`). Vyřazené: výpisy pod tři položky a výpisy, jejichž nejnovější položka je starší než rok. Kanál novinek má vždy přednost. Čtečka je jediná, `scripts/novinky_vypis.py`, sdílená sklízečem i sondami. Položky jdou stejnou klasifikací a publikačním rozhodnutím jako zprávy z feedu, perex je prázdný. Zkušební běh: 335/335 zdrojů, 3 055 položek, 284 škol se zprávou za 30 dní. **Na stránce školy se zobrazují od 1. 10. 2026** (rozhodnutí zadavatele, vypínač `ZOBRAZIT_VYPISY` v `src/lib/skolni-novinky.ts`), vždy s označením „z výpisu aktualit na webu školy“, datem čtení a výhradou, že titulek a datum mohou být přečtené chybně (API vrací příznak `zVypisu`).
 
 | Pole z výpisu | Obsah | Používáme |
 |---|---|---|
@@ -717,6 +717,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-30. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.25 | Oddíl 2.14: zprávy z výpisu aktualit se zobrazují na stránce školy s označením zdroje a výhradou ke čtení. |
 | 1.24 | Oddíl 2.14: výpis aktualit v provozu sklízeče jako zdroj `typ` html a tinyfish (registr `public/skoly_vypisy.json`), pole výpisu a co z nich nebereme; na stránce školy zatím skryté. |
 | 1.23 | Oddíl 2.14 doplněn o výpis aktualit a sitemap u škol bez kanálu novinek (sonda 1. 10. 2026, [rozbor](sonda-mimo-rss-2026.md)): zatím jen změřené a zobrazené v nezalistovaném prototypu, ne v provozu. |
 | 1.22 | Index simulátoru `public/simulator_pasma_{rok}.json` jako odvozený výstup dat uchazečů (2.2) a blok `pravidla` (počet přihlášek) v harmonogramu MŠMT (2.13). Žádný nový zdroj ani sloupec. |

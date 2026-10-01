@@ -53,6 +53,7 @@ interface Odpoved {
   zeZivota?: Novinka[];
   zdrojOverenAt?: string | null;
   zdrojVypadek?: boolean;
+  zVypisu?: boolean;
 }
 
 /**
@@ -135,6 +136,19 @@ const PORADI_STITKU = [
   'prijimaci_rizeni', 'prihlaska',
 ];
 
+/**
+ * Odkud zprávy jsou, pro patičku seznamu. U výpisu aktualit vždy s výhradou ke
+ * čtení (docs/slovnik-pojmu.md, „výpis aktualit“): titulek a datum bereme ze
+ * šablony stránky, ne z údajů, které škola vydala pro čtečky.
+ */
+function puvod(data: Odpoved | null, overeno: string | null): string {
+  if (data?.zVypisu) {
+    return `Sbíráme je automaticky z výpisu aktualit na webu školy${overeno ? `, naposledy přečteno ${overeno}` : ''}. `
+      + 'Titulky a data čteme ze stránky školy a mohou být přečtené chybně; platí to, co je v článku školy.';
+  }
+  return `Sbíráme je automaticky z kanálu novinek školy${overeno ? `, naposledy ověřeno ${overeno}` : ''}.`;
+}
+
 function stitek(tridy: string[]): string {
   // Přehledový článek („co všechno letos platí") se chytá na víc témat naráz.
   // Konkrétní štítek by z něj udělal zprávu o jedné věci – ověřeno na škole
@@ -172,7 +186,9 @@ export function NovinkySkoly({ redizo }: { redizo: string }) {
           </p>
           {p.souhrn ? <p className="text-[16px] font-semibold text-[#16325c]">{p.souhrn}</p> : null}
           <p className="text-[12px] text-slate-500">
-            Převzato z webu školy{overeno ? `, zdroj naposledy ověřen ${overeno}` : ''}.{' '}
+            {data?.zVypisu
+              ? `Převzato z výpisu aktualit na webu školy${overeno ? `, naposledy přečteno ${overeno}` : ''}; titulek a datum mohou být přečtené chybně.`
+              : `Převzato z webu školy${overeno ? `, zdroj naposledy ověřen ${overeno}` : ''}.`}{' '}
             {p.souhrn
               ? 'Termíny jsme přečetli z článku školy; čas začátku, místo a přihlášení najdete v něm.'
               : 'Datum konání a podmínky najdete v článku školy.'}{' '}
@@ -197,9 +213,8 @@ export function NovinkySkoly({ redizo }: { redizo: string }) {
             ))}
           </ul>
           <p className="mt-3 text-[12px] text-slate-500">
-            Odkazy vedou na web školy. Sbíráme je automaticky z kanálu novinek školy
-            {overeno ? `, naposledy ověřeno ${overeno}` : ''}
-            {data?.zdrojVypadek ? '; poslední kontrola zdroje neuspěla, zobrazujeme dříve uložené položky' : ''}.
+            Odkazy vedou na web školy. {puvod(data, overeno)}
+            {data?.zdrojVypadek ? ' Poslední kontrola zdroje neuspěla, zobrazujeme dříve uložené položky.' : ''}
           </p>
         </details>
       )}
@@ -242,9 +257,8 @@ export function ZeZivotaSkoly({ redizo }: { redizo: string }) {
         ))}
       </ul>
       <p className="mt-3 text-[12px] text-slate-500">
-        Odkazy vedou na web školy. Sbíráme je automaticky z kanálu novinek školy
-        {overeno ? `, naposledy ověřeno ${overeno}` : ''}. U zprávy, u které feed neuvedl
-        použitelné datum vydání, píšeme den, kdy se u nás objevila.
+        Odkazy vedou na web školy. {puvod(data, overeno)}
+        {data?.zVypisu ? '' : ' U zprávy, u které feed neuvedl použitelné datum vydání, píšeme den, kdy se u nás objevila.'}
       </p>
     </details>
   );

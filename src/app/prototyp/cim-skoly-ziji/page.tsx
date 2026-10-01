@@ -23,7 +23,7 @@ import sondaMimoRss from '../../../../data/sondy/mimo-rss-20261001.json';
 //     (`skola_feed.typ` html/tinyfish, `scripts/novinky_vypis.py`). Dokud ho
 //     sklizeň nezapíše, ukazuje se **jednorázová sonda** z 1. 10. 2026
 //     (`scripts/sonda-mimo-rss.py`, snímek v data/sondy/). Na stránce školy
-//     se zprávy z výpisu zatím neukazují (`ZOBRAZIT_VYPISY` v skolni-novinky.ts).
+//     se zprávy z výpisu ukazují s výhradou ke čtení (`ZOBRAZIT_VYPISY` v skolni-novinky.ts).
 //
 // Titulky jsou školní, nikdo je ručně nečetl. Perex se nepřebírá (autorská práva).
 // ============================================================================

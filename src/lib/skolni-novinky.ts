@@ -77,6 +77,12 @@ export interface NovinkySkoly {
   zdrojUrl: string | null;
   /** Zdroj neodpovídá, ale uložené položky platí dál (oddíl 3.2). */
   zdrojVypadek: boolean;
+  /**
+   * Zprávy jsou přečtené z výpisu aktualit, ne z kanálu novinek. Blok to musí
+   * říct i s výhradou, že titulky a data mohou být přečtené chybně
+   * (docs/slovnik-pojmu.md, „výpis aktualit“).
+   */
+  zVypisu: boolean;
 }
 
 /** Kolik položek k přijímacímu řízení se vejde do bloku na stránce školy. */
@@ -158,8 +164,11 @@ export function jeVypnuto(prepinace: Map<string, unknown>, klic: string): boolea
 
 /** Typy zdroje `skola_feed.typ`, které nejsou kanál novinek, ale výpis aktualit. */
 export const TYPY_VYPISU = new Set(['html', 'tinyfish']);
-/** Zprávy z výpisu aktualit na stránce školy: vypnuto do rozhodnutí o kvalitě. */
-const ZOBRAZIT_VYPISY = false;
+/**
+ * Zprávy z výpisu aktualit na stránce školy. Zapnuto 1. 10. 2026 rozhodnutím
+ * zadavatele; vypínač zůstává pro případ, že se čtečka ukáže jako nespolehlivá.
+ */
+const ZOBRAZIT_VYPISY = true;
 
 /** Společný výběr sloupců pro oba dotazy, aby se nemohly rozejít. */
 export const SLOUPCE = `select n.id, n.titulek, n.url, n.publikovano, n.vytvoreno, n.zobrazeni,
@@ -251,7 +260,7 @@ export async function novinkySkoly(
 
   const prepinace = await nactiPrepinace();
   if (jeVypnuto(prepinace, `skola:${redizo}`)) {
-    return { polozky: [], zeZivota: [], zdrojOverenAt: null, zdrojUrl: null, zdrojVypadek: false };
+    return { polozky: [], zeZivota: [], zdrojOverenAt: null, zdrojUrl: null, zdrojVypadek: false, zVypisu: false };
   }
   // Skryté položky musí vypadnout už před SQL LIMIT. Jinak šest čerstvých
   // spamů zaplní celé okno a starší legitimní zprávy se nikdy nedostanou ven.
@@ -297,12 +306,11 @@ export async function novinkySkoly(
     [redizo],
   );
   const f = feed.rows[0];
-  // Zprávy přečtené z výpisu aktualit (ne z kanálu novinek) se sbírají, ale na
-  // stránce školy se zatím neukazují: čtečka výpisu bere titulek a datum ze
-  // šablony webu a chybovost je změřená jen na vzorku (docs/sonda-mimo-rss-2026.md).
-  // Do rozhodnutí se škola chová jako škola bez zdroje, tedy jako dosud.
+  // Zprávy přečtené z výpisu aktualit (ne z kanálu novinek): čtečka bere titulek
+  // a datum ze šablony webu a chybovost je změřená jen na vzorku
+  // (docs/sonda-mimo-rss-2026.md). Vypnutím se škola chová jako škola bez zdroje.
   if (f?.typ && TYPY_VYPISU.has(f.typ) && !ZOBRAZIT_VYPISY) {
-    return { polozky: [], zeZivota: [], zdrojOverenAt: null, zdrojUrl: null, zdrojVypadek: false };
+    return { polozky: [], zeZivota: [], zdrojOverenAt: null, zdrojUrl: null, zdrojVypadek: false, zVypisu: false };
   }
 
   return {
@@ -311,5 +319,6 @@ export async function novinkySkoly(
     zdrojOverenAt: naIso(f?.naposledy_ok ?? null),
     zdrojUrl: f?.feed_url ?? null,
     zdrojVypadek: (f?.chyby_v_rade ?? 0) > 0,
+    zVypisu: Boolean(f?.typ && TYPY_VYPISU.has(f.typ)),
   };
 }

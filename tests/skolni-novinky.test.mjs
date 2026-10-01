@@ -201,6 +201,7 @@ test('výpadek zdroje neskryje dříve uložené položky', async () => {
   const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
   assert.equal(v.polozky.length, 1);
   assert.equal(v.zdrojVypadek, true);
+  assert.equal(v.zVypisu, false);
 });
 
 test('důležitá zpráva se dostane na stránku, i když ji přebilo pět novějších', async () => {
@@ -304,9 +305,8 @@ test('s datem vydání se datum objevení neposílá, aby stránka neměla dvě 
   assert.equal(v.polozky[0].objevenoAt, null);
 });
 
-test('zprávy z výpisu aktualit se na stránce školy zatím neukazují', async () => {
-  // Výpis aktualit čte obecná čtečka z šablony webu; do rozhodnutí o kvalitě
-  // se škola chová jako škola bez zdroje (docs/sonda-mimo-rss-2026.md).
+test('zprávy z výpisu aktualit se ukazují a blok ví, že jsou z výpisu', async () => {
+  // Blok podle příznaku řekne, odkud zprávy jsou, a připojí výhradu ke čtení.
   process.env.DATABASE_URL = 'postgres://test';
   nastavPoolProTesty(pool([
     PRAZDNO,
@@ -315,5 +315,8 @@ test('zprávy z výpisu aktualit se na stránce školy zatím neukazují', async
     { rows: [{ feed_url: 'https://skola.cz/aktuality/', naposledy_ok: '2026-10-01T04:10:00.000Z', chyby_v_rade: 0, typ: 'html' }], rowCount: 1 },
   ]));
   const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
-  assert.deepEqual(v, { polozky: [], zeZivota: [], zdrojOverenAt: null, zdrojUrl: null, zdrojVypadek: false });
+  assert.equal(v.polozky.length, 1);
+  assert.equal(v.zeZivota.length, 1);
+  assert.equal(v.zVypisu, true);
+  assert.equal(v.zdrojUrl, 'https://skola.cz/aktuality/');
 });

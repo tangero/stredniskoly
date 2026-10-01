@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.36 · 1. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.37 · 1. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -104,7 +104,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **shrnutí vytvořené automaticky ze zprávy ČŠI** | strojová extrakce z inspekční zprávy | značka s datem zprávy | hodnocení inspekce (když jde o shrnutí) |
 | **zvažované obory** | obory, které si rodina uložila tlačítkem „Uložit mezi zvažované“; ukládá se nabídka, ne škola, a jen v tomto prohlížeči | „uloženo v tomto prohlížeči“ u tlačítka; v horní liště stačí počet v závorce | zvažované školy (ukládá se obor), oblíbené, uložené školy, můj výběr škol |
 | **starší údaj z InspIS** | údaj ze starého profilu InspIS, export 11. 2. 2026 | značka u údaje | aktuální, potvrzeno |
-| **z webu školy, automaticky** | značka u novinky sklizené z kanálu novinek školy; nikdo ji ručně nečetl | značka u karty i u seznamu; v patičce bloku „Sbíráme je automaticky z kanálu novinek školy, naposledy ověřeno …“ | potvrzeno školou (to je jiná značka), ověřeno, oficiální |
+| **z webu školy, automaticky** | značka u novinky sklizené z kanálu novinek nebo z výpisu aktualit školy; nikdo ji ručně nečetl | značka u karty i u seznamu; v patičce bloku „Sbíráme je automaticky z kanálu novinek školy, naposledy ověřeno …“, u výpisu „… z výpisu aktualit na webu školy, naposledy přečteno …“ s výhradou ke čtení | potvrzeno školou (to je jiná značka), ověřeno, oficiální |
 | **den otevřených dveří** | akce, na kterou škola zve uchazeče do budovy | jako štítek karty novinky; termíny se píšou jen tam, kde je umíme z článku školy doložit, větou ze slovníku ukazatelů („Škola pořádá dny otevřených dveří 9. 12. 2026 a 7. 1. 2027.“). Kde termín doložený není, karta o datu mlčí a nese větu „datum konání a podmínky najdete v článku školy. Pořadatelem je škola, ne tento web“ | DOD (zkratka jen v datech a kódu), prohlídka školy |
 | **termíny z článku školy** | data konání akce, která jsme přečetli v článku na webu školy; věta je naše, fakta jsou školy | věta na kartě novinky, za ní vždy „Termíny jsme přečetli z článku školy; čas začátku, místo a přihlášení najdete v něm. Pořadatelem je škola, ne tento web.“ | ověřený termín, potvrzený termín, oficiální termín (nic z toho jsme neověřovali); **termín oznámený školou** (zrušený pojem, znamenal plochý seznam všech dat v článku) |
 | **přijímačky nanečisto** | cvičné přijímací zkoušky, které škola pořádá pro uchazeče | štítek karty novinky | zkoušky na zkoušku, testování, generálka (to je maturita vlastních žáků) |
@@ -123,7 +123,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **objevilo se *datum*** | den, kdy jsme zprávu poprvé viděli v kanálu novinek; píše se **jen** tehdy, když feed neuvedl použitelné datum vydání | u zprávy místo data vydání; v patičce bloku vysvětleno | vydáno, publikováno, zveřejněno (to bychom tvrdili něco, co nevíme) |
 | **zdroj naposledy ověřen *datum*** | kdy se naposled podařilo přečíst kanál novinek školy | vždy u sklizeného údaje | aktualizováno (nejde o aktualizaci údaje), ověřeno školou |
 | **Čím školy žijí** | název přehledu zpráv z webů škol podle kraje a obce (zatím jen nezalistovaný prototyp) | nadpis stránky s názvem oblasti; pod ním vždy věta o pokrytí: u kolika škol zprávy čteme a že o ostatních nic nevíme | novinky ze škol, aktuality škol, život škol (zní jako úplný přehled) |
-| **výpis aktualit** | stránka na webu školy se seznamem jejích zpráv, ze které je čteme u škol bez kanálu novinek | u zpráv z tohoto zdroje vždy s datem čtení a větou, že titulky i data mohou být přečtené chybně | RSS, kanál (to je jiný zdroj), oficiální zprávy |
+| **výpis aktualit** | stránka na webu školy se seznamem jejích zpráv, ze které je čteme u škol bez kanálu novinek | u zpráv z tohoto zdroje vždy s datem čtení („naposledy přečteno …“) a větou, že titulky i data mohou být přečtené chybně; platí to, co je v článku školy | RSS, kanál (to je jiný zdroj), oficiální zprávy |
 
 ## 5. Slova, která se nepoužívají vůbec
 
@@ -144,6 +144,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.37 | Zprávy z **výpisu aktualit** na stránce školy (1. 10. 2026): patička bloku říká „z výpisu aktualit na webu školy, naposledy přečteno …“ a připojí výhradu, že titulky a data mohou být přečtené chybně. Věta „objevilo se …“ se u nich nevysvětluje, čtečka bere jen položky s datem. |
 | 1.36 | Značka u údajů z portálu se jmenuje **Doplnila škola** místo **Potvrdila škola** (1. 10. 2026). Vedení jedné školy upozornilo, že „Potvrdila škola“ v hlavičce a v rozcestníku stránky školy působí, jako by škola potvrdila data CERMAT a InspIS, na které vůbec nesahala. Značka se proto z hlavičky i z věty rozcestníku stěhuje k blokům, které škola vyplnila, a hlavička říká, odkud jsou ostatní údaje. **Potvrdila škola** zůstává jen pro jednotlivý údaj, který nám škola výslovně potvrdila (ruční opravy, PR #220). Nový pojem **cizí jazyky** bez latiny a starořečtiny, se shodou číslovky. |
 | 1.35 | Pojmy **Čím školy žijí** a **výpis aktualit** pro nezalistovaný prototyp přehledu zpráv z webů škol podle oblasti (1. 10. 2026, [sonda mimo RSS](sonda-mimo-rss-2026.md)). Stránka vždy říká, u kolika škol zprávy čteme, aby chybějící školy nevypadaly jako školy, kde se nic neděje. |
 | 1.34 | Pojem **zřizovatel** (veřejná, soukromá, církevní škola) pro filtr v Simulátoru přijímaček (#210, podnět #172); školné se u něj jen zmiňuje jako možnost, výši v katalogu nemáme. Pojem **podnadpis pod názvem školy** pro pole portálu (#197); věta od školy nese značku **text školy**, jinak se skládá z oborů. |
