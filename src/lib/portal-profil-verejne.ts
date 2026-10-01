@@ -7,8 +7,9 @@ import { getPortalSkolData, type PortalSkolData, type PortalZaznam } from './por
 // ============================================================================
 // Potvrzené údaje profilu pro veřejné stránky (docs/portal-pro-skoly-2027.md,
 // oddíl 4). Stejný vzor jako portal-verejne.ts: jeden dotaz pro celý web
-// v cache s tagem, zápis školy i oprava redakce cache zneplatní, jinak se
-// obnoví nejpozději za hodinu. „Bez zbytečného odkladu“, ne v téže vteřině.
+// v cache s tagem, zápis školy i oprava redakce cache zneplatní. Bez časové
+// platnosti, stejně jako veletrhy-zdroj.ts: číselná platnost by zkrátila ISR
+// stránek škol a oborů z 12 hodin na tutéž hodnotu.
 //
 // Bez databáze (build, náhled, lokální vývoj) a při jejím výpadku se čte
 // public/portal_skol.json, tedy poslední vyexportovaný snímek. Stránka školy
@@ -18,7 +19,7 @@ import { getPortalSkolData, type PortalSkolData, type PortalZaznam } from './por
 const nactiUdaje = unstable_cache(
   async (): Promise<PortalSkolData> => potvrzeneUdaje({ dotaz }),
   ['portal-potvrzene-udaje'],
-  { tags: [TAG_PROFIL], revalidate: 3600 },
+  { tags: [TAG_PROFIL], revalidate: false },
 );
 
 export async function vsechnyPotvrzeneUdaje(): Promise<PortalSkolData> {

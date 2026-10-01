@@ -9,7 +9,8 @@ export { kriteriaOdSkoly, type ZaznamKriteriiSkoly } from './kriteria-skoly-vybe
 // Kritéria zadaná školou v portálu pro veřejné stránky oboru
 // (docs/prototyp-kriteria-prijeti.md, bod 4). Stejný vzor jako
 // portal-profil-verejne.ts: jeden dotaz pro celý web v cache se značkou,
-// zápis kritérií ji zneplatní, jinak se obnoví nejpozději za hodinu.
+// zápis kritérií ji zneplatní. Bez časové platnosti, aby nezkracovala ISR
+// stránky oboru (viz portal-profil-verejne.ts).
 //
 // Bez databáze (build, náhled) a při výpadku se vrací prázdný seznam: stránka
 // pak ukáže strojový přepis s výhradou, jako dosud. Nikdy nespadne kvůli portálu.
@@ -24,7 +25,7 @@ const nactiZaznamy = unstable_cache(
     return result.rows;
   },
   ['portal-kriteria-verejne'],
-  { tags: [TAG_KRITERIA], revalidate: 3600 },
+  { tags: [TAG_KRITERIA], revalidate: false },
 );
 
 export async function vsechnaKriteriaSkol(): Promise<ZaznamKriteriiSkoly[]> {
