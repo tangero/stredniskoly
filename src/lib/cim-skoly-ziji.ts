@@ -46,8 +46,8 @@ export async function stavSkol(redizos: string[], ted: Date = new Date()): Promi
   const prepinace = await nactiPrepinace();
   const od30 = new Date(ted.getTime() - 30 * DEN_MS).toISOString();
   const [feedy, zpravy] = await Promise.all([
-    dotaz<{ redizo: string; chyby_v_rade: number; aktivni: boolean; typ: string }>(
-      `select redizo, chyby_v_rade, aktivni, typ from skola_feed where redizo = any($1::text[])`,
+    dotaz<{ redizo: string; chyby_v_rade: number; aktivni: boolean; typ: string; naposledy_ok: Date | string | null }>(
+      `select redizo, chyby_v_rade, aktivni, typ, naposledy_ok from skola_feed where redizo = any($1::text[])`,
       [redizos],
     ),
     dotaz<{ redizo: string; zprav30: string | number; posledni: Date | string | null }>(
@@ -64,7 +64,9 @@ export async function stavSkol(redizos: string[], ted: Date = new Date()): Promi
   for (const f of feedy.rows) {
     const vypis = TYPY_VYPISU.has(f.typ);
     out.set(f.redizo, {
-      kanal: f.aktivni && !vypis, vypis: f.aktivni && vypis, zprav30: 0, posledni: null, vypadek: f.chyby_v_rade > 0,
+      // Výpis přebírá místo snímku sondy až po prvním úspěšném čtení: záznam
+      // vzniká i při chybě, a pak by škola ze sondy zmizela bez náhrady.
+      kanal: f.aktivni && !vypis, vypis: f.aktivni && vypis && f.naposledy_ok !== null, zprav30: 0, posledni: null, vypadek: f.chyby_v_rade > 0,
     });
   }
   for (const z of zpravy.rows) {
