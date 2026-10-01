@@ -869,7 +869,8 @@
     "Důležitost zprávy z webu školy",
     "Termín akce ze zprávy školy",
     "Třída zprávy, jistota a stav sdělení",
-    "Hlášený stav volných míst"
+    "Hlášený stav volných míst",
+    "Pokrytí zpráv z webů škol"
    ],
    "aktualizace": {
     "zdroj": "weby jednotlivých škol",
