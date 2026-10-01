@@ -21,7 +21,7 @@ import datetime as dt
 import os
 import re
 from html.parser import HTMLParser
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urldefrag, urljoin, urlparse
 
 TINYFISH_URL = "https://api.fetch.tinyfish.ai"
 TINYFISH_TIMEOUT = 90
@@ -204,7 +204,8 @@ def precti_vypis(html, base, dnes):
         if _v_navigaci(h):
             continue
         kotva = h.attrs.get("id") or (h.rodic.attrs.get("id") if h.rodic else None)
-        nadpisy.append((h, base + ("#" + kotva if kotva else "")))
+        bez_kotvy = urldefrag(base).url
+        nadpisy.append((h, bez_kotvy + "#" + kotva if kotva else base))
     nejlepsi = []
     for sada, druh in ((kandidati, "odkaz"), (nadpisy, "nadpis")):
         vysledek = _nejlepsi_skupina(sada, p.koren, dnes)

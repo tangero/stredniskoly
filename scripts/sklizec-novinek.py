@@ -235,13 +235,14 @@ def precti_zdroj_vypisu(zaznam: dict, stav: dict, dnes: date, timeout: int = TIM
         # Karta, jejíž nadpis nemá odkaz a jediný odkaz vede na rubriku, se
         # s ostatními na téže rubrice sloučí (platí nejnovější); čtečka bere
         # přednostně odkaz z nadpisu, takže jde o vzácný případ.
-        # Kotva (#id nadpisu) se k otisku přidává, ale sama identitou není:
-        # bývá pořadová („item-1“) a po posunu výpisu by nová zpráva převzala
-        # identitu staré a přepsala ji.
+        # Kotva (#id nadpisu) do identity nepatří: bývá pořadová („item-1“),
+        # po přidání zprávy se posune a identita by se změnila u všech
+        # (zdvojení), nebo by nová zpráva převzala identitu staré (přepis).
+        # Cenou je, že dvě zprávy se stejným titulkem ve výpisu bez odkazů
+        # splynou; to je vzácnější než nová zpráva ve výpisu.
         bez_clanku = normalizuj_url(p["url"]) == normalizuj_url(odpoved.get("url") or url)
-        kotva = urlsplit(p["url"]).fragment
         polozky.append({"titulek": p["titulek"], "odkaz": p["url"],
-                        "guid": f"{normalizuj_url(p['url'])}#{otisk({'titulek': p['titulek'], 'url': kotva})[:16]}"
+                        "guid": f"{normalizuj_url(p['url'])}#{otisk({'titulek': p['titulek']})[:16]}"
                         if bez_clanku else "",
                         "datum_raw": p["datum"], "popis": "", "kategorie": []})
         # Týž článek bývá ve výpisu dvakrát (zvýrazněný nahoře a v seznamu);

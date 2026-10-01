@@ -76,6 +76,11 @@ class CteckaVypisu(unittest.TestCase):
             "https://skola.example.cz/aktuality/adaptacni-kurz/",
         ])
 
+    def test_kotva_nadpisu_nahradi_kotvu_stranky_vypisu(self):
+        p = nv.precti_vypis(VYPIS_BEZ_ODKAZU.replace("<h3>", '<h3 id="z">', 1), STRANKA + "#aktuality", DNES)
+        self.assertEqual(p[0]["url"], STRANKA + "#z")
+        self.assertTrue(all(x["url"].count("#") <= 1 for x in p))
+
     def test_datum_bez_roku_dostane_nejblizsi_minuly_rok(self):
         self.assertEqual(nv.najdi_datum("25. září", DNES), date(2026, 9, 25))
         self.assertEqual(nv.najdi_datum("25. prosince", DNES), date(2025, 12, 25))
@@ -134,12 +139,19 @@ class ZdrojVypisu(unittest.TestCase):
             self.assertEqual(a[t], b[t])
         self.assertEqual(len(set(a) & set(b)), 2)
 
-    def test_stejny_titulek_s_ruznou_kotvou_nesplyne(self):
-        polozky = [{"titulek": "Ze života školy", "url": f"{STRANKA}#{k}", "datum": d, "druh": "nadpis"}
-                   for k, d in (("zprava-12", "2026-09-24"), ("zprava-11", "2026-09-17"), ("zprava-10", "2026-09-03"))]
-        with mock.patch.object(sklizec.vypis, "precti_vypis", return_value=polozky):
-            v, _, _ = self.zpracuj({"typ": "html"}, primo=ok(VYPIS))
-        self.assertEqual(len({p["identita"] for p in v["polozky"]}), 3)
+    def test_poradova_kotva_neni_v_identite(self):
+        # Nová zpráva nahoře posune pořadové kotvy; ostatní nesmí dostat novou identitu.
+        def polozky(titulky):
+            return [{"titulek": t, "url": f"{STRANKA}#item-{i}", "datum": "2026-09-20", "druh": "nadpis"}
+                    for i, t in enumerate(titulky, 1)]
+        with mock.patch.object(sklizec.vypis, "precti_vypis", return_value=polozky(["Sportovní den", "Exkurze do elektrárny"])):
+            pred, _, _ = self.zpracuj({"typ": "html"}, primo=ok(VYPIS))
+        with mock.patch.object(sklizec.vypis, "precti_vypis",
+                               return_value=polozky(["Burza učebnic", "Sportovní den", "Exkurze do elektrárny"])):
+            po, _, _ = self.zpracuj({"typ": "html"}, primo=ok(VYPIS))
+        ident = lambda v: {p["titulek"]: p["identita"] for p in v["polozky"]}
+        self.assertEqual(ident(pred)["Sportovní den"], ident(po)["Sportovní den"])
+        self.assertEqual(len(set(ident(po).values())), 3)
 
     def test_odmitnuti_ochranou_hostingu_zkusi_tinyfish(self):
         v, _, st = self.zpracuj({"typ": "html"}, primo={"chyba": "HTTP 401"}, tinyfish={"text": VYPIS, "url": STRANKA})
