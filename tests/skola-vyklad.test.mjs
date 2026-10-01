@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   vzdalenostKm, smerStupne, proKohoObor, delkaSlovy, oboryVetou, pocetOboru, shrnutiMaturity, letNadSlovy, jakCastoNadStredem, nazevSkupinyMaturity,
-  nazevSObci, podnadpisSkoly,
+  nazevSObci, podnadpisSkoly, nazevSkolyNadpis, rozdelJazyky, pocetCizichJazyku, pocetMist, mistaPoOborech, vetaNejtezsihoPrijeti,
 } from '../src/lib/skola-vyklad.ts';
 
 const machar = { lat: 50.184405, lon: 14.6701023 };
@@ -106,4 +106,44 @@ test('podnadpis: věta od školy má přednost, prázdná hodnota vrací automat
   assert.deepEqual(podnadpisSkoly(null, ''), { text: '', odSkoly: false });
   // Zalomení z dřívějšího uložení se nezobrazí, HTML zůstane textem (React ho escapuje).
   assert.equal(podnadpisSkoly('Škola\n <b>jazyků</b>', auto).text, 'Škola <b>jazyků</b>');
+});
+
+test('nadpis školy: plný název z rejstříku, jinak zkrácený s obcí', () => {
+  // SZŠ Beroun (RED IZO 600019497): katalog má „Střední zdravotnická škola, Mládeže“.
+  assert.equal(nazevSkolyNadpis('Střední zdravotnická škola, Beroun, Mládeže 1102', 'Střední zdravotnická škola, Mládeže', 'Beroun'), 'Střední zdravotnická škola, Beroun, Mládeže 1102');
+  assert.equal(nazevSkolyNadpis(null, 'Střední zdravotnická škola, Mládeže', 'Beroun'), 'Střední zdravotnická škola, Mládeže, Beroun');
+  assert.equal(nazevSkolyNadpis('  ', 'Gymnázium, Nad Štolou', 'Praha'), 'Gymnázium, Nad Štolou, Praha');
+  // Plný název bez obce dostane obec jako dosud zkrácený.
+  assert.equal(nazevSkolyNadpis('Střední průmyslová škola a Gymnázium Na Třebešíně', 'SPŠ a G Na Třebešíně', 'Praha'), 'Střední průmyslová škola a Gymnázium Na Třebešíně, Praha');
+});
+
+test('cizí jazyky: latina se nepočítá, číslovka se shoduje', () => {
+  assert.deepEqual(rozdelJazyky(['anglický', 'latinský', 'německý', 'ruský', 'jiné']), { cizi: ['anglický', 'německý', 'ruský'], klasicke: ['latinský'] });
+  assert.deepEqual(rozdelJazyky(null), { cizi: [], klasicke: [] });
+  assert.deepEqual(rozdelJazyky(['starořecký', 'anglický']), { cizi: ['anglický'], klasicke: ['starořecký'] });
+  assert.equal(pocetCizichJazyku(1), '1 cizí jazyk');
+  assert.equal(pocetCizichJazyku(2), '2 cizí jazyky');
+  assert.equal(pocetCizichJazyku(4), '4 cizí jazyky');
+  assert.equal(pocetCizichJazyku(5), '5 cizích jazyků');
+  assert.equal(pocetCizichJazyku(7), '7 cizích jazyků');
+});
+
+test('místa po oborech a obtížnost u konkrétního oboru', () => {
+  assert.equal(pocetMist(1), '1 místo');
+  assert.equal(pocetMist(3), '3 místa');
+  assert.equal(pocetMist(28), '28 míst');
+  const beroun = [{ nazev: 'Praktická sestra', delka: 4, kapacita: 28 }, { nazev: 'Zdravotnické lyceum', delka: 4, kapacita: 28 }];
+  assert.equal(mistaPoOborech(beroun), '28 míst Praktická sestra, 28 míst Zdravotnické lyceum');
+  // Stejný název s jinou délkou dostane délku; bez kapacity se vynechá.
+  assert.equal(mistaPoOborech([{ nazev: 'Gymnázium', delka: 8, kapacita: 30 }, { nazev: 'Gymnázium', delka: 4, kapacita: 60 }, { nazev: 'Lyceum', delka: 4, kapacita: null }]), '30 míst Gymnázium (8leté), 60 míst Gymnázium (4leté)');
+  const mnoho = Array.from({ length: 7 }, (_, i) => ({ nazev: `Obor ${i + 1}`, delka: 4, kapacita: 30 }));
+  assert.equal(mistaPoOborech(mnoho), '30 míst Obor 1, 30 míst Obor 2, 30 míst Obor 3, 30 míst Obor 4 a 3 další obory');
+  assert.equal(mistaPoOborech(mnoho.slice(0, 5)), '30 míst Obor 1, 30 míst Obor 2, 30 míst Obor 3, 30 míst Obor 4 a 1 další obor');
+
+  assert.equal(vetaNejtezsihoPrijeti([{ nazev: 'Praktická sestra', delka: 4 }], 'středně těžké', 2), 'Nejtěžší bylo dostat se na obor Praktická sestra (4leté): středně těžké.');
+  assert.equal(vetaNejtezsihoPrijeti([{ nazev: 'Gymnázium', delka: 8 }], 'velmi těžké', 1), 'Přijetí na obor Gymnázium (8leté): velmi těžké.');
+  assert.equal(vetaNejtezsihoPrijeti([{ nazev: 'A', delka: 4 }, { nazev: 'B', delka: 4 }], 'těžké', 3), 'Nejtěžší bylo dostat se na obory A (4leté) a B (4leté): těžké.');
+  assert.equal(vetaNejtezsihoPrijeti([{ nazev: 'A', delka: 4 }, { nazev: 'B', delka: 4 }], 'těžké', 2), 'Na všechny obory bylo těžké se dostat.');
+  assert.equal(vetaNejtezsihoPrijeti([{ nazev: 'A', delka: 4 }, { nazev: 'B', delka: 4 }, { nazev: 'C', delka: 4 }], 'těžké', 5), 'Nejtěžší bylo dostat se na 3 obory, například A (4leté): těžké.');
+  assert.equal(vetaNejtezsihoPrijeti([], 'těžké', 2), '');
 });

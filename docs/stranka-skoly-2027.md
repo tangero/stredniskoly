@@ -280,7 +280,7 @@ Stránka kombinuje pět druhů údajů. Liší se tím, **kdo za údaj ručí**,
 | Původ | Kdo ručí | Příklady | Značka na stránce |
 |---|---|---|---|
 | **Oficiální data** | CERMAT, MŠMT, ČŠI | obory, místa, přijatí, maturita, adresa, zřizovatel, seznam inspekcí | bez značky; zdrojový řádek s rokem u bloku |
-| **Potvrdila škola** | škola v portálu, po moderaci | kritéria přijetí 2027, dny otevřených dveří, přípravné kurzy, školné, ubytování, podpora SVP, přestupy | „Potvrdila škola · 3. 11. 2026“ u každého údaje |
+| **Doplnila škola** | škola v portálu (bez předchozí moderace, slovník pojmů 1.15 a 1.36) | kritéria přijetí 2027, dny otevřených dveří, přípravné kurzy, školné, ubytování, podpora SVP, přestupy | „Doplnila škola“ u údaje, u bloku přijímacího řízení „Škola doplnila údaje (naposledy 3. 11. 2026)“; nikdy v hlavičce ani v rozcestníku, aby značka nepůsobila jako potvrzení oficiálních dat |
 | **Text školy** | škola jako autor, neověřujeme | popis školy vlastními slovy | samostatný blok „Škola o sobě“ se značkou „text školy“ |
 | **Strojové shrnutí** | náš model nad zprávou ČŠI | co inspekce chválí a vytýká, komu škola sedne | „shrnutí vytvořené automaticky ze zprávy ČŠI z …“ |
 | **Starší údaj z InspIS** | škola kdysi, dnes nikdo | jazyky, učebny, specialisté, doprava, okolí školy | „starší údaj z InspIS, export 11. 2. 2026“ |

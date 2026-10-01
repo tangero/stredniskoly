@@ -54,7 +54,7 @@ const KROKY: Array<{ nadpis: string; text: string }> = [
   },
   {
     nadpis: 'Údaje jsou na stránce školy',
-    text: 'Zobrazí se odděleně od statistik, se značkou „potvrzeno školou“ a s datem.',
+    text: 'Zobrazí se odděleně od statistik, se značkou „Doplnila škola“ a s datem.',
   },
 ];
 

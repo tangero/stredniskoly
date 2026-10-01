@@ -5,7 +5,10 @@ import {
   cislo, zOd, ZARAZENI_POPISEK, NADPIS_OBTIZNOSTI, PORADI_OBTIZNOSTI,
   type ZarazeniObtiznosti,
 } from '@/lib/obor-profil';
-import { delkaSlovy, jakCastoNadStredem, nazevSObci, oboryVetou, pocetOboru, podnadpisSkoly, STAV_POPISEK } from '@/lib/skola-vyklad';
+import {
+  delkaSlovy, jakCastoNadStredem, mistaPoOborech, nazevSObci, pocetMist, oboryVetou, pocetCizichJazyku, pocetOboru, podnadpisSkoly,
+  rozdelJazyky, STAV_POPISEK, vetaNejtezsihoPrijeti,
+} from '@/lib/skola-vyklad';
 import { formatDatumCz } from '@/lib/portal-skol';
 import { SkupinaVKraji } from '@/components/obor/grafy';
 import { UlozitObor } from '@/components/obor/UlozitObor';
@@ -22,11 +25,29 @@ import { vetyDruhehoKola } from '@/lib/druhe-kolo-vyklad';
  */
 interface ProfilSkolyProps {
   data: ProfilSkolyData;
-  skola: { nazev: string; adresa: string; obec: string; okres: string; kraj: string; zrizovatel: string };
+  /** `nadpis`: plný název z rejstříku MŠMT pro H1 (`nazevSkolyNadpis`); bez něj zkrácený název s obcí. */
+  skola: { nazev: string; nadpis?: string; adresa: string; obec: string; okres: string; kraj: string; zrizovatel: string };
   odkazy: { prehled: string; kraj: string; inspekce: string | null };
 }
 
 const EDITACE = '/pro-skoly';
+
+/** Co škola doplnila, slovy pro větu v hlavičce (klíče polí portálu, src/lib/portal-skol.ts). */
+const POPIS_POLE: Record<string, string> = {
+  kriteria_vlastnimi_slovy: 'kritéria přijetí',
+  odkaz_kriteria: 'kritéria přijetí',
+  dny_otevrenych_dveri: 'den otevřených dveří',
+  pripravne_kurzy: 'přípravné kurzy',
+  skolne: 'školné',
+  podpora_svp: 'podporu žáků',
+  kontakt_vychovny_poradce: 'kontakt na výchovného poradce',
+  prestupy: 'přestupy',
+  stravovani: 'stravování',
+  ubytovani: 'ubytování',
+  ubytovani_poznamka: 'ubytování',
+  podnadpis: 'podnadpis',
+  popis_skoly: 'popis školy',
+};
 
 
 function malePismeno(text: string) {
@@ -42,9 +63,11 @@ function Fajfka() {
 }
 
 /**
- * Značka původu. `redakce` je údaj, který škola zadala a my jsme v něm zpětně
- * opravili chybu – nesmí nést „Potvrdila škola“, protože v té podobě, v jaké
- * je na stránce, ho škola nepotvrdila.
+ * Značka původu. `skola` je údaj, který škola sama doplnila v portálu pro školy
+ * („Doplnila škola“). Neříká, že škola potvrdila data CERMAT nebo InspIS na téže
+ * stránce: na dřívější „Potvrdila škola“ v hlavičce si škola stěžovala, protože
+ * tak působila. `redakce` je údaj, který škola zadala a my jsme v něm zpětně
+ * opravili chybu – nesmí nést „Doplnila škola“, v té podobě ho škola nezadala.
  */
 function Puvod({ typ, children }: { typ: 'skola' | 'redakce' | 'text' | 'stroj' | 'archiv'; children?: ReactNode }) {
   const trida = typ === 'skola' || typ === 'text'
@@ -52,7 +75,7 @@ function Puvod({ typ, children }: { typ: 'skola' | 'redakce' | 'text' | 'stroj' 
     : typ === 'redakce'
       ? 'border border-amber-200 bg-amber-50 text-amber-800'
       : 'bg-slate-100 text-slate-500';
-  const text = children ?? { skola: 'Potvrdila škola', redakce: 'Opravila redakce', text: 'text školy', stroj: 'shrnutí vytvořené automaticky', archiv: 'starší údaj z InspIS' }[typ];
+  const text = children ?? { skola: 'Doplnila škola', redakce: 'Opravila redakce', text: 'text školy', stroj: 'shrnutí vytvořené automaticky', archiv: 'starší údaj z InspIS' }[typ];
   return (
     <span className={`inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-0.5 align-middle text-[12px] font-bold ${trida}`}>
       {typ === 'skola' && <Fajfka />}
@@ -171,6 +194,10 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
     klice.some((k) => u[k]?.zdroj === 'redakce') ? 'redakce' : 'skola';
   const vyplneno = Object.entries(u).filter(([, v]) => v?.hodnota?.trim());
   const posledniPotvrzeni = vyplneno.map(([, v]) => v!.potvrzeno_dne).sort().at(-1);
+  // Pole přijímacího řízení od školy; poslední datum jen za ně, značka stojí u jejich bloku.
+  const POLE_PRIJIMANI = ['kriteria_vlastnimi_slovy', 'odkaz_kriteria', 'dny_otevrenych_dveri', 'pripravne_kurzy'];
+  const posledniPrijimani = POLE_PRIJIMANI.map(k => pole(k)?.potvrzeno_dne).filter(Boolean).sort().at(-1);
+  const coDoplnila = [...new Set(vyplneno.map(([k]) => POPIS_POLE[k]).filter(Boolean))];
   const vypsane = obory.filter(o => o.vypsano);
   const nevypsane = obory.filter(o => !o.vypsano);
   // Rejstřík odliší obor, který škola dokončuje se stávajícími žáky, od oboru,
@@ -190,7 +217,11 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
   );
   const hlavniSoubeh = [...okoli].filter(s => s.soubeh > 0).sort((a, b) => b.soubeh - a.soubeh)[0];
   const podobne = okoli.filter(s => s.podobna).slice(0, 8);
-  const jazyky = (inspis?.vyuka_jazyku ?? []).filter(j => j !== 'jiné');
+  // Latina a starořečtina nejsou cizí jazyky; v profilu InspIS jsou mezi jazyky výuky.
+  const { cizi: jazyky, klasicke: klasickeJazyky } = rozdelJazyky(inspis?.vyuka_jazyku);
+  // Opravu seznamu jazyků od školy (data/inspis_opravy.json, PR #220) pozná stránka podle
+  // `inspis.opravy.vyuka_jazyku`; typ to zatím nezná, proto volné čtení.
+  const opravaJazyku = (inspis as { opravy?: Record<string, { datum: string } | undefined> } | null)?.opravy?.vyuka_jazyku;
   // Pro rodinu nejdřív psycholog a poradci, metodik prevence až za nimi.
   const vahaSpecialisty = (s: string) => ['psycholog', 'výchovný poradce', 'speciální pedagog', 'kariérový poradce'].findIndex(k => s.includes(k)) >>> 0;
   const specialiste = [...(inspis?.pritomnost_specialistu ?? [])].filter(s => s !== 'jiné').sort((a, b) => vahaSpecialisty(a) - vahaSpecialisty(b));
@@ -200,6 +231,10 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
   const poVyuceni = vypsane.some(o => o.proKoho === 'po vyučení');
   const proKohoSkola = [tridy.length ? `${tridy[0] === 7 ? 'ze' : 'z'} ${tridy.join('. a ')}. třídy` : null, poVyuceni ? 'po vyučení' : null].filter(Boolean).join(' a ');
   const ukazatelOborovMist = `${pocetOboru(vypsane.length)} pro žáky ${proKohoSkola}`;
+  const mistaOboru = vypsane.length > 1 ? mistaPoOborech(vypsane.map(o => ({ nazev: o.nazev, delka: o.delka, kapacita: o.kapacita })), 4, n => cislo(n)) : '';
+  const vetaObtiznosti = nejtezsi?.zarazeni && nejtezsi.zarazeni !== 'kapacita_nerozhodovala' && nejtezsi.zarazeni !== 'vetsina_uspela'
+    ? vetaNejtezsihoPrijeti(vypsane.filter(o => o.zarazeni === nejtezsi.zarazeni), ZARAZENI_POPISEK[nejtezsi.zarazeni], vypsane.length)
+    : '';
 
   return (
     <div className="bg-[#f4f7fb]">
@@ -213,7 +248,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
             <span className="text-slate-700">{skola.nazev}</span>
           </nav>
           <div>
-            <h1 className="text-[32px] font-bold leading-[1.1] text-[#16325c] [text-wrap:balance] md:text-[44px]">{nazevSObci(skola.nazev, skola.obec)}</h1>
+            <h1 className="text-[32px] font-bold leading-[1.1] text-[#16325c] [text-wrap:balance] md:text-[44px]">{skola.nadpis || nazevSObci(skola.nazev, skola.obec)}</h1>
             {podnadpis.text && (
               <p className="mt-1 text-[18px] text-slate-600">
                 {podnadpis.text}
@@ -230,12 +265,15 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
             {data.web && <a href={data.web} rel="noopener noreferrer" className="rounded-lg bg-[#0074e4] px-4 py-2.5 text-[15px] font-semibold text-white hover:bg-[#005fbd]">Web školy</a>}
             <Link href="/simulator" className="rounded-lg border border-[#0074e4] px-4 py-2.5 text-[15px] font-semibold text-[#0074e4] hover:bg-blue-50">Porovnat v simulátoru</Link>
           </div>
+          {/* Hlavička netvrdí, že škola cokoli potvrdila: škola doplňuje jen vlastní pole,
+              obory, místa, přijímání a maturita jsou z oficiálních dat. Značka „Doplnila
+              škola“ s datem stojí u bloků, které škola vyplnila. */}
           {posledniPotvrzeni ? (
-            <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl bg-[#e6f5f1] px-4 py-2.5 text-[15px] text-[#0b7a65]">
-              <span><Puvod typ={znacka(...Object.keys(u))} /> <b>Údaje od školy</b> potvrzené {formatDatumCz(posledniPotvrzeni)}</span>
+            <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl bg-slate-100 px-4 py-2.5 text-[15px] text-slate-600">
+              <span>Obory, místa, přijímání a maturita jsou z dat CERMAT, inspekce z ČŠI a profil školy ze staršího InspIS. {coDoplnila.length ? <>Škola doplnila {coDoplnila.join(', ')}; </> : null}údaje od školy jsou označené.</span>
               <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
-                <OdkazNaOdber className="font-bold underline underline-offset-4" />
-                <Link href={EDITACE} className="font-bold underline underline-offset-4">Editujte: pro vedení školy</Link>
+                <OdkazNaOdber className="font-bold text-[#0074e4] underline underline-offset-4" />
+                <Link href={EDITACE} className="font-bold text-[#0074e4] underline underline-offset-4">Editujte: pro vedení školy</Link>
               </span>
             </div>
           ) : (
@@ -256,7 +294,13 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
             {[
               vypsane.length > 0 ? {
                 href: '#obory', q: 'Co tu lze studovat',
-                a: <><b>{ukazatelOborovMist}</b>, {cislo(mist)} míst v 1. kole {rok}{nejtezsi?.zarazeni && nejtezsi.zarazeni !== 'kapacita_nerozhodovala' && nejtezsi.zarazeni !== 'vetsina_uspela' ? <>; na {malePismeno(nejtezsi.nazev)} ({nejtezsi.delka}leté) bylo {ZARAZENI_POPISEK[nejtezsi.zarazeni]} se dostat</> : null}{pole('dny_otevrenych_dveri') ? <>; den otevřených dveří <b>{pole('dny_otevrenych_dveri')!.hodnota}</b> <Puvod typ={znacka('dny_otevrenych_dveri')} /></> : null}</>,
+                // Místa po oborech a obtížnost u konkrétního oboru: za školu se nesčítá.
+                // Den otevřených dveří je údaj od školy, proto na vlastním řádku.
+                a: <>
+                  <span className="block"><b>{ukazatelOborovMist}</b>, {pocetMist(mist, n => cislo(n))} v 1. kole {rok}{mistaOboru ? `: ${mistaOboru}` : ''}</span>
+                  {vetaObtiznosti ? <span className="block">{vetaObtiznosti}</span> : null}
+                  {pole('dny_otevrenych_dveri') ? <span className="block">Den otevřených dveří podle školy: <b>{pole('dny_otevrenych_dveri')!.hodnota}</b></span> : null}
+                </>,
               } : null,
               (maturita || inspekce) ? {
                 href: '#vede', q: 'Jak dobrá škola je',
@@ -264,7 +308,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
               } : null,
               inspis ? {
                 href: '#jaka', q: 'Jaká škola je',
-                a: <>{inspis.aktualni_pocet_zaku ? <><b>{cislo(inspis.aktualni_pocet_zaku)} žáků</b>, </> : null}{specialiste.slice(0, 2).join(' a ')}{jazyky.length ? `, ${jazyky.length} cizích jazyků` : ''}{inspis.bezbariery_pristup === 'ne' ? <>, <b>bez bezbariérového přístupu</b></> : inspis.bezbariery_pristup ? `, bezbariérový přístup: ${inspis.bezbariery_pristup}` : ''}</>,
+                a: <>{inspis.aktualni_pocet_zaku ? <><b>{cislo(inspis.aktualni_pocet_zaku)} žáků</b>, </> : null}{specialiste.slice(0, 2).join(' a ')}{jazyky.length ? `, ${pocetCizichJazyku(jazyky.length)}` : ''}{inspis.bezbariery_pristup === 'ne' ? <>, <b>bez bezbariérového přístupu</b></> : inspis.bezbariery_pristup ? `, bezbariérový přístup: ${inspis.bezbariery_pristup}` : ''}</>,
               } : null,
               {
                 href: '#kde', q: 'Kde je',
@@ -307,7 +351,9 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
           <div className="space-y-3 rounded-2xl border border-[#b5e0d4] bg-[#e6f5f1] p-5">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <h3 className="text-[18px] font-bold text-[#0b7a65]">Přijímací řízení podle školy</h3>
-              <Puvod typ={znacka('kriteria_vlastnimi_slovy', 'odkaz_kriteria', 'dny_otevrenych_dveri', 'pripravne_kurzy')} />
+              {znacka(...POLE_PRIJIMANI) === 'redakce'
+                ? <Puvod typ="redakce" />
+                : <Puvod typ="skola">Škola doplnila údaje{posledniPrijimani ? ` (naposledy ${formatDatumCz(posledniPrijimani)})` : ''}</Puvod>}
             </div>
             <dl className="divide-y divide-[#b5e0d4]">
               {[['kriteria_vlastnimi_slovy', 'Kritéria přijetí'], ['odkaz_kriteria', 'Vyhlášená kritéria'], ['dny_otevrenych_dveri', 'Dny otevřených dveří'], ['pripravne_kurzy', 'Přípravné kurzy']].map(([k, popis]) => {
@@ -318,13 +364,13 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                     <dt className="text-[14px] font-semibold text-slate-600">{popis}</dt>
                     <dd className="text-[15px] text-slate-900">
                       {k === 'odkaz_kriteria' ? <a href={v.hodnota} rel="noopener noreferrer" className="font-semibold text-[#0b7a65] underline">Kritéria na webu školy</a> : <span className="whitespace-pre-line">{v.hodnota}</span>}
-                      <span className="block text-[12px] text-slate-500">potvrzeno školou {formatDatumCz(v.potvrzeno_dne)}</span>
+                      <span className="block text-[12px] text-slate-500">{v.zdroj === 'redakce' ? 'opravila redakce' : 'doplnila škola'} {formatDatumCz(v.potvrzeno_dne)}</span>
                     </dd>
                   </div>
                 );
               })}
             </dl>
-            <Zdroj>Údaje zadala škola v portálu pro školy a před zveřejněním prošly kontrolou. <Link href={EDITACE} className="font-semibold text-[#0b7a65] underline">Editujte: pro vedení školy</Link></Zdroj>
+            <Zdroj>Údaje zadala škola v portálu pro školy; před zveřejněním je nekontrolujeme, chyby opravujeme zpětně. Obory, místa a obtížnost přijetí výše jsou z dat CERMAT, ne od školy. <Link href={EDITACE} className="font-semibold text-[#0b7a65] underline">Editujte: pro vedení školy</Link></Zdroj>
           </div>
         ) : (
           <div className="space-y-2 rounded-2xl border border-dashed border-slate-300 bg-white p-5">
@@ -620,7 +666,8 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
           <>
             <Dukaz nadpis="Výuka a vybavení">
               {inspis.zamereni?.length ? <div><p className="mb-1 text-[13px] text-slate-500">Zaměření</p><Stitky polozky={inspis.zamereni} /></div> : null}
-              {jazyky.length ? <div><p className="mb-1 text-[13px] text-slate-500">Cizí jazyky</p><Stitky polozky={jazyky} /></div> : null}
+              {jazyky.length ? <div><p className="mb-1 text-[13px] text-slate-500">Cizí jazyky{opravaJazyku ? <> <Puvod typ="skola">Potvrdila škola {formatDatumCz(opravaJazyku.datum)}</Puvod></> : null}</p><Stitky polozky={jazyky} /></div> : null}
+              {klasickeJazyky.length ? <div><p className="mb-1 text-[13px] text-slate-500">Klasické jazyky</p><Stitky polozky={klasickeJazyky} /></div> : null}
               {inspis.clil_metoda ? <div><p className="mb-1 text-[13px] text-slate-500">Výuka předmětů v cizím jazyce</p><Stitky polozky={inspis.clil_jazyky} /></div> : null}
               {inspis.odborne_ucebny?.length ? <div><p className="mb-1 text-[13px] text-slate-500">Odborné učebny</p><Stitky polozky={inspis.odborne_ucebny} /></div> : null}
               {inspis.prostory_telocvik?.length ? <div><p className="mb-1 text-[13px] text-slate-500">Sport</p><Stitky polozky={inspis.prostory_telocvik} /></div> : null}
@@ -775,7 +822,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
           <Link href={EDITACE} className="font-bold text-[#0074e4] underline underline-offset-4">Editujte: pro vedení školy</Link>
         </div>
         <div className="space-y-2 text-[14px] text-slate-600">
-          <p className="flex flex-wrap items-center gap-2"><b className="text-slate-700">Značky původu:</b> <Puvod typ="skola" /> údaj zadal pověřený člověk školy, nekontrolujeme ho předem · <Puvod typ="redakce" /> údaj od školy, ve kterém jsme opravili chybu · <Puvod typ="text" /> škola o sobě, neověřujeme · <Puvod typ="stroj" /> ze zprávy ČŠI · <Puvod typ="archiv" /> export 11. 2. 2026 · bez značky: oficiální data CERMAT, MŠMT a ČŠI</p>
+          <p className="flex flex-wrap items-center gap-2"><b className="text-slate-700">Značky původu:</b> <Puvod typ="skola" /> údaj doplnil pověřený člověk školy v portálu, nekontrolujeme ho předem; netýká se dat CERMAT, MŠMT a ČŠI · <Puvod typ="redakce" /> údaj od školy, ve kterém jsme opravili chybu · <Puvod typ="text" /> škola o sobě, neověřujeme · <Puvod typ="stroj" /> ze zprávy ČŠI · <Puvod typ="archiv" /> export 11. 2. 2026 · bez značky: oficiální data CERMAT, MŠMT a ČŠI</p>
           <p>Stránka neřadí školy podle kvality. Srovnání se týká jen podobných škol, tedy škol se stejným typem oborů, a je vždy s rokem.</p>
           <p className="flex flex-wrap items-center gap-2 text-[13px] text-slate-500">
             Otevřená data:

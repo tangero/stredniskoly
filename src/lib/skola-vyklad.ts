@@ -56,6 +56,82 @@ export function nazevSObci(nazev: string, obec: string): string {
   return celeSlovo.test(bezDiakritiky(nazev)) ? nazev : `${nazev}, ${obec}`;
 }
 
+/**
+ * Nadpis stránky školy: plný název z rejstříku škol MŠMT (`identifikace[redizo].uplny_nazev`
+ * v data/msmt_rejstrik/nazvy-oboru.json), jinak zkrácený název z katalogu. Obec se připojí jen
+ * tehdy, když v názvu není (`nazevSObci`). Zkrácený název („Střední zdravotnická škola, Mládeže“)
+ * škola sama nepoužívá; adresa stránky (slug) se nemění.
+ */
+export function nazevSkolyNadpis(uplnyNazev: string | null | undefined, nazev: string, obec: string): string {
+  const uplny = (uplnyNazev ?? '').replace(/\s+/g, ' ').trim();
+  return nazevSObci(uplny || nazev, obec);
+}
+
+/**
+ * Klasické jazyky nejsou cizí jazyky: latina a starořečtina se v profilu InspIS vedou mezi
+ * jazyky výuky, ale rodina pod „cizími jazyky“ čeká živé jazyky. Latinu má 178 profilů,
+ * hlavně zdravotnické školy a gymnázia.
+ */
+const KLASICKE_JAZYKY = new Set(['latinský', 'latina', 'starořecký', 'starořečtina', 'klasická řečtina']);
+
+/** Jazyky z profilu školy rozdělené na cizí (živé) a klasické; „jiné“ se vynechá. */
+export function rozdelJazyky(jazyky: string[] | null | undefined): { cizi: string[]; klasicke: string[] } {
+  const p = (jazyky ?? []).map(j => j.trim()).filter(j => j && j !== 'jiné');
+  const klasicky = (j: string) => KLASICKE_JAZYKY.has(j.toLocaleLowerCase('cs-CZ'));
+  return { cizi: p.filter(j => !klasicky(j)), klasicke: p.filter(klasicky) };
+}
+
+/** „1 cizí jazyk“, „3 cizí jazyky“, „5 cizích jazyků“. */
+export function pocetCizichJazyku(n: number): string {
+  if (n === 1) return '1 cizí jazyk';
+  if (n >= 2 && n <= 4) return `${n} cizí jazyky`;
+  return `${n} cizích jazyků`;
+}
+
+/** „1 místo“, „3 místa“, „28 míst“. */
+export function pocetMist(n: number, format: (n: number) => string = String): string {
+  return `${format(n)} ${n === 1 ? 'místo' : n >= 2 && n <= 4 ? 'místa' : 'míst'}`;
+}
+
+/**
+ * „28 míst Praktická sestra, 28 míst Zdravotnické lyceum“: místa v 1. kole po oborech, aby
+ * součet za školu nevypadal jako jedno přijímání. Délka se připíše jen u názvu, který se
+ * opakuje; nad `nejvic` oborů zbytek shrne („a 3 další obory“). Obory bez kapacity se vynechají.
+ */
+export function mistaPoOborech(
+  obory: { nazev: string; delka: number; kapacita: number | null }[],
+  nejvic = 4,
+  format: (n: number) => string = String,
+): string {
+  const sMisty = obory.filter(o => o.kapacita !== null && o.kapacita > 0);
+  const pocetNazvu = new Map<string, number>();
+  for (const o of sMisty) pocetNazvu.set(o.nazev, (pocetNazvu.get(o.nazev) ?? 0) + 1);
+  const casti = sMisty.map(o => `${pocetMist(o.kapacita!, format)} ${o.nazev}${(pocetNazvu.get(o.nazev) ?? 0) > 1 ? ` (${o.delka}leté)` : ''}`);
+  const zbytek = casti.length - nejvic;
+  if (zbytek <= 0) return casti.join(', ');
+  return `${casti.slice(0, nejvic).join(', ')} a ${zbytek} ${zbytek === 1 ? 'další obor' : zbytek < 5 ? 'další obory' : 'dalších oborů'}`;
+}
+
+/**
+ * Věta o nejtěžším přijetí v rozcestníku. Obtížnost patří vždy ke konkrétnímu oboru, za
+ * školu se nesčítá; název oboru stojí za slovem „obor“, takže ho není třeba skloňovat
+ * (dřív „na praktická sestra bylo…“). Při shodě víc oborů na nejvyšší obtížnosti se jmenují
+ * dva, u víc oborů jen počet a první z nich.
+ */
+export function vetaNejtezsihoPrijeti(
+  nejtezsi: { nazev: string; delka: number | null }[],
+  popisek: string,
+  vypsanychOboru: number,
+): string {
+  if (!nejtezsi.length) return '';
+  const jmeno = (o: { nazev: string; delka: number | null }) => `${o.nazev}${o.delka ? ` (${o.delka}leté)` : ''}`;
+  if (vypsanychOboru <= 1) return `Přijetí na obor ${jmeno(nejtezsi[0])}: ${popisek}.`;
+  if (nejtezsi.length === 1) return `Nejtěžší bylo dostat se na obor ${jmeno(nejtezsi[0])}: ${popisek}.`;
+  if (nejtezsi.length === vypsanychOboru) return `Na všechny obory bylo ${popisek} se dostat.`;
+  if (nejtezsi.length === 2) return `Nejtěžší bylo dostat se na obory ${jmeno(nejtezsi[0])} a ${jmeno(nejtezsi[1])}: ${popisek}.`;
+  return `Nejtěžší bylo dostat se na ${pocetOboru(nejtezsi.length)}, například ${jmeno(nejtezsi[0])}: ${popisek}.`;
+}
+
 /** „Gymnázium osmileté a čtyřleté, technické lyceum“: obory školy podle názvu, délky jen u opakovaného názvu. */
 export function oboryVetou(obory: { obor: string; delka: number }[], nejvic = 4): string {
   const podleNazvu = new Map<string, number[]>();
