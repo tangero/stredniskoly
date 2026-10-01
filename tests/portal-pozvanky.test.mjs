@@ -74,6 +74,18 @@ test('druhá vlna neslibuje místo mezi prvními dvaceti', () => {
   assert.doesNotMatch(druha.html, /mezi dvacet škol/);
 });
 
+test('další vlny dostávají stejný text jako druhá, ne pilotní', () => {
+  const treti = pozvankaDoPilotu({ osloveni: 'Dobrý den', nazevSkoly: 'Gymnázium Testovací', kod: KOD, vlna: 3 });
+  assert.match(treti.subject, /pozvánka ke správě profilu/);
+  assert.doesNotMatch(treti.html, /mezi dvacet škol/);
+  const pilot = pozvankaDoPilotu({ osloveni: 'Dobrý den', nazevSkoly: 'Gymnázium Testovací', kod: KOD, vlna: 1 });
+  assert.match(pilot.html, /mezi dvacet škol/);
+  // Bez čísla vlny obecný text: chybějící údaj nesmí škole slíbit pilot.
+  const bezVlny = pozvankaDoPilotu({ osloveni: 'Dobrý den', nazevSkoly: 'Gymnázium Testovací', kod: KOD });
+  assert.doesNotMatch(bezVlny.html, /mezi dvacet škol/);
+  assert.match(bezVlny.subject, /pozvánka ke správě profilu/);
+});
+
 test('textová verze e-mailu nenechá HTML entity na očích', () => {
   // Jména správců zadávají lidé sami a `esc()` je pro HTML uvozuje. Bez
   // rozkódování by v textové části stálo „Nováková &amp; spol.“.

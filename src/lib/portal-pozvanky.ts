@@ -18,6 +18,13 @@ const PILOT = path.join(ROOT, 'data', 'portal', 'pilot.json');
 const KODY = path.join(ROOT, 'data', 'portal', 'kody-plaintext.json');
 const KONTAKTY = path.join(ROOT, 'data', 'portal', 'pilot-kontakty.json');
 
+/**
+ * Nejvýš tolik škol odešle administrace jedním potvrzením. Rozesílka běží v jedné
+ * serverové funkci a po každé škole přepisuje pilot.json; velké vlny (stovky škol)
+ * patří do scripts/portal-posli-pozvanky.mjs, který navazuje po přerušení.
+ */
+export const ADMIN_DAVKA = 20;
+
 export interface RadekPozvanky {
   redizo: string;
   nazev: string;
@@ -33,7 +40,7 @@ export interface PrehledPozvanek {
   radky: RadekPozvanky[];
   /** Které vstupy chybí; s neprázdným seznamem se nedá odeslat nic. */
   chybi: string[];
-  pocty: { celkem: number; kOdeslani: number; jizOdeslano: number; bezKodu: number; bezAdresy: number };
+  pocty: { celkem: number; kOdeslani: number; vDavce: number; jizOdeslano: number; bezKodu: number; bezAdresy: number };
 }
 
 /**
@@ -100,12 +107,14 @@ export async function nactiPozvanky(): Promise<PrehledPozvanek> {
     };
   });
 
+  const kOdeslani = radky.filter((r) => !r.pozvanka_odeslana && r.maKod && r.email).length;
   return {
     radky,
     chybi,
     pocty: {
       celkem: radky.length,
-      kOdeslani: radky.filter((r) => !r.pozvanka_odeslana && r.maKod && r.email).length,
+      kOdeslani,
+      vDavce: Math.min(kOdeslani, ADMIN_DAVKA),
       jizOdeslano: radky.filter((r) => r.pozvanka_odeslana).length,
       bezKodu: radky.filter((r) => !r.maKod).length,
       bezAdresy: radky.filter((r) => !r.email).length,

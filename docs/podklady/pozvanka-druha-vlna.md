@@ -9,7 +9,7 @@ v hlavní dávce; u tří škol rejstřík uváděl dvě adresy v poli `Email 1`
 středníkem, které Resend odmítl (HTTP 422). Po výběru první adresy z tohoto
 pole prošly i zbývající tři. Datum odeslání je u každé školy v `pilot.json`.
 
-Výběr vytvořil `scripts/portal-vyber-druhe-vlny.py` z rejstříkového CSV a
+Výběr vytvořil `scripts/portal-vyber-druhe-vlny.py` (dnes zobecněný `scripts/portal-vyber-vlny.py`) z rejstříkového CSV a
 katalogu přijímacího řízení 2026. Všech 100 škol je ve
 `data/portal/pilot.json` s `vlna: 2`; rejstříkové adresy a jména ředitelů jsou
 jen v gitignorovaném `data/portal/pilot-kontakty.json`. Výběr pokrývá všech
