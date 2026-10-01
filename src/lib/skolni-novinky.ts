@@ -316,6 +316,9 @@ export async function novinkySkoly(
   // jen věta. Takovou položku pozná identita „adresa výpisu#otisk titulku“
   // (scripts/sklizec-novinek.py, precti_zdroj_vypisu), ne adresa: ta se může
   // od adresy zdroje lišit přesměrováním. Položky s článkem rozbor mají.
+  // Uložená rozhodnutí z dřívějšího rozboru (třídy, zobrazení, konec platnosti)
+  // se tu nepřepočítávají: 1. 10. 2026 měla rozbor jediná taková položka a ta
+  // je prošlá, takže ji skrývá filtr platnosti. Sklízeč nové rozbory nedělá.
   const bezRozboru = (r: RadekNovinky): RadekNovinky =>
     zVypisu && /#[0-9a-f]{16}$/.test(r.identita ?? '') ? { ...r, souhrn: null, terminy_akce: null } : r;
 
