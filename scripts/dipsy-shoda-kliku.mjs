@@ -64,6 +64,15 @@ export function porovnejSkolu(redizo, skolniNabidky, karty) {
   };
 }
 
+/**
+ * Odpověď DiPSy bez pole `data` je chyba, ne škola bez karet: jinak by
+ * s `totalCount: 0` prošla kontrolou úplnosti jako falešný sirotek.
+ */
+export function rozborOdpovedi(body) {
+  if (!Array.isArray(body?.data)) return { chyba: 'odpověď bez pole data', karty: [], totalCount: null };
+  return { karty: body.data, totalCount: body.meta?.totalCount ?? null };
+}
+
 function argument(nazev, vychozi) {
   const i = process.argv.indexOf(`--${nazev}`);
   return i > 0 && process.argv[i + 1] && !process.argv[i + 1].startsWith('--') ? process.argv[i + 1] : vychozi;
@@ -114,9 +123,7 @@ async function hlavni() {
     url.searchParams.set('skolniRok', String(rok));
     const res = await fetch(url, { signal: AbortSignal.timeout(ROZUMNY_TIMEOUT_MS) });
     if (!res.ok) return { chyba: `HTTP ${res.status}`, karty: [], totalCount: null };
-    const body = await res.json();
-    const karty = Array.isArray(body.data) ? body.data : [];
-    return { karty, totalCount: body.meta?.totalCount ?? null };
+    return rozborOdpovedi(await res.json());
   }
 
   const vysledky = [];
