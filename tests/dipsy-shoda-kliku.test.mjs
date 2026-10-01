@@ -42,3 +42,9 @@ test('plná shoda nechá seznamy nespárovaných prázdné', () => {
   const v = porovnejSkolu(REDIZO, [nabidka('79-41-K/41')], [karta('79-41-K/41', '')]);
   assert.deepEqual([v.shoda, v.nesparovaneKatalog, v.nesparovaneDipsy], [1, [], []]);
 });
+
+test('neúplná karta měření neshodí a do žádného porovnání nevstoupí', () => {
+  const neupln = { zamereni: '', skola: { izo: '100000001' }, skolniObor: { kod: '65-51-H/01' } };
+  const v = porovnejSkolu(REDIZO, [nabidka('79-41-K/41')], [karta('79-41-K/41', ''), neupln]);
+  assert.deepEqual([v.shoda, v.shodaBezZamereni, v.jenDipsy], [1, 1, 0]);
+});

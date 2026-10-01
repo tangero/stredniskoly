@@ -34,9 +34,10 @@ const PRODUCTOVKA_MS = 120;
  * poznat, zda se změnilo IZO, kód, zaměření, forma, nebo délka.
  */
 export function porovnejSkolu(redizo, skolniNabidky, karty) {
+  // Neúplnou kartu vynechají obě porovnání; jinak by klíč bez zaměření spadl na chybějící formě.
+  const uplne = karty.filter((c) => c.skolniObor?.kod && c.skola?.izo && typeof c.skolniObor.formaStudia === 'string' && Number.isInteger(c.skolniObor.delkaStudia));
   const katKlice = new Map(skolniNabidky.map((r) => [klicOboru(redizo, r.izo, r.kkov, r.zamereni ?? '', r.forma, r.delka_studia), r]));
-  const dipKlice = new Map(karty
-    .filter((c) => c.skolniObor?.kod && c.skola?.izo && typeof c.skolniObor.formaStudia === 'string' && Number.isInteger(c.skolniObor.delkaStudia))
+  const dipKlice = new Map(uplne
     .map((c) => [klicOboru(redizo, c.skola.izo, c.skolniObor.kod, c.zamereni ?? '', c.skolniObor.formaStudia, c.skolniObor.delkaStudia), c]));
   const spolecne = [...katKlice.keys()].filter((k) => dipKlice.has(k));
 
@@ -45,8 +46,7 @@ export function porovnejSkolu(redizo, skolniNabidky, karty) {
   const bezZamereni = (izo, kkov, forma, delka) =>
     createHash('sha256').update(JSON.stringify([redizo, izo.replace(/\D/g, ''), kkov.normalize('NFC').trim().toLocaleLowerCase('cs-CZ'), forma.normalize('NFC').trim().toLocaleLowerCase('cs-CZ').replace('formastudia/', ''), delka])).digest('hex');
   const kat2 = new Map(skolniNabidky.map((r) => [bezZamereni(r.izo, r.kkov, r.forma, r.delka_studia), r]));
-  const dip2 = new Map(karty
-    .filter((c) => c.skolniObor?.kod && c.skola?.izo)
+  const dip2 = new Map(uplne
     .map((c) => [bezZamereni(c.skola.izo, c.skolniObor.kod, c.skolniObor.formaStudia, c.skolniObor.delkaStudia), c]));
 
   return {
