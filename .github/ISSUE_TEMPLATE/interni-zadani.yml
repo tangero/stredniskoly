@@ -1,12 +1,11 @@
 # Interní zadání pro Claude Code (Eduarda → Patrick → Claude Code).
 #
-# POZOR: soubor je záměrně v .github/INTERNAL_TEMPLATES/, ne v .github/ISSUE_TEMPLATE/,
-# takže ho GitHub v nabídce „New issue“ nezobrazuje. Veřejné hlášení chyb (tlačítko
-# „Nahlásit chybu“ na webu → štítek bug-report) a portál škol (štítek portal-skoly)
-# tím zůstávají beze změny.
-# Issues se zakládají přes API / gh s tělem podle interni-zadani.md (stejná pole).
-# Pokud by se jednou měl formulář zobrazit v GitHub UI, stačí soubor přesunout
-# do .github/ISSUE_TEMPLATE/ (viz alternativa B).
+# Formulář je v .github/ISSUE_TEMPLATE/, takže ho GitHub nabízí v „New issue“
+# (od 1. 10. 2026, dřív záměrně skrytý v .github/INTERNAL_TEMPLATES/). Vidí ho i
+# veřejnost; realizaci ale podmiňuje štítek schvaleno, který přidává jen Patrick.
+# Veřejné hlášení chyb (tlačítko „Nahlásit chybu“ na webu → bug-report) a portál
+# škol (portal-skoly) se tím nemění. Pro zakládání přes API / gh je tělo se
+# stejnými poli v .github/INTERNAL_TEMPLATES/interni-zadani.md.
 name: Interní zadání (jen pro tým)
 description: Interní zadání pro Claude Code. Nepoužívejte pro hlášení chyb, na to slouží tlačítko „Nahlásit chybu“ na webu.
 title: "[Zadání] "
