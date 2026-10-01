@@ -381,6 +381,8 @@ Z položky se počítají údaje zapsané ve [slovníku ukazatelů](slovnik-ukaz
 
 Sada zatím **není v registru stavu datových sad**: registr vede období, které se zobrazuje, a tenhle zdroj žádné období nemá – nese průběžné zprávy s vlastním datem vydání a vlastní platností podle druhu zprávy. Zapíše se do něj, až na něm bude stát ukazatel vázaný na přijímací ročník.
 
+**Výpis aktualit a sitemap u škol bez kanálu novinek (sonda 1. 10. 2026).** U 450 škol bez feedu se živým webem: stránku aktualit najdeme z titulky u 370, obecná čtečka z ní přečte titulek, odkaz a datum položek u 283 (čerstvou zprávu za 30 dní u 230); sitemap má 232 webů, adresy článků 95, čerstvé `lastmod` 48 a samostatně přidá čerstvou zprávu jen 8 školám. Zatím se **nepoužívá v provozu**; jednorázový snímek `data/sondy/mimo-rss-20261001.json` zobrazuje jen nezalistovaný prototyp `/prototyp/cim-skoly-ziji`. Z výpisu se bere titulek, odkaz a datum, nic víc (perex ani text zprávy ne, ze stejného důvodu jako u feedu). Rozbor: [sonda mimo RSS](sonda-mimo-rss-2026.md).
+
 ### 2.15 Veletrhy a přehlídky středních škol
 
 `docs/prijimacky-veletrhy-poradatele-2026.xlsx`, vlastní rešerše, list `Poradatele`, 25 řádků × 15 sloupců. Rozepsáno do `src/data/veletrhy-2027.json` na 95 jednotlivých akcí; část z nich přibyla dohledáním přímo na webech pořadatelů 22. 9. 2026 a 48 dalších rešerší 24. 9. 2026 (Exa po krajích a Parallel FindAll, každý termín otevřen a ověřen na stránce). Druhý list `Top8_tyden` je pracovní pořadník pro obesílání pořadatelů, ne datový zdroj.
@@ -705,6 +707,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-30. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.23 | Oddíl 2.14 doplněn o výpis aktualit a sitemap u škol bez kanálu novinek (sonda 1. 10. 2026, [rozbor](sonda-mimo-rss-2026.md)): zatím jen změřené a zobrazené v nezalistovaném prototypu, ne v provozu. |
 | 1.22 | Index simulátoru `public/simulator_pasma_{rok}.json` jako odvozený výstup dat uchazečů (2.2) a blok `pravidla` (počet přihlášek) v harmonogramu MŠMT (2.13). Žádný nový zdroj ani sloupec. |
 | 1.21 | Kritéria přijetí: portál pro školy jako zdroj se strukturovaným zadáním (`portal_kriteria.struktura`) a soubor předvyplnění `kriteria_predvyplneni_{rok}.json` z dosud zahazovaných polí přepisu (maxima JPZ, pravidla při rovnosti); zbylá pole schématu přepisu zvážena a zamítnuta (oddíl 2.16). |
 | 1.20 | Hranice krajů z RÚIAN (oddíl 2.17) jako nový zdroj pro mapu krajů na `/veletrhy`: kód NUTS 3 a geometrie používané, název kraje, kód VÚSC a kód REGS ne. Zamítnut kartogram podle počtu akcí a přepočet na obyvatele. |

@@ -94,7 +94,7 @@ const POCET_ZE_ZIVOTA = 6;
  */
 const OKNO_POLOZEK = 30;
 
-interface RadekNovinky {
+export interface RadekNovinky {
   id: string;
   titulek: string;
   url: string;
@@ -141,14 +141,14 @@ function dataAkce(v: unknown): string[] {
 }
 
 /** Přepínače jako mapa klíč → hodnota; klíč `trida:dod` vypíná zvýrazňování třídy. */
-async function nactiPrepinace(): Promise<Map<string, unknown>> {
+export async function nactiPrepinace(): Promise<Map<string, unknown>> {
   const { rows } = await dotaz<{ klic: string; hodnota: unknown }>(
     `select klic, hodnota from skola_prepinac`,
   );
   return new Map(rows.map((r) => [r.klic, r.hodnota]));
 }
 
-function jeVypnuto(prepinace: Map<string, unknown>, klic: string): boolean {
+export function jeVypnuto(prepinace: Map<string, unknown>, klic: string): boolean {
   const h = prepinace.get(klic);
   if (h === undefined) return false;
   if (typeof h === 'boolean') return !h;
@@ -157,7 +157,7 @@ function jeVypnuto(prepinace: Map<string, unknown>, klic: string): boolean {
 }
 
 /** Společný výběr sloupců pro oba dotazy, aby se nemohly rozejít. */
-const SLOUPCE = `select n.id, n.titulek, n.url, n.publikovano, n.vytvoreno, n.zobrazeni,
+export const SLOUPCE = `select n.id, n.titulek, n.url, n.publikovano, n.vytvoreno, n.zobrazeni,
          n.tridy, n.terminy, n.duvod, n.konec_platnosti,
          r.souhrn, r.terminy as terminy_akce
     from skola_novinka n
@@ -169,7 +169,7 @@ const SLOUPCE = `select n.id, n.titulek, n.url, n.publikovano, n.vytvoreno, n.zo
  * Datum objevení se posílá jen tehdy, když se nedá říct, kdy zpráva vyšla:
  * jinak by stránka měla dvě data a čtenář by nevěděl, které platí.
  */
-function naPolozku(
+export function naPolozku(
   r: RadekNovinky,
   prepinace: Map<string, unknown>,
   dnes: string,

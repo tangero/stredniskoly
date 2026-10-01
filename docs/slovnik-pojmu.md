@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.34 · 30. 9. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.35 · 1. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -120,6 +120,8 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **ze života školy** | nadpis rubriky na konci stránky: zprávy z webu školy, které se přijímacího řízení **netýkají** – výlet, olympiáda, projektový den | při prvním výskytu větou „Zprávy z webu školy, které se přijímacího řízení netýkají.“ | aktuality, ostatní novinky, nezařazené; nikdy ne jako nadpis nad zprávami k přijímačkám |
 | **objevilo se *datum*** | den, kdy jsme zprávu poprvé viděli v kanálu novinek; píše se **jen** tehdy, když feed neuvedl použitelné datum vydání | u zprávy místo data vydání; v patičce bloku vysvětleno | vydáno, publikováno, zveřejněno (to bychom tvrdili něco, co nevíme) |
 | **zdroj naposledy ověřen *datum*** | kdy se naposled podařilo přečíst kanál novinek školy | vždy u sklizeného údaje | aktualizováno (nejde o aktualizaci údaje), ověřeno školou |
+| **Čím školy žijí** | název přehledu zpráv z webů škol podle kraje a obce (zatím jen nezalistovaný prototyp) | nadpis stránky s názvem oblasti; pod ním vždy věta o pokrytí: u kolika škol zprávy čteme a že o ostatních nic nevíme | novinky ze škol, aktuality škol, život škol (zní jako úplný přehled) |
+| **výpis aktualit** | stránka na webu školy se seznamem jejích zpráv, ze které je čteme u škol bez kanálu novinek | u zpráv z tohoto zdroje vždy s datem čtení a větou, že titulky i data mohou být přečtené chybně | RSS, kanál (to je jiný zdroj), oficiální zprávy |
 
 ## 5. Slova, která se nepoužívají vůbec
 
@@ -140,6 +142,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.35 | Pojmy **Čím školy žijí** a **výpis aktualit** pro nezalistovaný prototyp přehledu zpráv z webů škol podle oblasti (1. 10. 2026, [sonda mimo RSS](sonda-mimo-rss-2026.md)). Stránka vždy říká, u kolika škol zprávy čteme, aby chybějící školy nevypadaly jako školy, kde se nic neděje. |
 | 1.34 | Pojem **zřizovatel** (veřejná, soukromá, církevní škola) pro filtr v Simulátoru přijímaček (#210, podnět #172); školné se u něj jen zmiňuje jako možnost, výši v katalogu nemáme. Pojem **podnadpis pod názvem školy** pro pole portálu (#197); věta od školy nese značku **text školy**, jinak se skládá z oborů. |
 | 1.33 | Pojem **podle údajů školy** pro kritéria zadaná školou v portálu (30. 9. 2026, [prototyp kritérií](prototyp-kriteria-prijeti.md) bod 4). Blok kritérií na stránce oboru u nich nemá výhradu o přepisu PDF; kritéria pro ročník novější než přepis se píšou v přítomném čase a věta „teprve se vyhlásí“ odpadá. |
 | 1.32 | Pojmy **balíček dat** a **ročník, ze kterého se uchazeč hlásí** pro sekci `/pro-novinare` ([návrh](navrh-pro-novinare-2027.md)). U 2. kola se ani pro novináře nepíše „šance“: balíček uvádí přijaté na přihlášku a vysvětluje, proč to není podíl úspěšných uchazečů. |
