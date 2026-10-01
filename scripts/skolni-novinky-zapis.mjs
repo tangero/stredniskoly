@@ -274,10 +274,9 @@ export async function zapisDavku(klient, davka) {
 
       // Škola přešla mezi výpisem aktualit a kanálem novinek a nový zdroj se
       // přečetl: stránka školy i přehled se řídí typem zdroje, takže by zprávy
-      // starého zdroje vydávaly za zprávy nového (z výpisu by se ukázaly
-      // zprávy, které se zatím zobrazovat nemají, ZOBRAZIT_VYPISY). Zprávy
-      // starého zdroje se zneplatní; zprávy z této dávky ne, tentýž článek
-      // mohl přijít z obou. Při chybě nebo 304 se nic nemění, typ zůstává.
+      // starého zdroje vydávaly za zprávy nového (bez výhrady ke čtení, nebo
+      // naopak s ní). Zprávy starého zdroje se zneplatní; zprávy z této dávky
+      // ne, tentýž článek mohl přijít z obou. Při chybě nebo 304 se nic nemění, typ zůstává.
       if (precteno && rows[0] && TYPY_VYPISU.has(rows[0].typ) !== TYPY_VYPISU.has(typ)) {
         const { rowCount } = await klient.query(
           `update skola_novinka set zneplatneno = now(), zmeneno = now()

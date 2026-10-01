@@ -119,6 +119,17 @@ class ZdrojVypisu(unittest.TestCase):
         self.assertEqual(len(identity), len(set(identity)))
         self.assertEqual(len(identity), 3)
 
+    def test_rozbor_jen_u_polozek_s_vlastnim_clankem(self):
+        # Bez článku vede položka na výpis: rozbor by četl celou stránku a kartě
+        # přisoudil termín jiné akce.
+        for html, ceka in ((VYPIS_BEZ_ODKAZU, False), (VYPIS, True)):
+            with mock.patch.object(sklizec, "stahni_feed", return_value=ok(html)), \
+                    mock.patch.object(sklizec.jev, "je_kandidat_na_rozbor", return_value=True), \
+                    mock.patch.object(sklizec, "rozeber", return_value=None) as rz:
+                sklizec.zpracuj_skolu("600000001", {"feed_url": STRANKA, "zdroj": "vypis", "typ": "html"},
+                                      {}, DNES, rozebirat=True)
+            self.assertEqual(rz.called, ceka)
+
     def test_polozky_bez_odkazu_na_clanek_maji_ruzne_identity(self):
         v, _, _ = self.zpracuj({"typ": "html"}, primo=ok(VYPIS_BEZ_ODKAZU))
         self.assertEqual(v["stav"], "ok")

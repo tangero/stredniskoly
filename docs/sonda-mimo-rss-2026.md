@@ -115,7 +115,7 @@ TinyFish tedy pomáhá tam, kde selhává **stažení**, ne tam, kde selhává *
 
 ## 5. Co dál
 
-- Rozhodnout, zda zprávy z výpisu aktualit ukazovat na stránce školy (`ZOBRAZIT_VYPISY` v `src/lib/skolni-novinky.ts`). Podklad: ruční kontrola 30 škol (oddíl 2) a první týden sklizně na prototypu.
+- ~~Rozhodnout, zda zprávy z výpisu aktualit ukazovat na stránce školy.~~ Rozhodnuto 1. 10. 2026: ukazují se s výhradou ke čtení (`ZOBRAZIT_VYPISY` v `src/lib/skolni-novinky.ts`). Zbývá sledovat chybovost na prvním týdnu sklizně a vypnout, kdyby se čtečka ukázala nespolehlivá.
 - Změřit úplnost a stabilitu čtečky při opakovaném čtení (sklizeň 2× denně to dává zadarmo: zmizelé a znovu objevené položky).
 - Registr výpisů obnovit novou sondou, až přibude škol s kanálem novinek nebo s adresou aktualit z portálu (P5).
 - Před zveřejněním stránky „Čím školy žijí“ rozhodnout o filtru zpráv se jménem osoby v titulku (ve sklizni jsou například parte).

@@ -77,6 +77,12 @@ export interface NovinkySkoly {
   zdrojUrl: string | null;
   /** Zdroj neodpovídá, ale uložené položky platí dál (oddíl 3.2). */
   zdrojVypadek: boolean;
+  /**
+   * Zprávy jsou přečtené z výpisu aktualit, ne z kanálu novinek. Blok to musí
+   * říct i s výhradou, že titulky a data mohou být přečtené chybně
+   * (docs/slovnik-pojmu.md, „výpis aktualit“).
+   */
+  zVypisu: boolean;
 }
 
 /** Kolik položek k přijímacímu řízení se vejde do bloku na stránce školy. */
@@ -96,6 +102,7 @@ const OKNO_POLOZEK = 30;
 
 export interface RadekNovinky {
   id: string;
+  identita?: string;
   titulek: string;
   url: string;
   publikovano: Date | string | null;
@@ -158,11 +165,14 @@ export function jeVypnuto(prepinace: Map<string, unknown>, klic: string): boolea
 
 /** Typy zdroje `skola_feed.typ`, které nejsou kanál novinek, ale výpis aktualit. */
 export const TYPY_VYPISU = new Set(['html', 'tinyfish']);
-/** Zprávy z výpisu aktualit na stránce školy: vypnuto do rozhodnutí o kvalitě. */
-const ZOBRAZIT_VYPISY = false;
+/**
+ * Zprávy z výpisu aktualit na stránce školy. Zapnuto 1. 10. 2026 rozhodnutím
+ * zadavatele; vypínač zůstává pro případ, že se čtečka ukáže jako nespolehlivá.
+ */
+const ZOBRAZIT_VYPISY = true;
 
 /** Společný výběr sloupců pro oba dotazy, aby se nemohly rozejít. */
-export const SLOUPCE = `select n.id, n.titulek, n.url, n.publikovano, n.vytvoreno, n.zobrazeni,
+export const SLOUPCE = `select n.id, n.identita, n.titulek, n.url, n.publikovano, n.vytvoreno, n.zobrazeni,
          n.tridy, n.terminy, n.duvod, n.konec_platnosti,
          r.souhrn, r.terminy as terminy_akce
     from skola_novinka n
@@ -251,7 +261,7 @@ export async function novinkySkoly(
 
   const prepinace = await nactiPrepinace();
   if (jeVypnuto(prepinace, `skola:${redizo}`)) {
-    return { polozky: [], zeZivota: [], zdrojOverenAt: null, zdrojUrl: null, zdrojVypadek: false };
+    return { polozky: [], zeZivota: [], zdrojOverenAt: null, zdrojUrl: null, zdrojVypadek: false, zVypisu: false };
   }
   // Skryté položky musí vypadnout už před SQL LIMIT. Jinak šest čerstvých
   // spamů zaplní celé okno a starší legitimní zprávy se nikdy nedostanou ven.
@@ -287,23 +297,35 @@ export async function novinkySkoly(
     [redizo, ted.toISOString(), POCET_ZE_ZIVOTA, skryteId],
   );
 
-  const dnes = ted.toISOString().slice(0, 10);
-  const prevod = (r: RadekNovinky) => naPolozku(r, prepinace, dnes);
-  const polozky = kPrijimackam.rows.map(prevod).filter((p): p is SkolniNovinka => p !== null);
-  const zeZivota = zivot.rows.map(prevod).filter((p): p is SkolniNovinka => p !== null);
-
   const feed = await dotaz<{ feed_url: string; naposledy_ok: Date | string | null; chyby_v_rade: number; typ?: string }>(
     `select feed_url, naposledy_ok, chyby_v_rade, typ from skola_feed where redizo = $1`,
     [redizo],
   );
   const f = feed.rows[0];
-  // Zprávy přečtené z výpisu aktualit (ne z kanálu novinek) se sbírají, ale na
-  // stránce školy se zatím neukazují: čtečka výpisu bere titulek a datum ze
-  // šablony webu a chybovost je změřená jen na vzorku (docs/sonda-mimo-rss-2026.md).
-  // Do rozhodnutí se škola chová jako škola bez zdroje, tedy jako dosud.
+  // Zprávy přečtené z výpisu aktualit (ne z kanálu novinek): čtečka bere titulek
+  // a datum ze šablony webu a chybovost je změřená jen na vzorku
+  // (docs/sonda-mimo-rss-2026.md). Vypnutím se škola chová jako škola bez zdroje.
   if (f?.typ && TYPY_VYPISU.has(f.typ) && !ZOBRAZIT_VYPISY) {
-    return { polozky: [], zeZivota: [], zdrojOverenAt: null, zdrojUrl: null, zdrojVypadek: false };
+    return { polozky: [], zeZivota: [], zdrojOverenAt: null, zdrojUrl: null, zdrojVypadek: false, zVypisu: false };
   }
+
+  const zVypisu = Boolean(f?.typ && TYPY_VYPISU.has(f.typ));
+  // Rozbor u položky výpisu bez vlastního článku se nepoužije: položka vede na
+  // výpis sám a rozbor z něj mohl vzít termín jiné akce (stalo se u jedné karty
+  // před opravou sklízeče). Zahodí se celý ještě před rozhodnutím o kartě, ne
+  // jen věta. Takovou položku pozná identita „adresa výpisu#otisk titulku“
+  // (scripts/sklizec-novinek.py, precti_zdroj_vypisu), ne adresa: ta se může
+  // od adresy zdroje lišit přesměrováním. Položky s článkem rozbor mají.
+  // Uložená rozhodnutí z dřívějšího rozboru (třídy, zobrazení, konec platnosti)
+  // se tu nepřepočítávají: 1. 10. 2026 měla rozbor jediná taková položka a ta
+  // je prošlá, takže ji skrývá filtr platnosti. Sklízeč nové rozbory nedělá.
+  const bezRozboru = (r: RadekNovinky): RadekNovinky =>
+    zVypisu && /#[0-9a-f]{16}$/.test(r.identita ?? '') ? { ...r, souhrn: null, terminy_akce: null } : r;
+
+  const dnes = ted.toISOString().slice(0, 10);
+  const prevod = (r: RadekNovinky) => naPolozku(bezRozboru(r), prepinace, dnes);
+  const polozky = kPrijimackam.rows.map(prevod).filter((p): p is SkolniNovinka => p !== null);
+  const zeZivota = zivot.rows.map(prevod).filter((p): p is SkolniNovinka => p !== null);
 
   return {
     polozky: serad(polozky).slice(0, POCET_POLOZEK),
@@ -311,5 +333,6 @@ export async function novinkySkoly(
     zdrojOverenAt: naIso(f?.naposledy_ok ?? null),
     zdrojUrl: f?.feed_url ?? null,
     zdrojVypadek: (f?.chyby_v_rade ?? 0) > 0,
+    zVypisu,
   };
 }
