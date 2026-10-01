@@ -35,6 +35,14 @@ pro rok 2026 je `public/applications_2026.json` (CERMAT).
 - Dostupnost ročníku 2027 vůbec (dokument `docs/prototyp-kriteria-prijeti.md` správně zakazuje
   ji vyvozovat z minulých karet).
 
+## Výstup pro měření mezi ročníky
+
+Od 1. 10. 2026 vypisuje skript u každé školy i nespárované nabídky se složkami klíče
+(`nesparovaneKatalog`: id, IZO, KKOV, zaměření, forma, délka; `nesparovaneDipsy`: totéž z karty).
+Klíč je hash, takže bez nich nejde u běhu `--rok 2027` poznat, co se mezi ročníky změnilo.
+Doklad z 24. 9. 2026 vznikl dřívější verzí a tato pole nemá. U katalogu by byla prázdná
+(shoda 100 %), u DiPSy by vyjmenovala učební obory mimo katalog.
+
 ## Opakování
 
 ```
