@@ -1,0 +1,1712 @@
+{
+  "vystup_pro": "docs/navrh-obory-bez-jpz-2027.md (issue #209)",
+  "reprodukce": "python3 scripts/mereni-obory-bez-jpz.py",
+  "agregaty": {
+    "soubor": "PZ2026_kolo1_skolobory_vysledky.xlsx",
+    "sloupcu": 91,
+    "radku_celkem": 6368,
+    "podle_jpz": {
+      "s_jpz": 3237,
+      "bez_jpz": 3131
+    },
+    "po_kategorii": {
+      "C": {
+        "bez_jpz": 202
+      },
+      "E": {
+        "bez_jpz": 525
+      },
+      "H": {
+        "bez_jpz": 1946
+      },
+      "J": {
+        "bez_jpz": 9
+      },
+      "K": {
+        "s_jpz": 790
+      },
+      "L": {
+        "s_jpz": 681,
+        "bez_jpz": 32
+      },
+      "M": {
+        "s_jpz": 1766,
+        "bez_jpz": 239
+      },
+      "P": {
+        "bez_jpz": 178
+      }
+    },
+    "po_forme": {
+      "dal": {
+        "s_jpz": 93,
+        "bez_jpz": 60
+      },
+      "den": {
+        "s_jpz": 3087,
+        "bez_jpz": 3024
+      },
+      "den2": {
+        "s_jpz": 4
+      },
+      "dist": {
+        "s_jpz": 25
+      },
+      "komb": {
+        "s_jpz": 27,
+        "bez_jpz": 45
+      },
+      "vec": {
+        "s_jpz": 1,
+        "bez_jpz": 2
+      }
+    },
+    "nastavby_L51": {
+      "s_jpz": 323
+    },
+    "chybejici_katalog_denni_nezkr_bez_jpz": {
+      "C": {
+        "radku": 200,
+        "kapacita": 1442,
+        "prihlasky": 1272,
+        "prijati": 802
+      },
+      "E": {
+        "radku": 524,
+        "kapacita": 6385,
+        "prihlasky": 9354,
+        "prijati": 3680
+      },
+      "H": {
+        "radku": 1777,
+        "kapacita": 40110,
+        "prihlasky": 92398,
+        "prijati": 27583
+      },
+      "J": {
+        "radku": 8,
+        "kapacita": 106,
+        "prihlasky": 157,
+        "prijati": 70
+      },
+      "L": {
+        "radku": 31,
+        "kapacita": 362,
+        "prihlasky": 422,
+        "prijati": 194
+      },
+      "M": {
+        "radku": 216,
+        "kapacita": 3470,
+        "prihlasky": 7366,
+        "prijati": 2718
+      },
+      "P": {
+        "radku": 146,
+        "kapacita": 810,
+        "prihlasky": 1698,
+        "prijati": 611
+      }
+    },
+    "importnim_filtrem_proslo": 3091,
+    "vyrazeno_duvod": {
+      "bez_jpz": 2902,
+      "zkracene+bez_jpz": 122,
+      "forma": 146,
+      "forma+zkracene+bez_jpz": 45,
+      "forma+bez_jpz": 62
+    },
+    "soucty": {
+      "s_jpz": {
+        "kapacita": 107564,
+        "prihlasky": 306529,
+        "prijati": 88091
+      },
+      "bez_jpz": {
+        "kapacita": 57181,
+        "prihlasky": 117795,
+        "prijati": 38494
+      }
+    },
+    "plneni_sloupcu": {
+      "s_jpz": {
+        "ID_SOF": 3237,
+        "ID_SO": 3237,
+        "ROK": 3237,
+        "KOLO": 3237,
+        "IZO": 3237,
+        "REDIZO": 3237,
+        "NÁZEV ŠKOLY": 3237,
+        "ULICE": 3200,
+        "OBEC": 3237,
+        "PSČ": 3237,
+        "KRAJ": 3237,
+        "KRAJ - NÁZEV": 3237,
+        "OKRES": 3237,
+        "OKRES - NÁZEV": 3237,
+        "ORP": 3237,
+        "ORP-NÁZEV": 3237,
+        "ZŘIZOVATEL": 3237,
+        "ZŘIZOVATEL - NÁZEV": 3237,
+        "ROČNÍK": 3237,
+        "MATURITNÍ STATUS": 3237,
+        "POVINNOST JPZ": 3237,
+        "TYP ŠKOLY": 3237,
+        "TYP ŠKOLY - NÁZEV": 3237,
+        "SKUPINA OBORŮ (16)": 3237,
+        "KKOV": 3237,
+        "OBOR - NÁZEV": 3237,
+        "ZAMĚŘENÍ OBORU": 1272,
+        "FORMA VZDĚLÁVÁNÍ": 3237,
+        "DÉLKA STUDIA": 3237,
+        "ZKRÁCENÉ STUDIUM": 3237,
+        "JAZYK STUDIA": 3237,
+        "KAPACITA": 3237,
+        "INDEX POPTÁVKY (PŘIHLÁŠKY / KAPACITA)": 3235,
+        "PŘIHLÁŠKY CELKEM": 3235,
+        "PŘIJATÍ": 3235,
+        "PŘIHLÁŠKY - PRIORITA 1": 3235,
+        "PŘIHLÁŠKY - PRIORITA 2": 3235,
+        "PŘIHLÁŠKY - PRIORITA 3": 3235,
+        "PŘIHLÁŠKY - PRIORITA 4": 3235,
+        "PŘIHLÁŠKY - PRIORITA 5": 3235,
+        "PŘIJATÍ - PRIORITA 1": 3235,
+        "PŘIJATÍ - PRIORITA 2": 3235,
+        "PŘIJATÍ - PRIORITA 3": 3235,
+        "PŘIJATÍ - PRIORITA 4": 3235,
+        "PŘIJATÍ - PRIORITA 5": 3235,
+        "ČJ+MA - KONALI": 3235,
+        "ČJ - KONALI": 3235,
+        "MA - KONALI": 3235,
+        "ČJ+MA - % SKÓR - PRŮMĚR": 3233,
+        "ČJ - % SKÓR - PRŮMĚR": 3233,
+        "MA - % SKÓR - PRŮMĚR": 3233,
+        "ČJ+MA - % SKÓR - MIN": 3233,
+        "ČJ - % SKÓR - MIN": 3233,
+        "MA - % SKÓR - MIN": 3233,
+        "ČJ+MA - % SKÓR - MAX": 3233,
+        "ČJ - % SKÓR - MAX": 3233,
+        "MA - % SKÓR - MAX": 3233,
+        "ČJ+MA - PERCENTIL - PRŮMĚR": 3233,
+        "ČJ - PERCENTIL - PRŮMĚR": 3233,
+        "MA - PERCENTIL - PRŮMĚR": 3233,
+        "ČJ+MA - PERCENTIL - MIN": 3233,
+        "ČJ - PERCENTIL - MIN": 3233,
+        "MA - PERCENTIL - MIN": 3233,
+        "ČJ+MA - PERCENTIL - MAX": 3233,
+        "ČJ - PERCENTIL - MAX": 3233,
+        "MA - PERCENTIL - MAX": 3233,
+        "ČJ+MA - KONALI (PŘIJATI)": 3235,
+        "ČJ - KONALI (PŘIJATI)": 3235,
+        "MA - KONALI (PŘIJATI)": 3235,
+        "ČJ+MA - % SKÓR - PRŮMĚR (PŘIJATI)": 3207,
+        "ČJ - % SKÓR - PRŮMĚR (PŘIJATI)": 3207,
+        "MA - % SKÓR - PRŮMĚR (PŘIJATI)": 3207,
+        "ČJ+MA - % SKÓR - MIN (PŘIJATI)": 3207,
+        "ČJ - % SKÓR - MIN (PŘIJATI)": 3207,
+        "MA - % SKÓR - MIN (PŘIJATI)": 3207,
+        "ČJ+MA - % SKÓR - MAX (PŘIJATI)": 3207,
+        "ČJ - % SKÓR - MAX (PŘIJATI)": 3207,
+        "MA - % SKÓR - MAX (PŘIJATI)": 3207,
+        "ČJ+MA - PERCENTIL - PRŮMĚR (PŘIJATI)": 3207,
+        "ČJ - PERCENTIL - PRŮMĚR (PŘIJATI)": 3207,
+        "MA - PERCENTIL - PRŮMĚR (PŘIJATI)": 3207,
+        "ČJ+MA - PERCENTIL - MIN (PŘIJATI)": 3207,
+        "ČJ - PERCENTIL - MIN (PŘIJATI)": 3207,
+        "MA - PERCENTIL - MIN (PŘIJATI)": 3207,
+        "ČJ+MA - PERCENTIL - MAX (PŘIJATI)": 3207,
+        "ČJ - PERCENTIL - MAX (PŘIJATI)": 3207,
+        "MA - PERCENTIL - MAX (PŘIJATI)": 3207,
+        "NEPŘIJATI - PŘIJAT NA VYŠŠÍ PRIORITU": 3235,
+        "NEPŘIJATI - NEDOSTATEČNÁ KAPACITA": 3235,
+        "NEPŘIJATI - NESPLNĚNÍ PODMÍNEK": 3235,
+        "NEPŘIJATI - VZDAL SE PŘIJETÍ": 3235
+      },
+      "bez_jpz": {
+        "ID_SOF": 3131,
+        "ID_SO": 3131,
+        "ROK": 3131,
+        "KOLO": 3131,
+        "IZO": 3131,
+        "REDIZO": 3131,
+        "NÁZEV ŠKOLY": 3131,
+        "ULICE": 2988,
+        "OBEC": 3131,
+        "PSČ": 3131,
+        "KRAJ": 3131,
+        "KRAJ - NÁZEV": 3131,
+        "OKRES": 3131,
+        "OKRES - NÁZEV": 3131,
+        "ORP": 3131,
+        "ORP-NÁZEV": 3131,
+        "ZŘIZOVATEL": 3131,
+        "ZŘIZOVATEL - NÁZEV": 3131,
+        "ROČNÍK": 3131,
+        "MATURITNÍ STATUS": 3131,
+        "POVINNOST JPZ": 3131,
+        "TYP ŠKOLY": 3131,
+        "TYP ŠKOLY - NÁZEV": 3131,
+        "SKUPINA OBORŮ (16)": 3131,
+        "KKOV": 3131,
+        "OBOR - NÁZEV": 3131,
+        "ZAMĚŘENÍ OBORU": 1303,
+        "FORMA VZDĚLÁVÁNÍ": 3131,
+        "DÉLKA STUDIA": 3131,
+        "ZKRÁCENÉ STUDIUM": 3131,
+        "JAZYK STUDIA": 3131,
+        "KAPACITA": 3131,
+        "INDEX POPTÁVKY (PŘIHLÁŠKY / KAPACITA)": 3039,
+        "PŘIHLÁŠKY CELKEM": 3039,
+        "PŘIJATÍ": 3039,
+        "PŘIHLÁŠKY - PRIORITA 1": 3039,
+        "PŘIHLÁŠKY - PRIORITA 2": 3039,
+        "PŘIHLÁŠKY - PRIORITA 3": 3039,
+        "PŘIHLÁŠKY - PRIORITA 4": 3039,
+        "PŘIHLÁŠKY - PRIORITA 5": 3039,
+        "PŘIJATÍ - PRIORITA 1": 3039,
+        "PŘIJATÍ - PRIORITA 2": 3039,
+        "PŘIJATÍ - PRIORITA 3": 3039,
+        "PŘIJATÍ - PRIORITA 4": 3039,
+        "PŘIJATÍ - PRIORITA 5": 3039,
+        "ČJ+MA - KONALI": 0,
+        "ČJ - KONALI": 0,
+        "MA - KONALI": 0,
+        "ČJ+MA - % SKÓR - PRŮMĚR": 0,
+        "ČJ - % SKÓR - PRŮMĚR": 0,
+        "MA - % SKÓR - PRŮMĚR": 0,
+        "ČJ+MA - % SKÓR - MIN": 0,
+        "ČJ - % SKÓR - MIN": 0,
+        "MA - % SKÓR - MIN": 0,
+        "ČJ+MA - % SKÓR - MAX": 0,
+        "ČJ - % SKÓR - MAX": 0,
+        "MA - % SKÓR - MAX": 0,
+        "ČJ+MA - PERCENTIL - PRŮMĚR": 0,
+        "ČJ - PERCENTIL - PRŮMĚR": 0,
+        "MA - PERCENTIL - PRŮMĚR": 0,
+        "ČJ+MA - PERCENTIL - MIN": 0,
+        "ČJ - PERCENTIL - MIN": 0,
+        "MA - PERCENTIL - MIN": 0,
+        "ČJ+MA - PERCENTIL - MAX": 0,
+        "ČJ - PERCENTIL - MAX": 0,
+        "MA - PERCENTIL - MAX": 0,
+        "ČJ+MA - KONALI (PŘIJATI)": 0,
+        "ČJ - KONALI (PŘIJATI)": 0,
+        "MA - KONALI (PŘIJATI)": 0,
+        "ČJ+MA - % SKÓR - PRŮMĚR (PŘIJATI)": 0,
+        "ČJ - % SKÓR - PRŮMĚR (PŘIJATI)": 0,
+        "MA - % SKÓR - PRŮMĚR (PŘIJATI)": 0,
+        "ČJ+MA - % SKÓR - MIN (PŘIJATI)": 0,
+        "ČJ - % SKÓR - MIN (PŘIJATI)": 0,
+        "MA - % SKÓR - MIN (PŘIJATI)": 0,
+        "ČJ+MA - % SKÓR - MAX (PŘIJATI)": 0,
+        "ČJ - % SKÓR - MAX (PŘIJATI)": 0,
+        "MA - % SKÓR - MAX (PŘIJATI)": 0,
+        "ČJ+MA - PERCENTIL - PRŮMĚR (PŘIJATI)": 0,
+        "ČJ - PERCENTIL - PRŮMĚR (PŘIJATI)": 0,
+        "MA - PERCENTIL - PRŮMĚR (PŘIJATI)": 0,
+        "ČJ+MA - PERCENTIL - MIN (PŘIJATI)": 0,
+        "ČJ - PERCENTIL - MIN (PŘIJATI)": 0,
+        "MA - PERCENTIL - MIN (PŘIJATI)": 0,
+        "ČJ+MA - PERCENTIL - MAX (PŘIJATI)": 0,
+        "ČJ - PERCENTIL - MAX (PŘIJATI)": 0,
+        "MA - PERCENTIL - MAX (PŘIJATI)": 0,
+        "NEPŘIJATI - PŘIJAT NA VYŠŠÍ PRIORITU": 3039,
+        "NEPŘIJATI - NEDOSTATEČNÁ KAPACITA": 3039,
+        "NEPŘIJATI - NESPLNĚNÍ PODMÍNEK": 3039,
+        "NEPŘIJATI - VZDAL SE PŘIJETÍ": 3039
+      }
+    }
+  },
+  "uchazeci": {
+    "soubor": "PZ2026_kolo1_uchazeci_prihlasky_vysledky.xlsx",
+    "uchazecu_radku": 156210,
+    "voleb_celkem": 424353,
+    "forma_voleb": {
+      "den": 416537,
+      "dal": 4983,
+      "komb": 1747,
+      "den2": 584,
+      "dist": 416,
+      "vec": 86
+    },
+    "uchazecu_s_oborem_H": 47707,
+    "uchazecu_s_nedenni_volbou": 5503,
+    "uchazecu_bez_vysledku_JPZ": 37004
+  },
+  "rejstrik": {
+    "snimek": "rssz-2026-06-30.jsonld",
+    "skol_C00_D00_s_obory": 1362,
+    "zaznamu_oboru": 7828,
+    "z_toho_dobihajicich": 723,
+    "hodnoty_formy": {
+      "10": 7024,
+      "22": 566,
+      "24": 43,
+      "30": 116,
+      "23": 79
+    },
+    "po_kategorii_a_forme": [
+      {
+        "kategorie": "H",
+        "forma": "10",
+        "zaznamu": 2109
+      },
+      {
+        "kategorie": "M",
+        "forma": "10",
+        "zaznamu": 2016
+      },
+      {
+        "kategorie": "L",
+        "forma": "10",
+        "zaznamu": 810
+      },
+      {
+        "kategorie": "K",
+        "forma": "10",
+        "zaznamu": 744
+      },
+      {
+        "kategorie": "E",
+        "forma": "10",
+        "zaznamu": 661
+      },
+      {
+        "kategorie": "?",
+        "forma": "10",
+        "zaznamu": 412
+      },
+      {
+        "kategorie": "L",
+        "forma": "22",
+        "zaznamu": 246
+      },
+      {
+        "kategorie": "C",
+        "forma": "10",
+        "zaznamu": 221
+      },
+      {
+        "kategorie": "M",
+        "forma": "22",
+        "zaznamu": 177
+      },
+      {
+        "kategorie": "H",
+        "forma": "22",
+        "zaznamu": 91
+      },
+      {
+        "kategorie": "M",
+        "forma": "30",
+        "zaznamu": 45
+      },
+      {
+        "kategorie": "P",
+        "forma": "10",
+        "zaznamu": 39
+      },
+      {
+        "kategorie": "?",
+        "forma": "22",
+        "zaznamu": 35
+      },
+      {
+        "kategorie": "L",
+        "forma": "23",
+        "zaznamu": 31
+      },
+      {
+        "kategorie": "L",
+        "forma": "30",
+        "zaznamu": 25
+      },
+      {
+        "kategorie": "H",
+        "forma": "30",
+        "zaznamu": 24
+      },
+      {
+        "kategorie": "M",
+        "forma": "23",
+        "zaznamu": 23
+      },
+      {
+        "kategorie": "M",
+        "forma": "24",
+        "zaznamu": 19
+      },
+      {
+        "kategorie": "K",
+        "forma": "22",
+        "zaznamu": 13
+      },
+      {
+        "kategorie": "L",
+        "forma": "24",
+        "zaznamu": 13
+      },
+      {
+        "kategorie": "J",
+        "forma": "10",
+        "zaznamu": 12
+      },
+      {
+        "kategorie": "H",
+        "forma": "23",
+        "zaznamu": 10
+      },
+      {
+        "kategorie": "P",
+        "forma": "30",
+        "zaznamu": 10
+      },
+      {
+        "kategorie": "E",
+        "forma": "23",
+        "zaznamu": 9
+      },
+      {
+        "kategorie": "?",
+        "forma": "30",
+        "zaznamu": 8
+      },
+      {
+        "kategorie": "K",
+        "forma": "24",
+        "zaznamu": 6
+      },
+      {
+        "kategorie": "?",
+        "forma": "23",
+        "zaznamu": 4
+      },
+      {
+        "kategorie": "?",
+        "forma": "24",
+        "zaznamu": 4
+      },
+      {
+        "kategorie": "E",
+        "forma": "30",
+        "zaznamu": 3
+      },
+      {
+        "kategorie": "P",
+        "forma": "22",
+        "zaznamu": 2
+      },
+      {
+        "kategorie": "E",
+        "forma": "22",
+        "zaznamu": 1
+      },
+      {
+        "kategorie": "E",
+        "forma": "24",
+        "zaznamu": 1
+      },
+      {
+        "kategorie": "J",
+        "forma": "22",
+        "zaznamu": 1
+      },
+      {
+        "kategorie": "J",
+        "forma": "23",
+        "zaznamu": 1
+      },
+      {
+        "kategorie": "K",
+        "forma": "23",
+        "zaznamu": 1
+      },
+      {
+        "kategorie": "K",
+        "forma": "30",
+        "zaznamu": 1
+      }
+    ]
+  },
+  "srovnani_skol": {
+    "hlasene_skoly": {
+      "600006832": {
+        "rejstrik_oboru": 6,
+        "rejstrik_bez_cermatu": [],
+        "cermat_radku": 6,
+        "cermat_bez_jpz": 1,
+        "cermat_bez_rejstriku": [
+          "78-42-M/08"
+        ],
+        "katalog_nabidek_2026": 6,
+        "detail_rejstrik": [
+          {
+            "kod": "63-41-M/02",
+            "forma": "denní",
+            "delka": "40",
+            "dobihajici": false
+          },
+          {
+            "kod": "75-31-M/01",
+            "forma": "distanční",
+            "delka": "40",
+            "dobihajici": false
+          },
+          {
+            "kod": "75-31-M/01",
+            "forma": "dálková",
+            "delka": "40",
+            "dobihajici": false
+          },
+          {
+            "kod": "75-31-M/01",
+            "forma": "denní",
+            "delka": "40",
+            "dobihajici": false
+          },
+          {
+            "kod": "78-42-M/02",
+            "forma": "denní",
+            "delka": "40",
+            "dobihajici": false
+          },
+          {
+            "kod": "78-42-M/03",
+            "forma": "denní",
+            "delka": "40",
+            "dobihajici": false
+          }
+        ],
+        "detail_cermat": [
+          {
+            "kkov": "63-41-M/02",
+            "nazev": "Obchodní akademie",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 30,
+            "prihlasky": 220,
+            "prijati": 30
+          },
+          {
+            "kkov": "75-31-M/01",
+            "nazev": "Předškolní a mimoškolní pedagogika",
+            "forma": "komb",
+            "jpz": false,
+            "kapacita": 90,
+            "prihlasky": 46,
+            "prijati": 36
+          },
+          {
+            "kkov": "75-31-M/01",
+            "nazev": "Předškolní a mimoškolní pedagogika",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 60,
+            "prihlasky": 138,
+            "prijati": 56
+          },
+          {
+            "kkov": "78-42-M/02",
+            "nazev": "Ekonomické lyceum",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 30,
+            "prihlasky": 116,
+            "prijati": 30
+          },
+          {
+            "kkov": "78-42-M/03",
+            "nazev": "Pedagogické lyceum",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 30,
+            "prihlasky": 145,
+            "prijati": 29
+          },
+          {
+            "kkov": "78-42-M/08",
+            "nazev": "Lyceum (režim pokusného ověřování)",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 30,
+            "prihlasky": 69,
+            "prijati": 20
+          }
+        ],
+        "katalog_id_2026": [
+          "600006832_63-41-M/02",
+          "600006832_75-31-M/01",
+          "600006832_75-31-M/01_Délka_studia_4_roky.",
+          "600006832_78-42-M/02",
+          "600006832_78-42-M/03",
+          "600006832_78-42-M/08"
+        ]
+      },
+      "600014231": {
+        "rejstrik_oboru": 19,
+        "rejstrik_bez_cermatu": [
+          "23-55-H/01",
+          "65-42-M/02"
+        ],
+        "cermat_radku": 16,
+        "cermat_bez_jpz": 7,
+        "cermat_bez_rejstriku": [],
+        "katalog_nabidek_2026": 9,
+        "detail_rejstrik": [
+          {
+            "kod": "23-41-M/01",
+            "forma": "denní",
+            "delka": "40",
+            "dobihajici": false
+          },
+          {
+            "kod": "23-51-H/01",
+            "forma": "denní",
+            "delka": "30",
+            "dobihajici": false
+          },
+          {
+            "kod": "23-55-H/01",
+            "forma": "denní",
+            "delka": "30",
+            "dobihajici": true
+          },
+          {
+            "kod": "23-56-H/01",
+            "forma": "denní",
+            "delka": "30",
+            "dobihajici": false
+          },
+          {
+            "kod": "26-41-L/01",
+            "forma": "denní",
+            "delka": "40",
+            "dobihajici": false
+          },
+          {
+            "kod": "26-41-M/01",
+            "forma": "denní",
+            "delka": "40",
+            "dobihajici": false
+          },
+          {
+            "kod": "26-51-H/02",
+            "forma": "denní",
+            "delka": "30",
+            "dobihajici": false
+          },
+          {
+            "kod": "26-52-H/01",
+            "forma": "denní",
+            "delka": "30",
+            "dobihajici": false
+          },
+          {
+            "kod": "36-52-H/01",
+            "forma": "denní",
+            "delka": "30",
+            "dobihajici": false
+          },
+          {
+            "kod": "37-41-M/01",
+            "forma": "denní",
+            "delka": "40",
+            "dobihajici": false
+          },
+          {
+            "kod": "37-41-M/01",
+            "forma": "dálková",
+            "delka": "50",
+            "dobihajici": false
+          },
+          {
+            "kod": "63-41-M/02",
+            "forma": "denní",
+            "delka": "40",
+            "dobihajici": false
+          },
+          {
+            "kod": "64-41-L/51",
+            "forma": "denní",
+            "delka": "20",
+            "dobihajici": false
+          },
+          {
+            "kod": "64-41-L/51",
+            "forma": "dálková",
+            "delka": "30",
+            "dobihajici": false
+          },
+          {
+            "kod": "65-42-M/02",
+            "forma": "denní",
+            "delka": "40",
+            "dobihajici": false
+          },
+          {
+            "kod": "69-51-H/01",
+            "forma": "denní",
+            "delka": "30",
+            "dobihajici": false
+          },
+          {
+            "kod": "78-42-M/01",
+            "forma": "denní",
+            "delka": "40",
+            "dobihajici": false
+          },
+          {
+            "kod": "78-42-M/02",
+            "forma": "denní",
+            "delka": "40",
+            "dobihajici": false
+          },
+          {
+            "kod": "78-42-M/03",
+            "forma": "denní",
+            "delka": "40",
+            "dobihajici": false
+          }
+        ],
+        "detail_cermat": [
+          {
+            "kkov": "23-41-M/01",
+            "nazev": "Strojírenství",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 30,
+            "prihlasky": 70,
+            "prijati": 15
+          },
+          {
+            "kkov": "23-51-H/01",
+            "nazev": "Strojní mechanik",
+            "forma": "den",
+            "jpz": false,
+            "kapacita": 20,
+            "prihlasky": 33,
+            "prijati": 8
+          },
+          {
+            "kkov": "23-56-H/01",
+            "nazev": "Obráběč kovů",
+            "forma": "den",
+            "jpz": false,
+            "kapacita": 10,
+            "prihlasky": 16,
+            "prijati": 4
+          },
+          {
+            "kkov": "26-41-L/01",
+            "nazev": "Mechanik elektrotechnik",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 20,
+            "prihlasky": 57,
+            "prijati": 18
+          },
+          {
+            "kkov": "26-41-M/01",
+            "nazev": "Elektrotechnika",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 60,
+            "prihlasky": 106,
+            "prijati": 33
+          },
+          {
+            "kkov": "26-51-H/02",
+            "nazev": "Elektrikář - silnoproud",
+            "forma": "den",
+            "jpz": false,
+            "kapacita": 12,
+            "prihlasky": 24,
+            "prijati": 11
+          },
+          {
+            "kkov": "26-51-H/02",
+            "nazev": "Elektrikář - silnoproud",
+            "forma": "den",
+            "jpz": false,
+            "kapacita": 20,
+            "prihlasky": 75,
+            "prijati": 19
+          },
+          {
+            "kkov": "26-52-H/01",
+            "nazev": "Elektromechanik pro zařízení a přístroje",
+            "forma": "den",
+            "jpz": false,
+            "kapacita": 10,
+            "prihlasky": 29,
+            "prijati": 10
+          },
+          {
+            "kkov": "36-52-H/01",
+            "nazev": "Instalatér",
+            "forma": "den",
+            "jpz": false,
+            "kapacita": 14,
+            "prihlasky": 34,
+            "prijati": 10
+          },
+          {
+            "kkov": "37-41-M/01",
+            "nazev": "Provoz a ekonomika dopravy",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 30,
+            "prihlasky": 66,
+            "prijati": 6
+          },
+          {
+            "kkov": "63-41-M/02",
+            "nazev": "Obchodní akademie",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 60,
+            "prihlasky": 169,
+            "prijati": 33
+          },
+          {
+            "kkov": "64-41-L/51",
+            "nazev": "Podnikání",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 30,
+            "prihlasky": 68,
+            "prijati": 27
+          },
+          {
+            "kkov": "69-51-H/01",
+            "nazev": "Kadeřník",
+            "forma": "den",
+            "jpz": false,
+            "kapacita": 30,
+            "prihlasky": 100,
+            "prijati": 27
+          },
+          {
+            "kkov": "78-42-M/01",
+            "nazev": "Technické lyceum",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 20,
+            "prihlasky": 43,
+            "prijati": 9
+          },
+          {
+            "kkov": "78-42-M/02",
+            "nazev": "Ekonomické lyceum",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 30,
+            "prihlasky": 97,
+            "prijati": 14
+          },
+          {
+            "kkov": "78-42-M/03",
+            "nazev": "Pedagogické lyceum",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 30,
+            "prihlasky": 130,
+            "prijati": 30
+          }
+        ],
+        "katalog_id_2026": [
+          "600014231_23-41-M/01",
+          "600014231_26-41-L/01_Elektrotechnik_pro_automatizaci_a_robotizaci",
+          "600014231_26-41-M/01",
+          "600014231_37-41-M/01_Řízení_dopravy_a_přepravy",
+          "600014231_63-41-M/02",
+          "600014231_64-41-L/51",
+          "600014231_78-42-M/01",
+          "600014231_78-42-M/02",
+          "600014231_78-42-M/03"
+        ]
+      },
+      "600170233": {
+        "rejstrik_oboru": 8,
+        "rejstrik_bez_cermatu": [],
+        "cermat_radku": 8,
+        "cermat_bez_jpz": 3,
+        "cermat_bez_rejstriku": [],
+        "katalog_nabidek_2026": 5,
+        "detail_rejstrik": [
+          {
+            "kod": "29-54-H/01",
+            "forma": "denní",
+            "delka": "30",
+            "dobihajici": false
+          },
+          {
+            "kod": "64-41-L/51",
+            "forma": "denní",
+            "delka": "20",
+            "dobihajici": false
+          },
+          {
+            "kod": "65-42-M/01",
+            "forma": "denní",
+            "delka": "40",
+            "dobihajici": false
+          },
+          {
+            "kod": "65-42-M/02",
+            "forma": "denní",
+            "delka": "40",
+            "dobihajici": false
+          },
+          {
+            "kod": "65-51-H/01",
+            "forma": "denní",
+            "delka": "30",
+            "dobihajici": false
+          },
+          {
+            "kod": "66-52-H/01",
+            "forma": "denní",
+            "delka": "30",
+            "dobihajici": false
+          },
+          {
+            "kod": "75-31-M/01",
+            "forma": "denní",
+            "delka": "40",
+            "dobihajici": false
+          },
+          {
+            "kod": "78-42-M/03",
+            "forma": "denní",
+            "delka": "40",
+            "dobihajici": false
+          }
+        ],
+        "detail_cermat": [
+          {
+            "kkov": "29-54-H/01",
+            "nazev": "Cukrář",
+            "forma": "den",
+            "jpz": false,
+            "kapacita": 15,
+            "prihlasky": 71,
+            "prijati": 15
+          },
+          {
+            "kkov": "64-41-L/51",
+            "nazev": "Podnikání",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 30,
+            "prihlasky": 100,
+            "prijati": 29
+          },
+          {
+            "kkov": "65-42-M/01",
+            "nazev": "Hotelnictví",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 30,
+            "prihlasky": 91,
+            "prijati": 30
+          },
+          {
+            "kkov": "65-42-M/02",
+            "nazev": "Cestovní ruch",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 30,
+            "prihlasky": 158,
+            "prijati": 29
+          },
+          {
+            "kkov": "65-51-H/01",
+            "nazev": "Kuchař - číšník",
+            "forma": "den",
+            "jpz": false,
+            "kapacita": 30,
+            "prihlasky": 74,
+            "prijati": 30
+          },
+          {
+            "kkov": "66-52-H/01",
+            "nazev": "Aranžér",
+            "forma": "den",
+            "jpz": false,
+            "kapacita": 15,
+            "prihlasky": 41,
+            "prijati": 14
+          },
+          {
+            "kkov": "75-31-M/01",
+            "nazev": "Předškolní a mimoškolní pedagogika",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 30,
+            "prihlasky": 76,
+            "prijati": 30
+          },
+          {
+            "kkov": "78-42-M/03",
+            "nazev": "Pedagogické lyceum",
+            "forma": "den",
+            "jpz": true,
+            "kapacita": 30,
+            "prihlasky": 120,
+            "prijati": 30
+          }
+        ],
+        "katalog_id_2026": [
+          "600170233_64-41-L/51",
+          "600170233_65-42-M/01",
+          "600170233_65-42-M/02",
+          "600170233_75-31-M/01",
+          "600170233_78-42-M/03"
+        ]
+      }
+    },
+    "vzorek": {
+      "seed": 209,
+      "rediza": [
+        "600005208",
+        "600005381",
+        "600006727",
+        "600007065",
+        "600007090",
+        "600007529",
+        "600007821",
+        "600008908",
+        "600009998",
+        "600010171",
+        "600010287",
+        "600010678",
+        "600011429",
+        "600012301",
+        "600012379",
+        "600014291",
+        "600014410",
+        "600015629",
+        "600015637",
+        "600015866",
+        "600017176",
+        "600019578",
+        "600019853",
+        "600020959",
+        "600026779",
+        "600171451",
+        "610100645",
+        "610500732",
+        "691017638",
+        "691017972"
+      ],
+      "souhrn": {
+        "rejstrik_oboru": 215,
+        "rejstrik_bez_cermatu": 37,
+        "cermat_radku": 179,
+        "cermat_bez_jpz": 82,
+        "cermat_bez_rejstriku": 0,
+        "katalog_nabidek_2026": 93
+      },
+      "skoly": {
+        "600005208": {
+          "rejstrik_oboru": 2,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 2,
+          "cermat_bez_jpz": 0,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 2
+        },
+        "600005381": {
+          "rejstrik_oboru": 37,
+          "rejstrik_bez_cermatu": [
+            "23-56-H/01",
+            "36-54-H/01",
+            "36-57-E/01",
+            "36-59-E/01",
+            "36-64-E/01",
+            "36-67-E/01"
+          ],
+          "cermat_radku": 34,
+          "cermat_bez_jpz": 21,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 9
+        },
+        "600006727": {
+          "rejstrik_oboru": 6,
+          "rejstrik_bez_cermatu": [
+            "53-41-H/01",
+            "53-41-M/01"
+          ],
+          "cermat_radku": 4,
+          "cermat_bez_jpz": 0,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 4
+        },
+        "600007065": {
+          "rejstrik_oboru": 9,
+          "rejstrik_bez_cermatu": [
+            "66-51-H/01",
+            "66-52-H/01",
+            "68-43-M/01"
+          ],
+          "cermat_radku": 6,
+          "cermat_bez_jpz": 1,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 5
+        },
+        "600007090": {
+          "rejstrik_oboru": 3,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 3,
+          "cermat_bez_jpz": 0,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 3
+        },
+        "600007529": {
+          "rejstrik_oboru": 2,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 2,
+          "cermat_bez_jpz": 0,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 2
+        },
+        "600007821": {
+          "rejstrik_oboru": 8,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 5,
+          "cermat_bez_jpz": 1,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 4
+        },
+        "600008908": {
+          "rejstrik_oboru": 3,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 3,
+          "cermat_bez_jpz": 0,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 3
+        },
+        "600009998": {
+          "rejstrik_oboru": 2,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 2,
+          "cermat_bez_jpz": 0,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 2
+        },
+        "600010171": {
+          "rejstrik_oboru": 1,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 4,
+          "cermat_bez_jpz": 0,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 4
+        },
+        "600010287": {
+          "rejstrik_oboru": 2,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 2,
+          "cermat_bez_jpz": 0,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 2
+        },
+        "600010678": {
+          "rejstrik_oboru": 30,
+          "rejstrik_bez_cermatu": [
+            "16-01-M/002",
+            "16-01-M/01",
+            "36-67-H/01",
+            "63-41-M/004",
+            "64-41-L/524",
+            "75-41-L/51",
+            "78-62-C/02"
+          ],
+          "cermat_radku": 21,
+          "cermat_bez_jpz": 15,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 6
+        },
+        "600011429": {
+          "rejstrik_oboru": 16,
+          "rejstrik_bez_cermatu": [
+            "29-53-H/01",
+            "65-41-L/01"
+          ],
+          "cermat_radku": 14,
+          "cermat_bez_jpz": 11,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 3
+        },
+        "600012301": {
+          "rejstrik_oboru": 2,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 2,
+          "cermat_bez_jpz": 0,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 2
+        },
+        "600012379": {
+          "rejstrik_oboru": 10,
+          "rejstrik_bez_cermatu": [
+            "26-51-H/003",
+            "36-64-H/001",
+            "36-67-E/02",
+            "36-67-E/503",
+            "36-67-H/001"
+          ],
+          "cermat_radku": 4,
+          "cermat_bez_jpz": 4,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 0
+        },
+        "600014291": {
+          "rejstrik_oboru": 11,
+          "rejstrik_bez_cermatu": [
+            "26-41-L/01",
+            "26-51-H/01",
+            "64-41-L/51"
+          ],
+          "cermat_radku": 9,
+          "cermat_bez_jpz": 6,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 3
+        },
+        "600014410": {
+          "rejstrik_oboru": 3,
+          "rejstrik_bez_cermatu": [
+            "68-43-M/01"
+          ],
+          "cermat_radku": 2,
+          "cermat_bez_jpz": 0,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 2
+        },
+        "600015629": {
+          "rejstrik_oboru": 8,
+          "rejstrik_bez_cermatu": [
+            "53-41-H/01",
+            "53-41-M/01",
+            "78-42-M/04"
+          ],
+          "cermat_radku": 6,
+          "cermat_bez_jpz": 0,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 6
+        },
+        "600015637": {
+          "rejstrik_oboru": 3,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 3,
+          "cermat_bez_jpz": 0,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 3
+        },
+        "600015866": {
+          "rejstrik_oboru": 2,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 2,
+          "cermat_bez_jpz": 0,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 2
+        },
+        "600017176": {
+          "rejstrik_oboru": 2,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 2,
+          "cermat_bez_jpz": 0,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 2
+        },
+        "600019578": {
+          "rejstrik_oboru": 8,
+          "rejstrik_bez_cermatu": [
+            "53-41-M/01",
+            "69-41-L/02"
+          ],
+          "cermat_radku": 6,
+          "cermat_bez_jpz": 0,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 7
+        },
+        "600019853": {
+          "rejstrik_oboru": 7,
+          "rejstrik_bez_cermatu": [
+            "53-41-L/51",
+            "53-41-M/01"
+          ],
+          "cermat_radku": 3,
+          "cermat_bez_jpz": 1,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 2
+        },
+        "600020959": {
+          "rejstrik_oboru": 11,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 11,
+          "cermat_bez_jpz": 8,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 3
+        },
+        "600026779": {
+          "rejstrik_oboru": 8,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 8,
+          "cermat_bez_jpz": 8,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 0
+        },
+        "600171451": {
+          "rejstrik_oboru": 1,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 1,
+          "cermat_bez_jpz": 1,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 0
+        },
+        "610100645": {
+          "rejstrik_oboru": 11,
+          "rejstrik_bez_cermatu": [
+            "72-41-M/01"
+          ],
+          "cermat_radku": 11,
+          "cermat_bez_jpz": 2,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 9
+        },
+        "610500732": {
+          "rejstrik_oboru": 2,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 2,
+          "cermat_bez_jpz": 2,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 0
+        },
+        "691017638": {
+          "rejstrik_oboru": 3,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 3,
+          "cermat_bez_jpz": 1,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 1
+        },
+        "691017972": {
+          "rejstrik_oboru": 2,
+          "rejstrik_bez_cermatu": [],
+          "cermat_radku": 2,
+          "cermat_bez_jpz": 0,
+          "cermat_bez_rejstriku": [],
+          "katalog_nabidek_2026": 2
+        }
+      }
+    }
+  },
+  "dipsy": {
+    "soubor": "kriteria_prijeti_2026.json",
+    "klice_souboru": [
+      "data",
+      "kolo",
+      "pokryti",
+      "rok",
+      "stav",
+      "zdroj"
+    ],
+    "datovych_odilu": 2,
+    "nabidek_bez_jpz_v_cermatu": 3131,
+    "z_nich_v_prepisu_kriterii": 0,
+    "poznamka": "Místní sběr karet DiPSy (data/dipsy-kriteria-2026/) v tomto checkoutu není; pokrytí karet u nabídek bez JPZ by vyžadovalo dotaz na api.dipsy.gov.cz, který je mimo povolený rozsah."
+  },
+  "obsazenost": {
+    "C": {
+      "nabidek": 181,
+      "obsazenost": 0.6003,
+      "s_volnymi_misty": 124
+    },
+    "E": {
+      "nabidek": 519,
+      "obsazenost": 0.5818,
+      "s_volnymi_misty": 413
+    },
+    "H": {
+      "nabidek": 1776,
+      "obsazenost": 0.6879,
+      "s_volnymi_misty": 1372
+    },
+    "J": {
+      "nabidek": 8,
+      "obsazenost": 0.6604,
+      "s_volnymi_misty": 5
+    },
+    "L": {
+      "nabidek": 30,
+      "obsazenost": 0.5591,
+      "s_volnymi_misty": 25
+    },
+    "M": {
+      "nabidek": 215,
+      "obsazenost": 0.7844,
+      "s_volnymi_misty": 115
+    },
+    "P": {
+      "nabidek": 120,
+      "obsazenost": 0.805,
+      "s_volnymi_misty": 59
+    },
+    "se_zkouskou": {
+      "nabidek": 3091,
+      "obsazenost": 0.8368,
+      "s_volnymi_misty": 1646
+    }
+  },
+  "soutezici_prahy": {
+    "pod_prahem_10_soutezicich": {
+      "C": {
+        "nabidek": 181,
+        "pod_prahem": 164,
+        "podil": 0.9061
+      },
+      "E": {
+        "nabidek": 519,
+        "pod_prahem": 379,
+        "podil": 0.7303
+      },
+      "H": {
+        "nabidek": 1776,
+        "pod_prahem": 641,
+        "podil": 0.3609
+      },
+      "J": {
+        "nabidek": 8,
+        "pod_prahem": 6,
+        "podil": 0.75
+      },
+      "L": {
+        "nabidek": 30,
+        "pod_prahem": 24,
+        "podil": 0.8
+      },
+      "M": {
+        "nabidek": 215,
+        "pod_prahem": 70,
+        "podil": 0.3256
+      },
+      "P": {
+        "nabidek": 120,
+        "pod_prahem": 99,
+        "podil": 0.825
+      }
+    },
+    "pasma_H_nad_prahem": {
+      "kapacita_nerozhodovala": 574,
+      "vetsina_uspela": 302,
+      "stredne_tezke": 164,
+      "tezke": 78,
+      "velmi_tezke": 17
+    }
+  },
+  "pojistky": {
+    "deti_s_H_nebo_E": 50749,
+    "z_nich_kombinuje_s_M_K_L": 20588,
+    "maturitni_prvni_a_H_E_pojistka": 18611,
+    "maturitni_prvni_a_H_E_pojistka_prvni_neprazdna": 18627
+  },
+  "agregaty_2025": {
+    "soubor": "PZ2025_kolo1_skolobory_vysledky.xlsx",
+    "radku_celkem": 6351,
+    "bez_jpz_celkem": 3146,
+    "bez_jpz_denni_nezkr_celkem": 2916,
+    "bez_jpz_po_kategorii": [
+      {
+        "kategorie": "H",
+        "denni_nezkr": true,
+        "nabidek": 1795
+      },
+      {
+        "kategorie": "E",
+        "denni_nezkr": true,
+        "nabidek": 527
+      },
+      {
+        "kategorie": "M",
+        "denni_nezkr": true,
+        "nabidek": 218
+      },
+      {
+        "kategorie": "C",
+        "denni_nezkr": true,
+        "nabidek": 190
+      },
+      {
+        "kategorie": "H",
+        "denni_nezkr": false,
+        "nabidek": 164
+      },
+      {
+        "kategorie": "P",
+        "denni_nezkr": true,
+        "nabidek": 146
+      },
+      {
+        "kategorie": "P",
+        "denni_nezkr": false,
+        "nabidek": 32
+      },
+      {
+        "kategorie": "L",
+        "denni_nezkr": true,
+        "nabidek": 31
+      },
+      {
+        "kategorie": "M",
+        "denni_nezkr": false,
+        "nabidek": 23
+      },
+      {
+        "kategorie": "J",
+        "denni_nezkr": true,
+        "nabidek": 9
+      },
+      {
+        "kategorie": "C",
+        "denni_nezkr": false,
+        "nabidek": 7
+      },
+      {
+        "kategorie": "E",
+        "denni_nezkr": false,
+        "nabidek": 2
+      },
+      {
+        "kategorie": "J",
+        "denni_nezkr": false,
+        "nabidek": 1
+      },
+      {
+        "kategorie": "L",
+        "denni_nezkr": false,
+        "nabidek": 1
+      }
+    ]
+  },
+  "nastavby": {
+    "celkem": 323,
+    "rozpad": [
+      {
+        "forma": "denni",
+        "zkracene": "ne",
+        "jpz": "s_jpz",
+        "nabidek": 251
+      },
+      {
+        "forma": "dal",
+        "zkracene": "ne",
+        "jpz": "s_jpz",
+        "nabidek": 55
+      },
+      {
+        "forma": "komb",
+        "zkracene": "ne",
+        "jpz": "s_jpz",
+        "nabidek": 12
+      },
+      {
+        "forma": "dist",
+        "zkracene": "ne",
+        "jpz": "s_jpz",
+        "nabidek": 5
+      }
+    ]
+  },
+  "druhe_kolo": {
+    "radku_celkem": 2707,
+    "bez_jpz_celkem": 1556,
+    "po_kategorii": {
+      "C": {
+        "nabidek": 70,
+        "kapacita": 304,
+        "prihlasky": 84,
+        "prijati": 61
+      },
+      "E": {
+        "nabidek": 304,
+        "kapacita": 1751,
+        "prihlasky": 1470,
+        "prijati": 561
+      },
+      "H": {
+        "nabidek": 1024,
+        "kapacita": 8129,
+        "prihlasky": 11030,
+        "prijati": 3428
+      },
+      "J": {
+        "nabidek": 5,
+        "kapacita": 47,
+        "prihlasky": 45,
+        "prijati": 27
+      },
+      "L": {
+        "nabidek": 23,
+        "kapacita": 126,
+        "prihlasky": 30,
+        "prijati": 17
+      },
+      "M": {
+        "nabidek": 98,
+        "kapacita": 943,
+        "prihlasky": 729,
+        "prijati": 329
+      },
+      "P": {
+        "nabidek": 32,
+        "kapacita": 79,
+        "prihlasky": 63,
+        "prijati": 26
+      }
+    }
+  },
+  "skupiny_oboru": {
+    "skupin": 18,
+    "nad_prahem_30": 11,
+    "po_skupinach": {
+      "21": 2,
+      "23": 412,
+      "26": 201,
+      "28": 12,
+      "29": 146,
+      "31": 10,
+      "32": 4,
+      "33": 104,
+      "34": 17,
+      "36": 208,
+      "37": 6,
+      "39": 18,
+      "41": 169,
+      "53": 45,
+      "65": 188,
+      "66": 113,
+      "69": 84,
+      "82": 38
+    }
+  },
+  "domovy": {
+    "domovu_mladeze_H22": 382,
+    "internatu_H21": 68,
+    "redizo_se_ss": 1362,
+    "redizo_s_domovem_nebo_internatem": 438,
+    "ss_s_domovem_nebo_internatem": 391,
+    "pole_zaznamu": [
+      "izo",
+      "uplnyNazev",
+      "druh",
+      "kapacity[].nejvyssiPovolenyPocet",
+      "mistaVyuky[].adresa"
+    ]
+  },
+  "nove_skoly": {
+    "skol_jen_bez_jpz": 227,
+    "z_nich_s_inspis_profilem": 167,
+    "z_nich_se_seznamem_inspekci": 226,
+    "z_nich_s_extrakci_zpravy": 0
+  }
+}
