@@ -1,6 +1,6 @@
 # Doplněk návrhu simulátoru: učební obor jako pojistka bez bodů
 
-Verze 0.1 · 1. 10. 2026 · **návrh, čeká na schválení vlastníkem projektu.** Na schválení čeká
+Verze 0.2 · 1. 10. 2026 · **návrh, čeká na schválení vlastníkem projektu.** Na schválení čeká
 etapa 5 fáze 2 oborů bez jednotné zkoušky (#244).
 
 Doplňuje [návrh Simulátoru přijímaček](navrh-simulator-prijimacek-2027.md) (dále „návrh simulátoru“)
@@ -63,15 +63,16 @@ testu. Řadí se stejně jako ostatní výsledky (dojezd, pak abecedně); bez ř
 Věta pod názvem:
 
 > Učební obory končí výučním listem. Jednotná přijímací zkouška se u nich nekoná, proto tvůj
-> výsledek testu s nimi nesrovnáváme. Ukážeme jen, jestli v 1. kole {rok} bylo místo pro všechny,
-> kdo splnili podmínky školy.
+> výsledek testu s nimi nesrovnáváme. Ukážeme jen, jestli v 1. kole {rok} přijali všechny
+> soutěžící uchazeče, tedy ty, kdo splnili požadavky školy a nedostali se na obor, který měli
+> na přihlášce výš.
 
 Věta u oboru:
 
 | Stav | Věta |
 |---|---|
-| pojistka | „V 1. kole {rok} tu nikoho neodmítli kvůli počtu míst: místo bylo pro všechny, kdo splnili podmínky školy (přijato {přijatí}).“ |
-| pojistka, hodně nesplněných podmínek | k větě výše: „Podmínky školy ale nesplnilo {nesplnili} uchazečů, přečti si je na stránce oboru.“ Ukáže se, když počet nesplněných dosáhne počtu přijatých nebo 20 % přihlášek (stejné pravidlo jako u *Obtížnosti přijetí slovy*). |
+| pojistka | „V 1. kole {rok} tu nikoho neodmítli kvůli počtu míst: přijali všechny soutěžící uchazeče (přijato {přijatí}).“ |
+| pojistka, mnoho uchazečů nedosáhlo požadavku školy | k větě výše: „Požadavku školy, například minima z kritérií, ale nedosáhlo {nesplnili} uchazečů. Kritéria najdeš na stránce oboru.“ Ukáže se, když počet uchazečů, kteří nedosáhli požadavku školy (`conditions_not_met`), dosáhne počtu přijatých nebo 20 % přihlášek (stejné pravidlo jako u *Obtížnosti přijetí slovy*). |
 | kvůli počtu míst někoho odmítli | „V 1. kole {rok} tu kvůli počtu míst někoho odmítli, proto ho jako pojistku nepočítáme. Podrobnosti jsou na stránce oboru.“ |
 | nikoho neodmítli, ale méně než 10 soutěžících | „V 1. kole {rok} tu nikoho neodmítli kvůli počtu míst, ale o místo soutěžilo jen {soutěžící} uchazečů; z tak malého počtu pojistku neurčujeme.“ (Věta nesmí odporovat stránce oboru, která tu ukáže „místo pro všechny“, viz oddíl 4.) |
 | chybí počty | „Pro tento obor nemáme počty z 1. kola {rok}.“ |
@@ -80,7 +81,7 @@ Předchozí ročník (spárovaná nabídka): k větě pojistky „Rok předtím 
 kvůli počtu míst někoho odmítli.“ U nespárované nabídky se nepíše nic.
 
 **Strategie.** Když je pojistkou učební obor: „Pojistku máš: {obor}, učební obor, kde v 1. kole
-{rok} nikoho neodmítli kvůli počtu míst. Platí to jen, když splníš podmínky školy.“ Standardní
+{rok} nikoho neodmítli kvůli počtu míst. Platí to jen, když splníš požadavky školy.“ Standardní
 věta, že pořadí na přihlášce šanci na přijetí nemění, zůstává. Výhrada 3 („skupiny popisují
 1. kolo {rok}, ne předpověď“) platí i pro učební obory a v textu výhrad se o ně rozšíří.
 
@@ -93,12 +94,18 @@ Viz otevřená otázka 3.
 „…, nebo učební obor, kde v 1. kole daného roku nikoho neodmítli kvůli počtu míst
 (aspoň 10 soutěžících uchazečů)“. Nepoužívat dál „jistota“, „jistá škola“, „záchranná škola“.
 
+**Slova ve větách** se drží slovníku pojmů: „nedosáhli požadavku školy“ a „požadavky školy“, ne
+„nesplnili podmínky“ ani „podmínky školy“ (pojmy *nedosáhli požadavku školy* a *požadavek školy*);
+„místo pro všechny“ se nepíše, protože u pojistky by znělo jako záruka (pojem *obory, kde nikoho
+neodmítli*). *Soutěžící uchazeči* se vysvětlují při prvním výskytu v bloku (věta pod názvem bloku).
+
 ## 4. Krajní případy
 
 - **Chybějící data.** Nabídka bez řádku v datech 1. kola (nový obor, nevypsaná loni) nebo
   z 53 nabídek bez počtů (návrh učebních oborů, oddíl 3.3) pojistkou není. Chybějící údaj
-  není nula: nikdy se nepočítá jako „nikoho neodmítli“. Rozpor počtů (soutěžící ≠ přijatí +
-  nepřijatí kvůli kapacitě) také vede k „nemáme počty“.
+  není nula: nikdy se nepočítá jako „nikoho neodmítli“. Soutěžící jsou definovaní jako přijatí +
+  nepřijatí kvůli kapacitě (`soutezicichUchazecu` v `src/lib/obor-profil.ts`); chybí-li jedno
+  z polí `prijati` a `capacity_rejected`, soutěžící nejdou spočítat a platí „nemáme počty“.
 - **Malé skupiny.** Pod prahem 10 soutěžících pojistkou není, i když nikoho neodmítli. V datech
   2026 je pod prahem 641 z 1 776 nabídek H a 379 z 519 nabídek E (oddíl 3.6). Pozor na dvě
   místa, která práh u tohoto stupně nemají: `zarazeniObtiznosti` v `src/lib/obor-profil.ts`
@@ -143,6 +150,8 @@ nevzniká. Body uchazeče dál neopouštějí prohlížeč.
 - [ ] U učebních oborů se v simulátoru nezobrazí žádný bodový údaj ani odznak obtížnosti.
 - [ ] `navrhniPojistku` nenabízí učební obor, pokud žádný učební obor není mezi zvažovanými.
 - [ ] Každá věta nese rok z registru; výhrady se zobrazují i u bloku učebních oborů.
+- [ ] Věty používají pojmy ze slovníku (*požadavek školy*, ne „podmínky“; bez „místo pro všechny“)
+      a *soutěžící uchazeče* vysvětlují při prvním výskytu v bloku.
 - [ ] Slovník pojmů (*pojistka*) a slovník ukazatelů (*Obtížnost přijetí slovy*, „Kde se
       zobrazuje: simulátor“) doplněny v téže dávce.
 - [ ] Testy čistých funkcí: pojistka ano/ne pro každý stav z oddílu 3 a 4, H vs. E vs. talentové,
@@ -163,10 +172,11 @@ nevzniká. Body uchazeče dál neopouštějí prohlížeč.
    (počet pojistek H by pak bylo nutné změřit znovu)?
 5. **Asymetrie s obory se zkouškou.** Obor se zkouškou, kde nikoho neodmítli, pojistkou není
    (body mohly být pod minimem školy), učební obor se stejnou vlastností ano. Doplněk to drží
-   podle návrhu učebních oborů a připomíná podmínky školy větou z oddílu 3. Souhlas?
+   podle návrhu učebních oborů a připomíná požadavky školy větou z oddílu 3. Souhlas?
 
 ## 8. Historie
 
 | Verze | Změna |
 |---|---|
+| 0.2 | Review (1. 10. 2026): věty podle slovníku pojmů (*nedosáhli požadavku školy* místo „nesplnili podmínky“, bez „místo pro všechny“), vysvětlení soutěžících uchazečů v úvodu bloku; kontrola „rozporu počtů“ nahrazena chybějícím polem, protože soutěžící jsou z definice přijatí + nepřijatí kvůli kapacitě. |
 | 0.1 | První návrh doplňku (#244, etapa 5; návrh učebních oborů oddíl 16 ot. 6, oddíl 17 O4). |
