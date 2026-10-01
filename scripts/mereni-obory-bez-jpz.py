@@ -538,7 +538,7 @@ def mer_druhe_kolo() -> dict:
         s["nabidek"] += 1
         for klic, idx in (("kapacita", i["KAPACITA"]),
                           ("prihlasky", i["PŘIHLÁŠKY CELKEM"]),
-                          ("prijati", i["PŘIJATÍ"]]):
+                          ("prijati", i["PŘIJATÍ"])):
             v = r[idx]
             if je_cislo(v):
                 s[klic] += v

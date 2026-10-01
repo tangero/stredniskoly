@@ -1507,7 +1507,8 @@
   "pojistky": {
     "deti_s_H_nebo_E": 50749,
     "z_nich_kombinuje_s_M_K_L": 20588,
-    "maturitni_prvni_a_H_E_pojistka": 18611
+    "maturitni_prvni_a_H_E_pojistka": 18611,
+    "maturitni_prvni_a_H_E_pojistka_prvni_neprazdna": 18627
   },
   "agregaty_2025": {
     "soubor": "PZ2025_kolo1_skolobory_vysledky.xlsx",
@@ -1615,5 +1616,97 @@
         "nabidek": 5
       }
     ]
+  },
+  "druhe_kolo": {
+    "radku_celkem": 2707,
+    "bez_jpz_celkem": 1556,
+    "po_kategorii": {
+      "C": {
+        "nabidek": 70,
+        "kapacita": 304,
+        "prihlasky": 84,
+        "prijati": 61
+      },
+      "E": {
+        "nabidek": 304,
+        "kapacita": 1751,
+        "prihlasky": 1470,
+        "prijati": 561
+      },
+      "H": {
+        "nabidek": 1024,
+        "kapacita": 8129,
+        "prihlasky": 11030,
+        "prijati": 3428
+      },
+      "J": {
+        "nabidek": 5,
+        "kapacita": 47,
+        "prihlasky": 45,
+        "prijati": 27
+      },
+      "L": {
+        "nabidek": 23,
+        "kapacita": 126,
+        "prihlasky": 30,
+        "prijati": 17
+      },
+      "M": {
+        "nabidek": 98,
+        "kapacita": 943,
+        "prihlasky": 729,
+        "prijati": 329
+      },
+      "P": {
+        "nabidek": 32,
+        "kapacita": 79,
+        "prihlasky": 63,
+        "prijati": 26
+      }
+    }
+  },
+  "skupiny_oboru": {
+    "skupin": 18,
+    "nad_prahem_30": 11,
+    "po_skupinach": {
+      "21": 2,
+      "23": 412,
+      "26": 201,
+      "28": 12,
+      "29": 146,
+      "31": 10,
+      "32": 4,
+      "33": 104,
+      "34": 17,
+      "36": 208,
+      "37": 6,
+      "39": 18,
+      "41": 169,
+      "53": 45,
+      "65": 188,
+      "66": 113,
+      "69": 84,
+      "82": 38
+    }
+  },
+  "domovy": {
+    "domovu_mladeze_H22": 382,
+    "internatu_H21": 68,
+    "redizo_se_ss": 1362,
+    "redizo_s_domovem_nebo_internatem": 438,
+    "ss_s_domovem_nebo_internatem": 391,
+    "pole_zaznamu": [
+      "izo",
+      "uplnyNazev",
+      "druh",
+      "kapacity[].nejvyssiPovolenyPocet",
+      "mistaVyuky[].adresa"
+    ]
+  },
+  "nove_skoly": {
+    "skol_jen_bez_jpz": 227,
+    "z_nich_s_inspis_profilem": 167,
+    "z_nich_se_seznamem_inspekci": 226,
+    "z_nich_s_extrakci_zpravy": 0
   }
 }
