@@ -19,6 +19,11 @@ on:
         type: string
         required: false
         default: "codex/csi-weekly-refresh"
+      shrnuti_i_bez_zmeny:
+        description: "Shrnout zprávy bez shrnutí a založit PR i bez změny seznamu inspekcí (jen ruční spuštění, #266)"
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
@@ -55,17 +60,27 @@ jobs:
           fs.appendFileSync(process.env.GITHUB_OUTPUT, `changed_summary=${out}\n`);
           NODE
 
-      # Shrnutí nových inspekčních zpráv (#266). Běží jen při změně seznamu inspekcí; schválený
+      - name: Decide summaries
+        id: shrnout
+        # Automaticky jen při změně seznamu; ručně (workflow_dispatch) lze spustit i bez ní.
+        run: |
+          if [ "${{ steps.refresh.outputs.changed }}" = "true" ] || [ "${{ github.event.inputs.shrnuti_i_bez_zmeny }}" = "true" ]; then
+            echo "ano=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ano=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Shrnutí nových inspekčních zpráv (#266). Běží při změně seznamu inspekcí, ručně i bez ní; schválený
       # způsob (servery, model, strop, souběh, prodleva) je v inspekce/config/tydenni.json a v #266.
       # Změna kteréhokoli parametru znamená nové ohlášení v issue (CLAUDE.md, pravidlo 7).
       - name: Setup Python
-        if: steps.refresh.outputs.changed == 'true'
+        if: steps.shrnout.outputs.ano == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Install PDF tools
-        if: steps.refresh.outputs.changed == 'true'
+        if: steps.shrnout.outputs.ano == 'true'
         run: |
           sudo apt-get update
           sudo apt-get install -y poppler-utils ocrmypdf tesseract-ocr-ces
@@ -74,9 +89,16 @@ jobs:
         # Nesloučené PR: jeho PDF, texty a výstupy se převezmou, aby se znovu nestahovaly a neplatily
         # a tabulka v PR pokrývala všechny běhy od posledního sloučení. Předpoklad: inspekce/data
         # se na main mezi běhy jinak nemění (ruční dávka jde přes vlastní PR a sloučí se dřív).
-        if: steps.refresh.outputs.changed == 'true'
+        if: steps.shrnout.outputs.ano == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           VETEV=codex/csi-weekly-refresh
+          # Jen z otevřeného PR: zavřené PR (zamítnutá shrnutí) se nesmí převzetím vzkřísit.
+          if [ "$(gh pr list -R "$GITHUB_REPOSITORY" --head "$VETEV" --state open --json number --jq length)" = "0" ]; then
+            echo "Otevřené PR není, nic se nepřebírá."
+            exit 0
+          fi
           if ! git fetch --depth 1 origin "+refs/heads/$VETEV:refs/remotes/origin/$VETEV" 2>/dev/null; then
             echo "Otevřené PR není, nic se nepřebírá."
             exit 0
@@ -104,7 +126,7 @@ jobs:
 
       - name: Select reports without summary
         id: vyber
-        if: steps.refresh.outputs.changed == 'true'
+        if: steps.shrnout.outputs.ano == 'true'
         working-directory: inspekce
         run: |
           python3 scripts/generate_manifest.py
@@ -121,7 +143,7 @@ jobs:
 
       - name: Download, extract and summarize reports
         id: shrnuti
-        if: steps.refresh.outputs.changed == 'true' && steps.vyber.outputs.vybrane != '0'
+        if: steps.shrnout.outputs.ano == 'true' && steps.vyber.outputs.vybrane != '0'
         working-directory: inspekce
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -139,7 +161,7 @@ jobs:
             --model-ids "${{ steps.vyber.outputs.model }}" --workers "${{ steps.vyber.outputs.workers }}" --force
 
       - name: Export summaries and update registry
-        if: steps.refresh.outputs.changed == 'true'
+        if: steps.shrnout.outputs.ano == 'true'
         run: |
           (cd inspekce && python3 scripts/export_extractions.py --pro-web --output ../data/inspection_extractions.json)
           if git diff --quiet -- data/inspection_extractions.json; then
@@ -157,7 +179,7 @@ jobs:
           python3 scripts/stav-datovych-sad.py kontrola
 
       - name: Build PR body
-        if: steps.refresh.outputs.changed == 'true'
+        if: steps.shrnout.outputs.ano == 'true'
         env:
           POZNAMKA: ${{ steps.shrnuti.outputs.poznamka }}
         run: |
@@ -171,7 +193,7 @@ jobs:
 
       - name: Create Pull Request
         id: create_pr
-        if: steps.refresh.outputs.changed == 'true'
+        if: steps.shrnout.outputs.ano == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
           # CSI_PR_TOKEN (fine-grained PAT, #266): na PR pak běží povinné kontroly. Bez něj GITHUB_TOKEN a CI neběží.

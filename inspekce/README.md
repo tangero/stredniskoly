@@ -75,8 +75,9 @@ python3 scripts/aggregate_scores.py
 Workflow `.github/workflows/csi-weekly-refresh.yml` po změně seznamu inspekcí ČŠI shrne nové zprávy
 ve stejném pull requestu jako seznam:
 
-1. převezme PDF, texty a výstupy z ještě nesloučeného PR (`codex/csi-weekly-refresh`), aby se nic
-   nestahovalo a neplatilo znovu; předpokládá, že `inspekce/data` se na `main` mezi běhy jinak nemění;
+1. převezme PDF, texty a výstupy z ještě nesloučeného **otevřeného** PR (`codex/csi-weekly-refresh`), aby se nic
+   nestahovalo a neplatilo znovu; ze zavřeného PR nepřebírá nic. Předpokládá, že `inspekce/data` se na `main`
+   mezi běhy jinak nemění;
 2. `generate_manifest.py`;
 3. `vyber_chybejici.py`: zprávy bez použitelného shrnutí v žádném modelu z `WEB_MODELY`, od nejnovější,
    nejvýš strop z `config/tydenni.json`; nečitelné texty a zprávy bez odkazu jsou výjimky;
@@ -87,8 +88,9 @@ ve stejném pull requestu jako seznam:
 6. `telo_pr.py`: tabulka nových shrnutí od posledního sloučení (první přednost a výtka, bez citací)
    ke kontrole proti zprávě, zprávy nad strop a výjimky.
 
-Kroky běží jen při změně seznamu. Zprávy nad strop proto počkají na další změnu seznamu, případně na
-ruční `workflow_dispatch`. Bez secretu `OPENROUTER_API_KEY` se stahování a shrnutí přeskočí a PR to uvede.
+Automaticky kroky běží jen při změně seznamu. Zprávy nad strop proto počkají na další změnu seznamu,
+případně na ruční spuštění `workflow_dispatch` se vstupem `shrnuti_i_bez_zmeny`, které shrnutí a PR
+připraví i bez změny seznamu. Bez secretu `OPENROUTER_API_KEY` se stahování a shrnutí přeskočí a PR to uvede.
 
 Schválený způsob (portál ČŠI, OpenRouter, model, strop 60, 2 volání najednou, prodleva 2 s, odhad
 ceny 0,02–0,03 USD za zprávu) je v issue #266. Změna kteréhokoli parametru v `config/tydenni.json`
