@@ -1,0 +1,53 @@
+# Štítek `schvaleno` přesune issue na tabuli projektu do sloupce Schváleno
+# a odebere štítek `navrh`. Vestavěné automatizace GitHub Projects na štítky
+# nereagují (docs/spoluprace-na-githubu.md, oddíl 3).
+#
+# PROJECT_TOKEN: klasický token se scopes `project` a `public_repo`.
+# Fine-grained token do projektu na osobním účtu zapisovat neumí.
+name: Tabule – schváleno
+
+on:
+  issues:
+    types: [labeled]
+
+permissions: {}
+
+concurrency:
+  group: tabule-${{ github.event.issue.number }}
+
+jobs:
+  presun:
+    if: github.event.label.name == 'schvaleno'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+      REPO: ${{ github.repository }}
+      CISLO: ${{ github.event.issue.number }}
+      ISSUE_ID: ${{ github.event.issue.node_id }}
+      PROJEKT: PVT_kwHOAA82bs4BlVwZ
+      POLE_STATUS: PVTSSF_lAHOAA82bs4BlVwZzhkDBOk
+      SCHVALENO: 2d8cc121
+    steps:
+      - name: Status Schváleno
+        run: |
+          set -euo pipefail
+          polozka=$(gh api graphql -f query='
+            query($id: ID!) { node(id: $id) { ... on Issue {
+              projectItems(first: 20) { nodes { id project { id } } } } } }' \
+            -f id="$ISSUE_ID" \
+            --jq ".data.node.projectItems.nodes[] | select(.project.id == \"$PROJEKT\") | .id")
+          if [ -z "$polozka" ]; then
+            polozka=$(gh api graphql -f query='
+              mutation($p: ID!, $c: ID!) { addProjectV2ItemById(input: {projectId: $p, contentId: $c}) { item { id } } }' \
+              -f p="$PROJEKT" -f c="$ISSUE_ID" --jq '.data.addProjectV2ItemById.item.id')
+          fi
+          gh api graphql -f query='
+            mutation($p: ID!, $i: ID!, $f: ID!, $o: String!) {
+              updateProjectV2ItemFieldValue(input: {projectId: $p, itemId: $i, fieldId: $f,
+                value: {singleSelectOptionId: $o}}) { projectV2Item { id } } }' \
+            -f p="$PROJEKT" -f i="$polozka" -f f="$POLE_STATUS" -f o="$SCHVALENO" >/dev/null
+          echo "Issue #$CISLO: Status Schváleno"
+
+      - name: Odebrat štítek navrh
+        run: |
+          gh issue edit "$CISLO" -R "$REPO" --remove-label navrh
