@@ -56,7 +56,8 @@ Ověřeno na PR #242: po založení se objevil v Návrhu, po merge přešel do H
 
 - Vestavěné automatizace převádějí jen události, ne štítky. Štítek `schvaleno` proto obsluhuje
   workflow `.github/workflows/tabule-schvaleno.yml`: nastaví Status Schváleno (issue mimo tabuli
-  přidá) a odebere štítek `navrh`. Potřebuje secret `PROJECT_TOKEN`, klasický token se scopes
+  přidá) a odebere štítek `navrh`; u zavřeného issue nic nemění. Odebrání `schvaleno` vrátí
+  otevřené issue ze Schváleno do Návrhu. Potřebuje secret `PROJECT_TOKEN`, klasický token se scopes
   `project` a `public_repo` (fine-grained token do projektu na osobním účtu zapisovat neumí).
   Token má omezenou platnost; po vypršení workflow selže a token je potřeba obnovit.
 - Přesun do Oponentury dělá Patrick ručně.
