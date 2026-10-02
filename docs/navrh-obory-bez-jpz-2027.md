@@ -35,9 +35,10 @@ Doporučení:
    **Body, percentily, pásma ani předpověď dalšího roku u nich nebudou** — výsledkové
    sloupce jsou u všech 3 131 nabídek prázdné. U C, E, J a P se nezobrazuje odznak
    obtížnosti ani filtr podle ní (oddíl 10.1; J a P doplněny ve verzi 1.2).
-5. Pokrytí karet DiPSy u nabídek bez zkoušky se z místních souborů změřit nedá
-   (oddíl 6); změří se v přípravě fáze 2. Do té doby se neslibuje zobrazení kritérií
-   ani bodování u těchto oborů.
+5. Pokrytí karet DiPSy u nabídek bez zkoušky změřila etapa 0 fáze 2 (oddíl 16.1):
+   kartu s PDF podmínek přijetí má každá nabídka. Stránka učebního oboru proto
+   dostane odkaz na PDF v DiPSy. Přepis kritérií, body ani minima se nezobrazují,
+   přepis je samostatné zadání.
 
 Všechna čísla v dokumentu reprodukuje:
 
@@ -263,6 +264,10 @@ Rejstřík je pro fázi 2 **doplňkový zdroj**, ne zdroj nabídek:
 
 ## 7. DiPSy: pokrytí u nabídek bez zkoušky se z místních souborů nedá změřit
 
+> **Stav k verzi 1.2:** změřeno v etapě 0 fáze 2 (oddíl 16.1, bod 1). Kartu s PDF
+> podmínek přijetí má všech 2 902 denních nezkrácených nabídek. Platí doporučení
+> z oddílu 16.1: odkaz na PDF ano, přepis kritérií ne. Text níže je stav fáze 1.
+
 Přepis kritérií `public/kriteria_prijeti_2026.json` pokrývá **0 ze 3 131 nabídek
 bez zkoušky** — vznikal jen nad katalogem. Místní sběr karet (`data/dipsy-kriteria-2026/`)
 v tomto checkoutu není a dotaz na `api.dipsy.gov.cz` je mimo povolený rozsah fáze 1
@@ -386,7 +391,7 @@ percentilová umístění, Podíl přijatých podle bodového pásma, Rozhodl te
 nejistoty, Poloha vůči pásmu, Percentil nejnižšího přijatého, Převedený výsledek
 testu, Pořadí mezi soutěžícími, Nejslabší přijatý v předmětu, Podlaha slabšího
 předmětu, Nevyrovnaní přijatí, Hustota u hranice, Podíl přijímaček na bodování
-(dokud nebudou kritéria z DiPSy).
+(bez přepisu kritérií z DiPSy, který je samostatné zadání; oddíl 16.1).
 
 ### 10.3 Ukazatele z dat uchazečů: data existují, generátory je musí vydat
 
@@ -483,8 +488,8 @@ nebo pole, které by mohlo nabídky bez zkoušky živit, je verdikt a důvod:
 | Agregáty 1. kola 2025 | **použít** | stejných 91 sloupců, 3 146 nabídek bez zkoušky; vývoj 2025 → 2026 (oddíl 3.7) |
 | Infoabsolvent (NPI): nezaměstnanost absolventů obor × kraj | nepoužít | členění by sedělo na stránku oboru, ale sada není v otevřených datech a tabulky jsou obrázky v PDF (doloženo v `docs/zdroje-dat.md`, oddíl 3) |
 | MPSV: absolventi v evidenci ÚP (IZO × obor) | nepoužít | chybí jmenovatel a MŠMT samo označuje počty absolventů škol za nevěrohodné (doloženo tamtéž); proto ani agregace na obor |
-| Odborný výcvik u firem, krajská stipendia pro učně | zdroj neexistuje | v soupisu zdrojů nic takového není; rešerše je úkol přípravy fáze 2, do té doby se o nich mlčí (stejně jako u absolventů) |
-| DiPSy `podminkyProPrijeti` (PDF kritérií) | zatím nepoužít | jediný možný zdroj bodování u H; pokrytí nezměřeno, změří příprava fáze 2 (oddíl 7) |
+| Odborný výcvik u firem, krajská stipendia pro učně | zdroj neexistuje | rešerše v etapě 0 (oddíl 16.1, bod 7) strojově čitelný zdroj nenašla, web o nich mlčí (stejně jako u absolventů) |
+| DiPSy `podminkyProPrijeti` (PDF kritérií) | použít jen jako odkaz | pokrytí 2 902 z 2 902 (oddíl 16.1); přepis bodování je samostatné zadání, protože část PDF je společná pro celou školu a část jsou skeny |
 | DiPSy `skolniCast`, `typyPriloh` | nepoužít bez PDF | samy neříkají, jak škola řadí (stejný závěr jako u JPZ) |
 | DiPSy `kapacita`, `konaJPZ`, `kategorieVzdelani` | nepoužít | duplicitní s CERMATem; aktuální hodnota DiPSy se nepřebírá |
 | DiPSy `vysledkyPrijeti`, `/app/public-stats` | nepoužít | přijaté máme z CERMATu; PDF výsledků mohou nést údaje o jednotlivcích |
