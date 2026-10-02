@@ -78,7 +78,8 @@ function Puvod({ typ, children }: { typ: 'skola' | 'redakce' | 'text' | 'stroj' 
       : 'bg-slate-100 text-slate-500';
   const text = children ?? { skola: 'Doplnila škola', redakce: 'Opravila redakce', text: 'text školy', stroj: 'shrnutí vytvořené automaticky', archiv: 'starší údaj z InspIS' }[typ];
   return (
-    <span className={`inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-0.5 align-middle text-[12px] font-bold ${trida}`}>
+    // Krátké výchozí značky se nelámou; delší text (například s datem zprávy) se v úzké kartě zalomí.
+    <span className={`inline-flex max-w-full items-center gap-1 ${children ? '' : 'whitespace-nowrap '}rounded-full px-2.5 py-0.5 align-middle text-[12px] font-bold ${trida}`}>
       {typ === 'skola' && <Fajfka />}
       {text}
     </span>
