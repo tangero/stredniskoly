@@ -1,7 +1,26 @@
 {
-  "checkedAt": "2026-09-11",
+  "checkedAt": "2026-10-02",
   "source": "https://msmt.gov.cz/media/wp-content/uploads/2026/08/Casovy-harmonogram_2026-2027.pdf",
   "jpzSource": "https://msmt.gov.cz/media/wp-content/uploads/2026/08/Sdeleni-o-terminech_2026-2027.pdf",
+  "cermatSource": "https://prijimacky.cermat.cz/menu/jednotna-prijimaci-zkouska",
+  "overeni": "2. 10. 2026 znovu porovnáno: termíny JPZ se sdělením MŠMT č. j. MSMT-525/2026-13 a s tabulkou na stránce CERMAT, ostatní termíny s časovým harmonogramem MŠMT 2026/2027. Bez rozdílu.",
+  "nezverejneno": [
+    {
+      "id": "casy-testu",
+      "title": "Časy začátku testů JPZ 2027",
+      "note": "MŠMT je podle vyhlášky č. 422/2023 Sb. zveřejňuje do 15. ledna 2027. Do té doby platí jen dny konání."
+    },
+    {
+      "id": "vysledky-jpz-uchazeci",
+      "title": "Kdy uchazeč uvidí body z JPZ 2027",
+      "note": "Harmonogram stanoví jen předání výsledků JPZ školám (do 6. května); podle MŠMT nejde o termín pro uchazeče. Den, kdy výsledky uvidí uchazeči, CERMAT pro rok 2027 zatím nezveřejnil."
+    },
+    {
+      "id": "kriteria-kapacity",
+      "title": "Kritéria a kapacity jednotlivých škol pro rok 2027",
+      "note": "Školy je zveřejní 15.–31. ledna 2027."
+    }
+  ],
   "pravidla": {
     "prihlasek_bezne": 3,
     "prihlasek_talentove": 2,

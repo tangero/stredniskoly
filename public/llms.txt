@@ -31,7 +31,7 @@ Tyto údaje uvádějte vždy spolu s daty; bez nich jsou zavádějící.
 
 ## Hlavní sekce
 
-- [Kalendář přijímaček 2027](https://www.prijimackynaskolu.cz/prijimacky-2027): Termíny přihlášek, JPZ, výsledků a druhého kola podle MŠMT. Export do kalendáře: `/prijimacky-2027.ics`.
+- [Kalendář přijímaček 2027](https://www.prijimackynaskolu.cz/prijimacky-2027): Termíny přihlášek, JPZ, výsledků a druhého kola podle MŠMT. JPZ 2027 (sdělení MŠMT, CERMAT): čtyřleté obory 12. a 13. 4. 2027, šestiletá a osmiletá gymnázia 14. a 15. 4. 2027, náhradní termín 29. a 30. 4. 2027; přihlášky na SŠ 1.–22. 2. 2027; výsledky 1. kola 14. 5. 2027 (ověřeno 2. 10. 2026). Export do kalendáře: `/prijimacky-2027.ics`.
 - [Výsledky 2026](https://www.prijimackynaskolu.cz/vysledky/2026): Výsledky 1. kola podle škol a oborů.
 - [Simulátor](https://www.prijimackynaskolu.cz/simulator): Porovnání cvičného skóre s minulými výsledky.
 - [Analýza škol](https://www.prijimackynaskolu.cz/skoly): Přehled škol a oborů s indexem poptávky.

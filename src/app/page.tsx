@@ -43,6 +43,21 @@ async function nabidkaOboru(): Promise<string | null> {
   return `Školy zveřejnily kritéria přijetí a nabídku oborů pro rok ${rokNovy} ${termin}. Obory a místa na webu jsou zatím z přijímacího řízení ${rokNabidky}; nové doplníme, až je CERMAT zveřejní v otevřených datech.`;
 }
 
+/**
+ * Dny jednotné přijímací zkoušky z kalendáře MŠMT (admissions-2027.json), aby se
+ * hlavní stránka a kalendář nerozešly. Den v týdnu („· pondělí“) se vynechává.
+ */
+function terminyJednotneZkousky(): string | null {
+  const udalosti = calendar.groups.find((g) => g.id === 'stredni-skoly')?.events ?? [];
+  const den = (id: string) => udalosti.find((e) => e.id === id)?.date.split(' · ')[0];
+  const ids = ['jpz-4-1', 'jpz-4-2', 'jpz-vice-1', 'jpz-vice-2', 'jpz-nahradni-1', 'jpz-nahradni-2'];
+  const dny = ids.map(den);
+  const posledni = calendar.groups.flatMap((g) => g.events).find((e) => e.id === 'jpz-nahradni-2');
+  if (dny.some((d) => !d) || !posledni) return null;
+  const rok = posledni.start.slice(0, 4);
+  return `Jednotná přijímací zkouška ${rok}: čtyřleté obory ${dny[0]} a ${dny[1]}, víceletá gymnázia ${dny[2]} a ${dny[3]}, náhradní termín ${dny[4]} a ${dny[5]} ${rok}.`;
+}
+
 export default async function HomePage() {
   const schools = await getAllSchoolsForSearch();
   const kraje = await getAllKraje();
@@ -51,6 +66,7 @@ export default async function HomePage() {
   const totalSchools = new Set(schools.map(s => s.id.split('_')[0])).size;
   const totalKraje = kraje.length;
   const upozorneniNabidka = await nabidkaOboru();
+  const terminyJpz = terminyJednotneZkousky();
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -66,7 +82,8 @@ export default async function HomePage() {
           <div className="mb-8 rounded-xl bg-slate-900 p-6 text-left text-white">
             <p className="text-blue-300 text-sm mb-2">PŘIJÍMAČKY 2027</p>
             <h2 className="text-2xl font-bold mb-3">Termíny už známe. Výběr školy může začít.</h2>
-            <p className="text-slate-300 mb-5">Přihlášky na SŠ: 1.–22. února 2027. Konzervatoře už 1.–30. listopadu 2026.</p>
+            <p className="text-slate-300 mb-2">Přihlášky na SŠ: 1.–22. února 2027. Konzervatoře už 1.–30. listopadu 2026.</p>
+            {terminyJpz && <p className="text-slate-300 mb-5">{terminyJpz}</p>}
             {/* Upozornění, z jakého roku jsou obory (větev titulky) */}
             {upozorneniNabidka && (
               <p className="mb-5 rounded-lg border border-amber-300/40 bg-amber-300/10 px-4 py-3 text-sm leading-relaxed text-amber-50">

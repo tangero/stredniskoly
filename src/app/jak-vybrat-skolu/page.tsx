@@ -4,6 +4,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import calendar from '@/data/admissions-2027.json';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
+import { formatujDen } from '@/lib/veletrhy-pocty';
 
 /**
  * Průvodce výběrem školy: jeden návod místo dvou stránek.
@@ -451,7 +452,7 @@ export default async function JakVybratSkoluPage() {
           </div>
 
           <p className="mt-8 text-[14px] leading-relaxed text-slate-500">
-            Termíny jsou opsané z harmonogramu MŠMT, ověřeno {calendar.checkedAt}. Údaje o školách pocházejí
+            Termíny jsou opsané z harmonogramu MŠMT, ověřeno {formatujDen(calendar.checkedAt)}. Údaje o školách pocházejí
             z otevřených dat CERMATu, MŠMT a České školní inspekce. Kritéria přijetí vyhlašuje každá škola
             sama a platí to, co zveřejní ona.
           </p>
