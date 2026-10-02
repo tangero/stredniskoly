@@ -63,6 +63,52 @@ def admission_context(r: dict) -> dict:
     return result
 
 
+def zaklad(redizo, kkov) -> str:
+    """Obor školy bez zaměření: REDIZO_KKOV. Na tomto klíči se rozhoduje, zda je nabídka nová."""
+    return f'{redizo}_{kkov}'
+
+
+def zaklady_z_druheho_kola(druhe_kolo: dict, rok: int, sha256: str | None = None) -> set[str]:
+    """Obory nabídnuté v 1. kole roku `rok` podle public/druhe_kolo.json (klíč REDIZO_KKOV[_zaměření]).
+
+    Soubor staví scripts/build-druhe-kolo.py z úplného souhrnu PZ{rok}_kolo1_skolobory_vysledky.xlsx
+    se stejným výběrem jako tento import (denní nezkrácené obory s povinnou JPZ), včetně nástaveb.
+    Doklad musí být úplný: soubor, ze kterého build-druhe-kolo.py vyřadil kolize klíčů, nebo
+    soubor z jiného XLSX, než se kterým import srovnával (`sha256`), se odmítne.
+    """
+    nabidky = druhe_kolo['roky'].get(str(rok))
+    if not nabidky:
+        raise ValueError(f'V druhe_kolo.json chybí ročník {rok}')
+    meta = druhe_kolo.get('meta', {}).get('rocniky', {}).get(str(rok), {})
+    if meta.get('stavy', {}).get('kolize_klice'):
+        raise ValueError(f'druhe_kolo.json {rok} vyřadil kolize klíčů, doklad o loňských nabídkách není úplný')
+    if sha256 is not None and meta.get('kolo1_sha256') != sha256:
+        raise ValueError(f'druhe_kolo.json {rok} nevznikl ze stejného souhrnu 1. kola jako import (sha256)')
+    return {'_'.join(k.split('_')[:2]) for k in nabidky}
+
+
+def oznac_novinky(applications: list[dict], analysis: dict, predchozi: set[str]) -> None:
+    """Nová je jen nabídka, jejíž obor (REDIZO_KKOV) v předchozím roce v 1. kole nebyl.
+
+    Doklad je úplný seznam nabídek předchozího 1. kola, ne schools_data.json: ten za roky 2024
+    a 2025 nástavby neobsahuje, a ty pak vycházely jako nové (issue #257). Změna zaměření
+    nabídku novou nedělá. V school_analysis.json se příznak počítá jen u vypsaného oboru.
+    """
+    vypsane = set()
+    for a in applications:
+        z = zaklad(a['redizo'], a['kkov'])
+        vypsane.add(z)
+        if z in predchozi:
+            a.pop('is_new', None)
+        else:
+            a['is_new'] = True
+    for key, r in analysis.items():
+        if key in vypsane and key not in predchozi:
+            r['is_new_2026'] = True
+        else:
+            r.pop('is_new_2026', None)
+
+
 def build_applications(records: list[dict], legacy: list[dict], history: list[dict]) -> list[dict]:
     ids = defaultdict(set)
     for row in legacy + history:
@@ -132,6 +178,7 @@ def main(input_dir: Path) -> None:
     history = json.loads((public / 'schools_data.json').read_text())['2025']
     legacy = json.loads((public / 'applications_2026.json').read_text())['data']
     applications = build_applications(datasets[2026], legacy, history)
+    predchozi = {zaklad(r['REDIZO'], r['KKOV']) for r in datasets[2025] if is_valid_flat(r)}
     groups = defaultdict(list)
     for app in applications:
         groups[app['redizo'] + '_' + app['kkov']].append(app)
@@ -146,6 +193,7 @@ def main(input_dir: Path) -> None:
             r.update(prihlasky_2026=count, kapacita_2026=capacity,
                      index_poptavky_2026=round(count / capacity, 2) if capacity else 0,
                      prihlasky_priority_2026=[sum(x['pp'][i] for x in offers) for i in range(5)])
+    oznac_novinky(applications, analysis, predchozi)
     meta = {
         'latest_year': 2026, 'available_years': [2026], 'round': 1,
         'source': sources['2026'], 'comparison_source': sources['2025'],
@@ -172,7 +220,40 @@ def main(input_dir: Path) -> None:
     print(json.dumps(meta, ensure_ascii=False, indent=2))
 
 
+def oprav_novinky(public: Path | None = None) -> bool:
+    """Přepočítá jen příznaky novinek v uložených datech, bez XLSX (doklad z public/druhe_kolo.json).
+
+    Ostatní pole i formát souborů zůstávají; soubor se zapíše, jen když se změnil. Vrací, zda se něco změnilo.
+    """
+    public = public or ROOT / 'public'
+    srovnani = json.loads((public / 'cermat_results_meta.json').read_text())['comparison_source']['sha256']
+    predchozi = zaklady_z_druheho_kola(json.loads((public / 'druhe_kolo.json').read_text()), 2025, srovnani)
+    apps_file, analysis_file = public / 'applications_2026.json', public / 'school_analysis.json'
+    apps = json.loads(apps_file.read_text())
+    analysis = json.loads(analysis_file.read_text())
+    pred = (sum(bool(a.get('is_new')) for a in apps['data']), sum(bool(r.get('is_new_2026')) for r in analysis.values()))
+    oznac_novinky(apps['data'], analysis, predchozi)
+    po = (sum(bool(a.get('is_new')) for a in apps['data']), sum(bool(r.get('is_new_2026')) for r in analysis.values()))
+    zmena = False
+    for soubor, text in ((apps_file, json.dumps(apps, ensure_ascii=False, indent=2, allow_nan=False) + '\n'),
+                         (analysis_file, json.dumps(analysis, ensure_ascii=False, separators=(',', ':'), allow_nan=False) + '\n')):
+        if soubor.read_text() != text:
+            soubor.write_text(text)
+            zmena = True
+    print(f'applications_2026.json is_new: {pred[0]} -> {po[0]}; school_analysis.json is_new_2026: {pred[1]} -> {po[1]}'
+          + ('' if zmena else ' (beze změny, nic nezapsáno)'))
+    return zmena
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input-dir', type=Path, required=True)
-    main(parser.parse_args().input_dir)
+    parser.add_argument('--input-dir', type=Path)
+    parser.add_argument('--oprav-novinky', action='store_true',
+                        help='jen přepočítat příznaky novinek z public/druhe_kolo.json, bez XLSX')
+    args = parser.parse_args()
+    if args.oprav_novinky:
+        oprav_novinky()
+    elif args.input_dir:
+        main(args.input_dir)
+    else:
+        parser.error('zadejte --input-dir, nebo --oprav-novinky')
