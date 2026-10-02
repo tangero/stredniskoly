@@ -456,7 +456,7 @@ Není to hranice přijetí; škola mohla vážit i jiná kritéria.
 ### Nevypsané 2. kolo u nenaplněného oboru
 Nabídka, která má ve výsledcích 1. kola méně přijatých uchazečů než míst a 2. kolo nevypsala. Kombinuje souhrn výsledků 1. kola se souhrnem 2. kola téhož roku. Pole `stav` s hodnotou `nenaplneno_bez_2_kola`.
 
-V roce 2026 platí pro 47 % oborů, které ve výsledcích 1. kola mají méně přijatých než míst (768 nabídek; u 300 z nich chybí jediné místo). Věta na webu proto varuje, že méně přijatých po 1. kole neznamená 2. kolo.
+V roce 2026 platí pro 47 % oborů, které ve výsledcích 1. kola mají méně přijatých než míst (768 nabídek; u 300 z nich je přijatých o jednoho méně než míst). Věta na webu proto varuje, že méně přijatých po 1. kole neznamená 2. kolo.
 
 **Co neříká:** Souhrn 1. kola je stav k datu výsledků. Nezachycuje, jak škola místa obsadila potom, takže neříká, že místa zůstala neobsazená, ani proč škola 2. kolo nevypsala. Věta na webu proto popisuje čísla ze souhrnu a škole nic nepřisuzuje.
 

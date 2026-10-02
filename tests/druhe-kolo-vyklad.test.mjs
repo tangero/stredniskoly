@@ -43,3 +43,13 @@ test('nenaplněno o jediné místo: věta netvrdí, že místa zbyla ani že šk
     assert.doesNotMatch(veta, /zbyl|a přesto|volná místa/);
   }
 });
+
+test('nenaplněno bez 2. kola: tvary podle počtu přijatých i míst (#258)', () => {
+  const veta = (prijati, kapacita) => vetyDruhehoKola({ rok: 2026, zaznam: { stav: 'nenaplneno_bez_2_kola', kolo1_kapacita: kapacita, kolo1_prijati: prijati }, predchozi: null });
+  assert.match(veta(0, 1).hlavni, /přijala 0 uchazečů na 1 místo\./);
+  assert.match(veta(1, 2).hlavni, /přijala 1 uchazeče na 2 místa\./);
+  assert.match(veta(2, 3).hlavni, /přijala 2 uchazeče na 3 místa\./);
+  assert.match(veta(4, 5).hlavni, /přijala 4 uchazeče na 5 míst\./);
+  assert.equal(veta(1, 2).kratce, '2. kolo 2026 škola nevypsala; ve výsledcích 1. kola přijato 1 na 2 místa');
+  assert.equal(veta(0, 1).kratce, '2. kolo 2026 škola nevypsala; ve výsledcích 1. kola přijato 0 na 1 místo');
+});
