@@ -19,6 +19,11 @@ on:
         type: string
         required: false
         default: "codex/csi-weekly-refresh"
+      shrnuti_i_bez_zmeny:
+        description: "Shrnout zprávy bez shrnutí a založit PR i bez změny seznamu inspekcí (jen ruční spuštění, #266)"
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
@@ -55,25 +60,149 @@ jobs:
           fs.appendFileSync(process.env.GITHUB_OUTPUT, `changed_summary=${out}\n`);
           NODE
 
+      - name: Decide summaries
+        id: shrnout
+        # Automaticky jen při změně seznamu; ručně (workflow_dispatch) lze spustit i bez ní.
+        run: |
+          if [ "${{ steps.refresh.outputs.changed }}" = "true" ] || [ "${{ github.event.inputs.shrnuti_i_bez_zmeny }}" = "true" ]; then
+            echo "ano=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ano=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Shrnutí nových inspekčních zpráv (#266). Běží při změně seznamu inspekcí, ručně i bez ní; schválený
+      # způsob (servery, model, strop, souběh, prodleva) je v inspekce/config/tydenni.json a v #266.
+      # Změna kteréhokoli parametru znamená nové ohlášení v issue (CLAUDE.md, pravidlo 7).
+      - name: Setup Python
+        if: steps.shrnout.outputs.ano == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PDF tools
+        if: steps.shrnout.outputs.ano == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils ocrmypdf tesseract-ocr-ces
+
+      - name: Carry over summaries from open PR
+        # Nesloučené PR: jeho PDF, texty a výstupy se převezmou, aby se znovu nestahovaly a neplatily
+        # a tabulka v PR pokrývala všechny běhy od posledního sloučení. Předpoklad: inspekce/data
+        # se na main mezi běhy jinak nemění (ruční dávka jde přes vlastní PR a sloučí se dřív).
+        if: steps.shrnout.outputs.ano == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VETEV=codex/csi-weekly-refresh
+          # Jen z otevřeného PR: zavřené PR (zamítnutá shrnutí) se nesmí převzetím vzkřísit.
+          if [ "$(gh pr list -R "$GITHUB_REPOSITORY" --head "$VETEV" --state open --json number --jq length)" = "0" ]; then
+            echo "Otevřené PR není, nic se nepřebírá."
+            exit 0
+          fi
+          if ! git fetch --depth 1 origin "+refs/heads/$VETEV:refs/remotes/origin/$VETEV" 2>/dev/null; then
+            echo "Otevřené PR není, nic se nepřebírá."
+            exit 0
+          fi
+          { git diff --name-only --diff-filter=A HEAD "origin/$VETEV" -- inspekce/data
+            git diff --name-only --diff-filter=M HEAD "origin/$VETEV" -- inspekce/data/outputs/claude_haiku_4_5
+          } | grep -v '^inspekce/data/texts/index.json$' | sort -u > /tmp/prenesene.txt || true
+          if [ -s /tmp/prenesene.txt ]; then
+            git checkout "origin/$VETEV" --pathspec-from-file=/tmp/prenesene.txt
+          fi
+          python3 - <<'PY'
+          import json, subprocess, sys
+          sys.path.insert(0, "inspekce/scripts")
+          from extract_texts import sluc_index
+          cesta = "inspekce/data/texts/index.json"
+          prenesene = {l.rsplit("/", 1)[-1][:-4] for l in open("/tmp/prenesene.txt", encoding="utf-8").read().split()
+                       if l.startswith("inspekce/data/texts/") and l.endswith(".txt")}
+          if prenesene:
+              vetev = json.loads(subprocess.check_output(["git", "show", f"origin/codex/csi-weekly-refresh:{cesta}"]))["reports"]
+              main = json.load(open(cesta, encoding="utf-8"))["reports"]
+              rows = sluc_index(main, [r for r in vetev if r["report_id"] in prenesene])
+              open(cesta, "w", encoding="utf-8").write(json.dumps({"reports": rows}, ensure_ascii=False, indent=2))
+          print(f"Převzato z otevřeného PR: {sum(1 for _ in open('/tmp/prenesene.txt'))} souborů, {len(prenesene)} textů")
+          PY
+
+      - name: Select reports without summary
+        id: vyber
+        if: steps.shrnout.outputs.ano == 'true'
+        working-directory: inspekce
+        run: |
+          python3 scripts/generate_manifest.py
+          python3 scripts/vyber_chybejici.py --vystup "$RUNNER_TEMP/tydenni_reports.json" --souhrn "$RUNNER_TEMP/vyber.json"
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          v = json.load(open(os.path.join(os.environ["RUNNER_TEMP"], "vyber.json")))
+          k = json.load(open("config/tydenni.json"))
+          print(f"vybrane={len(v['vybrane'])}")
+          print(f"workers={k['workers']}")
+          print(f"prodleva={k['prodleva_s']}")
+          print(f"model={k['model_id']}")
+          PY
+
+      - name: Download, extract and summarize reports
+        id: shrnuti
+        if: steps.shrnout.outputs.ano == 'true' && steps.vyber.outputs.vybrane != '0'
+        working-directory: inspekce
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          if [ -z "$OPENROUTER_API_KEY" ]; then
+            echo "poznamka=Shrnutí se nespustilo: chybí secret OPENROUTER_API_KEY (vybráno ${{ steps.vyber.outputs.vybrane }} zpráv)." >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          MANIFEST="$RUNNER_TEMP/tydenni_reports.json"
+          # Portál ČŠI: jeden dotaz najednou s prodlevou; chyba HTTP (i 429) běh zastaví.
+          python3 scripts/download_reports.py --manifest "$MANIFEST" --prodleva "${{ steps.vyber.outputs.prodleva }}"
+          python3 scripts/extract_texts.py --manifest "$MANIFEST" --doplnit-index
+          # Výběr obsahuje jen zprávy bez použitelného shrnutí, --force přepíše i nepoužitelný výstup téhož modelu.
+          python3 scripts/run_extraction.py --manifest "$MANIFEST" --models config/production_models.json \
+            --model-ids "${{ steps.vyber.outputs.model }}" --workers "${{ steps.vyber.outputs.workers }}" --force
+
+      - name: Export summaries and update registry
+        if: steps.shrnout.outputs.ano == 'true'
+        run: |
+          (cd inspekce && python3 scripts/export_extractions.py --pro-web --output ../data/inspection_extractions.json)
+          if git diff --quiet -- data/inspection_extractions.json; then
+            echo "Shrnutí beze změny, registr se nepřepíná."
+          else
+            OBDOBI=$(python3 -c "import json; d=json.load(open('data/inspection_extractions.json'))['schools']; print(max(z['inspection_to'] for v in d.values() for z in v))")
+            DALSI=$(date -u -d '+1 month' +%Y-%m)
+            NEJPOZDEJI=$(date -u -d '+35 days' +%F)
+            python3 scripts/stav-datovych-sad.py prepni csi-extrakce "$OBDOBI" \
+              --soubor data/inspection_extractions.json --kdy "$DALSI" --jistota odhad \
+              --zduvodneni "Nové inspekce přibývají průběžně; shrnutí obnovuje týdenní workflow CSI Weekly Refresh." \
+              --obnovit-nejpozdeji "$NEJPOZDEJI" \
+              --doklad "workflow ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          fi
+          python3 scripts/stav-datovych-sad.py kontrola
+
+      - name: Build PR body
+        if: steps.shrnout.outputs.ano == 'true'
+        env:
+          POZNAMKA: ${{ steps.shrnuti.outputs.poznamka }}
+        run: |
+          git add -A inspekce/data
+          git diff --cached --name-only --diff-filter=AM HEAD -- inspekce/data/outputs/claude_haiku_4_5 > /tmp/zmenene.txt
+          ARGS=()
+          [ -n "$POZNAMKA" ] && ARGS+=(--poznamka "$POZNAMKA")
+          (cd inspekce && python3 scripts/telo_pr.py --zmenene /tmp/zmenene.txt --souhrn "$RUNNER_TEMP/vyber.json" \
+            --vystup "$RUNNER_TEMP/telo_pr.md" "${ARGS[@]}")
+          printf '\nDiff summary: `%s`\n' "${{ steps.summary.outputs.changed_summary }}" >> "$RUNNER_TEMP/telo_pr.md"
+
       - name: Create Pull Request
         id: create_pr
-        if: steps.refresh.outputs.changed == 'true'
+        if: steps.shrnout.outputs.ano == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
+          # CSI_PR_TOKEN (fine-grained PAT, #266): na PR pak běží povinné kontroly. Bez něj GITHUB_TOKEN a CI neběží.
+          token: ${{ secrets.CSI_PR_TOKEN || secrets.GITHUB_TOKEN }}
           commit-message: "Update CSI data with history and diff snapshot"
           branch: "codex/csi-weekly-refresh"
           delete-branch: true
           title: "Weekly CSI refresh: data update detected"
-          body: |
-            Automated weekly CSI refresh found data changes.
-
-            Includes:
-            - updated `public/csi_inspections.json`
-            - updated `data/csi_manifest.json` with valid_from/valid_to versioning
-            - updated `data/csi_diff_latest.json`
-            - optional new snapshot under `data/csi_snapshots/`
-
-            Diff summary: `${{ steps.summary.outputs.changed_summary }}`
+          body-path: ${{ runner.temp }}/telo_pr.md
 
   llm-review:
     runs-on: ubuntu-latest

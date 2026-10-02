@@ -51,12 +51,22 @@ def ocr_text(pdf_path: pathlib.Path, text_path: pathlib.Path) -> bool:
     return True
 
 
+def sluc_index(stavajici: list, nove: list) -> list:
+    """Řádky indexu ze zpracovaného dílčího manifestu nahradí stávající, ostatní zůstanou (#266)."""
+    podle_id = {r["report_id"]: r for r in nove}
+    sloucene = [podle_id.pop(r["report_id"], r) for r in stavajici]
+    return sloucene + [r for r in nove if r["report_id"] in podle_id]
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", default="config/pilot_10_reports.json")
     parser.add_argument("--reports-dir", default="data/reports")
     parser.add_argument("--texts-dir", default="data/texts")
     parser.add_argument("--force", action="store_true")
+    parser.add_argument("--doplnit-index", action="store_true",
+                        help="index doplnit o zprávy z manifestu, ostatní řádky zachovat (dílčí manifest týdenního běhu); "
+                             "bez přepínače index obsahuje jen zprávy z manifestu")
     args = parser.parse_args()
 
     root = pathlib.Path(__file__).resolve().parents[1]
@@ -111,6 +121,8 @@ def main():
         index_rows.append(row)
         print(f"Text: {text_path.name} ({words} slov)")
 
+    if args.doplnit_index and index_path.exists():
+        index_rows = sluc_index(json.loads(index_path.read_text(encoding="utf-8"))["reports"], index_rows)
     index_path.write_text(
         json.dumps({"reports": index_rows}, ensure_ascii=False, indent=2),
         encoding="utf-8"

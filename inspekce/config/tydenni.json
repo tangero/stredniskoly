@@ -1,0 +1,7 @@
+{
+  "_popis": "Týdenní shrnutí nových inspekčních zpráv v csi-weekly-refresh.yml (#266). Změna hodnot znamená nové ohlášení v issue (CLAUDE.md, pravidlo 7).",
+  "model_id": "claude_haiku_4_5",
+  "strop": 60,
+  "workers": 2,
+  "prodleva_s": 2
+}
