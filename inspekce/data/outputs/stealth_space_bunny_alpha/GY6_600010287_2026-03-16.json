@@ -1,0 +1,108 @@
+{
+  "report_id": "GY6_600010287_2026-03-16",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:27:05.048555+00:00",
+  "run_finished_utc": "2026-10-02T16:27:32.729552+00:00",
+  "raw_file": "GY6_600010287_2026-03-16.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600010287_2026-03-16",
+    "school_profile": {
+      "school_type": "Gymnázium, příspěvková organizace, denní forma vzdělávání",
+      "inspection_period": "16. 3. 2026 až 18. 3. 2026",
+      "school_change_summary": "Od minulé inspekce se výrazně zlepšily materiální podmínky a od školního roku 2025/2026 je škola bezbariérová; škola dál podporuje profilaci žáků, volitelné předměty a mimoškolní aktivity."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Široké možnosti rozvoje",
+          "detail": "Škola nabízí volitelné předměty, projekty, zahraniční pobyty, soutěže a další aktivity podle zájmů žáků.",
+          "evidence": "„Široká nabídka volitelných předmětů a mimoškolních aktivit umožňujících žákům všestranně rozvíjet jejich osobnostní potenciál“."
+        },
+        {
+          "tag": "Podpora nadaných žáků",
+          "detail": "Škola identifikuje nadané žáky, podporuje jejich účast v zájmových útvarech a rozvíjí jejich jazykové kompetence.",
+          "evidence": "„Škola se zapojila do projektu na podporu nadaných žáků a realizuje pro ně tematicky zaměřené zájmové útvary.“"
+        },
+        {
+          "tag": "Úspěšné ukončování studia",
+          "detail": "Všichni žáci ročníku 2024/2025 studium úspěšně ukončili a výsledky maturity jsou srovnatelné s republikovým průměrem.",
+          "evidence": "„Ve školním roce 2024/2025 všichni žáci ročník úspěšně ukončili“; výsledky maturity jsou „srovnatelné s republikovým průměrem“."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Školní klima",
+          "detail": "Část žáků uvádí, že učitelům nemohou sdělit svůj názor a že neshody se neřeší vedoucí ke zlepšení spolupráce.",
+          "evidence": "„Polovina oslovených žáků uvedla, že nemohou říct učitelům svůj názor na vyučování“."
+        },
+        {
+          "tag": "Diferenciace výuky",
+          "detail": "Ve výuce se podle zprávy jen v malé míře přizpůsobují úkoly schopnostem jednotlivých žáků.",
+          "evidence": "„Diferenciace vzdělávacího obsahu a zadávaných úkolů jen v malé míře zohledňuje kognitivní schopnosti jednotlivých žáků.“"
+        },
+        {
+          "tag": "Práce se zdroji a kritické myšlení",
+          "detail": "Učitelé méně pracují s informačními zdroji a méně podporují kritické myšlení a hodnoticí dovednosti žáků.",
+          "evidence": "„Pedagogové v malé míře zařazují v průběhu výuky práci s informačními zdroji“; „méně jsou využívány metody podporující rozvoj kritického myšlení“."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší možnost žáků otevřeně sdělit učitelům svůj názor a následně dohodou změnit spolupráci?",
+        "Jak vypadá běžná diferenciace zadání v jednotlivých předmětech a především u žáků s odlišnou úrovní?",
+        "Jak často žáci pracují s informačními zdroji a rozvíjejí kritické myšlení, sebehodnocení nebo vzájemné hodnocení?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí studovat ve čtyřletém nebo šestiletém gymnaziálním programu.",
+        "Žáci, kteří mají zájem o volitelné předměty, projekty, soutěže, jazykové pobyty nebo certifikované jazykové zkoušky.",
+        "Žáci, kterým vyhovuje školní prostředí s rozsáhlou nabídkou mimoškolních aktivit."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče žáků, pro které je zásadní možnost bezpečně a otevřeně řešit neshody s učiteli.",
+        "Rodiče žáků, kteří potřebují pravidelnou výraznou individualizaci a přizpůsobení náročnosti úkolů.",
+        "Rodiče žáků, kteří očekávají průběžnou podporu kritického myšlení, práce s informačními zdroji a hodnoticích dovedností."
+      ],
+      "plain_czech_summary": "Gymnázium má dobré materiální podmínky, je bezbariérové a žákům nabízí široký výběr předmětů, projektů, soutěží i zahraničních pobytů. Výsledky maturity jsou srovnatelné s republikovým průměrem a všichni žáci ročníku 2024/2025 studium úspěšně ukončili. Pomoc a poradenství pro nadané žáky, žáky se speciálními potřebami i žáky s osobními problémy fungují. Výzvou je školní klima: polovina oslovených žáků uvedla, že nemohou učitelům říct svůj názor. Vyučování se také jen mále zohledňuje rozdíly mezi žáky a málo podporuje práci s informačními zdroji, kritické myšlení a hodnoticí dovednosti."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou srovnatelné s republikovým průměrem; v roce 2025 se ve společné části po podzimním termínu neprosperoval žádný žák.",
+        "key_numbers": [
+          "Ve zkušebním období 2024 neuspěl ve společné části 1 žák čtyřletého programu.",
+          "V profilové části 2024 neuspěli 2 žáci, 1 z čtyřletého a 1 ze šestiletého programu.",
+          "V období 2025 neuspěl ve společné části nikdo a v profilové části 1 žák šestiletého programu."
+        ],
+        "evidence": "„Výsledky školy při ukončování vzdělávání maturitní zkouškou, které jsou srovnatelné s republikovým průměrem.“"
+      },
+      "absence": {
+        "trend": "Údaje o absencích nejsou v dodaném textu uvedeny.",
+        "key_numbers": [],
+        "evidence": "V dodaném textu nejsou uvedeny statistiky neomluvených či omluvených absencí."
+      },
+      "support_services": [
+        "Školní poradenské služby zajišťují výchovná poradkyně, metodička prevence a školní psycholožka.",
+        "Žáci mohou využívat doučování, individuální konzultace a podporu při vzdělávacích obtížích.",
+        "Poradenská pomoc je nabízena také při opakovaném prospěchovém selhávání, problémech ve školních situacích a při osobních problémech."
+      ],
+      "safety_climate": [
+        "Ve výuce se žáci podle inspekce mohou aktivně zapojovat „bez obav z případných chyb“.",
+        "Adaptační programy prvních ročníků podporují vytváření dobrých prosociálních vztahů v třídách.",
+        "Škola spolupracuje se složkami integrovaného záchranného systému a podporuje rozvoj prosociálních dovedností žáků."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje se sociálními partnery a školami v zahraničí.",
+        "Výměnné pobyty, projekty a soutěže podporují klíčové kompetence včetně cizojazyčné komunikace.",
+        "Sdružení příznivců gymnázia podporuje zájmovou činnost, studijní cesty, prospěchové odměny a akce školy."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulovaný srozumitelně, stručně a bez dalších klíčů mimo zadané schéma.",
+      "uncertainty_notes": [
+        "Statistika absencí není v dodaném textu uvedena.",
+        "Zpráva uvádí výsledky maturity, ale ne celkový počet maturantů v jednotlivých zkušebních obdobích."
+      ]
+    }
+  }
+}

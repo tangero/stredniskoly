@@ -1,0 +1,106 @@
+{
+  "report_id": "LYC_691018197_2026-05-05",
+  "school_profile": {
+    "school_type": "Střední škola s jedním oborem Přírodovědné lyceum, vyučovaná v denní formě",
+    "inspection_period": "5. 5. 2026 až 7. 5. 2026",
+    "school_change_summary": "Střední škola zahájila činnost 1. 9. 2025, takže inspekce hodnotila velmi ranou fázi jejího fungování."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Individuální přístup",
+        "detail": "Malá třída umožňuje přizpůsobovat úkoly možnostem žáků a podporovat jejich samostatnost i sebevědomí.",
+        "evidence": "„Nízký počet žáků ve třídě umožňuje pedagogům přirozeně uplatňovat při výchově a vzdělávání individuální přístup.“"
+      },
+      {
+        "tag": "Bezpečné komunitní klima",
+        "detail": "Škola podporuje spolupráci, ohleduplnost, odpovědnost a pohodu žáků i pedagogů.",
+        "evidence": "„Velká péče je všemi pedagogy věnována vytvoření pozitivního, bezpečného, spolupracujícího, tvořivého a podnětného klimatu školy.“"
+      },
+      {
+        "tag": "Průběžná zpětná vazba",
+        "detail": "Rodiče dostávají pravidelné informace o vývoji žáka a jeho aktuálních výsledcích.",
+        "evidence": "„Třídní učitelka jim poskytuje pravidelnou týdenní zprávu s informacemi o aktuálním průběhu výchovy, vzdělávání a dosažených výsledcích.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Krátká historie školy",
+        "detail": "Dosavadní výsledky včetně připravenosti na maturitu a další studium zatím nelze spolehlivě předpovědět.",
+        "evidence": "„Vzhledem ke krátkému fungování střední školy nelze zatím předjímat, jaké výsledky budou žáci vykazovat.“"
+      },
+      {
+        "tag": "Personální závislost",
+        "detail": "Řízení, metodika, výchovné poradenství a prevence jsou u jedné osoby, což představuje riziko kontinuity.",
+        "evidence": "„Kumulace významných pedagogických a metodických kompetencí… představuje z hlediska personálního zabezpečení a kontinuity řízení školy potenciální riziko.“"
+      },
+      {
+        "tag": "Rozdílná úroveň výuky",
+        "detail": "Při práci se zdroji někdy učitelé žáky příliš podporovali, což omezovalo jejich samostatnost.",
+        "evidence": "„V jiných hodinách však byla, z důvodu přílišné podpory ze strany učitelů, práce se zdroji informací méně efektivní.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně podporujete začínající pedagogy, aby co nejlépe zvládli výuku v duchu Montessori?",
+      "Jaké výsledky a zkušenosti má škola s přípravou žáků k maturitní zkoušce během prvního funkčního roku?",
+      "Jak bude při odchodu zástupkyně ředitele rozděleno výchovné poradenství, prevence a metodické vedení?"
+    ],
+    "who_school_fits": [
+      "Rodiče, kteří chtějí pro svého dítěte denní studium v malé třídě s výrazným individuálním přístupem.",
+      "Rodiny, které mají zájem o Montessori principy, tematické projekty a propojení učení s každodenním životem.",
+      "Rodiny, kterým vyhovuje úzká specializace na jeden obor, a akceptují její omezenou nabídku."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří potřebují dlouhou historii školy a ověřené výsledky u maturitních zkoušek.",
+      "Rodiče, kteří mají obavy o stabilitu vedení kvůli soustředění více funkcí na jedné osobě.",
+      "Rodiče, kterým nestačí jediný obor a kteří očekávají širší výběr studijních programů."
+    ],
+    "plain_czech_summary": "Střední škola Montessori Plzeň začala fungovat 1. září 2025 a nabízí jediný maturitní obor, Přírodovědné lyceum. Inspekce ocenila malou třídu, individuální přístup, spolupracující a bezpečné klima i pravidelné informování rodičů. Ve většině hodin byly žáci aktivní, uměli spolupracovat a dostávali zpětnou vazbu. Rezervy inspekce viděla v práci se zdroji, na níž žáci někdy dostávali příliš velkou podporu, a v uplatňování Montessori principů. Hlavním personálním rizikem je soustřednění řízení, metodiky, poradenství a prevence u zástupkyně ředitele. Protože škola funguje krátce, zatím nelze spolehlivě posoudit její dlouhodobé výsledky ani kvalitu přípravy k maturitě."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky připravenosti k maturitě zatím nebylo možné předjímat kvůli krátkému fungování školy.",
+      "key_numbers": [
+        "Jeden obor s maturitní zkouškou: Přírodovědné lyceum",
+        "Střední škola funguje od 1. 9. 2025",
+        "Inspekce proběhla 5. až 7. 5. 2026"
+      ],
+      "evidence": "„Vzhledem ke krátkému fungování střední školy nelze zatím předjímat… v jaké kvalitě budou připraveni k maturitním zkouškám.“"
+    },
+    "absence": {
+      "trend": "Zpráva neuvádí údaje o absentci, takže její vývoj nelze posoudit.",
+      "key_numbers": [
+        "Údaje o absentci nejsou uvedeny"
+      ],
+      "evidence": "V dodaném textu nejsou uvedeny žádné číselné ani slovní údaje o neomluvené či omluvené absenci."
+    },
+    "support_services": [
+      "Výchovné poradenství a prevenci zajišťuje zástupkyně ředitele.",
+      "Jeden žák je vzděláván s podporou asistenta pedagoga podle doporučení školského poradenského zařízení.",
+      "Škola funkčně spolupracuje se školskými poradenskými zařízeními a učitelé průběžně hodnotí účinnost podpůrných opatření.",
+      "Pedagogická fakulta Západočeské univerzity má poskytovat odborníky, pomoc při akcích a podporu výzkumu podle personální potřeby."
+    ],
+    "safety_climate": [
+      "Škola vytváří pozitivní, bezpečné, spolupracující, tvořivé a podnětné klima.",
+      "Budova je zabezpečena proti neoprávněnému vstupu cizích osob.",
+      "Žáci jsou pravidelně poučováni o pravidlech bezpečného chování.",
+      "Škola podporuje wellbeing žáků i pedagogů a dbá na spolupráci se zákonnými zástupci."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s Pedagogickou fakultou Západočeské univerzity v Plzni v roli fakultní školy.",
+      "S Univerzitou Karlovou je dohodnuto propojení výuky s Lékařskou fakultou Plzeň od třetího ročníku.",
+      "Partnery školy jsou také Zoologická a botanická zahrada města Plzeň a Vodárna Plzeň.",
+      "Pro rodiče škola pořádá společné brigády, volnočasové aktivity, tvořivé dílny, slavnosti a ples.",
+      "Mezinárodní partnerství se školami obdobného zaměření je ve fázi přípravy."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou přímé, konkrétní a vysvětlují rodičům výhody, omezení i hlavní personální riziko školy.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí výsledky maturitních zkoušek ani srovnávací údaje o úspěšnosti.",
+      "Zpráva neuvádí statistiky absence.",
+      "Kvalita přípravy k vysokoškolskému studiu zatím nemůže být posouzena kvůli krátkému fungování školy."
+    ]
+  }
+}

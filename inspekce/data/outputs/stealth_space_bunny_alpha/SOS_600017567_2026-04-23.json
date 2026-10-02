@@ -1,0 +1,115 @@
+{
+  "report_id": "SOS_600017567_2026-04-23",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:16:30.343522+00:00",
+  "run_finished_utc": "2026-10-02T16:16:56.178613+00:00",
+  "raw_file": "SOS_600017567_2026-04-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600017567_2026-04-23",
+    "school_profile": {
+      "school_type": "soukromá střední škola společností s ručením omezeným",
+      "inspection_period": "23. 4. 2026–28. 4. 2026",
+      "school_change_summary": "Po únorové inspekci 2023 přibyla zástupkyně ředitelky, počet žáků vzrostl o 48 %, vznikla nástavba, byly aktualizované programy, založen žákovský parlament a rozšířena spolupráce s partnery."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava",
+          "detail": "Učení se propojuje s reálnou praxí, zejména v veterinářním oboru.",
+          "evidence": "„Škola cíleně a systematicky rozvíjí kontakty“ s partnery, kteří se podílejí na odborném vzdělávání žáků."
+        },
+        {
+          "tag": "Maturitní výsledky",
+          "detail": "Úspěšnost absolventů při maturitě byla v roce 2025 vysoká.",
+          "evidence": "„V roce 2025 dosahovala úspěšnost v oborech vzdělání ukončených maturitní zkouškou 88–100 %.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola cíleně podporuje žáky se speciálními vzdělávacími potřebami i nadané žáky.",
+          "evidence": "„Systematicky podporuje tyto žáky, koordinuje nastavení, realizaci a vyhodnocování podpůrných opatření.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Prostředí a vybavení",
+          "detail": "Zastaralé prostory a omezené vybavení mohou snižovat komfort učení a rozšiřování výuky.",
+          "evidence": "„Materiální a prostorové podmínky školy… úroveň však plně neodpovídá současným požadavkům a trendům ve vzdělávání.“"
+        },
+        {
+          "tag": "Časná podpora",
+          "detail": "Škola ne vždy včas odhalí žáky, kterým hrozí školní neúspěšnost.",
+          "evidence": "„Systém sledování a vyhodnocování… nevede vždy k včasné identifikaci žáků ohrožených školní neúspěšností.“"
+        },
+        {
+          "tag": "Poradenství a kariéra",
+          "detail": "Poradenské služby fungují, ale personální zajištění omezuje jejich rozsah a systematičnost.",
+          "evidence": "„Funkce výchovného poradce a metodika prevence jsou vykonávány jedním pedagogickým pracovníkem.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní praktické stáže a projekty u partnerů čekají žáky v jednotlivých oborech?",
+        "Kdy a podle jakých kritérií škola začíná posilovat žákovi s neúspěšností nebo nez hodnocením?",
+        "Jak plánuje škola zlepšit prostory, školní stravování, vybavení učeben a podporu při výuce?"
+      ],
+      "who_school_fits": [
+        "Žákům, kterým vyhovuje střední vzdělávání ukončené maturitní zkouškou v jednom z čtyř nabízených oborů.",
+        "Žákům, kteří chtějí propojit teorii s praxí a využít spolupráci školy s firmami či institucemi.",
+        "Žákům, kterým škola poskytne dostatečné podpůrné, poradenské nebo individuálně přizpůsobené vzdělávání."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků z prvních ročníků, protože část podpůrných opatření podle inspekce přichází až později.",
+        "Rodičům, kterým záleží na moderním vybavení, kvalitním zázemí a školním stravování na místě.",
+        "Rodičům žáků, kteří potřebují rozsáhlé kariérní poradenství nebo intenzivní průběžné sebehodnocení."
+      ],
+      "plain_czech_summary": "Škola má dobře nastavené vedení, podporuje praktickou výuku a v roce 2025 dosáhla 88–100% úspěšnosti na maturitě. Pro rodiče jsou důležité i limity: prostory a vybavení neodpovídají současným potřebám, školní stravování je jinde a některá podpůrná opatření přicházejí později. Poradenské služby pracují, ale jednoho pracovníka pro výchovné poradenství a metodiku prevence je málo. Nabízí obory Veterinářství, Ekonomika a podnikání, Obchodní akademie a Předškolní a mimoškolní pedagogika."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "V roce 2025 byla úspěšnost vysoká a pohybovala se mezi 88 a 100 %.",
+        "key_numbers": [
+          "88–100 % úspěšnost v oborech ukončených maturitní zkouškou v roce 2025",
+          "100 % v oboru Ekonomika a podnikání",
+          "Škola zveřejňuje výsledky v Registru inspekčních zpráv na csicr.cz"
+        ],
+        "evidence": "„Nejlepších výsledků dosáhli žáci oboru vzdělání Ekonomika a podnikání se 100% úspěšností.“"
+      },
+      "absence": {
+        "trend": "Inspekční zpráva neuvádí údaje o absenci žáků, takže její vývoj nelze posoudit.",
+        "key_numbers": [
+          "379 žáků ve 17 třídách ve školním roce 2025/2026",
+          "21 žáků se speciálními vzdělávacími potřebami",
+          "3 žáci měli odlišný mateřský jazyk"
+        ],
+        "evidence": "Zpráva uvádí počty žáků a podpůrná opatření, ale neobsahuje statistiku absencí."
+      },
+      "support_services": [
+        "Výchovný poradce a metodik prevence vykonávají funkce jedním pedagogickým pracovníkem.",
+        "Škola podporuje žáky se speciálními vzdělávacími potřebami, koordinuje podpůrná opatření a metodicky podporuje pedagogy.",
+        "Škola identifikuje nadané žáky a vytváří podmínky pro rozvoj jejich nadání a zájmů.",
+        "Žákovský parlament umožňuje žákům zapojit se do chodu školy a vyjadřovat se ke školnímu prostředí."
+      ],
+      "safety_climate": [
+        "Sledovaná výuka probíhala zpravidla v podnětném a přátelském prostředí s otevřenou komunikací a pozitivními vztahy.",
+        "V odborné výuce se žáci systematicky seznamovali se zásadami bezpečnosti práce, hygienickými pravidly a odbornou terminologií.",
+        "Žáci zmiňovali potřebu zlepšit délku vyučovacích dnů, celkovou studijní zátěž, zázemí a školní stravování.",
+        "Zpráva neuvádí konkrétní incidenty ani ukazatele bezpečnosti."
+      ],
+      "partnerships_practice": [
+        "Škola výrazně rozšířila spolupráci s externími partnery, školami, organizacemi a profesními subjekty.",
+        "Spolupráce s Veterinární komorou a partnerskými veterinárními klinikami se podílí na odborném vzdělávání žáků.",
+        "Cílem partnerství je propojení teoretické výuky s praktickou přípravou a rozvoj pracovních návyků a profesních kompetencí."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text používá srozumitelné české výrazy, stručně odděluje silné stránky, rizika, praktické otázky a nejistoty.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí statistiku absencí, proto nelze jejich trend spolehlivě určit.",
+        "U bezpečnostního klimatu jsou k dispozici údaje o podmínkách výuky a bezpečnosti práce, nikoli úplná statistika incidentů.",
+        "Nejlepší výsledky v oboru Ekonomika a podnikání jsou uvedeny za rok 2025, nikoli za celé sledované období."
+      ]
+    }
+  }
+}

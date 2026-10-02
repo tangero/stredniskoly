@@ -1,0 +1,101 @@
+{
+  "report_id": "LYC_600170438_2026-01-13",
+  "school_profile": {
+    "school_type": "Střední škola, vyšší odborná škola, domov mládeže a školní jídelna",
+    "inspection_period": "13. 1. 2026–12. 2. 2026",
+    "school_change_summary": "Počet žáků střední školy se stabilizoval a škola rozšířila nabídku o lyceum a technické lyceum. „Vývoj školy: Počet žáků střední školy se stabilizoval“; „nabídka školy byla rozšířena o obory 78-42-M/08 Lyceum a 78-42-M/01 Technické lyceum“."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Dělny jsou dobře vybavené a žáci při nich získávají praktické dovednosti i návyky pro budoucí práci.",
+        "evidence": "„Materiální vybavení na vysoké úrovni umožňovalo rozvoj požadovaných praktických dovedností a pracovních návyků.“"
+      },
+      {
+        "tag": "Zaměstnavatelé a praxe",
+        "detail": "Spolupráce s regionálními firmami při praxích pomáhá žákům poznat moderní technologie a usnadňuje jejich uplatnění.",
+        "evidence": "„Úzká spolupráce školy se smluvními partnery… při realizaci praxí umožňuje seznamovat žáky… s moderními technologiemi.“"
+      },
+      {
+        "tag": "Bezpečné prostředí",
+        "detail": "Provozované recepce, elektronické zabezpečení vstupů a dbáčlivý dohled při praktické výuce přispívají k bezpečnosti.",
+        "evidence": "„Celodenní provoz recepcí spolu s elektronickým zabezpečením vchodů do budovy zvyšuje bezpečnost žáků a zaměstnanců.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Aktivita ve výuce",
+        "detail": "V části teoretické výuky se uplatňuje převážně frontální způsob a žáci se do učení zapojují méně aktivně.",
+        "evidence": "„Ve sledovaných hodinách převažovala různě efektivní frontální výuka“; „Aktivizační formy a metody práce… byly zaznamenány jen ojediněle.“"
+      },
+      {
+        "tag": "Přizpůsobení výuky",
+        "detail": "Škola málo přizpůsobuje úlohy rozdílným schopnostem žáků a zřídka využívá hodnocení podporující učení.",
+        "evidence": "„Škola nevyužívá v dostatečné míře diferenciaci učiva vzhledem k individuálním studijním schopnostem.“"
+      },
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Ve školním roce 2024/2025 došlo k výraznému propadu úspěšnosti maturitní zkoušky, zejména v matematice.",
+        "evidence": "„K výraznému propadu výsledků maturitní zkoušky došlo ve školním roce 2024/2025.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola při výuce rozlišuje úlohy pro méně a více zdatné žáky?",
+      "Jak často žáci dostávají zpětnou vazbu, která jim pomáhá zlepšovat učení?",
+      "Jaká opatření škola přijala po propadu maturitních výsledků a jak jejich účinek ověřuje?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí technický, elektrotechnický, strojírenský, informační nebo ekonomický obor a mají zájem o praktickou práci.",
+      "Žákům, kterým vyhovuje velká škola s moderně vybavenými pracovišti a rozsáhlou nabídkou odborných praxí.",
+      "Žákům, kteří jsou zvyklí samostatně plně praktické úkoly a chtějí studium propojit s konkrétními obory."
+    ],
+    "who_should_be_cautious": [
+      "Žákům, kterým nestačí nabídka střední a vyšší odborné školy, domova mládeže a školní jídelny.",
+      "Žákům, kteří potřebují výrazně individualizovanou výuku nebo průběžné formativní hodnocení.",
+      "Rodičům žáků maturitních oborů, kteří kvůli slabším výsledkům chtějí pečlivě ověřit přípravu na maturitní zkoušku."
+    ],
+    "plain_czech_summary": "Škola nabízí rozsáhlé technické, informační, ekonomické a odborné obory, domov mládeže, moderní dílny a praxe u zaměstnavatelů. Její žáci dosahují dobrých odborných výsledků a úspěchů v soutěžích. Mezi slabá místa patří převážně frontální výuka, malé využívání diferenciace a formativního hodnocení. Významným problémem je vysoká neúspěšnost u maturitní zkoušky, zejména v matematice. Rodiče by měli na deni otevřených dveří zjistit, jak škola podporuje různě zdatné žáky a jak konkrétně řeší neúspěchy u maturit."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky se v posledních letech zhoršily a ve školním roce 2024/2025 došlo k výraznému propadu.",
+      "key_numbers": [
+        "Nástavbový obor Podnikání: celková čistá neúspěšnost 40 %.",
+        "Mechanik seřizovač a Mechanik elektrotechnik: neúspěšnost v matematice 66,7 %.",
+        "Ekonomika a podnikání: neúspěšnost v českém jazyce 17,2 %."
+      ],
+      "evidence": "„K výraznému propadu výsledků maturitní zkoušky došlo ve školním roce 2024/2025.“"
+    },
+    "absence": {
+      "trend": "Absence včetně neomluvené se snížila; zpráva však neuvádí přesné procentní hodnoty.",
+      "key_numbers": [],
+      "evidence": "„Nastavená opatření se projevilo ve snížení absence včetně neomluvené.“"
+    },
+    "support_services": [
+      "Doučování z maturitních předmětů pro žáky ohrožené školním neúspěchem.",
+      "Individuální konzultace také z odborných předmětů a vzdělávacích oborů.",
+      "Doučování českého jazyka pro žáky s odlišným mateřským jazykem.",
+      "Spolupráce výchovného poradce, školní metodičky prevence, školní psycholožky a učitelů."
+    ],
+    "safety_climate": [
+      "Celodenní provoz recepcí a elektronické zabezpečení vchodů zvyšují bezpečnost školy.",
+      "Při praktickém vyučování je „důraz kladený na bezpečnost práce“.",
+      "Rizikové projevy chování řeší prevence, psycholožka a metodička; nízký počet incidentů svědčí o funkčních opatřeních."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje se zřizovatelem, regionálními zaměstnavateli a zahraničními partnery.",
+      "„Úzká spolupráce školy se smluvními partnery… při realizaci praxí“ propojuje výuku s reálným prostředím firem.",
+      "Škola se účastní projektů Erasmus+ a dalších projektů podporujících jazykové a profesní kompetence."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžnou češtinu, krátké praktické formulace a jasně odděluje zjištění zprávy od doporučení pro rodiče.",
+    "uncertainty_notes": [
+      "Přesné číselné údaje o nepřítomnosti nejsou uvedeny.",
+      "Zpráva neuvádí výsledky podrobně rozdělené podle jednotlivých stupnic.",
+      "Vhodnost konkrétního oboru pro dítě je nutné posoudit podle jeho připravenosti a zájmů, ne jen podle hodnocení školy."
+    ]
+  }
+}

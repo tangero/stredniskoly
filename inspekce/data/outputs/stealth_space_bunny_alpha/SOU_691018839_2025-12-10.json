@@ -1,0 +1,114 @@
+{
+  "report_id": "SOU_691018839_2025-12-10",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:50:22.555331+00:00",
+  "run_finished_utc": "2026-10-02T16:50:47.617304+00:00",
+  "raw_file": "SOU_691018839_2025-12-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_691018839_2025-12-10",
+    "school_profile": {
+      "school_type": "Soukromá střední škola se obory Strojní mechanik a Obráběč kovů",
+      "inspection_period": "10.–12. 12. 2025",
+      "school_change_summary": "Škola zahájila činnost 1. září 2025 a od 1. listopadu 2025 došlo ke změně vedení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Žáci pracují v moderně vybavených dílnách a získávají praktické zkušenosti pro budoucí povolání.",
+          "evidence": "Škola má „moderně vybavené dílny s nadstandardní technologickou výbavou“."
+        },
+        {
+          "tag": "Individuální přístup",
+          "detail": "Malé skupiny umožňují průběžnou zpětnou vazbu a účinnou práci s chybou.",
+          "evidence": "„Vzhledem k nízkému počtu žáků ve skupinách se dobře dařil individuální přístup.“"
+        },
+        {
+          "tag": "Bezpečnost a podpora",
+          "detail": "V odborném výcviku se uplatňuje formativní hodnocení, stipendium i elektronické podpůrné nástroje.",
+          "evidence": "Škola využívá elektronický systém, podporuje stipendiem a vyučívá „formativní hodnocení učitelů“."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Teoretická výuka",
+          "detail": "V teoretické výuce převažuje frontální způsob výuky a žáci mají málo prostoru pro samostatnou práci a diskusi.",
+          "evidence": "„V teoretické výuce chyběly většinou aktivizační metody, převažovala aktivita učitele.“"
+        },
+        {
+          "tag": "Rozvoj pedagogů",
+          "detail": "Učitelům chybí ucelený systém dalšího vzdělávání, který by rozvíjel jejich pedagogické kompetence.",
+          "evidence": "„V této oblasti však dosud chybí ucelený systém, který by koncepčně rozvíjel pedagogické kompetence.“"
+        },
+        {
+          "tag": "Sledování žáků",
+          "detail": "Škola nemá jednotný nástroj pro průběžné sledování pokroku žáků a plánování jejich podpory.",
+          "evidence": "Inspekce doporučila „jednotný a systematický nástroj pro sledování a vyhodnocování pokroku žáků“."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně podporují rozvoj pedagogů a jejich vzájemné hospitace?",
+        "Jak často žáci dostávají zpětnou vazbu a jak se z ní řídí další výuka?",
+        "Kdy začne škola pravidelně zapisovat projednaná opatření a jejich účinnost?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat Strojní mechaniku nebo Obráběč kovů.",
+        "Žákům, kterým vyhovují menší skupiny a častá individuální podpora.",
+        "Žákům, kteří ocení praktické vybavení dílennu, zpětnou vazbu a praktickou přípravu k práci."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým nestačí výuka převážně založená na výkladu učitele.",
+        "Rodičům žáků, kteří potřebují prokazatelné systematické sledování výsledků a podporu na základě hodnocení.",
+        "Rodičům žáků, kterým záleží na zřetelném osobním rozvoji žáka v teoretické výuce."
+      ],
+      "plain_czech_summary": "Škola začala fungovat 1. září 2025. Její hlavní předností jsou dobře vybavené dílny, menší počet žáků a průběžná zpětná vazba při praktické výuce. Žáci mohou také získat studijní stipendium nebo využít elektronické materiály. Hlavní slabinou je teoretická výuka, kde převažuje výklad učitele a málo prostoru pro aktivní práci, diskusi a sebehodnocení. Většina pedagogů má krátkou zkušenost a chybí ucelený plán jejich dalšího vzdělávání. Výsledky ani neprospěch nelze zatím spolehlivě posoudit, protože nebylo dokončeno žádné klasifikační období a škola vede jen formální záznamy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "V době inspekce nebylo ukončeno žádné klasifikační období, takže výsledky nebylo možné řádně vyhodnotit.",
+        "key_numbers": [
+          "Ve škole studovalo 15 žáků.",
+          "Bylo evidováno 41 žáků v oboru Strojní mechanik.",
+          "Bylo evidováno 15 žáků v oboru Obráběč kovů."
+        ],
+        "evidence": "„V době inspekční činnosti nebylo ukončeno zatím žádné klasifikační období.“"
+      },
+      "absence": {
+        "trend": "Škola průběžně sleduje absence a v době inspekce neevidovala zvýšenou absenci žádného žáka.",
+        "key_numbers": [
+          "Bylo evidováno 15 žáků celkem.",
+          "U žádného žáka nebyla evidována zvýšená absence.",
+          "U žádného žáka nebyl evidován rizikový neprospěch."
+        ],
+        "evidence": "„Nebyla evidována zvýšená absence žádného žáka“ a nebyl evidován „riziko neprospěchu“."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště má nastavenou strategii, její účinnost však zatím nelze plně posoudit.",
+        "Kariérní poradenství nabízí informace o dalším studiu, změně oboru a přípravě na přijímací zkoušky.",
+        "Elektronický systém slouží k zadávání úkolů, jejich monitorování, prezentacím a studijním podkladům.",
+        "Studijní stipendium motivuje žáky k výsledkům, docházce a vhodnému chování."
+      ],
+      "safety_climate": [
+        "Při hospitovaném odborném výcviku byli žáci disciplinovaní.",
+        "Učitelé žáky vedli k dodržování bezpečnosti práce a používání ochranných pomůcek.",
+        "Výuka probíhala v klidné atmosféře."
+      ],
+      "partnerships_practice": [
+        "Škola úzce a efektivně spolupracuje se zřizovatelem Agrostroj Pelhřimov.",
+        "Významným partnerem je Jihočeská hospodářská komora.",
+        "Spolupráce s jinými školami podobného zaměření je podle inspekce v počáteční fázi."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně vysvětluje význam zjištění a jasně odděluje ověřená data od neověřených oblastí.",
+      "uncertainty_notes": [
+        "Úspěšnost ve studiu, maturity a neprospěch nelze spolehlivě posoudit, protože nebylo ukončeno klasifikační období.",
+        "Účinnost poradenství a prevence rizikových jevů nelze při nízkém počtu žáků plně vyhodnotit.",
+        "Adresa v zadání uvádí U Nádraží 2529, zatímco zdrojová inspekční zpráva uvádí U Nádraží 1967."
+      ]
+    }
+  }
+}

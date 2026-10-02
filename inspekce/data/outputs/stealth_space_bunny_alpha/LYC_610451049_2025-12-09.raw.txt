@@ -1,0 +1,104 @@
+{
+  "report_id": "LYC_610451049_2025-12-09",
+  "school_profile": {
+    "school_type": "Příspěvková organizace vykonávající činnost střední školy, domova mládeže a školní jídelny.",
+    "inspection_period": "9.–12. 12. 2025",
+    "school_change_summary": "Nabídka se rozšířila o Dopravní prostředky a Požární ochranu a počet žáků maturitních oborů od roku 2023 vzrostl téměř o dvě třetiny."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Příprava k maturitě",
+        "detail": "Škola průběžně procvičuje didaktické testy a výsledky maturit ve společné části se zlepšily.",
+        "evidence": "„Jednotně nastavený systém průběžné přípravy… přispívá ke zlepšování jejich výsledků ve společné části maturitní zkoušky.“"
+      },
+      {
+        "tag": "Cizí jazyky",
+        "detail": "Výuka angličtiny podporuje poslech, čtení s porozuměním a praktické mluvení.",
+        "evidence": "„Výuka anglického jazyka byla často vhodně zaměřena na rozvoj receptivních řečových dovedností, tj. poslechu a čtení s porozuměním.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola poskytuje poradenskou podporu, konzultace a doučování, včetně účinné pomoci žákům se SVP.",
+        "evidence": "„Podpora žáků ohrožených školní neúspěšností je realizována zejména prostřednictvím individuálních konzultací a doučováním.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Absence a předčasné odchody",
+        "detail": "U některých žáků zůstává problémem motivace k účasti ve vyučování, zejména v nástavbovém studiu.",
+        "evidence": "„Nižší motivace některých žáků k účasti ve vyučování zejména v nástavbovém studiu se nepříznivě promítá do jejich výsledků.“"
+      },
+      {
+        "tag": "Rozdíly mezi obory",
+        "detail": "Výsledky se výrazně lišíí podle oboru a v nástavbovém Podnikání jsou horší než u Veřejnosprávní činnosti.",
+        "evidence": "„Nejlepších výsledků dosahují žáci oboru Veřejnosprávní činnost, opačně nejméně… žáci oboru Podnikání.“"
+      },
+      {
+        "tag": "Zapojení do výuky",
+        "detail": "Frontální výuka někdy vede k pasivitě a škola má podle inspekce více využívat spolupráci a diferencované úkoly.",
+        "evidence": "„Příležitostí ke zlepšení byly… podpora zapojení všech žáků nebo… volba vhodných metod diferenciace výuky.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá podpora žáků, kteří nejsou motivovaní chodit do školy, a jaké výsledky mají tato opatření v nástavbovém studiu?",
+      "Kolik žáků v jednotlivých oborech ukončí studium včetně maturity a jak často řeší škola předčasné odchody?",
+      "Jak učitelé v jednotlivých předmětech společné části maturity přizpůsobují úkoly rozdílným úrovním žáků?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat některý z oborů Technické lyceum, Veřejnosprávní činnost, Podnikání, Mechanizace a služby, Dopravní prostředky nebo Požární ochrana.",
+      "Žákům, kterým vyhovuje školní podpora prostřednictvím konzultací, doučování a poradenských služeb.",
+      "Rodičům, kteří chtějí průběžné informace o výsledcích prostřednictvím elektronického informačního systému."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků nástavbového studia Podnikání, protože část studentů odchází předčasně a neúspěšnost maturity je zde vyšší.",
+      "Rodičům žáků Mechanizace a služby, kteří mají slabší školní výsledky nebo potřebují pravidelnou podporu kvůli absenci.",
+      "Žákům, kterým vadí převládající frontální výuka nebo kteří potřebují výrazně individuálně přizpůsobené úkoly."
+    ],
+    "plain_czech_summary": "Škola se od minulé inspekce rozšířila o obory Dopravní prostředky a Požární ochrana a výrazně zvětšila počet žáků maturitních oborů. Výsledky ve společné části maturity se zlepšily, zejména u Veřejnosprávní činnosti, kde se neúspěšnost snížila z 30 % v roce 2023 na 6,9 % v roce 2025. U Technického lycea klesla ze 6,3 % na 4 %. Podnikání však v roce 2025 skončilo s 33% neúspěšností. Průměrná absence zůstává přibližně 120 hodin na žáka. Klíčovými problémy jsou motivace, předčasné odchody a příliš častá frontální výuka. Škola nabízí doučování, konzultace, poradenské služby a přípravu k maturitě."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky ve společné části maturity se ve všech maturitních oborech od minulé inspekce zlepšily, ale rozdíly mezi obory zůstávají velké.",
+      "key_numbers": [
+        "Veřejnosprávní činnost: 30 % v roce 2023, 6,9 % v roce 2025.",
+        "Technické lyceum: 6,3 % v roce 2023, 4 % v roce 2025.",
+        "Podnikání: 52,9 % v roce 2023, 33 % v roce 2025."
+      ],
+      "evidence": "„Výsledky žáků ve společné části MZ se od předchozí inspekční činnosti ve všech maturitních oborech zlepšily.“"
+    },
+    "absence": {
+      "trend": "Roční průměrná absence se za poslední tři školní roky výrazněji nezměnila a může souviset s horšími výsledky a předčasnými odchody.",
+      "key_numbers": [
+        "Přibližně 120 hodin absence na žáka ročně.",
+        "V roce 2025 školu předčasně opustilo 68 % žáků oboru Mechanizace a služby.",
+        "Maturity získalo přibližně 55 % žáků nástavbového studia Podnikání."
+      ],
+      "evidence": "„Roční průměrná absence… se v posledních třech školních letech výrazněji nezměnila, pohybuje se ve všech oborech okolo 120 h na žáka.“"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště zajišťuje výchovnou poradkyni, školní metodičku prevence a školní psycholožku.",
+      "Škola poskytuje individuální konzultace, doučování a v maturitním roce přípravu v předmětech společné části maturity.",
+      "Žákům se SVP poskytuje podpora zahrnující spolupráci se školskými poradenskými zařízeními a individuální vzdělávací plány."
+    ],
+    "safety_climate": [
+      "Ve škole jsou organizovány adaptační kurzy a aktivity podporující prosociální chování.",
+      "Výchovné obtíže a projevy rizikového chování se řeší převážně ve spolupráci se zákonnými zástupci podle školního řádu.",
+      "Bezpečnou atmosféru podporuje třídou popsaný partnerský přístup pedagogů a zřetelně vedená komunikace."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje se zákonnými zástupci při řešení slabých výsledků, výchovných obtíží a rizikového chování.",
+      "Při podpoře žáků se SVP spolupracuje se školskými poradenskými zařízeními.",
+      "Pro sociální a preventivní cíle realizuje také školní a mimoškolní aktivity."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně vysvětluje odborné ukazatele a odděluje zjištění od doporučení pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesný počet dokončených nebo předčasně ukončených studií, proto je uveden podíl pro konkrétní obor a ročník.",
+      "Vhodnost školy pro konkrétního žáka nelze určit bez jeho přípravy, zájmového oboru a potřeb.",
+      "U některých tvrzení o bezpečnostní atmosféře vychází hodnocení z popisu komunikace a prevence, nikoli ze samostatného výsledku inspekce."
+    ]
+  }
+}

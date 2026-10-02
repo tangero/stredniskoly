@@ -1,0 +1,107 @@
+{
+  "report_id": "LYC_691003807_2026-04-10",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola, Střední průmyslová škola a Střední odborná škola řemesel a služeb",
+    "inspection_period": "10. 4. 2026 – 16. 4. 2026",
+    "school_change_summary": "Škola otevřela nový obor Technické lyceum v pilotním ověřování, jmenovala nové zástupce ředitele, získala školní psycholožku a pokračovala v modernizaci vybavení; výrazně klesl počet studentů vyšší odborné školy."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Škola úzce spolupracuje s firmami a dalšími partnery, a proto propojuje výuku s reálnou praxí.",
+        "evidence": "Praktické vyučování probíhá i na pracovištích smluvních partnerů; kontakt s reálnou praxí pozitivně ovlivňuje osvojování praktických dovedností."
+      },
+      {
+        "tag": "Vybavení",
+        "detail": "Moderní technické vybavení podporuje rozvoj odborných dovedností a připravu na budoucí povolání.",
+        "evidence": "Laboratoře jsou vybaveny technikou pro CNC obrábění, metrologii a robotiku; dílenské prostory odpovídají požadavkům praktické výuky."
+      },
+      {
+        "tag": "Podpora a klima",
+        "detail": "Ve většině sledované výuky byla klidná atmosféra, pedagogy respektující přístup a ochotná spolupráce žáků.",
+        "evidence": "Vyučující uplatňovali respektující a vstřícný přístup; žáci zpravidla ochotně spolupracovali a plnili zadané úkoly."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Aktivní výuka",
+        "detail": "Ve výuce se podle inspekce málo využívají metody, které by více zapojovaly žáky a rozvíjely kritické myšlení.",
+        "evidence": "Pedagogové převážně volili méně efektivní frontální výuku; kooperativní činnosti byly zařazovány jen ojediněle."
+      },
+      {
+        "tag": "Rozdíly mezi školami",
+        "detail": "Mezi střední průmyslovou školou a střední odbornou školou jsou výrazné rozdíly v kvalitě výuky i přípravě žáků.",
+        "evidence": "Inspekce zjistila výrazné rozdíly v kvalitě výuky a systematičnosti přípravy, které se promítají do výsledků."
+      },
+      {
+        "tag": "Výsledky a absence",
+        "detail": "Neúspěšnost při maturitě se škole zatím nepodařilo výrazně snížit a žáci učebních oborů mají vyšší absenci.",
+        "evidence": "Nepodařilo se trend neúspěšnosti výrazně změnit; žáci učebních oborů vykazují celkově vyšší absenci."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se ve výuce podporují aktivní práce, spolupráce žáků a rozvoj kritického myšlení?",
+      "Jak škola řeší rozdíly v úrovni výuky mezi Střední průmyslovou školou a Střední odbornou školou?",
+      "Jak často a v jakém rozsahu mohou žáci docházet na praktické vyučování k externím partnerům?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat technický, strojírenský nebo ekonomicko-technický obor.",
+      "Žákům, kterým vyhovuje propojení teorie s praktickou výukou a činností na odborných pracovištích.",
+      "Žákům, kteří mají zájem o moderní techniku, CNC obrábění, metrologii, robotiku nebo řízení kvality."
+    ],
+    "who_should_be_cautious": [
+      "Žákům, kterým záleží na pravidelné aktivní práci, samostatném učení a silné podpoře formativního hodnocení.",
+      "Žákům, kteří potřebují výraznou individualizaci výuky podle svých studijních předpokladů.",
+      "Žákům a rodičům, kteří zvažují nástavbový obor Podnikání kvůli slabším průběžným výsledkům a četným odchodům."
+    ],
+    "plain_czech_summary": "Škola má silné praktické zázemí, dobré vybavení pro technické obory a spolupráci s firmami, které pomáhá studentům získat skutečné dovednosti. Většina sledované výuky probíhala v klidné a respektující atmosféře. Hlavní slabinou je převládající frontální výuka, malé využívání aktivních metod, diferencace a formativního hodnocení. Výsledky se mezi jednotlivými školami a obory výrazně liší. U oboru Podnikání jsou slabší průběžné výsledky a žáci často odcházejí. Maturitní neúspěšnost zůstává problémem, přestože škola poskytuje doučování, konzultace a poradenské služby."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Trend neúspěšnosti se nepodařilo výrazně změnit; nejvyšší neúspěšnost byla zaznamenána v matematice.",
+      "key_numbers": [
+        "Ve školním roce 2024/2025 maturitu konalo 105 žáků.",
+        "12 žáků prospělo s vyznamenáním a 13 žáků neuspělo.",
+        "Lepší výsledky měl obor Strojírenství; slabší výsledky opakovaně vykazoval obor Podnikání."
+      ],
+      "evidence": "Úspěšnost při maturitě odpovídala průběžným výsledkům; škola uvedla, že trend neúspěšnosti se nepodařilo výrazně změnit."
+    },
+    "absence": {
+      "trend": "Žáci učebních oborů vykazují celkově vyšší absenci, což souvisí s jejich nižší motivací k učení.",
+      "key_numbers": [
+        "Ve třetích ročnících učebních oborů bylo 116 žáků.",
+        "Ročník řádně ukončilo 96 žáků.",
+        "K závěrečné zkoušce bylo oprávněno 96 žáků; jeden neprospěl."
+      ],
+      "evidence": "Škola uvádí vyšší absenci žáků učebních oborů a souvislost s nižší motivací k učení."
+    },
+    "support_services": [
+      "Škola poskytuje doučování, individuální konzultace a podporu žákům ohroženým školním neúspěchem.",
+      "Pro žáky s odlišným mateřským jazykem nabízí doučování z českého jazyka.",
+      "Tým poradenských služeb tvoří dva výchovní poradci, dvě školní metodičky prevence, školní psycholožka a tři kariéroví poradci.",
+      "V domově mládeže je možné využít volnočasové aktivity, prostor pro přípravu a zájmové doučování."
+    ],
+    "safety_climate": [
+      "Ve většině sledované výuky byla zaznamenána klidná pracovní atmosféra.",
+      "Vyučující přistupovali k žákům respektujícím a vstřícným způsobem.",
+      "Elektronické zabezpečení vchodů a monitoring okolí kamerami zvyšují bezpečnost žáků a zaměstnanců.",
+      "Škola řeší výchovné problémy bezodkladně a ve spolupráci se zákonnými zástupci a externími odborníky."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s významnými regionálními zaměstnavateli, VŠTE, Strojní fakultou Západočeské univerzity a dalšími školami.",
+      "Žáci absolvují exkurze a stáže, které přispívají k profesní orientaci a kariérovému poradenství.",
+      "Škola je spoluzakladatelkou technického a vzdělávacího konsorcia.",
+      "Projekt Erasmus+ umožňuje odborné a jazykové stáže v zahraničí."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a vycházejí z obsahu zprávy; závěry jsou oddělené od tvrzení o číselných údajích.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesné procento neúspěšnosti maturitní zkoušky, proto jsou uvedeny pouze počty žáků.",
+      "Zpráva neuvádí konkrétní výsledky absence v procentech.",
+      "Zpráva neuvádí podrobné výsledky jednotlivých studijních oborů nástavbového studia."
+    ]
+  }
+}

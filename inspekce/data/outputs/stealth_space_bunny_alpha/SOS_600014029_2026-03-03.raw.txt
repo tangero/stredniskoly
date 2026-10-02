@@ -1,0 +1,105 @@
+{
+  "report_id": "SOS_600014029_2026-03-03",
+  "school_profile": {
+    "school_type": "Střední odborná škola a střední odborné učiliště se školní jídelnou-výdejnou; čtyři obory s maturitou a dva obory s výučním listem.",
+    "inspection_period": "3. 3. 2026 až 5. 3. 2026",
+    "school_change_summary": "Od roku 2023 vzrostl počet žáků o 22,5 % na 428, zlepšily se materiální podmínky i poradenské služby a částečně se obměnil pedagogický sbor."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podpora žáků s jiným mateřským jazykem",
+        "detail": "Škola účinně podporuje žáky s odlišným mateřským jazykem pomocí skupinově organizované výuky českého jazyka, individuální podpory a spolupráce s UNICEF.",
+        "evidence": "„Nabídkou nepovinného předmětu český jazyk pro cizince… cíleně rozvíjí jejich jazykové znalosti a komunikační dovednosti.“"
+      },
+      {
+        "tag": "Odborná příprava",
+        "detail": "Odborné předměty a praktická výuka propojují teorii s praxí, podporují samostatnou práci, spolupráci, problémové úlohy a zpětnou vazbu.",
+        "evidence": "„Učitelé kladli důraz na propojení teoretických poznatků s praxí… problemově orientované úlohy, vrstevnickou spolupráci.“"
+      },
+      {
+        "tag": "Vybavení a projektové aktivity",
+        "detail": "Škola modernizovala učebny, techniku a digitální vybavení a žákům nabízí projekty, exkurze, workshopy i soutěže.",
+        "evidence": "„Významné investice směřovaly do digitalizace výuky“ a žáci získávají zkušenosti také na workshopech a exkurzích."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Neúspěšnost maturity",
+        "detail": "Úspěšnost ukončení studia maturitní zkouškou je dlouhodobě problematická a mezi obory se výrazně liší.",
+        "evidence": "„Hrubá neúspěšnost žáků u maturitní zkoušky činila průměrně 26 %“; nejlepší výsledky mají Informační technologie."
+      },
+      {
+        "tag": "Převládající frontální výuka",
+        "detail": "Většina sledovaných hodin měla omezené zapojení žáků, což může hůř podporovat samostatné učení, tvorbu a hlubší porozumění.",
+        "evidence": "„V podstatné části sledovaných hodin nadále převládala frontální výuka s výraznou převahou činnosti učitele (v 61 %).“"
+      },
+      {
+        "tag": "Dohled nad praxí",
+        "detail": "Kontrola odborného výcviku na smluvních pracovištích podle inspekce nestačí, protože se provádí pouze telefonicky.",
+        "evidence": "„Ty nejsou realizovány reálnými vstupy na jednotlivá pracoviště, ale pouze telefonickou formou.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak jsou konkrétně zajišťovány osobní kontroly žáků na smluvních pracovištích a zapisují se jejich výsledky?",
+      "Kolik hodin týdně se žáci věnují samostatné práci, práci se zdroji a náročnějšímu mluvení?",
+      "Jaký vývoj neúspěšnosti maturity a předčasných odchodů nastal v jednotlivých oborech po zavedení nových opatření?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat informační technologie, elektrotechniku, mechaniku, ekonomiku nebo obory s výučním listem.",
+      "Žákům s odlišným mateřským jazykem, kterým vyhovuje cílená jazyková a individuální podpora.",
+      "Žákům, které škola umí nabídnout praktickou výuku, projekty, soutěže a další odborné zkušenosti."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na vysoké úspěšnosti maturity, protože neúspěšnost činí průměrně 26 %.",
+      "Žákům, kterým nestačí převážně frontální výuka a kteří potřebují více samostatné práce, dialogu a aktivizace.",
+      "Rodičům žáků na smluvních pracovištích, kteří chtějí mít jistotu pravidelných osobních kontrol odborného výcviku."
+    ],
+    "plain_czech_summary": "Škola má modernější vybavení, silné odborné předměty a účinnou podporu žáků s odlišným mateřským jazykem. Nabízí také praktickou výuku, projekty, exkurze a soutěže. Rodiče by však měli sledovat hlavní slabiny: průměrná neúspěšnost maturity je 26 % a mezi obory jsou velké rozdíly. Ve většině hodin převládá frontální výuka a žáci mají méně prostoru pro samostatnou práci i složitější vyjadřování. Kontroly odborného výcviku na smluvních pracovištích se podle inspekce provádějí jen telefonicky. Do absence se škola snaží zasahovat, omluvené absence klesly, ale neomluvená absence stále existuje."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Bez změny oproti předchozí inspekci; škola přijala nová opatření, ale jejich účinek je zatím jen částečný.",
+      "key_numbers": [
+        "Průměrná hrubá neúspěšnost maturity: 26 %.",
+        "Nejlepší výsledky: Informační technologie.",
+        "Nejhorší dlouhodobé výsledky: Ekonomika a podnikání a Mechanik seřizovač."
+      ],
+      "evidence": "„Přijatá opatření se do výsledků žáků při ukončování vzdělávání promítla zatím jen částečně.“"
+    },
+    "absence": {
+      "trend": "Omluvená absence se výrazně snížila, neomluvená také poklesla, ale zůstává přítomná.",
+      "key_numbers": [
+        "Ve školním roce 2024/2025: 83 omluvených hodin na žáka v maturitních oborech.",
+        "Ve školním roce 2024/2025: 129 omluvených hodin na žáka v učebních oborech.",
+        "V 1. pololetí aktuálního roku: 4 neomluvené hodiny v maturitních oborech a 18 v učebních."
+      ],
+      "evidence": "„Od minulé inspekční činnosti vedl systém opatření k výraznému snížení omluvených hodin napříč obory vzdělávání.“"
+    },
+    "support_services": [
+      "Široce obsazený a dobře koordinovaný poradenský tým sdílí informace o žácích a poskytuje pedagogům metodickou podporu.",
+      "Školní psycholožka poskytuje individuální i skupinovou podporu a řeší vztahové a adaptační obtíže.",
+      "Škola sleduje výsledky a docházku, poskytuje doučování, konzultace a případně nabízí změnu oboru.",
+      "Pro žáky s odlišným mateřským jazykem zajišťuje jazykovou výuku, individuální podporu a spolupráci s rodinami."
+    ],
+    "safety_climate": [
+      "Pracoviště odborného výcviku odpovídají bezpečnostním požadavkám a potřebám výuky.",
+      "Ve sledované tělesné výchově bylo pozitivem důsledné zajištění bezpečnosti při organizaci všech činností.",
+      "Škola má pravidla pro řešení problémového chování a spolupracuje se zákonnými zástupci i externími institucemi."
+    ],
+    "partnerships_practice": [
+      "Spolupráce se smluvními partnery umožňuje rozvíjet kompetence uplatnitelné v reálném životě.",
+      "Škola spolupracuje s UNICEF při informování žáků s odlišným mateřským jazykem a jejich rodin o podpoře.",
+      "Kontrola odborného výcviku u smluvních partnerů probíhá pouze telefonicky, nikoli osobními návštěvami pracovišť."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou stručné, srozumitelné a zaměřené na to, co mohou rodiče a uchazeči ověřit při výběru školy.",
+    "uncertainty_notes": [
+      "Inspekční zpráva neuvádí přesné výsledky maturity podle jednotlivých oborů.",
+      "Závěrečná zkouška je hodnocena za poslední tři roky, proto srovnání s maturitou není plně obdobné.",
+      "Údaje o neomluvené absenci se vztahují pouze k prvnímu pololetí aktuálního školního roku."
+    ]
+  }
+}

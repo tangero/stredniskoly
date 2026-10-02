@@ -1,0 +1,103 @@
+{
+  "report_id": "SOS_600171078_2026-01-22",
+  "school_profile": {
+    "school_type": "střední odborná škola",
+    "inspection_period": "2026-01-22 až 2026-01-27",
+    "school_change_summary": "Škola zlepšila digitální vybavení, modernizovala některé učebny, zřídila školní parlament a bezbariérový vstup, nově zavedla kariérovou poradkyni a změnila výchovnou poradkyni."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické vzdělávání",
+        "detail": "Odborné předměty a praktické vyučování jsou propojené se skutečnou prací a žáci dostávají zpětnou vazbu.",
+        "evidence": "„Příkladné propojování teoretických znalostí a praktických dovedností ve výuce ve škole i na praktickém vyučování.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola má poradenské pracoviště, kariérovou poradkyni, doučování a individuální konzultace.",
+        "evidence": "„Poradkyně prostřednictvím vhodně volených aktivit pomáhá žákům při výběru jejich dalšího studia.“"
+      },
+      {
+        "tag": "Zapojení do soutěží a projektů",
+        "detail": "Žáci se mohou pravidelně zapojovat do projektů, soutěží, prezentací a zahraničních aktivit.",
+        "evidence": "„Žáci se dlouhodobě zapojují do mnoha vědomostních, dovednostních, uměleckých i sportovních soutěží.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Anglický jazyk",
+        "detail": "Ve výuce angličtiny převažoval výklad a žáci měli málo prostoru pro samostatnou interaktivní komunikaci.",
+        "evidence": "„Výuka anglického jazyce probíhala převážně frontálně, s výrazným podílem výkladu a převažující aktivitou učitelů.“"
+      },
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "Úkoly se podle potřeb žáků diferencovaly jen ojedinele a někteří žáci nedostávali dostatečně náročné podněty.",
+        "evidence": "„Ve výuce je pouze ojediněle uplatňována diferenciace s ohledem na vzdělávací potřeby žáků.“"
+      },
+      {
+        "tag": "Hospitace",
+        "detail": "Zpětná vazba vedení podle inspekce nevedla vždy k účinným změnám výuky.",
+        "evidence": "„Sledují závěry z hospitační činnosti, ale následně nepřijímají efektivní opatření k odstranění nedostatků ve výuce.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá výuka angličtiny a jak často žáci mluví nebo diskutují anglicky?",
+      "Jak škola přizpůsobuje úkoly žákům se SVP a žákům s různou úrovní znalostí?",
+      "Jaké konkrétní změny přijala škola po hospitacích, které zlepšují výuku?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat obory s praktickou přípravou a odborným výcvikem.",
+      "Žákům, kterým vyhovuje práce na konkrétních úkolech a projektech.",
+      "Žákům, kteří využijí nabídku doučování, konzultací a podpory školního poradenského pracoviště."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na pravidelné aktivní práci s různými zdroji informací.",
+      "Rodičům žáků, kteří očekávají v angličtině více diskusí a samostatného vyjadřování.",
+      "Rodičům žáků, kterým nestačí podpora učitelů a kteří potřebují soustavnou práci na odlišných úkolech."
+    ],
+    "plain_czech_summary": "Škola nabízí praktické obory, odborný výcvik, práci na projektech, soutěže i zahraniční pobyty. Rodičům může být užitečné, že jsou zde konzultace, doučování, výchovné poradenství, kariérovní poradenství a podpora žáků se SVP. Inspekce ale upozornila na slabší používání různých zdrojů informací, omezenou diferenciaci úkolů a převládající frontální výuku angličtiny. Výsledky se mezi obory liší: ekonomika a umělecké obory se zlepšovaly, zatímco informační služby v roce 2024/2025 zhoršily. Zpráva neuvádí přesné číselné údaje o maturitách ani absencích."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšení v oborech Ekonomika a podnikání a uměleckých oborech; zhoršení v oboru Informační služby v roce 2024/2025.",
+      "key_numbers": [
+        "ve školních letech 2023/2024 a 2024/2025 měli žáci Ekonomiky a podnikání lepší výsledky než žáci ostatních škol ve stejných skupinách oborů",
+        "u Informačních služeb se výsledky v roce 2024/2025 zhoršily",
+        "u oboru Kuchař – číšník všichni žáci závěrečnou zkoušku splnili a polovina prospěla s vyznamenáním"
+      ],
+      "evidence": "„Výsledky žáků oboru Informační služby, kteří dlouhodobě dosahovali velmi dobrých výsledků, se v roce 2024/2025 zhoršily.“"
+    },
+    "absence": {
+      "trend": "Škola řešila prospěchově slabší jednotlivce a vysokou či neomluvenou absenci pomocí konzultací, pohovorů a spolupráce s rodiči.",
+      "key_numbers": [
+        "ve školním roce 2024/2025 závěrečnou zkoušku u oboru Kuchař – číšník absolvovalo 100 % žáků",
+        "zpráva neuvádí průměrnou míru absence",
+        "zpráva neuvádí počet neomluvených hodin"
+      ],
+      "evidence": "„Škola cíleně řešila výsledky prospěchově slabších jednotlivců i problémy žáků s vysokou či neomluvenou absencí.“"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s rozšířenou krutérní poradkyní",
+      "Výchovná poradkyně a asistentky pedagoga pro žáky se SVP",
+      "Individuální konzultace, doučování a motivační pohovory s rodiči"
+    ],
+    "safety_climate": [
+      "Škola uvádí účinné preventivní mechanismy pro bezpečnost a ochranu zdraví.",
+      "V praktické výuce kuchařů je kladen důraz na hygienu, osobní úpravu a dodržování systému HACCP."
+    ],
+    "partnerships_practice": [
+      "Odborná příprava probíhá u partnerů z praxe a část praktického vyučování v regionu.",
+      "Škola pořádá odborné exkurze, stáže a zahraniční pobyty.",
+      "Spolupracuje se zřizovatelem, školní radou, zákonnými zástupci, školním parlamentem, organizacemi a školami UNESCO."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá srozumitelné formulace, odděluje silné stránky od nedostatků a uvádí konkrétní praktické důsledky pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesné výsledky maturitní zkoušky v procentech.",
+      "Zpráva neuvádí číselné údaje o absencích.",
+      "Přesné rozložení silných a slabých stránek mezi jednotlivé předměty nelze bez dalších podkladů zjistit."
+    ]
+  }
+}

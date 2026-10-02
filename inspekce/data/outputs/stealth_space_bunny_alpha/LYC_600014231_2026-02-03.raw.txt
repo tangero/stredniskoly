@@ -1,0 +1,105 @@
+{
+  "report_id": "LYC_600014231_2026-02-03",
+  "school_profile": {
+    "school_type": "Střední škola s obory maturitního i výučního vzdělání, domovem mládeže, školní jídelnou a jídelnou-výdejnou",
+    "inspection_period": "3. 2. – 5. 2. a 9. 2. 2026",
+    "school_change_summary": "Od roku 2023 vzrostl počet žáků o 26 %, škola nově nabízí čtyři obory a zapojila se do Erasmus+ a intenzivní spolupráce při duálním vzdělávání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná příprava",
+        "detail": "Praktické vyučování na modernizovaných dílnách a u partnerů propojuje teorii s reálnou prací.",
+        "evidence": "„Praktické vyučování je realizováno ve škole nebo na pracovištích mnoha smluvních partnerů.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola sleduje potíže žáků, nabízí doučování a v případě potřeby svolává výchovnou komisi.",
+        "evidence": "„Při zhoršení prospěchu či zvýšené absenci kontaktují žáka, zjišťují příčiny a nabízejí podporu, nejčastěji formou doučování.“"
+      },
+      {
+        "tag": "Školní klima",
+        "detail": "Většina sledovaných hodin probíhala ve vzájemné respektující atmosféře a žáci se do diskuse zapojovali aktivně.",
+        "evidence": "„V převážné části sledovaných teoretických hodin panovala pracovní atmosféra založená na vzájemném respektu.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturitní příprava",
+        "detail": "U některých oborů zůstává neúspěšnost na maturitě nad republikovým průměrem, zejména u Podnikání.",
+        "evidence": "„U oboru Podnikání a některých dalších oborů zůstává hrubá neúspěšnost dlouhodobě nad průměrem České republiky.“"
+      },
+      {
+        "tag": "Aktivita ve výuce",
+        "detail": "Ve značné části hodin zůstává omezené aktivní zapojení žáků, práce s více zdroji a samostatné hodnocení.",
+        "evidence": "„V části sledované výuky nebyly v dostatečné míře vytvářeny podmínky pro aktivní zapojení žáků, práci s různými informačními zdroji.“"
+      },
+      {
+        "tag": "Školní psycholog",
+        "detail": "Škola zatím nemá náhradu za školního psychologa, který působil do konce předchozího školního roku.",
+        "evidence": "„Škole se zatím nedaří najít náhradu za školního psychologa, který ve škole působil do konce minulého školního roku.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní podpůrné hodiny a konzultace nabízí škola žákům před maturitní zkouškou?",
+      "Jak probíhá duální vzdělávání a v jakém rozsahu se žáci věnují práci na pracovišti partnera?",
+      "Jak často se během běžné výuky žáci samostatně hodnotí, vyhledávají informace a porovnávají zdroje?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí odborné technické nebo ekonomické vzdělání propojené s praxí.",
+      "Žákům, kterým vyhovuje široká nabídka oborů, domov mládeže a doplňkové aktivity.",
+      "Žákům, kteří využijí doučování, konzultace a systematické sledování studijních výsledků."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům, kterým záleží na vysoké a bezpečně ověřené připravenosti k maturitní zkoušce, zejména u Podnikání.",
+      "Rodičům žáků, kteří potřebují průběžnou školněpsychologickou podporu.",
+      "Rodičům, kteří očekávají v každé hodině rozsáhlou práci s informačními zdroji, konkrétními cíli hodiny a sebereflexí."
+    ],
+    "plain_czech_summary": "Škola nabízí sednáct středních oborů, praktické vyučování, domov mládeže, kariérovní poradenství a rozsáhlou spolupráci s vysokými školami i zaměstnavateli. Od minulé inspekce výrazně vzrostl počet žáků a škola zlepšila řízení, podporu žáků i poskytování poradenských služeb. Výuka je celkově dobře organizovaná a v mnoha hodinách probíhá přátelsky. Rodiče by však měli zvážit přetrvávající nedostatky v aktivním zapojení žáků, samostatném hodnocení a práci s cíli výuky. Výsledky maturitních zkoušek kolísají a u Podnikání jsou dlouhodobě slabší než v republice. Doporučená opatření se týkají aktivizujší výuky, práce s informacemi, sebereflexe a cílené přípravy k maturitě."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky jsou v posledních třech letech proměnlivé; u Provozu a ekonomiky dopravy se zlepšily, u Podnikání přetrvává vyšší neúspěšnost.",
+      "key_numbers": [
+        "Provoz a ekonomika dopravy: pokles hrubé neúspěšnosti z 22,2 % na 13,6 %.",
+        "Elektrikář-silnoproud: 18 % ve tříletém a 8 % ve zkráceném studiu.",
+        "Kadeřník: 10 % hrubé neúspěšnosti."
+      ],
+      "evidence": "„Výsledky maturitních zkoušek byly v posledních třech letech proměnlivé.“"
+    },
+    "absence": {
+      "trend": "Průměrná absence na žáka se snížila a současně klesla celková neomluvená absence.",
+      "key_numbers": [
+        "181 hodin na žáka ve školním roce 2021/2022.",
+        "144 hodin na žáka ve školním roce 2024/2025.",
+        "Ve školním roce 2024/2025 neprospělo 8,7 % žáků."
+      ],
+      "evidence": "„Ve školním roce 2024/2025 tato hodnota klesla na 144 hodin na žáka za školní rok.“"
+    },
+    "support_services": [
+      "Tři výchovní poradci, tři školní metodičky prevence a dvě kariérový poradkyně.",
+      "Pravidelné schůzky poradenského týmu a předávání informací pedagogům.",
+      "Doučování na základě výsledků srovnávacích testů v českém jazyce, anglickém jazyce a matematice.",
+      "Adaptační programy pro žáky prvních ročníků."
+    ],
+    "safety_climate": [
+      "Ve sledovaných hodinách tělesné výchovy byl kladen důraz na bezpečnost žáků.",
+      "Škola má funkční plán prevence rizikového chování a sociálně patologických jevů.",
+      "Třídní učitelé sledují klima tříd a podílejí se na včasném řešení rizikových jevů."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje například s VUT v Brně, Masarykovou univerzitou, Univerzitou obrany, ČD Cargo a Fosfou.",
+      "Praktické vyučování probíhá ve školních dílnách a na pracovištích smluvních partnerů.",
+      "Škola realizuje praktické vyučování technického oboru v duálním vzdělávání u generálního sociálního partnera."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá běžné české výrazy, odděluje závěry inspekce od doporučení a vyjadřuje významné nálezy stručně.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí podrobné výsledky maturit podle všech oborů a předmětů.",
+      "Zpráva neuvádí aktuální výsledky opatření přijatých pro obor Podnikání, protože byla realizována krátce.",
+      "Inspekční období v metadatech končí 9. 2. 2026, ale inspekční činnost na místě probíhala 3.–5. 2. a 9. 2. 2026."
+    ]
+  }
+}

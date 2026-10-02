@@ -1,0 +1,105 @@
+{
+  "report_id": "SOS_600020207_2026-02-24",
+  "school_profile": {
+    "school_type": "Střední hotelová škola, Vyšší odborná škola a Jazyková škola s právem státní jazykové zkoušky s.r.o.",
+    "inspection_period": "24. – 26. 2. 2026",
+    "school_change_summary": "Od roku 2017 výrazně vzrostl počet žáků, rozšířila se zaměření oboru a výrazně se zlepšily materiální podmínky; vyšší odborné vzdělávání se nevykonává od školního roku 2022/2023."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Škola účinně propojuje teorii s praxí při výuce v pracovištích partnera i reálném prostředí.",
+        "evidence": "„Vzdělávání strategie účinně propojovaly teoretické poznatky s jejich praktickým využitím.“"
+      },
+      {
+        "tag": "Podpora studentů",
+        "detail": "Maturitní přípravu, doučování a konzultace využívají také žáci s odlišným mateřským jazykem.",
+        "evidence": "„Motivovaní žáci s OMJ dochází na doučování českého jazyka.“"
+      },
+      {
+        "tag": "Jazyková příprava",
+        "detail": "Výuka cizích jazyků rozvíjí slovní zásobu i komunikační dovednosti a podporuje uplatnitelnost absolventů.",
+        "evidence": "„Účinná podpora cizojazyčných znalostí a dovedností žáků zvyšuje jejich uplatnitelnost na trhu práce.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Absence",
+        "detail": "Vysoká absence může vést k neúspěšnosti nebo předčasnému odchodu žáků ze školy.",
+        "evidence": "„Vyšší absence žáka ve výuce s jeho školní neúspěšností či vede k předčasnému odchodu ze vzdělávání.“"
+      },
+      {
+        "tag": "Maturita z ČJ",
+        "detail": "Slabší výsledky společné části maturity souvisejí zejména s didaktickým testem z českého jazyka a literatury.",
+        "evidence": "„Zhoršené výsledky ve společné části MZ souvisí zejména s neúspěšností žáků v didaktickém testu z českého jazyka.“"
+      },
+      {
+        "tag": "Diferenciace",
+        "detail": "Omezená diferenciace zejména u nadaných žáků může brzdit jejich rozvoj a rovnoměrnému zapojení do výuky.",
+        "evidence": "„Minimální využívání diferenciace výuky zvláště vůči nadaným žákům nerozvíjelo dostatečně jejich individuální předpoklady.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola snižuje absenci a řeší její příčiny ve spolupráci s rodiči?",
+      "Jak probíhá podpora českého jazyka před maturitou a u žáků s odlišným mateřským jazykem?",
+      "Jak rozlišuje škola úkoly pro nadané, průměrné a žáky potřebující podporu?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat hotelnictví, gastronomii, cestovní ruch nebo stevardství.",
+      "Žákům, kterým vyhovuje propojení teoretické výuky s praktickou činností.",
+      "Žákům se zájmem o cizí jazyky a komunikaci v hotelovém či cestovním prostředí."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří mají potíže s pravidelnou účastí ve výuce kvůli absenci.",
+      "Rodičům žáků, kterým při přípravě na maturitu chybí podpora v českém jazyce a literatuře.",
+      "Rodičům nadaných žáků, kterým nestačí běžné společné zadání a potřebují rozšířenou výuku."
+    ],
+    "plain_czech_summary": "Škola má prakticky zaměřenou výuku, spolupráci s partnery a dobrou podporu cizích jazyků i přípravy k maturitě. Pro rodiče jsou nejdůležitější tři upozornění: přetrvává vysoká absence, výsledky maturity ve společné části se mírně zhoršují kvůli českému jazyku a literatuře a některé hodiny má málo diferenciace. Profilové části maturity jsou naopak dobré. Škola nabízí konzultace, doučování a intenzivní přípravu na didaktické testy. Podpora je dostupná i žákům s odlišným mateřským jazykem."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky společné části maturity se za poslední tři školní roky postupně mírně zhoršily; profilové části zůstávají dobré.",
+      "key_numbers": [
+        "2022/2023: výsledek společné části výrazně lepší než celorepublikový průměr",
+        "2023/2024: přibližně na úrovni celorepublikového průměru",
+        "2024/2025: mírně horší než celorepublikový průměr"
+      ],
+      "evidence": "„Výsledky žáků při ukončování vzdělávání maturitní zkouškou se v posledních třech školních letech postupně mírně zhoršily.“"
+    },
+    "absence": {
+      "trend": "Průměrná roční absence se oproti předchozímu školnímu roku nezměnila a zůstává vysoká; neomluvená absence je minimální.",
+      "key_numbers": [
+        "2024/2025: přibližně 150 habsence na žáka za školní rok",
+        "Absence v předchozím školním roce: obdobná",
+        "Neomluvená absence: minimální výskyt"
+      ],
+      "evidence": "„Ve školním roce 2024/2025 byla průměrná roční absence přibližně 150 h na žáka, obdobně jako v předchozím školním roce.“"
+    },
+    "support_services": [
+      "„Školní poradenské služby převážně účelně provádí obměněný pracovní tým.“",
+      "„Nově je účinně do týmu zapojena školní psycholožka.“",
+      "„Neúspěšným žákům škola nabízí např. konzultace či doučování, což žáci využívají.“",
+      "„Motivovaní žáci s OMJ dochází na doučování českého jazyka.“"
+    ],
+    "safety_climate": [
+      "„Bezpečnosti a ochraně zdraví žáků věnuje škola pozornost stanovením pravidel a postupů.“",
+      "„O pravidlech jsou žáci prokazatelně poučováni.“",
+      "„Úrazovost se daří udržovat na nízké úrovni.“"
+    ],
+    "partnerships_practice": [
+      "„Odbornou složku vzdělávání obohacují odborné přednášky a exkurze prováděné odborníky z praxe či vysokých škol.“",
+      "„Škola realizuje odbornou praxi u sociálních partnerů.“",
+      "„Praktické vyučování bylo hospitováno ve školním pracovišti, pracovišti smluvního partnera a v reálném prostředí.“"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžnou češtinu, stručně odděluje silné stránky od rizik a dává rodičům konkrétní otázky na den otevřených dveří.",
+    "uncertainty_notes": [
+      "Zpráva uvádí počet žáků, naplněnost a podíly výsledků, ale nepodává údaje o přijímacím řízení.",
+      "Text neuvádí konkrétní výsledky nanejvýš podrobněji rozpadnuté podle jednotlivých předmětů.",
+      "Není uvedeno, jaké konkrétní kroky škola přijme pro zlepšení absencí, diferenciace a maturity z českého jazyka."
+    ]
+  }
+}

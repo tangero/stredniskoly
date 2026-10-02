@@ -1,0 +1,102 @@
+{
+  "report_id": "NAS_600017231_2023-11-01",
+  "school_profile": {
+    "school_type": "Střední odborná škola a střední odborné učiliště služeb",
+    "inspection_period": "1. 3. a 6. 11. 2023",
+    "school_change_summary": "Škola pokračovala ve zkvalitňování materiálních podmínek a rozvíjela partnerské vztahy podporující odborné kompetence žáků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Příznivé klima",
+        "detail": "Ve škole panuje vstřícné prostředí a žádoucí vztahy mezi žáky a pedagogy.",
+        "evidence": "Ve všech hodnocených hodinách převládala příznivá pracovní atmosféra a komunikace byla korektní."
+      },
+      {
+        "tag": "Praktická výuka",
+        "detail": "Odborný výcvik probíhá organizovaně a učitelé kontrolují i korigují práci žáků.",
+        "evidence": "Učitelé kontrolovali a korigovali pracovní postupy, kladli důraz na technologii, bezpečnost a hygienu."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola nabízí individuální konzultace, doučování a podporu žákům ohroženým školním neúspěchem.",
+        "evidence": "Škola identifikuje žáky s rizikem neúspěchu, poskytuje primární podporu, konzultace a dobrovolné doučování."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Metody výuky",
+        "detail": "V části hodin převládala frontální výuka a méně se využívaly kooperativní a aktivizující metody.",
+        "evidence": "Z organizačních forem teoretického vyučování výrazně převažovala frontální výuka; kooperativní techniky byly v omezené míře."
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Formativní hodnocení a závěrečná reflexe žáků byly v některých hodinách nedostatečné.",
+        "evidence": "Formativní zpětná vazba byla poskytována jen výjimečně a zapojení žáků do závěrečného shrnutí bylo minimální."
+      },
+      {
+        "tag": "Diferencování",
+        "detail": "Výuka se málo přizpůsobovala rozdílným možnostem, schopnostem a potřebám jednotlivých žáků.",
+        "evidence": "Učitelé nediferencovali úkoly podle individuálních možností a schopností žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se ve škole podporují žáci s individuálními vzdělávacími potřebami?",
+      "Jak často žáci dostávají zpětnou vazbu o svém postupu a možnostech dalšího zlepšení?",
+      "Kolik času ve vyučování tvoří práce ve skupinách, praktické činnosti a práce s informačními zdroji?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří hledají střední vzdělání v oborech Podnikání, Krejčí, Zahradník, Kuchař–číšník nebo Kadeřník.",
+      "Žákům, kterým vyhovuje vstřícné školní klima a praktický odborný výcvik.",
+      "Žákům se speciálními vzdělávacími potřebami, kterým škola poskytuje poradenské a vzdělávací podpůrné služby."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na co největším využívání aktivizujících a kooperativních metod výuky.",
+      "Rodičům žáků, kteří potřebují pravidelnou formativní zpětnou vazbu a výrazné individuální přizpůsobení výuky.",
+      "Rodičům, kteří očekávají podrobné výsledky úspěšnosti u maturit a absence, protože inspekční zpráva konkrétní čísla neuvádí."
+    ],
+    "plain_czech_summary": "Škola nabízí vstřícné prostředí, dobře organizovaný odborný výcvik a poradenskou podporu. Výsledky vzdělávání podle inspekce neměly v jednotlivých předmětech významné odchylky a neomluvená absence nebyla vykázána. Pro rozvoj je ale nutné více využívat skupinovou a kooperativní výuku, práci s informačními zdroji, formativní hodnocení a přizpůsobení učiva různým žákům. Rodiče by měli na dneku ověřit, jak se tyto změny ve škole konkrétně projevují."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Škola pravidelně sleduje výsledky a podporuje přípravu na maturitní zkoušku; konkrétní úspěšnost v procentech zpráva neuvádí.",
+      "key_numbers": [
+        "Školní rok 2022/2023: nebyly zaznamenány významné odchylky ve výsledcích jednotlivých předmětů.",
+        "Jeden obor s maturitní zkouškou: Podnikání, 64-41-L/51."
+      ],
+      "evidence": "Úspěšnost u maturitních zkoušek je důležitou zpětnou vazbou; škola připravu žáků intenzivňuje."
+    },
+    "absence": {
+      "trend": "Zvýšenou absenci škola řešila neodkladně; zpráva neuvádí celkové procento absence ani její dlouhodobý vývoj.",
+      "key_numbers": [
+        "Neomluvená absence nebyla vykázána.",
+        "Počet kázeňských opatření nebyl významný."
+      ],
+      "evidence": "Případnou zvýšenou absenci žáků řešila škola neodkladně vhodnými výchovnými opatřeními."
+    },
+    "support_services": [
+      "Výchovná poradkyně, školní metodička prevence, kariérová poradkyně, školní psycholožka a romská poradkyně.",
+      "Individuální konzultace, dobrovolné doučování a podpora žáků s rizikem školního neúspěchu.",
+      "Podpůrná opatření pro žáky se speciálními vzdělávacími potřebami."
+    ],
+    "safety_climate": [
+      "Během inspekce splňovaly školní prostory podmínky bezpečného školního a pracovního prostředí.",
+      "Ve vyučovacích hodinách převládala příznivá atmosféra bez nežádoucích projevů chování.",
+      "Škola realizuje poučení o bezpečnosti, ochraně zdraví, technologických postupech a hygieně práce."
+    ],
+    "partnerships_practice": [
+      "Spolupráce se základními školami, místními institucemi, podnikatelskými subjekty a profesními svazy.",
+      "Část praktického vyučování se realizuje u gastronomických firem v zahraničí.",
+      "Škola aktivně propaguje svou činnost potenciálním zájemcům o studium a veřejnosti."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá srozumitelný český jazyk, odděluje ověřená zjištění od doporučení pro rodiče a respektuje uvedené délkové limity.",
+    "uncertainty_notes": [
+      "Inspekční zpráva neuvádí konkrétní procenta úspěšnosti maturit.",
+      "Inspekční zpráva neuvádí celkové číselné údaje o absenci.",
+      "Zpráva neuvádí podrobné výsledky po následném přijetí doporučovaných opatření."
+    ]
+  }
+}

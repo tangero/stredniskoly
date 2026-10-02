@@ -1,0 +1,112 @@
+{
+  "report_id": "NAS_600170306_2025-12-09",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:08:12.575128+00:00",
+  "run_finished_utc": "2026-10-02T17:08:48.148397+00:00",
+  "raw_file": "NAS_600170306_2025-12-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "NAS_600170306_2025-12-09",
+    "school_profile": {
+      "school_type": "Střední škola poskytující čtyřleté maturitní obory, tříleté učební obory a dvouleté nástavbové studium.",
+      "inspection_period": "9.–11. 12. 2025",
+      "school_change_summary": "Počet žáků výrazně vzrostl, rozšířila se pedagogická síla, proběhla rekonstrukce budovy a obměňuje se IT technika i odborné pomůcky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Škola dobře propojuje teorii s praktickým výcvikem na smluvních pracovištích.",
+          "evidence": "„Většina praktického vyučování vyšších ročníků probíhá na smluvních pracovištích v reálném prostředí firem.“"
+        },
+        {
+          "tag": "Odborné zázemí",
+          "detail": "Rozsáhlý areál, vybavení a zkušení učitelů podporují osvojování řemeslných dovedností.",
+          "evidence": "„Nadstandardní materiální zázemí spolu s vysokou odborností vyučujících významným způsobem podporuje rozvoj profesních kompetencí žáků.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí doučování, konzultace, poradenství a podporu při řešení rizikového chování.",
+          "evidence": "Škola realizuje „pravidelné doučovací aktivity“ a „individuální konzultace“; poradenské pracoviště poskytuje komplexní podporu."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturitní příprava",
+          "detail": "Největším rizikem je vysoká neúspěšnost u maturitní zkoušky, zejména v nástavbovém oboru Podnikání.",
+          "evidence": "„Slabým místem je stále vysoká neúspěšnost žáků u maturitní zkoušky.“"
+        },
+        {
+          "tag": "Diferencovaná výuka",
+          "detail": "Ve vyučování se málo dbá na přizpůsobení úkolů schopnostem a učebnímu tempu žáků.",
+          "evidence": "„Všichni žáci plnili stejné úkoly; učitelé jejich práci nediferencovali.“"
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Běžná hodnocení jsou méně rozvíjející pro žáky, protože chybí častější formativní zpětná vazba.",
+          "evidence": "„Jen výjimečně byla poskytována formativní zpětná vazba, která by je motivovala k dalšímu učení.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá podpora nástavbového oboru Podnikání, u něhož „z 28 žáků 15 žáků neprospělo“?",
+        "Jak často se ve čtvrtém roce ověřují připravenost žáků k maturitě a jak se výsledky využívají k doučování?",
+        "Jak konkrétně vyučívání diferencuje úkoly a poskytuje zpětnou vazbu žákům s různými předpoklady?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí technické, stavební, řemeslné nebo hasičské vzdělání a ocenují rozsáhlé praktické zázemí.",
+        "Žákům, kteří mají zájem o spolupráci s firmami, cechy, soutěžemi nebo odbornými akcemi.",
+        "Žákům, kteří využijí školní poradenství, doučování, konzultace či případně ubytování v domově mládeže."
+      ],
+      "who_should_be_cautious": [
+        "Před výběrem nástavbového oboru Podnikání, kde je výsledná neúspěšnost a pokles počtu žáků v prvním roce vysoká.",
+        "Při volbě oboru, který vyžaduje průběžnou samostatnou přípravu k maturitě z matematiky a cizích jazyků.",
+        "Rodičům žáků, kterým by nestačilo jen frontální vyučování bez dostatečné podpory učitelů při odlišných vzdělávacích potřebách."
+      ],
+      "plain_czech_summary": "Škola nabízí silné praktické a odborné zázemí, spolupráci s firmami a cechy, kvalitní vybavení i širokou podporu žáků. Důležitou výhodou je také domov mládeže. Hlavním problémem zůstává vysoká neúspěšnost u maturit, výrazně u nástavbového Podnikání a ve Finančních službách. Výuka se podle inspekce málo přizpůsobuje rozdílným schopnostem žáků a zřídka nabízí hlubší zpětnou vazbu. Rodiče by proto měli ověřit konkrétní přípravu na maturitu v daném oboru a zeptat se, jak se výuka mění podle potřeb žáka."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "U nástavbového oboru Podnikání se čistá neúspěšnost mezi školními roky zvýšila, zatímco u učebních oborů byla jednotná závěrečná zkouška úspěšná.",
+        "key_numbers": [
+          "2023/2024: čistá neúspěšnost Podnikání 27,8 %; z 18 maturujících neprospělo 5.",
+          "2024/2025: čistá neúspěšnost Podnikání 40 %; republikový průměr srovnatelných oborů 24 %.",
+          "Finanční služby 2024/2025: čistá i hrubá neúspěšnost v profilové části 20 %."
+        ],
+        "evidence": "„Ve školním roce 2024/2025 činila čistá neúspěšnost 40 %“; v oboru s výučním listem „uspěli všichni konající žáci“."
+      },
+      "absence": {
+        "trend": "Absence se oproti předchozí inspekci snížila, ale škola se na její příčiny nadále zaměřuje.",
+        "key_numbers": [
+          "Zpráva neuvádí přesný počet neomluvených hodin.",
+          "Rozhodující je kladné hodnocení: „díky přijatým krokům se ji podařilo snížit“."
+        ],
+        "evidence": "„Od minulé inspekční činnosti se vedení zaměřilo na příčiny vysoké absence žáků a díky přijatým krokům se ji podařilo snížit.“"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytuje vzdělávací, výchovnou, osobnostní a kariérovou podporu.",
+        "Škola poskytuje pravidelné doučování, individuální konzultace, překlady materiálů a pomoc žákům s odlišným mateřským jazykem.",
+        "Ubytovaní žáci mohou využít pomoc vychovatelů a vrstevníků, kroužky, kulturní a sportovní aktivity."
+      ],
+      "safety_climate": [
+        "Při praktickém vyučování byl kladen důraz na dodržování zásad bezpečnosti a ochrany zdraví.",
+        "Většina sledovaných hodin probíhala v pozitivní pracovní atmosféře založené na vzájemném respektu.",
+        "Škola řeší projevy rizikového chování prostřednictvím prevence, adaptačních kurzů a včasné intervence."
+      ],
+      "partnerships_practice": [
+        "Vyšší ročníky absolvují praktické vyučování převážně v reálném prostředí smluvních firem.",
+        "Škola spolupracuje s řemeslnickými cechy, Vysokou školou technickou a ekonomickou a partnerskou střední školou v Brně.",
+        "Externí partneři podporují odborné akce, výuku, týmové kompetence a propojení vzdělávání s praxí."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně vysvětluje význam čísel a odděluje silné stránky od oblastí, které je vhodné s rodiči ověřit.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesný trend ani číselnou hodnotu absence, přestože její pokles hodnotí kladně.",
+        "Údaje o neúspěšnosti se vztahují převážně k nástavbovému oboru Podnikání a nemíří rovnou na všechny maturitní obory.",
+        "Inspekční zpráva neuvádí přímé výsledky rodičů ani konkrétní školu pro každý jednotlivý obor."
+      ]
+    }
+  }
+}

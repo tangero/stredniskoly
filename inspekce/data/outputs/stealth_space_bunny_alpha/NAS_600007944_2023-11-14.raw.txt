@@ -1,0 +1,104 @@
+{
+  "report_id": "NAS_600007944_2023-11-14",
+  "school_profile": {
+    "school_type": "Střední odborné učiliště",
+    "inspection_period": "14. až 20. listopadu 2023",
+    "school_change_summary": "Počet žáků mírně vzrostl, vybavení se zlepšovalo a škola nově podporuje zahraniční mobility; přetrvává ale nedostatečná diferenciace teoretické výuky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Odborný výcvik je vedle kvalitně, postupně roste samostatnost žáků a u zahradníků dosahují výborných dovedností.",
+        "evidence": "„Žáci třetích ročníků pracovali převážně samostatně.“; „žáci prokazovali výborné dovednosti při samostatné práci“"
+      },
+      {
+        "tag": "Podpora učení",
+        "detail": "Škola poskytuje doučování, konzultace, soustředěné opakování i podporu při adaptaci nových žáků v domově mládeže.",
+        "evidence": "„škola nabízí žákům individuální konzultace či systematické doučování“; „Pro nově ubytované žáky zajišťují vychovatelé v DM vhodný adaptační program“"
+      },
+      {
+        "tag": "Vybavení a praxe",
+        "detail": "Škola průběžně nakupuje digitální techniku a pomůcky a spolupracuje se smluvními pracovišti pro odbornou praxi.",
+        "evidence": "„Partnerské vztahy ... pro zajištění praxe žáků jsou velkým přínosem“; „Pokračuje zlepšování vybavení mj. digitální technikou“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Adaptace v 1. ročníku",
+        "detail": "První ročníky mají problémy s učebními postupy a část studentů školu předčasně opouští.",
+        "evidence": "„Z uvedené třídy na konci druhého pololetí ... odešla pětina“; „To se promítá i do předčasných odchodů žáků“"
+      },
+      {
+        "tag": "Absence",
+        "detail": "Vysoká omluvená absence v prvním ročníku zhoršuje výsledky a může vést k předčasnému odchodu ze studia.",
+        "evidence": "„Omluvená absence ... zhruba 170 hodin na žáka“; „U žáků nástavbového oboru má vysoká absence ... negativní vliv“"
+      },
+      {
+        "tag": "Přizpůsobení výuky",
+        "detail": "Teoretické předměty se málo přizpůsobují rozdílům mezi žáky a učitelé málo využívají formativní hodnocení.",
+        "evidence": "„V části výuky teoretických předmětů i nadále chyběla diferenciace“; „Formativní hodnocení používali učitelé ojedinele“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se výuka jednotlivých předmětů přizpůsobuje rozdílným studijním předpokladům žáků?",
+      "Jak konkrétně probíhá podpora v prvních ročnících po příchodu nových žáků a jaké jsou výsledky snižování absence?",
+      "Kolik hodin praxe žáci absolvují na smluvních pracovištích a jak často ji učitelé osobně kontrolují?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí technický nebo zemědělský obor a mají zájem o praktickou práci a samostatné řešení úkolů.",
+      "Žákům, kterému pomůže strukturované vedení, doučování a postupné přecházení k samostatnosti.",
+      "Žákům, kteří využijí ubytování a podporu v domově mládeže."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří potřebují výrazně individuální přístup nebo silnou pravidelnou podporu při učení.",
+      "Rodičům žáků s problematickou docházkou, protože absence výrazně zhoršuje jejich školní výsledky.",
+      "Žákům, kterým záleží na systematické diferenciaci a průběžném formativním hodnocení v teoretických předmětech."
+    ],
+    "plain_czech_summary": "Škola má dobře vybavené praktické učebny, kvalitní učitele odborného výcviku a spolupráci se smluvními pracovišti. Výsledky společné části maturity se zlepšily. Pro rodiče je nejdůležitější sledovat adaptaci dětí hned v prvním ročníku a jejich docházku, protože absence a nevhodně přizpůsobená teoretická výuka souvisejí s horšími výsledky i předčasnými odchody. Škola nabízí doučování, konzultace a podporu v domově mládeže. Při osobním výběru je vhodné ověřit, jak konkrétně učitelé přizpůsobují učivo různě studijně zdatným žákům a sledují neomluvenou i dlouhodobou absenci."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky společné části maturitní zkoušky se výrazně zlepšily.",
+      "key_numbers": [
+        "Jednotnou závěrečnou zkoušku v roce 2021/2022 úspěšně složili všichni žáci.",
+        "V roce 2022/2023 byli úspěšní všichni kromě jednoho žáka.",
+        "Úspěšnost prvního a druhého ročníku nástavbového studia vzrostla na průměrně asi 60 %."
+      ],
+      "evidence": "„Výsledky žáků nástavbového oboru byly v celorepublikovém porovnání lepší než průměr hrubé neúspěšnosti“."
+    },
+    "absence": {
+      "trend": "Absence je zvlášť problematická v prvních ročnících, zatímco ve vyšších ročnících se snižuje.",
+      "key_numbers": [
+        "Pět žáků prvního ročníku mělo neomluvené hodiny.",
+        "Omluvená absence této třídy činila zhruba 170 hodin na žáka za školní rok.",
+        "Po dokončení prvního ročníku nástavbového studia pokračovalo průměrně asi 60 % žáků."
+      ],
+      "evidence": "„ve vyšších ročnících se absence i neomluvená snižuje či zcela eliminuje“."
+    },
+    "support_services": [
+      "Individuální konzultace a systematické doučování. Evidence: „Pro zlepšení výsledků škola nabízí žákům individuální konzultace či systematické doučování.“",
+      "Soustředěné opakování před jednotnou závěrečnou zkouškou. Evidence: „škola zařazuje soustředěné opakování na školních pracovištích“.",
+      "Doučování českého jazyka pro motivované žáky s jazykovou bariérou. Evidence: „škola poskytuje efektivní doučování českého jazyka“."
+    ],
+    "safety_climate": [
+      "Míra úrazovosti žáků je podle zprávy nízká. Evidence: „míra úrazovosti žáků je nízká“.",
+      "Ve vyučování převládala příjemná atmosféra a respekt k dohodnutým pravidlům. Evidence: „Hospitovaná výuka probíhala převážně v příjemné pracovní atmosféře“.",
+      "Škola kontroluje používání osobních ochranných pracovních prostředků. Evidence: „škola vyžaduje a kontroluje jejich používání při praktickém vyučování“."
+    ],
+    "partnerships_practice": [
+      "Smluvní pracoviště zajišťují odborný výcvik. Evidence: „Sledovaný odborný výcvik ... byl kvalitně vedení učiteli odborného výcviku a instruktory na smluvních pracovištích“.",
+      "Škola spolupracuje se zaměstnavateli a dalšími sociálními partnery. Evidence: „účelná spolupráce se sociálními partnery“.",
+      "O absolventech je na pracovním trhu stálý zájem. Evidence: „O absolventy školy je na trhu práce trvalý zájem.“"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžné české výrazy, krátké věty a jasně odděluje silné stránky, rizika a ověřovací otázky.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí aktuální číselnou míru neomluvené absence za celou školu.",
+      "Zpráva neuvádí konkrétní výsledky podpory pro jednotlivé žáky se SVP.",
+      "Přesný obsah a časové rozdělení doučování zpráva neuvádí."
+    ]
+  }
+}

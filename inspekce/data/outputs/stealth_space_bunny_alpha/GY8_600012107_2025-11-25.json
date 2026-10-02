@@ -1,0 +1,112 @@
+{
+  "report_id": "GY8_600012107_2025-11-25",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:56:25.648201+00:00",
+  "run_finished_utc": "2026-10-02T16:56:59.336608+00:00",
+  "raw_file": "GY8_600012107_2025-11-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600012107_2025-11-25",
+    "school_profile": {
+      "school_type": "gymnázium se čtyřletým a osmiletým studiem",
+      "inspection_period": "25. 11. 2025 až 27. 11. 2025",
+      "school_change_summary": "Podmínky se výrazně zlepšily: škola vyměnila osvětlení, modernizovala vytápění, doplnila wi-fi, laboratoř chemie a odpočinkový koutek; začala vyučovat polštinu a rozšířila volitelné předměty."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výsledky žáků",
+          "detail": "Škola dosahuje dlouhodobě velmi dobrých až nadprůměrných výsledků a vysoké úspěšnosti při přijímání na vysoké školy.",
+          "evidence": "„Žáci školy dlouhodobě vykazují velmi dobré až nadprůměrné výsledky, což potvrzují i externí testování.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Školní poradenské pracoviště poskytuje komplexní podporu a zajišťuje individuální přístup podle potřeb žáků.",
+          "evidence": "„Celkově ŠPP funguje jako efektivní systém poskytující žákům komplexní podporu.“"
+        },
+        {
+          "tag": "Jazyková úroveň",
+          "detail": "Škola systematicky rozvíjí jazykové kompetence, což se odráží také v úspěších žáků v jazykových soutěžích a zkouškách.",
+          "evidence": "Dvanáct žáků uspělo u cambridgeské jazykové zkoušky, někteří dosáhli úrovně C1 podle Společného evropského referenčního rámce."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Rozmanitost výuky",
+          "detail": "V některých hodinách převažuje méně efektivní frontální výuka, která omezuje zapojení žáků a rozvoj spolupráce.",
+          "evidence": "„Méně efektivní frontální výuka se omezovala převážně na jednostranný přenos informací s minimálním zapojením žáků a interakcí.“"
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Závěrečné vyhodnocení cíle, formativní zpětná vazba a sebehodnocení nejsou v běžné výuce zatím běžnou součástí.",
+          "evidence": "„Pouze někteří vyučující poskytli žákům závěrem zpětnou vazbu, která reflektovala jejich pokrok ve vzdělávání.“"
+        },
+        {
+          "tag": "Jednotná kritéria",
+          "detail": "Různí učitelé mohou používat odlišná kritéria hodnocení, což ztěžuje objektivní porovnání žáků ve stejných předmětech.",
+          "evidence": "„Nejsou stanovena jednotná kritéria hodnocení výsledků vzdělávání žáků ve stejných předmětech.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak často se běžně objevují hodiny s převážně frontální výukou a jaké metody rozmanitosti výuky škola postupně zavádí?",
+        "Jak vypadá zpětná vazba, společné hodnocení a podpora nadaných žáků v běžné výuce?",
+        "Jaké výsledky externího testování a přijímacích zkoušek ukazují o připravenosti uchazečů na studium?"
+      ],
+      "who_school_fits": [
+        "Uchazeči, kteří chtějí studovat ve čtyřletém nebo osmiletém gymnáziu.",
+        "Žáci, kterému vyhovuje široká nabídka volitelných předmětů, projektů a zahraničních aktivit.",
+        "Rodiny, které oceňují průběžné informování o výsledcích a možnost konzultací s pedagogy."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří očekávají v každém předmětu jednotné hodnotící postupy a kritéria.",
+        "Uchazeči, kterým by nevyhovovalo střídání frontální výuky a samostatné práce nebo větší míra vnější podpory.",
+        "Žáci, kteří potřebují ve všech předmětech průběžnou zpětnou vazbu a sebehodnocení podle jasných kritérií."
+      ],
+      "plain_czech_summary": "Broumovské gymnázium nabízí čtyřleté a osmileté studium, široký výběr volitelných předmětů, projektovou výuku a rozsáhlou podporu žáků. Jeho výhodou jsou velmi dobré výsledky, úspěšnost přijímaných na vysoké školy, funkční poradenství a spolupráce s regionem i zahraničními školami. Rodiče by se měli zeptát na míru frontální výuky a pravidelné zpětné vazby. Ve škole nejsou jednotná kritéria hodnocení ve stejných předmětech, takže požadavky na známky se mohou lišit podle učitele."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě velmi dobré až nadprůměrné výsledky; vysoká úspěšnost při přijímání na vysoké školy.",
+        "key_numbers": [
+          "80–90 % úspěšnosti absolventů při přijímání na vysoké školy za poslední tři roky.",
+          "12 žáků uspělo u cambridgeské jazykové zkoušky.",
+          "Někteří žáci dosáhli jazykové úrovně C1."
+        ],
+        "evidence": "„Dlouhodobé statistiky školy potvrzují vysokou úspěšnost absolventů při přijímání na vysoké školy (80–90 % za poslední tři roky).“"
+      },
+      "absence": {
+        "trend": "Systém se snaží řešit absence individuálně, ale zpráva neuvádí celkovou průměrnou míru absence.",
+        "key_numbers": [
+          "Celkové hodnocení předmětu je podmíněno nepřekročením absence nad 30 %.",
+          "Při překročení této hranice může učitel nařídit přezkoušení k doplnění klasifikace."
+        ],
+        "evidence": "„Podmínkou pro celkové hodnocení v předmětu za příslušné klasifikační období je kromě splnění daného počtu známek i nepřekročení absence žáka nad 30 %.“"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště zahrnuje výchovnou poradkyni, školní metodičku prevence, kariérovou poradkyni a školní psycholožku.",
+        "Školní psycholožka je žákům denně k dispozici a poskytuje krizovou intervenci.",
+        "Škola nabízí doučování, peer program, individuální konzultace a podporu nadaných žáků."
+      ],
+      "safety_climate": [
+        "Respektující přístup a příjemná atmosféra podporovaly dodržování pravidel chování a aktivní zapojení žáků.",
+        "Rizikové chování se monitoruje prostřednictvím preventivního deníku, sociometrických šetření a pozorování.",
+        "Významná část aktivit směřuje k bezpečnému školnímu prostředí založenému na respektu."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s partnerskými školami v Polsku, Německu a Francii.",
+        "Regionální projekty zahrnují spolupráci s městem Broumov, místními podniky, kulturními institucemi a Agenturou pro rozvoj Broumovska.",
+        "Nadační fond Gymnázia Broumov podporuje zejména zahraniční pobyty, soutěže a kulturní akce."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text používá srozumitelnou češtinu, stručně odděluje silné stránky, rizika a ověřitelné údaje a většinu tvrzení opírá citací.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí celkový průměr absence, proto nelze jeho velikost číselně posoudit.",
+        "Zpráva neuvádí podrobné roční výsledky maturitní zkoušky podle jednotlivých předmětů.",
+        "Uvedené údaje o přijímání na vysoké školy pocházejí ze statistik školy uvedených v inspekční zprávě."
+      ]
+    }
+  }
+}

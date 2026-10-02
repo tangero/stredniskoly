@@ -1,0 +1,104 @@
+{
+  "report_id": "GY6_600013260_2026-02-24",
+  "school_profile": {
+    "school_type": "střední škola a školní jídelna-výdejna, gymnázium čtyřleté a šestileté",
+    "inspection_period": "24. 2. 2026 až 26. 2. 2026",
+    "school_change_summary": "Od roku 2018 se počet žáků zvýšil o 85 %; škola získala nové vzdělávací oblasti, rozšířila mezinárodní spolupráci a založila žákovský pěvecký sbor."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky a přijímání na vysoké školy",
+        "detail": "Škola dosahuje velmi dobrých výsledků a téměř devět z deseti absolventů pokračuje na vysoké škole.",
+        "evidence": "„Výsledky vzdělávání žáků dosahované při ukončování jejich vzdělávání maturitní zkouškou mají dlouhodobě výbornou úroveň.“"
+      },
+      {
+        "tag": "Bezpečné klima",
+        "detail": "Ve výuce podporují žáci respekt, otevřenou komunikaci a respektují stanovená pravidla.",
+        "evidence": "„Vzdělávání probíhalo v příznivém pracovním klimatu založeném na partnerském přístupu, vzájemném respektu a otevřené komunikaci.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola nabízí individuální podporu, poradenství, preventivní služby a vhodné podmínky pro nadané žáky.",
+        "evidence": "„Podpora žáků se speciálními vzdělávacími potřebami a žáků nadaných byla ve sledované výuce zajištěna většinou prostřednictvím individuálního přístupu pedagogů.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Práce s informacemi",
+        "detail": "Ve výuce je méně prostoru pro samostatné vyhledávání, třídění a kritické hodnocení informací.",
+        "evidence": "„Rezervy byly zaznamenány v nižší míře systematického využívání různých informačních zdrojů přímo žáky.“"
+      },
+      {
+        "tag": "Nejednotné programy",
+        "detail": "Školní vzdělávací programy jsou rozsáhlé a méně přehledné, což může ztěžovat jejich praktické využití.",
+        "evidence": "„Dokumenty nadměrně rozsáhlé a méně přehledné pro praktické využití.“"
+      },
+      {
+        "tag": "Aktivita některých hodin",
+        "detail": "V části výuky převládal frontální výklad a aktivní zapojení většiny žáků nebylo dostatečně podpořeno.",
+        "evidence": "„V části převažoval frontální výklad a vysvětlování učitelem, na jehož podněty reagovala jen menší část žáků.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně podporují samostatné vyhledávání, porovnávání a kritické hodnocení informací?",
+      "Jaké konkrétní služby mohou využít rodiče žáků se speciálními vzdělávacími potřebami nebo v obtížích?",
+      "Jaké informace rodiče dostávají průběžně o prospěchu, chování a školní docházce?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří mají zájem o gymnaziální vzdělávání a chtějí studovat na vysokou školu.",
+      "Žákům, kteří mají rádi komunikaci, spolupráci a aktivní zapojení do výuky.",
+      "Žákům, kterým vyhovuje podpora v cizích jazycích a příležitosti k mezinárodním aktivitám."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří očekávají pravidelnou přípravu na mezinárodní jazykové certifikáty pro každého žáka.",
+      "Rodičům žáků, kterým záleží na rovnoměrném, výrazně aktivním zapojení všech žáků v každé hodině.",
+      "Rodičům, kteří potřebují přesně přehledné a sjednocené školní vzdělávací programy."
+    ],
+    "plain_czech_summary": "Inspekce popisuje školu jako velmi dobře vedoucí gymnázium s kladným klimatem, kvalitní podporou žáků a výbornými výsledky. Maturitní zkoušky jsou dlouhodobě úspěšné, 94 % absolventů pokračuje na vysoké škole a v roce 2024/2025 měl 53,4 % žáků vyznamenání. Mezi hlavní nedostatky patří menší podpora samostatné práce s informacemi, nejednotné zpracování programů a místy příliš frontální výuka. Průměrná absence klesla na 164 hodin na žáka."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě velmi dobrá úroveň, v posledních třech školních rocích velmi nízká hrubá neúspěšnost.",
+      "key_numbers": [
+        "Hrubá neúspěšnost: 0 % v 2022/2023, 2,3 % v 2023/2024 a 0 % v 2024/2025.",
+        "V roce 2024/2025 bylo s vyznamenáním 53,4 % žáků.",
+        "Za poslední tři školní roky bylo průměrně 94 % absolventů přijato na vysoké školy."
+      ],
+      "evidence": "„Výsledky vzdělávání žáků dosahované při ukončování jejich vzdělávání maturitní zkouškou mají dlouhodobě výbornou úroveň.“"
+    },
+    "absence": {
+      "trend": "Meziročně přibližně stejná, v roce 2024/2025 mírně nižší než dříve.",
+      "key_numbers": [
+        "Průměrná absence přibližně 174 hodin na žáka za školní rok v uvedeném období.",
+        "V roce 2024/2025 průměrně 164 hodin na žáka.",
+        "Škola uplatňuje pravidla pro omlouvání absence a maximální hranice absence v předmětu."
+      ],
+      "evidence": "„Ve školním roce 2024/2025 se podařilo průměrný počet zameškaných hodin mírně snížit, a to na 164 hodin na žáka.“"
+    },
+    "support_services": [
+      "Školní psycholog, výchovná poradkyně a metodička prevence poskytují podporu žákům, rodičům a pedagogům.",
+      "Škola využívá individuální vzdělávací a výchovné plány pro žáky se speciálními vzdělávacími potřebami.",
+      "Škola poskytuje kariérovému poradenství, doučování, konzultace, adaptační kurzy a podporu wellbeingu."
+    ],
+    "safety_climate": [
+      "Ve výuce je podporován partnerský přístup, vzájemný respekt a otevřená komunikace.",
+      "Škola sleduje rizikové chování a zasahuje v případech šikany, kyberšikany nebo nadměrného používání digitálních technologií.",
+      "Školní klima žáci hodnotí pozitivně."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje se zahraničními školami v rámci akreditace Erasmus+ a dalších projektů.",
+      "Organizuje výměnné a jazykové pobyty zejména ve Španělsku a spolupráci se školami v Litvě, na Slovensku a dalších evropských zemích.",
+      "Nabídku doplňuje spolkovými sportovními a volnočasovými aktivitami."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a zaměřené na to, co mohou rodiče z inspekční zprávy využít při volbě školy a při jednání se školou.",
+    "uncertainty_notes": [
+      "Zpráva uvádí přibližnou průměrnou hodnotu absence, nikoli rozložení absence podle ročníků.",
+      "Zpráva neuvádí aktuální počet a strukturu oborů v jednotlivých ročnících pro školní rok 2025/2026.",
+      "Očekávání rodičů ohledně intenzity podpory a konkrétních aktivit se může lišit podle potřeb žáka."
+    ]
+  }
+}

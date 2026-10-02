@@ -1,0 +1,109 @@
+{
+  "report_id": "NAS_600170667_2023-05-29",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:02:05.717769+00:00",
+  "run_finished_utc": "2026-10-02T17:02:40.529943+00:00",
+  "raw_file": "NAS_600170667_2023-05-29.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "NAS_600170667_2023-05-29",
+    "school_profile": {
+      "school_type": "Střední odborná škola – příspěvková organizace",
+      "inspection_period": "29. 5. 2023 – 2. 6. 2023",
+      "school_change_summary": "Škola výrazně zmodernizovala vybavení a posílila kontrolní mechanismy; vzrostl počet žáků Grafického designu, který nyní vede Modulem."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Odborný výcvik probíhá v dílnách, provozovnách i u partnerů a propojuje teoretickou přípravu s praxí.",
+          "evidence": "Odborný výcvik realizovaný jak ve školních dílnách a vlastních provozovnách, tak u smluvních partnerů…"
+        },
+        {
+          "tag": "Poradenství a prevence",
+          "detail": "Školní poradenské pracoviště podporuje žáky ohrožené neúspěšností, včetně žáků se speciálními potřebami.",
+          "evidence": "Systematická práce školního poradenského pracoviště účinně přispívá k podpoře žáků se speciálními vzdělávacími potřebami."
+        },
+        {
+          "tag": "Grafický design",
+          "detail": "Moderní vybavení, odborní pedagogové a klauzury ukazují kvalitní přípravu studentů tohoto oboru.",
+          "evidence": "Jejich vysoká úroveň odráží kvalitní přípravu žáků tohoto oboru založenou na odborné erudici pedagogů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturita – Podnikání",
+          "detail": "Výsledky maturity jsou v oboru Podnikání podprůměrné a v letech 2021–2022 se zhoršily.",
+          "evidence": "Hrubá neúspěšnost školy v tomto oboru 50 % v roce 2021 a 58 % v roce 2022."
+        },
+        {
+          "tag": "Předčasné odchody",
+          "detail": "V oboru Podnikání žáci často končí studium předčasně, často kvůli zaměstnání a finančním důvodům.",
+          "evidence": "V roce 2021 dosahovala pouze 9 %, v roce 2022 pak 26 % úspěšnosti při ukončování vzdělávání."
+        },
+        {
+          "tag": "Teoretická výuka",
+          "detail": "V theorii se málo využívají diferencované úkoly, spolupráce žáků a průběžné ověřování dosažení cílů.",
+          "evidence": "Pedagogové nevyužívali individualizaci a diferenciaci zadávaných úkolů podle individuálních potřeb žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní opatření škola přijala po inspekci pro zvýšení úspěšnosti maturity v oboru Podnikání?",
+        "Jak konkrétně probíhá diferencovaná výuka v teoretických předmětech a jak se ověřují dosažené výsledky?",
+        "Kolik žáků využívá individuální nebo skupinové konzultace a kdy běžně začínají?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí odborné vzdělání s výučním listem a hodnotí silnou praktickou přípravu.",
+        "Zájemcům o Grafický design, kde škola popisuje moderní vybavení a kvalitní odborné vedení.",
+        "Žákům, kteří využijí nabízené konzultace, poradenství a podporu při školním neúspěchu."
+      ],
+      "who_should_be_cautious": [
+        "Rodinám, které zvažují maturitní obor Podnikání kvůli podprůměrným výsledkům a předčasným odchodům.",
+        "Žákům, kterým záleží na průběžné individualizaci a aktivním zapojení do teoretické výuky.",
+        "Rodinám, které očekávají komplexnější hodnocení žáků, protože údaje o neomluvené absenci zpráva neuvádí."
+      ],
+      "plain_czech_summary": "Škola má velmi dobré materiální a personální podmínky, zejména pro Grafický design. Praktický výcvik, spolupráce s firmami a zahraniční stáže podporují odborné dovednosti. Poradenské pracoviště nabízí konzultace, podporuje žáky se speciálními potřebami a věnuje se prevenci rizikového chování. Hlavním rizikem jsou výsledky maturity v oboru Podnikání a z toho plynoucí předčasné odchody. U teoretické výuky inspekce upozornila na malé využívání diferenciace, spolupráce žáků a průběžné zpětné vazby. Výsledky maturity se mezi obory výrazně liší, proto je vhodné porovnat aktuální data přímo na škole."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "U Podnikání se hrubá neúspěšnost zhoršila z 50 % na 58 %; u Grafického designu vzrostla z 4 % na 20 %.",
+        "key_numbers": [
+          "Podnikání, společná část 2021: škola 50 %, ČR 26 %",
+          "Podnikání, společná část 2022: škola 58 %, ČR 37 %",
+          "Grafický design, společná část 2022: škola 20 %, ČR 11 %"
+        ],
+        "evidence": "Ve společné části činila hrubá neúspěšnost Podnikání 50 % v roce 2021 a 58 % v roce 2022."
+      },
+      "absence": {
+        "trend": "Inspekční zpráva neuvádí statistiky neomluvené absence.",
+        "key_numbers": [],
+        "evidence": "V hodnocení nejsou uvedeny údaje o neomluvené absenci žáků."
+      },
+      "support_services": [
+        "Individuální a skupinové konzultace pro žáky ohrožené školním neúspěšností.",
+        "Školní poradenské pracoviště pro vzdělávací, kariérové a osobnostní poradenství.",
+        "Podpora žáků se speciálními vzdělávacími potřebami a prevence rizikového chování."
+      ],
+      "safety_climate": [
+        "Prevence zahrnuje pravidelné třídnické hodiny a adaptační pobyty pro první ročníky.",
+        "Případné problémy s nevhodným chováním jsou podle zprávy řešeny bezodkladně.",
+        "Škola zahrnuje podporu prosociálních vztahů v třídních kolektivech."
+      ],
+      "partnerships_practice": [
+        "Praktické vyučování u zaměstnavatelů a odborné stáže v zahraničních školách.",
+        "Spolupráce s externí psycholožkou a metodičkou prevence Městské policie v Litvínově.",
+        "Odborníci z praxe se podílejí na výuce a profesním rozvoji pedagogů."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text používá běžné české výrazy, číselné údaje odděluje od jejich významu a vyhýbá se složitému úřednímu jazyku.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přímé srovnání neomluvené absence se školním či republikovým průměrem.",
+        "Aktuální následná opatření školy po inspekci nejsou ve zprávě popsána.",
+        "Výsledky maturity jsou uvedeny za roky 2021 a 2022, nikoli za poslední školní rok 2022/2023."
+      ]
+    }
+  }
+}

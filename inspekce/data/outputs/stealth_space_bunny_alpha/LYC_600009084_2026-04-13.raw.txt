@@ -1,0 +1,104 @@
+{
+  "report_id": "LYC_600009084_2026-04-13",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola Ostrov, příspěvková organizace",
+    "inspection_period": "13. 4. až 20. 4. 2026",
+    "school_change_summary": "Od roku 2019 klesl počet míst a ubylo oborů, část spojení škol proběhla úspěšně a od roku 2024/2025 je opět nabízen Technické lyceum."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborné vybavení a praxe",
+        "detail": "Škola má moderní učebny, probíhá modernizace dílen a praktické vyučování zajišťuje také na pracovištích partnerů.",
+        "evidence": "„Škola má moderně vybavené odborné učebny“ a „Dokončuje se modernizace dílen pro odborný výcvik.“"
+      },
+      {
+        "tag": "Podpora studentů",
+        "detail": "Technické obory podporují stipendia, doučování, konzultace a odpovídající odborné projekty a soutěže.",
+        "evidence": "„Přibližně desetina žáků školní stipendia“; žáci úspěšně uplatňují odborné znalosti v národních soutěžích a olympiádách."
+      },
+      {
+        "tag": "Bezpečná atmosféra",
+        "detail": "Ve většině sledovaných hodin bylo klidní a respektující klima, při odborném výcviku byli žáci soustavně vedeni k bezpečné práci.",
+        "evidence": "„Ve většině hodin panovala klidná pracovní atmosféra“; žáci byli „systematicky vedeni k dodržování zásad bezpečnosti“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rozdílná kvalita výuky",
+        "detail": "Ve většině hodin převažovala frontální výuka, málo se využívala samostatná práce a často chybělo ověření dosažení cíle hodiny.",
+        "evidence": "„Převažovala frontální výuka“ a v mnoha hodinách chybělo „závěrečné shrnutí učiva a vyhodnocení dosažení cíle hodiny“."
+      },
+      {
+        "tag": "Nedostatečné přizpůsobení potřebám",
+        "detail": "Podpora žáků se SVP i jinak podporovaných žáků spočívá převážně v prodlouženém čase, nikoli dostatečně v úpravě úkolů a metod.",
+        "evidence": "„Podpora žáků se SVP byla zajišťována především formou prodlouženého času, méně již úpravou metod či struktury úkolů.“"
+      },
+      {
+        "tag": "Rozdílné výsledky oborů",
+        "detail": "Výsledky technických oborů jsou dobré, ale u Veřejnosprávní činnosti jsou výrazně horší než u srovnatelných oborů v ČR.",
+        "evidence": "„HN 19 % resp. 32,3 %“ oproti „HN ČR 9,5 % popř. 9,6 %“ u Veřejnosprávní činnosti."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé upravují úkoly a hodnocení pro žáky se SVP, odlišným mateřským jazykem nebo s potřebou podpory?",
+      "Kolik výuky probíhá samostatnou prací, ve dvojicích nebo ve skupinách a kolik učitelů pravidelně ověřuje dosažení cíle hodiny?",
+      "Jaké konkrétní výsledky má obor Veřejnosprávní činnost a jaká opatření škola přijímá proti neprospěchu v matematice?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí technické nebo informačně technologické vzdělání a ocení moderní odborné vybavení.",
+      "Žákům, kteří mají zájem o praktické vyučování, projekty, stipendia, odborné soutěže nebo zahraniční mobility.",
+      "Žákům, kterým vyhovuje spojení odborné výuky s_partnery a podpora rozvoje jejich odborných kompetencí."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří potřebují prokazatelně intenzivní individuální přístup, protože jeho poskytování je hodnoceno jen částečně.",
+      "Rodičům žáků, kterým záleží na průběžném ověřování učení a aktivním zapojení žáků, protože ve většině hodin převládá frontální výuka.",
+      "Rodičům, kteří zvažují dálkové elektrotechnické studium nebo obor Veřejnosprávní činnost kvůli slabším výsledkům a nestabilitě."
+    ],
+    "plain_czech_summary": "Škola má dobré technické zázemí, rozsáhlou síť partnerů a v technických oborech dosahuje velmi dobrých maturitních výsledků. Praktická výuka, projekty, stipendia a mobility mohou být pro žáky přínosem. Výukové hodiny ale často vedou učitelé převážně frontálně, málo se v nich uplatňuje samostatná práce a občas chybí závěrečné ověření učení. Podpora žáků se SVP nebo jinak potřebujících pomoc je nejednotná. Výsledky se výrazně liší podle oboru: nejlépe jsou na tom informační technologie, zatímco Veřejnosprávní činnost má horší výsledky než srovnatelné obory v ČR. Dálkové elektrotechnické studium má nízkou úspěšnost dokončení cyklu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "U technických oborů se hrubá neúspěšnost v roce 2025 zvýšila, ale zůstala výrazně pod průměrem ČR; u Veřejnosprávní činnosti je výsledek horší než v ČR.",
+      "key_numbers": [
+        "Technické obory: HN 1,5 % v roce 2024 a 6,7 % v roce 2025, proti ČR 7,7 % a 8,2 %.",
+        "Veřejnosprávní činnost: HN 19 % a 32,3 %, proti ČR 9,5 % a 9,6 %.",
+        "Dálkový obor Elektrotechnika: v roce 2024/2025 dokončil studium s maturitou 1 z 15 nastoupivších žáků, tedy 6 %."
+      ],
+      "evidence": "„Velmi slabých výsledků dosahují žáci dálkového nástavbového oboru“ a cyklus ukončil „pouze jeden žák“ z 15."
+    },
+    "absence": {
+      "trend": "Absence je podle školy úzce spojena s neúspěchem v nematuritních oborech, ale její dopady nejsou vedením dostatečně analyzovány.",
+      "key_numbers": [
+        "U jedné pětiny žáků se sníženým stupněm z chování byla příčinou neomluvená absence.",
+        "Ve školním roce 2024/2025 neprospělo přibližně 3 % všech žáků.",
+        "V prvním pololetí 2025/2026 neprospěla desetina žáků školy."
+      ],
+      "evidence": "„Neúspěch žáků u závěrečné zkoušky je dle školy úzce spjat s vysokou absencí žáků a nízkou motivací ke studiu.“"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště posilnila pozice psychosociálního konzultanta; výchovný poradce podporuje individualizaci a sleduje účinnost opatření.",
+      "Škola poskytuje doučování, individuální konzultace, stipendia a v úvodních dnech čtyřdenní intenzivní výuku matematiky Trychtýř.",
+      "Žáci se SVP jsou podporováni prostřednictvím individuálních vzdělávacích plánů, spolupráci se zákonnými zástupci a psychosociální pomoci."
+    ],
+    "safety_climate": [
+      "Škola dlouhodobě posiluje fyzickou bezpečnost žáků, například čipovým systémem.",
+      "Sleduje zvýšenou úrazovost souvislou především s tělesnou výchovou a přijímá pravidelná bezpečnostní opatření.",
+      "Při odborném výcviku jsou žáci systematicky vedeni k bezpečnosti, ochraně zdraví a správnému ošetření nářadí."
+    ],
+    "partnership_practice": [
+      "Škola spolupracuje s regionálními zaměstnavateli, vysokými školami, automobilkami a moderními technologickými podniky.",
+      "Partnerství zahrnuje praktické vyučování, exkurze, projekty a pilotní ověřování inovativních postupů.",
+      "Zapojení do Erasmus+ a mobilit v Německu rozšiřuje jazykové a odborné kompetence žáků."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá srozumitelnou češtinu, krátké věty a praktické důsledky hodnocení odděluje od tvrzení školy a inspekce.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesné absence v procentech, proto jsou uvedeny pouze související počty a tvrzení školy.",
+      "HN u technických oborů je společný údaj pro tři obory, nikoli výsledek každého zvlášť.",
+      "Posouzení vhodnosti pro konkrétního žáka je orientační a vychází z obecných zjištění inspekce."
+    ]
+  }
+}

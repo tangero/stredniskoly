@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_600013880_2026-01-07",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:48:07.727853+00:00",
+  "run_finished_utc": "2026-10-02T16:48:38.197181+00:00",
+  "raw_file": "LYC_600013880_2026-01-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600013880_2026-01-07",
+    "school_profile": {
+      "school_type": "Soukromá střední škola poskytující střední vzdělání s maturitní zkouškou v denní formě.",
+      "inspection_period": "7. 1. 2026 až 9. 1. 2026",
+      "school_change_summary": "Od roku 2022 vzrostl počet žáků o 50 % a od 1. září 2025 škola navíc nabízí nový obor Lyceum v pokusném ověřování."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praxe a partneři",
+          "detail": "Škola má rozsáhlou síť partnerských firem a pravidelně kontroluje průběh praktického vyučování.",
+          "evidence": "„Škola dlouhodobě spolupracuje s širokým spektrem partnerských firem“ a kontrolami průběhu praxe."
+        },
+        {
+          "tag": "Jazyková příprava",
+          "detail": "Výuka cizího jazyka probíhá převážně v cizojazyčném prostředí a v maturitním ročníku byla žáky hodnocena jako účinná.",
+          "evidence": "„Výuka cizího jazyka byla převážně vedena v navozeném cizojazyčném prostředí.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Ve škole působí výchovný poradce, kariérový poradce a jednou týdně je přítomna školní psycholožka.",
+          "evidence": "„Ve škole působí výchovný poradce“ a „jednou týdně je přítomna i školní psycholožka.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence",
+          "detail": "Absence zůstává dlouhodobě vysoká a podle inspekce nejsou zavedená opatření dostatečně účinná.",
+          "evidence": "„Absence žáků je dlouhodobě vysoká“ a neúčinné „maximum míry zameškaných hodin“."
+        },
+        {
+          "tag": "Hodnocení výsledků",
+          "detail": "Škola má potíže se systematickým sledováním výsledků žáků a sjednocováním způsobů hodnocení.",
+          "evidence": "„Vedení školy v rámci kontrolního systému věnuje malou pozornost průběžným výsledkům v jednotlivých předmětech.“"
+        },
+        {
+          "tag": "Zapojení žáků",
+          "detail": "Ve výuce převažovala aktivita učitelů a žáci měli méně příležitostí k samostatnému řešení, diskusím a reflexi.",
+          "evidence": "„Ve většině sledovaných hodin převažovala aktivita na straně pedagogů“ a zapojení žáků bylo omezené."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci a jak často ověřuje účinnost svých opatření?",
+        "Jak podrobně učitelé sledují průběžné výsledky žáků a jak sjednocují kritéria hodnocení?",
+        "Jaké konkrétní možnosti mají žáci při učení vycházet ze svých potřeb, pomalejšího tempa nebo vyšší náročnosti úkolů?"
+      ],
+      "who_school_fits": [
+        "Uchazeče, kteří chtějí denní obor v hotelnictví, turismu, ekonomice, podnikání nebo novém Lyceu.",
+        "Žáky, kterým vyhovuje propojení učení s partnerskými firmami a zahraniční pobyty v rámci projektů.",
+        "Žáky, kteří využijí výchovné, kariérové nebo psychologické poradenství."
+      ],
+      "who_should_be_cautious": [
+        "Rodiny, kterým záleží na velmi nízké absenci, protože škola uvádí 229 omluvených hodin na žáka za školní rok.",
+        "Rodiny, které očekávají rovnoměrné individuální přizpůsobení výuky, protože se diferencace uplatňovala spíše výjimečně.",
+        "Rodiny se žáky závislými na pravidelné zpětné vazbě a podpoře školního klimatu, protože chybí jeho systematičtější měření."
+      ],
+      "plain_czech_summary": "Škola má silné propojení s hotelovými a obchodními partnery, nabízí praxe, odborné akce a zahraniční pobyty. Ve většině hodin byla klidná atmosféra a komunikace přátelská. Rodičům však stojí za pozornost vysoká absence, nejednotné hodnocení a malé zapojování žáků do samostatné práce. Výuka se podle inspekce málo přizpůsobovala různým potřebám žáků a méně podporovala kritické myšlení. Výsledky maturity se od minulé inspekce zlepšily, přesto se část studentů stále neprosperovala."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky maturity se od minulé inspekce zlepšily; v letech 2023 a 2025 byly lepší než celostátný průměr příslušné oborové skupiny.",
+        "key_numbers": [
+          "Neúspěšnost ve společné části: 6,1 % v roce 2023.",
+          "Neúspěšnost ve společné části: 13,8 % v roce 2024.",
+          "Neúspěšnost ve společné části: 5,9 % v roce 2025."
+        ],
+        "evidence": "„Výsledky žáků při ukončování jejich vzdělávání maturitní zkouškou se od poslední inspekční činnosti zlepšily.“"
+      },
+      "absence": {
+        "trend": "Počet zameškaných hodin za tři roky klesl, ale absence zůstala vysoká.",
+        "key_numbers": [
+          "Průměrně 229 omluvených hodin na žáka v minulém školním roce.",
+          "12 % žáků minulý školní rok neprospělo.",
+          "4,8 % žáků minulý školní rok prospělo s vyznamenáním."
+        ],
+        "evidence": "„V minulém školním roce dosáhla průměrná hodnota absence 229 omluvených hodin na žáka.“"
+      },
+      "support_services": [
+        "Výchovný poradce zároveň působí jako metodik prevence a kariérový poradce.",
+        "Školní psycholožka je ve škole jednou týdně a podporuje zejména práci s třídními kolektivy a vztahové obtíže.",
+        "Nadané žáky škola aktivně vyhledává a podporuje prostřednictvím mimoškolních aktivit."
+      ],
+      "safety_climate": [
+        "Ve sledovaných hodinách probíhala výuka v klidné pracovní atmosféře bez kázeňských problémů.",
+        "V praktickém vyučování oboru hotelnictví byla věnována pozornost bezpečnosti práce a hygienickým pravidlům.",
+        "Velké skupiny při tělesné výchově mohou podle inspekce zvyšovat riziko narušení bezpečného průběhu vzdělávání."
+      ],
+      "partnerships_practice": [
+        "Škola dlouhodobě spolupracuje s partnerskými firmami, profesními organizacemi a vysokými školami.",
+        "Pravidelná setkávání se zástupci zaměstnavatelů pomáhají přizpůsobovat výuku aktuálním požadavkům práce.",
+        "Smlouvy o praxi podle inspekce nezaručují zapojení žáků do produktivní činnosti."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, stručné formulace a jasně odděluje potvrzená zjištění od doporučení k ověření.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí výsledky maturity za každý obor samostatně.",
+        "Zpráva nepopisuje konkrétní četnost ani přínos produktivní činnosti při praxích.",
+        "Výsledky inspekce vycházejí z vybraných pozorování, dokumentace a rozhovorů, nikoli ze systematického šetření všech aspektů školy."
+      ]
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "report_id": "NAS_600015319_2025-02-17",
+  "school_profile": {
+    "school_type": "Soukromá střední škola poskytující čtyři obory v denní formě: dva tříleté nematuritní a dva dvouleté maturitní obory nástavbového studia.",
+    "inspection_period": "17. až 20. 2. 2025",
+    "school_change_summary": "Škola zlepšovala materiální podmínky: „byla obnovena didaktická technika“ a pořizovány či obnovovány pomůcky pro praktické vyučování."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná výuka",
+        "detail": "Praktická výuka dobře propojuje teorii s moderními technologiemi a rozvíjí dovednosti potřebné pro budoucí práci.",
+        "evidence": "„Kvalita praktické části vzdělávání byla významně podpořena účelným využitím pracovních strojů a nástrojů“."
+      },
+      {
+        "tag": "Klima ve třídě",
+        "detail": "Během teoretické výuky panovala klidná atmosféra a mezi učiteli a žáky byl vzájemný respekt.",
+        "evidence": "„Výuka probíhala v klidné a příjemné pracovní atmosféře“ a „panoval vzájemný respekt“."
+      },
+      {
+        "tag": "Podpora a prevence",
+        "detail": "Škola poskytuje doučování, konzultace, poradenské služby a aktivně řeší projevy rizikového chování.",
+        "evidence": "„Škola aktivně identifikuje žáky se speciálními vzdělávacími potřebami“ a žákům je nabízena pomoc formou konzultací či doučování."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturitní zkouška",
+        "detail": "Výsledky ve společné části maturity jsou slabší než republikový průměr a škola zatím účinná opatření nezavádí.",
+        "evidence": "„Škole se dosud nedaří zavádět účinná opatření ke zlepšení výsledků vzdělávání žáků ve společné části maturitní zkoušky.“"
+      },
+      {
+        "tag": "Rozmanitost výuky",
+        "detail": "V části teoretických hodin převládala frontální výuka, málo samostatné práce, diferenciace a aktivního zapojení žáků.",
+        "evidence": "„V hodnocených vyučovacích hodinách převládala frontální výuka“ a „učitelé jen výjimečně“ zařazovali týmovou spolupráci."
+      },
+      {
+        "tag": "Dopad podpory",
+        "detail": "Škola nevyhodnocuje dostatečně účinnost doučování ani výsledky svých opatření, takže rodičům může chybět přesnější zpětná vazba.",
+        "evidence": "„Systémové a efektivní vyhodnocování dopadu realizovaných opatření zatím nebylo zavedeno.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola sleduje výsledky přípravy na společnou část maturitní zkoušky a co dělá při neúspěchu?",
+      "Jak často se konají konzultace a doučování a jak se jejich účinnost ověřuje?",
+      "Jak se podpůrná opatření a individualizace projevují přímo v běžných hodinách?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí studovat automobilní obor a mají zájem o praktickou práci s technikou.",
+      "Žáci, kterým vyhovuje denní forma vzdělávání a propojení teorie s praxí.",
+      "Žáci, kteří potřebují praktickou podporu, doučování nebo poradenské služby."
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči o maturitní obory, kterým záleží na dobré přípravě zejména z matematiky, českého jazyka a literatury.",
+      "Žáci, kteří potřebují v teoretické výuce výraznější samostatnou práci, diferenciaci nebo průběžnou formativní zpětnou vazbu.",
+      "Rodiny, které potřebují přesné informace o tom, jak škola analyzuje neúspěchy a měří účinnost podpůrných opatření."
+    ],
+    "plain_czech_summary": "Škola má dobré zázemí pro odbornou výuku a propojuje teorii s moderní praktickou výukou. Ve třídách je převážně klid, učitelé jsou žákům nakloněni a škola nabízí doučování i poradenství. Hlavním problémem jsou výsledky ve společné části maturitní zkoušky, které jsou slabší než republikový průměr. V části teoretických hodin se také méně používá samostatná práce, týmová spolupráce, diferenciace a hodnocení, které žákům pomáhá zlepšovat se. Škola podle inspekce zatím málo analyzuje výsledky a neověřuje dostatečně, zda její podpora skutečně pomáhá."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Celkový podíl úspěšného ukončení studia včetně maturity vzrostl, ale výsledky společné části jsou slabší než republikový průměr.",
+      "key_numbers": [
+        "Úspěšné ukončení studia včetně maturity: 52 % v roce 2022, 47 % v roce 2023 a 61 % v roce 2024.",
+        "Podnikání – neúspěšnost ve společné části: 50 % v roce 2022, 40 % v roce 2023 a 20 % v roce 2024.",
+        "Provozní technika – neúspěšnost ve společné části: 11 % v roce 2022, 0 % v roce 2023 a 36 % v roce 2024."
+      ],
+      "evidence": "„Škola dosahuje ve společné části maturitní zkoušky horších výsledků v porovnání s průměrem dané skupiny oborů“."
+    },
+    "absence": {
+      "trend": "Celková absence v posledních letech klesá, ale u žáků maturitních oborů zůstává nejvyšší a škola ji účinně nesnižuje.",
+      "key_numbers": [
+        "Zpráva neuvádí přesnou průměrnou míru absence.",
+        "Nejvyšší průměrné hodnoty absence jsou podle zprávy u žáků maturitních oborů."
+      ],
+      "evidence": "„Absence žáků v posledních letech vykazuje klesající trend“, ale škola ji u maturitních oborů „nedokáže efektivně snižovat“."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště poskytuje služby učitelům, žákům i rodičům.",
+      "Škola poskytuje žákům ohroženým školním neúspěšností individuální konzultace a doučování.",
+      "Škola spolupracuje se školskými poradenskými zařízeními při podpoře žáků se speciálními vzdělávacími potřebami.",
+      "Kariérové poradenství se zaměřuje na orientaci na trhu práce a možnosti dalšího studia."
+    ],
+    "safety_climate": [
+      "Při praktickém vyučování byly dodržovány zásady bezpečnosti, ochrany zdraví a pracovní hygieny.",
+      "Škola zasahuje při prvních projevech problémového chování individuálními pohovory a případně oslovuje rodiče či příslušné orgány.",
+      "Škola má schránku důvěry a žáci se mohou vyjádřit také při osobním kontaktu s vyučujícími."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s řadou firem zejména při zajišťování praktického vyučování.",
+      "Žáci se účastní odborně zaměřených soutěží, které rozvíjejí teoretické i praktické kompetence.",
+      "Inspekce označila za silnou stránku účinnou podporu odborných kompetencí prostřednictvím propojení teorie, praxe a vnějších partnerů."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně vysvětluje význam čísel a odděluje silné stránky od oblastí, které je potřeba sledovat.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesnou míru absence, proto nelze porovnat jednotlivé školní roky číselně.",
+      "Hodnocení se vztahuje k inspekčnímu období v roce 2025; pozdější změny nejsou ve zdrojovém textu popsány.",
+      "O vhodnosti školy pro jednotlivé žáky lze rozhodnout až podle konkrétních studijních potřeb a nabídky oborů."
+    ]
+  }
+}

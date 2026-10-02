@@ -1,0 +1,103 @@
+{
+  "report_id": "LYC_691000735_2026-01-14",
+  "school_profile": {
+    "school_type": "Waldorfská škola Brno - střední škola, základní škola a mateřská škola, příspěvková organizace",
+    "inspection_period": "14. 1. 2026 – 16. 1. 2026",
+    "school_change_summary": "Škola rozšířila vzdělávací nabídku o kombinované lyceum, zvýšila počet žáků i pedagogů, zlepšila materiální podmínky a změnila organizační strukturu. Přetrvává vysoký počet pedagogů bez požadované odborné kvalifikace."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s rodiči",
+        "detail": "Rodiče jsou pravidelně informováni o cílech školy, mohou podávat zpětnou vazbu a aktivně se zapojují do jejího chodu.",
+        "evidence": "Rodiče jsou pravidelně seznamováni s koncepcí a cíli školy a mají prostor vyjadřovat své podněty a zpětnou vazvu."
+      },
+      {
+        "tag": "Bezpečné klima",
+        "detail": "V mateřské škole panovala přátelská atmosféra a děti se podle pozorování cítily dobře, spokojeně a bezpečně.",
+        "evidence": "Dětem byl předkládán pestrý vzdělávací program; děti se ve třídách cítily velmi dobře, spokojeně a bezpečně."
+      },
+      {
+        "tag": "Rozmanitá výuka",
+        "detail": "Škola nabízí waldorfskou výuku, umělecké a odborné kurzy, projekty i zahraniční aktivity podporující praktické a sociální kompetence.",
+        "evidence": "Mezi realizované aktivity patří například zeměměřický kurz, zemědělský kurz, sociální praktikum, divadelní představení a kulturní cesty do zahraničí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalifikace pedagogů",
+        "detail": "Vysoký podíl učitelů bez požadované odborné kvalifikace může ovlivňovat kvalitu výuky, zejména na střední škole.",
+        "evidence": "U učitelů střední školy je 36 % bez požadované odborné kvalifikace."
+      },
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "V základní a střední škole se podle inspekce nedostatečně přizpůsobovaly úkoly individuálním schopnostem žáků.",
+        "evidence": "Ve sledované výuce nebyla dostatečně uplatňována diferenciace podle individuálních schopností žáků."
+      },
+      {
+        "tag": "Samostatné hledání informací",
+        "detail": "Některé hodiny v základní škole málo rozvíjely práci s informačními zdroji, samostatnost a kritické myšlení.",
+        "evidence": "Nízké zapojení rozmanitých informačních zdrojů a metod práce nepřispívalo k rozvoji samostatnosti žáků, efektivní práci ani kritickému myšlení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se ve vyučování projevuje individualizace a diferenciace úkolů pro žáky s různými schopnostmi?",
+      "Kolik pedagogů střední školy aktuálně nemá požadovanou odbornou kvalifikaci a jaký je jejich profesní rozvoj?",
+      "Jaké konkrétní možnosti mají rodiče ovlivňovat vzdělávacní nabídku, hodnocení nebo volbu zaměření ve čtvrtém ročníku?"
+    ],
+    "who_school_fits": [
+      "Rodiče, kteří chtějí vzdělávání podle waldorfské pedagogiky.",
+      "Rodiče, kteří mají zájem o aktivní spolupráci se školou a komunitní prostředí.",
+      "Žáci, kterým vyhovuje práce s rytmem, epochami, uměleckými a praktickými činnostmi."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří očekávají časté testování a průběžnou zpětnou vazbu ve formě známek na prvním stupni.",
+      "Rodiče, kteří potřebují výraznější individualizaci učiva pro žáky s odlišnou úrovní schopností.",
+      "Rodiče, kteří mají obavy o vysoký podíl pedagogů bez požadované odborné kvalifikace."
+    ],
+    "plain_czech_summary": "Škola nabízí vzdělávání podle waldorfské pedagogiky od mateřské školy po kombinované lyceum. Mezi silné stránky patří spolupráce s rodiči, přátelská atmosféra a pestrá nabídka aktivit. Od minulé inspekce přibyla střední škola a zlepšily se materiální podmínky. Mezi hlavní rizika patří vysoký počet nekvalifikovaných pedagogů, zejména na střední škole, a nedostatečná diferenciace úkolů. Výsledky žáků byly ve sledovaném období vyvážené; z inspekčního výběru vynikli zejména žáci devátého ročníku v matematice a českém jazyce."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Maturitní zkouška je nově součástí vzdělávání kombinovaného lycea; výsledky prvních maturit nejsou uvedeny.",
+      "key_numbers": [
+        "Kombinované lyceum vzdělává 117 žáků.",
+        "Zaměření se volí od třetího ročníku: humanitní, přírodovědecké a technické.",
+        "Ve čtvrtém ročníku se poprvé vypracovávají maturitní odborné práce."
+      ],
+      "evidence": "Škola rozšířila vzdělávací nabídku o obor Kombinované lyceum; žáci se od třetího ročníku vybírají ze tří zaměření."
+    },
+    "absence": {
+      "trend": "Zpráva uvádí, že dlouhodobě nebyly zaznamenány neomluvené absence.",
+      "key_numbers": [
+        "Dlouhodobě nevyskytly se neomluvené absence."
+      ],
+      "evidence": "Dlouhodobě nebylo chování žáků hodnoceno sníženým stupněm a nevyskytly se neomluvené absence."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště nově koordinuje školní metodička prevence pro základní a střední školu.",
+      "Speciální pedagožka spravuje agendu žáků se speciálními vzdělávacími potřebami a komunikuje se školskými poradenskými zařízeními.",
+      "Nabízejí se individuální konzultace s vyučujícími a podpora při práci na domácích úkolech.",
+      "Kariérové poradenství pro střední školu zajišťuje výchovný poradce."
+    ],
+    "safety_climate": [
+      "V mateřské škole děti působily v bezpečné a přátelské atmosféře.",
+      "V základní škole žáci většinou respektovali pravidla a výuka probíhala v podnětném prostředí.",
+      "Ve vyučování se uplatňuje prevence silničního rizika; v základní škole jsou rezervy v používání ochranných pomůcek při školních dílnách."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s dalšími waldorfskými školami, sdílí zkušenosti a pedagogy umožňuje stáže v partnerských školách.",
+      "Rodičovský klub Přástky se pravidelně schází a spolupodílí se na výzdobě mateřské školy.",
+      "Spolek rodičů podporuje aktivity školy i mentoring."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá srozumitelnou češtinu, stručně odděluje zjištění školy od doporučení pro rodiče a opírá tvrzení citacemi.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí podrobné výsledky první maturitní zkoušky kombinovaného lycea.",
+      "Zpráva uvádí trend neomluvených absencí, ale neposkytuje celkový počet absentujících žáků.",
+      "Zpráva neuvádí aktuální konkrétní počet pedagogů bez odborné kvalifikace v každém rok."
+    ]
+  }
+}

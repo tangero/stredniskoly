@@ -1,0 +1,106 @@
+{
+  "report_id": "SOU_600170501_2026-03-10",
+  "school_profile": {
+    "school_type": "Příspěvková organizace poskytující střední vzdělávání v oborech s výučním listem, čtyřletých maturitních oborech a nástavbovém studiu.",
+    "inspection_period": "10.–13. 3. 2026",
+    "school_change_summary": "Od předchozí inspekce se počet žáků zvýšil přibližně o 29 %, změnila se ředitelka a dva její zástupci a zlepšily se materiální podmínky školy."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná příprava",
+        "detail": "Škola propojuje teorii s praktickou výukou v salonech, dílnách a ateliérech a systematicky podporuje rozvoj odborných dovedností.",
+        "evidence": "„Profesní příprava žáků probíhá na vysoké úrovni.“"
+      },
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Výsledky společné části maturitní zkoušky se ve většině sledovaných oblastí zlepšily, zejména v oboru Podnikání.",
+        "evidence": "„Výsledky žáků při ukončování vzdělávání MZ se od předešlé inspekční činnosti zlepšily.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola nabízí doučování, konzultace, přípravu na maturitu, poradenské služby a aktivity pro studenty se speciálními vzdělávacími potřebami.",
+        "evidence": "„Pomoc žákům ohroženým školní neúspěšností spočívá zejména v nabídce doučování a individuálních konzultací.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence",
+        "detail": "Vysoká absence přetrvává a souvisí s horšími studijními výsledky i rizikem předčasného ukončení vzdělávání.",
+        "evidence": "„Vysoká absence žáků napříč obory vzdělání negativně ovlivňuje průběh i výsledky jejich učení.“"
+      },
+      {
+        "tag": "Nejistota u maturity",
+        "detail": "Úspěšnost u maturity se výrazně liší podle oboru, přičemž v Modelářství a návrhářství oděvů zůstává vyšší než v příslušné oborové skupině.",
+        "evidence": "„V oboru Modelářství a návrhářství byla hrubá neúspěšnost žáků vyšší než příslušné oborové skupině.“"
+      },
+      {
+        "tag": "Méně aktivní učení",
+        "detail": "Ve většině sledovaných hodin převažovala frontální výuka a žáci dostávali málo prostoru pro spolupráci, sebereflexi a vzájemné hodnocení.",
+        "evidence": "„Kooperativní formy byly sledovány jen ojedinele, žáci tak neměli možnost ... spolupracovat či diskutovat.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní postupy škola používá ke snižování absence a jak často rodiče dostávají zpětnou informaci?",
+      "Jak vypadá podpora žáků při přípravě na společnou část maturitní zkoušky, zejména z matematiky a českého jazyka?",
+      "Jak často se žáci ve všeobecných předmětech zapojují do skupinové práce, sebereflexe a vzájemného hodnocení?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří mají zájem o prakticky zaměřené obory propojené s provozem školy, salonů, dílen nebo ateliérů.",
+      "Žákům, kteří využijí doučování, konzultace, tandemovou výuku a přípravu na maturitní zkoušky.",
+      "Žákům, kteří mají zájem o spolupráci s externími odborníky, exkurzemi, projekty a soutěžemi."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří mají tendenci často chybět, protože škola uvádí, že souvisí to s horšími výsledky a rizikem předčasného odchodu.",
+      "Rodičům žáků Modelářství a návrhářství oděvů, kde byla hrubá neúspěšnost v posledních třech školních letech vyšší než v oborové skupině.",
+      "Rodičům, kteří očekávají všeobecné vyučování založené převážně na samostatné práci, diskusích a průběžné sebereflexi žáků."
+    ],
+    "plain_czech_summary": "Škola má silné praktické vybavení a propojuje výuku s reálnou prací v salonech, dílnách a ateliérech. Výsledky maturit se ve většině oblastí zlepšily, zejména v oboru Podnikání. Pro studenty jsou dostupné konzultace, doučování, přípravné kurzy i podpora při neúspěchu. Hlavními problémy jsou vysoká absence a příliš frontální výuka bez dostatečné spolupráce, diskuse a sebereflexe žáků. Výsledky maturity se mezi obory výrazně liší, proto je vhodné sledovat konkrétní obor a jeho číselné ukazatele."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Celkově se výsledky zlepšovaly, ale výrazně se liší podle oboru; nejlepší zlepšení vykázalo nástavbové studium Podnikání.",
+      "key_numbers": [
+        "Hrubá neúspěšnost v Modelářství a návrhářství klesla z 41,7 % v roce 2023 na 8,3 % v roce 2025.",
+        "Hrubá neúspěšnost nástavbového Podnikání klesla z 37,5 % v roce 2022/2023 na 20,6 % v roce 2024/2025.",
+        "Ve školním roce 2024/2025 standardně ukončilo vzdělávání 68 % prvního ročníku čtyřletých maturitních oborů."
+      ],
+      "evidence": "„Hrubou neúspěšnost žáků ve společné části maturitní zkoušky se však podařilo postupně snižovat“."
+    },
+    "absence": {
+      "trend": "Roční absence se za poslední tři školní roky výrazně nezměnila a zůstává vysoká.",
+      "key_numbers": [
+        "Nematuritní obor: přibližně 182 hodin absence na žáka za rok.",
+        "Čtyřleté maturitní obory: přibližně 165 hodin absence na žáka za rok.",
+        "Nástavbové studium Podnikání: přibližně 160 hodin absence na žáka za rok."
+      ],
+      "evidence": "„Neomluvená absence dlouhodobě představuje přibližně 4,3 % z celkové absence.“"
+    },
+    "support_services": [
+      "Poradenské služby zajišťuje výchovná a kariérová poradkyně a tři školní metodici prevence.",
+      "Škola poskytuje doučování, individuální konzultace, konzultace maturitních prací a přípravu na ústní část maturity.",
+      "Žákům se SVP poskytuje asistence pedagoga a spolupráce se školskými poradenskými zařízeními.",
+      "Nabízeny jsou letní kempy podporující angličtinu a matematiku, filmový klub, čtenářský klub a kroužek 3D tisku."
+    ],
+    "safety_climate": [
+      "Vstup do budov je zabezpečen proti vniknutí neoprávněných osob.",
+      "Prostory jsou pravidelně kontrolovány a je dbáno na bezpečné prostředí pro vzdělávání.",
+      "Ve vyučování informatiky je věnována pozornost bezpečnosti v prostředí internetu."
+    ],
+    "partnerships_practice": [
+      "Škola dlouhodobě spolupracuje s kvalitními sociálními partnery a pravidelně zve externí odborníky.",
+      "Do výuky jsou zařazovány odborné workshopy, exkurze, přednášky a besedy.",
+      "Ve spolupráci s partnery je možné získat mezinárodně uznávaný certifikát jazykové pokročilosti v angličtině.",
+      "Absolventi školy prezentují studentům své studijní a pracovní zkušenosti."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou srozumitelné, věcně navazují na zprávu a používají běžné české výrazy místo úřednického žargonu.",
+    "uncertainty_notes": [
+      "Inspekční zpráva uvádí výsledky za různá období, proto je nutné porovnávat vždy stejný školní rok.",
+      "Některé výsledky jsou uvedeny za oborové skupiny a přímo je nelze přiřadit všem oborům školy.",
+      "Zpráva neuvádí aktuální výsledky za školní rok 2025/2026, protože se hodnotily především školní roky 2022/2023 až 2024/2025."
+    ]
+  }
+}

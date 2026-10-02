@@ -1,0 +1,109 @@
+{
+  "report_id": "NAS_600013979_2026-03-30",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:22:31.649873+00:00",
+  "run_finished_utc": "2026-10-02T16:22:59.599903+00:00",
+  "raw_file": "NAS_600013979_2026-03-30.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "NAS_600013979_2026-03-30",
+    "school_profile": {
+      "school_type": "Střední škola a vyšší odborná škola tradičních řemesel; škola má také domov mládeže a školní jídelnu.",
+      "inspection_period": "30. 3. 2026 až 31. 3. 2026",
+      "school_change_summary": "Činnost vyšší odborné školy byla obnovena 1. 9. 2025 a obor Předškolní a mimoškolní pedagogika se nyní realizuje v denní formě."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Studenté absolvují souvislou i průběžnou praxi na smluvních pracovištích a pravidelně dostávají zpětnou vazbu.",
+          "evidence": "„Odborná praxe, která je nedílnou součástí vzdělávacího programu, probíhá na smluvních pracovištích.“"
+        },
+        {
+          "tag": "Podpora studentů",
+          "detail": "Ve škole působí dvě odborně kvalifikované speciální pedagožky pro prevenci, vzdělávání a kariérové poradenství.",
+          "evidence": "„Poradenské služby jsou ve škole zajišťovány dvěma odborně kvalifikovanými speciálními pedagožkami.“"
+        },
+        {
+          "tag": "Dohled nad kvalitou",
+          "detail": "Vedení pravidelně hospituje, vyhodnocuje výsledky a na základě zjištění přijímá konkrétní opatření.",
+          "evidence": "„Na základě získaných informací přijímá konkrétní opatření ke zlepšování vzdělávacích výsledků.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Materiální podmínky",
+          "detail": "Inspekce doporučila zlepšit podmínky zejména pro výuku odborných předmětů.",
+          "evidence": "„Věnovat cílenou pozornost zajištění vhodných materiálních podmínek především pro výuku odborných předmětů.“"
+        },
+        {
+          "tag": "Didaktická technika",
+          "detail": "Škola má doporučení využívat didaktickou techniku při organizaci vyučovacích hodin ve větší míře.",
+          "evidence": "„Při organizaci vyučovacích hodin využívat ve větší míře didaktickou techniku.“"
+        },
+        {
+          "tag": "Nově obnovený obor",
+          "detail": "Inspekce probíhala krátce po obnovení činnosti a nový obor měl při inspekci pouze jednu studijní skupinu.",
+          "evidence": "„Vzdělávání ve vyšší odborné škole probíhalo naposledy ve školním roce 2021/2022 a v letošním školním roce byla jeho činnost znovu obnovena.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní vybavení a prostory jsou aktuálně k dispozici pro výuku odborných předmětů?",
+        "Na kolika smluvních pracovištích a v jakých typech zařízení studenté absolvují praxi?",
+        "Jak bude probíhat osobní, telefonické nebo digitální zpětná vazba rodičům během studia?"
+      ],
+      "who_school_fits": [
+        "Uchazeči, kteří chtějí studovat obor Předškolní a mimoškolní pedagogika denní formou.",
+        "Studenti, kterým vyhovuje propojení teorie s pravidelnou praxí na pracovištích.",
+        "Uchazeči, kterým vyhovuje menší, jednoškolkové prostředí."
+      ],
+      "who_should_be_cautious": [
+        "Rodiny, které hledají obor s dlouhou historií a rozsáhlou sledovanou tradicí, protože činnost VOŠ byla obnovena až v září 2025.",
+        "Rodiny, kterým nestačí ubytování a stravování v areálu školy.",
+        "Rodiny, které chtějí přesněji znát vybavení pro odbornou výuku, protože jeho zlepšení je doporučením inspekce."
+      ],
+      "plain_czech_summary": "Inspekce zjistila, že obnovený obor Předškolní a mimoškolní pedagogika má malou jedinou skupinu se 16 studenty. Výuka stojí na pravidelné praxi u smluvních partnerů, zpětné vazbě a podpoře dvou speciálních pedagožek. Vedení aktivně kontroluje kvalitu výuky. Hlavní doporučení se týkalo lepšího vybavení pro odborné předměty a častějšího využívání didaktické techniky. Zpráva neuvádí školní závěrečné zkoušky ani statistiku absencí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky školních závěrečných zkoušek nejsou v této zprávě uvedeny.",
+        "key_numbers": [
+          "Pro obnovený obor Předškolní a mimoškolní pedagogika nejsou údaje o maturity uvedeny."
+        ],
+        "evidence": "Zpráva uvádí přijímací pohovor a hodnocení jednotlivých předmětů, nikoli výsledky školních závěrečných zkoušek."
+      },
+      "absence": {
+        "trend": "Údaje o neomluvené či omluvené absenci nejsou uvedeny.",
+        "key_numbers": [
+          "Statistika absence ve zprávě chybí."
+        ],
+        "evidence": "V hodnocení výsledků vzdělávání nejsou uvedeny žádné ukazatele absence."
+      },
+      "support_services": [
+        "Dvě odborně kvalifikované speciální pedagožky zajišťují poradenské služby: „Jedna z nich se systematicky věnuje prevenci rizikového chování“.",
+        "Podpora zahrnuje také kariérové poradenství: „zaměřením na další vzdělávání, profesní růst a uplatnění absolventek na trhu práce“.",
+        "Škola má připravený komplexní systém podpory včetně „individuálních vzdělávacích plánů“, přestože v době inspekce takové potřeby neevidovala."
+      ],
+      "safety_climate": [
+        "Proběhla adaptační pobyt zaměřená na vztahy, komunikaci a primární prevenci rizikového chování.",
+        "Pro první ročník se pořádaly přednášky o prevenci šikany, jízdy pod vlivem a bezpečnosti v kyberprostoru.",
+        "Škola zajišťuje bezpečné prostředí a vhodné podmínky: „Škola se odpovídajícím způsobem věnuje zajištění optimálních materiálních podmínek a bezpečného prostředí.“"
+      ],
+      "partnerships_practice": [
+        "Souvislá a průběžná pedagogická praxe probíhá na smluvních pracovištích.",
+        "Smlouvy o pedagogické praxi jsou uzavřeny s pěti organizacemi poskytujícími předškolní vzdělávání.",
+        "Studenti mohou praxi absolvovat v mateřských školách, školních družinách, přípravných třídách i centrech volného času."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulován srozumitelně, stručně a bez úřednických formulací; důležitá omezení jsou jasně označena.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí výsledky školních závěrečných zkoušek, takže nelze hodnotit úspěšnost u maturity.",
+        "Zpráva neuvádí statistiku absence.",
+        "Doporučení k materiálním podmínkám neříká, jaké konkrétní vybavení chybí nebo bude pořízeno."
+      ]
+    }
+  }
+}

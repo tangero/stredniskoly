@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600011747_2026-01-12",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:25:27.381566+00:00",
+  "run_finished_utc": "2026-10-02T17:25:57.346667+00:00",
+  "raw_file": "SOS_600011747_2026-01-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600011747_2026-01-12",
+    "school_profile": {
+      "school_type": "Střední uměleckoprůmyslová škola hudebních nástrojů a nábytku",
+      "inspection_period": "12. 1. – 15. 1. 2026",
+      "school_change_summary": "Škola zřídila školní poradenské pracoviště, posílila kontrolní činnost a modernizovala školní prostory i technické vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná příprava",
+          "detail": "Praktická výuka podporuje technické dovednosti, kreativitu a svobodné umělecké vyjádření žáků.",
+          "evidence": "„Vyučující cíleně podporovali aplikaci moderních technických dovedností i svobodné umělecké vyjádření žáků.“"
+        },
+        {
+          "tag": "Zázemí a vybavení",
+          "detail": "Škola modernizuje budovy, dílny, technologický park a bezbariérový přístup.",
+          "evidence": "„Škole se daří rozšiřovat, zkvalitňovat a modernizovat prostory školy pro teoretickou i odbornou část ukuky.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Funkční poradenské pracoviště a preventivní programy podporují osobní rozvoj a bezpečné klima.",
+          "evidence": "„Funkční ŠPP a navazující preventivní programy, které reagují na individuální potřeby žáků.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturitní příprava",
+          "detail": "U některých oborů přetrvává vyšší neúspěšnost ve společné části maturity, zejména v nástavbovém studiu.",
+          "evidence": "„Nejvýraznější problémy se dlouhodobě objevují v nástavbovém studiu oboru Nábytkářská a dřevařská výroba.“"
+        },
+        {
+          "tag": "Sledování výsledků",
+          "detail": "Škola nemá ucelený systém průběžného ověřování výsledků a vyhodnocování účinnosti podpůrných opatření.",
+          "evidence": "„Škola nemá nastavený systém pro cílené sledování výsledků žáků v průběhu jejich školní docházky.“"
+        },
+        {
+          "tag": "Absence",
+          "detail": "Problematická absence se opakovaně soustřeďuje do oboru Truhlář a podle inspekce souvisí se zhoršením prospěchu.",
+          "evidence": "„Rizikové případy se opakovaně soustřeďují do učebního oboru Truhlář.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola sleduje a vyhodnocuje účinnost podpory žáků s neprospěchem?",
+        "Kolik hodin či konzultací je doporučeno žákům nástavbového studia připravujícím se na maturitu?",
+        "Jaké konkrétní možnosti volby, podpory a zpětné vazby dostávají žáci v jednotlivých oborech?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat design, nábytkářskou a dřevařskou výrobu nebo výstavbu hudebních nástrojů.",
+        "Žákům, kteří mají zájem o praktickou práci s moderními technologiemi a o tvorbu vlastních projektů.",
+        "Žákům, kteří využijí nabídku domova mládeže a chtějí propojit studium s projektovými aktivitami."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků nástavbového studia Nábytkářská a dřevařská výroba kvůli přetrvávající neúspěšnosti v některých maturitních předmětech.",
+        "Rodičům žáků oboru Uměleckořemeslná stavba hudebních nástrojů kvůli kolísavým výsledkům maturity.",
+        "Rodičům žáků, kteří potřebují intenzivní systematickou podporu při absenci nebo neprospěchu."
+      ],
+      "plain_czech_summary": "Škola má silné praktické a odborné zázemí, moderní vybavení a pozitivní přístup pedagogů. Designové obory dosahují velmi dobrých maturitních výsledků, zatímco nástavbové studium Nábytkářské a dřevařské výroby a některé části staveby hudebních nástrojů mají potíže zejména v českém jazyce a matematice. Inspekce upozornila na nejednotnost hodnocení, málo formativního hodnocení a nedostatečné prokazování účinnosti podpůrných opatření. Rodiče je vhodné zajímat, jak se konkrétně sleduje pokrok žáků a jak se řeší absence."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "U designových oborů jsou výsledky stabilně velmi dobré, u nástavbového studia a staveby hudebních nástrojů přetrvává vyšší neúspěšnost.",
+        "key_numbers": [
+          "Úspěšnost českého jazyka v nástavbovém studiu Nábytkářské a dřevařské výroby: 61,1 % na jaře 2024/2025, po opravách 78,9 %.",
+          "Úspěšnost českého jazyka ve stavebě hudebních nástrojů: 33,3 % na jaře 2024/2025, po opravách 40 %.",
+          "Designové obory: většina žáků dosahuje 86–100 % úspěšnosti v jazycích i profilových zkouškách."
+        ],
+        "evidence": "Inspekce zjistila „dlouhodobě stabilní a nadprůměrné výsledky“ designových oborů, ale „přetrvávající neúspěšnost“ v některých oborech."
+      },
+      "absence": {
+        "trend": "Neomluvená absence je celkově příznivá, ale problémové případy se opakovaně soustřeďují do oboru Truhlář.",
+        "key_numbers": [
+          "Ve školním roce 2024/2025 se zvýšilaabsence v oboru Truhlář.",
+          "V oboru Truhlář se v jednotlivých letech vyskytují jedinci s velmi vysokou celkovou absencí."
+        ],
+        "evidence": "Neomluvená absence se „vyskytuje u omezeného počtu žáků a nejedná se o plošný jev“."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště zajišťuje výchovné poradenství, metodiku prevence a kariérové poradenství.",
+        "Škola poskytuje dobrovolné doučování, individuální konzultace, podporu studijního režimu a komunikaci s rodiči.",
+        "Domov mládeže poskytuje ubytování, zájmové aktivity, doučování a preventivní programy."
+      ],
+      "safety_climate": [
+        "V hospitovaných hodinách byla zaznamenána pracovní a respektující atmosféra bez kázeňských problémů.",
+        "Při praktické výuce se věnovala pozornost bezpečnosti a ochraně zdraví při obsluze strojních zařízení.",
+        "Školní poradenské pracoviště a preventivní programy přispívají k bezpečnému klimatu."
+      ],
+      "partnership_practice": [
+        "Škola spolupracuje s profesními a sociálními partnery, školami a firmami.",
+        "Praktické vzdělávání probíhá také u smluvních partnerů.",
+        "Zahraniční spolupráce zahrnuje Itálii a program Erasmus+ včetně Finska, Španělska, Rakouska, Irska a Slovenska."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je strukturovaný, formulace jsou srozumitelné a závěry jsou opřené o konkrétní údaje z inspekční zprávy.",
+      "uncertainty_notes": [
+        "Ne všechny výsledky jsou uvedeny za všechny obory; některé číselné údaje se týkají konkrétního školního roku a oboru.",
+        "Zpráva neuvádí přesné počty žáků s neomluvenou absencí.",
+        "Připomínky školy byly v části věcí školou zpochybněny, ale inspekční tým je v uvedených bodech potvrdilo."
+      ]
+    }
+  }
+}

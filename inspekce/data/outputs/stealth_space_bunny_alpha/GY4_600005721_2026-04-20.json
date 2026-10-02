@@ -1,0 +1,115 @@
+{
+  "report_id": "GY4_600005721_2026-04-20",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:05:30.413137+00:00",
+  "run_finished_utc": "2026-10-02T17:05:57.929097+00:00",
+  "raw_file": "GY4_600005721_2026-04-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600005721_2026-04-20",
+    "school_profile": {
+      "school_type": "střední škola s gymnáziem, obchodní akademií, ekonomickým lyceem a školní jídelnou",
+      "inspection_period": "20. 4. 2026 až 23. 4. 2026",
+      "school_change_summary": "Od roku 2023/2024 škola nově vyučuje čtyřletý obor Gymnázium, čímž se zvýšil počet žáků i tříd a rozšířil pedagogický sbor. Od října 2025 poskytuje služby školní psycholožky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Podpora žáků",
+          "detail": "Poradenský systém pomáhá žákům s individuálními problémy a je propojený s kariérovým poradenstvím.",
+          "evidence": "Systém poradenství je transparentní, dostupný a reaguje na potřeby žáků i zákonných zástupců."
+        },
+        {
+          "tag": "Jazyky a praxe",
+          "detail": "Škola nabízí pestrý výběr cizích jazyků, výměnné pobyty a spolupráci s českými i zahraničními partnery.",
+          "evidence": "Klíčovým prvkem aktivit je partnerství s německou školou a nově spolupráce s obchodní akademií ve Vídni."
+        },
+        {
+          "tag": "Výsledky a uplatnění",
+          "detail": "Absolventi často pokračují na vysokých školách a dobře se uplatňují v ekonomických a administrativních oborech.",
+          "evidence": "Převážná většina absolventů pokračuje ve studiu na vysokých školách, nejčastěji ekonomického zaměření."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Absence",
+          "detail": "Vysoké absence mohou rodiče znepokojovat, protože vedly k nehodnocení části žáků na konci klasifikačních období.",
+          "evidence": "Ve školním roce 2024/2025 bylo nehodnoceno 6 % žáků, na konci prvního pololetí 2025/2026 téměř 9 %."
+        },
+        {
+          "tag": "Aktivita ve výuce",
+          "detail": "Při výběru předmětu je vhodné zjistit, nakolik se učitelé ve výuce zaměřují na samostatnou práci žáků a spolupráci.",
+          "evidence": "Ve zhlédnuté výuce převažovalo frontální předávání informací, které vedlo k pasivitě žáků."
+        },
+        {
+          "tag": "Vybavení",
+          "detail": "Pro rodiny zvažující gymnázium může být důležité vědět, že škola zatím nemá vlastní přírodovědnou učebnu.",
+          "evidence": "Škola doporučuje vybudovat odbornou učebnu pro praktická cvičení a laboratorní práce."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak v současnosti probíhá výuka, při níž žáci samostatně vyhledávají informace a spolupracují?",
+        "Jak škola konkrétně řeší vysokou absenci žáků a předchází nehodnocení na konci pololetí?",
+        "Kdy a jak bude vybudována přírodovědná učebna a jak budou probíhat laboratorní práce do té doby?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat gymnázium, obchodní akademii nebo ekonomické lyceum v Praze.",
+        "Žákům se zájmem o cizí jazyky, mezinárodní aktivity a propojení teorie s praxí.",
+        "Žákům, kteří potřebují dostupné výchovné, kariérové nebo psychologické poradenství."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům, kterým záleží na nízké míře absence a pravidelném hodnocení žáků.",
+        "Rodičům žáků, kteří upřednostňují výuku založenou více na samostatné práci, dialogu a kooperaci.",
+        "Rodičům, kteří očekávají vlastní přírodovědnou učebnu a pravidelné laboratorní cvičení přímo ve škole."
+      ],
+      "plain_czech_summary": "Obchodní akademie a Gymnázium Bubeneč nabízí střední vzdělávání v oborech Obchodní akademie, Ekonomické lyceum a nově i čtyřleté Gymnázium. Inspekce ocenila otevřené prostředí, dostupné poradenství, jazykové vzdělávání, spolupráci s partnery a dobré uplatnění absolventů. Mezi hlavní problémy patří vysoká absence, frontální způsob výuky a málo prostoru pro samostatnou práci žáků. Výuka se také postupně mění a škola plánuje doplnit přírodovědnou učebnu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "U oborů Obchodní akademie a Ekonomické lyceum byla úspěšnost v posledních třech letech kolísavá; po podzimním termínu 2024/2025 se zvýšila na 96 % u obou oborů.",
+        "key_numbers": [
+          "Obchodní akademie: 88 % před podzimním termínem, 96 % po něm.",
+          "Ekonomické lyceum: 95 % před podzimním termínem, 96 % po něm.",
+          "Stoprocentní úspěšnost v didaktickém testu z anglického jazyka a matematiky."
+        ],
+        "evidence": "Po podzimním termínu se úspěšnost Obchodní akademie zvýšila z 88 % na 96 % a Ekonomického lycea z 95 % na 96 %."
+      },
+      "absence": {
+        "trend": "Absence jsou vysoké a podle zprávy vedou k nehodnocení žáků na konci některých klasifikačních období.",
+        "key_numbers": [
+          "Průměrně 158 zameškaných hodin na žáka ve školním roce 2024/2025.",
+          "Z toho 0,8 hodiny neomluvené na žáka.",
+          "Nehodnoceno 6 % žáků v červnu 2024/2025 a téměř 9 % na konci prvního pololetí 2025/2026."
+        ],
+        "evidence": "Ve školním roce 2024/2025 činil průměr 158 zameškaných hodin na žáka; nehodnoceno bylo 6 % žáků."
+      },
+      "support_services": [
+        "Výchovné poradenství a metodika prevence.",
+        "Školní psycholožka poskytující individuální péči a metodickou podporu pedagogům.",
+        "Spolupráce s pedagogicko-psychologickou poradnou a specialisty ze speciálně pedagogického centra.",
+        "Individuální vzdělávací plány pro sportovce, odborný kroužek a rozvoj podnikavosti a kreativity.",
+        "Kariérové poradenství, prevence a krizová intervence."
+      ],
+      "safety_climate": [
+        "Vzdělávání se uskutečňuje v čistém, kultivovaném a akceptujícím prostředí.",
+        "Bezpečnost podporuje elektronický systém vstupu a recepce.",
+        "Prevence zahrnuje adaptační kurzy, poradenské činnosti a spolupráci s externími organizacemi."
+      ],
+      "partnerships_practice": [
+        "Pravidelné výměnné pobyty s německou střední školou a spolupráce s obchodní akademií ve Vídni.",
+        "Spolupráce s Vysokou školou ekonomickou, Vysokou školou chemicko-technologickou a Českou zemědělskou univerzitou.",
+        "Spolupráce s Českou národní bankou a dalšími odbornými subjekty.",
+        "Prezentace fiktivních firem na mezinárodních veletrzích v Praze a ve Vídni."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, věcně navazují na inspekční zprávu a zvýrazňují informace praktické pro rodiče.",
+      "uncertainty_notes": [
+        "Údaje o úspěšnosti maturit se vztahují k oborům Obchodní akademie a Ekonomické lyceum; Gymnázium dosud podle zprávy nematurovalo.",
+        "Zpráva uvádí trend absence, ale nepodává srovnání s jinými školami."
+      ]
+    }
+  }
+}

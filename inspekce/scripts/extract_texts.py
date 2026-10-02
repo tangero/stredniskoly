@@ -4,6 +4,11 @@ import json
 import pathlib
 import shutil
 import subprocess
+import tempfile
+
+# Pod touto hranicí je text nečitelný: skenované PDF dá pdftotext jen doložku o konverzi
+# (0–100 slov) a model by „shrnul“, že zprávu nelze přečíst (#259). Pak se použije OCR.
+MIN_SLOV = 300
 
 
 def load_reports(manifest_path: pathlib.Path):
@@ -28,6 +33,24 @@ def extract_text(pdf_path: pathlib.Path, text_path: pathlib.Path) -> bool:
     return True
 
 
+def ocr_text(pdf_path: pathlib.Path, text_path: pathlib.Path) -> bool:
+    """Text skenovaného PDF přes OCR (ocrmypdf + tesseract, čeština). Lokálně, bez sítě."""
+    if shutil.which("ocrmypdf") is None:
+        return False
+    with tempfile.TemporaryDirectory() as tmp:
+        sidecar = pathlib.Path(tmp) / "text.txt"
+        result = subprocess.run(
+            # Podepsané PDF (doložka o konverzi): výstupní PDF se neukládá, bere se jen text.
+            ["ocrmypdf", "--force-ocr", "--invalidate-digital-signatures", "-l", "ces", "--sidecar", str(sidecar), "--output-type", "none",
+             str(pdf_path), "-"],
+            capture_output=True,
+        )
+        if result.returncode != 0 or not sidecar.exists():
+            return False
+        text_path.write_text(sidecar.read_text(encoding="utf-8", errors="ignore"), encoding="utf-8")
+    return True
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", default="config/pilot_10_reports.json")
@@ -43,6 +66,11 @@ def main():
     ensure_pdftotext()
 
     reports = load_reports(manifest_path)
+    index_path = texts_dir / "index.json"
+    # Příznak OCR z dřívějšího běhu zůstává: text už je čitelný, ale vznikl z OCR.
+    drive_ocr = set()
+    if index_path.exists():
+        drive_ocr = {r["report_id"] for r in json.loads(index_path.read_text(encoding="utf-8"))["reports"] if r.get("ocr")}
     index_rows = []
     converted = 0
     skipped = 0
@@ -64,17 +92,25 @@ def main():
             converted += 1
         text = text_path.read_text(encoding="utf-8", errors="ignore")
         words = len(text.split())
-        index_rows.append(
-            {
-                "report_id": report["report_id"],
-                "pdf_file": report["pdf_file"],
-                "text_file": report["text_file"],
-                "word_count": words
-            }
-        )
+        ocr = report["report_id"] in drive_ocr and not args.force
+        if words < MIN_SLOV:
+            if ocr_text(pdf_path, text_path):
+                words = len(text_path.read_text(encoding="utf-8", errors="ignore").split())
+                ocr = True
+                print(f"OCR: {text_path.name} ({words} slov)")
+            else:
+                print(f"NEČITELNÉ: {text_path.name} ({words} slov), OCR se nepodařilo")
+        row = {
+            "report_id": report["report_id"],
+            "pdf_file": report["pdf_file"],
+            "text_file": report["text_file"],
+            "word_count": words
+        }
+        if ocr:
+            row["ocr"] = True
+        index_rows.append(row)
         print(f"Text: {text_path.name} ({words} slov)")
 
-    index_path = texts_dir / "index.json"
     index_path.write_text(
         json.dumps({"reports": index_rows}, ensure_ascii=False, indent=2),
         encoding="utf-8"

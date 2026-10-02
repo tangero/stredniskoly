@@ -1,0 +1,104 @@
+{
+  "report_id": "SOS_610450671_2026-03-17",
+  "school_profile": {
+    "school_type": "Soukromá střední odborná škola poskytující střední vzdělání s maturitní zkouškou i výučním listem; text uvádí obory Předškolní a mimoškolní pedagogika, Sociální činnost, Hotelnictví a Práce ve stravování.",
+    "inspection_period": "17. 3. – 1. 4. 2026",
+    "school_change_summary": "Škola změnila název, zvýšila počet žáků, zlepšila materiální podmínky, přesunula vzdělávání v Brně a nově tam zajišťuje školní stravování."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava",
+        "detail": "Odborná praxe na všech pracovištích je funkčně organizovaná a žáci při ní uplatňují teoretické znalosti v reálném prostředí.",
+        "evidence": "„Odborná praxe a odborný výcvik byly na všech pracovištích školy realizovány funkčně, s kvalitní organizací a účelným pedagogickým vedením.“"
+      },
+      {
+        "tag": "Bezpečné klima",
+        "detail": "Ve škole panuje příznivé sociální klima založené na respektu, důvěře a ohledu na individuální potřeby žáků.",
+        "evidence": "„Škola vytváří příznivé sociální klima založené na vzájemném respektu a otevřené komunikaci.“"
+      },
+      {
+        "tag": "Podpora znevýhodněných",
+        "detail": "Škola cíleně podporuje sociálně znevýhodněné žáky a pomáhá jim překonávat bariéry v přístupu ke vzdělání.",
+        "evidence": "„Cílená a systematická podpora sociálně znevýhodněných žáků a rozvoj interkulturních kompetencí přispívají ke snižování bariér ve vzdělávání.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rozdílná kvalita učiva",
+        "detail": "Podpora žáků a kontrola výuky jsou na pracovištích nestejně kvalitní, zejména v Jihlavě.",
+        "evidence": "„Na pracovišti v Jihlavě však nastavení a uplatňování kontrolních mechanismů nejsou v potřebném rozsahu ani efektivitě.“"
+      },
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Výsledky maturity byly v uvedených oborech a formách převážně slabé a často pod průměrem srovnatelné oborové skupiny.",
+        "evidence": "„Výsledky žáků oboru Sociální činnost v denní i dálkové formě vzdělávání byly ve sledovaném období horší než celorepublikový průměr.“"
+      },
+      {
+        "tag": "Absence a setrvání",
+        "detail": "Vysoká absence žáků Práce ve stravování přispívala k neprospívání a předčasnému ukončování vzdělávání.",
+        "evidence": "„Vysoká absence žáků a časté pozdní příchody do výuky se negativně promítaly do jejich průběžného hodnocení.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje přípravu na maturitu a jaké výsledky přípravných zkoušek dosahují žáci?",
+      "Jak podporuje škola individualizaci výuky, zapojení žáků do sebehodnocení a práci s odlišnou úrovní?",
+      "Jak řeší vysokou absenci a předčasné ukončování vzdělávání, zejména v oboru Práce ve stravování?"
+    ],
+    "who_school_fits": [
+      "Studenty, kterým vyhovuje propojení teorie s praxí a odbornou přípravou mimo školu.",
+      "Žáky hledající přátelské sociální klima, účelnou podporu a dobrou orientaci v oboru.",
+      "Žáky připravené pracovat samostatně, iniciativně a spolupracovat v reálném pracovním prostředí."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče žáků, kterým záleží na pravidelném hodnocení a spolehlivé přípravě k maturitě.",
+      "Rodiče žáků, kteří potřebují intenzivní individualizovanou podporu nebo pravidelnou práci s výchovným poradcem.",
+      "Rodiče žáků s odlišným mateřským jazykem, protože chybí ucelená evidence a systematická podpora v této oblasti."
+    ],
+    "plain_czech_summary": "Škola má jasnou strategii, která propojuje teorii s praxí, a funkčně organizovanou odbornou přípravu. Pro rodiče je důležité příznivé sociální klima, podpora sociálně znevýhodněných žáků a nízká úrazovost. Výsledky se mezi obory výrazně liší: nejlepší jsou v předškolní a mimoškolní pedagogice a hotelnictví, slabší v sociální činnosti a velmi slabé v Práci ve stravování, kde vysoká absence vede k předčasnému ukončování studia. Maturity byly převážně slabé a pod celorepublikovým průměrem. Kvalita podpory a řízení se mezi pracovišti liší, zvlášť v Jihlavě. Rodičům doporučujeme ověřit konkrétní přípravu na maturity, systém práce s absencí a úroveň podpory na zvoleném pracovišti."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky maturity byly v letech 2022/2023 až 2024/2025 ve většině sledovaných případů převážně slabé; při jednotlivých srovnáních se ale objevovaly výjimky.",
+      "key_numbers": [
+        "Sledované školní roky: 2022/2023, 2023/2024 a 2024/2025.",
+        "Ve školním roce 2023/2024 byli v dálkové předškolní a mimoškolní pedagogice všichni přihlášení žáci úspěšní ve společné části maturity.",
+        "Ve školním roce 2024/2025 byli žáci denní předškolní a mimoškolní pedagogiky úspěšnější než průměr v profilové části maturity."
+      ],
+      "evidence": "„Výsledky žáků oboru Předškolní a mimoškolní pedagogika v denní formě vzdělávání ve společné i profilové části maturitní zkoušky byly ve sledovaném období převážně slabé.“"
+    },
+    "absence": {
+      "trend": "Absence se výrazně lišila podle oboru; nejvyšší byla v Sociální činnosti a Práci ve stravování, kde výrazně přispívala k neúspěšnosti.",
+      "key_numbers": [
+        "Předškolní a mimoškolní pedagogika: přibližně 130 hodin absence na žáka za školní rok.",
+        "Sociální činnost: více než 250 hodin absence na žáka za školní rok.",
+        "Hotelnictví: přibližně 200 hodin absence na žáka za školní rok."
+      ],
+      "evidence": "„V oboru Sociální činnost ve školním roce 2024/2025 činil podíl žáků s vyznamenáním přibližně pětinu, zatímco podíl neprospívajících se pohyboval kolem deseti procent.“"
+    },
+    "support_services": [
+      "„Školní poradenské služby jsou na všech pracovištích zajišťovány v základním rozsahu a zaměřují se zejména na podporu žáků při vzdělávání a kariérové poradenství.“",
+      "„Výchovného poradce i školního metodika prevence vykonávají pedagogové bez absolvovaného specializačního studia, s výjimkou školního metodika prevence na pracovišti v Karvině.“",
+      "„V oblasti podpory žáků s odlišným mateřským jazykem však chybí ucelená evidence i systematická podpora.“"
+    ],
+    "safety_climate": [
+      "„Škola vytváří příznivé sociální klima založené na vzájemném respektu a otevřené komunikaci.“",
+      "„Výuka ve sledovaných hodinách vycházela ze ŠVP a probíhala převážně ve stabilním pracovním klimatu bez výraznějších kázeňských problémů.“",
+      "„Úrazovost se dařilo udržovat na nízké úrovni.“"
+    ],
+    "partnerships_practice": [
+      "„Odborná praxe v oborech Předškolní a mimoškolní pedagogika, Sociální činnost a Hotelnictví probíhala v podnětném a profesně přirozeném prostředí školních i smluvních pracovišť.“",
+      "„Funkční spolupráce se smluvními pracovišti a kvalitní organizace odborné praxe v oborech Předškolní a mimoškolní pedagogika a Hotelnictví přispívají k rozvoji profesních kompetencí žáků.“",
+      "„Kariérové poradenství je realizováno v spolupráci s externími institucemi a účinně podporuje další vzdělávací směřování žáků.“"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a v kontextu rozhodování rodičů; odborné výrazy jsou vysvětleny jejich dopadem na praxi.",
+    "uncertainty_notes": [
+      "Zpráva uvádí výsledky podle oboru a pracoviště, ale nepodává podrobné srovnání jednotlivých učitelů nebo konkrétních tříd.",
+      "Není uvedena přesná úspěšnost maturity v procentech, takže lze hodnotit jen slovní hodnocení výsledků.",
+      "Výraz „školní rok“ je používán při údajích o absenci a průběžných výsledcích, ale zpráva v těchto částech neuvádí další metodiku výpočtu."
+    ]
+  }
+}

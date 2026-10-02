@@ -1,0 +1,104 @@
+{
+  "report_id": "LYC_600013278_2026-04-14",
+  "school_profile": {
+    "school_type": "Střední škola poskytující také školní stravování a ubytování v domově mládeže.",
+    "inspection_period": "14. 4. 2026 až 17. 4. 2026",
+    "school_change_summary": "Od inspekce v roce 2023 vzrostl počet žáků, byl zvýšen povolený limit, rozšířena oborová nabídka a ukončeno nástavbové studium bezpečnostní služby."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praxe a zaměstnatelnost",
+        "detail": "Škola propojuje výuku s reálnou prací a partnerskými organizacemi, což může studentům usnadnit přechod do zaměstnání.",
+        "evidence": "„Široká síť spolupracujících firem umožňuje škole realizovat praktické vyučování v reálném pracovním prostředí.“"
+      },
+      {
+        "tag": "Odborná výuka",
+        "detail": "Hospitované hodiny potvrdily odbornost učitelů, praktické propojení učiva a účinné využívání moderních pomůcek.",
+        "evidence": "„Vyučující prokazovali vysokou odbornost a výuku vhodně podporovali názornými prostředky, včetně prezentací, videí a reálných ukázek.“"
+      },
+      {
+        "tag": "Ubytování a volný čas",
+        "detail": "Domov mládeže poskytuje vybavené ubytování, pestrý program a podporu přípravy do školy i volného času.",
+        "evidence": "„Nabízí jim pestrý program ať už sportovní, kulturní či další způsoby využití.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Klima školy",
+        "detail": "Rodiče by měli zjišťovat, jak škola získává zpětnou vazbu od žáků a pedagogů a jak řeší problémové situace.",
+        "evidence": "„Škola nemá zavedeny účinné a systematické mechanismy pro získávání zpětné vazby od žáků i pedagogů.“"
+      },
+      {
+        "tag": "Individuální podpora",
+        "detail": "Ve většině hodin byla podle inspekce omezená individualizace a průběžné hodnocení pokroku jednotlivých žáků.",
+        "evidence": "„Diferenciace výuky s ohledem na individuální potřeby, schopnosti a tempo žáků byla uplatňována jen v menší míře.“"
+      },
+      {
+        "tag": "Podpora žáků s podpůrnými opatřeními",
+        "detail": "Podpůrná opatření se podle inspekce ne vždy dostatečně uplatňovala přímo ve výuce.",
+        "evidence": "„Ve sledované výuce však byla podpora těchto žáků poskytována pouze ojediněle.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně podporujete žáky s potřebou individualizovaného přístupu, podpůrnými opatřeními nebo odlišným mateřským jazykem?",
+      "Jak často se žáci mohou zapojit do rozhodování a jak škola zjišťuje jejich spokojenost?",
+      "Kolik vyučovacích hodin má typicky frontální charakter a jak škola podporuje samostatnou práci, diskusi a sebehodnocení?"
+    ],
+    "who_school_fits": [
+      "Studenty, kteří chtějí technické, automobilové, elektrotechnické, informační nebo právní vzdělání.",
+      "Žáky motivované praktickou prací, odbornými soutěžemi a propojením školy s firmami.",
+      "Studenty, kteří využijí kvalitní ubytování, stravování a volnočasové aktivity v domově mládeže."
+    ],
+    "who_should_be_cautious": [
+      "Studenty, kterým záleží na výrazné podpořze samostatného rozhodování, struktury a zpětné vazby v hodinách.",
+      "Žáky, kteří potřebují velmi důslednou individualizaci nebo průběžné sledování vlastního pokroku.",
+      "Rodiče, kteří chtějí před přijetím ověřit konkrétní postup řešení šikany,absence či jiných problémových situací."
+    ],
+    "plain_czech_summary": "Škola má širokou technickou a automobilovou oborovou nabídku, rozsáhlé partnerské vztahy a kvalitní praktické vyučování. Výuka bývá odborná, aplikační a dobře vybavená digitálními pomůckami. Pro rodiče jsou důležité také stabilní výsledky a nízká absence. Z inspekce ale vyplynuly rezervy v řízení, školním klimatu, informování rodičů a individualizaci výuky. Podpůrná opatření nejsou vždy dostatečně propojena se skutečnou praxí ve vyučování. Při volbě školy je proto vhodné ověřit konkrétní přístup k podpoře žáka, řešení problémů a míře aktivního zapojení žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky společné části se mezi předměty a obory pohybovaly kolem celorepublikové úrovně, bez významných rozdílů.",
+      "key_numbers": [
+        "Hrubá neúspěšnost čtyřletých oborů byla v letech 2023–2025 průměrně 9 %.",
+        "Nejnižší neúspěšnost měl obor bezpečnostně právní činnost: 5 %.",
+        "V roce 2025 neúspěšnost bezpečnostně právní činnosti vzrostla téměř na 11 %."
+      ],
+      "evidence": "„Rozdíly však nebyly nijak významné, výsledky se lišily většinou o jednotky procent.“"
+    },
+    "absence": {
+      "trend": "Absence byla za poslední tři uzavřené školní roky vyrovnaná a neomluvená absence se vyskytovala jen v malé míře.",
+      "key_numbers": [
+        "Průměrná absence činila přibližně 130 hodin za školní rok.",
+        "Podíl neprospívajících žáků průměrně nepřekročil 2 %.",
+        "Míra absence se mezi třídami a obory významně nelišila."
+      ],
+      "evidence": "„Také míra absence byla v tomto období vyrovnaná, bez výrazných rozdílů mezi jednotlivými třídami nebo obory vzdělávání.“"
+    },
+    "support_services": [
+      "Škola má čtyřčlenný poradenský tým; jeho práce je místy málo koordinovaná kvůli koncentraci odpovědností.",
+      "Podpora zahrnuje výchovné, kariérové poradenství, prevenci, psychologa a podporu žáků se speciálními vzdělávacími potřebami.",
+      "Škola přiděluje ohroženým žákům zejména doučování a konzultace, ale účinnost opatření nevyhodnocuje dostatečně systematicky."
+    ],
+    "safety_climate": [
+      "Nástroje sledování školního klimatu se podle inspekce nevyužívaly vždy efektivně.",
+      "Při řešení závažnějších problémů se rodičům a žákům někdy nedostalo dostatečně jasných informací.",
+      "Některé zásahy byly podle inspekce příliš pomalé nebo málo transparentní."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s významným výrobcem automobilů a ve vlastní provozovně realizuje autorizovaný prodej a servis.",
+      "Partneři zajišťují praxi, exkurze, přednášky, workshopy a vybavení; část aktivit finančně podporují.",
+      "Rozsah spolupráce je velký, ale její prezentace na veřejnosti není dostatečně systematická."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžnou češtinu, stručně odděluje závěry inspekce od doporučení pro rodiče a uvádí přímé citace.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí počet žáků v jednotlivých oborech pro rok 2026/2027.",
+      "U některých oborů jsou výsledky uvedené jen za vybrané roky, proto je nelze srovnat mezi obory za stejné celé období.",
+      "Hodnocení vhodnosti konkrétního oboru musí vycházet z jeho vzdělávacího programu a konkrétní přijímací nabídky, nikoli jen ze širšího hodnocení školy."
+    ]
+  }
+}

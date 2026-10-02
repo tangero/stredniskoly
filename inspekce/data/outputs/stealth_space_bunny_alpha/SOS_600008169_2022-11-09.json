@@ -1,0 +1,105 @@
+{
+  "report_id": "SOS_600008169_2022-11-09",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:29:50.104081+00:00",
+  "run_finished_utc": "2026-10-02T17:30:12.568037+00:00",
+  "raw_file": "SOS_600008169_2022-11-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600008169_2022-11-09",
+    "school_profile": {
+      "school_type": "Střední odborná škola veterinární, mechanizační a zahradnická a Jazyková škola s právem státní jazykové zkoušky",
+      "inspection_period": "9. 11. 2022 až 14. 11. 2022",
+      "school_change_summary": "Vývoj školy zahrnuje posílení spolupráce s regionálními firmami, výrazné zlepšení materiálních podmínek a otevření oboru Rostlinolékařství."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná příprava",
+          "detail": "Škola nabízí kvalitní praktickou přípravu na pracovištích partnerů v reálných podmínkách.",
+          "evidence": "Odborný výcvik probíhá na smluvních pracovištích partnerských firem, kde žáci pracují se strojním vybavením v reálných pracovních podmínkách."
+        },
+        {
+          "tag": "Motivace žáků",
+          "detail": "Odborné publikace, informační centrum a účast v soutěžích podporují zájem žáků o jejich obor.",
+          "evidence": "Základní informační centrum a vlastní učebnice se významně podílejí na motivaci žáků a výsledcích v soutěžích."
+        },
+        {
+          "tag": "Podpora studentů",
+          "detail": "Škola sleduje uplatnění absolventů a využívá zkušenosti firem i absolventů pro kariérové poradenství.",
+          "evidence": "Informace o přijetí na vysoké školy a o uplatnění v praxi jsou využívány jako nástroj kariérového poradenství."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Teoretická výuka",
+          "detail": "V části teoretické výuky se málo využívají metody aktivního učení, diferenciace a individualizace.",
+          "evidence": "Převažující frontální výuka omezovala efektivitu naplňování kompetencí žáků."
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Hodnocení průběžných výsledků a maturit probíhá, ale podle zprávy nevede vždy k dostatečně účinným opatřením.",
+          "evidence": "Výsledky jsou hodnoceny ve čtvrtletních intervalech, ale ne vždy jsou přijímána adekvátní pedagogická opatření."
+        },
+        {
+          "tag": "Absence a praxe",
+          "detail": "Nezapočítávaná absence při individuální praxi může žákům vytvořit nutnost doplnit učivo i práce v náhradním termínu.",
+          "evidence": "Žáci si musí sami doplnit učivo, případně i napsat písemné práce v náhradním termínu."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá výuka zaměřená na aktivní práci studentů v jednotlivých předmětech?",
+        "Jaké konkrétní podpůrné mechanismy má škola pro studenty s horším prospěchem nebo absencí?",
+        "Jak se řeší náhrada teoretického učiva po individuální praxi?"
+      ],
+      "who_school_fits": [
+        "Studentům, kteří chtějí odborné vzdělání v oblasti veterinářství, mechanizace, zahradnictví nebo rostlinolékařství.",
+        "Studentům, kteří mají zájem o praktickou přípravu a práci v reálném prostředí.",
+        "Studentům, kteří chtějí studovat v českém jazyce nebo se připravovat ke státním jazykovým zkouškám."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům, kterým záleží na průběžné zpětné vazbě a cílené podpuce každého studenta.",
+        "Studentům, kteří v teoretické výuce vyžadují více samostatné, skupinové a aktivizující práce.",
+        "Rodičům žáků, kteří často absolvují individuální praxi a mohou se potýkat s náhradou výuky."
+      ],
+      "plain_czech_summary": "Škola má silné odborné zázemí, spolupráci s firmami a dobré podmínky pro praktickou výuku. Inspekce ocenila také odborníky z praxe, vlastní učebnice a informace o uplatnění absolventů. Hlavním slabým místem je část teoretické výuky, kde převažuje frontální způsob podávání informací a méně se uplatňuje aktivní učení, diferenciace a individualizace. Výsledky žáků se sledují, ale ne vždy se z nich přijímají dostatečně konkrétní opatření. Rodiče by se měli zeptat na podporu při problémech s prospěchem, absencí a náhradě učiva po praxi."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Ve skupině škol se stejnými obory dosahuje škola srovnatelných výsledků; v anglickém jazyce jsou výsledky v celorepublikovém srovnání nepatrně horší.",
+        "key_numbers": [],
+        "evidence": "Škola dosahuje ve skupině škol se stejnými obory srovnatelných výsledků; angličina je nepatrně horší."
+      },
+      "absence": {
+        "trend": "Absence je kontrolována, ale při zhoršení prospěchu nebo neomluvené absenci nejsou vždy přijímána adekvátní opatření.",
+        "key_numbers": [],
+        "evidence": "Výsledky jsou hodnoceny čtvrtletně, ale ne vždy jsou přijímána adekvátní pedagogická opatření."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodička prevence",
+        "Asistentka pedagoga pro podporu žáků se speciálními vzdělávacími potřebami",
+        "Doučování, konzultace a kariérové poradenství"
+      ],
+      "safety_climate": [
+        "Podnětná pracovní atmosféra a nastavená pravidla respektující komunikaci",
+        "Sociometrická šetření a adaptační pobyty na konci prvního ročníku",
+        "Preventivní programy, přednášky a projekty podporující zdravý životní styl"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se smluvními partnery a regionálními zaměstnavateli",
+        "Odborný výcvik na pracovištích partnerských firem v reálných podmínkách",
+        "Zapojení odborníků z praxe, externích přednášejících a škol z Česka i zahraničí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, věcně navazují na zprávu a dávají rodičům konkrétní podklady pro volbu školy a otázky při návštěvě.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesné číselné údaje o maturitních zkouškách ani celkové míře absence.",
+        "Hodnocení se vztahuje k inspekčnímu období v roce 2022.",
+        "Z textu není možné určit konkrétní podporu každého oboru mimo uvedených obecných zjištění."
+      ]
+    }
+  }
+}

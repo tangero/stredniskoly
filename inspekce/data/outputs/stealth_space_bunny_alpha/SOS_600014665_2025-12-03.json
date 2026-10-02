@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600014665_2025-12-03",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:52:32.844802+00:00",
+  "run_finished_utc": "2026-10-02T16:53:15.751832+00:00",
+  "raw_file": "SOS_600014665_2025-12-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600014665_2025-12-03",
+    "school_profile": {
+      "school_type": "Střední škola ve formě společnosti s ručením omezeným",
+      "inspection_period": "3. 12. 2025 až 5. 12. 2025",
+      "school_change_summary": "Od minulé inspekce se změnila ředitelka, vzrostl počet žáků a tříd a přibyl obor Ekonomika a podnikání se sociálním zaměřením."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Dobrá příprava na praktický výkon",
+          "detail": "Praktické vyučování probíhá na pracovištích smluvních partnerů a ve školních pracovištích v reálných podmínkách.",
+          "evidence": "Část praktického vyučování probíhá na pracovištích smluvních partnerů; žáci získávají odborné dovednosti v reálném pracovním prostředí."
+        },
+        {
+          "tag": "Zlepšení maturitní zkoušky",
+          "detail": "Neúspěšnost denních studentů na společné části maturitní zkoušky výrazně klesla.",
+          "evidence": "Průměrná hrubá neúspěšnost klesla z 38 % v roce 2023 na 14 % v roce 2025."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola poskytuje poradenské služby, konzultace a žákům jsou dostupné podpůrné mechanismy.",
+          "evidence": "Poradenské služby zajišťuje školní poradenské pracoviště; žákům je nabízena možnost využít konzultační hodiny pedagogů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Personální zajištění",
+          "detail": "Ve vyučování přetrvává vysoký podíl pedagogů bez potřebné odborné kvalifikace a častá fluktuace učitelů.",
+          "evidence": "Velkou část výuky zajišťují pedagogové bez potřebné odborné kvalifikace; 38 % pedagogů nemá potřebnou kvalifikaci."
+        },
+        {
+          "tag": "Kvalita výuky",
+          "detail": "Ve většině hodin převažuje frontální výuka, chybí dostatečné zapojení žáků, diferenciace a práce s informačními zdroji.",
+          "evidence": "Převažovala frontální výuka; prakticky všichni žáci plnili totožné úkoly a měli málo příležitostí pracovat s různými informačními zdroji."
+        },
+        {
+          "tag": "Spolehlivost hodnocení",
+          "detail": "Průběžné hodnocení a vedení pomoci žákům s vysokou absencí nemusí přesně odrážet skutečnou úroveň jejich znalostí.",
+          "evidence": "Škola nevyužívá systematicky standardizované nástroje; vysoká absence některých žáků se neshodovala s jejich vynikajícími výsledky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaká je aktuální kvalifikace a stabilita učitelů v jednotlivých oborech?",
+        "Jak konkrétně probíhá diferenciace výuky, zpětná vazba a podpora žáků při přípravě na maturitu?",
+        "Jak škola sleduje průběžné výsledky a absenci žáků a jaké konkrétní kroky podniká při zjištění problémů?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat veřejnosprávní činnost, ekonomiku a podnikání nebo hotelnictví a mají zájem o praktické vyučování.",
+        "Žákům, kterým vyhovuje nabídka vzdělávání v pronajaté budově v centru Strážnic.",
+        "Žákům, kteří ocení spolupráci se zaměstnavateli a dalšími partnery při získávání praktických zkušeností."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na stabilitě a odborné kvalifikaci učitelů.",
+        "Žákům, kteří potřebují výraznou individuální podporu, diferenciaci nebo průběžnou formativní zpětnou vazbu.",
+        "Rodičům, kteří očekávají velmi nízkou absenci a spolehlivou shodu školního hodnocení s výsledky maturitní zkoušky."
+      ],
+      "plain_czech_summary": "Škola nabízí čtyři obory v denní formě a veřejnosprávní činnost také distančně. Silnou stránkou je praktické vyučování u zaměstnavatelů a zlepšení úspěšnosti denních studentů na maturitě. Podle inspekce ale škola má personální problémy: 38 % pedagogů nemá potřebnou odbornou kvalifikaci a učitelé často odcházejí. Ve vyučování převládá frontální způsob, žáci méně pracují samostatně a učitelé málo přizpůsobují úkoly jejich potřebám. Výsledky průběžného hodnocení jsou velmi dobré, ale vysoká absence některých žáků k nim neodpovídá. Rodičům se proto vyplatí zeptat na stabilitu pedagogů, podporu učení a skutečnou přípravu na závěrečné zkoušky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Úspěšnost denní formy studia se zlepšila, u distanční formy výsledky výrazně kolísaly.",
+        "key_numbers": [
+          "Neúspěšnost denních studentů na společné části: 38 % v roce 2023 a 14 % v roce 2025.",
+          "Neúspěšnost distančních studentů: 0 % v roce 2023, 43 % v roce 2024 a 13 % v roce 2025.",
+          "Závěrečnou zkoušku v oboru kadeřník složili žáci se 100% úspěšností."
+        ],
+        "evidence": "Výsledky denního studia se zlepšily; distanční forma měla kolísavou úspěšnost a u oboru kadeřník byla stoprocentní."
+      },
+      "absence": {
+        "trend": "Absence žáků je dlouhodobě vyšší a u některých jedinců překračuje i 300 hodin ročně.",
+        "key_numbers": [
+          "Průměrná absence činila přibližně 180 hodin za školní rok.",
+          "Někteří jednotlivci měli více než 300 hodin absence ročně.",
+          "Zkoušku pro doklasifikaci konalo přibližně 6 % žáků denní formy."
+        ],
+        "evidence": "Ve sledovaném období žáci průměrně zameškali přibližně 180 hodin; absence některých jedinců překračovala 300 hodin ročně."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytuje metodickou podporu učitelům a kariérní poradenství žákům.",
+        "Škola nabízí konzultační hodiny pedagogů, ale žáci je většinou využívají jen minimálně.",
+        "Učitelé mají přehled o podpůrných opatřeních žáků a ve sledované výuce bylo jejich poskytování zaznamenáno."
+      ],
+      "safety_climate": [
+        "Škola má schránku důvěry, pravidelné třídnické hodiny a při nežádoucím chování spolupracuje se zákonnými zástupci.",
+        "Metodik prevence neabsolvoval specializační vzdělání a jeho práci převážně vykonává výchovná poradkyně.",
+        "Škola má minimální preventivní program, ale inspekce zjistila chybějící konkrétní plán aktivit a hodnocení jejich účinnosti."
+      ],
+      "partnerships_practice": [
+        "Praktické vyučování zajišťují zejména zaměstnavatelé a další smluvní partneři.",
+        "Škola spolupracuje s Univerzitou Tomáše Bati ve Zlíně a základními školami.",
+        "Spolupráci se zřizovatelem inspekce hodnotí jako úzkou."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulován srozumitelně, stručně a v kontextu rozhodování rodičů.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí podrobné výsledky maturitní zkoušky podle jednotlivých předmětů.",
+        "Zpráva neuvádí přesné výsledky inspekce v jednotlivých oborech.",
+        "Uvedené údaje o absenci a počtu žáků vycházejí ze sledovaného období uvedeného ve zprávě."
+      ]
+    }
+  }
+}

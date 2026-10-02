@@ -1,0 +1,104 @@
+{
+  "report_id": "SOS_600170918_2026-02-10",
+  "school_profile": {
+    "school_type": "Střední škola poskytující také vzdělávání v oborech s výučním listem, domov mládeže a školní jídelnu.",
+    "inspection_period": "10. 2. 2026–13. 2. 2026",
+    "school_change_summary": "Počet žáků od inspekce v roce 2023 vzrostl o 37 %, škola modernizovala vybavení a posílila poradenský tým o speciálního pedagoga."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Bezpečné klima",
+        "detail": "Zpráva popisuje vstřícné prostředí založené na respektu a pravidelném dodržování pravidel.",
+        "evidence": "„Vstřícná atmosféra, vzájemný respekt a dodržování nastavených pravidel.“"
+      },
+      {
+        "tag": "Odborný výcvik",
+        "detail": "Práce na pracovištích má podle inspektorů velmi dobrou odbornou i pedagogickou úroveň.",
+        "evidence": "„Sledovaný odborný výcvik měl velmi dobrou odbornou i pedagogickou úroveň.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola sleduje individuální potřeby žáků a prostřednictvím speciální pedagožky jim poskytuje cílenou pomoc.",
+        "evidence": "„Škola identifikuje a sleduje individuální vzdělávací potřeby žáků, školní speciální pedagožka poskytuje cílenou podporu.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Výsledky maturitních zkoušek jsou dlouhodobě podprůměrné a výsledky cestovního ruchu se výrazně proměňují.",
+        "evidence": "„Výsledky žáků u maturitních zkoušek jsou v celostátním srovnání dlouhodobě podprůměrné.“"
+      },
+      {
+        "tag": "Aktivita ve vyučování",
+        "detail": "Ve všeobecně vzdělávacích předmětech převažuje frontální výkon a samostatná práce či objevování jsou méně využívány.",
+        "evidence": "„Často převažovalo frontální předávání informací, které vedlo k pasivitě žáků.“"
+      },
+      {
+        "tag": "Odchody žáků",
+        "detail": "Předčasné ukončení studia zůstává významným rizikem, nejčastěji se týká prvního ročníku.",
+        "evidence": "„Školu ve školním roce 2024/2025 předčasně opustilo 14 % žáků, z nich polovina v prvním ročníku.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje samostatnost, kritické myšlení a aktivní práci žáků ve všeobecně vzdělávacích předmětech?",
+      "Jaké konkrétní podpůrné mechanismy mají noví žáci a jejich rodiče při neúspěchu, časté absenci nebo potřebě změnit obor?",
+      "Jak škola v jednotlivých oborech pracuje na zvyšování úspěšnosti maturitních zkoušek, zejména v českém jazyce a profilové části?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat obory cestovního ruchu, nutriční pomoci, cukrářství nebo kuchařství.",
+      "Rodičům žáků, kteří oceňují propojení teorie s praktickou výukou a odborným výcvikem.",
+      "Žákům, kteří využijí ubytování, stravování a rozsáhlou nabídku volnočasových aktivit v domově mládeže."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na pravidelně podprůměrných maturitních výsledcích.",
+      "Žákům, kteří potřebují výraznou individualizaci výuky a intenzivní podporu při učení.",
+      "Rodičům, kteší chtějí školu s převážně frontálním, aktivizujícím způsobem vyučování."
+    ],
+    "plain_czech_summary": "Škola nabízí prakticky zaměřené obory, dobré pracoviště pro odborný výcvik, klidné klima, ubytování, stravování a podporu žáků. Odborný výcvik je hodnocen velmi dobře. Mezi slabiny jsou převládající frontální výuka, málo samostatné práce, omezená diferenciace a podprůměrné výsledky maturitních zkoušek. Absence se meziročně snížila, ale předčasně studium ukončilo 14 % žáků. Pro rodiče je důležité ověřit si konkrétní přístup učitelů, míru podpory žáků a cílené zlepšování maturitní přípravy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Úspěšnost se za poslední tři školní roky zvýšila, ale zůstává podprůměrná v celostátním srovnání.",
+      "key_numbers": [
+        "Úspěšnost maturitních zkoušek: 58,3 %, 82,4 % a 83,3 %.",
+        "Didaktický test z českého jazyka a profilová část: v průměru 71 %.",
+        "Hrubá úspěšnost prvního ročníku Nutričního asistenta: 76,9 %."
+      ],
+      "evidence": "„Ve školním roce 2024/2025 měla hrubá úspěšnost 76,9 %“ a český jazyk s profilovou částí byl průměrně úspěšný ze 71 %."
+    },
+    "absence": {
+      "trend": "Od předchozí inspekce klesla absence o 41 %.",
+      "key_numbers": [
+        "Průměrně 162 zameškaných hodin na žáka za školní rok 2024/2025.",
+        "Dvě z těchto hodin byly neomluvené.",
+        "Maturitní obory: 138 hodin, z toho 0,4 neomluvené."
+      ],
+      "evidence": "„Došlo ke snížení absence o 41 %“ a „průměrný počet zameškaných hodin na žáka 162“."
+    },
+    "support_services": [
+      "Školní poradenský tým poskytuje konzultace žákům i zákonným zástupcům.",
+      "Školní speciální pedagožka zajišťuje cílenou podporu ve škole i domově mládeže.",
+      "Škola eviduje 21 žáků s potřebou podpůrných opatření a 13 žáků s odlišným mateřským jazykem."
+    ],
+    "safety_climate": [
+      "Ve vyučování převládá vstřícná atmosféra, vzájemný respekt a dodržování pravidel.",
+      "Bezpečnostní podmínky jsou stanoveny ve školním řádu a vnitřních řádech.",
+      "Na odborném výcviku má být sjednoceno dodržování pravidel bezpečnosti a ochrany zdraví."
+    ],
+    "partnerships_practice": [
+      "Sociální partneři se podílejí na odborné praxi, seminářích, kurzech a nabídkách zaměstnání.",
+      "Odborníci z praxe se aktivně podílejí na závěrečných zkouškách oborů s výučním listem.",
+      "Spolupráce s polskou školou podporuje mobilitu žáků a motivaci k učení cizích jazyků."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžnou češtinu, krátké praktické formulace a přímé citace ze zprávy.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesné výsledky obou nových maturitních oborů za všechny tři roky.",
+      "Není uvedena úspěšnost jednotlivých částí maturity podle oboru.",
+      "Údaje o absenci se vztahují převážně ke školnímu roku 2024/2025, nikoli k celé době inspekce."
+    ]
+  }
+}

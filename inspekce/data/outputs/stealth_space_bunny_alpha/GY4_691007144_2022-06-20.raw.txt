@@ -1,0 +1,94 @@
+{
+  "report_id": "GY4_691007144_2022-06-20",
+  "school_profile": {
+    "school_type": "Základní škola a mateřská škola",
+    "inspection_period": "20. 6. 2022 – 22. 6. 2022",
+    "school_change_summary": "Mateřská škola funguje od roku 2014, základní škola s prvním ročníkem byla otevřena v září 2021."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podnětné prostředí",
+        "detail": "Výuka probíhá v podnětném prostředí a žáci jsou hodnoceni spíše motivujícím způsobem.",
+        "evidence": "„Vzdělávání probíhalo v podnětném prostředí a příznivé atmosféře.“; „Žáci byli hodnoceni motivačně v průběhu výuky.“"
+      },
+      {
+        "tag": "Technické a sportovní aktivity",
+        "detail": "Škola podporuje technické myšlení, sportovní, kulturní a polytechnické činnosti dětí a žáků.",
+        "evidence": "„Škola ve spolupráci s partnery podporuje sportovní, kulturní a polytechnické aktivity dětí a žáků.“"
+      },
+      {
+        "tag": "Individuální přístup",
+        "detail": "Učitelé poskytují prostor pro individuální péči a podporu žáků se speciálními vzdělávacími potřebami.",
+        "evidence": "„Žákům se speciálními vzdělávacími potřebami poskytla vyučující dostatečný prostor a individuální péči.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Bezpečnost vstupu",
+        "detail": "Vchod do základní školy a školní družiny nebyl dostatečně zabezpečen proti vniknutí cizích osob.",
+        "evidence": "„Budova základní školy a školní družiny ... není však dostatečně zabezpečena proti vniknutí neoprávněných osob.“"
+      },
+      {
+        "tag": "Stabilita učitelů",
+        "detail": "Nestabilita pedagogického sboru a omezená spolupráce učitelek mohou ovlivnit kvalitu a kontinuitu vzdělávání.",
+        "evidence": "„Nestabilita pedagogického sboru je částečným rizikem pro kvalitu poskytovaného vzdělávání.“"
+      },
+      {
+        "tag": "Hodnocení a zpětná vazba",
+        "detail": "Formativní hodnocení a sebereflexe dětí byly využívány jen málo.",
+        "evidence": "„Prvkům formativního hodnocení nebyl věnován téměř žádný prostor.“; „Méně vedly k sebehodnocení či vzájemnému hodnocení.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak je aktuálně zabezpečen vstup do základní školy a školní družiny proti vniknutí cizích osob?",
+      "Jaké konkrétní aktivity škola nabízí k rozvoji technického myšlení a pohybových dovedností?",
+      "Jak škola podporuje individuální potřeby žáků a posiluje jejich sebereflexi?"
+    ],
+    "who_school_fits": [
+      "Rodiče, kteří hledají menší školu s důrazem na technické, sportovní a polytechnické aktivity.",
+      "Rodiče, kterým vyhovuje otevřená komunikace školy a zapojení do projektových dnů.",
+      "Rodiče dětí se speciálními vzdělávacími potřebami, kteří ocení individuální přístup a podporu logopeda."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kterým záleží na stabilitě učitelů a dlouhodobé kontinuitě výuky.",
+      "Rodiče, kteří očekávají důkladné formativní hodnocení a práci na sebereflexi dětí.",
+      "Rodiče, kterým je zásadní vyšší zabezpečení vstupů do budovy školy."
+    ],
+    "plain_czech_summary": "Jde o malou základní školu s mateřskou školou, která začala základní vzdělávání v roce 2021. Výuka má podle inspekce podnětné prostředí, motivující hodnocení a důraz na technické, sportovní a polytechnické aktivity. Mezi slabiny patří nestabilita pedagogického sboru, malé využití formativního hodnocení a ne dostatečně zabezpečené vchody. Zpráva neuvádí údaje o maturitě ani o absencích."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Inspekční zpráva neuvádí údaje o maturitě.",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje hodnocení maturity ani výsledky ukončení středního vzdělávání."
+    },
+    "absence": {
+      "trend": "Inspekční zpráva neuvádí trend ani číselné údaje o absencích.",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje statistiky absencí žáků nebo dětí."
+    },
+    "support_services": [
+      "Výchovný poradce a metodik prevence zajišťuje základní škola prostřednictvím ředitelky.",
+      "Učitelka aktivně vytváří plány pedagogické podpory podle doporučení školních poradenských zařízení.",
+      "Škola poskytuje intenzivní podporu logopeda při řešení odchylek v řečovém vývoji."
+    ],
+    "safety_climate": [
+      "Budova základní školy a školní družiny nebyla dostatečně zabezpečena proti vniknutí neoprávněných osob.",
+      "Inspekce doporučila zabezpečit vchodové dveře."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s vysokou školou a partnery na podpoře technického myšlení dětí a žáků.",
+      "Škola získává finanční prostředky prostřednictvím projektů šablon a spolupráce s dalšími partnery."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formace je přehledná, formulace jsou srozumitelné a závěry jsou oddělené od doporučení pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje údaje o maturitě.",
+      "Zpráva neobsahuje číselné údaje o absencích.",
+      "Text neuvádí dlouhodobý vývoj školy pro porovnání trendů."
+    ]
+  }
+}

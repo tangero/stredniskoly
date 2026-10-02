@@ -1,0 +1,111 @@
+{
+  "report_id": "GY4_600011054_2026-04-24",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:16:22.913811+00:00",
+  "run_finished_utc": "2026-10-02T16:17:09.773546+00:00",
+  "raw_file": "GY4_600011054_2026-04-24.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600011054_2026-04-24",
+    "school_profile": {
+      "school_type": "gymnázium a osmileté gymnázium včetně gymnázia se sportovní přípravou",
+      "inspection_period": "24. 4. až 29. 4. 2026",
+      "school_change_summary": "Škola průběžně modernizuje prostory, od roku 2022 rozšiřuje sportovní přípravu o veslování a pokračuje v projektové, mezinárodní a partnerské činnosti."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Sportovní vzdělávání",
+          "detail": "Sportovní třídy nabízejí rozvoj talentu v řadě sportů a dosahují úspěchů na republikové i mezinárodní úrovni.",
+          "evidence": "„Dlouhodobě účinná podpora sportovního nadání žáků… vede k úspěšné reprezentaci školy na republikové i mezinárodní úrovni.“"
+        },
+        {
+          "tag": "Jazykové a projektové aktivity",
+          "detail": "Zahraniční partnerství, projekty a příprava na certifikované zkoušky podporují jazykové dovednosti a uplatnění absolventů.",
+          "evidence": "„Systematická příprava žáků na certifikované jazykové zkoušky pozitivně ovlivňují naplňování profilu absolventa.“"
+        },
+        {
+          "tag": "Podpora studentů",
+          "detail": "Poradenské služby poskytují rozsáhlou podporu žákům, pedagogům i rodičům a jsou hodnoceny jako velmi dobře fungující.",
+          "evidence": "„Jejich kompetence jsou jasně vymezené a vykonávané na velmi dobré odborné úrovni.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Otevřená komunikace",
+          "detail": "Část pedagogů i více než polovina dotázaných žáků uvedla, že obtížně vyjadřují odlišné názory a nejsou vhodně řešeny neshody.",
+          "evidence": "„Více než polovina oslovených žáků uvedla, že nemohou říct učitelům svůj názor.“"
+        },
+        {
+          "tag": "Přizpůsobení výuky",
+          "detail": "Ve výuce přetrvává malé přizpůsobování úkolů rozdílným potřebám a možnostem jednotlivých žáků.",
+          "evidence": "„Nízká míra individualizace a diferenciace ve výuce neumožňuje dostatečně rozvíjet vzdělávací potenciál každého žáka.“"
+        },
+        {
+          "tag": "Práce se zdroji",
+          "detail": "Práce s informačními zdroji, kritické myšlení a průběžná zpětná vazba jsou ve výuce zastoupeny méně, než by odpovídalo potřebám rozvoje studentů.",
+          "evidence": "„Úlohy podporující kritické myšlení, samostatné vyvozování závěrů a práci s informačními zdroji se objevovaly spíše ojediněle.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně v hodinách učitelé přizpůsobují zadání různě studujícím žákům?",
+        "Jak může žák nebo rodič bezpečně upozornit na problém nebo nesouhlas a jak škola jeho podněm vyřeší?",
+        "Jak často probíhá zpětná vazba během výuky a kdy žáci hodnotí vlastní pokrok?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat v osmiletém nebo čtyřletém gymnaziálním programu.",
+        "Sportovně nadaným žákům z Mostu a okolí, kteří mohou využít odborné zázemí a partnerské kluby.",
+        "Žákům, jimž vyhovují jazykové, mezinárodní, projektové a mimoškolní aktivity."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na pravidelné přizpůsobení výuky a podpoře různě pokročilých studentů.",
+        "Žákům, kteří potřebují volněji vyjadřovat nesouhlas a chtějí mít jeho konstruktivní řešení.",
+        "Rodičům, kteří očekávají, že každá hodina bude intenzivně rozvíjet kritické myšlení a práci s informačními zdroji."
+      ],
+      "plain_czech_summary": "Zpráva hodnotí školu jako dobře vybavenou a zejména silnou ve sportovní přípravě, jazykovém vzdělávání, projektové činnosti a podpoře žáků. Sportovní třídy jsou dlouhodobě úspěšné, stejně jako absolventi maturity. Poradenské služby fungují velmi dobře a škola spolupracuje se zahraničními školami, vysokými školami i firmou Orlen Unipetrol. Rodiče by však měli zohlednit tři oblasti pro zlepšení: otevřenou komunikaci mezi žáky, učiteli a vedením, přizpůsobování výuky jednotlivým žákům a pravidelnější práci s informačními zdroji a kritickým myšlením. Srovnávací údaje o neúspěšnosti na maturitě nejsou uvedeny."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Velmi dobrá a stabilní; všichni zkoušející v profilové části uspěli.",
+        "key_numbers": [
+          "Hrubá neúspěšnost ve společné části: 1,6 % v roce 2024.",
+          "Hrubá neúspěšnost ve společné části: 1,5 % v roce 2025.",
+          "Celostátní srovnání: 1,0 % v obou uvedených letech."
+        ],
+        "evidence": "„V profilové části uspěli ve zkušebním období 2024 a 2025 všichni žáci, kteří maturitní zkoušku konali.“"
+      },
+      "absence": {
+        "trend": "Ve zprávě nejsou uvedeny údaje o absenci ani jejím vývoji.",
+        "key_numbers": [],
+        "evidence": "V dodaném textu nejsou statistiky dovolávky, omluvených hodin ani trendu absence uvedeny."
+      },
+      "support_services": [
+        "Dvě výchovné poradkyně poskytují studijní, osobní a kariérové poradenství.",
+        "Dvě školní metodičky prevence a dvě speciální pedagožky podporují žáky a pedagogy.",
+        "Školní psycholožka řeší školní a osobní obtíže a podporuje duševní pohodu a účinné učení.",
+        "Škola pořádá pro první ročníky adaptační a seznamovací pobyty."
+      ],
+      "safety_climate": [
+        "Prevence rizikového chování zahrnuje podporu zdravých návyků a psychohygieny.",
+        "Poradenský systém pokrývá žáky ohrožené školní neúspěšností, rizikovým chováním a osobními obtížemi.",
+        "Nedostatkem je otevřená komunikace a konstruktivní řešení neshod mezi žáky, učiteli a vedením."
+      ],
+      "partnership_practice": [
+        "Žáci pobývají v partnerských školách v Německu a ve Francii a rozvíjejí jazykové kompetence.",
+        "Studenti vysokých škol vykonávají na gymnáziu odborné praxe.",
+        "Spolupráce s Orlen Unipetrol umožňuje vstup do odborného prostředí laboratoří.",
+        "Škola spolupracuje se sportovními kluby a aktivně se účastní projektů včetně Erasmus+."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text používá běžné české výrazy, stručně vysvětluje význam zjištění pro rodiče a jasně odděluje potvrzené údaje od doporučení a otázek.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje údaje o absenci, proto nelze posoudit její vývoj.",
+        "Přesné rozložení sportovního oboru podle jednotlivých sportů není uvedeno.",
+        "Zpráva neuvádí konkrétní výsledky výuky v jednotlivých předmětech mimo uvedené hodnocení."
+      ]
+    }
+  }
+}

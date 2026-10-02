@@ -1,0 +1,105 @@
+{
+  "report_id": "SOU_600007294_2026-02-02",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:07:08.728780+00:00",
+  "run_finished_utc": "2026-10-02T17:07:42.633194+00:00",
+  "raw_file": "SOU_600007294_2026-02-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600007294_2026-02-02",
+    "school_profile": {
+      "school_type": "Střední odborná škola a střední odborné učiliště",
+      "inspection_period": "2.–3. 2. 2026",
+      "school_change_summary": "Počet žáků vzrostl, škola otevřela obor Bezpečnostně právní činnost a zlepšila materiální podmínky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola rozšířila poradenské služby a zavedena podpora pedagogické, výchovné i jazykové úrovně.",
+          "evidence": "Došlo ke zintenzivnění poradenských služeb; vznikly plány pedagogické podpory a dělení výuky podle jazykové úrovně."
+        },
+        {
+          "tag": "Školní klima",
+          "detail": "Žáci se mohou bez obav vyjadřovat k postupům učitelů a škola jejich podněty řeší.",
+          "evidence": "Žáci mohou bez obav rozporovat kroky učitelů, pokud s nimi nesouhlasí."
+        },
+        {
+          "tag": "Praktická výuka",
+          "detail": "Při sledované praktické výuce žáci pracovali samostatně, zaujatě a uplatňovali teoretické znalosti.",
+          "evidence": "Žáci efektivně pracovali pod vedením učitelů většinou v rámci samostatné práce."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Bezpečnost na pracovištích",
+          "detail": "Při odborném výcviku byla místy porušena pravidla bezpečnosti a někdy chyběly ochranné pomůcky.",
+          "evidence": "Nedodržením pravidel bezpečnosti a ochrany zdraví při odborném výcviku; používání ochranných pomůcek bylo ojediněle opomenuto."
+        },
+        {
+          "tag": "Kvalita výuky",
+          "detail": "Hospitační činnost neprobíhala v potřebném rozsahu a ne všichni pedagogové ji vykonávají systematicky.",
+          "evidence": "Hospitační a metodickou činnost realizují systematicky pouze někteří pedagogové."
+        },
+        {
+          "tag": "Nejasné informace",
+          "detail": "Informace o možnosti získání výučního listu a poplatcích za dobrovolné zkoušky byly zpočátku neúplné.",
+          "evidence": "Byly identifikovány nedostatky v informování zákonných zástupců a žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak často a s jakým výsledkem kontrolujete dodržování bezpečnosti na praktických pracovištích?",
+        "Jak konkrétně funguje plán pedagogické podpory a komu může rodič navrhnout jeho vytvoření nebo úpravu?",
+        "Které dobrovolné zkoušky jsou mimo vzdělávací program zpoplatněné a kolik stojí?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studium v oboru s maturitní zkouškou, výučním listem nebo v novém oboru Bezpečnostně právní činnost.",
+        "Rodičům žáků, kterým vyhovuje školní klima založené na možnosti žáků bezpečně vznáset připomínky.",
+        "Žákům potřebujícím poradenskou službu, plán podpory nebo rozdělení výuky podle jazykové úrovně."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků na odborném výcviku, kterým záleží na důsledném dodržování bezpečnosti a používání ochranných pomůcek.",
+        "Žákům, kterým nestačí častá hospitační a metodická podpora učitelů.",
+        "Rodičům, kteří očekávají úplné a srozumitelné informace o výučních listech, zkouškách a jejich úhradách."
+      ],
+      "plain_czech_summary": "Škola vzdělávala 841 žáků a využívala 77 % povolené kapacity. Nabízí čtyři obory s maturitou, nástavbové studium Podnikání a osm oborů s výučním listem; nově také Bezpečnostně právní činnost. Pro žáky zlepšila poradenství, podporu v jazycích a přípravu na maturitu. Klima hodnotí jako zlepšující se, žáci mohou učitelům bezpečně vznášet výhrady. Hlavní slabinou je ne důsledné dodržování bezpečnosti při praktické výuce. Hospitační činnost také nemá potřebný rozsah. Zpráva neuvádí celkové výsledky maturit ani údaje oabsencech."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zavedeno dělení výuky českého jazyka, simulace maturity a ověřování znalostí didaktickými testy; celkový vývoj výsledků není uveden.",
+        "key_numbers": [],
+        "evidence": "Nově je zavedena realizace tzv. maturity „nanečisto“ v podobě simulace reálných podmínek MZ."
+      },
+      "absence": {
+        "trend": "Zpráva neuvádí vývoj ani výsledkyabsence.",
+        "key_numbers": [],
+        "evidence": "V hodnocení výsledků vzdělávání nejsou uvedeny statistiky absence."
+      },
+      "support_services": [
+        "Poradenské služby zaměřené na prevenci školní neúspěšnosti.",
+        "Plány pedagogické podpory se studijním deníkem pro ohrožené žáky.",
+        "Individuální výchovný plán podporující vhodné chování žáka."
+      ],
+      "safety_climate": [
+        "Při sledované výuce byly bezpečnostní zásady dodržovány až na výjimky.",
+        "Ojediněle nebyly použity ochranné pomůcky.",
+        "Inspekce označila dodržování bezpečnosti při praktickém vyučování za slabou stránku."
+      ],
+      "partnership_practice": [
+        "Škola získává podněty prostřednictvím žákovského parlamentu v obou budovách.",
+        "Vznikla mezioborová skupina pedagogů, kteří se vzájemně podporují.",
+        "Nově funguje pozice zástupce třídního učitele a byl zaveden etický kodex."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulován srozumitelně, stručně a bez zbytečného úřednického složení.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje celkové výsledky maturit ani srovnání s předchozím rokem.",
+        "Zpráva neobsahuje údaje o celkové absenci a jejím vývoji.",
+        "Vhodnost školy konkrétnímu žákovi nelze posoudit bez informací o jeho oboru, zdravotních omezeních a potřebách."
+      ]
+    }
+  }
+}

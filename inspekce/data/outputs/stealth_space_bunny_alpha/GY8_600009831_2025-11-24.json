@@ -1,0 +1,109 @@
+{
+  "report_id": "GY8_600009831_2025-11-24",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:56:59.337975+00:00",
+  "run_finished_utc": "2026-10-02T16:57:26.365485+00:00",
+  "raw_file": "GY8_600009831_2025-11-24.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600009831_2025-11-24",
+    "school_profile": {
+      "school_type": "příspěvková organizace poskytující střední vzdělání v oborech gymnázium, informační technologie, ekonomické lyceum a předškolní a mimoškolní pedagogika",
+      "inspection_period": "24. 11. 2025 – 28. 11. 2025",
+      "school_change_summary": "Od roku 2020 se rozšířilo vedení, zvýšil počet pedagogů i žáků, přibyl obor IB DP a předškolní a mimoškolní pedagogika a modernizovaly se odborné učebny i budovy školy."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výsledky a příprava na studium",
+          "detail": "Škola dosahuje dlouhodobě velmi dobrých výsledků a žáci jsou připravováni na další vzdělávání i odbornou praxi.",
+          "evidence": "Výsledky vzdělávání žáků jsou dlouhodobě na velmi dobré úrovni; žáci se zapojují do soutěží, projektů a dalších aktivit, což podporuje jejich studijní úspěšnost."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Rodiče mohou ocenit fungující poradenství, podpůrná opatření a práci ŠPP se žáky se speciálními vzdělávacími potřebami.",
+          "evidence": "ŠPP tvoří osm členů; podpůrná opatření jsou nastavována podle doporučení školských poradenských zařízení a průběžně vyhodnocována."
+        },
+        {
+          "tag": "Výuka a klima",
+          "detail": "Hodiny jsou podle inspekce převážně dobře organizované, metodicky pestré a vycházejí z respektujícího partnerského klimatu.",
+          "evidence": "Výuka měla převážně dobrou až velmi dobrou úroveň; atmosféra byla klidná, podnětná a komunikace mezi učiteli a žáky partnerská."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kvalifikace pedagogů",
+          "detail": "Část pedagogického sboru nesplňovala předpoklad odborné kvalifikace, přesto inspekce zaznamenala bezprostřední negativní vliv na kvalitu výuky.",
+          "evidence": "Část pedagogického sboru nesplňuje předpoklad odborné kvalifikace; v době inspekce nebyl zaznamenán negativní vliv na kvalitu vzdělávání."
+        },
+        {
+          "tag": "Zapojení všech žáků",
+          "detail": "Někdy se hůře aktivizovala celá třída, chyběla závěrečná reflexe a systématičtější přizpůsobování úkolů jednotlivým žákům.",
+          "evidence": "Na otázky reagovala opakovaně užší skupina aktivních žáků; rezervy byly v diferenciaci, individualizaci a zapojení všech žáků."
+        },
+        {
+          "tag": "Anonymní podněty",
+          "detail": "V době inspekce nebyla zřízena schránka důvěry, což může ztěžovat anonymní signalizaci problémů.",
+          "evidence": "Schránka důvěry není zřízena, nicméně v nejbližší době bude spuštěna online varianta."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně podporujete všechny žáky v hodinách pomocí formativního hodnocení, reflexe a diferencovaných úkolů?",
+        "Kdy bude funkční online schránka důvěry a jaké budou možnosti anonymního podání podnětu?",
+        "Jaké konkrétní příležitosti čekají na rodiče při volbě mezi gymnáziem, IB DP, ekonomickým lyceem, IT a pedagogickým oborem?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří hledají kvalitní gymnaziální vzdělání s dlouhodobě velmi dobrými výsledky.",
+        "Žáci s zájmem o mezinárodní studium, angličtinu, IB DP nebo výměnné pobyty.",
+        "Žáci, kterým vyhovuje široká nabídka poradenství, podpůrných služeb, projektů a praxí."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče žáků, kterým záleží na důsledném zapojení všech dětí a na přizpůsobování náročnosti úkolů.",
+        "Rodiny, které potřebují právě okamžitý anonymní kanál pro řešení problémů.",
+        "Uchazeči o obory, u nichž je potřeba sledovat výsledky v matematice, cizích jazycích a odborných modulech."
+      ],
+      "plain_czech_summary": "Inspekce hodnotí školu jako dobře vedenou a vybavenou, s velmi dobrými dlouhodobými výsledky žáků. Ve většině hodin byla patrná kvalitní, metodicky pestrá výuka a respektující klima. Škola nabízí gymnázium, IB DP, odborné obory, poradenství, podporu nadaným žákům, projekty, výměnné pobyty a praxe. Mezi nedostatky patří část pedagogů bez splněné odborné kvalifikace, někdy nevyrovnané zapojení celé třídy a omezená systematičnost formativního hodnocení i individualizace. Zpráva popisuje také vznik IB DP, nového pedagogického oboru a modernizaci školy od roku 2020."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Gymnaziální obory dlouhodobě dosahují téměř stoprocentní úspěšnosti, ekonomické lyceum 85–95 % a IT obory 80–90 %.",
+        "key_numbers": [
+          "Na gymnáziu je úspěšnost téměř stoprocentní.",
+          "Ekonomické lyceum: úspěšnost 85–95 %.",
+          "Informační technologie: úspěšnost 80–90 %."
+        ],
+        "evidence": "Maturitní zkoušky probíhají bez komplikací a dlouhodobě vykazují nadprůměrné výsledky; úspěšnost se liší podle oboru."
+      },
+      "absence": {
+        "trend": "Z dostupného textu nelze určit trend absence.",
+        "key_numbers": [],
+        "evidence": "Zpráva neuvádí údaje o absencích žáků ani jejich vývoji."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště má osm členů, včetně kariérových poradců, výchovných poradkyní, školní psycholožky a metodiků prevence.",
+        "Škola poskytuje kariérové poradenství, konzultace k maturitě, podporu odborné práce, tvorby portfolia a rozvoje měkkých dovedností.",
+        "Podpůrná opatření pro žáky se speciálními vzdělávacími potřebami se řídí doporučeními školských poradenských zařízení."
+      ],
+      "safety_climate": [
+        "Škola má ucelený systém bezpečnosti a ochrany zdraví, pravidelná poučení, revize zařízení a cvičení mimořádných událostí.",
+        "Prevence zahrnuje rizika spojená se sociálními sítěmi, návykovými látkami, elektronickými cigaretami, záškoláctvím a úzkostnými stavy.",
+        "Pro nové třídní kolektivy jsou organizovány adaptační kurzy; schránka důvěry dosud není zřízena, plánuje se online varianta."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s partnery v Portugalsku, Německu, na Slovensku a s regionálními organizacemi v Rokycanech.",
+        "Firmy zajišťují praxe, exkurze a job shadowing; vysoké školy pedagogické praxe a odborné projekty.",
+        "Škola zprostředkovává stáže a odborné exkurze a účastní se projektů Euroweek, Euregio Egrensis a GoHigher."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text používá srozumitelný český jazyk, krátké praktické formulace a jasně odděluje zjištění zprávy od doporučení pro rodiče.",
+      "uncertainty_notes": [
+        "Údaje o absencích nejsou v dodaném textu uvedeny.",
+        "Zpráva uvádí kvalifikaci části pedagogů jako slabou stránku, ale nepočítá jejich podíl.",
+        "Přesnou míru dopadu doporučovaných změn na výsledky nelze ze zprávy určit."
+      ]
+    }
+  }
+}

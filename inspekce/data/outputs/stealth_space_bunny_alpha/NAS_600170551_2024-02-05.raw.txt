@@ -1,0 +1,100 @@
+{
+  "report_id": "NAS_600170551_2024-02-05",
+  "school_profile": {
+    "school_type": "Příspěvková střední škola a domov mládeže",
+    "inspection_period": "5. 2. 2024–8. 2. 2024",
+    "school_change_summary": "Škola zlepšila kvalifikaci pedagogů, modernizovala výukové prostory a vybavení a otevřela nový domov mládeže."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka a partnerství",
+        "detail": "Žáci se mohou připravovat na skutečné technické práce díky spolupráci školy s firmami a dostupným školním i externím vybavení.",
+        "evidence": "„Velmi dobré podmínky má škola k naplňování vzdělávacích cílů odborného vzdělávání.“"
+      },
+      {
+        "tag": "Odborný výcvik",
+        "detail": "Praktická výuka probíhá v dobře vybavených dílnách, kde učitelé průběžně sledují práci žáků a přizpůsobují tempo jejich předpokladům.",
+        "evidence": "„Vyučující odborného výcviku zadanou práci a její průběh průběžně hodnotili, čímž žáky vhodně motivovali.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola poskytuje doučování, kariérové poradenství, psychologickou podporu a preventivní programy pro první ročníky.",
+        "evidence": "„Školní psycholog zajišťuje účinnou odbornou podporu nejen žákům, ale i vyučujícím.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Aktivita v teoretické výuce",
+        "detail": "Při výuce teoretických předmětů se rodiči mohou setkat s převážně frontálním způsobem práce a omezeným zapojením žáků.",
+        "evidence": "„Převažovala frontální výuka, částečně s dominantním postavením pedagogů.“"
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Některým žákům může chybět průběžné hodnocení jejich pokroku a účinnější podpora podle školního neúspěchu.",
+        "evidence": "„Výsledky dalších čtvrtletních písemných prací nebo testů po větších tematických celcích spíše jen sumarizují.“"
+      },
+      {
+        "tag": "Individuální přístup",
+        "detail": "Ve většině navštívených hodin byla omezená diferenciace a individualizace, což může být problematické pro žáky s odlišnými potřebami.",
+        "evidence": "„Ve výuce nebyla zaznamenána zřetelná diferenciace úkolů dle individuálních předpokladů žáků.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé přizpůsobují teoretickou výuku žákům se speciálními vzdělávacími potřebami a žákům s odlišným mateřským jazykem?",
+      "Jak často žáci dostávají průběžnou zpětnou vazbu a v jaké podobě se využívá formativní hodnocení?",
+      "Kolik času během školního týdne probíhá odborný výcvik nebo práce na externím pracovišti u smluvního zaměstnavatele?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat lodní dopravu, strojířství, stavební obory nebo související střední odborné obory, protože škola nabízí „Lodník, Obráběč kovů, Strojní mechanik“ a další obory.",
+      "Žákům, kterým vyhovuje propojení teoretické výuky s odborným výcvikem a praktickou činností, protože škola má „velmi dobré podmínky“ pro odborné vzdělávání.",
+      "Žákům, kteří využijí podporu při adaptaci nebo mají vzdělávací potřeby, protože škola eviduje 36 žáků se speciálními vzdělávacími potřebami a zajišťuje odborné poradenské služby."
+    ],
+    "who_should_be_cautious": [
+      "Žákům, kteří v teoretické výuce očekávají aktivní práci, samostatné řešení úkolů nebo hodnocení podle výkonu, protože převládala frontální výuka a formativní hodnocení nebylo využíváno.",
+      "Žákům s výraznějšími rozdíly v předpokladech, protože se při výuce podle inspekce neobjevovala „zřetelná diferenciace úkolů dle individuálních předpokladů žáků“.",
+      "Rodičům, kteří chtějí přesné údaje o neúspěšnosti matury v obou termínech, protože zpráva uvádí výsledky společné části za podzimní termín 2023 a konkrétní počet za závěrečnou zkoušku."
+    ],
+    "plain_czech_summary": "Škola má dobré zázemí pro technické a lodní obory, dobře vybavené dílny, partnerské firmy a účinnou podporu při odborném výcviku. Poradenské služby, doučování a psychologická podpora jsou dostupné. Inspekce ale zjistila, že v teoretické výuce převažuje frontální způsob učení. Chybí častější aktivizace žáků, průběžná zpětná vazba, formativní hodnocení a individualizace. Příprava na maturitu se jeví jako účinná, ale zpráva neuvádí celkovou neúspěšnost společné části maturity. Rodiče by měli na dni otevřených dveří ověřit konkrétní přístup učitelů ke slabým žákům, žákům se speciálními potřebami a hodnocení ve všeobecně vzdělávacích předmětech."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Příprava je hodnocena jako účinná; srovnatelný vývoj v čase zpráva neuvádí.",
+      "key_numbers": [
+        "Podzimní termín 2023: neúspěšnost ve společné části byla lepší než republikový průměr dané skupiny oborů.",
+        "Při závěrečné zkoušce neuspěli 2 žáci.",
+        "Bylo připraveno 36 žáků v 2 třídách nástavbového studia."
+      ],
+      "evidence": "„Účinná je příprava žáků na maturitní zkoušku.“"
+    },
+    "absence": {
+      "trend": "Celkový trend ani počet neabsencí zpráva neuvádí.",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje souhrnnou statistiku absencí žáků."
+    },
+    "support_services": [
+      "„Výchovný poradce, metodička prevence a školní psycholog.“",
+      "„Žákům ohroženým školním neúspěchem a dalším zájemcům nabízí pedagogové doučování a individuální konzultace.“",
+      "Pravidelné adaptační programy podporují začlenění prvních ročníků a prevence rizikového chování."
+    ],
+    "safety_climate": [
+      "Rekonstruované lodní dílny „splňují hygienické a bezpečnostní požadavky“.",
+      "Na pokládané otázky žáci odpovídali bez obav z chyby.",
+      "Škola má funkční postupy pro řešení problémů s rizikovým chováním."
+    ],
+    "partnerships_practice": [
+      "Sít sociálních partnerů umožňuje efektivní praktické vyučování a podporuje přípravu žáků na budoucí profesi.",
+      "Žáci strojírenských oborů ve třetím ročníku využívají CNC stroje na pracovištích smluvních firem.",
+      "Partnerská škola v Německu umožňuje předávání zkušeností z vnitrozemské plavby."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžnou češtinu, stručně odděluje ověřená zjištění od doporučení pro rodiče a jasně uvádí chybějící údaje.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí celkovou neúspěšnost maturity za oba termíny 2023.",
+      "Zpráva neuvádí souhrnné údaje o absencích.",
+      "Závěrečná zkouška není totožná s maturitní zkouškou, proto jsou její výsledky uvedeny zvlášť."
+    ]
+  }
+}

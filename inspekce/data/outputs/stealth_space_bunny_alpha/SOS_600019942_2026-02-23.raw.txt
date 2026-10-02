@@ -1,0 +1,102 @@
+{
+  "report_id": "SOS_600019942_2026-02-23",
+  "school_profile": {
+    "school_type": "střední zdravotnická škola a vyšší odborná škola zdravotnická",
+    "inspection_period": "23. 2. 2026–26. 2. 2026",
+    "school_change_summary": "Škola rozšířila vzdělávání o tříletý obor Diplomovaná všeobecná sestra, posílila poradenské pracoviště o školního psychologa a modernizovala vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná příprava",
+        "detail": "Žáci a studenti získávají odborné znalosti a dovednosti propracované také pomocí praxe, exkurzí, stáží a modelových situací.",
+        "evidence": "„Na jejím základě jsou zajišťovány nejen praktické vyučování a odborná praxe žáků a studentů, ale také realizace odborných exkurzí, stáží, workshopů.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola nabízí doučování, konzultace, poradenství a individualizovanou podporu žákům se zvláštními vzdělávacími potřebami.",
+        "evidence": "„Pravidelné doučování v maturitních předmětech a nabízené konzultační hodiny jednotlivých pedagogů, které žáci podle potřeby individuálně využívali.“"
+      },
+      {
+        "tag": "Podmínky a klima",
+        "detail": "Modernizované prostory podporují výuku a škola sleduje bezpečnost i příznivé vztahy ve třídách.",
+        "evidence": "„Prostorové podmínky i vybavení jsou na velmi dobré úrovni a podporují kvalitní vzdělávání.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Reflexe výuky",
+        "detail": "Některé hodiny končí bez soustavného shrnutí učiva a zhodnocení naplnění cílů.",
+        "evidence": "„Závěrečná reflexe hodin není vždy systematicky zařazována a žáci nejsou dostatečně vedeni k vyhodnocování výukových cílů.“"
+      },
+      {
+        "tag": "Čtenářská gramotnost",
+        "detail": "Výsledky čtenářské gramotnosti byly mírně podprůměrné, přestože škola přijala podpůrné doporučení.",
+        "evidence": "„Na základě mírně podprůměrných výsledků zjištěných v oblasti čtenářské gramotnosti škola zpracovala metodické doporučení.“"
+      },
+      {
+        "tag": "Matematika",
+        "detail": "Při hodnocení výuky matematiky bylo méně rozvíjeno slovní zdůvodňování a obhajování postupů řešení.",
+        "evidence": "„Menší pozornost byla však věnována systematickému rozvoji komunikativních kompetencí, zejména při slovním zdůvodňování a obhajobě postupů řešení úloh.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně vypadá závěrečná reflexe hodiny a zapojení žáků do hodnocení dosažených cílů?",
+      "Jak funguje individualizovaná podpora 29 žáků se speciálními vzdělávacími potřebami a jak často se její účinnost vyhodnocuje?",
+      "Kolik času studenti tráví na odborné praxi a které konkrétní partnery škola zahrnuje do přípravy diplomovaných všeobecných sester?"
+    ],
+    "who_school_fits": [
+      "Uchazeči, kteří chtějí studovat obory Praktická sestra, Sociální činnost nebo Diplomovaná všeobecná sestra.",
+      "Žáci, kterým vyhovuje propojení školní výuky s odbornou praxí, exkurzemi a modelovými situacemi.",
+      "Studenti, kteří chtějí pokračovat ve zdravotnickém nebo sociálním oboru směrem k vyšší odborné škole."
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči, kterým chybí praktická orientace v oboru nebo nevyhovuje úzké zaměření školy na zdravotnictví a sociální služby.",
+      "Žáci, kterým záleží na důsledném závěrečném zhodnocení každé vyučovací hodiny, protože zde zatím není vždy soustavné.",
+      "Rodiče, kteří očekávají přesné výsledky absence nebo širší mimoškolní aktivity, protože zpráva neuvádí rozsáhlé výsledky VOŠ v soutěžích."
+    ],
+    "plain_czech_summary": "Škola má kvalitní moderní zázemí, fungující poradenské služby a velmi dobré spolupráce s praxí, školami i zdravotnickými organizacemi. Výsledky maturity jsou za poslední tři roky celkově velmi dobré a u obou oborů jsou srovnatelné se srovnatelnými školami. Hlavním zjištěným nedostatkem je, že některé hodiny nemají dostatečně pravidelný závěr s posouzením učiva a cílů. Slabší je také čtenářská gramotnost a komunikativní dovednosti při řešení matematiky. Zpráva neuvádí údaje o absencích."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Za poslední tři roky celkově velmi dobrá úroveň; ve školním roce 2024/2025 mírné zhoršení společné části u obou oborů, u zdravotnického oboru kolísání výsledků.",
+      "key_numbers": [
+        "Ve školním roce 2022/2023 uspěli u maturity všichni žáci oboru Sociální činnost.",
+        "Ve školním roce 2023/2024 se v oboru Sociální činnost maturita nekonala.",
+        "Jednotnou závěrečnou zkoušku absolvovali všichni zúčastnění žáci Praktické sestry."
+      ],
+      "evidence": "„Výsledky společné i profilové části maturitní zkoušky byly v posledních třech letech u obou vyučovaných oborů vzdělávání celkově na velmi dobré úrovni.“"
+    },
+    "absence": {
+      "trend": "Zpráva neuvádí vývoj ani výši absence.",
+      "key_numbers": [],
+      "evidence": "V dodaném textu nejsou uvedeny statistiky neomluvené ani omluvené absence."
+    },
+    "support_services": [
+      "Doučování v maturitních předmětech a konzultační hodiny pedagogů.",
+      "Školní poradenské pracoviště s výchovnými poradkyněmi, školní metodičkou prevence, kariérovou poradkyní a externí školní psycholožkou.",
+      "Podpůrná opatření pro žáky se SVP, jejichž účinnost je pravidelně sledována.",
+      "Adaptační kurzy, třídnické hodiny a individuální pohovory podporující třídní klima."
+    ],
+    "safety_climate": [
+      "Žáci a studenti jsou průběžně informováni o bezpečnostních rizicích spojených s výukou a školními akcemi.",
+      "Školní i třídní klima je pravidelně monitorováno.",
+      "Škola spolupracuje s externími organizacemi na prevenci společensky nežádoucích jevů a posilování vztahů."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s poskytovateli zdravotnických a sociálních služb zajišťuje odbornou praxi, exkurze a stáže.",
+      "Spolupráce s mateřskými, základními a středními školami je hodnocena jako velmi dobrá a funkční.",
+      "Od školního roku 2024/2025 škola rozvíjí také mezinárodní projektovou spolupráci.",
+      "Spolupráce se zřizovatelem a zákonnými zástupci je dlouhodobě velmi dobrá."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a bez dalších oborů či doporučení mimo zprávu.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesné údaje o absencích, proto trend a číselné údaje nebyly doplněny.",
+      "Výsledky VOŠ jsou zkoumány jen krátce, protože výuka probíhá od školního roku 2024/2025.",
+      "Přesné rozdělení výsledků maturity mezi jednotlivé předměty a ročníky není v textu uvedeno."
+    ]
+  }
+}

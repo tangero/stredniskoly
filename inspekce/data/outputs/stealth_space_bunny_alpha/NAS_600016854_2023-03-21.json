@@ -1,0 +1,113 @@
+{
+  "report_id": "NAS_600016854_2023-03-21",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:02:40.532500+00:00",
+  "run_finished_utc": "2026-10-02T17:03:13.000947+00:00",
+  "raw_file": "NAS_600016854_2023-03-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "NAS_600016854_2023-03-21",
+    "school_profile": {
+      "school_type": "Střední škola, domov mládeže a školní jídelna",
+      "inspection_period": "2023-03-21 až 2023-03-28; inspekční činnost na místě probíhala od 21. do 24. 3. 2023",
+      "school_change_summary": "Počet žáků vzrostl z 248 v roce 2019/2020 na 343 v roce 2022/2023; škola rozšířila přípravu na maturitu, poradenské služby a podporu žáků ohrožených neúspěšností."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Podpora při přípravě na maturitu",
+          "detail": "Ve zvolených předmětech se žáci pravidelně setkávají s typovými maturitními úlohami a didaktickými testy z předchozích let.",
+          "evidence": "Do výuky bylo zavedeno řešení typových úloh odpovídajících společné části maturitní zkoušky a procvičování didaktických testů."
+        },
+        {
+          "tag": "Poradenská podpora",
+          "detail": "Škola nabízí doučování, individuální konzultace a studentskou podporu prostřednictvím školního poradenského pracoviště.",
+          "evidence": "ŠPP pracuje ve složení výchovného poradce, metodika prevence, koordinátora inkluze, kariérového poradce a tří speciálních pedagogů."
+        },
+        {
+          "tag": "Přátelské školní klima",
+          "detail": "Rodinnou atmosféru podporují dobré vztahy mezi žáky a pedagogy, otevřená komunikace, tolerance a respekt.",
+          "evidence": "Vedení i pracovníci se podílejí na pozitivním klimatu, dobrých prosociálních vztazích, otevřené komunikaci, toleranci a respektu."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky maturity",
+          "detail": "Výsledky společné části maturity jsou kolísavé a za všechny sledované roky horší než celorepublikový průměr.",
+          "evidence": "Čistá neúspěšnost činila 44,4 % v roce 2020, 28,6 % v roce 2021 a 50 % v roce 2022."
+        },
+        {
+          "tag": "Předčasné ukončení studia",
+          "detail": "Škola zatím nedokáže dostatečně omezovat odchody žáků z nástavbového oboru Podnikání před dokončením studia.",
+          "evidence": "Škole se zatím nedaří výrazněji eliminovat předčasné odchody žáků ze vzdělávání v nástavbovém oboru Podnikání."
+        },
+        {
+          "tag": "Rozdílná kvalita výuky",
+          "detail": "Příprava na maturitu není podle inspekce rovnoměrná; zejména v matematice se objevovala nižší motivace žáků a převládala práce učitele.",
+          "evidence": "Úroveň hospitovaných hodin matematiky měla odlišnou úroveň; v části hodin byla patrná menší motivovanost žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní výsledky čeká škola v příští maturitní zkoušce a jak bude sledovat jejich zlepšení?",
+        "Jak škola ověřuje studijní předpoklady uchazečů a podporuje ty, kteří mají slabší připravenost?",
+        "Jak konkrétně probíhá výuka matematiky a českého jaka a jak často se žáci dostávají zpětnou vazbu?"
+      ],
+      "who_school_fits": [
+        "Žáci z okolí Oderska a Vítkovska, pro které je školní docházka nebo pobyt v domově mládeže praktický.",
+        "Žáci, kteří chtějí v nástavbovém oboru Podnikání získat maturitu a potřebují intenzivnější podporu.",
+        "Žáci se speciálními vzdělávacími potřebami nebo s odlišným mateřským jazykem, kterým umí škola poskytnout poradenskou podporu."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče žáků, kteří očekávují vysokou a stabilní úspěšnost společné části maturitní zkoušky.",
+        "Rodiče žáků náchylných k předčasnému ukončení studia, zejména při obtížné socioekonomické situaci.",
+        "Rodiče žáků, kterým záleží na intenzivní práci s učitelem, rozvoji kritického myšlení a individualizované výuce."
+      ],
+      "plain_czech_summary": "Škola nabízí obory s výučním listem a nástavbové Podnikání s maturitou. Výhodou je podpora žáků: doučování, konzultace, poradenské služby a vhodné vybavení učeben. Rodiče by však měli počítat s horšími výsledky maturity, než je celorepublikový průměr. Největší potíží jsou předčasné odchody ze studia a nestejně kvalitní výuka, hlavně v matematice. Přijímací řízení dosud nemá bodovou hranici a škola přijala všechny uchazeče. Rodinné klima se jeví jako příznivé."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavé výsledky; v roce 2021 se neúspěšnost zlepšila, v roce 2022 se výrazně zhoršila a překročila celorepublikový průměr.",
+        "key_numbers": [
+          "Čistá neúspěšnost 2020: 44,4 %",
+          "Čistá neúspěšnost 2021: 28,6 %",
+          "Čistá neúspěšnost 2022: 50 %"
+        ],
+        "evidence": "Výsledky byly vždy horší než celorepublikový průměr; nejvyšší neúspěšnost se týkala českého jazyka a matematiky."
+      },
+      "absence": {
+        "trend": "Absence se proti dřívějšímu hodnocení snížila, ale zůstává sledovaným rizikem.",
+        "key_numbers": [
+          "2018/2019: přibližně 170 hodin na žáka v oborech s maturitou",
+          "2021/2022: 129 hodin na žáka",
+          "Podíl neomluvené absence se podle závěrů inspekce výrazně snížil"
+        ],
+        "evidence": "Opatření byla v oblasti absence úspěšná, průměrná absence klesla na 129 zameškaných hodin na žáka."
+      },
+      "support_services": [
+        "Doučování a individuální konzultace pro žáky ohrožené školní neúspěšností.",
+        "ŠPP se výchovným poradcem, metodikem prevence, koordinátorem inkluze, kariérovým poradcem a třemi speciálními pedagogy.",
+        "Online přístup ke studijním materiálům, poradenská práce s rodinami a adaptační kurzy pro žáky."
+      ],
+      "safety_climate": [
+        "Dobré prosociální vztahy, otevřená komunikace, tolerance a respekt podporují pozitivní školní klima.",
+        "Učitelé respektovali osobnost žáků a ve většině hodin vládla příjemná pracovní atmosféra.",
+        "Vedení přijalo opatření k zabezpečení budovy proti vniknutí cizích osob."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracovala se zákonnými zástupci žáků, ŠPP a třídními učiteli při řešení neúspěšnosti a absence.",
+        "ŠPP doporučovalo učitelům školská poradenská zařízení a konzultovalo vzdělávací výsledky žáků se SVP.",
+        "Pedagogové absolvovali školení o přijímání a začleňování žáků cizinců."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně odděluje klíčová rizika a opírá je o konkrétní údaje ze zprávy.",
+      "uncertainty_notes": [
+        "Zpráva uvádí období inspekční činnosti na místě 21.–24. 3. 2023, zatímco metadata uvádějí 21.–28. 3. 2023.",
+        "Výsledky maturity se vztahují k oboru Podnikání a letech 2020–2022, nikoli k celé škole.",
+        "Zpráva uvádí obecné charakteristiky, proto je nutové konkrétní zkušenost vždy ověřit při osobním jednání se školou."
+      ]
+    }
+  }
+}

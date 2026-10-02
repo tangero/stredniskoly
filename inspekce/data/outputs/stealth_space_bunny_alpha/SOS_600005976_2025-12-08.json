@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600005976_2025-12-08",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:51:20.633751+00:00",
+  "run_finished_utc": "2026-10-02T16:52:04.081290+00:00",
+  "raw_file": "SOS_600005976_2025-12-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600005976_2025-12-08",
+    "school_profile": {
+      "school_type": "Příspěvková střední škola poskytující čtyřleté denní vzdělávání v oboru Obchodní akademie se zaměřeními na aplikovanou ekonomiku a podnikání a na cestovní ruch.",
+      "inspection_period": "8. 12. 2025–11. 12. 2025",
+      "school_change_summary": "Od inspekce v roce 2020 vzrostla naplněnost na 96 %, stabilizoval se pedagogický sbor, obměnili se zástupci ředitele a byly obnoveny učebny a technické vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praxe během studia",
+          "detail": "Žáci si mohou praktické dovednosti ověřit v reálných studentských firmách a projektech.",
+          "evidence": "Zapojení žáků do reálných studentských firem přispívá k efektivnímu osvojení znalostí a dovedností."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí poradenské služby, individuální přístup a podporu žáků s odlišnými studijními podmínkami.",
+          "evidence": "Školní poradenské pracoviště poskytuje žákům komplexní psychologickou, preventivní a inkluzivní péči."
+        },
+        {
+          "tag": "Jazyková výuka",
+          "detail": "Část odborných předmětů se vyučuje v anglickém nebo německém jazyce a škola podporuje zahraniční mobility.",
+          "evidence": "Dlouhodobě a cíleně se zaměřuje na vysokou úroveň výuky cizích jazyků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná diferenciace",
+          "detail": "Část výuky neposkytuje dostatečně odlišné úkoly pro rychlejší nebo více zainteresované žáky.",
+          "evidence": "Všichni žáci plnili převážně stejné typy úloh bez odlišné míry obtížnosti, gradované úkoly nebyly využity."
+        },
+        {
+          "tag": "Sebehodnocení",
+          "detail": "Žáci dostávají méně podnětů k hodnocení vlastního postupu a závěrečné sebereflexi.",
+          "evidence": "V závěru vyučovací hodiny pedagogové v menší míře vytvářeli prostor pro společné shrnutí či sebereflexi žáků."
+        },
+        {
+          "tag": "Jednotlivé případy neprospěchu",
+          "detail": "Přestože celkové výsledky jsou dobré, škola evidovala čtyři neprospělé žáky.",
+          "evidence": "Ke 30. 6. téměř všichni žáci řádně uzavřeli ročník, pouze jednotlivci neprospěli, celkem čtyři žáci."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé rozdělují úkoly žákům s různým zájmem, tempem nebo studijními předpoklady?",
+        "Jak často žáci pracují v reálných studentských firmách a jaké dovednosti si tam procvičují?",
+        "Které konkrétní podpůrné mechanismy fungují u žáků s SVP, s odlišným mateřským jazykem nebo při hrozícím neúspěchu?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat obchod, ekonomiku, podnikání nebo cestovní ruch v prostředí s praktickou přípravou.",
+        "Žákům, kterým vyhovují výuka části předmětů v cizím jazyce a možnost zahraniční mobility.",
+        "Žákům, kteří mají zájem o studentské firmy, projekty, soutěže nebo následné studium na vysoké škole."
+      ],
+      "who_should_be_cautious": [
+        "Žákům, kterým vadá vysoké školské tempo nebo kteří potřebují průběžnou intenzivní zpětnou vazbu.",
+        "Rodičům žáků, u nichž je zásadní, aby každý učitel aktivně rozlišoval šířku a obtížnost zadaných úkolů.",
+        "Žákům, kteří nechtějí účast na praktické činnosti ve studentských firmách a projektech."
+      ],
+      "plain_czech_summary": "Karlínská obchodní akademie je zaplněná čtyřletá střední škola se 493 žáky. Nabízí obory zaměřené na ekonomiku, podnikání a cestovní ruch, výuku části předmětů v cizím jazyce a rozsáhlé praktické zapojení. Žáci mohou pracovat v reálných studentských firmách, chodit na zahraniční pobyty a účastnit se projektů či soutěží. Inspekce ocenila propojení teorie s praxí, kvalitní odbornou výuku i podporu žáků. Hlavní slabinou je, že v části hodin učitelé méně přizpůsobují úkoly různým zájmům a tempu žáků a méně podporují sebereflexi. Maturitní výsledky jsou mírně lepší než během studia, absence meziročně klesly, ale zpráva neuvádí přesné procento úspěšnosti ani konkrétní průměrnou míru absence."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky maturity se mírně zlepšily oproti studijním výsledkům a cvičné zkoušky pomohly zejména profilové části.",
+        "key_numbers": [
+          "Ve společné části žáci vždy uspěli z českého a anglického jazyka.",
+          "Z matematiky neuspěli dva žáci ve školním roce 2023/2024.",
+          "Ve školním roce 2024/2025 využilo mezinárodní jazykové certifikáty až 17 % žáků."
+        ],
+        "evidence": "Výsledky žáků při ukončování vzdělávání maturitní zkouškou jsou mírně lepší než v průběhu studia."
+      },
+      "absence": {
+        "trend": "Celková absence žáků mezi školními roky 2023/2024 a 2024/2025 meziročně poklesla.",
+        "key_numbers": [
+          "Sledované období zahrnovalo školní roky 2023/2024 a 2024/2025.",
+          "Zpráva neuvádí průměrnou míru absence v procentech."
+        ],
+        "evidence": "Ve sledovaném období dvou školních let 2023/2024 a 2024/2025 meziročně poklesla celková absence žáků."
+      },
+      "support_services": [
+        "Školní psycholožka, výchovná poradkyně, metodička prevence a třídní učitelé poskytují poradenské a preventivní služby.",
+        "Škola podporuje žáky se SVP, žáky s odlišným mateřským jazykem i žáky ohrožené školním neúspěchem.",
+        "Nabízí individuální konzultace, doučování, elektronické výukové materiály a studijní stáže pro nadané žáky."
+      ],
+      "safety_climate": [
+        "Ve většině hospitovaných hodin byla příjemná pracovní atmosféra a učitelé přistupovali k žákům partnersky.",
+        "Škola eviduje 27 žáků se SVP a 24 žáků s odlišným mateřským jazykem, většinou bez jazykové bariéry.",
+        "Ojedinělé rizikové projevy chování řeší škola podle stanovených pravidel."
+      ],
+      "partnership_practice": [
+        "Spolupráce se sociálními partnery propojuje teoretickou výuku s praxí a rozvíjí odborné dovednosti žáků.",
+        "Škola spolupracuje se zákonnými zástupci prostřednictvím Spolku přátel obchodní akademie.",
+        "Projekty Erasmus+ umožňují mobility učitelů i žáků a spolupráci s dalšími školami a institucemi."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně odděluje zjištění od doporučení rodičům a neprodlužuje jednotlivé body.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí procento úspěšnosti maturitní zkoušky, proto nelze vyjádřit přesnou úspěšnost.",
+        "Zpráva uvádí pouze směr změny absence, nikoli její průměrnou hodnotu.",
+        "Doporučení školě je třeba rozlišit od hodnocení předchozí inspekce; zpráva neuvádí přesné výsledky dřívější doporučení."
+      ]
+    }
+  }
+}

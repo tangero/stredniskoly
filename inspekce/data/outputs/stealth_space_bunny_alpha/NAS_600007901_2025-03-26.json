@@ -1,0 +1,113 @@
+{
+  "report_id": "NAS_600007901_2025-03-26",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:59:35.446947+00:00",
+  "run_finished_utc": "2026-10-02T17:00:20.003148+00:00",
+  "raw_file": "NAS_600007901_2025-03-26.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "NAS_600007901_2025-03-26",
+    "school_profile": {
+      "school_type": "Střední odborné učiliště poskytující také vzdělávání v domově mládeže a služby školní jídelny.",
+      "inspection_period": "26.–28. března 2025",
+      "school_change_summary": "Od minulé inspekce vzrostl počet žáků, částečně se obměnil pedagogický sbor, přibyl obor Instalatér a zlepšily se materiální podmínky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborný výcvik",
+          "detail": "Praktická výuka probíhá v reálných nebo dobře vybavených pracovištích a rozvíjí odborné i sociální dovednosti.",
+          "evidence": "„Efektivní realizace odborného výcviku účelně podporuje rozvoj dovedností, odborných a sociálních kompetencí žáků.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Školní poradenské pracoviště poskytuje poradenství žákům, rodičům i pedagogům a řeší problémové chování.",
+          "evidence": "„Všechny účelně poskytují poradenství, konzultace a účinnou podporu všem žákům, jejich zákonným zástupcům a pedagogickým pracovníkům.“"
+        },
+        {
+          "tag": "Partnerství",
+          "detail": "Sociální partneři podporují odbornou přípravu, praktické vyučování a budoucí uplatnění absolventů.",
+          "evidence": "„Sociální partneři poskytují podmínky pro zvyšování odborných kompetencí žáků, zajištění praktického vyučování a účelné naplňování ŠVP.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Absence",
+          "detail": "Vysoká absence snižuje šanci na zlepšení výsledků a dosavadní opatření jsou jen částečně účinná.",
+          "evidence": "„Vysoká absence tak nevytváří předpoklady pro zlepšení výsledků vzdělávání.“"
+        },
+        {
+          "tag": "Dokončení studia",
+          "detail": "Výuční list získá v obvyklé době jen necelé dvě třetiny žáků daného oboru.",
+          "evidence": "„Výuční list získají v průměru jen necelé dvě třetiny žáků příslušného prvního ročníku.“"
+        },
+        {
+          "tag": "Organizace výuky",
+          "detail": "V prvním ročníku oboru Instalatér byl překročen povolený týdenní počet hodin teoretické výuky.",
+          "evidence": "„Překročen byl maximální povolený počet vyučovacích hodin v týdnu teoretické výuky v 1. ročníku.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje se žáky s vysokou absencí a kdy začíná intenzivní spolupráce s rodinou?",
+        "Kolik žáků z prvních ročníků obvykle dokončí uvedený obor a jaké jsou hlavní důvody odchodů?",
+        "Jak často se mění rozdělení teoretické a praktické výuky v jednotlivých oborech, zejména u Instalatéra?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí střední odborné vzdělávání zaměřené na praktické dovednosti a reálný pracovní postup.",
+        "Žákům, kteří potřebují strukturovanou podporu, individuální přístup nebo ubytování v domově mládeže.",
+        "Rodičům, kteří oceňují spolupráci školy se zaměstnavateli a dalšími partnery při přípravě na budoucí práci."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům, jejichž dítě potřebuje vysokou školní přítomnost a obtížně zvládá dlouhodobou absenci.",
+        "Rodičům, kteří očekávají malé, téměř neprospívající třídy, protože přibližně 9 % žáků neprospělo.",
+        "Rodičům, kteří chtějí konkrétní obor, který škola v době inspekce neotevírala nebo v něm neměla žáky."
+      ],
+      "plain_czech_summary": "Škola dobře připravuje žáky prakticky: výcvik probíhá v dílnách, restauraci, cukrárně, zahradě nebo u kadeřníků. Velkou předností jsou partneři, kteří pomáhají s odbornou přípravou i hledáním zaměstnání. Poradenské pracoviště podporuje žáky i rodiče.\n\nRodici by však měli počítat s výraznou absencí, která souvisí se slabším prospěchem a horší dokončením studia. Problémem je také přílišné množství teorie v prvním ročníku Instalatéra. Přibližně 91 % žáků prosperovalo, ale jen necelé dvě třetiny žáků prvního ročníku získaly v obvyklé době výuční list."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky byly podobné ve školních rocích 2021/2022 až 2023/2024; nejhorší výsledky vykazovali žáci prvních ročníků.",
+        "key_numbers": [
+          "Ve školním roce 2023/2024 prosperovalo přibližně 91 % žáků, z toho 7 % s vyznamenáním.",
+          "Průměrný prospěch se pohyboval kolem 2,4.",
+          "Výuční list získaly v obvyklé době necelé dvě třetiny žáků příslušného prvního ročníku."
+        ],
+        "evidence": "„Obdobné výsledky žáků byly zaznamenány i ve školních rocích 2022/2023 a 2021/2022.“"
+      },
+      "absence": {
+        "trend": "Celková absence se snížila, ale zůstala vysoká; neomluvená absence činila průměrně 4–5 hodin na žáka.",
+        "key_numbers": [
+          "2021/2022: přibližně 217 hodin absence na žáka.",
+          "2022/2023 a 2023/2024: přibližně 185 hodin absence na žáka.",
+          "Neomluvená absence: průměrně 4–5 hodin na žáka."
+        ],
+        "evidence": "„Absence žáků se ve školním roce 2021/2022 pohybovala kolem 217 hodin na žáka, v roce 2022/2023 a 2023/2024 kolem 185 hodin.“"
+      },
+      "support_services": [
+        "ŠPP zahrnuje výchovnou poradkyni, školní metodičku prevence a speciální pedagožku; tým poskytuje poradenství, konzultace a podporu.",
+        "Škola eviduje 26 žáků se speciálními vzdělávacími potřebami a poskytuje jim podpůrná opatření.",
+        "Škola poskytuje podporu i žákům s odlišným mateřským jazykem; 28 žáků mělo jiný mateřský jazyk, čtrnáct částečnou jazykovou bariéru a jeden výraznou."
+      ],
+      "safety_climate": [
+        "Škola pravidelně poučuje žáky o bezpečnosti a ochraně zdraví ve škole i při mimoškolních aktivitách.",
+        "Při praktické výuce jsou žáci vedeni k dodržování bezpečnostních pravidel, používání ochranných pomůcek a technologických postupů.",
+        "Škola má vyšší míru úrazovosti, příčiny úrazů vyhodnocuje a žáky opakovaně poučuje."
+      ],
+      "partnerships_practice": [
+        "Sociální partneři zajišťují praktické vyučování, odbornou přípravu a podporu při umisťování absolventů na pracovní pozice.",
+        "Škola spolupracuje s místními školami, organizacemi a institucemi podporujícími vzdělávání.",
+        "Spolupráce zahrnuje partnerskou školu v Rakousku a Agrární a Hospodářskou komoru v oblasti zemědělství."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, krátké vety a odděluje konkrétní výsledky od doporučení pro rodiče.",
+      "uncertainty_notes": [
+        "Zpráva uvádí přibližné výsledky a průměry, proto nejsou některá čísla přesná.",
+        "Inspekce neuvádí podrobné členění absence podle oborů ani ročníků.",
+        "Zpráva nesrovnává podrobně jednotlivé obory z hlediskaabsence a dokončení studia."
+      ]
+    }
+  }
+}

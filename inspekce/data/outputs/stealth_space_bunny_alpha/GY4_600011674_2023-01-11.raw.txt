@@ -1,0 +1,99 @@
+{
+  "report_id": "GY4_600011674_2023-01-11",
+  "school_profile": {
+    "school_type": "Čtyřleté gymnázium",
+    "inspection_period": "11. 1. až 13. 1. 2023",
+    "school_change_summary": "Od srpna 2022 vede školu zastupující ředitel; vzniklo nové poradenské pracoviště a systémy podpory nadaných žáků a hodnocení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola poskytuje doučování, poradenské služby a podporu žákům ohroženým školním neúspěchem.",
+        "evidence": "„Výsledky vyhodnocuje, žákům ohroženým školním neúspěchem poskytuje doučování“."
+      },
+      {
+        "tag": "Osobnostní rozvoj",
+        "detail": "Pestrá nabídka projektů, soutěží a kroužků podporuje osobní růst, spolupráci i zapojení do veřejného života.",
+        "evidence": "„Významná je podpora osobnostního rozvoje žáků v podobě pestré nabídky zájmových aktivit.“"
+      },
+      {
+        "tag": "Klima a vybavení",
+        "detail": "Ve škole panuje příjemná atmosféra s respektem a žáci mají k dispozici moderně vybavené učebny i sportovní prostory.",
+        "evidence": "„Ve vyučování vládla příjemná pracovní atmosféra a vzájemný respekt“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Individualizace",
+        "detail": "Ve většině hospitovaných hodin chyběla individualizace a diferenciace podle schopností a tempa žáků.",
+        "evidence": "„Až na výjimky chyběla individualizace a diferenciace zadaných úkolů vzhledem k aktuálním možnostem a potřebám žáků.“"
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Učitelé málo využívali formativní hodnocení, sebehodnocení a vrstevnické hodnocení.",
+        "evidence": "„Učitelé do výuky nezařadili sebehodnocení a vrstevnické hodnocení podle předem známých kritérií.“"
+      },
+      {
+        "tag": "Práce s informacemi",
+        "detail": "V matematice a přírodovědných předmětech žáci méně pracovali s různými zdroji a nebyli vždy vedeni ke kritickému myšlení.",
+        "evidence": "„Žáci v hodinách nepracovali s různými zdroji informací a nebyli vždy dostatečně vedeni ke kritickému myšlení.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá podpora žáků s odlišnou úrovní schopností a tempem?",
+      "Jak často se žáci během hodiny vyjadřují k cíli hodiny a dostávají zpětnou vazbu?",
+      "Kdy a jakým způsobem mohou rodiče využít doučování nebo poradenské pracoviště?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat ve čtyřletém gymnáziu a využijí volitelné předměty od prvního ročníku.",
+      "Žákům se zájmem o soutěže, projekty, jazyky, přírodní vědy nebo společenské ovlivňování.",
+      "Rodičům, kteří oceňují komunikaci přes třídní schůzky, e-maily, web a individuální konzultace."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům, kteří očekávají průběžnou individualizaci výuky podle schopností a tempa žáka.",
+      "Rodičům, kteří potřebují pravidelnou formativní zpětnou vazbu během vyučování.",
+      "Rodičům žáků, kteří v matematice a přírodních předmětech potřebují rozvoj práce s více zdroji informací."
+    ],
+    "plain_czech_summary": "Gymnázium má dobré materiální podmínky, příjemnou atmosféru a rozsáhlou podporu žáků prostřednictvím doučování, poradenství, projektů a kroužků. Výsledky maturity jsou velmi dobré. Pro rodiče je důležité vědět, že inspekce zaznamenala v řadě hodin nedostatečnou individualizaci, málo zpětné vazby a v některých předmětech málo práce s více zdroji informací. Škola naopak podporuje nadané žáky a žáky ohrožené neúspěchem. Na otevřeném dni je proto vhodné zeptat se, jak se tato podpora promítá do běžné výuky jednotlivých tříd."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi dobrá úspěšnost ve společné části maturitních zkoušek v letech 2020 až 2022.",
+      "key_numbers": [
+        "2020: 2,0 %",
+        "2021: 1,4 %",
+        "2022: 2,9 %"
+      ],
+      "evidence": "„Hrubá neúspěšnost žáků ... ve společné části MZ činila pouze 2,0 %, 1,4 % a 2,9 %.“"
+    },
+    "absence": {
+      "trend": "Zpráva neuvádí celkovou tendenci absence ani srovnatelnou číselnou statistiku.",
+      "key_numbers": [
+        "Pro tělesnou výchovu je podmínkou absence do 25 %"
+      ],
+      "evidence": "„Podmínkou pro celkové hodnocení v předmětu ... je absence do 25 %.“"
+    },
+    "support_services": [
+      "Školní psycholožka, výchovný poradce, metodik prevence a kariérová poradkyně tvoří školní poradenské pracoviště.",
+      "Škola poskytuje doučování, plán pedagogické podpory a individuální či skupinové konzultace.",
+      "Škola podporuje nadané žáky soutěžemi, olympiádami, volitelnými předměty a aktivitami mimo běžnou výuku."
+    ],
+    "safety_climate": [
+      "Ve škole vládla příjemná pracovní atmosféra a vzájemný respekt mezi učiteli a žáky.",
+      "Škola řeší problémové situace v zárodku a výskyt sociálně patologických jevů hodnotí jako velmi nízký."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s Univerzitou Hradec Králové, Matematicko-fyzikální fakultou Univerzity Karlovy a partnerskými organizacemi.",
+      "Vzdělávání podporují projekty Šablony II, Šablony III, I-KAP, ERASMUS+ a Dobrotyl."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá srozumitelný český jazyk, odděluje ověřená zjištění od doporučení pro rodiče a omezuje se na údaje ze zprávy.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přímé srovnání absence v čase.",
+      "Některá tvrzení o výuce vycházejí z hospitovaných hodin, nikoli ze všech vyučovacích hodin."
+    ]
+  }
+}

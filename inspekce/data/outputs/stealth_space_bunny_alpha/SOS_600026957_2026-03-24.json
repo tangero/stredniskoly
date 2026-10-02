@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600026957_2026-03-24",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:24:04.865350+00:00",
+  "run_finished_utc": "2026-10-02T16:24:33.116101+00:00",
+  "raw_file": "SOS_600026957_2026-03-24.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600026957_2026-03-24",
+    "school_profile": {
+      "school_type": "Příspěvková střední škola poskytující vzdělávání, ubytování a stravování",
+      "inspection_period": "24. 3. 2026–27. 3. 2026",
+      "school_change_summary": "Od roku 2023 se zlepšilo řízení školy, personální zabezpečení, spolupráce při podpoře žáků se SVP i vybavení a prošly investice do modernizace školy."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Škola propojuje theorii s praxí a žáci se mohou setkávat s reálným pracovním prostředím.",
+          "evidence": "„Škola klade důraz na propojení teoretických znalostí s praktickými dovednostmi.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Individuální přístup a fungující poradenské služby jsou zvlášť přínosné pro žáky se SVP.",
+          "evidence": "„Výuka se vyznačovala výraznou mírou individualizace odpovídající potřebám žáků se SVP.“"
+        },
+        {
+          "tag": "Partnerská praxe",
+          "detail": "Rozmanité spolupráce umožňují žákům získat zkušenosti z praxe a rozvíjet společenské kompetence.",
+          "evidence": "„Spolupráce školy s externími partnery je na vynikající úrovni.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Hodnocení žáků",
+          "detail": "Rodinám může vadit příliš malé využívání formativní zpětné vazby, sebehodnocení a vzájemného hodnocení.",
+          "evidence": "„Formativní hodnocení, sebehodnocení nebo vzájemné hodnocení bylo zařazováno minimálně.“"
+        },
+        {
+          "tag": "Úrazovost",
+          "detail": "Přestože škola přijímá opatření, míra úrazovosti zůstává vyšší než celostátní průměr.",
+          "evidence": "„Míra úrazovosti je však i přes realizovaná opatření vyšší než celostátní průměr.“"
+        },
+        {
+          "tag": "Maturitní výsledky",
+          "detail": "Výsledky se výrazně liší podle oboru a v některých oborech se výrazně zhoršily.",
+          "evidence": "„Nejvíce kolísají výsledky maturitních zkoušek, a to i napříč jednotlivými obory.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá podpora žáků se SVP při běžné výuce, domácím úkolu a hodnocení?",
+        "Kolik hodin odborné praxe absolvují žáci v jednotlivých oborech a kdo jejich práci hodnotí?",
+        "Jak podrobně jsou rodiče informováni o průběžných výsledcích, absencích a případné podpoře?"
+      ],
+      "who_school_fits": [
+        "Uchazeči, kteří chtějí střední vzdělání propojené s pravidelnou praktickou výukou.",
+        "Žáci se SVP, kterým vyhovuje individualizovaný přístup a podpora pedagogů, asistentů a poradenského týmu.",
+        "Rodiny, které hledají školu s ubytováním, stravováním a možností zapojit se do aktivit v domově mládeže."
+      ],
+      "who_should_be_cautious": [
+        "Uchazeči, kteří potřebují především důraz na pravidelnou zpětnou vazdu a rozvoj sebehodnocení.",
+        "Rodiny, jimž může vadit vyšší úrazovost než v celostátném průměru.",
+        "Uchazeči do oborů s výrazně kolísající úspěšností maturit, kteří zvažují, jak moc se jejich výsledky v posledních letech zhoršily."
+      ],
+      "plain_czech_summary": "Škola má širokou nabídku čtyřletých, tříletých i praktických oborů a důraz na praktické dovednosti. Velmi dobře hodnotí spolupráci s praxí, partnery a podporu žáků se SVP. Od předchozí inspekce se zlepšilo řízení, personální zabezpečení i vybavení. Rodiče by měli sledovat úrazovost, která je vyšší než celostátní průměr, a proměnlivé výsledky maturit. Ve vyučování je slabší zpětná vazba, sebehodnocení a rozvoj kritického myšlení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou celkově proměnlivé podle oboru; výrazně se zlepšily v předškolní a mimoškolské pedagogice, zatímco v hotelnictví a sociální činnosti se v posledním roce zhoršily.",
+        "key_numbers": [
+          "Předškolní a mimoškolská pedagogika: hrubá neúspěšnost klesla z 14,3 % na 3,2 %.",
+          "Sociální činnost: hrubá neúspěšnost vzrostla z 16,7 % na 28 %.",
+          "Hotlinictví: hrubá neúspěšnost vzrostla z 16,7 % na 33,3 %."
+        ],
+        "evidence": "„Výsledky maturitních zkoušek, a to i například jednotlivými obory“ jsou hodnoceny jako „nejvíce kolísající“."
+      },
+      "absence": {
+        "trend": "Celková absence se proti roku 2022/2023 snížila, přestože v roce 2024/2025 oproti předchozímu roku opět mírně vzrostla; neomluvená absence výrazně klesla.",
+        "key_numbers": [
+          "190 hodin na žáka a rok v roce 2022/2023.",
+          "156 hodin na žáka a rok v roce 2023/2024.",
+          "Necelých 169 hodin na žáka v roce 2024/2025."
+        ],
+        "evidence": "„Snížil se zameškaný počet hodin ve výuce“ a „neomluvená absence žáků také významně klesla“."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytuje podporu žákům se SVP, doplněnou školním psychologem a dalšími specialisty.",
+        "Při neprospěchu škola nabízí doučování a individuální konzultace a při potřebě zapojuje poradenský tým či vedení.",
+        "Všem žákům je dostupné kariérové poradenství, školní schránka důvěry a preventivní program."
+      ],
+      "safety_climate": [
+        "Žáci se pravidelně seznamují s bezpečnostními pravidly včetně pravidel pro odbornou praxi.",
+        "Nejčastější úrazy vznikají při sportovních aktivitách a praktickém vyučování.",
+        "V době inspekce byly objekty zabezpečeny proti vniknutí a pohybu nepovolaných osob."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s organizacemi sociálních služeb, mateřskými školicemi, odbornými firmami, chráněnou dílnou a vysokoškolskými institucemi.",
+        "Sociální činnost zahrnuje přednášky, exkurze a dobrovolnické aktivity, předškolní pedagogika nadstandardní akce pro děti.",
+        "Studenti hotelnictví se přes VŠB – Technickou univerzitu Ostrava účastní exkurzí a mezinárodních konferencí."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně vysvětluje odborné ukazatele a odděluje zjištění inspekce od doporučení rodičům.",
+      "uncertainty_notes": [
+        "Zpráva uvádí výsledky zejména za školní roky 2022/2023 až 2024/2025, nikoli konečné výsledky roku 2025/2026.",
+        "Neomluvená absence je uvedena jako trend bez přesného číselného údaje.",
+        "Školní jídelna je podle zprávy celodenní, ale rozsah celodenního stravování není blíže vysvětlen."
+      ]
+    }
+  }
+}

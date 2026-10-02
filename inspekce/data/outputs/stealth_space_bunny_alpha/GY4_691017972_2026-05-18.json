@@ -1,0 +1,112 @@
+{
+  "report_id": "GY4_691017972_2026-05-18",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:13:31.770699+00:00",
+  "run_finished_utc": "2026-10-02T16:13:55.446652+00:00",
+  "raw_file": "GY4_691017972_2026-05-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691017972_2026-05-18",
+    "school_profile": {
+      "school_type": "čtyřleté denní gymnázium se dvěma obory: všeobecné gymnázium a gymnázium se sportovní přípravou se zaměřením na esporty",
+      "inspection_period": "18. 5. 2026–20. 5. 2026",
+      "school_change_summary": "Škola poskytuje vzdělávání od 1. 9. 2025 a zaměřuje se na propojení sportu, digitálních technologií a vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Unikátní profil",
+          "detail": "Sportovní příprava a esports mohou absolventům pomoci s odbornou uplatnitelností a přípravou na další studium.",
+          "evidence": "„Unikátní zaměření oboru Gymnázia se sportovní přípravou se zaměřením na esporty vytváří předpoklady pro okamžitou odbornou uplatnitelnost absolventů“."
+        },
+        {
+          "tag": "Partnerství",
+          "detail": "Spolupráce s univerzitami a dalšími partnery podporuje odborné kompetence žáků i modernizaci výuky.",
+          "evidence": "„Velmi dobrá spolupráce s vnějšími partnery podporuje rozvoj odborných kompetencí žáků.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí konzultace, doučování, podporu sebeorganizace a sledování pokroku žáků.",
+          "evidence": "„Nastavené vzdělávací strategie vytvářejí prostor pro přecházení školní neúspěšnosti, mj. konzultace, doučování, možnost sdílení vzdělávacích materiálů.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Výuka a zpětná vazba",
+          "detail": "V některých hodinách bylo méně pestré metody, slabší didaktické závěry a nedostatečná zpětná vazba pro všechny žáky.",
+          "evidence": "„Uplatňovaná škála metod a forem výuky byla málo pestrá“ a „zpětná vazba tak nebyla pro všechny žáky dostatečná“."
+        },
+        {
+          "tag": "Neúspěšnost a absence",
+          "detail": "Vyšší absence a nižší motivace některých žáků zhoršují průběh učení a zvyšují riziko školní neúspěšnosti.",
+          "evidence": "„Zvýšená absence a nižší míra motivace některých žáků negativně ovlivňuje průběh a výsledky jejich učení“."
+        },
+        {
+          "tag": "Personální zajištění",
+          "detail": "Část pedagogů nesplňovala kvalifikační předpoklady a hospitační kontrola dostatečně neověřovala plnění doporučení.",
+          "evidence": "„7 bez splněných kvalifikačních předpokladů“ a „absence důsledné následné kontroly realizace doporučení“."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně vypadá sportovní příprava a jaký časový rozsah zabýrá?",
+        "Jaké konkrétní výsledky má škola u sportovně zaměřeného oboru v oblasti přijímacích zkoušek, studijních výsledků a dalšího studia?",
+        "Jak škola řeší absenci, neúspěšnost a podporu žáků s odlišným mateřským jazykem?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat gymnázium se sportovní přípravou a mají zájem o esport.",
+        "Žákům, kterém vyhovuje propojení sportu, digitálních technologií a vzdělávání.",
+        "Žákům, kteří využijí nabídku konzultací, doučování a podpory při adaptaci na nové školní prostředí."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na pravidelné zpětné vazbě, pestré metodice výuky a podpoře samostatného kritického myšlení.",
+        "Rodičům žáků, kterým mohou vadit zvýšené absence nebo nedostatečná motivace žáků.",
+        "Rodičům, kteří chtějí přesné údaje o dlouhodobých výsledcích školy, protože škola působí krátce."
+      ],
+      "plain_czech_summary": "Škola je nové čtyřleté gymnázium s obory všeobecné gymnázium a sportovní příprava se zaměřením na esport. Silnou stránkou je propojení vzdělávání se sportem, digitálními technologiemi a spoluprací s univerzitami a dalšími partnery. Žákům jsou nabízeny konzultace, doučování a podpora při adaptaci i řešení problémů. Inspekce ale zjistila také slabiny: v části hodin málo pestrou metodiku, malou zpětnou vazbu, slabší didaktické závěry a méně práce s informačními zdroji. Zvýšená absence a nižší motivace některých žáků zvyšují riziko neúspěšnosti. Výsledky za celý školní rok zatím nejsou k dispozici."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zatím není k dispozici hodnocení za uzavřený školní rok; zpráva uvádí výsledky za první pololetí 2025/2026.",
+        "key_numbers": [
+          "Z 38 žáků měli 3 vyznamenání.",
+          "22 žáků prospělo.",
+          "5 žáků neprospělo; 8 žáků nebylo hodnoceno v řádném termínu."
+        ],
+        "evidence": "„Z předložených podkladů za 1. pololetí školního roku 2025/2026“ uvádí 3 vyznamenání, 22 prospěchů, 5 neprospěchů a 8 nehodnocených žáků."
+      },
+      "absence": {
+        "trend": "Zpráva uvádí zvýšenou absenci, která negativně ovlivňuje průběh a výsledky učení; srovnání trendu není uvedeno.",
+        "key_numbers": [
+          "Průměrně 111 zameškaných hodin na žáka v 1. pololetí 2025/2026.",
+          "Počet neomluvených hodin byl zanedbatelný."
+        ],
+        "evidence": "„Průměrný počet zameškaných hodin na žáka činil v 1. pololetí 2025/2026 celkem 111 hodin“."
+      },
+      "support_services": [
+        "Školní poradenské služby zajišťuje výchovný poradce a metodik prevence ve spolupráci s vedením školy, pedagogy a zákonnými zástupci.",
+        "Nastavený systém se zaměřuje na adaptaci žáků, podporu žáků s potřebou pomoci, řešení výchovných a vzdělávacích problémů a hodnocení.",
+        "Škola poskytuje konzultace, doučování, sdílení vzdělávacích materiálů a podporu sebeorganizace žáků."
+      ],
+      "safety_climate": [
+        "Dodržování pravidel a dohled pedagogů podporují bezpečné prostředí.",
+        "Buduje se elektronický systém vstupu do samostatné části areálu.",
+        "Inspekce doporučila dokončit elektronický systém zajištění vstupu do vlastního areálu školy."
+      ],
+      "partnership_practice": [
+        "Škola spolupracuje s Centrem pro esport FTVS UK, Českou asociací esportu, FTVS UK a Fakultou biomedicínského inženýrství ČVUT.",
+        "Partnerství podporuje aktualizaci výuky, modernizaci vybavení, neformální vzdělávání pedagogů, projekty a získávání odborníků z praxe.",
+        "Spolupráce s mateřskými sportovními kluby podporuje rozvoj pohybového nadání žáků."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, věcně opřené o zprávu a zaměřené na praktické důsledky pro rodiče.",
+      "uncertainty_notes": [
+        "Zpráva uvádí při inspekci 37 žáků ve dvou třídách prvního ročníku, ale ve výsledcích prvního pololetí počítá s 38 žáků.",
+        "Není uveden dlouhodobý trendabsence ani výsledky za uzavřený školní rok.",
+        "Zpráva uvádí vhodný profil oboru, ale neposkytuje konkrétní výsledky přijímacích zkoušek, ukončení studia nebo dalšího studia."
+      ]
+    }
+  }
+}

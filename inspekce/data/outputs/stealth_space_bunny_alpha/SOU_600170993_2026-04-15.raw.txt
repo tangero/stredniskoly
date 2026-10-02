@@ -1,0 +1,105 @@
+{
+  "report_id": "SOU_600170993_2026-04-15",
+  "school_profile": {
+    "school_type": "střední škola technická, domov mládeže a školní jídelna; vlastní svářečská škola a autoškola",
+    "inspection_period": "15. až 17. 4. 2026",
+    "school_change_summary": "Počet zapsaných žáků vzrostl o 126, tedy téměř o 40 %, na 444; počet tříd se zvýšil o 5 na 22. Škola také rozšířila spolupráci, vybavení a prostory, ale čelí omezením kvůli personální nestabilitě a zaplněnosti."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "odborné vzdělávání a praxe",
+        "detail": "Škola propojuje vzdělávání s praxí, firmami, projekty a soutěžemi; žáci dosahují úspěchů v oborových i národních aktivitách.",
+        "evidence": "Probíhají stáže a praxe; žáci byli úspěšní například v soutěži Svarcentrum 2024, Zlatém poháru Linde a JA Czech EXPO."
+      },
+      {
+        "tag": "ubytování a podpora",
+        "detail": "Pro žáky z vzdálenějších míst nabízí škola ubytování v domově mládeže, vychovatelé podporují učení a řeší jejich problémy.",
+        "evidence": "Ubytovaných bylo 63 žáků; vychovatelé zajišťují podporu k učení, případně doučování, a pomáhají řešit problémy."
+      },
+      {
+        "tag": "mezinárodní a moderní vzdělávání",
+        "detail": "Škola rozvíjí zahraniční spolupráci, digitální gramotnost a odborné vzdělávání propojuje s praxí.",
+        "evidence": "Šest mobilit Erasmus+ zapojilo přibližně 15 % žáků; vznikla virtuální učebna a byly pořízeny traktor a cvičná vozidla."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "absence a neukončené hodnocení",
+        "detail": "Největším praktickým rizikem pro studijní výsledky je vysoká absence, zejména v učebních oborech, a neuzavřená klasifikace.",
+        "evidence": "U učebních oborů činila absence často přes 100 hodin na žáka; v některých třídách se blížila 150 hodin."
+      },
+      {
+        "tag": "kvalita výuky a personální zajištění",
+        "detail": "Rodiče by měli počítat s nestejnorodou kvalitou výuky a slabší podporou žáků s různými potřebami.",
+        "evidence": "Inspekce zjistila sedm pedagogů bez odborné kvalifikace; převažovala frontální výuka a chyběla cílená podpora SVP."
+      },
+      {
+        "tag": "klima a bezpečnost",
+        "detail": "Část žáků a zaměstnanců vnímá negativní klima, problémy s komunikací a respektem; v dílnách jsou také zjištěny nevhodné obuvi a oděvy.",
+        "evidence": "Zaznamenána nedůvěra, nespokojenost a rezignace; více než 20 případů nevhodné obuvi či oblečení v dílnách."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní opatření přijímá škola proti absencím učebních oborů a neomluveným hodinám?",
+      "Jak škola zajišťuje individuální podporu žáků se speciálními vzdělávacími potřebami, zejména v teoretické výuce?",
+      "Kdy a jak budou rodičům poskytovány informace o postupu řešení absence, kázeňských opatření a hodnocení?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří mají zájem o technické, strojírenské, automobilové nebo řemeslné obory a chtějí studovat denně v prostředí školy.",
+      "Žákům z vzdálenějších míst, kteří využijí ubytování v domově mládeže a potřebují podporu při učení.",
+      "Žákům, kterým vyhovuje prostředí s možností odborného výcviku, praxí, projekty a účastí v oborových aktivitách."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na pravidelné docházce a kompletním uzavření ročního hodnocení, by měli vysokou absentici řešit s školou předem.",
+      "Rodičům žáků se speciálními vzdělávacími potřebami je vhodné ověřit konkrétní podporu v jednotlivých předmětech a při odborném výcviku.",
+      "Rodičům citlivým na kvalitu komunikace a školní klima je potřeba sledovat konkrétní zkušenosti s konkrétními učiteli a způsobem řešení stížností."
+    ],
+    "plain_czech_summary": "Škola má širokou technickou nabídku, vlastní odborné vybavení, praxe a ubytování. Počet žáků výrazně vzrostl, ale školní prostory jsou naplněné. Výuka je místy velmi dobře propojená s praxí, jinde však převládá frontální způsob a chybí podpora různě studujících žáků. Větší riziko představují absence učebních oborů a neuzavřené známky. Část lidí navíc vnímá komunikaci a vztahy ve škole jako problematické. Rodiče by měli na den otevřených dveří ověřit podporu konkrétního dítěte, pravidla docházky a systém řešení případných stížností."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Maturitní zkoušky měly v roce 2025 smíšený výsledek; po opravných a náhradních termínech byla neúspěšnost přibližně 15 %.",
+      "key_numbers": [
+        "Z 31 žáků posledního ročníku neuspělo osm, tedy přibližně 25 %.",
+        "Po opravných a náhradních termínech zůstala neúspěšnost přibližně 15 %.",
+        "Volitelnou zkoušku strojního mechanika absolvalo 14 ze 19 přihlášených žáků."
+      ],
+      "evidence": "Škola posílila společnou část maturitní zkoušky semináři a nabízí doučování, zejména z matematiky a fyziky."
+    },
+    "absence": {
+      "trend": "Absence je dlouhodobě zvýšená, zejména v učebních oborech; část absencí je neomluvená.",
+      "key_numbers": [
+        "U učebních oborů činila absence často přes 100 zameškaných hodin na žáka za pololetí.",
+        "Některé třídy se přiblížily k 150 zameškaným hodinám za pololetí.",
+        "V uvedeném období žáci učebních oborů nashromáždili více než 600 neomluvených absencí."
+      ],
+      "evidence": "V prvních ročnících maturitních oborů měla nad 100 zameškaných hodin jen jednotlivá část žáků."
+    },
+    "support_services": [
+      "Výchovná poradkyní poskytuje poradenské služby; funkci současně vykonává ředitelka školy.",
+      "Škola poskytovala podpůrná opatření 32 žákům podle doporučení školských poradenských zařízení.",
+      "Vzdělávala 34 žáků s odlišným mateřským jazykem a jednoho žáka podle individuálního vzdělávacího plánu.",
+      "Nabízí modely doučování, semináře pro společnou část maturitní zkoušky, adaptační kurzy a preventivní projektové dny."
+    ],
+    "safety_climate": [
+      "V době inspekce se v učebních oborech vyskytovaly neomluvené absence a v některých případech nevhodná obuv či oblečení v dílnách.",
+      "Ve více než 20 případech nebylo možné používané oblečení a obuv považovat za odpovídající osobní ochranné pracovní pomůcky.",
+      "Škola má zaznamenané preventivní aktivity, Týdny wellbeingu a kurzy podporující vztahy a sociální kompetence, ale část respondentů vnímala atmosféru jako napjatou."
+    ],
+    "partnerships_practice": [
+      "Probíhají stáže a praxe u regionálních zaměstnavatelů a odborných firem.",
+      "Škola spolupracuje se zahraničními partnery v Maďarsku a Itálii v programech Erasmus+.",
+      "Škola také spolupracuje s regionálními zemědělskými podniky, například ZD Sloupnice a ZD Dolní Újezd."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžnou češtinu, odděluje zjištění inspekce od školních připomínek a dává rodičům konkrétní otázky i významné ukazatele.",
+    "uncertainty_notes": [
+      "Znění zprávy obsahovalo datum 30. 9. 2026, ale stanovisko ČŠI opravilo údaj na 30. 9. 2025.",
+      "Hodnocení klima je založeno na anonymních dotaznících, rozhovorech a pozorováních; zpráva neuvádí podrobné zastoupení všech skupin respondentů.",
+      "Připomínky školy zpochybňují některé závěry ČŠI, zejména personální zajištění, vybavení a vztah absence ke klimatu; v tomto přehledu jsou rozlišeny závěry inspekce a námitky školy."
+    ]
+  }
+}

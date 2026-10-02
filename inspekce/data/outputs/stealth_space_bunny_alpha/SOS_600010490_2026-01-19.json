@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600010490_2026-01-19",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:43:58.307593+00:00",
+  "run_finished_utc": "2026-10-02T16:44:23.010233+00:00",
+  "raw_file": "SOS_600010490_2026-01-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600010490_2026-01-19",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola technická",
+      "inspection_period": "19.–22. 1. 2026",
+      "school_change_summary": "Od 1. 9. 2024 má škola novou ředitelku; v březnu 2024 otevřela Centrum odborného vzdělávání a modernizovala část učeben a dílen."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná příprava",
+          "detail": "Praktická výuka žáky dobře připravuje pro technické obory a práci v praxi.",
+          "evidence": "„Praktické vyučování úspěšně naplňuje cíle odborného vzdělávání“ a odborné vedení umožňuje i slabším žákům dosahovat cílů."
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Škola poskytuje žákům přístup k moderním technologiím, robotice, mechatronice a CAD systémům.",
+          "evidence": "Centrum odborného vzdělávání otevřené v březnu 2024 poskytuje přístup k „nejmodernějším technologiím a špičkovému vybavení“."
+        },
+        {
+          "tag": "Podpora a partnerství",
+          "detail": "Škola má rozsáhlou síť partnerů a nabízí podporu žákům s potřebou doučování či změny oboru.",
+          "evidence": "Spolupráci zajišťuje více než 33 partnerů; ohroženým žákům jsou nabízeny konzultace i přestup mezi obory."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturitní příprava",
+          "detail": "Úspěšnost u maturit je dlouhodobě nízká a dosavadší opatření zatím nestačí.",
+          "evidence": "„Škola se dlouhodobě potýká s vysokou průměrnou neúspěšností žáků ve společné i profilové části maturitní zkoušky.“"
+        },
+        {
+          "tag": "Neúspěch a absence",
+          "detail": "Vysoká absence podporuje neprospěch a ohrožuje školní úspěch.",
+          "evidence": "„Průměrná absence ve sledovaném období činila 137,3 hodiny na žáka“, což je jednou z hlavních příčin neprospěchu."
+        },
+        {
+          "tag": "Rozdíly v podpoře",
+          "detail": "Kvalita výuky se mezi hodinami výrazně liší a některým pedagogům chybí plná odborná kvalifikace.",
+          "evidence": "„Zaznamenány byly výrazné rozdíly v didaktickém vedení“; část pedagogů dosud nesplňuje požadavky odborné kvalifikace."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se během všech čtyř let připravují žáci na společnou a profilovou část maturity?",
+        "Jaké výsledky maturitních zkoušek měla škola za poslední tři období a jaká opatření se podle nich skutečně změnila?",
+        "Jak škola sleduje průběžný pokrok žáků, zejména v českém jazyce, matematice a při vysoké absenci?"
+      ],
+      "who_school_fits": [
+        "Rodiče žáků, kteří chtějí kvalitní technické a praktické vzdělání vyrůstající zejména v Jablonsku nad Nisou.",
+        "Rodiče žáků, kterým vyhovují obory Strojírenství, Elektrotechnika, Mechanik seřizovač nebo Mechanik elektrotechnik.",
+        "Rodiče žáků, kteří ocení moderní technické vybavení, praxe a propojení s firmami."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče žáků, kteří mají jako hlavní cíl úspěšné složení společné části maturity.",
+        "Rodiče žáků náchylných k absencím nebo školnímu neúspěchu, pokud mají snahu o velmi strukturovanou podporu.",
+        "Rodiče žáků, kterým může vadat převaha frontální výuky a značné rozdíly v didaktickém vedení."
+      ],
+      "plain_czech_summary": "Škola má silné praktické zázemí, moderní vybavení a rozsáhlé spolupráce s firmami. Praktická výuka je hodnocena velmi dobře a pomáhá i slabším žákům. Největší problém je dlouhodobá neúspěšnost u maturitních zkoušek, především společné části, a vysoká absence. Příprava k maturitě se podle inspekce objevovala ve vyučovacích hodinách jen málo. Rodiče by měli zjišťovat, jak se škole daří podnikat konkrétní kroky, které by výsledky zlepšily."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Neúspěšnost zůstává vysoká; v jarním termínu 2025 se u oboru Elektrotechnika po opravném termínu snížila.",
+        "key_numbers": [
+          "V posledních třech zkušebních obdobích neprospělo celkem 29,5 % žáků.",
+          "U Elektrotechniky jarní neúspěšnost 53,8 % klesla po opravném termínu na 18,2 %.",
+          "U Mechanika seřizovače celkově neprospělo 46,7 % žáků."
+        ],
+        "evidence": "„Celkově v tomto období prospělo s vyznamenáním 7,8 % žáků, zatímco 29,5 % neprospělo.“"
+      },
+      "absence": {
+        "trend": "Míra absence mírně klesá, ale průměrná absence je stále vysoká.",
+        "key_numbers": [
+          "Průměrná absence činila 137,3 hodiny na žáka.",
+          "Na konci druhého pololetí neprospekto průměrně 11,9 % žáků.",
+          "5,8 % žáků nebylo na konci druhého pololetí hodnoceno."
+        ],
+        "evidence": "„Mírně klesající trend v počtu neprospívajících i v míře absence je výsledkem důsledného uplatňování přijatých opatření.“"
+      },
+      "support_services": [
+        "Výchovná poradkyně, metodik prevence a kariérová poradkyně poskytují podporu žákům s odlišnými potřebami.",
+        "Škola nabízí doučování, individuální konzultace, plány pedagogické podpory a individuální vzdělávací plány.",
+        "Ohroženým žákům je nabídnut přestup z maturitního na nematuritní obor v rámci školy."
+      ],
+      "safety_climate": [
+        "Výuka probíhá ve vstřícné atmosféře zohledňující individuální potřeby žáků.",
+        "Budova je přístupná pro imobilní žáky, elektronicky zabezpečená a monitorovaná kamerovým systémem.",
+        "Bezpečnost teoretické výuky i školních dílen se pravidelně vyhodnocuje."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s více než 33 sociálními partnery.",
+        "Partnerství zajišťuje odborné praxe, exkurze, odborné přednášky a zapojení žáků do reálných provozních činností.",
+        "Škola spolupracuje s firmami, základními školami, zřizovatelem a organizacemi podporujícími polytechnické vzdělávání."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a vycházejí přímo z hodnocení ČŠI; důležité výsledky jsou uvedeny s procenty.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí společné procento neúspěšnosti všech maturitních oborů za každý rok.",
+        "Zpráva uvádí průměrnou absenci, ale nepodává její přesné rozložení podle oborů.",
+        "Není uvedeno přesné datum ani rozsah nové odborné kvalifikace dotčených pedagogů."
+      ]
+    }
+  }
+}

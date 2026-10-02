@@ -1,0 +1,106 @@
+{
+  "report_id": "SOS_600020380_2026-03-02",
+  "school_profile": {
+    "school_type": "Střední škola a vyšší odborná škola",
+    "inspection_period": "2. 3. 2026 až 5. 3. 2026",
+    "school_change_summary": "Poradenský tým se od druhého pololetí školního roku 2025/2026 personálně obměnil, ale pravidla jeho fungování dosud nejsou definována."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Škola dosahuje dlouhodobě nadprůměrných výsledků u maturitní zkoušky.",
+        "evidence": "V letech 2023 až 2025 měla škola stabilně nadprůměrné výsledky ve všech zkušebních předmětech."
+      },
+      {
+        "tag": "Jazykové vzdělávání",
+        "detail": "Jazykové vzdělávání patří k silným stránkám školy a je podpořeno aktivitami Erasmus+.",
+        "evidence": "Škola pokračuje v úspěšném zapojení do projektu Erasmus+ pro podporu mobility a motivace k učení jazyků."
+      },
+      {
+        "tag": "Absolventi a praxe",
+        "detail": "Škola úzce spolupracuje s partnery, u nichž žáci a studenti absolvují praxi.",
+        "evidence": "Škola cíleně a účelně spolupracuje se smluvními partnery, kde žáci a studenti vykonávají praxi pod vedením instruktorů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Klima školy",
+        "detail": "Někteří žáci mají výhrady ke korektnosti chování a přístupu některých vyučujících.",
+        "evidence": "Část žáků nevnímá jednání některých vyučujících jako zcela korektní a uvádí výhrady k jejich chování a přístupu."
+      },
+      {
+        "tag": "Přístup k výuce",
+        "detail": "V odborné výuce převažuje frontální způsob výuky a žáci mají méně příležitostí k samostatné práci.",
+        "evidence": "Ve velké části navštívených hodin odborného vzdělávání převládala frontální výuka s dominantní rolí učitele."
+      },
+      {
+        "tag": "Podpora rozdílných potřeb",
+        "detail": "Ve vzdělávání chybí dostatečná diferenciace a systematická podpora nadaných žáků.",
+        "evidence": "Chyběla diferenciace s ohledem na různé vzdělávací potřeby a schopnosti; podpora nadaných žáků je nastavena méně systematicky."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola ověřuje, zda vyučující reagují na potřeby žáků?",
+      "Jak vypadá podpora žáků s odlišnou úrovní schopností a žáků se speciálními vzdělávacími potřebami?",
+      "Kolik odborných hodin pracuje žáky aktivně a kolik převážně frontálně?"
+    ],
+    "who_school_fits": [
+      "Uchazečům, kteří chtějí studovat obchodní obory s důrazem na cizí jazyky.",
+      "Žákům, kteří mají zájem o jazykové a odborné soutěže nebo projekty.",
+      "Uchazečům, kterým vyhovuje prostředí s nabídkou praxe a mezinárodních aktivit."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům, kterým záleží na pravidelném ověřování příznivého klimatu školy.",
+      "Žákům, kteří potřebují pravidelnou diferenciaci a samostatnou práci s informacemi.",
+      "Uchazečům, kteří mají zájem o VOŠ a chtějí znát aktuální míru setrvání ve studiu."
+    ],
+    "plain_czech_summary": "Škola má dlouhodobě velmi dobré výsledky u maturity, zejména v ekonomických oborech, a silné jazykové vzdělávání. Nabízí praxi, partnerství a zapojení do Erasmus+. Mezi slabé stránky patří frontální výuka, malé využití samostatné práce, omezená diferenciace a výhrady žáků k přístupu některých učitelů. Pravidla fungování nově obměněného poradenského týmu dosud nejsou stanovena."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně nadprůměrné výsledky v letech 2023 až 2025",
+      "key_numbers": [
+        "Hrubá neúspěšnost společné části: 0,8 %",
+        "Průměrná hrubá neúspěšnost v ČR: 5,8 %",
+        "Hrubá neúspěšnost profilové části: 1,2 %"
+      ],
+      "evidence": "Ve všech zkušebních předmětech měli žáci v letech 2023 až 2025 stabilně nadprůměrné výsledky."
+    },
+    "absence": {
+      "trend": "Bez výrazného trendu uvedeného v několikaletém průměru",
+      "key_numbers": [
+        "Průměrně 123 zameškaných hodin za školní rok na žáka",
+        "Z toho 1,1 neomluvené hodiny",
+        "Průměr za roky 2022/2023 až 2024/2025"
+      ],
+      "evidence": "S dobrými výsledky souvisí relativně nízká míra absence; ta činila průměrně 123 hodin za školní rok na žáka."
+    },
+    "support_services": [
+      "Dvě výchovné poradkyně",
+      "Školní metodička prevence",
+      "Externí psycholožka",
+      "Kariérová poradkyně",
+      "Školní poradenský tým prošel personální obměnou"
+    ],
+    "safety_climate": [
+      "Bezpečnostní podmínky jsou upraveny v interních dokumentech.",
+      "Zaměstnanci jsou pravidelně školeni v oblasti bezpečnosti a první pomoci.",
+      "Vstupy do budovy jsou elektronicky zabezpečené a monitorované kamerovým systémem."
+    ],
+    "partnerships_practice": [
+      "Žáci a studenti vykonávají praxi u smluvních partnerů pod vedením instruktorů.",
+      "Škola spolupracuje s Okresní hospodářskou komorou a místní firmou PRECIOSA, a.s.",
+      "Škola spolupracuje s Domem zahraniční spolupráce a partnery v zahraničí."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá srozumitelné formulace, člení informace podle potřeb rodiče a odděluje zjištěné výsledky od oblastí ke zlepšení.",
+    "uncertainty_notes": [
+      "Zpráva uvádí dlouhodobé výsledky, ale nepodává aktuální úspěšnost pro školní rok 2025/2026.",
+      "U některých oblastí chybí přesné číselné ukazatele, proto je jejich rozsah popsán obecně.",
+      "Školní profil vychází z informací uvedených v charakteristice školy."
+    ]
+  }
+}

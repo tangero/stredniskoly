@@ -1,0 +1,101 @@
+{
+  "report_id": "SOU_600012824_2026-02-04",
+  "school_profile": {
+    "school_type": "Střední škola a domov mládeže",
+    "inspection_period": "4. až 6. 2. 2026",
+    "school_change_summary": "Škola měnila vedení a název a rozšiřuje obor Strojní mechanik o zaměření na leteckého mechanika; „pokračování zkvalitňování materiálně technických podmínek“."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborný výcvik",
+        "detail": "Díky malým skupinám, dobrému vybavení a spolupráci partnerů získávají žáci více praktických zkušeností a návyků.",
+        "evidence": "„Velmi dobré materiálně technické podmínky pro konání praktického vyučování“ a „Systém spolupráce ... je nastavený a funkční.“"
+      },
+      {
+        "tag": "Bezpečnost při práci",
+        "detail": "Na praktickém vyučování se žáci učí bezpečně pracovat a dbát o pořádek i ochranu zdraví.",
+        "evidence": "„Vždy bylo dbáno na upevňování zásad bezpečné práce a ochrany zdraví“, žáci měli předepsané ochranné pomůcky."
+      },
+      {
+        "tag": "Klima školy",
+        "detail": "Atmosféra ve škole je podle inspektorů klidná a vstřícná.",
+        "evidence": "„Atmosféra ve škole se jeví jako klidná, vůči žákům vstřícná.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Výsledky v matematice",
+        "detail": "V prvním pololetí 2025/2026 se výsledky z matematiky výrazně zhoršily a téměř polovina žáků byla ohrožena neúspěšností.",
+        "evidence": "„Téměř polovina všech žáků byla při klasifikaci v matematice v tomto období ohrožena školní neúspěšností.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola má podle inspekce málo diferencované výuky a omezenou podporu žáků s odlišnými potřebami.",
+        "evidence": "„Diferencovaná výuka je ve škole minimální“ a „většina ... učitelů pracují se všemi žáky stejně.“"
+      },
+      {
+        "tag": "Organizace a prostory",
+        "detail": "Čtyři budovy ztěžují efektivní řízení a způsobují zbytečné přecházení žáků i omezené zázemí pedagogů.",
+        "evidence": "„Škola je ve své činnosti výrazně omezena tím, že funguje ve čtyřech budovách.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní kroky škola přijímá pro zlepšení výsledků v matematice a včasné odhalení školního neúspěchu?",
+      "Jak vypadá podpora žáků s odlišnou úrovní v matematice a při podpůrných opatřeních přímo v hodině?",
+      "Kolik žáků má přecházení mezi budovami a jak se řeší zázemí pedagogů na adrese Richarda Kloudy?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí technické nebo strojírenské vzdělání v denní formě.",
+      "Žákům, kterým vyhovuje menší počet žáků v odborném výcviku a praktické zařazení u smluvních partnerů.",
+      "Žákům, kteří mají zájem o obor Strojní mechanik se zaměřením na leteckého mechanika."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků s výrazně nižší úrovní v matematice, kteří potřebují pravidelnou individuální podporu.",
+      "Rodičům žáků s podpůrnými opatřeními, pokud očekávají intenzivní ověřovanou podporu přímo ve vyučování.",
+      "Rodičům, kterým může vadit časové přecházení mezi více budovami nebo omezené zázemí učitelů."
+    ],
+    "plain_czech_summary": "Škola nabízí denní technické obory s maturitou i výučním listem a domov mládeže. Silnou stránkou je odborný výcvik v malých skupinách, dobré vybavení a funkční spolupráce se smluvními partnery. Inspekce ale upozornila na výrazné zhoršení výsledků v matematice, malé používání diferencované výuky a omezenou kontrolu účinnosti podpůrných opatření. Pro rodiče je důležité zeptat se, jak konkrétně škola řeší matematickou neúspěšnost a podporu jednotlivých žáků. Výuka probíhá ve čtyřech budovách, což přináší organizacní omezení a zbytečné přecházení mezi některými hodinami."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zhoršení zejména v matematice a českém jazyce v prvním pololetí 2025/2026",
+      "key_numbers": [
+        "Ve školním roce 2024/2025 maturitu skládalo 12 žáků, neprospěli dva.",
+        "Ve školním roce 2024/2025 závěrečné zkoušky tříletých oborů konalo 29 žáků, tři neprospěli i po opravném termínu.",
+        "Ve školním roce 2024/2025 závěrečné zkoušky čtyřletých oborů konalo 19 žáků, po opravném termínu neprospěl jeden."
+      ],
+      "evidence": "„V prvním pololetí školního roku 2025/2026 došlo k výraznému zhoršení výsledků vzdělávání ... v matematice.“"
+    },
+    "absence": {
+      "trend": "Zhoršení souvisí se stovkami neomluvených hodin, důvody však nejsou v této části podrobně rozložené",
+      "key_numbers": [
+        "„stovky neomluvených hodin“ v posledním hodnoceném klasifikačním období.",
+        "Přibližně 8,5 % žáků neprospělo ve školním roce 2024/2025."
+      ],
+      "evidence": "„Dále se zaměřit na vyhodnocování absence žáků ve výuce, důvodem ... jsou např. stovky neomluvených hodin.“"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště tvoří výchovná poradkyně a metodička prevence.",
+      "Výchovná poradkyně informuje pedagogy a připravuje podpůrná opatření; metodička prevence zajišťuje preventivní akce.",
+      "K datu inspekce poskytovala škola podpůrná opatření 18 žákům podle doporučení školského poradenského zařízení."
+    ],
+    "safety_climate": [
+      "„Vždy bylo dbáno na upevňování zásad bezpečné práce a ochrany zdraví“, žáci měli předepsané oblečení a ochranné pomůcky.",
+      "Na pracovištích byl podle inspekce udržován pořádek a žáci získávali informace o kvalitě své práce."
+    ],
+    "partnerships_practice": [
+      "Škola využívá vlastní dílenská pracoviště i pracoviště smluvních partnerů v reálném prostředí.",
+      "„Systém spolupráce školy se smluvními partnery při zabezpečování odborného výcviku je nastavený a funkční.“"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá běžné české výrazy, stručně vysvětluje význam zjištění a odlišuje silné stránky od oblastí ke zlepšení.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesný počet neomluvených hodin ani jejich rozložení podle oborů.",
+      "Zpráva neuvádí konkrétní výsledky opatření přijatých po návštěvě školy nebo při denníku otevřených dveří.",
+      "Údaje o výsledcích žáků se vztahují převážně ke školnímu roku 2024/2025 a prvnímu pololetí 2025/2026."
+    ]
+  }
+}

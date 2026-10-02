@@ -1,0 +1,105 @@
+{
+  "report_id": "SOS_600014517_2026-02-04",
+  "school_profile": {
+    "school_type": "střední odborné učiliště",
+    "inspection_period": "4.–6. 2. 2026 a 9. 2. 2026",
+    "school_change_summary": "Škola posílila poradenství přijetím školního psychologa, modernizovala materiální vybavení a rozšířila projektovou činnost a mobility žáků i pedagogů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola poskytuje poradenství, doučování, konzultace i podpůrná opatření pro žáky se SVP.",
+        "evidence": "„Poradenské služby byly kvalitně zabezpečovány pracovníky školního poradenského pracoviště“."
+      },
+      {
+        "tag": "Praktická výuka",
+        "detail": "Odborný výcvik zahrnuje reálné praktické úkoly a projekty odpovídající budoucí práci.",
+        "evidence": "„Činnosti žáků zahrnovaly reálné praktické úkoly a projekty odpovídající skutečným pracovním situacím“."
+      },
+      {
+        "tag": "Ubytování a klima",
+        "detail": "Domov mládeže a internát podporují přátelské, bezpečné a inkluzivní prostředí.",
+        "evidence": "„Zapojení všech žáků do kolektivu i společných aktivit je cíleně podporováno“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Podprůměrné testy",
+        "detail": "Výsledky testování přírodovědné a čtenářské gramotnosti byly podprůměrné v celorepublikovém srovnání.",
+        "evidence": "„Škola dosáhla podprůměrných výsledků ve srovnání s celorepublikovými výsledky“."
+      },
+      {
+        "tag": "Sebehodnocení žáků",
+        "detail": "Ve výuce se žáci méně podílejí na sebehodnocení a vzájemném hodnocení.",
+        "evidence": "„V malé míře se podíleli na sebehodnocení a vzájemném hodnocení“."
+      },
+      {
+        "tag": "Různá obtížnost úkolů",
+        "detail": "Ve výuce je omezená možnost volit úkoly s různou kognitivní náročností.",
+        "evidence": "„Žáci měli jen omezenou možnost volby úkolů s různou kognitivní náročností“."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně vypadá podpora žáků s potížemi ve škole, při domácím přípravě a v ubytování?",
+      "Jak často probíhá doučování, konzultace a zpětná vazba rodičům?",
+      "Jaké konkrétní možnosti mají žáci při volbě úkolů, sebehodnocení a vzájemném hodnocení?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí střední odborné vzdělání a chtějí se učit v reálných praktických prostředích.",
+      "Žákům se SVP, kteří využijí asistenty pedagoga, individuální podporu a přizpůsobené vyučování.",
+      "Žákům, kteří potřebují internát, domov mládeže nebo školní stravování."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na pravidelné podpoře při učení a posilování sebehodnocení.",
+      "Rodičům žáků s odlišným mateřským jazykem, kteří potřebují jazykovou podporu.",
+      "Rodičům, kteří očekávají vysoké celorepublikové výsledky v testech čtenářské a přírodovědné gramotnosti."
+    ],
+    "plain_czech_summary": "Škola má dobře nastavenou organizaci, moderní vybavení, kvalitní poradenské služby a praktickou výuku. Ve školním roce 2025/2026 zde studovalo 277 žáků, z toho 69 se SVP. Výsledky společné části maturity byly velmi dobré a v letech 2023/2024 a 2024/2025 uspěli všichni žáci čtyřletého oboru. Závěrečné zkoušky za poslední tři roky zvládli všichni. Hlavním zjištěným nedostatkem je omezené sebehodnocení a vzájemné hodnocení žáků a menší nabídka úkolů různé obtížnosti. Testy čtenářské a přírodovědné gramotnosti byly podprůměrné. Škola poskytuje ubytování, stravování, doučování a podporu žákům se SVP."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi dobrá a v posledních dvou letech u společné části úplná úspěšnost čtyřletého oboru.",
+      "key_numbers": [
+        "V letech 2023/2024 a 2024/2025 uspěli všichni žáci čtyřletého oboru ve společné části maturity.",
+        "Výsledky profilové části maturity jsou lepší než celorepublikový průměr.",
+        "Výsledky závěrečných zkoušek za poslední tři roky byly velmi dobré a všichni žáci uspěli."
+      ],
+      "evidence": "„Ve školním roce 2022/2023 uspěli všichni žáci ve společné části maturitních zkoušek“."
+    },
+    "absence": {
+      "trend": "Trend absence není v inspekční zprávě uveden.",
+      "key_numbers": [
+        "Přesné údaje o neomluvené nemoci nejsou uvedeny.",
+        "Ve škole se vzdělávalo 277 žáků.",
+        "Z předčasných odchodů byly prováděny analýzy."
+      ],
+      "evidence": "Zpráva uvádí „sledovala předčasné odchody žáků“, ale nezveřejňuje statistiky absence."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště a školní psycholog.",
+      "Doučování, konzultace a zapůjčení notebooků žákům ohroženým školním neúspěchem.",
+      "Asistentská pomoc, individuální vzdělávací plány a plány pedagogické podpory pro žáky se SVP.",
+      "Doučování žáků s odlišným mateřským jazykem."
+    ],
+    "safety_climate": [
+      "Funkční systém bezpečnosti a ochrany zdraví žáků.",
+      "Pravidelné vyhodnocování bezpečnostních rizik a přijímání preventivních opatření.",
+      "Podpora přátelského klimatu prostřednictvím dotazníkových šetření, aktivit a prevence rizikového chování."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s firmami a organizacemi zajišťuje praktické vyučování a účast odborníků z praxe.",
+      "Spolupráce zahrnuje stáže pedagogů a účast partnerů při tvorbě školních vzdělávacích programů.",
+      "Škola spolupracuje s městem, místními organizacemi, základními školami a partnerskými školami na Slovensku."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou srozumitelné, stručné a zaměřené na praktické informace pro rodiče; závěry vycházejí z textu zprávy.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesné číselné údaje o neomluvené nemoci, proto nelze hodnotit trend absence.",
+      "Nejsou uvedeny konkrétní výsledky předmětů v testech přírodovědné a čtenářské gramotnosti.",
+      "Uvedené tvrzení o úspěšnosti se vztahuje ke společné části maturity čtyřletého oboru."
+    ]
+  }
+}

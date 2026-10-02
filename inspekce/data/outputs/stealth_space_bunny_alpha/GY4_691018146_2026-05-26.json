@@ -1,0 +1,111 @@
+{
+  "report_id": "GY4_691018146_2026-05-26",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:13:04.253006+00:00",
+  "run_finished_utc": "2026-10-02T16:13:31.768603+00:00",
+  "raw_file": "GY4_691018146_2026-05-26.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691018146_2026-05-26",
+    "school_profile": {
+      "school_type": "Malá alternativní komunitní škola; gymnázium vzniklo rozšířením o čtyřletý obor, účinným od 1. 9. 2025.",
+      "inspection_period": "26. 5. 2026 až 29. 5. 2026",
+      "school_change_summary": "Základní škola funguje od září 2024, gymnázium od září 2025. Došlo k nárůstu žáků i pedagogů a ke zvýšení kvalifikovanosti učitelů, ale některé dříve zjištěné nedostatky přetrvávají."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Přátelské prostředí",
+          "detail": "Ve vzdělávání vládne vstřícná atmosféra, žáci mohou volit aktivity a majít prostor pro vlastní přístup k učení.",
+          "evidence": "„Vzdělávání probíhalo v příznivé a vstřícné atmosféře“ a žáci měli možnost volby činnosti a pracovního místa."
+        },
+        {
+          "tag": "Zapojení žáků",
+          "detail": "Žáci se aktivně podílejí na pravidlech, chodu školy a plánování vzdělávání, což může posilovat odpovědnost a spolupráci.",
+          "evidence": "„Žáci mají nadstandardnou možnost spolurozhodovat o chodu školy, aktivně se podílet na formulaci pravidel a koordinaci aktivit.“"
+        },
+        {
+          "tag": "Rodinná spolupráce",
+          "detail": "Škola nabízí rodičům pravidelnou spolupráci, sdílení informací a možnost zapojit se do aktivit i rozhodování o podpoře žáka.",
+          "evidence": "Škola pořádá rodičovské kavárny, tripartity a vzdělávací semináře a zapojuje rodiče do projektů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Úroveň vzdělávání",
+          "detail": "Rodiči je potřeba počítat s rizikem, že nabídka aktivit a velká volnost nemusí vždy zajistit dostatečné učení a odpovídající náročnost.",
+          "evidence": "„Náročnost vuky a prokazované znalosti žáků neodpovídaly danému ročníku příp. i stupni vzdělávání.“"
+        },
+        {
+          "tag": "Diferenciace a podpora",
+          "detail": "Podpora žáků se SVP může být méně účinná, pokud se výuka dostatečně neindividualizuje podle jejich potřeb.",
+          "evidence": "„Míra a účinnost poskytované podpory je v některých případech nízká, a to především v důsledku scházející diferenciace.“"
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Rodiny mohou dostávat méně komplexní informace o znalostech a celkovém učebním pokroku dítěte, než by od nové školy očekávaly.",
+          "evidence": "Hodnocení se zaměřuje „především na dovedností a postojovou složku, v menší míře pak na rozvoj znalostí a porozumění.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá diferenciace úkolů a výuka žáků s odlišným věkem, tempem i studijními předpoklady?",
+        "Jak rodiče a žák dostávají pravidelnou zpětnou vazdu o znalostech, porozumění, dovednostech a celkovém pokroku?",
+        "Jak vypadá podpora žáků se SVP a jak škola ověřuje, že je skutečně účinná?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí velkou míru volby, samostatnosti a aktivního zapojení do chodu školy.",
+        "Rodinám, kterým vyhovuje komunitní a partnerský přístup včetně pravidelné spolupráce s pedagogy.",
+        "Žákům, kteří mají dostatečnou schopnost seorganizovat a kteří ocení neautoritativní prostředí."
+      ],
+      "who_should_be_cautious": [
+        "Rodinám, které potřebují předvídatelnou strukturu, jasné tempo a důsledné ukotvení učiva.",
+        "Rodinám, které vyžadují průběžné komplexní hodnocení znalostí a jednoznačné srovnání s běžnou školou.",
+        "Žákům s výraznou potřebou přesné diferenciace, úsporného rozvrhu nebo silné podpory při učení."
+      ],
+      "plain_czech_summary": "Minehava je malá alternativní komunitní škola, nyní se základní školou a gymnáziem. Pro rodiče je přitažlivá svobodnou atmosférou, výrazným zapojením žáků a dobrou spoluprací s rodinou. Základní školu zajišťuje od roku 2024, gymnázium od roku 2025, takže u obou nelze zatím hodnotit stabilní dlouhodobé výsledky. Výuka je pečlivě připravená, ale část aktivit byla málo náročná, někdy chyběla diferenciace a někteří žáci si namísto učení vybrali relaxaci. Podpora žáků se SVP je formálně nastavena, její účinnost ale místy nestačí. Důležité je též to, že škola zatím neposkytuje vždy dostatečně komplexní údaje o znalostech a celkovém pokroku žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nelze stanovit; zpráva neuvádí výsledky maturit a gymnázium začalo působit až v září 2025.",
+        "key_numbers": [
+          "Gymnázium čtyřleté, od 1. 9. 2025",
+          "K 30. 9. 2025 na gymnáziu 9 žáků"
+        ],
+        "evidence": "„Vzhledem k zahájení činnosti gymnázia v září 2025 nelze prozatím posuzovat systematické vyhodnocování celkových výsledků vzdělávání.“"
+      },
+      "absence": {
+        "trend": "U podpůrných opatření se zohledňuje zvýšená nepřítomnost žáků, ale celkový trend ani výšiabsence zpráva neuvádí.",
+        "key_numbers": [
+          "6 žáků se SVP",
+          "2 žáci s odlišným mateřským jazykem"
+        ],
+        "evidence": "Podpůrná opatření zahrnují „zohlednění zvýšené nepřítomnosti ve výuce“, konkrétní čísla však zpráva neuvádí."
+      },
+      "support_services": [
+        "Propojený poradenský systém pro základní školu a gymnázium zahrnuje společné porady a výchovně preventivní strategie.",
+        "U žáků se SVP se uplatňuje asistent pedagoga a individuální vzdělávací plán.",
+        "Škola využívá krizová a tripartitní setkání a kázeňská opatření nevyužívá."
+      ],
+      "safety_climate": [
+        "Škola podporuje bezpečné prostředí pro otevřené rozhovory, prezentování a korekci postojů.",
+        "Prevence zahrnuje digitální wellbeing, závislostní chování a podporu vzájemné důvěry.",
+        "Vstup do budovy je elektronicky zabezpečen."
+      ],
+      "partnerships_practice": [
+        "Rodiče se mohou účastnit rodičovských kaváren, tripartitních schůzek, brigád, projektů a vzdělávacích seminářů.",
+        "Škola sdílí zkušenosti s obdobně zaměřenými školami.",
+        "S městskou částí Praha 3 spolupořádá akce podporující aktivní občanství žáků."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné výrazy, stručně vysvětluje význam zjištění pro rodiče a jasně odlišuje ověřené informace od neznámých údajů.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí údaje o maturitách, takže jejich trend a výsledky nelze posoudit.",
+        "Zpráva neuvádí celkovou míru absence, a proto nelze určit její trend ani číselnou výši.",
+        "Dlouhodobé výsledky gymnázia nelze hodnotit, protože škola jej založila až v září 2025."
+      ]
+    }
+  }
+}

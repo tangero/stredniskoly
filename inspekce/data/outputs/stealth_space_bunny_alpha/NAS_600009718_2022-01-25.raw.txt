@@ -1,0 +1,103 @@
+{
+  "report_id": "NAS_600009718_2022-01-25",
+  "school_profile": {
+    "school_type": "střední odborné učiliště poskytující také domov mládeže a školní jídelnu",
+    "inspection_period": "25. 1., 21. a 22. 3. 2022",
+    "school_change_summary": "Inspekce zjistila přetrvávající nízký počet žáků v maturitních oborech a výrazné zhoršování jejich výsledků ve společné části maturitní zkoušky od roku 2019."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podpora cizinců",
+        "detail": "Ve výuce byla zaznamenána účelná podpora žáků-cizinců s mírnou jazykovou bariérou.",
+        "evidence": "„Zaznamenána byla účelná podpora žáků-cizinců s mírnou jazykovou bariérou.“"
+      },
+      {
+        "tag": "Angličtina",
+        "detail": "Hodiny angličtiny podporovaly komunikaci, práci ve skupinách i procvičování slovní zásoby.",
+        "evidence": "„střídaly se produktivní i receptivní řečové dovednosti“ a „účelně zařazena skupinová práce“"
+      },
+      {
+        "tag": "Adaptační aktivity",
+        "detail": "Škola podle inspekce dobře organizovala aktivity pro vztahy mezi novými žáky.",
+        "evidence": "„Škola v tomto školním roce vhodně zorganizovala adaptační aktivity pro navázání dobrých vzájemných vztahů žáků prvních ročníků.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Neúspěšnost u maturity",
+        "detail": "V nástavbových oborech byla v roce 2021 hrubá neúspěšnost ve společné části maturity přibližně 66 %.",
+        "evidence": "„V roce 2021 významně vzrostla a činila zhruba 66 %“; v ČR se pohybovala kolem 25 %."
+      },
+      {
+        "tag": "Absence",
+        "detail": "Absence zůstává přetrvávajícím problémem prezenční výuky a zhoršuje průběh i výsledky vzdělávání.",
+        "evidence": "„Absence v prezenční výuce je přetrvávajícím problémem.“"
+      },
+      {
+        "tag": "Příprava na maturity",
+        "detail": "Škola podle inspekce zatím neřeší neúspěšnost společné části maturity dostatečně systemicky.",
+        "evidence": "„Vysokou míru neúspěšnosti žáků ve společné části MZ neřeší koncepčně“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní kroky škola přijala po inspekci pro snížení neúspěšnosti u maturity?",
+      "Kolik žáků se skutečně účastní nabízených konzultací a doučování a jaké jsou jejich výsledky?",
+      "Jak škola průběžně řeší absenty a jaké výsledky měla snaha o jejich snížení?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří majít zájem o odborné stavební nebo dřevařské vzdělání a jsou připraveni pravidelně docházet.",
+      "Žákům, kterým vyhovuje denní forma studia na pracovištích v Plzni nebo Horní Bříze.",
+      "Žákům, kteří chtějí využít odborné stáže v zahraničních firmách v rámci programu Erasmus+."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků maturitních oborů, kteří očekávají vysokou šanci na úspěšné dokončení maturity bez pravidelné podpory.",
+      "Rodičům žáků nástavbových oborů kvůli vysoké neúspěšnosti a dlouhodobě vysoké absenci.",
+      "Rodičům žáků s podpůrnými vzdělávacími potřebami, kteří chtějí ověřit konkrétní podporu ve vyučování."
+    ],
+    "plain_czech_summary": "Škola nabízí odborné vzdělání ve stavebních, dřevařských a keramických oborech. Pro rodiče je hlavním varováním vysoká neúspěšnost u maturity: v nástavbovém studiu dosáhla v roce 2021 přibližně 66 %, zatímco celorepublikově byla kolem 25 %. Významnou část tvořili žáci, kteří se k maturitě přihlásili, ale zkoušku nekonali. Absence zůstává vysoká. Škola poskytuje konzultace, doučování, poradenské služby i podporu žáků-cizinců, ale dosavadní opatření výsledky zatím nezlepšila. Inspekce proto doporučila systematičtější kontrolu výuky, konkrétní opatření a diferencované požadavky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky ve společné části maturity se od roku 2019 výrazně zhoršují.",
+      "key_numbers": [
+        "Nástavbové obory: přibližně 50 % v roce 2019.",
+        "Nástavbové obory: 33 % v roce 2020.",
+        "Nástavbové obory: přibližně 66 % v roce 2021; v ČR kolem 25 %."
+      ],
+      "evidence": "„Výsledky žáků ve společné části maturitní zkoušky se od roku 2019 výrazně zhoršují.“"
+    },
+    "absence": {
+      "trend": "Absence během distanční výuky klesala, ale v prezenční výuce se problém v roce 2021/2022 vrátil.",
+      "key_numbers": [
+        "Nástavbové studium v roce 2018/2019: přibližně 180 hodin na žáka.",
+        "Čtyřleté maturitní obory v roce 2018/2019: přibližně 280 hodin na žáka.",
+        "Do roku 2019/2020 se absence snížila v průměru o třetinu."
+      ],
+      "evidence": "„Absence žáků byla ve školním roce 2018/2019 vysoká“; „V roce 2019/2020 se snížila v průměru o třetinu.“"
+    },
+    "support_services": [
+      "„Poradenské služby jsou zajišťovány školním poradenským pracovištěm.“",
+      "Škola nabízela konzultace a systematičtější doučování, ale „žáci reagují ve velmi malém počtu“.",
+      "Podpora zahrnovala včasnou identifikaci SVP, informování vyučujících a koordinaci prevence rizikového chování."
+    ],
+    "safety_climate": [
+      "„účelná podpora žáků-cizinců s mírnou jazykovou bariérou“",
+      "Žáci při referátech vytvářeli „pozitivní prostředí“ a spontánně oceňovali výkony spolužáků.",
+      "„vhodně zorganizovala adaptační aktivity pro navázání dobrých vzájemných vztahů žáků prvních ročníků“"
+    ],
+    "partnerships_practice": [
+      "„Každoročně se uskutečňují odborné stáže žáků v zahraničních firmách“ v rámci programu Erasmus+.",
+      "Stáže se týkaly žáků z pracoviště v Horní Bříze."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně vysvětluje školní fungování a odděluje zjištění inspekce od doporučení rodičům.",
+    "uncertainty_notes": [
+      "Výsledky Uměleckého keramiku výrazně ovlivňovala malá početní základna; v roce 2021 maturovala jediná žákyně.",
+      "Inspekce uvedla možný vliv distanční výuky, ale neprokázala jedinou příčinu vysoké neúspěšnosti.",
+      "Účinnost tehdy nově nabízeného systematičnějšího doučování nemohla být v době inspekce ještě posouzena."
+    ]
+  }
+}

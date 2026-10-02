@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_600010040_2026-03-17",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:26:28.698273+00:00",
+  "run_finished_utc": "2026-10-02T16:27:08.549447+00:00",
+  "raw_file": "SOS_600010040_2026-03-17.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600010040_2026-03-17",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola, domov mládeže a školní jídelna",
+      "inspection_period": "17.–20. 3. 2026",
+      "school_change_summary": "Od roku 2020 přibyly dvě třídy a počet žáků vzrostl o 29 %; škola také modernizovala IT infrastrukturu, odborné učebny a zázemí domova mládeže."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Praktické vyučování je dobře propojeno s požadavky zaměstnavatelů a vybavuje žáky pro budoucí práci.",
+          "evidence": "„Obsah navazuje na požadavky z praxe a vhodně připravuje absolventy školy na jejich budoucí uplatnění na trhu práce.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola sleduje neúspěšnost, nabízí doučování a podporu řeší včasným dialogem se žákem a rodičem.",
+          "evidence": "„Školní neúspěšnosti se daří předcházet důsledným monitoringem… nabídkou individuálního i skupinového doučování a včasným dialogem.“"
+        },
+        {
+          "tag": "Bezpečnost a vybavení",
+          "detail": "Škola dbá o bezpečnost žáků a má kvalitní odborné učebny, laboratoře a vybavení.",
+          "evidence": "„Bezpečnost a ochrana zdraví žáků je ve škole zajištěna na velmi dobré úrovni.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Převaha předávání informací",
+          "detail": "V části všeobecně vzdělávacích a teoretických předmětů se žáci mohli účastnit převážně pasivně.",
+          "evidence": "„V části zhlédnuté výuky… převažovalo frontální předávání informací, které vedlo k pasivitě žáků.“"
+        },
+        {
+          "tag": "Slabší zpětná vazba",
+          "detail": "V řadě hodin chybělo závěrečné zhodnocení naplnění cíle a posouzení pokroku jednotlivých žáků.",
+          "evidence": "„Postrádaly závěrečné didaktické zhodnocení, které by posoudilo, do jaké míry byl naplněn plánovaný vzdělávací záměr.“"
+        },
+        {
+          "tag": "Rozdílná míra samostatnosti",
+          "detail": "Rozsah samostatné práce a sebereflexe se mezi učiteli a předměty výrazně lišil.",
+          "evidence": "„Samostatná práce žáků se zdroji informací… byla zaznamenána jen ojediněle.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak často žáci samostatně pracují s informacemi a dostávají zpětnou vazbu o dosaženém učebním cíli?",
+        "Jak konkrétně probíhá příprava na maturitu a sleduje se připravenost jednotlivých ročníků?",
+        "Které firmy a pracoviště se podílejí na praktickém vyučování a jak často se tam žáci dostávají?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat informační technologie, elektrotechniku nebo strojírenství s důrazem na praxi.",
+        "Žákům, kterým vyhovují dobře vybavené odbornné učebny, laboratoře a praktické vyučování u partnerů.",
+        "Žákům, kteří ocení důslednou podporu při problémech, doučování a včasnou komunikaci s rodiči."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kteří potřebují v každé hodině výraznou práci žáka na vlastní sebereflexi a hodnocení pokroku.",
+        "Rodičům žáků, kterým záleží na důsledném rozvoji spolupráce, diskuse a samostatné práce ve všeobecných předmětech.",
+        "Rodičům, kteří mají málo informací o přijímacích kriteriích a maturitních výsledcích konkrétních oborů."
+      ],
+      "plain_czech_summary": "Škola nabízí kvalitní odborné vybavení, praktickou výuku a spolupráci s regionálními zaměstnavateli. Podporuje žáky monitoringem výsledků, doučováním a dialogem s rodiči. Slabší místo je část vyučování, kde převládá předávání informací, žáci jsou pasivní a málo se hodnotí jejich samostatný pokrok. Podle zprávy se v posledních třech školních rocích úspěšnost maturity pohybovala mezi 86,1 % a 97,7 % u žáků, kteří nemohli zkoušku konat na jaře. Ve školním roce 2024/2025 bylo na vysoké školy přijato 97 % absolventů. Bezpečnost je hodnocena velmi dobře."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Úspěšnost je podle zprávy proměnlivá; u jarních oprav dosáhla 86,1 %, 97,7 % a 88,2 %.",
+        "key_numbers": [
+          "Jarní klasifikaci nesplnily podmínky v průměru u 4 % žáků.",
+          "Úspěšnost u maturitních zkoušek s náhradním a opravným termínem byla 86,1 %, 97,7 % a 88,2 %.",
+          "U maturitní zkoušky z cizího jazyka dosáhli žáci v posledních dvou letech 100 %."
+        ],
+        "evidence": "„V posledních třech školních rocích podmínky klasifikace ve druhém pololetí nesplnily v průměru 4 % žáků.“"
+      },
+      "absence": {
+        "trend": "Zpráva neuvádí vývoj za více let; za školní rok 2024/2025 však uvádí průměrně 122 hodin absence na žáka.",
+        "key_numbers": [
+          "Průměrně 122 hodin absence na žáka.",
+          "Z toho 1,2 hodiny neomluvené.",
+          "Neomluvená činila průměrně 1,2 hodiny na žáka."
+        ],
+        "evidence": "„Ve školním roce 2024/2025 byl průměrný počet 122 hodin absence na žáka, z toho 1,2 neomluvené.“"
+      },
+      "support_services": [
+        "Ve škole působí výchovná poradkyně a metodička prevence.",
+        "Škola nastavuje podpůrná opatření na základě doporučení školských poradenských zařízení.",
+        "Podpůrná opatření se průběžně vyhodnocují a nejméně jednou ročně konzultují s odborným pracovištěm.",
+        "Škola nabízí individuální i skupinové doučování."
+      ],
+      "safety_climate": [
+        "Bezpečnost a ochrana zdraví žáků jsou podle inspekce zajištěny na velmi dobré úrovni.",
+        "Ředitel průběžně analyzuje provozní rizika a přijímá preventivní opatření.",
+        "Žáci jsou pravidelně seznamováni s bezpečnostními pravidly a riziky ve školních dílnách a odborných učebnách."
+      ],
+      "partnerships_practice": [
+        "Praktické vyučování probíhá ve školních dílnách i na pracovištích sociálních partnerů.",
+        "Škola udržuje stabilní partnerské vztahy s firmami a institucemi v regionu.",
+        "Praktické vyučování je koncepčně velmi dobře pojaté a podporuje získávání dovedností pro budoucí zaměstnání."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text používá srozumitelné výrazy, konkrétní čísla a jasně odděluje přednosti, rizika a praktické důsledky pro rodiče.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí srovnávací vývoj absence za více školních roků.",
+        "Neuvádí rozbor úspěšnosti maturity podle jednotlivých oborů ani konkrétních předmětů.",
+        "U přijímacího řízení nejsou uvedeny konkrétní výsledky uchazečů podle oborů."
+      ]
+    }
+  }
+}

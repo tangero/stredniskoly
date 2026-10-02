@@ -1,0 +1,101 @@
+{
+  "report_id": "LYC_600019993_2026-04-14",
+  "school_profile": {
+    "school_type": "střední zdravotnická škola a vyšší odborná škola zdravotnická",
+    "inspection_period": "14. 4. až 20. 4. 2026",
+    "school_change_summary": "Od předchozí inspekce se změnilo vedení školy, proběhly investice do vybavení a podmínky vzdělávání se zlepšily; některá předchozí opatření se podle inspekce naplňují jen postupně."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Odborné předměty jsou systematicky propojovány se zdravotnickou praxí, což pomáhá rozvíjet profesní kompetence žáků a studentů.",
+        "evidence": "„Systematické propojování teoretické a praktické výuky odborných předmětů účinně přispívá k rozvoji odborných kompetencí.“"
+      },
+      {
+        "tag": "Kvalitní odborná výuka",
+        "detail": "Většina odborných hodin byla promyšleně připravená, srozumitelná a propojená s moderní zdravotnickou praxí.",
+        "evidence": "„Výklad byl často doplněn řízeným rozhovorem“ a „učivo bylo průběžně aktualizováno v souladu s poznatky moderní zdravotnické praxe.“"
+      },
+      {
+        "tag": "Spolupráce se zdravotnickými zařízeními",
+        "detail": "Škola má nadstandardní vztahy se zdravotnickými zařízeními, které posilují přípravu na skutečný výkon v oboru.",
+        "evidence": "„Významná je rovněž spolupráce s charitativními organizacemi a nadstandardní partnerské vztahy se zdravotnickými zařízeními.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nejistoty v maturitě",
+        "detail": "Neúspěšnost u maturity se v posledním sledovaném období mírně zvýšila, zejména na jaře.",
+        "evidence": "„V posledním ze tří sledovaných období však došlo k mírnému nárůstu neúspěšnosti.“"
+      },
+      {
+        "tag": "Individualizace výuky",
+        "detail": "Škola má zatím rezervy v přizpůsobování výuky rozdílným vzdělávacím potřebám a možnostem žáků.",
+        "evidence": "„V oblasti individualizace vzdělávání přetrvávají rezervy v systematickém uplatňování diferenciace výuky.“"
+      },
+      {
+        "tag": "Systémové hodnocení výsledků",
+        "detail": "Podrobnější analýza výsledků a sledování účinnosti přijatých opatření nejsou zatím prováděny jednotným systémem.",
+        "evidence": "„Podrobnější analýzy výsledků vzdělávání ... nejsou dosud realizovány v rámci jednotně nastaveného systému.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky s podpůrnými opatřeními při běžné výuce?",
+      "Jaké konkrétní výsledky měla škola u maturity v letech 2024 a 2025 a jaké změny přijala kvůli neúspěšnosti?",
+      "Kolik žáků a studentů se pravidelně účastní praktické výuky v externích zdravotnických zařízeních?"
+    ],
+    "who_school_fits": [
+      "Uchazeče, kteří chtějí studovat praktickou sestru, zdravotnické lyceum nebo diplomovanou všeobecnou sestru.",
+      "Žáky, kteří mají zájem o odbornou výuku spojenou s klinickou praxí.",
+      "Studenty, kteří ocení spolupráci školy se zdravotnickými zařízeními a zahraniční projekty."
+    ],
+    "who_should_be_cautious": [
+      "Uchazeče, kteří očekávají průběžné systematické hodnocení svého pokroku a cíle každé hodiny.",
+      "Žáky, kteří potřebují intenzivní individualizaci výuky nebo pravidelnou kontrolu účinnosti podpůrných opatření.",
+      "Rodiny, kterým může být důležitější přijatelnější jarní úspěšnost u maturity; v roce 2025 neprospělo 18 z 61 žáků."
+    ],
+    "plain_czech_summary": "Škola má kvalitní odborné pedagogy a propojuje teoretickou výuku s praktickou přípravou v nemocnicích a dalších zdravotnických zařízeních. Praktická část vyučování probíhá pod vedením zkušených pracovníků a žáci dostávají zpětnou vazbu. Materiální podmínky se díky investicím zlepšily. Výsledky maturity jsou dlouhodobě podobné, ale poslední období ukázalo mírný nárůst neúspěšnosti, hlavně na jaře; praktická část je naopak velmi dobrá. Inspekce upozornila na slabší autoevaluaci, málo systemtickou reflexi na konci hodin a nedostatečnou individualizaci některých žáků. Rodičům se vyplatí zeptat na konkrétní podporu při studiu a na příčiny jarní neúspěšnosti u maturity."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě srovnatelné výsledky, v posledním ze tří období mírný nárůst neúspěšnosti; jarní termín je obtížnější než podzimní.",
+      "key_numbers": [
+        "V roce 2025 na jaře neprospělo 18 z 61 žáků.",
+        "V roce 2025 na podzim neprospěli 4 z 19 žáků.",
+        "V praktické části maturity dosahují žáci velmi dobrých výsledků."
+      ],
+      "evidence": "„Neúspěšnost je pravidelně vyšší v jarním zkušebním období“; „naopak velmi dobrých výsledků dosahují žáci v praktické maturitní zkoušce.“"
+    },
+    "absence": {
+      "trend": "Škola sleduje absenci prostřednictvím statistických přehledů, ale zpráva neuvádí její konkrétní vývoj.",
+      "key_numbers": [
+        "Konkrétní údaje o absenci nejsou uvedeny."
+      ],
+      "evidence": "„Vyhodnocování prospěchu, absence a chování vychází ze statistických přehledů, které předkládají jednotliví třídní učitelé.“"
+    },
+    "support_services": [
+      "Školní poradenská služba je nastavena a její členové spolupracují; nové prostory pro poradenské služby vznikly.",
+      "Škola eviduje 30 žáků se speciálními vzdělávacími potřebami.",
+      "Sledování a vyhodnocování účinnosti podpůrných opatření nejsou vždy systematické."
+    ],
+    "safety_climate": [
+      "Při praktickém vyučování žáci dodržovali pracovní postupy, zásady bezpečné práce a prevenci rizik.",
+      "Škola se věnuje identifikaci rizikových oblastí a prevenci rizikového chování."
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zdravotnickými zařízeními je hodnocena jako nadstandardní a propojuje vzdělávání s reálnou praxí.",
+      "Škola spolupracuje s partnerskou školou v Trnavě v projektech Erasmus+ a zapojí se do programu Mezinárodní cena vévody z Edinburghu.",
+      "Škola spolupracuje s mateřskými a základními školami v projektu První pomoc do škol."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a v každém důležitém závěru je uvedena krátká citace z inspekční zprávy.",
+    "uncertainty_notes": [
+      "Ke školské přestávce, konkrétní průměrné absenci a podrobným výsledkům podpůrných služeb zpráva neuvádí číselné údaje.",
+      "Výsledky maturity jsou uvedeny pouze za rok 2025 a nejsou tak detailně porovnány se všemi obory.",
+      "Zpráva neuvádí přímou zpětnou vazbu rodičů ani žáků."
+    ]
+  }
+}

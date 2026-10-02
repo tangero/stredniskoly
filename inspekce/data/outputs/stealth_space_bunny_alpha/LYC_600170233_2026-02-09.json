@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_600170233_2026-02-09",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:38:57.960214+00:00",
+  "run_finished_utc": "2026-10-02T16:39:39.008480+00:00",
+  "raw_file": "LYC_600170233_2026-02-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600170233_2026-02-09",
+    "school_profile": {
+      "school_type": "Příspěvková organizace vykonávající činnost střední školy: „škola vykonává činnost střední školy“.",
+      "inspection_period": "Inspekční činnost na místě proběhla od 9. do 12. 2. 2026.",
+      "school_change_summary": "Od roku 2024/2025 se změnilo vedení a vzdělávací nabídka rozšířil obor Předškolní a mimoškolní pedagogika; v roce 2025/2026 se změnil název školy."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Maturitní příprava",
+          "detail": "Škola cíleně podporuje přípravu na maturitu a její opatření zlepšila výsledky ve společné části zkoušky.",
+          "evidence": "„Opatření přijatá od předchozí inspekční činnosti byla účinná“ a výsledky žáků se zlepšily."
+        },
+        {
+          "tag": "Odborná příprava",
+          "detail": "Nematuritní obory poskytují kvalitní praktickou přípravu odpovídající jednotlivým ročníkům.",
+          "evidence": "„Odborný výcvik ve všech nematuritních oborech probíhal na velmi dobré úrovni.“"
+        },
+        {
+          "tag": "Podpora rodičů",
+          "detail": "Ve škole působí výchovná poradkyně a školní metodik prevence, kteří poskytují poradenství rodičům i žákům.",
+          "evidence": "„Účelně poskytují poradenství a konzultace žákům, jejich zákonným zástupcům i pedagogům.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nepravidelná účast",
+          "detail": "Ve čtyřletých maturitních oborech zůstává absence vysoká, přestože se proti předchozí inspekci významně nezměnila.",
+          "evidence": "„Pohybuje se okolo 140 h na žáka.“"
+        },
+        {
+          "tag": "Slabší předměty",
+          "detail": "Část žáků má průběžně slabší výsledky z matematiky, případně také z českého jazyka, literatury a estetiky.",
+          "evidence": "„Nejčastěji v matematice, případně v maturitních oborech také v českém jazyce, literatuře a estetice.“"
+        },
+        {
+          "tag": "Aktivita v hodinách",
+          "detail": "V části hodin mají žáci omezenou možnost aktivně se učit, argumentovat a získávat zpětnou vazbu.",
+          "evidence": "„V části hospitované výuky výrazně převažoval frontálně vedený výklad.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá podpora žáků neúspěšných při jarní maturitě a jaké výsledky měla v předložení v podzimním termínu?",
+        "Jak škola průběžně pracuje s absencí, která se ve čtyřletých oborech pohybuje kolem 140 hodin na žáka?",
+        "Jak často žáci během vyučovací hodiny dostávají zpětnou vazbu, hodnotí se navzájem a reflektují vlastní učení?"
+      ],
+      "who_school_fits": [
+        "Uchazečům, kteří chtějí studovat obory cestovního ruchu, hotelnictví, podnikání nebo pedagogiky na střední škole.",
+        "Žákům, kterým vyhovuje propojení teorie s praxí, projekty, odborný výcvik a zahraniční mobility.",
+        "Uchazečům, kteří ocení důkladnou přípravu na maturitní zkoušku včetně konzultací a souhrnných zkoušek."
+      ],
+      "who_should_be_cautious": [
+        "Uchazečům, kteří mají potíže s pravidelnou účastí ve vzdělávání, protože absence čtyřletých maturitních oborů je vysoká.",
+        "Žákům se slabšími výsledky z matematiky, českého jazyka nebo literatury, protože tyto předměty se podílejí na neúspěšnosti u maturit.",
+        "Rodičům, kterým záleží na maximálním zapojení každého žáka během každé hodiny, protože v části výuky převažuje frontální způsob vedení."
+      ],
+      "plain_czech_summary": "Škola se od minulé inspekce zlepšila zejména v přípravě na maturitu a výsledky žáků se zlepšovaly. Nejlépe se dařilo hotelnictví, výrazně se zlepšilo nástavbové podnikání a Pedagogické lyceum postupně dohánělo obecnou úroveň. Praktická výuka nematuritních oborů je hodnocena velmi dobře. Rodiče by však měli sledovat velkou absenci, která u čtyřletých oborů činí asi 140 hodin ročně na žáka, a zejména průběžné výsledky z matematiky a českého jazyka. Výuka probíhá přátelsky, ale místy méně aktivně než ideálně: někteří žáci hodně poslouchají a málo mluví či argumentují. Škola poskytuje poradenské služby, konzultace, doučování a konkrétní podporu při přípravě k maturitě."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky společné části maturitní zkoušky se od předchozí inspekce zlepšily; nejlepších výsledků dosahovalo hotelnictví.",
+        "key_numbers": [
+          "Nástavbové studium Podnikání: hrubá neúspěšnost klesla z více než 50 % na přibližně 30 % a poté na 14 %.",
+          "Ve školním roce 2023/2024 i 2024/2025 v hotelnictví všichni přihlášení žáci uspěli v didaktických testech.",
+          "Ve školním roce 2024/2025 všichni žáci uspěli v didaktickém testu z cizího jazyka."
+        ],
+        "evidence": "„Výsledky žáků při ukončování vzdělávání MZ se od předešlé inspekční činnosti zlepšily.“"
+      },
+      "absence": {
+        "trend": "Absence čtyřletých maturitních oborů se významně nezměnila, v nástavbovém podnikání klesla a u části nematuritních oborů vzrostla.",
+        "key_numbers": [
+          "Čtyřleté maturitní obory: přibližně 140 hodin absence na žáka za rok.",
+          "Nástavbové studium Podnikání: 130 hodin na žáka, pokles přibližně o třetinu.",
+          "Nematuritní obory: přibližně 4 % žáků neprospělo ve školním roce 2024/2025."
+        ],
+        "evidence": "„V některých případech se nedaří účinně motivovat žáky nematuritních oborů k účasti ve vzdělávání.“"
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodik prevence poskytují poradenství žákům, rodičům a pedagogům.",
+        "Škola úzce spolupracuje se školskými poradenskými zařízeními při podpůrných opatřeních pro žáky se SVP.",
+        "Žákům ohroženým školní neúspěšností škola poskytuje zejména individuální konzultace a doučování."
+      ],
+      "safety_climate": [
+        "Škola dbá na bezpečné prostředí a pravidelně poučuje žáky o bezpečnosti a ochraně zdraví.",
+        "Škola vyhodnocuje příčiny úrazů a přijímá odpovídající opatření.",
+        "V hospitované výuce převládala „klidná a respektující atmosféra“."
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se sociálními partnery podporuje praktické dovednosti žáků a profesní růst pedagogů.",
+        "Zapojení do zahraničních mobilit a projektů rozvíjí využití teorie v praxi i komunikační dovednosti v anglickém jazyce.",
+        "Školu hodnotí inspekce: „Přínosnou spolupráci školy s kvalitními sociálními partnery a zapojení žáků do projektové činnosti“."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžnou češtinu, stručně vysvětluje odborné pojmy a odděluje zjištění zprávy od doporučení rodičům.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesné číslo žáků v každém oboru pro rok 2024/2025, pouze údaje k termínu inspekce.",
+        "Inspekce nehodnotí konkrétní školní předmět jako slabý; upozornění se týká slabších průběžných výsledků části žáků.",
+        "Závěrečné výsledky v jednotlivých oborech nejsou u všech oborů vyčísleny stejným způsobem."
+      ]
+    }
+  }
+}

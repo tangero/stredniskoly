@@ -1,0 +1,109 @@
+{
+  "report_id": "LYC_600019527_2025-12-08",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:52:04.083531+00:00",
+  "run_finished_utc": "2026-10-02T16:52:32.533500+00:00",
+  "raw_file": "LYC_600019527_2025-12-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600019527_2025-12-08",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola a vyšší odborná škola zdravotnická",
+      "inspection_period": "8.–10. 12. 2025",
+      "school_change_summary": "Vedla škola se od roku 2023 nová ředitelka, počet žáků i studentů vzrostl, část pedagogického sboru se vyměnila a oborová nabídka VOŠ se změnila. „Do oborové nabídky byl zařazen obor Diplomovaná všeobecná sestra v denní i kombinované formě.“"
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Klimat školy",
+          "detail": "Pravidelný dialog, vstřícné prostředí a nové zázemí podporují pohodu žáků i jejich zapojení.",
+          "evidence": "„Podpora esteticky přívětivého a relaxačního prostředí přispívá k příznivému a vstřícnému školnímu klimatu.“"
+        },
+        {
+          "tag": "Příprava na praxi",
+          "detail": "Žáci získávají zkušenosti přímo na smluvních pracovištích ve zdravotnických zařízeních.",
+          "evidence": "„Rozsáhlá spolupráce se sociálními partnery vytváří příležitosti k rozvoji profesních dovedností žáků.“"
+        },
+        {
+          "tag": "Podpora rodičů",
+          "detail": "Škola má poradenské pracoviště a nově vzniklý spolek rodičů, který posiluje spolupráci.",
+          "evidence": "„ŠPP poskytuje poradenství a konzultace žákům, studentům, zákonným zástupcům a pedagogům většinou v dostatečném rozsahu.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Rozměry výuky",
+          "detail": "Ve většině hodin převládá přednášení a žáci se aktivně podílejí na výuce jen výjimečně.",
+          "evidence": "„Převládala frontální organizace výuky, zatímco interaktivní postupy byly uplatňovány v omezené míře.“"
+        },
+        {
+          "tag": "Sledování pokroku",
+          "detail": "Omezené zpětné vazby a individuální sledování mohou oslabovat včasné odhalení školních problémů.",
+          "evidence": "„Omezené sledování individuálního pokroku žáků a nedostatečné využívání průběžné zpětné vazby oslabují účinnost podpory.“"
+        },
+        {
+          "tag": "Výsledky v oboru",
+          "detail": "Studijní výsledky jsou výrazně horší v oboru Praktická sestra než ve Zdravotnickém lyceu.",
+          "evidence": "„Nejvyšší byl v oboru Praktická sestra, kde se slabý prospěch týkal v průměru přibližně tří pětin všech žáků oboru.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak často se učitelé věnují žákům, kteří potřebují průběžnou zpětnou vazb nebo pomoc s učivem?",
+        "Kolik času ve výuce zabírá samostatná, párová a skupinová práce oproti přednášení?",
+        "Jaké konkrétní kroky škola připravila na zlepšení výsledků a přípravy na maturitu v oboru Praktická sestra?"
+      ],
+      "who_school_fits": [
+        "Rodice, kteří chtějí dítě dobře připravit na zdravotnický obor a jsou ochotní podporovat práci na odborných praxích.",
+        "Rodice, kterým vyhovuje spolupráce školy s rodiči, poradenské služby a otevřená komunikace.",
+        "Žáci, kterým vyhovuje střední vzdělání s praktickou přípravou v oborech Zdravotnické lyceum, Praktická sestra nebo Laboratorní asistent."
+      ],
+      "who_should_be_cautious": [
+        "Rodice dětí, které potřebují průběžnou individualizovanou podporu, protože „individuální vzdělávací potřeby žáků byly zohledňovány v malém rozsahu“.",
+        "Rodice žáků oboru Praktická sestra, kteří chtějí mít jistotu velmi dobrých výsledků a podporu při přípravě na maturitu.",
+        "Rodice, kteří očekávají převážně dialogické, samostatné a aktivizující vyučování místo převládající frontální výuky."
+      ],
+      "plain_czech_summary": "Škola má přátelivé klímu, kvalitní spolupráci se zdravotnickými zařízeními a nové vybavení pro nácvik. Žáci získávají zkušenosti z odborné praxe a v některých oborech dosahují velmi dobrých výsledků, zejména ve Zdravotnickém lyceu. Hlavní slabiny jsou převládající frontální výuka, malé využití zpětné vazby a omezené přizpůsobování výuky jednotlivým žákům. Největší obavou pro rodiče jsou výsledky v oboru Praktická sestra, kde má slabý prospěch přibližně tři pětiny denních žáků. Škola však uvádí doučování z angličtiny, seminář matematiky, cílenou výuku českého jazyka a doporučení pro pravidelné testování a nácvik maturitních úloh."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky se výrazně liší podle oboru; Zdravotnické lyceum je velmi dobré a stabilní, zatímco Praktická sestra vykazuje slabší výsledky.",
+        "key_numbers": [
+          "Zdravotnické lyceum: nulová hrubá neúspěšnost ve společné části maturity ve všech třech sledovaných školních letech.",
+          "Laboratorní asistent: lepší výsledky než celorepublikový průměr ve společné i profilové části maturity ve školním roce 2023/2024.",
+          "Praktická sestra v denní formě: hrubá neúspěšnost ve společné části maturity převyšovala celorepublikový průměr ve dvou letech po roce 2022/2023."
+        ],
+        "evidence": "„Ve všech sledovaných letech dosahovali žáci ve společné části MZ nulové hrubé neúspěšnosti“; u Praktické sestry „v následujících dvou školních letech jej převyšovala“."
+      },
+      "absence": {
+        "trend": "Inspekční zpráva neuvádí přímé údaje o absenci ani její změně.",
+        "key_numbers": [],
+        "evidence": "V dodaném textu není uvedená evidence ani neúspěšnost způsobená absencemi."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytuje poradenství žákům, studentům, rodičům a pedagogům.",
+        "Škola zajišťuje doučování z anglického jazyka, seminář matematiky a cílenou výuku českého jazyka.",
+        "Pro žáky se speciálními vzdělávacími potřebami se realizují doporučená podpůrná opatření, jejichž účinnost je hodnocena jako převážně dobrá."
+      ],
+      "safety_climate": [
+        "Bezpečnosti a ochraně zdraví je věnována systematická pozornost.",
+        "Žáci, studenti a zaměstnanci jsou pravidelně poučováni o bezpečnosti a míra úrazovosti je nízká.",
+        "Škola řeší verbální agresi, nevhodné chování a kyberšikanu prostřednictvím nastavených postupů a preventivních aktivit."
+      ],
+      "partnerships_practice": [
+        "Škola dlouhodobě spolupracuje se zdravotnickými a sociálními zařízeními.",
+        "Žáci a studenti absolvují odbornou praxi na smluvních pracovištích a zapojují se do běžného provozu oddělení.",
+        "Škola spolupracuje také se základními a mateřskými školami a dalšími institucemi regionu při edukačních aktivitách."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je srozumitelný, rozděluje přednosti a rizika a důležitá tvrzení spojuje s krátkými citacemi.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přímé údaje o absenci žáků, proto je v této části trend označen jako nedostupný.",
+        "Očekávanou míru pracovního zapojení rodičů nebo intenzitu individuální podpory nelze ze zprávy přesně určit.",
+        "Uvedené podrobnosti o oborech a výsledcích se vztahují k období a skladbě žáků uvedeným v inspekční zprávě."
+      ]
+    }
+  }
+}

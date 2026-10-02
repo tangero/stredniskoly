@@ -1,0 +1,100 @@
+{
+  "report_id": "GY4_600014746_2026-05-12",
+  "school_profile": {
+    "school_type": "Gymnázium se čtyřletým, šestiletým a osmiletým studiem a čtyřletým studiem se sportovní přípravou",
+    "inspection_period": "12. 5. 2026 až 15. 5. 2026",
+    "school_change_summary": "Podmínky se postupně zlepšují, ale kvalitativní změny výuky zůstávají nerovnoměrné: „Opatření přijatá od minulé inspekční činnosti jsou postupně naplňována, přičemž kvalitativní posun v oblasti výuky je nerovnoměrný.“"
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky a jazyková příprava",
+        "detail": "Škola dosahuje velmi dobrých maturitních výsledků a umožňuje část jazykové maturity nahradit certifikáty.",
+        "evidence": "„V posledních pěti letech dosahovali žáci školy ve společné i profilové části maturitní zkoušky vždy lepších výsledků, než byl republikový průměr.“"
+      },
+      {
+        "tag": "Aktivity pro nadané žáky",
+        "detail": "Žáci mají možnost rozvíjet své zájmy a nadání v soutěžích, olympiádách, projektech a badatelských aktivitách.",
+        "evidence": "„Škola vytváří podmínky pro zapojení žáků do těchto aktivit a jejich příprava je systematicky podporována zejména prostřednictvím předmětových komisí.“"
+      },
+      {
+        "tag": "Zájmová a mezinárodní činnost",
+        "detail": "Pestrá nabídka aktivit a dlouhodobá mezinárodní spolupráce rozšiřují možnosti vzdělávání a osobního rozvoje.",
+        "evidence": "„Škola poskytuje žákům pestrou nabídku zájmových činnot, která cíleně přispívá k osobnímu rozvoji a vytváří vhodné podmínky pro rozvoj jejich potenciálu.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Různorodost výuky",
+        "detail": "V části vyučování převažuje frontální výuka, malá diferenciace a omezená podpora samostatného myšlení a diskuse.",
+        "evidence": "„V některých hodinách ale převažovala frontální forma doplněná řízeným rozhovorem s dominancí učitele.“"
+      },
+      {
+        "tag": "Podpora žáků se SVP",
+        "detail": "Podpora žáků se speciálními vzdělávacími potřebami by mohla být účinnější, protože jejich hodnocení a úpravy výuky nejsou vždy systematické.",
+        "evidence": "„Ve výuce mnohdy chyběl diferencovaný přístup k těmto žákům, což omezilo efektivitu poskytované podpory.“"
+      },
+      {
+        "tag": "Psychická odolnost",
+        "detail": "Některým žákům může chybět cílenější podpora při zvládání studijní zátěže, nároků na výkon a náročnějších vztahů ve třídě.",
+        "evidence": "„Podpora rozvoje psychické odolnosti žáků vůči zátěži a nárokům na výkon i náročnějším sociálním situacím vykazuje dílčí rezervy.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se ve výuce uplatňuje diferenciace pro žáky s rozdílnou úrovníí a se speciálními vzdělávacími potřebami?",
+      "Jak často žáci během hodiny dostávají prostor pro vlastní otázky, diskusi, sebehodnocení a reflexi?",
+      "Jaké konkrétní služby ŠPS poskytují žákům při studijní zátěži a problémech v kolektivu a jak sledují jejich účinnost?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat v oboru s maturitní zkouškou a chtějí využít možnosti různě dlouhého studia.",
+      "Žákům se zájmem o jazyky, přírodovědné, technické, sportovní nebo umělecké obory.",
+      "Žákům, kterým vyhovuje široká nabídka soutěží, olympiád, projektů, mezinárodních aktivit a dalšího vzdělávání."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří potřebují jistotu, že ve všech předmětech a každé třídě bude výuka pravidelně diferencovaná.",
+      "Rodičům žáků se speciálními vzdělávacími potřebami, pro které je zásadní ověřit konkrétní podporu v daném oboru a třídě.",
+      "Rodičům žáků, kterým záleží na systematické podpoře psychické odolnosti, prevence zátěže a řešení vztahů v kolektivu."
+    ],
+    "plain_czech_summary": "Gymnázium Jihlava má za sebou pět let velmi dobrých maturitních výsledků a silnou práci se soutěžemi, olympiádami, projekty i jazykovou přípravou. Nabízí čtyřleté, šestileté, osmileté studium a studium se sportovní přípravou. Podmínky školy se zlepšují. Zpráva ale upozorňuje, že ne každá hodina je stejně aktivní: někdy převládá výklad a řízený rozhovor, chybí samostatnější práce, diferencované úkoly i závěrečná reflexe. Podpora žáků se speciálními vzdělávacími potřebami není vždy důsledně přizpůsobena. Rodiče by měli ověřit, jak podporu konkrétně dostane jejich dítě."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pětiletý trend je příznivý, v posledních pěti letech výsledky převyšovaly republikový průměr.",
+      "key_numbers": [
+        "Ve školním roce 2025/2026 se maturitní zkoušky zúčastnilo 97 žáků.",
+        "Jazykovými certifikáty část maturitní zkoušky nahradilo téměř 71 % maturantů.",
+        "Ve výběrovém zjišťování dosáhla škola podle zprávy vždy velmi dobrého hodnocení."
+      ],
+      "evidence": "„Ve školním roce 2025/2026 se jednalo o celkem 97 žáků, což bylo téměř 71 % všech maturantů.“"
+    },
+    "absence": {
+      "trend": "Inspekční zpráva neuvádí trend ani konkrétní ukazateleabsence žáků.",
+      "key_numbers": [],
+      "evidence": "Zpráva neposkytuje údaje o absencích žáků."
+    },
+    "support_services": [
+      "Školní poradenské služby zajišťují výchovné poradkyně a metodička prevence a spolupracují s učiteli, pedagogy a vedením školy.",
+      "Škola má systém předávání informací o žácích se speciálními vzdělávacími potřebami a spolupracuje s externími odborníky.",
+      "ŠPS sledují podpůrná opatření, ale podle zprávy nejsou jejich hodnocení a úpravy vzdělávacích postupů vždy systematické."
+    ],
+    "safety_climate": [
+      "Sledované hodiny probíhaly v klidné atmosféře založené na respektování pravidel.",
+      "Žáci dodržovali pokyny vyučujících, komunikovali s pedagogy a zpravidla plnili zadání.",
+      "Škola zavádí bezpečnostní opatření, například čipový systém vstupu do budovy; v době inspekce probíhala rekonstrukce půdních prostor."
+    ],
+    "partnerships_practice": [
+      "Škola dlouhodobě spolupracuje se zahraničními školami prostřednictvím programu Erasmus+.",
+      "Spolupracuje s vysokými školami přírodovědného a technického zaměření prostřednictvím seminářů a vzdělávacích aktivit.",
+      "Využívá podněty zřizovatele, školské rady a absolventů, například při akci „Vejška na gymplu“."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá běžné české výrazy, stručně odděluje silné stránky od oblastí ke zlepšení a všechny hlavní závěry opírá o zprávu.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní výsledky matematické, české a společenské části maturity ani celkové průměrné výsledky školy.",
+      "Zpráva neuvádí údaje o absencích.",
+      "Hodnocení vhodnosti konkrétního oboru nebo třídy pro jednoho žáka nelze ze zprávy určit."
+    ]
+  }
+}

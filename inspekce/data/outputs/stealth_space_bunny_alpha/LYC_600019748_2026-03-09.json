@@ -1,0 +1,109 @@
+{
+  "report_id": "LYC_600019748_2026-03-09",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:30:47.542387+00:00",
+  "run_finished_utc": "2026-10-02T16:31:24.585432+00:00",
+  "raw_file": "LYC_600019748_2026-03-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600019748_2026-03-09",
+    "school_profile": {
+      "school_type": "příspěvková organizace poskytující střední, vyšší odborné vzdělávání a domov mládeže",
+      "inspection_period": "9.–12. 3. 2026",
+      "school_change_summary": "Od roku 2023 působí nová ředitelka; rozvíjí projektové vyučování, podporu klimatu a spolupráci, ale škola stále řeší neřešené neshody a potřebuje individualizovanou výuku."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Škola úzce spolupracuje se zdravotnickými pracovišti a propojuje teorii s praxí.",
+          "evidence": "„Škola úzce spolupracuje s hlavním zaměstnavatelem absolventů Krajskou zdravotní a. s. v Ústí nad Labem, Masarykovou nemocnicí.“"
+        },
+        {
+          "tag": "Materiály a technika",
+          "detail": "Moderní vybavení zahrnuje mimo jiné CAD/CAM a 3D tisk, což může usnadnit přechod do praxe.",
+          "evidence": "„Škola využívá 3D tiskárnu k tvorbě přesných pracovních modelů čelistí i k výrobě spalitelných konstrukcí.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola poskytuje výchovné, kariérové, preventivní a psychoterapeutické poradenství.",
+          "evidence": "„Poradenské služby ve škole zajišťují výchovná poradkyně, kariérová poradkyně, dvě metodičky prevence a školní psychoterapeutka.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Školní klima",
+          "detail": "Část pedagogů i žáků uvádí, že neshody nejsou dostatečně řešeny a otevřeně vyjadřovat názor je obtížné.",
+          "evidence": "„Část pedagogů uvedla, že nemohou bez obav vyjádřit nesouhlas s kroky vedení“; téměř polovina žáků uvedla, že neshody se neřeší."
+        },
+        {
+          "tag": "Přizpůsobení výuky",
+          "detail": "Ve vyučování chybí častější diferenciace a individualizace podle rozdílných možností žáků.",
+          "evidence": "„Absence diferenciace a individualizace vzdělávacího obsahu a zadávaných úkolů nezohledňuje kognitivní schopnosti jednotlivých žáků.“"
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Učitelé poskytují zpětnou vazbu, ale hodnocení pokroku a závěry hodin jsou často formální.",
+          "evidence": "„Závěry hodin byly většinou pouze formální“; „zhodnocení jejich práce mělo spíše formální ráz.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší neshody mezi vedením, pedagogy a žáky, aby byla bezpečná zpětná vazba skutečně možná?",
+        "Jak při návštěvě poznat, které hodiny obsahují diferenciaci, samostatnou práci, sebehodnocení a práci s informačními zdroji?",
+        "Jaké konkrétní výsledky přípravy na maturitu má škola v oborech Praktická sestra a Masér ve zdravotnictví?"
+      ],
+      "who_school_fits": [
+        "Uchazečům, kteří chtějí studovat zdravotnický obor a ocitnout prakticky propojené vzdělávání s praxí.",
+        "Žákům, kterým vyhovuje dobře vybavené školní pracoviště a moderní technika, například CAD/CAM nebo 3D tisk.",
+        "Rodičům, kteří ocení dostupné výchovné, kariérové, preventivní a psychoterapeutické poradenství."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na otevřeném řešení neshod a bezpečném vyjadřování kritiky.",
+        "Uchazečům, kteří potřebují průběžnou konkrétní zpětnou vazbu a práci přizpůsobenou jejich úrovni.",
+        "Uchazečům, kterým v přípravě na maturitu mohou vadit obory s dříve vyšší hrubou neúspěšností."
+      ],
+      "plain_czech_summary": "Škola má silné odborné zázemí, spolupráci s nemocnicí a dobré vybavení. Výsledky maturity se ve společné části zlepšily a v roce 2025 byly srovnatelné nebo lepší než v republice. Pro rodiče jsou důležité i slabiny: někteří učitelé, žáci a studenti se bojí bezpečně vyjádřit nesouhlas, neshody nejsou vždy dobře řešeny a ve výuce chybí individualizace i účinná zpětná vazba. Praktická výuka a podpora studentů jsou převážně silnou stránkou školy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Ve společné části se výsledky od hodnocení v roce 2018 zlepšily; v roce 2025 měla škola ve všech oborech srovnatelné nebo lepší výsledky než republika.",
+        "key_numbers": [
+          "Zkušební období 2024: Praktická sestra 17,2 % hrubé neúspěšnosti; Masér ve zdravotnictví 25 %.",
+          "Zkušební období 2025: Praktická sestra 9,7 %; Masér ve zdravotnictví 11,8 % hrubé neúspěšnosti.",
+          "Školní rok 2025/2026: 42 žáků složilo Cambridge P.A.R.K. na úrovni B1 až C2."
+        ],
+        "evidence": "„V obou oborech došlo v roce 2025 ke snížení hrubé neúspěšnosti“; „42 žáků“ složilo zkoušku B1 až C2."
+      },
+      "absence": {
+        "trend": "Z dodaného textu nelze určit trend ani aktuální úroveň absence.",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neuvádí statistiky neomluvené absence."
+      },
+      "support_services": [
+        "Výchovná poradkyně, kariérová poradkyně, dvě metodičky prevence a školní psychoterapeutka.",
+        "Kariérová poradkyně informuje o dalším uplatnění, zdravotnických oborech, dnech otevřených dveřích a připravuje besedy a exkurze.",
+        "V domově mládeže vychovatelky poskytují podporu při vzdělávacích potížích a zajišťují potřebné doučování."
+      ],
+      "safety_climate": [
+        "Ve sledované středoškolské výuce panovala klidná pracovní atmosféra.",
+        "Při praktickém vyučování byly dodržovány zásady bezpečnosti, ochrany zdraví a hygieny práce.",
+        "Školní klima se má dále optimalizovat; část respondentů uváděla obavy z vyjadřování nesouhlasu a neřešené neshody."
+      ],
+      "partnerships_practice": [
+        "Škola úzce spolupracuje s Krajskou zdravotní a. s. v Ústí nad Labem a Masarykovou nemocnicí.",
+        "Sociální partneři se podílejí na odborné a učební praxi žáků a studentů.",
+        "Škola má akreditaci na teoretickou část specializačního vzdělávání; praktickou část má akreditovanou Masarykova nemocnice."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Formulace jsou srozumitelné a vztahují se k tomu, co mohou rodiče a uchazeči ověřit při výběru školy.",
+      "uncertainty_notes": [
+        "Nejsou uvedeny údaje o neomluvené absenci.",
+        "Nejsou uvedeny výsledky jednotlivých profilových částí maturity za všechny obory.",
+        "Zpráva neuvádí přesné výsledky hodnocení školního klimata podle jednotlivých skupin."
+      ]
+    }
+  }
+}

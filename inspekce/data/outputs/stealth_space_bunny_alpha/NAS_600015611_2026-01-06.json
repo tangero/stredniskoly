@@ -1,0 +1,107 @@
+{
+  "report_id": "NAS_600015611_2026-01-06",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:49:06.561570+00:00",
+  "run_finished_utc": "2026-10-02T16:49:34.606618+00:00",
+  "raw_file": "NAS_600015611_2026-01-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "NAS_600015611_2026-01-06",
+    "school_profile": {
+      "school_type": "Střední škola zajišťující denní, nástavbové a praktické vzdělávání",
+      "inspection_period": "6. 1. 2026–9. 1. 2026",
+      "school_change_summary": "Po změně vedení se škola zaměřila na modernizaci vybavení, rozvoj elektrotechnického vzdělávání a posílení poradenské podpory."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vzdělávání",
+          "detail": "Žáci se během výuky pravidelně zapojují do skutečných výrobních procesů a poznávají moderní technologie.",
+          "evidence": "„Praktické vyučování bylo efektivně organizováno v reálném pracovním prostředí a cíleně propojovalo teoretickou výuku s rozvojem praktických dovedností žáků.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola poskytuje cílenou podporu žákům se zvláštními potřebami i žákům se slabším prospěchem.",
+          "evidence": "„Účinné plány pedagogické podpory a individuální přístup se pozitivně projevily ve zkvalitnění vzdělávacích podmínek pro žáky se SVP.“"
+        },
+        {
+          "tag": "Vybavení a klima",
+          "detail": "Modernizace učeben, strojů a elektrotechnických dílen zvyšuje kvalitu praktické výuky.",
+          "evidence": "„Realizovaná modernizace školních dílen a vybavení strojních pracovišť přispěly ke zvýšení kvality praktického vzdělávání.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Různá náročnost úloh",
+          "detail": "V matematice a některých dalších předmětech chybí nabídka úloh s různou kognitivní náročností.",
+          "evidence": "„Chybějící zařazování úloh různé kognitivní náročnosti, především v matematice.“"
+        },
+        {
+          "tag": "Zpětná vazba v tělesné výchově",
+          "detail": "Zpětná vazba není vždy dostatečně přizpůsobena jednotlivým žákům a jejich pokrokům.",
+          "evidence": "„Poskytovaná zpětná vazba však nebyla vždy dostatečně individualizovaná a jen částečně podporovala porozumění žáků vlastním pokrokům.“"
+        },
+        {
+          "tag": "Výuka angličtiny",
+          "detail": "V některých nematuritních oborech je angličtina vyučována jen částečně a hodiny mají méně pestré metody.",
+          "evidence": "„Výuka anglického jazyka v nematuritních oborech vzdělání byla vedena v cizím jazyce jen částečně, vyučovací hodiny postrádaly pestrost metod a forem.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola rozlišuje úkoly podle kognitivní náročnosti v matematice?",
+        "Kolik času běžně trvá praktické vyučování u zřizovatele nebo smluvních partnerů?",
+        "Jaké konkrétní pomůcky a úpravy získají žáci se SVP a kdo je jim při výuce k dispozici?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí technické nebo podnikatelské vzdělání propojené s praktickou výukou.",
+        "Žákům, kteří mají zájem o elektrotechniku, strojírenství nebo provozní obory.",
+        "Žákům se SVP, kterým vyhovuje individualizovaný přístup a podpora pedagogů."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kteří očekávají výrazně diferencované úkoly ve všech předmětech.",
+        "Rodičům, pro které je zásadní pravidelnější výuka angličtiny v nematuritních oborech.",
+        "Rodičům, kteří chtějí přesné aktuální údaje o úspěšnosti maturit, protože zpráva uvádí jen srovnání trendů."
+      ],
+      "plain_czech_summary": "Škola nabízí technické, elektrotechnické, podnikatelské a praktické obory. Inspekce ocenila propojení výuky s reálnou praxí, modernizované dílny, podporu žáků se SVP a bezpečné pracovní klima. Výsledky čtyřletých maturitních oborů se zlepšovaly, zatímco nástavbové obory měly převážně dobré výsledky. Mezi hlavní nedostatky patří malá nabídka úloh různé náročnosti, zejména v matematice. Některé hodiny tělesné výchovy mají nedostatečně osobní zpětnou vazbu a v nematuritních oborech je výuka angličtiny méně pestrá."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "U čtyřletých oborů Mechanik strojů a zařízení a Mechanik elektrotechnik inspekce zaznamenala zlepšující se trend; v nástavbovém Podnikání byly výsledky zpravidla lepší než u srovnatelných škol, u Provozní elektrotechniky však česky jazyk mírně zaostával.",
+        "key_numbers": [
+          "Přesné procentní výsledky ani úspěšnost jednotlivých ročníků nejsou uvedeny."
+        ],
+        "evidence": "„Ve sledovaném tříletém období zlepšující se tendenci“; „zpravidla lepší výsledky“, ale v Provozní elektrotechnice „mírně horších výsledků v jazyce českém“."
+      },
+      "absence": {
+        "trend": "Inspekční zpráva neuvádí vývoj ani hodnoty absencí žáků.",
+        "key_numbers": [],
+        "evidence": "V hodnoceném textu nejsou uvedeny žádné číselné údaje o absencích."
+      },
+      "support_services": [
+        "Výchovná a kariérová poradkyně, metodička prevence a externí školní psycholožka.",
+        "Systém podpůrných opatření pro 84 žáky se SVP a individuální vzdělávací plány pro 6 žáků.",
+        "Doučování, konzultace, technická podpora, kompenzační pomůcky a spolupráce s poradenskými zařízeními."
+      ],
+      "safety_climate": [
+        "Bezpečné, respektující a motivující pracovní klima.",
+        "Pravidelné hodnocení bezpečnostních rizik a cílená poučování žáků.",
+        "Škola uvádí preventivní aktivity omezující nežádoucí chování a posilující prosociální klima."
+      ],
+      "partnerships_practice": [
+        "Praktické vyučování u zřizovatele a smluvních partnerů.",
+        "Spolupráce se středními, vysokými a základními školami a sociálními partnery.",
+        "Kariérové workshopy se společnostmi skupiny zřizovatele a podpora nácviku přijímacího řízení."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, krátké věty a jasně odděluje zjištění inspekce od doporučení rodičům.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesné procentní výsledky maturitních zkoušek.",
+        "Zpráva neobsahuje údaje o absencích žáků.",
+        "Náročnost jednotlivých oborů a přijímací řízení nejsou v textu podrobně porovnány."
+      ]
+    }
+  }
+}

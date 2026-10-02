@@ -1,0 +1,104 @@
+{
+  "report_id": "SOU_600018334_2026-04-20",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola s praktickou výukou, domovem mládeže a školní jídelnou",
+    "inspection_period": "20. až 22. 4. 2026",
+    "school_change_summary": "Od 1. 9. 2025 přibyly obory Kosmetické služby, Bezpečnostně právní činnost a Provozní technika; vzrostl počet žáků i tříd a škola také investovala do učeben, zázemí, jídelny a auly."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praxe a odborné zázemí",
+        "detail": "Škola propojuje teorii s praktickou výukou, reálnými zakázkami a spoluprací s partnery.",
+        "evidence": "„V rámci praktického vyučování žáci pracují také na reálných zakázkách.“"
+      },
+      {
+        "tag": "Podpora a péče",
+        "detail": "Škola nabízí poradenské služby, konzultace, doučování, kariérové poradenství i podporu při řešení problémů.",
+        "evidence": "„Poskytuje jim podporu zejména v průběhu výuky, formou individuálních konzultací a nabídky doučovacích aktivit.“"
+      },
+      {
+        "tag": "Rozšířená nabídka",
+        "detail": "Pro uchazeče je nově dostupné více oborů včetně kosmetických služeb, bezpečnostně právní činnosti a provozní techniky.",
+        "evidence": "„Škola od 1. 9. 2025 rozšířila vzdělávací nabídku o tři nové obory vzdělání.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Absence a neúspěch",
+        "detail": "Vysoká absence negativně ovlivňuje výsledky a přijatá opatření její omezení zatím nestačila.",
+        "evidence": "„Negativní vliv na dosahované výsledky má mimo jiné zvýšená absence žáků.“"
+      },
+      {
+        "tag": "Maturitní příprava",
+        "detail": "Výsledky společné části maturitní zkoušky se v roce 2025 opět zhoršily a u některých oborů převyšovala neúspěšnost celostátní průměr.",
+        "evidence": "„V roce 2025 se tento trend opět zhoršil.“"
+      },
+      {
+        "tag": "Rozdíly v přístupu k žákům",
+        "detail": "Učení se má málo přizpůsobovat schopnostem, tempu a podpůrným potřebám jednotlivých žáků.",
+        "evidence": "„V malé míře docházelo k obsahové a časové diferenciaci výuky.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak často žáci chybějí a jaké konkrétní kroky škola podniká při zvýšené absenci?",
+      "Jak probíhá podpora žáků s odlišnou úrovní znalostí a s podpůrnými opatřeními přímo ve výuce?",
+      "Kolik vyučovacích hodin má praktickou podobu a jak často se žáci dostávají k reálným zakázkám nebo firmám?"
+    ],
+    "who_school_fits": [
+      "Studenty, kteří chtějí technické, stavební, informační nebo elektrotechnické vzdělání.",
+      "Žáky, kterým vyhovuje propojení školní teorie s praktickou výukou a prací v odborných učebnách.",
+      "Studenty maturitních oborů, kteří využijí přípravu k maturitě, konzultace, projekty a soutěže."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kterým chybí strukturovaná podpora při učení a sebekontrola pokroku.",
+      "Rodiny, které očekávají průběžnou formativní zpětnou vazbu pro každého žáka.",
+      "Studenti, jimž absence může výrazně ztížit přípravu na zkoušky, protože jejich účinnost není dostatečná."
+    ],
+    "plain_czech_summary": "Škola nabízí technické, stavební, informační, kosmetické i bezpečnostně právní obory a nově i provozní techniku. Velkou předností je praktická výuka, práce na reálných zakázkách a spolupráce s firmami. K dispozici jsou konzultace, doučování, poradenství a domov mládeže. Pro rodiče jsou důležité také tři upozornění: škola má problém s absencemi, výsledky společné části maturity se v roce 2025 zhoršily a výuka se málo přizpůsobuje rozdílům mezi žáky. Přestože jsou prokazatelně přítomna praktická výuka a partnerské projekty, inspekce doporučila více samostatné a týmové práce, lepší zpětnou vazbu a důslednější podporu jednotlivých žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Celkové školní výsledky byly dlouhodobě stabilní, ale úspěšnost ve společné části maturity se v roce 2025 opět zhoršila; profilová část byla dlouhodobě lepší.",
+      "key_numbers": [
+        "Rok 2023: u některých oborů výrazně vyšší hrubá neúspěšnost než celostátně",
+        "Rok 2024: neúspěšnost klesla pod celorepublikový průměr",
+        "Rok 2025: zhoršení trendu"
+      ],
+      "evidence": "„Výsledky ve společné části maturitní zkoušky v letech 2023 a 2025 vykazovaly u některých studijních oborů výrazně vyšší míru hrubé neúspěšnosti.“"
+    },
+    "absence": {
+      "trend": "Absence je zvýšená a negativně ovlivňuje vzdělávací výsledky; účinnost dosavadních opatření je podle inspekce nedostatečná.",
+      "key_numbers": [
+        "Konkrétní procento absence zpráva neuvádí",
+        "Škola přijímá opatření k omezení absence",
+        "Jejich účinnost není dostatečná"
+      ],
+      "evidence": "„Škola se sice tímto jevem zabývá a přijímá opatření k jeho omezení, jejich účinnost však není dostatečná.“"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště poskytuje služby žákům, rodičům i pedagogům.",
+      "Služby zajišťuje výchovná poradkyně ve spolupráci se školním metodikem prevence a školním psychologem.",
+      "Škola nabízí individuální konzultace, doučování, kariérové poradenství, schránku důvěry a podporu žáků ohrožených školním neúspěchem."
+    ],
+    "safety_climate": [
+      "Ve všech hodnocených hodinách byla pozitivní pracovní atmosféra a žáci respektovali pokyny učitelů.",
+      "Žáci jsou průběžně poučováni o vhodném chování a bezpečnostních rizicích ve škole i při školních aktivitách.",
+      "Při přesunu mezi budovami jsou stanovené dohledy učitelů podle rozpisu."
+    ],
+    "partnerships_practice": [
+      "Sociální partneři umožňují žákům praktickou výuku v reálném pracovním prostředí.",
+      "Škola spolupracuje s místními institucemi, sportovními kluby a akademickou obcí.",
+      "Prostřednictvím Erasmus+ a spolupráce s Polskem rozvíjí zahraniční aktivity, stáže a jazykové vzdělávání."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžné české výrazy, krátké věty a jasně odděluje ověřená zjištění od doporučení rodičům.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní procento neúspěšnosti společné části maturity podle jednotlivých oborů.",
+      "Zpráva neuvádí číselné údaje o absenci, proto nelze její rozsah přesně porovnat s jinými školami.",
+      "U podpůrných služeb není uvedena jejich skutečná využívání ani čekací doba."
+    ]
+  }
+}

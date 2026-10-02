@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600170454_2026-02-23",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:35:44.960361+00:00",
+  "run_finished_utc": "2026-10-02T16:36:15.793252+00:00",
+  "raw_file": "SOS_600170454_2026-02-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600170454_2026-02-23",
+    "school_profile": {
+      "school_type": "Střední odborná škola a střední odborné učiliště",
+      "inspection_period": "23. 2. 2026 až 26. 2. 2026",
+      "school_change_summary": "Škola se rozšířila z 427 žáků v 19 třídách na 659 žáků ve 32 třídách, přibyl obor Zemědělec – farmář, školní psycholog a digitální vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Žáci se mohou učit v reálném prostředí, například v autoservisu, cukrárně, restauraci nebo na školním hospodářství.",
+          "evidence": "Vlastní školní autoservis, cukrárna, školní hospodářství i další provozovaná pracoviště umožňují získat reálné pracovní zkušenosti."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí doučování, konzultace, pedagogickou podporu i pomoc při předčasném ukončení studia.",
+          "evidence": "Mezi opatření patří plán pedagogické podpory, konzultace, doučování, uvolněné testové úlohy i přestup do méně náročného oboru."
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Domov mládeže poskytuje žákům organizované ubytování, výchovnou péči, kontrolu denního režimu a bezpečnostní dohled.",
+          "evidence": "Domov mládeže zajišťuje bezpečné, stabilní prostředí; bezpečnostní podmínky byly podle inspekce naplňovány."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Výuka a hodnocení",
+          "detail": "V části hodin převažovala aktivita učitele, málo se uplatňovala diferenciace a chybělo závěrečné hodnocení přínosu výuky.",
+          "evidence": "Část hodin se vyznačovala dominantní aktivitou učitele, absencí závěrečného zhodnocení a minimální diferenciací."
+        },
+        {
+          "tag": "Maturitní výsledky",
+          "detail": "Výsledky kolísají a obory Podnikání a Agropodnikání jsou slabší než republikové průměry, zejména v jazycích.",
+          "evidence": "Ve srovnání s republikou dosahují horších výsledků žáci oborů Podnikání a Agropodnikání, zejména v českém a anglickém jazyce."
+        },
+        {
+          "tag": "Předčasné ukončení",
+          "detail": "V oboru Kuchař – číšník se v posledních letech objevuje nejvyšší počet žáků, kteří studium neukončí.",
+          "evidence": "V oboru Kuchař – číšník je zaznamenáván nejvyšší počet žáků bez ukončeného vzdělání."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně vypadá podpora žáků, kteří mají neprospěch, vyšší absenci nebo potíže s motivací?",
+        "Kolik hodin týdně se žáci věnují odbornému výcviku a jaké konkrétní dovednosti na něm získají?",
+        "Jak škola řeší rozdílné učební potřeby žáků a kdy začíná systematická příprava na maturitní zkoušky?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí středoškolské vzdělání propojené s praktickou prací v oboru.",
+        "Žákům se zájmem o zemědělství, strojírenství, stavebnictví, gastronomii nebo pedagogiku.",
+        "Žákům, kteří využijí ubytování a výchovné zázemí domova mládeže."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na pravidelné podpoře učení a individuálním přístupu.",
+        "Žákům, kteří potřebují výraznější diferenciaci nebo intenzivnější práci s učebními cíli.",
+        "Rodičům žáků oborů Podnikání a Agropodnikání, kde jsou výsledky slabší než republikové průměry."
+      ],
+      "plain_czech_summary": "Škola nabízí široké portfolio oborů s důrazem na praktickou výuku a práci v reálných podmínkách. Mezi přednosti patří vlastní školní hospodářství, autoservis, cukrárna, moderní učebny a spolupráce s firmami i školami. Pro žáky je dostupné doučování, poradenství a pedagogická podpora. Výuky se někdy více řídí učitel než žáci a v některých oborech chybí dostatečná diferenciace i hodnocení učení. Výsledky maturit kolísají, horší jsou zejména v Podnikání a Agropodnikání. V oboru Kuchař – číšník se část studentů vzdělání předčasně neukončuje."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Úspěšnost žáků v oborech ukončovaných maturitní zkouškou meziročně kolísá.",
+        "key_numbers": [
+          "Ve školním roce 2024/2025 měl podíl neprospívajících ve čtyřletých maturitních oborech 6 až 7 %.",
+          "U dvouletého nástavbového studia činil podíl neprospívajících více než 11 %.",
+          "V oboru Podnikání a Agropodnikání byly výsledky horší než republikové průměry, zejména v českém a anglickém jazyce."
+        ],
+        "evidence": "Úspěšnost žáků v oborech ukončovaných maturitní zkouškou meziročně kolísá; nejhorší výsledky měly Podnikání a Agropodnikání."
+      },
+      "absence": {
+        "trend": "Zpráva neuvádí celkový trend ani průměrnou míru absence; vyšší absence však uvádí mezi příčinami neprospěchu.",
+        "key_numbers": [
+          "Celková míra absence není uvedena.",
+          "Mezi příčinami neprospěchu je uvedena vyšší absence."
+        ],
+        "evidence": "Mezi identifikovanými příčinami školního neprospěchu patří zejména nezájem, vyšší absence a další uvedené faktory."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště se školním psychologem, výchovnou poradkyní a metodičkou prevence.",
+        "Individuální konzultace, plán pedagogické podpory, doučování a uvolněné testové úlohy.",
+        "Individuální přístup, úprava tempa a diferencované přizpůsobení úkolů při odborném výcviku.",
+        "Prevence rizikového chování, adaptační kurzy, třídnické hodiny a žákovská samospráva."
+      ],
+      "safety_climate": [
+        "Výuka probíhala v klidném a kultivovaném prostředí podporujícím učení.",
+        "Domov mládeže zajišťuje bezpečné a stabilní prostředí s dohledem vychovatelek.",
+        "Při zemědělské praktické výuce je kladen důraz na dodržování zásad bezpečnosti a ochrany zdraví."
+      ],
+      "partnerships_practice": [
+        "Regionální zaměstnavatelé a odborné firmy umožňují odborný výcvik, praxi, exkurze a prezentace.",
+        "Obor Předškolní a mimoškolní pedagogika spolupracuje s více než stovkou mateřských škol v Plzeňském kraji.",
+        "Škola spolupracuje také s Úřadem práce, hospodářskými a profesními sdruženími a vzdělávacími institucemi."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a vycházejí z obsahu zprávy; slabé stránky i výhody jsou oddělené a nejsou zaměňovány.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí celkovou míru absence, proto nelze určit její trend.",
+        "U některých oborů jsou údaje kvalitativní, nikoli porovnávací číselné.",
+        "Text neuvádí dlouhodobý vývoj absence ani podrobné výsledky všech maturitních oborů."
+      ]
+    }
+  }
+}

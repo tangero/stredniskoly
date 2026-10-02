@@ -1,0 +1,110 @@
+{
+  "report_id": "LYC_691003807_2022-10-03",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:31:22.272001+00:00",
+  "run_finished_utc": "2026-10-02T17:31:49.236882+00:00",
+  "raw_file": "LYC_691003807_2022-10-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_691003807_2022-10-03",
+    "school_profile": {
+      "school_type": "Střední škola, vyšší odborná škola, domov mládeže a školní jídelny",
+      "inspection_period": "3. 10. 2022 až 7. 10. 2022",
+      "school_change_summary": "Škola modernizovala materiálně-technické zázemí, otevřela nové obory, zvýšila počet žáků a rozšířila kapacitu ubytování."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava",
+          "detail": "Žáci získávají zkušenosti v reálném prostředí firem a na moderním technickém vybavení.",
+          "evidence": "„Díky intenzivní spolupráci s podniky jsou vytvářeny velmi kvalitní reálné podmínky pro praktické vyučování.“"
+        },
+        {
+          "tag": "Odborný výcvik",
+          "detail": "Odborný výcvik má podle inspekce odpovídající úroveň a žáci jsou vedeni k samostatné práci.",
+          "evidence": "„Žáci jsou systematicky vedeni k samostatné práci nebo spolupráci ve skupinách.“"
+        },
+        {
+          "tag": "Podpora studentů",
+          "detail": "Škola poskytuje poradenství, konzultace, podpůrná opatření a systém práce s ohroženými žáky.",
+          "evidence": "„Škola má odpovídajícím způsobem nastavené postupy ve své strategii prevence školní neúspěšnosti.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Aktivita v teoretické výuce",
+          "detail": "Většina teoretických hodin se zaměřovala na frontální výuku místo samostatného a kritického myšlení.",
+          "evidence": "„Ve většině sledovaných hodin teoretické výuky převažovala frontální výuka.“"
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Průběžné hodnocení a užitečná zpětná vazba byly v teoretické výuce téměř nepřítomné.",
+          "evidence": "„Průběžné či závěrečné hodnocení, které by poskytovalo žákům užitečnou zpětnou vazbu, nebylo v teoretické výuce téměř zaznamenáno.“"
+        },
+        {
+          "tag": "Neúspěšnost a absence",
+          "detail": "Řešení neúspěšnosti a vysokých či neomluvených absencí má podle inspekce jen omezenou účinnost.",
+          "evidence": "„Řešení výskytu vysokých či neomluvených absencí má pouze omezené účinky.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně podporují žáky při neúspěšnosti a pravidelně hlásí rodičům absence?",
+        "Jak často žáci dostávají v teoretické výuce zpětnou vazbu a prostor pro samostatnou práci?",
+        "Kolik hodin odborného výcviku nebo praxe absolvují žáci v jednotlivých oborech u smluvních partnerů?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí odborné vzdělání pro konkrétní řemeslo nebo obor se středním vzděláním s výučním listem.",
+        "Žákům, kterým vyhovuje propojení školní výuky s praxí v reálných firmách.",
+        "Studentům vyšší odborné školy, kteří chtějí navázat na technické vzdělání a řízení kvality."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na pravidelné zpětné vazbě během teoretické výuky.",
+        "Rodičům žáků s absencemi nebo školní neúspěšností, protože škola uvádí rezervy v účinném řešení těchto problémů.",
+        "Rodičům, kteří očekávají v teoretické výuce více aktivního učení, diferenciace a samostatného myšlení."
+      ],
+      "plain_czech_summary": "Škola má silné odborné zázemí, spolupráci s firmami a kvalitní praktickou přípravu. Žáci pracují v reálných podmínkách, učí se bezpečně a jsou motivováni k odborným dovednostem i soutěžím. Větší problém je u teoretické výuky: převládá frontální způsob učení, málo aktivních metod a téměř chybí průběžná zpětná vazba. Inspekce také zjistila omezenou účinnost řešení neúspěšnosti a absencí. U českého jazyka byl v roce 2021/2022 zaznamenán zvýšený výskyt neúspěšnosti na maturitě. Rodiče by měli na deni otevřených dveří ověřit, jak konkrétně škola řeší tyto slabiny."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Úspěšnost maturitních zkoušek je srovnatelná se skupinou oborů v ČR, přestože u ústní části z českého jazyka byla v roce 2021/2022 zaznamenána vyšší neúspěšnost.",
+        "key_numbers": [
+          "Výsledky se porovnávají se stejnou skupinou oborů v rámci ČR.",
+          "Vyšší neúspěšnost se týkala ústní zkoušky z českého jazyka ve školním roce 2021/2022."
+        ],
+        "evidence": "„Při ukončování vzdělávání státní maturitní zkouškou dosahuje škola v rámci české republiky ve stejné skupině oborů srovnatelné úspěšnosti.“"
+      },
+      "absence": {
+        "trend": "Absence zůstává významným rizikem, zejména u žáků střední odborné školy, přestože škola uvádí snahu jejich výskyt omezovat.",
+        "key_numbers": [
+          "Číselné údaje o absencích nejsou v uvedeném textu uvedeny.",
+          "Zvýšená absence některých žáků je uvedena jako méně efektivní oblast prevence."
+        ],
+        "evidence": "„Prevence rizikového chování je úspěšná zejména v oblasti chování žáků ve škole, méně efektivní je v oblasti eliminace zvýšené absence.“"
+      },
+      "support_services": [
+        "Poradenské pracoviště zajišťují tři výchovní poradci a školní metodička prevence.",
+        "Škola nabízí konzultace, individuální přístup a podpůrná opatření pro žáky se speciálními vzdělávacími potřebami.",
+        "Adaptační programy prvního ročníku podporují rozvoj sociálních a personálních kompetencí žáků."
+      ],
+      "safety_climate": [
+        "V odborném výcviku žáci používali vhodný pracovní oděv a dodržovali zásady bezpečnosti a ochrany zdraví.",
+        "Ve sledovaných hodinách byla zaznamenána příjemná a vstřícná pracovní atmosféra."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s firmami zejména ze strojírenského prostředí a se smluvními partnery.",
+        "Žáci a studenti absolvují odborný výcvik nebo praxi v reálných firmách.",
+        "Pro vyšší odbornou školu jsou důležité firmní odborníci a absolventské práce řešící zadané problémy podniků."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžnou češtinu, krátké věty a u důležitých zjištění uvádí přímé citace ze zprávy.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní číselné údaje o absencích.",
+        "Zpráva neuvádí přesné procento úspěšnosti maturitních zkoušek.",
+        "Závěry o vhodnosti školy pro různé rodiny jsou praktická interpretace zjištění, nikoli přímé hodnocení zprávy."
+      ]
+    }
+  }
+}

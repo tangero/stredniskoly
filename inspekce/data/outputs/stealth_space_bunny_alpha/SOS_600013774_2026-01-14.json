@@ -1,0 +1,115 @@
+{
+  "report_id": "SOS_600013774_2026-01-14",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:45:05.949411+00:00",
+  "run_finished_utc": "2026-10-02T16:45:32.000351+00:00",
+  "raw_file": "SOS_600013774_2026-01-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600013774_2026-01-14",
+    "school_profile": {
+      "school_type": "Střední školaVeterinářství, denní forma, obor 43-41-M/01",
+      "inspection_period": "14. 1. 2026 až 16. 1. 2026",
+      "school_change_summary": "Škola má nové vedení, obměněný pedagogický sbor, novou dobře vybavenou budovu na Elgartově ulici a účastí v projektech Erasmus+ a Operačního programu Jana Amose Komenského."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborné vzdělávání",
+          "detail": "Učitelé odborných předmětů jsou vysoce erudovaní a žáci získávají praktické dovednosti vybavenou veterinární ordinací.",
+          "evidence": "„Učitelé odborných předmětů jsou vysoce erudovaní, ve vyučování profilových předmětů efektivně využívají své praktické zkušenosti.“"
+        },
+        {
+          "tag": "Praktická výuka",
+          "detail": "Veterinářní výuka zahrnuje praktické zkoušení, diskusi a práci vybavenou ordinací i praktické vyučování na fakultě.",
+          "evidence": "„Veterinární ordinace je plně vybavena potřebnými přístroji a zařízením, jako jsou sterilizátor, autokláv, ultrazvuk a další odborná technika.“"
+        },
+        {
+          "tag": "Materiální prostředí",
+          "detail": "Inspekce označila prostředí školy a materiální podmínky za podnětné a vhodné pro odborné vzdělávání.",
+          "evidence": "„Škola vytvořila podnětné prostředí a vhodné materiální podmínky pro výuku odborného vzdělávání.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Podpora žáků",
+          "detail": "Školní poradenské pracoviště plní podpůrnou roli jen částečně kvůli nejasným kompetencím a chybějícímu systematickému hodnocení.",
+          "evidence": "„Nejednoznačné vymezení jejich kompetencí, další vzdělávání bez systematického plánování a nedostatečné vyhodnocování efektivity snižují funkčnost pracoviště.“"
+        },
+        {
+          "tag": "Učení přírodovědných předmětů",
+          "detail": "Výuka přírodovědných předmětů má málo názorných pomůcek, aktivního zapojení žáků a prostoru pro rozvoj kritického myšlení.",
+          "evidence": "„Sledovaná výuka přírodovědných předmětů vykazovala nízkou míru názornosti, metodické pestrosti, aktivního zapojení žáků a podpory rozvoje jejich kritického myšlení.“"
+        },
+        {
+          "tag": "Klima a řízení",
+          "detail": "Inspekce zjistila systémové nedostatky v řízení školy a upozornila, že klima není pravidelnou součástí každodenního fungování školy.",
+          "evidence": "„Přetrvávající rezervy se projevují v oblasti řízení školy, činnosti školního poradenského pracoviště a školního klimata.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně funguje podpora žáků se speciálními vzdělávacími potřebami a které služby poradenského pracoviště jsou skutečně dostupné?",
+        "Jak často a v jakém rozsahu se odborná praxe a výuka na fakultě Veterinární univerzity organizují a hodnotí?",
+        "Jaké konkrétní kroky škola přijímá pro aktivnější výuku přírodovědných předmětů a rozvoj kritického myšlení?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří mají zájem o obor Veterinářství a chtějí studovat denně.",
+        "Žákům, kterým vyhovuje výuka propojená s praktickou přípravou a partnerskými pracovišti.",
+        "Žákům se zájmem o odborně vybavené prostředí a zahraniční projektové aktivity."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kteří očekávají školní stravování; v tomto školním roce zpráva uvádí, že není zajištěna.",
+        "Rodičům žáků, kterým záleží na pravidelné zpětné vazbě ke klimatu školy; škola podle zprávy šetření neprovádí.",
+        "Rodičům žáků, kteří potřebují rozsáhlou specializovanou poradenskou podporu; zpráva uvádí částečné naplňování této role."
+      ],
+      "plain_czech_summary": "Škola nabízí denní studium oboru Veterinářství, praktickou výuku v dobře vybavené ordinaci a spolupráci s partnerskými subjekty i fakultou veterinárního lékařství. Silnou stránkou jsou odborně zdatní učitelé a nové prostředí školy. Zpráva ale upozorňuje na nedostatky v řízení, poradenské podpoře, hodnocení praxe a výuce přírodovědných předmětů. Výsledky maturity jsou proměnlivé, absence klesá a podíl neprospívajících žáků je průměrně 3,5 %. Pro rodiče je důležité ověřit konkrétní podporu žáka, organizaci praxe a způsob komunikace školy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý vývoj; v roce 2025 byla neúspěšnost 9 %.",
+        "key_numbers": [
+          "Průměrná hrubá neúspěšnost za sledované období: 16 %.",
+          "Neúspěšnost ve společné části maturitní zkoušky: 12,5 %.",
+          "Neúspěšnost: 15 % v roce 2023, 27 % v roce 2024 a 9 % v roce 2025."
+        ],
+        "evidence": "„Vývoj výsledků žáků při ukončování maturitní zkouškou měl ve sledovaném období tří let kolísavý vývoj.“"
+      },
+      "absence": {
+        "trend": "Absence žáků postupně klesala.",
+        "key_numbers": [
+          "Ve školním roce 2024/2025 měli žáci průměrně 110 hodin absence.",
+          "V roce 2022/2023 to bylo 135 hodin.",
+          "Podíl neprospívajících žáků činil v uvedeném období průměrně 3,5 %."
+        ],
+        "evidence": "„Pozitivní je klesající trend absence žáků, ve školním roce 2024/2025 zameškali průměrně 110 hodin za školní rok.“"
+      },
+      "support_services": [
+        "Škola eviduje 12 žáků se speciálními vzdělávacími potřebami.",
+        "Poradenské pracoviště tvoří výchovná poradkyně a školní metodik prevence.",
+        "Žáci mohou využít konzultační hodiny, případně doučování, a přístup k učebním materiálům a prezentacím.",
+        "Výchovná poradkyně se věnuje převážně kariérovému poradenství."
+      ],
+      "safety_climate": [
+        "Škola věnuje pozornost bezpečnosti při teoretické i praktické výuce.",
+        "Jsou stanoveny dohledy při přesunech na tělesnou výchovu a odborná pracoviště.",
+        "Žáci jsou seznamováni s bezpečnostními pravidly a zásadami hygieny práce."
+      ],
+      "partnerships_practice": [
+        "Praktické vyučování probíhá také na Fakultě veterinárního lékařství Veterinární univerzity Brno.",
+        "Škola využívá řadu partnerských subjektů pro praktickou výuku.",
+        "Škola se zapojila do projektu Erasmus+ a Operačního programu Jana Amose Komenského.",
+        "Praktická výuka odborných předmětů probíhá také ve vybavené veterinární ordinaci."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text používá srozumitelnou češtinu, odděluje pozitivní zjištění od rizik a u důležitých tvrzení uvádí krátké citace ze zprávy.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí výsledky maturity za všechny obory jednotlivě v tabulce; jsou uvedeny jen souhrnné hodnoty.",
+        "Zpráva neudává podrobné výsledky šetření, protože podle textu škola šetření neprovádí.",
+        "Název školy se v metadata drobně liší od oficiálního názvu v textu zprávy; analyzovány byly údaje z dodané zprávy."
+      ]
+    }
+  }
+}

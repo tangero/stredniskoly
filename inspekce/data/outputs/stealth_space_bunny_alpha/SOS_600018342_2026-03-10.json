@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600018342_2026-03-10",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:29:10.732347+00:00",
+  "run_finished_utc": "2026-10-02T16:29:33.587313+00:00",
+  "raw_file": "SOS_600018342_2026-03-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600018342_2026-03-10",
+    "school_profile": {
+      "school_type": "Střední škola a školní jídelna",
+      "inspection_period": "10. až 12. 3. 2026",
+      "school_change_summary": "Změnila se vedoucí pozice ředitele, rozšířily se služby poradenského pracoviště o kariérového poradce a školního speciálního pedagoga a pokračuje modernizace prostorových a materiálních podmínek."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Škola propojuje teorii s praktickými činnostmi a vybavením blízkým reálnému provozu.",
+          "evidence": "Odborné učebny umožňují práce odpovídající současným trendům; žáci se pravidelně zapojují do reálných nebo simulovaných činností."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Pro rodiče je důležitá dostupnost poradenských služeb, konzultací a doučování.",
+          "evidence": "Škola nabízí individuální konzultace nebo pravidelně realizuje doučování; informace o poradenských službách jsou přehledné."
+        },
+        {
+          "tag": "Bezpečné klima",
+          "detail": "Ve sledovaných hodinách byla příjemná pracovní atmosféra a žáci jeden druhého respektovali.",
+          "evidence": "Ve všech hodnocených vyučovacích hodinách byla pozitivní pracovní atmosféra; žáci respektovali pravidla slušného chování."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturita z českého jazyka",
+          "detail": "Rodiče by měli zvýšenou pozornost věnovat přípravě na maturitu z českého jazyka.",
+          "evidence": "Výsledky společné části maturity jsou dlouhodobě nižší než celostátní průměr, zejména v předmětu Český jazyk."
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Ve výuce může být méně podpůrné zpětné vazby, která pomáhá žákům porozumět vlastnímu pokroku.",
+          "evidence": "Formativní hodnocení a reflexe vzdělávacího pokroku byly využívány v omezené míře."
+        },
+        {
+          "tag": "Rozmanitost výuky",
+          "detail": "Ve zkoumavých hodinách se rodiče nemohou spolehnout na důkladné rozvíjení kritického myšlení a práce s informacemi.",
+          "evidence": "V malé míře byly zaznamenány činnosti vedoucí k rozvoji kritického myšlení; žáci ojediněle pracovali s informačními zdroji."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky přípravou na maturitu z českého jazyka?",
+        "Jak často se koná doučování, individuální konzultace a práce se školním speciálním pedagogem?",
+        "Jak vypadá zpětná vazba žákům a jak často učitelé podporují sebereflexi a práci s více zdroji?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat hotelnictví nebo obchod v denní formě.",
+        "Žákům, kteří mají zájem o praktické činnosti, praxi a propojení školy s partnery.",
+        "Žákům, kteří potřebují poradenskou podporu nebo doučování."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na pravidelném rozvoji kritického myšlení.",
+        "Rodičům žáků, kteří potřebují výraznější individuální přístup nebo diferenciaci výuky.",
+        "Rodičům žáků s vyššími nároky na průběžnou formativní zpětnou vazbu."
+      ],
+      "plain_czech_summary": "Škola nabízí denní střední vzdělávání v oborech hotelnictví a obchod, praktickou výuku, partnerské projekty a dostupné poradenské služby. Ve výuce převládá příjemná atmosféra a žáci jsou zapojeni do odborných činností. Hlavními zjištěnými oblastmi ke zlepšení jsou kontrolní systém ředitele, menší pestrost metod, omezená podpora kritického myšlení, málo formativní zpětné vazby a nedostatečná diferenciace. Dlouhodobě jsou výsledky maturity zejména z českého jazyka nižší než celostátní průměr. Zpráva uvádí 202 žáků v devíti třídách k 30. září 2025."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky společné části maturitní zkoušky jsou dlouhodobě nižší než celostátní průměr, zejména v českém jazyce.",
+        "key_numbers": [
+          "Konkrétní procentní výsledky nejsou v textu uvedeny.",
+          "Škola výsledky získává z úspěšnosti žáků u maturitních zkoušek.",
+          "Škola zatím nevyužívá externí hodnoticí nástroje."
+        ],
+        "evidence": "Výsledky žáků společné části maturitní zkoušky dlouhodobě vykazují nižší míru úspěšnosti zejména v Českém jazyce."
+      },
+      "absence": {
+        "trend": "Konkrétní vývoj absence není v textu popsán.",
+        "key_numbers": [
+          "Číselné údaje o absenci nejsou uvedeny.",
+          "Inspekce zpracovala souhrnné přehledy absence žáků."
+        ],
+        "evidence": "Seznam dokladů uvádí „souhrnné přehledy výsledků vzdělávání, chování a absence žáků“."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště zajišťuje výchovné poradenství a školní metodiku prevence.",
+        "Pracoviště bylo rozšířeno o školní speciální pedagožku a kariérovou poradkyni.",
+        "Škola nabízí individuální péči, konzultace, doučování a případně pomoc s volbou externí podpory."
+      ],
+      "safety_climate": [
+        "Ve sledovaných hodinách byla pozitivní pracovní atmosféra.",
+        "Žáci respektovali pravidla slušného chování a ochotně se zapojovali do činností.",
+        "Škola má pravidla pro vyhledávání bezpečnostních rizik, revize a odstraňování nedostatků.",
+        "Bezpečnost a ochrana zdraví jsou součástí celého vzdělávacího procesu."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s řadou institucí a firem, zejména při praktickém vyučování a prevenci rizikového chování.",
+        "Spolupracuje se školami v regionu i v zahraničí, včetně škol v Polsku.",
+        "Projekty Erasmus, zahraniční výjezdy a stáže podporují komunikační kompetence a znalost pracovních podmínek."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulován srozumitelně, stručně a bez zbytečného úřednického složení; důležité závěry jsou opřené o citace.",
+      "uncertainty_notes": [
+        "Konkrétní číselné výsledky maturity nejsou v dodaném textu uvedeny.",
+        "Trend a číselné údaje o absenci nelze z textu spolehlivě určit.",
+        "Zpráva neuvádí podrobné výsledky podle jednotlivých tříd nebo oborů."
+      ]
+    }
+  }
+}

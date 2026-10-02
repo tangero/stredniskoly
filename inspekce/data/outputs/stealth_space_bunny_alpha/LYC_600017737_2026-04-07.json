@@ -1,0 +1,115 @@
+{
+  "report_id": "LYC_600017737_2026-04-07",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:21:27.013806+00:00",
+  "run_finished_utc": "2026-10-02T16:22:01.223112+00:00",
+  "raw_file": "LYC_600017737_2026-04-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600017737_2026-04-07",
+    "school_profile": {
+      "school_type": "střední škola, školní hospodářství, školní jídelna a domov mládeže",
+      "inspection_period": "7. 4. 2026 až 10. 4. 2026",
+      "school_change_summary": "Od inspekce v březnu 2022 se změnila ředitelka a zástupkyně ředitelky; škola také vybudovala specializované laboratoře a nevyřešila slabosti teoretické výuky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná příprava",
+          "detail": "Odborný výcvik je propojený s teorií a přizpůsobený rozdílům v dovednostech a tempu žáků.",
+          "evidence": "„Zřejmá byla návaznost na teoretickou odbornou výuku“ a „učitelé zohledňovali rozdílné tempo práce, úroveň dovedností i míru samostatnosti“."
+        },
+        {
+          "tag": "Partnerství a praxe",
+          "detail": "Spolupráce s oborovými organizacemi, vysokými školami a odborníky z praxe rozšiřuje žákům příležitosti mimo školu.",
+          "evidence": "„Škola významnou měrou spolupracuje s externími partnery“ se Svazem zakládání zeleně, Svazem květinářů a dalšími."
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Ve vyučování převládají respektující vztahy a bezpečnost je pravidelně kontrolována, i když úrazovost zůstává pod celostátním průměrem.",
+          "evidence": "„Míra úrazovosti je na nižší úrovni než celostátní průměr“; „Vztahy mezi učiteli a žáky byly respektující“."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Aktivizace výuky",
+          "detail": "V teoretické výuce je méně samostatného řešení, kritického myšlení a práce s informacemi.",
+          "evidence": "„Aktivizace žáků byla nižší“ a „Přínosná práce s informačními zdroji byla zaznamenána pouze ojediněle“."
+        },
+        {
+          "tag": "Diferenciace a zpětná vazba",
+          "detail": "Ve většině hodin nejsou úkoly přizpůsobené schopnostem žáků a naplnění cílů se málo vyhodnocuje.",
+          "evidence": "„Diferenciace úkolů podle dovedností a schopností jednotlivých žáků byla realizována minimálně“; „naplnění však nebylo v závěru systematicky vyhodnocováno“."
+        },
+        {
+          "tag": "Absence a prospěch",
+          "detail": "Část studentů má vysokou absenci a podprůměrné výsledky, což může ztěžovat dokončení studia.",
+          "evidence": "„Část žáků školy vykazuje v průběhu vzdělávání podprůměrné výsledky“ a „vysoké absence“."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se v jednotlivých předmětech projevuje samostatná práce, kritické myšlení a práce s informačními zdroji?",
+        "Jak škola odlišuje úkoly pro různě silné žáky a kdy učitelé vyhodnocují dosažení cílů hodiny?",
+        "Jaký konkrétní postup má škola pro žáky s vysokou absencí a podprůměrným prospěchem?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat zahradnictví nebo přírodně vědný obor v prostředí školního hospodářství.",
+        "Žákům, kterým vyhovuje propojení teorie s odborným výcvikem a učební praxí.",
+        "Žákům, kteří mají zájem o spolupráci, projekty, soutěže nebo odborné aktivity nad rámec výuky."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kteří potřebují v teoretické výuce hodně samostatného řešení a práce s informačními zdroji.",
+        "Rodičům žáků, kterým hrozí vysoká absence nebo potřebují velmi pružnou podporu podle individuální úrovně.",
+        "Rodičům, kteří mají malý zájem o praktickou zahradnickou výuku nebo o studium v oborech Prodavač a Zahradník."
+      ],
+      "plain_czech_summary": "Škola má dobře nastavenou odbornou výuku, moderní laboratoře a silné spolupráce s oborovými partnery. Ve vztazích mezi učiteli a žáky panuje respektující atmosféra. Výsledky absolventů jsou dobré: maturitní obory měly 100% úspěšnost. Hlavní slabiny jsou v teoretické výuce, kde se žáci méně samostatně zapojují, méně se rozvíjí kritické myšlení a úkoly se málo přizpůsobují jejich schopnostem. Část žáků má také vysokou absenci a slabší výsledky. Rodiče by měli zejména ověřit, jak konkrétně tyto nedostatky škola řeší."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "V obou sledovaných školních letech byla u maturitních oborů 100% úspěšnost.",
+        "key_numbers": [
+          "Zahradnictví: 105 žáků; Přírodovědné lyceum: 98 žáků.",
+          "Maturitní obory: 100% úspěšnost ve školních letech 2023/2024 i 2024/2025.",
+          "Prodavač: 93,3% v roce 2023/2024 a 100% v roce 2024/2025; Zahradník: 84,2% a 88,2%."
+        ],
+        "evidence": "„Žáci oborů ukončených maturitní zkouškou ve školních letech 2023/2024 a 2024/2025 dosahovali 100% úspěšnosti.“"
+      },
+      "absence": {
+        "trend": "Zpráva neuvádí číselný vývoj absence, ale spojuje vysokou absenci s podprůměrnými výsledky části žáků.",
+        "key_numbers": [
+          "Ve druhém pololetí 2023/2024 neprospělo 23 žáků; 60% studium ukončilo.",
+          "Ve druhém pololetí 2024/2025 neprospělo 18 žáků; 45% studium ukončilo.",
+          "Vysokou absenci má část žáků; přesný počet ani podíl nejsou uvedeny."
+        ],
+        "evidence": "„Podprůměrné výsledky, což zároveň koresponduje s jejich vysokou absencí.“"
+      },
+      "support_services": [
+        "Poradenské služby: „Žákům je k dispozici možnost osobního kontaktu se členy poradenských služeb i s vedením školy.“",
+        "Doučování: „V případě jejich zájmu poskytuje pomoc zejména prostřednictvím individuálních konzultací a doučování.“",
+        "Školní psycholog: „Vzhledem ke zhoršujícímu psychickému stavu žáků škola hledá způsoby, jak zajistit spolupráci se školním psychologem.“",
+        "Kariérové poradenství: „Škola zajišťuje kariérové poradenství“ ve spolupráci s oborovými svazy, odborníky z praxe a Úřadem práce."
+      ],
+      "safety_climate": [
+        "„Míra úrazovosti je na nižší úrovni než celostátní průměr.“",
+        "„Nejčastějšími příčinami úrazů jsou poranění vzniklá při praktickém vyučování.“",
+        "„Škola pravidelně hodnotí rizika, opakovaně poučuje žáky a důsledně eviduje úrazy.“",
+        "„Výuka probíhala v souladu se zásadami bezpečnosti a ochrany zdraví při práci.“"
+      ],
+      "partnerships_practice": [
+        "„Výrazná je její spolupráce se Svazem zakládání zeleně, Svazem květinářů a floristů, Svazem sadařství a ovocnářství, se Zelinářskou unií a s vysokými školami.“",
+        "„Časté jsou také přednášky a workshopy vedené odborníky z praxe a z vysokých škol.“",
+        "„Mimoškolní činnost zahrnuje biologický a meristematický kroužek a školní divadlo.“"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text používá srozumitelné běžné výrazy, stručně odděluje silné stránky od nedostatků a uvádí konkrétní oporu v citacích.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesné číselné údaje o absenci ani její změně mezi školními lety.",
+        "Zpráva neuvádí výsledky jednotlivých školních tříd, takže je nelze přesně porovnat.",
+        "Uvedené údaje o neprospění a úspěšnosti jsou za celou školu, nikoli za konkrétní obor v každém roce."
+      ]
+    }
+  }
+}

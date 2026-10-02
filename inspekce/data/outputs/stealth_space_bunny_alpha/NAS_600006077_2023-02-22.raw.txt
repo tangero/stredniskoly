@@ -1,0 +1,104 @@
+{
+  "report_id": "NAS_600006077_2023-02-22",
+  "school_profile": {
+    "school_type": "Církevní střední škola s obory Ošetřovatel a Pečovatelské služby, DDM, domovem mládeže a školní jídelnou",
+    "inspection_period": "22. 2. 2023 – 27. 2. 2023",
+    "school_change_summary": "Od inspekce v roce 2016 se změnil název školy i nabídka oborů, vzrostla naplněnost z 56 % na 87 %, počet tříd, žáků i pedagogů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Atmosféra a podpora",
+        "detail": "Výuka probíhá v přátelském prostředí s respektujícím a podporujícím přístupem pedagogů.",
+        "evidence": "„Převládala frontální výuka“; „Sledované praktické vyučování bylo realizováno na výborné úrovni.“"
+      },
+      {
+        "tag": "Praktická příprava",
+        "detail": "Praktické vyučování klade důraz na dovednosti, pracovní návyky, bezpečnost a propojení teorie s praxí.",
+        "evidence": "„Upevňovali si správné pracovní návyky a osvojovali si potřebné pracovní postupy.“"
+      },
+      {
+        "tag": "Podpora rozdílných potřeb",
+        "detail": "Škola věnuje pozornost žákům s odlišnými vzdělávacími potřebami a poskytuje poradenské služby.",
+        "evidence": "„Velká míra obsahové a časové diferenciace výuky vzhledem k rozdílným vzdělávacím potřebám žáků.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Absence",
+        "detail": "Vysoká míra absence a neomluvených hodin zůstává významným problémem školy.",
+        "evidence": "„Nadále přetrvává vysoká míra absence i neomluvených hodin.“"
+      },
+      {
+        "tag": "Zapojení žáků",
+        "detail": "V části hodin se žáci méně zapojovali a chybělo jim dostatečné hodnocení vlastního výkonu i práce vrstevníků.",
+        "evidence": "„Většinou nevyužívali formativní funkci hodnocení“ a „nechyběly náročnější formy sebereflexe“."
+      },
+      {
+        "tag": "Hospodářské posouzení",
+        "detail": "U části vyučovacích hodin inspekce zaznamenala pasivitu žáků a metodické nedostatky.",
+        "evidence": "„Některé méně účinné didaktické postupy a dílčí metodické nedostatky“ vedly k pasivitě jednotlivců."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola konkrétně řeší vysokou absenci a neomluvené hodiny?",
+      "Jak často se žáci během výuky hodnotí navzájem a posuzují vlastní výkon?",
+      "Kolik praktických hodin a na kterých pracovištích probíhá výuka obou oborů?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří hledají obor Ošetřovatel nebo Pečovatelské služby a mají zájem o praktickou přípravu.",
+      "Žákům, kterým vyhovuje podporující a respektující přístup pedagogů.",
+      "Žákům, kteří mají zájem o hodnotové vzdělávání a pravidelnou zájmovou činnost."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří potřebují mimořádně nízkou absenci, protože škola tento problém stále neřeší dostatečně.",
+      "Žákům, kterým vyhovuje více samostatné a kooperativní práce, protože převládá frontální výuka.",
+      "Rodičům, kteří nejsou připraveni na křesťanské vzdělávání a pravidelné hodnotové působení školy."
+    ],
+    "plain_czech_summary": "Škola nabízí tříleté obory Ošetřovatel a Pečovatelské služby, doplněné DDM, domovem mládeže, jídelnou a ubytováním. Inspekce ocenila přátelskou atmosféru, individuální přístup, kvalitní praktické vyučování a podporu žáků s různými potřebami. U oboru Ošetřovatel dosáhli žáci 100% úspěšnosti závěrečné zkoušky, přibližně třetina s vyznamenáním. Hlavním problémem je vysoká absence a neomluvené hodiny. V části teoretické výuky se podle inspekce žáci méně zapojovali a učitelé mále využívali sebereflexi a formativní hodnocení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Ve sledovaném období zkoušku zatím konali pouze žáci oboru Ošetřovatel; žáci oboru Pečovatelské služby měli první závěrečnou zkoušku až ve školním roce 2023/2024.",
+      "key_numbers": [
+        "100% úspěšnost závěrečné zkoušky u oboru Ošetřovatel",
+        "Přibližně třetina žáků oboru Ošetřovatel prospěla s vyznamenáním",
+        "78 žáků ve 5 třídách"
+      ],
+      "evidence": "„Ve sledovaném období konali závěrečnou zkoušku zatím pouze žáci oboru Ošetřovatel, v níž dosáhli stoprocentní úspěšnosti“."
+    },
+    "absence": {
+      "trend": "Absence je dlouhodobým problémem; přestože škola uplatňuje pravidla prevence, vysoká míra absence i neomluvených hodin přetrvává.",
+      "key_numbers": [
+        "Vysoká míra absence podle závěrů inspekce",
+        "Neomluvené hodiny se stále vyskytují v nezanedbatelném počtu",
+        "Inspekce doporučila zlepšit účinnost pravidel ke snižování absence"
+      ],
+      "evidence": "„Škola se dlouhodobě potýká s vyšší mírou absence žáků, a to včetně nezanedbatelného počtu neomluvených hodin.“"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště poskytuje podporu podle individuálních potřeb žáků.",
+      "Škola nabízí konzultace, doučování, respektování doporučení poradenských zařízení a úpravu podmínek při ukončování studia.",
+      "Podporu zajišťují také preventivní mechanismy, besedy, semináře a spolupráce s externími organizacemi."
+    ],
+    "safety_climate": [
+      "Ve vyučování žáci používali vhodný pracovní oděv a ochranné pomůcky.",
+      "Respektovali zásady bezpečnosti a ochrany zdraví.",
+      "Škola dbá o bezpečné prostředí, celodenní recepci a ochranu majetku."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje se školním poradenským pracovištěm, pedagogicko-psychologickou poradnou a zřizovatelem.",
+      "Má kontakty s občanskými sdruženími, neziskovými organizacemi a subjekty zajišťujícími odbornou praxi.",
+      "Praktická výuka propojuje teorii s praxí a připravuje žáky na profesní uplatnění."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou srozumitelné, věcně opřené o text zprávy a zaměřené na rozhodování rodičů.",
+    "uncertainty_notes": [
+      "Inspekční zpráva uvádí trend výsledků, ale nepodává úplné srovnání výsledků obou oborů za delší období.",
+      "Pro klíčová čísla nejsou uvedeny přesné hodnoty absence, proto je zpráva popisuje kvalitativně.",
+      "Údaje o přijímání a úspěšnosti závěrečných zkoušek se vztahují k období inspekce a uvedeným oborům."
+    ]
+  }
+}

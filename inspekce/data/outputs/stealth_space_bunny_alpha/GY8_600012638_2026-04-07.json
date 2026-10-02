@@ -1,0 +1,116 @@
+{
+  "report_id": "GY8_600012638_2026-04-07",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:20:39.747396+00:00",
+  "run_finished_utc": "2026-10-02T16:21:21.785378+00:00",
+  "raw_file": "GY8_600012638_2026-04-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600012638_2026-04-07",
+    "school_profile": {
+      "school_type": "Gymnázium, Turnov, Jana Palacha 804, příspěvková organizace",
+      "inspection_period": "7.–10. 4. 2026",
+      "school_change_summary": "Poradenský tým se od září 2025 obměnil a navázal na své předchůdce; škola nově umožňuje jazykové certifikáty a zkoušky Advanced Placement."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Maturitní výsledky",
+          "detail": "Patří k hlavním přednostem školy, protože žáci dosahují dlouhodobě nadprůměrných výsledků.",
+          "evidence": "„Výsledky žáků u maturitní zkoušky jsou silnou stránkou školy.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí poradenství, preventivní program a podporu nadaným žákům.",
+          "evidence": "Poradenskou péči poskytují „žákům nadaným či talentovaným prostřednictvím plánů pedagogické podpory“."
+        },
+        {
+          "tag": "Příprava na studium",
+          "detail": "Většina absolventů pokračuje na vysoké škole a kariérní poradenství je hodnoceno jako příkladné.",
+          "evidence": "„95–100 %“ absolventů pokračuje „na některé z vysokých škol“."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Individuální přístup",
+          "detail": "Některé úlohy se obtížně přizpůsobují schopnostem jednotlivých žáků.",
+          "evidence": "„Přetrvávají rezervy v cíleném přizpůsobování úloh žákům podle jejich kognitivní náročnosti a individuálních schopností.“"
+        },
+        {
+          "tag": "Uplatňování opatření",
+          "detail": "Některá přijatá opatření se podle inspekce dosud neprojevují v každé vyučovací hodině.",
+          "evidence": "„Některá přijatá opatření ve výuce“ se „zatím plně neprojevují“."
+        },
+        {
+          "tag": "Závěry hodin",
+          "detail": "V řadě předmětů chybí pravidelné vyhodnocení cílů, shrnutí a sebereflexe žáků.",
+          "evidence": "„Učitelé obvykle stanovili téma“; formativní hodnocení či sebereflexe se vyskytovaly „pouze v minimální míře“."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé během běžné hodiny přizpůsobují náročnost úloh slabším i nadaným žákům?",
+        "Jak často probíhá závěrečné vyhodnocení hodiny a osobní zpětná vazba žákovi?",
+        "Jaké konkrétní výsledky přinesly nové jazykové certifikáty, zkoušky Advanced Placement a obměna poradenského týmu?"
+      ],
+      "who_school_fits": [
+        "Žákům s velmi dobrými studijními předpoklady, protože přijímací zkouška tvoří 83 % hodnocení uchazečů.",
+        "Žákům, kteří chtějí gymnaziální vzdělávání směřující k následnému studiu na vysoké škole.",
+        "Žákům se zájmem o soutěže, projekty, jazykové certifikáty nebo obory rozšiřující běžné gymnaziální vzdělávání."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče žáků, kteří potřebují pravidelné individuální přizpůsobování výuky, protože diferenciace dosud není dostatečně rozvinutá.",
+        "Rodiče žáků, kterým záleží na pravidelném závěrečném hodnocení a sebereflexi, protože tyto prvky nejsou v každé hodině dostatečně zastoupeny.",
+        "Rodiče náročné na průběžné hodnocení účinku přijatých nápravných opatření, protože inspekce zjistila rezervy v jejich praktickém uplatňování."
+      ],
+      "plain_czech_summary": "Škola má velmi dobré výsledky u maturit a žáci obvykle pokračují na vysoké školy. Nabízí kvalifikované učitele, poradenství, prevence, kariérní podporu i aktivity pro nadané žáky. Výuka českého jazyka a literatury je hodnocena jako velmi dobrá, cizí jazykové konverzace jsou silné. Mezi hlavní nedostatky patří málo individuálně upravených úloh a málo závěrečného hodnocení hodin. Některá přijatá opatření se podle inspekce zatím nepromítají do praxe."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě nadprůměrná úspěšnost v celorepublikovém srovnání.",
+        "key_numbers": [
+          "Ve společné části neúspěšnost 0 %.",
+          "V profilové části průměrná neúspěšnost 0,6 % proti 1,6 % v ČR.",
+          "Cizí jazyk ve společné části volilo 95 % žáků, matematiku 5 %."
+        ],
+        "evidence": "Ve společné části „uspěli v posledních třech zkušebních letech všichni žáci“, v profilové části „neuspěl jediný žák“."
+      },
+      "absence": {
+        "trend": "Ve sledovaných třech školních letech byla absence relativně nízká a průměrovala 58,6 zameškané hodiny na žáka ročně.",
+        "key_numbers": [
+          "Průměr 58,6 zameškané hodiny na žáka za rok.",
+          "Všechna absence byla omluvená.",
+          "Průměrně 1 % žáků, tedy 3–4 žáci ročně, přestoupilo na jinou školu."
+        ],
+        "evidence": "Absence činila „v průměru 58,6 zameškaných hodin na žáka za rok“ a „veškerá absence byla ve sledovaném období omluvená“."
+      },
+      "support_services": [
+        "Výchovná poradkyně, školní metodik prevence, kariérová poradkyně a školní psycholožka.",
+        "Plány pedagogické podpory pro nadané a talentované žáky.",
+        "Systémová spolupráce se školskými poradenskými zařízeními a rodičeli.",
+        "Prevence návykových látek, šikany, bezpečného používání internetu a podpora duševního zdraví.",
+        "Kariérní den pořádaný pro předposlední ročník v reálném prostředí institucí, podniků a firem."
+      ],
+      "safety_climate": [
+        "Výuka probíhala v příznivém edukačním klimu založeném na vzájemném respektu.",
+        "Učitelé přistupovali k žákům profesionálně a převážla pozitivní motivace.",
+        "Objekt je účelně zabezpečen a v hodinách tělesné výchovy se klade důraz na bezpečnost."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s externími organizacemi a odborníky v oblasti prevence a duševního zdraví.",
+        "Kariérní den se odehrává v reálném prostředí institucí, podniků a firem.",
+        "Se školou Fan v Turnově umožňuje přípravu a skládání zkoušek Cambridge B2 First a C1 Advanced.",
+        "Absolventi poskytují studentům vyšších ročníků zkušenosti ze studia na vysokých školách."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulován srozumitelně, stručně a bez úřednických obratů; důležité závěry jsou opřeny o citace ze zprávy.",
+      "uncertainty_notes": [
+        "Zpráva uvádí průměrnou absenci za tři školní roky, ale neznázorňuje její vývoj po jednotlivých letech.",
+        "Zpráva neuvádí konkrétní rozměry jednotlivých tříd, ačkoli celkově uvádí 354 žáků a kapacitu 450.",
+        "Není uvedeno přesné rozložení žáků podle jednotlivých studijních oborů v každé třídě."
+      ]
+    }
+  }
+}

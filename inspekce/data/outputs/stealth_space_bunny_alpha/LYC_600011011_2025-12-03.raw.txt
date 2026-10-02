@@ -1,0 +1,100 @@
+{
+  "report_id": "LYC_600011011_2025-12-03",
+  "school_profile": {
+    "school_type": "střední škola a školní jídelna",
+    "inspection_period": "3. 12. 2025 – 5. 12. 2025",
+    "school_change_summary": "Škola ukončila vzdělávání v oborech Veřejnosprávní činnost, Chemik a Ekologie a životní prostředí; v oboru Sociální činnost ve školním roce 2025/2026 nevzdělávala žádného žáka. Počet žáků se zvýšil v Ekonomickém lyciu a snížil v oboru Elektromechanik. Škola nově poskytuje služby školního psychologa."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborné a jazykové kompetence",
+        "detail": "Partnerství, zahraniční spolupráce, certifikáty a odborné aktivity rozvíjejí jazykové a odborné dovednosti žáků.",
+        "evidence": "Široká síť partnerů, zahraniční spolupráce a projektová činnost podporují rozvoj odborných a jazykových kompetencí."
+      },
+      {
+        "tag": "Praktická výuka",
+        "detail": "Škola propojuje teorii s praxí a žákům nabízí exkurze, projekty, soutěže a zapojení do fiktivních firem.",
+        "evidence": "Škola systematicky propojuje teoretickou výuku s praktickými činnostmi a rozvíjí finanční gramotnost."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Poradenské služby, doučování, kariérové poradenství a materiálová podpora pomáhají žákům dosahovat dobrých výsledků.",
+        "evidence": "Efektivnost opatření k předcházení neúspěšnosti dokládá nízký počet žáků, kteří na konci školního roku neprospějí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Individuální přístup",
+        "detail": "Ve většině předmětů se podle inspekce málo využívá individualizace a diferenciace úkolů podle potřeb žáků.",
+        "evidence": "Pedagogové většinou respektovali pracovní tempo žáků, individualizaci a diferenciaci zadávaných úkolů podle individuálních potřeb žáků však nevyužívali."
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Ve vyučování přetrvávají nedostatky v účinné zpětné vazbě, sebereflexi a rozvoji hodnoticích dovedností žáků.",
+        "evidence": "Ve výuce nadále přetrvává nízká míra vedení žáků k sebereflexi a vrstevnickému hodnocení."
+      },
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Výsledky Ekonomického lycea a společné části maturitní zkoušky jsou v některých oborech horší než republikový průměr.",
+        "evidence": "V oboru Ekonomické lyceum jsou výsledky stále pod republikovým průměrem; v roce 2025 činila neúspěšnost 13 %."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se ve vyučování projevuje individualizace a diferenciace úkolů pro žáky s různými potřebami?",
+      "Jaké konkrétní výsledky a podporované aktivity může škola nabídnout v oboru Ekonomické lyceum a v oboru Elektromechanik?",
+      "Jak často žáci využívají školního psychologa, doučování, kariérové poradenství a přípravné kurzy k maturitě?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat obchodní akademii, ekonomické lyceum, agropodnikání nebo elektromechaniku.",
+      "Žákům, kteří mají zájem o praktické projekty, exkurze, certifikáty a propojení školní výuky s praxí.",
+      "Žákům, kteří využijí doučování, poradenství, kariérové podpory a široké mimoškolní aktivity."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří očekávají pravidelnou individualizaci úkolů a systematické vedení k sebereflexi.",
+      "Rodiče žáků Ekonomického lycea, kteří chtějí mezinárodní srovnání výsledků maturity s republikovým průměrem.",
+      "Rodiče, kteří hledají obor Sociální činnost, Veřejnosprávní činnost, Chemik nebo Ekologie a životní prostředí; tyto obory škola již nenabízí."
+    ],
+    "plain_czech_summary": "Škola má dobré materiální vybavení, kvalifikované pedagogy, poradenské služby i širokou síť partnerů. Výuka odborných předmětů často propojuje teorii s praxí a žáci mohou získávat jazykové a odborné certifikáty. Výsledky jsou celkově dobré, včetně maturity, ale u Ekonomického lycea jsou stále pod republikovým průměrem. Významným nedostatkem je málo individualizace a diferenciace úkolů, slabší zpětná vazba a omezené vedení k sebereflexi. Rodiče by měli na dni otevřených dveří ověřit konkrétní přístup učitelů k jednotlivým žákům a podporu v jejich oboru."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Částečné zlepšení výsledků; v oboru Agropodnikání se výsledky zlepšily výrazněji, u Ekonomického lycea jen mírně a stále pod republikovým průměrem.",
+      "key_numbers": [
+        "Ve zkušebním období 2025 byla hrubá neúspěšnost společné části 16,7 % v Agropodnikání, 0 % v Obchodní akademii a 13 % v Ekonomickém lyciu.",
+        "V profilové části maturitní zkoušky uspěli všichni žáci.",
+        "Ve školním roce 2024/2025 neprospělo přibližně 1,7 % žáků."
+      ],
+      "evidence": "Škola posílila hodinovou dotaci v maturitních předmětech, zavádí ověřovací testy, modelové didaktické testy a generální maturitu."
+    },
+    "absence": {
+      "trend": "Inspekční zpráva neuvádí vývoj absence ani konkrétní ukazatele absence.",
+      "key_numbers": [],
+      "evidence": "V hodnocení výsledků vzdělávání inspekce neuvádí údaje o absentismu."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště poskytuje výchovné, kariérové, preventivní a psychologické poradenství; nově působí částečně školní psycholožka.",
+      "Škola poskytuje konzultace, individuální a skupinové doučování a spolupráci se zákonnými zástupci.",
+      "Od třetího ročníka probíhají individuální kariérové pohovory ve formě „kulaté stoly na téma kariéra“."
+    ],
+    "safety_climate": [
+      "V hospitovaných hodinách českého a cizích jazyků panovala příjemná pracovní atmosféra založená na vzájemném respektu.",
+      "Škola klade důraz na prosociální vztahy v třídních kolektivech, třídnické hodiny, adaptační pobyty a program Prevence.",
+      "Škola se pravidelně zapojuje do projektu České panelové šetření středoškoláků a nově také do programu DofE."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s řadou partnerů, zahraničními subjekty, úřadem práce, profesními organizacemi a dalšími vzdělávacími institucemi.",
+      "Žáci se pravidelně účastní odborných exkurzí, vysokoškolských akcí, veletrhů a charitativních aktivit.",
+      "Škola pořádá setkání s absolventy, připravuje odborné přednášky a umožňuje získávat jazykové a odborné certifikáty."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá srozumitelnou češtinu, stručně odděluje silné stránky, rizika, fakta a doporučované otázky pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní údaje o absenci žáků.",
+      "Není uvedeno přesné rozložení žáků podle jednotlivých oborů.",
+      "Není uvedeno, jaké konkrétní opatření škola přijala po obdržení této zprávy."
+    ]
+  }
+}

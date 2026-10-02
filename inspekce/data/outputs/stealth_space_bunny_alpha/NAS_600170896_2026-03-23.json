@@ -1,0 +1,113 @@
+{
+  "report_id": "NAS_600170896_2026-03-23",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:24:56.256668+00:00",
+  "run_finished_utc": "2026-10-02T16:25:20.127273+00:00",
+  "raw_file": "NAS_600170896_2026-03-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "NAS_600170896_2026-03-23",
+    "school_profile": {
+      "school_type": "Střední škola, domov mládeže a školní jídelna–výdejna; příspěvková organizace",
+      "inspection_period": "23.–26. 3. 2026",
+      "school_change_summary": "Od minulé inspekce vzrostl počet žáků o 14 % a počet tříd o 15 %; škola také zahájila výstavbu nového centra odborného vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vzdělávání",
+          "detail": "Praktická výuka žáky dobře připravuje na konkrétní práci a rozvoj profesních dovedností.",
+          "evidence": "„Praktická výuka tvoří pevný most mezi školou a budoucí profesní dráhou absolventů.“"
+        },
+        {
+          "tag": "Domov mládeže",
+          "detail": "Domov mládeže nabízí ubytovaným žákům kvalitní zázemí, sportovní vybavení a bezpečné volnočasové aktivity.",
+          "evidence": "Domov mládeže má kvalitní zázemí, nadstandardní sportovní infrastrukturu a bezpečné využití volného času."
+        },
+        {
+          "tag": "Absolventi s výučním listem",
+          "detail": "U oborů s výučním listem dosahují žáci dlouhodobě vysoké úspěšnosti u závěrečných zkoušek.",
+          "evidence": "„Úspěšnost žáků u závěrečných zkoušek činila přibližně 95 %.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Matematika a maturita",
+          "detail": "U oboru Požární ochrana je slabým místem matematika, kde je neúspěšnost výrazně vyšší než celostátní průměr.",
+          "evidence": "„Matematika s hrubou neúspěšností 43,8 % (celostátně 20,5 %).“"
+        },
+        {
+          "tag": "Teoretická výuka",
+          "detail": "Výuka je často příliš frontální a málo podporuje samostatnost, sebereflexi a práci s informacemi.",
+          "evidence": "„Výuka byla převážně vedena frontálně s dominantní rolí učitele.“"
+        },
+        {
+          "tag": "Podpora a klima",
+          "detail": "Poradenské služby a nástroje pro včasné zachycení problémů žáků mají podle inspekce rezervy.",
+          "evidence": "„V poradenských službách školy se objevují rezervy v chybějícím prokazatelném vyhodnocování plánů pedagogické podpory.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní podpůrné mechanismy má škla k dispozici pro žáky se speciálními vzdělávacími potřebami?",
+        "Jak často žáci dostávají zpětnou vazbu o dosažených cílech a jak se do hodnocení zapojují sami?",
+        "Jaké výsledky má škla v matematice a jaké konkrétní kroky podniká pro její zlepšení?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat maturitní obor Požární ochrana.",
+        "Žákům, kteří hledají prakticky zaměřené učební obory s výučním listem.",
+        "Žákům, kteří využijí ubytování, sportovní aktivity a propojení teorie s praxí."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na výrazně samostatnější a aktivnější přípravě v teoretických předmětech.",
+        "Rodičům žáků, kteří potřebují velmi strukturovanou podporu při matematice nebo při odlišných studijních předpokladech.",
+        "Uchazečům, kteří očekávají vlastní školní hřiště pro specifický nácvik požárního sportu."
+      ],
+      "plain_czech_summary": "Škola nabízí jeden maturitní obor, sedm učebních oborů a nástavbové studium Podnikání. Velmi silná je praktická výuka a spolupráce s partnery; žáci s výučním listem dosahují přibližně 95% úspěšnosti závěrečných zkoušek. Výuka je ale často frontální, málo se pracuje se samostatností, sebereflexí a analýzou informací. V oboru Požární ochrana je největší slabinou matematika, kde je neúspěšnost 43,8 %. Výsledky u maturit se celkově zlepšují. Rodiče by měli zjistit, jak funguje podpora žáků, hodnocení práce a práce s problémy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky žáků u maturitních zkoušek se od minulé inspekce zlepšují; zůstává však vysoká neúspěšnost v matematice u Požární ochrany.",
+        "key_numbers": [
+          "Neúspěšnost u Podnikání 27,1 %, celostátní průměr 27,3 %.",
+          "Neúspěšnost u Požární ochrany 13,9 %, celostátně 9,8 %.",
+          "Neúspěšnost v matematice u Požární ochrany 43,8 %, celostátně 20,5 %."
+        ],
+        "evidence": "„Výsledky žáků u maturitních zkoušek vykazují od poslední inspekce jisté zlepšení.“"
+      },
+      "absence": {
+        "trend": "Docházka se zlepšila: celková absence od minulé inspekce klesla přibližně o 20 %.",
+        "key_numbers": [
+          "Průměrná absence 143 hodin na žáka za školní rok.",
+          "Neomluvená absence v průměru 4,3 hodiny na žáka.",
+          "Celková míra absence snížena přibližně o 20 % od roku 2023."
+        ],
+        "evidence": "„Snížit celkovou míru absence žáků o přibližně 20 %.“"
+      },
+      "support_services": [
+        "Škola evidovala 38 žáků se speciálními vzdělávacími potřebami a 24 žáků s odlišným mateřským jazykem.",
+        "Probíhá průběžné sledování výsledků, individualizovaná podpora a informování rodičů přes elektronický informační systém.",
+        "Inspekce doporučuje posílit personální zajištění poradenských služeb o školního psychologa a zavést online schránku důvěry."
+      ],
+      "safety_climate": [
+        "Ve sledované výuce vznikalo bezpečné klima založené na respektování pravidel, pochvale a pozitivní motivaci.",
+        "Domov mládeže podporuje dobré prosociální vztahy, otevřenost a bezpečné prostředí pro aktivity.",
+        "Škola pravidelně seznamuje žáky s bezpečnostními pravidly a analyzuje provozní rizika."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s integrovanými záchrannými složkami, armádou a partnerskou školou v Löbau.",
+        "Spolupráce se společností Detesk umožňuje žákům Podnikání poznat moderní technologie a zúčastnit se exkurzí do Itálie či Francie.",
+        "Žáci navštěvují Českou národní banku, Parlament ČR a Evropský parlament a účastní se odborných kurzů."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výklad je strukturovaný, formulace jsou srozumitelné a důležitá zjištění jsou opřena o citace ze zprávy.",
+      "uncertainty_notes": [
+        "Zpráva uvádí výsledky za dvě uzavřená školní léta, nikoli za jediný školní rok.",
+        "Neúspěšnost maturitních zkoušek je uvedena jako hrubá neúspěšnost, takže neznamená podíl studentů, kteří celou zkoušku neabsolvovali.",
+        "U některých doporučení inspekce uvádí budoucí zlepšení, nikoli výsledek jejich realizace."
+      ]
+    }
+  }
+}

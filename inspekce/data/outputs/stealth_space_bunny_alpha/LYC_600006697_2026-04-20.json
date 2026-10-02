@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_600006697_2026-04-20",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:17:20.079190+00:00",
+  "run_finished_utc": "2026-10-02T16:18:03.681839+00:00",
+  "raw_file": "LYC_600006697_2026-04-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600006697_2026-04-20",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola",
+      "inspection_period": "20. 4. až 22. 4. 2026",
+      "school_change_summary": "Škola rozšířila nabídku o obor Informační technologie a Erasmus+, zmodernizovala učebny i dílny a vytvořila žákovský parlament. Počet žáků se výrazně zvýšil; zpráva neuvádí přesnou hodnotu změny."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Škola má dobře vybavené počítačové učebny, dílny a techniku pro robotiku či kybernetickou bezpečnost.",
+          "evidence": "Pořízeny obráběcí stroje, nové počítačové sestavy, 3D tiskárny a prostředky pro výuku robotiky, automatizace a kybernetické bezpečnosti."
+        },
+        {
+          "tag": "Praxe a projekty",
+          "detail": "Odborná příprava je propojena s partnery, praxí, projektovými aktivitami a zahraničními stážemi.",
+          "evidence": "Spolupráce s profesními partnery propojuje teoretické a praktické vzdělávání; žáci absolvují odborné stáže ve Slovinsku a Španělsku."
+        },
+        {
+          "tag": "Podpora v domově mládeže",
+          "detail": "Ubytovaným žákům poskytuje prostředí podporu včetně pomoci s přípravou, duševním zdravím a volnočasovými aktivitami.",
+          "evidence": "Vychovatelé poskytují individuální pomoc; systematická péče a podpora duševního zdraví přispívají k bezpečnému prostředí."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Převládající frontální výuka",
+          "detail": "Ve výuce jsou žáci méně zapojováni do diskuse, spolupráce a samostatného řešení problémů.",
+          "evidence": "Převládala frontální organizace výuky; kooperativní formy byly zařazovány omezeně a aktivní zapojení žáků se objevovalo ojediněle."
+        },
+        {
+          "tag": "Omezená zpětná vazba",
+          "detail": "Část žáků může v hodnocení postrádat jasné pochopení cílů výuky, vlastního pokroku a zpětnou vazbu.",
+          "evidence": "Vzdělávací cíle nebyly v části výuky stanoveny ani vyhodnoceny; formativní hodnocení a sebehodnocení se uplatňovaly omezeně."
+        },
+        {
+          "tag": "Rozdíly podle oboru",
+          "detail": "Při volbě oboru je vhodné ověřit aktuální výsledky žáků, zejména v českém jazyce a matematice.",
+          "evidence": "Slabší výsledky se častěji objevovaly v českém jazyce a matematice; příznivější výsledky mělo Technické lyceum a Informační technologie."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá podpora žáků se SVP a žáků s odlišným mateřským jazykem?",
+        "Kolik hodin týdně se věnuje doučování, přípravě na maturitu a práci se slabším prospěchem?",
+        "Jak často žáci dostávají zpětnou vazbu a jak jsou podporováni při samostatné práci nebo při řešení obtížných úkolů?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat technicky zaměřený obor a mají zájem o praxi, projekty nebo odborné soutěže.",
+        "Žákům, kterým vyhovuje moderní technické zázemí školy a propojení teorie s odbornou výukou.",
+        "Žákům, kteří využijí možnost doučování a chtějí studovat v oboru Informační technologie nebo Technické lyceum."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče žáků, kteří potřebují především systematickou individualizaci, formativní hodnocení a práci s vyučujícími.",
+        "Rodiče žáků se slabším prospěchem v českém jazyce nebo matematice, zejména při přípravě na maturitu.",
+        "Rodiče žáků, kterým vadí převážně frontální výuka a omezené zapojení do kooperativní práce."
+      ],
+      "plain_czech_summary": "Škola nabízí technické obory, nově i Informační technologie, a má moderní učebny, dílny a podporu v domově mládeže. Výsledky maturitních oborů jsou v průběhu vzdělávání stabilní, ale přibližně třetina žáků má slabý prospěch v některém předmětu. Výuka je často frontální, žáci se méně podílejí na řešení úkolů a dostávají méně zpětné vazby. Rodiče by měli na otevřeném dni ověřit konkrétní podporu pro SVP, odlišný mateřský jazyk, doučování a přípravu na maturitu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky během studia byly stabilní; u společné části maturitní zkoušky se výsledky mezi obory lišily.",
+        "key_numbers": [
+          "Podíl prospívajících s vyznamenáním: přibližně 16 %.",
+          "Podíl neprospívajících: přibližně 3 %.",
+          "Ve společné části MZ měli všichni přihlášení žáci úspěch v matematice."
+        ],
+        "evidence": "Ve školních letech 2022/2023 až 2024/2025 byly výsledky stabilní; přibližně 16 % žáků prospívalo s vyznamenáním a 3 % neprospívalo."
+      },
+      "absence": {
+        "trend": "Zpráva uvádí hodnoty pouze za školní rok 2024/2025, takže dlouhodobý trend nelze určit.",
+        "key_numbers": [
+          "Průměrná absence v maturitních oborech: přibližně 140 hodin za školní rok.",
+          "Průměrná absence v nematuritních oborech: přibližně 200 hodin za školní rok.",
+          "Neomluvená absence byla v nízké míře."
+        ],
+        "evidence": "Ve školním roce 2024/2025 činila průměrná absence přibližně 140 a 200 hodin; neomluvená absence se vyskytovala v nízké míře."
+      },
+      "support_services": [
+        "Doučování pro předměty společné části maturitní zkoušky a odborné předměty.",
+        "Podpora žáků se SVP a pravidelné doučování českého jazyka pro žáky s odlišným mateřským jazykem.",
+        "Adaptační kurzy, třídnické hodiny a programy specifické prevence; poradenské služby zajišťují výchovná poradkyně a školní metodička prevence."
+      ],
+      "safety_climate": [
+        "Škola zajišťuje bezpečné prostředí a pravidelně poučuje žáky o bezpečnosti a ochraně zdraví.",
+        "Míra úrazovosti vykazuje klesající tendenci.",
+        "V domově mládeže je podporováno příznivé sociální klima; v odborném výcviku byly zjištěny nedostatky při používání ochranných prostředků na frézce."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s profesními partnery propojuje teoretické a praktické vzdělávání a podporuje uplatnitelnost žáků.",
+        "Spolupráce s vysokými školami se soustředí zejména na stavebnictví a podporuje další studijní směřování.",
+        "Program Erasmus+ zahrnuje odborné stáže žáků ve Slovinsku a Španělsku a zahraniční vzdělávání pedagogů."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá srozumitelný český jazyk, odděluje silné stránky od oblastí ke zlepšení a uvádí krátké důkazy ze zprávy.",
+      "uncertainty_notes": [
+        "Zpráva uvádí pouze jedinou roční hodnotu absence, proto u ní není potvrzen dlouhodobý trend.",
+        "Inspekční zpráva neuvádí přesné srovnání podílu žáků předchozí inspekční činností, pouze významné zvýšení počtu.",
+        "Otázky na otevřený den vycházejí z doporučení a slabých stránek uvedených v inspekční zprávě."
+      ]
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "report_id": "SOS_600017460_2026-04-14",
+  "school_profile": {
+    "school_type": "Střední škola a školní jídelna – výdejna",
+    "inspection_period": "14. 4. 2026–17. 4. 2026",
+    "school_change_summary": "Od roku 2018 se změnilo vedení školy, byly aktualizovány vzdělávací programy, částečně modernizovány učebny a vybavení a nabídka cizích jazyků byla rozšířena o španělštinu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praxe a odborná příprava",
+        "detail": "Škola účinně propojuje teorii s praxí a spoluprací s externími pracovišti.",
+        "evidence": "„Škola systematicky rozvíjí spolupráci s partnery podporujícími rozvoj odborných kompetencí žáků, zejména s pracovišti zajišťujícími praktické vyučování.“"
+      },
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Ve společné části maturitní zkoušky uspěli v školním roce 2024/2025 všichni zkoušející žáci.",
+        "evidence": "„Ze 79 přihlášených maturitní zkoušku nekonal pouze jeden žák. Ve společné části uspěli všichni, kteří zkoušku vykonali.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola nabízí poradenské služby, plány podpory a příležitosti pro nadané i sportovně talentované žáky.",
+        "evidence": "„Škola využívá i plány pedagogické podpory, které jsou pravidelně vyhodnocovány“ a „podporuje je v projektové činnosti a účasti na soutěžích.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Individuální přístup",
+        "detail": "Podpora žáků se speciálními potřebami závisí do značné míry na přístupu konkrétního učitele.",
+        "evidence": "„Podpora žáků se speciálními vzdělávacími potřebami se lišila podle přístupu vyučujícího a vyučovaného předmětu.“"
+      },
+      {
+        "tag": "Aktivní učení",
+        "detail": "Rozvoj kritického myšlení a práce s informacemi je ve výuce spíše výjimečný.",
+        "evidence": "„Podpora kritického myšlení a cílený rozvoj postojových kompetencí se objevovaly okrajově a nebyly systematicky plánovány.“"
+      },
+      {
+        "tag": "Třídní pravidla",
+        "detail": "Nedodržování pravidel může narušovat průběh vyučování a pracovní atmosféru.",
+        "evidence": "„Časté odchody žáků z výuky a pozdní příchody“; v některých třídách chyběla jednotná a důsledně uplatňovaná pravidla."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně podporují žáky se speciálními vzdělávacími potřebami a jak často hodnotí účinnost této podpory?",
+      "Jak často se ve vyučujících oborech objevují projekty, diskuse, práce s více zdroji a hodnocení závěrečné reflexí?",
+      "Jaká pravidla pro práci a komunikaci ve třídách jsou smluvená a kdo kontroluje jejich dodržování?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat obchodní nebo informační technologie v denní středoškolské formě.",
+      "Žákům, kterým vyhovuje propojení teoretické výuky s odbornou praxí na smluvních pracovištích.",
+      "Žákům, kteří mají zájem o jazykové certifikáty nebo certifikaci počítačových dovedností ECDL."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří potřebují pravidelnou a jednotnou individualizovanou výuku se zřetelně ověřenými výsledky.",
+      "Rodičům žáků, jimž záleží na pravidelném rozvoji kritického myšlení a samostatné práci s informacemi.",
+      "Rodičům žáků, kterým mohou vadit časté odchody z výuky nebo pozdní příchody."
+    ],
+    "plain_czech_summary": "Škola nabízí dva čtyřleté obory: informační technologie s ekonomickými základy a obchodní akademii se zaměřením na marketing, digitální technologie, účetnictví a daně. Silnou stránkou je propojení učiva s praxí, dobrá spolupráce s partnery a úspěšná maturita: „Ve společné části uspěli všichni, kteří zkoušku vykonali.“ Výsledky jsou dlouhodobě dobré, slabší jsou v matematice, fyzice, účetnictví a ekonomických předmětech. Rodiče by měli zvážit, že „diferenciace a individualizace výuky byla uplatňována jen částečně“. Podpora žáků se speciálními potřebami se podle učitele a předmětu liší. Mezi další slabiny patří málo aktivizujících metod a občasné porušování třídních pravidel, které mohou narušovat výuku."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Ve školním roce 2024/2025 se ve společné části nez nezaložl jediný neúspěch mezi 78 žáky, kteří zkoušku vykonali; ekonomické obory byly nad republikovým průměrem a informační technologie na jeho úrovni.",
+      "key_numbers": [
+        "79 žáků bylo přihlášeno k maturitní zkoušce.",
+        "78 žáků zkoušku vykonalo a všichni uspěli ve společné části.",
+        "54 žáků využilo jazykový certifikát a 50 ECDL; 54 jazykových certifikátů představuje 70 % zkoušejících."
+      ],
+      "evidence": "„Ze 79 přihlášených maturitní zkoušku nekonal pouze jeden žák“; „Ve společné části uspěli všichni, kteří zkoušku vykonali.“"
+    },
+    "absence": {
+      "trend": "Celková absence žáků ve sledovaném období mírně poklesla, přestože prospěch zůstal stabilní.",
+      "key_numbers": [],
+      "evidence": "„Ve školním roce 2024/2025 a 1. pololetí 2025/2026 je prospěch stabilní“ a celková absence „mírně poklesla“."
+    },
+    "support_services": [
+      "Poradenské služby zajišťují výchovná poradkyně, metodička prevence, školní psycholožka a třídní učitelé.",
+      "Škola využívá plány pedagogické podpory a v některých případech individuální vzdělávací plány.",
+      "Kariérové poradenství se věnuje dalšímu profesnímu či studijnímu směřování žáků."
+    ],
+    "safety_climate": [
+      "Bezpečnost podporuje elektronický vstupní systém, kamerový systém a stálá služba na recepci.",
+      "Prevence zahrnuje adaptační aktivity, sportovní kurzy, interní programy a projekty.",
+      "Jednotlivé případy rizikového chování jsou podle zprávy řešeny podle stanovených pravidel."
+    ],
+    "partnership_practice": [
+      "Škola spolupracuje s pracovišti, na kterých žáci absolvují odbornou praxi.",
+      "Spolupráce partnerů podporuje aktualizaci učiva, odbornou přípravu a uplatnění absolventů.",
+      "Škola se zapojuje do projektů Erasmus+ a spolupracuje s dalšími školami a institucemi."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou přímé, rodičovské a opřené o konkrétní pozorování z inspekční zprávy.",
+    "uncertainty_notes": [
+      "Zpráva uvádí pouze trend absence, nikoli její přesné procentní hodnoty.",
+      "Zpráva neuvádí výsledky jednotlivých předmětových maturitních zkoušek z posledního období.",
+      "Opatření školy po obdržení zprávy v době jejího zpracování uvedena nejsou."
+    ]
+  }
+}

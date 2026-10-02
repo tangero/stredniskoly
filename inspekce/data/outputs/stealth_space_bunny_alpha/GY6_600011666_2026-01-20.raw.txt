@@ -1,0 +1,104 @@
+{
+  "report_id": "GY6_600011666_2026-01-20",
+  "school_profile": {
+    "school_type": "Veřejné gymnázium se šestiletým denním studiem a maturitní zkouškou",
+    "inspection_period": "20. 1. 2026 až 22. 1. 2026",
+    "school_change_summary": "Škola zlepšuje vybavení a prohlubuje partnerství, ale podle inspekce má stále málo příležitostí pro samostatné bádání, diferencované úlohy a formativní hodnocení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Dobré výsledky a podpora talentů",
+        "detail": "Škola dlouhodobě dosahuje nadprůměrných maturitních výsledků a nabízí nadaným žákům mentorskou podporu i zahraniční pobyty.",
+        "evidence": "„Výsledky žáků v období několika předchozích let převážně nadprůměrné“; nadaným žákům je umožněna mentorská spolupráce."
+      },
+      {
+        "tag": "Přátelské klima a podpora",
+        "detail": "Rodinné prostředí, doučování, psychologické služby a podpora přiadaptaci mohou pomoci žákům zvládnout náročné studium.",
+        "evidence": "„Hospitovaná výuka probíhala v přátelské pozitivní atmosféře“; „V případě ohrožení školní neúspěšnosti má škola nastaven systém doučování.“"
+      },
+      {
+        "tag": "Zapojení žáků a zahraniční zkušenosti",
+        "detail": "Žáci se mohou zapojit do studentské rady, tvorby magazínu a podcastu a získat zkušenosti z programu Erasmus+.",
+        "evidence": "„Občanské kompetence mohou žáci uplatnit aktivním zapojením do činnosti studentské rady, Gybonoviny a školního podcastu.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezená individualizace",
+        "detail": "Ve většině hodin se úkoly málo přizpůsobují schopnostem, tempu a zájmům jednotlivých žáků.",
+        "evidence": "„Jen v malé části hodin diferencovali práci s ohledem na žáky s rozdílnými vzdělávacími možnostmi a odlišným pracovním tempem.“"
+      },
+      {
+        "tag": "Málo aktivního učení",
+        "detail": "Ve výuce převládá frontální vedení a žáci zřídka samostatně vyhledávají informace nebo bádají.",
+        "evidence": "„Převažovala frontální výuka“; „Jen ojediněle byly zaznamenány metody bádání či experimentování.“"
+      },
+      {
+        "tag": "Nedostatečné formativní hodnocení",
+        "detail": "Školní závěry nejsou vždy spojeny se sebehodnocením, vrstevnickým hodnocením nebo průběžnou zpětnou vazbou.",
+        "evidence": "„Jen ojediněle bylo zaznamenáno sebehodnocení, vrstevnické hodnocení či prvky formativního hodnocení.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé přizpůsobují úkoly nadaným žákům a žákům s podpůrnými potřebami?",
+      "Jak často probíhá vzájemná podpora učitelů a zavádění nových metod výuky?",
+      "Jaké konkrétní příklady směřování na české univerzity můžete uvést za poslední rok?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří hledají šestileté gymnaziální studium a chtějí dosahovat nadprůměrných výsledků.",
+      "Žákům, kterým vyhovuje přátelské prostředí a důraz na osobní rozvoj.",
+      "Žákům se zájmem o soutěže, projekty, zahraniční mobility nebo podporu talentů."
+    ],
+    "who_should_be_cautious": [
+      "Žákům, kteří potřebují pravidelnou výraznou individualizaci učebních úkolů.",
+      "Žákům, kteří očekávají především samostatné bádání, experimentování nebo práci s více zdroji.",
+      "Žákům, kterým nestačí podpora prostřednictvím občasných konzultací a společného hodnocení na konci hodiny."
+    ],
+    "plain_czech_summary": "Gymnázium nabízí přátelské prostředí, dobré až nadprůměrné výsledky u maturit a rozsáhlou podporu žákům, včetně doučování, psychologa, kariérového poradenství a podpory nadaných. Žáci se mohou zapojit do studentské rady, podcastu, magazínu či zahraničních pobytů. Pro rodiče je důležité vědět, že inspekce našla slabiny: učitelé méně individualizují úkoly, žáci méně samostatně bádají a hodnocení se zřídka zaměřuje na jejich sebehodnocení a okamžitou zpětnou vazbu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě dobré, v posledních letech převážně nadprůměrné výsledky",
+      "key_numbers": [
+        "Maturitní zkouška je součástí denního studia",
+        "Výsledky jsou porovnávány s obory stejného typu",
+        "Škola sleduje úspěšnost absolventů v dalším studiu"
+      ],
+      "evidence": "„Žáci školy dlouhodobě dosahují celkově dobrých výsledků u MZ“; „výsledky žáků … převážně nadprůměrné“."
+    },
+    "absence": {
+      "trend": "Konkrétní vývoj absence zpráva neuvádí",
+      "key_numbers": [
+        "Hranice tolerované absence je stanovena za klasifikační období",
+        "U nadaných žáků lze prostřednictvím individuální podpory navyšovat povolenou absenci"
+      ],
+      "evidence": "Zpráva uvádí „hranice tolerované absence ve výuce za klasifikační období“, ale neobsahuje její číselné hodnoty."
+    },
+    "support_services": [
+      "Výchovná poradkyně evidencuje žáky se speciálními vzdělávacími potřebami a koordinuje podpůrná opatření.",
+      "Školní psycholožka a metodička prevence podporují žáky i pedagogy.",
+      "Kariérová poradkyně nabízí informace o univerzitách a možnostech dalšího vzdělávání.",
+      "Pro žáky s hrozící školní neúspěšností funguje systém doučování."
+    ],
+    "safety_climate": [
+      "Ve sledované výuce převládala přátelská atmosféra a vstřícná komunikace.",
+      "Ve třídách byla zaznamenána přirozená kázeň a dodržování pravidel chování.",
+      "Škola zavádí třídnické hodiny, schránku důvěry, systém otevřených dveří a programy prevence."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje se zahraničními partnery a realizuje mobility žáků i pedagogů včetně Erasmus+.",
+      "S Klubem rodičů a přátel spolupracuje na podpoře sportovních a kulturních aktivit.",
+      "Studentská rada se podílí na evaluaci výuky a přináší podněty vedení školy."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně odděluje silné stránky od oblastí ke zlepšení a jasně vysvětluje praktický význam zjištění pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní číselné výsledky maturit.",
+      "Zpráva neuvádí číselné údaje o absenci ani její vývoj.",
+      "Zpráva neuvádí výsledky jednotlivých tříd nebo učitelů, proto závěry nelze přenést na konkrétní studijní skupinu."
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "report_id": "SOS_600171337_2026-03-16",
+  "school_profile": {
+    "school_type": "Střední škola elektrotechnická s obory vzdělání s maturitní zkouškou, tříletým oborem s výučním listem, školní jídelnou a domovem mládeže.",
+    "inspection_period": "16. až 19. 3. 2026",
+    "school_change_summary": "Škola rozšířila poradenský tým o školní psycholožku, ale opatření z předchozí inspekce byla provedena jen částečně."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná praxe",
+        "detail": "Škola dobře spolupracuje s partnery a žáci se zapojují do soutěží i projektů na národní a mezinárodní úrovni.",
+        "evidence": "„Rozvinutá spolupráce s externími partnery… aktivní zapojování žáků do soutěží a projektů.“"
+      },
+      {
+        "tag": "Vybavení",
+        "detail": "Pro prakticky zaměřené odborné vzdělávání má škola velmi dobré zázemí, včetně moderně vybavených pracovišť.",
+        "evidence": "„Velmi dobré materiálně-technické zázemí pro odborné vzdělávání, včetně moderně vybavených pracovišť.“"
+      },
+      {
+        "tag": "Angličtina",
+        "detail": "Výuka angličtiny podporovala komunikaci žáků a přispívala k příznivějším výsledkům v oblasti maturity.",
+        "evidence": "„Výuka anglického jazyka účinně podporovala rozvoj jazykové komunikace žáků.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Výuka",
+        "detail": "Ve výuce převažuje frontální způsob práce, který omezuje aktivní zapojení, samostatné uvažování a práci s chybou.",
+        "evidence": "„Ve sledované výuce převažovala frontální forma práce…“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Podpora žáků se speciálními vzdělávacími potřebami není dostatečně individualizovaná ani propojená s konkrétními doporučeními.",
+        "evidence": "„Diferenciace výuky… byla ve sledovaných vyučovacích hodinách uplatňována pouze v omezené míře.“"
+      },
+      {
+        "tag": "Ukončení studia",
+        "detail": "Výsledky u maturit a závěrečné zkoušky jsou nevyrovnané a přijatá opatření zatím nejsou dostatečně účinná.",
+        "evidence": "„Přijatá opatření ke zlepšení výsledků vzdělávání žáků… zatím nejsou dostatečně účinná.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá podpora žáků se speciálními vzdělávacími potřebami v jednotlivých předmětech?",
+      "Kolik hodin týdně mají čtvrté ročníky věnováno přípravě na matematiku, český jazyk a literaturu?",
+      "Jak často žáci dostávají konkrétní zpětnou vazbu a přístupují k práci s chybou místo pouhého hodnocení správnosti?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí střední odborné vzdělání s vazbou na praktickou výuku a soutěže.",
+      "Uchazečům o obory Informační technologie, Elektrotechnika nebo Mechanik elektrotechnik.",
+      "Žákům, kterým vyhovuje denní forma studia a dostupnost domova mládeže či školní jídelny."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří potřebují intenzivní individuální podporu při učení.",
+      "Rodičům žáků se speciálními vzdělávacími potřebami, kteří chtějí mít jistotu pravidelně přizpůsobené výuky.",
+      "Rodičům žáků, jimž záleží na průměrných výsledcích školy u maturit a závěrečné zkoušky."
+    ],
+    "plain_czech_summary": "Škola má kvalitní odborné vybavení, partnerskou spolupráci a možnost účastnit se projektů či soutěží. Výuka angličtiny působí dobře. Hlavní slabiny jsou převládající frontální výuka, omezená samostatná práce žáků, málo formativního hodnocení a nedostatečná individualizace. Výsledky maturity jsou horší než obdobný průměr v některých oborech a u závěrečné zkoušky v oboru Elektrikář se závěrečná neúspěšnost zvýšila na 46 %. Podpora žáků ohrožených neúspěchem nebo se speciálními vzdělávacími potřebami není dostatečně systematická. Rodiče by měli na otevřeném dni ověřit konkrétní podporu ve vzdělávání, přípravu k maturitě a zpětnou vazbu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky jsou kolísavé; v oboru Elektrotechnika se hrubá neúspěšnost zlepšila po výrazném zhoršení v roce 2024.",
+      "key_numbers": [
+        "Elektrotechnika: hrubá neúspěšnost vzrostla z 7 % v roce 2023 na 40 % v roce 2024 a klesla na 19 % v roce 2025.",
+        "Informační technologie: hrubá neúspěšnost byla 11 % v roce 2023, 18 % v roce 2024 a 11 % v roce 2025.",
+        "Mechanik elektrotechnik: hrubá neúspěšnost vzrostla z 18 % na 20 % v roce 2025."
+      ],
+      "evidence": "„V oborech Elektrotechnika a Mechanik elektrotechnik dosahovala škola… horších výsledků, a to v roce 2024 a 2025.“"
+    },
+    "absence": {
+      "trend": "Dodaný text neuvádí číselný trend ani aktuální míruabsence.",
+      "key_numbers": [],
+      "evidence": "Záznamy pedagogické rady podle zprávy zahrnují „statistické vyhodnocení prospěchu, chování a absence žáků“ bez uvedených hodnot."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště zahrnuje výchovnou poradkyni, metodičku prevence a školní psycholožku.",
+      "Škola poskytuje kariérové poradenství, doučování a individuální konzultace.",
+      "Domov mládeže zajišťuje ubytování, zájmové aktivity a podporu přípravy do vyučování."
+    ],
+    "safety_climate": [
+      "Ve sledovaných hodinách převládala „klidná pracovní atmosféra založená na respektování nastavených pravidel“.",
+      "Při praktickém vyučování žáci dodržovali „zásady bezpečnosti a ochrany zdraví při práci“.",
+      "Školní stravování podporuje „vytváření správných stravovacích návyků“."
+    ],
+    "partnerships_practice": [
+      "Škola má „rozsáhlou spolupráci s partnerskými organizacemi, zejména v oblasti odborného vzdělávání“.",
+      "Žáci se zapojují do tuzemských i mezinárodních soutěží a odborných projektů.",
+      "Škola je zapojena do profesních a oborových sdružení a regionálních aktivit."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžné české výrazy, odděluje ověřená zjištění od doporučení pro rodiče a stručně vysvětluje praktické důsledky.",
+    "uncertainty_notes": [
+      "Absence nemá v dodaném textu číselné údaje, proto trend zůstává nevyplněný.",
+      "Hodnocení vhodnosti školy vychází pouze z profilu školy a zjištěných silných a slabých stránek.",
+      "Zpráva uvádí výsledky za období 2023 až 2025, nikoli nejnovější srovnávací údaje za školní rok 2025/2026."
+    ]
+  }
+}

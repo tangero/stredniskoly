@@ -1,0 +1,109 @@
+{
+  "report_id": "NAS_691012105_2023-05-23",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:02:34.567265+00:00",
+  "run_finished_utc": "2026-10-02T17:03:01.864702+00:00",
+  "raw_file": "NAS_691012105_2023-05-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "NAS_691012105_2023-05-23",
+    "school_profile": {
+      "school_type": "Církevní střední odborná škola",
+      "inspection_period": "23. 5. 2023 až 26. 5. 2023",
+      "school_change_summary": "Škola vznikla v roce 2017, vyučovat začala ve školním roce 2018/2019 a od roku 2021/2022 nabízí také dvě nástavbové obory zakončené maturitou."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Žáci na pracovištích firem pracují se zájmem, dodržují bezpečnost a propojují teoretické znalosti s praxí.",
+          "evidence": "„Ve většině sledované praktické výuky žáci pracovali se zájmem, plnili stanovené úkoly, respektovali nastavená pravidla.“"
+        },
+        {
+          "tag": "Podpora a klima",
+          "detail": "Škola podporuje žáky se speciálními vzdělávacími potřebami a usiluje o přátelské klima ve třídách.",
+          "evidence": "„Žákům se speciálními vzdělávacími potřebami byla věnována cílená podpora formou podpůrných opatření.“"
+        },
+        {
+          "tag": "Volnočasové aktivity",
+          "detail": "Široká nabídka kroužků v DDM podporuje vzdělávání, tvůrčí rozvoj, pohyb a společenské návyky.",
+          "evidence": "„Široká nabídka zájmových útvarů podporující vzdělávací nabídku a postojovou složku žáků.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Teoretická výuka",
+          "detail": "Ve většině hodin převládala frontální výuka, žáci byli pasivní a učivo málo souviselo s praxí.",
+          "evidence": "„Převažovala aktivita na straně učitele, žáci byli často pasivní.“"
+        },
+        {
+          "tag": "Příprava na maturitu",
+          "detail": "Škola nedokázala žáky nástavbového studia dostatečně připravit a značná část studia ukončila předčasně.",
+          "evidence": "„Škole se však nedaří žáky nástavbového studia dostatečně motivovat k systematické, kvalitní přípravě.“"
+        },
+        {
+          "tag": "Bezpečnost při stážích",
+          "detail": "Škola plně nevyhodnotila rizika při individuálním přepravě žáků na odborný výcvik.",
+          "evidence": "„Nestanovením pravidel pro zabezpečení přesunu žáků na odborný výcvik škola v plném rozsahu nevyhodnotila možné bezpečnostní riziko.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní podpůrné plány a individuální vyučující dostávají žáci se SVP?",
+        "Jak probíhá systematická příprava na maturitu a podpora žáků, kteří studium předčasně ukončili?",
+        "Jaká pravidla a kontrola platí pro přepravu na odborný výcvik a hodnocení bezpečnosti?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí zemědělské, lesnické nebo zahradnické vzdělání s rozsáhlou praktickou výukou.",
+        "Žákům, kterým vyhovují menší třídy, podpora při adaptaci a péčivý přístup pedagogů.",
+        "Žákům, kteří využijí možnost doučování na domově mládeže."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kteří potřebují kvalitní a pravidelnou přípravu na maturitu.",
+        "Rodičům žáků, kterým nestačí nabídka anglického jazyka nebo kteří potřebují intenzivnější přípravu na testování.",
+        "Rodičům, jejichž děti potřebují pravidelné aktivizační metody a propojení teorie s praxí."
+      ],
+      "plain_czech_summary": "Škola má silnou praktickou část, spolupráci firem a dobré vztahy mezi žáky a pedagogy. Výsledky závěrečných zkoušek byly v letech 2020/2021 i 2021/2022 stoprocentní, ale počet vyznamenaných žáků klesl. Slabší místy jsou převážně pasivní a jednotvárná teoretická výuka, práce s výsledky i příprava nástavbových žáků na maturitu. Inspekce také upozornila na nezavedená pravidla pro přepravu na praxi. Výsledky školních testů byly slabé a vedení je podle zprávy dostatečně neanalyzovalo. Nabídka kroužků, poradenské služby a podpora žáků se SVP patří mezi přednosti školy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky vlastních maturitních zkoušek nejsou uvedeny; zpráva hodnotí závěrečné zkoušky oborů končících závěrečkou a přechod do nástavbového studia.",
+        "key_numbers": [
+          "14 z 19 úspěšných absolventů pokračovalo v nástavbovém studiu.",
+          "Nástavbové obory Zahradnictví a Mechanizace zemědělství a lesního hospodářství byly otevřeny ve školním roce 2021/2022.",
+          "V obou nástavbových oborech se vzdělávalo 18 žáků."
+        ],
+        "evidence": "„Většina úspěšných žáků (14 z 19) se rozhodla pokračovat v denní formě nástavbového studia.“"
+      },
+      "absence": {
+        "trend": "Do inspekční zprávy nebyly zahrnuty údaje o absenci žáků.",
+        "key_numbers": [],
+        "evidence": "Zpráva neuvádí počty absencí ani jejich vývoj."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytovalo poradenské služby ve spolupráci s vedením a pedagogy.",
+        "21 žáků se speciálními vzdělávacími potřebami dostávalo podpůrná opatření, některým byly vytvořeny individuální vzdělávací plány.",
+        "Žákům ohroženým neúspěchem byly nabídnuty individuální konzultace; doučování na škole nebylo aktivně poskytováno, ale dostupné bylo na domově mládeže."
+      ],
+      "safety_climate": [
+        "Ve většině sledované praktické výuky žáci respektovali pravidla a zásady bezpečnosti práce.",
+        "Škola podporovala přátelské vztahy a prevence sociálně patologických jevů byla zaměřena na tvorbu dobrých vztahů.",
+        "Nebyla stanovena pravidla pro zabezpečení přesunu žáků na odborný výcvik ani plně vyhodnocena bezpečnostní rizika."
+      ],
+      "partnerships_practice": [
+        "Škola efektivně zajišťovala praktickou výuku na smluvních pracovištích pod vedením učitelů a instruktorů.",
+        "Žáci se seznamovali s moderními stroji, technologiemi a pracovními úkoly zaměstnanců firem.",
+        "Spolupráce s jinými školami obdobného zaměření probíhala jen v malé míře."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžnou češtinu, stručně odděluje zjištění inspekce od doporučení rodičům a jasně označuje chybějící údaje.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí výsledky vlastních maturitních zkoušek, pouze závěrečné zkoušky a následný přechod do nástavbového studia.",
+        "Nejsou uvedeny žádné statistiky absencí.",
+        "Doporučení rodičům vychází výhradně ze zjištění a doporučení uvedených v inspekční zprávě."
+      ]
+    }
+  }
+}

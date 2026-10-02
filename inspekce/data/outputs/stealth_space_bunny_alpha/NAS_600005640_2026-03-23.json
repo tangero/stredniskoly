@@ -1,0 +1,113 @@
+{
+  "report_id": "NAS_600005640_2026-03-23",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:24:33.118276+00:00",
+  "run_finished_utc": "2026-10-02T16:25:34.790270+00:00",
+  "raw_file": "NAS_600005640_2026-03-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "NAS_600005640_2026-03-23",
+    "school_profile": {
+      "school_type": "střední škola a vyšší odborná škola umělecká a řemeslná",
+      "inspection_period": "23. 3. 2026 – 26. 3. 2026",
+      "school_change_summary": "Od roku 2019 vzrostl počet žáků i tříd, zlepšilo se vybavení a vzdělávání na VOŠ; v části teoretické výuky ale přetrvávají metodické nedostatky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Žáci pracují v dobře vybavených dílnách a na smluvních pracovištích, kde se učí technologii i práci pro klienta.",
+          "evidence": "Hospitované hodiny odborné přípravy a výcviku vykazovaly velmi dobrou úroveň a účelné využívání vybavení."
+        },
+        {
+          "tag": "Uplatnění po škole",
+          "detail": "Školu hodnotí jako prostředí, které absolventy dobře připravuje na zaměstnání i další studium.",
+          "evidence": "Většina absolventů nachází okamžitě velmi dobré uplatnění na trhu práce, někteří pokračují ve studiu."
+        },
+        {
+          "tag": "Podpora studentů",
+          "detail": "Ve škole funguje poradenský tým a studenti VOŠ mají v hodnoceném období velmi příznivé výsledky.",
+          "evidence": "Poradenský tým účelně spolupracuje s pedagogy a zákonnými zástupci; všichni absolvující studenti VOŠ uspěli."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Absence",
+          "detail": "Vysoká absence může oslabovat výsledky a škola zatím nedosahuje jejího výrazného snížení.",
+          "evidence": "Škole se nedaří výrazněji snížit absenci; přesahuje 150 zameškaných hodin ročně na žáka."
+        },
+        {
+          "tag": "Maturita",
+          "detail": "U některých oborů je výsledek maturity ovlivněn jak neúspěchem, tak tím, že někteří přihlášení zkoušku vůbec nekonají.",
+          "evidence": "Hrubá neúspěšnost byla u některých oborů vyšší než celostátní průměr; výsledek výrazně ovlivňovalo nekonání zkoušky."
+        },
+        {
+          "tag": "Teoretická výuka",
+          "detail": "Část hodin je málo interaktivní a přizpůsobená různým potřebám žáků, což může zhoršovat přípravu na maturitu.",
+          "evidence": "Převažovala frontální výuka; slabší byla diferenciace, sebereflexe, zpětná vazba i práce s informačními zdroji."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně podporujete žáky s vysokou absencí a jak často vyhodnocujete účinnost této podpory?",
+        "Kolik procent přihlášených žáků společnou část maturitní zkoušky skutečně vykoná a jak škola řeší nekonání zkoušky?",
+        "Jak konkrétně probíhá individualizace úkolů a podpora žáků s odlišnou úrovní v teoretických předmětech?"
+      ],
+      "who_school_fits": [
+        "Uchazeči, kteří chtějí střední vzdělání propojené s praktickou řemeslnou nebo uměleckořemeslnou prací.",
+        "Studenti, kterému vyhovují hodně odborných hodin, práce v dílnách a projekty s reálnými produkty.",
+        "Uchazeči, kteří ocení spolupráci s odborníky z praxe, stáže a podporu kariérového rozhodování."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče žáků, kteří potřebují mimořádně intenzivní individuální podporu při učení nebo zmírněníabsence.",
+        "Rodičé připravující dítě na společnou část maturity, kteří chtějí mít přesné informace o její přípravě.",
+        "Rodiče, kteří v teoretických předmětech očekávají hodně samostatného hledání informací, diskuze a okamžité zpětné vazby."
+      ],
+      "plain_czech_summary": "Škola má dobré zázemí pro řemeslnou a uměleckořemeslnou výuku. Praktické hodiny jsou hodnoceny velmi dobře, žáci pracují s moderním vybavením, odborníky z praxe a na smluvních pracovištích. Většina absolventů se dobře uplatňuje. Mezi hlavní problémy patří vysoká absence, ne vždy dostatečná příprava na společnou část maturity a méně efektivní teoretická výuka. V ní se podle inspekce objevuje málo práce s informačními zdroji, málo diferenciace a nedostatečná zpětná vazba. Rodičům doporučujeme zeptat se, jak škola konkrétně řeší absenci, nekonání maturity a rozdílné studijní předpoklady žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou proměnlivé a často ovlivněné nekonáním zkoušky; u některých oborů převyšují celostátní průměr.",
+        "key_numbers": [
+          "Podnikání, denní studium: 33 % v roce 2022/2023, 47 % v roce 2023/2024 a 18 % v roce 2024/2025.",
+          "Podnikání, dálkové studium: 38 % v roce 2023/2024 a 63 % v roce 2024/2025.",
+          "Uměleckořemeslné zpracování dřeva: 21 % v roce 2022/2023 a 40 % v roce 2023/2024."
+        ],
+        "evidence": "Ve školním roce 2024/2025 činila hrubá neúspěšnost 63 % u dálkového Podnikání, 33 % u zpracování kovů a 30 % u Uměleckých řemeslných prací."
+      },
+      "absence": {
+        "trend": "Absence se nedaří výrazně snížit a přetrvává i vyšší neomluvená absence.",
+        "key_numbers": [
+          "Více než 150 zameškaných hodin na žáka ročně.",
+          "V průměru 8 neomluvených hodin na žáka ročně.",
+          "Opakovaně 85 % žáků mělo ke 30. 6. uzavřenou klasifikaci."
+        ],
+        "evidence": "Za poslední tři uzavřené školní roky přesahoval průměrný počet zameškaných hodin na žáka 150 hodin ročně."
+      },
+      "support_services": [
+        "Poradenský tým: výchovná poradkyně, metodička prevence a speciální pedagog.",
+        "Doučování, individuální vzdělávací plány, maturitní semináře a podpůrné elektronické materiály.",
+        "Adaptace před studiem, informační schůzka, adaptační pobyt, sportovní a sociální kurzy.",
+        "Kariérové poradenství, projekty, studentské firmy a mezinárodní projekt Bridge to Employment."
+      ],
+      "safety_climate": [
+        "Většina hospitovaných hodin měla příjemnou atmosféru a vzájemně respektující přístup.",
+        "V praktické výuce je důraz na dodržování zásad bezpečnosti práce.",
+        "Škola poskytuje pracovní oblečení, ochranné prostředky a kompletní sadu nářadí."
+      ],
+      "partnerships_practice": [
+        "Škola dlouhodobě spolupracuje se zaměstnavateli, asociacemi, partnerskými školami v zahraničí a vysokými školy.",
+        "Praktická výuka probíhá na vlastních a smluvních pracovištích sociálních partnerů.",
+        "Zapojení odborníků z praxe podporuje vztah teorie s praxí a profesní uplatnění absolventů."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a vztahují se k rozhodování rodičů i k výsledkům inspekce.",
+      "uncertainty_notes": [
+        "Ne všechny obory a všechny maturity mají stejné výsledky; čísla se vztahují k uvedeným oborům a rokům.",
+        "Zpráva uvádí průměrné hodnoty, ale u některých výsledků nepodává podrobné rozdělení podle jednotlivých tříd nebo studijních forem."
+      ]
+    }
+  }
+}

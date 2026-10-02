@@ -1,0 +1,104 @@
+{
+  "report_id": "SOS_600008371_2022-12-05",
+  "school_profile": {
+    "school_type": "Obchodní akademie, střední odborná škola a střední odborné učiliště",
+    "inspection_period": "5. 12. 2022 – 8. 12. 2022",
+    "school_change_summary": "Počet žáků vzrostl, materiální podmínky se průběžně zlepšují a v roce 2015 vznikl obor výtvarného zpracování skla."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava",
+        "detail": "Žáci se mohou připravovat na reálných pracovištích partnerů s moderním vybavením.",
+        "evidence": "Odborný výcvik probíhá na smluvních pracovištích partnerských firem, kde žáci pracují s technickým vybavením v reálných podmínkách."
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Škola systematicky podporuje nadané žáky, kteří dosahují výborných výsledků v odborných soutěžích.",
+        "evidence": "Systematická podpora nadaných žáků se promítá do jejich vynikajících výsledků v odborných soutěžích."
+      },
+      {
+        "tag": "Ubytování a volný čas",
+        "detail": "Pro ubytované žáky škola zajišťuje vybavené prostory pro sport a širokou nabídku aktivit.",
+        "evidence": "Součástí školy jsou dva domovy mládeže poskytující ubytování pro 152 žáků a bohatá vybavení podporující tělesnou zdatnost."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivita v teoretické výuce",
+        "detail": "Část žáků může převážně přebírat informace, protože vyučovací metody nejsou dostatečně aktivizující.",
+        "evidence": "Nedostatečná nabídka metod neposkytovala žákům dostatečný prostor pro aktivitu či rozvoj kritického myšlení a vedla některé k pasivitě."
+      },
+      {
+        "tag": "Průměrné výsledky",
+        "detail": "Rodiče by měli počítat s průměrnými výsledky a možností předčasného ukončení studia po neúspěchu.",
+        "evidence": "Výsledky jsou dlouhodobě spíše průměrné; desetina žáků konala opravné zkoušky a část kvůli neúspěchu předčasně ukončila studium."
+      },
+      {
+        "tag": "Systémovost podpůrných opatření",
+        "detail": "Při osobní podpoře nemusí být vždy dostatečně průběžně ověřován její skutečný účinek.",
+        "evidence": "Kontrola a vyhodnocování efektivity poskytovaných podpůrných opatření jednotlivými vyučujícími není ve všech případech zcela systematická."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak často žáci v jednotlivých předmětech dostávají zpětnou vazbu, která jim pomáhá zlepšovat učení?",
+      "Kolik vyučujících aktivně zapojí žáky do práce, diskuse nebo řešení problémů místo pouhého výkladu?",
+      "Jak konkrétně škola ověřuje účinnost podpůrných opatření u žáků se speciálními vzdělávacími potřebami?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí střední vzdělání pro konkrétní řemeslo nebo obor a ocenují práci na odborných pracovištích.",
+      "Žákům, kteří mají zájem o sklářství nebo výtvarné zpracování skla a světelné objektů.",
+      "Žákům, kteří využijí ubytování, sportovní aktivity a nabídku volnočasových činností v domově mládeže."
+    ],
+    "who_should_be_cautious": [
+      "Žákům, kterým v teoretické výuce chybí více samostatné práce, diskuse a rozvíjení kritického myšlení.",
+      "Rodičům žáků s podpůrnými potřebami, kteří chtějí mít jasně doložené poskytování a hodnocení podpory.",
+      "Žákům, kterým hrozí školní neúspěch a kteří potřebují pravidelné doučování, konzultace a spolupráci s rodinou."
+    ],
+    "plain_czech_summary": "Škola nabízí obory s výučním listem i čtyřleté obory s maturitou, a také podnikání v nástavbovém studiu. Velkou předností je propojení teorie s odborným výcvikem na pracovištích firem a moderní vybavení. Žákům se speciálními vzdělávacími potřebami poskytuje poradenská a podpůrná služba. Výsledky jsou dlouhodobě spíše průměrné, přestože se maturitní výsledky v roce 2022 zlepšily. Slabší místo je teoretická výuka, kde převládá frontální způsob a někteří žáci jsou pasivní. Rodiče by se měli zeptat na aktivní metody, zpětnou vazbu a kontrolu účinnosti podpůrných opatření."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Ve zkušebním roce 2021 došlo k mírnému zhoršení společné části maturit, ve zkušebním roce 2022 se výsledky při ukončování studia zlepšily.",
+      "key_numbers": [
+        "Ve zkušebním roce 2021 se společná část maturit mírně zhoršila.",
+        "Ve zkušebním roce 2022 se zlepšily výsledky v oborech s výučním listem i v maturitních oborech.",
+        "Výsledky při ukončování studia jsou v celorepublikovém srovnání srovnatelné se skupinami stejných oborů."
+      ],
+      "evidence": "Škola uvádí mírné zhoršení v roce 2021, zlepšení v roce 2022 a celorepublikově srovnatelné výsledky při ukončování studia."
+    },
+    "absence": {
+      "trend": "Zpráva neuvádí přesný vývoj ani počet absencí; řeší je důslednými postupy a komunikací s rodiči.",
+      "key_numbers": [
+        "Přesná statistika absencí není uvedena.",
+        "Zhoršení maturit v roce 2021 škola připisovala vysoké absenci a omezením pandemické doby.",
+        "Rodiče jsou zapojováni při vysokých či neomluvených absencích."
+      ],
+      "evidence": "Škola iniciuje komunikaci při vysokých či neomluvených absencích a zvládá je důslednými postupy."
+    },
+    "support_services": [
+      "Na školním poradenském pracovišti působí dva výchovní poradci a školní psycholog, který je zároveň metodikem prevence.",
+      "Poradenské služby žáci hojně využívají a pracoviště spolupracuje se školskými poradenskými zařízeními a dalšími organizacemi.",
+      "Všem 20 žákům se speciálními vzdělávacími potřebami je poskytována podpora podle doporučení z poraden."
+    ],
+    "safety_climate": [
+      "Sledované hodiny se odehrávaly v příjemném a vstřícném prostředí založeném na pravidlech a respektující komunikaci.",
+      "Při odborném výcviku žáci používali vhodný pracovní oděv a dodržovali zásady bezpečnosti a ochrany zdraví.",
+      "Výchovně-vzdělávací aktivity a preventivní programy se zaměřují na zdravý životní styl a prevenci rizikového chování."
+    ],
+    "partnership_practice": [
+      "Spolupráce s podniky zajišťuje praktické vyučování, moderní technologie a práci v reálných podmínkách.",
+      "Odborníci z praxe vyučují jako vyučující a hosté přednášejí, čímž se propojuje školní výuka s praxí.",
+      "Škola spolupracuje také se středními a vysokými školami, profesními svazy a zahraničními firmami."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně odděluje ověřená zjištění od doporučení rodičům a vyhýbá se úřednímu složení.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesné počty absencí, proto nelze určit jejich přesný trend.",
+      "U podpůrných opatření je uvedena jejich kontrola, nikoli výsledky jednotlivých podporovaných žáků.",
+      "Závěry o vhodnosti školy pro konkrétního žáka je nutné doplnit informacemi o jeho oboru, potřebách a předchozích zkušenostech."
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "report_id": "SOS_600011046_2025-11-12",
+  "school_profile": {
+    "school_type": "Střední odborná škola pro ochranu a obnovu životního prostředí – Schola Humanitas, Litvínov",
+    "inspection_period": "12. 11. 2025 – 14. 11. 2025",
+    "school_change_summary": "Od minulé inspekce se počet žáků zvýšil a kapacita školy je téměř naplněná; pokračuje projektová činnost, dobré vybavení a spolupráce v tuzemsku i zahraničí."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborné vybavení",
+        "detail": "Škola má velmi dobré materiální podmínky pro odborné vzdělávání, včetně moderních laboratoří a terénního vyučívání.",
+        "evidence": "Velmi dobré jsou materiálně technické podmínky pro odborné vzdělávání; moderní vybavení umožňuje pokusy i odborná měření."
+      },
+      {
+        "tag": "Praktická příprava",
+        "detail": "Žáci získávají odborné zkušenosti při praxích, projektech, ročníkových pracích a účasti v odborných aktivitách.",
+        "evidence": "Ke zvyšování odborných kompetencí přispívá odborná praxe, besedy, projekty a ročníkové práce."
+      },
+      {
+        "tag": "Podpora a klima",
+        "detail": "Poradenské služby a preventivní aktivity podporují žáky a přispívají k příznivému klimatu školy.",
+        "evidence": "Systém poradenských služeb je funkční; preventivní aktivity se projevují příznivým klimatem školy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečné přizpůsobení výuky",
+        "detail": "Ve výuce se málo využívá individualizace a diferenciace, což může zhoršovat práci žáků s různými schopnostmi.",
+        "evidence": "Chybějící individualizace a diferenciace zadávaných úkolů."
+      },
+      {
+        "tag": "Slabší zpětná vazba",
+        "detail": "Učitelé mále ověřují dosažení cílů a poskytují žákům účinnou zpětnou vazbu o jejich pokroku.",
+        "evidence": "Učitelé nevěnují dostatek pozornosti ověření míry dosažení vzdělávacích cílů."
+      },
+      {
+        "tag": "Rozvoj myšlení",
+        "detail": "Práce s informačními zdroji, kritické myšlení a hodnoticí dovednosti se ve výuce objevují spíše ojedinele.",
+        "evidence": "Pedagogové zařazují práci s informačními zdroji jen ojedinele a méně využívají metody podporující kritické myšlení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje úkoly žákům s různou úrovní schopností?",
+      "Jak často žáci dostávají zpětnou vazbu a podílí se na hodnocení vlastního pokroku?",
+      "Kolik hodin a v jakých předmětech se věnuje práci s informačními zdroji a kritickému myšlení?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří mají zájem o ekologii, ochranu životního prostředí a praktickou odbornou přípravu.",
+      "Žákům, kterým vyhovuje denní forma studia a práce v moderních laboratořích i v terénu.",
+      "Žákům, kteří mají zájem o projekty, ročníkové práce, spolupráci nebo zahraniční pobyty."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům, kteří očekávají především výraznou individualizaci výuky.",
+      "Rodičům, kteří chtějí průběžné ověřování pokroku a silnou zpětnou vazbu pro každého žáka.",
+      "Rodičům, kteří v oboru nevidějí dostatečný prostor pro rozvoj kritického myšlení a hodnoticích dovedností."
+    ],
+    "plain_czech_summary": "Škola nabízí ekologický obor v denní formě, moderní laboratoře, praxe, projekty a ročníkové práce. Žáci mohou využít také domov mládeže a středisko volného času. Inspekce ocenila kvalifikaci pedagogů, vybavení, spolupráci a příznivé klima. Mezi slabiny uvádí malou individualizaci úkolů, nedostatečné ověřování cílů a omezenou práci s informačními zdroji. Výsledky maturity jsou v obou částech srovnatelné nebo lepší než u srovnatelných škol; přibližně 18 % žáků skončilo s vyznamenáním a 4 % neprospeklo."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Ve zkušebních obdobích 2022–2025 byly výsledky srovnatelné nebo lepší než u ostatních škol ve stejné skupině oborů.",
+      "key_numbers": [
+        "Přibližně 18 % žáků prospělo s vyznamenáním na konci roku 2024/2025.",
+        "Přibližně 4 % žáků neprospělo na konci roku 2024/2025.",
+        "Škola uvádí srovnatelné nebo lepší výsledky v letech 2022–2025."
+      ],
+      "evidence": "Ve zkušebních obdobích 2022 až 2025 zaznamenala škola srovnatelné nebo lepší výsledky než ostatní školy v dané skupině oborů."
+    },
+    "absence": {
+      "trend": "Zpráva neuvádí údaje o absencích ani jejich vývoji.",
+      "key_numbers": [],
+      "evidence": "V dodaném textu nejsou uvedeny statistiky absencí."
+    },
+    "support_services": [
+      "Funkční systém poradenských služeb poskytuje výchovná poradkyně, která je zároveň zástupkyní ředitele a školní metodik prevence.",
+      "Výchovná poradkyně sleduje podporu žáků se speciálními vzdělávacími potřebami a pomáhá při osobních problémech.",
+      "Škola poskytuje konzultace, individuální a skupinové doučování a spolupracuje se zákonnými zástupci."
+    ],
+    "safety_climate": [
+      "Prevence se zaměřuje na posilování prosociálních vztahů, bezpečnost na internetu a finanční gramotnost.",
+      "Adaptační pobyty, školní výlety, projekty a třídnické hodiny podporují začlenění žáků.",
+      "Případné problémy s nevhodným chováním jsou řešeny bezodkladně."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje se zřizovatelem, místem, partnery v tuzemsku i zahraničí.",
+      "Spolupráce podporuje odborné, jazykové a občanské kompetence žáků a jejich uplatnění v praxi.",
+      "Škola spolupracuje s úřadem práce a profesními organizacemi při podpoře absolventů."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a bez dalších klíčů mimo zadané schéma.",
+    "uncertainty_notes": [
+      "Údaje o absencích v inspekční zprávě chybějí.",
+      "Zpráva uvádí výsledky maturity za delší období, nikoli podrobné časy jednotlivých písemných částí.",
+      "Přesný podíl žáků v jednotlivých oblastech podpory podle typu vzdělávacích potřeb není uveden."
+    ]
+  }
+}

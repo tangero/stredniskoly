@@ -1,0 +1,97 @@
+{
+  "report_id": "LYC_651040060_2026-02-03",
+  "school_profile": {
+    "school_type": "Střední škola, základní škola a mateřská škola Monty School",
+    "inspection_period": "3. 2. 2026 – 5. 2. 2026",
+    "school_change_summary": "Od předchozí inspekce se počet žáků zvýšil o 30 %, proběhla přestavba mateřské školy a vznikla vlastní školní jídelna-výdejna."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazyková příprava",
+        "detail": "Škola systematicky podporuje angličtinu pomocí rodilých mluvčích, každodenního používání jazyka a standardizovaných zkoušek Cambridge English.",
+        "evidence": "Jazykové vzdělávání dosahuje velmi vysoké úrovně a výsledky Cambridge English potvrzují nadstandardní jazykové kompetence."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Ve vzdělávání pomáhají pedagogové, školní asistenti, speciální pedagožka a školní psycholožka.",
+        "evidence": "Významnou podporu výuky představuje společné působení pedagogů a školních asistentů."
+      },
+      {
+        "tag": "Aktivity a rozvoj",
+        "detail": "Škola nabízí rozsáhlé vzdělávací, sportovní, tvůrčí a prosociální aktivity, včetně studentské vědecké konference.",
+        "evidence": "Významnou součástí vzdělávání jsou exkurze, workshopy, tematické dny, soutěže a vlastní studentská vědecká konference."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "Ve střední škole se podle inspekce uplatňovala jen ojediněle, zejména v nabídce úloh s různou kognitivní náročností.",
+        "evidence": "Větší nabídka úloh s rozdílnou kognitivní náročností podporujících individuální vzdělávací pokrok žáků bylo realizováno jen ojediněle."
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Ve střední škole byla práce s výukovým cílem a pravidelná konkrétní zpětná vazba málo efektivní.",
+        "evidence": "Práce s výukovým cílem, jeho sdílení a vyhodnocování v průběhu hodiny byla jen sporadická."
+      },
+      {
+        "tag": "Přizpůsobení potřebám",
+        "detail": "V některých hodinách bylo obtížné pozorovat přizpůsobení úkolů individuálním vzdělávacím potřebám žáků.",
+        "evidence": "V hospitované výuce ZŠ a SŠ nebyla vždy zřetelně patrná diferenciace učiva a zadávaných úkolů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se ve vyučování projevuje individuální podpora žáků s odlišnou úrovní schopností?",
+      "Jak často žáci dostávají konkrétní zpětnou vazbě během hodiny a jak jsou hodnoceny jejich pokroky?",
+      "Kolik žáků se pravidelně účastní rozšiřujícího vzdělávání, kroužků a mimoškolních aktivit?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří mají zájem o intenzivní jazykové vzdělávání, zejména angličtinu.",
+      "Žáci, kteří chtějí kombinovat studium s projekty, konferencemi, kroužky a dalšími aktivitami.",
+      "Žáci, kterým vyhovuje malé kolektivní prostředí a podpora vedení školy."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují pravidelnou a prokazatelnou individuální úpravu výuky.",
+      "Žáci, kterým záleží na průběžné zpětné vazbě a práci s výukovými cíli během hodiny.",
+      "Rodiny, které chtějí přesné číselné údaje o úspěšnosti maturit; zpráva uvádí kladný trend, ale ne konkrétní procenta."
+    ],
+    "plain_czech_summary": "Inspekce zaznamenala u školy dobrou přípravu na maturitu, velmi silné jazykové vzdělávání a rozsáhlou podporu aktivit. Ve střední škole se ale málo uplatňovala individualizace úkolů, práce s výukovým cílem a pravidelná zpětná vazba. Rodičům se vyplatí ověřit, jak konkrétně škola tyto oblasti zlepšuje. Zpráva neuvádí číselné údaje o neomluvné absenci ani procenta úspěšnosti maturit."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě velmi dobrá úroveň",
+      "key_numbers": [
+        "44 žáků ve čtyřech třídách oboru Kombinované lyceum"
+      ],
+      "evidence": "Výsledky maturitní zkoušky si škola dlouhodobě udržuje na velmi dobré úrovni."
+    },
+    "absence": {
+      "trend": "Zpráva neuvádí údaje o absenci",
+      "key_numbers": [],
+      "evidence": "V dodaném textu nejsou uvedeny číselné údaje o neomluvné absenci."
+    },
+    "support_services": [
+      "Ve škole působí výchovná poradkyně, metodik prevence, speciální pedagožka a školní psycholožka.",
+      "Škola poskytuje konzultace, individuální nebo skupinové doučování a spolupráci se školním poradenským pracovištěm.",
+      "Kariérní poradenství je poskytováno systematicky a žáci jsou informováni o možnostech dalšího studia a profese."
+    ],
+    "safety_climate": [
+      "Pro zajištění bezpečnosti a ochrany zdraví jsou stanovena pravidla a opatření ve spolupráci s odborníky.",
+      "Malé kolektivy tříd, vstřícná atmosféra a empatický přístup pedagogů vytvářejí bezpečné prostředí."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje se zákonnými zástupci, místními vysokými školami a dalšími institucemi.",
+      "Část přírodovědně zaměřené výuky probíhá v prostředí Ostravské univerzity.",
+      "Škola rozvíjí partnerskou spolupráci se sociálními partnery a vysokými školami."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a bez dalších klíčů mimo zadané schéma.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní procenta úspěšnosti maturit.",
+      "Zpráva neuvádí číselné údaje o absenci.",
+      "Hodnocení se vztahuje k inspekční činnosti konané v únoru 2026."
+    ]
+  }
+}

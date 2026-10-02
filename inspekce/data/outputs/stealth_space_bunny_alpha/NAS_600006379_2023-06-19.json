@@ -1,0 +1,110 @@
+{
+  "report_id": "NAS_600006379_2023-06-19",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:02:04.902416+00:00",
+  "run_finished_utc": "2026-10-02T17:02:34.564500+00:00",
+  "raw_file": "NAS_600006379_2023-06-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "NAS_600006379_2023-06-19",
+    "school_profile": {
+      "school_type": "Střední odborná škola uměleckořemeslná s.r.o.",
+      "inspection_period": "19. 6. 2023 – 22. 6. 2023",
+      "school_change_summary": "Od minulé inspekce se zlepšily materiály a vybavení, přijímací řízení do nástavbového studia i výsledky společné části maturity; pokračující absenci se škola snaží omezit."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná praxe",
+          "detail": "Žáci se učí vybavených školních dílnách i na smluvních pracovištích a získávají praktické zkušenosti.",
+          "evidence": "„Praktické vyučování je realizováno na vlastních i smluvních pracovištích sociálních partnerů.“"
+        },
+        {
+          "tag": "Unikátní obory",
+          "detail": "Nabídka zahrnuje několik uměleckořemeslných oborů, které jsou v regionu nebo v ČR vyučovány pouze zde.",
+          "evidence": "„Umělecký štukatér, Umělecký pozlacovač a Umělecký sklenář“ se vyučují jako jediné v České republice."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí doučování, individuální konzultace, stipendia a pomoc při přípravě na maturity.",
+          "evidence": "Škola poskytuje „individuální podporu“, například „doučováním“ a „možností opravy dílčí klasifikace“."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Absence",
+          "detail": "Celková míra absence zůstává zvýšená, přestože u tříletých oborů klesla a neomluvené hodiny jsou vzácné.",
+          "evidence": "„Celkově zvýšená míra absence však přetrvává, neomluvené hodiny se ale vyskytují v malých počtech.“"
+        },
+        {
+          "tag": "Teoretická výuka",
+          "detail": "V části všeobecně vzdělávacích předmětů se méně používají aktivizační metody, spolupráce žáků a hodnotení podle výkonu.",
+          "evidence": "„Učitelé preferovali převážně frontální výuku“ a „méně často byly využity kooperativní formy práce“."
+        },
+        {
+          "tag": "Jazyková připravenost",
+          "detail": "Z externího testování vyšly slabší výsledky než v celostátním srovnání u čtenářské gramotnosti i znalostí moderních dějin.",
+          "evidence": "Žáci v testech dosahovali „v celostátním srovnání slabších výsledků“."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší neomluvenou absenci a dlouhodobou nemoc žáků?",
+        "Kolik vyučujících předmětů pracuje s žáky pravidelně individuálně a jak často využívají portfolia?",
+        "Kolik hodin týdně se žáci věnují praktické tvůrčí práci a kolik teoretické výuce?"
+      ],
+      "who_school_fits": [
+        "Uchazeči, kteří mají zájem o tradiční umělecká řemesla, restaurování nebo práci s historickými materiály.",
+        "Žáci, kteří chtějí učení propojené s praxí na školních i smluvních pracovištích.",
+        "Studenti připravující se na talentovou přijímací zkoušku a schopní pracovat samostatně i prakticky."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče žáků, kteří mají potíže s pravidelnou docházkou a potřebují předem ověřit důsledné řešení absence.",
+        "Uchazeči, kterým by vyhovovala převážně praktická výuka a kteří nechtějí frontální způsob výuky.",
+        "Rodiče žáků, jimž záleží na pravidelném procvičování čtenářské gramotnosti, cizího jazyka a kritického myšlení."
+      ],
+      "plain_czech_summary": "Škola má silnou odbornou základnu v tradičních uměleckých řemeslech, rozsáhlé dílny a spolupráci s praxí. Výsledky maturity se zlepšily a ve společné části uspěli všichni přihlášení žáci oboru Starožitník, kteří zkoušku konali. Pro rodiče zůstává důležitá zvýšená absence. V části teoretické výuky se také objevují pasivita žáků, málo kooperativní práce a nedostatečné hodnocení podle skutečného výkonu. Přijímací zkoušky a osobní zájem o řemeslo jsou důležitou součástí volby oboru."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšení: neúspěšnost ve společné části maturity v oboru Starožitník výrazně klesla; zlepšil se také nástavbový obor.",
+        "key_numbers": [
+          "Starožitník: neúspěšnost 50 % v roce 2022, 17 % v jarním období 2023.",
+          "Starožitník: všichni konající žáci v jarním období 2023 uspěli.",
+          "Umělecké řemeslné práce: neúspěšnost 30 % v roce 2022, 28 % na jaře 2023."
+        ],
+        "evidence": "„Ve srovnání s předchozím hodnoceným obdobím školních let 2019/2020–2021/2022 se výsledky žáků ve společné části maturitní zkoušky zlepšily.“"
+      },
+      "absence": {
+        "trend": "Absence tříletých oborů se po opatřeních výrazně snížila, celkově však zůstává zvýšená.",
+        "key_numbers": [
+          "Zpráva neuvádí přesný procentní údajabsence.",
+          "Neomluvené hodiny se vyskytují pouze v malých počtech."
+        ],
+        "evidence": "„Od minulé inspekční činnosti v únoru 2023 ředitel přijal opatření ke snížení absence, došlo tak k jejímu výraznému snížení u žáků ve tříletém studiu.“"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytuje individuální konzultace, doučování a možnost opravy dílčí klasifikace.",
+        "Pro žáky ohrožené neúspěchem nebo vysokou absencí škola sleduje jejich potřeby a přizpůsobuje podporu.",
+        "Přípravné kurzy pro nástavbové studium zahrnují český jazyk a matematiku pro jednotné přijímací zkoušky."
+      ],
+      "safety_climate": [
+        "„Didaktický dohled, dodržování nastavených pravidel a zabezpečený vstup do budovy školy přispívají k větší bezpečnosti žáků a ochraně majetku.“",
+        "„Nedílnou součástí výuky bylo vhodné uspořádání pracovního prostředí v dílnách i v ateliérech a dodržování zásad bezpečnosti a ochrany zdraví a hygienických předpisů.“"
+      ],
+      "partnerships_practice": [
+        "„Dlouhodobá systematická spolupráce s profesními partnery ... vytváří nezbytnou vazbu mezi teoretickým vzděláváním a praxí.“",
+        "„Pravidelně se až pětina žáků školy zúčastňuje zahraničních výjezdů a výměnných stáží.“"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně odděluje silné stránky, rizika a ověřitelná čísla.",
+      "uncertainty_notes": [
+        "Přesný procentní údaj celkové absence není v dodaném textu uveden.",
+        "U některých oborů se údaje vztahují pouze k jarnímu zkušebnímu období roku 2023.",
+        "Závěry o vhodnosti pro rodiče vycházejí z profilu oborů a přijímacího řízení uvedeného ve zprávě."
+      ]
+    }
+  }
+}

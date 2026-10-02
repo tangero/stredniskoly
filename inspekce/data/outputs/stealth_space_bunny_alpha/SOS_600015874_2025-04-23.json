@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600015874_2025-04-23",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:25:27.380920+00:00",
+  "run_finished_utc": "2026-10-02T17:26:06.419240+00:00",
+  "raw_file": "SOS_600015874_2025-04-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600015874_2025-04-23",
+    "school_profile": {
+      "school_type": "Střední škola, domov mládeže a školní jídelna",
+      "inspection_period": "23. 4. 2025 až 29. 4. 2025",
+      "school_change_summary": "Od 1. září 2024 se změnil název školy na Gastro-technická střední škola Velké Meziříčí. Otevřely se obory Mechanizace a služby a Dopravní prostředky; obor Podnikání již nemá dálkovou formu."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Praktické vyučování zajišťuje žákům postupné procvičení dovedností, okamžitou zpětnou vazbu a spolupráci při řešení úloh.",
+          "evidence": "„V rámci praktického vyučování plnili žáci zadané úkoly… dostávali od vyučujících okamžitou zpětnou vazbu.“"
+        },
+        {
+          "tag": "Zaměstnavatelé a praxe",
+          "detail": "Sociální partneři pomáhají zajistit kvalitní praktické vyučování a poskytují zpětnou vazbu k odborným dovednostem žáků.",
+          "evidence": "„Dobrá spolupráce se sociálními partnery přispívá ke kvalitní realizaci praktického vyučování.“"
+        },
+        {
+          "tag": "Podpora v domově mládeže",
+          "detail": "Vychovatelky mají dobrou znalost jednotlivých žáků a mohou jim pomáhat i při přípravě na vyučování nebo při učení češtiny.",
+          "evidence": "„Vychovatelky domova mládeže… mají detailní znalosti osobností jednotlivých žáků.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Výsledky Podnikání",
+          "detail": "U oboru Podnikání jsou velmi vysoké neúspěšnost, absence a předčasné ukončování studia.",
+          "evidence": "„V období posledních tří let… průměrně jen 28 % úspěšně ukončilo vzdělávání maturitní zkouškou.“"
+        },
+        {
+          "tag": "Teoretická výuka",
+          "detail": "Ve většině teoretických hodin převažuje frontální výuka a žáci mají málo příležitostí k samostatné nebo týmové práci.",
+          "evidence": "„Práce ve dvojicích či jiné způsoby kooperace žáků byly zaznamenány výjimečně.“"
+        },
+        {
+          "tag": "Absence a podpora",
+          "detail": "Průměrná absence je vysoká a školní opatření zatím nevedou k dostatečnému snížení neuhrazené absence.",
+          "evidence": "„Absence žáků… činila průměrně 167 hodin na žáka za školní rok.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní kroky škola přijímá pro zlepšení výsledků a snížení absence v oboru Podnikání?",
+        "Jak často se konají individualizovaní konzultace a doučování a jak škola ověřuje jejich skutečný přínos?",
+        "Jak v teoretické výuce podporuje škola samostatnou práci, spolupráci žáků a jejich sebehodnocení?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat obory hotelnictví, kuchařství, elektrotechniku, mechaniku nebo opravy zemědělských strojů.",
+        "Žákům, kteří mají zájem o praktickou výuku, odborné kurzy, projekty a spolupráci se zaměstnavateli.",
+        "Žákům, kteří využijí ubytování v domově mládeže a potřebují podporu při organizaci studia."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků oboru Podnikání kvůli vysoké neúspěšnosti a předčasnému ukončování studia.",
+        "Rodičům žáků, kterým záleží na aktivním, samostatném a diferencovaném způsobu teoretické výuky.",
+        "Rodičům žáků s vysokou absencí nebo potřebou intenzivní systematické podpory učení."
+      ],
+      "plain_czech_summary": "Škola má dobré zázemí pro praktickou výuku, spolupráci se zaměstnavateli a mimoškolní aktivity. Praktické hodiny jsou podle inspekce nejlépe hodnocenou částí vzdělávání. Větší problém je teoretická výuka, kde převládá frontální způsob práce a chybí rozmanité metody i práce ve skupinách. Výrazné potíže jsou v oboru Podnikání: část studentů předčasně odchází, výsledky maturit jsou slabé a absence je vysoká. Rodiče by měli na návštěvě školy zjistit, jak konkrétně škola řeší právě tyto problémy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "V oboru Podnikání jsou výsledky dlouhodobě velmi neuspokojivé; v oboru Hotelnictví jsou lepší, ale žáci jsou v cizím jazyce méně úspěšní než celorepublikový průměr.",
+        "key_numbers": [
+          "Hrubá neúspěšnost Podnikání: v hodnoceném období průměrně 44 %.",
+          "Hrubá neúspěšnost Hotelnictví: průměrně 8,7 %.",
+          "V Podnikání maturitní zkouškou úspěšně ukončilo vzdělávání průměrně 28 % studentů."
+        ],
+        "evidence": "„V hodnoceném období činila hrubá neúspěšnost průměrně 44 %“; u Hotelnictví „8,7 %“."
+      },
+      "absence": {
+        "trend": "Absence je dlouhodobě vysoká; cílená opatření zatím podle inspekce nevedou k výraznému snížení.",
+        "key_numbers": [
+          "Průměrně 167 hodin absence na žáka za školní rok za poslední tři roky.",
+          "V oboru Podnikání průměrně 183 hodin na žáka.",
+          "V tříletých oborech průměrně 176 hodin na žáka."
+        ],
+        "evidence": "„Absence žáků je dlouhodobě vysoká… průměrně 167 hodin na žáka za školní rok.“"
+      },
+      "support_services": [
+        "Poradenské služby a výchovná poradkyně zajišťují předávání informací o žácích s podpůrnými opatřeními.",
+        "Kariérové poradenství pomáhá žákům orientovat se v možnostech dalšího profesního směřování.",
+        "Nabízí se konzultace, doučování, práce se sešity a využití aplikací s zpětnou vazbou."
+      ],
+      "safety_climate": [
+        "Škola účinně spolupracuje s regionálními organizacemi při řešení rizikového chování, například alkoholu, kouření a nevhodných vztahů.",
+        "Adaptační kurzy pro žáky prvního ročníku podporují příznivé vztahy v kolektivu."
+      ],
+      "partnerships_practice": [
+        "Sociální partneři se podílejí na praktickém vyučování a odborném vzdělávání pedagogů.",
+        "Zaměstnavatelé poskytují zpětnou vazbu k úrovni kompetencí žáků a mohou hodnotit konkrétní pracoviště.",
+        "Škola pořádá odborné exkurze, projektové dny, soutěže a další mimoškolní aktivity."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou přímé, srozumitelné a zaměřené na to, co mohou rodiče a žáci při volbě školy a návštěvě ověřit.",
+      "uncertainty_notes": [
+        "Zpráva uvádí výsledky v oboru Podnikání jako velmi problematické, ale neuvádí příčiny všech neúspěchů.",
+        "Zpráva neuvádí aktuální počet přijatých žáků ani konkrétní podmínky přijímání do jednotlivých oborů pro rok 2025/2026.",
+        "Není uvedeno, jaká opatření škola přijala po inspekci nebo jak se výsledky mohly od inspekce změnit."
+      ]
+    }
+  }
+}

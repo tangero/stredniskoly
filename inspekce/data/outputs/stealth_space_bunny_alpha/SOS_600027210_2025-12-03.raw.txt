@@ -1,0 +1,99 @@
+{
+  "report_id": "SOS_600027210_2025-12-03",
+  "school_profile": {
+    "school_type": "Mateřská škola, základní škola a střední škola pro sluchově postižené se školskou družinou, školním klubem, internátem, školní jídelnou a SPC",
+    "inspection_period": "3. 12. 2025 – 5. 12. 2025",
+    "school_change_summary": "Škola modernizovala vybavení a odborné učebny, rozšířila střední vzdělávání o obor Ekonomika a podnikání a ukončila některé obory; „Škola dlouhodobě zkvalitňuje své materiální a technické zázemí“."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podpora sluchově postižených",
+        "detail": "Škola má k dispozici pedagogy, tlumočníky českého znakového jazyka, asistenty pedagoga a kompenzační pomůcky.",
+        "evidence": "„Škola disponuje tlumočníky českého znakového jazyka a asistenty pedagoga“; „Škola využívá dvě propojené budovy“."
+      },
+      {
+        "tag": "Rodinná atmosféra",
+        "detail": "Vzdělávání probíhá v klidném, vstřícném a respektujícím prostředí.",
+        "evidence": "„Přímé prostředí bylo příjemné, klidné a podnětné“; „Příjemné až rodinné klima“."
+      },
+      {
+        "tag": "Praktická výuka",
+        "detail": "Odborné učebny a praktické vyučování jsou hodnoceny jako velmi dobře vybavené a připravené.",
+        "evidence": "„Praktická výuka žáků probíhala pod vedením učitelů odborného výcviku na dvou velmi dobře vybavených pracovištích“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Plánování v MŠ",
+        "detail": "Plánování vzdělávání v mateřské škole není dostatečně propojeno s výsledky diagnostiky a průběžného hodnocení dětí.",
+        "evidence": "„Plánování vzdělávání není dostatečně provázáno s výsledky pedagogické diagnostiky“."
+      },
+      {
+        "tag": "Analýza výsledků SŠ",
+        "detail": "Vedení střední školy podle inspekce neprovádí dostatečně důslednou analýzu příčin neúspěchů a nenastavuje odpovídající opatření.",
+        "evidence": "„Neprovádělo důslednou analýzu příčin neúspěchů a následně nenastavovalo vhodná opatření“."
+      },
+      {
+        "tag": "Učitelé pro elektro obory",
+        "detail": "Škola dlouhodobě nedokáže zajistit nové učitele odborného výcviku pro elektro obory.",
+        "evidence": "„Vedení školy se nedaří dlouhodobě zajistit nové učitele odborného výcviku elektro oborů“."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se plánování vzdělávání v MŠ propojí s výsledky diagnostiky a hodnocením dítěte?",
+      "Jak konkrétně probíhá práce se sebhodnocením, vzájemným hodnocením a využíváním chyby ve výuce?",
+      "Jaké konkrétní opatření škola přijímá po analýze výsledků střední školy a jak je sleduje?"
+    ],
+    "who_school_fits": [
+      "Rodiny dětí a žáků se sluchovým postižením, vadami řeči nebo kombinovaným postižením.",
+      "Rodiny žáků, kteří potřebují tlumočení českého znakového jazyka, asistenty pedagoga nebo kompenzační pomůcky.",
+      "Žáci a rodiče, kteří hledají školu s internátem, zájmovým vzděláváním, praktickou výukou a poradenskou podporou."
+    ],
+    "who_should_be_cautious": [
+      "Rodiny, které v MŠ očekávají výrazně větší podíl spontánní hry, než inspekce zaznamenala.",
+      "Rodiny žáků ZŠ, kterým záleží na pravidelném využívání logopedických pomůcek a intenzivnější práci s informacemi.",
+      "Rodiny, které hledají vysokou jistotu úspěšnosti u maturitních zkoušek; výsledky se mezi obory a roky výrazně liší."
+    ],
+    "plain_czech_summary": "Škola vhodně vzdělává děti a žáky se sluchovým postižením, vadami řeči nebo kombinovaným postižením. Má zkušené pedagogy, tlumočníky, asistenty, kompenzační pomůcky, vybavené odborné učebny, internát i rozsáhlou poradenskou službu. Atmosféra je podle inspekce vstřícná a respektující. Mezi hlavní slabiny patří propojení plánování v MŠ s diagnostikou, slabší analýza výsledků SŠ a nedostatek nových učitelů pro elektro obory. Výsledky závěrečných zkoušek oborů s výučním listem byly v letech 2022/2023 až 2024/2025 stoprocentní, u maturitních oborů se výsledky liší."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "U maturitních oborů se výsledky mezi roky měnily; nejvyšší úspěšnost měla technologie, u nástavbového oboru Mechanik elektrotechnik v posledním sledovaném roce byla 33,3%.",
+      "key_numbers": [
+        "Informační technologie: 2022/2023 4/4 úspěšných, 2023/2024 6/6, 2024/2025 3/5.",
+        "Mechanik elektrotechnik: 2022/2023 0/1, 2023/2024 1/2, 2024/2025 1/3.",
+        "Zahradnictví: ve školním roce 2022/2023 uspěli 3 ze 4 žáků."
+      ],
+      "evidence": "„Ve školním roce 2024/2025 konalo maturitní zkoušku 5 žáků, z nich 3 žáci uspěli a 2 byli neúspěšní.“"
+    },
+    "absence": {
+      "trend": "Inspekční zpráva neuvádí trend ani číselné údaje o absenci žáků.",
+      "key_numbers": [],
+      "evidence": "V textu zprávy nejsou uvedeny údaje o nepřítomnosti."
+    },
+    "support_services": [
+      "SPC poskytovalo speciálně pedagogické a pedagogicko-psychologické služby; ročně se věnuje přibližně 1 500 klientům.",
+      "SPC pracovalo na třech pracovištích, v době inspekce mělo 12 odborných pracovníků, z toho jednu psycholožku.",
+      "SPC poskytovalo diagnostiku, poradenství, metodickou podporu, podporu při volbě vzdělávání a reedukační programy.",
+      "Škola zajišťovala školní družinu, školní klub, internát a celodenní stravování."
+    ],
+    "safety_climate": [
+      "Bezpečné prostředí podporovaly pravidelné kontroly, proškolování zaměstnanců, dohled nad žáky a zdravotnická podpora.",
+      "Při praktické výuce žáci dodržovali bezpečné pracovní postupy, měli pracovní oblečení a ochranné pomůcky."
+    ],
+    "partnerships_practice": [
+      "Škola úzce spolupracovala s mateřskou a základní školou, SPC, okolními školami, dětským domovem a organizacemi pro osoby se sluchovou vadou.",
+      "Rodiče byli průběžně informováni a měli možnost zapojit se do školních aktivit; MŠ a ZŠ sdílely zkušenosti zejména z logopedie a surdopedie."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá srozumitelné běžné výrazy, stručně odděluje silné stránky, rizika a konkrétní otázky pro rodiče.",
+    "uncertainty_notes": [
+      "Nejsou k dispozici výsledky externího testování žáků.",
+      "Nejsou uvedeny údaje o absencích.",
+      "Výsledky maturitních zkoušek se vztahují k malým počtům žáků a nelze je bez dalšího školního roku přímo porovnávat s aktuálním rokem."
+    ]
+  }
+}

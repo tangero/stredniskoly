@@ -1,0 +1,103 @@
+{
+  "report_id": "SOS_610300580_2026-02-16",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:36:39.493893+00:00",
+  "run_finished_utc": "2026-10-02T16:37:01.166949+00:00",
+  "raw_file": "SOS_610300580_2026-02-16.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_610300580_2026-02-16",
+    "school_profile": {
+      "school_type": "střední odborná škola průmyslová a střední odborné učiliště strojírenské",
+      "inspection_period": "16. 2. 2026 až 18. 2. 2026",
+      "school_change_summary": "V roce 2025 došlo ke změně na vedoucí pracovní pozici ředitele školy."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praxe a partneři",
+          "detail": "Škola má rozsáhlá partnerství s firmami, které zajišťují odborné praxe a pomáhají uplatnění absolventů.",
+          "evidence": "Škola disponuje celou řadou navázaných partnerství s firmami, které tyto odborné praxe žáků zabezpečují."
+        },
+        {
+          "tag": "Odborná výuka",
+          "detail": "Praktická výuka probíhá v dobře vybavených učebnách a dílnách pod vedením učitelů s odbornou praxí.",
+          "evidence": "Škola má k dispozici komplex účelně uspořádaných odborných učeben (dílen), které jsou vybavené odpovídajícím vybavením."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí konzultace, doučování a podporu při přípravě na závěrečnou a maturitní zkoušku.",
+          "evidence": "Nabízí individuální konzultace nebo pravidelně realizuje doučování, případně zintenzivňuje přípravu žáků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Bezpečnost",
+          "detail": "Při jedné hodině nebyl po určitý čas zajištěn pedagogický dohled a při nepřítomnosti učitelky chyběl náhradní dohled.",
+          "evidence": "V průběhu jedné vyučovací hodiny nebyl po určitý čas zajištěn pedagogický dohled nad žáky třídy."
+        },
+        {
+          "tag": "Rozmanitost výuky",
+          "detail": "V teoretické výuce převažovalo předávání informací, zatímco kritické myšlení, spolupráce a práce s více zdroji se objevovaly zřídka.",
+          "evidence": "Převažovalo však předávání hotových informací, pestré metody práce se vyskytly výjimečně."
+        },
+        {
+          "tag": "Individuální přístup",
+          "detail": "Ve škole chyběla dostatečná diferenciace obsahu a aktivit podle vzdělávacích možností a potřeb žáků.",
+          "evidence": "V hodnoceném teoretickém vyučování chyběla diferenciace vzdělávacího obsahu a výukových aktivit."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá zajištění dohledu nad žáky během teoretické výuky a při náhradních hodinách?",
+        "Kolik času v hodinách věnují učitelé práci s více informačními zdroji, spolupráci žáků a rozvoji kritického myšlení?",
+        "Jaké konkrétní možnosti má škola pro žáky se speciálními vzdělávacími potřebami a pro nadané žáky?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí technické vzdělání s maturitou nebo výučním listem a praktickou přípravu.",
+        "Žákům, kterým vyhovují obory strojírenství, stavebnictví, elektrotechniky, mechaniky a strojních oborů.",
+        "Žákům, kteří chtějí učit se prostřednictvím praxe v partnerských organizacích."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na důsledné diferenciaci výuky pro různě nadané žáky.",
+        "Rodičům, kteří očekávají převážně aktivní, kooperativní a badatelsky zaměřenou výuku.",
+        "Rodičům žáků se speciálními vzdělávacími potřebami, protože jejich podpora nebyla v hodnocené výuce vždy dostatečně viditelná."
+      ],
+      "plain_czech_summary": "Škola má dobré zázemí pro technickou výuku, vybavené dílny a spolupráci s firmami, které poskytují praxi. Výsledky společné části maturity a závěrečných zkoušek jsou podle inspekce vyvážené. Pro rodiče je důležité, že škola sama upozornila na případný nedostatek dohledu nad žáky při teoretické výuce. V hodinách se také málo objevovala práce s různými zdroji, spolupráce žáků, kritické myšlení, formativní hodnocení a dostatečná diferenciace učiva. Inspekce proto doporučuje tyto oblasti zlepšit."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky společné části maturitní zkoušky byly v posledních školních letech vyvážené.",
+        "key_numbers": [],
+        "evidence": "Výsledky společné části maturitní zkoušky i úspěšnost žáků u závěrečné zkoušky je v posledních školních letech vyvážená."
+      },
+      "absence": {
+        "trend": "Z dostupného textu nelze určit trend absence; zpráva neuvádí konkrétní absence ani jejich vývoj.",
+        "key_numbers": [],
+        "evidence": "Mezi zkoumanými doklady jsou souhrnné přehledy výsledků vzdělávání, chování a absence žáků, ale číselné údaje chybějí."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytuje služby žákům, zákonným zástupcům i pedagogům.",
+        "Škola poskytuje individuální konzultace, doučování a podporu při přípravě na závěrečnou a maturitní zkoušku.",
+        "Škola vytváří podpůrná opatření pro žáky se speciálními vzdělávacími potřebami."
+      ],
+      "safety_climate": [
+        "Škola podporuje pozitivní a bezpečné školní klima a zasahuje při prvních projevech problémového chování.",
+        "Inspekce zaznamenala případ, kdy po určitý čas chyběl pedagogický dohled a při nepřítomnosti pedagogické pracovnice nebyl zajištěn náhradní dohled."
+      ],
+      "partnerships_practice": [
+        "Praktická příprava probíhá většinou ve vlastních dílnách a na smluvních pracovištích v partnerských organizacích.",
+        "Škola uvádí, že absolventi technických oborů nacházejí díky spolupráci s některými podniky pracovní uplatnění."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a vycházejí pouze z textu inspekční zprávy.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní číselné údaje o úspěšnosti maturity.",
+        "Z textu nelze určit konkrétní údaje ani trend absence.",
+        "Přesná míra podpůrných opatření a jejich skutečná účinnost nejsou v dostupném textu číselně popsány."
+      ]
+    }
+  }
+}

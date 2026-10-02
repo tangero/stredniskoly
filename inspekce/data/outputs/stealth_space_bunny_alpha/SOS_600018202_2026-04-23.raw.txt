@@ -1,0 +1,100 @@
+{
+  "report_id": "SOS_600018202_2026-04-23",
+  "school_profile": {
+    "school_type": "Střední škola zemědělská a přírodovědná",
+    "inspection_period": "23. 4. až 28. 4. 2026",
+    "school_change_summary": "V roce 2023 se změnilo vedení školy, byla nastavena nová organizační struktura a částečně se obměnil pedagogický sbor; později se zlepšilo využívání digitálních technologií."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Praktické vyučování propojuje teorii s prací na zemědělských pracovištích a u smluvních partnerů.",
+        "evidence": "„Výuka vhodně navazovala na teoretickou přípravu a odpovídala očekávaným výstupům školního vzdělávacího programu.“"
+      },
+      {
+        "tag": "Partnerství",
+        "detail": "Spolupráce se zemědělskými podniky, výzkumnými pracovišti a ekologickými organizacemi přináší žákům zkušenosti z praxe.",
+        "evidence": "„Spolupráce se zemědělskými podniky, výzkumnými pracovišti a ekologickými organizacemi umožňuje žákům získávat praktické zkušenosti.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola poskytuje poradenské služby, doučování a individuální konzultace, zejména žákům ohroženým školním neúspěchem.",
+        "evidence": "„Poradenské služby ve škole jsou zajišťovány na standardní úrovni prostřednictvím výchovné poradkyně a metodičky prevence.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Výsledky maturit kolísaly a ve školním roce 2024/2025 byly nejhorší, zejména v cizím jazyce a matematice.",
+        "evidence": "„Nejhorších výsledků dosáhli žáci ve školním roce 2024/2025, kdy ... neúspěšnost v cizím jazyce a v matematice byla výrazně vyšší.“"
+      },
+      {
+        "tag": "Zapojení žáků",
+        "detail": "V části předmětů převládala frontální výuka, žáci se méně aktivně zapojovali a méně se rozvíjela spolupráce mezi nimi.",
+        "evidence": "„Ve výuce převažovala frontální forma práce ... což se projevovalo nižší aktivitou části žáků.“"
+      },
+      {
+        "tag": "Prostředí školy",
+        "detail": "Část budovy, domova mládeže a pracoviště v Hradisku neodpovídá podle inspekce současným požadavkům na moderní vzdělávací prostředí.",
+        "evidence": "„Větší část prostor budovy i domova mládeže je ... zastaralá a neodpovídá plně současným trendům.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní kroky škola přijala pro zlepšení výsledků u maturit z matematiky, českého a cizího jazyka?",
+      "Jak často a v jakém rozsahu probíhá odborný výcvik na moderní technice a co přesně je na pracovišti v Hradisku k dispozici?",
+      "Jak škola ověřuje, že přijatá opatření skutečně zlepšují učení a výsledky žáků?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat zemědělství, ekologii nebo související obory.",
+      "Žákům, kterým vyhovuje propojení teorie s praktickým výcvikem a odbornými partnery.",
+      "Žákům, kteří využijí školní poradenství, doučování nebo podporu při školním neúspěchu."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na stabilních výsledcích u maturitní zkoušky.",
+      "Žákům, kteří potřebují průběžnou individuální podporu při učení.",
+      "Rodičům, kteří očekávají zcela moderní a dobře vybavené prostory všech pracovišť."
+    ],
+    "plain_czech_summary": "Škola má silné praktické zázemí, práci na zemědělských pracovištích a dlouhodobou spolupráci s partnery. Podporuje také žáky s odlišnými vzdělávacími potřebami. Inspekce ale upozornila na kolísavé výsledky maturit, malé zapojení žáků v části výuky a zastaralé prostory. Rodiče by se měli zeptat, jak se škola snaží zlepšovat výsledky, podporu učení a vybavení odborného výcviku."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky kolísaly; školní rok 2024/2025 byl hodnocen jako nejhorší.",
+      "key_numbers": [
+        "214 žáků ve dvou maturitních oborech",
+        "Výsledky za poslední tři školní roky měly značně kolísavou úroveň",
+        "Nejlepší výsledky měli žáci ve školním roce 2022/2023"
+      ],
+      "evidence": "„Ve školním roce 2024/2025 ... neúspěšnost v cizím jazyce a v matematice byla výrazně vyšší.“"
+    },
+    "absence": {
+      "trend": "Údaje o neomluvené absenci nejsou v dodaném textu uvedeny.",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje samostatné hodnocení absence žáků."
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodička prevence.",
+      "Doučování a individuální konzultace pro žáky ohrožené školním neúspěchem.",
+      "Systomatická pomoc při rozhodování o dalším vzdělávání a profesním směřování."
+    ],
+    "safety_climate": [
+      "Žáci jsou pravidelně informováni o rizicích při školních i mimoškolních aktivitách.",
+      "Při praktickém vyučování dostávají vhodné osobní ochranné pracovní prostředky.",
+      "Učitelé odborného výcviku dbají na dodržování zásad bezpečnosti práce."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje se zemědělskými podniky, výzkumnými pracovišti a ekologickými organizacemi.",
+      "Partnerství zahrnuje exkurze, stáže a workshopy.",
+      "Spolupráce podporuje ekologické povědomí a praktické odborné kompetence žáků."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a v každém důležitém bodě je opřen o citaci z inspekční zprávy.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní číselné údaje o absenci.",
+      "U maturitních výsledků jsou uvedeny srovnání a trendy, nikoli podrobné procentní výsledky.",
+      "Hodnocení vhodnosti školy pro konkrétního žáka vychází pouze z obsahu zprávy a ne ze současného vedení konkrétního oboru."
+    ]
+  }
+}

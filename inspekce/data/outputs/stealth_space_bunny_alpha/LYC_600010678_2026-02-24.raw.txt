@@ -1,0 +1,106 @@
+{
+  "report_id": "LYC_600010678_2026-02-24",
+  "school_profile": {
+    "school_type": "Střední škola hospodářská a lesnická, domov mládeže a školní jídelna",
+    "inspection_period": "24.–27. 2. 2026",
+    "school_change_summary": "Od roku 2021 přibylo deset tříd a počet žáků vzrostl o 15 %. Škola otevřela Přírodovědné lyceum a modernizuje zázemí."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Praktické vyučování je dobře organizované a žáky účinně připravuje pro práci v oboru.",
+        "evidence": "„Praktické vyučování úspěšně naplňuje cíle odborného vzdělávání.“"
+      },
+      {
+        "tag": "Bezpečnost",
+        "detail": "Škola pečuje o bezpečnost a ochranu zdraví žáků velmi dobře.",
+        "evidence": "„Bezpečnost a ochrana zdraví žáků je ve škole zajištěna na velmi dobré úrovni.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Žáci majou k dispozici poradní, výchovné, speciální a kariérové služby i pružnou individuální pomoc.",
+        "evidence": "„Škola nabízí také flexibilní individuální pomoc při řešení osobních či jiných obtíží.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Aktivita ve výuce",
+        "detail": "V části hodin převažuje frontální výuka a žáci méně samostatně vyhledávají informace a rozvíjejí kritické myšlení.",
+        "evidence": "„Ve výuce obvykle scházelo samostatné vyhledávání informací z různých zdrojů, jejich kritická analýza a následné využití.“"
+      },
+      {
+        "tag": "Absence",
+        "detail": "Nástavbové studium má nejvyšší absenci a nižší průměrný prospěch.",
+        "evidence": "„Nejvyšší absenci vykázali žáci nástavbového studia, zejména jeho prvního ročníku.“"
+      },
+      {
+        "tag": "Maturita",
+        "detail": "Výsledky Agropodnikání v maturitě jsou přes zlepšení stále horší než celostátní průměr.",
+        "evidence": "„Zlepšení i nadále vyžadují výsledky žáků oboru Agropodnikání.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně výuka rozlišuje náročnost úloh pro žáky s různými studijními předpoklady?",
+      "Jaké konkrétní podpůrné kroky škola nabídne žákovi nástavbového studia při časté absenci?",
+      "Jak se škola připravuje na matematickou část společné maturitní zkoušky a jaké výsledky má Agropodnikání?"
+    ],
+    "who_school_fits": [
+      "Uchazeči o prakticky zaměřené obory v zemědělství, lesnictví, potravinářství, gastronomii nebo technice.",
+      "Žáci, kteří chtějí odborné vzdělávání doplněným praktickou výukou na školních pracovištích.",
+      "Rodiny, kterým vyhovuje školní zázemí včetně domova mládeže, jídelny a volnočasových aktivit."
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči, kterým záleží na výuce založené na samostatném řešení, spolupráci a práci s více zdroji.",
+      "Rodiny, které potřebují mít vysvětlené aktuální výsledky maturity konkrétního oboru, zejména Agropodnikání.",
+      "Rodiny zvažující nástavbové studium kvůli jeho vyšší absenci a horšímu průměrnému prospěchu."
+    ],
+    "plain_czech_summary": "Škola má silné praktické vyučování, rozsáhlé odborné zázemí, kvalitní partnerskou spolupráci a velmi dobré zajištění bezpečnosti. Nabízí také poradní a preventivní podporu. Výsledky maturity se zlepšují a v roce 2025 byly většinou lepší než celostátní průměr; slabší zůstává Agropodnikání. Pro rodiče je důležité vědět, že v některých hodinách převažuje frontální výuka, chybí diferencované úlohy a samostatné hledání informací. Nástavbové studium má nejvyšší absenci, což může ovlivnit jeho studijní výsledky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Ve všech využívaných oborech se výsledky zlepšovaly; v roce 2025 byla většina oborů na celostátní úrovni nebo lepší, výjimkou byl Agropodnikání.",
+      "key_numbers": [
+        "Podnikání: neúspěšnost ve společné části klesla z 46,7 % v roce 2022 na 15,4 % v roce 2025.",
+        "Sociální činnost: po 60 % v roce 2022 a 40 % v roce 2024 uspěli v roce 2025 všichni přihlášení žáci.",
+        "Agropodnikání: neúspěšnost činila 23,1 % v roce 2024 a 16,7 % v roce 2025, tedy nad celostátním průměrem."
+      ],
+      "evidence": "„Ve všech oborech však dochází ke zlepšení výsledků.“"
+    },
+    "absence": {
+      "trend": "Celková i neomluvená absence dlouhodobě klesá, ale mezi typy oborů a ročníky zůstávají výrazné rozdíly.",
+      "key_numbers": [
+        "Ve školním roce 2024/2025 měl žák průměrně asi 167 hodin absence, z toho téměř 6 hodin neomluvené.",
+        "Nástavbové studium mělo nejvyšší absenci mezi maturitními obory.",
+        "Absence poklesla z přibližně 215 hodin v roce 2021/2022, z nichž 15 bylo neomluvených."
+      ],
+      "evidence": "„V delším časovém vývoji je patrné snižování celkové absence včetně neomluvené.“"
+    },
+    "support_services": [
+      "Výchovné poradenství a prevence rizikového chování",
+      "Služby speciálního pedagoga",
+      "Kariérové poradenství",
+      "Poradenské služby pro osobnostní rozvoj",
+      "Flexibilní individuální pomoc při osobních či jiných obtížích"
+    ],
+    "safety_climate": [
+      "Bezpečnost a ochrana zdraví jsou hodnoceny jako příkladné.",
+      "Ředitel průběžně analyzuje rizika a přijímá preventivní opatření.",
+      "Žáci jsou pravidelně seznamováni s bezpečnostními pravidly podle charakteru výuky."
+    ],
+    "partnerships_practice": [
+      "Praktická výuka probíhá ve spolupráci s regionálními firmami a institucemi, mimo jiné s lesnickými organizacemi, ZF Automotive a městem Frýdlant.",
+      "Škola podporuje mobilitu žáků a od roku 2024/2025 spolupracuje s British Council.",
+      "Škola je fakultní školou Technické univerzity v Liberci a cvičnou školou České zemědělské univerzity."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžné české výrazy, stručné formulace a přímo říká, co mohou rodiče a žáci očekávat.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesnou míru vybírání jednotlivých oborů pro školní rok 2026/2027.",
+      "U některých oborů jsou výsledky maturity uvedeny jen za několik let, takže nelze spolehlivě posoudit dlouhodobý vývoj.",
+      "Text neposkytuje aktuální rozpis volnočasových aktivit nebo konkrétní časy jednotlivých služeb."
+    ]
+  }
+}

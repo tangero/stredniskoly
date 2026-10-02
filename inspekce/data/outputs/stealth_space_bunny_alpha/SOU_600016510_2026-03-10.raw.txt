@@ -1,0 +1,98 @@
+{
+  "report_id": "SOU_600016510_2026-03-10",
+  "school_profile": {
+    "school_type": "Střední škola polytechnická, příspěvková organizace",
+    "inspection_period": "10. 3. 2026 – 13. 3. 2026",
+    "school_change_summary": "Od roku 2022 se obměnil pedagogický sbor, přibyla výchovná poradkyně a externí psycholog, modernizovalo se ICT a budova a rozšířila se příprava k pilotování dronů a zkouškám Cambridge B2 a C1."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturity",
+        "detail": "Ve čtyřech oborech s maturitní zkouškou dosáhla škola v letech 2024 a 2025 úspěšnost 98,1 %.",
+        "evidence": "„Úspěšnost shodně 98,1 %, což představuje 10% zlepšení proti předešlým rokům.“"
+      },
+      {
+        "tag": "Technické vybavení a praxe",
+        "detail": "Škola má modernizované učebny a dílny a praktickou výuku zajišťuje také na smluvních pracovištích.",
+        "evidence": "„Škola disponuje dostatečným počtem učeben, včetně učeben odborných, a rovněž prostory pro dílenskou praktickou přípravu.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola poskytuje poradenské, psychologické, výchovné a kariérové služby a podporu žákům s odlišným mateřským jazykem.",
+        "evidence": "„Škola zajišťuje komplexní systém poradenských služeb prostřednictvím kvalifikovaných odborných pedagogických pracovníků.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nehodnocení žáků",
+        "detail": "V prvním pololetí 2025/2026 vzrostl podíl nehodnocených žáků na 7,2 %, což je nejvyšší hodnota za sledované období.",
+        "evidence": "„Výrazně však narostl počet nehodnocených žáků, a to na 7,2 %, což je nejvyšší hodnota za celé sledované období.“"
+      },
+      {
+        "tag": "Slabší výsledky v prvním pololetí",
+        "detail": "Škola dlouhodobě zaznamenává vyšší počet neprospívajících žáků na konci prvního pololetí než druhého.",
+        "evidence": "„V prvních pololetích pravidelně neprospělo přibližně 20–21 % žáků, zatímco ve druhých pololetích se podíl neúspěšných stabilně snižuje.“"
+      },
+      {
+        "tag": "Omezená sebereflexe a týmová práce",
+        "detail": "Ve výuce se málo využívá sebehodnocení, zpětná vazba a spolupráce žáků.",
+        "evidence": "„Sebehodnocení a reflexe dosažených výsledků se vyskytovaly jen výjimečně“ a „Nízká frekvence kooperativních aktivit.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přijímá opatření proti nehodnoceným žákům a podporuje je v prvním pololetí?",
+      "Kolik hodin týdně se věnuje spolupráci žáků, vzájemné zpětné vazbě a rozvoji kritického myšlení?",
+      "Jaké konkrétní možnosti mají žáci s odlišným mateřským jazykem a se speciálními vzdělávacími potřebami?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí technické obory a ocenit praktickou výuku, například obory Mechanik strojů a zařízení nebo Elektrotechnika.",
+      "Žákům, kterým vyhovuje úzká specializace na strojní a elektrotechnické obory.",
+      "Žákům s odlišným mateřským jazykem nebo se speciálními vzdělávacími potřebami, protože škola uvádí jejich podporu."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na pravidelném hodnocení a sebereflexi během celého školního roku.",
+      "Žákům, kteří potřebují více týmové práce, vzájemného učení a podpory kritického myšlení.",
+      "Rodičům žáků, kteří chtějí průběžně sledovat vysoký počet nehodnocených žáků v prvním pololetí."
+    ],
+    "plain_czech_summary": "Škola nabízí technické obory s moderním vybavením, praktickou výukou a úspěšnými maturitami. Výsledky maturity jsou v letech 2024 a 2025 98,1 %. Podporu zajišťují výchovné poradkyně, školní psycholog i kariéroví poradci. Největší obavou je nárůst nehodnocených žáků na 7,2 % v prvním pololetí 2025/2026 a dlouhodobě vyšší neúspěšnost v prvním pololetí. Výuka také podle inspekce dostatečně nerozvíjí sebehodnocení, spolupráci a kritické myšlení. Zpráva proto doporučuje posílit podporu v prvním pololetí a pravidelně pracovat s cíli a zpětnou vazbou."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "V letech 2024 a 2025 byla úspěšnost ve sledovaných oborech s maturitní zkouškou stejná a o 10 procentních bodů lepší než v předchozích letech.",
+      "key_numbers": [
+        "98,1 % úspěšnost v oborech s maturitní zkouškou v roce 2024",
+        "98,1 % úspěšnost v oborech s maturitní zkouškou v roce 2025",
+        "V oborech s výučním listem byla úspěšnost v roce 2025 100 %."
+      ],
+      "evidence": "„V roce 2024 a 2025 v oborech vzdělání ukončených maturitní zkouškou byla úspěšnost shodně 98,1 %.“"
+    },
+    "absence": {
+      "trend": "Zpráva neuvádí údaje o absenci žáků.",
+      "key_numbers": [],
+      "evidence": "V dodaném textu nejsou uvedeny žádné statistiky absencí."
+    },
+    "support_services": [
+      "Výchovné poradkyně podporují žáky se speciálními vzdělávacími potřebami a koordinují podpůrná opatření.",
+      "Externí školní psycholog poskytuje odbornou psychologickou podporu žákům i pedagogům.",
+      "Kariéroví poradci podporují žáky při volbě dalšího vzdělávání a profesního směřování."
+    ],
+    "safety_climate": [
+      "„Žáci hodnotí školu jako bezpečné, stabilní a podporující prostředí.“",
+      "„Škola prostřednictvím vedení a pedagogických pracovníků zajišťuje pravidelné poučování žáků o bezpečnosti, ochraně zdraví a požární prevenci.“"
+    ],
+    "partnership_practice": [
+      "Škola spolupracuje s ČEZ, Svazem energetiky ČR, Moravskoslezskou technologickou akademií a dalšími partnery.",
+      "Sociální partneři poskytují zpětnou vazbu k profilu absolventa a pomáhají organizovat praxe, odborné soutěže a projekty.",
+      "Škola uvádí, že spolupráce podporuje „vysokou uplatnitelnost absolventů“ na pracovním trhu."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá srozumitelné formulace, krátké věty a jasně odděluje silné stránky, rizika a otázky pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí žádné údaje o absenci žáků.",
+      "Nejvyšší počet nehodnocených žáků se vztahuje k prvnímu pololetí školního roku 2025/2026, nikoli k celému roku."
+    ]
+  }
+}

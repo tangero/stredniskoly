@@ -1,0 +1,104 @@
+{
+  "report_id": "GY4_691007039_2025-05-13",
+  "school_profile": {
+    "school_type": "soukromé čtyřleté gymnázium v denní formě, součást sítě Cambridge International Education",
+    "inspection_period": "13. 5. 2025 až 15. 5. 2025",
+    "school_change_summary": "Střední škola začala působit od 1. 9. 2024; při inspekci v ní studoval první ročník s 8 žáky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Digitální podpora učení",
+        "detail": "Jednotná elektronická platforma umožňuje průběžnou zpětnou vazbu a sledování individuálního pokroku.",
+        "evidence": "„jednotné digitální platformy školy vytváří efektivní nástroj pro realizaci vzdělávání, poskytování zpětné vazby a vzájemnou komunikaci“"
+      },
+      {
+        "tag": "Jazykové vzdělávání",
+        "detail": "Metoda CLIL se využívá napříč předměty a má podporovat jazykové dovednosti žáků.",
+        "evidence": "„účinné využívání metody CLIL napříč předměty podporuje rozvoj jazykových dovedností žáků“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola poskytuje konzultace, doučování, kroužek čtenářské gramotnosti a podporu při zvládání učiva.",
+        "evidence": "„individuální přístup ve výuce, kroužek na podporu čtenářské gramotnosti, konzultace, doučování“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Organizace a dokumentace",
+        "detail": "Nedostatek pracovníků vedení zhoršuje kontrolu dokumentace a komunikaci s rodiči.",
+        "evidence": "„nepřítomnost dalšího pracovníka ve vedení gymnázia“ „nepřehledností dokumentace“ a „nepřesných informacích na webových stránkách“"
+      },
+      {
+        "tag": "Prostory",
+        "detail": "Současné prostory a vybavení mohou omezovat další růst gymnázia.",
+        "evidence": "„stávající prostorové a materiální podmínky jsou pro budoucí celkové naplnění gymnázia limitující“"
+      },
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "V části hodin je slabší podpora žáků s vyššími znalostmi a menší prostor pro závěrečnou reflexi.",
+        "evidence": "„nižší míra diferenciace výuky“ a „v menší míře vytvářeli prostor pro společné shrnutí důležitých poznatků či sebereflexi“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola rozlišuje úkoly pro žáky s různou úrovní znalostí a tempa?",
+      "Kdy a jak často budou probíhat konzultace, doučování a podpora při přípravě na českou maturitu či IB?",
+      "Jaké konkrétní kroky škola plánuje pro rozšíření prostor a personálního zajištění při růstu počtu žáků?"
+    ],
+    "who_school_fits": [
+      "Rodiče žáků, kteří mají zájem o gymnaziální vzdělávání s možností přípravy na českou maturitu a od třetího ročníku také na IB.",
+      "Žáci, kterým vyhovuje individuální přístup, digitální prostředí a podpora sebereflexe.",
+      "Rodiny, které ocení menší školní prostředí a úzkou spolupráci školy s rodiči."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří chtějí stabilní, již zavedenou střední školu s dlouhou historií výsledků.",
+      "Rodiny, kterým mohou vadit pronajaté prostory a omezené zázemí při plném naplnění kapacity.",
+      "Rodiče, kterým záleží na velmi důsledné organizaci, dokumentaci a informacích na webových stránkách."
+    ],
+    "plain_czech_summary": "Livingston je nové soukromé čtyřleté gymnázium, které začalo fungovat v září 2024. Při inspekci mělo pouze 8 žáků v prvním ročníku. Výuka má podle inspektorů kladné stránky: jednotnou digitální platformu, průběžnou zpětnou vazbu, podporu jazykových dovedností a dobré partnerské vztahy mezi učiteli a žáky. Od třetího ročníku má být možné připravovat se na českou maturitu a IB, výsledky ale zatím nelze posoudit. Mezi problémy patří omezené prostory, nedostatek personálu vedení, nepřesná dokumentace a místy nedostatečná diferenciace výuky. Rodiče by se měli zeptat na konkrétní plán rozšíření a na podporu jednotlivým žákům."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Příprava je plánována od třetího ročníku; zpráva neuvádí výsledky české maturity ani IB.",
+      "key_numbers": [
+        "Od třetího ročníku je plánována příprava na českou maturitu a IB.",
+        "V době inspekce studovalo 8 žáků v prvním ročníku.",
+        "Nejvyšší povolený počet žáků gymnázia je 120."
+      ],
+      "evidence": "„Od třetího ročníku bude vzdělávání … směřováno ke složení české maturitní zkoušky i … zkoušky IB.“"
+    },
+    "absence": {
+      "trend": "Zpráva uvádí pouze vyšší omluvenou absenci u některých žáků, převážně zdravotně, bez číselného údaje.",
+      "key_numbers": [
+        "Při inspekci měli všichni žáci prospět.",
+        "Nejvyšší omluvená absence jednotlivců byla převážně zdravotní.",
+        "Celkový počet absencí zpráva neuvádí."
+      ],
+      "evidence": "„vyšší omluvená absence jednotlivců je způsobena převážně zdravotními důvody“"
+    },
+    "support_services": [
+      "Výchovný poradce, školní psycholožka a metodička prevence poskytují informační, podpůrné a preventivní služby.",
+      "Škola nabízí konzultace, doučování, kroužek na podporu čtenářské gramotnosti a možnost domácí přípravy či opravy výstupů.",
+      "Jeden žák se speciálními vzdělávacími potřebami dostává podporu; dva žáci s odlišným mateřským jazykem mají doučování češtiny."
+    ],
+    "safety_climate": [
+      "Ve sledovaných hodinách převládala příjemná pracovní atmosféra založená na partnerském přístupu a vzájemném respektu.",
+      "Ve všech sledovaných hodinách učitelé zohledňovali speciální vzdělávací potřeby jednotlivců.",
+      "Bezpečnost podporuje stálá služba a zabezpečený vstup; škola zajišťuje také preventivní aktivity."
+    ],
+    "partnerships_practice": [
+      "Spolupráci zajišťuje vedení, pedagogové, školní poradenské pracoviště a zákonní zástupci prostřednictvím tripartitních jednání a školské rady.",
+      "Spolupráce s vysokými školami a zahraničními středními školami podporuje odborné a jazykové kompetence.",
+      "Někteří pedagogové vyučují i na základní škole, což podporuje pravidelnou spolupráci."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a v konkrétních větách; důležité závěry jsou opřeny o citace z inspekční zprávy.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí počet žáků celkem ve střední škole, ale pouze v prvním ročníku.",
+      "Nejsou uvedeny výsledky české maturity ani IB, protože gymnázium začalo působit až v září 2024.",
+      "Přesné číselné údaje o absenci nejsou v textu uvedeny."
+    ]
+  }
+}

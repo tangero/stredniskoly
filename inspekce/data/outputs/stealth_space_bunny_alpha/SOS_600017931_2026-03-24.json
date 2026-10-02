@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600017931_2026-03-24",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:23:25.609305+00:00",
+  "run_finished_utc": "2026-10-02T16:24:04.863351+00:00",
+  "raw_file": "SOS_600017931_2026-03-24.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600017931_2026-03-24",
+    "school_profile": {
+      "school_type": "Střední odborná škola Hranice, školská právnická osoba",
+      "inspection_period": "24. až 26. 3. 2026",
+      "school_change_summary": "Škola pokračuje ve zkvalňování prostorových a materiálních podmínek a rozvíjí partnerské vztahy; přijala také opatření na základě předchozí inspekce, například k využívání didaktické techniky a hodnocení žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Žáci se během výuky setkávají s reálnými pracovními situacemi a učí se praktické dovednosti.",
+          "evidence": "„Pravidelné zapojování do reálných nebo simulovaných pracovních činností jim umožňuje lépe porozumět nárokům praxe.“"
+        },
+        {
+          "tag": "Maturitní výsledky",
+          "detail": "Úspěšnost u maturitní zkoušky se podle zprávy v letech 2023–2025 postupně zlepšovala.",
+          "evidence": "„V období let 2023–2025 došlo k postupnému snižování neúspěšnosti žáků.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola poskytuje poradenské služby a spolupracuje se Speciálně pedagogickým centrem.",
+          "evidence": "„Nastavený systém poskytování poradenských služeb ve škole je funkční i s ohledem na jejich úzkou spolupráci s vlastním Speciálně pedagogickým centrem.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Diferenciace výuky",
+          "detail": "Učitelé by měli více přizpůsobovat obsah a úkoly různým vzdělávacím potřebám žáků.",
+          "evidence": "„V menší míře docházelo v průběhu vzdělávání k obsahové a časové diferenciaci výuky.“"
+        },
+        {
+          "tag": "Sebehodnocení a zpětná vazba",
+          "detail": "Ve vyučování se málo podporuje, aby žáci aktivně hodnotili svůj pokrok a učení.",
+          "evidence": "„Formativní hodnocení a reflexe vzdělávacího pokroku žáků byly využívány v omezené míře.“"
+        },
+        {
+          "tag": "Kritické myšlení",
+          "detail": "Práce s více informačními zdroji a rozvoj kritického myšlení jsou v některých hodinách nedostatečné.",
+          "evidence": "„V části hodnocených vyučovacích hodin byly jen ojediněle zaznamenány činnosti vedoucí k rozvoji kritického myšlení.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá individualizace úkolů pro žáky se speciálními vzdělávacími potřebami?",
+        "Jak často se žáci během vyučování zapojují do formativního hodnocení, sebehodnocení a hodnocení spolužáků?",
+        "Kolik hodin učební praxe absolvují žáci maturitních oborů a jaké zpětné vazby dostávají od smluvních partnerů?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat obory Cestovní ruch, Informační technologie, Bezpečnostně právní činnost, Rekondiční a sportovní masér nebo Reprodukční grafik.",
+        "Žákům, kterým vyhovuje propojení školní výuky s praxí, projekty a činnostmi mimo školu.",
+        "Žákům, kteří využijí poradenské služby, kariérové poradenství nebo spolupráci se Speciálně pedagogickým centrem."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na pravidelném individualizovaném přístupu během každé vyučovací hodiny.",
+        "Rodičům žáků, kteří potřebují výraznější podporu sebereflexe a průběžné zpětné vazby.",
+        "Rodičům žáků, jejichž vzdělávání vyžaduje intenzivnější práci s informačními zdroji a rozvoj kritického myšlení."
+      ],
+      "plain_czech_summary": "Škola nabízí střední odborné vzdělání i Speciálně pedagogické centrum. Výuka je podle inspekce dobře připravená, praktická a často propojená s reálnou praxí. Maturitní výsledky se v letech 2023–2025 zlepšovaly a více než 50 % absolventů pokračuje na příbuzných vysokých školách. Mezi slabší místa patří malá diferenciace výuky, omezené formativní hodnocení a málo podpořeného sebehodnocení žáků. Rodiče by měli na dni otevřených dveří ověřit, jak konkrétně tyto oblasti škola zlepšuje."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Úroveň výsledků u maturitní zkoušky vykazuje meziroční zlepšení; neúspěšnost se v letech 2023–2025 postupně snižovala.",
+        "key_numbers": [
+          "Období sledování: roky 2023–2025",
+          "Výsledky závěrečné zkoušky se ve sledovaném období výrazně nelišily",
+          "Podíl neúspěšných žáků byl minimální"
+        ],
+        "evidence": "„Úroveň celkových výsledků žáků u maturitní zkoušky vykazuje meziroční zlepšení.“"
+      },
+      "absence": {
+        "trend": "Míra absence vychází z nastavené hranice 25 % a v meziročním srovnání se významně nemění.",
+        "key_numbers": [
+          "Hranice absence: 25 %",
+          "Třídní učitelé absenci průběžně sledují a evidují"
+        ],
+        "evidence": "„Míra absence vychází z nastavené hranice 25 % a v meziročním srovnání nevykazuje významné změny.“"
+      },
+      "support_services": [
+        "Ve škole působí výchovný poradce, školní metodik prevence, speciální pedagog a školní psycholog.",
+        "Speciálně pedagogické centrum poskytuje informační, diagnostické, poradenské a metodické služby.",
+        "Centrum nabízí také logopedickou intervenci, kroužky, programy pro předškoláky, školení a webináře."
+      ],
+      "safety_climate": [
+        "V hospitovaných hodinách vznikalo příznivé klima a žáci se podle zprávy nebáli vyjádřit vlastní názor.",
+        "Škola průběžně poučuje žáky o vhodném chování a bezpečnostních rizicích při výuce a školních aktivitách.",
+        "Škola věnuje pozornost prevenci rizikových jevů a žákům poskytuje schránku důvěry."
+      ],
+      "partnerships_practice": [
+        "Sociální partneři umožňují žákům praktickou výuku v reálném pracovním prostředí, například u Policie ČR nebo Hasičského záchranného sboru.",
+        "Škola spolupracuje také s cestovními kancelářemi, turistickými centry a hotely.",
+        "Škola realizuje zahraniční vzdělávací aktivity včetně skupinových mobilit, studijních pobytů a kurzů pro pedagogy."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, stručné věty a jasně odděluje silné stránky, rizika a ověřitelné údaje.",
+      "uncertainty_notes": [
+        "Zpráva uvádí trendy výsledků a absence, ale v textu nejsou uvedeny přesné procentní hodnoty pro sledované roky.",
+        "Zpráva neuvádí konkrétní výsledky jednotlivých maturitních oborů za jednotlivé roky.",
+        "Hodnocení se opírá o inspekční období 24.–26. 3. 2026 a o dokumentaci uvedenou v seznamu dokladů."
+      ]
+    }
+  }
+}

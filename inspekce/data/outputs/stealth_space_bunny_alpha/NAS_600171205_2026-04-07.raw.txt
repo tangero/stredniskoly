@@ -1,0 +1,104 @@
+{
+  "report_id": "NAS_600171205_2026-04-07",
+  "school_profile": {
+    "school_type": "Střední škola technických oborů, příspěvková organizace, se školní jídelnou a domovem mládeže",
+    "inspection_period": "7. 4. 2026 až 10. 4. 2026",
+    "school_change_summary": "Od předchozí inspekce se změnilo vedení školy a část pedagogického sboru, posílily se poradenské služby, modernizovalo se technické zázemí a pokračovala spolupráce s partnery."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické vzdělávání",
+        "detail": "Škola propojuje teorii s praktickým výcvikem vybavených školních dílnách a u sociálních partnerů.",
+        "evidence": "Účinné propojení teoretické a praktické výuky podporující rozvoj praktických dovedností žáků i připravenost na budoucí profesní uplatnění."
+      },
+      {
+        "tag": "Odborné soutěže a zahraniční stáže",
+        "detail": "Žáci dosahují dobrých výsledků v odborných soutěžích a každoročně se zhruba 40 žáků účastní zahraničních stáží.",
+        "evidence": "Škola zapojuje žáky do soutěží odborných dovedností; každoročně vyjíždí na zahraniční stáže přibližně 40 žáků."
+      },
+      {
+        "tag": "Podpora a informovanost",
+        "detail": "Rodiče mohou průběžné výsledky sledovat přes elektronický informační systém a škola poskytuje konzultace a doučování.",
+        "evidence": "Elektronický informační systém zajišťuje aktuálnost a transparentnost; škola poskytuje strukturovanou podporu formou konzultací a doučování."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence",
+        "detail": "Vysoká absence zhoršuje průběžné výsledky a zvyšuje riziko neúspěchu nebo předčasného ukončení školy.",
+        "evidence": "Vysoká absence se negativně promítá do výsledků průběžného vzdělávání a představuje významný faktor."
+      },
+      {
+        "tag": "Rozdíly ve výuce",
+        "detail": "Ve většině hodin se uplatňoval převážně frontální styl výuky a ojediněle diferenciace úkolů podle potřeb žáků.",
+        "evidence": "Skupinová práce byla využívána v menší míře; individualizace a diferenciace zadávaných úkolů byly využívány spíše ojediněle."
+      },
+      {
+        "tag": "Digitální a evaluační prvky",
+        "detail": "Digitální technologie včetně umělé inteligence se využívaly jen příležitostně a závěrečné shrnutí či sebehodnocení nebyly běžnou součástí hodin.",
+        "evidence": "Digitální technologie byly využity spíše příležitostně; závěry hodin nebyly zpravidla využity k ověření vzdělávacích cílů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší příčiny absence a předčasného ukončení vzdělávání?",
+      "Jak často žáci pracují v partnerských provozech a jak se hodnotí kvalita jejich praktického výcviku?",
+      "Jaké konkrétní příklady podpory dostávají žáci se speciálními vzdělávacími potřebami v jednotlivých oborech?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat technický obor s praktickým výcvikem a dalším zařazením u sociálních partnerů.",
+      "Žákům, kterému vyhovuje nabídka oborů Autotronik, Podnikání nebo odborných oborů s výučním listem.",
+      "Žákům, kteří mají zájem o odborné soutěže, projekty nebo zahraniční stáže."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům, pro které je zásadní pravidelná docházka, protože škola upozorňuje na zvýšenou absenci.",
+      "Žákům, kteří potřebují intenzivní individuální přístup, protože diferenciace úkolů se podle zprávy objevovala jen ojediněle.",
+      "Žákům, kteří očekávají v každé hodině intenzivní práci s digitálními technologiemi nebo hodnocení podle předem známých kritérií."
+    ],
+    "plain_czech_summary": "Škola má dobře vybavené dílny, propojuje teorii s praktickým výcvikem a spolupracuje s partnery. Žáci dosahují dobrých výsledků v odborných soutěžích a část z nich jezdí na zahraniční stáže. Elektronický systém umožňuje rodičům sledovat informace o škole a podporu dostávají také žáci s obtížemi. Výuka má přátelskou atmosféru, ale často využívá frontální způsob. Slabší jsou využití digitálních nástrojů, práce s cílem hodiny, závěrečné shrnutí a individualizace. Největším rizikem je vysoká absence, která může vést k horším výsledkům nebo předčasnému ukončení školy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky maturitních zkoušek za poslední dva roky vykazovaly stoupající charakter a byly výrazně lepší než průměr srovnatelných škol.",
+      "key_numbers": [
+        "100% celkové úspěšnosti za jarní a podzimní termín 2024/2025",
+        "2,17% neúspěšnosti ve společné části na jaře 2024/2025",
+        "Z uvedených 160 žáků u závěrečných zkoušek ji složilo 153, tedy 95,62%."
+      ],
+      "evidence": "Výsledky maturitních zkoušek za poslední dva roky mají stoupající charakter; u závěrečných zkoušek neuspělo 7 ze 160 žáků."
+    },
+    "absence": {
+      "trend": "Absence je označena za zvýšenou a škola uvádí, že s ní bojuje; přesný číselný údaj zpráva neposkytuje.",
+      "key_numbers": [
+        "Přesný podíl absence uveden není",
+        "Absence podporuje riziko školního neúspěchu a předčasného ukončení vzdělávání"
+      ],
+      "evidence": "Škola uvádí vysokou absenci, se kterou se potýká, a doporučuje zavést proaktivní systém jejího řešení."
+    },
+    "support_services": [
+      "Konzultace a doučování pro žáky ohrožené školním neúspěchem",
+      "Adaptační kurzy se zvládáním stresu a efektivním učením",
+      "Školní psycholog, výchovné poradkyně a spolupráce s pedagogicko-psychologickými poradnami",
+      "Podpora žáků se speciálními vzdělávacími potřebami a konzultace pro pedagogy"
+    ],
+    "safety_climate": [
+      "Žáci jsou pravidelně poučováni o bezpečnosti, ochraně zdraví a požární prevenci.",
+      "Škola sleduje úrazovou prevenci, přičemž časté úrazy souvisejí se sportovními aktivitami.",
+      "Domov mládeže a škola spolupracují při řešení projevů šikany, kyberšikany, užívání návykových látek a záškoláctví."
+    ],
+    "partnerships_practice": [
+      "Sociální partneři zajišťujíUmístění vyšších ročníků na praktické vyučování.",
+      "Škola spolupracuje s cechy a profesními organizacemi, které podporují odborné zázemí a výuku.",
+      "Program Erasmus+ umožňuje každoročně přibližně 40 žákům zahraniční stáže."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou srozumitelné, stručné a vztahují se k praktickým důsledkům zjištění pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesný číselný podíl absence.",
+      "Zpráva neuvádí podrobné výsledky maturitních zkoušek rozdělené podle jednotlivých předmětů.",
+      "Některé údaje o partnerech a konkrétním rozsahu spolupráce nejsou číselně specifikovány."
+    ]
+  }
+}

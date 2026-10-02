@@ -1,0 +1,110 @@
+{
+  "report_id": "LYC_600015360_2026-01-12",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:47:26.417481+00:00",
+  "run_finished_utc": "2026-10-02T16:48:07.727253+00:00",
+  "raw_file": "LYC_600015360_2026-01-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600015360_2026-01-12",
+    "school_profile": {
+      "school_type": "Soukromá střední škola se společností s.r.o.",
+      "inspection_period": "12. až 19. ledna 2026",
+      "school_change_summary": "Škola rozšířila nabídku o obor Sociální činnost a ukončila obor Truhlář."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Zkušenosti s praxí",
+          "detail": "Spolupráce s firmami a dalšími partnery propojuje školní výuku s praxí a podporuje přípravu na budoucí povolání.",
+          "evidence": "„Spolupráce ... efektivně přispívá k užšímu sepětí teoretické výuky a praxe.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola poskytuje doučování, konzultace, testy připravené na maturitu i semináře z vybraných předmětů.",
+          "evidence": "Škola realizuje „doučování, konzultace, ročníkové testy“ a semináře z cizího jazyka nebo matematiky."
+        },
+        {
+          "tag": "Poradenská síť",
+          "detail": "Školní poradenské pracoviště spolupracuje s pedagogy i školskými poradenskými zařízeními a podporuje také žáky s odlišným mateřským jazykem.",
+          "evidence": "„Jejich funkčnost je podpořena systematickou spoluprací se všemi pedagogy.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturitní připravenost",
+          "detail": "Rodiče by měli pečlivě sledovat přípravu na maturitu, zejména z českého a anglického jazyka.",
+          "evidence": "Neúspěšnost u maturit vzrostla „z 6,9 % na 26,8 %“; přetrvává v českém a anglickém jazyce."
+        },
+        {
+          "tag": "Stabilita učitelů",
+          "detail": "Časté změny pedagogů mohou narušovat souvislost výuky a oslabovat přípravu na maturitu.",
+          "evidence": "Odchody pedagogů se „promítlo změnami v organizaci výuky některých maturitních předmětů“."
+        },
+        {
+          "tag": "Aktivní zapojení žáků",
+          "detail": "V části hodin převládá tradiční výuka, takže žáci nemusí dostávat dost prostoru pro vlastní řešení, diskusi a zpětnou vazbu.",
+          "evidence": "Inspekce zjistila pasivní přístup žáků a rezervy v „sebehodnocení a vzájemném hodnocení“."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola reaguje na nestabilitu pedagogického sboru a jak zajišťuje kontinuitu výuky?",
+        "Jaké konkrétní výsledky maturit z českého a anglického jazyka měla škola v jednotlivých oborech a formách studia za poslední tři roky?",
+        "Jak často běžně probíhá společná příprava na maturitu a jak škola sleduje její skutečný dopad na výsledky?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat v oboru Podnikání, Veřejnosprávní činnost, Pedagogika, Předškolní a mimoškolní pedagogika nebo nově Sociální činnost.",
+        "Žákům, kteří využijí spolupráci školy s regionálními firmami, exkurze, projekty a odbornou praxi.",
+        "Žákům, kteří potřebují školní poradenství a jsou ochotni využívat nabízenou přípravu k maturitě."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na stabilním učiteli a plynulém přechodu mezi školními ročníky.",
+        "Rodičům žáků připravujících se na maturitu z českého nebo anglického jazyka kvůli přetrvávající vysoké neúspěšnosti.",
+        "Rodičům žáků, kteří očekávají převážně aktivní výuku, malé skupiny a průběžné hodnocení podle individuálních potřeb."
+      ],
+      "plain_czech_summary": "Škola nabízí obory podnikání, veřejnosprávní činnosti, pedagogiky a nově sociální činnosti, a to v denní i dálkové formě. Mezi silné stránky patří spolupráce s regionálními partnery, odborné praxe a dostupná podpora při přípravě k maturitě. Zároveň se škola potýká s odchody učitelů, což může narušovat organizaci výuky. V řadě hodin žáci příliš pasivně poslouchají a málo se hodnotí jejich pokrok. Největší praktická výhrada se týká maturit z českého a anglického jazyka. Rodiče by měli na dnešku ověřit skutečné výsledky konkrétního oboru a formy studia."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Neúspěšnost od roku 2023 do roku 2025 výrazně vzrostla a školní výsledky v českém a anglickém jazyku byly horší než celostátní průměr.",
+        "key_numbers": [
+          "Neúspěšnost společné a profilové maturity vzrostla z 6,9 % v roce 2023 na 26,8 % v roce 2025.",
+          "V dálkovém Veřejnosprávní činnosti neuspělo v roce 2025 celkem 45 % žáků.",
+          "V denním Podnikání bylo v roce 2025 neúspěšných 63 % konajících maturitu."
+        ],
+        "evidence": "„Neúspěšnost ... se od roku 2023 do roku 2025 zvýšila z 6,9 % na 26,8 %.“"
+      },
+      "absence": {
+        "trend": "Zpráva neuvádí souhrnný trend ani vývoj počtu neomluvených hodin za sledované období.",
+        "key_numbers": [],
+        "evidence": "Inspekce uvádí řešení „vysoké nebo neomluvené absence“ pomocí výchovných komisí, ale neuvádí celkové číslo."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště spolupracující s pedagogy a školskými poradenskými zařízeními.",
+        "Doučování, konzultace, ročníkové testy a semináře připravující k maturitě.",
+        "Podpora žáků se speciálními vzdělávacími potřebami a žáků s odlišným mateřským jazykem.",
+        "Žákovská portfolia, sebehodnotící formuláře a prospěchové stipendium ve vybraných oborech denního studia."
+      ],
+      "safety_climate": [
+        "Prevence zahrnuje adaptační programy, třídnické hodiny, projekty a spolupráci s externími partnery.",
+        "Aktivity směřují ke zdravému životnímu stylu, pozitivním vztahům a omezování nežádoucího chování.",
+        "Příznivému klimatu přispívá nově založený žákovský parlament."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s regionálními firmami zaměřenými na vyučované obory.",
+        "Spolupráce se zaměstnavateli a sociálními partnery podporuje školní vzdělávací programy a kompetence žáků.",
+        "Nedílnou součástí vzdělávání jsou přednášky, besedy, exkurze a projekty, které přibližují budoucí profesi."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a zaměřené na rozhodování rodičů; číselné údaje jsou oddělené od subjektivních formulací.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí počet ani trend neomluvené absence, proto nelze její rozsah číselně posoudit.",
+        "Výsledky maturity jsou výrazně odlišné podle oboru a formy studia, proto je nutné ověřit konkrétní program uchazeče.",
+        "Zpráva uvádí období inspekční činnosti 12.–19. ledna 2026, přestože návštěvy proběhly pouze v uvedených čtyřech dnech."
+      ]
+    }
+  }
+}

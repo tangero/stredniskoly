@@ -1,0 +1,109 @@
+{
+  "report_id": "LYC_600010759_2026-01-20",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:07:42.637258+00:00",
+  "run_finished_utc": "2026-10-02T17:08:10.895017+00:00",
+  "raw_file": "LYC_600010759_2026-01-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600010759_2026-01-20",
+    "school_profile": {
+      "school_type": "střední škola, domov mládeže a školní jídelna",
+      "inspection_period": "20. 1. 2026 až 23. 1. 2026",
+      "school_change_summary": "Škola zlepšuje materiální podmínky, rozšiřuje poradenské služby a spolupráci s partnery; rezervy zůstávají v kontrolním systému a individualizaci výuky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení s praxí",
+          "detail": "Škola účelně propojuje vzdělávání s praxí a žáci získávají odborné kompetence pro budoucí práci.",
+          "evidence": "„Propracovaný systém realizace praktického vyučování umožňuje žákům získat odborné kompetence nezbytné pro budoucí profesní uplatnění.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Funkční poradenské služby, prevence a podpora duševního zdraví mohou pomoci při řešení obtížného školního období.",
+          "evidence": "„Nastavený systém poradenských služeb a vzájemná spolupráce jsou funkční.“"
+        },
+        {
+          "tag": "Odborná výuka",
+          "detail": "Hospitovaná odborná výuka byla dobře organizovaná a žáci dostávali jasnou podporu i zpětnou vazbu.",
+          "evidence": "„Hospitované hodiny odborných předmětů byly organizačně velmi dobře zvládnuté, s jasně stanoveným tématem a srozumitelně formulovaným cílem.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturita v hotelnictví",
+          "detail": "Výsledky maturity oboru Hotelnictví jsou slabší než celostátně a inspekce proto doporučuje jejich průběžnou analýzu.",
+          "evidence": "„Nejslabší výsledky zaznamenala škola v oboru vzdělání Hotelnictví, hrubá neúspěšnost u maturitní zkoušky celkem byla 25 %.“"
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Některé hodiny končily bez účinného ověření cíle a žáci dostávali málo informací o vlastním pokroku.",
+          "evidence": "„Nedostatečný prostor byl v závěru hodin věnován shrnutí učiva a efektivní zpětné vazbě o naplnění vzdělávacích cílů.“"
+        },
+        {
+          "tag": "Individualizace",
+          "detail": "Učitelé podle inspekce dostatečně neupravují obsah a úkoly podle schopností a potřeb jednotlivých žáků.",
+          "evidence": "„Absence diferenciace a individualizace vzdělávacího obsahu a zadávaných úkolů nezohledňuje v průběhu výuky kognitivní schopnosti jednotlivých žáků.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně vypadá podpora žáků, kteří neprospívají, a jak často se ověřuje její účinnost?",
+        "Jak škola v jednotlivých předmětech zajišťuje zpětnou vazbu, sebehodnocení a přizpůsobení úkolů podle potřeb žáků?",
+        "Jaké konkrétní kroky přijala škola po inspekci pro zlepšení výsledků maturity v oboru Hotelnictví?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studium spojit s odbornou praxí a kariérní přípravou.",
+        "Žákům se zájmem o pedagogické, sociální, hotelové nebo řemeslné obory.",
+        "Žákům, kteří využijí nabídku poradenství, prevence a podpory duševního zdraví."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků oboru Hotelnictví, kteří chtějí znát aktuální rizika neúspěchu u maturity.",
+        "Rodičům žáků, kterým záleží na pravidelné zpětné vazbě a přizpůsobení výuky.",
+        "Rodičům žáků, kteří očekávají široké využívání diferenciace, informčních zdrojů a rozvoje kritického myšlení ve všech předmětech."
+      ],
+      "plain_czech_summary": "Škola má silné praktické zázemí, rozsáhlou spolupráci s firmami a funkční podporu žáků, včetně prevence a péče o duševní zdraví. Výborné vybavení je u oboru Kuchař–číšník a odborné hodiny jsou dobře organizované. Slabším místem je maturity v oboru Hotelnictví, kde je neúspěšnost vyšší než v ČR. Inspekce také upozornila na málo zpětné vazby, individualizace a práce s informačními zdroji. Zpráva uvádí výsledky maturity, ale neposkytuje údaje o absencích."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Ve zkušebním období 2025 se výsledky oproti roku 2024 zlepšily, ale obor Hotelnictví měl nejslabší výsledky.",
+        "key_numbers": [
+          "Pedagogické lyceum 2025: všichni přihlášení žáci uspěli.",
+          "Sociální činnost a předškolní pedagogika 2025: celková hrubá neúspěšnost 10,8 %.",
+          "Hotlinictví 2025: celková hrubá neúspěšnost 25 %."
+        ],
+        "evidence": "„Ve zkušebním období 2025 byly výsledky školy oproti předchozímu roku lepší.“"
+      },
+      "absence": {
+        "trend": "Inspekční zpráva neuvádí údaje o nepřítomnosti žáků ani jejich trend.",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje statistiky neomluvené či omluvené absence."
+      },
+      "support_services": [
+        "Výchovné poradkyně poskytují kariérové poradenství, doučování a individuální konzultace.",
+        "Poradenský tým monitoruje rizikové chování a řeší projevy šikany, kyberšikany či závislostního chování.",
+        "Program „Zázemí pro duši“ podporuje duševní zdraví pedagogů i žáků."
+      ],
+      "safety_climate": [
+        "Ve vyučovaných hodinách převládala klidná a příjemná pracovní atmosféra.",
+        "Škola má nastavená pravidla řešení rizikového chování.",
+        "Metodičky prevence se zaměřují na šikanu, kyberšikanu, závislosti, duševní zdraví a prosociální vztahy."
+      ],
+      "partnerships_practice": [
+        "Firmy se školou zajišťují odbornou a učební praxi žáků.",
+        "Sociální činnost spolupracuje s Domem dětí a mládeže Rozmarýn.",
+        "Domovy mládeže spolupracují také s týmem duševního zdraví Naděje a domovem seniorů."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, stručné věty a jasně odděluje zjištění inspekce od doporučení rodičům.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přímé srovnání trenduabsence s předchozími obdobími.",
+        "Uvedené výsledky maturity se týkají zkušebních období 2024 a 2025, nikoli nově vzniklých výsledků za leden 2026.",
+        "Zpráva neuvádí přijatá opatření školy po vystavení této inspekční zprávy."
+      ]
+    }
+  }
+}

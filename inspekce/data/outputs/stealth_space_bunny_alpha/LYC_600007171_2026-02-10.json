@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_600007171_2026-02-10",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:37:30.267948+00:00",
+  "run_finished_utc": "2026-10-02T16:37:56.826131+00:00",
+  "raw_file": "LYC_600007171_2026-02-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600007171_2026-02-10",
+    "school_profile": {
+      "school_type": "Střední škola se čtyřletými maturitními obory, tříletými nematuritními obory a dvouletým nástavbovým studiem Podnikání; škola také provozuje školní jídelnu a výdejnu.",
+      "inspection_period": "10. 2. 2026 až 13. 2. 2026",
+      "school_change_summary": "V září 2024 se škola sloučila se Střední školou obchodní v Kolíně a postupně rozšířila o obory Technické lyceum, Lyceum a Zahradník."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava",
+          "detail": "Odborný výcvik je systematický a u technických oborů probíhá v modernizovaných školních dílnách.",
+          "evidence": "„Odborný výcvik byl systematicky zaměřen na rozvoj praktických dovedností žáků“; technické obory probíhají v „funkčně udržovaných a průběžně modernizovaných“ dílnách."
+        },
+        {
+          "tag": "Jazyková příprava",
+          "detail": "Škola systematicky připravuje žáky na mezinárodně uznávané jazykové zkoušky a jejich výsledky využívá při výuce.",
+          "evidence": "Škola „cíleně podporuje rozvoj jazykových kompetencí“ a získaná data jsou využívána při výuce anglického jazyka."
+        },
+        {
+          "tag": "Vybavení a projekty",
+          "detail": "Moderní vybavení a projektová činnost rozšiřují praktické dovednosti žáků a nabídku podpory.",
+          "evidence": "Škola má „interaktivní tabule, dotykové panely, specializované výukové programy, edukativní robotiku a 3D tisk“."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Aktivní zapojení žáků",
+          "detail": "Ve výuce převažuje frontální způsob práce a část žáků zůstává pasivní.",
+          "evidence": "„Převládala frontální forma výuky“ a „v části hodin zůstávala většina žáků pasivní“."
+        },
+        {
+          "tag": "Podpora učení",
+          "detail": "Škola má potíže s včasným zajišťováním poradenské podpory a s individualizací výuky.",
+          "evidence": "„Poradenské služby školy nejsou ve všech oblastech nastaveny a realizovány v potřebném rozsahu“."
+        },
+        {
+          "tag": "Jazyková příprava",
+          "detail": "U strojírenství byly výsledky z cizího jazyka v maturitě horší než republikový průměr.",
+          "evidence": "„Výsledky z cizího jazyka byly ve všech sledovaných letech horší než celorepublikový průměr.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá podpora žáků, kterým hrozí neprospěch nebo neúspěch u maturity?",
+        "Kolik žáků se ve vybraném oboru pravidelně účastní odborných praxí a kde probíhají?",
+        "Jak často žáci pracují samostatně, dostávají zpětnou vazbu a rozvíjejí komunikaci při řešení odborných úkolů?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí technické, strojírenské nebo technologické vzdělání propojené s praxí.",
+        "Žákům se zájmem o obory služeb, obchod nebo zahradnictví, kteří hledají odborný výcvik.",
+        "Žákům, kteří využijí jazykové zkoušky a chtějí získat mezinárodně uznávaný certifikát."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na pravidelném aktivním zapojení během výuky, protože převládá frontální výuka.",
+        "Rodičům žáků, kteří potřebují rozsáhlou individuální podporu při učení nebo před maturitou.",
+        "Uchazečům o obory, u nichž je důležitá kvalitní práce s cizím jazykem, zejména v oboru Strojírenství."
+      ],
+      "plain_czech_summary": "Inspekce ocenila moderní technické vybavení, propracovaný odborný výcvik, spolupráci se zaměstnavateli a jazykové zkoušky. Škola se po sloučení rozšířila a přechází k novým oborům. Zpráva ale upozorňuje, že v běžné výuce převládá frontální způsob práce, část žáků je pasivní a individualizovaná podpora není vždy dostatečně propojená se sledováním jejich pokroku. Poradenské služby nejsou ve všech oblastech zajišťovány v potřebném rozsahu. V oboru Strojírenství se zlepšila úspěšnost společné části maturity, ale žáci měli slabší výsledky z cizího jazyka. Nástavbové studium Podnikání mělo ve školním roce 2024/2025 horší výsledky maturity než republikový průměr."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Ve školním roce 2024/2025 se výsledky společné části maturity ve strojírenství zlepšily pod celorepublikovým průměrem, zatímco v nástavbovém Podnikání se zhoršily.",
+        "key_numbers": [
+          "Ve strojírenství všichni přihlášení žáci uspěli v profilové části maturity ve školním roce 2024/2025.",
+          "V nástavbovém Podnikání byla v roce 2024/2025 hrubá neúspěšnost výrazně vyšší než celorepublikový průměr.",
+          "Neprospívající žáci maturitních oborů tvořili přibližně 4 %."
+        ],
+        "evidence": "„Ve školním roce 2024/2025 došlo ke zlepšení“; „všichni přihlášení žáci v profilové části MZ uspěli“; „Hrubá neúspěšnost školy v tomto oboru byla výrazně vyšší než celorepublikový průměr“."
+      },
+      "absence": {
+        "trend": "Nejnižší průměrná absence byla v maturitních oborech, výrazně vyšší v nematuritních oborech; neomluvená absence se vyskytovala spíše ojediněle.",
+        "key_numbers": [
+          "Průměrná absence ve školním roce 2024/2025 činila přibližně 120 hodin na žáka.",
+          "V maturitních oborech činila 82 hodin na žáka.",
+          "V nematuritních oborech činila 168 hodin na žáka."
+        ],
+        "evidence": "„Ve školním roce 2024/2025 činila roční průměrná absence přibližně 120 hodin na žáka“; „82 hodin na žáka“; „168 hodin na žáka“."
+      },
+      "support_services": [
+        "Dvě kvalifikované výchovné poradkyně zajišťují poradenské služby a školní metodiku prevence.",
+        "Kvalifikovaná kariérová poradkyně podporuje profesní orientaci žáků.",
+        "Škola nabízí doučování, konzultace a individuální podporu; zpráva uvádí, že jejich rozsah není ve všech oblastech dostatečný."
+      ],
+      "safety_climate": [
+        "Pravidelná setkávání ředitele se zástupci tříd umožňují projednávání podnětů týkajících se aktivit a vzdělávání.",
+        "Žáci jsou poučováni o bezpečnostních rizicích a škola uplatňuje pravidla školního řádu.",
+        "Počet školních úrazů měl oproti předchozímu školnímu roku mírně stoupající tendenci."
+      ],
+      "partnerships_practice": [
+        "Externí partneři se podílejí na odborných praxích, pracovním uplatnění části žáků a materiální podpoře výuky.",
+        "Odborný výcvik v oborech mimo technické obory probíhá převážně na smluvních pracovištích.",
+        "Škola spolupracuje se středními školami, zahraničními partnery v programu Erasmus+ a externím partnerem pro jazykové zkoušky."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžnou češtinu, stručně odděluje silné stránky od rizik a u zásadních tvrzení uvádí krátké citace.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesné číselné hodnoty hrubé neúspěšnosti maturity, proto jsou uvedeny pouze srovnání a počty z textu.",
+        "Zpráva neuvádí dlouhodobý trend absence, takže hodnocení vychází ze srovnání oborů a jednoho školního roku.",
+        "Doporučení pro rodiče o vhodnosti školy jsou praktická interpretace zprávy, nikoli samostatné závěry inspekce."
+      ]
+    }
+  }
+}

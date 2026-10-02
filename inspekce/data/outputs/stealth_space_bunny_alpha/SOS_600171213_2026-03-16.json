@@ -1,0 +1,110 @@
+{
+  "report_id": "SOS_600171213_2026-03-16",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:27:32.732323+00:00",
+  "run_finished_utc": "2026-10-02T16:28:13.706353+00:00",
+  "raw_file": "SOS_600171213_2026-03-16.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600171213_2026-03-16",
+    "school_profile": {
+      "school_type": "Víceoborová střední škola s obory zaměřenými na gastronomii, zemědělství a polygrafii; nabízí také obory s výučním listem a nástavbové studium Podnikání.",
+      "inspection_period": "16. 3. 2026 – 18. 3. 2026",
+      "school_change_summary": "Škola modernizuje vybavení, zvětšuje podporu žáků se speciálními vzdělávacími potřebami a propaguje své obory. Podle inspekce však dosavadší změny výrazně nezlepšily úspěšnost žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola identifikuje potřeby žáků, nabízí doučování a individuální konzultace a spolupracuje s rodiči.",
+          "evidence": "Rizikoví žáci jsou identifikováni, vedou s nimi rozhovory a škola jim poskytuje doučování a individuální konzultace."
+        },
+        {
+          "tag": "Školní klima",
+          "detail": "Pro rodiče je příznivé otevřené a respektující prostředí, které podporuje komunikaci mezi žáky a pedagogy.",
+          "evidence": "Dobré prosociální vztahy, otevřenou komunikaci, toleranci a respekt mezi žáky a učiteli."
+        },
+        {
+          "tag": "Poradenské služby",
+          "detail": "Rozšířená poradenská služba zahrnuje psychology, odborné pracovníky a podporu žákům s odlišným mateřským jazykem.",
+          "evidence": "Podpůrný systém zahrnuje školní poradenské služby, včetně psychologa a dalších odborných pracovníků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nízká úspěšnost maturity",
+          "detail": "V oboru Podnikání je úspěšnost ve společné části maturity dlouhodobě nízká, zvlášť v dálkové formě.",
+          "evidence": "V jarním termínu 2025 dosáhla úspěšnost v dálkové formě přibližně 24 %."
+        },
+        {
+          "tag": "Přijímání bez výběru",
+          "detail": "Do oboru Podnikání byli dosud přijímáni všichni zájemci, bez ověření dostatečných studijních předpokladů.",
+          "evidence": "Škola dosud nestanovila minimální bodovou hranici pro přijetí a přijala všechny zájemce."
+        },
+        {
+          "tag": "Způsob výuky",
+          "detail": "Ve vyučování převládá frontální výuka, aktivita žáků je omezená a diferenciace podle potřeb není dostatečná.",
+          "evidence": "Ve většině hospitovaných hodin převažovala dominantní role učitele, příležitosti pro aktivní zapojení žáků byly omezené."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá příprava na společnou část maturitní zkoušky a kde žáci dostávají zpětnou vazbu?",
+        "Jaké konkrétní podmínky bude mít obor Podnikání při přijímacím řízení pro školní rok 2026/2027?",
+        "Jak často se žáci mohou obracet na školní psycholožku, výchovnou poradkyni nebo pedagogy pro doučování?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří mají zájem o gastronomii, zemědělství, polygrafii nebo související obory.",
+        "Žákům, kteří chtějí studovat obor Podnikání a jsou připraveni pravidelně se učit a využívat nabízenou podporu.",
+        "Rodinám, kterým vyhovuje školní prostředí založené na otevřené komunikaci a podpoře žáků."
+      ],
+      "who_should_be_cautious": [
+        "Rodinám, které očekávají vysokou a stabilní úspěšnost ve společné části maturitní zkoušky v oboru Podnikání.",
+        "Žákům, kteří potřebují výraznější individuální přístup nebo cílenou podporu při učení.",
+        "Rodinám, které by chtěly, aby škola při přijímání jasně ověřovala studijní předpoklady uchazečů."
+      ],
+      "plain_czech_summary": "Albrechtova střední škola je větší víceoborová škola v Českém Těšíně s obory zaměřenými na gastronomii, zemědělství a polygrafii. Má dobré zázemí, otevřenou komunikaci a rozšiřuje poradenskou podporu. Pro rodiče je však důležitá nízká úspěšnost v oboru Podnikání, zejména při dálkovém studiu. V roce 2025 uspělo v jarním termínu přibližně 42 % v denní a 24 % v dálkové formě. Škola nabízí doučování a konzultace, ale podle inspekce zatím dostatečně neprokazuje jejich celkový dopad."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Úspěšnost v oboru Podnikání je dlouhodobě nízká a podle zprávy nižší než celorepublikový průměr u škol obdobného typu.",
+        "key_numbers": [
+          "Denní forma, jaro 2025: přibližně 42 %",
+          "Dálková forma, jaro 2025: přibližně 24 %",
+          "Denní forma, jaro 2024: přibližně 52 %"
+        ],
+        "evidence": "Výsledky žáků v oboru Podnikání ve společné části maturity byly dlouhodobě nízké v denní i dálkové formě."
+      },
+      "absence": {
+        "trend": "Absence obecně nebyla označena za výraznou, ale v některých případech denní formy se vysoká absence negativně projevovala.",
+        "key_numbers": [
+          "Přesné procento absence zpráva neuvádí",
+          "Denní i dálková forma: v některých případech vysoká absence"
+        ],
+        "evidence": "Absence není výrazná, což souvisí s organizací výuky v blocích a častým využíváním konzultační formy."
+      },
+      "support_services": [
+        "Školní poradenské služby zahrnují psychologa a další odborné pracovníky.",
+        "Škola poskytuje doučování a individuální konzultace žákům ohroženým neúspěšností.",
+        "Podporu zajišťují také výchovná poradkyně, třídní učitelé, vyučující a zákonní zástupci."
+      ],
+      "safety_climate": [
+        "Ve třídách převládala klidná pracovní atmosféra.",
+        "Byly zjištěny dobré prosociální vztahy, otevřená komunikace, tolerance a respekt mezi žáky a učiteli."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje se školními poradenskými službami a zákonnými zástupci.",
+        "Škola zveřejňuje svou činnost prostřednictvím výročních zpráv, regionálních médií a webových stránek."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, vycházejí z textu zprávy a zvýrazňují praktické informace pro rodiče.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesné procento absence.",
+        "Škola podle zprávy neposkytla jednotné ověření úspěšnosti podpůrných opatření, takže jejich skutečný dopad nelze přesně posoudit.",
+        "Inspekční zpráva se podrobně zaměřovala zejména na obor Podnikání, proto nelze její zjištění bez dalšího upřesnění automaticky vztahovat na všechny obory školy."
+      ]
+    }
+  }
+}

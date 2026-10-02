@@ -1,0 +1,116 @@
+{
+  "report_id": "SOU_600170284_2022-10-11",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:31:20.858694+00:00",
+  "run_finished_utc": "2026-10-02T17:32:02.063252+00:00",
+  "raw_file": "SOU_600170284_2022-10-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600170284_2022-10-11",
+    "school_profile": {
+      "school_type": "Střední odborná škola a střední odborné učiliště",
+      "inspection_period": "11. 10. 2022–13. 10. 2022",
+      "school_change_summary": "Škola zastavila propad počtu žáků, v roce 2022 vydala nové školní vzdělávací programy a nyní jedná o „restrukturalizaci skladby oborů“."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborný výcvik",
+          "detail": "Praktická výuka je podle inspekce dobře organizovaná a profesní příprava žáků je na solidní úrovni.",
+          "evidence": "„Profesní příprava žáků je na solidní úrovni a vytváří dobré předpoklady pro uplatnění absolventů na trhu práce.“"
+        },
+        {
+          "tag": "Bezpečná práce",
+          "detail": "Žáci při odborném výcviku používali ochranné pomůcky a dodržovali bezpečnostní zásady.",
+          "evidence": "„Žáci používali vhodný pracovní oděv, ochranné pomůcky a dodržovali zásady bezpečnosti a ochrany zdraví.“"
+        },
+        {
+          "tag": "Klima školy",
+          "detail": "Ve škole panovaly pozitivní vztahy a spolupráce mezi pedagogy, žáky a rodiči.",
+          "evidence": "„Řízení školy je založeno na otevřené komunikaci a vzájemné spolupráci se všemi aktéry vzdělávání.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka",
+          "detail": "Při převládající frontální výuce se žáci málo zapojovali a učení bylo méně efektivní.",
+          "evidence": "„Dominantní výskyt frontální výuky“ vedl k „nízké míře zapojení všech žáků“ a pasivnímu předávání informací."
+        },
+        {
+          "tag": "Personální zajištění",
+          "detail": "Část předmětů vyučovali pedagogové bez příslušné aprobace, což snižovalo kvalitu výuky.",
+          "evidence": "Tři ze 15 učitelů teoretické výuky byli bez odborné kvalifikace; některé předměty se vyučovaly neaprobovaně."
+        },
+        {
+          "tag": "Prostředí a vybavení",
+          "detail": "Interiéry, učebnice a některé provozovny neodpovídaly zcela současným potřebám výuky.",
+          "evidence": "„Učebny a domov mládeže byly modernizovány jen zčásti a neodpovídají všem současným potřebám vzdělávání.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní kroky škola podniká k obnově svařovny, kovárny, strojů a dalšího vybavení?",
+        "Které předměty vyučují pedagogé bez odpovídající aprobace a jak je škola plánuje nahradit?",
+        "Jak probíhá podpora žáků se školním neúspěchem a jak často se vyhodnocují přijatá opatření?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí tříleté odborné vzdělání s výučním listem v oborech zemědělství, opravářství, kovotepectví, truhlářství nebo cukrářství.",
+        "Žákům, kterým vyhovuje strukturované praktické vyučování a práce v učebních či smluvních dílnách.",
+        "Žákům se zájmem o nástavbový obor Podnikání v denní nebo dálkové formě."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na výrazně podpůrném, aktivizujícím a diferencovaném způsobu teoretické výuky.",
+        "Rodičům, kteří očekávají moderní učebny, dostatek učebnic a zcela nové vybavení dílen.",
+        "Rodičům žáků, kteří potřebují rozsáhlou nabídku preventivních, poradenských a volnočasových aktivit."
+      ],
+      "plain_czech_summary": "Škola má podle inspekce dobré klima, kvalitně organizovaný odborný výcvik a praktickou přípravu pro budoucí profese. Žáci jsou při práci aktivní a dbají o bezpečnost. Slabší je teoretická výuka, která bývá příliš přednášená, málo aktivizuje žáky a nevyužívá diferencování. Některé předměty vyučují učitelé bez odpovídající aprobace, chybějí také učebnice a část vybavení neodpovídá současným potřebám. Bezpečnostní rizika se při odborném výcviku dodržují, ale škola upozorňuje na stářím strojů. Výsledky jsou průměrné, absolventi se většinou uplatňují přímo v praxi a škola má spolupráci s podniky i dalšími školami."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Úspěšnost v předmětech společné části byla v roce 2022 srovnatelná se srovnatelnými školami, ale podrobné výsledky nejsou analyzovány.",
+        "key_numbers": [
+          "Bylo zavedeno nástavbové vzdělání Podnikání s maturitní zkouškou v denní a dálkové formě.",
+          "V nástavbových oborech s maturitní zkouškou studovalo 57 žáků.",
+          "Naplněnost nástavbových oborů s maturitní zkouškou činila 45 %."
+        ],
+        "evidence": "„Míra úspěšnosti žáků v předmětech společné části“ byla „srovnatelná se školami obdobného oborového zaměření“."
+      },
+      "absence": {
+        "trend": "Celkovou míru absence škola dlouhodobě zvládala, neomluvená absence jednotlivých žáků však často vedla k ukončení studia.",
+        "key_numbers": [
+          "Průměrný prospěch ve 2. pololetí 2021/2022 byl 2,19.",
+          "S vyznamenáním prospělo 7,8 % žáků.",
+          "Značný podíl žáků nebyl hodnocen nebo neprospěl a postoupil po opravných zkouškách."
+        ],
+        "evidence": "Jednotliví žáci s neomluvenou absencí „zpravidla studium ukončují i přes snahu školy situaci řešit“."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodička prevence vedou rozhovory s žáky a jednání výchovných komisí; „jejich úzká spolupráce je efektivní“.",
+        "Sedm žáků se speciálními vzdělávacími potřebami dostává podpůrná opatření včetně pomoci asistentů pedagoga.",
+        "Čtyři žáci s odlišným mateřským jazykem mají tři hodiny týdně výuky českého jazyka.",
+        "Domov mládeže poskytuje ubytování a volnočasové aktivity, zejména sportovní; širší atraktivní nabídka ale chybí."
+      ],
+      "safety_climate": [
+        "Při odborném výcviku žáci používali ochranné pomůcky a dodržovali zásady bezpečnosti.",
+        "Učitelé podle záznamu inspekce objektivně hodnotili práci i dodržování pracovních postupů.",
+        "Škola provádí revize strojů a zařízení, přesto upozorňuje na jejich stáří a nutnou obnovu.",
+        "V době inspekce nebyly řešeny žádné závažné porušení školního řádu."
+      ],
+      "partnerships_practice": [
+        "Odborný výcvik probíhá ve vlastních dílnách nebo na smluvních pracovištích partnerů.",
+        "Škola spolupracuje s podniky a místními základními školami na rozvoji odborných kompetencí a praktické výuky.",
+        "Škola uvádí dohodu o spolupráci s významným partnerem v energetice z roku 2022.",
+        "Škola motivuje žáky k účasti na prezentacích, ale soutěže ani účast žáků v soutěžích neorganizuje."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně odděluje zjištění od doporučení rodičům a uvádí přímé citace.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí celkový počet neomluvených hodin ani vývojabsence za více let.",
+        "U změn vybavení není uveden konkrétní harmonogram nebo datum dokončení.",
+        "Údaje o naplněnosti se vztahují ke stavu k 30. 9. 2022."
+      ]
+    }
+  }
+}

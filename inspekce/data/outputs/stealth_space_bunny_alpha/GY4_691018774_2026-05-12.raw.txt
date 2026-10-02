@@ -1,0 +1,100 @@
+{
+  "report_id": "GY4_691018774_2026-05-12",
+  "school_profile": {
+    "school_type": "Čtyřleté denní gymnázium se zaměřením na bezpečnostně právní oblast",
+    "inspection_period": "12. 5. 2026 až 14. 5. 2026",
+    "school_change_summary": "Škola poskytuje vzdělávání od 1. 9. 2025 a sídlí v pronajatých prostorách společně s partnerskou Bezpečnostně právní akademií."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborné zaměření",
+        "detail": "Studium propojuje bezpečnost a právo s přípravou na maturitu i další vzdělávání.",
+        "evidence": "„Zaměření gymnázia je podporováno výukou odborných předmětů… v oblasti bezpečnosti a práva.“"
+      },
+      {
+        "tag": "Praktická výuka",
+        "detail": "Spolupráce s Policií ČR, armádou a dalšími partnery přináší zkušenosti a odborníky z praxe.",
+        "evidence": "Spolupráce zajišťuje „získávání odborníků z praxe pro efektivní zajištění výuky“."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola nabízí konzultace, doučování, sdílení materiálů a poradenskou podporu.",
+        "evidence": "„Nastavené vzdělávací strategie vytvářejí prostor pro předcházení školní neúspěšnosti“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Samostatné hledání informací",
+        "detail": "Práce s více zdroji a samostatné vyhledávání informací se podle inspekce objevovaly málo.",
+        "evidence": "„Méně časté zařazování práce s různými informačními zdroji…“"
+      },
+      {
+        "tag": "Organizace hodin",
+        "detail": "Část hodin měla nevhodný časový průběh a chyběl závěr podporující sebereflexi žáků.",
+        "evidence": "V závěru jednotky „chyběl prostor pro vyhodnocení přínosu učení i splnění stanoveného cíle“."
+      },
+      {
+        "tag": "Personální zajištění",
+        "detail": "Tři ze sedmnácti pedagogických pracovníků neměli splněné kvalifikační předpoklady.",
+        "evidence": "Vzdělávání zajišťovalo 17 pedagogů, „z toho tři bez splněných kvalifikačních předpokladů“."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak často žáci samostatně vyhledávají a porovnávají informace z více zdrojů?",
+      "Jak konkrétně podporuje škola sebereflexi, vzájemné hodnocení a individuální tempo žáků?",
+      "Jaké konkrétní aktivity připravuje žáky ke studiu práva, bezpečnosti a policejních nebo vojenských profesí?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří mají zájem o právo, bezpečnost, kriminalistiku nebo kriminologii.",
+      "Žákům, kteří chtějí využít spolupráci školy s odborníky z praktického prostředí.",
+      "Žákům, kterým vyhovuje menší, nově vznikající škola s celoškolním bezpečnostně právním zaměřením."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům, kterým záleží na velkém množství zavedených postupů v dlouho fungující škole.",
+      "Žákům, kterým nestačí samostatné hledání informací a práce s různými zdroji.",
+      "Rodičům, kteří chtějí přesněji vědět, jak škola řeší individuální rozdíly ve znalostech a pracovním tempu."
+    ],
+    "plain_czech_summary": "Jde o nové čtyřleté gymnázium s právním a bezpečnostním zaměřením, které vzdělávání poskytuje od září 2025. Silnou stránkou je propojení výuky s Policií ČR, armádou a dalšími partnery, kteří mohou přinášet zkušenosti z praxe. Inspekce ocenila také přípravu na maturitu a podporu žáků prostřednictvím poradenství, konzultací a doučování. Hlavní slabiny jsou v práci s informačními zdroji, v organizaci části hodin a v podpoře sebereflexe. V době inspekce měla škola 46 žáků v prvním ročníku a 17 pedagogů, z nichž tři neměli splněné kvalifikační předpoklady. Výsledky maturity zpráva neuvádí."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky maturity nelze z této zprávy určit; inspekce zaznamenala přípravu aktivitami k maturitní zkoušce.",
+      "key_numbers": [],
+      "evidence": "„Zvolené úlohy a pestré aktivity mj. směřovaly k přípravě na maturitní zkoušku“."
+    },
+    "absence": {
+      "trend": "Absence je podle inspekce nízká a neomluvená absence téměř nulová.",
+      "key_numbers": [
+        "Průměrně 55 hodin omluvené absence na žáka za uzavřené pololetí.",
+        "46 žáků v prvním ročníku ve dvou třídách.",
+        "Téměř nulová neomluvená absence."
+      ],
+      "evidence": "„Nízká absence žáků (v průměru 55 hodin na žáka za uzavřené pololetí) a téměř nulová neomluvená absence“."
+    },
+    "support_services": [
+      "Poradenské služby zajišťuje tým včetně výchovné poradkyně a metodika prevence.",
+      "Škola poskytuje konzultace, doučování a možnost sdílení vzdělávacích materiálů.",
+      "Podpora zahrnuje诊断iku adaptačních obtíží, práci s výchovnými a vzdělávacími problémy i komunikaci s rodiči."
+    ],
+    "safety_climate": [
+      "Hospitované hodiny měly příjemnou atmosféru a vzájemně respektující přístup.",
+      "Preventivní program podporuje bezpečné chování, zdravý životní styl a pozitivní mezilidské vztahy.",
+      "Inspekce zaznamenala velmi nízký výskyt rizikového chování."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s partnerskou školou, Policií ČR, armádou a dalšími profesními partnery.",
+      "Partneři pomáhají aktualizovat výuku, modernizovat vybavení a získávat odborníky z praxe.",
+      "Škola spolupracuje také s městskou částí, kynologickou stanicí a autoškolou."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně vysvětluje praktické přednosti i omezení a jasně odděluje zjištěné údaje od dotazů.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí výsledky žáků u maturity, proto nelze posoudit jejich úspěšnost.",
+      "Inspekce hodnotila 46 žáků prvního ročníku, takže dlouhodobou stabilitu výsledků zatím neukazuje.",
+      "U personálních kvalifikací zpráva uvádí počet pracovníků, nikoli konkrétní dopad na výuku."
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "report_id": "SOS_600015173_2026-01-27",
+  "school_profile": {
+    "school_type": "Střední škola poskytující denní vzdělávání v oboru 63-41-M/02 Obchodní akademie.",
+    "inspection_period": "27. 1. 2026 až 29. 1. 2026",
+    "school_change_summary": "Od předchozí inspekce se zlepšila evaluace pedagogického procesu, hospitační činnost, vzájemné hospitace i využívání motivačního hodnocení. Přetrvává však omezené využívání formativního hodnocení, sebereflexe a práce s různými informačními zdroji."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborné vzdělávání a spolupráce",
+        "detail": "Škola propojuje odbornou přípravu s praxí, projekty a spoluprací s tuzemskými i zahraničními partnery.",
+        "evidence": "Škola účelně kooperuje s partnerskými firmami a dlouhodobě podporuje mobility žáků a pedagogů."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Rodicům je k dispozici sledování prospěchu, doučování, individuální konzultace i poradenské služby.",
+        "evidence": "Všem žákům s rizikem neúspěchu je nabízena možnost doučování i formou individuálních konzultací."
+      },
+      {
+        "tag": "Klima školy",
+        "detail": "Výuka a školní aktivity podporují spolupráci, osobnostní rozvoj a pozitivní vztahy mezi žáky.",
+        "evidence": "Program „I ve mně je lídr“ je zaměřen na kulturu leadershipu, wellbeing a aktivní zapojení všech účastníků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Formativní hodnocení",
+        "detail": "Žáci dostávají převážně hodnocení aktuálního výkonu, ale méně zpětné vazby podporující další učení.",
+        "evidence": "Výjimečně byla poskytnuta formativní zpětná vazba motivující je k dalšímu učení."
+      },
+      {
+        "tag": "Sebereflexe",
+        "detail": "Samostatné hodnocení a vzájemné hodnocení žáků se využívá málo, i přestože je škola podporuje v závěrech.",
+        "evidence": "Interakce žáků formou sebehodnocení a vzájemného hodnocení byla minimální."
+      },
+      {
+        "tag": "Kritické myšlení",
+        "detail": "Část výuky málo pracuje s různými zdroji informací, srovnáváním řešení a kritickým posuzováním.",
+        "evidence": "V části výuky chyběl rozvoj kritického myšlení a menší využívání různých informačních zdrojů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně v hodinách vyučívá žáci sebehodnocení, vzájemné hodnocení a zpětnou vazbu před dalším učením?",
+      "Jak často žáci pracují s různými informačními zdroji a rozvíjejí kritické myšlení?",
+      "Jaké konkrétní možnosti doučování, konzultací a podpory mají žáci s podpůrnými opatřeními nebo s odlišným mateřským jazykem?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat obchodní obor v denní formě a mají zájem o projekty, soutěže a odborné praxe.",
+      "Rodičům, kteří hledají školu s přístupným komunikací, podporou žáků a pravidelným informováním o prospěchu.",
+      "Žákům, kterým vyhovuje prostředí podporující spolupráci, osobnostní rozvoj a propojení teorie s praxí."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům, kteří očekávají běžné využívání rozsáhlého formativního hodnocení a pravidelné sebereflexe.",
+      "Žákům, kterým chybí podpora při samostatném kritickém myšlení a práci s více zdroji.",
+      "Rodičům, kteří potřebují přesné číselné údaje o maturitách nebo absencích; zpráva uvádí jen kvalitativní hodnocení."
+    ],
+    "plain_czech_summary": "Inspekce hodnotí školu jako dobře vedenou, přátelskou a zaměřenou na odbornou přípravu i osobnostní rozvoj žáků. Výuka je převážně srozumitelná, žáci se aktivně zapojují a učitelé reagují na jejich chyby. Pro podporu výsledků nabízí škola doučování, konzultace, poradenské služby a pravidelné informování rodičů. Hlavní slabiny jsou v omezeném využívání formativního hodnocení, sebereflexe, vzájemného hodnocení a práce s různými informačními zdroji. Zpráva uvádí velmi dobré maturitní výsledky za uplynulé dva školní roky, ale neobsahuje konkrétní procenta. Také neuvádí přesný vývoj absence."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "V uplynulých dvou školních letech škola dosahovala velmi dobrých výsledků v celkové hrubé neúspěšnosti závěrečných ročníků oproti republikovému průměru.",
+      "key_numbers": [
+        "Dva uplynulé školní roky hodnocené z hlediska neúspěšnosti závěrečných ročníků",
+        "237 žáků ve vzdělávání během inspekce"
+      ],
+      "evidence": "Škola dosahovala v uplynulých dvou školních letech velmi dobrých výsledků ve srovnání s republikovým průměrem."
+    },
+    "absence": {
+      "trend": "Zpráva uvádí pravidelné vyhodnocování absence na úrovni tříd, ale neudává její konkrétní trend.",
+      "key_numbers": [
+        "237 žáků ve vzdělávání během inspekce"
+      ],
+      "evidence": "Celkové výsledky vzdělávání, chování a absence na úrovni tříd jsou podrobně analyzovány."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště poskytuje služby žákům, rodičům a pedagogům.",
+      "Všem žákům s rizikem neúspěchu je nabízeno doučování a individuální konzultace.",
+      "Škola spolupracuje se školskými poradenskými zařízeními při podpůrných opatřeních.",
+      "Možné jsou online konzultace prostřednictvím externího partnera školy."
+    ],
+    "safety_climate": [
+      "Žáci jsou seznamováni s pravidly bezpečnosti a ochrany zdraví podle školního řádu.",
+      "Předměty Osobnostní rozvoj a Kompas života podporují spolupráci, regulaci emocí a zdravé sebevědomí."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s partnerskými firmami, vzdělávacími institucemi a vysokými školami.",
+      "Podporuje zahraniční vzdělávací aktivity a projekty propojující teorii s praxí."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá srozumitelný český jazyk, odděluje doložená fakta od doporučení pro rodiče a respektuje uvedené délní limity.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní procenta maturitní úspěšnosti.",
+      "Zpráva neuvádí číselné údaje ani srovnatelný trend absence.",
+      "Posouzení vhodnosti konkrétního žáka je orientační; zpráva nepopisuje jeho osobní potřeby ani zkušenosti."
+    ]
+  }
+}

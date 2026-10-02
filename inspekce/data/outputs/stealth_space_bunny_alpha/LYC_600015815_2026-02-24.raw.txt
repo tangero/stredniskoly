@@ -1,0 +1,105 @@
+{
+  "report_id": "LYC_600015815_2026-02-24",
+  "school_profile": {
+    "school_type": "střední odborné učiliště a střední odborná škola",
+    "inspection_period": "24.–27. 2. 2026",
+    "school_change_summary": "Od inspekce v roce 2022 vzrostl počet žáků denního studia o 12 % na 772, změnila se organizační struktura a některé obory získaly nové zaměření; mateřské škole se zároveň nedaří dostatečně snižovat neúspěšnost maturit, zejména v oboru Podnikání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava",
+        "detail": "Škola propojuje teoretickou výuku s kvalitním praktickým vyučováním a aktivitami, které rozvíjejí profesní dovednosti.",
+        "evidence": "„Škola systematicky propojuje teoretickou výuku s kvalitním praktickým vyučováním a bohatou nabídkou odborných aktivit.“"
+      },
+      {
+        "tag": "Partnershipy a stáže",
+        "detail": "Rodiče mohou ocenit rozsáhlé partnerství místních i zahraničních organizací a nabídku odborných stáží.",
+        "evidence": "„Významným profilačním prvkem školy je dlouhodobá spolupráce se sociálními partnery a nabídka tuzemských i zahraničních odborných stáží.“"
+      },
+      {
+        "tag": "Podmínky a klima",
+        "detail": "Moderní školní prostředí a klidná výuka podporují pohodlí žáků a jejich zapojení do učení.",
+        "evidence": "„Prostředí pro vzdělávání i relaxaci žáků je moderní, podnětné a estetické.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturitní neúspěšnost",
+        "detail": "Největším rizikem jsou výsledky maturit, zejména v oboru Podnikání v denní i dálkové formě.",
+        "evidence": "„Žáci dlouhodobě vykazují vyšší míru neúspěšnosti při ukončování vzdělávání maturitní zkouškou, zejména u oboru Podnikání.“"
+      },
+      {
+        "tag": "Odchodovost",
+        "detail": "U některých oborů roste počet žáků, kteří studium během jeho trvání opouštějí.",
+        "evidence": "„Neúspěšnost žáků je rovněž doprovázena vyšším procentem těch, kteří v průběhu studia odcházejí.“"
+      },
+      {
+        "tag": "Individuální podpora",
+        "detail": "V teoretické výuce se málo přizpůsobují úkoly potřebám jednotlivých žáků a jejich podpůrným opatřením.",
+        "evidence": "„Ve všech sledovaných hodinách plnili žáci převážně stejné typy úloh, diferenciace vzdělávacího obsahu nebyla patrná.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní kroky škola přijímá proti neúspěšnosti a odchodovosti v oboru Podnikání?",
+      "Jak často se žáci s podpůrnými opatřeními mohou setkávat s výchovným poradcem a jak podpora probíhá přímo ve výuce?",
+      "Jak konkrétně probíhá výuka, doučování a společná příprava v dálkové formě oboru Podnikání?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí střední vzdělání směrem k praktické odborné práci a dalšímu uplatnění v oboru.",
+      "Žákům, kteří využijí odborné stáže, spolupráci školy s firmami a zahraniční aktivity.",
+      "Žákům, kterým vyhovuje školní prostředí s moderním vybavením, sportovištěm, školním barem a bufetem."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků oboru Podnikání, zejména v dálkové formě, kvůli vysoké neúspěšnosti a odchodovosti.",
+      "Rodičům žáků, kteří potřebují intenzivní individualizovanou podporu v teoretických předmětech.",
+      "Rodičům žáků, kterým záleží na pravidelné účasti kvalifikovaného výchovného poradce, protože škola v době inspekce žádného neměla."
+    ],
+    "plain_czech_summary": "Škola má rozsáhlou nabídku oborů, moderní vybavení a dobré propojení výuky s praxí, partnery i zahraničními stážemi. Ve většině sledované výuky byl kladný přístup učitelů a bezpečné prostředí. Hlavním problémem jsou maturity a odchod žáků, zvlášť v oboru Podnikání. V roce 2025 zde hrubá neúspěšnost činila 42,9 % v denní a 80 % v dálkové formě. Rodiče by měli zjistit, jaká podpora žákům skutečně funguje a jak bude řešena vysoká odchodovost. Ve vzdělávání je také málo individualizace a škola nemá odborně kvalifikovaného výchovného poradce."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky jsou proměnlivé; v roce 2025 došlo k výraznému zhoršení v oboru Podnikání, zatímco některé další obory měly lepší výsledky než v roce 2024.",
+      "key_numbers": [
+        "Podnikání, denní forma, 2025: 42,9 % hrubé neúspěšnosti.",
+        "Podnikání, dálková forma, 2025: 80 % hrubé neúspěšnosti.",
+        "Kosmetické služby, 2025: 26,3 % hrubé neúspěšnosti."
+      ],
+      "evidence": "„Hrubá neúspěšnost žáků oboru Podnikání v denní formě vzrostla na 42,9 %, u dálkové formy dosáhla 80 %.“"
+    },
+    "absence": {
+      "trend": "Celková absence je za poslední tři uzavřené školní roky stabilní, ale ve školním roce 2024/2025 mírně vzrostl počet neomluvených hodin na žáka.",
+      "key_numbers": [
+        "Průměrná absence: 115 hodin na žáka za školní rok.",
+        "Maximální povolená absence v předmětu: 20 %.",
+        "U končících ročníků může být limit nejvýše 10 %."
+      ],
+      "evidence": "„Průměrná hodnota absence na žáka za školní rok v tomto období je 115 hodin.“"
+    },
+    "support_services": [
+      "Poradenské služby zahrnují kariérové poradenství, metodickou podporu žáků se speciálními vzdělávacími potřebami, práci s žáky s odlišným mateřským jazykem, prevenci školní neúspěšnosti a doučování.",
+      "Škola nemá odborně kvalifikovaného výchovného poradce; tuto funkci vykonává zástupkyně ředitele.",
+      "Systémově vedené služby zahrnují také metodika prevence, preventivní program a akce podporující duševní zdraví.",
+      "Škola neeviduje nadané žáky ani systematicky neprovádí diagnostiku žáků potřebujících podporu v prvním stupni podpůrných opatření."
+    ],
+    "safety_climate": [
+      "Sledovaná výuka probíhala v klidné a podnětné atmosféře bez narušování kázemi.",
+      "Praktické vyučování probíhalo v bezpečném a přehledně organizovaném prostředí.",
+      "Žáci při práci dodržovali pravidla bezpečnosti a používali moderní nástroje odpovídající požadavkům praxe."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s profesními organizacemi, odbornými firmami, školami, kulturními institucemi a neziskovými organizacemi.",
+      "Zahraniční spolupráce zahrnuje partnery z Azorských ostrovů, Finska, Norska a Slovenska a program Erasmus+.",
+      "Partnerství podporuje odborný výcvik, jazykové a sociální kompetence a propojení teorie s praxí."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá běžné české výrazy, číselné údaje jsou vysvětlené přímo a závěry jsou formulovány prakticky pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva uvádí výsledky společné části maturitní zkoušky, nikoli úplnou úspěšnost všech absolventů.",
+      "Není uvedena přesná struktura podpůrných služeb pro jednotlivé obory a formy studia.",
+      "Hodnocení vychází z inspekce v únoru 2026 a z dokumentace v době kontroly."
+    ]
+  }
+}

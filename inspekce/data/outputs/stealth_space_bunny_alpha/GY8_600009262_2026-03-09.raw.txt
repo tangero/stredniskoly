@@ -1,0 +1,104 @@
+{
+  "report_id": "GY8_600009262_2026-03-09",
+  "school_profile": {
+    "school_type": "gymnázium, čtyřleté a osmileté, a školní jídelna",
+    "inspection_period": "9. 3. 2026 až 12. 3. 2026",
+    "school_change_summary": "Od roku 2024 má škola nového ředitele, rozšířila poradenský tým a zaměřuje se na vybavení a mimoškolní aktivity; počet žáků čtyřletého gymnázia od inspekce v roce 2018 mírně klesl."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky a připravenost na studium",
+        "detail": "Škola dosahuje dlouhodobě velmi dobrých výsledků a téměř stoprocentního přijetí absolventů na vysoké školy.",
+        "evidence": "„Škola dosahuje dlouhodobě velmi dobrých výsledků vzdělávání“ a „téměř stoprocentní přijetí absolventů“."
+      },
+      {
+        "tag": "Aktivity a rozvoj nadání",
+        "detail": "Soutěže, projekty, zahraniční pobyty a spolupráce s externími partnery rozšiřují zkušenosti žáků a podporují jejich rozvoj.",
+        "evidence": "„Široké spektrum mimoškolních akcí a spolupráce s externími partnery“ podporuje rozvoj kompetencí a potenciálu žáků."
+      },
+      {
+        "tag": "Poradenské zázemí",
+        "detail": "Škola má výchovného a kariérového poradce, dvě metodičky a školního speciálního pedagoga.",
+        "evidence": "„Výchovný a kariérový poradce a dvě metodičky prevence, etoped“; pokračuje „školní speciální pedagog“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Individuální podpora",
+        "detail": "Podpora nadaných žáků, žáků se speciálními potřebami i žáků s vysokou absencí není dostatečně systematická a pravidla nejsou zcela jednotná.",
+        "evidence": "„Podpora žáků se speciálními vzdělávacími potřebami i žáků nadaných se do výuky promítá pouze omezeně“."
+      },
+      {
+        "tag": "Rozsah výuky",
+        "detail": "Ve většině hospitovaných hodin převažovala frontální výuka, což mohlo omezovat individualizaci a rozvoj potenciálu žáků.",
+        "evidence": "„Ve většině hospitovaných hodin převažovala výuka založená na frontálním způsobu práce“."
+      },
+      {
+        "tag": "Jednotná pravidla a podpora",
+        "detail": "Pravidla hodnocení, výchovných opatření a podpory nejsou vždy sjednocena, což může vést k nerovnému přístupu.",
+        "evidence": "Inspekce označila pravidla pro ukládání výchovných opatření „nejednotné a rizikové“."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá diferenciace úloh pro nadané žáky a žáky s podpůrnými potřebami?",
+      "Jaké konkrétní postupy a podklady mají učitelé při vzdělávání žáků s vysokou absencí nebo individuálním přístupem?",
+      "Jak škola sleduje účinnost podpůrných opatření a na základě číselných údajů rozhoduje o jejich úpravě?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat na gymnáziu a mají zájem o soutěže, projekty nebo zahraniční pobyty.",
+      "Žákům, kteří ocení široké mimoškolní aktivity a spolupráci s externími partnery.",
+      "Žákům, kterým vyhovuje převážně frontální způsob výuky, pokud škola zároveň zajistí dostatečnou individuální podporu."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků s výraznými vzdělávacími potřebami, kteří potřebují jasně standardizovanou podporu a jednotná pravidla hodnocení.",
+      "Rodičům žáků s vysokou absencí, sportovců nebo žáků se zdravotními obtížemi, protože školní dokumentace podle inspekce nepopisuje podmínky jejich vzdělávání.",
+      "Rodičům, kteří očekávají v každé hodině výraznou individualizaci, aktivní učení a průběžné formativní hodnocení."
+    ],
+    "plain_czech_summary": "Škola má dlouhodobě velmi dobré výsledky, vysokou úspěšnost u maturity a téměř stoprocentní přijetí na vysoké školy. Nabízí také soutěže, projekty, zahraniční pobyty a spolupráci s partnery. Inspekce však upozornila, že většina výuky je stále frontální, chybí rozšiřující úkoly pro nadané žáky a průběžné formativní hodnocení. Podpora žáků se speciálními potřebami, vysokou absencí nebo individuálním přístupem existuje, ale není dostatečně jednotná a účinnost se pravidelně nevyhodnocuje. Přestože se rodiče k bezpečnosti elektrických zařízení a činnosti žákovské samosprávy, inspekční tým jejich stanovisko většinou nepodpořil."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Vysoká úspěšnost se v posledních letech pohybuje na hranici 100 %.",
+      "key_numbers": [
+        "„Vysoká úspěšnost žáků u maturitní zkoušky“.",
+        "Úspěšnost se „pohybuje na hranici 100 %“.",
+        "Téměř 100 % absolventů je přijato na vysoké školy."
+      ],
+      "evidence": "Zpráva uvádí „vysokou úspěšnost“ u maturity a „téměř stoprocentní přijetí absolventů“ na vysoké školy."
+    },
+    "absence": {
+      "trend": "U některých žáků byla absence velmi vysoká; při posuzování neomluvené absence se postupy neaplikovaly jednotně.",
+      "key_numbers": [
+        "U jednoho žáka byla v roce 2024/2025 absence 888 hodin, přibližně 80 % vyučovacích hodin.",
+        "Jiný žák měl v prvním pololetí 2025/2026 363 omluvené hodiny, více než dvě třetiny vyučovacích hodin.",
+        "Jeden žák měl v prvním pololetí 2024/2025 34 a v druhém 74 neomluvené hodiny."
+      ],
+      "evidence": "Inspekce uvedla příklady 888 hodin absence, 363 omluvených hodin a rozdílné ukládání důtek za neomluvené hodiny."
+    },
+    "support_services": [
+      "Škola má výchovného a kariérového poradce, dvě metodičky prevence a etoped a školního speciálního pedagoga.",
+      "Poradenský tým podporuje žáky i pedagogy při výchovných obtížích a práci s třídními kolektivy.",
+      "Škola spolupracuje s externími odborníky a organizuje prevence vztahových problémů, duševního zdraví a rizikového chování."
+    ],
+    "safety_climate": [
+      "Žáci jsou poučováni o bezpečnosti a ochraně zdraví.",
+      "Škola má čipový a kamerový systém a recepci ve vstupní hale.",
+      "Inspekce upozornila na revize elektrických zařízení; její stanovisko potvrdilo, že od poslední prohlídky uplynula zákonná roční lhůta."
+    ],
+    "partnerships_practice": [
+      "Škola využívá rozvojové programy a projekty k modernizaci informačních technologií.",
+      "Zajišťuje mezinárodní výměnné studijní pobyty žáků.",
+      "Spolupracuje s externími institucemi a zahraničními partnerskými školami; žáci se účastní soutěží, exkurzí a projektů."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá běžné české výrazy, stručně odděluje přednosti, rizika a ověřená čísla a uvádí důležitá tvrzení s citacemi.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesné roční počty neomluvené absence za celou školu, proto jsou uvedeny konkrétní příklady žáků.",
+      "U maturity uvádí zpráva trend přibližně na hranici 100 %, nikoli jednotlivé výsledky za každý rok.",
+      "Škola zpochybnila tvrzení o revizích elektrických zařízení a žákovské samosprávě; v hodnocení jsou zahrnuta stanoviska obou stran."
+    ]
+  }
+}

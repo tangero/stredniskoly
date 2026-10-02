@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_600007472_2026-01-06",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:49:05.561515+00:00",
+  "run_finished_utc": "2026-10-02T16:49:37.768840+00:00",
+  "raw_file": "SOS_600007472_2026-01-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600007472_2026-01-06",
+    "school_profile": {
+      "school_type": "Soukromá střední škola poskytující také vzdělávání pedagogických pracovníků; všechny obory se vzdělávají kombinovaně a distančně.",
+      "inspection_period": "6.–7. 1. 2026",
+      "school_change_summary": "Škola upravila organizaci online výuky, rozšířila partnerskou spolupráci a zavedla podporu žáků směřující ke snížení neúspěšnosti a absence."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Maturitní podpora",
+          "detail": "Škola analyzuje příčiny neúspěchů a nabízí konzultace, zpětnou vazbu, doučování i didaktické testy.",
+          "evidence": "Škola zavedla individuální konzultace, průběžnou zpětnou vazbu, skupinové doučování a častější zadávání typových didaktických testů."
+        },
+        {
+          "tag": "Podpora při učení",
+          "detail": "E-learning, časově neomezené materiály a virtuální studovny umožňují žákům přizpůsobit tempo a způsob studia.",
+          "evidence": "Časově omezený přístup k elektronickým materiálům a systém virtuálních studoven podporují kontinuální studium."
+        },
+        {
+          "tag": "Odborná výuka",
+          "detail": "Odborné předměty propojují teorii s praxí a žáci získávají kvalitní maturitní práce.",
+          "evidence": "Účelné propojování teorie s praxí podporuje odborné kompetence; kvalita maturitních prací je hodnocena jako velice dobrá."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Výuka jazyků",
+          "detail": "Podpora angličtiny se soustřeďuje převážně na gramatiku, takže může být omezený rozvoj komunikačních dovedností.",
+          "evidence": "V angličtině převažovalo opakování gramatických struktur a řízený rozhovor v omezené míře podporoval receptivní a produktivní dovednosti."
+        },
+        {
+          "tag": "Rozmanitost výuky",
+          "detail": "V matematice chyběla pestřejší škála postupů a některé činnosti v literatuře neměly jasný vzdělávací přínos.",
+          "evidence": "V matematice chybělo využití pestřejší škály strategií; v literatuře některé činnosti neměly jednoznačně vymezený přínos."
+        },
+        {
+          "tag": "Neúspěšnost a absence",
+          "detail": "Preventivní opatření proti neúspěšnosti a absenci začala působit teprve krátce, takže jejich účinnost zatím není ověřena.",
+          "evidence": "Účinnost opatření ke snížení absence a předčasných odchodů nelze vzhledem ke krátké době působení objektivně hodnotit."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhají individuální konzultace, doučování a příprava didaktických testů před maturitou?",
+        "Jak se rozlišují kombinovaná a distanční výuka v jednotlivých oborech a předmětech?",
+        "Kolik času věnují učitelé aktivnímu sebereflexi žáků a shrnutí učiva na konci hodiny?"
+      ],
+      "who_school_fits": [
+        "Žáci, kterým vyhovuje online nebo kombinované vzdělávání a kteří umějí samostatně organizovat učení.",
+        "Žáci se SVP, kterým vyhovuje pružné prostředí, průběžná podpora a nastavení studijních podmínek podle potřeb.",
+        "Žáci, kteří chtějí propojit odborné učení s praktickými úkoly a kvalitní přípravou maturitní práce."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče žáků, kteří potřebují pravidelnou osobní podporu učitele při učení.",
+        "Uchazeči, kterým nestačí podpora především prostřednictvím online prostředí a individuálních konzultací.",
+        "Rodiče žáků se slabšími výsledky z cizího jazyka nebo českého jazyka, protože právě tam se nejčastěji neúspěšnost v maturitní zkoušce projevovala."
+      ],
+      "plain_czech_summary": "Škola nabízí kombinované a distanční studium, průběžné materiály, konzultace a podporu při učení. Maturitní přípravu zlepšuje analýzou výsledků a cílenou pomocí; v některých oborech se neúspěšnost výrazně snížila. Hlavní oblastí pro zlepšení je zapojování žáků do závěrečného hodnocení jejich učebního pokroku. Rodiče by měji sledovat zejména úspěšnost v cizím jazyce, českém jazyce a absenci. Opatření proti absenci a předčasnému odchodu jsou nová, takže jejich dlouhodobý účinek zatím nelze posoudit."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Ve školním roce 2024/2025 se neúspěšnost ve společné části maturitní zkoušky zlepšila zejména v oborech Podnikání a Obchodní akademie, zatímco v oboru Sociální činnost se mírně zhoršila.",
+        "key_numbers": [
+          "Podnikání: hrubá neúspěšnost 25 %.",
+          "Sociální činnost: hrubá neúspěšnost 33 %.",
+          "Obchodní akademie: hrubá neúspěšnost 9,1 %."
+        ],
+        "evidence": "Ve společné části MZ se neúspěšnost snížila v oborech Podnikání a Obchodní akademie, zatímco v oboru Sociální činnost vzrostla na 33 %."
+      },
+      "absence": {
+        "trend": "Škola přijala opatření ke snížení absence, ale jejich účinnost zatím nelze objektivně hodnotit.",
+        "key_numbers": [
+          "Konkrétní výši absence inspekční zpráva neuvádí."
+        ],
+        "evidence": "Škola realizuje opatření ke snížení absence žáků ve výuce; jejich účinnost nelze vzhledem ke krátké době působení objektivně vyhodnotit."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště koordinuje podporu žáků se SVP s třídními učiteli a vedením školy.",
+        "Škola zavedla individuální konzultace a skupinové doučování žáků v předmětech společné části MZ.",
+        "Tutoriál při zahájení studia a virtuální studovny podporují adaptaci na studijní prostředí."
+      ],
+      "safety_climate": [
+        "Prevence se zaměřuje na nadměrnou absenci a bezpečné chování v digitálním prostředí.",
+        "Od školního roku 2025/2026 se na chodu školy podílí žákovský parlament.",
+        "Při vážnějších obtížích žáka se rodiče zapojují do individuálního řešení ve spolupráci s výchovnou poradkyní."
+      ],
+      "partnerships_practice": [
+        "Škola rozšířila spolupráci se sociálními partnery, například s jazykovou školou podporující cizojazyčné kompetence žáků.",
+        "Interakce žáků a spolupráce se zákonnými zástupci je podpořena online komunitními skupinami.",
+        "Pracoviště poskytuje podporu žákům se SVP ve spolupráci s třídními učiteli a vedením školy."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně spojuje zjištění s praktickým dopadem pro rodiče a jasně odlišuje ověřené údaje od doporučení k ověření.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní číselnou míru absence.",
+        "Opatření proti absenci a předčasným odchodům působí podle inspekce příliš krátce na objektivní hodnocení.",
+        "Školní poradenské pracoviště dočasně zajišťovala ředitelka kvůli nepřítomnosti výchovné poradkyně a metodičky prevence."
+      ]
+    }
+  }
+}

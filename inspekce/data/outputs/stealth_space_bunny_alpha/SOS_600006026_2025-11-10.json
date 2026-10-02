@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600006026_2025-11-10",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:58:28.726653+00:00",
+  "run_finished_utc": "2026-10-02T16:59:10.305647+00:00",
+  "raw_file": "SOS_600006026_2025-11-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600006026_2025-11-10",
+    "school_profile": {
+      "school_type": "Soukromá střední škola společnost s r.o. se vzdělávacími obory Obchodní akademie, Veřejnosprávní činnost, Podnikání a nově Gymnázium.",
+      "inspection_period": "10. 11. 2025 – 13. 11. 2025",
+      "school_change_summary": "Škola od roku 2023 změnila zřizovatele, název, místo vzdělávání a vedení; počet žáků v denní formě vzrostl z 30 na 205, celkem měla 237 žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Digitální komunikace",
+          "detail": "Jednotná digitální platforma podporuje výuku, zpětnou vazbu a komunikaci všech účastníků vzdělávání.",
+          "evidence": "„jednotný elektronický systém komunikace efektivně přispívá… realizaci vzdělávání“"
+        },
+        {
+          "tag": "Odborná praxe",
+          "detail": "Spolupráce s bankami, zaměstnavateli a veřejnými institucemi prohlubuje odborné dovednosti a pomáhá při profesním uplatnění.",
+          "evidence": "„Spolupráce s odbornými pracovišti… zajišťuje sepětí teoretické výuky s praxí“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí konzultace, doučování, poradenské služby a práci s individuálními vzdělávacími plány.",
+          "evidence": "„využívány jsou např. individuální konzultace, jednání se žáky i zákonnými zástupci“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturitní připravenost",
+          "detail": "V období 2023–2025 přetrvávala vysoká hrubá neúspěšnost ve společné části maturitní zkoušky, vyšší než v celorepublikovém srovnání.",
+          "evidence": "„Škola rovněž vykazuje vyšší hrubou neúspěšnost v celorepublikovém srovnání“"
+        },
+        {
+          "tag": "Řízení školy",
+          "detail": "Organizační struktura neodpovídá velikosti školy a vedení čelí kumulaci funkcí i slabší kontrolní činnosti.",
+          "evidence": "„Organizační struktura školy zcela neodpovídá její velikosti a vzdělávací nabídce“"
+        },
+        {
+          "tag": "Kvalita výuky",
+          "detail": "V části hodin chyběla dostatečná diferenciace, formativní zpětná vazba a podpora kritického myšlení.",
+          "evidence": "„V menší části výuky nebyla žákům… poskytována formativní zpětná vazba“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se škola připravuje žáky na společnou část maturitní zkoušky v jednotlivých oborech?",
+        "Kolik žáků v denní formě pracuje s školní psycholožkou, výchovnou poradkyní nebo individuálním doučováním?",
+        "Jak škola řeší organizační nedostatky, kontrolní systém a plnění školního vzdělávacího programu?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří mají zájem o obchodní nebo veřejnosprávní vzdělání a chtějí studovat denně.",
+        "Žákům, kterým vyhovuje menší škola a prostředí sdílené s partnerskou základní školou.",
+        "Žákům, kteří využijí přípravné kurzy, konzultace, digitální materiály a spolupráci s odbornými partnery."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na ověřené vysoké úspěšnosti ve společné části maturitní zkoušky.",
+        "Rodičům žáků, kteří potřebují velmi pečně diferencovanou výuku nebo intenzivní podporu při učení.",
+        "Uchazečům o nové čtyřleté Gymnázium, protože při inspekci v něm nebyli žáci vzděláváni."
+      ],
+      "plain_czech_summary": "Škola se od minulé inspekce výrazně změnila: změnila vedení, sídlo, zřizovatele i vzdělávací nabídku a více žáků převzala do denního studia. Silnou stránkou je digitální komunikace, podpora žáků a spolupráce s odbornými institucemi. Zároveň přetrvává vysoká neúspěšnost u maturit, slabší kontrola školních programů a přetížené vedení. Výsledky o prospěchu se zlepšily, ale pro první maturanty čtyřletých oborů nejsou zatím k dispozici."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Celkové výsledky se zlepšily, ale neúspěšnost ve společné části zůstává vysoká a převyšuje republikové hodnoty.",
+        "key_numbers": [
+          "Podnikání kombinované: neúspěšnost 36 % v roce 2023, 33 % v roce 2024 a 63 % v roce 2025.",
+          "Veřejnosprávní činnost dálkově: 50 % v roce 2025 proti 9 % v ČR.",
+          "Obchodní akademie dálkově: neúspěšnost klesla z 50 % v roce 2024 na 25 % v roce 2025."
+        ],
+        "evidence": "„Celkové výsledky se sice výrazně zlepšily, ve všech oborech však přetrvává vyšší míra hrubé neúspěšnosti“"
+      },
+      "absence": {
+        "trend": "Neomluvená a omluvená absence je sledována, v denní formě se u některých žáků zvýšila a řeší se s rodiči.",
+        "key_numbers": [
+          "Ke 30. 6. 2025 se v denní formě vzdělávali žáci pouze v 1. až 3. ročníku.",
+          "Téměř všichni žáci denního studia prospěli, pětina měla vyznamenání.",
+          "V ostatních formách studia téměř 70 % žáků prosperovalo, v roce 2022 to bylo 38 %."
+        ],
+        "evidence": "„Výrazně vyšší omluvená absence některých žáků… je řešena na opakovaných jednáních“"
+      },
+      "support_services": [
+        "Školní psycholožka, výchovné poradenství a kariérní poradenství.",
+        "Individuální konzultace, doučování žáků s odlišným mateřským jazykem a podpora SVP.",
+        "Adaptační dny, prevence rizikového chování a výchovná opatření."
+      ],
+      "safety_climate": [
+        "Ve většině hodin byla dodržována pravidla komunikace a chování.",
+        "Ve škole je stálá služba v recepci a zabezpečený vstup.",
+        "Bezpečnost žáků podporují také výchovná a preventivní opatření."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s vysokými školami, bankami, zaměstnavateli a veřejnými institucemi.",
+        "Podpora odborných akcí, jazykových kompetencí a zahraničních žákovských výjezdů.",
+        "Zákonní zástupci se podílejí prostřednictvím školské rady a tripartitních jednání."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Formulace jsou srozumitelné a vztahují se k praktickým důsledkům zjištění pro rodiče; některá hodnocení zůstávají zjednodušená kvůli stručnosti.",
+      "uncertainty_notes": [
+        "Výsledky prvních maturantů nově rozšířených čtyřletých oborů nebyly při inspekci k dispozici.",
+        "Inspekce uvádí výsledky za období 2023–2025, nikoli aktuální výsledky nové denní formy.",
+        "Neúspěšnost některých dobíhajících oborů ovlivňovalo malé počty přihlášených žáků."
+      ]
+    }
+  }
+}

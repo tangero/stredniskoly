@@ -1,0 +1,114 @@
+{
+  "report_id": "LYC_600018041_2026-01-15",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:44:25.922853+00:00",
+  "run_finished_utc": "2026-10-02T16:45:05.946563+00:00",
+  "raw_file": "LYC_600018041_2026-01-15.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600018041_2026-01-15",
+    "school_profile": {
+      "school_type": "Střední škola poskytující střední stupeň vzdělání s maturitní zkouškou a jazyková škola s právem státní jazykové zkoušky.",
+      "inspection_period": "15. 1. 2026 až 19. 1. 2026",
+      "school_change_summary": "Škola postupně modernizuje materiální vybavení; mezinárodní spolupráce je dočasně pozastavena kvůli bezpečnostním rizikům na straně zahraničního partnera."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Maturitní připravenost",
+          "detail": "Škola dosahuje od roku 2020 převážně nadprůměrných výsledků ve společné části maturitní zkoušky.",
+          "evidence": "Od roku 2020 dosahují žáci převážně nadprůměrných výsledků; v letech 2023 a 2024 byla nulová hrubá neúspěšnost."
+        },
+        {
+          "tag": "Bezpečné klima",
+          "detail": "Šetření dlouhodobě potvrzují převážně příznivé klima, které žáci i pedagogové vnímají jako bezpečné a otevřené.",
+          "evidence": "Pravidelná dotazníková šetření dlouhodobě potvrzují převážně příznivé školní klima."
+        },
+        {
+          "tag": "Podpora žákům",
+          "detail": "Škola sleduje studijní výsledky a žákům ohroženým neúspěchem poskytuje individuální podporu.",
+          "evidence": "Studijní výsledky jsou soustavně sledovány; žáci ohrožení školním neúspěchem dostávají podporu."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Způsob výuky",
+          "detail": "Ve výuce převažuje frontální práce, zatímco aktivní, kooperativní a badatelské metody se využívají jen omezeně.",
+          "evidence": "Ve výuce převažovala frontální forma didaktické práce; metody kritického myšlení a badatelského vyučování byly využity jen v malé části hodin."
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Formativní hodnocení, sebehodnocení, vzájemné hodnocení a závěrečná shrnutí hodin nejsou dostatečně systematické.",
+          "evidence": "Formativní hodnocení se objevovalo jen zcela ojediněle; závěrečná shrnutí nebyla systematicky uplatňována."
+        },
+        {
+          "tag": "Individualizace",
+          "detail": "Učivo a úkoly se jen výjimečně přizpůsobovaly schopnostem, potřebám a tempu jednotlivých žáků.",
+          "evidence": "Jen výjímečně probíhala diferenciace učiva a úkolů s různou kognitivní náročností."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně podporuje škola žáky se speciálními vzdělávacími potřebami přímo během vyučování?",
+        "Jak často se ve výuce objevuje práce ve dvojicích, skupinách, badatelské úkoly nebo aktivní práce s digitálními nástroji?",
+        "Jak škola sleduje a vyhodnocuje účinnost podpůrných opatření a přípravu na maturitu?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat obchodní akademii nebo ekonomické lyceum v denní formě.",
+        "Žákům, kterým vyhovuje propojení odborné výuky s praxí na partnerských pracovištích.",
+        "Žákům, kteří potřebují jazykové vzdělávání a přípravu ke státní jazykové zkoušce."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na pravidelné aktivní práci, projektovém učení nebo výrazné podpoře kritického myšlení.",
+        "Rodičům žáků se speciálními vzdělávacími potřebami, kteří chtějí ověřit míru individualizace během běžné výuky.",
+        "Rodičům, kteří hledají vlastní školní jídelnu nebo ubytování v areálu školy."
+      ],
+      "plain_czech_summary": "Škola nabízí denní obchodní a ekonomické vzdělávání, odbornou praxi a jazykové vzdělávání. Její výhodou je dlouhodobě dobrá příprava na maturitu, převážně příznivé klima a sledování výsledků žáků. Výuka je odborně kvalitní, ale převážně frontální. Rodiče by měli v den otevřených dveří ověřit, jak často žáci pracují aktivně, dostávají zpětnou vazbu a jsou podporováni podle svých potřeb. Škola nemá vlastní jídelnu ani domov mládeže."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Příznivý trend od roku 2020; v letech 2023 a 2024 byla nulová hrubá neúspěšnost.",
+        "key_numbers": [
+          "267 žáků v devíti třídách",
+          "Nulová hrubá neúspěšnost v letech 2023 a 2024",
+          "Výsledky od roku 2020 převážně nadprůměrné oproti celorepublikovému průměru"
+        ],
+        "evidence": "Od roku 2020 jsou výsledky převážně nadprůměrné; v letech 2023 a 2024 byla nulová hrubá neúspěšnost."
+      },
+      "absence": {
+        "trend": "Z dodaného textu nelze spolehlivě posoudit.",
+        "key_numbers": [
+          "Přehled absence je uveden v seznamu dokladů za školní rok 2024/2025",
+          "Konkrétní údaje o neomluvené neúčasti nejsou uvedeny"
+        ],
+        "evidence": "Seznam dokladů uvádí „Přehledy prospěchu tříd, absence a výchovných opatření, školní rok 2024/2025“."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodik prevence tvoří personálně odborně kvalifikované poradenské pracoviště.",
+        "Škola poskytuje individuální konzultace, doučování a cílenou přípravu na maturitu.",
+        "Podpůrná opatření prvního stupně se uplatňují prostřednictvím plánů pedagogické podpory.",
+        "Složitější případy řeší škola ve spolupráci s externím školním psychologem."
+      ],
+      "safety_climate": [
+        "Škola systematicky vytváří podmínky pro bezpečnost a ochranu zdraví žáků.",
+        "Žáci jsou pravidelně seznamováni se zásadami bezpečného chování a možnými riziky.",
+        "Pravidelná šetření potvrzují převážně příznivé, bezpečné a otevřené školní klima."
+      ],
+      "partnerships_practice": [
+        "Odborná praxe probíhá na smluvních pracovištích partnerských subjektů.",
+        "Škola spolupracuje se zaměstnavateli, dalšími školami, zřizovatelem a regionálními institucemi.",
+        "Exkurze, odborné přednášky, besedy a soutěže doplňují výuku.",
+        "Mezinárodní spolupráce je dočasně pozastavena kvůli bezpečnostním rizikům."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulován srozumitelně, stručně a s praktickými souvislostmi pro rodiče.",
+      "uncertainty_notes": [
+        "Údaje o absenci nejsou v přehledu zprávy číselně uvedeny.",
+        "Zpráva uvádí 21 žáků se speciálními vzdělávacími potřebami, ale nepodává podrobnosti o jednotlivých typech podpory.",
+        "Výsledky maturitní zkoušky jsou uvedeny za roky 2023, 2024 a obecně od roku 2020, nikoli jako jedna společná číselná tabulka."
+      ]
+    }
+  }
+}

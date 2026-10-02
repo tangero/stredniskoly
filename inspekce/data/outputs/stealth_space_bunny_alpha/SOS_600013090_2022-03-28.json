@@ -1,0 +1,110 @@
+{
+  "report_id": "SOS_600013090_2022-03-28",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:04:28.773605+00:00",
+  "run_finished_utc": "2026-10-02T17:05:01.821092+00:00",
+  "raw_file": "SOS_600013090_2022-03-28.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600013090_2022-03-28",
+    "school_profile": {
+      "school_type": "Střední odborné učiliště opravárenské, Králíky, Předměstí 427",
+      "inspection_period": "28.–29. 3. 2022",
+      "school_change_summary": "Vedení se zúžilo, znovu se otevřela dálková forma Podnikání a vybudovala se spolupráce s partnery; důraz na zlepšení výsledků však zůstal převážně obecný."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Anglický jazyk",
+          "detail": "Výuka angličtiny podporovala zájem žáků, jejich komunikaci a přípravu na maturitu.",
+          "evidence": "U většiny žáků byly výsledky v souladu s očekávanými výstupy pro úspěšnou maturitu; zaznamenán byl velký zájem."
+        },
+        {
+          "tag": "Příprava k maturitě",
+          "detail": "Český jazyk se vyučoval prakticky, včetně práce s textem a zpětné vazby o porozumění.",
+          "evidence": "Pracovní listy byly zaměřeny na maturitu a učitel získával zpětnou vazbu o porozumění textu jednotlivými žáky."
+        },
+        {
+          "tag": "Odborný obor",
+          "detail": "Škola nabízela opravářské vzdělávání a současně provozovala domov mládeže a školní jídelnu.",
+          "evidence": "Škola vykonává činnosti střední školy, domova mládeže a školní jídelny; obor zahrnuje Opravář zemědělských strojů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejistá úspěšnost maturity",
+          "detail": "Podpora proti neúspěchu byla dílčí a rodičům mohla nabídnout jen omezenou záruku přípravy na maturity.",
+          "evidence": "Opatření nebyla provedena systematicky; kontrolní činnost a poradenské služby související s předcházením neúspěšnosti nebyly účinné."
+        },
+        {
+          "tag": "Kvalifikace učitelů",
+          "detail": "Pro přípravu na společnou část maturity mohla být zásadní kvalifikace učitelů matematiky a českého jazyka.",
+          "evidence": "Matematiku vyučovali dva učitelé bez potřebné specializace; český jazyk učitel svou kvalifikaci studiem doplňoval."
+        },
+        {
+          "tag": "Přijímání žáků",
+          "detail": "Velmi široké přijímání do nástavbového oboru zvyšovalo riziko potíží při dokončení školy a maturity.",
+          "evidence": "Byli přijati všichni uchazeči, tedy i ti bez anglického jazyka ve studijním plánu; škola dlouhodobě používala velmi nízké požadavky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola sleduje přípravu jednotlivých žáků na společnou část maturitní zkoušky?",
+        "Kolik hodin konzultací a doučování je skutečně využíváno a kdy začínají nabízet podporu?",
+        "Jaké konkrétní kroky podnikla škola po inspekci pro zlepšení kvalifikace učitelů, podpory žáků a výsledků maturity?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří mají zájem o obor Opravář zemědělských strojů.",
+        "Žákům, kterým vyhovuje vzdělávání ve střední škole doplněné domovem mládeže a školní jídelnou.",
+        "Žákům, kteří jsou ochotni si přípravu na maturity organizovat také samostatně a využívat konzultace."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kteří potřebují velmi pevné systémové doučování před maturitou.",
+        "Žákům závislým na kvalifikované výuce matematiky nebo českého jazyka pro maturitu.",
+        "Žákům, kterým chybí anglický jazyk a kteří zvažují nástavbové studium Podnikání s maturitou."
+      ],
+      "plain_czech_summary": "Škola nabízí opravářské vzdělávání a obor Podnikání s maturitou, ale u nástavbového oboru přetrvává vysoká neúspěšnost. V roce 2019 se neúspěšně téměř 85 % žáků, v roce 2020 klesla na 22 % a v roce 2021 stoupla na 38 %. Podpora nebyla dostatečně systematická a rodičům doporučujeme ověřit konkrétní plán přípravy na maturity. Výuka angličtiny působila jako silnější stránka školy, u matematiky a českého jazyku však inspekce zaznamenala nedostatečnou specializaci učitelů. Škola také přijímala uchazeče bez dostatečného zohlednění jejich studijních předpokladů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky se od roku 2019 zlepšily, ale po zlepšení v roce 2020 se neúspěšnost v roce 2021 opět zvýšila.",
+        "key_numbers": [
+          "2019: téměř 85 %",
+          "2020: přibližně 22 %",
+          "2021: přibližně 38 %"
+        ],
+        "evidence": "V roce 2019 z 13 přihlášených konalo maturitu 5 žáků a úspěšní byli 2; v roce 2021 měla neúspěšnost přibližně 38 %."
+      },
+      "absence": {
+        "trend": "Průměrná absence žáků denního nástavbového oboru byla ve školním roce 2020/2021 necelých 50 hodin.",
+        "key_numbers": [
+          "Průměr necelých 50 hodin na žáka",
+          "12 z 29 žáků mělo individuální vzdělávací plán",
+          "Individuální plán mělo 40 % prvního ročníku"
+        ],
+        "evidence": "Ve třídách denní formy žáci zameškali v průměru necelých 50 hodin; individuální vzdělávání podle plánu mělo 12 z 29 žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště a konzultační hodiny byly využívány nedostatečně, zejména kvůli uváděné špatné dopravní obslužnosti.",
+        "Doučování pro žáky mělo omezenou účinnost a zájem o něj rostl až před maturitou.",
+        "Škola umožňovala vzdělávání podle individuálního vzdělávacího plánu."
+      ],
+      "safety_climate": [
+        "Ve výuce českého jazyka a angličtiny byla komunikace otevřená a přátelská.",
+        "Ve sledované výuce se vyskytovalo nespisovné jazykové jednání, které učitel českého jazyka opravoval ne vždy."
+      ],
+      "partnerships_practice": [
+        "Ředitelka se zaměřovala na spolupráci s partnery, inspekční zpráva však neuvádí konkrétní partnery ani jejich přínos."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, odděluje zjištění inspekce od doporučení pro rodiče a uvádí číselné údaje.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí, jaké konkrétní opatření škola přijala v následujících 30 dnech.",
+        "Není uvedeno, proč žáci v roce 2021 nematurovali z matematiky, pouze že z ní nematuroval žádný.",
+        "Podrobnosti o partnerské spolupráci ani jejím dopadu na vzdělávání chybějí."
+      ]
+    }
+  }
+}

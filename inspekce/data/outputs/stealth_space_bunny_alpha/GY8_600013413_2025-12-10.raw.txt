@@ -1,0 +1,105 @@
+{
+  "report_id": "GY8_600013413_2025-12-10",
+  "school_profile": {
+    "school_type": "Osmileté gymnázium a školní jídelna",
+    "inspection_period": "10.–12. 12. 2025",
+    "school_change_summary": "Škola rozšířila poradenské pracoviště, pořídila mobilní digitální učebnu a od roku 2021 posílila podporu nadaných žáků i kontrolní činnost; nyní připravuje úpravu školního vzdělávacího programu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky a příprava na studium",
+        "detail": "Žáci dosahují dlouhodobě velmi dobrých výsledků a škola je účinně připravuje na další vysokoškolské studium.",
+        "evidence": "„Celkové výsledky vzdělávání žáků včetně výsledků při ukončování jejich studia jsou v posledních třech letech na výborné úrovni.“"
+      },
+      {
+        "tag": "Jazyky a výuka",
+        "detail": "Škola má dlouhodobě velmi dobrou úroveň cizích jazyků a matematiky, které podporují komunikaci, samostatnou práci a přípravu k přijímacím zkouškám.",
+        "evidence": "„Výuka cizích jazyků vykazuje na škole dlouhodobě vynikající úroveň“; „Ve sledovaných hodinách matematiky byla frontální výuka vedena efektivně a s vysokými nároky“."
+      },
+      {
+        "tag": "Partnerships a rozvoj nadání",
+        "detail": "Spolupráce s vysokými školami, vědeckými institucemi a Centrem nadaných studentů rozšiřuje možnosti žáků a pomáhá při volbě studijního směru.",
+        "evidence": "Škola je „partnerskou školou několika vysokých škol“ a účast žáků na „exkurzích do vědeckých pracovišť“ rozvíjí kompetence k učení."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rozmanitost výuky",
+        "detail": "V některých hodinách převládá frontální výkladová výuka, omezená interakce a málo prostoru pro vlastní myšlenky žáků.",
+        "evidence": "„V necelé pětině vyučovacích hodin měla frontální forma převážně stereotypní charakter založený na souvislém výkladu učitele.“"
+      },
+      {
+        "tag": "Školní prostředí a stravování",
+        "detail": "Část budovy je stále v provizoriu, tělocvična je zastaralá a školní jídelna nabízela pouze jedno hlavní jídlo.",
+        "evidence": "„Přetrvává provizorium v prostorách určených pro šatní skříňky, ve školní jídelně, zastaralá je tělocvična školy.“"
+      },
+      {
+        "tag": "Podpora a dokumentace",
+        "detail": "Ve škole není psycholog a školní vzdělávací program má ještě nedostatky v části týkající se podpory různých skupin žáků.",
+        "evidence": "„Aktuálně ve škole nepůsobí psycholog“; „Platný školní vzdělávací program obsahoval nedostatky v části upravující vzdělávání.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní možnosti má rodič v případě psychologické, výchovné nebo studijní potíže svého dítěte?",
+      "Jak budou vypadat změny školního vzdělávacího programu pro žáky se speciálními vzdělávacími potřebami a nadané žáky?",
+      "Kdy bude dokončena rekonstrukce budovy a jak bude řešena dostupnost školní jídelny, tělocvičny a dalšího provizoria?"
+    ],
+    "who_school_fits": [
+      "Rodiče žáků, kteří hledají osmileté gymnázium s dobrými výsledky a přípravou na vysokoškolské studium.",
+      "Rodiče žáků, kteří chtějí podporu cizích jazyků, matematiky, odborných aktivit a práce s chybou.",
+      "Rodiče žáků, kteří ocení spolupráci školy s vysokými školami, vědeckými institucemi a organizaci soutěží."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče žáků, kterým záleží na pravidelném využívání školní jídelny s širší nabídkou jídel.",
+      "Rodiče žáků, kterým může vadit rozdílná kvalita a méně interaktivní charakter části hodin.",
+      "Rodiče žáků, kteří očekávají pravidelnou přímou podporu školního psychologa; inspekce uvádí, že tato pozice ve škole není obsazena."
+    ],
+    "plain_czech_summary": "Gymnázium má velmi dobré výsledky, dobře vybudovanou spolupráci s vysokými školami a vědeckými institucemi a dobrou podporu nadaných žáků. Cizí jazyky a matematika jsou zvládnuty na vysoké úrovni. Rodiče by měli zvážit několik praktických omezení: část budovy je v provizoriu, tělocvična je zastaralá a jídelna během inspekce nabízela jen jedno hlavní jídlo. V některých hodinách převládá výklad před samostatnou prací a dialogem. Škola zatím nemá psychologa, ale poradenské pracoviště rozšířila. Zpráva proto doporučuje doplnit školní program a více využívat sebereflexi, vrstevnické hodnocení a práci se zdroji."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky jsou dlouhodobě výborné a ve společné části maturitní zkoušky lepší než celorepublikový průměr.",
+      "key_numbers": [
+        "V loňském roce maturitu konalo 58 žáků.",
+        "46 žáků prospělo s vyznamenáním a 11 žáků prospělo.",
+        "Ve sledovaném období byla nulová hrubá neúspěšnost."
+      ],
+      "evidence": "„V loňském roce konalo maturitní zkoušku 58 žáků, z nich 46 prospělo s vyznamenáním a 11 prospělo.“"
+    },
+    "absence": {
+      "trend": "Průměrná absence se v posledních třech letech pohybuje kolem 90 hodin na žáka za školní rok.",
+      "key_numbers": [
+        "Průměrná absence je přibližně 90 hodin na žáka za školní rok.",
+        "V loňském roce nebylo evidováno žádné neprospěšné hodnocení; ojediněle byl některý žák nehodnocen.",
+        "Za loňský školní rok bylo uděleno 126 pochval a 7 kázeňských opatření."
+      ],
+      "evidence": "„Průměrná absence se v posledních třech letech pohybuje kolem 90 hodin na žáka za školní rok.“"
+    },
+    "support_services": [
+      "Poradenské služby zajišťuje pětičlenný tým, do něhož přibyla pozice koordinátora podpory nadaných žáků.",
+      "Škola poskytuje podporu 4 % žáků se speciálními vzdělávacími potřebami a 2 % žáků s odlišným mateřským jazykem.",
+      "U nadaných žáků škola využívá vlastní identifikaci, soutěže, odborné kroužky a spolupráci s Centrem nadaných studentů.",
+      "Preventivní programy pro všechny třídy se věnují bezpečnému chování, sociálně patologickým jevům a podpoře pozitivního klimatu; workshopy pro rodiče probíhají ve spolupráci s Masarykovou univerzitou."
+    ],
+    "safety_climate": [
+      "Sledovaná výuka probíhala v bezpečném, respektujícím a podnětném prostředí.",
+      "Výuka tělesné výchovy byla dobře připravená, systematyčně rozvíjela pohybové dovednosti a žáci se aktivně zapojovali.",
+      "Škola řešila případy kyberšikany, vandalismu, užívání návykových látek a sebepoškozování; vedení věnuje pozornost bezpečnosti ve všech prostorech."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s vysokými školami, vědeckými pracovišti, Jihomoravským centrem pro mezinárodní mobilitu a dalšími institucemi.",
+      "Akademici se zapojují do vedení závěrečných prací a odborné středoškolské činnosti.",
+      "Pro žáky jsou pravidelné exkurze do vědeckých pracovišť, semináře, workshopy a odborné aktivity; škola také navazuje mezinárodní partnerství."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a z hlediska rodičů odděluje silné stránky od praktických omezení.",
+    "uncertainty_notes": [
+      "Zpráva uvádí průměrnou absenci za tři roky, ale neposkytuje přesné rozpětí ani srovnání s jinými školami.",
+      "U podpory žáků jsou uvedeny podíly 4 % a 2 %, nikoli konkrétní seznam služeb pro každou skupinu.",
+      "Zpráva neuvádí podrobné výsledky žáků podle jednotlivých předmětů ani rozdíly mezi učiteli."
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_691000093_2024-04-16",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:25:14.610915+00:00",
+  "run_finished_utc": "2026-10-02T17:25:45.334721+00:00",
+  "raw_file": "SOS_691000093_2024-04-16.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_691000093_2024-04-16",
+    "school_profile": {
+      "school_type": "Příspěvková organizace poskytující střední vzdělávání, domov mládeže, školní jídelnu a školní jídelnu-výdejnu.",
+      "inspection_period": "16. 4. 2024 až 18. 4. 2024",
+      "school_change_summary": "Škola otevřela Centrum odborného vzdělávání, ukončila výuku na odloučeném pracovišti a od minulé inspekce zvýšila počet žáků o 17 %."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborný výcvik",
+          "detail": "Praktické vyučování je dobře organizované, přizpůsobivé a propojené se skutečnou prací.",
+          "evidence": "„Promyšlená organizace a vysoká úroveň odborného výcviku reflektuje potřeby trhu práce.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Funguje poradenské pracoviště a žáci mohou požádat o pomoc také anonymně přes QR kód.",
+          "evidence": "„Poradenské služby je plně funkční“, žáci mohou „anonymně pomocí QR kódu požádat o pomoc“."
+        },
+        {
+          "tag": "Bezpečnost",
+          "detail": "Škola systematicky dbá o bezpečnost a vybavení žáků je podle inspekce na dobré úrovni.",
+          "evidence": "„Velmi dobré materiálně-technické podnínky“; nízký počet úrazů příznivě odráží důsledné poučování."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Aktivita při výuce",
+          "detail": "V teoretické výuce mohou být žáci pasivní a aktivizační či kooperativní metody nejsou využívány dostatečně.",
+          "evidence": "„V průběhu vzdělávání se často projevuje pasivita žáků“ a „chybí uplatňování efektivních vzdělávacích strategií“."
+        },
+        {
+          "tag": "Maturita",
+          "detail": "Ve společné části maturitní zkoušky vychází Strojírenství a Obchodní akademie hůře než celorepublikový průměr.",
+          "evidence": "„Vyšší míra hrubé neúspěšnosti“ zaznamenali žáci „Strojírenství a … Obchodní akademie“."
+        },
+        {
+          "tag": "Podpora odlišných potřeb",
+          "detail": "Cílená podpora žáků s různými dispozicemi se podle inspekce objevovala jen ojediněle.",
+          "evidence": "„Cílená podpora žáků s různými dispozicemi … byla zaznamenána ojediněle.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky s odlišným mateřským jazykem nebo se speciálními vzdělávacími potřebami?",
+        "Jaké konkrétní kroky přijala k odstranění rozdílů ve výsledcích maturity Strojírenství a Obchodní akademie?",
+        "Kolik vyučovacích hodin v jednotlivých oborech zahrnuje samostatnou práci, diskuse nebo spolupráci žáků?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí středoškolské vzdělání propojené s praktickým výcvikem na skutečném pracovišti.",
+        "Žákům se zájmem o obchod, hotelnictví, cestovní ruch nebo technické obory.",
+        "Žákům, kteří využijí ubytování, školní stravování nebo poradenskou podporu školy."
+      ],
+      "who_should_be_cautious": [
+        "Žákům, kterým záleží na vysoké aktivitě žáků a pestrých metodách v teoretické výuce.",
+        "Rodičům žáků se speciálními vzdělávacími potřebami nebo s odlišným mateřským jazykem, dokud podporu neověří.",
+        "Rodičům, kteří očekávají dobré výsledky společné části maturity zejména ve Strojírenství nebo Obchodní akademii."
+      ],
+      "plain_czech_summary": "Škola má silné zázemí pro praktické vyučování, dobré vybavení, přátelskou atmosféru a fungující poradenské služby. Praktický výcvik probíhá také na pracovištích smluvních partnerů a je podle inspekce jednou ze silných stran školy. Rodičům se vyplatí zvážit především obory, které odpovídají zájmům a plánům dítěte. Výuka teoretických předmětů ale méně aktivizuje žáky a v některých oborech jsou výsledky maturity slabší. Největší pozor je vhodné věnovat podpoře jazykově znevýhodněných žáků, žáků se speciálními potřebami a hodnocení podle jednotlivých oborů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou výrazně rozdílné podle oboru; u Strojírenství se v roce 2022/2023 zhoršily, zatímco u Obchodní akademie se meziročně zlepšily.",
+        "key_numbers": [
+          "Hluboká neúspěšnost Strojírenství: český jazyk 18,0 % proti ČR 5,4 %.",
+          "Hluboká neúspěšnost Strojírenství: cizí jazyk 20,9 % proti ČR 4,6 %.",
+          "Úspěšnost závěrečných zkoušek tříletých oborů dlouhodobě přesahuje 90 %."
+        ],
+        "evidence": "„Úspěšnost žáků tříletých oborů vzdělání u závěrečné zkoušky přesahuje dlouhodobě 90 %.“"
+      },
+      "absence": {
+        "trend": "Absence se podle zprávy snižuje, přesto zůstává v průměru 66 zameškaných hodin na žáka.",
+        "key_numbers": [
+          "Ve školním roce 2022/2023 připadalo na žáka 116 zameškaných hodin.",
+          "Na konci prvního pololetí 2023/2024 klesla průměrná absence ze 70 na 66 hodin na žáka.",
+          "Na konci druhého pololetí v posledních dvou letech neprospělo 5,6 % žáků."
+        ],
+        "evidence": "„Na konci prvního pololetí … klesla průměrná absence ze 70 na 66 zameškaných hodin na žáka.“"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště zajišťuje dvě výchovné poradkyně, školní metodičku prevence a školní psycholožku.",
+        "Podpora se řídí individuálním přístupem, adaptačním procesem a třídnickými hodinami.",
+        "Žáci mohou řešit tíživé situace anonymně přes QR kód; využívání psycholožky je podle zprávy žádané."
+      ],
+      "safety_climate": [
+        "Škola považuje bezpečnost a ochranu zdraví za zásadní a žáky důsledně poučuje.",
+        "Ve vybavení pracovišť upřednostňuje ochranné pomůcky a moderní techniku.",
+        "Nízký počet úrazů, vstupní čipy a kamerový systém podporují bezpečné prostředí."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s profesními organizacemi, smluvními pracovišti a dalšími partnery.",
+        "Odborný výcvik vyšších ročníků probíhá na reálných pracovištích pod dohledem zkušených instruktorů.",
+        "Žáci jsou podporováni v programech Erasmus+ a odborných soutěžích."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a zaměřené na rozhodování rodičů; čísla jsou uvedena v kontextu.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí aktuální úspěšnost maturity za školní rok 2023/2024 v úplném rozsahu.",
+        "Hodnocení podpory žáků s odlišnými potřebami vychází ze zprávy, nikoli z rozhovoru s konkrétní rodinou.",
+        "Výsledky maturity podle oborů jsou uvedeny za školní roky 2021/2022 a 2022/2023."
+      ]
+    }
+  }
+}

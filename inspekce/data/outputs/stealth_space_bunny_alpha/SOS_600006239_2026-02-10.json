@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600006239_2026-02-10",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:06:43.904054+00:00",
+  "run_finished_utc": "2026-10-02T17:07:18.504767+00:00",
+  "raw_file": "SOS_600006239_2026-02-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600006239_2026-02-10",
+    "school_profile": {
+      "school_type": "Soukromá střední škola výpočetní techniky, obor Informační technologie, denní forma studia",
+      "inspection_period": "10. 2. 2026 až 13. 2. 2026",
+      "school_change_summary": "Od předchozí inspekce se zlepšily materiální podmínky a vedení bylo rozšířeno o druhého zástupce ředitele."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná výuka",
+          "detail": "Výuka odborných předmětů je hodnocena jako velmi dobrá a propojuje teorii s aktuální praxí.",
+          "evidence": "„Velmi dobrá úroveň vzdělávání v odborných předmětech“ a „efektivním propojením teoretických poznatků s aktuální praxí“."
+        },
+        {
+          "tag": "Vybavení",
+          "detail": "Škola má moderní ICT vybavení, odborné učebny, virtualizační systém a bezplatný přístup k softwaru pro domácí použití.",
+          "evidence": "Učebny jsou vybaveny dotykovými displeji; žáci mají vzdálený přístup do virtualizačního systému a software zdarma."
+        },
+        {
+          "tag": "Jazyky a podpora",
+          "detail": "Škola podporuje cizí jazyky, individuální potřeby žáků a přípravu na maturitu.",
+          "evidence": "„Sledovaná výuka cizích jazyků vykazovala vysokou úroveň“ a podporu zajišťuje „doučováním a adaptivními aplikacemi“."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Matematika",
+          "detail": "U některých tříd se výsledky zhoršily a inspekce zjistila rozdíly v přístupu učitelů k hodnocení.",
+          "evidence": "„U některých žáků došlo v tomto předmětu k výraznému zhoršení prospěchu.“"
+        },
+        {
+          "tag": "Diferenciace",
+          "detail": "V části výuky není dostatečné přizpůsobování úkolů různým schopnostem a tempem žáků.",
+          "evidence": "Inspekce doporučuje „diferencovanými úkoly podle individuálních vzdělávacích potřeb žáků“."
+        },
+        {
+          "tag": "Hospitace",
+          "detail": "Škola má slabší mechanismus průběžného vyhodnocování podnětů žáků a rodičů i pokroku pedagogů.",
+          "evidence": "Doporučuje „zavést mechanismus jejich systematického vyhodnocování a zpětné vazby“."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se v matematice projeví půlení hodin a nové rozvržení obsahu?",
+        "Jak často žáci a rodiče předávají podněty a jak škola vyhodnocuje jejich řešení?",
+        "Kolik žáků se pravidelně účastní doučování, konzultací nebo přípravných jazykových kurzů?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat informační technologie a praktické IT obory.",
+        "Žákům se zájmem o programování, webové systémy, počítačové sítě nebo grafické systémy.",
+        "Žákům, kteří využijí nabídku cizích jazyků, certifikací a praktických projektů."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na velmi individuálním přístupu ve všech předmětech.",
+        "Rodičům, kteří mají obavy o výsledky z matematiky kvůli zaznamenaným rozdílům a propadům prospěchu.",
+        "Rodičům, kteří očekávají okamžitou a průběžně ověřovanou reakci na každý podnět."
+      ],
+      "plain_czech_summary": "Škola má silné zázemí pro IT vzdělávání, moderní učebny, odborné pedagogy, partnery a praktické aktivity. Velmi dobré jsou odborné předměty a výuka cizích jazyků. Maturitní výsledky jsou celkově velmi dobré a většina absolventů pokračuje na technicky zaměřené vysoké škole. Rodiče by měli sledovat zejména výsledky v matematice, kde se u některých žáků objevilo zhoršení. Inspekce také žádá lepší diferenciaci výuky, cílenější hospitace a systematičtější reagování na podněty žáků a rodičů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Velmi dobré výsledky a přibližně 94% úspěšného ukončení studia v standardní době",
+        "key_numbers": [
+          "94 % žáků ukončilo vzdělávání úspěšně v průměrné standardní době",
+          "Téměř třetina žáků maturitu dokončila s vyznamenáním",
+          "Všichni žáci, kteří maturitu konali, uspěli ve společné části"
+        ],
+        "evidence": "„Ve sledovaném období tento podíl činil průměrně 94 %“ a „všichni žáci, kteří konali maturitní zkoušku, ve zkouškách společné části uspěli“."
+      },
+      "absence": {
+        "trend": "Nízká absence a zanedbatelný počet neomluvených hodin",
+        "key_numbers": [
+          "14–17 % žáků prospělo s vyznamenáním",
+          "Přibližně 2–3 % žáků neprospělo",
+          "Neomluvené hodiny jsou zanedbatelné"
+        ],
+        "evidence": "„Nízké průměrné počty zameškaných hodin na žáka a zanedbatelné průměrné počty neomluvených hodin“."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytuje konzultace, doučování a podporu vzdělávacích potřeb.",
+        "Škola využívá externí diagnostické služby a intervenční programy v třídách.",
+        "Pro přípravu k maturitě jsou nabízeny doučování, adaptivní aplikace a přípravné jazykové kurzy."
+      ],
+      "safety_climate": [
+        "Vstup je zabezpečen elektronickou kontrolou a kamerovým systémem.",
+        "Preventivní program kombinuje besedy, témata bezpečného chování a sportovní aktivity.",
+        "Inspekce uvádí minimální výskyt rizikového chování."
+      ],
+      "partnerships_practice": [
+        "Sociální partneři pomáhají inovovat obsah vzdělávání a zajišťují odborné stáže na reálných pracovištích.",
+        "Škola spolupracuje se studentskou radou, školskou radou a zákonnými zástupci.",
+        "Škola je členem Sdružení soukromých škol a využívá výměnu zkušeností."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulován srozumelně, stručně a vymezuje praktické výhody i oblasti, které rodiče mohou při volbě sledovat.",
+      "uncertainty_notes": [
+        "Uabsence jsou uvedeny pouze kvalitativně; zpráva neuvádí přesné průměrné počty hodin.",
+        "U výsledků matematiky inspekce uvádí trend a následná opatření, nikoli jednotlivé výsledky tříd v tomto školním roce.",
+        "Zpráva neuvádí aktuální podíl absolventů přijatých na vysoké školy, pouze že většina pokračuje ve studiu."
+      ]
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "report_id": "GY8_600012891_2026-03-16",
+  "school_profile": {
+    "school_type": "Střední škola poskytující gymnázijní a odborné vzdělání; součástí je také školní jídelna.",
+    "inspection_period": "16. 3. až 20. 3. 2026",
+    "school_change_summary": "Od předchozí inspekce se změnil ředitel, výrazně se posílilo školní poradenské pracoviště, vzniklo kariérové poradenství a program pro nadané žáky. Zlepšilo se také materiální vybavení obou pracovišť."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola má fungující poradenské služby a podporuje žáky ohrožené školním neúspěchem.",
+        "evidence": "V závěrech: „Výrazně se posílila činnost školního poradenského pracoviště, byla obsazena pozice školního psychologa a sociálního pedagoga.“"
+      },
+      {
+        "tag": "Rozvoj dětí",
+        "detail": "Školní aktivity podporují samostatnost, odpovědnost a sociální dovednosti žáků.",
+        "evidence": "Žáci se zapojují do programů DofE, Sapere aude, dobrovolnických aktivit, zahraničních výjezdů a komunitních akcí."
+      },
+      {
+        "tag": "Odborná výuka",
+        "detail": "Odborné předměty a praxe jsou propojeny s praktickou přípravou a odborníky z praxe.",
+        "evidence": "Odborníci z praxe se zapojují do výuky a žáci absolvují odborné stáže a praxe v sociálních a zdravotnických zařízeních."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Organizace praxe",
+        "detail": "U oboru Sociální činnost nebyla výuka Učební praxe zajištěna v požadovaném rozsahu.",
+        "evidence": "Inspekce zjistila: „Z důvodu nedostatečné koordinace nebylo vzdělávání žáků zajištěno v rozsahu odpovídajícím školnímu vzdělávacímu programu.“"
+      },
+      {
+        "tag": "Diferencace výuky",
+        "detail": "Ve vyučování se málo přizpůsobovalo úkoly individuálním vzdělávacím potřebám žáků.",
+        "evidence": "Zpráva uvádí, že diferenciace úloh podle individuálních vzdělávacích potřeb a možností byla zaznamenána „zřídka“."
+      },
+      {
+        "tag": "Výsledky SOŠ",
+        "detail": "Výsledky střední odborné školy kolísají a u maturity z českého a anglického jazyka přetrvává neúspěšnost.",
+        "evidence": "„Prostor pro zlepšení však nadále představují dlouhodobě nestabilní výsledky žáků SOŠ u maturitní zkoušky z českého a anglického jazyka.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak bude nově zajišťována Učební praxe v oboru Sociální činnost a kdo bude koordinovat její rozsah?",
+      "Jak konkrétně se ve vyučování projevuje diferenciace úloh pro žáky se studijními nebo jinými vzdělávacími potřebami?",
+      "Jaká konkrétní opatření připravuje škola pro zvýšení úspěšnosti žáků SOŠ u maturity z českého a anglického jazyka?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří mají zájem o gymnaziální vzdělání, projektové metody, soutěže nebo zahraniční mobility.",
+      "Žákům, kteří chtějí studovat obor Sociální činnost nebo Ošetřovatel a mají zájem o praktickou přípravu.",
+      "Žákům, kteří potřebují poradenskou podporu, zpětnou vazbu nebo pomoc při řešení školního neúspěchu."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků SOŠ, kterým záleží na stabilních výsledcích z českého a anglického jazyka u maturity.",
+      "Rodičům žáků se specifickými vzdělávacími potřebami, kteří chtějí ověřit míru individualizace výuky.",
+      "Rodičům, kteří očekávají bezproblémové zajištění Učební praxe v oboru Sociální činnost."
+    ],
+    "plain_czech_summary": "Škola nabízí čtyřleté a osmileté gymnázium i obory Sociální činnost a Ošetřovatel. Mezi přednosti patří kvalifikovaní pedagogové, praktická výuka, poradenské služby, projekty a dobrá práce se žáky. Podporu zajišťují také školní psycholog, sociální pedagog a výchovné poradkyně. Inspekce ale upozornila na nedostatečnou organizaci Učební praxe v oboru Sociální činnost. Ve vyučování se podle inspekce zřídka přizpůsobovaly úkoly individuálním potřebám žáků a málo se využívalo sebehodnocení a vrstevnické hodnocení. Výsledky SOŠ stále kolísají, zejména u českého a anglického jazyka při maturitě."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "U gymnázií jsou výsledky velmi dobré, u SOŠ se objevují meziroční výkyvy a neúspěšnost",
+      "key_numbers": [
+        "649 žáků celkem",
+        "Zpráva neuvádí konkrétní úspěšnost maturitních zkoušek v procentech.",
+        "Neúspěšnost se opakovaně objevuje u českého a anglického jazyka na SOŠ"
+      ],
+      "evidence": "„Příznivé výsledky vzdělávání žáků obou gymnázií“ potvrzují výstupy externího testování; výsledky SOŠ „kolísají mezi jednotlivými ročníky i obory“."
+    },
+    "absence": {
+      "trend": "Celkový vývoj absence není v inspekční zprávě uveden.",
+      "key_numbers": [
+        "Celkový počet absencí není uveden.",
+        "Tolerovaná absence je součástí hodnoticího systému."
+      ],
+      "evidence": "Zpráva uvádí „stanovená hranice tolerované absence ve výuce za klasifikační období“, ale neuvádí její výši ani vývoj."
+    },
+    "support_services": [
+      "Školní psycholog a psycholožka poskytují podporu v oblasti psychiky a vzdělávání.",
+      "Sociální pedagog, školní metodik prevence a výchovné poradkyně podporují žáky.",
+      "Škola má kariérové poradenství, dva koordinátoři péče o nadané žáky a postupy pro řešení školního neúspěchu."
+    ],
+    "safety_climate": [
+      "Ve všeobecně vzdělávacích předmětech byla zjištěna přátelská pracovní atmosféra.",
+      "Ve většině sledovaných hodin žáci plnili úkoly a dodržovali pravidla chování.",
+      "Škola podporuje otevřenou komunikaci, preventivní aktivity a vytváří bezpečné prostředí pro sdílení obtíží."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje se sociálními a profesními partnery a odborníky z praxe.",
+      "Žáci absolvují odborné stáže a praxe v sociálních a zdravotnických zařízeních.",
+      "V programu ERASMUS+ se žáci a pedagogové pravidelně účastní zahraničních mobilit."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a bez dalších klíčů mimo požadované schéma.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní číselné údaje o úspěšnosti maturitních zkoušek.",
+      "Celkový vývoj ani počet absencí není v textu uveden.",
+      "Přesný dopad nedostatků na jednotlivé žáky nebo třídy zpráva neuvádí."
+    ]
+  }
+}

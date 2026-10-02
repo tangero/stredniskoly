@@ -1,0 +1,114 @@
+{
+  "report_id": "GY8_600014363_2026-02-12",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:36:40.464911+00:00",
+  "run_finished_utc": "2026-10-02T16:37:06.011976+00:00",
+  "raw_file": "GY8_600014363_2026-02-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600014363_2026-02-12",
+    "school_profile": {
+      "school_type": "Gymnázium a školní jídelna",
+      "inspection_period": "12. 2.–13. 2. 2026 a 16. 2.–17. 2. 2026",
+      "school_change_summary": "Škola investovala do oprav budov, laboratoří, učeben a školní kuchyně; v roce 2025 se podle inspekce mírně zhoršily výsledky v matematice a českém jazyce."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Dosažené výsledky",
+          "detail": "Škola dosahuje dlouhodobě nadprůměrných maturitních výsledků a žáci mají silnou práci v mnoha oborových soutěžích.",
+          "evidence": "Výsledky školy vykazují nadprůměrnou úroveň; žáci dosahují výborných výsledků v externím testování."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Žákům se SVP i žákům ohroženým neúspěchem poskytuje individuální pomoc, konzultace a doučování.",
+          "evidence": "Žákům ohroženým školním neúspěchem byla poskytnuta individuální pomoc formou konzultací a doučování."
+        },
+        {
+          "tag": "Rozvoj žáků",
+          "detail": "Široká partnerství, projekty, soutěže a umělecké aktivity mohou obohatit zkušenosti žáků mimo běžnou výuku.",
+          "evidence": "Škola rozvíjí širokou spolupráci s partnery a podporuje účast žáků v soutěžích, projektech a uměleckých aktivitách."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Sebehodnocení žáků",
+          "detail": "Ve výuce se má málo práce se stanovenými cíli a hodnocením vlastního pokroku, což může oslabovat průběžné uvědomování si učení.",
+          "evidence": "Vzdělávací cíle nejsou systematicky sdíleny a žáci nejsou dostatečně vedeni k vlastnímu vyhodnocování míry jejich naplňování."
+        },
+        {
+          "tag": "Diferencovaná výuka",
+          "detail": "Při rozdílné úrovni znalostí žáků se v některých předmětech omezuje přizpůsobování náročnosti úloh.",
+          "evidence": "Nebyla ve větší míře uplatňována diferenciace výuky prostřednictvím úloh s odlišnou kognitivní náročností."
+        },
+        {
+          "tag": "Vývoj výsledků",
+          "detail": "Rodičům stojí za pozornost mírné zhoršení výsledků přijímacích zkoušek v matematice a českém jazyce v roce 2025.",
+          "evidence": "Ve zkušebním období roku 2025 došlo k mírnému zhoršení výsledků v matematice a v českém jazyce."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se ve výuce sdílejí vzdělávací cíle a pomáhá žákům průběžně hodnotit vlastní pokrok?",
+        "Jak škola přizpůsobuje úlohy žákům s různou úrovní znalostí, zejména v matematice, fyzice a chemii?",
+        "Jaké konzultace, doučování a podpůrné programy jsou běžně dostupné rodičům a žákům?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat v gymnaziijním oboru a mají zájem o přípravu na další vzdělávání.",
+        "Žákům, kterým vyhovují soutěžní, projektové, jazykové nebo umělecké aktivity.",
+        "Žákům, kteří využijí individuální podporu a dostupné konzultace."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kteří očekávají průběžnou zpětnou vazbu prostřednictvím systematického sebehodnocení.",
+        "Žákům, kterým v matematice, fyzice nebo chemii chybí výraznější přizpůsobení náročnosti úloh.",
+        "Rodičům, kteří chtějí přesné číselné údaje o absenci; inspekční zpráva je neuvádí."
+      ],
+      "plain_czech_summary": "Inspekce hodnotí školu jako dobře fungující gymnázium s nadprůměrnými výsledky, silnou podporou žáků a širokou nabídkou aktivit. Ve většině předmětů je výuka kvalitní, žáci dostávají zpětnou vazbu a škola aktivně spolupracuje s partnery. Hlavní slabina je málo systematická práce s cíli vyučovací hodiny a sebehodnocením žáků. V matematice a českém jazyce se v roce 2025 výsledky mírně zhoršily. Přestože škola eviduje 73 žáků se SVP, podporu dostávají také žáci s větší absencí. Konkrétní trendy ani čísla nejsou uvedeny."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě vysoká úspěšnost a nadprůměrné výsledky; v přijímacích zkouškách v roce 2025 mírné zhoršení v matematice a českém jazyce.",
+        "key_numbers": [
+          "V roce 2024/2025 z neúspěchu v českém jazyku společné části 2 žáci z 171",
+          "Výsledky jsou v celostátním srovnání nadprůměrné",
+          "V externím testování žáci dosahovali výborných výsledků"
+        ],
+        "evidence": "Ve společné části maturitní zkoušky byli téměř všichni úspěšní; výsledky školy jsou nadprůměrné."
+      },
+      "absence": {
+        "trend": "Škola sleduje žáky s vyšší absencí a poskytuje jim podporu, ale zpráva neuvádí celkový trend ani číselné údaje.",
+        "key_numbers": [
+          "Celkový počet absentujících žáků neuveden",
+          "Počet omluvených hodin neuveden",
+          "Rozsah neomluvené absence neuveden"
+        ],
+        "evidence": "Škola uplatňuje vlastní systém podpory žáků s vyšší absencí; jejich studijní neúspěšnost je průběžně sledována."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště ve spolupráci s vedením školy a třídními učiteli.",
+        "Individuální konzultace a doučování pro žáky ohrožené školním neúspěchem.",
+        "Systematická podpora žáků se speciálními vzdělávacími potřebami, včetně spolupráce se školskými poradenskými zařízeními.",
+        "Kariérové poradenství pro žáky i jejich zákonné zástupce.",
+        "Preventivní a podpůrné aktivity zaměřené na šikany, zátěžové situace a pozitivní klima."
+      ],
+      "safety_climate": [
+        "Prevence šikany a zvládání zátěžových situací je koordinována ve spolupráci s odborníky.",
+        "Škola podporuje pozitivní klima a preventivní práci se sociálně patologickými jevy."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s domácími i zahraničními partnery, vysokými školami a zřizovatelem.",
+        "Zapojení žáků do mezinárodních mobilit a projektů, například Erasmus+.",
+        "Účast žáků v soutěžích, přehlídkách a projektových aktivitách."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, zkrácené a zaměřené na to, co mohou rodiče a žáci prakticky využít.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí číselné údaje o celkové absenci ani její trend.",
+        "Zpráva neuvádí podrobné výsledky z přijímacích zkoušek v matematice a českém jazyce v roce 2025.",
+        "Uvedené údaje o absenci omezují přesné posouzení změn oproti předchozí inspekci."
+      ]
+    }
+  }
+}

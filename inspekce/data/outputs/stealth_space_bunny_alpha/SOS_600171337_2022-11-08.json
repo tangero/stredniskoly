@@ -1,0 +1,107 @@
+{
+  "report_id": "SOS_600171337_2022-11-08",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:30:12.569446+00:00",
+  "run_finished_utc": "2026-10-02T17:30:52.176654+00:00",
+  "raw_file": "SOS_600171337_2022-11-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600171337_2022-11-08",
+    "school_profile": {
+      "school_type": "Střední škola elektrotechnická s domovem mládeže a školní jídelnou",
+      "inspection_period": "8. až 10. 11. 2022",
+      "school_change_summary": "Od roku 2019 má škola nového ředitele a postupně navyšuje počet žáků, rozšiřuje spolupráci s partnery i zázemí pro praktickou výuku."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Odborný výcvik žáky dobře připravuje na skutečnou práci a rozvíjí samostatnost i odpovědnost.",
+          "evidence": "„Výrazně tím rozvíjejí kompetence sociální… a komunikativní“ a vytvářejí si „reálnou představu o fungování odborné firmy“."
+        },
+        {
+          "tag": "Partnerství",
+          "detail": "Široké kontakty s firmami a univerzitami přinášejí praxi, projekty, exkurze a podporu nadaných žáků.",
+          "evidence": "„Spolupráce se sociálními partnery… je zaměřena zejména do oblasti zajištění praktického vyučování, podporu nadaných žáků, přednáškovou činnost a odborné exkurze.“"
+        },
+        {
+          "tag": "Bezpečné klima",
+          "detail": "Na většině hospitovaných hodin panovala atmosféra založená na důvěře a respektu.",
+          "evidence": "„Společným znakem všech hospitovaných vyučovacích hodin byla atmosféra založená na vzájemné důvěře a respektu.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Aktivita žáků",
+          "detail": "V teoretické výuce převažovalo předávání hotových informací místo samostatné práce a diskuse.",
+          "evidence": "„Ve většině hodnocených vyučovacích hodin dominovala frontální forma výuky“ a „převládalo předkládání hotových informací“."
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Žáci dostávali málo podnětné zpětné vazby a prostoru pro vlastní hodnocení práce.",
+          "evidence": "„V průběhu ani v závěru většiny vyučovacích hodin nebylo využito formativní hodnocení, sebehodnocení či vzájemné hodnocení.“"
+        },
+        {
+          "tag": "Podpora rozdílných potřeb",
+          "detail": "Uplatňování podpůrných opatření a diferenciace výuky nebyly vždy dostatečně účinné.",
+          "evidence": "„Funkční přístupy umožňující diferenciaci a individualizaci vyučby… byly zaznamenány výjimečně.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak často běžná teoretická výuka zahrnuje samostatnou práci, diskuse a zhodnocení vlastního řešení žákem?",
+        "Jak konkrétně vypadá podpůrné, respektive individualizované učení u žáků se speciálními vzdělávacími potřebami nebo nadaných žáků?",
+        "Na časové ose dostane rodina přesný přehled odborných výcviků, praktických pobytů u partnerů a hodnocení praktických dovedností?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí technické obory a ocenují rozsáhlou praktickou výuku.",
+        "Žákům, kterým vyhovuje spolupráce s firmami, univerzitami, projekty a soutěžemi.",
+        "Žákům, kteří využijí možnost ubytování v domově mládeže a školního stravování."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na pravidelné aktivní práci, samostatném řešení a zpětné vazbě během teoretických hodin.",
+        "Rodičům žáků se speciálními vzdělávacími potřebami, kteří chtějí ověřit skutečnou míru individualizace a podpůrných opatření.",
+        "Rodičům, kteří hledají srovnatelné výsledky žáků s jinými školami nebo podrobné veřejně dostupné ukazatele vzdělávání."
+      ],
+      "plain_czech_summary": "Škola má silné zázemí pro elektrotechnické a informační obory, funkční odborný výcvik, partnery z firem i univerzit a dobré pracovní zázemí. Ve většině teoretických hodin však převažuje frontální výuka, žáci méně samostatně pracují a málo dostávají zpětnou vazbu. Inspekce proto doporučuje více aktivizujících metod, práce ve skupinách, lepší podporu nadaných žáků a žáků se speciálními potřebami a systematičtější hodnocení výsledků. Klima při pozorování bylo založeno na důvěře a respektu. Konkrétní údaje o úspěšnosti maturity aabsence zpráva neuvádí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zpráva neuvádí",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje konkrétní údaje o úspěšnosti maturity."
+      },
+      "absence": {
+        "trend": "Zpráva neuvádí",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje konkrétní údaje o neomluvené či omluvené absenci."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytuje podporu žákům s potřebou podpůrných opatření, kariérové poradenství a primární prevenci.",
+        "Škola nabízí individuální konzultace a podle potřeb také doučování.",
+        "Domov mládeže nabízí ubytování, dostatečné zázemí pro volnočasové aktivity a přípravu na vyučování.",
+        "Školní jídelna zajišťuje stravování ubytovaným žákům i žákům celé školy."
+      ],
+      "safety_climate": [
+        "Hospitované hodiny se vyznačovaly atmosférou vzájemné důvěry a respektu.",
+        "Žáci na odborném výcviku respektovali pravidla a zásady bezpečnosti práce.",
+        "Škola podporuje prevence prostřednictvím besed, přednášek, programů, adaptačních kurzů a včasných intervencí."
+      ],
+      "partnerships_practice": [
+        "Regionální firmy a instituce se školou spolupracují na praktickém vyučování, exkurzích, přednáškách a podpoře nadaných žáků.",
+        "Škola spolupracuje s energetickými subjekty, Vysokou školou báňskou – Technickou univerzitou a Univerzitou Palackého.",
+        "Smluvní partneři umožňují vykonávat odborný výcvik nebo učební praxi také ve vyšších ročnících.",
+        "Škola pořádá soutěže, projektové dny, workshopy a akce „Objev v sobě IT technika“ a „Objev v sobě elektrikáře“."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, krátké věty a jasně odděluje zjištění inspekce od doporučení rodičům.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí číselné výsledky maturity, proto nelze posoudit jejich vývoj.",
+        "Zpráva neuvádí číselné údaje o absenci, takže nelze posoudit její vývoj.",
+        "Není uvedeno, jakého konkrétního závěru inspekce dosáhla při přijímání nápravných opatření."
+      ]
+    }
+  }
+}

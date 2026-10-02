@@ -1,0 +1,100 @@
+{
+  "report_id": "GY6_600017591_2026-04-20",
+  "school_profile": {
+    "school_type": "Soukromé čtyřleté a šestileté gymnázium",
+    "inspection_period": "20. 4. 2026 až 23. 4. 2026",
+    "school_change_summary": "Od předchozí inspekce se změnil název školy, zlepšily se materiální podmínky a škola se zapojila do projektů DofE, Erasmus+ a Eco day."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Mezinárodní a jazyková orientace",
+        "detail": "Škola rozvíjí jazykové a komunikační dovednosti pomocí zahraničních projektů a spolupráce škol.",
+        "evidence": "Národní a nadnárodní spolupráce podporuje rozvoj jazykových a komunikačních schopností žáků."
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Nadané žáci jsou systematicky identifikováni a zapojováni do projektů, soutěží a odborných aktivit.",
+        "evidence": "Škola systematicky identifikuje nadané žáky a cíleně s nimi pracuje."
+      },
+      {
+        "tag": "Příznivá atmosféra výuky",
+        "detail": "Hodiny podporují motivaci žáků a probíhají bez zásadních kázeňských nedostatků.",
+        "evidence": "Převládala příznivá pracovní atmosféra podporující a motivující k učení."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Maturitní výsledky školy jsou pod očekávanou úrovní a zvyšují obavy o přípravu na vysokoškolské studium.",
+        "evidence": "Výsledky žáků u maturitní zkoušky nedosahují požadované úrovně."
+      },
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "Ve výuce chybí dostatečné přizpůsobování úkolů různým schopnostem a vzdělávacím potřebám žáků.",
+        "evidence": "Diferenciace žáků napříč spektrem nadání a vzdělávacích potřeb se projevovala jen minimálně."
+      },
+      {
+        "tag": "Hodnocení a sebereflexe",
+        "detail": "Závěry hodin nejsou pravidelně spojeny s ověřením znalostí, sebereflexí nebo vrstevnickým hodnocením.",
+        "evidence": "Sebereflexe či vrstevnické hodnocení podle předem daných kritérií bylo využito jen z části."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola diferencuje úkoly pro nadané žáky, žáky se speciálními vzdělávacími potřebami a žáky s odlišnou úrovní?",
+      "Jaké konkrétní kroky škola přijímá po neúspěšné maturitě a jak je sleduje?",
+      "Jak často se žáci na konci hodin vyjadřují, hodnotí práci vrstevníků a ověřují vlastní pochopení učiva?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří mají zájem o jazyky, mezinárodní projekty a studium v zahraničí.",
+      "Žákům, kteří chtějí rozvíjet svůj talent prostřednictvím soutěží, projektů a odborných aktivit.",
+      "Rodičům, kteří hledají soukromé gymnázium s mezinárodní orientací a menším školním kolektivem."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří potřebují velmi pružnou individualizaci výuky podle schopností a vzdělávacích potřeb.",
+      "Rodičům, pro které je prioritou vysoká úspěšnost v maturitních zkouškách.",
+      "Rodičům, kteří očekávají pravidelnou práci školního psychologa."
+    ],
+    "plain_czech_summary": "PRIGO nabízí soukromé čtyřleté a šestileté gymnázium s mezinárodní a jazykovou orientací, projekty, podporou nadaných žáků a převážně přátelskou atmosférou výuky. Inspekce ale upozornila na slabší výsledky maturity, velmi malou diferenciaci úkolů a omezené využívání sebereflexe a vrstevnického hodnocení. Výuka starších žáků probíhala v kontejnerových učebnách. Zpráva uvádí školní poradenské služby, ale doporučuje doplnit školního psychologa. Údaje o absenci nejsou uvedeny."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zhoršení",
+      "key_numbers": [
+        "2023/2024: 72 žáků, 9 s vyznamenáním, 16 neprospělo",
+        "2024/2025: 72 žáků, 16 s vyznamenáním, 17 neprospělo",
+        "Neúspěšnost se zvýšila z 22,2 % na 23,61 %"
+      ],
+      "evidence": "Ve školním roce 2024/2025 neuspělo 17 žáků, což odpovídá 23,61 % neúspěšnosti."
+    },
+    "absence": {
+      "trend": "Neuvedeno",
+      "key_numbers": [],
+      "evidence": "Zpráva neuvádí údaje o nepřítomnosti žáků."
+    },
+    "support_services": [
+      "Školní poradenské služby pravidelně identifikují nadané žáky a hodnotí podpůrná opatření.",
+      "Škola poskytuje doučování a individuální konzultace.",
+      "Inspekce doporučila rozšířit poradenské služby o školního psychologa."
+    ],
+    "safety_climate": [
+      "Bezpečnost a ochrana zdraví jsou podpořeny pravidly a spoluprací s osobou odborně způsobilou.",
+      "Nejvíce úrazů vzniká při tělesné výchově.",
+      "Inspekce doporučila pravidelný rozbor úrazovosti a cílená preventivní opatření."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s Právnickou fakultou Univerzity Palackého a nově s filozofickou fakultou.",
+      "Skládá se v mezinárodních projektech, například Erasmus+ a Metamorphoses.",
+      "Dlouhodobě spolupracuje s gymnáziem v německém Kyritzu."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a bez zbytečného úředního stylu.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní údaje o nepřítomnosti žáků.",
+      "Posouzení vhodnosti školy pro konkrétní žáka závisí na jeho potřebách a znalostech školy.",
+      "Inspekční zpráva neuvádí podrobné výsledky externího testování."
+    ]
+  }
+}

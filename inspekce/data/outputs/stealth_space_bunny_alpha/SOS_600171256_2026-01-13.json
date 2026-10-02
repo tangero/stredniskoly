@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600171256_2026-01-13",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:46:40.366375+00:00",
+  "run_finished_utc": "2026-10-02T16:47:06.086624+00:00",
+  "raw_file": "SOS_600171256_2026-01-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600171256_2026-01-13",
+    "school_profile": {
+      "school_type": "střední škola, školní jídelna a domov mládeže",
+      "inspection_period": "13. 1. 2026 až 16. 1. 2026",
+      "school_change_summary": "Od roku 2016 se změnilo vedení školy, skončil obor Gastronomie a vznikl obor Cestovní ruch. Materiální podmínky se zlepšovaly, například postupnou renovací budov."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná příprava",
+          "detail": "Škola úzce spolupracuje se zaměstnavateli a dalšími partnery, což žákům pomáhá získávat reálné odborné dovednosti.",
+          "evidence": "Spolupráce s vysokými školami, zaměstnavateli a profesními asociacemi zajišťuje sepětí teoretické výuky s praxí."
+        },
+        {
+          "tag": "Bezpečná atmosféra",
+          "detail": "Ve vyučování žáci pracují klidně, otevřeně sdílejí své názory a chyby vnímají jako příležitost k učení.",
+          "evidence": "Chyby nebyly vnímány jako selhání, ale jako přirozená součást učebního procesu."
+        },
+        {
+          "tag": "Propojení praxe",
+          "detail": "Škola podporuje účast na soutěžích a projektech, na kterých žáci rozvíjejí odborné i osobnostní kompetence.",
+          "evidence": "Soutěžní aktivity potvrzují smysluplné propojení teoretické výuky s praxí."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Přizpůsobení výuky",
+          "detail": "Úkoly a výuka se podle zjištění inspekce dostatečně nepriz způsobovaly rozdílným schopnostem a předpokladům žáků.",
+          "evidence": "Absence diferenciace a individualizace nezohledňuje kognitivní schopnosti jednotlivých žáků."
+        },
+        {
+          "tag": "Práce s informacemi",
+          "detail": "Žáci nemají dostatečně pravidelně rozvíjet kritické posuzování informací a práci s různými informačními zdroji.",
+          "evidence": "Méně prostoru bylo věnováno kritickému posuzování informací a porovnávání jejich relevanci a věrohodnosti."
+        },
+        {
+          "tag": "Sebehodnocení",
+          "detail": "Škola má málo podkladů pro posouzení, jak žáci zvládají zpětnou vazbu a závěrečné zkoušky v jednotlivých oborech.",
+          "evidence": "Celkový neúspěšnost u maturitních zkoušek v prvním termínu byla 7,4 %."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učební úlohy přizpůsobujete schopnostem jednotlivých žáků?",
+        "Kolik zpětné vazby v hodině dostávají žáci o svém výkonu a pokroku?",
+        "Jak probíhá spolupráce s konkrétními zaměstnavateli a jaké kompetence u nich žáci procvičují?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat hotelnictví, cestovní ruch nebo gastronomické obory včetně výučních listů.",
+        "Žákům, kterým vyhovuje vzdělávání propojené s praxí a účast na odborných soutěžích.",
+        "Žákům, kteří využijí nabízené doučování, poradenské služby a spolupráci s vyučujícími."
+      ],
+      "who_should_be_cautious": [
+        "Žákům, kteří potřebují pravidelnou individualizovanou podporu nebo výraznější rozlišení úkolů podle schopností.",
+        "Žákům, kterým záleží na pravidelném rozvoji čtenářské gramotnosti, kritického myšlení a práce s informacemi.",
+        "Žákům, kteří vyžadují výrazně podrobnější vzdělávací cíle a pravidelné závěrečné ověřování než v inspekci uváděných oborech."
+      ],
+      "plain_czech_summary": "Škola má dlouhou tradici, dobré odborné zázemí a úzce spolupracuje se zaměstnavateli i dalšími partnery. Žáci získávají praktické zkušenosti a úspěšně se zapojují do soutěží a projektů. Výuka má přátelské klima, ale méně se zaměřuje na přizpůsobení úkolů jednotlivým žákům, kritickou práci s informacemi a pravidelné sebehodnocení. Výsledky závěrečných a maturitních zkoušek inspekce hodnotila jako uspokojivé a odpovídající dlouhodobým výsledkům školy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Celkové výsledky závěrečných a maturitních zkoušek hodnotila inspekce jako uspokojivé a odpovídající dlouhodobým výsledkům školy.",
+        "key_numbers": [
+          "Neúspěšnost maturitní zkoušky v prvním termínu: 7,4 %.",
+          "Maturitní zkoušku v prvním termínu neúspěšně vykonali tři žáci.",
+          "V nástavbovém studiu Podnikání byla neúspěšnost 20 %."
+        ],
+        "evidence": "Výsledky závěrečné a maturitní zkoušky lze hodnotit jako uspokojivé a odpovídající dlouhodobým vzdělávacím výsledkům školy."
+      },
+      "absence": {
+        "trend": "Zpráva uvádí průměrnou absenci na jednoho žáka, ale neposkytuje srovnání s předchozími obdobími.",
+        "key_numbers": [
+          "Průměrná absence na jednoho žáka: 79,77 hodiny.",
+          "Neomluvená část průměrné absence: 1,83 hodiny."
+        ],
+        "evidence": "Průměrná absence na jednoho žáka činila 79,77 hodin, z toho 1,83 hodiny byly neomluvené."
+      },
+      "support_services": [
+        "Poradenské služby poskytuje výchovná poradkyně a dva školní metodici prevence.",
+        "Škola poskytuje konzultace, individuální a skupinové doučování a podporu vedení školy a členů školního poradenského pracoviště.",
+        "V rámci přípravy k maturitní zkoušce škola poskytuje širokou nabídku skupinového nebo individuálního doučování."
+      ],
+      "safety_climate": [
+        "Prevence rizik a požární ochrana byly zajišťovány s osobou odborně způsobilou.",
+        "Preventivní mechanismy byly pravidelně vyhodnocovány a žáci byli upozorňováni na bezpečnostní rizika.",
+        "Inspekce zaznamenala dílčí nedostatek v administraci školních úrazů a v zabezpečení únikových východů."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s vysokými školami, zaměstnavateli a profesními asociacemi propojuje teorii s praxí.",
+        "Škola spolupracuje s absolventy a vysokými školami prostřednictvím besed, exkurzí a účasti odborníků ve výuce.",
+        "Žáci se zapojují do odborných soutěží, projektů, dobrovolnických a komunitních aktivit."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá srozumitelný český jazyk, odděluje ověřené údaje od doporučení pro rodiče a v jednotlivých bodech vychází z textu inspekční zprávy.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí srovnání absence s předchozími obdobími.",
+        "Výsledky maturitní zkoušky nejsou uvedeny samostatně pro každý obor včetně nástavbového studia.",
+        "Zpráva neuvádí konkrétní výsledky závěrečných zkoušek pro všechny obory včetně výučních listů."
+      ]
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600005071_2026-01-13",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:45:32.001750+00:00",
+  "run_finished_utc": "2026-10-02T16:46:03.610694+00:00",
+  "raw_file": "SOS_600005071_2026-01-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600005071_2026-01-13",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola stavební Josefa Gočára",
+      "inspection_period": "13. 1. 2026–16. 1. 2026",
+      "school_change_summary": "Od roku 2022 se změnilo vedení, zvýšila se kapacita i počet žáků a pedagogů, přibyla školní psycholožka a zlepšilo se vybavení školy."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná příprava",
+          "detail": "Škola dobře propojuje teorii s praxí a připravuje žáky na zaměstnání i další studium.",
+          "evidence": "Profesní příprava žáků je na velmi dobré úrovni; odborné vzdělávání zajišťuje plně kvalifikovaný pedagogický sbor."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Školní poradenské služby, doučování a individuální konzultace mohou pomoci žákům v obtížích.",
+          "evidence": "Škola poskytuje podporu podle doporučení poradenského pracoviště i možnost doučování a individuálních konzultací."
+        },
+        {
+          "tag": "Uplatnění po škole",
+          "detail": "Velká část absolventů pokračuje ve studiu nebo se uplatňuje na trhu práce.",
+          "evidence": "Uplatnění absolventů na trhu práce nebo pokračování v terciárním vzdělávání se uvádí u přibližně 90 % žáků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Převážně frontální výuka",
+          "detail": "V části teoretické výuky se žáci málo podílejí na práci a učitel učivo často podává hotové.",
+          "evidence": "V některých teoretických vyučovacích předmětech převažuje transmisivní pojetí výuky s dominantním postavením učitele."
+        },
+        {
+          "tag": "Nedostatečné přizpůsobení",
+          "detail": "V části všeobecně vzdělávacích předmětů se výuka málo přizpůsobuje rozdílům mezi žáky.",
+          "evidence": "Inspekce uvádí nedostatečnou diferenciaci vzhledem k úrovni znalostí, dovedností a individuálním vzdělávacím potřebám žáků."
+        },
+        {
+          "tag": "Maturitní profilová část",
+          "detail": "Přestože se neúspěšnost profilové části zlepšila, v posledních letech byla vyšší než v části společné.",
+          "evidence": "Čistá neúspěšnost v profilové části klesla z 8,5 % na 5 %; vyšší neúspěšnost vykazovali žáci v profilové části."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky při učení, který potřebují jiný rozsah pomoci nebo temp?",
+        "Kolik času a kde probíhá učební praxe a jaké konkrétní kompetence žáci na pracovištích získávají?",
+        "Jaké výsledky má profilová část maturitní zkoušky v posledním roce a jaké podpůrné kroky škola nabízí?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat stavebnictví, architekturu nebo interiérový design.",
+        "Žákům, kteří mají zájem o praktickou odbornou přípravu a projektovou výuku.",
+        "Žákům, kteří chtějí pokračovat ve studiu na vysoké škole nebo se uplatnit v oboru."
+      ],
+      "who_should_be_cautious": [
+        "Žákům, kterým vyhovuje převážně samostatná práce a menší roli učitele při vedení hodiny.",
+        "Žákům, kterým v části všeobecně vzdělávacích předmětů chybí individualizované úkoly a podpora.",
+        "Rodičům, kteří očekávají průběžně velmi dobré výsledky v profilové části maturitní zkoušky."
+      ],
+      "plain_czech_summary": "Škola má silnou odbornou přípravu stavebních oborů, moderní vybavení, spolupráci s praxí a ČVUT a podporu žáků pomocí poradenského pracoviště. Většina absolventů pokračuje ve studiu nebo práci v oboru. Výsledky jsou stabilní a společná část maturitní zkoušky je velmi úspěšná. Hlavní slabinou je část teoretické výuky, kde převládá frontální způsob učení, žáci se mále podílejí na hodině a výuka se málo přizpůsobuje jejich rozdílným potřebám."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Společná část je velmi úspěšná, v profilové části se neúspěšnost meziročně zlepšila.",
+        "key_numbers": [
+          "Ve školních letech 2023/2024 a 2024/2025 uspěli všichni žáci, kteří ve společné části konali maturitu.",
+          "Čistá neúspěšnost v profilové části klesla z 8,5 % na 5 %.",
+          "Ve školním roce 2024/2025 získalo maturitu 83 % žáků prvního ročníku po čtyřech letech."
+        ],
+        "evidence": "Výsledky maturit se meziročně zlepšily, zejména v profilové části, kde čistá neúspěšnost klesla z 8,5 % na 5 %."
+      },
+      "absence": {
+        "trend": "Neomluvená absence je zanedbatelná a průměrné zameškané hodiny jsou nízké; přesné číselné hodnoty zpráva neuvádí.",
+        "key_numbers": [
+          "Zpráva neuvádí přesný průměr zameškaných hodin na žáka.",
+          "Zpráva neuvádí přesný průměr neomluvených hodin na žáka."
+        ],
+        "evidence": "Inspekce uvádí nízké průměrné počty zameškaných hodin a zanedbatelné průměrné počty neomluvených hodin."
+      },
+      "support_services": [
+        "Poradenské pracoviště, výchovná poradkyně, metodička prevence a školní psycholožka.",
+        "Doučování, individuální konzultace a podpora žáků ohrožených školním neúspěchem.",
+        "Adaptační a sportovní kurzy, přednášky, exkurze a kariérní poradenství."
+      ],
+      "safety_climate": [
+        "Většina sledovaných hodin probíhala v příznivé atmosféře založené na partnerském přístupu, kázni a respektu.",
+        "Bezpečnost a ochrana zdraví jsou podporovány pravidelným vyhodnocováním rizik a analýzou úrazovosti.",
+        "Vstup do bezbariérové budovy je zabezpečen kamerovým systémem, turnikety a recepcí."
+      ],
+      "partnerships_practice": [
+        "Škola je fakultní školou Masarykova ústavu a úzce spolupracuje s Fakultou stavební ČVUT.",
+        "Učební praxe se realizuje také na pracovištích externích subjektů.",
+        "Spolupráce se stavebními firmami a společnostmi propojuje vzdělávání s praxí a podporuje uplatnění absolventů."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a zaměřené na rozhodování rodičů; tvrzení vycházejí z uvedených částí zprávy.",
+      "uncertainty_notes": [
+        "Přesné průměrné hodnoty absence zpráva neuvádí.",
+        "Údaje o profilové neúspěšnosti jsou uvedeny za oba sledované školní roky, nikoli jako průběžná časová řada.",
+        "Zpráva neuvádí podrobné výsledky jednotlivých oborových zaměření."
+      ]
+    }
+  }
+}

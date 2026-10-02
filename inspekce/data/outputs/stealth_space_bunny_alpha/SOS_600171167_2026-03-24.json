@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_600171167_2026-03-24",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:24:07.812699+00:00",
+  "run_finished_utc": "2026-10-02T16:24:33.339176+00:00",
+  "raw_file": "SOS_600171167_2026-03-24.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600171167_2026-03-24",
+    "school_profile": {
+      "school_type": "Střední odborná škola dopravy a cestovního ruchu",
+      "inspection_period": "24.–27. 3. 2026",
+      "school_change_summary": "Vedení se změnilo 1. 11. 2024; počet žáků za poslední roky vzrostl o 7 % a ředitelka postupně přijímá opatření z inspekce z roku 2018."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praxe a odborné kompetence",
+          "detail": "Škola účinně propojuje teorii s praktickou výukou a partnery z praxe.",
+          "evidence": "„Efektivní propojení teoretických znalostí s praktickými dovednostmi… vede k rozvoji odborných kompetencí žáků.“"
+        },
+        {
+          "tag": "Přátelské učební klima",
+          "detail": "Ve výuce je bezpečná atmosféra, v níž žáci komunikují, ptají se a nebojí se chybovat.",
+          "evidence": "„Žáci se do výuky aktivně zapojovali… a nebáli se komunikovat.“"
+        },
+        {
+          "tag": "Podpora a prevence",
+          "detail": "Poradenské a preventivní služby reagují na aktuální potřeby žáků a úzce spolupracují s pedagogy.",
+          "evidence": "„Systém poradenských služeb, vzájemná spolupráce a způsob sdílení informací s vyučujícími je funkční.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Ubývání v domově mládeže",
+          "detail": "Prostředí domova mládeže je zastaralé a potřebuje úpravy pro studium, odpočinek a relaxaci.",
+          "evidence": "„Prostředí je značně zastaralé a je potřeba renovacemi uzpůsobit pro školní přípravu, relaxaci a odpočinek.“"
+        },
+        {
+          "tag": "Příprava ke zkoušce",
+          "detail": "Maturitní příprava slabších žáků a úspěšnost zkoušky jsou oblastí, kterou je nutné zlepšovat.",
+          "evidence": "„Poměrně vysoký podíl žáků u maturitní zkoušky neuspěl.“"
+        },
+        {
+          "tag": "Přizpůsobení výuky",
+          "detail": "Úkoly málo odpovídají rozdílným schopnostem žáků a chybí soustavná individualizace.",
+          "evidence": "„Absence diferenciace a individualizace vzdělávacího obsahu a zadávaných úkolů nezohledňuje kognitivní schopnosti jednotlivých žáků.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní kroky škola podniká při podpře slabších žáků před maturitní zkouškou? Zpráva uvádí neúspěšnost části žáků.",
+        "Jak často se žáci mohou podílet do rozhodování o škole? Zpráva uvádí: „Žákovský parlament ve škole není zřízen.“",
+        "Kdy a v jakém rozsahu se plánují opravy domova mládeže? Zpráva popisuje jeho prostředí jako „značně zastaralé“."
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat obory ekonomiky a podnikání nebo hotelnictví a turismus se zaměřením na management.",
+        "Žákům, kterým vyhovuje propojení teoretické výuky s praktickým vyučováním; zpráva hodnotí jeho úspěšné propojení.",
+        "Žákům, kteří oceňují partnery z praxe, projekty a podporu rozvoje jazykových, komunikačních a ekonomických kompetencí."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na kvalitním vybavení domova mládeže; jeho zázemí je podle zprávy zastaralé.",
+        "Rodičům žáků připravujících se o maturitě, zejména u slabších studentů; zpráva zaznamenala neúspěšnost části žáků.",
+        "Rodičům, kteří očekávají výrazně individuální přístup ve všech předmětech; zpráva uvádí nedostatečnou diferenciaci a individualizaci."
+      ],
+      "plain_czech_summary": "Škola má dobré propojení výuky s praxí, rozsáhlé partnerství zaměstnavatelů a příjemnou atmosféru při praktickém vyučování. Žákům podporuje jazykové a komunikační dovednosti. Hlavními problémy jsou zastaralý domov mládeže, slabší příprava některých žáků k maturitě a nedostatečné přizpůsobování úkolů různým schopnostem. Ve výuce se má více rozvíjet kritické myšlení, práce s informacemi a čtenářská gramotnost. Poradenské služby a prevence fungují, ale chybí žákovský parlament."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Úspěšnost je výrazně rozdílná; nejlepší výsledky jsou v odborných částech a nejslabší v českém jazyce a literatuře.",
+        "key_numbers": [
+          "S vyznamenáním prospělo 14,5 % žáků.",
+          "Český jazyk a literatura: nejslabší výsledky.",
+          "Nejlepší výsledky: praktická maturitní zkouška a obhajoba maturitní práce."
+        ],
+        "evidence": "„S vyznamenáním prospělo 14,5 % žáků“; „nejslabších výsledků bylo dosaženo v českém jazyce a literatuře.“"
+      },
+      "absence": {
+        "trend": "Zpráva uvádí zvýšenou absenci jen u některých žáků a nepodává její dlouhodobý procentní vývoj.",
+        "key_numbers": [
+          "Ve škole se vzdělávalo 355 žáků.",
+          "Podpora se týká žáků se slabším prospěchem a zvýšenou absencí.",
+          "Externí testování nebylo provedeno."
+        ],
+        "evidence": "„Žákům se slabším prospěchem a zvýšenou absencí je poskytována základní podpora“; „Externí testování škola nerealizuje.“"
+      },
+      "support_services": [
+        "„Poradenské služby ve škole poskytují dvě výchovné poradkyně a školní metodička prevence.“",
+        "„Systém poradenských služeb, vzájemná spolupráce a způsob sdílení informací s vyučujícími je funkční.“"
+      ],
+      "safety_climate": [
+        "„Vstupy do objektů školy na ulici Revoluční i Nádražní jsou zabezpečeny čipy.“",
+        "„Zvýšený výskyt úrazů přetrvává především při sportovních aktivitách.“",
+        "„Zpráva doporučuje systematicky sledovat klimat školy.“"
+      ],
+      "partnerships_practice": [
+        "„Škola věnuje značnou pozornost rozvíjení partnerských vztahů se zaměstnavateli.“",
+        "„Dobrá spolupráce se sociálními partnery významně přispívá k naplňování odborných kompetencí absolventů.“"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je srozumitelný, stručný a vhodně odděluje konkrétní zjištění od doporučení pro rodiče.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesný podíl ani dlouhodobý vývoj absence.",
+        "U maturitní zkoušky nejsou uvedeny podrobné výsledky jednotlivých částí.",
+        "Zpráva neuvádí výsledky externího testování, protože škola jej neprovádí."
+      ]
+    }
+  }
+}

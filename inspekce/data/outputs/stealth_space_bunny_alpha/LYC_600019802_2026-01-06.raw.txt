@@ -1,0 +1,107 @@
+{
+  "report_id": "LYC_600019802_2026-01-06",
+  "school_profile": {
+    "school_type": "Střední zdravotnická škola poskytující střední odborné vzdělávání, domov mládeže a školní jídelnu-výdejnu.",
+    "inspection_period": "6.–8. 1. 2026",
+    "school_change_summary": "Od minulé inspekce přibyla jedna třída, počet žáků vzrostl o 8 % a škola se stala bezbariérovou. Změnila se ředitelka, vedení, poradenské pracoviště a vznikl školní parlament."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava",
+        "detail": "Žáci si na nemocnici procvičují skutečné odborné výkony pod vedením vyučujících.",
+        "evidence": "„Praktické vyučování úspěšně naplňuje cíle odborného vzdělávání.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola poskytuje poradenství, psychosociální podporu a rozsáhlé mimoškolní aktivity.",
+        "evidence": "Poradenské pracoviště podporuje žáky, pedagogy i rodiče; vznikl také školní parlament."
+      },
+      {
+        "tag": "Vybavení",
+        "detail": "Modernizované odborné učebny umožňují nácvik péče v prostředí blízkém praxi.",
+        "evidence": "„Vybavení všech odborných učeben je průběžně modernizováno, umožňuje plnohodnotný nácvik klinické péče.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rozmanitá podpora žáků",
+        "detail": "Ve všeobecných předmětech se objevují rezervy v přizpůsobování výuky různým žákům.",
+        "evidence": "„Příležitosti k diferenciaci učiva a cílené práci se žáky se speciálními vzdělávacími potřebami či nadanými žáky se ve výuce objevovaly spíše omezeně.“"
+      },
+      {
+        "tag": "Práce s informacemi",
+        "detail": "Některé hodiny nepodporují dostatečně samostatné hledání a kritické posuzování informací.",
+        "evidence": "„Pedagogové nevyužívají formy a metody výuky, které podněcují žáky k aktivní roli.“"
+      },
+      {
+        "tag": "Maturita z AJ",
+        "detail": "Ve společné části maturity je angličtina pro rodiče slabší stránkou školy.",
+        "evidence": "„Hrubá neúspěšnost žáků školy ve společné části maturitní zkoušky byla ve zkušebním předmětu anglický jazyk vyšší.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé přizpůsobují výuku žákům s podpůrnými opatřeními a nadaným žákům?",
+      "Jak často probíhá vyučování v nemocnici a jaké odborné výkony žáci samostatně vykonávají?",
+      "Jaké konkrétní aktivity škola nabízí k rozvoji kritického myšlení, sebehodnocení a práce s více zdroji?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat zdravotnický nebo sociální obor v denní formě.",
+      "Žákům, kterým vyhovuje propojení teorie s pravidelnou odbornou praxí.",
+      "Žákům, kteří využijí ubytování, poradenství a mimoškolní programy."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na co nejširším individuálním přizpůsobení výuky.",
+      "Žákům, kteří potřebují intenzivní podporu práce s více zdroji a kritického myšlení.",
+      "Rodičům žáků s vysokými nároky na výsledky maturity z anglického jazyka."
+    ],
+    "plain_czech_summary": "Škola má dobře propojenou teorii s praxí, kvalitní odborné učebny a fungující podporu žáků. Praktická výuka v nemocnici je pro rodiče významnou předností. Zpráva ale upozorňuje na rezervy v přizpůsobování výuky jednotlivým žákům, rozvoji kritického myšlení a sebehodnocení. Maturitní výsledky jsou celkově stabilní, angličtina však vykazuje vyšší neúspěšnost než republikový průměr."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky jsou podle zprávy dlouhodobě stabilní; zhoršením je neúspěšnost u některých oborů v anglickém jazyce.",
+      "key_numbers": [
+        "Profilová část maturity je v celorepublikovém srovnání zdravotnických oborů srovnatelná.",
+        "Neúspěšnost u oborů Praktická sestra a Sociální činnost v AJ je přibližně 8,3 % po opravných termínech.",
+        "Neúspěšnost u oboru Praktická sestra v českém jazyce a literatuře je 4 %."
+      ],
+      "evidence": "„Výsledky vzdělávání žáků nevykazovaly v jednotlivých vyučovacích předmětech závažnější meziroční odchylky a jsou dlouhodobě stabilní.“"
+    },
+    "absence": {
+      "trend": "Celková absence se podle zprávy zásadně neliší od obvyklé míry srovnatelných škol; neomluvená absence se týká jednotlivců.",
+      "key_numbers": [
+        "Průměrně 146 vyučovacích hodinabsence na žáka za školní rok.",
+        "Neomluvená absence průměrně 0,49 hodiny na žáka a školní rok."
+      ],
+      "evidence": "Neomluvená absence se podle zprávy týká pouze jednotlivců a v průměru činí 0,49 zameškané hodiny na žáka."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovné poradenství, kariérové poradenství, metodik prevence a externí školní psycholožka.",
+      "Individuální konzultace a doučování pro žáky ohrožené školním neúspěchem.",
+      "Pravidelné intervence psychosociální podpory využívané žáky, pedagogy i rodiči.",
+      "Školní parlament a elektronická schránka důvěry.",
+      "Domov mládeže, kroužky, výlety, sportovní a dobrovolnické aktivity."
+    ],
+    "safety_climate": [
+      "Škola systematicky monitoruje rizika a žáky pravidelně seznamuje s ohroženími jejich zdraví.",
+      "Budovy jsou zabezpečeny proti vstupu neoprávněných osob.",
+      "Při praktickém vyučování žáci dodržovali bezpečnostní předpisy a normy.",
+      "Ve škole jsou zaznamenány zdvořilé vystupování a přátelské klima."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s nemocnicí Turnov pro praktické vyučování žáků.",
+      "Spolupráce s Domovem důchodců Pohoda a dalšími zdravotnickými a sociálními partnery.",
+      "Odborná praxe oboru Sociální činnost a Masér ve zdravotnictví u externích partnerů.",
+      "Zapojení odborníků z praxe podporuje výuku první pomoci a ošetřování nemocných."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá běžnou češtinu, stručně odděluje přednosti, rizika a ověřená čísla a vše vychází z inspekční zprávy.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní roční vývoj úspěšnosti maturity, proto je trend popsán jen podle uvedeného srovnání a stability.",
+      "Zpráva neuvádí rozpočet školy ani podrobné podmínky přijímacího řízení pro každý obor.",
+      "Informace o podpoře žáků vychází z hodnocení inspekční zprávy, nikoli z nezávislého průzkumu rodičů."
+    ]
+  }
+}

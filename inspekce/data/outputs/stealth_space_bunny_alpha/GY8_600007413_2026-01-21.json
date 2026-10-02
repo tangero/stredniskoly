@@ -1,0 +1,111 @@
+{
+  "report_id": "GY8_600007413_2026-01-21",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:42:38.493509+00:00",
+  "run_finished_utc": "2026-10-02T16:43:17.419568+00:00",
+  "raw_file": "GY8_600007413_2026-01-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600007413_2026-01-21",
+    "school_profile": {
+      "school_type": "Příspěvková organizace vzdělávající 471 žáků v denním osmiletém gymnáziu.",
+      "inspection_period": "21.–23. 1. 2026",
+      "school_change_summary": "Škola modernizuje výuku digitálními technologiemi a umělou inteligencí, podporuje nadané žáky a investuje do vybavení; částečně se obměnil pedagogický sbor."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výsledky žáků",
+          "detail": "Škola dlouhodobě dosahuje výborných výsledků během studia i u maturity.",
+          "evidence": "„Žáci dlouhodobě dosahují výborných výsledků vzdělávání jak v průběhu studia, tak při jeho ukončování.“"
+        },
+        {
+          "tag": "Podpora nadaných",
+          "detail": "Nadaní žáci dostávají systematickou podporu a zapojení do náročnějších aktivit.",
+          "evidence": "„Systematická identifikace nadaných žáků a cílená podpora jejich rozvoje prostřednictvím týmů nadání.“"
+        },
+        {
+          "tag": "Podpora a klima",
+          "detail": "Škola nabízí poradenskou podporu, vstřícné vztahy a funkční zapojení žáků do rozhodování.",
+          "evidence": "„Škola vytváří prostředí podporující vstřícné a přátelské vztahy“; „Činnost žákovského parlamentu“ podporuje spolupráci."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Rozmanitost výuky",
+          "detail": "V části hodin se žáci méně zapojovali a některé postupy omezovaly jejich pasivitu a zájem.",
+          "evidence": "„Zapojení žáků do řešení úloh i delegování odpovědnosti probíhalo jen v omezené míře, což se projevovalo pasivitou.“"
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Ve výuce se málo využívalo formativní hodnocení, sebereflexe a vzájemné hodnocení.",
+          "evidence": "„Formativní hodnocení, sebehodnocení a vzájemné hodnocení žáků byly uplatňovány pouze okrajově.“"
+        },
+        {
+          "tag": "Prostředí školy",
+          "detail": "Zastaralé vybavení a nevyhovující tělovýchovné zázemí omezují využití školních prostor.",
+          "evidence": "„Část vybavení učeben zastaralá“; „Přetrvávající nevyhovující stav tělovýchovného zázemí omezuje využití prostor školy.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola prakticky podporuje sebereflexi a vzájemné hodnocení žáků?",
+        "Jak vypadá podpora nadaných žáků a příprava na soutěže nebo studium na vysoké škole?",
+        "Jaké konkrétní změny plánuje škola v oblasti tělovýchovného zázemí, vybavení učeben a kázně?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí osmileté gymnázium a chtějí se aktivně zapojovat do projektů a soutěží.",
+        "Žákům s nadaním, které škola aktivně vyhledává a podporuje.",
+        "Žákům, kterým vyhovuje prostředí s moderními digitálními nástroji a širokou nabídkou mimoškolních aktivit."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na pravidelné zpětné vazbě, sebereflexi a aktivním zapojení během každé hodiny.",
+        "Rodičům žáků, kteří potřebují kvalitní tělovýchovné zázemí nebo moderní vybavení všech učeben.",
+        "Rodičům žáků, kterým může vadit místy tradiční výuka, například rozsáhlý výklad učiva."
+      ],
+      "plain_czech_summary": "Gymnázium má dlouhodobě velmi dobré výsledky žáků i maturity a dobře podporuje nadané žáky. Ve výuce se používají digitální nástroje, projekty a praktické činnosti. Zároveň inspekce zjistila, že se v některých hodinách žáci méně zapojovali, učitelé mále hodnotili jejich pokrok a v části tříd vznikaly kázeňské problémy. Některé učebny jsou zastaralé a tělovýchovné prostory nejsou v dobrém stavu. Rodičům se vyplatí zeptat, jak se do výuky zapracuje zpětná vazba, pravidla a podpora nadaných."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou dlouhodobě stabilně dobré a v posledních pěti letech převážně srovnatelné nebo lepší než celostátní průměr.",
+        "key_numbers": [
+          "Společná část MZ: lepší nebo srovnatelná s celostátním průměrem za posledních pět let.",
+          "Profilová část MZ: dlouhodobě dobré výsledky.",
+          "Konkrétní procenta úspěšnosti škola neuvádí."
+        ],
+        "evidence": "„Výsledky žáků ve společné části MZ“ byly převážně srovnatelné nebo lepší než celostátní průměr."
+      },
+      "absence": {
+        "trend": "Průměrná absence se ve sledovaném roce výrazně nezvyšovala.",
+        "key_numbers": [
+          "Průměrně přibližně 120 hodin na žáka."
+        ],
+        "evidence": "„Průměrná absence žáků ve sledovaném školním roce činila přibližně 120 hodin na žáka“ a „nedocházelo k jejímu výraznému nárůstu.“"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště tvoří výchovná a kariérová poradkyně, metodička prevence a školní psycholožka.",
+        "Škola poskytuje podporu žákům se speciálními vzdělávacími potřebami a žákům s odlišným mateřským jazykem.",
+        "Škola evidovala 22 žáků se speciálními vzdělávacími potřebami; dva měli individuální vzdělávací plán a dalším osmi byl povolen."
+      ],
+      "safety_climate": [
+        "Škola podporuje vstřícné a přátelské vztahy mezi žáky, pedagogy a rodiči.",
+        "Pravidla bezpečnosti a ochrany zdraví jsou žákům pravidelně připomínána.",
+        "Škola vyhodnocuje úrazovost a přijímá opatření k jejímu omezení."
+      ],
+      "partnership_practice": [
+        "Externí partneři pořádají exkurze a přednášky, poskytují zázemí a odbornou podporu, například v oblasti kybernetické bezpečnosti.",
+        "Škola se zapojila do programu Erasmus+ a realizovala skupinovou mobilitu žáků a vzdělávání pedagogů.",
+        "Žáci se pravidelně zapojují do soutěží, dobročinných aktivit a komunitních činností."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, zkrácené a zaměřené na to, co mohou rodiče a žáci v praxi očekávat.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesné procento úspěšnosti maturitní zkoušky.",
+        "Zpráva neuvádí konkrétní harmonogram oprav tělovýchovného zázemí.",
+        "Závěry vycházejí z inspekčních pozorování a nemusí zachycovat všechny předměty a učitele stejně."
+      ]
+    }
+  }
+}

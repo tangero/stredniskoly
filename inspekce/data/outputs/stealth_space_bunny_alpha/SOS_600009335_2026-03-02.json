@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600009335_2026-03-02",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:32:14.385478+00:00",
+  "run_finished_utc": "2026-10-02T16:32:40.879607+00:00",
+  "raw_file": "SOS_600009335_2026-03-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600009335_2026-03-02",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola",
+      "inspection_period": "2. 3. 2026 až 5. 3. 2026",
+      "school_change_summary": "Počet žáků vzrostl z 368 na 459, pedagogický sbor se výrazně obměnil a poradenské pracoviště získalo nové obsazení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Zapojení do praxe",
+          "detail": "Škola propojuje technické vzdělávání s reálnou prací, soutěžemi a partnery z regionu.",
+          "evidence": "Část odborného výcviku probíhá u sociálních partnerů; žáci dosahují úspěchů v odborných soutěžích."
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Učebny, dílny a technické vybavení se modernizovaly s ohledem na současné pracovní potřeby.",
+          "evidence": "Většina odborných učeben prošla rekonstrukcí; modernizovalo se také technické vybavení."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí individuální podporu, konzultace, doučování a služby poradenského pracoviště.",
+          "evidence": "opatření zahrnují individuální přístup, pravidelné konzultace, možnost doučování a spolupráci s rodinami."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kvalita výuky",
+          "detail": "Při personálních změnách se negativně projevila kvalita některých pedagogických postupů a organizace hodin.",
+          "evidence": "Část pedagogů neměla požadovanou kvalifikaci; negativní vliv se projevil v didactice, postupech a organizaci hodin."
+        },
+        {
+          "tag": "Rozmanitost výuky",
+          "detail": "Ve většině hodin převažovalo členění podle učitele, studentům se nedostávalo dostatek prostoru pro sebereflexi a práci se zdroji.",
+          "evidence": "Kooperativní formy byly ojedinělé; sebereflexe a práce se zdroji informací byly minimální."
+        },
+        {
+          "tag": "Podpora pedagogů",
+          "detail": "Vzájemné předávání zkušeností a plánování dalšího vzdělávání učitelů nejsou dostatečně systematické.",
+          "evidence": "Schůzky sekcí probíhají většinou jednou ročně; hospitace jsou ojedinělé a plány rozvoje jsou formální."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola konkrétně podporuje žáky při neúspěchu z jazyků a jaké výsledky přinesla opatření proti absenci?",
+        "Jak často probíhají vzájemné hospitace a jak se zjištění ze zpětné vazby mění v další vzdělávání učitelů?",
+        "Kolik hodin a v jakých předmětech se žáci věnují samostatné práci, aktivizaci, sebereflexi a práci s digitálními zdroji?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat technický nebo ekonomický obor a mají zájem o praktickou práci.",
+        "Žákům, kterým vyhovuje propojení školy s firmami, univerzentami a odbornými soutěžemi.",
+        "Žákům, kteří využijí individuální podporu, doučování nebo přípravu k maturitní zkoušce."
+      ],
+      "who_should_be_cautious": [
+        "Žákům, kterým nevyhovuje převážně frontální výuka s výkladem a samostatným procvičováním.",
+        "Žákům, kterým chybí dostatečná podpora při rozvoji komunikace, sebehodnocení nebo práce s informacemi.",
+        "Rodinům, které potřebují mít k dispozici školou nabízenou podporu; část žáků ji podle zprávy nevyužívá."
+      ],
+      "plain_czech_summary": "Škola nabízí tři obory s maturitou a tři obory s výučním listem, moderní technické zázemí, spolupráci s firmami a dobré příklady praktické výuky. Výsledky u maturity jsou dlouhodobě dobré, zejména v odborných předmětech a v oboru Elektrotechnika. Pomoc při neúspěchu zahrnuje konzultace, doučování a komunikaci s rodiči, část studentů ji ale nevyužívá. Mezi slabiny patří občas neodpovídající kvalifikace nových pedagogů, převážně frontální výuka, málo sebereflexe a slabá systematická spolupráce učitelů. Pro rodiče je důležité při osobním setkání ověřit, jak konkrétně jejich dítě podporují při jazycích, absenci a širší školní neúspěšnosti."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Celkově příznivý trend; v posledních třech letech nebyli na podzim neúspěšní pouze jednotliví žáci.",
+        "key_numbers": [
+          "305 žáků ve třech maturitních oborech",
+          "Nejvyšší dlouhodobá úspěšnost v oboru Elektrotechnika",
+          "Na podzim za poslední tři roky selhali pouze jednotliví žáci"
+        ],
+        "evidence": "Výsledky odpovídají předpokladům žáků; nejúspěšnější jsou žáci Elektrotechniky a v odborných předmětech."
+      },
+      "absence": {
+        "trend": "Vyšší absence je jednou z uváděných příčin školního neúspěchu; škola proto vyžaduje pravidelnou docházku.",
+        "key_numbers": [
+          "Část žáků má vyšší absenci",
+          "Školu navštěvuje 459 žáků v 18 třídách",
+          "37 žáků studuje na doporučení školských poradenských zařízení"
+        ],
+        "evidence": "Neúspěch je podle inspekce spojen mimo jiné s vyšší absencí; škola důsledně vyžaduje školní docházku."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodik prevence zajišťují služby školního poradenského pracoviště.",
+        "Škola nabízí konzultace, doučování, individuální přístup a průběžnou komunikaci s rodiči.",
+        "Pro nadané a talentované žáky škola pořádá přípravu na soutěže a olympiády."
+      ],
+      "safety_climate": [
+        "Během inspekce žáci dodržovali pravidla chování a práce a respektovali pokyny pedagogů.",
+        "Učitelé odborného výcviku byli přítomni na pracovištích a dohlíželi na žáky.",
+        "Zjištěné bezpečnostní nedostatky škola podle zprávy ihned odstranila."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s univerzitou, automobilovými podniky, firmami na obraběčských pracích a dalšími školami.",
+        "Část odborného výcviku se koná přímo v partnerských firmách.",
+        "Prostřednictvím projektu Interreg se žáci účastní aktivit v partnerských školách v česko-bavorském příhraničí."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně odděluje silné stránky od rizik a uvádí oporu v textu zprávy.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesné procento neúspěšnosti u maturitních zkoušek.",
+        "Zpráva neposkytuje číselné porovnáníabsence za více let.",
+        "U některých oborů jsou údaje společně pro dva obory, proto je nelze bezpečně rozdělit."
+      ]
+    }
+  }
+}

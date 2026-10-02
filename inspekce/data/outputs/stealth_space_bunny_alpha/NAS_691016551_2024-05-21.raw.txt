@@ -1,0 +1,96 @@
+{
+  "report_id": "NAS_691016551_2024-05-21",
+  "school_profile": {
+    "school_type": "Tříletá střední odborná škola, obor Kuchař-číšník, denní forma studia",
+    "inspection_period": "21. 5. 2024 až 23. 5. 2024",
+    "school_change_summary": "Škola působí od školního roku 2023/2024 a v době inspekce měla 17 žáků prvního ročníku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie a praxe",
+        "detail": "Škola propojuje teoretickou výuku s odborným výcvikem v provozovnách zřizovatele a smluvních pracovištích.",
+        "evidence": "Odborný výcvik je uskutečňován zejména v designových provozovnách rychlého občerstvení a na smluvních pracovištích klasické gastronomie."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Individuální přístup, digitální podpora a profesní portfolia mohou rodičům pomoci sledovat učební i odborný pokrok dítěte.",
+        "evidence": "Soustavná personální podpora a digitální zdroje napomáhaly k individualizaci vzdělávacích strategií podle vzdělávacích potřeb."
+      },
+      {
+        "tag": "Bezpečné prostředí",
+        "detail": "Komunitní přístup a pravidelné aktivity vytvářejí podporující školní prostředí.",
+        "evidence": "Prioritou je budování otevřené a respektující kultury školy, což se promítá v její komunitní atmosféře."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Organizace výuky",
+        "detail": "Dvouhodinové bloky bez přestávky mohou zhoršovat soustředění a orientaci některých žáků.",
+        "evidence": "Nižší účinnost kontroly se projevila v nesprávné organizaci teoretického vyučování ve dvouhodinových blocích bez přestávky."
+      },
+      {
+        "tag": "Příprava k závěrečné zkoušce",
+        "detail": "Škola zatím nemá dostatečně rozpracovaný koncept přípravy žáků k závěrečné zkoušce.",
+        "evidence": "Vzhledem k tříletému vzdělávacímu cyklu je žádoucí nastavit na úrovni školy koncept přípravy žáků k závěrečné zkoušce."
+      },
+      {
+        "tag": "Jazyková a evaluační dovednosti",
+        "detail": "Ve výuce je méně podporováno samostatné kritické hodnocení zdrojů a závěrečné vyhodnocování cílů hodiny.",
+        "evidence": "Žáci samostatně vyhledávali a kriticky vyhodnocovali informace jen v malé míře; v části výuky nebyl vyhodnocen stanovený cíl."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně vypadá organizace hodin, přestávek a podpora žáků s jazykovou bariérou?",
+      "Jaký koncept přípravy k závěrečné zkoušce a pravidla hodnocení ve Světě v souvislostech škola připravuje?",
+      "Jak často mohou rodiče sledovat profesní portfolio a odborný pokrok svého dítěte?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří mají zájem o praktickou gastronomii a chtějí se učit v reálných provozovnách.",
+      "Žáci, kterým vyhovuje menší třída a intenzivnější individuální podpora.",
+      "Žáci, kteří mají zájem o propojení kuchařství se stolničením, manažerskými dovednostmi a moderní gastronomií."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří očekávají dlouhou historii školy a zavedený systém maturity.",
+      "Rodiče žáků, kterým může vadit intenzivní dvouhodinové vyučování bez přestávky.",
+      "Rodiče, kteří chtějí přesnější a rozvinutější podporu přípravy k závěrečné zkoušce a hodnocení v integrovaném předmětu."
+    ],
+    "plain_czech_summary": "Škola je novou tříletou střední odbornou školou pro obor Kuchař-číšník v Praze. Silnou stránkou je propojení teorie s praktickou gastronomií, spolupráce se zřizovatelem, digitální výuka a podpora žáků v malé třídě. Rodiče mohou sledovat profesní portfolia. Inspekce ale doporučila zlepšit organizaci dvouhodinových bloků bez přestávky, připravu k závěrečné zkoušce, pravidla celkového hodnocení a rozvoj jazykové kultury."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zpráva neuvádí výsledky maturity.",
+      "key_numbers": [],
+      "evidence": "V hodnocení výsledků vzdělávání nejsou uvedeny výsledky závěrečné zkoušky."
+    },
+    "absence": {
+      "trend": "Zpráva neuvádí statistiku absencí.",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje údaje o počtu absencí žáků."
+    },
+    "support_services": [
+      "Poradenské služby zajišťuje ředitelka ve spolupráci s třídní učitelkou, pedagogy a externími pracovišti.",
+      "Škola poskytuje individuální doučování, digitální výukovou platformu a aktivity pro primární prevenci.",
+      "Žákům s větší mírou jazykové bariéry byla poskytnuta potřebná intervence."
+    ],
+    "safety_climate": [
+      "Ve škole je podporována otevřená, respektující a komunitní atmosféra.",
+      "Inspekce uvádí dodržování zásad bezpečnosti práce při odborném výcviku.",
+      "Bylo zjištěno, že dvouhodinové bloky bez přestávky dostatečně nezohledňují psychohygienu."
+    ],
+    "partnerships_practice": [
+      "Škola úzce spolupracuje se zřizovatelem při zajištění provozu, odborných pracovišť a podpory odborných kompetencí.",
+      "Odborný výcvik probíhá zejména v designových provozovnách rychlého občerstvení zřizovatele.",
+      "Škola spolupracuje také se smluvními pracovišti klasické gastronomie."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá srozumitelný český jazyk, odděluje zjištění inspekce od doporučení a uvádí krátké citace.",
+    "uncertainty_notes": [
+      "Výsledky maturity nejsou v dodaném textu uvedeny.",
+      "Údaje o absencích nejsou v dodaném textu uvedeny.",
+      "Zpráva neuvádí konkrétní výsledky vzdělávání žáků v jednotlivých předmětech."
+    ]
+  }
+}
