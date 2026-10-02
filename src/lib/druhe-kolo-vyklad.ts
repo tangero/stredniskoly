@@ -38,11 +38,14 @@ export function vetyDruhehoKola({ rok, zaznam, predchozi }: DruheKoloNabidky): V
   const predchoziVeta = vetaOPredchozimRoce(rok, predchozi, zaznam);
 
   if (zaznam.stav === 'nenaplneno_bez_2_kola') {
+    // Souhrn 1. kola je stav k datu výsledků: nezachytí, jak škola místa obsadila potom,
+    // proto věta popisuje čísla a nic škole nepřisuzuje (issue #258).
+    const prijato = `${cislo(zaznam.kolo1_prijati)} ${tvar(zaznam.kolo1_prijati, 'uchazeče', 'uchazeče', 'uchazečů')} na ${mist(zaznam.kolo1_kapacita)}`;
     return {
-      hlavni: `V 1. kole ${rok} škola přijala ${cislo(zaznam.kolo1_prijati)} ${tvar(zaznam.kolo1_prijati, 'uchazeče', 'uchazeče', 'uchazečů')} na ${mist(zaznam.kolo1_kapacita)}, a přesto 2. kolo nevypsala. Volná místa po 1. kole neznamenají, že 2. kolo bude.`,
+      hlavni: `Podle výsledků 1. kola ${rok} škola přijala ${prijato}. 2. kolo nevypsala. Výsledky 1. kola nezachycují, jak škola místa obsadila potom, a méně přijatých než míst v nich neznamená, že 2. kolo bude.`,
       doplnky: [],
       predchozi: predchoziVeta,
-      kratce: `2. kolo ${rok} škola nevypsala, i když v 1. kole zbyla místa`,
+      kratce: `2. kolo ${rok} škola nevypsala; ve výsledcích 1. kola přijato ${cislo(zaznam.kolo1_prijati)} na ${mist(zaznam.kolo1_kapacita)}`,
     };
   }
   if (zaznam.stav === 'bez_2_kola') {

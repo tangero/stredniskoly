@@ -36,7 +36,7 @@ Od 14. 9. 2026 (verze 1.2) se 2. kolo ukazuje na nových stránkách takto; vět
 |---|---|
 | Stránka oboru, otázka „Co vám pomůže“ | jedna věta situace; u vypsaného 2. kola i počet nevešlých. Obor naplněný v 1. kole bez 2. kola jen tam, kde se někdo nevešel: rodina se dozví, že druhá šance nebyla |
 | Stránka oboru, důkaz „2. kolo“ | celý blok podle tabulky níže, předchozí rok a zdroj |
-| Stránka školy, řádek oboru | krátký řádek, například „2. kolo 2026: 7 míst, přijato 2“ nebo „2. kolo 2026 škola nevypsala, i když v 1. kole zbyla místa“ |
+| Stránka školy, řádek oboru | krátký řádek, například „2. kolo 2026: 7 míst, přijato 2“ nebo „2. kolo 2026 škola nevypsala; ve výsledcích 1. kola přijato 28 na 30 míst“ |
 | Otevřená data školy (`.json`, `.md`) | u oboru pole `druhe_kolo` se zveřejněnými počty, stavem, předchozím rokem a popisem |
 
 Nová proti verzi 1.1 je věta o tom, proč škola ve 2. kole nepřijala všechny, když se nikdo nevešel kvůli kapacitě: kolik uchazečů se dostalo na obor výš na přihlášce a kolik nedosáhlo požadavku školy (sloupce 87 a 89).
@@ -46,7 +46,7 @@ Původní blok **Druhé kolo** zůstává ve starší podobě stránky oboru (ob
 | Situace nabídky v zobrazeném roce | Co blok řekne |
 |---|---|
 | Škola vypsala 2. kolo | Počet míst, přihlášek a přijatých. Když se někdo nevešel, kolik jich bylo. Když se na 2. kolo nikdo nepřihlásil, řekne to. Nejnižší přijatý výsledek jen při aspoň deseti přijatých s výsledkem zkoušky. |
-| Obor se v 1. kole nenaplnil, 2. kolo škola nevypsala | Že přijala méně uchazečů, než měla míst, a přesto 2. kolo nevypsala, takže se na něj nedá spoléhat. |
+| Obor se v 1. kole nenaplnil, 2. kolo škola nevypsala | Kolik uchazečů škola podle výsledků 1. kola přijala na kolik míst a že 2. kolo nevypsala. Výsledky 1. kola nezachycují, jak škola místa obsadila potom, proto věta netvrdí, že místa zbyla; méně přijatých než míst neznamená, že 2. kolo bude (#258). |
 | Obor se naplnil a 2. kolo nevypsal | Jedna věta, že 2. kolo nebylo. |
 | Nabídka v datech 1. ani 2. kola není | Nic. |
 
