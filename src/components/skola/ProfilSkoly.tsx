@@ -10,6 +10,7 @@ import {
   rozdelJazyky, STAV_POPISEK, vetaNejtezsihoPrijeti,
 } from '@/lib/skola-vyklad';
 import { formatDatumCz } from '@/lib/portal-skol';
+import type { NovejsiInspekce } from '@/lib/inspekce-aktualnost';
 import { SkupinaVKraji } from '@/components/obor/grafy';
 import { UlozitObor } from '@/components/obor/UlozitObor';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
@@ -125,6 +126,16 @@ function Stitky({ polozky }: { polozky: string[] | null | undefined }) {
   );
 }
 
+function UpozorneniNovejsiInspekce({ datumShrnuti, novejsi }: { datumShrnuti: string; novejsi: NovejsiInspekce }) {
+  return (
+    <p className="rounded-2xl bg-amber-50 px-5 py-3 text-[15px] leading-relaxed text-amber-900">
+      Shrnutí je ze zprávy z {formatDatumCz(datumShrnuti.slice(0, 10))}. Škola měla novější inspekci {formatDatumCz(novejsi.datum)};
+      její zprávu jsme zatím nezpracovali.
+      {novejsi.reportUrl && <> <a href={novejsi.reportUrl} rel="noopener noreferrer" className="font-semibold underline">Zpráva ČŠI z {formatDatumCz(novejsi.datum)}</a></>}
+    </p>
+  );
+}
+
 function Zdroj({ children }: { children: ReactNode }) {
   return <p className="text-[13px] leading-relaxed text-slate-500">{children}</p>;
 }
@@ -226,6 +237,9 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
   const vahaSpecialisty = (s: string) => ['psycholog', 'výchovný poradce', 'speciální pedagog', 'kariérový poradce'].findIndex(k => s.includes(k)) >>> 0;
   const specialiste = [...(inspis?.pritomnost_specialistu ?? [])].filter(s => s !== 'jiné').sort((a, b) => vahaSpecialisty(a) - vahaSpecialisty(b));
   const rokyInspekce = inspekce ? inspekce.datum.slice(0, 4) : null;
+  // Shrnutí je ze starší zprávy, než je poslední inspekce: štítky a souhrn to nesmí zamlčet (#259).
+  const novejsi = inspekce?.novejsi ?? null;
+  const stitekInspekce = rokyInspekce ? (novejsi ? `shrnutí inspekce ${rokyInspekce}, novější ${novejsi.datum.slice(0, 4)}` : `inspekce ${rokyInspekce}`) : null;
 
   const tridy = [...new Set(vypsane.map(o => o.proKoho.match(/(\d+)\. třídy/)?.[1]).filter(Boolean))].map(Number).sort((a, b) => a - b);
   const poVyuceni = vypsane.some(o => o.proKoho === 'po vyučení');
@@ -304,7 +318,9 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
               } : null,
               (maturita || inspekce) ? {
                 href: '#vede', q: 'Jak dobrá škola je',
-                a: <>{maturita?.celkem?.passed !== undefined && maturita.celkem.registered ? <>maturitu {maturita.celkem.rok} udělalo <b>{cislo(maturita.celkem.passed)} {zOd(maturita.celkem.registered)} {cislo(maturita.celkem.registered)}</b> přihlášených{jakCastoNadStredem(maturita.skupiny) ? <>, v češtině <b>{jakCastoNadStredem(maturita.skupiny)} nad středem podobných škol</b></> : null}</> : null}{maturita && inspekce ? '; ' : ''}{inspekce ? <>inspekce {rokyInspekce}: přednost „{malePismeno(inspekce.silne[0]?.tag ?? '')}“{inspekce.rizika[0] ? <>, výtka „{malePismeno(inspekce.rizika[0].tag)}“</> : null}</> : null}</>,
+                a: <>{maturita?.celkem?.passed !== undefined && maturita.celkem.registered ? <>maturitu {maturita.celkem.rok} udělalo <b>{cislo(maturita.celkem.passed)} {zOd(maturita.celkem.registered)} {cislo(maturita.celkem.registered)}</b> přihlášených{jakCastoNadStredem(maturita.skupiny) ? <>, v češtině <b>{jakCastoNadStredem(maturita.skupiny)} nad středem podobných škol</b></> : null}</> : null}{maturita && inspekce ? '; ' : ''}{inspekce ? (novejsi
+                  ? <>poslední inspekce {formatDatumCz(novejsi.datum)}, shrnutí její zprávy zatím nemáme</>
+                  : <>inspekce {rokyInspekce}: přednost „{malePismeno(inspekce.silne[0]?.tag ?? '')}“{inspekce.rizika[0] ? <>, výtka „{malePismeno(inspekce.rizika[0].tag)}“</> : null}</>) : null}</>,
               } : null,
               inspis ? {
                 href: '#jaka', q: 'Jaká škola je',
@@ -409,7 +425,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
       </Oddil>
 
       {/* 2 · Jak si škola vede */}
-      <Oddil id="vede" nadpis="Jak si škola vede" stitek={[maturita ? `maturita ${maturita.roky.at(-Math.min(4, maturita.roky.length))}–${maturita.roky.at(-1)}` : null, rokyInspekce ? `inspekce ${rokyInspekce}` : null].filter(Boolean).join(' · ') || undefined}>
+      <Oddil id="vede" nadpis="Jak si škola vede" stitek={[maturita ? `maturita ${maturita.roky.at(-Math.min(4, maturita.roky.length))}–${maturita.roky.at(-1)}` : null, stitekInspekce].filter(Boolean).join(' · ') || undefined}>
         {!maturita && !inspekce && (
           <Karta><p className="text-slate-700">Maturitní výsledky ani shrnutí inspekce pro tuto školu zatím nemáme.{data.inspekceSeznam?.lastInspectionDate ? ` Poslední inspekce proběhla ${formatDatumCz(data.inspekceSeznam.lastInspectionDate.slice(0, 10))}.` : ''}</p></Karta>
         )}
@@ -549,6 +565,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
         })()}
         {inspekce && (
           <>
+            {novejsi && <UpozorneniNovejsiInspekce datumShrnuti={inspekce.datum} novejsi={novejsi} />}
             <Karta className="space-y-2">
               <p className="max-w-[70ch] text-[17px] leading-relaxed text-slate-800">{inspekce.souhrn}</p>
               <Puvod typ="stroj">shrnutí vytvořené automaticky ze zprávy ČŠI z {formatDatumCz(inspekce.datum)}</Puvod>
@@ -594,7 +611,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
       </Oddil>
 
       {/* 3 · Jaká škola je */}
-      <Oddil id="jaka" nadpis="Jaká škola je" stitek={[rokyInspekce ? `inspekce ${rokyInspekce}` : null, inspis ? 'profil InspIS' : null].filter(Boolean).join(' · ') || undefined}>
+      <Oddil id="jaka" nadpis="Jaká škola je" stitek={[stitekInspekce, inspis ? 'profil InspIS' : null].filter(Boolean).join(' · ') || undefined}>
         {pole('popis_skoly') && (
           <figure className="space-y-2 rounded-2xl border border-[#b5e0d4] bg-white p-5">
             <div className="flex flex-wrap items-baseline justify-between gap-2">

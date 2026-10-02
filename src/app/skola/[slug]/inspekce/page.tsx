@@ -4,7 +4,8 @@ import { notFound, permanentRedirect } from 'next/navigation';
 import { adresaPrehledu } from '@/lib/adresa-oboru.mjs';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { getSchoolPageType, getExtractionsByRedizo } from '@/lib/data';
+import { getSchoolPageType, getExtractionsByRedizo, getCSIDataByRedizo } from '@/lib/data';
+import { novejsiInspekce } from '@/lib/inspekce-aktualnost';
 import { createSlug } from '@/lib/utils';
 import { krajNames, InspectionExtraction } from '@/types/school';
 
@@ -261,6 +262,8 @@ export default async function InspectionPage({ params }: Props) {
   if (extractions.length === 0) {
     notFound();
   }
+  // ČŠI eviduje novější inspekci, než je nejnovější shrnutá: nevydávat shrnutí za aktuální (#259).
+  const novejsi = novejsiInspekce(await getCSIDataByRedizo(redizo), extractions[0].date);
 
   const overviewSlug = adresaPrehledu(redizo, school.nazev);
   if (slug !== overviewSlug) {
@@ -315,7 +318,15 @@ export default async function InspectionPage({ params }: Props) {
 
         {/* Obsah */}
         <div className="max-w-4xl mx-auto px-4 py-8 space-y-6">
-          {/* Nejnovější inspekce — vždy rozbalená */}
+          {novejsi && (
+            <p className="rounded-xl bg-amber-50 px-6 py-4 text-amber-900">
+              Shrnutí níže je ze zprávy z {formatCzechDate(extractions[0].date)}. Škola měla novější inspekci {formatCzechDate(novejsi.datum)};
+              její zprávu jsme zatím nezpracovali.
+              {novejsi.reportUrl && <> <a href={novejsi.reportUrl} rel="noopener noreferrer" className="font-semibold underline">Zpráva ČŠI z {formatCzechDate(novejsi.datum)}</a></>}
+            </p>
+          )}
+
+          {/* Nejnovější shrnutá inspekce — vždy rozbalená */}
           <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
             <div className="px-6 py-4">
               <div className="flex items-center gap-3">

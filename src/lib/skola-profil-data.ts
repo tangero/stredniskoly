@@ -17,6 +17,7 @@ import {
 } from '@/lib/skola-vyklad';
 import type { CSISchoolData, InspectionExtraction } from '@/types/school';
 import type { SchoolInspisData } from '@/types/inspis';
+import { novejsiInspekce, type NovejsiInspekce } from '@/lib/inspekce-aktualnost';
 
 /**
  * Data stránky školy podle docs/stranka-skoly-2027.md: obory s obtížností přijetí, maturita
@@ -107,6 +108,8 @@ export interface ProfilSkolyData {
     otazky: string[];
     zmena: string | null;
     podpora: string[];
+    /** ČŠI eviduje novější inspekci, než ze které je shrnutí; její zprávu jsme nezpracovali. */
+    novejsi: NovejsiInspekce | null;
   } | null;
   inspekceSeznam: CSISchoolData | null;
   inspis: SchoolInspisData | null;
@@ -390,6 +393,7 @@ export async function getProfilSkoly(
       otazky: (posledni.questions_for_open_day ?? []).slice(0, 4),
       zmena: posledni.school_profile?.school_change_summary ?? null,
       podpora: Array.isArray(podpora) ? (podpora as string[]).slice(0, 4) : [],
+      novejsi: novejsiInspekce(csi, posledni.date),
     } : null,
     inspekceSeznam: csi,
     inspis,
