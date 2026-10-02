@@ -48,7 +48,8 @@ def nacti() -> dict:
 
 def uloz(registr: dict) -> None:
     registr["aktualizovano"] = dt.date.today().isoformat()
-    REGISTR.write_text(json.dumps(registr, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    # Odsazení 1 jako soubor v repozitáři; jiné by při každém přepnutí přeformátovalo celý registr.
+    REGISTR.write_text(json.dumps(registr, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
 def ukazatele_slovniku() -> set[str]:
