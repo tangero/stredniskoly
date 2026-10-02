@@ -58,6 +58,7 @@ def main():
 
     cutoff = datetime(datetime.now().year - args.max_age_years, datetime.now().month, datetime.now().day)
     reports = []
+    pridane = set()
 
     for redizo, info in redizo_info.items():
         if redizo not in csi_data:
@@ -70,8 +71,8 @@ def main():
             except (ValueError, IndexError):
                 continue
             date_from = d.strftime("%Y-%m-%d")
-            if (redizo, date_from) in dosavadni_podle_klice:
-                continue  # převezme se níže beze změny
+            if (redizo, date_from) in dosavadni_podle_klice or (redizo, date_from) in pridane:
+                continue  # dosavadní se převezme níže beze změny, nová se nepřidá dvakrát
             if d < cutoff:
                 continue
 
@@ -86,6 +87,7 @@ def main():
             city = info.get("obec", "")
             report_id = existujici.get((redizo, date_from), f"{school_type}_{redizo}_{date_from}")
 
+            pridane.add((redizo, date_from))
             reports.append({
                 "report_id": report_id,
                 "redizo": redizo,

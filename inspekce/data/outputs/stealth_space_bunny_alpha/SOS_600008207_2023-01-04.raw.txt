@@ -1,0 +1,102 @@
+{
+  "report_id": "SOS_600008207_2023-01-04",
+  "school_profile": {
+    "school_type": "Veřejná střední průmyslová škola se čtyřmi čtyřletými obory s maturitní zkouškou",
+    "inspection_period": "4. 1. 2023 až 6. 1. 2023",
+    "school_change_summary": "V roce 2021 otevřela obor Elektromobilita a alternativní pohony, probíhá generační obměna pedagogického sboru a materiální vybavení se dále zkvalitňuje."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Odborný výcvik má odpovídající úroveň a žáci jsou vedeni k samostatné i týmové práci.",
+        "evidence": "„Průběh odborného výcviku… měl odpovídající odbornou úroveň“ a žáci jsou „systematicky vedeni k samostatné práci nebo spolupráci ve skupinách“."
+      },
+      {
+        "tag": "Partnerství a vybavení",
+        "detail": "Spolupráce s podniky a moderní technické vybavení podporují odbornou přípravu i další vzdělání.",
+        "evidence": "„Intenzivní spolupráci se smluvními partnery se spolu s nadstandardním materiálně-technickým zázemím… podporují rozvoj odbornosti“."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola nabízí konzultace, doučování, poradenství i motivační stipendia.",
+        "evidence": "„Žákům je poskytována podpora… jako individuální konzultace nebo doučování“ a stipendia získalo 25 žáků za pololetí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Teoretická výuka",
+        "detail": "V části hodin převládá frontální výuka a omezená je aktivizace žáků, diferenciace i průběžná zpětná vazba.",
+        "evidence": "„Nedostatečná nabídka širšího spektra vyučovacích metod… omezovala v části výuky prostor pro žákovskou aktivitu či rozvoj kritického myšlení“."
+      },
+      {
+        "tag": "Rozdíly v úspěšnosti",
+        "detail": "Úspěšnost u maturity je celkově vysoká, ale výsledky jednotlivých tříd se výrazně liší.",
+        "evidence": "„Ve zkušebním roce 2022 uspělo 93,5 % přihlášených žáků, byly však zjištěny výrazné rozdíly mezi třídami.“"
+      },
+      {
+        "tag": "Dokumentace poradenství",
+        "detail": "Zápisy o jednáních se žáky a rodiči nemusí být dost podrobné, což ztěžuje využití jejich závěrů.",
+        "evidence": "„Přínos jednání se žáky a jejich zákonnými zástupci částečně limituje málo vypovídající vedení podrobnějších relevantních záznamů“."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak často se během týdne koná odborný výcvik a jaké praktické dovednosti na něm žáci získají?",
+      "Jakým způsobem učitelé v teoretické výuce poskytují průběžnou zpětnou vazbu a podporují samostatnou práci žáků?",
+      "Kolik žáků v minulém školním roce odmítlo nabídku maturity z důvodu neúspěšnosti a jak jim škola pomáhala studium dokončit?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí střední technické vzdělání s maturitou a praktickou přípravou.",
+      "Žákům se zájmem o elektrotechniku, robotiku, elektromobilitu nebo strojírenství.",
+      "Žákům, kteří chtějí propojení odborné teorie, podnikové praxe a moderního vybavení."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na malé míře absence, protože škola ji označuje jen za přiměřenou.",
+      "Rodičům žáků, kteří potřebují v teoretické výuce pravidelnou zpětnou vazbu, sebehodnocení a diferencované úkoly.",
+      "Rodičům žáků, kteří mají obtíže s učením, protože cílená podpora různými způsoby byla zaznamenána jen v menší části hodin."
+    ],
+    "plain_czech_summary": "Škola má silné odborné zázemí, rozsáhlou spolupráci s podniky a kvalitní praktickou výuku. Při maturity uspělo 93,5 % přihlášených žáků, ale výsledky tříd se výrazně liší. Hlavním problémem je část teoretické výuky, kde převládá frontální způsob práce a chybí více aktivního učení, průběžné zpětné vazby i individuální podpory. Rodičům se vyplatí ověřit, jak konkrétně probíhá výuka jejich oboru a odborný výcvik."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "V jediném uvedeném zkušebním roce byla úspěšnost vysoká; vývoj vývoje trend nelze určit.",
+      "key_numbers": [
+        "93,5 % přihlášených žáků uspělo v roce 2022",
+        "Ve dvou třídách nekonalo maturitu více než 10 % žáků",
+        "Ve čtenářské a přírodovědné gramotnosti byli žáci o 10 procentních bodů lepší než průměr"
+      ],
+      "evidence": "„Ve zkušebním roce 2022 uspělo 93,5 % přihlášených žáků, byly však zjištěny výrazné rozdíly mezi třídami.“"
+    },
+    "absence": {
+      "trend": "Srovnávací trend není uveden; inspekce míru absence označila za přiměřenou.",
+      "key_numbers": [
+        "Neomluvené hodiny byly řešeny výchovnými či kázeňskými opatřeními spíše výjimečně",
+        "25 žáků získalo motivační stipendium za pololetí"
+      ],
+      "evidence": "„Škole se daří zvládat míru absence, která je přiměřená. Neomluvené hodiny byly zaznamenány a řešeny… spíše výjimečně.“"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště tvoří dva výchovní poradci, metodik prevence rizikového chování a školní kariérní poradce.",
+      "Škola poskytuje individuální konzultace a doučování při školní neúspěšnosti.",
+      "Poradenské pracoviště spolupracuje s třídními učiteli, školskými poradenskými zařízeními, rodiči a například s OSPOD."
+    ],
+    "safety_climate": [
+      "Při odborném výcviku žáci používali vhodný pracovní oděv a dodržovali zásady bezpečnosti a ochrany zdraví.",
+      "Ve sledovaných hodinách panovala příjemná a vzájemně respektující pracovní atmosféra."
+    ],
+    "partnerships_practice": [
+      "Škola intenzivně spolupracuje s podniky, školami z tuzemska i zahraničí, profesními svazy a Jihočeskou univerzitou.",
+      "Odborníci z praxe se podílejí na výuce a přednáškách, firmy podporují praktické vyučování moderními technologiemi.",
+      "Škola získává informace o přijetí absolventů na vysoké školy a jejich zapojení do praxe."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžnou češtinu, krátké věty a jasně odděluje zjištění inspekce od doporučení rodičům.",
+    "uncertainty_notes": [
+      "Zpráva uvádí výsledky maturity pouze za zkušební rok 2022, takže dlouhodobý trend nelze spolehlivě určit.",
+      "Škola zvládá nepřítomnost hodnotí slovně jako přiměřenou, ale v textu není uveden přesný počet hodin absence.",
+      "Přínos aktivního učení a zpětné vazby se mezi obory a učiteli liší; celkové hodnocení proto nelze přenést na každou hodinu."
+    ]
+  }
+}

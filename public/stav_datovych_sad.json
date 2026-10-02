@@ -616,14 +616,14 @@
    "zobrazeno": {
     "obdobi": "2026-05-29",
     "soubor": "data/inspection_extractions.json",
-    "sha256": "b28ce9eda5ead2889bf25c9240bea064ab638d92a93f171a3685485575d0f8d5",
+    "sha256": "513e0394d2067988b166e8e82b91bd73980076b071642c20dcf96386b3de22c6",
     "prepnuto": "2026-10-02"
    },
    "ocekavano": {
     "obdobi": null,
-    "kdy": null,
+    "kdy": "2027-01",
     "jistota": "odhad",
-    "zduvodneni": "Odvozeno z termínu tohoto přepnutí."
+    "zduvodneni": "Nové inspekce přibývají průběžně; obnova shrnutí po týdenní obnově seznamu inspekcí."
    },
    "obnovit_nejpozdeji": "2027-01-04",
    "po_prepnuti": "Starší zpráva téže školy zůstává sbalená pod novější.",
@@ -642,6 +642,12 @@
      "obdobi": "2025-11-25",
      "soubor": "data/inspection_extractions.json",
      "poznamka": "Datum je konec nejnovější zpracované inspekce."
+    },
+    {
+     "obdobi": "2026-05-29",
+     "soubor": "data/inspection_extractions.json",
+     "sha256": "b28ce9eda5ead2889bf25c9240bea064ab638d92a93f171a3685485575d0f8d5",
+     "prepnuto": "2026-10-02"
     }
    ]
   },
@@ -1119,6 +1125,13 @@
    "z": "2025-11-25",
    "na": "2026-05-29",
    "doklad": "issue #259 etapa 2: 199 nových zpráv modelem stealth/space-bunny-alpha, export inspekce/scripts/export_extractions.py --pro-web, 0 škol se shrnutím starším než poslední inspekce, kontrola vzorku 5 zpráv"
+  },
+  {
+   "datum": "2026-10-02",
+   "sada": "csi-extrakce",
+   "z": "2026-05-29",
+   "na": "2026-05-29",
+   "doklad": "Revize téhož období (review PR #264): 23 skenovaných zpráv převedeno OCR a zpracováno znovu, export vynechává zprávy s nečitelným textem; 963 škol, 0 se shrnutím starším než poslední inspekce"
   }
  ]
 }

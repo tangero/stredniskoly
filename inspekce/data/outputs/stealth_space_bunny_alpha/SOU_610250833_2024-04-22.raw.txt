@@ -1,0 +1,100 @@
+{
+  "report_id": "SOU_610250833_2024-04-22",
+  "school_profile": {
+    "school_type": "Střední odborná škola Jana Tiraye, Tyršova, Velká Bíteš",
+    "inspection_period": "22.–24. a 26. 4. 2024",
+    "school_change_summary": "Škola postupně zlepšuje materiální podmínky a změnila zástupce ředitele pro praktické vyučování; rozšířit vzdělávací nabídku o nové obory se nepodařilo."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava",
+        "detail": "Spolupráce se smluvními partnery umožňuje kvalitní praktickou přípravu žáků pro jejich profesní dráhu.",
+        "evidence": "„Promyšlená spolupráce se smluvními partnery zvyšuje kvalitu praktické přípravy žáků na profesní dráhu.“"
+      },
+      {
+        "tag": "Moderní technika",
+        "detail": "Nová učebna s vybavením pro CNC stroje posiluje výuku podle současných trendů oboru.",
+        "evidence": "„Nová učebna pro výuku programování CNC strojů přispívá k souladu výuky s aktuálními trendy v oboru.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola nabízí stipendium, pomoc s hledáním zaměstnání a doučování či individuální konzultace.",
+        "evidence": "Škola uvádí motivační stipendium, podporu při hledání zaměstnání, doučování a individuální konzultace."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Aktivita ve výuce",
+        "detail": "V části hodin převažuje frontální výuka, chybí diferencovaný přístup a příležitosti pro samostatnou práci žáků.",
+        "evidence": "„Výrazně převažovalo frontální působení vyučujících“ a nebyl uplatněn účinný diferencovaný přístup."
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Hospitační činnost neposkytuje pedagogům dostatečně podnětnou zpětnou vazbu pro zlepšování výuky.",
+        "evidence": "„Hospitační činnost neposkytuje podnětnou zpětnou vazbu ke kvalitě výuky.“"
+      },
+      {
+        "tag": "Podpůrná opatření",
+        "detail": "Škola neprovádí dostatečnou kontrolu účinnosti podpůrných opatření pro žáky se speciálními vzdělávacími potřebami.",
+        "evidence": "„Chybí důsledná kontrola a vyhodnocování účinnosti podpůrných opatření pro žáky se speciálními vzdělávacími potřebami.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak často učitelé poskytují žákům zpětnou vazbu a umožňují jim sebehodnocení?",
+      "Jak konkrétně škola kontroluje účinnost podpůrných opatření pro jednotlivé žáky?",
+      "Kolik hodin praktického vyučování žáci absolvují na smluvních pracovištích a jak je hodnocena jeho kvalita?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí střední odborné vzdělání doplněné praktickou přípravou na smluvních pracovištích.",
+      "Zájemcům o obory kuchař-číšník, cukrář, kadeřník, obráběč kovů nebo mechanik seřizovač.",
+      "Žákům, kterým vyhovuje menší škola s osobním přístupem pedagoga."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na pravidelném využívání aktivních metod a podnětného hodnocení.",
+      "Rodičům žáků se speciálními vzdělávacími potřebami, kteří chtějí jistotu důsledné kontroly podpůrných opatření.",
+      "Rodičům, kteří očekávají širší nabídku nových studijních oborů."
+    ],
+    "plain_czech_summary": "Škola má dobře nastavenou praktickou výuku, novou učebnu CNC a spolupráci s firmami, které pomáhají žákům připravit na práci. Slabší jsou aktivita a samostatnost žáků ve většině hodin, zpětná vazba učitelům a kontrola podpůrných opatření. Inspekce také doporučuje lépe aktualizovat dokumentaci a vyhodnocovat výsledky žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zpráva neuvádí celkový trend úspěšnosti maturity; uvádí však, že u závěrečné zkoušky nebyli v posledních třech letech neúspěšní více než jeden žák.",
+      "key_numbers": [
+        "U závěrečné zkoušky byl v posledních třech letech neúspěšný vždy nejvýše jeden žák."
+      ],
+      "evidence": "Ve společné části maturity získala škola slabé výsledky z moderních dějin a čtenářské gramotnosti ve školním roce 2022/2023."
+    },
+    "absence": {
+      "trend": "Celkový trend absence není v dodaném textu uveden.",
+      "key_numbers": [],
+      "evidence": "Zpráva neuvádí údaje o neomluvené či omluvené absenci."
+    },
+    "support_services": [
+      "Výchovná poradkyně a sdílené digitální prostředí s informacemi o obtížích žáků a doporučených metodách práce.",
+      "Doučování a individuální konzultace.",
+      "Pravidelné aktivity v rámci Minimálního preventivního programu školy.",
+      "Podpora při hledání pracovního místa po ukončení studia."
+    ],
+    "safety_climate": [
+      "Školní poradenské pracoviště řeší dílčí případy rizikového chování ve spolupráci s třídními učiteli.",
+      "V uplynulých dvou školních letech nebyly podle zprávy zaznamenány závažné kauzy.",
+      "Prevence je založena především na pravidelných aktivitách Minimálního preventivního programu.",
+      "Inspekce upozornila na chybějící hodnocení účinnosti preventivní činnosti."
+    ],
+    "partnerships_practice": [
+      "Praktická výuka části oborů probíhá na smluvních pracovištích ve Velké Bíteši a okolí.",
+      "Spolupráce se partnery umožňuje realizovat praktickou výuku podle školních vzdělávacích programů.",
+      "Partneři zahrnují PBS Velká Bíteš, První brněnskou strojírnu, Hotel U Raušů a restauraci Božský burger."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžnou češtinu, stručně vysvětluje praktické přednosti i omezení školy a jasně odděluje zjištění zprávy od doporučení rodičům.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí celkové údaje o absenci ani kompletní vývoj úspěšnosti maturity.",
+      "U partnerů jsou uvedeny příklady, nikoli úplný seznam všech smluvních partnerů.",
+      "Závěry o vhodnosti školy jsou formulovány pouze na základě oborů a zjištění uvedených ve zprávě."
+    ]
+  }
+}

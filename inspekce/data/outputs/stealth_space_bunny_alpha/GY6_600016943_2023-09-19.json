@@ -1,0 +1,109 @@
+{
+  "report_id": "GY6_600016943_2023-09-19",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:27:37.124039+00:00",
+  "run_finished_utc": "2026-10-02T17:28:18.601354+00:00",
+  "raw_file": "GY6_600016943_2023-09-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600016943_2023-09-19",
+    "school_profile": {
+      "school_type": "Slovanské gymnázium, Olomouc, tř. Jiřího z Poděbrad 13",
+      "inspection_period": "19.–22. 9. 2023",
+      "school_change_summary": "Od minulé inspekce se podstatně změnila organizace vzdělávání: řada teoretických i výchovných předmětů se dělí na skupiny. Škola také průběžně inovuje prostředí a vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Bezpečné klima",
+          "detail": "Ve vyučovaných hodinách převládala klidná atmosféra založená na respektu a vstřícném přístupu.",
+          "evidence": "„V hodnocených vyučovacích hodinách převažovala klidná pracovní atmosféra založená na vzájemném respektu, vstřícném přístupu i přiměřené toleranci.“"
+        },
+        {
+          "tag": "Příprava výuky",
+          "detail": "Hodnocené vyučování bylo pečlivě připravené, odborné a dynamické.",
+          "evidence": "„Výuka byla pečlivě připravená, byla vedena věcně správně a probíhala dynamicky bez časových prostojů.“"
+        },
+        {
+          "tag": "Podpora talentů",
+          "detail": "Škola podporuje nadané žáky účastí v soutěžích, olympiádách a individuální přípravou.",
+          "evidence": "„Škola podporuje rozvoj talentovaných žáků zejména jejich častým zapojováním do školních kol různých druhů soutěží a předmětových olympiád.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Diferenciace výuky",
+          "detail": "Při hodnocených hodinách se diferenciace podle potřeb žáků, zejména nadaných, uplatňovala jen ojedinele.",
+          "evidence": "„Funkční přístupy umožňující diferenciaci a individualizaci výuky s přihlédnutím k rozdílným vzdělávacím možnostem a potřebám jednotlivých žáků byly zaznamenány ojedinele.“"
+        },
+        {
+          "tag": "Aktivizace žáků",
+          "detail": "V části hodin chyběla širší škála aktivních metod a vzájemné hodnocení žáků nebylo běžnou součástí výuky.",
+          "evidence": "„Pouze v menší části vyučovacích hodin vyučující nevyužívali dostatečně široké spektrum didaktických forem a metod k podpoře aktivity žáků.“"
+        },
+        {
+          "tag": "Žáci bez hlasu",
+          "detail": "Neobnovený školní parlament omezuje možnost žáků ovlivňovat dění ve škole.",
+          "evidence": "„Činnost žákovského parlamentu nebyla po distanční výuce obnovena.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně vypadá podpora nadaného žáka, který v hodině potřebuje odlišně náročné úkoly?",
+        "Jak často probíhá formativní hodnocení a žákovská sebehodnocení v běžných hodinách?",
+        "Kdy a proč obnovíte činnost školního parlamentu?"
+      ],
+      "who_school_fits": [
+        "Žákům, kterým vyhovuje klasická gymnaziální výuka s důrazem na komunikaci a sebehodnocení chyby.",
+        "Žákům se zájmem o cizojazyčné předměty, projekty, praktické experimenty nebo komunikaci v cizím jazyce.",
+        "Žákům, kteří chtějí rozvíjet svůj talent soutěžemi, konzultacemi a širší školní programovou nabídkou."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům, kteří očekávají důkladnou individualizaci každé hodiny podle aktuální úrovně žáka.",
+        "Rodičům žáků, kterým nestačí převládající frontální výuka se samostatnou prací.",
+        "Rodičům, kteří chtějí výraznou možnost žáků podílet se na organizaci školního života."
+      ],
+      "plain_czech_summary": "Škola má za sebou velkou, dobře vedenou gymnaziální výuku, spolupráci s partnery a dlouhodobou podporu nadaných žáků. V hodnocených hodinách bylo vidět dobré odborné zázemí učitelů a příjemné klima. Rodiče však mají vědět, že se v části výuky uplatňovalo málo diferencované učivo, málo samostatných aktivit pro nadané a málo formativního hodnocení. Také zpětná vazba žákům se podle inspekce ne vždy zaměřovala na jejich vlastní pokrok."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Škola uvádí úspěšnost u maturitních zkoušek, ale bez konkrétních výsledků a srovnání s jinými školami.",
+        "key_numbers": [
+          "920 žáků ve 31 třídách",
+          "31 tříd v době inspekce"
+        ],
+        "evidence": "„Zpětnou vazbou pro školu je tak úspěšnost žáků v soutěžích, u maturitních zkoušek i v přijetí absolventů k dalšímu studiu na vysokých školách.“"
+      },
+      "absence": {
+        "trend": "Inspekce zjistila nízkou absenci žáků, ale neuvedla její číselnou hodnotu.",
+        "key_numbers": [],
+        "evidence": "„Na dosahované výsledky vzdělávání pozitivně působí skutečnost, že se škola nepotýká s vysokou absencí žáků ve vyučování.“"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytuje poradenské a konzultační služby učitelům, žákům a rodičům.",
+        "Škola nabízí individuální konzultace, doučování a zintenzivněnou přípravu na maturitu.",
+        "Poradenské pracoviště podporuje žáky se speciálními vzdělávacími potřebami a žáky ohrožené školním neúspěchem.",
+        "Škola uvádí, že účinnost podpůrných opatření není v běžné výuce kontrolována dostatečně systemicky."
+      ],
+      "safety_climate": [
+        "Ve vyučovaných hodinách převládala klidná pracovní atmosféra založená na respektu a přiměřené toleranci.",
+        "Škola uvádí, že prevence rizikového chování ojedinělé problémy řeší přes pohovory, spolupráci s rodiči a mapování kolektivů.",
+        "Žáci mohou využít schránku důvěry a obrátit se na vyučující při osobním kontaktu."
+      ],
+      "partnerships_practice": [
+        "Externí partnerství doplňuje vzdělávání aktivitami a programy pro rozvoj klíčových kompetencí a specifického nadání.",
+        "Mezinárodní projekty podporují mobilitu žáků i učitelů, jazykové dovednosti a výměnu zkušeností.",
+        "Škola spolupracuje se školskou radou, Sdružením rodičů a zřizovatelem."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text používá běžné české výrazy, stručně odděluje silné stránky od oblastí ke zlepšení a jasně uvádí nejistoty tam, kde chybí číselné údaje.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní výsledky maturitních zkoušek, proto nelze jejich výkonnost číselně posoudit.",
+        "Zpráva neuvádí přesné procento absence, takže její rozsah nelze číselně porovnat s jinými školami.",
+        "Stanovisko ČŠI potvrzuje, že zjištění o diferenciaci vychází z hodnoceného vzorku vyučovaných hodin."
+      ]
+    }
+  }
+}

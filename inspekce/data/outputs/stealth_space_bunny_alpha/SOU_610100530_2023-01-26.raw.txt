@@ -1,0 +1,102 @@
+{
+  "report_id": "SOU_610100530_2023-01-26",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola dopravní",
+    "inspection_period": "26.–27. 1. a 30.–31. 1. 2023",
+    "school_change_summary": "Od předchozí inspekce vzrostl počet žáků o 247 a tříd o devět; v oboru Autotronik lze od třetího ročníku získat výuční list."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení školy s praxí",
+        "detail": "Žáci pracují na skutečných zakázkách a během výuky mohou komunikovat přímo s odborníky z praxe.",
+        "evidence": "„Žáci plnili úkoly většinou na vozidlech zákazníků formou produktivní práce.“"
+      },
+      {
+        "tag": "Vybavení",
+        "detail": "Škola má velmi dobře vybavené dílny, moderní učebny a také vlastní autoškolu a svářečskou školu.",
+        "evidence": "„Školní dílny s velmi dobrým standardem technického vybavení umožňují žákům kvalitní přípravu na budoucí povolání.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Školní poradenské pracoviště poskytuje kariérní, výchovné a sociální poradenství a podporuje žáky se SVP.",
+        "evidence": "Škola podporuje žáky se SVP při „konání maturitní zkoušky“ a vytváří jim IVP."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rozdílná kvalita výuky",
+        "detail": "Metodická doporučení se ne vždy přenášejí do výuky, což se podle inspekce projevuje rozdílnou úrovní hodin.",
+        "evidence": "„Metodická doporučení se nedaří vždy aplikovat do výuky, což se projevuje v rozdílné úrovni vyučovacích hodin.“"
+      },
+      {
+        "tag": "Neaktivní výuka",
+        "detail": "Ve zvolených předmětech bylo málo práce pro samostatné řešení, sebereflexi a přizpůsobení výuky rozdílným úrovním žáků.",
+        "evidence": "„Téměř nebyla zaznamenána diferenciace výuky vzhledem k rozdílným znalostem nebo schopnostem žáků.“"
+      },
+      {
+        "tag": "Absence v nástavbě",
+        "detail": "Vysoká absence v oboru Podnikání negativně ovlivňuje výsledky učení.",
+        "evidence": "„Vysoká absence žáků nástavbového oboru Podnikání ve výuce má negativní dopad na výsledky vzdělávání.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak často ředitelka a zástupci osobně působí na pracovišti v Křimicích a kdy se tam mohou rodiče dostavit?",
+      "Jak konkrétně podporuje škola žáky s odlišnou úrovní znalostí a kteří učitelé pracují s individuálními vzdělávacími plány?",
+      "Jaké konkrétní opatření škola přijala proti absencím v nástavbovém oboru Podnikání a jak často se výuka hodnotí?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí technické nebo dopravní zaměstnání a ocitnou praktickou práci na vozidlech a zařízeních.",
+      "Žákům, kterým vyhovuje velká škola s odbornými učebnami, dínami, vlastní autoškolou a svářečskou školou.",
+      "Žákům, kteří mají zájem o obory s maturitní zkouškou i o tříleté obory s výučním listem."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků nástavbového oboru Podnikání kvůli uváděné vysoké absenci a jejímu dopadu na výsledky.",
+      "Rodičům, kteří očekávají v každé hodině samostatnou práci, průběžnou sebereflexi nebo výuku přizpůsobenou různým úrovním žáků.",
+      "Rodičům žáků se SVP, kteří chtějí ověřit, jak konkrétně budou jednotliví učitelé spolupracovat na jejich podpoře."
+    ],
+    "plain_czech_summary": "Škola má silné praktické zázemí, dobře vybavené dílny a úzké spojení s firmami. Žáci učebních oborů pracují na skutečných zakázkách a osvojují si technologické postupy. Maturity a závěrečné zkoušky jsou úspěšné, zpráva uvádí přibližně 91 % prospěch žáků. Rodičům však záleží na kvalitě konkrétní výuky: v části hodin chyběla aktivní práce, dostatečné přizpůsobení žákům a sebereflexe. V nástavbě Podnikání je vysoká absence. Ve škole působí poradenské pracoviště a podporuje se vzdělávání žáků se SVP."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dobrá a stabilně pozitivní úspěšnost, bez srovnání s předchozí inspekcí",
+      "key_numbers": [
+        "Přibližně 91 % žáků oborů s výučním listem a s maturitní zkouškou prospělo u závěrečných a maturitních zkoušek.",
+        "Výsledky maturit zpravisobila většinou studijní předpoklady a průběžné hodnocení žáků."
+      ],
+      "evidence": "„Žáci oborů vzdělání s výučním listem a s maturitní zkouškou dosahují dobrých výsledků u závěrečných i maturitních zkoušek.“"
+    },
+    "absence": {
+      "trend": "Absence je hodnocena jako vysoká, zejména v nástavbovém oboru Podnikání",
+      "key_numbers": [
+        "Neprospěch žáků často souvisí s vysokou absencí.",
+        "Větší míraabsence se projevuje v nástavbovém studiu."
+      ],
+      "evidence": "„Neprospěch žáků často koresponduje s jejich vysokou absencí, což se projevuje ve větší míře v nástavbovém studiu.“"
+    },
+    "support_services": [
+      "Poradenské služby zajišťují výchovné poradkyně, školní metodičky prevence, kariérová poradkyně a sociální pedagog.",
+      "Škola na doporučení poradenského zařízení vytváří IVP a podporuje žáky při maturitní zkoušce.",
+      "Pravidelné adaptační kurzy podporují vznik zdravých vztahů v kolektivu prvního ročníku."
+    ],
+    "safety_climate": [
+      "Ve vyučované výuce převládala „klidná přátelská atmosféra svědčící o vzájemném respektu“.",
+      "Žáci byli v odborném výcviku vedeni k dodržování bezpečnostních předpisů.",
+      "Budovy školy jsou podle inspekce zabezpečeny proti vstupu neoprávněných osob."
+    ],
+    "partnerships_practice": [
+      "Praxe a odborný výcvik se konají v dílnách, učebnách školy a na smluvních pracovištích profesních partnerů.",
+      "Odborní z praxe byli při nejasnostech žákům dostupní i telefonicky.",
+      "Škola spolupracuje s profesními svazy, základními školami, školní radou a spolkem rodičů a přátel školy."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou přímé, věcně přesné a zaměřené na to, co mohou rodiče ověřit při výběru školy nebo na deni otevřených dveří.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje přesné procento absence ani její dlouhodobý vývoj.",
+      "Zpráva uvádí přibližnou úspěšnost 91 % společně pro závěrečné a maturitní zkoušky, nikoli samostatně pro maturity.",
+      "Není uvedeno, jaké konkrétní opatření přijala škola po inspekci."
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "report_id": "GY4_691004048_2025-01-27",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:26:24.896942+00:00",
+  "run_finished_utc": "2026-10-02T17:27:00.721297+00:00",
+  "raw_file": "GY4_691004048_2025-01-27.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691004048_2025-01-27",
+    "school_profile": {
+      "school_type": "Střední škola s gymnáziem, pedagogickým lyzeem a oborem předškolní a mimoškolní pedagogika",
+      "inspection_period": "2025-01-27 až 2025-02-21",
+      "school_change_summary": "Od minulé inspekce se mírně zlepšilo materiální zabezpečení, vznikla pozice zástupce ředitelky a změnily se některé poradenské funkce; zahraniční spolupráce s Izraelí byla přerušena."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Bezpečné klima",
+          "detail": "Přátelská atmosféra a respektující přístup učitelů podporují psychickou bezpečnost žáků.",
+          "evidence": "„Ve všech hospitovaných hodinách panovala uvolněná a přátelská atmosféra.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí konzultace, doučování, opravu testu i podporu při úpravě studia.",
+          "evidence": "„Žákům ohroženým školním neúspěchem nabízí škola konzultace a doučování“."
+        },
+        {
+          "tag": "Sebepoštování žáků",
+          "detail": "Žáci se mohou zapojovat do soutěží, projektů a aktivit, které rozvíjejí jejich osobnost a komunikaci.",
+          "evidence": "„V široké míře se žáci zapojují do školních akcí“ a „rozvíjejí osobnostní a sociální kompetence“."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nadhodnocení výsledků",
+          "detail": "Školní hodnocení může být příznivější než výsledky u maturitní zkoušky.",
+          "evidence": "„Jejich průběžné a sumativní hodnocení vykazuje nesoulad s hodnocením při ukončování vzdělávání maturitní zkouškou“."
+        },
+        {
+          "tag": "Vysoká absence",
+          "detail": "Velké množství zameškaných hodin může snižovat školní úspěšnost a efektivitu výuky.",
+          "evidence": "„Vysoká absence žáků školy bezpochyby ovlivňuje výsledky vzdělávání žáků“."
+        },
+        {
+          "tag": "Omezená individualizace",
+          "detail": "Výuka má místy málo diferenciace, samostatné práce a podpory pro různě nadané žáky.",
+          "evidence": "„Zásadním nedostatkem převážné většiny hospitovaných hodin byla absence diferenciace“."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se ve vyučování mění přístup k nadaným žákům a žákům s podpůrnými potřebami?",
+        "Jak škola průběžně ověřuje, zda známky odpovídají skutečné úrovni znalostí před maturitou?",
+        "Jaké konkrétní kroky přijímá proti absenci a jak často rodiče dostávají zpětnou informaci?"
+      ],
+      "who_school_fits": [
+        "Rodiče žáků, kteří mají zájem o obory gymnázium, pedagogické lyceum nebo předškolní a mimoškolní pedagogika.",
+        "Žáci, kterým vyhovuje podporující a vstřícný přístup školy.",
+        "Žáci, kteří chtějí zapojit do projektů, soutěží a školních aktivit."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče žáků, kteří potřebují průběžné ověřování reálné připravenosti na maturitu.",
+        "Rodiče žáků, kterým záleží na pravidelné omluvě a nízké absenci.",
+        "Rodiče žáků, kteří potřebují výraznou diferenciaci výuky nebo průběžnou formativní zpětnou vazbu."
+      ],
+      "plain_czech_summary": "Škola má přátelské klima, psychickou bezpečnost a nabízí konzultace i doučování. Pro rodiče jsou důležitá ale tři upozornění: školní známky mohou být nadhodnocené proti výsledkům maturit, absence je vysoká a výuka často neposkytuje dostatek samostatné práce, diferenciace nebo formativní zpětné vazby. V oboru předškolní a mimoškolní pedagogika inspekce upozornila také na nejednotné hodnocení pedagogické praxe."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Úspěšnost u maturity se oproti předchozímu zkušebnímu období snížila: podíl neprospělých žáků vzrostl z 26 % na 34 %.",
+        "key_numbers": [
+          "2023: 9 žáků s vyznamenáním, 30 prospělo a 14 neprospělo z 53 přihlášených.",
+          "2024: 9 žáků s vyznamenáním, 21 prospělo a 16 neprospělo z 46 přihlášených.",
+          "Inspekce uvádí, že průběžné výsledky žáků škola nadhodnocuje."
+        ],
+        "evidence": "„Jejich průběžné a sumativní hodnocení vykazuje nesoulad s hodnocením při ukončování vzdělávání maturitní zkouškou“."
+      },
+      "absence": {
+        "trend": "Průměrná absence na žáka se snížila, ale inspekce ji stále označila za vysokou a ovlivňující výsledky vzdělávání.",
+        "key_numbers": [
+          "2022/2023: průměrně 203 zameškaných hodin na žáka.",
+          "2023/2024: průměrně 161 zameškaných hodin na žáka.",
+          "Ve druhém pololetí 2023/2024 proběhlo 32 zkoušek k doplnění klasifikace."
+        ],
+        "evidence": "„Vysoká absence žáků školy bezpochyby ovlivňuje výsledky vzdělávání žáků“."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště má dva členovy s rozdělenými kompetencemi; ředitelka školy současně vykonává funkci školního metodika prevence.",
+        "Škola poskytuje konzultace a doučování žákům ohroženým školním neúspěchem.",
+        "Škola spolupracuje s příslušnými školskými poradenskými zařízeními při podpoře žáků se speciálními vzdělávacími potřebami."
+      ],
+      "safety_climate": [
+        "Ve všech hospitovaných hodinách panovala uvolněná a přátelská atmosféra.",
+        "Pedagogové podporovaly psychicky bezpečné prostředí, v němž se žáci nemuseli bát vyjádřit myšlenky, chybovat nebo požádat o pomoc.",
+        "K bezpečnému klimu přispívá žákovský parlament, pravidelná setkávání, adaptační kurzy a anonymní schránka důvěry."
+      ],
+      "partnership_practice": [
+        "Škola spolupracuje se školami a dalšími partnery, na jejichž pracovištích probíhá praktické vyučování.",
+        "Učební praxe oboru předškolní a mimoškolní pedagogika probíhá na smluvních pracovištích v mateřských školách, školních družinách a zájmových kroužcích.",
+        "Inspekce zjistila, že chybí účinný jednotný systém hodnocení žáků během pedagogické praxe."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou krátké, srozumitelné a vztahují se přímo k praktickým otázkám rodičů.",
+      "uncertainty_notes": [
+        "Zpráva uvádí období inspekce včetně několika samostatných termínů; v hesle je použito souhrnné rozmezí z metadat.",
+        "U části tvrzení školy jsou uvedeny připomínky, ke kterým se následně vyjádřila inspekce; v hodnocení jsou rozlišovány závěry inspekce a argumenty školy.",
+        "Pro období školního roku 2024/2025 nejsou v přiloženém textu úplné výsledky maturity, proto jsou uvedeny dostupné roky 2023 a 2024."
+      ]
+    }
+  }
+}

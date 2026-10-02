@@ -1,0 +1,103 @@
+{
+  "report_id": "GY8_600009530_2024-03-05",
+  "school_profile": {
+    "school_type": "Příspěvková organizace poskytující denní vzdělávání ve čtyřletém a osmiletém gymnáziu, školním klubu a školní jídelně-výdejně.",
+    "inspection_period": "5. 3. 2024–8. 3. 2024",
+    "school_change_summary": "Od školního roku 2023/2024 působí nový ředitel, probíhá částečná obměna pedagogů a vznikla žákovská samospráva i práce kariérové poradkyně; škola také zintenzivnila spolupráci s vysokými školami a upravuje budovu kvůli bezbariérovosti."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělávání",
+        "detail": "Škola žákům umožňuje získat mezinárodně uznávané jazykové zkoušky a účastnit se zahraničních výměnných pobytů.",
+        "evidence": "Spolupracuje s institucemi zajišťujícími jazykové zkoušky a s partnerskými školami v Německu a Dánsku zajišťuje pravidelné výměnné pobyty."
+      },
+      {
+        "tag": "Výsledky a podpora talentů",
+        "detail": "Výsledky žáků jsou hodnoceny jako stabilně výborné a škola podporuje účast v soutěžích, olympiádách a projektech.",
+        "evidence": "Žáci dosahují stabilně výborných výsledků, více než 50 % je vyznamenáno a žáci se účastní řady soutěží."
+      },
+      {
+        "tag": "Bezpečné prostředí",
+        "detail": "Během sledované výuky panovalo bezpečné a tvůrčí prostředí s patrnou spoluprací žáků s pedagogy.",
+        "evidence": "Ve všech sledovaných hodinách matematiky a přírodovědných předmětů panovalo bezpečné a tvůrčí prostředí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Převládající způsob výuky",
+        "detail": "Ve většině předmětů převládá frontální výuka, omezená je spolupráce žáků i jejich hodnocení vlastního pokroku.",
+        "evidence": "Kooperativní metody práce žáků byly sledovány pouze ojedinele; jejich hodnocení vlastního pokroku se realizuje sporadicky."
+      },
+      {
+        "tag": "Omezené učebny",
+        "detail": "Nedostatek kmenových a odborných učeben může ovlivňovat organizaci výuky, tělesnou výchovu probíhá i mimo hlavní budovu.",
+        "evidence": "Škola má pouze jednu malou tělocvičnou a další prostory pronajímá; limitující je počet kmenových i odborných učeben."
+      },
+      {
+        "tag": "Jednotnost pedagogického rozvoje",
+        "detail": "Metodická spolupráce a další vzdělávání učitelů zatím závisí více na jednotlivcích než na společném systému.",
+        "evidence": "Spolupráce vychází z osobního zájmu pedagogů, nemá společný rámec a neprobíhá u všech učitelů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak často žáci ve vzdělávání pracují kooperativně a kdy mohou hodnotit vlastní učení?",
+      "Jak se konkrétně diferencují úkoly pro nadané žáky a žáky potřebující podporu?",
+      "Kolik hodin týdně se tělesná výchova koná mimo areál školy a jak jsou tyto hodiny zajišťovány?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí studovat na vysoké škole a mají zájem o jazyky, mezinárodní zkoušky či výměnné pobyty.",
+      "Žáci se zájmem o soutěže, olympiády, projekty nebo nadanové předmětové oblasti.",
+      "Žáci, kterým vyhovuje gymnaziální vzdělávání v denní formě."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují výrazně více samostatné, skupinové nebo diferencované práce než většina třídy.",
+      "Rodiny, kterým může vadit omezená nabídka zájmových kroužků.",
+      "Žáci s funkčním omezením pohybu, pro které může být relevantní tělovýchova mimo hlavní budovu."
+    ],
+    "plain_czech_summary": "Masarykovo gymnázium vychází ze zprávy jako silně jazykově zaměřená škola s velmi dobrými výsledky. Pro rodiče jsou přínosné jazykové zkoušky, zahraniční výměny, soutěže, podpora nadaných žáků a dobré přijímací řízení. Hlavní slabiny jsou převládající frontální výuka, málo vzájemné spolupráce žáků a omezený počet učeben. Školní klub nabízí v tomto roce pouze chemický kroužek a deskové hry. Text neuvádí konkrétní statistiky neomluv, výsledky maturit ani přesné údaje o jídelně a úspěšnosti absolventů."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Škola uvádí velmi dobré výsledky při maturitních zkouškách, ale konkrétní číselné údaje neposkytuje.",
+      "key_numbers": [
+        "Jeden neprospívající žák ve druhém pololetí 2022/2023.",
+        "V předcházejícím školním roce byl zaznamenán obdobný počet.",
+        "Přes 50 % žáků dosahuje vyznamenání."
+      ],
+      "evidence": "Rozhodujícím ukazatelem jsou maturitní zkoušky, které žáci absolvují s velmi dobrými výsledky; počet vyznamenáných přesahuje 50 %."
+    },
+    "absence": {
+      "trend": "Zpráva neuvádí statistiku neomluv ani vývojabsence.",
+      "key_numbers": [],
+      "evidence": "Text neobsahuje údaje o počtu neomluv, hodináchabsence ani jejich časovém vývoji."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště zajišťují dvě výchovné poradkyně, každá pro jeden stupeň gymnázia.",
+      "ŠPP spolupracuje s pedagogy, předchází vzdělávacím obtížím a řeší problémy v chování žáků.",
+      "Škola nabízí konzultace a doučování žákům ohroženým školním neúspěchem.",
+      "Ve školním roce 2023/2024 začala pracovat kariérová poradkyně."
+    ],
+    "safety_climate": [
+      "Systém prevence úrazů a bezpečnosti je podle zprávy funkční.",
+      "Žáci jsou seznamováni s pravidly bezpečnosti a ochrany zdraví a dohledy byly řádně vykonávány.",
+      "Vstup do budovy je fyzicky zabezpečen.",
+      "Ve sledovaných hodinách panovalo bezpečné a tvůrčí prostředí."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s institucemi zajišťujícími mezinárodně uznávané jazykové zkoušky z anglického a německého jazyka.",
+      "S partnerskými školami v Německu a Dánsku zajišťuje pravidelné výměnné pobyty.",
+      "Jazykové komise se podílejí na přípravě a organizaci mezinárodně uznávaných jazykových zkoušek.",
+      "Škola spolupracuje také s vysokými školami v regionu a Krajským centrem vzdělávání."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a zaměřené na to, co zpráva může rodičům nabídnout a kde je nutná opatrnost.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní výsledky maturitních zkoušek, proto je trend uveden pouze kvalitativně.",
+      "Zpráva neobsahuje statistiky absence, takže pole zůstávají bez číselných údajů.",
+      "Text neuvádí samostatné hodnocení kvality školního klubu, jídelny ani konkrétní podíly úspěšných absolventů na vysokých školách."
+    ]
+  }
+}

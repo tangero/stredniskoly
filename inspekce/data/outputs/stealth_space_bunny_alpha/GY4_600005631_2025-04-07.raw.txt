@@ -1,0 +1,101 @@
+{
+  "report_id": "GY4_600005631_2025-04-07",
+  "school_profile": {
+    "school_type": "Střední škola s obory Hotelnictví, Cestovní ruch a Gymnázium; součástí je školní hotel a školní jídelna.",
+    "inspection_period": "Inspekční činnost probíhala od 7. 4. 2025 do 10. 4. 2025.",
+    "school_change_summary": "Od 1. 8. 2024 působí nový ředitel a škola prošla výraznými organizačními a personálními změnami; rozšířila vedení na čtyři pozice zástupců ředitele."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické vyučování",
+        "detail": "Hotelové vyučování je dobře propojeno s praktickou přípravou na skutečný provoz.",
+        "evidence": "„Výuka probíhala v příjemné pracovní atmosféře, žáci pracovali samostatně, při plnění úkolů úspěšně aplikovali poznatky získané v teoretické výuce.“"
+      },
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Výsledky žáků v didaktickém testu z cizího jazyka jsou hodnoceny jako velmi dobré.",
+        "evidence": "„Škola dlouhodobě dosahuje vysoké úspěšnosti v didaktickém testu z cizího jazyka“"
+      },
+      {
+        "tag": "Odborné zázemí",
+        "detail": "Pro studium cestovního ruchu jsou k dispozici specializované učebny a pracoviště partnerů.",
+        "evidence": "„Odborná učebna, AV centrum a galerie cestovní agentury Radvia poskytují kvalitní podmínky pro studium cestovního ruchu.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Personální zajištění",
+        "detail": "Nedostatek učitelů může ovlivňovat plynulost výuky a kvalitu hodnocení žáků.",
+        "evidence": "„Kritický nedostatek pedagogických pracovníků vede k častému suplování, spojování skupin i výpadkům výuky“."
+      },
+      {
+        "tag": "Školní klima",
+        "detail": "Rozdílné názory vedení a části pedagogů podle inspekce zhoršují komunikaci a spolupráci.",
+        "evidence": "„Polarizace postojů mezi novým vedením a částí pedagogického sboru představuje dlouhodobou překážku pro efektivní komunikaci“."
+      },
+      {
+        "tag": "Gymnázium a výuka",
+        "detail": "Pro studium gymnázia mohou být limitující infrastruktura, didaktické metody a podpora žáků se zvláštními potřebami.",
+        "evidence": "„Chybějící odborné učebny a laboratoře pro výuku přírodovědných předmětů neumožňují naplňovat deklarované cíle“."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak často se v současnosti střídá výuka kvůli suplování a výpadkům?",
+      "Jak konkrétně podporují žáky se speciálními vzdělávacími potřebami v jednotlivých hodinách?",
+      "Jaké konkrétní kroky má škola pro zlepšení přírodovědného vzdělávání na gymnáziu?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat hotelnictví nebo cestovní ruch a mají zájem o praktické dovednosti.",
+      "Žákům, kterým vyhovuje školní hotel, rotace na pracovištích a spolupráce s partnery.",
+      "Žákům, kteří mají silné zájmy o cizí jazyky a chtějí studovat gymnázium."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na pravidelné a hodnotitelné výuce bez častého suplování.",
+      "Rodičům žáků, kteří potřebují prokazatelnou průběžnou zpětnou vazbu a systematickou podporu ve vzdělávání.",
+      "Rodičům, kteří očekávají pro své dítě nové kvalitní učebny a vybavení pro přírodovědné předměty na gymnáziu."
+    ],
+    "plain_czech_summary": "Škola má velmi dobré praktické zázemí pro hotelnictví a cestovní ruch, žáci pracují na jednotlivých místech a získávají konkrétní dovednosti. Didaktický test z cizího jazyka patří k silným stránkám školy. Zároveň inspekce zaznamenala personální nedostatek, časté suplování, slabší školní klima a málo rozvinuté metody výuky. Rodiče gymnázia by měli zvážit také omezené podmínky pro přírodovědné předměty."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Ve společné části maturitní zkoušky byla úspěšnost žáků v didaktických testech srovnatelná s celorepublikovým průměrem, případně lepší.",
+      "key_numbers": [
+        "Čistá neúspěšnost z českého jazyka a literatury: 3 % škola, 3,5 % ČR.",
+        "Čistá neúspěšnost z cizího jazyka: 0,8 % škola, 2,5 % ČR.",
+        "Matematika: celkově podprůměrná úspěšnost 50 %; zkoušku si vybralo osm žáků za oba zkušební roky."
+      ],
+      "evidence": "„Ve sledovaném období (zkušební roky 2023 a 2024) vykázali žáci školy v průměru srovnatelnou míru čisté i hrubé neúspěšnosti s celorepublikovým průměrem.“"
+    },
+    "absence": {
+      "trend": "Absence zůstává dlouhodobě nízká, v prvním pololetí aktuálního školního roku byla nižší než za celý předchozí školní rok.",
+      "key_numbers": [
+        "V posledních dvou uzavřených školních letech: průměrně 62 zameškaných hodin na žáka a rok.",
+        "V prvním pololetí aktuálního školního roku: průměrně 56 zameškaných hodin na žáka."
+      ],
+      "evidence": "„Škole se dlouhodobě daří udržovat nízkou míru absence žáků ve vzdělávání“."
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodik prevence poskytují podporu žákům se speciálními vzdělávacími potřebami.",
+      "Poradenští pracovníci spolupracují s rodiči, pedagogy a školskými poradenskými zařízeními.",
+      "Škola poskytuje konzultace žákům ohroženým školním neúspěchem."
+    ],
+    "safety_climate": [
+      "Přístup do budovy je zabezpečen čipovým systémem, celodenní recepcí a nepřetržitou vrátnicí.",
+      "Praktická výuka hotelových oborů zahrnuje důsledné zajištění bezpečnosti práce."
+    ],
+    "partnerships_practice": [
+      "Praktické vyučování probíhá ve školním hotelu MATURA a na pracovištích smluvních partnerů.",
+      "Škola uvádí nové spolupracující instituce pro praktickou přípravu žáků.",
+      "Uplatnění absolventů v terciárním vzdělávání nebo na pracovním trhu škola zatím systematicky nesleduje."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a bez dalších klíčů mimo zadané schéma.",
+    "uncertainty_notes": [
+      "Zpráva uvádí výsledky zkušebních roků 2023 a 2024, nikoli aktuální výsledky za rok 2025.",
+      "Některé hodnoty v přepisu původního dokumentu jsou poškozené, proto jsou použity pouze čitelné a jednoznačné údaje."
+    ]
+  }
+}

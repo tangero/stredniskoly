@@ -1,0 +1,105 @@
+{
+  "report_id": "GY6_600008801_2023-04-18",
+  "school_profile": {
+    "school_type": "Gymnázium se čtyřletým, šestiletým a osmiletým gymnáziem včetně dvojjazyčného studia",
+    "inspection_period": "18. 4. 2023 až 21. 4. 2023",
+    "school_change_summary": "Škola zkvalitnila materiální podmínky a rozšířila poradenské pracoviště o školního asistenta; pokračuje také v podpoře jazykových dovedností."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky a příprava na maturitu",
+        "detail": "Škola dlouhodobě dosahuje vysoké úspěšnosti u maturit a téměř všichni absolventi pokračují na vysokých školách.",
+        "evidence": "„Téměř všichni absolventi pokračují ve studiu na vysokých školách“."
+      },
+      {
+        "tag": "Jazykové vzdělávání",
+        "detail": "Dvojjazyčné gymnázium nabízí kvalitní výuku francouzštiny, zahraniční pobyty a mezinárodní jazykové certifikáty.",
+        "evidence": "„Propojení výukových metod českého a francouzského školství a náročnost maturitní zkoušky vede k vysoké úspěšnosti“."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Poradenský tým, doučování a psychologická podpora jsou součástí promyšlené péče o žáky.",
+        "evidence": "„Škola nabízí doučování a individuální konzultace“; poradenské služby zajišťuje pracovní tým."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Individualizace výuky",
+        "detail": "Ve výuce se podle inspekce dostatečně nerozvíjela diferenciace úkolů podle individuálního potenciálu žáků.",
+        "evidence": "„Ve výuce nejsou dostatečně využívány metody diferenciace zadávaných úkolů“."
+      },
+      {
+        "tag": "Aktivita žáků",
+        "detail": "V některých hodinách se kvůli omezenému využívání aktivizačních metod snižovala pozornost a aktivita žáků.",
+        "evidence": "„Ztrátou jejich pozornosti“ v důsledku nedostatečného využívání „širšího spektra aktivizačních metod“."
+      },
+      {
+        "tag": "Prostory školy",
+        "detail": "Škola je prostorově zatížená a část výuky probíhá v méně vybavených prostorech kvůli dělení cizích jazyků.",
+        "evidence": "„Prostorově je škola velmi vytížená“; výuka částečně probíhá „v méně vybavených prostorech“."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se ve vzdělávání přizpůsobují úkoly žákům s různou úrovní a jak často využívají samostatnou nebo partnerskou práci?",
+      "Kolik hodin týdně se koná výuka v méně vybavených prostorech a jaký je plán jejich zlepšení?",
+      "Jaké konkrétní výsledky aReference školy poskytuje rodičům o úspěšnosti konkrétních oborů při maturitách a v přijímacím řízení?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří hledají gymnaziální vzdělávání s důrazem na přípravu na vysokou školu.",
+      "Žákům se zájmem o intenzivní výuku francouzštiny a dvojjazyčné studium.",
+      "Žákům, kteří mají zájem o projekty, zahraniční pobyty, soutěže a volnočasové aktivity."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům, kteří očekávají průběžnou individualizaci každého žáka, protože inspekce zaznamenala její nedostatečné využívání.",
+      "Rodičům žáků, kterým mohou vadit prostorové omezení a vyučívání méně vybavených učeben.",
+      "Rodičům, kteří hledají školu s průkazně silnější průběžnou zpětnou vazbí a širším využíváním aktivizačních metod."
+    ],
+    "plain_czech_summary": "Gymnázium v Táboře nabízí čtyřleté, šestileté a osmileté studium, včetně dvojjazyčného gymnázia s výukou části předmětů ve francouzštině. Inspekce ocenila vysoké vzdělávací výsledky, úspěšnost maturit, práci učitelů, podporu jazykových dovedností i fungující poradenské služby. Pro rodiče je důležité vědět, že škola je prostorově vytížená a část výuky probíhá v méně vybavených prostorech. Výuka se podle inspekce málo přizpůsobuje individuálním potřebám žáků a v některých hodinách chybí širší aktivizační metody i průběžné hodnocení dosažených cílů. Výsledky jsou přesto podle zprávy dlouhodobě velmi dobré a téměř všichni absolventi pokračují na vysoké školy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Úspěšnost žáků v posledních třech letech roste; škola uvádí dlouhodobě vysokou úspěšnost u maturit.",
+      "key_numbers": [
+        "V posledním školním roce mělo přibližně 57 % žáků vynnamenání.",
+        "Přes 41 % studentů získalo mezinárodně uznávané jazykové certifikáty nahrazující profilovou část maturity.",
+        "Téměř všichni absolventi pokračují ve studiu na vysokých školách."
+      ],
+      "evidence": "„V posledních třech letech Ize sledovat trend rostoucí úspěšnosti žáků“; podíl vyznamenaných byl „cca 57 %“."
+    },
+    "absence": {
+      "trend": "Počet zameškaných hodin je nízký a za poslední tři roky klesá; neomluvené hodiny se vyskytují jen ojediněle.",
+      "key_numbers": [
+        "Konkrétní počet hodin zpráva neuvádí.",
+        "Neomluvené hodiny jsou podle zprávy jen ojedinělé."
+      ],
+      "evidence": "„Počet zameškaných hodin je nízký, navíc vykazuje v posledních třech letech sestupný trend“."
+    },
+    "support_services": [
+      "Výchovná poradkyně, školní metodik prevence a školní psycholožka.",
+      "Školní asistent pro žáky s odlišným mateřským jazykem.",
+      "Doučování a individuální konzultace pro žáky ohrožené školním neúspěchem.",
+      "Individuální vzdělávací plány a plány pedagogické podpory."
+    ],
+    "safety_climate": [
+      "V hospitovaných hodinách panovala pozitivní přátelská atmosféra a vzájemný respekt.",
+      "Žáci dodržovali nastavená pravidla komunikace a chování.",
+      "Prevence rizikového chování probíhá prostřednictvím projektů, adaptačních kurzů a třídnických hodin."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Mezinárodním výborem Pierra de Coubertina a Českou olympijskou akademií.",
+      "Spolupráce s řadou škol ze světa a zapojení do projektu Mezinárodní cena vévody z Edinburghu.",
+      "Spolupráce s fakultami Univerzity Karlovy a zahraničními partnery.",
+      "Studentský parlament se podílí na chodu školy a organizaci aktivit."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a bez zbytečného úřednického složení; důležité závěry jsou opřeny o citace ze zprávy.",
+    "uncertainty_notes": [
+      "Zpráva uvádí trendy a podíly, ale neposkytuje podrobné číselné výsledky všech maturitních předmětů.",
+      "Zpráva neuvádí přesné časové údaje o intenzitě nebo délce využívání méně vybavených prostor.",
+      "Hodnocení vhodnosti konkrétního oboru nebo profilu žáka nelze bez dalších údajů o jeho potřebách a prioritách."
+    ]
+  }
+}

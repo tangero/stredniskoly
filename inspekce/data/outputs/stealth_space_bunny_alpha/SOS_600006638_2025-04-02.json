@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_600006638_2025-04-02",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:26:06.421646+00:00",
+  "run_finished_utc": "2026-10-02T17:26:38.329938+00:00",
+  "raw_file": "SOS_600006638_2025-04-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600006638_2025-04-02",
+    "school_profile": {
+      "school_type": "Střední odborná škola s technickým, elektrotechnickým, strojírenským, ekonomickým a dopravním zaměřením",
+      "inspection_period": "2. 4.–8. 4. 2025",
+      "school_change_summary": "Od roku 2019 vzrostl počet žáků o 30 % na 686, úplnost školy dosáhla 98 % a rozšířila se nabídka oborů i moderní vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná příprava",
+          "detail": "Odborný výcvik probíhá na moderních zařízeních a podporuje osvojování skutečných profesních dovedností.",
+          "evidence": "\"Odborný výcvik je realizován s využitím moderních CNC obráběcích strojů, výukových elektrotechnických panelů\""
+        },
+        {
+          "tag": "Zázemí",
+          "detail": "Škola má rozsáhlé modernizované dílny, laboratoře a dostatek vybavených učeben.",
+          "evidence": "\"Škola disponuje dostatečným počtem kmenových tříd a účelně vybavených odborných učeben, dílen a laboratoří.\""
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí poradenství, preventivní péči, doučování, konzultace a podporu žákům s odlišnou jazykovou přípravou.",
+          "evidence": "\"Škola nabízí individuální doučování\" a realizuje \"individuální konzultace, kroužek rozvoje myšlení, kroužek doučování\"."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Neúspěšnost",
+          "detail": "Rozdílná náročnost hodnocení může u některých žáků zvyšovat riziko neprospěchu a předčasného ukončení studia.",
+          "evidence": "\"Rozdílná náročnost některých vyučujících\" představuje riziko neúspěchu a vede někdy k předčasnému ukončení studia."
+        },
+        {
+          "tag": "Diferenciace",
+          "detail": "V části výuky chybí individuální přístup a odlišná náročnost úkolů podle studijních předpokladů žáků.",
+          "evidence": "\"Výuka nebyla nijak individualizována, diferencované nebo gradované úlohy\" nebyly využívány."
+        },
+        {
+          "tag": "Jazyková gramotnost",
+          "detail": "Externí výsledky ukazují slabiny, které mohou rodiče očekávat u žáků s podpůrnými potřebami nebo s odlišným mateřským jazykem.",
+          "evidence": "\"V externím zjišťování ČŠI dosáhli žáci školy slabých výsledků v oblasti finanční a čtenářské gramotnosti.\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají studijní potíže, a jak často nabízí doučování?",
+        "Jak se liší podpora žáků s podpůrnými potřebami a žáků s odlišným mateřským jazykem v jednotlivých předmětech?",
+        "Kolik absolventů pokračuje ve studiu a kolik do rovnou pracuje v oboru a jak dlouho se uplatňují?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí technické, elektrotechnické, strojírenské nebo dopravní vzdělání s praktickou přípravou.",
+        "Žákům, kterým vyhovuje velká škola s více obory, pracovišti a možností specializace.",
+        "Žákům, kteří chtějí po škole pokračovat ve studiu nebo nastoupit do praxe."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kteří potřebují pravidelnou individualizovanou podporu nebo odlišnou náročnost učiva.",
+        "Rodičům žáků s podpůrnými potřebami nebo s odlišným mateřským jazykem, protože jejich výsledky jsou výrazně horší.",
+        "Rodičům, kteří očekávají převážně aktivní, individualizované a variační vyučování ve všech předmětech."
+      ],
+      "plain_czech_summary": "Škola se od roku 2019 výrazně rozrostla, zvýšila počet kvalifikovaných učitelů a modernizovala technické zázemí. Odborný výcvik, spolupráce s firmami a profesními partnery jsou silnou stránkou. Praktická výuka je velmi dobře vybavená a žáci získávají dovednosti blízké reálné práci. Větší rizikem je podpora žáků ve školní neúspěšnosti. V části výuky se málo využívá individuální přístup, diferenciace úkolů a aktivizační metody. Slabší jsou také výsledky v čtenářské a finanční gramotnosti. Rodiče by se měli zeptát, jak konkrétně škola pomáhá žákům s potížemi a žákům s odlišným mateřským jazykem."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky maturitních zkoušek se oproti předchozímu hodnocení zlepšily; didaktické testy vykázaly zlepšení zejména v anglickém jazyce.",
+        "key_numbers": [
+          "Téměř všichni přihlášení žáci skládali maturitní zkoušku.",
+          "S vyznamenáním prospěla necelá čtvrtina žáků.",
+          "Neprospěli pouze jednotlivci."
+        ],
+        "evidence": "\"Výsledky žáků u maturitních zkoušek\" se zlepšily; \"s vyznamenáním prospěla necelá čtvrtina\" a neprospěli \"pouze jednotlivci\"."
+      },
+      "absence": {
+        "trend": "Průměrná celková absence se meziročně snížila na obvyklou úroveň a neomluvená absence zůstala minimální.",
+        "key_numbers": [
+          "Neomluvená absence byla minimální.",
+          "Počet snížených známek z chování klesl na 3 %."
+        ],
+        "evidence": "\"Průměrná celková absence žáků\" se snížila, \"neomluvená absence byla minimální\" a snížené známky z chování klesly na 3 %."
+      },
+      "support_services": [
+        "Poradenské, podpůrné, preventivní a kariérní služby pracují jako tým ve spolupráci s třídními učiteli.",
+        "Škola poskytuje konzultace, kroužek rozvoje myšlení, doučování a jednání s rodiči.",
+        "Individuální doučování je nabízeno žákům s odlišným mateřským jazykem."
+      ],
+      "safety_climate": [
+        "Vstup do areálu je zabezpečen elektronickým systémem, vrátnicí a kamerami.",
+        "Při odborné výuce žáci používají předepsané osobní ochranné pracovní prostředky.",
+        "Pracovní postupy jsou kontrolovány průběžným formativním hodnocením."
+      ],
+      "partnership_practice": [
+        "Spolupráce s profesními svazy, asociacemi a sociálními partnery podporuje aktualizaci odborného vzdělávání.",
+        "Odborný výcvik a praxe probíhají také ve spolupráci s externími partnery.",
+        "Žáci se mohou zapojit do projektů se základními školami, žákovského parlamentu a odborných akcí."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžnou češtinu, odděluje silné stránky od rizik a uvádí konkrétní čísla i citace.",
+      "uncertainty_notes": [
+        "U absence zpráva uvádí trend, nikoli přesnou průměrnou hodnotu.",
+        "U některých formulací je v převedeném textu poškozena čitelnost, proto je formulace vystavěna přímo na znění zprávy."
+      ]
+    }
+  }
+}

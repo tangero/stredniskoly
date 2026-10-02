@@ -1,0 +1,104 @@
+{
+  "report_id": "SOU_600009408_2023-01-16",
+  "school_profile": {
+    "school_type": "Střední odborná škola s domovem mládeže a školní jídelnou",
+    "inspection_period": "16. 1. 2023 až 19. 1. 2023",
+    "school_change_summary": "Zpráva uvádí modernizaci zázemí, vznik vlastní autoškoly, omlazení pedagogického sboru a zlepšení péče v domově mládeže."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Žáci získávají zkušenosti na skutečných pracovištích a rovněž ve školních kuchyních, dílně či ateliérech.",
+        "evidence": "„Praktická výuka probíhá nejen v prostorech školy, ale i v provozovnách smluvních partnerů.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola nabízí kariérové poradenství, konzultace, doučování i podporu žáků ohrožených neúspěchem.",
+        "evidence": "„Žákům ohroženým školním neúspěchem jsou umožněny individuální konzultace a nabízeno doučování i z odborných předmětů.“"
+      },
+      {
+        "tag": "Bezpečné prostředí",
+        "detail": "Důsledně vedená prevence, adaptační kurzy a důsledné řešení nevhodného chování příspívají k bezpečnému klimatu.",
+        "evidence": "„V prevenci rizikového chování žáků škola využívá účinné nástroje a postupuje efektivně.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Převládající frontální výuka",
+        "detail": "V teoretických hodinách se žáci méně zapojují a prakticky neužívají kooperativní metody.",
+        "evidence": "„V hodinách dominovala frontální výuka, ostatní, především kooperativní, metody a formy práce nebyly účelně využívány.“"
+      },
+      {
+        "tag": "Práce s informacemi",
+        "detail": "Ve výuce chybí dostatečná podpora vyhledávání, třídění, analýzy a ověřování informací z různých zdrojů.",
+        "evidence": "„Nebyl jim dán dostatečný prostor k objevování nových poznatků ani k cílené diskusi.“"
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Ve většině hodin se žáci nemohli zapojit do úloh s odlišnou kognitivní náročností.",
+        "evidence": "„Žáci si nemohli vybírat z úloh odlišné kognitivní náročnosti.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak často se během běžné výuky využívají kooperativní metody a práce s více zdroji?",
+      "Jak konkrétně škola odlišuje úkoly pro žáky s různou úrovní schopností a zájmem?",
+      "Jaké konkrétní výsledky a výstupy odevzdali žáci při posledních maturitních zkouškách?"
+    ],
+    "who_school_fits": [
+      "Studenty, kteří chtějí střední odborné vzdělávání v gastronomii, cukrářství, aranžérství, grafickém designu nebo opravářství zemědělských strojů.",
+      "Žáky, kterým vyhovuje propojení školní výuky s praktickou činností na skutečných pracovištích.",
+      "Uchazeče o ubytování v domově mládeže školy."
+    ],
+    "who_should_be_cautious": [
+      "Studenty, kteří potřebují v teoretické výuce převážně samostatnou práci, diskuse nebo přístup k mnoha informačním zdrojům.",
+      "Žáky, kterým záleží na systematické podpoře při práci s texty, komunikaci a kritickým myšlením.",
+      "Uchazeče, kteří chtějí přesné údaje o úspěšnosti maturit; zpráva uvádí jen její pozitivní trend, nikoli procenta."
+    ],
+    "plain_czech_summary": "Škola má dobré materiální zázemí, rozsáhlou praktickou výuku a spolupráci s odborníky z praxe. Nabízí kariérové poradenství, doučování, konzultace a podporu žákům se zvýšenými potřebami. Domov mládeže poskytuje ubytování, stravování, volnočasové i studijní zázemí. Hlavním nedostatkem je převládající frontální výuka s malým zapojením žáků. Ve většině hodin se málo procvičuje spolupráce, práce s různými zdroji, tvorba vlastních názorů a úkoly s odlišnou obtížností. Praktické předměty jsou hodnoceny příznivěji než část teoretické výuky. Výsledky maturit podle zprávy rostou, ale nejsou uvedeny konkrétní úspěšnosti."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "V posledních letech zaznamenala škola statisticky patrný pozitivní posun výsledků maturitních zkoušek.",
+      "key_numbers": [
+        "Procentní úspěšnost není uvedena.",
+        "Ve třetích a čtvrtých ročnících probíhají srovnávací testy zaměřené na znalosti potřebné k maturitě."
+      ],
+      "evidence": "„V posledních letech je statisticky patrný pozitivní posun ve výsledcích žáků u maturitních zkoušek.“"
+    },
+    "absence": {
+      "trend": "Zpráva neuvádí vývoj absence ani počet neomluvených hodin.",
+      "key_numbers": [
+        "Údaje o absenci nejsou uvedeny."
+      ],
+      "evidence": "V hodnotící části nejsou uvedeny počty, frekvence ani vývojabsence."
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodička prevence působí v jedné osobě.",
+      "Škola má pozici kariérového poradce pro volbu další vzdělávací či profesní cesty.",
+      "Žákům ohroženým neúspěchem jsou poskytovány individuální konzultace a doučování.",
+      "Žáci se speciálními vzdělávacími potřebami vzdělávají podle doporučení školských poradenských zařízení."
+    ],
+    "safety_climate": [
+      "Během inspekce byla školní budova zabezpečena proti vniknutí neoprávněných osob.",
+      "Pro první ročníky se pořádají adaptační kurzy.",
+      "Přestupky řeší škola důsledně a empaticky podle pravidel školního řádu.",
+      "V domově mládeže je podle vnitřního řádu dodržován večerní studijní klid."
+    ],
+    "partnerships_practice": [
+      "Odborný výcvik probíhá také v provozovnách smluvních partnerů.",
+      "Škola spolupracuje s významnými odborníky z praxe při přednáškách, workshopech a stážích.",
+      "Partneři se podílejí na aktualizaci školních vzdělávacích programů.",
+      "Praktickou výuku podporují kvalitní sociální partneři a zaměstnavatelé."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně odděluje silné stránky od nedostatků a jasně označuje chybějící údaje.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí procentní úspěšnost maturitních zkoušek.",
+      "Zpráva neposkytuje číselné ani trendové údaje o absenci.",
+      "Posouzení vhodnosti pro konkrétního žáka bude nutné doplnit informacemi z aktuálních nabídek a konzultací ve škole."
+    ]
+  }
+}

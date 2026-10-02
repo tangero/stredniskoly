@@ -1,0 +1,112 @@
+{
+  "report_id": "GY8_600013898_2022-11-01",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:30:52.177766+00:00",
+  "run_finished_utc": "2026-10-02T17:31:22.270823+00:00",
+  "raw_file": "GY8_600013898_2022-11-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600013898_2022-11-01",
+    "school_profile": {
+      "school_type": "Gymnázium, základní škola, mateřská škola a střední odborné škola",
+      "inspection_period": "1. 11. 2022–3. 11. 2022",
+      "school_change_summary": "Škola se rozrůstala a současně čelila velké obměně pedagogů; „Pokračující velká obměna pedagogů“."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazyky",
+          "detail": "Škola má velmi dobrou nabídku cizích jazyků, tandemovou výuku, CLIL a výuku v anglickém jazyce.",
+          "evidence": "„Škola nadstandardně podporuje výuku cizích jazyků, což vede k jejich osvojování v přirozených souvislostech.“"
+        },
+        {
+          "tag": "Zájmová činnost",
+          "detail": "Pro děti, žáky a účastníky kroužků je dostupná široká nabídka aktivit pro rozvoj zájmů, nadání a komunikace.",
+          "evidence": "„Škola nabízí širokou nabídku zájmových kroužků a nadstandardních aktivit.“"
+        },
+        {
+          "tag": "Jazyková podpora",
+          "detail": "Děti a žáci s odlišným mateřským jazykem mají podporu při osvojování češtiny.",
+          "evidence": "„Škola efektivně pečuje o děti a žáky s odlišným mateřským jazykem.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Diferenciace",
+          "detail": "Ve vyučovaných hodinách bylo málo úkolů přizpůsobených schopnostem a potřebám jednotlivých žáků.",
+          "evidence": "„Ve vyučovacích hodinách též scházela diferenciace úkolů zohledňující odlišné vzdělávací potřeby a schopnosti žáků.“"
+        },
+        {
+          "tag": "Hospitace",
+          "detail": "Hospitační činnost podle inspekce dostatečně nevedla ke zlepšování pedagogických dovedností a jednotnosti přístupu učitelů.",
+          "evidence": "„V důsledku nedostatečně cílené hospitační činnosti a časté obměny pedagogických pracovníků se vedení školy zcela nedaří sjednotit pedagogický přístup učitelů.“"
+        },
+        {
+          "tag": "Odborná praxe",
+          "detail": "U oboru Předškolní a mimoškolní pedagogika měla část pedagogů nedostatečné znalosti současného předškolního vzdělávání, což zhoršovalo jednotné posuzování praxe.",
+          "evidence": "„Většina z nich neměla dostatečné znalosti o současném pojetí předškolního vzdělávání a požadavcích na jeho průběh.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se ve vyučování mění podle potřeb jednotlivých žáků rozsah a náročnost úkolů?",
+        "Jak škola sleduje a vyhodnocuje výsledky hospitací a jejich přínos pro práci učitelů?",
+        "Jak podporuje učitele a studenty v oboru Předškolí a mimoškolní pedagogika při změnách pedagogického týmu?"
+      ],
+      "who_school_fits": [
+        "Rodiče, kteří chtějí dítěti nabídku výuky cizích jazyků a CLIL.",
+        "Rodiče, kteří využijí širokou nabídku kroužků a mimoškolních aktivit.",
+        "Rodiče žáků se SVP, kteří potřebují školní podporu a poradenské služby."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří očekávají v každé hodině samostatnou práci žáků, kooperativní úkoly nebo výrazné hodnocení podle školní zralosti.",
+        "Rodiče, kterým záleží na jednotné kvalitě výuky při časté obměně učitelů.",
+        "Rodiče, kteří vybírají obor Předškolní a mimoškolní pedagogika a chtějí mít jistotu jednotné kvalitní přípravy na praxi."
+      ],
+      "plain_czech_summary": "Škola má silné jazykové zaměření, dobrou základní přípravu žáků a široké mimoškolní aktivity. Inspekce však upozornila na několik problémů: v některých hodinách chyběla diferencovaná práce, málo se uplatňovala spolupráce žáků a sebereflexe. Hospitace nebyly dostatečně cílené a velká obměna učitelů ztěžovala jednotný přístup. Rodiče by měli na návštěvě přímo zjistit, jak se škola s těmito nedostatky vypořádává. Výsledky gymnázia jsou dlouhodobě dobré, u odborného vzdělávání jsou neúspěšné jen malé počty případů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě dobré výsledky gymnázia; u středního odborného vzdělávání jsou neúspěšné jen malé počty případů.",
+        "key_numbers": [
+          "U gymnázia jsou výsledky maturit dlouhodobě dobré.",
+          "U SOV jsou neúspěšné případy v malém množství.",
+          "Výsledky středního vzdělávání byly za poslední tři roky srovnatelné."
+        ],
+        "evidence": "„Při maturitní zkoušce dosahují žáci v rámci GV dlouhodobě dobrých výsledků, žáci SOV jsou neúspěšní v malém množství případů.“"
+      },
+      "absence": {
+        "trend": "Údaje o absentaci nejsou v inspekční zprávě uvedeny.",
+        "key_numbers": [],
+        "evidence": ""
+      },
+      "support_services": [
+        "Výchovné poradenství, školní metodici prevence a sdílené prostory pro poradce.",
+        "Podpora žáků se SVP, asistenti pedagoga a individuální vzdělávací plány.",
+        "Testy profesní orientace, náborové materiály a poradenství při volbě vysoké školy.",
+        "Sociometrická šetření tříd a řešení projevů rizikového chování ve spolupráci s rodiči.",
+        "Pedagogicko-psychologická poradna umožňující test školní zralosti."
+      ],
+      "safety_climate": [
+        "Ve vyučování na střední škole převládala dobrá pracovní atmosféra a žáci se zapojovali do diskusí.",
+        "U nejstarších dětí v mateřské škole byla při hospitaci zaznamenána hlučnější atmosféra a častější konflikty.",
+        "Postup školy při řešení rizikového chování byl hodnocen jako efektivní."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s městskou policí, kulturními institucemi, vysokými školami a pedagogicko-psychologickou poradnou.",
+        "Žáci mají díky projektům Erasmus+ možnost pobýt v zahraničí.",
+        "Spolupráce s Centrem talentované mládeže podporuje rozvoj nadaných žáků.",
+        "Spolupráce s pedagogy, rodiči a externími organizacemi je součástí vzdělávání a mimoškolních aktivit."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulováno srozumitelně pro rodiče a odděluje konkrétní přednosti, rizika i otázky k ověření na návštěvě.",
+      "uncertainty_notes": [
+        "Inspekční zpráva neuvádí číselné údaje o absentci.",
+        "Výsledky hospitací se vztahují k inspekčnímu období a nemusí vypovídat o současném stavu.",
+        "Škola podala připomínky k některým zjištěním; v hodnocení jsou proto uvedena zejména závěry inspekční zprávy a stanovisko ČŠI."
+      ]
+    }
+  }
+}

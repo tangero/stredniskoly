@@ -1,0 +1,102 @@
+{
+  "report_id": "LYC_600011739_2025-01-13",
+  "school_profile": {
+    "school_type": "Střední odborná škola a jazyková škola s právem státní jazykové zkoušky",
+    "inspection_period": "13. 1. až 16. 1. 2025",
+    "school_change_summary": "Škola zlepšila materiální podmínky, posílila poradenské služby, přidala speciálního pedagoga, cizojazyčnou asistentku a relaxační místnost."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola má poradenské pracoviště, speciálního pedagoga, asistentku a individuální či skupinové konzultace.",
+        "evidence": "„Poradenské služby ve škole jsou zajišťovány šesti zkušenými pedagogy.“"
+      },
+      {
+        "tag": "Odborná praxe",
+        "detail": "Studijní praxe jsou součástí vzdělávání a hodnotí je také vedoucí pracoviště nebo komise.",
+        "evidence": "„Systém hodnocení odborné praxe je ve škole pečlivě propracovaný.“"
+      },
+      {
+        "tag": "Materiály a klima",
+        "detail": "Škola má dobré materiální podmínky a při zhlédnutých hodinách převažovala příjemná atmosféra.",
+        "evidence": "„Škola disponuje dobrými finančními i materiálními podmínkami.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rozmanitost výuky",
+        "detail": "Při inspekci převládala frontální výuka a žáci měli méně příležitostí k samostatné práci a spolupráci.",
+        "evidence": "„V hospitovaných hodinách výrazně převažovala méně efektivní frontální forma výuky.“"
+      },
+      {
+        "tag": "Individuální přístup",
+        "detail": "Učivo se má méně přizpůsobovat rozdílným schopnostem a vzdělávacím potřebám žáků.",
+        "evidence": "„Zásadním nedostatkem hospitovaných hodin byla zřetelná absence diferenciace učiva.“"
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Vedoucí neposkytuje pedagogům dostatečnou zpětnou vazbu a doporučení pro zlepšení výuky.",
+        "evidence": "„Hospitační činnost … aktuálně neprobíhá v dostatečném rozsahu.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé přizpůsobují úkoly žákům s různou úrovní schopností?",
+      "Jak často probíhá zpětná vazba rodičům a žákům po kontrolní práci?",
+      "Kolik vyučujících absolvovalo přípravu na kooperativní výuku, kritické myšlení a formativní hodnocení?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat obchod, ekonomiku, veřejnou správu nebo sociální činnost.",
+      "Žákům, kteří využijí odborné praxe a spolupráci školy s firmami či dalšími školami.",
+      "Žákům, kteří potřebují poradenskou podporu, cizojazyčnou pomoc nebo podporu při duševních potížích."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům, kteří očekávají převážně aktivní, kooperativní výuku s průběžným formativním hodnocením.",
+      "Rodičům žáků, kterým často chybí individualizace podle schopností a potřeb.",
+      "Rodičům, kteří chtějí mít pravidelnou kvalitní zpětnou vazbu od vedení školy o výuce učitelů."
+    ],
+    "plain_czech_summary": "Obchodní akademie, střední odborná škola a jazyková škola v Hradci Králové nabízí čtyři maturitní obory: Obchodní akademii, Ekonomické lyceum, Veřejnosprávní činnost a Sociální činnost. Inspekce ocenila dobré materiální vybavení, přátelskou atmosféru, propracované odborné praxe a podporu žáků. Poradenské služby zajišťuje šest zkušených pedagogů; škola má také speciálního pedagoga a cizojazyčnou asistentku. Hlavní slabiny jsou vhodnější podpora rozdílných potřeb žáků, menší využívání samostatné a kooperativní práce a nedostatečná zpětná vazba vedení učitelům. Výsledky maturit jsou stabilní a u společné části lepší než celorepublikové průměry. Škola má také dobré zahraniční spolupráce a systém praktické odborné přípravy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky jsou stabilní, nejlepší jsou u Ekonomického lycea a společná část je lepší než celorepublikové průměry.",
+      "key_numbers": [
+        "Stabilní výsledky ve školních letech 2022/2023 a 2023/2024",
+        "Nejvyšší úspěšnost u oboru Ekonomické lyceum",
+        "Společná část MZ lepší než průměry skupin oborů"
+      ],
+      "evidence": "„Výsledky žáků školy u MZ všech oborů byly … stabilní.“"
+    },
+    "absence": {
+      "trend": "Zpráva neuvádí konkrétní vývoj ani číselné údaje o nepřítomnosti.",
+      "key_numbers": [
+        "Konkrétní údaje nejsou uvedeny"
+      ],
+      "evidence": "Zpráva uvádí pouze „maximální hranice tolerované absence“ v hodnocení."
+    },
+    "support_services": [
+      "Poradenské služby zajišťuje šest zkušených pedagogů.",
+      "Škola má speciálního pedagoga, dvojjazyčného asistenta a novou relaxační místnost.",
+      "Škola poskytuje individuální nebo skupinové konzultace žákům ohroženým školním neúspěchem."
+    ],
+    "safety_climate": [
+      "Na zhlédnutých hodinách panovala příjemná atmosféra.",
+      "Škola řeší výchovné problémy průběžně ve spolupráci s rodiči.",
+      "Škola má anonymní elektronickou schránku důvěry a programy zaměřené na duševní zdraví."
+    ],
+    "partnership_practice": [
+      "Škola spolupracuje s místními i zahraničními školami, Univerzitou Hradec Králové, firmami a orgány státní správy.",
+      "Organizuje výměnné pobyty a zahraniční mobilitu přes Erasmus.",
+      "Odborné praxe probíhají ve vzdělávacích institucích a sociálních zařízeních."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a bez složitého úředního jazyka.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní číselné údaje o nepřítomnosti žáků.",
+      "Nejsou uvedeny podrobné výsledky jednotlivých předmětů maturitní zkoušky.",
+      "Školou podané připomínky a stanovisko inspekce se liší v hodnocení některých oblastí."
+    ]
+  }
+}

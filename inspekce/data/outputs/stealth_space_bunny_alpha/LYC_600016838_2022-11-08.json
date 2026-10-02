@@ -1,0 +1,112 @@
+{
+  "report_id": "LYC_600016838_2022-11-08",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:29:59.090987+00:00",
+  "run_finished_utc": "2026-10-02T17:30:39.227109+00:00",
+  "raw_file": "LYC_600016838_2022-11-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600016838_2022-11-08",
+    "school_profile": {
+      "school_type": "Střední pedagogická škola a střední zdravotnická škola s domovem mládeže a střediskem volného času",
+      "inspection_period": "8. 11. 2022 až 11. 11. 2022",
+      "school_change_summary": "Od inspekce v roce 2016 vzrostla kvalita podmínek, počet tříd dosáhl 29 a byly zavedeny obory Praktická sestra a Masér ve zdravotnictví."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výsledky a uplatnění absolventů",
+          "detail": "Škola dosahuje výborných maturitních výsledků a většina absolventů pokračuje ve studiu na vysokých školách.",
+          "evidence": "„uspělo u maturitní zkoušky … téměř 100 % žáků“; „Většina absolventů školy pokračuje ve studiu na vysokých školách.“"
+        },
+        {
+          "tag": "Podpora studentů",
+          "detail": "Domov mládeže, výchovné poradenství a asistent pedagoga poskytují studentům podporu ve vzdělávání i řešení problémů.",
+          "evidence": "„poskytují … podporu při přípravě na vyučování“; „poradenské služby žákům, zákonným zástupcům i pedagogům“."
+        },
+        {
+          "tag": "Propojení praxe a jazyků",
+          "detail": "Odborná praxe, zahraniční pobyty a práce s rodilými mluvčími rozšiřují studentům praktické i jazykové dovednosti.",
+          "evidence": "„Žáci na zahraniční praxi získali nové dovednosti, znalosti a rozšířili si jazykové kompetence.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Digitální dovednosti",
+          "detail": "Ve vyučovacích hodinách se informačním zdrojům a práci s informacemi věnuje málo času.",
+          "evidence": "„Práci s informacemi bylo věnováno minimum času.“"
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Zhodnocení výuky se v některých hodinách objevuje jen málo, i když v odborných předmětech byla zpětná vazba smysluplná.",
+          "evidence": "„Shrnutí a zejména zhodnocení proběhlé výuky … bylo zaznamenáno méně často.“"
+        },
+        {
+          "tag": "Technické zázemí",
+          "detail": "Pomalé připojení k internetu může omezovat využití online zdrojů ve výuce.",
+          "evidence": "„Dílčím nedostatkem je pomalé připojení k internetu a tím ztížené využívání informačních zdrojů ve výuce.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně podporují studenty při přípravě na maturitu a při školní neúspěšnosti?",
+        "Kolik času ve vyučovacích hodinách obvykle věnují práci s digitálními informacemi a zpětné vazbě?",
+        "Jak probíhá konkrétně odborná praxe, hodnocení její kvality a podpora studentů se zvláštními potřebami?"
+      ],
+      "who_school_fits": [
+        "Uchazeče o pedagogické lyceum, předškolní a mimoškolní pedagogiku, kteří chtějí propojit teorii s praxí.",
+        "Uchazeče o zdravotnické obory, kteří mají zájem o odborné předměty, praxi a práci s pacienty.",
+        "Studenty, kterým vyhovuje křesťanské zaměření školy, domov mládeže a široká volnočasová nabídka."
+      ],
+      "who_should_be_cautious": [
+        "Studenty, kteří potřebují v každé hodině rozsáhlé využití internetu a moderních digitálních nástrojů.",
+        "Studenty, kteří upřednostňují pravidelnou zpětnou vazbu a sebehodnocení ve všech vyučovacích hodinách.",
+        "Uchazeče, kteří nejsou připraveni na křesťanské zaměření a rozsáhlé mimoškolní aktivity školy."
+      ],
+      "plain_czech_summary": "Inspekce hodnotí školu jako dobře vedenou a vybavenou. Chválí spolupráci vedení, stabilní učitelský tým, kvalitní praxi, podporu studentů i výborné výsledky u maturity. Domov mládeže je zcela zaplněný a středisko volného času nabízí rozsáhlé aktivity. Mezi hlavní nedostatky patří malé využívání digitálních zdrojů, omezené sebehodnocení a zpětná vazby v hodinách a pomalé připojení k internetu. Zpráva neuvádí žádné číselné údaje o absentéru."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou dlouhodobě velmi dobré a odpovídají průměru obdobných škol.",
+        "key_numbers": [
+          "Ve školním roce 2021/2022 uspělo u maturity téměř 100 % žáků.",
+          "U závěrečné zkoušky oboru Ošetřovatel byli úspěšní všichni žáci.",
+          "Většina absolventů pokračuje na vysokých školách."
+        ],
+        "evidence": "„Výsledky dlouhodobě korespondují s úspěšností žáků dané skupiny oborů.“"
+      },
+      "absence": {
+        "trend": "Zpráva neuvádí údaje o nepřítomnosti ani jejich vývoji.",
+        "key_numbers": [],
+        "evidence": "V dodaném textu nejsou uvedeny žádné statistiky absence."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště zahrnuje výchovného poradce, školní psycholožku, metodičku prevence a asistentku pedagoga; poskytuje služby žákům, rodičům a pedagogům.",
+        "Pro dvě žákyně s odlišným mateřským jazykem byl zpracován plán pedagogické podpory.",
+        "U devatenácti žáků byly diagnostikovány speciální vzdělávací potřeby a pro jednoho z nich byl vytvořen individuální vzdělávací plán.",
+        "Domov mládeže nabízí doučování a podporu při přípravě na vyučování studentům se školní neúspěšností."
+      ],
+      "safety_climate": [
+        "Ve vyučovaných hodinách převládala příjemná pracovní atmosféra, žáci se bez obav komunikovali s učiteli a aktivně pracovali.",
+        "Škola se snaží zajistit fyzickou i psychickou bezpečnost žáků a řeší rizika praktického vyučování.",
+        "V tělesné výchově probíhala výuka „v pozitivní atmosféře a bezpečném prostředí“.",
+        "Prevence rizikového chování je zahrnuta do výuky a třídnických hodin."
+      ],
+      "partnerships_practice": [
+        "Odborná praxe probíhá průběžně, včetně zahraničí, zejména ve Španělsku a na Slovensku.",
+        "Škola spolupracuje se zřizovatelem, okolními školami, domovem mládeže a dalšími partnery.",
+        "Studenti se účastní zahraničních mobilit v projektech Erasmus+ a OPVV.",
+        "Spolupráce se zřizovatelem přispěla k rekonstrukci budovy a vzniku nových učeben a pokojů."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžnou češtinu, stručně odděluje ověřená zjištění od doporučení rodičům a jasně uvádí chybějící údaje.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí statistiky absence, proto nelze posoudit její vývoj.",
+        "Výsledky žáků jsou uvedeny za školní rok 2021/2022, nikoli za celé období inspekce.",
+        "Text neuvádí přesný počet studentů v jednotlivých oborech ani podrobné školní známky."
+      ]
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "report_id": "GY4_600012875_2022-11-07",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:30:39.229164+00:00",
+  "run_finished_utc": "2026-10-02T17:31:20.857252+00:00",
+  "raw_file": "GY4_600012875_2022-11-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600012875_2022-11-07",
+    "school_profile": {
+      "school_type": "Gymnázium se čtyřletým a osmiletým studiem a vlastní školní jídelnou",
+      "inspection_period": "7. 11. až 9. 11. 2022",
+      "school_change_summary": "Pedagogický sbor se stabilizoval, škola zrekonstruovala některé prostory a obnovila výpočetní techniku. Kontrolní a hodnoticí systémy se však podle inspekce nerozvinuly dostatečně."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí doučování, konzultace, Seminární práce, kurzy, projekty, soutěže a sportovní aktivity.",
+          "evidence": "„Žáci mají možnost si dopsat nebo opravit prověrku, zúčastnit se doučování“ a škola zajišťuje rozsáhlé mimoškolní aktivity."
+        },
+        {
+          "tag": "Poradenské služby",
+          "detail": "Školní psycholožka, výchovná poradkyně, metodička prevence a kariérová poradkyně poskytují žákům podporu.",
+          "evidence": "„Školní psycholožka, která žákům poskytuje individuální konzultace a účelně pracuje s třídním kolektivem“."
+        },
+        {
+          "tag": "Zázemí a partneři",
+          "detail": "Škola investovala do budovy a techniky a aktivně spolupracuje s městem, zřizovatelem, fondem i regionálními firmami.",
+          "evidence": "„Škola snížila energetickou náročnost budovy, rekonstruovala učebny a tělocvičnu“ a „došlo k rozšíření a obnově výpočetní techniky“."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Příprava na maturitu",
+          "detail": "Škola nesleduje souvislost školních výsledků s výsledky společné části maturity ani průběžně neověřuje dosažené výstupy ŠVP.",
+          "evidence": "Škola „systematicky nesleduje“ výsledky maturity a „neprovádí průběžné ověřování“ výstupů ŠVP."
+        },
+        {
+          "tag": "Rozdíly mezi žáky",
+          "detail": "Ve vyučování chyběla dostatečná individualizace, diferenciace a podpora samostatné práce s informacemi.",
+          "evidence": "„Téměř nebyla zaznamenána diferenciace nebo individualizace“ a žáci nebyli dostatečně vedeni k samostatné práci s informacemi."
+        },
+        {
+          "tag": "Bezpečnost a kontrola",
+          "detail": "Při inspekci chybělo platné osvědčení o revizi sportovního nářadí a hospitační činnost nebyla dostatečně systematická.",
+          "evidence": "„Ne zcela funkční kontrolní systém“ se projevil v absenci revize sportovního nářadí; inspekce zjistila šest hospitací za školní rok."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola ověřuje připravenost žáků na společnou část maturitní zkoušky během celého studia?",
+        "Jak často učitelé přizpůsobují úkoly a podporu žákům s odlišnou úrovní a rychlostí práce?",
+        "Jaký přístup má škola k bezpečnosti tělocvičného nářadí a nápravě zjištěných nedostatků?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí studovat ve čtyřletém nebo osmiletém gymnáziu: „Realizuje obory vzdělání 79-41-K/41“ a „79-41-K/81“.",
+        "Žáci, kterým vyhovuje samostatná příprava a systém seminárních prací: „V předposledním ročníku žáci zpracovávají a obhajují seminární práci“.",
+        "Žáci, kteří chtějí využít kurzy, projekty, soutěže nebo sport: Škola nabízí „širokou škálu aktivit“ a sportovní klub."
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující průběžnou individualizovanou výuku, protože inspekce zjistila „nedostatečnou diferenciaci a individualizaci“.",
+        "Žáci, kteří potřebují přesnou přípravu na maturitu, protože škola výsledky přípravy na společnou část maturity „systematicky nesleduje“.",
+        "Rodiče citliví na kontrolu sportovního vybavení, protože při inspekci chyběla jeho platná revizní dokumentace."
+      ],
+      "plain_czech_summary": "Škola má stabilizovaný, téměř plně kvalifikovaný učitelský sbor, dobré poradenské zázemí, rozsáhlé mimoškolní aktivity a investice do budovy i techniky. Žáci mohou využít doučování, konzultace, kurzy, projekty a přípravu k Cambridge zkoušce. Hlavními nedostatky jsou malá individualizace, omezená spolupráce žáků, slabší závěry hodin a málo zpětné vazby učitelům. Škola také nesleduje průběžnou připravenost na společnou část maturity. Rodiče by se měli zeptat, jak tyto oblasti škola řeší, a ověřit stav revize sportovního nářadí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Bez zjištěného trendu; konkrétní výsledky nejsou uvedeny",
+        "key_numbers": [
+          "Žáci jsou podle inspekce úspěšní při maturitní zkoušce díky poskytované podpoře.",
+          "Škola systematicky nesleduje vztah školních výsledků k výsledkům společné části maturity.",
+          "Škola neprovádí průběžné ověřování dosažených výstupů ŠVP."
+        ],
+        "evidence": "Zpráva uvádí úspěšnost žáků při maturitě, ale neobsahuje údaje o úspěšnosti ani vývojovém trendu."
+      },
+      "absence": {
+        "trend": "Bez zjištěného trendu",
+        "key_numbers": [
+          "Konkrétní míra absence není uvedena.",
+          "Škola sleduje nepřekročení stanoveného počtu hodin absence a maximální procentuální hranice."
+        ],
+        "evidence": "Jediným sjednocujícím kritériem hodnocení je „podmínka nepřekročení stanoveného počtu hodin absence“ a procentuální hranice."
+      },
+      "support_services": [
+        "Školní psycholožka poskytuje individuální konzultace a pracuje s vybranými třídními kolektivy.",
+        "Výchovná poradkyně řeší vzdělávací potřeby a studijní problémy ve spolupráci s učiteli a rodiči.",
+        "Školní metodička prevence každoročně aktualizuje preventivní program.",
+        "Kariérová poradkyně je součástí funkčně rozděleného školního poradenského pracoviště.",
+        "Škola poskytuje konzultace, doučování a možnost opravy či doplnění prověrky."
+      ],
+      "safety_climate": [
+        "Ve většině hospitovaných hodin panovala „příjemná pracovní atmosféra“ a žáci respektovali pokyny učitelů.",
+        "Na vyšším gymnáziu byla komunikace „respektující“.",
+        "Při inspekci nebylo k dispozici platné osvědčení o revizi sportovního nářadí.",
+        "Inspekce uvedla, že žáci byli poučováni o bezpečnostních rizicích."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s městem Trutnov, zřizovatelem, Nadačním fondem školy a regionálními firmami.",
+        "Spolupráce zahrnuje kulturní akce, výstavy, sociální pomoc, školní chatu, technické pomůcky a žákovské stáže.",
+        "Škola obnovila výměnné pobyty a spolupracuje se zahraničními pedagogy.",
+        "Škola je partnerskou školou centra Cambridge P.A.R.K."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžnou češtinu, odděluje silné stránky od nedostatků a jasně říká, které údaje zpráva neuvádí.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní úspěšnost maturit, proto nelze určit jejich trend.",
+        "Zpráva neuvádí číselné údaje o absenci, proto nelze posoudit její vývoj.",
+        "Připomínky ředitele doplňují kontext inspekčních zjištění; ve vhodnotení jsou zahrnuty také stanovisko inspekčního týmu."
+      ]
+    }
+  }
+}

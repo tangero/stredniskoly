@@ -1,0 +1,111 @@
+{
+  "report_id": "SOU_610100581_2024-11-25",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:27:00.723375+00:00",
+  "run_finished_utc": "2026-10-02T17:27:37.122653+00:00",
+  "raw_file": "SOU_610100581_2024-11-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_610100581_2024-11-25",
+    "school_profile": {
+      "school_type": "Střední odborné učiliště elektrotechnické se středním vzděláváním s maturitní zkouškou i s výučním listem, domovem mládeže a školní jídelnou",
+      "inspection_period": "25. 11. až 28. 11. 2024",
+      "school_change_summary": "Počet žáků vzrostl o 27 %, vedení bylo doplněno o dalšího zástupce ředitele a technické zázemí školy se výrazně obnovilo; ve společné části maturity došlo k částečnému zlepšení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná praxe",
+          "detail": "Praktická výuka probíhá na profesionální úrovni ve dobře vybavených dílnách a žáci jsou vedeni k samostatnému řešení úkolů.",
+          "evidence": "Odborný výcvik byl veden na profesionální úrovni; vybavení školních dílen odpovídá současným požadavkům odborné praxe."
+        },
+        {
+          "tag": "Zázemí a vybavení",
+          "detail": "Škola průběžně modernizuje techniku, učebny a komunikační prostředky, což podporuje propojení teorie s praxí.",
+          "evidence": "Průběžná modernizace zařízení školních dílen, specializovaných učeben a prostředků informačních a komunikačních technologií pokračuje."
+        },
+        {
+          "tag": "Partnerství",
+          "detail": "Spolupráce s firmami a odbornými organizacemi umožňuje žákům poznat aktuální praxi a získat zkušenosti z reálného pracovního prostředí.",
+          "evidence": "Škola dlouhodobě spolupracuje s伙伴y; pro odborný výcvik nebo praxe uzavřela smlouvy s téměř stovkou firem."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence",
+          "detail": "Velká absence zvyšuje riziko neprospěchu a předčasného ukončení studia, přičemž současná opatření nejsou dostatečně účinná.",
+          "evidence": "Absence činila 139 hodin na žáka; škola označila vysokou absenci za významný problém."
+        },
+        {
+          "tag": "Rozsah přijímací podmínek",
+          "detail": "Ve zjišťovaných hodinách byla neprospěšnost vysoká, zejména v prvním pololetí, a některé obory vykazovaly průměrné až podprůměrné výsledky.",
+          "evidence": "V prvním pololetí neprospělo 26,5 % žáků a 1,7 % bylo nehodnoceno; ve druhém pololetí klesla neúspěšnost na 6,7 %."
+        },
+        {
+          "tag": "Organizace výuky",
+          "detail": "V teoretických odborných předmětech byla aktivizace žáků, zpětná vazba, hodnocení a diferenciace náročnosti omezené.",
+          "evidence": "Žáci nebyli vedeni k vlastnímu hodnocení ani posouzení práce vrstevníků; v hodinách nebyla uplatněna diferenciace."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní kroky podniká škola proti absencím a jak často vyhodnocuje jejich účinnost?",
+        "Jaké možnosti mají žáci s podpůrnými opatřeními při úpravě pracovních úkolů, hodnocení a ukončování studia?",
+        "Jak škola podporuje žáky s odlišným mateřským jazykem a žáky, kteří mají jazykovou bariéru?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří mají zájem o elektrotechniku, elektromechaniku, telekomunikace nebo informační technologie.",
+        "Žákům, kteří chtějí propojit teoretické znalosti s praktickou výukou a odbornou praxí.",
+        "Žákům, kteří využijí nabídku spolupráce školy s firmami, soutěžemi a rozšiřujícími aktivitami."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým hrozí vysoká absence nebo neprospěch, protože škola sama tuto oblast označuje za významný problém.",
+        "Rodičům žáků, kteří potřebují průběžné doučování, protože ve školním roce 2024/2025 škola již nerealizovala.",
+        "Rodičům žáků s podpůrnými opatřeními, kteří chtějí mít jistotu pravidelné diferenciace a individualizované podpory."
+      ],
+      "plain_czech_summary": "Škola má dobře vybavené odborné dílny, spolupráci s firmami a praktickou výuku vedenou profesionálně. Tyto prvky jsou pro rodiče důležité zejména u elektrotechnických oborů. Maturitní zkouškou získávají žáci v oboru dlouhodobě dobré výsledky, ve společné části se výsledky částečně zlepšily. Hlavními problémy jsou vysoká absence, neprospěch v některých částech školního roku a málo zpětné vazby v teoretických odborných předmětech. Podpora žáků s podpůrnými opatřeními vykazuje pozitivní přínos, ale poradenské pracoviště má podle inspekce jen omezené personální zajištění. Rodiče by měli na den otevřených dveřích přímo ověřit, jak konkrétně funguje podpora učení, komunikace s rodiči a práce s absencemi."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "V posledních dvou letech došlo k částečnému zlepšení výsledků ve společné části maturitní zkoušky; celkové výsledky jsou přibližně srovnatelné s většinou škol podobného zaměření.",
+        "key_numbers": [
+          "60 % žáků studovalo obory s maturitní zkouškou",
+          "614 žáků ve čtyřletých oborech s maturitní zkouškou",
+          "98 žáků v nástavbových oborech s maturitní zkouškou"
+        ],
+        "evidence": "V profilové části maturitní zkoušky dosahují žáci všech oborů dobrých výsledků dlouhodobě."
+      },
+      "absence": {
+        "trend": "Absence je vysoká a škola uvádí, že dosavadší opatření nejsou dostatečně účinná.",
+        "key_numbers": [
+          "139 hodin absence na žáka ve školním roce 2023/2024"
+        ],
+        "evidence": "Škola identifikuje vysokou absenci; neúspěšných žáků po opravných zkouškách a náhradním termínu bylo ve druhém pololetí 6,7 %."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště zajišťuje výchovné poradenství a školní metodiku prevence.",
+        "Škola poskytuje podporu žákům se speciálními vzdělávacími potřebami na základě doporučení.",
+        "Podpora zahrnuje uzpůsobení podmínek při ukončování vzdělávání a metodickou podporu učitelů."
+      ],
+      "safety_climate": [
+        "Bezpečnostní pokyny jsou pravidelně opakovány na začátku školního roku a v jeho průběhu.",
+        "Při odborném výcviku byli žáci prokazatelně seznámeni s pravidly BOZP; porušení nebylo zjištěno.",
+        "Vstupy do budov byly zabezpečeny, okolí monitorovaly kamery a v domově mládeže fungoval čipový systém."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s téměř stovkou firem a společností, se kterými uzavřela smlouvy pro odborný výcvik nebo praxe.",
+        "Spolupráce zahrnuje moderní techniku, exkurze, přednášky a zapojení firem do vzdělávání.",
+        "Škola spolupracuje také s Elektrotechnickým cechem plzeňského regionu, Regionální hospodářskou komorou a Úřadem práce ČR."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, věcně navazují na text inspekční zprávy a důležité závěry jsou doplněny krátkými citacemi.",
+      "uncertainty_notes": [
+        "Inspekční zpráva neuvádí přesnou úspěšnost maturitní zkoušky za poslední rok.",
+        "Údaje o neprospěchu se vztahují k různým časovým úsekům a je proto nutné brát je jako konkrétní pozorování, ne jako trvalý průměr školy.",
+        "Škola neposkytuje všechny podrobné mechanismy podpory žáků s podpůrnými opatřeními, proto je vhodné ověřit je při osobní návštěvě."
+      ]
+    }
+  }
+}
