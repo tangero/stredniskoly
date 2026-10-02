@@ -1,0 +1,54 @@
+{
+  "vystup_pro": "docs/navrh-obory-bez-jpz-2027.md, oddíl 16.1, otázka 1 (issue #244)",
+  "reprodukce": "python3 scripts/mereni-dipsy-bez-jpz.py",
+  "zdroj": "GET https://api.dipsy.gov.cz/v1/skol-oboro-forma/{ID_SOF}, ID_SOF z data/PZ2026_kolo1_skolobory_vysledky.xlsx",
+  "celkem": {
+    "nabidek": 2902,
+    "karta_nalezena": 2890,
+    "s_pdf_podminek": 2890,
+    "karta_nesouhlasi": 12
+  },
+  "po_kategorii": {
+    "C": {
+      "nabidek": 200,
+      "karta_nalezena": 198,
+      "s_pdf_podminek": 198,
+      "karta_nesouhlasi": 2
+    },
+    "E": {
+      "nabidek": 524,
+      "karta_nalezena": 514,
+      "s_pdf_podminek": 514,
+      "karta_nesouhlasi": 10
+    },
+    "H": {
+      "nabidek": 1777,
+      "karta_nalezena": 1777,
+      "s_pdf_podminek": 1777
+    },
+    "J": {
+      "nabidek": 8,
+      "karta_nalezena": 8,
+      "s_pdf_podminek": 8
+    },
+    "L": {
+      "nabidek": 31,
+      "karta_nalezena": 31,
+      "s_pdf_podminek": 31
+    },
+    "M": {
+      "nabidek": 216,
+      "karta_nalezena": 216,
+      "s_pdf_podminek": 216
+    },
+    "P": {
+      "nabidek": 146,
+      "karta_nalezena": 146,
+      "s_pdf_podminek": 146
+    }
+  },
+  "ruznych_id_pdf": 2890,
+  "nesouhlasi_jen_redizo": [
+    "600027295 (CERMAT 600027287)"
+  ]
+}

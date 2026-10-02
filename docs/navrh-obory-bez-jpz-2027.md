@@ -1,9 +1,11 @@
 # Obory bez jednotné zkoušky a nedenní formy: průzkum zdrojů a návrh
 
-Verze 1.1 · 1. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
+Verze 1.2 · 2. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
 Fáze 2 (implementace) vznikne jako samostatné zadání po schválení návrhu.
 Verze 1.1 vypořádává oponenturu (`docs/podklady/oponentura-obory-bez-jpz-2026-10-01.md`);
-vypořádání je v oddílu 17, oddíly 10 a 11 jsou přepsané.
+vypořádání je v oddílu 17, oddíly 10 a 11 jsou přepsané. Verze 1.1 byla schválena
+1. 10. 2026. Verze 1.2 doplňuje odpovědi z etapy 0 fáze 2 (issue #244, oddíl 16.1)
+a z nich plynoucí pojem pro kategorii J a skupiny souhrnu míst (oddíly 13 a 14).
 
 ## 1. Shrnutí a doporučení
 
@@ -31,11 +33,12 @@ Doporučení:
    po 1. kole, výsledkem 2. kola, tlakem prvních voleb a vývojem 2025–2026**.
    Obtížnost slovy jen tam, kde je aspoň 10 soutěžících (u E, P a C většinou není).
    **Body, percentily, pásma ani předpověď dalšího roku u nich nebudou** — výsledkové
-   sloupce jsou u všech 3 131 nabídek prázdné. U C a E se nezobrazuje odznak
-   obtížnosti ani filtr podle ní (oddíl 10.1).
-5. Pokrytí karet DiPSy u nabídek bez zkoušky se z místních souborů změřit nedá
-   (oddíl 6); změří se v přípravě fáze 2. Do té doby se neslibuje zobrazení kritérií
-   ani bodování u těchto oborů.
+   sloupce jsou u všech 3 131 nabídek prázdné. U C, E, J a P se nezobrazuje odznak
+   obtížnosti ani filtr podle ní (oddíl 10.1; J a P doplněny ve verzi 1.2).
+5. Pokrytí karet DiPSy u nabídek bez zkoušky změřila etapa 0 fáze 2 (oddíl 16.1):
+   kartu s PDF podmínek přijetí má každá nabídka. Stránka učebního oboru proto
+   dostane odkaz na PDF v DiPSy. Přepis kritérií, body ani minima se nezobrazují,
+   přepis je samostatné zadání.
 
 Všechna čísla v dokumentu reprodukuje:
 
@@ -261,6 +264,10 @@ Rejstřík je pro fázi 2 **doplňkový zdroj**, ne zdroj nabídek:
 
 ## 7. DiPSy: pokrytí u nabídek bez zkoušky se z místních souborů nedá změřit
 
+> **Stav k verzi 1.2:** změřeno v etapě 0 fáze 2 (oddíl 16.1, bod 1). Kartu s PDF
+> podmínek přijetí má všech 2 902 denních nezkrácených nabídek. Platí doporučení
+> z oddílu 16.1: odkaz na PDF ano, přepis kritérií ne. Text níže je stav fáze 1.
+
 Přepis kritérií `public/kriteria_prijeti_2026.json` pokrývá **0 ze 3 131 nabídek
 bez zkoušky** — vznikal jen nad katalogem. Místní sběr karet (`data/dipsy-kriteria-2026/`)
 v tomto checkoutu není a dotaz na `api.dipsy.gov.cz` je mimo povolený rozsah fáze 1
@@ -359,8 +366,9 @@ Poznámky k jednotlivým:
   třetiny; práh 10 soutěžících), ale **není hlavní náhradou bodů**: pod prahem
   je 36 % nabídek H, 73 % E, 83 % P a 91 % C (oddíl 3.6). Zobrazuje se jen tam,
   kde práh platí; rozdělení H do stupňů (574/302/164/78/17) se zapíše do slovníku.
-  **U kategorií C a E se odznak obtížnosti ani filtr podle ní nezobrazují vůbec**
-  (citlivá skupina, oddíl 17, O9); čísla (místa, přihlášky, přijatí, tlak) ano.
+  **U kategorií C, E, J a P se odznak obtížnosti ani filtr podle ní nezobrazují vůbec**
+  (C a E jako citlivá skupina, oddíl 17, O9; J a P rozhodnutím z etapy 0, oddíl 16.1);
+  čísla (místa, přihlášky, přijatí, tlak) ano.
 - **Kohorta podle pozice na přihlášce** vyžaduje srovnatelnou skupinu. Skupinou
   je kategorie × první dvojčíslí KKOV (23 strojírenství, 65 gastronomie a tak dál),
   ne typ školy — Kadeřník se nesrovnává se Zedníkem. U H tak vzniká 18 skupin,
@@ -383,7 +391,7 @@ percentilová umístění, Podíl přijatých podle bodového pásma, Rozhodl te
 nejistoty, Poloha vůči pásmu, Percentil nejnižšího přijatého, Převedený výsledek
 testu, Pořadí mezi soutěžícími, Nejslabší přijatý v předmětu, Podlaha slabšího
 předmětu, Nevyrovnaní přijatí, Hustota u hranice, Podíl přijímaček na bodování
-(dokud nebudou kritéria z DiPSy).
+(bez přepisu kritérií z DiPSy, který je samostatné zadání; oddíl 16.1).
 
 ### 10.3 Ukazatele z dat uchazečů: data existují, generátory je musí vydat
 
@@ -436,12 +444,13 @@ mají existující stránky a adresy a rušení by byla jiná dávka.
   domov mládeže). Obtížnost slovy jen nad prahem 10 soutěžících; proč tu nejsou
   body, vysvětlí věta z oddílu 13, nikdy prázdný blok.
 - **Stránka města a přehled kraje.** Nové nabídky vstupují do karet a filtrů;
-  filtr podle obtížnosti funguje tam, kde obtížnost je (mimo C a E).
+  filtr podle obtížnosti funguje tam, kde obtížnost je (mimo C, E, J a P).
   **Řazení se nemění a hierarchii nevytváří:** městský návrh řazení podle bodů
   ani podle obtížnosti nezná — výchozí je název školy, dále místa a přihlášky
   na místo (`docs/navrh-stranky-mesta-2027.md`, oddíl 3.5). Učební obory se řadí
-  stejně jako ostatní. Navíc souhrn, jak se ve městě a kraji dělí místa mezi
-  gymnázia, maturitní obory, učební obory a obory E (návrh ukazatele v oddílu 14).
+  stejně jako ostatní. Navíc souhrn, jak se ve městě a kraji dělí místa do šesti
+  skupin: gymnázia, maturitní obory, konzervatoře, učební obory, obory E a ostatní
+  obory bez maturity i výučního listu (návrh ukazatele v oddílu 14).
 - **Vyhledávání.** Učební obory se vyhledávají stejně; značka „bez jednotné
   zkoušky“ zůstává jako filtr i vysvětlení.
 - **Simulátor přijímaček.** Učební obor do bodových skupin nepatří (není s čím
@@ -479,8 +488,8 @@ nebo pole, které by mohlo nabídky bez zkoušky živit, je verdikt a důvod:
 | Agregáty 1. kola 2025 | **použít** | stejných 91 sloupců, 3 146 nabídek bez zkoušky; vývoj 2025 → 2026 (oddíl 3.7) |
 | Infoabsolvent (NPI): nezaměstnanost absolventů obor × kraj | nepoužít | členění by sedělo na stránku oboru, ale sada není v otevřených datech a tabulky jsou obrázky v PDF (doloženo v `docs/zdroje-dat.md`, oddíl 3) |
 | MPSV: absolventi v evidenci ÚP (IZO × obor) | nepoužít | chybí jmenovatel a MŠMT samo označuje počty absolventů škol za nevěrohodné (doloženo tamtéž); proto ani agregace na obor |
-| Odborný výcvik u firem, krajská stipendia pro učně | zdroj neexistuje | v soupisu zdrojů nic takového není; rešerše je úkol přípravy fáze 2, do té doby se o nich mlčí (stejně jako u absolventů) |
-| DiPSy `podminkyProPrijeti` (PDF kritérií) | zatím nepoužít | jediný možný zdroj bodování u H; pokrytí nezměřeno, změří příprava fáze 2 (oddíl 7) |
+| Odborný výcvik u firem, krajská stipendia pro učně | zdroj neexistuje | rešerše v etapě 0 (oddíl 16.1, bod 7) strojově čitelný zdroj nenašla, web o nich mlčí (stejně jako u absolventů) |
+| DiPSy `podminkyProPrijeti` (PDF kritérií) | použít jen jako odkaz | pokrytí 2 902 z 2 902 (oddíl 16.1); přepis bodování je samostatné zadání, protože část PDF je společná pro celou školu a část jsou skeny |
 | DiPSy `skolniCast`, `typyPriloh` | nepoužít bez PDF | samy neříkají, jak škola řadí (stejný závěr jako u JPZ) |
 | DiPSy `kapacita`, `konaJPZ`, `kategorieVzdelani` | nepoužít | duplicitní s CERMATem; aktuální hodnota DiPSy se nepřebírá |
 | DiPSy `vysledkyPrijeti`, `/app/public-stats` | nepoužít | přijaté máme z CERMATu; PDF výsledků mohou nést údaje o jednotlivcích |
@@ -509,6 +518,10 @@ v dávce, ve které se poprvé objeví na stránce. Návrh znění:
   Nepoužívat: „volná místa“ bez kola (to slovo patří 2. kolu).
 - **kam dál po výučním listu** (nový pojem): „nástavba, po které se skládá
   maturita“. Nepoužívat: „pokračování“, „navazující studium“ (obecné).
+- **obor bez maturity i výučního listu** (nový pojem, kategorie J; doplněno
+  ve verzi 1.2): „dvouletý obor zakončený závěrečnou zkouškou a vysvědčením,
+  bez maturity i výučního listu“. Obor J se nenazývá „učební obor“, protože
+  výuční list nedává.
 
 ## 14. Návrh ukazatelů (podklad pro slovník ukazatelů)
 
@@ -523,7 +536,9 @@ Dva nové ukazatele (návrh znění pro slovník):
   tam, kde jsou oba sloupce vyplněné (u 53 nabídek bez čísel se neukazuje).
   Neříká, zda škola vypíše 2. kolo — to říká až oddíl 2. kola.
 - **Místa podle druhu studia**: rozdělení součtu `KAPACITA` za město a kraj
-  na gymnázia, maturitní obory, učební obory a obory E. Zdroj: CERMAT 1. kolo.
+  do šesti skupin podle kategorie KKOV (verze 1.2, oddíl 16.1): gymnázia (K),
+  maturitní obory (M a L včetně uměleckých), konzervatoře (P), učební obory (H),
+  obory E a ostatní obory bez maturity i výučního listu (C, J). Zdroj: CERMAT 1. kolo.
   Jednotka: místa a podíly. Součet míst za území se smí, na rozdíl od přihlášek;
   jeden uchazeč se v něm nepočítá víckrát, protože místa nejsou přihlášky.
 
@@ -557,6 +572,98 @@ nemění (omezení zadání); přepnutí období se řídí stávajícími sadam
 6. Doplněk návrhu simulátoru: pojistka bez bodů (`kapacita_nerozhodovala`, oddíl 11).
 7. Rešerše zdrojů o odborném výcviku u firem a krajských stipendiích v přípravě
    fáze 2 (oddíl 12: zdroj zatím neexistuje).
+
+### 16.1 Odpovědi z etapy 0 (issue #244, 2. 10. 2026)
+
+Čísla jsou v dokladu `docs/podklady/mereni-obory-bez-jpz-2026.json`, klíče
+`parovani_roku`, `parovani_kol` a `konzervatore_a_j`. Spočítal je skript
+`scripts/mereni-obory-bez-jpz.py`, který k tomu volá párovací kód importu
+(`scripts/match_obory_2025_2026.py`, `scripts/build-druhe-kolo.py`), ne jeho kopii.
+
+1. **DiPSy: karta s PDF podmínek přijetí existuje u všech nabídek; na stránce
+   bude odkaz na PDF, ne přepis kritérií.** Měřeno 2. 10. 2026 způsobem
+   schváleným v issue #244. Proběhlo 2 902 dotazů na karty bez jediné chyby
+   (`scripts/mereni-dipsy-bez-jpz.py`, souhrn `docs/podklady/mereni-dipsy-bez-jpz-2026.json`).
+   - Kartu s PDF podmínek přijetí (`podminkyProPrijeti.fileId`) má 2 890 nabídek,
+     u nichž souhlasí ID karty, rok, kolo, REDIZO i kód oboru.
+   - Zbylých 12 (10 E a 2 C) patří jedné škole, kterou DiPSy vede pod jiným
+     REDIZO než CERMAT (600027295 proti 600027287). Karta i PDF existují.
+     Etapa 1 musí odkaz u této školy párovat přes `ID_SOF`, ne přes REDIZO.
+   - **Vzorek 30 PDF** (H 10, E 6, M 5, P 5, C 4; náhodně, semínko 244;
+     přečteny ručně, žádný model ani služba třetí strany, PDF se necommitují):
+     - 3 z 30 jsou skeny bez textové vrstvy (OCR by bylo nutné);
+     - u oborů H a E školy většinou bodují průměrný prospěch ze ZŠ, často
+       s minimem bodů a pomocnými kritérii při rovnosti;
+     - u uměleckých M a konzervatoří P rozhoduje talentová zkouška;
+     - u praktické školy (C) pohovor a doporučení školského poradenského
+       zařízení;
+     - téměř všude se požaduje lékařský posudek o zdravotní způsobilosti;
+     - nejméně 4 z 27 čitelných PDF jsou společné pro celou školu a bodují
+       v jednom dokumentu i obory s jednotnou zkouškou. Stejné riziko, jaké
+       popisuje `docs/predani-kriteria-prijeti-2026-09-25.md`: přepis by mohl
+       přiřadit bodování jiného oboru.
+   - **Důsledek pro fázi 2:** stránka učebního oboru dostane odkaz „Podmínky přijetí
+     (PDF v DiPSy)“ u všech nabídek. Přepis kritérií, body ani minima se
+     nezobrazují. Přepis by potřeboval stejný postup s kontrolou jako u oborů
+     se zkouškou (issue #181), a to je samostatné zadání.
+2. **Konzervatoře (P): ukázat hned, s výhradou** (rozhodnutí vlastníka 2. 10. 2026).
+   Denních nezkrácených nabídek je 146 v 18 školách. Kapacitu mají všechny, počty
+   přihlášek a přijatých chybí u 26 nabídek z 5 škol. Údaj „43 ze 178“ v otázce
+   zahrnoval i 32 kombinovaných nabídek. Pět nabídek je osmiletých pro žáky
+   5. třídy, ostatní šestileté pro žáky 9. třídy. Kde počty chybí, stránka to
+   řekne větou, ne prázdným blokem. Výhrada zní, že se přijímá talentovou
+   zkouškou mimo jednotný harmonogram. Odznak ani filtr obtížnosti konzervatoře
+   nemají, protože se nesoutěží o pořadí podle jednotné zkoušky.
+3. **Kategorie J: zahrnout** (rozhodnutí vlastníka 2. 10. 2026). Jde o 8 dvouletých
+   nabídek v 8 školách (obory 63-51-J/01, 75-41-J/01 a 53-41-J/01). Všechny mají
+   úplná čísla: 106 míst, 157 přihlášek a 70 přijatých. Zobrazí se jako C a E,
+   s čísly, bez odznaku a filtru obtížnosti, pod novým pojmem z oddílu 13.
+4. **Stabilita klíče:** `ID_SOF` ani `ID_SO` mezi roky stabilní nejsou (shoda 0
+   z 2 902). Stávající párování webu (klíč `REDIZO_KKOV` a podobnost zaměření) ale
+   u nabídek bez JPZ funguje. Protějšek z roku 2025 najde u 2 800 z 2 902 nabídek
+   roku 2026 (96 %): s vysokou jistotou u 2 701, se střední u 96 a s nízkou u 3.
+   Nových nabídek je 74 a 28 jde k ruční revizi. U oborů H je spárováno 1 744
+   z 1 777 (vysoká jistota 1 724), 25 je nových a 8 k revizi. Pro srovnání,
+   u oborů se zkouškou spároval týž skript 2 696 z 3 087 nabídek a 391 označil
+   jako nové (`data/obory_matching.json`, březen 2026). Nejvíc podobnost zaměření
+   potřebují konzervatoře, kde má jen střední jistotu 51 ze 142 spárovaných,
+   protože školy text zaměření mezi roky přepisují. Etapa 1 proto páruje rok 2025
+   stejným mechanismem a ruční výjimky (`data/obory_manual_overrides.csv`)
+   doplní jen u 28 případů k revizi.
+
+   **Párování 1. ↔ 2. kolo:** klíč z `scripts/build-druhe-kolo.py` (škola, obor,
+   zaměření, forma, délka, zkrácené studium, jazyk) najde 2. kolo u 1 261 nabídek
+   1. kola. Ze 1 458 nabídek 2. kola zůstane nespárovaných 197; podíl spárovaných
+   (86 %) odpovídá oborům se zkouškou (886 z 1 060, 84 %). `ID_SO` je na rozdíl
+   od `ID_SOF` v obou kolech stejné a jednoznačně by spárovalo 145 ze 197
+   nespárovaných. Jako doplněk klíče ho ale etapa 1 nezavádí, protože by změnil
+   i párování oborů se zkouškou. Patří do samostatného zadání.
+5. **Generátory souběhu a kontextu:** řeší etapa 2.
+6. Vyřešeno: doplněk návrhu simulátoru je sloučený (PR #246).
+7. **Rešerše o odborném výcviku a stipendiích (2. 10. 2026, způsob schválený
+   v issue #244): strojově čitelný zdroj neexistuje, web o obou dál mlčí.**
+   Rešerše proběhla přes 8 vyhledávání a 3 stránky. U jedné vrátil server 403
+   a znovu jsem ji nezkoušel.
+   - *Krajská stipendia.* Programy mají jednotlivé kraje (Liberecký kraj
+     27 oborů na 14 školách s motivačním a prospěchovým stipendiem, dále
+     Karlovarský a Jihočeský kraj, Moravskoslezský kraj má návrh). Kraje je
+     zveřejňují tiskovými zprávami a usneseními rady v PDF a schvalují je
+     na pololetí. Jednotný ani strojově čitelný přehled škol a oborů
+     neexistuje. Zobrazení by vyžadovalo ručně vedený registr po krajích,
+     obnovovaný každé pololetí. To je samostatné zadání, ne součást fáze 2.
+   - *Odborný výcvik u firem.* Novela školského zákona (zákon č. 267/2025 Sb.,
+     § 65a–65f) zavádí duální praktické vyučování u certifikovaných
+     poskytovatelů. MŠMT má zveřejňovat seznam standardů kvality a seznam
+     platných certifikátů poskytovatele (metodická informace MŠMT z ledna 2026).
+     Takový seznam rešerše nenašla, certifikace teprve začíná. Seznam navíc
+     ponese poskytovatele, ne vazbu na školu a obor, takže sám neřekne,
+     kde konkrétní škola výcvik zajišťuje. Kandidát na sledování datovou
+     linkou, až MŠMT seznam zveřejní.
+8. Vyřešeno v zadání: každá etapa má vlastní PR.
+9. **Místa podle druhu studia: šest skupin** (rozhodnutí vlastníka 2. 10. 2026):
+   gymnázia (K), maturitní obory (M a L včetně uměleckých), konzervatoře (P),
+   učební obory (H), obory E a ostatní obory bez maturity i výučního listu (C, J).
+   Oddíl 14 je upravený.
 
 ## 17. Vypořádání oponentury
 
@@ -632,6 +739,7 @@ zopakovat jedním příkazem. Níže verdikt ke každé námitce s důkazem:
 
 | Verze | Změna |
 |---|---|
+| 1.2 | Odpovědi z etapy 0 fáze 2 (#244, oddíl 16.1): párování 2025 ↔ 2026 (96 %) a 1. ↔ 2. kola, konzervatoře s výhradou, kategorie J zahrnuta, šest skupin souhrnu míst; pojem pro kategorii J. Otázky 1 a 7 změřeny po schválení dotazů na cizí servery (DiPSy, rešerše). |
 | 1.1 | Vypořádání oponentury (oddíl 17): přepsané oddíly 10 a 11, nová měření 3.5–3.7 a 5.1, oprava chyby o nástavbách, rozhodnutí o C/E, dva nové ukazatele, domovy mládeže. |
 | 1.0 | První návrh (fáze 1, issue #209). |
 
