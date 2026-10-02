@@ -41,11 +41,37 @@ jobs:
               mutation($p: ID!, $c: ID!) { addProjectV2ItemById(input: {projectId: $p, contentId: $c}) { item { id } } }' \
               -f p="$PROJEKT" -f c="$ISSUE_ID" --jq '.data.addProjectV2ItemById.item.id')
           fi
-          gh api graphql -f query='
-            mutation($p: ID!, $i: ID!, $f: ID!, $o: String!) {
-              updateProjectV2ItemFieldValue(input: {projectId: $p, itemId: $i, fieldId: $f,
-                value: {singleSelectOptionId: $o}}) { projectV2Item { id } } }' \
-            -f p="$PROJEKT" -f i="$polozka" -f f="$POLE_STATUS" -f o="$SCHVALENO" >/dev/null
+          nastav() {
+            gh api graphql -f query='
+              mutation($p: ID!, $i: ID!, $f: ID!, $o: String!) {
+                updateProjectV2ItemFieldValue(input: {projectId: $p, itemId: $i, fieldId: $f,
+                  value: {singleSelectOptionId: $o}}) { projectV2Item { id } } }' \
+              -f p="$PROJEKT" -f i="$polozka" -f f="$POLE_STATUS" -f o="$SCHVALENO" >/dev/null
+          }
+          stav() {
+            gh api graphql -f query='
+              query($i: ID!) { node(id: $i) { ... on ProjectV2Item {
+                fieldValueByName(name: "Status") { ... on ProjectV2ItemFieldSingleSelectValue { optionId } } } } }' \
+              -f i="$polozka" --jq '.data.node.fieldValueByName.optionId // ""'
+          }
+          # Přidání na tabuli (i automatické u nového issue) spouští automatizaci
+          # „Item added“, která asynchronně nastaví Návrh a může přepsat Schváleno.
+          # Proto se stav po chvíli ověří a případně nastaví znovu.
+          nastav
+          for pokus in 1 2 3 4; do
+            sleep 15
+            if [ "$(stav)" = "$SCHVALENO" ]; then
+              echo "Issue #$CISLO: Status Schváleno"
+              exit 0
+            fi
+            echo "Pokus $pokus: Status přepsán, nastavuji znovu"
+            nastav
+          done
+          sleep 15
+          if [ "$(stav)" != "$SCHVALENO" ]; then
+            echo "::error::Issue #$CISLO: Status se nepodařilo udržet na Schváleno"
+            exit 1
+          fi
           echo "Issue #$CISLO: Status Schváleno"
 
       - name: Odebrat štítek navrh
