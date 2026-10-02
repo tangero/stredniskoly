@@ -56,18 +56,17 @@ jobs:
           }
           # Přidání na tabuli (i automatické u nového issue) spouští automatizaci
           # „Item added“, která asynchronně nastaví Návrh a může přepsat Schváleno.
-          # Proto se stav po chvíli ověří a případně nastaví znovu.
+          # Stav se proto sleduje celé okno (5 × 15 s), ne jen do prvního úspěchu,
+          # a kdykoli je přepsaný, nastaví se znovu.
           nastav
-          for pokus in 1 2 3 4; do
+          for pokus in 1 2 3 4 5; do
             sleep 15
-            if [ "$(stav)" = "$SCHVALENO" ]; then
-              echo "Issue #$CISLO: Status Schváleno"
-              exit 0
+            if [ "$(stav)" != "$SCHVALENO" ]; then
+              echo "Kontrola $pokus: Status přepsán, nastavuji znovu"
+              nastav
             fi
-            echo "Pokus $pokus: Status přepsán, nastavuji znovu"
-            nastav
           done
-          sleep 15
+          sleep 5
           if [ "$(stav)" != "$SCHVALENO" ]; then
             echo "::error::Issue #$CISLO: Status se nepodařilo udržet na Schváleno"
             exit 1
