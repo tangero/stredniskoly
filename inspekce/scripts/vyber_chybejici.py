@@ -36,16 +36,7 @@ def ma_shrnuti(outputs_dir: pathlib.Path, report_id: str, modely=WEB_MODELY) -> 
     return False
 
 
-def neni_pdf(soubor: pathlib.Path) -> bool:
-    """Stažený soubor, který není PDF: portál ČŠI u chybějící zprávy vrací text „FILE NOT FOUND“."""
-    if not soubor.exists():
-        return False  # zpráva se ještě nestáhla, stáhne se v tomto běhu
-    with soubor.open("rb") as f:
-        return not f.read(5).startswith(b"%PDF")
-
-
-def vyber(reports: list, outputs_dir: pathlib.Path, slova: dict, strop: int,
-          reports_dir: pathlib.Path | None = None) -> dict:
+def vyber(reports: list, outputs_dir: pathlib.Path, slova: dict, strop: int) -> dict:
     """slova: report_id -> počet slov z indexu textů (chybí, když text ještě nevznikl)."""
     chybejici, vyjimky = [], []
     for r in reports:
@@ -53,9 +44,6 @@ def vyber(reports: list, outputs_dir: pathlib.Path, slova: dict, strop: int,
             continue
         if not r.get("source_url"):
             vyjimky.append({**r, "duvod": "zpráva nemá odkaz na PDF"})
-            continue
-        if reports_dir is not None and neni_pdf(reports_dir / r["pdf_file"]):
-            vyjimky.append({**r, "duvod": "portál ČŠI místo PDF vrátil jinou odpověď (zpráva tam není)"})
             continue
         if r["report_id"] in slova and slova[r["report_id"]] < MIN_SLOV:
             vyjimky.append({**r, "duvod": f"nečitelný text ({slova[r['report_id']]} slov i po OCR)"})
@@ -76,7 +64,6 @@ def main():
     parser.add_argument("--konfigurace", default="config/tydenni.json")
     parser.add_argument("--outputs-dir", default="data/outputs")
     parser.add_argument("--texts-dir", default="data/texts")
-    parser.add_argument("--reports-dir", default="data/reports")
     parser.add_argument("--strop", type=int, default=None, help="přepíše strop z konfigurace")
     parser.add_argument("--vystup", default="config/tydenni_reports.json", help="dílčí manifest vybraných zpráv")
     parser.add_argument("--souhrn", default="", help="JSON s vybranými, nad stropem a výjimkami")
@@ -90,7 +77,7 @@ def main():
     index = json.loads(index_cesta.read_text(encoding="utf-8"))["reports"] if index_cesta.exists() else []
     slova = {r["report_id"]: r["word_count"] for r in index}
 
-    vysledek = vyber(reports, root / args.outputs_dir, slova, strop, root / args.reports_dir)
+    vysledek = vyber(reports, root / args.outputs_dir, slova, strop)
     vystup = root / args.vystup
     vystup.parent.mkdir(parents=True, exist_ok=True)
     vystup.write_text(json.dumps({"reports": vysledek["vybrane"]}, ensure_ascii=False, indent=2), encoding="utf-8")

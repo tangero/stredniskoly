@@ -70,19 +70,6 @@ class VyberChybejicich(unittest.TestCase):
         self.assertEqual([r["report_id"] for r in v["vybrane"]], ["GY4_3_2025-01-03"])
         self.assertEqual({r["report_id"] for r in v["vyjimky"]}, {"GY4_1_2025-01-01", "GY4_2_2025-01-02"})
 
-    def test_stazena_odpoved_bez_pdf_je_vyjimka(self):
-        # Portál ČŠI u chybějící zprávy vrací text „FILE NOT FOUND“ (#271); nestažená zpráva zůstává k výběru.
-        pdf = Path(self.tmp.name) / "reports"
-        pdf.mkdir()
-        (pdf / "SOS_1_2021-11-09.pdf").write_bytes(b"FILE NOT FOUND")
-        (pdf / "SOS_2_2025-01-02.pdf").write_bytes(b"%PDF-1.7 ...")
-        zpravy = [zprava("SOS_1_2021-11-09", "2021-11-09"), zprava("SOS_2_2025-01-02", "2025-01-02"),
-                  zprava("SOS_3_2026-09-01", "2026-09-01")]
-        v = vyber(zpravy, self.out, {"SOS_2_2025-01-02": 3000}, 60, pdf)
-        self.assertEqual([r["report_id"] for r in v["vybrane"]], ["SOS_3_2026-09-01", "SOS_2_2025-01-02"])
-        self.assertEqual([r["report_id"] for r in v["vyjimky"]], ["SOS_1_2021-11-09"])
-        self.assertIn("místo PDF", v["vyjimky"][0]["duvod"])
-
     def test_strop_bere_nejnovejsi_a_zbytek_hlasi(self):
         zpravy = [zprava(f"GY4_{i}_2025-01-{i:02d}", f"2025-01-{i:02d}") for i in range(1, 6)]
         v = vyber(zpravy, self.out, {}, 2)
