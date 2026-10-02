@@ -33,8 +33,8 @@ Doporučení:
    po 1. kole, výsledkem 2. kola, tlakem prvních voleb a vývojem 2025–2026**.
    Obtížnost slovy jen tam, kde je aspoň 10 soutěžících (u E, P a C většinou není).
    **Body, percentily, pásma ani předpověď dalšího roku u nich nebudou** — výsledkové
-   sloupce jsou u všech 3 131 nabídek prázdné. U C a E se nezobrazuje odznak
-   obtížnosti ani filtr podle ní (oddíl 10.1).
+   sloupce jsou u všech 3 131 nabídek prázdné. U C, E, J a P se nezobrazuje odznak
+   obtížnosti ani filtr podle ní (oddíl 10.1; J a P doplněny ve verzi 1.2).
 5. Pokrytí karet DiPSy u nabídek bez zkoušky se z místních souborů změřit nedá
    (oddíl 6); změří se v přípravě fáze 2. Do té doby se neslibuje zobrazení kritérií
    ani bodování u těchto oborů.
@@ -361,8 +361,9 @@ Poznámky k jednotlivým:
   třetiny; práh 10 soutěžících), ale **není hlavní náhradou bodů**: pod prahem
   je 36 % nabídek H, 73 % E, 83 % P a 91 % C (oddíl 3.6). Zobrazuje se jen tam,
   kde práh platí; rozdělení H do stupňů (574/302/164/78/17) se zapíše do slovníku.
-  **U kategorií C a E se odznak obtížnosti ani filtr podle ní nezobrazují vůbec**
-  (citlivá skupina, oddíl 17, O9); čísla (místa, přihlášky, přijatí, tlak) ano.
+  **U kategorií C, E, J a P se odznak obtížnosti ani filtr podle ní nezobrazují vůbec**
+  (C a E jako citlivá skupina, oddíl 17, O9; J a P rozhodnutím z etapy 0, oddíl 16.1);
+  čísla (místa, přihlášky, přijatí, tlak) ano.
 - **Kohorta podle pozice na přihlášce** vyžaduje srovnatelnou skupinu. Skupinou
   je kategorie × první dvojčíslí KKOV (23 strojírenství, 65 gastronomie a tak dál),
   ne typ školy — Kadeřník se nesrovnává se Zedníkem. U H tak vzniká 18 skupin,
@@ -438,12 +439,13 @@ mají existující stránky a adresy a rušení by byla jiná dávka.
   domov mládeže). Obtížnost slovy jen nad prahem 10 soutěžících; proč tu nejsou
   body, vysvětlí věta z oddílu 13, nikdy prázdný blok.
 - **Stránka města a přehled kraje.** Nové nabídky vstupují do karet a filtrů;
-  filtr podle obtížnosti funguje tam, kde obtížnost je (mimo C a E).
+  filtr podle obtížnosti funguje tam, kde obtížnost je (mimo C, E, J a P).
   **Řazení se nemění a hierarchii nevytváří:** městský návrh řazení podle bodů
   ani podle obtížnosti nezná — výchozí je název školy, dále místa a přihlášky
   na místo (`docs/navrh-stranky-mesta-2027.md`, oddíl 3.5). Učební obory se řadí
-  stejně jako ostatní. Navíc souhrn, jak se ve městě a kraji dělí místa mezi
-  gymnázia, maturitní obory, učební obory a obory E (návrh ukazatele v oddílu 14).
+  stejně jako ostatní. Navíc souhrn, jak se ve městě a kraji dělí místa do šesti
+  skupin: gymnázia, maturitní obory, konzervatoře, učební obory, obory E a ostatní
+  obory bez maturity i výučního listu (návrh ukazatele v oddílu 14).
 - **Vyhledávání.** Učební obory se vyhledávají stejně; značka „bez jednotné
   zkoušky“ zůstává jako filtr i vysvětlení.
 - **Simulátor přijímaček.** Učební obor do bodových skupin nepatří (není s čím
