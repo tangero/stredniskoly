@@ -2,6 +2,8 @@
 
 Verze 0.2 · 29. 9. 2026 · **schváleno zadavatelem 29. 9. 2026** (oddíl 12)
 
+Učební obory jako pojistku bez bodů řeší [doplněk](navrh-simulator-doplnek-ucebni-obory.md) (návrh, #244).
+
 Fáze 2 návrhu [Kde stojím](navrh-kde-stojim-2027.md). Fáze 1 (stránka oboru, komponenta `src/components/obor/KdeStojim.tsx`) je nasazená. Rozhodnutí zadavatele z 29. 9. 2026:
 
 1. „Kde stojím“ se přejmenovává na **Simulátor přijímaček**. Rozšiřuje se stávající `/simulator` ([dodávka UX](dodavka-simulator-ux-2027.md)); nová stránka nevzniká.
