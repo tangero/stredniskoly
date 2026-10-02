@@ -832,7 +832,7 @@
     "obdobi": "2027",
     "soubor": "src/data/admissions-2027.json",
     "zdroj": "https://msmt.gov.cz/media/wp-content/uploads/2026/08/Casovy-harmonogram_2026-2027.pdf",
-    "opsano": "2026-09-11",
+    "opsano": "2026-10-02",
     "poznamka": "Ruční opis termínů z harmonogramu a sdělení o termínech na webu MŠMT. Soubor nese rok v názvu, proto se při novém ročníku zakládá nový. Od 29. 9. 2026 nese i blok pravidla (počet běžných a talentových přihlášek), který čte Simulátor přijímaček."
    },
    "ocekavano": {
