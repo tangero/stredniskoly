@@ -1,6 +1,6 @@
 # Datová linka
 
-Verze 1.4 · 14. 9. 2026 · Plán, provozní příručka a výsledky ověření.
+Verze 1.5 · 2. 10. 2026 · Plán, provozní příručka a výsledky ověření.
 
 Automatizovaný systém, který zjistí, že zdroj zveřejnil nová nebo přepsaná data, stáhne je, zkontroluje a zpracuje, oznámí to správci a po jeho schválení připraví převzetí. **Web se bez schválení nikdy nezmění** a ani po schválení linka sama nepřepíná zobrazené období; to zůstává krokem `prepni` v [registru stavu datových sad](zdroje-dat.md#5-stav-datových-sad).
 
@@ -17,6 +17,8 @@ Podklady: [zdroje dat, oddíl 5](zdroje-dat.md#5-stav-datových-sad), `public/st
 | Předání | `predej` | U schválené úlohy vytvoří větev s výstupy a pull request, pošle odkaz a uzavře issue | git push, pull request, Telegram, issue |
 
 `beh` provede zjištění, přípravu a oznámení najednou. `stav` vypíše frontu úloh.
+
+**Shrnutí inspekcí (`csi-extrakce`).** Shrnutí nových inspekčních zpráv nepřipravuje linka, ale týdenní workflow CSI Weekly Refresh v pull requestu z větve `codex/csi-weekly-refresh` (viz `inspekce/README.md`). Linka čte `main`, takže při `zjisti` a `beh` jen kontroluje (`scripts/linka/inspekce.py`): kolik škol má nejnovější inspekci novější, než je shrnutá (týž výpočet jako `src/lib/inspekce-aktualnost.ts`), a zda pull request s obnovou není otevřený déle než 14 dní. Obojí je problém, který `beh --kanal telegram` pošle jednou zprávou do Telegramu, a výsledek se zapíše k běhu do fronty. Nanečisto a při `zjisti` se stav PR přes `gh` nezjišťuje.
 
 `znovu KÓD --duvod …` vrátí uzavřenou úlohu (předanou, bez změny, zamítnutou nebo selhanou) do stavu `zjisteno`, typicky když sada mezitím dostala zpracovatele. Předchozí příprava, oznámení a rozhodnutí zůstanou v `predchozi_kola`; úloha se znovu připraví, oznámí a čeká na **nové** schválení, protože zprávy starší než oznámení se ignorují.
 
@@ -123,6 +125,8 @@ python3 scripts/datova-linka.py predej --vse-schvalene
 6. schválení i zamítnutí, odmítnutí cizího odesílatele a zprávy starší než oznámení; potvrzení do Telegramu a do issue, zpracování zprávy jen jednou, schválení bez kódu, tiché opakované rozhodnutí z druhého kanálu a jediné hlášení opakované chyby předání;
 7. předání nanečisto: plán větve, souborů a pull requestu bez jediného volání gitu.
 
+Kontrolu shrnutí inspekcí pokrývá `tests/test_inspekce_tydenni.py` s falešným `gh`.
+
 ## 8. Ověření 13. 9. 2026
 
 **Testy nanečisto:** 22 testů v `tests/test_datova_linka.py` prošlo. Kromě bodů z oddílu 7 pokrývají příznak přijetí zapsaný jako text, prázdný výsledek zpracování, podezřele málo oborů proti webu, změnu pořadí sloupců a poškozený soubor.
@@ -150,6 +154,7 @@ python3 scripts/datova-linka.py predej --vse-schvalene
 
 | Verze | Změna |
 |---|---|
+| 1.5 | Kontrola shrnutí inspekcí v `zjisti` a `beh`: školy s nezpracovanou novější inspekcí a pull request týdenní obnovy otevřený déle než 14 dní (#266). Důvod: PR se seznamem inspekcí zůstal od 13. 4. do 13. 9. 2026 nesloučený a shrnutí u 82 škol zastarala (#259). |
 | 1.4 | Potvrzování rozhodnutí a výsledku předání, odpověď na nesrozumitelné schválení, schválení bez kódu, okamžité zpracování komentáře v issue a kontrola Telegramu každých 15 minut. Důvod: 14. 9. 2026 správce schválil GQ99C v Telegramu i v issue #89 a nedostal žádnou odezvu; denní kontrola ještě neproběhla a linka potvrzení vůbec neposílala. Návod v oznámení nově uvádí skutečný kód místo zástupného „KÓD“, který se dal opsat doslova. |
 | 1.3 | Příkaz `znovu` pro znovuotevření uzavřené úlohy; použit 14. 9. 2026 u GQ99C (maturita jaro 2026), kterou 13. 9. linka předala bez souborů, protože sada ještě neměla zpracovatele. Nové oznámení: issue #89. |
 | 1.2 | Zpracovatel maturitních výsledků (`cermat-maturita`), ověřeno nanečisto 14. 9. 2026: úloha pro jaro 2026, 1 112 škol, roky 2023–2026. |

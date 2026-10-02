@@ -20,7 +20,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from linka import jadro, komunikace, predani, zpracovani  # noqa: E402
+from linka import inspekce, jadro, komunikace, predani, zpracovani  # noqa: E402
 
 
 def krok_zjisti(fronta: dict, registr: dict) -> None:
@@ -34,6 +34,23 @@ def krok_zjisti(fronta: dict, registr: dict) -> None:
         print(f"  informace: {i['sada']} {i['obdobi']} {i['druh']}")
     for n in beh["nedostupne"]:
         print(f"  nedostupné: {n['sada']} {n['url']} ({n['stav']} {n['chyba']})")
+
+
+def krok_inspekce(fronta: dict, kanaly: list[str], nanecisto: bool) -> None:
+    """Školy s nezpracovanou novější inspekcí a nesloučené PR týdenní obnovy (#266)."""
+    vysledek = inspekce.kontrola(jadro.dnes(), nanecisto)
+    if fronta.get("behy"):
+        fronta["behy"][-1]["inspekce"] = vysledek
+    pr = vysledek.get("pr")
+    print(f"inspekce: {vysledek.get('skol_s_novejsi_inspekci', 'nezjištěno')} škol s nezpracovanou novější inspekcí, "
+          f"PR {pr['url'] + ' otevřený ' + str(pr['dni']) + ' dní' if isinstance(pr, dict) else pr or 'žádné otevřené'}")
+    for p in vysledek["problemy"]:
+        print(f"  problém: {p}")
+    if vysledek["problemy"] and "telegram" in kanaly:
+        if nanecisto:
+            print("[nanečisto] Telegram by dostal:\n" + inspekce.text_upozorneni(vysledek))
+        else:
+            komunikace.posli_telegram([inspekce.text_upozorneni(vysledek)])
 
 
 def krok_priprav(fronta: dict, registr: dict) -> None:
@@ -86,6 +103,7 @@ def main() -> None:
 
     if a.prikaz in ("zjisti", "beh"):
         krok_zjisti(fronta, registr)
+        krok_inspekce(fronta, a.kanal if a.prikaz == "beh" else [], a.nanecisto or a.prikaz == "zjisti")
     if a.prikaz in ("priprav", "beh"):
         krok_priprav(fronta, registr)
     if a.prikaz in ("oznam", "beh"):

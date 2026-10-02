@@ -70,6 +70,33 @@ python3 scripts/run_judge.py
 python3 scripts/aggregate_scores.py
 ```
 
+## Týdenní běh v GitHub Actions (#266)
+
+Workflow `.github/workflows/csi-weekly-refresh.yml` po změně seznamu inspekcí ČŠI shrne nové zprávy
+ve stejném pull requestu jako seznam:
+
+1. převezme PDF, texty a výstupy z ještě nesloučeného PR (`codex/csi-weekly-refresh`), aby se nic
+   nestahovalo a neplatilo znovu; předpokládá, že `inspekce/data` se na `main` mezi běhy jinak nemění;
+2. `generate_manifest.py`;
+3. `vyber_chybejici.py`: zprávy bez použitelného shrnutí v žádném modelu z `WEB_MODELY`, od nejnovější,
+   nejvýš strop z `config/tydenni.json`; nečitelné texty a zprávy bez odkazu jsou výjimky;
+4. `download_reports.py` (1 dotaz najednou, prodleva z konfigurace, chyba HTTP běh zastaví),
+   `extract_texts.py --doplnit-index` (index zůstane úplný i nad dílčím manifestem),
+   `run_extraction.py --force` modelem z konfigurace se 2 souběžnými voláními;
+5. `export_extractions.py --pro-web` a při změně `stav-datovych-sad.py prepni csi-extrakce`;
+6. `telo_pr.py`: tabulka nových shrnutí od posledního sloučení (první přednost a výtka, bez citací)
+   ke kontrole proti zprávě, zprávy nad strop a výjimky.
+
+Kroky běží jen při změně seznamu. Zprávy nad strop proto počkají na další změnu seznamu, případně na
+ruční `workflow_dispatch`. Bez secretu `OPENROUTER_API_KEY` se stahování a shrnutí přeskočí a PR to uvede.
+
+Schválený způsob (portál ČŠI, OpenRouter, model, strop 60, 2 volání najednou, prodleva 2 s, odhad
+ceny 0,02–0,03 USD za zprávu) je v issue #266. Změna kteréhokoli parametru v `config/tydenni.json`
+nebo `config/production_models.json` znamená nové ohlášení v issue (CLAUDE.md, pravidlo 7).
+
+**Rollback:** revert sloučeného PR vrátí seznam, shrnutí, export i registr najednou; nesloučené PR
+stačí zavřít. Workflow jde zastavit vypnutím v Actions.
+
 ## Výstupy
 
 - `data/outputs/<model_id>/<report_id>.json` – extrakce modelu.

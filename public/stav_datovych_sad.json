@@ -631,10 +631,10 @@
    "ukazatele": [],
    "aktualizace": {
     "zdroj": "PDF inspekčních zpráv z portálu ČŠI",
-    "detekce": "Nové zprávy jsou v rozdílu data/csi_diff_latest.json z obnovy seznamu inspekcí.",
-    "import": "Generátor v repozitáři není; extrakce vznikla mimo repozitář modelem claude_haiku_4_5.",
-    "automatizace": "rucni",
-    "lidsky_krok": "Automatizovatelné až po převzetí generátoru do repozitáře; každá extrakce stojí volání modelu a vyžaduje kontrolu proti textu zprávy.",
+    "detekce": "Týdenní workflow CSI Weekly Refresh po změně seznamu inspekcí vybere zprávy bez shrnutí (inspekce/scripts/vyber_chybejici.py); datová linka hlásí školy s nezpracovanou novější inspekcí a nesloučený pull request.",
+    "import": "inspekce/scripts/run_production.sh (manifest, PDF, text, extrakce, export); týdně dílčí běh v csi-weekly-refresh.yml modelem claude_haiku_4_5, nejvýš 60 zpráv. Shrnutí na webu jsou z modelů claude_haiku_4_5, openrouter_pony_alpha a stealth_space_bunny_alpha v tomto pořadí (WEB_MODELY).",
+    "automatizace": "plna",
+    "lidsky_krok": "Přečíst vzorek shrnutí z tabulky v pull requestu proti zprávě ČŠI a pull request sloučit.",
     "sledovat": []
    },
    "historie_obdobi": [
