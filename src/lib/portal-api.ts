@@ -3,8 +3,8 @@ import path from 'path';
 import { NextResponse } from 'next/server';
 import { revalidateTag } from 'next/cache';
 import { nactiEmaily } from './portal-magic';
-import { domenaSediSeSkolou, posliTelegram } from './portal-oznameni';
-import { PortalChyba, type PortalRole } from './portal-ucty';
+import { domenaSediSeSkolou } from './portal-oznameni';
+import { PortalChyba } from './portal-ucty';
 
 // ============================================================================
 // Společné kusy API tras účtů portálu (docs/ucty-portalu-skol-2027.md).
@@ -105,21 +105,4 @@ async function webSkoly(redizo: string): Promise<string | null> {
 export async function domenaSedi(redizo: string, email: string): Promise<boolean> {
   const emaily = (await nactiEmaily())[redizo] ?? [];
   return domenaSediSeSkolou(email, emaily, await webSkoly(redizo));
-}
-
-// ----------------------------------------------------------------------------
-// Telegram
-// ----------------------------------------------------------------------------
-
-export async function oznamNovehoSpravce(role: PortalRole, nazevSkoly: string, vstup: string): Promise<void> {
-  const sedi = await domenaSedi(role.redizo, role.email);
-  await posliTelegram(
-    [
-      `🏫 Nový správce profilu (${vstup})`,
-      `${nazevSkoly} (${role.redizo})`,
-      `${role.jmeno}${role.funkce ? `, ${role.funkce}` : ''}`,
-      `${role.email} ${sedi ? '✅ doména sedí se školou' : '⚠️ doména NESEDÍ se školou'}`,
-      `jméno veřejně: ${role.zverejnit_jmeno ? 'ano' : 'ne'}`,
-    ].join('\n'),
-  );
 }

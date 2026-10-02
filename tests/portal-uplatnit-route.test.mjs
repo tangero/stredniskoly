@@ -20,7 +20,6 @@ function nactiRoute({ nazev = 'Gymnázium', redizo = '600006247' } = {}) {
       hashKod: () => 'hash',
       validateKod: async () => redizo,
       getNazevSkoly: async () => nazev,
-      getNazevSAdresou: async () => nazev,
     },
     '@/lib/portal-magic': {
       overMagicToken: () => redizo,
@@ -53,7 +52,6 @@ function nactiRoute({ nazev = 'Gymnázium', redizo = '600006247' } = {}) {
       ipZPozadavku: () => '127.0.0.1',
       jeOmezeno: () => false,
       obnovVerejneSpravce: () => {},
-      oznamNovehoSpravce: async () => {},
     },
   })('src/app/api/portal/uplatnit/route.ts');
 
