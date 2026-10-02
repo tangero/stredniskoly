@@ -79,5 +79,26 @@ class TestPrepnuti(unittest.TestCase):
         self.assertEqual(sorted(d["obdobi"] for d in s["dostupne"]), ["2025", "2026"])
 
 
+
+class TestZapis(unittest.TestCase):
+    def test_uloz_zachova_odsazeni_registru(self):
+        # Registr v repozitáři má odsazení 1; jiné by při každém přepnutí přeformátovalo celý soubor (#271).
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            puvodni = stav.REGISTR
+            stav.REGISTR = Path(tmp) / "registr.json"
+            try:
+                stav.uloz(registr())
+                text = stav.REGISTR.read_text(encoding="utf-8")
+            finally:
+                stav.REGISTR = puvodni
+        self.assertTrue(text.startswith('{\n "'))
+        self.assertTrue(text.endswith("}\n"))
+
+    def test_registr_v_repozitari_ma_tvar_zapisu(self):
+        import json
+        text = stav.REGISTR.read_text(encoding="utf-8")
+        self.assertEqual(text, json.dumps(json.loads(text), ensure_ascii=False, indent=1) + "\n")
+
 if __name__ == "__main__":
     unittest.main()
