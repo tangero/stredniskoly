@@ -10,6 +10,7 @@ import {
   rozdelJazyky, STAV_POPISEK, vetaNejtezsihoPrijeti,
 } from '@/lib/skola-vyklad';
 import { formatDatumCz } from '@/lib/portal-skol';
+import type { NovejsiInspekce } from '@/lib/inspekce-aktualnost';
 import { SkupinaVKraji } from '@/components/obor/grafy';
 import { UlozitObor } from '@/components/obor/UlozitObor';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
@@ -77,7 +78,8 @@ function Puvod({ typ, children }: { typ: 'skola' | 'redakce' | 'text' | 'stroj' 
       : 'bg-slate-100 text-slate-500';
   const text = children ?? { skola: 'Doplnila škola', redakce: 'Opravila redakce', text: 'text školy', stroj: 'shrnutí vytvořené automaticky', archiv: 'starší údaj z InspIS' }[typ];
   return (
-    <span className={`inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-0.5 align-middle text-[12px] font-bold ${trida}`}>
+    // Krátké výchozí značky se nelámou; delší text (například s datem zprávy) se v úzké kartě zalomí.
+    <span className={`inline-flex max-w-full items-center gap-1 ${children ? '' : 'whitespace-nowrap '}rounded-full px-2.5 py-0.5 align-middle text-[12px] font-bold ${trida}`}>
       {typ === 'skola' && <Fajfka />}
       {text}
     </span>
@@ -122,6 +124,16 @@ function Stitky({ polozky }: { polozky: string[] | null | undefined }) {
     <ul className="flex flex-wrap gap-1.5">
       {p.map(x => <li key={x} className="rounded-md bg-slate-100 px-2 py-0.5 text-[14px] text-[#16325c]">{x}</li>)}
     </ul>
+  );
+}
+
+function UpozorneniNovejsiInspekce({ datumShrnuti, novejsi }: { datumShrnuti: string; novejsi: NovejsiInspekce }) {
+  return (
+    <p className="rounded-2xl bg-amber-50 px-5 py-3 text-[15px] leading-relaxed text-amber-900">
+      Shrnutí je ze zprávy z {formatDatumCz(datumShrnuti.slice(0, 10))}. Škola měla novější inspekci {formatDatumCz(novejsi.datum)};
+      její zprávu jsme zatím nezpracovali.
+      {novejsi.reportUrl && <> <a href={novejsi.reportUrl} rel="noopener noreferrer" className="font-semibold underline">Zpráva ČŠI z {formatDatumCz(novejsi.datum)}</a></>}
+    </p>
   );
 }
 
@@ -226,6 +238,9 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
   const vahaSpecialisty = (s: string) => ['psycholog', 'výchovný poradce', 'speciální pedagog', 'kariérový poradce'].findIndex(k => s.includes(k)) >>> 0;
   const specialiste = [...(inspis?.pritomnost_specialistu ?? [])].filter(s => s !== 'jiné').sort((a, b) => vahaSpecialisty(a) - vahaSpecialisty(b));
   const rokyInspekce = inspekce ? inspekce.datum.slice(0, 4) : null;
+  // Shrnutí je ze starší zprávy, než je poslední inspekce: štítky a souhrn to nesmí zamlčet (#259).
+  const novejsi = inspekce?.novejsi ?? null;
+  const stitekInspekce = rokyInspekce ? (novejsi ? `shrnutí inspekce ${rokyInspekce}, novější ${novejsi.datum.slice(0, 4)}` : `inspekce ${rokyInspekce}`) : null;
 
   const tridy = [...new Set(vypsane.map(o => o.proKoho.match(/(\d+)\. třídy/)?.[1]).filter(Boolean))].map(Number).sort((a, b) => a - b);
   const poVyuceni = vypsane.some(o => o.proKoho === 'po vyučení');
@@ -304,7 +319,9 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
               } : null,
               (maturita || inspekce) ? {
                 href: '#vede', q: 'Jak dobrá škola je',
-                a: <>{maturita?.celkem?.passed !== undefined && maturita.celkem.registered ? <>maturitu {maturita.celkem.rok} udělalo <b>{cislo(maturita.celkem.passed)} {zOd(maturita.celkem.registered)} {cislo(maturita.celkem.registered)}</b> přihlášených{jakCastoNadStredem(maturita.skupiny) ? <>, v češtině <b>{jakCastoNadStredem(maturita.skupiny)} nad středem podobných škol</b></> : null}</> : null}{maturita && inspekce ? '; ' : ''}{inspekce ? <>inspekce {rokyInspekce}: přednost „{malePismeno(inspekce.silne[0]?.tag ?? '')}“{inspekce.rizika[0] ? <>, výtka „{malePismeno(inspekce.rizika[0].tag)}“</> : null}</> : null}</>,
+                a: <>{maturita?.celkem?.passed !== undefined && maturita.celkem.registered ? <>maturitu {maturita.celkem.rok} udělalo <b>{cislo(maturita.celkem.passed)} {zOd(maturita.celkem.registered)} {cislo(maturita.celkem.registered)}</b> přihlášených{jakCastoNadStredem(maturita.skupiny) ? <>, v češtině <b>{jakCastoNadStredem(maturita.skupiny)} nad středem podobných škol</b></> : null}</> : null}{maturita && inspekce ? '; ' : ''}{inspekce ? (novejsi
+                  ? <>poslední inspekce {formatDatumCz(novejsi.datum)}, shrnutí její zprávy zatím nemáme</>
+                  : <>inspekce {rokyInspekce}: přednost „{malePismeno(inspekce.silne[0]?.tag ?? '')}“{inspekce.rizika[0] ? <>, výtka „{malePismeno(inspekce.rizika[0].tag)}“</> : null}</>) : null}</>,
               } : null,
               inspis ? {
                 href: '#jaka', q: 'Jaká škola je',
@@ -409,7 +426,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
       </Oddil>
 
       {/* 2 · Jak si škola vede */}
-      <Oddil id="vede" nadpis="Jak si škola vede" stitek={[maturita ? `maturita ${maturita.roky.at(-Math.min(4, maturita.roky.length))}–${maturita.roky.at(-1)}` : null, rokyInspekce ? `inspekce ${rokyInspekce}` : null].filter(Boolean).join(' · ') || undefined}>
+      <Oddil id="vede" nadpis="Jak si škola vede" stitek={[maturita ? `maturita ${maturita.roky.at(-Math.min(4, maturita.roky.length))}–${maturita.roky.at(-1)}` : null, stitekInspekce].filter(Boolean).join(' · ') || undefined}>
         {!maturita && !inspekce && (
           <Karta><p className="text-slate-700">Maturitní výsledky ani shrnutí inspekce pro tuto školu zatím nemáme.{data.inspekceSeznam?.lastInspectionDate ? ` Poslední inspekce proběhla ${formatDatumCz(data.inspekceSeznam.lastInspectionDate.slice(0, 10))}.` : ''}</p></Karta>
         )}
@@ -549,6 +566,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
         })()}
         {inspekce && (
           <>
+            {novejsi && <UpozorneniNovejsiInspekce datumShrnuti={inspekce.datum} novejsi={novejsi} />}
             <Karta className="space-y-2">
               <p className="max-w-[70ch] text-[17px] leading-relaxed text-slate-800">{inspekce.souhrn}</p>
               <Puvod typ="stroj">shrnutí vytvořené automaticky ze zprávy ČŠI z {formatDatumCz(inspekce.datum)}</Puvod>
@@ -594,7 +612,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
       </Oddil>
 
       {/* 3 · Jaká škola je */}
-      <Oddil id="jaka" nadpis="Jaká škola je" stitek={[rokyInspekce ? `inspekce ${rokyInspekce}` : null, inspis ? 'profil InspIS' : null].filter(Boolean).join(' · ') || undefined}>
+      <Oddil id="jaka" nadpis="Jaká škola je" stitek={[stitekInspekce, inspis ? 'profil InspIS' : null].filter(Boolean).join(' · ') || undefined}>
         {pole('popis_skoly') && (
           <figure className="space-y-2 rounded-2xl border border-[#b5e0d4] bg-white p-5">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -606,14 +624,19 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
           </figure>
         )}
         {inspekce && (inspekce.sedi.length > 0 || inspekce.opatrne.length > 0) && (
-          <div className="grid gap-3 md:grid-cols-2">
-            {([['Komu škola sedne', inspekce.sedi], ['Kdo má být opatrný', inspekce.opatrne]] as const).map(([nadpis, polozky]) => polozky.length > 0 && (
-              <Karta key={nadpis}>
-                <h3 className="mb-2 text-[16px] font-bold text-[#16325c]">{nadpis}</h3>
-                <ul className="list-disc space-y-1.5 pl-4 text-[15px] text-slate-700">{polozky.map(x => <li key={x}>{x}</li>)}</ul>
-              </Karta>
-            ))}
-          </div>
+          <>
+            {/* Blok se čte samostatně: stáří shrnutí musí říct sám, ne až oddíl „Jak si škola vede“ (#259). */}
+            {novejsi && <UpozorneniNovejsiInspekce datumShrnuti={inspekce.datum} novejsi={novejsi} />}
+            <div className="grid gap-3 md:grid-cols-2">
+              {([['Komu škola sedne', inspekce.sedi], ['Kdo má být opatrný', inspekce.opatrne]] as const).map(([nadpis, polozky]) => polozky.length > 0 && (
+                <Karta key={nadpis} className="space-y-2">
+                  <h3 className="text-[16px] font-bold text-[#16325c]">{nadpis}</h3>
+                  <ul className="list-disc space-y-1.5 pl-4 text-[15px] text-slate-700">{polozky.map(x => <li key={x}>{x}</li>)}</ul>
+                  <Puvod typ="stroj">shrnutí vytvořené automaticky ze zprávy ČŠI z {formatDatumCz(inspekce.datum)}</Puvod>
+                </Karta>
+              ))}
+            </div>
+          </>
         )}
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {inspis?.aktualni_pocet_zaku ? (
@@ -645,7 +668,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
               {pole('podpora_svp') && <p className="text-[14px] text-slate-700">{pole('podpora_svp')!.hodnota}</p>}
               {pole('kontakt_vychovny_poradce') && <p className="text-[14px] text-slate-700">Výchovný poradce: {pole('kontakt_vychovny_poradce')!.hodnota}</p>}
               {(pole('podpora_svp') || pole('kontakt_vychovny_poradce')) && <Puvod typ={znacka('podpora_svp', 'kontakt_vychovny_poradce')} />}
-              {inspekce?.podpora.length ? <p className="text-[13px] text-slate-500">Podle zprávy ČŠI: {malePismeno(inspekce.podpora[0])}</p> : null}
+              {inspekce?.podpora.length ? <p className="text-[13px] text-slate-500">Podle zprávy ČŠI z {formatDatumCz(inspekce.datum)}{novejsi ? ` (novější inspekce ${formatDatumCz(novejsi.datum)} zatím nezpracovaná)` : ''}: {malePismeno(inspekce.podpora[0])}</p> : null}
             </Karta>
           ) : null}
           {inspis?.bezbariery_pristup ? (
