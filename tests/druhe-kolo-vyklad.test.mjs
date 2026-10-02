@@ -26,9 +26,30 @@ test('nikdo se nepřihlásil, zaplněno, nenaplněno bez 2. kola a bez 2. kola',
     'Ve 2. kole 2026 škola vypsala 7 míst, ale nikdo se nepřihlásil.');
   assert.deepEqual(vetyDruhehoKola({ rok: 2026, zaznam: vypsano({ kapacita: 4, prihlasky: 4, prijati: 4, prijato_na_vyssi_prioritu: 0, nesplnilo_podminky: 0 }), predchozi: null }).doplnky, ['Místa ve 2. kole se zaplnila.']);
   const n = vetyDruhehoKola({ rok: 2026, zaznam: { stav: 'nenaplneno_bez_2_kola', kolo1_kapacita: 30, kolo1_prijati: 23 }, predchozi: { stav: 'bez_2_kola' } });
-  assert.match(n.hlavni, /přijala 23 uchazečů na 30 míst, a přesto 2\. kolo nevypsala/);
+  assert.equal(n.hlavni, 'Podle výsledků 1. kola 2026 škola přijala 23 uchazečů na 30 míst. 2. kolo nevypsala. Výsledky 1. kola nezachycují, jak škola místa obsadila potom, a méně přijatých než míst v nich neznamená, že 2. kolo bude.');
+  assert.equal(n.kratce, '2. kolo 2026 škola nevypsala; ve výsledcích 1. kola přijato 23 na 30 míst');
   assert.equal(n.predchozi, 'V roce 2025 škola 2. kolo také nevypsala.');
   const b = vetyDruhehoKola({ rok: 2026, zaznam: { stav: 'bez_2_kola' }, predchozi: vypsano({}) });
   assert.equal(b.kratce, '2. kolo 2026 nebylo, obor se naplnil v 1. kole');
   assert.equal(b.predchozi, 'V roce 2025 škola 2. kolo vypsala: 7 míst, přijato 2.');
+});
+
+test('nenaplněno o jediné místo: věta netvrdí, že místa zbyla ani že škola kolo přesto nevypsala (#258)', () => {
+  // Souhrn 1. kola 2026, obor s 25 přijatými na 26 míst; škola uvádí, že obor po 1. kole naplnila.
+  const v = vetyDruhehoKola({ rok: 2026, zaznam: { stav: 'nenaplneno_bez_2_kola', kolo1_kapacita: 26, kolo1_prijati: 25 }, predchozi: null });
+  assert.equal(v.kratce, '2. kolo 2026 škola nevypsala; ve výsledcích 1. kola přijato 25 na 26 míst');
+  assert.match(v.hlavni, /přijala 25 uchazečů na 26 míst\. 2\. kolo nevypsala\./);
+  for (const veta of [v.hlavni, v.kratce]) {
+    assert.doesNotMatch(veta, /zbyl|a přesto|volná místa/);
+  }
+});
+
+test('nenaplněno bez 2. kola: tvary podle počtu přijatých i míst (#258)', () => {
+  const veta = (prijati, kapacita) => vetyDruhehoKola({ rok: 2026, zaznam: { stav: 'nenaplneno_bez_2_kola', kolo1_kapacita: kapacita, kolo1_prijati: prijati }, predchozi: null });
+  assert.match(veta(0, 1).hlavni, /přijala 0 uchazečů na 1 místo\./);
+  assert.match(veta(1, 2).hlavni, /přijala 1 uchazeče na 2 místa\./);
+  assert.match(veta(2, 3).hlavni, /přijala 2 uchazeče na 3 místa\./);
+  assert.match(veta(4, 5).hlavni, /přijala 4 uchazeče na 5 míst\./);
+  assert.equal(veta(1, 2).kratce, '2. kolo 2026 škola nevypsala; ve výsledcích 1. kola přijato 1 na 2 místa');
+  assert.equal(veta(0, 1).kratce, '2. kolo 2026 škola nevypsala; ve výsledcích 1. kola přijato 0 na 1 místo');
 });

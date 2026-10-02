@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.52 · 1. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.53 · 2. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -454,9 +454,11 @@ Oficiální nejnižší součet bodů z češtiny a matematiky mezi přijatými 
 Není to hranice přijetí; škola mohla vážit i jiná kritéria.
 
 ### Nevypsané 2. kolo u nenaplněného oboru
-Nabídka, která v 1. kole přijala méně uchazečů, než měla míst, a přesto ve 2. kole nebyla. Kombinuje souhrn výsledků 1. kola se souhrnem 2. kola téhož roku. Pole `stav` s hodnotou `nenaplneno_bez_2_kola`.
+Nabídka, která má ve výsledcích 1. kola méně přijatých uchazečů než míst a 2. kolo nevypsala. Kombinuje souhrn výsledků 1. kola se souhrnem 2. kola téhož roku. Pole `stav` s hodnotou `nenaplneno_bez_2_kola`.
 
-V roce 2026 platí pro 47 % oborů, které se v 1. kole nenaplnily. Věta na webu proto varuje, že volná místa po 1. kole neznamenají 2. kolo.
+V roce 2026 platí pro 47 % oborů, které ve výsledcích 1. kola mají méně přijatých než míst (768 nabídek; u 300 z nich je přijatých o jednoho méně než míst). Věta na webu proto varuje, že méně přijatých po 1. kole neznamená 2. kolo.
+
+**Co neříká:** Souhrn 1. kola je stav k datu výsledků. Nezachycuje, jak škola místa obsadila potom, takže neříká, že místa zůstala neobsazená, ani proč škola 2. kolo nevypsala. Věta na webu proto popisuje čísla ze souhrnu a škole nic nepřisuzuje.
 
 ### Podíl přijímaček na bodování
 Kolik procent bodů celkového hodnocení tvořila v kritériích přijetí jednotná přijímací zkouška. Zdroj `public/kriteria_prijeti_{rok}.json` (`scripts/build-kriteria-prijeti.py`), pracovní přepis PDF kritérií z DiPSy: u strojového přepisu podíl, který PDF deklaruje, jinak maximum za JPZ po přepočtu děleno součtem kladných maxim všech složek (srážky, například za sníženou známku z chování, se nepočítají); když přepis uvádí přijímačky i mezi složkami (bonus za předmět, přepočet celku, váha pořadí), podíl se z maxim nedopočítává: platí jen podíl výslovně uvedený v PDF, bez dalších kritérií 100 %, jinak se neuvádí; u „bodují jen přijímačky“ 100. Jednotka procenta, zaokrouhleno na celá. Bez známých maxim všech složek se neuvádí.
@@ -768,6 +770,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.53 | **Nevypsané 2. kolo u nenaplněného oboru**: definice podle zdroje (ve výsledcích 1. kola méně přijatých než míst) a doplněno „co neříká“: souhrn 1. kola nezachycuje obsazení míst po výsledcích, věta na webu škole nepřisuzuje, že místa zbyla (#258). |
 | 1.52 | **Pokrytí zpráv z webů škol**: výpis aktualit se počítá ze sklizně (`skola_feed.typ` html/tinyfish), snímek sondy jen u škol, které sklizeň ještě nezapsala; kanál novinek jen typ rss/atom. |
 | 1.51 | Nový ukazatel **pokrytí zpráv z webů škol** (oddíl 6) pro prototyp „Čím školy žijí“: počet škol se zprávou za 30 dní podle zdroje, kanál novinek k okamžiku zobrazení, výpis aktualit ke dni sondy 1. 10. 2026. |
 | 1.50 | *Výsledek uchazeče ve 2. kole* a *Volná místa po 2. kole* (30. 9. 2026): převzata data uchazečů 2. kola 2026 (sada `cermat-uchazeci-kolo2`, dosud nepoužito) pro balíček a stránku `/pro-novinare`. |
