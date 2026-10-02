@@ -623,14 +623,19 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
           </figure>
         )}
         {inspekce && (inspekce.sedi.length > 0 || inspekce.opatrne.length > 0) && (
-          <div className="grid gap-3 md:grid-cols-2">
-            {([['Komu škola sedne', inspekce.sedi], ['Kdo má být opatrný', inspekce.opatrne]] as const).map(([nadpis, polozky]) => polozky.length > 0 && (
-              <Karta key={nadpis}>
-                <h3 className="mb-2 text-[16px] font-bold text-[#16325c]">{nadpis}</h3>
-                <ul className="list-disc space-y-1.5 pl-4 text-[15px] text-slate-700">{polozky.map(x => <li key={x}>{x}</li>)}</ul>
-              </Karta>
-            ))}
-          </div>
+          <>
+            {/* Blok se čte samostatně: stáří shrnutí musí říct sám, ne až oddíl „Jak si škola vede“ (#259). */}
+            {novejsi && <UpozorneniNovejsiInspekce datumShrnuti={inspekce.datum} novejsi={novejsi} />}
+            <div className="grid gap-3 md:grid-cols-2">
+              {([['Komu škola sedne', inspekce.sedi], ['Kdo má být opatrný', inspekce.opatrne]] as const).map(([nadpis, polozky]) => polozky.length > 0 && (
+                <Karta key={nadpis} className="space-y-2">
+                  <h3 className="text-[16px] font-bold text-[#16325c]">{nadpis}</h3>
+                  <ul className="list-disc space-y-1.5 pl-4 text-[15px] text-slate-700">{polozky.map(x => <li key={x}>{x}</li>)}</ul>
+                  <Puvod typ="stroj">shrnutí vytvořené automaticky ze zprávy ČŠI z {formatDatumCz(inspekce.datum)}</Puvod>
+                </Karta>
+              ))}
+            </div>
+          </>
         )}
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {inspis?.aktualni_pocet_zaku ? (
@@ -662,7 +667,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
               {pole('podpora_svp') && <p className="text-[14px] text-slate-700">{pole('podpora_svp')!.hodnota}</p>}
               {pole('kontakt_vychovny_poradce') && <p className="text-[14px] text-slate-700">Výchovný poradce: {pole('kontakt_vychovny_poradce')!.hodnota}</p>}
               {(pole('podpora_svp') || pole('kontakt_vychovny_poradce')) && <Puvod typ={znacka('podpora_svp', 'kontakt_vychovny_poradce')} />}
-              {inspekce?.podpora.length ? <p className="text-[13px] text-slate-500">Podle zprávy ČŠI: {malePismeno(inspekce.podpora[0])}</p> : null}
+              {inspekce?.podpora.length ? <p className="text-[13px] text-slate-500">Podle zprávy ČŠI z {formatDatumCz(inspekce.datum)}{novejsi ? ` (novější inspekce ${formatDatumCz(novejsi.datum)} zatím nezpracovaná)` : ''}: {malePismeno(inspekce.podpora[0])}</p> : null}
             </Karta>
           ) : null}
           {inspis?.bezbariery_pristup ? (

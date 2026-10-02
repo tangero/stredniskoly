@@ -45,7 +45,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 function formatCzechDate(dateStr: string): string {
   if (!dateStr) return '';
-  const date = new Date(dateStr);
+  // Kalendářní datum, ne okamžik: přes new Date('RRRR-MM-DD') by v pásmu západně od UTC vyšel předchozí den.
+  const [rok, mesic, den] = dateStr.slice(0, 10).split('-').map(Number);
+  const date = new Date(rok, mesic - 1, den);
   return date.toLocaleDateString('cs-CZ', {
     day: 'numeric',
     month: 'long',
@@ -307,7 +309,7 @@ export default async function InspectionPage({ params }: Props) {
             <div className="flex flex-wrap items-center gap-4 text-sm opacity-80 mt-3">
               <span>{school.obec}, {krajNames[school.kraj_kod] || school.kraj}</span>
               <span>•</span>
-              <span>{extractions.length} {extractions.length === 1 ? 'inspekce' : extractions.length < 5 ? 'inspekce' : 'inspekcí'}</span>
+              <span>{extractions.length} {extractions.length === 1 ? 'shrnutá inspekce' : extractions.length < 5 ? 'shrnuté inspekce' : 'shrnutých inspekcí'}</span>
               <span>•</span>
               <Link href={`/skola/${overviewSlug}`} className="underline hover:no-underline">
                 Zpět na přehled školy

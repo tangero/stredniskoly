@@ -24,3 +24,12 @@ test('bez seznamu, bez shrnutí nebo bez inspekcí: žádné upozornění', () =
 test('zpráva bez odkazu: datum ano, odkaz null', () => {
   assert.deepEqual(novejsiInspekce(seznam(insp('2026-01-19', '')), '2021-11-23'), { datum: '2026-01-19', reportUrl: null });
 });
+
+test('okrajové vstupy: prázdné dateFrom, shrnutí novější než seznam, týž den s jiným časem', () => {
+  const prazdne = { dateFrom: '', dateTo: '', reportUrl: 'x', portalUrl: '' };
+  assert.equal(novejsiInspekce(seznam(prazdne), '2021-11-23'), null);
+  assert.deepEqual(novejsiInspekce(seznam(prazdne, insp('2026-01-19')), '2021-11-23')?.datum, '2026-01-19');
+  assert.equal(novejsiInspekce(seznam(insp('2021-11-23')), '2026-01-19'), null);
+  const tyzDen = { ...insp('2026-01-19'), dateFrom: '2026-01-19T23:59:59.9966667' };
+  assert.equal(novejsiInspekce(seznam(tyzDen), '2026-01-19T00:00:00'), null);
+});
