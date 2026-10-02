@@ -31,16 +31,11 @@ jobs:
       - name: Status Schváleno
         run: |
           set -euo pipefail
+          # addProjectV2ItemById je idempotentní: issue, které už na tabuli je,
+          # nepřidá znovu a vrátí jeho stávající položku.
           polozka=$(gh api graphql -f query='
-            query($id: ID!) { node(id: $id) { ... on Issue {
-              projectItems(first: 20) { nodes { id project { id } } } } } }' \
-            -f id="$ISSUE_ID" \
-            --jq ".data.node.projectItems.nodes[] | select(.project.id == \"$PROJEKT\") | .id")
-          if [ -z "$polozka" ]; then
-            polozka=$(gh api graphql -f query='
-              mutation($p: ID!, $c: ID!) { addProjectV2ItemById(input: {projectId: $p, contentId: $c}) { item { id } } }' \
-              -f p="$PROJEKT" -f c="$ISSUE_ID" --jq '.data.addProjectV2ItemById.item.id')
-          fi
+            mutation($p: ID!, $c: ID!) { addProjectV2ItemById(input: {projectId: $p, contentId: $c}) { item { id } } }' \
+            -f p="$PROJEKT" -f c="$ISSUE_ID" --jq '.data.addProjectV2ItemById.item.id')
           nastav() {
             gh api graphql -f query='
               mutation($p: ID!, $i: ID!, $f: ID!, $o: String!) {
