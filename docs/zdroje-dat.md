@@ -241,7 +241,7 @@ Otázka rodiče je jediná: **jak dlouho bude dítě dojíždět**. Odpovídáme
 | Soubor | Vzniká z | Skript | Poznámka |
 |---|---|---|---|
 | `schools_data.json` | CERMAT agregáty + data uchazečů | `build-catalogue-2026.py`, `enrich_schools_data.py` | katalog, ročníky 2024 až 2026 |
-| `applications_2026.json` | CERMAT přihlášky 2026 | `import_cermat_2026_real.py` | pole `pp` jsou priority |
+| `applications_2026.json` | CERMAT přihlášky 2026 | `import_cermat_2026_real.py`, obnova `refresh_cermat_data.py` | pole `pp` jsou priority; příznak `is_new` (a `is_new_2026` v `school_analysis.json`) má jen nabídka, jejíž obor (REDIZO + KKOV) nebyl v 1. kole předchozího roku. Doklad je úplný souhrn 1. kola, ne `schools_data.json`, který za 2024 a 2025 nemá nástavby; bez XLSX přepočet `refresh_cermat_data.py --oprav-novinky` z `druhe_kolo.json` (#257) |
 | `cermat_results_2026.json` | CERMAT výsledky 2026 a 2025 | `refresh_cermat_data.py` | nese otisk zdroje |
 | `kontext_prihlasek_{rok}.json` | data uchazečů, index názvů z rejstříku škol MŠMT | `build-kontext-prihlasek.py` | výsledek uchazečů o obor, obory výš a níž na přihlášce, odvozená hranice úspěšnosti; linka přepočítává s pásmy a souběhem; pole `mimo_prehled` nese název školy, obce a oboru u oborů, které katalog nevede (z `scripts/nazvy_oboru.py`, stejně jako souběžné přihlášky), a příznak kategorie bez jednotné zkoušky (C, E, H, J, P) |
 | `skoly_web.json` | rejstřík CSV, `WWW` | `build-skoly-web.py` | odkaz na web školy |

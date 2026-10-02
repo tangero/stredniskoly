@@ -15,7 +15,7 @@ import openpyxl
 
 sys.path.insert(0, str(Path(__file__).parent.parent / 'scripts'))
 from import_cermat_results import load_flat_xlsx, extract_current_year, compute_ranks, make_key, is_valid_flat
-from refresh_cermat_data import build_applications
+from refresh_cermat_data import build_applications, oznac_novinky, zaklady_z_druheho_kola
 
 
 def record(**overrides):
@@ -135,6 +135,36 @@ class TestImportCermatResults(unittest.TestCase):
         row['ČJ+MA - % SKÓR - PRŮMĚR'] = 201
         with self.assertRaises(ValueError):
             admission_context(row)
+
+
+
+class NovinkyTest(unittest.TestCase):
+    """Příznak nové nabídky podle loňského 1. kola, ne podle schools_data.json (issue #257)."""
+
+    def test_nastavba_z_lonskeho_1_kola_neni_nova(self):
+        # Nástavba chybí v schools_data.json 2025, ale v 1. kole 2025 byla (druhe_kolo.json).
+        druhe_kolo = {'roky': {'2025': {'123_64-41-L/51': {'stav': 'nenaplneno_bez_2_kola'},
+                                        '123_79-41-K/41_prirodovedne': {'stav': 'bez_2_kola'}}}}
+        predchozi = zaklady_z_druheho_kola(druhe_kolo, 2025)
+        self.assertEqual(predchozi, {'123_64-41-L/51', '123_79-41-K/41'})
+        apps = [
+            {'redizo': '123', 'kkov': '64-41-L/51', 'is_new': True},
+            # Jiné zaměření téhož oboru než loni: obor nový není.
+            {'redizo': '123', 'kkov': '79-41-K/41', 'is_new': True},
+            {'redizo': '123', 'kkov': '18-20-M/01'},
+        ]
+        analysis = {'123_64-41-L/51': {'is_new_2026': True}, '123_18-20-M/01': {},
+                    '123_23-41-M/01': {'is_new_2026': True}}
+        oznac_novinky(apps, analysis, predchozi)
+        self.assertEqual([a.get('is_new') for a in apps], [None, None, True])
+        self.assertNotIn('is_new_2026', analysis['123_64-41-L/51'])
+        self.assertTrue(analysis['123_18-20-M/01']['is_new_2026'])
+        # Obor, který letos vypsaný není, novinkou být nemůže.
+        self.assertNotIn('is_new_2026', analysis['123_23-41-M/01'])
+
+    def test_chybejici_rocnik_je_chyba(self):
+        with self.assertRaises(ValueError):
+            zaklady_z_druheho_kola({'roky': {'2026': {}}}, 2025)
 
 
 if __name__ == '__main__':
