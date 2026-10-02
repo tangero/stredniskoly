@@ -13,8 +13,10 @@ on:
 
 permissions: {}
 
+# Skupinu sdílejí jen události štítku schvaleno. Jiné štítky dostanou vlastní
+# skupinu, aby čekající běh (třeba odvolání schválení) nenahradily.
 concurrency:
-  group: tabule-${{ github.event.issue.number }}
+  group: tabule-${{ github.event.issue.number }}-${{ github.event.label.name == 'schvaleno' && 'schvaleno' || github.run_id }}
 
 env:
   GH_TOKEN: ${{ secrets.PROJECT_TOKEN }}
@@ -68,7 +70,9 @@ jobs:
           # „Item added“, která asynchronně nastaví Návrh a může přepsat Schváleno.
           # Stav se proto sleduje celé okno (5 × 15 s), ne jen do prvního úspěchu.
           # Znovu se nastavuje jen Návrh nebo prázdný stav (to dělá automatizace);
-          # jiný sloupec, třeba Oponentura, zvolil člověk a zůstává.
+          # jiný sloupec, třeba Oponentura, zvolil člověk během okna a zůstává.
+          # Před prvním nastavením se stav nečte záměrně: přidání schvaleno je
+          # schválení a přesune issue do Schváleno z kteréhokoli sloupce.
           nastav
           for pokus in 1 2 3 4 5; do
             sleep 15
