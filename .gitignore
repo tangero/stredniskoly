@@ -99,3 +99,6 @@ public/novinky/
 
 # PDF kritérií a ručně hodnocený pilot DiPSy zůstávají lokálně.
 /data/dipsy-kriteria-pilot/
+
+# Manifest měření karet DiPSy u nabídek bez JPZ (#244); commituje se jen souhrn v docs/podklady/.
+/data/dipsy-karty-bez-jpz-2026/

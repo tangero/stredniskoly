@@ -575,9 +575,32 @@ nemění (omezení zadání); přepnutí období se řídí stávajícími sadam
 `scripts/mereni-obory-bez-jpz.py`, který k tomu volá párovací kód importu
 (`scripts/match_obory_2025_2026.py`, `scripts/build-druhe-kolo.py`), ne jeho kopii.
 
-1. **DiPSy:** zatím bez odpovědi. Způsob dotazů je ohlášený v komentáři issue #244
-   a čeká na schválení vlastníkem (pravidlo 7 v `CLAUDE.md`). Do té doby platí
-   omezení ze zadání: kritéria ani bodování se u učebních oborů neslibují.
+1. **DiPSy: karta s PDF podmínek přijetí existuje u všech nabídek; na stránce
+   bude odkaz na PDF, ne přepis kritérií.** Měřeno 2. 10. 2026 způsobem
+   schváleným v issue #244. Proběhlo 2 902 dotazů na karty bez jediné chyby
+   (`scripts/mereni-dipsy-bez-jpz.py`, souhrn `docs/podklady/mereni-dipsy-bez-jpz-2026.json`).
+   - Kartu s PDF podmínek přijetí (`podminkyProPrijeti.fileId`) má 2 890 nabídek,
+     u nichž souhlasí ID karty, rok, kolo, REDIZO i kód oboru.
+   - Zbylých 12 (10 E a 2 C) patří jedné škole, kterou DiPSy vede pod jiným
+     REDIZO než CERMAT (600027295 proti 600027287). Karta i PDF existují.
+     Etapa 1 musí odkaz u této školy párovat přes `ID_SOF`, ne přes REDIZO.
+   - **Vzorek 30 PDF** (H 10, E 6, M 5, P 5, C 4; náhodně, semínko 244;
+     přečteny ručně, žádný model ani služba třetí strany, PDF se necommitují):
+     - 3 z 30 jsou skeny bez textové vrstvy (OCR by bylo nutné);
+     - u oborů H a E školy většinou bodují průměrný prospěch ze ZŠ, často
+       s minimem bodů a pomocnými kritérii při rovnosti;
+     - u uměleckých M a konzervatoří P rozhoduje talentová zkouška;
+     - u praktické školy (C) pohovor a doporučení školského poradenského
+       zařízení;
+     - téměř všude se požaduje lékařský posudek o zdravotní způsobilosti;
+     - nejméně 4 z 27 čitelných PDF jsou společné pro celou školu a bodují
+       v jednom dokumentu i obory s jednotnou zkouškou. Stejné riziko, jaké
+       popisuje `docs/predani-kriteria-prijeti-2026-09-25.md`: přepis by mohl
+       přiřadit bodování jiného oboru.
+   - **Důsledek pro fázi 2:** stránka učebního oboru dostane odkaz „Podmínky přijetí
+     (PDF v DiPSy)“ u všech nabídek. Přepis kritérií, body ani minima se
+     nezobrazují. Přepis by potřeboval stejný postup s kontrolou jako u oborů
+     se zkouškou (issue #181), a to je samostatné zadání.
 2. **Konzervatoře (P): ukázat hned, s výhradou** (rozhodnutí vlastníka 2. 10. 2026).
    Denních nezkrácených nabídek je 146 v 18 školách. Kapacitu mají všechny, počty
    přihlášek a přijatých chybí u 26 nabídek z 5 škol. Údaj „43 ze 178“ v otázce
@@ -612,8 +635,25 @@ nemění (omezení zadání); přepnutí období se řídí stávajícími sadam
    i párování oborů se zkouškou. Patří do samostatného zadání.
 5. **Generátory souběhu a kontextu:** řeší etapa 2.
 6. Vyřešeno: doplněk návrhu simulátoru je sloučený (PR #246).
-7. **Rešerše o odborném výcviku a stipendiích:** čeká na schválení ohlášeného
-   způsobu (vyhledávání na webu je dotaz na cizí server). Do té doby o obou mlčíme.
+7. **Rešerše o odborném výcviku a stipendiích (2. 10. 2026, způsob schválený
+   v issue #244): strojově čitelný zdroj neexistuje, web o obou dál mlčí.**
+   Rešerše proběhla přes 8 vyhledávání a 3 stránky. U jedné vrátil server 403
+   a znovu jsem ji nezkoušel.
+   - *Krajská stipendia.* Programy mají jednotlivé kraje (Liberecký kraj
+     27 oborů na 14 školách s motivačním a prospěchovým stipendiem, dále
+     Karlovarský a Jihočeský kraj, Moravskoslezský kraj má návrh). Kraje je
+     zveřejňují tiskovými zprávami a usneseními rady v PDF a schvalují je
+     na pololetí. Jednotný ani strojově čitelný přehled škol a oborů
+     neexistuje. Zobrazení by vyžadovalo ručně vedený registr po krajích,
+     obnovovaný každé pololetí. To je samostatné zadání, ne součást fáze 2.
+   - *Odborný výcvik u firem.* Novela školského zákona (zákon č. 267/2025 Sb.,
+     § 65a–65f) zavádí duální praktické vyučování u certifikovaných
+     poskytovatelů. MŠMT má zveřejňovat seznam standardů kvality a seznam
+     platných certifikátů poskytovatele (metodická informace MŠMT z ledna 2026).
+     Takový seznam rešerše nenašla, certifikace teprve začíná. Seznam navíc
+     ponese poskytovatele, ne vazbu na školu a obor, takže sám neřekne,
+     kde konkrétní škola výcvik zajišťuje. Kandidát na sledování datovou
+     linkou, až MŠMT seznam zveřejní.
 8. Vyřešeno v zadání: každá etapa má vlastní PR.
 9. **Místa podle druhu studia: šest skupin** (rozhodnutí vlastníka 2. 10. 2026):
    gymnázia (K), maturitní obory (M a L včetně uměleckých), konzervatoře (P),
@@ -694,7 +734,7 @@ zopakovat jedním příkazem. Níže verdikt ke každé námitce s důkazem:
 
 | Verze | Změna |
 |---|---|
-| 1.2 | Odpovědi z etapy 0 fáze 2 (#244, oddíl 16.1): párování 2025 ↔ 2026 (96 %) a 1. ↔ 2. kola, konzervatoře s výhradou, kategorie J zahrnuta, šest skupin souhrnu míst; pojem pro kategorii J. Otázky 1 a 7 čekají na schválení dotazů na cizí servery. |
+| 1.2 | Odpovědi z etapy 0 fáze 2 (#244, oddíl 16.1): párování 2025 ↔ 2026 (96 %) a 1. ↔ 2. kola, konzervatoře s výhradou, kategorie J zahrnuta, šest skupin souhrnu míst; pojem pro kategorii J. Otázky 1 a 7 změřeny po schválení dotazů na cizí servery (DiPSy, rešerše). |
 | 1.1 | Vypořádání oponentury (oddíl 17): přepsané oddíly 10 a 11, nová měření 3.5–3.7 a 5.1, oprava chyby o nástavbách, rozhodnutí o C/E, dva nové ukazatele, domovy mládeže. |
 | 1.0 | První návrh (fáze 1, issue #209). |
 
