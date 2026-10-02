@@ -66,8 +66,9 @@ jobs:
           }
           # Přidání na tabuli (i automatické u nového issue) spouští automatizaci
           # „Item added“, která asynchronně nastaví Návrh a může přepsat Schváleno.
-          # Stav se proto sleduje celé okno (5 × 15 s), ne jen do prvního úspěchu,
-          # a kdykoli je přepsaný, nastaví se znovu.
+          # Stav se proto sleduje celé okno (5 × 15 s), ne jen do prvního úspěchu.
+          # Znovu se nastavuje jen Návrh nebo prázdný stav (to dělá automatizace);
+          # jiný sloupec, třeba Oponentura, zvolil člověk a zůstává.
           nastav
           for pokus in 1 2 3 4 5; do
             sleep 15
@@ -75,13 +76,18 @@ jobs:
               echo "Issue #$CISLO už není otevřené se štítkem schvaleno, Status nechávám"
               exit 0
             fi
-            if [ "$(stav)" != "$SCHVALENO" ]; then
-              echo "Kontrola $pokus: Status přepsán, nastavuji znovu"
+            ted=$(stav)
+            if [ "$ted" = "$NAVRH" ] || [ -z "$ted" ]; then
+              echo "Kontrola $pokus: Status přepsán na Návrh, nastavuji znovu"
               nastav
+            elif [ "$ted" != "$SCHVALENO" ]; then
+              echo "Issue #$CISLO přesunuto ručně do jiného sloupce, Status nechávám"
+              exit 0
             fi
           done
           sleep 5
-          if [ "$(platne)" = "true" ] && [ "$(stav)" != "$SCHVALENO" ]; then
+          ted=$(stav)
+          if [ "$(platne)" = "true" ] && { [ "$ted" = "$NAVRH" ] || [ -z "$ted" ]; }; then
             echo "::error::Issue #$CISLO: Status se nepodařilo udržet na Schváleno"
             exit 1
           fi
@@ -117,3 +123,7 @@ jobs:
                 value: {singleSelectOptionId: $o}}) { projectV2Item { id } } }' \
             -f p="$PROJEKT" -f i="$polozka" -f f="$POLE_STATUS" -f o="$NAVRH" >/dev/null
           echo "Issue #$CISLO: Status Návrh"
+          # Interní zadání čekající na schválení nese štítek navrh (formulář ho přidává).
+          if [ "$(gh issue view "$CISLO" -R "$REPO" --json labels --jq 'any(.labels[]; .name == "interni")')" = "true" ]; then
+            gh issue edit "$CISLO" -R "$REPO" --add-label navrh
+          fi
