@@ -48,7 +48,7 @@ pnpm run build
 
 Při novější revizi vstupu aktualizovat `SOURCE_DATES` podle katalogu CERMAT, porovnat počty a rozdíly před publikací. Import kontroluje rok/kolo, hlavičky, kolize, rozsah skóre a součet priorit; všechny exporty připraví a serializuje před prvním zápisem. Druhý import má dát stejný výstup. Test čte také publikovaný ICS a odhalí rozdíl proti zdrojovému JSON.
 
-Starý skript `import_cermat_2026_real.py` je určen původnímu přihláškovému formátu s pozičními sloupci. Pro tuto obnovu jej nepoužívat. `import_cermat_results.py --year` zůstává pomocným importem; úplnou konzistentní obnovu veřejných dat zajišťuje `refresh_cermat_data.py`.
+Starý skript `import_cermat_2026_real.py` je určen původnímu přihláškovému formátu s pozičními sloupci. Pro tuto obnovu jej nepoužívat. `import_cermat_results.py --year` zůstává pomocným importem; úplnou konzistentní obnovu veřejných dat zajišťuje `refresh_cermat_data.py`. Je to jediný podporovaný postup pro společnou obnovu `applications_2026.json`, `school_analysis.json` a `cermat_results_2026.json`; starší importy do nich zapisují také, ale jen částečně. Březnový `apply_matching.py` byl odstraněn (#265): četl zastaralé párování z `data/obory_matching.json` a na zářijových datech přepsal stovky polí (párování s rokem 2025, kapacity a přihlášky 2026, příznak nového oboru). Párovací logika zůstává v `match_obory_2025_2026.py`.
 
 ## Ověření před publikací
 
