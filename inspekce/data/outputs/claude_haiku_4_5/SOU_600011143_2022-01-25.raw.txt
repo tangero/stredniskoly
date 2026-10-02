@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "SOU_600011143_2022-01-25",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola a Střední odborná škola gastronomie a služeb",
+    "inspection_period": "25. 1. 2022 – 4. 3. 2022",
+    "school_change_summary": "Škola se modernizuje díky podpoře zřizovatele a partnerů, ale pedagogické vedení a kvalita výuky zůstávají problematické. Výsledky maturit jsou podprůměrné, zejména v matematice a češtině."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava na profesi",
+        "detail": "Spolupráce se zaměstnavateli a projekty zajišťují kvalitní přípravu na budoucí práci.",
+        "evidence": "Spoluprací se zaměstnavateli se daří žáky účelně připravovat na budoucí profesi."
+      },
+      {
+        "tag": "Dobrá materiální vybavení",
+        "detail": "Škola má moderně vybavené učebny, školní kuchyň a provozovnu pro praktickou výuku.",
+        "evidence": "Materiální a prostorové podmínky umožňují plnit požadavky školních vzdělávacích programů v plném rozsahu."
+      },
+      {
+        "tag": "Příjemné prostředí",
+        "detail": "Atmosféra ve třídách je vstřícná a klidná, žáci spolupracují a respektují pravidla.",
+        "evidence": "Příjemná a vstřícná atmosféra ve třídách přispívala ke klidnému průběhu vzdělávání."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky maturit",
+        "detail": "Třetina žáků neuspěje ve společné části maturitní zkoušky, zejména v češtině a matematice.",
+        "evidence": "V matematice oboru Technické lyceum byli žáci 4x více neúspěšní než průměr ČR (26,7–34,6 % vs 7,1–8,3 %)."
+      },
+      {
+        "tag": "Frontální výuka bez individualizace",
+        "detail": "Učitelé málo využívají aktivní metody, diferenciaci a individuální přístup k žákům.",
+        "evidence": "Individualizace a diferenciace zadávaných úkolů podle individuálních potřeb žáků nebyla využívána."
+      },
+      {
+        "tag": "Slabá podpora žáků se speciálními potřebami",
+        "detail": "Škola nedostatečně sleduje účinnost podpory a neplní doporučení poradenských zařízení.",
+        "evidence": "Škola nedostatečně pracuje s doporučeními školských poradenských zařízení, nevypracovává individuální vzdělávací plány."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola připravuje žáky na maturitní zkoušku z matematiky a češtiny, kde mají horší výsledky?",
+      "Jaké aktivní a kooperativní metody výuky používáte v hodinách cizích jazyků?",
+      "Jak škola pracuje se žáky se speciálními vzdělávacími potřebami a jak sleduje účinnost jejich podpory?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické obory (gastronomie, kosmetické služby, prodej) – zde jsou lepší výsledky",
+      "Studenti, kteří se chtějí připravit na konkrétní profesi s podporou zaměstnavatelů",
+      "Žáci, kterým vyhovuje tradiční frontální výuka a klidné školní prostředí"
+    ],
+    "who_should_be_cautious": [
+      "Zájemci o Technické lyceum – matematika je slabá stránka (4x vyšší neúspěšnost než průměr)",
+      "Studenti oboru Kosmetické služby – nejhorší výsledky v češtině a cizích jazycích (30–40 % neúspěšnosti)",
+      "Žáci se speciálními vzdělávacími potřebami – podpora není dostatečně efektivní a systematická"
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní praktickou přípravu a moderní vybavení, ale má vážné problémy s výsledky maturit. Třetina žáků neuspěje ve společné části, zvlášť v matematice a češtině. Výuka je převážně frontální bez individualizace. Pozitivní je příjemné prostředí a spolupráce se zaměstnavateli. Žáci s výučním listem si vedou lépe. Rodiče by měli zvážit, zda je jejich dítě připraveno na slabší podporu v teoretických předmětech."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Podprůměrné výsledky ve společné části maturitní zkoušky",
+      "key_numbers": [
+        "Matematika Technické lyceum: 26,7 % (2019) a 34,6 % (2020) neúspěšnosti vs 7,1–8,3 % v ČR",
+        "Kosmetické služby: 30,7 % (2019), 40 % (2020), 30,4 % (2021) neúspěšnosti",
+        "Strojírenství: 26,5 % neúspěšnosti v češtině (2020) vs 3,6 % v ČR"
+      ],
+      "evidence": "Výsledky žáků školy byly ve většině oborů podprůměrné v porovnání s výsledky v daných skupinách oborů v ČR."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Zpráva se absence věnuje minimálně, údaje nejsou dostupné."
+    },
+    "support_services": [
+      "Dvě výchovné poradkyně a metodička prevence – jejich spolupráce nebyla systematicky nastavena",
+      "Individuální konzultace pro žáky ohrožené školní neúspěšností – nejsou dostatečně efektivní",
+      "Doučování posledních ročníků z odborných předmětů v rámci Národního plánu doučování (1. pololetí 2021/2022)",
+      "Spolupráce s Městskou policií Most – pravidelné besedy"
+    ],
+    "safety_climate": [
+      "Příjemná a vstřícná atmosféra ve třídách",
+      "Žáci respektují dohodnutá pravidla komunikace",
+      "Demokratický styl řízení školy podporuje vstřícné pracovní prostředí",
+      "Třídní učitelé posilují pozitivní vztahy ve třídách v rámci třídnických hodin"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zaměstnavateli – účelná příprava žáků na budoucí profesi",
+      "Projekt Dílny se základními školami – zvyšuje zájem o školu",
+      "Podpora zřizovatele (Ústecký kraj) – modernizace materiálně-technických podmínek",
+      "Spolupráce s Městskou policií Most – preventivní besedy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je jasně strukturovaná a srozumitelná. Konkrétní čísla a příklady jsou dobře zdokumentovány. Slabší je pouze v některých pasážích s úřednickým jazykem, ale pro rodiče jsou klíčové informace jasné.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – nelze posoudit problém s chybějícími žáky",
+      "Počty žáků se speciálními potřebami (24) nejsou dále analyzovány – není jasné, jak efektivně jsou podporováni",
+      "Konkrétní opatření, která škola přijala po inspekci, nejsou v textu – zpráva je z dubna 2022"
+    ]
+  }
+}
+```

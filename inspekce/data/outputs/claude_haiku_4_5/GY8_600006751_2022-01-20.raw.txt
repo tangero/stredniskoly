@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY8_600006751_2022-01-20",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium",
+    "inspection_period": "20.–21. a 24. ledna 2022",
+    "school_change_summary": "Nový ředitel od roku 2019 zvýšil podíl vedoucích pracovníků, dokončil rozsáhlou rekonstrukci budovy a aktivizoval žákovský parlament. Naplněnost školy vzrostla na 75 %, vzdělává 365 žáků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky u maturity",
+        "detail": "Všichni žáci složili maturitu, více než 40 % s vyznamenáním, dlouhodobě lepší výsledky než republikový průměr.",
+        "evidence": "V minulých třech rocích všichni žáci složili maturitu, více než 40 % s vyznamenáním."
+      },
+      {
+        "tag": "Kvalitní vedení a řízení",
+        "detail": "Ředitel systematicky vede školu, efektivně spolupracuje s vedením a předmětovými komisemi.",
+        "evidence": "Řídicí činnost je systematická a plánovitá, pedagogická rada efektivně projednává zásadní dokumenty."
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Škola nabízí volitelné semináře, kroužky a motivuje žáky k účasti v soutěžích a olympiádách.",
+        "evidence": "Nadaní žáci se účastní vědomostních soutěží v krajských a celostátních kolech."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Všichni žáci plnili stejné úkoly, nadaní žáci nejsou dostatečně využíváni v průběhu hodin.",
+        "evidence": "Ve sledované výuce všichni žáci plnili stejné úkoly, diferenciace nebyla patrná."
+      },
+      {
+        "tag": "Vysoká úrazovost",
+        "detail": "Míra úrazovosti je dlouhodobě vyšší než celorepublikový průměr, přestože klesá.",
+        "evidence": "Úrazovost klesá, ale je dlouhodobě vyšší než celorepublikový průměr."
+      },
+      {
+        "tag": "Málo kooperativních forem výuky",
+        "detail": "Ve třech čtvrtinách hodin se používá frontální výuka s nízkou mírou zapojení žáků.",
+        "evidence": "Ve třech čtvrtinách hodin byla využita frontální organizace s nízkou mírou zapojení žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně budete v příštím roce zlepšovat diferenciaci výuky pro nadané žáky?",
+      "Jaké konkrétní opatření přijímáte na snížení úrazovosti?",
+      "Jak se plánuje zvyšovat podíl kooperativních a aktivizujících forem výuky?"
+    ],
+    "who_school_fits": [
+      "Nadaní a motivovaní žáci, kteří chtějí kvalitní přípravu na vysokou školu",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje individuální podporu",
+      "Žáci zajímající se o přírodovědné obory a jazyky"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individualizované přístupy – diferenciace není zatím dostatečná",
+      "Žáci s nižší motivací, kterým může frontální výuka vyhovovat méně",
+      "Žáci se zdravotními problémy – vyšší úrazovost než průměr"
+    ],
+    "plain_czech_summary": "Gymnázium Vlašim je kvalitní škola s výbornými výsledky u maturity a dobrou organizací. Nový ředitel od roku 2019 zlepšil podmínky a vedení. Žáci dosahují velmi dobrých prospěchů, zejména v přírodovědných předmětech. Slabinou je nedostatečná diferenciace výuky pro nadané žáky a vysoká úrazovost. Škola by měla více využívat aktivizující metody místo frontální výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně výborný",
+      "key_numbers": [
+        "100 % úspěšnost v posledních třech rocích",
+        "Více než 40 % s vyznamenáním",
+        "Lepší výsledky než republikový průměr v předmětech společné části"
+      ],
+      "evidence": "V minulých třech školních rocích ji složili všichni žáci, více než 40 % s vyznamenáním, lepší výsledky než průměr v republice."
+    },
+    "absence": {
+      "trend": "Výrazně klesající",
+      "key_numbers": [
+        "2018/2019: ~110 hodin na žáka",
+        "2019/2021: pokles na polovinu",
+        "Neomluvená absence: 0"
+      ],
+      "evidence": "Absence se pohybovala kolem 110 hodin na žáka, v letech 2019/2020 a 2020/2021 poklesla na polovinu, neomluvená absence se nevyskytla."
+    },
+    "support_services": [
+      "Školní metodik prevence a kvalifikovaný výchovný poradce",
+      "Výchovné komise pro komplexní řešení problémů žáků",
+      "Individuální konzultace a doučování pro žáky ohrožené neúspěšností"
+    ],
+    "safety_climate": [
+      "Žáci dodržují školní řád a chování je ohleduplné",
+      "Úrazovost dlouhodobě vyšší než celorepublikový průměr, ale klesá",
+      "Pravidla bezpečnosti zakotvena ve vnitřních předpisech"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem (Středočeský kraj) na zlepšení materiálních podmínek",
+      "Partnerství se spolkem rodičů na obnovu zařízení",
+      "Mezinárodní vztahy se školou v Německu ve spolupráci s Obchodní akademií Vlašim"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi podrobná, jasně strukturovaná a obsahuje konkrétní údaje. Všechna tvrzení jsou podpořena důkazy z textu. Jazyk je srozumitelný a bez zbytečného úřednického stylu.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o počtu učitelů a jejich kvalifikaci v procentech",
+      "Chybí konkrétní údaje o počtu žáků v jednotlivých ročnících",
+      "Není specifikováno, jaké konkrétní opatření ředitel přijal na snížení úrazovosti"
+    ]
+  }
+}
+```

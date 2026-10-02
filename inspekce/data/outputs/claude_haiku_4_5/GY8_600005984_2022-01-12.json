@@ -1,10 +1,114 @@
 {
   "report_id": "GY8_600005984_2022-01-12",
   "model_id": "claude_haiku_4_5",
-  "run_started_utc": "2026-02-09T17:06:25.978204+00:00",
-  "run_finished_utc": "2026-02-09T17:06:26.075519+00:00",
+  "run_started_utc": "2026-10-02T19:41:10.780465+00:00",
+  "run_finished_utc": "2026-10-02T19:41:36.106182+00:00",
   "raw_file": "GY8_600005984_2022-01-12.raw.txt",
-  "call_error": "HTTP 402 Payment Required při volání https://openrouter.ai/api/v1/chat/completions. Odpověď: {\"error\":{\"message\":\"Insufficient credits. Add more using https://openrouter.ai/settings/credits\",\"code\":402}}",
-  "parse_error": "HTTP 402 Payment Required při volání https://openrouter.ai/api/v1/chat/completions. Odpověď: {\"error\":{\"message\":\"Insufficient credits. Add more using https://openrouter.ai/settings/credits\",\"code\":402}}",
-  "parsed_output": null
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600005984_2022-01-12",
+    "school_profile": {
+      "school_type": "Osmileté gymnázium v právní formě obecně prospěšné společnosti",
+      "inspection_period": "12. 1. – 14. 1. 2022 a 17. 1. 2022",
+      "school_change_summary": "Od inspekce v roce 2014 se počet žáků zvýšil o více než třetinu (nyní 95 žáků ve čtyřech třídách). Škola se přestěhovala do pronajatých prostor základní školy. Vedení bylo rozšířeno o pozici zástupce ředitele."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Projektové vzdělávání a expedice",
+          "detail": "Propracovaný systém oborových projektů, expedic a výjezdů podporuje všestranný rozvoj žáků, týmovou spolupráci a sounáležitost se školou.",
+          "evidence": "Projekty a expedice cíleně podporují samostatné studium, analýzu a sociálně-komunikační dovednosti žáků."
+        },
+        {
+          "tag": "Kvalita výuky a pedagogů",
+          "detail": "Příjemná pracovní atmosféra, partnerský přístup učitelů, tandemová výuka a kooperativní metody vedou k aktivnímu zapojení všech žáků.",
+          "evidence": "Všechny sledované hodiny vykazovaly příjemnou atmosféru založenou na vzájemném respektu a partnerství."
+        },
+        {
+          "tag": "Sociální a osobnostní rozvoj",
+          "detail": "Nadstandardní podpora sociálních kompetencí prostřednictvím dobrovolnických a charitativních aktivit.",
+          "evidence": "Cílené zapojování žáků do charitativních aktivit v průběhu celého školního roku."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Organizace vyučovacích hodin",
+          "detail": "V některých hodinách chybí efektivní časové rozvržení, vstupní motivace a závěrečné shrnutí učiva.",
+          "evidence": "Ojediněle byly zaznamenány neefektivní časové a organizační rozvržení vyučovací hodiny a opomíjení účinné vstupní motivace."
+        },
+        {
+          "tag": "Jazyková kultura ve výuce",
+          "detail": "Pedagogové ne vždy dostatečně korigují kvalitu mluveného projevu žáků a sami ne vždy dbají na jazykovou kulturu.",
+          "evidence": "V některých hodinách byla zaznamenána nižší jazyková kultura projevu vyučujících."
+        },
+        {
+          "tag": "Kvalifikace pedagogů",
+          "detail": "Tři pedagogové nesplňují předpoklad odborné kvalifikace.",
+          "evidence": "Předpoklad odborné kvalifikace k termínu inspekční činnosti nesplňovali tři pedagogové."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá tandemová výuka a jak je zajištěna v jednotlivých předmětech?",
+        "Jaké jsou konkrétní příklady projektů a expedic, kterých se žáci účastní během studia?",
+        "Jak škola řeší přechodné prostorové omezení v pronajatých prostorách a plánuje návrat do vlastní budovy?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o přírodní vědy a praktické poznávání přírody",
+        "Děti, které se lépe učí prostřednictvím projektů, diskuzí a praktických aktivit",
+        "Žáci hledající menší třídu s individuálním přístupem a silným komunitním duchem"
+      ],
+      "who_should_be_cautious": [
+        "Rodiny, které preferují tradičnější formu výuky se silnějším důrazem na klasické vyučovací metody",
+        "Žáci vyžadující více struktury a jasně definovaných pravidel v organizaci hodin",
+        "Rodiny, kterým vadí časté venkovní aktivity a expedice jako součást vzdělávání"
+      ],
+      "plain_czech_summary": "Gymnázium Přírodní škola je malá, kvalitní škola se silným zaměřením na přírodní vědy a osobnostní rozvoj. Učitelé jsou erudovaní a používají inovativní metody – tandemovou výuku, projekty a expedice. Žáci dosahují velmi dobrých výsledků a mají silný pocit sounáležitosti se školou. Slabší stránkou jsou někdy neefektivní organizace hodin a jazyková kultura. Škola je vhodná pro zvídavé děti, které se rádi učí prakticky a v přírodě."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Velmi dobré výsledky v posledním hodnoceném maturitním období",
+        "key_numbers": [
+          "V roce 2019 žáci dosáhli velmi dobrých výsledků ve společné i profilové části maturitní zkoušky",
+          "Úspěšnost byla vyšší než průměrná v dané skupině oborů vzdělání",
+          "Absolventi úspěšně pokračují ve studiu na vysokých školách"
+        ],
+        "evidence": "V posledním hodnoceném maturitním období 2019 žáci dosáhli velmi dobrých výsledků. Úspěšnost žáků u maturitní zkoušky byla vyšší než průměrná."
+      },
+      "absence": {
+        "trend": "Absence není v textu detailně řešena",
+        "key_numbers": [
+          "Zvýšená absence byla řešena v rámci konzultací a osobních pohovorů se žákem a zákonnými zástupci"
+        ],
+        "evidence": "Hrozící školní neúspěch žáků, zvýšená absence či prokrastinace byly řešeny v rámci konzultací nebo při osobním pohovoru."
+      },
+      "support_services": [
+        "Školní psycholožka, výchovná poradkyně a metodik prevence pracují v úzké spolupráci",
+        "Individuální přístup ve vzdělávání a vypracování vzdělávacích plánů pro žáky s potřebou podpůrných opatření",
+        "Pravidelné doučování a cílené konzultace pedagogů včetně vrstevnického doučování",
+        "Podpůrná skupina vytvořená během distančního vzdělávání"
+      ],
+      "safety_climate": [
+        "Elektronicky zabezpečený vstup do budovy přispívá k bezpečnosti žáků",
+        "Funkční školní preventivní strategie vede k posilování vztahů důvěry mezi učiteli a žáky",
+        "Zahajovací adaptační kurzy a práce s třídními kolektivy jako nástroje prevence",
+        "Nastavená a dodržovaná pravidla komunikace a chování přispívají k pozitivním vztahům"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s partnerskými vysokými školami a sociálními partnery",
+        "Gymnázium je fakultní školou Přírodovědecké fakulty Univerzity Karlovy",
+        "Laboratorní cvičení v prostorách vysokých škol pro praktickou část přírodovědného vzdělávání",
+        "Smluvní partneři pro tělocvičny a stravování žáků"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, obsahuje konkrétní příklady a citace z pozorování. Všechna tvrzení jsou podložena důkazy z textu. Jazyk je srozumitelný a bez zbytečného úřednického stylu.",
+      "uncertainty_notes": [
+        "Absence není v textu detailně analyzována – není jasné, jaké jsou konkrétní čísla či trendy",
+        "Maturitní výsledky jsou uvedeny pouze pro rok 2019, poslední dva roky chyběly maturitní ročníky",
+        "Kvalifikace tří pedagogů – není jasné, v jakých předmětech a jaký je plán na nápravu"
+      ]
+    }
+  }
 }
