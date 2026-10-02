@@ -1,0 +1,112 @@
+{
+  "report_id": "LYC_600004864_2026-01-22",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:42:07.420060+00:00",
+  "run_finished_utc": "2026-10-02T16:42:35.129440+00:00",
+  "raw_file": "LYC_600004864_2026-01-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600004864_2026-01-22",
+    "school_profile": {
+      "school_type": "Střední škola obchodní, příspěvková organizace",
+      "inspection_period": "22. 1. 2026 – 23. 1. 2026 a 26. 1. 2026 – 27. 1. 2026",
+      "school_change_summary": "Od minulé inspekce výrazně vzrostl počet žáků i tříd, rozšířila se partnerská spolupráce a zlepšilo se vybavení; od školního roku 2023/2024 škola nově vyučuje Ekonomické lyceum a utlumila dálkovou formu nástavbového studia."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Odborný výcvik v obchodních firmách byl hodnocen jako velmi kvalitní a pomáhal rozvoji samostatnosti, komunikace a odborných dovedností žáků.",
+          "evidence": "„Hospitované bloky praktického vyučování (odborný výcvik) realizované v prostředí obchodních firem vykazovaly výbornou úroveň.“"
+        },
+        {
+          "tag": "Závěrečné zkoušky",
+          "detail": "Výuční obory měly velmi dobré a stabilní výsledky u závěrečných zkoušek.",
+          "evidence": "„Ve sledovaném období dvou školních let 2023/2024 a 2024/2025 uspělo u závěrečných zkoušek více než 97 % žáků.“"
+        },
+        {
+          "tag": "Vybavení a jazyky",
+          "detail": "Škola má kvalitní digitální vybavení a angličtina se v hodnocených hodinách zaměřovala na komunikaci a přípravu k maturitě.",
+          "evidence": "„Významně se rozšířilo vybavení informačními, digitálními technologiemi a softwarovými programy“ a anglické hodiny rozvíjely „interaktivních řečových dovedností“."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Absence",
+          "detail": "Vysoká absence žáků zhoršuje průběh vzdělávání, závěrečné hodnocení i úspěšné dokončení studia.",
+          "evidence": "„Nadále přetrvává vyšší absence žáků s negativním dopadem do vzdělávání.“"
+        },
+        {
+          "tag": "Maturita Obchodník",
+          "detail": "V oboru Obchodník byla v minulých letech neúspěšnost ve společné části maturity výrazně vyšší než celostátní průměr, přestože v roce 2024/2025 výrazně klesla.",
+          "evidence": "„Ve školním roce 2022/2023 činila míra hrubé neúspěšnosti tohoto oboru téměř 28 % (v ČR 17 %).“"
+        },
+        {
+          "tag": "Podpora a vyučování",
+          "detail": "Někteří učitelé méně zohledňují individuální potřeby žáků a málo využívají samostatnou práci, sebereflexi a formativní hodnocení.",
+          "evidence": "„Někteří vyučující doporučené postupy dostatečně neuplatňují, mj. menší zohledňování individuálních potřeb žáků.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola snižuje absenci a jaké výsledky má tato snaha v posledním roce?",
+        "Jak podporuje individuální potřeby žáků s odlišným mateřským jazykem nebo se zvýšenou jazykovou barierou?",
+        "Jak často žáci dostávají zpětnou vazbu a podílejí se na hodnocení vlastního učebního pokroku?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat obchod, podnikání nebo provoz obchodních činností a mají zájem o praktickou přípravu.",
+        "Rodinám, které hledají školu s propracovanou spoluprací s firmami a zahraničními partnery.",
+        "Žákům, kteří využijí možnost přechodu mezi výučním a maturitním oborem."
+      ],
+      "who_should_be_cautious": [
+        "Rodinám žáků, kterým záleží na pravidelné docházce, protože absence je výrazným problémem školy.",
+        "Žákům s odlišným mateřským jazykem nebo potřebou výrazné individuální podpory, kteří by měli předem ověřit její dostupnost.",
+        "Rodinám, které očekávají u všech předmětů stejně kvalitní podporu, protože v některých hodinách se podle inspekce uplatňovaly méně vhodné metody."
+      ],
+      "plain_czech_summary": "Střední škola obchodní má silnou praktickou výuku, dobré vybavení a velmi dobré výsledky u závěrečných zkoušek výučních oborů. Výsledky maturity Obchodníka se po velmi špatném období výrazně zlepšily, ale škola stále řeší absenci a nejednotné výchovné postupy. Některé hodiny učitelů jsou méně individualizované a chybí v nich samostatná práce, sebereflexe i formativní hodnocení. Rodičům především doporučují zeptat se na konkrétní podporu při absenci, jazykových obtížích a individuálních potřebách dítěte."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "U oboru Obchodník se výsledky výrazně zlepšily: v roce 2024/2025 všichni přihlášení maturanti společnou část zkoušky absolvovali, zatímco předtím byla hrubá neúspěšnost téměř 28 % a 27 %.",
+        "key_numbers": [
+          "Obchodník: 2022/2023 téměř 28 % hrubé neúspěšnosti, v ČR 17 %.",
+          "Obchodník: 2023/2024 27 % hrubé neúspěšnosti, v ČR 13 %.",
+          "Obchodník: 2024/2025 4 % hrubé neúspěšnosti, v ČR 14 %."
+        ],
+        "evidence": "„Ve školním roce 2024/2025 došlo u oboru Obchodník ke kvalitativnímu posunu“ a „míra hrubé neúspěšnosti tohoto oboru (4 %) výrazně klesla“."
+      },
+      "absence": {
+        "trend": "Absence zůstává zvýšená a podle inspekce ovlivňuje vzdělávání části žáků i jejich úspěšné ukončení studia.",
+        "key_numbers": [
+          "V průměru přibližně 200 omluvených hodin na žáka.",
+          "Pozdní příchody a zvýšená nepřítomnost byly zaznamenány při hodnocení výuky."
+        ],
+        "evidence": "„Nastavený systém není plně funkční v případě neomluvené absence některých žáků nebo přetrvávající vyšší absence“."
+      },
+      "support_services": [
+        "Poradenské, kariérní služby a prevence sociálně patologických jevů jsou zajišťovány ve spolupráci s třídními učiteli, vedením školy a externími subjekty; psychologická péče je zabezpečena externě.",
+        "Podpůrná opatření zahrnují konzultace, doučování, digitální platformu, přestup na méně náročný obor a individuální úpravu organizace vzdělávání.",
+        "Škola uvádí podporu pro přibližně 12 % žáků se speciálními vzdělávacími potřebami a pro přibližně čtvrtinu žáků s odlišným mateřským jazykem; poradenské pracoviště podle zprávy vyžaduje personální posílení."
+      ],
+      "safety_climate": [
+        "V převážné části sledované výuky žáci dodržovali kázeň a stanovená pravidla.",
+        "Elektronický a kamerový systém a personální dohled v recepci přispívají k bezpečnosti a evidenci docházky.",
+        "Bezpečnost práce a ochrana zdraví jsou součástí praktického vyučování; text však zmiňuje také pozdní příchody a nejednotné kázeňské postupy."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s partnerskými firmami, pracovišti praktické přípravy, zahraničními školami, Česko-německým fondem budoucnosti a programem Erasmus+.",
+        "Praktické vyučování v obchodních firmách podporuje rozvoj odborných kompetencí, samostatnosti, komunikace a uplatnitelnosti absolventů na trhu práce.",
+        "Širší síť profesních partnerů umožňuje závěrečné zkoušky v reálných podmínkách a prohlubuje jazykové a odborné kompetence žáků."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulován srozumitelně, stručně a bez úředního stylu; důležité závěry jsou opřeny o konkrétní části zprávy.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí podrobné výsledky společné části maturity podle jednotlivých předmětů.",
+        "Zpráva uvádí přibližné podíly žáků s podpůrnými potřebami a cizím mateřským jazykem, nikoli přesné rozpočty služeb.",
+        "Není uvedeno, jak se konkrétní opatření školy proměnila po inspekci."
+      ]
+    }
+  }
+}

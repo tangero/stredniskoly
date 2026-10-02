@@ -1,0 +1,102 @@
+{
+  "report_id": "SOU_600171299_2026-01-19",
+  "school_profile": {
+    "school_type": "Střední škola služeb a podnikání, příspěvková organizace",
+    "inspection_period": "19. 1. 2026 – 23. 1. 2026",
+    "school_change_summary": "Od srpna 2024 působí nové vedení školy a součástí poradenského pracoviště je nově také školní psycholožka."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Teoretická výuka je úzce propojena s odborným výcvikem na vybavených pracovištích.",
+        "evidence": "„Účelné propojení teoretického a praktického vyučování ... významně přispívá k rozvoji odborných kompetencí žáků.“"
+      },
+      {
+        "tag": "Zahraniční stáže",
+        "detail": "Zahraniční odborné stáže rozšiřují praktické zkušenosti žáků a mohou pomoci jejich uplatnění na trhu práce.",
+        "evidence": "„Škola realizovala pro žáky zahraniční odborné stáže ve službách, což je předpokladem zejména k lepšímu uplatnění absolventů.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola poskytuje pomoc v hodinách, konzultace, doučování a přípravu na maturitu.",
+        "evidence": "„Škola poskytuje různé formy podpory – průběžná pomoc v hodinách, individuální konzultace, pravidelné doučování.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturitní příprava",
+        "detail": "Nízká úspěšnost ve společné části maturity přetrvává a je zhoršována zejména absencí a přípravou na její formát.",
+        "evidence": "„Od poslední inspekční činnosti přetrvává nízká úspěšnost žáků ve společné části maturitních zkoušek.“"
+      },
+      {
+        "tag": "Absence",
+        "detail": "Vysoká míra omluvené i neomluvené absence může zhoršovat výsledky žáků.",
+        "evidence": "„Vysoká míra omluvené i neomluvené absence.“"
+      },
+      {
+        "tag": "Rozvoj výuky",
+        "detail": "Ve výuce není dostatečně rozvinuta diferenciace, kritické myšlení ani práce s různými informačními zdroji.",
+        "evidence": "„V některých částech výuky se nedostatečně uplatňují ... diferenciace ... kritického myšlení a práce s různými informačními zdroji.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá podpora žáků s potížemi ve čtení, jazyce a matematice při přípravě na společnou část maturitní zkoušky?",
+      "Jak často a na základě jakých údajů škola vyhodnocuje příčiny absence a úspěšnosti žáků?",
+      "Jak se rozšiřuje diferenciace úloh, práce s informačními zdroji a rozvoj kritického myšlení v jednotlivých předmětech?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat obory služeb a podnikání a mají zájem o praktickou přípravu.",
+      "Žákům, kteří využijí odborný výcvik na pracovištích a případně zahraniční stáž.",
+      "Žákům, kterým vyhovuje podpora prostřednictvím konzultací, doučování a přípravy na zkoušky."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří mají vysokou absenci, protože inspekce ji spojovala s negativním dopadem na výsledky.",
+      "Rodičům žáků připravujících se na společnou část maturitní zkoušky kvůli přetrvávající nízké úspěšnosti.",
+      "Rodičům, kteří očekávají výrazně samostatné nebo kritické myšlení ve všech vyučovacích hodinách."
+    ],
+    "plain_czech_summary": "Škola má silné praktické zázemí pro obory služeb, podnikání, kadeřnictví, kosmetiky, fotografie a masérství. Žáci se učí na pracovištích s moderním vybavením a mohou získat zahraniční odborné zkušenosti. Hlavními problémy jsou vysoká absence a nízká úspěšnost společné části maturitní zkoušky. Ve výuce se podle inspekce zatím málo rozvíjí kritické myšlení, práce s informačními zdroji a přizpůsobení úloh jednotlivým žákům. Škola nabízí konzultace, doučování a další podporu, ale její účinnost je zatím omezená."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Společná část maturitní zkoušky vykazuje kolísavou tendenci; u oboru Podnikání byla v letech 2023/2024 a 2024/2025 úspěšnost nízká.",
+      "key_numbers": [
+        "Hrubá neúspěšnost Podnikání ve školním roce 2023/2024: 41,3 %.",
+        "Hrubá neúspěšnost Podnikání ve školním roce 2024/2025: 42,4 %.",
+        "Celorepublikové průměry pro stejné obory: 22 % a 27,8 %."
+      ],
+      "evidence": "„Ve školním roce 2024/2025 byla hrubá neúspěšnost 42,4 % ... V roce 2023/2024 činila 41,3 %.“"
+    },
+    "absence": {
+      "trend": "Absence je hodnocena jako vysoká a má negativní dopad na výsledky vzdělávání.",
+      "key_numbers": [],
+      "evidence": "„Zvýšená absence ve vyučování“ má „negativní dopad zejména na výsledky vzdělávání žáků.“"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště zahrnuje kariérovou poradnu a nově také školní psycholožku.",
+      "Poradenské pracoviště podporuje realizaci podpůrných opatření ve všech třídách.",
+      "Škola poskytuje průběžnou pomoc, individuální konzultace, doučování a přípravu na maturitu.",
+      "Pro žáky je k dispozici schránka důvěry a kontakty na poradenské pracoviště."
+    ],
+    "safety_climate": [
+      "Hodnocené hodiny probíhaly v příznivé pracovní atmosféře.",
+      "Žáci dodržovali pravidla komunikace a respektovali stanovené postupy práce.",
+      "Škola má systém prevence rizikových projevů chování a pravidelné adaptační aktivity."
+    ],
+    "partnerships_practice": [
+      "Odborný výcvik probíhá na pracovištích školy a u smluvních partnerů.",
+      "Škola spolupracuje s vysokými školami a vzdělávacími institucemi.",
+      "Škola realizovala projekty, soutěže, kurzy, workshopy a zahraniční odborné stáže Erasmu+.",
+      "Škola spolupracuje s místními základními školami, zejména v oblasti environmentální výchovy."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá srozumitelnou češtinu, stručně odděluje praktické výhody od rizik a uvádí konkrétní čísla i citace.",
+    "uncertainty_notes": [
+      "Zpráva uvádí úspěšnost společné části maturity, nikoli kompletní úspěšnost všech maturitních zkoušek.",
+      "Absence je v závěrech označena jako vysoká, ale v uvedeném textu nejsou její přesné procentní hodnoty.",
+      "Posouzení vhodnosti školy pro konkrétního žáka je orientační a vychází ze zjištění inspekce."
+    ]
+  }
+}

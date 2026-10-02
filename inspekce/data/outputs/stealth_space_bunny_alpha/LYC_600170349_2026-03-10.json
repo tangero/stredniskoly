@@ -1,0 +1,111 @@
+{
+  "report_id": "LYC_600170349_2026-03-10",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:29:25.151298+00:00",
+  "run_finished_utc": "2026-10-02T16:30:07.718302+00:00",
+  "raw_file": "LYC_600170349_2026-03-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600170349_2026-03-10",
+    "school_profile": {
+      "school_type": "Střední odborná škola poskytující čtyřletá maturitní a tříletá učební obory, provozující také domov mládeže a jídelnu.",
+      "inspection_period": "10. 3. 2026 až 12. 3. 2026",
+      "school_change_summary": "Od školního roku 2023/2024 funguje nový obor Technické lyceum, probíhá modernizace technologií a rekonstrukce budovy školy, domova mládeže a jídelny."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Zkušenosti z praxe",
+          "detail": "Žáci získávají praktické dovednosti na pracovištích smluvních partnerů a díky zahraničním stážím také zkušenosti v zahraničí.",
+          "evidence": "„Praktické vyučování se z části uskutečňuje na pracovištích různých smluvních partnerů.“"
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Škola postupně doplňuje CNC, robotické a mechatronické techniky a modernizuje učebny a software i hardware.",
+          "evidence": "„Probíhá postupná rekonstrukce budovy školy, domova mládeže i školní jídelny.“"
+        },
+        {
+          "tag": "Podpora a komunikace",
+          "detail": "Škola nabízí doučování, konzultace a podporu vzdělávání; elektronický systém zjednodušuje komunikaci s rodiči.",
+          "evidence": "Elektronický informační systém umožňuje „rychlou a účinnou komunikaci a zlepšuje informovanost všech aktérů vzdělávání“."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Frontální výuka",
+          "detail": "V teoretické výuce převládá frontální způsob práce, zatímco kooperativní činnosti a zapojování žáků jsou méně časté.",
+          "evidence": "„V převážné části teoretického vyučování dominovala frontální forma výuky.“"
+        },
+        {
+          "tag": "Slabší příprava na maturitu",
+          "detail": "U technických maturitních oborů jsou dlouhodobě problematické výsledky z českého jazyka a matematiky.",
+          "evidence": "„Obor 18-20-M/01 Informační technologie a obor 26-41-M/01 Elektrotechnika-počítačové systémy z českého jazyka.“"
+        },
+        {
+          "tag": "Nedostatečné přizpůsobování výuky",
+          "detail": "Učivo se málo přizpůsobuje schopnostem, nadání a zájmům jednotlivých žáků a formativní hodnocení se objevuje jen ojediněle.",
+          "evidence": "„Diferenciace učiva u zadávaných úkolů vzhledem k individuálním potřebám, nadání a zájmu žáků byla uplatněna jen ojediněle.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se v jednotlivých oborech zajišťuje příprava na matematiku, český jazyk a jednotlivé části maturitní zkoušky?",
+        "Jak často žáci navštěvují pracoviště partnerů a které konkrétní dovednosti tam procvičují?",
+        "Jak škola přizpůsobuje teoretickou výuku schopnostem a zájmům žáků a jak vypadá podpora při přípravě na maturitu?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí technické nebo informatické vzdělání a ocitnou praktické procvičování odborných dovedností.",
+        "Žákům, kteří využijí možnost moderních učeben, odborných workshopů, projektových aktivit nebo zahraničních stáží.",
+        "Žákům, kteří potřebují doučování, konzultace, podporu při učení nebo nabídku pokračování v učebním oboru."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kteří potřebují průběžnou podporu v matematice nebo českém jazyce kvůli maturitě.",
+        "Rodičům žáků, kterým vyhovuje především samostatná práce a aktivní zapojení do výuky, protože převládá frontální výuka.",
+        "Rodičům žáků se specifickými vzdělávacími potřebami, kteří by měli ověřit konkrétní míru individualizace podpory."
+      ],
+      "plain_czech_summary": "Škola má silné zázemí v technice, odborném výcviku a spolupráci s firmami, zahraničními školami i vysokými školami. V modernizovaných učebnách získávají žáci praktické dovednosti a zkušenosti z reálných pracovišť. Kladem školy jsou také podpora, odborné soutěže a funkční domov mládeže. Výuka je převážně klidná a vstřícná, ale v teoretické části hodně převládá frontální způsob práce. Slabší jsou výsledky některých technických oborů u maturitní zkoušky, zejména z českého jazyka a matematiky. Rodiče by měli na dnech otevřených dveří ověřit konkrétní přípravu na maturitu, míru přizpůsobování výuky a využívání partnerských pracovišť."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "U oboru Mechanik seřizovač a Mechanik seřizovač – Mechatronik jsou průběžné výsledky slabší, ale žáci dosáhli 100% úspěšnosti na závěrečné i maturitní zkoušce; ostatní obory mají lepší a přibližně srovnatelné výsledky.",
+        "key_numbers": [
+          "100% úspěšnost žáků oborů Mechanik seřizovač a Mechatronik na závěrečné a maturitní zkoušce.",
+          "6,9% čistá míra neúspěšnosti z českého jazyka ve společné části maturitní zkoušky.",
+          "50% míra neúspěšnosti z matematiky v oboru Informační technologie a Elektrotechnika-počítačové systémy."
+        ],
+        "evidence": "„Ve školním roce byla čistá míra neúspěšnosti 6,9 % ve srovnání s průměrem 1,9 % u podobné skupiny oborů v rámci republiky.“"
+      },
+      "absence": {
+        "trend": "Celkový vývoj absence není v uvedeném textu popsán; škola věnuje zvýšenou pozornost žákům s vysokou absencí.",
+        "key_numbers": [
+          "Celková míra absence ani její vývoj nejsou uvedeny."
+        ],
+        "evidence": "„Pozornost je věnována zejména žákům s vysokou absencí a nedostatečným prospěchem.“"
+      },
+      "support_services": [
+        "Tým poradenských služeb tvoří výchovná poradkyně, kariérová poradkyně a školní metodička prevence.",
+        "Škola poskytuje doučování, individuální konzultace a podporu vzdělávání podle individuálního vzdělávacího plánu.",
+        "Ubytovaným žákům vychovatelé a vyučující nabízejí doučování; pro žáky ohrožené školním neúspěchem je podpora zaměřena na matematiku, český jazyk a další předměty."
+      ],
+      "safety_climate": [
+        "Ve sledované výuce odborného výcviku byl kladen důraz na bezpečnost práce.",
+        "Škola zaznamenává kladné klima ve třídách, vstřícné působení vyučujících a zpětnou vazbu žákům.",
+        "Domov mládeže má nastavený systém pravidel a postupů pro plynulý a bezpečný provoz."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s profesními a sociálními partnery, smluvními zaměstnavateli, vysokými školami a zahraničními školami.",
+        "Praktické vyučování se částečně uskutečňuje na pracovištích smluvních partnerů.",
+        "Žáci se zapojují do projektů Erasmus+, odborných přednášek, besed, exkurzí a soutěží."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulován srozumitelně, bez úředního přebásňování a s praktickými souvislostmi pro rodiče.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí celkovou míru ani vývoj absence.",
+        "Uvedené výsledky maturitních oborů se týkají konkrétních oborů a školního roku, proto je nelze automaticky rozšiřovat na celou školu.",
+        "Není uvedena míra využívání nabízené podpory ani konkrétní četnost aktivit v jednotlivých oborech."
+      ]
+    }
+  }
+}

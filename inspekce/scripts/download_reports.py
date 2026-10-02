@@ -2,6 +2,7 @@
 import argparse
 import json
 import pathlib
+import time
 from urllib import request
 
 
@@ -23,6 +24,7 @@ def main():
     parser.add_argument("--manifest", default="config/pilot_10_reports.json")
     parser.add_argument("--reports-dir", default="data/reports")
     parser.add_argument("--overwrite", action="store_true")
+    parser.add_argument("--prodleva", type=float, default=2.0, help="sekundy mezi stahováními (šetrnost k portálu ČŠI)")
     args = parser.parse_args()
 
     root = pathlib.Path(__file__).resolve().parents[1]
@@ -39,6 +41,8 @@ def main():
         if destination.exists() and not args.overwrite:
             skipped += 1
             continue
+        if downloaded:
+            time.sleep(args.prodleva)
         size = download_file(report["source_url"], destination)
         downloaded += 1
         total_bytes += size

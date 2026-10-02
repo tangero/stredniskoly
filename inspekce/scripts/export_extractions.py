@@ -13,6 +13,9 @@ def main():
                         help="Comma-separated model IDs (first has priority)")
     parser.add_argument("--outputs-dir", default="data/outputs")
     parser.add_argument("--output", default="")
+    parser.add_argument("--pro-web", action="store_true",
+                        help="tvar data/inspection_extractions.json: bez model_self_check, run_finished_utc, "
+                             "report_id v parsed_output, záznamů bez shrnutí a _meta, kompaktní JSON")
     args = parser.parse_args()
 
     root = pathlib.Path(__file__).resolve().parents[1]
@@ -41,6 +44,9 @@ def main():
             data = json.loads(json_path.read_text(encoding="utf-8"))
             parsed = data.get("parsed_output")
             if parsed is None or data.get("parse_error") is not None:
+                continue
+            if args.pro_web and not (parsed.get("for_parents") or {}).get("plain_czech_summary"):
+                # Web shrnutí bez textu nezobrazí; zkusit výstup dalšího modelu, místo aby zpráva vypadla.
                 continue
             # Success - use this model's result
             redizo = report["redizo"]
@@ -71,6 +77,25 @@ def main():
     # Sort inspections within each school by date (newest first)
     for redizo in by_redizo:
         by_redizo[redizo].sort(key=lambda x: x["inspection_from"], reverse=True)
+
+    if args.pro_web:
+        # Stejný ořez jako commit 7091a5c (web čte data/inspection_extractions.json, limit velikosti nasazení).
+        for redizo in list(by_redizo):
+            zaznamy = []
+            for z in by_redizo[redizo]:
+                z.pop("run_finished_utc", None)
+                po = {k: v for k, v in z["parsed_output"].items() if k not in ("model_self_check", "report_id")}
+                if not (po.get("for_parents") or {}).get("plain_czech_summary"):
+                    continue
+                z["parsed_output"] = po
+                zaznamy.append(z)
+            if zaznamy:
+                by_redizo[redizo] = zaznamy
+            else:
+                del by_redizo[redizo]
+        output_path.write_text(json.dumps({"schools": by_redizo}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        print(f"Export pro web: {output_path} ({output_path.stat().st_size / 1024:.0f} KB), škol {len(by_redizo)}")
+        return
 
     result = {
         "_meta": {

@@ -1,0 +1,113 @@
+{
+  "report_id": "NAS_600007685_2023-02-21",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:03:13.003250+00:00",
+  "run_finished_utc": "2026-10-02T17:04:08.447198+00:00",
+  "raw_file": "NAS_600007685_2023-02-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "NAS_600007685_2023-02-21",
+    "school_profile": {
+      "school_type": "Střední odborné učiliště společného stravování se střední školou, domovem mládeže a školní jídlovnou",
+      "inspection_period": "21.–24. února 2023",
+      "school_change_summary": "Od roku 2018 mírně vzrostl počet žáků nematuritních oborů a mírně klesl počet žáků nástavbového studia; zlepšilo se také materiální vybavení školy."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vzdělávání",
+          "detail": "Odborný výcvik je podle inspekce veden aktivně a žáci na něm získávají potřebné dovednosti i pracovní návyky.",
+          "evidence": "„Vyučující se intenzivně zaměřovali na rozvoj požadovaných odborných kompetencí a pracovních návyků.“"
+        },
+        {
+          "tag": "Podpora rozdílných potřeb",
+          "detail": "Učitelé věnují individuální pozornost slabším žákům, žákům se SVP i studentům s jazykovou bariérou.",
+          "evidence": "„Učitelé poskytovali promyšlenou podporu slabším žákům a žákům se SVP.“"
+        },
+        {
+          "tag": "Dobrá příprava na zaměstnání",
+          "detail": "Škola dlouhodobě spolupracuje s partnery a absolventi mají podle inspekce nízkou nezaměstnanost.",
+          "evidence": "„Dlouhodobě jsou realizovány zahraniční projekty a spolupráce se sociálními partnery.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturitní zkouška",
+          "detail": "Výsledky společné části maturity výrazně ovlivnilo distanční vzdělávání a slabší příprava některých studentů.",
+          "evidence": "„Úspěšnost žáků ve společné části MZ negativně ovlivnila míra distančního vzdělávání.“"
+        },
+        {
+          "tag": "Neomluvená absence",
+          "detail": "Nepřítomnost žáků zůstává problémem a souvisí často s horšími výsledky i předčasným ukončením studia.",
+          "evidence": "„Vyšší neúčast ve výuce byla zpravidla spojena s podprůměrnými výsledky a často souvisela s předčasným odchodem.“"
+        },
+        {
+          "tag": "Rozdíly v učební podpoře",
+          "detail": "Ve většině hodin chyběla dostatečná diferenciace a žáci méně mluvili či spolupracovali.",
+          "evidence": "„Ve většině hodin chyběla obsahová či časová diferenciace učebních úloh.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní výsledky měli žáci nástavbového studia při posledních maturitních zkouškách v jednotlivých předmětech?",
+        "Jak škola průběžně sleduje neomluvenou absenci a jaké kroky podniká u žáků, kteří častěji chybějí?",
+        "Jak konkrétně probíhá podpora žáků s jazykovou bariérou, se SVP nebo s odlišnou úrovní znalostí?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí středoškolské vzdělávání spojené s každodenní praktickou přípravou v gastronomii.",
+        "Žákům, kterým vyhovuje menší a podporující prostředí DM s nabídkou kroužků a doučování.",
+        "Žákům motivovaným odbornými soutěžemi, projekty a spoluprací s praxí."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče žáků, kteří potřebují před maturitou intenzivní a dlouhodobě ověřenou přípravu zejména na angličtinu.",
+        "Rodiče žáků, kterým záleží na menší neomluvené absenci a pravidelné zpětné vazbě o učení.",
+        "Rodiče žáků s výraznější jazykovou bariérou, kteří potřebují individuálně přizpůsobené výukové úlohy."
+      ],
+      "plain_czech_summary": "Škola má dobře fungující praktické vzdělávání a její absolventi se podle inspekce dobře uplatňují v práci. Pomáhá také žákům se SVP a poskytuje podporu při jazykové bariéře. Hlavní slabinou je absence: v roce 2021/2022 činila přibližně 180 hodin na žáka v nástavbovém studiu a 220 hodin v nematuritních oborech. Výsledky maturity výrazně kolísaly podle působení distančního vzdělávání, v posledním hodnoceném roce se však zlepšily. Ve vyučování může být více samostatné práce, diferencovaných úkolů a mluvení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky výrazně kolísaly podle míry distančního vzdělávání a po jeho omezení se zlepšily.",
+        "key_numbers": [
+          "V roce 2019 byla hrubá neúspěšnost 47,6 % při českém průměru 47,9 %.",
+          "Ve školním roce 2020/2021 činila 42 % při přibližně 26 % v ČR.",
+          "Ve školním roce 2021/2022 klesla na 27 %, tedy o 10 procentních bodů lépe než obdobný průměr."
+        ],
+        "evidence": "„Po obnovení prezenční výuky se výsledky žáků významně zlepšily.“"
+      },
+      "absence": {
+        "trend": "Při obnovení prezenční výuky absence vzrostla, následně se však snížila průměrná neomluvená absence.",
+        "key_numbers": [
+          "Nástavbové studium: přibližně 180 hodin absence na žáka.",
+          "Nematuritní obory: přibližně 220 hodin absence na žáka.",
+          "Školní rok 2021/2022: přibližně dvě třetiny žáků dokončily studium v řádném termínu."
+        ],
+        "evidence": "„Ve školním roce 2021/2022 se zvýšila roční míra absence žáků nástavbového studia i nematuritních oborů.“"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště zajišťuje výchovná poradkyně: „podílí na zajištění potřebné péče o žáky“ se SVP nebo výchovnými potřebami.",
+        "V DM vychovatelé podle možností poskytují doučování a studijní návyky podporují.",
+        "Učitelé poskytují individuální podporu slabším žákům a žákům se SVP."
+      ],
+      "safety_climate": [
+        "Žáci jsou pravidelně poučováni o bezpečnostních rizicích.",
+        "Na pracovištích odborného výcviku byly zaznamenány úrazy, převážně lehké.",
+        "Při praktickém vyučování žáci používali profesní oděv a dodržovali zásady bezpečnosti."
+      ],
+      "partnerships_practice": [
+        "Praktické vyučování probíhalo na pracovištích školy i smluvních partnerů.",
+        "Škola realizuje zahraniční projekty a spolupracuje se sociálními partnery.",
+        "Zapojení do soutěží a projektů rozvíjí odborné, jazykové a sociální kompetence."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, krátké věty a odděluje konkrétní výsledky od doporučení pro rodiče.",
+      "uncertainty_notes": [
+        "Hodnocení absence se vztahuje především ke školnímu roku 2021/2022; zpráva neuvádí stejný ukazatel za pozdější období.",
+        "Výsledky maturity jsou uvedeny za období 2019–2022, takže samy o sobě nepopisují nejnovější stav.",
+        "Zpráva uvádí slabší výsledky především u ruského a německého jazyka; angličtina vykazuje rozdílné hodnocení podle studia a výuky."
+      ]
+    }
+  }
+}

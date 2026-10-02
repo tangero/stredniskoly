@@ -644,7 +644,7 @@ Plné převzetí bez člověka se nedoporučuje: CERMAT soubory přepisuje i mě
 
 <!-- stav-datovych-sad:od -->
 
-_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-30. Neupravovat ručně._
+_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-02. Neupravovat ručně._
 
 | Sada | Použití | Zobrazujeme | Odkud | Zveřejněno, nepřevzato | Čekáme | Kdy | Po přepnutí |
 |---|---|---|---|---|---|---|---|
@@ -660,7 +660,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-09-30. Neupravovat ru�
 | `msmt-rejstrik-csv` | web | 2026-02-11 | `data/Rejstrik_skol/SkolyAMista.csv` | — | — | neznámo | Nahrazuje se celý. |
 | `msmt-akko` | analýza | 2026-03-08 | `data/AKKO-Kmenové_obory vzdělání (KKOV 5místné).csv` | — | — | neznámo | Nahrazuje se celý. |
 | `csi-inspekce` | web | 2026-09-07 | `data/csi_snapshots` | — | — | neznámo | Starší snímky zůstávají v data/csi_snapshots s manifestem. |
-| `csi-extrakce` | web | 2025-11-25 | `data/inspection_extractions.json` | — | — | neznámo | Starší zpráva téže školy zůstává sbalená pod novější. |
+| `csi-extrakce` | web | 2026-05-29 | `data/inspection_extractions.json` | — | — | , odhad | Starší zpráva téže školy zůstává sbalená pod novější. |
 | `csi-inspis` | web | 2026-02-11 | `data/inspis_school_profiles.json` | — | — | neznámo | Nahrazuje se celý. |
 | `doprava-gtfs` | web | 2026-02-07 | `data/PID_GTFS.zip` | — | — | neznámo | Nahrazuje se celý. |
 | `katalog-historie` | web | 2025 | `public/schools_data.json` | — | — | neznámo | Nepřepíná se. |

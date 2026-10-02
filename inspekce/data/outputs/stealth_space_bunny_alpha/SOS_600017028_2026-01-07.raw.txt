@@ -1,0 +1,101 @@
+{
+  "report_id": "SOS_600017028_2026-01-07",
+  "school_profile": {
+    "school_type": "Soukromá střední odborná škola služeb poskytující denní vzdělávání v oboru Cestovní ruch.",
+    "inspection_period": "7. až 9. 1. 2026",
+    "school_change_summary": "Počet žáků vzrostl oproti školnímu roku 2018/2019 o 26 % a materiální vybavení se dále zkvalitňovalo."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Škola účinně propojuje teorii s praxí prostřednictvím smluvních firem a profesních partnerů.",
+        "evidence": "Partnerství přispívají k propojení teoretického vzdělávání s praxí a k rozvoji odborných kompetencí žáků."
+      },
+      {
+        "tag": "Maturita",
+        "detail": "Úspěšnost školní maturity byla v roce 2024/2025 výrazně lepší než republikový průměr.",
+        "evidence": "„Úspěšnost žáků závěrečného ročníku studia ve školním roce 2024/2025 činila u maturitní zkoušky 81,3 %.“"
+      },
+      {
+        "tag": "Podpora a klima",
+        "detail": "Škola nabízí konzultace, doučování a preventivní programy podporující školní klima.",
+        "evidence": "Škola identifikuje žáky s rizikem školního neúspěchu, zajišťuje jim primární podporu a nabízí individuální konzultace."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Metody výuky",
+        "detail": "V části hodin převládala frontální výuka a žáci měli málo příležitostí k samostatnému přemýšlení a argumentaci.",
+        "evidence": "„Téměř vůbec nebyla zařazována práce žáků s různými informačními zdroji“, kritické myšlení se objevovalo jen výjimečně."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Uplatňování podpůrných opatření a individualizace výuky nebyly dostatečně sledovány.",
+        "evidence": "Uplatňování podpůrných opatření nebylo vedením školy systematicky sledováno a monitoring byl realizován pouze okrajově."
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Ve většině hodin chybělo formativní hodnocení a aktivní zapojení žáků do závěrečného hodnocení.",
+        "evidence": "„Formativní hodnocení podporující motivaci k dalšímu učení bylo využíváno jen sporadicky.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola sleduje účinnost podpůrných opatření u jednotlivých žáků?",
+      "Jak často se během běžné výuky objevují skupinové, badatelské nebo kooperativní aktivity?",
+      "Jak konkrétně probíhá podpora žáků s podpůrnými opatřeními a kde jsou jejich výsledky evidovány?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat cestovní ruch a hotelnictví v denní formě.",
+      "Žákům, kterým vyhovuje propojení teorie s praxí na pracovištích smluvních firem.",
+      "Žákům, kteří mají zájem o jazykovou komunikaci a přípravu na maturitu."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků se zvýšenou potřebou individualizace, protože její uplatňování bylo omezené.",
+      "Rodičům, kteří očekávají běžně frontální výuku a hodnocení podle známých postupů.",
+      "Rodičům žáků, kteří potřebují prokazatelně pravidelné formativní hodnocení a sledování podpůrných opatření."
+    ],
+    "plain_czech_summary": "Škola nabízí denní obor Cestovní ruch, kde se propojuje teorie s praxí na pracovištích firem. Maturitní výsledky jsou dobré: úspěšnost činila 81,3 %. Mezi slabiny patří málo pestré metody výuky, omezená práce s informacemi, slabé formativní hodnocení a nedostatečná individualizace. Rodiče by měli zvlášť sledovat, jak škola podporuje žáky s podpůrnými opatřeními, protože jejich účinnost se podle inspekce systematicky nevyhodnocuje."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky společné části se od roku 2022 postupně zlepšovaly; celková školní úspěšnost v roce 2024/2025 výrazně převýšila republikový průměr.",
+      "key_numbers": [
+        "81,3 % úspěšnost ve školním roce 2024/2025",
+        "69,0 % republikový průměr",
+        "Z 31 zkoušejících studentů neuspělo 5"
+      ],
+      "evidence": "„Úspěšnost žáků závěrečného ročníku studia ve školním roce 2024/2025 činila u maturitní zkoušky 81,3 %.“"
+    },
+    "absence": {
+      "trend": "Z inspekční zprávy nelze trend nepřítomnosti určit.",
+      "key_numbers": [],
+      "evidence": "Zpráva neuvádí údaje o nepřítomnosti žáků ani jejich vývoji."
+    },
+    "support_services": [
+      "Výchovná poradkyně, metodik prevence a kariérový poradce: „Poradenské služby ve škole zajišťuje výchovná poradkyně.“",
+      "Individuální konzultace a doučování: „Škola identifikuje žáky s rizikem školního neúspěchu, zajišťuje jim primární podporu a nabízí individuální konzultace.“",
+      "Prevence rizikového chování: „Škola má nastavený systém preventivních opatření a využívá odpovídající nástroje k jejich realizaci.“"
+    ],
+    "safety_climate": [
+      "Bezpečné prostředí: „Všechny společné prostory čistě a splňovaly podmínky bezpečného školního a pracovního prostředí.“",
+      "Příjemná atmosféra: „V hodnocených vyučovacích hodinách převládala příjemná pracovní atmosféra založená na vzájemném respektu.“",
+      "Prevence klimatu: „Dopady preventivních aktivit na školní klima škola zjišťuje především prostřednictvím dotazníků určených žákům.“",
+      "Omezení ověřování klimatu: „Systematické ověřování klimatu se zapojením zákonných zástupců žáků a zaměstnanců školy však realizováno není.“"
+    ],
+    "partnerships_practice": [
+      "Odborná praxe probíhá na pracovištích smluvních firem: „Praktickou výuku realizuje ve škole a na pracovištích smluvních firem.“",
+      "Profesní partnerství podporuje odborné kompetence: „Spolupráce školy se sociálními a dalšími tuzemskými i zahraničními partnery efektivně přispívá k získávání odborných kompetencí.“",
+      "Spolupráce s úřadem práce a zaměstnavateli: „Škola ve spolupráci s úřadem práce a zaměstnavateli poskytuje relevantní informace pro další profesní směřování.“"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá srozumitelnou češtinu, stručně odděluje silné stránky, rizika a ověřitelná čísla a jasně označuje chybějící údaje.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí údaje o nepřítomnosti žáků.",
+      "Hodnocení podpůrných opatření je uvedeno jako nedostatečně systematické, nikoli jako úplná absence podpory.",
+      "Údaje o školním roce 2025/2026 mohou být v době inspekce ještě průběžné, protože školní rok nebyl ukončen."
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "report_id": "GY4_600007464_2026-03-09",
+  "school_profile": {
+    "school_type": "Soukromá střední odborná škola a gymnázium",
+    "inspection_period": "9.–12. 3. 2026",
+    "school_change_summary": "Škola rozšířila kapacitu, přidala obor Gymnázium a utlumila Hotelnictví; počet denních žáků se od roku 2019 téměř ztrojnásobil."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná příprava",
+        "detail": "Praktické a odborné vyučování je podle inspekce kvalitní a dobře připravuje žáky k povolání.",
+        "evidence": "„Výuka praktického vyučování zajišťuje žákům kvalitní přípravu na výkon zvoleného povolání.“"
+      },
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "V profilové části maturity dosáhli školní výsledky za poslední tři roky hodnocení jako velmi dobré.",
+        "evidence": "„Všichni žáci, ktorí konali MZ, byli úspěšní.“"
+      },
+      {
+        "tag": "Podpora a klima",
+        "detail": "Škola zlepšila vybavení, poradenské služby a prostředí podporující příznivé klima.",
+        "evidence": "„Materiální a finanční podmínky se výrazně zlepšily“ a poradenské služby „operativně reagují“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Absence a odchody",
+        "detail": "Vysoká absence zvyšuje riziko neprospěchu a předčasného ukončení studia.",
+        "evidence": "„Vysokou absencí, což zvyšuje riziko jejich školní neúspěšnosti i předčasného odchodu ze vzdělávání.“"
+      },
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "Školní výuka má podle inspekce minimálně využívat přizpůsobení úrovni a tempa žáků.",
+        "evidence": "„Minimální využívání diferenciace výuky neumožňovalo dostatečně rozvíjet individuální předpoklady žáků.“"
+      },
+      {
+        "tag": "Práce s informacemi",
+        "detail": "Učitelé méně využívají práci s více zdroji, což omezuje samostatné učení žáků.",
+        "evidence": "„Učitelé v omezené míře zařazovali práci žáků s různými informačními zdroji.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola sleduje, motivuje a řeší absenci žáků, zejména v oboru Kadeřník?",
+      "Jak často učitelé přizpůsobují úkoly a tempo různým úrovním žáků?",
+      "Jaké konkrétní výsledky a podporu dostávají žáci se SVP nebo odlišným mateřským jazykem?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí studovat Gymnázium, Předškolní a mimoškolní pedagogiku, Kosmetické služby nebo Kadeřnictví.",
+      "Žáci, kterým vyhovuje denní forma studia; pedagogika je dostupná také kombinovaně.",
+      "Žáci, kteří oceňují propojení odborné teorie s praxí, praxí ve škole a spolupráci s partnery."
+    ],
+    "who_should_be_cautious": [
+      "Rodiny, které mají zájem o obor Hotelnictví, protože byl utlumen.",
+      "Žáci potřebující intenzivní individualizaci výuky, protože její využívání zůstává slabým místem.",
+      "Rodiny, které chtějí mít zajištěnou účinnou prevenci záškoláctví, protože inspekce označila tento systém za „neplně funkční“."
+    ],
+    "plain_czech_summary": "Škola se rychle rozrostla a zlepšila vybavení i výsledky. Nejlépe hodnotí odbornou a praktickou výuku, přípravu na maturitu i spolupráci s praxí. Profilové maturity jsou za poslední tři roky velmi dobré a všechni skutečně zkoušející žáci uspěli. Hlavní problémy jsou absence, odchody žáků a nedostatečná diferenciace výuky. Rodiče by se měli zeptat, jak škola konkrétně motivuje neúčastněné žáky a pomáhá jim vzdělání dokončit."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Společná část maturity byla převážně velmi dobrá; profilové výsledky byly hodnoceny jako velmi dobré ve všech sledovaných letech.",
+      "key_numbers": [
+        "2024/2025: všichni přihlášení žáci Gymnázia maturity úspěšně vykonali.",
+        "2022/2023: všichni přihlášení žáci Pedagogiky maturity úspěšně vykonali.",
+        "Ve všech třech letech byli úspěšní všichni žáci, kteří profilovou část maturity skutečně konali."
+      ],
+      "evidence": "„Ve školním roce 2024/2025 poprvé maturovali žáci z oboru Gymnázium, všichni přihlášení byli úspěšní.“"
+    },
+    "absence": {
+      "trend": "Absence zůstává významným problémem, zhoršuje prospěch a souvisí s předčasným odchodem některých žáků.",
+      "key_numbers": [
+        "Z 3. ročníku oboru Kadeřník odešla téměř třetina původního počtu žáků.",
+        "Slabý prospěch často souvisel s vyšší absencí.",
+        "Ve školním roce 2024/2025 mělo slabý prospěch přibližně pětino z žáků čtyřletých maturitních oborů."
+      ],
+      "evidence": "„Absence také souvisí o možným předčasným ukončením vzdělávání.“"
+    },
+    "support_services": [
+      "Školní poradenské služby se zaměřují na žáky se SVP, individuální integraci, primární prevenci a pomoc žákům i rodičům.",
+      "Škola spolupracuje s poradenskými zařízeními a externími pracovníky; systém záškoláctví však inspekce označila za „neplně funkční“.",
+      "Kariérové poradenství je podle inspekce „náležitě zajišťováno“."
+    ],
+    "safety_climate": [
+      "Sledovaná výuka probíhala ve „vstřícné atmosféře“ a podporovala příznivé školní klima.",
+      "Praktická výuka se konala podle bezpečnostních pravidel, s ochrannými pomůckami a dodržováním technologických postupů.",
+      "Ve výuce speciální pedagogiky byl podporující a empatický přístup současně vzorem pedagogické práce."
+    ],
+    "partnerships_practice": [
+      "Odborníci z praxe a vysokých škol obohacují výuku přednáškami a exkurzemi.",
+      "Učební praxe se realizuje u sociálních partnerů; v Pedagogice zahrnuje náslechy, samostatné výstupy ve smluvních školách, besedy a exkurze.",
+      "Škola aktivně spolupracuje s vnějšími partnery a žákovský parlament byl přetvořen na spolutvůrce pozitivního klimatu."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou přímé, konkrétní a zaměřené na to, co může rodiče ovlivnit při výběru školy a jednání s vedením.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesný průměrný počet hodin absence za žáka.",
+      "U oboru Kosmetické služby se výsledky maturity mezi roky měnily; inspekce neuvádí podrobné procento za každý obor.",
+      "Zpráva neporovnává jednotlivé učitele ani konkrétní třídy, proto je hodnocení vhodné vztahovat k celé škole."
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "report_id": "SOU_600015092_2026-01-12",
+  "school_profile": {
+    "school_type": "Střední škola, domov mládeže a školní jídelna",
+    "inspection_period": "12. 1. 2026 až 15. 1. 2026",
+    "school_change_summary": "Počet žáků vzrostl od minulé inspekce o 121, zejména kvůli novému oboru Masér sportovní a rekondiční a rozšíření hotelnictví o rekreologii."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborné vybavení",
+        "detail": "Škola má kvalitní kuchyň, restauraci, jídelnu a další moderní pracoviště, která propojují teorii s praxí.",
+        "evidence": "Školní kuchyně, jídelna a školící restaurace umožňují poskytovat stravovací služby na vysoké úrovni."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Poradenské služby a pomoc žákům se speciálními vzdělávacími potřebami jsou hodnoceny jako velmi dobře zajištěné.",
+        "evidence": "Poradenské služby byly zabezpečovány na velmi dobré úrovni; žákům se SVP byla poskytována náležitá pomoc."
+      },
+      {
+        "tag": "Soutěže a projekty",
+        "detail": "Žáci se dlouhodobě a aktivně účastní soutěží a projektů a dosahují dobrých výsledků.",
+        "evidence": "Žáci se účastní vědomostních i dovednostních soutěží, v nichž dosahují velmi dobrých výsledků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturita v nástavbovém studiu",
+        "detail": "Výsledky maturitní zkoušky žáků nástavbového studia jsou zhoršující se a zůstávají výrazně horší než celorepublikový průměr.",
+        "evidence": "Ve školním roce 2024/2025 byla hrubá neúspěšnost stále o 24,4 % vyšší než celorepublikový průměr."
+      },
+      {
+        "tag": "Aktivní zapojení do výuky",
+        "detail": "V řadě předmětů převládá frontální výuka a žáci mají méně příležitostí přemýšlet, diskutovat a hodnotit svůj pokrok.",
+        "evidence": "Ve většině hodin převažovala tradiční frontální výuka; sebehodnocení ani vzájemné hodnocení žáků nebylo zaznamenáno."
+      },
+      {
+        "tag": "Podpora v domově mládeže",
+        "detail": "Ubytovaným žákům mimo kmenovou školu může chybět účinná podpora, protože vedení nemá vždy potřebné informace.",
+        "evidence": "Vedení domova mládeže nemá relevantní informace o speciálních vzdělávacích potřebách některých ubytovaných."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní kroky škola přijala pro snížení neúspěšnosti nástavbového studia u maturity a kdy se jejich účinnost ověří?",
+      "Jak často žáci během běžné výuky samostatně hodnotí své pokroky, dostávají zpětnou vazbu a pracují úkoly podle své úrovně?",
+      "Jak domov mládeže získává informace o podpůrných potřebách žáků, kteří dojíždějí z jiné školy?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat hotelnictví, cestovní ruch, gastronomii, potravinářské obory nebo masérství a rekondiční léčbu.",
+      "Žákům, kterým vyhovuje každodenní praktická výuka vybavených odborných pracovišť.",
+      "Žákům se speciálními vzdělávacími potřebami, kterým škola poskytuje individualizovanou podporu."
+    ],
+    "who_should_be_cautious": [
+      "Uchazečům o nástavbové studium, kteří chtějí přesvědčivě uspět při maturitě, protože výsledky této části školy jsou problematické.",
+      "Žákům, kteří potřebují v každé hodině výrazně samostatnou práci, rozdílné úkoly podle úrovně a pravidelnou podporu vlastního hodnocení.",
+      "Rodičům ubytovaných žáků, kteří potřebují v domově mládeže jistotu informací a cílené podpory."
+    ],
+    "plain_czech_summary": "Škola má silné praktické zázemí: kvalitní kuchyň, restauraci, odborné učebny a dobré pracoviště. Žáci se aktivně účastní soutěží a projektů a ve většině praktických oborů jsou dobře připravováni na práci. Poradenství i podpora žáků se speciálními vzdělávacími potřebami fungují dobře. Hlavním rizikem jsou výsledky maturity v nástavbovém studiu, které se zhoršují a jsou výrazně horší než celorepublikový průměr. V běžné výuce se také rodičům vyplatí ověřit, jak často se žáci aktivně zapojují, dostávají zpětnou vazbu a pracují podle své úrovně. Rodiče ubytovaných by měli zjistit, jak škola řeší přenos informací o podpůrných potřebách dětí z jiných škol."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "U Hotelnictví a cestovního ruchu se trend zlepšoval, u nástavbového studia byl kolísavý až zhoršující.",
+      "key_numbers": [
+        "Nástavbové studium: v roce 2022/2023 hrubá neúspěšnost 33,3 %.",
+        "V roce 2023/2024 byla o 32,7 procentního bodu vyšší než republikový průměr.",
+        "V roce 2024/2025 byla o 24,4 procentního bodu vyšší než republikový průměr."
+      ],
+      "evidence": "Výsledky nástavbového studia se zhoršovaly; u cizího jazyka byl rozdíl v roce 2024/2025 o 36 procentních bodů."
+    },
+    "absence": {
+      "trend": "Inspekční zpráva neuvádí přehledný trend ani číselné údaje o absenci.",
+      "key_numbers": [],
+      "evidence": "V dodaném textu nejsou uvedeny počty absencí ani jejich vývoj."
+    },
+    "support_services": [
+      "Výchovná a kariérová poradkyně, metodička prevence a zástupkyně ředitelky poskytovaly poradenské služby na velmi dobré úrovni.",
+      "Žákům se speciálními vzdělávacími potřebami byla poskytována pomoc podle podpůrných opatření a individuálních vzdělávacích plánů.",
+      "Škola poskytovala kariérové poradenství a preventivní programy proti sociálně patologickým jevům."
+    ],
+    "safety_climate": [
+      "Systém bezpečnosti a ochrany zdraví byl funkční a zahrnoval pravidelné prověrky, školení a poučení.",
+      "Odborná výuka potravinářských oborů probíhala v klidné, bezpečné a podnětné atmosféře.",
+      "Praktická výuka zahrnovala důraz na osobní hygienu, bezpečnost práce a zásady systému HACCP."
+    ],
+    "partnerships_practice": [
+      "Škola využívala pracoviště smluvních partnerů pro individuální odborný výcvik a jasně vymezila odpovědnost instruktorů.",
+      "Spolupráce se zřizovatelem a projekty podpořily modernizaci budov, učeben, kuchyně a ICT vybavení.",
+      "Projektová činnost a spolupráce se zřizovatelem podpořily rozvoj pedagogů, poradenských služeb a odborných kompetencí žáků."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a vztahuje se přímo k předmětům a oborům, které mohou rodiče ovlivnit při výběru školy.",
+    "uncertainty_notes": [
+      "Zpráva neposkytuje údaje o absencích.",
+      "U některých matematických výsledků nástavbového studia se hodnotí velmi malý počet zkoušejících, a proto je nutná opatrnost.",
+      "Zpráva uvádí zavedená opatření, ale při inspekci nebyl zaznamenán jejich pozitivní dopad."
+    ]
+  }
+}

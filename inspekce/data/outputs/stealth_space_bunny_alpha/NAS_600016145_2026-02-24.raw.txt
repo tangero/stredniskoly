@@ -1,0 +1,103 @@
+{
+  "report_id": "NAS_600016145_2026-02-24",
+  "school_profile": {
+    "school_type": "Střední škola průmyslová, Krnov, příspěvková organizace; působí také jako domov mládeže a školní jídelna.",
+    "inspection_period": "24. 2. 2026–27. 2. 2026",
+    "school_change_summary": "Po zářijových povodních 2024 se škola postupně obnovuje: znovu vybavila učebny, dílny, tělocvičnu a část domova mládeže, pořídila nové stroje a rozšířila přijímací kritéria a výuku jazyků v nástavbovém oboru Podnikání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Praktické vyučování je podle inspekce názorné, propojuje teorii s praxí a žáci aktivně řeší zadané úkoly.",
+        "evidence": "„Výuka se vyznačovala vysokou názorností... žáci byli aktivně zapojeni, řešili zadané úkoly.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola poskytuje doučování, individuální konzultace a poradenské služby žákům s neprospěchem nebo vyšší absencí.",
+        "evidence": "„Poskytuje jim pomoc zejména prostřednictvím individuálních konzultací a doučování.“"
+      },
+      {
+        "tag": "Odborné vzdělávání",
+        "detail": "Školu lze ocenit za spolupráci při odborném výcviku a rozvoj oborů odpovídajících potřebám regionálního trhu práce.",
+        "evidence": "„Efektivně fungující partnerství se smluvními partnery při zajišťování odborného výcviku podporuje prakticky orientované vzdělávání.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Neúspěšnost na maturitě",
+        "detail": "Výsledky společné části maturity jsou kolísavé a zejména u oboru Podnikání, Informační technologie, Mechanik seřizovač a Autotronik často horší než celorepublikový průměr.",
+        "evidence": "„Kolísavá neúspěšnost žáků ve společné části maturitní zkoušky ve vztahu k celorepublikovému průměru.“"
+      },
+      {
+        "tag": "Absence a školní neúspěch",
+        "detail": "Opatření proti absenci a neúspěchu nejsou vždy uplatňována dostatečně průběžně a důsledně ani pravidelně vyhodnocována.",
+        "evidence": "„Opatření prevence školního neúspěchu a řešení absence nejsou vždy uplatňovány na průběžně a důsledně.“"
+      },
+      {
+        "tag": "Teoretická výuka",
+        "detail": "V běžné teoretické výuce se méně uplatňuje samostatné zkoumání, práce s informacemi, kritické myšlení a průběžné formativní hodnocení.",
+        "evidence": "„Pedagogové v nižší míře podporují rozvoj kritického myšlení žáků a nevedou je k vyhodnocení vzdělávacích cílů.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak při hodinové dotaci 24–27 hodin týdně probíhá v případě povinných praktických úvazků na smluvním pracovišti?",
+      "Jaké konkrétní výsledky a podporu dostávají žáci nástavbového oboru Podnikání při zvýšené absenci?",
+      "Jak často žáci dostávají zpětnou vazbu o svém postupu, nejen o správnosti výsledku, a kde se uplatňuje formativní hodnocení?"
+    ],
+    "who_school_fits": [
+      "Uchazečům, kteří chtějí střední vzdělání v technických, řemeslných nebo informačních oborech.",
+      "Žákům, kterým vyhovuje větší podíl praktické výuky a odborného výcviku.",
+      "Uchazečům, kteří mají zájem o obory pro maturitu i o učení s výučním listem."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků nástavbového oboru Podnikání kvůli vyznačující se vyšší absenci a horším maturitním výsledkům.",
+      "Rodičům žáků, kteří potřebují v teoretické výuce výraznější podporu samostatného učení, argumentace a práce s informacemi.",
+      "Rodičům žáků se zvýšenou absencí, protože inspekce zjistila souvislost neřešené absence se zhoršenými výsledky."
+    ],
+    "plain_czech_summary": "Škola nabízí technické, řemeslné a informační obory s důrazem na praktickou výuku. Po povodních se pomalu obnovují dílny, tělocvična a vybavení; některé prostory zatím mimo užívání. Praktická výuka je hodnocena dobře, stejně jako podpora žáků s potížemi. Hlavní opatrnost je nutná u výsledků maturity, především v oboru Podnikání, a u absence. V teoretických předmětech se podle inspekce méně rozvíjí samostatné myšlení, práce s více zdroji a průběžné hodnocení učebního pokroku."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Ve čtyřletých maturitních oborech je trend mírně příznivý, ale výsledky jsou kolísavé a v některých oborech horší než celorepublikový průměr. Nejvyšší hrubá neúspěšnost je v oboru Podnikání.",
+      "key_numbers": [
+        "V oboru Podnikání byla v roce 2024/2025 hrubá neúspěšnost z českého jazyka přibližně 26 % proti republikovému průměru 21 %.",
+        "V oboru Informační technologie byla v roce 2024/2025 neúspěšnost z českého jazyka 8 % proti průměru 4 % a z anglického jazyka 9 % proti průměru 3 %.",
+        "V oborech Mechanik seřizovač a Autotronik byla v roce 2024/2025 neúspěšnost z českého jazyka 9 % proti průměru 10 % a z anglického jazyka 4 % proti průměru 7 %."
+      ],
+      "evidence": "„Z meziročního porovnání... je patrný mírně příznivý trend ve výsledcích společné části maturitní zkoušky.“"
+    },
+    "absence": {
+      "trend": "Absence je stabilizovaná v závěrečné fázi studia, ale u dvouletého nástavbového oboru Podnikání zůstává vyšší. Zpravidla se pojí se zhoršenými studijními výsledky.",
+      "key_numbers": [
+        "Ve 2. pololetí maturitního ročníku oboru Podnikání došlo v letech 2023/2024 a 2024/2025 k výraznému snížení absence.",
+        "Škola uvádí, že vyšší absence se projevuje zejména u žáků dvouletého nástavbového studia oboru Podnikání."
+      ],
+      "evidence": "„Analýza... ukazuje souvislost mezi vyšší absencí žáků ve výuce a jejich zhoršenými studijními výsledky.“"
+    },
+    "support_services": [
+      "Individuální konzultace a doučování pro žáky se slabším prospěchem nebo zvýšenou absencí.",
+      "Poradenský tým: dvě výchovné poradkyně, školní metodička prevence a sociální pedagožka.",
+      "Sledování docházky, dotazníky osobní spokojenosti, setkávání zástupců tříd, adaptační kurzy a žákovský klub OKAP II."
+    ],
+    "safety_climate": [
+      "Vstupy do budov jsou zabezpečeny proti vniknutí cizích osob.",
+      "Škola má pravidla pro bezpečnost a ochranu zdraví žáků; většina úrazů vzniká při tělesné výchově.",
+      "Inspekce doporučila zvážit elektronickou evidenci úrazů na sdíleném disku a důsledněji vyžadovat vhodné cvičební oblečení a obuv."
+    ],
+    "partnerships_practice": [
+      "Smluvní partneři zajišťují odborný výcvik pro část oborů, včetně dřevařského oboru v zařízení RENOVA.",
+      "Spolupráce se školami v Głubczycích, Ostravě-Vítkovicích a Vysokou školou báňskou – Technickou univerzitou Ostrava.",
+      "Škola spolupracuje se školami obdobného zaměření, regionálními zaměstnavateli a projektem Jeden svět na školách."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá běžné české výrazy, vysvětluje odborné údaje rodičům a odděluje silné stránky od oblastí ke zlepšení.",
+    "uncertainty_notes": [
+      "Zpráva uvádí trend a vybrané podíly neúspěšnosti, ale ne úplnou tabulku všech výsledků za oba školní roky.",
+      "U absence nejsou uvedeny přesné počty absentujících žáků, proto jsou uvedeny pouze zjištěné tendence.",
+      "Škola má více pracovišť a některá praktická vyučování probíhají externě; přesné podmínky je proto vhodné ověřit při konkrétním oboru."
+    ]
+  }
+}

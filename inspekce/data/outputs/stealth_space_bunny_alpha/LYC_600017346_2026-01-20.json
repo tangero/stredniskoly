@@ -1,0 +1,111 @@
+{
+  "report_id": "LYC_600017346_2026-01-20",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:43:32.445659+00:00",
+  "run_finished_utc": "2026-10-02T16:43:58.306747+00:00",
+  "raw_file": "LYC_600017346_2026-01-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600017346_2026-01-20",
+    "school_profile": {
+      "school_type": "Střední škola hotelnictví, gastronomie a služeb SČMSD, se školní jídelnou a domovem mládeže",
+      "inspection_period": "20. 1. 2026 – 23. 1. 2026",
+      "school_change_summary": "Škola od předchozího hodnocení výrazně zmodernizovala odborné učebny, digitální infrastrukturu a volnočasové zázemí. Přesto přetrvává neuspokojivá úspěšnost při ukončování vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Žáci se učí v reálném provozním prostředí a získávají zkušenosti odpovídající jejich oboru.",
+          "evidence": "Praktické vyučování probíhalo na pracovištích smluvních partnerů v autentickém provozním prostředí."
+        },
+        {
+          "tag": "Odborné vybavení",
+          "detail": "Modernizované učebny a posílená digitální infrastruktura podporují odbornou přípravu žáků.",
+          "evidence": "Vzniklo několik odborných učeben, byla posílena digitální infrastruktura a modernizováno technické vybavení."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí doučování, konzultace a systematickou podporu žáků se speciálními vzdělávacími potřebami.",
+          "evidence": "Škola zajišťuje žákům ohroženým školním neúspěšností konzultace a doučování."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturitní příprava",
+          "detail": "Úspěšnost u maturitních zkoušek je dlouhodobě nízká a v některých oborech se výsledky zhoršily.",
+          "evidence": "Na podzim 2025 neprospělo 54,5 % žáků; v nástavbovém oboru Podnikání byla zaznamenána 100% neúspěšnost."
+        },
+        {
+          "tag": "Aktivita ve výuce",
+          "detail": "Ve výuce se málo využívají metody, které zapojují žáky do samostatného a vyššího myšlení.",
+          "evidence": "Aktivizační metody podporující výrazné zapojení žáků a využívání informačních zdrojů byly uplatňovány jen výjimečně."
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Omezené využívání sebehodnocení a závěrečné reflexe ztěžuje žákům ověřit vlastní porozumění učivu.",
+          "evidence": "Sebehodnocení a vrstevnické hodnocení bylo využíváno pouze v omezeném rozsahu."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola mění přípravu na maturitní zkoušky a jaké výsledky nová opatření přinesla?",
+        "Jak často a v jakém rozsahu probíhá praktická výuka na pracovištích partnerů?",
+        "Jaké konkrétní podpůrné služby mohou využít rodiče žáka ohroženého školním neúspěchem nebo se SVP?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat obory hotelnictví, gastronomie, cestovní ruch, kadeřnictví nebo přírodovědné lyceum.",
+        "Žákům, kterým vyhovuje školní prostředí s důrazem na praktické dovednosti a práci na odborných pracovištích.",
+        "Žákům, kteří mají zájem o sportovní, soutěžní, projektové nebo dobrovolnické aktivity."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům, kterým záleží na vysoké a dlouhodobě stabilní úspěšnosti u maturitních zkoušek.",
+        "Rodičům žáků, kterým vyhovuje výuka s výrazně větším podílem samostatného řešení, projektové práce a práce s více zdroji.",
+        "Rodičům, kteří očekávají široké ověření výsledků vnějšími testy; inspekční zpráva zmiňuje slabé výsledky v čtenářské gramotnosti a moderních dějinách."
+      ],
+      "plain_czech_summary": "Škola má dobře vybavené odborné učebny, silné praktické vyučování a nabízí žákům řadu aktivit i podporu při neúspěchu. Výuka má přátelskou atmosféru a učitelé podporují samostatnost. Hlavním problémem jsou ale výsledky maturitních zkoušek, které jsou dlouhodobě pod očekávanou úrovní. Ve škole se také málo využívají aktivizační metody, práce s více zdroji, sebehodnocení a závěrečná reflexe. Rodiče by se měli zejména zeptat na přípravu na maturitu a konkrétní výsledky přijatých opatření."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zhoršení v dostupných obdobích, dlouhodobě neuspokojivá úroveň",
+        "key_numbers": [
+          "Jaro 2025: 74,4 % žáků prosperovalo, 25,6 % neprosperovalo.",
+          "Podzim 2025: 45,5 % žáků prosperovalo, 54,5 % neprosperovalo.",
+          "Nástavbový obor Podnikání: 100 % neúspěšnost."
+        ],
+        "evidence": "Výsledky maturitních zkoušek se dlouhodobě pohybují pod očekávanou úrovní a nevykazují zlepšující se tendence."
+      },
+      "absence": {
+        "trend": "Zpráva neuvádí",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje údaje o absenci žáků."
+      },
+      "support_services": [
+        "Doučování a individuální konzultace ve všech vyučovacích předmětech.",
+        "Konzultace pro žáky ohrožené školním neúspěšností.",
+        "Podpora žáků se speciálními vzdělávacími potřebami a nadaných žáků.",
+        "Výchovné a kariérové poradenství a metodika prevence.",
+        "Asistent pedagoga pro zajištění pedagogické asistence."
+      ],
+      "safety_climate": [
+        "Žáci jsou pravidelně poučováni o bezpečnosti, ochraně zdraví a požární prevenci.",
+        "Škola vede knihu úrazů a evidence záznamů je v souladu s platnou vyhláškou.",
+        "Při praktickém vyučování jsou žáci instruováni o bezpečnosti práce a správných technologických postupech."
+      ],
+      "partnerships_practice": [
+        "Praktické vyučování probíhá na pracovištích smluvních partnerů v autentickém provozním prostředí.",
+        "Škola spolupracuje s gastronomickými provozy v Moravskoslezském kraji.",
+        "Škola rozvíjí spolupráci se základními školami, místní komunitou, charitativními organizacemi a seniory."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulován srozumitelně, stručně a v běžné češtině s důrazem na praktické informace pro rodiče.",
+      "uncertainty_notes": [
+        "Údaje o absenci nejsou v inspekční zprávě uvedeny.",
+        "Zpráva uvádí výsledky maturit za jarní a podzimní období 2025, nikoli dlouhodobou časovou řadu pro jednotlivé obory.",
+        "Konkrétní výsledky opatření přijatých po zjištění neuspěšnosti nejsou uvedeny."
+      ]
+    }
+  }
+}

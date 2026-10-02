@@ -1,0 +1,109 @@
+{
+  "report_id": "SOS_600010228_2026-04-07",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:20:36.856177+00:00",
+  "run_finished_utc": "2026-10-02T16:21:02.551734+00:00",
+  "raw_file": "SOS_600010228_2026-04-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600010228_2026-04-07",
+    "school_profile": {
+      "school_type": "Střední škola zahradnická a zemědělská",
+      "inspection_period": "7. 4. 2026 – 10. 4. 2026",
+      "school_change_summary": "Škola otevřela obor Ekologie a životní prostředí, zvýšila kapacitu a modernizovala prostory; závěry uvádějí „značné zvýšení počtu žáků“ a „výraznou obnovu a modernizaci“."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vzdělávání",
+          "detail": "Praktické vyučování má dobrou odbornou úroveň a žáci pracují u reálných strojů.",
+          "evidence": "„Praktické vyučování bylo dobře organizačně zajištěno a mělo dobrou odbornou úroveň.“"
+        },
+        {
+          "tag": "Vybavení a prostory",
+          "detail": "Škola má velmi dobré materiální podmínky pro odborné a praktické vzdělávání.",
+          "evidence": "„Materiální a prostorové podmínky ... jsou velmi dobré.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola podporuje žáky s potřebami, včetně pomoci při adaptaci, těžkých situacích a při učení.",
+          "evidence": "„Škola vytváří vhodné podmínky pro vzdělávání žáků se speciálními vzdělávacími potřebami.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Školní klima",
+          "detail": "Část žáků uvádí, že se spolužákům nedokáže vyjádřit nesouhlas a neshody nevedou ke zlepšení spolupráce.",
+          "evidence": "„část žáků ... nemohou spolužákům říct, když s nimi v něčem nesouhlasí“"
+        },
+        {
+          "tag": "Aktivita ve výuce",
+          "detail": "V části hodin převažuje frontální výuka a žáci jsou spíše pasivní.",
+          "evidence": "„V některých hodinách převažovala frontální výuka, při které zůstávali žáci spíše pasivní.“"
+        },
+        {
+          "tag": "Diferenciace a zpětná vazba",
+          "detail": "Nedostatečně se uplatňuje přizpůsobení úkolů potřebám žáků a málo funguje zpětná vazba o zvládnutí učiva.",
+          "evidence": "„obsahová diferenciace ... nebyla uplatňována“; „zpětná vazba ... byla žákům poskytována ojediněle“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se ve všeobecných předmětech přizpůsobují zadání žákům s různými vzdělávacími potřebami?",
+        "Jak často žáci dostávají zpětnou vazbu a podle jakých kritérií se učitel rozhoduje změnit výukový přístup?",
+        "Jaké konkrétní aktivity pomáhají řešit neshody a zlepšovat vztahy mezi žáky?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat zahradnický, zemědělský, ekologický nebo veterinářní obor.",
+        "Žákům, kterým vyhovuje denní forma a rozsáhlé praktické vyučování.",
+        "Žákům, kteří využijí možnost ubytování v domově mládeže; zpráva uvádí „ubytování ve vlastním domově mládeže“."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na aktivním, kooperativním a diferencovaném vyučování; zpráva zde uvádí nedostatky.",
+        "Rodičům, kteří očekávají velmi častou zpětnou vazbu a práci s různými informačními zdroji.",
+        "Rodičům žáků, kterým může vadit prostředí s opakovanými názory na školní klima; zpráva uvádí, že „neshody mezi nimi nevedou ke zkvalitnění spolupráce“."
+      ],
+      "plain_czech_summary": "Škola má velmi dobré prostory a technické vybavení pro praktickou výuku. Praktické vyučování je hodnoceno jako dobře organizované a odborně kvalitní. Výsledky u maturitní zkoušky jsou přibližně srovnatelné s obdobnými obory v ČR, v roce 2025 se ve společné části zúčastnili všichni přihlášení žáci. Pomalejší místa jsou převaha frontální výuky, malá diferenciace, slabá zpětná vazba a některé problémy ve vztazích mezi žáky. Rodičům se vyplatí zejména ověřit na otevřeném dni, jak se tyto nedostatky řeší."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Ve zkušebním období 2025 se zlepšila úspěšnost ve společné části oproti roku 2024; zpráva uvádí, že „zlepšily se výsledky školy ve společné části maturitní zkoušky“.",
+        "key_numbers": [
+          "2025: Agropodnikání společná část 14,3 % neúspěšnosti, Česká republika 11,1 %.",
+          "2025: Veterinářství společná část 0 % neúspěšnosti, profilová část 4,3 %.",
+          "2025: Agropodnikání profilová část 7,1 % neúspěšnosti, Česká republika 6,4 %."
+        ],
+        "evidence": "Ve zkušebním období 2025 se ve společné části nezdařil v Agropodnikání matematický a cizojazyčný didaktický test; v Veterinářství všichni uspěli."
+      },
+      "absence": {
+        "trend": "Údaje o absencích nejsou v dodané zprávě uvedeny.",
+        "key_numbers": [],
+        "evidence": "Zpráva neuvádí počet neomluvených hodin ani vývojabsence."
+      },
+      "support_services": [
+        "Výchovná poradkyně, metodička prevence a školní asistentka.",
+        "Individuální doučování a konzultace.",
+        "Adaptační kurzy, třídnické programy a intervence při úzkostech, nervozitě či agresi.",
+        "Ubytování v domově mládeže s podporou při učení a volném čase."
+      ],
+      "safety_climate": [
+        "Při praktické výuce se upevňovaly zásady bezpečnosti a ochrany zdraví při práci.",
+        "Školní klima je problematické: zpráva uvádí, že „část žáků“ nedokáže spolužákům sdělit nesouhlas."
+      ],
+      "partnerships_practice": [
+        "Spolupráce se sociálními partnery v tuzemsku i zahraničí je podle zprávy funkční a systematická.",
+        "Škola realizuje projektovou činnost a zakázky pro okolní obce a další subjekty.",
+        "Odborníci z praxe se podílejí na odborném vzdělávání; probíhá tandemová výuka."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulován srozumitelně, stručně a bez dalších doplněných faktů; důležité závěry jsou opřeny o citace ze zprávy.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí údaje o absencích.",
+        "Zpráva uvádí výsledky zkoušek za roky 2024 a 2025, nikoli dlouhodobý trend pro všechny obory.",
+        "U některých doporučení je vhodné ověřit jejich skutečné provádění při návštěvě školy."
+      ]
+    }
+  }
+}

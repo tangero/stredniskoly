@@ -1,0 +1,108 @@
+{
+  "report_id": "GY8_600008291_2026-03-23",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:24:33.340526+00:00",
+  "run_finished_utc": "2026-10-02T16:24:56.254957+00:00",
+  "raw_file": "GY8_600008291_2026-03-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600008291_2026-03-23",
+    "school_profile": {
+      "school_type": "Veřejné gymnázium poskytující osmileté a čtyřleté vzdělávání v denní formě.",
+      "inspection_period": "23. 3. 2026 až 25. 3. 2026",
+      "school_change_summary": "Počet žáků mírně vzrostl, rozšířila se nabídka volitelných předmětů i pedagogický sbor a vznikl nový přednáškový sál."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Příprava na vysoké školy",
+          "detail": "Velká většina absolventů pokračuje na vysokých školách a škola systematicky sleduje jejich uplatnění.",
+          "evidence": "„Většina absolventů školy pokračuje ve studiu na vysokých školách v celém spektru oborů.“"
+        },
+        {
+          "tag": "Rozmanitá nabídka aktivit",
+          "detail": "Volitelné předměty, zájmové činnosti, projekty a odborníci z praxe podporují zájmy a přípravu na další studium.",
+          "evidence": "„Široká nabídka rozšiřujících vzdělávacích aktivit, zapojení do mezinárodních projektů… přispívá k všestrannému rozvoji osobností žáků.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola poskytuje poradenské služby, doučování, konzultace a podpůrná opatření pro vybrané žáky.",
+          "evidence": "„Pro žáky ohrožené školním neúspěchem nabízí škola doučovací aktivity, případně individuální konzultace.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Diferenciace výuky",
+          "detail": "Ve většině hospitovaných hodin chyběla dostatečná diferenciace podle rozdílných možností a potřeb žáků.",
+          "evidence": "„Ve většině hodin chyběla diferenciace zadávaných úkolů, která by zohledňovala různý vzdělávací potenciál žáků.“"
+        },
+        {
+          "tag": "Aktivní zapojení žáků",
+          "detail": "V některých hodinách převládal výklad, takže žáci měli méně prostoru pro komunikaci, kritické myšlení a vlastní úsudek.",
+          "evidence": "„V hodinách s převažujícím výkladem nebyl vytvářen dostatečný prostor pro aktivní zapojení žáků.“"
+        },
+        {
+          "tag": "Organizace školní dokumentace",
+          "detail": "Kontrola povinné dokumentace nebyla vždy dostatečně důsledná, přestože většina zjištěných formálních nedostatků byla během inspekce odstraněna.",
+          "evidence": "„V některých oblastech však kontrolní činnost není dostatečně důsledná.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé v jednotlivých předmětech přizpůsobují zadání různým možnostem žáků?",
+        "Jak často probíhá doučování, individuální konzultace a podpora při přípravě na maturitu?",
+        "Jaké konkrétní příklady aktivního zapojení žáků a formativního hodnocení lze najít v běžných hodinách?"
+      ],
+      "who_school_fits": [
+        "Rodice žáků, kteří hledají přípravu na vysokou školu v kvalitním gymnaziálním prostředí.",
+        "Žáci se zájmem o jazyky, mezinárodní projekty, vědecké aktivity nebo odborné soutěže.",
+        "Žáci, kterému vyhovují menší počet tříd, strukturované školní prostředí a dostatek konzultací."
+      ],
+      "who_should_be_cautious": [
+        "Rodice, kteří očekávají průběžné přizpůsobování všech zadání různým studijním předpokladům žáků.",
+        "Rodice žáků potřebujících zejména intenzivní individualizovanou výuku, kterou škola nepopisuje jako pravidlo.",
+        "Rodice, kteří chtějí ve všech předmětech převážně aktivní a badatelsky zaměřené hodiny."
+      ],
+      "plain_czech_summary": "Gymnázium má velmi dobré studijní výsledky a silnou přípravu na vysoké školy. Maturita jsou nad celostátním průměrem gymnázií, roční průměr je 1,56 a neomluvená absence zůstává nízká. Rodiče ocení jazykové aktivity, mezinárodní projekty, odborníky z praxe i dostupné konzultace. Většina absolventů pokračuje na vysokých školách. Výuka má přátelské klima, ale inspekce upozornila na málo diferenciace, někdy přílišný podíl výkladu a slabší využívání informačních zdrojů. Doporučuje se více podporovat vlastní aktivitu žáků, sebereflexi a individuální přístup."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou lepší nebo srovnatelné s celostátním průměrem gymnázií; zpráva uvádí výsledky za jeden školní rok.",
+        "key_numbers": [
+          "61 z 61 žáků při maturitě prospělo.",
+          "31 žáků maturitu složilo s vyznamenáním."
+        ],
+        "evidence": "„V loňském školním roce prospělo u maturitní zkoušky všech 61 žáků, z toho 31 s vyznamenáním.“"
+      },
+      "absence": {
+        "trend": "Omluvená absence je dlouhodobě nízká a škola podle zprávy úspěšně řeší související problémy.",
+        "key_numbers": [],
+        "evidence": "„Průměrná míra omluvené absence na jednoho žáka je dlouhodobě nízká.“"
+      },
+      "support_services": [
+        "Škola poskytovala podpůrná opatření 1. až 3. stupně 22 žákům.",
+        "Součástí týmu jsou výchovná a kariérová poradkyně, školní metodička prevence a školní psycholožka.",
+        "Škola nabízí doučovací aktivity a individuální konzultace žákům ohroženým neúspěchem i připravujícím se na maturitu."
+      ],
+      "safety_climate": [
+        "V hospitovaných hodinách vytvářeli učitelé pozitivní třídní klima a přistupovali k žákům s respektem a vstřícností.",
+        "Škola má preventivní program zahrnující adaptační a socializační aktivity ve spolupráci s externími odborníky.",
+        "K přátelskému prostředí přispívají peer aktivity, společné rituály a žákovský parlament."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s akademickými pracovišti, vysokými školami, archivem, jazykovými a neziskovými institucemi.",
+        "Zapojení do sítě škol UNESCO a projektu Erasmus+ rozvíjí mezikulturní učení a jazykové kompetence.",
+        "Partnerství s partnerskou zahraniční školou podporuje mobility, vývoj jazykových dovedností a výměnu zkušeností."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulován srozumitelně, stručně a v konkrétních vztazích k rozhodování rodičů.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí číselnou hodnotu omluvené absence, proto pole s čísly zůstalo prázdné.",
+        "U výsledků maturit je uveden pouze jeden školní rok, takže dlouhodobý trend nelze spolehlivě posoudit.",
+        "Očekávání rodičů ohledně diferenciace a aktivního zapojení vychází z popisu hospitovaných hodin, ne ze zjištění rodičů."
+      ]
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "report_id": "SOS_600010422_2026-02-04",
+  "school_profile": {
+    "school_type": "Střední uměleckoprůmyslová škola sklářská",
+    "inspection_period": "4. 2. 2026 až 10. 2. 2026",
+    "school_change_summary": "Od předchozí inspekce vznikl studentský parlament, zlepšilo se klima pedagogického sboru a rozšířila poradenská podpora: „založením studentského parlamentu, tak stabilizací situace a zlepšením klimatu v pedagogickém sboru“."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Praktická výuka je dobře připravená, motivuje žáky a přizpůsobuje se jejich potřebám.",
+        "evidence": "„Výrazným přínosem byla přítomnost laborantky“ a praktická výuka probíhala s vysokou mírou připravenosti."
+      },
+      {
+        "tag": "Odborné praxe",
+        "detail": "Školní partneři umožňují žákům pracovat s moderní technikou a externími odborníky.",
+        "evidence": "„Spolupráce umožňuje žákům využívat nejmodernější technologie, jimiž škola nedisponuje“."
+      },
+      {
+        "tag": "Bezpečné klima",
+        "detail": "Ve sledovaných hodinách panovala klidná atmosféra a vzájemně respektující vztahy mezi žáky a pedagogy.",
+        "evidence": "„Mezi pedagogy a žáky panovaly funkční a profesionální vztahy založené na vzájemném respektu.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Teoretická výuka",
+        "detail": "V teoretických hodinách převládá frontální výuka, chybí diferenciace a časté shrnutí či sebehodnocení.",
+        "evidence": "„V mnoha vyučovacích hodinách dominoval jednosměrný přenos informací“ a „chyběla diferenciace výuky“."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Poradenské služby byly nově posilovány, ale jejich účinnost se podle inspekce ještě nevyhodnocovala dostatečně pravidelně.",
+        "evidence": "„Nastavený systém poradenských služeb v době inspekční činnosti pouze částečně odpovídal aktuálním potřebám školy.“"
+      },
+      {
+        "tag": "Budovy a vybavení",
+        "detail": "Zvláště domov mládeže a některé školní prostory potřebují rekonstrukci a technické zázemí školy je místy zastaralé.",
+        "evidence": "„Materiálně-technické vybavení je sice provozně funkční, ale již zastaralé a vyžaduje systémovou rekonstrukci.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá podpora žáků s potřebou individuálního přístupu v teoretických předmětech?",
+      "Jak často se žáci a rodiče mohou obracet na výchovnou poradkyni, školní metodičku či externí speciální pedagožku?",
+      "Jaké revizní kontroly a bezpečnostní postupy platí pro školní budovy, sklářskou huť, laboratoře a domov mládeže?"
+    ],
+    "who_school_fits": [
+      "Uchazeče, kteří chtějí studovat umělecký obor a mají zájem o tvorbu, praktickou práci a prezentaci výsledků.",
+      "Žáky, kterým vyhovuje současnost teorie a praxe, specializované ateliéry, laboratoře nebo sklářská huť.",
+      "Uchazeče připravené na talentovou zkoušku v uměleckých oborech nebo jednotnou přijímací zkoušku v technických oborech."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče žáků, kterým záleží na pravidelné individuální podpoře přímo v hodinách teoretických předmětů.",
+      "Rodiče očekávající zcela nové a bezbariérové vybavení všech školních objektů.",
+      "Rodiče žáků s výraznějšími podpůrnými potřebami, kteří chtějí mít jistotu pravidelně vyhodnocované podpůrné péče."
+    ],
+    "plain_czech_summary": "Škola nabízí čtyři maturitní obory, kvalitní ateliéry, laboratoře, sklářskou huť, odborné praxe a partnerskou síť. Praktické vyučování je individuální, motivující a žáci v něm dosahují dobrých výsledků. Klima školy se zlepšilo, funguje studentský parlament a elektronická schránka důvěry. Větší rezervy jsou v teoretické výuce, která málo přizpůsobuje náročnost úloh jednotlivým žákům a má málo prostoru pro zpětnou vazci. Poradenská podpora se rozšiřuje, ale inspekce zjistila nepravidelné hodnocení její účinnosti. Některé budovy a vybavení jsou zastaralé. Celková absence není podle inspekce zásadním problémem, úspěšnost ve společné části maturity se za poslední tři roky zlepšila."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky společné části maturitní zkoušky se za zkupební roky 2023–2025 významně zlepšily.",
+      "key_numbers": [
+        "Umělecké obory: hrubá neúspěšnost za roky 2023–2025 průměrně 10 %.",
+        "Umělecké obory za roky 2024–2025: průměrně 5,0 %, při českém průměru 6,8 %.",
+        "Aplikovaná chemie: 100 % úspěšnost v českém jazyce, literatuře i cizím jazyce; matematiku maturovali jen tři žáci."
+      ],
+      "evidence": "„Výsledky žáků školy významně zlepšily“; údaje vycházejí ze zkupebních roků 2023 až 2025."
+    },
+    "absence": {
+      "trend": "Nejvyšší absence byla ve školním roce 2023/2024, nejnižší v roce 2024/2025; neomluvená absence se dále snižovala.",
+      "key_numbers": [
+        "Celkem přibližně 140 až 180 zameškaných hodin na žáka za školní rok.",
+        "Umělecké obory: 160 až 215 hodin; technické obory: 110 až 145 hodin.",
+        "Ve školním roce 2024/2025 škola neevidovala žádnou neomluvenou absenci."
+      ],
+      "evidence": "„Ve školním roce 2024/2025 škola žádnou neomluvenou absenci žáků neevidovala.“"
+    },
+    "support_services": [
+      "Výchovné poradenství a školní metodika prevence zajišťuje od 1. 12. 2025 nově obsazená funkce výchovné poradkyně a školní metodičky.",
+      "Od ledna 2026 školu podporuje externí speciální pedagožka; jeden žák měl podporu asistenta pedagoga.",
+      "Škola vede elektronickou schránku důvěry a má aktivní studentský parlament."
+    ],
+    "safety_climate": [
+      "Žáci byli v odborných dílnách a laboratořích důsledně vedeni k používání ochranných pomůcek.",
+      "Inspekce doporučila sjednotit pravidla pro bezpečný pohyb v uměleckých dílnách, například úpravu vlasů.",
+      "Obě budovy mají elektronické zabezpečení, přesto inspekce požádala o důslednější kontrolu revizních zpráv."
+    ],
+    "partnerships_practice": [
+      "Sociální partneři se podílejí na klauzurních a maturitních pracích, odborných praxích, exkurzích a přednáškách.",
+      "Partnerství umožňuje přístup k moderním technologiím, uživatelskému testování a vývoji strojů a nástrojů."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžnou češtinu, odděluje ověřená čísla od doporučení a stručně vysvětluje praktický význam zjištění pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva uvádí aktuální počty žáků a kapacitu školy, ale nepodává údaje o kapacitě jednotlivých oborů.",
+      "Výsledky Aplikované chemie v matematice nejsou statisticky významné kvůli malému počtu maturantů.",
+      "Závěrečné hodnocení odborné kvalifikace se týká některých pedagogů, ale text neuvádí jejich počet."
+    ]
+  }
+}

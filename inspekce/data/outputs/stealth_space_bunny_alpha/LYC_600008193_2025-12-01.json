@@ -1,0 +1,109 @@
+{
+  "report_id": "LYC_600008193_2025-12-01",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:54:10.421131+00:00",
+  "run_finished_utc": "2026-10-02T16:54:45.413888+00:00",
+  "raw_file": "LYC_600008193_2025-12-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600008193_2025-12-01",
+    "school_profile": {
+      "school_type": "Střední škola a vyšší odborná škola",
+      "inspection_period": "1.–5. 12. 2025",
+      "school_change_summary": "Od roku 2021 se změnilo vedení, přibylo žáků, otevřely se nové obory a kapacita prostorových možností se podle zprávy zcela vyčerpala."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vzdělávání",
+          "detail": "Praktické vyučování probíhá profesionálně a propojuje teorii s dovednostmi potřebnými v praxi.",
+          "evidence": "„Veškeré činnosti probíhaly na profesionální úrovni odpovídající potřebám praxe a v přiměřeném tempu.“"
+        },
+        {
+          "tag": "Zázemí a partneři",
+          "detail": "Škola má profesionálně vybavená pracoviště a rozsáhlé spolupráce podporující uplatnění absolventů.",
+          "evidence": "„Nadstandardní materiální zázemí spolu s vysokou odborností vyučujících významně podporuje rozvoj profesních kompetencí.“"
+        },
+        {
+          "tag": "Podpora učení",
+          "detail": "Žáci mohou využívat pracovní sešity, elektronické materiály a konzultace, i když jejich využití není stejné.",
+          "evidence": "„Neprospívajícím žákům jsou nabízeny konzultace, které jsou využívány v různé míře.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nesystematické řízení",
+          "detail": "Rozdílná kvalita řízení a nejednotná pravidla mohou ovlivnit hodnocení žáků i kvalitu vzdělávání.",
+          "evidence": "„Řízení školy je nesystematické, vykazuje nedostatky v jednotném nastavení pravidel fungování školy.“"
+        },
+        {
+          "tag": "Pasivní výuka",
+          "detail": "V teoretické výuce se málo uplatňuje aktivní zapojení, diferenciace a hodnocení podporující učení.",
+          "evidence": "„Aktivizační formy a metody práce, které by zapojily žáky a studenty do výuky, byly využívány pouze výjimečně.“"
+        },
+        {
+          "tag": "Poradenství",
+          "detail": "Rodiny by měly ověřit skutečnou dostupnost kvalitní podpory při vzdělávacích, osobních nebo sociálních potížích.",
+          "evidence": "„Školní poradenské pracoviště není funkčně nastaveno, jeho činnost není dostatečně efektivní.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaká jsou konkrétní pravidla hodnocení a budou na den otevřených dveří představena v přehledné podobě?",
+        "Jak podporuje konkrétní pracoviště žáky s individuálními potřebami a s podpůrnými opatřeními?",
+        "Kdy a jakým způsobem učitelé poskytují zpětnou vazbu během vyučování, nikoli jen na konci pololetí?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí technické, automobilové, elektrotechnické nebo dopravní vzdělání pro konkrétní praktické uplatnění.",
+        "Studentům, kterým vyhovuje spojení teoretických předmětů s praktickým vyučováním na odborných pracovištích.",
+        "Žákům, kteří ocení spolupráci školy s firmami, zahraničními partnery a projektem Erasmus+."
+      ],
+      "who_should_be_cautious": [
+        "Rodinám, kterým záleží na jednotných a transparentních pravidlech hodnocení na všech pracovištích.",
+        "Žákům, kteří potřebují průběžnou formativní zpětnou vazbu nebo výraznou podporu při školním neúspěchu.",
+        "Rodinám, které si chtějí předem ověřit kvalitu poradenských služeb na konkrétním pracovišti."
+      ],
+      "plain_czech_summary": "Škola nabízí rozsáhlou technickou profilaci a silné praktické vyučování na dobře vybavených pracovištích. Žáci získávají zkušenosti také u firem a v zahraničních projektech. Výsledky středoškolské maturity jsou obecně srovnatelné s obdobnými obory v Česku, výjimkou byl Podnikání, kde výrazně přibyla neúspěšnost z českého jazyka. Hlavními slabými místy jsou nesystematické řízení, rozdílná kvalita podpory, málo aktivní výuka a ojedinělé formativní hodnocení. Poradenské pracoviště je podle inspekce málo efektivní. Pro rodiče je proto důležité ověřit konkrétní učební obor, pracoviště, pravidla hodnocení a dostupnost podpory."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou obecně srovnatelné se stejnými skupinami oborů v Česku; u Podnikání výrazně vzrostla neúspěšnost z českého jazyka.",
+        "key_numbers": [
+          "25 z 32 studentů závěrečných ročníků konalo absolutorium",
+          "Všech 25 absolvujících studentů prospělo",
+          "17 studentů prospělo s vyznamenáním"
+        ],
+        "evidence": "„Výsledky vzdělávání odpovídají studijnímu potenciálu žáků s ohledem na vybraný maturitní nebo učební obor.“"
+      },
+      "absence": {
+        "trend": "Škola se částečně daří zvládat nepřítomnosti v maturitních oborech, horší je situace v nástavbových a učebních oborech.",
+        "key_numbers": [],
+        "evidence": "„Vysoká absence je úzce spjata i s následným neprosperchem, případně s předčasným odchodem ze školy.“"
+      },
+      "support_services": [
+        "Neprospívajícím žákům jsou nabízeny konzultace, využívané však v různé míře.",
+        "Ve školním poradenském pracovišti působí čtyři výchovní poradci, tři školní metodici prevence a speciální pedagožka.",
+        "Podpora žáků se speciálními vzdělávacími potřebami má podle pracovišť rozdílnou kvalitu."
+      ],
+      "safety_climate": [
+        "Ve sledované výuce převládala klidná pracovní atmosféra a respektující přístup pedagogů.",
+        "Při praktickém vyučování bylo samozřejmostí dodržování zásad bezpečnosti a ochrany zdraví.",
+        "Ve vztazích mezi žáky byla podporována pozitivní atmosféra, ale systémické měření klimatu chybí."
+      ],
+      "partnership_practice": [
+        "Škola spolupracuje s mnoha českými i zahraničními partnery a aktivně se zapojila do projektu Erasmus+.",
+        "Spolupráce se zaměstnavateli zahrnuje exkurze a praxe a pomáhá studentům poznat nároky na konkrétní pracovní místa.",
+        "Škola je fakultní školou Jihočeské univerzity a spolupracuje s Jihočeským vědeckotechnickým parkem."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně odděluje silné stránky, rizika a ověřitelné údaje.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesné procento absence, proto u ní nejsou uvedena číselná data.",
+        "Zpráva neposkytuje podrobné výsledky středoškolské maturity podle jednotlivých oborů.",
+        "Hodnocení podpory se liší podle pracovišť a přesnější zkušenost může rodič získat při osobním dotazu."
+      ]
+    }
+  }
+}

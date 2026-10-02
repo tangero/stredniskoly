@@ -1,0 +1,111 @@
+{
+  "report_id": "LYC_600007561_2025-11-26",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:55:11.404983+00:00",
+  "run_finished_utc": "2026-10-02T16:55:59.017950+00:00",
+  "raw_file": "LYC_600007561_2025-11-26.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600007561_2025-11-26",
+    "school_profile": {
+      "school_type": "Příspěvková organizace poskytující střední vzdělání s maturitní zkouškou v oboru Hotelnictví; součástí školy je také domov mládeže a školní jídelna.",
+      "inspection_period": "2025-11-26 až 2025-12-01",
+      "school_change_summary": "Škola ukončila činnost vyšší odborné a jazykové školy, rozšířila poradenské pracoviště, zavedla procentuální průběžné hodnocení a zapojila se do ověřování komplexní absolventské práce. Digitální vybavení se zlepšilo, ale některé nedostatky pracoviště praktického vyučování přetrvávají."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná příprava",
+          "detail": "Žáci získávají odborné dovednosti také na smluvních pracovištích a během zahraničních stáží.",
+          "evidence": "Spolupráce se sociálními partnery a zahraniční mobilita podporují odborné kompetence, praktické dovednosti a uplatnitelnost na trhu práce."
+        },
+        {
+          "tag": "Maturitní výsledky",
+          "detail": "Úspěšnost u maturit je dlouhodobě velmi dobrá a lepší než obdobný celorepublikový průměr.",
+          "evidence": "Hrubá neúspěšnost školy byla 3–8 %, vždy lepší než přibližně 11 % v příslušné oborové skupině."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí doučování, konzultace, adaptační program, krizovou intervenci a kariérové poradenství.",
+          "evidence": "Poradenské služby, prevence, adaptační program a kariérové poradenství jsou podle zprávy poskytovány účinně."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Úrazovost",
+          "detail": "Praktické vyučování je spojeno s vyšší mírou úrazovosti, než odpovídá republikovému průměru.",
+          "evidence": "Škola vykazuje kvůli specifikům praktického vyučování vyšší míru úrazovosti než republikový průměr."
+        },
+        {
+          "tag": "Diferencování výuky",
+          "detail": "Některé hodiny majlo podle inspekce omezené individuální přizpůsobení tempu a úrovni žáků.",
+          "evidence": "V části výuky je vyžadováno zlepšení využívání diferencovaných úloh podle individuálních vzdělávacích potřeb."
+        },
+        {
+          "tag": "Sebereflexe žáků",
+          "detail": "Škola má dále zlepšovat zapojení žáků do hodnocení vlastního učení a závěrečné sebereflexe.",
+          "evidence": "Inspekce doporučila zvýšit zapojení žáků prostřednictvím vzájemného hodnocení či sebereflexe."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá podpora žáků s odlišným pracovním tempem, potřebami nebo jazykovou bariérou?",
+        "Jaké konkrétní bezpečnostní opatření a postupy se uplatňují při práci v kuchyni, hotelu a na externích pracovištích?",
+        "Kolik žáků úspěšně dokončí studium v řádném termínu a kam nejčastěji pokračují po absolvování?"
+      ],
+      "who_school_fits": [
+        "Studentům, kteří chtějí studovat obor Hotelnictví s důrazem na praktické odborné vzdělávání.",
+        "Žákům, kterým vyhovuje propojení teorie s prací na školním hotelu, u smluvních partnerů nebo během zahraniční mobility.",
+        "Žákům, kteří mají zájem o cizí jazyky, odborné soutěže, projekty a kariérové poradenství."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na nízké úrazovosti, protože škola uvádí vyšší míru úrazů než celorepublikový průměr.",
+        "Rodičům žáků, kteří potřebují výrazné individuální přizpůsobení výuky, protože inspekce zjistila nedostatečné diferencování v části hodin.",
+        "Rodičům žáků s výraznou jazykovou bariérou, kteří mají zájem o podrobné informace o konkrétní podpuce a její četnosti."
+      ],
+      "plain_czech_summary": "Hotelová škola v Poděbradech má stabilně vysoký zájem o studium a klade důraz na propojení teorie s praxí. Žáci pracují ve školním hotelu, na smluvních pracovištích a během zahraničních stáží. Maturitní výsledky jsou velmi dobré, v posledních třech školních letech byla hrubá neúspěšnost 3–8 %. Podpora žáků zahrnuje poradenství, doučování, prevenci a krizovou intervenci. Mezi slabší místa patří vyšší úrazovost, občasné nedostatky v přizpůsobení výuky jednotlivým žákům a malé využití sebereflexe."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou dlouhodobě velmi dobré; v posledních třech školních letech se podíl žáků neúspěšných u maturity nebo zkoušku nekonajících pohyboval mezi 3 a 8 %. Nejčastější neúspěchy jednotlivců souvisely s českým jazykem a literaturou, případně s tím, že zkoušku nekonali.",
+        "key_numbers": [
+          "Hrubá neúspěšnost maturity: 3–8 %.",
+          "Obdobný průměr v příslušné oborové skupině: přibližně 11 %.",
+          "V profilové části maturity neuspělo přibližně 5–7 % zúčastněných žáků."
+        ],
+        "evidence": "Výsledky maturity jsou dlouhodobě velmi dobré; přibližně 80 % prvního ročníku 2024/2025 dokončilo studium v řádném termínu."
+      },
+      "absence": {
+        "trend": "Roční průměrná absence se meziročně významně nezměnila a neomluvená absence se vyskytuje jen ojediněle.",
+        "key_numbers": [
+          "Roční průměrná absence ve školním roce 2024/2025: přibližně 130 h na žáka."
+        ],
+        "evidence": "Motivace žáků k účasti ve vyučování se podle meziročního srovnání nezměnila; neomluvená absence je ojedinělá."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště zajišťuje výchovné poradenství, metodiku prevence a poradenství pro krizové jevy.",
+        "Žákům se SVP a žákům s odlišným mateřským jazykem jsou poskytovány zejména doučování a konzultace.",
+        "Škola spolupracuje s externí krizovou interventkou, která poskytuje individuální konzultace, aktivity pro pedagogy a zpětnou vazbu ke klimatu tříd."
+      ],
+      "safety_climate": [
+        "Škola pravidelně poučuje žáky o bezpečnosti a ochraně zdraví.",
+        "Při praktickém vyučování učitelé kontrolují pracovní postupy a vedou žáky k dodržování zásad bezpečnosti práce.",
+        "Kvůli specifikům praktického vyučování uvádí škola vyšší míru úrazovosti než republikový průměr."
+      ],
+      "partnership_practice": [
+        "Spolupráce se sociálními partnery umožňuje praktické vyučování na smluvních pracovištích v kvalitním profesním prostředí.",
+        "Zahraniční mobilita zahrnuje odborné stáže a podporuje praktické, jazykové a profesní dovednosti.",
+        "Externí odborníci a absolventi se pravidelně podílejí na výuce, projektech či motivaci žáků."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, krátké věty a jasně odděluje potvrzená zjištění od doporučení rodičům.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesnou míru úrazovosti, proto lze porovnat pouze kvalitativně s republikovým průměrem.",
+        "Zpráva neuvádí podrobné četnosti jednotlivých doučovacích a poradenských služeb.",
+        "Výsledky inspekce vycházejí z hlídaných vzorků hodin a dokumentace, nikoli ze všech vyučovacích hodin."
+      ]
+    }
+  }
+}

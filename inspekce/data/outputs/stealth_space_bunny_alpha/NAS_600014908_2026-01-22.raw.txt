@@ -1,0 +1,104 @@
+{
+  "report_id": "NAS_600014908_2026-01-22",
+  "school_profile": {
+    "school_type": "Střední odborná škola, střední odborné učiliště a základní škola",
+    "inspection_period": "22.–23. a 26.–27. 1. 2026",
+    "school_change_summary": "Výrazně se zlepšily materiální podmínky; vzniklo gastro studio, odborné učebny, učebna digitálních technologií, zahradnická dílna a truhlářská dílna. Zlepšilo se také řízení školy a kontrolní činnost."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Individuální podpora",
+        "detail": "Učitelé a asistenti pedagoga přizpůsobují výuku možnostem, zdravotnímu stavu a aktuálnímu rozpoložení žáků.",
+        "evidence": "„Dominantním rysem výuky byl individualizovaný přístup učitelů i asistentů pedagoga k žákům.“"
+      },
+      {
+        "tag": "Praktická výuka",
+        "detail": "Praktická výuka je dobře organizovaná a žáci při ní využívají znalosti z teorie v praxi.",
+        "evidence": "„Při praktickém vyučování žáci uplatňovali znalosti získané z teoretické výuky a přenášeli je do praxe.“"
+      },
+      {
+        "tag": "Prostředí a vybavení",
+        "detail": "Rozsáhlé úpravy a nové učebny zlepšily podmínky pro výuku a pohodu žáků.",
+        "evidence": "„Rozsáhlé stavební úpravy přispívají ke zvýšené kvalitě výuky a poskytují dostatečný prostor pro wellbeing žáků.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Na jaře 2025 měla škola vysokou neúspěšnost maturitních didaktických testů z českého a anglického jazyka.",
+        "evidence": "„Hrubá neúspěšnost činila 56,3 % z českého jazyka a 31,3 % z anglického jazyka.“"
+      },
+      {
+        "tag": "Digitální dovednosti",
+        "detail": "Ve střední škole se digitální technologie ve výuce využívají málo efektivně.",
+        "evidence": "„Rovněž byla minimálně využívána efektivní práce žáků s digitálními technologiemi.“"
+      },
+      {
+        "tag": "Diferencace výuky",
+        "detail": "V teoretických předmětech se podle inspekce objevuje nedostatečné přizpůsobování výuky individuálnímu potenciálu žáků.",
+        "evidence": "„Nedostatečná diferenciace výuky v teoretických předmětech vzhledem k individuálnímu potenciálu žáků.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se ve střední škole běžně využívají digitální technologie a z jakých předmětů je nejvíce využíváno?",
+      "Jak škola podporuje žáky s neprospěchem a jak při tom spolupracuje s rodiči?",
+      "Jak probíhá předmětová diferenciace a individualizace ve střední škole?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří potřebují individuální přístup, podporu asistentů pedagoga a ohleduplné tempo učení.",
+      "Žákům, kteří chtějí praktickou výuku a propojení teorie s reálnou prací.",
+      "Žákům, kteří hledají školu s ubytováním, stravováním a školní družinou."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří potřebují výraznější přípravu k maturitě z jazyků, protože výsledky byly vysoké.",
+      "Rodičům žáků, kterým záleží na pravidelném využívání digitálních technologií ve výuce.",
+      "Rodičům žáků, kteří potřebují intenzivnější diferenciaci a aktivní zpětnou vazbu ve střední škole."
+    ],
+    "plain_czech_summary": "Škola nabízí základní speciální, praktické a střední vzdělávání, včetně praktické výuky, ubytování, stravování a družiny. Pro ZŠ a PŠ je důležitá individuální podpora učitelů a asistentů. Ve střední škole jsou dobré praktické hodiny, ale inspekce zaznamenala slabší využívání digitálních technologií a nedostatečnou diferenciaci teoretické výuky. Jarní maturitní testy z roku 2025 měly vysokou neúspěšnost, zejména z českého jazyka. Rodiče by se měli zeptat na konkrétní podporu při přípravě k maturitě, digitalizaci a přizpůsobování výuky jednotlivým žákům."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky byly podle inspekce v některých oblastech průměrné až mírně podprůměrné; u maturitních didaktických testů v jarním období 2025 se objevila výrazná neprospěšnost.",
+      "key_numbers": [
+        "56,3 % neúspěšnost v didaktickém testu z českého jazyka",
+        "31,3 % neúspěšnost v didaktickém testu z anglického jazyka",
+        "37,5 % neúspěšnost v opravném termínu z českého jazyka"
+      ],
+      "evidence": "„Výsledky testování jsou analyzovány a jsou k nim přijímána opatření, jejichž efektivitu zatím nelze objektivně posoudit.“"
+    },
+    "absence": {
+      "trend": "Absence byla v některých typech vzdělávání vysoká a jednotliví žáci výrazně přispívali k předčasnému ukončení studia.",
+      "key_numbers": [
+        "82,12 hodiny na žáka u oboru zakončeného maturitní zkouškou",
+        "101,29 hodiny na žáka u oborů zakončených závěrečnou zkouškou v Třešti",
+        "46 hodin na žáka u učebních oborů v Černovicích"
+      ],
+      "evidence": "„Vysoká absence jednotlivců a odchod do zaměstnání patří k nejvýraznějším důvodům předčasného ukončení vzdělávání.“"
+    },
+    "support_services": [
+      "Doučování a individuální konzultace pro žáky ohrožené neprospěchem.",
+      "Funkční systém školních poradenských služeb ve spolupráci se školskými poradenskými zařízeními.",
+      "Školní preventivní strategie zahrnující sledování a řešení rizikového chování."
+    ],
+    "safety_climate": [
+      "V ZŠ a PŠ se uvádí příznivá pracovní atmosféra se vstřícnými a trpělivými pedagogy.",
+      "U praktické výuky žáci dodržují stanovené postupy a pedagogy jsou poučováni o možných rizicích.",
+      "Vysoká absence včetně neomluvené absence vede většinou k kázeňským opatřením."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s místními firmami podporuje propagaci vzdělávacích oborů.",
+      "Odborníci na praxích pomáhají prohlubovat praktické dovednosti žáků.",
+      "Škola spolupracuje s řadou vzdělávacích a dalších partnerů."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a všechna hlavní tvrzení jsou opřena o citace ze zprávy.",
+    "uncertainty_notes": [
+      "Inspekční zpráva neuvádí přesný počet žáků u jednotlivých typů výuky pro každý obor.",
+      "Zpráva uvádí výsledky v různých obdobích a typech zkoušek, proto je nutné číselné údaje chápat v uvedeném kontextu.",
+      "Závěrečné hodnocení uvádí zkvalitnění řízení, ale nepodává podrobné měřítko této změny."
+    ]
+  }
+}

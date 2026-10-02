@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600012450_2026-03-23",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:25:20.129286+00:00",
+  "run_finished_utc": "2026-10-02T16:26:28.697756+00:00",
+  "raw_file": "SOS_600012450_2026-03-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600012450_2026-03-23",
+    "school_profile": {
+      "school_type": "střední odborné učiliště zemědělské, které působí také jako domov mládeže a školní jídelna",
+      "inspection_period": "23. až 25. 3. 2026",
+      "school_change_summary": "Od minulé inspekce se téměř úplně obměnil pedagogický sbor teoretické výuky a škola zahájila čtyřletý maturitní obor Mechanizace a služby. Klima učebního prostředí se významně zhoršilo."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná praxe",
+          "detail": "Široká spolupráce se smluvními partnery umožňuje získat praktické zkušenosti a propojit teorii s reálnou prací.",
+          "evidence": "Školu hodnotí velmi široké portfolio smluvních partnerů, u kterých žáci vykonávají odbornou praxi a odborný výcvik."
+        },
+        {
+          "tag": "Příprava k závěrečné zkoušce",
+          "detail": "Škola dosahuje dobrých výsledků v přípravě na závěrečné zkoušky.",
+          "evidence": "Neúspěšnost se snížila: „z celkového počtu žáků konajících zkoušky pouze čtyři neprospěli“."
+        },
+        {
+          "tag": "Domov mládeže",
+          "detail": "Ubytovaným žákům škola nabízí hodnotné zájmové aktivity a průběžně sleduje jejich účast.",
+          "evidence": "Ubytovaní žáci se mohou zapojit do kroužků; jejich účast je pečlivě evidována."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Teoretická výuka",
+          "detail": "Hodiny teoretické výuky často nepodporují učení a učitelé někdy neumějí vhodně reagovat na chování žáků.",
+          "evidence": "„Klima ve většině hodin nepodporovalo učení žáků“ a hodiny byly často rušeny nepozorností."
+        },
+        {
+          "tag": "Učitelé a podpora",
+          "detail": "Rodině je vhodné ověřit, kdo bude učit teoretické předměty a jaká podpora bude žákům poskytována.",
+          "evidence": "Personální podmínky pro teoretickou výuku byly nevyhovující; několik pedagogů nesplňovalo odbornou kvalifikaci."
+        },
+        {
+          "tag": "Maturitní obor",
+          "detail": "Nový maturitní obor s sebou přináší zvýšené riziko neúspěchu kvůli omezené dostupnosti zkušených a kvalifikovaných pedagogů.",
+          "evidence": "Inspekce uvedla, že zavedení maturitního oboru „zvyšuje riziko budoucího neúspěchu žáků“."
+        }
+      ],
+      "questions_for_open_day": [
+        "Které konkrétní předměty a ročníky nového maturitního oboru zajistí učitelé splňující odbornou kvalifikaci?",
+        "Jak bude probíhat podpora žáků s odlišnou úrovní učení, se speciálními vzdělávacími potřebami nebo s odlišným mateřským jazykem?",
+        "Jaké konkrétní změny přijímá škola pro zlepšení klimatu, komunikace a kvality teoretické výuky?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat zemědělské stroje, mechanizaci nebo strojní mechaniku a mají zájem o praktickou práci.",
+        "Žákům, kterým vyhovuje denní forma studia a kteří chtějí využívat odborné praxe na smluvních pracovištích.",
+        "Žákům, kteří potřebují strukturované prostředí školy, domova mládeže a podporu při řešení zaškoláctví."
+      ],
+      "who_should_be_cautious": [
+        "Rodinám žáků, kterým záleží na kvalitní výuce všeobecně vzdělávacích předmětů, protože zde inspekce zjistila výrazné nedostatky.",
+        "Žákům a rodičům nového maturitního oboru, kteří potřebují stabilní a zkušené učitele a důkladnou přípravu na maturitu.",
+        "Žákům, kterým je nutná výraznější individualizace, podpora při učení nebo systematičtější práce se žáky s odlišnou úrovní."
+      ],
+      "plain_czech_summary": "Škola má velmi dobré praktické vyučování, rozsáhlou síť partnerských pracovišť a dobré výsledky u závěrečných zkoušek. Domov mládeže nabízí žákům mnoho aktivit. Největší problémy jsou v teoretické výuce: slabší personální zajištění, nevhodné metody i zhoršená pracovní atmosféra. Proto je důležité se při výběru zeptat, kdo bude konkrétní předměty učit a jak bude probíhat podpora žáků s různými studijními potřebami. Nový čtyřletý maturitní obor je zatím nový a inspekce u něj upozornila na zvýšené riziko neúspěchu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Škola se přípravou na závěrečné zkoušky daří dobře; u nového maturitního oboru jsou zatím k dispozici výsledky pouze za první pololetí.",
+        "key_numbers": [
+          "Ve školním roce 2024/2025 neprospěli po opravných i náhradních termínech 4 žáci.",
+          "Nový čtyřletý obor 41-45-M/01 Mechanizace a služby byl zahájen ve školním roce 2025/2026.",
+          "Výsledky 1. ročníku nového oboru byly hodnoceny zatím jen za první pololetí."
+        ],
+        "evidence": "Škola se daří dobře připravovat k závěrečním zkouškám; neprospěli pouze čtyři žáci."
+      },
+      "absence": {
+        "trend": "Průměrná absence včetně neomluvené byla jen mírně vyšší, ale potíže se týkala především několika málo chodících žáků.",
+        "key_numbers": [
+          "Údaje se vztahují ke školnímu roku 2024/2025.",
+          "V uvedeném období byla průměrná míra absence jen mírně vyšší.",
+          "Velmi nízká docházka se podle zprávy týkala jednotlivých žáků."
+        ],
+        "evidence": "Absence byla „jen mírně vyšší“, často způsobená jednotlivci s extrémně malou četností docházky."
+      },
+      "support_services": [
+        "Škola poskytuje výchovné, kariérové a preventivní poradenství a spolupracuje s externí školní psycholožkou a speciální pedagožkou.",
+        "K termínu inspekce poskytovala podpůrná opatření 37 žákům podle doporučení školských poradenských zařízení.",
+        "Škola pořádá akce, adaptační kurzy a kurzy pro posílení vztahů v třídních kolektivech."
+      ],
+      "safety_climate": [
+        "Při praktickém vyučování učitelé vždy zdůrazňovali zásady bezpečnosti a dbali na používání ochranných pomůcek.",
+        "Praktická výuka probíhala v pracovní a pohodové atmosféře, žáci respektovali pravidla a otevřeně komunikovali s učiteli.",
+        "Ubytovaní žáci měli zajištěné nové vybavení a bezpečnější vstup do budovy a domova mládeže."
+      ],
+      "partnerships_practice": [
+        "Spolupráce se sociálními partnery byla hodnocena na výborné úrovni.",
+        "Žáci absolvovali odbornou praxi a odborný výcvik u široké sítě smluvních partnerů.",
+        "Na smluvních pracovištích žáci prokazovali velmi dobré odborné dovednosti při samostatné práci."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá srozumitelný český jazyk, stručně odděluje silné stránky od rizik a dává rodičům konkrétní otázky pro den otevřených dveří.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesné procento úspěšnosti závěrečných zkoušek, pouze počet čtyř neúspěšných žáků.",
+        "Výsledky nového maturitního oboru jsou dostupné pouze za první pololetí, takže nelze posoudit konečnou úspěšnost.",
+        "Zpráva uvádí oba názvy školy s odlišným pořadím; v popisu používá název z adresy místa inspekce."
+      ]
+    }
+  }
+}

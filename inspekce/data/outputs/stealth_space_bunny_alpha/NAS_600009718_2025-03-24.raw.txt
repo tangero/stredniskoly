@@ -1,0 +1,104 @@
+{
+  "report_id": "NAS_600009718_2025-03-24",
+  "school_profile": {
+    "school_type": "Střední odborné učiliště stavební poskytující střední vzdělání s výučním listem i maturitou; funguje také jako domov mládeže a školní jídelna.",
+    "inspection_period": "24. 3. – 27. 3. 2025",
+    "school_change_summary": "Od inspekce v roce 2019 vzrostl počet žáků přibližně o 34 % a vedení bylo doplněno o zástupce ředitele. Většina dřívějších nedostatků byla odstraněna, přetrvává však vysoká absence."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborný výcvik",
+        "detail": "Žáci získávají praktické dovednosti na smluvních pracovištích i v dobře vybavených školních dílnách.",
+        "evidence": "„Odborný výcvik ... byl na odpovídající odborné úrovni“ a žáci osvojovali technologické postupy pro budoucí praxi."
+      },
+      {
+        "tag": "Zaměstnavatelé a praxe",
+        "detail": "Spolupráce s regionálními zaměstnavateli a profesními sdruženími podporuje uplatnění absolventů na trhu práce.",
+        "evidence": "„Dlouhodobá spolupráce s kvalitními sociálními partnery ... zvyšuje uplatnitelnost absolventů na trhu práce.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola poskytuje poradní podporu, konzultace i doučování žákům a jejich rodičům.",
+        "evidence": "Škola „poskytuje metodickou podporu ostatním pedagogům, žákům i jejich zákonným zástupcům“ a nabízí doučování."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Absence",
+        "detail": "Vysoká absence podporuje školní neúspěšnost a zvyšuje riziko předčasného ukončení studia.",
+        "evidence": "„Vyšší absence žáků ve výuce zvyšuje riziko jejich předčasného odchodu ze vzdělávání či školní neúspěšnosti.“"
+      },
+      {
+        "tag": "Maturita",
+        "detail": "Výsledky společné části maturity se zlepšily, ale v uměleckých oborech zůstávají velmi kolísavé a místy velmi špatné.",
+        "evidence": "U oboru Umělecko-řemeslné zpracování kamene a keramiky se neúspěšnost pohybovala „cca v rozmezí 60–100 %“."
+      },
+      {
+        "tag": "Teoretická výuka",
+        "detail": "Ve většině hodin převládala frontální výuka, malá diferenciace a málo prostoru pro zpětnou vazbu žákům.",
+        "evidence": "„Kooperativní formy práce byly zaznamenány v minimální míře“ a nebyla sledována práce se zdroji informací."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní postupy škola přijala kvůli trvající vysoké absence a jak vyhodnotila jejich účinnost?",
+      "Kolik žáků zejména v nástavbovém studiu skutečně dokončí studium a získá maturitu?",
+      "Jak často učitelé diferenciují úkoly a dovolují žákům průběžně hodnotit vlastní pokrok?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí střední odborné vzdělání s výučním listem a mají zájem o stavební nebo řemeslné obory.",
+      "Žákům, kteří ocení rozsáhlý odborný výcvik a praktické zapojení do reálného pracovního prostředí.",
+      "Žákům hledajícím současně ubytování, celodenní stravování a výchovnou podporu v domově mládeže."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na nízké absenci a pravidelné docházce, protože absence zůstává přetrvávajícím problémem.",
+      "Rodičům dětí přijímaných do uměleckých maturitních oborů, kde jsou výsledky velmi kolísavé a počty žáků nízké.",
+      "Žákům, kterým hůr vyhovuje převážně frontální výuka a kteří potřebují individuální přístup nebo průběžnou zpětnou vazbu."
+    ],
+    "plain_czech_summary": "Škola má rozsáhlou nabídku stavebních, řemeslných a uměleckých oborů, silné zázemí pro odborný výcvik a spolupráci se zaměstnavateli. Praktická výuka probíhá na dobré úrovni. Hlavním problémem je vysoká absence, která souvisí s horšími výsledky a předčasnými odchody. V nástavbovém studiu se neúspěšnost společné části maturity mezi rokem 2022 a 2024 výrazně snížila, ale v málo početných uměleckých oborech zůstává problematická. Rodiče by měli na den otevřených dveří ověřit konkrétní opatření proti absenci, podporu učení a uplatňování individuálního přístupu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "V nástavbovém studiu se hrubá neúspěšnost společné části maturity výrazně snížila, ale výsledky čtyřletých uměleckých oborů výrazně kolísají.",
+      "key_numbers": [
+        "Nástavbové studium: 62 % v roce 2022, 27 % v roce 2023 a 20 % v roce 2024.",
+        "Nástavbové studium: po dvou letech studia absolvovala pouze třetina žáků prvního ročníku.",
+        "Čtyřleté obory: přibližně 50–55 % žáků získalo po standardní době stupeň vzdělání."
+      ],
+      "evidence": "„V roce 2024 významně klesla a činila 20 %“; u čtyřletých oborů se úspěšné ukončení pohybovalo kolem 50–55 %."
+    },
+    "absence": {
+      "trend": "Absence zůstává přetrvávajícím problémem a v prvním pololetí 2024/2025 se u čtyřletých maturitních oborů ještě zvýšila.",
+      "key_numbers": [
+        "Školní rok 2022/2023, učební obory: přibližně 221 hodin na žáka.",
+        "Školní rok 2022/2023, nástavbové studium: přibližně 171 hodin na žáka.",
+        "Školní rok 2022/2023, čtyřleté maturitní obory: přibližně 252 hodin na žáka."
+      ],
+      "evidence": "„Absence žáků byla ve školním roce 2022/2023 vysoká“ a v prvním pololetí 2024/2025 zůstala přetrvávajícím problémem."
+    },
+    "support_services": [
+      "Poradenské služby zajišťuje školní poradenské pracoviště: „jedna výchovná poradkyně pro každé pracoviště“.",
+      "Výchovní poradci vedou evidenci žáků se SVP, spolupracují s poradenskými zařízeními a poskytují konzultace rodičům.",
+      "Škola nabízí konzultace s pedagogy, případně doučování, a řeší vztahové i výchovné problémy."
+    ],
+    "safety_climate": [
+      "Bezpečnost a hygiena odborného výcviku byly v pořádku: „Nebylo zaznamenáno porušení bezpečnostních nebo hygienických předpisů.“",
+      "Žáci jsou pravidelně seznamováni s pravidly bezpečného chování.",
+      "Během inspekce byla zajištěna ochrana areálů před vniknutím cizích osob."
+    ],
+    "partnerships_practice": [
+      "Odborný výcvik probíhá také na pracovištích smluvních partnerů.",
+      "S partnery škola pořádá exkurze, besedy, společné vzdělávací aktivity a odborné konference.",
+      "Škola spolupracuje se zaměstnavateli, profesními sdruženími, Policí ČR, Point 14, Ledovcem a poradenskými zařízeními."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou přímé, číselné údaje se vztahují ke konkrétnímu období a rodičům je jasné, na co se při výběru školy zaměřit.",
+    "uncertainty_notes": [
+      "Výsledky čtyřletých uměleckých oborů mohou výrazně ovlivnit jednotliví žáci, protože jejich počty jsou velmi malé.",
+      "Zpráva uvádí výsledky absence za školní rok 2022/2023 a jejich srovnání, nikoli úplnou výši absence ve všech sledovaných obdobích.",
+      "Výrok „dokončí studium a získá maturitu“ je u nástavbového studia formulován jako otázka, protože inspekce uvádí podíl absolvujících, ne samotný počet maturit."
+    ]
+  }
+}

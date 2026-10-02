@@ -1,0 +1,112 @@
+{
+  "report_id": "LYC_691006474_2026-05-11",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:14:14.662633+00:00",
+  "run_finished_utc": "2026-10-02T16:14:41.201096+00:00",
+  "raw_file": "LYC_691006474_2026-05-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_691006474_2026-05-11",
+    "school_profile": {
+      "school_type": "Základní škola, školní družina, střední škola s oborem Pedagogické lyceum a školní jídelna-výdejna",
+      "inspection_period": "11.–13. května 2026",
+      "school_change_summary": "Od inspekce v roce 2022 se zvýšil počet žáků a tříd střední školy a byly upraveny její suterénní prostory."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Podpora žáků se SVP na ZŠ",
+          "detail": "Škola podporuje žáky se SVP účinnými plány podpory, IVP, asistenty pedagogy a přizpůsobením hodnocení.",
+          "evidence": "„Přijímaná opatření jsou převážně účinná a vedou ke zlepšování výsledků vzdělávání žáků se SVP.“"
+        },
+        {
+          "tag": "Čtenářská gramotnost na SŠ",
+          "detail": "Výuka čtenářské gramotnosti je systematická a rozvíjí analýzu, kritické zpracování informací i odborné kompetence.",
+          "evidence": "„Systematicky rozvíjená čtenářská gramotnost napříč všeobecným i odborným vzděláváním.“"
+        },
+        {
+          "tag": "Respektující přístup",
+          "detail": "Většina vyučujících vytváří příznivé pracní klima a podporuje osobnostní i sociální rozvoj žáků.",
+          "evidence": "„Většina vyučujících účelně volila metody a formy práce směřující k naplnění stanovených vzdělávacích cílů.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence na SŠ",
+          "detail": "Velká absence části žáků snižuje jejich školní připravenost a zvyšuje riziko neúspěchu.",
+          "evidence": "„Z analýzy výsledků vzdělávání vyplynula souvislost mezi vyšší absencí části žáků a jejich slabšími výsledky.“"
+        },
+        {
+          "tag": "Nedostatečná kvalifikace pedagogů",
+          "detail": "Velký podíl pedagogů bez odborné kvalifikace může zhoršovat kvalitu vzdělávacího procesu.",
+          "evidence": "„Vysoký podíl pedagogů bez odborné kvalifikace má negativní vliv na vzdělávací proces.“"
+        },
+        {
+          "tag": "Málo rozmanité metody",
+          "detail": "Ve výuce převažuje frontální vyučování, zatímco aktivní, badatelské a vrstevnické postupy jsou využívány zřídka.",
+          "evidence": "„Významně převažovala frontální výuka s různou mírou účinnosti.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak často se pedagogové dostávají pravidelnou zpětnou vazbu a hospitační zjištění mění jejich výuku?",
+        "Jak konkrétně škola řeší vysokou absenci a připravuje žáky ohrožené neúspěchem ke společné části maturity?",
+        "Jak podpůrná opatření pro žáky se SVP vypadají přímo v hodinách na střední škole?"
+      ],
+      "who_school_fits": [
+        "Studenti, kteří chtějí studovat Pedagogické lyceum a mají zájem o práci s dětmi a pedagogy.",
+        "Žáci, kterému vyhovuje menší školní prostředí a důraz na osobnostní a sociální rozvoj.",
+        "Uchazeči, kterým vyhovuje práce s texty, projekty a praktickými pedagogickými aktivitami."
+      ],
+      "who_should_be_cautious": [
+        "Studenti náchylní k pravidelné absenci, kteří potřebují výrazně strukturovanou samostatnou přípravu.",
+        "Rodiny, kterým záleží na velmi různorodých a badatelských metodách ve všech předmětech.",
+        "Rodiny, které chtějí přesvědčit vysokou odbornou kvalifikaci všech vyučujících."
+      ],
+      "plain_czech_summary": "Škola má přátelskou atmosféru, účinnou podporu žáků se SVP na základní škole a ve střední škole systematicky rozvíjí čtenářskou gramotnost. Hlavními problémy jsou vysoká absence žáků Pedagogického lycea, slabší výsledky v porovnání s obdobnými školami a velký počet pedagogů bez odborné kvalifikace. Ve výuce také převažuje frontální vyučování. Rodiče by měli zjišťovat, jak konkrétně škola zlepšuje připravu na maturitu, omezuje absenci a rozšiřuje metody učení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Neúspěšnost ve společné části maturity byla horší než průměr srovnatelné oborové skupiny, zatímco všichni zkoušku profilovou část vykonali úspěšně.",
+        "key_numbers": [
+          "6 přihlášených k maturitě",
+          "2 neúspěšní ve společné části",
+          "100 % úspěšných v profilové části"
+        ],
+        "evidence": "„Při celkovém počtu šesti přihlášených neuspěli dva žáci. V profilové části MZ všichni přihlášení žáci zkoušku vykonali úspěšně.“"
+      },
+      "absence": {
+        "trend": "Absence žáků Pedagogického lycea zůstává vysoká a souvisí s jejich slabšími výsledky.",
+        "key_numbers": [
+          "Přibližně 230 hodin absence na žáka",
+          "Školní rok 2024/2025"
+        ],
+        "evidence": "„Průměrná absence těchto žáků činila ve školním roce 2024/2025 přibližně 230 hodin na žáka.“"
+      },
+      "support_services": [
+        "Poradenské služby poskytují výchovná poradkyně, metodička prevence, speciální pedagožka a školní psycholožka.",
+        "Na ZŠ jsou podpůrná opatření podle doporučení poradenských zařízení a škola využívá plány podpory, IVP i asistenty pedagogy.",
+        "Na SŠ byla podpora žáků se SVP přímo ve vyučování zaznamenána pouze výjimečně."
+      ],
+      "safety_climate": [
+        "Dohled nad žáky byl vykonáván a vchody byly zabezpečeny proti vstupu neoprávněných osob.",
+        "Vyšší počet úrazů souvisí s nedostatečným předcházením rizikovým situacím, evidované úrazy byly převážně lehké.",
+        "Systém informování rodičů o nevhodném chování žáků a kázeňských opatřeních nebyl dostatečně důsledný."
+      ],
+      "partnership_practice": [
+        "Škola spolupracuje s externími odborníky a vzdělávacími institucemi při přednáškách, projektech a odborné praxi.",
+        "Pedagogická lyceum podporuje projektové aktivity a praxe v mateřských, základních a dalších vzdělávacích institucích.",
+        "Preventivní aktivity jsou často organizovány ve spolupráci s partnery pro konkrétní ročníky."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, krátké věty a jasně odděluje pozitiva, rizika a ověřitelná čísla.",
+      "uncertainty_notes": [
+        "Zpráva uvádí průměrnou absenci za školní rok 2024/2025, nikoli aktuální hodnotu za rok 2025/2026.",
+        "Zpráva neuvádí podrobnější rozdělení absence podle jednotlivých předmětů nebo tříd.",
+        "Pro jednotlivé učitele nejsou uvedeny údaje o odborné kvalifikaci."
+      ]
+    }
+  }
+}

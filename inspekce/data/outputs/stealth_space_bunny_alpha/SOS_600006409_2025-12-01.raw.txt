@@ -1,0 +1,103 @@
+{
+  "report_id": "SOS_600006409_2025-12-01",
+  "school_profile": {
+    "school_type": "Soukromá střední odborná škola poskytující vzdělávání zakončené maturitní zkouškou.",
+    "inspection_period": "1. 12. 2025–3. 12. 2025",
+    "school_change_summary": "Od roku 2018 se zvýšil počet žáků celkově o 39 a v denní formě o 69; kombinovaná forma se snížila o 30 žáků a byla obnovena ve školním roce 2025/2026."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Respektující prostředí",
+        "detail": "Výuka probíhá v příjemném klimatu založeném na spolupráci, respektu a dodržování pravidel.",
+        "evidence": "Výuka probíhala v příjemném pracovním klimatu založeném na aktivní spolupráci pedagogů a žáků, partnerském přístupu a vzájemném respektu."
+      },
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Výsledky u maturity se zlepšily a všichni zkoušení žáci v letech 2024 a 2025 uspěli.",
+        "evidence": "V letech 2024 a 2025 vykazovali žáci mírně lepší výsledky než během studia, všichni žáci u zkoušky prospěli."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola sleduje rizika neúspěchu a nabízí individuální konzultace, poradenství a podporu cizinců.",
+        "evidence": "Žákům ohroženým školní neúspěšností je poskytována pomoc zejména v rámci individuálních konzultací."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Metodická podpora",
+        "detail": "Učitelé mají rozdílné zkušenosti, což se projevuje v různém metodickém vedení a dynamice hodin.",
+        "evidence": "Sledovaná výuka byla ovlivněna různou mírou pedagogických zkušeností učitelů a jejich osobním zaujetím."
+      },
+      {
+        "tag": "Aktivizace žáků",
+        "detail": "V některých hodinách se žáci málo podílejí na výuce a skupinová či kooperativní práce je méně častá.",
+        "evidence": "Kooperativní formy práce a práce ve dvojicích či skupinách byly zařazovány méně často."
+      },
+      {
+        "tag": "Hospitace",
+        "detail": "Škola ne vždy kontroluje a vyhodnocuje účinnost doporučení přijatých po hospitacích.",
+        "evidence": "Účinnost hospitační činnosti snižuje absence následné kontroly a vyhodnocování efektivity přijatých opatření."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak často učitelé navazují na hospitace kontrolou a hodnocením účinnosti přijatých doporučení?",
+      "Jak konkrétně probíhá výuka se skupinovou prací, aktivizací žáků a formativním hodnocením?",
+      "Jaké konkrétní podpůrné a poradenské služby mohou využít vaše děti při obtížích nebo odlišných studijních potřebách?"
+    ],
+    "who_school_fits": [
+      "Žákům, kterým vyhovuje menší školní prostředí a vstřícné vedení.",
+      "Žákům, kteří chtějí studovat v oboru Ekonomika a podnikání v denní formě.",
+      "Žákům, kteří potřebují při studiu individuální podporu nebo poradenství."
+    ],
+    "who_should_be_cautious": [
+      "Žákům, kteří vyžadují výrazně propracované skupinové a kooperativní vyučování.",
+      "Žákům, kterým záleží na pravidelném rozvoji jazykových dovedností v praktických komunikačních situacích.",
+      "Rodičům, kteří chtějí mít jistotu v rychlém zavádění všech doporučení z inspekční zprávy do výuky."
+    ],
+    "plain_czech_summary": "Škola má podle inspekce příjemné a respektující prostředí, zlepšila výsledky u maturity a aktivně podporuje žáky s obtížemi i cizince. V letech 2024 a 2025 všichni žáci u maturity uspěli, 42–45 % ji absolvovalo s vyznamenáním. Výuka je převážně dobře organizovaná, ale místy méně aktivizující, s málo prostoru pro skupinovou práci, diskuse a hodnocení vlastního pokroku žáků. Rodiče by se měli zejména zeptat, jak se do výuky promítají doporučení z hospitací."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšení oproti předchozímu inspekčnímu hodnocení.",
+      "key_numbers": [
+        "V letech 2024 a 2025 všichni žáci u maturity uspěli.",
+        "42–45 % žáků absolvovalo maturitu s vyznamenáním.",
+        "Náhradu profilové zkoušky z cizího jazyka mezinárodním certifikátem využili vždy tři žáci v letech 2023/2024 a 2024/2025."
+      ],
+      "evidence": "Od posledního inspekčního hodnocení došlo ke zlepšení výsledků žáků u maturitních zkoušek."
+    },
+    "absence": {
+      "trend": "Snížení průměrné omluvené i neomluvené absence na žáka v posledních třech školních letech.",
+      "key_numbers": [
+        "Ve školním roce 2024/2025 připadalo na žáka 45 hodin omluvené absence.",
+        "Ve školním roce 2024/2025 připadalo na žáka 1,3 hodiny neomluvené absence."
+      ],
+      "evidence": "V období posledních tří školních let se snížil průměrný počet omluvených i neomluvených hodin na žáka."
+    },
+    "support_services": [
+      "Poradenství zajišťuje vedení školy ve spolupráci s třídními učiteli, pedagogy, speciální pedagožkou a kariérovou poradkyní.",
+      "Škola poskytuje individuální konzultace žákům ohroženým školním neúspěchem.",
+      "Pro žáky ze zahraničí působí kurátor zahraničních studentů; službu zajišťuje ředitelka jako metodička prevence a její zástupce jako výchovný poradce."
+    ],
+    "safety_climate": [
+      "Ve vyučování převažují restriktivní kázeňské postihy za pozdní příchody a neomluvenou absenci.",
+      "Ojednotlivé případy rizikového chování jsou řešeny podle stanovených pravidel a školního řádu.",
+      "Škola vede evidenci úrazů a dokumentaci k bezpečnosti a ochraně zdraví žáků."
+    ],
+    "partnerships_practice": [
+      "Sociální partneři se podílejí zejména na zajištění odborné praxe, rozvoji sociálního cítění a primární prevenci.",
+      "Škola je oficiálním přípravným centrem Cambridge English a umožňuje získání certifikátu ÖSD.",
+      "Sportovní zařízení využívá prostřednictvím partnerských škol."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou srozumitelné, stručné a zaměřené na praktické informace pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí podrobné výsledky jednotlivých předmětů u maturity.",
+      "Zpráva neuvádí konkrétní školní známky nebo výsledky všech vyučovaných předmětů.",
+      "Zpráva neuvádí přesné výsledky aktivizačních metod v jednotlivých hodinách."
+    ]
+  }
+}

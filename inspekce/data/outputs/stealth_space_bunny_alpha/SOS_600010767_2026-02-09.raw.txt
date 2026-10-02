@@ -1,0 +1,104 @@
+{
+  "report_id": "SOS_600010767_2026-02-09",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola, obchodní akademie, střední odborná škola a jazyková škola",
+    "inspection_period": "9. 2. 2026 – 11. 2. 2026",
+    "school_change_summary": "Od roku 2017 se počet žáků zvýšil přibližně o 30 %; od 1. 9. 2023 působí nová ředitelka a ve VOŠ byl změněn obor na Personální management."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Odborné předměty propojují teorii s praxí a žáci pracují na různých typech pracovišť.",
+        "evidence": "Systém praxí umožňuje seznámit se s různými typy pracovišť a získat odborné kompetence."
+      },
+      {
+        "tag": "Maturitní příprava",
+        "detail": "Škola připravuje žáky na maturitu opakovanými maturitami nanečisto a sleduje jejich výsledky.",
+        "evidence": "Maturity nanečisto ve třetím ročníku se osvědčily; úspěšnost maturity je od roku 2022 100 %."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Pro žáky ohrožené neúspěšností nabízí konzultace, online podporu a případně doučování.",
+        "evidence": "Podpora je poskytována formou konzultací, online konzultací nebo doučováním."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Individuální přístup",
+        "detail": "Zadání se málo přizpůsobuje schopnostem jednotlivých žáků a může tak omezovat jejich rozvoj.",
+        "evidence": "Diferenciace vzdělávacího obsahu a zadávaných úkolů byla zaznamenána jen ojediněle."
+      },
+      {
+        "tag": "Práce s vedením",
+        "detail": "Část pedagogů se podle zprávy necítí bezpečně při vyjadřování nesouhlasu s vedením nebo kolegy.",
+        "evidence": "Někteří uváděli, že nemohou bez obav rozporovat kroky vedení a kolegů."
+      },
+      {
+        "tag": "Rozvoj myšlení",
+        "detail": "Škola má prostor zlepšovat podporu kritického myšlení, sebehodnocení a hodnoticích dovedností žáků.",
+        "evidence": "Hledání různých cest řešení bylo sporadické a vzájemné hodnocení či sebehodnocení se vyskytovalo v menší míře."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se ve výuce přizpůsobují zadání různým schopnostem žáků?",
+      "Jak často žáci využívají konzultace, doučování nebo online výuku?",
+      "Jak škola řeší problematickou komunikaci mezi pedagogy a vedením?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat obchodní akademii nebo ekonomiku a podnikání s odbornou praxí.",
+      "Žákům, kterým vyhovuje využití digitálních technologií a kombinace skupinové a samostatné práce.",
+      "Studentům vyšší odborné školy, kteří mají zájem o Personální management a propojení studia s praxí."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům, kteří očekávají výrazné individuální přizpůsobování výuky každému žákovi.",
+      "Rodičům, kterým záleží na pravidelném rozvoji sebehodnocení a kritického myšlení.",
+      "Učitelům, kteří potřebují podle zprávy bezpečnější a otevřenější komunikaci s vedením."
+    ],
+    "plain_czech_summary": "Škola nabízí střední a vyšší odborné vzdělávání s důrazem na praxi, odborníky z praxe a digitální výuku. Výsledky jsou dobré: maturitní úspěšnost je od roku 2022 100 % a absolvující studenti se podle zprávy uplatňují na trhu práce. Rodiče by měli zvážit, že škola upozornila na málo diferencované úkoly, omezené sebehodnocení a potřebu rozvíjet kritické myšlení. V komunikaci s vedením se část pedagogů necítí dostatečně bezpečně. Prakticky je vhodné zeptat se na konkrétní podporu učení, dostupnost konzultací a přizpůsobení výuky jednotlivým žákům."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "V zkušebních obdobích od roku 2022 100% úspěšnost; trend podle zprávy nevykazuje pokles.",
+      "key_numbers": [
+        "100 % úspěšnost maturity v obdobích od roku 2022",
+        "Všichni přihlášení žáci maturitu úspěšně dokončili",
+        "Maturity nanečisto se konají ve třetím ročníku"
+      ],
+      "evidence": "Ve zkušebních obdobích od roku 2022 zaznamenala škola vždy 100% úspěšnost."
+    },
+    "absence": {
+      "trend": "Zpráva neuvádí přesný vývojabsence; škola má systém kontroly a na zvýšenou absenci průběžně reaguje.",
+      "key_numbers": [
+        "Počet žáků ve střední škole: 166",
+        "Počet tříd ve střední škole: 6",
+        "Počet studentů ve VOŠ: 38"
+      ],
+      "evidence": "Systém kontroly docházky umožňuje včasně reagovat na zvýšenou absenci a vzdělávací obtíže žáků."
+    },
+    "support_services": [
+      "Výchovný poradce a školní metodička prevence poskytují individuální konzultace a metodická doporučení.",
+      "Pro žáky ohrožené neúspěšností škola poskytuje konzultace, online konzultace a případně doučování.",
+      "Škola pořádá adaptační pohovory pro první ročník a teambuildingové akce."
+    ],
+    "safety_climate": [
+      "Ve vstřícných hodinách byla přátelská atmosféra s respektujícím přístupem pedagogů.",
+      "Žáci mohli bez obav vyjadřovat názory a klást otázky.",
+      "Pracovní klima nebylo podle zprávy zcela dostatečné; část pedagogů uvedla obavy z rozporování vedení."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje se zaměstnavateli při odborných praxích, besedách, přednáškách a projektech.",
+      "Odborníci z praxe se podílejí na výuce a hodnocení absolventských prací.",
+      "Studenti VOŠ vybírají praxi u konkrétních zaměstnavatelů z portfolia sociálních partnerů."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou srozumitelné, stručné a vycházejí z konkrétních částí inspekční zprávy.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesné číselné údaje o absenci ani její vývoj.",
+      "Zpráva neuvádí podrobné výsledky ročníkových evaluačních prací.",
+      "Zpráva neuvádí konkrétní výsledky ukončení studia ve střední škole."
+    ]
+  }
+}

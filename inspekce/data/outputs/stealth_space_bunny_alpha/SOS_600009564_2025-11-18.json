@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600009564_2025-11-18",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:57:26.367867+00:00",
+  "run_finished_utc": "2026-10-02T16:57:56.335932+00:00",
+  "raw_file": "SOS_600009564_2025-11-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600009564_2025-11-18",
+    "school_profile": {
+      "school_type": "Soukromá střední škola se dvěma obory: Bezpečnostně právní činnost a Veřejnosprávní činnost.",
+      "inspection_period": "18. 11. 2025 až 20. 11. 2025",
+      "school_change_summary": "Od roku 2018 vzrostl počet žáků z 232 na 262, zvýšil se zájem o školu, částečně se obměnil pedagogický sbor a vznikly nové odborné učebny."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná praxe a partneři",
+          "detail": "Škola spolupracuje s Policií ČR, dalšími bezpečnostními složkami a dalšími partnery, což prohlubuje odbornou výuku.",
+          "evidence": "Rozvinutá spolupráce s externími partnery přispívá komplexně ke zkvalitňování podmínek pro poskytované vzdělávání."
+        },
+        {
+          "tag": "Podpora a prevence",
+          "detail": "Škola má poradenské služby a systematickou prevenci, která podporuje bezpečné klima a práci s rizikovým chováním.",
+          "evidence": "Poradenské služby pro žáky a jejich zákonné zástupce zabezpečují výchovná poradkyně, metodička prevence a kariérová poradkyně."
+        },
+        {
+          "tag": "Vybavení a prostory",
+          "detail": "Prostory a vybavení jsou podle inspekce na velmi dobré úrovni a podporují praktickou výuku.",
+          "evidence": "Materiální podmínky ve všech hodnocených oblastech jsou ve škole zabezpečeny na zcela vyhovující úrovni."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Proměnlivá kvalita výuky",
+          "detail": "Kvalita hodnocených hodin se mezi pedagogy lišila a místy převládala méně aktivní výuka.",
+          "evidence": "Souhrnně se sledovaná výuka vyznačovala proměnlivou úrovní, závislou na pedagogických dovednostech a zkušenostech jednotlivých učitelů."
+        },
+        {
+          "tag": "Individualizace",
+          "detail": "Ve většině hodin byla individualizace a diferenciace podle potřeb žáků nedostatečná.",
+          "evidence": "S výjimkou jedné hodiny nebyla diferenciace a individualizace vyučívána v dostatečné míře."
+        },
+        {
+          "tag": "Reflexe praxe",
+          "detail": "U odborné praxe chybí zpětná vazba od žáků, písemný záznam a společné vyhodnocení.",
+          "evidence": "Písemnou formu záznamu o průběhu praxe žáci nevyhotovují, po absolvování praxe nedochází ke společnému vyhodnocení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se ve výuce přizpůsobuje podpora žákům s potřebou podpory, nadaným žákům a žákům s odlišnou úrovní znalostí?",
+        "Jak často probíhá zpětná vazba žáků a učitelů po odborné praxi a kde se s ní seznámí rodiče?",
+        "Jaké konkrétní kroky škola přijímá pro sjednocení kvality výuky zejména v matematice, fyzice a odborných předmětech?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří mají zájem o obory Bezpečnostně právní činnost nebo Veřejnosprávní činnost.",
+        "Žákům, kterým vyhovují praktické výuky, spolupráce s Policií ČR a propojení teorie s praxí.",
+        "Rodinám, které hledají soukromou střední školu s důrazem na bezpečnost, prevenci a odborné vzdělávání."
+      ],
+      "who_should_be_cautious": [
+        "Rodinám, které očekávají ve všech předmětech stejně vysokou míru individuálního přístupu.",
+        "Žákům, kterým vadí převážně frontální výuka nebo kombinace samostatné práce s výkladem učitele.",
+        "Rodinám, které chtějí mít jasnou zpětnou vazbu žáků a společné vyhodnocení každé odborné praxe."
+      ],
+      "plain_czech_summary": "Inspekce potvrdila dobré materiální zabezpečení, spolupráci s Policií ČR a dalšími partnery i podporu žáků prostřednictvím poradenských služeb a prevence. Výsledky u maturit se celkově zlepšují a úspěšnost ve společné části je srovnatelná s republikovým průměrem nebo lepší. Hlavní slabiny jsou proměnlivá úroveň výuky, malé využití individualizace a nedostatečné hodnocení postupu u odborné praxe. Rodiče by měli na otevřeném dni ověřit, jak konkrétně škola podporuje jednotlivé žáky a zlepšuje zpětnou vazbu z praxe."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Úroveň celkových výsledků u maturit se meziročně zlepšuje; počet neúspěšných žáků postupně klesá.",
+        "key_numbers": [
+          "Statistické údaje jsou dostupné za období 2023 až 2025.",
+          "Úspěšnost ve společné části byla srovnatelná s republikovým průměrem nebo lepší.",
+          "Neúspěšnost v profilové části byla oproti republice vyšší."
+        ],
+        "evidence": "Dostupné statistické přehledy za období 2023 až 2025 dokládají postupné snižování celkového počtu žáků, kteří u maturity neuspěli."
+      },
+      "absence": {
+        "trend": "Pravidla pro řešeníabsence se podle inspekce uplatňovala jednotně a důsledně; konkrétní míra absence však není uvedena.",
+        "key_numbers": [
+          "Ve škole se vzdělávalo 262 žáků.",
+          "Mezi žáky bylo sedm žáků se doporučením školských poradenských zařízení.",
+          "Škola vykázala osm žáků s odlišným mateřským jazykem."
+        ],
+        "evidence": "Pravidla pro řešení výchovných problémů a omlouvání nepřítomnosti jsou jednotně a důsledně uplatňována."
+      },
+      "support_services": [
+        "Výchovná poradkyně, metodička prevence a kariérová poradkyně poskytují služby žákům a zákonným zástupcům.",
+        "Škola vede přehlednou databázi žáků s podpůrnými opatřeními a jejich účinnost pravidelně vyhodnocuje.",
+        "Metodička prevence využívá modelové situace, reálné ukázky, zkušenosti z terénu a praktické pomůcky."
+      ],
+      "safety_climate": [
+        "V hospitovaných hodinách bylo zaznamenáno pozitivní a bezpečné klima.",
+        "Mezi pedagogy a žáky probíhala respektující partnerská komunikace.",
+        "Škola věnuje pozornost bezpečnosti včetně fyzicky zabezpečeného vstupu a kamerového systému."
+      ],
+      "partnerships_practice": [
+        "Odborná praxe probíhá převážně ve spolupráci s Krajským ředitelstvím policie Plzeňského kraje a Městským ředitelstvím policie Plzeň.",
+        "Externí partneři poskytují zpětnou vazbu prostřednictvím hodnocení žáka zaměstnancem smluvního partnera.",
+        "Škola spolupracuje také se středními školami, poskytovateli praxí, bezpečnostními složkami a veřejnými institucemi."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text používá běžnou češtinu, stručně odděluje silné stránky, rizika a ověřitelné údaje a většinou se vyhýbá úřednickému složenímu.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní procento neúspěšnosti u maturit ani číselnou míru absence.",
+        "Závěrečné hodnocení vychází především z inspekčního pozorování a dostupných statistických přehledů.",
+        "Některá tvrzení vycházejí ze závěrů inspekce, nikoli z nezávislého hodnocení rodiči."
+      ]
+    }
+  }
+}

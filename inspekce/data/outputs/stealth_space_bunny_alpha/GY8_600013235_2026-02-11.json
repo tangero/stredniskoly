@@ -1,0 +1,113 @@
+{
+  "report_id": "GY8_600013235_2026-02-11",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:37:06.014426+00:00",
+  "run_finished_utc": "2026-10-02T16:37:38.337273+00:00",
+  "raw_file": "GY8_600013235_2026-02-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600013235_2026-02-11",
+    "school_profile": {
+      "school_type": "Čtyřleté a osmileté gymnázium s maturitní zkouškou",
+      "inspection_period": "11. 2. 2026 až 13. 2. 2026",
+      "school_change_summary": "Od inspekce v roce 2022 vzrostl počet žáků o 12 % kvůli přidání jedné třídy ročně ve čtyřletém gymnáziu. Změnila se organizace vedení, zlepšily se materiální podmínky a většina dřívějších nedostatků byla napravena."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní výuka",
+          "detail": "Ve většině navštívených hodin byli žáci aktivně zapojeni a učitelé podporovali tvořivost i samostatné uvažování.",
+          "evidence": "Navštívené hodiny se vyznačovaly téměř ve všech případech velmi dobrou didaktickou úrovní a systematickou podporou aktivního zapojení žáků."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola má nadstandardně obsazený poradenský tým a průběžně vyhodnocuje účinnost podpory jednotlivých žáků.",
+          "evidence": "Personální zajištění poradenského týmu je nadstandardní, kompetence pracovníků jsou jasně vymezeny, jejich spolupráce je funkční a systematická."
+        },
+        {
+          "tag": "Rozvoj nadání",
+          "detail": "Žáci mají možnost účastnit se soutěží, olympiád, projektů, zájmových kroužků a partnerských aktivit.",
+          "evidence": "Škola podporuje rozvoj nadání žáků a jejich sociálních kompetencí prostřednictvím projektů, zapojení do soutěží či charitativních akcí."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nerovnoměrná výuka",
+          "detail": "Kvalita se výrazně lišila zejména v informatice a místy i v němčině, což může ovlivnit přípravu na studium.",
+          "evidence": "Navštívené hodiny vzdělávací oblasti Informatika měly rovněž velmi rozdílnou úroveň."
+        },
+        {
+          "tag": "Slabší zpětná vazba",
+          "detail": "Ve většině hodin převládalo hodnocení správnosti výsledků nad pravidelnou reflexí pokroku a jasnými kritérii.",
+          "evidence": "Formativní hodnocení bylo využíváno v menší míře. Jen v části sledované výuky pracovali žáci s jasně stanovenými kritérii."
+        },
+        {
+          "tag": "Třídnická práce",
+          "detail": "Ve vyšších ročnících je třídnická práce méně pravidelná a často se soustředí jen na organizační záležitosti.",
+          "evidence": "Ve vyšších ročnících je třídnická práce realizována flexibilně, přičemž se častěji soustředí na organizační a operativní záležitosti."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola zajišťuje rovnoměrnou úroveň výuky informatiky a němčiny, na kterou při inspekci nebyla úplně stejně kvalitní?",
+        "Jak konkrétně probíhá zpětná vazba žákům a jak často se ve vyšších ročnících zabývají třídnickou prevencí rizik?",
+        "Které předměty a volitelné semináře jsou vhodné pro nadané žáky připravující se na studium medicíny, techniky nebo přírodních oborů?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat ve čtyřletém nebo osmiletém gymnáziu a mají zájem o projektovou, badatelskou a kooperativní výuku.",
+        "Žákům, kteří potřebují individuální podporu, doučování, poradenství nebo pomoc při adaptaci do nového třídního kolektivu.",
+        "Žákům se zájmem o jazyky, přírodní vědy, techniku, ekologii, soutěže, projekty a mezinárodní aktivity."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na pravidelné podpoře sebereflexe a hodnocení podle jasných kritérií, protože se v této oblasti vyskytly nedostatky.",
+        "Rodičům žáků, kteří potřebují garantovaně mimořádně kvalitní a jednotnou výuku informatiky či němčiny.",
+        "Rodičům žáků, kterým nestačí občasné preventivní působení ve vyšších ročnících a kteří chtějí pravidelnou třídnickou práci."
+      ],
+      "plain_czech_summary": "Gymnázium se změnilo k lepšímu: počet žáků vzrostl o 12 %, zlepšily se prostory a většina dřívějších problémů byla vyřešena. Většina hodin byla kvalitní, aktivní a podporovala samostatnost i spolupráci. Výsledky jsou velmi dobré, v loňském roce uspělo 80 z 81 maturantů. Pomohu získává 21 žáků se speciálními vzdělávacími potřebami. Rodiče by však měly více sledovat kvalitu konkrétních předmětů, zejména informatiky a němčiny. Dalším zlepšením je pravidelnější zpětná vazba, sebereflexe žáků a třídnická práce ve vyšších ročnících."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou hodnoceny jako velmi dobré, ale zpráva uvádí výsledky pouze za jeden loňský rok.",
+        "key_numbers": [
+          "Maturitní zkoušku složilo 81 žáků.",
+          "80 žáků uspělo a jeden neprospěl.",
+          "Matematickou zkoušku složilo 23 žáků, přibližně 28 %."
+        ],
+        "evidence": "V loňském roce konalo maturitní zkoušku 81 žáků, z nich 80 bylo úspěšných a jeden žák neprospěl."
+      },
+      "absence": {
+        "trend": "Zpráva neuvádí jednoznačný trend, ale průměrnou omluvenou absenci za sledované období.",
+        "key_numbers": [
+          "Průměrná omluvená absence je 110 hodin za školní rok.",
+          "Podíl neprospívajících žáků činil 0,75 %.",
+          "Neomluvenou absenci řeší škola zřídka."
+        ],
+        "evidence": "Průměrná omluvená absence za sledované období dosahuje 110 hodin za školní rok, neomluvenou absenci řeší škola zřídka."
+      },
+      "support_services": [
+        "Poradenský tým tvoří dvě výchovné poradkyně, školní psycholog a nově zřízená administrativní pracovnice; personální zajištění je nadstandardní.",
+        "Podpora se poskytuje 21 žákům se speciálními vzdělávacími potřebami a dvěma žákům s odlišným mateřským jazykem.",
+        "Škola nabízí individuální konzultace, doučování primy až kvarty, online výuku a individuální vzdělávací plány při dlouhodobé absenci."
+      ],
+      "safety_climate": [
+        "Škola bezodkladně řeší šikanu, kyberšikanu, užívání alkoholu a nevhodné chování prostřednictvím pohovorů, komisí a spolupráce s odborníky.",
+        "Preventivní program je strukturovaný podle věku a zohledňuje zvýšený výskyt psychických obtíží či nebezpečí sociálních sítí.",
+        "Během inspekce probíhal Týden wellbeingu a pravidelně se pořádají charitativní, kulturní a sportovní aktivity."
+      ],
+      "partnerships_practice": [
+        "Spolupráci rozvíjí s Masarykovou univerzitou, Vysokým učením technickým v Brně, Muzeem Blanenska a regionálními školami či organizacemi.",
+        "Mezinárodní výměnný projekt se střední školou IGS Oyten se zaměřuje na environmentální výchovu.",
+        "Žáci se zapojují do projektu DofE, soutěží a aktivit včetně regionálního charitativního běhu You Dream We Run."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, krátké věty a jasně odděluje silné stránky, možná rizika a otázky pro rodiče.",
+      "uncertainty_notes": [
+        "Zpráva uvádí výsledky jediné maturity, takže z nich nelze spolehlivě určit dlouhodobý trend.",
+        "Údaje o absenci neobsahují přímé srovnání s předchozími školními roky.",
+        "Zpráva neuvádí přesné výsledky žáků jednotlivých oborů, oborů gymnázia nebo jednotlivých učitelů."
+      ]
+    }
+  }
+}

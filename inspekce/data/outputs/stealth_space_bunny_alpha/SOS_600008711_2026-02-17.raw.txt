@@ -1,0 +1,103 @@
+{
+  "report_id": "SOS_600008711_2026-02-17",
+  "school_profile": {
+    "school_type": "Veřejnoprávní střední škola se čtyřletým oborem Bezpečnostně právní činnost v denní formě",
+    "inspection_period": "17. 2. 2026 až 19. 2. 2026",
+    "school_change_summary": "Mírně vzrostl počet žáků, zlepšila se technika, škola se více zapojila do projektů a rozšířila spolupráci s organizacemi."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborné materiály",
+        "detail": "Škola vytváří vlastní učebnice a skripta, která jsou žákům dostupná také online.",
+        "evidence": "„Tvorba vlastních výukových materiálů pro odborné předměty a jejich dostupnost v online prostředí má pozitivní dopad.“"
+      },
+      {
+        "tag": "Bezpečné klima",
+        "detail": "Hospitované hodiny ukázaly klidnou atmosféru, respektující přístup učitelů a dodržování pravidel žáky.",
+        "evidence": "„Pedagogové uplatňovali ve všech sledovaných hodinách respektující a vstřícný přístup a vytvářeli pozitivní třídní klima.“"
+      },
+      {
+        "tag": "Partnerství",
+        "detail": "Škola spolupracuje s bezpečnostními složkami a dalšími partnery, což žákům přináší praxi, exkurze a odborné ukázky.",
+        "evidence": "„Spolupráce probíhá zejména v oblasti zajištění praxí žáků, přednášek, exkurzí, tematických ukázek.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Organizace praxe",
+        "detail": "Odborná praxe trvá pouze tři dny a její doplnění dalšími aktivitami omezuje získávání odborných kompetencí.",
+        "evidence": "„Souvislá odborná praxe však probíhá pouze v délce tří dnů, zbytek je poté naplňován prostřednictvím dalších aktivit.“"
+      },
+      {
+        "tag": "Aktivita žáků",
+        "detail": "Ve výuce převažuje frontální způsob práce, který omezuje aktivní zapojení, spolupráci a rozvoj samostatnosti žáků.",
+        "evidence": "„Ve větší části hodin převažovala frontální výuka kombinovaná se samostatnou prací, neposkytovala žákům dostatek prostoru.“"
+      },
+      {
+        "tag": "Diferenciace a hodnocení",
+        "detail": "Škola málo diferenciuje úkoly a žáky málo vede k sebehodnocení, vzájemnému hodnocení a hodnocení cílů.",
+        "evidence": "„Žáci nebyli vedeni k sebehodnocení a vzájemnému hodnocení a k vyhodnocování stanovených cílů.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně bude vypadat odborná praxe a kolik času stráví žáci přímo u smluvních partnerů?",
+      "Jak často se ve vyučování objevují aktivity podporující spolupráci, samostatnost, kritické myšlení a sebehodnocení žáků?",
+      "Jaké konkrétní kroky škola přijala po inspekci pro zlepšení dokumentace, kvalifikace pedagogů a organizace praxe?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří mají zájem o bezpečnostně právní obor a chtějí studovat v denním režimu.",
+      "Žákům, kterým vyhovuje studium s odbornými předměty a praktickými aktivitami ve spolupráci s bezpečnostními organizacemi.",
+      "Žákům, kteří využijí vlastní učebnice, skripta, elektronickou knihovnu a další odborné zázemí školy."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům, kteří očekávají rozsáhlou každodenní odbornou praxi u smluvních partnerů.",
+      "Rodičům žáků, kterým záleží na pravidelné práci s informacemi, samostatném řešení úkolů a vzájemné spolupráci při vyučování.",
+      "Rodičům, kteří chtějí mít jistotu plně kvalifikovaných pedagogů pro všechny odborné předměty; inspekce zjistila nesplnění požadavků u jednoho pedagoga."
+    ],
+    "plain_czech_summary": "Škola nabízí čtyřletý obor Bezpečnostně právní činnost s odbornými předměty, spoluprací s bezpečnostními složkami a vlastními výukovými materiály. Ve vyučování převládá klidné a respektující prostředí. Hlavními nedostatky jsou krátká odborná praxe, malé zapojení žáků do aktivní práce, slabší diferenciace a málo podpory sebehodnocení. Výsledky jsou obecně dobré, ale u maturitní zkoušky se v roce 2024/2025 objevil mírný propad."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě srovnatelná nebo vyšší úspěšnost než u podobných oborů; v roce 2024/2025 mírný propad ve společné části",
+      "key_numbers": [
+        "Ke zkoušce přihlášeno 55 žáků, zkoušku konalo 53.",
+        "S vyznamenáním prospělo 6 žáků, neprospělo 5.",
+        "Neúspěšnost u českého jazyka 7,5 % a u anglického jazyka 3,8 %."
+      ],
+      "evidence": "„Ve školním roce 2024/2025 byl zaznamenán mírný propad ve výsledcích společné části maturitní zkoušky.“"
+    },
+    "absence": {
+      "trend": "Výskyt neomluvené absence je nízký",
+      "key_numbers": [],
+      "evidence": "„Výskyt neomluvené absence je nízký.“"
+    },
+    "support_services": [
+      "Výchovná poradkyně poskytuje žákům poradenské služby.",
+      "Individuální konzultace s vyučujícími jsou opatřením při školní neúspěšnosti.",
+      "V rámci projektu probíhá doučování z českého a anglického jazyka pro žáky ohrožené neúspěchem.",
+      "Škola podporuje návaznost vzdělávání pomocí přednášek, exkurzí, odborných kurzů a kroužku střelecké přípravy."
+    ],
+    "safety_climate": [
+      "V hospitovaných hodinách byla klidná pracovní atmosféra.",
+      "Učitelé přistupovali k žákům respektujícím a vstřícným způsobem.",
+      "Požadavky na žáky byly přiměřené a srozumitelné.",
+      "Preventivní program podporuje bezpečné chování, zdravý životní styl a pozitivní mezilidské vztahy."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje se složkami integrovaného záchranného systému a veřejnoprávní ochrany.",
+      "Nově navázala partnerství s celní správou.",
+      "Odborná praxe probíhá ve druhém, třetím a čtvrtém ročníku u sociálních partnerů.",
+      "Praxe má délku tří dnů a další část je nahrazována aktivitami, z nichž některé odpovídají spíše exkurzím."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a vycházejí z hodnocení v inspekční zprávě.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí dlouhodobý časový vývoj počtu neprospívajících žáků ani přesnou míru neúspěšnosti v anglickém jazyce ve všech letech.",
+      "Uvedené údaje o absenci jsou hodnoceny pouze slovně, bez číselného trendu.",
+      "Vhodnost školy pro konkrétního žáka závisí také na jeho studijních předpokladech a preferovaném způsobu učení, které inspekční zpráva neposuzuje."
+    ]
+  }
+}

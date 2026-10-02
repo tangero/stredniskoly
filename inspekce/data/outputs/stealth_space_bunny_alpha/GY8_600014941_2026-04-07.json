@@ -1,0 +1,111 @@
+{
+  "report_id": "GY8_600014941_2026-04-07",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:21:02.552782+00:00",
+  "run_finished_utc": "2026-10-02T16:21:27.013042+00:00",
+  "raw_file": "GY8_600014941_2026-04-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600014941_2026-04-07",
+    "school_profile": {
+      "school_type": "Gymnázium osmiletého a čtyřletého studia, příspěvková organizace Zlínského kraje",
+      "inspection_period": "7. 4. 2026 – 10. 4. 2026",
+      "school_change_summary": "V srpnu 2024 byla jmenována nová ředitelka a došlo k obměně zástupců; škola modernizovala materiálně-technické podmínky, informační systémy a audiovizuální techniku."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výsledky a podpora",
+          "detail": "Škola má velmi dobré výsledky a žákům se zhoršeným prospěchem poskytuje cílenou podporu.",
+          "evidence": "Ve srovnání s ostatními středními školami dosahovali žáci výborných vzdělávacích výstupů; škola přijímala cílená opatření."
+        },
+        {
+          "tag": "Bezpečí a klima",
+          "detail": "Škola aktivně řeší bezpečnost, sportovní rizika i kybernetickou bezpečnost.",
+          "evidence": "Preventivní opatření a poučení přispívaly ke snižování rizikového chování; přijata opatření vedoucí k posílení kybernetické bezpečnosti."
+        },
+        {
+          "tag": "Partnerství",
+          "detail": "Rozsáhlá spolupráce partnerů podporuje výuku, projekty a rozvoj žáků.",
+          "evidence": "Škola dlouhodobě rozvíjela a prohlubovala kooperaci s širokým spektrem partnerů na výborné úrovni."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Hodnocení a kontrola",
+          "detail": "Kontrolní činnost školy je podle inspekce jen částečná a nesystematická.",
+          "evidence": "Kontrolní činnost byla realizována jen částečně a nesystematicky; procesy řízení a vyhodnocování byly nesystematické."
+        },
+        {
+          "tag": "Učení ve většině hodin",
+          "detail": "Ve většině sledovaných hodin chybí závěrečné vyhodnocení cílů a sebehodnocení žáků.",
+          "evidence": "Společným nedostatkem byla absence závěrečného vyhodnocení cílů; sebehodnocení a vzájemné hodnocení nebyly konzistentně rozvíjeny."
+        },
+        {
+          "tag": "Přístup k učivu",
+          "detail": "V některých předmětech převládá frontální výuka a méně se podporuje diskuse, spolupráce a samostatné myšlení.",
+          "evidence": "Výuka biologie a zeměpisu podporovala cíle nedostatečně; převládala méně účelná frontální forma výuky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá závěrečné vyhodnocení učiva a sebehodnocení žáků v jednotlivých předmětech?",
+        "Jak škola odlišuje podporu pro žáky se SVP a jak rodiče mohou o jejím průběhu informovat?",
+        "Jaké konkrétní možnosti mají žáci pro účast v projektech, výměnných pobytech a mezinárodních aktivitách?"
+      ],
+      "who_school_fits": [
+        "Rodiče žáků, kteří hledají gymnázium s velmi dobrými výsledky a podporou studijního pokroku.",
+        "Rodiče žáků, kteří ocení školní projekty, partnerství a mezinárodní aktivity.",
+        "Rodiče žáků, kterým záleží na bezpečném, vstřícivém a podpůrném školním prostředí."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří očekávají ve všech předmětech výrazně více diskuse, spolupráce a práce s informačními zdroji.",
+        "Rodiče žáků, kteří potřebují mít pravidelnou a prokazatelnou zpětnou vazbě o hodnocení a hodnocení učebních cílů.",
+        "Rodiče, kteří chtějí školu s úplně systematickou kontrolní činností a jasně danými postupy pro hodnocení učení."
+      ],
+      "plain_czech_summary": "Inspekce hodnotí gymnázium jako školu s velmi dobrými výsledky, rozsáhlou spoluprací a důrazem na bezpečí. Rodičům nabízí informace o žácích pravidelně, poskytuje poradenství a podporuje žáky se zhoršeným prospěchem i se speciálními vzdělávacími potřebami. Hlavní slabiny jsou v oblasti kontroly a hodnocení výuky: kontrola je nesystematická a ve většině hodin chybí závěrečné vyhodnocení učiva a sebehodnocení žáků. V některých předmětech také převládá frontální výuka."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky byly v posledních třech letech stabilní; nejlepších výsledků v matematice bylo dosaženo ve školním roce 2023/2024.",
+        "key_numbers": [
+          "Ve společné části maturity z matematiky byla úspěšnost každoročně nad krajským i celostátním průměrem.",
+          "Anglický jazyk převýšil celorepublikový průměr ve školním roce 2022/2023.",
+          "Český jazyk a literatura měly nejlepší dosavadní školní výsledky, ale byly mírně pod celostátním průměrem."
+        ],
+        "evidence": "Ve společné části matematiky byla úspěšnost nad krajským a celostátním průměrem; nejlepších výsledků bylo dosaženo v roce 2023/2024."
+      },
+      "absence": {
+        "trend": "Údaje o neomluvené absenci nejsou v inspekční zprávě uvedeny.",
+        "key_numbers": [
+          "Nejsou uvedeny žádné číselné údaje o absenci."
+        ],
+        "evidence": "Inspekční zpráva neobsahuje samostatné hodnocení ani číselné údaje o neomluvené absenci."
+      },
+      "support_services": [
+        "Poradenské služby zajišťovali školní metodik prevence, výchovný poradce, kariérový poradce a školní psycholog.",
+        "Škola poskytovala podporu žákům se SVP a sledovala účinnost podpůrných opatření.",
+        "Žákům se zhoršeným prospěchem byly nabízeny individuální konzultace s vyučujícími."
+      ],
+      "safety_climate": [
+        "Žáci byli pravidelně seznamováni s pravidly bezpečného chování a upozorňováni na možná rizika.",
+        "Byla posílena kybernetická bezpečnost školní sítě.",
+        "Byla věnována pozornost sportovním aktivitám, kde je vyšší míra školní úrazovosti."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracovala se zřizovatelem, tuzemskými i zahraničními školami, nemocnicemi, kulturními a sociálními institucemi, sportovními kluby a regionálními firmami.",
+        "Každoročně pořádala výměnné programy a projekty s českými i zahraničními školami.",
+        "Škola podporovala účast žáků v projektech, olympiádách, soutěžích a zahraničních studijních pobytech."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, stručné a vztahují se prakticky k rozhodování rodičů; důležitá tvrzení jsou opřena o citace.",
+      "uncertainty_notes": [
+        "Absence není v dodaném textu vyčíslena ani hodnocena.",
+        "Zpráva neuvádí podrobné výsledky podle jednotlivých předmětů pro každou hodinu.",
+        "Uvedené údaje o maturitách pocházejí ze školních roků uvedených v inspekční zprávě."
+      ]
+    }
+  }
+}

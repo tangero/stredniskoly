@@ -1,0 +1,112 @@
+{
+  "report_id": "GY8_600005054_2025-12-09",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:50:39.726696+00:00",
+  "run_finished_utc": "2026-10-02T16:51:20.632946+00:00",
+  "raw_file": "GY8_600005054_2025-12-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600005054_2025-12-09",
+    "school_profile": {
+      "school_type": "Veřejné gymnázium poskytující čtyřleté a osmileté všeobecné vzdělávání v denní formě; součástí školy je také školní jídelna.",
+      "inspection_period": "9.–12. 12. 2025",
+      "school_change_summary": "Od roku 2022 se změnilo celé vedení, obměnila část pedagogů, modernizovala výuka i vybavení a byla zavedena jednotná pravidla hodnocení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výsledky žáků",
+          "detail": "Škola dosahuje stabilně velmi dobrých výsledků a žáci mají silné jazykové kompetence.",
+          "evidence": "„Ve sledovaném období školních roků 2023/2024 a 2024/2025 dosahovali žáci stabilně velmi dobrých celkových výsledků.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Poradenské pracoviště poskytuje preventivní, podpůrnou a psychologickou péči i karierní služby.",
+          "evidence": "„Odborné a personální zabezpečení poradenského pracoviště… umožňuje optimální zajištění preventivní, podpůrné a psychologické péče i karierních služeb.“"
+        },
+        {
+          "tag": "Jazyky a aktivity",
+          "detail": "Rozšířená jazyková nabídka, projekty a veřejné aktivity podporují profilaci a osobnostní rozvoj žáků.",
+          "evidence": "„Rozvoj odborných, uměleckých a preentačních dovedností žáků je systémově zajištěn…“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Aktivita v hodinách",
+          "detail": "V části vyučovacích hodin převládá frontální výuka, malé množství samostatné práce a omezené zapojení žáků.",
+          "evidence": "„Převaha frontální formy výuky… se projevovala jednotvárností, nižší interakcí se žáky, popř. i pasivitou jednotlivců.“"
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Škola má málo prostoru pro formativní hodnocení, vzájemné hodnocení a sebereflexi žáků.",
+          "evidence": "„Učitelé rovněž jen ojediněle uplatnili prvky formativního hodnocení…“"
+        },
+        {
+          "tag": "Rozmíry učeben",
+          "detail": "Větší počet žáků v některých učebnách omezuje možnosti práce ve skupinách, částečně pomáhá dělení hodin.",
+          "evidence": "„Podmínky vzdělávání (velikost učeben, vyšší počet žáků) ovlivňovaly reálné možnosti využování, což je částečně kompenzováno dělenými hodinami.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá dělení hodin a výuka menších skupin, které v komornějším prostředí nabízí?",
+        "Jak často žáci dostávají zpětnou vazbu, která jim pomáhá vidět vlastní pokrok, a probíhá také vzájemné hodnocení?",
+        "Jaké konkrétní podpůrné plány a individuální opatření nabízí škola žákům se zdravotními oslabeními, odlišným mateřským jazykem nebo ohrožením neprospěchem?"
+      ],
+      "who_school_fits": [
+        "Rodičům žáků, kteří hledají menší, komornější gymnázium s tradicí a spoluprací školy s univerzitami.",
+        "Žákům, kterým vyhovuje všeobecné vzdělávání, jazykové obohacení a možnost volit si předměty a aktivity.",
+        "Rodinám, které chtějí školu s fungující psychologickou, výchovnou a preventivní podporou."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům, kteří hledají velkou školu s maximálním výběrem každoročně otevíraných oborů.",
+        "Rodičům, kterým záleží na pravidelném malém počtu žáků v každé třídě, protože některé třídy jsou naplněné více.",
+        "Rodičům, kteří chtějí, aby každý učitel běžně podporoval samostatnou práci, diskuse a formativní hodnocení, protože v části hodin se tento přístup neuplatňuje."
+      ],
+      "plain_czech_summary": "Gymnázium nabízí menší, tradiční prostředí, silné jazykové vzdělávání, projekty, volitelné předměty a kvalitní péči školního psychologa i výchovné poradny. Žáci dosahují velmi dobrých výsledků a dobře přijímání na vysoké školy. Většina hospitovaných hodin byla kvalitně připravená, ale místy převládala frontální výuka a žáci mále aktivně zkoumali informace nebo hodnotili vlastní pokrok. Rodiče by měli zjistit, jak konkrétně škola řeší velikost tříd, dělení hodin a rozdíly v přístupech učitelů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou obvykle srovnatelné nebo lepší než celorepublikový průměr; v matematice čtyřletého gymnázia nastal pokles v roce 2023/2024.",
+        "key_numbers": [
+          "Přibližně 40–45 % maturantů prospělo s vyznamenáním.",
+          "Přibližně 40 % žáků v roce 2024/2025 nahradilo profilovou cizojazyčnou maturitu mezinárodním certifikátem.",
+          "Přibližně 98 % absolventů bylo úspěšných při přijetí na vysokoškolské obory."
+        ],
+        "evidence": "„Ve školním roce 2023/2024 došlo k výkyvu… úspěšnost čtyřletého gymnázia se pohybovala pod republikovým průměrem.“"
+      },
+      "absence": {
+        "trend": "Neomluvená absence je podle inspekce nízká a celková absence přijatelná; přesná čísla nejsou uvedena.",
+        "key_numbers": [
+          "Přesná hodnota neomluvené absence není v textu uvedena.",
+          "Závěr se vztahuje k posledním dvěma školním rokům."
+        ],
+        "evidence": "„…svědčí o přiměřený počet ukládaných kázeňských opatření, nízká neomluvená absence i přijatelná míra zameškaných hodin.“"
+      },
+      "support_services": [
+        "Poradenské pracoviště: „výchovná poradkyně, dvě metodičky prevence, školní psycholog“.",
+        "Podporu zajišťují: „plány pedagogické podpory, čeština jako druhý cizí jazyk, individuální konzultace, skupinové doučování, maturitní příprava“.",
+        "Školní psycholog působí: „monitoringem výuky, dotazníkovými šetřeními, konzultacemi, diagnostickou a metodickou činností“."
+      ],
+      "safety_climate": [
+        "Školní psycholog: „napomáhá k utváření bezpečného prostředí a předcházení zátěžovým situacím žáků a učitelů“.",
+        "Prevence zahrnuje: „techniky učení a zvládání stresu, ročníkové pobyty, podpora duševního zdraví“.",
+        "Bezpečnost podporují: „elektronický a kamerový systém i vrátnice s celodenním personálním obsazením“."
+      ],
+      "partnerships_practice": [
+        "Škola má: „partnerské vztahy s vysokými i zahraničními školami, jazykovými instituty a kulturně vzdělávacími institucemi“.",
+        "Učitelé se účastní: „zahraničních mobilit“ a spolupracují v rámci programu Erasmus+.",
+        "Škola je: „fakultní školou Přírodovědecké a Filozofické fakulty Univerzity Karlovy“."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžnou češtinu, krátké věty a jasně odděluje zjištění inspekce od doporučení rodičům.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesnou výši absence, lze ji posoudit jen kvalitativně.",
+        "Přijatí na vysoké školy je uvedeno za profily absolventů, nikoli za úplnou dlouhodobou statistiku všech absolventů.",
+        "Inspekce neuvádí aktuální přesné termíny ani rozsah přípravných kurzů a ročníkových aktivit."
+      ]
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "report_id": "SOS_691012415_2026-04-07",
+  "school_profile": {
+    "school_type": "střední škola poskytující obory s maturitní i závěrečnou zkouškou, domov mládeže a školní jídelnu",
+    "inspection_period": "7. 4. až 9. 4. 2026",
+    "school_change_summary": "Škola vznikla v roce 2018 splynutím tří škol; od října 2025 rozšířila poradenské služby o školní psycholožku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podpora a poradenství",
+        "detail": "Ve škole působí výchovná poradkyně, školní metodik prevence, speciální pedagožka a školní psycholožka, kteří podporují žáky, rodiče i pedagogy.",
+        "evidence": "„Kompetence jednotlivých pracovníků jsou účelně rozděleny, jejich činnost je vzájemně provázána a probíhá v efektivní každodenní spolupráci.“"
+      },
+      {
+        "tag": "Odborná výuka",
+        "detail": "V praktickém vzdělávání učitelé účinně diferencovali úkoly a poskytovali žákům průběžnou podporu i zpětnou vazbu.",
+        "evidence": "„Práci diferenciovali prostřednictvím různých typů zadání úloh dle jejich vzdělávacích možností.“"
+      },
+      {
+        "tag": "Vybavení a partneři",
+        "detail": "Škola postupně zlepšuje budovy, technické vybavení a praktickou přípravu prostřednictvím firem, škol a vysokých škol.",
+        "evidence": "„Škola se daří zlepšovat oblast materiálního zabezpečení a rozvíjet aktivní spolupráci s mnoha vnějšími partnery.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Neúspěšnost učebních oborů",
+        "detail": "Vysoká absence u učebních oborů podle inspekce zvyšuje riziko neprospěchu a neúspěšnosti při závěrečné zkoušce.",
+        "evidence": "„Vysoká absence žáků učebních oborů vzdělání se projevuje ve vyšší míře jejich neprospěchu i úspěšnosti u ZZ.“"
+      },
+      {
+        "tag": "Podpora v teoretické výuce",
+        "detail": "Při některých učebních oborech může být podpora omezená, protože ve vzdělávacích oborech se v prvním ročníku kumuluje absence.",
+        "evidence": "„V učebních oborech vzdělání se v prvním ročníku studia opakovaně kumuluje vysoká neomluvená i omluvená absence.“"
+      },
+      {
+        "tag": "Diferencování výuky",
+        "detail": "V teoretické výuce se podle inspekce téměř neuplatňovalo přizpůsobování úkolů různým potřebám a tempu žáků.",
+        "evidence": "„Ve sledovaných hodinách zcela chyběla diferenciace práce s ohledem na rozdíly v pracovním tempu žáků či v jejich vzdělávacích potřebách.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak často se ve vašich oborech učí matematika a jaké konkrétní podpůrné služby poskytujete žákům se špatnými výsledky?",
+      "Jak konkrétně snižujete absenci především v učebních oborech a účebních oborech vzdělání?",
+      "Jak vypadá podpora žáků se speciálními vzdělávacími potřebami přímo v hodinách a jak často vyhodnocujete její účinnost?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat stavebnictví, obchod a cestovní ruch nebo informační technologie.",
+      "Žákům, kterým vyhovuje propojení odborné teorie s praktickou výukou a prací s odbornými pomůckami.",
+      "Žákům, kteří využijí školní poradenské služby, doučování nebo individuální konzultace."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků učebních oborů, kteří mají sklon k absencím, protože absence zde podle inspekce výrazně ovlivňuje výsledky.",
+      "Rodičům žáků, kteří potřebují průběžnou zpětnou vazbu, sebereflexi nebo intenzivnější práci s různými zdroji informací.",
+      "Rodičům žáků, pro které by bylo důležité pravidelné ověřování výsledků testováním, protože škola zpráva uvádí, že jej systematicky nezavádí."
+    ],
+    "plain_czech_summary": "Škola má dobře fungující poradenský tým, praktickou výuku a také zlepšené materiální podmínky. Ve většině hospitovaných hodin byla přátelská atmosféra a učitelé byli dobře připraveni. Výsledky se ale mezi obory výrazně liší: stavební obory se za poslední dva roky zlepšily, zatímco Obchodní akademie má dlouhodobě kolísavou úspěšnost. Největším rizikem je vysoká absence, hlavně v učebních oborech a oborech se závěrečnou zkouškou. V teoretické výuce chybělo více aktivního zapojení žáků, sebereflexe a přizpůsobování úkolů jejich potřebám. Rodiče by se měli zejména zeptat, jak konkrétně škola řeší absenci a podporuje slabší žáky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený vývoj: stavební obory se za poslední dva roky zlepšily, Obchodní akademie má dlouhodobě kolísavou úspěšnost.",
+      "key_numbers": [
+        "Ve škole studovalo 457 žáků v oborech s maturitní zkouškou.",
+        "Inspekce neuvádí konkrétní úspěšnost maturit za jednotlivé roky."
+      ],
+      "evidence": "„Stavební obory vzdělání vykazují v posledních dvou letech zlepšení, zejména v matematice, a jejich výsledky jsou srovnatelné s celostátními průměry.“"
+    },
+    "absence": {
+      "trend": "Riziková absence se podle inspekce v prvním ročníku učebních oborů opakovaně kumuluje a není vždy dostatečně řešena.",
+      "key_numbers": [
+        "Inspekce neuvádí přesné procento absence ani její vývoj za jednotlivé roky."
+      ],
+      "evidence": "„Na rizikovou absenci reaguje výchovnými opatřeními, individuálními pohovory se žáky, zapojením ŠPP a komunikací se zákonnými zástupci žáků, avšak tato opatření nejsou vždy dostatečně účinná.“"
+    },
+    "support_services": [
+      "Ve škole působí výchovná poradkyně, školní metodik prevence, speciální pedagožka a od října 2025 školní psycholožka.",
+      "Škola nabízí individuální konzultace, doučování, výchovné komise a komunikaci se zákonnými zástupci.",
+      "ŠPP podporuje žáky při vzdělávacích, výchovných a vztahových obtížích a poskytuje metodickou podporu pedagogům."
+    ],
+    "safety_climate": [
+      "Ve všeobecně vzdělávacích a odborných předmětech panovala pozitivní pracovní atmosféra.",
+      "Přístup vyučujících byl vstřícný a partnerský; žáci respektovali pravidla práce a komunikace.",
+      "V odborném výcviku dodržovali učitelé bezpečnostní pravidla a všichni žáci měli vhodné pracovní a ochranné pomůcky."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s mnoha sociálními a profesními partnery.",
+      "S vysokými školami zajišťuje výuku některých odborných předmětů, například geodézie.",
+      "S firmami a partnery organizuje exkurze, prezentace, odborníky z praxe a praktickou výuku."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a v souvislosti s rozhodováním rodičů; závěry vycházejí pouze z inspekční zprávy.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní procenta úspěšnosti maturit ani absence.",
+      "Zpráva neuvádí výsledky testů, protože škola interní ani externí testování nezavádí.",
+      "Zpráva neuvádí, kdy přesně budou předepsaná opatření provedena a vyhodnocena."
+    ]
+  }
+}

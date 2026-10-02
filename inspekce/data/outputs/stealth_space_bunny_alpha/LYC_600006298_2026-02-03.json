@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_600006298_2026-02-03",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:40:16.413490+00:00",
+  "run_finished_utc": "2026-10-02T16:40:40.521556+00:00",
+  "raw_file": "LYC_600006298_2026-02-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600006298_2026-02-03",
+    "school_profile": {
+      "school_type": "Střední odborná škola",
+      "inspection_period": "3. 2. 2026 – 6. 2. 2026",
+      "school_change_summary": "Od roku 2023/2024 vzrostl počet žáků a tříd, byly zrušeny kombinované formy a nástavbové studium Podnikání a přibyly obory Nutriční asistent a Ekonomické lyceum."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná příprava",
+          "detail": "Odborné vyučování je podle inspekce na dobré úrovni a žáci pracují s moderním vybavením i na smluvních pracovištích.",
+          "evidence": "Hospitované hodiny odborné přípravy a výcviku vykazovaly velmi dobrou úroveň a účelné využívání vybavení."
+        },
+        {
+          "tag": "Zaměstnatelnost",
+          "detail": "Spolupráce s partnery a zahraniční stáže podporují odborné dovednosti a uplatnění absolventů na trhu práce.",
+          "evidence": "Systomatická spolupráce s profesními partnery zajišťuje sepětí teorie s praxí a následné profesní uplatnění."
+        },
+        {
+          "tag": "Podpora a klima",
+          "detail": "Ve většině sledovaných hodin byla příjemná atmosféra a pedagogové přistupovali k žákům vstřícně.",
+          "evidence": "Sledované hodiny se vyznačovaly příjemnou atmosférou a vzájemně respektujícím přístupem učitele a žáků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturita",
+          "detail": "U oborů Hotelnictví a Cestovní ruch byla v některých letech neúspěšnost vyšší než celostátní průměr, i když se zlepšovala.",
+          "evidence": "Hrubá neúspěšnost činila téměř 28 %, 14 % a 12 %; v posledním roce byla téměř na úrovni ČR."
+        },
+        {
+          "tag": "Teoretická výuka",
+          "detail": "V části teoretické výuky se podle inspekce vyskytuje méně diferenciace, samostatné práce se zdroji a reflexe žáků.",
+          "evidence": "Nedostatky zahrnovaly nižší míru diferenciace, práce s informačními zdroji, sebereflexe a vzájemného hodnocení."
+        },
+        {
+          "tag": "Podpůrné služby",
+          "detail": "Podpora žáků se SVP je nabízena, ale její skutečné uplatňování závisí na přístupu konkrétního pedagoga.",
+          "evidence": "Konkrétní realizace podpůrných opatření ve vyučování z velké části závisí na přístupu jednotlivých pedagogických pracovníků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně podporují žáky s podpůrnými opatřeními při neúspěchu v maturitě?",
+        "Jak vypadá podpora odlišného pracovního tempa a různých úrovní znalostí v teoretických předmětech?",
+        "Kolik žáků skutečně absolvuje odborné stáže v zahraničí a jaké získají dovednosti?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat hotelnictví, gastronomii, cestovní ruch nebo obory s nimi související.",
+        "Žákům, kteří mají zájem o praktickou odbornou přípravu a práci na skutečných pracovištích.",
+        "Žákům, kteří ocení odborné softwary, projekty, soutěže a zahraniční stáže."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kteří potřebují mimořádně individuální podporu při vyučování.",
+        "Rodičům žáků maturitních oborů Hotelnictví a Cestovní ruch, kteří mají zájem o mezistátní srovnání výsledků.",
+        "Rodičům, kteří očekávají v teoretické výuce výrazně více samostatné práce a hodnocení ze strany žáků."
+      ],
+      "plain_czech_summary": "Škola má silné odborné vybavení, praktické vyučování a spolupráci s firmami i zahraničními partnery. Výsledky závěrečných zkoušek oborů s výučním listem jsou velmi dobré. Výsledky maturity se u Hotelnictví a Cestovního ruchu zlepšily, ale v prvních letech byly horší než celostátní průměr. V teoretické výuce se podle inspekce stále vyskytuje méně samostatné práce, diferenciace a zpětné vazby. Podpora žáků se SVP existuje, ale její působení není podle inspekce vždy dostatečně viditelné."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Hrubá neúspěšnost oborů Hotelnictví a Cestovní ruch klesla z téměř 28 % na 14 % a následně na 12 %.",
+        "key_numbers": [
+          "2022/2023: téměř 28 %",
+          "2023/2024: 14 %",
+          "2024/2025: 12 %"
+        ],
+        "evidence": "Ve školním roce 2024/2025 míra hrubé neúspěšnosti klesla na 12 %, téměř na úrovni ČR, tedy 11 %."
+      },
+      "absence": {
+        "trend": "Absence, včetně neomluvené, se za tři uzavřené školní roky snížila.",
+        "key_numbers": [
+          "2022/2023: téměř 200 hodin na žáka",
+          "2024/2025: zhruba 160 hodin na žáka",
+          "Uzavřená klasifikace vzrostla ze 79 % na 96 %"
+        ],
+        "evidence": "Absence klesla z téměř 200 na zhruba 160 hodin na žáka a uzavřená klasifikace vzrostla ze 79 % na 96 %."
+      },
+      "support_services": [
+        "Výchovná poradkyně, metodička prevence a školní psycholožka poskytují poradenské a informační služby.",
+        "Škola poskytuje konzultace, doučování, digitální platformu, možnost přestupu na méně náročný obor a podpůrná opatření pro žáky se SVP.",
+        "Adaptační pobyt a informační schůzka podporují začátek studia a vztahy v třídním kolektivu."
+      ],
+      "safety_climate": [
+        "Dodržování pravidel, elektronický systém a celodenní provoz recepce napomáhají k bezpečnému prostředí.",
+        "Ve výuce odborného výcviku se dodržují zásady bezpečnosti, ochrany zdraví a hygienické předpisy.",
+        "Sledované hodiny měly příjemnou atmosféru a vzájemně respektující přístup."
+      ],
+      "partnerships_practice": [
+        "Praktické vyučování probíhá na smluvních pracovištích sociálních partnerů.",
+        "Škola spolupracuje se zaměstnavateli, odbornými asociacemi, svazy a partnerskými školami v zahraničí.",
+        "Pro žáky jsou pořádány odborné stáže, exkurze, besedy a zahraniční pobyty."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, stručné formulace a odděluje zjištění inspekce od doporučení pro rodiče.",
+      "uncertainty_notes": [
+        "Inspekční zpráva neuvádí podrobné výsledky maturity za každý obor a každý předmět zvlášť.",
+        "Údaje o podpůrných službách neříkají, u kolika žáků se opatření skutečně a dostatečně uplatňují.",
+        "Hodnocení kvality teoretické výuky vychází ze sledovaných hodin a nepopisuje každou třídu."
+      ]
+    }
+  }
+}

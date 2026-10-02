@@ -1,0 +1,105 @@
+{
+  "report_id": "LYC_691018634_2026-05-04",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:15:56.617327+00:00",
+  "run_finished_utc": "2026-10-02T16:16:22.912502+00:00",
+  "raw_file": "LYC_691018634_2026-05-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_691018634_2026-05-04",
+    "school_profile": {
+      "school_type": "Střední škola Montessori lyceum Ostrava, školská právnická osoba; činnost zahájena 1. 9. 2025, obor Kombinované lyceum 78-42-M/06",
+      "inspection_period": "4. 5. až 5. 5. a 7. 5. 2026",
+      "school_change_summary": "Jde o velmi mladou školu: k termínu inspekce v ní studovalo devět žáků prvního ročníku a škola začala působit předchozího 1. září."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Podporující klima",
+          "detail": "Rodinám může vyhovovat vstřícný přístup založený na respektu, důvěře, otevřené komunikaci a mentorství pedagoga.",
+          "evidence": "„Partnerský vztah mezi pedagogy a žáky založený na vzájemném respektu a důvěře“, role pedagoga v pozici mentora."
+        },
+        {
+          "tag": "Kvalita výuky",
+          "detail": "Hospitační činnost podle inspekce ukázala promyšlenou výuku podporující aktivní zapojení žáků.",
+          "evidence": "„Kvalita výuky ve sledovaných jednotkách byla vyrovnaná, promyšlená“ a podporovala „aktivní zapojení do učebního procesu“."
+        },
+        {
+          "tag": "Sledování pokroku",
+          "detail": "Škola průběžně sleduje výsledky a pro rozvoj žáků využívá sebehodnocení i zpětnou vazbu.",
+          "evidence": "„Škola soustavně získává informace o posunech každého žáka, které je propojeno s jejich sebehodnocením“."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Krátká historie",
+          "detail": "Pro rodiče je hlavní nejistotou, že škola nemá zatím dost dlouhou historii pro ověření dlouhodobých výsledků.",
+          "evidence": "„Vzhledem ke krátké době existence školy není dosud možné provést komplexní analýzu její činnosti ve všech oblastech.“"
+        },
+        {
+          "tag": "Malý počet žáků",
+          "detail": "Výsledky hodnocení ovlivňuje velmi malá velikost školy a zatím jediný známý ročník.",
+          "evidence": "„Ve střední škole se k termínu inspekční činnosti vzdělávalo devět žáků prvního ročníku.“"
+        },
+        {
+          "tag": "Informační gramotnost",
+          "detail": "Ve výuce se méně rozvíjí samostatné vyhledávání a porovnávání informací z různých zdrojů.",
+          "evidence": "„Úkoly založené na vyhledávání informací, práci s různými informačními zdroji, analýzu dat“ se objevovaly pouze ojediněle."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně vypadá výuka prvního ročníku a kdy si žáci vybírají humanitní, technické nebo přírodovědné zaměření?",
+        "Jaké konkrétní aktivity rozvíjejí práci s více informačními zdroji a kritické myšlení?",
+        "Jaká podpora výchovné poradkyně, metodičky prevence, kariérového poradce a školního psychologa je pro studenta dostupná?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat v malé škole s osobním a partnerským přístupem pedagoga.",
+        "Rodinám, které hledají vzdělávání propojené s Montessori pedagogy a návaznost na základní školu.",
+        "Žákům, kterým vyhovuje samostatnější učení, seberealizace a postupné profilování oboru."
+      ],
+      "who_should_be_cautious": [
+        "Rodinám, které potřebují dlouhodobě ověřené výsledky školy nebo srovnatelný historický vývoj.",
+        "Rodinám, které mají málo informací o organizaci běžného provozu školy s jedním dosud obsazeným ročníkem.",
+        "Žákům, kteří očekávají výrazné ověřování práce s informačními zdroji, pokud jí škola v budoucnu neposílí."
+      ],
+      "plain_czech_summary": "Škola je nová, začala působit 1. září 2025 a při inspekci měla devět žáků prvního ročníku. Nabízí malé, podporující prostředí s partnerským přístupem pedagogů, respektem, otevřenou komunikací a důrazem na sebehodnocení. Inspekce označila výuku za promyšlenou a klima za bezpečné a respektující. Zároveň upozornila, že žáci se méně často učí samostatně vyhledávat a porovnávat různé informační zdroje. Výsledky maturitní zkoušky zatím nelze posoudit, protože škola nemá dokončené ročníky. Všichni devět žáků v prvním pololetí prospěli, 44 % s vyznamenáním. Rodiče by měli zjišťovat podrobnosti o profilaci oboru, podpůrných službách a rozvoji informační gramotnosti."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky školní maturity zatím nebylo možné hodnotit, protože škola začala působit až 1. 9. 2025.",
+        "key_numbers": [
+          "1. pololetí 2025/2026: prošli všichni žáci",
+          "44 % žáků mělo vyznamenání"
+        ],
+        "evidence": "„Vzhledem ke krátké době existence školy nelze zatím hodnotit úspěšnost vzdělávacího procesu na základě výsledků žáků u maturitní zkoušky.“"
+      },
+      "absence": {
+        "trend": "Škola absenci průběžně sleduje a při jejím nárůstu přijímá okamžitá opatření; konkrétní vývoj nebylo uvedeno.",
+        "key_numbers": [],
+        "evidence": "„Škola systematicky sleduje absenci žáků a v případě jejího nárůstu přijímá bezodkladná opatření.“"
+      },
+      "support_services": [
+        "Výchovná poradkyně, metodička prevence, kariérový poradce a externí školní psycholog.",
+        "Třídní učitel a intenzivní spolupráce se zákonnými zástupci."
+      ],
+      "safety_climate": [
+        "Ve škole je podle inspekce bezpečné, respektující a podporující klima.",
+        "Žáci jsou pravidelně seznamováni s riziky a pravidly bezpečného chování."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje se základní a mateřskou školou a s vyšší odbornou školou Mediální tvorby.",
+        "Inspekce doporučila rozšířit spolupráci se školami obdobného zaměření a dalšími partnery."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text používá běžné české výrazy, stručně vysvětluje význam zjištění pro rodiče a odlišuje potvrzená fakta od nejistot.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní číselné údaje o absenci.",
+        "Výsledky maturity a externího testování zatím nelze hodnotit.",
+        "Výklad o vhodných žácích vychází z popsaného přístupu školy, nikoli z explicitního profilu cílové skupiny."
+      ]
+    }
+  }
+}

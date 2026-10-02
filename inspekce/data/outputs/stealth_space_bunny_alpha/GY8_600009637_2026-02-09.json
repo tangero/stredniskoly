@@ -1,0 +1,108 @@
+{
+  "report_id": "GY8_600009637_2026-02-09",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:38:18.815077+00:00",
+  "run_finished_utc": "2026-10-02T16:38:57.959373+00:00",
+  "raw_file": "GY8_600009637_2026-02-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600009637_2026-02-09",
+    "school_profile": {
+      "school_type": "Základní škola, osmileté a čtyřleté gymnázium a školní družina",
+      "inspection_period": "9. 2. 2026 – 12. 2. 2026",
+      "school_change_summary": "Od roku 2020 škola modernizovala vzdělávání, zavedla program „Začít spolu“ na ZŠ a „Vision“ na gymnáziu; rozšířila projektové, badatelské a formativní vyučování."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Bezpečné klima",
+          "detail": "Ve vyučování převládá partnerský přístup, respekt, spolupráce a podpora žáků.",
+          "evidence": "„Vstřícné, bezpečné a stabilní prostředí se srozumitelnými pravidly a partnerskými vztahy.“"
+        },
+        {
+          "tag": "Kvalitní výuka",
+          "detail": "Učitelé využívají promyšlené metody, aktivní učení a spolupráci.",
+          "evidence": "„Kombinují účinné metody aktivního učení, zejména spolupráci, badatelské a prožitkové učení.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí poradenství, kariérovou přípravu, volitelné předměty a rozsáhlé mimoškolní aktivity.",
+          "evidence": "„ŠPP je funkčně nastavené a poskytuje žákům i pedagogům systematickou podporu.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Matematika u maturity",
+          "detail": "Neúspěšnost žáků v matematice je výrazně vyšší než celorepublikový průměr.",
+          "evidence": "„V matematice je v posledních dvou letech neúspěšnost žáků výrazně vyšší, než je celorepublikový průměr.“"
+        },
+        {
+          "tag": "Diferencovaná výuka",
+          "detail": "Na gymnáziu se úlohy často řeší stejnou náročností místo přizpůsobení schopnostem žáků.",
+          "evidence": "„Nejbylo tak využíváno diferencovaného přístupu k žákům s ohledem na jejich konkrétní dovednosti a schopnosti.“"
+        },
+        {
+          "tag": "Informační gramotnost",
+          "detail": "Ve výuce chybí důslednější ověřování a kritické posuzování nalezených informací.",
+          "evidence": "„Zpravidla však chyběla aktivní činnost třídění získaných informací a ověřování jejich správnosti.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně podporují žáky připravující se na maturitu z matematiky?",
+        "Jak v hodinách gymnázia vybírají rozdílně náročné úlohy podle schopností žáků?",
+        "Jak učí žáky vyhledávat, ověřovat a kriticky hodnotit informace?"
+      ],
+      "who_school_fits": [
+        "Rodiny, které hledají menší třídy a individuální přístup.",
+        "Žáci, kterým vyhovuje aktivní, spolupracující a projektová výuka.",
+        "Rodiny, které chtějí volitelný předměty, konzultace a podporu při přípravě na vysokou školu."
+      ],
+      "who_should_be_cautious": [
+        "Rodiny, kterým záleží na velmi silné matematické přípravě bez další podpůrné práce doma.",
+        "Žáci, kteří potřebují výraznější individualizaci úkolů podle aktuální úrovně.",
+        "Rodiny, u nichž je důležité pravidelné ověřování digitálních zdrojů a rozvoj kritického myšlení."
+      ],
+      "plain_czech_summary": "Škola má nízké počty žáků ve třídách, přátelské klima a promyšlenou výuku. Silné jsou zejména spolupráce, projektové a badatelské učení, podpora žáků i rozsáhlá volba předmětů a aktivit. Rodičům se vyplatí zjistit, jak konkrétně škola řeší slabiny v matematice, individualizaci výuky a ověřování informací. Dlouhodobé výsledky jsou velmi dobré, ale u maturity z matematiky jsou výrazně horší než celostátně."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Celkově dlouhodobě velmi dobré; matematická neúspěšnost je v posledních dvou letech výrazně vyšší než celostátní průměr.",
+        "key_numbers": [
+          "Výborné výsledky v českém a cizím jazyce",
+          "39 ze 40 absolventů bylo v loňském roce přijato na vysoké školy",
+          "Jeden absolvent pokračoval na vyšší odborné škole"
+        ],
+        "evidence": "„Ve společné části maturit škola dlouhodobě dosahuje velmi dobrých výsledků v českém a cizím jazyce.“"
+      },
+      "absence": {
+        "trend": "Inspekční zpráva neuvádí konkrétní trend ani číselné údaje o absencích.",
+        "key_numbers": [],
+        "evidence": ""
+      },
+      "support_services": [
+        "Školní poradenské pracoviště podporuje žáky, pedagogy, speciální vzdělávací potřeby a prevenci rizikového chování.",
+        "Kariérové vzdělávání zahrnuje portfolia, spolupráci s odborníky a partnery z vysokých škol.",
+        "Škola nabízí volitelné předměty, přípravné kurzy, kroužky, logopedii a nepodstatné aktivity."
+      ],
+      "safety_climate": [
+        "Podporu bezpečí zajišťují prevence, monitorování třídního klimatu, programy wellbeingu a spolupráce s externími organizacemi.",
+        "Ve vyučování je podle inspekce partnerské a respektující klima."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s německým gymnáziem v Lauterbachu a nově se školou ve Finsku.",
+        "V kariérovém poradenství spolupracuje s Krajským centrem vzdělávání, univerzitními poradenskými centry, Europassem, Euroguidance a Krajskou hospodářskou komorou.",
+        "Projekty a vzdělávání propojuje například s Post Bellum, Člověkem v tísni a Techmania Science Center."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text používá srozumitelné formulace, konkrétní příklady a jasně odděluje silné stránky od oblastí ke zlepšení.",
+      "uncertainty_notes": [
+        "Inspekční zpráva neuvádí údaje o absencích.",
+        "Pro rodiče je nutné ověřit konkrétní nabídku podpůrných služeb pro daný ročník.",
+        "Hodnocení se vztahuje k inspekčnímu období 9.–12. února 2026."
+      ]
+    }
+  }
+}

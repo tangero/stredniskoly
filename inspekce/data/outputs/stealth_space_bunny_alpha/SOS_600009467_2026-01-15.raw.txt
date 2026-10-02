@@ -1,0 +1,102 @@
+{
+  "report_id": "SOS_600009467_2026-01-15",
+  "school_profile": {
+    "school_type": "Střední škola a školní jídelna; poskytuje také služby domova mládeže.",
+    "inspection_period": "15. 1. 2026 až 21. 1. 2026",
+    "school_change_summary": "Počet žáků vzrostl z 449 na 547, počet oborů se mění a probíhá postupná renovace zařízení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborné předměty",
+        "detail": "Ve výuce programování, síťí a operačních systémů inspekce ocenila odbornost učitelů, praktickou práci žáků a okamžitou zpětnou vazbu.",
+        "evidence": "„Vysoká úroveň odbornosti vyučujících“; žákům byla poskytována zpětná vazba „zejména při práci v počítačových učebnách“."
+      },
+      {
+        "tag": "Praxe a partneři",
+        "detail": "Škola úzce spolupracuje s firmami, univerzitami a dalšími partnery, což žákům přináší kontakt s reálnou prací.",
+        "evidence": "„Spolupráce s externími partnery představuje významnou součást vzdělávacích aktivit“ a propojuje teorii s praxí."
+      },
+      {
+        "tag": "Podpora a klima",
+        "detail": "Školní poradenské pracoviště sleduje výsledky, chování a absenci žáků a ve většině odborných hodin bylo klima příznivé.",
+        "evidence": "„Příznivou atmosféru“; poradenské pracoviště zajišťuje „systematické hodnocení docházky, chování a výsledků“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Metodická podpora učitelů",
+        "detail": "Přetrvává slabá systematická podpora učitelů, což se podle inspekce projevuje v jejich pedagogických postupech.",
+        "evidence": "„Komplexní a pravidelná zpětná vazba o kvalitě celého vzdělávacího procesu a následná metodická práce … nebyly nastaveny.“"
+      },
+      {
+        "tag": "Aktivita a přizpůsobení výuky",
+        "detail": "Ve výuce převažuje učitel, chybí častější aktivní zapojení, spolupráce žáků a přizpůsobení jejich potřebám.",
+        "evidence": "Ve sledované výuce převažovala frontální výuka; „nižší míra individualizace a diferenciace vzdělávání“."
+      },
+      {
+        "tag": "Nejisté výsledky a dokumentace",
+        "detail": "Výsledky se mezi obory výrazně liší a inspekce zjistila také dílčí nedostatky v dokumentaci.",
+        "evidence": "Logistické a finanční služby jsou „horší než republikový průměr“; dílčí nedostatky byly „v dokumentaci školního stravování a výchovného poradenství“."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak často učitelé navštěvují hodiny jiných pedagogů a jaké opatření přijímají po vzájemné zpětné vazbě?",
+      "Jak konkrétně probíhá podpora žáků s odlišnou úrovní znalostí, s potřebou podpůrného opatření nebo s vysokou absencí?",
+      "U odborných předmětů a praxí můžeme vidět ukázku práce s chybou, samostatného sebehodnocení žáků a konkrétní propojení učiva s pracovníkem zejména z praxe?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří mají zájem o informační technologie, programování, logistiku, financovní služby nebo technické obory.",
+      "Žákům, kterým vyhovuje praktická výuka, odborné praxe a spolupráce s externími partnery.",
+      "Žákům, kteří potřebují strukturovanou podporu, poradenství nebo ubytování v domově mládeže."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, pro které je zásadní průběžná individualizace a častá zpětná vazba během hodin.",
+      "Rodičům žáků s vyšší absencí, nižší motivací nebo potřebou průběžné podpory učení.",
+      "Rodičům, kteří chtějí přesně porovnat kvalitu a výsledky jednotlivých oborů, protože zpráva uvádí rozdílné trendy."
+    ],
+    "plain_czech_summary": "Škola má dobře vybavené prostory, silné odborné předměty, praktické využití digitálních nástrojů a rozsáhlou spolupráci s praxí. Poradenské pracoviště sleduje výsledky, chování a absenci žáků. Hlavním problémem je převážně frontální výuka, menší individualizace a slabá metodická podpora učitelů. Výsledky Informačních technologií jsou od roku 2023 lepší než republikový průměr, zatímco Logistické a finanční služby zaostávají, přestože se zlepšují. Absence za poslední tři uzavřené školní roky klesala. Podpora zahrnuje konzultace, doučování, prevenci, elektronické portfolio i služby domova mládeže."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "U Informačních technologií jsou výsledky od roku 2023 lepší než republikový průměr; Logistické a finanční služby zaostávají, ale se zlepšují.",
+      "key_numbers": [
+        "Informační technologie: od roku 2023 lepší než republikový průměr.",
+        "Logistické a finanční služby: horší než republikový průměr, se zlepšujícím trendem.",
+        "Manipulant poštovního provozu a přepravy: stabilně vyšší počet neprospívajících a nedokončivajících žáků."
+      ],
+      "evidence": "„K markantnímu zlepšení došlo zvláště u výsledků profilové části zkoušky“; přetrvává „relativně vyšší neúspěšnost v českém jazyce“."
+    },
+    "absence": {
+      "trend": "Počet zameškaných hodin, včetně neomluvených, za poslední tři uzavřené školní roky klesá.",
+      "key_numbers": [],
+      "evidence": "„Snižující se počet zameškaných hodin včetně neomluvených za poslední tři uzavřené školní roky.“"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovné poradenství, metodika prevence rizikového chování a kariérové poradenství.",
+      "Pravidelné konzultace, možnost doučování a systematická péče o žáky ohrožené školním neúspěchem.",
+      "Školní jídelna, domov mládeže a pomoc s domácí přípravou pro ubytované žáky.",
+      "Elektronické portfolio žáka, které sleduje přístup ke vzdělávání a rozvoj odborných kompetencí."
+    ],
+    "safety_climate": [
+      "V odborných hodinách převládalo příznivé klima založené na vzájemném respektu; žáci se nebáli ptát na nejasnosti.",
+      "Ve většině sledovaných hodin byla atmosféra podnětná a žáci dodržovali pravidla práce.",
+      "Byly zaznamenány ojedinelé nevhodné slovní poznámky nebo projevy nedostatku vzájemného respektu.",
+      "Škola věnuje pozornost prevenci rizikového chování, včetně adaptačních kurzů a včasného řešení projevů."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s organizacemi z oblasti IT, logistiky, průmyslu, dopravy, veřejné správy a vysokého školství.",
+      "Spolupráce zahrnuje odborné praxe, výcviky na pracovištích, exkurze, projektové dny, workshopy, soutěže a účast odborníků z praxe.",
+      "Škola realizuje také mezinárodní odborné praxe v Německu ve spolupráci s partnerskými institucemi a zaměstnavateli."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a věcně; důležité závěry jsou opřeny o citace a odděleny od doporučení pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva uvádí počty žáků a tříd, ale ne konkrétní procento úspěšnosti maturity, proto nejsou uvedeny nepodložené hodnoty.",
+      "Zpráva uvádí kladný trendabsence, ale ne přesné počty, proto jsou key_numbers prázdné.",
+      "U podpůrných služeb jsou uvedeny pouze služby a postupy přímo popsané ve zprávě."
+    ]
+  }
+}

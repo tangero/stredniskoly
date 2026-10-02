@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_600014452_2026-05-26",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:13:04.252621+00:00",
+  "run_finished_utc": "2026-10-02T16:13:27.024996+00:00",
+  "raw_file": "LYC_600014452_2026-05-26.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600014452_2026-05-26",
+    "school_profile": {
+      "school_type": "Střední škola s obory Hotelnictví, Informační technologie, Lyceum a Kuchař-číšník",
+      "inspection_period": "26. 5. 2026 až 29. 5. 2026",
+      "school_change_summary": "V březnu 2026 se změnilo vedení školy a rozšířila se vzdělávací nabídka o nový obor Lyceum v pokusném ověřování."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola poskytuje doučování, konzultační hodiny, individuální konzultace a podporu žákům se SVP.",
+          "evidence": "„Škola se věnovala žákům se zhoršeným prospěchem“ a „žákům se SVP poskytovala účinnou podporu“."
+        },
+        {
+          "tag": "Poradenství",
+          "detail": "Poradenské služby jsou hodnoceny jako velmi dobré a pomáhají žákům i rodičům.",
+          "evidence": "„Školní poradenské služby byly zajišťovány na velmi dobré úrovni.“"
+        },
+        {
+          "tag": "Výuka a vybavení",
+          "detail": "Výuka podporuje digitální kompetence a materiální vybavení školy se zlepšuje.",
+          "evidence": "„Vytvořené materiální podmínky podporovaly rozvoj digitálních kompetencí žáků i jejich praktických dovedností.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Závěry hodin",
+          "detail": "Na konci některých hodin chybí shrnutí učiva a zhodnocení dosažení cílů.",
+          "evidence": "„V závěru všech vyučovacích hodin zcela chybělo shrnutí vzdělávacího obsahu a zhodnocení dosažení vytyčených cílů.“"
+        },
+        {
+          "tag": "Přestupky ve třídě",
+          "detail": "Některé části zpětné vazby byly méně efektivní kvůli mírné nekázeni některých žáků.",
+          "evidence": "„U některých žáků se projevovala mírná nekázeň, která částečně snižovala kvalitu vzdělávacího procesu.“"
+        },
+        {
+          "tag": "Změny vedení",
+          "detail": "Škola prošla výraznou změnou vedení a personální složení se postupně obměňovalo.",
+          "evidence": "„V březnu 2026 došlo ke změně ve vedení školy“ a „výrazné obměně pedagogického sboru“."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak často se ve výuce vyhodnocuje, zda žáci dosáhli stanovených cílů hodiny?",
+        "Jak konkrétně škola řeší mírnou nekázeň a zajišťuje bezproblémové vzdělávání?",
+        "Jaké konkrétní výsledky a zkušenosti má škola s novým oborem Lyceum v prvním roce?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí studovat nový obor Lyceum s důrazem na projektovou výuku, digitální kompetence a spolupráci.",
+        "Žáci, kterým vyhovuje menší škola s podporou, konzultacemi a individuálním přístupem.",
+        "Žáci se zájmem o komunikaci, leadership, techniku nebo propojení školní výuky s praxí."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří vyžadují pravidelné ověřování výukových cílů na konci každé hodiny.",
+        "Rodiče žáků, kterým může vadit občasná nekázeň ve třídě.",
+        "Rodiče, kteří chtějí mít ověřené výsledky nového oboru Lyceum, protože škola jej teprve pilotuje."
+      ],
+      "plain_czech_summary": "Inspekce zjistila, že škola má dobré materiální podmínky, účinnou podporu žáků, kvalitní poradenství a spolupráci s partnery. Výuka v novém oboru Lyceum podporuje digitální dovednosti, projektovou práci a propojení s praxí. Hlavním doporučením je důsledněji vyhodnocovat na konci hodin, zda žáci dosáhli stanovených cílů. Výpadek maturity a absence nejsou v této zprávě uvedeny."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "V této inspekční zprávě nejsou uvedeny výsledky maturitní zkoušky ani jejich vývoj.",
+        "key_numbers": [
+          "Neuvádí se",
+          "Neuvádí se",
+          "Neuvádí se"
+        ],
+        "evidence": "Zpráva uvádí obory s maturitní zkouškou, ale neobsahuje výsledky maturity."
+      },
+      "absence": {
+        "trend": "Údaje o neomluvené absenci nejsou v této zprávě uvedeny.",
+        "key_numbers": [
+          "Neuvádí se",
+          "Neuvádí se",
+          "Neuvádí se"
+        ],
+        "evidence": "V hodnoceních podmínek, průběhu ani výsledků vzdělávání nejsou uvedeny statistiky absence."
+      },
+      "support_services": [
+        "Školní poradenské služby zajišťovala externí odborně kvalifikovaná pedagogická pracovnice.",
+        "Podpora zahrnovala pomoc při vzdělávacích a výchovných obtížích žáků i rodičů.",
+        "Pedagogům byla poskytována odborná a metodická podpora při práci se žáky se SVP."
+      ],
+      "safety_climate": [
+        "Žáci byli poučováni o vhodném chování a bezpečnostních rizicích.",
+        "Ve školním roce 2024/2025 proběhlo dotazníkové šetření ke klimatu školy.",
+        "Pro první ročníky byly pravidelně pořádány adaptační kurzy."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracovala s místní vysokou školou, dalšími školami, kulturními a sociálními institucemi a městem Zlín.",
+        "Odborné přednášky doplňovaly přípravu žáků v oblasti kariérového poradenství a pracovních podmínek.",
+        "Škola spolupracovala se zřizovatelem, který soustavně poskytoval finanční podporu pro materiální zabezpečení vzdělávání."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, stručné a vycházejí pouze z textu zprávy.",
+      "uncertainty_notes": [
+        "Výsledky maturity nejsou v této zprávě uvedeny.",
+        "Statistiky absence nejsou v této zprávě uvedeny.",
+        "Text neuvádí samostatný číselný přehled podpůrných služeb."
+      ]
+    }
+  }
+}

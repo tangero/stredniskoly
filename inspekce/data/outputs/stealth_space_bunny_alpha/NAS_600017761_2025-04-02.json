@@ -1,0 +1,113 @@
+{
+  "report_id": "NAS_600017761_2025-04-02",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:59:10.307901+00:00",
+  "run_finished_utc": "2026-10-02T16:59:41.012950+00:00",
+  "raw_file": "NAS_600017761_2025-04-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "NAS_600017761_2025-04-02",
+    "school_profile": {
+      "school_type": "Střední odborné učiliště poskytující střední vzdělávání s výučním listem a obor s maturitní zkouškou",
+      "inspection_period": "2. 4. 2025 až 4. 4. 2025",
+      "school_change_summary": "Od roku 2019 se změnilo vedení školy a výchovná poradkyně; od roku 2024/2025 pracuje ve škole také školní psycholožka. Materiální vybavení a školní programy se zlepšily, spolupráce s partnery se udržuje, ale neúspěšnost přetrvává."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava",
+          "detail": "Odborný výcvik na škole i u smluvních partnerů je dobře organizovaný a připravuje žáky na budoucí práci.",
+          "evidence": "Praktické vyučování probíhalo v příjemné atmosféře, žáci si systematicky osvojovali technologické postupy a získávali pracovní návyky."
+        },
+        {
+          "tag": "Partnerství a zaměstnatelnost",
+          "detail": "Spolupráce s místními firmami pomáhá připravovat žáky na uplatnění na trhu práce.",
+          "evidence": "Přínosné vztahy se sociálními partnery se promítají do kvality vzdělávání a vytvářejí podmínky pro lepší uplatnitelnost absolventů."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola poskytuje poradenství, prevenci rizikového chování, kariérové poradenství a podporu žákům se speciálními vzdělávacími potřebami.",
+          "evidence": "Tyto služby zajišťují školní psycholožka a výchovná poradkyně, která zároveň působí jako školní metodička prevence a kariérová poradkyně."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Neúspěšnost a absence",
+          "detail": "Rodičím hrozí vyšší riziko školního neúspěchu, protože absence zůstává vysoká a neprospívajících žáků přibývá.",
+          "evidence": "Neprospívajících žáků bylo 12,6 % místo 7,5 %; absence souvisí s neúspěšností."
+        },
+        {
+          "tag": "Převážně pasivní výuka",
+          "detail": "Při přípravě na studium je vhodné zjistit, jak moc žáci samostatně pracují, obracejí se o zpětnou vazbu a rozvíjejí kritické myšlení.",
+          "evidence": "Převládalo frontální vyučování, aktivita byla více na straně učitelů a žáci byli spíše pasívními příjemci informací."
+        },
+        {
+          "tag": "Slabší přizpůsobení výuky",
+          "detail": "Škola má potíže podporovat rozdílné tempo a možnosti jednotlivých žáků, což může omezovat přípravu žáků s odlišnou úrovní.",
+          "evidence": "Nízká míra diferenciace a individualizace dostatečně nepodporovala rozdílné pracovní tempo a možnosti žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje samostatnou práci, kritické myšlení a práci s více informačními zdroji?",
+        "Jak postupuje škola při zvýšené absenci a která opatření skutečně pomáhají neprospívajícím žákům?",
+        "Kolik vyučujících se pravidelně věnuje žákům s individuálními potřebami a jak se přizpůsobují zadání a tempo?"
+      ],
+      "who_school_fits": [
+        "Uchazeče, kteří chtějí střední odborné vzdělání v oblasti karosářství, motorových vozidel nebo autoelektričiny.",
+        "Žáky, kterým vyhovuje samostatná praktická práce na pracovištích smluvních partnerů.",
+        "Uchazeče, kteří oceňují spolupráci školy s místními firmami a kariérové poradenství."
+      ],
+      "who_should_be_cautious": [
+        "Žáky, kterým vadí převládající frontální výuka a malá míra samostatného či skupinového zapojení.",
+        "Uchazeče připravené na studium, kteří potřebují výraznější podporu sebereflexe, zpětné vazby nebo práce s informacemi.",
+        "Rodiny, které mají obavy z vysoké absence a neúspěšnosti; je vhodné ověřit podporu těchto žáků přímo ve škole."
+      ],
+      "plain_czech_summary": "Škola připravuje žáky především prakticky: odborný výcvik probíhá ve škole i u firem a učitelé podporují samostatnost a odpovědnost. Výhodou jsou také partnerství a poradenské služby. Zároveň přetrvává vysoká absence, která podle inspekce souvisí se školním neúspěchem. Výuka je spíše frontální, žáci se méně aktivně zapojují a dostávají méně zpětné vazby. Proto by rodiče měli na návštěvě zjistit, jak se konkrétně podporuje samostatná práce, rozdílné tempo, kritické myšlení a žáci s absencí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky závěrečných zkoušek jsou v posledních dvou letech vyrovnané, ale úspěšnost zůstává jen 56–58 %.",
+        "key_numbers": [
+          "Úspěšnost závěrečných zkoušek: 56–58 %.",
+          "Karosář: 100 % úspěšnost ve školním roce 2022/2023.",
+          "Autoelektrikář: 100 % úspěšnost ve školním roce 2023/2024."
+        ],
+        "evidence": "Úspěšnost žáků při závěrečných zkouškách se pohybuje v rozmezí 56 % až 58 %."
+      },
+      "absence": {
+        "trend": "Absence se mírně zvýšila a zůstává nejčastější příčinou školního neúspěchu.",
+        "key_numbers": [
+          "2022/2023: 132,32 vyučovací hodiny absence na žáka.",
+          "2023/2024: 140,50 vyučovací hodiny absence na žáka.",
+          "Neprospěšní žáci: 7,5 % v roce 2022/2023 a 12,6 % v roce 2023/2024."
+        ],
+        "evidence": "Každý žák zameškal v průměru 132,32 a následně 140,50 vyučovacích hodin za školní rok."
+      },
+      "support_services": [
+        "Školní psycholožka a výchovná poradkyně poskytují poradenské služby, kariérové poradenství a prevenci rizikového chování.",
+        "Škola eviduje 30 žáků se speciálními vzdělávacími potřebami a poskytuje jim podpůrná opatření.",
+        "Pro první ročníky se pořádají adaptační pobyty; při potřebě jsou využívány konzultace a v některých předmětech doučování."
+      ],
+      "safety_climate": [
+        "Vstupy do budov jsou zajištěné, možnost vniknutí cizích osob je minimalizována a ve škole je kamerový systém.",
+        "Při praktickém vyučování jsou podle vyhodnocených rizik poskytovány osobní ochranné pomůcky.",
+        "Přesto míra úrazovosti mírně stoupá."
+      ],
+      "partnerships_practice": [
+        "Spolupráce se smluvními profesními partnery se projevuje především při zajišťování praktického vyučování.",
+        "Partneři se podílejí také na školeních a exkurzích a mohou být potenciálními zaměstnavateli absolventů.",
+        "Škola se aktivně zapojuje do dotačních programů a projektů podporujících kvalitu vzdělávání."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text používá srozumitelné výrazy, stručně odděluje přednosti, rizika a ověřitelná čísla a vše opírá o zprávu.",
+      "uncertainty_notes": [
+        "Zpráva uvádí výsledky za školní roky 2022/2023 a 2023/2024, nikoli aktuální výsledky za rok 2024/2025.",
+        "Inspekce uvádí rozsah úspěšnosti závěrečných zkoušek, ale nepodrobné rozčlenění podle jednotlivých oborů pro oba roky.",
+        "Zpráva neuvádí přesné četnosti úrazů, pouze jejich mírný nárůst."
+      ]
+    }
+  }
+}

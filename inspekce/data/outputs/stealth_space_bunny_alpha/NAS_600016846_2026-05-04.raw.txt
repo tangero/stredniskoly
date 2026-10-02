@@ -1,0 +1,104 @@
+{
+  "report_id": "NAS_600016846_2026-05-04",
+  "school_profile": {
+    "school_type": "Střední škola technická a zemědělská, Nový Jičín, příspěvková organizace",
+    "inspection_period": "4. 5. 2026, 5. 5. 2026, 11. 5. 2026–15. 5. 2026 a 18. 5. 2026",
+    "school_change_summary": "Škola má o 23 % více žáků než při inspekci v roce 2023 a modernizuje materiální zázemí, například robotickou učebnu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické vzdělávání",
+        "detail": "Praktická výuka má dobrou odbornou úroveň a propojuje školní práci s reálnou praxí.",
+        "evidence": "Výuka praktického vyučování měla dobrou odbornou úroveň a byla propojena s reálnou praxí."
+      },
+      {
+        "tag": "Práce s partnery",
+        "detail": "Rozsáhlé partnerství se zaměstnavateli podporuje odborné dovednosti a uplatnění absolventů.",
+        "evidence": "Síť partnerů je rozsáhlá, což napomáhá úspěšné realizaci praktického vyučování a podporuje rozvoj odborných kompetencí."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Poradenské služby a jejich spolupráce se pedagogy jsou funkční a od předchozí inspekce se zlepšily.",
+        "evidence": "Systém poradenských služeb je funkční a činnost poskytování těchto služeb se zefektivnila."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Absence",
+        "detail": "Vysoká absence může zhoršovat studijní výsledky a zvyšovat riziko neúspěchu.",
+        "evidence": "148 omluvených hodin na žáka ročně je vyšší hodnota než u srovnatelných škol; absence zvyšuje riziko školního neúspěchu."
+      },
+      {
+        "tag": "Maturita",
+        "detail": "Výsledky ve společné části maturity jsou slabší, zejména v českém jazyce, literatuře a cizím jazyce.",
+        "evidence": "Ve společné části maturitní zkoušky uspělo 59 % přihlášených žáků; slabší výsledky byly v českém jazyce a cizím jazyce."
+      },
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "Ve výuce se málo přizpůsobují úkoly různým možnostem a potřebám jednotlivých žáků.",
+        "evidence": "Zadávání úloh s rozdílnou mírou obtížnosti nebylo téměř využíváno; individualizace byla omezená."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky s odlišným tempem učení nebo se speciálními vzdělávacími potřebami?",
+      "Jaké konkrétní kroky škola přijímá pro snížení absence a podporu ohrožených žáků?",
+      "Jak škola připravuje žáky na společnou část maturitní zkoušky, zejména v českém a cizím jazyce?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí technické, zemědělské nebo stavební vzdělání s praktickou výukou.",
+      "Žákům, kteří mají zájem o obory ukončené závěrečnou zkouškou nebo maturitní zkouškou.",
+      "Žákům, kteří ocení spolupráci školy se zaměstnavateli a praktické propojení výuky s praxí."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na nízké absenci a pravidelné přípravě na zkoušky.",
+      "Rodičům žáků, kteří potřebují výraznou individualizaci nebo podporu při odlišném tempu učení.",
+      "Rodičům, kteří očekávají převážně aktivní, týmovou a projektovou výuku místo frontálního výkladu."
+    ],
+    "plain_czech_summary": "Škola má silné praktické vzdělávání, kvalitní dílny, rozsáhlé partnerství se zaměstnavateli a funkční poradenské služby. Výuka je odborná a žáci v ní mají přátelské prostředí. Rodiče by však měli počítat s vyšší absencí, slabšími výsledky ve společné části maturity a omezenou individualizací úkolů. Výuka je často frontální, žáci se méně podílejí na hodnocení cíle hodiny a hůře se rozvíjí práce s informacemi. Inspekce proto doporučuje zlepšit přípravu k maturitě, sledovat neúspěšné žáky a posílit jejich podporu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky jsou v posledních letech stabilní, ale ve společné části maturity se zhoršují oproti srovnatelným oborům.",
+      "key_numbers": [
+        "59 % žáků uspělo ve společné a profilové části maturitní zkoušky.",
+        "21 % úspěšných žáků prospělo s vyznamenáním.",
+        "U závěrečné zkoušky prospělo 95 % žáků."
+      ],
+      "evidence": "Ve školním roce 2024/2025 uspělo ve společné i profilové části maturity 59 % přihlášených žáků."
+    },
+    "absence": {
+      "trend": "Absence je oproti obdobným školám v ČR zvýšená a negativně ovlivňuje výsledky žáků.",
+      "key_numbers": [
+        "148 omluvených hodin na jednoho žáka za školní rok.",
+        "Absence je vyšší než u škol obdobného typu v ČR.",
+        "Nejčastěji k úrazům dochází při sportovních aktivitách."
+      ],
+      "evidence": "Počet omluvených hodin na žáka činil 148 za rok, což je vyšší hodnota než u srovnatelných škol."
+    },
+    "support_services": [
+      "Dvě výchovné poradkyně, dva školní metodici prevence a školní psycholožka.",
+      "Funkční spolupráce poradenských služeb s vyučujícími.",
+      "Preventivní programy ve všech ročnících a kariérní poradenství."
+    ],
+    "safety_climate": [
+      "V praktické výuce panovala otevřená komunikace a přátelské bezpečné prostředí.",
+      "Žáci jsou pravidelně seznamováni s pravidly a učí se používat ochranné pomůcky.",
+      "Úrazovost je přesto vyšší než celostátní průměr, zejména při sportovních aktivitách."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s rozsáhlou sítí zaměstnavatelů.",
+      "Praktické vyučování propojuje školní práci s reálnou praxí.",
+      "Škola je zapojena do programu Erasmus+."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výběr je srozumitelný, stručný a orientuje rodiče na praktické důsledky zjištění.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí podrobné výsledky společné části maturity podle jednotlivých předmětů.",
+      "Zpráva neuvádí přesné výsledky ani následky opatření přijatých po inspekci.",
+      "Údaje o počtu žáků a neúspěšnosti maturit se vztahují k uvedenému školnímu roku."
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "report_id": "SOS_600018181_2025-12-10",
+  "school_profile": {
+    "school_type": "Soukromá střední škola cestovního ruchu a jazyková škola s právem státní jazykové zkoušky, s.r.o.",
+    "inspection_period": "10. 12. 2025 až 12. 12. 2025",
+    "school_change_summary": "Obor Cestovní ruch byl rozšířen o zaměření na zážitkový turismus, turismus a hotelnictví a moderní informační technologie; v půdních prostorech byly vybudovány apartmány pro ubytování a praktickou výuku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Škola propojuje odbornou výuku s praxí v penzionu, u firem a při zahraničních aktivitách.",
+        "evidence": "Odborné předměty se vyučují v penzionu Beskyd a další praxe probíhá u fyzických i právnických osob."
+      },
+      {
+        "tag": "Jazyková příprava",
+        "detail": "Škola systematicky rozvíjí cizí jazyky a komunikační dovednosti, což může pomoci při práci v cestovním ruchu.",
+        "evidence": "Důraz je kladen na rozvoj komunikativních kompetencí, zejména v oblasti cizích jazyků."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Pro žáky se slabším prospěchem jsou využívány individuální konzultace a podpůrná opatření.",
+        "evidence": "Škola podnikala účelné kroky formou individuálních konzultací; žákům se SVP byla poskytována pomoc."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rozmanitost výuky",
+        "detail": "V některých předmětech převažovala frontální výuka a žáci byli méně aktivní, což může omezovat přípravu na samostatné úkoly.",
+        "evidence": "Převaha frontální výuky vedla k nízké efektivitě; žáci byli podle zprávy většinou pasivní."
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Ve výuce často chybělo závěrečné vyhodnocení a zapojení žáků do hodnocení vlastního učení.",
+        "evidence": "Ve větší části sledovaných hodin chybělo vyhodnocování závěrů na konci vyučovacích celků."
+      },
+      {
+        "tag": "Diferenciace",
+        "detail": "Škola má omezené individuální přizpůsobování náročnosti úkolů podle schopností a možností žáků.",
+        "evidence": "Ve výuce byla pouze ojediněle zařazena diferenciace úloh."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá praktická výuka v penzionu a u externích partnerů?",
+      "Jak často se ve výuce objevuje práce ve skupinách, samostatná práce a zakončení hodiny se zpětnou vazbou?",
+      "Jak podporuje škola žáky se SVP a žáky se slabším prospěchem konkrétními konzultacemi?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří mají zájem o cestovní ruch, hotelnictví nebo související služby.",
+      "Žákům, kteří chtějí učení propojit s praxí, jazyky a komunikací s lidmi.",
+      "Žákům, kteří využijí individuální podporu při náročnější učební látce."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na pravidelném aktivním zapojení během všech hodin.",
+      "Rodičům žáků, kteří potřebují výraznou diferenciaci úkolů a průběžnou zpětnou vazbu.",
+      "Rodičům žáků, kteří očekávají výsledky především v obecných předmětech, například matematice nebo dějepisu."
+    ],
+    "plain_czech_summary": "Škola připravuje žáky pro cestovní ruch, hotelnictví a související služby. Výhodou je propojení výuky s praxí, práce v penzionu, partneři v Česku i zahraničí a podpora jazykových dovedností. Inspekce ale zaznamenala také slabiny: v řadě hodin převažoval výklad, žáci se méně zapojovali, chyběla zpětná vazba a diferenciace úkolů. Výsledky maturity se za tři školní roky zlepšovaly a v posledním roce byly lepší než celostátní průměr v dané skupině oborů. Přesné údaje o absencích zpráva neuvádí."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Postupné zlepšování; v roce 2024/2025 byla úspěšnost vyšší než celostátní průměr pro stejnou skupinu oborů.",
+      "key_numbers": [
+        "Rok 2022/2023: míra neúspěšnosti vyšší než celorepublikový průměr",
+        "Následující období: výsledky se přiblížily průměru",
+        "Rok 2024/2025: úspěšnost vyšší než průměr skupiny oborů v ČR"
+      ],
+      "evidence": "V posledním školním roce 2024/2025 dosáhla úspěšnost vyšší hodnoty než průměr dané skupiny oborů v ČR."
+    },
+    "absence": {
+      "trend": "Zpráva neuvádí celkový trend ani konkrétní údaje o nepřítomnosti žáků.",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje údaje o absencích."
+    },
+    "support_services": [
+      "Výchovný a kariérový poradce a metodik prevence v jedné osobě.",
+      "Spolupráce se školskými poradenskými zařízeními a externími subjekty.",
+      "Individuální konzultace pro žáky se slabším prospěchem.",
+      "Individuální vzdělávací plány pro žáky se speciálními vzdělávacími potřebami."
+    ],
+    "safety_climate": [
+      "Preventivní mechanismy podporují bezpečnost a ochranu zdraví žáků.",
+      "Škola dodržuje bezpečnostní standardy a rozvíjí kulturu bezpečného chování.",
+      "Pravidelné preventivní akce, besedy a exkurze podporují pozitivní školní klima."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s cestovními kancelářemi, ubytovacími a stravovacími zařízeními.",
+      "Odborná výuka v penzionu Beskyd a další praxe u externích partnerů.",
+      "Spolupráce se zahraničními partnery ve Švýcarsku, Řecku, Rakousku a Německu.",
+      "Účast v projektech, výměnných programech a členství v Asociaci českých cestovních kanceláří a agentur."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Formulace jsou srozumitelné a vztahují se k praktickým důsledkům zjištění pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní údaje o absencích.",
+      "Není uvedeno, jak se výsledky a počty žáků liší podle jednotlivých předmětů.",
+      "U některých oblastí inspekce uvádí hodnocení bez samostatných číselných údajů."
+    ]
+  }
+}

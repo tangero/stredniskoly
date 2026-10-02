@@ -1,0 +1,106 @@
+{
+  "report_id": "LYC_600170292_2026-02-23",
+  "school_profile": {
+    "school_type": "Střední škola obchodní s obory s maturitní zkouškou i výučním listem, domovem mládeže a školní jídelnou",
+    "inspection_period": "23. 2. 2026 až 26. 2. 2026",
+    "school_change_summary": "Budova na Husově 9 se stala plně bezbariérovou, vznikla přístavba se šesti učebnami a kadeřnickou provozovnou, proběhly rekonstrukce a rozšířila se technická výbava i spolupráce s partnery."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava",
+        "detail": "Praktická výuka rozvíjí dovednosti potřebné pro budoucí práci a žáci dostávají zpětnou vazbu využitelnou při dalším učení.",
+        "evidence": "„Hospitované činnosti rozvíjely požadované praktické dovednosti a pracovní návyky spojené s výkonem budoucí profese žáků.“"
+      },
+      {
+        "tag": "Zázemí a vybavení",
+        "detail": "Škola má moderní učebny, počítače, didaktickou techniku, laboratoře a učebny fiktivních firem.",
+        "evidence": "„Nadstandardní materiální vybavení výrazně přispívá k rozvoji profesních kompetencí žáků a zároveň zvyšuje jejich šance na úspěšné uplatnění na trhu práce.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Při problémech škola nabízí doučování, konzultace, podpůrné materiály a cílenou pedagogickou podporu.",
+        "evidence": "„Konzultace a doučování jsou zajištěny i v domově mládeže.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Aktivní výuka",
+        "detail": "V některých teoretických předmětech se málo využívají metody podporující aktivní práci, kritické myšlení a komunikaci.",
+        "evidence": "„V některých teoretických předmětech nejsou v dostatečné míře uplatňovány výukové formy a metody podporující aktivní zapojení žáků.“"
+      },
+      {
+        "tag": "Digitální kompetence",
+        "detail": "Někteří učitelé používají didaktickou techniku spíše k prezentaci než k samostatné práci žáků.",
+        "evidence": "„Někteří vyučující používali ji jen pro prezentaci tématu, žáci ji využívali v menší míře.“"
+      },
+      {
+        "tag": "Přizpůsobení výuky",
+        "detail": "Ve vyučování je v menší míře zastoupena diferenciace pro žáky s podpůrnými opatřeními i nadané žáky.",
+        "evidence": "„V menší míře byla zachycena diferenciace učiva, která by zohlednila žáky s podpůrnými opatřeními, popřípadě by podpořila potenciál nadaných žáků.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně vypadá výuka podpůrných opatření a individuální práce se žáky?",
+      "Jak často žáci samostatně pracují s digitálními materiály a rozvíjejí kritické myšlení?",
+      "Kolik času věnují učitelé odborným praxím a zpětné vazbě k nim v jednotlivých oborech?"
+    ],
+    "who_school_fits": [
+      "Žákům, kterým vyhovuje praktická výuka a spolupráce s firmami při odborných praxích.",
+      "Uchazečům o obory s maturitní zkouškou i o obory s výučním listem.",
+      "Žákyním, které hledají střední školu s možností ubytování v domově mládeže."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří potřebují intenzivní individualizovanou výuku podpůrných opatření.",
+      "Rodičům žáků, jimž záleží na pravidelném využívání digitálních nástrojů k samostatné práci.",
+      "Rodičům žáků, kteří v teoretické výuce chtějí více samostatné, kooperativní a projektové práce."
+    ],
+    "plain_czech_summary": "Škola nabízí široký výběr oborů, domov mládeže, jídelnu, odborné praxe a dobré technické zázemí. Ve výuce se žáci mohou setkat s klidnou atmosférou, ochotnými pedagogy a důrazem na bezpečnost práce. Výsledky maturit odpovídají srovnání v rámci obdobných oborů; nejlepší jsou podle zprávy žáci Aplikované chemie a Cestovního ruchu, nejslabší výsledky má nástavbové studium Podnikání. Hlavní slabou stránkou je malé využívání aktivizujících metod v části teoretických předmětů. Zpráva proto doporučuje zaměřit další vzdělávání pedagogů právě na ně. Rodičům před přijímacím řízením se vyplatí ověřit, jak konkrétně jejich budoucí třída využívá techniku, individualizaci a přípravu na maturitu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky jsou srovnatelné v rámci ČR; podle oboru se výrazně liší.",
+      "key_numbers": [
+        "Není uveden celkový úspěšný podíl.",
+        "Nejúspěšnější jsou obory Aplikovaná chemie a Cestovní ruch.",
+        "Nejslabší výsledky má nástavbové studium Podnikání."
+      ],
+      "evidence": "„Výsledky vzdělávání odpovídají studijnímu potenciálu žáků ve vztahu ke zvolenému studijnímu oboru.“"
+    },
+    "absence": {
+      "trend": "Škola pravidelně sleduje absenci a při nárůstu přijímá opatření, ale zpráva neuvádí vývoj její výše.",
+      "key_numbers": [
+        "Třídní učitelé hodnotí absenci měsíčně.",
+        "Problémové situace se projednávají jednou měsíčně.",
+        "Celková absence ani neomluvená absence není vyčíslena."
+      ],
+      "evidence": "„Třídní učitelé měsíčně vyhodnocují prospěch a absenci žáků.“"
+    },
+    "support_services": [
+      "Dvě výchovné poradkyně a dvě školní metodičky prevence poskytují poradenské služby.",
+      "Škola nabízí doučování z českého jazyka žákům s odlišným mateřským jazykem.",
+      "Při problémech jsou k dispozici e-learningové kurzy, elektronické materiály a podpůrné učební materiály.",
+      "Žákům s podpůrnými opatřeními škola podle potřeby vypracovává plány pedagogické podpory."
+    ],
+    "safety_climate": [
+      "V teoretických hodinách převládala klidná pracovní atmosféra a respektující přístup pedagogů.",
+      "Při praktickém vyučování je důraz kladen na bezpečnost práce.",
+      "Škola sleduje rizikové chování prostřednictvím workshopů, školení a přednášek.",
+      "Školní budovy jsou zajištěny elektronickým bezpečnostním systémem."
+    ],
+    "partnerships_practice": [
+      "Smlouvní partneři umožňují realizaci praxí v reálném prostředí firem.",
+      "Škola spolupracuje s Jihočeskou univerzitou a zahraničními partnery včetně projektu Erasmus+.",
+      "Domov mládeže úzce spolupracuje se školou a podle potřeby nabízí doučování."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžnou češtinu, krátké věty a jasně odděluje zjištění inspekce od doporučení rodičům.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí celkovou úspěšnost maturit ani konkrétní ukazatele absence.",
+      "Zpráva neuvádí výsledky jednotlivých vyučovaných oborů z hlediska ukončení studia.",
+      "U doporučení na otevřenou den jde o otázky vycházející ze zjištěných oblastí ke zlepšení."
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "report_id": "SOU_600005381_2025-11-25",
+  "school_profile": {
+    "school_type": "střední škola a domov mládeže s technickým a řemeslným zaměřením",
+    "inspection_period": "25. 11. 2025–28. 11. 2025",
+    "school_change_summary": "Od roku 2020 vzrostl počet žáků přibližně o třetinu, škola zvýšila materiální vybavení a omezila některé málo perspektivní nástavbové obory."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná výuka",
+        "detail": "Praktická příprava je hodnocena jako velmi dobrá a žáci se tam učí skutečné technické dovednosti.",
+        "evidence": "„Hospitované hodiny v předmětech odborné přípravy a odborného výcviku vykazovaly výbornou úroveň.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola poskytuje cílenou podporu žákům s odlišnými potřebami i žákům ohroženým školním neúspěchem.",
+        "evidence": "„Škola průběžně identifikuje individuální vzdělávací potřeby žáků … poskytuje individuální podporu.“"
+      },
+      {
+        "tag": "Uplatnění absolventů",
+        "detail": "Absolventi se podle inspekce umisťují velmi dobře na trhu práce.",
+        "evidence": "„Absolventi školy nacházejí okamžitě velmi dobré uplatnění na trhu práce.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Teoretická výuka",
+        "detail": "V části teoretické výuky je málo diferenciace, práce s textem, samostatného vyjadřování a užitečné zpětné vazby.",
+        "evidence": "„Nízká míra diferenciace a individualizace teoretické výuky …“"
+      },
+      {
+        "tag": "Maturita",
+        "detail": "V některých nástavbových oborech přetrvává vyšší neúspěšnost a často jsou postiženi žáci, kteří zkoušku vůbec nekonají.",
+        "evidence": "„Přetrvává vyšší míra neúspěšnosti u některých nástavbových oborů.“"
+      },
+      {
+        "tag": "Metodická podpora",
+        "detail": "Začínajícím učitelům a odborníkům z praxe chybí dostatečná systémová didaktická podpora.",
+        "evidence": "„Částečně chybí systémová metodická a didaktická podpora začínajících učitelů a odborníků z praxe.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se podporují žáci přípravující se na maturitu v jednotlivých oborech?",
+      "Kolik hodin týdně probíhá odborný výcvik a praktická příprava oproti teorii?",
+      "Jaké konkrétní mechanismy škola používá při nekonání maturity a při předčasném ukončení studia?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí střední vzdělání propojené s praktickou technickou prací.",
+      "Žákům se zájmem o řemesla, strojírenství, elektrotechniku, stavebnictví nebo automobilovou techniku.",
+      "Žákům, kteří ocení moderní vybavení, odborné stáže, projekty a spolupráci s partnery z praxe."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na velmi proměnlivé kvalitě jednotlivých hodin teoretické výuky.",
+      "Uchazečům o nástavbové obory, u nichž inspekce zjistila vyšší neúspěšnost při maturitě.",
+      "Rodičům, kteří očekávají u každého předmětu rovnoměrnou podporu při odlišném tempu nebo úrovni žáka."
+    ],
+    "plain_czech_summary": "Škola má velmi dobré praktické vybavení, odborné učení a vazby na zaměstnavatele. Absolventi se prý dobré umisťují na trhu práce. Poradenské služby pomáhají žákům s potřebami i těm, kdo se Maturity neúspěšně. Největší slabiny jsou v části teoretické výuky: někdy chybí přizpůsobení úkolů žákům, práce s textem a samostatné přemýšlení. V některých nástavbových oborech je stále vyšší neúspěšnost u maturity. Absence se za tři roky snížila ze 180 na 140 hodin na žáka, což je zlepšení, ale absence zůstává podstatná."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky se ve většině sledovaných oblastí zlepšily, ale v některých nástavbových oborech zůstala vyšší neúspěšnost.",
+      "key_numbers": [
+        "Stavebnictví 2024/2025: „všichni uspěli“.",
+        "Mechanik instalatérských a elektrotechnických zařízení: neúspěšnost klesla z 33 % na 16 %.",
+        "Provozní technika, dálková forma 2024/2025: hrubá neúspěšnost 50 % proti 24 % v ČR."
+      ],
+      "evidence": "„Výsledky vzdělávání žáků při ukončování studia MZ se … výrazně zlepšily.“"
+    },
+    "absence": {
+      "trend": "Absence včetně neomluvené za tři uzavřené školní roky poklesla.",
+      "key_numbers": [
+        "Rok 2022/2023: 180 zameškaných hodin na žáka.",
+        "Rok 2024/2025: 140 zameškaných hodin na žáka.",
+        "Uzavřená klasifikace vzrostla u denní formy z 81 % na 92 %."
+      ],
+      "evidence": "„Škole podařilo za poslední tři uzavřené školní roky snížit absenci žáků.“"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště poskytuje výchovné, kariérové, psychologické a preventivní poradenství.",
+      "Individuální podpora zahrnuje konzultace, doučování, nerepresivní přístup a výuku českého jazyka pro cizince.",
+      "Škola nabízí zahraniční pobyty, stáže, projekty, soutěže a olympiády nadaným žákům."
+    ],
+    "safety_climate": [
+      "V hospitované výuce byla příjemná atmosféra a vzájemně respektující přístup učitelů a žáků.",
+      "Při odborných činnostech se uplatňovaly zásady bezpečnosti práce a ochranné pracovní prostředky.",
+      "Ojedinělé případy rizikového chování řešila škola individuálně ve spolupráci s třídními učiteli a zákonnými zástupci."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s zaměstnavateli, cechy, asociacemi, vysokými školami a zahraničními partnerskými školami.",
+      "Odborné stáže a zahraniční pobyty podporují odborné kompetence a komunikaci v anglickém jazyce.",
+      "Škola je fakultní školou Pedagogické fakulty Univerzity Karlovy a členem sítě škol UNESCO."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně vysvětluje odborné pojmy a odděluje silné stránky od rizik.",
+    "uncertainty_notes": [
+      "Inspekce neuvádí přesnou míru neúspěšnosti všech oborů, proto nelze porovnat každý obor s celostátním průměrem.",
+      "Některé výsledky ovlivňují velmi malé počty žáků, zejména v nástavbových oborech.",
+      "Zpráva neuvádí podrobné výsledky podporných služeb, proto je jejich účinnost posouzena jen podle závěrů inspekce."
+    ]
+  }
+}

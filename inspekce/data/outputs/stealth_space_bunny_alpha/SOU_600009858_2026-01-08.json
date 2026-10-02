@@ -1,0 +1,113 @@
+{
+  "report_id": "SOU_600009858_2026-01-08",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:47:51.024103+00:00",
+  "run_finished_utc": "2026-10-02T16:48:19.730351+00:00",
+  "raw_file": "SOU_600009858_2026-01-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600009858_2026-01-08",
+    "school_profile": {
+      "school_type": "Příspěvková organizace poskytující střední vzdělávání, domov mládeže a školní jídelnu; „43 % žáků“ bylo v oborech s maturitní zkouškou.",
+      "inspection_period": "8. 1. – 9. 1. a 12. 1. – 13. 1. 2026",
+      "school_change_summary": "Počet žáků vzrostl o 55 % a škola rozšířila nabídku o obory Mechanik seřizovač a Obráběč kovů. „Došlo k významné obnově materiálně technických podmínek“."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Školní dílny mají velmi dobré vybavení a žáci se zapojují do činností použitelných v reálném životě.",
+          "evidence": "„Školní dílny s velmi dobrým technickým vybavením poskytují žákům kvalitní podmínky pro přípravu na budoucí povolání.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola má poradenské pracoviště a pravidelně připravuje podpůrná opatření i plán podpory pro potřebné žáky.",
+          "evidence": "„Nastavení podpůrných opatření, včetně individuálních vzdělávacích plánů a plánů pedagogické podpory, je pravidelně a důsledně vyhodnocováno.“"
+        },
+        {
+          "tag": "Partnerství",
+          "detail": "Spolupráce s firmami a dalšími partnery přináší praxi, stipendia, projektové dny a přednášky externích odborníků.",
+          "evidence": "„Dlouhodobá a systematická spolupráce školy s externími partnery vytváří žákům příležitosti rozvíjet kompetence.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturitní připravenost",
+          "detail": "Ve společné části maturitní zkoušky je hrubá neúspěšnost místy výrazně vyšší než celostátní průměr.",
+          "evidence": "„V oboru Gastronomie byla v roce 2024 HN 42,9 %, tedy téměř trojnásobně vyšší než ve srovnatelné skupině oborů.“"
+        },
+        {
+          "tag": "Docházka",
+          "detail": "Vysoká absence přetrvává a souvisí s nižším školním prospěchem i rizikem předčasného odchodu.",
+          "evidence": "„Neomluvená absence dlouhodobě představuje přibližně 3 % z celkové absence.“"
+        },
+        {
+          "tag": "Bezpečnost odborného výcviku",
+          "detail": "Při inspekci nebyl zajištěn dohled nad žáky v odborném výcviku oboru Kuchař-číšník.",
+          "evidence": "„Absence přímého pedagogického dohledu představovala významné riziko z hlediska bezpečnosti a ochrany zdraví žáků.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje na snížení hrubé neúspěšnosti ve společné části maturitní zkoušky?",
+        "Jaké konzultace, doučování nebo individualizované podpůrné plány nabízí žákům před maturitou?",
+        "Jak škola řeší dohled, kapacitu cvičné kuchyně a bezpečnost při odborném výcviku oboru Kuchař-číšník?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat technický obor v dobře vybavených školních dílnách.",
+        "Žákům, kteří ocení praxi na smluvních pracovištích a spolupráci školy s firmami.",
+        "Žákům, kteří potřebují poradenské, výchovné nebo pedagogické podporu."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kteří potřebují velmi podrobnou průběžnou zpětnou vazbu a systematickou přípravu na maturitu.",
+        "Rodičům žáků s vysokou absencí nebo obtížemi s učebními strategiemi a motivací.",
+        "Uchazečům oboru Kuchař-číšník, kterým záleží na dostatečné kapacitě praktické výuky."
+      ],
+      "plain_czech_summary": "Škola má širokou technickou nabídku, velmi dobré dílny a aktivní spolupráci s firmami. Žákům pomáhá poradenské pracoviště. Pro rodiče je ale důležité neúspěšnost u maturit a vysokou absenci: v nástavbovém studiu úspěšně dokončí přibližně třetinu studentů prvního ročníku, u čtyřletých oborů asi 48 %. Výuka někdy využívá příliš frontální postupy a málo diferencuje úkoly. U oboru Kuchař-číšník je jedna cvičná kuchyň pro pět žáků; při inspekci navíc chyběl dohled nad žáky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Úspěšnost ve společné části maturitní zkoušky zůstává nízká; u některých oborů se podle zprávy od meziročního vývoje zlepšila, jinak přetrvává podprůměrná hrubá neúspěšnost.",
+        "key_numbers": [
+          "Podnikání denní: HN klesla z 53 % v roce 2023 na 22 % v roce 2025.",
+          "Provozní technika: HN 16,7 % v roce 2023, 46,2 % v roce 2024 a 25 % v roce 2025.",
+          "Gastronomie: HN 50 % v roce 2023 a 42,9 % v roce 2024; v roce 2025 měla nulovou HN."
+        ],
+        "evidence": "„Úspěšnost žáků ve společné části MZ zůstává ve srovnání s předešlou inspekční činností trvale nízká.“"
+      },
+      "absence": {
+        "trend": "Roční průměrná absence se za poslední tři školní roky výrazněji nezměnila a zůstává vysoká.",
+        "key_numbers": [
+          "Nematuritní obory: přibližně 182 hodin absence na žáka za rok.",
+          "Nástavbové studium: přibližně 168 hodin na žáka.",
+          "Čtyřleté maturitní obory: přibližně 165 hodin na žáka."
+        ],
+        "evidence": "„Neomluvená absence dlouhodobě představuje přibližně 3 % z celkové absence.“"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovný poradce, metodička prevence, kariérová poradkyně a sociální pedagožka.",
+        "Individuální vzdělávací plány a plány pedagogické podpory pro 63 žáků evidovaných s potřebou podpůrných opatření.",
+        "Podpora jazykové bariéry pro 75 žáků s odlišným mateřským jazykem; „dvěma“ z nich poskytovala podporu asistentka pedagoga."
+      ],
+      "safety_climate": [
+        "Pravidla bezpečnosti jsou stanolena ve školním řádu a žáci jsou s nimi prokazatelně seznamováni.",
+        "Pedagogové informují žáky o bezpečnosti v teoretické výuce i při odborném výcviku.",
+        "Inspekce zjistila nejednotnou dokumentaci požární ochrany a bezpečnosti práce a chybějící dohled při výcviku Kuchař-číšník."
+      ],
+      "partnerships_practice": [
+        "Spolupráce se smluvními partnery umožňuje získat praktické dovednosti v reálném pracovním prostředí.",
+        "Škola pořádá projektové dny, náborové akce, přednášky externích odborníků a zve zástupce firem.",
+        "U externích pracovišť byly zjištěny nedostatky v hospitačních záznamech a nebylo prokázáno poskytování podpory podle požadavků školy."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá srozumitelnou češtinu, odděluje praktické silné stránky od rizik a u důležitých tvrzení uvádí krátké citace ze zprávy.",
+      "uncertainty_notes": [
+        "Výsledky oborů s malým počtem maturantů mohou výrazně kolísat; zpráva uvádí například jen dva maturanty Gastronomie v roce 2025.",
+        "Kvalitu odborného výcviku Kuchař-číšník a Prodavač nebylo možné objektivně posoudit kvůli nízkému počtu žáků ve výuce.",
+        "Ze zprávy nelze určit, jak se konkrétní opatření školy po inspekci proměnila."
+      ]
+    }
+  }
+}

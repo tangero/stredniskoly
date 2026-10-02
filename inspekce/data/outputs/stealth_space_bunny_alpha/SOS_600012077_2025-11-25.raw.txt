@@ -1,0 +1,101 @@
+{
+  "report_id": "SOS_600012077_2025-11-25",
+  "school_profile": {
+    "school_type": "Střední uměleckoprůmyslová škola sochařská a kamenická, Hořice",
+    "inspection_period": "25.–28. 11. 2025",
+    "school_change_summary": "Počet žáků se oproti minulé inspekci zdvojnásobil, více než dvojnásobný byl počet ubytovaných. Škola zrekonstruovala budovu a vybavení domova mládeže, modernizovala učebny, dílny a kuchyni a doplnila digitální techniku. V roce 2021/2022 zavedla obor Stavebnictví a v roce 2025 funkci zástupce ředitele pro digitalizaci."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná výuka a praxe",
+        "detail": "Praktická výuka je podle inspekce odborná, aktivní a propojená s profesní zkušeností pedagogů.",
+        "evidence": "„Ve výuce se projevila vysoká odbornost pedagogů, kteří svou profesní praxí odborně obohacovali výuku.“"
+      },
+      {
+        "tag": "Partnerství a moderní vybavení",
+        "detail": "Škola účelně využívá spolupráci s praxí a moderní technologie, což může žákům usnadnit přípravu na budoucí práci.",
+        "evidence": "Spolupráce přináší „nové možnosti v oblasti využívání moderních technologií“ a propojení teorie s praxí."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola nabízí konzultace, doučování, poradenství, kariérové služby i podpůrná opatření pro žáky se specifickými potřebami.",
+        "evidence": "Vedení školy „nabízí individuální konzultace žáků s učiteli nebo doučování“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturita z jazyků",
+        "detail": "V uměleckých oborech je potřeba počítat s dlouhodobě slabší úrovní成熟 z českého a anglického jazyka.",
+        "evidence": "„Neúspěšnost žáků uměleckých oborů ve společné části MZ v českém jazyce a anglickém jazyce“ přetrvává."
+      },
+      {
+        "tag": "Aktivita a podpora ve vyučování",
+        "detail": "Ve většině sledovaných hodin převládal výklad a pasivní zápis, zatímco spolupráce žáků a práce se zdroji byly málo využité.",
+        "evidence": "„Ve většině hospitovaných hodin převažovala méně efektivní frontální výuka výkladového charakteru.“"
+      },
+      {
+        "tag": "Bezpečnost a dohled",
+        "detail": "Inspekce zaznamenala v některých hodinách práci žáků bez přímého pedagogického dohledu a významné nedostatky na domově mládeže.",
+        "evidence": "„V průběhu vyučování nebyla v některých hodinách zajištěna přímá pedagogická činnost učitele.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně podporujete účast žáků na praktické výuce a projekty z reálných zakázek?",
+      "Jaké konkrétní kroky připravuje škola na zlepšení výsledků u maturitní zkoušky z českého a anglického jazyka?",
+      "Jak je zajištěn přímý pedagogický dohled při samostatné práci a v domově mládeže?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat prakticky zaměřený umělecký, sochařský, kamenický, restaurátorský, geotechnický nebo stavebnický obor.",
+      "Žákům, kteří mají zájem o propojení školy s praxí, projekty, výstavy, exkurze a odborné workshopy.",
+      "Žákům, kteří využijí ubytování v domově mládeže a jeho sportovní, umělecké, vzdělávací a volnočasové aktivity."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče žáků, kteří potřebují zejména průběžné ověřování znalostí, systematickou podporu učení a jednotné hodnocení výkonů.",
+      "Rodiče žáků, kterým může vadit převládající frontální výuka, malá míra vzájemné spolupráce nebo omezené formativní hodnocení.",
+      "Rodiče žáků uměleckých oborů, kteří mají vysoké nároky na úspěšnost u maturitní zkoušky zejména z českého a anglického jazyka."
+    ],
+    "plain_czech_summary": "Škola má silné odborné zázemí, praktickou výuku, partnerské projekty, moderní techniku a rostoucí zájem uchazečů. Žáci pracují v pracovní a respektující atmosféře, učitelé jsou odborní a ve vyučování podporují samostatnou práci i tvořivost. Zároveň inspekce zaznamenala slabší vnitřní kontrolní mechanismy, občasný nedostatek přímého dohledu a převládání frontální výuky se slabým aktivním zapojením žáků. Výsledky u maturity se za čtyři roky zlepšily, ale v uměleckých oborech přetrvává neúspěšnost u českého a anglického jazyka. Pro rodiče je důležité ověřit, jak konkrétně škola řeší dohled, podporu učení, hodnocení a přípravu k maturitě."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Celková neúspěšnost u maturity se v posledních čtyřech letech postupně snižovala, ale v uměleckých oborech přetrvává slabší výsledek v českém a anglickém jazyce.",
+      "key_numbers": [
+        "V roce 2022 neprospeklo až 40 % žáků.",
+        "V roce 2025 šlo o 20 % neprospívajících žáků."
+      ],
+      "evidence": "„V roce 2022 neprospělo až 40 % žáků, v roce 2025 to bylo pouze 20 % neprospívajících žáků.“"
+    },
+    "absence": {
+      "trend": "Zpráva neuvádí celkový trend absence ani přesné procento; uvádí zavedené limity absencí, kterými škola předchází vysoké absenci.",
+      "key_numbers": [],
+      "evidence": "„Sjednocujícím kritériem je stanovení maximálních limitů pro absenci žáků.“"
+    },
+    "support_services": [
+      "Individuální konzultace s učiteli a doučování.",
+      "Výchovná poradkyně, školní metodik prevence a částečně sociální pedagog.",
+      "Podpůrná opatření pro žáky se speciálními vzdělávacími potřebami s pravidelným vyhodnocováním.",
+      "Kariérové poradenství, konzultace, burzy a besedy s absolventy.",
+      "Doučování a podpora v domově mládeže včetně činností podporujících osobnostní rozvoj a prevenci rizikového chování."
+    ],
+    "safety_climate": [
+      "Při hospitované výuce byla zaznamenána pracovní a respektující atmosféra bez kázeňských problémů.",
+      "V praktickém vzdělávání žáci dodržovali pravidla chování a práce.",
+      "Inspekce ale uvedla, že bezpečnost žáků na domově mládeže nebyla v plné míře zaručena."
+    ],
+    "partnerships_practice": [
+      "Škola dlouhodobě a aktivně využívá duální vzdělávání a zapojení žáků do reálných zakázek.",
+      "Spolupracuje se sociálními a profesními partnery, základními školami, vysokými školami a organizacemi v regionu.",
+      "Probíhají projektové dny, příprava talentových zkoušek, exkurze, workshopy, výstavy a mezinárodní mobility."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou srozumitelné, krátké a zaměřené na to, co mohou rodiče ověřit při návštěvě školy.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesnou celkovou míru absence ani konkrétní číselné limity pro jednotlivé ročníky.",
+      "Zpráva neuvádí podrobné výsledky maturity rozdělené podle jednotlivých oborů a předmětů.",
+      "Zpráva uvádí nárůst počtu žáků, ale neuvádí přesný počet z předchozí inspekce."
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "report_id": "GY8_600016188_2026-03-17",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:06:16.598519+00:00",
+  "run_finished_utc": "2026-10-02T17:06:43.894142+00:00",
+  "raw_file": "GY8_600016188_2026-03-17.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600016188_2026-03-17",
+    "school_profile": {
+      "school_type": "Gymnázium a střední odborná škola",
+      "inspection_period": "17. 3. 2026 – 20. 3. 2026",
+      "school_change_summary": "Vedoucí funkci od roku 2024 zastává Mgr. Petr Kroutil; část kompetencí delegoval na zástupce. Škola modernizuje vybavení, využívá služby školního psychologa a od roku 2025/2026 propojuje obory masérského vzdělání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Podporující prostředí",
+          "detail": "Ve výuce podle inspekce převládala pozitivní atmosféra založená na respektu a otevřené komunikaci.",
+          "evidence": "„Ve výuce převládala pozitivní, pracovně laděná atmosféra založená na respektu a otevřené komunikaci.“"
+        },
+        {
+          "tag": "Vybavení pro odbornou přípravu",
+          "detail": "Škola má velmi dobré materiální podmínky a odborné pracoviště vybavuje moderními technologiemi.",
+          "evidence": "„Materiální podmínky školy jsou velmi dobré.“ Pracoviště jsou vybavena moderními pomůckami a technologiemi."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí konzultace, doučování, psychologa a preventivní programy pro žáky i rodiče.",
+          "evidence": "Škola poskytuje pomoc „individuálními konzultacemi a doučováním“; součástí týmu je také psycholog."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejistá docházka",
+          "detail": "Největším rizikem je vysoká absence žáků, zejména v oborech zakončených výučním listem.",
+          "evidence": "„Žáci školy vykazují vysokou absenci, a to omluvenou i neomluvenou, především v oborech vzdělání s výučním listem.“"
+        },
+        {
+          "tag": "Omezená individualizace",
+          "detail": "Ve většině hodin se úkoly téměř nerozdělují podle schopností žáků, což může omezovat rozvoj nadaných.",
+          "evidence": "„Diferenciace úkolů podle dovedností a schopností jednotlivých žáků však byla zaznamenána minimálně.“"
+        },
+        {
+          "tag": "Rozmanitost výuky",
+          "detail": "Výuka je převážně frontální a málo využívá práci s informačními zdroji, vzájemné hodnocení nebo kritické myšlení.",
+          "evidence": "„Celkově byla výuka vedena především frontální formou práce s řízeným rozhovorem v kombinaci se samostatnou prací.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky s vysokou absencí a jak často rodiče dostávají zpětnou vazdu?",
+        "Jak se v jednotlivých předmětech projevuje individualizace úkolů pro nadané žáky a žáky se SVP?",
+        "Kolik hodin v týdnu mohou žáci využívat konzultace, doučování a služby psychologa?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat na gymnáziu v klidném a podporujícím prostředí.",
+        "Žákům, kteří mají zájem o moderně vybavenou odbornou přípravu a praktické dovednosti.",
+        "Žákům, kteří chtějí využívat konzultace, doučování a další podporu školy."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků v oborech s výučním listem, protože zpráva uvádí vysokou absenci a obtíže ve studijní úspěšnosti.",
+        "Žákům, kteří potřebují výraznou individualizaci výuky, práci s různými informačními zdroji nebo rozvíjení kritického myšlení.",
+        "Rodičům, kteří očekávají převážně aktivní a diferencované vyučování, protože převládá frontální výuka."
+      ],
+      "plain_czech_summary": "Škola má kvalifikované pedagogy, přátelskou atmosféru a velmi dobré vybavení pro odbornou výuku. Žáci mohou využívat konzultace, doučování i služby psychologa. Gymnázium dosahovalo v uvedených školních rocích 100% hrubé úspěšnosti maturitní zkoušky. Hlavním problémem je vysoká absence, hlavně v oborech s výučním listem. V běžné výuce se málo objevují diferencované úkoly, práce s informačními zdroji a vzájemné hodnocení. Pro rodiče je důležité ověřit, jak konkrétně bude škola řešit docházku a podporovat individuální rozvoj dítěte."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "U gymnázia byla v letech 2022/2023, 2023/2024 i 2024/2025 uvedena 100% hrubá úspěšnost.",
+        "key_numbers": [
+          "2022/2023: gymnázium 100 %",
+          "2023/2024: gymnázium 100 %",
+          "2024/2025: gymnázium 100 %"
+        ],
+        "evidence": "Ve všech uvedených školních rocích činila hrubá úspěšnost maturitní zkoušky oboru Gymnázium 100 %."
+      },
+      "absence": {
+        "trend": "Absence je podle zprávy vysoká, zejména u oborů s výučním listem, a zahrnuje omluvenou i neomluvenou absenci.",
+        "key_numbers": [
+          "Konkrétní procento absence zpráva neuvádí",
+          "Rizikem jsou především obory zakončené výučním listem"
+        ],
+        "evidence": "„Vzhledem k přetrvávající vysoké absenci je žádoucí zaměřit se na důslednější uplatňování nastavených pravidel.“"
+      },
+      "support_services": [
+        "Individuální konzultace a doučování pro žáky se slabším prospěchem nebo zvýšenou absencí.",
+        "Poradenské služby výchovných, kariérových poradců a metodiků prevence.",
+        "Služby školního psychologa dostupné od školního roku 2023/2024."
+      ],
+      "safety_climate": [
+        "Žáci jsou informováni o zásadách bezpečnosti a ochrany zdraví a jsou upozorňováni na rizika.",
+        "Při odborném výcviku jsou žáci systematicky vedeni k dodržování bezpečnosti, přesnosti a zodpovědnosti.",
+        "Prevence rizikového chování je podporována preventivními programy a spoluprací s odborníky."
+      ],
+      "partnerships_practice": [
+        "S externími partnery se modernizuje vybavení pro odborný výcvik.",
+        "Žáci se účastní soutěží, projektů, workshopů a výměnných akcí, například „Přátelství bez hranic“ a Erasmus+.",
+        "Škola spolupracuje s externími odbornými pracovišti při podpoře žáků."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a vztahují se k praktickým otázkám rodičů i k citacím z inspekční zprávy.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní procento absence.",
+        "Uvedené výsledky se týkají školních roků 2022/2023 až 2024/2025, nikoli období inspekce 2026.",
+        "Zpráva neuvádí podrobné výsledky maturitní zkoušky pro všechny obory ve školním roce 2024/2025."
+      ]
+    }
+  }
+}

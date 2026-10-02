@@ -1,0 +1,111 @@
+{
+  "report_id": "GY4_691000212_2026-03-18",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:26:01.250577+00:00",
+  "run_finished_utc": "2026-10-02T16:26:29.871060+00:00",
+  "raw_file": "GY4_691000212_2026-03-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691000212_2026-03-18",
+    "school_profile": {
+      "school_type": "Soukromé gymnázium s.r.o. poskytující všeobecné vzdělávání v čtyřletém, šestileté a osmiletém gymnáziu.",
+      "inspection_period": "18. 3. 2026 až 23. 3. 2026",
+      "school_change_summary": "Od inspekce v roce 2021 vzrostla kapacita na 600 žáků, zvýšil se počet žáků i pedagogů a rostl podíl kvalifikovaných učitelů; zlepšily se výsledky při ukončování studia, ale přetrvávají omezení prostorových podmínek."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazyková a praktická profilace",
+          "detail": "Škola systematicky rozvíjí jazyky, projekty, odborné stáže a zahraniční výjezdy.",
+          "evidence": "Nedílnou součástí je provázanost výuky s praxí formou projektové činnosti, odborných stáží a zahraničních výjezdů."
+        },
+        {
+          "tag": "Kvalitní výuka",
+          "detail": "Hodiny jsou podle inspekce promyšlené a vedou žáky k samostatnému myšlení a argumentaci.",
+          "evidence": "V hospitované výuce převládaly metodicky a didakticky zdařilé hodiny, které se vyznačovaly jasně stanoveným cílem."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí poradenství, podpůrná opatření a individuální přístup žákům s odlišnými potřebami.",
+          "evidence": "Školní poradenské služby v oblasti podpůrné, preventivní, psychologické a kariérní péče jsou zabezpečovány na obou pracovištích."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Individualizace",
+          "detail": "V části výuky se málo přizpůsobují rozdílné studijní předpoklady a vzdělávací potřeby žáků.",
+          "evidence": "Méně časté zohledňování individuálních předpokladů i vzdělávacích potřeb žáků a využívání vrstevnického hodnocení."
+        },
+        {
+          "tag": "Prostorové podmínky",
+          "detail": "Pronajaté prostory mohou omezovat některé přírodovědné předměty a školní akce.",
+          "evidence": "Limitující prostorové podmínky pro výuku přírodovědných předmětů nebo konání školních akcí jsou kompenzovány pronájmem či formou partnerské spolupráce."
+        },
+        {
+          "tag": "Jazyková kultura",
+          "detail": "V některých hodinách je málo prostoru pro souvislé mluvení a někdy se vyskytuje nespisovná čeština.",
+          "evidence": "Vzhledem k typu školy byl také méně vytvářen prostor pro souvislejší mluvený projev žáků, byla zaznamenána i nižší míra jazykové kultury."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se ve výuce přizpůsobují úkoly žákům s různou jazykovou úrovní, tempem nebo podpůrnými potřebami?",
+        "Jak často žáci dostávají samostatné úkoly s více informačními zdroji a jak je hodnoceno jejich mluvené projevy?",
+        "Jak jsou řešeny omezení pronajatých prostor a co konkrétně nabízí škola pro výuku přírodovědných předmětů?"
+      ],
+      "who_school_fits": [
+        "Rodičům, kteří hledají gymnázium s výraznou jazykovou a mezinárodní profilací.",
+        "Žákům, kteří mají zájem o projektovou práci, stáže, zahraniční výjezdy nebo přípravu k certifikovaným jazykovým zkouškám.",
+        "Rodičům, kteří chtějí školu s menší uzavřenou komunitou a důrazem na komunikaci a praktické dovednosti."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům, kteří očekávají vlastní moderní areál nebo neomezené kapacity pro každou školní aktivitu.",
+        "Žákům a rodičům, kterým záleží na velmi důsledné individualizaci každé výuky.",
+        "Rodičům, kteří potřebují záruku pravidelně podporovaného souvislého mluveného projevu a jazykové kultury ve všech předmětech."
+      ],
+      "plain_czech_summary": "Škola nabízí gymnaziální vzdělávání s důrazem na jazyky, projekty, praxi a mezinárodní aktivity. Výuka je podle inspekce převážně dobře připravená a žáci mají možnost volit semináře, certifikované zkoušky i profilové předměty. Podporu poskytují poradci a učitelé, včetně žáků se speciálními vzdělávacími potřebami. Výsledky při maturitě se zlepšily. Rodiče by však měb počítat s pronajatými prostory, menší individualizací některých hodin a místy menší podporou mluvení, samostatné práce s informacemi a jazykové kultury."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky maturitní zkoušky se meziročně zlepšily.",
+        "key_numbers": [
+          "V letech 2023/2024 a 2024/2025 všichni žáci prospěli ve společné části.",
+          "V profilové části neprospěl pouze jednotlivec.",
+          "Nejméně dvě pětiny žáků maturovaly s vyznamenáním."
+        ],
+        "evidence": "Oborové výsledky žáků při ukončování studia maturitní zkouškou se zlepšily a korespondují s jejich průběžnými výsledky."
+      },
+      "absence": {
+        "trend": "Celkový počet zameškaných hodin se meziročně snížil přibližně o čtvrtinu.",
+        "key_numbers": [
+          "Počet zameškaných hodin klesl asi o 25 %.",
+          "Podíl žáků hodnocených v náhradním termínu je přibližně 9 %."
+        ],
+        "evidence": "Snížení celkového počtu zameškaných hodin (asi o 25 %) a podílu žáků hodnocených v náhradním termínu (okolo 9 %)."
+      },
+      "support_services": [
+        "Výchovná poradkyně, metodička prevence, školní psycholožka a kariérní poradce.",
+        "Individuální vzdělávací plány, úpravy podmínek při ukončování studia, kompenzační pomůcky a plány pedagogické podpory.",
+        "Individuální strategie pro nadané žáky a žáky s dlouhodobými zdravotními obtížemi."
+      ],
+      "safety_climate": [
+        "V hospitovaných hodinách převládala příznivá atmosféra a dodržování nastavených pravidel spolupráce.",
+        "Na obou pracovištích je zajištěn personální dohled při vstupu; školní stravování je smluvně zajištěno."
+      ],
+      "partnerships_practice": [
+        "Škola rozvíjí partnerství s vysokými a zahraničními školami v zemích vyučovaných jazyků.",
+        "Spolupracuje s odbornými institucemi a neziskovými organizacemi.",
+        "Praxi zajišťuje prostřednictvím projektů, odborných stáží a zahraničních výjezdů."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulován srozumitelně, stručně a v běžné češtině; důležité závěry jsou opřené o citace ze zprávy.",
+      "uncertainty_notes": [
+        "Zpráva uvádí přibližné podíly a počty, nikoli přesné údaje pro každý rok.",
+        "Konkrétní rozsah individualizace a samostatné žákovské práce se může mezi předměty a učiteli lišit.",
+        "Zpráva neuvádí podrobné výsledky jednotlivých studijních oborů."
+      ]
+    }
+  }
+}

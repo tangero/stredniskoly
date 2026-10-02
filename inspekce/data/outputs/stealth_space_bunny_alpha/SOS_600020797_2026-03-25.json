@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600020797_2026-03-25",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:22:59.601974+00:00",
+  "run_finished_utc": "2026-10-02T16:23:24.379661+00:00",
+  "raw_file": "SOS_600020797_2026-03-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600020797_2026-03-25",
+    "school_profile": {
+      "school_type": "Gymnázium a obor Informační služby ve škole pro děti a žáky se speciálními vzdělávacími potřebami",
+      "inspection_period": "25. 3. 2026 – 30. 3. 2026",
+      "school_change_summary": "Od inspekce v roce 2019 se zlepšila práce v mateřské škole, modernizovaly se prostory a vybavení, ale přetrvávají nedostatky v pedagogické diagnostice a kontrolní činnosti."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Maturita",
+          "detail": "Škola dosahuje dlouhodobě vysoké úspěšnosti maturity a její absolventi pokračují ve studiu na vysokých školách.",
+          "evidence": "\"Úspěšnost u maturitních zkoušek je dlouhodobě vysoká, v posledním školním roce uspěli všichni přihlášení žáci.\""
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola účinně doplňuje vzdělávání asistenty pedagogy, individuálními plány a odbornou podporou SPC.",
+          "evidence": "\"Analýza vybraného vzorku individuálních vzdělávacích plánů potvrdila jejich pravidelné vyhodnocování a funkční úpravu obsahu vzdělávání.\""
+        },
+        {
+          "tag": "Bezpečná atmosféra",
+          "detail": "Rodinné prostředí je vstřícné a škola věnuje pozornost bezpečnosti, prevenci rizikového chování i online bezpečnosti.",
+          "evidence": "\"Převládala nízká míra kázeňských opatření.\" Témata jsou \"vhodně rozvíjena\" ve výuce."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zhodnocování učení",
+          "detail": "Na některých hodinách chybí jasné cíle a dostatečné ověření, zda žáci učivo pochopili.",
+          "evidence": "\"V úvodech často chybělo jasné vymezení tématu a konkrétních cílů.\""
+        },
+        {
+          "tag": "Samo hodnocení",
+          "detail": "Formální hodnocení a sebehodnocení žáků se objevují málo, což může omezovat rozvoj samostatnosti.",
+          "evidence": "\"Prvky sebehodnocení a vzájemného hodnocení se objevovaly spíše ojediněle.\""
+        },
+        {
+          "tag": "Služby SPC",
+          "detail": "Velké vytížení diagnostikou omezuje další poradenské, terapeutické a podpůrné služby SPC.",
+          "evidence": "\"Vysoké vytížení diagnostickou agendou však limituje rozsah dalších poradenských služeb.\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak často žáci dostávají konkrétní zpětnou vazbu a jaké nástroje sebehodnocení se ve škole používají?",
+        "Jaké konkrétní podpůrné služby SPC mohou žáci a rodiče aktuálně využít a kdy je poskytuje?",
+        "Jaké změny v kontrolní činnosti a vedení individuálních plánů škola přijala po inspekci?"
+      ],
+      "who_school_fits": [
+        "Žákům se sluchovým postižením, kteří potřebují orální komunikaci a současně další podporu.",
+        "Žákům s těžšími logopedickými vadami nebo kombinovanými vadami.",
+        "Žákům, kteří chtějí maturitní přípravu ve specializovaném a podpůrném prostředí."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům, kteří mají zájem především o výrazně nefrontální výuku a hodnocení podle formativních postupů.",
+        "Rodičům, kteří očekávají široké a snadno dostupné služby SPC nad rámec prioritní diagnostiky.",
+        "Rodičům, kteří potřebují jazykovou výuku založenou výrazněji na komunikaci v cílovém jazyce."
+      ],
+      "plain_czech_summary": "Škola je určena především žákům se sluchovým postižením, logopedickými vadami nebo kombinovanými vadami. Nabízí gymnázium, obor Informační služby, silnou podporu asistentů, individuální plány a služby SPC. Výsledky jsou stabilní a vysoké, v posledním školním roce uspěli všichni přihlášení žáci u maturity. Mezi slabší místa patří málo podrobné cíle a závěry hodin, vzácná zpětná vazba, sebehodnocení a slabší kontrolní systém školy. Vysoká poptávka po diagnostice omezuje další služby SPC. Při návštěvě je vhodné zeptat se na konkrétní hodnocení, dostupnost podpůrných služeb a následná opatření školy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Úspěšnost je dlouhodobě vysoká a podle zprávy v posledním školním roce uspěli všichni přihlášení žáci.",
+        "key_numbers": [
+          "57 žáků SŠ v 5 třídách",
+          "2 maturitní obory: Gymnázium a Informační služby",
+          "100 % přihlášených žáků uspělo u maturity v posledním školním roce"
+        ],
+        "evidence": "\"V posledním školním roce uspěli všichni přihlášení žáci.\""
+      },
+      "absence": {
+        "trend": "Zpráva neuvádí celkový trend ani vývoj počtu absentací.",
+        "key_numbers": [
+          "Ve škole se nachází evidence docházky za školní rok 2025/2026.",
+          "Konečné počty či procenta nejsou uvedeny."
+        ],
+        "evidence": "\"Evidence docházky dětí ve školním roce 2025/2026 k termínu inspekční činnosti.\""
+      },
+      "support_services": [
+        "Ve škole působí školní psycholožka poskytující individuální práci, poradenství rodičům a konzultace pedagogům.",
+        "SPC poskytuje především vysoce odbornou diagnostiku a konkrétní doporučení pro vzdělávání.",
+        "Škola uplatňuje asistenty pedagoga, individuální vzdělávací plány, případně předmět Digitální komunikace místo dalšího cizího jazyka."
+      ],
+      "safety_climate": [
+        "Ve škole panuje vstřícná atmosféra a kladné vztahy mezi pedagogy a žáky.",
+        "Bezpečnost zajišťuje nepřetržitý dohled ve vrátnici a kamerový systém.",
+        "Prevence rizikového chování je součástí výuky; u starších žáků zahrnuje také online bezpečnost."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje se zřizovatelem, foniatrickou klinikou, Centrem kochleárních implantací Motol a sdruženími osob se sluchovými vadami.",
+        "S rodiči komunikuje prostřednictvím setkání, moderních informačních systémů a účasti na školních akcích.",
+        "Pracovníci SPC podporují pedagogy přímo ve škole a intenzivně spolupracují se školní poradenskou službou."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá srozumitelný český jazyk, odděluje jistá zjištění od doporučení a věnuje pozornost otázkám rodičů.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesné údaje o absenci a nepopisuje její trend.",
+        "Nejde o shrnutí konkrétních programových parametrů obou oborů, protože zpráva neobsahuje jejich detailní rozpisy.",
+        "Výroky o vhodnosti školy vycházejí z cílové skupiny a poskytovaných služeb uvedených ve zprávě."
+      ]
+    }
+  }
+}

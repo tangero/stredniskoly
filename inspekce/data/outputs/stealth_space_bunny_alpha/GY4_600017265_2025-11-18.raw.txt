@@ -1,0 +1,98 @@
+{
+  "report_id": "GY4_600017265_2025-11-18",
+  "school_profile": {
+    "school_type": "Gymnázium",
+    "inspection_period": "18. 11. 2025 až 21. 11. 2025",
+    "school_change_summary": "Změna ředitelky, zavedení druhého zástupce, koordinátorky pro nadané žáky a terapeutky; pokračuje estetizace budovy a výměna nábytku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní výuka",
+        "detail": "Hospitované hodiny byly odborné, promyšlené a podporovaly zájem žáků.",
+        "evidence": "„Výuka v hospitovaných hodinách probíhala na odborné úrovni, byla promyšlená a realizovaná v souladu s kurikulárními dokumenty.“"
+      },
+      {
+        "tag": "Maturita",
+        "detail": "Škola dosahuje velmi dobrých výsledků při maturitní zkoušce.",
+        "evidence": "„Žáci školy dosahují velmi dobrých výsledků při zakončování vzdělávání maturitní zkouškou.“"
+      },
+      {
+        "tag": "Projekty a partnerství",
+        "detail": "Školní aktivity rozvíjejí odborné, sociální, komunikační a občanské kompetence žáků.",
+        "evidence": "„Zapojení žáků do mimoškolních aktivit a soutěží, realizace projektů, které rozvíjejí jejich odborné znalosti a také sociální a občanské kompetence.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Bezpečnost",
+        "detail": "Nedostatečně je řešen dohled pedagogů při přestávkách a před vyučováním.",
+        "evidence": "„Škola nedisponuje rozpisem dohledů pedagogických pracovníků v době před vyučováním a během přestávek mezi vyučovacími hodinami.“"
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Závěrečné hodnocení výuky rodičům často neposkytuje dostatečnou informaci o osvojení učiva.",
+        "evidence": "„Závěrečné hodnocení výuky žáky bylo většinou formální a nepředstavovalo dostatečnou zpětnou vazbu o úrovni osvojení učiva.“"
+      },
+      {
+        "tag": "Školní klima",
+        "detail": "Někteří žáci nesouhlasí s přístupem části vyučujících.",
+        "evidence": "„Vyjádření žáků školy uvedených v rámci dotazníkového šetření vyjadřují jak pozitivní názory, tak nesouhlas s přístupem některých vyučujících.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně vypadá dohled pedagogů při přestávkách a před začátkem vyučování?",
+      "Jak konkrétně učitelé poskytují rodičům zpětnou vazbu o práci žáka a jeho případných obtížích?",
+      "Které konkrétní projekty a volitelné předměty nejlépe podporují zájmy a rozvoj vašeho dítěte?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří mají zájem o gymnaziální vzdělání a cizí jazyky.",
+      "Žákům, kteří mají zájem o projektové aktivity, soutěže a spolupráci s partnery.",
+      "Žákům, kteří potřebují podporu při adaptaci na střední školu nebo při řešení vzdělávacích problémů."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům, kteří očekávají velmi podrobnou průběžnou zpětnou vazbu o osvojení učiva.",
+      "Rodičům, kterým záleží na důsledném bezpečnostním dohledu při přestávkách.",
+      "Rodičům, kteří by chtěli školu s výraznější ochranou žáků před rizikovými látkami v laboratoři."
+    ],
+    "plain_czech_summary": "Slezské gymnázium v Opavě poskytuje odbornou výuku a žáci dosahují velmi dobrých maturitních výsledků. Ve škole fungují poradenské služby, prevence, kariérní poradenství i podpora nadaných žáků. Výuka zahrnuje projekty, soutěže a spolupráci s partnery. Inspekce ale upozornila na chybějící přehled dohledu učitelů při přestávkách, slabší zpětnou vazbu rodičům a bezpečnostní riziko v chemické laboratoři. Zpráva uvádí, že chemikálie byly připravené v policích nad pracovními stoly."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi dobré výsledky",
+      "key_numbers": [
+        "Žáci dosahují velmi dobrých výsledků při zakončování vzdělávání maturitní zkouškou."
+      ],
+      "evidence": "Inspekce zařadila maturitní výsledky mezi silné stránky školy."
+    },
+    "absence": {
+      "trend": "Z textu nelze určit",
+      "key_numbers": [],
+      "evidence": "Zpráva neuvádí celkovou absenci ani její vývoj."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště podporuje žáky, pedagogy a zákonné zástupce.",
+      "Výchovná poradkyně podporuje žáky se speciálními vzdělávacími potřebami a žáky s individuálním vzdělávacím plánem.",
+      "Kariérová poradkyně pomáhá s výběrem následného studia, školní terapeutka poskytuje individuální pomoc."
+    ],
+    "safety_climate": [
+      "Bezpečnost a ochranu zdraví zajišťuje škola ve spolupráci s odborně způsobilými osobami.",
+      "Inspekce zjistila chybějící rozpis dohledu pedagogických pracovníků při přestávkách a před vyučováním.",
+      "V chemické laboratoři byly zjištěny připravené chemikálie v policích nad pracovními stoly žáků."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s mnoha externími partnery z oblasti vzdělávání, s místními organizacemi a městem Opava.",
+      "Spolupráce zahrnuje projekty se základními školami, ekologický projekt „Emise“ a přeshraniční projekty s polskou střední školou.",
+      "Školní parlament žákům umožňuje navrhovat změny a diskutovat o nich s vedením školy."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá srozumitelné běžné výrazy, stručné věty a jasně odděluje zjištění školy od doporučení pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí číselné údaje o absencích.",
+      "Zpráva uvádí kladné závěrečné hodnocení maturity, ale nepočetné podíly žáků.",
+      "U bezpečnosti chemikálií jde o zjištění při inspekci; text neuvádí, zda a kdy byla situace následně opravena."
+    ]
+  }
+}

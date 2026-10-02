@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_600013910_2026-01-07",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:48:19.732404+00:00",
+  "run_finished_utc": "2026-10-02T16:49:06.560646+00:00",
+  "raw_file": "LYC_600013910_2026-01-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600013910_2026-01-07",
+    "school_profile": {
+      "school_type": "Střední škola grafická Brno, příspěvková organizace",
+      "inspection_period": "7. 1. 2026 – 9. 1. 2026",
+      "school_change_summary": "Od roku 2021 vzrostl počet žáků o 18 %, pracoviště na Šmahově se modernizovala, poradenský tým doplnila školní psycholožka a nově se nabízí Technické lyceum."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vyučování",
+          "detail": "Praktická výuka je hodnocena jako velmi dobrá a žáci získávají odborné dovednosti díky modernizovanému vybavení a propojení teorie s praxí.",
+          "evidence": "„Realizace praktického vyučování je na velmi dobré úrovni.“ Pracoviště na Šmahově prošlo rozsáhlou modernizací."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí výchovné poradenství, psychologickou podporu, práci s asistenty i systematickou péči o žáky se speciálními vzdělávacími potřebami.",
+          "evidence": "Poradenský tým „efektivně spolupracuje, operativně reaguje na vzniklé situace“ a výchovná poradkyně se systematicky věnuje žákům se speciálními vzdělávacími potřebami."
+        },
+        {
+          "tag": "Žákovská samospráva",
+          "detail": "Aktivní žákovský parlament umožňuje žákům ovlivňovat školní život a posiluje komunikaci, odpovědnost a občanské kompetence.",
+          "evidence": "„Žákovský parlament významně rozšířil svou činnost“ a podílí se na organizaci školních akcí i vlastním projektu."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Prostory",
+          "detail": "Budova na Kudelově je stísněná a podle inspekce už při zvýšeném počtu žáků neodpovídá potřebám odborného vzdělávání ani psychohygieny.",
+          "evidence": "Stísněné prostory „již plně neodpovídají požadavkům odborného vzdělávání ani psychohygienickým potřebám žáků“."
+        },
+        {
+          "tag": "Kvalifikace pedagogů",
+          "detail": "Přibližně pětina pedagogů neměla požadovanou odbornou kvalifikaci, což se místo projevovalo didaktickými rezervami a slabším metodickým vedením výuky.",
+          "evidence": "„Přibližně pětina pedagogických pracovníků“ odborné kvalifikaci nesplňovala; inspekce zaznamenala „dílčí didaktické rezervy“."
+        },
+        {
+          "tag": "Jednotné hodnocení",
+          "detail": "Přístupy některých učitelů k hodnocení a výuce nejsou zcela jednotné a někdy se liší podle jednotlivých pedagogů.",
+          "evidence": "„Uplatňování pravidel pro klasifikaci žáků však není ve všech případech zcela jednotné.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní změny škola připravuje pro zlepšení stísněných prostor na Kudelově a kdy budou dostupné pro konkrétní obory?",
+        "Které předměty a obory aktuálně zajišťují pedagogové bez splněné odborné kvalifikace a jaké konkrétní vzdělávací plány mají?",
+        "Jak při školním řádu a v jednotlivých předmětech vypadá hodnocení, informace rodičům a řešení žákovských stížností na rozdílné přístupy?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat polygrafii, obalovou techniku nebo související obory s výučním listem a maturitní zkouškou.",
+        "Žákům, kterým vyhovuje samostatná praktická práce, projektové zadání a zapojení do celého výrobního procesu.",
+        "Žákům, kteří ocení školní psycholožku, výchovné poradenství, asistenty pedagoga a preventivní programy."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků se speciálními vzdělávacími potřebami, kteří chtějí ověřit individualizaci výuky a jednotné hodnocení v jednotlivých předmětech.",
+        "Rodičům, kterým vadá stísněné prostředí v části teoretické výuky na Kudelově.",
+        "Rodičům žáků, kteří potřebují jednotné a předvídatelné přístupy učitelů k hodnocení, komunikaci a řešení neprospěchu."
+      ],
+      "plain_czech_summary": "Škola se od minulé inspekce zlepšila: vzrostl počet žáků, praktické pracoviště se modernizovalo a přibyla školní psycholožka. Nejlepší hodnocení získalo praktické vyučování, které žákům umožňuje pracovat na skutečných projektech. Dobře fungují také žákovský parlament a poradenský tým. Rodiče by však měli zvážit stísněné prostory na Kudelově, přibližně pětinu pedagogů bez splněné odborné kvalifikace a ne zcela jednotné přístupy k hodnocení. Maturitní výsledky jsou dlouhodobě velmi dobré, v roce 2025 měla hrubá neúspěšnost necelých 9 %."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Úspěšnost maturitních zkoušek je dlouhodobě velmi dobrá a škola opakovaně překonává školy obdobných oborů.",
+        "key_numbers": [
+          "V roce 2025 činila hrubá neúspěšnost necelých 9 %.",
+          "Závěrečnou zkoušku v roce 2025 složilo 85 % žáků.",
+          "S výjimkou oboru Tiskař na polygrafických strojích byli úspěšní všichni žáci L a zkráceného studia."
+        ],
+        "evidence": "„V roce 2025 činila hrubá neúspěšnost necelých 9 %“ a celková neúspěšnost při závěrečné zkoušce činila 15 %."
+      },
+      "absence": {
+        "trend": "Omluvená absence v posledním sledovaném školním roce klesla, ale škola nadále řeší vysokou absenci jednotlivých žáků.",
+        "key_numbers": [
+          "Ve školním roce 2024/2025 průměrně 150 hodin omluvené absence na žáka.",
+          "Ve školním roce 2023/2024 to bylo 160 hodin na žáka.",
+          "Od poslední inspekce vzrostl počet žáků o 18 %."
+        ],
+        "evidence": "Omluvená absence se v roce 2024/2025 snížila na „průměrně 150 hodin na žáka“, předtím činila 160 hodin."
+      },
+      "support_services": [
+        "Na poradenských službách se podílejí výchovná poradkyně, školní metodička prevence a školní psycholožka.",
+        "Poradenský tým spolupracuje s pedagogy, žáky, rodiči a asistenty a řeší mimo jiné rizikové chování a psychické obtíže.",
+        "Výchovná poradkyně koordinuje podporu žáků se speciálními vzdělávacími potřebami a nadaných žáků."
+      ],
+      "safety_climate": [
+        "Teoretická výuka probíhala převážně ve vzájemné úctě; žáci dodržovali pravidla a nebáli se vyjadřovat své názory.",
+        "Škola společnými postupy řešila záškoláctví, kyberšikanu, fyzickou agresi, sebepoškozování a užívání návykových látek.",
+        "Byly zaznamenány psychické obtíže žáků a poradenský se tým jim podle zprávy poskytoval potřebnou pomoc."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje se středními, vyššími odbornými a vysokými školami, zaměstnavateli a dalšími institucemi.",
+        "S partnerskou Střední průmyslovou školou Brno pořádá výměnné stáže a workshopy pro žáky i učitele.",
+        "Partnerské vztahy se využívají k inovaci vzdělávacích programů, rozšiřování odborných kompetencí a profesnímu rozvoji pedagogů."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně vysvětluje význam zjištění pro rodiče a jasně odlišuje silné stránky, rizika a ověřitelné údaje.",
+      "uncertainty_notes": [
+        "Zpráva uvádí přibližné podíly žáků, proto nejsou uvedeny jako přesné hodnoty.",
+        "Neuvádí konkrétní výsledky jednotlivých oborů při maturitě, pouze souhrnné hodnoty za školu.",
+        "Problémové jevy jsou uvedeny jako zaznamenané, ale zpráva neuvádí jejich počet ani podíl postižených žáků."
+      ]
+    }
+  }
+}

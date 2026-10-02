@@ -1,0 +1,104 @@
+{
+  "report_id": "LYC_600015971_2026-04-07",
+  "school_profile": {
+    "school_type": "střední průmyslová škola",
+    "inspection_period": "7. 4. 2026 až 10. 4. 2026",
+    "school_change_summary": "Název školy se změnil kvůli zániku vyšší odborné školy v roce 2024; nově nabízené obory jsou Mechanik instalatérských a elektrotechnických zařízení a Technické lyceum."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná příprava",
+        "detail": "Praktická výuka je hodnocena jako promyšlená a efektivní a propojuje technické dovednosti s novinkami oboru.",
+        "evidence": "„Navštívenou výuku lze hodnotit jako metodicky promyšlenou a vysoce efektivní“."
+      },
+      {
+        "tag": "Partnerství a zaměstnání",
+        "detail": "Spolupráce s regionálními firmami pomáhá žákům získat kontakt s moderními technologiemi a potřebami trhu práce.",
+        "evidence": "„Nadstandardní spolupráce s firmami v regionu zajišťuje provázanost teorie s reálným prostředím“."
+      },
+      {
+        "tag": "Zájmová činnost",
+        "detail": "Škola podporuje soutěže, projekty, sport a další mimoškolní aktivity, ve kterých žáci dosahují výborných výsledků.",
+        "evidence": "„Škola systematicky a cíleně podporuje účast žáků v různorodých soutěžích, přehlídkách a projektech“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Teoretická výuka",
+        "detail": "Ve velké části hodin převládá frontální výuka, chybí diferenciace a omezené jsou aktivizační metody i práce s informacemi.",
+        "evidence": "„Převažovala aktivní role učitelů, žáci byli spíše pasivními příjemci informací.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola neúčinněji sleduje přínos podpůrných opatření a chybí jí strategie předcházení školní neúspěšnosti.",
+        "evidence": "„Účinnost podpory je na úrovni školy vyhodnocována pouze v omezené míře“."
+      },
+      {
+        "tag": "Noční dohled",
+        "detail": "V domově mládeže zajišťuje noční režim jediná vychovatelka pro dvě oddělené části.",
+        "evidence": "„Jako problematické se jeví zabezpečení nočního režimu pouze jednou vychovatelkou“."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se v jednotlivých předmětech mění frontální výuka na práci ve dvojicích, skupinách nebo samostatnou práci?",
+      "Jak škola sleduje, zda podpůrná opatření a doučování skutečně zlepšují výsledky konkrétních žáků?",
+      "Jaké konkrétní kroky přijme pro samostatný noční dohled v každé budově domova mládeže?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí střední technické nebo elektrotechnické vzdělání pro práci v oboru a oceňují rozsáhlou praktickou výuku.",
+      "Žákům s odlišným mateřským jazykem, protože škola eviduje 32 takových žáků a poskytuje jazykové vzdělávání a poradenství.",
+      "Žákům, kteří mají zájem o projekty, soutěže, odborné akce nebo zahraniční mobility."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče žáků, kterým záleží na pravidelné diferencované výuce, samostatném myšlení a sebevhodnocení.",
+      "Rodiče žáků s podpůrnými opatřeními, kteří chtějí jistotu jejich skutečného uplatňování a pravidelného vyhodnocování účinnosti.",
+      "Rodiče ubytovaných studentů, kteří mají obavy o dostatečné pokrytí nočního dozoru při krizové situaci."
+    ],
+    "plain_czech_summary": "Škola má velmi dobré zázemí pro technickou výuku, úspěsnou spolupráci s firmami a silné výsledky žáků v projektech a soutěžích. Praktická výuka je efektivní a praktická výuka cizích jazyků dobře propojuje gramatiku, slovní zásobu a skutečné texty. Hlavním problémem je většina teoretických hodin: učitelé hodně mluví, žáci méně pracují samostatně, chybí diferenciace a reflexe. Slabší jsou také kontrola podpůrných opatření a systematická podpora žáků s neúspěchem. U maturity přetrvává neúspěch u didaktických testů z českého jazyka a matematiky. V domově mládeže je nutné zlepšit noční dohled."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Celková neúspěšnost je vyšší na jaře; na podzim jsou žáci zpravidla úspěšnější a zlepšily se výsledky z angličtiny.",
+      "key_numbers": [
+        "Údaje o úspěšnosti nejsou uvedeny.",
+        "Přetrvává neúspěch v didaktických testech z českého jazyka a matematiky.",
+        "Škola používá projekty, mezinárodní certifikované zkoušky a další externí hodnocení."
+      ],
+      "evidence": "„Celková neúspěšnost žáků u maturitní zkoušky je vyšší v jarním zkušebním období“."
+    },
+    "absence": {
+      "trend": "Inspekční zpráva neuvádí údaje o absencích ani jejich vývoji.",
+      "key_numbers": [
+        "Počet či míra absence není uvedena.",
+        "Rozdíly v absencích meyi pracovišti nejsou uvedeny."
+      ],
+      "evidence": "V dodaném textu nejsou údaje o absencích."
+    },
+    "support_services": [
+      "Na obou pracovištích působí dva výchovní a tři kariéroví poradci, metodička prevence a speciální pedagožka.",
+      "Škola eviduje 175 žáků s potřebou podpůrných opatření nejvýše třetího stupně podpory.",
+      "Školu navštěvují žáci s podpůrnými opatřeními, poskytuje individuální konzultace a pravidelné doučování.",
+      "Škola poskytuje bezplatné obědy několika žákům a zapůjčuje digitální techniky."
+    ],
+    "safety_climate": [
+      "Na pracovištích panovala proaktivní atmosféra a vzájemný respekt.",
+      "Žáci dodržovali pravidla bezpečnosti, ochrany zdraví, čistoty a pořádku.",
+      "V domově mládeže je noční dohled problematický: jedna vychovatelka má na starosti dvě oddělené části."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s regionálními firmami a zajišťuje přímý kontakt žáků s moderními technologiemi.",
+      "Rozsáhlá je účast v programech Erasmus+, které podporují jazykové kompetence, odborné zkušenosti a mezinárodní spolupráci.",
+      "Škola je partnerskou školou programu Cambridge a umožňuje mezinárodní jazykové zkoušky ve školním prostředí."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou přímé, konkrétní a zaměřené na to, co mohou rodiče při volbě školy ověřit.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí číselné údaje o úspěšnosti maturity, proto nelze porovnat jednotlivé ročníky.",
+      "Zpráva neuvádí žádné statistiky absencí.",
+      "Na konci zprávy je uvedeno datum vyhotovení 22. 4. 2025, přestože inspekční činnost podle metadat probíhala v dubnu 2026."
+    ]
+  }
+}

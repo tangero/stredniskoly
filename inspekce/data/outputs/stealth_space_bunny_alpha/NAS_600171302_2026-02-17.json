@@ -1,0 +1,113 @@
+{
+  "report_id": "NAS_600171302_2026-02-17",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:36:13.735603+00:00",
+  "run_finished_utc": "2026-10-02T16:36:39.491512+00:00",
+  "raw_file": "NAS_600171302_2026-02-17.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "NAS_600171302_2026-02-17",
+    "school_profile": {
+      "school_type": "Střední škola elektrotechnická a školní jídelna – výdejna",
+      "inspection_period": "17. 2. 2026 až 20. 2. 2026",
+      "school_change_summary": "Od roku 2018 se pedagogický sbor částečně obměnil a změnili se dva zástupci ředitele; kvalitativně se zlepšilo materiální zázemí a školní vzdělávací programy."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborné vybavení",
+          "detail": "Žáci mohou pracovat v moderních laboratořích, učebnách a dílnách včetně soběstačného domu.",
+          "evidence": "„Škola disponuje nadstandardním materiálně-technickým zázemím včetně moderních laboratoří, odborných učeben a unikátního soběstačného domu.“"
+        },
+        {
+          "tag": "Praktická výuka",
+          "detail": "Praktické vyučování na smluvních pracovištích bylo hodnoceno jako velmi dobré a žáci dodržovali bezpečnostní zásady.",
+          "evidence": "„Výuka vykazovala velmi dobrou úroveň“ a žáci „dodržovali stanovená pravidla včetně zásad bezpečnosti“."
+        },
+        {
+          "tag": "Partnerství se zaměstnavateli",
+          "detail": "Partnerství se skupinou ČEZ a Svazem energetiky podporuje praxe, moderní vybavení a aktuální odborný obsah.",
+          "evidence": "„Tato strategická spolupráce umožňuje inovaci odborného vybavení, rozvoj moderních výukových postupů a pravidelnou aktualizaci odborného obsahu.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Školní klima",
+          "detail": "Někteří žáci popsali nevhodné jednání pedagogů, obavy z vyjadřování názoru a pochybnosti o spravedlivém posuzování podnětů.",
+          "evidence": "„Výpovědi žáků poukazují na projevy necitlivého či jinak nevhodného jednání některých pedagogických pracovníků“ a obavy z nestranného posuzování."
+        },
+        {
+          "tag": "Studijní výsledky",
+          "detail": "Úspěšnost žáků se výrazně zhoršila a škola dosud neřeší příčiny dostatečně systematicky.",
+          "evidence": "„Srovnání studijních výsledků … ukazuje na výrazný pokles úspěšnosti žáků“ a „opatření nejsou vždy realizována systematicky“."
+        },
+        {
+          "tag": "Absence",
+          "detail": "Absence včetně neomluvené zůstává zvýšená a předchozí doporučení ke snižování nebylo plně splněno.",
+          "evidence": "„Absence žáků, včetně absence neomluvené, dosahuje zvýšené hodnoty“ a „závěry z předchozí inspekční činnosti zatím nebyly školou plně realizovány“."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní kroky škola přijímá pro snížení neprospěchu, nehodnocení a neomluvené absence?",
+        "Jak bude nově zajištěno bezpečné předkládání a vyřizování žákovských podnětů?",
+        "Jak často žáci během výuky dostávají úkoly podle své úrovně a jak probíhá pravidelná zpětná vazba?"
+      ],
+      "who_school_fits": [
+        "Uchazeči, kteří chtějí studovat elektrotechnické obory s důrazem na praktické dovednosti.",
+        "Žáci, kterým vyhovují odborné učebny, laboratoře, dílny a výuka na smluvních pracovištích.",
+        "Žáci, kteří mají zájem o elektrotechniku, energetiku, mechatroniku nebo technické obory."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče žáků, kterým záleží na bezpečném a respektujícím přístupu pedagogů.",
+        "Rodiče žáků s podpůrnými opatřeními, kteří potřebují pravidelnou individualizaci výuky.",
+        "Rodiče žáků, kteří mají aktuálně problém s absencí, neprospěchem nebo nejasným hodnocením."
+      ],
+      "plain_czech_summary": "Škola má velmi dobré technické zázemí, kvalitní praktickou výuku a silné partnerství se zaměstnavateli. Výuka je většinou dobře připravená a propojuje teorii s praxí. Rodičům však pozor doporučuji na výrazný pokles studijní úspěšnosti, zvýšenou absenci a slabší školní klima. Žáci popisovali nevhodné jednání některých pedagogů a obavy z posuzování podnětů. Ve výuce se podle inspekce také málo rozvíjelo kritické myšlení, samostatnost, spolupráce a práce podle individuálních potřeb. Důležité proto bude zeptat se, jak škola tyto problémy konkrétně řeší."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Neúspěšnost u maturitních zkoušek se mírně snížila, přesto zůstává významná.",
+        "key_numbers": [
+          "Rok 2024: z 96 žáků neprosvalo 18, tedy 18,8 %.",
+          "Rok 2025: z 84 žáků neprosvalo 13, tedy 15,5 %.",
+          "Rok 2025: z 84 žáků prospělo s vyznamenáním 10."
+        ],
+        "evidence": "„V roce 2024 … neprospělo 18 žáků (tj. 18,8 %). V roce 2025 … neprospělo 13 žáků (tj. 15,5 %).“"
+      },
+      "absence": {
+        "trend": "Absence na jednoho žáka vzrostla, neomluvená absence se zvýšila o čtyři procenta.",
+        "key_numbers": [
+          "Ve druhém pololetí 2024/2025 připadalo na žáka 45 hodin absence v teoretickém vyučování.",
+          "Neomluvená absence ve druhém pololetí 2024/2025 činila 1,0 hodiny na žáka.",
+          "V prvním pololetí 2025/2026 se absence zvýšila o 3 % a neomluvená o 4 %."
+        ],
+        "evidence": "„Absence přepočtená na jednoho žáka … zvýšila o 3 % a neomluvená o 4 %.“"
+      },
+      "support_services": [
+        "Škola poskytuje odborné poradenské služby prostřednictvím specializovaných pedagogických pracovníků.",
+        "Výchovná poradkyně podporuje žáky se speciálními vzdělávacími potřebami a poskytuje metodickou podporu pedagogům.",
+        "Škola nabízí doučování a individuální konzultace ze všech vyučovacích předmětů."
+      ],
+      "safety_climate": [
+        "Žáci jsou pravidelně poučováni o bezpečnosti, ochraně zdraví a požární prevenci.",
+        "Při praktickém vyučování dostávají pracovní oděv a osobní ochranné pracovní prostředky.",
+        "Dotazníkové šetření odhalilo nedostatky v respektující komunikaci a v subjektivním pocitu bezpečí."
+      ],
+      "partnerships_practice": [
+        "Škola je partnerskou školou skupiny ČEZ a pilotní školou Svazu energetiky České republiky.",
+        "Partnerství podporuje odborné praxe, stáže, exkurze a autentickou zkušenost z reálného pracovního prostředí.",
+        "Škola je zapojena do skupiny ČEZ a pravidelně zve studenty k exkurzím a aktivitám."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, krátké věty a jasně odděluje ověřená zjištění od doporučení pro rodiče.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní výsledky podpůrných opatření u jednotlivých žáků.",
+        "Zpráva neuvádí přesnou míru dopadu doporučovaných změn na výsledky.",
+        "Doporučení „vhodné pro rodiče“ vychází z inspekčních zjištění, nikoli ze zkušeností s konkrétním uchazečem."
+      ]
+    }
+  }
+}

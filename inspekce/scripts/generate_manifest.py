@@ -40,6 +40,22 @@ def main():
     with csi_path.open("r", encoding="utf-8") as f:
         csi_data = json.load(f)
 
+    # Manifest jen přibývá: zprávy z dosavadního manifestu zůstávají se svým report_id i po posunu
+    # pětileté hranice nebo po zmizení ze seznamu ČŠI, jinak by jejich shrnutí z webu vypadla.
+    output_path = root / args.output
+    dosavadni = json.loads(output_path.read_text(encoding="utf-8"))["reports"] if output_path.exists() else []
+    dosavadni_podle_klice = {(r["redizo"], r["inspection_from"]): r for r in dosavadni}
+
+    # Zpráva už stažená nebo zpracovaná pod jiným typem školy (typ se v datech mění, např. SOS -> NAS)
+    # si nechá svůj report_id, jinak by se stahovala a zpracovala znovu pod jiným jménem.
+    existujici = {k: r["report_id"] for k, r in dosavadni_podle_klice.items()}
+    for slozka in [root / "data" / "reports", *sorted((root / "data" / "outputs").glob("*"))]:
+        for f in slozka.glob("*_*_*.*"):
+            if f.suffix not in (".pdf", ".json"):
+                continue
+            casti = f.stem.split("_")
+            existujici.setdefault((casti[-2], casti[-1]), f.stem)
+
     cutoff = datetime(datetime.now().year - args.max_age_years, datetime.now().month, datetime.now().day)
     reports = []
 
@@ -53,10 +69,12 @@ def main():
                 d = datetime.fromisoformat(date_str.split(".")[0])
             except (ValueError, IndexError):
                 continue
+            date_from = d.strftime("%Y-%m-%d")
+            if (redizo, date_from) in dosavadni_podle_klice:
+                continue  # převezme se níže beze změny
             if d < cutoff:
                 continue
 
-            date_from = d.strftime("%Y-%m-%d")
             date_to_str = insp.get("dateTo", "")
             try:
                 date_to = datetime.fromisoformat(date_to_str.split(".")[0]).strftime("%Y-%m-%d")
@@ -66,7 +84,7 @@ def main():
             school_type = info["typ"]
             name = info.get("nazev_display") or info.get("nazev") or school.get("jmeno", "")
             city = info.get("obec", "")
-            report_id = f"{school_type}_{redizo}_{date_from}"
+            report_id = existujici.get((redizo, date_from), f"{school_type}_{redizo}_{date_from}")
 
             reports.append({
                 "report_id": report_id,
@@ -81,9 +99,9 @@ def main():
                 "text_file": f"{report_id}.txt",
             })
 
+    reports.extend(dosavadni)
     reports.sort(key=lambda r: r["inspection_from"], reverse=True)
 
-    output_path = root / args.output
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
         json.dumps({"reports": reports}, ensure_ascii=False, indent=2),

@@ -1,6 +1,1038 @@
 {
   "reports": [
     {
+      "report_id": "LYC_600014452_2026-05-26",
+      "pdf_file": "LYC_600014452_2026-05-26.pdf",
+      "text_file": "LYC_600014452_2026-05-26.txt",
+      "word_count": 2398
+    },
+    {
+      "report_id": "GY4_691018146_2026-05-26",
+      "pdf_file": "GY4_691018146_2026-05-26.pdf",
+      "text_file": "GY4_691018146_2026-05-26.txt",
+      "word_count": 2956
+    },
+    {
+      "report_id": "GY8_600005895_2026-05-18",
+      "pdf_file": "GY8_600005895_2026-05-18.pdf",
+      "text_file": "GY8_600005895_2026-05-18.txt",
+      "word_count": 3179
+    },
+    {
+      "report_id": "GY4_691017972_2026-05-18",
+      "pdf_file": "GY4_691017972_2026-05-18.pdf",
+      "text_file": "GY4_691017972_2026-05-18.txt",
+      "word_count": 2480
+    },
+    {
+      "report_id": "GY4_600014746_2026-05-12",
+      "pdf_file": "GY4_600014746_2026-05-12.pdf",
+      "text_file": "GY4_600014746_2026-05-12.txt",
+      "word_count": 2218
+    },
+    {
+      "report_id": "GY4_691018774_2026-05-12",
+      "pdf_file": "GY4_691018774_2026-05-12.pdf",
+      "text_file": "GY4_691018774_2026-05-12.txt",
+      "word_count": 2593
+    },
+    {
+      "report_id": "LYC_691006474_2026-05-11",
+      "pdf_file": "LYC_691006474_2026-05-11.pdf",
+      "text_file": "LYC_691006474_2026-05-11.txt",
+      "word_count": 2907
+    },
+    {
+      "report_id": "SOS_600007669_2026-05-05",
+      "pdf_file": "SOS_600007669_2026-05-05.pdf",
+      "text_file": "SOS_600007669_2026-05-05.txt",
+      "word_count": 2832
+    },
+    {
+      "report_id": "GY4_600012751_2026-05-05",
+      "pdf_file": "GY4_600012751_2026-05-05.pdf",
+      "text_file": "GY4_600012751_2026-05-05.txt",
+      "word_count": 2966
+    },
+    {
+      "report_id": "LYC_691018197_2026-05-05",
+      "pdf_file": "LYC_691018197_2026-05-05.pdf",
+      "text_file": "LYC_691018197_2026-05-05.txt",
+      "word_count": 2665
+    },
+    {
+      "report_id": "NAS_600016846_2026-05-04",
+      "pdf_file": "NAS_600016846_2026-05-04.pdf",
+      "text_file": "NAS_600016846_2026-05-04.txt",
+      "word_count": 3671
+    },
+    {
+      "report_id": "LYC_691018634_2026-05-04",
+      "pdf_file": "LYC_691018634_2026-05-04.pdf",
+      "text_file": "LYC_691018634_2026-05-04.txt",
+      "word_count": 2389
+    },
+    {
+      "report_id": "SOS_600007499_2026-04-24",
+      "pdf_file": "SOS_600007499_2026-04-24.pdf",
+      "text_file": "SOS_600007499_2026-04-24.txt",
+      "word_count": 3051
+    },
+    {
+      "report_id": "GY4_600011054_2026-04-24",
+      "pdf_file": "GY4_600011054_2026-04-24.pdf",
+      "text_file": "GY4_600011054_2026-04-24.txt",
+      "word_count": 2788
+    },
+    {
+      "report_id": "SOS_600017567_2026-04-23",
+      "pdf_file": "SOS_600017567_2026-04-23.pdf",
+      "text_file": "SOS_600017567_2026-04-23.txt",
+      "word_count": 2697
+    },
+    {
+      "report_id": "SOS_600018202_2026-04-23",
+      "pdf_file": "SOS_600018202_2026-04-23.pdf",
+      "text_file": "SOS_600018202_2026-04-23.txt",
+      "word_count": 3622
+    },
+    {
+      "report_id": "NAS_600008754_2026-04-21",
+      "pdf_file": "NAS_600008754_2026-04-21.pdf",
+      "text_file": "NAS_600008754_2026-04-21.txt",
+      "word_count": 2636
+    },
+    {
+      "report_id": "GY4_600005721_2026-04-20",
+      "pdf_file": "GY4_600005721_2026-04-20.pdf",
+      "text_file": "GY4_600005721_2026-04-20.txt",
+      "word_count": 3233
+    },
+    {
+      "report_id": "LYC_600006697_2026-04-20",
+      "pdf_file": "LYC_600006697_2026-04-20.pdf",
+      "text_file": "LYC_600006697_2026-04-20.txt",
+      "word_count": 3570
+    },
+    {
+      "report_id": "GY6_600017591_2026-04-20",
+      "pdf_file": "GY6_600017591_2026-04-20.pdf",
+      "text_file": "GY6_600017591_2026-04-20.txt",
+      "word_count": 2781
+    },
+    {
+      "report_id": "SOU_600018334_2026-04-20",
+      "pdf_file": "SOU_600018334_2026-04-20.pdf",
+      "text_file": "SOU_600018334_2026-04-20.txt",
+      "word_count": 3838
+    },
+    {
+      "report_id": "GY8_600012557_2026-04-16",
+      "pdf_file": "GY8_600012557_2026-04-16.pdf",
+      "text_file": "GY8_600012557_2026-04-16.txt",
+      "word_count": 3339
+    },
+    {
+      "report_id": "SOU_600170993_2026-04-15",
+      "pdf_file": "SOU_600170993_2026-04-15.pdf",
+      "text_file": "SOU_600170993_2026-04-15.txt",
+      "word_count": 14966
+    },
+    {
+      "report_id": "LYC_600013278_2026-04-14",
+      "pdf_file": "LYC_600013278_2026-04-14.pdf",
+      "text_file": "LYC_600013278_2026-04-14.txt",
+      "word_count": 4894
+    },
+    {
+      "report_id": "SOS_600017460_2026-04-14",
+      "pdf_file": "SOS_600017460_2026-04-14.pdf",
+      "text_file": "SOS_600017460_2026-04-14.txt",
+      "word_count": 2794
+    },
+    {
+      "report_id": "LYC_600019993_2026-04-14",
+      "pdf_file": "LYC_600019993_2026-04-14.pdf",
+      "text_file": "LYC_600019993_2026-04-14.txt",
+      "word_count": 2380
+    },
+    {
+      "report_id": "LYC_600009084_2026-04-13",
+      "pdf_file": "LYC_600009084_2026-04-13.pdf",
+      "text_file": "LYC_600009084_2026-04-13.txt",
+      "word_count": 4271
+    },
+    {
+      "report_id": "LYC_691003807_2026-04-10",
+      "pdf_file": "LYC_691003807_2026-04-10.pdf",
+      "text_file": "LYC_691003807_2026-04-10.txt",
+      "word_count": 3253
+    },
+    {
+      "report_id": "GY4_691008426_2026-04-09",
+      "pdf_file": "GY4_691008426_2026-04-09.pdf",
+      "text_file": "GY4_691008426_2026-04-09.txt",
+      "word_count": 18542
+    },
+    {
+      "report_id": "LYC_600007839_2026-04-07",
+      "pdf_file": "LYC_600007839_2026-04-07.pdf",
+      "text_file": "LYC_600007839_2026-04-07.txt",
+      "word_count": 3297
+    },
+    {
+      "report_id": "SOS_600010228_2026-04-07",
+      "pdf_file": "SOS_600010228_2026-04-07.pdf",
+      "text_file": "SOS_600010228_2026-04-07.txt",
+      "word_count": 3241
+    },
+    {
+      "report_id": "GY8_600012638_2026-04-07",
+      "pdf_file": "GY8_600012638_2026-04-07.pdf",
+      "text_file": "GY8_600012638_2026-04-07.txt",
+      "word_count": 3082
+    },
+    {
+      "report_id": "GY8_600014941_2026-04-07",
+      "pdf_file": "GY8_600014941_2026-04-07.pdf",
+      "text_file": "GY8_600014941_2026-04-07.txt",
+      "word_count": 2887
+    },
+    {
+      "report_id": "LYC_600015971_2026-04-07",
+      "pdf_file": "LYC_600015971_2026-04-07.pdf",
+      "text_file": "LYC_600015971_2026-04-07.txt",
+      "word_count": 2617
+    },
+    {
+      "report_id": "LYC_600017737_2026-04-07",
+      "pdf_file": "LYC_600017737_2026-04-07.pdf",
+      "text_file": "LYC_600017737_2026-04-07.txt",
+      "word_count": 2729
+    },
+    {
+      "report_id": "NAS_600171205_2026-04-07",
+      "pdf_file": "NAS_600171205_2026-04-07.pdf",
+      "text_file": "NAS_600171205_2026-04-07.txt",
+      "word_count": 2842
+    },
+    {
+      "report_id": "SOS_691012415_2026-04-07",
+      "pdf_file": "SOS_691012415_2026-04-07.pdf",
+      "text_file": "SOS_691012415_2026-04-07.txt",
+      "word_count": 3862
+    },
+    {
+      "report_id": "NAS_600013979_2026-03-30",
+      "pdf_file": "NAS_600013979_2026-03-30.pdf",
+      "text_file": "NAS_600013979_2026-03-30.txt",
+      "word_count": 1978
+    },
+    {
+      "report_id": "NAS_600016854_2026-03-26",
+      "pdf_file": "NAS_600016854_2026-03-26.pdf",
+      "text_file": "NAS_600016854_2026-03-26.txt",
+      "word_count": 3467
+    },
+    {
+      "report_id": "SOS_600020797_2026-03-25",
+      "pdf_file": "SOS_600020797_2026-03-25.pdf",
+      "text_file": "SOS_600020797_2026-03-25.txt",
+      "word_count": 3590
+    },
+    {
+      "report_id": "LYC_651040001_2026-03-25",
+      "pdf_file": "LYC_651040001_2026-03-25.pdf",
+      "text_file": "LYC_651040001_2026-03-25.txt",
+      "word_count": 3696
+    },
+    {
+      "report_id": "GY4_600006930_2026-03-24",
+      "pdf_file": "GY4_600006930_2026-03-24.pdf",
+      "text_file": "GY4_600006930_2026-03-24.txt",
+      "word_count": 4384
+    },
+    {
+      "report_id": "SOS_600017931_2026-03-24",
+      "pdf_file": "SOS_600017931_2026-03-24.pdf",
+      "text_file": "SOS_600017931_2026-03-24.txt",
+      "word_count": 4111
+    },
+    {
+      "report_id": "SOS_600026957_2026-03-24",
+      "pdf_file": "SOS_600026957_2026-03-24.pdf",
+      "text_file": "SOS_600026957_2026-03-24.txt",
+      "word_count": 3704
+    },
+    {
+      "report_id": "SOS_600171167_2026-03-24",
+      "pdf_file": "SOS_600171167_2026-03-24.pdf",
+      "text_file": "SOS_600171167_2026-03-24.txt",
+      "word_count": 3509
+    },
+    {
+      "report_id": "NAS_600005640_2026-03-23",
+      "pdf_file": "NAS_600005640_2026-03-23.pdf",
+      "text_file": "NAS_600005640_2026-03-23.txt",
+      "word_count": 4314
+    },
+    {
+      "report_id": "GY8_600008291_2026-03-23",
+      "pdf_file": "GY8_600008291_2026-03-23.pdf",
+      "text_file": "GY8_600008291_2026-03-23.txt",
+      "word_count": 2133
+    },
+    {
+      "report_id": "NAS_600170896_2026-03-23",
+      "pdf_file": "NAS_600170896_2026-03-23.pdf",
+      "text_file": "NAS_600170896_2026-03-23.txt",
+      "word_count": 3837
+    },
+    {
+      "report_id": "SOS_600012450_2026-03-23",
+      "pdf_file": "SOS_600012450_2026-03-23.pdf",
+      "text_file": "SOS_600012450_2026-03-23.txt",
+      "word_count": 3262
+    },
+    {
+      "report_id": "LYC_600015459_2026-03-19",
+      "pdf_file": "LYC_600015459_2026-03-19.pdf",
+      "text_file": "LYC_600015459_2026-03-19.txt",
+      "word_count": 3480
+    },
+    {
+      "report_id": "GY4_691000212_2026-03-18",
+      "pdf_file": "GY4_691000212_2026-03-18.pdf",
+      "text_file": "GY4_691000212_2026-03-18.txt",
+      "word_count": 3538
+    },
+    {
+      "report_id": "SOS_600010040_2026-03-17",
+      "pdf_file": "SOS_600010040_2026-03-17.pdf",
+      "text_file": "SOS_600010040_2026-03-17.txt",
+      "word_count": 3111
+    },
+    {
+      "report_id": "GY8_600016188_2026-03-17",
+      "pdf_file": "GY8_600016188_2026-03-17.pdf",
+      "text_file": "GY8_600016188_2026-03-17.txt",
+      "word_count": 2816
+    },
+    {
+      "report_id": "SOS_610450671_2026-03-17",
+      "pdf_file": "SOS_610450671_2026-03-17.pdf",
+      "text_file": "SOS_610450671_2026-03-17.txt",
+      "word_count": 3655
+    },
+    {
+      "report_id": "SOS_651016029_2026-03-17",
+      "pdf_file": "SOS_651016029_2026-03-17.pdf",
+      "text_file": "SOS_651016029_2026-03-17.txt",
+      "word_count": 7221
+    },
+    {
+      "report_id": "GY6_600010287_2026-03-16",
+      "pdf_file": "GY6_600010287_2026-03-16.pdf",
+      "text_file": "GY6_600010287_2026-03-16.txt",
+      "word_count": 2464
+    },
+    {
+      "report_id": "GY8_600012891_2026-03-16",
+      "pdf_file": "GY8_600012891_2026-03-16.pdf",
+      "text_file": "GY8_600012891_2026-03-16.txt",
+      "word_count": 3627
+    },
+    {
+      "report_id": "GY4_600015904_2026-03-16",
+      "pdf_file": "GY4_600015904_2026-03-16.pdf",
+      "text_file": "GY4_600015904_2026-03-16.txt",
+      "word_count": 2542
+    },
+    {
+      "report_id": "SOS_600171213_2026-03-16",
+      "pdf_file": "SOS_600171213_2026-03-16.pdf",
+      "text_file": "SOS_600171213_2026-03-16.txt",
+      "word_count": 2942
+    },
+    {
+      "report_id": "SOS_600171337_2026-03-16",
+      "pdf_file": "SOS_600171337_2026-03-16.pdf",
+      "text_file": "SOS_600171337_2026-03-16.txt",
+      "word_count": 6061
+    },
+    {
+      "report_id": "SOS_600015548_2026-03-11",
+      "pdf_file": "SOS_600015548_2026-03-11.pdf",
+      "text_file": "SOS_600015548_2026-03-11.txt",
+      "word_count": 3351
+    },
+    {
+      "report_id": "SOU_600016510_2026-03-10",
+      "pdf_file": "SOU_600016510_2026-03-10.pdf",
+      "text_file": "SOU_600016510_2026-03-10.txt",
+      "word_count": 3137
+    },
+    {
+      "report_id": "SOS_600016579_2026-03-10",
+      "pdf_file": "SOS_600016579_2026-03-10.pdf",
+      "text_file": "SOS_600016579_2026-03-10.txt",
+      "word_count": 2678
+    },
+    {
+      "report_id": "SOS_600018342_2026-03-10",
+      "pdf_file": "SOS_600018342_2026-03-10.pdf",
+      "text_file": "SOS_600018342_2026-03-10.txt",
+      "word_count": 3666
+    },
+    {
+      "report_id": "LYC_600170349_2026-03-10",
+      "pdf_file": "LYC_600170349_2026-03-10.pdf",
+      "text_file": "LYC_600170349_2026-03-10.txt",
+      "word_count": 2485
+    },
+    {
+      "report_id": "SOU_600170501_2026-03-10",
+      "pdf_file": "SOU_600170501_2026-03-10.pdf",
+      "text_file": "SOU_600170501_2026-03-10.txt",
+      "word_count": 4478
+    },
+    {
+      "report_id": "SOS_691012440_2026-03-10",
+      "pdf_file": "SOS_691012440_2026-03-10.pdf",
+      "text_file": "SOS_691012440_2026-03-10.txt",
+      "word_count": 4282
+    },
+    {
+      "report_id": "GY4_600007464_2026-03-09",
+      "pdf_file": "GY4_600007464_2026-03-09.pdf",
+      "text_file": "GY4_600007464_2026-03-09.txt",
+      "word_count": 3624
+    },
+    {
+      "report_id": "GY8_600009262_2026-03-09",
+      "pdf_file": "GY8_600009262_2026-03-09.pdf",
+      "text_file": "GY8_600009262_2026-03-09.txt",
+      "word_count": 4707
+    },
+    {
+      "report_id": "LYC_600019748_2026-03-09",
+      "pdf_file": "LYC_600019748_2026-03-09.pdf",
+      "text_file": "LYC_600019748_2026-03-09.txt",
+      "word_count": 3749
+    },
+    {
+      "report_id": "GY4_600170080_2026-03-06",
+      "pdf_file": "GY4_600170080_2026-03-06.pdf",
+      "text_file": "GY4_600170080_2026-03-06.txt",
+      "word_count": 4861
+    },
+    {
+      "report_id": "LYC_600005836_2026-03-05",
+      "pdf_file": "LYC_600005836_2026-03-05.pdf",
+      "text_file": "LYC_600005836_2026-03-05.txt",
+      "word_count": 3437
+    },
+    {
+      "report_id": "SOS_600014029_2026-03-03",
+      "pdf_file": "SOS_600014029_2026-03-03.pdf",
+      "text_file": "SOS_600014029_2026-03-03.txt",
+      "word_count": 3619
+    },
+    {
+      "report_id": "LYC_600017176_2026-03-03",
+      "pdf_file": "LYC_600017176_2026-03-03.pdf",
+      "text_file": "LYC_600017176_2026-03-03.txt",
+      "word_count": 3734
+    },
+    {
+      "report_id": "SOS_600009335_2026-03-02",
+      "pdf_file": "SOS_600009335_2026-03-02.pdf",
+      "text_file": "SOS_600009335_2026-03-02.txt",
+      "word_count": 4091
+    },
+    {
+      "report_id": "SOS_600020380_2026-03-02",
+      "pdf_file": "SOS_600020380_2026-03-02.pdf",
+      "text_file": "SOS_600020380_2026-03-02.txt",
+      "word_count": 2840
+    },
+    {
+      "report_id": "GY6_600004961_2026-02-25",
+      "pdf_file": "GY6_600004961_2026-02-25.pdf",
+      "text_file": "GY6_600004961_2026-02-25.txt",
+      "word_count": 3306
+    },
+    {
+      "report_id": "LYC_600010678_2026-02-24",
+      "pdf_file": "LYC_600010678_2026-02-24.pdf",
+      "text_file": "LYC_600010678_2026-02-24.txt",
+      "word_count": 4340
+    },
+    {
+      "report_id": "GY6_600013260_2026-02-24",
+      "pdf_file": "GY6_600013260_2026-02-24.pdf",
+      "text_file": "GY6_600013260_2026-02-24.txt",
+      "word_count": 2801
+    },
+    {
+      "report_id": "LYC_600015815_2026-02-24",
+      "pdf_file": "LYC_600015815_2026-02-24.pdf",
+      "text_file": "LYC_600015815_2026-02-24.txt",
+      "word_count": 4453
+    },
+    {
+      "report_id": "NAS_600016145_2026-02-24",
+      "pdf_file": "NAS_600016145_2026-02-24.pdf",
+      "text_file": "NAS_600016145_2026-02-24.txt",
+      "word_count": 4121
+    },
+    {
+      "report_id": "SOS_600020207_2026-02-24",
+      "pdf_file": "SOS_600020207_2026-02-24.pdf",
+      "text_file": "SOS_600020207_2026-02-24.txt",
+      "word_count": 2770
+    },
+    {
+      "report_id": "SOS_600019942_2026-02-23",
+      "pdf_file": "SOS_600019942_2026-02-23.pdf",
+      "text_file": "SOS_600019942_2026-02-23.txt",
+      "word_count": 2953
+    },
+    {
+      "report_id": "SOS_600020070_2026-02-23",
+      "pdf_file": "SOS_600020070_2026-02-23.pdf",
+      "text_file": "SOS_600020070_2026-02-23.txt",
+      "word_count": 3826
+    },
+    {
+      "report_id": "LYC_600170292_2026-02-23",
+      "pdf_file": "LYC_600170292_2026-02-23.pdf",
+      "text_file": "LYC_600170292_2026-02-23.txt",
+      "word_count": 2590
+    },
+    {
+      "report_id": "SOS_600170454_2026-02-23",
+      "pdf_file": "SOS_600170454_2026-02-23.pdf",
+      "text_file": "SOS_600170454_2026-02-23.txt",
+      "word_count": 4512
+    },
+    {
+      "report_id": "SOS_600008711_2026-02-17",
+      "pdf_file": "SOS_600008711_2026-02-17.pdf",
+      "text_file": "SOS_600008711_2026-02-17.txt",
+      "word_count": 2180
+    },
+    {
+      "report_id": "NAS_600171302_2026-02-17",
+      "pdf_file": "NAS_600171302_2026-02-17.pdf",
+      "text_file": "NAS_600171302_2026-02-17.txt",
+      "word_count": 3138
+    },
+    {
+      "report_id": "SOS_600011119_2026-02-16",
+      "pdf_file": "SOS_600011119_2026-02-16.pdf",
+      "text_file": "SOS_600011119_2026-02-16.txt",
+      "word_count": 2958
+    },
+    {
+      "report_id": "SOS_610300580_2026-02-16",
+      "pdf_file": "SOS_610300580_2026-02-16.pdf",
+      "text_file": "SOS_610300580_2026-02-16.txt",
+      "word_count": 3140
+    },
+    {
+      "report_id": "GY8_600014363_2026-02-12",
+      "pdf_file": "GY8_600014363_2026-02-12.pdf",
+      "text_file": "GY8_600014363_2026-02-12.txt",
+      "word_count": 2934
+    },
+    {
+      "report_id": "GY8_600015866_2026-02-12",
+      "pdf_file": "GY8_600015866_2026-02-12.pdf",
+      "text_file": "GY8_600015866_2026-02-12.txt",
+      "word_count": 2298
+    },
+    {
+      "report_id": "GY8_600013235_2026-02-11",
+      "pdf_file": "GY8_600013235_2026-02-11.pdf",
+      "text_file": "GY8_600013235_2026-02-11.txt",
+      "word_count": 3338
+    },
+    {
+      "report_id": "SOS_600006239_2026-02-10",
+      "pdf_file": "SOS_600006239_2026-02-10.pdf",
+      "text_file": "SOS_600006239_2026-02-10.txt",
+      "word_count": 2912
+    },
+    {
+      "report_id": "LYC_600007171_2026-02-10",
+      "pdf_file": "LYC_600007171_2026-02-10.pdf",
+      "text_file": "LYC_600007171_2026-02-10.txt",
+      "word_count": 3693
+    },
+    {
+      "report_id": "SOS_600170918_2026-02-10",
+      "pdf_file": "SOS_600170918_2026-02-10.pdf",
+      "text_file": "SOS_600170918_2026-02-10.txt",
+      "word_count": 3343
+    },
+    {
+      "report_id": "SOS_651017459_2026-02-10",
+      "pdf_file": "SOS_651017459_2026-02-10.pdf",
+      "text_file": "SOS_651017459_2026-02-10.txt",
+      "word_count": 3512
+    },
+    {
+      "report_id": "GY8_600009637_2026-02-09",
+      "pdf_file": "GY8_600009637_2026-02-09.pdf",
+      "text_file": "GY8_600009637_2026-02-09.txt",
+      "word_count": 4040
+    },
+    {
+      "report_id": "SOS_600010767_2026-02-09",
+      "pdf_file": "SOS_600010767_2026-02-09.pdf",
+      "text_file": "SOS_600010767_2026-02-09.txt",
+      "word_count": 3072
+    },
+    {
+      "report_id": "LYC_600170233_2026-02-09",
+      "pdf_file": "LYC_600170233_2026-02-09.pdf",
+      "text_file": "LYC_600170233_2026-02-09.txt",
+      "word_count": 3928
+    },
+    {
+      "report_id": "SOS_600010422_2026-02-04",
+      "pdf_file": "SOS_600010422_2026-02-04.pdf",
+      "text_file": "SOS_600010422_2026-02-04.txt",
+      "word_count": 3627
+    },
+    {
+      "report_id": "SOU_600012824_2026-02-04",
+      "pdf_file": "SOU_600012824_2026-02-04.pdf",
+      "text_file": "SOU_600012824_2026-02-04.txt",
+      "word_count": 2852
+    },
+    {
+      "report_id": "SOS_600014517_2026-02-04",
+      "pdf_file": "SOS_600014517_2026-02-04.pdf",
+      "text_file": "SOS_600014517_2026-02-04.txt",
+      "word_count": 3014
+    },
+    {
+      "report_id": "LYC_600006298_2026-02-03",
+      "pdf_file": "LYC_600006298_2026-02-03.pdf",
+      "text_file": "LYC_600006298_2026-02-03.txt",
+      "word_count": 3918
+    },
+    {
+      "report_id": "LYC_600014231_2026-02-03",
+      "pdf_file": "LYC_600014231_2026-02-03.pdf",
+      "text_file": "LYC_600014231_2026-02-03.txt",
+      "word_count": 4171
+    },
+    {
+      "report_id": "SOS_600016676_2026-02-03",
+      "pdf_file": "SOS_600016676_2026-02-03.pdf",
+      "text_file": "SOS_600016676_2026-02-03.txt",
+      "word_count": 2767
+    },
+    {
+      "report_id": "LYC_651040060_2026-02-03",
+      "pdf_file": "LYC_651040060_2026-02-03.pdf",
+      "text_file": "LYC_651040060_2026-02-03.txt",
+      "word_count": 3959
+    },
+    {
+      "report_id": "SOU_600007294_2026-02-02",
+      "pdf_file": "SOU_600007294_2026-02-02.pdf",
+      "text_file": "SOU_600007294_2026-02-02.txt",
+      "word_count": 1572
+    },
+    {
+      "report_id": "GY6_600008819_2026-01-27",
+      "pdf_file": "GY6_600008819_2026-01-27.pdf",
+      "text_file": "GY6_600008819_2026-01-27.txt",
+      "word_count": 1980
+    },
+    {
+      "report_id": "SOS_600015173_2026-01-27",
+      "pdf_file": "SOS_600015173_2026-01-27.pdf",
+      "text_file": "SOS_600015173_2026-01-27.txt",
+      "word_count": 3164
+    },
+    {
+      "report_id": "GY4_610100718_2026-01-27",
+      "pdf_file": "GY4_610100718_2026-01-27.pdf",
+      "text_file": "GY4_610100718_2026-01-27.txt",
+      "word_count": 4237
+    },
+    {
+      "report_id": "LYC_600004864_2026-01-22",
+      "pdf_file": "LYC_600004864_2026-01-22.pdf",
+      "text_file": "LYC_600004864_2026-01-22.txt",
+      "word_count": 3879
+    },
+    {
+      "report_id": "SOS_600171078_2026-01-22",
+      "pdf_file": "SOS_600171078_2026-01-22.pdf",
+      "text_file": "SOS_600171078_2026-01-22.txt",
+      "word_count": 3690
+    },
+    {
+      "report_id": "NAS_600014908_2026-01-22",
+      "pdf_file": "NAS_600014908_2026-01-22.pdf",
+      "text_file": "NAS_600014908_2026-01-22.txt",
+      "word_count": 2686
+    },
+    {
+      "report_id": "GY8_600007413_2026-01-21",
+      "pdf_file": "GY8_600007413_2026-01-21.pdf",
+      "text_file": "GY8_600007413_2026-01-21.txt",
+      "word_count": 3252
+    },
+    {
+      "report_id": "GY8_600015785_2026-01-21",
+      "pdf_file": "GY8_600015785_2026-01-21.pdf",
+      "text_file": "GY8_600015785_2026-01-21.txt",
+      "word_count": 3608
+    },
+    {
+      "report_id": "SOS_600006051_2026-01-20",
+      "pdf_file": "SOS_600006051_2026-01-20.pdf",
+      "text_file": "SOS_600006051_2026-01-20.txt",
+      "word_count": 4336
+    },
+    {
+      "report_id": "LYC_600010759_2026-01-20",
+      "pdf_file": "LYC_600010759_2026-01-20.pdf",
+      "text_file": "LYC_600010759_2026-01-20.txt",
+      "word_count": 3205
+    },
+    {
+      "report_id": "GY6_600011666_2026-01-20",
+      "pdf_file": "GY6_600011666_2026-01-20.pdf",
+      "text_file": "GY6_600011666_2026-01-20.txt",
+      "word_count": 2611
+    },
+    {
+      "report_id": "LYC_600017346_2026-01-20",
+      "pdf_file": "LYC_600017346_2026-01-20.pdf",
+      "text_file": "LYC_600017346_2026-01-20.txt",
+      "word_count": 3243
+    },
+    {
+      "report_id": "SOS_600010490_2026-01-19",
+      "pdf_file": "SOS_600010490_2026-01-19.pdf",
+      "text_file": "SOS_600010490_2026-01-19.txt",
+      "word_count": 3399
+    },
+    {
+      "report_id": "GY8_600012786_2026-01-19",
+      "pdf_file": "GY8_600012786_2026-01-19.pdf",
+      "text_file": "GY8_600012786_2026-01-19.txt",
+      "word_count": 3006
+    },
+    {
+      "report_id": "SOU_600171299_2026-01-19",
+      "pdf_file": "SOU_600171299_2026-01-19.pdf",
+      "text_file": "SOU_600171299_2026-01-19.txt",
+      "word_count": 3358
+    },
+    {
+      "report_id": "SOS_600009467_2026-01-15",
+      "pdf_file": "SOS_600009467_2026-01-15.pdf",
+      "text_file": "SOS_600009467_2026-01-15.txt",
+      "word_count": 4264
+    },
+    {
+      "report_id": "LYC_600018041_2026-01-15",
+      "pdf_file": "LYC_600018041_2026-01-15.pdf",
+      "text_file": "LYC_600018041_2026-01-15.txt",
+      "word_count": 2910
+    },
+    {
+      "report_id": "LYC_691009724_2026-01-15",
+      "pdf_file": "LYC_691009724_2026-01-15.pdf",
+      "text_file": "LYC_691009724_2026-01-15.txt",
+      "word_count": 3584
+    },
+    {
+      "report_id": "SOS_600013774_2026-01-14",
+      "pdf_file": "SOS_600013774_2026-01-14.pdf",
+      "text_file": "SOS_600013774_2026-01-14.txt",
+      "word_count": 3332
+    },
+    {
+      "report_id": "LYC_691000735_2026-01-14",
+      "pdf_file": "LYC_691000735_2026-01-14.pdf",
+      "text_file": "LYC_691000735_2026-01-14.txt",
+      "word_count": 5530
+    },
+    {
+      "report_id": "SOS_600005071_2026-01-13",
+      "pdf_file": "SOS_600005071_2026-01-13.pdf",
+      "text_file": "SOS_600005071_2026-01-13.txt",
+      "word_count": 3515
+    },
+    {
+      "report_id": "SOS_600010171_2026-01-13",
+      "pdf_file": "SOS_600010171_2026-01-13.pdf",
+      "text_file": "SOS_600010171_2026-01-13.txt",
+      "word_count": 3174
+    },
+    {
+      "report_id": "GY8_600016064_2026-01-13",
+      "pdf_file": "GY8_600016064_2026-01-13.pdf",
+      "text_file": "GY8_600016064_2026-01-13.txt",
+      "word_count": 2190
+    },
+    {
+      "report_id": "LYC_600170438_2026-01-13",
+      "pdf_file": "LYC_600170438_2026-01-13.pdf",
+      "text_file": "LYC_600170438_2026-01-13.txt",
+      "word_count": 3330
+    },
+    {
+      "report_id": "SOS_600171256_2026-01-13",
+      "pdf_file": "SOS_600171256_2026-01-13.pdf",
+      "text_file": "SOS_600171256_2026-01-13.txt",
+      "word_count": 3335
+    },
+    {
+      "report_id": "SOS_600009319_2026-01-12",
+      "pdf_file": "SOS_600009319_2026-01-12.pdf",
+      "text_file": "SOS_600009319_2026-01-12.txt",
+      "word_count": 5084
+    },
+    {
+      "report_id": "SOU_600015092_2026-01-12",
+      "pdf_file": "SOU_600015092_2026-01-12.pdf",
+      "text_file": "SOU_600015092_2026-01-12.txt",
+      "word_count": 3819
+    },
+    {
+      "report_id": "LYC_600015360_2026-01-12",
+      "pdf_file": "LYC_600015360_2026-01-12.pdf",
+      "text_file": "LYC_600015360_2026-01-12.txt",
+      "word_count": 2547
+    },
+    {
+      "report_id": "SOS_600011747_2026-01-12",
+      "pdf_file": "SOS_600011747_2026-01-12.pdf",
+      "text_file": "SOS_600011747_2026-01-12.txt",
+      "word_count": 0
+    },
+    {
+      "report_id": "SOU_600009858_2026-01-08",
+      "pdf_file": "SOU_600009858_2026-01-08.pdf",
+      "text_file": "SOU_600009858_2026-01-08.txt",
+      "word_count": 5127
+    },
+    {
+      "report_id": "LYC_600013880_2026-01-07",
+      "pdf_file": "LYC_600013880_2026-01-07.pdf",
+      "text_file": "LYC_600013880_2026-01-07.txt",
+      "word_count": 4147
+    },
+    {
+      "report_id": "LYC_600013910_2026-01-07",
+      "pdf_file": "LYC_600013910_2026-01-07.pdf",
+      "text_file": "LYC_600013910_2026-01-07.txt",
+      "word_count": 3657
+    },
+    {
+      "report_id": "SOS_600017028_2026-01-07",
+      "pdf_file": "SOS_600017028_2026-01-07.pdf",
+      "text_file": "SOS_600017028_2026-01-07.txt",
+      "word_count": 3259
+    },
+    {
+      "report_id": "SOS_600007472_2026-01-06",
+      "pdf_file": "SOS_600007472_2026-01-06.pdf",
+      "text_file": "SOS_600007472_2026-01-06.txt",
+      "word_count": 2759
+    },
+    {
+      "report_id": "NAS_600015611_2026-01-06",
+      "pdf_file": "NAS_600015611_2026-01-06.pdf",
+      "text_file": "NAS_600015611_2026-01-06.txt",
+      "word_count": 3161
+    },
+    {
+      "report_id": "LYC_600019802_2026-01-06",
+      "pdf_file": "LYC_600019802_2026-01-06.pdf",
+      "text_file": "LYC_600019802_2026-01-06.txt",
+      "word_count": 3809
+    },
+    {
+      "report_id": "GY8_600013413_2025-12-10",
+      "pdf_file": "GY8_600013413_2025-12-10.pdf",
+      "text_file": "GY8_600013413_2025-12-10.txt",
+      "word_count": 3067
+    },
+    {
+      "report_id": "SOS_600018181_2025-12-10",
+      "pdf_file": "SOS_600018181_2025-12-10.pdf",
+      "text_file": "SOS_600018181_2025-12-10.txt",
+      "word_count": 2921
+    },
+    {
+      "report_id": "SOU_691018839_2025-12-10",
+      "pdf_file": "SOU_691018839_2025-12-10.pdf",
+      "text_file": "SOU_691018839_2025-12-10.txt",
+      "word_count": 1885
+    },
+    {
+      "report_id": "GY8_600005054_2025-12-09",
+      "pdf_file": "GY8_600005054_2025-12-09.pdf",
+      "text_file": "GY8_600005054_2025-12-09.txt",
+      "word_count": 3412
+    },
+    {
+      "report_id": "SOU_600017087_2025-12-09",
+      "pdf_file": "SOU_600017087_2025-12-09.pdf",
+      "text_file": "SOU_600017087_2025-12-09.txt",
+      "word_count": 3332
+    },
+    {
+      "report_id": "NAS_600170306_2025-12-09",
+      "pdf_file": "NAS_600170306_2025-12-09.pdf",
+      "text_file": "NAS_600170306_2025-12-09.txt",
+      "word_count": 2800
+    },
+    {
+      "report_id": "LYC_610451049_2025-12-09",
+      "pdf_file": "LYC_610451049_2025-12-09.pdf",
+      "text_file": "LYC_610451049_2025-12-09.txt",
+      "word_count": 3210
+    },
+    {
+      "report_id": "SOS_600005976_2025-12-08",
+      "pdf_file": "SOS_600005976_2025-12-08.pdf",
+      "text_file": "SOS_600005976_2025-12-08.txt",
+      "word_count": 3154
+    },
+    {
+      "report_id": "SOS_600011984_2025-12-08",
+      "pdf_file": "SOS_600011984_2025-12-08.pdf",
+      "text_file": "SOS_600011984_2025-12-08.txt",
+      "word_count": 2847
+    },
+    {
+      "report_id": "LYC_600019527_2025-12-08",
+      "pdf_file": "LYC_600019527_2025-12-08.pdf",
+      "text_file": "LYC_600019527_2025-12-08.txt",
+      "word_count": 3277
+    },
+    {
+      "report_id": "SOU_600017419_2025-12-04",
+      "pdf_file": "SOU_600017419_2025-12-04.pdf",
+      "text_file": "SOU_600017419_2025-12-04.txt",
+      "word_count": 3108
+    },
+    {
+      "report_id": "LYC_600011011_2025-12-03",
+      "pdf_file": "LYC_600011011_2025-12-03.pdf",
+      "text_file": "LYC_600011011_2025-12-03.txt",
+      "word_count": 3151
+    },
+    {
+      "report_id": "SOS_600014665_2025-12-03",
+      "pdf_file": "SOS_600014665_2025-12-03.pdf",
+      "text_file": "SOS_600014665_2025-12-03.txt",
+      "word_count": 3225
+    },
+    {
+      "report_id": "SOS_600027210_2025-12-03",
+      "pdf_file": "SOS_600027210_2025-12-03.pdf",
+      "text_file": "SOS_600027210_2025-12-03.txt",
+      "word_count": 5372
+    },
+    {
+      "report_id": "SOS_651014271_2025-12-02",
+      "pdf_file": "SOS_651014271_2025-12-02.pdf",
+      "text_file": "SOS_651014271_2025-12-02.txt",
+      "word_count": 3664
+    },
+    {
+      "report_id": "GY4_691012164_2025-12-02",
+      "pdf_file": "GY4_691012164_2025-12-02.pdf",
+      "text_file": "GY4_691012164_2025-12-02.txt",
+      "word_count": 3891
+    },
+    {
+      "report_id": "SOS_600006409_2025-12-01",
+      "pdf_file": "SOS_600006409_2025-12-01.pdf",
+      "text_file": "SOS_600006409_2025-12-01.txt",
+      "word_count": 2677
+    },
+    {
+      "report_id": "LYC_600008193_2025-12-01",
+      "pdf_file": "LYC_600008193_2025-12-01.pdf",
+      "text_file": "LYC_600008193_2025-12-01.txt",
+      "word_count": 3282
+    },
+    {
+      "report_id": "LYC_600017257_2025-12-01",
+      "pdf_file": "LYC_600017257_2025-12-01.pdf",
+      "text_file": "LYC_600017257_2025-12-01.txt",
+      "word_count": 2528
+    },
+    {
+      "report_id": "SOU_600170772_2025-12-01",
+      "pdf_file": "SOU_600170772_2025-12-01.pdf",
+      "text_file": "SOU_600170772_2025-12-01.txt",
+      "word_count": 3381
+    },
+    {
+      "report_id": "LYC_600007561_2025-11-26",
+      "pdf_file": "LYC_600007561_2025-11-26.pdf",
+      "text_file": "LYC_600007561_2025-11-26.txt",
+      "word_count": 2927
+    },
+    {
+      "report_id": "SOU_600005381_2025-11-25",
+      "pdf_file": "SOU_600005381_2025-11-25.pdf",
+      "text_file": "SOU_600005381_2025-11-25.txt",
+      "word_count": 4573
+    },
+    {
+      "report_id": "SOU_600011291_2025-11-25",
+      "pdf_file": "SOU_600011291_2025-11-25.pdf",
+      "text_file": "SOU_600011291_2025-11-25.txt",
+      "word_count": 3769
+    },
+    {
+      "report_id": "SOS_600012077_2025-11-25",
+      "pdf_file": "SOS_600012077_2025-11-25.pdf",
+      "text_file": "SOS_600012077_2025-11-25.txt",
+      "word_count": 3477
+    },
+    {
+      "report_id": "GY8_600012107_2025-11-25",
+      "pdf_file": "GY8_600012107_2025-11-25.pdf",
+      "text_file": "GY8_600012107_2025-11-25.txt",
+      "word_count": 3683
+    },
+    {
+      "report_id": "GY6_600017249_2025-11-25",
+      "pdf_file": "GY6_600017249_2025-11-25.pdf",
+      "text_file": "GY6_600017249_2025-11-25.txt",
+      "word_count": 2857
+    },
+    {
+      "report_id": "GY8_600009831_2025-11-24",
+      "pdf_file": "GY8_600009831_2025-11-24.pdf",
+      "text_file": "GY8_600009831_2025-11-24.txt",
+      "word_count": 4086
+    },
+    {
+      "report_id": "GY8_600016536_2025-11-24",
+      "pdf_file": "GY8_600016536_2025-11-24.pdf",
+      "text_file": "GY8_600016536_2025-11-24.txt",
+      "word_count": 2654
+    },
+    {
       "report_id": "GY8_600013481_2025-11-20",
       "pdf_file": "GY8_600013481_2025-11-20.pdf",
       "text_file": "GY8_600013481_2025-11-20.txt",
@@ -19,10 +1051,34 @@
       "word_count": 3692
     },
     {
+      "report_id": "SOS_600009564_2025-11-18",
+      "pdf_file": "SOS_600009564_2025-11-18.pdf",
+      "text_file": "SOS_600009564_2025-11-18.txt",
+      "word_count": 2975
+    },
+    {
+      "report_id": "GY4_600017265_2025-11-18",
+      "pdf_file": "GY4_600017265_2025-11-18.pdf",
+      "text_file": "GY4_600017265_2025-11-18.txt",
+      "word_count": 2402
+    },
+    {
+      "report_id": "SOS_600170527_2025-11-18",
+      "pdf_file": "SOS_600170527_2025-11-18.pdf",
+      "text_file": "SOS_600170527_2025-11-18.txt",
+      "word_count": 7688
+    },
+    {
       "report_id": "GY8_600007693_2025-11-14",
       "pdf_file": "GY8_600007693_2025-11-14.pdf",
       "text_file": "GY8_600007693_2025-11-14.txt",
       "word_count": 3087
+    },
+    {
+      "report_id": "SOS_600011046_2025-11-12",
+      "pdf_file": "SOS_600011046_2025-11-12.pdf",
+      "text_file": "SOS_600011046_2025-11-12.txt",
+      "word_count": 3083
     },
     {
       "report_id": "GY8_600015050_2025-11-12",
@@ -55,6 +1111,12 @@
       "word_count": 4770
     },
     {
+      "report_id": "SOS_600006026_2025-11-10",
+      "pdf_file": "SOS_600006026_2025-11-10.pdf",
+      "text_file": "SOS_600006026_2025-11-10.txt",
+      "word_count": 4425
+    },
+    {
       "report_id": "LYC_600007600_2025-11-06",
       "pdf_file": "LYC_600007600_2025-11-06.pdf",
       "text_file": "LYC_600007600_2025-11-06.txt",
@@ -85,9 +1147,9 @@
       "word_count": 3288
     },
     {
-      "report_id": "GY8_600012760_2025-11-03",
-      "pdf_file": "GY8_600012760_2025-11-03.pdf",
-      "text_file": "GY8_600012760_2025-11-03.txt",
+      "report_id": "LYC_600012760_2025-11-03",
+      "pdf_file": "LYC_600012760_2025-11-03.pdf",
+      "text_file": "LYC_600012760_2025-11-03.txt",
       "word_count": 2693
     },
     {
@@ -121,9 +1183,9 @@
       "word_count": 2475
     },
     {
-      "report_id": "GY4_691004048_2025-10-22",
-      "pdf_file": "GY4_691004048_2025-10-22.pdf",
-      "text_file": "GY4_691004048_2025-10-22.txt",
+      "report_id": "LYC_691004048_2025-10-22",
+      "pdf_file": "LYC_691004048_2025-10-22.pdf",
+      "text_file": "LYC_691004048_2025-10-22.txt",
       "word_count": 2602
     },
     {
@@ -233,6 +1295,12 @@
       "pdf_file": "SOS_600011771_2025-10-07.pdf",
       "text_file": "SOS_600011771_2025-10-07.txt",
       "word_count": 3346
+    },
+    {
+      "report_id": "GY4_691007144_2025-10-07",
+      "pdf_file": "GY4_691007144_2025-10-07.pdf",
+      "text_file": "GY4_691007144_2025-10-07.txt",
+      "word_count": 3184
     },
     {
       "report_id": "GY8_600017320_2025-10-06",
@@ -571,12 +1639,6 @@
       "word_count": 2606
     },
     {
-      "report_id": "GY4_600005631_2025-04-07",
-      "pdf_file": "GY4_600005631_2025-04-07.pdf",
-      "text_file": "GY4_600005631_2025-04-07.txt",
-      "word_count": 100
-    },
-    {
       "report_id": "LYC_600007600_2025-04-07",
       "pdf_file": "LYC_600007600_2025-04-07.pdf",
       "text_file": "LYC_600007600_2025-04-07.txt",
@@ -631,6 +1693,12 @@
       "word_count": 100
     },
     {
+      "report_id": "NAS_600017761_2025-04-02",
+      "pdf_file": "NAS_600017761_2025-04-02.pdf",
+      "text_file": "NAS_600017761_2025-04-02.txt",
+      "word_count": 2790
+    },
+    {
       "report_id": "GY8_600018211_2025-04-01",
       "pdf_file": "GY8_600018211_2025-04-01.pdf",
       "text_file": "GY8_600018211_2025-04-01.txt",
@@ -659,6 +1727,12 @@
       "pdf_file": "SOS_600170110_2025-03-26.pdf",
       "text_file": "SOS_600170110_2025-03-26.txt",
       "word_count": 2880
+    },
+    {
+      "report_id": "NAS_600007901_2025-03-26",
+      "pdf_file": "NAS_600007901_2025-03-26.pdf",
+      "text_file": "NAS_600007901_2025-03-26.txt",
+      "word_count": 2931
     },
     {
       "report_id": "SOS_600011089_2025-03-25",
@@ -707,6 +1781,12 @@
       "pdf_file": "LYC_610250523_2025-03-24.pdf",
       "text_file": "LYC_610250523_2025-03-24.txt",
       "word_count": 3061
+    },
+    {
+      "report_id": "NAS_600009718_2025-03-24",
+      "pdf_file": "NAS_600009718_2025-03-24.pdf",
+      "text_file": "NAS_600009718_2025-03-24.txt",
+      "word_count": 4233
     },
     {
       "report_id": "LYC_600004554_2025-03-19",
@@ -901,6 +1981,12 @@
       "word_count": 2032
     },
     {
+      "report_id": "SOS_600013090_2025-02-19",
+      "pdf_file": "SOS_600013090_2025-02-19.pdf",
+      "text_file": "SOS_600013090_2025-02-19.txt",
+      "word_count": 3012
+    },
+    {
       "report_id": "LYC_600006964_2025-02-18",
       "pdf_file": "LYC_600006964_2025-02-18.pdf",
       "text_file": "LYC_600006964_2025-02-18.txt",
@@ -935,6 +2021,12 @@
       "pdf_file": "SOS_600007472_2025-02-17.pdf",
       "text_file": "SOS_600007472_2025-02-17.txt",
       "word_count": 3158
+    },
+    {
+      "report_id": "NAS_600015319_2025-02-17",
+      "pdf_file": "NAS_600015319_2025-02-17.pdf",
+      "text_file": "NAS_600015319_2025-02-17.txt",
+      "word_count": 4079
     },
     {
       "report_id": "GY8_600015467_2025-02-14",
@@ -1789,6 +2881,12 @@
       "word_count": 3913
     },
     {
+      "report_id": "NAS_691016551_2024-05-21",
+      "pdf_file": "NAS_691016551_2024-05-21.pdf",
+      "text_file": "NAS_691016551_2024-05-21.txt",
+      "word_count": 2347
+    },
+    {
       "report_id": "LYC_600008851_2024-05-15",
       "pdf_file": "LYC_600008851_2024-05-15.pdf",
       "text_file": "LYC_600008851_2024-05-15.txt",
@@ -2419,6 +3517,12 @@
       "word_count": 2603
     },
     {
+      "report_id": "NAS_600170551_2024-02-05",
+      "pdf_file": "NAS_600170551_2024-02-05.pdf",
+      "text_file": "NAS_600170551_2024-02-05.txt",
+      "word_count": 2558
+    },
+    {
       "report_id": "GY8_600010953_2024-01-30",
       "pdf_file": "GY8_600010953_2024-01-30.pdf",
       "text_file": "GY8_600010953_2024-01-30.txt",
@@ -2477,6 +3581,12 @@
       "pdf_file": "SOS_600020525_2024-01-22.pdf",
       "text_file": "SOS_600020525_2024-01-22.txt",
       "word_count": 2700
+    },
+    {
+      "report_id": "NAS_600007642_2024-01-22",
+      "pdf_file": "NAS_600007642_2024-01-22.pdf",
+      "text_file": "NAS_600007642_2024-01-22.txt",
+      "word_count": 3849
     },
     {
       "report_id": "SOS_600013685_2024-01-19",
@@ -2797,6 +3907,12 @@
       "word_count": 2640
     },
     {
+      "report_id": "NAS_600007944_2023-11-14",
+      "pdf_file": "NAS_600007944_2023-11-14.pdf",
+      "text_file": "NAS_600007944_2023-11-14.txt",
+      "word_count": 3294
+    },
+    {
       "report_id": "GY6_600012867_2023-11-13",
       "pdf_file": "GY6_600012867_2023-11-13.pdf",
       "text_file": "GY6_600012867_2023-11-13.txt",
@@ -2849,6 +3965,12 @@
       "pdf_file": "GY4_691009201_2023-11-02.pdf",
       "text_file": "GY4_691009201_2023-11-02.txt",
       "word_count": 3070
+    },
+    {
+      "report_id": "NAS_600017231_2023-11-01",
+      "pdf_file": "NAS_600017231_2023-11-01.pdf",
+      "text_file": "NAS_600017231_2023-11-01.txt",
+      "word_count": 3336
     },
     {
       "report_id": "SOS_600016668_2023-10-31",
@@ -3031,6 +4153,12 @@
       "word_count": 5392
     },
     {
+      "report_id": "NAS_600006379_2023-06-19",
+      "pdf_file": "NAS_600006379_2023-06-19.pdf",
+      "text_file": "NAS_600006379_2023-06-19.txt",
+      "word_count": 4111
+    },
+    {
       "report_id": "GY4_691015805_2023-06-13",
       "pdf_file": "GY4_691015805_2023-06-13.pdf",
       "text_file": "GY4_691015805_2023-06-13.txt",
@@ -3095,6 +4223,18 @@
       "pdf_file": "GY4_691015163_2023-05-29.pdf",
       "text_file": "GY4_691015163_2023-05-29.txt",
       "word_count": 2392
+    },
+    {
+      "report_id": "NAS_600170667_2023-05-29",
+      "pdf_file": "NAS_600170667_2023-05-29.pdf",
+      "text_file": "NAS_600170667_2023-05-29.txt",
+      "word_count": 3062
+    },
+    {
+      "report_id": "NAS_691012105_2023-05-23",
+      "pdf_file": "NAS_691012105_2023-05-23.pdf",
+      "text_file": "NAS_691012105_2023-05-23.txt",
+      "word_count": 3605
     },
     {
       "report_id": "GY8_600010511_2023-05-22",
@@ -3343,6 +4483,12 @@
       "word_count": 3934
     },
     {
+      "report_id": "NAS_600016854_2023-03-21",
+      "pdf_file": "NAS_600016854_2023-03-21.pdf",
+      "text_file": "NAS_600016854_2023-03-21.txt",
+      "word_count": 3641
+    },
+    {
       "report_id": "SOS_600010996_2023-03-20",
       "pdf_file": "SOS_600010996_2023-03-20.pdf",
       "text_file": "SOS_600010996_2023-03-20.txt",
@@ -3457,6 +4603,12 @@
       "word_count": 2101
     },
     {
+      "report_id": "NAS_600006077_2023-02-22",
+      "pdf_file": "NAS_600006077_2023-02-22.pdf",
+      "text_file": "NAS_600006077_2023-02-22.txt",
+      "word_count": 2706
+    },
+    {
       "report_id": "GY4_600006662_2023-02-21",
       "pdf_file": "GY4_600006662_2023-02-21.pdf",
       "text_file": "GY4_600006662_2023-02-21.txt",
@@ -3479,6 +4631,12 @@
       "pdf_file": "GY8_600016714_2023-02-21.pdf",
       "text_file": "GY8_600016714_2023-02-21.txt",
       "word_count": 2826
+    },
+    {
+      "report_id": "NAS_600007685_2023-02-21",
+      "pdf_file": "NAS_600007685_2023-02-21.pdf",
+      "text_file": "NAS_600007685_2023-02-21.txt",
+      "word_count": 3476
     },
     {
       "report_id": "GY4_650078331_2023-02-20",
@@ -3551,6 +4709,12 @@
       "pdf_file": "SOS_600170918_2023-02-13.pdf",
       "text_file": "SOS_600170918_2023-02-13.txt",
       "word_count": 4010
+    },
+    {
+      "report_id": "NAS_600006379_2023-02-13",
+      "pdf_file": "NAS_600006379_2023-02-13.pdf",
+      "text_file": "NAS_600006379_2023-02-13.txt",
+      "word_count": 3096
     },
     {
       "report_id": "GY8_600004791_2023-02-08",
@@ -4321,12 +5485,6 @@
       "word_count": 3018
     },
     {
-      "report_id": "GY4_600005631_2022-09-22",
-      "pdf_file": "GY4_600005631_2022-09-22.pdf",
-      "text_file": "GY4_600005631_2022-09-22.txt",
-      "word_count": 3017
-    },
-    {
       "report_id": "SOS_600007871_2022-09-19",
       "pdf_file": "SOS_600007871_2022-09-19.pdf",
       "text_file": "SOS_600007871_2022-09-19.txt",
@@ -4349,6 +5507,12 @@
       "pdf_file": "GY6_600017788_2022-09-14.pdf",
       "text_file": "GY6_600017788_2022-09-14.txt",
       "word_count": 2865
+    },
+    {
+      "report_id": "GY4_691007144_2022-06-20",
+      "pdf_file": "GY4_691007144_2022-06-20.pdf",
+      "text_file": "GY4_691007144_2022-06-20.txt",
+      "word_count": 1961
     },
     {
       "report_id": "GY8_600007120_2022-06-13",
@@ -4621,6 +5785,12 @@
       "word_count": 3955
     },
     {
+      "report_id": "SOS_600013090_2022-03-28",
+      "pdf_file": "SOS_600013090_2022-03-28.pdf",
+      "text_file": "SOS_600013090_2022-03-28.txt",
+      "word_count": 2140
+    },
+    {
       "report_id": "GY4_691014566_2022-03-25",
       "pdf_file": "GY4_691014566_2022-03-25.pdf",
       "text_file": "GY4_691014566_2022-03-25.txt",
@@ -4783,6 +5953,12 @@
       "word_count": 2575
     },
     {
+      "report_id": "NAS_600014908_2022-03-14",
+      "pdf_file": "NAS_600014908_2022-03-14.pdf",
+      "text_file": "NAS_600014908_2022-03-14.txt",
+      "word_count": 3051
+    },
+    {
       "report_id": "LYC_600007171_2022-03-10",
       "pdf_file": "LYC_600007171_2022-03-10.pdf",
       "text_file": "LYC_600007171_2022-03-10.txt",
@@ -4907,6 +6083,12 @@
       "pdf_file": "GY4_691006521_2022-01-25.pdf",
       "text_file": "GY4_691006521_2022-01-25.txt",
       "word_count": 2939
+    },
+    {
+      "report_id": "NAS_600009718_2022-01-25",
+      "pdf_file": "NAS_600009718_2022-01-25.pdf",
+      "text_file": "NAS_600009718_2022-01-25.txt",
+      "word_count": 3429
     },
     {
       "report_id": "GY8_600005054_2022-01-20",
@@ -5543,78 +6725,6 @@
       "pdf_file": "SOU_600015092_2021-10-04.pdf",
       "text_file": "SOU_600015092_2021-10-04.txt",
       "word_count": 5061
-    },
-    {
-      "report_id": "SOU_600005275_2021-09-23",
-      "pdf_file": "SOU_600005275_2021-09-23.pdf",
-      "text_file": "SOU_600005275_2021-09-23.txt",
-      "word_count": 3194
-    },
-    {
-      "report_id": "GY8_600010538_2021-09-21",
-      "pdf_file": "GY8_600010538_2021-09-21.pdf",
-      "text_file": "GY8_600010538_2021-09-21.txt",
-      "word_count": 3921
-    },
-    {
-      "report_id": "SOS_600005941_2021-09-20",
-      "pdf_file": "SOS_600005941_2021-09-20.pdf",
-      "text_file": "SOS_600005941_2021-09-20.txt",
-      "word_count": 2847
-    },
-    {
-      "report_id": "GY8_600007693_2021-09-15",
-      "pdf_file": "GY8_600007693_2021-09-15.pdf",
-      "text_file": "GY8_600007693_2021-09-15.txt",
-      "word_count": 2890
-    },
-    {
-      "report_id": "SOS_691006989_2021-06-16",
-      "pdf_file": "SOS_691006989_2021-06-16.pdf",
-      "text_file": "SOS_691006989_2021-06-16.txt",
-      "word_count": 3193
-    },
-    {
-      "report_id": "SOS_600014860_2021-06-10",
-      "pdf_file": "SOS_600014860_2021-06-10.pdf",
-      "text_file": "SOS_600014860_2021-06-10.txt",
-      "word_count": 2887
-    },
-    {
-      "report_id": "LYC_651040060_2021-06-10",
-      "pdf_file": "LYC_651040060_2021-06-10.pdf",
-      "text_file": "LYC_651040060_2021-06-10.txt",
-      "word_count": 4191
-    },
-    {
-      "report_id": "SOS_691009465_2021-06-10",
-      "pdf_file": "SOS_691009465_2021-06-10.pdf",
-      "text_file": "SOS_691009465_2021-06-10.txt",
-      "word_count": 2927
-    },
-    {
-      "report_id": "LYC_691013560_2021-06-02",
-      "pdf_file": "LYC_691013560_2021-06-02.pdf",
-      "text_file": "LYC_691013560_2021-06-02.txt",
-      "word_count": 2389
-    },
-    {
-      "report_id": "GY4_691013489_2021-06-01",
-      "pdf_file": "GY4_691013489_2021-06-01.pdf",
-      "text_file": "GY4_691013489_2021-06-01.txt",
-      "word_count": 1865
-    },
-    {
-      "report_id": "LYC_691008167_2021-05-31",
-      "pdf_file": "LYC_691008167_2021-05-31.pdf",
-      "text_file": "LYC_691008167_2021-05-31.txt",
-      "word_count": 2555
-    },
-    {
-      "report_id": "LYC_691013802_2021-05-05",
-      "pdf_file": "LYC_691013802_2021-05-05.pdf",
-      "text_file": "LYC_691013802_2021-05-05.txt",
-      "word_count": 2677
     }
   ]
 }

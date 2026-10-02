@@ -1,0 +1,113 @@
+{
+  "report_id": "SOU_600011291_2025-11-25",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:55:59.018571+00:00",
+  "run_finished_utc": "2026-10-02T16:56:25.646570+00:00",
+  "raw_file": "SOU_600011291_2025-11-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600011291_2025-11-25",
+    "school_profile": {
+      "school_type": "střední škola",
+      "inspection_period": "25.–28. 11. 2025",
+      "school_change_summary": "Od školního roku 2022/2023 škola sídlí v moderním areálu; od 1. 8. 2024 působí nová ředitka a od roku 2025/2026 se změnil tým poradenského pracoviště."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vzdělávání",
+          "detail": "Praktické vyučování je podle inspekce dobře propojeno s praxí a připravuje absolventy na uplatnění na trhu práce.",
+          "evidence": "Praktické vyučování úspěšně naplňuje cíle odborného vzdělávání a vhodně připravuje absolventy pro budoucí uplatnění."
+        },
+        {
+          "tag": "Modernní zázemí",
+          "detail": "Škola má moderní prostory, odborné učebny, ateliéry a dílny, což podporuje odbornou výuku.",
+          "evidence": "Prostory školy jsou moderní, edukačně podnětné; nacházejí se zde odborné učebny, ateliéry a dílny."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí poradenské služby, podpůrná opatření a individuální podporu žákům ohroženým školním neúspěchem.",
+          "evidence": "Školní poradenské služby zajišťují metodička prevence, dvě výchovné poradkyně a školní psycholožka."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Absence",
+          "detail": "Vysoká absence může zhoršovat průběh studia i výsledky žáků.",
+          "evidence": "Počet zameškaných hodin je dlouhodobě vysoký, kolem 200 hodin na žáka za školní rok."
+        },
+        {
+          "tag": "Maturita",
+          "detail": "Rodiče by měli zvážit zejména vyšší neúspěšnost školy ve společné části maturitní zkoušky v minulých letech.",
+          "evidence": "Za roky 2023–2025 byla průměrná hrubá neúspěšnost vyšší než celorepublikový průměr."
+        },
+        {
+          "tag": "Rozmanitá podpora",
+          "detail": "Ve výuce chybí dostatečná podpora pro žáky s různou mírou zájmu a nadání i práce s více zdroji.",
+          "evidence": "Ve výuce chyběla přímá podpora žáků s hlubším zájmem či různou mírou nadání."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci a jaké výsledky má nově zavedená evidence?",
+        "Jaké podpůrné mechanismy mají rodiče k dispozici při neprospívání nebo hrozícím školním neúspěchu?",
+        "Jaké konkrétní kroky škola podniká pro zvýšení úspěšnosti ve společné části maturitní zkoušky?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat obory s maturitní zkouškou i obory končící výučním listem.",
+        "Žákům, kterým vyhovuje propojení odborné teorie s praktickým vyučováním.",
+        "Žákům, kteří mají zájem o grafický design, podnikání nebo obchod a služby."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kteří mají potíže s pravidelnou účastí na vyučování.",
+        "Rodičům žáků, kteří očekávají výraznější diferenciaci a podporu samostatného řešení úloh.",
+        "Rodičům žáků maturitních oborů, kterým záleží na výsledcích společné části maturitní zkoušky."
+      ],
+      "plain_czech_summary": "Škola má dobré moderní zázemí, kvalitní praktické vzdělávání a nabízí poradenskou podporu. Hlavními problémy jsou dlouhodobě vysoká absence, podíl neprospívajících žáků a v minulých zkušebních rocích vyšší neúspěšnost ve společné části maturity. Výuka podle inspekce málo podporuje různě nadané žáky, samostatnou práci, kritické myšlení a práci s více zdroji. Výsledky z roku 2025 přesto v řadě oborů a předmětů zlepšily. Rodičům se vyplatí zejména ověřit přijímací kritéria, podporu při neprospívání a konkrétní plán zlepšování maturity a absence."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Za roky 2023–2025 byla průměrná hrubá neúspěšnost vyšší než celorepublikový průměr; v roce 2025 se výsledky v řadě oborů a předmětů zlepšily.",
+        "key_numbers": [
+          "Podnikání: 44,3 % průměrná hrubá neúspěšnost v letech 2023–2025, celorepublikově 27,3 %.",
+          "Grafický design: 15,5 % průměrná hrubá neúspěšnost v letech 2023–2025, celorepublikově 6,6 %.",
+          "Obchodník a Kosmetické služby: v roce 2025 hrubá neúspěšnost 5,9 % proti celorepublikovému průměru 10,4 %."
+        ],
+        "evidence": "Škola se dlouhodobě potýká s vysokou průměrnou neúspěšností žáků ve společné části maturitní zkoušky."
+      },
+      "absence": {
+        "trend": "Celková absence zůstává dlouhodobě vysoká, přestože neomluvená absence ve školním roce 2024/2025 meziročně poklesla.",
+        "key_numbers": [
+          "Zameškané hodiny se pohybují kolem 200 hodin na žáka za školní rok.",
+          "Průměrná neomluvená absence klesla z 10,5 na 5,8 hodin na žáka.",
+          "Neomluvená absence je uvedena pro školní rok 2024/2025."
+        ],
+        "evidence": "I přes dílčí meziroční pokles zůstává počet zameškaných hodin dlouhodobě vysoký."
+      },
+      "support_services": [
+        "Školní poradenské služby zajišťují metodička prevence, dvě výchovné poradkyně a školní psycholožka.",
+        "Škola poskytuje podpůrná opatření prvního stupně a průběžně vyhodnocuje jejich účinnost.",
+        "Žákům ohroženým školním neúspěchem poskytuje podporu prostřednictvím výchovných komisí, konzultací a pravidel pro klasifikaci."
+      ],
+      "safety_climate": [
+        "Ve sledovaných hodinách panovala příjemná edukační atmosféra podporující aktivní zapojení žáků.",
+        "Žáci se většinou drželi nastavených pravidel a drobné prohřešky byly napraveny bez zásahu učitele.",
+        "Škola sleduje bezpečnost a ochranu zdraví žáků a budova je zabezpečena proti vstupu neoprávněných osob."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s pestrou škálou sociálních partnerů, kteří propojují teorii s praxí.",
+        "Odborný výcvik a učební praxe probíhají na školních pracovištích i v reálném zaměstnavatelském prostředí.",
+        "Škola aktivně spolupracuje například se Sdružením aranžérů České republiky."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulován srozumitelně, stručně a všechna důležitá tvrzení jsou opřena o citace z inspekční zprávy.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí podrobné výsledky společné části maturity podle jednotlivých předmětů ve všech letech.",
+        "Zpráva uvádí některé výsledky za rok 2025 a jiné jako průměr za roky 2023–2025.",
+        "Inspekční zpráva uvádí dlouhodobé sledování absolventů pouze rámcově, nikoli s podrobnými čísly."
+      ]
+    }
+  }
+}

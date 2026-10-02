@@ -1,0 +1,103 @@
+{
+  "report_id": "NAS_600006379_2023-02-13",
+  "school_profile": {
+    "school_type": "Soukromá střední odborná škola poskytující čtyřleté a nástavbové obory s maturitní zkouškou a tříleté obory s výučním listem.",
+    "inspection_period": "13. 2. 2023 až 16. 2. 2023",
+    "school_change_summary": "Škola od předchozí inspekce odstranila část nedostatků a zvýšila využití digitálních technik, ale přetrvává vysoká absence, neúspěšnost maturit a slabší kontrolní systém."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Zahraniční praxe",
+        "detail": "Dlouhodobě organizované praxe v partnerské škole v Norsku a v uměleckých firmách v Irsku podporují angličtinu a komunikační dovednosti.",
+        "evidence": "„dlouhodobě organizované zahraniční odborné praxe… podporují jejich komunikační dovednosti v anglickém jazyce“."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Žákům se speciálními vzdělávacími potřebami je poskytována pravidelně vyhodnocovaná individuální podpora.",
+        "evidence": "„Žákům se speciálními vzdělávacími potřebami je poskytována individuální podpora, která je pravidelně vyhodnocována se žáky i s jejich zákonnými zástupci.“"
+      },
+      {
+        "tag": "Digitální výuka",
+        "detail": "Škola častěji využívá online aplikace a digitální techniky, které mohou podporovat aktivaci žáků.",
+        "evidence": "„Od předchozí inspekční činnosti se zlepšilo využívání digitálních technologií, což přispívá zejména k podpoře názornosti výuky“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturitní neúspěšnost",
+        "detail": "Přetrvává vysoká neúspěšnost společné části maturity a dosavadší opatření nevedou k jednoznačnému zlepšení.",
+        "evidence": "„opatření… nejsou dostatečně účinná a nevedou k jednoznačnému zlepšení.“"
+      },
+      {
+        "tag": "Absence a odchody",
+        "detail": "Vysoká absence souvisí s předčasným ukončením studia a přispívá k neúspěchu ve vzdělávání i při maturitě.",
+        "evidence": "„Předčasné odchody žáků ze vzdělávání souvisí s jejich vysokou absencí, což je také jedna z hlavních příčin neúspěchu“."
+      },
+      {
+        "tag": "Kvalita výuky",
+        "detail": "Slabší kontrolní činnost, metodické vedení, diferenciace a zpětná vazba mohou snižovat kvalitu vzdělávání.",
+        "evidence": "„nedostatečně účinná kontrolní a hospitační činnost vedení školy má dopad na kvalitu poskytovaného vzdělávání“."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní opatření škola přijala, aby snížila absenci a počet předčasných odchodů?",
+      "Jak nyní kontroluje naplňování ŠVP a úspěšnost žáků u společné části maturity?",
+      "Jak často učitelé dostávají zpětnou vazbu a metodickou podporu a jak se podílí na přípravě na maturitu?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří mají zájem o umělecká řemesla, restaurátorství, galerijní práci nebo kulturu a památky.",
+      "Žákům hledajícím odborné praxe v zahraničí a podporu anglického jazyka.",
+      "Žákům se speciálními vzdělávacími potřebami, kterým vyhovuje pravidelná individuální podpora."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým hrozí vysoká absence nebo předčasné ukončení studia.",
+      "Rodičům, kteří očekávají spolehlivou přípravu na společnou část maturity bez bližšího dotazu na konkrétní podporu.",
+      "Žákům, kteří potřebují výrazné individuální přístup nebo průběžnou zpětnou vazbu při učení."
+    ],
+    "plain_czech_summary": "Škola nabízí obory zaměřené na umělecká řemesla, kulturu a památky. Výhodou jsou zahraniční praxe, podpora žáků se speciálními potřebami a čerpání digitálních technologií. Hlavním problémem je vysoká absence, která souvisí s předčasnými odchody a neúspěchem ve vzdělávání. V oboru Starožitník byla ve školním roce 2021/2022 hrubá neúspěšnost společné části maturity 50 %. U oboru Umělecké řemeslné práce klesla z 57 % v roce 2019/2020 na 30 % v roce 2021/2022. Kontrolní činnost školy je hodnocena jako nedostatečně účinná. Rodičům záležícím na stabilním docházení a přípravě k maturitě se vyplatí na den otevřených dveří ověřit konkrétní mechanismy podpory."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "U Starožitníka se neúspěšnost zhoršovala, zatímco u Uměleckých řemeslných prací přibližně klesala.",
+      "key_numbers": [
+        "Starožitník 2021/2022: 50 % proti 21 % v ČR.",
+        "Umělecké řemeslné práce: 57 % v roce 2019/2020, 33 % v roce 2020/2021 a 30 % v roce 2021/2022.",
+        "Ve Starožitníku v roce 2021/2022 společnou část absolvovali pouze dva ze čtyř přihlášených žáků."
+      ],
+      "evidence": "„Ve školním roce 2021/2022 stoupla až na 50 %“; u Uměleckých řemeslných prací „se snížila až na 30 %“."
+    },
+    "absence": {
+      "trend": "Absence zůstává vysoká a je spojena s předčasným ukončením studia i neúspěchem ve vzdělávání.",
+      "key_numbers": [
+        "Inspekce uvádí vysokou absenci bez uvedení přesného procenta.",
+        "Předčasné ukončení studia bylo hodnoceno jako přetrvávající problém."
+      ],
+      "evidence": "„negativně ovlivňuje vysoká absence žáků“."
+    },
+    "support_services": [
+      "Škola poskytuje podporu žákům se speciálními vzdělávacími potřebami prostřednictvím poradenských služeb a individuální práce.",
+      "Podpora se pravidelně vyhodnocuje se žáky a jejich zákonnými zástupci.",
+      "Žákům s odlišným mateřským jazykem je poskytován individuální přístup."
+    ],
+    "safety_climate": [
+      "Ve zprávě není uvedeno hodnocení bezpečnostního klimatu školy.",
+      "Nelegální finanční poplatky překračující školský zákon byly odstraněny.",
+      "Neomluvenou absenci škola postihuje kázeňskými opatřeními, ale podle inspekce ne vždy důsledně."
+    ],
+    "partnerships_practice": [
+      "Projekt Za řemeslem do Evropy zahrnuje výměnné pobyty v partnerské škole v Norsku.",
+      "Projekt zahrnuje také odborné praxe v uměleckých firmách v Irsku.",
+      "Škola využívá příležitostné návštěvy knihoven, divadel, filmových představení a kulturních institucí."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně odděluje silné stránky, rizika a ověřitelné údaje a vhodně vysvětluje jejich význam pro rodiče.",
+    "uncertainty_notes": [
+      "Přesné procento absence ani její vývojová tendence nejsou ve zprávě uvedeny.",
+      "Zpráva neuvádí samostatné hodnocení bezpečnostního klimatu.",
+      "U Starožitníku bylo ve školním roce 2021/2022 přihlášeno jen čtyři žáci, takže vypočtená hrubá neúspěšnost má výrazně omezenou základnu."
+    ]
+  }
+}

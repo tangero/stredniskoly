@@ -1,0 +1,100 @@
+{
+  "report_id": "SOS_600011119_2026-02-16",
+  "school_profile": {
+    "school_type": "Střední škola EDUCHEM, a. s.",
+    "inspection_period": "16. 2. 2026–20. 2. 2026",
+    "school_change_summary": "Škola se rozrůstá, modernizuje učebny a od minulé inspekce zlepšila výsledky maturitních oborů; přetrvávají však problémy s klimatem, individualizací a zpětnou vazbou."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná příprava",
+        "detail": "Praxe, exkurze a spolupráce s firmami pomáhají získat odborné kompetence a motivaci k budoucí práci.",
+        "evidence": "„Spolupráce podporuje rozvoj odborných kompetencí žáků a motivuje je ke studiu i budoucí Broken profession.“"
+      },
+      {
+        "tag": "Vybavení IT",
+        "detail": "Moderní IT Hub a dobře vybavené učebny podporují praktickou výuku informatiky.",
+        "evidence": "„Velmi dobré materiální podmínky zejména pro odborné vzdělávání v oboru Informační technologie.“"
+      },
+      {
+        "tag": "Maturitní příprava",
+        "detail": "Škola průběžně zlepšuje úspěšnost maturitních oborů a poskytuje semináře pro profilovou část maturity.",
+        "evidence": "„Úspěšnost při těchto testech je také důležitou součástí celkového hodnocení.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Školní klima",
+        "detail": "Část pedagogů se bojí vyjadřovat nesouhlas a někteří žáci popisují komunikaci učitelů jako málo vstřícnou.",
+        "evidence": "„Někteří pedagogové uváděli, že se obávají vyjádřit nesouhlas s rozhodnutími vedení školy.“"
+      },
+      {
+        "tag": "Individualizace",
+        "detail": "Rozdílní potřeby žáků nejsou v dostatečné míře zohledňovány při volbě obsahu a náročnosti úkolů.",
+        "evidence": "„Absence diferenciace vzdělávacího obsahu a zadávaných úkolů nezohledňuje… kognitivní schopnosti jednotlivých žáků.“"
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Formativní hodnocení a práce s informačními zdroji se podle inspekce vyskytují jen ojediněle.",
+        "evidence": "„Formativní hodnocení bylo využíváno pouze ojediněle“."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší neshody mezi žáky a pedagogy a sleduje výsledky těchto opatření?",
+      "Jak často učitelé běžně nabízejí úkoly s různou náročností a využívají formativní hodnocení?",
+      "Kolik pedagogů má kvalifikaci pro výuku jednotlivých předmětů a jak je podporováno jejich uvádění?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studium propojit s praxí, exkurzemi a odbornými firmami.",
+      "Zájemcům o dobře vybavené praktické vzdělávání v oboru Informační technologie.",
+      "Žákům hledajícím podporu při maturitní přípravě, doučování nebo individuálních konzultacích."
+    ],
+    "who_should_be_cautious": [
+      "Žákům, kterým záleží na individualizaci a přizpůsobení úkolů jejich schopnostem.",
+      "Žákům citlivým na způsob komunikace a řešení konfliktů s pedagogy.",
+      "Rodičům, kteří chtějí pravidelnou formativní zpětnou vazbu během celé výuky."
+    ],
+    "plain_czech_summary": "Škola má dobré odborné zázemí, rozsáhlé spolupráce s firmami a velmi dobré vybavení pro výuku informatiky. Maturitní výsledky se od minulé inspekce zlepšily. Pro rodiče jsou důležité ale také slabiny: někteří žáci popisují komunikaci s pedagogy jako málo vstřícnou, učitelé méně přizpůsobují úkoly jednotlivým žákům a zřídka využívají průběžné hodnocení. Na dnech otevřených dveří je vhodné zeptat se, jak škola tyto problémy konkrétně řeší."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Úspěšnost se od minulé inspekce zlepšila; v oborech Aplikovaná chemie a Informační technologie je nižší než v České republice.",
+      "key_numbers": [
+        "2024: Aplikovaná chemie 100 % úspěšnost, Informační technologie 3,3 % hrubá neúspěšnost",
+        "2025: Aplikovaná chemie 5,3 % a Informační technologie 6,2 % hrubá neúspěšnost",
+        "2025: Mechanik elektrotechnik 11,1 % hrubá neúspěšnost"
+      ],
+      "evidence": "„Také ve zkušebním období roku 2025… hrubá neúspěšnost byla 5,3 %… a 6,2 %.“"
+    },
+    "absence": {
+      "trend": "Přímé statistikyabsence zpráva neuvádí.",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje „údaje o neomluvené absenci“ ani „podíl absence“."
+    },
+    "support_services": [
+      "„Skupinové doučování a individuální konzultace.“",
+      "„Nepovinné semináře“ pro přípravu na profilovou část maturity.",
+      "„Dvě výchovné poradkyně, kariérová poradkyně a metodička prevence.“"
+    ],
+    "safety_climate": [
+      "V chemických laboratořích: „žáci přirozeně dodržovali pravidla bezpečné práce“.",
+      "Při práci s elektrickými přístroji bylo dodržování zásad a uspořádání pracoviště hodnoceno jako samozřejmost.",
+      "„Případné problémy s nevhodným chováním žáků jsou řešeny bezodkladně, což minimalizuje jejich výskyt.“"
+    ],
+    "partnerships_practice": [
+      "Firmy a organizace se školou spolupracují při odborném výcviku a praxích.",
+      "U chemického oboru probíhá „praktické vyučování, exkurze a zaměstnávání absolventů“.",
+      "Škola spolupracuje také s úřadem práce, vysokými školami a profesními organizacemi."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je stručný, konkrétní a vztahuje zjištění k rozhodování rodičů; problematická místa jsou označena jako rizika.",
+    "uncertainty_notes": [
+      "Nejde o školní dotazník rodičů, ale o závěry inspekce na základě dokumentace, hospitací a výpovědí.",
+      "Absence nejsou uvedeny číselně, proto nelze posoudit jejich trend.",
+      "Přesné rozložení neúspěšnosti v oboru Mechanik elektrotechnik zpráva uvádí jen pro rok 2025."
+    ]
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "report_id": "LYC_600017257_2025-12-01",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:54:32.071976+00:00",
+  "run_finished_utc": "2026-10-02T16:55:11.402144+00:00",
+  "raw_file": "LYC_600017257_2025-12-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600017257_2025-12-01",
+    "school_profile": {
+      "school_type": "Střední škola, školní jídelna–výdejna a domov mládeže",
+      "inspection_period": "1.–4. 12. 2025",
+      "school_change_summary": "Od inspekce v roce 2018 vzrostl počet žáků téměř o 20 %; zpráva uvádí 708 žáků ve 24 třídách."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praxe a zaměstnanecká připravenost",
+          "detail": "Škola propojuje teorii s praxí a připravuje žáky na požadavky pracovního trhu.",
+          "evidence": "Spolupráce s firmami a sociálními institucemi podporuje „profesní uplatnění“ absolventů."
+        },
+        {
+          "tag": "Odborné vzdělávání",
+          "detail": "V odborných předmětech žáci pracují s reálnými příklady a osvojují si odbornou terminologii.",
+          "evidence": "„Žáci prokazovali dobrou úroveň vyjadřovacích schopností, používali správnou odbornou terminologii“."
+        },
+        {
+          "tag": "Podpora a partnerství",
+          "detail": "Škola nabízí poradenství, doučování, mezinárodní certifikáty i účast v projektech a soutěžích.",
+          "evidence": "Vyučující žáky připravují na „regionální, celostátní i mezinárodní úroveň“."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturitní připravenost",
+          "detail": "U maturity z matematiky hlásí škola v minulosti výrazně vyšší neúspěšnost, v dopravním oboru zejména hrubou.",
+          "evidence": "„V oboru vzdělání Provoz a ekonomika dopravy je patrný zvýšený výskyt hrubé neúspěšnosti.“"
+        },
+        {
+          "tag": "Absence a neúspěch",
+          "detail": "Vysoká absence zůstává problémem, přestože inspekce zaznamenala její mírné snížení.",
+          "evidence": "Průměrná absence činila „122,3 omluvených hodin“; je nutné dbát „na neúspěšnost žáků a jejich vysokou absenci“."
+        },
+        {
+          "tag": "Způsob výuky",
+          "detail": "Ve většině hodin převládala méně aktivní výuka a chyběla individualizace i hodnotící zpětná vazba.",
+          "evidence": "„Cílené aktivizující metody a formy výuky byly zaznamenány jen v části sledovaných hodin.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní kroky škola přijímá proti neúspěšnosti žáků při matematické maturitě a kolik jich čeká doučování?",
+        "Jak často žáci navštěvují odborné praxe a které firmy či instituce poskytují společně vedené praxe?",
+        "Jak se podpora poradenského pracoviště liší u žáků se speciálními vzdělávacími potřebami, ohrožených neúspěchem a v domově mládeže?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat informatické, logistické, ekonomické, obchodní nebo dopravní obory: „škola vzdělávala“ 708 žáků v pěti oborech.",
+        "Žákům, kterým pomáhá propojení učiva s praxí a odbornými projekty: učitelé „účelně propojovali učivo v širších souvislostech“.",
+        "Žákům, kteří využijí individuální podporu při neúspěchu: „bývaly nabízeny individuální konzultace a doučování“."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kteří potřebují intenzivní přípravu k matematické maturitě, protože škola uvádí „významně vyšší míru neúspěšnosti“.",
+        "Rodičům žáků s velkou absencí, protože průměrná absence za rok činila „122,3 omluvených hodin“.",
+        "Rodičům žáků, kteří potřebují výraznou individualizaci výuky, protože „diferencovaná výuka nebyla ve výuce zaznamenána“."
+      ],
+      "plain_czech_summary": "Škola má dlouhou tradici, roste a má dobré zázemí i spolupráci s firmami pro odbornou praxi. Pro rodiče jsou důležité zejména dobré propojení teorie s praxí, podpora při neúspěchu a možnost zapojit se do projektů, stáží či soutěží. Na druhé straně přetrvává vysoká absence a horší výsledky některých žáků v odborných předmětech. Významným rizikem je také neúspěšnost při matematické maturitě, zvlášť hrubá v oboru Provoz a ekonomika dopravy. V běžné výuce se objevuje méně aktivní frontální způsob práce a zřídka individualizace. Rodiče by měli na otevřeném dni ověřit konkrétní úroveň podpory, praxe a přípravy k maturitě."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Škola uvádí vzestupné výsledky za poslední tři roky, ale stále upozorňuje na neúspěšnost u maturity z matematiky.",
+        "key_numbers": [
+          "„Výsledky maturitní zkoušky odpovídaly průběžným výsledkům během celého studia.“",
+          "„V předcházejících letech“ škola vykazovala u maturity z matematiky „významně vyšší míru neúspěšnosti“.",
+          "„V oboru Provoz a ekonomika dopravy“ je patrný „zvýšený výskyt hrubé neúspěšnosti“."
+        ],
+        "evidence": "Škola výsledky analyzuje, hledá jejich příčiny a nabízí individuální přístup s doučováním."
+      },
+      "absence": {
+        "trend": "Absence se mírně snížila, zejména u neomluvené absence, ale zůstává vysoká.",
+        "key_numbers": [
+          "Ve školním roce 2024/2025: „122,3 omluvených hodin“ průměrně na žáka.",
+          "Oproti předchozí inspekci došlo k „mírnému snížení“ absence.",
+          "Závěry upozorňují na „vysokou absenci“."
+        ],
+        "evidence": "Neomluvené hodiny byly zaznamenány a řešeny podle nastavených postupů."
+      },
+      "support_services": [
+        "Školní poradenský služby zajišťuje tým: „výchovní poradci, školní metodička prevence, kariérová poradkyně a školní psycholožka“.",
+        "Podpora se týká především žáků se speciálními vzdělávacími potřebami, ohrožených školním neúspěchem a dalších rizikových faktorů.",
+        "Škola uvádí „individuální konzultace a doučování“ pro ohrožené žáky.",
+        "Poradenské pracoviště podle zprávy postrádá jednotný systém pro zjišťování potřeb, plánování opatření a vyhodnocování jejich účinnosti."
+      ],
+      "safety_climate": [
+        "Bezpečnost a ochrana zdraví žáků byla zajišťována „v součinnosti s osobou odborně způsobilou“ v oblasti prevence rizik a požární ochrany.",
+        "Preventivní mechanismy byly pravidelně hodnoceny: „Účinnost nastavených preventivních mechanismů byla pravidelně vyhodnocována.“",
+        "Žáci byli upozorňováni na bezpečnostní rizika ve škole i při aktivitách, včetně odborné praxe.",
+        "Ve sledovaných hodinách „panovala vstřícná pracovní atmosféra“."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s vysokými školami, zaměstnavateli, bankami, pojišťovnami, profesními asociacemi a regionálními či zahraničními firmami.",
+        "Spolupráce podporuje „sepětí teoretické výuky s praxí“ a následné profesní uplatnění absolventů.",
+        "Žáci se zapojují do projektů, stáží a soutěží, například Mladí logistici a marketéři či ZAV 2025.",
+        "V oboru anglického jazyka mohou žáci získat „mezinárodní certifikáty“ uznávané při maturitě."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou krátké, srozumitelné a vztahují se k rozhodnutím rodičů; důležitá zjištění jsou opřena o krátké citace.",
+      "uncertainty_notes": [
+        "Zpráva uvádí trend absence a maturity, ale neposkytuje podrobné procentní ani roční hodnoty pro všechny sledované obory.",
+        "Zpráva neuvádí konkrétní četnost setkání žákovského parlamentu; uvádí pouze jednu diskusní schůzku zástupců pedagogických pracovníků a žáků.",
+        "Uvedené údaje o podpoře žáků se SPECIALIZovanými vzdělávacími potřebami nevyjadřují jejich počet; zpráva uvádí celkem 46 žáků s podpůrnými opatřeními."
+      ]
+    }
+  }
+}

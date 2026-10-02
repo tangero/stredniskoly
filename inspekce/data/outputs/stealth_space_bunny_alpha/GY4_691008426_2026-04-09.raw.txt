@@ -1,0 +1,105 @@
+{
+  "report_id": "GY4_691008426_2026-04-09",
+  "school_profile": {
+    "school_type": "Základní škola, gymnázium a střední pedagogická škola",
+    "inspection_period": "9. 4. 2026 až 22. 4. 2026",
+    "school_change_summary": "Nabídka se rozšířila o Pedagogické lyceum, přibyly třídy a pedagogové; v SŠ bylo k 30. 9. 2025 plně využito 101 míst."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola nabízí komunitní kruhy, koučink, konzultace, předmět Focusion a digitální platformu pro osvojování studijních návyků.",
+        "evidence": "„komunitní kruhy, kurzy, speciální předmět focusion, koučink, konzultace nebo digitální vzdělávací platforma“"
+      },
+      {
+        "tag": "Učení na 2. stupni ZŠ",
+        "detail": "Hospitovaná výuka druhého stupně ZŠ byla převážně velmi dobrá a učitelé přizpůsobovali tempo i podporu žákům.",
+        "evidence": "„Sledovaný průběh na 2. stupni ZŠ dosahoval převážně velmi dobré úrovně.“"
+      },
+      {
+        "tag": "Zahraniční spolupráce",
+        "detail": "Partnerství se zahraničními školami podporuje mobility žáků i pedagogů a je jedinou silnou stránkou uvedenou v závěru inspekce.",
+        "evidence": "„partnerská spolupráce se zahraničními školami podporuje mobilitu žáků a učitelů“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Komunikace a klima",
+        "detail": "Rodiči by měli počítat s rizikem neprofesionální komunikace, stresu a oslabené důvěry ve vztahu k vedení či některým pedagogům.",
+        "evidence": "„neprofesionální způsob komunikace ... se negativně promítá do školního klimatu“"
+      },
+      {
+        "tag": "Stabilita učitelů",
+        "detail": "Velká obměna pedagogů a vysoký podíl nekvalifikovaných učitelů mohou ovlivnit plynulost výuky a její odbornou úroveň.",
+        "evidence": "„Nestabilita pedagogického sboru ... a vysoký podíl pedagogických pracovníků, kteří nesplňují předpoklady odborné kvalifikace“"
+      },
+      {
+        "tag": "Prostředí školy",
+        "detail": "Ve střední škole jsou některé učebny stísněné a ne vždy vyhovující výuce, pohybu učitele nebo skupinové práci.",
+        "evidence": "„Malé, stísněné učebny v místě Klapkova omezují pohyb učitele po třídě.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší stížnosti rodičů na komunikaci a chrání při tom žáky před tlaky?",
+      "Jaké konkrétní kroky vedou ke stabilizaci učitelského sboru a zvyšování jejich kvalifikace?",
+      "Které třídy a předměty se vyučují v malých učebnách a jaké řešení prostorových problémů připravuje?",
+      "Jak bude podpora žáků s IVP monitorována, aby se předešlo neprospěchu a neúspěchu při maturitě?"
+    ],
+    "who_school_fits": [
+      "Rodiče žáků 2. stupně ZŠ, kterým vyhovuje převážně velmi dobrá úroveň sledované výuky.",
+      "Rodiny, které chtějí komunitní kruhy, konzultace, Focusion a podporu samostatné práce.",
+      "Žáci a rodiče, kteří využijí zahraniční spolupráci a projektové aktivity."
+    ],
+    "who_should_be_cautious": [
+      "Rodiny, kterým záleží na předvídatelné komunikaci a jistotě v přístupu vedení školy.",
+      "Rodiče žáků, kterým hrozí změna učitele nebo přechod mezi vzdělávacími programy.",
+      "Žáci střední školy, kteří potřebují individualizovanou výuku, spolehlivou zpětnou vazbu nebo dobře vybavené učebny."
+    ],
+    "plain_czech_summary": "Inspekce ocenila výuku na 2. stupni ZŠ, podporu žáků a zahraniční spolupráci. Současně ale označila za problematické řízení školy, komunikaci některých pedagogů, velkou fluktuaci učitelů, nižší individualizaci výuky a stísněné prostory ve střední škole. Ve SŠ byl v některých předmětech výrazný podíl samostatného předávání učiva místo práce žáků. Výsledky gymnázia byly stabilní, u pedagogického lycea však čtvrtina až třetina žáků odešla. Podpora přes online gymnázium také vyžaduje důslednější sledování, protože téměř třetina zúčastněných žáků nebyla včas řádně ohodnocena nebo neprospěla. Rodičům se proto vyplatí na konkrétním ročníku ověřit komunikaci, stabilitu učitelů, průměrnou velikost tříd a přípravu na maturitu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Celkové výsledky střední školy byly stabilní, ale u podpory gymnázia on-line existuje výrazné riziko neúspěchu při maturitě.",
+      "key_numbers": [
+        "23 žáků využívalo gymnázium on-line",
+        "Téměř třetina z nich nebyla včas řádně hodnocena nebo neprospěla",
+        "Ve 4. a 5. ročníku gymnázia odešla čtvrtina až třetina žáků"
+      ],
+      "evidence": "„téměř třetina těchto žáků nebyla v řádném termínu hodnocena nebo neprospěla“"
+    },
+    "absence": {
+      "trend": "Průměrná absence ve střední škole byla vykázána jako zhruba 80 hodin na žáka za pololetí.",
+      "key_numbers": [
+        "Přibližně 80 zameškaných hodin na žáka za pololetí",
+        "95 % žáků mělo k 30. 6. uzavřenou klasifikaci"
+      ],
+      "evidence": "„Škola vykázala okolo 80 zameškaných hodin na žáka za pololetí, v průměru 95 % žáků mělo uzavřenou klasifikaci“"
+    },
+    "support_services": [
+      "Poradenské služby ZŠ a SŠ jsou propojené přes společné porady a tým asistentů pedagoga.",
+      "SŠ využívá předmět tutoriál pro osvojování akademických dovedností.",
+      "Podpora zahrnuje konzultace, koučink, komunitní kruhy, Focusion a digitální platformu.",
+      "Školní metodik prevence a výchovná poradkyně poskytují poradenskou podporu."
+    ],
+    "safety_climate": [
+      "V některých hospitovaných hodinách se objevily nevhodné ironické poznámky učitele.",
+      "Komunikace některých pedagogů podle inspekce nepodporovala důvěru a spolupráci.",
+      "Škola řešila řadu náročných situací mezi žáky, rodiči a pedagogy."
+    ],
+    "partnerships_practice": [
+      "Partnerská spolupráce se zahraničními školami podporuje mobilitu žáků a učitelů.",
+      "Ve škole probíhají projekty, exkurze a divadelní představení.",
+      "Spolupráce se školním poradenským zařízením se promítá do podpůrných opatření podle IVP."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně spojuje zjištění s praktickým dopadem a jasně odlišuje silné stránky, rizika a neznámé údaje.",
+    "uncertainty_notes": [
+      "Inspekční zpráva neuvádí souhrnnou úspěšnost maturitní zkoušky, proto nelze hodnotit její výsledky.",
+      "Dotazníkové šetření nebylo předloženo s údaji o počtu oslovených a odpovědějících pedagogů v přiloženém textu.",
+      "Připomínky školy jsou součástí dodaného textu, ale inspekce většinu závěrů potvrdila."
+    ]
+  }
+}

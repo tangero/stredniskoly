@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_600005836_2026-03-05",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:31:24.586783+00:00",
+  "run_finished_utc": "2026-10-02T16:31:59.857874+00:00",
+  "raw_file": "LYC_600005836_2026-03-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600005836_2026-03-05",
+    "school_profile": {
+      "school_type": "Soukromá střední škola a školní jídelna-výdejna; vzdělávání zakončené maturitní zkouškou.",
+      "inspection_period": "5.–6. 3. 2026 a 9.–10. 3. 2026",
+      "school_change_summary": "Od roku 2025/2026 škola rozšířila činnost o obor Lyceum a druhé pracoviště na Vinohradech; počet žáků se od roku 2021 zdvojnásobil."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazyky a zahraniční zkušenosti",
+          "detail": "Škola nabízí cizojazyčnou výuku, konverzace s rodilými mluvčími a zahraniční mobility pro žáky i pedagogy.",
+          "evidence": "Systémově je posilována mobilita a jazykové dovednosti žáků v cizích jazycích."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Podpora žáků se SVP nebo s odlišným mateřským jazykem je podle inspekce účinná a výsledky jsou srovnatelné s průměrem třídy.",
+          "evidence": "Jejich vzdělávací výsledky jsou srovnatelné s průměrným prospěchem třídy."
+        },
+        {
+          "tag": "Pracovní klima",
+          "detail": "Rodinám může vyhovovat vstřícné a respektující prostředí s důrazem na spolupráci pedagogů a žáků.",
+          "evidence": "Vedení školy vytváří vstřícné a respektující vzdělávací prostředí."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Dálkové studium",
+          "detail": "Při volbě dálkové formy je nutné počítat s vysokým rizikem neúspěchu při dokončení studia a maturitě.",
+          "evidence": "Přetrvává vysoká neúspěšnost žáků dálkového studia při ukončování vzdělávání."
+        },
+        {
+          "tag": "Maturita z češtiny",
+          "detail": "Rodiče by měli zvláště u dálkových studentů věnovat pozornost přípravě z českého jazyka a literatury.",
+          "evidence": "Téměř všichni neúspěšní žáci neuspěli v českém jazyce."
+        },
+        {
+          "tag": "Dvě pracoviště",
+          "detail": "Rozdělení výuky a poradenských služeb mezi Satalice a Vinohrady může ovlivnit dostupnost podpory v každodenním provozu.",
+          "evidence": "Se zřetelem na rozdělení činnosti školy na dvě samostatná pracoviště je žádoucí personální posílení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně bude poradenská služba dostupná na obou pobočkách a v jakých časech?",
+        "Kolik dálkových žáků ukončí jednotlivé ročníky a jak konkrétně podporuje škola přípravu na společnou část maturity?",
+        "Které předměty se v denním oboru učí v angličtině a jak lze na denní studium přestoupit z dálkové formy?"
+      ],
+      "who_school_fits": [
+        "Rodiny, které hledají soukromou školu rodinného typu s menším a respektujícím prostředím.",
+        "Žáci, kterým vyhovuje širší nabídka cizích jazyků a zahraničních aktivit.",
+        "Žáci, kteří potřebují úpravy organizace kvůli sportovní přípravě nebo mají zájem o projekty a olympiády."
+      ],
+      "who_should_be_cautious": [
+        "Uchazeči a rodiče, kteří považují dálkovou formu za stejně bezpečnou volbu jako denní studium.",
+        "Rodiny, kterým může být nepohodlné rozdělení části výuky do dvou pracovišť.",
+        "Žáci s potřebou pravidelné intenzivní podpory při učení a hodnocení vlastního pokroku."
+      ],
+      "plain_czech_summary": "Inspekce ocenila spolupráci školy se zahraničními partnery, jazykovou a odbornou výuku, podporu žáků se SVP a OMJ i příjemné pracovní klima. Od roku 2021 se škola výrazně rozrostla, přibylo Lyceum a pobočka na Vinohradech. Denní studenti mají dobré výsledky; v maturitě se za tři roky neúspěšný nikdo nebyl. U dálkového studia je situace problematická: část studentů studium nedokončí a výsledky maturity jsou slabé, zejména z češtiny. Rodiče by měli ověřit dostupnost podpory na obou pobočkách a zejména u dálkové formy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Denní forma je dlouhodobě úspěšná, u dálkové formy přetrvává vysoká neúspěšnost, zejména v českém jazyce.",
+        "key_numbers": [
+          "Ve sledovaném období všichni žáci denního studia konající maturitu uspěli; výjimkou byl jeden žák v cizím jazyce.",
+          "Ve školním roce 2024/2025 studium řádně ukončilo 92 % žáků denní formy a téměř polovina dálkové formy.",
+          "Ve školním roce 2024/2025 mezinárodní certifikát místo jazykové profilové zkoušky použilo téměř polovina žáků."
+        ],
+        "evidence": "Výsledky žáků při ukončování vzdělávání jsou dlouhodobě odlišné u denní a dálkové formy vzdělávání."
+      },
+      "absence": {
+        "trend": "Neomluvená absence je téměř nulová, celková absence u denního studia zůstává nízká; u dálkové formy se nevyhodnocuje.",
+        "key_numbers": [
+          "Denní studium: průměrně 110 hodin absence na žáka za školní rok.",
+          "Neomluvená absence je téměř nulová.",
+          "Podíl žáků s uzavřenou klasifikací do 30. 6. je téměř 100 % u denní formy a 80 % u dálkové formy."
+        ],
+        "evidence": "Žáci si stabilně udržují nižší počet hodin zameškaných hodin, včetně téměř nulové neomluvené absence."
+      },
+      "support_services": [
+        "Výchovná poradkyně, školní metodička prevence a školní psycholožka.",
+        "Individuální konzultace a doučovací aktivity pro žáky ohrožené školním neúspěchem.",
+        "Podpora žáků se SVP a odlišným mateřským jazykem odpovídá doporučením školských poradenských zařízení."
+      ],
+      "safety_climate": [
+        "Škola podporuje pozitivní školní klima a mapuje vztahy v jednotlivých třídách.",
+        "Preventivní program zahrnuje výuku, školní akce, spolupráci s externími subjekty a adaptační kurzy.",
+        "Vstupy do budov jsou zajištěny elektronickým docházkovým systémem."
+      ],
+      "partnership_practice": [
+        "Partnerské školy se podílejí na odborných praxích, výměnných pobytech a úpravách školních vzdělávacích programů.",
+        "Škola spolupracuje s vyššími odbornými školami a vysokými školami při kariérovém poradenství.",
+        "Zahraniční mobility žáků a pedagogů jsou propojeny s rozvojem jazykových a odborných kompetencí."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a vycházejí přímo z hodnocení inspekce; důraz je na rozhodování rodičů.",
+      "uncertainty_notes": [
+        "Zpráva uvádí aktuální počty žáků, ale nepodává úplnou tabulku výsledků podle jednotlivých oborů a ročníků.",
+        "U dálkového studia není uvedena přesná míra neúspěchu pro každý školní rok.",
+        "Dostupnost poradenských služeb na obou pobočkách je doporučena k posílení, nikoli potvrzena jako nedostatečná."
+      ]
+    }
+  }
+}

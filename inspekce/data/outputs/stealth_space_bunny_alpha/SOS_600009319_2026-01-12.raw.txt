@@ -1,0 +1,103 @@
+{
+  "report_id": "SOS_600009319_2026-01-12",
+  "school_profile": {
+    "school_type": "střední odborná škola a domov mládeže",
+    "inspection_period": "12. 1. až 15. 1. 2026",
+    "school_change_summary": "Škola upravila oborovou strukturu, zrušila třídy pro žáky se speciálními vzdělávacími potřebami a rozšířila domov mládeže na čtyři výchovné skupiny."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické vyučování",
+        "detail": "Praktická výuka je organizovaná a žáci při ní osvojují pracovní postupy, zvyky a zpětnou vazbu.",
+        "evidence": "„Práce na pracovištích zakázek byla velmi dobře zorganizována.“"
+      },
+      {
+        "tag": "Odborné vedení",
+        "detail": "Učitelé používají vhodné ukázky a vyžadují přesné odborné názvosloví.",
+        "evidence": "„Učitelé při výkladu uváděli vhodné příklady z reálné praxe“ a „důsledně vyžadovali užívání odborného názvosloví“."
+      },
+      {
+        "tag": "Ubytování",
+        "detail": "Domov mládeže poskytuje prostředí pro studium, volnočasové aktivity a osobnostní rozvoj.",
+        "evidence": "Vychovatelé „vedou žáky k samostatnosti a zodpovědnému přístupu k vlastnímu rozhodování“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Školní neúspěšnost",
+        "detail": "Významným problémem je úbytek žáků zejména v prvních ročnících oborů s výučním listem.",
+        "evidence": "„Škola identifikuje jako vážný problém úbytek žáků především oborů vzdělání s výučním listem v průběhu studia, zejména pak v prvním ročníku.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Poradenství a podpora žáků se zvláštními potřebami nejsou dostatečně propojené s výukou.",
+        "evidence": "„Činnost školního poradenského pracoviště není funkční“ a informace o žácích nejsou pedagogům předávány v dostatečné kvalitě."
+      },
+      {
+        "tag": "Učení a vybavení",
+        "detail": "Ve většině hodin převažuje frontální výuka a některé dílny neodpovídají současným technologiím.",
+        "evidence": "„Převládal frontální přenos znalostí“ a „zastaralému vybavení některých školních pracovišť“ chyběly dovednosti s novými technologiemi."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola sleduje neomluvenou absenci a předčasné odchody žáků?",
+      "Jak podporuje individualizované vyučování žáků se speciálními vzdělávacími potřebami nebo s odlišným mateřským jazykem?",
+      "Které moderní technologie a materiály se žáci učí používat na praktickém vyučování?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí střední odborné vzdělání pro stavební a řemeslné obory.",
+      "Žákům, kterým vyhovuje propojení teorie, praktického vyučování a práce na zakázkách.",
+      "Žákům hledajícím ubytování a volnočasové aktivity v domově mládeže."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na malé diferenciaci výuky a pravidelné zpětné vazbě.",
+      "Rodičům žáků se speciálními vzdělávacími potřebami nebo s odlišným mateřským jazykem.",
+      "Rodičům, kteří očekávají průběžné hodnocení školní úspěšnosti a odrazné systémy řízení."
+    ],
+    "plain_czech_summary": "Škola dobře zajišťuje praktickou výuku, práci na zakázkách a vybavení pro teoretické vyučování. Prakticky vzdělává obory stavebnictví, strojírenství, elektrotechniky, truhlářství, instalatérství, zedničství a malířství. Mezi hlavní problémy patří vysoká absence, odchody žáků zejména v prvních ročnících, malá účinnost podpory při neúspěchu a omezená práce školního poradenského pracoviště. Ve většině hodin převažuje frontální výuka, chybí diferenciace a aktivní zapojení žáků. Některé dílny mají zastaralé vybavení. Inspekce zjistila také problémy s kontrolou vstupu do budov a revizemi elektrických zařízení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Neúspěšnost ve společné části maturitní zkoušky se za poslední tři roky zlepšovala a v roce 2025 byla přibližně na úrovni srovnatelné skupiny oborů v ČR.",
+      "key_numbers": [
+        "50% úspěšnost v cyklu maturitní zkoušky",
+        "9% žáků neprospělo na konci školního roku 2024/2025",
+        "15% žáků ukončilo vzdělávání ve školním roce 2024/2025"
+      ],
+      "evidence": "„V maturitním období 2025 byla HN na podobné úrovni, jakou dosahují žáci ve stejné skupině oborů v České republice.“"
+    },
+    "absence": {
+      "trend": "Absence zůstává vysoká a podle inspekce přispívá ke slabým výsledkům i odchodům žáků; zpráva neuvádí přesnou celkovou průměrnou absenci.",
+      "key_numbers": [
+        "U třetiny žáků prvních ročníků byly slabé výsledky kvůli vysoké absenci nebo nezájmu.",
+        "Škola se snažila snižovat vysokou omluvenou i neomluvenou absenci, ale neúspěšně."
+      ],
+      "evidence": "„V prvním čtvrtletí školního roku 2025/2026 konstatovala u třetiny žáků prvních ročníků slabé výsledky z důvodu vysoké absence či nezájmu.“"
+    },
+    "support_services": [
+      "Škola pořádá schůzky s rodiči a žáky, poskytuje doučování a v některých případech vytváří podpůrné plány či portfolia.",
+      "Školní poradenské pracoviště poskytuje kariérové poradenství, ale jeho práce se žáky se SVP a rizikovým chováním není dostatečně funkční.",
+      "V domově mládeže funguje vychovatelé podpora, zájmové kroužky, sportovní, kulturní, výtvarné a hudební aktivity."
+    ],
+    "safety_climate": [
+      "Žáci jsou poučováni o bezpečnosti a při praktickém vyučování používají ochranné pomůcky.",
+      "Škola má kamerový a čipový systém, ale během inspekce bylo možné vstoupit do budovy bez omezení kdykoliv.",
+      "Inspekce zjistila nedostatky v revizních prohlídkách elektrických zařízení v domově mládeže a v budovách na ulici Kysibelská."
+    ],
+    "partnership_practice": [
+      "Praktické vyučování probíhá také na pracovištích zakázkových prací.",
+      "Škola získává hodnocení praktického vyučování od zaměstnavatelů prostřednictvím hodnotících listů.",
+      "Preventivní aktivity jsou podle inspekce realizovány převážně ve spolupráci s externími organizacemi."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Výstup používá běžnou češtinu a odděluje zjištění inspekce od doporučení a otázek pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesný průměrný podíl absence všech žáků.",
+      "Zpráva neuvádí podrobné výsledky maturitní zkoušky podle jednotlivých předmětů.",
+      "Doporučení rodičům vycházejí ze zjištění inspekce a nejsou samostatným hodnocením školy."
+    ]
+  }
+}

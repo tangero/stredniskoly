@@ -1,0 +1,101 @@
+{
+  "report_id": "GY8_600016064_2026-01-13",
+  "school_profile": {
+    "school_type": "Gymnázium, Bruntál, příspěvková organizace",
+    "inspection_period": "13. 1. 2026 – 16. 1. 2026",
+    "school_change_summary": "Od 1. 9. 2024 byl změněn název školy a skončilo vzdělávání v oboru Gymnázium se sportovní přípravou. Škola se zapojila do projektu externího partnera a prochází transformací na „učící se organizaci“; byly modernizovány učebny a vybudován bezbarierový přístup."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Dobré výsledky žáků",
+        "detail": "Ve školním roce 2024/2025 měla nadpoloviční většina žáků prospěch s vyznamenáním a všichni ostatní žáci také prospěli.",
+        "evidence": "„Nadpoloviční většina žáků prospěla s vyznamenáním a všichni ostatní prospěli.“"
+      },
+      {
+        "tag": "Příprava k maturitě",
+        "detail": "Výuka závěrečných ročníků je cíleně zaměřena na systematickou přípravu k maturitní zkoušce.",
+        "evidence": "„Výuka v závěrečných ročnících byla cíleně zaměřena na systematickou přípravu k maturitní zkoušce.“"
+      },
+      {
+        "tag": "Podpora a projekty",
+        "detail": "Škola nabízí doučování, konzultace a rozsáhlý systém projektů podporujících rozvoj žáků.",
+        "evidence": "„Žákům ohroženým školním neúspěchem je nabízeno doučování školní asistentkou nebo konzultace s pedagogy.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rozdílná podpora žáků",
+        "detail": "Ve výuce se málo rozlišuje náročnost úkolů podle schopností a dovedností jednotlivých žáků.",
+        "evidence": "„Rozlišování náročnosti úkolů podle individuálních schopností a dovedností žáků se však objevovalo v minimální míře.“"
+      },
+      {
+        "tag": "Práce se cílem hodiny",
+        "detail": "Učební cíle se žákům sdělují jen výjimečně a jejich vyhodnocování na konci hodin probíhá sporadicky.",
+        "evidence": "„Konkrétní vzdělávací cíle však byly formulovány pouze výjimečně.“"
+      },
+      {
+        "tag": "Využití vybavení",
+        "detail": "Nové didaktické pomůcky se podle inspekce ve vyučovaných hodinách používaly jen omezeně.",
+        "evidence": "„Jejich využití bylo ve sledovaných hodinách zaznamenáno v omezené míře.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se ve výuce přizpůsobují náročnost úkolů žákům s různými schopnostmi a potřebami?",
+      "Jak často probíhá vzájemná zpětná vazba žákům a jak se učitelé ujistují, že žáci výukové cíle pochopili?",
+      "Jaké konkrétní příklady aktivit využívající tablety, telefony, audiovizuální materiály nebo nové vybavení škola žákům představí?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat na čtyřletém nebo osmiletém gymnáziu.",
+      "Žákům, kterým vyhovuje příprava na maturitní zkoušku a kteří ocení konzultace a doučování při neúspěchu.",
+      "Žákům se zájmem o projekty, mezinárodní aktivity, olympiády nebo odborné soutěže."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří potřebují výraznou individuální diferenciaci výuky.",
+      "Rodičům žáků, kterým záleží na časté práci ve skupinách a rozvoji komunikace během hodin.",
+      "Rodičům, kteří očekávají pravidelné a prokazatelné využívání moderního vybavení ve výuce."
+    ],
+    "plain_czech_summary": "Gymnázium v Bruntálu vychází z inspekce s velmi dobrými studijními výsledky a zvýšenou úspěšností u maturit. Závěrečné ročníky se cíleně připravují na maturitu, žákům v ohrožení se nabízí doučování a konzultace. Výuka podle inspekce probíhá převážně frontálně, s malou diferenciací úkolů a jen občasným sdělováním a vyhodnocováním cílů hodiny. Výhodou je také podpora rozvoje žáků prostřednictvím projektů a partnerství. Rodičům se vyplatí zeptat na konkrétní individualizaci výuky, zpětnou vazbu a využívání nových pomůcek."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Úspěšnost u maturitní zkoušky se za poslední dva školní roky zvýšila.",
+      "key_numbers": [
+        "Ve školním roce 2024/2025 neprospěl u maturity pouze jeden žák.",
+        "98 % absolventů pokračovalo na vysokou školu, vyšší odbornou školu nebo v jazykovém vzdělávání.",
+        "Škola dosahuje lepších výsledků než republikový průměr téměř ve všech sledovaných ukazatelích."
+      ],
+      "evidence": "„Úspěšnost žáků školy u maturitní zkoušky zvýšila“ a „neprospěl u maturitní zkoušky pouze jeden žák“."
+    },
+    "absence": {
+      "trend": "Zpráva neuvádí údaje o absencích žáků ani jejich trend.",
+      "key_numbers": [],
+      "evidence": "V dodaném textu nejsou uvedeny statistiky absencí."
+    },
+    "support_services": [
+      "Výchovná poradkyně a zároveň kariérová poradkyně.",
+      "Školní psycholog.",
+      "Školní asistentka poskytující doučování.",
+      "Školní metodik prevence."
+    ],
+    "safety_climate": [
+      "Žáci jsou pravidelně seznamováni s pravidly bezpečného chování a ochrany zdraví.",
+      "Škola hodnotí úrazovost a přijímá preventivní opatření.",
+      "Vstupy byly zabezpečeny proti vniknutí a pohybu cizích osob a exponované prostory monitorovány kamerovým systémem."
+    ],
+    "partnerships_practice": [
+      "Dlouhodobé partnerství s místní základní školou.",
+      "Společný projekt tří bruntálských středních škol.",
+      "Projekty Erasmus+ a Euroscola umožňující návštěvy evropských zemí."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou srozumitelné, věcně navazují na zprávu a omezují se na zjištěné informace.",
+    "uncertainty_notes": [
+      "Údaje o absencích nejsou v inspekční zprávě uvedeny.",
+      "Škola uvádí velmi dobré studijní výsledky, ale neuvádí podrobnější rozdělení podle předmětů.",
+      "Zpráva neuvádí konkrétní výsledky hodnocení školního klimata."
+    ]
+  }
+}

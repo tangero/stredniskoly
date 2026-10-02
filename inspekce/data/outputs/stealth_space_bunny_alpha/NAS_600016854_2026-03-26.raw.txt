@@ -1,0 +1,104 @@
+{
+  "report_id": "NAS_600016854_2026-03-26",
+  "school_profile": {
+    "school_type": "Střední škola, školní jídelna a domov mládeže",
+    "inspection_period": "26. 3. 2026–31. 3. 2026",
+    "school_change_summary": "Vedení bylo rozšířeno o zástupkyni ředitelky, škola investovala do modernizace a otevřela kadeřnické pracoviště v Bílovci."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná příprava",
+        "detail": "Praktické vyučování je funkčně organizované a propojuje teorii s moderní technikou a reálnou praxí.",
+        "evidence": "„Organizace praktického vzdělávání byla funkční a systematická, což umožňovalo plynulý rozvoj psychomotorických dovedností.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola poskytuje podpůrná opatření, poradenské služby a cílenou práci pedagogických asistentů.",
+        "evidence": "„Podpůrná opatření škola poskytovala 86 žákům“ a „Pedagogickou asistenci zajišťovali tři asistenti pedagoga.“"
+      },
+      {
+        "tag": "Školní klima",
+        "detail": "Žáci obvykle vnímají prostředí příznivě, zejména podporu a přístup vyučujících.",
+        "evidence": "„Žáci v anonymním šetření ve většině případů hodnotili školní prostředí příznivě, zejména s ohledem na podporu a přístup vyučujících.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "Převážně jednotná zadání mohou omezovat individuální postup žáků s různými možnostmi.",
+        "evidence": "„Diferenciace ve výuce nebyla uplatňována v rozsahu zohledňující rozdíly v kognitivních schopnostech žáků.“"
+      },
+      {
+        "tag": "Kritické myšlení",
+        "detail": "Ve výuce je málo prostoru pro práci s informacemi, hodnocení důkazů a formulování vlastních závěrů.",
+        "evidence": "„Rozvoj kritického myšlení nebyl napříč výukou podporován dostatečně systematicky.“"
+      },
+      {
+        "tag": "Úrazovost",
+        "detail": "Míra úrazovosti je vyšší než celostátní průměr, zejména při sportu a praktickém vyučování.",
+        "evidence": "„Míra úrazovosti ve škole je i přes realizovaná opatření vyšší než celostátní průměr.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se v jednotlivých předmětech přizpůsobují obtížnost úkolů schopnostem žáků?",
+      "Kolik hodin týdně se žáci věnují práci s informacemi, diskusím, vysvětlování a sebehodnocení?",
+      "Jaké konkrétní bezpečnostní postupy a opatření se uplatňují při praktickém vyučování a sportu?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí odborné vzdělání s praktickou přípravou a moderním vybavením.",
+      "Žákům se speciálními vzdělávacími potřebami, kterým škola poskytuje rozsáhlou podporu.",
+      "Žákům, kteří využijí domov mládeže, doučování nebo volnočasové aktivity."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na důsledném rozvoji kritického myšlení a samostatného učení.",
+      "Rodičům, kteří očekávají výrazně individualizované zadání pro všechny žáky.",
+      "Rodičům citlivých na vyšší úrazovost při sportovních a praktických činnostech."
+    ],
+    "plain_czech_summary": "Škola nabízí odborné obory s praktickou přípravou, moderním vybavením a podporou žáků i rodičů. Výsledky jsou převážně dobré: u maturity dosáhla škola v roce 2025 úspěšnosti 81 %, u oborů s výučním listem 82–100 %. Podpora zahrnuje 86 žáků se speciálními vzdělávacími potřebami, pedagogy asistenty a poradenské služby. Klima hodnotí žáci většinou příznivě. Mezi hlavní slabiny patří malé množství práce s informacemi a kritickým myšlením, málo sebehodnocení a omezená diferenciace výuky. Rodiče by měli také zohlednit vyšší úrazovost než v celé zemi, hlavně při sportu a praktice."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky se stabilizovaly v rozmezí 80–82 %.",
+      "key_numbers": [
+        "81 % v roce 2025",
+        "80–82 % v letech 2023–2025",
+        "3 žáci s vyznamenáním v roce 2025"
+      ],
+      "evidence": "„V roce 2025 dosáhla úspěšnost žáků v oboru ukončeném maturitní zkouškou 81 %.“"
+    },
+    "absence": {
+      "trend": "Absence se stabilizovala, ale v 1. pololetí 2025/2026 vzrostla neomluvená absence.",
+      "key_numbers": [
+        "94–105 hodin na žáka",
+        "0,79–0,96 % neomluvené absence",
+        "1,4 % v 1. pololetí 2025/2026"
+      ],
+      "evidence": "„Neomluvená absence je převážně pod 1 %, výjimkou je 1. pololetí 2025/2026 s 1,4 %.“"
+    },
+    "support_services": [
+      "Poradenské služby poskytují kvalifikovaní pedagogové pro žáky s obtížemi a projevy problémového chování.",
+      "Škola poskytuje podpůrná opatření 86 žákům se speciálními vzdělávacími potřebami.",
+      "Tři asistenti pedagoga se zaměřují především na žáky se speciálními vzdělávacími potřebami."
+    ],
+    "safety_climate": [
+      "V době inspekce byly všechny školní objekty zabezpečeny proti vniknutí nepovolaných osob.",
+      "Úrazovost je přesto vyšší než celostátní průměr, nejčastěji při sportu a praktickém vyučování.",
+      "Škola pravidelně hodnotí rizika, opakovaně poučuje žáky a eviduje úrazy."
+    ],
+    "partnership_practice": [
+      "Odborný výcvik probíhá také ve spolupráci s firmami na smluvních pracovištích.",
+      "Škola spolupracuje se zřizovatelem a městem Vítkov na odborném vzdělávání a stipendiích.",
+      "Žáci se sociálně-výchovně zapojují do komunitních, ekologických a mezigeneračních aktivit."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžnou češtinu, odděluje fakta od doporučení pro rodiče a uvádí krátké důkazy.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí počet přijatých žáků ani podrobné výsledky jednotlivých oborů s výučním listem.",
+      "Školní jídelna je ve Vítkově, ale část žáků v Odrách dostává stravu od smluvního poskyvatele.",
+      "Doporučení rodičům vychází z hodnocení inspekce; nejsou samostatným oficiálním hodnocením konkrétního uchazeče."
+    ]
+  }
+}

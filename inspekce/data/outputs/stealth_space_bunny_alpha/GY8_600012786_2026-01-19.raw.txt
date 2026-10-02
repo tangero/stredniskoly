@@ -1,0 +1,103 @@
+{
+  "report_id": "GY8_600012786_2026-01-19",
+  "school_profile": {
+    "school_type": "Gymnázium, obchodní akademie a jazyková škola s právem státní jazykové zkoušky Svitavy",
+    "inspection_period": "19. až 22. 1. 2026",
+    "school_change_summary": "Od minulé inspekce se změnilo vedení školy; nová ředitelka a zástupci postupně zavádějí změny podle vize školy, přičemž její dobré jméno zachovávají."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Škola dosahuje velmi dobrých výsledků při maturitní zkoušce.",
+        "evidence": "„V roce 2025 maturitní zkoušku úspěšně složili všichni přihlášení žáci gymnázia a vyjma jednoho i žáci obchodní akademie.“"
+      },
+      {
+        "tag": "Odborná výuka obchodní akademie",
+        "detail": "Teoretické odborné předměty a učební praxe jsou hodnoceny jako velmi dobře kvalitní.",
+        "evidence": "„Vzdělávání žáků obchodní akademie v teoretických odborných předmětech i v rámci učební praxe mělo velmi dobrou úroveň.“"
+      },
+      {
+        "tag": "Partnerství a projekty",
+        "detail": "Škola aktivně spolupracuje s vysokými školami, firmami a zahraničními partnerskými školami.",
+        "evidence": "„Podporou je výborná spolupráce s řadou vysokých škol i úspěšných odborných firem.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Podpora rozdílných potřeb žáků",
+        "detail": "Ve vyučování je málo prostoru pro individualizovanou podporu nadaných žáků i žáků s podpůrnými opatřeními.",
+        "evidence": "„Individuální dopomoc žákům a práce s diferencovaným zadáváním učebních úloh byla spíše výjimkou.“"
+      },
+      {
+        "tag": "Zpětná vazba v hodinách",
+        "detail": "Učitelé mále využívají formativní zpětnou vazbu, sebehodnocení a hodnocenísplnění cíle hodiny.",
+        "evidence": "„Častějším jevem bylo nevyužití příležitosti poskytnout žákům formativní zpětnou vazbu k jejich práci.“"
+      },
+      {
+        "tag": "Přednáškové hodiny",
+        "detail": "Některé gymnaziální hodiny jsou velmi náročné, málo aktivizují žáky a nejsou přizpůsobeny jejich potřebám.",
+        "evidence": "„Byly zaznamenány hodiny přednáškového typu, obsahově velmi náročné, s minimální aktivizací žáků.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky s podpůrnými opatřeními a nadané žáky během běžné výuky?",
+      "Jak často učitelé poskytují zpětnou vazbu a umožňují žákům hodnotit vlastní pokrok?",
+      "Kolik samostatné, párové a skupinové práce se ve skutečně odehrává v jednotlivých předmětech?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří hledají kvalitní gymnaziální nebo obchodně akademické vzdělání s dobrými výsledky v maturitě.",
+      "Žákům, kteří mají zájem o projekty, soutěže, dobrovolnictví nebo odborné a jazykové aktivity.",
+      "Žákům, kterým vyhovuje spolupráce s vysokými školami, firmami a zahraničními partnery."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří potřebují pravidelnou individualizovanou podporu nebo často pracují s podpůrnými opatřeními.",
+      "Rodičům, kteří očekávají v každé hodině samostatnou, kooperativní nebo výrazně diferencovanou práci žáků.",
+      "Rodičům, kterým záleží na co nejstručnějších přestávkách; na obchodní akademii se doporučuje jejich úprava."
+    ],
+    "plain_czech_summary": "Inspekce hodnotí školu jako dobře vedenou, s odbornými a stabilními učiteli, kvalitní praktickou výukou obchodní akademie, velmi dobrými výsledky gymnázia a silnou spoluprací s partnery. V roce 2025 uspěli na maturitě všichni gymnazisté a téměř všichni žáci obchodní akademie. Rodiče by si však měli ověřit, jak konkrétně budou jejich děti dostávat zpětnou vazdu, podporu při odlišných schopnostech a příležitost k samostatné práci. Výuka bývá také místy příliš přednášková a náročná."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi dobrý výsledek za rok 2025; srovnání s předchozími lety není uvedeno.",
+      "key_numbers": [
+        "Všichni přihlášení žáci gymnázia maturitu v roce 2025 úspěšně složili.",
+        "Všichni přihlášení žáci obchodní akademie uspěli kromě jednoho.",
+        "Všichni žáci školy ve školním roce 2024/2025 prospěli; nikdo neabsolvoval opravné zkoušky."
+      ],
+      "evidence": "„V roce 2025 maturitní zkoušku úspěšně složili všichni přihlášení žáci gymnázia a vyjma jednoho i žáci obchodní akademie.“"
+    },
+    "absence": {
+      "trend": "Trend není uveden; zpráva neuvádí souhrnné údaje o absencích.",
+      "key_numbers": [
+        "Opravné zkoušky ve školním roce 2024/2025: 0.",
+        "Všichni žáci ve školním roce 2024/2025 prospěli."
+      ],
+      "evidence": "„Ve školním roce 2024/2025 všichni žáci prospěli, nikdo neabsolvoval opravné zkoušky.“"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště tvoří výchovná poradkyně pro gymnázium a metodička prevence: „vzájemně spolupracující tým“. ",
+      "Školní psycholožka pracuje „jeden den v měsíci“ a pomáhá žákům i třídním kolektivům.",
+      "Podpůrná opatření byla poskytována 15 žákům; dvěma z nich bylo uzpůsobeno vzdělávání podle individuálního vzdělávacího plánu."
+    ],
+    "safety_climate": [
+      "„Zajištění bezpečnosti a ochrany zdraví je nastavené a funkční“.",
+      "Pravidla jsou podle zprávy zpracována ve vnitřních směrnicích včetně školního řádu.",
+      "„Krátké pětiminutové přestávky“ na obchodní akademii mohou podle inspekce omezovat relaxaci a psychohygienu."
+    ],
+    "partnership_practice": [
+      "Škola spolupracuje s řadou vysokých škol a odborných firem.",
+      "S dvěma partnerskými školami v Německu spolupracuje dlouhodobě.",
+      "Výměnné pobyty a exkurze do německy, anglicky i francouzsky mluvících zemí podporují jazykové, sociální a komunikační kompetence."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžnou češtinu, stručné větice a u důležitých tvrzení přímé citace ze zprávy.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí dlouhodobý trend maturitních výsledků ani srovnání s minými školními roky.",
+      "Zpráva neuvádí celkové údaje o absencích žáků.",
+      "Školní typ je uveden podle úplného názvu školy včetně jazykové školy, i když inspekční text zvlášť popisuje gymnázium a obchodní akademii."
+    ]
+  }
+}

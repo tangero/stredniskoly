@@ -1,0 +1,103 @@
+{
+  "report_id": "GY4_600006930_2026-03-24",
+  "school_profile": {
+    "school_type": "soukr. střední škola, základní škola, školní družina a školní jídelna – výdejna",
+    "inspection_period": "24.–27. 3. 2026",
+    "school_change_summary": "Od roku 2019 vzrostl počet denních žáků i žáků ZŠ, rozšířil se pedagogický sbor a nabídka o Průmyslový design; dálkové studium se naopak postupně utlumoňuje."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná výuka",
+        "detail": "Odborné předměty spojují teorii s praxí a rozvíjejí práci v týmu i odborné myšlení.",
+        "evidence": "Učivo bylo propojováno s využitím v praxi a žáci řešili problémové úkoly s vlastními návrhy."
+      },
+      {
+        "tag": "Maturitní příprava",
+        "detail": "Škola zařazuje typové úlohy, simulace zkoušek, semináře a konzultace podle výsledků žáků.",
+        "evidence": "Škola zavádí didaktické testy, simulace reálné maturity, individuální semináře a konzultace."
+      },
+      {
+        "tag": "Bezpečí a podpora",
+        "detail": "Bezpečnostní systém je funkční a škola poskytuje poradenství i podporu žákům se zvláštními potřebami.",
+        "evidence": "Úrazovost je minimální; poradenské služby poskytují žákům, rodičům i pedagogům."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé místo maturity",
+        "detail": "Největší potíže žáci měli v didaktickém testu z českého jazyka a literatury.",
+        "evidence": "Neúspěšnost se nejčastěji týkala didaktického testu z českého jazyka a literatury."
+      },
+      {
+        "tag": "Absence a motivace",
+        "detail": "Vysoká absence některých žáků souvisí s nižší motivací a může přispívat k předčasnému ukončení studia.",
+        "evidence": "Škola uvádí přibližně 200 h absence na žáka ročně; vyšší absence souvisí s neúspěšností."
+      },
+      {
+        "tag": "Rozdílná úroveň výuky",
+        "detail": "Některé hodiny byly méně aktivní a diferenciace podle rozdílných potřeb žáků nebyla využívána dostatečně.",
+        "evidence": "Méně efektivní byla přibližně třetina výuky; příležitosti k diferenciaci nebyly využity."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá příprava na didaktický test z českého jazyka a literatury a jak se sledují její výsledky?",
+      "Kolik vyučujících pro jednotlivé předměty společné části maturity splňuje odbornou kvalifikaci a předmětovou specializaci?",
+      "Jak škola konkrétně řeší absenci žáků a jaké výsledky má prevence předčasného ukončení studia?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí odborné vzdělání propojené s praxí, projekty a spoluprací s partnery.",
+      "Žákům, kterým vyhovuje příprava k maturitě přes semináře, didaktické testy a konzultace.",
+      "Žákům se zvláštními vzdělávacími potřebami nebo odlišným mateřským jazykem, kterým škola poskytuje podporu."
+    ],
+    "who_should_be_cautious": [
+      "Žákům, kteří mají potíže s českým jazykem a literaturou nebo se společnou částí maturity.",
+      "Žákům, kteří potřebují průběžnou individualizaci podle tempa, nadání nebo jazykové úrovně.",
+      "Žákům, kterým hrozí absence nebo předčasné ukončení studia kvůli slabé motivaci."
+    ],
+    "plain_czech_summary": "Škola má funkční vedení, zlepšující se materiální zázemí a dobré propojení odborné výuky s praxí. Ve ZŠ jsou výsledky velmi dobré. Ve střední školě se celkové výsledky maturity zlepšily, ale žáci se nejčastěji neúspěšni v didaktickém testu z českého jazyka a literatury. Výuka je místy příliš frontální a málo se využívá formativní hodnocení a diferenciace. Nezanedbatelná je absence, která souvisí s motivací žáků a jejich výsledky. Pro rodiče je důležité ověřit přípravu na společnou část maturity, kvalifikaci učitelů a konkrétní podporu při neúspěchu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Celkově se výsledky zlepšily; v některých oborech však ve školním roce 2024/2025 došlo k ne příznivému výkyvu.",
+      "key_numbers": [
+        "Hrubá neúspěšnost ve společné části maturity v roce 2024/2025 byla přibližně 20 %.",
+        "V oboru Cestovní ruch dosáhla přibližně 45 %.",
+        "V distančním oboru Ekonomika a podnikání klesla přibližně o čtvrtinu na 29 %."
+      ],
+      "evidence": "Neúspěšnost se snižovala, ale výsledky 2024/2025 ovlivnila neúspěšnost v českém jazyce a literatuře."
+    },
+    "absence": {
+      "trend": "Absence na střední škole mírně klesla, v základní škole se výrazněji nezměnila.",
+      "key_numbers": [
+        "Střední škola: přibližně 200 h absence na žáka ročně.",
+        "Základní škola: přibližně 130 h absence na žáka ročně."
+      ],
+      "evidence": "Absence souvisí s motivací žáků a podle školy často ovlivňuje jejich neúspěšnost nebo předčasný odchod."
+    },
+    "support_services": [
+      "Dvě výchovné poradkyně, z nichž jedna je speciální pedagožka.",
+      "Dvě školní metodičky prevence a kariérový poradce.",
+      "Spolupráce se školskými poradenskými zařízeními a podpora plánů pedagogické podpory."
+    ],
+    "safety_climate": [
+      "Funkční systém prevence úrazů a ochrany zdraví.",
+      "Minimální úrazovost.",
+      "Zajištěné vchody a dohled nad žáky."
+    ],
+    "partnerships_practice": [
+      "Spolupráce se školami podobného zaměření, včetně zahraničních škol.",
+      "Zapojení externích odborníků do vzdělávání.",
+      "Propojování teorie s praxí, prezentace studentských děl a rozvoj komunikačních dovedností."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá běžné české výrazy, stručně odděluje silné stránky, rizika a ověřitelná čísla.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesné výsledky společné části maturity podle všech oborů a forem v jedné přehledné tabulce.",
+      "Zpráva neuvádí konkrétní výsledky přijímacích zkoušek pro každý obor a rok.",
+      "Doporučení rodičům vychází z hodnocení inspekce; aktuální personální složení a nabídka se mohou změnit."
+    ]
+  }
+}

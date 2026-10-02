@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600170527_2025-11-18",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:57:56.338529+00:00",
+  "run_finished_utc": "2026-10-02T16:58:28.723606+00:00",
+  "raw_file": "SOS_600170527_2025-11-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600170527_2025-11-18",
+    "school_profile": {
+      "school_type": "Integrovaná střední škola technická a ekonomická s domovem mládeže",
+      "inspection_period": "18. 11. 2025 až 21. 11. 2025",
+      "school_change_summary": "Od roku 2019 škola zmenšila počet míst a oborů, posílila ŠPP a zmodernizovala část prostor a vybavení; kvalitu výuky se podle inspekce zlepšila jen částečně."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vyučování",
+          "detail": "Rozsáhlá síť partnerů umožňuje poznat různé skutečná pracoviště a lépe rozvíjet odborné dovednosti.",
+          "evidence": "„Rozsáhlá síť smluvních partnerů přispívá k rozvoji odborných kompetencí žáků během praktického vyučování.“"
+        },
+        {
+          "tag": "Vybavení a zázemí",
+          "detail": "Škola má moderní odborné učebny, dobře vybavené dílny a kvalitní podmínky v domově mládeže.",
+          "evidence": "„Škola vytváří bezpečné prostředí pro žáky i zaměstnance.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Školní psycholog a posílené ŠPP poskytují žákům i pedagogům poradenštví a podporu při rizikových situacích.",
+          "evidence": "„Školní poradenské pracoviště poskytuje účinnou podporu všem aktérům podílejícím se na vzdělávání ve škole.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Podpora žáků se SVP",
+          "detail": "Ve sledované výuce byla specifická podpora poskytována jen výjimečně a místo prodloužení času se objevovalo málo didaktických úprav.",
+          "evidence": "„Jen ve 4 % sledovaných hodin byl sledován výskyt situace, kdy vyučující specificky pracoval se žáky celého spektra nadání a potřeb.“"
+        },
+        {
+          "tag": "Učení a hodnocení",
+          "detail": "Hodnocení nemusí odpovídat skutečným znalostem žáků a při závěrečném hodnocení se objevují výrazné rozdíly.",
+          "evidence": "„Systém průběžného hodnocení tak stále není optimálně nastaven ve vztahu k očekávaným výsledkům vzdělávání.“"
+        },
+        {
+          "tag": "Rozmanitost kvality výuky",
+          "detail": "Kvalita vyučovacích hodin se mezi předměty výrazně lišila a místy chyběla aktivní práce, respekt k žákům a propojení s praxí.",
+          "evidence": "„Respektující přístup pedagogů k žákům nebyl ve výuce uplatňován jednotně.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé upravují úkoly, pomůcky a hodnocení pro žáky se speciálními vzdělávacími potřebami?",
+        "Jak se u maturitních oborů předchází rozdílům mezi školním hodnocením a výsledky maturitní zkoušky?",
+        "Kolik hodin praktického vyučování probíhá na smluvních pracovištích a jak se hodnotí jeho splnění?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí studovat technický nebo ekonomický obor a využít rozsáhlé možnosti odborné praxe.",
+        "Žáci, kterým vyhovují moderně vybavené odborné učebny a dílny.",
+        "Žáci hledající přímé kontakty s regionálními zaměstnavateli a dalšími pracovišti."
+      ],
+      "who_should_be_cautious": [
+        "Rodiny, které očekávají průběžně důkladnou individualizaci výuky všech žáků se SVP.",
+        "Uchazeči do oborů Elektrotechnika a Dopravní prostředky kvůli zaznamenané vyšší hrubé neúspěšnosti.",
+        "Rodiny, kterým záleží na jednotném a transparentním systému hodnocení během celého studia."
+      ],
+      "plain_czech_summary": "Škola má rozsáhlé praktické vyučování, moderní vybavení, kvalitní zázemí domova mládeže a posílené poradenské pracoviště. Slabší jsou propojení školních dokumentů s výukou, hodnocení žáků a konkrétní podpora žáků se SVP. Inspekce zjistila výrazné rozdíly mezi učebnicemi, školním hodnocením a závěrečnými výsledky. Největší problémy hrozí v oborech Elektrotechnika a Dopravní prostředky. Přestože vedení některá zjištění napadlo, inspekční tým je po posouzení připomínek ponechal."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Ve společné části se neúspěšnost poslední tři roky pohybovala kolem 10 %; výsledky profilové části byly slabší.",
+        "key_numbers": [
+          "Hrubá neúspěšnost maturitního období 2025: 21,1 %",
+          "Elektrotechnika, profilová část: 33,3 %",
+          "Dopravní prostředky, společná část: 36,4 %"
+        ],
+        "evidence": "„Ve společné části se nejméně dařilo žákům oboru Dopravní prostředky (HN 36,4 %).“"
+      },
+      "absence": {
+        "trend": "Vysoká absence je školou uváděna jako jedna z příčin neúspěchu žáků, ale vývoj ani přesné podíly nejsou uvedeny.",
+        "key_numbers": [
+          "Přesné ukazatele absence zpráva neuvádí",
+          "Absence je uvedena mezi příčinami neúspěchu"
+        ],
+        "evidence": "„Škola spatřuje příčiny neúspěchu žáků ... ve vysoké absenci.“"
+      },
+      "support_services": [
+        "ŠPP bylo posíleno školním psychologem a dostává jasně stanovené kompetence.",
+        "ŠPP podporuje žáky i pedagogy při rizikovém chování a monitoringu klimatu tříd.",
+        "V závěrečných ročnících probíhá nácvik zvládání stresu a stylů učení."
+      ],
+      "safety_climate": [
+        "Bezpečnost a ochrana zdraví jsou pro žáky proklamovány na začátku roku a před dalšími činnostmi.",
+        "Fyzickou bezpečnost zajišťují turnikety, čipový systém, kamery a recepční.",
+        "Vychovatelé domova mládeže přistupují k žákům s respektem a podporují jejich samostatnost."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s několika desítkami smluvních partnerů.",
+        "Partneři zahrnují autorizované servisy, malé regionální firmy a firmy se zahraniční firemní kulturou.",
+        "Škola má přehled o aktuálním vzdělávání a hodnocení každého žáka na praktickém vyučování."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, krátké věty a jasně odděluje ověřená zjištění od doporučení rodičům.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesné číselné údaje o absenci, takže její vývoj nelze spolehlivě posoudit.",
+        "Ředitel školy napadl některá zjištění, ale inspekční tým je v lednu 2026 ponechal.",
+        "Údaje o úspěšnosti se vztahují k maturitnímu období 2025 a nemusí přesně vystihovat aktuální stav."
+      ]
+    }
+  }
+}

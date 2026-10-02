@@ -1,0 +1,101 @@
+{
+  "report_id": "SOS_600011984_2025-12-08",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola",
+    "inspection_period": "8. až 11. 12. 2025",
+    "school_change_summary": "Od poslední inspekce byla rekonstruována střecha školních dílen, pořízeny nové pomůcky a nástroje, vybudovány nové odborné učebny a kompletně zrekonstruována všechna tři poschodí domova mládeže."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Odborná výuka propojuje teorii s praxí a žáci pracují v dobře vybavených učebnách či školních dílnách.",
+        "evidence": "„Velká část učitelů efektivně propojovala teorii s praxí.“"
+      },
+      {
+        "tag": "Podpora studentů",
+        "detail": "Škola poskytuje kariérové poradenství, doučování, individuální konzultace a podporu při řešení osobních problémů.",
+        "evidence": "Škola poskytuje „kariérové poradenství“, „doučování“ i „individuální konzultace“."
+      },
+      {
+        "tag": "Ubytování a spolupráce",
+        "detail": "Domov mládeže nabízí ubytovaným žákům podporu učení, vybavené zázemí a aktivity pro rozvoj sociálních vztahů.",
+        "evidence": "„Ubytovaní žáci jsou motivováni k zapojení do aktivit“ a je jim poskytována „podpora učení“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Zpětná vazba",
+        "detail": "V teoretické výuce se málo pracuje se závěrem hodiny a ověřováním dosažení cíle učiva.",
+        "evidence": "„V teoretické výuce chyběla práce učitelů s cíli a závěry vyučovacích hodin.“"
+      },
+      {
+        "tag": "Individuální přístup",
+        "detail": "Někteří učitelé málo přizpůsobují úkoly různým úrovním a potřebám jednotlivých žáků.",
+        "evidence": "„Málo využívaná diferenciace úkolů podle individuálních potřeb žáků v teoretické výuce.“"
+      },
+      {
+        "tag": "Administrativa a podpora",
+        "detail": "Inspekce zjistila nedostatky v dokumentaci komisionálních zkoušek a doporučila posílit poradenské pracoviště.",
+        "evidence": "Byly zjištěny „neprůkazné záznamy“ a doporučeno „rozšířit personálně školní poradenské pracoviště“."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé ověřují na konci hodiny, zda žáci pochopili učivo?",
+      "Jak škola přizpůsobuje úkoly žákům s různou úrovní znalostí a žákům se speciálními vzdělávacími potřebami?",
+      "Jaké konkrétní služby poskytuje poradenské pracoviště a jak jsou dostupné rodičům?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří mají zájem o technické, strojírenské nebo elektrotechnické obory.",
+      "Žákům, kteří chtějí praktickou přípravu a odborný výcvik.",
+      "Žákům z bližšího okolí, kteří využijí ubytování v domově mládeže."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na pravidelné individualizaci výuky podle schopností.",
+      "Rodičům, kteří očekávají důkladnou průkaznost dokumentace školních zkoušek.",
+      "Rodičům žáků, kteří potřebují intenzivní podporu školního poradenského pracoviště."
+    ],
+    "plain_czech_summary": "Škola má silné odborné zázemí, praktickou výuku a dobré vybavení. Výsledky jsou velmi dobré, zejména u maturitních zkoušek. Pro rodiče je důležité, že škola poskytuje poradenství, doučování a ubytování. Mezi slabší místa patří málo zpětné vazby v hodinách, omezená diferenciace úkolů a nedostatky v dokumentaci komisionálních zkoušek. Zpráva doporučuje tyto oblasti zlepšit."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi dobré výsledky",
+      "key_numbers": [
+        "Z 45 přihlášených žáků neuspěli po podzimním kole tři.",
+        "Hrubá neúspěšnost činila 6,6 %.",
+        "Sedm žáků složilo Cambridge B2 First."
+      ],
+      "evidence": "„Ve školním roce 2024/2025 z přihlášených 45 žáků po podzimním kole pouze tři žáci neúspěšní.“"
+    },
+    "absence": {
+      "trend": "Přísně nastavená pravidla mohou zvyšovat počet doplňkových zkoušek",
+      "key_numbers": [
+        "Opravné zkoušky vykonalo 40 žáků.",
+        "Doplňkové zkoušky konalo 49 žáků."
+      ],
+      "evidence": "„Opravné zkoušky vykonalo 40 žáků z 49 konajících.“"
+    },
+    "support_services": [
+      "Výchovná poradkyně poskytuje kariérové poradenství žákům a rodičům.",
+      "Školní poradenské pracoviště řeší osobní problémy a rizikové projevy chování.",
+      "Škola nabízí doučování a individuální konzultace."
+    ],
+    "safety_climate": [
+      "Při hospitované praktické výuce byly dodržovány zásady BOZP a čistota pracoviště.",
+      "V hodinách vznikala pohodová atmosféra a žáci komunikovali s učiteli otevřeně bez obav z chyby."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje se zřizovatelem, spolkem rodičů a profesními organizacemi.",
+      "Organizuje stáže žáků ve firmách a zahraniční výměnné akce ve spolupráci se školou na Slovensku."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžné české výrazy, stručně spojuje zjištění s praktickým dopadem pro rodiče a jasně odděluje silné stránky od oblastí ke zlepšení.",
+    "uncertainty_notes": [
+      "Text uvádí datum vyhotovení zprávy 5. 1. 2025, které neodpovídá uvedenému období inspekce 8.–11. 12. 2025.",
+      "Zpráva neuvádí samostatný dlouhodobý trendabsence, pouze údaje za školní rok 2024/2025.",
+      "Přesný počet a rozsah individuálních podpůrných opatření ve výuce není uveden."
+    ]
+  }
+}

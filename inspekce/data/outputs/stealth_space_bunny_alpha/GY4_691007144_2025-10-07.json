@@ -1,0 +1,110 @@
+{
+  "report_id": "GY4_691007144_2025-10-07",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:58:54.028804+00:00",
+  "run_finished_utc": "2026-10-02T16:59:35.446133+00:00",
+  "raw_file": "GY4_691007144_2025-10-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691007144_2025-10-07",
+    "school_profile": {
+      "school_type": "Soukromé technické gymnázium, základní škola, mateřská škola a školní družina",
+      "inspection_period": "7.–10. 10. 2025",
+      "school_change_summary": "Škola výrazně rozšířila vzdělávací nabídku, zřídila technické gymnázium, rozrostla na čtyři třídy základní školy a posílila bezpečnost i podporu žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Podnětné prostředí mateřské školy",
+          "detail": "Mateřská škola nabízí pohyb, hry, tvoření, robotiku, jazykové a enviromentální aktivity.",
+          "evidence": "Široká nabídka aktivit podporuje všestranný individuální rozvoj a spolupráci dětí všech věkových skupin."
+        },
+        {
+          "tag": "Bezpečná základní škola",
+          "detail": "Základní škola zlepšuje zázemí pro bezpečnou a pestrou výuku.",
+          "evidence": "Vedení systematicky zlepšuje materiální podmínky a zabezpečilo vchod proti vniku cizích osob."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola poskytuje doučování, konzultace, poradenství a podporu žákům se speciálními vzdělávacími potřebami.",
+          "evidence": "Nabízeno je doučování, individuální konzultace a spolupráce s externími odborníky."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nestabilní pedagogický tým",
+          "detail": "Časté změny učitelů základní školy mohou ovlivňovat kontinuitu výuky a jednotné postupy.",
+          "evidence": "Tým je nestabilní, někteří pedagogové nesplňují potřebnou kvalifikaci a chybí program podpory nově nastupujících."
+        },
+        {
+          "tag": "Omezená individualizace",
+          "detail": "Ve výuce chybí dostatek úkolů pro různé úrovně žáků, aktivní zapojení a příležitosti pro vlastní hodnocení.",
+          "evidence": "Výuka není diferencována a žáci nedostávají dostatek příležitostí k sebehodnocení a vzájemnému hodnocení."
+        },
+        {
+          "tag": "Pracovní klima a kázeň",
+          "detail": "Někteří žáci se chovají nevhodně a v části hodin nejsou dostatečně aktivní ani soustředění.",
+          "evidence": "Objevily se nevhodné postoje žáků a v některých sledovaných hodinách žáci neudrželi pozornost ani kázeň."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky s potřebou pomoci i nadané žáky při samostatné práci nebo práci ve skupinách?",
+        "Jak může rodič při přijímacím řízení ověřet kvalifikaci a případnou změnu učitele svého dítěte?",
+        "Jaké konkrétní výsledky přineslo doučování, poradenství a podpora žáků se speciálními vzdělávacími potřebami?"
+      ],
+      "who_school_fits": [
+        "Rodiče, kteří hledají menší komunitní školu s důrazem na bezpečné prostředí.",
+        "Rodiče mateřských dětí, kterým vyhovuje široká nabídka sportovních, tvořivých, jazykových a technologických aktivit.",
+        "Rodiče žáků základní školy, kteří ocení nabídku doučování a ochotu školy řešit individuální potřeby."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří potřebují stabilní třídní učitelele a jednotný přístup v celém školním roce.",
+        "Rodiče žáků, jimž záleží na výrazné individualizaci, aktivním učení a sebereprezentaci žáků.",
+        "Rodiče, kteří chtějí přesvědčivě posoudit výsledky výuky pomocí nezávislých školních testů."
+      ],
+      "plain_czech_summary": "Inspekce hodnotila především základní a mateřskou školu; nové technické gymnázium nebylo předmětem hodnocení. Výhodou školy je postupné zlepšování zázemí, zabezpečení budovy, podnětná mateřská škola a dostupná podpora žáků. Hlavním problémem je nestabilní a částečně nekvalifikovaný tým základní školy. Ve výuce se málo objevuje samostatná a skupinová práce, diferencované úkoly, digitální tvorba i formativní hodnocení. Ne vždy se daří udržet kázeň a příznivý pocit ve třídách. Hodnocení žáků je podle inspekce spíše shovívavé a chybí nezávislé testování, podle něhož by rodiče mohli porovnat výsledky s jinými školami."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Neposuzováno",
+        "key_numbers": [
+          "Technické gymnázium zahájilo studium se 18 novými žáky.",
+          "Středoškolská část nebyla předmětem hodnocení."
+        ],
+        "evidence": "Tato součást školy nebyla předmětem hodnocení při aktuální komplexní inspekční činnosti."
+      },
+      "absence": {
+        "trend": "Inspekční zpráva neuvádí údaje o absenci",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje statistiky ani ukazateleabsence žáků."
+      },
+      "support_services": [
+        "Doučování nabízené zejména jako prevence školního neúspěchu.",
+        "Individuální konzultace žáků a rodičů vedené ve spolupráci s výchovnou poradkyní.",
+        "Podpora žáků se speciálními vzdělávacími potřebami, včetně logopedické péče speciální pedagožkou.",
+        "Plány pedagogické podpory pro některé děti v mateřské škole a spolupráce s externími odborníky."
+      ],
+      "safety_climate": [
+        "Vchodové dveře jsou zabezpečeny proti vnikání cizích osob a ve škole je instalován kamerový systém.",
+        "Většina učitelek základní školy působila ve třídách od začátku školního roku, což ztěžovalo sjednocení postupů.",
+        "V mateřské škole bylo pozorováno příznivé, vstřícné prostředí s pravidly vzájemných vztahů.",
+        "U žáků základní školy se v některých případech vyskytovaly nevhodné postoje k učitelům i spolužákům."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s komerčními partnery, zákonnými zástupci a sportovními organizacemi.",
+        "Sportovní a enviromentální aktivity podporují zdravý životní styl, pohyb a rozhled žáků.",
+        "Mateřská a základní škola pořádají společné aktivity a usilují o plynulý přechod dětí na další stupeň."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou přímé, rodičům srozumitelné a jasně odlišují zjištění inspekce od doporučení k ověření.",
+      "uncertainty_notes": [
+        "Výsledky a podmínky na nově zřízeném technickém gymnáziu zpráva nehodnotí.",
+        "Zpráva neuvádí údaje o maturitách ani o absenci.",
+        "U podpůrných služeb je popsána jejich nabídka, ale jejich dlouhodobá účinnost je hodnocena jako počáteční."
+      ]
+    }
+  }
+}

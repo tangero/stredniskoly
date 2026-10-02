@@ -1,0 +1,105 @@
+{
+  "report_id": "SOS_600007669_2026-05-05",
+  "school_profile": {
+    "school_type": "Příspěvková organizace poskytující střední vzdělání v oboru Obchodní akademie s maturitní zkouškou.",
+    "inspection_period": "5. 5. 2026 až 18. 5. 2026; místní inspekční činnost proběhla 5., 12.–13., 15. a 18. 5. 2026.",
+    "school_change_summary": "Od inspekce v roce 2019 výrazně vzrostl počet žáků i přibližně se zdvojnásobil počet pedagogů; zlepšily se materiální podmínky a většina dřívějších nedostatků byla odstraněna."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná příprava",
+        "detail": "Výuka propojuje teoretické znalosti s praktickými dovednostmi a přípravou na práci v reálném firemním prostředí.",
+        "evidence": "„Odbornou složku vzdělávání odbahcují exkurze a realizace odborné praxe u sociálních partnerů.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola nabízí neúspěšným žákům konzultace a doučování a žákům s jiným mateřským jazykem podporu češtiny.",
+        "evidence": "„Neúspěšným žákům škola nabízí např. konzultace či doučování.“"
+      },
+      {
+        "tag": "Bezpečné klima",
+        "detail": "Ve škole je podporována příjemná atmosféra, žáci se nebojí zeptat a škola aktivně řeší rizikové chování.",
+        "evidence": "„Vzdělávání probíhalo většinou v příjemné pracovní atmosféře“ a „žáci se neobávali v případě nejasností dotazovat učitele“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nadaní žáci",
+        "detail": "Učivo se má málo diferenciovat podle schopností, takže nadaní žáci nemusí dostávat dostatečně náročné podněty.",
+        "evidence": "„Omezené využívání diferenciace uukuky zvláště vůči nadaným žákům nerozvíjí dostatečně jejich individuální předpoklady.“"
+      },
+      {
+        "tag": "Formativní hodnocení",
+        "detail": "Žáci se v hodinách málo podílejí na vyhodnocování svého učení pomocí formativního, vrstevnického hodnocení či sebereflexe.",
+        "evidence": "„Tyto jevy byly patrné pouze v desetině sledované ukuky.“"
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Škola zatím nezískává dostatečně systematicky zpětnou vazbu od všech účastníků vzdělávání.",
+        "evidence": "„Příležitostí ke zlepšení je systematické získávání zpětné vazby od všech aktérů vzdělávání.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé odlišují úkoly pro nadané žáky a jak často se to během roku mění?",
+      "Jak v hodinách probíhá formativní hodnocení, sebereflexe a vzájemné hodnocení žáků?",
+      "Jak konkrétně vypadá podpora žáků se speciálními vzdělávacími potřebami nebo s jazykovou bariérou?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí střední odborné vzdělání obchodního zaměření s důrazem na praktické dovednosti.",
+      "Žákům, kterým vyhovuje spolupráce s učiteli, konzultace, doučování a podpora při neprospívání.",
+      "Žákům se silnou angličtinou, kteří chtějí jazykové kompetence využít také při odborné přípravě; zpráva uvádí, že téměř polovina maturantů v roce 2024/2025 využila standardizovanou zkoušku."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče nadaných žáků, protože inspekce výslovně označila za nedostatečnou diferenciaci učiva vůči nadaným žákům.",
+      "Žáci, kterým záleží na intenzivním rozvoji vlastního učení prostřednictvím sebereflexe, protože se podle zprávy objevovaly jen v desetině sledovaných hodin.",
+      "Rodiče, kteří očekávají důsledně propracovanou zpětnou vazbu všech aktérů; její systematické získávání označila škola za příležitost ke zlepšení."
+    ],
+    "plain_czech_summary": "Škola se zaměřuje na odbornou přípravu k maturitě a praktickou práci. Výsledky i průměrná absence se zlepšily, poradenské služby jsou dobře nastavené a škola aktivně spolupracuje s praxí i vysokými školami. Hlavním přetrvávajícím problémem je malé přizpůsobování výuky nadaným žákům. Méně než v desetině sledovaných hodin se uplatňovala sebereflexe, formativní nebo vzájemné hodnocení. Rodiče by se měli zeptat, jak se tyto přístupy v praxi zlepšují."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky společné části byly za poslední tři roky lepší nebo srovnatelné s oborovým průměrem ČR; výsledky profilové části kolísaly, ale v roce 2024/2025 se po přípravě praktické maturity zlepšily.",
+      "key_numbers": [
+        "Ve školním roce 2024/2025 neuspěli ve společné části čtyři žáci, kteří však nekonal didaktické testy.",
+        "V profilové části maturity 2024/2025 neuspěli dva žáci; v roce 2023/2024 bylo neúspěšných kvůli praktické části více.",
+        "Náhradu profilové maturity z angličtiny využila ve 2024/2025 téměř polovina žáků, oproti přibližně třetině v roce 2023/2024."
+      ],
+      "evidence": "„Opatření ke zvýšení úspěšnosti žáků, zejména simulace praktické MZ, vedla ke zlepšení výsledků ve školním roce 2024/2025, neuspěli jen dva žáci.“"
+    },
+    "absence": {
+      "trend": "Škola podle rozboru zvyšuje motivaci žáků k účasti a průměrná roční absence se meziročně snížila.",
+      "key_numbers": [
+        "Ve školním roce 2024/2025 činila průměrná roční absence přibližně 130 hodin na žáka.",
+        "Neomluvená absence byla podle zprávy zcela ojedinělá."
+      ],
+      "evidence": "„Ve školním roce 2024/2025 se v meziročním srovnání průměrná roční absence snížila, činila přibližně 130 h na žáka.“"
+    },
+    "support_services": [
+      "Poradenský tým tvoří ředitelka jako kariérní poradkyně, její zástupkyně, školní metodik prevence, nový školní metodik prevence a školní kouč; text zřejmě omylem označuje některé členy jako školní metodiky.",
+      "Učitelé dostávají informace o vzdělávacích potřebách žáků a metodické vedení; doporučení poradenského zařízení se uplatňují ve výuce.",
+      "Škola poskytuje konzultace, doučování, individuální práci s pedagogy, konzultace pro rodiče a preventivní programy proti rizikovému chování.",
+      "Kariérové poradenství zahrnuje osobní rozhovory, veletrhy vzdělávání, návštěvy vysokých škol, projekty se absolventy a spolupráci s úřadem práce a personalisty."
+    ],
+    "safety_climate": [
+      "Pravidla a postupy týkající se bezpečnosti a ochrany zdraví jsou stanoveny a žáci jsou o nich prokazatelně poučováni.",
+      "Úrazovost je podle inspekce na nízké úrovni.",
+      "Většina sledované výuky probíhala v příjemné pracovní atmosféře a žáci se nebáli učitelů zeptat.",
+      "Adaptační kurz, třídnické hodiny, pochvaly a individuální práce podporují dobré chování a vrstevnické vztahy."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s odborníky z praxe a vysokých škol, pořádá přednášky, exkurze a zajišťuje odbornou praxi u sociálních partnerů.",
+      "Podporu odborných a jazykových kompetencí doplňují zahraniční stáže v firmě, poznávací a sportovní zájezdy a workshopy na vysokých školách.",
+      "Žáci se zapojují do aktivit města, projektových a charitativních akcí; žákovská rada navrhuje část školních aktivit."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, člení podle praktických otázek rodičů a jasně odlišuje potvrzené výsledky od oblastí ke zlepšení.",
+    "uncertainty_notes": [
+      "Zpráva uvádí přesný rozsah místní inspekční činnosti, nikoli souvislé denní přítomnosti po celém uvedeném období.",
+      "U společné části maturity nejsou uvedeny celkové počty zkoušených žáků, takže lze hodnotit vývoj, ne přepočítat úspěšnost.",
+      "Doporučené kontakty na školu a konkrétní postup přijímání žáků s podpornými opatřeními nejsou v této části zprávy uvedeny."
+    ]
+  }
+}

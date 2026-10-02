@@ -1,0 +1,104 @@
+{
+  "report_id": "SOU_600170772_2025-12-01",
+  "school_profile": {
+    "school_type": "střední odborná škola a střední odborné učiliště",
+    "inspection_period": "1.–4. 12. 2025",
+    "school_change_summary": "Oproti minulé inspekci se zlepšilo využívání pedagogických strategií a forem práce podporujících aktivitu žáků; přetrvávají však nedostatky v individuální podpoře, diferenciaci úloh a výsledcích nástavbového studia Podnikání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Přátelské klima",
+        "detail": "Respektující atmosféra a vstřícná komunikace podporují zapojení žáků do výuky.",
+        "evidence": "Sledované hodiny probíhaly v respektující pracovní atmosféře; komunikace mezi učiteli a žáky byla téměř vždy vstřícná."
+      },
+      {
+        "tag": "Praxe a vybavení",
+        "detail": "Škola nabízí rozsáhlé partnerské pracoviště, moderní učebny a praktickou výuku.",
+        "evidence": "Škola má velmi široké portfolio smluvních partnerů, modernizované odborné učebny a nadstandardní vybavení pro IT."
+      },
+      {
+        "tag": "Podpora rozdílných potřeb",
+        "detail": "Školní poradenské pracoviště, asistentka pedagoga a individualizovaná opatření podporují žáky s odlišnými potřebami.",
+        "evidence": "Podpůrná opatření poskytovalo 62 žákům; práci učitelů v jedné třídě podporovala asistentka pedagoga."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nástavbové studium",
+        "detail": "V oboru Podnikání jsou výsledky maturity kolísavé a v roce 2025 se neúspěšnost opět výrazně zvýšila.",
+        "evidence": "Hrubá neúspěšnost vzrostla z 22,7 % v roce 2024 na téměř 53,3 % v roce 2025."
+      },
+      {
+        "tag": "Diferencovaná výuka",
+        "detail": "Málo individualizovaných úloh může omezovat přiměřenou podporu žáků s různou úrovní nebo se speciálními vzdělávacími potřebami.",
+        "evidence": "Inspekce zaznamenala jen velmi ojedinělé využívání diferencované obtížnosti zadávaných úloh."
+      },
+      {
+        "tag": "Docházka a neomluvená absence",
+        "detail": "Neomluvené hodiny jsou problémem zejména v nástavbovém studiu a mohou zhoršovat hodnocení chování.",
+        "evidence": "Ve druhém pololetí bylo kvůli neomluveným hodinám sníženo hodnocení chování až 10 % žákům."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní podpůrné plány, doučování a konzultace poskytuje škola studentům nástavbového studia Podnikání před maturitou?",
+      "Jak často a v jakých hodinách učitelé využívají úlohy s různou obtížností a podporují žáky s odlišnou úrovní učení?",
+      "Jaké jsou přesné zásady omlouvání absence a proč školní řád podle inspekce obsahuje nadbytečné požadavky na dokládání?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí střední vzdělání oborů Informační technologie, Gastronomie nebo Podnikání.",
+      "Žákům, kteří ocení rozsáhlou praktickou přípravu, odborné pracoviště a spolupráci s partnery.",
+      "Žákům, kterým vyhovuje vstřícná atmosféra a aktivní přístup učitelů."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků nástavbového studia Podnikání kvůli kolísavým výsledkům u maturity.",
+      "Rodičům žáků, kteří potřebují častou individuální podporu nebo úlohy přesně přizpůsobené jejich úrovni.",
+      "Rodičům, kterým vadí vysoká míra neomluvené absence v nástavbovém studiu."
+    ],
+    "plain_czech_summary": "Škola má dobré personální podmínky, moderní učebny, přátelské klima a velmi rozsáhlou spolupráci s pracovišti, kde žáci získávají praxi. Hlavními problémy jsou výsledky maturity v nástavbovém studiu Podnikání a malé využívání úloh s různou obtížností. V oboru Podnikání dosáhla v roce 2025 hrubá neúspěšnost maturity téměř 53,3 %. Škola proto zavádí semináře, doučování a konzultace. Pro rodiče je důležité ověřit, jak konkrétně funguje podpora v jejich oboru a jak jsou řešeny neomluvené absence. Přiměřená podpora žáků s odlišnými vzdělávacími potřebami je užitečná, ale podle inspekce zatím využívaná jen málo."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Ve čtyřletých oborech jsou výsledky stabilní, zatímco v nástavbovém studiu Podnikání výsledky výrazně kolísají.",
+      "key_numbers": [
+        "U čtyřletých oborů byla v roce 2025 hrubá neúspěšnost nejvýše 7 % a až 14 % žáků maturovalo s vyznamenáním.",
+        "V oboru Podnikání byla hrubá neúspěšnost ve společné části maturity 50,0 % v roce 2023, 22,7 % v roce 2024 a téměř 53,3 % v roce 2025.",
+        "Škola zavedla dobrovolné semináře z matematiky, doučování žáků s rizikem neúspěchu a konzultace."
+      ],
+      "evidence": "Výsledky čtyřletých oborů byly srovnatelné s minulou inspekcí; u Podnikání kolísala úspěšnost a v roce 2025 dosáhla neúspěšnost 53,3 %."
+    },
+    "absence": {
+      "trend": "Absence byla vyšší v tříletých učebních oborech, nižší v čtyřletých maturitních oborech a výraznější v nástavbovém studiu.",
+      "key_numbers": [
+        "V tříletých učebních oborech připadalo přibližně 100 hodin absence na žáka.",
+        "V čtyřletých maturitních oborech šlo přibližně o 70 hodin absence na žáka.",
+        "Ve druhém pololetí 2024/2025 bylo z důvodu neomluvených hodin sníženo hodnocení chování až 10 % žákům."
+      ],
+      "evidence": "Zpráva uvádí přibližně 100 hodin absence v tříletých oborech, 70 hodin v čtyřletých a výraznější míru v nástavbovém studiu."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště tvoří výchovná poradkyně, metodička prevence a sociální pedagožka.",
+      "Podpůrná opatření podle doporučení školského poradenského zařízení poskytovalo 62 žákům.",
+      "Šest žáků mělo individuální vzdělávací plán, sedm dalších podporu podle vlastní diagnostiky a jednu třídu podporovala asistentka pedagoga."
+    ],
+    "safety_climate": [
+      "Ve většině hodin probíhala vstřícná komunikace a výuka v respektující atmosféře.",
+      "Pracoviště ŠPP zpracovala krizové plány, preventivní program a materiály proti šikanování.",
+      "Žáci byli vedeni k dodržování hygienických a bezpečnostních předpisů, používání pomůcek a dodržování osobní hygieny."
+    ],
+    "partnerships_practice": [
+      "Škola má velmi široké portfolio smluvních partnerů pro odbornou praxi a odborný výcvik.",
+      "Práce na smluvních pracovištích má pozitivní vliv na odborné kompetence a propojuje teorii s praxí.",
+      "U informačních technologií probíhá souvislá praxe na reálných pracovištích firem."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá srozumitelný běžný češtinský jazyk, stručně odděluje silné stránky od rizik a uvádí konkrétní čísla.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesnou míru absence zvlášť pro nástavbové studium, ačkoli ji popisuje jako výraznější.",
+      "Zpráva neuvádí aktuální účinnost opatření zavedených po špatných výsledcích maturity v roce 2025.",
+      "Zpráva neuvádí přijímací řízení, konkrétní výsledky jednotlivých oborů ani podrobné hodnocení přípravy na jednotlivé maturity."
+    ]
+  }
+}

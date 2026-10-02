@@ -1,0 +1,105 @@
+{
+  "report_id": "SOS_600016579_2026-03-10",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola elektrotechnická, příspěvková organizace, denní forma ve čtyřletých oborech IT a elektrotechnika",
+    "inspection_period": "10. 3. 2026 – 13. 3. 2026",
+    "school_change_summary": "Od předchozí inspekce se škola částečně modernizovala, změnilo se vedení a od roku 2020/2021 se zvýšila neúspěšnost maturitní zkoušky; v roce 2025 se škola stala fakultní školou VŠB."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické odborné vzdělávání",
+        "detail": "Škola propojuje teorii s praxí a žáky seznamuje s aktuálními technologiemi.",
+        "evidence": "„Praktické vyučování probíhá v odborných učebnách a dílnách školy pod vedením kvalifikovaných pedagogů.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola nabízí poradenské služby, konzultace, kariérové poradenství a psychologickou péči.",
+        "evidence": "„Poradenské služby ve škole jsou účinně poskytovány.“"
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Byly vybudovány nové odborné učebny a rekonstruují se některé třídy a učebny informatiky.",
+        "evidence": "„Byly vybudovány a zprovozněny učebny pneumatické automatizace a robotiky s kolaborativními robotickými stanicemi.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Neúspěšnost u maturity",
+        "detail": "Neúspěšnost u maturitní zkoušky výrazně převyšuje průměr příbuzných oborů v České republice.",
+        "evidence": "„Míra neúspěšnosti u maturitních zkoušek výrazně převyšuje průměrnou neúspěšnost České republiky za skupinu příbuzných oborů.“"
+      },
+      {
+        "tag": "Diferencovaná výuka",
+        "detail": "Ve většině hodin se žáci pracují se stejným zadáním a obtížností, což může omezovat rozvoj individuálního potenciálu.",
+        "evidence": "„Diferencovaná výuka nebyla přirozenou součástí většiny vyučovacích hodin.“"
+      },
+      {
+        "tag": "Bezpečnost a dokumentace",
+        "detail": "Inspekce zjistila nedostatky v zajištění bezpečnosti a vedení dokumentace, které vedení během inspekce odstranilo.",
+        "evidence": "„Nastavený systém řízení a kontroly vykazoval také dílčí nedostatky v oblasti zajištění bezpečnosti a vedení dokumentace.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní opatření škola přijala pro snížení neúspěšnosti u maturitní zkoušky?",
+      "Jak často se žáci během výuky setkávají s diferencovanými úkoly a zpětnou vazbou o svém pokroku?",
+      "Jaké konkrétní projekty a pracoviště žáci využívají při odborné praxi?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat informační technologie nebo elektrotechniku v čtyřletém denním programu.",
+      "Žákům, kteří mají zájem o praktickou odbornou přípravu a práci s moderní technikou.",
+      "Žákům, kteří využijí školní konzultace, poradenství a podporu při řešení učebních obtíží."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na vysoké úspěšnosti u maturitní zkoušky.",
+      "Rodičům žáků, kteří potřebují průběžnou individualizaci výuky a pravidelnou zpětnou vazbu.",
+      "Rodičům, kteří chtějí mít jistotu v dokonale průchodných únikových cestách a vybavení celé budovy."
+    ],
+    "plain_czech_summary": "Škola nabízí čtyřleté denní obory IT a elektrotechniky, praktickou výuku v moderních učebnách, odborné praktiky a poradenské služby. Inspekce ocenila propojení teorie s praxí, podporu žáků a spolupráci s partnery. Mezi problémy patří výrazně vyšší neúspěšnost u maturity než u příbuzných oborů v ČR, málo diferencované vyučování a slabší formativní hodnocení. Některé prostory vyžadují rekonstrukci. Výuka probíhala vhodně, bez výrazných kázeňských problémů, ale část pedagogů pracuje na zkrácený úvazek."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Neúspěšnost se od školního roku 2020/2021 výrazně zvýšila; v roce 2024/2025 se oproti roce 2023/2024 zvýšil podíl neprospějících i studentů, kteří zkoušky nezúčastnili.",
+      "key_numbers": [
+        "2023/2024: z 92 přihlášených neprospělo 25 %, 7,6 % nesplnilo podmínky konání",
+        "2024/2025: z 82 maturantů neprospělo 31,7 %, 13,5 % se zkoušky nezúčastnilo",
+        "2024/2025: s vyznamenáním prospělo 11 %"
+      ],
+      "evidence": "„Od školního roku 2020/2021 se výrazně zvýšila neúspěšnost žáků u maturitní zkoušky.“"
+    },
+    "absence": {
+      "trend": "Průměrná absence je přibližně stabilní, ale podíl neomluvených hodin výrazně klesá.",
+      "key_numbers": [
+        "Průměrná absence na žáka se pohybovala těsně pod 50 hodinami",
+        "Srovnání se týkalo posledních tří školních roků",
+        "Ve druhém pololetí 2024/2025 nebylo hodnoceno 7,5 % žáků; v prvním pololetí 2025/2026 4 %"
+      ],
+      "evidence": "„Zlepšení je patrné v podílu neomluvených hodin, který má výrazně klesající tendenci.“"
+    },
+    "support_services": [
+      "Poradenské služby pro žáky se speciálními vzdělávacími potřebami a žáky ohrožené školním neúspěchem",
+      "Individuální konzultace s pedagogy",
+      "Kariérové poradenství a zapojení do projektu podporujícího tuto oblast",
+      "Psychologická péče školního psychologa"
+    ],
+    "safety_climate": [
+      "Žáci jsou pravidelně seznamováni s pravidly bezpečného chování a ochrany zdraví.",
+      "V odborné výuce jsou vybaveni osobními ochrannými pracovními prostředky a pracovními oděvy.",
+      "Únikové východy nebyly v době inspekce volně průchodné; inspekce doporučila věnovat pozornost jejich zajištění."
+    ],
+    "partnerships_practice": [
+      "Odborná praxe probíhá na smluvně zajištěných pracovištích fyzických nebo právnických osob.",
+      "Škola spolupracuje se sociálními partnery, zřizovatelem, městem Havířov a organizacemi veřejného i neziskového sektoru.",
+      "Statut fakultní školy VŠB umožňuje výměnu názorů a získávání zkušeností."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a opřené o údaje nebo citace z inspekční zprávy.",
+    "uncertainty_notes": [
+      "Údaje o neúspěšnosti maturity se vztahují k jarnímu termínu a uvedeným školním rokům.",
+      "Zpráva neuvádí podrobné výsledky absence podle jednotlivých oborů.",
+      "Doporučení k nouzovým východům vychází ze zjištění inspekce, nikoli z jejich následného ověření."
+    ]
+  }
+}

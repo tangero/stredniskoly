@@ -1,0 +1,115 @@
+{
+  "report_id": "GY8_600016536_2025-11-24",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:57:16.671952+00:00",
+  "run_finished_utc": "2026-10-02T16:57:48.662179+00:00",
+  "raw_file": "GY8_600016536_2025-11-24.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600016536_2025-11-24",
+    "school_profile": {
+      "school_type": "Příspěvková střední škola poskytující gymnázijní a odborné vzdělání s maturitní zkouškou.",
+      "inspection_period": "24. 11. 2025 až 27. 11. 2025",
+      "school_change_summary": "Od roku 2019 se zlepšily materiální podmínky, zrekonstruovaly se odborné a počítačové učebny a přibylo dělených hodin. Škola také pracuje na rozvoji technického vzdělávání, digitalizaci a spolupráci se zaměstnavateli."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Podporující přístup učitelů",
+          "detail": "Ve výuce byl patrný vstřícný přístup, respekt a podpora žáků při učení.",
+          "evidence": "Ve sledovaných hodinách byla patrná příznivá pracovní atmosféra a vstřícný a podporující přístup učitelů k žákům."
+        },
+        {
+          "tag": "Rozmanité možnosti studia",
+          "detail": "Škola nabízí osmileté a čtyřleté gymnázium, informační technologie, obchodní akademii a veřejnosprávní činnost.",
+          "evidence": "Vzdělává v oborech Gymnázium osmileté, Gymnázium čtyřleté, Informační technologie, Obchodní akademie a Veřejnosprávní činnost."
+        },
+        {
+          "tag": "Praktická výuka a spolupráce",
+          "detail": "Odborný výcvik, projekty, partnerské školy a studentská rada rozšiřují zkušenosti žáků mimo běžnou výuku.",
+          "evidence": "Škola spolupracuje s organizacemi a firmami, realizuje Erasmus+ a aktivní studentská rada přináší vlastní návrhy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná diferenciace",
+          "detail": "Úkoly byly zpravidla stejné pro všechny žáky, což mohou zhoršovat přístup žáků s odlišnými potřebami.",
+          "evidence": "Zadání úkolů bylo zpravidla jednotné pro všechny žáky, což neumožňovalo dostatečnou diferenciaci."
+        },
+        {
+          "tag": "Rozvoj kritického myšlení",
+          "detail": "Práce s více informačními zdroji a kritické hodnocení informací se podle zprávy objevovaly jen výjimečně.",
+          "evidence": "Úkoly založené na vyhledávání informací či práci s různými informačními zdroji se objevovaly pouze vjimečně."
+        },
+        {
+          "tag": "Omezená podpora poradny",
+          "detail": "Školní poradenské pracoviště je podle inspekce personálně poddimenzované pro počet žáků.",
+          "evidence": "Vzhledem k oborové skladbě a vysokému počtu žáků je školní poradenské pracoviště personálně poddimenzované."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se ve výuce přizpůsobují úkoly žákům se speciálními vzdělávacími potřebami a nadaným žákům?",
+        "Jak často se konají konzultace a jaké konkrétní podpory se poskytují žákům s rizikem neúspěchu?",
+        "Kolik času věnuje školní psycholožka jednotlivým žákům a jak je řešena podpora třídních kolektivů?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří hledají gymnázijní nebo odborné vzdělání v Orlové a chtějí možnost volitelných seminářů.",
+        "Žákům, kterým vyhovuje podporující přístup učitelů a systematická příprava ke klasifikaci.",
+        "Žákům, kteří mají zájem o projektovou činnost, odborný výcvik, jazykové mobility nebo studentskou radu."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kteří potřebují prokazatelně rozdílné úkoly a pravidelnou individualizovanou podporu.",
+        "Rodičům žáků, kterým záleží na rozvoji kritického hodnocení informací a práce s více zdroji.",
+        "Rodinám, které očekávají rozsáhlé komplexní poradenství a systémovou práci s třídami."
+      ],
+      "plain_czech_summary": "Škola nabízí gymnázijní i odborné obory na dvou místech v Orlové. Výuka má podle inspekce přátelskou atmosféru, učitelé žáky podporují a škola investuje do moderních učeben i spolupráce s praxí. Gymnaziální žáci dosahují velmi dobrých a stabilních výsledků, u odborných žáků jsou výsledky spíše průměrné a častější absence i nedostatečné známky. Mezi hlavní nedostatky patří malá diferenciace úkolů, omezená práce s informačními zdroji a nedostatečná personální kapacita poradenského pracoviště. Rodiče by měli na otevřeném dni ověřit, jak konkrétně škola podporuje rozdílné vzdělávací potřeby a žáky ohrožené neúspěchem."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "U gymnaziálních žáků jsou výsledky dlouhodobě velmi dobré a stabilní; u žáků odborné školy jsou výsledky spíše průměrné a častěji se objevují nedostatečné známky.",
+        "key_numbers": [
+          "12 tříd gymnaziálního vzdělávání a 332 žáků",
+          "12 tříd odborného vzdělávání s maturitní zkouškou a 338 žáků",
+          "25 žáků se speciálními vzdělávacími potřebami"
+        ],
+        "evidence": "Gymnazisté dosahují dlouhodobě velmi dobrých studijních výsledků, zatímco u žáků odborné školy jsou výsledky spíše průměrné."
+      },
+      "absence": {
+        "trend": "U gymnaziálních žáků je omluvená absence nižší; u odborných žáků se častěji vyskytuje vyšší absence, která může souviset s výsledky a motivací.",
+        "key_numbers": [
+          "U gymnaziálních žáků je omluvená absence nižší.",
+          "U žáků odborné školy se zřejmě vyskytuje vyšší absence.",
+          "Škola vztahovala nižší výsledky odborných žáků také k absenci a motivaci."
+        ],
+        "evidence": "Škola uvedla, že průměrné výsledky odborných žáků mohou souviset s vyšší absencí a nižší studijní motivací."
+      },
+      "support_services": [
+        "Výchovná poradkyně zajišťuje výchovné a kariérové poradenství.",
+        "Školní metodička prevence působí v rámci prevence rizikového chování.",
+        "Školní psycholožka působí ve škole dva dny v týdnu.",
+        "Učitelé nabízejí individuální konzultace pro žáky s rizikem neúspěchu."
+      ],
+      "safety_climate": [
+        "Bezpečnost a ochrana zdraví žáků jsou zajišťovány ve spolupráci s odborně způsobilými osobami.",
+        "Preventivní opatření se pravidelně hodnotí a žáci jsou informováni o bezpečnostních rizicích.",
+        "Ve škole nebyly při hospitacích zjištěny kázeňské problémy."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s řadou organizací a firem v rámci odborného výcviku.",
+        "Realizuje program Erasmus+ a dlouhodobou spolupráci se zahraničními partnerskými školami.",
+        "Působí jako fakultní škola Vysoké školy báňské – Technické univerzity Ostrava ekonomické fakulty.",
+        "Studentská rada pravidelně spolupracuje s vedením a přináší vlastní podněty."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text používá srozumitelnou češtinu, stručně odděluje silné stránky od oblastí ke zlepšení a uvádí konkrétní praktické důsledky pro rodiče.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní úspěšnost u maturitní zkoušky, proto nelze hodnotit výsledky v procentech.",
+        "Zpráva neuvádí přesné procento ani počet absencí, takže chybí číselné srovnání.",
+        "Uvedené hodnocení se vztahuje k inspekční činnosti v období 24. 11. až 27. 11. 2025."
+      ]
+    }
+  }
+}

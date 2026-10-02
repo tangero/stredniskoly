@@ -1,0 +1,103 @@
+{
+  "report_id": "GY4_600012751_2026-05-05",
+  "school_profile": {
+    "school_type": "Střední škola: gymnázium a čtyřleté kombinované lyceum; škola zároveň provozuje domov mládeže a školní jídelnu.",
+    "inspection_period": "5. až 7. 5. a 20. 5. 2026",
+    "school_change_summary": "Od minulé inspekce se zvýšil počet žáků o 56, vznikla nová odborná učebna fyziky, obnovila se IT technika a přibyly tablety, auto a vybavení domova mládeže. Zavedeny byly vzájemné hospitace učitelů, ale přetrvávají nedostatky v kontrolách, dokumentaci, diferenciaci výuky a metodách práce."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky a klima",
+        "detail": "Škola dosahuje velmi dobrých ročníkových a maturitních výsledků v přátelském prostředí s nízkou absencí.",
+        "evidence": "„Výsledky žáků u maturitní zkoušky korespondují s jejich výbornými ročníkovými výsledky, hrubá i čistá neúspěšnost jsou minimální“."
+      },
+      {
+        "tag": "Aktivity a partneři",
+        "detail": "Žáci se mohou rozvíjet prostřednictvím soutěží, projektů, pobytů, dobrovolnictví a zahraničních výměn.",
+        "evidence": "„Velmi pestrá činnost školy se zapojením žáků nad rámec běžné výuky“."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola poskytuje výchovné, preventivní a psychologické poradenství a vede evidenci podpůrných opatření.",
+        "evidence": "„Škola poskytuje poradenské služby prostřednictvím výchovné poradkyně, metodičky prevence a školní psycholožky.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rozmanitost výuky",
+        "detail": "Ve většině hodin převažuje frontální výuka, studenti jsou méně zapojeni a učitelé obtížně ověřují jejich skutečné pochopení učiva.",
+        "evidence": "„Převažovala frontální forma vyučování, ojediněle byly využity kooperativní metody práce.“"
+      },
+      {
+        "tag": "Individuální přístup",
+        "detail": "Podpora rozdílných schopností a potřeb žáků je slabší, zejména u nadaných, rychlejších a žáků se speciálními vzdělávacími potřebami.",
+        "evidence": "„Specifická podpora žáků se speciálními vzdělávacími potřebami a nadaných byla ve sledované výuce zaznamenána pouze ojediněle.“"
+      },
+      {
+        "tag": "Prostředí a vybavení",
+        "detail": "Chybí laboratoř pro biologii a jazyková učebna, tělocvična je malá a některé aktivity probíhají mimo hlavní budovu školy.",
+        "evidence": "„Chybí laboratoř pro výuku biologie, jazyková učebna, tělocvična je prostorově malá“."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se v jednotlivých předmětech liší přístup žákům s odlišnou úrovní, zájmem nebo podpůrnými potřebami?",
+      "Jak často žáci během vyučovací hodiny pracují samostatně, ve dvojicích nebo ve skupinách a dostávají zpětnou vazbu?",
+      "Jaké konkrétní aktivity a projekty jsou pro nové žáky vhodné a jak často se jich mohou účastnit?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří hledají dobré výsledky, přátelskou atmosféru a široké mimoškolní aktivity.",
+      "Žákům, které baví prohlubování učiva, projekty, soutěže a zahraniční pobyty.",
+      "Žákům, kterým vyhovuje gymnaziální nebo kombinované vzdělávání s čtyřletým programem."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na pravidelném aktivním zapojení do výuky, společné práci a okamžité zpětné vazbě.",
+      "Rodičům dětí se speciálními vzdělávacími potřebami, kteří chtějí mít jistotu průběžné cílené podpory.",
+      "Rodičům, kteří mají zájem o dobře vybavené laboratoře, jazykové učebny a rozsáhlé tělovýchovné zázemí přímo ve škole."
+    ],
+    "plain_czech_summary": "Gymnázium v Jevíčku vychází z dobrých ročníkových výsledků, velmi dobrých výsledků u maturity a nízké absence. Mezi přednosti patří přátelská atmosféra, zapojení do projektů, dobrovolnictví a zahraniční pobyty. Pro rodiče je důležité vědět, že výuka je často vedená frontálně, žáci se méně samostatně rozhodují a různým potřebám jednotlivců se věnuje méně pozornosti. Chybí laboratoř pro biologii a jazyková učebna a tělocvična je malá. Škola poskytuje poradenství, ale při vybírání programu je vhodné ověřit, jak konkrétně budou žáci podle předmětu a úrovně učeni."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky jsou velmi dobré a odpovídají ročníkovým hodnocením; neúspěšnost je minimální.",
+      "key_numbers": [
+        "„Hrubá i čistá neúspěšnost jsou minimální“.",
+        "Neprospívající žáci jsou v některých částech maturity výjimkou."
+      ],
+      "evidence": "„Výsledky žáků u maturitní zkoušky korespondují s jejich výbornými ročníkovými výsledky“."
+    },
+    "absence": {
+      "trend": "Docházka je velmi dobrá, neomluvené hodiny nebyly zaznamenány.",
+      "key_numbers": [
+        "„Žádné hodiny nebyly vyhodnoceny jako neomluvené“.",
+        "Kázeňská opatření byla udělována spíše výjimečně."
+      ],
+      "evidence": "„Dobré klima ve škole se příznivě promítá také do docházky žáků bez výrazné míry absencí“."
+    },
+    "support_services": [
+      "Výchovná poradkyně zpracovává doporučení školských poradenských zařízení a informuje učitele.",
+      "Metodička prevence plánuje preventivní aktivity a adaptace.",
+      "Školní psycholožka poskytuje psychologické poradenské služby.",
+      "Škola podpůrná opatření poskytuje 19 žákům podle doporučení zařízení a vlastní opatření stanovila pěti žákům."
+    ],
+    "safety_climate": [
+      "Ve sledovaných hodinách probíhala otevřená komunikace a atmosféra byla přátelská.",
+      "Neomluvené hodiny nebyly zaznamenány.",
+      "Kázeňská opatření byla udělována spíše výjimečně."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje se školami, institucemi a firmami v regionu.",
+      "Spolupráci se zahraničními partnery včetně Španělska a Belgie využívá k výměnným pobytům žáků a pedagogů.",
+      "Rodičovský spolek podporuje kurzy, plesy a vybavení školy."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je formulován srozumitelně a stručně, ale některá hodnocení jsou kvůli povaze zprávy formulována obecně.",
+    "uncertainty_notes": [
+      "Zpráva uvádí kvalitativní hodnocení výsledků maturity a absence, nikoli jejich přesné procentuální hodnoty.",
+      "Zpráva neuvádí podrobné výsledky podle jednotlivých studijních programů.",
+      "U podpůrných služeb je uveden rozsah evidence, ale nejsou popsané konkrétní výsledky jejich působení."
+    ]
+  }
+}

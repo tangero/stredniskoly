@@ -1,0 +1,105 @@
+{
+  "report_id": "GY4_691012164_2025-12-02",
+  "school_profile": {
+    "school_type": "základní škola a gymnázium",
+    "inspection_period": "2.–5. 12. 2025",
+    "school_change_summary": "Střední škola funguje od školního roku 2024/2025 a od 24. 11. 2025 má škola název Evangelické gymnázium a základní škola Brno."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Bezpečné a podporující klima",
+        "detail": "Ve vyučovaných hodinách převládala přátelská atmosféra, respekt k rozdílům a podpora žáků.",
+        "evidence": "V hospitovaných hodinách převládalo přátelské, podporující a bezpečné klima."
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Škola nadané žáky aktivně vyhledává a podporuje rozšířenými aktivitami a individuálním přístupem.",
+        "evidence": "Škola má propracovaný systém depistáže žáků se speciálními vzdělávacími potřebami a velmi dobře identifikuje nadané žáky."
+      },
+      {
+        "tag": "Rozmanité zájmové vzdělávání",
+        "detail": "Školní družina a klub nabízejí bezpečné prostředí pro tvořivé, pohybové i odpočinkové aktivity.",
+        "evidence": "Školní klub a zájmové kroužky vytvářejí bezpečné a podnětné prostředí pro smysluplné trávení volného času."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Přehlednost školních pravidel",
+        "detail": "Některá pravidla nejsou dostatečně jasně zakotvena ve školních řádech, což může ztěžovat informování rodičů.",
+        "evidence": "Dokumentace nebyla plně v souladu s předpisy a některé podmínky nebyly jednoznačně upraveny."
+      },
+      {
+        "tag": "Hodnocení žáků",
+        "detail": "Přechod ze slovního hodnocení na klasifikaci je popsán jen obecně, takže může být pro žáky a rodiče méně srozumitelný.",
+        "evidence": "Přechod ze slovního hodnocení na klasifikaci je popsán pouze obecně, což snižuje transparentnost."
+      },
+      {
+        "tag": "Organizace výuky na prvním stupni",
+        "detail": "Některé hodiny mohly více podpořit soustředění žáků, střídání metod a bezpečné a pohodlné sezení.",
+        "evidence": "Skupinová práce snižovala pozornost části žáků, v centrech aktivit se objevilo nevhodné sezení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak přesně škola převádí slovní hodnocení na známky a kde rodiče najdou konkrétní pravidla?",
+      "Jak často a podle jakých pravidel probíhá hodnocení podpůrných opatření a úpravy zadání pro žáky se speciálními vzdělávacími potřebami?",
+      "Jaké konkrétní kroky má škola stanovené pro zvýšení kvality výuky anglického jazyka a hodnocení absence?"
+    ],
+    "who_school_fits": [
+      "Rodice, kteří hledají vstřícné prostředí s důrazem na partnerskou komunikaci a bezpečí.",
+      "Rodice žáků se speciálními vzdělávacími potřebami nebo nadaných žáků, kterým vyhovuje školní podpora.",
+      "Rodice, kteří chtějí využít nabídku školní družiny, klubu a zájmových kroužků."
+    ],
+    "who_should_be_cautious": [
+      "Rodice, kterým záleží na zcela jasných a jednotných pravidlech pro hodnocení a bezpečnost.",
+      "Rodice, kteří očekávají vlastní tělocvičnu nebo školní jídelnu pro gymnázium.",
+      "Rodice, kteří potřebují v gymnáziu již bohatší zkušenosti s předmětem samostatného vyhledávání informací."
+    ],
+    "plain_czech_summary": "Inspekce hodnotila školu jako přátelskou a bezpečnou, s dobrou podporou žáků, zejména nadaných a žáků se speciálními vzdělávacími potřebami. Výuka na gymnáziu byla hodnocena jako metodicky velmi dobrá, aktivní a podporující samostatnost. Hlavní slabiny se týkaly přesnosti školní dokumentace, jednotnosti vnitřního řízení a srozumitelnosti hodnocení. Na prvním stupni se místy objevily problémy se soustředěním a pohodlným sezením.absence žáků mírně vzrostla, ale její dlouhodobé vyhodnocování není dostatečně systematické. Maturitní výsledky nelze z této zprávy posoudit, protože gymnázium dosud vychází žáky v prvním a druhém ročníku."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nelze hodnotit",
+      "key_numbers": [
+        "Gymnázium vychází žáky v prvním a druhém ročníku",
+        "Výsledky maturity nejsou ve zprávě uvedeny"
+      ],
+      "evidence": "Ve střední škole se vzdělávalo v prvním a druhém ročníku 52 žáků."
+    },
+    "absence": {
+      "trend": "Mírný nárůst, zejména u žáků základní školy",
+      "key_numbers": [
+        "Základní škola: průměrně 152 hodin na žáka za školní rok",
+        "Gymnázium: průměrně 143 hodin za školní rok",
+        "Absence se podle zprávy dlouhodobě nevyhodnocuje systematicky"
+      ],
+      "evidence": "V posledním období se mírně zvýšila absence, zejména u žáků základní školy."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště je personálně dobře zajištěno a členové efektivně spolupracují.",
+      "Škola má propracovaný systém depistáže a velmi dobře identifikuje nadané žáky.",
+      "Školní metodik prevence realizuje programy rozvíjející sociální a osobnostní dovednosti.",
+      "Škola nabízí konzultace, doučování a reflexivní deníčky."
+    ],
+    "safety_climate": [
+      "Ve vyučovaných hodinách převládalo přátelské, podporující a bezpečné klima.",
+      "Škola pravidelně organizuje adaptační pobyty a věnuje pozornost bezpečnosti žáků.",
+      "Organizace některých aktivit a bezpečnostní podmínky nebyly vždy jasně písemně ukotveny."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje se zřizovatelem, školskou radou a rodiči.",
+      "Spolupráce s rodiči probíhá prostřednictvím pravidelných setkání a posiluje důvěru.",
+      "Škola rozvíjí spolupráci s rakouskou školou a externími organizacemi.",
+      "Školní rada se podílí na projednávání zásadních otázek chodu školy a zapojení rodičů."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a v každé důležité části obsahuje oporu na zprávu.",
+    "uncertainty_notes": [
+      "Maturitní výsledky nelze posoudit, protože nejsou uvedeny a gymnázium má žáky pouze v prvním a druhém ročníku.",
+      "Zpráva neuvádí přesné procento změny absence oproti předchozímu období.",
+      "Náboženský charakter vzdělávání je uveden ve spojení se zřizovatelem, ale rozsah jeho vlivu na konkrétní výuku není podrobně popsán."
+    ]
+  }
+}

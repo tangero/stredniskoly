@@ -1,0 +1,103 @@
+{
+  "report_id": "GY8_600015785_2026-01-21",
+  "school_profile": {
+    "school_type": "Gymnázium, střední pedagogická škola, obchodní akademie a jazyková škola s právem státní jazykové zkoušky",
+    "inspection_period": "2026-01-21 až 2026-01-26",
+    "school_change_summary": "Škola zlepšovala materiální podmínky, pedagogický proces a optimalizovala využití domova mládeže; jeho kapacita se od roku 2023 snížila o 25 %."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Rozvoj žáků",
+        "detail": "Široká nabídka soutěží, projektů a programů podporuje rozvoj nadání, osobnostního potenciálu a klíčových kompetencí.",
+        "evidence": "„Škola napříč obory vzdělání systematicky podporuje rozvoj nadání i osobnostního potenciálu žáků.“"
+      },
+      {
+        "tag": "Odborné vzdělávání",
+        "detail": "Výuka odborných předmětů propojuje teorii s praxí a žáci pracují samostatně, diskutují a tvoří vlastní řešení.",
+        "evidence": "„Ve sledované výuce odborných předmětů bylo patrné výrazné propojení teoretických poznatků s praktickými situacemi.“"
+      },
+      {
+        "tag": "Domov mládeže",
+        "detail": "Ubytované žákyně dostávají systematickou podporu ve studiu, osobním růstu a volnočasových aktivitách.",
+        "evidence": "„Vychovatelky domova mládeže cíleně podporují ubytované žákyně, propojují jejich studijní rozvoj s péčí o osobnostní růst a vztahy.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Podpora žáků",
+        "detail": "Poradenské služby jsou personálně poddimenzované, což může omezovat jejich dostupnost a rozsah nabízené pomoci.",
+        "evidence": "„Poradenské služby jsou personálně poddimenzované, což omezuje jeho možnosti poskytovat komplexní podporu všem účastníkům vzdělávacího procesu.“"
+      },
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "Ve většině hodin se žáci zaměřovali na stejné úkoly, zatímco individualizace podle potřeb a tempa byla vzácnější.",
+        "evidence": "„Většině případů žáci pracovali na totožných úkolech shodné náročnosti a cílená práce byla méně častá.“"
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Učitelé málo vyhodnocovali naplnění hodinových cílů a žáci se aktivně nepodíleli na hodnocení vlastního učení.",
+        "evidence": "„Ve většině sledovaných hodin pedagogové nehodnotili míru naplnění stanovených cílů ani nevedli žáky k sebehodnocení.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně vypadá individualizace úkolů pro žáky s různou úrovní a tempem?",
+      "Kolik času mají žáci k dispozici na konzultace, doučování a podporu při hrozícím školním neúspěchu?",
+      "Jak často probíhá vzájemné hodnocení výuky pedagogy a jak se jeho závěry využívají v praxi?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat gymnázium nebo odborný obor a využít širokou nabídku soutěží a projektů.",
+      "Rodičům žáků, kterým záleží na propojení odborné teorie s praxí a partnery z regionu.",
+      "Žákyním, které hledají kombinaci studia, ubytování a podpůrného prostředí v domově mládeže."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří potřebují intenzivní individuální podporu nebo komplexní poradenské služby.",
+      "Žákům, kterým záleží na pravidelné sebereflexi, hodnocení vlastního pokroku a širší diferenciaci výuky.",
+      "Uchazečům o technické lyceum, kteří nejsou připraveni na jeho zvýšenou náročnost."
+    ],
+    "plain_czech_summary": "Škola nabízí gymnázia, pedagogické a další střední odborné obory, jazykové vzdělávání a domov mládeže. Výsledky žáků jsou dlouhodobě velmi dobré, neprospívá přibližně 1 % žáků a absence se drží kolem 120 hodin ročně. Výuka je odborně kvalitní a propojuje teorii s praxí, ale převládá frontální způsob práce. Méně časté jsou diferencované úkoly, sebereflexe a práce s informacemi. Poradenské služby mají kvůli personálnímu nedostatku omezené možnosti. Rodiče by měli na návštěvě zjistit, jak konkrétně škola řeší podporu žáků s odlišnou úrovní a kdo může zajistit komplexní poradenství."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě velmi dobrá úroveň; výsledky gymnázijních oborů byly lepší nebo srovnatelné s celorepublikovými výsledky.",
+      "key_numbers": [
+        "Průměrná hrubá neúspěšnost za poslední tři roky: 3,4 %.",
+        "Průměrná neúspěšnost ve společné části: 2,7 %.",
+        "U čtyřletého a osmiletého gymnázia: nulová neúspěšnost."
+      ],
+      "evidence": "„Výsledky dosahované žáky při ukončování vzdělávání maturitní zkouškou mají dlouhodobě velmi dobrou úroveň.“"
+    },
+    "absence": {
+      "trend": "Absence se podle zprávy pohybovala na stabilní úrovni.",
+      "key_numbers": [
+        "Průměrně přibližně 120 hodin na žáka za školní rok.",
+        "Počet ubytovaných žákyn se od roku 2023 snížil o 25 %."
+      ],
+      "evidence": "„Absence žáků se ve sledovaném období pohybovala na stabilní úrovni a činila v průměru přibližně 120 hodin na žáka za školní rok.“"
+    },
+    "support_services": [
+      "Tři výchovné poradkyně pro výchovné a kariérové poradenství a prevenci.",
+      "Školní psycholožka působí ve škole tři dny v týdnu.",
+      "Škola nabízí konzultační hodiny, doučování a přístup k učebním materiálům a prezentacím."
+    ],
+    "safety_climate": [
+      "Ve třídách byla pracovní atmosféra, dodržovala se pravidla a výraznější kázeňské problémy nebyly zaznamenány.",
+      "Prevence rizikových jevů je zajišťována především prostřednictvím třídních učitelů a plánu prevence školy.",
+      "Adaptační programy pomáhají začínajícím žákům, ale neprobíhají ve všech oborech stejně."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s vysokými školami, zaměstnavateli v regionu a řadou organizací.",
+      "Žáci se účastní projektů, exkurzí, workshopů a mezinárodních programů včetně DofE.",
+      "Domov mládeže spolupracuje s místním Sokolem a střediskem volného času."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a opřené o údaje nebo závěry uvedené v inspekční zprávě.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní časovou dostupnost jednotlivých poradenských služeb pro každého žáka.",
+      "Zpráva nesrovnává podrobně výsledky jednotlivých oborů mezi sebou.",
+      "Některá hodnocení vycházejí ze sledované výuky a nepopisují každou hodinu ve škole."
+    ]
+  }
+}

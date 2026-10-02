@@ -1,0 +1,110 @@
+{
+  "report_id": "SOU_600017087_2025-12-09",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:50:47.617852+00:00",
+  "run_finished_utc": "2026-10-02T16:51:14.644650+00:00",
+  "raw_file": "SOU_600017087_2025-12-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600017087_2025-12-09",
+    "school_profile": {
+      "school_type": "Střední odborná škola Litovel, Komenského 677",
+      "inspection_period": "9. 12. 2025 až 11. 12. 2025",
+      "school_change_summary": "Škola posílila poradenské služby o pozice speciálního pedagoga a školního psychologa; některá doporučení ohledně metod výuky, diferenciace a hodnocení výsledků se podařilo splnit jen částečně."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná praxe a partneři",
+          "detail": "Škola má kvalitní pracoviště pro praktickou výuku a spolupráci s firmami, které pomáhají zajišťovat odborné praxe a uplatnění absolventů.",
+          "evidence": "„Škola disponuje celou řadou navázaných partnerství s firmami, které tyto odborné praxe žáků zabezpečují.“"
+        },
+        {
+          "tag": "Praktické vyučování",
+          "detail": "Výuka odborného výcviku je podle inspekce vedena účelně, žáci pracují pod dohledem učitelů a u většiny se projevuje samostatnost.",
+          "evidence": "„U většiny žáků byla patrná samostatnost při práci a zvládnutí pracovních operací.“"
+        },
+        {
+          "tag": "Bezpečná atmosféra",
+          "detail": "V hodnocených hodinách žáci dodržovali komunikační pravidla a respektovali postupy práce, což podporuje příjemné školní klima.",
+          "evidence": "„Žáci dodržovali pravidla komunikace s učiteli a respektovali stanovené postupy práce.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pestrost výuky",
+          "detail": "V teoretické výuce převažuje předávání hotových informací a metody rozvíjející kritické myšlení se objevují jen výjimečně.",
+          "evidence": "„Převažovalo však předávání hotových informací, pestré metody práce, jako např. kritické myšlení… se vyskytly výjimečně.“"
+        },
+        {
+          "tag": "Individuální přístup",
+          "detail": "Rozdíly ve znalostech a potřebách žáků se podle inspekce téměř nepromítají do diferencovaných úkolů ani podpory rychlejších a nadaných žáků.",
+          "evidence": "„K diferenciaci vzdělávacího obsahu směrem k žákům rychlejším a talentovaným nedocházelo téměř vůbec.“"
+        },
+        {
+          "tag": "Podpora a kontrola",
+          "detail": "Škola zatím málo využívá údaje z hodnocení žáků a kontrola není dostatečně zaměřena na organizační zajištění odborného výcviku.",
+          "evidence": "„Škola zatím systematicky nevyužívá data z interní evaluace k optimalizaci podpory úspěšnosti žáků.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně podporují rychlejší a nadané žáky a žáky se speciálními vzdělávacími potřebami v jednotlivých předmětech?",
+        "Kolik skupin odborného výcviku překračuje maximální počet žáků na učitele a jak je zajišťena bezpečnost a individuální dohled?",
+        "Jaké konkrétní výsledky má škola k dispozici o uplatnění absolventů v praxi?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat obory s praktickou výukou, jako elektrikář, mechanik elektrotechnik, výrobce potravin, cukrář nebo kuchař – číšník.",
+        "Žákům, kterým vyhovuje denní forma vzdělávání a praktické zaměření školy.",
+        "Žákům, kteří mají zájem o odborné praxe, projekty a spolupráci s firmami."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na pravidelné diferenciaci a individuální podpoře různě nadaných žáků.",
+        "Rodičům, kteří očekávají v teoretické výuce běžně kritické myšlení, samostatnou práci s informačními zdroji a formativní hodnocení.",
+        "Rodičům žáků, kteří potřebují jednotný a prokazatelně systematický systém podpůrných opatření."
+      ],
+      "plain_czech_summary": "Škola nabízí odborné obory s praktickou výukou, dobře vybavenými pracovišti a spoluprací s firmami. Inspekce ocenila práci na konkrétních úkolech, samostatnost žáků a příjemnou atmosféru. Výsledky společné části maturity jsou srovnatelné s celorepublikovým průměrem. Mezi slabé stránky patří převládající předávání informací, malé používání metod rozvíjejících kritické myšlení, nedostatečná diferenciace a málo systematičtě využívané údaje o výsledcích. Poradenské služby byly doplněny o speciálního pedagoga a školního psychologa, jejich spolupráce však zatím není dostatečně koordinovaná."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Společná část maturitní zkoušky je srovnatelná s celorepublikovým průměrem; konkrétní číselné údaje zpráva neuvádí.",
+        "key_numbers": [
+          "„Výsledky žáků společné části maturitní zkoušky, za loňský školní rok, jsou srovnatelné s celorepublikovým průměrem.“"
+        ],
+        "evidence": "„Škola nezaznamenala uváděnou odchylku výsledků společné části maturity od celorepublikového průměru; číselné hodnoty chybějí.“"
+      },
+      "absence": {
+        "trend": "Zpráva uvádí, že škola pravidelně statisticky vyhodnocuje výsledky a absenci žáků, ale neuvádí číselné ukazatele ani jednoznačný vývojový trend.",
+        "key_numbers": [
+          "„Škola sleduje úspěšnost žáků ve vzdělávání… pravidelně statisticky vyhodnocuje.“",
+          "„Výsledky žáků, jejich chování a absence jsou součástí dokumentace školy.“"
+        ],
+        "evidence": "„Souhrnné přehledy výsledků vzdělávání, chování a absence žáků“ byly mezi podklady inspekce; číselné údaje se v této části zprávy nenacházejí."
+      },
+      "support_services": [
+        "Poradenské služby zajišťují výchovná poradkyně, kariérová poradkyně, školní speciální pedagog a částečně úvazkem školní psycholog.",
+        "Škola nabízí individuální konzultace, doučování a intenzivnější přípravu na závěrečnou a maturitní zkoušku.",
+        "Podpora žáků se speciálními vzdělávacími potřebami se podle inspekce zajišťuje nejednotně."
+      ],
+      "safety_climate": [
+        "Vyučovací hodiny probíhaly v příznivé pracovní atmosféře.",
+        "Žáci respektovali pravidla komunikace a stanovené postupy práce.",
+        "Třídní učitelé podporují pozitivní sociální klima, odpovědnost žáků a bezpečnou atmosféru ve výuce."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s firmami na zajišťování odborných praxí.",
+        "V oboru Kuchař – číšník probíhala výuka ve školní restauraci, v oboru Cukrář na pracovištích školy.",
+        "Elektrikář a Mechanik elektrotechnik se vyučovali na odloučeném pracovišti školy."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a opřené o citace z inspekční zprávy; chybějící číselné údaje jsou výslovně označeny.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní číselné výsledky maturity.",
+        "Zpráva uvádí pravidelné vyhodnocování absence, ale neposkytuje číselné údaje ani jednoznačný trend.",
+        "Přínos partnerství a uplatnění absolventů je hodnocen kladně, ale bez podrobných výsledků."
+      ]
+    }
+  }
+}

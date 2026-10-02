@@ -1,6 +1,6 @@
 {
  "verze": 1,
- "aktualizovano": "2026-09-30",
+ "aktualizovano": "2026-10-02",
  "popis": "Registr stavu datových sad. Pro každou sadu říká, které období web zobrazuje, odkud je, jaké období čekáme a kdy, co se stane se starými daty po přepnutí a které ukazatele ze slovníku na sadě stojí. Postup a pravidla: docs/zdroje-dat.md, oddíl Stav datových sad. Měnit jen přes scripts/stav-datovych-sad.py.",
  "pravidla": {
   "jistota": "znamo = datum doložené zdrojem; odhad = odvozeno z předchozího období, uveď zdůvodnění; neznamo = nelze odhadnout",
@@ -614,17 +614,18 @@
    "cyklus": "prubezne",
    "pouziti": "web",
    "zobrazeno": {
-    "obdobi": "2025-11-25",
+    "obdobi": "2026-05-29",
     "soubor": "data/inspection_extractions.json",
-    "poznamka": "Datum je konec nejnovější zpracované inspekce."
+    "sha256": "b28ce9eda5ead2889bf25c9240bea064ab638d92a93f171a3685485575d0f8d5",
+    "prepnuto": "2026-10-02"
    },
    "ocekavano": {
     "obdobi": null,
     "kdy": null,
-    "jistota": "neznamo",
-    "zduvodneni": "Závisí na obnově seznamu inspekcí."
+    "jistota": "odhad",
+    "zduvodneni": "Odvozeno z termínu tohoto přepnutí."
    },
-   "obnovit_nejpozdeji": "2026-08-11",
+   "obnovit_nejpozdeji": "2027-01-04",
    "po_prepnuti": "Starší zpráva téže školy zůstává sbalená pod novější.",
    "vystupy": [],
    "ukazatele": [],
@@ -635,7 +636,14 @@
     "automatizace": "rucni",
     "lidsky_krok": "Automatizovatelné až po převzetí generátoru do repozitáře; každá extrakce stojí volání modelu a vyžaduje kontrolu proti textu zprávy.",
     "sledovat": []
-   }
+   },
+   "historie_obdobi": [
+    {
+     "obdobi": "2025-11-25",
+     "soubor": "data/inspection_extractions.json",
+     "poznamka": "Datum je konec nejnovější zpracované inspekce."
+    }
+   ]
   },
   "csi-inspis": {
    "nazev": "INSPIS, profily škol",
@@ -1104,6 +1112,13 @@
    "z": "2025",
    "na": "2026",
    "doklad": "převzato pro balíčky pro novináře (docs/navrh-pro-novinare-2027.md); 13 038 řádků, platné přihlášky k 23. 6. 2026"
+  },
+  {
+   "datum": "2026-10-02",
+   "sada": "csi-extrakce",
+   "z": "2025-11-25",
+   "na": "2026-05-29",
+   "doklad": "issue #259 etapa 2: 199 nových zpráv modelem stealth/space-bunny-alpha, export inspekce/scripts/export_extractions.py --pro-web, 0 škol se shrnutím starším než poslední inspekce, kontrola vzorku 5 zpráv"
   }
  ]
 }

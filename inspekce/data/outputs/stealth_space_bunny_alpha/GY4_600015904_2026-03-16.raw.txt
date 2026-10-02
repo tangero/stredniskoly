@@ -1,0 +1,105 @@
+{
+  "report_id": "GY4_600015904_2026-03-16",
+  "school_profile": {
+    "school_type": "Gymnázium, střední škola",
+    "inspection_period": "16. – 18. a 23. 3. 2026",
+    "school_change_summary": "Ve škole se zvýšil počet žáků, změnilo se vedení a proběhly investice do materiálního vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podpora sportovců",
+        "detail": "Škola aktivně podporuje žáky-sportovce a pomáhá sladit studijní povinnosti s tréninkem a závody.",
+        "evidence": "Sportovní psycholožka pomáhá žákům zvládat zátěž a vedení podporuje mezinárodní spolupráci se sportovními kluby."
+      },
+      {
+        "tag": "Vybavení a klima",
+        "detail": "Nové učebny, dílny a relaxační místa zlepšují prostředí pro učení a odpočinek.",
+        "evidence": "Škola má multimediální učebnu, polytechnickou dílnu, jazykovou učebnu, dílnu 3D technologií a relaxační zónu."
+      },
+      {
+        "tag": "Podpora začínajících učitelů",
+        "detail": "Noví pedagogové mají k dispozici promyšlený adaptační program a pravidelnou podporu vedení.",
+        "evidence": "Adaptační program je podložený systémem řízení, jasnými postupy a pravidelným monitorováním adaptace."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Diferencace výuky",
+        "detail": "Rozdíly mezi žáky se v učebnicích příliš nepromítají do zadání.",
+        "evidence": "Úkoly byly převážně jednotné a neodrážely individuální potřeby, schopnosti ani pracovní tempo."
+      },
+      {
+        "tag": "Zpětná vazba a sebehodnocení",
+        "detail": "Žáci dostávají málo prostoru na hodnocení vlastního pokroku a práce ve skupinách.",
+        "evidence": "Sebehodnocení nebylo systematicky podporováno a vzájemné hodnocení žáků nebylo zaznamenáno."
+      },
+      {
+        "tag": "Poradenské služby",
+        "detail": "Škola má poradní služby, ale přetrvává potřeba lepší evidence a kontrola jejich účinnosti.",
+        "evidence": "Inspekce zjistila potřebu systematické evidence poradenských činností a průběžného vyhodnocování přijatých opatření."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé přizpůsobují zadání žákům s různými schopnostmi a podpůrnými potřebami?",
+      "Jak často se žáci během výuky dostávají možnost mluvit, spolupracovat a hodnotit vlastní pokrok?",
+      "Jak poradenský tým ověřuje, zda doporučované doučování a další podpůrná opatření skutečně pomáhají?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat ve čtyřletém nebo osmiletém gymnáziu.",
+      "Žákům-sportovcům, kteří potřebují sladit studium s náročnou sportovní přípravou.",
+      "Žákům, kteří mají zájem o moderní vybavení, projektové dny a mezinárodní aktivity."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na pravidelném diferencování výuky podle schopností a potřeb dítěte.",
+      "Rodičům žáků, kteří potřebují průběžnou zpětnou vazbu a systematičtější sebehodnocování.",
+      "Rodičům žáků, kteří očekávají jednotně a opakovaně kontrolované poradenství."
+    ],
+    "plain_czech_summary": "Gymnázium má dobré materiální vybavení, přátelivé výukové klima a silnou podporu sportovců. Ve sledovaných hodinách převládal frontální výklad, aktivní práce žáků a jejich mluvení byly méně rozvinuté než informace o nedostatcích. Chyběla také průběžná zpětná vazba, sebehodnocení a dostatečné přizpůsobování zadání jednotlivým žákům. Poradní služby existují, ale inspekce doporučuje zlepšit dokumentaci a kontrolovat jejich účinnost. Maturitní výsledky jsou celkově srovnatelné s průměrem ČR; společná část byla v posledních dvou obdobích 100% úspěšná."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Celkové výsledky jsou srovnatelné s republikovým průměrem.",
+      "key_numbers": [
+        "Společná část jarní maturity: 100% úspěšnost ve dvou sledovaných obdobích.",
+        "Profilová část: 7 neúspěchů ve školním roce 2023/2024 a 4 ve školním roce 2024/2025.",
+        "Téměř všichni neúspěšní žáci byli následně úspěšní v podzimním termínu; jeden se omluvil."
+      ],
+      "evidence": "Celkové výsledky MZ jsou srovnatelné s republikovým průměrem; v jarním období měla společná část 100% úspěšnost."
+    },
+    "absence": {
+      "trend": "Inspekční zpráva neuvádí konkrétní trend absence.",
+      "key_numbers": [
+        "Pohyb žáků je vyhodnocován čtvrtletně.",
+        "Ve škole se vzdělávalo 415 žáků.",
+        "53 žáků mělo evidováno se speciálními vzdělávacími potřebami."
+      ],
+      "evidence": "Vyhodnocování absence vychází ze čtvrtletních statistických přehledů; zpráva neuvádí její procentní hodnotu."
+    },
+    "support_services": [
+      "Výchovný poradce koordinuje poradenský tým.",
+      "Školní metodik prevence a školní psycholožka rozšiřují poradenské služby.",
+      "Psycholožka poskytuje konzultace o výkonu a zvládání zátěže sportovcům.",
+      "Škola nabízí individuální konzultace, skupinové doučování a adaptační kurzy."
+    ],
+    "safety_climate": [
+      "Ve sledovaných hodinách panovala převážně pozitivní a podporující atmosféra.",
+      "Žáci se chovali ukázněně, spolupracovali a respektovala pravidla výuky.",
+      "Škola má žákovský parlament a sleduje potřeby třídních kolektivů."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje se zřizovatelem a sportovními kluby.",
+      "Podporuje mezinárodní spolupráci a účast žáků v projektech.",
+      "Sportovní kluby a škola rozvíjejí zkušenosti v oblasti sportovní přípravy a komunikačních dovedností."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a v kontextu rozhodování rodičů; důležitá zjištění jsou opřena o znění zprávy.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní procento absence, proto nelze určit její přesný trend.",
+      "Zpráva neuvádí počet sledovaných hodin, a proto nelze přesněji vyjádřit rozsah zjištění o výuce.",
+      "Uvedené informace vycházejí pouze z inspekční zprávy a nezahrnují další školní dokumentaci."
+    ]
+  }
+}

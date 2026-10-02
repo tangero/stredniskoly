@@ -1,0 +1,101 @@
+{
+  "report_id": "SOS_600013090_2025-02-19",
+  "school_profile": {
+    "school_type": "Střední odborné učiliště opravárenské Králíky; škola působí také jako domov mládeže a školní jídelna.",
+    "inspection_period": "19. až 21. 2. 2025",
+    "school_change_summary": "Bylo rozšířeno vedení školy, doplněn učitel odborného výcviku a obnoven personál domova mládeže; zlepšily se také materiální podmínky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná příprava",
+        "detail": "Škola propojuje teorii s praxí a žáci dosahují úspěchů v odborných soutěžích.",
+        "evidence": "„Velmi dobře bylo propojováno učivo s praxí a reálným životem.“"
+      },
+      {
+        "tag": "Uplatnění absolventů",
+        "detail": "Absolventi mají podle inspekční zprávy dobré uplatnění díky svářečským a řidičským kvalifikacím.",
+        "evidence": "„Absolventi tříletého oboru vzdělání mají široké uplatnění na trhu práce.“"
+      },
+      {
+        "tag": "Praktická výuka",
+        "detail": "Odborný výcvik probíhá ve školních dílnách a na smluvních pracovištích pod kontrolou zástupce ředitele.",
+        "evidence": "„Praktická část výuky byla sledovaná v předmětu odborný výcvik ve školních dílnách.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Motivace a účast žáků",
+        "detail": "Ve výuce se žáci méně aktivizují a učitelé obtížně rozvíjejí jejich samostatnou práci a vzájemné hodnocení.",
+        "evidence": "„Nízká byla aktivizace žáků, většinou pasivně přijímali poznatky.“"
+      },
+      {
+        "tag": "Diferencovaná výuka",
+        "detail": "Úkoly se málo přizpůsobují žákům s podpůrnými opatřeními i rychlejším žákům.",
+        "evidence": "„Chyběla většinou ... diferenciace práce se žáky.“"
+      },
+      {
+        "tag": "Příprava pedagogů",
+        "detail": "Někteří pedagogové nejsou odborně kvalifikovaní a jejich další vzdělávání není systematicky plánováno.",
+        "evidence": "„Někteří učitelé a vychovatelé nejsou odborně kvalifikovaní.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje přípravu na maturitní zkoušku v nástavbovém oboru?",
+      "Jak často a v jakých předmětech probíhá podpora žáků s podpůrnými opatřeními nebo s odlišným mateřským jazykem?",
+      "Jak konkrétně probíhá odborný výcvik na smluvních pracovištích a jak je hodnocen?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí tříletý obor s výučním listem v oboru opravář zemědělských strojů.",
+      "Žákům, kteří mají zájem o praktickou výuku, technické obory a odborné kvalifikace.",
+      "Žákům, kteří chtějí v nástavbovém oboru Podnikání připravit na maturitní zkoušku."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří potřebují intenzivní podporu při učení, protože škola uvádí malé zúčastnění podpůrných opatření.",
+      "Rodičům žáků, kterým záleží na pravidelné podpoře a systematické přípravě učitelů teoretických předmětů.",
+      "Rodičům žáků, kteří chtějí co nejvíce samostatné, kooperativní a diferencované učení."
+    ],
+    "plain_czech_summary": "Škola má dobře vybavené dílny, spolupracuje s firmami a zaměřuje se na praktické dovednosti. Výuka odborných předmětů je podle inspekce kvalitní a propojuje teorii s praxí. Pro rodiče je důležité vědět, že ve většině hodin převažuje frontální výuka, žáci se málo aktivizují a zadání se málo přizpůsobují jejich rozdílným možnostem. Výsledky maturity se v posledním roce zlepšily, ale zůstávají proměnlivé. Škola poskytuje ubytování, stravování, poradenské služby a další výuku českého jazyka pro žáky s odlišným mateřským jazykem."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky se podle zprávy v roce 2024 zlepšily oproti roku 2023, přestože v letech kolísaly.",
+      "key_numbers": [
+        "V roce 2022 byla hrubá neúspěšnost 25,0 %.",
+        "V roce 2023 vzrostla na 38,1 %.",
+        "V roce 2024 klesla na 13,3 %."
+      ],
+      "evidence": "„V roce 2024 po jarním a podzimním termínu klesla na 13,3 %.“"
+    },
+    "absence": {
+      "trend": "Zpráva uvádí průměrnou absenci ve školním roce 2023/2024, ale nezobrazuje srovnání trendu.",
+      "key_numbers": [
+        "Průměrná absence činila 130 hodin na žáka tříletého oboru ve školním roce 2023/2024.",
+        "Ve společné části maturity bylo v roce 2024 osm neúspěšných žáků na jaře."
+      ],
+      "evidence": "„Průměrná absence ve školním roce 2023/2024 byla 130 hodin na žáka tříletého oboru vzdělání.“"
+    },
+    "support_services": [
+      "Poradenské služby zajišťují dva pedagogové.",
+      "Spolupráce s pedagogicko-psychologickou poradnou zajišťuje měsíční odbornou podporu.",
+      "Žáci s odlišným mateřským jazykem mají výuku českého jazyka nad rámec týdenní hodinové dotace."
+    ],
+    "safety_climate": [
+      "Škola zajišťuje výchovně preventivní programy prostřednictvím metodika prevence.",
+      "Inspekční zpráva doporučuje v praktické výuce důraz na BOZP a zdravotní způsobilost žáků."
+    ],
+    "partnerships_practice": [
+      "Spolupráce se smluvními partnery je označena za silnou stránku školy.",
+      "Škola spolupracuje s městem Králíky, místními základními školami, polskou školou a partnerskou střední školou ve Chvaleticích.",
+      "Organizuje pravidelnou akci TECHNOhrátky ve spolupráci s Pardubickým krajem."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou stručné, srozumitelné a opřené o konkrétní citace z inspekční zprávy.",
+    "uncertainty_notes": [
+      "Zpráva uvádí výsledky maturity a absence za různá období, proto nejsou všechny údaje přímo srovnatelné.",
+      "U některých oblastí inspekce uvádí hodnocení založené na hospitovaných hodinách, nikoli na úplném pozorování všech výuk."
+    ]
+  }
+}

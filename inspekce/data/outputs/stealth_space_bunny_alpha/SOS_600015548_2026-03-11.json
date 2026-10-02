@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600015548_2026-03-11",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:28:13.708048+00:00",
+  "run_finished_utc": "2026-10-02T16:28:47.513236+00:00",
+  "raw_file": "SOS_600015548_2026-03-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600015548_2026-03-11",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola a Obchodní akademie, příspěvková organizace",
+      "inspection_period": "11. 3. 2026 až 16. 3. 2026",
+      "school_change_summary": "Škola modernizovala odborná pracoviště, robotiku, elektromobilitu a další technické učebny; počet žáků oproti školnímu roku 2019/2020 vzrostl o 112."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Žáci pracují v moderně vybavených pracovištích podobných reálnému prostředí a získávají průběžnou zpětnou vazbu.",
+          "evidence": "„Praktická výuka byla realizována v moderně vybavených školních pracovištích, která svým charakterem odpovídají reálným podmínkám praxe.“"
+        },
+        {
+          "tag": "Partnerství a praxe",
+          "detail": "Spolupráce s firmami a dalšími partnery podporuje odborné praxe, exkurze a připravenost absolventů na práci.",
+          "evidence": "„Tato spolupráce umožňuje realizaci odborných praxí, exkurzí a dalších forem propojení výuky s praxí.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola poskytuje poradenské služby, doučování, individuální konzultace a kariérové poradenství.",
+          "evidence": "„Žákům se zvýšenou potřebou podpory je poskytována pomoc formou doučování a individuálních konzultací.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zpětná vazba a sebehodnocení",
+          "detail": "Zpětná vazba je často stručná a žáci se ojediněle podílejí na hodnocení svého učení.",
+          "evidence": "„Zpětná vazba k učení je většinou omezena na sdělení známky s krátkým komentářem.“"
+        },
+        {
+          "tag": "Aktivizace výuky",
+          "detail": "Ve výuce se málo používají metody, které podporují aktivitu, kritické myšlení a samostatné učení žáků.",
+          "evidence": "„Aktivizující metody jsou využívány v menší míře a žáci jsou jen ojediněle vedeni k práci s cíli učení.“"
+        },
+        {
+          "tag": "Školní stravování",
+          "detail": "Některá jídelna poskytovala ve sledovaném období stravu bez odpovídající nutriční vyváženosti.",
+          "evidence": "„Strava poskytovaná školní jídelnou na ulici Předbranská však ve sledovaném období nevykazovala odpovídající nutriční vyváženost.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak často žáci dostávají konkrétní zpětnou vazbu o svém postupu a ve kterých předmětech?",
+        "Jak konkrétně probíhá diferencovaná výuka a podpora žáků s odlišným pracovním tempem?",
+        "Které nové vybavení a pracoviště mohou běžně využívat žáci jednotlivých oborů?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí technické, strojírenské, elektrotechnické nebo automobilové vzdělání.",
+        "Žákům, kterým vyhovuje propojení školní výuky s praxí a odbornými pracovišti.",
+        "Žákům, kteří využijí nabídku poradenství, doučování a podpory při adaptaci na střední školu."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům, kterým záleží na pravidelném rozvoji komunikace, kritického myšlení a sebereflexie žáků.",
+        "Rodičům, kteří očekávají v každém předmětu výrazně diferencovanou výuku.",
+        "Rodičům využívajícím služby školní jídelny, které mají zájem o ověření aktuální kvality a vyváženosti stravy."
+      ],
+      "plain_czech_summary": "Škola nabízí deset oborů, čtyři s maturitou a roste: oproti roku 2019/2020 má o 112 žáků více. Velkým plusem jsou moderní technická pracoviště, spolupráce s firmami a podpora žáků s odlišnými potřebami. Výsledky závěrečných zkoušek jsou dobré, z 200 žáků neprospěli čtyři. U maturit se výsledky různých oborů liší; technické obory se zlepšovaly. Hlavním slabým místem je způtná vazba, která bývá převážně jen stručný komentář ke známce. Méně se také uplatňuje diferencovaná výuka, samostatné sebehodnocení a aktivní metody."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Technické obory a nástavbové studium se zlepšovaly; výsledky veřejnosprávní a sociální činnosti se pohybovaly kolem celorepublikového průměru.",
+        "key_numbers": [
+          "Ve školním roce 2023/2024 byly technické obory lepší než celorepublikový průměr.",
+          "Ve školním roce 2024/2025 byly technické obory lepší než celorepublikový průměr.",
+          "U veřejnosprávní a sociální činnosti se výsledky střídaly mírně pod a nad průměrem."
+        ],
+        "evidence": "„Zlepšení bylo zaznamenáno v technických oborech vzdělání“ a obory se v posledních dvou letech „lepší než celorepublikový průměr“."
+      },
+      "absence": {
+        "trend": "Zpráva neuvádí přehled trenduabsence.",
+        "key_numbers": [],
+        "evidence": "Ve zprávě nejsou uvedeny statistiky do absence žáků."
+      },
+      "support_services": [
+        "Poradenské služby zajišťuje výchovná poradkyně a dva metodici prevence.",
+        "Škola poskytuje doučování a individuální konzultace žákům se zvýšenou potřebou podpory.",
+        "Podporu žáků se speciálními vzdělávacími potřebami koordinuje ve spolupráci se školskými poradenskými zařízeními.",
+        "Systatickou podporu při volbě dalšího vzdělávání a profesní dráhy poskytuje kariérové poradenství."
+      ],
+      "safety_climate": [
+        "Vedení pravidelně vyhodnocuje bezpečnostní rizika a přijímá opatření k odstranění zjištěných nedostatků.",
+        "Žáci jsou průběžně poučováni o zásadách bezpečnosti a ochrany zdraví.",
+        "Při praktické výuce byly dodržovány zásady bezpečnosti a ochrany zdraví při práci.",
+        "Preventivní aktivity, adaptační pobyty a kurzy podporují pozitivní vztahy a bezpečné školní prostředí."
+      ],
+      "partnerships_practice": [
+        "Škola dlouhodobě spolupracuje s regionálními firmami podle zaměření jednotlivých oborů.",
+        "Partnerství umožňuje odborné praxe, exkurce a propojení výuky s praxí.",
+        "Spolupráce s regionálními institucemi a zaměstnavateli ve veřejné správě podporuje odborné kompetence žáků.",
+        "Škola rozvíjí také mezinárodní a přeshraniční spolupráci."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžnou češtinu, stručně spojuje zjištění inspekce s praktickými důsledky pro rodiče a jasně odlišuje silné stránky, rizika a neznámé údaje.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí statistiky absence, proto nelze posoudit její vývoj.",
+        "U konkrétní pobočky školní jídelny je popsána nižší nutriční vyváženost, ale bez podrobného rozboru.",
+        "Zpráva uvádí celkové výsledky oborů, nikoli podrobné výsledky jednotlivých předmětů maturitní zkoušky."
+      ]
+    }
+  }
+}

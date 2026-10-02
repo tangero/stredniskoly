@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600010171_2026-01-13",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:45:59.243414+00:00",
+  "run_finished_utc": "2026-10-02T16:46:28.141937+00:00",
+  "raw_file": "SOS_600010171_2026-01-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600010171_2026-01-13",
+    "school_profile": {
+      "school_type": "Střední škola poskytující denní vzdělávání v oboru Obchodní akademie se čtyřmi zaměřeními.",
+      "inspection_period": "13. 1. 2026–15. 1. 2026",
+      "school_change_summary": "Škola nahradila zaměření Manažer informačních technologií zaměřením Digitální marketing a komunikace, zvýšila počet žáků a posílila jazykové i odborné vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové a odborné vzdělávání",
+          "detail": "Škola účelně propojuje jazykovou a odbornou výuku a podporuje zahraniční mobility.",
+          "evidence": "„Spolupráce se zahraničními subjekty, realizace projektu Erasmus+ a propojování jazykového a odborného vzdělávání účinně přispívají k rozvoji…“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "K dispozici jsou konzultace, doučování, poradenské služby, kariérové poradenství a krizová intervence.",
+          "evidence": "„K prevenci školní neúspěšnosti přispívají individuální i skupinové konzultace, různé formy doučování a intenzivní podpora…“"
+        },
+        {
+          "tag": "Projektová výuka",
+          "detail": "Projektové vyučování podporuje komunikaci, práci v týmu, společné hodnocení a osobnostní kompetence.",
+          "evidence": "„Samotná prezentace projektů efektivně podporovala rozvoj komunikativních, pracovních i sociálních kompetencí žáků.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Nefunguje účinné získávání a vyhodnocování zpětné vazby žáků a pedagogů.",
+          "evidence": "„Škola nemá zavedený účinný systém pro zjišťování a vyhodnocování zpětné vazby od žáků a pedagogů.“"
+        },
+        {
+          "tag": "Individuální podpora",
+          "detail": "Úkoly se málo přizpůsobují schopnostem jednotlivých žáků a formativní hodnocení se využívá jen ojediněle.",
+          "evidence": "„Diferenciace vzdělávacího obsahu a zadávaných úloh podle kognitivních schopností jednotlivých žáků“ přetrvává."
+        },
+        {
+          "tag": "Hlas žáků",
+          "detail": "Část studentů se podle zprávy bojí vyjádřit svůj názor a některé neshody mezi pedagogy se neřeší.",
+          "evidence": "„Někteří žáci uváděli, že nemohou bez obav vyjádřit svůj názor na výuku či nesouhlas s učiteli.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola ověřuje, že zpětná vazba žáků a učitelů vedla ke konkrétním změnám?",
+        "Jak často se úkoly přizpůsobují schopnostem jednotlivých žáků a jak se uplatňuje formativní hodnocení?",
+        "Které konkrétní opatření přijala škola po propadu výsledků maturit ve zkušebním období 2025?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí obchodní vzdělání se zaměřením na management, kreativitu podnikání nebo digitální marketing.",
+        "Žákům, kterým vyhovuje propojení jazykové výuky, odborných předmětů a zahraničních mobilit.",
+        "Žákům, kteří mají zájem o projektovou práci, prezentace a rozvoj komunikačních a digitálních dovedností."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na pravidelné diferenciaci výuky podle skutečných schopností.",
+        "Rodičům žáků, kteří potřebují průběžnou formativní zpětnou vazbu během hodiny.",
+        "Rodičům žáků, kterým vadí slabá nebo obávaná možnost bezpečně vyjádřit vlastní názor."
+      ],
+      "plain_czech_summary": "Škola nabízí obchodní vzdělání se čtyřmi zaměřeními, projektové vyučování, jazykové mobility a rozsáhlou podporu při neprospěchu. Její předností jsou spolupráce s okolím, Erasmus+ a propojení jazyků s oborem. Výsledky maturity byly v letech 2023 a 2024 dobré, v roce 2025 ale nastal propad, zejména v profilové části. Rodiče by měly více zjistit, jak škola při výuce rozlišuje úkoly podle schopností žáků a zda je v hodnocení skutečně průběžná zpětná vazba. Slabým místem je také neúčinné zpracovávání názorů žáků a pedagogů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky byly v období 2023 a 2024 srovnatelné nebo lepší než u srovnatelných škol, v roce 2025 však následoval výrazný propad.",
+        "key_numbers": [
+          "57 % maturujících žáků s angličtinou využilo certifikovanou jazykovou zkoušku přímo ve škole.",
+          "Čtyři žáci úspěšně absolvovali pilotní alternativní maturitu formou komplexní absolventské práce.",
+          "Hrubá neúspěšnost maturity po podzimním termínu 2025 byla 6,6 % proti 6 % v ČR."
+        ],
+        "evidence": "„Ve zkušebním období roku 2025 došlo k propadu výsledků… Hrubá neúspěšnost školy… po podzimním termínu byla 6,6 %.“"
+      },
+      "absence": {
+        "trend": "Škola sleduje absenci a neprospívající žáky, ale zpráva neuvádí konkrétní vývoj počtu hodin absence.",
+        "key_numbers": [
+          "Ve školním roce 2024/2025 mělo vyznamenání 8 % žáků.",
+          "Přibližně 7 % žáků neprospělo."
+        ],
+        "evidence": "„Cílem je snížit absenci a počet neprospívajících žáků zejména v prvních ročnících.“"
+      },
+      "support_services": [
+        "Školní informační systém, individuální konzultace a tripartitní schůzky se zákonným zástupcem.",
+        "Individuální a skupinové konzultace, doučování a podpora při neprospěchu.",
+        "Služby výchovné poradkyně a školní metodičky prevence včetně krizové intervence.",
+        "Adaptační pobyty, sportovní kurzy, projektové aktivity a třídnické hodiny zaměřené na třídní klima."
+      ],
+      "safety_climate": [
+        "Hospitované hodiny probíhaly „v příjemné pracovní atmosféře“ a pravidla komunikace žáci respektovali.",
+        "Škola se zaměřuje na prevenci záškoláctví, kyberšikany, šikany a odolnost vůči stresu.",
+        "Zpráva uvádí obavy některých žáků z vyjádření nesouhlasu s učiteli."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje se zaměstnavateli, zahraničními subjekty, základními školami a zřizovatelem.",
+        "Prostřednictvím Erasmus+ pořádá mobility žáků i pedagogů do anglicky a německy mluvících zemí.",
+        "Odborníci se zapojují do výuky prostřednictvím přednášek a besed."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, stručné věty a u důležitých zjištění přímé citace ze zprávy.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesné počty hodin absence, takže jejich trend nelze spolehlivě posoudit.",
+        "Údaje o úspěšnosti maturity se vztahují k různým zkušebním obdobím a jsou proto vhodné jen k porovnání podle uvedeného kontextu.",
+        "Závěry o vhodnosti školy pro konkrétní typ žáka jsou praktickým výkladem zprávy, nikoli přímým hodnocením přijímacích podmínek."
+      ]
+    }
+  }
+}

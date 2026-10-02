@@ -1,0 +1,103 @@
+{
+  "report_id": "SOS_651016029_2026-03-17",
+  "school_profile": {
+    "school_type": "střední odborná škola a střední odborné učiliště",
+    "inspection_period": "17. 3. 2026 až 19. 3. 2026",
+    "school_change_summary": "Počet žáků se více než zdvojnásobil, školní sbor se výrazně obměnil a areál v Pohorské ulici prošel rekonstrukcí."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praxe a zaměstnání",
+        "detail": "Žáci získávají zkušenosti přímo na firemních zakázkách a partneři některým také hradí ubytování a stravu.",
+        "evidence": "Žáci jsou pod vedením firemních pracovníků zapojováni do reálného provozu; partnerské firmy hradí ubytování a stravu."
+      },
+      {
+        "tag": "Odborné zázemí",
+        "detail": "Škola má modernizované učebny, pracoviště praktického výcviku, specializované učebny pro bezpečnostní obory a kvalitní domov mládeže.",
+        "evidence": "Vznikly moderní kmenové třídy, učebny kriminalistiky, posilovna, laserová střelnice amodernizovaný domov mládeže."
+      },
+      {
+        "tag": "Podpora a klima",
+        "detail": "Ve sledovaných hodinách byla příjemná atmosféra a žáci mohli využívat konzultace, doučování i individuální přístup.",
+        "evidence": "Ve sledovaných teoretických hodinách panovala příznivá atmosféra; žákům byly nabízeny individuální konzultace a doučování."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Výsledky nástavbového oboru",
+        "detail": "U nástavbového oboru Bezpečnostní služby jsou výsledky opakovaně slabé a většina přihlášených studentů maturity úspěšně nesložila.",
+        "evidence": "Maturitu konalo osm ze sedmnácti přihlášených; uspělo pět, čistá neúspěšnost dosáhla 40 %."
+      },
+      {
+        "tag": "Aktivita žáků",
+        "detail": "Výuka je často převážně výkladová, žáci méně spolupracují a škola má malou diferenciaci úkolů podle jejich úrovně.",
+        "evidence": "Ve většině hodin převládala výkladová metoda; účelná skupinová práce nebyla zaznamenána téměř vůbec."
+      },
+      {
+        "tag": "Kvalifikace učitelů",
+        "detail": "Část pedagogického sboru nesplňuje kvalifikační požadavky, což je zvlášť významné pro odborně náročné bezpečnostní obory.",
+        "evidence": "Kvalifikační předpoklady nesplňuje osm pedagogických pracovníků; situace je vážná u bezpečnostně zaměřených oborů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně podporujete žáky nástavbového oboru Bezpečnostní služby při přípravě na maturitu a jaké jsou jejich aktuální výsledky?",
+      "Kolik vyučujících pro bezpečnostně právní obor splňuje všechny kvalifikační požadavky a jak škola řeší případnou personální nestabilitu?",
+      "Jak často žáci ve všeobecně vzdělávacích předmětech pracují samostatně, ve dvojicích nebo ve skupinách a dostávají úkoly různé náročnosti?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat obchodní akademii, zejména v době zlepšujících se výsledků.",
+      "Žákům, kterým vyhovuje odborné vzdělávání propojené s praxí v partnerských podnicích.",
+      "Žákům, kteří využijí ubytování, modernizované zázemí, certifikáty, stipendia nebo projekty podporující jejich další rozvoj."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků nástavbového oboru Bezpečnostní služby kvůli velmi slabým maturitním výsledkům.",
+      "Rodičům, kteří očekávají převážně aktivní, skupinovou a diferencovanou výuku.",
+      "Rodičům žáků bezpečnostně právních oborů, kterým záleží na vysoké odborné kvalifikaci vyučujících."
+    ],
+    "plain_czech_summary": "Škola má silné praktické zázemí, moderní prostory, partnerské podniky a dobré zázemí pro část studentů. Největší problémy jsou slabé výsledky nástavbového oboru Bezpečnostní služby, příliš pasivní výuka, malá diferenciace a ne zcela dostatečná kvalifikace učitelů. Rodiče by měli zjistit, jak konkrétně škola zlepšuje maturitní přípravu a zajišťuje odborně kvalifikované učitele pro bezpečnostní obory."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "U nástavbového oboru Bezpečnostní služby jsou výsledky velmi slabé a nedaří se je zásadně zlepšovat; u Obchodní akademie byly výsledky lepší.",
+      "key_numbers": [
+        "Maturitu konalo osm ze sedmnácti přihlášených denních studentů; uspělo pět.",
+        "Čistá neúspěšnost oboru byla 40 % oproti celorepublikovému průměru 24,2 %.",
+        "V matematice neuspělo 50 % studentů, což však odpovídalo pouze dvěma maturujícím."
+      ],
+      "evidence": "Neúspěšnost se objevila ve všech částech maturity; škola označila analýzu výsledků za prioritu, trend se však nepodařilo výrazně změnit."
+    },
+    "absence": {
+      "trend": "Absence se podle školy daří udržovat v přijatelných mezích díky měsíčnímu sledování a zásahům při zhoršování prospěchu.",
+      "key_numbers": [],
+      "evidence": "Pedagogické porady sledují nárůst absence a přijímají opatření, kterými se absence daří udržovat v přijatelných mezích."
+    },
+    "support_services": [
+      "Výchovná poradkyně, školní metodička prevence a školní psycholožka poskytují poradenské a preventivní služby.",
+      "Škola nabízí individuální konzultace, doučování, sdílení materiálů a podporu při přípravě na závěrečné zkoušky a maturitu.",
+      "Pro první ročníky jsou pořádány adaptační kurzy, besedy a přednášky; k dispozici je také schránka důvěry.",
+      "Poradenský tým úzce spolupracuje s učiteli, ale zajištění individualizované péče může kvůli omezenému personálu být obtížné dlouhodobě udržet."
+    ],
+    "safety_climate": [
+      "Ve sledovaných teoretických hodinách panovala příznivá a respektující atmosféra.",
+      "Při odborném výcviku byly zásady bezpečnosti dodržovány až na drobné nedostatky.",
+      "Škola sleduje školní klima dotazníky a problémové situace řeší individuálními pohovory.",
+      "Pro bezpečnostně právní obor jsou zajištěny odborná učebna kriminalistiky, posilovna, mobilní laserová střelnice a lezecká stěna."
+    ],
+    "partnerships_practice": [
+      "Škola dlouhodobě spolupracuje s podniky odpovídajícími profilu oborů a zapojuje žáky do reálných zakázek.",
+      "Spolupráce podporuje získávání pracovních zkušeností, odborných dovedností a budoucí uplatnění studentů.",
+      "Pro bezpečnostní obory spolupracuje s Policií ČR a dalšími bezpečnostními sbory.",
+      "Externí partneři poskytují také materiální podporu, stipendia, ubytování a stravu některým žákům."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je formulován srozumitelně, stručně a prakticky pro rodiče; důležité závěry jsou opřeny o znění zprávy nebo inspekčního stanoviska.",
+    "uncertainty_notes": [
+      "Zpráva uvádí přesné údaje o absenci jen slovně, proto sekce neobsahuje číselné hodnoty.",
+      "U matematické maturity nástavbového oboru je neúspěšnost 50 %, ale vznikla pouze u dvou studentů.",
+      "Některá personální čísla se v připomínkách školy lišila; použito je opravené stanovisko inspekčního týmu."
+    ]
+  }
+}

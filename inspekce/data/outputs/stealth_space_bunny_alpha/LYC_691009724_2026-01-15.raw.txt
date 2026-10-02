@@ -1,0 +1,105 @@
+{
+  "report_id": "LYC_691009724_2026-01-15",
+  "school_profile": {
+    "school_type": "Základní škola, střední škola, školní družina, školní klub a školní jídelna–výdejna",
+    "inspection_period": "15. 1. 2026 až 19. 1. 2026",
+    "school_change_summary": "Škola se přestěhovala do nových rekonstruovaných prostor, změnilo se vedení i pedagogický sbor a od 1. září 2025 nově nabízí maturitní obor Kombinované lyceum."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Klima a vztahy",
+        "detail": "Zpráva popisuje příznivou atmosféru, vzájemnou důvěru a respektující přístup pedagogů k žákům.",
+        "evidence": "Výsledkem je příznivá pracovní atmosféra napříč školou."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola účinně podporuje žáky se speciálními vzdělávacími potřebami a spolupracuje s poradenskými zařízeními.",
+        "evidence": "Podpůrná opatření jsou žákům poskytována v souladu s doporučeními poradenských zařízení."
+      },
+      {
+        "tag": "Zájmové vzdělávání",
+        "detail": "Zájemci o aktivity mimo vyučování najdou pravidelné i spontánní činnosti v klidném a podporujícím prostředí.",
+        "evidence": "Zaměřuje se jak na pravidelnou zájmovou činnost, tak na spontánní aktivity."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "Ve výuce se podle inspekce méně přizpůsobovaly úkoly a cíle individuálním potřebám žáků, zejména nadaným.",
+        "evidence": "Ve většině sledované výuky často scházela diferenciace činností či náročnosti úloh."
+      },
+      {
+        "tag": "Kvalifikace pedagogů",
+        "detail": "Vyšší počet pedagogů bez odborné kvalifikace může rodiče zajímat při výběru konkrétního učitele nebo předmětu.",
+        "evidence": "Aktuálně vzdělávání ve škole zajišťuje 16 průvodců, osm nesplňuje požadavky odborné kvalifikace."
+      },
+      {
+        "tag": "Sledování pokroku",
+        "detail": "Rodičům nemusí být vždy snadné získat přehled o průběžném pokroku žáka kvůli slabšímu systému mapování výsledků.",
+        "evidence": "Nedostatečně nastavený prokazatelný systém mapování průběžných výsledků a pokroku vzdělávání žáků ZŠ."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku, úkoly a hodnocení nadaným žákům a žákům se SVP?",
+      "Jaké konkrétní možnosti mají rodiče průběžně sledovat pokrok svého dítěte a jak jsou hodnoceny portfolios?",
+      "Které předměty a učitelé pracují s žáky s vyšší mírou diferenciace a podpůrnými pomůckami?"
+    ],
+    "who_school_fits": [
+      "Rodice, kteří hledají menší školu s individuálním přístupem a nízkou naplněností.",
+      "Žáci, kteří mají zájem o přírodovědné a humanitní zaměření nebo o kurzy, dílny a studovnu.",
+      "Rodice, kterým vyhovuje školní klima založené na respektu, důvěře a aktivním zapojení žáků."
+    ],
+    "who_should_be_cautious": [
+      "Rodice, kteří potřebují ověřit vysokou míru individualizace konkrétní výuky.",
+      "Rodice nadaných žáků, kteří chtějí jistotu systematické podpory a pravidelného sledování pokroku.",
+      "Rodice, kterým záleží na odborné kvalifikaci všech pedagogů."
+    ],
+    "plain_czech_summary": "Škola má přátelské klima, podporující přístup pedagogů a účinnou práci s žáky se SVP. Výuka je místy创新ovativní, praktická a propojuje předměty. ZŠ má malou naplněnost a nové prostory. Mezi hlavní nedostatky patří méně častá diferenciace, nedostatečné vedení portfolií a vysoký počet pedagogů bez odborné kvalifikace. Střední škola nabízí od září 2025 obor Kombinované lyceum, ale inspekční zpráva neuvádí konkrétní výsledky maturit."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "V zprávě nejsou uvedeny výsledky maturit; obor vznikl až 1. září 2025.",
+      "key_numbers": [
+        "16 žáků v oboru Kombinované lyceum",
+        "14 žáků v 1. ročníku a 2 žáci ve 2. ročníku",
+        "Naplněnost oboru je 27 %"
+      ],
+      "evidence": "Od 1. září 2025 SŠ poskytuje vzdělávání zakončené maturitní zkouškou v oboru Kombinované lyceum aktuálně pro 16 žáků."
+    },
+    "absence": {
+      "trend": "Absence není podle inspekce vysoká.",
+      "key_numbers": [
+        "Bez uvedeného procenta v textu zprávy",
+        "Jeden neprospívající žák na konci školního roku 2024/2025",
+        "Ojedinělý výskyt závažných porušení školního řádu"
+      ],
+      "evidence": "Škola řádně sleduje absenci žáků, která není vysoká."
+    },
+    "support_services": [
+      "Poradenské a konzultační služby pro žáky, rodiče a pedagogy.",
+      "Podpora žáků s rizikovým chováním a žáků ohrožených školním neúspěchem.",
+      "Spolupráce s poradenskými zařízeními a dalšími institucemi.",
+      "Podpůrná opatření pro žáky se SVP."
+    ],
+    "safety_climate": [
+      "Žáci jsou seznamováni s bezpečnostními riziky.",
+      "Dohlíady a dohledy během přestávek byly stanoveny.",
+      "Škola byla chráněna proti vstupu neoprávněných osob."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s mateřskými, základními a středními školami včetně škol v zahraničí.",
+      "Spolupráce s muzei, festivaly, pořadateli akcí a mediálními partnery.",
+      "Spolupráce se zákonnými zástupci při volnočasových a prázdninových aktivitách."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou srozumitelné, stručné a vztahují se k praktickým otázkám rodičů.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní výsledky maturitní zkoušky.",
+      "U absence není uveden přesný procentní údaj.",
+      "Hodnocení vhodnosti školy pro konkrétní žáky je obecné a vychází z popsaných zjištění."
+    ]
+  }
+}

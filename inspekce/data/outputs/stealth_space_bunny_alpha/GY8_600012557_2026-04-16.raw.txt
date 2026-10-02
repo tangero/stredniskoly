@@ -1,0 +1,103 @@
+{
+  "report_id": "GY8_600012557_2026-04-16",
+  "school_profile": {
+    "school_type": "Příspěvková organizace poskytující střední vzdělání s maturitní zkouškou v denní formě, čtyřleté a osmileté gymnázium.",
+    "inspection_period": "16.–17. 4. a 20.–21. 4. 2026",
+    "school_change_summary": "Změnila se ředitelka a její zástupce, poradenské pracoviště posílili psycholožka a sociální pedagožka, získala akreditaci Erasmus+ a postupně zlepšila vybavení i technický stav školy."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podpora a klima",
+        "detail": "Škola nabízí psychologickou a sociální podporu, preventivní programy i prostředí podporující pohodu žáků.",
+        "evidence": "ŠPP poskytuje konzultační podporu; vznikly relaxační zóny, nové kabinety a prohlížené vyučování probíhalo v „pozitivní a klidné pracovní atmosféře“."
+      },
+      {
+        "tag": "Zahraniční a jazykové vzdělávání",
+        "detail": "Pro žáky je významná možnost účastnit se výměnných pobytů, zahraničních kurzů a certifikované zkoušky FCE z angličtiny.",
+        "evidence": "Škola má akreditaci Erasmus+, realizuje výměnné pobyty a žákům nabízí „složení certifikované zkoušky FCE z anglického jazyka“."
+      },
+      {
+        "tag": "Materiální zázemí",
+        "detail": "Rodiče mohou očekávat, že se prostředí a vybavení školy postupně modernizují.",
+        "evidence": "Proběhla rekonstrukce tělocvičny, laboratoře, auly, kabinetů, osvětlení a topení; zakoupeno nové výukové vybavení."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Rodiče by měli zvážit zejména slabší výsledky matematiky při maturity a neprováděnou cílenou analýzu těchto výsledků.",
+        "evidence": "Výsledky u maturity byly „v celostátním porovnání ... spíše slabší“, zejména v matematice; vedení data „neanalyzuje cíleně“."
+      },
+      {
+        "tag": "Přizpůsobení výuky",
+        "detail": "Ve většině hospitovaných hodin byla omezená diferenciace podle potřeb, tempa a schopností žáků.",
+        "evidence": "„Nebyla téměř zaznamenána diferenciace práce“; většina žáků plnila stejné úlohy bez možnosti volit náročnost."
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Ve výuce se málo využívalo aktivní ověřování cíle hodiny, sebehodnocení a formativní hodnocení postupu žáků.",
+        "evidence": "Aktivní vyhodnocení cíle se „v malé míře“ vyskytovalo; sebehodnocení bylo formální a formativní hodnocení nebylo téměř zaznamenáno."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší slabší výsledky maturit z matematiky a kdy vzniknou opatření ke zlepšení?",
+      "Jak při běžné výuce rozlišuje úkoly pro žáky s různým tempem, včetně nadaných žáků?",
+      "Jak často žáci dostávají zpětnou vazbu o postupu a kdy probíhá sebehodnocení nebo hodnocení spolužáků?"
+    ],
+    "who_school_fits": [
+      "Rodinám, které hledají gymnázium s podporovanou úrovní cizích jazyků a možností zahraničních pobytů.",
+      "Žákům, kterým vyhovují čtyřleté nebo osmileté studium v dobře vybaveném a pozitivně hodnoceném prostředí.",
+      "Rodinám, které ocení dostupnou psychologickou, sociální a vzdělávací podporu."
+    ],
+    "who_should_be_cautious": [
+      "Rodinám, které jsou zvyklé na výrazné individualizace výuky pro nadané nebo odlišně se učící žáky.",
+      "Rodinám, které očekávají důkladnou analýzu výsledků a pravidelné prokazatelné zlepšování maturitních výsledků.",
+      "Rodinám, které chtějí v každé hodině rozsáhlou spolupráci žáků, samostatné objevování a průběžnou formativní zpětnou vazbu."
+    ],
+    "plain_czech_summary": "Gymnázium má dobré zázemí, pozitivní klima a dostupnou psychologickou i sociální podporu. Nabízí volitelné předměty, jazykové vzdělávání, Erasmus+ a zahraniční pobyty. Pro rodiče jsou důležité tři výhrady: výsledky maturity jsou v celostátním srovnání spíše slabší, zejména v matematice; výuka se málo přizpůsobuje rozdílům mezi žáky; žáci dostávají málo průběžné zpětné vazby. Škola sama vedení doporučuje posílit kontrolní činnost, analyzovat výsledky a zavést více diferenciace, spolupráce, sebehodnocení a formativního hodnocení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "V posledních čtyřech školních letech byly výsledky maturity v celostátním srovnání spíše slabší, zejména v matematice; cílená analýza vedením neprobíhala.",
+      "key_numbers": [
+        "466 žáků ve čtyřletém a osmiletém gymnáziu",
+        "237 žáků v osmi třídách čtyřletého gymnázia",
+        "229 žáků v osmi třídách osmiletého gymnázia"
+      ],
+      "evidence": "„Výsledky u MZ ... byly ... spíše slabší“, zejména v matematice; „vedení školy dostupná data neanalyzuje cíleně“."
+    },
+    "absence": {
+      "trend": "Inspekční zpráva neuvádí konkrétní trend ani statistiku absence; zmiňuje pouze stanovenou hranici tolerované absence a možnost jejího navýšení.",
+      "key_numbers": [
+        "Škola stanovila hranici tolerované absence za klasifikační období",
+        "Individuální vzdělávací podpora může u sportovně či umělecky nadaných žáků zvýšit povolenou absenci"
+      ],
+      "evidence": "Zpráva uvádí „stanovenou hranici tolerované absence ve výuce za klasifikační období“ a možnost jejího navýšení."
+    },
+    "support_services": [
+      "Školní psycholožka a sociální pedagožka poskytují konzultace žákům, rodičům a pedagogům.",
+      "ŠPP identifikuje vzdělávací potřeby, nastavuje podpůrná opatření a jejich účinnost vyhodnocuje.",
+      "Škola podporuje jazykové, sportovní a umělecké zájmy, včetně kurzů, kroužků a programů Erasmus+."
+    ],
+    "safety_climate": [
+      "Ve vyučovaných hodinách byla pozitivní a klidná atmosféra založená na vzájemném respektu.",
+      "Škola má dvě anonymní schránky důvěry, adaptační a sportovní kurzy a preventivní programy přizpůsobené potřebám kolektivů.",
+      "Škola řeší poměrně malé množství rizikových situací a organizace podpory je podle zprávy funkční."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s městem, základními školami, kulturními institucemi, organizacemi sociálních služeb a Univerzitou Pardubice.",
+      "Univerzita Pardubice se podílí na projektových dnech ve škole.",
+      "Škola rozvíjí zahraniční spolupráci prostřednictvím výměnných pobytů, mezinárodních projektů a akreditace Erasmus+ pro roky 2023–2027."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou srozumitelné, stručné a vztahují se přímo k informacím uvedeným v inspekční zprávě.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesné procento úspěšnosti maturity ani srovnávací číselné hodnoty.",
+      "Zpráva neuvádí celkovou statistiku absence ani její vývoj.",
+      "Hodnocení vhodnosti školy je obecné; konkrétní potřeby žáka nebo rodiny nejsou uvedeny."
+    ]
+  }
+}

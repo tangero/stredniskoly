@@ -1,0 +1,100 @@
+{
+  "report_id": "LYC_600015459_2026-03-19",
+  "school_profile": {
+    "school_type": "střední škola, vyšší odborná škola a školní jídelna",
+    "inspection_period": "19.–20. 3. 2026 a 23.–24. 3. 2026",
+    "school_change_summary": "K 1. 9. 2023 vznikla vyšší odborná škola a změnily se název i adresa školy; od roku 2024/2025 se znovu vyučují technické a zdravotnické lyceum."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola dlouhodobě poskytuje kvalitní výchovné, kariérové a psychologické poradenství.",
+        "evidence": "„Dlouhodobá efektivní činnost poradenských služeb v oblasti výchovného a kariérového poradenství a prevence rizikového chování.“"
+      },
+      {
+        "tag": "Praktická výuka",
+        "detail": "U technických, zdravotnických a gastronomických oborů je náuka propojena s praxí a moderním vybavením.",
+        "evidence": "„Vybavení nových učeben odpovídá současným požadavkům praxe a umožňuje simulaci reálných pracovních podmínek.“"
+      },
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Výsledky maturitních zkoušek jsou dlouhodobě velmi dobré a u řady oborů převyšují srovnání se školami obdobného typu.",
+        "evidence": "„Výsledky společné i profilové části maturitní zkoušky byly v posledních třech letech na velmi dobré úrovni.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Závěry hodin",
+        "detail": "Některé vyučovací hodiny nekončí důkladným shrnutím učiva a žáky podílejícími se na vyhodnocení cílů.",
+        "evidence": "„Nízká míra systematického shrnování učiva v závěru vyučovacích hodin a vyhodnocování splnění cílů výuky.“"
+      },
+      {
+        "tag": "Externí testy",
+        "detail": "V testu moderních dějin a čtenářské gramotnosti škola dosáhla horších výsledků než celorepublikový průměr.",
+        "evidence": "„Škola dosáhla v porovnání s celorepublikovým průměrem slabších výsledků.“"
+      },
+      {
+        "tag": "Aktivita některých předmětů",
+        "detail": "Výuka dějepisu a některých jazykových hodin byla méně aktivní, než by odpovídalo podpoře motivace a samostatného učení.",
+        "evidence": "„Výuka dějepisu byla převážně formou odborného výkladu, při kterém zůstávali žáci spíše pasivními posluchači.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak často končí hodiny společným shrnutím učiva a žáky vedenou reflexí?",
+      "Jak konkrétně vypadá individualizovaná podpora žáků se speciálními vzdělávacími potřebami?",
+      "Kolik externích praktik a spoluprácí s budoucími zaměstnavateli je součástí běžné výuky?"
+    ],
+    "who_school_fits": [
+      "Uchazeče, kteří chtějí technické, zdravotnické nebo hotelnicko-gastronomické vzdělání propojené s praxí.",
+      "Žáky, kterým vyhovuje školní prostředí s rozsáhlou odbornou výukou a podporou konkrétních studijních oborů.",
+      "Uchazeče, kteří chtějí využít spolupráci školy s nemocnicí, firmami, dalšími školami či zahraničními partnery."
+    ],
+    "who_should_be_cautious": [
+      "Žáky, kterým záleží na pravidelném závěrečném shrnování a aktivním hodnocení vlastního pokroku.",
+      "Uchazeče, kteří v českém jazyku či moderních dějích potřebují výraznou přípravu, protože školní výsledky v čtenářské gramotnosti byly slabší.",
+      "Žáky, kterým při výuce dějepisu nebo některých cizích jazyků nevyhovuje převládající výklad a méně aktivní práce."
+    ],
+    "plain_czech_summary": "Škola nabízí technické, zdravotnické, lyceální i gastronomické obory s důrazem na praxi, moderní učebny a spolupráci s zaměstnavateli. Poradenské služby, systémová podpora výsledků i kladné školní klima jsou její silnými stránkami. Maturity jsou dlouhodobě úspěšné, zejména v technických oborech. Hlavní přestavbou je průběžné závěrečné shrnování hodin a zapojení žáků do hodnocení cílů. Sledovat je vhodné výsledky v čtenářské gramotnosti a pasivnější charakter výuky dějepisu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Celkově velmi dobrá a za poslední tři roky stabilní; některé obory a předměty vykazují kolísání.",
+      "key_numbers": [
+        "Ve školním roce 2022/2023 uspěli všichni zdravotničtí žáci ve společné části maturity.",
+        "Ve školním roce 2023/2024 byli všichni hotelničtí žáci úspěšní u maturity z českého jazyka.",
+        "Ve školním roce 2024/2025 dosáhla celková úspěšnost zdravotnického oboru výsledek nad republikovým průměrem."
+      ],
+      "evidence": "„Výsledky společné i profilové části maturitní zkoušky byly v posledních třech letech na velmi dobré úrovni.“"
+    },
+    "absence": {
+      "trend": "Inspekční zpráva neuvádí vývoj ani číselné údaje o absenci.",
+      "key_numbers": [],
+      "evidence": "V dodaném textu není část o neúčastnosti žáků."
+    },
+    "support_services": [
+      "Poradenský tým tvoří dva metodikové prevence, kariérová poradkyně, dvě výchovné poradkyně a školní psycholožka.",
+      "Škola poskytuje konzultační hodiny, doučování, pedagogickou intervenci a podpůrná opatření pro žáky se SVP.",
+      "Školní psycholožka sleduje třídní klima a poskytuje individuální i skupinovou diagnostiku."
+    ],
+    "safety_climate": [
+      "Škola hodnotí bezpečnostní rizika, přijímá preventivní opatření a poučuje žáky o bezpečném chování.",
+      "Opatření podporují podnětné a bezpečné školní prostředí.",
+      "Školní stravování podporuje zdravý životní styl a pestrý výběr jídel."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s budoucími zaměstnavateli, nemocnicí, školami a dalšími institucemi.",
+      "Partnerství umožňuje odbornou praxi, exkurze, konference, stáže a workshopy.",
+      "Mezinárodní projekty zahrnují mobility žáků všech studijních oborů."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text používá srozumitelné běžné výrazy, stručně vysvětluje praktické důsledky zjištění a rozlišuje pozitivní i problematické oblasti.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje údaje o absenci, takže její trend nelze posoudit.",
+      "Nejsou uvedeny konkrétní procentní výsledky maturit, pouze slovní hodnocení a některé dílčí skutečnosti.",
+      "Závěry o vhodnosti konkrétním uchazečům vycházejí pouze z popsaných oborů, podpory a způsobu výuky."
+    ]
+  }
+}

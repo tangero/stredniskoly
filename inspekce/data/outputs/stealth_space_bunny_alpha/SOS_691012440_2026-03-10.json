@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_691012440_2026-03-10",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:30:07.718919+00:00",
+  "run_finished_utc": "2026-10-02T16:30:47.541839+00:00",
+  "raw_file": "SOS_691012440_2026-03-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_691012440_2026-03-10",
+    "school_profile": {
+      "school_type": "střední škola",
+      "inspection_period": "10. 3. – 13. 3. 2026",
+      "school_change_summary": "Škola vznikla v roce 2018 sloučením tří škol, od roku 2023 působí v Trutnově v pronajatých náhradních prostorech a od školního roku 2023/2024 zavedla interní testování žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná příprava",
+          "detail": "Odborné vzdělávání je dobře propojeno s praxí na smluvních pracovištích a žáci pracují na reálných úkolech.",
+          "evidence": "Odborné vzdělávání je začleněno formou výcviku nebo průběžné praxe; žáci se podílejí na reálných zakázkách."
+        },
+        {
+          "tag": "Podpora a klima",
+          "detail": "Škola má funkční poradenské pracoviště, školní psycholožku a pozitivní přístup vychovatelů i učitelů k žákům.",
+          "evidence": "Školní psycholožka řeší rizika, vztahové problémy a podporuje klima; v DM byl zaznamenán respektující přístup."
+        },
+        {
+          "tag": "Zaměstnanecká příprava",
+          "detail": "Škola aktivně spolupracuje s profesními partnery a zahraničními školami, což může rozšiřovat praktické i jazykové dovednosti žáků.",
+          "evidence": "Zahraniční spolupráce podporuje mobility a odborné a jazykové kompetence; profesní partneři přispívají k odbornému vzdělávání."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturitní výsledky",
+          "detail": "Výsledky u maturitních zkoušek jsou dlouhodobě pod celorepublikovým průměrem a přijatá opatření zatím nepřinesla očekávané zlepšení.",
+          "evidence": "Výsledky jsou dlouhodobě pod průměrem; jejich pozitivní účinnost se prozatím neprojevila."
+        },
+        {
+          "tag": "Aktivní zapojení žáků",
+          "detail": "V běžné výuce žáci dostávají méně příležitostí k aktivní práci, spolupráci, vyjadřování a rozvoji kritického myšlení.",
+          "evidence": "Ve většině hodin převažovala frontální výuka; kooperativní metody se vyskytovaly pouze ojediněle."
+        },
+        {
+          "tag": "Zpětná vazba a podpora",
+          "detail": "Zpětná vazba vedení pedagogům a sledování účinnosti podpůrných opatření nejsou dostatečně systematické.",
+          "evidence": "Hospitační záznamy neobsahovaly vždy doporučení; podpůrná opatření během výuky nejsou cíleně sledována."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak vypadá podpora žáků s neomluvenou absencí a která opatření se po jejím nárůstu skutečně změnila?",
+        "Jak konkrétně vypadá zpětná vazba učitelům po hospitaci a kde ji rodič mohou vidět?",
+        "Kolik žáků má konkrétní podpůrné opatření a jak se pravidelně ověřuje jeho účinnost?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat hotelnictví, gastronomii nebo řemeslné obory a mají zájem o praktickou práci.",
+        "Žákům, kterým vyhovuje odborný výcvik, praxe a spolupráce na skutečných zakázkách.",
+        "Žákům, kteří využijí nabídku konzultací, poradenství, preventivních programů a aktivit v domově mládeže."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům, kterým záleží na vysokých výsledcích u maturitních zkoušek, protože škola je dlouhodobě pod celorepublikovým průměrem.",
+        "Žákům, kterým vadí převážně frontální výuka a omezené zapojení do samostatné a kooperativní práce.",
+        "Rodičům žáků s vysokou absencí, protože škola uvádí rostoucí počet kázeňských opatření."
+      ],
+      "plain_czech_summary": "Škola nabízí široký výběr hotelových, gastronomických a řemeslných oborů, praktickou výuku a spolupráci s partnery. Pro rodiče je důležitým kladem přátelské klima ve vyučovaných hodinách, funkční podpora žáků a práce domova mládeže. Zároveň zpráva upozorňuje na slabší výsledky u maturit, příliš frontální výuku, málo aktivní práce žáků a ne vždy důslednou zpětnou vazbu pedagogům. Rodiči by měli na návštěvě zjišťovat, jak konkrétně škola řeší absenci, podporu učení a rozšiřování aktivního zapojení žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou dlouhodobě pod celorepublikovým průměrem; u neúspěšnosti jsou zachyceny rozdíly mezi obory a školními roky.",
+        "key_numbers": [
+          "Hospo 2023/2024: 33% neúspěšných žáků",
+          "Hospo 2024/2025: 23,5% neúspěšných žáků",
+          "Gastronomie 2023/2024: 20%; 2024/2025: 37% neúspěšných žáků"
+        ],
+        "evidence": "Výsledky žáků u MZ jsou dlouhodobě pod celorepublikovým průměrem; slabší výsledky se týkají zejména společné části MZ."
+      },
+      "absence": {
+        "trend": "Absence je významným problémem; škola eviduje neomluvenou i zvýšenou omluvenou absenci a ukládá kázeňská opatření.",
+        "key_numbers": [
+          "Maximální tolerovaná absence: 25–50%",
+          "Počet kázeňských opatření v posledních dvou letech stoupl",
+          "Nejčastější přestupky: absence a pozdní příchody"
+        ],
+        "evidence": "Absence a pozdní příchody patří mezi nejčastěji řešené přestupky; počet kázeňských opatření stoupl."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště, školní psycholožka, individuální konzultace a podpůrná opatření.",
+        "Anonymní elektronická schránka důvěry, prevence rizikového chování, osobnostní výchova a kariérové poradenství.",
+        "Domovy mládeže v Trutnově a Teplicích nad Metují, doučování, volnočasové a preventivní aktivity."
+      ],
+      "safety_climate": [
+        "V hospitovaných hodinách vládla pozitivní pracovní atmosféra a nebyl zaznamenán nevhodný či kázeňský problém.",
+        "Vyučující dbali na dodržování hygienických a bezpečnostních předpisů, osobní hygienii a používání pracovních pomůcek.",
+        "V domovech mládeže byl zaznamenán empatický a respektující přístup vychovatelů."
+      ],
+      "partnerships_practice": [
+        "Spolupráce se školami v Německu, na Slovensku a v Polsku a mobility žáků v zahraničí včetně projektu Erasmus+.",
+        "Spolupráce s místními organizacemi, školami, domovem seniorů, psím útulkem a dalšími partnery.",
+        "Odborné kurzy, exkurze, veletrhy, soutěže a projekty pro rozvoj odborných, komunikačních a občanských kompetencí."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný a struktura odpovědí je přehledná; některá hodnocení vycházejí přímo z inspekčních zjištění, nikoli ze srovnání s jinými školami.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní míru úspěšnosti jednotlivých společných částí maturitní zkoušky.",
+        "Zpráva uvádí směry vývoje, ale ne všechny podrobné výsledky interního testování.",
+        "Pro rozhodnutí konkrétního žáka chybí srovnání s požadovaným oborem a vybíranou školou."
+      ]
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "report_id": "SOS_600007499_2026-04-24",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:16:05.141159+00:00",
+  "run_finished_utc": "2026-10-02T16:16:30.342088+00:00",
+  "raw_file": "SOS_600007499_2026-04-24.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600007499_2026-04-24",
+    "school_profile": {
+      "school_type": "Střední odborná škola s obory Obchodní akademie a Provozní technika",
+      "inspection_period": "24.–29. 4. 2026",
+      "school_change_summary": "Počet žáků vzrostl zejména v Obchodní akademii, zatímco v Provozní technice klesl přibližně o čtvrtinu; prostory se rozšířily a přibyly digitální technologie."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Malé třídy a osobní přístup",
+          "detail": "Menší počet žáků ve třídách umožňuje poskytovat individuální podporu při řešení osobních i vztahových problémů.",
+          "evidence": "Vstřícný přístup pedagogů i nižší počet žáků ve třídách umožňuje poskytovat vhodnou podporu žákům."
+        },
+        {
+          "tag": "Zapojení do praxe",
+          "detail": "Smlouvami partneři umožňují absolvovat odbornou praxi na jejich pracovištích.",
+          "evidence": "K naplňování profilu absolventa přispívají přínosné vztahy se smluvními partnery, na jejichž pracovištích probíhá odborná praxe."
+        },
+        {
+          "tag": "Podpora žáků a prevence",
+          "detail": "Škola nabízí konzultace, doučování, adaptační aktivity a programy podporující bezpečné chování žáků.",
+          "evidence": "Prevence školní neúspěšnosti je realizována zejména prostřednictvím prezenčních nebo on-line konzultací a doučováním."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturita v Provozní technice",
+          "detail": "Neúspěšnost ve společné části maturity zůstává výrazně vyšší než u srovnatelných oborů v ČR.",
+          "evidence": "Hrubá neúspěšnost byla opakovaně vyšší než průměr ve srovnatelné skupině oborů ČR."
+        },
+        {
+          "tag": "Nestabilní pedagogický sbor",
+          "detail": "Část výuky vedou učitelé bez odborné kvalifikace, což může zhoršovat kvalitu a kontinuitu vzdělávání.",
+          "evidence": "Většina výuky je vedena učiteli bez odborné kvalifikace, případně bez příslušné předmětové specializace."
+        },
+        {
+          "tag": "Absence a neukončené studium",
+          "detail": "V nástavbovém studiu může nižší účast ve výuce podporovat špatné výsledky a předčasné ukončení studia.",
+          "evidence": "Vyšší počet zameškaných hodin se často promítá do nižší úspěšnosti, popř. souvisí s předčasným odchodem."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní výsledky má škola v posledním roce u společné části maturitní zkoušky v jednotlivých oborech?",
+        "Které předměty a maturity vedení nástupbového studia podle vás nejvíce potřebují zlepšení?",
+        "Jak škola konkrétně řeší absenci dospělých žáků a jejich předčasné ukončení studia?"
+      ],
+      "who_school_fits": [
+        "Žákům, kterým vyhovuje menší škola a možnost osobní podpory; škola popisuje „nižší počet žáků ve třídách“.",
+        "Žákům, kteří chtějí odbornou praxi u smluvních partnerů; ta podle zprávy probíhá na jejich pracovištích.",
+        "Žákům, kteří využijí konzultace, doučování a podporu při neúspěchu; zpráva uvádí prezenční i on-line konzultace."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků v Provozní technice, protože škola zde dosahuje výrazně horších maturitních výsledků než srovnatelné obory.",
+        "Rodičům, kteří očekávají plně kvalifikovaný a stabilní pedagogický sbor; zpráva uvádí jeho fluktuaci a personální nedostatky.",
+        "Rodičům žáků s vysokou absencí, která podle inspekce souvisí s horší úspěšností a někdy i s předčasným odchodem."
+      ],
+      "plain_czech_summary": "Škola nabízí osobní přístup, menší třídy, praxe u partnerů a dobrou podporu žáků. Materiálně se zlepšila a vybavila digitálními technologiemi. Obchodní akademie dosahuje velmi dobrých výsledků v profilové části maturity, ale výsledky v obou oborech jsou nejslabší z češtiny. Hlavním rizikem je Provozní technika, kde se neúspěšnost společné části maturity v roce 2024/2025 vrátila přibližně k 47 %. Výrazným problémem je také absence, nestabilní pedagogický sbor a převážně frontální výuka s malým zapojením žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "V Obchodní akademii se neúspěšnost nejprve zlepšila, ale v roce 2024/2025 výrazně vzrostla; v Provozní technice zůstává trvale vysoká.",
+        "key_numbers": [
+          "Obchodní akademie: 0 % v roce 2022/2023, přibližně 36 % v roce 2024/2025.",
+          "Provozní technika: 60 % v roce 2022/2023, téměř 30 % v roce 2023/2024, přibližně 47 % v roce 2024/2025.",
+          "Ve 2024/2025 v Provozní technice neuspěli v didaktickém testu z češtiny; nejúspěšnější byli z cizího jazyka."
+        ],
+        "evidence": "Ve školním roce 2024/2025 činila hrubá neúspěšnost v Obchodní akademii přibližně 36 % a v Provozní technice přibližně 47 %."
+      },
+      "absence": {
+        "trend": "V Obchodní akademii absence postupně klesala; v Provozní technice zůstává významným problémem spojeným s pracovním procesem dospělých.",
+        "key_numbers": [
+          "Obchodní akademie: přibližně 130 hodin absence na žáka v roce 2024/2025.",
+          "Studium včetně předčasného ukončení úspěšně dokončilo přibližně 54 % žáků Obchodní akademie a 39 % žáků Provozní techniky."
+        ],
+        "evidence": "Roční průměrná absence v Obchodní akademii činila přibližně 130 hodin na žáka; v nástavbovém studiu se účast zlepšuje obtížněji."
+      },
+      "support_services": [
+        "Výchovná poradkyně poskytuje poradenské služby ve spolupráci s metodičkou prevence.",
+        "Škola nabízí prezenční nebo on-line konzultace a doučování.",
+        "Podpora zahrnuje adaptační dny, lyžařské kurzy, prevenci užívání návykových látek, právního vědomí a kyberbezpečnosti."
+      ],
+      "safety_climate": [
+        "Ve vyučovaných hodinách převládala pozitivní atmosféra a vstřícný přístup učitelů k žákům.",
+        "Škola pravidelně poučuje žáky o bezpečnosti a ochraně zdraví a vyhodnocuje příčiny úrazů."
+      ],
+      "partnerships_practice": [
+        "Odborná praxe probíhá na pracovištích smluvních partnerů.",
+        "Žákovský parlament poskytuje podněty vedení školy, mimo jiné ke zkvalitnění podmínek vzdělávání."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, stručné a zaměřené na rozhodování rodičů; odborné ukazatele jsou vysvětlené bez zbytečného úřednického stylu.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesný roční průměr absence v Provozní technice.",
+        "Zpráva neuvádí výši školného, a proto nelze přímo porovnat finanční dostupnost s jinými školami.",
+        "Uvedené údaje o výsledcích se vztahují především ke školním rokům 2022/2023 až 2024/2025."
+      ]
+    }
+  }
+}

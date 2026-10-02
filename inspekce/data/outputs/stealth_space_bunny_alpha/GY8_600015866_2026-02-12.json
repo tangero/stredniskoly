@@ -1,0 +1,114 @@
+{
+  "report_id": "GY8_600015866_2026-02-12",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:37:01.168304+00:00",
+  "run_finished_utc": "2026-10-02T16:37:29.046185+00:00",
+  "raw_file": "GY8_600015866_2026-02-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600015866_2026-02-12",
+    "school_profile": {
+      "school_type": "Gymnázium",
+      "inspection_period": "12. až 17. 2. 2026",
+      "school_change_summary": "Od předchozí inspekce došlo ke změně ředitele, rekonstrukci tří učeben a zajištění školní psycholožky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nabízí rozsáhlé projektové, vzdělávací a mimoškolské aktivity pro rozvoj kompetencí a kariérního směřování.",
+          "evidence": "„Systémová podpora všestranného rozvoje žáků prostřednictvím projektových"
+        },
+        {
+          "tag": "Partnerské vztahy",
+          "detail": "Spolupráce s partnery pomáhá rozvíjet jazykové kompetence, profilaci žáků a jejich přípravu na další studium.",
+          "evidence": "„Přínosné partnerské vztahy podporující rozvoj jazykových kompetencí žáků"
+        },
+        {
+          "tag": "Poradenská péče",
+          "detail": "Školní psycholožka, výchovná poradkyně a metodička prevence zajišťují podpůrnou, preventivní a psychologickou péči.",
+          "evidence": "„Personální zabezpečení školních poradenských služeb umožňuje komplexní zajištění preventivní"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Aktivizace žáků",
+          "detail": "V části výuky je méně aktivní zapojení žáků, spolupráce mezi nimi a prostor pro samostatné či ústní projevy.",
+          "evidence": "„Nižší míra aktivizace žáků v procesu učení"
+        },
+        {
+          "tag": "Diferenciace",
+          "detail": "Učitelé by měli více přizpůsobovat výuku individuálnímu potenciálu jednotlivých žáků.",
+          "evidence": "„Nedostatečná diferenciace výuky vzhledem k individuálnímu potenciálu žáků.“\""
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Ve výuce jsou málo využívány formativní hodnocení, sebehodnocení a vzájemné hodnocení podle známých kritérií.",
+          "evidence": "„Méně časté uplatňování formativní zpětné vazby k práci žáků a jejich zapojení do evaluace vlastního učebního pokroku.“\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá aktivizace žáků, kooperativní práce a prostor pro mluvený projev v jednotlivých předmětech?",
+        "Jak škola při hodinách diferencuje úkoly a podporuje žáky podle jejich aktuální úrovně?",
+        "Jak často a jakým způsobem probíhá zpětná vazba, sebehodnocení a systematické hodnocení pokroku každého žáka?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat na gymnáziu a mají zájem o přípravu na maturitní zkoušku.",
+        "Žákům, kterým vyhovuje školní prostředí s projektovými, soutěžními, jazykovými a mimoškolskými aktivitami.",
+        "Žákům, kteří využijí nabízené vzdělávací, psychologické a kariérní poradenství."
+      ],
+      "who_should_be_cautious": [
+        "Žákům, kteří potřebují zejména pravidelnou formativní zpětnou vazbu a průběžné hodnocení pokroku.",
+        "Žákům, kterým vyhovuje výuka s výrazným podílem samostatného řešení, diskuse a kooperativní práce.",
+        "Rodičům žáků s podpůrnými opatřeními, kteří chtějí znát konkrétní mechanismy individualizované podpory přímo ve výuce."
+      ],
+      "plain_czech_summary": "Gymnázium má dobré výsledky, stabilní a velmi dobré úrovně maturit i úspěch při přijímání na vysoké školy. Nabízí rozsáhlé projekty, soutěže, jazykové aktivity, exkurze a spolupráci s partnery. K dispozici jsou psychologické, výchovné a preventivní služby. Zpráva ale upozorňuje na rozdílnou kvalitu výuky, menší aktivizaci žáků, nedostatečnou diferenciaci a málo formativní zpětné vazby. Pro rodiče je důležité zejména při volbě předmětů a při dotazech na přístup učitelů ověřit, jak se v konkrétních třídách podporuje samostatnost, diskuse, spolupráce a sledování pokroku."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky za poslední tři sledovaná období jsou srovnatelné s republikovým průměrem a dosahují velmi dobré úrovně.",
+        "key_numbers": [
+          "Ve všech třech sledovaných obdobích velmi dobrá úroveň.",
+          "Na jaře neprospěli pouze jednotlivci, kteří uspěli na podzim.",
+          "Úspěšnost absolventů při přijímání na vysoké školy je velmi dobrá."
+        ],
+        "evidence": "„Výsledky maturitní zkoušky za poslední tři sledovaná období jsou srovnatelné s republikovým průměrem a dosahují velmi dobré úrovně.“\""
+      },
+      "absence": {
+        "trend": "Zpráva neuvádí samostatný vývoj absence; její hodnocení je čtvrtletní.",
+        "key_numbers": [
+          "Absence se vyhodnocuje ve čtvrtletní statistické sumarizaci.",
+          "Ve sledovaném období byl přiměřený počet kázeňských opatření za méně závažné přestupky."
+        ],
+        "evidence": "„Vyhodnocování prospěchu",
+        "absence a chování vychází ze čtvrtletní statistické sumarizace": "kterou předkládají jednotliví třídní učitelé.“\""
+      },
+      "support_services": [
+        "Výchovná poradkyně, metodička prevence a školní psycholožka zajišťují preventivní, podpůrnou, psychologickou péči a kariérní poradenství.",
+        "Psycholožka dochází do školy jednou týdně a poskytuje pravidelné konzultace a podporu duševního zdraví žáků.",
+        "Škola realizuje adaptační pobyty, styly učení, sportovní kurzy, třídnické hodiny, individuální konzultace a motivační pohovory.",
+        "Systém péče o žáky s podpůrnými opatřeními respektuje doporučení školského poradenského zařízení."
+      ],
+      "safety_climate": [
+        "Žáci dodržovali nastavená pravidla práce a komunikace s učiteli.",
+        "Preventivně podpůrné mechanismy byly převážně funkční a vedly k přiměřenému počtu opatření za méně závažné přestupky.",
+        "Podpora duševního zdraví, prevence patologických jevů a práce s třídním klimatem jsou součástí činnosti školy."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje například s městskou knihovnou, Jupiter clubem, s.r.o. a společností ČEZ, a.s.",
+        "S neziskovou organizací Chaloupky se podílí na projektu Clim-e-do a projektu Erasmus+ Jean Monet.",
+        "Škola je fakultní školou Přírodovědecké fakulty Univerzity Palackého a nově spolupracuje s Nemocnicí Jihlava."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a opřené o citace ze zprávy; závěry jsou formulovány prakticky pro rodiče.",
+      "uncertainty_notes": [
+        "Zpráva uvádí období inspekční činnosti 12., 13., 16. a 17. 2. 2026, nikoli nepřetržlé čtyřdenní období.",
+        "Pro konkrétní předměty nebo třídy se závěry o kvalitě výuky nemohou generalizovat na celou školu.",
+        "U absence zpráva neposkytuje samostatný číselný trend."
+      ]
+    }
+  }
+}

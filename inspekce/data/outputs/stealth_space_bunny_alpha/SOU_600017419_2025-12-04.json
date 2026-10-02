@@ -1,0 +1,112 @@
+{
+  "report_id": "SOU_600017419_2025-12-04",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:52:04.479943+00:00",
+  "run_finished_utc": "2026-10-02T16:52:32.843231+00:00",
+  "raw_file": "SOU_600017419_2025-12-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600017419_2025-12-04",
+    "school_profile": {
+      "school_type": "Střední odborné učiliště poskytující střední vzdělávání s výučním listem i obory zakončené maturitní zkouškou.",
+      "inspection_period": "4.–5. 12. 2025 a 8.–9. 12. 2025",
+      "school_change_summary": "Od roku 2022 se kvalitativně zlepšilo materiální vybavení a pokračuje spolupráce s partnery; současně nebyly dostatečně splněny dřívější doporučení týkající se inovativních metod a individuálních potřeb žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vzdělávání",
+          "detail": "Žáci pracují v moderně vybavených dílnách i na pracovištích firem a osazují se technologiemi používanými v praxi.",
+          "evidence": "„Výuka dosahovala velmi dobré úrovně“ a žáci se seznamovali s moderními technologiemi."
+        },
+        {
+          "tag": "Podpora rozdílných potřeb",
+          "detail": "Škola dlouhodobě vytváří podmínky pro žáky se speciálními vzdělávacími potřebami a poskytuje jim odpovídající podporu.",
+          "evidence": "„Škola dlouhodobě vytváří vhodné podmínky pro vzdělávání žáků se speciálními vzdělávacími potřebami.“"
+        },
+        {
+          "tag": "Motivace a rozvoj zájmů",
+          "detail": "Soutěže, projekty a stipendia mohou podporovat zájem žáků o obor a jejich školní úspěšnost.",
+          "evidence": "Vybrané obory jsou podporovány stipendiemi; žáci se pravidelně zapojují do soutěží a dosahují v nich úspěchů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Podpora stagnujících žáků",
+          "detail": "Nabízená podpora žáků s neuspokojivými výsledky není podle inspekce dostatečně systematická ani důsledná.",
+          "evidence": "„Tato opatření však nejsou realizována systematicky ani důsledně, což snižuje jejich efektivitu.“"
+        },
+        {
+          "tag": "Hodnocení a zpětná vazba",
+          "detail": "Formativní hodnocení, sebehodnocení a vzájemné hodnocení se využívají méně, než by podle inspekce mohly podporovat rozvoj žáků.",
+          "evidence": "„Reflexe vzdělávacích cílů, formativní hodnocení, sebehodnocení i vzájemné hodnocení“ se objevovaly sporadicky."
+        },
+        {
+          "tag": "Úrazy při tělesné výchově",
+          "detail": "Rodičům stojí za pozornost doporučení zlepšit dohled nad žáky při tělesné výchově a pravidelně vyhodnocovat úrazovost.",
+          "evidence": "„Většina evidovaných úrazů vznikla při výuce tělesné výchovy.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola sleduje výsledky žáků a kdy jim začne poskytovat intenzivnější podporu?",
+        "Jak často a v jakém rozsahu probíhá výuka na dílnách a na smluvních pracovištích firem?",
+        "Jaké možnosti mají žáci se speciálními vzdělávacími potřebami pro přechod na jiný obor nebo ukončení studia?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat stavební, elektrotechnický, dřevařský nebo nábytkářský obor a mají zájem o praktickou práci.",
+        "Žákům, kterým vyhovuje prostředí s odbornými učiteli, firmami a praktickým vyučováním.",
+        "Žákům se zájmem o projektové aktivity, soutěže nebo stipendijní podporu."
+      ],
+      "who_should_be_cautious": [
+        "Žákům, kterým chybí dostatečné studijní návyky, protože podpora při neúspěchu není podle inspekce dostatečně systematičtější.",
+        "Žákům, kteří potřebují intenzivní průběžné hodnocení a zpětnou vazbu, protože se využívá jen omezeně.",
+        "Rodičům žáků se sníženou pohyblivostí nebo citlivostí na případná rizika při tělesné výchově."
+      ],
+      "plain_czech_summary": "Škola má širokou nabídku stavebních, elektrotechnických a dřevařských oborů. Silnou stránkou je praktické vyučování, spolupráce s firmami, moderní technika a podpora žáků se speciálními potřebami. Výsledky u maturitní zkoušky byly 73 %, u závěrečné 80 %. Neomluvená absence ve školním roce 2024/2025 klesla přibližně o polovinu. Mezi slabiny patří omezené formativní hodnocení, málo aktivního a kooperativního učení a nedostatečně systematická podpora žáků s dlouhodobě slabými výsledky. Inspekce doporučila zlepšit sledování individuálního pokroku, případně rozdělovat některé hodiny. Také většina úrazů vznikla při tělesné výchově, proto je vhodné ověřit velikost skupin a dohled."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zpráva uvádí úspěšnost za školní rok 2024/2025, ale neposkytuje srovnání s dřívějším rokem.",
+        "key_numbers": [
+          "Úspěšnost u maturitní zkoušky: 73 %.",
+          "Neúspěšnost u maturitní zkoušky: 27 %."
+        ],
+        "evidence": "„Ve školním roce 2024/2025 uspělo u maturitní zkoušky 73 % žáků, neuspělo 27 %.“"
+      },
+      "absence": {
+        "trend": "Celková neomluvená absence se ve školním roce 2024/2025 snížila přibližně o polovinu.",
+        "key_numbers": [
+          "Pokles neomluvené absence: přibližně 50 %.",
+          "138 kázeňských opatření.",
+          "14 výchovných komisí."
+        ],
+        "evidence": "„Celková neomluvená absence se snížila cca o 50 %.“"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytuje kariérové poradenství, věnuje se žákům se speciálními vzdělávacími potřebami a poskytuje metodickou podporu pedagogům.",
+        "Škola nabízí konzultace, jednání se zákonnými zástupci, individuální konzultace a možnost přestupu na méně náročný obor.",
+        "Žákům s podpůrnými opatřeními 1. až 4. stupně je poskytována podpora; ve školním roce 2025/2026 se týkala 95 žáků."
+      ],
+      "safety_climate": [
+        "Preventivní opatření se pravidelně vyhodnocují a žáci jsou systematicky upozorňováni na bezpečnostní rizika.",
+        "Většina evidovaných úrazů vznikla při výuce tělesné výchovy.",
+        "Inspekce doporučila pravidelný rozbor úrazovosti a menší skupiny při tělesné výchově pro účinnější dohled."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje se středními školami, partnerskou polskou školou, zřizovatelem, sociálními partnery, externími odborníky a profesními organizacemi.",
+        "Odborné firmy umožňují žákům získat reálné zkušenosti z praxe a seznámit se s aktuálními technologiemi.",
+        "Spolupráce se projevuje společnými akcemi, soutěžemi, výměnou pedagogických zkušeností a přípravou na uplatnění na trhu práce."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžnou češtinu, stručně vysvětluje význam čísel a odděluje potvrzené skutečnosti od doporučení a oblastí ke zlepšení.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí počet žáků ani konkrétní výsledky, ze kterých byla vypočtena úspěšnost maturitní a závěrečné zkoušky.",
+        "Není uvedeno, jak dlouho jednotliví žáci stagnují ani jak konkrétně funguje přestup na méně náročný obor.",
+        "Inspekce nehodnotila činnost domova mládeže, protože v době inspekce probíhala jeho rekonstrukce."
+      ]
+    }
+  }
+}

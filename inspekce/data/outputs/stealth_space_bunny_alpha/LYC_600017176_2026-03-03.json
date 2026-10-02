@@ -1,0 +1,108 @@
+{
+  "report_id": "LYC_600017176_2026-03-03",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:31:59.860512+00:00",
+  "run_finished_utc": "2026-10-02T16:32:43.286907+00:00",
+  "raw_file": "LYC_600017176_2026-03-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600017176_2026-03-03",
+    "school_profile": {
+      "school_type": "Vyšší odborná škola, střední průmyslová škola a školní jídelna–výdejna; škola nabízí obory Elektrotechnika a Technické lyceum.",
+      "inspection_period": "3. až 6. 3. 2026",
+      "school_change_summary": "Od předchozí inspekce se zlepšily materiální podmínky modernizací odborných učeben a pomůcek. Podle inspekce se ale nepodařilo dostatečně zlepšit pestrost metod, diferenciaci výuky ani vyhodnocování dopadu přijatých opatření."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Žáci pracují v moderních laboratořích a učebnách s technikou odpovídající současným technologickým trendům.",
+          "evidence": "Vybavení odborných učeben umožňovalo široké spektrum pracovních činností a podporovalo bezpečnost práce."
+        },
+        {
+          "tag": "Příprava na maturitu",
+          "detail": "Maturitní výsledky jsou dlouhodobě velmi dobré a u Technického lycea opakovaně dosahují stoprocentní úspěšnosti.",
+          "evidence": "Ve skupině Technického lycea žáci opakovaně dosahovali stoprocentní úspěšnosti ve společné i profilové části."
+        },
+        {
+          "tag": "Zaměstnanecká příprava",
+          "detail": "Spolupráce s firmami, odborná praxe a projekty propojují školní výuku s reálnými pracovními nároky.",
+          "evidence": "Odborná praxe je zpravidla zajištěna v partnerských organizacích; rozšiřující aktivity propojují teorii s praxí."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Bezpečnost a dohled",
+          "detail": "Při jedné hodině chyběl po určitou dobu pedagogický dohled a při nepřítomnosti učitele nebyl zajištěn náhradní dohled.",
+          "evidence": "Po určitý čas nebyl zajištěn pedagogický dohled; při nepřítomnosti pracovníka ani dohled jiným zaměstnancem."
+        },
+        {
+          "tag": "Přizpůsobení výuky",
+          "detail": "Ve střední škole se individuální přístup a podpůrná opatření projevovaly méně, než by odpovídalo různým potřebám žáků.",
+          "evidence": "Žáci pracovali převážně na stejných úkolech; podpůrná opatření byla ve výuce méně patrná."
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Učitelé často vraceli žákům známku a krátký komentář místo podrobnější zpětné vazby, sebehodnocení a vzájemného hodnocení.",
+          "evidence": "V části hodin chybělo sebehodnocení, vzájemné hodnocení a účinné závěrečné shrnutí učiva."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola zajišťuje nepřetržitý pedagogický dohled během odnášek, přestávek a náhradních hodin?",
+        "Jak v teoretických předmětech probíhá diferenciace úkolů a podpora žáků se speciálními vzdělávacími potřebami?",
+        "Jak často učitelé používají formativní hodnocení, sebehodnocení a zpětnou vazbu místo samotného klasifikačního stupně?"
+      ],
+      "who_school_fits": [
+        "Uchazečům, kteří chtějí studovat elektrotechniku nebo technické lyceum v Olomouci.",
+        "Žákům, kteří mají zájem o praktickou práci s moderní technikou, softwarem a odbornými laboratoři.",
+        "Studentům, kteří ocení spolupráci školy s firmami, praxe, projekty a přípravu na maturitu."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků se speciálními vzdělávacími potřebami, kteří potřebují jistotu výrazné individualizace a podpůrných opatření.",
+        "Rodičům žáků, kteří v teoretických předmětech očekávají hojně skupinové, diskusní a mezipředmětové metody.",
+        "Rodičům, kterým záleží na důsledném dozoru a ochraně zdraví žáků, protože inspekce zaznamenala jeho výjimku."
+      ],
+      "plain_czech_summary": "Škola má velmi dobré praktické zázemí, spolupráci s firmami a dlouhodobě dobré maturitní výsledky. Ve společné části maturitní zkoušky jsou výsledky lepší než republikový průměr; na Technickém lyceu byla opakovaně stoprocentní úspěšnost. Hlavní slabiny jsou v organizaci některých teoretických hodin, posílení individuální podpory, pestrost metod a podrobná zpětná vazba. Inspekce také zjistila jeden případ chybějícího dohledu nad třídou. Pro rodiče je důležité ověřit na dni otevřených dveří konkrétní postupy dohledu, diferenciace a podpory jednotlivých žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně velmi dobrá úroveň; výsledky jsou dlouhodobě lepší než celorepublikový průměr.",
+        "key_numbers": [
+          "Technické lyceum: opakovaně 100% úspěšnost ve společné i profilové části.",
+          "Neúspěšnost u Elektrotechniky se jen sporadicky objevovala a zůstávala velmi nízká.",
+          "Třetina žáků využila standardizovanou jazykovou zkoušku v profilové části maturity."
+        ],
+        "evidence": "Výsledky potvrzují velmi dobrou úroveň připravenosti; škola ve společné části dosahuje lepších výsledků než republikový průměr."
+      },
+      "absence": {
+        "trend": "Inspekční zpráva neuvádí trend ani číselné údaje o absenci.",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje výsledky ani vývoj absence; mezi doloženými podklady jsou pouze souhrny absence."
+      },
+      "support_services": [
+        "Na škole působí školní metodička prevence, výchovný poradce a dvě školní psycholožky.",
+        "Škola poskytuje doučování, konzultace a vlastní výukové materiály; informační systém usnadňuje dostupnost poradenských služeb."
+      ],
+      "safety_climate": [
+        "Inspekce označila za slabou stránku zajištění bezpečnosti a ochrany zdraví žáků ve vyučovací hodině.",
+        "Jednou během inspekce nebyl po určitý čas zajištěn pedagogický dohled nad třídou.",
+        "Škola má preventivní program zahrnující také krizové plány; text zprávy uvádí výjimku v dohledu, nikoli celkové hodnocení celé školy."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s firmami a podnikateli, u nichž probíhá zejména praktické vyučování a odborná praxe.",
+        "Některé partnerské organizace nabízejí studentům stipendijní programy.",
+        "S Univerzitou Palackého umožňuje účast na akcích „Týden vysokoškolákem“ a „UPweek“; rozšiřující aktivity zahrnují také exkurze a odborné stáže."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, odděluje silné stránky od rizik a vždy uvádí krátkou oporu v textu zprávy.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí číselné údaje o absenci, takže její trend nelze posoudit.",
+        "Závěr o vhodnosti školy je orientační a vychází z charakteristiky oborů, praktické výuky a zjištěných slabin.",
+        "Není uvedeno, jak často se případ chybějícího dohledu opakuje; jde proto o jednotlivý zaznamenaný případ."
+      ]
+    }
+  }
+}

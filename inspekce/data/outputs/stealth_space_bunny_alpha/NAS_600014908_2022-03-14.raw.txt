@@ -1,0 +1,102 @@
+{
+  "report_id": "NAS_600014908_2022-03-14",
+  "school_profile": {
+    "school_type": "Střední odborná škola, střední odborné učiliště, základní škola, praktická škola a školní družina",
+    "inspection_period": "14.–17. a 21. 3. 2022",
+    "school_change_summary": "Od školního roku 2020/2021 je součástí školy také základní škola speciální, praktická škola a školní družina; vedení přijímá opatření ke zlepšení výsledků oboru Podnikání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podpora žáků se SVP",
+        "detail": "Výuka v základní škole speciální je podporující, individualizovaná a dobře využívá pomůcky i digitální technologie.",
+        "evidence": "„Výuka ve třídách základní školy speciální byla velmi dobře zvládnutá a podporující.“"
+      },
+      {
+        "tag": "Praktická výuka",
+        "detail": "Odborné vyučování probíhá v kvalitním zázemí a žáci získané znalosti uplatňují při samostatné práci.",
+        "evidence": "„Žáci vždy účelně využívali znalosti z teoretické výuky a aplikovali je do praxe.“"
+      },
+      {
+        "tag": "Bezpečné prostředí",
+        "detail": "Ubytovací podmínky a vybavení se zlepšily a ve škole se řeší rizikové chování včasnou a vstřícnou komunikací.",
+        "evidence": "„Závažnější případy nebyly v posledních třech letech zaznamenány.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Absence a přerušování studia",
+        "detail": "Vysoká absence zůstává problémem a často vede k žádostem o přerušení studia, které většinou znamenají jeho ukončení.",
+        "evidence": "„Nedaří se snížit absenci žáků a počty přerušení vzdělávání napříč obory.“"
+      },
+      {
+        "tag": "Teoretická výuka",
+        "detail": "Ve střední škole převládá frontální výuka, chybí aktivizace žáků a diferenciace podle jejich schopností.",
+        "evidence": "„Ve střední škole převládala v teoretickém vyučování frontální výuka bez častějšího využití metod vedoucích k aktivizaci žáků.“"
+      },
+      {
+        "tag": "Výsledky Podnikání",
+        "detail": "Škola připravila změny programu a přijímacích podmínek, výsledky oboru Podnikání však zatím zůstávají problematické.",
+        "evidence": "„Opatření ke zlepšení výsledků vzdělávání oboru Podnikání.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní změny přijímá škola v oboru Podnikání a kdy vyhodnotí jejich účinnost?",
+      "Jak škola řeší absenci a vzniká žákům postup pro individualizovanou podporu a doučování?",
+      "Jak často se ve vyučování střední školy objevuje práce žáků, vzájemná spolupráce a zpětná vazba?"
+    ],
+    "who_school_fits": [
+      "Žáci základní školy speciální a praktické školy se speciálními vzdělávacími potřebami.",
+      "Žáci učebních oborů, kteří chtějí propojit teorii s praktickou výukou a odbornou přípravou.",
+      "Žáci se zájmem o obory Podnikání, Cukrář, Kuchař–číšník, Zahradník florista nebo Truhlář."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče žáků, kteří potřebují intenzivnější podporu učení než škola nabízí.",
+      "Rodiče žáků s tendencí k vysoké absenci nebo předčasnému ukončení studia.",
+      "Rodiče, kteří očekávají převážně aktivní a diferencovanou výuku ve všech teoretických předmětech střední školy."
+    ],
+    "plain_czech_summary": "Škola nabízí základní a praktickou školu, odborné obory i nástavbové studium Podnikání. Silnou stránkou je podpora žáků se speciálními vzdělávacími potřebami a kvalitní praktická výuka. Pro rodiče jsou důležité také ubytování, vybavení a spolupráce s partnery školy. Hlavní slabiny jsou vysoká absence, časté přerušování studia a příliš frontální teoretická výuka. Výsledky oboru Podnikání škola analyzuje, přesto doporučuje při opětovném zhoršení omezit přijímání nových žáků. Před rozhodnutím je vhodné ověřit konkrétní podporu v oboru a aktuální postup řešení absencí."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Škola zavádí změny přípravy a přijímacích podmínek oboru Podnikání, protože v něm zaznamenala zhoršení úspěšnosti.",
+      "key_numbers": [
+        "93 % žáků úspěšně ukončilo vzdělávání závěrečnou zkouškou ve školním roce 2020/2021.",
+        "V českém jazyce neuspělo 25 % žáků, tedy 4 žáci.",
+        "Ve druhém ročníku Podnikání bylo 9 žáků z 13 přijatých do prvního ročníku."
+      ],
+      "evidence": "„Vyšší podíl neúspěšných žáků (25 %, tj. 4 žáci) u maturitní zkoušky z českého jazyka.“"
+    },
+    "absence": {
+      "trend": "Průměrný počet omluvených hodin klesl, ale počet neomluvených hodin vzrostl; vysoká absence se daří řešit jen částečně.",
+      "key_numbers": [
+        "Škola uvádí 25 % neúspěšných žáků u maturitní zkoušky z českého jazyka, nikoli však přímo podíl absentujících."
+      ],
+      "evidence": "„V uplynulém období se snížil průměrný počet omluvených hodin na žáka, avšak zvýšil se počet neomluvených hodin.“"
+    },
+    "support_services": [
+      "Škola poskytovala individuální a skupinové konzultace při prezenční i online výuce a zapojila projekt bezplatného doučování.",
+      "Poradenské služby se zaměřují na žáky se speciálními vzdělávacími potřebami a pravidelně vyhodnocují účinnost přijatých opatření.",
+      "Ubytovaným žákům pomáhá spolupráce vychovatelů domova mládeže s učiteli při doučování; žáci se podílejí na řešení připomínek v domovní radě."
+    ],
+    "safety_climate": [
+      "„Pozitivní atmosféra byla většinou zřejmá.“",
+      "„Otevřená a vstřícná komunikace pedagogů s žáky“ pomáhá řešit projevy rizikového chování v počátečním stádiu.",
+      "„Závažnější případy nebyly v posledních třech letech zaznamenány.“"
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje se středisky výchovné péče, výchovným ústavem, školskými poradenskými zařízeními a zřizovatelem.",
+      "S odbornými partnery realizuje například workshopy.",
+      "Významným partnerem je Domov Černovice-Lidmaň, který žákům také poskytuje ubytování, stravování a odpovídající pracovní místa."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžné české výrazy, krátké věty a jasně odděluje silné stránky, rizika, číselné údaje a doporučené otázky.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesný počet omluvených ani neomluvených hodin.",
+      "Zpráva neuvádí aktuální úspěšnost oboru Podnikání za školní rok 2021/2022.",
+      "Není uvedeno, jak konkrétně škola odlišuje kvalitu teoretické výuky mezi jednotlivými obory."
+    ]
+  }
+}

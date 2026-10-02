@@ -1,0 +1,101 @@
+{
+  "report_id": "NAS_600007642_2024-01-22",
+  "school_profile": {
+    "school_type": "Střední odborná škola a střední odborné učiliště",
+    "inspection_period": "22. 1. až 25. 1. 2024",
+    "school_change_summary": "Škola rozšířila maturitní obory, posílila digitální vybavení a od roku 2019/2020 nevede dálkové studium oboru Podnikání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Žáci se pravidelně setkávají s reálnou praxí a odborníky z praxe, což pomáhá rozvíjet jejich uplatnitelnost na trhu práce.",
+        "evidence": "Spolupráce se sociálními partnery umožňuje rozvoj praktických dovedností a zvyšuje uplatnitelnost absolventů."
+      },
+      {
+        "tag": "Maturitní příprava",
+        "detail": "Škola analyzuje výsledky didaktických testů a přípravu maturitních ročníků pravidelně upravuje.",
+        "evidence": "Výsledky testů jsou podrobně analyzovány; příprava k didaktickým testům je pravidelná."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Žákům jsou dostupné poradenské služby, doučování a podpora při řešení problémů i přípravě na maturitu.",
+        "evidence": "Škola nabízí individuální i skupinové doučování a realizuje individualizované doučování v maturitním ročníku."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Absence",
+        "detail": "Vysoká absence může zvýšit riziko neúspěšnosti a předčasného ukončení studia.",
+        "evidence": "Vyšší absence zvyšuje riziko předčasného odchodu ze vzdělávání či školní neúspěšnosti."
+      },
+      {
+        "tag": "Sociální činnost",
+        "detail": "V oboru Sociální činnost je výsledek maturity v roce 2022/2023 horší než celorepublikový průměr.",
+        "evidence": "Hrubá neúspěšnost vzrostla na 44 %, zatímco celorepublikový průměr byl 29,9 %."
+      },
+      {
+        "tag": "Diferencovaná výuka",
+        "detail": "V některých hodinách se málo využívá přizpůsobení úkolů různým vzdělávacím potřebám žáků.",
+        "evidence": "Jen ojediněle byla uplatněna diferenciace úkolů vzhledem k individuálním vzdělávacím potřebám."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci a předčasné odchody žáků?",
+      "Jak podporuje škola žáky se SVP při učení a přípravě k maturitě?",
+      "Kolik výuky v oboru Sociální činnost probíhá na smluvních pracovištích a jak probíhá zpětná vazba?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat obor s maturitní zkouškou nebo výučním listem v denní formě.",
+      "Žákům, kterým vyhovuje propojení teorie s praktickou výukou a odbornou praxí.",
+      "Žákům, kteří využijí individuální nebo skupinové doučování a poradenskou podporu."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kterým záleží na nízké absenci a pravidelné přítomnosti ve škole.",
+      "Rodinám žáků se SVP, kteří potřebují průběžně ověřit konkrétní míru individualizované podpory.",
+      "Uchazečům o obor Sociální činnost, kteří mají zájem o maturitu a chtějí znát výsledky posledního období."
+    ],
+    "plain_czech_summary": "Škola nabízí maturitní obory Podnikání a Sociální činnost i řadu nematuritních oborů, praktickou výuku a poradenskou podporu. Výsledky Podnikání se podle inspekce zlepšily, ale u Sociální činnosti byl v roce 2022/2023 výsledek maturity horší než celorepublikový průměr. Největší slabinou je vysoká absence, která souvisí s neúspěšností a předčasným odchodem některých žáků. Výuka by měla více přizpůsobovat úkoly potřebám žáků a rozvíjet jejich samostatné hodnocení učiva."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky Podnikání se zlepšily; u Sociální činnosti se v roce 2022/2023 výsledek zhoršil proti předchozímu roku.",
+      "key_numbers": [
+        "Podnikání: hrubá neúspěšnost ve společné části MZ 20 %, 26,7 %, 42,9 % a 26,7 % v letech 2020–2023.",
+        "Sociální činnost: 36,4 % v roce 2021/2022 a 44 % v roce 2022/2023.",
+        "Celorepublikový průměr pro rok 2022/2023 byl 29,9 %."
+      ],
+      "evidence": "V obou maturitních oborech se v roce 2022/2023 podařilo úspěšně vystačit s maturitou přibližně dvěma třetinám žáků; v Sociální činnosti přibližně 45 %."
+    },
+    "absence": {
+      "trend": "Průměrná absence v obou maturitních oborech v roce 2022/2023 meziročně klesla přibližně o 20 %, ale zůstala vysoká.",
+      "key_numbers": [
+        "Roční průměrná absence v obou maturitních oborech činila přibližně 150 hodin na žáka.",
+        "V oboru Podnikání v denní formě byla oproti roku 2018/2019 nižší přibližně o 30 %.",
+        "Neomluvená absence se po zavedení opatření proti záškoláctví snížila."
+      ],
+      "evidence": "Opatření proti záškoláctví se podle inspekce projevila snížením průměrné neomluvené absence."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště zajišťuje výchovné, kariérové a metodické poradenství; podporu zajišťuje také adaptační kurz.",
+      "Škola poskytuje individuální a skupinové doučování, v maturitním ročníku individualizovanou přípravu k MZ a spolupráci se školskými poradenskými zařízeními."
+    ],
+    "safety_climate": [
+      "Škola pravidelně poučuje žáky o bezpečnosti a ochraně zdraví.",
+      "Při odborném cviku žáci pracují pod přímým dohledem a jsou vedeni k dodržování bezpečných pracovních postupů."
+    ],
+    "partnerships_practice": [
+      "Škola dlouhodobě spolupracuje se sociálními partnery a odborníky z praxe.",
+      "Praktické vyučování se uskutečňuje na školních pracovištích i smluvních pracovištích; inspekce uvedla velmi dobré výsledky závěrečných zkoušek nematuritních oborů."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je srozumitelný, stručný a vztahuje zjištění k otázkám, které mohou rodiče řešit při výběru školy.",
+    "uncertainty_notes": [
+      "Zpráva uvádí výsledky společné části MZ, nikoli úplné výsledky všech částí maturity.",
+      "U některých ukazatelů jsou uvedeny přibližné hodnoty.",
+      "Zpráva neuvádí aktuální přijímací hranice ani podrobné výsledky přijímacích zkoušek pro rok 2024/2025."
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "report_id": "GY6_600004961_2026-02-25",
+  "school_profile": {
+    "school_type": " Denní šestileté gymnázium s profilací výtvarné výchovy a němčiny",
+    "inspection_period": "2026-02-25 až 2026-03-02",
+    "school_change_summary": "Škola si zachovává stabilní naplněnost, změnila zástupce ředitele, inovovala školní vzdělávací program a zlepšila vybavení; nově je fakultní školou filozofické a přírodovědecké fakulty UK."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Široká podpora studijního zaměření",
+        "detail": "Volitelné předměty, semináře a úpravy výuky umožňují přizpůsobit studium zájům a schopnostem žáka.",
+        "evidence": "„Široká nabídka volitelných předmětů/seminářů“ umožňuje vzdělávání podle „individuálních potřeb, míry nadání a zájmu“."
+      },
+      {
+        "tag": "Jazykové vzdělávání",
+        "detail": "Nabídka cizích jazyků, konverzace a zahraniční pobyty cíleně rozvíjejí jazykové schopnosti.",
+        "evidence": "Škola má „systémově nastavené jazykové vzdělávání“ podporované konverzacemi, pobyty a partnerskými školami."
+      },
+      {
+        "tag": "Odborná péče",
+        "detail": "Školní poradenské služby zahrnují psychologa, psychoterapeuta, výchovné poradenství a kariérové poradenství.",
+        "evidence": "„Komplexní zabezpečení poradenských služeb, kariérních služeb a psychologické péče“ zajišťuje odbornou podporu."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nerovnoměrné zapojení žáků",
+        "detail": "V některých hodinách převládá výuka řízená učitelem, což může omezovat samostatnou práci žáků.",
+        "evidence": "„Dominující postavení učitele“ a „nedostatečné střídání činností“ vedly k pasivitě jednotlivců."
+      },
+      {
+        "tag": "Práce s informacemi",
+        "detail": "Některým žákům není dostatečně rozvíjeno vyhledávání, ověřování a kritické vyhodnocování informací.",
+        "evidence": "Samostatné vyhledávání a vyhodnocování informací nebylo v některých hodinách „dostatečným způsobem patrné“."
+      },
+      {
+        "tag": "Didaktické závěry",
+        "detail": "Učitelé ne vždy aktivně ověřují pochopení učiva a málo využívají vzájemné či formativní hodnocení.",
+        "evidence": "Splnění vzdělávacího cíle bývá ověřeno „spíše formálně“ a „v menší míře“ se využívá práce s chybou."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak často učitelé během hodiny zapojují žáky do samostatné práce, kooperativních činností a vyhodnocování informací?",
+      "Jak konkrétně probíhá podpora žáků s odlišným tempem, školním neúspěchem nebo odlišným mateřským jazykem?",
+      "Kolik hodin týdně mohou žáci využít školní psychologa, psychoterapeutu, výchovné poradenství a kariérovní poradenství?"
+    ],
+    "who_school_fits": [
+      "Žákům se zájmem o jazyky, výtvarné vzdělávání, humanitní, přírodovědné nebo umělecké obory.",
+      "Žákům, kteří chtějí volit semináře a mít prostor pro vlastní projekty a rozšiřující aktivity.",
+      "Rodičům žáků oceňujícím stabilní podporu, partnerty školy a rozsáhlé mimoškolní aktivity."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří potřebují v každé hodině výrazně samostatnou, kooperativní nebo tematicky velmi diferencovanou práci.",
+      "Rodičům žáků, kterým záleží na důsledném ověřování pochopení učiva, protože kontrolní mechanismy nejsou vždy dostatečně účinné.",
+      "Rodičům citlivým na omezené prostorové podmínky školy."
+    ],
+    "plain_czech_summary": "Gymnázium má dobré výsledky a široké možnosti studia. Silné jsou jazykové vzdělávání, volitelné semináře, partnerské projekty, podpora nadaných žáků i poradenské služby. Při maturitě jsou výsledky dlouhodobě velmi dobré a přijetí na vysoké školy téměř stoprocentní. Hlavní slabinou je, že některé hodiny jsou příliš učitelstvě vlastní: žáci se méně zapojují, samostatně vyhledávají informace a aktivně hodnotí svůj pokrok. Zpráva proto doporučuje více samostatné a kooperativní práce, diferencování úkolů a důslednější kontrolu přijatých zlepšení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky jsou dlouhodobě velmi dobré; ve sledovaném období uspěli všichni zkoušející s výjimkou jednoho neúspěchu v matematice v roce 2022/2023.",
+      "key_numbers": [
+        "Ve školním roce 2024/2025 jazykovou profilovou zkoušku certifikátem nahradily dvě třetiny žáků.",
+        "V průměru třetina žáků maturitu dokončila s vyznamenáním.",
+        "Úspěšnost u humanitních oborů v dílčích zkouškách byla nad celorepublikovým průměrem, v matematice přibližně stejná."
+      ],
+      "evidence": "„Ve sledovaném období posledních tří let všichni žáci konající maturitní zkoušku uspěli“; výjimkou byl jeden matematický neúspěch v roce 2022/2023."
+    },
+    "absence": {
+      "trend": "Zameškané hodiny jsou dlouhodobě přijatelné a neomluvená absence je téměř nulová.",
+      "key_numbers": [
+        "Téměř nulová neomluvená absence.",
+        "Podíl žáků s uzavřenou klasifikací do 30. 6. je stabilně až 99 %.",
+        "Podíl žáků prospělých s vyznamenáním za poslední tři školní roky převyšuje čtvrtinu."
+      ],
+      "evidence": "„Žáci si konstantně udržují přijatelný počet zameškaných hodin včetně téměř nulové neomluvené absence.“"
+    },
+    "support_services": [
+      "Školní psycholog a psychoterapeut; podpora je součástí rozšířeného systému poradenských služeb.",
+      "Výchovné poradenství a prevence ve spolupráci s třídními učiteli.",
+      "Kariérový poradce a koordinátor spolupráce se zaměstnavateli.",
+      "Individuální podpora žáků se speciálními vzdělávacími potřebami, odlišným mateřským jazykem a školním neúspěchem; z možnosti úpravy docházky mohou těžit nadaní a sportovně zaměření žáci."
+    ],
+    "safety_climate": [
+      "„Motivační prostředí“ a zapojení žáků do projektů rozvíjejí kompetence a demokratické hodnoty.",
+      "Škola zaznamenává „velmi nízký výskyt rizikového chování“.",
+      "„Pochvaly převažují nad kázeňskými opatřeními“.",
+      "Elektronický vstupní a kamerový systém spolu s recepcí přispívají k vyšší bezpečnosti."
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem, školskou radou a Klubem rodičů podporuje zlepšování materiálních podmínek.",
+      "Škola spolupracuje se čtyřmi gymnázii v Německu, vzdělávacími institucemi a neziskovými organizacemi.",
+      "Programy Erasmus+, výjezdy a setkání podporují jazykové kompetence, multikulturalitu a multikulturní komunikaci."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou přímé, konkrétní a vysvětlují, co zpráva znamená pro volbu školy i pro přípravu otázek.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesný počet hodin samostatné, kooperativní nebo formativní práce.",
+      "Zpráva neuvádí aktuální vybavení konkrétních učeben a kapacitu služeb v počtu hodin.",
+      "Výraz „téměř 100 %“ při přijetí absolventů není v textu doplněn přesným číslem."
+    ]
+  }
+}

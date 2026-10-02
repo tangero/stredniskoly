@@ -1,0 +1,104 @@
+{
+  "report_id": "SOS_651014271_2025-12-02",
+  "school_profile": {
+    "school_type": "Soukromá střední škola poskytující střední vzdělání s maturitní zkouškou; v Malých Svatoňovicích působí také domov mládeže.",
+    "inspection_period": "2. 12. – 4. 12. 2025",
+    "school_change_summary": "Od minulé inspekce došlo k personální změně na pozici zástupce ředitele v Praze a vzniku nové pozice zástupce pro odborné vzdělávání. Vedení odstranilo část dřívějších nedostatků, ale hospitační činnost zatím není plně efektivní."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Bezpečné a respektující prostředí",
+        "detail": "Ve vyučovaných hodinách panovala příjemná atmosféra, žáci se k sobě i pedagogům chovali s respektem a dodržovali pravidla.",
+        "evidence": "„Výuka probíhala v příjemné pracovní atmosféře“ a žáci se chovali „s respektem a dodržovali nastavená pravidla chování“."
+      },
+      {
+        "tag": "Partnerství a praxe",
+        "detail": "Škola dlouhodobě spolupracuje s Policií ČR a dalšími partnery a zajišťuje odborné praxe u smluvních partnerů.",
+        "evidence": "„Významné dlouhodobé partnerství s mnoha územními útvary Policie ČR“; odborná praxe trvá čtyři týdny."
+      },
+      {
+        "tag": "Podpora a prevence",
+        "detail": "Škola nabízí doučování, konzultace, poradenství, preventivní programy, adaptační kurzy a aktivity proti šikance a kyberšikance.",
+        "evidence": "Učitelé navrhují „doučování a konzultace pro žáky“; kurzy podporují „prevenci šikany, kyberšikany“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Neúspěšnost u maturit se mezi jarními zkušebními obdobími zvýšila a škola zatím neprokázala účinnost přijatých opatření.",
+        "evidence": "Neprospělo 38 z 110 žáků v roce 2023/2024 a 51 z 119 žáků v roce 2024/2025."
+      },
+      {
+        "tag": "Převážně pasivní výuka",
+        "detail": "V teoretických hodinách převažovala frontální výuka, žáci měli málo příležitostí spolupracovat a pracovat s různými zdroji.",
+        "evidence": "„Jednoznačně převažující formou práce byla frontální výuka“; kooperativní aktivity nebyly zařazovány „v dostatečné míře“."
+      },
+      {
+        "tag": "Podpora žáků s odlišnými potřebami",
+        "detail": "Učitelé málo přizpůsobovali úkoly různým vzdělávacím potřebám a sebehodnocení či formativní hodnocení se v hodinách využívaly jen výjimečně.",
+        "evidence": "Úkoly s odlišnou náročností byly zařazeny „až na jedinou výjimku“; formativní hodnocení se použilo „ojediněle“."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola zlepšuje výsledky u maturitní zkoušky a jak účinnost podpory ověřuje?",
+      "Kolik hodin týdně se žáci věnují samostatné, skupinové a praktické práci místo pouhého výkladu?",
+      "Jak konkrétně vypadá podpora žáků s podpůrnými opatřeními a jak často se jejich pokrok přezkoumává?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří mají zájem o obor Bezpečnostně právní činnost a chtějí studovat v Malých Svatoňovicích.",
+      "Žákům, kterým vyhovuje školní prostředí s důrazem na bezpečnost, prevenci a praktické bezpečnostní činnosti.",
+      "Žákům, kteří využijí možnost odborné praxe a spolupráci s Policií ČR či dalšími partnery."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří potřebují průběžné individualizované učení nebo pravidelnou specialistickou podporu.",
+      "Rodičům, kteří očekávají výuku založenou především na samostatné práci, spolupráci a kritickém práci se zdroji.",
+      "Rodičům, kterým záleží na transparentních hodnoticích kritériích a pravidelném ověřování reálné připravenosti na maturitu."
+    ],
+    "plain_czech_summary": "Škola má přátelské a respektující prostředí, spolupráci s Policií ČR, praxe a rozsáhlou podporu žáků. Pro rodiče je důležité, že část učiva vychází z reálných zkušeností učitelů. Zároveň inspekce zjistila převážně frontální výuku, málo práce s různými zdroji a omezenou diferenciaci úkolů. Výsledky maturit se zhoršily: neúspěšných žáků přibylo z 38 z 110 na 51 z 119. Škola má zatím jasné výsledky v práci s Policií ČR, ale při zlepšování výuky a podpory žáků je nutné více sledovat skutečné pokroky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zhoršující se výsledky",
+      "key_numbers": [
+        "Jaro 2023/2024: 38 neprospělo z 110 žáků",
+        "Jaro 2024/2025: 51 neprospělo z 119 žáků",
+        "Rozdíl odpovídá 13 více neprospěšným žákům"
+      ],
+      "evidence": "„V jarním zkušebním období školního roku 2023/2024 … neprospělo 38 žáků“; v roce 2024/2025 „neprospělo 51 žáků“."
+    },
+    "absence": {
+      "trend": "V uvedeném textu nejsou statistiky absence uvedeny.",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neuvádí údaje o nepřítomnosti žáků."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovní poradci a školní metodičky prevence na obou pracovištích.",
+      "Doučování a konzultace pro žáky ohrožené školním neúspěchem.",
+      "Kariérovní poradenství formou pohovorů, exkurzí a návštěv vzdělávacích veletrhů.",
+      "Adaptační kurzy pro žáky přicházející do prvního ročníku.",
+      "Internetová „schránka důvěry“ pro podněty a návrhy žáků."
+    ],
+    "safety_climate": [
+      "Žáci se k sobě a pedagogům chovali s respektem.",
+      "Ve vztazích vychovatelů a ubytovaných žáků byl zaznamenán empatický a respektující přístup.",
+      "Při sportovních aktivitách byla dodržována bezpečnost."
+    ],
+    "partnerships_practice": [
+      "Škola dlouhodobě spolupracuje s územními útvary Policie ČR.",
+      "Spolupracuje také s Českou obchodní inspekcí a autoškolou.",
+      "Odborná praxe oboru Bezpečnostně právní činnost trvá čtyři týdny.",
+      "V Praze probíhá praxe převážně ve spolupráci s Krajským ředitelstvím policie hlavního města Prahy po dobu 14 dní.",
+      "V Malých Svatoňovicích probíhá praxe ve spolupráci s Krajským ředitelstvím policie Královéhradeckého kraje po dobu 5 dní."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a zaměřené na praktické důsledky zjištění pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přímé údaje o absenci žáků.",
+      "Údaje o podpoře žáků vycházejí především z hodnocení zpravodajských aktivit a vymezení činnosti poradenského pracoviště.",
+      "Inspekční zpráva neuvádí výsledky jednotlivých tříd, předmětů ani školních programů ve všech oblastech."
+    ]
+  }
+}

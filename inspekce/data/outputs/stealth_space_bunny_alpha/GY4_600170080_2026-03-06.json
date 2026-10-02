@@ -1,0 +1,116 @@
+{
+  "report_id": "GY4_600170080_2026-03-06",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:31:14.097918+00:00",
+  "run_finished_utc": "2026-10-02T16:31:43.887655+00:00",
+  "raw_file": "GY4_600170080_2026-03-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600170080_2026-03-06",
+    "school_profile": {
+      "school_type": "Střední odborná škola automobilní, informatiky a Gymnázium",
+      "inspection_period": "6. 3. 2026 a 9. 3. – 11. 3. 2026",
+      "school_change_summary": "Od roku 2018 vzrostl počet žáků téměř o 60 %, změnila se oborová nabídka a název školy; nově byl otevřen obor Gymnázium se zaměřením na multimédia nebo elektromobilitu."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Automobilní obory nabízejí výcvik v prostředí podobném skutečnému autoservisu, včetně práce na zakázkách pro zákazníky.",
+          "evidence": "Výuka probíhá v prostředí, které věrně simuluje reálný provoz autoservisu."
+        },
+        {
+          "tag": "Partnerství a praxe",
+          "detail": "Spolupráce s profesními partnery propojuje teorii s praxí a pomáhá rozvíjet odborné kompetence žáků.",
+          "evidence": "Dlouhodobá spolupráce zajišťuje vazbu teoretického vzdělávání na praxi a systematický rozvoj praktických dovedností."
+        },
+        {
+          "tag": "Vybavení",
+          "detail": "Škola má modernizované učebny, dílny, diagnostické přístroje a technologie, což je pro technické obory praktickou výhodou.",
+          "evidence": "Odborné učebny a dílny jsou vybaveny moderními diagnostickými přístroji a technologiemi."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejistá příprava na maturitu",
+          "detail": "Výsledky v nástavbovém oboru Podnikání byly kolísavé a v jednom roce byla hrubá neúspěšnost 33 %.",
+          "evidence": "Ve školním roce 2023/2024 byla HN školy 33 % výše než v ČR 24 %."
+        },
+        {
+          "tag": "Absence",
+          "detail": "Nezmluvená absence je v přijatelné výši, ale zvýšená absence některých žáků zhoršuje jejich školní výsledky.",
+          "evidence": "Zvýšená absence některých žáků negativně ovlivňuje průběh a výsledky jejich učení."
+        },
+        {
+          "tag": "Rozdílná kvalita výuky",
+          "detail": "Přibližně třetinu hospitovaných hodin teoretické výuky snižovala účinnost metodické a didaktické nedostatky.",
+          "evidence": "Účinnost vzdělávacího procesu přibližně třetiny hospitovaných hodin snižovaly metodické a didaktické nedostatky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní podpůrné plány a doučování nabízí škola žákům, kteří mají potíže s českým jazykem nebo matematikou před maturitou?",
+        "Jak se v oboru Podnikání podařilo zlepšit úspěšnost ve společné části maturity po roce 2023/2024?",
+        "Jak často studenti dostávají průběžnou zpětnou vazbu a podle jakých kritérií se individualizuje jejich učivo a vedení hodin?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat automobilní, informačně technický nebo gymnaziální obor se změnou od roku 2024/2025.",
+        "Žákům, kterým vyhovuje propojení teoretické výuky s praktickým výcvikem a odbornou praxí.",
+        "Žákům, kteří mají zájem o moderní techniku, digitální technologie nebo odborné certifikáty."
+      ],
+      "who_should_be_cautious": [
+        "Žákům, kteří potřebují velmi pravidelnou individualizovanou podporu při učení a mají vysokou absenci.",
+        "Žákům, kterým záleží na stabilních výsledcích zejména z matematiky před maturitou.",
+        "Žákům, kterým nestačí obvyklá výuka s menším prostorem pro mluvený projev, sebereflexi a vzájemné hodnocení."
+      ],
+      "plain_czech_summary": "Škola má širokou nabídku automobilních, informačních a gymnaziálních oborů, moderní technické zázemí a silné propojení odborné výuky s praxí. Výsledky studentů se za tři školní roky celkově zlepšovaly. Hrubá neúspěšnost ve společné části maturity se v oborech Informační technologie a Autotronik snížila pod český průměr, ale v nástavbovém oboru Podnikání zůstala kolísavá. Rodiče by měli zvážit zejména absenci žáků, jejich matematickou připravenu a skutečnou podporu při učení. V části teoretických hodin se inspekce setkala s malou aktivizací, nedostatečnou diferenciací a slabším využíváním zpětné vazby. Škola naopak podporuje praxi, partnery, kariérní přípravu a pomoc žákům se speciálními vzdělávacími potřebami i cizincům."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky ve společné části maturity se v oborech Informační technologie a Autotronik postupně zlepšovaly; u nástavbového Podnikání výsledky kolísaly.",
+        "key_numbers": [
+          "Informační technologie: 2022/2023 HN 22 % proti ČR 6 %; 2023/2024 HN 14 % proti ČR 4 %.",
+          "Informační technologie 2024/2025: MZ nekonali pouze dva žáci, ostatní uspěli a HN klesla pod celostátní úroveň.",
+          "Nástavbové Podnikání 2023/2024: HN 33 % proti ČR 24 %."
+        ],
+        "evidence": "Hrubá neúspěšnost se ve všech maturitních oborech za poslední tři školní roky postupně zlepšila; v Podnikání 33 %."
+      },
+      "absence": {
+        "trend": "Celková absence byla stabilní, ale zvýšená absence některých žáků zhoršovala jejich učení a zvyšovala riziko neúspěšnosti.",
+        "key_numbers": [
+          "Absence ve výučních i maturitních oborech: 60 až 70 zameškaných hodin na žáka za pololetí.",
+          "Předčasné odchody ve školním roce 2024/2025: kolem 38 žáků."
+        ],
+        "evidence": "Stabilní absence byla 60 až 70 hodin na žáka za pololetí; počet předčasných odchodů se meziročně snížil."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště zahrnuje interní školní psycholožku, asistentku pedagoga, kariérní poradce a zástupkyni ředitele.",
+        "Škola nabízí konzultace, doučování, maturitní trénink, digitální platformu, studijní zázemí a pomoc při selhávání.",
+        "Pro žáky se speciálními vzdělávacími potřebami využívá individuální vzdělávací plán, pomoc asistenta pedagoga a úpravy podmínek.",
+        "Podporuje nadané žáky sportovce a žáky s dlouhodobými zdravotními problémy."
+      ],
+      "safety_climate": [
+        "Příznivá pracovní atmosféra a partnerský přístup učitelů byly společným znakem většiny hospitovaných hodin.",
+        "V menší části hodin se vyskytovaly nepozornost, používání mobilních telefonů a ojedinělé nevhodné oslovování žáků.",
+        "Elektronický a kamerový systém, personální dohled a informační panely přispívají k bezpečnosti a orientaci.",
+        "U odborného výcviku byly bezpečnostní pokyny dodržovány; žáci byli poučeni o bezpečnosti a ochraně zdraví.",
+        "V domově mládeže byl zaznamenán minimální výskyt společensky negativních jevů."
+      ],
+      "partnerships_practice": [
+        "Odborný výcvik probíhal na pracovištích školních autoservisů a smluvního partnera.",
+        "Žáci se podíleli na zakázkách pro externí zákazníky, což posilovalo odpovědnost a profesní etiku.",
+        "Škola spolupracuje s Institutem vzdělávání a poradenství České zemědělské univerzity a Vysokou školou chemicko-technologickou.",
+        "Zapojení do zahraniční mobility, regionálních a mezinárodních projektů podporuje jazykové a sociální dovednosti."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Výstup používá srozumitelný český jazyk, odděluje pozitivní zjištění od rizik a uvádí konkrétní čísla i citace.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesné výsledky maturity podle jednotlivých předmětů ve všech oborech.",
+        "Zpráva neuvádí délku pobytu jednotlivých žáků v domově mládeže.",
+        "Uvedené absence a podíly se vztahují ke konkrétním sledovaným obdobím uvedeným ve zprávě."
+      ]
+    }
+  }
+}

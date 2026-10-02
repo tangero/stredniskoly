@@ -1,0 +1,109 @@
+{
+  "report_id": "GY4_610100718_2026-01-27",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:41:51.204679+00:00",
+  "run_finished_utc": "2026-10-02T16:42:14.264997+00:00",
+  "raw_file": "GY4_610100718_2026-01-27.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_610100718_2026-01-27",
+    "school_profile": {
+      "school_type": "Soukromá škola poskytující mateřské, základní a střední vzdělávání, školní družinu a školní jídelnu-výdejnu.",
+      "inspection_period": "27. 1. až 29. 1. 2026",
+      "school_change_summary": "Od předchozí inspekce byla jmenována nová ředitelka a počet žáků gymnázia vzrostl přibližně na trojnásobek, čemuž se přizpůsobila organizační struktura a personální obsazení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Projektové učení",
+          "detail": "Projektové a týmové učení rozvíjí spolupráci, komunikaci, odpovědnost a profesní orientaci žáků.",
+          "evidence": "„Realizace vlastních projektů rozvíjí kompetence využitelné v dalším vzdělávání a profesní orientaci žáků.“"
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Škola používá průběžnou zpětnou vazbu, sebehodnocení a mapy učebního pokroku.",
+          "evidence": "„Průběžně poskytovaná konstruktivní zpětná vazba podporuje u žáků spoluzodpovědnost za dosažené výsledky.“"
+        },
+        {
+          "tag": "Podpora a prevence",
+          "detail": "Školní poradenské pracoviště poskytuje podporu žákům, pedagogům i rodičům.",
+          "evidence": "„Poradenské služby jsou poskytovány jak žákům, tak pedagogům i zákonným zástupcům žáků.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kvalifikace pedagogů",
+          "detail": "Téměř polovina pedagogických pracovníků nesplňuje podmínky odborné kvalifikace.",
+          "evidence": "„Z vzdělávání v zajišťuje 39 pedagogických pracovníků, z nichž téměř polovina nesplňuje podmínky odborné kvalifikace.“"
+        },
+        {
+          "tag": "Nedostatky v dokumentaci",
+          "detail": "Ve středním vzdělávání nejsou v některých dokumentech jasně stanovená pravidla organizace a hodnocení.",
+          "evidence": "„V oblasti středního vzdělávání nejsou v některých vnitřních dokumentech nastavena jednoznačná pravidla pro organizaci a hodnocení vzdělávání.“"
+        },
+        {
+          "tag": "Nedostatečné ověřování výsledků",
+          "detail": "Škola neověřuje objektivitu hodnocení výsledků externími nástroji.",
+          "evidence": "„Škola nevyužívá externí ověřování výsledků vzdělávání v souvislosti s objektivním ujištěním dosažení očekávaných výstupů.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně podporujete žáky s individuálním vzdělávacím plánem a kdo jejich pokrok pravidelně kontroluje?",
+        "Kolik volitelných seminářů bude žákům reálně k dispozici v příštím školním roce?",
+        "Jaké konkrétní kroky podnikla škola pro doplnění kvalifikace pedagogů?",
+        "Jak řešíte nerovnoměrné osazení skupin a zajišťujete všem žákům dostatečnou zpětnou vazbu?",
+        "Jaké partnerské aktivity a externí ověřování výsledků plánujete rozšířit?"
+      ],
+      "who_school_fits": [
+        "Rodiče žáků, kteří mají zájem o projektové, týmové a kombinované vzdělávání.",
+        "Rodice žáků, kteří chtějí intenzivní rozvoj komunikace, odpovědnosti a sebehodnocení.",
+        "Rodice žáků s odlišným mateřským jazykem nebo se speciálními vzdělávacími potřebami, kteří ocení školní poradenské služby."
+      ],
+      "who_should_be_cautious": [
+        "Rodice, kterým záleží na ověření výsledků nezávislými externími nástroji.",
+        "Rodice, kteří chtějí jednoznačně sjednocená pravidla hodnocení a organizace ve všech předmětech gymnázia.",
+        "Rodice žáků, kteří potřebují garantované rovnoměrné vzdělování v menších a rovnoměrně obsazených skupinách."
+      ],
+      "plain_czech_summary": "Škola má jasnou vizi, podporuje projektové učení, zpětnou vazbu a práci poradenského pracoviště. Výsledky posledních dvou maturitních období jsou podle zprávy dobré. Rodiče by však měli zvážit, že téměř polovina pedagogů nesplňuje podmínky odborné kvalifikace, některá pravidla hodnocení nejsou dostatečně jasná a škola výsledky neověřuje externě. Výuka probíhá převážně v dvouhodinových blocích, což může být náročnější pro mladší žáky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "V posledních dvou letech zpráva uvádí úspěch všech žáků.",
+        "key_numbers": [
+          "Všichni žáci uspěli v posledních dvou letech.",
+          "V roce 2025 polovina žáků nahradila maturitu z cizího jazyka jazykovým certifikátem."
+        ],
+        "evidence": "„V posledních dvou letech všichni žáci školy uspěli.“\n    }",
+        "absence": {
+          "trend": "Inspekční zpráva neuvádí vývojabsence žáků.",
+          "key_numbers": [],
+          "evidence": "V uvedeném textu nejsou statistiky absence ani jejich změny."
+        },
+        "support_services": [
+          "Školní poradenské pracoviště poskytuje individuální a skupinovou podporu; služby jsou dostupné žákům, pedagogům i zákonným zástupcům.",
+          "Škola podporuje žáky s individuálními vzdělávacími plány a žáky se speciálními vzdělávacími potřebami."
+        ],
+        "safety_climate": [
+          "Při příchodu a odchodu žáků je zajištěn dohled pracovníka.",
+          "Pravidla bezpečnosti jsou žáci seznámeni na začátku školního roku; zpráva uvádí nízkou úrazovost.",
+          "Škola sleduje vztahy, chování, adaptaci, školní neúspěšnost, duševní zdraví a well-being žáků."
+        ],
+        "partnerships_practice": [
+          "Škola spolupracuje s jinou základní školou na zajištění školního stravování.",
+          "Tělocvičny využívá u jiné základní školy a plavání probíhá v městském bazénu.",
+          "Spolupráce s externími partnery je podle zprávy využívána v omezeném rozsahu."
+        ]
+      },
+      "model_self_check": {
+        "czech_clarity_score_1_5": 5,
+        "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a zaměřené na rozhodování rodičů; nejasné údaje jsou výslovně označeny.",
+        "uncertainty_notes": [
+          "Zpráva neuvádí číselné údaje o absenci ani jejich trend.",
+          "Údaje o úspěšnosti maturit nejsou v textu doplněny o procenta.",
+          "Kvalifikace pedagogů je uvedena souhrnně, bez rozčlenění podle předmětů."
+        ]
+      }
+    }
+  }
+}

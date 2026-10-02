@@ -1,0 +1,114 @@
+{
+  "report_id": "LYC_651040001_2026-03-25",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:23:19.600803+00:00",
+  "run_finished_utc": "2026-10-02T16:24:07.811983+00:00",
+  "raw_file": "LYC_651040001_2026-03-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_651040001_2026-03-25",
+    "school_profile": {
+      "school_type": "Křesťanská SŠ, ZŠ a MŠ Elijáš; střední vzdělávání nabízí v oboru Kombinované lyceum.",
+      "inspection_period": "25. 3. 2026–30. 3. 2026",
+      "school_change_summary": "Od roku 2017 rozšířila škola nabídku o střední školu, posílila poradenské služby a zmodernizovala zázemí; text uvádí vznik přírodovědné učebny, školní kaple a úpravu vstupních prostor."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Respektující klima",
+          "detail": "Škola podporuje vzájemný respekt, otevřenost a přijímání odlišností v kolektivu.",
+          "evidence": "Škola vytváří inkluzivní klima založené na křesťanských hodnotách, vzájemném respektu, toleranci a otevřenosti."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Ve škole působí plně obsazená poradenská služba a asistentky pomáhají s individualizovanou výukou.",
+          "evidence": "Obsazení pozic školního psychologa a speciálního pedagoga zajistilo plné personální zabezpečení poradenských služeb."
+        },
+        {
+          "tag": "Střední škola",
+          "detail": "Kombinované lyceum propojuje odborné vzdělávání s etickou výchovou, projekty a rozvojem jazykových kompetencí.",
+          "evidence": "Průběh vzdělávání v Kombinovaném lyceu vykazuje vysokou míru odbornosti a silný humanitní a etický základ."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Diferenciace výuky",
+          "detail": "Na ZŠ se méně objevuje systematická diferenciace, což může omezovat rozvoj nadaných žáků.",
+          "evidence": "Nízká míra systémové diferenciace ve výuce v ZŠ vede k nedostatečnému rozvoji nadaných žáků v heterogenních třídách."
+        },
+        {
+          "tag": "Práce s informacemi",
+          "detail": "Ve většině sledovaných hodin je málo formativního hodnocení a samostatné práce s náročnějšími texty.",
+          "evidence": "Malá četnost formativního hodnocení omezuje sebehodnocení a nižší je podpora samostatnosti při vyhledávání a kritickém vyhodnocování informací."
+        },
+        {
+          "tag": "Matematika a absence",
+          "detail": "Část studentů má v matematice neuspokojivé výsledky a vyšší absence souvisí s horším prospěchem.",
+          "evidence": "Přibližně 15 % žáků neprospívá nebo je hodnoceno dostatečně; analýza ukázala korelaci vyšší absence a zhoršeného prospěchu."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé v ZŠ zajišťují práci s různě náročnými úkoly a podporují nadané žáky?",
+        "Jak často se ve vyučování objevuje formativní hodnocení, vzájemné hodnocení a práce s odbornými texty?",
+        "Jaké konkrétní kroky škola přijímá při zvýšené absenci a při neúspěchu z matematiky?"
+      ],
+      "who_school_fits": [
+        "Rodiny, které chtějí vzdělávání od mateřské školy přes základní až po maturitu na dostupných pracovištích.",
+        "Rodiny přijímající křesťanské hodnoty, duchovní program a důraz na etickou výchovu.",
+        "Žáci, kterým vyhovuje podporující, inkluzivní a komunitní přístup školy."
+      ],
+      "who_should_be_cautious": [
+        "Rodiny, které nechtějí součástí vzdělávání křesťanské hodnoty nebo duchovní program.",
+        "Studenti, kterým v ZŠ chybí rozsáhlá systematická diferenciace nebo intenzivní samostatná práce s texty.",
+        "Studenti matematiky se sklonem k absencím, protože vyšší absence zde souvisí se zhoršením prospěchu."
+      ],
+      "plain_czech_summary": "Škola má přátelské, respektující a inkluzivní klima, silnou duchovní orientaci a širokou nabídku aktivit i poradenské podpory. Výsledky na střední škole jsou celkově dobré a všichni maturující v letech 2024–2025 uspěli. Menší počet studentů ale ovlivňuje hodnocení maturit. Hlavní slabiny jsou malé využívání formativního hodnocení, slabá diferenciace na ZŠ a omezená práce s náročnými texty. V matematice neprospívá nebo dostává dostatečně asi 15 % studentů. Rodičům se před přijetím vyplatí ověřit, zda dítěti vyhovuje křesťanské zaměření a nabízená podpora."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou stabilní a na dobré úrovni; v letech 2024–2025 měla škola nulovou čistou neúspěšnost, ale malý počet maturujících omezuje spolehlivost srovnání.",
+        "key_numbers": [
+          "Nulová čistá neúspěšnost v letech 2024–2025.",
+          "Matematika: 100 % úspěšnost; každý rok ji volili dva žáci.",
+          "V češtině a angličtině byla hrubá neúspěšnost vyšší než celostátný průměr dané skupiny oborů."
+        ],
+        "evidence": "Analýza potvrzuje vyrovnanou úroveň; všichni absolventi uspěli, přestože v jazycích byla hrubá neúspěšnost vyšší než průměr."
+      },
+      "absence": {
+        "trend": "Přesné číselné údaje zpráva neuvádí; u části studentů však vyšší absence přímo souvisela se zhoršeným školním prospěchem.",
+        "key_numbers": [
+          "Číselný podíl ani vývoj absence uvedeny nejsou.",
+          "Přibližně 15 % studentů v matematice neprospívá nebo je hodnoceno dostatečně."
+        ],
+        "evidence": "Analýza docházky ukázala přímou korelaci mezi vyšší absencí a zhoršeným prospěchem u části žáků."
+      },
+      "support_services": [
+        "Poradenské služby zajišťují výchovný poradce, metodik prevence, školní psycholožka a speciální pedagožka.",
+        "Psycholožka poskytuje krizové intervence, individuální poradenství a metodickou podporu pedagogům.",
+        "Speciální pedagožka zajišťuje diagnostiku, podpůrná opatření a koordinaci asistentů pedagoga.",
+        "Asistentky pedagoga podporují žáky se SVP, pomáhají s přípravou materiálů a usnadňují vnitřní diferenciaci."
+      ],
+      "safety_climate": [
+        "Pedagogové přistupují k dětem a žákům respektujícím, zdvořilým a přátelským způsobem.",
+        "Škola sleduje vztahy pomocí sociomapování a zasahuje postupně od pedagogické intervence po případná kázeňská opatření.",
+        "Bezpečnost provozu zlepšila modernizace vrátnice, zázemí a vznik relaxačních koutků."
+      ],
+      "partnerships_practice": [
+        "Škola uvádí nadstandardně široké partnerství se zřizovatelem, odbornou veřejností, rodinami a dalšími subjekty.",
+        "Rodiny se pravidelně setkávají v tripartitních setkáních; na prvním stupni fungují také týdenní zprávy o výuce.",
+        "Žákovský parlament se podílí například na úpravě pravidel odívání.",
+        "Elijáš poskytuje finanční podporu rodinám v tísni, aby se omezila účast na výchovně-vzdělávacím procesu."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžné české výrazy, odděluje ověřená zjištění od doporučení pro rodiče a přímo vysvětluje praktické důsledky.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesné číselné údaje o absenci ani její dlouhodobý vývoj.",
+        "Výsledky maturit ovlivňuje malý počet zkoušejících studentů.",
+        "Text neuvádí přijetí vysvětlení k doporučením, proto jejich případné dopady zatím nelze posoudit."
+      ]
+    }
+  }
+}

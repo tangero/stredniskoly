@@ -1,0 +1,39 @@
+{
+  "report_id": "SOS_600011747_2026-01-12",
+  "school_profile": {
+    "school_type": "Střední uměleckoprůmyslová škola hudební nástroje a náborná",
+    "inspection_period": "12. 1. 2026 až 15. 1. 2026",
+    "school_change_summary": "Z dodaného textu nelze zjistit."
+  },
+  "for_parents": {
+    "strengths": [],
+    "risks": [],
+    "questions_for_open_day": [],
+    "who_school_fits": [],
+    "who_should_be_cautious": [],
+    "plain_czech_summary": "Dodaný text inspekční zprávy neobsahuje žádné čitelné údaje. Z dostupných metadat lze určit pouze název školy a období inspekce. Nelze proto spolehlivě posoudit výsledky maturity, docházku, podporu žáků, bezpečnostní klima, spolupráci s praxí ani další přednosti či rizika školy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nelze zjistit z dodaného textu.",
+      "key_numbers": [],
+      "evidence": "Dodaný text neobsahuje údaje o maturitě."
+    },
+    "absence": {
+      "trend": "Nelze zjistit z dodaného textu.",
+      "key_numbers": [],
+      "evidence": "Dodaný text neobsahuje údaje o absenci."
+    },
+    "support_services": [],
+    "safety_climate": [],
+    "partnerships_practice": []
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Formulace jsou přímé, srozumitelné a jasně oddělují zjištěné údaje od informací, které z dodaného textu nelze určit.",
+    "uncertainty_notes": [
+      "Dodaný text je prázdný nebo nečitelný.",
+      "Není možné ověřit konkrétní výsledky ani hodnotit praktickou vhodnost školy pro rodiče."
+    ]
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "report_id": "NAS_600008754_2026-04-21",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:17:09.775821+00:00",
+  "run_finished_utc": "2026-10-02T16:17:35.291573+00:00",
+  "raw_file": "NAS_600008754_2026-04-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "NAS_600008754_2026-04-21",
+    "school_profile": {
+      "school_type": "Střední odborné učiliště",
+      "inspection_period": "21.–23. 4. 2026",
+      "school_change_summary": "Od minulé inspekce se zvýšil počet žáků z 229 na 295, probíhá modernizace zázemí pro odborný výcvik a od roku 2023/2024 působí nový zástupce pro teoretické vyučování."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava",
+          "detail": "Odborný výcvik propojuje teorii s reálnou praxí a žáci mohou získat i řidičská či svářečská osvědčení.",
+          "evidence": "„Aktivity současně posilují praktickou přípravu žáků a jejich kontakt s reálnými požadavky praxe.“"
+        },
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Škola dlouhodobě spolupracuje s regionálními firmami, které žákům i učitelům poskytují materiální podporu a moderní techniku.",
+          "evidence": "„Regionální firmy se dlouhodobě zapojují do odborného vzdělávání žáků i učitelů školy.“"
+        },
+        {
+          "tag": "Podpora a volný čas",
+          "detail": "Škola nabízí doučování, poradenské služby, kariérové poradenství a aktivity domova mládeže.",
+          "evidence": "„Přínosná je i nabídka doučování, zajišťovaná formou vrstevnické pomoci nebo pedagogy domova mládeže.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Aktivní učení",
+          "detail": "V teoretické výuce se žáci místy spíše pasivně přijímají informace než aktivně učí a spolupracují.",
+          "evidence": "„Vlivem frontálního přístupu převažovalo spíše pasivní přijímání informací nad jejich aktivním zpracováním.“"
+        },
+        {
+          "tag": "Absence",
+          "detail": "Neomluvená absence je podle inspekce řešena méně účinně a pravidla pro její řešení nejsou dostatečně jednotná.",
+          "evidence": "„S nižší účinností je řešena vysoká a neomluvená absence žáků.“"
+        },
+        {
+          "tag": "Pedagogický dohled",
+          "detail": "Hospitace podle inspekce neposkytují pedagogům vždy dostatečnou zpětnou vazbu a cílenou podporu.",
+          "evidence": "„Hospitované výuky neposkytují pedagogům vždy dostatečnou zpětnou vazbu a cílenou podporu.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se ve výuce podporuje aktivní práce žáků, práce ve skupinách a využívání digitálních technologií?",
+        "Jak škola řeší neomluvenou absenci a jak často se setkává s rodiči při zhoršení prospěchu?",
+        "Jaké konkrétní praktiky, praxe, certifikáty a partnerská pracoviště jsou součástí jednotlivých oborů?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí technické nebo řemeslné vzdělání s důrazem na praktické dovednosti.",
+        "Žákům, kterým vyhovuje spolupráce s firmami, praxe a získávání odborných osvědčení.",
+        "Žákům, kteří potřebují strukturovanou školní podporu, doučování nebo ubytování v domově mládeže."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kterým záleží na pravidelné zpětné vazbě a jednotném řešeníabsence.",
+        "Rodičům žáků, kteří očekávají převážně aktivní, moderní a diferencovanou teoretickou výuku.",
+        "Rodičům žáků, jejichž studijní výsledky dosud nejsou stabilní, protože inspekce zmiňuje slabší výsledky denního studia."
+      ],
+      "plain_czech_summary": "Škola má silnou praktickou orientaci: žáci se učí vybavených dílnách, na partnerských pracovištích a při skutečné práci pro veřejnost. Funguje dlouhodobá spolupráce s regionálními firmami a lze získat řidičská či svářečská osvědčení. Inspekce ale zaznamenala pasivnější přístup v teoretické výuce, málo aktivizujících metod, slabší diferenciaci a méně účinné řešení neomluvené absence. Výuka odborného výcviku probíhala podle inspekce na dobré úrovni, žáci dostávali zpětnou vazbu a pracovali podle bezpečnostních pravidel. V oboru Podnikání bylo k maturitě přihlášeno 24 žáků, zkoušku složilo 21 a úspěšně ji dokončilo 15, tedy 63 %. U žáků s vyšší absencí a horším prospěchem by rodiče měli aktivně ověřovat, jak škola jejich podporu a komunikaci řeší."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky se po zhoršení v didaktickém testu z českého jazyka opět zlepšily, ale úspěšnost je stále pod celorepublikovým průměrem obdobných oborů.",
+        "key_numbers": [
+          "K maturitě přihlášeno 24 žáků oboru Podnikání.",
+          "Maturitní zkoušku konalo 21 žáků.",
+          "Maturitu úspěšně dokončilo 15 žáků, tedy 63 %."
+        ],
+        "evidence": "„V minulém školním roce se výsledky zlepšily, úspěšnost v tomto předmětu zatím nedosahuje celorepublikového průměru.“"
+      },
+      "absence": {
+        "trend": "Vysoká a neomluvená absence je podle inspekce řešena s nižší účinností.",
+        "key_numbers": [
+          "Žáci s vyšší absencí a nedostatečným prospěchem dostávají zvýšenou pozornost.",
+          "Absence a nedostatečný prospěch se podle zprávy velmi často vyskytují společně."
+        ],
+        "evidence": "„Tyto jevy spolu velmi často souvisejí.“"
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodik previdence poskytují poradenské služby.",
+        "Škola nabízí individuální konzultace, doučování a sdílené výukové materiály.",
+        "Domov mládeže zajišťuje vrstevnickou pomoc a pedagogy poskytující doučování.",
+        "Škola poskytuje kariérovní poradenství žákům i zákonným zástupcům."
+      ],
+      "safety_climate": [
+        "Při odborném výcviku byly zachovávány všechny stanovené pravidla bezpečnosti práce.",
+        "Hospitované vyučování probíhalo převážně v klidné pracovní atmosféře.",
+        "Škola věnuje pozornost prevenci rizikového chování a adaptačním kurzům prvního ročníku."
+      ],
+      "partnerships_practice": [
+        "Regionální firmy se dlouhodobě podílejí na vzdělávání žáků i učitelů a půjčují moderní techniku.",
+        "Žáci mohou část praktické výuky absolvovat na smluvních pracovištích partnerských firem.",
+        "Škola spolupracuje s firmami, muzeem, domovem seniorů, mateřskými školami a Policií ČR.",
+        "Pro žáky jsou pořádány exkurze, besedy s odborníky, prezentace moderních technologií a odborné soutěže."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Výstup používá běžnou češtinu, stručně odděluje silné stránky, rizika a ověřitelné údaje.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesný počet neomluvených hodin.",
+        "Zpráva neuvádí podrobné srovnání absence s jinými školami.",
+        "Uvedené údaje o maturitě se vztahují především k oboru Podnikání."
+      ]
+    }
+  }
+}

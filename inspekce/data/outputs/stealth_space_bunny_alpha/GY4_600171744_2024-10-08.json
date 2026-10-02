@@ -1,0 +1,113 @@
+{
+  "report_id": "GY4_600171744_2024-10-08",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T17:10:13.048168+00:00",
+  "run_finished_utc": "2026-10-02T17:10:37.857298+00:00",
+  "raw_file": "GY4_600171744_2024-10-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600171744_2024-10-08",
+    "school_profile": {
+      "school_type": "Gymnázium se čtyřletým, osmiletým a sportovním zaměřením",
+      "inspection_period": "8. 10. 2024–10. 10. 2024",
+      "school_change_summary": "Škola zlepšila bezbariérovost a sportovní zázemí, zřídila metodika prevence a zefektivnila elektronickou komunikaci."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Dobré studijní výsledky",
+          "detail": "Žáci dlouhodobě dosahují velmi dobrých výsledků a téměř všichni dokončí studium s vyznamenáním.",
+          "evidence": "„Za poslední tři školní roky jich na konci školního roku prospělo s vyznamenáním v průměru 53 %, neprospělo necelé 1 %.“"
+        },
+        {
+          "tag": "Kvalifikovaní učitelé",
+          "detail": "Škola má plně kvalifikované pedagogy a odborně připravené trenéry.",
+          "evidence": "„Plná kvalifikovanost pedagogických pracovníků a potřebná míra odborné způsobilosti trenérů.“"
+        },
+        {
+          "tag": "Sportovní zázemí",
+          "detail": "Sportovní výcvik má rozsáhlé zázemí zahrnující tělocvičny, posilovny a venkovní hřiště.",
+          "evidence": "„Využívány jsou dvě tělocvičny a dvě posilovny v budově gymnázia a školní víceúčelné hřiště.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená individualizace",
+          "detail": "Ve výuce byla individualizace velmi malá a žáci dostávali převážně stejné úkoly.",
+          "evidence": "„Nebyla zaznamenána individuální podpora žáků, všichni žáci plnili stejné typy úloh.“"
+        },
+        {
+          "tag": "Málo rozvoje kritického myšlení",
+          "detail": "Výuka málo pracuje s více zdroji a vzájemnou spoluprací žáků.",
+          "evidence": "„Žáci nebyli vedeni k práci s více informačními zdroji, která by podporovala rozvíjení kritického myšlení.“"
+        },
+        {
+          "tag": "Nedostatečné informace o poradně",
+          "detail": "Rodice mohou obtížně najít kompletní kontakty a informace o školním poradenském pracovišti.",
+          "evidence": "„Na webu školy nejsou poskytovány ucelené informace.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé přizpůsobují úkoly žákům s různou úrovní a jak často probíhá doučování?",
+        "Jaké konkrétní aktivity rozvíjejí práci s více zdroji, kritické myšlení a vzájemnou spolupraci?",
+        "Kde najdou rodiče kompletní kontakty na školní psycholožku, výchovnou poradkyni a metodika prevence?"
+      ],
+      "who_school_fits": [
+        "Rodiče žáků, kteří hledají kvalitní všeobecné gymnaziální vzdělání s dobrými výsledky.",
+        "Rodiče sportovců zahrnutých do intenzivní sportovní přípravy.",
+        "Rodiče žáků ocenující spolupráci školy se zahraničním gymnáziem a projektovými pobyty."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří v běžných předmětech očekávají výraznou individualizaci nebo samostatné rozhodování žáků.",
+        "Rodiče žáků, jimž záleží na pravidelné práci s více informačními zdroji a rozvoji kritického myšlení.",
+        "Rodiče, kteří potřebují snadno dostupné a kompletně zveřejněné informace o školním poradenském pracovišti."
+      ],
+      "plain_czech_summary": "Škola má kvalifikované učitele, dobré studijní výsledky, nízkou míru neomluvené absence a velmi dobrou úspěšnost u maturity. Výhodou je rozsáhlá sportovní příprava a spolupráce se zahraničním gymnáziem. Mezi slabší místa patří malá individualizace, málo práce s více zdroji a omezené vzájemné hodnocení žáků. Poradenské pracoviště má novou psycholožku, ale rodičům poskytuje málo přehledných kontaktů. Ve sportovním oboru jsou nutné náročný trénink, regenerace a odpovídající sportovní zázemí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Úspěšnost je dlouhodobě vysoká a neúspěšní studenti většinou uspějí při opravném termínu.",
+        "key_numbers": [
+          "V posledních třech školních letech neuspělo ve společné části v průměru 1 % žáků.",
+          "V profilové části neuspělo necelé 3 %.",
+          "Neúspěšní v jarním termínu téměř vždy uspěli na podzimním opravném termínu."
+        ],
+        "evidence": "„Dlouhodobě vysoká je úspěšnost žáků školy u maturitní zkoušky.“"
+      },
+      "absence": {
+        "trend": "Neomluvená absence je velmi nízká; u sportovního gymnázia je větší časová absence kvůli tréninku.",
+        "key_numbers": [
+          "Víceleté gymnázium: 125 vyučovacích hodin na žáka.",
+          "Čtyřleté gymnázium: 143 vyučovacích hodin na žáka.",
+          "Sportovní gymnázium: 123 hodin výuky a 203 hodin sportovní přípravy na žáka."
+        ],
+        "evidence": "„Neomluvená absence byla výjimečně, činila v průměru 0,025 hodiny na jednoho žáka školy.“"
+      },
+      "support_services": [
+        "Na škole působí výchovná poradkyně, metodik prevence a od února 2024 také školní psycholožka.",
+        "Škola eviduje 15 žáků se speciálními vzdělávacími potřebami a pět žáků s odlišným mateřským jazykem.",
+        "Školní poradenské pracoviště nemá program proti šikaně ani strategii pro přecházení školní neúspěšnosti."
+      ],
+      "safety_climate": [
+        "Při hospitacích nebyly zaznamenány kázeňské problémy a pravidla komunikace byla respektována.",
+        "Škola má propracovanou bezpečnostní dokumentaci a poučování žáků i zaměstnanců.",
+        "Budova je dostatečně zabezpečena proti vstupu cizích osob."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s vysokými školami, firmami, institucemi a širokou škálou sportovních klubů.",
+        "S partnerským gymnáziem v Kaufbeurenu realizuje dlouholeté výměnné pobyty a společné projekty.",
+        "Rodiče a žáci se podílejí na činnosti školy prostřednictvím rady rodičů a studentské rady."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulován srozumitelně, stručně a věcně; důležité závěry jsou opřeny o údaje z inspekční zprávy.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí podrobné výsledky maturity za každý školní rok ani rozlišení jednotlivých předmětů.",
+        "Zpráva neuvádí aktuální kapacitu a počet přijatých žáků v jednotlivých oborech pro rok 2024/2025.",
+        "U sportovního gymnázia nelze z uvedených údajů spolehlivě oddělit absence způsobené nemocí od absence sportovní přípravy."
+      ]
+    }
+  }
+}

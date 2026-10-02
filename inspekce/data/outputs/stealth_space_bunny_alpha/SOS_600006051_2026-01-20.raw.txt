@@ -1,0 +1,103 @@
+{
+  "report_id": "SOS_600006051_2026-01-20",
+  "school_profile": {
+    "school_type": "Střední škola a vyšší odborná škola",
+    "inspection_period": "20. 1. – 23. 1. 2026, 26. 1. 2026 a 9. 2. – 10. 2. 2026",
+    "school_change_summary": "Od roku 2022 vzrostla naplněnost střední školy na 84 % a zlepšovalo se materiální vybavení. Výuka se více podporovala praktickými zkušenostmi učitelů, ale přetrvávají některé didaktické nedostatky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava",
+        "detail": "Žáci a studenti se mohou setkávat s reálnými situacemi z bezpečnostní a veřejnosprávní praxe.",
+        "evidence": "Odborná praktická výuka probíhá na pracovištích partnerů, například Policie, Hasičského záchranného sboru a úřadů."
+      },
+      {
+        "tag": "Odborní učitelé",
+        "detail": "Výuku odborných předmětů vedou zkušení pracovníci, například bývalí příslušníci Policie.",
+        "evidence": "Praktické zkušenosti některých učitelů z předchozí služby u Policie jsou nesporným přínosem pro výuku."
+      },
+      {
+        "tag": "Bezpečné klima",
+        "detail": "Ve sledovaných hodinách byla příjemná atmosféra a vzájemně respektující přístup učitelů a žáků.",
+        "evidence": "Společným znakem hospitovaných hodin byla příjemná atmosféra a dodržování pravidel práce a komunikace."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rozmanitost výuky",
+        "detail": "V části hodin se uplatňuje převážně tradiční výuka učitele a méně se rozvíjí samostatná práce, diskuse a vzájemné hodnocení.",
+        "evidence": "Těžiště výuky bylo převážně na učiteli; vzájemné hodnocení a sebereflexe žáků byly ojedinělé."
+      },
+      {
+        "tag": "Příprava na maturitu",
+        "detail": "Ve školním roce 2024/2025 byla u denního studia zaznamenána vyšší neúspěšnost u zkoušky z matematiky než celostátně.",
+        "evidence": "U zkoušky z matematiky byla v denní formě vyšší hrubá neúspěšnost; jeden ze dvou přihlášených ji nekonal."
+      },
+      {
+        "tag": "Organizační růst",
+        "detail": "Růst počtu žáků zvyšuje nároky na řízení, ale organizační struktura školy tomu zatím plně neodpovídá.",
+        "evidence": "Růst naplněnosti školy klade zvýšené nároky na řízení, stávající organizační struktura tento nárůst nereflektuje."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně vypadá podpora žáků, kteří mají potíže s matematikou, českým jazykem nebo širší studijní přípravou?",
+      "Jak často žáci a studenti pracují samostatně, ve skupinách a Diskují o reálných případech z praxe?",
+      "Jaké konkrétní kroky podniká škola pro zlepšení kvalifikace učitelů odborných předmětů a materiálního vybavení praktické výuky?"
+    ],
+    "who_school_fits": [
+      "Uchazečům, kteří mají zájem o bezpečnostně právní obor a chtějí studovat v Praze.",
+      "Žákům, kterým vyhovuje propojení teorie s praktickou přípravou u policejních, hasičských nebo úředních partnerů.",
+      "Studentům, kteří chtějí pokračovat ve studiu na vyšší odborné škole nebo na vysoké škole v bezpečnostních a krizových oborech."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům, kteří očekávají převážně aktivní, projektové a diferencované vyučování ve všech předmětech.",
+      "Rodičům, kteří chtějí mít jistotu co nejlepších výsledků u maturitní zkoušky z matematiky v denní formě.",
+      "Rodičům, kteří potřebují intenzivní specializovanou psychologickou podporu, protože škola uvádí potřebu doplnit školního psychologa."
+    ],
+    "plain_czech_summary": "Škola má dobré zázemí pro bezpečnostní a právní vzdělávání. Výuka často stojí na zkušených učitelích, policejní praxi a spolupráci s hasiči, Policií, úřady a dalšími partnery. Praktické pobyty jsou podle inspekce velmi přínosné. Kladem je příjemná atmosféra a respekt. Výsledky střední školy se postupně zlepšují, v posledním roce ale vyšla vyšší neúspěšnost u maturity z matematiky. V části vyučování chybí více různorodých metod, samostatné práce, diskuse a sebereflexe. Rodiče by měli sledovat zejména podporu ve vzdělávání, kvalifikaci učitelů a vybavení pro praktickou výuku."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky se za poslední tři školní roky postupně zlepšovaly; v roce 2024/2025 byly celkově srovnatelné nebo lepší než celostátní průměr, kromě matematiky v denní formě.",
+      "key_numbers": [
+        "V roce 2023/2024 byla hrubá neúspěšnost ve všech předmětech společné části nižší než celostátní průměr.",
+        "V roce 2024/2025 byla vyšší neúspěšnost u matematiky v denní formě.",
+        "Ve školním roce 2024/2025 získalo vyznamenání 25 % žáků denní formy a do 10 % dálkové formy."
+      ],
+      "evidence": "Ve školním roce 2024/2025 byly výsledky srovnatelné nebo lepší než celostátní průměr; výjimkou byla vyšší neúspěšnost u matematiky v denní formě."
+    },
+    "absence": {
+      "trend": "Průměrná absence se ve sledovaném období pohybovala kolem 90 zameškaných hodin na žáka.",
+      "key_numbers": [
+        "Průměrná absence: do 90 hodin na žáka.",
+        "Sledované období: poslední dva uzavřené školní roky."
+      ],
+      "evidence": "Ve sledovaném období dvou posledních uzavřených školních roků byla průměrná absence ve výuce do 90 zameškaných hodin na žáka."
+    },
+    "support_services": [
+      "Poradenské služby zajišťují dvě výchovné poradkyně a školní metodička prevence.",
+      "Škola nabízí doučování, pravidelný kroužek a individuální konzultace.",
+      "Podpůrná opatření pro žáky se SVP a OMJ odpovídají doporučením školských poradenských zařízení."
+    ],
+    "safety_climate": [
+      "Ve výuce panovala příjemná atmosféra a vzájemný respekt.",
+      "Škola podporuje pozitivní školní klima a zasahuje při zjištěných problémech.",
+      "Vstupy jsou zajištěny elektronickým docházkovým systémem a v sídle službou ve vrátnici."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s Policií, hasiči, Městskou policií, úřady, Celní správou a dalšími organizacemi.",
+      "Žáci a studenti absolvují odbornou praxi na pracovištích partnerů.",
+      "S ředitelstvím Policie ČR Praha a Středočeského kraje má škola memorandum o spolupráci."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je srozumitelný, stručně popisuje přednosti i rizika a většinu tvrzení opírá o citace ze zprávy.",
+    "uncertainty_notes": [
+      "Zpráva uvádí průměrnou absenci, ale nepodává přesné rozpětí výsledků za jednotlivé školní roky.",
+      "U výsledků maturity jsou uvedeny srovnání s celostátním průměrem, nikoli úplné procentní výsledky.",
+      "Zpráva neuvádí konkrétní podíl žáků využívajících doučování nebo individuální konzultace."
+    ]
+  }
+}

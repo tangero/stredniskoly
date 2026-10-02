@@ -1,0 +1,104 @@
+{
+  "report_id": "LYC_600007839_2026-04-07",
+  "school_profile": {
+    "school_type": "Střední škola a vyšší odborná škola, příspěvková organizace",
+    "inspection_period": "7.–9. 4. 2026",
+    "school_change_summary": "Na střední škole přibylo přibližně třetina žáků, zatímco počet studentů VOŠ klesl téměř o polovinu; zlepšily se materiální podmínky a výsledky maturitních zkoušek."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podpora při volbě budoucího zaměstnání",
+        "detail": "Škola nabízí kariérové poradenství postupně během celého studia a praktické aktivity v podobě fiktivních firem.",
+        "evidence": "„Gradovaný systém kariérového poradenství po celou dobu vzdělávání vytváří vhodné podmínky pro úspěšný vstup žáků do pracovního procesu.“"
+      },
+      {
+        "tag": "Praxe a mezinárodní zkušenosti",
+        "detail": "Žáci mohou získat odborné zkušenosti prostřednictvím exkurzí, odborné praxe, projektů a zahraničních stáží.",
+        "evidence": "„Krátkodobé i dlouhodobé zahraniční stáže posilují jazykové dovednosti, samostatnost a interkulturní kompetence žáků.“"
+      },
+      {
+        "tag": "Bezpečné a podporující prostředí",
+        "detail": "Inspekce popsala vstřícné vyučování, aktivní zapojení žáků a za poslední dva školní roky také pokles úrazovosti.",
+        "evidence": "„Sledovaná výuka v SŠ probíhala ve vstřícné atmosféře“ a „Míra úrazovosti se oproti předchozím letům v posledních dvou školních letech snížila.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečné přizpůsobení výuky",
+        "detail": "Rodičům žáků s odlišnými předpoklady může vadit, že se učivo a cíle dostatečně nepřizpůsobují jednotlivým žákům.",
+        "evidence": "„Cíle a obsah vzdělávání nebyly diferencovány podle individuálních potřeb žáků.“"
+      },
+      {
+        "tag": "Méně samostatného rozhodování",
+        "detail": "Ve většině hodin převažuje frontální výuka, takže žáci méně rozvíjejí spolupráci, sebereflexi a kritické myšlení.",
+        "evidence": "„Zřídka využívali kooperativní formy prace, spíše převažovala frontální forma v kombinaci se samostatnou prací.“"
+      },
+      {
+        "tag": "Nejistoty v přípravě na maturitu",
+        "detail": "Přestože se výsledky zlepšily, společná část maturitních zkoušek i profilové části mohou být pro některé žáky problematické.",
+        "evidence": "„Nejslabší výsledky mají žáci opakovaně v matematice, v českém jazyku a literatuře, dále např. v účetnictví.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé přizpůsobují zadání a hodnocení různě silným i slabším žákům?",
+      "Jak často se konají třídnické hodiny a jak při nich probíhá práce se sebereflexí a vzájemným hodnocením?",
+      "Jaké konkrétní podpůrné mechanismy má škla pro žáky ohrožené neprospěchem, například doučování, plán podpory nebo kontakt s rodiči?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí studovat obchodní nebo ekonomický obor s maturitní zkouškou a využijí propojení výuky s praxí.",
+      "Žákům, kteří mají zájem o projekty, fiktivní firmy, soutěže, jazykové certifikáty nebo zahraniční stáže.",
+      "Studentům VOŠ, kteří hledají menší, podporované prostředí a dobré výsledky při absolutoriu."
+    ],
+    "who_should_be_cautious": [
+      "Rodičům žáků, kteří potřebují pravidelnou intenzivní diferenciaci výuky podle schopností.",
+      "Žákům, kterým chybí samostatné rozhodování, týmová práce nebo systematická zpětná vazba o jejich pokroku.",
+      "Rodičům žáků, kteří potřebují mít před maturitou prokazatelně ověřenou přípravu zejména z matematiky, českého jazyka a účetnictví."
+    ],
+    "plain_czech_summary": "Škola má dobré spolupráci s praxí, zahraničními partnery a firmami, také kvalitní kariérové poradenství. Výsledky maturit se zlepšily a žáci mají většinou dobrou přípravu. Rodiče by ale měli počítat s tím, že výuka je často frontální a méně se přizpůsobuje jednotlivým žákům. Slabší může být samostatné rozhodování, práce v týmu, sebereflexe i podpora závěrečných hodnot žáků s horším prospěchem. Při volbě oboru se vyplatí ověřit konkrétní přípravu na maturitu a způsob podpory potřebných žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky se od předchozí inspekce zlepšily; v roce 2024/2025 byli v obou oborech všichni přihlášení žáci úspěšní v didaktických testech, u Ekonomického lycea však byl výsledek mírně horší než celorepublikový průměr.",
+      "key_numbers": [
+        "Ekonomické lyceum: hrubá neúspěšnost ve společné části MZ byla v letech 2022/2023 a 2023/2024 nulová.",
+        "Obchodní akademie: v roce 2024/2025 byli všichni přihlášení žáci úspěšní v didaktických testech.",
+        "Každoročně přibližně 15 žáků získá jazykové certifikáty B2 nebo C1."
+      ],
+      "evidence": "„Výsledky žáků při ukončování vzdělávání MZ se od předchozí inspekční činnosti zlepšily.“"
+    },
+    "absence": {
+      "trend": "Absence se částečně snížila, v roce 2024/2025 však činila průměrně 148 hodin na žáka; neomluvená absence se vyskytovala minimálně.",
+      "key_numbers": [
+        "Přibližně 148 hodin průměrné roční absence na žáka ve školním roce 2024/2025.",
+        "Ve společné části MZ byl v letech 2022/2023 a 2023/2024 na Ekonomickém lyceu nulový podíl neúspěšných.",
+        "V obou oborech byl v roce 2024/2025 počet neprospívajících nízký."
+      ],
+      "evidence": "„Ve školním roce 2024/2025 byla průměrná roční absence přibližně 148 h na žáka“ a „výskyt neomluvené absence“ byl minimální."
+    },
+    "support_services": [
+      "Poradenské služby zajišťují výchovná poradkyně, školní metodička prevence a kariérová poradkyně.",
+      "Škola vytváří a pravidelně vyhodnocuje plány pedagogické podpory podle výsledků a individuálních potřeb žáků.",
+      "Podpora žáků se speciálními vzdělávacími potřebami vychází z doporučení školských poradenských zařízení."
+    ],
+    "safety_climate": [
+      "Ve sledované výuce se nevyskytovaly výrazné problémy s kázní a atmosféra byla vstřícné.",
+      "Škola pravidelně poučuje žáky o bezpečnosti a ochraně zdraví.",
+      "Míra úrazovosti se podle zprávy v posledních dvou školních letech snížila."
+    ],
+    "partnerships_practice": [
+      "Externí partneři obohacují výuku prostřednictvím odborných přednášek, exkurzí a odborné praxe.",
+      "Škola spolupracuje s vybranými vysokými školami, městem a zahraničními partnery, mimo jiné v programech Erasmus+ a Visegrad Fund.",
+      "Fiktivní firmy a projekty rozvíjejí komunikační, podnikatelské a týmové dovednosti."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Výstup používá běžné české výrazy, konkrétní čísla a krátké citace; vysvětluje, co výsledky znamenají pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesnou míru neprospěchu za poslední školní rok 2025/2026.",
+      "Není uvedeno přesné rozděleníabsence podle předmětů ani délky jednotlivých neomluvených absencí.",
+      "U některých slabých stránek není uvedena četnost výskytu ve všech předmětech."
+    ]
+  }
+}

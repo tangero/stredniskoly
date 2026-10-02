@@ -1,0 +1,109 @@
+{
+  "report_id": "GY6_600017249_2025-11-25",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:56:49.916029+00:00",
+  "run_finished_utc": "2026-10-02T16:57:16.669357+00:00",
+  "raw_file": "GY6_600017249_2025-11-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600017249_2025-11-25",
+    "school_profile": {
+      "school_type": "gymnázium",
+      "inspection_period": "25. 11. 2025 – 28. 11. 2025",
+      "school_change_summary": "Od předchozí inspekce se změnilo vedení a pedagogický sbor, rozšířila se poradenská služba, přibyla výuka španělského a dějiny umění, zlepšily se materiální podmínky a projektová činnost."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výsledky a rozvoj žáků",
+          "detail": "Škola dosahuje velmi dobrých studijních výsledků, výborných maturitních výsledků a silných úspěchů v soutěžích.",
+          "evidence": "„Žáci dosahují dlouhodobě velmi dobrých studijních výsledků“ a „Škola vykazuje trvale výborné výsledky“ maturit."
+        },
+        {
+          "tag": "Aktivity a partnerství",
+          "detail": "Projekty, zahraniční pobyty, soutěže, dobrovolnictví a spolupráce se školami rozvíjejí samostatnost a občanské kompetence žáků.",
+          "evidence": "„Zapojení školy do různých projektů významně ovlivňuje osobnostní růst žáků.“"
+        },
+        {
+          "tag": "Podpora studentů",
+          "detail": "Škola nabízí doučování, individuální konzultace, poradenské služby a příležitosti pro nadané žáky.",
+          "evidence": "„Pedagogové poskytují pro žáky možnost doučování či individuálních konzultací.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Různorodá výuka",
+          "detail": "Ve výuce se méně používají aktivizační metody, práce s informačními zdroji a úlohy přizpůsobené různým potřebám žáků.",
+          "evidence": "„Pedagogové využívají omezené spektrum aktivizačních metod a forem výuky.“"
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Učitelé někdy jasně neurčují cíle výuky a závěrečné shrnutí ani zhodnocení naplnění cíle nejsou vždy důsledné.",
+          "evidence": "„Na začátku výuky většinou nejsou jasně definovány cíle, které by byly v závěru vyhodnocovány žáky.“"
+        },
+        {
+          "tag": "Kontrolní systém",
+          "detail": "Kontrolní a hospitační systém není ve všech oblastech dostatečně funkční a jeho výsledky se ještě nepromítají v očekávané zpětné vazbě.",
+          "evidence": "„Kontrolní systém není v některých oblastech plně funkční“ a zpětná vazba se „prozatím neprojevuje v očekávaném rozsahu“."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá diferencovaná výuka pro žáky s různou úrovní nadání a vzdělávacími potřebami?",
+        "Jak často žáci pracují samostatně s informačními zdroji a jak se v hodinách využívá digitální technika?",
+        "Jak se ve výuce uplatňují aktivizační metody, sebereflexe a hodnocení podle předem známých kritérií?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí dosahovat velmi dobrých studijních i maturitních výsledků.",
+        "Žákům, kteří mají zájem o projekty, soutěže, zahraniční pobyty, kulturu nebo dobrovolnictví.",
+        "Žákům, kterým vyhovuje gymnaziální prostředí s možností volby volitelných předmětů."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kteří očekávají v každé hodině výraznou práci ve skupinách nebo hodně samostatného učení.",
+        "Rodičům žáků s výrazně odlišnou úrovní nadání, kterým musí škola nabídnout dostatek diferencovaných úloh.",
+        "Rodičům, kterým záleží na pravidelně ověřovaném a funkčním systému zpětné vazby a kontroly výuky."
+      ],
+      "plain_czech_summary": "Gymnázium má za sebou velmi dobré studijní a maturitní výsledky, aktivní projektovou činnost a dobré zázemí pro žáky. Ve škole jsou doučování, konzultace i poradenské služby. Výuka podle inspekce probíhá odborně a přátelsky, ale méně se v ní objevují různé metody, samostatná práce, práce s informačními zdroji a úkoly přizpůsobené jednotlivým žákům. Rodiče by se měli zeptat, jak se tyto oblasti zlepšují."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Velmi dobrý a dlouhodobě stabilní",
+        "key_numbers": [
+          "Ve školním roce 2024/2025 úspěšně odmaturovalo 58 z 58 žáků.",
+          "Vyznamenání získalo 20 žáků.",
+          "Škola uvádí výborné výsledky společné i profilové části a externího testování."
+        ],
+        "evidence": "„Ve školním roce 2024/2025 úspěšně odmaturovalo všech 58 žáků z obou maturitních tříd. Vyznamenání dosáhlo 20 žáků.“"
+      },
+      "absence": {
+        "trend": "V uvedeném textu nejsou údaje o absencích ani jejich trendu.",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neuvádí statistiku ne přítomnosti žáků ve vzdělávání."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště zahrnuje metodika prevence, kariérového poradce, interní školní psycholožku a výchovnou poradkyni.",
+        "Pedagogové nabízejí doučování a individuální konzultace.",
+        "Škola podporuje nadané žáky prostřednictvím zájmových útvarů, soutěží a projektu DofE."
+      ],
+      "safety_climate": [
+        "Vstupy do budovy byly zabezpečeny proti vniknutí a pohybu cizích osob.",
+        "Bezpečnost a ochrana zdraví žáků byla zajišťována ve spolupráci s odborně způsobilými osobami.",
+        "Žáci byli upozorňováni na bezpečnostní rizika a škola se systematicky zabývala úrazovostí."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s okolními základními školami a městem Hlučín.",
+        "Žáci se zapojují do projektů Erasmus+ a zahraničních pobytů.",
+        "Škola spolupracuje s divadelní společností Domino a dalšími partnery v projektech a soutěžích."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je formulován srozumitelně a stručně, vztahuje se k praktickým důsledkům pro rodiče a jasně odděluje silné stránky od oblastí ke zlepšení.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní údaje o nepřítomnosti žáků.",
+        "Není uvedeno, jak rychle škola odstraní zjištěné nedostatky.",
+        "Hodnocení vychází z inspekční zprávy a ne ze samostatné návštěvy školy."
+      ]
+    }
+  }
+}

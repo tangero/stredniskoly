@@ -1,0 +1,112 @@
+{
+  "report_id": "GY6_600008819_2026-01-27",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:41:22.383498+00:00",
+  "run_finished_utc": "2026-10-02T16:42:07.419464+00:00",
+  "raw_file": "GY6_600008819_2026-01-27.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600008819_2026-01-27",
+    "school_profile": {
+      "school_type": "gymnázium se čtyřletým a šestiletým programem",
+      "inspection_period": "27. 1. až 10. 2. 2026",
+      "school_change_summary": "Mírně vzrostl počet žáků, navázala spolupráce s německou školou a gymnázium se stalo fakultní školou Přírodovědecké fakulty Jihočeské univerzity."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Příprava na vysoké školy",
+          "detail": "Škola dlouhodobě připravuje na vysokoškolské studium a její absolventi pokračují studiem v široké šále oborů.",
+          "evidence": "Většina absolventů školy pokračuje ve studiu na vysokých školách v celém spektru oborů."
+        },
+        {
+          "tag": "Bezpečné klima",
+          "detail": "V hospitovaných hodinách panovalo přátelské a respektující prostředí a žáci dodržovali nastavená pravidla.",
+          "evidence": "Komunikace probíhala zdvořilým a přátelským způsobem na základě vzájemného respektu a vstřícnosti."
+        },
+        {
+          "tag": "Rozmanité aktivity",
+          "detail": "Projekty, soutěže, zájezdy, exkurze, kulturní a sportovní akce podporují osobnostní rozvoj a zdravé vztahy ve třídě.",
+          "evidence": "Zapojení žáků do četných aktivit posiluje všestranný osobnostní rozvoj a podporuje utváření zdravých mezilidských vztahů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Převážně frontální výuka",
+          "detail": "Většina hodin měla málo prostoru pro vlastní aktivitu, tvoření, experimentování, kladení otázek a rozvoj kritického myšlení.",
+          "evidence": "Frontální způsob výuky s převažující aktivitou na straně učitele dominoval ve většině hodin."
+        },
+        {
+          "tag": "Omezená individualizace",
+          "detail": "Škola málo diferencuje úkoly a vzdělávací cíle podle možností jednotlivých žáků.",
+          "evidence": "Ve většině hodin nedocházelo k diferenciaci zadávaných úkolů s ohledem na rozvoj individuálního potenciálu žáků."
+        },
+        {
+          "tag": "Slabší podpora nadaných žáků",
+          "detail": "Cílená podpora nadaných žáků závisí na přístupu jednotlivých učitelů, protože škola nemá nastavený systematický přístup.",
+          "evidence": "Cílená podpora žáků nadaných ve výuce je závislá na přístupu jednotlivých vyučujících, systematický přístup není nastaven."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá diferencované vyučování a podpora nadaných žáků?",
+        "Jak často se během běžné výuky objevuje práce ve dvojicích, tvoření, experimentování nebo řešení problémů?",
+        "Které konkrétní změny v podpoře nadaných žáků a v kvalitě výuky škola přijala po této inspekci?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí gymnaziální vzdělání a důraz na přípravu k maturitě a vysokoškolskému studiu.",
+        "Žákům, kterým vyhovuje samostatnější frontální výuka s důrazem na náročnost a příjemné třídní klima.",
+        "Žákům, kteří chtějí účast v rozsáhlém mimoškolním programu, projektech, cestách a soutěžích."
+      ],
+      "who_should_be_cautious": [
+        "Žákům, kteří potřebují běžně rozdílné úkoly, cíle nebo pravidelnou cílenou podporu podle svých možností.",
+        "Rodičům, kterým záleží na pravidelném formativním hodnocení, sebehodnocení a vzájemném hodnocení žáků.",
+        "Rodičům, kteří očekávají výrazně propracovanou přípravu na mezinárodní certifikáty nebo intenzivní digitální výuku."
+      ],
+      "plain_czech_summary": "Gymnázium má dobrou tradici přípravy na vysoké školy, nízkou absenci a příjemné třídní klima. Většina absolventů pokračuje na vysokých školách a žáci mají mnoho aktivit mimo výuku. Zpráva ale upozorňuje na převážně frontální výuku, malé využívání práce ve dvojicích, tvoření a kritického myšlení i na omezenou individualizaci. Podpora nadaných žáků závisí na jednotlivých učitelích. Rodiče by se měli zeptat, jak škola tyto nedostatky řeší a zda je podpora nadaných žáků nově systematická."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Společné výsledky maturit jsou dlouhodobě mírně lepší než celostátný průměr gymnázií; přesné číselné údaje zpráva neuvádí.",
+        "key_numbers": [
+          "Žáci dosahují celkově velmi dobrých výsledků.",
+          "Ve školním roce 2024/2025 byl průměrný prospěch ve druhém pololetí 1,67.",
+          "Maturitní výsledky jsou mírně lepší než celostátný průměr gymnázií."
+        ],
+        "evidence": "Ve společné části maturitních zkoušek vykazuje škola dlouhodobě mírně lepší výsledky, než je celostátní průměr gymnázií."
+      },
+      "absence": {
+        "trend": "Absence jsou dlouhodobě nízké a závažnější problémy jsou vzácné.",
+        "key_numbers": [
+          "Neomluvené hodiny se týkají pouze jednotlivců.",
+          "Závažnější problémy jsou zaznamenány zřídka."
+        ],
+        "evidence": "Absence žáků je dlouhodobě na nízké úrovni, neomluvené hodiny se týkají pouze jednotlivců."
+      },
+      "support_services": [
+        "Škola nabízí doučovací aktivity nebo individuální konzultace žákům ohroženým školním neúspěchem.",
+        "Podporuje žáky se speciálními vzdělávacími potřebami pomocí opatření vycházejících z doporučení školských poradenských zařízení.",
+        "Finanční prostředky z evropských fondů podpořily školní asistenty a kariérního poradce."
+      ],
+      "safety_climate": [
+        "V hospitovaných hodinách vznikalo pozitivní třídní klima podporující učení.",
+        "Žáci dodržovali nastavená pravidla komunikace a chování.",
+        "Škola podporuje zdravý životní styl, sociální dovednosti a příznivé klima ve škole."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s energetickou společností umožňuje přístup k moderním pomůckám, seminářům, přednáškám a částečně hradí exkurze a olympiády.",
+        "Škola spolupracuje s vysokými školami, akademickými pracovišti, jazykovými institucemi a neziskovými organizacemi.",
+        "Spolupráce s německou školou podporuje mobilitu žáků i učitelů a výměnu zkušeností."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, konkrétní a zaměřené na rozhodování rodičů při výběru školy.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesné procento úspěšnosti maturit, proto je uveden pouze dlouhodobý trend.",
+        "Zpráva neuvádí konkrétní školní programy nebo časové limity, v nichž by se podpora nadaných žáků měla systematicky zlepšovat.",
+        "Zpráva neuvádí výsledky opatření přijatých po skončení inspekce."
+      ]
+    }
+  }
+}

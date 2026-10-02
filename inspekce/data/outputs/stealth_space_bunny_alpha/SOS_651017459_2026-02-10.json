@@ -1,0 +1,107 @@
+{
+  "report_id": "SOS_651017459_2026-02-10",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:37:56.828749+00:00",
+  "run_finished_utc": "2026-10-02T16:38:36.874619+00:00",
+  "raw_file": "SOS_651017459_2026-02-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_651017459_2026-02-10",
+    "school_profile": {
+      "school_type": "Střední škola a domov mládeže se středním vzděláváním s maturitní i závěrečnou zkouškou a nástavbovým studiem.",
+      "inspection_period": "10. 2. až 13. 2. 2026",
+      "school_change_summary": "Počet žáků vzrostl z 218 v roce 2018 na 349; došlo k obměně vedení a pedagogického sboru, změně elektronického systému a výraznému zlepšení vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vzdělávání",
+          "detail": "Škola má dobře vybavené dílny a propojuje teoretickou výuku s odbornou praxí.",
+          "evidence": "Hospitovaný odborný výcvik byl podpořen kvalitním vybavením; žáci aktivně pracovali a učitelé jim poskytovali podporu."
+        },
+        {
+          "tag": "Podpora a klima",
+          "detail": "Rodinné prostředí je podle inspekce příznivé a studenti mají k dispozici poradenskou i preventivní podporu.",
+          "evidence": "Vztahy mezi aktéry vzdělávání jsou uspokojivé; fungují poradenství, prevence, schránka důvěry a otevřené dveře."
+        },
+        {
+          "tag": "Spolupráce a vybavení",
+          "detail": "Partnerství se školami a firmami rozšiřuje praktické příležitosti žáků a škola získala moderní techniku.",
+          "evidence": "Škola spolupracuje s regionálními školami a firmami; získala CNC centrum, robotická zařízení a barevný tisk."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturitní výsledky",
+          "detail": "Přetrvává zvýšená neúspěšnost u maturitní zkoušky, přestože škola přijímá podpůrná opatření.",
+          "evidence": "Hrubá neúspěšnost ve společné části MZ byla téměř čtvrtina; přijatá opatření nebyla dostatečně funkční."
+        },
+        {
+          "tag": "Kvalita výuky",
+          "detail": "V části teoretické výuky převládá frontální způsob a žáci mají málo příležitostí k aktivní spolupráci.",
+          "evidence": "Učitelé často žáky aktivně nezapojovali; kooperativní formy výuky zařazovali jen v malé části hodin."
+        },
+        {
+          "tag": "Organizace a kontrola",
+          "detail": "Nedostatky ve školních programech a méně funkční kontrola mohou podle inspekce zhoršovat kvalitu vzdělávání.",
+          "evidence": "Kontrolní systém není plně účinný; byly zjištěny závažné nedostatky ve školních vzdělávacích programech."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní kroky škola přijala po neúspěšnosti maturit a jak účinné byly podle výsledků analýzy?",
+        "Jak často se učitelé věnují analýze neúspěšnosti žáků a jaké konkrétní kroky závěrů předmětových komisí přecházejí do praxe?",
+        "Jak může rodič při individuálním vzdělávacím plánu ověřit, že se podpůrné opatření skutečně uplatňují?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat technický obor s praktickou přípravou a spoluprací s firmami.",
+        "Žákům, kterým vyhovuje prostředí školy s moderním technickým vybavením a odbornými pedagogy z praxe.",
+        "Žákům, kteří využijí vedení, poradenství, preventivní programy a podporu v domově mládeže."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům žáků, kteří potřebují průběžnou velmi účinnou přípravu na maturitu, protože současná opatření nejsou dostatečně funkční.",
+        "Žákům, kteří potřebují v teoretické výuce pravidelnou diferencovanou práci a silnější podporu vlastního zapojení.",
+        "Rodičům, kteří očekávají zcela bezproblémové vzdělávací programy a jednotnou kvalitní zpětnou vazbu od školy."
+      ],
+      "plain_czech_summary": "Škola nabízí technické a podnikatelské obory, moderní vybavení, praktickou výuku a spolupráci s firmami. Inspekce ocenila také příznivé klima, podporu žáků a funkční preventivní systém. Hlavním problémem je přetrvávající neúspěšnost u maturit, kde se škola snaží pomáhat konzultacemi a doučováním, ale jejich účinnost je podle inspekce nízká. V části teoretické výuky se žáci málo zapojují a učitelé již méně používají spolupráci, diferenciaci i formativní hodnocení. Rodiče by měli zjišťovat, jak konkrétní podpůrná opatření fungují v jejich třídě."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou slabé a neúspěšnost se podle inspekce nezměnila; profilová část je výrazně lepší než společná část.",
+        "key_numbers": [
+          "Ve školním roce 2024/2025 se z 92 přihlášených žáků maturity nezúčastnili tři.",
+          "Hrubá neúspěšnost ve společné části MZ byla téměř čtvrtina.",
+          "V profilové části MZ neuspělo pouze pět přihlášených prvomaturantů."
+        ],
+        "evidence": "Ve školním roce 2024/2025 byla hrubá neúspěšnost ve společné části MZ téměř čtvrtina, v profilové části neuspělo pět žáků."
+      },
+      "absence": {
+        "trend": "Absence se za poslední dva školní roky výrazně nezvýšila.",
+        "key_numbers": [],
+        "evidence": "Absence žáků školy nebyla v posledních dvou školních letech nikterak výrazně zvýšená."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytuje výchovné, kariérové, vzdělávací a preventivní poradenství.",
+        "Asistentky pedagoga pomáhají žákům se speciálními vzdělávacími potřebami i dalším studentům s obtížemi.",
+        "Škola nabízí dobrovolné doučování, individuální konzultace, schránku důvěry a otevřené dveře všech učitelů."
+      ],
+      "safety_climate": [
+        "V odborném výcviku byla příznivá pracovní atmosféra a učitelé důsledně kontrolovali bezpečnost a ochranu zdraví.",
+        "V teoretické výuce nebyli zaznamenáni žádní kázeňské prohřešky a žáci se do výuky zapojovali bez obav."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s mnoha regionálními školami, firmami, autoškolou a dalšími partnery.",
+        "Firmy se podílejí na praktickém odborném vzdělávání a ověřování připravenosti žáků pro praxi."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, prakticky orientované a opírají se o konkrétní údaje ze zprávy.",
+      "uncertainty_notes": [
+        "Zpráva uvádí výsledky za školní rok 2024/2025, nikoli konečné výsledky ze všech čtyř oborů s maturitou.",
+        "Zpráva neuvádí přesné číselné údaje o absenci, proto je v části key_numbers pole prázdné.",
+        "Funkčnost přijatých opatření proti neúspěšnosti se podle inspekce zatím neprokázala dostatečně."
+      ]
+    }
+  }
+}

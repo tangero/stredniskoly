@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600020070_2026-02-23",
+  "model_id": "stealth_space_bunny_alpha",
+  "run_started_utc": "2026-10-02T16:35:11.173686+00:00",
+  "run_finished_utc": "2026-10-02T16:35:44.957480+00:00",
+  "raw_file": "SOS_600020070_2026-02-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600020070_2026-02-23",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola a vyšší odborná škola zdravotnická",
+      "inspection_period": "23. 2. 2026–27. 2. 2026",
+      "school_change_summary": "Od roku 2017 se změnilo vedení školy a počet žáků a studentů vzrostl o 22 %. Výuka podle inspekce probíhá na dvou místech."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava",
+          "detail": "Škola účinně propojuje teorii s praxí na pracovištích partnerů a v odborných učebnách.",
+          "evidence": "Praktické vyučování probíhalo na pracovištích smluvních partnerů i v odborných učebnách školy a bylo organizačně dobře zajištěno."
+        },
+        {
+          "tag": "Maturitní výsledky",
+          "detail": "Výsledky žáků v profilové části maturitní zkoušky jsou hodnoceny jako nadprůměrné vůči celorepublikovému průměru.",
+          "evidence": "Výsledky žáků zdravotnických oborů v profilové části maturitní zkoušky jsou nad úrovní celorepublikového průměru."
+        },
+        {
+          "tag": "Podpora a komunikace",
+          "detail": "Škola nabízí poradenské služby a funkční komunikaci mezi pedagogy, žáky a studenty.",
+          "evidence": "Poradenské služby zajišťují výchovná poradkyně, školní metodička prevence a školní psycholožka."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Bezpečnost",
+          "detail": "Úrazovost je přes realizovaná opatření vyšší než celostátní průměr a inspekce zaznamenala dílčí nedostatky v zabezpečení únikových východů.",
+          "evidence": "Míra úrazovosti je vyšší než celostátní průměr; dílčí nedostatky byly shledány v oblasti zabezpečení únikových východů."
+        },
+        {
+          "tag": "Rozdílné potřeby žáků",
+          "detail": "Ve sledované výuce se málo uplatňovala diferenciace podle individuálních potřeb žáků.",
+          "evidence": "Diferenciace učiva a cílená práce se žáky se speciálními vzdělávacími potřebami nebyla ve sledované výuce výrazněji uplatňována."
+        },
+        {
+          "tag": "Klima a zpětná vazba",
+          "detail": "Škola podle inspekce musí pravidelněji sledovat klima a posilovat formativní hodnocení, aby podchytila problémy a podporovala žáky.",
+          "evidence": "Je nezbytné systematicky sledovat klima; prostor pro posilování sebehodnocení žáků zůstával využit jen zčásti."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně podporují žáky se speciálními vzdělávacími potřebami v jednotlivých předmětech?",
+        "Jak často žáci dostávají zpětnou vazbu a podílejí se na hodnocení vlastního učení?",
+        "Jaké konkrétní kroky podniká škola po zjištění vyšší úrazovosti a při zabezpečování únikových východů?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí studovat zdravotnický obor včetně denní praktické přípravy.",
+        "Studentům, kterým vyhovuje propojení odborné teorie s prací na skutečných pracovištích.",
+        "Žákům a studentům, kteří mají zájem o projekty, dobrovolnictví a spolupráci s nemocnicemi či sociálními službami."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům, kteří očekávají výraznější individualizaci výuky pro všechny žáky.",
+        "Rodičům žáků na praktickém vyučování, kterým záleží na bezpečnosti a přesném dodržování rozsahu pracovních úkonů.",
+        "Rodičům, kteří potřebují vysokou a průběžně ověřovanou zpětnou vazbu o učení dítěte."
+      ],
+      "plain_czech_summary": "Škola má dobré praktické zázemí a žáci dosahují dobrých odborných i maturitních výsledků. Výuka je podle inspekce příjemná, aktivní a propojená s praxí. Rodiče by však měli sledovat vyšší úrazovost, dílčí nedostatky v zabezpečení únikových východů a omezenou diferenciaci výuky. Inspekce doporučuje zlepšit formativní hodnocení a sledování školního klimatu. Výsledky žáků jsou stabilní; na VOŠ absolvovalo absolutorium 97,3 % studentů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Úspěšnost žáků je v posledních sledovaných školních letech vysoká a stabilní.",
+        "key_numbers": [
+          "Zdravotnické lyceum: 100% úspěšnost ve školních letech 2023/2024 a 2024/2025.",
+          "Ostatní zdravotnické obory: přibližně 90% úspěšnost.",
+          "25% žáků mělo ve školním roce 2024/2025 prospěch s vyznamenáním."
+        ],
+        "evidence": "Ve školních letech 2023/2024 a 2024/2025 dosáhli žáci Zdravotnického lycea stoprocentní úspěšnosti, v ostatních zdravotnických oborech přibližně 90 %."
+      },
+      "absence": {
+        "trend": "Absence odpovídá běžné míře ve středním vzdělávání; zpráva neuvádí samostatný dlouhodobý trend.",
+        "key_numbers": [
+          "Průměrně 46,34 omluvené hodiny na žáka.",
+          "Podíl žáků s neprospěchem a opakováním ročníku byl dlouhodobě pod 2,5 %.",
+          "Evidence neomluvených hodin byla minimální."
+        ],
+        "evidence": "Průměrný počet omluvených hodin na žáka činil 46,34; evidence neomluvených hodin byla minimální."
+      },
+      "support_services": [
+        "Poradenské služby zajišťují výchovná poradkyně, školní metodička prevence a školní psycholožka.",
+        "Hlavní podpora se týká žáků se speciálními vzdělávacími potřebami a prevence sociálně patologických jevů.",
+        "Při náročné zátěžové situaci je k dispozici podpora krizového intervenienta."
+      ],
+      "safety_climate": [
+        "Při praktickém vyučování byly zásady bezpečnosti a ochrany zdraví při práci důsledně dodržovány.",
+        "Úrazovost však zůstává vyšší než celostátní průměr, zejména při sportovních aktivitách a praktickém vyučování.",
+        "Inspekce zaznamenala dílčí nedostatky v zabezpečení únikových východů."
+      ],
+      "partnership_practice": [
+        "Spolupráce se zdravotnickými a sociálními zařízeními podporuje získávání zkušeností v autentickém prostředí.",
+        "Praktické vyučování probíhá na pracovištích smluvních partnerů a v odborných učebnách školy.",
+        "Škola spolupracuje také se středními, vyššími odbornými a vysokými školami."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Formulace jsou srozumitelné, věcně navazují na zprávu a důležité údaje jsou doplněny krátkými citacemi.",
+      "uncertainty_notes": [
+        "Zpráva uvádí výsledky za vybrané školní roky, nikoli dlouhodobou řadu pro všechny obory.",
+        "U absence není uveden samostatný časový trend; závěr vychází z uvedeného průměru a hodnocení zprávy.",
+        "Hodnocení školního klimatu je doporučení k pravidelnému sledování, nikoli jednoznačné potvrzení problému."
+      ]
+    }
+  }
+}

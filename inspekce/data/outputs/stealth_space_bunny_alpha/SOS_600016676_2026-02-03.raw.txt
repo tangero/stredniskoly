@@ -1,0 +1,101 @@
+{
+  "report_id": "SOS_600016676_2026-02-03",
+  "school_profile": {
+    "school_type": "Střední škola poskytující maturitní vzdělávání v oborech Strojírenství, Elektrotechnika a Informační technologie.",
+    "inspection_period": "3. 2. 2026–6. 2. 2026",
+    "school_change_summary": "Od roku 2023 vede školu Mgr. Radka Klotková; od inspekce v roce 2022 se vyměnila část pedagogického sboru a proběhla modernizace učeben, technického zázemí a prostor pro žáky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické technické vzdělávání",
+        "detail": "Výuka probíhá v modernizovaných odborných učebnách a propojuje ji s reálnými pracovními úkoly.",
+        "evidence": "„Praktická výuka probíhá v modernizovaných učebnách“ a „zadávané úlohy často vycházely z reálných pracovních situací“."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola nabízí doučování, poradenské služby, práci školního psychologa a podporu žáků se speciálními vzdělávacími potřebami.",
+        "evidence": "„Škola zajišťuje žákům ohroženým školní neúspěšností možnost konzultací a doučování“; „Nově má škola k dispozici školního psychologa“."
+      },
+      {
+        "tag": "Rozvoj nadání a partnerství",
+        "detail": "Žáci se mohou rozvíjet v soutěžích, projektech a aktivitách ve spolupráci s místními školami a dalšími partnery.",
+        "evidence": "„Škola systematicky vyhledává a podporuje rozvoj nadání a zájmů žáků prostřednictvím soutěží, sportovních a tematických akcí.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Převaha frontální výuky",
+        "detail": "Ve většině sledovaných hodin převládala frontální výuka, což mohou žáci se zájmem o týmovou práci ocítit.",
+        "evidence": "„Během hospitací však byla patrná převaha frontální výuky“, skupinová práce se využívala jen v části hodin."
+      },
+      {
+        "tag": "Závěry a zpětná vazba",
+        "detail": "Učitelé mají podle inspekce málo prostoru na shrnutí učiva a nevedou žáky dostatečně k hodnocení vlastního pokroku.",
+        "evidence": "„Závěrečná část vyučovacích jednotek často postrádala adekvátní prostor pro shrnutí“; žáci byli k sebehodnocení vedeni jen výjimečně."
+      },
+      {
+        "tag": "Práce s informacemi",
+        "detail": "Samostatné vyhledávání a porovnávání informací z více zdrojů se ve výuce objevovalo jen sporadicky.",
+        "evidence": "„Samostatné vyhledávání, porovnávání a analýza informací z více zdrojů se ve výuce objevovaly spíše sporadicky.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak často a v jakých předmětech žáci pracují ve dvojicích či skupinách, nikoli převážně frontálně?",
+      "Jak konkrétně probíhá závěrečné shrnutí hodiny, zpětná vazba, sebehodnocení a hodnocení spolužáků?",
+      "Kolik externích firem poskytuje praxi a jak často se žáci na jednotlivé obory dostávají?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí technické obory propojené s praxí: „zadávané úlohy často vycházely z reálných pracovních situací“.",
+      "Žákům se zájmem o elektrotechniku, strojírenství nebo informační technologie: škola vzdělává právě v těchto oborech.",
+      "Žákům, kteří potřebují doučování nebo poradenskou podporu: „škola zajišťuje žákům ohroženým školní neúspěšností možnost konzultací a doučování“."
+    ],
+    "who_should_be_cautious": [
+      "Žákům, kteří v hodinách upřednostňují převážně týmovou a kooperativní práci, protože „skupinové formy práce či práce ve dvojicích“ byly využity jen částečně.",
+      "Žákům, kterým záleží na pravidelném sebehodnocení a práci s více zdroji, protože tyto činnosti se podle inspekce objevovaly jen málo.",
+      "Rodičům, kteří očekávají průběžné hodnocení přímo od školy, protože zpráva neuvádí konkrétní systém průběžného hodnocení pro rodiče."
+    ],
+    "plain_czech_summary": "Škola nabízí tři technické obory, moderní učebny a velmi prakticky zaměřenou výuku. Mezi přednosti patří odborní učitelé, přátelská atmosféra, podpora doučováním, školní psycholog a dobré výsledky maturity: v roce 2024/2025 uspělo všech 78 konajících, 18 z nich vyznamenáně. Žáci se rozvíjejí v soutěžích, projektech a praxi. Inspekce ale upozornila na převahu frontální výuky, menší využití práce ve skupinách, málo závěrečného shrnutí a sebehodnocení a omezenou práci s více zdroji. Zpráva neuvádí údaje o absenci."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Studijní prospěch dlouhodobě roste a výsledky maturit jsou nad očekávanou úrovní; slabší byly výsledky z matematiky v letech 2023 a 2024.",
+      "key_numbers": [
+        "Ve školním roce 2024/2025 maturitu konalo 78 žáků.",
+        "Všichni konající byli úspěšní.",
+        "Vyznamenání dosáhlo 18 žáků."
+      ],
+      "evidence": "„Výsledky maturitní zkoušky se dlouhodobě pohybují nad očekávanou úrovní a vykazují znaménky zlepšujícího se trendu.“"
+    },
+    "absence": {
+      "trend": "Inspekční zpráva neuvádí trend ani vývoj absence.",
+      "key_numbers": [],
+      "evidence": "Ve zprávě nejsou uvedeny žádné číselné údaje o absenci žáků."
+    },
+    "support_services": [
+      "Žákům ohroženým školní neúspěšností škola poskytuje „konzultace a doučování“.",
+      "Škola má „školního psychologa“ a výchovnou poradkyni poskytující podporu žákům i pedagogům.",
+      "Pro první ročníky jsou pořádány „tradiční adaptační kurzy“.",
+      "Škola dlouhodobě podporuje žáky se speciálními vzdělávacími potřebami."
+    ],
+    "safety_climate": [
+      "Ve výuce převládala „příjemná pracovní atmosféra“ založená na partnerském přístupu a vzájemném respektu.",
+      "Žáci byli pravidelně poučováni o bezpečnosti a „škola věnuje zvýšenou pozornost úrazové prevenci“.",
+      "Školní samosprávy podporují komunikaci mezi žáky a školou, což podle inspekce vytváří pozitivní atmosféru."
+    ],
+    "partnerships_practice": [
+      "Škola „aktivně spolupracuje s partnery poskytujícími praxi žákům“.",
+      "S místními školami rozvíjí partnerství formou projektových dnů, prezentačních a vzdělávacích aktivit.",
+      "Aktivity jsou podporovány statutárním městem Karviná a Moravskoslezským krajem."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": "5",
+    "czech_clarity_reason": "Výstup používá běžnou češtinu, krátké věty a jasně odděluje silné stránky, rizika, číselné údaje a otázky pro setkání se školou.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí údaje o absenci, proto nelze její trend ani míru spolehlivě posoudit.",
+      "Zpráva neuvádí podrobné výsledky žáků podle jednotlivých oborů.",
+      "Závěr o vhodnosti pro konkrétní typ žáka vychází z popsaného způsobu výuky, nikoli z individuálního hodnocení žáka."
+    ]
+  }
+}
