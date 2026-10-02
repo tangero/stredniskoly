@@ -28,6 +28,10 @@ jobs:
       POLE_STATUS: PVTSSF_lAHOAA82bs4BlVwZzhkDBOk
       SCHVALENO: 2d8cc121
     steps:
+      - name: Odebrat štítek navrh
+        run: |
+          gh issue edit "$CISLO" -R "$REPO" --remove-label navrh
+
       - name: Status Schváleno
         run: |
           set -euo pipefail
@@ -43,6 +47,12 @@ jobs:
                   value: {singleSelectOptionId: $o}}) { projectV2Item { id } } }' \
               -f p="$PROJEKT" -f i="$polozka" -f f="$POLE_STATUS" -f o="$SCHVALENO" >/dev/null
           }
+          # Schválení platí, dokud je issue otevřené a má štítek schvaleno.
+          # Zavřené issue patří do Hotovo (automatizace Item closed).
+          platne() {
+            gh issue view "$CISLO" -R "$REPO" --json state,labels \
+              --jq '.state == "OPEN" and any(.labels[]; .name == "schvaleno")'
+          }
           stav() {
             gh api graphql -f query='
               query($i: ID!) { node(id: $i) { ... on ProjectV2Item {
@@ -53,21 +63,25 @@ jobs:
           # „Item added“, která asynchronně nastaví Návrh a může přepsat Schváleno.
           # Stav se proto sleduje celé okno (5 × 15 s), ne jen do prvního úspěchu,
           # a kdykoli je přepsaný, nastaví se znovu.
+          if [ "$(platne)" != "true" ]; then
+            echo "Issue #$CISLO není otevřené se štítkem schvaleno, Status nechávám"
+            exit 0
+          fi
           nastav
           for pokus in 1 2 3 4 5; do
             sleep 15
+            if [ "$(platne)" != "true" ]; then
+              echo "Issue #$CISLO už není otevřené se štítkem schvaleno, Status nechávám"
+              exit 0
+            fi
             if [ "$(stav)" != "$SCHVALENO" ]; then
               echo "Kontrola $pokus: Status přepsán, nastavuji znovu"
               nastav
             fi
           done
           sleep 5
-          if [ "$(stav)" != "$SCHVALENO" ]; then
+          if [ "$(platne)" = "true" ] && [ "$(stav)" != "$SCHVALENO" ]; then
             echo "::error::Issue #$CISLO: Status se nepodařilo udržet na Schváleno"
             exit 1
           fi
           echo "Issue #$CISLO: Status Schváleno"
-
-      - name: Odebrat štítek navrh
-        run: |
-          gh issue edit "$CISLO" -R "$REPO" --remove-label navrh
