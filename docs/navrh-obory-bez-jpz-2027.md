@@ -1,9 +1,11 @@
 # Obory bez jednotné zkoušky a nedenní formy: průzkum zdrojů a návrh
 
-Verze 1.1 · 1. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
+Verze 1.2 · 2. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
 Fáze 2 (implementace) vznikne jako samostatné zadání po schválení návrhu.
 Verze 1.1 vypořádává oponenturu (`docs/podklady/oponentura-obory-bez-jpz-2026-10-01.md`);
-vypořádání je v oddílu 17, oddíly 10 a 11 jsou přepsané.
+vypořádání je v oddílu 17, oddíly 10 a 11 jsou přepsané. Verze 1.1 byla schválena
+1. 10. 2026. Verze 1.2 doplňuje odpovědi z etapy 0 fáze 2 (issue #244, oddíl 16.1)
+a z nich plynoucí pojem pro kategorii J a skupiny souhrnu míst (oddíly 13 a 14).
 
 ## 1. Shrnutí a doporučení
 
@@ -509,6 +511,10 @@ v dávce, ve které se poprvé objeví na stránce. Návrh znění:
   Nepoužívat: „volná místa“ bez kola (to slovo patří 2. kolu).
 - **kam dál po výučním listu** (nový pojem): „nástavba, po které se skládá
   maturita“. Nepoužívat: „pokračování“, „navazující studium“ (obecné).
+- **obor bez maturity i výučního listu** (nový pojem, kategorie J; doplněno
+  ve verzi 1.2): „dvouletý obor zakončený závěrečnou zkouškou a vysvědčením,
+  bez maturity i výučního listu“. Obor J se nenazývá „učební obor“, protože
+  výuční list nedává.
 
 ## 14. Návrh ukazatelů (podklad pro slovník ukazatelů)
 
@@ -523,7 +529,9 @@ Dva nové ukazatele (návrh znění pro slovník):
   tam, kde jsou oba sloupce vyplněné (u 53 nabídek bez čísel se neukazuje).
   Neříká, zda škola vypíše 2. kolo — to říká až oddíl 2. kola.
 - **Místa podle druhu studia**: rozdělení součtu `KAPACITA` za město a kraj
-  na gymnázia, maturitní obory, učební obory a obory E. Zdroj: CERMAT 1. kolo.
+  do šesti skupin podle kategorie KKOV (verze 1.2, oddíl 16.1): gymnázia (K),
+  maturitní obory (M a L včetně uměleckých), konzervatoře (P), učební obory (H),
+  obory E a ostatní obory bez maturity i výučního listu (C, J). Zdroj: CERMAT 1. kolo.
   Jednotka: místa a podíly. Součet míst za území se smí, na rozdíl od přihlášek;
   jeden uchazeč se v něm nepočítá víckrát, protože místa nejsou přihlášky.
 
@@ -557,6 +565,58 @@ nemění (omezení zadání); přepnutí období se řídí stávajícími sadam
 6. Doplněk návrhu simulátoru: pojistka bez bodů (`kapacita_nerozhodovala`, oddíl 11).
 7. Rešerše zdrojů o odborném výcviku u firem a krajských stipendiích v přípravě
    fáze 2 (oddíl 12: zdroj zatím neexistuje).
+
+### 16.1 Odpovědi z etapy 0 (issue #244, 2. 10. 2026)
+
+Čísla jsou v dokladu `docs/podklady/mereni-obory-bez-jpz-2026.json`, klíče
+`parovani_roku`, `parovani_kol` a `konzervatore_a_j`. Spočítal je skript
+`scripts/mereni-obory-bez-jpz.py`, který k tomu volá párovací kód importu
+(`scripts/match_obory_2025_2026.py`, `scripts/build-druhe-kolo.py`), ne jeho kopii.
+
+1. **DiPSy:** zatím bez odpovědi. Způsob dotazů je ohlášený v komentáři issue #244
+   a čeká na schválení vlastníkem (pravidlo 7 v `CLAUDE.md`). Do té doby platí
+   omezení ze zadání: kritéria ani bodování se u učebních oborů neslibují.
+2. **Konzervatoře (P): ukázat hned, s výhradou** (rozhodnutí vlastníka 2. 10. 2026).
+   Denních nezkrácených nabídek je 146 v 18 školách. Kapacitu mají všechny, počty
+   přihlášek a přijatých chybí u 26 nabídek z 5 škol. Údaj „43 ze 178“ v otázce
+   zahrnoval i 32 kombinovaných nabídek. Pět nabídek je osmiletých pro žáky
+   5. třídy, ostatní šestileté pro žáky 9. třídy. Kde počty chybí, stránka to
+   řekne větou, ne prázdným blokem. Výhrada zní, že se přijímá talentovou
+   zkouškou mimo jednotný harmonogram. Odznak ani filtr obtížnosti konzervatoře
+   nemají, protože se nesoutěží o pořadí podle jednotné zkoušky.
+3. **Kategorie J: zahrnout** (rozhodnutí vlastníka 2. 10. 2026). Jde o 8 dvouletých
+   nabídek v 8 školách (obory 63-51-J/01, 75-41-J/01 a 53-41-J/01). Všechny mají
+   úplná čísla: 106 míst, 157 přihlášek a 70 přijatých. Zobrazí se jako C a E,
+   s čísly, bez odznaku a filtru obtížnosti, pod novým pojmem z oddílu 13.
+4. **Stabilita klíče:** `ID_SOF` ani `ID_SO` mezi roky stabilní nejsou (shoda 0
+   z 2 902). Stávající párování webu (klíč `REDIZO_KKOV` a podobnost zaměření) ale
+   u nabídek bez JPZ funguje. Protějšek z roku 2025 najde u 2 800 z 2 902 nabídek
+   roku 2026 (96 %): s vysokou jistotou u 2 701, se střední u 96 a s nízkou u 3.
+   Nových nabídek je 74 a 28 jde k ruční revizi. U oborů H je spárováno 1 744
+   z 1 777 (vysoká jistota 1 724), 25 je nových a 8 k revizi. Pro srovnání,
+   u oborů se zkouškou spároval týž skript 2 696 z 3 087 nabídek a 391 označil
+   jako nové (`data/obory_matching.json`, březen 2026). Nejvíc podobnost zaměření
+   potřebují konzervatoře, kde má jen střední jistotu 51 ze 142 spárovaných,
+   protože školy text zaměření mezi roky přepisují. Etapa 1 proto páruje rok 2025
+   stejným mechanismem a ruční výjimky (`data/obory_manual_overrides.csv`)
+   doplní jen u 28 případů k revizi.
+
+   **Párování 1. ↔ 2. kolo:** klíč z `scripts/build-druhe-kolo.py` (škola, obor,
+   zaměření, forma, délka, zkrácené studium, jazyk) najde 2. kolo u 1 261 nabídek
+   1. kola. Ze 1 458 nabídek 2. kola zůstane nespárovaných 197; podíl spárovaných
+   (86 %) odpovídá oborům se zkouškou (886 z 1 060, 84 %). `ID_SO` je na rozdíl
+   od `ID_SOF` v obou kolech stejné a jednoznačně by spárovalo 145 ze 197
+   nespárovaných. Jako doplněk klíče ho ale etapa 1 nezavádí, protože by změnil
+   i párování oborů se zkouškou. Patří do samostatného zadání.
+5. **Generátory souběhu a kontextu:** řeší etapa 2.
+6. Vyřešeno: doplněk návrhu simulátoru je sloučený (PR #246).
+7. **Rešerše o odborném výcviku a stipendiích:** čeká na schválení ohlášeného
+   způsobu (vyhledávání na webu je dotaz na cizí server). Do té doby o obou mlčíme.
+8. Vyřešeno v zadání: každá etapa má vlastní PR.
+9. **Místa podle druhu studia: šest skupin** (rozhodnutí vlastníka 2. 10. 2026):
+   gymnázia (K), maturitní obory (M a L včetně uměleckých), konzervatoře (P),
+   učební obory (H), obory E a ostatní obory bez maturity i výučního listu (C, J).
+   Oddíl 14 je upravený.
 
 ## 17. Vypořádání oponentury
 
@@ -632,6 +692,7 @@ zopakovat jedním příkazem. Níže verdikt ke každé námitce s důkazem:
 
 | Verze | Změna |
 |---|---|
+| 1.2 | Odpovědi z etapy 0 fáze 2 (#244, oddíl 16.1): párování 2025 ↔ 2026 (96 %) a 1. ↔ 2. kola, konzervatoře s výhradou, kategorie J zahrnuta, šest skupin souhrnu míst; pojem pro kategorii J. Otázky 1 a 7 čekají na schválení dotazů na cizí servery. |
 | 1.1 | Vypořádání oponentury (oddíl 17): přepsané oddíly 10 a 11, nová měření 3.5–3.7 a 5.1, oprava chyby o nástavbách, rozhodnutí o C/E, dva nové ukazatele, domovy mládeže. |
 | 1.0 | První návrh (fáze 1, issue #209). |
 

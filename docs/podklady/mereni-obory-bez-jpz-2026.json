@@ -1708,5 +1708,163 @@
     "z_nich_s_inspis_profilem": 167,
     "z_nich_se_seznamem_inspekci": 226,
     "z_nich_s_extrakci_zpravy": 0
+  },
+  "parovani_roku": {
+    "nabidek_2026": 2902,
+    "nabidek_2025": 2916,
+    "unikatnich_id_2026": 2902,
+    "id_shodnych_mezi_roky": {
+      "ID_SOF": 0,
+      "ID_SO": 0
+    },
+    "podle_typu": {
+      "auto_fuzzy": 354,
+      "auto_1to1": 2431,
+      "auto_n1": 7,
+      "new": 74,
+      "manual_needed": 28,
+      "auto_1n": 8
+    },
+    "podle_jistoty": {
+      "medium": 96,
+      "high": 2770,
+      "low": 36
+    },
+    "k_rucni_revizi": 28,
+    "po_kategorii": {
+      "C": {
+        "auto_1to1/high": 159,
+        "auto_fuzzy/medium": 4,
+        "new/high": 17,
+        "auto_fuzzy/high": 7,
+        "auto_n1/medium": 3,
+        "manual_needed/low": 3,
+        "new/low": 4,
+        "auto_1n/high": 2,
+        "auto_1n/low": 1
+      },
+      "E": {
+        "auto_1to1/high": 447,
+        "new/high": 24,
+        "auto_fuzzy/medium": 11,
+        "auto_fuzzy/high": 35,
+        "manual_needed/low": 7
+      },
+      "H": {
+        "auto_1to1/high": 1616,
+        "auto_fuzzy/high": 105,
+        "manual_needed/low": 8,
+        "auto_n1/medium": 1,
+        "new/high": 24,
+        "auto_fuzzy/medium": 18,
+        "auto_1n/high": 2,
+        "new/low": 1,
+        "auto_1n/low": 1,
+        "auto_n1/high": 1
+      },
+      "J": {
+        "auto_1to1/high": 8
+      },
+      "L": {
+        "auto_1to1/high": 20,
+        "auto_fuzzy/high": 3,
+        "auto_fuzzy/medium": 2,
+        "new/high": 1,
+        "manual_needed/low": 5
+      },
+      "M": {
+        "auto_1to1/high": 153,
+        "auto_fuzzy/high": 52,
+        "auto_n1/high": 1,
+        "new/high": 2,
+        "manual_needed/low": 2,
+        "auto_fuzzy/medium": 6
+      },
+      "P": {
+        "auto_fuzzy/medium": 49,
+        "auto_1to1/high": 28,
+        "auto_fuzzy/high": 62,
+        "new/high": 1,
+        "auto_1n/medium": 1,
+        "auto_1n/low": 1,
+        "manual_needed/low": 3,
+        "auto_n1/medium": 1
+      }
+    }
+  },
+  "parovani_kol": {
+    "nabidek_kolo1": 2902,
+    "nabidek_kolo2": 1458,
+    "stavy_z_kola1": {
+      "vypsano": 1261,
+      "bez_2_kola": 1641
+    },
+    "kolo2_nesparovanych": 197,
+    "z_nich_jednoznacne_pres_id_so": 145,
+    "kolo2_po_kategorii": {
+      "E": 303,
+      "H": 942,
+      "C": 70,
+      "M": 84,
+      "L": 23,
+      "P": 32,
+      "J": 4
+    }
+  },
+  "konzervatore_a_j": {
+    "P": {
+      "nabidek_vsech_forem": 178,
+      "vsech_forem_bez_prihlasek": 43,
+      "denni_nezkr": 146,
+      "denni_skol": 18,
+      "denni_bez_prihlasek": 26,
+      "denni_bez_prihlasek_skol": 5,
+      "denni_bez_kapacity": 0,
+      "denni_po_rocniku": {
+        "5": 5,
+        "9": 141
+      },
+      "denni_po_delce": {
+        "6": 141,
+        "8": 5
+      },
+      "denni_obory": {
+        "82-44-P/01 Hudba": 113,
+        "82-45-P/01 Zpěv": 20,
+        "82-46-P/01 Tanec": 5,
+        "82-46-P/02 Současný tanec": 2,
+        "82-47-P/01 Hudebně dramatické umění": 6
+      },
+      "denni_soucty": {
+        "kapacita": 810,
+        "prihlasky": 1698,
+        "prijati": 611
+      }
+    },
+    "J": {
+      "nabidek_vsech_forem": 9,
+      "vsech_forem_bez_prihlasek": 0,
+      "denni_nezkr": 8,
+      "denni_skol": 8,
+      "denni_bez_prihlasek": 0,
+      "denni_bez_prihlasek_skol": 0,
+      "denni_bez_kapacity": 0,
+      "denni_po_rocniku": {
+        "9": 8
+      },
+      "denni_po_delce": {
+        "2": 8
+      },
+      "denni_obory": {
+        "75-41-J/01 Pečovatelské služby": 2,
+        "63-51-J/01 Obchodní škola": 5,
+        "53-41-J/01 Zubní instrumentářka": 1
+      },
+      "denni_soucty": {
+        "kapacita": 106,
+        "prihlasky": 157,
+        "prijati": 70
+      }
+    }
   }
 }

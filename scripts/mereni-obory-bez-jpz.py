@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Měření pokrytí oborů bez jednotné zkoušky a nedenních forem (issue #209).
+"""Měření pokrytí oborů bez jednotné zkoušky a nedenních forem (issue #209, #244).
 
 Čte pouze místní soubory, na síť se nedotazuje. Výstupem je doklad
 `docs/podklady/mereni-obory-bez-jpz-2026.json` a souhrn na stdout.
@@ -10,6 +10,9 @@ Použití:
 
 from __future__ import annotations
 
+import contextlib
+import importlib.util
+import io
 import json
 import random
 import re
@@ -620,6 +623,129 @@ def mer_nove_skoly() -> dict:
     }
 
 
+def _modul(soubor: str, jmeno: str):
+    """Načte skript projektu jako modul, aby měření počítalo stejným kódem jako import."""
+    spec = importlib.util.spec_from_file_location(jmeno, ROOT / "scripts" / soubor)
+    modul = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(modul)
+    return modul
+
+
+def _denni_bez_jpz(soubor: Path) -> list[dict]:
+    """Denní nezkrácené nabídky bez JPZ jako slovníky sloupců (rozsah oddílu 1 návrhu)."""
+    hlavicky, radky = nacti_agregaty(soubor)
+    vystup = []
+    for r in radky:
+        x = dict(zip(hlavicky, r))
+        if (x["POVINNOST JPZ"] != 1 and "den" in str(x["FORMA VZDĚLÁVÁNÍ"] or "").lower()
+                and str(x["ZKRÁCENÉ STUDIUM"] or "").lower() == "ne"):
+            vystup.append(x)
+    return vystup
+
+
+def mer_parovani_roku() -> dict:
+    """Párování nabídek bez JPZ 2025 ↔ 2026 mechanismem webu (#244, otázka 4).
+
+    ID_SOF ani ID_SO mezi roky stabilní nejsou; páruje se klíčem REDIZO_KKOV
+    a podobností zaměření ze scripts/match_obory_2025_2026.py.
+    """
+    imp = _modul("import_cermat_2026_real.py", "import_cermat_2026_real")
+    par = _modul("match_obory_2025_2026.py", "match_obory_2025_2026")
+    r25 = _denni_bez_jpz(ROOT / "data/PZ2025_kolo1_skolobory_vysledky.xlsx")
+    r26 = _denni_bez_jpz(AGREGATY)
+
+    def zaznam(x: dict) -> dict:
+        prihlasky = x["PŘIHLÁŠKY CELKEM"]
+        return {"id": imp.make_full_id(str(x["REDIZO"]), x["KKOV"], str(x["ZAMĚŘENÍ OBORU"] or "")),
+                "prihlasky": prihlasky if je_cislo(prihlasky) else 0}
+
+    z26 = [zaznam(x) for x in r26]
+    kat = {z["id"]: kategorie(str(x["KKOV"] or "")) for z, x in zip(z26, r26)}
+    with contextlib.redirect_stdout(io.StringIO()):
+        shody, k_revizi = par.match_obory(par.build_index([zaznam(x) for x in r25]), par.build_index(z26))
+    stabilni_id = {
+        sloupec: len({str(x[sloupec]) for x in r26} & {str(x[sloupec]) for x in r25})
+        for sloupec in ("ID_SOF", "ID_SO")
+    }
+    po_kategorii: dict[str, Counter] = {}
+    for klic, v in shody.items():
+        po_kategorii.setdefault(kat.get(klic, "?"), Counter())[f"{v['match_type']}/{v['confidence']}"] += 1
+    return {
+        "nabidek_2026": len(r26),
+        "nabidek_2025": len(r25),
+        "unikatnich_id_2026": len(kat),
+        "id_shodnych_mezi_roky": stabilni_id,
+        "podle_typu": dict(Counter(v["match_type"] for v in shody.values())),
+        "podle_jistoty": dict(Counter(v["confidence"] for v in shody.values())),
+        "k_rucni_revizi": len(k_revizi),
+        "po_kategorii": {k: dict(v) for k, v in sorted(po_kategorii.items())},
+    }
+
+
+def mer_parovani_kol() -> dict:
+    """Párování nabídek bez JPZ 1. ↔ 2. kolo 2026 klíčem scripts/build-druhe-kolo.py (#244, otázka 4)."""
+    dk = _modul("build-druhe-kolo.py", "build_druhe_kolo")
+    k1 = _denni_bez_jpz(AGREGATY)
+    k2 = _denni_bez_jpz(ROOT / "data/PZ2026_kolo2_skolobory_vysledky.xlsx")
+    m2 = {dk.parovaci_klic(r): r for r in k2}
+    podle_webu: dict[str, list[dict]] = {}
+    for r in k1:
+        podle_webu.setdefault(dk.klic_webu(str(r["REDIZO"]), str(r["KKOV"]), r["ZAMĚŘENÍ OBORU"]), []).append(r)
+    stavy = Counter()
+    sparovane = set()
+    for seznam in podle_webu.values():
+        if len(seznam) > 1:
+            stavy["kolize_klice"] += 1
+            continue
+        druhe = m2.get(dk.parovaci_klic(seznam[0]))
+        if druhe:
+            stavy["vypsano"] += 1
+            sparovane.add(dk.parovaci_klic(druhe))
+        else:
+            stavy["bez_2_kola"] += 1
+    # Nabídky 2. kola, které klíč nenašel; ID_SO (stejné v obou kolech) by spárovalo část z nich.
+    id_so_1 = Counter(str(r["ID_SO"]) for r in k1)
+    nenalezene = [r for r in k2 if dk.parovaci_klic(r) not in sparovane]
+    return {
+        "nabidek_kolo1": len(k1),
+        "nabidek_kolo2": len(k2),
+        "stavy_z_kola1": dict(stavy),
+        "kolo2_nesparovanych": len(nenalezene),
+        "z_nich_jednoznacne_pres_id_so": sum(id_so_1[str(r["ID_SO"])] == 1 for r in nenalezene),
+        "kolo2_po_kategorii": dict(Counter(kategorie(str(r["KKOV"] or "")) for r in k2)),
+    }
+
+
+def mer_konzervatore_a_j() -> dict:
+    """Úplnost čísel u konzervatoří (P) a kategorie J (#244, otázky 2 a 3)."""
+    hlavicky, radky = nacti_agregaty()
+    vsechny = [dict(zip(hlavicky, r)) for r in radky]
+    denni = _denni_bez_jpz(AGREGATY)
+    vystup = {}
+    for kat in ("P", "J"):
+        vse = [x for x in vsechny if kategorie(str(x["KKOV"] or "")) == kat]
+        d = [x for x in denni if kategorie(str(x["KKOV"] or "")) == kat]
+        bez_prihlasek = [x for x in d if not je_cislo(x["PŘIHLÁŠKY CELKEM"])]
+        vystup[kat] = {
+            "nabidek_vsech_forem": len(vse),
+            "vsech_forem_bez_prihlasek": sum(not je_cislo(x["PŘIHLÁŠKY CELKEM"]) for x in vse),
+            "denni_nezkr": len(d),
+            "denni_skol": len({x["REDIZO"] for x in d}),
+            "denni_bez_prihlasek": len(bez_prihlasek),
+            "denni_bez_prihlasek_skol": len({x["REDIZO"] for x in bez_prihlasek}),
+            "denni_bez_kapacity": sum(not je_cislo(x["KAPACITA"]) for x in d),
+            "denni_po_rocniku": {str(k): v for k, v in sorted(Counter(x["ROČNÍK"] for x in d).items())},
+            "denni_po_delce": {str(k): v for k, v in sorted(Counter(x["DÉLKA STUDIA"] for x in d).items())},
+            "denni_obory": dict(Counter(f"{x['KKOV']} {x['OBOR - NÁZEV']}" for x in d)),
+            "denni_soucty": {
+                "kapacita": sum(x["KAPACITA"] for x in d if je_cislo(x["KAPACITA"])),
+                "prihlasky": sum(x["PŘIHLÁŠKY CELKEM"] for x in d if je_cislo(x["PŘIHLÁŠKY CELKEM"])),
+                "prijati": sum(x["PŘIJATÍ"] for x in d if je_cislo(x["PŘIJATÍ"])),
+            },
+        }
+    return vystup
+
+
 def main() -> None:
     skoly_rejstrik = nacti_rejstrik()
     doklad = {
@@ -639,6 +765,9 @@ def main() -> None:
         "skupiny_oboru": mer_skupiny_oboru(),
         "domovy": mer_domovy(),
         "nove_skoly": mer_nove_skoly(),
+        "parovani_roku": mer_parovani_roku(),
+        "parovani_kol": mer_parovani_kol(),
+        "konzervatore_a_j": mer_konzervatore_a_j(),
     }
     DOKLAD.write_text(json.dumps(doklad, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -676,6 +805,9 @@ def main() -> None:
     print("Skupiny H:", json.dumps(doklad["skupiny_oboru"], ensure_ascii=False)[:300])
     print("Domovy:", json.dumps(doklad["domovy"], ensure_ascii=False)[:300])
     print("Nové školy:", json.dumps(doklad["nove_skoly"], ensure_ascii=False))
+    print("Párování 2025 ↔ 2026:", json.dumps(doklad["parovani_roku"]["podle_jistoty"], ensure_ascii=False))
+    print("Párování 1. ↔ 2. kolo:", json.dumps(doklad["parovani_kol"]["stavy_z_kola1"], ensure_ascii=False))
+    print("P a J:", json.dumps({k: v["denni_bez_prihlasek"] for k, v in doklad["konzervatore_a_j"].items()}))
     print(f"Doklad: {DOKLAD}")
 
 
