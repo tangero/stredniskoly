@@ -70,6 +70,16 @@ class VyberChybejicich(unittest.TestCase):
         self.assertEqual([r["report_id"] for r in v["vybrane"]], ["GY4_3_2025-01-03"])
         self.assertEqual({r["report_id"] for r in v["vyjimky"]}, {"GY4_1_2025-01-01", "GY4_2_2025-01-02"})
 
+    def test_stazeny_soubor_bez_pdf_je_vyjimka(self):
+        reports = self.out / "reports"
+        reports.mkdir()
+        (reports / "GY4_1_2025-01-01.pdf").write_bytes(b"FILE NOT FOUND")
+        (reports / "GY4_2_2025-01-02.pdf").write_bytes(b"%PDF-1.7 ...")
+        v = vyber([zprava("GY4_1_2025-01-01", "2025-01-01"), zprava("GY4_2_2025-01-02", "2025-01-02")],
+                  self.out, {}, 60, reports)
+        self.assertEqual([r["report_id"] for r in v["vybrane"]], ["GY4_2_2025-01-02"])
+        self.assertEqual([r["report_id"] for r in v["vyjimky"]], ["GY4_1_2025-01-01"])
+
     def test_strop_bere_nejnovejsi_a_zbytek_hlasi(self):
         zpravy = [zprava(f"GY4_{i}_2025-01-{i:02d}", f"2025-01-{i:02d}") for i in range(1, 6)]
         v = vyber(zpravy, self.out, {}, 2)

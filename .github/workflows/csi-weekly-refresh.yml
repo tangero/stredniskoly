@@ -64,7 +64,12 @@ jobs:
         id: shrnout
         # Automaticky jen při změně seznamu; ručně (workflow_dispatch) lze spustit i bez ní.
         run: |
-          if [ "${{ steps.refresh.outputs.changed }}" = "true" ] || [ "${{ github.event.inputs.shrnuti_i_bez_zmeny }}" = "true" ]; then
+          if [ "${{ steps.refresh.outputs.changed }}" = "true" ]; then
+            echo "ano=true" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.inputs.shrnuti_i_bez_zmeny }}" = "true" ]; then
+            # Seznam se nezměnil: process-csi-data.js přesto přepíše rozdíl prázdným, do PR nepatří.
+            git checkout -- public/csi_inspections.json data/csi_manifest.json data/csi_diff_latest.json
+            git clean -fdq -- data/csi_snapshots
             echo "ano=true" >> "$GITHUB_OUTPUT"
           else
             echo "ano=false" >> "$GITHUB_OUTPUT"
