@@ -1,6 +1,6 @@
 # Spolupráce na GitHubu
 
-Verze 1.0 · 1. 10. 2026
+Verze 1.1 · 2. 10. 2026
 
 Jak spolu na repozitáři pracují Patrick (schvaluje a slučuje), Eduarda (píše zadání), Claude Code
 (realizuje) a komunita (hlásí chyby). Pravidla pro Claude Code jsou závazně v `CLAUDE.md`; tento
@@ -54,8 +54,14 @@ Oponentura, Schváleno, Ke schválení merge a Hotovo. Zapnuté vestavěné auto
 
 Ověřeno na PR #242: po založení se objevil v Návrhu, po merge přešel do Hotovo.
 
-- Automatizace převádějí jen události, ne štítky. Přesun mezi Návrhem, Oponenturou a Schváleno
-  dělá Patrick ručně.
+- Vestavěné automatizace převádějí jen události, ne štítky. Štítek `schvaleno` proto obsluhuje
+  workflow `.github/workflows/tabule-schvaleno.yml`: nastaví Status Schváleno (issue mimo tabuli
+  přidá) a odebere štítek `navrh`; u zavřeného issue nic nemění. Odebrání `schvaleno` vrátí
+  otevřené issue ze Schváleno do Návrhu (u interního zadání i se štítkem `navrh`). Ruční přesun
+  do jiného sloupce workflow nepřepisuje. Potřebuje secret `PROJECT_TOKEN`, klasický token se scopes
+  `project` a `public_repo` (fine-grained token do projektu na osobním účtu zapisovat neumí).
+  Token má omezenou platnost; po vypršení workflow selže a token je potřeba obnovit.
+- Přesun do Oponentury dělá Patrick ručně.
 - Auto-add přidává jen položky založené nebo změněné po zapnutí. Starší zavřené věci na tabuli
   doplněné nejsou, kromě těch, které se ručně synchronizovaly 1. 10. 2026.
 - „Auto-close issue“ a „Pull request linked to issue“ míří na neexistující stav „Done“ (červený
