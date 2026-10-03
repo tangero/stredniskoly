@@ -136,6 +136,10 @@ jobs:
        (github.event_name == 'workflow_dispatch' && inputs.deployment != 'none'))
     runs-on: ubuntu-latest
     timeout-minutes: 25
+    # statuses: write jen pro zápis adresy náhledu ke commitu (krok „Adresa náhledu ke commitu“).
+    permissions:
+      contents: read
+      statuses: write
     concurrency:
       group: vercel-stredniskoly-${{ github.ref }}
       # Probíhající publikaci produkce nepřerušovat. Starší SHA se navíc
@@ -179,6 +183,18 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: bash scripts/vercel-deploy.sh
+
+      # Adresa náhledu jako stav commitu „Náhled (Vercel)“: Claude Code ji čte přes REST API
+      # (commits/<sha>/statuses) pro ověření na preview (.claude/skills/overeni-preview).
+      - name: Adresa náhledu ke commitu
+        if: steps.deploy.outputs.url != '' && env.DEPLOYMENT == 'preview'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          URL: ${{ steps.deploy.outputs.url }}
+        run: |
+          gh api "repos/${GITHUB_REPOSITORY}/statuses/${GITHUB_SHA}" \
+            -f state=success -f context='Náhled (Vercel)' -f target_url="$URL" \
+            -f description='Náhled nasazený z tohoto commitu' >/dev/null
 
       - name: Odstranit stažené prostředí a výstup s konfigurací
         if: always()

@@ -14,6 +14,10 @@ vlastnik: tangero
 # protokol z preview jen od nich nebo od github-actions[bot]; PR jiného autora jen se schvaleno na PR.
 asistent: eduarda-prijimacky
 
+# Smí AI slučovat skriptem scripts/brana/sloucit.mjs? Zapne se samostatným PR (H2) až po přejímce
+# a po přidání brány do rulesetu (docs/postup-zavedeni-faze-0.md, krok 3). Do té doby slučuje vlastník.
+slucovani_ai: false
+
 # Schválení `schvaleno` přidaná před tímto dnem brána při prvním vyhodnocení zaznamená
 # s tehdejším rozsahem; pozdější schválení zaznamená workflow brány hned při přidání štítku.
 platnost_od: "2026-10-03"

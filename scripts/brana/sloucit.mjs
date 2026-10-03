@@ -53,6 +53,10 @@ async function main() {
   console.log(`Kontrola na ${vstup.pr.hlava.sha.slice(0, 7)}: ${kontrola ? `${kontrola.conclusion} (${kontrola.output?.title})` : 'zatím žádná'}`);
 
   if (prepinac === '--jen-vyhodnotit') return;
+  if (konfig.rezimy.slucovani_ai !== true) {
+    console.error('Slučování AI je vypnuté (slucovani_ai v .github/rezimy.yml v main); sloučí vlastník.');
+    process.exit(1);
+  }
   if (vstup.pr.stav !== 'open' || vstup.pr.zakladna !== 'main') {
     console.error('PR není otevřený do main; nesloučeno.');
     process.exit(1);
