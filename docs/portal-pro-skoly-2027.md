@@ -1,6 +1,6 @@
 # Portál pro školy: autorizace a sběr dat
 
-Verze 1.10 · 29. 9. 2026 · Profil školy je v provozním režimu verze 1.8; zadávání kritérií po oborech je pilot bez veřejného zobrazení.
+Verze 1.11 · 3. 10. 2026 · Profil školy je v provozním režimu verze 1.8; zadávání kritérií po oborech je pilot bez veřejného zobrazení.
 
 Navazuje na [návrh rozvoje 2027, oddíl 6 a 7](navrh-rozvoje-2027.md), kde je pilot ověřování profilů školami schválen koncepčně, a uzavírá jeho první otevřenou otázku: jak poznáme, že editor smí editovat profil této školy. Podklady: [zdroje dat](zdroje-dat.md), [systém poznámek ke školám](school-notes-system.md), [datová linka](datova-linka.md).
 
@@ -124,7 +124,7 @@ Cena je zaplacená vědomě: potvrdit prázdný formulář je dražší než odk
 
 - **Údaje od vrstvy 1 (pověřený člověk školy) se publikují bez předchozí moderace**, bez zbytečného odkladu — zápis do `portal_profil` zneplatní tag cache, strop je hodina. Na nic se nečeká.
 - **Pojistkou je zpětná oprava, ne fronta.** `portal_profil` nic nepřepisuje: oprava je nový řádek a zneplatnění starého, návrat k předchozí verzi totéž. Obojí z `/admin/portal` s povinným důvodem.
-- **Každá změna se hlásí zadavateli do Telegramu** hned. To je jediná věc, která ze zpětné moderace dělá moderaci a ne naději.
+- **Každá změna se zapíše do časové osy školy v `/admin`** (událost `profil_zmenen` se seznamem polí). Od verze 1.11 se změny na Telegram nehlásí: zpráva chodila po každé úpravě a zahlcovala kanál. Zpětná moderace tím stojí na pravidelném procházení `/admin`, ne na okamžitém upozornění.
 - **Nesrovnalost v datech katalogu** je jediné, co dál míří do fronty (GitHub issue s labelem `portal-skoly`) — opravit ji musí člověk v datech, ne škola ve svém profilu.
 - **Vrstva 0 (kdokoli) tímhle nijak nezískává.** Hlásí přes „Nahlásit chybu“ a její podněty vyřizuje člověk; publikační právo má jen ověřený účet školy.
 - Každý údaj na webu nese původ a datum: „Potvrdila škola 3. 11. 2026“, „Opravila redakce 19. 9. 2026“, „z dat CERMATu, srpen 2026“, „neověřeno“ ([slovník pojmů](slovnik-pojmu.md), oddíl 4).
@@ -175,3 +175,4 @@ Podmínky, bez kterých to nejde:
 | 1.8 | **Obrácené pořadí moderace (19. 9. 2026), oddíl 4.** Údaje od pověřených lidí školy se publikují bez předchozí moderace; pojistkou je zpětná oprava a oznámení do Telegramu. Obsah profilu se přestěhoval z těla GitHub issue do tabulky `portal_profil` (append-only, jedna platná hodnota na pole a školu, oprava i návrat jsou nový řádek). Stránka školy, předvyplnění formuláře i `/admin` čtou z databáze přes cache s tagem `portal-profil`; `public/portal_skol.json` je nově generovaný export (`npm run portal:export`) a záloha pro běh bez databáze. Do issue jde už jen nesrovnalost v datech katalogu, `scripts/portal-moderace.js` zrušen. InspIS nepředvyplňuje žádné pole (oddíl 3.4). Značka **Potvrdila škola** má novou definici a přibyla **Opravila redakce** ([slovník pojmů](slovnik-pojmu.md) 1.15). Přihlášený editor už nezadává kontaktní e-mail, bere se z účtu. |
 | 1.9 | Opraveno tvrzení, že neexistuje centrální zdroj kritérií: DiPSy má PDF po nabídkách. Prototyp zadávání rozlišuje obor, rok a kolo, s možností jednoho pravidla pro všechna kola a předností výjimky pro konkrétní kolo. Podrobnosti v [prototypu kritérií](prototyp-kriteria-prijeti.md). |
 | 1.10 | **Strukturované zadání kritérií (29. 9. 2026).** Formulář `/pro-skoly/kriteria` místo přepínače a volného textu nabízí: maxima JPZ, přepočet a vyšší váhu předmětu; tabulku dalších bodů (druh, název, maximum, srážka se záporným maximem, poznámka); dopočet celkového maxima a podílu přijímaček s kontrolou proti vyhlášenému maximu; minima; seřazená pravidla při rovnosti; volný zápis „Další pravidla a výjimky“. Předvyplnění z přepisu PDF z DiPSy s povinným potvrzením kontroly, kopírování z jiného zaměření, kola nebo roku. Ročníky z registru (sada `dipsy-kriteria`). |
+| 1.11 | Změny profilu se přestaly hlásit na Telegram (3. 10. 2026), zůstávají v časové ose `/admin` (oddíl 4). |

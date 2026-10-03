@@ -14,7 +14,6 @@ import { cteni, jeNasPuvod, prihlasenyZPozadavku } from '@/lib/portal-relace';
 import { spravceSkoly, zapisUdalost, type PortalRole } from '@/lib/portal-ucty';
 import { zapisUdaje } from '@/lib/portal-profil';
 import { propojIssue, zapisHlaseni } from '@/lib/hlaseni';
-import { posliTelegram } from '@/lib/portal-oznameni';
 import { ipZPozadavku, obnovProfily, odpovedNaChybu } from '@/lib/portal-api';
 
 // In-memory rate limiting: 5 požadavků za 15 minut na IP (stejný vzor jako bug-report)
@@ -94,15 +93,6 @@ async function urciAutora(request: NextRequest, body: Record<string, unknown>): 
   const auth = await resolvePortalAuth(body);
   if (!auth) return { chyba: 'Odkaz vypršel. Požádejte si o nový na stránce Pro školy.', status: 403 };
   return { ...auth, role: null, spravceHosta: await spravceSkoly(cteni, auth.redizo) };
-}
-
-/** Kdo návrh poslal, s osobními údaji: jen do soukromého Telegramu. */
-function popisAutora(autor: Autor, kontakt: string): string {
-  if (autor.role) {
-    const r = autor.role;
-    return `${r.jmeno}${r.funkce ? `, ${r.funkce}` : ''} (${r.role === 'spravce' ? 'správce' : 'editor'} profilu)`;
-  }
-  return `${roleAutora(autor)}, kontakt ${kontakt}`;
 }
 
 /**
@@ -259,12 +249,12 @@ export async function POST(request: NextRequest) {
 
   const base = (process.env.PORTAL_BASE_URL || PORTAL_PRODUKCNI_BASE_URL).replace(/\/$/, '');
   const skolaUrl = nazev ? `${base}/skola/${redizo}-${createSlug(nazev)}` : base;
-  // Zkrácený název („Gymnázium“) školu neurčí; do issue a Telegramu jde s ulicí a obcí.
+  // Zkrácený název („Gymnázium“) školu neurčí; do issue jde s ulicí a obcí.
   const nazevPopis = (await getNazevSAdresou(redizo)) || nazev;
 
   // 1. Zápis profilu. Údaje od školy jdou na web bez předchozí moderace: zadává
   // je ověřený editor školy. Pojistkou není fronta ke schválení, ale zpětná
-  // oprava (portal_profil nic nepřepisuje) a oznámení do Telegramu.
+  // oprava (portal_profil nic nepřepisuje) a záznam v časové ose /admin.
   // Nesrovnalost v datech katalogu se ukládá **v téže transakci** jako profil.
   // Opravit ji musí člověk v datech, ne škola ve svém profilu, takže potřebuje
   // frontu; a kdyby se ukládala zvlášť, mohl by její neúspěch skončit odpovědí
@@ -317,7 +307,7 @@ export async function POST(request: NextRequest) {
     }
   }
 
-  // 3. Stopa, oznámení a potvrzení. Best-effort: profil je zapsaný, selhání
+  // 3. Stopa a potvrzení. Best-effort: profil je zapsaný, selhání
   // tady nesmí vrátit chybu škole.
   try {
     await zapisUdalost(cteni, redizo, autor.role?.id ?? null, 'profil_zmenen', {
@@ -339,21 +329,6 @@ export async function POST(request: NextRequest) {
         profilUrl: `${base}/pro-skoly/profil?skola=${redizo}`,
       });
     }
-    await posliTelegram(
-      [
-        `📝 Profil upraven: ${nazevPopis || redizo} (${redizo})`,
-        popisAutora(autor, payload.kontakt_email),
-        zmenena.length ? `Pole: ${zmenena.join(', ')}` : 'Beze změny v polích',
-        skolaUrl,
-        ...(payload.nesrovnalost
-          ? [
-              issueNumber
-                ? `⚠️ Nesrovnalost: https://github.com/${GITHUB_REPO}/issues/${issueNumber}`
-                : '⚠️ Nesrovnalost ve frontě hlášení v /admin (issue se nepodařilo založit)',
-            ]
-          : []),
-      ].join('\n'),
-    );
   } catch (e) {
     console.error('❌ Portál: záznam po změně profilu selhal', e);
   }
