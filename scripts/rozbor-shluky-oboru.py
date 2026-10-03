@@ -381,7 +381,8 @@ def kontrola_zverejneni(vystup: dict, opravit: bool = False) -> list[str]:
     resp. výpis oborů v přelévání, a vrátí, co potlačil.
     """
     chyby = []
-    for mesto, vm in vystup["mesta"].items():
+    kontejnery = list(vystup["mesta"].items()) + list(vystup.get("bez_hranic", {}).get("mista", {}).items())
+    for mesto, vm in kontejnery:
         for rok, rr in vm["rocniky"].items():
             for o in rr["okruhy"]:
                 if o["uchazecu"] % 10:
@@ -423,6 +424,243 @@ def sum_zaklad(pocty_a: dict, pocty_b: dict, rng) -> dict:
         hodnoty.append(tv({k: v / na for k, v in xa.items()}, {k: v / nb for k, v in xb.items()}))
     hodnoty.sort()
     return {"median": round(hodnoty[len(hodnoty) // 2], 3), "p95": round(hodnoty[int(len(hodnoty) * 0.95)], 3)}
+
+
+def popis_okruhu(volby, vybrane, n_r, vymezeni: dict[str, object], mapa, souhrny, katalog, rng,
+                 vyber: set[str] | None = None) -> dict:
+    """Okruhy po ročnících a přelévání mezi ročníky.
+
+    `vymezeni` přiřazuje obor k území, ve kterém se okruhy hledaly: u městské varianty je to
+    město, u varianty bez hranic měst spádová oblast z přihlášek. Podle něj se počítá podíl
+    uchazečů, kteří měli obor i mimo vymezení, a jmenovatel podílu okruhu na uchazečích oblasti.
+    `vyber` omezí výstup na okruhy, které obsahují aspoň jeden z vybraných oborů.
+    """
+    vystup: dict = {"rocniky": {}}
+    uchazecu_oblasti = {}
+    for r in ROKY:
+        u_obl = collections.Counter()
+        for u in volby[r]:
+            for o in {vymezeni[v["obor"]] for v in u if v["obor"] in vymezeni}:
+                u_obl[o] += 1
+        uchazecu_oblasti[r] = u_obl
+
+    def oblast_okruhu(cl):
+        return collections.Counter(vymezeni[k] for k in cl).most_common(1)[0][0]
+
+    for r in ROKY:
+        n = n_r[r]
+        cast = vybrane[r]
+        pred = prednost(volby[r], cast)
+        prvni, unik, mimo_shluk = prvni_ve_shluku(volby[r], cast)
+        mimo_vymezeni = collections.Counter()
+        z_uchazecu = collections.defaultdict(lambda: {"prijati": 0, "nevesli": 0})
+        for u in volby[r]:
+            for v in u:
+                if v["obor"] in cast and v["stav"] in (PRIJAT, 1):
+                    z_uchazecu[v["obor"]]["prijati" if v["stav"] == PRIJAT else "nevesli"] += 1
+        for u in volby[r]:
+            uvnitr = [v["obor"] for v in u if v["obor"] in cast]
+            for k in set(uvnitr):
+                if any(vymezeni.get(v["obor"]) != vymezeni[k] for v in u):
+                    mimo_vymezeni[k] += 1
+        shluky = []
+        for c in sorted(set(cast.values())):
+            cl = [k for k in cast if cast[k] == c]
+            if len(cl) < 3 or (vyber is not None and not vyber & set(cl)):
+                continue
+            obory = []
+            for k in sorted(cl, key=lambda k: (-n[k], k)):
+                p, s = mapa.get(k, {}), souhrny.get(r, {}).get(k)
+                zdroj_obt = "souhrny_kolo1"
+                if s is None and r not in souhrny and k in z_uchazecu:
+                    # ročník bez souhrnů 1. kola v repozitáři: soutěžící z dat uchazečů (slovník, Soutěžící o obor)
+                    s, zdroj_obt = {"kapacita": None, **z_uchazecu[k]}, "data_uchazecu"
+                pr = pred[k]
+                obory.append({
+                    "klic": k, "skola": p.get("skola"), "obec": p.get("obec"), "obor": p.get("obor"),
+                    "jpz": not bez_jednotne_zkousky(k), "uchazecu": n[k],
+                    # jen podíl na dvě místa: přesné počty by se sečetly a z celku okruhu by vyšel skrytý obor (review #284)
+                    "podil_prvnich_voleb_v_okruhu": round(prvni[k] / unik[c], 2) if prvni[k] >= MIN else None,
+                    "prednost_v_okruhu": round(pr["vys"] / (pr["vys"] + pr["niz"]), 2) if pr["vys"] + pr["niz"] >= MIN else None,
+                    "podil_i_mimo_vymezeni": podil_nad_mezi(mimo_vymezeni[k], n[k]),
+                    "kapacita": s["kapacita"] if s else None,
+                    "zarazeni_obtiznosti": zarazeni(s["prijati"], s["nevesli"]) if s else None,
+                    "podil_prijatych_ze_soutezicich": round(s["prijati"] / (s["prijati"] + s["nevesli"]), 2)
+                    if s and s["prijati"] + s["nevesli"] >= MIN else None,
+                    "zdroj_obtiznosti": zdroj_obt if s else None,
+                })
+            shluky.append({"id": c, "oboru": len(cl), "uchazecu": zaokrouhli(unik[c]),
+                           "podil_s_oborem_jinde_ve_meste": podil_nad_mezi(mimo_shluk[c], unik[c]), "obory": obory})
+        vystup["rocniky"][str(r)] = {"uchazecu_vymezeni": next(iter(uchazecu_oblasti[r].values()))
+                                     if len(uchazecu_oblasti[r]) == 1 else None,
+                                     "okruhy": sorted(shluky, key=lambda s: (-s["uchazecu"], s["id"]))}
+
+    # přelévání: okruhy posledního ročníku přenesené na starší ročníky (stejné obory, jiní uchazeči)
+    posledni = ROKY[-1]
+    ref = vybrane[posledni]
+    prel = []
+    pocty = {r: prvni_ve_shluku(volby[r], ref) for r in ROKY}
+    for c in sorted(set(ref.values())):
+        cl = [k for k in ref if ref[k] == c]
+        if len(cl) < 3 or (vyber is not None and not vyber & set(cl)):
+            continue
+        p_r = {r: {k: pocty[r][0][k] for k in cl} for r in ROKY}
+        nr = {r: sum(p_r[r].values()) for r in ROKY}
+        if min(nr.values()) < MIN:
+            continue
+        obl = oblast_okruhu(cl)
+        kap = {r: sum((souhrny.get(r, {}).get(k) or {}).get("kapacita", 0) for k in cl) for r in ROKY if r in souhrny}
+        # přihlášky z katalogu (jen obory s jednotnou zkouškou vedené ve všech ročnících katalogu)
+        v_katalogu = [k for k in cl if all(k in katalog[r] for r in katalog)]
+        prihl_kat = {r: sum(katalog[r][k] for k in v_katalogu) for r in katalog}
+        presun = {}
+        for ra, rb in zip(ROKY, ROKY[1:]):
+            nove = [k for k in cl if p_r[ra][k] == 0]
+            presun[f"{ra}-{rb}"] = {
+                "presun_zajmu_v_okruhu": round(tv({k: v / nr[ra] for k, v in p_r[ra].items()}, {k: v / nr[rb] for k, v in p_r[rb].items()}), 3),
+                "sum": sum_zaklad(p_r[ra], p_r[rb], rng),
+                "nove_obory": len(nove),
+                "podil_prvnich_voleb_na_nove_obory": podil_nad_mezi(sum(p_r[rb][k] for k in nove), nr[rb]),
+            }
+        predposledni = ROKY[-2]
+        prel.append({
+            "id": c, "oboru": len(cl),
+            "uchazecu": {str(r): zaokrouhli(pocty[r][1][c]) for r in ROKY},
+            "podil_okruhu_na_uchazecich_oblasti": {str(r): round(zaokrouhli(pocty[r][1][c]) / uchazecu_oblasti[r][obl], 3) for r in ROKY},
+            "kapacita": {str(r): v for r, v in kap.items()},
+            "presun": presun,
+            "prihlasky_katalog": {"oboru": len(v_katalogu), **prihl_kat},
+            "nejvetsi_zmeny": sorted(
+                ({"klic": k, "skola": mapa.get(k, {}).get("skola"), "obor": mapa.get(k, {}).get("obor"),
+                  "podil": {str(r): round(p_r[r][k] / nr[r], 2) for r in ROKY}}
+                 for k in cl if all(p_r[r][k] == 0 or p_r[r][k] >= MIN for r in ROKY)),
+                key=lambda x: (-abs(x["podil"][str(posledni)] - x["podil"][str(predposledni)]), x["klic"]))[:5],
+        })
+    vystup["prelevani"] = sorted(prel, key=lambda x: (-x["uchazecu"][str(ROKY[-1])], x["id"]))
+    return vystup
+
+
+# ---------------------------------------------------------------- vymezení bez hranic měst
+
+MISTA_BEZ_HRANIC = ("Brno", "Praha", "Brandýs nad Labem-Stará Boleslav")
+UKAZKY_KAM_DAL = ("600007774_79-41-K/41", "600013928_79-41-K/41")  # gymnázium Brandýs, gymnázium Vranovská
+
+
+def oblasti_prihlasek(volby, vsechny: set[str], vaha: str) -> tuple[dict[str, int], dict]:
+    """Spádové oblasti: Louvain nad grafem sloučených přihlášek všech ročníků.
+
+    Oblast je zeměpisná a mezi ročníky se skoro nemění; odhad z jednoho ročníku by její hranice
+    posouval a s nimi i okruhy (ARI okruhů 0,51–0,56 proti 0,58 při sloučených ročnících).
+    Odhaduje se znovu s každým novým ročníkem dat.
+    """
+    vse = [u for r in ROKY for u in volby[r]]
+    g, _, _ = graf_mesta(vse, vsechny, vaha)
+    return nejlepsi_rozdeleni(g, 1.0)
+
+
+def okruhy_v_oblastech(volby_r, vsechny: set[str], oblast: dict[str, int]):
+    """Okruhy jednoho ročníku: Louvain (normovaná váha, γ = 1) uvnitř každé oblasti zvlášť."""
+    g, n, _ = graf_mesta(volby_r, vsechny, VYBRANA[0])
+    cast: dict[str, int] = {}
+    for o in sorted(set(oblast.values())):
+        sub = {u: {v: w for v, w in g[u].items() if oblast.get(v) == o} for u in g if oblast.get(u) == o}
+        if not sub:
+            continue
+        c2, _ = nejlepsi_rozdeleni(sub, VYBRANA[1])
+        for u, x in c2.items():
+            cast[u] = o * 10000 + x
+    # obor, který v ročníku sloučeném grafu nebyl, stojí samostatně
+    for u in g:
+        cast.setdefault(u, -1 - len(cast))
+    return cast, n
+
+
+def uzavrenost(volby_r, oblast) -> float:
+    """Podíl dvojic oborů na jedné přihlášce, které leží v téže oblasti."""
+    v = t = 0
+    for u in volby_r:
+        ob = [x["obor"] for x in u if x["obor"] in oblast]
+        for a, b in itertools.combinations(ob, 2):
+            t += 1
+            v += oblast[a] == oblast[b]
+    return round(v / t, 3) if t else 0.0
+
+
+def shoda_ve_shlucich(a: dict, b: dict, uzly: set[str], rng) -> dict:
+    ca, cb = collections.Counter(a.values()), collections.Counter(b.values())
+    vybrane = {k for k in set(a) & set(b) & uzly if ca[a[k]] >= 3 or cb[b[k]] >= 3}
+    return {"uzlu": len(vybrane), **shoda(a, b, vybrane), "nahodne": nahodny_zaklad(a, b, vybrane, rng)}
+
+
+def kam_dal(volby_r, klic: str, mapa) -> dict:
+    """Stránka oboru bez hranic měst: kam další se hlásili uchazeči oboru, po oborech a po obcích."""
+    uch = [u for u in volby_r if any(v["obor"] == klic for v in u)]
+    n = len(uch)
+    obory, vys, obce = collections.Counter(), collections.Counter(), collections.Counter()
+    for u in uch:
+        moje = next(v["pozice"] for v in u if v["obor"] == klic)
+        dalsi = [v for v in u if v["obor"] != klic]
+        for v in dalsi:
+            obory[v["obor"]] += 1
+            if moje < v["pozice"]:
+                vys[v["obor"]] += 1
+        for ob in {mapa.get(v["obor"], {}).get("obec") or "neznámá obec" for v in dalsi}:
+            obce[ob] += 1
+    return {
+        "klic": klic, "skola": mapa.get(klic, {}).get("skola"), "obec": mapa.get(klic, {}).get("obec"), "uchazecu": n,
+        "obory": [{"klic": k, "skola": mapa.get(k, {}).get("skola"), "obec": mapa.get(k, {}).get("obec"),
+                   "obor": mapa.get(k, {}).get("obor"), "uchazecu": c, "podil": round(c / n, 2),
+                   "tento_obor_vys": podil_nad_mezi(vys[k], c)}
+                  for k, c in sorted(obory.items(), key=lambda x: (-x[1], x[0])) if c >= MIN],
+        "obce": [{"obec": o, "podil": podil_nad_mezi(c, n)}
+                 for o, c in sorted(obce.items(), key=lambda x: (-x[1], x[0])) if podil_nad_mezi(c, n) is not None],
+    }
+
+
+def bez_hranic(volby, mapa, souhrny, katalog, rng) -> dict:
+    vsechny = set(mapa)
+    out: dict = {"varianty_oblasti": [], "mista": {}, "kam_dal": {}}
+    vysledky = {}
+    for vaha in ("pocet", "normovana"):
+        oblast, st = oblasti_prihlasek(volby, vsechny, vaha)
+        casti = {r: okruhy_v_oblastech(volby[r], vsechny, oblast) for r in ROKY}
+        vel = sorted(collections.Counter(oblast.values()).values(), reverse=True)
+        rad = {"vaha_oblasti": vaha, "oblasti_aspon_10_oboru": sum(1 for v in vel if v >= 10),
+               "velikosti": vel[:8], "modularita": st["modularita"],
+               "uzavrenost": {str(r): uzavrenost(volby[r], oblast) for r in ROKY}, "shoda_okruhu": {}}
+        for nazev, uzly in (("celkem", vsechny), ("Brno", {k for k, p in mapa.items() if p.get("obec") == "Brno"}),
+                            ("Praha", {k for k, p in mapa.items() if p.get("obec") == "Praha"}),
+                            ("mimo Brno a Prahu", {k for k, p in mapa.items() if p.get("obec") not in ("Brno", "Praha")})):
+            rad["shoda_okruhu"][nazev] = {f"{ra}-{rb}": shoda_ve_shlucich(casti[ra][0], casti[rb][0], uzly, rng)
+                                          for ra, rb in itertools.combinations(ROKY, 2)}
+        out["varianty_oblasti"].append(rad)
+        vysledky[vaha] = (oblast, casti)
+    oblast, casti = vysledky[VYBRANA[0]]
+    # srovnání s okruhy počítanými jen ve městě
+    for mesto in MESTA:
+        um = {k for k, p in mapa.items() if p.get("obec") == mesto}
+        gm, _, _ = graf_mesta(volby[ROKY[-1]], um, VYBRANA[0])
+        cm, _ = nejlepsi_rozdeleni(gm, VYBRANA[1])
+        cc = collections.Counter(cm.values())
+        spol = {k for k in cm if k in casti[ROKY[-1]][0] and cc[cm[k]] >= 3}
+        out.setdefault("shoda_s_mestskymi_okruhy", {})[mesto] = {"uzlu": len(spol), **shoda(cm, casti[ROKY[-1]][0], spol)}
+    hrany = {r: graf_mesta(volby[r], vsechny, "pocet")[0] for r in ROKY}  # hrany = aspoň 10 společných uchazečů
+    for misto in MISTA_BEZ_HRANIC:
+        vyber = {k for k, p in mapa.items() if p.get("obec") == misto}
+        popis = popis_okruhu(volby, {r: casti[r][0] for r in ROKY}, {r: casti[r][1] for r in ROKY},
+                             oblast, mapa, souhrny, katalog, rng, vyber=vyber)
+        # obor z okolí je v okruhu města „ukotvený“, má-li s některým oborem okruhu v místě aspoň 10 společných
+        # uchazečů; jinak ho do okruhu přivedl jen řetěz slabších vazeb (gymnázium v Brandýse u pražských
+        # bezpečnostních oborů) a na stránce místa se neukáže
+        for rok, rr in popis["rocniky"].items():
+            for o in rr["okruhy"]:
+                mistni = {x["klic"] for x in o["obory"] if x["klic"] in vyber}
+                for x in o["obory"]:
+                    x["ukotven_k_mistu"] = x["klic"] in vyber or any(m in hrany[int(rok)].get(x["klic"], {}) for m in mistni)
+        out["mista"][misto] = popis
+    for klic in UKAZKY_KAM_DAL:
+        out["kam_dal"][klic] = kam_dal(volby[ROKY[-1]], klic, mapa)
+    return out
 
 
 # ---------------------------------------------------------------- hlavní běh
@@ -483,99 +721,14 @@ def main() -> None:
             if (vaha, gamma) == VYBRANA:
                 vybrane = casti
 
-        # popis vybraných shluků po ročnících
-        for r in ROKY:
-            g, n = grafy[(r, VYBRANA[0])]
-            cast = vybrane[r]
-            pred = prednost(volby[r], cast)
-            prvni, unik, mimo_shluk = prvni_ve_shluku(volby[r], cast)
-            mimo_mesto = collections.Counter()
-            z_uchazecu = collections.defaultdict(lambda: {"prijati": 0, "nevesli": 0})
-            for u in volby[r]:
-                for v in u:
-                    if v["obor"] in cast and v["stav"] in (PRIJAT, 1):
-                        z_uchazecu[v["obor"]]["prijati" if v["stav"] == PRIJAT else "nevesli"] += 1
-            for u in volby[r]:
-                v_meste = [v["obor"] for v in u if v["obor"] in cast]
-                if v_meste and any(v["obor"] not in uzly_mesta for v in u):
-                    for k in set(v_meste):
-                        mimo_mesto[k] += 1
-            shluky = []
-            for c in sorted(set(cast.values())):
-                cl = [k for k in cast if cast[k] == c]
-                if len(cl) < 3:
-                    continue
-                obory = []
-                for k in sorted(cl, key=lambda k: (-n[k], k)):
-                    p, s = mapa.get(k, {}), souhrny.get(r, {}).get(k)
-                    zdroj_obt = "souhrny_kolo1"
-                    if s is None and r not in souhrny and k in z_uchazecu:
-                        # ročník bez souhrnů 1. kola v repozitáři: soutěžící z dat uchazečů (slovník, Soutěžící o obor)
-                        s, zdroj_obt = {"kapacita": None, **z_uchazecu[k]}, "data_uchazecu"
-                    pr = pred[k]
-                    obory.append({
-                        "klic": k, "skola": p.get("skola"), "obor": p.get("obor"), "jpz": not bez_jednotne_zkousky(k),
-                        "uchazecu": n[k],
-                        # jen podíl na dvě místa: přesné počty by se sečetly a z celku okruhu by vyšel skrytý obor (review #284)
-                        "podil_prvnich_voleb_v_okruhu": round(prvni[k] / unik[c], 2) if prvni[k] >= MIN else None,
-                        "prednost_v_okruhu": round(pr["vys"] / (pr["vys"] + pr["niz"]), 2) if pr["vys"] + pr["niz"] >= MIN else None,
-                        "podil_i_mimo_mesto": podil_nad_mezi(mimo_mesto[k], n[k]),
-                        "kapacita": s["kapacita"] if s else None,
-                        "zarazeni_obtiznosti": zarazeni(s["prijati"], s["nevesli"]) if s else None,
-                        "podil_prijatych_ze_soutezicich": round(s["prijati"] / (s["prijati"] + s["nevesli"]), 2)
-                        if s and s["prijati"] + s["nevesli"] >= MIN else None,
-                        "zdroj_obtiznosti": zdroj_obt if s else None,
-                    })
-                shluky.append({"id": c, "oboru": len(cl), "uchazecu": zaokrouhli(unik[c]),
-                               "podil_s_oborem_jinde_ve_meste": podil_nad_mezi(mimo_shluk[c], unik[c]), "obory": obory})
-            mesto_uch = sum(1 for u in volby[r] if any(v["obor"] in uzly_mesta for v in u))
-            vm["rocniky"][str(r)] = {"uchazecu_mesta": mesto_uch, "okruhy": sorted(shluky, key=lambda s: (-s["uchazecu"], s["id"]))}
-
-        # přelévání: okruhy posledního ročníku přenesené na starší ročníky (stejné obory, jiní uchazeči)
-        posledni = ROKY[-1]
-        ref = vybrane[posledni]
-        prel = []
-        mesto_uch = {r: vm["rocniky"][str(r)]["uchazecu_mesta"] for r in ROKY}
-        pocty = {r: prvni_ve_shluku(volby[r], ref) for r in ROKY}
-        for c in sorted(set(ref.values())):
-            cl = [k for k in ref if ref[k] == c]
-            if len(cl) < 3:
-                continue
-            p_r = {r: {k: pocty[r][0][k] for k in cl} for r in ROKY}
-            nr = {r: sum(p_r[r].values()) for r in ROKY}
-            if min(nr.values()) < MIN:
-                continue
-            kap = {r: sum((souhrny.get(r, {}).get(k) or {}).get("kapacita", 0) for k in cl) for r in ROKY if r in souhrny}
-            # přihlášky z katalogu (jen obory s jednotnou zkouškou vedené ve všech ročnících katalogu)
-            v_katalogu = [k for k in cl if all(k in katalog[r] for r in katalog)]
-            prihl_kat = {r: sum(katalog[r][k] for k in v_katalogu) for r in katalog}
-            presun = {}
-            for ra, rb in zip(ROKY, ROKY[1:]):
-                nove = [k for k in cl if p_r[ra][k] == 0]
-                presun[f"{ra}-{rb}"] = {
-                    "presun_zajmu_v_okruhu": round(tv({k: v / nr[ra] for k, v in p_r[ra].items()}, {k: v / nr[rb] for k, v in p_r[rb].items()}), 3),
-                    "sum": sum_zaklad(p_r[ra], p_r[rb], rng),
-                    "nove_obory": len(nove),
-                    "podil_prvnich_voleb_na_nove_obory": podil_nad_mezi(sum(p_r[rb][k] for k in nove), nr[rb]),
-                }
-            predposledni = ROKY[-2]
-            prel.append({
-                "id": c, "oboru": len(cl),
-                "uchazecu": {str(r): zaokrouhli(pocty[r][1][c]) for r in ROKY},
-                "podil_okruhu_na_uchazecich_mesta": {str(r): round(zaokrouhli(pocty[r][1][c]) / mesto_uch[r], 3) for r in ROKY},
-                "kapacita": {str(r): v for r, v in kap.items()},
-                "presun": presun,
-                "prihlasky_katalog": {"oboru": len(v_katalogu), **prihl_kat},
-                "nejvetsi_zmeny": sorted(
-                    ({"klic": k, "skola": mapa.get(k, {}).get("skola"), "obor": mapa.get(k, {}).get("obor"),
-                      "podil": {str(r): round(p_r[r][k] / nr[r], 2) for r in ROKY}}
-                     for k in cl if all(p_r[r][k] == 0 or p_r[r][k] >= MIN for r in ROKY)),
-                    key=lambda x: (-abs(x["podil"][str(posledni)] - x["podil"][str(predposledni)]), x["klic"]))[:5],
-            })
-        vm["prelevani"] = sorted(prel, key=lambda x: (-x["uchazecu"][str(ROKY[-1])], x["id"]))
+        vymezeni = {k: mesto for k in uzly_mesta}
+        vm.update(popis_okruhu(volby, vybrane, {r: grafy[(r, VYBRANA[0])][1] for r in ROKY}, vymezeni,
+                               mapa, souhrny, katalog, rng))
         vystup["mesta"][mesto] = vm
         print(mesto, "hotovo", file=sys.stderr)
 
+    vystup["bez_hranic"] = bez_hranic(volby, mapa, souhrny, katalog, rng)
+    print("bez hranic hotovo", file=sys.stderr)
     for c in kontrola_zverejneni(vystup, opravit=True):
         print(f"doplňkové potlačení: {c}", file=sys.stderr)
     chyby = kontrola_zverejneni(vystup)

@@ -1,6 +1,6 @@
 # Okruhy oborů ve městě: shluky podle souběžných přihlášek
 
-Verze 1.1 · 3. 10. 2026 · **Návrh ke schválení, etapa 1 zadání [#277](https://github.com/tangero/stredniskoly/issues/277).** Web se nemění. Realizace (etapa 2) se doplní do zadání až po schválení.
+Verze 1.2 · 3. 10. 2026 · **Návrh etapy 1 zadání [#277](https://github.com/tangero/stredniskoly/issues/277) s rozhodnutími vlastníka z 3. 10. 2026 (oddíl 9).** Web se nemění. Realizace (etapa 2) se doplní do zadání. Verze 1.2 přidává okruhy bez hranic měst (oddíl 6a), protože uchazeči se nehlásí jen do svého města.
 
 Rozbor reprodukuje `python3 scripts/rozbor-shluky-oboru.py`. Výstup je v [podkladu](podklady/shluky-oboru-2026-10-03.json), který neobsahuje řádky o jednotlivých uchazečích ani počty pod 10.
 
@@ -11,7 +11,8 @@ Rozbor reprodukuje `python3 scripts/rozbor-shluky-oboru.py`. Výstup je v [podkl
 3. **Zájem z okruhu neodchází, přesouvá se uvnitř něj.** Podíl okruhu na uchazečích města se za tři roky změnil v Brně nejvýš o 1,3 procentního bodu, v Praze o 2,5 bodu (okruh soukromých a alternativních gymnázií, do kterého přibyly nové školy). Rozdělení uchazečů mezi obory uvnitř okruhu se ale posouvá víc, než dovoluje náhoda: mezi 2024 a 2025 u 8 ze 13 okruhů v Brně a 14 z 21 v Praze, mezi 2025 a 2026 u 4 a 16. Nejsilnější příklad je čtyřleté gymnázium SPŠ chemické a gymnázia Brno na Vranovské: 249, 491 a 247 uchazečů v letech 2024, 2025 a 2026, přijetí „dostala se většina“, pak „těžké“, pak zase „dostala se většina“. Gymnázium Matyáše Lercha a Gymnázium na Slovanském náměstí se pohybovala přesně opačně.
 4. **Přihlášky souvisejí s obtížností z předchozího roku.** U čtyřletých gymnázií v celé zemi platí: čím snazší bylo přijetí v roce 2025, tím víc přihlášek obor dostal v roce 2026, i po odečtení návratu k průměru po skoku v roce 2025 (oddíl 5.4). Je to souvislost, ne doložená příčina: slučuje se s hypotézou, že rodiny volí podle obtížnosti z minulého roku, ale data neříkají, podle čeho se rodiny rozhodovaly. Doloženo je, že obtížnost přijetí jednoho oboru se mezi ročníky silně mění, a proto ji jeden ročník nepopisuje.
 5. **Směr přihlášek uvnitř okruhu je čitelný.** U každého oboru jde říct, jak často ho uchazeči měli na přihlášce výš než ostatní obory okruhu. Ve čtyřletých gymnáziích Brna má Gymnázium Matyáše Lercha 0,67 a Moravské gymnázium 0,13.
-6. **Doporučení:** okruh ukázat jako rozšíření sekce „Kam se hlásí stejní uchazeči“ na stránce oboru a jako přehled okruhů na stránce města. Obtížnost přijetí jen jako odznak u oboru, neřadit podle ní. Vlastní stránku okruhu zatím nestavět (oddíl 7).
+6. **Hranice města okruh neurčuje.** Uchazeči o gymnázium v Brandýse nad Labem mají na přihlášce z 56 % i obor v Praze a z 32 % gymnázium v Čelákovicích. Okruhy se proto počítají nad celou zemí uvnitř spádových oblastí odhadnutých z přihlášek (oddíl 6a). Ve velkých městech vycházejí stejně jako okruhy počítané jen ve městě a přidají obory z okolí. Rozptýlené vazby předměstí do velkého města (56 % uchazečů do 40 různých pražských oborů, žádný s 10 společnými) ale žádné rozdělení na okruhy nezachytí. Ukáže je až souhrn po obcích na stránce oboru.
+7. **Rozhodnutí vlastníka 3. 10. 2026:** stránka oboru dostane blok „Které další obory v okolí uchazeči také volí“ bez hranic měst, s obory a souhrnem po obcích. Stránka města dostane okruhy ze spádových oblastí. Vlastní stránka okruhu nebude. Obtížnost přijetí jen jako odznak u oboru, neřadit podle ní (oddíly 7 a 9).
 
 ## 1. Rozbor zdrojů
 
@@ -160,7 +161,7 @@ Dalších 67 oborů s aspoň 10 uchazeči nemá s žádným jiným oborem ve mě
 
 Okruhy roku 2026 se přenesou na data let 2025 a 2024: tytéž obory, ale **jiní uchazeči**. Každý rok se hlásí jiný ročník dětí, takže nejde o to, že by tytéž děti přešly jinam. Je to posun poptávky mezi ročníky.
 
-- **Podíl okruhu na uchazečích města:** různí uchazeči okruhu ÷ uchazeči města. Ukazuje, zda zájem z okruhu odchází.
+- **Podíl okruhu na uchazečích oblasti** (v této městské variantě je oblastí město): různí uchazeči okruhu ÷ uchazeči města. Ukazuje, zda zájem z okruhu odchází.
 - **Přesun zájmu v okruhu:** u každého uchazeče okruhu se vezme obor, který měl z okruhu na přihlášce nejvýš. Rozdělení těchto voleb mezi obory okruhu se porovná mezi ročníky součtem kladných rozdílů podílů (polovina součtu absolutních rozdílů, *total variation*). Hodnota 0,10 znamená, že se mezi obory okruhu přesunula desetina zájmu.
 - **Šum:** kolik přesunu dá samotná náhoda, když se oba ročníky losují ze stejného rozdělení se stejným počtem uchazečů. Přesun nad 95. percentilem šumu je skutečný posun.
 
@@ -271,21 +272,75 @@ Dvě věci jsou vidět hned. Přednost je mezi ročníky stabilnější než obt
 
 Podobný údaj už web má: *Kohorta podle pozice na přihlášce* srovnává podíl prvních voleb s obory stejného typu v celé zemi. Přednost v okruhu srovnává jen s obory, mezi kterými se titíž uchazeči skutečně rozhodovali. Může se lišit: obor, který je celostátně „záložní volba“, může být v okruhu svého města spíš výš.
 
+## 6a. Okruhy bez hranic měst
+
+Okruhy v oddílech 3–6 se hledaly jen mezi obory jednoho města. Vlastník projektu 3. 10. 2026 upozornil, že rodina z Brandýsa nad Labem volí i školy v Praze a v Čelákovicích, takže okruh nejde omezit hranicí města. Tento oddíl měří, co se změní, když hranice padne.
+
+### 6a.1 Kam se hlásí uchazeči z okolí: příklad Brandýsu
+
+Čtyřleté Gymnázium J. S. Machara v Brandýse nad Labem-Staré Boleslavi, rok 2026, 94 uchazečů. Kromě tohoto oboru měli na přihlášce obor:
+
+| Obec | Podíl uchazečů |
+|---|---:|
+| Praha | 56 % |
+| Čelákovice | 32 % |
+| Brandýs nad Labem-Stará Boleslav (jiný obor) | 27 % |
+| Neratovice | 23 % |
+
+Konkrétní obory s aspoň 10 společnými uchazeči jsou jen čtyři: gymnázium v Čelákovicích (30), gymnázium v Neratovicích (20), technické lyceum téže školy (17) a zemědělská škola v Brandýse (10). **Pražských oborů je na přihláškách 40 a žádný nemá 10 společných uchazečů.** Vazba do Prahy je silná jako celek, ale rozptýlená. Z dvojic oborů ji nevyčte žádná metoda, která respektuje mez zveřejnění. Ukáže ji až souhrn po obcích.
+
+Je to i jednosměrné: uchazeči z Brandýsa se hlásí do Prahy, pražští uchazeči do Brandýsa skoro ne. Rozdělení na okruhy, ve kterém každý obor patří do jednoho okruhu, tuhle nesouměrnost nevyjádří.
+
+### 6a.2 Metoda: spádové oblasti a okruhy uvnitř nich
+
+1. **Spádová oblast** (*Oblast přihlášek*): Louvain nad grafem všech oborů v zemi, kde se přihlášky let 2024–2026 sčítají. Oblast je zeměpisná a mezi ročníky se skoro nemění. Odhad z jednoho ročníku posouval hranice oblastí a s nimi i okruhy. V pokusu mimo skript držely oblasti z jednoho ročníku jen 64–69 % dvojic oborů na přihláškách uvnitř oblasti a shoda okruhů mezi ročníky byla 0,51–0,56. Oblasti se odhadují znovu s každým novým ročníkem dat.
+2. **Okruhy** po ročnících: tatáž metoda jako ve městě (normovaná váha, γ = 1,0), jen uvnitř každé spádové oblasti místo uvnitř města.
+
+Zkoušené váhy pro oblasti (rok 2026; shoda = ARI okruhů na oborech v okruzích, náhoda nejvýš 0,02):
+
+| Váha oblastí | Oblastí s ≥ 10 obory | Dvojice oborů na přihlášce uvnitř oblasti | Shoda okruhů, celá země | Brno | Praha | mimo Brno a Prahu |
+|---|---:|---:|---|---|---|---|
+| počet | 38 | 83 % | 0,57–0,60 | 0,67–0,80 | 0,64–0,67 | 0,55–0,57 |
+| **normovaná** | **39** | **84 %** | 0,58–0,59 | 0,66–0,78 | 0,63–0,66 | 0,55–0,56 |
+
+Volba: normovaná váha, stejně jako u okruhů. **Okruhy Brna a Prahy počítané bez hranic se s městskými okruhy shodují: Brno 0,94, Praha 0,82.** Metoda tedy ve velkých městech dává totéž, co oddíl 4, a přidává obory z okolí. Mimo velká města je shoda mezi ročníky nižší (0,55–0,56), protože obory tam mají méně uchazečů.
+
+Zkoušel jsem i jednu úroveň nad celou zemí s vyšším rozlišením (γ = 2, 3, 5). Okruhy pak míchaly typy oborů a brandýské gymnázium skončilo u Litoměřic, shoda 0,52–0,58. Zkoušel jsem i dodatečné rozdělení každého okruhu (zjemnění po vzoru Leidenu). Shodu zhoršilo a problém z 6a.3 nevyřešilo. Obojí je zamítnuté.
+
+### 6a.3 Ukotvení oborů z okolí
+
+Malá místní skupina na okraji oblasti se připojí k okruhu, kam ji dotáhne řetěz slabších vazeb. Gymnázium v Brandýse, jeho technické lyceum a zemědělská škola tak v roce 2026 vyšly v pražském okruhu bezpečnostních a veřejnosprávních oborů. Spojily je s ním dvě slabé vazby: gymnázia v Čelákovicích na pražské gymnázium SKOLAEUPRAHA a zemědělské školy na jeden pražský obor.
+
+Proto pravidlo **ukotvení**: obor z jiné obce se na stránce města v okruhu ukáže, jen když má s některým oborem toho okruhu ve městě aspoň 10 společných uchazečů (pole `ukotven_k_mistu`). Rok 2026:
+
+| Město | Okruhů | Oborů z okolí v okruzích | z toho ukotvených | Příklady ukotvených |
+|---|---:|---:|---:|---|
+| Brno | 16 | 41 | 20 | Tišnov, Slavkov u Brna, Letovice, Kuřim, Rajhrad |
+| Praha | 31 | 28 | 19 | Čelákovice, Hostivice, Říčany, Jesenice, Dolní Břežany |
+
+Pražský okruh osmiletých gymnázií tak obsahuje osmiletá gymnázia v Brandýse, Čelákovicích, Kralupech, Neratovicích a Českém Brodě. Brandýské obory u pražských bezpečnostních oborů ukotvené nejsou a na stránce Prahy se neukážou.
+
+### 6a.4 Co z toho plyne pro zobrazení
+
+- **Stránka oboru:** okruh nepotřebuje. Blok „Které další obory v okolí uchazeči také volí“ ukáže obory s aspoň 10 společnými uchazeči bez ohledu na obec a pod nimi **souhrn po obcích** (*Souběžné přihlášky podle obce*: „56 % uchazečů mělo na přihlášce i obor v Praze“). To je přesná odpověď na příklad Brandýsu.
+- **Stránka města:** okruhy ze spádových oblastí, s ukotvenými obory z okolí označenými obcí.
+- **Mezi ročníky** se okruhy bez hranic chovají ve velkých městech jako městské. Přelévání a přednost z oddílů 5 a 6 platí beze změny. Podklad je nese i pro okruhy bez hranic, jmenovatelem podílu okruhu je počet uchazečů spádové oblasti.
+
 ## 7. Co ukázat a co ne
 
 ### 7.1 Kde
 
 | Možnost | Pro | Proti |
 |---|---|---|
-| **A. Stránka oboru, rozšíření sekce „Kam se hlásí stejní uchazeči“** | Rodina je tam, když řeší konkrétní obor. Navazuje na existující sekci, okruh jen rozšíří šest sousedů na celou skupinu. | Na stránce oboru je už hodně bloků; okruh musí být sbalený. |
-| **B. Stránka města, přehled okruhů** | Odpovídá na otázku podnětu: mezi čím se ve velkém městě rozhoduje. Karty škol tam už jsou ([stránka města](navrh-stranky-mesta-2027.md)). | Jen pro města s okruhy (Praha, Brno a další s dost obory, oddíl 9). |
+| **A. Stránka oboru, blok „Které další obory v okolí uchazeči také volí“** | Rodina je tam, když řeší konkrétní obor. Rozšíří sekci „Kam se hlásí stejní uchazeči“ o obory bez ohledu na obec a o souhrn po obcích (oddíl 6a.4). | Na stránce oboru je už hodně bloků; blok musí být sbalený. |
+| **B. Stránka města, přehled okruhů** | Odpovídá na otázku podnětu: mezi čím se ve velkém městě rozhoduje. Okruhy ze spádových oblastí přidají ukotvené obory z okolí (oddíl 6a.3). | Jen pro města, kde okruhy vycházejí (oddíl 9). |
 | C. Vlastní stránka okruhu | Prostor pro vývoj mezi ročníky a celou tabulku. | Okruh nemá stabilní identitu (shoda 0,66–0,76, okrajové obory přeskakují) ani přirozený název. Stránka s adresou by z něj udělala kategorii, kterou není. Přibyly by desítky tenkých stránek. |
 
-**Doporučení: A a B, C ne.** Na stránce oboru blok „Obory, mezi kterými se uchazeči rozhodují“ jako rozbalitelné rozšíření sekce „Kam se hlásí stejní uchazeči“. Na stránce města oddíl s okruhy jako odkazy na seznam oborů okruhu na téže stránce (filtr, ne nová adresa).
+**Rozhodnuto 3. 10. 2026: A a B, C ne.** Na stránce oboru blok „Které další obory v okolí uchazeči také volí“ jako rozbalitelné rozšíření sekce „Kam se hlásí stejní uchazeči“. Na stránce města oddíl s okruhy jako odkazy na seznam oborů okruhu na téže stránce (filtr, ne nová adresa). Nástavby jsou tam zvlášť jako „Kam po výučním listu“.
 
 ### 7.2 Co v bloku
 
-U oboru v okruhu: název školy a oboru, počet uchazečů, přednost v okruhu slovy, odznak obtížnosti přijetí s rokem, u učebních oborů značka „bez jednotné zkoušky“. Pod tabulkou u okruhu: kolik uchazečů měl okruh v obou ročnících a kolik z nich mělo na přihlášce i obor mimo okruh.
+U oboru v okruhu: název školy a oboru, u oboru z jiné obce i obec, počet uchazečů, přednost v okruhu slovy, odznak obtížnosti přijetí s rokem, u učebních oborů značka „bez jednotné zkoušky“. Pod tabulkou u okruhu: kolik uchazečů měl okruh v obou ročnících a kolik z nich mělo na přihlášce i obor mimo okruh.
 
 **Řazení: podle počtu uchazečů**, nikdy podle obtížnosti ani podle přednosti. Počet uchazečů říká, jak velká část rozhodování na obor připadá, a neplete se s kvalitou. Řazení podle přednosti by z okruhu udělalo žebříček oblíbenosti.
 
@@ -304,37 +359,47 @@ Pravidla pro texty bloku (požadavek zadání):
 
 ### 7.4 Pojmenování okruhu
 
-Zdroj název nenese. Ruční pojmenování v oddílu 4 se do etapy 2 nepřenáší, protože se okruhy přepočítají. Návrh pro etapu 2: název z převažujícího druhu oborů podle prvních dvou číslic KKOV a kategorie (79-41-K/41 → „čtyřletá gymnázia“, 63-41-M → „obchodní akademie a ekonomické obory“), s ručním převodníkem do 30 položek. Kde žádný druh nepřevažuje, okruh se pojmenuje podle tří největších oborů („Gymnázium Křenová, Gymnázium Elgartova a další“). Převodník je otevřená otázka etapy 2.
+Zdroj název nenese. **Rozhodnuto 3. 10. 2026:** zatím se okruhy nepojmenovávají a blok nese univerzální nadpis „Které další obory v okolí uchazeči také volí“. Na stránce města se okruh uvede třemi největšími obory („Gymnázium Křenová, Gymnázium Elgartova a další“). Převodník KKOV → název (79-41-K/41 → „čtyřletá gymnázia“) se případně doplní později. Ruční pojmenování z oddílu 4 slouží jen tomuto návrhu.
 
 ### 7.5 Meze zveřejnění a dopočítávání
 
-- Obor v okruhu jen s aspoň 10 uchazeči ve městě, hrana jen s aspoň 10 společnými uchazeči (už v metodě).
+- Obor v okruhu jen s aspoň 10 uchazeči, hrana jen s aspoň 10 společnými uchazeči (už v metodě).
 - Přednost v okruhu a podíl prvních voleb v okruhu se u oboru zobrazí jen při aspoň 10 dvojicích, resp. 10 uchazečích. **Podíl prvních voleb v okruhu se zveřejňuje jen jako podíl na dvě desetinná místa, nikdy jako počet**: přesné počty zobrazených oborů by se sečetly a odečetly od celku okruhu.
 - **Počet uchazečů okruhu se zaokrouhluje dolů na desítky a podíl okruhu na uchazečích města se počítá až ze zaokrouhleného počtu.** První verze rozboru počítala podíl z přesného počtu. Spolu s přesnými počty prvních voleb tak šel přesně dopočítat skrytý obor s 9 prvními volbami (review PR #284, Brno, technické obory). Generátor podkladu teď před zápisem přesně v celých číslech prověří (`kontrola_zverejneni`, `dopocitatelne`), které počty oborů jsou se zveřejněným celkem, podíly a počty uchazečů oborů slučitelné. Když součet skrytých oborů vyjde jednoznačně kladný, potlačí u okruhu všechny podíly prvních voleb (pole `podily_potlaceny`), resp. výpis oborů v přelévání (`vypis_potlacen`). Při druhé kontrole skončí chybou, pokud únik trvá. V roce 2026 se to týká dvou malých pražských okruhů (umělecká řemesla, škola pro zrakově postižené). Podíl prvních voleb na nových oborech se pod 10 uchazeči nezveřejňuje. Na stránce platí totéž: všechny počty a podíly okruhu se musí posuzovat společně, ne každý zvlášť.
 - U posunu v okruhu se ukazuje obor jen tehdy, když má v obou ročnících 0 nebo aspoň 10 prvních voleb.
-- **Okruh s méně než 3 obory nebo s méně než 30 uchazeči se nezobrazuje.** U okruhů jedné školy (odborná učiliště) se nezobrazuje, protože popisuje rozhodování mezi obory jedné školy a dopočítat by se dal z jejích čísel na stránce školy. Rozhodnutí o konzervatořích (3 a 4 obory tří až čtyř škol) nechávám na schválení.
+- **Okruh s méně než 3 obory nebo s méně než 30 uchazeči se nezobrazuje.** Okruh jedné školy (odborná učiliště) se nezobrazuje, protože popisuje rozhodování mezi obory jedné školy a dopočítat by se dal z jejích čísel na stránce školy. Konzervatoře se zobrazí, projdou-li mezí 30 uchazečů a kontrolou dopočitatelnosti, s poznámkou o talentové zkoušce (rozhodnuto 3. 10. 2026).
+- **Souhrn po obcích** (stránka oboru) se zveřejňuje jako podíl jen tehdy, když obec i zbytek mají aspoň 10 uchazečů (`podil_nad_mezi`): věta „všichni kromě sedmi se hlásili i do Prahy“ by prozradila malou skupinu. Ve výsledku pro Vranovskou proto chybí Brno: skoro všichni uchazeči měli na přihlášce i jiný brněnský obor.
 
 ## 8. Nové ukazatele a pojmy
 
-Zapsané ve [slovníku ukazatelů](slovnik-ukazatelu.md) (verze 1.54, oddíl 1) a v registru u sady `cermat-uchazeci-kolo1`:
+Zapsané ve [slovníku ukazatelů](slovnik-ukazatelu.md) (verze 1.55, oddíl 1) a v registru u sady `cermat-uchazeci-kolo1`:
 
-- **Okruh oborů**: rozdělení oborů města podle společných uchazečů (oddíl 3).
+- **Okruh oborů**: rozdělení oborů podle společných uchazečů uvnitř spádové oblasti, ve variantě oddílů 3–6 uvnitř města.
+- **Oblast přihlášek**: spádová oblast ze sloučených přihlášek (oddíl 6a.2).
 - **Přednost v okruhu**: oddíl 6.
 - **Podíl prvních voleb v okruhu**: obor, který měl uchazeč okruhu na přihlášce nejvýš.
-- **Podíl okruhu na uchazečích města**: oddíl 5.1.
+- **Podíl okruhu na uchazečích oblasti**: oddíl 5.1. Ve městské variantě je oblastí město. Ve verzi 1.1 se jmenoval *Podíl okruhu na uchazečích města*.
 - **Přesun zájmu v okruhu**: oddíl 5.1, se šumem.
+- **Souběžné přihlášky podle obce**: oddíl 6a.4, pro stránku oboru.
 
-Ve [slovníku pojmů](slovnik-pojmu.md) (verze 1.38): **okruh oborů** a **spíš výš / spíš níž v okruhu**. Nepoužívat: shluk, cluster, trh, skupina oborů (to jsou podobné školy SMO16), konkurence, oblíbenost.
+Ve [slovníku pojmů](slovnik-pojmu.md) (verze 1.39): **okruh oborů**, **spíš výš / spíš níž v okruhu** a nadpis **„Které další obory v okolí uchazeči také volí“**, kde „v okolí“ znamená podle přihlášek, ne podle vzdálenosti. Nepoužívat: shluk, cluster, trh, skupina oborů (to jsou podobné školy SMO16), konkurence, oblíbenost, podobné obory.
 
-## 9. Otevřené otázky ke schválení
+## 9. Rozhodnutí a otevřené otázky
 
-1. **Umístění:** stránka oboru (A) a stránka města (B), bez vlastní stránky okruhu. Souhlas?
-2. **Varianta metody:** normovaná váha, γ = 1,0. Před nasazením přepočítat pro všechna města přehledu a potvrdit, že stabilita nespadne. Pro menší města (Ostrava, Plzeň, Olomouc) okruhy ještě nikdo neviděl.
-3. **Které město má okruhy:** navrhuji práh 3 okruhy s aspoň 3 obory. Měřit pro všechna města v etapě 2.
-4. **Data uchazečů 2024:** vyřešeno 3. 10. 2026, stažena se souhlasem vlastníka a zapracována (oddíl 1). Otevřené zůstává, zda má souhrny 1. kola 2024 převzít i `scripts/build-souhrny-kolo1.py`, aby obtížnost 2024 nebyla počítaná jinou cestou než další roky.
-5. **Konzervatoře a malé okruhy** (oddíl 7.5).
-6. **Nástavby:** ze stránky města pro deváťáky vynechat, nebo ukázat odděleně jako „kam po výučním listu“ (souvisí s [obory bez jednotné zkoušky](navrh-obory-bez-jpz-2027.md))?
-7. **Pojmenování okruhů:** převodník KKOV → název (oddíl 7.4).
+Rozhodnutí vlastníka projektu 3. 10. 2026 (zapsaná v issue #277):
+
+1. **Umístění:** stránka oboru (A) a stránka města (B), bez vlastní stránky okruhu.
+2. **Metoda:** normovaná váha, γ = 1,0; etapa 2 začne přepočtem pro celou zemi.
+3. **Vymezení: ne podle hranic města, ale podle toho, kam uchazeči skutečně podávají přihlášky.** Řeší oddíl 6a: stránka oboru bez hranic se souhrnem po obcích, stránka města s okruhy ze spádových oblastí a ukotvenými obory z okolí.
+4. **Souhrny 1. kola 2024 převzít** a stáhnout potřebná data. Převzetí do `public/souhrny_kolo1.json` mění stránky (předchozí ročník, změna mezi ročníky), proto patří do etapy 2, ne do tohoto návrhu.
+5. **Malé okruhy:** okruhy jedné školy ne, konzervatoře ano s výhradou (oddíl 7.5).
+6. **Nástavby:** na stránce města zvlášť jako „Kam po výučním listu“, na stránce oboru normálně.
+7. **Název:** univerzální nadpis „Které další obory v okolí uchazeči také volí“, převodník případně později.
+
+Otevřené pro etapu 2:
+
+- **Která města dostanou okruhy na stránce města:** návrh je 3 okruhy s aspoň 3 ukotvenými obory v posledním ročníku. Seznam se předloží před nasazením.
+- **Ukotvení:** práh 10 společných uchazečů s oborem ve městě. Ověřit na dalších městech, zda nevyřazuje skutečné sousedy.
 
 ## 10. Co rozbor neříká
 
@@ -343,4 +408,5 @@ Ve [slovníku pojmů](slovnik-pojmu.md) (verze 1.38): **okruh oborů** a **spí�
 - **Jak dopadne konkrétní uchazeč.** Okruh ani přednost šanci nepředpovídají.
 - **Nic o kvalitě školy.** Okruh je o tom, mezi čím se rodiny rozhodují, ne o tom, co je lepší.
 - **Zaměření.** Okruh je po oborech školy, zaměření téhož oboru se slučují.
-- **Uchazeče mimo město.** Uchazeč z Kuřimi s přihláškou do Brna se počítá u brněnských oborů; jeho obor v Kuřimi do brněnského okruhu nepatří. U oborů v okruzích je podíl uchazečů s přihláškou i mimo město 0–66 %.
+- **Vzdálenost ani dojezd.** „V okolí“ znamená podle přihlášek, ne vzdušnou čarou ani podle jízdních řádů. Spádová oblast je odhad z toho, kam se uchazeči hlásili.
+- **Nesouměrné vazby.** Okruh je souměrný: obory v něm patří k sobě navzájem. Že se uchazeči z předměstí hlásí do velkého města, a ne naopak, ukazuje jen souhrn po obcích na stránce oboru.

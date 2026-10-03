@@ -77,6 +77,23 @@ class RozborShlukyOboruTest(unittest.TestCase):
         self.assertNotIn('"prvni_volby_v_okruhu"', text)
         self.assertEqual(rozbor.kontrola_zverejneni(json.loads(text)), [])
 
+    def test_kam_dal_souhrn_po_obcich_neprozradi_malou_skupinu(self):
+        mapa = {"A": {"obec": "Brandýs"}, **{f"P{i}": {"obec": "Praha"} for i in range(40)}, "C": {"obec": "Čelákovice"}}
+        volby = []
+        for i in range(40):  # 40 uchazečů A, každý jinam do Prahy, 12 z nich i do Čelákovic
+            u = [{"obor": "A", "pozice": 0}, {"obor": f"P{i}", "pozice": 1}]
+            if i < 12:
+                u.append({"obor": "C", "pozice": 2})
+            volby.append(u)
+        for i in range(5):  # pět uchazečů jen na A
+            volby.append([{"obor": "A", "pozice": 0}])
+        vysledek = rozbor.kam_dal(volby, "A", mapa)
+        self.assertEqual(vysledek["uchazecu"], 45)
+        # žádný pražský obor nemá 10 společných, Praha jako obec ano; zbytek (5) je pod mezí, proto bez podílu
+        self.assertEqual([o["klic"] for o in vysledek["obory"]], ["C"])
+        self.assertNotIn("Praha", [o["obec"] for o in vysledek["obce"]])
+        self.assertEqual([o["obec"] for o in vysledek["obce"]], ["Čelákovice"])
+
     def test_zarazeni_obtiznosti_podle_slovniku(self):
         self.assertIsNone(rozbor.zarazeni(5, 4))
         self.assertEqual(rozbor.zarazeni(30, 0), "kapacita_nerozhodovala")

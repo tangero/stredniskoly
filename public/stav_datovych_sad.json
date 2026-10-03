@@ -218,8 +218,10 @@
     "Okruh oborů",
     "Přednost v okruhu",
     "Podíl prvních voleb v okruhu",
-    "Podíl okruhu na uchazečích města",
-    "Přesun zájmu v okruhu"
+    "Podíl okruhu na uchazečích oblasti",
+    "Přesun zájmu v okruhu",
+    "Oblast přihlášek",
+    "Souběžné přihlášky podle obce"
    ],
    "dostupne": [],
    "aktualizace": {
