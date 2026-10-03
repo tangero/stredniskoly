@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.37 · 1. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.38 · 3. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -91,6 +91,8 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **maturitu udělalo X z Y přihlášených** | úspěšní ze všech přihlášených ke společné části (tak ji počítá CERMAT) | u rozdílu přihlášených a konajících: „1 ke zkoušce nešel“ | úspěšnost bez jmenovatele, X z Y konajících vedle podílu z přihlášených |
 | **jak si škola vede** | nadpis oddílu s maturitou a inspekcí | není potřeba | kvalita školy, hodnocení školy |
 | **souběžní uchazeči**, **kam se hlásí stejní uchazeči** | uchazeči, kteří měli na přihlášce tento obor i obor jiné školy | „uchazeči, kteří měli na přihlášce i tento obor“ | konkurence, konkurenční škola |
+| **okruh oborů** | *Okruh oborů* ze slovníku ukazatelů: obory jednoho města, které měli titíž uchazeči často zároveň na přihlášce; návrh ke schválení ([okruhy oborů](navrh-shluky-oboru-2027.md)) | „obory, mezi kterými se uchazeči rozhodovali: měli je často zároveň na přihlášce“; v bloku vždy i „obory na okraji okruhu se mohou mezi ročníky přesunout do sousedního“ | shluk, cluster, trh, skupina oborů (to jsou podobné školy), konkurence, kategorie |
+| **spíš výš**, **spíš níž v okruhu** | *Přednost v okruhu*: jak často měli uchazeči obor na přihlášce výš než ostatní obory okruhu | „uchazeči ho měli na přihlášce spíš výš než ostatní obory okruhu“ a u rad věta „pořadí na přihlášce šanci na přijetí nemění“ | oblíbenost, žádanost, první volba okruhu, pojistka (má jiný význam v Simulátoru přijímaček), škola první volby (je to kohorta podle celé země) |
 | **vzdušnou čarou** | vzdálenost bez ohledu na dopravu | vždy u vzdálenosti; dojezd je jiný údaj | daleko, blízko (bez čísla) |
 | **Doplnila škola · datum** | údaj zadal pověřený člověk školy v portálu pro školy; nekontrolujeme ho předem, chybu opravujeme zpětně; netýká se dat CERMAT, MŠMT a ČŠI na téže stránce | značka u údaje nebo bloku („Škola doplnila údaje (naposledy 1. 10. 2026)“), v patičce vysvětlení „údaj doplnil pověřený člověk školy v portálu, nekontrolujeme ho předem“; nikdy v hlavičce stránky ani v rozcestníku | potvrdila škola (u údaje z portálu), ověřeno, oficiální, schváleno, prošlo kontrolou |
 | **Potvrdila škola · datum** | konkrétní údaj z oficiálních dat nebo z InspIS, jehož správnost nám škola výslovně potvrdila nebo opravila mimo portál (ruční oprava v `data/inspis_opravy.json`) | jen u toho jednoho údaje | u čehokoli jiného než u potvrzeného údaje |
@@ -144,6 +146,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.38 | **Okruh oborů** a **spíš výš / spíš níž v okruhu** pro návrh okruhů oborů ve městě (3. 10. 2026, issue #277). Na webu zatím nejsou; „shluk“, „trh“ a „skupina oborů“ se v textu pro rodiče nepoužívají. |
 | 1.37 | Zprávy z **výpisu aktualit** na stránce školy (1. 10. 2026): patička bloku říká „z výpisu aktualit na webu školy, naposledy přečteno …“ a připojí výhradu, že titulky a data mohou být přečtené chybně. Věta „objevilo se …“ se u nich nevysvětluje, čtečka bere jen položky s datem. |
 | 1.36 | Značka u údajů z portálu se jmenuje **Doplnila škola** místo **Potvrdila škola** (1. 10. 2026). Vedení jedné školy upozornilo, že „Potvrdila škola“ v hlavičce a v rozcestníku stránky školy působí, jako by škola potvrdila data CERMAT a InspIS, na které vůbec nesahala. Značka se proto z hlavičky i z věty rozcestníku stěhuje k blokům, které škola vyplnila, a hlavička říká, odkud jsou ostatní údaje. **Potvrdila škola** zůstává jen pro jednotlivý údaj, který nám škola výslovně potvrdila (ruční opravy, PR #220). Nový pojem **cizí jazyky** bez latiny a starořečtiny, se shodou číslovky. |
 | 1.35 | Pojmy **Čím školy žijí** a **výpis aktualit** pro nezalistovaný prototyp přehledu zpráv z webů škol podle oblasti (1. 10. 2026, [sonda mimo RSS](sonda-mimo-rss-2026.md)). Stránka vždy říká, u kolika škol zprávy čteme, aby chybějící školy nevypadaly jako školy, kde se nic neděje. |

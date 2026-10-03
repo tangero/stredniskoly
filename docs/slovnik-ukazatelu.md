@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.53 · 2. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.54 · 3. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -72,6 +72,43 @@ Tři meze, které se musí uvést vždy:
 Do souboru se zapisuje šest nejčastějších souběhů. Názvy oborů bez jednotné zkoušky, tedy hlavně učebních, doplňuje rejstřík škol MŠMT.
 
 Neříká, kam uchazeči nakonec nastoupili. Popisuje, co si psali na přihlášku.
+
+### Okruh oborů
+Obory jednoho města, mezi kterými se uchazeči rozhodovali: obory, které měli titíž uchazeči často zároveň na přihlášce. Návrh ke schválení, na webu se zatím nezobrazuje ([návrh](navrh-shluky-oboru-2027.md), issue #277). Rozbor počítá `scripts/rozbor-shluky-oboru.py`, pole `okruhy` v podkladu `docs/podklady/shluky-oboru-2026-10-03.json`.
+
+Výpočet: graf, jehož uzly jsou obory školy (REDIZO_KKOV) s obcí města podle indexu názvů a s aspoň 10 uchazeči, hrany dvojice oborů s aspoň 10 společnými uchazeči. Váha hrany je `společní uchazeči ÷ √(uchazeči oboru A × uchazeči oboru B)`. Rozdělení hledá Louvain s rozlišením 1,0 (nejlepší modularita ze 30 běhů); nesouvislá skupina se rozdělí na souvislé části. Okruh má aspoň 3 obory. Zdroj: data uchazečů 1. kola, denní nezkrácené studium, zaměření sloučená jako u souběžných přihlášek. Jednotka: příslušnost oboru k okruhu.
+
+Stabilita: okruhy 2025 a 2026 se na oborech v okruzích shodují s upraveným Randovým indexem 0,75 (Brno) a 0,66 (Praha), náhodné přeřazení dává 0,00 (95. percentil 0,01–0,02).
+
+**Neříká nic o kvalitě ani o obtížnosti** oborů v okruhu. Neříká, že obory jsou si obsahově podobné: spojuje je to, že se na ně hlásili titíž uchazeči. **Není to pevná kategorie**: obory na okraji okruhu se mezi ročníky přesouvají do sousedního. Za okruh se nezveřejňuje nic pod 10 uchazeči a součty se počítají jen ze zobrazených oborů, aby nešlo dopočítat skrytý malý obor.
+
+### Přednost v okruhu
+`dvojice, kde měl uchazeč obor výš ÷ všechny dvojice oborů téhož okruhu na jedné přihlášce, ve kterých obor je`. Pole `prednost_v_okruhu`. Jednotka: podíl 0 až 1, nezveřejňuje se pod 10 dvojicemi. Zdroj: pořadí oborů na přihlášce v datech uchazečů.
+
+Hodnota 0,5 znamená, že uchazeči měli obor výš i níž než ostatní obory okruhu stejně často. Čtyřletá gymnázia Brna 2026: od 0,67 (Gymnázium Matyáše Lercha) po 0,13 (Moravské gymnázium); mezi lety 2025 a 2026 se u nich hodnota změnila nejvýš o 0,13.
+
+Liší se od *Kohorty podle pozice na přihlášce*: ta srovnává podíl prvních voleb s obory stejného typu v celé zemi, přednost jen s obory, mezi kterými se titíž uchazeči skutečně rozhodovali.
+
+**Neříká, jak těžké je se dostat**, ani že je obor lepší. Obor, který mají uchazeči spíš níž, může být těžký, protože ho mnoho lidí bere jako druhou možnost. Pořadí na přihlášce šanci na přijetí nemění.
+
+### Podíl prvních voleb v okruhu
+`uchazeči okruhu, kteří měli tento obor ze všech oborů okruhu na přihlášce nejvýš ÷ uchazeči okruhu`. Pole `prvni_volby_v_okruhu` (počet). Uchazeči okruhu jsou různí uchazeči s aspoň jedním oborem okruhu. Nezveřejňuje se pod 10 uchazeči.
+
+Liší se od *Podílu prvních voleb*: ten počítá 1. volbu na celé přihlášce, tento ukazatel nejvyšší volbu mezi obory okruhu. Uchazeč, který měl na prvním místě obor jiného okruhu, se tu počítá u oboru, který měl z tohoto okruhu nejvýš.
+
+Neříká, kam uchazeč nastoupil. Je to podklad pro *Přesun zájmu v okruhu*.
+
+### Podíl okruhu na uchazečích města
+`různí uchazeči s aspoň jedním oborem okruhu ÷ různí uchazeči s aspoň jedním oborem ve městě`. Pole `podil_okruhu_na_uchazecich_mesta`. Mezi lety 2025 a 2026 se v Brně a Praze změnil nejvýš o 1,6 procentního bodu.
+
+**Neříká, že titíž lidé odešli nebo přišli.** Každý rok se hlásí jiný ročník dětí, změna je posun poptávky mezi ročníky. Okruh se pro oba ročníky bere z novějšího roku.
+
+### Přesun zájmu v okruhu
+Jak velká část zájmu se mezi dvěma ročníky přesunula mezi obory okruhu: `½ × Σ |podíl prvních voleb v okruhu 2026 − podíl prvních voleb v okruhu 2025|` přes obory okruhu (vzdálenost rozdělení, *total variation*). Pole `presun_zajmu_v_okruhu`. Jednotka: podíl 0 až 1. Okruh se pro oba ročníky bere z novějšího roku, obor nový v novějším roce má ve starším nulu.
+
+Vždy se uvádí se šumem: kolik přesunu dá náhoda, když se oba ročníky losují ze stejného rozdělení se stejným počtem uchazečů (300 losování, pole `sum`). Přesun pod 95. percentilem šumu se nepopisuje jako posun. Mezi lety 2025 a 2026 byl přesun nad šumem v Praze u 16 z 21 okruhů, v Brně u 4 z 13. Pole `podil_prvnich_voleb_na_nove_obory` říká, kolik z přesunu připadlo na obory nové v novějším roce.
+
+**Neříká, proč se zájem přesunul**, ani zda se přesun zopakuje. Ze dvou ročníků se nemluví o trendu.
 
 ### Přihlášky na místo
 `přihlášky celkem ÷ kapacita míst`. Pole `index_poptavky`.
@@ -770,6 +807,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.54 | Pět ukazatelů okruhů oborů ve městě (3. 10. 2026, [návrh](navrh-shluky-oboru-2027.md), issue #277): *Okruh oborů*, *Přednost v okruhu*, *Podíl prvních voleb v okruhu*, *Podíl okruhu na uchazečích města* a *Přesun zájmu v okruhu*. Zatím jen v rozboru ke schválení, na webu se nezobrazují. |
 | 1.53 | **Nevypsané 2. kolo u nenaplněného oboru**: definice podle zdroje (ve výsledcích 1. kola méně přijatých než míst) a doplněno „co neříká“: souhrn 1. kola nezachycuje obsazení míst po výsledcích, věta na webu škole nepřisuzuje, že místa zbyla (#258). |
 | 1.52 | **Pokrytí zpráv z webů škol**: výpis aktualit se počítá ze sklizně (`skola_feed.typ` html/tinyfish), snímek sondy jen u škol, které sklizeň ještě nezapsala; kanál novinek jen typ rss/atom. |
 | 1.51 | Nový ukazatel **pokrytí zpráv z webů škol** (oddíl 6) pro prototyp „Čím školy žijí“: počet škol se zprávou za 30 dní podle zdroje, kanál novinek k okamžiku zobrazení, výpis aktualit ke dni sondy 1. 10. 2026. |
