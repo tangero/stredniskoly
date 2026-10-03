@@ -51,11 +51,24 @@ class RozborShlukyOboruTest(unittest.TestCase):
         self.assertEqual(rozbor.podil_nad_mezi(20, 50), 0.4)
 
     def test_jednoznacne_dopocitatelny_skryty_obor_se_pozna(self):
-        # celek 10–19, zobrazený podíl 0,90: zbytek je jediný uchazeč
-        self.assertEqual(rozbor.dopocitatelne(10, [0.9, None]), {1})
-        # velký okruh s podíly na dvě místa: skrytý obor nejde určit
-        self.assertGreater(len(rozbor.dopocitatelne(2220, [0.5, 0.496, None])), 1)
-        self.assertEqual(rozbor.dopocitatelne(2220, [0.5, 0.5]), set())
+        # celé číslo, ne interval: review PR #284, Praha 2026, okruhy 137 a 30, skryto přesně 9
+        self.assertEqual(rozbor.dopocitatelne(30, [(0.37, 100), (0.39, 100), (None, 100)]), {9})
+        self.assertEqual(rozbor.dopocitatelne(70, [(0.6, 100), (0.28, 100), (None, 100)]), {9})
+        self.assertTrue(rozbor.unika({9}))
+        self.assertFalse(rozbor.unika({0}))
+        self.assertFalse(rozbor.unika({7, 8, 9}))
+        # velký okruh: skrytý obor nejde určit
+        self.assertGreater(len(rozbor.dopocitatelne(2220, [(0.5, 2000), (0.5, 2000), (None, 50)])), 1)
+        self.assertEqual(rozbor.dopocitatelne(2220, [(0.5, 2000), (0.5, 2000)]), set())
+
+    def test_unik_se_potlaci(self):
+        vystup = {"mesta": {"X": {"rocniky": {"2026": {"okruhy": [{"id": 1, "uchazecu": 30, "obory": [
+            {"podil_prvnich_voleb_v_okruhu": 0.37, "uchazecu": 40},
+            {"podil_prvnich_voleb_v_okruhu": 0.39, "uchazecu": 40},
+            {"podil_prvnich_voleb_v_okruhu": None, "uchazecu": 40}]}]}}, "prelevani": []}}}
+        self.assertEqual(len(rozbor.kontrola_zverejneni(vystup, opravit=True)), 1)
+        self.assertEqual(rozbor.kontrola_zverejneni(vystup), [])
+        self.assertTrue(vystup["mesta"]["X"]["rocniky"]["2026"]["okruhy"][0]["podily_potlaceny"])
 
     def test_podklad_neprozradi_skupinu_pod_deset(self):
         # review PR #284: přesné počty prvních voleb se sčítaly a z celku okruhu vyšel skrytý obor s 9 uchazeči

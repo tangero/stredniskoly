@@ -8017,7 +8017,7 @@
         "p95": 0.071
        },
        "nove_obory": 2,
-       "podil_prvnich_voleb_na_nove_obory": 0.025
+       "podil_prvnich_voleb_na_nove_obory": 0.03
       }
      },
      "prihlasky_katalog": {
@@ -8104,7 +8104,7 @@
         "p95": 0.065
        },
        "nove_obory": 1,
-       "podil_prvnich_voleb_na_nove_obory": 0.012
+       "podil_prvnich_voleb_na_nove_obory": 0.01
       },
       "2025-2026": {
        "presun_zajmu_v_okruhu": 0.103,
@@ -8209,7 +8209,7 @@
         "p95": 0.067
        },
        "nove_obory": 1,
-       "podil_prvnich_voleb_na_nove_obory": 0.033
+       "podil_prvnich_voleb_na_nove_obory": 0.03
       }
      },
      "prihlasky_katalog": {
@@ -8401,7 +8401,7 @@
         "p95": 0.063
        },
        "nove_obory": 1,
-       "podil_prvnich_voleb_na_nove_obory": 0.005
+       "podil_prvnich_voleb_na_nove_obory": null
       }
      },
      "prihlasky_katalog": {
@@ -8680,7 +8680,7 @@
         "p95": 0.101
        },
        "nove_obory": 1,
-       "podil_prvnich_voleb_na_nove_obory": 0.033
+       "podil_prvnich_voleb_na_nove_obory": 0.03
       },
       "2025-2026": {
        "presun_zajmu_v_okruhu": 0.075,
@@ -8872,7 +8872,7 @@
         "p95": 0.084
        },
        "nove_obory": 1,
-       "podil_prvnich_voleb_na_nove_obory": 0.044
+       "podil_prvnich_voleb_na_nove_obory": 0.04
       },
       "2025-2026": {
        "presun_zajmu_v_okruhu": 0.067,
@@ -8968,7 +8968,7 @@
         "p95": 0.147
        },
        "nove_obory": 1,
-       "podil_prvnich_voleb_na_nove_obory": 0.073
+       "podil_prvnich_voleb_na_nove_obory": 0.07
       },
       "2025-2026": {
        "presun_zajmu_v_okruhu": 0.074,
@@ -26948,7 +26948,7 @@
          "obor": "Umělecké řemeslné práce",
          "jpz": true,
          "uchazecu": 48,
-         "podil_prvnich_voleb_v_okruhu": 0.6,
+         "podil_prvnich_voleb_v_okruhu": null,
          "prednost_v_okruhu": 0.86,
          "podil_i_mimo_mesto": null,
          "kapacita": 24,
@@ -26962,7 +26962,7 @@
          "obor": "Umělecké řemeslné práce",
          "jpz": true,
          "uchazecu": 40,
-         "podil_prvnich_voleb_v_okruhu": 0.28,
+         "podil_prvnich_voleb_v_okruhu": null,
          "prednost_v_okruhu": 0.17,
          "podil_i_mimo_mesto": null,
          "kapacita": 24,
@@ -26984,7 +26984,8 @@
          "podil_prijatych_ze_soutezicich": 1.0,
          "zdroj_obtiznosti": "souhrny_kolo1"
         }
-       ]
+       ],
+       "podily_potlaceny": true
       },
       {
        "id": 137,
@@ -26998,7 +26999,7 @@
          "obor": "Sociální činnost",
          "jpz": true,
          "uchazecu": 22,
-         "podil_prvnich_voleb_v_okruhu": 0.37,
+         "podil_prvnich_voleb_v_okruhu": null,
          "prednost_v_okruhu": 0.43,
          "podil_i_mimo_mesto": null,
          "kapacita": 14,
@@ -27012,7 +27013,7 @@
          "obor": "Gymnázium",
          "jpz": true,
          "uchazecu": 20,
-         "podil_prvnich_voleb_v_okruhu": 0.39,
+         "podil_prvnich_voleb_v_okruhu": null,
          "prednost_v_okruhu": 0.71,
          "podil_i_mimo_mesto": null,
          "kapacita": 14,
@@ -27034,7 +27035,8 @@
          "podil_prijatych_ze_soutezicich": null,
          "zdroj_obtiznosti": "souhrny_kolo1"
         }
-       ]
+       ],
+       "podily_potlaceny": true
       }
      ]
     }
@@ -27065,7 +27067,7 @@
         "p95": 0.054
        },
        "nove_obory": 9,
-       "podil_prvnich_voleb_na_nove_obory": 0.077
+       "podil_prvnich_voleb_na_nove_obory": 0.08
       },
       "2025-2026": {
        "presun_zajmu_v_okruhu": 0.145,
@@ -27074,7 +27076,7 @@
         "p95": 0.054
        },
        "nove_obory": 2,
-       "podil_prvnich_voleb_na_nove_obory": 0.028
+       "podil_prvnich_voleb_na_nove_obory": 0.03
       }
      },
      "prihlasky_katalog": {
@@ -27353,7 +27355,7 @@
         "p95": 0.058
        },
        "nove_obory": 1,
-       "podil_prvnich_voleb_na_nove_obory": 0.005
+       "podil_prvnich_voleb_na_nove_obory": 0.01
       },
       "2025-2026": {
        "presun_zajmu_v_okruhu": 0.093,
@@ -27545,7 +27547,7 @@
         "p95": 0.068
        },
        "nove_obory": 1,
-       "podil_prvnich_voleb_na_nove_obory": 0.035
+       "podil_prvnich_voleb_na_nove_obory": 0.03
       },
       "2025-2026": {
        "presun_zajmu_v_okruhu": 0.088,
@@ -27641,7 +27643,7 @@
         "p95": 0.074
        },
        "nove_obory": 6,
-       "podil_prvnich_voleb_na_nove_obory": 0.095
+       "podil_prvnich_voleb_na_nove_obory": 0.09
       },
       "2025-2026": {
        "presun_zajmu_v_okruhu": 0.24,
@@ -27650,7 +27652,7 @@
         "p95": 0.071
        },
        "nove_obory": 3,
-       "podil_prvnich_voleb_na_nove_obory": 0.153
+       "podil_prvnich_voleb_na_nove_obory": 0.15
       }
      },
      "prihlasky_katalog": {
@@ -27746,7 +27748,7 @@
         "p95": 0.066
        },
        "nove_obory": 2,
-       "podil_prvnich_voleb_na_nove_obory": 0.133
+       "podil_prvnich_voleb_na_nove_obory": 0.13
       }
      },
      "prihlasky_katalog": {
@@ -27842,7 +27844,7 @@
         "p95": 0.066
        },
        "nove_obory": 1,
-       "podil_prvnich_voleb_na_nove_obory": 0.049
+       "podil_prvnich_voleb_na_nove_obory": 0.05
       }
      },
      "prihlasky_katalog": {
@@ -28121,7 +28123,7 @@
         "p95": 0.102
        },
        "nove_obory": 2,
-       "podil_prvnich_voleb_na_nove_obory": 0.042
+       "podil_prvnich_voleb_na_nove_obory": 0.04
       },
       "2025-2026": {
        "presun_zajmu_v_okruhu": 0.146,
@@ -28313,7 +28315,7 @@
         "p95": 0.057
        },
        "nove_obory": 2,
-       "podil_prvnich_voleb_na_nove_obory": 0.086
+       "podil_prvnich_voleb_na_nove_obory": 0.09
       },
       "2025-2026": {
        "presun_zajmu_v_okruhu": 0.418,
@@ -28322,7 +28324,7 @@
         "p95": 0.062
        },
        "nove_obory": 1,
-       "podil_prvnich_voleb_na_nove_obory": 0.418
+       "podil_prvnich_voleb_na_nove_obory": 0.42
       }
      },
      "prihlasky_katalog": {
@@ -28857,28 +28859,8 @@
       "2025": 0,
       "2026": 0
      },
-     "nejvetsi_zmeny": [
-      {
-       "klic": "600006379_82-51-L/51",
-       "skola": "SOŠ uměleckořemeslná s.r.o., Podkovářská 797",
-       "obor": "Umělecké řemeslné práce",
-       "podil": {
-        "2024": 0.52,
-        "2025": 0.51,
-        "2026": 0.6
-       }
-      },
-      {
-       "klic": "600005640_82-51-L/51",
-       "skola": "Střední škola a VOŠ umělecká a řemeslná, Nový Zlíchov 1063",
-       "obor": "Umělecké řemeslné práce",
-       "podil": {
-        "2024": 0.29,
-        "2025": 0.26,
-        "2026": 0.28
-       }
-      }
-     ]
+     "nejvetsi_zmeny": [],
+     "vypis_potlacen": true
     },
     {
      "id": 137,
@@ -28923,28 +28905,8 @@
       "2025": 66,
       "2026": 61
      },
-     "nejvetsi_zmeny": [
-      {
-       "klic": "600171418_75-41-M/01",
-       "skola": "Gymnázium a SOŠ pro zrakově postižené, Radlická",
-       "obor": "Sociální činnost",
-       "podil": {
-        "2024": 0.47,
-        "2025": 0.31,
-        "2026": 0.37
-       }
-      },
-      {
-       "klic": "600171418_79-41-K/41",
-       "skola": "Gymnázium a SOŠ pro zrakově postižené, Radlická",
-       "obor": "Gymnázium",
-       "podil": {
-        "2024": 0.35,
-        "2025": 0.33,
-        "2026": 0.39
-       }
-      }
-     ]
+     "nejvetsi_zmeny": [],
+     "vypis_potlacen": true
     }
    ]
   }

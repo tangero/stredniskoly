@@ -175,7 +175,7 @@ Tučně je přesun nad 95. percentilem šumu, v závorce šum. Poslední sloupec
 | Brno | Čtyřletá gymnázia a chemie | 16,0 / 16,0 / 15,7 | **0,15** (0,07) | **0,10** (0,07) | 0,00 |
 | Brno | Ekonomické obory | 14,6 / 14,5 / 14,9 | **0,15** (0,06) | **0,13** (0,07) | 0,03 |
 | Brno | Kadeřnice, kosmetika, gastronomie | 11,9 / 13,0 / 13,2 | 0,04 (0,07) | 0,07 (0,07) | 0,00 |
-| Brno | Osmiletá gymnázia | 11,3 / 11,6 / 11,9 | **0,08** (0,06) | 0,06 (0,06) | 0,01 |
+| Brno | Osmiletá gymnázia | 11,3 / 11,6 / 11,9 | **0,08** (0,06) | 0,06 (0,06) | pod mezí 10 |
 | Brno | Šestiletá gymnázia | 10,0 / 9,2 / 9,5 | **0,08** (0,07) | 0,05 (0,07) | 0,00 |
 | Brno | Automobilní obory | 7,3 / 6,9 / 6,3 | 0,05 (0,07) | 0,05 (0,07) | 0,00 |
 | Brno | Stavební řemesla | 4,4 / 5,6 / 5,7 | 0,09 (0,10) | 0,07 (0,10) | 0,00 |
@@ -310,7 +310,7 @@ Zdroj název nenese. Ruční pojmenování v oddílu 4 se do etapy 2 nepřenáš
 
 - Obor v okruhu jen s aspoň 10 uchazeči ve městě, hrana jen s aspoň 10 společnými uchazeči (už v metodě).
 - Přednost v okruhu a podíl prvních voleb v okruhu se u oboru zobrazí jen při aspoň 10 dvojicích, resp. 10 uchazečích. **Podíl prvních voleb v okruhu se zveřejňuje jen jako podíl na dvě desetinná místa, nikdy jako počet**: přesné počty zobrazených oborů by se sečetly a odečetly od celku okruhu.
-- **Počet uchazečů okruhu se zaokrouhluje dolů na desítky a podíl okruhu na uchazečích města se počítá až ze zaokrouhleného počtu.** První verze rozboru počítala podíl z přesného počtu. Spolu s přesnými počty prvních voleb tak šel přesně dopočítat skrytý obor s 9 prvními volbami (review PR #284, Brno, technické obory). Generátor podkladu teď před zápisem ověřuje (`kontrola_zverejneni`), že součet skrytých oborů nejde ze zveřejněných údajů určit jednoznačně, a jinak skončí chybou. Na stránce platí totéž: všechny počty a podíly okruhu se musí posuzovat společně, ne každý zvlášť.
+- **Počet uchazečů okruhu se zaokrouhluje dolů na desítky a podíl okruhu na uchazečích města se počítá až ze zaokrouhleného počtu.** První verze rozboru počítala podíl z přesného počtu. Spolu s přesnými počty prvních voleb tak šel přesně dopočítat skrytý obor s 9 prvními volbami (review PR #284, Brno, technické obory). Generátor podkladu teď před zápisem přesně v celých číslech prověří (`kontrola_zverejneni`, `dopocitatelne`), které počty oborů jsou se zveřejněným celkem, podíly a počty uchazečů oborů slučitelné. Když součet skrytých oborů vyjde jednoznačně kladný, potlačí u okruhu všechny podíly prvních voleb (pole `podily_potlaceny`), resp. výpis oborů v přelévání (`vypis_potlacen`). Při druhé kontrole skončí chybou, pokud únik trvá. V roce 2026 se to týká dvou malých pražských okruhů (umělecká řemesla, škola pro zrakově postižené). Podíl prvních voleb na nových oborech se pod 10 uchazeči nezveřejňuje. Na stránce platí totéž: všechny počty a podíly okruhu se musí posuzovat společně, ne každý zvlášť.
 - U posunu v okruhu se ukazuje obor jen tehdy, když má v obou ročnících 0 nebo aspoň 10 prvních voleb.
 - **Okruh s méně než 3 obory nebo s méně než 30 uchazeči se nezobrazuje.** U okruhů jedné školy (odborná učiliště) se nezobrazuje, protože popisuje rozhodování mezi obory jedné školy a dopočítat by se dal z jejích čísel na stránce školy. Rozhodnutí o konzervatořích (3 a 4 obory tří až čtyř škol) nechávám na schválení.
 

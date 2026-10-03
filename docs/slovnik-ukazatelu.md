@@ -92,7 +92,7 @@ Liší se od *Kohorty podle pozice na přihlášce*: ta srovnává podíl první
 **Neříká, jak těžké je se dostat**, ani že je obor lepší. Obor, který mají uchazeči spíš níž, může být těžký, protože ho mnoho lidí bere jako druhou možnost. Pořadí na přihlášce šanci na přijetí nemění.
 
 ### Podíl prvních voleb v okruhu
-`uchazeči okruhu, kteří měli tento obor ze všech oborů okruhu na přihlášce nejvýš ÷ uchazeči okruhu`. Pole `podil_prvnich_voleb_v_okruhu`, zveřejňuje se jen jako podíl na dvě desetinná místa, nikdy jako počet: přesné počty oborů by se sečetly a odečetly od celku okruhu a prozradily obor pod mezí (review PR #284). Počet uchazečů okruhu se zveřejňuje zaokrouhlený dolů na desítky a podíl okruhu na uchazečích města se počítá až z něj. Uchazeči okruhu jsou různí uchazeči s aspoň jedním oborem okruhu. Nezveřejňuje se pod 10 uchazeči.
+`uchazeči okruhu, kteří měli tento obor ze všech oborů okruhu na přihlášce nejvýš ÷ uchazeči okruhu`. Pole `podil_prvnich_voleb_v_okruhu`, zveřejňuje se jen jako podíl na dvě desetinná místa, nikdy jako počet: přesné počty oborů by se sečetly a odečetly od celku okruhu a prozradily obor pod mezí (review PR #284). Počet uchazečů okruhu se zveřejňuje zaokrouhlený dolů na desítky a podíl okruhu na uchazečích města se počítá až z něj. Když by i tak šlo skrytý obor dopočítat v celých číslech, potlačí se u okruhu všechny podíly (`podily_potlaceny`). Uchazeči okruhu jsou různí uchazeči s aspoň jedním oborem okruhu. Nezveřejňuje se pod 10 uchazeči.
 
 Liší se od *Podílu prvních voleb*: ten počítá 1. volbu na celé přihlášce, tento ukazatel nejvyšší volbu mezi obory okruhu. Uchazeč, který měl na prvním místě obor jiného okruhu, se tu počítá u oboru, který měl z tohoto okruhu nejvýš.
 

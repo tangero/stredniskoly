@@ -337,44 +337,73 @@ def zaokrouhli(pocet: int) -> int:
     return pocet - pocet % 10
 
 
-def dopocitatelne(celek: int, podily: list[float | None], hornich_mezi: int = MIN - 1) -> set[int]:
-    """Které součty skrytých oborů (každý 1 až hornich_mezi) jsou slučitelné se zveřejněnými údaji.
+def dopocitatelne(celek: int, obory: list[tuple[float | None, int]]) -> set[int]:
+    """Které součty skrytých oborů jsou slučitelné se zveřejněnými údaji, počítáno přesně v celých číslech.
 
-    `celek` je počet zaokrouhlený dolů na desítky, `podily` zveřejněné podíly oborů na dvě
-    místa (None = skrytý). Vrací množinu možných součtů skrytých; jediný prvek = dopočítatelné.
+    `celek` je počet zaokrouhlený dolů na desítky, takže přesný celek je celek až celek + 9.
+    `obory` jsou dvojice (zveřejněný podíl na dvě místa, nebo None = skrytý obor pod 10;
+    horní mez počtu, typicky zveřejněný počet uchazečů oboru). Každý uchazeč okruhu patří právě
+    jednomu oboru, takže počty oborů dávají celek. Vrací množinu možných součtů skrytých oborů;
+    jediná kladná hodnota znamená, že skrytou skupinu jde dopočítat (review PR #284).
     """
-    skryte = sum(1 for p in podily if p is None)
-    if not skryte:
+    skryte_meze = [min(MIN - 1, mez) for p, mez in obory if p is None]
+    if not skryte_meze:
         return set()
-    ukazane = [p for p in podily if p is not None]
-    chyba = 0.005 * len(ukazane)
-    zbytek = 1 - sum(ukazane)
-    moznosti = set()
+    ukazane = [(p, mez) for p, mez in obory if p is not None]
+    moznosti: set[int] = set()
     for n in range(celek, celek + 10):
-        for t in range(skryte, skryte * hornich_mezi + 1):
-            if (zbytek - chyba) * n - 1e-9 <= t <= (zbytek + chyba) * n + 1e-9:
+        # součty zobrazených oborů jako bitová maska: bit k = součet k je možný
+        maska = 1
+        for p, mez in ukazane:
+            hodnoty = [a for a in range(MIN, min(mez, n) + 1) if round(a / n, 2) == p]
+            if not hodnoty:
+                maska = 0
+                break
+            nova = 0
+            for a in hodnoty:
+                nova |= maska << a
+            maska = nova & ((1 << (n + 1)) - 1)
+        for t in range(0, sum(skryte_meze) + 1):
+            if n - t >= 0 and maska >> (n - t) & 1:
                 moznosti.add(t)
     return moznosti
 
 
-def kontrola_zverejneni(vystup: dict) -> list[str]:
-    """Najde okruhy, u kterých by šel ze zveřejněných údajů jednoznačně dopočítat skrytý obor."""
+def unika(moznosti: set[int]) -> bool:
+    """Skrytá skupina jde určit: jediná možná hodnota a ta je kladná (nula skupinu neprozradí)."""
+    return len(moznosti) == 1 and next(iter(moznosti)) > 0
+
+
+def kontrola_zverejneni(vystup: dict, opravit: bool = False) -> list[str]:
+    """Najde okruhy, u kterých by šel ze zveřejněných údajů jednoznačně dopočítat skrytý obor.
+
+    S `opravit=True` u takového okruhu potlačí všechny podíly prvních voleb (doplňkové potlačení),
+    resp. výpis oborů v přelévání, a vrátí, co potlačil.
+    """
     chyby = []
     for mesto, vm in vystup["mesta"].items():
         for rok, rr in vm["rocniky"].items():
             for o in rr["okruhy"]:
                 if o["uchazecu"] % 10:
                     chyby.append(f"{mesto} {rok} okruh {o['id']}: počet uchazečů není zaokrouhlený")
-                podily = [x["podil_prvnich_voleb_v_okruhu"] for x in o["obory"]]
-                if len(dopocitatelne(o["uchazecu"], podily)) == 1:
+                obory = [(x["podil_prvnich_voleb_v_okruhu"], x["uchazecu"]) for x in o["obory"]]
+                if unika(dopocitatelne(o["uchazecu"], obory)):
                     chyby.append(f"{mesto} {rok} okruh {o['id']}: skryté první volby jdou dopočítat")
+                    if opravit:
+                        for x in o["obory"]:
+                            x["podil_prvnich_voleb_v_okruhu"] = None
+                        o["podily_potlaceny"] = True
         for p in vm["prelevani"]:
             for rok, u in p["uchazecu"].items():
-                vypsane = [z["podil"][rok] for z in p["nejvetsi_zmeny"]]
-                # nejvýš pět oborů: když jich je méně, výpis je úplný a zbytek jsou jen obory pod mezí
+                vypsane = [(z["podil"][rok], u + 9) for z in p["nejvetsi_zmeny"]]
+                # nejvýš pět oborů: když jich je méně, výpis je úplný a zbytek jsou obory pod mezí
                 if len(vypsane) < 5 and len(vypsane) < p["oboru"]:
-                    if len(dopocitatelne(u, vypsane + [None] * (p["oboru"] - len(vypsane)))) == 1:
+                    zbytek = [(None, MIN - 1)] * (p["oboru"] - len(vypsane))
+                    if unika(dopocitatelne(u, vypsane + zbytek)):
                         chyby.append(f"{mesto} přelévání okruh {p['id']} {rok}: zbytek jde dopočítat")
+                        if opravit:
+                            p["nejvetsi_zmeny"] = []
+                            p["vypis_potlacen"] = True
     return chyby
 
 
@@ -527,7 +556,7 @@ def main() -> None:
                     "presun_zajmu_v_okruhu": round(tv({k: v / nr[ra] for k, v in p_r[ra].items()}, {k: v / nr[rb] for k, v in p_r[rb].items()}), 3),
                     "sum": sum_zaklad(p_r[ra], p_r[rb], rng),
                     "nove_obory": len(nove),
-                    "podil_prvnich_voleb_na_nove_obory": round(sum(p_r[rb][k] for k in nove) / nr[rb], 3),
+                    "podil_prvnich_voleb_na_nove_obory": podil_nad_mezi(sum(p_r[rb][k] for k in nove), nr[rb]),
                 }
             predposledni = ROKY[-2]
             prel.append({
@@ -547,6 +576,8 @@ def main() -> None:
         vystup["mesta"][mesto] = vm
         print(mesto, "hotovo", file=sys.stderr)
 
+    for c in kontrola_zverejneni(vystup, opravit=True):
+        print(f"doplňkové potlačení: {c}", file=sys.stderr)
     chyby = kontrola_zverejneni(vystup)
     if chyby:
         raise SystemExit("podklad by prozradil skupinu pod 10 uchazečů:\n" + "\n".join(chyby))
