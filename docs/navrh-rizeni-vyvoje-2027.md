@@ -173,8 +173,8 @@ podmínek režimu z oddílu 4. **Původ zadání:**
 
 - **interní (režim L)** je issue založené vlastníkem, nebo strojovým účtem asistenta s dokladem v těle:
   `Zdroj: briefing RRRR-MM-DD` (brána ověří, že zápis existuje v soukromém repozitáři; aplikace je
-  nainstalovaná na oba repozitáře) nebo `Zdroj: oprava od školy` s odkazem na záznam v portálu či
-  na ověřený e-mail školy (oddíl 12);
+  nainstalovaná na oba repozitáře) nebo `Zdroj: oprava od školy RRRR-MM-DD-<RED IZO>` (brána stejně
+  ověří záznam opravy v soukromém repozitáři, oddíl 12);
 - **režim K** je issue založené aplikací Claude Code z veřejného hlášení a issue asistenta bez dokladu,
   například z e-mailu od rodiče nebo neznámého odesílatele (štítek `puvod:email`). E-mail je stejně
   nedůvěryhodný vstup jako veřejné hlášení.
@@ -217,7 +217,9 @@ zadání (režim K), součást projektu, nebo dotaz nahlašovateli. Odpovědi na
 komunikace a dělá je AI.
 
 **Opravy údajů od škol** přijímá asistent zadání z portálu pro školy (ověřený účet) a e-mailem z domény
-školy uvedené v rejstříku škol s ověřeným odesílatelem (SPF a DKIM v pořádku). Založí drobné zadání:
+školy uvedené v rejstříku škol s ověřeným odesílatelem (SPF a DKIM v pořádku). Nejdřív uloží záznam
+opravy do soukromého repozitáře (`opravy-skol/RRRR-MM-DD-<RED IZO>.md`: doména nebo záznam portálu,
+výsledek SPF a DKIM, co se mění; bez jmen a adres), na který se odkáže doklad v zadání. Pak založí drobné zadání:
 zápis do souboru ručních oprav se zdrojem „škola“, datem a RED IZO; dál režim L. Nový zdroj „oprava od
 školy“ se ve stejné dávce zapíše do `docs/zdroje-dat.md`. E-maily ani jména odesílatelů do repozitáře
 nepatří (pravidlo 4).
@@ -346,7 +348,7 @@ oddíl 3, režimy a odkazy. Cíl: nebude delší než dnes (132 řádků).
 | krok | co dělá AI | práce vlastníka |
 |---|---|---|
 | 0, hned | upravit #53, zavřít duplikáty #216, #228, #229, #251, PR s odstraněním `auto-fix-issues.yml`, `auto-fix-iterative.yml` a `notify-new-issue.yml` | smazat revizi #53, merge PR |
-| 1, týden 1 | PR s pravidly a skills, `rezimy.yml`, labelerem, branou a CODEOWNERS; štítky; třídění; výchozí měřítka; postup nastavení krok za krokem | strojový účet, aplikace, ruleset bez výjimek s bránou a CODEOWNERS, auto-merge, secret pro preview, virtuální karta s limitem, ověřit tarif Neonu (doba obnovy k okamžiku), soukromý repozitář a Směr vývoje, pohledy v UI (asi 2 h jednou); nastavit, aby asistent ukládal zápisy z Grok Bot do soukromého repozitáře |
+| 1, týden 1 | PR s pravidly a skills, `rezimy.yml`, labelerem, branou a CODEOWNERS; štítky; třídění; výchozí měřítka; postup nastavení krok za krokem | strojový účet, aplikace, ruleset bez výjimek s bránou a **zapnutým povinným review vlastníka kódu** (`require_code_owner_review`, dnes vypnuté: brána běží ve verzi z PR, takže PR upravující bránu by se kontroloval upravenou bránou a `.github/` chrání jen review vlastníka kódu), auto-merge, secret pro preview, virtuální karta s limitem, ověřit tarif Neonu (doba obnovy k okamžiku), soukromý repozitář a Směr vývoje, pohledy v UI (asi 2 h jednou); nastavit, aby asistent ukládal zápisy z Grok Bot do soukromého repozitáře |
 | 2, týden 2 | ověřit identitu aplikace v cloudu, přepnout identity, zapnout automatický merge, přehled, ověření na preview, denní úloha, příjem oprav od škol, druhý klíč | – |
 | 3, týden 3 | režim K pro migrace, nová data, výdaje a e-maily (po ověření rozesílání po vlnách) | – |
 
@@ -411,6 +413,8 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.8a** (3. 10. 2026, kontrola vypořádání): v kroku 1 zapnout povinné review vlastníka kódu v rulesetu;
+  oprava od školy má záznam v soukromém repozitáři, který brána ověří stejně jako zápis z briefingu.
 - **0.8** (3. 10. 2026, oponentura v0.7): briefing v Grok Bot, ne v Telegramu, a jiné kanály se
   nepočítají; nápady AI se představují na briefingu a lhůta běží od představení, rejstřík návrhů;
   řádek pro úpravu („ano, ale jinak“); `.github/workflows/` pod CODEOWNERS kvůli tokenům vlastníka;
