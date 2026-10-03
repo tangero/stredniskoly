@@ -33,11 +33,14 @@ Princip:
 | kdo | identita | dělá | nedělá |
 |---|---|---|---|
 | **Patrick** (vlastník projektu) | účet vlastníka | píše Směr vývoje, schvaluje projekty a věci za tvrdými hranicemi (schvalující review nebo `schvaleno`), veto `stop`, maže revize s osobními údaji | neschvaluje opravy ani drobná zadání, neověřuje na preview, nemerguje běžnou práci, netřídí |
-| **Eduarda** (AI asistent) | vlastní GitHub App „asistent“ | přijímá hlášení e-mailem a z portálu, píše zadání a oponentury | neschvaluje, nemerguje |
-| **Claude Code** | vlastní GitHub App „vývoj“ | třídí, realizuje, review, ověření na preview, merge přes bránu, přehled | nepřidává `schvaleno`, `zamitnuto` ani `stop`, neschvaluje review |
+| **Eduarda** (AI asistent) | strojový účet (například `eduarda-prijimacky`), právo zápisu, dvoufázové ověření, token jen na tento repozitář | přijímá hlášení e-mailem a z portálu, píše zadání a oponentury | neschvaluje, nemerguje |
+| **Claude Code** | GitHub App (například `prijimacky-ai[bot]`), jen tento repozitář, tokeny na hodinu; interaktivně i v denní úloze a Actions | třídí, realizuje, review, ověření na preview, merge přes bránu, přehled | nepřidává `schvaleno`, `zamitnuto` ani `stop`, neschvaluje review |
 | **automatika** | `GITHUB_TOKEN`, `PROJECT_TOKEN` | štítky oblastí, brána sloučení, CI, tabule | – |
 
-**Dvě oddělené identity AI** (RA6) jsou předpokladem celé části A: brána sloučení podle nich pozná,
+**Dvě oddělené identity AI** (RA6): strojový účet pro asistenta zadání (podmínky GitHubu povolují jeden
+strojový účet na člověka) a GitHub App pro Claude Code. Claude Code používá instalační token aplikace
+i při práci na zavolání, takže obě AI zůstanou rozlišitelné bez druhého strojového účtu nebo značky
+původu, kterou by AI mohla sama změnit. Identity jsou předpokladem celé části A: brána sloučení podle nich pozná,
 kdo issue založil a kdo dal schválení. Ani jedna nesmí obcházet ruleset.
 
 **Za rozhodnutí se počítá jen štítek, review nebo komentář z účtu vlastníka.** Brána i Claude ověřují
@@ -277,7 +280,7 @@ se nevypíná.
 | krok | co dělá AI | práce vlastníka |
 |---|---|---|
 | 0, hned | upravit #53, zavřít duplikáty #216, #228, #229, #251, PR s odstraněním `auto-fix-issues.yml`, `auto-fix-iterative.yml` (jde ručně spustit s právy zápisu) a `notify-new-issue.yml` | smazat revizi #53, merge PR |
-| 1, týden 1 | PR s pravidly a skills, labelerem a branou sloučení; štítky; třídění; odebrat `navrh` vedle `schvaleno` (#234, #244); přepsat projekty; výchozí měřítka | merge PR; dvě GitHub App bez obcházení rulesetu; brána jako povinná kontrola; povolit auto-merge; secret pro preview; soukromý repozitář a Směr vývoje; pohledy v UI (asi 60–90 min jednou) |
+| 1, týden 1 | PR s pravidly a skills, labelerem a branou sloučení; štítky; třídění; odebrat `navrh` vedle `schvaleno` (#234, #244); přepsat projekty; výchozí měřítka | merge PR; strojový účet a GitHub App bez obcházení rulesetu (asi 20 min); brána jako povinná kontrola; povolit auto-merge; secret pro preview; soukromý repozitář a Směr vývoje; pohledy v UI (asi 60–90 min jednou) |
 | 2, týden 2 | přepnout Clauda a asistenta na vlastní identity, zapnout automatický merge, skript přehledu, ověření na preview, denní úloha, příjem oprav od škol | – |
 | 3, kdykoli | úklid `docs/` (RA5) jako rutina | – |
 
@@ -293,7 +296,7 @@ tvrdými hranicemi, veto a mazání revizí s osobními údaji.
 | RA3 | Devět oblastí | **ano** |
 | RA4 | Životní cyklus projektu podle oddílu 8 | **ano** |
 | RA5 | Úklid `docs/` | **ano**, jako rutina |
-| RA6 | Dvě GitHub App (vývoj, asistent) bez obcházení rulesetu | **ano**, krok 1 |
+| RA6 | Strojový účet pro asistenta zadání a GitHub App pro Claude Code, obojí bez obcházení rulesetu | **ano**, krok 1 |
 | RA7 | Rutina včetně veřejných hlášení s automatickým merge přes bránu (hlášení po 24 h) | **ano** |
 | RA8 | Drobná zadání a etapy realizovat hned a sloučit po 48 h bez veta | **ano** |
 | RA9 | Zkrácení `CLAUDE.md` přes skills | **ano** |
@@ -328,6 +331,8 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.5a** (3. 10. 2026, doplněk asistenta zadání k RA6): strojový účet pro asistenta, GitHub App pro
+  Claude Code i při práci na zavolání.
 - **0.5** (3. 10. 2026, čtvrté kolo oponentury): brána sloučení jako povinná kontrola u každého PR
   (ruleset dnes nic nevynucuje); tvrdé hranice rozšířené o e-maily, crony a nasazení, adresy a SEO,
   přihlášení a portál; dvě oddělené identity AI a zadání z veřejného hlášení jen se `schvaleno`;
