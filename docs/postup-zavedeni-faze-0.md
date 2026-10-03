@@ -36,39 +36,38 @@ jsou zavřené.
 6. Classic token ulož v repozitáři jako secret `TABULE_TOKEN` (Settings → Secrets and variables →
    Actions). Fine-grained token předej asistentovi do jeho prostředí, do repozitáře ho nedávej.
 
-## Krok 3: oddělit asistenta od tvého účtu na stejném počítači (20 min)
+## Krok 3: přihlášení na počítači asistenta a na počítači vlastníka (15 min)
 
-Asistent zadání běží na tvém počítači, kde potřebuješ `gh` a git pro svůj účet i v jiných projektech.
-Odhlásit tvůj účet proto nejde. Podmínka O1 ale vyžaduje, aby prostředí asistenta k tvému přihlášení
-**nemělo přístup**. Přepínání účtů v rámci jednoho uživatele systému (`gh auth switch`, proměnná
-`GH_TOKEN`, nastavení gitu podle složky) ji nesplní: každý proces pod tvým uživatelem si tvůj token
-přečte z `~/.config/gh` nebo z Klíčenky. Asistent proto musí běžet **pod jiným uživatelem systému**.
+Podmínka O1: prostředí, kde pracuje AI, nesmí mít přístup k tvému přihlášení s právem zápisu do
+`stredniskoly`. Počítače jsou dva a každý se řeší jinak.
 
-**Doporučeno: samostatný uživatel macOS.**
+**Počítač asistenta zadání (Linux, Grok Bot).** Je samostatný, takže na něm stačí jen strojový účet:
 
-1. Nastavení systému → Uživatelé a skupiny → Přidat uživatele: typ **Standardní** (ne správce),
-   jméno například `eduarda`.
-2. Přihlas se jako `eduarda` (rychlé přepínání uživatelů) a nainstaluj tam, co asistent používá
-   (`gh`, git, Node, klon repozitáře).
-3. V tom uživateli přihlas `gh` strojovým účtem a nastav git:
-   ```bash
-   gh auth login --hostname github.com   # strojový účet, token z kroku 2
-   gh auth status                        # musí ukázat jen strojový účet
-   git config --global user.name  "eduarda-prijimacky"
-   git config --global user.email "<ID>+eduarda-prijimacky@users.noreply.github.com"
-   ```
-4. Procesy asistenta (skripty, napojení z Grok Bot, plánované úlohy) spouštěj pod uživatelem
-   `eduarda`, například jako `launchd` agenta toho uživatele.
-5. Tvůj uživatel zůstane beze změny: `gh` a git dál pod tvým účtem pro všechny projekty.
+```bash
+gh auth logout --hostname github.com          # odhlásit účet vlastníka, pokud tam je
+gh auth login --hostname github.com           # přihlásit strojový účet (token z kroku 2)
+gh auth status                                # musí ukázat jen strojový účet
+git config --global user.name  "eduarda-prijimacky"
+git config --global user.email "<ID>+eduarda-prijimacky@users.noreply.github.com"
+```
 
-Uživatel `eduarda` nesmí mít práva správce, jinak by si tvoje údaje mohl přečíst.
+Zkontroluj, že tam nezůstal tvůj SSH klíč, token v proměnných prostředí ani uložené přihlášení
+v prohlížeči.
 
-**Náhrada: kontejner.** Když asistent nemůže běžet pod jiným uživatelem, spouštěj jeho práci
-v kontejneru (Docker), do kterého se předá jen token strojového účtu a klon repozitáře. Tvůj
-`~/.config/gh`, Klíčenka ani SSH klíče se do kontejneru nepřipojují.
+**Tvůj počítač (Claude Code a tvoje vlastní `gh`).** Claude Code poběží pod tokenem aplikace
+z kroku 4 (pomocný skript ho vygeneruje do `GH_TOKEN` jen pro jeho relaci). Tvoje `gh` zůstane
+přihlášené tebou pro všechny projekty. Claude Code ale běží pod stejným uživatelem systému a tvůj
+token si umí přečíst, proto ho omez:
 
-**Co nefunguje:** přepnutí účtu jen pro složku projektu nebo proměnná prostředí pod tvým uživatelem.
-Je to pohodlné, ale O1 to nesplní a přejímka na zkušebním repozitáři (krok 7) to odhalí.
+1. GitHub → Settings → Developer settings → Fine-grained tokens → nový token pro `gh`.
+2. **Repository access: Only select repositories** a vyber své ostatní projekty; `stredniskoly`
+   vynech (nebo mu dej jen čtení).
+3. `gh auth login --with-token` s tímto tokenem; starý token zruš.
+
+Pro ostatní projekty se nic nemění. Do `stredniskoly` zasahuješ webem nebo mobilní aplikací GitHub
+(štítky v tabuli, review), což je podle návrhu téměř jediná práce, která ti tam zbývá. Nový projekt
+do tokenu přidáš jedním klepnutím. Git přes SSH může dál pushovat větve, ale PR, štítek ani schválení
+přes něj vytvořit nejde a do `main` push neprojde.
 
 ## Krok 4: GitHub App pro Claude Code (15 min)
 
