@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.13a · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.13b · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Stav zavedení: fáze 0 hotová, brána sloučení je v `main` a zatím nic neblokuje (postup v
 [postup-zavedeni-faze-0.md](postup-zavedeni-faze-0.md)).
 
@@ -26,7 +26,7 @@ a výdaje, posílá týdenní přehled a hlásí jen výjimky.
 **Co tím odpadne:** schvalování drobných zadání, kontrola na preview a merge u zhruba 20 PR týdně,
 odpovídání na dotazy v issues, obnova většiny tokenů.
 
-**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA36 v oddílu 21). Část B se rozhodne
+**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA37 v oddílu 21). Část B se rozhodne
 po čtyřech týdnech provozu podle měřítek.
 
 **Zavedení po fázích podle přínosu** (oddíl 20): fáze 1 odstraní merge a kontrolu preview, fáze 2 přidá
@@ -442,8 +442,10 @@ briefingu, takže si neodporují.
 
 ## 17. Směr vývoje
 
-Soubor `smer-vyvoje.md` v **soukromém repozitáři** (například `tangero/stredniskoly-rizeni`), upravitelný
-z telefonu: cíle k datu, pořadí priorit, co se teď nedělá, rozpočet (oddíl 17a), mimořádné pokyny.
+Soubor [`docs/smer-vyvoje.md`](smer-vyvoje.md) v tomto repozitáři, veřejně (rozhodnutí vlastníka RA37:
+projekt je transparentní, včetně rozpočtu), upravitelný z telefonu: cíle k datu, pořadí priorit, co se teď
+nedělá, rozpočet (oddíl 17a), zamrznutí, mimořádné pokyny. Změnu pustí brána jen se `schvaleno` na PR.
+Soukromý repozitář vznikne až ve fázi 2 pro zápisy z briefingů a záznamy oprav od škol.
 Zamrznutí AI navrhne z kalendáře a zapíše sem. Claude ho čte při každém zpracování.
 Je to hlavní nástroj, kterým vlastník řídí.
 
@@ -513,8 +515,7 @@ právě tento rozsah. Proto:
 
 **Do konce fáze 2 platí náhradní režim:** doklad z briefingu slouží jen pro režimy L a E a asistent
 podle něj `schvaleno` nepřidává; rozhodnutí H1, H3, H4 a H5 vlastník potvrdí jedním štítkem `schvaleno`
-na připraveném issue (i z GitHub Projects). Dnes chybí: soukromý repozitář pro zápisy (fáze 1, krok 4
-postupu), ukládání dokladu s otiskem seznamu a ověření otisku branou (fáze 2). Brána ve fázi 1 bere
+na připraveném issue (i z GitHub Projects). Dnes chybí: soukromý repozitář pro zápisy (fáze 2), ukládání dokladu s otiskem seznamu a ověření otisku branou (fáze 2). Brána ve fázi 1 bere
 doklad `Zdroj: briefing` jen podle textu.
 
 Od fáze 2 dostane strategický projekt (H5) schválení potvrzeným dokladem; brána ho ověří stejně jako
@@ -564,7 +565,7 @@ příjem oprav od škol až po scénáři O6. Scénáře O1 a O3 odpadly s rozho
 | fáze | co dělá AI | práce vlastníka |
 |---|---|---|
 | 0, hned | upravit #53, zavřít duplikáty #216, #228, #251, odstranit `auto-fix-issues.yml`, `auto-fix-iterative.yml` a `notify-new-issue.yml` (PR #276); `veletrhy-snimek.yml` zakládá PR tokenem vlastníka (`CSI_PR_TOKEN`) místo `GITHUB_TOKEN`, aby na nich běželo CI a šly sloučit bez obejití rulesetu | smazat revizi #53 (2 min) |
-| **1, týden 1–2: konec merge a kontroly preview** | PR s pravidly a skills, `rezimy.yml`, labelerem a branou; zapnout slučování skriptem po bráně u rutiny z interních zadání, drobných zadání a etap (**rutina z veřejných hlášení zůstává do zavedení druhého klíče ve fázi 2 v dnešním režimu**: nerealizuje se bez `schvaleno`); ověření na preview; týdenní přehled; výchozí měřítka | v rulesetu přidat bránu jako povinnou kontrolu a vyprázdnit seznam obejití; secret pro preview; soukromý repozitář a Směr vývoje včetně rozpočtu (asi 30 min) |
+| **1, týden 1–2: konec merge a kontroly preview** | PR s pravidly a skills, `rezimy.yml`, labelerem a branou; zapnout slučování skriptem po bráně u rutiny z interních zadání, drobných zadání a etap (**rutina z veřejných hlášení zůstává do zavedení druhého klíče ve fázi 2 v dnešním režimu**: nerealizuje se bez `schvaleno`); ověření na preview; týdenní přehled; výchozí měřítka | v rulesetu přidat bránu jako povinnou kontrolu a vyprázdnit seznam obejití; secret pro preview; Směr vývoje včetně rozpočtu v `docs/smer-vyvoje.md` (asi 30 min) |
 | **2, týden 3–4: plná autonomie** | druhý klíč, režim K pro migrace (po ověření tarifu Neonu), nová data, výdaje kartou, e-maily odběratelům (po ověření rozesílání po vlnách), zápisy z briefingu do soukromého repozitáře, příjem oprav od škol, denní úloha | virtuální karta s limitem, ověřit tarif Neonu (asi 30 min) |
 | **přejímka po fázi 2** | scénáře: (1) vlastník týden neodpovídá; běžná práce pokračuje, vyhrazená rozhodnutí čekají, `stop` se dodržuje, přehled zůstává aktuální; (2) PR se `stop` a štítkem `incident` během zamrznutí zůstane zablokovaný; (3) rozšíření projektu nad mandát se nesloučí bez `schvaleno` | žádná (to je test) |
 
@@ -589,7 +590,7 @@ ověří ho měřítka.
 | RA8 | Drobná zadání po 48 h bez veta; etapy v mandátu bez lhůty (RA32) | **ano** |
 | RA9 | Zkrácení `CLAUDE.md` přes skills | **ano** |
 | RA10 | Ověření na preview dělá AI | **ano** |
-| RA11 | Přehled neveřejně, Směr vývoje v soukromém repozitáři | **ano** |
+| RA11 | Přehled neveřejně; Směr vývoje veřejně podle RA37 | **ano** |
 | RA12 | Denní úloha se stropem 5 PR denně | **ano** |
 | RA13 | Brána sloučení jako povinná kontrola se zamrznutím | **ano** |
 | RA14 | Opravy od škol z portálu a ověřeného e-mailu | **ano** |
@@ -615,6 +616,7 @@ ověří ho měřítka.
 | RA34 | Souhlas vázaný na otisk rozsahu; souběh podmínek H a K; přejímací scénáře jako podmínka zapnutí fáze | **ano** |
 | RA35 | AI pracuje přes účet vlastníka (od RA36 kromě asistenta zadání); pojistky chrání před chybou a podvrženým vstupem, ne před úmyslem AI; kontrola rozhodnutí zpětně v týdenním přehledu | **ano** (rozhodnutí vlastníka) |
 | RA36 | Asistent zadání pracuje vlastním účtem `eduarda-prijimacky`; brána bere `schvaleno` jen z účtu vlastníka | **ano** (rozhodnutí vlastníka) |
+| RA37 | Směr vývoje veřejně v `docs/smer-vyvoje.md` včetně rozpočtu; změny jen se souhlasem vlastníka | **ano** (rozhodnutí vlastníka) |
 
 # Část B: rozšíření podle měřítek
 
@@ -644,6 +646,8 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.13b** (3. 10. 2026, rozhodnutí vlastníka): Směr vývoje veřejně v `docs/smer-vyvoje.md` včetně
+  rozpočtu (RA37); soukromý repozitář až ve fázi 2 pro zápisy z briefingů a opravy od škol.
 - **0.13a** (3. 10. 2026, nálezy asistenta zadání): doklad původu a protokol z preview brána uzná jen od
   vlastníka a asistenta zadání (protokol i od `github-actions[bot]`), PR jiného autora jen se souhlasem
   na PR; oprava úvodní věty a pořadí řádků RA.
