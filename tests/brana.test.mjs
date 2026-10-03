@@ -6,6 +6,7 @@ import {
   vyhodnot, rozsah, otisk, propojenaIssues, zaznamSouhlasu, souhlasIssue, rozbor, zamrznuto, ZNACKA, BOT,
 } from '../scripts/brana/brana.mjs';
 import { oblastiZLabeleru } from '../scripts/brana/data.mjs';
+import { cerstvaKontrola } from '../scripts/brana/sloucit.mjs';
 
 const konfig = {
   rezimy: yaml.load(fs.readFileSync('.github/rezimy.yml', 'utf8')),
@@ -18,12 +19,12 @@ const PRED = (h) => new Date(TED - h * 3600 * 1000).toISOString();
 
 const TELO_ISSUE = 'Zdroj: vlastník\n\n## Rozsah\nPřidat větu o 2. kole.\n\n## Poznámky\nnic';
 const issue = (o = {}) => ({ cislo: 10, stav: 'open', stitky: ['interni'], telo: TELO_ISSUE, komentare: [], udalosti: [], ...o });
-const protokolKomentar = (sha = SHA, vysledek = 'splněno') => ({
-  autor: 'tangero', cas: PRED(1), telo: `## Protokol z preview\nCommit: ${sha.slice(0, 7)}\n| věta na stránce | ${vysledek} |`,
+const protokolKomentar = (sha = SHA, vysledek = 'splněno', kdy = PRED(55)) => ({
+  autor: 'tangero', cas: kdy, telo: `## Protokol z preview\nCommit: ${sha.slice(0, 7)}\n| věta na stránce | ${vysledek} |`,
 });
 const pr = (o = {}) => ({
   cislo: 5, stav: 'open', zakladna: 'main', draft: false, telo: 'Closes #10', stitky: [],
-  vytvoreno: PRED(72), hlava: { sha: SHA, cas: PRED(60) }, komentare: [protokolKomentar()], udalosti: [], ...o,
+  vytvoreno: PRED(72), hlava: { sha: SHA, videna: PRED(60) }, komentare: [protokolKomentar()], udalosti: [], ...o,
 });
 const soubor = (nazev, radky = 10, o = {}) => ({ nazev, stav: 'modified', pridano: radky, odebrano: 0, patch: '', ...o });
 const STRANKA = soubor('src/components/skola/DruheKolo.tsx');
@@ -49,7 +50,7 @@ test('rozsah bere oddíl Rozsah, jinak celé tělo', () => {
 });
 
 test('drobné zadání (L) čeká 48 h od poslední změny, pak projde', () => {
-  const brzy = run({ pr: pr({ hlava: { sha: SHA, cas: PRED(10) } }) });
+  const brzy = run({ pr: pr({ hlava: { sha: SHA, videna: PRED(10) } }) });
   assert.equal(brzy.rezim, 'L');
   assert.equal(brzy.uspech, false);
   assert.ok(brzy.cekaDo > TED);
@@ -86,21 +87,21 @@ test('změna jen v dokumentaci protokol nepotřebuje', () => {
 });
 
 test('rutina projde hned, nad limit běží jako drobné zadání', () => {
-  const rutina = run({ pr: pr({ stitky: ['rutina'], hlava: { sha: SHA, cas: PRED(1) } }) });
+  const rutina = run({ pr: pr({ stitky: ['rutina'], hlava: { sha: SHA, videna: PRED(1) } }) });
   assert.equal(rutina.rezim, 'R');
   assert.equal(rutina.uspech, true, rutina.duvody.join('; '));
-  const velka = run({ pr: pr({ stitky: ['rutina'], hlava: { sha: SHA, cas: PRED(1) } }), soubory: [soubor('src/components/skola/X.tsx', 400)] });
+  const velka = run({ pr: pr({ stitky: ['rutina'], hlava: { sha: SHA, videna: PRED(1) } }), soubory: [soubor('src/components/skola/X.tsx', 400)] });
   assert.equal(velka.rezim, 'L');
   assert.equal(velka.uspech, false);
   const dveOblasti = run({
-    pr: pr({ stitky: ['rutina'], hlava: { sha: SHA, cas: PRED(1) } }),
+    pr: pr({ stitky: ['rutina'], hlava: { sha: SHA, videna: PRED(1) } }),
     soubory: [STRANKA, soubor('src/app/veletrhy/page.tsx')],
   });
   assert.equal(dveOblasti.rezim, 'L');
 });
 
 test('etapa projektu s dokladem projde hned', () => {
-  const v = run({ pr: pr({ hlava: { sha: SHA, cas: PRED(1) } }), issues: [issue({ stitky: ['interni', 'projekt'] })] });
+  const v = run({ pr: pr({ hlava: { sha: SHA, videna: PRED(1) } }), issues: [issue({ stitky: ['interni', 'projekt'] })] });
   assert.equal(v.rezim, 'E');
   assert.equal(v.uspech, true, v.duvody.join('; '));
 });
@@ -158,12 +159,42 @@ test('H2: změna brány potřebuje souhlas na PR, souhlas na issue nestačí', (
   assert.equal(v.uspech, false);
 });
 
-test('H2: workflow, které mění secrets nebo permissions', () => {
-  const a = rozbor([soubor('.github/workflows/testy.yml', 2, { patch: '@@\n+        env:\n+          T: ${{ secrets.X }}' })], konfig);
-  assert.deepEqual(a.h2, ['.github/workflows/testy.yml']);
-  const b = rozbor([soubor('.github/workflows/testy.yml', 2, { patch: '@@\n+        run: echo' })], konfig);
-  assert.deepEqual(b.h2, []);
-  assert.deepEqual(b.k, ['workflows']);
+const WF = `name: T
+on: push
+permissions:
+  contents: read
+jobs:
+  a:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo
+`;
+const wf = (pred, po, o = {}) => soubor('.github/workflows/testy.yml', 2, { obsahPred: pred, obsahPo: po, ...o });
+
+test('H2: workflow, které mění oprávnění nebo secrets', () => {
+  // Změna hodnoty pod nezměněným řádkem `permissions:` (review P1).
+  assert.deepEqual(rozbor([wf(WF, WF.replace('contents: read', 'contents: write'))], konfig).h2, ['.github/workflows/testy.yml']);
+  assert.deepEqual(rozbor([wf(WF, WF.replace('runs-on: ubuntu-latest', 'runs-on: ubuntu-latest\n    permissions: write-all'))], konfig).h2.length, 1);
+  assert.deepEqual(rozbor([wf(WF, WF.replace('- run: echo', '- run: echo ${{ secrets.X }}'))], konfig).h2.length, 1);
+  const bezPrav = rozbor([wf(WF, WF.replace('- run: echo', '- run: echo ahoj'))], konfig);
+  assert.deepEqual(bezPrav.h2, []);
+  assert.deepEqual(bezPrav.k, ['workflows']);
+});
+
+test('H2: nový workflow a nečitelný obsah konzervativně, smazání ne', () => {
+  assert.equal(rozbor([wf(undefined, WF, { stav: 'added' })], konfig).h2.length, 1);
+  assert.equal(rozbor([wf(WF, undefined)], konfig).h2.length, 1);
+  assert.equal(rozbor([wf(WF, 'jobs: [nezavrene')], konfig).h2.length, 1);
+  assert.equal(rozbor([wf(WF, undefined, { stav: 'removed' })], konfig).h2.length, 0);
+});
+
+test('H2 přes workflow neprojde se souhlasem na issue', () => {
+  const schvaleneIssue = issue({
+    stitky: ['interni', 'schvaleno'], udalosti: [schvalenoUdalost(PRED(5))], komentare: [souhlasZaznam(TELO_ISSUE, PRED(5))],
+  });
+  const v = run({ soubory: [wf(WF, WF.replace('contents: read', 'contents: write'))], issues: [schvaleneIssue] });
+  assert.equal(v.rezim, 'H2');
+  assert.equal(v.uspech, false);
 });
 
 test('K: migrace projde se souhlasem na issue', () => {
@@ -175,6 +206,19 @@ test('K: migrace projde se souhlasem na issue', () => {
   assert.equal(bez.uspech, false);
   const se = run({ soubory: [soubor('db/migrace/030-x.sql')], issues: [schvaleneIssue] });
   assert.equal(se.uspech, true, se.duvody.join('; '));
+});
+
+test('přesun stránky do dokumentace potřebuje protokol', () => {
+  const presun = soubor('docs/removed-page.md', 0, { stav: 'renamed', puvodni: 'src/app/skoly/page.tsx' });
+  const a = rozbor([presun], konfig);
+  assert.equal(a.jenBezPreview, false);
+  assert.deepEqual(a.k, ['adresy']);
+  const v = run({
+    pr: pr({ komentare: [] }), soubory: [presun],
+    issues: [issue({ stitky: ['interni', 'schvaleno'], udalosti: [schvalenoUdalost(PRED(5))], komentare: [souhlasZaznam(TELO_ISSUE, PRED(5))] })],
+  });
+  assert.equal(v.uspech, false);
+  assert.match(v.duvody.join(), /chybí protokol/);
 });
 
 test('smazaná stránka je K (adresy)', () => {
@@ -198,13 +242,42 @@ test('přejímka O2: souhlas s rozsahem A nepokryje změněný rozsah B', () => 
 test('přejímka O2: změna rozsahu mezi navrh a schvaleno souhlas zneplatní', () => {
   const navrhA = { autor: BOT, cas: PRED(10), telo: ZNACKA.otiskNavrhu(otisk(rozsah(TELO_ISSUE))) };
   const telB = TELO_ISSUE.replace('2. kole', '3. kole');
-  assert.match(zaznamSouhlasu(issue({ telo: telB, komentare: [navrhA] })), /souhlas-neplatny/);
-  assert.match(zaznamSouhlasu(issue({ komentare: [navrhA] })), /brana:souhlas sha256/);
+  const odmitnuti = zaznamSouhlasu(issue({ telo: telB, komentare: [navrhA] }), telB);
+  assert.equal(odmitnuti.platny, false);
+  assert.match(odmitnuti.znacky, /souhlas-neplatny/);
+  assert.equal(zaznamSouhlasu(issue({ komentare: [navrhA] }), TELO_ISSUE).platny, true);
   const v = souhlasIssue(issue({
     telo: telB, stitky: ['schvaleno'], udalosti: [schvalenoUdalost(PRED(5))],
-    komentare: [navrhA, { autor: BOT, cas: PRED(5), telo: ZNACKA.souhlasNeplatny(otisk(rozsah(telB))) }],
+    komentare: [navrhA, { autor: BOT, cas: PRED(5), telo: odmitnuti.znacky }],
   }), konfig);
   assert.equal(v.platny, false);
+});
+
+test('celý cyklus A → B → odmítnutí → nové potvrzení B', () => {
+  const navrhA = { autor: BOT, cas: PRED(10), telo: ZNACKA.otiskNavrhu(otisk(rozsah(TELO_ISSUE))) };
+  const telB = TELO_ISSUE.replace('2. kole', '3. kole');
+  const odmitnuti = { autor: BOT, cas: PRED(5), telo: zaznamSouhlasu(issue({ telo: telB, komentare: [navrhA] }), telB).znacky };
+  // Vlastník B zkontroluje a přidá schvaleno znovu: porovná se s novým otiskem návrhu B.
+  const znovu = zaznamSouhlasu(issue({ telo: telB, komentare: [navrhA, odmitnuti] }), telB);
+  assert.equal(znovu.platny, true);
+  const s = souhlasIssue(issue({
+    telo: telB, stitky: ['schvaleno'],
+    udalosti: [schvalenoUdalost(PRED(5)), { akce: 'unlabeled', stitek: 'schvaleno', cas: PRED(5) }, schvalenoUdalost(PRED(2))],
+    komentare: [navrhA, odmitnuti, { autor: BOT, cas: PRED(2), telo: znovu.znacky }],
+  }), konfig);
+  assert.equal(s.platny, true, s.duvod);
+});
+
+test('opožděný běh: souhlas se zaznamená s rozsahem ze schvalovací události, ne z API', () => {
+  const telB = TELO_ISSUE.replace('Přidat větu o 2. kole.', 'Přidat větu a rozeslat e-mail.');
+  // Schváleno přímo (bez navrh) s tělem A; než workflow doběhl, API už vrací B.
+  const z = zaznamSouhlasu(issue({ telo: telB }), TELO_ISSUE);
+  assert.equal(z.platny, true);
+  const s = souhlasIssue(issue({
+    telo: telB, stitky: ['schvaleno'], udalosti: [schvalenoUdalost(PRED(2))],
+    komentare: [{ autor: BOT, cas: PRED(2), telo: z.znacky }],
+  }), konfig);
+  assert.equal(s.platny, false);
 });
 
 test('starší schválení před zavedením brány se zaznamená s dnešním rozsahem', () => {
@@ -220,10 +293,33 @@ test('zamrznutí blokuje, incident v rozsahu rutiny projde', () => {
   assert.equal(zamrznuto(z, TED), true);
   assert.equal(zamrznuto({ od: '2026-10-01', do: '2026-10-09' }, TED), false);
   assert.equal(run({ zamrznuti: z }).uspech, false);
-  const incident = run({ zamrznuti: z, pr: pr({ stitky: ['incident', 'rutina'], hlava: { sha: SHA, cas: PRED(1) } }) });
+  const incident = run({ zamrznuti: z, pr: pr({ stitky: ['incident', 'rutina'], hlava: { sha: SHA, videna: PRED(1) } }) });
   assert.equal(incident.uspech, true, incident.duvody.join('; '));
   const velky = run({ zamrznuti: z, pr: pr({ stitky: ['incident'] }), soubory: [soubor('db/migrace/1.sql')] });
   assert.equal(velky.uspech, false);
+});
+
+test('lhůta L běží od protokolu a od první kontroly hlavy, ne od data commitu', () => {
+  const cerstvyProtokol = run({ pr: pr({ komentare: [protokolKomentar(SHA, 'splněno', PRED(0.1))] }) });
+  assert.equal(cerstvyProtokol.rezim, 'L');
+  assert.equal(cerstvyProtokol.uspech, false);
+  const novaHlava = run({ pr: pr({ hlava: { sha: SHA, videna: PRED(1) } }) });
+  assert.equal(novaHlava.uspech, false);
+  const nevidena = run({ pr: pr({ hlava: { sha: SHA } }) });
+  assert.equal(nevidena.uspech, false);
+});
+
+test('sloučení čeká na kontrolu zapsanou po žádosti, starší úspěch nestačí', async () => {
+  const OD = Date.parse('2026-10-10T12:00:00Z');
+  const stara = { id: 1, status: 'completed', conclusion: 'success', started_at: '2026-10-09T23:59:00Z' };
+  const nova = { id: 2, status: 'completed', conclusion: 'failure', started_at: '2026-10-10T12:00:05Z', output: { title: 'Neprošlo' } };
+  let volani = 0;
+  const api = async () => ({ check_runs: volani++ < 2 ? [stara] : [stara, nova] });
+  const k = await cerstvaKontrola(api, SHA, OD, { cekani: 60_000, interval: 0, spanek: async () => {} });
+  assert.equal(k.id, 2);
+  assert.equal(k.conclusion, 'failure');
+  const nic = await cerstvaKontrola(async () => ({ check_runs: [stara] }), SHA, OD, { cekani: 0, interval: 0, spanek: async () => {} });
+  assert.equal(nic, null);
 });
 
 test('rozpracovaný PR neprojde', () => {

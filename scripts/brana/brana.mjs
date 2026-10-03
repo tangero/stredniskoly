@@ -8,6 +8,7 @@
 
 import { createHash } from 'node:crypto';
 import { matchesGlob } from 'node:path';
+import yaml from 'js-yaml';
 
 export const BOT = 'github-actions[bot]';
 export const STITKY_HLASENI = ['bug-report', 'portal-skoly', 'feature-request', 'puvod:hlaseni', 'puvod:email'];
@@ -93,16 +94,21 @@ export function souhlasIssue(issue, konfig) {
 }
 
 /**
- * Záznam při přidání `schvaleno` na issue: souhlas platí, jen když se rozsah od přidání `navrh`
- * nezměnil. Issue bez otisku návrhu (vlastník ho schválil rovnou) se zaznamená s dnešním rozsahem.
+ * Záznam při přidání `schvaleno` na issue. Otisk se bere z těla ve schvalovací události (to vlastník
+ * viděl), ne z aktuálního API: issue se mohlo změnit, než workflow doběhl. Souhlas platí, jen když se
+ * rozsah od přidání `navrh` nezměnil; issue bez otisku návrhu (schválené rovnou) se zaznamená s rozsahem
+ * z události. Při změně vrátí `platny: false` a nový otisk návrhu pro rozsah z události, takže opakované
+ * přidání `schvaleno` po kontrole potvrdí právě tento rozsah.
  */
-export function zaznamSouhlasu(issue) {
-  const dnes = otisk(rozsah(issue.telo));
+export function zaznamSouhlasu(issue, teloUdalosti) {
+  const schvaleny = otisk(rozsah(teloUdalosti));
   const navrh = issue.komentare
     .filter((k) => k.autor === BOT && CTENI.otiskNavrhu.test(k.telo))
     .sort((a, b) => cas(b.cas) - cas(a.cas))[0];
-  if (navrh && navrh.telo.match(CTENI.otiskNavrhu)[1] !== dnes) return ZNACKA.souhlasNeplatny(dnes);
-  return ZNACKA.souhlas(dnes);
+  if (navrh && navrh.telo.match(CTENI.otiskNavrhu)[1] !== schvaleny) {
+    return { platny: false, znacky: `${ZNACKA.souhlasNeplatny(schvaleny)}\n${ZNACKA.otiskNavrhu(schvaleny)}` };
+  }
+  return { platny: true, znacky: ZNACKA.souhlas(schvaleny) };
 }
 
 /** Souhlas na PR platí pro hlavu, kterou měl PR při přidání `schvaleno`. */
@@ -118,6 +124,35 @@ export function souhlasPr(pr) {
   return { platny: true };
 }
 
+/** Oprávnění a použité secrets workflow; null, když obsah chybí nebo nejde přečíst. */
+export function pravaWorkflow(obsah) {
+  if (typeof obsah !== 'string') return null;
+  let w;
+  try {
+    w = yaml.load(obsah);
+  } catch {
+    return null;
+  }
+  if (!w || typeof w !== 'object') return null;
+  const joby = {};
+  for (const [id, job] of Object.entries(w.jobs || {})) joby[id] = job?.permissions ?? null;
+  const secrets = [...new Set(obsah.match(/secrets\.[A-Za-z0-9_]+/g) || [])].sort();
+  return JSON.stringify({ prava: w.permissions ?? null, joby, secrets });
+}
+
+/**
+ * Mění úprava workflow oprávnění nebo secrets? Nový workflow ano (bez bloku `permissions` dostane
+ * výchozí práva tokenu), nečitelný obsah také; smazání ne.
+ */
+export function meniPravaWorkflow(s) {
+  if (!/^\.github\/workflows\//.test(s.nazev) && !/^\.github\/workflows\//.test(s.puvodni || '')) return false;
+  if (s.stav === 'removed') return false;
+  if (s.stav === 'added') return true;
+  const pred = pravaWorkflow(s.obsahPred);
+  const po = pravaWorkflow(s.obsahPo);
+  return pred === null || po === null || pred !== po;
+}
+
 /** Rozdělení změněných souborů podle rezimy.yml a labeler.yml. */
 export function rozbor(soubory, konfig) {
   const r = konfig.rezimy;
@@ -129,7 +164,7 @@ export function rozbor(soubory, konfig) {
   let jenBezPreview = true;
   for (const s of soubory) {
     if (cesty(s).some((c) => shoda(c, r.h2))) h2.add(s.nazev);
-    if (/^\.github\/workflows\//.test(s.nazev) && /^[+-].*(secrets\.|permissions:)/m.test(s.patch || '')) h2.add(s.nazev);
+    if (meniPravaWorkflow(s)) h2.add(s.nazev);
     for (const [kategorie, vzory] of Object.entries(r.k || {})) {
       if (cesty(s).some((c) => shoda(c, vzory))) k.add(kategorie);
     }
@@ -138,7 +173,8 @@ export function rozbor(soubory, konfig) {
       if (cesty(s).some((c) => shoda(c, vzory))) oblasti.add(oblast);
     }
     if (!shoda(s.nazev, r.testy)) radky += (s.pridano || 0) + (s.odebrano || 0);
-    if (!shoda(s.nazev, r.bez_preview)) jenBezPreview = false;
+    // Přesun stránky do dokumentace web mění: výjimka platí, jen když obě cesty patří mezi bez_preview.
+    if (!cesty(s).every((c) => shoda(c, r.bez_preview))) jenBezPreview = false;
   }
   return { h2: [...h2], k: [...k].sort(), oblasti: [...oblasti].sort(), radky, jenBezPreview };
 }
@@ -146,12 +182,13 @@ export function rozbor(soubory, konfig) {
 /** Poslední protokol z preview pro aktuální hlavu PR (oddíl 11). */
 export function protokol(pr) {
   const kratke = pr.hlava.sha.slice(0, 7);
-  const texty = [{ telo: pr.telo || '', cas: pr.vytvoreno }, ...pr.komentare]
+  // Tělo PR nemá čas úpravy; updated_at je pozdější nebo stejný, tedy opatrnější.
+  const texty = [{ telo: pr.telo || '', cas: pr.upraveno || pr.vytvoreno }, ...pr.komentare]
     .filter((t) => /Protokol z preview/i.test(t.telo) && t.telo.includes(kratke))
     .sort((a, b) => cas(b.cas) - cas(a.cas));
   if (!texty.length) return { ok: false, duvod: `chybí protokol z preview pro commit ${kratke}` };
   if (/(^|[^\p{L}])nesplněno/iu.test(texty[0].telo)) return { ok: false, duvod: 'protokol z preview obsahuje nesplněné kritérium' };
-  return { ok: true };
+  return { ok: true, cas: texty[0].cas };
 }
 
 /** Zamrznutí z proměnných ZAMRZNUTI_OD a ZAMRZNUTI_DO (RRRR-MM-DD, obě včetně). */
@@ -182,9 +219,11 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted }) {
     else info.push('incidentní postup při zamrznutí');
   }
 
+  let protokolCas = null;
   if (!a.jenBezPreview) {
     const p = protokol(pr);
     if (!p.ok) blokuje.push(p.duvod);
+    else protokolCas = cas(p.cas);
   }
 
   const sPr = souhlasPr(pr);
@@ -244,7 +283,11 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted }) {
       if (poradi[ri] > poradi[rezim]) rezim = ri;
     }
     if (rezim === 'L') {
-      const zmena = Math.max(cas(pr.vytvoreno), cas(pr.hlava.cas));
+      // Lhůta běží od chvíle, kdy byla aktuální hlava k ověření: od prvního serverového záznamu
+      // o ní (první kontrola na commitu) a u změn webu od protokolu z preview. Datum commitu se
+      // nepoužívá, protože neříká, kdy byl commit do PR pushnut.
+      const videna = pr.hlava.videna ? cas(pr.hlava.videna) : ted;
+      const zmena = Math.max(videna, protokolCas ?? 0);
       cekaDo = zmena + r.lhuta_l_hodin * HODINA;
       if (ted < cekaDo) blokuje.push(`drobné zadání: lhůta na veto běží do ${new Date(cekaDo).toISOString().slice(0, 16).replace('T', ' ')} UTC`);
       else info.push(`drobné zadání: lhůta ${r.lhuta_l_hodin} h uplynula bez stop`);

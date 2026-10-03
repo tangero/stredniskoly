@@ -36,6 +36,8 @@ async function zapisKontrolu(pr, verdikt) {
       name: NAZEV_KONTROLY,
       head_sha: pr.hlava.sha,
       status: 'completed',
+      started_at: new Date().toISOString(),
+      completed_at: new Date().toISOString(),
       conclusion: verdikt.uspech ? 'success' : 'failure',
       output: { title: titulek, summary: souhrn },
     },
@@ -71,12 +73,18 @@ async function main() {
         await komentuj(cislo, `Brána sloučení uložila otisk rozsahu k návrhu. Změna rozsahu před schválením souhlas zneplatní.\n\n${ZNACKA.otiskNavrhu(otisk(rozsah(data.issue.body || '')))}`);
       }
       if (udalost === 'issues' && data.action === 'labeled' && data.label?.name === 'schvaleno') {
+        // Tělo ze schvalovací události je to, co vlastník schválil; API už může vracet novější.
         const issue = await nactiIssue(api, cislo);
-        const znacka = zaznamSouhlasu(issue);
-        const platny = znacka.startsWith('<!-- brana:souhlas ');
-        await komentuj(cislo, platny
-          ? `Brána sloučení zaznamenala souhlas vlastníka s tímto rozsahem. Pozdější změna rozsahu ho zneplatní.\n\n${znacka}`
-          : `Brána sloučení souhlas nezaznamenala: rozsah se od přidání štítku navrh změnil. Zkontroluj tělo issue a přidej schvaleno znovu.\n\n${znacka}`);
+        const z = zaznamSouhlasu(issue, data.issue.body || '');
+        if (z.platny) {
+          await komentuj(cislo, `Brána sloučení zaznamenala souhlas vlastníka s tímto rozsahem. Pozdější změna rozsahu ho zneplatní.\n\n${z.znacky}`);
+        } else {
+          // Nový cyklus návrhu: otisk rozsahu z události, štítek zpět na navrh. Opakované přidání
+          // schvaleno pak potvrdí právě tento rozsah.
+          await komentuj(cislo, `Brána sloučení souhlas nezaznamenala: rozsah se od přidání štítku navrh změnil. Uložila nový otisk návrhu a vrátila issue do návrhu. Zkontroluj tělo issue a přidej schvaleno znovu.\n\n${z.znacky}`);
+          await api(`repos/${REPO}/issues/${cislo}/labels/schvaleno`, { method: 'DELETE' });
+          await api(`repos/${REPO}/issues/${cislo}/labels`, { method: 'POST', body: { labels: ['navrh'] } });
+        }
       }
       cisla = await prOdkazujiciNa(api, cislo);
     }

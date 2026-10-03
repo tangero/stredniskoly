@@ -34,7 +34,11 @@ export function vytvorApi({
   return async (cesta, { method = 'GET', body } = {}) => {
     const args = ['api', '-X', method, cesta];
     if (body) args.push('--input', '-');
-    const vystup = execFileSync('gh', args, { input: body ? JSON.stringify(body) : undefined, encoding: 'utf8' });
+    const vystup = execFileSync('gh', args, {
+      input: body ? JSON.stringify(body) : undefined,
+      encoding: 'utf8',
+      stdio: ['pipe', 'pipe', 'pipe'],
+    });
     return vystup.trim() ? JSON.parse(vystup) : null;
   };
 }
@@ -47,6 +51,16 @@ async function vse(api, cesta) {
     if (dil.length < 100) break;
   }
   return vysledek;
+}
+
+/** Text souboru v daném commitu; undefined, když neexistuje nebo nejde načíst. */
+async function obsah(api, cesta, ref) {
+  try {
+    const d = await api(`repos/${REPO}/contents/${encodeURI(cesta)}?ref=${ref}`);
+    return Buffer.from(d.content, 'base64').toString('utf8');
+  } catch {
+    return undefined;
+  }
 }
 
 // BRANA_REF jen pro zkoušku konfigurace z větve před sloučením; workflow ho nenastavuje.
@@ -101,15 +115,28 @@ export async function nactiIssue(api, cislo) {
 /** Všechno, co brána potřebuje k jednomu PR. */
 export async function nactiPr(api, cislo) {
   const p = await api(`repos/${REPO}/pulls/${cislo}`);
-  const hlava = await api(`repos/${REPO}/commits/${p.head.sha}`);
-  const soubory = (await vse(api, `repos/${REPO}/pulls/${cislo}/files`)).map((s) => ({
-    nazev: s.filename,
-    puvodni: s.previous_filename,
-    stav: s.status,
-    pridano: s.additions,
-    odebrano: s.deletions,
-    patch: s.patch,
-  }));
+  // Kdy server hlavu poprvé viděl: nejstarší kontrola na commitu (CI běží hned po pushi).
+  const kontroly = await api(`repos/${REPO}/commits/${p.head.sha}/check-runs?per_page=100`);
+  const videna = (kontroly.check_runs || [])
+    .map((k) => k.started_at)
+    .filter(Boolean)
+    .sort()[0];
+  const soubory = [];
+  for (const s of await vse(api, `repos/${REPO}/pulls/${cislo}/files`)) {
+    const soubor = {
+      nazev: s.filename,
+      puvodni: s.previous_filename,
+      stav: s.status,
+      pridano: s.additions,
+      odebrano: s.deletions,
+    };
+    // U workflow brána porovnává oprávnění před a po, proto potřebuje oba obsahy (jen čte text).
+    if (/^\.github\/workflows\//.test(s.filename) || /^\.github\/workflows\//.test(s.previous_filename || '')) {
+      soubor.obsahPred = await obsah(api, s.previous_filename || s.filename, p.base.sha);
+      soubor.obsahPo = await obsah(api, s.filename, p.head.sha);
+    }
+    soubory.push(soubor);
+  }
   const issues = [];
   for (const n of propojenaIssues(p.body)) {
     const i = await nactiIssue(api, n);
@@ -124,7 +151,8 @@ export async function nactiPr(api, cislo) {
       telo: p.body || '',
       stitky: p.labels.map((l) => l.name),
       vytvoreno: p.created_at,
-      hlava: { sha: p.head.sha, cas: hlava.commit.committer.date },
+      upraveno: p.updated_at,
+      hlava: { sha: p.head.sha, videna },
       komentare: await komentare(api, cislo),
       udalosti: await udalosti(api, cislo),
     },

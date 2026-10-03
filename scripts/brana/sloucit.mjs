@@ -4,15 +4,32 @@
 //   node scripts/brana/sloucit.mjs <číslo PR> --jen-vyhodnotit
 //
 // Těsně před sloučením bránu vyhodnotí znovu nad čerstvými daty (štítek stop, souhlas, protokol)
-// a ověří, že kontrola „Brána sloučení“ na aktuální hlavě prošla. Zamrznutí zná jen workflow
-// (proměnné repozitáře), proto se bez úspěšné kontroly nesloučí nic. Slučuje se s pevnou hlavou
-// (sha), takže push mezi kontrolou a sloučením sloučení odmítne. Vestavěný automatický merge se
+// a vyžádá si nové vyhodnocení na serveru: komentář v PR spustí workflow brány a skript čeká na
+// kontrolu „Brána sloučení“ zapsanou až po tomto komentáři. Starší úspěch nestačí, protože mezitím
+// mohlo začít zamrznutí (proměnné repozitáře zná jen workflow). Slučuje se s pevnou hlavou (sha),
+// takže push mezi kontrolou a sloučením sloučení odmítne. Vestavěný automatický merge se
 // nepoužívá, protože by sloučil podle staršího výsledku.
 
+import { pathToFileURL } from 'node:url';
 import { vyhodnot } from './brana.mjs';
 import { REPO, vytvorApi, nactiKonfig, nactiPr } from './data.mjs';
 
 const NAZEV_KONTROLY = 'Brána sloučení';
+
+const CEKANI_MS = 10 * 60 * 1000;
+const INTERVAL_MS = 15 * 1000;
+
+/** Čeká na kontrolu brány na hlavě, zapsanou nejdřív v čase `od`; null po vypršení. */
+export async function cerstvaKontrola(api, sha, od, { cekani = CEKANI_MS, interval = INTERVAL_MS, spanek } = {}) {
+  const spi = spanek || ((ms) => new Promise((r) => setTimeout(r, ms)));
+  const konec = Date.now() + cekani;
+  for (;;) {
+    const k = await posledniKontrola(api, sha);
+    if (k && k.status === 'completed' && Date.parse(k.started_at) >= od) return k;
+    if (Date.now() >= konec) return null;
+    await spi(interval);
+  }
+}
 
 export async function posledniKontrola(api, sha) {
   const d = await api(`repos/${REPO}/commits/${sha}/check-runs?check_name=${encodeURIComponent(NAZEV_KONTROLY)}&filter=latest`);
@@ -42,8 +59,18 @@ async function main() {
     process.exit(1);
   }
   if (!verdikt.uspech) process.exit(1);
-  if (kontrola?.conclusion !== 'success') {
-    console.error('Kontrola brány na aktuální hlavě neprošla nebo ještě neběžela; nesloučeno.');
+
+  const zadost = await api(`repos/${REPO}/issues/${cislo}/comments`, {
+    method: 'POST',
+    body: { body: `Žádost o vyhodnocení brány před sloučením commitu ${vstup.pr.hlava.sha.slice(0, 7)}.\n\n<!-- brana:pred-sloucenim -->` },
+  });
+  // Čas serveru, ne místní hodiny; sekundová přesnost, proto „nejdřív v tutéž sekundu“.
+  const od = Date.parse(zadost.created_at);
+  const cerstva = await cerstvaKontrola(api, vstup.pr.hlava.sha, od);
+  if (cerstva?.conclusion !== 'success') {
+    console.error(cerstva
+      ? `Brána po žádosti neprošla (${cerstva.output?.title}); nesloučeno.`
+      : 'Brána do 10 minut po žádosti nezapsala nový výsledek; nesloučeno.');
     process.exit(1);
   }
   await api(`repos/${REPO}/pulls/${cislo}/merge`, {
@@ -53,4 +80,4 @@ async function main() {
   console.log(`PR #${cislo} sloučen.`);
 }
 
-await main();
+if (import.meta.url === pathToFileURL(process.argv[1] || '').href) await main();
