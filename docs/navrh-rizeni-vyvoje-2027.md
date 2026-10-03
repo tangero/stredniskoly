@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.10 · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.10a · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Na GitHubu ani v pravidlech se zatím nic nemění.
 
 ## Shrnutí pro rozhodnutí
@@ -14,7 +14,8 @@ Na GitHubu ani v pravidlech se zatím nic nemění.
 - na briefingu slyší nejvýš **3 nápady AI**, seřazené podle kvality, a potvrzuje zápisy **jedním „ok“
   na konci**;
 - volitelně zastaví cokoli štítkem `stop` nebo větou na briefingu;
-- jednorázově nastaví aplikaci (fáze 0, hned), účet a ruleset (fáze 1); celkem asi 2 h.
+- jednorázově nastaví aplikaci, strojový účet a prostředí pro secrets (fáze 0, hned) a ruleset (fáze 1);
+  celkem asi 2 h.
 
 **Co dělá AI:** opravy, drobné úpravy, etapy projektů a malé projekty od zadání po nasazení: realizace,
 ověření na Vercel preview, merge přes automatickou bránu. Rizikové věci (migrace, nová data, výdaje do
@@ -75,7 +76,7 @@ Princip:
 | **Eduarda** (AI asistent) | **strojový účet** (například `eduarda-prijimacky`): spolupracovník s právem zápisu, ne admin, dvoufázové ověření aplikací, fine-grained token jen na tento repozitář | vede briefing s vlastníkem v Grok Bot a zapisuje z něj rozhodnutí, představuje na něm nápady AI, přijímá hlášení e-mailem a z portálu, píše zadání a oponentury |
 | **Claude Code** | **GitHub App** (například `prijimacky-ai[bot]`): jen tento repozitář, vybraná práva, tokeny na hodinu; **všude**, i při práci na zavolání (pomocný skript vygeneruje token do `GH_TOKEN`), v denní úloze i v Actions | třídí, realizuje, review, ověření na preview, merge přes bránu, přehled, provoz |
 | **Druhý klíč** | workflow v Actions s jiným modelem než Claude Code | nezávisle kontroluje rizikové PR a smí přidat `stop` (oddíl 6) |
-| **automatika** | `GITHUB_TOKEN` | štítky oblastí, brána sloučení, CI, tabule |
+| **automatika** | `GITHUB_TOKEN`; tabule tokenem strojového účtu | štítky oblastí, brána sloučení, CI, tabule |
 
 **Dvě oddělené identity AI** (RA6). Kdyby Claude Code a Eduarda sdíleli strojový účet, brána by nepoznala,
 kdo zadání založil. Claude by pak mohl z veřejného hlášení založit „interní“ zadání, které projde lhůtou
@@ -104,8 +105,9 @@ Obě cesty se zapisují do stejného rejstříku návrhů. Když si odporují, p
 vznikl během 24 h, zařadí asistent na program nejbližšího briefingu a do té doby platí zastavující
 varianta.
 
-**Za rozhodnutí na GitHubu se počítá jen štítek, review nebo komentář z účtu vlastníka.** Brána i Claude ověřují autora (`user.login`) a u štítku toho, kdo ho
-přidal (`actor` v timeline). Podle textu nikdy.
+**Za rozhodnutí na GitHubu se počítá jen štítek, review nebo komentář z účtu vlastníka.** Brána
+i Claude ověřují autora (`user.login`) a u štítku toho, kdo ho přidal (`actor` v timeline). Podle
+textu nikdy.
 Do zavedení identit platí přechodné pravidlo: AI podepisuje komentáře patičkou, komentář s patičkou ani
 štítek přidaný AI se jako rozhodnutí nepočítá a automatický merge je vypnutý.
 
@@ -164,15 +166,15 @@ Riziko špatného rozhodnutí: **N** nízké, **S** střední, **V** vysoké. Ty
 | 7 | portál, přihlášení, osobní údaje (`src/app/api/portal*`, `src/lib/portal-*`, `src/app/admin/`) | R **V**, právní **V** | K | bezpečnostní review (`security-review`) a druhý klíč, automatické testy přihlášení a práv, skener závislostí; nová kategorie osobních údajů nebo zpracovatel je H3 |
 | 8 | nasazení a crony (`vercel.json`, `next.config.ts`, `scripts/vercel-deploy.sh`) | D S, F S | K | AI odhadne náklady změny; cron, který rozesílá e-maily, spadá pod řádek 5 |
 | 9 | adresy a SEO (přesměrování, smazání nebo přejmenování stránky, `robots.ts`, `public/sitemap.xml`) | P **S** | K | automat ověří přesměrování 301 u každé zrušené adresy, porovná sitemap a z Matomo zjistí návštěvnost dotčených adres; pod prahem návštěvnosti jako L |
-| 10 | pravidla, workflows, brána, práva AI (`CLAUDE.md`, `.claude/`, `.github/`) | **V** | H2 / L | CODEOWNERS na bránu, `rezimy.yml`, ruleset, pravidla o pravomocích a **celé `.github/workflows/`** (povinné review vlastníka): workflow může číst secrets a dnešní tokeny vlastníka (`PROJECT_TOKEN`, `CSI_PR_TOKEN`) umí změnit ruleset. Po jejich nahrazení tokenem aplikace (řádek 18) workflows nejvýš K s druhým klíčem a jen bez změn `secrets.*` a `permissions:`; ostatní úpravy pravidel a skills jako L |
+| 10 | pravidla, workflows, brána, práva AI (`CLAUDE.md`, `.claude/`, `.github/`) | **V** | H2 / L | CODEOWNERS na bránu, `rezimy.yml`, ruleset, pravidla o pravomocích a **celé `.github/workflows/`** (povinné review vlastníka): workflow může číst secrets a dnešní tokeny vlastníka (`PROJECT_TOKEN`, `CSI_PR_TOKEN`) umí změnit ruleset. Po jejich nahrazení (řádek 18) workflows nejvýš K s druhým klíčem a jen bez změn `secrets.*` a `permissions:`; ostatní úpravy pravidel a skills jako L |
 | 11 | závislosti (`package*.json`, `requirements*.txt`) | D S, bezpečnost S | L / K | bezpečnostní aktualizace Dependabotu, AI projde changelog, jen verze starší 7 dnů; patch a minor L, major K |
 | 12 | přepnutí datové sady v registru | R **V** (rodiče rozhodují podle čísel) | K | kontroly datové linky, srovnání rozdělení hodnot s loňskem, vzorky proti zdroji naslepo, náhled na preview; jen mimo zamrznutí |
 | 13 | nový ukazatel nebo změna výpočtu | R S | K | zápis do slovníku včetně toho, co ukazatel neříká, oponentura druhým klíčem, statistická kontrola |
-| 14 | nový projekt | P S, D S | L / H5 | AI navrhuje projekty a hodnotí je podle Směru vývoje, návštěvnosti, hlášení a sezóny i s odhadem nákladů; **nápad AI se nejdřív představí na briefingu** (oddíl 18) a lhůta 48 h běží až od představení; projekt do 3 etap odpovídající prioritám jako L; strategické H5; nápady se vedou v rejstříku návrhů se stavem a důvodem zamítnutí, aby se zamítnuté nevracely |
+| 14 | nový projekt | P S, D S | L / H5 | AI navrhuje projekty a hodnotí je podle Směru vývoje, návštěvnosti, hlášení a sezóny i s odhadem nákladů; **nápad AI se nejdřív představí na briefingu** (oddíl 18) a lhůta 48 h běží až od představení; projekt v mezích mandátu (oddíl 10, bod 4) jako L; strategický nebo nad mandát H5; nápady se vedou v rejstříku návrhů se stavem a důvodem zamítnutí, aby se zamítnuté nevracely |
 | 15 | zadání z veřejného hlášení nebo z e-mailu od neověřeného odesílatele | R S | K | povinné vyvolání chyby nebo ověření proti zdroji, limit hlášení na autora, klasifikace spamu a podvržených pokynů druhým klíčem |
 | 16 | opravy údajů od škol | R S | L | oddíl 12 |
 | 17 | osobní údaje ve veřejném issue | R **V**, právní S | R | AI issue **přesune do soukromého repozitáře** (`stredniskoly-rizeni`) a ve veřejném založí očištěnou kopii; issue i s historií úprav z veřejného repozitáře zmizí. Stačí právo zápisu do obou repozitářů; mazání (vyžaduje admina, tedy i právo měnit ruleset) ani smazání revize není potřeba |
-| 18 | obnova tokenů | D S | – | tokeny aplikace se obnovují samy; zbývá token strojového účtu (expirace v přehledu) a `PROJECT_TOKEN`, `CSI_PR_TOKEN` nahradit tokenem aplikace |
+| 18 | obnova tokenů | D S | – | tokeny aplikace se obnovují samy; `CSI_PR_TOKEN` nahradí token aplikace, `PROJECT_TOKEN` token strojového účtu (aplikace do tabule osobního účtu nezapíše); obnovovat zbývá jen tokeny strojového účtu (expirace v přehledu) |
 | 19 | zamrznutí v kritických dnech | R S | R | AI nastaví z kalendáře přijímaček (`prijimacky-2027.ics`) a návštěvnosti |
 | 20 | parametry autonomie (lhůty, limity rutiny) | D N | R | AI je upravuje podle měřítek v daném rozsahu (lhůta L 24–72 h, rutina 100–300 řádků); mimo rozsah H2 |
 | 21 | Směr vývoje | P **V** | H5 | AI jednou za čtvrtletí navrhne aktualizaci z dat; bez reakce platí stávající |
@@ -184,8 +186,13 @@ stížnost školy na stahování poškodí vztah se školami víc než technick�
 ## 6. Druhý klíč
 
 Nezávislý AI kontrolor jako workflow v Actions: **jiný model než Claude Code**, jiný prompt, bez kontextu
-autora. Projde každý PR v režimu K a zadání z veřejného hlášení a vrátí verdikt. Při námitce přidá `stop`
-s odůvodněním. Dva různé modely se nemýlí stejně a nepodlehnou stejnému podvrženému pokynu.
+autora. Projde každý PR v režimu K, rutinu z veřejného hlášení a zadání z hlášení a vrátí verdikt. Při
+námitce přidá `stop` s odůvodněním. Dva různé modely se nemýlí stejně a nepodlehnou stejnému
+podvrženému pokynu.
+
+**Spouští se na `pull_request_target`, tedy ve verzi z `main`, a kód z PR nespouští ani nestahuje**;
+změny čte jen jako diff přes API. Klíč k modelu je v prostředí dostupném z `main` (oddíl 9a). Kdyby
+běžel na `pull_request`, AI by ve vlastní větvi mohla upravit jeho workflow a nechat si PR schválit.
 
 - `stop` smí odebrat jen ten, kdo ho přidal, nebo vlastník. Brána to kontroluje v timeline.
 - Claude Code na námitku reaguje opravou; druhý klíč pak posoudí novou verzi.
@@ -215,8 +222,9 @@ položka slovníku pojmů):
 
 ## 9. Brána sloučení
 
-Workflow **„Brána sloučení“**, povinná kontrola v rulesetu u každého PR. Spouští se na `pull_request`
-(otevření, push, štítky), `pull_request_review`, **`issues` (štítky a úpravy propojeného issue, aby
+Workflow **„Brána sloučení“**, povinná kontrola v rulesetu u každého PR. **Běží na `pull_request_target`
+ve verzi z `main`** a kód z PR nespouští, jen čte diff, štítky a timeline přes API; upravená brána ve
+větvi tak nemůže posoudit sama sebe. Spouští se na otevření, push a štítky PR, `pull_request_review`, **`issues` (štítky a úpravy propojeného issue, aby
 nový `stop` hned zneplatnil výsledek)** a jednou za hodinu (lhůty). **Merge provádí Claude skriptem,
 který bránu těsně před sloučením spustí znovu** a ověří aktuální veto; vestavěný automatický merge
 GitHubu se nepoužívá, protože by sloučil podle staršího výsledku. Určí režim podle cest
@@ -224,8 +232,8 @@ GitHubu se nepoužívá, protože by sloučil podle staršího výsledku. Určí
 podmínek režimu z oddílu 4. **Původ zadání:**
 
 - **interní (režim L)** je issue založené vlastníkem, nebo strojovým účtem asistenta s dokladem v těle:
-  `Zdroj: briefing RRRR-MM-DD` (brána ověří, že zápis existuje v soukromém repozitáři; aplikace je
-  nainstalovaná na oba repozitáře) nebo `Zdroj: oprava od školy RRRR-MM-DD-<RED IZO>` (brána stejně
+  `Zdroj: briefing RRRR-MM-DD` (brána ověří doklad služby kanálu v soukromém repozitáři: autora
+  a otisk seznamu rozhodnutí, oddíl 18; aplikace je nainstalovaná na oba repozitáře) nebo `Zdroj: oprava od školy RRRR-MM-DD-<RED IZO>` (brána stejně
   ověří záznam opravy v soukromém repozitáři, oddíl 12);
 - **režim K** je issue založené aplikací Claude Code z veřejného hlášení a issue asistenta bez dokladu,
   například z e-mailu od rodiče nebo neznámého odesílatele (štítek `puvod:email`). E-mail je stejně
@@ -328,6 +336,7 @@ nepatří (pravidlo 4).
 | `stop` | veto vlastníka, druhého klíče nebo asistenta zadání podle briefingu; odebrat ho smí jen ten, kdo ho přidal, nebo vlastník |
 | `trvale` | průběžná issue; vyřazená z tabule a třídění |
 | `puvod:email` | zadání z e-mailu od neověřeného odesílatele; režim K |
+| `incident` | oprava podle incidentního postupu při zamrznutí (oddíl 9b); přidává jen aplikace |
 
 Beze změny `interni`, `schvaleno`, `zamitnuto`, `k-overeni`, `pripominka`, `nova-data`, `bug-report`,
 `portal-skoly`, `feature-request`. **`navrh` znamená „čeká na vlastníka“** (RA2), tedy jen věci z oddílu 3.
@@ -338,7 +347,8 @@ Devět oblastí (RA3), cesty v kódu podle auditu: `oblast:detail` (Detail škol
 (Vyhledávání a přehledy), `oblast:simulator` (Simulátor a Kde stojím), `oblast:dojezdy` (Dojezdové časy),
 `oblast:novinky` (Novinky ze škol a e-mailový odběr), `oblast:veletrhy`, `oblast:portal`, `oblast:data`
 (Data, termíny a inspekce ČŠI), `oblast:provoz` (Provoz, obsah, SEO, pro novináře a proces).
-Issues dostanou oblast při třídění, PR přes `actions/labeler` na `pull_request`.
+Issues dostanou oblast při třídění, PR přes `actions/labeler` na `pull_request`. Štítky u PR slouží
+přehledu; brána podmínku „jedna oblast“ počítá sama z diffu podle `labeler.yml` z `main`, štítkům nevěří.
 
 ## 15. Tabule a fronta rozhodnutí
 
@@ -369,8 +379,8 @@ briefingu, takže si neodporují.
   co se zítra sloučí po lhůtě v režimu K.
 - **Program briefingu** (Grok Bot): nejvýš 3 nápady AI, otázky ke směru, na konci všechny zápisy
   k potvrzení najednou (oddíl 18).
-- **Týdenní přehled** v pondělí do Telegramu (hlavní pravidelný výstup), delší verze do soukromého repozitáře: sloučené změny
-  s odkazem na revert, změny webu po oblastech, projekty, provoz (neúspěšná workflow, červené CI,
+- **Týdenní přehled** v pondělí do Telegramu (hlavní pravidelný výstup), delší verze do soukromého
+  repozitáře: sloučené změny s odkazem na revert, změny webu po oblastech, projekty, provoz (neúspěšná workflow, červené CI,
   expirace tokenu strojového účtu), náklady a výdaje kartou, nová data, hlášení a opravy od škol,
   rozhodnutí připsaná vlastníkovi z briefingů, měřítka.
 - **Okamžitě:** červené CI na `main`, selhání datové linky, migrace na produkci, osobní údaje ve
@@ -380,7 +390,8 @@ briefingu, takže si neodporují.
 ## 17. Směr vývoje
 
 Soubor `smer-vyvoje.md` v **soukromém repozitáři** (například `tangero/stredniskoly-rizeni`), upravitelný
-z telefonu: cíle k datu, pořadí priorit, co se teď nedělá, rozpočet (oddíl 17a), mimořádné pokyny. Zamrznutí AI navrhne z kalendáře a zapíše sem. Claude ho čte při každém zpracování.
+z telefonu: cíle k datu, pořadí priorit, co se teď nedělá, rozpočet (oddíl 17a), mimořádné pokyny.
+Zamrznutí AI navrhne z kalendáře a zapíše sem. Claude ho čte při každém zpracování.
 Je to hlavní nástroj, kterým vlastník řídí.
 
 ## 17a. Rozpočet AI a pozornosti
@@ -431,9 +442,9 @@ proměnit v projekt nebo mu připsat rozhodnutí, které neudělal. Proto platí
 | **uvolnění pravomocí AI** (H2) | změna brány, rulesetu, workflows | **jen přes GitHub** | připraví PR k review vlastníka (CODEOWNERS) |
 
 **Nápady AI** (například nová analýza RSS kanálů škol) se nejdřív představí na briefingu: co, proč,
-odhad práce a nákladů, oblast, skóre. Nejvýš tři na jeden briefing (oddíl 17a). Vlastník je může odmítnout, změnit, nebo pustit hned. Když nereaguje,
-běží od představení lhůta 48 h a projekt startuje v režimu L. Projekty zadané vlastníkem a etapy
-schválených projektů běží lhůtou jako dosud. Nápady se vedou v **rejstříku návrhů** v soukromém
+odhad práce a nákladů, oblast, skóre. Nejvýš tři na jeden briefing (oddíl 17a). Vlastník je může
+odmítnout, změnit, nebo pustit hned. Když nereaguje, běží od představení lhůta 48 h a projekt startuje
+v režimu L. Projekt zadaný vlastníkem startuje hned a etapy v mandátu se slučují bez lhůty (režim E). Nápady se vedou v **rejstříku návrhů** v soukromém
 repozitáři (stav, datum, důvod zamítnutí), aby se zamítnuté nevracely.
 
 **Doklad potvrzení nevytváří asistent** (RA30). Existence zápisu v soukromém repozitáři nedokazuje, že
@@ -450,8 +461,8 @@ vlastník odsouhlasil právě tento rozsah. Proto:
 Když Grok Bot takový export neumí, platí doklad z briefingu jen pro režimy L a E; rozhodnutí H1, H3,
 H4 a H5 pak vlastník potvrdí jedním štítkem `schvaleno` na připraveném issue (i z GitHub Projects).
 
-Strategický projekt (H5) potvrzením dostane schválení; brána ho pozná podle dokladu podle předchozích
-odstavců.
+Strategický projekt (H5) dostane schválení potvrzeným dokladem; brána ho ověří stejně jako ostatní
+doklady z briefingu.
 
 Podmínky:
 
@@ -493,14 +504,14 @@ Zavádí se **podle přínosu**: nejdřív to, co odstraní nejvíc dnešní pr�
 
 | fáze | co dělá AI | práce vlastníka |
 |---|---|---|
-| 0, hned (nezávisle na schválení návrhu) | upravit #53, zavřít duplikáty #216, #228, #229, #251, PR s odstraněním `auto-fix-issues.yml`, `auto-fix-iterative.yml` a `notify-new-issue.yml`; **převod na token aplikace:** nahradit `CSI_PR_TOKEN` (`csi-weekly-refresh.yml`) instalačním tokenem aplikace (`actions/create-github-app-token`) a stejně převést `veletrhy-snimek.yml`, aby na jeho PR běželo CI. `PROJECT_TOKEN` (`tabule-schvaleno.yml`) aplikací nahradit nejde: GitHub App neumí zapisovat do tabule projektu na osobním účtu, jen do tabule organizace. Nahradí ho klasický token strojového účtu přizvaného jako spolupracovník tabule (bez práv admina k repozitáři), takže v secrets nezůstane žádný token vlastníka. Samostatný PR se zkušebním spuštěním každého workflow; **přesun produkčních secrets do prostředí s omezením na `main` a nasazení náhledu bez secrets z větve** (oddíl 9a) | smazat revizi #53; **založit GitHub App a strojový účet** (účet přizvat do tabule projektu a vytvořit mu klasický token se scope `project`) (jen tento repozitář, práva Contents, Pull requests, Issues zápis, Projects zápis) a uložit její ID a soukromý klíč jako secrets; merge PR (asi 30 min) |
-| **1, týden 1–2: konec merge a kontroly preview** | PR s pravidly a skills, `rezimy.yml`, labelerem, branou a CODEOWNERS; zrušit výjimku v rulesetu až po ověřeném převodu tokenů z fáze 0 (dnes PR z `veletrhy-snimek` zakládá `GITHUB_TOKEN`, CI na nich neběží a slučují se jen obejitím rulesetu; bez převodu by se zasekly); ověřit identitu aplikace v cloudu; zapnout automatický merge rutiny, drobných zadání a etap; ověření na preview; týdenní přehled; výchozí měřítka; postup nastavení krok za krokem | strojový účet, ruleset bez výjimek s bránou a **povinným review vlastníka kódu** (`require_code_owner_review`, dnes vypnuté; brána běží ve verzi z PR, `.github/` chrání jen toto review), auto-merge, secret pro preview, soukromý repozitář a Směr vývoje včetně rozpočtu (asi 1,5 h jednou) |
+| 0, hned (nezávisle na schválení návrhu) | upravit #53, zavřít duplikáty #216, #228, #229, #251, PR s odstraněním `auto-fix-issues.yml`, `auto-fix-iterative.yml` a `notify-new-issue.yml`; **převod na token aplikace:** nahradit `CSI_PR_TOKEN` (`csi-weekly-refresh.yml`) instalačním tokenem aplikace (`actions/create-github-app-token`) a stejně převést `veletrhy-snimek.yml`, aby na jeho PR běželo CI. `PROJECT_TOKEN` (`tabule-schvaleno.yml`) aplikací nahradit nejde: GitHub App neumí zapisovat do tabule projektu na osobním účtu, jen do tabule organizace. Nahradí ho klasický token strojového účtu přizvaného jako spolupracovník tabule (bez práv admina k repozitáři), takže v secrets nezůstane žádný token vlastníka. Samostatný PR se zkušebním spuštěním každého workflow; **přesun produkčních secrets do prostředí s omezením na `main` a nasazení náhledu bez secrets z větve** (oddíl 9a) | smazat revizi #53; **založit GitHub App** (jen tento repozitář, práva Contents, Pull requests a Issues zápis) a uložit její ID a soukromý klíč; **založit strojový účet**, přizvat ho do repozitáře (zápis, ne admin) a do tabule projektu a vytvořit mu klasický token se scope `project`; **založit prostředí `production`** omezené na `main` a přesunout do něj produkční secrets; merge PR (asi 45 min) |
+| **1, týden 1–2: konec merge a kontroly preview** | PR s pravidly a skills, `rezimy.yml`, labelerem, branou a CODEOWNERS; zrušit výjimku v rulesetu až po ověřeném převodu tokenů z fáze 0 (dnes PR z `veletrhy-snimek` zakládá `GITHUB_TOKEN`, CI na nich neběží a slučují se jen obejitím rulesetu; bez převodu by se zasekly); ověřit identitu aplikace v cloudu; zapnout slučování skriptem po bráně u rutiny, drobných zadání a etap; ověření na preview; týdenní přehled; výchozí měřítka; postup nastavení krok za krokem | ruleset bez výjimek s bránou a **povinným review vlastníka kódu** (`require_code_owner_review`, dnes vypnuté; chrání `.github/` a pravidla), secret pro preview, soukromý repozitář a Směr vývoje včetně rozpočtu (asi 1,5 h jednou) |
 | **2, týden 3–4: plná autonomie** | druhý klíč, režim K pro migrace (po ověření tarifu Neonu), nová data, výdaje kartou, e-maily odběratelům (po ověření rozesílání po vlnách), zápisy z briefingu do soukromého repozitáře, příjem oprav od škol, denní úloha | virtuální karta s limitem, ověřit tarif Neonu (asi 30 min) |
 | **přejímka po fázi 2** | scénář: vlastník týden neodpovídá; běžná práce pokračuje, vyhrazená rozhodnutí čekají, `stop` se dodržuje, přehled zůstává aktuální | žádná (to je test) |
 
 Dokud nejsou tokeny vlastníka nahrazené, workflows v `.github/workflows/` čte vlastník (CODEOWNERS);
-proto se převod dělá **hned ve fázi 0**, nezávisle na schválení zbytku návrhu (pokyn vlastníka). Do konce fáze 1 platí dnešní postup (vlastník merguje),
-takže přechod netrvá déle než dva týdny.
+proto se převod dělá **hned ve fázi 0**, nezávisle na schválení zbytku návrhu (pokyn vlastníka). Do konce
+fáze 1 platí dnešní postup (vlastník merguje), takže přechod netrvá déle než dva týdny.
 
 Po fázi 2 zbývá vlastníkovi: Směr vývoje a rozhodnutí z oddílu 3. Odhad: desítky minut měsíčně;
 ověří ho měřítka.
@@ -516,7 +527,7 @@ ověří ho měřítka.
 | RA5 | Úklid `docs/` jako rutina | **ano** |
 | RA6 | Strojový účet pro asistenta zadání, GitHub App pro Claude Code všude | **ano** |
 | RA7 | Rutina včetně veřejných hlášení s automatickým merge | **ano** |
-| RA8 | Drobná zadání a etapy po 48 h bez veta | **ano** |
+| RA8 | Drobná zadání po 48 h bez veta; etapy v mandátu bez lhůty (RA32) | **ano** |
 | RA9 | Zkrácení `CLAUDE.md` přes skills | **ano** |
 | RA10 | Ověření na preview dělá AI | **ano** |
 | RA11 | Přehled neveřejně, Směr vývoje v soukromém repozitáři | **ano** |
@@ -524,14 +535,14 @@ ověří ho měřítka.
 | RA13 | Brána sloučení jako povinná kontrola se zamrznutím | **ano** |
 | RA14 | Opravy od škol z portálu a ověřeného e-mailu | **ano** |
 | RA15 | Ruleset bez výjimek, i pro vlastníka | **ano** |
-| RA16 | Člověk rozhoduje jen oddíl 3, ostatní režimy R, L, K | **ano** |
+| RA16 | Člověk rozhoduje jen oddíl 3, ostatní režimy R, L, E, K | **ano** |
 | RA17 | Druhý klíč s jiným modelem a právem `stop` | **ano** |
 | RA18 | Výdaje virtuální kartou do limitu, evidence ve Fakturoidu | **ano**, limit určí vlastník |
 | RA19 | Migrace přes větev Neonu v režimu K | **ano**, po ověření tarifu |
 | RA20 | Nová data podle politiky přístupu v režimu K | **ano** |
 | RA21 | Rozhodnutí o směru na briefingu v Grok Bot: zastavující hned, rozjíždějící a úpravy po potvrzení zápisu | **ano** |
 | RA22 | Nápady AI se představují na briefingu, lhůta běží od představení, rejstřík návrhů | **ano** |
-| RA23 | Celé `.github/workflows/` pod CODEOWNERS, dokud tokeny vlastníka nenahradí token aplikace | **ano** |
+| RA23 | Celé `.github/workflows/` pod CODEOWNERS, dokud tokeny vlastníka nenahradí token aplikace a strojového účtu | **ano** |
 | RA24 | Issue s osobními údaji přesunout do soukromého repozitáře místo mazání | **ano** |
 | RA25 | Zadání asistenta je interní jen s dokladem (briefing, ověřená oprava od školy); ostatní e-maily režim K | **ano** |
 | RA26 | Rozpočet AI ve třech koších (provoz, schválená práce, nápady do 15 %), strop na přípravu nápadu | **ano**, částku určí vlastník |
@@ -552,7 +563,7 @@ Po čtyřech týdnech provozu části A:
 | RB1 | Lhůta L 24 h, lhůta K 48 h | regrese nejvýš 1 z 10 |
 | RB2 | Vyšší limit rozsahu rutiny | nejvýš 1 regrese rutiny za 4 týdny |
 | RB3 | Vyšší limit karty | výdaje v rozpočtu, žádné zbytečné předplatné |
-| RB4 | Projekty do 5 etap bez schválení | projekty z režimu L bez zastavení |
+| RB4 | Vyšší mandát projektů z iniciativy AI (rozpočet projektu) a 3 rozpracované projekty | projekty z režimu L bez zastavení a v rozpočtu |
 
 ## 22. Přijatá rizika
 
@@ -571,6 +582,12 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.10a** (3. 10. 2026, vlastní kontrola konzistence): brána a druhý klíč běží na `pull_request_target`
+  ve verzi z `main` bez spouštění kódu z PR (jinak by si AI mohla ve větvi upravit kontrolora); sjednocení
+  náhrady tokenů (`PROJECT_TOKEN` strojovým účtem) v oddílech 5 a 20; fáze 0 obsahuje založení
+  strojového účtu a prostředí `production`; vestavěný auto-merge vypuštěn z práce vlastníka; projekty
+  a RB4 podle mandátu místo počtu etap; etapy bez lhůty i v oddílu 18 a RA8; režim E v RA16; štítek
+  `incident`; zalomení dlouhých řádků.
 - **0.10** (3. 10. 2026, oponentura Codexu na žádost vlastníka): oddělení přípravy od provedení
   (produkční secrets v prostředí pro `main`, preview bez secrets, produkční operace automatem z `main`;
   doložená cesta přes `testy.yml` a `vercel-deploy.sh`); doklad potvrzení z briefingu zapisuje služba
