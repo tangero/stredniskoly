@@ -20,8 +20,9 @@ takže na nich běží CI; z #53 je odstraněný e-mail; duplikáty #216, #228 a
 Stav 3. 10. 2026: brána sloučení je v `main` (PR #283) a jen zapisuje kontrolu „Brána sloučení“, nic
 neblokuje. Štítky `stop`, `rutina`, `incident`, `projekt`, `puvod:hlaseni`, `puvod:email`, `trvale` jsou
 založené. Druhý PR fáze 1 přináší pravidla v `CLAUDE.md`, skills, pokyny pro Eduardu
-(`docs/pokyny-asistent-zadani.md`) a adresu náhledu ke commitu. Slučování AI je vypnuté
-(`slucovani_ai: false` v `.github/rezimy.yml`), dokud ho nezapneš v kroku 3b.
+(`docs/pokyny-asistent-zadani.md`) a adresu náhledu ke commitu. Přejímka naostro
+prošla 3. 10. 2026 (výsledek v PR #288), brána je v rulesetu a seznam obejití je prázdný. Slučování AI
+zapíná krok 3b.
 
 ### Krok 3a: přejímka naostro (5 min, AI připraví a vyhodnotí)
 

@@ -16,7 +16,7 @@ asistent: eduarda-prijimacky
 
 # Smí AI slučovat skriptem scripts/brana/sloucit.mjs? Zapne se samostatným PR (H2) až po přejímce
 # a po přidání brány do rulesetu (docs/postup-zavedeni-faze-0.md, krok 3). Do té doby slučuje vlastník.
-slucovani_ai: false
+slucovani_ai: true
 
 # Schválení `schvaleno` přidaná před tímto dnem brána při prvním vyhodnocení zaznamená
 # s tehdejším rozsahem; pozdější schválení zaznamená workflow brány hned při přidání štítku.
