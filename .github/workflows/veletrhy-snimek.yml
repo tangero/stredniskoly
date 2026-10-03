@@ -67,6 +67,9 @@ jobs:
         if: steps.export.outputs.zmena == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
+          # CSI_PR_TOKEN (fine-grained PAT vlastníka, jako v csi-weekly-refresh): na PR pak běží povinné
+          # kontroly a jde sloučit bez obejití rulesetu. Bez něj GITHUB_TOKEN a CI neběží.
+          token: ${{ secrets.CSI_PR_TOKEN || secrets.GITHUB_TOKEN }}
           commit-message: "chore(veletrhy): záloha akcí z databáze do JSON"
           branch: "auto/veletrhy-snimek"
           delete-branch: true
@@ -79,7 +82,7 @@ jobs:
 
             Web na snímku nezávisí, schválené změny už na webu jsou. Sloučení jen obnoví zálohu.
 
-            PR vytvořený tímto během nespouští workflow Testy (omezení GITHUB_TOKEN); testy dat veletrhů proběhly v něm.
+            Testy dat veletrhů proběhly v tomto běhu; povinné kontroly běží na PR, když je nastavený `CSI_PR_TOKEN`.
 
       - name: Zpráva do Telegramu
         if: always()
