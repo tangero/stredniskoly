@@ -1,122 +1,189 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.3 · 3. 10. 2026 · **část A ke schválení, část B k rozhodnutí po 2–4 týdnech provozu části A.**
+Verze 0.4 · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Na GitHubu ani v pravidlech se zatím nic nemění.
 
 Podklad: audit [Oblasti, projekty a etapy na GitHubu](historie/github-oblasti-audit-2026-10-03.md)
 (3. 10. 2026). Z něj návrh přebírá soupis oblastí s cestami v kódu, nalezené duplikáty a zařazení
 otevřených issues. Model ve třech úrovních z auditu (oblast jako trvalé issue → projekt jako sub-issue
-→ etapy) návrh ruší a nahrazuje štítky (rozhodnutí RA1). Oponentura vlastníka projektu je v PR #273.
+→ etapy) návrh ruší a nahrazuje štítky (RA1). Tři kola oponentury jsou v PR #273.
 
-## 1. Cíl a rozdělení návrhu
+## 1. Cíl a princip
 
-Patrick určuje směr, priority a rozhoduje věci, které mění produkt, náklady nebo rizika. Rutinní opravy
-ani praktické detaily neřeší. Přitom má kdykoli přehled, na čem se pracuje, jak se to vyvíjí a v jakém
+Patrick určuje směr a priority a rozhoduje výjimky. Rutinní opravy, drobné úpravy a praktické detaily
+dělá AI od zadání po nasazení. Patrick přitom má přehled, na čem se pracuje, jak se to vyvíjí a v jakém
 stavu projekt je.
 
-Návrh má dvě části s odlišným rizikem:
+**Vlastník projektu výslovně přijímá vyšší riziko výměnou za méně lidských vstupů** (zadání k verzi 0.4).
+Proto návrh staví na principu:
 
-- **Část A, struktura** (oddíly 3–10): štítky, životní cyklus projektu, tabule, fronta rozhodnutí.
-  Nemění, kdo co smí. Ke schválení hned.
-- **Část B, autonomie** (oddíly 11–17): třída `rutina` bez schválení předem, přehled, směr vývoje,
-  denní zpracování fronty. Zasahuje do pojistek ve veřejném repozitáři. Rozhoduje se samostatně po
-  2–4 týdnech provozu části A, kdy budou měřítka z oddílu 11 mít s čím srovnat.
+- **Lidská brána předem zůstává jen tam, kde se chyba nedá rychle vrátit.** To jsou tvrdé hranice
+  v oddílu 3.
+- **Všude jinde je pojistkou rychlé vrácení** (revert PR, rollback nasazení ve Vercelu), automatické
+  kontroly a přehled po faktu.
+
+Verze 0.3 držela lidské schválení a merge u všeho a autonomii odkládala. Tím by vlastníkovi práci
+neubrala. Verze 0.4 přesouvá do části A všechno, co práci ubírá a nevyžaduje nové předpoklady.
+
+Návrh má dvě části:
+
+- **Část A, ke schválení hned** (oddíly 3–16): struktura, rutina s automatickým merge, schválení
+  mlčením u drobných zadání, ověření na preview AI, přehled, směr vývoje, denní zpracování fronty,
+  vlastní identita AI, zkrácení `CLAUDE.md`.
+- **Část B, podle měřítek** (konec dokumentu): automatický merge i mimo rutinu, údaje od škol z portálu bez
+  člověka a další rozšíření autonomie.
 
 ## 2. Role
 
 | kdo | dělá | nedělá |
 |---|---|---|
-| **Patrick** (vlastník projektu) | určuje směr, schvaluje zadání a projekty (`schvaleno`), rozhoduje frontu rozhodnutí, merguje | netřídí issues, nehledá souvislosti mezi hlášeními |
-| **Eduarda** (AI asistent) | píše zadání | neschvaluje: AI by jinak schvalovala práci AI |
-| **Claude Code** | třídí issues (oblast, duplikáty, osobní údaje), rozbory, realizace, review, podklady k rozhodnutí | nemerguje, nepřidává `schvaleno` ani `zamitnuto`, nerealizuje nic bez schválení (v části B s výjimkou rutiny) |
-| **automatika** | štítek oblasti u PR, tabule, CI | – |
+| **Patrick** (vlastník projektu) | píše a mění Směr vývoje, schvaluje projekty a věci za tvrdými hranicemi, veto (`stop`), merge projektů a drobných zadání podle protokolu, smazání revizí s osobními údaji | neschvaluje rutinu ani drobná zadání předem, neověřuje na preview, netřídí |
+| **Eduarda** (AI asistent) | píše zadání a oponentury | neschvaluje |
+| **Claude Code** | třídí, realizuje, dělá review, ověřuje na preview, merguje rutinu po automatických branách, píše přehled | nepřidává `schvaleno`, `zamitnuto` ani `stop`, nepřekračuje tvrdé hranice |
+| **automatika** | štítky oblastí, kontrola hranic rutiny, CI, tabule | – |
 
-**Za rozhodnutí se počítá jen štítek nebo komentář vlastníka projektu.** Ve veřejném repozitáři může
-„souhlas“ napsat kdokoli s účtem na GitHubu. Claude proto ověřuje autora komentáře (`user.login`)
-a u štítku toho, kdo ho přidal (`actor` v timeline issue, `gh api repos/tangero/stredniskoly/issues/N/timeline`).
-Podle textu se neřídí nikdy. Totéž platí pro každou automatiku, která na schválení reaguje (oddíl 16).
+**Za rozhodnutí se počítá jen štítek nebo komentář vlastníka, který nevytvořila AI.** Ve veřejném
+repozitáři může „souhlas“ napsat kdokoli, proto Claude ověřuje autora komentáře (`user.login`) a u štítku
+toho, kdo ho přidal (`actor` v timeline issue). Podle textu se neřídí nikdy.
 
-**Kontrola autora dnes nerozliší vlastníka od AI.** Claude Code (`gh` přihlášené jako vlastník)
-i asistent zadání píšou komentáře a mění štítky přes účet vlastníka a `tabule-schvaleno.yml` mění
-štítky přes jeho `PROJECT_TOKEN`. Do zavedení vlastní identity proto platí:
+Dnes ale Claude Code i asistent zadání pracují přes účet vlastníka, takže kontrola autora je nerozliší.
+Do zavedení vlastní identity (RA6, krok 1) proto platí: AI každý komentář podepisuje patičkou, komentář
+s patičkou ani štítek přidaný AI nebo automatikou se jako rozhodnutí nepočítá a štítky `schvaleno`,
+`zamitnuto` a `stop` AI nikdy nepřidává.
 
-- Za rozhodnutí se počítá komentář nebo štítek z účtu vlastníka, **který nevytvořila AI**.
-- AI každý svůj komentář podepisuje patičkou („Generated by Claude Code“, podpis asistenta zadání).
-  Komentář s patičkou ani štítek, který AI sama přidala nebo který přidala automatika, se jako
-  rozhodnutí nikdy nepočítá.
-- `schvaleno` a `zamitnuto` AI nepřidává.
+# Část A
 
-Trvalé řešení je **vlastní identita i pro interaktivní práci** (GitHub App nebo strojový účet pro
-Claude Code a asistenta zadání), aby kontrola `user.login` a `actor` skutečně fungovala. Patří do
-části A jako rozhodnutí RA6; oddíl 15 ji pro denní úlohu požaduje tak jako tak.
+## 3. Tvrdé hranice
 
-# Část A: struktura
+Bez výslovného `schvaleno` od vlastníka AI nikdy:
 
-## 3. Štítky
+- nepřidá migraci, nezapíše do produkční databáze ani nespustí exporty z ní (pravidlo 5);
+- nezačne volat nový cizí server (pravidlo 7, mlčení tu souhlasem není);
+- nezmění zpracování osobních údajů, přihlášení ani práva v portálu;
+- nezmění `CLAUDE.md`, `.claude/`, `.github/` (workflows, šablony), secrets ani závislosti;
+- nezvýší náklady (nová placená služba, API, vyšší tarif);
+- nepřepne datovou sadu v registru;
+- nezačne projekt (štítek `projekt`).
 
-Přibude 11 štítků:
+Všechno ostatní může jít bez schválení předem: jako rutina (oddíl 5) nebo jako drobné zadání
+schválené mlčením (oddíl 6).
+
+## 4. Štítky
 
 | štítek | význam |
 |---|---|
-| `projekt` | konečná práce s cílem a etapami (oddíl 4); jediné, co jde sloupci tabule |
-| `oblast:<slug>` (9×) | trvalá část produktu (oddíl 6); každé issue má právě jednu oblast, PR jednu nebo víc (oddíl 6) |
-| `trvale` | připnutá nebo průběžná issue (přehledy, připomínky bez konce); vyřazená z tabule a třídění |
+| `projekt` | konečná práce s cílem a etapami (oddíl 7); jediné, co jde sloupci tabule |
+| `oblast:<slug>` (9×) | trvalá část produktu (oddíl 10); issue má právě jednu oblast, PR jednu nebo víc |
+| `rutina` | oprava, kterou AI realizuje a merguje bez člověka (oddíl 5) |
+| `stop` | veto vlastníka: AI práci zastaví a nic nemerguje; přidává jen vlastník |
+| `trvale` | průběžná issue (připomínky bez konce); vyřazená z tabule a třídění |
 
 Beze změny zůstávají `interni`, `schvaleno`, `zamitnuto`, `k-overeni`, `pripominka`, `nova-data`
-a veřejné `bug-report`, `portal-skoly`, `feature-request`. **`interni` dál podmiňuje realizaci**
-(pravidlo 1 v `CLAUDE.md`).
+a veřejné `bug-report`, `portal-skoly`, `feature-request`.
 
-**Štítek `navrh` se rozšíří na „čeká na rozhodnutí vlastníka“** (RA2): nese ho zadání před schválením
-i issue, ve kterém Claude položil otázku podle oddílu 8. Samostatný štítek `rozhodnuti` nevzniká, oba
-by znamenaly totéž. Workflow `tabule-schvaleno.yml` pak zůstane beze změny: `navrh` odebírá při
-schválení a vrací při jeho odvolání, což novému významu odpovídá. Otázku u schváleného projektu
-označí Claude štítkem `navrh` a po odpovědi vlastníka ho odebere. Dokud `navrh` visí, dotčenou část
-nerealizuje.
+**`navrh` znamená „čeká na vlastníka“** (RA2): nese ho zadání čekající na schválení nebo na uplynutí
+lhůty mlčení a issue, ve kterém Claude položil otázku (oddíl 12). Samostatný štítek `rozhodnuti`
+nevzniká. `tabule-schvaleno.yml` zůstane beze změny: `navrh` odebírá při schválení a vrací při odvolání.
 
-Třídy `uprava` a `smer` z verze 0.1 odpadají: co nemá `projekt`, je drobné zadání jako dnes.
-U drobného zadání je zadání hotové hned, `navrh` proto dostane při založení nebo při třídění.
-Formulář interního zadání proto nebude `navrh` přidávat sám (oddíl 9).
+## 5. Rutina: od zadání po nasazení bez člověka
 
-## 4. Životní cyklus projektu
+**Co je rutina** (všechny podmínky současně):
 
-1. **Nápad:** issue `[Zadání]` se štítky `interni`, `projekt`, `oblast:<slug>`. Bez `navrh`: během
-   rozboru není co rozhodovat a fronta „Rozhoduji“ má znamenat jen „čeká na mě“. Nápad je vidět
-   v pohledu „Projekty“ ve sloupci Návrh.
-2. **Rozbor** v komentářích téhož issue. Samostatný dokument v `docs/` jen u velkých věcí
-   (nová stránka nebo zdroj dat, víc oblastí, migrace), rozhodne vlastník nebo to Claude navrhne.
-3. **Zadání přepsané do těla issue.** Oponentura je volitelná, podle velikosti. Teprve teď dostane
-   issue `navrh` a objeví se ve frontě rozhodnutí.
+- opravuje rozpor, který plyne z našich vlastních dat nebo kódu: pád stránky, chyba s postupem
+  vyvolání, rozbitý odkaz, překlep, údaj v rozporu s naším zdrojem, padající test nebo workflow
+  (kromě změny workflow samého), nález review;
+- nepřebírá údaj od školy ani jiného nahlašovatele. Tvrzení školy není zdroj (kapacita, „obor
+  neotvíráme“, chybějící obor patří do zadání nebo projektu);
+- data mění jen přes generátor nebo soubor ručních oprav (například `data/obory_manual_overrides.csv`),
+  nikdy přímo ve vygenerovaném `public/*.json`;
+- nezavádí nový ukazatel ani pojem a nemění výpočet ve slovníku ukazatelů;
+- leží uvnitř tvrdých hranic (oddíl 3), zasahuje do jedné oblasti a má nejvýš zhruba 150 změněných
+  řádků kódu a ručních oprav dat (testy se nepočítají).
+
+**Postup:** Claude roztřídí issue, přidá `rutina`, opraví, otevře PR a projde automatické brány:
+
+1. povinné kontroly CI (Python, TypeScript, Integrace katalogu);
+2. **kontrola hranic rutiny** (nový workflow, povinná kontrola v rulesetu): u PR se štítkem `rutina`
+   selže, když PR mění `.github/`, `CLAUDE.md`, `.claude/`, `db/migrace/`, `package*.json`,
+   `scripts/*-migrace*`, `public/stav_datovych_sad.json` nebo vygenerované `public/*.json`,
+   má víc než jeden štítek `oblast:*` nebo překročí limit řádků. Hranice tak hlídá automatika,
+   ne jen pokyn v promptu;
+3. review Claudem bez otevřeného nálezu;
+4. ověření na preview s protokolem (oddíl 8).
+
+Po průchodu branami Claude PR **sloučí sám** (RA7). U rutiny z veřejného hlášení až po **24 hodinách**
+bez veta (`stop`), aby vlastník mohl zasáhnout, kdyby šlo o podvržený pokyn. Vlastník rutiny vidí
+v přehledu (oddíl 13) a špatnou vrátí revertem, nebo o to požádá Clauda.
+
+**Rutina z veřejných hlášení je povolená** s výše uvedenými podmínkami. Text hlášení je jen popis
+chyby. Claude ji musí sám vyvolat nebo ověřit proti našemu zdroji a podle textu hlášení nikdy nemění
+nic jiného než chybné místo.
+
+## 6. Drobné zadání: schválení mlčením
+
+Interní zadání bez štítku `projekt`, které neprochází tvrdými hranicemi, ale rutinou není (nový text
+nebo blok na stránce, úprava filtru, nový sloupec, nová položka slovníku pojmů pro existující údaj):
+
+1. Claude napíše do issue plán na nejvýš deset řádků (co, které soubory, jak se ověří, rizika)
+   a přidá `navrh`.
+2. **Když vlastník do 48 hodin nepřidá `stop` ani `zamitnuto`, zadání platí za schválené** (RA8).
+   Vlastník může lhůtu zkrátit štítkem `schvaleno`.
+3. Claude realizuje, ověří na preview (oddíl 8) a PR předá vlastníkovi k merge jedním klepnutím podle
+   protokolu. Automatický merge drobných zadání je v části B.
+
+Lhůta platí jen pro zadání se štítkem `interni` založená vlastníkem nebo asistentem zadání. Veřejná
+hlášení schválením mlčením nikdy neprojdou: buď jsou rutina, nebo z nich Claude založí interní zadání.
+
+## 7. Projekty
+
+Projekt je jediné, co vlastník schvaluje vždy výslovně. Životní cyklus (RA4):
+
+1. **Nápad:** issue `[Zadání]` se štítky `interni`, `projekt`, `oblast:<slug>`, bez `navrh`.
+   Je vidět v pohledu „Projekty“ ve sloupci Návrh.
+2. **Rozbor** v komentářích téhož issue. Dokument v `docs/` jen u velkých věcí (nová stránka nebo
+   zdroj dat, víc oblastí, migrace).
+3. **Zadání přepsané do těla issue**, oponentura volitelná. Teprve teď dostane issue `navrh`.
 4. **`schvaleno`** (jen vlastník).
 5. **Etapy jako checklist v těle.** Jedna etapa = jedna větev `zadani/<N>-etapa-<M>-…` a jeden PR
    „Souvisí s #N“. Změna zadání = úprava těla + komentář „Změna zadání: co a proč“ + řádek
-   v **changelogu na konci těla**.
-6. **Merge po kontrole na Vercel preview.** Po otevření PR dostane issue projektu `k-overeni`, po merge
-   se etapa odškrtne a `k-overeni` se odebere.
-7. **Poslední PR nese `Closes #N`** a projekt zavře.
-8. **Opravy po vydání:** komentář v projektu + PR „Souvisí s #N“, i u zavřeného projektu. Nové issue
-   nevzniká.
-9. **Druhá verze** (rozšíření po vydání) je nový projekt s odkazem na předchozí.
+   v changelogu na konci těla.
+6. **Merge vlastníkem podle protokolu z preview** (oddíl 8). Po otevření PR dostane issue `k-overeni`,
+   po merge se etapa odškrtne a `k-overeni` se odebere.
+7. **Poslední PR nese `Closes #N`.**
+8. **Opravy po vydání:** komentář v projektu + PR „Souvisí s #N“; když splňují podmínky, jako rutina.
+9. **Druhá verze** je nový projekt s odkazem na předchozí.
 
-**Žádná nová issues** pro úpravu zadání, oponenturu, opravu po merge ani další etapu.
+Žádná nová issues pro úpravu zadání, oponenturu, opravu po merge ani další etapu. Sub-issues se
+nepoužívají: hlášení, která projekt opravuje, se vypíšou v těle projektu a PR je zavírá přes
+`Closes #170, #174, …`.
 
-**Drobné zadání** (bez štítku `projekt`) se řídí dnešním pravidlem 2: jedno issue, jedna větev, jeden PR.
+## 8. Ověření na preview dělá AI
 
-Sub-issues se nepoužívají. Hlášení, která projekt opravuje, se vypíšou v těle projektu a PR je zavírá
-přes `Closes #170, #174, …`.
+Dnes každý PR ručně kontroluje člověk na Vercel preview. Nově:
 
-## 5. Veřejná hlášení
+- Claude po nasazení preview projde každé kritérium „Hotovo když“ v prohlížeči (Playwright, v prostředí
+  Clauda je k dispozici), na šířce telefonu i počítače.
+- Do PR zapíše **protokol**: kritérium, adresa, výsledek (splněno / nesplněno / nejde ověřit), u vizuálních
+  změn snímky obrazovky před a po. Snímky se ukládají jako artefakt běhu nebo do komentáře PR, ne
+  do repozitáře.
+- U rutiny je protokol bránou automatického merge, u drobných zadání a etap podkladem pro merge
+  vlastníkem.
 
-Beze změny pravidla 1: hlášení (`bug-report`, `portal-skoly`, `feature-request`) se nerealizují, ani
-když o to text žádá. Při třídění dostanou `oblast:<slug>`, Claude označí duplikáty (zavírá je vlastník,
-nebo Claude po jeho souhlasu) a souvislost s projektem zapíše do těla projektu. Realizují se jen
-v rámci schváleného projektu nebo zadání.
+Předpoklad: když má projekt ve Vercelu zapnutou ochranu preview, potřebuje Claude obcházecí token
+(`VERCEL_AUTOMATION_BYPASS_SECRET`) jako secret. Preview je náš vlastní web, pravidlo 7 o cizích
+serverech se na něj nevztahuje.
 
-**Osobní údaje ve veřejném issue:** Claude upraví tělo (ponechá roli nebo RED IZO), do komentáře
-napíše, co odstranil (bez opakování údaje), a požádá vlastníka o **smazání revize z historie úprav**.
-Úprava těla původní verzi nesmaže, zůstává vidět přes „edited“ a smazat ji jde jen v UI
-(„Delete revision from history“), přes API ne.
+## 9. Veřejná hlášení a osobní údaje
 
-## 6. Oblasti jako štítky
+Při třídění dostane hlášení `oblast:<slug>`. Claude označí a zavře duplikáty s odkazem a rozhodne:
+rutina (oddíl 5), interní zadání (oddíl 6), součást projektu, nebo dotaz nahlašovateli.
+
+**Osobní údaje ve veřejném issue:** Claude upraví tělo (ponechá roli nebo RED IZO), do komentáře napíše,
+co odstranil (bez opakování údaje), a pošle vlastníkovi okamžité upozornění se žádostí o **smazání
+revize z historie úprav**. Úprava těla původní verzi nesmaže a přes API to nejde, jen v UI („Delete
+revision from history“). Je to jeden ze dvou trvalých lidských úkonů v návrhu.
+
+## 10. Oblasti jako štítky
 
 Devět oblastí (RA3), cesty v kódu podle auditu:
 
@@ -132,213 +199,160 @@ Devět oblastí (RA3), cesty v kódu podle auditu:
 | `oblast:data` | Data, termíny a inspekce ČŠI | přidaná inspekce |
 | `oblast:provoz` | Provoz, obsah, SEO, pro novináře a proces | přidaní novináři |
 
-Inspekce a Pro novináře mají málo otevřené práce. Kdyby se rozrostly, štítek se rozdělí bez dalších změn.
+**Issues** dostanou oblast při třídění. **PR** automaticky: mapování cest v `.github/labeler.yml`,
+workflow `actions/labeler` na `pull_request` (ne `pull_request_target`). Štítek u PR slouží přehledu
+a kontrole hranic rutiny. Issue nese oblast, kde se věc projevila, PR všechny oblasti, do kterých
+zasahuje; rozpor se neopravuje.
 
-**Issues** dostanou oblast při třídění (Claude, při zpracování issues). **PR** dostanou oblast
-automaticky: mapování cest bude v `.github/labeler.yml` a workflow `actions/labeler` spuštěný na
-`pull_request` (ne `pull_request_target`, aby PR z forku neběžel s právy repozitáře) označí PR
-podle změněných souborů.
+## 11. Tabule
 
-Štítek u PR slouží přehledu a v části B kontrole podmínky „jedna oblast“ u rutiny. Na tabuli PR nejsou.
-
-Když se oblasti liší: issue nese oblast, kam věc patří pro uživatele (kde se chyba projevila). PR nese
-všechny oblasti, do kterých zasahuje. Dva štítky u PR nejsou chyba, jen znamenají, že změna rutinou
-není. Rozpor mezi oblastí issue a PR se neopravuje.
-
-## 7. Tabule
-
-- **Auto-add:** `is:issue is:open -label:trvale`. PR na tabuli nepatří, projekt je ukáže v poli
-  Linked pull requests. Že filtr auto-add přijme zápor `-label:`, je potřeba ověřit v UI. Když ne,
-  issues se štítkem `trvale` se po přidání jednou archivují ručně (je jich pár).
-- **Vypnout „Auto-add sub-issues to project“** (sub-issues se nepoužívají).
-- **PR karty** (26) archivovat. Je to vratné.
-- **Pohled „Rozhoduji“:** `is:open label:navrh,k-overeni -label:trvale` (čárka znamená NEBO mezi
-  štítky; NEBO přes různé podmínky Projects neumí). `k-overeni` nese issue, ne PR (oddíl 4, bod 6).
-- **Pohled „Projekty“:** `label:projekt`, sloupce podle Status (Návrh → Oponentura → Schváleno →
+- **Auto-add:** `is:issue is:open -label:trvale` (zápor dokumentace GitHubu podporuje).
+- **Vypnout „Auto-add sub-issues to project“** a archivovat 26 karet PR.
+- **Pohled „Rozhoduji“:** `is:open label:navrh -label:trvale,rutina`. Rutina na vlastníka nečeká,
+  `k-overeni` taky ne (ověřuje AI), proto ve frontě nejsou.
+- **Pohled „Projekty“:** `label:projekt` podle Status (Návrh → Oponentura → Schváleno →
   Ke schválení merge → Hotovo).
-- **Oblasti:** GitHub Projects neumí seskupovat podle štítků. Pro začátek stačí filtr
-  `label:oblast:detail` apod. ve „Vše otevřené“. Kdyby seskupení chybělo, přidá se jednovýběrové pole
-  projektu „Oblast“, které podle štítku `oblast:*` vyplní workflow (rozšíření `tabule-schvaleno.yml`).
+- **Oblasti:** Projects neumí seskupovat podle štítků, stačí filtr `label:oblast:detail` apod.
+  Pole „Oblast“ plněné workflow jen kdyby seskupení chybělo.
 
-## 8. Fronta rozhodnutí
+## 12. Fronta rozhodnutí
 
-Kdykoli Claude potřebuje rozhodnutí (pravidlo 8), napíše komentář v této podobě a přidá `navrh`:
+Kdykoli Claude potřebuje rozhodnutí, napíše komentář v této podobě a přidá `navrh`:
 
 ```
 **Rozhodnutí:** jedna věta, co se rozhoduje
 **Možnosti:** A) … B) … (případně C)
 **Doporučuji:** A, protože …
 **Dopad:** co se stane po A / po B, náklady, rizika
-**Když nerozhodneš:** co se zdrží (nic se neprovede samo)
+**Když nerozhodneš do <datum>:** provedu A / nic se neprovede (u tvrdých hranic)
 ```
 
-Stačí odpovědět „A“ nebo „souhlas“. **Platí jen odpověď vlastníka** (oddíl 2). Ke schválení zadání
-nebo projektu slouží dál štítek `schvaleno`. Fronta je pohled „Rozhoduji“.
-
-## 9. Změny pravidel v části A
-
-Provedou se jedním PR po schválení části A.
-
-- **`CLAUDE.md`, tabulka štítků:** `projekt`, `oblast:<slug>`, `trvale`; nový význam `navrh`.
-- **Pravidlo 1:** doplnit, že rozhodnutí a schválení platí jen od vlastníka (ověření podle oddílu 2),
-  a že issue `trvale` se nerealizuje ani netřídí.
-- **Pravidlo 2:** životní cyklus projektu z oddílu 4; drobné zadání beze změny.
-- **Pravidlo 8:** formát z oddílu 8 a štítek `navrh`.
-- **Třídění:** oblast a duplikáty u nových issues, postup u osobních údajů (oddíl 5).
-- **Šablona interního zadání:** pole Oblast (dropdown) a zaškrtávátko „Projekt“; výchozí štítek jen
-  `interni`. `oblast:*`, `projekt` a `navrh` doplní Claude při třídění, formulář je podle polí nastavit
-  neumí.
-- **Podpis AI a výklad rozhodnutí** podle oddílu 2 (do pravidla 1).
-- **`tabule-schvaleno.yml`:** beze změny (RA2).
-- **`.github/labeler.yml`** a workflow labeleru.
-- **`docs/spoluprace-na-githubu.md`:** štítky, tabule, životní cyklus. Zastaralý
-  `docs/github-issues-workflow.md` přesunout do `docs/historie/`.
-
-## 10. Zavedení části A a rozhodnutí
-
-| krok | co | práce Patricka |
-|---|---|---|
-| 0, hned | #53: upravit tělo (Claude) a **smazat revizi z historie úprav** (Patrick v UI); zavřít duplikáty #216, #228, #229, #251; odstranit `auto-fix-issues.yml`, `auto-fix-iterative.yml` a `notify-new-issue.yml` samostatným PR | 5 min (revize), merge PR |
-| 1, týden 1 | PR s pravidly a labelerem (oddíl 9), založit štítky, roztřídit otevřená issues, přepsat projekty do podoby z oddílu 4; odebrat `navrh` všude, kde je zároveň `schvaleno` a není otevřená otázka (dnes #234 a #244) | schválit PR; v UI auto-add, vypnutí sub-issues, dva pohledy (15 min) |
-| 2, kdykoli | úklid `docs/` (RA5) | – |
-
-`auto-fix-iterative.yml` dnes **jde ručně spustit** (`if: github.event_name == 'workflow_dispatch'`)
-s právy zápisu do obsahu, PR i issues; vypnuté (`if: false`) jsou jen `auto-fix-issues.yml`
-a `notify-new-issue.yml`. Proto patří odstranění do kroku 0.
-
-| | rozhodnutí | doporučuji |
-|---|---|---|
-| RA1 | Zrušit dohodnutý model ve třech úrovních (oblast jako trvalé issue → projekt jako sub-issue → etapy) a nahradit ho štítky `oblast:*` a `projekt` s etapami v checklistu | **ano** |
-| RA2 | `navrh` jako jediný štítek „čeká na vlastníka“, bez nového `rozhodnuti` | **ano** |
-| RA3 | Devět oblastí (inspekce pod data, novináři pod provoz) | **ano** |
-| RA4 | Životní cyklus projektu podle oddílu 4 (rozbor v issue, `docs/` a oponentura podle velikosti) | **ano** |
-| RA5 | Úklid `docs/`: rozcestník `docs/README.md` s platnými dokumenty po oblastech, překonané do `docs/historie/` (nemažou se, odkazy se opraví) | **ano**, jako samostatné drobné zadání |
-| RA6 | Vlastní identita (GitHub App nebo strojový účet) pro Claude Code a asistenta zadání i v interaktivní práci, aby šlo rozlišit rozhodnutí vlastníka od AI | **ano**, do té doby pravidlo podpisu z oddílu 2 |
-
-# Část B: autonomie (rozhodnutí po 2–4 týdnech provozu A)
-
-## 11. Měřítka
-
-Měří se od zavedení části A, aby část B měla srovnání. Čísla počítá skript z dat GitHubu.
-
-| měřítko | jak se měří | cíl po zavedení B |
-|---|---|---|
-| zásahy Patricka týdně | jeho komentáře, štítky a merge (náhrada za čas, ten změřit nejde) | klesá; rutina tvoří nejvýš pětinu |
-| fronta rozhodnutí | počet otevřených `navrh` a stáří nejstaršího | nejvýš 5, žádné starší 7 dní |
-| doba od nahlášení po merge, rutina | medián | do 3 dnů |
-| doba od schválení po merge | medián od `schvaleno` po merge | do 7 dnů |
-| regrese | PR revertované nebo opravované do 14 dnů po merge | u rutiny nejvýš 1 z 20 |
-
-## 12. Třída `rutina`
-
-Jediný nový štítek části B. Rutinu Claude realizuje **bez schválení předem**, merge zůstává na vlastníkovi.
-Všechno ostatní se schvaluje jako dnes.
-
-Podmínky, všechny současně:
-
-- opravuje rozpor, který **plyne z našich vlastních dat nebo kódu**: pád stránky, chyba s postupem,
-  jak ji vyvolat, rozbitý odkaz, překlep, údaj v rozporu s **naším** zdrojem, padající test nebo
-  workflow, nález review;
-- **nepřebírá údaj od školy ani jiného nahlašovatele.** Tvrzení školy není zdroj. Kapacita, „obor
-  neotvíráme“ nebo chybějící obor (#248, #255, #244) patří do projektu nebo schváleného zadání;
-- data mění **jen přes generátor nebo soubor ručních oprav** (například `data/obory_manual_overrides.csv`),
-  nikdy přímo ve vygenerovaném `public/*.json`. Řádky souboru ručních oprav se do limitu rozsahu počítají;
-- nezavádí nový ukazatel ani pojem a nemění výpočet ve slovníku ukazatelů;
-- nepřepíná datovou sadu v registru;
-- nepřidává migraci, nezapisuje do produkční databáze, nepouští exporty (pravidlo 5);
-- nevolá nový cizí server (pravidlo 7);
-- nemění adresy stránek, veřejné API, e-maily uživatelům, přihlášení ani práva v portálu;
-- nemění `CLAUDE.md`, `.claude/`, workflows, secrets ani závislosti;
-- zasahuje do jedné oblasti (labeler dá PR jediný štítek `oblast:*`) a má nejvýš zhruba 150 změněných
-  řádků kódu a ručních oprav dat; testy se nepočítají.
-
-V pochybnosti Claude rutinu nepoužije. Vlastník může štítek `rutina` odebrat, Claude ho pak znovu
-nepřidá. V popisu PR je třída a jednou větou, proč podmínky splňuje.
-
-**Rutina z veřejných hlášení** se zavádí až po vyhodnocení rutiny z interních zadání (oddíl 15).
+U věcí uvnitř tvrdých hranic se po 48 hodinách provede doporučená možnost (stejně jako v oddílu 6).
+U věcí za tvrdými hranicemi se bez odpovědi neprovede nic. Platí jen odpověď vlastníka (oddíl 2).
 
 ## 13. Přehled
 
-Pravidelné výstupy nejsou issues. Přehled má dvě vrstvy:
+Pravidelné výstupy nejsou issues a nic interního není veřejně.
 
-- **Neveřejná plná verze** do Telegramu (bot datové linky), každé pondělí: co čeká na vlastníka
-  (fronta s doporučením, PR připravené k merge), co se změnilo na webu po oblastech, stav projektů,
-  provoz (neúspěšná workflow, červené CI, tokeny před expirací), náklady proti rozpočtu, hlášení,
-  měřítka. Expirace tokenů je informace pro útočníka a náklady jsou obchodní údaj, do veřejného
-  repozitáře nepatří. Delší text se rozdělí do více zpráv, nebo uloží do soukromého úložiště (oddíl 14)
-  a do Telegramu jde odkaz.
-- **Veřejně** jen to, co se změnilo na webu. Na to existuje stránka `/changelog` (`src/lib/changelog.ts`);
-  zda ji plnit z přehledu, je samostatné rozhodnutí.
+- **Týdenní přehled** v pondělí do Telegramu (bot datové linky), delší verze do soukromého repozitáře
+  (oddíl 14) s odkazem. Obsah: co čeká na vlastníka (fronta, PR k merge), **co AI sama sloučila**
+  (rutina, s odkazem na revert), co se změnilo na webu po oblastech, stav projektů, provoz
+  (neúspěšná workflow, červené CI, tokeny před expirací), náklady, hlášení, měřítka (oddíl 16).
+- **Okamžitá upozornění** do Telegramu: červené CI na `main`, selhání datové linky, osobní údaje ve
+  veřejném issue, revert rutiny, rutina z veřejného hlášení čekající 24 hodin.
+- **Veřejně** jen změny webu na `/changelog` (`src/lib/changelog.ts`), plní ho Claude při merge.
 
-Čísla počítá skript přes `gh`, Claude z nich píše text. Odkud se čtou náklady, určí fáze 3 (oddíl 15).
+Čísla počítá skript přes `gh`, Claude z nich píše text.
 
 ## 14. Směr vývoje
 
-Jedno místo, kde vlastník píše cíle, pořadí priorit, co se teď nedělá, rozpočet a mimořádné pokyny.
-Nejvýš jedna obrazovka. Claude ho čte při každém zpracování issues.
+Soubor `smer-vyvoje.md` v **soukromém repozitáři** (například `tangero/stredniskoly-rizeni`), upravitelný
+v aplikaci GitHub i z telefonu. Obsah na jednu obrazovku: cíle k datu, pořadí priorit, co se teď nedělá,
+rozpočet (měsíční strop, strop PR denně), mimořádné pokyny. Claude ho čte při každém zpracování issues
+a řadí podle něj práci. **Je to hlavní nástroj, kterým vlastník řídí**, vedle schvalování projektů.
 
-Nesmí být veřejné: priority, odložené věci a rozpočet by zbytečně viděla konkurence. Doporučení:
-**soukromý repozitář** (například `tangero/stredniskoly-rizeni`) s jedním souborem `smer-vyvoje.md`,
-upravitelným v aplikaci GitHub i z telefonu. Do stejného repozitáře může jít plná verze přehledu.
-Claude i denní úloha k němu potřebují právo čtení.
+## 15. Denní zpracování fronty a vlastní identita AI
 
-## 15. Denní zpracování fronty
+**Vlastní identita** (RA6, krok 1): GitHub App (doporučeno) nebo strojový účet pro Claude Code,
+denní úlohu a asistenta zadání. Práva: push do větví, PR, štítky, komentáře, úprava issues; **bez
+obcházení rulesetu**. Ruleset pak sám zajistí, že AI sloučí jen PR se zelenými povinnými kontrolami
+včetně kontroly hranic rutiny. Kontrola autora (oddíl 2) začne skutečně fungovat. Založení je
+jednorázově asi 15 minut práce vlastníka.
 
-Naplánovaná úloha (Routine v Claude Code) jednou denně: přečte Směr vývoje a splatné připomínky,
-roztřídí nová issues, realizuje schválenou práci a rutinu v pořadí priorit do stropu PR, opraví vlastní
-PR po review a CI, připraví otázky do fronty.
+**Denní úloha** (Routine v Claude Code, krok 2), jednou denně: přečte Směr vývoje a splatné připomínky,
+roztřídí nová issues, realizuje rutinu, schválená a mlčením schválená zadání a etapy v pořadí priorit
+do stropu PR, ověří na preview, sloučí rutinu po branách, opraví vlastní PR po review a CI, aktualizuje
+frontu a přehled. Náklady čte z vyúčtování Claude a hlídá strop ze Směru vývoje.
 
-Před zavedením (fáze 3) musí být doloženo:
+Do založení vlastní identity smí denní úloha běžet pod tokenem vlastníka jen nad issues `interni`;
+veřejná hlášení a automatický merge zapne až vlastní identita. Token vlastníka umí ruleset obejít,
+proto by podvržený pokyn z hlášení mohl vést k merge čehokoli.
 
-- **identita a práva:** úloha běží pod vlastní identitou (GitHub App nebo strojový účet) s právy push
-  do větví, zakládání PR a úprav štítků a komentářů. Pod tokenem vlastníka běžet nesmí: vlastník je
-  admin s obejitím rulesetu při merge;
-- **„nemerguje“ vynucené rulesetem**, ne jen pokynem: identita úlohy není mezi těmi, kdo smí ruleset
-  obejít, a ruleset vyžaduje schválení PR jiným účtem, nebo identita nemá právo merge vůbec;
-- **odkud se čtou náklady** a kde je strop;
-- **vstup:** ve fázi 3 úloha realizuje jen issues se štítkem `interni` nebo issues, která roztřídil
-  a označil člověk. Veřejná hlášení čte jen pro třídění. Pojistka „hlášení jsou data“ je pokyn
-  v promptu, tedy slabá ochrana proti podvrženému pokynu; proto o vstupu rozhoduje štítek od vlastníka.
+Spouštění z GitHubu (Action s Claude Code) jen štítkem přidaným vlastníkem s kontrolou
+`github.event.sender.login`, nikdy komentářem `@claude`.
 
-## 16. Spouštění z GitHubu
+## 16. Pravidla, měřítka a zavedení
 
-Kdyby se místo denní úlohy nebo vedle ní zavedla GitHub Action s Claude Code, spouští ji **štítek
-`schvaleno` přidaný vlastníkem** (kontrola `github.event.sender.login` ve workflow), ne komentář
-`@claude`. Komentář ve veřejném repozitáři může napsat kdokoli. Předpokladem je odstranění starých
-`auto-fix-*` workflow z kroku 0.
+**Zkrácení `CLAUDE.md`** (RA9): postupy, které agent potřebuje jen občas, se přesunou do skills
+v `.claude/skills/` (třídění a rutina, ověření na preview, kontroly před PR, připomínky, týdenní přehled,
+fronta rozhodnutí). V `CLAUDE.md` zůstanou role, tvrdé hranice, štítky a odkazy na skills. Cíl: `CLAUDE.md`
+nebude delší než dnes (132 řádků), i když přibude rutina a schválení mlčením.
 
-## 17. Rizika a rozhodnutí části B
+**Měřítka** se začnou měřit hned, výchozí stav se dopočítá z historie GitHubu za poslední čtyři týdny:
 
-| riziko | protiopatření |
-|---|---|
-| Claude zařadí rizikovou změnu jako rutinu | tvrdé podmínky, v pochybnosti ne, zdůvodnění v PR, kontrola jedné oblasti labelerem, sledování regresí; dvě regrese za 4 týdny = zúžení podmínek |
-| merge v dávce se stane razítkováním | přehled uvádí u každého PR výsledek review a riziko; rutina nesahá na migrace, pravidla, API ani e-maily |
-| podvržený pokyn ve veřejném hlášení | hlášení se nerealizují (fáze 3), rozhoduje štítek vlastníka ověřený přes `actor` |
-| únik interních údajů | přehled a směr vývoje mimo veřejný repozitář |
-| denní úloha obejde ochranu | vlastní identita bez obejití rulesetu |
-| náklady nebo šum | strop PR a rozpočtu ve Směru vývoje, náklady v přehledu |
+| měřítko | jak se měří | cíl |
+|---|---|---|
+| zásahy vlastníka týdně | jeho komentáře, štítky a merge (bez komentářů s patičkou AI) | pokles aspoň o polovinu proti výchozímu stavu |
+| fronta rozhodnutí | počet otevřených `navrh`, stáří nejstaršího | nejvýš 5, žádné starší 7 dní |
+| doba od nahlášení po nasazení, rutina | medián | do 2 dnů |
+| doba od zadání po merge, drobné zadání | medián | do 5 dnů |
+| regrese | PR revertované nebo opravované do 14 dnů po merge | u rutiny nejvýš 1 z 10 |
+
+Při dvou regresích rutiny za čtyři týdny se zúží její podmínky; automatický merge se nevypíná.
+
+**Zavedení:**
+
+| krok | co dělá AI | práce vlastníka |
+|---|---|---|
+| 0, hned | upravit tělo #53, zavřít duplikáty #216, #228, #229, #251, PR s odstraněním `auto-fix-issues.yml`, `auto-fix-iterative.yml` (jde ručně spustit s právy zápisu) a `notify-new-issue.yml` | smazat revizi #53 (2 min), merge PR |
+| 1, týden 1 | PR s pravidly a skills, labelerem a kontrolou hranic rutiny; štítky; třídění otevřených issues; odebrat `navrh` vedle `schvaleno` (#234, #244); přepsat projekty podle oddílu 7; výchozí měřítka | merge PR; vytvořit GitHub App a soukromý repozitář, vyplnit Směr vývoje, v UI auto-add, dva pohledy, kontrola hranic a App v rulesetu, povolit auto-merge (celkem asi 60 min jednou) |
+| 2, týden 2 | skript přehledu, ověření na preview, denní úloha | – |
+| 3, kdykoli | úklid `docs/` (RA5) jako rutina | – |
+
+Po kroku 2 zbývá vlastníkovi: Směr vývoje, schválení projektů, merge drobných zadání a etap podle
+protokolu, veto a mazání revizí s osobními údaji.
+
+**Rozhodnutí části A:**
 
 | | rozhodnutí | doporučuji |
 |---|---|---|
-| RB1 | Třída `rutina` z interních zadání s podmínkami z oddílu 12 | ano, po 2–4 týdnech provozu A |
-| RB2 | Rutina z veřejných hlášení | až po 4 týdnech RB1 bez regresí, jen rozpor z našich dat nebo kódu |
-| RB3 | Merge rutiny v dávce z přehledu | ano; automatický merge nezavádět |
-| RB4 | Přehled: plná verze neveřejně (Telegram, soukromý repozitář), veřejně jen změny webu | ano |
-| RB5 | Směr vývoje v soukromém repozitáři | ano |
-| RB6 | Denní úloha se stropem 3 PR denně po splnění podmínek z oddílu 15 | ano |
-| RB7 | Delegace schvalování zadání na jinou roli | ne; zvážit až podle měřítek |
+| RA1 | Zrušit model ve třech úrovních a nahradit ho štítky `oblast:*` a `projekt` s etapami v checklistu | **ano** |
+| RA2 | `navrh` jako jediný štítek „čeká na vlastníka“ | **ano** |
+| RA3 | Devět oblastí (inspekce pod data, novináři pod provoz) | **ano** |
+| RA4 | Životní cyklus projektu podle oddílu 7 | **ano** |
+| RA5 | Úklid `docs/`: rozcestník `docs/README.md`, překonané do `docs/historie/` | **ano**, jako rutina |
+| RA6 | Vlastní identita AI (GitHub App) bez obcházení rulesetu | **ano**, v kroku 1 |
+| RA7 | Rutina včetně veřejných hlášení s automatickým merge po branách (u hlášení po 24 h bez veta) | **ano** |
+| RA8 | Schválení mlčením u drobných interních zadání (48 h) | **ano** |
+| RA9 | Zkrácení `CLAUDE.md` přesunem postupů do skills | **ano** |
+| RA10 | Ověření na preview dělá AI s protokolem, vlastník neověřuje | **ano** |
+| RA11 | Přehled neveřejně, Směr vývoje v soukromém repozitáři, veřejně jen `/changelog` | **ano** |
+| RA12 | Denní úloha se stropem 5 PR denně, do vlastní identity jen nad `interni` | **ano** |
+
+# Část B: rozšíření podle měřítek
+
+Rozhoduje se po čtyřech týdnech provozu části A podle měřítek z oddílu 16.
+
+| | rozhodnutí | podmínka |
+|---|---|---|
+| RB1 | Automatický merge drobných zadání a etap projektů po protokolu z preview a 24 h bez veta | regrese drobných zadání nejvýš 1 z 10 |
+| RB2 | Údaje od škol zadané přes portál pro školy (ověřený účet školy) se přebírají bez člověka | portál zaznamenává, kdo údaj zadal; kontrola rozsahu změny |
+| RB3 | Vyšší limit rozsahu rutiny, víc oblastí v jednom PR | nejvýš 1 regrese rutiny za 4 týdny |
+| RB4 | Lhůta mlčení 24 h místo 48 h | fronta rozhodnutí bez položek starších 2 dnů |
+
+## 17. Přijatá rizika
+
+| riziko | co ho omezuje | co vlastník přijímá |
+|---|---|---|
+| AI zařadí rizikovou změnu jako rutinu a sama ji sloučí | kontrola hranic rutiny jako povinná kontrola, protokol z preview, přehled sloučených, revert | chyba může být na webu, než si jí někdo všimne |
+| podvržený pokyn ve veřejném hlášení | hranice vynucené automatikou, 24 h veto, identita bez obcházení rulesetu | změna uvnitř hranic proběhne bez lidského pohledu |
+| schválení mlčením projde zadání, které by vlastník zamítl | plán v issue, 48 h, přehled, revert | občas zbytečná práce a vrácení |
+| AI ověří na preview špatně | protokol se snímky, kritéria „Hotovo když“ | vizuální vada, kterou automat nepozná |
+| únik interních údajů | přehled a Směr vývoje mimo veřejný repozitář | – |
+| náklady denní úlohy | strop ve Směru vývoje, náklady v přehledu | – |
 
 ## Změny návrhu
 
-- **0.3** (3. 10. 2026, druhé kolo oponentury v PR #273): kontrola autora nerozliší vlastníka od AI,
-  proto podpis AI a RA6 (vlastní identita i pro interaktivní práci); oblast u issue a PR bez rozporu;
-  `navrh` až u hotového zadání, formulář ho nepřidává; odebrání `navrh` vedle `schvaleno` v kroku 1.
-- **0.2** (3. 10. 2026, oponentura vlastníka v PR #273): rozdělení na část A (struktura) a B
-  (autonomie); schvaluje jen vlastník a ověřuje se autor, ne text; třídy `uprava` a `smer` zrušené,
-  zůstává jen `rutina` v části B; `navrh` místo nového `rozhodnuti`; štítek `trvale`; sub-issues zrušené,
-  hlášení se zavírají z PR; životní cyklus projektu podle dohody (rozbor v issue, `docs/` podle velikosti);
-  rutina bez převzetí údajů od škol a s daty jen přes generátor nebo ruční opravy; přehled a směr vývoje
-  neveřejně; smazání revize u osobních údajů; podmínky identity a vstupu denní úlohy; opravené filtry
-  tabule a seskupení podle oblasti; labeler na `pull_request`; audit přiložen do `docs/historie/`;
-  oprava tvrzení o `auto-fix-iterative.yml`.
+- **0.4** (3. 10. 2026, zadání vlastníka: minimalizace lidského vstupu i za cenu vyššího rizika a větších
+  pravomocí AI): tvrdé hranice místo schvalování všeho; rutina s automatickým merge v části A včetně
+  veřejných hlášení (24 h veto) a s kontrolou hranic jako povinnou kontrolou; schválení mlčením u drobných
+  zadání; ověření na preview dělá AI; přehled, Směr vývoje, denní úloha a vlastní identita přesunuté do
+  části A; štítek `stop`; zkrácení `CLAUDE.md` přes skills; měřítka od začátku; část B jen rozšíření
+  autonomie podle měřítek.
+- **0.3** (3. 10. 2026, druhé kolo oponentury): podpis AI a vlastní identita (RA6); oblast u issue a PR;
+  `navrh` až u hotového zadání; odebrání `navrh` vedle `schvaleno`.
+- **0.2** (3. 10. 2026, první kolo oponentury): rozdělení na strukturu a autonomii; schvaluje jen vlastník
+  a ověřuje se autor; třídy `uprava` a `smer` zrušené; `navrh` místo `rozhodnuti`; sub-issues zrušené;
+  životní cyklus projektu; přehled a směr vývoje neveřejně; smazání revize u osobních údajů; podmínky
+  identity a vstupu denní úlohy; opravené filtry tabule; labeler na `pull_request`; přiložený audit.
 - **0.1** (3. 10. 2026): první verze.
