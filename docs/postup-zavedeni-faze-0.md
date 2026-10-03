@@ -1,6 +1,6 @@
 # Postup zavedení fází 0 a 1: práce vlastníka
 
-Verze 2.1 · 3. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.12, oddíl 20.
+Verze 2.2 · 3. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.12, oddíl 20.
 
 AI pracuje přes účet vlastníka (rozhodnutí RA35), takže se nezakládají žádné další účty, aplikace
 ani zkušební repozitář. Práce vlastníka je asi 30 minut.
@@ -17,9 +17,12 @@ takže na nich běží CI; z #53 je odstraněný e-mail; duplikáty #216, #228 a
 
 ## Fáze 1, až AI připraví bránu sloučení
 
-AI připraví PR s branou sloučení, `rezimy.yml`, pravidly a skills. Po jeho sloučení:
+Fáze 1 přijde ve dvou PR: nejdřív brána sloučení (`brana-slouceni.yml`, `scripts/brana/`, `rezimy.yml`,
+štítky oblastí), potom pravidla v `CLAUDE.md` a skills. Brána po sloučení prvního PR jen píše kontrolu
+„Brána sloučení“ ke každému PR a nic neblokuje, dokud ji nepřidáš do rulesetu. Pár dní se tak dá sledovat,
+jestli rozhoduje správně.
 
-### Krok 3: ruleset (10 min)
+### Krok 3: ruleset (10 min, až brána u PR ukazuje rozumné výsledky)
 
 Repozitář → Settings → Rules → Rulesets → **Ochrana main**:
 
@@ -28,6 +31,16 @@ Repozitář → Settings → Rules → Rulesets → **Ochrana main**:
 2. **Bypass list:** odebrat všechny položky, i sebe. Merge pak jde jen přes kontroly a bránu, i pod tvým
    účtem; v nouzi ruleset dočasně upravíš.
 3. Povinné review **nezapínej**: PR jsou pod tvým účtem a vlastní PR schválit nejde.
+
+Jak se pak slučuje:
+
+- **PR navázaný na schválené zadání** (`Closes #N`, issue se `schvaleno`): brána projde sama, když se
+  rozsah issue od schválení nezměnil a u změn webu je v PR protokol z preview.
+- **PR bez zadání** (snímky dat, Dependabot, tvoje rychlé úpravy) a **kontrolované činnosti** (migrace,
+  e-maily, portál, workflow, závislosti): přidej na PR štítek `schvaleno`. Souhlas platí pro commit, který
+  PR v tu chvíli má; po dalším pushi štítek odeber a přidej znovu.
+- **Změny brány, `rezimy.yml`, `CLAUDE.md`:** vždy `schvaleno` přímo na PR.
+- Proč kontrola neprošla, ukazuje její souhrn v záložce Checks u PR.
 
 ### Krok 4: Směr vývoje (15 min)
 

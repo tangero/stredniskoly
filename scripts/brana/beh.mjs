@@ -1,0 +1,117 @@
+// Běh brány sloučení ve workflow brana-slouceni.yml (z main, pull_request_target a další události).
+// Zaznamená otisky a souhlasy a ke každému dotčenému PR zapíše kontrolu „Brána sloučení“
+// na jeho aktuální hlavu. Kód z PR nespouští ani nestahuje.
+
+import fs from 'node:fs';
+import { vyhodnot, zaznamSouhlasu, otisk, rozsah, externiId, ZNACKA, ZADOST } from './brana.mjs';
+import { REPO, NAZEV_KONTROLY, vytvorApi, nactiKonfig, nactiPr, nactiIssue, prOdkazujiciNa, otevrenePr } from './data.mjs';
+
+const api = vytvorApi();
+const udalost = process.env.GITHUB_EVENT_NAME;
+const data = JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, 'utf8'));
+const zamrznuti = { od: process.env.ZAMRZNUTI_OD || '', do: process.env.ZAMRZNUTI_DO || '' };
+
+const komentuj = (cislo, telo) => api(`repos/${REPO}/issues/${cislo}/comments`, { method: 'POST', body: { body: telo } });
+
+async function zapisKontrolu(pr, verdikt, zacatek, zadost) {
+  const titulek = verdikt.uspech
+    ? `Prošlo (${verdikt.rezim})`
+    : verdikt.cekaDo
+      ? `Čeká na lhůtu (${verdikt.rezim})`
+      : `Neprošlo (${verdikt.rezim})`;
+  const a = verdikt.rozbor;
+  const souhrn = [
+    ...verdikt.duvody.map((d) => `- ${d}`),
+    '',
+    `Režim: ${verdikt.rezim}. Oblasti: ${a.oblasti.join(', ') || 'žádná'}. Změněné řádky mimo testy: ${a.radky}.`,
+    a.k.length ? `Kontrolované činnosti: ${a.k.join(', ')}.` : '',
+    a.h2.length ? `Pravomoci AI: ${a.h2.join(', ')}.` : '',
+    'Pravidla: docs/navrh-rizeni-vyvoje-2027.md, oddíly 4 a 9; cesty v .github/rezimy.yml.',
+  ].filter((r) => r !== '').join('\n');
+  await api(`repos/${REPO}/check-runs`, {
+    method: 'POST',
+    body: {
+      name: NAZEV_KONTROLY,
+      head_sha: pr.hlava.sha,
+      status: 'completed',
+      // Začátek zaznamenaný před načtením vstupů; žádost váže výsledek na konkrétní komentář.
+      started_at: zacatek,
+      completed_at: new Date().toISOString(),
+      external_id: externiId({ pr: pr.cislo, stav: verdikt.stav, od: verdikt.lhutaOd, zadost }),
+      conclusion: verdikt.uspech ? 'success' : 'failure',
+      output: { title: titulek, summary: souhrn },
+    },
+  });
+}
+
+async function vyhodnotPr(cislo, konfig, zadost = null) {
+  const zacatek = new Date().toISOString();
+  const vstup = await nactiPr(api, cislo);
+  if (vstup.pr.stav !== 'open' || vstup.pr.zakladna !== 'main') return;
+  const verdikt = vyhodnot({ ...vstup, konfig, zamrznuti, ted: Date.now() });
+  for (const z of verdikt.zaznamenat) {
+    await komentuj(z.issue, `Brána sloučení zaznamenala souhlas vlastníka přidaný před jejím zavedením, s dnešním rozsahem issue.\n\n${ZNACKA.souhlas(z.otisk)}`);
+  }
+  await zapisKontrolu(vstup.pr, verdikt, zacatek, zadost);
+  console.log(`PR #${cislo}: ${verdikt.uspech ? 'prošlo' : 'neprošlo'} (${verdikt.rezim}) – ${verdikt.duvody.join('; ')}`);
+}
+
+async function main() {
+  const konfig = await nactiKonfig(api);
+  let cisla = [];
+  let zadost = null;
+
+  if (udalost === 'pull_request_target') {
+    const pr = data.pull_request;
+    if (data.action === 'labeled' && data.label?.name === 'schvaleno') {
+      await komentuj(pr.number, `Brána sloučení zaznamenala souhlas vlastníka s commitem ${pr.head.sha.slice(0, 7)}. Nový push souhlas zruší.\n\n${ZNACKA.souhlasPr(pr.head.sha)}`);
+    }
+    cisla = [pr.number];
+  } else if (udalost === 'issues' || udalost === 'issue_comment') {
+    const cislo = data.issue.number;
+    if (data.issue.pull_request) {
+      cisla = [cislo];
+      // Proměnné zamrznutí má tento job z doby svého startu, tedy až po žádosti.
+      if (udalost === 'issue_comment' && data.action === 'created' && (data.comment?.body || '').includes(ZADOST)) {
+        zadost = data.comment.id;
+      }
+    }
+    else {
+      if (udalost === 'issues' && data.action === 'labeled' && data.label?.name === 'navrh') {
+        await komentuj(cislo, `Brána sloučení uložila otisk rozsahu k návrhu. Změna rozsahu před schválením souhlas zneplatní.\n\n${ZNACKA.otiskNavrhu(otisk(rozsah(data.issue.body || '')))}`);
+      }
+      if (udalost === 'issues' && data.action === 'labeled' && data.label?.name === 'schvaleno') {
+        // Tělo ze schvalovací události je to, co vlastník schválil; API už může vracet novější.
+        const issue = await nactiIssue(api, cislo);
+        const z = zaznamSouhlasu(issue, data.issue.body || '');
+        if (z.platny) {
+          await komentuj(cislo, `Brána sloučení zaznamenala souhlas vlastníka s tímto rozsahem. Pozdější změna rozsahu ho zneplatní.\n\n${z.znacky}`);
+        } else {
+          // Nový cyklus návrhu: otisk rozsahu z události, štítek zpět na navrh. Opakované přidání
+          // schvaleno pak potvrdí právě tento rozsah.
+          await komentuj(cislo, `Brána sloučení souhlas nezaznamenala: rozsah se od přidání štítku navrh změnil. Uložila nový otisk návrhu a vrátila issue do návrhu. Zkontroluj tělo issue a přidej schvaleno znovu.\n\n${z.znacky}`);
+          await api(`repos/${REPO}/issues/${cislo}/labels/schvaleno`, { method: 'DELETE' });
+          await api(`repos/${REPO}/issues/${cislo}/labels`, { method: 'POST', body: { labels: ['navrh'] } });
+        }
+      }
+      cisla = await prOdkazujiciNa(api, cislo);
+    }
+  } else if (udalost === 'workflow_dispatch' && data.inputs?.pr) {
+    cisla = [Number(data.inputs.pr)];
+  } else {
+    cisla = await otevrenePr(api);
+  }
+
+  let chyba = false;
+  for (const cislo of cisla) {
+    try {
+      await vyhodnotPr(cislo, konfig, zadost);
+    } catch (e) {
+      chyba = true;
+      console.error(`PR #${cislo}: ${e.message}`);
+    }
+  }
+  if (chyba) process.exitCode = 1;
+}
+
+await main();

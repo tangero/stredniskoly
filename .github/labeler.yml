@@ -1,0 +1,184 @@
+# Oblasti pro PR (docs/navrh-rizeni-vyvoje-2027.md, oddíl 14). Štítky přidává workflow
+# oblasti-pr.yml (actions/labeler). Brána podmínku „rutina v jedné oblasti“ počítá sama
+# z diffu podle tohoto souboru v main, štítkům PR nevěří.
+
+oblast:detail:
+  - changed-files:
+      - any-glob-to-any-file:
+          - src/app/skola/**
+          - src/app/api/skola/**
+          - src/app/api/school-details/**
+          - src/components/skola/**
+          - src/components/obor/**
+          - src/components/school/**
+          - src/components/school-profile/**
+          - src/lib/skola-*
+          - src/lib/obor-*
+          - src/lib/pasma-*
+          - src/lib/kontext-*
+          - src/lib/druhe-kolo*
+          - src/lib/maturita-*
+          - src/lib/kriteria-*
+          - public/school_details/**
+          - public/soubeh_prihlasek_*
+          - public/kontext_prihlasek_*
+          - public/pasma_prijeti_*
+          - public/maturita_skoly.json
+          - public/kriteria_*
+
+oblast:prehledy:
+  - changed-files:
+      - any-glob-to-any-file:
+          - src/app/page.tsx
+          - src/app/skoly/**
+          - src/app/mesto/**
+          - src/app/regiony/**
+          - src/app/vysledky/**
+          - src/app/nabidka/**
+          - src/app/api/schools/**
+          - src/app/api/skoly/*
+          - src/components/SchoolSearch.tsx
+          - src/components/CitySchoolsTable.tsx
+          - src/components/RegionSchoolsTable.tsx
+          - src/components/nabidka/**
+          - src/lib/cityData*
+          - src/lib/krajData*
+          - src/lib/mesta*
+          - src/lib/kraje*
+
+oblast:simulator:
+  - changed-files:
+      - any-glob-to-any-file:
+          - src/app/simulator/**
+          - src/app/prototyp/pasma/**
+          - src/app/api/chances/**
+          - src/components/simulator/**
+          - src/components/obor/KdeStojim.tsx
+          - src/lib/simulator-*
+          - src/lib/strategie-*
+          - src/lib/poloha-*
+          - src/lib/prevod-*
+          - src/lib/chances*
+          - src/lib/priorities*
+          - public/simulator_pasma_*
+          - public/prevod_testu_*
+          - public/pozice_soutezicich_*
+
+oblast:dojezdy:
+  - changed-files:
+      - any-glob-to-any-file:
+          - src/app/dostupnost/**
+          - src/app/praha-dostupnost/**
+          - src/app/api/dostupnost/**
+          - src/app/api/praha-dostupnost/**
+          - scripts/tt_*
+          - scripts/build_transit_graph_v2.py
+          - scripts/geocode_schools.py
+          - data/transit_graph.json
+          - data/school_locations.json
+          - public/pid_*
+
+oblast:novinky:
+  - changed-files:
+      - any-glob-to-any-file:
+          - src/app/novinky/**
+          - src/app/api/novinky/**
+          - src/app/api/skoly/*/novinky/**
+          - src/app/admin/skolni-novinky/**
+          - src/app/prototyp/cim-skoly-ziji/**
+          - src/components/novinky/**
+          - src/lib/novinky-*
+          - src/lib/skolni-novinky*
+          - src/lib/cim-skoly-ziji*
+          - content/novinky/**
+          - scripts/sklizec-novinek.py
+          - scripts/novinky*
+          - scripts/skolni-novinky-*
+          - Dockerfile.sklizec
+          - .github/workflows/sklizec-novinek.yml
+          - public/skoly_feedy.json
+          - public/skoly_vypisy.json
+
+oblast:veletrhy:
+  - changed-files:
+      - any-glob-to-any-file:
+          - src/app/veletrhy/**
+          - src/app/api/veletrhy/**
+          - src/app/admin/veletrhy/**
+          - src/components/veletrhy/**
+          - src/lib/veletrhy-*
+          - src/data/veletrhy-*
+          - scripts/veletrhy*
+          - .github/workflows/veletrhy-snimek.yml
+
+oblast:portal:
+  - changed-files:
+      - any-glob-to-any-file:
+          - src/app/pro-skoly/**
+          - src/app/api/portal/**
+          - src/app/api/portal-*/**
+          - src/app/admin/portal/**
+          - src/components/portal/**
+          - src/lib/portal-*
+          - scripts/portal*
+          - data/portal/**
+          - public/portal_skol.json
+
+oblast:data:
+  - changed-files:
+      - any-glob-to-any-file:
+          - scripts/import*
+          - scripts/build-*
+          - scripts/dipsy-*
+          - scripts/datova-linka.py
+          - scripts/linka/**
+          - scripts/stav-datovych-sad.py
+          - data/msmt_rejstrik/**
+          - data/linka/**
+          - data/csi_*
+          - data/csi_snapshots/**
+          - data/inspection_extractions.json
+          - data/inspis_*
+          - inspekce/**
+          - public/stav_datovych_sad.json
+          - public/cermat_results_*
+          - public/csi_inspections.json
+          - public/prijimacky-2027.ics
+          - src/app/prijimacky-2027/**
+          - src/components/SchoolInspections.tsx
+          - src/components/InspectionSummary.tsx
+          - src/lib/inspekce-*
+          - .github/workflows/datova-linka.yml
+          - .github/workflows/csi-weekly-refresh.yml
+          - docs/zdroje-dat.md
+          - docs/datova-linka.md
+
+oblast:provoz:
+  - changed-files:
+      - any-glob-to-any-file:
+          - vercel.json
+          - next.config.ts
+          - package.json
+          - package-lock.json
+          - .github/**
+          - .claude/**
+          - CLAUDE.md
+          - scripts/vercel-deploy.sh
+          - scripts/generate-sitemap.mjs
+          - scripts/brana/**
+          - src/app/o-projektu/**
+          - src/app/jak-vybrat-skolu/**
+          - src/app/changelog/**
+          - src/app/issues/**
+          - src/app/pro-novinare/**
+          - src/app/api/bug-report/**
+          - src/app/robots.ts
+          - src/lib/pro-novinare*
+          - src/lib/og-*
+          - src/lib/naklady-*
+          - public/sitemap.xml
+          - public/llms.txt
+          - public/pro-novinare/**
+          - docs/spoluprace-na-githubu.md
+          - docs/navrh-rizeni-vyvoje-2027.md
+          - docs/postup-zavedeni-faze-0.md

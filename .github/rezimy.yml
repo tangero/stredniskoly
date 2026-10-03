@@ -1,0 +1,86 @@
+# Režimy brány sloučení: docs/navrh-rizeni-vyvoje-2027.md, oddíly 4, 5 a 9.
+# Brána čte tento soubor vždy z main, úprava ve větvi se uplatní až po sloučení.
+# Soubor je v cestách h2, takže jeho změnu brána pustí jen se souhlasem vlastníka.
+#
+# Vzory cest jako v labeleru: `**` libovolná hloubka, `*` v rámci jedné složky.
+
+verze: 1
+
+# Účet vlastníka. Štítek `schvaleno` z jiného účtu (asistent zadání, boti) brána nebere jako souhlas
+# a `stop` odebraný jiným účtem, než který ho přidal, dál platí. Claude Code pracuje přes účet vlastníka.
+vlastnik: tangero
+
+# Schválení `schvaleno` přidaná před tímto dnem brána při prvním vyhodnocení zaznamená
+# s tehdejším rozsahem; pozdější schválení zaznamená workflow brány hned při přidání štítku.
+platnost_od: "2026-10-03"
+
+# Režim L: drobné zadání se sloučí po této době od poslední změny PR, pokud nikdo nepřidal `stop`.
+lhuta_l_hodin: 48
+
+# Režim R: nejvýš tolik změněných řádků mimo testy, v jedné oblasti.
+rutina_max_radku: 150
+
+# H2, uvolnění pravomocí AI: vždy souhlas vlastníka štítkem `schvaleno` přímo na PR.
+# Patří sem i úprava workflow, která přidá nebo změní `secrets.` nebo `permissions:` (brána to čte z diffu).
+h2:
+  - .github/rezimy.yml
+  - .github/labeler.yml
+  - .github/CODEOWNERS
+  - .github/workflows/brana-slouceni.yml
+  - .github/workflows/oblasti-pr.yml
+  - scripts/brana/**
+  - CLAUDE.md
+  - .claude/claude.md
+  - .claude/settings*.json
+
+# K, kontrolované činnosti (oddíl 5). Ve fázi 1 je pustí souhlas vlastníka na PR nebo na propojeném
+# issue; ve fázi 2 přibude druhý klíč a mechanismy z oddílu 5.
+k:
+  migrace:
+    - db/migrace/**
+    - scripts/*-migrace.mjs
+  emaily:
+    - src/lib/novinky-*
+    - src/lib/portal-email.ts
+    - src/app/api/novinky/**
+    - content/novinky/sablony/**
+  portal:
+    - src/app/api/portal/**
+    - src/app/api/portal-*/**
+    - src/lib/portal-*
+    - src/app/admin/**
+  nasazeni:
+    - vercel.json
+    - next.config.ts
+    - scripts/vercel-deploy.sh
+  adresy:
+    - src/app/robots.ts
+    - public/sitemap.xml
+  workflows:
+    - .github/**
+  zavislosti:
+    - package.json
+    - package-lock.json
+    - requirements*.txt
+  registr:
+    - public/stav_datovych_sad.json
+  ukazatele:
+    - docs/slovnik-ukazatelu.md
+
+# Smazaná nebo přejmenovaná stránka mění adresy (oddíl 5, řádek 9): K.
+stranky:
+  - src/app/**/page.tsx
+  - src/app/**/route.ts
+
+# Změny jen v těchto cestách nepotřebují protokol z preview (web se nemění).
+bez_preview:
+  - docs/**
+  - "**/*.md"
+  - tests/**
+  - .github/**
+  - .claude/**
+  - scripts/brana/**
+
+# Do limitu řádků rutiny se nepočítají.
+testy:
+  - tests/**
