@@ -36,38 +36,36 @@ jsou zavřené.
 6. Classic token ulož v repozitáři jako secret `TABULE_TOKEN` (Settings → Secrets and variables →
    Actions). Fine-grained token předej asistentovi do jeho prostředí, do repozitáře ho nedávej.
 
-## Krok 3: přihlášení na počítači asistenta a na počítači vlastníka (15 min)
+## Krok 3: tvoje `gh` bez práva zápisu do `stredniskoly` (15 min)
 
 Podmínka O1: prostředí, kde pracuje AI, nesmí mít přístup k tvému přihlášení s právem zápisu do
-`stredniskoly`. Počítače jsou dva a každý se řeší jinak.
+`stredniskoly`. Na obou počítačích (tvém i Linuxu s Grok Bot, kde běží asistent zadání) jsi ale
+přihlášený jako ty i kvůli jiným projektům. Proto platí jedno pravidlo pro oba: **tvoje přihlášení
+v CLI zůstává, jen nemá zápis do `stredniskoly`.** AI tam pracuje pod vlastní identitou.
 
-**Počítač asistenta zadání (Linux, Grok Bot).** Je samostatný, takže na něm stačí jen strojový účet:
-
-```bash
-gh auth logout --hostname github.com          # odhlásit účet vlastníka, pokud tam je
-gh auth login --hostname github.com           # přihlásit strojový účet (token z kroku 2)
-gh auth status                                # musí ukázat jen strojový účet
-git config --global user.name  "eduarda-prijimacky"
-git config --global user.email "<ID>+eduarda-prijimacky@users.noreply.github.com"
-```
-
-Zkontroluj, že tam nezůstal tvůj SSH klíč, token v proměnných prostředí ani uložené přihlášení
-v prohlížeči.
-
-**Tvůj počítač (Claude Code a tvoje vlastní `gh`).** Claude Code poběží pod tokenem aplikace
-z kroku 4 (pomocný skript ho vygeneruje do `GH_TOKEN` jen pro jeho relaci). Tvoje `gh` zůstane
-přihlášené tebou pro všechny projekty. Claude Code ale běží pod stejným uživatelem systému a tvůj
-token si umí přečíst, proto ho omez:
-
-1. GitHub → Settings → Developer settings → Fine-grained tokens → nový token pro `gh`.
+1. GitHub → Settings → Developer settings → Fine-grained tokens → nový token pro `gh`
+   (stačí jeden pro oba počítače, nebo dva se stejným nastavením).
 2. **Repository access: Only select repositories** a vyber své ostatní projekty; `stredniskoly`
-   vynech (nebo mu dej jen čtení).
-3. `gh auth login --with-token` s tímto tokenem; starý token zruš.
+   vynech (nebo mu dej jen čtení). Oprávnění podle toho, co v jiných projektech potřebuješ.
+3. Na obou počítačích: `gh auth login --with-token` s tímto tokenem; pak `gh auth status`.
+   Starý token zruš (Settings → Developer settings → Personal access tokens).
+4. AI dostane svou identitu jen pro své procesy přes proměnnou `GH_TOKEN`:
+   - asistent zadání na Linuxu: token strojového účtu z kroku 2;
+   - Claude Code na tvém počítači: token aplikace z kroku 4 (vygeneruje ho pomocný skript).
+5. Na Linuxu nastav git pro asistenta jen v jeho klonu repozitáře:
+   ```bash
+   git config user.name  "eduarda-prijimacky"
+   git config user.email "<ID>+eduarda-prijimacky@users.noreply.github.com"
+   ```
 
 Pro ostatní projekty se nic nemění. Do `stredniskoly` zasahuješ webem nebo mobilní aplikací GitHub
 (štítky v tabuli, review), což je podle návrhu téměř jediná práce, která ti tam zbývá. Nový projekt
-do tokenu přidáš jedním klepnutím. Git přes SSH může dál pushovat větve, ale PR, štítek ani schválení
-přes něj vytvořit nejde a do `main` push neprojde.
+do tokenu přidáš jedním klepnutím.
+
+Co zůstává: SSH klíč pro git umí pushovat větve tvým jménem, ale PR, štítek ani schválení přes git
+vytvořit nejde a do `main` push neprojde. Přihlášení v prohlížeči AI nepoužívá, pokud prohlížeč
+neovládá; kdyby ho ovládala, platí pro ni stejné omezení jako pro CLI jen tehdy, když v tom prohlížeči
+nejsi přihlášený.
 
 ## Krok 4: GitHub App pro Claude Code (15 min)
 

@@ -120,9 +120,9 @@ nebo přidat `schvaleno`, které brána přijme jako lidské. Administrátorský
 odděleně. Přejímka na zkušebním repozitáři: z prostředí AI selže změna rulesetu i vytvoření štítku,
 komentáře nebo review jménem vlastníka. Do splnění se automatický merge nezapne.
 
-U asistenta zadání (samostatný počítač s Grok Bot) to znamená přihlásit tam jen strojový účet.
-Na počítači vlastníka běží Claude Code pod tokenem aplikace a vlastní `gh` vlastníka používá
-fine-grained token bez práva zápisu do `stredniskoly`; vlastník zasahuje do repozitáře webem. U Claude
+Prakticky: vlastník zůstává v CLI přihlášený na svých počítačích kvůli jiným projektům, ale jeho
+token nemá zápis do `stredniskoly` (fine-grained, vybrané repozitáře); AI na stejných počítačích
+pracuje pod vlastní identitou přes `GH_TOKEN` a vlastník zasahuje do repozitáře webem. U Claude
 Code v cloudu se ve fázi 0 ověří, jestli relaci jde provozovat bez připojeného účtu vlastníka.
 **Když nejde, nesmí se taková relace během autonomie na tomto repozitáři používat vůbec.** Samotné
 odebrání práva slučovat nestačí: AI by účtem vlastníka mohla přidat `schvaleno` nebo změnit ruleset
