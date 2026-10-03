@@ -40,6 +40,7 @@ export function vytvorApi({
       input: body ? JSON.stringify(body) : undefined,
       encoding: 'utf8',
       stdio: ['pipe', 'pipe', 'pipe'],
+      maxBuffer: 64 * 1024 * 1024,
     });
     return vystup.trim() ? JSON.parse(vystup) : null;
   };
