@@ -175,6 +175,8 @@ Zdrojem je [auditní výstup](podklady/oponentura-2027-r2-matomo.json) s přesn�
 
 **O-17/O-18:** dostupnost programového Vercel přístupu v účtu zatím neověřena, 404 nedokládá nutnost Plus. Stručný výpis runtime logu neobsahuje UA, ale dokumentace uvádí User Agent v detailu požadavku. Před vlastním sběrem ověřit, co lze získat existující cestou. Nově hlášený BetterStack drain je další podklad od oponenta, nikoli nezávisle prověřený zdroj této analýzy. Nula v omezeném výpisu nedokazuje nevyužívání strojových formátů.
 
+**Poznámka k drainu (2. 10. 2026):** BetterStack drain od tohoto data používá head sampling 25 % pouze pro produkci. Data z BetterStacku jsou proto od té doby vzorkem: absolutní počty a podíly malých skupin robotů (zhruba pod 100 požadavků v okně) nejsou spolehlivé; poměry velkých skupin lze brát jen jako odhady po přepočtu ×4. Otázka úplnosti HIT zůstává otevřená.
+
 **O-19:** tři OG obrázky při nové HTTP kontrole vracejí 500. Priorita distribuční opravy je doložená funkční vadou, ne odhadem ušlých návštěv. Lokální souběžná změna runtime čeká na ověření nasazení; doplněna do S0. Z provozu sociálních sítí neodvozujeme kauzální ztrátu CTR.
 
 | Verze | Datum | Změna |
