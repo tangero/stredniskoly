@@ -32,7 +32,8 @@ vodorovného posouvání na mobilu, texty podle `docs/slovnik-pojmu.md`.
 
 Komentář do PR (ne do issue). Brána uzná jen protokol, který obsahuje nadpis „Protokol z preview“
 a řádek `Commit:` s prvními 7 znaky **aktuálního** commitu PR, a nepustí protokol se slovem
-„nesplněno“. Po každém novém commitu napiš nový protokol.
+„nesplněno“. Počítá se jen protokol od vlastníka, asistenta zadání nebo `github-actions[bot]`. Po každém
+novém commitu napiš nový protokol.
 
 ```
 ## Protokol z preview

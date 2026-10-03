@@ -10,6 +10,10 @@ verze: 1
 # a `stop` odebraný jiným účtem, než který ho přidal, dál platí. Claude Code pracuje přes účet vlastníka.
 vlastnik: tangero
 
+# Účet asistenta zadání (Eduarda, RA36). Doklad „Zdroj:“ brána uzná jen v issue od vlastníka nebo asistenta,
+# protokol z preview jen od nich nebo od github-actions[bot]; PR jiného autora jen se schvaleno na PR.
+asistent: eduarda-prijimacky
+
 # Smí AI slučovat skriptem scripts/brana/sloucit.mjs? Zapne se samostatným PR (H2) až po přejímce
 # a po přidání brány do rulesetu (docs/postup-zavedeni-faze-0.md, krok 3). Do té doby slučuje vlastník.
 slucovani_ai: false

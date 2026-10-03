@@ -80,6 +80,11 @@ function posledniUdalost(udalosti, akce, stitek) {
  * tentýž účet a řídí se pravidlem, že `schvaleno` nepřidává (RA35); účty asistenta zadání a dalších
  * botů brána odliší podle autora události.
  */
+/** Účet vlastníka nebo asistenta zadání; jen jim brána věří doklad původu, protokol a PR se zadáním. */
+export function duveryhodny(login, konfig) {
+  return Boolean(login) && (login === konfig.rezimy.vlastnik || login === konfig.rezimy.asistent);
+}
+
 export function odVlastnika(udalost, konfig) {
   return Boolean(udalost.aktor) && udalost.aktor === konfig.rezimy.vlastnik;
 }
@@ -225,13 +230,17 @@ export function rozbor(soubory, konfig) {
   return { h2: [...h2], k: [...k].sort(), oblasti: [...oblasti].sort(), radky, jenBezPreview };
 }
 
-/** Poslední protokol z preview pro aktuální hlavu PR (oddíl 11). */
-export function protokol(pr) {
+/**
+ * Poslední protokol z preview pro aktuální hlavu PR (oddíl 11). Repozitář je veřejný, proto se počítá
+ * jen protokol od vlastníka, asistenta zadání nebo github-actions[bot]; tělo PR jen u důvěryhodného autora.
+ */
+export function protokol(pr, konfig) {
+  const smi = (autor) => autor === BOT || duveryhodny(autor, konfig);
   const kratke = pr.hlava.sha.slice(0, 7);
   // Tělo PR nemá čas úpravy; updated_at je pozdější nebo stejný, tedy opatrnější.
   // Rozhoduje naposledy upravený protokol; jeho text vstupuje do stavu lhůty (stavLhuty).
-  const texty = [{ telo: pr.telo || '', cas: pr.upraveno || pr.vytvoreno }, ...pr.komentare.map((k) => ({ ...k, cas: k.upraveno || k.cas }))]
-    .filter((t) => /Protokol z preview/i.test(t.telo) && t.telo.includes(kratke))
+  const texty = [{ telo: pr.telo || '', cas: pr.upraveno || pr.vytvoreno, autor: pr.autor }, ...pr.komentare.map((k) => ({ ...k, cas: k.upraveno || k.cas }))]
+    .filter((t) => smi(t.autor) && /Protokol z preview/i.test(t.telo) && t.telo.includes(kratke))
     .sort((a, b) => cas(b.cas) - cas(a.cas));
   if (!texty.length) return { ok: false, duvod: `chybí protokol z preview pro commit ${kratke}` };
   if (/(^|[^\p{L}])nesplněno/iu.test(texty[0].telo)) return { ok: false, duvod: 'protokol z preview obsahuje nesplněné kritérium' };
@@ -280,7 +289,7 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
 
   let protokolTelo = '';
   if (!a.jenBezPreview) {
-    const p = protokol(pr);
+    const p = protokol(pr, konfig);
     if (!p.ok) blokuje.push(p.duvod);
     else protokolTelo = p.telo;
   }
@@ -303,12 +312,13 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
     blokuje.push(`${proc}: chybí souhlas vlastníka (${sPr.duvod})`);
   };
 
+  const cizi = !duveryhodny(pr.autor, konfig);
   if (a.h2.length) {
     rezim = 'H2';
     potrebaSouhlasu(`mění pravomoci AI (${a.h2.join(', ')})`);
   } else if (a.k.length) {
     rezim = 'K';
-    if (nekteryIssueSouhlas) info.push(`kontrolovaná činnost (${a.k.join(', ')}): souhlas vlastníka na issue`);
+    if (nekteryIssueSouhlas && !cizi) info.push(`kontrolovaná činnost (${a.k.join(', ')}): souhlas vlastníka na issue`);
     else {
       potrebaSouhlasu(`kontrolovaná činnost (${a.k.join(', ')})`);
       for (const [cislo, s] of souhlasy) if (!sPr.platny) blokuje.push(`souhlas na issue #${cislo} neplatí: ${s.duvod}`);
@@ -316,6 +326,10 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
   } else if (!issues.length) {
     rezim = 'K';
     potrebaSouhlasu('PR bez propojeného zadání');
+  } else if (cizi) {
+    // Fork, Dependabot, cizí účet: zadání v issue neschvaluje cizí kód.
+    rezim = 'K';
+    potrebaSouhlasu(`PR od účtu ${pr.autor || 'neznámého'} (ne vlastník ani asistent)`);
   } else if (sPr.platny) {
     rezim = 'souhlas';
     info.push('souhlas vlastníka na PR');
@@ -333,6 +347,9 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
       } else if (!ZDROJ.test(i.telo || '')) {
         ri = 'K';
         blokuje.push(`issue #${i.cislo} nemá doklad „Zdroj:“ ani platný souhlas (${s.duvod})`);
+      } else if (!duveryhodny(i.autor, konfig)) {
+        ri = 'K';
+        blokuje.push(`issue #${i.cislo} založil účet ${i.autor || 'neznámý'}; doklad „Zdroj:“ platí jen od vlastníka nebo asistenta (${s.duvod})`);
       } else if (i.stitky.includes('projekt')) ri = 'E';
       else if (i.stitky.includes('rutina') || pr.stitky.includes('rutina')) {
         if (vRozsahuRutiny) ri = 'R';

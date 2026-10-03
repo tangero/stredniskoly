@@ -20,6 +20,10 @@ a každou hodinu. Výsledek zapíše jako kontrolu „Brána sloučení“ na ak
 | K | cesty z `k` v `rezimy.yml` (migrace, e-maily, portál, nasazení, workflow, závislosti, registr sad, slovník ukazatelů), PR bez zadání, hlášení | `schvaleno` na PR nebo na issue |
 | H2 | brána, `rezimy.yml`, `labeler.yml`, `CLAUDE.md`, workflow se změnou oprávnění nebo secrets | `schvaleno` přímo na PR, platí pro jeden commit |
 
+**Autoři (repozitář je veřejný):** doklad `Zdroj:` platí jen v issue od vlastníka nebo asistenta zadání
+(`vlastnik`, `asistent` v `rezimy.yml`), protokol z preview jen od nich nebo `github-actions[bot]`
+a PR jiného autora (fork, Dependabot) projde jen se `schvaleno` na PR.
+
 Vždy: `stop` blokuje, při zamrznutí projde jen `incident` v rozsahu rutiny, u změn webu musí být
 protokol z preview k aktuálnímu commitu (skill `overeni-preview`).
 

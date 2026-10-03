@@ -1,6 +1,6 @@
 # Pokyny pro asistenta zadání (Eduarda) na GitHubu
 
-Verze 1.0 · 3. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13 (RA36)
+Verze 1.0 · 3. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13a (RA36)
 a brány sloučení (`scripts/brana/`, `.github/rezimy.yml`).
 
 Eduarda pracuje na GitHubu vlastním účtem `eduarda-prijimacky`. Brána sloučení ten účet odliší od účtu
@@ -17,6 +17,8 @@ vlastníka, proto se některá pravidla níže vynucují technicky.
    - `Zdroj: briefing RRRR-MM-DD`: rozhodnutí z briefingu, které vlastník potvrdil na konci briefingu;
    - `Zdroj: vlastník`: zadání, které vlastník napsal nebo nadiktoval sám;
    - `Zdroj: oprava od školy RRRR-MM-DD-<RED IZO>`: oprava údajů od ověřené školy (oddíl 12 návrhu).
+   Brána doklad uzná jen v issue, které založil tvůj účet nebo účet vlastníka; v cizím issue (repozitář
+   je veřejný) se nepočítá, proto doklad do cizího issue nedoplňuj a hlášení převeď na nové issue.
    Zadání s dokladem Claude Code realizuje bez dalšího schválení jako drobné zadání (48 h na veto) nebo
    jako etapu projektu. Zadání bez dokladu čeká na `schvaleno`.
 4. **Co potřebuje rozhodnutí vlastníka** (oddíl 3 návrhu: nevyžádané rozesílky, pravomoci AI, právní
@@ -44,7 +46,9 @@ vlastníka, proto se některá pravidla níže vynucují technicky.
 2. **Zaměř se na chyby, které AI udělá omylem:** špatná data, rozbitá stránka, chybný výpočet, rozpor
    s pravidly projektu, únik osobních údajů. Úmyslné obcházení pojistek účtem vlastníka je přijaté riziko
    (RA35); takové nálezy uveď nejvýš jako P3.
-3. PR neslučuj a o sloučení nerozhoduj; to dělá vlastník nebo Claude Code skriptem po bráně.
+3. Protokol z preview brána uzná jen od tvého účtu, účtu vlastníka a `github-actions[bot]`; když ho
+   píšeš, drž se šablony ve skillu `overeni-preview`.
+4. PR neslučuj a o sloučení nerozhoduj; to dělá vlastník nebo Claude Code skriptem po bráně.
 
 ## Briefing
 

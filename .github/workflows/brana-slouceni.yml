@@ -24,11 +24,13 @@ on:
         description: "Číslo PR (prázdné = všechny otevřené)"
         required: false
 
+# pull-requests: write jen kvůli komentářům se záznamem souhlasu u PR (komentář k PR je issue comment,
+# ale GitHub u PR vyžaduje právo na pull requests; s `read` vracel 403).
 permissions:
   contents: read
   checks: write
   issues: write
-  pull-requests: read
+  pull-requests: write
 
 concurrency:
   group: brana-${{ github.event.pull_request.number || github.event.issue.number || 'vse' }}

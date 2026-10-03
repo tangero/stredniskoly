@@ -1,6 +1,6 @@
 # Postup zavedení fází 0 a 1: práce vlastníka
 
-Verze 3.0 · 3. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13, oddíl 20.
+Verze 3.0 · 3. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13a, oddíl 20.
 
 Claude Code pracuje přes účet vlastníka (RA35), Eduarda vlastním účtem `eduarda-prijimacky` (RA36).
 Práce vlastníka ve fázi 1 je asi 35 minut.
