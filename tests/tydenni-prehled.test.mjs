@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { sestavPrehled, expiraceTokenu } from '../scripts/prehled/tydenni.mjs';
+import { sestavPrehled, expiraceTokenu, MAX_POLOZEK } from '../scripts/prehled/tydenni.mjs';
 
 const TED = Date.parse('2026-10-12T06:00:00Z');
 const zaklad = {
@@ -14,8 +14,8 @@ const zaklad = {
 test('přehled vypíše rozhodnutí s účtem a sloučené PR', () => {
   const { kratky, dlouhy } = sestavPrehled(zaklad);
   assert.match(kratky, /Sloučeno PR: 1/);
-  assert.match(dlouhy, /#301 přidal `schvaleno` účet tangero/);
-  assert.match(dlouhy, /#300 Oprava věty \(2026-10-10, brána: Prošlo \(R\)\)/);
+  assert.match(dlouhy, /\[#301\]\(https:\/\/github\.com\/tangero\/stredniskoly\/issues\/301\) přidal `schvaleno` účet tangero/);
+  assert.match(dlouhy, /\[#300\]\(https:\/\/github\.com\/tangero\/stredniskoly\/pull\/300\) Oprava věty \(2026-10-10, brána: Prošlo \(R\)\)/);
   assert.match(dlouhy, /token CSI_PR_TOKEN: bez expirace/);
   assert.doesNotMatch(kratky, /POZOR/);
 });
@@ -28,9 +28,9 @@ test('upozorní na schvaleno z jiného účtu, červené CI, stop a token před 
     zastavene: [{ cislo: 305, titulek: 'X' }],
     expirace: { CSI_PR_TOKEN: '2026-10-30 00:00:00 UTC', PROJECT_TOKEN: 'neplatny' },
   });
-  assert.match(kratky, /schvaleno z jiného účtu: #301 \(eduarda-prijimacky\)/);
+  assert.match(kratky, /schvaleno z jiného účtu:\n#301 \(eduarda-prijimacky\)\nhttps:\/\/github\.com\/tangero\/stredniskoly\/issues\/301/);
   assert.match(kratky, /červené CI na main: TypeScript/);
-  assert.match(kratky, /Zastaveno \(stop\): #305/);
+  assert.match(kratky, /Zastaveno \(stop\):\n#305 X\nhttps:\/\/github\.com\/tangero\/stredniskoly\/issues\/305/);
   assert.match(kratky, /CSI_PR_TOKEN: vyprší za 17 dní/);
   assert.match(kratky, /PROJECT_TOKEN: token neplatí/);
 });
@@ -40,4 +40,29 @@ test('expirace tokenu z hlavičky odpovědi', async () => {
   assert.equal(await expiraceTokenu('t', odp(200, { 'github-authentication-token-expiration': '2026-12-01 00:00:00 UTC' })), '2026-12-01 00:00:00 UTC');
   assert.equal(await expiraceTokenu('t', odp(200, {})), undefined);
   assert.equal(await expiraceTokenu('t', odp(401, {})), 'neplatny');
+});
+
+test('krátká verze má přímý odkaz na každý návrh a každé PR čekající na souhlas', () => {
+  const { kratky, dlouhy } = sestavPrehled({
+    ...zaklad,
+    navrhy: [{ cislo: 310, titulek: 'Návrh A', od: '2026-10-05T00:00:00Z' }],
+    cekajiNaSouhlas: [{ cislo: 311, titulek: 'PR B' }],
+  });
+  assert.match(kratky, /Návrh: #310 Návrh A\nhttps:\/\/github\.com\/tangero\/stredniskoly\/issues\/310/);
+  assert.match(kratky, /PR čeká na schvaleno: #311 PR B\nhttps:\/\/github\.com\/tangero\/stredniskoly\/pull\/311/);
+  assert.match(dlouhy, /návrh \[#310\]\(https:\/\/github\.com\/tangero\/stredniskoly\/issues\/310\)/);
+  assert.match(dlouhy, /PR \[#311\]\(https:\/\/github\.com\/tangero\/stredniskoly\/pull\/311\)/);
+});
+
+test('nad 15 položek se vypíše prvních 15 a zbytek shrne; zpráva se vejde do limitu Telegramu', () => {
+  const navrhy = Array.from({ length: 40 }, (_, i) => ({ cislo: 400 + i, titulek: 'Dlouhý titulek '.repeat(20), od: '2026-10-05T00:00:00Z' }));
+  const { kratky } = sestavPrehled({ ...zaklad, navrhy });
+  assert.equal(kratky.match(/^Návrh:/gm).length, MAX_POLOZEK);
+  assert.match(kratky, /… a dalších 25 v celém přehledu/);
+  assert.ok(kratky.length < 4096 - 200, `délka ${kratky.length}`);
+});
+
+test('titulek se znaky <, > a & zůstane v prostém textu beze změny', () => {
+  const { kratky } = sestavPrehled({ ...zaklad, navrhy: [{ cislo: 320, titulek: 'a <b> & c', od: '2026-10-05T00:00:00Z' }] });
+  assert.ok(kratky.includes('Návrh: #320 a <b> & c'));
 });
