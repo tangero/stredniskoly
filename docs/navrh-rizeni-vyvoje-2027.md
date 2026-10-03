@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.11 · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.11a · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Na GitHubu ani v pravidlech se zatím nic nemění.
 
 ## Shrnutí pro rozhodnutí
@@ -14,8 +14,8 @@ Na GitHubu ani v pravidlech se zatím nic nemění.
 - na briefingu slyší nejvýš **3 nápady AI**, seřazené podle kvality, a potvrzuje zápisy **jedním „ok“
   na konci**;
 - volitelně zastaví cokoli štítkem `stop` nebo větou na briefingu;
-- jednorázově nastaví aplikaci, strojový účet a prostředí pro secrets (fáze 0, hned) a ruleset (fáze 1);
-  celkem asi 2 h.
+- jednorázově nastaví dvě aplikace (vývoj a brána), strojový účet, prostředí pro secrets a zkušební
+  repozitář (fáze 0) a ruleset (fáze 1); celkem asi 3 h.
 
 **Co dělá AI:** opravy, drobné úpravy, etapy projektů a malé projekty od zadání po nasazení: realizace,
 ověření na Vercel preview, merge přes automatickou bránu. Rizikové věci (migrace, nová data, výdaje do
@@ -112,12 +112,19 @@ Do zavedení identit platí přechodné pravidlo: AI podepisuje komentáře pati
 štítek přidaný AI se jako rozhodnutí nepočítá a automatický merge je vypnutý.
 
 **Podmínka aktivace autonomie (O1):** nestačí, že relace Claude Code **dokáže** použít token aplikace.
-Musí platit i opak: prostředí, ve kterém AI pracuje, **nemá k dispozici žádné přihlášení ani ovládací
+Musí platit i opak: **každé** prostředí, ve kterém AI pracuje (relace Claude Code, denní úloha, Actions
+i počítač asistenta zadání, kde je dnes `gh` přihlášené účtem vlastníka), **nemá k dispozici žádné přihlášení ani ovládací
 cestu účtu vlastníka** (připojený účet, token, `gh` přihlášení). Prázdný seznam výjimek v rulesetu
 adminovi nebere možnost ruleset upravit nebo vypnout; dokud má AI práva vlastníka, může ochranu změnit
 nebo přidat `schvaleno`, které brána přijme jako lidské. Administrátorský přístup zůstává jen člověku,
 odděleně. Přejímka na zkušebním repozitáři: z prostředí AI selže změna rulesetu i vytvoření štítku,
 komentáře nebo review jménem vlastníka. Do splnění se automatický merge nezapne.
+
+U asistenta zadání to znamená přepnout `gh` i git na strojový účet a účet vlastníka odhlásit. U Claude
+Code v cloudu se ve fázi 0 ověří, jestli relaci jde provozovat bez připojeného účtu vlastníka. **Když
+nejde, autonomní práce (merge, štítky, denní úloha) poběží jen v Actions a v denní úloze s tokenem
+aplikace** a interaktivní relace v cloudu zůstane u přípravy PR bez práva slučovat; fáze 1 tak nečeká
+na nesplnitelnou podmínku.
 
 # Část A
 
@@ -234,7 +241,8 @@ položka slovníku pojmů):
 
 Workflow **„Brána sloučení“**, povinná kontrola v rulesetu u každého PR. **Běží na `pull_request_target`
 ve verzi z `main`** a kód z PR nespouští, jen čte diff, štítky a timeline přes API; upravená brána ve
-větvi tak nemůže posoudit sama sebe. Spouští se na otevření, push a štítky PR, `pull_request_review`, **`issues` (štítky a úpravy propojeného issue, aby
+větvi tak nemůže posoudit sama sebe. Spouští se na otevření, push a štítky PR, `pull_request_review`,
+**`issues` (štítky a úpravy propojeného issue, aby
 nový `stop` hned zneplatnil výsledek)** a jednou za hodinu (lhůty). **Merge provádí Claude skriptem,
 který bránu těsně před sloučením spustí znovu** a ověří aktuální veto; vestavěný automatický merge
 GitHubu se nepoužívá, protože by sloučil podle staršího výsledku. Určí režim podle cest
@@ -266,9 +274,11 @@ Actions nestačí. Výsledek se váže ke konkrétnímu PR, aktuálnímu commitu
 Rozhodnutí přes GitHub platí jen pro **rozsah, který vlastník viděl** (O2):
 
 - **review** se počítá jen na commitu, ke kterému bylo dáno; nový commit ho zneplatní (u PR v režimu H);
-- při přidání `schvaleno` aplikace brány uloží **otisk schvalovaného rozsahu**: oddíl „Rozsah“ v těle
-  issue (cíl, mandát, u rozesílky příjemci a text, u výdaje částka a dodavatel). Změna rozsahu otisk
-  zneplatní a věc se vrátí do fronty s `navrh`; běžné úpravy mimo oddíl „Rozsah“ souhlas nemění;
+- **otisk schvalovaného rozsahu** (oddíl „Rozsah“ v těle issue: cíl, mandát, u rozesílky příjemci
+  a text, u výdaje částka a dodavatel) uloží aplikace brány **už ve chvíli, kdy AI přidá `navrh`**;
+  při přidání `schvaleno` brána ověří, že se od té doby nezměnil, takže AI nemůže upravit rozsah těsně
+  před klepnutím vlastníka. Pozdější změna rozsahu otisk zneplatní a věc se vrátí do fronty s `navrh`;
+  běžné úpravy mimo oddíl „Rozsah“ souhlas nemění;
 - doklad z briefingu (oddíl 18) má otisk už dnes.
 
 Přejímka: schválit dávku A, změnit příjemce nebo text na B; B bez nového souhlasu neprojde.
@@ -497,7 +507,8 @@ vlastník odsouhlasil právě tento rozsah. Proto:
 - brána ověří autora dokladu a že otisk odpovídá rozsahu v issue; **změněný rozsah původní potvrzení
   nepokrývá**.
 
-Když Grok Bot takový export neumí, platí doklad z briefingu jen pro režimy L a E; rozhodnutí H1, H3,
+**Taková služba dnes neexistuje, proto do jejího zavedení platí náhradní režim jako výchozí stav:**
+doklad z briefingu slouží jen pro režimy L a E; rozhodnutí H1, H3,
 H4 a H5 pak vlastník potvrdí jedním štítkem `schvaleno` na připraveném issue (i z GitHub Projects).
 
 Strategický projekt (H5) dostane schválení potvrzeným dokladem; brána ho ověří stejně jako ostatní
@@ -546,8 +557,8 @@ neprojde); příjem oprav od škol až po scénáři O6.
 
 | fáze | co dělá AI | práce vlastníka |
 |---|---|---|
-| 0, hned (nezávisle na schválení návrhu) | upravit #53, zavřít duplikáty #216, #228, #229, #251, PR s odstraněním `auto-fix-issues.yml`, `auto-fix-iterative.yml` a `notify-new-issue.yml`; **převod na token aplikace:** nahradit `CSI_PR_TOKEN` (`csi-weekly-refresh.yml`) instalačním tokenem aplikace (`actions/create-github-app-token`) a stejně převést `veletrhy-snimek.yml`, aby na jeho PR běželo CI. `PROJECT_TOKEN` (`tabule-schvaleno.yml`) aplikací nahradit nejde: GitHub App neumí zapisovat do tabule projektu na osobním účtu, jen do tabule organizace. Nahradí ho klasický token strojového účtu přizvaného jako spolupracovník tabule (bez práv admina k repozitáři), takže v secrets nezůstane žádný token vlastníka. Samostatný PR se zkušebním spuštěním každého workflow; **přesun produkčních secrets do prostředí s omezením na `main` a nasazení náhledu bez secrets z větve** (oddíl 9b) | smazat revizi #53; **založit GitHub App** (jen tento repozitář, práva Contents, Pull requests a Issues zápis) a uložit její ID a soukromý klíč; **založit strojový účet**, přizvat ho do repozitáře (zápis, ne admin) a do tabule projektu a vytvořit mu klasický token se scope `project`; **založit prostředí `production`** omezené na `main` a přesunout do něj produkční secrets; merge PR (asi 45 min) |
-| **1, týden 1–2: konec merge a kontroly preview** | PR s pravidly a skills, `rezimy.yml`, labelerem, branou a CODEOWNERS; zrušit výjimku v rulesetu až po ověřeném převodu tokenů z fáze 0 (dnes PR z `veletrhy-snimek` zakládá `GITHUB_TOKEN`, CI na nich neběží a slučují se jen obejitím rulesetu; bez převodu by se zasekly); ověřit identitu aplikace v cloudu; zapnout slučování skriptem po bráně u rutiny z interních zadání, drobných zadání a etap (**rutina z veřejných hlášení zůstává do zavedení druhého klíče ve fázi 2 v dnešním režimu**: nerealizuje se bez `schvaleno`); ověření na preview; týdenní přehled; výchozí měřítka; postup nastavení krok za krokem | ruleset bez výjimek s bránou a **povinným review vlastníka kódu** (`require_code_owner_review`, dnes vypnuté; chrání `.github/` a pravidla), secret pro preview, soukromý repozitář a Směr vývoje včetně rozpočtu (asi 1,5 h jednou) |
+| 0, hned (nezávisle na schválení návrhu) | upravit #53, zavřít duplikáty #216, #228, #229, #251, PR s odstraněním `auto-fix-issues.yml`, `auto-fix-iterative.yml` a `notify-new-issue.yml`; **převod na token aplikace:** nahradit `CSI_PR_TOKEN` (`csi-weekly-refresh.yml`) instalačním tokenem aplikace (`actions/create-github-app-token`) a stejně převést `veletrhy-snimek.yml`, aby na jeho PR běželo CI. `PROJECT_TOKEN` (`tabule-schvaleno.yml`) aplikací nahradit nejde: GitHub App neumí zapisovat do tabule projektu na osobním účtu, jen do tabule organizace. Nahradí ho klasický token strojového účtu přizvaného jako spolupracovník tabule (bez práv admina k repozitáři), takže v secrets nezůstane žádný token vlastníka. Samostatný PR se zkušebním spuštěním každého workflow; **přesun produkčních secrets do prostředí s omezením na `main` a nasazení náhledu bez secrets z větve** (oddíl 9b) | smazat revizi #53; **založit zkušební repozitář** pro přejímky O1 až O3; **založit aplikaci brány** (práva Checks zápis, Issues a Pull requests čtení) a její klíč uložit do prostředí `production`; **založit GitHub App** (jen tento repozitář, práva Contents, Pull requests a Issues zápis) a uložit její ID a soukromý klíč; **založit strojový účet**, přizvat ho do repozitáře (zápis, ne admin) a do tabule projektu a vytvořit mu klasický token se scope `project`; **založit prostředí `production`** omezené na `main` a přesunout do něj produkční secrets; přepnout `gh` a git na počítači asistenta na strojový účet; merge PR (asi 1,5 h) |
+| **1, týden 1–2: konec merge a kontroly preview** | PR s pravidly a skills, `rezimy.yml`, labelerem, branou a CODEOWNERS; zrušit výjimku v rulesetu až po ověřeném převodu tokenů z fáze 0 (dnes PR z `veletrhy-snimek` zakládá `GITHUB_TOKEN`, CI na nich neběží a slučují se jen obejitím rulesetu; bez převodu by se zasekly); ověřit identitu aplikace v cloudu; zapnout slučování skriptem po bráně u rutiny z interních zadání, drobných zadání a etap (**rutina z veřejných hlášení zůstává do zavedení druhého klíče ve fázi 2 v dnešním režimu**: nerealizuje se bez `schvaleno`); ověření na preview; týdenní přehled; výchozí měřítka; postup nastavení krok za krokem | ruleset bez výjimek s **aplikací brány jako jediným zdrojem povinné kontroly** a **povinným review vlastníka kódu** (`require_code_owner_review`, dnes vypnuté; chrání `.github/` a pravidla), secret pro preview, soukromý repozitář a Směr vývoje včetně rozpočtu (asi 1,5 h jednou) |
 | **2, týden 3–4: plná autonomie** | druhý klíč, režim K pro migrace (po ověření tarifu Neonu), nová data, výdaje kartou, e-maily odběratelům (po ověření rozesílání po vlnách), zápisy z briefingu do soukromého repozitáře, příjem oprav od škol, denní úloha | virtuální karta s limitem, ověřit tarif Neonu (asi 30 min) |
 | **přejímka po fázi 2** | scénáře: (1) vlastník týden neodpovídá; běžná práce pokračuje, vyhrazená rozhodnutí čekají, `stop` se dodržuje, přehled zůstává aktuální; (2) PR se `stop` a štítkem `incident` během zamrznutí zůstane zablokovaný; (3) rozšíření projektu nad mandát se nesloučí bez `schvaleno` | žádná (to je test) |
 
@@ -625,6 +636,10 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.11a** (3. 10. 2026, kontrola vypořádání od asistenta zadání): aplikace brány a zkušební repozitář
+  v práci vlastníka ve fázi 0, odhad 3 h (P1); podmínka O1 pro všechna prostředí AI včetně počítače
+  asistenta a náhradní cesta, kdyby cloudová relace nešla bez účtu vlastníka (P2); náhradní režim
+  dokladu z briefingu jako výchozí stav (P3); otisk rozsahu už při přidání `navrh`; zalomení řádku.
 - **0.11** (3. 10. 2026, kritická oponentura Codexu celé verze 0.10b): autonomie jen v prostředí bez
   přihlášení vlastníka s negativní přejímkou (O1); souhlas na GitHubu vázaný na commit a otisk rozsahu
   (O2, oddíl 9a); výsledek brány vydává jen samostatná aplikace brány (O3); podmínky H a K se sčítají (O4);
