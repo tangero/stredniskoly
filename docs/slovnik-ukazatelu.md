@@ -120,7 +120,7 @@ Vždy se uvádí se šumem: kolik přesunu dá náhoda, když se oba ročníky l
 **Neříká, proč se zájem přesunul**, ani zda se přesun zopakuje. Ze dvou ročníků se nemluví o trendu.
 
 ### Souběžné přihlášky podle obce
-Pro stránku oboru: `uchazeči oboru, kteří měli na přihlášce i jiný obor v obci X ÷ uchazeči oboru`. Pole `kam_dal.{klíč}.obce`. Jednotka: podíl. Zveřejňuje se jen tehdy, když obec i zbytek mají aspoň 10 uchazečů (`podil_nad_mezi`), jinak by věta „všichni kromě sedmi“ prozradila malou skupinu. Obec oboru je obec školy podle indexu názvů.
+Pro stránku oboru: `uchazeči oboru, kteří měli na přihlášce i jiný obor v obci X ÷ uchazeči oboru`. Pole `kam_dal.{klíč}.obce`. Jednotka: podíl. Zveřejňuje se jen tehdy, když obec i zbytek mají aspoň 10 uchazečů (`podil_nad_mezi`), jinak by věta „všichni kromě sedmi“ prozradila malou skupinu. Posuzuje se i společně s přesnými počty oborů téže obce: když by rozdíl obce a jejího oboru byl vždy 1 až 9 uchazečů, řádek obce se nezveřejní (`kontrola_kam_dal`, review PR #284). Obec oboru je obec školy podle indexu názvů.
 
 Doplňuje *Souběžné přihlášky* tam, kde se zájem rozptyluje: uchazeči o čtyřleté gymnázium v Brandýse nad Labem měli v roce 2026 z 56 % na přihlášce i obor v Praze, ale do 40 různých pražských oborů, z nichž žádný nemá 10 společných uchazečů.
 

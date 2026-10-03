@@ -94,6 +94,19 @@ class RozborShlukyOboruTest(unittest.TestCase):
         self.assertNotIn("Praha", [o["obec"] for o in vysledek["obce"]])
         self.assertEqual([o["obec"] for o in vysledek["obce"]], ["Čelákovice"])
 
+    def test_obec_a_jeji_obor_spolecne_neprozradi_malou_skupinu(self):
+        # review PR #284, návrh 1.2: 94 uchazečů, Neratovice 0,23 (= 22) a neratovický obor 20 → 2 osoby;
+        # Brandýs 0,27 (= 25) a lyceum 17 → 8 osob; Čelákovice 0,32 (= 30) a gymnázium 30 → nikdo navíc
+        kd = {"klic": "X", "uchazecu": 94,
+              "obce": [{"obec": "Neratovice", "podil": 0.23}, {"obec": "Brandýs", "podil": 0.27},
+                       {"obec": "Čelákovice", "podil": 0.32}],
+              "obory": [{"klic": "N", "obec": "Neratovice", "uchazecu": 20},
+                        {"klic": "B", "obec": "Brandýs", "uchazecu": 17},
+                        {"klic": "C", "obec": "Čelákovice", "uchazecu": 30}]}
+        self.assertEqual(len(rozbor.kontrola_kam_dal(kd, opravit=True)), 2)
+        self.assertEqual([o["obec"] for o in kd["obce"]], ["Čelákovice"])
+        self.assertEqual(rozbor.kontrola_kam_dal(kd), [])
+
     def test_zarazeni_obtiznosti_podle_slovniku(self):
         self.assertIsNone(rozbor.zarazeni(5, 4))
         self.assertEqual(rozbor.zarazeni(30, 0), "kapacita_nerozhodovala")

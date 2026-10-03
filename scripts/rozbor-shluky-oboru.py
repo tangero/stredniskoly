@@ -374,6 +374,34 @@ def unika(moznosti: set[int]) -> bool:
     return len(moznosti) == 1 and next(iter(moznosti)) > 0
 
 
+def kontrola_kam_dal(kd: dict, opravit: bool = False) -> list[str]:
+    """Souhrn po obcích a přesné počty oborů téže obce se posuzují společně (review PR #284, návrh 1.2).
+
+    Podíl obce určuje možné celé počty uchazečů s oborem v obci; obor v obci je jejich podmnožina.
+    Leží-li rozdíl (uchazeči s jiným oborem obce, ale ne s tímto oborem) vždy mezi 1 a 9, prozradil
+    by malou skupinu: řádek obce se pak nezveřejní. Totéž pro obor, jehož doplněk do všech
+    uchazečů výchozího oboru je 1 až 9.
+    """
+    chyby = []
+    n = kd["uchazecu"]
+    for o in list(kd["obory"]):
+        if 0 < n - o["uchazecu"] < MIN:
+            chyby.append(f"kam dál {kd['klic']}: doplněk oboru {o['klic']} je pod mezí")
+            if opravit:
+                kd["obory"].remove(o)
+    for ob in list(kd["obce"]):
+        mozne = [k for k in range(0, n + 1) if round(k / n, 2) == ob["podil"]]
+        for o in kd["obory"]:
+            if o["obec"] == ob["obec"] and mozne and all(0 < k - o["uchazecu"] < MIN for k in mozne):
+                chyby.append(f"kam dál {kd['klic']}: obec {ob['obec']} bez oboru {o['klic']} prozradí malou skupinu")
+                if opravit and ob in kd["obce"]:
+                    kd["obce"].remove(ob)
+                    kd.setdefault("potlacene_obce", 0)
+                    kd["potlacene_obce"] += 1
+                break
+    return chyby
+
+
 def kontrola_zverejneni(vystup: dict, opravit: bool = False) -> list[str]:
     """Najde okruhy, u kterých by šel ze zveřejněných údajů jednoznačně dopočítat skrytý obor.
 
@@ -405,6 +433,8 @@ def kontrola_zverejneni(vystup: dict, opravit: bool = False) -> list[str]:
                         if opravit:
                             p["nejvetsi_zmeny"] = []
                             p["vypis_potlacen"] = True
+    for kd in vystup.get("bez_hranic", {}).get("kam_dal", {}).values():
+        chyby += kontrola_kam_dal(kd, opravit)
     return chyby
 
 
