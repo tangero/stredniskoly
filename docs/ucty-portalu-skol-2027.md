@@ -1,6 +1,6 @@
 # Účty portálu pro školy: správce, editoři a pilot 20 škol
 
-Verze 1.9 · 2. 10. 2026 · Schváleno zadavatelem 19. 9. 2026, kroky 1–6 realizovány, review PR #111 vypořádáno (oddíl 9.2). Od verze 1.7 má obsah profilu vlastní tabulku `portal_profil` a publikuje se bez předchozí moderace.
+Verze 1.10 · 3. 10. 2026 · Schváleno zadavatelem 19. 9. 2026, kroky 1–6 realizovány, review PR #111 vypořádáno (oddíl 9.2). Od verze 1.7 má obsah profilu vlastní tabulku `portal_profil` a publikuje se bez předchozí moderace.
 
 Navazuje na [portál pro školy](portal-pro-skoly-2027.md) (v1.5). Ten dnes pracuje s kódem vázaným na školu: kdo kód zná, edituje, a o osobě nevíme nic. Pilot s 20 školami potřebuje vědět, **kdo** za školu data zadává, ukázat to veřejně a umět to změnit.
 
@@ -111,7 +111,7 @@ Zveřejnění jména je zpracování osobního údaje na základě souhlasu. For
 | Škola | Pozvánka | Kód uplatněn | Správce | Editorů | Poslední přihlášení | Návrhy | Schváleno |
 |---|---|---|---|---|---|---|---|
 
-Telegram (`TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` ve Vercelu): odeslání návrhu, přihlášení rejstříkovou adresou u školy se správcem, pozvánka, předání správce, zásah v administraci. Nové registrace (uplatnění kódu, založení správce odkazem z rejstříku, přijatá pozvánka, první přihlášení) se od verze 1.9 nehlásí, jsou jen v časové ose `/admin`. Upozornění je best-effort, jeho selhání nesmí shodit akci školy.
+Telegram (`TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` ve Vercelu): pozvánka, předání správce, zásah v administraci. Nové registrace (uplatnění kódu, založení správce odkazem z rejstříku, přijatá pozvánka, první přihlášení) se od verze 1.9 nehlásí a změny profilu (dřív „odeslání návrhu“, včetně hosta z rejstříkové adresy u školy se správcem) od verze 1.10; obojí je jen v časové ose `/admin`, správce o hostovi dál dostane e-mail. Upozornění je best-effort, jeho selhání nesmí shodit akci školy.
 
 Odezvu měříme podle [portálu §6](portal-pro-skoly-2027.md) dokončenými návrhy, ne otevřeními. Uplatnění kódu je mezikrok.
 
@@ -183,7 +183,7 @@ Kdyby se k ní později přistoupilo, otevře druhý vstup (odkaz na e-mail z re
 | 1 | `src/lib/portal-schema.ts`, `src/lib/portal-ucty.ts`, `tests/portal-ucty.test.mjs` | Testy nad PGlite (skutečný Postgres v paměti), invariant jednoho správce hlídá částečný unikátní index. |
 | 2 | `/api/portal/kod`, `/api/portal/uplatnit`, `/api/portal/prihlasit`, `/pro-skoly/prihlaseni/[token]` | Kód jde v těle POST, ne v adrese. Odkaz pro přihlášení se spotřebuje až tlačítkem (POST), protože skenery školní pošty otevírají odkazy GET. |
 | 3 | `/pro-skoly/profil`, `/api/portal/ucet`, `/pro-skoly/pozvanka/[token]`, `/pro-skoly/email/[token]` | Změna e-mailu platí pro osobu, tedy ve všech jejích školách. |
-| 4 | `/api/portal-skoly` | S databází účtů kód formulář přímo neotevírá (musí se nejdřív uplatnit), jinak by ho mohl používat kdokoli, komu byl přeposlán. Issue nese jen roli autora („Zadal: správce profilu“); jméno a kontakt jsou v administraci a v Telegramu (oddíl 9.2). |
+| 4 | `/api/portal-skoly` | S databází účtů kód formulář přímo neotevírá (musí se nejdřív uplatnit), jinak by ho mohl používat kdokoli, komu byl přeposlán. Issue nese jen roli autora („Zadal: správce profilu“); jméno a kontakt jsou v administraci (oddíl 9.2; do verze 1.10 i v Telegramu). |
 | 5 | `/admin/portal`, `/admin/portal/akce`, tabulka pilotu v `/admin` | Akce leží pod `/admin`, protože cookie `admin_token` má `path=/admin`. Sloupce „Kód uplatněn“ a „Schváleno“ z oddílu 4 tabulka zatím nemá: uplatnění je vidět podle správce, schválení v moderaci výše na stránce. |
 | 6 | `src/lib/portal-verejne.ts`, `SchoolPortalSection`, `/api/portal/skoly`, `/pro-skoly` | Cache s tagem `portal-spravci` se zneplatní hned (`expire: 0`); kdyby zneplatnění selhalo, nejpozději za 12 hodin, stejně jako ISR stránky školy (#231). |
 
@@ -195,7 +195,7 @@ Review: `docs/review-pr-111-portal-ucty.md` v hlavním pracovním stromu. Nasaze
 
 | # | Nález | Vypořádání |
 |---|---|---|
-| 1 | Osobní údaje ve veřejném GitHub issue | Issue nese jen roli autora. Payload z issue od verze 1.5 zmizel celý: údaje profilu jdou do `portal_profil` a issue nese jen text nesrovnalosti. Kontakt je v `portal_udalost` a v soukromém Telegramu. **Starší issue s e-mailem v repozitáři zůstávají, jejich úprava je na zadavateli.** |
+| 1 | Osobní údaje ve veřejném GitHub issue | Issue nese jen roli autora. Payload z issue od verze 1.5 zmizel celý: údaje profilu jdou do `portal_profil` a issue nese jen text nesrovnalosti. Kontakt je v `portal_udalost` (do verze 1.10 i v soukromém Telegramu). **Starší issue s e-mailem v repozitáři zůstávají, jejich úprava je na zadavateli.** |
 | 2 | Neúplný výmaz osoby | Události osobní údaje nenesou (viz 2.1); `anonymizujOsobu` čistí i `portal_pozvanka.email` a `kontakt` v událostech. Test ověřuje, že po výmazu není e-mail ani příjmení v žádné tabulce portálu. |
 | 3 | Admin uděloval souhlas se jménem za druhého | Formulář administrace souhlas nenabízí; jde jen odvolat. Dosazený správce začíná bez zveřejnění. |
 | 4 | Důvod zrušení pozvánky se zahazoval | `zrusPozvanku` přijímá důvod, u admina povinný, ukládá ho do události. |
@@ -229,6 +229,7 @@ Review: `docs/review-pr-111-portal-ucty.md` v hlavním pracovním stromu. Nasaze
 | 1.0 | První návrh po rozhodnutích zadavatele 19. 9. 2026. |
 | 1.1 | Schváleno. Správcem osobních údajů je Patrick Zandl (obchodní název Zandl AI Therapy Company). Facebooková skupina odložena. |
 | 1.2 | Kroky 1–6 realizovány (oddíl 9.1) s odchylkami: přihlášení tlačítkem kvůli skenerům pošty, kód bez databáze účtů funguje postaru, s ní jen k založení správce. |
+| 1.10 | Na Telegram se přestaly posílat zprávy o změnách profilu („Profil upraven“), zůstávají v časové ose `/admin`. |
 | 1.9 | Na Telegram se přestaly posílat zprávy o nových registracích (nový správce, přijatá pozvánka, první přihlášení); byly užitečné při testování pilotu. Zůstávají v časové ose `/admin`. |
 | 1.8 | Testovací účty zadavatele jdou v administraci odebrat i jako správce (oddíl 2.4). |
 | 1.7 | Obsah profilu má vlastní tabulku `portal_profil`, hlášení chyb od veřejnosti tabulku `hlaseni_chyby` (kontakt oznamovatele přestal chodit do veřejného issue). Zápis profilu porovnává hodnoty proti stavu, který měl odesílatel před sebou, aby zastaralý formulář nepřepsal novější opravu; operace nad jedním polem serializuje poradní zámek (`pg_advisory_xact_lock`), protože `for update` s `limit 1` závod o nejnovější verzi neřeší. Nesrovnalost v datech katalogu se ukládá v téže transakci jako profil, takže škola nedostane „přijato“ u podnětu, který nikde není (append-only, stejný vzor jako `portal_role`) a publikuje se bez předchozí moderace ([portál pro školy](portal-pro-skoly-2027.md), oddíl 4). GitHub issue nese už jen nesrovnalost v datech katalogu, tedy o jedno místo s osobními údaji míň. Událost `navrh_odeslan` nahrazena `profil_zmenen` (nese seznam změněných polí). Přihlášený editor nezadává kontaktní e-mail, bere se z `portal_role`; ve formuláři zůstává jen pro hosta z rejstříkové adresy. |
