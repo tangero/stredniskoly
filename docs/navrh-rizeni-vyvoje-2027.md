@@ -14,7 +14,7 @@ Na GitHubu ani v pravidlech se zatím nic nemění.
 - na briefingu slyší nejvýš **3 nápady AI**, seřazené podle kvality, a potvrzuje zápisy **jedním „ok“
   na konci**;
 - volitelně zastaví cokoli štítkem `stop` nebo větou na briefingu;
-- jednorázově nastaví účty, aplikaci a ruleset (fáze 1 asi 1,5 h).
+- jednorázově nastaví aplikaci (fáze 0, hned), účet a ruleset (fáze 1); celkem asi 2 h.
 
 **Co dělá AI:** opravy, drobné úpravy, etapy projektů a malé projekty od zadání po nasazení: realizace,
 ověření na Vercel preview, merge přes automatickou bránu. Rizikové věci (migrace, nová data, výdaje do
@@ -420,12 +420,12 @@ Zavádí se **podle přínosu**: nejdřív to, co odstraní nejvíc dnešní pr�
 
 | fáze | co dělá AI | práce vlastníka |
 |---|---|---|
-| 0, hned | upravit #53, zavřít duplikáty #216, #228, #229, #251, PR s odstraněním `auto-fix-issues.yml`, `auto-fix-iterative.yml` a `notify-new-issue.yml` | smazat revizi #53, merge PR |
-| **1, týden 1–2: konec merge a kontroly preview** | PR s pravidly a skills, `rezimy.yml`, labelerem, branou a CODEOWNERS; **nejdřív nahradit `PROJECT_TOKEN` a `CSI_PR_TOKEN` tokenem aplikace a převést `veletrhy-snimek` na token aplikace** (dnes jeho PR zakládá `GITHUB_TOKEN`, CI na nich neběží a slučují se jen obejitím rulesetu; bez převodu by se po zrušení výjimky zasekly); ověřit identitu aplikace v cloudu; zapnout automatický merge rutiny, drobných zadání a etap; ověření na preview; týdenní přehled; výchozí měřítka; postup nastavení krok za krokem | strojový účet, aplikace, ruleset bez výjimek s bránou a **povinným review vlastníka kódu** (`require_code_owner_review`, dnes vypnuté; brána běží ve verzi z PR, `.github/` chrání jen toto review), auto-merge, secret pro preview, soukromý repozitář a Směr vývoje včetně rozpočtu (asi 1,5 h jednou) |
+| 0, hned (nezávisle na schválení návrhu) | upravit #53, zavřít duplikáty #216, #228, #229, #251, PR s odstraněním `auto-fix-issues.yml`, `auto-fix-iterative.yml` a `notify-new-issue.yml`; **převod na token aplikace:** nahradit `PROJECT_TOKEN` (`tabule-schvaleno.yml`) a `CSI_PR_TOKEN` (`csi-weekly-refresh.yml`) instalačním tokenem aplikace (`actions/create-github-app-token`) a stejně převést `veletrhy-snimek.yml`, aby na jeho PR běželo CI; samostatný PR se zkušebním spuštěním každého workflow | smazat revizi #53; **založit GitHub App** (jen tento repozitář, práva Contents, Pull requests, Issues zápis, Projects zápis) a uložit její ID a soukromý klíč jako secrets; merge PR (asi 30 min) |
+| **1, týden 1–2: konec merge a kontroly preview** | PR s pravidly a skills, `rezimy.yml`, labelerem, branou a CODEOWNERS; zrušit výjimku v rulesetu až po ověřeném převodu tokenů z fáze 0 (dnes PR z `veletrhy-snimek` zakládá `GITHUB_TOKEN`, CI na nich neběží a slučují se jen obejitím rulesetu; bez převodu by se zasekly); ověřit identitu aplikace v cloudu; zapnout automatický merge rutiny, drobných zadání a etap; ověření na preview; týdenní přehled; výchozí měřítka; postup nastavení krok za krokem | strojový účet, ruleset bez výjimek s bránou a **povinným review vlastníka kódu** (`require_code_owner_review`, dnes vypnuté; brána běží ve verzi z PR, `.github/` chrání jen toto review), auto-merge, secret pro preview, soukromý repozitář a Směr vývoje včetně rozpočtu (asi 1,5 h jednou) |
 | **2, týden 3–4: plná autonomie** | druhý klíč, režim K pro migrace (po ověření tarifu Neonu), nová data, výdaje kartou, e-maily odběratelům (po ověření rozesílání po vlnách), zápisy z briefingu do soukromého repozitáře, příjem oprav od škol, denní úloha | virtuální karta s limitem, ověřit tarif Neonu (asi 30 min) |
 
 Dokud nejsou tokeny vlastníka nahrazené, workflows v `.github/workflows/` čte vlastník (CODEOWNERS);
-proto je jejich nahrazení první úkol fáze 1. Do konce fáze 1 platí dnešní postup (vlastník merguje),
+proto se převod dělá **hned ve fázi 0**, nezávisle na schválení zbytku návrhu (pokyn vlastníka). Do konce fáze 1 platí dnešní postup (vlastník merguje),
 takže přechod netrvá déle než dva týdny.
 
 Po fázi 2 zbývá vlastníkovi: Směr vývoje a rozhodnutí z oddílu 3. Odhad: desítky minut měsíčně;
@@ -492,6 +492,9 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.9a** (3. 10. 2026, pokyn vlastníka): převod `PROJECT_TOKEN`, `CSI_PR_TOKEN` a `veletrhy-snimek`
+  na token aplikace přesunutý do fáze 0, co nejdříve a nezávisle na schválení návrhu; založení aplikace
+  je práce vlastníka ve fázi 0.
 - **0.9** (3. 10. 2026, kontrola zátěže vlastníka): shrnutí pro rozhodnutí na začátku; zavedení ve dvou
   fázích podle přínosu (nejdřív konec merge a kontroly preview); nahrazení tokenů vlastníka a převod
   `veletrhy-snimek` na token aplikace před zrušením výjimky v rulesetu; rozpočet AI ve třech koších
