@@ -1,7 +1,37 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.8 · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.9 · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Na GitHubu ani v pravidlech se zatím nic nemění.
+
+## Shrnutí pro rozhodnutí
+
+**Co dělá Patrick:**
+
+- určuje směr: na briefingu s asistentem zadání v Grok Bot (po, st, pá v 7:55 a průběžně) nebo na
+  GitHubu (štítky, review a komentáře, i z bočního panelu v GitHub Projects); obě cesty platí stejně;
+- rozhoduje pět druhů věcí: rozesílání nevyžádaných e-mailů a informací, uvolnění pravomocí AI,
+  právní závazky, výdaje nad limit, strategické projekty;
+- na briefingu slyší nejvýš **3 nápady AI**, seřazené podle kvality, a potvrzuje zápisy **jedním „ok“
+  na konci**;
+- volitelně zastaví cokoli štítkem `stop` nebo větou na briefingu;
+- jednorázově nastaví účty, aplikaci a ruleset (fáze 1 asi 1,5 h).
+
+**Co dělá AI:** opravy, drobné úpravy, etapy projektů a malé projekty od zadání po nasazení: realizace,
+ověření na Vercel preview, merge přes automatickou bránu. Rizikové věci (migrace, nová data, výdaje do
+limitu, e-maily odběratelům) navíc kontroluje druhý, nezávislý model. AI hlídá rozpočet na tokeny
+a výdaje, posílá týdenní přehled a hlásí jen výjimky.
+
+**Co tím odpadne:** schvalování drobných zadání, kontrola na preview a merge u zhruba 20 PR týdně,
+odpovídání na dotazy v issues, obnova většiny tokenů.
+
+**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA28 v oddílu 21). Část B se rozhodne
+po čtyřech týdnech provozu podle měřítek.
+
+**Zavedení po fázích podle přínosu** (oddíl 20): fáze 1 odstraní merge a kontrolu preview, fáze 2 přidá
+druhý klíč, migrace, výdaje, nová data a zápisy z briefingu.
+
+**Přijímané riziko:** chyba může být na webu, než si jí někdo všimne; pojistkou jsou automatické
+kontroly, druhý model, rychlé vrácení a zamrznutí v kritických dnech (oddíl 22).
 
 Podklad: audit [Oblasti, projekty a etapy na GitHubu](historie/github-oblasti-audit-2026-10-03.md)
 (3. 10. 2026). Z něj návrh přebírá soupis oblastí s cestami v kódu, nalezené duplikáty a zařazení
@@ -57,13 +87,24 @@ ruleset; úprava zůstane v historii.
 revert, vlastník dočasně vypne dotčenou kontrolu v rulesetu, AI to zapíše do přehledu a po opravě
 kontrolu hned vrátí a ověří, že je zpět.
 
-**Za rozhodnutí se počítá jen štítek, review nebo komentář z účtu vlastníka,** nebo rozhodnutí
-z briefingu zapsané podle oddílu 18. Brána i Claude ověřují autora (`user.login`) a u štítku toho, kdo ho
+**Vlastník rozhoduje dvěma rovnocennými cestami** (RA28):
+
+- **na GitHubu:** štítek, review nebo komentář z účtu vlastníka, i z bočního panelu issue v GitHub
+  Projects. Samotný přesun karty mezi sloupci se za rozhodnutí nepočítá, protože API u přesunu v tabuli
+  osobního účtu neukazuje, kdo ho udělal; rozhodnutí v tabuli se proto dělá štítkem (přesun karty
+  zařídí `tabule-schvaleno.yml`);
+- **na briefingu** v Grok Bot, zapsané podle oddílu 18.
+
+Obě cesty se zapisují do stejného rejstříku návrhů. Když si odporují, platí novější. Rozpor, který
+vznikl během 24 h, zařadí asistent na program nejbližšího briefingu a do té doby platí zastavující
+varianta.
+
+**Za rozhodnutí na GitHubu se počítá jen štítek, review nebo komentář z účtu vlastníka.** Brána i Claude ověřují autora (`user.login`) a u štítku toho, kdo ho
 přidal (`actor` v timeline). Podle textu nikdy.
 Do zavedení identit platí přechodné pravidlo: AI podepisuje komentáře patičkou, komentář s patičkou ani
 štítek přidaný AI se jako rozhodnutí nepočítá a automatický merge je vypnutý.
 
-**Ověřit v kroku 1:** že cloudová relace Claude Code dokáže pro `gh` i `git push` použít token aplikace
+**Ověřit ve fázi 1:** že cloudová relace Claude Code dokáže pro `gh` i `git push` použít token aplikace
 místo připojeného účtu vlastníka. Do ověření se počítá s tím, že AI v cloudu má práva vlastníka; proto je
 důležitý ruleset bez výjimek.
 
@@ -207,7 +248,7 @@ nepoužívají; hlášení, která projekt opravuje, se vypíšou v těle projek
 Claude po nasazení preview projde každé kritérium „Hotovo když“ v prohlížeči (Playwright) na šířce
 telefonu i počítače a do PR zapíše protokol (kritérium, adresa, splněno / nesplněno / nejde ověřit),
 u vizuálních změn snímky před a po jako artefakt běhu nebo v komentáři PR. Protokol je podmínkou brány.
-Předpoklady (krok 1): secret `VERCEL_AUTOMATION_BYPASS_SECRET`, Playwright a přístup na `*.vercel.app`
+Předpoklady (fáze 1): secret `VERCEL_AUTOMATION_BYPASS_SECRET`, Playwright a přístup na `*.vercel.app`
 v prostředí denní úlohy.
 
 ## 12. Hlášení, opravy od škol a osobní údaje
@@ -265,10 +306,12 @@ by názor vlastníka mohl změnit směr, a nápady AI zařadí asistent na progr
 
 Pravidelné výstupy nejsou issues a nic interního není veřejně.
 
-- **Denní souhrn** do Telegramu (kanál souhrnů datové linky), jen když je co hlásit: co se sloučilo,
-  co se zítra sloučí po lhůtě, co zastavil druhý klíč, co čeká na rozhodnutí z oddílu 3, výdaje.
-- **Program briefingu** (Grok Bot): nápady AI k představení, otázky ke směru, zápisy čekající na potvrzení.
-- **Týdenní přehled** v pondělí do Telegramu, delší verze do soukromého repozitáře: sloučené změny
+- **Upozornění při výjimce** do Telegramu (kanál souhrnů datové linky), ne denně: něco čeká na
+  rozhodnutí z oddílu 3, druhý klíč něco zastavil, výdaje nebo tokeny přesáhly 80 % rozpočtu,
+  co se zítra sloučí po lhůtě v režimu K.
+- **Program briefingu** (Grok Bot): nejvýš 3 nápady AI, otázky ke směru, na konci všechny zápisy
+  k potvrzení najednou (oddíl 18).
+- **Týdenní přehled** v pondělí do Telegramu (hlavní pravidelný výstup), delší verze do soukromého repozitáře: sloučené změny
   s odkazem na revert, změny webu po oblastech, projekty, provoz (neúspěšná workflow, červené CI,
   expirace tokenu strojového účtu), náklady a výdaje kartou, nová data, hlášení a opravy od škol,
   rozhodnutí připsaná vlastníkovi z briefingů, měřítka.
@@ -279,9 +322,35 @@ Pravidelné výstupy nejsou issues a nic interního není veřejně.
 ## 17. Směr vývoje
 
 Soubor `smer-vyvoje.md` v **soukromém repozitáři** (například `tangero/stredniskoly-rizeni`), upravitelný
-z telefonu: cíle k datu, pořadí priorit, co se teď nedělá, rozpočet (měsíční strop výdajů, strop PR denně),
-mimořádné pokyny. Zamrznutí AI navrhne z kalendáře a zapíše sem. Claude ho čte při každém zpracování.
+z telefonu: cíle k datu, pořadí priorit, co se teď nedělá, rozpočet (oddíl 17a), mimořádné pokyny. Zamrznutí AI navrhne z kalendáře a zapíše sem. Claude ho čte při každém zpracování.
 Je to hlavní nástroj, kterým vlastník řídí.
+
+## 17a. Rozpočet AI a pozornosti
+
+Dva rozpočty, oba ve Směru vývoje:
+
+**Rozpočet na tokeny a výdaje** (měsíční částka) se dělí do tří košů s pevným pořadím:
+
+| koš | podíl | na co | při vyčerpání |
+|---|---|---|---|
+| **provoz** | zbytek | rutina, opravy, hlášení, druhý klíč, přehled | nikdy se nezastaví; při vyčerpání celého rozpočtu jen opravy chyb na webu a upozornění |
+| **schválená práce** | do 60 % | drobná zadání, etapy a projekty, které běží | nové etapy čekají na další měsíc |
+| **nápady** | do 15 % | průzkum a příprava nápadů AI před představením | nové nápady se nepřipravují |
+
+Příprava jednoho nápadu má strop (výchozí 2 % měsíčního rozpočtu): AI udělá levný náčrt (co, proč,
+odhad práce a nákladů), ne hotovou analýzu. Spotřebu podle košů uvádí týdenní přehled.
+
+**Rozpočet pozornosti vlastníka:**
+
+- **nejvýš 3 nápady AI na briefing**, pevně; neprošlé zůstávají v rejstříku návrhů a po 30 dnech bez
+  zařazení se vyřadí (AI je může znovu navrhnout jen s novým důvodem);
+- výběr tří nápadů podle skóre: **přínos** (návštěvnost dotčené oblasti, počet hlášení, sezóna)
+  × **soulad se Směrem vývoje** ÷ **náklady** (odhad tokenů a práce), každé 1–5; skóre a jednu větu
+  „proč teď“ asistent u nápadu uvede;
+- zápisy k potvrzení **najednou na konci briefingu**, jedno „ok“ pro všechny (nebo „ok kromě X“);
+- upozornění do Telegramu jen při výjimce (oddíl 16).
+
+Pevný limit tří nápadů je jednoduchý a chrání pozornost; skóre jen určuje, které tři to budou.
 
 ## 18. Briefing s asistentem zadání
 
@@ -289,8 +358,8 @@ O směru vývoje rozhoduje vlastník na briefingu s asistentem zadání: v **sou
 Grok Bot**, na poradách v pondělí, ve středu a v pátek v 7:55 i v průběžné konverzaci. Kanál ověřuje
 vlastníka tím, že chat patří jen jeho účtu, a aplikace přepis ukládá. Telegram slouží jen pro souhrny.
 
-**Pokyn, který přijde jinou cestou** (e-mail, komentář na GitHubu, zpráva jiného bota), se za rozhodnutí
-z briefingu nepočítá, ani když se podepíše jako vlastník.
+**Pokyn, který přijde jinou cestou** (e-mail, zpráva jiného bota), se za rozhodnutí z briefingu
+nepočítá, ani když se podepíše jako vlastník. Rozhodnutí na GitHubu platí samostatně podle oddílu 2.
 
 Riziko u briefingu není podvržení, ale **výklad**: AI může vlastníka pochopit špatně, vágní myšlenku
 proměnit v projekt nebo mu připsat rozhodnutí, které neudělal. Proto platí podle druhu rozhodnutí:
@@ -298,13 +367,13 @@ proměnit v projekt nebo mu připsat rozhodnutí, které neudělal. Proto platí
 | rozhodnutí z briefingu | příklad | platnost | co asistent udělá |
 |---|---|---|---|
 | **zastavující** | „tenhle směr nechci“, „projekt X zastav“, „tohle teď nedělej“ | **hned**; špatný výklad stojí jen čas | zapíše do Směru vývoje (Teď neděláme) a do rejstříku návrhů, k dotčeným issues a PR přidá `stop` nebo `zamitnuto` s odkazem na zápis |
-| **rozjíždějící** | „pojďme dělat Y“, nová priorita, nový projekt | **po potvrzení zápisu** | v chatu shrne doslovnou větu vlastníka a co z ní vyvozuje (cíl, rozsah, priorita, dotčené issues); po „ok“ zapíše do Směru vývoje nebo založí projekt s dokladem `Zdroj: briefing` |
+| **rozjíždějící** | „pojďme dělat Y“, nová priorita, nový projekt | **po potvrzení zápisu** | na konci briefingu shrne doslovnou větu vlastníka a co z ní vyvozuje (cíl, rozsah, priorita, dotčené issues), spolu s ostatními zápisy; po „ok“ zapíše do Směru vývoje nebo založí projekt s dokladem `Zdroj: briefing` |
 | **úprava** | „ano, ale jinak“, „jen pro Prahu“, „až po přijímačkách“ | **po potvrzení zápisu** | jako rozjíždějící; změnu zapíše do těla issue, komentáře „Změna zadání“ a changelogu (oddíl 10, bod 5) |
 | **věci z oddílu 3 kromě směru** (H1, H3, H4) | schválení dávky rozesílky, výdaj nad limit | **po potvrzení zápisu a s odkazem v GitHubu** | jako rozjíždějící; navíc doplní issue s odkazem na zápis, aby rozhodnutí bylo dohledatelné |
 | **uvolnění pravomocí AI** (H2) | změna brány, rulesetu, workflows | **jen přes GitHub** | připraví PR k review vlastníka (CODEOWNERS) |
 
 **Nápady AI** (například nová analýza RSS kanálů škol) se nejdřív představí na briefingu: co, proč,
-odhad práce a nákladů, oblast. Vlastník je může odmítnout, změnit, nebo pustit hned. Když nereaguje,
+odhad práce a nákladů, oblast, skóre. Nejvýš tři na jeden briefing (oddíl 17a). Vlastník je může odmítnout, změnit, nebo pustit hned. Když nereaguje,
 běží od představení lhůta 48 h a projekt startuje v režimu L. Projekty zadané vlastníkem a etapy
 schválených projektů běží lhůtou jako dosud. Nápady se vedou v **rejstříku návrhů** v soukromém
 repozitáři (stav, datum, důvod zamítnutí), aby se zamítnuté nevracely.
@@ -344,15 +413,22 @@ oddíl 3, režimy a odkazy. Cíl: nebude delší než dnes (132 řádků).
 | doba od zadání po merge, režim L | medián | do 3 dnů |
 | regrese | PR revertované nebo opravované do 14 dnů, podle režimu | nejvýš 1 z 10 |
 | zastavení druhým klíčem | podíl PR v režimu K se `stop` | sleduje se, cíl se určí po 4 týdnech |
+| zátěž briefingem | počet nápadů a potvrzení na briefing, délka briefingu podle přepisu | nejvýš 3 nápady, jedno potvrzení na konci |
+| rozpočet | spotřeba podle košů | koš nápadů nejvýš 15 % |
 
-| krok | co dělá AI | práce vlastníka |
+Zavádí se **podle přínosu**: nejdřív to, co odstraní nejvíc dnešní práce.
+
+| fáze | co dělá AI | práce vlastníka |
 |---|---|---|
 | 0, hned | upravit #53, zavřít duplikáty #216, #228, #229, #251, PR s odstraněním `auto-fix-issues.yml`, `auto-fix-iterative.yml` a `notify-new-issue.yml` | smazat revizi #53, merge PR |
-| 1, týden 1 | PR s pravidly a skills, `rezimy.yml`, labelerem, branou a CODEOWNERS; štítky; třídění; výchozí měřítka; postup nastavení krok za krokem | strojový účet, aplikace, ruleset bez výjimek s bránou a **zapnutým povinným review vlastníka kódu** (`require_code_owner_review`, dnes vypnuté: brána běží ve verzi z PR, takže PR upravující bránu by se kontroloval upravenou bránou a `.github/` chrání jen review vlastníka kódu), auto-merge, secret pro preview, virtuální karta s limitem, ověřit tarif Neonu (doba obnovy k okamžiku), soukromý repozitář a Směr vývoje, pohledy v UI (asi 2 h jednou); nastavit, aby asistent ukládal zápisy z Grok Bot do soukromého repozitáře |
-| 2, týden 2 | ověřit identitu aplikace v cloudu, přepnout identity, zapnout automatický merge, přehled, ověření na preview, denní úloha, příjem oprav od škol, druhý klíč | – |
-| 3, týden 3 | režim K pro migrace, nová data, výdaje a e-maily (po ověření rozesílání po vlnách) | – |
+| **1, týden 1–2: konec merge a kontroly preview** | PR s pravidly a skills, `rezimy.yml`, labelerem, branou a CODEOWNERS; **nejdřív nahradit `PROJECT_TOKEN` a `CSI_PR_TOKEN` tokenem aplikace a převést `veletrhy-snimek` na token aplikace** (dnes jeho PR zakládá `GITHUB_TOKEN`, CI na nich neběží a slučují se jen obejitím rulesetu; bez převodu by se po zrušení výjimky zasekly); ověřit identitu aplikace v cloudu; zapnout automatický merge rutiny, drobných zadání a etap; ověření na preview; týdenní přehled; výchozí měřítka; postup nastavení krok za krokem | strojový účet, aplikace, ruleset bez výjimek s bránou a **povinným review vlastníka kódu** (`require_code_owner_review`, dnes vypnuté; brána běží ve verzi z PR, `.github/` chrání jen toto review), auto-merge, secret pro preview, soukromý repozitář a Směr vývoje včetně rozpočtu (asi 1,5 h jednou) |
+| **2, týden 3–4: plná autonomie** | druhý klíč, režim K pro migrace (po ověření tarifu Neonu), nová data, výdaje kartou, e-maily odběratelům (po ověření rozesílání po vlnách), zápisy z briefingu do soukromého repozitáře, příjem oprav od škol, denní úloha | virtuální karta s limitem, ověřit tarif Neonu (asi 30 min) |
 
-Po kroku 3 zbývá vlastníkovi: Směr vývoje a rozhodnutí z oddílu 3. Odhad: desítky minut měsíčně;
+Dokud nejsou tokeny vlastníka nahrazené, workflows v `.github/workflows/` čte vlastník (CODEOWNERS);
+proto je jejich nahrazení první úkol fáze 1. Do konce fáze 1 platí dnešní postup (vlastník merguje),
+takže přechod netrvá déle než dva týdny.
+
+Po fázi 2 zbývá vlastníkovi: Směr vývoje a rozhodnutí z oddílu 3. Odhad: desítky minut měsíčně;
 ověří ho měřítka.
 
 ## 21. Rozhodnutí části A
@@ -384,6 +460,9 @@ ověří ho měřítka.
 | RA23 | Celé `.github/workflows/` pod CODEOWNERS, dokud tokeny vlastníka nenahradí token aplikace | **ano** |
 | RA24 | Issue s osobními údaji přesunout do soukromého repozitáře místo mazání | **ano** |
 | RA25 | Zadání asistenta je interní jen s dokladem (briefing, ověřená oprava od školy); ostatní e-maily režim K | **ano** |
+| RA26 | Rozpočet AI ve třech koších (provoz, schválená práce, nápady do 15 %), strop na přípravu nápadu | **ano**, částku určí vlastník |
+| RA27 | Nejvýš 3 nápady AI na briefing podle skóre, potvrzení zápisů najednou na konci, upozornění jen při výjimce | **ano** |
+| RA28 | Rozhodování dvěma rovnocennými cestami: GitHub (i GitHub Projects) a briefing v Grok Bot | **ano** |
 
 # Část B: rozšíření podle měřítek
 
@@ -413,6 +492,12 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.9** (3. 10. 2026, kontrola zátěže vlastníka): shrnutí pro rozhodnutí na začátku; zavedení ve dvou
+  fázích podle přínosu (nejdřív konec merge a kontroly preview); nahrazení tokenů vlastníka a převod
+  `veletrhy-snimek` na token aplikace před zrušením výjimky v rulesetu; rozpočet AI ve třech koších
+  a rozpočet pozornosti (nejvýš 3 nápady na briefing podle skóre, potvrzení najednou); upozornění jen při
+  výjimce místo denního souhrnu; rozhodování na GitHubu i v Grok Bot jako rovnocenné cesty; měřítka zátěže
+  briefingem a rozpočtu; RA26–RA28.
 - **0.8a** (3. 10. 2026, kontrola vypořádání): v kroku 1 zapnout povinné review vlastníka kódu v rulesetu;
   oprava od školy má záznam v soukromém repozitáři, který brána ověří stejně jako zápis z briefingu.
 - **0.8** (3. 10. 2026, oponentura v0.7): briefing v Grok Bot, ne v Telegramu, a jiné kanály se
