@@ -7,8 +7,7 @@ práci a vybírají nápady na briefing. Soubor je veřejný záměrně: projekt
 **Změny smí sloučit jen vlastník** (cesta je v `h2` v `.github/rezimy.yml`, brána ji pustí jen se
 `schvaleno` na PR). AI navrhuje změny jednou za čtvrtletí nebo po rozhodnutí na briefingu.
 
-Stav: **koncept k doplnění vlastníkem** (3. 10. 2026). Řádky označené jsou odvozené
-z otevřených zadání a kalendáře přijímaček; potvrď je, uprav, nebo smaž.
+Stav: **platí od 3. 10. 2026**, potvrzeno vlastníkem (PR #293, rozpočet doplněn 3. 10. 2026).
 
 ## Cíle k datu
 
@@ -36,11 +35,11 @@ z otevřených zadání a kalendáře přijímaček; potvrď je, uprav, nebo sma
 
 | položka | měsíčně | poznámka |
 |---|---|---|
-| **AI a výdaje celkem** | … Kč | tokeny, druhý klíč, placené služby a API |
-| koš provoz | zbytek | rutina, opravy, hlášení, přehled; nezastavuje se |
-| koš schválená práce | do 60 % | drobná zadání, etapy, projekty |
-| koš nápady | do 15 % | náčrty nápadů AI; jeden nápad nejvýš 2 % |
-| limit karty na jednu platbu | … Kč | nad limit rozhoduje vlastník (H4) |
+| **AI a výdaje celkem** | 3 000 Kč | tokeny, druhý klíč, placené služby a API |
+| koš provoz | zbytek (nejméně 750 Kč) | rutina, opravy, hlášení, přehled; nezastavuje se |
+| koš schválená práce | do 60 % (1 800 Kč) | drobná zadání, etapy, projekty |
+| koš nápady | do 15 % (450 Kč) | náčrty nápadů AI; jeden nápad nejvýš 2 % (60 Kč) |
+| limit karty na jednu platbu | 1 000 Kč | nad limit rozhoduje vlastník (H4) |
 
 Rozpočet pozornosti: nejvýš 3 nápady AI na briefing (oddíl 17a návrhu).
 
