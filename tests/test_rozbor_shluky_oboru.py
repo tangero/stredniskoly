@@ -51,9 +51,8 @@ class RozborShlukyOboruTest(unittest.TestCase):
         self.assertEqual(rozbor.podil_nad_mezi(20, 50), 0.4)
 
     def test_jednoznacne_dopocitatelny_skryty_obor_se_pozna(self):
-        # celé číslo, ne interval: review PR #284, Praha 2026, okruhy 137 a 30, skryto přesně 9
-        self.assertEqual(rozbor.dopocitatelne(30, [(0.37, 100), (0.39, 100), (None, 100)]), {9})
-        self.assertEqual(rozbor.dopocitatelne(70, [(0.6, 100), (0.28, 100), (None, 100)]), {9})
+        # celé číslo, ne interval (review PR #284); data jsou smyšlená: obory 20 + 21 + skrytý 9 = 50
+        self.assertEqual(rozbor.dopocitatelne(50, [(0.4, 100), (0.42, 100), (None, 100)]), {9})
         self.assertTrue(rozbor.unika({9}))
         self.assertFalse(rozbor.unika({0}))
         self.assertFalse(rozbor.unika({7, 8, 9}))
@@ -95,16 +94,15 @@ class RozborShlukyOboruTest(unittest.TestCase):
         self.assertEqual([o["obec"] for o in vysledek["obce"]], ["Čelákovice"])
 
     def test_obec_a_jeji_obor_spolecne_neprozradi_malou_skupinu(self):
-        # review PR #284, návrh 1.2: 94 uchazečů, Neratovice 0,23 (= 22) a neratovický obor 20 → 2 osoby;
-        # Brandýs 0,27 (= 25) a lyceum 17 → 8 osob; Čelákovice 0,32 (= 30) a gymnázium 30 → nikdo navíc
-        kd = {"klic": "X", "uchazecu": 94,
-              "obce": [{"obec": "Neratovice", "podil": 0.23}, {"obec": "Brandýs", "podil": 0.27},
-                       {"obec": "Čelákovice", "podil": 0.32}],
-              "obory": [{"klic": "N", "obec": "Neratovice", "uchazecu": 20},
-                        {"klic": "B", "obec": "Brandýs", "uchazecu": 17},
-                        {"klic": "C", "obec": "Čelákovice", "uchazecu": 30}]}
+        # review PR #284, návrh 1.2; data jsou smyšlená: 80 uchazečů, obec A 0,30 (= 24) a její obor 20,
+        # obec B 0,50 (= 40) a obor 35, obec C 0,25 (= 20) a obor 20 (rozdíl nula, nic neprozradí)
+        kd = {"klic": "X", "uchazecu": 80,
+              "obce": [{"obec": "A", "podil": 0.3}, {"obec": "B", "podil": 0.5}, {"obec": "C", "podil": 0.25}],
+              "obory": [{"klic": "a", "obec": "A", "uchazecu": 20},
+                        {"klic": "b", "obec": "B", "uchazecu": 35},
+                        {"klic": "c", "obec": "C", "uchazecu": 20}]}
         self.assertEqual(len(rozbor.kontrola_kam_dal(kd, opravit=True)), 2)
-        self.assertEqual([o["obec"] for o in kd["obce"]], ["Čelákovice"])
+        self.assertEqual([o["obec"] for o in kd["obce"]], ["C"])
         self.assertEqual(rozbor.kontrola_kam_dal(kd), [])
 
     def test_zarazeni_obtiznosti_podle_slovniku(self):
