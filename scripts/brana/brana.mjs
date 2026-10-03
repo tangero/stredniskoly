@@ -85,15 +85,25 @@ export function odVlastnika(udalost, konfig) {
 }
 
 /**
- * Platí `stop`? Štítek je na místě, nebo ho odebral účet, který ho nepřidal a není vlastník
- * (oddíl 6: stop smí odebrat jen ten, kdo ho přidal, nebo vlastník).
+ * Platí `stop`? Události se procházejí postupně a každé veto si pamatuje autora. Odebrání štítku
+ * vlastníkem ruší všechna veta, odebrání jiným účtem jen veta, která přidal on sám (oddíl 6: stop smí
+ * odebrat jen ten, kdo ho přidal, nebo vlastník). Neodvolané veto platí i bez štítku, takže ho cizí
+ * účet nezahladí ani dalším přidáním a odebráním.
  */
 export function stopPlati(objekt, konfig) {
   if (objekt.stitky.includes('stop')) return true;
-  const odebrani = posledniUdalost(objekt.udalosti || [], 'unlabeled', 'stop');
-  if (!odebrani || odVlastnika(odebrani, konfig)) return false;
-  const pridani = posledniUdalost(objekt.udalosti.filter((u) => cas(u.cas) <= cas(odebrani.cas)), 'labeled', 'stop');
-  return !pridani || pridani.aktor !== odebrani.aktor;
+  const veta = [];
+  const udalosti = (objekt.udalosti || [])
+    .filter((u) => u.stitek === 'stop')
+    .sort((a, b) => cas(a.cas) - cas(b.cas));
+  for (const u of udalosti) {
+    if (u.akce === 'labeled') veta.push(u.aktor);
+    else if (u.akce === 'unlabeled') {
+      if (odVlastnika(u, konfig)) veta.length = 0;
+      else for (let n = veta.length - 1; n >= 0; n--) if (u.aktor && veta[n] === u.aktor) veta.splice(n, 1);
+    }
+  }
+  return veta.length > 0;
 }
 
 function zaznamyBrany(komentare, od) {

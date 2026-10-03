@@ -378,6 +378,18 @@ test('schvaleno z jiného účtu než vlastníka není souhlas', () => {
   assert.equal(v.uspech, false);
 });
 
+test('neodvolané veto nezahladí nové přidání a odebrání stop cizím účtem (PR i issue)', () => {
+  const ud = (akce, aktor, h) => ({ akce, stitek: 'stop', cas: PRED(h), aktor });
+  const cyklus = [
+    ud('labeled', 'tangero', 8), ud('unlabeled', 'eduarda-prijimacky', 7),
+    ud('labeled', 'eduarda-prijimacky', 6), ud('unlabeled', 'eduarda-prijimacky', 5),
+  ];
+  assert.equal(run({ issues: [issue({ udalosti: cyklus })] }).uspech, false);
+  assert.equal(run({ pr: pr({ udalosti: cyklus }) }).uspech, false);
+  // Vlastník veto odvolá: projde.
+  assert.equal(run({ issues: [issue({ udalosti: [...cyklus, ud('unlabeled', 'tangero', 4)] })] }).uspech, true);
+});
+
 test('stop odebraný cizím účtem dál platí, odebraný tím, kdo ho přidal, nebo vlastníkem ne', () => {
   const ud = (akce, aktor, h) => ({ akce, stitek: 'stop', cas: PRED(h), aktor });
   const s = (udalosti) => run({ issues: [issue({ udalosti })] }).uspech;
