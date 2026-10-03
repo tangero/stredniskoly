@@ -1,223 +1,105 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.1 · 3. 10. 2026 · **návrh ke schválení**, na GitHubu ani v pravidlech se zatím nic nemění.
+Verze 0.2 · 3. 10. 2026 · **část A ke schválení, část B k rozhodnutí po 2–4 týdnech provozu části A.**
+Na GitHubu ani v pravidlech se zatím nic nemění.
 
-Nahrazuje návrh „Oblasti, projekty a etapy na GitHubu“ (audit z 3. 10. 2026). Z něj přebírá soupis
-oblastí s cestami v kódu, nalezené duplikáty a zařazení otevřených issues. Model ve třech úrovních
-(issues oblastí, projekty, sub-issues) nepřebírá, důvody jsou v oddílu 10.
+Podklad: audit [Oblasti, projekty a etapy na GitHubu](historie/github-oblasti-audit-2026-10-03.md)
+(3. 10. 2026). Z něj návrh přebírá soupis oblastí s cestami v kódu, nalezené duplikáty a zařazení
+otevřených issues. Model ve třech úrovních z auditu (oblast jako trvalé issue → projekt jako sub-issue
+→ etapy) návrh ruší a nahrazuje štítky (rozhodnutí RA1). Oponentura vlastníka projektu je v PR #273.
 
-## 1. Cíl
+## 1. Cíl a rozdělení návrhu
 
 Patrick určuje směr, priority a rozhoduje věci, které mění produkt, náklady nebo rizika. Rutinní opravy
 ani praktické detaily neřeší. Přitom má kdykoli přehled, na čem se pracuje, jak se to vyvíjí a v jakém
 stavu projekt je.
 
-Dnes každá změna prochází dvěma lidskými branami: schválením předem (`schvaleno`) a kontrolou s merge
-potom. Claude navíc pracuje jen tehdy, když ho někdo spustí. Přehled se skládá z tabule s 68 kartami,
-ve které se míchají issues, PR a veřejná hlášení. Návrh mění tři věci:
+Návrh má dvě části s odlišným rizikem:
 
-1. **Třídy změn** (oddíl 3): rutina se schvaluje jen při merge, předem se schvalují jen úpravy a směr.
-2. **Přehled, který se sám generuje** (oddíl 4): fronta rozhodnutí a týdenní zpráva z dat GitHubu.
-   Ručně udržované stránky nezavádí.
-3. **Pravidelné zpracování fronty** (oddíl 6): Claude třídí a realizuje práci podle plánu, bez ručního
-   spouštění.
-
-### Měřítka úspěchu
-
-Měří je týdenní přehled automaticky. Vyhodnocení proběhne po čtyřech týdnech (oddíl 11, fáze 4).
-
-| měřítko | jak se měří | cíl |
-|---|---|---|
-| zásahy Patricka týdně | počet jeho komentářů, štítků a merge na GitHubu (náhrada za čas, ten změřit nejde) | klesá; rutina tvoří nejvýš pětinu |
-| fronta rozhodnutí | počet otevřených issues `rozhodnuti` a stáří nejstaršího | nejvýš 5 položek, žádná starší 7 dní |
-| doba od nahlášení po merge, rutina | medián od založení issue po merge PR | do 3 dnů |
-| doba od schválení po nasazení, úpravy a etapy | medián od štítku `schvaleno` po merge | do 7 dnů |
-| regrese | PR revertované nebo opravované do 14 dnů po merge, podle třídy | u rutiny nejvýš 1 z 20 |
+- **Část A, struktura** (oddíly 3–10): štítky, životní cyklus projektu, tabule, fronta rozhodnutí.
+  Nemění, kdo co smí. Ke schválení hned.
+- **Část B, autonomie** (oddíly 11–17): třída `rutina` bez schválení předem, přehled, směr vývoje,
+  denní zpracování fronty. Zasahuje do pojistek ve veřejném repozitáři. Rozhoduje se samostatně po
+  2–4 týdnech provozu části A, kdy budou měřítka z oddílu 11 mít s čím srovnat.
 
 ## 2. Role
 
 | kdo | dělá | nedělá |
 |---|---|---|
-| **Patrick** | určuje směr (oddíl 5), schvaluje směrové změny a nové projekty, rozhoduje frontu rozhodnutí, merguje | netřídí hlášení, neschvaluje rutinu předem, nečte rutinní PR řádek po řádku |
-| **Eduarda** | píše zadání, ověřuje úpravy na Vercel preview, podle rozhodnutí R2 schvaluje úpravy | neschvaluje směrové změny |
-| **Claude Code** | třídí issues (oblast, třída, duplikát, osobní údaje), realizuje, dělá review, připravuje podklady k rozhodnutí, píše týdenní přehled | nemerguje, nemění třídu směrem dolů proti rozhodnutí člověka, nerealizuje nic ze směrové třídy bez schválení |
-| **automatika** | štítek oblasti u PR podle změněných souborů, tabule, CI, upozornění na selhání | – |
+| **Patrick** (vlastník projektu) | určuje směr, schvaluje zadání a projekty (`schvaleno`), rozhoduje frontu rozhodnutí, merguje | netřídí issues, nehledá souvislosti mezi hlášeními |
+| **Eduarda** (AI asistent) | píše zadání | neschvaluje: AI by jinak schvalovala práci AI |
+| **Claude Code** | třídí issues (oblast, duplikáty, osobní údaje), rozbory, realizace, review, podklady k rozhodnutí | nemerguje, nepřidává `schvaleno` ani `zamitnuto`, nerealizuje nic bez schválení (v části B s výjimkou rutiny) |
+| **automatika** | štítek oblasti u PR, tabule, CI | – |
 
-## 3. Třídy změn
+**Za rozhodnutí se počítá jen štítek nebo komentář vlastníka projektu.** Ve veřejném repozitáři může
+„souhlas“ napsat kdokoli s účtem na GitHubu. Claude proto ověřuje autora komentáře (`user.login`)
+a u štítku toho, kdo ho přidal (`actor` v timeline issue, `gh api repos/tangero/stredniskoly/issues/N/timeline`).
+Podle textu se neřídí nikdy. Totéž platí pro každou automatiku, která na schválení reaguje (oddíl 16).
 
-Každé issue a každý PR má právě jednu třídu. Určí ji Claude při třídění. Když si není jistý,
-zvolí vyšší třídu. Patrick nebo Eduarda můžou třídu změnit výměnou štítku, Claude ji pak nemění.
+# Část A: struktura
 
-| štítek | třída | schválení předem | merge |
-|---|---|---|---|
-| `rutina` | oprava chyby, textu nebo dat bez vlivu na směr | **žádné** | Patrick v dávce (R3) |
-| `uprava` | změna chování nebo obsahu existující funkce | krátký plán v issue, schvaluje R2 | Patrick po ověření na preview |
-| `smer` | nová funkce, stránka nebo zdroj dat, náklady, rizika | návrh v `docs/`, oponentura, schvaluje Patrick | Patrick |
+## 3. Štítky
 
-### 3.1 Rutina: všechny podmínky musí platit současně
+Přibude 11 štítků:
 
-- opravuje doložený rozpor: chybu s postupem, jak ji vyvolat, chybný text, chybný údaj jedné školy nebo
-  oboru proti zdroji, rozbitý odkaz, pád stránky, padající test nebo workflow, nález review;
-- nezavádí nový ukazatel ani pojem a nemění výpočet ve slovníku ukazatelů;
-- nepřepíná datovou sadu v registru a nemění zobrazené období;
-- nepřidává migraci, nezapisuje do produkční databáze a nepouští exporty (pravidlo 5 v `CLAUDE.md`);
-- nevolá nový cizí server (pravidlo 7 platí beze změny);
-- nemění adresy stránek, veřejné API, e-maily odesílané uživatelům, přihlášení ani práva v portálu;
-- nemění `CLAUDE.md`, `.claude/`, workflows, secrets ani závislosti;
-- zasahuje do jedné oblasti a diff má nejvýš zhruba 150 změněných řádků kódu (data a testy se nepočítají).
+| štítek | význam |
+|---|---|
+| `projekt` | konečná práce s cílem a etapami (oddíl 4); jediné, co jde sloupci tabule |
+| `oblast:<slug>` (9×) | trvalá část produktu (oddíl 6); každé issue a PR má právě jednu, PR může mít víc |
+| `trvale` | připnutá nebo průběžná issue (přehledy, připomínky bez konce); vyřazená z tabule a třídění |
 
-Splní-li oprava všechno kromě posledního bodu, je to `uprava`.
+Beze změny zůstávají `interni`, `schvaleno`, `zamitnuto`, `k-overeni`, `pripominka`, `nova-data`
+a veřejné `bug-report`, `portal-skoly`, `feature-request`. **`interni` dál podmiňuje realizaci**
+(pravidlo 1 v `CLAUDE.md`).
 
-### 3.2 Úprava
+**Štítek `navrh` se rozšíří na „čeká na rozhodnutí vlastníka“** (RA2): nese ho zadání před schválením
+i issue, ve kterém Claude položil otázku podle oddílu 8. Samostatný štítek `rozhodnuti` nevzniká, oba
+by znamenaly totéž. Workflow `tabule-schvaleno.yml` pak zůstane beze změny: `navrh` odebírá při
+schválení a vrací při jeho odvolání, což novému významu odpovídá. Otázku u schváleného projektu
+označí Claude štítkem `navrh` a po odpovědi vlastníka ho odebere. Dokud `navrh` visí, dotčenou část
+nerealizuje.
 
-Změna chování nebo obsahu existující funkce, která nesplní podmínky rutiny ani nemění směr: nový text
-nebo blok na existující stránce, úprava filtru, nový sloupec v tabulce, nová položka slovníku pojmů
-pro existující údaj, oprava zasahující do více oblastí.
+Třídy `uprava` a `smer` z verze 0.1 odpadají: co nemá `projekt`, je drobné zadání jako dnes.
 
-Postup: Claude napíše do issue plán na nejvýš deset řádků (co se změní, které soubory, jak se to ověří,
-rizika) a přidá štítek `rozhodnuti`. Po schválení realizuje.
+## 4. Životní cyklus projektu
 
-### 3.3 Směr
+1. **Nápad:** issue `[Zadání]` se štítky `interni`, `navrh`, `projekt`, `oblast:<slug>`.
+2. **Rozbor** v komentářích téhož issue. Samostatný dokument v `docs/` jen u velkých věcí
+   (nová stránka nebo zdroj dat, víc oblastí, migrace), rozhodne vlastník nebo to Claude navrhne.
+3. **Zadání přepsané do těla issue.** Oponentura je volitelná, podle velikosti.
+4. **`schvaleno`** (jen vlastník).
+5. **Etapy jako checklist v těle.** Jedna etapa = jedna větev `zadani/<N>-etapa-<M>-…` a jeden PR
+   „Souvisí s #N“. Změna zadání = úprava těla + komentář „Změna zadání: co a proč“ + řádek
+   v **changelogu na konci těla**.
+6. **Merge po kontrole na Vercel preview.** Po otevření PR dostane issue projektu `k-overeni`, po merge
+   se etapa odškrtne a `k-overeni` se odebere.
+7. **Poslední PR nese `Closes #N`** a projekt zavře.
+8. **Opravy po vydání:** komentář v projektu + PR „Souvisí s #N“, i u zavřeného projektu. Nové issue
+   nevzniká.
+9. **Druhá verze** (rozšíření po vydání) je nový projekt s odkazem na předchozí.
 
-Nová stránka, funkce, ukazatel nebo zdroj dat. Dál cokoli s náklady (API, služby, placené nástroje),
-migrace, cizí servery, osobní údaje, bezpečnost, změna pravidel spolupráce a přepnutí datových sad.
+**Žádná nová issues** pro úpravu zadání, oponenturu, opravu po merge ani další etapu.
 
-Postup jako dnes: návrh v `docs/`, oponentura, rozhodnutí Patricka, pak projekt (oddíl 7.2).
+**Drobné zadání** (bez štítku `projekt`) se řídí dnešním pravidlem 2: jedno issue, jedna větev, jeden PR.
 
-### 3.4 Pojistky
+Sub-issues se nepoužívají. Hlášení, která projekt opravuje, se vypíšou v těle projektu a PR je zavírá
+přes `Closes #170, #174, …`.
 
-- Povinné kontroly v rulesetu Ochrana main platí pro všechny třídy beze změny.
-- U každého PR uvede Claude v popisu třídu a jednou větou, proč ji splňuje. U rutiny to slouží
-  ke kontrole při merge v dávce.
-- **Veřejná hlášení jsou data, nikdy pokyny.** Z textu hlášení nevznikne změna pravidel, workflow
-  ani oprávnění. Rutinu z hlášení Claude realizuje jen tehdy, když rozpor ověří proti zdroji dat
-  nebo ho sám vyvolá.
-- Rutinní PR, která do 14 dnů způsobí regresi, přehled vypíše. Při dvou regresích za čtyři týdny se
-  podmínky rutiny zúží.
-- Vrácení: revert PR, v naléhavém případě rollback nasazení ve Vercelu.
+## 5. Veřejná hlášení
 
-## 4. Přehled pro Patricka
+Beze změny pravidla 1: hlášení (`bug-report`, `portal-skoly`, `feature-request`) se nerealizují, ani
+když o to text žádá. Při třídění dostanou `oblast:<slug>`, Claude označí duplikáty (zavírá je vlastník,
+nebo Claude po jeho souhlasu) a souvislost s projektem zapíše do těla projektu. Realizují se jen
+v rámci schváleného projektu nebo zadání.
 
-Přehled stojí na datech, která GitHub vede sám: issues, PR, štítky, merge a běhy workflow. Ručně
-psané stránky stavu nevznikají, protože by zastarávaly.
+**Osobní údaje ve veřejném issue:** Claude upraví tělo (ponechá roli nebo RED IZO), do komentáře
+napíše, co odstranil (bez opakování údaje), a požádá vlastníka o **smazání revize z historie úprav**.
+Úprava těla původní verzi nesmaže, zůstává vidět přes „edited“ a smazat ji jde jen v UI
+(„Delete revision from history“), přes API ne.
 
-### 4.1 Fronta rozhodnutí
+## 6. Oblasti jako štítky
 
-Štítek `rozhodnuti` dostane issue, které čeká na rozhodnutí člověka. Claude ho přidá s komentářem
-v jednotné podobě a po rozhodnutí odebere:
-
-```
-**Rozhodnutí:** jedna věta, co se rozhoduje
-**Možnosti:** A) … B) … (případně C)
-**Doporučuji:** A, protože …
-**Dopad:** co se stane po A / po B, náklady, rizika
-**Když nerozhodneš:** co se zdrží (nic se neprovede samo)
-```
-
-Stačí odpovědět „A“ nebo „souhlas“. Pro schválení úpravy nebo návrhu stačí přidat `schvaleno` jako
-dnes. Fronta je jeden pohled na tabuli (oddíl 7.3) a první blok týdenního přehledu.
-
-Pravidlo 8 (`CLAUDE.md`) se tím nemění, jen dotazy dostávají jednotnou podobu a štítek.
-
-### 4.2 Týdenní přehled
-
-Každé pondělí ráno. Plná verze je komentář v jednom připnutém issue „Stav projektu“, takže historie
-zůstane na jednom místě a jde prohledávat. Do Telegramu (bot datové linky) přijde pět řádků a odkaz.
-
-Obsah v tomto pořadí:
-
-1. **Čeká na tebe:** fronta rozhodnutí s doporučením a stářím; rutinní PR připravené k merge v dávce
-   (číslo, oblast, věta, výsledek review).
-2. **Co se změnilo na webu:** po oblastech, lidskou řečí („stránka oboru ukazuje…“), s odkazy na PR.
-3. **Projekty:** u každého cíl, hotové a další etapa, a zda se drží plánu.
-4. **Provoz:** neúspěšné workflow (datová linka, CSI, sklízeč, veletrhy), červené CI na `main`,
-   tokeny před expirací (`PROJECT_TOKEN`, `CSI_PR_TOKEN`), náklady proti rozpočtu.
-5. **Hlášení z webu:** nová, vyřízená, otevřená, duplikáty.
-6. **Měřítka** z oddílu 1 a jejich vývoj.
-
-Generuje ho naplánovaná úloha Clauda (Routine v Claude Code). Čísla bere skript přes `gh`,
-Claude z nich píše text. Skript `scripts/tydenni-prehled.mjs` se postará, aby čísla nebyla odhadem.
-
-### 4.3 Okamžitá upozornění
-
-Do Telegramu jen to, co nepočká do pondělí: červené CI na `main`, selhání datové linky nebo
-zálohy, hlášení s osobními údaji ve veřejném issue. Ostatní jde do týdenního přehledu.
-
-## 5. Směr vývoje: nástroj, kterým Patrick řídí
-
-Jedno připnuté issue „Směr vývoje“. Patrick ho upravuje přímo na GitHubu, i z telefonu. Historie změn
-těla zůstává v issue. Claude ho čte při každém zpracování fronty a řídí se jím při řazení práce
-a určování třídy.
-
-Obsah, nejvýš jedna obrazovka:
-
-- **Cíle do určitého data** (například do přihlášek k přijímacím zkouškám): tři až pět vět.
-- **Pořadí priorit:** seznam projektů a oblastí.
-- **Teď neděláme:** co se odkládá a proč. Zabrání návrhům, které se pak zamítají.
-- **Rozpočet:** měsíční strop na API a služby, strop počtu PR denně.
-- **Mimořádné pokyny:** například „do 15. 1. jen rutina v oblasti data“.
-
-Rozdělení: `docs/` popisují, jak věci fungují a proč se rozhodlo. „Směr vývoje“ říká, co je teď
-důležité. Týdenní přehled říká, jak to jde.
-
-## 6. Pravidelné zpracování fronty
-
-Dnes Claude pracuje, jen když ho někdo spustí. Návrh zavádí denní naplánovanou úlohu (Routine
-v Claude Code, každá spustí novou relaci nad tímto repozitářem):
-
-1. Přečte „Směr vývoje“ a splatné připomínky.
-2. Roztřídí nová issues (oddíl 7.1).
-3. Realizuje rutinu a schválené úpravy a etapy v pořadí priorit, nejvýš N PR za běh podle rozpočtu.
-4. Opraví rutinní PR po review a červeném CI.
-5. Aktualizuje frontu rozhodnutí.
-
-Úloha nesmí: mergovat, měnit štítky `schvaleno` a `zamitnuto`, zakládat projekty ani volat cizí servery
-mimo schválený způsob. Při chybě prostředí napíše do přehledu, nic neobchází.
-
-Dřív odložená možnost `@claude` v GitHubu (spouštění komentářem) je doplněk pro Eduardu. Nahrazovat
-denní úlohu nemusí.
-
-## 7. Struktura na GitHubu
-
-### 7.1 Třídění nového issue
-
-Claude (denní úloha, nebo relace, která na issue narazí) doplní:
-
-- štítek oblasti `oblast:<slug>` (oddíl 7.4);
-- třídu `rutina` / `uprava` / `smer`;
-- u duplikátu komentář s odkazem a zavření jako duplikát;
-- u osobních údajů ve veřejném issue: upraví tělo a nechá jen roli nebo RED IZO, do komentáře napíše,
-  co odstranil (bez opakování údaje), a pošle okamžité upozornění;
-- chybí-li údaje pro reprodukci, napíše dotaz nahlašovateli. Do fronty rozhodnutí to nepatří.
-
-Veřejná hlášení (`bug-report`, `portal-skoly`, `feature-request`) se po třídění realizují podle třídy.
-Dnešní pravidlo „nerealizovat hlášení“ se tím pro rutinu mění, viz pojistky v oddílu 3.4.
-
-### 7.2 Projekty
-
-Projekt je jedno issue se štítky `projekt` a `smer`. Tělo obsahuje:
-
-- cíl a pro koho,
-- rozsah a co se nedělá,
-- etapy jako checklist (každá etapa = jedna větev a jeden PR „Souvisí s #N“, `Closes #N` jen poslední),
-- odkaz na návrh v `docs/`,
-- log rozhodnutí (datum, co, odkaz na komentář).
-
-**Žádná nová issues** pro úpravu návrhu, oponenturu, opravu po merge ani další etapu: komentář
-v projektu a PR „Souvisí s #N“. Sub-issues jen pro hlášení, která projekt opravuje.
-
-### 7.3 Tabule
-
-- Auto-add jen `is:issue is:open` (PR na tabuli nepatří, projekt je ukáže v Linked pull requests).
-- **Pohled „Rozhoduji“:** `is:open label:rozhodnuti`, k tomu `label:k-overeni` u tříd `uprava` a `smer`.
-- **Pohled „Projekty“:** `label:projekt` podle Status (Návrh → Oponentura → Schváleno → Ke schválení merge → Hotovo).
-- **Pohled „Vše otevřené“:** tabulka seskupená podle oblasti, slouží jen k dohledání.
-- Rutina na tabuli stavy nepotřebuje. Je vidět v týdenním přehledu.
-
-### 7.4 Oblasti jako štítky
-
-Devět oblastí. Mapování na cesty v kódu bude v `.github/labeler.yml`, workflow `actions/labeler` podle
-něj označí každý PR. Cesty přebírá z původního auditu.
+Devět oblastí (RA3), cesty v kódu podle auditu:
 
 | štítek | oblast | změna proti auditu |
 |---|---|---|
@@ -231,86 +113,207 @@ něj označí každý PR. Cesty přebírá z původního auditu.
 | `oblast:data` | Data, termíny a inspekce ČŠI | přidaná inspekce |
 | `oblast:provoz` | Provoz, obsah, SEO, pro novináře a proces | přidaní novináři |
 
-Inspekce a Pro novináře mají málo otevřené práce. Pro přehled a třídění jsou samostatné oblasti spíš
-zátěží. Kdyby se rozrostly, štítek se rozdělí bez dalších změn.
+Inspekce a Pro novináře mají málo otevřené práce. Kdyby se rozrostly, štítek se rozdělí bez dalších změn.
 
-Issues oblastí, sub-issues pod oblastmi ani zpětné připojování historie nevznikají.
+**Issues** dostanou oblast při třídění (Claude, při zpracování issues). **PR** dostanou oblast
+automaticky: mapování cest bude v `.github/labeler.yml` a workflow `actions/labeler` spuštěný na
+`pull_request` (ne `pull_request_target`, aby PR z forku neběžel s právy repozitáře) označí PR
+podle změněných souborů.
 
-## 8. Změny pravidel (`CLAUDE.md` a šablony)
+Štítek u PR slouží přehledu a v části B kontrole podmínky „jedna oblast“ u rutiny. Na tabuli PR nejsou.
 
-Provedou se jedním PR po schválení tohoto návrhu.
+Když se oblasti liší: issue nese oblast, kam věc patří pro uživatele (kde se chyba projevila). PR nese
+všechny oblasti, do kterých zasahuje. Dva štítky u PR nejsou chyba, jen znamenají, že změna rutinou
+není. Rozpor mezi oblastí issue a PR se neopravuje.
 
-- **Tabulka štítků:** přidat `rutina`, `uprava`, `smer`, `rozhodnuti`, `projekt`, `oblast:<slug>`.
-- **Pravidlo 1:** nahradit třídami z oddílu 3. Realizovat lze `rutina` bez schválení,
-  `uprava` a `smer` s `schvaleno`. Připomínky a pravidlo 7 beze změny.
-- **Pravidlo 2:** projekty a etapy podle oddílu 7.2. U rutiny může jeden PR zavřít víc souvisejících
-  issues ze stejné oblasti.
-- **Pravidlo 3** (nemergovat) beze změny, dokud Patrick nerozhodne jinak (R3).
-- **Pravidlo 8:** dotaz ve formátu z oddílu 4.1 se štítkem `rozhodnuti`.
-- **Nové pravidlo:** před prací přečíst issue „Směr vývoje“.
-- **Šablona interního zadání:** bez výchozího štítku `navrh`. Třídu doplní Claude při třídění.
-  `navrh` dostanou jen `uprava` a `smer`.
-- **`tabule-schvaleno.yml`:** beze změny.
-- **Zkrácení `CLAUDE.md`:** postupy, které agent potřebuje jen občas (příkazy pro tabuli, připomínky,
-  týdenní přehled, třídění), přesunout do skills v `.claude/skills/`. Do kontextu se pak načítají jen
-  při potřebě a hlavní pravidla jsou kratší.
+## 7. Tabule
 
-## 9. Pořádek v dokumentaci
+- **Auto-add:** `is:issue is:open -label:trvale`. PR na tabuli nepatří, projekt je ukáže v poli
+  Linked pull requests. Že filtr auto-add přijme zápor `-label:`, je potřeba ověřit v UI. Když ne,
+  issues se štítkem `trvale` se po přidání jednou archivují ručně (je jich pár).
+- **Vypnout „Auto-add sub-issues to project“** (sub-issues se nepoužívají).
+- **PR karty** (26) archivovat. Je to vratné.
+- **Pohled „Rozhoduji“:** `is:open label:navrh,k-overeni -label:trvale` (čárka znamená NEBO mezi
+  štítky; NEBO přes různé podmínky Projects neumí). `k-overeni` nese issue, ne PR (oddíl 4, bod 6).
+- **Pohled „Projekty“:** `label:projekt`, sloupce podle Status (Návrh → Oponentura → Schváleno →
+  Ke schválení merge → Hotovo).
+- **Oblasti:** GitHub Projects neumí seskupovat podle štítků. Pro začátek stačí filtr
+  `label:oblast:detail` apod. ve „Vše otevřené“. Kdyby seskupení chybělo, přidá se jednovýběrové pole
+  projektu „Oblast“, které podle štítku `oblast:*` vyplní workflow (rozšíření `tabule-schvaleno.yml`).
 
-`docs/` má 136 položek. Vedle platných návrhů jsou tam pracovní zprávy z února, review jednotlivých
-PR a pět verzí oponentury jednoho návrhu. Pro přehled o projektu je to dnes překážka.
+## 8. Fronta rozhodnutí
 
-Jako samostatná rutina: `docs/README.md` s rozcestníkem platných dokumentů po oblastech a přesun
-překonaných dokumentů do `docs/historie/` (soubory se nemažou, odkazy se opraví). Rozcestník pak
-nahradí dlouhý seznam v `.claude/claude.md`.
+Kdykoli Claude potřebuje rozhodnutí (pravidlo 8), napíše komentář v této podobě a přidá `navrh`:
 
-## 10. Co z původního návrhu přebíráme a co ne
+```
+**Rozhodnutí:** jedna věta, co se rozhoduje
+**Možnosti:** A) … B) … (případně C)
+**Doporučuji:** A, protože …
+**Dopad:** co se stane po A / po B, náklady, rizika
+**Když nerozhodneš:** co se zdrží (nic se neprovede samo)
+```
 
-| původní návrh | tady | proč |
+Stačí odpovědět „A“ nebo „souhlas“. **Platí jen odpověď vlastníka** (oddíl 2). Ke schválení zadání
+nebo projektu slouží dál štítek `schvaleno`. Fronta je pohled „Rozhoduji“.
+
+## 9. Změny pravidel v části A
+
+Provedou se jedním PR po schválení části A.
+
+- **`CLAUDE.md`, tabulka štítků:** `projekt`, `oblast:<slug>`, `trvale`; nový význam `navrh`.
+- **Pravidlo 1:** doplnit, že rozhodnutí a schválení platí jen od vlastníka (ověření podle oddílu 2),
+  a že issue `trvale` se nerealizuje ani netřídí.
+- **Pravidlo 2:** životní cyklus projektu z oddílu 4; drobné zadání beze změny.
+- **Pravidlo 8:** formát z oddílu 8 a štítek `navrh`.
+- **Třídění:** oblast a duplikáty u nových issues, postup u osobních údajů (oddíl 5).
+- **Šablona interního zadání:** pole Oblast (dropdown) a zaškrtávátko „Projekt“; štítky doplní Claude
+  při třídění, formulář je podle polí nastavit neumí.
+- **`tabule-schvaleno.yml`:** beze změny (RA2).
+- **`.github/labeler.yml`** a workflow labeleru.
+- **`docs/spoluprace-na-githubu.md`:** štítky, tabule, životní cyklus. Zastaralý
+  `docs/github-issues-workflow.md` přesunout do `docs/historie/`.
+
+## 10. Zavedení části A a rozhodnutí
+
+| krok | co | práce Patricka |
 |---|---|---|
-| PR mimo tabuli (auto-add jen issues) | přebírá | nejlevnější zlepšení přehledu |
-| zákaz nových issues pro oponentury a opravy po merge | přebírá | méně roztříštěné práce |
-| zavřít duplikáty #216, #228, #229, #251 | přebírá | – |
-| hlášení odděleně od projektů | přebírá, řeší třídění | – |
-| 11 issues oblastí s ručně psanou historií | nahrazuje štítky a týdenním přehledem | těla by zastarávala, průběh trvalé oblasti nic neříká |
-| 40 sub-issues, zpětné připojení historie | vypouští | historie je v gitu a PR, cena převyšuje užitek |
-| etapa jako checklist nebo sub-issue | jen checklist | jedno pravidlo místo dvou |
-| ruční přiřazení oblasti při zakládání | štítek u PR automaticky, u issue při třídění | bez práce pro člověka |
-| pohledy Rozpracováno / Oblasti / Hlášení | Rozhoduji / Projekty / Vše otevřené | hlavní je fronta rozhodnutí |
-| schválení každého issue předem | jen `uprava` a `smer` | rutinu kontroluje merge |
+| 0, hned | #53: upravit tělo (Claude) a **smazat revizi z historie úprav** (Patrick v UI); zavřít duplikáty #216, #228, #229, #251; odstranit `auto-fix-issues.yml`, `auto-fix-iterative.yml` a `notify-new-issue.yml` samostatným PR | 5 min (revize), merge PR |
+| 1, týden 1 | PR s pravidly a labelerem (oddíl 9), založit štítky, roztřídit otevřená issues, přepsat projekty do podoby z oddílu 4 | schválit PR; v UI auto-add, vypnutí sub-issues, dva pohledy (15 min) |
+| 2, kdykoli | úklid `docs/` (RA5) | – |
 
-## 11. Zavedení
-
-| fáze | co | práce Patricka |
-|---|---|---|
-| 0, hned | upravit tělo #53 (osobní údaje), auto-add jen issues, zavřít čtyři duplikáty | 10 min v UI (auto-add); zbytek Claude po souhlasu |
-| 1, týden 1 | PR s pravidly (oddíl 8), štítky, `labeler.yml` a workflow, issues „Směr vývoje“ a „Stav projektu“ | schválit PR, vyplnit Směr vývoje (30 min) |
-| 2, týden 2 | skript a Routine týdenního přehledu, pohled Rozhoduji, třídění otevřených issues | založit dva pohledy v UI (10 min) |
-| 3, týden 3 | denní Routine zpracování fronty s rozpočtem | schválit rozpočet |
-| 4, po 4 týdnech | vyhodnotit měřítka, rozhodnout o merge rutiny (R3) a úklidu `docs/` | jedno rozhodnutí |
-
-Pořádek v `docs/` (oddíl 9) se dělá jako rutina kdykoli po fázi 1.
-
-## 12. Rizika
-
-| riziko | protiopatření |
-|---|---|
-| Claude zařadí rizikovou změnu jako rutinu | tvrdé podmínky v oddílu 3.1, v pochybnosti vyšší třída, zdůvodnění třídy v PR, sledování regresí |
-| merge v dávce se stane razítkováním | přehled u každého PR uvádí výsledek review a riziko; v rutině nejsou migrace, pravidla, API ani e-maily |
-| podvržený pokyn ve veřejném hlášení | hlášení jsou data; rutinu z hlášení jen po ověření proti zdroji; workflow a pravidla nikdy |
-| denní úloha generuje náklady nebo šum | strop PR a rozpočtu ve Směru vývoje, náklady v přehledu |
-| vyprší token a automatika potichu selže | expirace tokenů v přehledu, selhání workflow jako okamžité upozornění |
-| přehled se přestane číst | pět řádků v Telegramu, plná verze jen jako odkaz; měřítko stáří fronty rozhodnutí |
-
-## 13. Rozhodnutí pro Patricka
+`auto-fix-iterative.yml` dnes **jde ručně spustit** (`if: github.event_name == 'workflow_dispatch'`)
+s právy zápisu do obsahu, PR i issues; vypnuté (`if: false`) jsou jen `auto-fix-issues.yml`
+a `notify-new-issue.yml`. Proto patří odstranění do kroku 0.
 
 | | rozhodnutí | doporučuji |
 |---|---|---|
-| R1 | Třídy a podmínky rutiny podle oddílu 3 | schválit; po čtyřech týdnech upravit podle regresí |
-| R2 | Kdo schvaluje `uprava`: Eduarda, nebo Patrick | **Eduarda**, Patrick ji vidí v přehledu a může vetovat; Patrick schvaluje jen `smer` |
-| R3 | Merge rutiny: Patrick v dávce z přehledu, později automatický merge po zelených kontrolách a review | teď **v dávce**; o automatickém merge rozhodnout ve fázi 4 podle regresí (vyžaduje změnu pravidla 3) |
-| R4 | Kanál přehledu: připnuté issue a Telegram | **ano** |
-| R5 | Denní zpracování fronty se stropem | **ano**, začít se stropem 3 PR denně |
-| R6 | Devět oblastí (inspekce pod data, novináři pod provoz) | **ano** |
-| R7 | Směr vývoje jako připnuté issue (alternativa: soubor v `docs/`) | **issue**, jde upravit bez PR a z telefonu |
-| R8 | Úklid `docs/` (oddíl 9) | **ano**, jako rutina po fázi 1 |
+| RA1 | Zrušit dohodnutý model ve třech úrovních (oblast jako trvalé issue → projekt jako sub-issue → etapy) a nahradit ho štítky `oblast:*` a `projekt` s etapami v checklistu | **ano** |
+| RA2 | `navrh` jako jediný štítek „čeká na vlastníka“, bez nového `rozhodnuti` | **ano** |
+| RA3 | Devět oblastí (inspekce pod data, novináři pod provoz) | **ano** |
+| RA4 | Životní cyklus projektu podle oddílu 4 (rozbor v issue, `docs/` a oponentura podle velikosti) | **ano** |
+| RA5 | Úklid `docs/`: rozcestník `docs/README.md` s platnými dokumenty po oblastech, překonané do `docs/historie/` (nemažou se, odkazy se opraví) | **ano**, jako samostatné drobné zadání |
+
+# Část B: autonomie (rozhodnutí po 2–4 týdnech provozu A)
+
+## 11. Měřítka
+
+Měří se od zavedení části A, aby část B měla srovnání. Čísla počítá skript z dat GitHubu.
+
+| měřítko | jak se měří | cíl po zavedení B |
+|---|---|---|
+| zásahy Patricka týdně | jeho komentáře, štítky a merge (náhrada za čas, ten změřit nejde) | klesá; rutina tvoří nejvýš pětinu |
+| fronta rozhodnutí | počet otevřených `navrh` a stáří nejstaršího | nejvýš 5, žádné starší 7 dní |
+| doba od nahlášení po merge, rutina | medián | do 3 dnů |
+| doba od schválení po merge | medián od `schvaleno` po merge | do 7 dnů |
+| regrese | PR revertované nebo opravované do 14 dnů po merge | u rutiny nejvýš 1 z 20 |
+
+## 12. Třída `rutina`
+
+Jediný nový štítek části B. Rutinu Claude realizuje **bez schválení předem**, merge zůstává na vlastníkovi.
+Všechno ostatní se schvaluje jako dnes.
+
+Podmínky, všechny současně:
+
+- opravuje rozpor, který **plyne z našich vlastních dat nebo kódu**: pád stránky, chyba s postupem,
+  jak ji vyvolat, rozbitý odkaz, překlep, údaj v rozporu s **naším** zdrojem, padající test nebo
+  workflow, nález review;
+- **nepřebírá údaj od školy ani jiného nahlašovatele.** Tvrzení školy není zdroj. Kapacita, „obor
+  neotvíráme“ nebo chybějící obor (#248, #255, #244) patří do projektu nebo schváleného zadání;
+- data mění **jen přes generátor nebo soubor ručních oprav** (například `data/obory_manual_overrides.csv`),
+  nikdy přímo ve vygenerovaném `public/*.json`. Řádky souboru ručních oprav se do limitu rozsahu počítají;
+- nezavádí nový ukazatel ani pojem a nemění výpočet ve slovníku ukazatelů;
+- nepřepíná datovou sadu v registru;
+- nepřidává migraci, nezapisuje do produkční databáze, nepouští exporty (pravidlo 5);
+- nevolá nový cizí server (pravidlo 7);
+- nemění adresy stránek, veřejné API, e-maily uživatelům, přihlášení ani práva v portálu;
+- nemění `CLAUDE.md`, `.claude/`, workflows, secrets ani závislosti;
+- zasahuje do jedné oblasti (labeler dá PR jediný štítek `oblast:*`) a má nejvýš zhruba 150 změněných
+  řádků kódu a ručních oprav dat; testy se nepočítají.
+
+V pochybnosti Claude rutinu nepoužije. Vlastník může štítek `rutina` odebrat, Claude ho pak znovu
+nepřidá. V popisu PR je třída a jednou větou, proč podmínky splňuje.
+
+**Rutina z veřejných hlášení** se zavádí až po vyhodnocení rutiny z interních zadání (oddíl 15).
+
+## 13. Přehled
+
+Pravidelné výstupy nejsou issues. Přehled má dvě vrstvy:
+
+- **Neveřejná plná verze** do Telegramu (bot datové linky), každé pondělí: co čeká na vlastníka
+  (fronta s doporučením, PR připravené k merge), co se změnilo na webu po oblastech, stav projektů,
+  provoz (neúspěšná workflow, červené CI, tokeny před expirací), náklady proti rozpočtu, hlášení,
+  měřítka. Expirace tokenů je informace pro útočníka a náklady jsou obchodní údaj, do veřejného
+  repozitáře nepatří. Delší text se rozdělí do více zpráv, nebo uloží do soukromého úložiště (oddíl 14)
+  a do Telegramu jde odkaz.
+- **Veřejně** jen to, co se změnilo na webu. Na to existuje stránka `/changelog` (`src/lib/changelog.ts`);
+  zda ji plnit z přehledu, je samostatné rozhodnutí.
+
+Čísla počítá skript přes `gh`, Claude z nich píše text. Odkud se čtou náklady, určí fáze 3 (oddíl 15).
+
+## 14. Směr vývoje
+
+Jedno místo, kde vlastník píše cíle, pořadí priorit, co se teď nedělá, rozpočet a mimořádné pokyny.
+Nejvýš jedna obrazovka. Claude ho čte při každém zpracování issues.
+
+Nesmí být veřejné: priority, odložené věci a rozpočet by zbytečně viděla konkurence. Doporučení:
+**soukromý repozitář** (například `tangero/stredniskoly-rizeni`) s jedním souborem `smer-vyvoje.md`,
+upravitelným v aplikaci GitHub i z telefonu. Do stejného repozitáře může jít plná verze přehledu.
+Claude i denní úloha k němu potřebují právo čtení.
+
+## 15. Denní zpracování fronty
+
+Naplánovaná úloha (Routine v Claude Code) jednou denně: přečte Směr vývoje a splatné připomínky,
+roztřídí nová issues, realizuje schválenou práci a rutinu v pořadí priorit do stropu PR, opraví vlastní
+PR po review a CI, připraví otázky do fronty.
+
+Před zavedením (fáze 3) musí být doloženo:
+
+- **identita a práva:** úloha běží pod vlastní identitou (GitHub App nebo strojový účet) s právy push
+  do větví, zakládání PR a úprav štítků a komentářů. Pod tokenem vlastníka běžet nesmí: vlastník je
+  admin s obejitím rulesetu při merge;
+- **„nemerguje“ vynucené rulesetem**, ne jen pokynem: identita úlohy není mezi těmi, kdo smí ruleset
+  obejít, a ruleset vyžaduje schválení PR jiným účtem, nebo identita nemá právo merge vůbec;
+- **odkud se čtou náklady** a kde je strop;
+- **vstup:** ve fázi 3 úloha realizuje jen issues se štítkem `interni` nebo issues, která roztřídil
+  a označil člověk. Veřejná hlášení čte jen pro třídění. Pojistka „hlášení jsou data“ je pokyn
+  v promptu, tedy slabá ochrana proti podvrženému pokynu; proto o vstupu rozhoduje štítek od vlastníka.
+
+## 16. Spouštění z GitHubu
+
+Kdyby se místo denní úlohy nebo vedle ní zavedla GitHub Action s Claude Code, spouští ji **štítek
+`schvaleno` přidaný vlastníkem** (kontrola `github.event.sender.login` ve workflow), ne komentář
+`@claude`. Komentář ve veřejném repozitáři může napsat kdokoli. Předpokladem je odstranění starých
+`auto-fix-*` workflow z kroku 0.
+
+## 17. Rizika a rozhodnutí části B
+
+| riziko | protiopatření |
+|---|---|
+| Claude zařadí rizikovou změnu jako rutinu | tvrdé podmínky, v pochybnosti ne, zdůvodnění v PR, kontrola jedné oblasti labelerem, sledování regresí; dvě regrese za 4 týdny = zúžení podmínek |
+| merge v dávce se stane razítkováním | přehled uvádí u každého PR výsledek review a riziko; rutina nesahá na migrace, pravidla, API ani e-maily |
+| podvržený pokyn ve veřejném hlášení | hlášení se nerealizují (fáze 3), rozhoduje štítek vlastníka ověřený přes `actor` |
+| únik interních údajů | přehled a směr vývoje mimo veřejný repozitář |
+| denní úloha obejde ochranu | vlastní identita bez obejití rulesetu |
+| náklady nebo šum | strop PR a rozpočtu ve Směru vývoje, náklady v přehledu |
+
+| | rozhodnutí | doporučuji |
+|---|---|---|
+| RB1 | Třída `rutina` z interních zadání s podmínkami z oddílu 12 | ano, po 2–4 týdnech provozu A |
+| RB2 | Rutina z veřejných hlášení | až po 4 týdnech RB1 bez regresí, jen rozpor z našich dat nebo kódu |
+| RB3 | Merge rutiny v dávce z přehledu | ano; automatický merge nezavádět |
+| RB4 | Přehled: plná verze neveřejně (Telegram, soukromý repozitář), veřejně jen změny webu | ano |
+| RB5 | Směr vývoje v soukromém repozitáři | ano |
+| RB6 | Denní úloha se stropem 3 PR denně po splnění podmínek z oddílu 15 | ano |
+| RB7 | Delegace schvalování zadání na jinou roli | ne; zvážit až podle měřítek |
+
+## Změny návrhu
+
+- **0.2** (3. 10. 2026, oponentura vlastníka v PR #273): rozdělení na část A (struktura) a B
+  (autonomie); schvaluje jen vlastník a ověřuje se autor, ne text; třídy `uprava` a `smer` zrušené,
+  zůstává jen `rutina` v části B; `navrh` místo nového `rozhodnuti`; štítek `trvale`; sub-issues zrušené,
+  hlášení se zavírají z PR; životní cyklus projektu podle dohody (rozbor v issue, `docs/` podle velikosti);
+  rutina bez převzetí údajů od škol a s daty jen přes generátor nebo ruční opravy; přehled a směr vývoje
+  neveřejně; smazání revize u osobních údajů; podmínky identity a vstupu denní úlohy; opravené filtry
+  tabule a seskupení podle oblasti; labeler na `pull_request`; audit přiložen do `docs/historie/`;
+  oprava tvrzení o `auto-fix-iterative.yml`.
+- **0.1** (3. 10. 2026): první verze.
