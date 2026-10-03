@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.10b · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.11 · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Na GitHubu ani v pravidlech se zatím nic nemění.
 
 ## Shrnutí pro rozhodnutí
@@ -25,7 +25,7 @@ a výdaje, posílá týdenní přehled a hlásí jen výjimky.
 **Co tím odpadne:** schvalování drobných zadání, kontrola na preview a merge u zhruba 20 PR týdně,
 odpovídání na dotazy v issues, obnova většiny tokenů.
 
-**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA33 v oddílu 21). Část B se rozhodne
+**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA34 v oddílu 21). Část B se rozhodne
 po čtyřech týdnech provozu podle měřítek.
 
 **Zavedení po fázích podle přínosu** (oddíl 20): fáze 1 odstraní merge a kontrolu preview, fáze 2 přidá
@@ -111,9 +111,13 @@ textu nikdy.
 Do zavedení identit platí přechodné pravidlo: AI podepisuje komentáře patičkou, komentář s patičkou ani
 štítek přidaný AI se jako rozhodnutí nepočítá a automatický merge je vypnutý.
 
-**Ověřit ve fázi 1:** že cloudová relace Claude Code dokáže pro `gh` i `git push` použít token aplikace
-místo připojeného účtu vlastníka. Do ověření se počítá s tím, že AI v cloudu má práva vlastníka; proto je
-důležitý ruleset bez výjimek.
+**Podmínka aktivace autonomie (O1):** nestačí, že relace Claude Code **dokáže** použít token aplikace.
+Musí platit i opak: prostředí, ve kterém AI pracuje, **nemá k dispozici žádné přihlášení ani ovládací
+cestu účtu vlastníka** (připojený účet, token, `gh` přihlášení). Prázdný seznam výjimek v rulesetu
+adminovi nebere možnost ruleset upravit nebo vypnout; dokud má AI práva vlastníka, může ochranu změnit
+nebo přidat `schvaleno`, které brána přijme jako lidské. Administrátorský přístup zůstává jen člověku,
+odděleně. Přejímka na zkušebním repozitáři: z prostředí AI selže změna rulesetu i vytvoření štítku,
+komentáře nebo review jménem vlastníka. Do splnění se automatický merge nezapne.
 
 # Část A
 
@@ -146,10 +150,13 @@ a podmínky sloučení;** ostatní oddíly na ni odkazují, a kdyby se s ní roz
 | **L, lhůta** | drobné zadání, nový projekt z iniciativy AI v mezích mandátu, změna rozsahu projektu uvnitř mandátu (oddíl 8) | CI, review, protokol; po 48 h bez `stop` |
 | **E, etapa** | etapa projektu v dohodnutém rozsahu a mandátu (oddíl 10) | CI, review, protokol; hned po kontrolách, bez další lhůty |
 | **K, kontrolovaný** | rizikové činnosti z oddílu 5 | CI, review, protokol, **druhý klíč bez námitky**, **specifický mechanismus z oddílu 5**, upozornění vlastníkovi; po 72 h bez `stop` |
-| **H, člověk** | oddíl 3 | schvalující review nebo `schvaleno` od vlastníka |
+| **H, člověk** | oddíl 3 | schvalující review vlastníka **na aktuálním commitu**, nebo `schvaleno` vlastníka vázané na zaznamenaný rozsah (oddíl 9c); **navíc všechny technické podmínky dotčené činnosti** z ostatních řádků |
 
 Vždy platí: `stop` sloučení zablokuje **bez výjimky**. Zamrznutí ho zablokuje také, kromě incidentního
 postupu (oddíl 9b), který ruší jen kalendářní zamrznutí, nikdy `stop`.
+**Podmínky se při souběhu sčítají (O4):** lidské rozhodnutí dává oprávnění činnost provést, neruší její
+technické podmínky. Schválená H3 migrace tedy dál potřebuje větev Neonu, druhý klíč a bezpečnostní
+kontrolu; souhlas ruší nejvýš čekací lhůtu.
 **Specifický mechanismus v oddílu 5 má přednost před obecnou lhůtou režimu K:** kde řádek oddílu 5
 uvádí jinou lhůtu (například přidávající migrace hned po druhém klíči), platí ta.
 
@@ -248,6 +255,24 @@ Vždy selže při `stop` na PR nebo propojeném issue, a to i u PR se štítkem 
 na propojené issue, aby byl vidět ve frontě. Ruleset dnes vyžaduje nula schválení a tři kontroly CI;
 bez brány by identita s právem merge sloučila cokoli.
 
+**Výsledek brány nejde padělat (O3).** Ruleset vyžaduje kontrolu „Brána sloučení“ **jen od samostatné
+aplikace brány** (povinná kontrola s určeným zdrojem). Její klíč je jen v prostředí dostupném z `main`
+a nedostane ho autor ani workflow z větve. Bez toho by jiné workflow v pracovní větvi s oprávněním
+`checks: write` mohlo vydat úspěch pod stejným názvem; omezení zdroje na společnou identitu GitHub
+Actions nestačí. Výsledek se váže ke konkrétnímu PR, aktuálnímu commitu a ověřeným rozhodnutím.
+
+## 9c. Souhlas vázaný na obsah
+
+Rozhodnutí přes GitHub platí jen pro **rozsah, který vlastník viděl** (O2):
+
+- **review** se počítá jen na commitu, ke kterému bylo dáno; nový commit ho zneplatní (u PR v režimu H);
+- při přidání `schvaleno` aplikace brány uloží **otisk schvalovaného rozsahu**: oddíl „Rozsah“ v těle
+  issue (cíl, mandát, u rozesílky příjemci a text, u výdaje částka a dodavatel). Změna rozsahu otisk
+  zneplatní a věc se vrátí do fronty s `navrh`; běžné úpravy mimo oddíl „Rozsah“ souhlas nemění;
+- doklad z briefingu (oddíl 18) má otisk už dnes.
+
+Přejímka: schválit dávku A, změnit příjemce nebo text na B; B bez nového souhlasu neprojde.
+
 ## 9a. Oddělení přípravy od provedení
 
 Brána hlídá merge, ale některé účinky nastávají dřív. **Doložená cesta v dnešním kódu:** workflow
@@ -295,7 +320,9 @@ Zastavení rozesílání vypínačem a rollback ve Vercelu nejsou PR a brána je
 4. **Start a mandát:** zadání projektu vymezuje **cíl, rozpočet celého projektu** (tokeny a výdaje),
    **dopad** (dotčené oblasti a stránky, kdo změnu uvidí) a **vratnost** (co nejde vrátit revertem).
    Projekt z iniciativy AI v mezích mandátu startuje po 48 h od představení na briefingu bez `stop`
-   (režim L). Strategický projekt (H5) a **cokoli nad mandát** potřebuje `schvaleno`; teprve tehdy `navrh`.
+   (režim L). Strategický projekt (H5) a **cokoli nad mandát** potřebuje `schvaleno`. **`navrh` dostane
+   ve chvíli, kdy je podklad k rozhodnutí hotový** (O5), a ztratí ho po schválení nebo zamítnutí; tak je
+   ve frontě „Rozhoduji“ právě po dobu, kdy čeká na vlastníka.
    **Současně nejvýš 2 rozpracované projekty z iniciativy AI**; rozdělením do menších projektů nebo PR
    se limit neobchází (počítá se rozpočet a dopad, ne počet etap).
 5. **Etapy jako checklist**, jedna etapa = jedna větev `zadani/<N>-etapa-<M>-…` a jeden PR „Souvisí s #N“.
@@ -327,7 +354,9 @@ zadání (režim K), součást projektu, nebo dotaz nahlašovateli. Odpovědi na
 komunikace a dělá je AI.
 
 **Opravy údajů od škol** přijímá asistent zadání z portálu pro školy (ověřený účet) a e-mailem z domény
-školy uvedené v rejstříku škol s ověřeným odesílatelem (SPF a DKIM v pořádku). Nejdřív uloží záznam
+školy uvedené v rejstříku škol s ověřeným odesílatelem: **DMARC v pořádku se shodou domén** (O6), tedy
+doména v poli `From` je doména školy z rejstříku a SPF nebo podpis DKIM ověřily právě tuto doménu. Samotné
+„SPF pass“ a „DKIM pass“ pro jinou doménu nestačí; takový e-mail zůstává neověřeným podnětem (režim K). Nejdřív uloží záznam
 opravy do soukromého repozitáře (`opravy-skol/RRRR-MM-DD-<RED IZO>.md`: doména nebo záznam portálu,
 výsledek SPF a DKIM, co se mění; bez jmen a adres), na který se odkáže doklad v zadání. Pak založí drobné zadání:
 zápis do souboru ručních oprav se zdrojem „škola“, datem a RED IZO; dál režim L. Nový zdroj „oprava od
@@ -510,7 +539,10 @@ oddíl 3, režimy a odkazy. Cíl: nebude delší než dnes (132 řádků).
 | zátěž briefingem | počet nápadů a potvrzení na briefing, délka briefingu podle přepisu | nejvýš 3 nápady, jedno potvrzení na konci |
 | rozpočet | spotřeba podle košů | koš nápadů nejvýš 15 % |
 
-Zavádí se **podle přínosu**: nejdřív to, co odstraní nejvíc dnešní práce.
+Zavádí se **podle přínosu**: nejdřív to, co odstraní nejvíc dnešní práce. **Přejímací scénáře jsou
+podmínkou zapnutí příslušné fáze**, ne kontrolou po ní: fáze 1 se zapne až po scénářích O1 (AI nemá
+práva vlastníka), O3 (padělaný výsledek brány neprojde) a O2 (změněný rozsah bez nového souhlasu
+neprojde); příjem oprav od škol až po scénáři O6.
 
 | fáze | co dělá AI | práce vlastníka |
 |---|---|---|
@@ -563,6 +595,7 @@ ověří ho měřítka.
 | RA31 | Jeden přehled stavu s fázemi až po „ověřeno v produkci“; projekt se zavírá po ověření v produkci | **ano** |
 | RA32 | Etapy v mandátu bez lhůty (režim E); mandát projektu cílem, rozpočtem, dopadem a vratností; nejvýš 2 rozpracované projekty z iniciativy AI | **ano** |
 | RA33 | Incidentní postup při zamrznutí | **ano** |
+| RA34 | Autonomie jen v prostředí bez přihlášení vlastníka; výsledek brány jen od aplikace brány; souhlas vázaný na commit a otisk rozsahu; souběh podmínek H a K; přejímací scénáře jako podmínka zapnutí fáze | **ano** |
 
 # Část B: rozšíření podle měřítek
 
@@ -592,6 +625,11 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.11** (3. 10. 2026, kritická oponentura Codexu celé verze 0.10b): autonomie jen v prostředí bez
+  přihlášení vlastníka s negativní přejímkou (O1); souhlas na GitHubu vázaný na commit a otisk rozsahu
+  (O2, oddíl 9c); výsledek brány vydává jen samostatná aplikace brány (O3); podmínky H a K se sčítají (O4);
+  `navrh` u H5 při hotovém podkladu (O5); e-mail od školy jen s DMARC a shodou domén (O6); přejímací
+  scénáře jako podmínka zapnutí fáze; RA34.
 - **0.10b** (3. 10. 2026, kontrola vypořádání od Codexu): incident ruší jen kalendářní zamrznutí, nikdy
   `stop` (V1); překročení mandátu vždy potřebuje `schvaleno` bez ohledu na pojmenování změny (V2);
   rutina z veřejných hlášení zůstává do zavedení druhého klíče ve fázi 2 v dnešním režimu (V3);
