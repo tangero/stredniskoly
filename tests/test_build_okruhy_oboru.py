@@ -60,6 +60,13 @@ class BuildOkruhyOboruTest(unittest.TestCase):
         self.assertNotIn("jedne_skoly", verejne["okruhy"][0])
         self.assertEqual(gen.zverejnit({**popis, "zobrazit": False}), {"zobrazit": False, "okruhy": []})
 
+    def test_obor_neprozradi_prislusnost_ke_skrytemu_okruhu(self):
+        vystup = {"obory": {"A_1": {"okruh": 1}, "B_1": {"okruh": 2}}, "mesta": {"Alfa": {"okruhy": [
+            {"id": 1, "uchazecu": 50, "obory": [{"podil_prvnich_voleb_v_okruhu": 0.5, "uchazecu": 50}]}]}}}
+        self.assertEqual(len(gen.kontrola(vystup, opravit=True)), 1)
+        self.assertNotIn("okruh", vystup["obory"]["B_1"])
+        self.assertEqual(vystup["obory"]["A_1"]["okruh"], 1)
+
     def test_kontrola_potlaci_dopocitatelne_prvni_volby(self):
         # smyšlené: 20 + 21 + skrytý 9 = 50
         vystup = {"mesta": {"Alfa": {"okruhy": [{"id": 1, "uchazecu": 50, "obory": [

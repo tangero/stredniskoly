@@ -164,6 +164,12 @@ def zverejnit(popis: dict) -> dict:
 def kontrola(vystup: dict, opravit: bool = False) -> list[str]:
     """Skryté první volby okruhu nesmí jít dopočítat ze zaokrouhleného celku a podílů (review PR #284)."""
     chyby = []
+    zverejnene = {o["id"] for m in vystup["mesta"].values() for o in m["okruhy"]}
+    for k, v in vystup.get("obory", {}).items():
+        if "okruh" in v and v["okruh"] not in zverejnene:
+            chyby.append(f"obor {k}: příslušnost k okruhu, který se nezveřejňuje")
+            if opravit:
+                del v["okruh"]
     for mesto, m in vystup["mesta"].items():
         for o in m["okruhy"]:
             if o.get("zobrazit") is False or o.get("jedne_skoly"):
@@ -238,11 +244,13 @@ def main() -> None:
                             mapa, kontext, soubeh),
         "mesta": {},
     }
-    for k, v in vystup["obory"].items():
-        if k in cast:
-            v["okruh"] = cast[k]
     for mesto in mesta_prehledu():
         vystup["mesta"][mesto] = zverejnit(popis_mesta(mesto, volby, rok, predchozi, cast, n, mapa, hrany, rng))
+    # příslušnost k okruhu jen u zveřejněných okruhů; skrytý okruh nesmí prosáknout přes obor (review PR #294)
+    zverejnene = {o["id"] for m in vystup["mesta"].values() for o in m["okruhy"]}
+    for k, v in vystup["obory"].items():
+        if cast.get(k) in zverejnene:
+            v["okruh"] = cast[k]
 
     for c in kontrola(vystup, opravit=True):
         print(f"doplňkové potlačení: {c}", file=sys.stderr)
