@@ -1,10 +1,116 @@
 {
   "report_id": "GY8_600005054_2022-01-20",
   "model_id": "claude_haiku_4_5",
-  "run_started_utc": "2026-02-09T17:06:23.723367+00:00",
-  "run_finished_utc": "2026-02-09T17:06:26.253274+00:00",
+  "run_started_utc": "2026-10-02T19:41:09.063995+00:00",
+  "run_finished_utc": "2026-10-02T19:41:34.256721+00:00",
   "raw_file": "GY8_600005054_2022-01-20.raw.txt",
-  "call_error": "HTTP 402 Payment Required při volání https://openrouter.ai/api/v1/chat/completions. Odpověď: {\"error\":{\"message\":\"Insufficient credits. Add more using https://openrouter.ai/settings/credits\",\"code\":402}}",
-  "parse_error": "HTTP 402 Payment Required při volání https://openrouter.ai/api/v1/chat/completions. Odpověď: {\"error\":{\"message\":\"Insufficient credits. Add more using https://openrouter.ai/settings/credits\",\"code\":402}}",
-  "parsed_output": null
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600005054_2022-01-20",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a osmileté studium), všeobecné vzdělání, denní forma",
+      "inspection_period": "20. 1. 2022 – 25. 1. 2022",
+      "school_change_summary": "Škola si od roku 2014 udržuje stabilní počet žáků (418 žáků v 14 třídách), průběžně zlepšuje materiálně-technické zázemí a inovuje vzdělávací programy. Má status fakultní školy Přírodovědecké fakulty UK."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky a příprava na vysoké školy",
+          "detail": "Třetina maturantů prospívá s vyznamenáním, všichni žáci složili maturitu úspěšně, vysoká úspěšnost absolventů při přijetí na vysoké školy.",
+          "evidence": "\"dlouhodobě třetina maturantů prospívá s vyznamenáním, neprospívají pouze jednotlivci\" a \"vysoká úspěšnost absolventů při přijetí na vysoké školy\""
+        },
+        {
+          "tag": "Bohatá nabídka volitelných předmětů a aktivit",
+          "detail": "Pestrý výběr seminářů, mimoškolních aktivit, jazykových pobytů a mezinárodních projektů umožňuje maximální profilaci podle zájmů.",
+          "evidence": "\"pestrý výběr volitelných seminářů a mimoškolních aktivit\" a \"zapojení žáků do mezinárodních projektů dlouhodobě přispívá k podpoře jejich jazykových kompetencí\""
+        },
+        {
+          "tag": "Kvalitní materiální vybavení a bezpečnost",
+          "detail": "Nadstandardní podmínky, moderně vybavené učebny, Wi-Fi síť, relaxační zázemí, elektronické zabezpečení vstupu.",
+          "evidence": "\"Materiální podmínky školy jsou na nadstandardní úrovni\" a \"Vstup do budovy školy je zabezpečen elektronickým systémem a vrátnicí\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nižší aktivizace žáků v některých hodinách",
+          "detail": "Část vyučujících používá tradičnější přístup s menší pestrostí metod, což vede k pasivitě jednotlivých žáků.",
+          "evidence": "\"v části vyučovacích předmětů přetrvává tradicionalistické pojetí výuky s nižší mírou aktivizace žáků\""
+        },
+        {
+          "tag": "Slabší výsledky v matematice na čtyřletém gymnáziu",
+          "detail": "Výsledky žáků čtyřletého gymnázia v matematice dlouhodobě zaostávají za republikovým průměrem.",
+          "evidence": "\"Výsledky žáků čtyřletého gymnázia ve společné části maturitní zkoušky v předmětu matematika dosahují dlouhodobě nižší úrovně, než je republikový průměr\""
+        },
+        {
+          "tag": "Omezená práce s textem a kritickým myšlením",
+          "detail": "V některých předmětech chybí dostatečná práce s učebnicí a různými informačními zdroji, která by podporovala samostatnost a kritické myšlení.",
+          "evidence": "\"scházela práce s učebnicí, s odborným textem a různými informačními zdroji, která by podporovala samostatnost žáků a rozvoj jejich kritického myšlení\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje slabší žáky v matematice na čtyřletém gymnáziu, aby dosáhli lepších výsledků?",
+        "Jaké konkrétní aktivizační metody a formy výuky plánuje škola zavádět v jednotlivých předmětech?",
+        "Jak se škola vypořádá s doporučením inspekce na více formativního hodnocení a zpětné vazby během hodin?"
+      ],
+      "who_school_fits": [
+        "Talentovaní a motivovaní žáci, kteří chtějí studovat na vysoké škole a mají zájem o jazykové vzdělání",
+        "Žáci se zájmem o mezinárodní projekty, soutěže a rozšiřující vzdělávací aktivity",
+        "Žáci, kterým vyhovuje tradičnější přístup k výuce s důrazem na teoretické znalosti"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími předpoklady v matematice, zejména na čtyřletém gymnáziu",
+        "Žáci, kteří potřebují více interaktivní a aktivizující výuku s větší pestrostí metod",
+        "Žáci, kteří se lépe učí prací s textem, samostatným vyhledáváním informací a diskusí"
+      ],
+      "plain_czech_summary": "Gymnázium Elišky Krásnohorské je kvalitní škola s výbornou reputací. Žáci dosahují skvělých výsledků, zejména v maturitě a při přijetí na vysoké školy. Škola nabízí bohatou nabídku volitelných předmětů, jazykového vzdělání a mimoškolních aktivit. Materiální vybavení je nadstandardní. Inspekce však upozorňuje, že část vyučujících používá tradičnější metody s nižší aktivizací žáků. Doporučuje více formativního hodnocení, práce s textem a kritickým myšlením. Matematika na čtyřletém gymnáziu zaostává za průměrem."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě stabilní a výborný",
+        "key_numbers": [
+          "Třetina maturantů prospívá s vyznamenáním",
+          "100% úspěšnost v maturitním období 2021",
+          "Osmiletí gymnazisté dosahují nadprůměrných výsledků v češtině a angličtině"
+        ],
+        "evidence": "\"dlouhodobě třetina maturantů prospívá s vyznamenáním, neprospívají pouze jednotlivci\" a \"všichni žáci maturitní zkoušku úspěšně\" složili"
+      },
+      "absence": {
+        "trend": "Nízká a stabilní",
+        "key_numbers": [
+          "Průměr 45 omluvených hodin za pololetí",
+          "Nízký počet neomluvených hodin",
+          "Nízký výskyt rizikových projevů chování"
+        ],
+        "evidence": "\"žáci vykazovali stabilní míru absence (v průměru 45 omluvených hodin za pololetí), počet neomluvených hodin byl nízký\""
+      },
+      "support_services": [
+        "Výchovné poradenství a psychosociální intervence",
+        "Podpora žáků se speciálními vzdělávacími potřebami a žáků-cizinců",
+        "Standardní kariérové poradenství",
+        "Adaptační kurzy a sociometrie tříd pro nové žáky"
+      ],
+      "safety_climate": [
+        "Elektronické zabezpečení vstupu do budovy a vrátnice",
+        "Důsledný přístup pedagogů při dodržování nastavených pravidel",
+        "Motivační charakter výchovných opatření s převahou pochval a ocenění",
+        "Nízký výskyt rizikových projevů chování"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s vysokými školami (status fakultní školy Přírodovědecké fakulty UK)",
+        "Partnerství s francouzskou školou (mobilita žáků a učitelů)",
+        "Spolupráce s neziskovými organizacemi",
+        "Vztahy se zřizovatelem (Hlavní město Praha) na zlepšování podmínek"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní citace, čísla a příklady. Některé pasáže jsou však poměrně dlouhé a odborně formulované, což může být pro některé rodiče těžko srozumitelné.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní počty žáků s speciálními vzdělávacími potřebami nebo cizinců, takže není jasné, jak velkou skupinu tvoří.",
+        "Není specifikováno, kolik procent vyučujících se účastní dalšího vzdělávání v jednotlivých oblastech.",
+        "Chybí informace o počtu žáků, kteří se zúčastňují jednotlivých volitelných předmětů a seminářů."
+      ]
+    }
+  }
 }

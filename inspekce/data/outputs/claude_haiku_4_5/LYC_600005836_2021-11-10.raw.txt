@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "LYC_600005836_2021-11-10",
+  "school_profile": {
+    "school_type": "Soukromá obchodní akademie v Praze 9, poskytující denní a dálkové studium zakončené maturitní zkouškou",
+    "inspection_period": "10. listopadu 2021 až 12. listopadu 2021",
+    "school_change_summary": "Od inspekce v roce 2014 škola odstranila některé nedostatky v organizaci vzdělávání, zvýšila kvalifikovanost pedagogů a zlepšila materiální vybavení. Přetrvávají však problémy s účinností kontrolních mechanismů a vysokou absencí žáků, zejména v dálkovém studiu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Zahraniční praxe a jazykové dovednosti",
+        "detail": "Škola dlouhodobě organizuje zahraniční odborné praxe, které propojují jazykové a odborné kompetence s budoucí profesní orientací žáků.",
+        "evidence": "\"dlouhodobě organizované zahraniční odborné praxe podporující jazykové a odborné kompetence žáků\""
+      },
+      {
+        "tag": "Individuální přístup a flexibilní prostředí",
+        "detail": "Otevřené vzdělávací prostředí umožňuje studium podle individuálních potřeb žáků, včetně podpory pro žáky se speciálními vzdělávacími potřebami.",
+        "evidence": "\"otevřené vzdělávací prostředí, které umožňuje studium žákům podle jejich individuálních vzdělávacích potřeb\""
+      },
+      {
+        "tag": "Kvalitní materiální vybavení",
+        "detail": "Moderně vybavené učebny, kreativní aula, knihovna a bezpečnostní systém vytvářejí podnětné prostředí pro vzdělávání.",
+        "evidence": "\"Výuka probíhá v podnětném a esteticky upraveném prostředí\" s \"dostatečným počtem moderně vybavených kmenových a odborných učeben\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence a neúspěšnost v dálkovém studiu",
+        "detail": "Žáci dálkového studia vykazují výrazně vyšší absenci a neúspěšnost – 83 % žáků za pět let nedokončilo studium, pouze dvě třetiny se zkoušky zúčastní.",
+        "evidence": "\"U dálkové formy vzdělávání za poslední uzavřený pětiletý cyklus nedokončilo studium 83 % žáků\""
+      },
+      {
+        "tag": "Slabá metodická podpora začínajících učitelů",
+        "detail": "Chybí systémová metodická a didaktická podpora pro nekvalifikované a začínající pedagogy, včetně vzájemných nástechů.",
+        "evidence": "\"chybí uvádějící oborový pedagog, vzájemné náslechy a hospitace\""
+      },
+      {
+        "tag": "Nízká účinnost kontrolních mechanismů",
+        "detail": "Kontrolní systém není důsledně uplatňován, hospitace postrádají konkrétní doporučení pro zlepšení, což se projevuje v neplnění školního vzdělávacího programu.",
+        "evidence": "\"účinnost kontrolního systému je nadále nízká\" a \"Efektivitu prováděných hospitací snižuje absence konkrétních doporučení\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou důsledky pro jejich studijní výsledky?",
+      "Jakou podporu dostávají žáci dálkového studia a proč je jejich úspěšnost tak nízká?",
+      "Jak se škola vypořádává s tím, že český jazyk a matematiku vyučuje vždy jen jeden učitel?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazykové vzdělávání a zahraniční zkušenosti – škola nabízí pět cizích jazyků a pravidelné zahraniční stáže",
+      "Žáci se speciálními vzdělávacími potřebami – škola má funkční systém podpory s asistenty pedagoga a individuálními plány",
+      "Talentovaní a nadaní žáci – škola umožňuje účast v soutěžích, stážích a projektech Erasmus+"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují přísnou kontrolu docházky – absence je zde problém, zejména v dálkovém studiu",
+      "Žáci s nižší motivací – škola se spoléhá na individuální přístup, ale kontrolní mechanismy nejsou dostatečně účinné",
+      "Zájemci o dálkové studium – vysoká neúspěšnost (83 % nedokončí) a nefunkční poradenské služby pro tuto formu"
+    ],
+    "plain_czech_summary": "Obchodní akademie Praha je soukromá škola s moderním vybavením a zajímavou nabídkou jazykového vzdělávání a zahraničních praxí. Denní studium funguje dobře – žáci dosahují dobrých výsledků a mají kvalitní podporu. Problém je v dálkovém studiu, kde je velmi vysoká absence a neúspěšnost. Škola také potřebuje zlepšit kontrolu kvality výuky a lepší podporu pro začínající učitele. Respektující přístup pedagogů a individuální péče jsou plusy, ale absence a slabá kontrola jsou vážné problémy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Denní studium dosahuje lepších výsledků, dálkové studium výrazně horších",
+      "key_numbers": [
+        "Denní studium: všichni přihlášení žáci zkoušku konají, zhruba polovina prospívá s vyznamenáním",
+        "Dálkové studium: zkoušku konají v průměru dvě třetiny přihlášených, z nichž necelá polovina neprospěje",
+        "Celková úspěšnost školy je nižší než průměr skupiny oborů"
+      ],
+      "evidence": "\"Všichni přihlášení žáci denního studia zkoušku konali a dosahovali celkově lepších výsledků\" vs. \"Výrazně horších výsledků dosahují žáci dálkového studia\""
+    },
+    "absence": {
+      "trend": "Vysoká absence, zejména v dálkovém studiu a ve vyšších ročnících denního studia",
+      "key_numbers": [
+        "Běžná prezenční výuka: zhruba čtvrtina žáků nehodnocena kvůli absenci",
+        "Distanční výuka 2020/2021: absence klesla na průměr 101 omluvených hodin na žáka za rok",
+        "Třetí a čtvrtý ročník denního studia: výrazně vyšší absence"
+      ],
+      "evidence": "\"zvýšená absence žáků ve výuce, která se v období běžné prezenční výuky promítla do většího podílu nehodnocených žáků (zhruba čtvrtina)\""
+    },
+    "support_services": [
+      "Funkční poradenské služby pro denní studium: výchovná poradkyně, školní psycholog, asistenti pedagoga",
+      "Nefunkční poradenské služby pro dálkové studium",
+      "Preventivní aktivity: adaptační pobyty, sportovní kurzy, třídní výlety, zahraniční praxe"
+    ],
+    "safety_climate": [
+      "Respektující přístup pedagogů, klidná a přátelská atmosféra",
+      "Elektronický vstupní systém a dostatečná pozornost bezpečnosti",
+      "Problémy s neomluvením hodinami a pozdními příchody, řešeny výchovnými jednáními"
+    ],
+    "partnerships_practice": [
+      "Partnerské školy v Austrálii, Itálii a Německu",
+      "Spolupráce s organizacemi pro osoby zdravotně postižené",
+      "Spolupráce se sociálními partnery na kariérním poradenství",
+      "Zahraniční odborné praxe jako součást kurikula"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je podrobná a jasně strukturovaná. Jsou jasně odděleny silné stránky (zahraniční praxe, individuální přístup) od slabých (absence, nízká účinnost kontroly). Konkrétní čísla a citace podporují tvrzení. Jediný problém je, že některé pasáže jsou technické a úřednické.",
+    "uncertainty_notes": [
+      "Není jasné, jaké konkrétní volitelné předměty (např. bodystyling) jsou problematické a proč přesně neodpovídají profilu",
+      "Chybí detailní analýza, proč je dálkové studium tak neúspěšné – zda je to problém žáků, učitelů nebo systému",
+      "Není specifikováno, jak přesně se liší kvalita výuky mezi jednotlivými pedagogy a předměty"
+    ]
+  }
+}
+```

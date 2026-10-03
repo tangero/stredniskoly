@@ -2,107 +2,104 @@
 {
   "report_id": "SOS_600170853_2022-04-12",
   "school_profile": {
-    "school_type": "Střední průmyslová škola stavební s domovem mládeže a školní jídelnou",
+    "school_type": "Střední průmyslová škola stavební s obory zaměřenými na stavebnictví, truhlářství, tesařství, zednictví a uměleckou kovářskou práci",
     "inspection_period": "12. dubna až 9. května 2022",
-    "school_change_summary": "Od září 2020 škola umožňuje žákům oboru Operátor dřevařské výroby absolvovat také závěrečnou zkoušku a získat výuční list. Pokračuje zkvalitnění materiálních podmínek ve spolupráci se zřizovatelem."
+    "school_change_summary": "Od září 2020 škola umožňuje žákům oboru Operátor dřevařské a nábytkářské výroby absolvovat také závěrečnou zkoušku a získat výuční list v oboru Truhlář. Pokračuje zkvalitnění materiálních podmínek."
   },
   "for_parents": {
     "strengths": [
       {
-        "tag": "Vedení a modernizace",
-        "detail": "Ředitelka aktivně zlepšuje materiálně-technické podmínky a modernizuje areál školy.",
-        "evidence": "Vedení školy aktivně usiluje o zkvalitňování materiálních podmínek a zapojením do projektů se daří zázemí postupně modernizovat."
+        "tag": "Praktická výuka",
+        "detail": "Odborný výcvik probíhá efektivně na školních pracovištích i v reálném prostředí u partnerů s aktivním přístupem učitelů.",
+        "evidence": "Žáci byli schopni komunikovat o vykonávané práci a zdůvodnit pracovní postup."
       },
       {
         "tag": "Spolupráce s praxí",
         "detail": "Funkční systém spolupráce se sociálními partnery přispívá k získávání odborných kompetencí a profesnímu uplatnění.",
-        "evidence": "Škola je členem Hospodářské komory ČR, Asociace středních průmyslových škol a dalších institucí, je autorizovanou školou v profesních kvalifikacích."
+        "evidence": "Škola je členem Hospodářské komory ČR, Asociace středních průmyslových škol a dalších institucí."
       },
       {
-        "tag": "Praktická výuka",
-        "detail": "Odborný výcvik probíhá efektivně s aktivním přístupem učitelů a dobrou organizací.",
-        "evidence": "Výuka na pracovištích školy, stavbách i u partnerů s potřebným vybavením, žáci aktivně plnili úkoly a komunikovali o své práci."
+        "tag": "Péče o ubytované žáky",
+        "detail": "Domov mládeže vytváří pozitivní klima s podporou učení a zdravého životního stylu.",
+        "evidence": "Vychovatelé spolupracují s ostatními pedagogy a řeší problémy ubytovaných žáků."
       }
     ],
     "risks": [
       {
-        "tag": "Pasivita žáků ve výuce",
-        "detail": "Převažuje frontální výuka s dominantním postavením učitele, žáci jsou spíše pasivní.",
-        "evidence": "V mnoha hodinách převažovala frontální výuka s dominantním postavením učitele, který předával hotové poznatky, což vedlo k pasivitě žáků."
+        "tag": "Pasivní výuka",
+        "detail": "Převažuje frontální výuka s dominantním postavením učitele, žáci jsou často pasivní.",
+        "evidence": "V mnoha hodinách převažovala frontální výuka s předáváním hotových poznatků."
       },
       {
-        "tag": "Nižší úspěšnost u maturity",
-        "detail": "Výsledky maturitních zkoušek jsou nižší ve srovnání se školami podobného zaměření.",
-        "evidence": "Úspěšnost žáků u maturitních zkoušek byla od poslední inspekce spíše nižší ve srovnání se školami obdobného zaměření."
+        "tag": "Absence individualizace",
+        "detail": "Diferenciace a individualizace výuky podle potřeb žáků se využívá jen ojediněle.",
+        "evidence": "Potřebná individualizace u žáků se speciálními vzdělávacími potřebami byla zaznamenána jen ojediněle."
       },
       {
         "tag": "Vysoká absence žáků",
         "detail": "Vyšší absence včetně neomluvených absencí negativně ovlivňuje výsledky žáků.",
-        "evidence": "Neúspěšnost žáků je do jisté míry ovlivňována jejich vyšší absencí při výuce, včetně neomluvených absencí."
+        "evidence": "Neúspěšnost žáků je do jisté míry ovlivňována jejich vyšší absencí při výuce."
       }
     ],
     "questions_for_open_day": [
-      "Jak konkrétně škola podporuje žáky s vyšší absencí a jaké má nástroje k jejímu snižování?",
-      "Jaké konkrétní kroky podniká škola ke zlepšení výsledků u maturitních zkoušek?",
-      "Jak se škola zaměřuje na aktivizaci žáků a rozvoj jejich samostatnosti v hodinách?"
+      "Jak konkrétně škola podporuje žáky s vyšší absencí a jaké jsou důsledky neomluvené absence?",
+      "Jaké metody používáte k aktivizaci žáků a jak se liší výuka v jednotlivých oborech?",
+      "Jak je zajištěna individuální péče pro žáky se speciálními vzdělávacími potřebami?"
     ],
     "who_school_fits": [
-      "Žáci zaměření na praktické obory stavebnictví, truhlářství a tesařství s jasnou představou o budoucím povolání",
-      "Studenti, kteří se lépe učí praxí a potřebují propojení teorie s reálnými stavbami a pracovními procesy",
-      "Žáci ze vzdálenějších míst, kterým vyhovuje ubytování v domově mládeže se sportovními aktivitami"
+      "Žáci zaměření na praktickou činnost a řemesla, kteří se učí lépe praxí než teorií",
+      "Studenti, kteří chtějí získat kvalifikaci s možností uplatnění na trhu práce",
+      "Žáci z vzdálenějších míst, kterým vyhovuje ubytování v domově mládeže"
     ],
     "who_should_be_cautious": [
-      "Žáci, kteří potřebují více individuálního přístupu a diferenciace – ta je zatím využívána jen ojediněle",
-      "Studenti se speciálními vzdělávacími potřebami, protože individualizace ve výuce je zaznamenána jen ojediněle",
-      "Uchazeči, kteří se lépe učí aktivními metodami a diskusí – škola se na to teprve zaměřuje"
-    ]
+      "Žáci preferující aktivní a interaktivní výuku – zde převažuje frontální přístup",
+      "Studenti se speciálními vzdělávacími potřebami – individualizace je zatím nedostatečná",
+      "Žáci s tendencí k absencím – vysoká absence negativně ovlivňuje prospěch"
+    ],
+    "plain_czech_summary": "Stavební škola v Rybitví je zaměřená na praktickou přípravu v řemeslech. Silnou stránkou je kvalitní odborný výcvik v reálném prostředí a spolupráce s firmami. Slabinou je převážně pasivní frontální výuka, kde učitelé málo aktivizují žáky. Škola potřebuje zlepšit individuální přístup k žákům a lépe využívat moderní vyučovací metody. Vysoká absence některých žáků negativně ovlivňuje jejich výsledky. Domov mládeže poskytuje dobrou péči ubytovaným žákům."
   },
   "hard_facts": {
     "maturita": {
-      "trend": "Nižší úspěšnost než u srovnatelných škol",
+      "trend": "Nižší úspěšnost ve srovnání se školami podobného zaměření",
       "key_numbers": [
         "Školní rok 2020/2021: vyšší hrubá neúspěšnost u maturitních zkoušek",
-        "Žáci v jarním/podzimním termínu byli zpravidla úspěšní, nezvládli jen ojediněle",
-        "Závěrečné zkoušky: po podzimních opravách neuspěl jediný žák, třetina s vyznamenáním"
+        "Žáci v jarním/podzimním termínu byli zpravidla úspěšní",
+        "Ojedinělé případy nezvládnutí zkoušky"
       ],
-      "evidence": "Úspěšnost u maturitních zkoušek byla od poslední inspekce spíše nižší ve srovnání se školami obdobného zaměření."
+      "evidence": "Úspěšnost žáků u maturitních zkoušek byla od poslední inspekční činnosti spíše nižší ve srovnání se školami obdobného zaměření."
     },
     "absence": {
-      "trend": "Vyšší absence včetně neomluvených",
+      "trend": "Vyšší absence včetně neomluvených absencí negativně ovlivňuje výsledky",
       "key_numbers": [
-        "Vyšší absence při výuce ovlivňuje neúspěšnost žáků",
-        "Vysoký počet zameškaných hodin řešen ve výchovných komisích",
-        "Absence je jedním z faktorů ovlivňujících prospěch"
+        "Vysoký počet zameškaných hodin řešený ve výchovných komisích",
+        "Absence ovlivňuje prospěch a výsledky žáků",
+        "Škola analyzuje důvody vyšší neúčasti"
       ],
       "evidence": "Neúspěšnost žáků je do jisté míry ovlivňována jejich vyšší absencí při výuce, včetně neomluvených absencí."
     },
     "support_services": [
-      "Výchovná poradkyně koordinuje práci se žáky se speciálními vzdělávacími potřebami a nabízí konzultace pedagogům",
-      "Metodik prevence vytváří plán prevence a zajišťuje přednášky a akce v oblasti prevence",
-      "Doučování a individuální konzultace pro žáky ohrožené školní neúspěšností",
-      "Adaptační aktivity na konci školního roku pro podporu vztahů v třídě"
+      "Výchovná poradkyně koordinuje práci s žáky se speciálními vzdělávacími potřebami",
+      "Metodik prevence zajišťuje primární prevenci a preventivní programy",
+      "Doučování a individuální konzultace pro žáky ohrožené školní neúspěšností"
     ],
     "safety_climate": [
-      "Otevřená komunikace mezi vedením, žáky, pedagogy a partnery podporuje příznivé klima",
-      "Domov mládeže vytváří pozitivní přátelské prostředí nahrazující rodinné prostředí",
-      "Vychovatelé spolupracují s ostatními pedagogy a řeší problémy ubytovaných žáků",
-      "Pochvaly a kázeňská opatření jsou vhodně a smysluplně využívána"
+      "Dbáno na upevňování zásad bezpečné práce a ochrany zdraví při odborném výcviku",
+      "Domov mládeže vytváří pozitivní přátelské klima",
+      "Pochvaly a kázeňská opatření jsou vhodně využívána"
     ],
     "partnerships_practice": [
       "Členství v Hospodářské komoře ČR, Asociaci středních průmyslových škol, Cechu suchých staveb",
-      "Autorizovaná škola v profesních kvalifikacích",
-      "Spolupráce se Sdružením rodičů a přátel školy a školskou radou",
-      "Účast žáků v odborných soutěžích (SKILL, Řemeslo doma) s dobrými výsledky",
-      "Praktická výuka na stavbách, u smluvních partnerů a v reálném prostředí"
+      "Spolupráce se smluvními partnery na pracovištích pro praktický výcvik",
+      "Autorizovaná škola v profesních kvalifikacích"
     ]
   },
   "model_self_check": {
     "czech_clarity_score_1_5": 4,
-    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a citace. Některé pasáže jsou však delší a složitější, což mírně snižuje přístupnost pro laické čtenáře.",
+    "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní příklady z pozorovaných hodin a jasně identifikuje silné i slabé stránky. Doporučení jsou konkrétní a praktická.",
     "uncertainty_notes": [
-      "Přesné číselné údaje o absenci nejsou v textu uvedeny, pouze kvalitativní popis",
-      "Konkrétní procenta úspěšnosti u maturity nejsou specifikována, pouze srovnání se školami podobného zaměření",
-      "Počet začínajících učitelů bez pedagogického studia není přesně uveden"
+      "Přesné číselné údaje o úspěšnosti maturit nejsou v textu uvedeny, pouze kvalitativní popis",
+      "Není jasné, kolik procent hodin bylo pozorováno a jak reprezentativní vzorek to je",
+      "Konkrétní počty žáků se speciálními vzdělávacími potřebami (23) nejsou dále analyzovány"
     ]
   }
 }

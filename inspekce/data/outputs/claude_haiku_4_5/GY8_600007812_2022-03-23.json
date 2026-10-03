@@ -1,10 +1,113 @@
 {
   "report_id": "GY8_600007812_2022-03-23",
   "model_id": "claude_haiku_4_5",
-  "run_started_utc": "2026-02-09T17:05:59.517536+00:00",
-  "run_finished_utc": "2026-02-09T17:05:59.879889+00:00",
+  "run_started_utc": "2026-10-02T19:40:25.004381+00:00",
+  "run_finished_utc": "2026-10-02T19:40:47.663775+00:00",
   "raw_file": "GY8_600007812_2022-03-23.raw.txt",
-  "call_error": "HTTP 402 Payment Required při volání https://openrouter.ai/api/v1/chat/completions. Odpověď: {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 3200 tokens, but can only afford 2483. To increase, visit https://openrouter.ai/settings/credits and add more credits\",\"code\":402,\"metadata\":{\"provider_name\":null}},\"user_id\":\"user_2sOS2HmQoBbkXsZW2jGqr6gYIxw\"}",
-  "parse_error": "HTTP 402 Payment Required při volání https://openrouter.ai/api/v1/chat/completions. Odpověď: {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 3200 tokens, but can only afford 2483. To increase, visit https://openrouter.ai/settings/credits and add more credits\",\"code\":402,\"metadata\":{\"provider_name\":null}},\"user_id\":\"user_2sOS2HmQoBbkXsZW2jGqr6gYIxw\"}",
-  "parsed_output": null
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600007812_2022-03-23",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a osmileté obory se maturitní zkouškou)",
+      "inspection_period": "23. až 25. března 2022",
+      "school_change_summary": "Škola se od poslední inspekce zlepšila v materiálních podmínkách. Nedostatky z předchozí inspekce byly odstraněny. Naplněnost školy je stabilní (95,83 %), vzdělává 345 žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky",
+          "detail": "Žáci stabilně dosahují dobrých výsledků v průběhu i při ukončování vzdělávání, téměř polovina prospívá s vyznamenáním.",
+          "evidence": "V roce 2018/2019 průměrný prospěch 1,6, během distanční výuky 60 % s vyznamenáním."
+        },
+        {
+          "tag": "Rozvoj klíčových kompetencí",
+          "detail": "Projektová výuka a ročníkové práce účinně rozvíjejí klíčové kompetence a sociální dovednosti.",
+          "evidence": "Ročníkové práce jsou povinnou součástí hodnocení, projekty s efektivní zpětnou vazbou."
+        },
+        {
+          "tag": "Bezpečné a podporující prostředí",
+          "detail": "Ucelený systém kulturních a sportovních aktivit přispívá k prevenci rizikového chování a pozitivnímu klimatu.",
+          "evidence": "Počet pochval výrazně převyšuje počet kázeňských opatření, nízký podíl neomluvené absence."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Diferenciace pro nadané žáky",
+          "detail": "Nadaní žáci nejsou dostatečně podporováni individualizovanou výukou a náročnějšími úkoly.",
+          "evidence": "Diferenciace obsahu učiva byla uplatněna pouze ojediněle, zejména ve vztahu k nadaným žákům."
+        },
+        {
+          "tag": "Kvalita závěru hodin",
+          "detail": "Učitelé se nedostatečně věnují shrnutí a zhodnocení probraného učiva a zpětné vazbě.",
+          "evidence": "V závěru hodin se nedostatečně věnovali shrnutí a jen ojediněle využívali zpětnou vazbu."
+        },
+        {
+          "tag": "Aktivizace žáků",
+          "detail": "Méně je využívána kritické myšlení a práce s různými informačními zdroji.",
+          "evidence": "Méně zřetelná motivace k rozvíjení kritického myšlení a práci s informačními zdroji."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola individuálně podporuje nadané žáky? Existují speciální semináře nebo konzultace?",
+        "Jaké jsou konkrétní plány na zlepšení diferenciace výuky a závěrečného shrnutí hodin?",
+        "Jak se škola připravuje na vysoké školy? Jaké jsou výsledky absolventů?"
+      ],
+      "who_school_fits": [
+        "Žáci s dobrými studijními výsledky a vnitřní motivací k učení",
+        "Děti zajímající se o kulturní a sportovní aktivity",
+        "Žáci, kterým vyhovuje tradiční gymnaziální vzdělání s důrazem na všeobecný rozhled"
+      ],
+      "who_should_be_cautious": [
+        "Nadaní žáci, kteří potřebují intenzivnější individuální podporu a náročnější úkoly",
+        "Žáci vyžadující více zpětné vazby a reflexe svého pokroku",
+        "Děti, které se lépe učí aktivními metodami a diskusí než frontální výukou"
+      ],
+      "plain_czech_summary": "Gymnázium Karla Čapka v Dobříši je stabilní a dobře vedená škola s výborným zázemím. Žáci dosahují velmi dobrých výsledků, zejména v češtině a cizích jazycích. Škola nabízí bohatý program sportovních a kulturních aktivit. Hlavní výzvou je lepší podpora nadaných žáků a zefektivnění závěru vyučovacích hodin. Škola se aktivně zapojuje do života města a připravuje žáky na vysoké školy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně velmi dobrý",
+        "key_numbers": [
+          "100 % úspěšnost v posledních třech letech",
+          "7,5 % žáků po opravných zkouškách",
+          "Výsledky v češtině a cizích jazycích dlouhodobě lepší než průměr republiky"
+        ],
+        "evidence": "Maturitní zkoušku v minulých třech letech vykonali úspěšně všichni žáci závěrečných ročníků."
+      },
+      "absence": {
+        "trend": "Nízká a kontrolovaná",
+        "key_numbers": [
+          "Kolem 120 hodin na žáka v roce 2018/2019",
+          "Pokles v letech 2019/2020 a 2020/2021 (distanční výuka)",
+          "Nízký podíl neomluvené absence"
+        ],
+        "evidence": "Absence žáků se ve školním roce 2018/2019 pohybovala kolem 120 hodin na žáka, podíl neomluvené absence je nízký."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s kvalifikovanými pracovníky zajišťující výchovné poradenství",
+        "Prevence rizikového chování s aktuálními aktivitami reagujícími na stav ve škole",
+        "Individuální konzultace a doučování pro žáky ohrožené školní neúspěšností"
+      ],
+      "safety_climate": [
+        "Vhodně nastavená pravidla konstruktivní spolupráce všech účastníků vzdělávání",
+        "Vstřícný a respektující přístup učitelů k žákům",
+        "Pravidelné vyhodnocování úrazovosti a přijímání opatření k jejímu snížení"
+      ],
+      "partnerships_practice": [
+        "Účelná spolupráce se sdružením rodičů (modernizace odpočinkových prostor)",
+        "Dlouhodobá zahraniční spolupráce v rámci projektu Erasmus+",
+        "Aktivní zapojení do kulturního a společenského života města"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, obsahuje konkrétní čísla, citace a příklady. Všechna tvrzení jsou podložena důkazy z textu. Jazyk je srozumitelný a bez zbytečného úřednického stylu.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje informace o počtu učitelů nebo jejich průměrném věku",
+        "Chybí detailní údaje o finančním rozpočtu a investicích do modernizace",
+        "Nejnovější data jsou z roku 2021/2022, novější údaje nejsou k dispozici"
+      ]
+    }
+  }
 }

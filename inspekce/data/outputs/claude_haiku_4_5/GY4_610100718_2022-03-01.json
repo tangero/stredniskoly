@@ -1,10 +1,109 @@
 {
   "report_id": "GY4_610100718_2022-03-01",
   "model_id": "claude_haiku_4_5",
-  "run_started_utc": "2026-02-09T17:06:23.454485+00:00",
-  "run_finished_utc": "2026-02-09T17:06:23.630844+00:00",
+  "run_started_utc": "2026-10-02T19:40:25.378449+00:00",
+  "run_finished_utc": "2026-10-02T19:40:48.140096+00:00",
   "raw_file": "GY4_610100718_2022-03-01.raw.txt",
-  "call_error": "HTTP 402 Payment Required při volání https://openrouter.ai/api/v1/chat/completions. Odpověď: {\"error\":{\"message\":\"Insufficient credits. Add more using https://openrouter.ai/settings/credits\",\"code\":402}}",
-  "parse_error": "HTTP 402 Payment Required při volání https://openrouter.ai/api/v1/chat/completions. Odpověď: {\"error\":{\"message\":\"Insufficient credits. Add more using https://openrouter.ai/settings/credits\",\"code\":402}}",
-  "parsed_output": null
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_610100718_2022-03-01",
+    "school_profile": {
+      "school_type": "Soukromá škola Můj Projekt Mánesova - gymnázium, základní škola a mateřská škola",
+      "inspection_period": "1. až 3. března 2022",
+      "school_change_summary": "Od inspekce v 2015 výrazně vzrostl počet žáků v základním a středním vzdělávání, zvýšil se počet žáků se speciálními potřebami. Přetrvává nízká kvalifikovanost pedagogů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Angličtina na vysoké úrovni",
+          "detail": "Ucelená koncepce výuky anglického jazyka od mateřské školy s mezinárodními certifikáty motivuje žáky k zodpovědnosti za vlastní učení.",
+          "evidence": "Žáci dosahují lepšího hodnocení z angličtiny, než je průměr ČR v daném oboru."
+        },
+        {
+          "tag": "Příznivé klima a individuální přístup",
+          "detail": "Partnerská komunikace a cílená podpora přispívá k komplexnímu rozvoji dětí a žáků.",
+          "evidence": "Kázeňská opatření jsou minimalizována, škola si získává důvěru žáků a rodičů."
+        },
+        {
+          "tag": "Projektové učení a sebehodnocení",
+          "detail": "Žáci si volí témata projektů, plánují činnosti a rozvíjejí schopnost sebehodnocení.",
+          "evidence": "Projekty slouží jako nástroj rozvoje klíčových kompetencí s jasně definovanými kritérii."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Bezpečnostní nedostatky",
+          "detail": "Nesystematické vyhodnocování rizik, chybějící dohled ve vstupních prostorách, drobné závady ohrožující bezpečnost.",
+          "evidence": "Při činnostech družiny vychovatel neměl přehled o počtu účastníků, terén zahrady nebyl přehledný."
+        },
+        {
+          "tag": "Nízká kvalifikace pedagogů",
+          "detail": "Přetrvává nízký podíl pedagogů s příslušnou odbornou kvalifikací, což se projevuje v kvalitě výuky.",
+          "evidence": "V některých hodinách byla patrná chybějící odborná kvalifikace učitele, žákům se dostávalo méně kvalitního způsobu výuky."
+        },
+        {
+          "tag": "Chybí moderní vybavení",
+          "detail": "Nedostatek informačních technologií v učebnách a chybí odborné učebny pro přírodovědné předměty.",
+          "evidence": "Využívání didaktické techniky bylo zařazováno v menší míře, škola nemá odborné učebny."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá výuka anglického jazyka a jaké mezinárodní certifikáty si žáci mohou získat?",
+        "Jaké jsou plány na zlepšení bezpečnosti v prostorách školy a na školní zahradě?",
+        "Jak se škola vypořádává s nízkou kvalifikací některých pedagogů a jaké má plány na jejich vzdělávání?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o kvalitní výuku angličtiny a mezinárodní certifikáty",
+        "Děti a žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje individuální přístup a podpůrná opatření",
+        "Žáci preferující projektové učení, sebehodnocení a individualizovaný přístup k vzdělávání"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kterým záleží na moderním technologickém vybavení a odborných učebnách",
+        "Rodiny hledající školu s nejpřísnějšími bezpečnostními standardy",
+        "Žáci potřebující výuku od pedagogů s vysokou odbornou kvalifikací ve všech předmětech"
+      ],
+      "plain_czech_summary": "Škola Můj Projekt Mánesova je soukromá instituce s inovativním přístupem k vzdělávání. Její největší silou je ucelená koncepce výuky angličtiny od mateřské školy s mezinárodními certifikáty. Škola vytváří příznivé klima, individuálně přistupuje k žákům a využívá projektové učení. Mezi rizika patří bezpečnostní nedostatky, nízká kvalifikace některých pedagogů a chybějící moderní vybavení. Maturitní výsledky jsou převážně dobré, v angličtině nadprůměrné."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Převážně dobré výsledky, v angličtině nadprůměrné, v češtině podprůměrné",
+        "key_numbers": [
+          "2019/20: 4 přihlášení, 1 neprospěl z češtiny, 2 s vyznamenáním",
+          "2020/21: 0 absolventů",
+          "2021/22: 1 přihlášená žákyně"
+        ],
+        "evidence": "Žáci dosahují lepšího hodnocení z angličtiny než průměr ČR, v češtině horší. Nízké počty žáků v závěrečných ročnících."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [],
+        "evidence": "Zpráva se absence věnuje minimálně, zaměřuje se na bezpečnost a klima."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovným poradcem, školním metodikem prevence, speciálním pedagogem a psychologem",
+        "Individuální vzdělávací plány pro žáky se speciálními potřebami, pravidelně vyhodnocované",
+        "Doučování nad rámec vyučovacích hodin a individuální konzultace"
+      ],
+      "safety_climate": [
+        "Psychosociální klima je příznivé, partnerská komunikace, minimalizovaná kázeňská opatření",
+        "Riziko: nesystematické vyhodnocování fyzických bezpečnostních rizik",
+        "Riziko: chybějící dohled ve vstupních prostorách v ranních a odpoledních hodinách"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se vzdělávací organizací poskytující koncepci Škola Můj Projekt",
+        "Externí mentoring a semináře pro pedagogy",
+        "Pravidelné konzultace s rodiči, triády, třídní schůzky a setkání vedení se rodiči"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně rozlišuje silné a slabé stránky. Některé pasáže jsou však dlouhé a úřednicky formulované, což snižuje přístupnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna, nelze posoudit trend absence žáků",
+        "Konkrétní počty žáků v jednotlivých ročnících gymnázia nejsou jasné, zmíněno jen 18 žáků celkem",
+        "Detaily o kvalifikaci pedagogů nejsou specifikovány - není jasné, kolik procent nemá kvalifikaci"
+      ]
+    }
+  }
 }

@@ -1,8 +1,8 @@
 {
   "report_id": "GY8_600006115_2023-11-15",
   "model_id": "claude_haiku_4_5",
-  "run_started_utc": "2026-02-09T16:34:35.915116+00:00",
-  "run_finished_utc": "2026-02-09T16:34:58.008471+00:00",
+  "run_started_utc": "2026-10-02T19:39:37.538206+00:00",
+  "run_finished_utc": "2026-10-02T19:40:01.429360+00:00",
   "raw_file": "GY8_600006115_2023-11-15.raw.txt",
   "call_error": null,
   "parse_error": null,
@@ -10,105 +10,109 @@
     "report_id": "GY8_600006115_2023-11-15",
     "school_profile": {
       "school_type": "Osmileté a čtyřleté gymnázium, denní forma vzdělávání",
-      "inspection_period": "15.–16. listopadu a 20.–21. listopadu 2023",
-      "school_change_summary": "Od inspekce v 2016: mírný pokles žáků v osmiletém gymnáziu, výrazný nárůst v čtyřletém oboru. Od 2023/24 škola navyšuje počty tříd čtyřletého gymnázia. Rozšířeno poradenské pracoviště o školního psychologa. Kvalita vzdělávání zůstává vysoká."
+      "inspection_period": "15. 11. 2023 – 16. 11. 2023 a 20. 11. 2023 – 21. 11. 2023",
+      "school_change_summary": "Od inspekce v 2016: mírný pokles žáků v osmiletém gymnáziu, výrazný nárůst v čtyřletém oboru. K 30. 9. 2023 celkem 606 žáků (455 osmiletých, 151 čtyřletých) v 21 třídách. Rozšířeno poradenské pracoviště o školního psychologa, navýšen pedagogický sbor."
     },
     "for_parents": {
       "strengths": [
         {
           "tag": "Výborné výsledky maturit",
-          "detail": "38–48 % vyznamenání, jednotliví neprospěli, nadprůměrné výsledky v češtině a cizích jazycích.",
-          "evidence": "Žáci dosáhli nadprůměrných výsledků ve srovnání s ČR v didaktickém testu z češtiny a jazyků."
+          "detail": "38–48 % vyznamenání, jednotliví neprospěli; nadprůměrné výsledky v češtině a cizích jazycích oproti republice.",
+          "evidence": "Maturitní období 2023: žáci dosáhli nadprůměrných výsledků v didaktickém testu z českého jazyka, angličtiny, němčiny i francouzštiny."
         },
         {
           "tag": "Bezpečné a podnětné prostředí",
-          "detail": "Moderní vybavení, tři tělocvičny, odborné učebny, kamery, elektronické zabezpečení.",
-          "evidence": "Pavilonový typ s bezbariérovým přístupem, esteticky podnětné prostředí, nízký počet kázeňských opatření."
+          "detail": "Nízká absence, minimální kázeňská opatření, kamerový systém, elektronické zabezpečení vchodu.",
+          "evidence": "Stabilní a nízká míra absence žáků, zanedbatelný počet neomluvených hodin, ojedinělé rizikové chování."
         },
         {
           "tag": "Bohatá mimoškolní nabídka",
-          "detail": "Kroužky, soutěže, charitativní akce, mezinárodní programy, studijní zájezdy.",
-          "evidence": "Zapojení do mezinárodních programů přispívá k všestrannému rozvoji osobnosti žáků."
+          "detail": "Sportovní, badatelské, jazykové kroužky, orchestr, sborový zpěv, charitativní akce.",
+          "evidence": "Rozmanitá zájmová činnost podporující všestranný rozvoj osobnosti a sociální kompetence žáků."
         }
       ],
       "risks": [
         {
-          "tag": "Méně aktivní zapojení žáků v některých hodinách",
-          "detail": "Část výuky stále využívá transmisivní přístup s nižší interakcí a nerovnoměrným zapojením.",
-          "evidence": "Převaha frontální výuky, menší pestrost metod, absence didaktického závěru v některých hodinách."
+          "tag": "Transmisivní přístup v některých hodinách",
+          "detail": "Část vyučujících stále používá tradičnější metody s nižší interakcí a zapojením žáků.",
+          "evidence": "Převaha frontální výuky, nižší míra aktivizace žáků a jejich zapojení do evaluačních aktivit v části výuky."
         },
         {
-          "tag": "Nedostatečná práce s informačními zdroji",
-          "detail": "Žáci nemají dostatek příležitostí k samostatnému kritickému vyhodnocování informací.",
-          "evidence": "Méně časté zařazování práce s různými informačními zdroji ve výuce."
+          "tag": "Slabší práce s informačními zdroji",
+          "detail": "Žáci nedostatečně trénují samostatné kritické vyhodnocování různých zdrojů.",
+          "evidence": "Méně časté zařazování práce s různými informačními zdroji včetně jejich samostatného kritického vyhodnocování."
         },
         {
-          "tag": "Slabší rozvoj řečových dovedností v cizích jazycích",
-          "detail": "Vyučující v dostatečné míře nevyužívají menší počty žáků k rozvoji interaktivních řečových dovedností.",
-          "evidence": "V hodinách cizích jazyků nedostatečně podporován rozvoj interaktivních řečových dovedností."
+          "tag": "Rozdíl mezi osmiletým a čtyřletým oborem",
+          "detail": "Žáci osmiletého studia dosahují zpravidla lepších výsledků než čtyřletého gymnázia.",
+          "evidence": "Z podrobnější analýzy je zřejmé, že žáci osmiletého studia vykazovali zpravidla lepší výsledky."
         }
       ],
       "questions_for_open_day": [
-        "Jak konkrétně škola podporuje samostatné myšlení a kritické hodnocení informací?",
-        "Jaké jsou zkušenosti s přechodem žáků z osmiletého na čtyřleté gymnázium a jak se jim daří?",
-        "Jak se škola vypořádává s rozdíly ve výsledcích mezi osmiletým a čtyřletým oborem?"
+        "Jak konkrétně škola podporuje žáky čtyřletého gymnázia, aby dosahovali stejné úrovně jako osmiletého?",
+        "Jaké konkrétní projekty a soutěže nabízíte pro rozvoj kritického myšlení a práce s informacemi?",
+        "Jak se škola připravuje na přijetí na vysoké školy a jaké má úspěšnost?"
       ],
       "who_school_fits": [
-        "Žáci s dobrými výsledky ze základní školy, kteří chtějí kvalitní všeobecné vzdělání a přípravu na vysokou školu",
-        "Děti zajímající se o mimoškolní aktivity, soutěže a mezinárodní projekty",
-        "Žáci z Středočeského kraje – dobrá dopravní dostupnost"
+        "Motivovaní žáci se zájmem o všeobecné vzdělání a vysokoškolské studium",
+        "Děti, které oceňují bezpečné prostředí, jasné pravidla a strukturu",
+        "Žáci zajímající se o mimoškolní aktivity, soutěže a mezinárodní projekty"
       ],
       "who_should_be_cautious": [
-        "Žáci, kteří potřebují více interaktivní a aktivizující výuku – část hodin je stále tradičnější",
-        "Děti se slabšími jazykovými dovednostmi – rozvoj řečových dovedností v cizích jazycích není v některých hodinách dostatečně podporován",
-        "Žáci, kteří se hlásí do čtyřletého oboru – dosahují horších výsledků než osmiletí, ačkoliv škola na to reaguje"
-      ]
+        "Žáci preferující více praktické a aktivní vyučování – část hodin je stále tradičnější",
+        "Děti, které potřebují intenzivnější individuální podporu – čtyřleté gymnázium má horší výsledky",
+        "Žáci se slabší základní přípravou – přijímací zkoušky jsou selektivní"
+      ],
+      "plain_czech_summary": "Gymnázium Českolipská je kvalitní školou s výborným zázemím a bezpečným prostředím. Žáci dosahují nadprůměrných výsledků, zejména v maturitách. Silnou stránkou je bohatá mimoškolní nabídka a funkční poradenské služby. Vedení školy je koncepční a otevřené. Slabší je, že část vyučujících stále používá tradičnější metody s menší aktivizací žáků. Žáci čtyřletého gymnázia dosahují horších výsledků než osmiletého. Škola se snaží tyto rozdíly eliminovat."
     },
     "hard_facts": {
       "maturita": {
-        "trend": "Stabilně vysoká úspěšnost",
+        "trend": "Stabilně vysoká úspěšnost s nadprůměrnými výsledky",
         "key_numbers": [
           "38–48 % vyznamenání v maturitním období",
           "Jednotliví neprospěli",
           "Nadprůměrné výsledky v češtině a cizích jazycích oproti ČR"
         ],
-        "evidence": "Více než třetina žáků nahradila zkoušku z cizího jazyka mezinárodním certifikátem. Vysoká úspěšnost absolventů při přijetí na vysoké školy."
+        "evidence": "Maturitní období 2023: žáci dosáhli nadprůměrných výsledků v didaktickém testu z českého jazyka, angličtiny, němčiny i francouzštiny. Více než třetina žáků nahradila zkoušku z cizího jazyka mezinárodním certifikátem."
       },
       "absence": {
-        "trend": "Stabilně nízká",
+        "trend": "Stabilně nízká s minimálními problémy",
         "key_numbers": [
-          "Nízký počet neomluvených hodin",
-          "Zanedbatelný počet neomluvených absencí"
+          "Stabilní a nízká míra absence",
+          "Zanedbatelný počet neomluvených hodin",
+          "Ojedinělé rizikové chování"
         ],
-        "evidence": "Nastavené preventivní mechanismy jsou funkční a přispívají k eliminaci rizikového chování. Stabilní a nízká míra absence žáků."
+        "evidence": "Nastavené preventivní mechanismy jsou funkční a přispívají k eliminaci rizikového chování žáků, což dokládá nízký počet ukládaných kázeňských opatření."
       },
       "support_services": [
         "Školní psycholog (nově rozšířeno)",
-        "Výchovná poradkyně a poradenský tým",
+        "Výchovná poradkyně a tým školního poradenského pracoviště",
         "Doučování a individuální konzultace pro žáky s rizikem neúspěchu",
-        "Spolupráce se školskými poradenskými zařízeními",
+        "Spolupráce se školskými poradenským zařízeními",
         "Kariérové poradenství s testy profesní orientace"
       ],
       "safety_climate": [
-        "Nízký počet ukládaných kázeňských opatření",
-        "Bezpečné prostředí – kamery, elektronické zabezpečení, dohled recepčního",
-        "Adaptační a preventivní programy v průběhu celého vzdělávacího cyklu",
-        "Ojedinělé rizikové chování řešeno ve spolupráci s rodiči"
+        "Kamerový systém ve vybraných vnitřních i vnějších prostorách",
+        "Dohled recepčního na vchodu budovy",
+        "Elektronické zabezpečení vchodu",
+        "Adaptační a sportovní kurzy pro nové žáky",
+        "Tematicky zaměřené programy primární prevence"
       ],
       "partnerships_practice": [
         "Fakultní škola Pedagogické fakulty a Přírodovědecké fakulty Univerzity Karlovy",
         "Spolupráce s vysokými školami a kulturně vzdělávacími institucemi",
-        "Mezinárodní projekty umožňující mobilitu žáků a učitelů",
-        "Zapojení absolventů do kariérového poradenství"
+        "Účast v mezinárodních projektech",
+        "Partnerství s absolventy školy pro kariérové poradenství",
+        "Spolupráce s externími odborníky na prevenci a adaptaci"
       ]
     },
     "model_self_check": {
       "czech_clarity_score_1_5": 4,
-      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však formulovány úřednicky a vyžadují pozorné čtení.",
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Chybí však více konkrétních čísel o absenci a chování žáků.",
       "uncertainty_notes": [
-        "Zpráva nespecifikuje, jaký podíl hodin měl transmisivní přístup – není jasné, zda jde o 10 % nebo 50 % výuky",
-        "Není uvedeno, kolik žáků čtyřletého oboru dosahuje horších výsledků – pouze obecné tvrzení",
-        "Chybí konkrétní příklady slabších stránek v hodinách cizích jazyků"
+        "Není jasné, jaké konkrétní metody škola používá k eliminaci rozdílů mezi osmiletým a čtyřletým oborem",
+        "Chybí informace o počtu žáků, kteří neprospěli v jednotlivých ročnících",
+        "Není specifikováno, kolik procent vyučujících používá transmisivní přístup"
       ]
     }
   }
