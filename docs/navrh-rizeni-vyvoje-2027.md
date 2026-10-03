@@ -1,310 +1,327 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.5 · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.6 · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Na GitHubu ani v pravidlech se zatím nic nemění.
 
 Podklad: audit [Oblasti, projekty a etapy na GitHubu](historie/github-oblasti-audit-2026-10-03.md)
 (3. 10. 2026). Z něj návrh přebírá soupis oblastí s cestami v kódu, nalezené duplikáty a zařazení
 otevřených issues. Model ve třech úrovních z auditu (oblast jako trvalé issue → projekt jako sub-issue
-→ etapy) návrh ruší a nahrazuje štítky (RA1). Čtyři kola oponentury jsou v PR #273.
+→ etapy) návrh ruší a nahrazuje štítky (RA1). Oponentury a doplňky jsou v PR #273.
 
 ## 1. Cíl a princip
 
-Patrick určuje směr a priority a rozhoduje výjimky. Opravy, drobné úpravy, etapy schválených projektů
-a praktické detaily dělá AI od zadání po nasazení. Patrick přitom má přehled, na čem se pracuje, jak se
-to vyvíjí a v jakém stavu projekt je.
+Patrick určuje směr a rozhoduje jen to, co AI rozhodnout nesmí nebo nemá. Všechno ostatní dělá AI
+od zadání po nasazení, včetně migrací, nových dat a výdajů do limitu. Patrick přitom má přehled, na čem
+se pracuje, jak se to vyvíjí a v jakém stavu projekt je.
 
-**Vlastník projektu výslovně přijímá vyšší riziko výměnou za méně lidských vstupů** (zadání k verzi 0.4).
+**Vlastník projektu výslovně přijímá vyšší riziko a větší pravomoci AI výměnou za méně lidských vstupů**
+(zadání k verzím 0.4 a 0.6). Jedinou výslovnou výjimkou je rozesílání nevyžádaných e-mailů a informací,
+které schvaluje vlastník.
+
 Princip:
 
-- **Lidská brána předem zůstává jen tam, kde se chyba nedá vrátit nebo kde jde o směr:** tvrdé hranice
-  (oddíl 3) a schválení projektu.
-- **Všude jinde je pojistkou** veto v lhůtě, automatická brána sloučení (oddíl 5), rychlé vrácení
-  (revert, rollback ve Vercelu) a přehled po faktu.
-- **Pravidla vynucuje ruleset a automatické kontroly**, ne jen pokyny v promptu.
+- **Člověk rozhoduje pět druhů věcí** (oddíl 3). Ostatní rozhoduje AI s mechanismem úměrným riziku.
+- **Pojistky jsou mimo AI:** ruleset a brána sloučení, limit karty v bance, záloha databáze v Neonu,
+  stropy v kódu. AI je nemůže přesvědčit ani obejít.
+- **Druhý klíč místo lidského veta:** nezávislý AI kontrolor smí zastavit rizikovou změnu (oddíl 6).
+  Vlastník veto má, ale nemusí lhůty sledovat.
+- **Rychlé vrácení** (revert, rollback ve Vercelu, obnova databáze k okamžiku) a přehled po faktu.
 
 Části:
 
-- **Část A, ke schválení hned** (oddíly 2–17).
-- **Část B, podle měřítek** (konec dokumentu): další rozšíření autonomie.
+- **Část A, ke schválení hned** (oddíly 2–20).
+- **Část B, podle měřítek** (konec dokumentu).
 
 ## 2. Role a identity
 
-| kdo | identita | dělá | nedělá |
-|---|---|---|---|
-| **Patrick** (vlastník projektu) | účet vlastníka | píše Směr vývoje, schvaluje projekty a věci za tvrdými hranicemi (schvalující review nebo `schvaleno`), veto `stop`, maže revize s osobními údaji | neschvaluje opravy ani drobná zadání, neověřuje na preview, nemerguje běžnou práci, netřídí |
-| **Eduarda** (AI asistent) | strojový účet (například `eduarda-prijimacky`), právo zápisu, dvoufázové ověření, token jen na tento repozitář | přijímá hlášení e-mailem a z portálu, píše zadání a oponentury | neschvaluje, nemerguje |
-| **Claude Code** | GitHub App (například `prijimacky-ai[bot]`), jen tento repozitář, tokeny na hodinu; interaktivně i v denní úloze a Actions | třídí, realizuje, review, ověření na preview, merge přes bránu, přehled | nepřidává `schvaleno`, `zamitnuto` ani `stop`, neschvaluje review |
-| **automatika** | `GITHUB_TOKEN`, `PROJECT_TOKEN` | štítky oblastí, brána sloučení, CI, tabule | – |
+| kdo | identita | dělá |
+|---|---|---|
+| **Patrick** (vlastník projektu) | účet vlastníka | Směr vývoje, rozhodnutí z oddílu 3, volitelně veto `stop`, jednorázové nastavení |
+| **Eduarda** (AI asistent) | **strojový účet** (například `eduarda-prijimacky`): spolupracovník s právem zápisu, ne admin, dvoufázové ověření aplikací, fine-grained token jen na tento repozitář | přijímá hlášení e-mailem a z portálu, píše zadání a oponentury |
+| **Claude Code** | **GitHub App** (například `prijimacky-ai[bot]`): jen tento repozitář, vybraná práva, tokeny na hodinu; **všude**, i při práci na zavolání (pomocný skript vygeneruje token do `GH_TOKEN`), v denní úloze i v Actions | třídí, realizuje, review, ověření na preview, merge přes bránu, přehled, provoz |
+| **Druhý klíč** | workflow v Actions s jiným modelem než Claude Code | nezávisle kontroluje rizikové PR a smí přidat `stop` (oddíl 6) |
+| **automatika** | `GITHUB_TOKEN` | štítky oblastí, brána sloučení, CI, tabule |
 
-**Dvě oddělené identity AI** (RA6): strojový účet pro asistenta zadání (podmínky GitHubu povolují jeden
-strojový účet na člověka) a GitHub App pro Claude Code. Claude Code používá instalační token aplikace
-i při práci na zavolání, takže obě AI zůstanou rozlišitelné bez druhého strojového účtu nebo značky
-původu, kterou by AI mohla sama změnit. Identity jsou předpokladem celé části A: brána sloučení podle nich pozná,
-kdo issue založil a kdo dal schválení. Ani jedna nesmí obcházet ruleset.
+**Dvě oddělené identity AI** (RA6). Kdyby Claude Code a Eduarda sdíleli strojový účet, brána by nepoznala,
+kdo zadání založil. Claude by pak mohl z veřejného hlášení založit „interní“ zadání, které projde lhůtou
+(problém T3 z oponentury). Strojový účet je jen jeden (podmínky GitHubu povolují jeden na člověka),
+proto Claude Code používá aplikaci. Nepohodlí pomocného skriptu nese AI, ne člověk.
+
+**Ruleset bez výjimek** (RA15). Seznam těch, kdo smí ochranu `main` obejít, je **prázdný, i pro vlastníka**.
+Merge pustí jen povinné kontroly a brána sloučení. Důvod: relace Claude Code v cloudu dnes jedná přes
+připojený účet vlastníka, který je admin a smí ruleset obejít. Dokud výjimka existuje, má ji každá AI,
+která pod tím účtem běží. Vlastník schvaluje PR od identit AI review (nejsou jeho), v nouzi dočasně upraví
+ruleset; úprava zůstane v historii.
 
 **Za rozhodnutí se počítá jen štítek, review nebo komentář z účtu vlastníka.** Brána i Claude ověřují
 autora (`user.login`) a u štítku toho, kdo ho přidal (`actor` v timeline). Podle textu nikdy.
-Do zavedení identit platí přechodné pravidlo: AI podepisuje komentáře patičkou, komentář s patičkou
-ani štítek přidaný AI se jako rozhodnutí nepočítá a automatický merge je vypnutý (oddíl 16, krok 2).
+Do zavedení identit platí přechodné pravidlo: AI podepisuje komentáře patičkou, komentář s patičkou ani
+štítek přidaný AI se jako rozhodnutí nepočítá a automatický merge je vypnutý.
+
+**Ověřit v kroku 1:** že cloudová relace Claude Code dokáže pro `gh` i `git push` použít token aplikace
+místo připojeného účtu vlastníka. Do ověření se počítá s tím, že AI v cloudu má práva vlastníka; proto je
+důležitý ruleset bez výjimek.
 
 # Část A
 
-## 3. Tvrdé hranice
+## 3. Co rozhoduje člověk
 
-Tvrdá hranice je seznam cest a činností, které **brána sloučení bez schvalujícího review vlastníka
-nepustí** (oddíl 5) a které AI bez `schvaleno` nezačne dělat:
+Jen těchto pět druhů rozhodnutí:
 
-| oblast | cesty a činnosti |
-|---|---|
-| databáze | `db/migrace/`, zápis do produkční databáze, exporty z ní (pravidlo 5) |
-| cizí servery | nové síťové volání (pravidlo 7, mlčení souhlasem není) |
-| e-maily uživatelům | `src/lib/novinky-*`, `src/lib/portal-email.ts`, `src/app/api/novinky/` (cron rozesílá odběratelům 2× denně) |
-| přihlášení a portál | `src/app/api/portal*`, `src/lib/portal-*`, `src/app/admin/`, osobní údaje |
-| nasazení a crony | `vercel.json`, `scripts/vercel-deploy.sh`, `next.config.ts` |
-| adresy a vyhledávače | `src/app/robots.ts`, `public/sitemap.xml`, přesměrování, smazání nebo přejmenování stránky (`src/app/**/page.tsx`) |
-| pravidla a automatika | `CLAUDE.md`, `.claude/`, `.github/`, secrets |
-| závislosti | `package.json`, `package-lock.json`, `requirements*.txt` |
-| data a registr | `public/stav_datovych_sad.json` (přepnutí sad), nový ukazatel ve slovníku ukazatelů |
-| náklady | nová placená služba, API nebo vyšší tarif |
-| směr | nový projekt (štítek `projekt`) |
+| | rozhodnutí | proč člověk |
+|---|---|---|
+| H1 | **Rozesílání nevyžádaných e-mailů a informací:** oslovení škol (pozvánky do portálu), dopisy pořadatelům veletrhů, tiskové zprávy a oslovení novinářů, jakákoli zpráva lidem, kteří si o ni neřekli | výslovná podmínka vlastníka; reputační a právní riziko (obchodní sdělení), nevratné |
+| H2 | **Uvolnění pravomocí AI:** změna brány sloučení, rulesetu, CODEOWNERS, práv identit AI, pravidel v `CLAUDE.md`, která hranice rozšiřují | AI by si jinak rozšiřovala vlastní práva |
+| H3 | **Právní závazky vůči třetím stranám:** nový zpracovatel osobních údajů nebo nová kategorie osobních údajů, zdroj za přihlášením, se smlouvou nebo nejasnou licencí, podmínky užití se závazkem | odpovědnost provozovatele (GDPR, licence) nese vlastník, ať rozhodla AI nebo ne |
+| H4 | **Výdaje nad limit karty a roční závazky** | finanční riziko nad nastavený strop |
+| H5 | **Směr vývoje a strategické projekty:** cíle, priority, nové publikum, partnerství, nový produkt | o směru rozhoduje vlastník |
 
-Odeslaný e-mail, vypadnutí z indexu vyhledávače nebo zápis do databáze revert nevrátí, proto tu lhůta
-mlčení neplatí.
+Plus jednorázové nastavení (oddíl 19). Dávku H1 AI připraví celou (příjemci, text, ukázky, odhad dopadu)
+a vlastník ji schválí jedním klepnutím.
 
-## 4. Štítky
+## 4. Režimy rozhodování AI
 
-| štítek | význam |
-|---|---|
-| `projekt` | konečná práce s cílem a etapami (oddíl 8); jediné, co jde sloupci tabule |
-| `oblast:<slug>` (9×) | trvalá část produktu (oddíl 11); issue má právě jednu oblast, PR jednu nebo víc |
-| `rutina` | oprava, kterou AI sloučí bez lhůty (oddíl 6) |
-| `stop` | veto vlastníka: AI práci zastaví, brána nic nepustí; přidává jen vlastník |
-| `trvale` | průběžná issue; vyřazená z tabule a třídění |
+Všechno mimo oddíl 3 rozhoduje AI v jednom ze čtyř režimů. Režim určuje brána podle cest v PR
+(`.github/rezimy.yml`) a podle typu činnosti:
 
-Beze změny zůstávají `interni`, `schvaleno`, `zamitnuto`, `k-overeni`, `pripominka`, `nova-data`
-a veřejné `bug-report`, `portal-skoly`, `feature-request`.
+| režim | kdy | podmínky sloučení nebo provedení |
+|---|---|---|
+| **R, rutina** | oprava rozporu z vlastních dat nebo kódu (oddíl 7) | CI, review, protokol z preview; hned (z veřejného hlášení po 24 h) |
+| **L, lhůta** | drobné zadání, etapa schváleného projektu (oddíl 8) | CI, review, protokol; po 48 h bez `stop` |
+| **K, kontrolovaný** | rizikové činnosti z oddílu 5 | CI, review, protokol, **druhý klíč bez námitky**, **specifický mechanismus z oddílu 5**, upozornění vlastníkovi; po 72 h bez `stop` |
+| **H, člověk** | oddíl 3 | schvalující review nebo `schvaleno` od vlastníka |
 
-**`navrh` znamená „čeká na vlastníka“** (RA2): zadání nebo otázka, kterou musí rozhodnout vlastník
-(za tvrdou hranicí, projekt, zadání z veřejného hlášení). Samostatný štítek `rozhodnuti` nevzniká.
-`tabule-schvaleno.yml` zůstane beze změny.
+Vždy platí: `stop` a zamrznutí sloučení zablokují (oddíl 9).
 
-## 5. Brána sloučení
+## 5. Rozbor rozhodnutí a mechanismy
 
-Nový workflow **„Brána sloučení“**, povinná kontrola v rulesetu **u každého PR**. Spouští se na
-`pull_request` (otevření, push, štítky), `pull_request_review` a jednou za hodinu (kvůli lhůtám).
-U PR od identit AI projde jen v jednom z případů:
+Riziko špatného rozhodnutí: **N** nízké, **S** střední, **V** vysoké. Typ: **R** reputační, **F** finanční,
+**D** ztráta času nebo dat, **P** ztracená příležitost.
 
-| případ | podmínky |
-|---|---|
-| **schváleno vlastníkem** | existuje schvalující review od účtu vlastníka na aktuálním commitu |
-| **rutina** | štítek `rutina`; žádná cesta z tvrdých hranic; jediný štítek `oblast:*`; nejvýš 150 změněných řádků mimo testy; protokol z preview (oddíl 9) bez nesplněného kritéria; u rutiny z veřejného hlášení PR starší 24 h |
-| **drobné zadání nebo etapa po lhůtě** | propojené issue má `interni`; založila ho identita asistenta nebo vlastník, nebo má `schvaleno` od vlastníka (zadání z veřejného hlášení a projekt); žádná cesta z tvrdých hranic; protokol z preview; PR připravený k merge déle než 48 h |
+| # | rozhodnutí | riziko | režim | mechanismus a limity |
+|---|---|---|---|---|
+| 1 | migrace a zápis do produkční DB (`db/migrace/`, `scripts/*-migrace.mjs`) | D **V**, R S | K | nejdřív na větvi databáze v Neonu (kopie produkce): porovnání počtů řádků a schématu, opakované spuštění; přidávající změny (`if not exists`) po druhém klíči hned, mazající a přepisující jen s bodem obnovy a limitem dotčených řádků; před spuštěním na produkci záznam času pro obnovu k okamžiku |
+| 2 | exporty z produkce do repozitáře (`portal:export`, `veletrhy:export`) | N | R | jen čtou z produkce; AI je smí pustit kdykoli |
+| 3 | nový cizí server, nová data | R S, F N | K | politika přístupu: `robots.txt`, podmínky užití přečtené a shrnuté AI, bez přihlášení, bez osobních údajů, nejvýš 1 dotaz za sekundu, User-Agent s kontaktem, denní strop dotazů, konec při 429; ohlášení do issue zůstává (pravidlo 7) a nahrazuje schválení; státní otevřená data (MŠMT, CERMAT, ČŠI) jako R; zdroje se závazkem jsou H3 |
+| 4 | placená služba, API, vyšší tarif | F S | K | virtuální karta s tvrdým měsíčním limitem a limitem na platbu; rozpočet ve Směru vývoje; odůvodnění v issue; výdaj se zapíše do Fakturoidu; nevyužité předplatné AI do 30 dnů zruší; nad limit H4 |
+| 5 | vyžádané e-maily: potvrzení odběru, přihlašovací odkaz, novinky odběratelům (`src/lib/novinky-*`, `portal-email.ts`, `src/app/api/novinky/`) | R **V** (nevratné, tisíce adres) | K | kouřová zkouška (`novinky-kourova-zkouska.ts`), odeslání na testovací schránku, porovnání vykresleného e-mailu se starou verzí, rozpočet odesílání (`novinky-rozpocet.ts`); první rozeslání po změně jen na 5 % příjemců s kontrolou před zbytkem (**ověřit, že to odesílač umí, jinak doplnit**) |
+| 6 | nevyžádané e-maily a informace | R **V** | H1 | AI připraví dávku, vlastník schválí |
+| 7 | portál, přihlášení, osobní údaje (`src/app/api/portal*`, `src/lib/portal-*`, `src/app/admin/`) | R **V**, právní **V** | K | bezpečnostní review (`security-review`) a druhý klíč, automatické testy přihlášení a práv, skener závislostí; nová kategorie osobních údajů nebo zpracovatel je H3 |
+| 8 | nasazení a crony (`vercel.json`, `next.config.ts`, `scripts/vercel-deploy.sh`) | D S, F S | K | AI odhadne náklady změny; cron, který rozesílá e-maily, spadá pod řádek 5 |
+| 9 | adresy a SEO (přesměrování, smazání nebo přejmenování stránky, `robots.ts`, `public/sitemap.xml`) | P **S** | K | automat ověří přesměrování 301 u každé zrušené adresy, porovná sitemap a z Matomo zjistí návštěvnost dotčených adres; pod prahem návštěvnosti jako L |
+| 10 | pravidla, workflows, brána, práva AI (`CLAUDE.md`, `.claude/`, `.github/`) | **V** | H2 / L | CODEOWNERS na bránu, `rezimy.yml`, ruleset a pravidla o pravomocích (povinné review vlastníka); ostatní úpravy pravidel, skills a workflows jako L |
+| 11 | závislosti (`package*.json`, `requirements*.txt`) | D S, bezpečnost S | L / K | bezpečnostní aktualizace Dependabotu, AI projde changelog, jen verze starší 7 dnů; patch a minor L, major K |
+| 12 | přepnutí datové sady v registru | R **V** (rodiče rozhodují podle čísel) | K | kontroly datové linky, srovnání rozdělení hodnot s loňskem, vzorky proti zdroji naslepo, náhled na preview; jen mimo zamrznutí |
+| 13 | nový ukazatel nebo změna výpočtu | R S | K | zápis do slovníku včetně toho, co ukazatel neříká, oponentura druhým klíčem, statistická kontrola |
+| 14 | nový projekt | P S, D S | L / H5 | AI navrhuje projekty a hodnotí je podle Směru vývoje, návštěvnosti, hlášení a sezóny i s odhadem nákladů; projekt do 3 etap odpovídající prioritám jako L; strategické H5 |
+| 15 | zadání z veřejného hlášení | R S | K | povinné vyvolání chyby nebo ověření proti zdroji, limit hlášení na autora, klasifikace spamu a podvržených pokynů druhým klíčem |
+| 16 | opravy údajů od škol | R S | L | oddíl 12 |
+| 17 | osobní údaje ve veřejném issue | R **V**, právní S | R | AI issue smaže (GraphQL `deleteIssue`) a založí očištěnou kopii s odkazem; **ověřit, jaké právo k tomu aplikace potřebuje**; když admin, úzká samostatná aplikace jen na mazání, jinak upozornění vlastníkovi |
+| 18 | obnova tokenů | D S | – | tokeny aplikace se obnovují samy; zbývá token strojového účtu (expirace v přehledu) a `PROJECT_TOKEN`, `CSI_PR_TOKEN` nahradit tokenem aplikace |
+| 19 | zamrznutí v kritických dnech | R S | R | AI nastaví z kalendáře přijímaček (`prijimacky-2027.ics`) a návštěvnosti |
+| 20 | parametry autonomie (lhůty, limity rutiny) | D N | R | AI je upravuje podle měřítek v daném rozsahu (lhůta L 24–72 h, rutina 100–300 řádků); mimo rozsah H2 |
+| 21 | Směr vývoje | P **V** | H5 | AI jednou za čtvrtletí navrhne aktualizaci z dat; bez reakce platí stávající |
 
-Brána vždy selže, když PR nebo propojené issue nese `stop`, nebo když je nastavené **zamrznutí**
-(proměnná repozitáře `ZAMRZNUTI_OD`/`ZAMRZNUTI_DO`, nastavuje vlastník, například kolem 1. 3. a výsledků
-1. kola). PR vlastníka (bez identity AI) brána pouští beze změny.
+**Kde zůstává největší skutečné riziko:** vyžádané e-maily (5), protože chybu v rozesílce nic nevrátí;
+přepnutí sad v sezóně (12), protože automat nezachytí chybu ve zdroji samotném; nová data (3), protože
+stížnost školy na stahování poškodí vztah se školami víc než technická chyba.
 
-Teprve brána zajišťuje, že AI sloučí jen to, co smí. Ruleset dnes vyžaduje nula schválení a tři kontroly
-CI; bez brány by identita s právem merge sloučila cokoli.
+## 6. Druhý klíč
 
-## 6. Rutina
+Nezávislý AI kontrolor jako workflow v Actions: **jiný model než Claude Code**, jiný prompt, bez kontextu
+autora. Projde každý PR v režimu K a zadání z veřejného hlášení a vrátí verdikt. Při námitce přidá `stop`
+s odůvodněním. Dva různé modely se nemýlí stejně a nepodlehnou stejnému podvrženému pokynu.
 
-**Co je rutina** (vše současně, hranice kontroluje brána):
+- `stop` smí odebrat jen ten, kdo ho přidal, nebo vlastník. Brána to kontroluje v timeline.
+- Claude Code na námitku reaguje opravou; druhý klíč pak posoudí novou verzi.
+- Náklady druhého klíče jdou do rozpočtu (řádek 4); při vyčerpání se režim K zastaví, nepouští.
 
-- opravuje rozpor, který plyne z našich vlastních dat nebo kódu: pád stránky, chyba s postupem
-  vyvolání, rozbitý odkaz, překlep, údaj v rozporu s naším zdrojem, padající test, nález review;
-- údaj od školy převezme jen cestou z oddílu 10;
+## 7. Rutina (režim R)
+
+- opravuje rozpor, který plyne z našich vlastních dat nebo kódu: pád stránky, chyba s postupem vyvolání,
+  rozbitý odkaz, překlep, údaj v rozporu s naším zdrojem, padající test, nález review;
 - data mění jen přes generátor nebo soubor ručních oprav (například `data/obory_manual_overrides.csv`),
   nikdy přímo ve vygenerovaném `public/*.json`;
 - nezavádí nový ukazatel ani pojem;
-- leží mimo tvrdé hranice, v jedné oblasti, do 150 řádků.
+- v jedné oblasti, do 150 řádků mimo testy, bez cest režimů K a H.
 
-**Postup:** třídění → oprava → PR → CI, review, protokol z preview → brána → **Claude sloučí sám**
-(RA7). Rutina z veřejného hlášení čeká 24 h na veto. Text hlášení je jen popis chyby: Claude ji musí
-sám vyvolat nebo ověřit proti našemu zdroji a mění jen chybné místo.
+Postup: třídění → oprava → PR → CI, review, protokol z preview → brána → Claude sloučí sám (RA7).
+Z veřejného hlášení po 24 h. Text hlášení je jen popis chyby: Claude ji musí sám vyvolat nebo ověřit
+proti našemu zdroji a mění jen chybné místo.
 
-## 7. Drobné zadání: veto nad hotovým výsledkem
+## 8. Drobné zadání a etapy (režim L)
 
-Interní zadání bez `projekt` mimo tvrdé hranice, které rutinou není (nový text nebo blok na stránce,
-úprava filtru, nový sloupec, položka slovníku pojmů pro existující údaj):
+Interní zadání bez `projekt`, které rutinou není (nový text nebo blok, úprava filtru, nový sloupec,
+položka slovníku pojmů), a etapy schválených projektů:
 
-1. Claude ho **rovnou realizuje**, bez čekání na plán.
-2. PR s protokolem z preview a snímky dá issue `k-overeni`. Od té chvíle běží **48 h na veto** (`stop`).
+1. Claude realizuje hned.
+2. PR s protokolem z preview a snímky dá issue `k-overeni`; běží 48 h na veto.
 3. Po lhůtě brána PR pustí a Claude sloučí (RA8).
 
-Vlastník posuzuje hotový výsledek se snímky, ne plán. Lidský krok je nula, veto zůstává.
+## 9. Brána sloučení
 
-**Zadání z veřejného hlášení** (založené identitou Claude Code) potřebuje výslovné `schvaleno` od
-vlastníka; brána to pozná podle autora issue. Mlčení u něj neplatí.
+Workflow **„Brána sloučení“**, povinná kontrola v rulesetu u každého PR. Spouští se na `pull_request`
+(otevření, push, štítky), `pull_request_review` a jednou za hodinu (lhůty). Určí režim podle cest
+(`.github/rezimy.yml`, chráněno CODEOWNERS) a podle propojeného issue a pustí PR jen při splnění
+podmínek režimu z oddílu 4. Původ zadání pozná podle autora issue: založené strojovým účtem asistenta
+nebo vlastníkem je interní, založené aplikací Claude Code z hlášení je režim K.
 
-## 8. Projekty
+Vždy selže při `stop` na PR nebo propojeném issue a při zamrznutí (proměnné repozitáře
+`ZAMRZNUTI_OD`/`ZAMRZNUTI_DO`). Ruleset dnes vyžaduje nula schválení a tři kontroly CI; bez brány by
+identita s právem merge sloučila cokoli.
 
-Projekt vlastník schvaluje vždy výslovně. Životní cyklus (RA4):
+## 10. Projekty
+
+Životní cyklus (RA4):
 
 1. **Nápad:** issue `[Zadání]` se štítky `interni`, `projekt`, `oblast:<slug>`, bez `navrh`.
-2. **Rozbor** v komentářích téhož issue. Dokument v `docs/` jen u velkých věcí.
-3. **Zadání přepsané do těla issue**, oponentura volitelná. Teprve teď `navrh`.
-4. **`schvaleno`** (jen vlastník).
-5. **Etapy jako checklist.** Jedna etapa = jedna větev `zadani/<N>-etapa-<M>-…` a jeden PR „Souvisí s #N“.
+2. **Rozbor** v komentářích téhož issue; dokument v `docs/` jen u velkých věcí.
+3. **Zadání přepsané do těla issue**, oponentura volitelná.
+4. **Start:** projekt do 3 etap, který odpovídá prioritám ve Směru vývoje, startuje po 48 h bez `stop`
+   (režim L). Strategický projekt (H5) potřebuje `schvaleno`; teprve tehdy dostane `navrh`.
+5. **Etapy jako checklist**, jedna etapa = jedna větev `zadani/<N>-etapa-<M>-…` a jeden PR „Souvisí s #N“.
    Změna zadání = úprava těla + komentář „Změna zadání: co a proč“ + řádek v changelogu na konci těla.
-6. **Etapa se slučuje jako drobné zadání:** protokol z preview, 48 h na veto, pak brána a merge.
-   Etapa, která sahá za tvrdou hranici, potřebuje schvalující review.
+6. **Etapa se slučuje v režimu podle cest** (L, nebo K).
 7. **Poslední PR nese `Closes #N`.**
-8. **Opravy po vydání:** komentář + PR „Souvisí s #N“, případně jako rutina.
+8. **Opravy po vydání:** komentář + PR „Souvisí s #N“.
 9. **Druhá verze** je nový projekt.
 
 Žádná nová issues pro úpravu zadání, oponenturu, opravu po merge ani další etapu. Sub-issues se
 nepoužívají; hlášení, která projekt opravuje, se vypíšou v těle projektu a PR je zavírá přes `Closes`.
 
-## 9. Ověření na preview dělá AI
+## 11. Ověření na preview dělá AI
 
-- Claude po nasazení preview projde každé kritérium „Hotovo když“ v prohlížeči (Playwright) na šířce
-  telefonu i počítače.
-- Do PR zapíše **protokol** (kritérium, adresa, splněno / nesplněno / nejde ověřit) a u vizuálních
-  změn snímky před a po jako artefakt běhu nebo v komentáři PR, ne v repozitáři.
-- Protokol je podmínkou brány.
+Claude po nasazení preview projde každé kritérium „Hotovo když“ v prohlížeči (Playwright) na šířce
+telefonu i počítače a do PR zapíše protokol (kritérium, adresa, splněno / nesplněno / nejde ověřit),
+u vizuálních změn snímky před a po jako artefakt běhu nebo v komentáři PR. Protokol je podmínkou brány.
+Předpoklady (krok 1): secret `VERCEL_AUTOMATION_BYPASS_SECRET`, Playwright a přístup na `*.vercel.app`
+v prostředí denní úlohy.
 
-Předpoklady (krok 1, práce vlastníka): obcházecí token ochrany preview `VERCEL_AUTOMATION_BYPASS_SECRET`
-jako secret (je to změna secrets, tedy tvrdá hranice) a ověření, že prostředí denní úlohy má Playwright
-a přístup na `*.vercel.app`.
-
-## 10. Hlášení, opravy od škol a osobní údaje
+## 12. Hlášení, opravy od škol a osobní údaje
 
 **Veřejná hlášení:** při třídění `oblast:<slug>`, duplikáty Claude zavře s odkazem a rozhodne: rutina,
-zadání (vyžaduje `schvaleno`), součást projektu, nebo dotaz nahlašovateli.
+zadání (režim K), součást projektu, nebo dotaz nahlašovateli. Odpovědi nahlašovatelům jsou vyžádaná
+komunikace a dělá je AI.
 
-**Opravy údajů od škol** jsou největší objem práce. Asistent zadání je přijímá:
+**Opravy údajů od škol** přijímá asistent zadání z portálu pro školy (ověřený účet) a e-mailem z domény
+školy uvedené v rejstříku škol s ověřeným odesílatelem (SPF a DKIM v pořádku). Založí drobné zadání:
+zápis do souboru ručních oprav se zdrojem „škola“, datem a RED IZO; dál režim L. Nový zdroj „oprava od
+školy“ se ve stejné dávce zapíše do `docs/zdroje-dat.md`. E-maily ani jména odesílatelů do repozitáře
+nepatří (pravidlo 4).
 
-- z **portálu pro školy** (ověřený účet školy),
-- **e-mailem** z domény školy uvedené v rejstříku škol, s ověřeným odesílatelem (SPF a DKIM v pořádku).
+**Osobní údaje ve veřejném issue:** řádek 17 v oddílu 5.
 
-Z takové opravy asistent založí drobné zadání: zápis do souboru ručních oprav se zdrojem „škola“, datem
-a RED IZO. Dál jde cestou z oddílu 7 (realizace, 48 h veto, merge). Údaj od školy tím má doložený zdroj.
-Nový zdroj „oprava od školy“ se ve stejné dávce zapíše do `docs/zdroje-dat.md`. E-maily ani jména
-odesílatelů se do repozitáře nedostanou (pravidlo 4).
+## 13. Štítky
 
-**Osobní údaje ve veřejném issue:** Claude upraví tělo (ponechá roli nebo RED IZO), do komentáře
-napíše, co odstranil, a pošle vlastníkovi okamžité upozornění se žádostí o **smazání revize z historie
-úprav**; přes API to nejde.
+| štítek | význam |
+|---|---|
+| `projekt` | konečná práce s cílem a etapami; jediné, co jde sloupci tabule |
+| `oblast:<slug>` (9×) | trvalá část produktu; issue má právě jednu oblast, PR jednu nebo víc |
+| `rutina` | režim R |
+| `stop` | veto vlastníka nebo druhého klíče; odebrat ho smí jen ten, kdo ho přidal, nebo vlastník |
+| `trvale` | průběžná issue; vyřazená z tabule a třídění |
 
-## 11. Oblasti jako štítky
+Beze změny `interni`, `schvaleno`, `zamitnuto`, `k-overeni`, `pripominka`, `nova-data`, `bug-report`,
+`portal-skoly`, `feature-request`. **`navrh` znamená „čeká na vlastníka“** (RA2), tedy jen věci z oddílu 3.
 
-Devět oblastí (RA3), cesty v kódu podle auditu:
+## 14. Oblasti jako štítky
 
-| štítek | oblast | změna proti auditu |
-|---|---|---|
-| `oblast:detail` | Detail školy a oboru | – |
-| `oblast:prehledy` | Vyhledávání a přehledy | – |
-| `oblast:simulator` | Simulátor a Kde stojím | – |
-| `oblast:dojezdy` | Dojezdové časy | – |
-| `oblast:novinky` | Novinky ze škol a e-mailový odběr | – |
-| `oblast:veletrhy` | Veletrhy | – |
-| `oblast:portal` | Portál pro školy | – |
-| `oblast:data` | Data, termíny a inspekce ČŠI | přidaná inspekce |
-| `oblast:provoz` | Provoz, obsah, SEO, pro novináře a proces | přidaní novináři |
+Devět oblastí (RA3), cesty v kódu podle auditu: `oblast:detail` (Detail školy a oboru), `oblast:prehledy`
+(Vyhledávání a přehledy), `oblast:simulator` (Simulátor a Kde stojím), `oblast:dojezdy` (Dojezdové časy),
+`oblast:novinky` (Novinky ze škol a e-mailový odběr), `oblast:veletrhy`, `oblast:portal`, `oblast:data`
+(Data, termíny a inspekce ČŠI), `oblast:provoz` (Provoz, obsah, SEO, pro novináře a proces).
+Issues dostanou oblast při třídění, PR přes `actions/labeler` na `pull_request`.
 
-Issues dostanou oblast při třídění, PR automaticky přes `actions/labeler` na `pull_request`
-(`.github/labeler.yml`). Issue nese oblast, kde se věc projevila, PR všechny dotčené oblasti.
-
-## 12. Tabule
+## 15. Tabule a fronta rozhodnutí
 
 - **Auto-add:** `is:issue is:open -label:trvale`; vypnout „Auto-add sub-issues to project“; archivovat
   26 karet PR.
-- **Pohled „Rozhoduji“:** `is:open label:navrh,k-overeni,stop -label:trvale`. Ukazuje, co čeká na
-  rozhodnutí, a co se po lhůtě veta samo sloučí.
-- **Pohled „Projekty“:** `label:projekt` podle Status (Návrh → Oponentura → Schváleno →
-  Ke schválení merge → Hotovo).
-- **Oblasti:** filtr `label:oblast:detail` apod.; Projects neumí seskupovat podle štítků.
+- **Pohled „Rozhoduji“:** `is:open label:navrh,stop -label:trvale`. Jen věci z oddílu 3 a zastavené změny.
+- **Pohled „Běží“:** `is:open label:k-overeni` (co se po lhůtě samo sloučí).
+- **Pohled „Projekty“:** `label:projekt` podle Status.
 
-## 13. Fronta rozhodnutí
+Otázka na vlastníka má pevnou podobu (rozhodnutí, možnosti, doporučení, dopad, co se stane bez odpovědi).
+Bez odpovědi se u věcí z oddílu 3 neprovede nic; u ostatních AI rozhodne sama a otázku vlastníkovi
+vůbec neklade.
 
-```
-**Rozhodnutí:** jedna věta, co se rozhoduje
-**Možnosti:** A) … B) … (případně C)
-**Doporučuji:** A, protože …
-**Dopad:** co se stane po A / po B, náklady, rizika
-**Když nerozhodneš do <datum>:** provedu A / nic se neprovede
-```
-
-Po 48 h se doporučení provede jen u otázky v interním issue založeném vlastníkem nebo asistentem
-a mimo tvrdé hranice. U issue z veřejného hlášení, za tvrdými hranicemi a u projektů se bez odpovědi
-neprovede nic. Platí jen odpověď vlastníka.
-
-## 14. Přehled
+## 16. Přehled
 
 Pravidelné výstupy nejsou issues a nic interního není veřejně.
 
-- **Denní souhrn** do Telegramu (jen když je co hlásit): co se dnes sloučilo, **co se zítra sloučí
-  po lhůtě veta** (drobná zadání, etapy, rutina z hlášení) s odkazy, co čeká na rozhodnutí.
-- **Týdenní přehled** v pondělí do Telegramu, delší verze do soukromého repozitáře (oddíl 15): co AI
-  sloučila (s odkazem na revert), změny webu po oblastech, stav projektů, provoz (neúspěšná workflow,
-  červené CI, tokeny před expirací), náklady, hlášení a opravy od škol, měřítka.
-- **Okamžitě:** červené CI na `main`, selhání datové linky, osobní údaje ve veřejném issue, revert.
-- **Veřejně** jen změny webu na `/changelog` (`src/lib/changelog.ts`), plní ho Claude při merge.
+- **Denní souhrn** do Telegramu, jen když je co hlásit: co se sloučilo, co se zítra sloučí po lhůtě,
+  co zastavil druhý klíč, co čeká na rozhodnutí z oddílu 3, výdaje.
+- **Týdenní přehled** v pondělí do Telegramu, delší verze do soukromého repozitáře: sloučené změny
+  s odkazem na revert, změny webu po oblastech, projekty, provoz (neúspěšná workflow, červené CI,
+  expirace tokenu strojového účtu), náklady a výdaje kartou, nová data, hlášení a opravy od škol, měřítka.
+- **Okamžitě:** červené CI na `main`, selhání datové linky, migrace na produkci, osobní údaje ve
+  veřejném issue, revert, výdaj nad 80 % limitu.
+- **Veřejně** jen změny webu na `/changelog`.
 
-## 15. Směr vývoje
+## 17. Směr vývoje
 
 Soubor `smer-vyvoje.md` v **soukromém repozitáři** (například `tangero/stredniskoly-rizeni`), upravitelný
-z telefonu: cíle k datu, pořadí priorit, co se teď nedělá, rozpočet (měsíční strop, strop PR denně),
-zamrznutí (přepíše se do proměnné repozitáře pro bránu), mimořádné pokyny. Claude ho čte při každém
-zpracování a řadí podle něj práci. **Hlavní nástroj, kterým vlastník řídí.**
+z telefonu: cíle k datu, pořadí priorit, co se teď nedělá, rozpočet (měsíční strop výdajů, strop PR denně),
+mimořádné pokyny. Zamrznutí AI navrhne z kalendáře a zapíše sem. Claude ho čte při každém zpracování.
+Je to hlavní nástroj, kterým vlastník řídí.
 
-## 16. Denní úloha, pravidla, měřítka a zavedení
+## 18. Denní úloha a pravidla
 
-**Denní úloha** (Routine v Claude Code, identita „vývoj“): přečte Směr vývoje a splatné připomínky,
-roztřídí issues, realizuje rutinu, drobná zadání a etapy do stropu PR, ověří na preview, sloučí, co
-pustí brána, opraví vlastní PR po review a CI, pošle souhrn. Náklady čte z vyúčtování Claude.
-Spouštění z GitHubu jen štítkem od vlastníka (`github.event.sender.login`), nikdy komentářem `@claude`.
+**Denní úloha** (Routine v Claude Code pod aplikací): přečte Směr vývoje a splatné připomínky, roztřídí
+issues, realizuje práci do stropu PR, ověří na preview, sloučí, co pustí brána, opraví vlastní PR,
+pošle souhrn. Spouštění z GitHubu jen štítkem od vlastníka (`github.event.sender.login`), nikdy
+komentářem `@claude`.
 
-**Zkrácení `CLAUDE.md`** (RA9): postupy do skills v `.claude/skills/` (třídění a rutina, ověření na
-preview, kontroly před PR, připomínky, přehled, fronta rozhodnutí). V `CLAUDE.md` zůstanou role, tvrdé
-hranice, štítky a odkazy. Cíl: nebude delší než dnes (132 řádků).
+**Změny pravidel v `CLAUDE.md`:** pravidla 1 (realizace), 3 (merge), 5 (produkční databáze) a 7 (cizí
+servery) nahradí režimy z oddílů 3–5; pravidlo 4 (osobní údaje) zůstává. **Zkrácení `CLAUDE.md`** (RA9):
+postupy do skills v `.claude/skills/` (třídění, rutina, ověření na preview, migrace přes větev Neonu,
+politika přístupu k cizím serverům, výdaje, kontroly před PR, přehled). V `CLAUDE.md` zůstanou role,
+oddíl 3, režimy a odkazy. Cíl: nebude delší než dnes (132 řádků).
 
-**Měřítka** od začátku. AI dosud psala přes účet vlastníka bez patičky, výchozí stav proto jde spolehlivě
-spočítat jen z merge a štítků `schvaleno`:
+## 19. Měřítka a zavedení
 
 | měřítko | jak se měří | cíl |
 |---|---|---|
-| lidské zásahy | merge a `schvaleno` z účtu vlastníka týdně; po zavedení identit všechny jeho akce | pokles aspoň o polovinu |
-| fronta | otevřené `navrh`, stáří nejstaršího | nejvýš 5, žádné starší 7 dní |
+| lidské zásahy | merge, `schvaleno` a review z účtu vlastníka týdně | pokles aspoň o tři čtvrtiny |
+| fronta | otevřené `navrh`, stáří nejstaršího | nejvýš 3, žádné starší 7 dní |
 | doba od hlášení po nasazení, rutina | medián | do 2 dnů |
-| doba od zadání po merge, drobné zadání | medián | do 3 dnů |
-| regrese | PR revertované nebo opravované do 14 dnů | nejvýš 1 z 10 |
-
-Při dvou regresích za čtyři týdny se zúží podmínky rutiny nebo prodlouží lhůta; automatický merge
-se nevypíná.
-
-**Zavedení:**
+| doba od zadání po merge, režim L | medián | do 3 dnů |
+| regrese | PR revertované nebo opravované do 14 dnů, podle režimu | nejvýš 1 z 10 |
+| zastavení druhým klíčem | podíl PR v režimu K se `stop` | sleduje se, cíl se určí po 4 týdnech |
 
 | krok | co dělá AI | práce vlastníka |
 |---|---|---|
-| 0, hned | upravit #53, zavřít duplikáty #216, #228, #229, #251, PR s odstraněním `auto-fix-issues.yml`, `auto-fix-iterative.yml` (jde ručně spustit s právy zápisu) a `notify-new-issue.yml` | smazat revizi #53, merge PR |
-| 1, týden 1 | PR s pravidly a skills, labelerem a branou sloučení; štítky; třídění; odebrat `navrh` vedle `schvaleno` (#234, #244); přepsat projekty; výchozí měřítka | merge PR; strojový účet a GitHub App bez obcházení rulesetu (asi 20 min); brána jako povinná kontrola; povolit auto-merge; secret pro preview; soukromý repozitář a Směr vývoje; pohledy v UI (asi 60–90 min jednou) |
-| 2, týden 2 | přepnout Clauda a asistenta na vlastní identity, zapnout automatický merge, skript přehledu, ověření na preview, denní úloha, příjem oprav od škol | – |
-| 3, kdykoli | úklid `docs/` (RA5) jako rutina | – |
+| 0, hned | upravit #53, zavřít duplikáty #216, #228, #229, #251, PR s odstraněním `auto-fix-issues.yml`, `auto-fix-iterative.yml` a `notify-new-issue.yml` | smazat revizi #53, merge PR |
+| 1, týden 1 | PR s pravidly a skills, `rezimy.yml`, labelerem, branou a CODEOWNERS; štítky; třídění; výchozí měřítka; postup nastavení krok za krokem | strojový účet, aplikace, ruleset bez výjimek s bránou a CODEOWNERS, auto-merge, secret pro preview, virtuální karta s limitem, ověřit tarif Neonu (doba obnovy k okamžiku), soukromý repozitář a Směr vývoje, pohledy v UI (asi 2 h jednou) |
+| 2, týden 2 | ověřit identitu aplikace v cloudu, přepnout identity, zapnout automatický merge, přehled, ověření na preview, denní úloha, příjem oprav od škol, druhý klíč | – |
+| 3, týden 3 | režim K pro migrace, nová data, výdaje a e-maily (po ověření rozesílání po vlnách) | – |
 
-Po kroku 2 zbývá vlastníkovi: Směr vývoje, schválení projektů, zadání z veřejných hlášení a věcí za
-tvrdými hranicemi, veto a mazání revizí s osobními údaji.
+Po kroku 3 zbývá vlastníkovi: Směr vývoje a rozhodnutí z oddílu 3. Odhad: desítky minut měsíčně;
+ověří ho měřítka.
 
-**Rozhodnutí části A:**
+## 20. Rozhodnutí části A
 
 | | rozhodnutí | doporučuji |
 |---|---|---|
-| RA1 | Zrušit model ve třech úrovních, štítky `oblast:*` a `projekt` s etapami v checklistu | **ano** |
+| RA1 | Zrušit model ve třech úrovních, štítky `oblast:*` a `projekt` | **ano** |
 | RA2 | `navrh` jako jediný štítek „čeká na vlastníka“ | **ano** |
 | RA3 | Devět oblastí | **ano** |
-| RA4 | Životní cyklus projektu podle oddílu 8 | **ano** |
-| RA5 | Úklid `docs/` | **ano**, jako rutina |
-| RA6 | Strojový účet pro asistenta zadání a GitHub App pro Claude Code, obojí bez obcházení rulesetu | **ano**, krok 1 |
-| RA7 | Rutina včetně veřejných hlášení s automatickým merge přes bránu (hlášení po 24 h) | **ano** |
-| RA8 | Drobná zadání a etapy realizovat hned a sloučit po 48 h bez veta | **ano** |
+| RA4 | Životní cyklus projektu podle oddílu 10 | **ano** |
+| RA5 | Úklid `docs/` jako rutina | **ano** |
+| RA6 | Strojový účet pro asistenta zadání, GitHub App pro Claude Code všude | **ano** |
+| RA7 | Rutina včetně veřejných hlášení s automatickým merge | **ano** |
+| RA8 | Drobná zadání a etapy po 48 h bez veta | **ano** |
 | RA9 | Zkrácení `CLAUDE.md` přes skills | **ano** |
-| RA10 | Ověření na preview dělá AI s protokolem | **ano** |
-| RA11 | Přehled neveřejně, Směr vývoje v soukromém repozitáři, veřejně `/changelog` | **ano** |
+| RA10 | Ověření na preview dělá AI | **ano** |
+| RA11 | Přehled neveřejně, Směr vývoje v soukromém repozitáři | **ano** |
 | RA12 | Denní úloha se stropem 5 PR denně | **ano** |
-| RA13 | Brána sloučení jako povinná kontrola u každého PR, se zamrznutím | **ano** |
-| RA14 | Opravy od škol z portálu a z ověřeného e-mailu školy cestou drobného zadání | **ano** |
+| RA13 | Brána sloučení jako povinná kontrola se zamrznutím | **ano** |
+| RA14 | Opravy od škol z portálu a ověřeného e-mailu | **ano** |
+| RA15 | Ruleset bez výjimek, i pro vlastníka | **ano** |
+| RA16 | Člověk rozhoduje jen oddíl 3, ostatní režimy R, L, K | **ano** |
+| RA17 | Druhý klíč s jiným modelem a právem `stop` | **ano** |
+| RA18 | Výdaje virtuální kartou do limitu, evidence ve Fakturoidu | **ano**, limit určí vlastník |
+| RA19 | Migrace přes větev Neonu v režimu K | **ano**, po ověření tarifu |
+| RA20 | Nová data podle politiky přístupu v režimu K | **ano** |
 
 # Část B: rozšíření podle měřítek
 
@@ -312,37 +329,36 @@ Po čtyřech týdnech provozu části A:
 
 | | rozhodnutí | podmínka |
 |---|---|---|
-| RB1 | Lhůta veta 24 h místo 48 h u drobných zadání a etap | regrese nejvýš 1 z 10, fronta bez položek starších 2 dnů |
-| RB2 | Vyšší limit rozsahu rutiny, víc oblastí v jednom PR | nejvýš 1 regrese rutiny za 4 týdny |
-| RB3 | Zadání z veřejných hlášení se schválením mlčením | žádný zneužitý vstup za 4 týdny |
-| RB4 | Některé tvrdé hranice (například texty e-mailových šablon) na veto místo schválení | podle zkušeností |
+| RB1 | Lhůta L 24 h, lhůta K 48 h | regrese nejvýš 1 z 10 |
+| RB2 | Vyšší limit rozsahu rutiny | nejvýš 1 regrese rutiny za 4 týdny |
+| RB3 | Vyšší limit karty | výdaje v rozpočtu, žádné zbytečné předplatné |
+| RB4 | Projekty do 5 etap bez schválení | projekty z režimu L bez zastavení |
 
-## 17. Přijatá rizika
+## 21. Přijatá rizika
 
 | riziko | co ho omezuje | co vlastník přijímá |
 |---|---|---|
-| AI zařadí rizikovou změnu jako rutinu nebo drobné zadání | brána (cesty, rozsah, oblast), protokol, souhrn sloučených, revert | chyba může být na webu, než si jí někdo všimne |
-| podvržený pokyn ve veřejném hlášení | brána, 24 h veto, zadání z hlášení jen se `schvaleno`, identity bez obcházení rulesetu | změna uvnitř hranic proběhne bez lidského pohledu |
-| podvržená oprava od školy | ověřený účet portálu, SPF a DKIM z domény z rejstříku, 48 h veto | chybný údaj na webu do opravy |
-| AI ověří na preview špatně | protokol se snímky | vizuální vada, kterou automat nepozná |
-| chyba v nejnavštěvovanějších dnech | zamrznutí v bráně | – |
-| únik interních údajů | přehled a Směr vývoje mimo veřejný repozitář | – |
-| náklady denní úlohy | strop ve Směru vývoje | – |
+| AI sloučí chybnou změnu | brána a režimy, protokol, druhý klíč, souhrn, revert | chyba může být na webu, než si jí někdo všimne |
+| podvržený pokyn ve veřejném hlášení | režim K, druhý klíč, oddělené identity, ruleset bez výjimek | změna, kterou oba modely přehlédnou |
+| chybná migrace | větev Neonu, bod obnovy, limit řádků, druhý klíč | ztráta zápisů mezi chybou a obnovou |
+| chybný e-mail odběratelům | kouřová zkouška, testovací schránka, rozesílání po vlnách | chyba u prvních 5 % příjemců |
+| stížnost na stahování dat | politika přístupu, strop dotazů, ohlášení | zhoršený vztah se školou |
+| zbytečný výdaj | limit karty, odůvodnění, rušení nevyužitého | výdaj do limitu |
+| AI si rozšíří práva | CODEOWNERS na bránu a režimy, ruleset bez výjimek | – |
+| odpovědnost provozovatele | právní závazky zůstávají člověku (H3) | AI rozhoduje jeho jménem v mezích režimů |
 
 ## Změny návrhu
 
-- **0.5a** (3. 10. 2026, doplněk asistenta zadání k RA6): strojový účet pro asistenta, GitHub App pro
-  Claude Code i při práci na zavolání.
-- **0.5** (3. 10. 2026, čtvrté kolo oponentury): brána sloučení jako povinná kontrola u každého PR
-  (ruleset dnes nic nevynucuje); tvrdé hranice rozšířené o e-maily, crony a nasazení, adresy a SEO,
-  přihlášení a portál; dvě oddělené identity AI a zadání z veřejného hlášení jen se `schvaleno`;
-  drobná zadání a etapy se realizují hned a slučují po 48 h veta nad hotovým výsledkem (dřív RB1);
-  `k-overeni` zpět ve frontě; denní souhrn místo upozornění na každou rutinu; zamrznutí; opravy od škol
-  z portálu a ověřeného e-mailu; měřítka z merge a `schvaleno`; předpoklady preview v kroku 1.
-- **0.4** (3. 10. 2026, zadání vlastníka: minimum lidských vstupů i za cenu vyššího rizika): tvrdé hranice,
-  rutina s automatickým merge, schválení mlčením, ověření na preview AI, přehled, Směr vývoje, denní úloha
-  a identita v části A, zkrácení `CLAUDE.md`, měřítka od začátku.
-- **0.3** (druhé kolo oponentury): podpis AI a vlastní identita; `navrh` až u hotového zadání.
-- **0.2** (první kolo oponentury): struktura a autonomie odděleně, schvaluje jen vlastník, životní cyklus
-  projektu, přehled a směr vývoje neveřejně, přiložený audit.
+- **0.6** (3. 10. 2026, rozbor lidských rozhodnutí; zadání vlastníka: nic není tabu, nevyžádané rozesílky
+  schvaluje vlastník): člověk rozhoduje jen pět druhů věcí (oddíl 3); režimy R, L, K, H; rozbor 21
+  rozhodnutí s riziky a mechanismy; druhý klíč s jiným modelem; migrace přes větev Neonu; nová data
+  podle politiky přístupu; výdaje virtuální kartou; malé projekty bez schválení; mazání issue s osobními
+  údaji; ruleset bez výjimek i pro vlastníka; Claude Code pod aplikací všude, strojový účet jen pro
+  asistenta; ověření identity v cloudu.
+- **0.5a**: strojový účet pro asistenta, GitHub App pro Claude Code.
+- **0.5** (čtvrté kolo oponentury): brána sloučení, rozšířené tvrdé hranice, oddělené identity, veto nad
+  hotovým výsledkem, zamrznutí, opravy od škol.
+- **0.4** (zadání vlastníka: minimum lidských vstupů): rutina s automatickým merge, ověření na preview AI,
+  přehled a Směr vývoje v části A.
+- **0.3**, **0.2** (oponentury): identita a podpis AI, životní cyklus projektu, neveřejný přehled.
 - **0.1**: první verze.
