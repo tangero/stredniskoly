@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.10a · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.10b · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Na GitHubu ani v pravidlech se zatím nic nemění.
 
 ## Shrnutí pro rozhodnutí
@@ -141,12 +141,13 @@ Všechno mimo oddíl 3 rozhoduje AI v jednom z pěti režimů. Režim určuje br
 | režim | kdy | podmínky sloučení nebo provedení |
 |---|---|---|
 | **R, rutina** | oprava rozporu z vlastních dat nebo kódu (oddíl 7) | CI, review, protokol z preview; hned. Rutina z veřejného hlášení navíc druhý klíč a 24 h (chybu musí AI sama vyvolat nebo ověřit proti zdroji; jinak jde o zadání v režimu K) |
-| **L, lhůta** | drobné zadání, nový projekt z iniciativy AI, rozšíření rozsahu projektu (oddíl 8) | CI, review, protokol; po 48 h bez `stop` |
+| **L, lhůta** | drobné zadání, nový projekt z iniciativy AI v mezích mandátu, změna rozsahu projektu uvnitř mandátu (oddíl 8) | CI, review, protokol; po 48 h bez `stop` |
 | **E, etapa** | etapa projektu v dohodnutém rozsahu a mandátu (oddíl 10) | CI, review, protokol; hned po kontrolách, bez další lhůty |
 | **K, kontrolovaný** | rizikové činnosti z oddílu 5 | CI, review, protokol, **druhý klíč bez námitky**, **specifický mechanismus z oddílu 5**, upozornění vlastníkovi; po 72 h bez `stop` |
 | **H, člověk** | oddíl 3 | schvalující review nebo `schvaleno` od vlastníka |
 
-Vždy platí: `stop` a zamrznutí sloučení zablokují (oddíl 9), kromě incidentního postupu (oddíl 9b).
+Vždy platí: `stop` sloučení zablokuje **bez výjimky**. Zamrznutí ho zablokuje také, kromě incidentního
+postupu (oddíl 9b), který ruší jen kalendářní zamrznutí, nikdy `stop`.
 **Specifický mechanismus v oddílu 5 má přednost před obecnou lhůtou režimu K:** kde řádek oddílu 5
 uvádí jinou lhůtu (například přidávající migrace hned po druhém klíči), platí ta.
 
@@ -239,8 +240,8 @@ podmínek režimu z oddílu 4. **Původ zadání:**
   například z e-mailu od rodiče nebo neznámého odesílatele (štítek `puvod:email`). E-mail je stejně
   nedůvěryhodný vstup jako veřejné hlášení.
 
-Vždy selže při `stop` na PR nebo propojeném issue a při zamrznutí (proměnné repozitáře
-`ZAMRZNUTI_OD`/`ZAMRZNUTI_DO`), kromě incidentního postupu (oddíl 9b). `stop` na PR se zároveň přenese
+Vždy selže při `stop` na PR nebo propojeném issue, a to i u PR se štítkem `incident`. Při zamrznutí
+(proměnné repozitáře `ZAMRZNUTI_OD`/`ZAMRZNUTI_DO`) selže také, kromě incidentního postupu (oddíl 9b). `stop` na PR se zároveň přenese
 na propojené issue, aby byl vidět ve frontě. Ruleset dnes vyžaduje nula schválení a tři kontroly CI;
 bez brány by identita s právem merge sloučila cokoli.
 
@@ -277,6 +278,10 @@ Podmínky: automatická kontrola výsledku (stránky odpovídají, data sedí s 
 okamžité upozornění vlastníkovi a záznam v přehledu. Brána tyto PR pozná podle štítku `incident`
 přidaného aplikací a ověří, že mění jen to, co postup dovoluje.
 
+**Incident ruší jen kalendářní zamrznutí, nikdy veto.** PR nebo issue se `stop` zůstane zablokované
+i se štítkem `incident`; jinak by AI mohla veto obejít tím, že změnu sama označí jako incident.
+Zastavení rozesílání vypínačem a rollback ve Vercelu nejsou PR a brána je neblokuje; jsou povolené vždy.
+
 ## 10. Projekty
 
 Životní cyklus (RA4):
@@ -287,13 +292,15 @@ přidaného aplikací a ověří, že mění jen to, co postup dovoluje.
 4. **Start a mandát:** zadání projektu vymezuje **cíl, rozpočet celého projektu** (tokeny a výdaje),
    **dopad** (dotčené oblasti a stránky, kdo změnu uvidí) a **vratnost** (co nejde vrátit revertem).
    Projekt z iniciativy AI v mezích mandátu startuje po 48 h od představení na briefingu bez `stop`
-   (režim L). Strategický projekt (H5) a projekt nad mandát potřebuje `schvaleno`; teprve tehdy `navrh`.
+   (režim L). Strategický projekt (H5) a **cokoli nad mandát** potřebuje `schvaleno`; teprve tehdy `navrh`.
    **Současně nejvýš 2 rozpracované projekty z iniciativy AI**; rozdělením do menších projektů nebo PR
    se limit neobchází (počítá se rozpočet a dopad, ne počet etap).
 5. **Etapy jako checklist**, jedna etapa = jedna větev `zadani/<N>-etapa-<M>-…` a jeden PR „Souvisí s #N“.
    Změna zadání = úprava těla + komentář „Změna zadání: co a proč“ + řádek v changelogu na konci těla.
 6. **Etapa v dohodnutém rozsahu se slučuje hned po kontrolách** (režim E), bez další lhůty; když sahá
-   na cesty režimu K, platí K. Rozšíření rozsahu nad mandát je úprava zadání v režimu L.
+   na cesty režimu K, platí K. **Změna rozsahu uvnitř mandátu** (cíl, rozpočet, dopad a vratnost zůstávají
+   v mezích) je úprava zadání v režimu L. **Překročení mandátu** potřebuje nové `schvaleno` bez ohledu na
+   to, jestli se jmenuje rozšíření, nová etapa nebo nový projekt; rozhoduje dopad, ne pojmenování.
 7. **Poslední PR nese jen „Souvisí s #N“.** Projekt zavře AI až po **ověření v produkci** (nasazeno
    a stránky na produkci splňují „Hotovo když“), ne samotným merge.
 8. **Opravy po vydání:** komentář + PR „Souvisí s #N“.
@@ -505,9 +512,9 @@ Zavádí se **podle přínosu**: nejdřív to, co odstraní nejvíc dnešní pr�
 | fáze | co dělá AI | práce vlastníka |
 |---|---|---|
 | 0, hned (nezávisle na schválení návrhu) | upravit #53, zavřít duplikáty #216, #228, #229, #251, PR s odstraněním `auto-fix-issues.yml`, `auto-fix-iterative.yml` a `notify-new-issue.yml`; **převod na token aplikace:** nahradit `CSI_PR_TOKEN` (`csi-weekly-refresh.yml`) instalačním tokenem aplikace (`actions/create-github-app-token`) a stejně převést `veletrhy-snimek.yml`, aby na jeho PR běželo CI. `PROJECT_TOKEN` (`tabule-schvaleno.yml`) aplikací nahradit nejde: GitHub App neumí zapisovat do tabule projektu na osobním účtu, jen do tabule organizace. Nahradí ho klasický token strojového účtu přizvaného jako spolupracovník tabule (bez práv admina k repozitáři), takže v secrets nezůstane žádný token vlastníka. Samostatný PR se zkušebním spuštěním každého workflow; **přesun produkčních secrets do prostředí s omezením na `main` a nasazení náhledu bez secrets z větve** (oddíl 9a) | smazat revizi #53; **založit GitHub App** (jen tento repozitář, práva Contents, Pull requests a Issues zápis) a uložit její ID a soukromý klíč; **založit strojový účet**, přizvat ho do repozitáře (zápis, ne admin) a do tabule projektu a vytvořit mu klasický token se scope `project`; **založit prostředí `production`** omezené na `main` a přesunout do něj produkční secrets; merge PR (asi 45 min) |
-| **1, týden 1–2: konec merge a kontroly preview** | PR s pravidly a skills, `rezimy.yml`, labelerem, branou a CODEOWNERS; zrušit výjimku v rulesetu až po ověřeném převodu tokenů z fáze 0 (dnes PR z `veletrhy-snimek` zakládá `GITHUB_TOKEN`, CI na nich neběží a slučují se jen obejitím rulesetu; bez převodu by se zasekly); ověřit identitu aplikace v cloudu; zapnout slučování skriptem po bráně u rutiny, drobných zadání a etap; ověření na preview; týdenní přehled; výchozí měřítka; postup nastavení krok za krokem | ruleset bez výjimek s bránou a **povinným review vlastníka kódu** (`require_code_owner_review`, dnes vypnuté; chrání `.github/` a pravidla), secret pro preview, soukromý repozitář a Směr vývoje včetně rozpočtu (asi 1,5 h jednou) |
+| **1, týden 1–2: konec merge a kontroly preview** | PR s pravidly a skills, `rezimy.yml`, labelerem, branou a CODEOWNERS; zrušit výjimku v rulesetu až po ověřeném převodu tokenů z fáze 0 (dnes PR z `veletrhy-snimek` zakládá `GITHUB_TOKEN`, CI na nich neběží a slučují se jen obejitím rulesetu; bez převodu by se zasekly); ověřit identitu aplikace v cloudu; zapnout slučování skriptem po bráně u rutiny z interních zadání, drobných zadání a etap (**rutina z veřejných hlášení zůstává do zavedení druhého klíče ve fázi 2 v dnešním režimu**: nerealizuje se bez `schvaleno`); ověření na preview; týdenní přehled; výchozí měřítka; postup nastavení krok za krokem | ruleset bez výjimek s bránou a **povinným review vlastníka kódu** (`require_code_owner_review`, dnes vypnuté; chrání `.github/` a pravidla), secret pro preview, soukromý repozitář a Směr vývoje včetně rozpočtu (asi 1,5 h jednou) |
 | **2, týden 3–4: plná autonomie** | druhý klíč, režim K pro migrace (po ověření tarifu Neonu), nová data, výdaje kartou, e-maily odběratelům (po ověření rozesílání po vlnách), zápisy z briefingu do soukromého repozitáře, příjem oprav od škol, denní úloha | virtuální karta s limitem, ověřit tarif Neonu (asi 30 min) |
-| **přejímka po fázi 2** | scénář: vlastník týden neodpovídá; běžná práce pokračuje, vyhrazená rozhodnutí čekají, `stop` se dodržuje, přehled zůstává aktuální | žádná (to je test) |
+| **přejímka po fázi 2** | scénáře: (1) vlastník týden neodpovídá; běžná práce pokračuje, vyhrazená rozhodnutí čekají, `stop` se dodržuje, přehled zůstává aktuální; (2) PR se `stop` a štítkem `incident` během zamrznutí zůstane zablokovaný; (3) rozšíření projektu nad mandát se nesloučí bez `schvaleno` | žádná (to je test) |
 
 Dokud nejsou tokeny vlastníka nahrazené, workflows v `.github/workflows/` čte vlastník (CODEOWNERS);
 proto se převod dělá **hned ve fázi 0**, nezávisle na schválení zbytku návrhu (pokyn vlastníka). Do konce
@@ -582,6 +589,10 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.10b** (3. 10. 2026, kontrola vypořádání od Codexu): incident ruší jen kalendářní zamrznutí, nikdy
+  `stop` (V1); překročení mandátu vždy potřebuje `schvaleno` bez ohledu na pojmenování změny (V2);
+  rutina z veřejných hlášení zůstává do zavedení druhého klíče ve fázi 2 v dnešním režimu (V3);
+  přejímací scénáře pro `stop` + `incident` a pro překročení mandátu.
 - **0.10a** (3. 10. 2026, vlastní kontrola konzistence): brána a druhý klíč běží na `pull_request_target`
   ve verzi z `main` bez spouštění kódu z PR (jinak by si AI mohla ve větvi upravit kontrolora); sjednocení
   náhrady tokenů (`PROJECT_TOKEN` strojovým účtem) v oddílech 5 a 20; fáze 0 obsahuje založení
