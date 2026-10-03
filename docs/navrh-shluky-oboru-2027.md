@@ -7,7 +7,7 @@ Rozbor reprodukuje `python3 scripts/rozbor-shluky-oboru.py`. Výstup je v [podkl
 ## 0. Shrnutí
 
 1. **Ve městě existují okruhy oborů, mezi kterými se uchazeči přelévají, a dají se z dat najít.** V Brně jich v roce 2026 vychází 13 se 168 obory, v Praze 21 se 412 obory. Okruhy dávají obsahový smysl: osmiletá, šestiletá a čtyřletá gymnázia zvlášť, ekonomické obory, technické obory, zdravotnické a sociální obory, kadeřnice a gastronomie, automobilní obory, stavební řemesla, grafika a média, obory E odborných učilišť.
-2. **Okruhy nejsou náhodné.** Stejnou metodou spočítané okruhy 2025 a 2026 se shodují s upraveným Randovým indexem 0,65–0,77, při náhodném přeřazení oborů vychází 0,00 (95. percentil 0,02). Mezi ročníky jsou ale k dispozici jen dva (oddíl 2), takže jde o jedno srovnání, ne o řadu.
+2. **Okruhy nejsou náhodné.** Stejnou metodou spočítané okruhy 2025 a 2026 se shodují s upraveným Randovým indexem 0,75 v Brně a 0,66 v Praze (u všech zkoušených variant 0,63–0,77), při náhodném přeřazení oborů vychází 0,00 (95. percentil 0,02). Mezi ročníky jsou ale k dispozici jen dva (oddíl 2), takže jde o jedno srovnání, ne o řadu.
 3. **Zájem z okruhu neodchází, přesouvá se uvnitř něj.** Podíl okruhu na uchazečích města se mezi lety 2025 a 2026 změnil nejvýš o 1,6 procentního bodu. Rozdělení uchazečů mezi obory uvnitř okruhu se ale posunulo víc, než dovoluje náhoda: v Praze u 16 z 21 okruhů (u čtyř jen těsně), v Brně u 4 z 13. Nejsilnější příklad: čtyřleté gymnázium SPŠ chemické a gymnázia Brno na Vranovské mělo 249, 491 a 247 přihlášek v letech 2024, 2025 a 2026. V roce 2025 bylo přijetí těžké, v roce 2026 se dostala většina soutěžících uchazečů. Zájem se v roce 2026 vrátil k ostatním čtyřletým gymnáziím okruhu.
 4. **Směr přihlášek uvnitř okruhu je čitelný.** U každého oboru jde říct, jak často ho uchazeči měli na přihlášce výš než ostatní obory okruhu. Ve čtyřletých gymnáziích Brna má Gymnázium Matyáše Lercha 0,67 a Moravské gymnázium 0,13.
 5. **Doporučení:** okruh ukázat jako rozšíření sekce „Kam se hlásí stejní uchazeči“ na stránce oboru a jako přehled okruhů na stránce města. Obtížnost přijetí jen jako odznak u oboru, neřadit podle ní. Vlastní stránku okruhu zatím nestavět (oddíl 7).
@@ -91,9 +91,9 @@ Shoda mezi ročníky = upravený Randův index (ARI) mezi okruhy 2025 a 2026 na 
 
 Modularita vybraných rozdělení je 0,84 v Brně a 0,86 v Praze. Mezi variantami s jinou váhou ji srovnávat nejde, protože každá se počítá na jiném grafu.
 
-**Volba: normovaná váha, γ = 1,0.** V Brně je mezi ročníky nejstabilnější spolu s γ = 0,7. V Praze vychází váha *počet* o 0,08 stabilnější, ale táhne velké ekonomické obory do jednoho okruhu s 52 obory. Rozdíly mezi variantami jsou menší než rozdíl proti náhodě, závěry o okruzích na volbě nestojí. Před etapou 2 doporučuji volbu ověřit na dalších městech (oddíl 9).
+**Volba: normovaná váha, γ = 1,0.** V Brně je mezi ročníky nejstabilnější spolu s γ = 0,7. V Praze vychází váha *počet* o 0,08 stabilnější, ale její největší okruh má 69 oborů místo 52; velké obory k sobě táhnou všechno, s čím mají pár desítek společných uchazečů. Rozdíly mezi variantami jsou menší než rozdíl proti náhodě, závěry o okruzích na volbě nestojí. Před etapou 2 doporučuji volbu ověřit na dalších městech (oddíl 9).
 
-Co shoda 0,65–0,77 znamená prakticky: většina oborů zůstává ve stejném okruhu, část okrajových oborů přeskakuje mezi sousedními okruhy (například obory chemie mezi čtyřletými gymnázii a zdravotnickými obory). Přiřazení oboru k okruhu proto nesmí na stránce vypadat jako pevná kategorie (oddíl 7.3).
+Co shoda 0,66–0,75 znamená prakticky: většina oborů zůstává ve stejném okruhu, část okrajových oborů přeskakuje mezi sousedními okruhy (například obory chemie mezi čtyřletými gymnázii a zdravotnickými obory). Přiřazení oboru k okruhu proto nesmí na stránce vypadat jako pevná kategorie (oddíl 7.3).
 
 ## 4. Zkusmé okruhy Brno a Praha, rok 2026
 
@@ -245,7 +245,7 @@ Podobný údaj už web má: *Kohorta podle pozice na přihlášce* srovnává po
 |---|---|---|
 | **A. Stránka oboru, rozšíření sekce „Kam se hlásí stejní uchazeči“** | Rodina je tam, když řeší konkrétní obor. Navazuje na existující sekci, okruh jen rozšíří šest sousedů na celou skupinu. | Na stránce oboru je už hodně bloků; okruh musí být sbalený. |
 | **B. Stránka města, přehled okruhů** | Odpovídá na otázku podnětu: mezi čím se ve velkém městě rozhoduje. Karty škol tam už jsou ([stránka města](navrh-stranky-mesta-2027.md)). | Jen pro města s okruhy (Praha, Brno a další s dost obory, oddíl 9). |
-| C. Vlastní stránka okruhu | Prostor pro vývoj mezi ročníky a celou tabulku. | Okruh nemá stabilní identitu (shoda 0,65–0,77, okrajové obory přeskakují) ani přirozený název. Stránka s adresou by z něj udělala kategorii, kterou není. Přibyly by desítky tenkých stránek. |
+| C. Vlastní stránka okruhu | Prostor pro vývoj mezi ročníky a celou tabulku. | Okruh nemá stabilní identitu (shoda 0,66–0,75, okrajové obory přeskakují) ani přirozený název. Stránka s adresou by z něj udělala kategorii, kterou není. Přibyly by desítky tenkých stránek. |
 
 **Doporučení: A a B, C ne.** Na stránce oboru blok „Obory, mezi kterými se uchazeči rozhodují“ jako rozbalitelné rozšíření sekce „Kam se hlásí stejní uchazeči“. Na stránce města oddíl s okruhy jako odkazy na seznam oborů okruhu na téže stránce (filtr, ne nová adresa).
 

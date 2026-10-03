@@ -641,19 +641,6 @@
          "podil_prijatych_ze_soutezicich": 1.0
         },
         {
-         "klic": "600171027_26-52-H/01",
-         "skola": "Střední průmyslová škola",
-         "obor": "Elektromechanik pro zařízení a přístroje",
-         "jpz": false,
-         "uchazecu": 51,
-         "prvni_volby_v_okruhu": 15,
-         "prednost_v_okruhu": 0.11,
-         "podil_i_mimo_mesto": 0.22,
-         "kapacita": null,
-         "zarazeni_obtiznosti": null,
-         "podil_prijatych_ze_soutezicich": null
-        },
-        {
          "klic": "600013855_26-41-M/01",
          "skola": "SŠ strojírenská a elektrotechnická, Trnkova",
          "obor": "Elektrotechnika",
@@ -665,6 +652,19 @@
          "kapacita": 30,
          "zarazeni_obtiznosti": "kapacita_nerozhodovala",
          "podil_prijatych_ze_soutezicich": 1.0
+        },
+        {
+         "klic": "600171027_26-52-H/01",
+         "skola": "Střední průmyslová škola",
+         "obor": "Elektromechanik pro zařízení a přístroje",
+         "jpz": false,
+         "uchazecu": 51,
+         "prvni_volby_v_okruhu": 15,
+         "prednost_v_okruhu": 0.11,
+         "podil_i_mimo_mesto": 0.22,
+         "kapacita": null,
+         "zarazeni_obtiznosti": null,
+         "podil_prijatych_ze_soutezicich": null
         },
         {
          "klic": "600013782_78-42-M/01",
@@ -2867,19 +2867,6 @@
          "podil_prijatych_ze_soutezicich": null
         },
         {
-         "klic": "600171019_23-41-M/01",
-         "skola": "Střední škola technická a ekonomická, Olomoucká",
-         "obor": "Strojírenství",
-         "jpz": true,
-         "uchazecu": 122,
-         "prvni_volby_v_okruhu": 32,
-         "prednost_v_okruhu": 0.34,
-         "podil_i_mimo_mesto": 0.21,
-         "kapacita": 30,
-         "zarazeni_obtiznosti": "vetsina_uspela",
-         "podil_prijatych_ze_soutezicich": 0.75
-        },
-        {
          "klic": "600013855_26-41-L/01",
          "skola": "SŠ strojírenská a elektrotechnická, Trnkova",
          "obor": "Mechanik elektrotechnik",
@@ -2893,17 +2880,17 @@
          "podil_prijatych_ze_soutezicich": 0.92
         },
         {
-         "klic": "600013804_78-42-M/01",
-         "skola": "Střední průmyslová škola stavební, Kudelova",
-         "obor": "Technické lyceum",
+         "klic": "600171019_23-41-M/01",
+         "skola": "Střední škola technická a ekonomická, Olomoucká",
+         "obor": "Strojírenství",
          "jpz": true,
-         "uchazecu": 121,
-         "prvni_volby_v_okruhu": 71,
-         "prednost_v_okruhu": 0.53,
-         "podil_i_mimo_mesto": 0.18,
+         "uchazecu": 122,
+         "prvni_volby_v_okruhu": 32,
+         "prednost_v_okruhu": 0.34,
+         "podil_i_mimo_mesto": 0.21,
          "kapacita": 30,
-         "zarazeni_obtiznosti": "stredne_tezke",
-         "podil_prijatych_ze_soutezicich": 0.53
+         "zarazeni_obtiznosti": "vetsina_uspela",
+         "podil_prijatych_ze_soutezicich": 0.75
         },
         {
          "klic": "600013804_36-46-M/01",
@@ -2917,6 +2904,19 @@
          "kapacita": 30,
          "zarazeni_obtiznosti": "stredne_tezke",
          "podil_prijatych_ze_soutezicich": 0.51
+        },
+        {
+         "klic": "600013804_78-42-M/01",
+         "skola": "Střední průmyslová škola stavební, Kudelova",
+         "obor": "Technické lyceum",
+         "jpz": true,
+         "uchazecu": 121,
+         "prvni_volby_v_okruhu": 71,
+         "prednost_v_okruhu": 0.53,
+         "podil_i_mimo_mesto": 0.18,
+         "kapacita": 30,
+         "zarazeni_obtiznosti": "stredne_tezke",
+         "podil_prijatych_ze_soutezicich": 0.53
         },
         {
          "klic": "600171027_26-41-L/01",
@@ -6014,7 +6014,7 @@
      },
      "2026": {
       "modularita": 0.818,
-      "ari_mezi_behy": 0.931,
+      "ari_mezi_behy": 0.932,
       "uzlu": 570,
       "shluku_aspon_3": 18,
       "samostatnych": 146,
@@ -6654,19 +6654,6 @@
          "podil_prijatych_ze_soutezicich": 0.34
         },
         {
-         "klic": "691018707_79-42-K/41",
-         "skola": "Gymnázium se sportovní přípravou Šeberov, V ladech",
-         "obor": "Gymnázium se sportovní přípravou",
-         "jpz": true,
-         "uchazecu": 207,
-         "prvni_volby_v_okruhu": 142,
-         "prednost_v_okruhu": 0.67,
-         "podil_i_mimo_mesto": 0.26,
-         "kapacita": 58,
-         "zarazeni_obtiznosti": "tezke",
-         "podil_prijatych_ze_soutezicich": 0.47
-        },
-        {
          "klic": "600005275_63-41-M/01",
          "skola": "SŠ managementu a služeb a ZŠ s.r.o., Ve Lhotce",
          "obor": "Ekonomika a podnikání",
@@ -6678,6 +6665,19 @@
          "kapacita": 88,
          "zarazeni_obtiznosti": "vetsina_uspela",
          "podil_prijatych_ze_soutezicich": 0.99
+        },
+        {
+         "klic": "691018707_79-42-K/41",
+         "skola": "Gymnázium se sportovní přípravou Šeberov, V ladech",
+         "obor": "Gymnázium se sportovní přípravou",
+         "jpz": true,
+         "uchazecu": 207,
+         "prvni_volby_v_okruhu": 142,
+         "prednost_v_okruhu": 0.67,
+         "podil_i_mimo_mesto": 0.26,
+         "kapacita": 58,
+         "zarazeni_obtiznosti": "tezke",
+         "podil_prijatych_ze_soutezicich": 0.47
         },
         {
          "klic": "600005356_63-41-M/01",
@@ -6784,19 +6784,6 @@
          "podil_prijatych_ze_soutezicich": 0.34
         },
         {
-         "klic": "600006573_63-41-M/02",
-         "skola": "Obchodní akademie, Heroldovy sady",
-         "obor": "Obchodní akademie",
-         "jpz": true,
-         "uchazecu": 161,
-         "prvni_volby_v_okruhu": 73,
-         "prednost_v_okruhu": 0.54,
-         "podil_i_mimo_mesto": 0.12,
-         "kapacita": 30,
-         "zarazeni_obtiznosti": "velmi_tezke",
-         "podil_prijatych_ze_soutezicich": 0.3
-        },
-        {
          "klic": "600006450_65-42-M/02",
          "skola": "Střední škola ARCUS, Kardašovská",
          "obor": "Cestovní ruch",
@@ -6808,6 +6795,19 @@
          "kapacita": 26,
          "zarazeni_obtiznosti": "velmi_tezke",
          "podil_prijatych_ze_soutezicich": 0.32
+        },
+        {
+         "klic": "600006573_63-41-M/02",
+         "skola": "Obchodní akademie, Heroldovy sady",
+         "obor": "Obchodní akademie",
+         "jpz": true,
+         "uchazecu": 161,
+         "prvni_volby_v_okruhu": 73,
+         "prednost_v_okruhu": 0.54,
+         "podil_i_mimo_mesto": 0.12,
+         "kapacita": 30,
+         "zarazeni_obtiznosti": "velmi_tezke",
+         "podil_prijatych_ze_soutezicich": 0.3
         },
         {
          "klic": "600170012_63-41-M/01",
@@ -6836,19 +6836,6 @@
          "podil_prijatych_ze_soutezicich": 0.79
         },
         {
-         "klic": "600019471_68-42-M/01",
-         "skola": "Střední zdravotnická škola, Ruská",
-         "obor": "Bezpečnostně právní činnost",
-         "jpz": true,
-         "uchazecu": 153,
-         "prvni_volby_v_okruhu": 81,
-         "prednost_v_okruhu": 0.5,
-         "podil_i_mimo_mesto": 0.25,
-         "kapacita": 30,
-         "zarazeni_obtiznosti": "tezke",
-         "podil_prijatych_ze_soutezicich": 0.35
-        },
-        {
          "klic": "600005402_68-43-M/01",
          "skola": "Škola MVV, Michelská",
          "obor": "Veřejnosprávní činnost",
@@ -6875,17 +6862,17 @@
          "podil_prijatych_ze_soutezicich": 0.53
         },
         {
-         "klic": "600006310_63-41-M/01",
-         "skola": "Soukromá SŠ a ZŠ (1. KŠPA) Praha s.r.o., Chabařovická",
-         "obor": "Ekonomika a podnikání",
+         "klic": "600019471_68-42-M/01",
+         "skola": "Střední zdravotnická škola, Ruská",
+         "obor": "Bezpečnostně právní činnost",
          "jpz": true,
-         "uchazecu": 150,
-         "prvni_volby_v_okruhu": 66,
-         "prednost_v_okruhu": 0.38,
-         "podil_i_mimo_mesto": 0.13,
-         "kapacita": 46,
-         "zarazeni_obtiznosti": "stredne_tezke",
-         "podil_prijatych_ze_soutezicich": 0.57
+         "uchazecu": 153,
+         "prvni_volby_v_okruhu": 81,
+         "prednost_v_okruhu": 0.5,
+         "podil_i_mimo_mesto": 0.25,
+         "kapacita": 30,
+         "zarazeni_obtiznosti": "tezke",
+         "podil_prijatych_ze_soutezicich": 0.35
         },
         {
          "klic": "600004864_66-41-L/01",
@@ -6899,6 +6886,19 @@
          "kapacita": 60,
          "zarazeni_obtiznosti": "kapacita_nerozhodovala",
          "podil_prijatych_ze_soutezicich": 1.0
+        },
+        {
+         "klic": "600006310_63-41-M/01",
+         "skola": "Soukromá SŠ a ZŠ (1. KŠPA) Praha s.r.o., Chabařovická",
+         "obor": "Ekonomika a podnikání",
+         "jpz": true,
+         "uchazecu": 150,
+         "prvni_volby_v_okruhu": 66,
+         "prednost_v_okruhu": 0.38,
+         "podil_i_mimo_mesto": 0.13,
+         "kapacita": 46,
+         "zarazeni_obtiznosti": "stredne_tezke",
+         "podil_prijatych_ze_soutezicich": 0.57
         },
         {
          "klic": "600006425_63-41-M/01",
@@ -6966,19 +6966,6 @@
          "podil_prijatych_ze_soutezicich": 1.0
         },
         {
-         "klic": "600170047_72-41-M/01",
-         "skola": "SKOLAEUPRAHA, Lipí",
-         "obor": "Informační služby",
-         "jpz": true,
-         "uchazecu": 128,
-         "prvni_volby_v_okruhu": 106,
-         "prednost_v_okruhu": 0.76,
-         "podil_i_mimo_mesto": 0.33,
-         "kapacita": 30,
-         "zarazeni_obtiznosti": "tezke",
-         "podil_prijatych_ze_soutezicich": 0.49
-        },
-        {
          "klic": "600006301_65-42-M/02",
          "skola": "Soukromá SOŠ  START s.r.o., Dygrýnova",
          "obor": "Cestovní ruch",
@@ -6990,6 +6977,19 @@
          "kapacita": 24,
          "zarazeni_obtiznosti": "tezke",
          "podil_prijatych_ze_soutezicich": 0.48
+        },
+        {
+         "klic": "600170047_72-41-M/01",
+         "skola": "SKOLAEUPRAHA, Lipí",
+         "obor": "Informační služby",
+         "jpz": true,
+         "uchazecu": 128,
+         "prvni_volby_v_okruhu": 106,
+         "prednost_v_okruhu": 0.76,
+         "podil_i_mimo_mesto": 0.33,
+         "kapacita": 30,
+         "zarazeni_obtiznosti": "tezke",
+         "podil_prijatych_ze_soutezicich": 0.49
         },
         {
          "klic": "600004775_78-42-M/02",
@@ -8654,19 +8654,6 @@
          "podil_prijatych_ze_soutezicich": 0.34
         },
         {
-         "klic": "600006174_18-20-M/01",
-         "skola": "VOŠ inf.studií a SŠ el., Novovysočanská",
-         "obor": "Informační technologie",
-         "jpz": true,
-         "uchazecu": 120,
-         "prvni_volby_v_okruhu": 50,
-         "prednost_v_okruhu": 0.39,
-         "podil_i_mimo_mesto": 0.18,
-         "kapacita": 28,
-         "zarazeni_obtiznosti": "tezke",
-         "podil_prijatych_ze_soutezicich": 0.4
-        },
-        {
          "klic": "600004686_78-42-M/01",
          "skola": "SPŠ strojnická, Betlémská",
          "obor": "Technické lyceum",
@@ -8678,6 +8665,19 @@
          "kapacita": 30,
          "zarazeni_obtiznosti": "stredne_tezke",
          "podil_prijatych_ze_soutezicich": 0.52
+        },
+        {
+         "klic": "600006174_18-20-M/01",
+         "skola": "VOŠ inf.studií a SŠ el., Novovysočanská",
+         "obor": "Informační technologie",
+         "jpz": true,
+         "uchazecu": 120,
+         "prvni_volby_v_okruhu": 50,
+         "prednost_v_okruhu": 0.39,
+         "podil_i_mimo_mesto": 0.18,
+         "kapacita": 28,
+         "zarazeni_obtiznosti": "tezke",
+         "podil_prijatych_ze_soutezicich": 0.4
         },
         {
          "klic": "600004643_26-41-M/01",
@@ -8758,19 +8758,6 @@
          "podil_prijatych_ze_soutezicich": 1.0
         },
         {
-         "klic": "600006565_78-42-M/01",
-         "skola": "SPŠ a Gymnázium Na Třebešíně, Na Třebešíně",
-         "obor": "Technické lyceum",
-         "jpz": true,
-         "uchazecu": 77,
-         "prvni_volby_v_okruhu": 29,
-         "prednost_v_okruhu": 0.36,
-         "podil_i_mimo_mesto": null,
-         "kapacita": 30,
-         "zarazeni_obtiznosti": "kapacita_nerozhodovala",
-         "podil_prijatych_ze_soutezicich": 1.0
-        },
-        {
          "klic": "600006174_26-41-L/01",
          "skola": "VOŠ inf.studií a SŠ el., Novovysočanská",
          "obor": "Mechanik elektrotechnik",
@@ -8782,6 +8769,19 @@
          "kapacita": 28,
          "zarazeni_obtiznosti": "vetsina_uspela",
          "podil_prijatych_ze_soutezicich": 0.88
+        },
+        {
+         "klic": "600006565_78-42-M/01",
+         "skola": "SPŠ a Gymnázium Na Třebešíně, Na Třebešíně",
+         "obor": "Technické lyceum",
+         "jpz": true,
+         "uchazecu": 77,
+         "prvni_volby_v_okruhu": 29,
+         "prednost_v_okruhu": 0.36,
+         "podil_i_mimo_mesto": null,
+         "kapacita": 30,
+         "zarazeni_obtiznosti": "kapacita_nerozhodovala",
+         "podil_prijatych_ze_soutezicich": 1.0
         },
         {
          "klic": "600006310_18-20-M/01",
@@ -9203,19 +9203,6 @@
          "podil_prijatych_ze_soutezicich": null
         },
         {
-         "klic": "600005216_65-41-L/01",
-         "skola": "SŠ gastronomická a hotelová s.r.o., Vrbova",
-         "obor": "Gastronomie",
-         "jpz": true,
-         "uchazecu": 168,
-         "prvni_volby_v_okruhu": 138,
-         "prednost_v_okruhu": 0.74,
-         "podil_i_mimo_mesto": 0.15,
-         "kapacita": 60,
-         "zarazeni_obtiznosti": "vetsina_uspela",
-         "podil_prijatych_ze_soutezicich": 0.97
-        },
-        {
          "klic": "600005216_29-54-H/01",
          "skola": "SŠ gastronomická a hotelová s.r.o.",
          "obor": "Cukrář",
@@ -9227,6 +9214,19 @@
          "kapacita": null,
          "zarazeni_obtiznosti": null,
          "podil_prijatych_ze_soutezicich": null
+        },
+        {
+         "klic": "600005216_65-41-L/01",
+         "skola": "SŠ gastronomická a hotelová s.r.o., Vrbova",
+         "obor": "Gastronomie",
+         "jpz": true,
+         "uchazecu": 168,
+         "prvni_volby_v_okruhu": 138,
+         "prednost_v_okruhu": 0.74,
+         "podil_i_mimo_mesto": 0.15,
+         "kapacita": 60,
+         "zarazeni_obtiznosti": "vetsina_uspela",
+         "podil_prijatych_ze_soutezicich": 0.97
         },
         {
          "klic": "600006581_65-41-L/01",
@@ -11209,19 +11209,6 @@
          "podil_prijatych_ze_soutezicich": null
         },
         {
-         "klic": "600006280_36-64-H/01",
-         "skola": "Střední odborná škola Jarov",
-         "obor": "Tesař",
-         "jpz": false,
-         "uchazecu": 69,
-         "prvni_volby_v_okruhu": 23,
-         "prednost_v_okruhu": 0.4,
-         "podil_i_mimo_mesto": null,
-         "kapacita": null,
-         "zarazeni_obtiznosti": null,
-         "podil_prijatych_ze_soutezicich": null
-        },
-        {
          "klic": "600005640_33-42-M/01",
          "skola": "Střední škola a VOŠ umělecká a řemeslná, Nový Zlíchov",
          "obor": "Nábytkářská a dřevařská výroba",
@@ -11233,6 +11220,19 @@
          "kapacita": 24,
          "zarazeni_obtiznosti": "kapacita_nerozhodovala",
          "podil_prijatych_ze_soutezicich": 1.0
+        },
+        {
+         "klic": "600006280_36-64-H/01",
+         "skola": "Střední odborná škola Jarov",
+         "obor": "Tesař",
+         "jpz": false,
+         "uchazecu": 69,
+         "prvni_volby_v_okruhu": 23,
+         "prednost_v_okruhu": 0.4,
+         "podil_i_mimo_mesto": null,
+         "kapacita": null,
+         "zarazeni_obtiznosti": null,
+         "podil_prijatych_ze_soutezicich": null
         },
         {
          "klic": "600006280_23-51-H/01",
@@ -12050,19 +12050,6 @@
          "podil_prijatych_ze_soutezicich": 0.34
         },
         {
-         "klic": "600170012_63-41-M/01",
-         "skola": "Obchodní akademie Holešovice, Jablonského",
-         "obor": "Ekonomika a podnikání",
-         "jpz": true,
-         "uchazecu": 199,
-         "prvni_volby_v_okruhu": 91,
-         "prednost_v_okruhu": 0.47,
-         "podil_i_mimo_mesto": 0.15,
-         "kapacita": 30,
-         "zarazeni_obtiznosti": "tezke",
-         "podil_prijatych_ze_soutezicich": 0.48
-        },
-        {
          "klic": "600005941_63-41-M/02",
          "skola": "Obchodní akademie, U vinohradského hřbitova",
          "obor": "Obchodní akademie",
@@ -12074,6 +12061,19 @@
          "kapacita": 30,
          "zarazeni_obtiznosti": "velmi_tezke",
          "podil_prijatych_ze_soutezicich": 0.3
+        },
+        {
+         "klic": "600170012_63-41-M/01",
+         "skola": "Obchodní akademie Holešovice, Jablonského",
+         "obor": "Ekonomika a podnikání",
+         "jpz": true,
+         "uchazecu": 199,
+         "prvni_volby_v_okruhu": 91,
+         "prednost_v_okruhu": 0.47,
+         "podil_i_mimo_mesto": 0.15,
+         "kapacita": 30,
+         "zarazeni_obtiznosti": "tezke",
+         "podil_prijatych_ze_soutezicich": 0.48
         },
         {
          "klic": "600170047_63-41-M/01",
@@ -12323,19 +12323,6 @@
          "podil_prijatych_ze_soutezicich": 0.51
         },
         {
-         "klic": "600170047_72-41-M/01",
-         "skola": "SKOLAEUPRAHA, Lipí",
-         "obor": "Informační služby",
-         "jpz": true,
-         "uchazecu": 101,
-         "prvni_volby_v_okruhu": 87,
-         "prednost_v_okruhu": 0.77,
-         "podil_i_mimo_mesto": 0.24,
-         "kapacita": 30,
-         "zarazeni_obtiznosti": "stredne_tezke",
-         "podil_prijatych_ze_soutezicich": 0.56
-        },
-        {
          "klic": "600004902_68-43-M/01",
          "skola": "SOŠ sociální svaté Zdislavy, Ječná",
          "obor": "Veřejnosprávní činnost",
@@ -12347,6 +12334,19 @@
          "kapacita": 60,
          "zarazeni_obtiznosti": "kapacita_nerozhodovala",
          "podil_prijatych_ze_soutezicich": 1.0
+        },
+        {
+         "klic": "600170047_72-41-M/01",
+         "skola": "SKOLAEUPRAHA, Lipí",
+         "obor": "Informační služby",
+         "jpz": true,
+         "uchazecu": 101,
+         "prvni_volby_v_okruhu": 87,
+         "prednost_v_okruhu": 0.77,
+         "podil_i_mimo_mesto": 0.24,
+         "kapacita": 30,
+         "zarazeni_obtiznosti": "stredne_tezke",
+         "podil_prijatych_ze_soutezicich": 0.56
         },
         {
          "klic": "600004759_78-42-M/08",
@@ -14287,19 +14287,6 @@
          "podil_prijatych_ze_soutezicich": null
         },
         {
-         "klic": "600170021_66-43-M/01",
-         "skola": "SŠ designu, U měšťanských škol",
-         "obor": "Knihkupecké a nakladatelské činnosti",
-         "jpz": true,
-         "uchazecu": 113,
-         "prvni_volby_v_okruhu": 92,
-         "prednost_v_okruhu": 0.69,
-         "podil_i_mimo_mesto": 0.3,
-         "kapacita": 30,
-         "zarazeni_obtiznosti": "vetsina_uspela",
-         "podil_prijatych_ze_soutezicich": 0.73
-        },
-        {
          "klic": "600005321_69-41-L/01",
          "skola": "Metropolitní odbor. umělec. SŠ, Táborská",
          "obor": "Kosmetické služby",
@@ -14311,6 +14298,19 @@
          "kapacita": 15,
          "zarazeni_obtiznosti": "velmi_tezke",
          "podil_prijatych_ze_soutezicich": 0.21
+        },
+        {
+         "klic": "600170021_66-43-M/01",
+         "skola": "SŠ designu, U měšťanských škol",
+         "obor": "Knihkupecké a nakladatelské činnosti",
+         "jpz": true,
+         "uchazecu": 113,
+         "prvni_volby_v_okruhu": 92,
+         "prednost_v_okruhu": 0.69,
+         "podil_i_mimo_mesto": 0.3,
+         "kapacita": 30,
+         "zarazeni_obtiznosti": "vetsina_uspela",
+         "podil_prijatych_ze_soutezicich": 0.73
         },
         {
          "klic": "600006280_41-44-M/01",
@@ -14469,6 +14469,19 @@
          "podil_prijatych_ze_soutezicich": null
         },
         {
+         "klic": "600004864_66-53-H/01",
+         "skola": "Střední škola obchodní",
+         "obor": "Operátor skladování",
+         "jpz": false,
+         "uchazecu": 50,
+         "prvni_volby_v_okruhu": 33,
+         "prednost_v_okruhu": 0.35,
+         "podil_i_mimo_mesto": null,
+         "kapacita": null,
+         "zarazeni_obtiznosti": null,
+         "podil_prijatych_ze_soutezicich": null
+        },
+        {
          "klic": "600005321_82-51-H/05",
          "skola": "Metropolitní odbor. umělec. SŠ",
          "obor": "Vlásenkář a maskér",
@@ -14490,19 +14503,6 @@
          "prvni_volby_v_okruhu": 31,
          "prednost_v_okruhu": 0.68,
          "podil_i_mimo_mesto": 0.2,
-         "kapacita": null,
-         "zarazeni_obtiznosti": null,
-         "podil_prijatych_ze_soutezicich": null
-        },
-        {
-         "klic": "600004864_66-53-H/01",
-         "skola": "Střední škola obchodní",
-         "obor": "Operátor skladování",
-         "jpz": false,
-         "uchazecu": 50,
-         "prvni_volby_v_okruhu": 33,
-         "prednost_v_okruhu": 0.35,
-         "podil_i_mimo_mesto": null,
          "kapacita": null,
          "zarazeni_obtiznosti": null,
          "podil_prijatych_ze_soutezicich": null
@@ -15416,19 +15416,6 @@
          "podil_prijatych_ze_soutezicich": 0.86
         },
         {
-         "klic": "600020665_79-41-K/41",
-         "skola": "VOŠ zdravotnická a SZŠ a gymnázium, Alšovo nábřeží",
-         "obor": "Gymnázium",
-         "jpz": true,
-         "uchazecu": 77,
-         "prvni_volby_v_okruhu": 57,
-         "prednost_v_okruhu": 0.64,
-         "podil_i_mimo_mesto": null,
-         "kapacita": 32,
-         "zarazeni_obtiznosti": "vetsina_uspela",
-         "podil_prijatych_ze_soutezicich": 0.78
-        },
-        {
          "klic": "600004856_29-41-M/01",
          "skola": "VOŠek.st., Podskalská",
          "obor": "Technologie potravin",
@@ -15440,6 +15427,19 @@
          "kapacita": 46,
          "zarazeni_obtiznosti": "kapacita_nerozhodovala",
          "podil_prijatych_ze_soutezicich": 1.0
+        },
+        {
+         "klic": "600020665_79-41-K/41",
+         "skola": "VOŠ zdravotnická a SZŠ a gymnázium, Alšovo nábřeží",
+         "obor": "Gymnázium",
+         "jpz": true,
+         "uchazecu": 77,
+         "prvni_volby_v_okruhu": 57,
+         "prednost_v_okruhu": 0.64,
+         "podil_i_mimo_mesto": null,
+         "kapacita": 32,
+         "zarazeni_obtiznosti": "vetsina_uspela",
+         "podil_prijatych_ze_soutezicich": 0.78
         },
         {
          "klic": "600170063_28-42-L/01",
@@ -15502,19 +15502,6 @@
          "podil_prijatych_ze_soutezicich": 0.8
         },
         {
-         "klic": "600005658_39-41-L/01",
-         "skola": "Střední průmyslová škola dopravní, Plzeňská",
-         "obor": "Autotronik",
-         "jpz": true,
-         "uchazecu": 215,
-         "prvni_volby_v_okruhu": 135,
-         "prednost_v_okruhu": 0.64,
-         "podil_i_mimo_mesto": 0.13,
-         "kapacita": 60,
-         "zarazeni_obtiznosti": "vetsina_uspela",
-         "podil_prijatych_ze_soutezicich": 0.85
-        },
-        {
          "klic": "600005381_23-68-H/01",
          "skola": "Akademie řemesel Praha - SŠ technická",
          "obor": "Mechanik opravář motorových vozidel",
@@ -15526,6 +15513,19 @@
          "kapacita": null,
          "zarazeni_obtiznosti": null,
          "podil_prijatych_ze_soutezicich": null
+        },
+        {
+         "klic": "600005658_39-41-L/01",
+         "skola": "Střední průmyslová škola dopravní, Plzeňská",
+         "obor": "Autotronik",
+         "jpz": true,
+         "uchazecu": 215,
+         "prvni_volby_v_okruhu": 135,
+         "prednost_v_okruhu": 0.64,
+         "podil_i_mimo_mesto": 0.13,
+         "kapacita": 60,
+         "zarazeni_obtiznosti": "vetsina_uspela",
+         "podil_prijatych_ze_soutezicich": 0.85
         },
         {
          "klic": "600005658_23-68-H/01",
@@ -15684,19 +15684,6 @@
          "podil_prijatych_ze_soutezicich": 0.88
         },
         {
-         "klic": "600170063_26-52-H/01",
-         "skola": "Střední odborná škola - COP a Gymnázium",
-         "obor": "Elektromechanik pro zařízení a přístroje",
-         "jpz": false,
-         "uchazecu": 95,
-         "prvni_volby_v_okruhu": 40,
-         "prednost_v_okruhu": 0.3,
-         "podil_i_mimo_mesto": 0.23,
-         "kapacita": null,
-         "zarazeni_obtiznosti": null,
-         "podil_prijatych_ze_soutezicich": null
-        },
-        {
          "klic": "600005585_41-55-H/01",
          "skola": "SOU, Praha - Radotín",
          "obor": "Opravář zemědělských strojů",
@@ -15705,6 +15692,19 @@
          "prvni_volby_v_okruhu": 55,
          "prednost_v_okruhu": 0.59,
          "podil_i_mimo_mesto": 0.31,
+         "kapacita": null,
+         "zarazeni_obtiznosti": null,
+         "podil_prijatych_ze_soutezicich": null
+        },
+        {
+         "klic": "600170063_26-52-H/01",
+         "skola": "Střední odborná škola - COP a Gymnázium",
+         "obor": "Elektromechanik pro zařízení a přístroje",
+         "jpz": false,
+         "uchazecu": 95,
+         "prvni_volby_v_okruhu": 40,
+         "prednost_v_okruhu": 0.3,
+         "podil_i_mimo_mesto": 0.23,
          "kapacita": null,
          "zarazeni_obtiznosti": null,
          "podil_prijatych_ze_soutezicich": null
@@ -15749,19 +15749,6 @@
          "podil_prijatych_ze_soutezicich": null
         },
         {
-         "klic": "600170080_23-61-H/01",
-         "skola": "SOŠ automobilní, informatiky a gymnázium",
-         "obor": "Autolakýrník",
-         "jpz": false,
-         "uchazecu": 67,
-         "prvni_volby_v_okruhu": 25,
-         "prednost_v_okruhu": 0.32,
-         "podil_i_mimo_mesto": 0.16,
-         "kapacita": null,
-         "zarazeni_obtiznosti": null,
-         "podil_prijatych_ze_soutezicich": null
-        },
-        {
          "klic": "600005658_26-52-H/01",
          "skola": "Střední průmyslová škola dopravní, a.s.",
          "obor": "Elektromechanik pro zařízení a přístroje",
@@ -15770,6 +15757,19 @@
          "prvni_volby_v_okruhu": 31,
          "prednost_v_okruhu": 0.46,
          "podil_i_mimo_mesto": null,
+         "kapacita": null,
+         "zarazeni_obtiznosti": null,
+         "podil_prijatych_ze_soutezicich": null
+        },
+        {
+         "klic": "600170080_23-61-H/01",
+         "skola": "SOŠ automobilní, informatiky a gymnázium",
+         "obor": "Autolakýrník",
+         "jpz": false,
+         "uchazecu": 67,
+         "prvni_volby_v_okruhu": 25,
+         "prednost_v_okruhu": 0.32,
+         "podil_i_mimo_mesto": 0.16,
          "kapacita": null,
          "zarazeni_obtiznosti": null,
          "podil_prijatych_ze_soutezicich": null
@@ -16592,19 +16592,6 @@
          "podil_prijatych_ze_soutezicich": null
         },
         {
-         "klic": "600006280_39-41-H/01",
-         "skola": "Střední odborná škola Jarov",
-         "obor": "Malíř a lakýrník",
-         "jpz": false,
-         "uchazecu": 79,
-         "prvni_volby_v_okruhu": 52,
-         "prednost_v_okruhu": 0.44,
-         "podil_i_mimo_mesto": null,
-         "kapacita": null,
-         "zarazeni_obtiznosti": null,
-         "podil_prijatych_ze_soutezicich": null
-        },
-        {
          "klic": "600006280_33-42-M/01",
          "skola": "Střední odborná škola Jarov, Učňovská",
          "obor": "Nábytkářská a dřevařská výroba",
@@ -16616,6 +16603,19 @@
          "kapacita": 15,
          "zarazeni_obtiznosti": "stredne_tezke",
          "podil_prijatych_ze_soutezicich": 0.5
+        },
+        {
+         "klic": "600006280_39-41-H/01",
+         "skola": "Střední odborná škola Jarov",
+         "obor": "Malíř a lakýrník",
+         "jpz": false,
+         "uchazecu": 79,
+         "prvni_volby_v_okruhu": 52,
+         "prednost_v_okruhu": 0.44,
+         "podil_i_mimo_mesto": null,
+         "kapacita": null,
+         "zarazeni_obtiznosti": null,
+         "podil_prijatych_ze_soutezicich": null
         },
         {
          "klic": "600005640_33-42-M/01",
@@ -17405,21 +17405,21 @@
        }
       },
       {
-       "klic": "600005992_79-41-K/81",
-       "skola": "Gymnázium, Ústavní",
-       "obor": "Gymnázium",
-       "podil": {
-        "2025": 0.032,
-        "2026": 0.024
-       }
-      },
-      {
        "klic": "600005208_79-41-K/81",
        "skola": "Gymnázium Opatov, Konstantinova",
        "obor": "Gymnázium",
        "podil": {
         "2025": 0.042,
         "2026": 0.05
+       }
+      },
+      {
+       "klic": "600005992_79-41-K/81",
+       "skola": "Gymnázium, Ústavní",
+       "obor": "Gymnázium",
+       "podil": {
+        "2025": 0.032,
+        "2026": 0.024
        }
       }
      ]
@@ -17539,21 +17539,21 @@
        }
       },
       {
-       "klic": "600006565_18-20-M/01",
-       "skola": "SPŠ a Gymnázium Na Třebešíně, Na Třebešíně",
-       "obor": "Informační technologie",
-       "podil": {
-        "2025": 0.029,
-        "2026": 0.012
-       }
-      },
-      {
        "klic": "600006239_18-20-M/01",
        "skola": "Soukr. SŠ výpočetní techniky s.r.o., Litvínovská",
        "obor": "Informační technologie",
        "podil": {
         "2025": 0.062,
         "2026": 0.045
+       }
+      },
+      {
+       "klic": "600006565_18-20-M/01",
+       "skola": "SPŠ a Gymnázium Na Třebešíně, Na Třebešíně",
+       "obor": "Informační technologie",
+       "podil": {
+        "2025": 0.029,
+        "2026": 0.012
        }
       },
       {
@@ -17566,12 +17566,12 @@
        }
       },
       {
-       "klic": "600170039_26-41-M/01",
-       "skola": "Střední průmyslová škola na Proseku, Novoborská",
+       "klic": "600020151_26-41-M/01",
+       "skola": "VOŠ a SPŠ elektrotechnická Fr. Křižíka, Na příkopě",
        "obor": "Elektrotechnika",
        "podil": {
-        "2025": 0.027,
-        "2026": 0.038
+        "2025": 0.029,
+        "2026": 0.04
        }
       }
      ]
@@ -18004,21 +18004,21 @@
        }
       },
       {
-       "klic": "600170063_23-68-H/01",
-       "skola": "Střední odborná škola - COP a Gymnázium",
-       "obor": "Mechanik opravář motorových vozidel",
-       "podil": {
-        "2025": 0.057,
-        "2026": 0.042
-       }
-      },
-      {
        "klic": "600004643_23-45-M/01",
        "skola": "VOŠ a SPŠ dopravní, Masná",
        "obor": "Dopravní prostředky",
        "podil": {
         "2025": 0.033,
         "2026": 0.048
+       }
+      },
+      {
+       "klic": "600170063_23-68-H/01",
+       "skola": "Střední odborná škola - COP a Gymnázium",
+       "obor": "Mechanik opravář motorových vozidel",
+       "podil": {
+        "2025": 0.057,
+        "2026": 0.042
        }
       },
       {
@@ -18223,21 +18223,21 @@
        }
       },
       {
-       "klic": "600006280_23-51-H/01",
-       "skola": "Střední odborná škola Jarov",
-       "obor": "Strojní mechanik",
-       "podil": {
-        "2025": 0.039,
-        "2026": 0.056
-       }
-      },
-      {
        "klic": "600005381_36-52-H/01",
        "skola": "Akademie řemesel Praha - SŠ technická",
        "obor": "Instalatér",
        "podil": {
         "2025": 0.06,
         "2026": 0.077
+       }
+      },
+      {
+       "klic": "600006280_23-51-H/01",
+       "skola": "Střední odborná škola Jarov",
+       "obor": "Strojní mechanik",
+       "podil": {
+        "2025": 0.039,
+        "2026": 0.056
        }
       },
       {
@@ -18308,21 +18308,21 @@
        }
       },
       {
-       "klic": "600019471_68-42-M/01",
-       "skola": "Střední zdravotnická škola, Ruská",
-       "obor": "Bezpečnostně právní činnost",
-       "podil": {
-        "2025": 0.168,
-        "2026": 0.082
-       }
-      },
-      {
        "klic": "600019462_68-42-M/01",
        "skola": "VOŠ zdravotnická a Střední zdrav.škola, 5. května",
        "obor": "Bezpečnostně právní činnost",
        "podil": {
         "2025": 0.163,
         "2026": 0.077
+       }
+      },
+      {
+       "klic": "600019471_68-42-M/01",
+       "skola": "Střední zdravotnická škola, Ruská",
+       "obor": "Bezpečnostně právní činnost",
+       "podil": {
+        "2025": 0.168,
+        "2026": 0.082
        }
       },
       {

@@ -37,7 +37,16 @@ from nazvy_oboru import bez_jednotne_zkousky, nazvy_oboru  # noqa: E402
 from slouceni_prihlasek import PRIJAT, volby_uchazece  # noqa: E402
 
 KOREN = Path(__file__).resolve().parent.parent
-ROKY = (2025, 2026)
+
+
+def rocniky() -> tuple[int, int]:
+    """Zobrazený ročník dat uchazečů podle registru a ročník před ním; letopočet se nepíše napevno."""
+    registr = json.loads((KOREN / "public" / "stav_datovych_sad.json").read_text(encoding="utf-8"))
+    rok = int(registr["sady"]["cermat-uchazeci-kolo1"]["zobrazeno"]["obdobi"])
+    return rok - 1, rok
+
+
+ROKY = rocniky()
 MESTA = ("Brno", "Praha")
 MIN = 10            # meze zveřejnění: uzel i hrana aspoň 10 uchazečů (slovník, souběžné přihlášky)
 BEHU = 30           # počet běhů Louvainu s různým pořadím uzlů
@@ -118,8 +127,8 @@ def graf_mesta(volby: list[list[dict]], uzly_mesta: set[str], vaha: str):
         for a, b in itertools.combinations(obory, 2):
             spolu[(a, b)] += 1
     uzly = {k for k, c in n.items() if c >= MIN}
-    g: dict[str, dict[str, float]] = {k: {} for k in uzly}
-    for (a, b), c in spolu.items():
+    g: dict[str, dict[str, float]] = {k: {} for k in sorted(uzly)}
+    for (a, b), c in sorted(spolu.items()):
         if c < MIN or a not in uzly or b not in uzly:
             continue
         w = c if vaha == "pocet" else c / math.sqrt(n[a] * n[b])
@@ -321,7 +330,7 @@ def podil_nad_mezi(citatel: int, jmenovatel: int) -> float | None:
 
 
 def tv(p: dict, q: dict) -> float:
-    return 0.5 * sum(abs(p.get(k, 0) - q.get(k, 0)) for k in set(p) | set(q))
+    return 0.5 * sum(abs(p.get(k, 0) - q.get(k, 0)) for k in sorted(set(p) | set(q)))
 
 
 def sum_zaklad(pocty_a: dict, pocty_b: dict, rng) -> dict:
@@ -411,7 +420,7 @@ def main() -> None:
                 if len(cl) < 3:
                     continue
                 obory = []
-                for k in sorted(cl, key=lambda k: -n[k]):
+                for k in sorted(cl, key=lambda k: (-n[k], k)):
                     p, s = mapa.get(k, {}), souhrny[r].get(k)
                     pr = pred[k]
                     obory.append({
@@ -427,7 +436,7 @@ def main() -> None:
                 shluky.append({"id": c, "oboru": len(cl), "uchazecu": unik[c] - unik[c] % 10,
                                "podil_s_oborem_jinde_ve_meste": podil_nad_mezi(mimo_shluk[c], unik[c]), "obory": obory})
             mesto_uch = sum(1 for u in volby[r] if any(v["obor"] in uzly_mesta for v in u))
-            vm["rocniky"][str(r)] = {"uchazecu_mesta": mesto_uch, "okruhy": sorted(shluky, key=lambda s: -s["uchazecu"])}
+            vm["rocniky"][str(r)] = {"uchazecu_mesta": mesto_uch, "okruhy": sorted(shluky, key=lambda s: (-s["uchazecu"], s["id"]))}
 
         # přelévání: shluky roku 2026 přenesené na rok 2025 (stejné obory, jiní uchazeči)
         ref = vybrane[ROKY[1]]
@@ -464,9 +473,9 @@ def main() -> None:
                     ({"klic": k, "skola": mapa.get(k, {}).get("skola"), "obor": mapa.get(k, {}).get("obor"),
                       "podil": {str(r): round(p_r[r][k] / (na if r == ROKY[0] else nb), 3) for r in ROKY}}
                      for k in cl if all(p_r[r][k] == 0 or p_r[r][k] >= MIN for r in ROKY)),
-                    key=lambda x: -abs(x["podil"][str(ROKY[1])] - x["podil"][str(ROKY[0])]))[:5],
+                    key=lambda x: (-abs(x["podil"][str(ROKY[1])] - x["podil"][str(ROKY[0])]), x["klic"]))[:5],
             })
-        vm["prelevani"] = sorted(prel, key=lambda x: -x["uchazecu"][str(ROKY[1])])
+        vm["prelevani"] = sorted(prel, key=lambda x: (-x["uchazecu"][str(ROKY[1])], x["id"]))
         vystup["mesta"][mesto] = vm
         print(mesto, "hotovo", file=sys.stderr)
 
