@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.12 · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.12a · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Na GitHubu ani v pravidlech se zatím nic nemění.
 
 ## Shrnutí pro rozhodnutí
@@ -228,9 +228,12 @@ položka slovníku pojmů):
 
 Workflow **„Brána sloučení“**, povinná kontrola v rulesetu u každého PR. **Běží na `pull_request_target`
 ve verzi z `main`** a kód z PR nespouští, jen čte diff, štítky a timeline přes API; upravená brána ve
-větvi tak nemůže posoudit sama sebe. Spouští se na otevření, push a štítky PR, `pull_request_review`,
+větvi tak nemůže posoudit sama sebe. Spouští se na otevření, push a štítky PR,
 **`issues` (štítky a úpravy propojeného issue, aby
-nový `stop` hned zneplatnil výsledek)** a jednou za hodinu (lhůty). **Merge provádí Claude skriptem,
+nový `stop` hned zneplatnil výsledek)**, komentáře (protokol z preview) a jednou za hodinu (lhůty).
+`pull_request_review` mezi spouštěči není: běží ve verzi workflow z větve PR, a review brána ve fázi 1
+nepodmiňuje. Výsledek zapisuje skript přes Checks API na aktuální hlavu PR (implementace
+`scripts/brana/`, workflow `brana-slouceni.yml`). **Merge provádí Claude skriptem,
 který bránu těsně před sloučením spustí znovu** a ověří aktuální veto; vestavěný automatický merge
 GitHubu se nepoužívá, protože by sloučil podle staršího výsledku. Určí režim podle cest
 (`.github/rezimy.yml`) a podle propojeného issue a pustí PR jen při splnění
@@ -338,8 +341,11 @@ nepoužívají; hlášení, která projekt opravuje, se vypíšou v těle projek
 ## 11. Ověření na preview dělá AI
 
 Claude po nasazení preview projde každé kritérium „Hotovo když“ v prohlížeči (Playwright) na šířce
-telefonu i počítače a do PR zapíše protokol (kritérium, adresa, splněno / nesplněno / nejde ověřit),
-u vizuálních změn snímky před a po jako artefakt běhu nebo v komentáři PR. Protokol je podmínkou brány.
+telefonu i počítače a do PR zapíše protokol (kritérium, adresa, splněno / nesplněno / nejde ověřit).
+Komentář začíná nadpisem „Protokol z preview“ a obsahuje řádek `Commit: <prvních 7 znaků hlavy>`;
+brána uzná jen protokol k aktuální hlavě a bez slova „nesplněno“. Změny jen v dokumentaci, testech
+a nastavení (`bez_preview` v `rezimy.yml`) protokol nepotřebují.
+U vizuálních změn přidá snímky před a po jako artefakt běhu nebo v komentáři PR. Protokol je podmínkou brány.
 Předpoklady (fáze 1): secret `VERCEL_AUTOMATION_BYPASS_SECRET`, Playwright a přístup na `*.vercel.app`
 v prostředí denní úlohy.
 
@@ -622,6 +628,9 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.12a** (3. 10. 2026, implementace brány ve fázi 1): brána se nespouští na `pull_request_review`
+  (běží ve verzi z větve PR), výsledek zapisuje přes Checks API na hlavu PR; pevná podoba protokolu
+  z preview a výjimka pro změny bez dopadu na web (oddíly 9 a 11).
 - **0.12** (3. 10. 2026, rozhodnutí vlastníka): všichni pracují přes účet vlastníka (RA35). Odpadají
   strojový účet, GitHub App pro AI, aplikace brány, zkušební repozitář, podmínka O1, převod tokenů a review
   vlastníka kódu; pojistky chrání před chybou a podvrženým vstupem, ne před úmyslem AI; rozhodnutí

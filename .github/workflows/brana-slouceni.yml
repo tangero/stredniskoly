@@ -1,0 +1,60 @@
+# Brána sloučení (docs/navrh-rizeni-vyvoje-2027.md, oddíl 9): povinná kontrola „Brána sloučení“
+# v rulesetu. Workflow běží vždy z main a kód z PR nespouští ani nestahuje; diff, štítky a komentáře
+# čte přes API. Úprava brány ve větvi tak nemůže posoudit sama sebe.
+#
+# Kontrolu zapisuje skript přes Checks API na aktuální hlavu PR, protože události issues, komentářů
+# a plánovaný běh (lhůty) se k hlavě PR samy nevážou. Proto se job jmenuje jinak než kontrola.
+#
+# Spouští se na změny PR, na štítky a úpravy propojených issues (nový stop hned zneplatní výsledek),
+# na komentáře (protokol z preview) a každou hodinu (lhůty režimu L).
+name: Brána sloučení
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, edited, labeled, unlabeled, ready_for_review, converted_to_draft]
+  issues:
+    types: [labeled, unlabeled, edited]
+  issue_comment:
+    types: [created, edited, deleted]
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: "Číslo PR (prázdné = všechny otevřené)"
+        required: false
+
+permissions:
+  contents: read
+  checks: write
+  issues: write
+  pull-requests: read
+
+concurrency:
+  group: brana-${{ github.event.pull_request.number || github.event.issue.number || 'vse' }}
+
+jobs:
+  vyhodnotit:
+    name: Vyhodnocení brány
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Závislosti
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Vyhodnotit
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          ZAMRZNUTI_OD: ${{ vars.ZAMRZNUTI_OD }}
+          ZAMRZNUTI_DO: ${{ vars.ZAMRZNUTI_DO }}
+        run: node scripts/brana/beh.mjs
