@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.11a · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.11b · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Na GitHubu ani v pravidlech se zatím nic nemění.
 
 ## Shrnutí pro rozhodnutí
@@ -121,10 +121,14 @@ odděleně. Přejímka na zkušebním repozitáři: z prostředí AI selže změ
 komentáře nebo review jménem vlastníka. Do splnění se automatický merge nezapne.
 
 U asistenta zadání to znamená přepnout `gh` i git na strojový účet a účet vlastníka odhlásit. U Claude
-Code v cloudu se ve fázi 0 ověří, jestli relaci jde provozovat bez připojeného účtu vlastníka. **Když
-nejde, autonomní práce (merge, štítky, denní úloha) poběží jen v Actions a v denní úloze s tokenem
-aplikace** a interaktivní relace v cloudu zůstane u přípravy PR bez práva slučovat; fáze 1 tak nečeká
-na nesplnitelnou podmínku.
+Code v cloudu se ve fázi 0 ověří, jestli relaci jde provozovat bez připojeného účtu vlastníka.
+**Když nejde, nesmí se taková relace během autonomie na tomto repozitáři používat vůbec.** Samotné
+odebrání práva slučovat nestačí: AI by účtem vlastníka mohla přidat `schvaleno` nebo změnit ruleset
+a brána by to přijala jako lidský souhlas. Práce se pak přesune do prostředí bez přístupu k účtu
+vlastníka (Actions, denní úloha a místní prostředí s tokenem aplikace) a PR publikuje aplikace.
+Negativní přejímka O1 platí pro každé použité prostředí bez výjimky; dokud ji některé nesplní, fáze 1
+se nezapne. Interaktivní relaci propojenou s účtem vlastníka může vlastník dál používat sám pro práci,
+kterou řídí, ale ne jako součást autonomního provozu.
 
 # Část A
 
@@ -636,6 +640,9 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.11b** (3. 10. 2026, kontrola 0.11a od Codexu): náhradní cloudový postup už neobchází O1; relace
+  propojená s účtem vlastníka se v autonomii nepoužívá vůbec, práce běží v prostředí s tokenem aplikace
+  a negativní přejímka platí pro každé prostředí bez výjimky.
 - **0.11a** (3. 10. 2026, kontrola vypořádání od asistenta zadání): aplikace brány a zkušební repozitář
   v práci vlastníka ve fázi 0, odhad 3 h (P1); podmínka O1 pro všechna prostředí AI včetně počítače
   asistenta a náhradní cesta, kdyby cloudová relace nešla bez účtu vlastníka (P2); náhradní režim
