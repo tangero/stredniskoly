@@ -149,11 +149,25 @@ def popis_mesta(mesto: str, volby, rok: int, predchozi: int | None, cast: dict, 
             "okruhy": sorted(okruhy, key=lambda o: (-o["uchazecu"], o["id"]))}
 
 
+def zverejnit(popis: dict) -> dict:
+    """Do veřejného souboru jen okruhy, které se smějí zobrazit (review PR #294).
+
+    Okruh jedné školy, okruh pod MIN_UCHAZECU_OKRUHU a okruhy města, které nesplní práh, se do
+    public/ nepíšou vůbec: příznak `zobrazit` u zveřejněných dat by je před čtenářem souboru neskryl.
+    """
+    if not popis["zobrazit"]:
+        return {"zobrazit": False, "okruhy": []}
+    okruhy = [{k: v for k, v in o.items() if k not in ("zobrazit", "jedne_skoly")} for o in popis["okruhy"] if o["zobrazit"]]
+    return {"zobrazit": True, "okruhy": okruhy}
+
+
 def kontrola(vystup: dict, opravit: bool = False) -> list[str]:
     """Skryté první volby okruhu nesmí jít dopočítat ze zaokrouhleného celku a podílů (review PR #284)."""
     chyby = []
     for mesto, m in vystup["mesta"].items():
         for o in m["okruhy"]:
+            if o.get("zobrazit") is False or o.get("jedne_skoly"):
+                chyby.append(f"{mesto} okruh {o['id']}: okruh, který se nezobrazuje, je ve výstupu")
             if o["uchazecu"] % 10:
                 chyby.append(f"{mesto} okruh {o['id']}: počet uchazečů není zaokrouhlený")
             podily = [(x["podil_prvnich_voleb_v_okruhu"], x["uchazecu"]) for x in o["obory"]]
@@ -228,7 +242,7 @@ def main() -> None:
         if k in cast:
             v["okruh"] = cast[k]
     for mesto in mesta_prehledu():
-        vystup["mesta"][mesto] = popis_mesta(mesto, volby, rok, predchozi, cast, n, mapa, hrany, rng)
+        vystup["mesta"][mesto] = zverejnit(popis_mesta(mesto, volby, rok, predchozi, cast, n, mapa, hrany, rng))
 
     for c in kontrola(vystup, opravit=True):
         print(f"doplňkové potlačení: {c}", file=sys.stderr)

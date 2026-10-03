@@ -50,6 +50,16 @@ class BuildOkruhyOboruTest(unittest.TestCase):
         self.assertEqual(ukotven, {"A_1": True, "B_1": True, "C_1": False})
         self.assertEqual(m["okruhy"][0]["uchazecu"] % 10, 0)
 
+    def test_do_verejneho_souboru_jen_zobrazitelne_okruhy(self):
+        popis = {"zobrazit": True, "okruhu": 3, "okruhy": [
+            {"id": 1, "zobrazit": True, "jedne_skoly": False, "uchazecu": 50, "obory": []},
+            {"id": 2, "zobrazit": False, "jedne_skoly": True, "uchazecu": 40, "obory": []},
+            {"id": 3, "zobrazit": False, "jedne_skoly": False, "uchazecu": 20, "obory": []}]}
+        verejne = gen.zverejnit(popis)
+        self.assertEqual([o["id"] for o in verejne["okruhy"]], [1])
+        self.assertNotIn("jedne_skoly", verejne["okruhy"][0])
+        self.assertEqual(gen.zverejnit({**popis, "zobrazit": False}), {"zobrazit": False, "okruhy": []})
+
     def test_kontrola_potlaci_dopocitatelne_prvni_volby(self):
         # smyšlené: 20 + 21 + skrytý 9 = 50
         vystup = {"mesta": {"Alfa": {"okruhy": [{"id": 1, "uchazecu": 50, "obory": [
