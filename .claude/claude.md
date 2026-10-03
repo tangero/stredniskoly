@@ -232,36 +232,7 @@ Pokud problém vyřešíš a není dokumentován → **IHNED** dokumentuj.
 **Last updated:** 2026-09-13
 
 ## Dokumentace
-Podrobná dokumentace jednotlivých oblastí projektu:
-- [Slovník ukazatelů](../docs/slovnik-ukazatelu.md) — závazné názvy, definice a výpočty všech čísel na webu
-- [Slovník pojmů](../docs/slovnik-pojmu.md) — závazné pojmy pro texty na webu, jejich vysvětlení při prvním výskytu a zakázaná slova
-- [Zdroje dat](../docs/zdroje-dat.md) — zdrojové soubory sloupec po sloupci a registr stavu datových sad
-- [Datová linka](../docs/datova-linka.md) — zjištění, zpracování, oznámení a schválení nových dat
-- [Druhé kolo](../docs/druhe-kolo.md) — zobrazení 2. kola přijímacího řízení
-- [Využití dat o uchazečích](../docs/teze-vyuziti-dat-jpz-2027.md) — pásma přijetí a co o přijetí rozhodlo, s oponenturami
-- [Pásmový proužek](../docs/navrh-pasmovy-prouzek-2027.md) — kde uchazeč stojí proti loňským: převis vysvětluje jen čtvrtinu rozdílů v prahu, simulátor dnes porovnává s průměrem, který nezná rozptyl; prototyp na /prototyp/pasma (nezalistovaná stránka)
-- [Kde stojím](../docs/navrh-kde-stojim-2027.md) — návrh ke schválení: proužek s převedeným výsledkem cvičného testu TAU a kritérii na stránce oboru, pak v simulátoru; před nasazením oprava pásem (#183)
-- [Simulátor přijímaček](../docs/navrh-simulator-prijimacek-2027.md) — fáze 2 Kde stojím, ke schválení: cvičný test TAU, nabídky ve třech skupinách podle pásma 1. kola s filtrem dojezdu a města, oblíbené se strategií řazení (preference + pojistka, počet přihlášek z pravidel MŠMT), výhrady; kompaktní index pásem 28 kB
-- [Kritéria přijetí z DiPSy](../docs/predani-kriteria-prijeti-2026-09-25.md) — přepis PDF kritérií 2026 (DeepSeek, celé PDF), kontrola Jevem a vzorků naslepo, chybovost zhruba každý desátý přepis, postup pro ročník 2027 (issue #181)
-- [Aktuální ročník dat](../docs/navrh-aktualniho-rocniku-dat.md) — návrh opravy zobrazení roku 2025 místo 2026
-- [Prezentace dat na stránce školy](../docs/navrh-prezentace-dat-skoly-2027.md) — co a jak ukazovat rodičům
-- [Grafy na stránce školy a oboru](../docs/grafy-skoly-a-oboru-2027.md) — schválený návrh grafů, časové řady, pravidla, předpoklady a uložení mezi zvažované
-- [Vrstvy stránky oboru](../docs/vrstvy-stranky-oboru-2027.md) — pět kol návrhu: odpověď na tři otázky uchazeče nad důkazy, stavy nabídky, rozhodnutí použít a zavrhnout
-- [Stránka školy](../docs/stranka-skoly-2027.md) — pět otázek rodiny: obory, jak si škola vede (maturita proti skupině oborů, inspekce), jaká škola je, kde je a okolí podle souběžných přihlášek
-- [Stránka města](../docs/navrh-stranky-mesta-2027.md) — přehled škol ve městě: obtížnost přijetí jako odznak a filtr (neřadí se podle ní), karty škol místo řádků nabídek, 102 měst generovaných z katalogu, město ve vyhledávači
-- [Okruhy oborů](../docs/navrh-shluky-oboru-2027.md) — návrh etapy 1 (#277) s rozhodnutími vlastníka: obory, mezi kterými se uchazeči rozhodují, z grafu souběžných přihlášek (Louvain, normovaná váha) uvnitř spádových oblastí ze sloučených let 2024–2026, ne podle hranic města; ukotvení oborů z okolí; zájem z okruhu neodchází, přesouvá se uvnitř něj; stránka oboru „Které další obory v okolí uchazeči také volí“ se souhrnem po obcích, stránka města s okruhy, bez vlastní stránky okruhu; kontrola dopočitatelnosti skupin pod 10
-- [Mapa krajů a odkazy na veletrzích](../docs/navrh-mapa-a-odkazy-veletrhu-2027.md) — mapa krajů jako doplněk čipů (stejná výplň, počet číslem, skrytá pro čtečku), odkazy z akce na město a z nadpisu na kraj, veletrh na stránce města; hranice z RÚIAN
-- [API pro návrhy změn veletrhů](../docs/veletrhy-api-2027.md) — Eduarda navrhuje změny akcí přes API, člověk schvaluje odkazem z e-mailu, web čte z tabulky `veletrh_akce` přes sdílenou cache, JSON je snímek
-- [Sledování škol](../docs/sledovani-skol-2027.md) — upozornění e-mailem na změny sledovaných škol: události z přepnutí sad a portálu, denní souhrn seskupený podle události
-- [Návrh sledování škol a oborů v2.2](../docs/navrh-sledovani-skol-a-oboru-v2.md) — neplatný souběžný návrh uložený jako podklad: přehodnocuje zamítnutí sledování oboru, rozpor s verzí 1.2 je otevřený
-- [Využití nepoužitých dat](../docs/navrh-vyuziti-nepouzitych-dat-2027.md) — data uchazečů 2026 (přepnuto 17. 9. 2026), dobíhající obor jako rozlišení „obor se už nenabírá“ od nevypsaného ročníku, přijatí podle priority jako složení třídy (čeká na test srozumitelnosti); proč o absolventech data nemáme
-- [Předání práce 18. 9. 2026](../docs/predani-prace-2026-09-18.md) — stav po nasazení dat 2026 a úklidu: co je otevřené, v jakém pořadí na to jít, osm pastí a co se rozhodlo nedělat
-- [Novinky k přijímačkám](../docs/novinky-k-prijimackam-2027.md) — plošný odběr termínů a pokynů e-mailem: obsah vázaný na kalendář MŠMT, formulář na titulce, v patičce a u kalendáře, odběratelé v Neonu s frontou odeslání; pět kol oponentury v docs/podklady/
-- [Školní novinky z RSS](../docs/skolske-novinky-rss-2027.md) — sklízení novinek ze školních webů, klasifikace bez lidské moderace, jediné publikační rozhodnutí; čtyři oponentury vypořádány
-- [Sonda mimo RSS](../docs/sonda-mimo-rss-2026.md) — 450 škol bez kanálu novinek: výpis aktualit čitelný u 283 (čerstvý u 230), sitemap přidá jen 8; Parallel/Exa/TinyFish srovnané z dokumentace, TinyFish (html celého těla) změřen a s vlastní čtečkou napojený do sklízeče jako výpis aktualit (335 škol, na stránce školy zatím skrytý), Parallel má podmínky proti ukládání výstupů; prototyp /prototyp/cim-skoly-ziji (nezalistovaná stránka)
-- [Překonaná rozhodnutí kolem novinek](../docs/prehodnoceni-rozhodnuti-rss-2027.md) — pole DOD stárne, protože ho školy přestaly udržovat (InspIS PORTÁL profil pořád servíruje), strop pokrytí 49 % a měřená cesta za něj, hotové úložiště odběrů, dvojí model události, pole v portálu, klasifikace modelem; rozhodnutí zadavatele k P2, P5, P6, P7
-- [Účty portálu škol](../docs/ucty-portalu-skol-2027.md) — správce a editoři profilu školy, zneplatňování záznamů místo přepisu, administrace s důvodem, veřejné „Profil spravuje“ se souhlasem, pilot 20 škol
-- [Pozvánky do portálu po vlnách](../docs/podklady/pozvanka-treti-vlna.md) — 785 škol osloveno ve třech vlnách (do 1. 10. 2026), úspěšnost registrací, rozhodnutí o plošném oslovení bez odkazu na odhlášení, příprava čtvrté vlny se soukromými a církevními školami (293 způsobilých)
-- [Spolupráce na GitHubu](../docs/spoluprace-na-githubu.md) — štítky a formuláře issues, připomínky s termínem pro Claude Code, automatizace tabule projektu, ochrana main (jen přes PR se zelenými kontrolami), bezpečnostní nastavení a co je otevřené
-- [Řízení vývoje](../docs/navrh-rizeni-vyvoje-2027.md): návrh ke schválení, minimum lidských vstupů za cenu vyššího rizika. Člověk rozhoduje jen pět věcí (nevyžádané rozesílky, pravomoci AI, právní závazky, výdaje nad limit, směr); o směru i na briefingu s asistentem zadání v Grok Bot (zastavující hned, rozjíždějící po potvrzení zápisu, nejvýš 3 nápady AI na briefing), i na GitHubu; rozpočet AI ve třech koších; zavedení ve dvou fázích podle přínosu; ostatní AI v režimech rutina, lhůta a kontrolovaný (druhý klíč jiným modelem, migrace přes větev Neonu, nová data podle politiky přístupu, výdaje kartou do limitu); brána sloučení, ruleset bez obejití; Claude Code pracuje přes účet vlastníka (RA35), Eduarda vlastním účtem (RA36, [pokyny pro ni](../docs/pokyny-asistent-zadani.md)), pojistky chrání před chybou a podvrženým vstupem, ne před úmyslem AI; brána v `scripts/brana/`, postupy ve skills `rizeni-brana`, `overeni-preview`, `trideni-issues`
-- [Postup zavedení fáze 0](../docs/postup-zavedeni-faze-0.md): práce vlastníka ve fázích 0 a 1 (asi 35 min): fáze 0 hotová; přejímka naostro, ruleset s branou a bez obejití, zapnutí slučování AI (`slucovani_ai`), Směr vývoje v soukromém repozitáři
+
+Rozcestník dokumentace jednotlivých oblastí je v `docs/rozcestnik.md` (načítá ho `CLAUDE.md`). Nový dokument
+zapiš tam, ne sem: tento soubor obsahuje pravidla a jeho změnu brána sloučení pouští jen se souhlasem
+vlastníka.
