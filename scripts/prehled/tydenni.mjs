@@ -16,6 +16,14 @@ export const STITKY_ROZHODNUTI = ['schvaleno', 'zamitnuto', 'stop'];
 
 const datum = (iso) => new Date(iso).toISOString().slice(0, 10);
 
+export const MAX_POLOZEK = 15;
+const MAX_DELKA_KRATKE = 3800; // limit Telegramu je 4096 znaků, zbytek zůstává na odkaz „Celý přehled“
+const MAX_DELKA_TITULKU = 80;
+
+const adresa = (cislo, pr = false) => `https://github.com/${REPO}/${pr ? 'pull' : 'issues'}/${cislo}`;
+const odkaz = (cislo, pr = false) => `[#${cislo}](${adresa(cislo, pr)})`;
+const zkrat = (t = '') => (t.length > MAX_DELKA_TITULKU ? `${t.slice(0, MAX_DELKA_TITULKU - 1)}…` : t);
+
 async function strankuj(api, cesta, staci) {
   const vse = [];
   for (let strana = 1; strana <= 20; strana++) {
@@ -95,16 +103,26 @@ export function sestavPrehled(d, { vlastnik = 'tangero' } = {}) {
   });
   const ciziSchvaleni = d.rozhodnuti.filter((r) => r.stitek === 'schvaleno' && r.akce === 'labeled' && r.kdo !== vlastnik);
 
+  // Telegram dostává prostý text s plnými adresami (bez parse_mode), takže se nemusí nic escapovat.
+  const polozka = (znacka, cislo, titulek, pr = false) => `${znacka} #${cislo} ${zkrat(titulek)}\n${adresa(cislo, pr)}`;
+  const cekajici = [
+    ...d.navrhy.map((n) => polozka('Návrh:', n.cislo, n.titulek)),
+    ...d.cekajiNaSouhlas.map((p) => polozka('PR čeká na schvaleno:', p.cislo, p.titulek, true)),
+  ];
+  const vypis = cekajici.slice(0, MAX_POLOZEK);
+  if (cekajici.length > MAX_POLOZEK) vypis.push(`… a dalších ${cekajici.length - MAX_POLOZEK} v celém přehledu`);
+
   const kratky = [
     `Týdenní přehled stredniskoly (${datum(d.od)} až ${datum(d.ted)})`,
     `Sloučeno PR: ${d.slouceno.length}`,
     `Rozhodnutí štítky: ${d.rozhodnuti.length} (zkontroluj v přehledu, co si nevybavíš)`,
     d.navrhy.length ? `Čeká na tebe: ${d.navrhy.length} návrhů, ${d.cekajiNaSouhlas.length} PR bez souhlasu` : `Čeká na tebe: ${d.cekajiNaSouhlas.length} PR bez souhlasu`,
-    d.zastavene.length ? `Zastaveno (stop): ${d.zastavene.map((z) => `#${z.cislo}`).join(', ')}` : '',
-    d.cervenaMain.length ? `POZOR, červené CI na main: ${d.cervenaMain.join(', ')}` : '',
+    ...vypis,
+    d.zastavene.length ? `Zastaveno (stop):\n${d.zastavene.map((z) => polozka('', z.cislo, z.titulek).trimStart()).join('\n')}` : '',
+    d.cervenaMain.length ? `POZOR, červené CI na main: ${d.cervenaMain.join(', ')}\nhttps://github.com/${REPO}/commits/main` : '',
     ...tokenyPozor.map((t) => `POZOR, token ${t}`),
-    ciziSchvaleni.length ? `POZOR, schvaleno z jiného účtu: ${ciziSchvaleni.map((r) => `#${r.cislo} (${r.kdo})`).join(', ')}` : '',
-  ].filter(Boolean).join('\n');
+    ciziSchvaleni.length ? `POZOR, schvaleno z jiného účtu:\n${ciziSchvaleni.map((r) => `#${r.cislo} (${r.kdo})\n${adresa(r.cislo)}`).join('\n')}` : '',
+  ].filter(Boolean).join('\n').slice(0, MAX_DELKA_KRATKE);
 
   const radky = (pole, f, prazdne) => (pole.length ? pole.map(f) : [`- ${prazdne}`]);
   const dlouhy = [
@@ -113,17 +131,17 @@ export function sestavPrehled(d, { vlastnik = 'tangero' } = {}) {
     '## Rozhodnutí štítky (zpětná kontrola)',
     'Všechna přidání a odebrání `schvaleno`, `zamitnuto` a `stop`. Co si nevybavíš, vrať.',
     '',
-    ...radky(d.rozhodnuti, (r) => `- ${datum(r.kdy)} #${r.cislo} ${r.akce === 'labeled' ? 'přidal' : 'odebral'} \`${r.stitek}\` účet ${r.kdo}: ${r.titulek}`, 'žádná'),
+    ...radky(d.rozhodnuti, (r) => `- ${datum(r.kdy)} ${odkaz(r.cislo)} ${r.akce === 'labeled' ? 'přidal' : 'odebral'} \`${r.stitek}\` účet ${r.kdo}: ${r.titulek}`, 'žádná'),
     '',
     '## Sloučené PR',
-    ...radky(d.slouceno, (p) => `- #${p.cislo} ${p.titulek} (${datum(p.kdy)}${p.brana ? `, brána: ${p.brana}` : ''})`, 'žádné'),
+    ...radky(d.slouceno, (p) => `- ${odkaz(p.cislo, true)} ${p.titulek} (${datum(p.kdy)}${p.brana ? `, brána: ${p.brana}` : ''})`, 'žádné'),
     '',
     '## Čeká na vlastníka',
-    ...radky(d.navrhy, (n) => `- návrh #${n.cislo} ${n.titulek} (od ${datum(n.od)})`, 'žádné návrhy'),
-    ...radky(d.cekajiNaSouhlas, (p) => `- PR #${p.cislo} ${p.titulek}: brána čeká na \`schvaleno\``, 'žádné PR bez souhlasu'),
+    ...radky(d.navrhy, (n) => `- návrh ${odkaz(n.cislo)} ${n.titulek} (od ${datum(n.od)})`, 'žádné návrhy'),
+    ...radky(d.cekajiNaSouhlas, (p) => `- PR ${odkaz(p.cislo, true)} ${p.titulek}: brána čeká na \`schvaleno\``, 'žádné PR bez souhlasu'),
     '',
     '## Zastaveno štítkem stop',
-    ...radky(d.zastavene, (z) => `- #${z.cislo} ${z.titulek}`, 'nic'),
+    ...radky(d.zastavene, (z) => `- ${odkaz(z.cislo)} ${z.titulek}`, 'nic'),
     '',
     '## Provoz',
     d.cervenaMain.length ? `- červené CI na main: ${d.cervenaMain.join(', ')}` : '- CI na main bez chyb',
