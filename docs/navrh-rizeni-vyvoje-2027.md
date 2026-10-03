@@ -241,7 +241,8 @@ podmínek režimu z oddílu 4. **Původ zadání:**
   nedůvěryhodný vstup jako veřejné hlášení.
 
 Vždy selže při `stop` na PR nebo propojeném issue, a to i u PR se štítkem `incident`. Při zamrznutí
-(proměnné repozitáře `ZAMRZNUTI_OD`/`ZAMRZNUTI_DO`) selže také, kromě incidentního postupu (oddíl 9b). `stop` na PR se zároveň přenese
+(proměnné repozitáře `ZAMRZNUTI_OD`/`ZAMRZNUTI_DO`) selže také, kromě incidentního postupu (oddíl 9b).
+`stop` na PR se zároveň přenese
 na propojené issue, aby byl vidět ve frontě. Ruleset dnes vyžaduje nula schválení a tři kontroly CI;
 bez brány by identita s právem merge sloučila cokoli.
 
@@ -533,7 +534,7 @@ ověří ho měřítka.
 | RA4 | Životní cyklus projektu podle oddílu 10 | **ano** |
 | RA5 | Úklid `docs/` jako rutina | **ano** |
 | RA6 | Strojový účet pro asistenta zadání, GitHub App pro Claude Code všude | **ano** |
-| RA7 | Rutina včetně veřejných hlášení s automatickým merge | **ano** |
+| RA7 | Rutina včetně veřejných hlášení s automatickým merge (z veřejných hlášení až s druhým klíčem ve fázi 2) | **ano** |
 | RA8 | Drobná zadání po 48 h bez veta; etapy v mandátu bez lhůty (RA32) | **ano** |
 | RA9 | Zkrácení `CLAUDE.md` přes skills | **ano** |
 | RA10 | Ověření na preview dělá AI | **ano** |
