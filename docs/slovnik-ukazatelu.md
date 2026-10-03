@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.55 · 3. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.56 · 3. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -74,7 +74,7 @@ Do souboru se zapisuje šest nejčastějších souběhů. Názvy oborů bez jedn
 Neříká, kam uchazeči nakonec nastoupili. Popisuje, co si psali na přihlášku.
 
 ### Okruh oborů
-Obory, mezi kterými se uchazeči rozhodovali: obory, které měli titíž uchazeči často zároveň na přihlášce. Hledají se uvnitř *Oblasti přihlášek*, ne uvnitř hranic města (rozhodnutí vlastníka 3. 10. 2026); varianta uvnitř města slouží jako srovnání. Návrh etapy 1, na webu se zatím nezobrazuje ([návrh](navrh-shluky-oboru-2027.md), issue #277). Rozbor počítá `scripts/rozbor-shluky-oboru.py`, pole `okruhy` v podkladu `docs/podklady/shluky-oboru-2026-10-03.json`.
+Obory, mezi kterými se uchazeči rozhodovali: obory, které měli titíž uchazeči často zároveň na přihlášce. Hledají se uvnitř *Oblasti přihlášek*, ne uvnitř hranic města (rozhodnutí vlastníka 3. 10. 2026); varianta uvnitř města slouží jako srovnání. Na webu se zatím nezobrazuje ([návrh](navrh-shluky-oboru-2027.md), issue #277). Rozbor počítá `scripts/rozbor-shluky-oboru.py`, pole `okruhy` v podkladu `docs/podklady/shluky-oboru-2026-10-03.json`; pro web `scripts/build-okruhy-oboru.py` do `public/okruhy_oboru_{rok}.json` (pole `mesta.{město}.okruhy`, u oboru `obory.{klíč}.okruh`), výpočet sdílí `scripts/okruhy_oboru.py`. Do souboru jdou jen okruhy, které se smějí zobrazit: ne okruh jedné školy, okruh pod 30 uchazeči ani okruhy města, které nesplní práh (aspoň 3 okruhy s aspoň 3 ukotvenými obory). Příslušnost oboru k okruhu (`obory.{klíč}.okruh`) se uvádí jen u zveřejněného okruhu.
 
 Výpočet: graf, jehož uzly jsou obory školy (REDIZO_KKOV) téže oblasti přihlášek (ve srovnávací variantě téhož města podle indexu názvů) s aspoň 10 uchazeči, hrany dvojice oborů s aspoň 10 společnými uchazeči. Váha hrany je `společní uchazeči ÷ √(uchazeči oboru A × uchazeči oboru B)`. Rozdělení hledá Louvain s rozlišením 1,0 (nejlepší modularita ze 30 běhů); nesouvislá skupina se rozdělí na souvislé části. Okruh má aspoň 3 obory. Zdroj: data uchazečů 1. kola, denní nezkrácené studium, zaměření sloučená jako u souběžných přihlášek. Jednotka: příslušnost oboru k okruhu.
 
@@ -120,7 +120,7 @@ Vždy se uvádí se šumem: kolik přesunu dá náhoda, když se oba ročníky l
 **Neříká, proč se zájem přesunul**, ani zda se přesun zopakuje. Ze dvou ročníků se nemluví o trendu.
 
 ### Souběžné přihlášky podle obce
-Pro stránku oboru: `uchazeči oboru, kteří měli na přihlášce i jiný obor v obci X ÷ uchazeči oboru`. Pole `kam_dal.{klíč}.obce`. Jednotka: podíl. Zveřejňuje se jen tehdy, když obec i zbytek mají aspoň 10 uchazečů (`podil_nad_mezi`), jinak by věta „všichni kromě sedmi“ prozradila malou skupinu. Posuzuje se i společně s přesnými počty oborů téže obce: když by rozdíl obce a jejího oboru byl vždy 1 až 9 uchazečů, řádek obce se nezveřejní (`kontrola_kam_dal`, review PR #284). Obec oboru je obec školy podle indexu názvů.
+Pro stránku oboru: `uchazeči oboru, kteří měli na přihlášce i jiný obor v obci X ÷ uchazeči oboru`. Pole `obory.{klíč}.obce` v `public/okruhy_oboru_{rok}.json` (`scripts/build-okruhy-oboru.py`), v podkladu rozboru `kam_dal.{klíč}.obce`. Řádek obce se nezveřejní ani tehdy, když by ho šlo doplnit na skupinu 1 až 9 uchazečů počtem, který web ukazuje jinde: obory výš a níž na přihlášce (zvlášť i sečtené za týž obor) a souběžné přihlášky stránky školy. Jednotka: podíl. Zveřejňuje se jen tehdy, když obec i zbytek mají aspoň 10 uchazečů (`podil_nad_mezi`), jinak by věta „všichni kromě sedmi“ prozradila malou skupinu. Posuzuje se i společně s přesnými počty oborů téže obce: když by rozdíl obce a jejího oboru byl vždy 1 až 9 uchazečů, řádek obce se nezveřejní (`kontrola_kam_dal`, review PR #284). Obec oboru je obec školy podle indexu názvů.
 
 Doplňuje *Souběžné přihlášky* tam, kde se zájem rozptyluje: uchazeči o čtyřleté gymnázium v Brandýse nad Labem měli v roce 2026 z 56 % na přihlášce i obor v Praze, ale do 40 různých pražských oborů, z nichž žádný nemá 10 společných uchazečů.
 
@@ -823,6 +823,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.56 | Generátor pro web `scripts/build-okruhy-oboru.py` a soubor `public/okruhy_oboru_{rok}.json` (etapa 2a, #277); *Souběžné přihlášky podle obce* se posuzují i proti počtům z kontextu a souběhu přihlášek. Výpočet beze změny. |
 | 1.55 | Okruhy bez hranic měst (3. 10. 2026, rozhodnutí vlastníka, issue #277): nová *Oblast přihlášek* a *Souběžné přihlášky podle obce*; *Okruh oborů* se hledá uvnitř oblasti přihlášek, ukotvení oborů z okolí; *Podíl okruhu na uchazečích města* přejmenován na *Podíl okruhu na uchazečích oblasti*. |
 | 1.54 | Pět ukazatelů okruhů oborů ve městě (3. 10. 2026, [návrh](navrh-shluky-oboru-2027.md), issue #277): *Okruh oborů*, *Přednost v okruhu*, *Podíl prvních voleb v okruhu*, *Podíl okruhu na uchazečích města* a *Přesun zájmu v okruhu*. Zatím jen v rozboru ke schválení, na webu se nezobrazují. |
 | 1.53 | **Nevypsané 2. kolo u nenaplněného oboru**: definice podle zdroje (ve výsledcích 1. kola méně přijatých než míst) a doplněno „co neříká“: souhrn 1. kola nezachycuje obsazení míst po výsledcích, věta na webu škole nepřisuzuje, že místa zbyla (#258). |
