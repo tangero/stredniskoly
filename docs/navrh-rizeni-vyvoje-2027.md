@@ -136,7 +136,9 @@ a vlastník ji schválí jedním klepnutím.
 ## 4. Režimy rozhodování AI
 
 Všechno mimo oddíl 3 rozhoduje AI v jednom z pěti režimů. Režim určuje brána podle cest v PR
-(`.github/rezimy.yml`) a podle typu činnosti:
+(`.github/rezimy.yml`) a podle typu činnosti. **Tato tabulka je jediné závazné místo pro lhůty
+a podmínky sloučení;** ostatní oddíly na ni odkazují, a kdyby se s ní rozcházely, platí tabulka
+(s výjimkou specifického mechanismu z oddílu 5 podle odstavce pod tabulkou):
 
 | režim | kdy | podmínky sloučení nebo provedení |
 |---|---|---|
@@ -593,7 +595,8 @@ Po čtyřech týdnech provozu části A:
 - **0.10b** (3. 10. 2026, kontrola vypořádání od Codexu): incident ruší jen kalendářní zamrznutí, nikdy
   `stop` (V1); překročení mandátu vždy potřebuje `schvaleno` bez ohledu na pojmenování změny (V2);
   rutina z veřejných hlášení zůstává do zavedení druhého klíče ve fázi 2 v dnešním režimu (V3);
-  přejímací scénáře pro `stop` + `incident` a pro překročení mandátu.
+  přejímací scénáře pro `stop` + `incident` a pro překročení mandátu; tabulka režimů v oddílu 4 je
+  jediné závazné místo pro lhůty a podmínky sloučení.
 - **0.10a** (3. 10. 2026, vlastní kontrola konzistence): brána a druhý klíč běží na `pull_request_target`
   ve verzi z `main` bez spouštění kódu z PR (jinak by si AI mohla ve větvi upravit kontrolora); sjednocení
   náhrady tokenů (`PROJECT_TOKEN` strojovým účtem) v oddílech 5 a 20; fáze 0 obsahuje založení
