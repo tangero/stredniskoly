@@ -1,9 +1,9 @@
 # Postup zavedení fází 0 a 1: práce vlastníka
 
-Verze 2.2 · 3. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.12, oddíl 20.
+Verze 3.0 · 3. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13, oddíl 20.
 
-AI pracuje přes účet vlastníka (rozhodnutí RA35), takže se nezakládají žádné další účty, aplikace
-ani zkušební repozitář. Práce vlastníka je asi 30 minut.
+Claude Code pracuje přes účet vlastníka (RA35), Eduarda vlastním účtem `eduarda-prijimacky` (RA36).
+Práce vlastníka ve fázi 1 je asi 35 minut.
 
 Hotové už je (PR #276): odstraněné workflow `auto-fix-issues.yml`, `auto-fix-iterative.yml`
 a `notify-new-issue.yml` i jejich skripty; `veletrhy-snimek.yml` zakládá PR tokenem `CSI_PR_TOKEN`,
@@ -15,14 +15,24 @@ takže na nich běží CI; z #53 je odstraněný e-mail; duplikáty #216, #228 a
 - `CSI_PR_TOKEN` funguje a nevyprší: PR #269 z `csi-weekly-refresh` založil účet vlastníka a proběhly na
   něm povinné kontroly.
 
-## Fáze 1, až AI připraví bránu sloučení
+## Fáze 1
 
-Fáze 1 přijde ve dvou PR: nejdřív brána sloučení (`brana-slouceni.yml`, `scripts/brana/`, `rezimy.yml`,
-štítky oblastí), potom pravidla v `CLAUDE.md` a skills. Brána po sloučení prvního PR jen píše kontrolu
-„Brána sloučení“ ke každému PR a nic neblokuje, dokud ji nepřidáš do rulesetu. Pár dní se tak dá sledovat,
-jestli rozhoduje správně.
+Stav 3. 10. 2026: brána sloučení je v `main` (PR #283) a jen zapisuje kontrolu „Brána sloučení“, nic
+neblokuje. Štítky `stop`, `rutina`, `incident`, `projekt`, `puvod:hlaseni`, `puvod:email`, `trvale` jsou
+založené. Druhý PR fáze 1 přináší pravidla v `CLAUDE.md`, skills, pokyny pro Eduardu
+(`docs/pokyny-asistent-zadani.md`) a adresu náhledu ke commitu. Slučování AI je vypnuté
+(`slucovani_ai: false` v `.github/rezimy.yml`), dokud ho nezapneš v kroku 3b.
 
-### Krok 3: ruleset (10 min, až brána u PR ukazuje rozumné výsledky)
+### Krok 3a: přejímka naostro (5 min, AI připraví a vyhodnotí)
+
+AI založí zkušební issue a PR. Ty na pokyn přidáš štítky:
+
+1. **O2:** přidáš `schvaleno` na issue; AI pak změní jeho rozsah a brána musí PR odmítnout.
+2. **Stop a protokol:** přidáš `stop`; brána musí PR odmítnout. PR bez protokolu z preview také.
+
+AI zapíše výsledky do PR a zkušební issue i PR zavře.
+
+### Krok 3: ruleset (10 min, po přejímce)
 
 Repozitář → Settings → Rules → Rulesets → **Ochrana main**:
 
@@ -42,16 +52,23 @@ Jak se pak slučuje:
 - **Změny brány, `rezimy.yml`, `CLAUDE.md`:** vždy `schvaleno` přímo na PR.
 - Proč kontrola neprošla, ukazuje její souhrn v záložce Checks u PR.
 
+### Krok 3b: zapnout slučování AI (2 min)
+
+AI připraví PR, který v `.github/rezimy.yml` nastaví `slucovani_ai: true`. Přidáš na něj `schvaleno`
+a sloučíš ho. Od té chvíle Claude Code slučuje sám skriptem po bráně.
+
 ### Krok 4: Směr vývoje (15 min)
 
 1. Založ soukromý repozitář `stredniskoly-rizeni`.
 2. AI do něj připraví `smer-vyvoje.md` podle oddílu 17 návrhu; ty doplníš cíle, priority, co se teď
    nedělá a měsíční rozpočet.
 
-### Krok 5: náhled pro ověření na preview (5 min, jen když je zapnutá ochrana náhledů ve Vercelu)
+### Krok 5: náhled pro ověření na preview (5 min, jen když náhled vrací 401)
 
-Vercel → projekt → Settings → Deployment Protection → Protection Bypass for Automation: vytvoř
-hodnotu a ulož ji v repozitáři jako secret `VERCEL_AUTOMATION_BYPASS_SECRET`.
+Když je ve Vercelu zapnutá ochrana náhledů, AI se na náhled nedostane. Vercel → projekt → Settings →
+Deployment Protection → Protection Bypass for Automation: vytvoř hodnotu. Ulož ji jako proměnnou prostředí
+`VERCEL_AUTOMATION_BYPASS_SECRET` v nastavení cloudového prostředí Claude Code (nabídka prostředí v záhlaví
+relace → Edit); platí od další relace. Do chatu ji nevkládej.
 
 ## Co zůstává na tobě potom
 
