@@ -19,12 +19,12 @@ const TED = Date.parse('2026-10-10T12:00:00Z');
 const PRED = (h) => new Date(TED - h * 3600 * 1000).toISOString();
 
 const TELO_ISSUE = 'Zdroj: vlastník\n\n## Rozsah\nPřidat větu o 2. kole.\n\n## Poznámky\nnic';
-const issue = (o = {}) => ({ cislo: 10, stav: 'open', stitky: ['interni'], telo: TELO_ISSUE, komentare: [], udalosti: [], ...o });
+const issue = (o = {}) => ({ cislo: 10, autor: 'tangero', stav: 'open', stitky: ['interni'], telo: TELO_ISSUE, komentare: [], udalosti: [], ...o });
 const protokolKomentar = (sha = SHA, vysledek = 'splněno', kdy = PRED(55)) => ({
   autor: 'tangero', cas: kdy, telo: `## Protokol z preview\nCommit: ${sha.slice(0, 7)}\n| věta na stránce | ${vysledek} |`,
 });
 const pr = (o = {}) => ({
-  cislo: 5, stav: 'open', zakladna: 'main', draft: false, telo: 'Closes #10', stitky: [],
+  cislo: 5, autor: 'tangero', stav: 'open', zakladna: 'main', draft: false, telo: 'Closes #10', stitky: [],
   vytvoreno: PRED(72), hlava: { sha: SHA }, komentare: [protokolKomentar()], udalosti: [], ...o,
 });
 const soubor = (nazev, radky = 10, o = {}) => ({ nazev, stav: 'modified', pridano: radky, odebrano: 0, patch: '', ...o });
@@ -396,6 +396,45 @@ test('stop odebraný cizím účtem dál platí, odebraný tím, kdo ho přidal,
   assert.equal(s([ud('labeled', 'tangero', 5), ud('unlabeled', 'eduarda-prijimacky', 4)]), false);
   assert.equal(s([ud('labeled', 'eduarda-prijimacky', 5), ud('unlabeled', 'eduarda-prijimacky', 4)]), true);
   assert.equal(s([ud('labeled', 'eduarda-prijimacky', 5), ud('unlabeled', 'tangero', 4)]), true);
+});
+
+test('veřejný repozitář: doklad „Zdroj:“ v cizím issue se nepočítá', () => {
+  const v = run({ issues: [issue({ autor: 'nekdo-z-internetu' })] });
+  assert.equal(v.uspech, false);
+  assert.match(v.duvody.join(), /nekdo-z-internetu/);
+  // Issue od asistenta zadání s dokladem projde jako drobné zadání.
+  assert.equal(run({ issues: [issue({ autor: 'eduarda-prijimacky' })] }).uspech, true);
+  // Rutina s cizím issue také neprojde.
+  assert.equal(run({ pr: pr({ stitky: ['rutina'] }), issues: [issue({ autor: 'nekdo-z-internetu', stitky: ['interni', 'rutina'] })] }).uspech, false);
+});
+
+test('veřejný repozitář: protokol z preview od cizího účtu se nepočítá', () => {
+  const cizi = { ...protokolKomentar(), autor: 'nekdo-z-internetu' };
+  const v = run({ pr: pr({ komentare: [cizi] }) });
+  assert.equal(v.uspech, false);
+  assert.match(v.duvody.join(), /chybí protokol/);
+  assert.equal(run({ pr: pr({ komentare: [{ ...protokolKomentar(), autor: 'eduarda-prijimacky' }] }) }).uspech, true);
+  assert.equal(run({ pr: pr({ komentare: [{ ...protokolKomentar(), autor: BOT }] }) }).uspech, true);
+  // Protokol v těle cizího PR také ne.
+  const telo = `Closes #10\n\n## Protokol z preview\nCommit: ${SHA.slice(0, 7)}`;
+  assert.match(run({ pr: pr({ autor: 'nekdo-z-internetu', telo, komentare: [] }) }).duvody.join(), /chybí protokol/);
+});
+
+test('veřejný repozitář: PR jiného autora potřebuje souhlas na PR, i se schváleným issue', () => {
+  const schvaleneIssue = issue({
+    stitky: ['interni', 'schvaleno'], udalosti: [schvalenoUdalost(PRED(5))], komentare: [souhlasZaznam(TELO_ISSUE, PRED(5))],
+  });
+  for (const soubory of [[STRANKA], [soubor('db/migrace/030-x.sql')]]) {
+    const v = run({ pr: pr({ autor: 'dependabot[bot]' }), issues: [schvaleneIssue], soubory });
+    assert.equal(v.uspech, false, soubory[0].nazev);
+  }
+  const se = run({
+    pr: pr({
+      autor: 'nekdo-z-internetu', stitky: ['schvaleno'], udalosti: [schvalenoUdalost(PRED(2))],
+      komentare: [protokolKomentar(), { autor: BOT, cas: PRED(2), telo: ZNACKA.souhlasPr(SHA) }],
+    }),
+  });
+  assert.equal(se.uspech, true, se.duvody.join('; '));
 });
 
 test('rozpracovaný PR neprojde', () => {

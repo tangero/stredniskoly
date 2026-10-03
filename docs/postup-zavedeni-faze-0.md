@@ -1,6 +1,6 @@
 # Postup zavedení fází 0 a 1: práce vlastníka
 
-Verze 2.2 · 3. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.12, oddíl 20.
+Verze 2.2 · 3. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13a, oddíl 20.
 
 AI pracuje přes účet vlastníka (rozhodnutí RA35), takže se nezakládají žádné další účty, aplikace
 ani zkušební repozitář. Práce vlastníka je asi 30 minut.

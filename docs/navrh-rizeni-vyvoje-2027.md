@@ -1,7 +1,8 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.13 · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
-Na GitHubu ani v pravidlech se zatím nic nemění.
+Verze 0.13a · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Stav zavedení: fáze 0 hotová, brána sloučení je v `main` a zatím nic neblokuje (postup v
+[postup-zavedeni-faze-0.md](postup-zavedeni-faze-0.md)).
 
 ## Shrnutí pro rozhodnutí
 
@@ -251,8 +252,12 @@ podmínek režimu z oddílu 4. **Původ zadání:**
   oddíl 12), nebo `Zdroj: vlastník` (zadání, které vlastník napsal sám);
 - **režim K** je issue, které vzniklo z veřejného hlášení (štítek `bug-report`, `portal-skoly`,
   `feature-request` nebo `puvod:hlaseni`) nebo z e-mailu od neověřeného odesílatele (`puvod:email`),
-  a každé issue bez dokladu. Podle autora se původ nepozná, protože autorem je vždy účet vlastníka;
-  štítek původu a doklad přidává AI a brána je kontroluje.
+  a každé issue bez dokladu.
+
+Repozitář je veřejný, proto brána **doklad uzná jen v issue, které založil vlastník nebo asistent zadání**
+(`vlastnik` a `asistent` v `rezimy.yml`), **protokol z preview jen od nich nebo od `github-actions[bot]`**
+a **PR jiného autora** (fork, Dependabot, cizí účet) posuzuje jako PR bez zadání, tedy jen se `schvaleno`
+na PR. Mezi účtem vlastníka a AI, která přes něj pracuje, brána nerozliší (RA35).
 
 Vždy selže při `stop` na PR nebo propojeném issue, a to i u PR se štítkem `incident`. Při zamrznutí
 (proměnné repozitáře `ZAMRZNUTI_OD`/`ZAMRZNUTI_DO`) selže také, kromě incidentního postupu (oddíl 9c).
@@ -607,9 +612,9 @@ ověří ho měřítka.
 | RA31 | Jeden přehled stavu s fázemi až po „ověřeno v produkci“; projekt se zavírá po ověření v produkci | **ano** |
 | RA32 | Etapy v mandátu bez lhůty (režim E); mandát projektu cílem, rozpočtem, dopadem a vratností; nejvýš 2 rozpracované projekty z iniciativy AI | **ano** |
 | RA33 | Incidentní postup při zamrznutí | **ano** |
-| RA36 | Asistent zadání pracuje vlastním účtem `eduarda-prijimacky`; brána bere `schvaleno` jen z účtu vlastníka | **ano** (rozhodnutí vlastníka) |
-| RA35 | AI pracuje přes účet vlastníka (od RA36 kromě asistenta zadání); pojistky chrání před chybou a podvrženým vstupem, ne před úmyslem AI; kontrola rozhodnutí zpětně v týdenním přehledu | **ano** (rozhodnutí vlastníka) |
 | RA34 | Souhlas vázaný na otisk rozsahu; souběh podmínek H a K; přejímací scénáře jako podmínka zapnutí fáze | **ano** |
+| RA35 | AI pracuje přes účet vlastníka (od RA36 kromě asistenta zadání); pojistky chrání před chybou a podvrženým vstupem, ne před úmyslem AI; kontrola rozhodnutí zpětně v týdenním přehledu | **ano** (rozhodnutí vlastníka) |
+| RA36 | Asistent zadání pracuje vlastním účtem `eduarda-prijimacky`; brána bere `schvaleno` jen z účtu vlastníka | **ano** (rozhodnutí vlastníka) |
 
 # Část B: rozšíření podle měřítek
 
@@ -639,6 +644,9 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.13a** (3. 10. 2026, nálezy asistenta zadání): doklad původu a protokol z preview brána uzná jen od
+  vlastníka a asistenta zadání (protokol i od `github-actions[bot]`), PR jiného autora jen se souhlasem
+  na PR; oprava úvodní věty a pořadí řádků RA.
 - **0.13** (3. 10. 2026, rozhodnutí vlastníka a review PR #283): Eduarda pracuje vlastním účtem
   (RA36), brána bere `schvaleno` jen z účtu vlastníka a `stop` smí odebrat jen ten, kdo ho přidal, nebo
   vlastník; lhůta L se zakládá znovu při změně hlavy, rozsahu zadání nebo protokolu; sloučení čeká na
