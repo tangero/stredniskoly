@@ -89,6 +89,7 @@ bez_preview:
   - .github/**
   - .claude/**
   - scripts/brana/**
+  - scripts/prehled/**
 
 # Do limitu řádků rutiny se nepočítají.
 testy:

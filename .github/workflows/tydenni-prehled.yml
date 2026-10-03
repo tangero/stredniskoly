@@ -1,0 +1,47 @@
+# Týdenní přehled pro vlastníka (docs/navrh-rizeni-vyvoje-2027.md, oddíl 16): rozhodnutí štítky
+# `schvaleno`, `zamitnuto`, `stop` za týden s účtem, který je udělal (zpětná kontrola podle RA35),
+# sloučené PR, co čeká na vlastníka, červené CI na main a expirace tokenů. Dlouhá verze je v souhrnu
+# běhu, krátká jde do Telegramu (bot datové linky).
+#
+# Tokeny vlastníka (CSI_PR_TOKEN, PROJECT_TOKEN) se použijí jen na dotaz na vlastní expiraci
+# (hlavička odpovědi /rate_limit); nic jiného s nimi skript nedělá.
+name: Týdenní přehled
+
+on:
+  schedule:
+    # Pondělí 5:47 UTC (7:47 letního času v Praze), mimo celou hodinu.
+    - cron: "47 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+  checks: read
+
+jobs:
+  prehled:
+    name: Týdenní přehled
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Závislosti
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Přehled
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          CSI_PR_TOKEN: ${{ secrets.CSI_PR_TOKEN }}
+          PROJECT_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/prehled/tydenni.mjs
