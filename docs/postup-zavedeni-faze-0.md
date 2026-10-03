@@ -1,6 +1,6 @@
 # Postup zavedení fází 0 a 1: práce vlastníka
 
-Verze 2.0 · 3. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.12, oddíl 20.
+Verze 2.1 · 3. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.12, oddíl 20.
 
 AI pracuje přes účet vlastníka (rozhodnutí RA35), takže se nezakládají žádné další účty, aplikace
 ani zkušební repozitář. Práce vlastníka je asi 30 minut.
@@ -9,20 +9,11 @@ Hotové už je (PR #276): odstraněné workflow `auto-fix-issues.yml`, `auto-fix
 a `notify-new-issue.yml` i jejich skripty; `veletrhy-snimek.yml` zakládá PR tokenem `CSI_PR_TOKEN`,
 takže na nich běží CI; z #53 je odstraněný e-mail; duplikáty #216, #228 a #251 jsou zavřené.
 
-## Fáze 0, hned
+## Fáze 0: hotovo (3. 10. 2026)
 
-### Krok 1: smazat revizi #53 (2 min)
-
-Úprava těla e-mail z historie úprav neodstraní.
-
-1. Otevři issue #53, u těla klikni na „edited“ (vedle data).
-2. Vyber původní revizi a zvol **Delete revision from history**.
-3. Zkontroluj, že v historii úprav už e-mail není.
-
-### Krok 2: ověřit `CSI_PR_TOKEN` (2 min)
-
-Snímek veletrhů ho teď používá také. Settings → Secrets and variables → Actions: `CSI_PR_TOKEN` musí
-existovat a nesmí mít prošlou platnost (Settings tvého účtu → Developer settings → Fine-grained tokens).
+- Revize #53 s e-mailem je smazaná.
+- `CSI_PR_TOKEN` funguje a nevyprší: PR #269 z `csi-weekly-refresh` založil účet vlastníka a proběhly na
+  něm povinné kontroly.
 
 ## Fáze 1, až AI připraví bránu sloučení
 
