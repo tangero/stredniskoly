@@ -12,6 +12,10 @@ Projektová pravidla (datové sady, slovník ukazatelů, slovník pojmů, zdroje
 Pokyny o `~/github/patrick-knowledgebase/` v tom souboru platí jen tam, kde ta složka existuje
 (lokálně u Patricka). V cloudovém nebo jiném prostředí je přeskoč, soubory mimo repozitář nezakládej.
 
+Rozcestník dokumentace oblastí (co kde je a v jakém stavu):
+
+@docs/rozcestnik.md
+
 ## Práce na interních zadáních (GitHub issues)
 
 Zadání píše Eduarda jako issue se štítkem `interni` (formulář `.github/ISSUE_TEMPLATE/interni-zadani.yml`, pro `gh` tělo `.github/INTERNAL_TEMPLATES/interni-zadani.md`),
