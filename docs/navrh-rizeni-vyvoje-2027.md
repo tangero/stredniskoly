@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.7 · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.8 · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Na GitHubu ani v pravidlech se zatím nic nemění.
 
 Podklad: audit [Oblasti, projekty a etapy na GitHubu](historie/github-oblasti-audit-2026-10-03.md)
@@ -36,8 +36,8 @@ Princip:
 
 | kdo | identita | dělá |
 |---|---|---|
-| **Patrick** (vlastník projektu) | účet vlastníka; na briefingu ověřený účet v kanálu briefingu (oddíl 18) | Směr vývoje (i na briefingu s asistentem zadání), rozhodnutí z oddílu 3, volitelně veto `stop`, jednorázové nastavení |
-| **Eduarda** (AI asistent) | **strojový účet** (například `eduarda-prijimacky`): spolupracovník s právem zápisu, ne admin, dvoufázové ověření aplikací, fine-grained token jen na tento repozitář | vede pravidelný briefing s vlastníkem a zapisuje z něj rozhodnutí, přijímá hlášení e-mailem a z portálu, píše zadání a oponentury |
+| **Patrick** (vlastník projektu) | účet vlastníka na GitHubu; na briefingu jeho soukromý chat v aplikaci Grok Bot (oddíl 18) | Směr vývoje (i na briefingu s asistentem zadání), rozhodnutí z oddílu 3, volitelně veto `stop`, jednorázové nastavení |
+| **Eduarda** (AI asistent) | **strojový účet** (například `eduarda-prijimacky`): spolupracovník s právem zápisu, ne admin, dvoufázové ověření aplikací, fine-grained token jen na tento repozitář | vede briefing s vlastníkem v Grok Bot a zapisuje z něj rozhodnutí, představuje na něm nápady AI, přijímá hlášení e-mailem a z portálu, píše zadání a oponentury |
 | **Claude Code** | **GitHub App** (například `prijimacky-ai[bot]`): jen tento repozitář, vybraná práva, tokeny na hodinu; **všude**, i při práci na zavolání (pomocný skript vygeneruje token do `GH_TOKEN`), v denní úloze i v Actions | třídí, realizuje, review, ověření na preview, merge přes bránu, přehled, provoz |
 | **Druhý klíč** | workflow v Actions s jiným modelem než Claude Code | nezávisle kontroluje rizikové PR a smí přidat `stop` (oddíl 6) |
 | **automatika** | `GITHUB_TOKEN` | štítky oblastí, brána sloučení, CI, tabule |
@@ -52,6 +52,10 @@ Merge pustí jen povinné kontroly a brána sloučení. Důvod: relace Claude Co
 připojený účet vlastníka, který je admin a smí ruleset obejít. Dokud výjimka existuje, má ji každá AI,
 která pod tím účtem běží. Vlastník schvaluje PR od identit AI review (nejsou jeho), v nouzi dočasně upraví
 ruleset; úprava zůstane v historii.
+
+**Nouzová oprava:** když CI padá z vnějšího důvodu (výpadek zdroje dat nebo služby) a nesloučí se ani
+revert, vlastník dočasně vypne dotčenou kontrolu v rulesetu, AI to zapíše do přehledu a po opravě
+kontrolu hned vrátí a ověří, že je zpět.
 
 **Za rozhodnutí se počítá jen štítek, review nebo komentář z účtu vlastníka,** nebo rozhodnutí
 z briefingu zapsané podle oddílu 18. Brána i Claude ověřují autora (`user.login`) a u štítku toho, kdo ho
@@ -111,14 +115,14 @@ Riziko špatného rozhodnutí: **N** nízké, **S** střední, **V** vysoké. Ty
 | 7 | portál, přihlášení, osobní údaje (`src/app/api/portal*`, `src/lib/portal-*`, `src/app/admin/`) | R **V**, právní **V** | K | bezpečnostní review (`security-review`) a druhý klíč, automatické testy přihlášení a práv, skener závislostí; nová kategorie osobních údajů nebo zpracovatel je H3 |
 | 8 | nasazení a crony (`vercel.json`, `next.config.ts`, `scripts/vercel-deploy.sh`) | D S, F S | K | AI odhadne náklady změny; cron, který rozesílá e-maily, spadá pod řádek 5 |
 | 9 | adresy a SEO (přesměrování, smazání nebo přejmenování stránky, `robots.ts`, `public/sitemap.xml`) | P **S** | K | automat ověří přesměrování 301 u každé zrušené adresy, porovná sitemap a z Matomo zjistí návštěvnost dotčených adres; pod prahem návštěvnosti jako L |
-| 10 | pravidla, workflows, brána, práva AI (`CLAUDE.md`, `.claude/`, `.github/`) | **V** | H2 / L | CODEOWNERS na bránu, `rezimy.yml`, ruleset a pravidla o pravomocích (povinné review vlastníka); ostatní úpravy pravidel, skills a workflows jako L |
+| 10 | pravidla, workflows, brána, práva AI (`CLAUDE.md`, `.claude/`, `.github/`) | **V** | H2 / L | CODEOWNERS na bránu, `rezimy.yml`, ruleset, pravidla o pravomocích a **celé `.github/workflows/`** (povinné review vlastníka): workflow může číst secrets a dnešní tokeny vlastníka (`PROJECT_TOKEN`, `CSI_PR_TOKEN`) umí změnit ruleset. Po jejich nahrazení tokenem aplikace (řádek 18) workflows nejvýš K s druhým klíčem a jen bez změn `secrets.*` a `permissions:`; ostatní úpravy pravidel a skills jako L |
 | 11 | závislosti (`package*.json`, `requirements*.txt`) | D S, bezpečnost S | L / K | bezpečnostní aktualizace Dependabotu, AI projde changelog, jen verze starší 7 dnů; patch a minor L, major K |
 | 12 | přepnutí datové sady v registru | R **V** (rodiče rozhodují podle čísel) | K | kontroly datové linky, srovnání rozdělení hodnot s loňskem, vzorky proti zdroji naslepo, náhled na preview; jen mimo zamrznutí |
 | 13 | nový ukazatel nebo změna výpočtu | R S | K | zápis do slovníku včetně toho, co ukazatel neříká, oponentura druhým klíčem, statistická kontrola |
-| 14 | nový projekt | P S, D S | L / H5 | AI navrhuje projekty a hodnotí je podle Směru vývoje, návštěvnosti, hlášení a sezóny i s odhadem nákladů; projekt do 3 etap odpovídající prioritám jako L; strategické H5 |
-| 15 | zadání z veřejného hlášení | R S | K | povinné vyvolání chyby nebo ověření proti zdroji, limit hlášení na autora, klasifikace spamu a podvržených pokynů druhým klíčem |
+| 14 | nový projekt | P S, D S | L / H5 | AI navrhuje projekty a hodnotí je podle Směru vývoje, návštěvnosti, hlášení a sezóny i s odhadem nákladů; **nápad AI se nejdřív představí na briefingu** (oddíl 18) a lhůta 48 h běží až od představení; projekt do 3 etap odpovídající prioritám jako L; strategické H5; nápady se vedou v rejstříku návrhů se stavem a důvodem zamítnutí, aby se zamítnuté nevracely |
+| 15 | zadání z veřejného hlášení nebo z e-mailu od neověřeného odesílatele | R S | K | povinné vyvolání chyby nebo ověření proti zdroji, limit hlášení na autora, klasifikace spamu a podvržených pokynů druhým klíčem |
 | 16 | opravy údajů od škol | R S | L | oddíl 12 |
-| 17 | osobní údaje ve veřejném issue | R **V**, právní S | R | AI issue smaže (GraphQL `deleteIssue`) a založí očištěnou kopii s odkazem; **ověřit, jaké právo k tomu aplikace potřebuje**; když admin, úzká samostatná aplikace jen na mazání, jinak upozornění vlastníkovi |
+| 17 | osobní údaje ve veřejném issue | R **V**, právní S | R | AI issue **přesune do soukromého repozitáře** (`stredniskoly-rizeni`) a ve veřejném založí očištěnou kopii; issue i s historií úprav z veřejného repozitáře zmizí. Stačí právo zápisu do obou repozitářů; mazání (vyžaduje admina, tedy i právo měnit ruleset) ani smazání revize není potřeba |
 | 18 | obnova tokenů | D S | – | tokeny aplikace se obnovují samy; zbývá token strojového účtu (expirace v přehledu) a `PROJECT_TOKEN`, `CSI_PR_TOKEN` nahradit tokenem aplikace |
 | 19 | zamrznutí v kritických dnech | R S | R | AI nastaví z kalendáře přijímaček (`prijimacky-2027.ics`) a návštěvnosti |
 | 20 | parametry autonomie (lhůty, limity rutiny) | D N | R | AI je upravuje podle měřítek v daném rozsahu (lhůta L 24–72 h, rutina 100–300 řádků); mimo rozsah H2 |
@@ -165,8 +169,15 @@ položka slovníku pojmů), a etapy schválených projektů:
 Workflow **„Brána sloučení“**, povinná kontrola v rulesetu u každého PR. Spouští se na `pull_request`
 (otevření, push, štítky), `pull_request_review` a jednou za hodinu (lhůty). Určí režim podle cest
 (`.github/rezimy.yml`, chráněno CODEOWNERS) a podle propojeného issue a pustí PR jen při splnění
-podmínek režimu z oddílu 4. Původ zadání pozná podle autora issue: založené strojovým účtem asistenta
-nebo vlastníkem je interní, založené aplikací Claude Code z hlášení je režim K.
+podmínek režimu z oddílu 4. **Původ zadání:**
+
+- **interní (režim L)** je issue založené vlastníkem, nebo strojovým účtem asistenta s dokladem v těle:
+  `Zdroj: briefing RRRR-MM-DD` (brána ověří, že zápis existuje v soukromém repozitáři; aplikace je
+  nainstalovaná na oba repozitáře) nebo `Zdroj: oprava od školy` s odkazem na záznam v portálu či
+  na ověřený e-mail školy (oddíl 12);
+- **režim K** je issue založené aplikací Claude Code z veřejného hlášení a issue asistenta bez dokladu,
+  například z e-mailu od rodiče nebo neznámého odesílatele (štítek `puvod:email`). E-mail je stejně
+  nedůvěryhodný vstup jako veřejné hlášení.
 
 Vždy selže při `stop` na PR nebo propojeném issue a při zamrznutí (proměnné repozitáře
 `ZAMRZNUTI_OD`/`ZAMRZNUTI_DO`). Ruleset dnes vyžaduje nula schválení a tři kontroly CI; bez brány by
@@ -222,6 +233,7 @@ nepatří (pravidlo 4).
 | `rutina` | režim R |
 | `stop` | veto vlastníka, druhého klíče nebo asistenta zadání podle briefingu; odebrat ho smí jen ten, kdo ho přidal, nebo vlastník |
 | `trvale` | průběžná issue; vyřazená z tabule a třídění |
+| `puvod:email` | zadání z e-mailu od neověřeného odesílatele; režim K |
 
 Beze změny `interni`, `schvaleno`, `zamitnuto`, `k-overeni`, `pripominka`, `nova-data`, `bug-report`,
 `portal-skoly`, `feature-request`. **`navrh` znamená „čeká na vlastníka“** (RA2), tedy jen věci z oddílu 3.
@@ -243,15 +255,17 @@ Issues dostanou oblast při třídění, PR přes `actions/labeler` na `pull_req
 - **Pohled „Projekty“:** `label:projekt` podle Status.
 
 Otázka na vlastníka má pevnou podobu (rozhodnutí, možnosti, doporučení, dopad, co se stane bez odpovědi).
-Bez odpovědi se u věcí z oddílu 3 neprovede nic; u ostatních AI rozhodne sama a otázku vlastníkovi
-vůbec neklade.
+Bez odpovědi se u věcí z oddílu 3 neprovede nic. U ostatních AI rozhodne sama; otázky, u kterých
+by názor vlastníka mohl změnit směr, a nápady AI zařadí asistent na program nejbližšího briefingu
+(oddíl 18), ne do GitHubu.
 
 ## 16. Přehled
 
 Pravidelné výstupy nejsou issues a nic interního není veřejně.
 
-- **Denní souhrn** do Telegramu, jen když je co hlásit: co se sloučilo, co se zítra sloučí po lhůtě,
-  co zastavil druhý klíč, co čeká na rozhodnutí z oddílu 3, zápisy z briefingu čekající na potvrzení, výdaje.
+- **Denní souhrn** do Telegramu (kanál souhrnů datové linky), jen když je co hlásit: co se sloučilo,
+  co se zítra sloučí po lhůtě, co zastavil druhý klíč, co čeká na rozhodnutí z oddílu 3, výdaje.
+- **Program briefingu** (Grok Bot): nápady AI k představení, otázky ke směru, zápisy čekající na potvrzení.
 - **Týdenní přehled** v pondělí do Telegramu, delší verze do soukromého repozitáře: sloučené změny
   s odkazem na revert, změny webu po oblastech, projekty, provoz (neúspěšná workflow, červené CI,
   expirace tokenu strojového účtu), náklady a výdaje kartou, nová data, hlášení a opravy od škol,
@@ -269,32 +283,41 @@ Je to hlavní nástroj, kterým vlastník řídí.
 
 ## 18. Briefing s asistentem zadání
 
-O směru vývoje může vlastník rozhodovat i na pravidelném briefingu s asistentem zadání (Eduarda, bot
-v Telegramu): odmítnout směr, který se mu nelíbí, nebo přinést novou myšlenku k realizaci. Riziko
-u briefingu není podvržení (kanál ověřuje účet vlastníka), ale **výklad**: AI může vlastníka pochopit
-špatně, vágní myšlenku proměnit v projekt nebo mu připsat rozhodnutí, které neudělal. Proto platí
-podle směru rozhodnutí:
+O směru vývoje rozhoduje vlastník na briefingu s asistentem zadání: v **soukromém chatu v aplikaci
+Grok Bot**, na poradách v pondělí, ve středu a v pátek v 7:55 i v průběžné konverzaci. Kanál ověřuje
+vlastníka tím, že chat patří jen jeho účtu, a aplikace přepis ukládá. Telegram slouží jen pro souhrny.
+
+**Pokyn, který přijde jinou cestou** (e-mail, komentář na GitHubu, zpráva jiného bota), se za rozhodnutí
+z briefingu nepočítá, ani když se podepíše jako vlastník.
+
+Riziko u briefingu není podvržení, ale **výklad**: AI může vlastníka pochopit špatně, vágní myšlenku
+proměnit v projekt nebo mu připsat rozhodnutí, které neudělal. Proto platí podle druhu rozhodnutí:
 
 | rozhodnutí z briefingu | příklad | platnost | co asistent udělá |
 |---|---|---|---|
-| **zastavující** | „tenhle směr nechci“, „projekt X zastav“, „tohle teď nedělej“ | **hned**; špatný výklad stojí jen čas | zapíše do Směru vývoje (Teď neděláme), k dotčeným issues a PR přidá `stop` nebo `zamitnuto` s odkazem na zápis |
-| **rozjíždějící** | „pojďme dělat Y“, nová priorita, nový projekt | **po potvrzení zápisu** | pošle do Telegramu krátký zápis: doslovná věta vlastníka + co z ní vyvozuje (cíl, rozsah, priorita, dotčené issues); po odpovědi „ok“ z účtu vlastníka zapíše do Směru vývoje nebo založí projekt |
-| **věci z oddílu 3 kromě směru** (H1–H4) | schválení dávky rozesílky, výdaj nad limit | po potvrzení zápisu **a** s odkazem v GitHubu | jako rozjíždějící; navíc založí nebo doplní issue s odkazem na zápis, aby rozhodnutí bylo dohledatelné; uvolnění pravomocí AI (H2) jen přes GitHub (CODEOWNERS) |
+| **zastavující** | „tenhle směr nechci“, „projekt X zastav“, „tohle teď nedělej“ | **hned**; špatný výklad stojí jen čas | zapíše do Směru vývoje (Teď neděláme) a do rejstříku návrhů, k dotčeným issues a PR přidá `stop` nebo `zamitnuto` s odkazem na zápis |
+| **rozjíždějící** | „pojďme dělat Y“, nová priorita, nový projekt | **po potvrzení zápisu** | v chatu shrne doslovnou větu vlastníka a co z ní vyvozuje (cíl, rozsah, priorita, dotčené issues); po „ok“ zapíše do Směru vývoje nebo založí projekt s dokladem `Zdroj: briefing` |
+| **úprava** | „ano, ale jinak“, „jen pro Prahu“, „až po přijímačkách“ | **po potvrzení zápisu** | jako rozjíždějící; změnu zapíše do těla issue, komentáře „Změna zadání“ a changelogu (oddíl 10, bod 5) |
+| **věci z oddílu 3 kromě směru** (H1, H3, H4) | schválení dávky rozesílky, výdaj nad limit | **po potvrzení zápisu a s odkazem v GitHubu** | jako rozjíždějící; navíc doplní issue s odkazem na zápis, aby rozhodnutí bylo dohledatelné |
+| **uvolnění pravomocí AI** (H2) | změna brány, rulesetu, workflows | **jen přes GitHub** | připraví PR k review vlastníka (CODEOWNERS) |
 
-Projekt z briefingu do tří etap pak běží v režimu L (oddíl 10): potvrzený zápis je jeho start, lhůta
-48 h zůstává. Strategický projekt (H5) potvrzením zápisu dostane schválení. Brána ho pozná podle
-štítku `schvaleno` z účtu asistenta s odkazem na potvrzený zápis; jinde se `schvaleno` od asistenta
+**Nápady AI** (například nová analýza RSS kanálů škol) se nejdřív představí na briefingu: co, proč,
+odhad práce a nákladů, oblast. Vlastník je může odmítnout, změnit, nebo pustit hned. Když nereaguje,
+běží od představení lhůta 48 h a projekt startuje v režimu L. Projekty zadané vlastníkem a etapy
+schválených projektů běží lhůtou jako dosud. Nápady se vedou v **rejstříku návrhů** v soukromém
+repozitáři (stav, datum, důvod zamítnutí), aby se zamítnuté nevracely.
+
+Strategický projekt (H5) potvrzením zápisu dostane schválení. Brána ho pozná podle štítku `schvaleno`
+z účtu asistenta s dokladem `Zdroj: briefing` a existujícím zápisem; jinde se `schvaleno` od asistenta
 nepočítá.
 
 Podmínky:
 
-- Kanál briefingu ověřuje, že píše vlastník (identifikátor jeho účtu v Telegramu), a ukládá přepis.
 - Doslovné zápisy a potvrzení se ukládají do soukromého repozitáře vedle Směru vývoje
   (`briefingy/RRRR-MM-DD.md`), ne do veřejného.
 - Týdenní přehled vypíše **všechna rozhodnutí připsaná vlastníkovi** za týden s odkazem na zápis.
 - Vlastník na briefingu nemusí znát čísla issues; asistent je dohledá a v zápisu vyjmenuje.
-- Zastavující rozhodnutí odvolá vlastník stejnou cestou („projekt X zase pusť“) jako rozjíždějící,
-  tedy s potvrzením zápisu.
+- Zastavující rozhodnutí odvolá vlastník jako rozjíždějící, tedy s potvrzením zápisu.
 
 ## 19. Denní úloha a pravidla
 
@@ -323,7 +346,7 @@ oddíl 3, režimy a odkazy. Cíl: nebude delší než dnes (132 řádků).
 | krok | co dělá AI | práce vlastníka |
 |---|---|---|
 | 0, hned | upravit #53, zavřít duplikáty #216, #228, #229, #251, PR s odstraněním `auto-fix-issues.yml`, `auto-fix-iterative.yml` a `notify-new-issue.yml` | smazat revizi #53, merge PR |
-| 1, týden 1 | PR s pravidly a skills, `rezimy.yml`, labelerem, branou a CODEOWNERS; štítky; třídění; výchozí měřítka; postup nastavení krok za krokem | strojový účet, aplikace, ruleset bez výjimek s bránou a CODEOWNERS, auto-merge, secret pro preview, virtuální karta s limitem, ověřit tarif Neonu (doba obnovy k okamžiku), soukromý repozitář a Směr vývoje, pohledy v UI (asi 2 h jednou); ověřit, kde běží bot briefingu, jak ověřuje účet vlastníka a zda ukládá přepis |
+| 1, týden 1 | PR s pravidly a skills, `rezimy.yml`, labelerem, branou a CODEOWNERS; štítky; třídění; výchozí měřítka; postup nastavení krok za krokem | strojový účet, aplikace, ruleset bez výjimek s bránou a CODEOWNERS, auto-merge, secret pro preview, virtuální karta s limitem, ověřit tarif Neonu (doba obnovy k okamžiku), soukromý repozitář a Směr vývoje, pohledy v UI (asi 2 h jednou); nastavit, aby asistent ukládal zápisy z Grok Bot do soukromého repozitáře |
 | 2, týden 2 | ověřit identitu aplikace v cloudu, přepnout identity, zapnout automatický merge, přehled, ověření na preview, denní úloha, příjem oprav od škol, druhý klíč | – |
 | 3, týden 3 | režim K pro migrace, nová data, výdaje a e-maily (po ověření rozesílání po vlnách) | – |
 
@@ -354,7 +377,11 @@ ověří ho měřítka.
 | RA18 | Výdaje virtuální kartou do limitu, evidence ve Fakturoidu | **ano**, limit určí vlastník |
 | RA19 | Migrace přes větev Neonu v režimu K | **ano**, po ověření tarifu |
 | RA20 | Nová data podle politiky přístupu v režimu K | **ano** |
-| RA21 | Rozhodnutí o směru na briefingu: zastavující hned, rozjíždějící po potvrzení zápisu | **ano**, po ověření kanálu |
+| RA21 | Rozhodnutí o směru na briefingu v Grok Bot: zastavující hned, rozjíždějící a úpravy po potvrzení zápisu | **ano** |
+| RA22 | Nápady AI se představují na briefingu, lhůta běží od představení, rejstřík návrhů | **ano** |
+| RA23 | Celé `.github/workflows/` pod CODEOWNERS, dokud tokeny vlastníka nenahradí token aplikace | **ano** |
+| RA24 | Issue s osobními údaji přesunout do soukromého repozitáře místo mazání | **ano** |
+| RA25 | Zadání asistenta je interní jen s dokladem (briefing, ověřená oprava od školy); ostatní e-maily režim K | **ano** |
 
 # Část B: rozšíření podle měřítek
 
@@ -378,11 +405,18 @@ Po čtyřech týdnech provozu části A:
 | stížnost na stahování dat | politika přístupu, strop dotazů, ohlášení | zhoršený vztah se školou |
 | zbytečný výdaj | limit karty, odůvodnění, rušení nevyužitého | výdaj do limitu |
 | AI si rozšíří práva | CODEOWNERS na bránu a režimy, ruleset bez výjimek | – |
+| podvržený pokyn v e-mailu asistentovi | zadání bez dokladu jde do režimu K, brána ověřuje doklad v soukromém repozitáři | – |
 | AI špatně vyloží briefing | zastavující jen zastavují, rozjíždějící po potvrzení doslovného zápisu, týdenní výpis připsaných rozhodnutí | ztracený čas u špatně vyloženého zastavení |
 | odpovědnost provozovatele | právní závazky zůstávají člověku (H3) | AI rozhoduje jeho jménem v mezích režimů |
 
 ## Změny návrhu
 
+- **0.8** (3. 10. 2026, oponentura v0.7): briefing v Grok Bot, ne v Telegramu, a jiné kanály se
+  nepočítají; nápady AI se představují na briefingu a lhůta běží od představení, rejstřík návrhů;
+  řádek pro úpravu („ano, ale jinak“); `.github/workflows/` pod CODEOWNERS kvůli tokenům vlastníka;
+  issue s osobními údaji se přesouvá do soukromého repozitáře; zadání asistenta je interní jen
+  s dokladem, e-maily od neověřených odesílatelů v režimu K (`puvod:email`); nouzová oprava při
+  rulesetu bez výjimek; RA22–RA25.
 - **0.7** (3. 10. 2026, dotaz vlastníka na briefingy s asistentem zadání): rozhodování o směru na briefingu
   (oddíl 18): zastavující rozhodnutí hned, rozjíždějící po potvrzení zápisu, H1–H4 navíc s odkazem
   v GitHubu, H2 jen přes GitHub; `stop` smí přidat i asistent podle briefingu; zápisy v soukromém
