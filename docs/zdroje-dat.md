@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.25 · 1. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.26 · 3. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -125,6 +125,8 @@ Jeden řádek je jeden uchazeč. Soubor má 40 sloupců a list `legenda` s výkl
 | `c_m_procentni_skor` | ČJ+MA, lepší výsledek, 0 až 200 % | kolik bodů stačilo | ano, po dělení dvěma |
 | `c_procentni_skor` | čeština, 0 až 100 % | jak těžká je tu čeština | částečně |
 | `m_procentni_skor` | matematika, 0 až 100 % | jak těžká je tu matematika | částečně |
+
+**Ročník 2024 (1. kolo)** je od 3. 10. 2026 stažený v `data/` (sha256 `ef3776fa…`, revize CERMATu z 20. 5. 2026, se souhlasem vlastníka, ohlášeno v issue #277). Revize nese **REDIZO** a stejných 40 sloupců jako 2025 a 2026; poznámka v `scripts/offer-history.py`, že soubor 2024 je klíčovaný IZO, platí pro starší revizi. Zatím ho čte jen rozbor okruhů oborů (`scripts/rozbor-shluky-oboru.py`, [návrh](navrh-shluky-oboru-2027.md)), tytéž sloupce jako u ostatních ročníků. Web ho nezobrazuje a registr se nemění. Data o jednotlivých uchazečích CERMAT vydává až od roku 2024.
 
 **Klíčové omezení:** soubor nese REDIZO a KKOV, ale **ne zaměření**. Vše z něj počítané platí za obor školy jako celek. U 213 z 2 558 kombinací REDIZO a KKOV to znamená, že několik zaměření sdílí jednu hodnotu.
 
@@ -717,6 +719,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-02. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.26 | Oddíl 2.2: data uchazečů 1. kola 2024 stažena (revize s REDIZO) pro rozbor okruhů oborů; žádný nový sloupec, web beze změny. |
 | 1.25 | Oddíl 2.14: zprávy z výpisu aktualit se zobrazují na stránce školy s označením zdroje a výhradou ke čtení. |
 | 1.24 | Oddíl 2.14: výpis aktualit v provozu sklízeče jako zdroj `typ` html a tinyfish (registr `public/skoly_vypisy.json`), pole výpisu a co z nich nebereme; na stránce školy zatím skryté. |
 | 1.23 | Oddíl 2.14 doplněn o výpis aktualit a sitemap u škol bez kanálu novinek (sonda 1. 10. 2026, [rozbor](sonda-mimo-rss-2026.md)): zatím jen změřené a zobrazené v nezalistovaném prototypu, ne v provozu. |

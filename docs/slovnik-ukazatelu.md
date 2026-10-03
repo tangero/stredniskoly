@@ -78,14 +78,14 @@ Obory jednoho města, mezi kterými se uchazeči rozhodovali: obory, které měl
 
 Výpočet: graf, jehož uzly jsou obory školy (REDIZO_KKOV) s obcí města podle indexu názvů a s aspoň 10 uchazeči, hrany dvojice oborů s aspoň 10 společnými uchazeči. Váha hrany je `společní uchazeči ÷ √(uchazeči oboru A × uchazeči oboru B)`. Rozdělení hledá Louvain s rozlišením 1,0 (nejlepší modularita ze 30 běhů); nesouvislá skupina se rozdělí na souvislé části. Okruh má aspoň 3 obory. Zdroj: data uchazečů 1. kola, denní nezkrácené studium, zaměření sloučená jako u souběžných přihlášek. Jednotka: příslušnost oboru k okruhu.
 
-Stabilita: okruhy 2025 a 2026 se na oborech v okruzích shodují s upraveným Randovým indexem 0,75 (Brno) a 0,66 (Praha), náhodné přeřazení dává 0,00 (95. percentil 0,01–0,02).
+Stabilita: okruhy let 2024, 2025 a 2026 se na oborech v okruzích mezi každou dvojicí let shodují s upraveným Randovým indexem 0,69–0,76 (Brno) a 0,66–0,69 (Praha), náhodné přeřazení dává 0,00 (95. percentil nejvýš 0,02). Ročník 2024 je z dat uchazečů stažených 3. 10. 2026 se souhlasem vlastníka (issue #277).
 
 **Neříká nic o kvalitě ani o obtížnosti** oborů v okruhu. Neříká, že obory jsou si obsahově podobné: spojuje je to, že se na ně hlásili titíž uchazeči. **Není to pevná kategorie**: obory na okraji okruhu se mezi ročníky přesouvají do sousedního. Za okruh se nezveřejňuje nic pod 10 uchazeči a součty se počítají jen ze zobrazených oborů, aby nešlo dopočítat skrytý malý obor.
 
 ### Přednost v okruhu
 `dvojice, kde měl uchazeč obor výš ÷ všechny dvojice oborů téhož okruhu na jedné přihlášce, ve kterých obor je`. Pole `prednost_v_okruhu`. Jednotka: podíl 0 až 1, nezveřejňuje se pod 10 dvojicemi. Zdroj: pořadí oborů na přihlášce v datech uchazečů.
 
-Hodnota 0,5 znamená, že uchazeči měli obor výš i níž než ostatní obory okruhu stejně často. Čtyřletá gymnázia Brna 2026: od 0,67 (Gymnázium Matyáše Lercha) po 0,13 (Moravské gymnázium); mezi lety 2025 a 2026 se u nich hodnota změnila nejvýš o 0,13.
+Hodnota 0,5 znamená, že uchazeči měli obor výš i níž než ostatní obory okruhu stejně často. Čtyřletá gymnázia Brna 2026: od 0,67 (Gymnázium Matyáše Lercha) po 0,13 (Moravské gymnázium); mezi lety 2024 a 2026 se u většiny z nich hodnota měnila o méně než 0,1, u oborů se skokem v zájmu víc (Lercha 0,58, 0,73, 0,67).
 
 Liší se od *Kohorty podle pozice na přihlášce*: ta srovnává podíl prvních voleb s obory stejného typu v celé zemi, přednost jen s obory, mezi kterými se titíž uchazeči skutečně rozhodovali.
 
@@ -99,14 +99,14 @@ Liší se od *Podílu prvních voleb*: ten počítá 1. volbu na celé přihlá�
 Neříká, kam uchazeč nastoupil. Je to podklad pro *Přesun zájmu v okruhu*.
 
 ### Podíl okruhu na uchazečích města
-`různí uchazeči s aspoň jedním oborem okruhu ÷ různí uchazeči s aspoň jedním oborem ve městě`. Pole `podil_okruhu_na_uchazecich_mesta`. Mezi lety 2025 a 2026 se v Brně a Praze změnil nejvýš o 1,6 procentního bodu.
+`různí uchazeči s aspoň jedním oborem okruhu ÷ různí uchazeči s aspoň jedním oborem ve městě`. Pole `podil_okruhu_na_uchazecich_mesta`. Mezi lety 2024 a 2026 se změnil v Brně nejvýš o 1,3 procentního bodu, v Praze o 2,5 bodu (okruh s novými školami).
 
-**Neříká, že titíž lidé odešli nebo přišli.** Každý rok se hlásí jiný ročník dětí, změna je posun poptávky mezi ročníky. Okruh se pro oba ročníky bere z novějšího roku.
+**Neříká, že titíž lidé odešli nebo přišli.** Každý rok se hlásí jiný ročník dětí, změna je posun poptávky mezi ročníky. Okruh se pro všechny ročníky bere z posledního roku.
 
 ### Přesun zájmu v okruhu
-Jak velká část zájmu se mezi dvěma ročníky přesunula mezi obory okruhu: `½ × Σ |podíl prvních voleb v okruhu 2026 − podíl prvních voleb v okruhu 2025|` přes obory okruhu (vzdálenost rozdělení, *total variation*). Pole `presun_zajmu_v_okruhu`. Jednotka: podíl 0 až 1. Okruh se pro oba ročníky bere z novějšího roku, obor nový v novějším roce má ve starším nulu.
+Jak velká část zájmu se mezi dvěma ročníky přesunula mezi obory okruhu: `½ × Σ |podíl prvních voleb v okruhu 2026 − podíl prvních voleb v okruhu 2025|` přes obory okruhu (vzdálenost rozdělení, *total variation*). Pole `presun_zajmu_v_okruhu` v `presun.{rok}-{rok}`. Jednotka: podíl 0 až 1. Okruh se pro všechny ročníky bere z posledního roku, obor nový v novějším roce má ve starším nulu.
 
-Vždy se uvádí se šumem: kolik přesunu dá náhoda, když se oba ročníky losují ze stejného rozdělení se stejným počtem uchazečů (300 losování, pole `sum`). Přesun pod 95. percentilem šumu se nepopisuje jako posun. Mezi lety 2025 a 2026 byl přesun nad šumem v Praze u 16 z 21 okruhů, v Brně u 4 z 13. Pole `podil_prvnich_voleb_na_nove_obory` říká, kolik z přesunu připadlo na obory nové v novějším roce.
+Vždy se uvádí se šumem: kolik přesunu dá náhoda, když se oba ročníky losují ze stejného rozdělení se stejným počtem uchazečů (300 losování, pole `sum`). Přesun pod 95. percentilem šumu se nepopisuje jako posun. Přesun nad šumem byl mezi 2024 a 2025 v Brně u 8 ze 13 okruhů a v Praze u 14 z 21, mezi 2025 a 2026 u 4 a 16. Pole jsou v podkladu pod klíčem dvojice let (`presun.2025-2026`). Pole `podil_prvnich_voleb_na_nove_obory` říká, kolik z přesunu připadlo na obory nové v novějším roce.
 
 **Neříká, proč se zájem přesunul**, ani zda se přesun zopakuje. Ze dvou ročníků se nemluví o trendu.
 

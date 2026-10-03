@@ -39,11 +39,14 @@ from slouceni_prihlasek import PRIJAT, volby_uchazece  # noqa: E402
 KOREN = Path(__file__).resolve().parent.parent
 
 
-def rocniky() -> tuple[int, int]:
-    """Zobrazený ročník dat uchazečů podle registru a ročník před ním; letopočet se nepíše napevno."""
+POCET_ROCNIKU = 3   # data o jednotlivých uchazečích CERMAT zveřejňuje od roku 2024
+
+
+def rocniky() -> tuple[int, ...]:
+    """Zobrazený ročník dat uchazečů podle registru a ročníky před ním; letopočet se nepíše napevno."""
     registr = json.loads((KOREN / "public" / "stav_datovych_sad.json").read_text(encoding="utf-8"))
     rok = int(registr["sady"]["cermat-uchazeci-kolo1"]["zobrazeno"]["obdobi"])
-    return rok - 1, rok
+    return tuple(range(rok - POCET_ROCNIKU + 1, rok + 1))
 
 
 ROKY = rocniky()
@@ -83,7 +86,7 @@ def souhrny_po_oborech() -> dict[int, dict[str, dict]]:
             o["kapacita"] += d.get("kapacita") or 0
             o["prijati"] += d.get("prijati") or 0
             o["nevesli"] += d.get("capacity_rejected") or 0
-    return out
+    return {r: d for r, d in out.items() if d}  # ročník, který souhrny nevedou, chybí
 
 
 def prihlasky_katalogu() -> dict[str, dict[str, int]]:
@@ -358,12 +361,12 @@ def main() -> None:
     ap.add_argument("--cache", type=Path, help="pickle s načtenými přihláškami (mimo repozitář)")
     a = ap.parse_args()
 
-    if a.cache and a.cache.exists():
-        volby = pickle.loads(a.cache.read_bytes())
-    else:
-        volby = {r: nacti_volby(r) for r in ROKY}
-        if a.cache:
-            a.cache.write_bytes(pickle.dumps(volby))
+    volby = pickle.loads(a.cache.read_bytes()) if a.cache and a.cache.exists() else {}
+    chybi = [r for r in ROKY if r not in volby]
+    for r in chybi:
+        volby[r] = nacti_volby(r)
+    if a.cache and chybi:
+        a.cache.write_bytes(pickle.dumps(volby))
     mapa = nazvy_oboru()
     souhrny = souhrny_po_oborech()
     katalog = prihlasky_katalogu()
@@ -390,14 +393,17 @@ def main() -> None:
                 rad[str(r)] = {**st, "uzlu": len(g), "shluku_aspon_3": sum(1 for v in velikosti if v >= 3),
                                "samostatnych": sum(1 for v in velikosti if v == 1), "velikosti": velikosti[:12],
                                "hran": sum(len(s) for s in g.values()) // 2}
-            spolecne = set(casti[ROKY[0]]) & set(casti[ROKY[1]])
             # samostatné uzly (bez hrany) jsou samostatné v obou letech a shodu by nafoukly; počítá se i bez nich
             velke = {r: {u for u, c in casti[r].items() if list(casti[r].values()).count(c) >= 3} for r in ROKY}
-            ve_shlucich = spolecne & (velke[ROKY[0]] | velke[ROKY[1]])
-            rad["mezi_rocniky"] = {"spolecnych_uzlu": len(spolecne), **shoda(casti[ROKY[0]], casti[ROKY[1]], spolecne),
-                                   "nahodne": nahodny_zaklad(casti[ROKY[0]], casti[ROKY[1]], spolecne, rng),
-                                   "jen_uzly_ve_shlucich": {"uzlu": len(ve_shlucich), **shoda(casti[ROKY[0]], casti[ROKY[1]], ve_shlucich),
-                                                            "nahodne": nahodny_zaklad(casti[ROKY[0]], casti[ROKY[1]], ve_shlucich, rng)}}
+            rad["mezi_rocniky"] = {}
+            for ra, rb in itertools.combinations(ROKY, 2):
+                spolecne = set(casti[ra]) & set(casti[rb])
+                ve_shlucich = spolecne & (velke[ra] | velke[rb])
+                rad["mezi_rocniky"][f"{ra}-{rb}"] = {
+                    "spolecnych_uzlu": len(spolecne), **shoda(casti[ra], casti[rb], spolecne),
+                    "nahodne": nahodny_zaklad(casti[ra], casti[rb], spolecne, rng),
+                    "jen_uzly_ve_shlucich": {"uzlu": len(ve_shlucich), **shoda(casti[ra], casti[rb], ve_shlucich),
+                                             "nahodne": nahodny_zaklad(casti[ra], casti[rb], ve_shlucich, rng)}}
             vm["varianty"].append(rad)
             if (vaha, gamma) == VYBRANA:
                 vybrane = casti
@@ -409,6 +415,11 @@ def main() -> None:
             pred = prednost(volby[r], cast)
             prvni, unik, mimo_shluk = prvni_ve_shluku(volby[r], cast)
             mimo_mesto = collections.Counter()
+            z_uchazecu = collections.defaultdict(lambda: {"prijati": 0, "nevesli": 0})
+            for u in volby[r]:
+                for v in u:
+                    if v["obor"] in cast and v["stav"] in (PRIJAT, 1):
+                        z_uchazecu[v["obor"]]["prijati" if v["stav"] == PRIJAT else "nevesli"] += 1
             for u in volby[r]:
                 v_meste = [v["obor"] for v in u if v["obor"] in cast]
                 if v_meste and any(v["obor"] not in uzly_mesta for v in u):
@@ -421,7 +432,11 @@ def main() -> None:
                     continue
                 obory = []
                 for k in sorted(cl, key=lambda k: (-n[k], k)):
-                    p, s = mapa.get(k, {}), souhrny[r].get(k)
+                    p, s = mapa.get(k, {}), souhrny.get(r, {}).get(k)
+                    zdroj_obt = "souhrny_kolo1"
+                    if s is None and r not in souhrny and k in z_uchazecu:
+                        # ročník bez souhrnů 1. kola v repozitáři: soutěžící z dat uchazečů (slovník, Soutěžící o obor)
+                        s, zdroj_obt = {"kapacita": None, **z_uchazecu[k]}, "data_uchazecu"
                     pr = pred[k]
                     obory.append({
                         "klic": k, "skola": p.get("skola"), "obor": p.get("obor"), "jpz": not bez_jednotne_zkousky(k),
@@ -432,50 +447,55 @@ def main() -> None:
                         "zarazeni_obtiznosti": zarazeni(s["prijati"], s["nevesli"]) if s else None,
                         "podil_prijatych_ze_soutezicich": round(s["prijati"] / (s["prijati"] + s["nevesli"]), 2)
                         if s and s["prijati"] + s["nevesli"] >= MIN else None,
+                        "zdroj_obtiznosti": zdroj_obt if s else None,
                     })
                 shluky.append({"id": c, "oboru": len(cl), "uchazecu": unik[c] - unik[c] % 10,
                                "podil_s_oborem_jinde_ve_meste": podil_nad_mezi(mimo_shluk[c], unik[c]), "obory": obory})
             mesto_uch = sum(1 for u in volby[r] if any(v["obor"] in uzly_mesta for v in u))
             vm["rocniky"][str(r)] = {"uchazecu_mesta": mesto_uch, "okruhy": sorted(shluky, key=lambda s: (-s["uchazecu"], s["id"]))}
 
-        # přelévání: shluky roku 2026 přenesené na rok 2025 (stejné obory, jiní uchazeči)
-        ref = vybrane[ROKY[1]]
+        # přelévání: okruhy posledního ročníku přenesené na starší ročníky (stejné obory, jiní uchazeči)
+        posledni = ROKY[-1]
+        ref = vybrane[posledni]
         prel = []
         mesto_uch = {r: vm["rocniky"][str(r)]["uchazecu_mesta"] for r in ROKY}
-        pocty = {r: prvni_ve_shluku(volby[r], {k: c for k, c in ref.items()}) for r in ROKY}
+        pocty = {r: prvni_ve_shluku(volby[r], ref) for r in ROKY}
         for c in sorted(set(ref.values())):
             cl = [k for k in ref if ref[k] == c]
             if len(cl) < 3:
                 continue
-            p_r = {}
-            for r in ROKY:
-                prvni = {k: pocty[r][0][k] for k in cl}
-                p_r[r] = prvni
-            na, nb = sum(p_r[ROKY[0]].values()), sum(p_r[ROKY[1]].values())
-            if na < MIN or nb < MIN:
+            p_r = {r: {k: pocty[r][0][k] for k in cl} for r in ROKY}
+            nr = {r: sum(p_r[r].values()) for r in ROKY}
+            if min(nr.values()) < MIN:
                 continue
-            posun = tv({k: v / na for k, v in p_r[ROKY[0]].items()}, {k: v / nb for k, v in p_r[ROKY[1]].items()})
-            kap = {r: sum((souhrny[r].get(k) or {}).get("kapacita", 0) for k in cl) for r in ROKY}
-            nove = [k for k in cl if p_r[ROKY[0]][k] == 0]
-            # přihlášky z katalogu (jen obory s jednotnou zkouškou vedené ve všech třech ročnících katalogu)
+            kap = {r: sum((souhrny.get(r, {}).get(k) or {}).get("kapacita", 0) for k in cl) for r in ROKY if r in souhrny}
+            # přihlášky z katalogu (jen obory s jednotnou zkouškou vedené ve všech ročnících katalogu)
             v_katalogu = [k for k in cl if all(k in katalog[r] for r in katalog)]
             prihl_kat = {r: sum(katalog[r][k] for k in v_katalogu) for r in katalog}
+            presun = {}
+            for ra, rb in zip(ROKY, ROKY[1:]):
+                nove = [k for k in cl if p_r[ra][k] == 0]
+                presun[f"{ra}-{rb}"] = {
+                    "presun_zajmu_v_okruhu": round(tv({k: v / nr[ra] for k, v in p_r[ra].items()}, {k: v / nr[rb] for k, v in p_r[rb].items()}), 3),
+                    "sum": sum_zaklad(p_r[ra], p_r[rb], rng),
+                    "nove_obory": len(nove),
+                    "podil_prvnich_voleb_na_nove_obory": round(sum(p_r[rb][k] for k in nove) / nr[rb], 3),
+                }
+            predposledni = ROKY[-2]
             prel.append({
                 "id": c, "oboru": len(cl),
                 "uchazecu": {str(r): pocty[r][1][c] - pocty[r][1][c] % 10 for r in ROKY},
                 "podil_okruhu_na_uchazecich_mesta": {str(r): round(pocty[r][1][c] / mesto_uch[r], 3) for r in ROKY},
-                "kapacita": {str(r): kap[r] for r in ROKY},
-                "presun_zajmu_v_okruhu": round(posun, 3),
-                "nove_obory": len(nove), "podil_prvnich_voleb_na_nove_obory": round(sum(p_r[ROKY[1]][k] for k in nove) / nb, 3),
+                "kapacita": {str(r): v for r, v in kap.items()},
+                "presun": presun,
                 "prihlasky_katalog": {"oboru": len(v_katalogu), **prihl_kat},
-                "sum": sum_zaklad(p_r[ROKY[0]], p_r[ROKY[1]], rng),
                 "nejvetsi_zmeny": sorted(
                     ({"klic": k, "skola": mapa.get(k, {}).get("skola"), "obor": mapa.get(k, {}).get("obor"),
-                      "podil": {str(r): round(p_r[r][k] / (na if r == ROKY[0] else nb), 3) for r in ROKY}}
+                      "podil": {str(r): round(p_r[r][k] / nr[r], 3) for r in ROKY}}
                      for k in cl if all(p_r[r][k] == 0 or p_r[r][k] >= MIN for r in ROKY)),
-                    key=lambda x: (-abs(x["podil"][str(ROKY[1])] - x["podil"][str(ROKY[0])]), x["klic"]))[:5],
+                    key=lambda x: (-abs(x["podil"][str(posledni)] - x["podil"][str(predposledni)]), x["klic"]))[:5],
             })
-        vm["prelevani"] = sorted(prel, key=lambda x: (-x["uchazecu"][str(ROKY[1])], x["id"]))
+        vm["prelevani"] = sorted(prel, key=lambda x: (-x["uchazecu"][str(ROKY[-1])], x["id"]))
         vystup["mesta"][mesto] = vm
         print(mesto, "hotovo", file=sys.stderr)
 
