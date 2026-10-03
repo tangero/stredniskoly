@@ -86,8 +86,7 @@ pro admina vrátí přepnutí bypass na *Always*.
 - datová linka zapisuje do větve `linka/stav`;
 - `csi-weekly-refresh` a `veletrhy-snimek` zakládají PR přes `create-pull-request`.
 
-PR z `veletrhy-snimek` zakládá výchozí `GITHUB_TOKEN`, proto na něm CI neběží a sloučí ho jen
-admin přes bypass. `csi-weekly-refresh` zakládá PR tokenem `CSI_PR_TOKEN` (fine-grained PAT jen
+`veletrhy-snimek` i `csi-weekly-refresh` zakládají PR tokenem `CSI_PR_TOKEN` (fine-grained PAT jen
 pro tento repozitář, oprávnění *Contents* a *Pull requests* pro čtení i zápis, #266), takže na něm
 povinné kontroly běží a slučuje se běžně. Bez tohoto secretu workflow použije `GITHUB_TOKEN`
 a PR jde sloučit zase jen přes bypass. Token má expiraci, obnovuje ho vlastník.
@@ -109,7 +108,8 @@ Před merge se dělá review přes `codex review --base origin/main`, nejvýš 1
   Klíče Maps JS jsou v prohlížeči veřejné. Bezpečné jsou jen s omezením na povolené domény v Google
   Cloud. Ověřit omezení, nález uzavřít a log z repozitáře odstranit samostatným PR.
 - **Claude Code v GitHubu (`@claude`):** Eduarda by spouštěla Clauda komentářem v issue nebo PR.
-  Odloženo. Nejdřív projít stávající `auto-fix-issues.yml` a `auto-fix-iterative.yml`, aby se
-  automatiky nepotkaly, a rozhodnout o nákladech na API.
+  Odloženo. Staré `auto-fix-issues.yml`, `auto-fix-iterative.yml` a `notify-new-issue.yml` jsou od
+  3. 10. 2026 odstraněné; spouštění z GitHubu řeší návrh řízení vývoje (oddíl 19: jen štítkem od
+  vlastníka, nikdy komentářem `@claude`).
 - **Discussions** pro dotazy komunity (oddělit otázky od hlášení chyb) a uložené pohledy tabule
   podle rolí: navrženo, nezavedeno.

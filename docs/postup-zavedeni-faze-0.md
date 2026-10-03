@@ -1,0 +1,48 @@
+# Postup zavedení fází 0 a 1: práce vlastníka
+
+Verze 2.1 · 3. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.12, oddíl 20.
+
+AI pracuje přes účet vlastníka (rozhodnutí RA35), takže se nezakládají žádné další účty, aplikace
+ani zkušební repozitář. Práce vlastníka je asi 30 minut.
+
+Hotové už je (PR #276): odstraněné workflow `auto-fix-issues.yml`, `auto-fix-iterative.yml`
+a `notify-new-issue.yml` i jejich skripty; `veletrhy-snimek.yml` zakládá PR tokenem `CSI_PR_TOKEN`,
+takže na nich běží CI; z #53 je odstraněný e-mail; duplikáty #216, #228 a #251 jsou zavřené.
+
+## Fáze 0: hotovo (3. 10. 2026)
+
+- Revize #53 s e-mailem je smazaná.
+- `CSI_PR_TOKEN` funguje a nevyprší: PR #269 z `csi-weekly-refresh` založil účet vlastníka a proběhly na
+  něm povinné kontroly.
+
+## Fáze 1, až AI připraví bránu sloučení
+
+AI připraví PR s branou sloučení, `rezimy.yml`, pravidly a skills. Po jeho sloučení:
+
+### Krok 3: ruleset (10 min)
+
+Repozitář → Settings → Rules → Rulesets → **Ochrana main**:
+
+1. **Require status checks to pass:** přidat kontrolu „Brána sloučení“ (zdroj GitHub Actions)
+   k dosavadním třem.
+2. **Bypass list:** odebrat všechny položky, i sebe. Merge pak jde jen přes kontroly a bránu, i pod tvým
+   účtem; v nouzi ruleset dočasně upravíš.
+3. Povinné review **nezapínej**: PR jsou pod tvým účtem a vlastní PR schválit nejde.
+
+### Krok 4: Směr vývoje (15 min)
+
+1. Založ soukromý repozitář `stredniskoly-rizeni`.
+2. AI do něj připraví `smer-vyvoje.md` podle oddílu 17 návrhu; ty doplníš cíle, priority, co se teď
+   nedělá a měsíční rozpočet.
+
+### Krok 5: náhled pro ověření na preview (5 min, jen když je zapnutá ochrana náhledů ve Vercelu)
+
+Vercel → projekt → Settings → Deployment Protection → Protection Bypass for Automation: vytvoř
+hodnotu a ulož ji v repozitáři jako secret `VERCEL_AUTOMATION_BYPASS_SECRET`.
+
+## Co zůstává na tobě potom
+
+- Rozhodnutí z oddílu 3 návrhu: štítkem `schvaleno` na GitHubu (i z bočního panelu v GitHub Projects)
+  nebo na briefingu v Grok Bot.
+- Jednou týdně projít v přehledu výpis „schváleno, zamítnuto, změny nastavení“ a vrátit, co si nevybavíš.
+- Obnova tokenů v secrets, až na ni upozorní týdenní přehled.
