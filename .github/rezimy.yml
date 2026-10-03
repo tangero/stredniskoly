@@ -40,6 +40,7 @@ h2:
   - CLAUDE.md
   - .claude/claude.md
   - .claude/settings*.json
+  - docs/smer-vyvoje.md
 
 # K, kontrolované činnosti (oddíl 5). Ve fázi 1 je pustí souhlas vlastníka na PR nebo na propojeném
 # issue; ve fázi 2 přibude druhý klíč a mechanismy z oddílu 5.

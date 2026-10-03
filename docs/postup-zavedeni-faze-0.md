@@ -60,9 +60,9 @@ a sloučíš ho. Od té chvíle Claude Code slučuje sám skriptem po bráně.
 
 ### Krok 4: Směr vývoje (15 min)
 
-1. Založ soukromý repozitář `stredniskoly-rizeni`.
-2. AI do něj připraví `smer-vyvoje.md` podle oddílu 17 návrhu; ty doplníš cíle, priority, co se teď
-   nedělá a měsíční rozpočet.
+Doplň `docs/smer-vyvoje.md` (AI připravila koncept s návrhy): cíle k datu, pořadí priorit, co se teď nedělá,
+měsíční rozpočet a zamrznutí. Soubor je veřejný (RA37). Úpravu udělej přímo na GitHubu tužkou u souboru
+(„Create a new branch and start a pull request“), přidej na PR `schvaleno` a slouč ho.
 
 ### Krok 5: náhled pro ověření na preview (5 min, jen když náhled vrací 401)
 
