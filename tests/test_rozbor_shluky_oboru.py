@@ -1,5 +1,6 @@
 import importlib.util
 import itertools
+import json
 import unittest
 from pathlib import Path
 
@@ -48,6 +49,20 @@ class RozborShlukyOboruTest(unittest.TestCase):
         self.assertIsNone(rozbor.podil_nad_mezi(45, 50))
         self.assertEqual(rozbor.podil_nad_mezi(0, 50), 0.0)
         self.assertEqual(rozbor.podil_nad_mezi(20, 50), 0.4)
+
+    def test_jednoznacne_dopocitatelny_skryty_obor_se_pozna(self):
+        # celek 10–19, zobrazený podíl 0,90: zbytek je jediný uchazeč
+        self.assertEqual(rozbor.dopocitatelne(10, [0.9, None]), {1})
+        # velký okruh s podíly na dvě místa: skrytý obor nejde určit
+        self.assertGreater(len(rozbor.dopocitatelne(2220, [0.5, 0.496, None])), 1)
+        self.assertEqual(rozbor.dopocitatelne(2220, [0.5, 0.5]), set())
+
+    def test_podklad_neprozradi_skupinu_pod_deset(self):
+        # review PR #284: přesné počty prvních voleb se sčítaly a z celku okruhu vyšel skrytý obor s 9 uchazeči
+        podklad = SCRIPT.parents[1] / "docs/podklady/shluky-oboru-2026-10-03.json"
+        text = podklad.read_text(encoding="utf-8")
+        self.assertNotIn('"prvni_volby_v_okruhu"', text)
+        self.assertEqual(rozbor.kontrola_zverejneni(json.loads(text)), [])
 
     def test_zarazeni_obtiznosti_podle_slovniku(self):
         self.assertIsNone(rozbor.zarazeni(5, 4))

@@ -332,6 +332,52 @@ def podil_nad_mezi(citatel: int, jmenovatel: int) -> float | None:
     return round(citatel / jmenovatel, 2)
 
 
+def zaokrouhli(pocet: int) -> int:
+    """Počet uchazečů okruhu dolů na desítky; přesný celek by s podíly oborů prozradil skrytý obor."""
+    return pocet - pocet % 10
+
+
+def dopocitatelne(celek: int, podily: list[float | None], hornich_mezi: int = MIN - 1) -> set[int]:
+    """Které součty skrytých oborů (každý 1 až hornich_mezi) jsou slučitelné se zveřejněnými údaji.
+
+    `celek` je počet zaokrouhlený dolů na desítky, `podily` zveřejněné podíly oborů na dvě
+    místa (None = skrytý). Vrací množinu možných součtů skrytých; jediný prvek = dopočítatelné.
+    """
+    skryte = sum(1 for p in podily if p is None)
+    if not skryte:
+        return set()
+    ukazane = [p for p in podily if p is not None]
+    chyba = 0.005 * len(ukazane)
+    zbytek = 1 - sum(ukazane)
+    moznosti = set()
+    for n in range(celek, celek + 10):
+        for t in range(skryte, skryte * hornich_mezi + 1):
+            if (zbytek - chyba) * n - 1e-9 <= t <= (zbytek + chyba) * n + 1e-9:
+                moznosti.add(t)
+    return moznosti
+
+
+def kontrola_zverejneni(vystup: dict) -> list[str]:
+    """Najde okruhy, u kterých by šel ze zveřejněných údajů jednoznačně dopočítat skrytý obor."""
+    chyby = []
+    for mesto, vm in vystup["mesta"].items():
+        for rok, rr in vm["rocniky"].items():
+            for o in rr["okruhy"]:
+                if o["uchazecu"] % 10:
+                    chyby.append(f"{mesto} {rok} okruh {o['id']}: počet uchazečů není zaokrouhlený")
+                podily = [x["podil_prvnich_voleb_v_okruhu"] for x in o["obory"]]
+                if len(dopocitatelne(o["uchazecu"], podily)) == 1:
+                    chyby.append(f"{mesto} {rok} okruh {o['id']}: skryté první volby jdou dopočítat")
+        for p in vm["prelevani"]:
+            for rok, u in p["uchazecu"].items():
+                vypsane = [z["podil"][rok] for z in p["nejvetsi_zmeny"]]
+                # nejvýš pět oborů: když jich je méně, výpis je úplný a zbytek jsou jen obory pod mezí
+                if len(vypsane) < 5 and len(vypsane) < p["oboru"]:
+                    if len(dopocitatelne(u, vypsane + [None] * (p["oboru"] - len(vypsane)))) == 1:
+                        chyby.append(f"{mesto} přelévání okruh {p['id']} {rok}: zbytek jde dopočítat")
+    return chyby
+
+
 def tv(p: dict, q: dict) -> float:
     return 0.5 * sum(abs(p.get(k, 0) - q.get(k, 0)) for k in sorted(set(p) | set(q)))
 
@@ -440,7 +486,9 @@ def main() -> None:
                     pr = pred[k]
                     obory.append({
                         "klic": k, "skola": p.get("skola"), "obor": p.get("obor"), "jpz": not bez_jednotne_zkousky(k),
-                        "uchazecu": n[k], "prvni_volby_v_okruhu": prvni[k] if prvni[k] >= MIN else None,
+                        "uchazecu": n[k],
+                        # jen podíl na dvě místa: přesné počty by se sečetly a z celku okruhu by vyšel skrytý obor (review #284)
+                        "podil_prvnich_voleb_v_okruhu": round(prvni[k] / unik[c], 2) if prvni[k] >= MIN else None,
                         "prednost_v_okruhu": round(pr["vys"] / (pr["vys"] + pr["niz"]), 2) if pr["vys"] + pr["niz"] >= MIN else None,
                         "podil_i_mimo_mesto": podil_nad_mezi(mimo_mesto[k], n[k]),
                         "kapacita": s["kapacita"] if s else None,
@@ -449,7 +497,7 @@ def main() -> None:
                         if s and s["prijati"] + s["nevesli"] >= MIN else None,
                         "zdroj_obtiznosti": zdroj_obt if s else None,
                     })
-                shluky.append({"id": c, "oboru": len(cl), "uchazecu": unik[c] - unik[c] % 10,
+                shluky.append({"id": c, "oboru": len(cl), "uchazecu": zaokrouhli(unik[c]),
                                "podil_s_oborem_jinde_ve_meste": podil_nad_mezi(mimo_shluk[c], unik[c]), "obory": obory})
             mesto_uch = sum(1 for u in volby[r] if any(v["obor"] in uzly_mesta for v in u))
             vm["rocniky"][str(r)] = {"uchazecu_mesta": mesto_uch, "okruhy": sorted(shluky, key=lambda s: (-s["uchazecu"], s["id"]))}
@@ -484,14 +532,14 @@ def main() -> None:
             predposledni = ROKY[-2]
             prel.append({
                 "id": c, "oboru": len(cl),
-                "uchazecu": {str(r): pocty[r][1][c] - pocty[r][1][c] % 10 for r in ROKY},
-                "podil_okruhu_na_uchazecich_mesta": {str(r): round(pocty[r][1][c] / mesto_uch[r], 3) for r in ROKY},
+                "uchazecu": {str(r): zaokrouhli(pocty[r][1][c]) for r in ROKY},
+                "podil_okruhu_na_uchazecich_mesta": {str(r): round(zaokrouhli(pocty[r][1][c]) / mesto_uch[r], 3) for r in ROKY},
                 "kapacita": {str(r): v for r, v in kap.items()},
                 "presun": presun,
                 "prihlasky_katalog": {"oboru": len(v_katalogu), **prihl_kat},
                 "nejvetsi_zmeny": sorted(
                     ({"klic": k, "skola": mapa.get(k, {}).get("skola"), "obor": mapa.get(k, {}).get("obor"),
-                      "podil": {str(r): round(p_r[r][k] / nr[r], 3) for r in ROKY}}
+                      "podil": {str(r): round(p_r[r][k] / nr[r], 2) for r in ROKY}}
                      for k in cl if all(p_r[r][k] == 0 or p_r[r][k] >= MIN for r in ROKY)),
                     key=lambda x: (-abs(x["podil"][str(posledni)] - x["podil"][str(predposledni)]), x["klic"]))[:5],
             })
@@ -499,6 +547,9 @@ def main() -> None:
         vystup["mesta"][mesto] = vm
         print(mesto, "hotovo", file=sys.stderr)
 
+    chyby = kontrola_zverejneni(vystup)
+    if chyby:
+        raise SystemExit("podklad by prozradil skupinu pod 10 uchazečů:\n" + "\n".join(chyby))
     VYSTUP.write_text(json.dumps(vystup, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"zapsáno {VYSTUP.relative_to(KOREN)}")
 

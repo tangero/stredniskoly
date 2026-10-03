@@ -9,7 +9,7 @@ Rozbor reprodukuje `python3 scripts/rozbor-shluky-oboru.py`. Výstup je v [podkl
 1. **Ve městě existují okruhy oborů, mezi kterými se uchazeči přelévají, a dají se z dat najít.** V Brně jich v roce 2026 vychází 13 se 168 obory, v Praze 21 se 412 obory. Okruhy dávají obsahový smysl: osmiletá, šestiletá a čtyřletá gymnázia zvlášť, ekonomické obory, technické obory, zdravotnické a sociální obory, kadeřnice a gastronomie, automobilní obory, stavební řemesla, grafika a média, obory E odborných učilišť.
 2. **Okruhy nejsou náhodné.** Stejnou metodou spočítané okruhy let 2024, 2025 a 2026 se mezi každou dvojicí let shodují s upraveným Randovým indexem 0,69–0,76 v Brně a 0,66–0,69 v Praze. Při náhodném přeřazení oborů vychází 0,00 (95. percentil nejvýš 0,02).
 3. **Zájem z okruhu neodchází, přesouvá se uvnitř něj.** Podíl okruhu na uchazečích města se za tři roky změnil v Brně nejvýš o 1,3 procentního bodu, v Praze o 2,5 bodu (okruh soukromých a alternativních gymnázií, do kterého přibyly nové školy). Rozdělení uchazečů mezi obory uvnitř okruhu se ale posouvá víc, než dovoluje náhoda: mezi 2024 a 2025 u 8 ze 13 okruhů v Brně a 14 z 21 v Praze, mezi 2025 a 2026 u 4 a 16. Nejsilnější příklad je čtyřleté gymnázium SPŠ chemické a gymnázia Brno na Vranovské: 249, 491 a 247 uchazečů v letech 2024, 2025 a 2026, přijetí „dostala se většina“, pak „těžké“, pak zase „dostala se většina“. Gymnázium Matyáše Lercha a Gymnázium na Slovanském náměstí se pohybovala přesně opačně.
-4. **Rodiny reagují na obtížnost z předchozího roku.** U čtyřletých gymnázií v celé zemi platí: čím snazší bylo přijetí v roce 2025, tím víc přihlášek obor dostal v roce 2026, i po odečtení návratu k průměru po skoku v roce 2025 (oddíl 5.4). Obtížnost přijetí z jednoho ročníku proto rodinu může svést právě tam, kde je nejméně stálá.
+4. **Přihlášky souvisejí s obtížností z předchozího roku.** U čtyřletých gymnázií v celé zemi platí: čím snazší bylo přijetí v roce 2025, tím víc přihlášek obor dostal v roce 2026, i po odečtení návratu k průměru po skoku v roce 2025 (oddíl 5.4). Je to souvislost, ne doložená příčina: slučuje se s hypotézou, že rodiny volí podle obtížnosti z minulého roku, ale data neříkají, podle čeho se rodiny rozhodovaly. Doloženo je, že obtížnost přijetí jednoho oboru se mezi ročníky silně mění, a proto ji jeden ročník nepopisuje.
 5. **Směr přihlášek uvnitř okruhu je čitelný.** U každého oboru jde říct, jak často ho uchazeči měli na přihlášce výš než ostatní obory okruhu. Ve čtyřletých gymnáziích Brna má Gymnázium Matyáše Lercha 0,67 a Moravské gymnázium 0,13.
 6. **Doporučení:** okruh ukázat jako rozšíření sekce „Kam se hlásí stejní uchazeči“ na stránce oboru a jako přehled okruhů na stránce města. Obtížnost přijetí jen jako odznak u oboru, neřadit podle ní. Vlastní stránku okruhu zatím nestavět (oddíl 7).
 
@@ -170,35 +170,35 @@ Tučně je přesun nad 95. percentilem šumu, v závorce šum. Poslední sloupec
 
 | Město | Okruh | Podíl na uchazečích města 2024 / 2025 / 2026 (%) | Přesun 2024 → 2025 (šum) | Přesun 2025 → 2026 (šum) | První volby 2026 na nových oborech |
 |---|---|---|---:|---:|---:|
-| Brno | Technické obory | 18,3 / 18,7 / 18,2 | **0,12** (0,07) | **0,09** (0,07) | 0,00 |
-| Brno | Zdravotnické, sociální, pedagogické | 16,1 / 16,9 / 16,4 | **0,12** (0,07) | **0,14** (0,07) | 0,03 |
-| Brno | Čtyřletá gymnázia a chemie | 16,0 / 16,1 / 15,7 | **0,15** (0,07) | **0,10** (0,07) | 0,00 |
+| Brno | Technické obory | 18,3 / 18,7 / 18,1 | **0,12** (0,07) | **0,09** (0,07) | 0,00 |
+| Brno | Zdravotnické, sociální, pedagogické | 16,0 / 16,9 / 16,4 | **0,12** (0,07) | **0,14** (0,07) | 0,03 |
+| Brno | Čtyřletá gymnázia a chemie | 16,0 / 16,0 / 15,7 | **0,15** (0,07) | **0,10** (0,07) | 0,00 |
 | Brno | Ekonomické obory | 14,6 / 14,5 / 14,9 | **0,15** (0,06) | **0,13** (0,07) | 0,03 |
-| Brno | Kadeřnice, kosmetika, gastronomie | 12,0 / 13,1 / 13,2 | 0,04 (0,07) | 0,07 (0,07) | 0,00 |
+| Brno | Kadeřnice, kosmetika, gastronomie | 11,9 / 13,0 / 13,2 | 0,04 (0,07) | 0,07 (0,07) | 0,00 |
 | Brno | Osmiletá gymnázia | 11,3 / 11,6 / 11,9 | **0,08** (0,06) | 0,06 (0,06) | 0,01 |
-| Brno | Šestiletá gymnázia | 10,0 / 9,2 / 9,6 | **0,08** (0,07) | 0,05 (0,07) | 0,00 |
-| Brno | Automobilní obory | 7,3 / 6,9 / 6,4 | 0,05 (0,07) | 0,05 (0,07) | 0,00 |
-| Brno | Stavební řemesla | 4,5 / 5,7 / 5,8 | 0,09 (0,10) | 0,07 (0,10) | 0,00 |
-| Brno | Nástavby Podnikání | 3,9 / 4,3 / 4,3 | **0,10** (0,10) | 0,07 (0,10) | 0,00 |
+| Brno | Šestiletá gymnázia | 10,0 / 9,2 / 9,5 | **0,08** (0,07) | 0,05 (0,07) | 0,00 |
+| Brno | Automobilní obory | 7,3 / 6,9 / 6,3 | 0,05 (0,07) | 0,05 (0,07) | 0,00 |
+| Brno | Stavební řemesla | 4,4 / 5,6 / 5,7 | 0,09 (0,10) | 0,07 (0,10) | 0,00 |
+| Brno | Nástavby Podnikání | 3,9 / 4,3 / 4,2 | **0,10** (0,10) | 0,07 (0,10) | 0,00 |
 | Brno | Grafika, design, média | 5,1 / 4,3 / 4,0 | **0,15** (0,08) | 0,07 (0,09) | 0,00 |
 | Brno | Odborné učiliště: stravování | 0,8 / 1,2 / 1,1 | 0,10 (0,15) | 0,07 (0,14) | 0,00 |
-| Brno | Odborné učiliště: řemeslné práce | 0,7 / 0,7 / 0,7 | 0,03 (0,17) | 0,07 (0,15) | 0,00 |
+| Brno | Odborné učiliště: řemeslné práce | 0,6 / 0,6 / 0,7 | 0,03 (0,17) | 0,07 (0,15) | 0,00 |
 | Praha | Ekonomické obory | 19,2 / 20,7 / 20,6 | **0,20** (0,05) | **0,14** (0,05) | 0,03 |
 | Praha | Osmiletá gymnázia | 17,3 / 16,5 / 16,7 | **0,08** (0,05) | **0,07** (0,05) | 0,00 |
 | Praha | Čtyřletá gymnázia | 13,5 / 12,8 / 12,9 | **0,21** (0,06) | **0,19** (0,06) | 0,00 |
 | Praha | Technické obory | 12,7 / 12,3 / 11,8 | **0,13** (0,06) | **0,09** (0,06) | 0,00 |
 | Praha | Šestiletá gymnázia | 10,6 / 9,9 / 9,3 | **0,09** (0,05) | **0,07** (0,05) | 0,00 |
 | Praha | Kadeřnice, kosmetika, potravinářské obory | 8,7 / 9,8 / 9,0 | **0,10** (0,07) | **0,09** (0,07) | 0,00 |
-| Praha | Soukromá a alternativní gymnázia | 5,4 / 7,0 / 7,9 | **0,14** (0,07) | **0,24** (0,07) | 0,15 |
+| Praha | Soukromá a alternativní gymnázia | 5,4 / 6,9 / 7,9 | **0,14** (0,07) | **0,24** (0,07) | 0,15 |
 | Praha | Hotelnictví, gastronomie | 6,8 / 7,0 / 7,5 | **0,09** (0,06) | **0,15** (0,07) | 0,13 |
 | Praha | Zdravotnické obory, chemie | 7,8 / 7,9 / 7,4 | **0,12** (0,06) | **0,13** (0,07) | 0,05 |
-| Praha | Automobilní obory | 6,7 / 6,9 / 7,1 | **0,08** (0,08) | **0,08** (0,08) | 0,00 |
-| Praha | Grafika, multimédia | 6,1 / 6,4 / 5,0 | **0,11** (0,07) | **0,09** (0,08) | 0,00 |
+| Praha | Automobilní obory | 6,6 / 6,8 / 7,1 | **0,08** (0,08) | **0,08** (0,08) | 0,00 |
+| Praha | Grafika, multimédia | 6,1 / 6,3 / 5,0 | **0,11** (0,07) | **0,09** (0,08) | 0,00 |
 | Praha | Nástavby Podnikání | 2,5 / 3,3 / 4,1 | **0,14** (0,10) | **0,15** (0,09) | 0,00 |
 | Praha | Stavební řemesla | 3,4 / 3,7 / 3,9 | 0,07 (0,09) | **0,09** (0,09) | 0,00 |
 | Praha | Bezpečnostní obory | 2,3 / 2,1 / 3,7 | **0,15** (0,06) | **0,42** (0,06) | 0,42 |
 | Praha | Doprava, logistika | 3,2 / 3,3 / 3,0 | **0,09** (0,07) | **0,11** (0,07) | 0,00 |
-| Praha | Konzervatoře: hudba | 0,7 / 0,8 / 0,7 | 0,09 (0,10) | 0,04 (0,11) | 0,00 |
+| Praha | Konzervatoře: hudba | 0,7 / 0,7 / 0,7 | 0,09 (0,10) | 0,04 (0,11) | 0,00 |
 | Praha | Konzervatoře: zpěv | 0,5 / 0,5 / 0,5 | 0,09 (0,12) | **0,13** (0,13) | 0,00 |
 | Praha | Odborné učiliště | 0,5 / 0,4 / 0,5 | 0,09 (0,15) | 0,12 (0,15) | 0,00 |
 | Praha | Ošetřovatel, pečovatelské služby | 0,4 / 0,4 / 0,4 | 0,08 (0,12) | 0,11 (0,13) | 0,00 |
@@ -232,9 +232,9 @@ Podíl prvních voleb Vranovské na celé přihlášce byl ve všech třech lete
 
 Které gymnázium zadání myslí jako „nové státní gymnázium otevřené 2024“, z dat neurčím. Gymnázium Elgartova má uchazeče už v roce 2024 a zrcadlový vzorec nemá. Ověření patří Patrickovi (Jak otestovat v zadání).
 
-### 5.4 Reagují rodiny na obtížnost z předchozího roku?
+### 5.4 Souvisí přihlášky s obtížností z předchozího roku?
 
-Zrcadlový vzorec napovídá, že část rodin volí podle toho, jak těžké bylo přijetí v minulém ročníku: obor, kam „se dostala většina“, přitáhne další rok víc uchazečů, a proto je těžký. Ověřil jsem to na celé zemi, ne jen v Brně.
+Zrcadlový vzorec se slučuje s hypotézou, že část rodin volí podle toho, jak těžké bylo přijetí v minulém ročníku: obor, kam „se dostala většina“, přitáhne další rok víc uchazečů, a proto je těžký. Ověřil jsem, zda odpovídající souvislost platí i v celé zemi, ne jen v Brně. Hypotézu samu tím ověřit nejde.
 
 Data: souhrny 1. kola sečtené za REDIZO a KKOV, obory s nezměněnou kapacitou, aspoň 20 soutěžícími uchazeči v roce 2025 a aspoň 20 přihláškami ve všech třech letech, přihlášky 2024 z katalogu. Závislá veličina je logaritmus poměru přihlášek 2026 / 2025. Vysvětlující veličiny jsou podíl přijatých ze soutěžících 2025 a logaritmus poměru přihlášek 2025 / 2024. Druhá veličina odečítá prostý návrat k průměru: obor, kterému přihlášky v roce 2025 vyskočily, by jich v roce 2026 měl méně, i kdyby na obtížnost nikdo nehleděl.
 
@@ -243,11 +243,11 @@ Data: souhrny 1. kola sečtené za REDIZO a KKOV, obory s nezměněnou kapacitou
 | čtyřletá gymnázia | 196 | +0,62 (± 0,14) | −0,54 (± 0,08) |
 | všechny obory | 1 301 | +0,14 (± 0,04) | −0,46 (± 0,04) |
 
-Jak to číst: u čtyřletého gymnázia, kde se v roce 2025 dostalo 80 % soutěžících uchazečů místo 40 %, přišlo v roce 2026 v průměru zhruba o 28 % přihlášek víc, při stejném skoku v předchozím roce. Působí oba jevy zároveň: návrat k průměru i reakce na obtížnost. U čtyřletých gymnázií je reakce na obtížnost čtyřikrát silnější než u všech oborů dohromady.
+Jak to číst: u čtyřletého gymnázia, kde se v roce 2025 dostalo 80 % soutěžících uchazečů místo 40 %, přišlo v roce 2026 v průměru zhruba o 28 % přihlášek víc, při stejném skoku v předchozím roce. Souvislost se snadností přijetí tedy zůstává i po odečtení návratu k průměru. U čtyřletých gymnázií je zhruba čtyřikrát silnější než u všech oborů dohromady.
 
-Výhrady: jsou to dvě dvojice let a pozorovaná data, ne pokus. Do souvislosti mohou vstupovat změny kritérií, nové obory v okolí i pověst školy. Výpočet je v tomto oddílu, ne ve skriptu; pokud se má stát ukazatelem nebo větou na webu, patří do etapy 2 jako samostatný rozbor se zápisem do slovníku.
+**Co to nedokazuje:** příčinu ani motivaci rodin. Model nezná, podle čeho se rodiny rozhodovaly, a stejnou souvislost může vytvořit i souběžná změna kritérií přijetí, kapacity okolních oborů, nové obory v okolí nebo pověst školy. Jsou to dvě dvojice let a pozorovaná data, ne pokus. Výpočet je v tomto oddílu, ne ve skriptu; pokud se má stát ukazatelem nebo větou na webu, patří do etapy 2 jako samostatný rozbor se zápisem do slovníku a web o reakci rodin mluvit nesmí.
 
-Co to znamená pro stránku: **obtížnost přijetí z jednoho ročníku je nejméně stálá právě tam, kde rodiny volí podle ní.** Proto pravidlo 7.3 bod 2 (obtížnost vždy za dva roky) a věta o přesouvání zájmu v okruhu.
+Co to znamená pro stránku: pravidlo 7.3 bod 2 (obtížnost vždy za dva roky) stojí na doložené proměnlivosti obtížnosti mezi ročníky (oddíl 5.3, slovník ukazatelů, *Obtížnost přijetí slovy*), ne na tomto modelu.
 
 ## 6. Směr: kdo je komu první volbou
 
@@ -296,7 +296,7 @@ U oboru v okruhu: název školy a oboru, počet uchazečů, přednost v okruhu s
 Pravidla pro texty bloku (požadavek zadání):
 
 1. **Okruh popisuje, jak se uchazeči hlásili a jak dopadli v konkrétních ročnících.** Žádná věta nesmí mluvit o tom, jak dopadne uchazeč příští rok. Vždy s rokem, nikdy „loni“ nebo „letos“.
-2. **Obtížnost se ukazuje vždy u dvou ročníků, když je máme.** Příklad Vranovské (dostala se většina, těžké, dostala se většina) je přesně ta situace, kdy jeden ročník rodinu zavede, a oddíl 5.4 ukazuje, že u čtyřletých gymnázií nejde o výjimku: rodiny na obtížnost z minulého roku reagují, a tím ji v dalším roce mění.
+2. **Obtížnost se ukazuje vždy u dvou ročníků, když je máme.** Příklad Vranovské (dostala se většina, těžké, dostala se většina) je přesně ta situace, kdy jeden ročník rodinu zavede. Že nejde o výjimku, dokládá proměnlivost obtížnosti mezi ročníky: u nabídek s aspoň 20 soutěžícími uchazeči zůstalo zařazení mezi 2025 a 2026 stejné jen u 48,9 % (slovník ukazatelů). Proč se mění, text nevysvětluje.
 3. **Žádné „sem ano, sem ne“.** Blok neříká, který obor zvolit jako pojistku, ani nenavrhuje pořadí na přihlášce. Na to je Simulátor přijímaček s vlastními výhradami. Pokud blok na simulátor odkazuje, tak jen odkazem.
 4. **Pevná věta o vývoji, když je přesun nad šumem:** „Zájem se mezi obory tohoto okruhu mezi ročníky přesouvá. Obor, kam se v jednom roce dostal skoro každý, může být další rok těžký.“ Je to popis doloženého jevu, ne předpověď, a odpovídá na podnět rodiče.
 5. **Přednost v okruhu se nikdy nepíše jako „oblíbenost“ ani „žádanost“**, jen jako „uchazeči ho měli na přihlášce spíš výš / spíš níž než ostatní obory okruhu“. U rad platí věta ze slovníku pojmů: pořadí na přihlášce šanci na přijetí nemění.
@@ -309,8 +309,8 @@ Zdroj název nenese. Ruční pojmenování v oddílu 4 se do etapy 2 nepřenáš
 ### 7.5 Meze zveřejnění a dopočítávání
 
 - Obor v okruhu jen s aspoň 10 uchazeči ve městě, hrana jen s aspoň 10 společnými uchazeči (už v metodě).
-- Přednost v okruhu a podíl prvních voleb v okruhu se u oboru zobrazí jen při aspoň 10 dvojicích, resp. 10 uchazečích.
-- **Součty za okruh se počítají jen z oborů, které se zobrazují**, a počet uchazečů okruhu se zaokrouhluje dolů na desítky. Okruh tak nejde odečíst od součtu zobrazených oborů a dostat skrytý malý obor.
+- Přednost v okruhu a podíl prvních voleb v okruhu se u oboru zobrazí jen při aspoň 10 dvojicích, resp. 10 uchazečích. **Podíl prvních voleb v okruhu se zveřejňuje jen jako podíl na dvě desetinná místa, nikdy jako počet**: přesné počty zobrazených oborů by se sečetly a odečetly od celku okruhu.
+- **Počet uchazečů okruhu se zaokrouhluje dolů na desítky a podíl okruhu na uchazečích města se počítá až ze zaokrouhleného počtu.** První verze rozboru počítala podíl z přesného počtu. Spolu s přesnými počty prvních voleb tak šel přesně dopočítat skrytý obor s 9 prvními volbami (review PR #284, Brno, technické obory). Generátor podkladu teď před zápisem ověřuje (`kontrola_zverejneni`), že součet skrytých oborů nejde ze zveřejněných údajů určit jednoznačně, a jinak skončí chybou. Na stránce platí totéž: všechny počty a podíly okruhu se musí posuzovat společně, ne každý zvlášť.
 - U posunu v okruhu se ukazuje obor jen tehdy, když má v obou ročnících 0 nebo aspoň 10 prvních voleb.
 - **Okruh s méně než 3 obory nebo s méně než 30 uchazeči se nezobrazuje.** U okruhů jedné školy (odborná učiliště) se nezobrazuje, protože popisuje rozhodování mezi obory jedné školy a dopočítat by se dal z jejích čísel na stránce školy. Rozhodnutí o konzervatořích (3 a 4 obory tří až čtyř škol) nechávám na schválení.
 
