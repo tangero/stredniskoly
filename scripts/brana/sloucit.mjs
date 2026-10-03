@@ -5,27 +5,26 @@
 //
 // Těsně před sloučením bránu vyhodnotí znovu nad čerstvými daty (štítek stop, souhlas, protokol)
 // a vyžádá si nové vyhodnocení na serveru: komentář v PR spustí workflow brány a skript čeká na
-// kontrolu „Brána sloučení“ zapsanou až po tomto komentáři. Starší úspěch nestačí, protože mezitím
-// mohlo začít zamrznutí (proměnné repozitáře zná jen workflow). Slučuje se s pevnou hlavou (sha),
+// kontrolu, kterou zapsal právě běh vyvolaný tímto komentářem (číslo komentáře v external_id).
+// Jiný výsledek, i později dokončený, nestačí: mohl načíst vstupy před začátkem zamrznutí nebo
+// před přidáním stop. Po odpovědi skript veto ověří ještě jednou. Slučuje se s pevnou hlavou (sha),
 // takže push mezi kontrolou a sloučením sloučení odmítne. Vestavěný automatický merge se
 // nepoužívá, protože by sloučil podle staršího výsledku.
 
 import { pathToFileURL } from 'node:url';
-import { vyhodnot } from './brana.mjs';
-import { REPO, vytvorApi, nactiKonfig, nactiPr } from './data.mjs';
-
-const NAZEV_KONTROLY = 'Brána sloučení';
+import { vyhodnot, ZADOST } from './brana.mjs';
+import { REPO, NAZEV_KONTROLY, vytvorApi, nactiKonfig, nactiPr, kontrolyBrany } from './data.mjs';
 
 const CEKANI_MS = 10 * 60 * 1000;
 const INTERVAL_MS = 15 * 1000;
 
-/** Čeká na kontrolu brány na hlavě, zapsanou nejdřív v čase `od`; null po vypršení. */
-export async function cerstvaKontrola(api, sha, od, { cekani = CEKANI_MS, interval = INTERVAL_MS, spanek } = {}) {
+/** Čeká na kontrolu brány, která odpovídá na žádost (komentář `zadost`) u PR `cislo`; null po vypršení. */
+export async function odpovedNaZadost(api, sha, cislo, zadost, { cekani = CEKANI_MS, interval = INTERVAL_MS, spanek } = {}) {
   const spi = spanek || ((ms) => new Promise((r) => setTimeout(r, ms)));
   const konec = Date.now() + cekani;
   for (;;) {
-    const k = await posledniKontrola(api, sha);
-    if (k && k.status === 'completed' && Date.parse(k.started_at) >= od) return k;
+    const k = (await kontrolyBrany(api, sha)).find((x) => x.brana.pr === cislo && x.brana.zadost === zadost);
+    if (k && k.status === 'completed') return k;
     if (Date.now() >= konec) return null;
     await spi(interval);
   }
@@ -62,15 +61,20 @@ async function main() {
 
   const zadost = await api(`repos/${REPO}/issues/${cislo}/comments`, {
     method: 'POST',
-    body: { body: `Žádost o vyhodnocení brány před sloučením commitu ${vstup.pr.hlava.sha.slice(0, 7)}.\n\n<!-- brana:pred-sloucenim -->` },
+    body: { body: `Žádost o vyhodnocení brány před sloučením commitu ${vstup.pr.hlava.sha.slice(0, 7)}.\n\n${ZADOST}` },
   });
-  // Čas serveru, ne místní hodiny; sekundová přesnost, proto „nejdřív v tutéž sekundu“.
-  const od = Date.parse(zadost.created_at);
-  const cerstva = await cerstvaKontrola(api, vstup.pr.hlava.sha, od);
-  if (cerstva?.conclusion !== 'success') {
-    console.error(cerstva
-      ? `Brána po žádosti neprošla (${cerstva.output?.title}); nesloučeno.`
-      : 'Brána do 10 minut po žádosti nezapsala nový výsledek; nesloučeno.');
+  const odpoved = await odpovedNaZadost(api, vstup.pr.hlava.sha, cislo, zadost.id);
+  if (odpoved?.conclusion !== 'success') {
+    console.error(odpoved
+      ? `Brána po žádosti neprošla (${odpoved.output?.title}); nesloučeno.`
+      : 'Brána do 10 minut na žádost neodpověděla; nesloučeno.');
+    process.exit(1);
+  }
+  // Veto mohlo přibýt i během čekání: poslední místní kontrola na čerstvých datech a stejné hlavě.
+  const znovu = await nactiPr(api, cislo);
+  const zaver = vyhodnot({ ...znovu, konfig, zamrznuti: null, ted: Date.now() });
+  if (!zaver.uspech || znovu.pr.hlava.sha !== vstup.pr.hlava.sha) {
+    console.error(`Před sloučením se stav změnil: ${zaver.duvody.join('; ')}; nesloučeno.`);
     process.exit(1);
   }
   await api(`repos/${REPO}/pulls/${cislo}/merge`, {

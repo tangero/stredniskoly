@@ -6,6 +6,10 @@
 
 verze: 1
 
+# Účet vlastníka. Štítek `schvaleno` z jiného účtu (asistent zadání, boti) brána nebere jako souhlas
+# a `stop` odebraný jiným účtem, než který ho přidal, dál platí. Claude Code pracuje přes účet vlastníka.
+vlastnik: tangero
+
 # Schválení `schvaleno` přidaná před tímto dnem brána při prvním vyhodnocení zaznamená
 # s tehdejším rozsahem; pozdější schválení zaznamená workflow brány hned při přidání štítku.
 platnost_od: "2026-10-03"

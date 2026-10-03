@@ -3,10 +3,8 @@
 // na jeho aktuální hlavu. Kód z PR nespouští ani nestahuje.
 
 import fs from 'node:fs';
-import { vyhodnot, zaznamSouhlasu, otisk, rozsah, ZNACKA } from './brana.mjs';
-import { REPO, vytvorApi, nactiKonfig, nactiPr, nactiIssue, prOdkazujiciNa, otevrenePr } from './data.mjs';
-
-export const NAZEV_KONTROLY = 'Brána sloučení';
+import { vyhodnot, zaznamSouhlasu, otisk, rozsah, externiId, ZNACKA, ZADOST } from './brana.mjs';
+import { REPO, NAZEV_KONTROLY, vytvorApi, nactiKonfig, nactiPr, nactiIssue, prOdkazujiciNa, otevrenePr } from './data.mjs';
 
 const api = vytvorApi();
 const udalost = process.env.GITHUB_EVENT_NAME;
@@ -15,7 +13,7 @@ const zamrznuti = { od: process.env.ZAMRZNUTI_OD || '', do: process.env.ZAMRZNUT
 
 const komentuj = (cislo, telo) => api(`repos/${REPO}/issues/${cislo}/comments`, { method: 'POST', body: { body: telo } });
 
-async function zapisKontrolu(pr, verdikt) {
+async function zapisKontrolu(pr, verdikt, zacatek, zadost) {
   const titulek = verdikt.uspech
     ? `Prošlo (${verdikt.rezim})`
     : verdikt.cekaDo
@@ -36,28 +34,32 @@ async function zapisKontrolu(pr, verdikt) {
       name: NAZEV_KONTROLY,
       head_sha: pr.hlava.sha,
       status: 'completed',
-      started_at: new Date().toISOString(),
+      // Začátek zaznamenaný před načtením vstupů; žádost váže výsledek na konkrétní komentář.
+      started_at: zacatek,
       completed_at: new Date().toISOString(),
+      external_id: externiId({ pr: pr.cislo, stav: verdikt.stav, od: verdikt.lhutaOd, zadost }),
       conclusion: verdikt.uspech ? 'success' : 'failure',
       output: { title: titulek, summary: souhrn },
     },
   });
 }
 
-async function vyhodnotPr(cislo, konfig) {
+async function vyhodnotPr(cislo, konfig, zadost = null) {
+  const zacatek = new Date().toISOString();
   const vstup = await nactiPr(api, cislo);
   if (vstup.pr.stav !== 'open' || vstup.pr.zakladna !== 'main') return;
   const verdikt = vyhodnot({ ...vstup, konfig, zamrznuti, ted: Date.now() });
   for (const z of verdikt.zaznamenat) {
     await komentuj(z.issue, `Brána sloučení zaznamenala souhlas vlastníka přidaný před jejím zavedením, s dnešním rozsahem issue.\n\n${ZNACKA.souhlas(z.otisk)}`);
   }
-  await zapisKontrolu(vstup.pr, verdikt);
+  await zapisKontrolu(vstup.pr, verdikt, zacatek, zadost);
   console.log(`PR #${cislo}: ${verdikt.uspech ? 'prošlo' : 'neprošlo'} (${verdikt.rezim}) – ${verdikt.duvody.join('; ')}`);
 }
 
 async function main() {
   const konfig = await nactiKonfig(api);
   let cisla = [];
+  let zadost = null;
 
   if (udalost === 'pull_request_target') {
     const pr = data.pull_request;
@@ -67,7 +69,13 @@ async function main() {
     cisla = [pr.number];
   } else if (udalost === 'issues' || udalost === 'issue_comment') {
     const cislo = data.issue.number;
-    if (data.issue.pull_request) cisla = [cislo];
+    if (data.issue.pull_request) {
+      cisla = [cislo];
+      // Proměnné zamrznutí má tento job z doby svého startu, tedy až po žádosti.
+      if (udalost === 'issue_comment' && data.action === 'created' && (data.comment?.body || '').includes(ZADOST)) {
+        zadost = data.comment.id;
+      }
+    }
     else {
       if (udalost === 'issues' && data.action === 'labeled' && data.label?.name === 'navrh') {
         await komentuj(cislo, `Brána sloučení uložila otisk rozsahu k návrhu. Změna rozsahu před schválením souhlas zneplatní.\n\n${ZNACKA.otiskNavrhu(otisk(rozsah(data.issue.body || '')))}`);
@@ -97,7 +105,7 @@ async function main() {
   let chyba = false;
   for (const cislo of cisla) {
     try {
-      await vyhodnotPr(cislo, konfig);
+      await vyhodnotPr(cislo, konfig, zadost);
     } catch (e) {
       chyba = true;
       console.error(`PR #${cislo}: ${e.message}`);

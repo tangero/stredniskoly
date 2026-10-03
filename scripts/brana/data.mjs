@@ -3,7 +3,9 @@
 
 import { execFileSync } from 'node:child_process';
 import yaml from 'js-yaml';
-import { propojenaIssues } from './brana.mjs';
+import { propojenaIssues, ctiExterniId } from './brana.mjs';
+
+export const NAZEV_KONTROLY = 'Brána sloučení';
 
 export const REPO = process.env.GITHUB_REPOSITORY || 'tangero/stredniskoly';
 
@@ -92,12 +94,13 @@ const komentare = async (api, cislo) =>
     autor: k.user?.login,
     telo: k.body || '',
     cas: k.created_at,
+    upraveno: k.updated_at,
   }));
 
 const udalosti = async (api, cislo) =>
   (await vse(api, `repos/${REPO}/issues/${cislo}/events`))
     .filter((u) => u.event === 'labeled' || u.event === 'unlabeled')
-    .map((u) => ({ akce: u.event, stitek: u.label?.name, cas: u.created_at }));
+    .map((u) => ({ akce: u.event, stitek: u.label?.name, cas: u.created_at, aktor: u.actor?.login }));
 
 export async function nactiIssue(api, cislo) {
   const i = await api(`repos/${REPO}/issues/${cislo}`);
@@ -115,12 +118,6 @@ export async function nactiIssue(api, cislo) {
 /** Všechno, co brána potřebuje k jednomu PR. */
 export async function nactiPr(api, cislo) {
   const p = await api(`repos/${REPO}/pulls/${cislo}`);
-  // Kdy server hlavu poprvé viděl: nejstarší kontrola na commitu (CI běží hned po pushi).
-  const kontroly = await api(`repos/${REPO}/commits/${p.head.sha}/check-runs?per_page=100`);
-  const videna = (kontroly.check_runs || [])
-    .map((k) => k.started_at)
-    .filter(Boolean)
-    .sort()[0];
   const soubory = [];
   for (const s of await vse(api, `repos/${REPO}/pulls/${cislo}/files`)) {
     const soubor = {
@@ -143,6 +140,7 @@ export async function nactiPr(api, cislo) {
     if (i) issues.push(i);
   }
   return {
+    predchozi: await predchoziStav(api, cislo, p.head.sha),
     pr: {
       cislo,
       stav: p.state,
@@ -152,13 +150,28 @@ export async function nactiPr(api, cislo) {
       stitky: p.labels.map((l) => l.name),
       vytvoreno: p.created_at,
       upraveno: p.updated_at,
-      hlava: { sha: p.head.sha, videna },
+      hlava: { sha: p.head.sha },
       komentare: await komentare(api, cislo),
       udalosti: await udalosti(api, cislo),
     },
     soubory,
     issues,
   };
+}
+
+/** Kontroly brány na commitu (jen ty, které zapsal workflow brány, poznají se podle externího id). */
+export async function kontrolyBrany(api, sha) {
+  const d = await api(`repos/${REPO}/commits/${sha}/check-runs?check_name=${encodeURIComponent(NAZEV_KONTROLY)}&filter=all&per_page=100`);
+  return (d.check_runs || [])
+    .map((k) => ({ ...k, brana: ctiExterniId(k.external_id) }))
+    .filter((k) => k.brana && k.app?.slug === 'github-actions')
+    .sort((a, b) => b.id - a.id);
+}
+
+/** Stav lhůty z poslední kontroly brány pro tento PR a commit; null, když brána tuto dvojici ještě neviděla. */
+async function predchoziStav(api, cislo, sha) {
+  const k = (await kontrolyBrany(api, sha)).find((x) => x.brana.pr === cislo);
+  return k ? { stav: k.brana.stav, od: k.brana.od } : null;
 }
 
 /** Otevřené PR do main, které odkazují na dané issue. */

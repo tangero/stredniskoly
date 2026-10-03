@@ -34,6 +34,19 @@ const CTENI = {
 const shoda = (soubor, vzory = []) => vzory.some((vzor) => matchesGlob(soubor, vzor));
 const cas = (iso) => Date.parse(iso);
 
+// Žádost o vyhodnocení před sloučením (sloucit.mjs); běh, který ji obslouží, uvede její číslo v external_id.
+export const ZADOST = '<!-- brana:pred-sloucenim -->';
+
+/** Identifikátor kontroly brány: PR, stav lhůty, její počátek (ms) a případně číslo žádosti. */
+export function externiId({ pr, stav, od, zadost }) {
+  return `brana:v1:pr=${pr}:stav=${stav}:od=${od}${zadost ? `:zadost=${zadost}` : ''}`;
+}
+
+export function ctiExterniId(id = '') {
+  const m = (id || '').match(/^brana:v1:pr=(\d+):stav=([0-9a-f]{64}):od=(\d+)(?::zadost=(\d+))?$/);
+  return m ? { pr: Number(m[1]), stav: m[2], od: Number(m[3]), zadost: m[4] ? Number(m[4]) : null } : null;
+}
+
 /** Čísla issues, na která PR odkazuje (Closes #N, Souvisí s #N). */
 export function propojenaIssues(telo = '') {
   const cisla = new Set();
@@ -62,6 +75,27 @@ function posledniUdalost(udalosti, akce, stitek) {
     .reduce((nej, u) => (!nej || cas(u.cas) > cas(nej.cas) ? u : nej), null);
 }
 
+/**
+ * Rozhodnutí vlastníka: událost z jeho účtu (`vlastnik` v rezimy.yml). Claude Code pracuje přes
+ * tentýž účet a řídí se pravidlem, že `schvaleno` nepřidává (RA35); účty asistenta zadání a dalších
+ * botů brána odliší podle autora události.
+ */
+export function odVlastnika(udalost, konfig) {
+  return Boolean(udalost.aktor) && udalost.aktor === konfig.rezimy.vlastnik;
+}
+
+/**
+ * Platí `stop`? Štítek je na místě, nebo ho odebral účet, který ho nepřidal a není vlastník
+ * (oddíl 6: stop smí odebrat jen ten, kdo ho přidal, nebo vlastník).
+ */
+export function stopPlati(objekt, konfig) {
+  if (objekt.stitky.includes('stop')) return true;
+  const odebrani = posledniUdalost(objekt.udalosti || [], 'unlabeled', 'stop');
+  if (!odebrani || odVlastnika(odebrani, konfig)) return false;
+  const pridani = posledniUdalost(objekt.udalosti.filter((u) => cas(u.cas) <= cas(odebrani.cas)), 'labeled', 'stop');
+  return !pridani || pridani.aktor !== odebrani.aktor;
+}
+
 function zaznamyBrany(komentare, od) {
   return komentare
     .filter((k) => k.autor === BOT && cas(k.cas) >= od)
@@ -77,6 +111,7 @@ export function souhlasIssue(issue, konfig) {
   const pridani = posledniUdalost(issue.udalosti, 'labeled', 'schvaleno');
   const dnes = otisk(rozsah(issue.telo));
   if (!pridani) return { platny: false, duvod: 'nelze dohledat přidání štítku schvaleno' };
+  if (!odVlastnika(pridani, konfig)) return { platny: false, duvod: `schvaleno přidal účet ${pridani.aktor}, ne vlastník` };
   const T = cas(pridani.cas);
   for (const k of zaznamyBrany(issue.komentare, T)) {
     if (CTENI.souhlasNeplatny.test(k.telo)) {
@@ -112,10 +147,11 @@ export function zaznamSouhlasu(issue, teloUdalosti) {
 }
 
 /** Souhlas na PR platí pro hlavu, kterou měl PR při přidání `schvaleno`. */
-export function souhlasPr(pr) {
+export function souhlasPr(pr, konfig) {
   if (!pr.stitky.includes('schvaleno')) return { platny: false, duvod: 'PR nemá štítek schvaleno' };
   const pridani = posledniUdalost(pr.udalosti, 'labeled', 'schvaleno');
   if (!pridani) return { platny: false, duvod: 'nelze dohledat přidání štítku schvaleno' };
+  if (!odVlastnika(pridani, konfig)) return { platny: false, duvod: `schvaleno přidal účet ${pridani.aktor}, ne vlastník` };
   const zaznam = zaznamyBrany(pr.komentare, cas(pridani.cas)).find((k) => CTENI.souhlasPr.test(k.telo));
   if (!zaznam) return { platny: false, duvod: 'souhlas ještě není zaznamenaný (zaznamená ho workflow brány)' };
   if (zaznam.telo.match(CTENI.souhlasPr)[1] !== pr.hlava.sha) {
@@ -183,12 +219,24 @@ export function rozbor(soubory, konfig) {
 export function protokol(pr) {
   const kratke = pr.hlava.sha.slice(0, 7);
   // Tělo PR nemá čas úpravy; updated_at je pozdější nebo stejný, tedy opatrnější.
-  const texty = [{ telo: pr.telo || '', cas: pr.upraveno || pr.vytvoreno }, ...pr.komentare]
+  // Rozhoduje naposledy upravený protokol; jeho text vstupuje do stavu lhůty (stavLhuty).
+  const texty = [{ telo: pr.telo || '', cas: pr.upraveno || pr.vytvoreno }, ...pr.komentare.map((k) => ({ ...k, cas: k.upraveno || k.cas }))]
     .filter((t) => /Protokol z preview/i.test(t.telo) && t.telo.includes(kratke))
     .sort((a, b) => cas(b.cas) - cas(a.cas));
   if (!texty.length) return { ok: false, duvod: `chybí protokol z preview pro commit ${kratke}` };
   if (/(^|[^\p{L}])nesplněno/iu.test(texty[0].telo)) return { ok: false, duvod: 'protokol z preview obsahuje nesplněné kritérium' };
-  return { ok: true, cas: texty[0].cas };
+  return { ok: true, telo: texty[0].telo };
+}
+
+/**
+ * Otisk všeho, k čemu se vztahuje lhůta na veto: PR, hlava, rozsahy propojených zadání a protokol.
+ * Brána ho ukládá do kontroly (external_id) spolu s časem, odkdy lhůta pro tento stav běží; každá
+ * změna (nový push, i dříve vytvořeného commitu; úprava rozsahu; nový nebo upravený protokol) lhůtu
+ * založí znovu časem vyhodnocení. Čas commitu ani kontrol jiných PR se nepoužívá.
+ */
+export function stavLhuty(pr, issues, protokolTelo = '') {
+  const rozsahy = issues.map((i) => [i.cislo, otisk(rozsah(i.telo))]).sort((a, b) => a[0] - b[0]);
+  return otisk(JSON.stringify({ pr: pr.cislo, sha: pr.hlava.sha, rozsahy, protokol: protokolTelo }));
 }
 
 /** Zamrznutí z proměnných ZAMRZNUTI_OD a ZAMRZNUTI_DO (RRRR-MM-DD, obě včetně). */
@@ -198,18 +246,19 @@ export function zamrznuto(zamrznuti, ted) {
 }
 
 /**
- * Verdikt brány. Vrací { uspech, rezim, duvody, cekaDo?, zaznamenat[] }.
+ * Verdikt brány. Vrací { uspech, rezim, duvody, cekaDo?, stav, lhutaOd, zaznamenat[] }.
+ * `predchozi` je { stav, od } z poslední kontroly brány pro tento PR a commit (externiId).
  * `duvody` jsou věty pro souhrn kontroly; při úspěchu popisují, proč PR prošel.
  */
-export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted }) {
+export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchozi = null }) {
   const r = konfig.rezimy;
   const blokuje = [];
   const info = [];
   const zaznamenat = [];
   const a = rozbor(soubory, konfig);
 
-  if (pr.stitky.includes('stop')) blokuje.push('PR má štítek stop');
-  for (const i of issues) if (i.stitky.includes('stop')) blokuje.push(`issue #${i.cislo} má štítek stop`);
+  if (stopPlati(pr, konfig)) blokuje.push('PR má štítek stop (nebo ho odebral jiný účet než ten, kdo ho přidal, či vlastník)');
+  for (const i of issues) if (stopPlati(i, konfig)) blokuje.push(`issue #${i.cislo} má štítek stop`);
   if (pr.draft) blokuje.push('PR je rozpracovaný (draft)');
 
   const vRozsahuRutiny = !a.h2.length && !a.k.length && a.radky <= r.rutina_max_radku && a.oblasti.length <= 1;
@@ -219,14 +268,16 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted }) {
     else info.push('incidentní postup při zamrznutí');
   }
 
-  let protokolCas = null;
+  let protokolTelo = '';
   if (!a.jenBezPreview) {
     const p = protokol(pr);
     if (!p.ok) blokuje.push(p.duvod);
-    else protokolCas = cas(p.cas);
+    else protokolTelo = p.telo;
   }
+  const stav = stavLhuty(pr, issues, protokolTelo);
+  const lhutaOd = predchozi?.stav === stav ? predchozi.od : ted;
 
-  const sPr = souhlasPr(pr);
+  const sPr = souhlasPr(pr, konfig);
   const souhlasy = new Map();
   for (const i of issues) {
     const s = souhlasIssue(i, konfig);
@@ -283,12 +334,8 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted }) {
       if (poradi[ri] > poradi[rezim]) rezim = ri;
     }
     if (rezim === 'L') {
-      // Lhůta běží od chvíle, kdy byla aktuální hlava k ověření: od prvního serverového záznamu
-      // o ní (první kontrola na commitu) a u změn webu od protokolu z preview. Datum commitu se
-      // nepoužívá, protože neříká, kdy byl commit do PR pushnut.
-      const videna = pr.hlava.videna ? cas(pr.hlava.videna) : ted;
-      const zmena = Math.max(videna, protokolCas ?? 0);
-      cekaDo = zmena + r.lhuta_l_hodin * HODINA;
+      // Lhůta běží od prvního vyhodnocení brány, které vidělo dnešní stav (stavLhuty).
+      cekaDo = lhutaOd + r.lhuta_l_hodin * HODINA;
       if (ted < cekaDo) blokuje.push(`drobné zadání: lhůta na veto běží do ${new Date(cekaDo).toISOString().slice(0, 16).replace('T', ' ')} UTC`);
       else info.push(`drobné zadání: lhůta ${r.lhuta_l_hodin} h uplynula bez stop`);
     } else if (rezim === 'E') info.push('etapa projektu v mandátu');
@@ -301,6 +348,8 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted }) {
     rezim,
     duvody: blokuje.length ? blokuje : info,
     cekaDo: blokuje.length && rezim === 'L' ? cekaDo : undefined,
+    stav,
+    lhutaOd,
     rozbor: a,
     zaznamenat,
   };
