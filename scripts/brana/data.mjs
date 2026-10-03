@@ -107,6 +107,7 @@ export async function nactiIssue(api, cislo) {
   if (i.pull_request) return null;
   return {
     cislo,
+    autor: i.user?.login,
     stav: i.state,
     stitky: i.labels.map((l) => l.name),
     telo: i.body || '',
@@ -143,6 +144,7 @@ export async function nactiPr(api, cislo) {
     predchozi: await predchoziStav(api, cislo, p.head.sha),
     pr: {
       cislo,
+      autor: p.user?.login,
       stav: p.state,
       zakladna: p.base.ref,
       draft: p.draft,
