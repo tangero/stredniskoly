@@ -5,6 +5,21 @@ description: Ověření PR v tangero/stredniskoly na náhledu ve Vercelu (Playwr
 
 # Ověření na preview a protokol
 
+## 0. Kdo ověřuje
+
+Kdo změnu naprogramoval, ten ji neověřuje (#333). Po nasazení náhledu spustí workflow „Ověření na
+náhledu“ (`.github/workflows/overeni-nahledu.yml`) samostatného ověřovatele, který zná jen kritéria K a P
+uzavíraného zadání a adresu náhledu, diff ani popis PR nevidí. Protokol zapíše `github-actions[bot]`
+s řádkem `Ověřovatel: samostatný agent bez diffu`. Platí pro PR od vlastníka nebo asistenta zadání, které
+mění web a mají `Closes #N` na zadání s kritérii K a P.
+
+Implementující relace proto po pushi **počká na protokol ověřovatele** (asi 15 minut po nasazení náhledu)
+a vlastní protokol napíše jen jako **zálohu**: když workflow napíše, že ověření nedokončil, když běh
+selhal, nebo když zadání nemá kritéria K a P. Záložní protokol nese řádek
+`Ověřovatel: implementace (záloha)` a pod ním důvod, proč ho nepsal samostatný ověřovatel.
+
+Ověřovatel potřebuje v secrets repozitáře `VERCEL_AUTOMATION_BYPASS_SECRET`, pokud jsou náhledy chráněné.
+
 ## 1. Adresa náhledu
 
 Workflow `Testy` po pushi nasadí náhled a zapíše jeho adresu ke commitu jako stav „Náhled (Vercel)“:
@@ -68,6 +83,8 @@ bez označení a etapy („Souvisí s #N“) se kontrolují jako dřív.
 
 Commit: abc1234
 Náhled: https://….vercel.app
+Ověřovatel: implementace (záloha)
+Důvod zálohy: workflow Ověření na náhledu nedokončil ověření (odkaz na jeho komentář)
 
 | kritérium | adresa | 390 px | 1280 px |
 |---|---|---|---|

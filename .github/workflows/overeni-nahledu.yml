@@ -1,0 +1,203 @@
+# Ověření na náhledu samostatným agentem (#333, docs/navrh-rizeni-vyvoje-2027.md, oddíl 11): kdo změnu
+# naprogramoval, ten ji neověřuje. Po nasazení náhledu PR (workflow Testy, krok „Adresa náhledu ke
+# commitu“) projde Claude kritéria K a P z uzavíraného zadání v Chromiu a výsledek zapíše jako protokol
+# z preview od github-actions[bot].
+#
+# Pojistky:
+# - Spouští se po dokončení workflow Testy (workflow_run), tedy vždy z main. Kód větve se nikde
+#   nespouští ani nečte: ověřovatel dostane jen kritéria zadání a adresu náhledu, diff, popis PR ani
+#   komentáře nevidí.
+# - Jen PR z tohoto repozitáře od vlastníka nebo asistenta zadání, které mění web a uzavírají zadání
+#   s kritérii od týchž autorů (scripts/brana/overeni-nahledu.mjs z main).
+# - Job „Ověření“ má jen čtecí token a secrets CLAUDE_CODE_OAUTH_TOKEN a VERCEL_AUTOMATION_BYPASS_SECRET
+#   (bypass ochrany náhledů; bez něj ověří jen nechráněný náhled). Produkční secrets ani VERCEL_TOKEN ne.
+# - „Nevidí diff“ je dané zadáním a nástroji, ne technicky: repozitář je veřejný, takže kdo má síť,
+#   větev si přečíst může. Ověřovatel má jen Read/Write/Glob/Grep a node, pokyn nečíst GitHub a jen
+#   kritéria a adresu; to je tatáž míra jako u review asistenta zadání.
+# - Adresa náhledu: jen stav „Náhled (Vercel)“ od github-actions[bot] s adresou *.vercel.app, bypass
+#   hlavička jen na tohoto hostitele.
+# - Zápis dělá samostatný job bez kódu ověřovatele; protokol zapíše jen k commitu, který je pořád
+#   hlavou PR, a jen když pokrývá všechna kritéria. Jinak napíše, že ověření nedokončil.
+name: Ověření na náhledu
+
+on:
+  workflow_run:
+    workflows: [Testy]
+    types: [completed]
+
+permissions: {}
+
+concurrency:
+  group: overeni-nahledu-${{ github.event.workflow_run.head_branch }}
+  cancel-in-progress: true
+
+jobs:
+  priprava:
+    name: Příprava
+    if: >-
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      issues: read
+      pull-requests: read
+      statuses: read
+      checks: read
+    outputs:
+      akce: ${{ steps.priprav.outputs.akce }}
+      pr: ${{ steps.priprav.outputs.pr }}
+      sha: ${{ steps.priprav.outputs.sha }}
+      nahled: ${{ steps.priprav.outputs.nahled }}
+      kriteria: ${{ steps.priprav.outputs.kriteria }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Závislosti
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Připravit
+        id: priprav
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/brana/overeni-nahledu.mjs priprav
+
+  overeni:
+    name: Ověření
+    needs: priprava
+    if: needs.priprava.outputs.akce == 'overit'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      # Jen main kvůli pravidlům projektu (slovník pojmů); větev PR se nestahuje.
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Playwright a Chromium
+        run: |
+          mkdir -p "$RUNNER_TEMP/pw"
+          cd "$RUNNER_TEMP/pw"
+          npm init -y >/dev/null
+          npm install --no-audit --no-fund playwright@1.56.1
+          npx playwright install --with-deps chromium
+
+      - name: Kritéria
+        env:
+          KRITERIA: ${{ needs.priprava.outputs.kriteria }}
+        run: echo "$KRITERIA" | base64 -d > "$RUNNER_TEMP/kriteria.md"
+
+      - name: Claude
+        id: claude
+        uses: anthropics/claude-code-action@v1
+        env:
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ github.token }}
+          claude_args: >-
+            --max-turns 60
+            --allowedTools "Read,Write,Glob,Grep,Bash(node:*)"
+          prompt: |
+            Jsi samostatný ověřovatel ve workflow „Ověření na náhledu“ repozitáře ${{ github.repository }}.
+            Změnu jsi neviděl a nevidíš: máš jen kritéria zadání a adresu náhledu webu. Mluv česky.
+
+            Náhled: ${{ needs.priprava.outputs.nahled }}
+            Kritéria jsou v souboru ${{ runner.temp }}/kriteria.md (řádky K1, K2… a protikritéria P1, P2…).
+
+            Úkol: každé kritérium ověř na náhledu v Chromiu na šířce 390 px (výška 844) a 1280 px (výška 800).
+            - Playwright: `import { chromium } from '${{ runner.temp }}/pw/node_modules/playwright/index.mjs'`.
+              Skripty si napiš do ${{ runner.temp }} a spusť přes `node`. Když je v prostředí proměnná
+              VERCEL_AUTOMATION_BYPASS_SECRET, přidávej ji v hlavičce `x-vercel-protection-bypass` jen k požadavkům
+              na hostitele náhledu (přes `context.route` a kontrolu hostitele), nikdy k jiným hostitelům a nikdy
+              přes `extraHTTPHeaders`. Její hodnotu nikdy nevypisuj.
+            - Procházej jen stránky na hostiteli náhledu. Repozitář na GitHubu ani jiné weby nenačítej: nemáš
+              vidět, co se ve větvi změnilo.
+            - Kritérium K je splněné, jen když to na stránce opravdu vidíš. Hledej, co by ho vyvrátilo.
+            - Protikritérium P se aktivně snaž porušit: jiné adresy téže oblasti, okrajové hodnoty, mobil.
+              Do sloupce „jak ověřeno“ napiš, čím ses o to pokusil.
+            - Kritérium, které na náhledu ověřit nejde (e-mail, data mimo web, test v repozitáři), označ
+              „nejde ověřit“ a proč.
+            - Zkontroluj i konzoli (chyby) a vodorovné posouvání na 390 px.
+            - Nic jiného nedělej: nic neměň v repozitáři, nečti jiné soubory než kriteria.md, docs/slovnik-pojmu.md
+              a své skripty, nevolej GitHub.
+
+            Na konci odpověz jen markdownem bez nadpisu: tabulka
+            `| kritérium | adresa | 390 px | 1280 px | jak ověřeno |`, jeden řádek na každé kritérium a začíná jeho
+            označením (`| K1: … |`), hodnoty „splněno“, „nesplněno“ nebo „nejde ověřit“. Pod tabulkou jeden
+            řádek „Mimo kritéria: …“ (konzole, posouvání). Neuváděj řádky Commit, Náhled ani Ověřovatel,
+            doplní je workflow.
+
+      - name: Výstup ověřovatele
+        if: always()
+        env:
+          EXEC: ${{ steps.claude.outputs.execution_file }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/vysledek"
+          if [ "${{ steps.claude.outcome }}" = "success" ] && [ -n "$EXEC" ] && [ -f "$EXEC" ]; then
+            jq -r '[.[] | select(.type == "result")][-1].result // empty' "$EXEC" > "$RUNNER_TEMP/vysledek/protokol.md" 2>/dev/null || true
+          fi
+          touch "$RUNNER_TEMP/vysledek/protokol.md"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: overeni-nahledu
+          path: ${{ runner.temp }}/vysledek
+          retention-days: 7
+
+  zapis:
+    name: Zápis
+    needs: [priprava, overeni]
+    if: always() && needs.priprava.outputs.akce == 'overit'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Závislosti
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: overeni-nahledu
+          path: ${{ runner.temp }}/vysledek
+
+      - name: Zapsat protokol
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          KRITERIA: ${{ needs.priprava.outputs.kriteria }}
+          PR: ${{ needs.priprava.outputs.pr }}
+          SHA: ${{ needs.priprava.outputs.sha }}
+          NAHLED: ${{ needs.priprava.outputs.nahled }}
+        run: node scripts/brana/overeni-nahledu.mjs zapis "$PR" "$SHA" "$NAHLED" "$RUNNER_TEMP/vysledek/protokol.md"
