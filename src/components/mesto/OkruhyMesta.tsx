@@ -19,11 +19,16 @@ function Sipka() {
   );
 }
 
-function Radek({ r }: { r: RadekOkruhuMesta }) {
+/** `kompaktni`: řádek na dva řádky i na počítači, pro úzký sloupec stránky oboru. */
+function Radek({ r, tento = false, kompaktni = false }: { r: RadekOkruhuMesta; tento?: boolean; kompaktni?: boolean }) {
   const druhy = [r.obor, r.doplnek, r.obec].filter(Boolean).join(' · ');
+  const md = (t: string) => (kompaktni ? '' : t);
   return (
-    <tr className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 border-t border-[#eef2f6] px-4 py-3 md:table-row md:px-0 md:py-0 md:hover:bg-[#f5f8fc]">
-      <td className="col-span-2 md:px-5 md:py-3 md:align-top">
+    <tr
+      aria-current={tento ? 'true' : undefined}
+      className={`grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 border-t border-[#eef2f6] px-4 py-3 first:border-t-0 ${md('md:table-row md:px-0 md:py-0')} ${tento ? 'bg-[#eef5fd]' : md('md:hover:bg-[#f5f8fc]')}`}
+    >
+      <td className={`col-span-2 ${md('md:px-5 md:py-3 md:align-top')}`}>
         {r.href ? (
           <Link href={r.href} className="text-[15px] font-semibold leading-snug text-slate-900 hover:text-[#0062c4] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0074e4]">
             {r.skola}
@@ -31,17 +36,18 @@ function Radek({ r }: { r: RadekOkruhuMesta }) {
         ) : (
           <span className="text-[15px] font-semibold leading-snug text-slate-800">{r.skola}</span>
         )}
+        {tento && <span className="ml-2 rounded-full bg-[#0074e4] px-2 py-0.5 align-middle text-[12px] font-semibold text-white">tento obor</span>}
         <span className="mt-0.5 block text-[13px] leading-snug text-slate-600">{druhy}</span>
       </td>
-      <td className="mt-1.5 md:mt-0 md:px-3 md:py-3 md:align-top">
+      <td className={`mt-1.5 ${md('md:mt-0 md:px-3 md:py-3 md:align-top')}`}>
         {r.zarazeni ? <OdznakObtiznosti zarazeni={r.zarazeni} /> : (
           <span className="text-[13px] text-slate-600">
             {r.bezJednotneZkousky ? 'bez jednotné zkoušky' : r.lisiSe ? 'liší se podle zaměření' : 'bez údaje'}
           </span>
         )}
       </td>
-      <td className="mt-1.5 text-right text-[14px] tabular-nums text-slate-700 md:mt-0 md:px-5 md:py-3 md:align-top">
-        {cislo(r.uchazecu)}<span className="md:hidden"> uchazečů</span>
+      <td className={`mt-1.5 text-right text-[14px] tabular-nums text-slate-700 ${md('md:mt-0 md:px-5 md:py-3 md:align-top')}`}>
+        {cislo(r.uchazecu)}<span className={md('md:hidden')}> uchazečů</span>
       </td>
     </tr>
   );
@@ -124,5 +130,56 @@ export function OkruhyMesta(
         </div>
       )}
     </section>
+  );
+}
+
+/**
+ * Obsah bloku na stránce oboru: okruh, do kterého obor patří, se stejným jménem a řádky jako na stránce
+ * města; řádek oboru je zvýrazněný. Pojem okruh se vysvětlí při prvním výskytu (slovník pojmů).
+ */
+const POCET_NA_STRANCE_OBORU = 10;
+
+export function OkruhOboruObsah({ okruh, klic, rokObtiznosti, obec, hrefMesta }: {
+  okruh: OkruhMestaKZobrazeni; klic: string; rokObtiznosti: number | null; obec: string; hrefMesta: string | null;
+}) {
+  const rokText = rokObtiznosti ? ` ${rokObtiznosti}` : '';
+  // Deset největších oborů okruhu; tento obor vždy, i když je menší (seznam zůstává řazený podle uchazečů).
+  const ukazane = okruh.radky.filter((r, i) => i < POCET_NA_STRANCE_OBORU || r.klic === klic);
+  const zbyva = okruh.radky.length - ukazane.length;
+  return (
+    <>
+      <p className="text-[15px] leading-relaxed text-slate-700">
+        Obor patří do okruhu <b className="font-semibold text-[#16325c]">{okruh.nazev}</b>. Okruh jsou obory, mezi kterými se
+        uchazeči rozhodovali: měli je často zároveň na přihlášce. Obory jsou seřazené podle počtu uchazečů, ne podle
+        obtížnosti přijetí.
+      </p>
+      <p className="text-[13px] text-slate-600">Obtížnost přijetí v 1. kole{rokText}, počet uchazečů, kteří měli obor na přihlášce.</p>
+      <div className="overflow-hidden rounded-xl border border-[#dde4ee]">
+        <table className="w-full border-collapse text-left">
+          <caption className="sr-only">Obory okruhu {okruh.nazev}: škola a obor, obtížnost přijetí v 1. kole{rokText} a počet uchazečů</caption>
+          <tbody>
+            {ukazane.map(r => <Radek key={r.klic} r={r} tento={r.klic === klic} kompaktni />)}
+          </tbody>
+        </table>
+      </div>
+      {zbyva > 0 && (
+        <p className="text-[14px] text-slate-600">
+          V okruhu je ještě {zbyva} {zbyva === 1 ? 'další obor' : zbyva <= 4 ? 'další obory' : 'dalších oborů'} s menším počtem uchazečů.
+        </p>
+      )}
+      {okruh.presun && (
+        <p className="text-[14px] leading-relaxed text-slate-600">
+          Zájem se mezi obory tohoto okruhu mezi ročníky {okruh.presun.od} a {okruh.presun.do} přesouvá. Obor, kam se v jednom
+          roce dostal skoro každý, může být další rok těžký.
+        </p>
+      )}
+      {hrefMesta && (
+        <p className="text-[15px]">
+          <Link href={hrefMesta} className="font-semibold text-[#0074e4] hover:underline">
+            {zbyva > 0 ? `Celý okruh (${okruh.radky.length} oborů)` : 'Okruhy oborů'} na stránce města {obec}
+          </Link>
+        </p>
+      )}
+    </>
   );
 }

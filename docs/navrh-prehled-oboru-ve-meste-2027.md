@@ -288,10 +288,15 @@ Etapa 3 okruhy ze stránky města odebrala s odůvodněním, že zůstávají na
 
 **Zbývá:** v Praze 7 a v Ostravě 2 okruhy se stejným jménem (gymnázia a umění v různých částech města); odliší je jen druhý řádek s největšími školami.
 
+## 12. Okruh na stránce oboru (4. 10. 2026)
+
+Stránka oboru měla v bloku „Které další obory v okolí uchazeči také volí“ jen podíl uchazečů podle obcí. Nově nejdřív ukáže okruh, do kterého obor patří: jméno okruhu stejné jako na stránce města, deset největších oborů okruhu (tento obor vždy, zvýrazněný „tento obor“), obtížnost přijetí a počet uchazečů, větu o přesunu zájmu a odkaz na celý okruh na stránce města. Podíl podle obcí zůstává pod tím jako „Ve kterých obcích se uchazeči hlásí také“. Řádky jsou kompaktní (škola, obor, odznak, uchazeči) kvůli úzkému sloupci stránky oboru. Podklad okruhů (katalog, názvy, obtížnost ze souhrnů) je ve sdíleném `src/lib/okruhy-podklad.ts`, takže obě stránky skládají okruh stejně; příslušnost oboru bere `getOkruhOboru` z `obory.{klic}.okruh`. Řádky na stránce oboru vedou na přehled školy (odkaz přímo na obor by vyžadoval katalog měst všech okolních obcí).
+
 ## Historie
 
 | Verze | Datum | Změna |
 |---|---|---|
+| 0.5 | 4. 10. 2026 | okruh oboru na stránce oboru (oddíl 12) |
 | 0.4 | 4. 10. 2026 | okruhy zpět na stránce města se jménem ze směrů studia; hodnocení podnětu se sítí oborů (oddíl 11) |
 | 0.3 | 4. 10. 2026 | etapa 3b: tabulka po školách místo karet, zřizovatel a školné (oddíl 10) |
 | 0.2 | 4. 10. 2026 | přestavba podle volby vlastníka: karty škol zúžené směrem studia (oddíl 9) |
