@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.13g · 4. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.13h · 4. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Stav zavedení: fáze 0 a 1 hotové (4. 10. 2026): brána sloučení je povinná kontrola v rulesetu bez obejití,
 AI slučuje skriptem a workflow Sloučení automaticky (RA40); fáze 2 čeká (postup v
 [postup-zavedeni-faze-0.md](postup-zavedeni-faze-0.md)).
@@ -27,7 +27,7 @@ a výdaje, posílá týdenní přehled a hlásí jen výjimky.
 **Co tím odpadne:** schvalování drobných zadání, kontrola na preview a merge u zhruba 20 PR týdně,
 odpovídání na dotazy v issues, obnova většiny tokenů.
 
-**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA41 v oddílu 21). Část B se rozhodne
+**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA42 v oddílu 21). Část B se rozhodne
 po čtyřech týdnech provozu podle měřítek.
 
 **Zavedení po fázích podle přínosu** (oddíl 20): fáze 1 odstraní merge a kontrolu preview, fáze 2 přidá
@@ -395,7 +395,10 @@ telefonu i počítače a do PR zapíše protokol (kritérium, adresa, splněno /
 Komentář začíná nadpisem „Protokol z preview“ a obsahuje řádek `Commit: <prvních 7 znaků hlavy>`;
 brána uzná jen protokol k aktuální hlavě a bez slova „nesplněno“. Mají-li kritéria uzavíraného zadání
 označení K1, K2… a protikritéria P1, P2…, protokol musí mít řádek pro každé z nich (#300). Změny jen v dokumentaci, testech
-a nastavení (`bez_preview` v `rezimy.yml`) protokol nepotřebují.
+a nastavení (`bez_preview` v `rezimy.yml`) protokol nepotřebují. Chybějící protokol nahradí platný souhlas
+vlastníka na PR (`schvaleno` na PR, vázaný na aktuální commit): vlastník tím potvrzuje, že změnu zkontroloval
+sám, nebo že ji ověřit nejde, například stránky za přihlášením (RA42). Protokol se slovem „nesplněno“ blokuje
+i se souhlasem.
 U vizuálních změn přidá snímky před a po jako artefakt běhu nebo v komentáři PR. Protokol je podmínkou brány.
 Předpoklady (fáze 1): secret `VERCEL_AUTOMATION_BYPASS_SECRET`, Playwright a přístup na `*.vercel.app`
 v prostředí denní úlohy.
@@ -661,6 +664,7 @@ ověří ho měřítka.
 | RA39 | Veřejné hlášení připojené jako sub-issue ke schválenému projektu brána pustí v režimu E bez dalšího `schvaleno`; připojuje vlastník nebo AI na jeho pokyn (oddíl 10) | **ano** (rozhodnutí vlastníka) |
 | RA40 | Automatické slučování: workflow Sloučení po každém běhu brány sloučí PR, které brána pustila, skriptem `sloucit.mjs` s tokenem vlastníka; vlastník dostává po sloučení souhrn od asistenta zadání | **ano** (rozhodnutí vlastníka) |
 | RA41 | Cizí servery a stahování zdrojů bez schvalování: AI před prvním dotazem zapíše do issue, odkud a jak stahuje, a pokračuje; politika přístupu (bez přihlášení, `robots.txt`, limity, bez osobních údajů) platí dál; placené zdroje a zdroje se závazkem dál se `schvaleno` | **ano** (rozhodnutí vlastníka) |
+| RA42 | Souhlas vlastníka na PR (`schvaleno` na PR pro aktuální commit) nahradí chybějící protokol z preview, například u stránek za přihlášením nebo když vlastník změnu zkontroloval sám; protokol s „nesplněno“ blokuje dál | **ano** (rozhodnutí vlastníka) |
 
 # Část B: rozšíření podle měřítek
 
@@ -690,6 +694,8 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.13h** (4. 10. 2026, rozhodnutí vlastníka, zadání #332): souhlas vlastníka na PR nahradí chybějící
+  protokol z preview i chybějící řádky kritérií K a P (RA42); protokol s „nesplněno“ blokuje dál.
 - **0.13g** (4. 10. 2026, zadání #301): smyčka review a oprav (oddíl 9d): oprava nálezů P1 a P2 workflow
   s Claude Code na komentář `@claude`, strop 5 kol a štítek `potrebuje-cloveka`, brána vyžaduje review
   asistenta zadání „Bez P1 a P2“ k aktuální hlavě, lhůta L běží od review.

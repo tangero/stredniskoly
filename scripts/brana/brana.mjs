@@ -274,7 +274,7 @@ export function protokol(pr, konfig, issues = []) {
     .filter((t) => smi(t.autor) && /Protokol z preview/i.test(t.telo) && t.telo.includes(kratke))
     .sort((a, b) => cas(b.cas) - cas(a.cas));
   if (!texty.length) return { ok: false, duvod: `chybí protokol z preview pro commit ${kratke}` };
-  if (/(^|[^\p{L}])nesplněno/iu.test(texty[0].telo)) return { ok: false, duvod: 'protokol z preview obsahuje nesplněné kritérium' };
+  if (/(^|[^\p{L}])nesplněno/iu.test(texty[0].telo)) return { ok: false, nesplneno: true, duvod: 'protokol z preview obsahuje nesplněné kritérium' };
   // Pokrytí kritérií K a P z uzavíraných zadání; zadání bez označení se posuzují jako dřív.
   const uzavirana = new Set(uzaviranaIssues(pr.telo));
   for (const i of issues.filter((i) => uzavirana.has(i.cislo))) {
@@ -366,13 +366,15 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
     else info.push('incidentní postup při zamrznutí');
   }
 
+  const sPr = souhlasPr(pr, konfig);
   let protokolTelo = '';
   if (!a.jenBezPreview) {
     const p = protokol(pr, konfig, issues);
-    if (!p.ok) blokuje.push(p.duvod);
-    else protokolTelo = p.telo;
+    if (p.ok) protokolTelo = p.telo;
+    // Souhlas vlastníka na PR (vázaný na hlavu) nahradí chybějící protokol (RA42); nesplněné kritérium ne.
+    else if (sPr.platny && !p.nesplneno) info.push(`${p.duvod}: nahrazuje souhlas vlastníka na PR`);
+    else blokuje.push(p.duvod);
   }
-  const sPr = souhlasPr(pr, konfig);
 
   // Review asistenta zadání (#301): ne u změn bez dopadu na web a ne u PR se souhlasem vlastníka na PR.
   let reviewTelo = '';
