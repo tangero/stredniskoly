@@ -83,17 +83,13 @@ Nastavení GitHubu (formuláře, tabule projektu, ochrana `main`) popisuje `docs
    (`npm run veletrhy:export-kontrola`) nic nezapisuje.
 6. **Drobné zásahy.** Měň jen to, co zadání vyžaduje. Žádné refaktory, přejmenování, přeformátování
    ani aktualizace závislostí mimo zadání. Když narazíš na jiný problém, zapiš ho do PR jako poznámku, neopravuj ho.
-7. **Cizí servery jen po ohlášení a schválení způsobu.** Dotazy na servery a API třetích stran (školní weby,
-   ČŠI, CERMAT, DiPSy, Resend, GitHub API mimo `gh` pro tento repozitář…) jsou dovolené, ale vždy až po
-   ohlášení a schválení konkrétního způsobu:
-   1. **Ohlas způsob** komentářem v issue, ke kterému práce patří: který server, které endpointy nebo adresy,
-      kolik dotazů a jakou rychlostí (prodleva mezi dotazy, souběh), jaká data se stáhnou, kam se uloží
-      a zda se commitují, proč je to potřeba a proč nestačí místní data.
-   2. **Počkej na výslovné schválení** vlastníka projektu: komentář v issue, který ohlášený způsob schvaluje.
-      Stačí i štítek `schvaleno`, pokud byl způsob popsaný už v těle issue před jeho přidáním. Mlčení
-      ani obecné schválení zadání bez popsaného způsobu souhlas nejsou. Do schválení nedělej ani zkušební dotaz.
-   3. **Drž se schváleného způsobu.** Jiný server, další endpoint, víc dotazů nebo jiná data znamenají
-      nové ohlášení.
+7. **Cizí servery: zapiš, odkud, a pokračuj.** Dotazy na servery a API třetích stran (školní weby, ČŠI,
+   CERMAT, DiPSy, Resend, GitHub API mimo `gh` pro tento repozitář…) schválení nepotřebují (rozhodnutí vlastníka
+   4. 10. 2026, RA41). Před prvním dotazem zapiš komentářem v issue, ke kterému práce patří (bez issue do PR):
+   který server a jaké adresy, kolik dotazů a jakou rychlostí, co se stáhne, kam se uloží a zda se commituje.
+   Pak hned pokračuj, nečekej na odpověď. Nový zdroj dat, který web nebo skripty začnou používat, zapiš i do
+   `docs/zdroje-dat.md` (pravidlo z `.claude/claude.md`). Placená služba nebo zdroj se závazkem (podmínky,
+   smlouva, registrace) dál potřebuje `schvaleno`.
 
    Vždy platí: neobcházej přihlášení ani jiné ochrany přístupu, nestahuj nic za loginem a nepoužívej cizí
    přístupové údaje; respektuj `robots.txt`, podmínky užití a limity serveru (při odpovědi 429 nebo opakovaných
