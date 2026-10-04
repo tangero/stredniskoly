@@ -1,15 +1,18 @@
 // Týdenní přehled pro vlastníka (docs/navrh-rizeni-vyvoje-2027.md, oddíly 2 a 16): co se sloučilo,
 // všechna rozhodnutí štítky `schvaleno`, `zamitnuto` a `stop` za týden i s účtem, který je udělal,
-// co čeká na vlastníka (i PR, kde smyčka oprav z review skončila štítkem `potrebuje-cloveka`), červené CI na main a expirace tokenů v secrets. Slouží ke zpětné kontrole
+// co čeká na vlastníka (i PR, kde smyčka oprav z review skončila štítkem `potrebuje-cloveka`), červené CI na main, expirace tokenů v secrets
+// a měřítka vývoje z oddílu 20 (meritka.mjs). Slouží ke zpětné kontrole
 // rozhodnutí podle RA35: co si vlastník nevybaví, vrátí.
 //
-//   node scripts/prehled/tydenni.mjs --nanecisto   jen vypíše (mimo Actions přes gh)
+//   node scripts/prehled/tydenni.mjs --nanecisto   jen vypíše (mimo Actions přes gh) i s počtem volání API
 //
 // Ve workflow tydenni-prehled.yml zapíše dlouhou verzi do souhrnu běhu a krátkou pošle do Telegramu.
 
 import fs from 'node:fs';
 import { pathToFileURL } from 'node:url';
+import yaml from 'js-yaml';
 import { REPO, NAZEV_KONTROLY, vytvorApi } from '../brana/data.mjs';
+import { nactiMeritka, spocitejMeritka, kratkaMeritka, oddilMeritka } from './meritka.mjs';
 
 const DEN = 24 * 60 * 60 * 1000;
 export const STITKY_ROZHODNUTI = ['schvaleno', 'zamitnuto', 'stop'];
@@ -61,7 +64,7 @@ export async function expiraceTokenu(token, fetchFn = globalThis.fetch) {
   return odp.headers.get('github-authentication-token-expiration');
 }
 
-export async function nactiData(api, ted, tokeny = {}) {
+export async function nactiData(api, ted, tokeny = {}, { vlastnik = 'tangero', asistent = null } = {}) {
   const od = ted - 7 * DEN;
 
   const zavrene = await strankuj(api, `repos/${REPO}/pulls?state=closed&sort=updated&direction=desc`,
@@ -106,7 +109,16 @@ export async function nactiData(api, ted, tokeny = {}) {
     expirace[nazev] = token ? await expiraceTokenu(token) : 'chybi';
   }
 
-  return { od, ted, slouceno, rozhodnuti, navrhy, zastavene, cekajiNaSouhlas, potrebujiCloveka, cervenaMain, expirace };
+  // Chyba měřítek nesmí zastavit zbytek přehledu; vypíše se místo oddílu.
+  let meritka = null;
+  try {
+    const vstup = await nactiMeritka(api, ted, { navrhy, udalostiTydne: udalosti, vlastnik });
+    meritka = spocitejMeritka(vstup, { ted, vlastnik, asistent });
+  } catch (e) {
+    meritka = { chyba: String(e.message || e).slice(0, 200) };
+  }
+
+  return { od, ted, slouceno, rozhodnuti, navrhy, zastavene, cekajiNaSouhlas, potrebujiCloveka, cervenaMain, expirace, meritka };
 }
 
 /** Text přehledu: krátký do Telegramu, dlouhý (markdown) do souhrnu běhu. */
@@ -139,6 +151,7 @@ export function sestavPrehled(d, { vlastnik = 'tangero' } = {}) {
     `Rozhodnutí štítky: ${d.rozhodnuti.length} (zkontroluj v přehledu, co si nevybavíš)`,
     d.navrhy.length ? `Čeká na tebe: ${d.navrhy.length} návrhů, ${d.cekajiNaSouhlas.length} PR bez souhlasu` : `Čeká na tebe: ${d.cekajiNaSouhlas.length} PR bez souhlasu`,
     potrebujiCloveka.length ? `PR, kde smyčka oprav z review skončila: ${potrebujiCloveka.length}` : '',
+    d.meritka && !d.meritka.chyba ? kratkaMeritka(d.meritka) : '',
     d.cervenaMain.length ? `POZOR, červené CI na main: ${d.cervenaMain.join(', ')}\nhttps://github.com/${REPO}/commits/main` : '',
     ...tokenyPozor.map((t) => `POZOR, token ${t}`),
     ciziSchvaleni.length ? `POZOR, schvaleno z jiného účtu:\n${vypisPolozek(cizi, Infinity, MAX_POLOZEK).join('\n')}` : '',
@@ -172,6 +185,7 @@ export function sestavPrehled(d, { vlastnik = 'tangero' } = {}) {
     '## Zastaveno štítkem stop',
     ...radky(d.zastavene, (z) => `- ${odkaz(z.cislo)} ${z.titulek}`, 'nic'),
     '',
+    ...(d.meritka ? [d.meritka.chyba ? `## Měřítka\n- nepodařilo se spočítat: ${d.meritka.chyba}` : oddilMeritka(d.meritka, odkaz), ''] : []),
     '## Provoz',
     d.cervenaMain.length ? `- červené CI na main: ${d.cervenaMain.join(', ')}` : '- CI na main bez chyb',
     ...Object.entries(d.expirace).map(([n, e]) => `- token ${n}: ${e === 'chybi' ? 'secret chybí' : e === 'neplatny' ? 'neplatí' : e ? `vyprší ${e}` : 'bez expirace'}`),
@@ -195,13 +209,18 @@ async function posliTelegram(text) {
 
 async function main() {
   const nanecisto = process.argv.includes('--nanecisto');
-  const data = await nactiData(vytvorApi(), Date.now(), {
+  const { vlastnik, asistent } = yaml.load(fs.readFileSync(new URL('../../.github/rezimy.yml', import.meta.url), 'utf8'));
+  const api = vytvorApi();
+  let volani = 0;
+  const pocitaneApi = (...a) => { volani++; return api(...a); };
+  const data = await nactiData(pocitaneApi, Date.now(), {
     CSI_PR_TOKEN: process.env.CSI_PR_TOKEN,
     PROJECT_TOKEN: process.env.PROJECT_TOKEN,
-  });
-  const { kratky, dlouhy } = sestavPrehled(data);
+  }, { vlastnik, asistent });
+  const { kratky, dlouhy } = sestavPrehled(data, { vlastnik });
   console.log(dlouhy);
-  if (nanecisto) return;
+  console.log(`\nVolání GitHub API: ${volani}`);
+  if (nanecisto) { console.log(`\n--- krátká verze ---\n${kratky}`); return; }
   if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `${dlouhy}\n`);
   await posliTelegram(`${kratky}\n\nCelý přehled: ${process.env.GITHUB_SERVER_URL}/${REPO}/actions/runs/${process.env.GITHUB_RUN_ID}`);
 }
