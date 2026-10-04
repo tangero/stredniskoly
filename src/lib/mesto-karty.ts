@@ -1,8 +1,10 @@
 import type { CitySchoolRow } from '@/lib/cityData';
 import type { DalsiOborVeMeste } from '@/lib/kontext-prihlasek';
 import { adresaPrehledu } from '@/lib/adresa-oboru.mjs';
-import { nazevSkolyProRadek, uliceZAdresy } from '@/lib/okruhy-oboru';
-import { jeNastavba, jeVyucniList, smerOboru } from '@/lib/smery-studia';
+import { nazevSkolyProRadek, popisOboruOkruhu, uliceZAdresy, type OkruhMesta, type ZaznamKataloguProOkruh } from '@/lib/okruhy-oboru';
+import type { ZarazeniObtiznosti } from '@/lib/obor-profil';
+import { KATEGORIE_BEZ_JPZ, kategorieOboru } from '@/lib/kontext-prihlasek';
+import { jeNastavba, jeVyucniList, smerOboru, SMERY_STUDIA } from '@/lib/smery-studia';
 import { druhZrizovatele } from '@/lib/simulator-filter';
 import type { KartaSkoly, RadekKarty, VelikostMesta } from '@/components/mesto/SkolyPodleSmeru';
 
@@ -125,4 +127,180 @@ export function sestavKartySkol(
     });
   }
   return [...karty.values()].sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs'));
+}
+
+/**
+ * Okruhy oborů na stránce města (návrh okruhů, docs/navrh-shluky-oboru-2027.md; návrh přehledu oborů, oddíl 11).
+ * Okruh se pojmenuje směry studia, které v něm převažují podle počtu uchazečů: druhý směr se přidá,
+ * když má aspoň čtvrtinu uchazečů okruhu. Jméno je odvozené z číselníku oborů, ne ruční, takže platí
+ * pro všechna města stejně. Pod ním zůstávají tři největší školy (rozhodnutí z 3. 10. 2026, oddíl 7.4).
+ */
+export interface RadekOkruhuMesta {
+  klic: string;
+  skola: string;
+  obor: string;
+  /** Délka a zaměření, když jsou jednoznačné. */
+  doplnek: string | null;
+  /** Obec oboru, jen když se liší od města stránky. */
+  obec: string | null;
+  uchazecu: number;
+  zarazeni: ZarazeniObtiznosti | null;
+  /** Zaměření téhož oboru mají různou obtížnost přijetí, jedno slovo by lhalo. */
+  lisiSe: boolean;
+  bezJednotneZkousky: boolean;
+  /** Stránka oboru, když klíč vede na jedinou nabídku ve městě; jinak přehled školy; jinak nic. */
+  href: string | null;
+}
+
+export interface OkruhMestaKZobrazeni {
+  id: number;
+  nazev: string;
+  /** Tři největší školy okruhu, oddělené tečkou. */
+  skoly: string;
+  uchazecu: number;
+  radky: RadekOkruhuMesta[];
+  presun: { od: number; do: number } | null;
+}
+
+export interface PodkladOkruhu {
+  /** REDIZO_KKOV → záznamy katalogu (nejnovější ročník, který obor vede). */
+  katalog: Map<string, ZaznamKataloguProOkruh[]>;
+  nazvyKatalogu: Map<string, string>;
+  kanonickeNazvy: Map<string, string>;
+  /**
+   * Obtížnost přijetí po klíči REDIZO_KKOV ze souhrnů 1. kola, pro všechny obory okruhu i z jiných obcí:
+   * jedna hodnota, když ji mají všechna zaměření stejnou, jinak „lisi_se“.
+   */
+  obtiznost?: Map<string, ZarazeniObtiznosti | null | 'lisi_se'>;
+  rejstrik: {
+    skoly: Record<string, [string, string]>;
+    obory: Record<string, string>;
+    identifikace: Record<string, { adresa: string }>;
+  };
+}
+
+/** Skupiny kmenových oborů (první dvojčíslí KKOV) podle číselníku MŠMT, zkrácené na štítek. */
+const SKUPINY_KKOV: Record<string, string> = {
+  '16': 'ekologie', '18': 'informatika', '21': 'hornictví a hutnictví', '23': 'strojírenství', '26': 'elektrotechnika',
+  '28': 'chemie', '29': 'potravinářství', '31': 'textil a oděvnictví', '32': 'kožedělná výroba', '33': 'dřevo a nábytek',
+  '34': 'polygrafie', '36': 'stavebnictví', '37': 'doprava', '39': 'speciální technické obory', '41': 'zemědělství a lesnictví',
+  '43': 'veterinářství', '53': 'zdravotnictví', '61': 'teologie', '63': 'ekonomika a administrativa', '64': 'podnikání',
+  '65': 'gastronomie a cestovní ruch', '66': 'obchod', '68': 'právo a veřejná správa', '69': 'osobní služby',
+  '72': 'publicistika a knihovnictví', '75': 'pedagogika a sociální péče', '78': 'lycea', '79': 'gymnázia', '82': 'umění',
+};
+
+type ObVaha = { klic: string; uchazecu: number };
+
+/** Hodnoty seřazené podle součtu uchazečů; druhá se přidá, když má aspoň čtvrtinu. */
+function prevazujici(obory: ObVaha[], klic: (kkov: string) => string): string[] {
+  const vahy = new Map<string, number>();
+  let celkem = 0;
+  for (const o of obory) {
+    const k = klic(o.klic.split('_')[1] ?? '');
+    vahy.set(k, (vahy.get(k) ?? 0) + o.uchazecu);
+    celkem += o.uchazecu;
+  }
+  const poradi = [...vahy.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  const out = [poradi[0][0]];
+  if (poradi[1] && celkem > 0 && poradi[1][1] / celkem >= 0.25) out.push(poradi[1][0]);
+  return out;
+}
+
+const podil = (obory: ObVaha[], test: (kkov: string) => boolean) => {
+  const celkem = obory.reduce((a, o) => a + o.uchazecu, 0);
+  return celkem ? obory.filter(o => test(o.klic.split('_')[1] ?? '')).reduce((a, o) => a + o.uchazecu, 0) / celkem : 0;
+};
+
+/**
+ * Jméno okruhu ze směrů studia vážených počtem uchazečů. Víceletá gymnázia se rozliší délkou,
+ * okruh s převahou učebních oborů dostane „učební obory“. Všechno je odvozené z kódu oboru.
+ */
+export function nazevOkruhu(obory: ObVaha[]): string {
+  const smery = prevazujici(obory, smerOboru);
+  const nazev = (id: string) => {
+    if (id === 'viceleta') {
+      if (podil(obory, k => /K\/81$/.test(k)) >= 0.6) return 'Osmiletá gymnázia (z 5. třídy)';
+      if (podil(obory, k => /K\/61$/.test(k)) >= 0.6) return 'Šestiletá gymnázia (ze 7. třídy)';
+    }
+    return SMERY_STUDIA.find(s => s.id === id)?.nazev ?? 'Ostatní obory';
+  };
+  const jmeno = smery.map(nazev).join(' · ');
+  return podil(obory, jeVyucniList) >= 0.5 ? `${jmeno} · učební obory` : jmeno;
+}
+
+/** Upřesnění pro okruhy se stejným jménem ve městě: převažující skupiny oborů z číselníku. */
+export function upresneniOkruhu(obory: ObVaha[]): string {
+  return prevazujici(obory, kkov => SKUPINY_KKOV[kkov.slice(0, 2)] ?? '').filter(Boolean).join(', ');
+}
+
+export function sestavOkruhyMesta(
+  okruhy: OkruhMesta[],
+  obec: string,
+  nabidky: CitySchoolRow[],
+  podklad: PodkladOkruhu,
+): { okruhy: OkruhMestaKZobrazeni[]; nastavby: OkruhMestaKZobrazeni[] } {
+  // Obtížnost a odkaz z nabídek města podle klíče REDIZO_KKOV (okruhy zaměření neznají).
+  const podleKlice = new Map<string, CitySchoolRow[]>();
+  for (const r of nabidky) {
+    const k = `${r.redizo}_${r.id.split('_')[1] ?? ''}`;
+    podleKlice.set(k, [...(podleKlice.get(k) ?? []), r]);
+  }
+  const out = { okruhy: [] as OkruhMestaKZobrazeni[], nastavby: [] as OkruhMestaKZobrazeni[] };
+  for (const o of okruhy) {
+    const radky: RadekOkruhuMesta[] = [];
+    for (const x of o.obory) {
+      const [redizo, kkov] = x.klic.split('_');
+      const popis = popisOboruOkruhu(x.klic, podklad.katalog, podklad.nazvyKatalogu, {
+        skola: podklad.rejstrik.skoly[redizo]?.[0], adresa: podklad.rejstrik.identifikace[redizo]?.adresa,
+        obor: podklad.rejstrik.obory[kkov],
+      });
+      if (!popis) continue;
+      const mistni = [...new Map((podleKlice.get(x.klic) ?? []).map(r => [r.id, r])).values()];
+      const zMest = new Set(mistni.map(r => r.zarazeni));
+      const zSouhrnu = podklad.obtiznost?.get(x.klic);
+      const zarazeni: ZarazeniObtiznosti | null | 'lisi_se' = zSouhrnu !== undefined
+        ? zSouhrnu
+        : zMest.size === 1 ? [...zMest][0] : zMest.size > 1 ? 'lisi_se' : null;
+      const kanonicky = podklad.kanonickeNazvy.get(redizo);
+      radky.push({
+        klic: x.klic,
+        skola: popis.skola,
+        obor: popis.obor,
+        doplnek: popis.doplnek,
+        obec: x.obec && x.obec !== obec ? x.obec : null,
+        uchazecu: x.uchazecu,
+        zarazeni: zarazeni === 'lisi_se' ? null : zarazeni,
+        lisiSe: zarazeni === 'lisi_se',
+        bezJednotneZkousky: KATEGORIE_BEZ_JPZ.has(kategorieOboru(kkov)),
+        href: mistni.length === 1 && mistni[0].adresaOboru
+          ? `/skola/${mistni[0].adresaOboru}`
+          : kanonicky ? `/skola/${adresaPrehledu(redizo, kanonicky)}` : null,
+      });
+    }
+    if (radky.length < 3) continue;
+    const skoly = [...new Set(radky.map(r => r.skola))];
+    const zaznam: OkruhMestaKZobrazeni = {
+      id: o.id,
+      nazev: nazevOkruhu(o.obory),
+      skoly: skoly.slice(0, 3).join(' · ') + (skoly.length > 3 ? ' a další' : ''),
+      uchazecu: o.uchazecu,
+      radky,
+      presun: o.presunNadSumem && o.rokPresunu ? { od: o.rokPresunu[0], do: o.rokPresunu[1] } : null,
+    };
+    (o.obory.every(x => jeNastavba(x.klic.split('_')[1] ?? '')) ? out.nastavby : out.okruhy).push(zaznam);
+  }
+  // Stejné jméno dvou okruhů ve městě čtenáři nic neřekne: doplní se převažující skupina oborů.
+  for (const seznam of [out.okruhy, out.nastavby]) {
+    const pocty = new Map<string, number>();
+    for (const o of seznam) pocty.set(o.nazev, (pocty.get(o.nazev) ?? 0) + 1);
+    for (const o of seznam) {
+      if ((pocty.get(o.nazev) ?? 0) < 2) continue;
+      // Upřesnění, které jen opakuje slovo ze jména („Gymnázia: gymnázia“), se vynechá; takové okruhy
+      // odliší druhý řádek s největšími školami (v Praze jsou to okruhy různých částí města).
+      const u = upresneniOkruhu(o.radky.map(r => ({ klic: r.klic, uchazecu: r.uchazecu })))
+        .split(', ').filter(cast => cast && !o.nazev.toLocaleLowerCase('cs').includes(cast)).join(', ');
+      if (u) o.nazev = `${o.nazev}: ${u}`;
+    }
+  }
+  return out;
 }

@@ -271,10 +271,28 @@ Vlastník po nasazení etapy 3: mřížka karet ve dvou sloupcích má různě v
 - **Zřizovatel u názvu školy**: soukromá a církevní škola nese štítek „… škola · může vybírat školné“ (slovník pojmů, heslo zřizovatel; výši školného nemáme, slovo „placená“ se nepoužívá). V upřesnění přibyl výběr zřizovatele s počty škol.
 - **Rozpor 10 a 20 míst** byl na stránce oboru: pruh oborů školy bral u oborů bez zaměření místa ze staršího zpracování (`school_analysis.json`), u 737 z 1 845 oborů. Opravuje samostatné PR „místa v pruhu oborů“; stránka města měla číslo správně (katalog 2026).
 
+## 11. Okruhy se vracejí na stránku města (4. 10. 2026)
+
+Etapa 3 okruhy ze stránky města odebrala s odůvodněním, že zůstávají na stránce oboru. To nebyla pravda: stránka oboru ukazuje jen souhrn po obcích a tabulku oborů výš a níž na přihlášce, samotný okruh nikde. Vlastník rozhodl okruhy vrátit.
+
+**Podnět od uživatele** (interaktivní síť brněnských oborů podle společných uchazečů 2024–2026, 156 oborů, 6 okruhů a 18 pojmenovaných podskupin) jsme porovnali s našimi okruhy. 87 % oborů jeho podskupin leží v jednom našem okruhu, jeho podskupiny jsou jen jemnější. Jeho šest okruhů (Technika, Gymnázia, Zdravotnictví a sociální práce a služby, Ekonomika, Umění, Znevýhodnění) skoro přesně odpovídá našim směrům studia. Převzato a nepřevzato:
+
+| Z podnětu | Závěr |
+|---|---|
+| srozumitelné jméno okruhu | **převzato**, ale odvozeně: jméno ze směrů studia, které v okruhu převažují podle uchazečů; víceletá gymnázia podle délky, „učební obory“ při jejich převaze, při shodě jmen ve městě převažující skupina oborů z číselníku MŠMT. Ruční pojmenování by pro 102 měst nešlo udržet |
+| jistota zařazení oboru (bootstrap, „nejistý“) a podíl „na přihlášce výš“ | nepřevzato teď; naše data to nenesou, námět pro další krok (slovník už má *spíš výš / spíš níž v okruhu*) |
+| síťový graf s hranami | **zamítnuto**: soubor nese 4 823 hran s méně než deseti společnými uchazeči (nejmenší 1), to meze zveřejnění nedovolují |
+| hledání a seznam sousedů oboru | už pokrývá stránka oboru (obory výš a níž na přihlášce) |
+
+**Podoba:** oddíl `#okruhy` pod tabulkou škol, odkaz na něj v úvodní větě. Okruh je sbalitelný blok se jménem, počtem oborů a uchazečů a třemi největšími školami; uvnitř tabulka ve stylu hlavního přehledu (škola a obor, obtížnost přijetí, uchazeči), řazená podle uchazečů. Obtížnost se bere ze souhrnů 1. kola pro všechny obory okruhu, i z okolních obcí; zaměření s různou obtížností dají „liší se podle zaměření“. Řádek vede na stránku oboru, když klíč odpovídá jediné nabídce ve městě, jinak na přehled školy.
+
+**Zbývá:** v Praze 7 a v Ostravě 2 okruhy se stejným jménem (gymnázia a umění v různých částech města); odliší je jen druhý řádek s největšími školami.
+
 ## Historie
 
 | Verze | Datum | Změna |
 |---|---|---|
+| 0.4 | 4. 10. 2026 | okruhy zpět na stránce města se jménem ze směrů studia; hodnocení podnětu se sítí oborů (oddíl 11) |
 | 0.3 | 4. 10. 2026 | etapa 3b: tabulka po školách místo karet, zřizovatel a školné (oddíl 10) |
 | 0.2 | 4. 10. 2026 | přestavba podle volby vlastníka: karty škol zúžené směrem studia (oddíl 9) |
 | 0.1 | 4. 10. 2026 | první verze; oprava řádků „Gymnázium“ a slévání škol v dalších oborech hotová |
