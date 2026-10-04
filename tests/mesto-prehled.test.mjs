@@ -15,7 +15,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { getCityStats, MESTA } from '../src/lib/cityData.ts';
 import { ZARAZENI_POPISEK } from '../src/lib/obor-profil.ts';
 import { dalsiOboryVeMeste, nactiIndexRejstriku } from '../src/lib/kontext-prihlasek.ts';
-import { getSchoolAnalysis } from '../src/lib/data.ts';
+import { getSchoolAnalysis, getProgramsByRedizo, getSchoolsData } from '../src/lib/data.ts';
 import { sestavKartySkol, velikostMesta } from '../src/lib/mesto-karty.ts';
 import { smerOboru, SMERY_STUDIA } from '../src/lib/smery-studia.ts';
 import { SkolyPodleSmeru } from '../src/components/mesto/SkolyPodleSmeru.tsx';
@@ -309,4 +309,21 @@ test('další obory: zdroj nese práh, pod kterým obory v seznamu nejsou', asyn
   const klice = new Set(obory.map(o => o.klic));
   assert.ok(!klice.has('600024270_78-62-C/01'), 'obor pod prahem je v seznamu — zdroj se změnil');
   assert.ok(klice.has('600024270_78-62-C/02'), 'dvouletá varianta nad prahem chybí');
+});
+
+test('pruh oborů školy: místa vypsané nabídky jsou z katalogu zobrazeného ročníku', async () => {
+  // Pruh oborů bral u oborů bez zaměření místa ze school_analysis.json (starší ročník):
+  // AKADEMIA Gy ukazovala u čtyřletého gymnázia 20 míst, stránka města a katalog 2026 10.
+  const katalog = (await getSchoolsData())['2026'];
+  const vKatalogu = new Map(katalog.map(z => [z.id, z]));
+  const p = (await getProgramsByRedizo('600024938')).find(x => x.id === '600024938_79-41-K/41');
+  assert.equal(p.kapacita, 10);
+  assert.equal(p.rok, 2026);
+  for (const redizo of ['600013596', '600013464', '600024938', '600171027']) {
+    for (const x of await getProgramsByRedizo(redizo)) {
+      const z = vKatalogu.get(x.id);
+      if (!z || z.nevypsano_2026) continue;
+      assert.equal(x.kapacita, z.kapacita, `${x.id}: pruh ${x.kapacita}, katalog ${z.kapacita}`);
+    }
+  }
 });

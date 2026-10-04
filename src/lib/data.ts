@@ -821,10 +821,13 @@ export async function getProgramsByRedizo(redizo: string): Promise<SchoolProgram
         });
       }
     } else {
-      // Škola nemá zaměření - použít data ze school_analysis.json. Příznak nevypsání
-      // z vlastního záznamu katalogu, stejně jako u zaměření.
+      // Škola nemá zaměření. Čísla vypsané nabídky z vlastního záznamu katalogu, stejně jako
+      // u zaměření a u nabídky bez zaměření výše: school_analysis.json je starší zpracování
+      // a u 737 z 1 845 oborů neslo místa jiného ročníku (AKADEMIA Gy: 20 místo 10 v roce 2026).
+      // Nevypsaná nabídka si nechává poslední známá čísla se štítkem „naposledy {rok}“.
       const vlastni = detailedRecords.find((r: { id: string }) => r.id === school.id) as
-        { rok?: number; nevypsano_2026?: boolean } | undefined;
+        { rok?: number; nevypsano_2026?: boolean; kapacita?: number; prihlasky?: number; prijati?: number } | undefined;
+      const letos = vlastni && !vlastni.nevypsano_2026 && typeof vlastni.kapacita === 'number' ? vlastni : undefined;
       programs.push({
         id: school.id,
         redizo: redizo,
@@ -833,15 +836,19 @@ export async function getProgramsByRedizo(redizo: string): Promise<SchoolProgram
         zamereni: undefined,
         typ: school.typ,
         delka_studia: school.delka_studia,
-        kapacita: school.kapacita,
-        prihlasky: school.prihlasky,
-        prijati: school.prijati,
+        kapacita: letos ? letos.kapacita! : school.kapacita,
+        prihlasky: letos?.prihlasky ?? school.prihlasky,
+        prijati: letos?.prijati ?? school.prijati,
         min_body: school.min_body,
-        index_poptavky: school.index_poptavky,
+        index_poptavky: letos && letos.kapacita! > 0 && typeof letos.prihlasky === 'number'
+          ? Math.round((letos.prihlasky / letos.kapacita!) * 100) / 100
+          : school.index_poptavky,
         obec: school.obec,
-        // Jen u nevypsané nabídky: rok, kdy ji škola vypsala naposledy (štítek „naposledy {rok}“).
-        // U vypsané by rok katalogu označil čísla ze school_analysis.json cizím ročníkem.
+        // U nevypsané nabídky rok, kdy ji škola vypsala naposledy (štítek „naposledy {rok}“);
+        // u vypsané rok katalogu, ze kterého teď čísla jsou. Bez záznamu katalogu rok chybí,
+        // protože čísla ze school_analysis.json by jinak dostala cizí ročník.
         ...(vlastni?.nevypsano_2026 ? { nevypsano_2026: true, ...(vlastni.rok ? { rok: vlastni.rok } : {}) } : {}),
+        ...(letos?.rok ? { rok: letos.rok } : {}),
         ...matchingMeta,
       });
     }
