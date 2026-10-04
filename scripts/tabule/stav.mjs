@@ -22,10 +22,12 @@ export function cilovyStav(issue, prs = []) {
   const s = new Set(issue.stitky);
   if (issue.stav === 'CLOSED') return STAVY.hotovo;
   if (s.has('trvale')) return null;
-  // Veto a návrh čekají na vlastníka. Zbylý `navrh` vedle `schvaleno` (zmeškaná úprava štítku)
-  // kartu do návrhu nevrací; schválení je novější rozhodnutí.
-  if (s.has('stop') || (s.has('navrh') && !s.has('schvaleno'))) return STAVY.navrh;
+  // Veto čeká na vlastníka. Oponentura běží i u návrhu (#339): štítek odebere workflow Oponentura a návrh
+  // se vrátí k vlastníkovi. Zbylý `navrh` vedle `schvaleno` (zmeškaná úprava štítku) kartu do návrhu
+  // nevrací; schválení je novější rozhodnutí.
+  if (s.has('stop')) return STAVY.navrh;
   if (s.has('oponentura')) return STAVY.oponentura;
+  if (s.has('navrh') && !s.has('schvaleno')) return STAVY.navrh;
   if (prs.length) return prs.some((p) => p.cekaNaSouhlas) ? STAVY.cekaNaSouhlas : STAVY.vPr;
   // Interní zadání s dokladem „Zdroj:“ zapisuje rozhodnutí vlastníka; schvaleno nepotřebuje (CLAUDE.md, pravidlo 1).
   if (s.has('schvaleno') || (s.has('interni') && !STITKY_HLASENI.some((h) => s.has(h)) && ZDROJ.test(issue.telo || ''))) return STAVY.schvaleno;
@@ -82,8 +84,8 @@ export function naCoCeka(issue, prs = [], dnes = new Date().toISOString().slice(
   if (issue.stav === 'CLOSED') return '';
   if (s.has('trvale')) return null;
   if (s.has('stop')) return 'zastaveno štítkem stop';
-  if (s.has('navrh') && !s.has('schvaleno')) return 'čeká na tvé rozhodnutí: schvaleno, nebo zamitnuto';
   if (s.has('oponentura')) return 'oponentura, pak k tvému rozhodnutí';
+  if (s.has('navrh') && !s.has('schvaleno')) return 'čeká na tvé rozhodnutí: schvaleno, nebo zamitnuto';
   if (s.has('pripominka')) {
     const t = (issue.telo || '').match(/Termín:?\s*(\d{4})-(\d{2})-(\d{2})/);
     if (t && `${t[1]}-${t[2]}-${t[3]}` > dnes) return `připomínka, termín ${Number(t[3])}. ${Number(t[2])}. ${t[1]}`;
