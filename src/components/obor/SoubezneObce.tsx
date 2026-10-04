@@ -17,7 +17,7 @@ export function SoubezneObceObsah({ data }: { data: SoubezneObce }) {
           <thead>
             <tr className="text-left text-[13px] text-slate-500">
               <th className="py-2 pr-3 font-semibold">Obec</th>
-              <th className="py-2 pl-3 text-right font-semibold">Uchazečů s oborem i v této obci</th>
+              <th className="py-2 pl-3 text-right font-semibold">Podíl uchazečů s oborem i v této obci</th>
             </tr>
           </thead>
           <tbody>
