@@ -39,6 +39,28 @@ class BuildOkruhyOboruTest(unittest.TestCase):
         self.assertEqual(obce["Gama"], 0.3)     # 30 − 30 = 0, nic neprozradí
         self.assertEqual(vysledek["A_1"]["potlacene_obce"], 1)
 
+    def test_obec_se_potlaci_kdyz_pocet_je_zverejneny_jen_u_opacneho_oboru(self):
+        # A_1 má 186 uchazečů, z nich 10 také B_1 a 3 také B_2 (obě v Betě), zbylých 173 jen A_1.
+        # Web ukazuje jen B_1 (obory_vys: [A_1, 10]); podíl Bety u A_1 je 13/186 = 0,07, tedy 13 − 10 = 3.
+        volby = [uchazec("A_1", "B_1") for _ in range(10)] + [uchazec("A_1", "B_2") for _ in range(3)]
+        volby += [uchazec("A_1") for _ in range(173)]
+        kontext = {"B_1": {"obory_vys": [["A_1", 10]], "obory_niz": []}}
+        zname = gen.zname_podmnoziny("A_1", MAPA, kontext, {})
+        self.assertEqual(zname["Beta"], [10])  # zpětný odkaz z B_1
+        vysledek = gen.obce_oboru(volby, {"A_1": 186}, MAPA, kontext, {})
+        self.assertNotIn("Beta", {o["obec"] for o in vysledek["A_1"]["obce"]})
+        self.assertEqual(vysledek["A_1"]["potlacene_obce"], 1)
+
+    def test_zpetne_odkazy_ze_soubehu_a_hotovy_vystup_se_kontroluje(self):
+        soubeh = {"B_1": {"soubeh": [{"klic": "A_1", "uchazecu": 10}]}}
+        self.assertEqual(gen.zname_podmnoziny("A_1", MAPA, {}, soubeh)["Beta"], [10])
+        vystup = {"obory": {"A_1": {"uchazecu": 186, "obce": [{"obec": "Beta", "podil": 0.07}, {"obec": "Gama", "podil": 0.5}]}}}
+        chyby = gen.kontrola_obci(vystup, MAPA, {}, soubeh, opravit=True)
+        self.assertEqual(len(chyby), 1)
+        self.assertEqual(vystup["obory"]["A_1"]["obce"], [{"obec": "Gama", "podil": 0.5}])
+        self.assertEqual(vystup["obory"]["A_1"]["potlacene_obce"], 1)
+        self.assertEqual(gen.kontrola_obci(vystup, MAPA, {}, soubeh), [])
+
     def test_obor_z_okoli_je_ukotveny_jen_s_hranou_na_obor_mesta(self):
         cast = {"A_1": 1, "B_1": 1, "C_1": 1}
         n = {"A_1": 40, "B_1": 30, "C_1": 20}

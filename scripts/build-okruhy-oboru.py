@@ -56,26 +56,45 @@ def mesta_prehledu() -> list[str]:
     return re.findall(r"nazev: '([^']+)'", text)
 
 
-def zname_podmnoziny(klic: str, mapa: dict, kontext: dict, soubeh: dict) -> dict[str, list[int]]:
+def index_podmnozin(mapa: dict, kontext: dict, soubeh: dict) -> dict[str, dict[str, list[int]]]:
     """Přesné počty uchazečů oboru, které web už zveřejňuje, podle obce druhého oboru.
 
     Každý takový počet je podmnožinou uchazečů s oborem v té obci: obory výš a níž na přihlášce
-    (stránka oboru, zvlášť i sečtené za týž obor) a souběžné přihlášky (stránka školy).
+    (stránka oboru, zvlášť i sečtené za týž obor) a souběžné přihlášky (stránka školy). Seznamy
+    kontextu a souběhu jsou omezené výběry sousedů, takže počet společných uchazečů A a B může být
+    zveřejněný jen u jednoho z nich. Společní uchazeči jsou ale podmnožinou uchazečů obou oborů,
+    proto se každé měření zapíše přímo i zpětně (druhému oboru s obcí prvního).
     """
-    podle_obce: dict[str, list[int]] = collections.defaultdict(list)
-    k = kontext.get(klic) or {}
-    vys = dict(k.get("obory_vys") or [])
-    niz = dict(k.get("obory_niz") or [])
-    for jiny in set(vys) | set(niz):
-        obec = mapa.get(jiny, {}).get("obec")
-        for c in (vys.get(jiny), niz.get(jiny)):
-            if c:
-                podle_obce[obec].append(c)
-        if jiny in vys and jiny in niz:
-            podle_obce[obec].append(vys[jiny] + niz[jiny])
-    for r in (soubeh.get(klic) or {}).get("soubeh", []):
-        podle_obce[mapa.get(r["klic"], {}).get("obec")].append(r["uchazecu"])
-    return podle_obce
+    index: dict[str, dict[str, list[int]]] = collections.defaultdict(lambda: collections.defaultdict(list))
+
+    def obec(klic):
+        return mapa.get(klic, {}).get("obec")
+
+    for a, k in kontext.items():
+        vys = dict(k.get("obory_vys") or [])
+        niz = dict(k.get("obory_niz") or [])
+        for jiny in set(vys) | set(niz):
+            hodnoty = [c for c in (vys.get(jiny), niz.get(jiny)) if c]
+            if jiny in vys and jiny in niz:
+                hodnoty.append(vys[jiny] + niz[jiny])
+            index[a][obec(jiny)].extend(hodnoty)
+            index[jiny][obec(a)].extend(hodnoty)
+    for a, s in soubeh.items():
+        for r in s.get("soubeh", []):
+            index[a][obec(r["klic"])].append(r["uchazecu"])
+            index[r["klic"]][obec(a)].append(r["uchazecu"])
+    return index
+
+
+def zname_podmnoziny(klic: str, mapa: dict, kontext: dict, soubeh: dict, index: dict | None = None) -> dict[str, list[int]]:
+    """Známé podmnožiny jednoho oboru podle obce (viz index_podmnozin); index se dá předpočítat."""
+    return (index if index is not None else index_podmnozin(mapa, kontext, soubeh)).get(klic, {})
+
+
+def prozradi_skupinu(podil: float, n: int, zname: list[int]) -> bool:
+    """Zveřejněný podíl obce spolu s některou známou podmnožinou nechá dopočítat skupinu 1 až 9 uchazečů."""
+    mozne = [x for x in range(0, n + 1) if round(x / n, 2) == podil]
+    return any(mozne and all(0 < x - z < MIN for x in mozne) for z in zname)
 
 
 def obce_oboru(volby_r, uchazecu: dict[str, int], mapa: dict, kontext: dict, soubeh: dict) -> dict[str, dict]:
@@ -89,18 +108,18 @@ def obce_oboru(volby_r, uchazecu: dict[str, int], mapa: dict, kontext: dict, sou
             for obec in {mapa.get(j, {}).get("obec") or "neznámá obec" for j in obory if j != k}:
                 pocty[k][obec] += 1
     vysledek = {}
+    index = index_podmnozin(mapa, kontext, soubeh)
     for k, n in sorted(uchazecu.items()):  # pevné pořadí klíčů, výstup nezávisí na PYTHONHASHSEED
         if n < MIN:
             continue
-        zname = zname_podmnoziny(k, mapa, kontext, soubeh)
+        zname = zname_podmnoziny(k, mapa, kontext, soubeh, index)
         obce, potlaceno = [], 0
         for obec, c in sorted(pocty[k].items(), key=lambda x: (-x[1], x[0])):
             podil = podil_nad_mezi(c, n)
             if podil is None or obec == "neznámá obec":
                 continue
-            mozne = [x for x in range(0, n + 1) if round(x / n, 2) == podil]
             # obec bez známé podmnožiny: rozdíl vždy 1 až 9 by prozradil malou skupinu (review PR #284)
-            if any(mozne and all(0 < x - z < MIN for x in mozne) for z in zname.get(obec, [])):
+            if prozradi_skupinu(podil, n, zname.get(obec, [])):
                 potlaceno += 1
                 continue
             obce.append({"obec": obec, "podil": podil})
@@ -186,6 +205,24 @@ def kontrola(vystup: dict, opravit: bool = False) -> list[str]:
     return chyby
 
 
+def kontrola_obci(vystup: dict, mapa: dict, kontext: dict, soubeh: dict, opravit: bool = False) -> list[str]:
+    """Hotový souhrn po obcích proti všem zveřejněným podmnožinám, i zpětným (review PR #294)."""
+    chyby = []
+    index = index_podmnozin(mapa, kontext, soubeh)
+    for k, v in vystup.get("obory", {}).items():
+        zname = zname_podmnoziny(k, mapa, kontext, soubeh, index)
+        nechat = []
+        for o in v["obce"]:
+            if prozradi_skupinu(o["podil"], v["uchazecu"], zname.get(o["obec"], [])):
+                chyby.append(f"obor {k}: obec {o['obec']}, podíl jde spolu se zveřejněným počtem dopočítat na skupinu pod 10")
+            else:
+                nechat.append(o)
+        if opravit and len(nechat) != len(v["obce"]):
+            v["potlacene_obce"] = v.get("potlacene_obce", 0) + len(v["obce"]) - len(nechat)
+            v["obce"] = nechat
+    return chyby
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--rok", type=int, default=None)
@@ -252,9 +289,9 @@ def main() -> None:
         if cast.get(k) in zverejnene:
             v["okruh"] = cast[k]
 
-    for c in kontrola(vystup, opravit=True):
+    for c in kontrola(vystup, opravit=True) + kontrola_obci(vystup, mapa, kontext, soubeh, opravit=True):
         print(f"doplňkové potlačení: {c}", file=sys.stderr)
-    chyby = kontrola(vystup)
+    chyby = kontrola(vystup) + kontrola_obci(vystup, mapa, kontext, soubeh)
     if chyby:
         raise SystemExit("výstup by prozradil skupinu pod 10 uchazečů:\n" + "\n".join(chyby))
 
