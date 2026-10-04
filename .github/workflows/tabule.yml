@@ -74,7 +74,7 @@ jobs:
         run: |
           set -euo pipefail
           # Stejné odkazy jako brána (propojenaIssues): Closes/Fixes/Resolves #N a Souvisí s #N.
-          for n in $(printf '%s' "$TELO" | grep -oiE '(close[sd]?|fix(e[sd])?|resolve[sd]?|souvisí s|souvisi s)[[:space:]]*:?[[:space:]]*#[0-9]+' \
+          for n in $(printf '%s' "$TELO" | grep -oiE '\b(close[sd]?|fix(e[sd])?|resolve[sd]?|souvisí s|souvisi s)[[:space:]]*:?[[:space:]]*#[0-9]+' \
                      | grep -oE '[0-9]+$' | sort -u); do
             if [ "$(gh issue view "$n" -R "$REPO" --json state,labels \
                    --jq '.state == "OPEN" and any(.labels[]; .name == "k-overeni")' 2>/dev/null || echo false)" = "true" ]; then
