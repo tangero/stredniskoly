@@ -108,8 +108,11 @@ async function nactiRodice(api, cislo) {
   let r;
   try {
     r = await api(`repos/${REPO}/issues/${cislo}/parent`);
-  } catch {
-    return null; // 404: issue nemá rodiče
+  } catch (e) {
+    // 404: issue nemá rodiče. Jiná chyba (5xx, limit) se jen ohlásí: bez rodiče jde úkol do přísnějšího
+    // režimu L, nikdy do volnějšího.
+    if (!/\b404\b/.test(`${e.message} ${e.stderr || ''}`)) console.warn(`::warning::Rodiče issue #${cislo} nešlo načíst: ${e.message}`);
+    return null;
   }
   return r?.number ? nactiIssue(api, r.number, { sRodicem: false }) : null;
 }
