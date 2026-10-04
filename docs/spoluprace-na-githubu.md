@@ -40,6 +40,20 @@ zpracování issues: štítek `pripominka` a termín v těle, buď z pole formul
 
 První připomínka: #240, vyhodnocení sklizně výpisů aktualit k 8. 10. 2026.
 
+## 2a. Ruční zásahy
+
+Když vlastník ručně odblokuje něco, co měla zvládnout automatika (zaseknutý náhled, restart běhu,
+oprava štítku, vysvětlení zadání po otevření PR), zapíše do issue nebo PR komentář, který začíná:
+
+```
+Zásah: 10 min - odblokování náhledu
+```
+
+Počet minut a krátký důvod. Týdenní přehled zásahy za týden sečte v oddílu Měřítka a vypíše důvody
+(zadání #324). Asistent zadání může zásah z briefingu zapsat za vlastníka, ale jen s odkazem na zápis
+z briefingu; zásahy z jiných účtů se nepočítají. Nezapsaný zásah přehled nevidí, „minuty vlastníka“
+jsou proto dolní odhad.
+
 ## 3. Tabule projektu
 
 Projekt **Přijímačky – vývoj webu** (`github.com/users/tangero/projects/1`). Stav karty issue
