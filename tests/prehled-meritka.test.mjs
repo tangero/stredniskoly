@@ -84,6 +84,10 @@ test('#342: schválení po otevření PR se nepočítá do fáze na schválení 
   assert.equal(z.faze.naSchvaleni, null);
   assert.equal(Math.round(z.faze.naRealizaci / DEN), 4);
   assert.equal(Math.round((z.faze.naRealizaci + z.faze.vPr) / DEN), Math.round(z.celkem / DEN));
+  // Schválení ve stejné chvíli jako otevření PR: realizace začíná schválením, fáze se nepřekrývají.
+  v.issues[10].schvaleno = pred(6);
+  const s = spocitejMeritka(v, opt).zadani.find((x) => x.pr === 100);
+  assert.equal(s.faze.naSchvaleni + s.faze.naRealizaci + s.faze.vPr, s.celkem);
 });
 
 test('K1: medián podle režimu a srovnání s předchozími 4 týdny', () => {
