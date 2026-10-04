@@ -167,7 +167,8 @@ export interface PopisOboruOkruhu {
 /** Ulice z adresy rejstříku („Koněvova 100, 417 42 Krupka“ → „Koněvova“); bez ulice null. */
 export function uliceZAdresy(adresa: string | undefined): string | null {
   const prvni = (adresa ?? '').split(',')[0].trim().replace(/\s+(č\.\s*p\.\s*)?\d[\dA-Za-z/]*$/, '').trim();
-  return prvni && !/^\d/.test(prvni) && !/^č\.\s*p\./.test(prvni) ? prvni : null;
+  // Ulice může začínat datem („17. listopadu“); bez ulice začíná adresa číslem popisným nebo „č. p.“.
+  return prvni && !/^\d+(\/\d+)?$/.test(prvni) && !/^\d+\s/.test(prvni) && !/^č\.\s*p\./.test(prvni) ? prvni : null;
 }
 
 /**

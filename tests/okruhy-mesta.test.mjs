@@ -93,7 +93,9 @@ test('řádek okruhu: název školy s ulicí z katalogu, ne holé „Gymnázium�
 test('ulice z adresy rejstříku', () => {
   assert.equal(uliceZAdresy('Koněvova 100, 417 42 Krupka – Bohosudov'), 'Koněvova');
   assert.equal(uliceZAdresy('třída Kpt. Jaroše 1829/14, 658 70 Brno'), 'třída Kpt. Jaroše');
+  assert.equal(uliceZAdresy('17. listopadu 1126/43, 708 00 Ostrava'), '17. listopadu');
   assert.equal(uliceZAdresy('č. p. 12, 549 01 Nové Město'), null);
+  assert.equal(uliceZAdresy('128, 549 01 Nové Město'), null);
   assert.equal(uliceZAdresy(undefined), null);
 });
 
