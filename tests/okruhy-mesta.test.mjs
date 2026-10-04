@@ -21,7 +21,7 @@ function load(relative) {
 const { vyberOkruhu } = load('src/lib/okruhy-oboru.ts');
 const { OkruhyVeMeste } = load('src/components/OkruhyVeMeste.tsx');
 
-const obor = (klic, uchazecu) => ({ klic, obec: 'Brno', uchazecu });
+const obor = (klic, uchazecu) => ({ klic, obec: 'Brno', uchazecu, ukotven: true });
 const okruh = (id, uchazecu, obory, presun) => ({ id, uchazecu, obory, presun_zajmu_v_okruhu: presun });
 
 test('město pod prahem (zobrazit false) nebo bez záznamu okruhy nemá', () => {
@@ -37,6 +37,16 @@ test('okruh jedné školy se nezobrazí, ostatní se řadí podle uchazečů', (
   ] });
   assert.deepEqual(v.okruhy.map((o) => o.id), [3, 2]);
   assert.deepEqual(v.okruhy[1].obory.map((o) => o.klic), ['3_c', '2_b', '1_a']);
+});
+
+test('neukotvený obor z jiné obce se nezobrazí a okruh pak může odpadnout', () => {
+  const cizi = { klic: '9_z', obec: 'Brandýs', uchazecu: 500, ukotven: false };
+  const v = vyberOkruhu(2026, { zobrazit: true, okruhy: [
+    okruh(1, 100, [obor('1_a', 40), cizi]),
+    okruh(2, 200, [obor('1_a', 40), obor('2_b', 60), cizi]),
+  ] });
+  assert.deepEqual(v.okruhy.map((o) => o.id), [2]);
+  assert.deepEqual(v.okruhy[0].obory.map((o) => o.klic), ['2_b', '1_a']);
 });
 
 test('věta o přesunu jen nad šumem', () => {

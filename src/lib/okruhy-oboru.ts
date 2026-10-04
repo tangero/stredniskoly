@@ -96,7 +96,7 @@ interface ZaznamMesta {
   okruhy?: {
     id: number;
     uchazecu: number;
-    obory: { klic: string; obec: string; uchazecu: number }[];
+    obory: { klic: string; obec: string; uchazecu: number; ukotven?: boolean }[];
     presun_zajmu_v_okruhu?: { roky?: number[]; nad_sumem?: boolean };
   }[];
 }
@@ -123,7 +123,8 @@ export function vyberOkruhu(rok: number, zaznam: ZaznamMesta | undefined): Okruh
   const okruhy: OkruhMesta[] = [];
   for (const o of zaznam.okruhy ?? []) {
     const obory = o.obory
-      .filter((x) => x.klic && Number.isFinite(x.uchazecu))
+      // Obor z jiné obce jen když je ukotvený (aspoň 10 společných uchazečů s místním oborem okruhu).
+      .filter((x) => x.klic && Number.isFinite(x.uchazecu) && x.ukotven === true)
       .sort((a, b) => b.uchazecu - a.uchazecu || a.klic.localeCompare(b.klic));
     // Okruh jedné školy by šel dopočítat z čísel na její stránce.
     if (new Set(obory.map((x) => x.klic.split('_')[0])).size < 2) continue;
